@@ -10,7 +10,6 @@ class Verification::Residence
   validates :date_of_birth, presence: true
   validates :postal_code, presence: true
   validates :terms_of_service, acceptance: { allow_nil: false }
-  validates :postal_code, length: { is: 5 }
 
   validate :allowed_age
   validate :document_number_uniqueness
@@ -107,7 +106,7 @@ class Verification::Residence
     def valid_postal_code?
       Setting["postal_codes"].split(",").any? do |code_or_range|
         if code_or_range.include?("-")
-          Range.new(*code_or_range.split("-").map(&:to_i)).include?(postal_code.to_i)
+          Range.new(*code_or_range.split("-")).include?(postal_code)
         else
           postal_code == code_or_range
         end

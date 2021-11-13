@@ -71,6 +71,30 @@ describe Verification::Residence do
         expect(residence).to be_valid
       end
 
+      it "uses string ranges and not integer ranges" do
+        Setting["postal_codes"] = "0000-9999"
+
+        residence.postal_code = "02004"
+
+        expect(residence).not_to be_valid
+      end
+
+      it "accepts postal codes of any length" do
+        Setting["postal_codes"] = "AB1 3NE,815C,38000"
+
+        residence.postal_code = "AB1 3NE"
+        expect(residence).to be_valid
+
+        residence.postal_code = "815C"
+        expect(residence).to be_valid
+
+        residence.postal_code = "38000"
+        expect(residence).to be_valid
+
+        residence.postal_code = "815"
+        expect(residence).not_to be_valid
+      end
+
       it "is not valid with postal codes not included in settings" do
         residence.postal_code = "12345"
         expect(residence).not_to be_valid
