@@ -59,8 +59,6 @@
   </div>
 <% end %>
 
-<%= render Budgets::Investments::FiltersComponent.new %>
-
 <% if @heading && !@heading.content_blocks.where(locale: I18n.locale).empty? %>
   <%= render "budgets/investments/content_blocks" %>
 <% end %>
@@ -70,3 +68,4 @@
 <% end %>
 <%= render "shared/tag_cloud", taggable: "Budget::Investment" %>
 <%= render "budgets/investments/categories" %>
+<%= render Budgets::Investments::FiltersComponent.new %>
