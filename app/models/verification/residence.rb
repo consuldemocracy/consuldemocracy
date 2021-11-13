@@ -105,8 +105,12 @@ class Verification::Residence
     end
 
     def valid_postal_code?
-      postal_codes = Setting["postal_codes"].gsub("-", "..").split(",")
-      postal_codes = postal_codes.map { |i| eval(i) }.map { |i| i.is_a?(Range) ? i.to_a : [i] }.flatten
-      postal_code.to_i.in?(postal_codes)
+      Setting["postal_codes"].split(",").any? do |code_or_range|
+        if code_or_range.include?("-")
+          Range.new(*code_or_range.split("-").map(&:to_i)).include?(postal_code.to_i)
+        else
+          postal_code == code_or_range
+        end
+      end
     end
 end
