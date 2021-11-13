@@ -117,11 +117,10 @@ en:
           not_logged_in: "To create a new budget investment you must %{sign_in} or %{sign_up}."
         filter: "Filtering projects by"
         filters:
-          feasible: "Feasible"
-          not_unfeasible: "Feasible or with undecided feasibility"
-          selected: "Selected"
+          not_unfeasible: "Active"
+          selected: "Active"
           unfeasible: "Unfeasible"
-          unselected: "Unselected"
+          unselected: "Not selected for the final voting"
           winners: "Winners"
         orders:
           random: random

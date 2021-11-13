@@ -117,11 +117,10 @@ es:
           not_logged_in: "Para crear un nuevo proyecto de gasto debes %{sign_in} o %{sign_up}."
         filter: "Filtrando proyectos"
         filters:
-          feasible: "Viables"
-          not_unfeasible: "Viables o con viabilidad por decidir"
-          selected: "Seleccionados"
+          not_unfeasible: "Activos"
+          selected: "Activos"
           unfeasible: "Inviables"
-          unselected: "No seleccionados"
+          unselected: "No seleccionados para votación"
           winners: "Ganadores"
         orders:
           random: Aleatorios
