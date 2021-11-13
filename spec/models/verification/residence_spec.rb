@@ -48,44 +48,39 @@ describe Verification::Residence do
     end
 
     describe "postal code" do
-      before { Setting["postal_codes"] = "28001-28100,28200" }
+      before do
+        Setting["postal_codes"] = "28001-28100,28200"
+
+        census_data = double(valid?: true, district_code: "", gender: "")
+        allow(census_data).to receive(:postal_code) { residence.postal_code }
+        allow(census_data).to receive(:date_of_birth) { residence.date_of_birth }
+        allow(residence).to receive(:census_data).and_return(census_data)
+      end
 
       it "is valid with postal codes included in settings" do
         residence.postal_code = "28012"
-        residence.valid?
-
-        expect(residence.errors[:postal_code]).to be_empty
+        expect(residence).to be_valid
 
         residence.postal_code = "28001"
-        residence.valid?
-
-        expect(residence.errors[:postal_code]).to be_empty
+        expect(residence).to be_valid
 
         residence.postal_code = "28100"
-        residence.valid?
-
-        expect(residence.errors[:postal_code]).to be_empty
+        expect(residence).to be_valid
 
         residence.postal_code = "28200"
-        residence.valid?
-
-        expect(residence.errors[:postal_code]).to be_empty
+        expect(residence).to be_valid
       end
 
       it "is not valid with postal codes not included in settings" do
         residence.postal_code = "12345"
-        residence.valid?
-
-        expect(residence.errors[:postal_code].size).to eq(1)
+        expect(residence).not_to be_valid
 
         residence.postal_code = "28000"
-        residence.valid?
-
-        expect(residence.errors[:postal_code].size).to eq(1)
+        expect(residence).not_to be_valid
 
         residence.postal_code = "28101"
-        residence.valid?
-
+        expect(residence).not_to be_valid
+        expect(residence.errors.count).to eq 1
         expect(residence.errors[:postal_code]).to eq ["In order to be verified, you must be registered."]
       end
     end
