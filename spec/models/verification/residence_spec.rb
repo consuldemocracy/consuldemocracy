@@ -57,6 +57,12 @@ describe Verification::Residence do
         allow(residence).to receive(:census_data).and_return(census_data)
       end
 
+      it "is not valid when it's nil" do
+        residence.postal_code = nil
+
+        expect(residence).not_to be_valid
+      end
+
       it "is valid with postal codes included in settings" do
         residence.postal_code = "28012"
         expect(residence).to be_valid
@@ -96,6 +102,28 @@ describe Verification::Residence do
 
         residence.postal_code = "815"
         expect(residence).not_to be_valid
+      end
+
+      it "does not ignore spaces inside the postal code" do
+        Setting["postal_codes"] = "00001,000 05,00011"
+
+        residence.postal_code = "000 05"
+        expect(residence).to be_valid
+
+        residence.postal_code = "00005"
+        expect(residence).not_to be_valid
+      end
+
+      it "ignores trailing spaces in both the setting and the postal codes" do
+        Setting["postal_codes"] = " 00001,00002: 00005, 00011 "
+
+        residence.postal_code = "  00003  "
+
+        expect(residence).to be_valid
+
+        residence.postal_code = "00011   "
+
+        expect(residence).to be_valid
       end
 
       it "is not valid with postal codes not included in settings" do

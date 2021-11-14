@@ -106,9 +106,9 @@ class Verification::Residence
     def valid_postal_code?
       Setting["postal_codes"].split(",").any? do |code_or_range|
         if code_or_range.include?(":")
-          Range.new(*code_or_range.split(":")).include?(postal_code)
+          Range.new(*code_or_range.split(":").map(&:strip)).include?(postal_code&.strip)
         else
-          postal_code == code_or_range
+          postal_code&.strip == code_or_range.strip
         end
       end
     end
