@@ -49,7 +49,7 @@ describe Verification::Residence do
 
     describe "postal code" do
       before do
-        Setting["postal_codes"] = "28001-28100,28200"
+        Setting["postal_codes"] = "28001:28100,28200,28303-455"
 
         census_data = double(valid?: true, district_code: "", gender: "")
         allow(census_data).to receive(:postal_code) { residence.postal_code }
@@ -68,6 +68,9 @@ describe Verification::Residence do
         expect(residence).to be_valid
 
         residence.postal_code = "28200"
+        expect(residence).to be_valid
+
+        residence.postal_code = "28303-455"
         expect(residence).to be_valid
       end
 
@@ -100,6 +103,12 @@ describe Verification::Residence do
         expect(residence).not_to be_valid
 
         residence.postal_code = "28000"
+        expect(residence).not_to be_valid
+
+        residence.postal_code = "28303-454"
+        expect(residence).not_to be_valid
+
+        residence.postal_code = "28303"
         expect(residence).not_to be_valid
 
         residence.postal_code = "28101"
