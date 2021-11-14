@@ -91,6 +91,7 @@ describe "Residence" do
   end
 
   scenario "Error on postal code not in census" do
+    Setting["postal_codes"] = "00001:99999"
     user = create(:user)
     login_as(user)
 

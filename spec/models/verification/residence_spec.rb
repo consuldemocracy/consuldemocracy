@@ -144,6 +144,23 @@ describe Verification::Residence do
         expect(residence.errors.count).to eq 1
         expect(residence.errors[:postal_code]).to eq ["In order to be verified, you must be registered."]
       end
+
+      it "allows any postal code when the setting is blank" do
+        Setting["postal_codes"] = nil
+        residence.postal_code = "randomthing"
+
+        expect(residence).to be_valid
+
+        Setting["postal_codes"] = ""
+        residence.postal_code = "ABC123"
+
+        expect(residence).to be_valid
+
+        Setting["postal_codes"] = "  "
+        residence.postal_code = "555-5"
+
+        expect(residence).to be_valid
+      end
     end
   end
 
