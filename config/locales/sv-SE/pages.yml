@@ -17,11 +17,11 @@ sv:
       debates:
         title: "Debatter"
         description: "I %{link}-delen kan du presentera dina åsikter och diskutera frågor som rör staden. Det är också en plats för att utveckla idéer som kan tas vidare till andra delar av %{org} och leda till konkreta åtgärder från kommunen."
-        link: "debatter"
+        link: "medborgardebatter"
         feature: "Du kan skriva debattinlägg och kommentera och betygsätta andras inlägg med <strong>Jag håller med</strong> eller <strong>Jag håller inte med</strong>. För att göra det måste du %{link}."
         feature_link: "registrera dig på %{org}"
         image_alt: "Knappar för att betygsätta debatterna"
-        figcaption: 'Knappar för "Jag håller med" och "Jag håller inte med" för att betygsätta diskussioner.'
+        figcaption: 'Knappar för "Jag håller med" och "Jag håller inte med" för att betygsätta debatterna.'
       proposals:
         title: "Förslag"
         description: "I %{link}-delen kan du skriva förslag som du vill att kommunen ska genomföra. Förslagen behöver få tillräckligt med stöd för att gå vidare till omröstning. De förslag som vinner en omröstning kommer att genomföras av kommunen."
@@ -105,7 +105,7 @@ sv:
               page_column: Medborgarbudgetar
             - 
               key_column: 5
-              page_column: Dialoger
+              page_column: Lagstiftningsprocesser
         browser_table:
           description: "Beroende på det operativsystem och webbläsare som används är tangentkombinationen följande:"
           caption: Tangentkombinationen beror på operativsystemet och webbläsare

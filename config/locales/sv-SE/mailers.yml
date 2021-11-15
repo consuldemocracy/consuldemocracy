@@ -35,10 +35,10 @@ sv:
       unsubscribe: "Om du inte vill få direktmeddelanden, går du till %{account} och avmarkerar 'Få e-post om direktmeddelanden'."
       unsubscribe_account: Mitt konto
     direct_message_for_sender:
-      subject: "Du har skickat ett meddelande"
+      subject: "Du har skickat ett nytt privat meddelande"
       title: "Du har skickat ett nytt privat meddelande till <strong>%{receiver}</strong> med innehållet:"
     user_invite:
-      ignore: "Om du inte har begärt denna inbjudan oroa inte dig, du kan ignorera detta mail."
+      ignore: "Om du inte har begärt denna inbjudan, behöver du inte bry dig om den."
       text: "Tack för att du registrerat dig på %{org}! Nu kan du snart vara med och delta, fyll bara i det här formuläret:"
       thanks: "Tack så mycket."
       title: "Välkommen till %{org}"
@@ -48,7 +48,7 @@ sv:
       subject: "Tack för att du skapat ett budgetförslag!"
       title: "Tack för att du skapat ett budgetförslag!"
       intro: "Hej <strong>%{author}</strong>,"
-      text: "Tack för att du skapat budgetförslaget <strong>%{investment}</strong> för medborgarbudgeten <strong>%{budget}</strong>."
+      text: "Tack för att du skapat din investering <strong>%{investment}</strong> för medborgarbudgeten <strong>%{budget}</strong>."
       follow: "Du kommer att få löpande information om hur processen går, och du kan också följa den på <strong>%{link}</strong>."
       follow_link: "Medborgarbudgetar"
       sincerely: "Vänliga hälsningar,"
@@ -58,12 +58,12 @@ sv:
       new: "Med anledning av det ber vi dig att skapa ett <strong>nytt budgetförslag</strong> som uppfyller kraven för den här processen. Du kan göra det med följande länk: %{url}."
       new_href: "nytt budgetförslag"
       sincerely: "Vänliga hälsningar"
-      sorry: "Ledsen för besväret och tack för din ovärderliga medverkan."
+      sorry: "Vi beklagar besväret och tackar dig återigen för din ovärderliga medverkan."
       subject: "Ditt budgetförslag '%{code}' har markerats som ej genomförbart"
     budget_investment_selected:
       subject: "Ditt budgetförslag '%{code}' har valts"
       hi: "Kära användare,"
-      share: "Börja samla röster och dela i sociala medier för att ditt budgetförslag ska kunna bli verklighet."
+      share: "Börja samla röster och dela i sociala medier för att ditt investeringsprojekt ska kunna bli verklighet."
       share_button: "Dela ditt budgetförslag"
       thanks: "Tack igen för att du deltar."
       sincerely: "Vänliga hälsningar"
@@ -76,8 +76,18 @@ sv:
       subject: "Ny kommentar kring utvärdering"
       title: Ny kommentar kring utvärdering för %{investment}
       hi: Hej
-      new_comment_by: Det finns en ny kommentar kring utvärdering från <strong>%{commenter}</strong> för budgetförslaget %{investment}
+      new_comment_by: Det finns en ny utvärderingskommentar från <strong>%{commenter}</strong> om budgetinvesteringen %{investment}
       commenter_info: "%{commenter}, %{time}:"
+    machine_learning_error:
+      link: "Gå till panelen Maskininlärning"
+      subject: "Maskininlärning – Ett fel uppstod när skriptet kördes"
+      text: "Ett fel uppstod när maskininlärningsskriptet kördes."
+      title: "Maskininlärningsskript"
+    machine_learning_success:
+      link: "Gå till maskininlärningspanelen"
+      subject: "Maskininlärning – Innehåll har genererats"
+      text: "Innehåll har genererats."
+      title: "Maskininlärningsskript"
     new_actions_notification_rake_created:
       subject: "Fler nyheter om ditt medborgarförslag"
       hi: "Hej %{name},"
@@ -123,11 +133,11 @@ sv:
       text_1: "Och nu är det dags för dina första 100 stöd!"
       text_2: "Varför 100?"
       text_3: "Av erfarenhet vet vi att den första dagen är central. Förutom energin som kommer av att publicera någonting nytt så har ett nyligen publicerat förslag en viktig synlighet genom att vara bland de uppmärksammade nya förslagen."
-      text_4: "Få 100 stöd den första dagen, och du har en gemenskap i ryggen."
+      text_4: "Få 100 stöd den första dagen, så har du en gemenskap i ryggen."
       text_5: "Det är därför vi har en utmaning att nå dit, men det går inte utan hjälp!"
       text_6: "Kom ihåg att i förslagspanelen så finns det nya tillgängliga resurser och rekommendationer kring spridning."
       list_1: "Kom in varje dag för att se utvecklingen och använda de tips och resurser som vi delar med dig. Det är idéer och praktiska lösningar för att få det stöd som du behöver."
-      list_2: "När du får mer stöd låser du upp nya och bättre resurser. Sluta inte att söka mer stöd och vi fortsätter att belöna och hjälpa dig!"
+      list_2: "När du får mer stöd låser du upp nya och bättre resurser. Sluta inte att söka mer stöd så fortsätter vi att belöna och hjälpa dig!"
       text_7: "Och för att du ska komma igång direkt..."
       text_8: "Här är en bra resurs som du kan använda!"
       text_9: "Du hittar även den nya rekommenderade spridningsåtgärden..."

@@ -5,10 +5,7 @@ ca:
       erase_account_link: Esborrar el meu compte
       finish_verification: Finalitzar verificació
       notifications: Notificacions
-      organization_name_label: Nom de l'associació
-      organization_responsible_name_placeholder: Representant de l'associació
       personal: Dades personals
-      phone_number_label: telèfon
       public_interests_my_title_list: Etiquetes d’elements que seguiu
       public_interests_user_title_list: Etiquetes d’elements que segueix aquest usuari
       save_changes_submit: Guardar canvis
@@ -22,7 +19,6 @@ ca:
       user_permission_verify: Per a poder realitzar totes les accions, verifica el teu compte.
       user_permission_verify_info: "* Només usuaris empadronats."
       user_permission_votes: Participar en les votacions finals*
-      username_label: Nom d'usuari
       verified_account: Compte verificat
       verify_my_account: Verificar el meu compte
   application:
@@ -62,7 +58,6 @@ ca:
       newest: Més nous primer
       oldest: Més antics primer
       most_commented: La majoria de comentaris
-    select_order: Ordenar per
     show:
       return_to_commentable: "Tornar a "
   comments_helper:
@@ -90,7 +85,6 @@ ca:
         submit_button: Guardar canvis
       show_link: Veure debat
     form:
-      debate_title: Títol del debat
       tags_instructions: Etiqueta aquest debat.
       tags_placeholder: "Escriu les etiquetes que desitges separades per coma (',')"
     index:
@@ -116,7 +110,6 @@ ca:
       search_results:
         one: " que conté el terme <strong>'%{search_term}'</strong>"
         other: " que conté el terme <strong>'%{search_term}'</strong>"
-      select_order: Ordenar per
       start_debate: Comença un nou debat
       title: Debats
       section_header:
@@ -131,8 +124,6 @@ ca:
     new:
       form:
         submit_button: Comença un nou debat
-      info: Si el que vols és fer una proposta, aquesta és la secció incorrecta, entra en %{info_link}.
-      info_link: crear nova proposta
       more_info: Más informació
       recommendation_four: Gaudeix d'aquest espai, de les veus que ho omplen, també és teu.
       recommendation_one: No escrigues el títol del debat o frases senceres en majúscules. En internet açò es considera cridar. I a ningú li agrada que li criden.
@@ -229,7 +220,6 @@ ca:
     header:
       administration_menu: Menú
       administration: Administrar
-      available_locales: Idiomes disponibles
       collaborative_legislation: processos legislatius
       debates: Debats
       locale: "Idioma:"
@@ -342,7 +332,6 @@ ca:
       map_location: "Ubicació del mapa"
       map_location_instructions: "Desplaceu-vos al mapa fins a la ubicació i poseu-hi el marcador."
       map_remove_marker: "Elimina el marcador de mapa"
-      map_skip_checkbox: "Aquesta proposta no té una ubicació concreta ni en tinc coneixement."
     index:
       featured_proposals: Destacades
       orders:
@@ -380,7 +369,6 @@ ca:
       search_results:
         one: " que conté el terme <strong>'%{search_term}'</strong>"
         other: " que conté el terme <strong>'%{search_term}'</strong>"
-      select_order: Ordenar per
       select_order_long: "Estàs veient les propostes"
       start_proposal: Crea una proposta
       title: Propostes ciutadanes
@@ -672,14 +660,13 @@ ca:
       back: "Tornar a la meua activitat"
   shared:
     edit: "Editar proposta"
+    filter: "Filtrar"
     save: "Desar"
     delete: "Borrar"
     "yes": "Sí"
     "no": "No"
     search_results: "Resultats de cerca"
     advanced_search:
-      author_type: "Per categoria d'autor"
-      author_type_blank: "Tria una categoria"
       date: "Per data"
       date_placeholder: "DD/MM/AAAA"
       date_range_blank: "Tria una data"
@@ -690,7 +677,6 @@ ca:
       date_5: "Personalitzada"
       from: "Des de"
       general: "Amb el text"
-      general_placeholder: "Escriu el text"
       search: "Filtrar"
       title: "Cerca avançada"
       to: "Fins a"
@@ -944,9 +930,6 @@ ca:
       title: Enllaços
       note: Afegiu els enllaços que siguin d’interès
       add_new_link: Afegeix un nou enllaç
-    link_fields:
-      label_placeholder: Títol de l'enllaç
-      url_placeholder: Adreça d'enllaç
   communities:
     show:
       surveys: Enquestes

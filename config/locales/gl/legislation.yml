@@ -118,3 +118,24 @@ gl:
         tags_label: "Categorías"
       not_verified: "Para votares propostas, %{verify_account}."
       process_title: Proceso de lexislación colaborativa
+    summary:
+      title: "Resumo"
+      votes:
+        zero: "%{count} votos"
+      debate_phase: "Fase previa"
+      proposals_phase: "Fase de propostas"
+      allegations_phase: "Fase de alegaciones"
+      debates:
+        zero: "Sen debates"
+        one: "%{count} debate"
+        other: "%{count} debates"
+      proposals:
+        zero: "Sen propostas"
+        one: "%{count} proposta"
+        other: "%{count} propostas"
+      comments:
+        zero: "Sen comentarios"
+        one: "%{count} comentario"
+        other: "%{count} comentarios"
+      top_comments:
+        zero: "Ningún comentario"

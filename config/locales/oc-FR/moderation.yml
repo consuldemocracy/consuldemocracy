@@ -12,9 +12,8 @@ oc:
         headers:
           comment: Comentar
           moderate: Moderar
-        hide_comments: Amagar de comentaris
+        hide: Amagar de comentaris
         ignore_flags: Marcar como revisadas
-        order: Òrdre
         orders:
           flags: Mai denonciadas
           newest: Mai nòus
@@ -34,9 +33,8 @@ oc:
         headers:
           debate: debat prealable
           moderate: Moderar
-        hide_debates: Amagar de debats
+        hide: Amagar de debats
         ignore_flags: Marcar como revisadas
-        order: Òrdre
         orders:
           created_at: Mai nòus
           flags: Mai denonciadas
@@ -62,9 +60,8 @@ oc:
         headers:
           moderate: Moderar
           proposal: la proposicion
-        hide_proposals: Amagar de Proposicions
+        hide: Amagar de Proposicions
         ignore_flags: Marcar como revisadas
-        order: Ordenar per
         orders:
           created_at: Mai recents
           flags: Mai denonciadas
@@ -81,9 +78,8 @@ oc:
         headers:
           moderate: Moderar
           budget_investment: Inversion budgetària
-        hide_budget_investments: Amagatz las inversions budgetàrias
+        hide: Amagatz las inversions budgetàrias
         ignore_flags: Marcar como revisadas
-        order: Ordenar per
         orders:
           created_at: Mai recents
           flags: Mai denonciadas
@@ -100,9 +96,8 @@ oc:
         headers:
           moderate: Moderar
           proposal_notification: Notificacion de la proposicion
-        hide_proposal_notifications: Amagar de Proposicions
+        hide: Amagar de Proposicions
         ignore_flags: Marcar como revisadas
-        order: Ordenar per
         orders:
           created_at: Mai recents
           moderated: Moderada

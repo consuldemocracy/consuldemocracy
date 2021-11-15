@@ -5,10 +5,7 @@ he:
       erase_account_link: מחק את החשבון שלי
       finish_verification: נא לאמת את החשבון
       notifications: התראות
-      organization_name_label: שם הארגון
-      organization_responsible_name_placeholder: נציג הארגון/ההתאגדות
       personal: פרטים אישיים
-      phone_number_label: מספר טלפון
       public_interests_my_title_list: תגיות של אלמנטים אחריהם אתה עוקב
       public_interests_user_title_list: תגיות של אלמנטים שמשתמש זה עוקב אחריהן
       save_changes_submit: שמירת שינויים
@@ -22,7 +19,6 @@ he:
       user_permission_verify: כדי לבצע את כל הפעולות, עליך לאמת את חשבונך
       user_permission_verify_info: "* רק עבור משתמשים/ות במפקד אוכלוסין."
       user_permission_votes: השתתפות בהצבעה הסופית
-      username_label: שם המשתמש/ת
       verified_account: החשבון אומת בהצלחה
       verify_my_account: אמת את החשבון שלי
   application:
@@ -70,7 +66,6 @@ he:
       newest: הכי חדשות
       oldest: הכי מוקדמות
       most_commented: עם הכי הרבה תגובות
-    select_order: סדר לפי
     show:
       return_to_commentable: "חזור אל "
   comments_helper:
@@ -102,7 +97,6 @@ he:
         submit_button: שמירת שינויים
       show_link: צפייה בדיון
     form:
-      debate_title: כותרת הדיון
       tags_instructions: סמן דיון זה.
       tags_placeholder: "נא לרשום את כל התגיות שברצונך להשתמש בהן, עם פסיק (',') מפריד ביניהן"
     index:
@@ -125,7 +119,11 @@ he:
         button: חיפוש
         placeholder: חיפוש דיונים...
         title: חיפוש
-      select_order: סדר לפי
+      search_results:
+        one: " המכיל את המונחים <strong>'%{search_term}'</strong>"
+        two: " המכיל את המונחים <strong>'%{search_term}'</strong>"
+        many: " המכיל את המונחים <strong>'%{search_term}'</strong>"
+        other: " המכיל את המונחים <strong>'%{search_term}'</strong>"
       start_debate: פתח דיון
       title: דיונים
       section_header:
@@ -140,8 +138,6 @@ he:
     new:
       form:
         submit_button: התחל דיון
-      info: אם ברצונך להציע הצעה, לא כאן המקום. עבר/י ל-%{info_link}. "
-      info_link: צור הצעה חדשה
       more_info: מידע נוסף
       recommendation_four: תהנה מהמרחב הציבורי ומהקולות הנשמעים כאן, מרחב זה שייך גם לך.
       recommendation_one: בכתיבה נבקשך להימנע מהקלדת סימני קריאה מרובים. כאן במרשתת, זה נחשב לצעוק. ואף אחד לא אוהב שצועקים עליו
@@ -177,6 +173,7 @@ he:
     direct_message: פנייה פרטית
     error: שגיאה זו מונעת
     errors: שגיאות אלו מונעות
+    not_saved: "מנעו מ %{resource} להישמר. <br>בדוק את השדות המסומנים בכדי לתקן אותם:"
     policy: מדיניות הפרטיות
     proposal: הצעה
     proposal_notification: "התראות"
@@ -232,7 +229,6 @@ he:
     header:
       administration_menu: מנהל מערכת
       administration: ניהול
-      available_locales: שפות לבחירה
       collaborative_legislation: חקיקה שיתופית
       debates: דיונים
       locale: "שפה:"
@@ -302,6 +298,9 @@ he:
       sign_in: התחברות באמצעות טוויטר
       sign_up: הרשמה באמצעות טוויטר
       name: טוויטר
+    info:
+      sign_in: "התחברות באמצעות:"
+      sign_up: "הרשמה באמצעות:"
     or_fill: "או דרך מילוי הטופס הבא:"
   proposals:
     create:
@@ -310,6 +309,7 @@ he:
     created:
       title: ברכות! עשית את הצעד הראשון.
       motivation: "חשוב להכין את קמפיין ההשקה עבור ההצעה שלך לצורך הצלחתה. הימים הראשונים הם המכריעים."
+      motivation_2: "<strong>אם את רוצה המלצות בהכנת הפרסום. השאר את הצעתך כטיוטה ואנו נדריך אותך כיצד לעשות זאת.</strong>"
       publish: . לא, אני רוצה לפרסם את ההצעה
       dashboard: . כן, אני רוצה עזרה, ואפרסם זאת מאוחר יותר
       preview_title: כך תיראה הצעתך כאשר תפרסם אותה
@@ -345,7 +345,6 @@ he:
       map_location: "מיקום מפה"
       map_location_instructions: "נווט במפה למיקום ומקם את הסמן."
       map_remove_marker: "הסר סמן מפה"
-      map_skip_checkbox: "להשקעה זו אין מיקום מדויק או שאיני מודע למיקום."
     index:
       featured_proposals: מומלצים
       orders:
@@ -380,7 +379,11 @@ he:
         button: חיפוש
         placeholder: חיפוש הצעות ...
         title: חיפוש
-      select_order: מיין לפי
+      search_results:
+        one: " המכיל את המונחים <strong>'%{search_term}'</strong>"
+        two: " המכיל את המונחים <strong>'%{search_term}'</strong>"
+        many: " המכיל את המונחים <strong>'%{search_term}'</strong>"
+        other: " המכיל את המונחים <strong>'%{search_term}'</strong>"
       select_order_long: "ההצעות מוצגות לך על-פי סדר:"
       start_proposal: העל/י הצעה חדשה
       title: הצעות
@@ -474,6 +477,7 @@ he:
       poster: פוסטר
       recommended_actions: פעולות מומלצות
       messages: הודעות למשתמשים
+      related_content: תוכן רלוונטי
     form:
       request: בקשה
     create_request:
@@ -603,6 +607,7 @@ he:
         sent: האימייל נשלח
     mailer:
       forward:
+        subtitle: "אם אתה תומך בי, <br>נגיע לזה."
         support_button: תמיכה בהצעה זו
         share_in: שתף ב
         hi: "שלום!"
@@ -642,6 +647,7 @@ he:
       back: חזרה להצבעה
       cant_answer_not_logged_in: "נדרשת %{signin} או %{signup} בכדי להשתתף"
       comments_tab: הערות
+      cant_answer_verify: "נדרש %{verify_link} על מנת לענות תשובה."
       verify_link: "לאמת את החשבון"
       cant_answer_expired: "הצבעה זו הסתיימה"
       cant_answer_wrong_geozone: "הצבעה זו אינה זמינה לאזור הגאוגרפי שלך"
@@ -682,14 +688,13 @@ he:
       back: "חזרה לפעילות שלי"
   shared:
     edit: "ערוך"
+    filter: "Filter"
     save: "שמירה"
     delete: "מחיקה"
     "yes": "כן"
     "no": "לא"
     search_results: "תוצאות החיפוש"
     advanced_search:
-      author_type: "לפי קטגוריית המחבר/ת"
-      author_type_blank: "בחר/י קטגוריה"
       date: "לפי תאריך"
       date_placeholder: "יום/חודש/שנה"
       date_range_blank: "בחירת תאריך"
@@ -700,7 +705,6 @@ he:
       date_5: "התאמה אישית"
       from: "מאת"
       general: "כולל את המלל"
-      general_placeholder: "נא להקליד את המלל"
       search: "סינון"
       title: "חיפוש מתקדם"
       to: "אל"
@@ -750,6 +754,7 @@ he:
       districts: "באזור הגאוגרפי שלי"
       districts_list: "רשימת אזורים גאוגרפים"
       categories: "תחומים"
+    target_blank: " (הקישור יפתח בחלון חדש)"
     you_are_in: "את/ה נמצא/ת ב-"
     unflag: הסרת דגל
     unfollow_entity: "הפסק לעקוב אחר %{entity}"
@@ -769,6 +774,9 @@ he:
       title: המלצות
       see_more: ראה עוד המלצות
       hide: הסתר המלצות
+    translations:
+      remove_language: הסרת שפה
+      add_language: הוספת שפה
   social:
     facebook: "%{org} פייסבוק"
     twitter: "%{org} טוויטר"
@@ -792,6 +800,11 @@ he:
     manage:
       all: "אין לך הרשאה לבצע פעולת '%{action}' על %{subject}."
   users:
+    login_to_comment: "נדרשת %{signin} או %{signup} בכדי להשאיר תגובה"
+    login_to_continue: "נדרשת %{signin} או %{signup} בכדי להמשיך"
+    signin: "התחברות"
+    signup: "הרשמה"
+    verify_account: "לאמת את החשבון"
     direct_messages:
       new:
         direct_messages_bloqued: "משתמש/ת זה/ו בחר/ה שלא לקבל הודעות ופניות ישירות"
@@ -947,9 +960,6 @@ he:
       title: קישורים
       note: הוסף את הקישורים בעלי עניין רלוונטי
       add_new_link: הוסף קישור חדש
-    link_fields:
-      label_placeholder: כותרת הקישור
-      url_placeholder: כתובת הקישור
   communities:
     show:
       surveys: סקרים

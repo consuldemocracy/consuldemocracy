@@ -1,6 +1,8 @@
 pl:
   documents:
     title: Dokumenty
+    max_documents_allowed_reached: Osiągnąłeś maksymalną dozwoloną liczbę dokumentów! <strong> Musisz usunąć jeden, zanim prześlesz inny. </strong>
+    additional: Dodatkowa dokumentacja
     form:
       title: Dokumenty
       title_placeholder: Dodaj tytuł opisowy dla dokumentu

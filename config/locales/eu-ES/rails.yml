@@ -36,6 +36,9 @@ eu:
       - October
       - November
       - December
+  errors:
+    messages:
+      model_invalid: "Egiaztapenaren errorea: %{errors}"
   number:
     human:
       format:

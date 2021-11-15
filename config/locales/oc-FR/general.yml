@@ -5,10 +5,7 @@ oc:
       erase_account_link: Esborrar lo mieu compte
       finish_verification: Finalizar verificacion
       notifications: Notificacions
-      organization_name_label: Nom de l'associacion
-      organization_responsible_name_placeholder: en Representant de l'associacion
       personal: Donadas personalas
-      phone_number_label: telefòn
       public_interests_my_title_list: Etiquetas d’elements que seguissètz
       public_interests_user_title_list: Etiquetas d’elements que seguís aquel usatgièr
       save_changes_submit: Gardar de cambiaments
@@ -22,7 +19,6 @@ oc:
       user_permission_verify: Per poder realizar totas las accions, verifica lo tieu compte.
       user_permission_verify_info: "* Solament d'usatgièrs empadronats."
       user_permission_votes: Participar a las votacions finalas*
-      username_label: Nom d'usatgièr
       verified_account: Compte verificat
       verify_my_account: Verificar lo mieu compte
   application:
@@ -62,7 +58,6 @@ oc:
       newest: Mai nòus primièr
       oldest: Mai ancians primièr
       most_commented: La majoritat de comentaris
-    select_order: Ordenar per
     show:
       return_to_commentable: "Tornar a "
   comments_helper:
@@ -90,7 +85,6 @@ oc:
         submit_button: Gardar de cambiaments
       show_link: Veire debat
     form:
-      debate_title: Títol del debat
       tags_instructions: Etiqueta aquel debat.
       tags_placeholder: "Escriu las etiquetas que desiras separadas per coma (',')"
     index:
@@ -116,7 +110,6 @@ oc:
       search_results:
         one: " que conten lo tèrme <strong>'%{search_term}'</strong>"
         other: " que conten lo tèrme <strong>'%{search_term}'</strong>"
-      select_order: Ordenar per
       start_debate: Comença un nòu debat
       title: Debats
       section_header:
@@ -131,8 +124,6 @@ oc:
     new:
       form:
         submit_button: Comença un nòu debat
-      info: Se çò que vòles es far una proposicion, aquela es la seccion incorrècta, dintra en %{info_link}.
-      info_link: crear nòva proposicion
       more_info: Mai informacion
       recommendation_four: Gaudís d'aquel espaci, de las voses qu'o emplisson, es tanben tieu.
       recommendation_one: Escrigas pas lo títol del debat o frasas entièras en majusculas. Dins internet aquò se considèra cridar. E a degun li agrada que li cridan.
@@ -229,7 +220,6 @@ oc:
     header:
       administration_menu: Menu
       administration: Administrar
-      available_locales: d'Idiòmas disponibles
       collaborative_legislation: de procèsses legislatius
       debates: De debats
       locale: "Idiòma:"
@@ -295,6 +285,9 @@ oc:
       sign_in: Dintra amb Twitter
       sign_up: Enregistra-te amb Twitter
       name: Twitter
+    info:
+      sign_in: "Dintra amb:"
+      sign_up: "Enregistra-te amb:"
     or_fill: "O ramplís lo seguent formulari:"
   proposals:
     create:
@@ -339,7 +332,6 @@ oc:
       map_location: "Ubicacion de la mapa"
       map_location_instructions: "Desplaçatz-vos a la mapa fins a l'ubicacion e metètz-i lo mercador."
       map_remove_marker: "Elimina lo mercador de mapa"
-      map_skip_checkbox: "Aquela proposicion a pas una ubicacion concrèta ni n'ai coneissença."
     index:
       featured_proposals: Destacadas
       orders:
@@ -377,7 +369,6 @@ oc:
       search_results:
         one: " que conten lo tèrme <strong>'%{search_term}'</strong>"
         other: " que conten lo tèrme <strong>'%{search_term}'</strong>"
-      select_order: Ordenar per
       select_order_long: "veses las proposicions"
       start_proposal: Crèa una proposicion
       title: De proposicions ciutadanas
@@ -669,14 +660,13 @@ oc:
       back: "Tornar a la miá activitat"
   shared:
     edit: "Editar proposicion"
+    filter: "Filtrar"
     save: "Plegar"
     delete: "Suprimís"
     "yes": "Òc"
     "no": "Pas"
     search_results: "De resultats de cèrca"
     advanced_search:
-      author_type: "Per categoria d'autor"
-      author_type_blank: "Escuelh una categoria"
       date: "Per data"
       date_placeholder: "DD/MM/AAAA"
       date_range_blank: "Escuelh una data"
@@ -687,7 +677,6 @@ oc:
       date_5: "Personalizada"
       from: "Dempuèi"
       general: "Amb lo tèxt"
-      general_placeholder: "Escriu lo tèxt"
       search: "filtre"
       title: "Cèrca avançada"
       to: "Fins a"
@@ -941,9 +930,6 @@ oc:
       title: De ligams
       note: Apondètz los ligams que sián d’interès
       add_new_link: Apond un nòu ligam
-    link_fields:
-      label_placeholder: Títol del ligam
-      url_placeholder: Adreça de ligam
   communities:
     show:
       surveys: d'Enquèstas

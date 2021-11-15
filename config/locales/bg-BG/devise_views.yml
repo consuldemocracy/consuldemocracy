@@ -2,7 +2,6 @@ bg:
   devise_views:
     confirmations:
       new:
-        email_label: Имейл
         submit: Изпратете отново инструкции
         title: Изпратете отново инструкции за потвърждение
       show:
@@ -39,12 +38,7 @@ bg:
     organizations:
       registrations:
         new:
-          email_label: Имейл
-          organization_name_label: Име на организация
           password_confirmation_label: Потвърдете парола
-          password_label: Парола
-          phone_number_label: Телефонен номер
-          responsible_name_label: Пълно име на лицето, отговорно за колектива
           responsible_name_note: Това ще бъде лицето, представляващо сдружението / колектива, от чието име са представени предложенията
           submit: Регистрирайте се
           title: Регистрирайте се като организация или колектив
@@ -62,13 +56,10 @@ bg:
         password_label: Нова парола
         title: Променете паролата си
       new:
-        email_label: Имейл
         send_submit: Изпратете инструкции
         title: Забравена парола?
     sessions:
       new:
-        login_label: Имейл или потребителско име
-        password_label: Парола
         remember_me: Запомнете ме
         submit: Въведете
         title: Впишете се
@@ -106,12 +97,9 @@ bg:
           waiting_for: "Очаква се потвърждение на:"
         new:
           cancel: Отказ за вход
-          email_label: Имейл
           organization_signup: Представлявате ли организация или колектив? %{signup_link}
           organization_signup_link: Регистрирайте се тук
           password_confirmation_label: Потвърдете парола
-          password_label: Парола
-          redeemable_code: Код за потвърждение, получен по имейл (незадължително)
           submit: Регистрирайте
           terms: С регистрацията си приемате %{terms}
           terms_link: начини и условия за употреба
@@ -119,7 +107,6 @@ bg:
           title: Регистрирайте
           username_is_available: Налично потребителско име
           username_is_not_available: Потребителско име вече се използва
-          username_label: Потребителско име
           username_note: Име, което се показва до вашите публикации
         success:
           back_to_index: Разбирам, върнете се на главната страница

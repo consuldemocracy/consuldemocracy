@@ -7,8 +7,6 @@ tr:
       delete_button: Görseli kaldır
       note: "Burada belirtilen kriterlere uygun bir görsel yükleyebilirsiniz: %{accepted_content_types}, %{max_file_size} MB'ye kadar."
       add_new_image: Görsel ekle
-      admin_title: "Görsel"
-      admin_alt_text: "Görsel için alternatif metin"
     actions:
       destroy:
         notice: Görsel başarıyla silindi.

@@ -53,6 +53,8 @@ ast:
         assigned_valuators: Evaluaores asignaos
       edit:
         dossier: Informe
+        price: "Coste (%{currency}) <small>(dato público)</small>"
+        price_first_year: "Coste en el primer año (%{currency}) <small>(opcional, dato no público)</small>"
         feasibility: Viabilidá
         save: Guardar Cambeos
       notice:

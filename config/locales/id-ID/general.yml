@@ -5,10 +5,7 @@ id:
       erase_account_link: Hapus akun saya
       finish_verification: Verifikasi lengkap
       notifications: Pemberitahuan
-      organization_name_label: Nama organisasi
-      organization_responsible_name_placeholder: Perwakilan organisasi/kolektif
       personal: Detail pribadi
-      phone_number_label: Nomor telepon
       public_interests_my_title_list: Tag dari unsur-unsur yang Anda mengikuti
       public_interests_user_title_list: Tag dari unsur-unsur yang Anda mengikuti
       save_changes_submit: Simpan perubahan
@@ -21,7 +18,6 @@ id:
       user_permission_verify: Untuk melakukan semua tindakan memverifikasi akun anda.
       user_permission_verify_info: "* Hanya untuk pengguna di Sensus."
       user_permission_votes: Berpartisipasi pada akhir suara
-      username_label: Nama pengguna
       verified_account: Account diverifikasi
       verify_my_account: Verifikasi akun saya
   application:
@@ -38,6 +34,10 @@ id:
       responses:
         zero: Tidak ada tanggapan
         other: "1 detik\n\n%{count} detik"
+      responses_show:
+        zero: Tidak ada tanggapan
+      responses_collapse:
+        zero: Tidak ada tanggapan
       user_deleted: Pengguna dihapus
       votes:
         zero: Tidak ada suara
@@ -51,7 +51,6 @@ id:
       newest: Yang terbaru pertama
       oldest: Dahulukan yang tertua
       most_commented: Paling commented
-    select_order: Urut berdasarkan
     show:
       return_to_commentable: "Kembali ke "
   comments_helper:
@@ -77,7 +76,6 @@ id:
         submit_button: Simpan perubahan
       show_link: Melihat perdebatan
     form:
-      debate_title: Debat judul
       tags_instructions: Tag debat ini.
       tags_placeholder: "Masukkan tag anda ingin gunakan, dipisahkan dengan koma (',')"
     index:
@@ -96,7 +94,8 @@ id:
         button: Cari
         placeholder: Cari perdebatan...
         title: Cari
-      select_order: Dipesan oleh
+      search_results:
+        other: " berisi istilah <strong>%{search_term}</strong>"
       start_debate: Memulai debat
       title: Perdebatan
       section_header:
@@ -111,8 +110,6 @@ id:
     new:
       form:
         submit_button: Memulai debat
-      info: Jika anda ingin membuat sebuah proposal, ini adalah bagian yang salah, masukkan %{info_link}.
-      info_link: buat proposal baru
       more_info: Informasi lebih lanjut
       recommendation_four: Menikmati ruang ini dan suara-suara yang mengisi itu. Itu milik anda juga.
       recommendation_one: Jangan gunakan huruf kapital untuk judul perdebatan atau keseluruhan kalimat. Di internet, hal ini dianggap berteriak. Dan tak ada orang yang berteriak.
@@ -145,6 +142,7 @@ id:
     direct_message: pesan pribadi
     error: kesalahan
     errors: kesalahan
+    not_saved: "menghalanginya %{resource} disimpan. <br>Silakan periksa ditandai bidang untuk mengetahui bagaimana untuk memperbaikinya:"
     policy: Kebijakan Privasi
     proposal: Usulan
     proposal_notification: "Pemberitahuan"
@@ -166,6 +164,14 @@ id:
       firefox: Firefox
       ie: Kami telah mendeteksi bahwa Anda browsing dengan Internet Explorer. Untuk pengalaman yang disempurnakan, sebaiknya gunakan %{firefox} atau %{chrome}.
       ie_title: Situs ini tidak dioptimalkan untuk peramban
+    dashboard:
+      proposal_header:
+        published: Dipublikasikan
+        draft: Konsep
+      proposal_totals:
+        supports:
+          zero: Tidak ada dukungan
+          other: "Mendukung"
     footer:
       accessibility: Aksesibilitas
       conditions: Syarat dan ketentuan penggunaan
@@ -182,7 +188,6 @@ id:
     header:
       administration_menu: Admin
       administration: Administrasi
-      available_locales: Bahasa yang tersedia
       collaborative_legislation: Undang-undang proses
       debates: Perdebatan
       locale: "Bahasa:"
@@ -236,11 +241,16 @@ id:
       sign_in: Login dengan Google
       sign_up: Login dengan Google
       name: Twitter
+    info:
+      sign_in: "Masuk dengan:"
+      sign_up: "Mendaftar dengan:"
     or_fill: "Atau mengisi formulir berikut:"
   proposals:
     create:
       form:
         submit_button: Membuat proposal
+    share:
+      dashboard: Lihat Selengkapnya
     edit:
       editing: Cetak proposal
       form:
@@ -269,7 +279,6 @@ id:
       map_location: "Peta lokasi"
       map_location_instructions: "Arahkan peta ke lokasi dan tempatkan sebuah penanda."
       map_remove_marker: "Hapus penanda peta"
-      map_skip_checkbox: "Proposal ini tidak memiliki beton lokasi atau aku tidak menyadari hal itu."
     index:
       featured_proposals: Unggulan
       orders:
@@ -296,7 +305,8 @@ id:
         button: Cari
         placeholder: Cari proposal...
         title: Cari
-      select_order: Dipesan oleh
+      search_results:
+        other: " berisi istilah <strong>%{search_term}</strong>"
       select_order_long: "Anda sedang melihat proposal sesuai untuk:"
       start_proposal: Buat proposal
       title: Proposal
@@ -361,6 +371,53 @@ id:
     update:
       form:
         submit_button: Simpan perubahan
+  dashboard:
+    menu:
+      community: Masyarakat
+      polls: Jajak pendapat
+      related_content: Konten terkait
+    progress:
+      supports: Mendukung
+    index:
+      edit_proposal_link: Cetak proposal
+      retire: Bagikan proposal
+    new_request:
+      links: Tautan
+    recommended_actions:
+      pending_title: Tertunda
+      done_title: Dilakukan
+    goal:
+      days:
+        other: "1 hari\n\n%{count} hari"
+    community:
+      access_community: Akses komunitas
+      participants: Peserta
+      debates: Perdebatan
+      comments: Komentar
+    polls:
+      index:
+        title: Jajak pendapat
+        create: Buat jajak pendapat
+        links: Tautan
+      new:
+        title: Jajak pendapat baru
+        submit: Buat jajak pendapat
+      edit:
+        submit: Perbarui pemilihan
+      poll:
+        responses:
+          other: "1 detik\n\n%{count} detik"
+      question_fields:
+        add_answer: Tambahkan jawaban
+    poster:
+      options:
+        preview: Tinjauan
+    mailing:
+      mailing_options:
+        preview: Tinjauan
+    mailer:
+      forward:
+        support_button: Mendukung proyek ini
   polls:
     all: "Semua"
     no_dates: "tidak ada tanggal yang ditetapkan"
@@ -389,6 +446,7 @@ id:
       back: Kembali ke pemegang
       cant_answer_not_logged_in: "Anda harus %{signin} atau %{signup} untuk berpartisipasi."
       comments_tab: Komentar
+      cant_answer_verify: "Anda harus %{verify_link} dalam rangka untuk menjawab."
       verify_link: "memverifikasi akun anda"
       cant_answer_expired: "Jajak pendapat ini telah selesai."
       cant_answer_wrong_geozone: "Pertanyaan ini tidak tersedia pada geozone."
@@ -427,14 +485,13 @@ id:
       back: "Kembali ke aktivitas saya"
   shared:
     edit: "Sunting"
+    filter: "Penyaring"
     save: "Simpan"
     delete: "Hapus"
     "yes": "Ya"
     "no": "Tidak"
     search_results: "Hasil pencarian"
     advanced_search:
-      author_type: "Oleh penulis kategori"
-      author_type_blank: "Pilih sebuah kategori"
       date: "Menurut tanggal"
       date_placeholder: "DD/MM/YYYY"
       date_range_blank: "Pilih sebuah tanggal"
@@ -445,7 +502,6 @@ id:
       date_5: "Disesuaikan"
       from: "Dari"
       general: "Dengan teks"
-      general_placeholder: "Menulis teks"
       search: "Penyaring"
       title: "Pencarian lanjutan"
       to: "Kepada"
@@ -485,6 +541,7 @@ id:
       districts: "Kabupaten"
       districts_list: "Daftar kabupaten"
       categories: "Kategori"
+    target_blank: " (link terbuka didalam jendela baru)"
     you_are_in: "Anda berada di"
     unfollow_entity: "Berhenti ikuti %{entity}"
     outline:
@@ -518,6 +575,11 @@ id:
     manage:
       all: "Anda tidak memiliki izin untuk melaksanakan aksi '%{action}' pada %{subject}."
   users:
+    login_to_comment: "Anda harus %{signin} atau %{signup} untuk meninggalkan sebuah komentar."
+    login_to_continue: "Anda harus %{signin} atau %{signup} untuk melanjutkan."
+    signin: "masuk"
+    signup: "daftar"
+    verify_account: "verivikasi akun anda"
     direct_messages:
       new:
         direct_messages_bloqued: "Pengguna ini telah memutuskan untuk tidak menerima pesan langsung"
@@ -532,6 +594,7 @@ id:
       deleted_proposal: Proposal ini telah dihapus
       deleted_budget_investment: Ini proyek investasi yang telah dihapus
       proposals: Proposal
+      proposals_status: Status
       debates: Perdebatan
       budget_investments: Anggaran investasi
       comments: Komentar
@@ -553,7 +616,10 @@ id:
       send_private_message: "Kirim pesan pribadi"
     proposals:
       retired: "Pensiun proposal"
+      draft: Konsep
+      published: Dipublikasikan
       see: "Melihat proposal"
+      actions: Tindakan
   votes:
     agree: Saya setuju
     anonymous: Terlalu banyak anonim suara untuk mengakui suara %{verify_account}.
@@ -629,3 +695,9 @@ id:
       alt: Pilih teks yang anda inginkan untuk komentar dan tekan tombol berbentuk pinsil.
       text: Untuk mengomentari dokumen ini anda harus %{sign_in} atau %{sign_up}. Kemudian pilih teks yang anda inginkan untuk komentar dan tekan tombol berbentuk pinsil.
       title: Bagaimana saya dapat mengomentari dokumen ini?
+  links:
+    form:
+      delete_button: Hapus
+      cancel_button: Batal
+    nested_links:
+      title: Tautan

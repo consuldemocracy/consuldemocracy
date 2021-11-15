@@ -12,9 +12,8 @@ id:
         headers:
           comment: Komentar
           moderate: Moderat
-        hide_comments: Sembunyikan komentar
+        hide: Sembunyikan komentar
         ignore_flags: Tandai seperti yang dilihat
-        order: Memesan
         orders:
           flags: Paling ditandai
           newest: Terbaru
@@ -34,9 +33,8 @@ id:
         headers:
           debate: Perdebatan
           moderate: Moderat
-        hide_debates: Sembunyikan perdebatan
+        hide: Sembunyikan perdebatan
         ignore_flags: Tandai seperti yang dilihat
-        order: Memesan
         orders:
           created_at: Terbaru
           flags: Paling ditandai
@@ -62,9 +60,8 @@ id:
         headers:
           moderate: Moderat
           proposal: Usulan
-        hide_proposals: Sembunyikan usulan
+        hide: Sembunyikan usulan
         ignore_flags: Tandai seperti yang dilihat
-        order: Dipesan oleh
         orders:
           created_at: Terbaru
           flags: Paling ditandai
@@ -81,9 +78,8 @@ id:
         headers:
           moderate: Moderat
           budget_investment: Anggaran investasi
-        hide_budget_investments: Penetapan anggaran investasi
+        hide: Penetapan anggaran investasi
         ignore_flags: Tandai seperti yang dilihat
-        order: Dipesan oleh
         orders:
           created_at: Terbaru
           flags: Paling ditandai
@@ -100,9 +96,8 @@ id:
         headers:
           moderate: Moderat
           proposal_notification: Proposal pemberitahuan
-        hide_proposal_notifications: Sembunyikan usulan
+        hide: Sembunyikan usulan
         ignore_flags: Tandai seperti yang dilihat
-        order: Dipesan oleh
         orders:
           created_at: Terbaru
           moderated: Dimoderasi

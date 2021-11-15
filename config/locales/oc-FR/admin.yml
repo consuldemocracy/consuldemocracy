@@ -6,6 +6,7 @@ oc:
       actions: d'Accions
       confirm: '¿Estás segur?'
       confirm_hide: Confirmatz la moderacion
+      delete: "Borrar"
       hide: Amagar
       hide_author: Bloquejar l'autor
       restore: Tornar a mostrar
@@ -13,15 +14,12 @@ oc:
       unmark_featured: traire destacat
       edit: Editar proposicion
       configure: Configurar
-      delete: Borrar
     officing_booth:
       title: "Podètz oficialitzar l'estand situat a %{booth}. S'aiçò es pas corrècte, contunhatz pas e trucatz al numèro de telefòn d’ajuda. Mercés."
     banners:
       index:
         title: Banners
         create: crear banner
-        edit: crear banner
-        delete: eliminar banner
         filters:
           all: totes
           with_active: Actius
@@ -62,18 +60,22 @@ oc:
         type: tipe
         no_activity: I a pas activitat de moderadors.
     budgets:
+      actions:
+        edit: "Edita budgèt"
+        preview: "Previsualitzar"
       index:
         title: de Budgèts participatius
         new_link: Crear nòu budgèt
         filter: Filtrar
         filters:
+          all: totes
           open: dobèrt
           finished: Finalizats
         budget_investments: Gerir de projèctes
+        table_budget_type: "tipe"
+        table_draft: "Borrolhon"
         table_name: Nome
         table_phase: fasa
-        edit_groups: Edita de grops de partidas
-        edit_budget: Edita budgèt
         admin_ballots: de Bilhetas d’administracion
         no_budgets: "I a pas de budgèts."
       create:
@@ -86,7 +88,6 @@ oc:
         phase: fasa
         enabled: activa
         actions: d'Accions
-        edit_phase: Fasa d'edicion
         active: Actius
         blank_dates: Las datas son en blanc
         administrators:
@@ -103,8 +104,6 @@ oc:
         success_notice: Lo budgèt s'es suprimit corrèctament
         unable_notice: Podètz pas suprimir un budgèt qu'aja d'inversions associadas
         unable_notice_polls: Podètz pas suprimir un budgèt qu'aja un sondatge associat
-      new:
-        title: Nòu budgèt ciutadan
       winners:
         calculate: Calculatz las inversions del ganhant
         calculated: Se calcularàn los ganhants, pòt trigar una minuta.
@@ -128,13 +127,8 @@ oc:
         create: "Crèa un grop nòu"
         edit: "Edita lo grop"
         submit: "Plega lo grop"
-      index:
-        back: "Tornar als budgèts"
     budget_headings:
       no_headings: "I a pas cap de títol."
-      amount:
-        one: "I a 1 encapçalament"
-        other: "N’i a %{count} de títols"
       create:
         notice: "Lo encapçalament creat corrèctament!"
       update:
@@ -153,6 +147,7 @@ oc:
         back: "Tornatz a grops"
     budget_phases:
       edit:
+        title: "Fasa d'edicion"
         description_help_text: Aquel tèxt apareisserà a l'entèsta quand la fasa siá activa
         enabled_help_text: Aquela fasa serà publica en lo calendari de fasas del budgèt, de mai d’activa per quina autra intencion que siá
         save_changes: Gardar de cambiaments
@@ -251,6 +246,11 @@ oc:
         tags_placeholder: "Escriu las etiquetas que vòlgas separadas per comes (,)"
         undefined: Sens definir
       search_unfeasible: Cercar inviables
+    budgets_wizard:
+      creation_timeline:
+        budget: Budgèt participatiu
+        groups: de Grops
+        headings: Rúbriques
     milestones:
       index:
         table_id: "ID"
@@ -259,7 +259,6 @@ oc:
         table_publication_date: "Data de publicacion"
         table_status: Estat
         table_actions: "d'Accions"
-        delete: "Elimina la hita"
         no_milestones: "Avètz pas definit de hitas"
         image: "image"
         show_image: "Mòstra l'image"
@@ -476,10 +475,6 @@ oc:
           allegations_phase: Fasa de comentaris
           proposals_phase: Fasa de proposicions
           use_markdown: Emplega Markdown per formatar lo tèxt
-          title_placeholder: Escriu lo títol del procès
-          summary_placeholder: Resumit cuert de la descripcion
-          description_placeholder: Apond una descripcion del procès
-          additional_info_placeholder: Apond quina informacion addicionala que siá que pòsca èsser d'interès
           homepage_description: Podètz aicí explicar lo contengut del procès
           banner_title: de Colors d'entèsta
         index:
@@ -493,11 +488,10 @@ oc:
           title: Crear nòu procès de legislacion col·laborativa
           submit_button: crear procès
         proposals:
-          select_order: Ordenar per
           orders:
-            id: Id
-            title: Títol
-            supports: d'Avals
+            id: "Id"
+            title: "Títol"
+            supports: "d'Avals"
         process:
           title: procès
           comments: Comentarios
@@ -550,9 +544,7 @@ oc:
             status:
               draft: Poiràs previsualitzar-coma loguejat, degun o poirà mai veire
               published: Serà visible per totes
-          title_placeholder: Escriu lo títol d'aquela version del borrolhon
           changelog_placeholder: Descriu quin cambiament considerable que siá amb la version anteriora
-          body_placeholder: Escriu lo tèxt del borrolhon
         index:
           title: de Versions del borrolhon
           create: crear version
@@ -583,7 +575,6 @@ oc:
           submit_button: Gardar de cambiaments
         form:
           add_option: + Apondre responsa barrada
-          title_placeholder: Apond una question
           value_placeholder: Escriu una responsa barrada
           question_options: "de Responsas possiblas (opcional, per defècte, responsas dubèrtas)"
         index:
@@ -613,6 +604,12 @@ oc:
         add: Añadir como President de taula
       search:
         title: "de Gestors: cerca d’usatgièrs"
+    sdg_managers:
+      index:
+        no_sdg_managers: I a pas d'usatgièrs.
+    sdg/managers:
+      sdg/manager:
+        add: Añadir como President de taula
     menu:
       activity: Activitat de moderadors
       admin: Menu d'administracion
@@ -1111,7 +1108,6 @@ oc:
         location: "Ubicacion"
       booth:
         shifts: "Gerís los torns"
-        edit: "Editar bóstia"
     officials:
       edit:
         destroy: Eliminar condicion de 'Carga Público'
@@ -1133,7 +1129,6 @@ oc:
       level_4: nivèl 4
       level_5: nivèl 5
       search:
-        edit_official: Edita carga publica
         make_official: Convertir a carga publica
         title: "de Cargas Publicas: Cèrca d'usatgièrs"
         no_results: Pas s’an trobat de posicions oficialas.
@@ -1187,6 +1182,13 @@ oc:
           without_confirmed_hide: Sens decidir
         title: de Proposicions amagas
         no_hidden_proposals: I a pas de proposicions amagas.
+    hidden_proposal_notifications:
+      index:
+        filter: Filtrar
+        filters:
+          all: totes
+          with_confirmed_hide: Confirmadas
+          without_confirmed_hide: Sens decidir
     settings:
       flash:
         updated: Valor actualizada
@@ -1199,9 +1201,6 @@ oc:
         feature_flags: de Foncionalitats
         features:
           enabled: "Foncionalitat activada"
-          disabled: "Foncionalitat desactivada"
-          enable: "Activa"
-          disable: "Desactivar"
         map:
           title: Configuracion de la mapa
           help: Podètz aicí personalizar la manièra coma se mòstra la mapa als usatgièrs. Arrossegueu Lo mercador de la mapa o faguèt clic a quin luòc que siá sus la mapa, configuratz lo boton desirat e faguèt clic al boton"Actualiza".
@@ -1219,14 +1218,10 @@ oc:
       remote_census_request_name: Sol·licita dades
       remote_census_response_name: Dades de resposta
       setting: Caracteristica
-      setting_actions: d'Accions
       setting_name: Ambientació
-      setting_status: Estat
       setting_value: valor
       no_description: "Sens descripcion"
     shared:
-      true_value: "Òc"
-      false_value: "Pas"
       search:
         label:
           booths: "Cercar bóstia per nom"
@@ -1237,6 +1232,7 @@ oc:
           poll_questions: "Cercar de questions"
           proposals: "Cercar de proposicions per títol, còdi, descripcion o question"
           users: "Cercar usatgièr per nom o e-mail"
+        search: "Cercar"
       search_results: "de Resultats de cèrca"
       no_search_results: "Pas se an de trobats resultats."
       actions: d'Accions
@@ -1378,9 +1374,12 @@ oc:
           question_name: question
           origin_web: de Participants web
           origin_total: Total de participants
+      sdg:
+        debates: "Debats"
+        polls: "votacions"
+        proposals: "De proposicions ciutadanas"
     tags:
       create: Crèa tèma
-      destroy: Suprimís lo tèma
       index:
         add_tag: Apond un nòu tèma de debat
         title: de Tèmas de debat
@@ -1388,6 +1387,7 @@ oc:
         help: "Quand un usatgièr crèa una proposicion, los tèmas seguents se suggerisson coma etiquetas predeterminadas."
     users:
       columns:
+        id: ID
         name: Nome
         email: Lo tieu corrièr electronic
         document_number: Numèro de document
@@ -1396,6 +1396,9 @@ oc:
       index:
         title: d'usatgièrs bloquejats
         no_users: I a pas d'usatgièrs.
+        filter: Filtrar
+        filters:
+          active: Actius
       search:
         placeholder: Cercar usatgièr per email, nom o DNI
     verifications:
@@ -1552,3 +1555,7 @@ oc:
           created: Registres creats
         local_census_records:
           no_records_found: No s’han trobat registres.
+    machine_learning:
+      related_content: "Contengut ligat"
+      tab_help: "Ajuda"
+      tags: "d'Etiquetas"

@@ -17,6 +17,9 @@ fr:
     letter:
       alert:
         unconfirmed_code: Vous n'avez pas encore renseigné votre code de confirmation
+      create:
+        flash:
+          success: Merci d'avoir demandé votre <b>code de sécurité maximum (uniquement requis pour les votes finaux)</b>. Dans quelques jours, nous l'enverrons à l'adresse figurant dans les données que nous avons en dossier. N'oubliez pas que, si vous préférez, vous pouvez récupérer votre code auprès de l'un des bureaux d'assistance aux citoyens.
       edit:
         see_all: Voir les propositions
         title: Lettre requise
@@ -46,6 +49,7 @@ fr:
         accept_terms_text_title: J'accepte les termes et conditions d'accès au recensement
         document_number: Numéro de document
         document_number_help_title: Aide
+        document_number_help_text: "<strong>CNI</strong> : 12345678A<br> <strong>Passeport</strong> : AAA000001<br> <strong>Carte de séjour</strong> : X1234567P"
         document_type:
           passport: Passeport
           residence_card: Carte de résident
@@ -69,8 +73,8 @@ fr:
         title: Confirmation du code de sécurité
       new:
         phone: Entrez votre numéro de téléphone mobile pour recevoir le code
+        phone_format: "<strong><em>(Example: 612345678 ou +34612345678)</em></strong>"
         phone_note: Nous utiliserons uniquement votre numéro de téléphone pour vous envoyer ce code, sans jamais vous recontacter par la suite.
-        phone_placeholder: "Exemple: 612345678 or +34612345678"
         submit_button: Envoyer
         title: Envoyer le code de confirmation
       update:

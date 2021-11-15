@@ -16,6 +16,18 @@ pl:
         no_polls: Nie uoficjalniasz ostatecznych rozliczeń w żadnej aktywnej ankiecie
         select_poll: Wybierz ankietę
         add_results: Dodaj wyniki
+    poll_budgets:
+      index:
+        ballot_sheet_name: Nazwa
+        ballot_sheet_author: Autor
+        ballot_sheet_creation_date: Data utworzenia
+      new:
+        booth: Kabina wyborcza
+        select_booth: Wybierz kabinę wyborczą
+        submit: Zapisz
+      show:
+        created_at: Data utworzenia
+        author: Autor
     results:
       flash:
         create: "Wyniki zapisane"
@@ -47,7 +59,6 @@ pl:
         not_allowed: "Nie masz dziś uoficjalniających zmian"
       new:
         title: Uprawomocnij dokument
-        document_number: "Numer dokumentu (zawierając litery)"
         submit: Uprawomocnij dokument
         error_verifying_census: "Spis powszechny nie był w stanie zweryfikować tego dokumentu."
         form_errors: uniemożliwił weryfikację tego dokumentu

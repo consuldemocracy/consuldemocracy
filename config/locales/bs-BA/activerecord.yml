@@ -1,8 +1,12 @@
 bs:
   attributes:
+    geozone_id: "Odaberi okrug"
     results_enabled: "Pokaži rezultate"
     stats_enabled: "Pokaži statistiku"
     advanced_stats_enabled: "Pokaži naprednu statistiku"
+    name: Naziv
+    email: Email
+    description: Opis
   activerecord:
     models:
       activity:
@@ -177,6 +181,8 @@ bs:
         description_finished: "Opis kad se finalizira budžet"
         phase: "Faza"
         currency_symbol: "Moneta"
+      budget/translation:
+        name: "Naziv"
       budget/investment:
         heading_id: "Poglavlje"
         title: "Naziv"
@@ -187,6 +193,22 @@ bs:
         organization_name: "Ako podnosite prijedlog u ime zajednice/organizacije, ili u ime više ljudi, navedite naziv"
         image: "Opisna slika prijedloga"
         image_title: "Naziv slike"
+        duration: "Vremenski okvir"
+        feasibility_feasible: "Izvodivo"
+        feasibility_undecided: "Nije definisano"
+        feasibility_unfeasible: "Nije izvodivo"
+        incompatible: "Označi kao neusklađeno"
+        price_explanation: "Objašnjenje za cijenu"
+        selected: "Označi kao odabrano"
+        selected_true: "Odabrano"
+        selected_false: "Nije odabrano"
+        unfeasibility_explanation: "Objašnjenje za izvodivost"
+        valuation_finished: "Procjena završena"
+        valuator_ids: "Grupe"
+        valuation_tag_list: "Tagovi"
+      budget/investment/translation:
+        title: "Naziv"
+        description: "Opis"
       geozone:
         name: Ime
         external_code: "Eksterni kod (po izboru)"
@@ -197,6 +219,8 @@ bs:
         title: "Naziv"
         description: "Opis (po izboru ako je dodijeljen status)"
         publication_date: "Datum objave"
+      milestone/translation:
+        description: "Opis"
       milestone/status:
         name: "Naziv"
         description: "Opis (po izboru)"
@@ -207,24 +231,51 @@ bs:
       progress_bar/kind:
         primary: "Primarna traka"
         secondary: "Sekundarna traka"
+      budget/group/translation:
+        name: "Naziv grupe"
       budget/heading:
+        allow_custom_content: "Omogući blok sadržaja"
+        latitude: "Geografska širina (nije obavezno navesti)"
+        longitude: "Geografska dužina (nije obavezno navesti)"
         name: "Naziv poglavlja"
         price: "Cijena"
         population: "Populacija"
+      budget/heading/translation:
+        name: "Naziv kategorije"
+      budget/phase:
+        enabled: "Faza pokrenuta"
+        ends_at: "Krajnji datum"
+        starts_at: "Početni datum"
+      budget/phase/translation:
+        name: "Naziv"
+        description: "Opis"
+        summary: "Sažetak"
       comment:
         body: "Komentar"
         user: "Korisnik"
       debate:
         author: "Autor"
         description: "Mišljenje"
+        tag_list: "Teme"
         terms_of_service: "Uvjeti korištenja"
         title: "Naziv"
+      debate/translation:
+        title: "Naziv debate"
+        description: "Započni debatu"
       proposal:
         author: "Autor"
         title: "Naziv"
         question: "Pitanje"
         description: "Opis"
+        responsible_name: "Puno ime i prezime osobe koja podnosi prijedlog"
+        retired_reason: "Razlog što povlačite prijedlog"
+        selected: "Označi kao odabrano"
         terms_of_service: "Uvjeti korištenja"
+      proposal/translation:
+        title: "Naziv prijedloga"
+        description: "Tekst prijedloga"
+        summary: "Sažetak prijedloga"
+        retired_explanation: "Objašnjenje"
       user:
         login: "Email ili korisničko ime"
         email: "Email"
@@ -232,25 +283,44 @@ bs:
         password_confirmation: "Potvrda lozinke"
         password: "Lozinka"
         current_password: "Sadašnja lozinka"
+        email_digest: "Dobijaću sažetak obavijesti o prijedlozima"
+        email_on_comment: "Obavijesti me emailom kada neko da komentar na moje prijedloge ili debate"
+        email_on_comment_reply: "Obavijesti me emailom kada neko odgovori na moje komentare"
+        email_on_direct_message: "Dobijaću emailove u vezi direktnih poruka"
+        newsletter: "Primaću emailom relevantne informacije o web-stranici"
         official_position: "Anketar"
+        official_position_badge: "Pokaži bedž sa navedenom službenom funkcijom"
         official_level: "Stupanj anketara"
         phone_number: "Broj telefona"
+        public_activity: "Moja lista aktivnosti je javna"
+        recommended_debates: "Pokaži preporuke iz debata"
+        recommended_proposals: "Pokaži preporuke iz prijedloga"
         redeemable_code: "Verifikacioni kod primljen emailom"
+      direct_message:
+        title: "Naziv"
+        body: "Poruka"
       organization:
         name: "Naziv organizacije"
         responsible_name: "Osoba nadležna za grupu"
       poll:
         name: "Naziv"
+        title: "Naziv"
         starts_at: "Početni datum"
         ends_at: "Krajnji datum"
         geozone_restricted: "Ograničeno na određeno područje"
         summary: "Sažetak"
         description: "Opis"
+      active_poll/translation:
+        description: "Opis"
+      poll/booth:
+        name: "Naziv"
+        location: "Lokacija"
       poll/translation:
         name: "Naziv"
         summary: "Sažetak"
         description: "Opis"
       poll/question:
+        poll_id: "Glasačka anketa"
         title: "Pitanje"
         summary: "Sažetak"
         description: "Opis"
@@ -261,16 +331,34 @@ bs:
         data: CSV podaci
         poll_id: Glasačka anketa
         officer_assignment_id: Raspored anketara
+      poll/shift:
+        task: "Zadatak"
+      proposal_notification:
+        body: "Poruka"
+        title: "Naziv"
       signature_sheet:
+        title: "Naziv"
         signable_type: "List s potpisom"
         signable_id: "Lični dokument s potpisom"
         document_numbers: "Brojevi isprava"
+      sdg/goal:
+        title: "Naziv"
+        description: "Opis"
+      sdg/local_target:
+        title: "Naziv"
+      sdg/local_target/translation:
+        title: "Naziv"
+        description: "Opis"
+      sdg/target:
+        title: "Naziv"
       site_customization/page:
         content: Sadržaj
         created_at: Napravljena na
         subtitle: Podnaslov
         slug: Slug
         status: Status
+        status_draft: "Nacrt"
+        status_published: "Objavljeno"
         title: Naziv
         updated_at: Ažurirano na
         more_info_flag: Pokaži na stranici za pomoć
@@ -287,9 +375,20 @@ bs:
         name: Naziv
         locale: mjesto
         body: Osnovni tekst
+      tag:
+        name: "Upiši naziv teme"
+      topic:
+        title: "Naziv"
+        description: "Uvodni tekst"
       banner:
         background_color: Boja pozadine
         font_color: Boja fonta
+        post_ended_at: "Objava završena u:"
+        post_started_at: "Objava započeta u:"
+        target_url: "Link"
+      banner/translation:
+        title: "Naziv"
+        description: "Opis"
       legislation/process:
         title: Naziv procesa
         summary: Sažetak
@@ -309,17 +408,26 @@ bs:
         result_publication_date: Datum objave konačnog rezultata
         background_color: Boja pozadine
         font_color: Boja fonta
+        homepage_enabled: "Pokrenuta početna stranica"
       legislation/process/translation:
         title: Naziv procesa
         summary: Sažetak
         description: Opis
         additional_info: Dodatne informacije
+        homepage: "Opis"
         milestones_summary: Sažetak
+      legislation/proposal:
+        description: "Tekst prijedloga"
+        summary: "Sažetak prijedloga"
+        title: "Naziv prijedloga"
+        video_url: "Link za eksterni video"
       legislation/draft_version:
         title: Naziv verzije
         body: Tekst
         changelog: Izmjene
         status: Status
+        status_draft: "Nacrt"
+        status_published: "Objavljeno"
         final_version: Finalna verzija
       legislation/draft_version/translation:
         title: Naziv verzije
@@ -328,6 +436,8 @@ bs:
       legislation/question:
         title: Naziv
         question_options: Opcije
+      legislation/question/translation:
+        title: Pitanje
       legislation/question_option:
         value: Vrijednost
       legislation/annotation:
@@ -385,12 +495,24 @@ bs:
         order: Možete navesti mjesto gdje će se radnja pokazati korisniku na listi radnji
         active: Aktivno
         action_type: Vrsta
+        action_type_proposed_action: "Predložena radnja"
+        action_type_resource: "Resurs"
+        published_proposal: "Za objavljene prijedloge?"
       dashboard/administrator_task:
         source: Izvor
         user: Izvršio
       link:
         label: Naziv
         url: Link
+      valuator:
+        description: Opis
+        valuator_group_id: Grupa procjenitelja
+      valuator_group:
+        name: "Naziv grupe"
+      local_census_record:
+        document_type: Vrsta dokumenta
+        document_number: Broj dokumenta
+        date_of_birth: Datum rođenja
     errors:
       models:
         user:
@@ -418,14 +540,12 @@ bs:
           attributes:
             segment_recipient:
               invalid: "Segment primatelja nije ispravan"
-        map_location:
-          attributes:
-            map:
-              invalid: Mora se navesti lokacija na mapi. Stavite marker ili označite kockicu ako nije potrebno označavanje na mapi
         poll/voter:
           attributes:
             document_number:
               not_in_census: "Dokument nije na popisu"
+            user_id:
+              has_voted: "Korisnik je već glasao"
         legislation/process:
           attributes:
             end_date:

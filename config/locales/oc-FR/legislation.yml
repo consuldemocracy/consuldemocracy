@@ -118,3 +118,16 @@ oc:
         tags_label: "de Categorias"
       not_verified: "Per proposicions de vòt %{verify_account}."
       process_title: Procès de legislacion col·laborativa
+    summary:
+      title: "Resumen"
+      votes:
+        zero: "%{count} de vòts"
+      debate_phase: "fasa prealabla"
+      proposals_phase: "Fasa de proposicions"
+      allegations_phase: "Fasa de comentaris"
+      comments:
+        zero: "Sens comentaris"
+        one: "%{count} comentari"
+        other: "%{count} de comentaris"
+      top_comments:
+        zero: "Sens comentaris"

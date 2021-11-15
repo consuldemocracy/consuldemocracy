@@ -2,10 +2,10 @@ es-PE:
   devise_views:
     confirmations:
       new:
-        email_label: Tu correo electrónico
         submit: Reenviar instrucciones
         title: Reenviar instrucciones de confirmación
       show:
+        instructions: Vamos a proceder a confirmar la cuenta con el email <b>%{email}</b>
         new_password_confirmation_label: Repite la clave de nuevo
         new_password_label: Nueva clave de acceso
         please_set_password: Por favor introduce una nueva clave de acceso para su cuenta (te permitirá hacer login con el email de más arriba)
@@ -38,17 +38,16 @@ es-PE:
     organizations:
       registrations:
         new:
-          email_label: Tu correo electrónico
-          organization_name_label: Nombre de la organización
           password_confirmation_label: Repite la contraseña anterior
-          password_label: Contraseña que utilizarás para acceder a este sitio web
-          phone_number_label: Teléfono
-          responsible_name_label: Nombre y apellidos de la persona responsable del colectivo
           responsible_name_note: Será la persona representante de la asociación/colectivo en cuyo nombre se presenten las propuestas
           submit: Registrarse
           title: Registrarse como organización / colectivo
         success:
           back_to_index: Entendido, volver a la página principal
+          instructions_1: "En breve <b>nos pondremos en contacto contigo</b> para verificar que realmente representas a este colectivo."
+          instructions_2: Mientras <b>revisa tu correo electrónico</b>, te hemos enviado un <b>enlace para confirmar tu cuenta</b>.
+          instructions_3: Una vez confirmado, podrás empezar a participar como colectivo no verificado.
+          thank_you: Gracias por registrar tu colectivo en la web. Ahora está <b>pendiente de verificación</b>.
           title: Registro de organización / colectivo
     passwords:
       edit:
@@ -57,13 +56,10 @@ es-PE:
         password_label: Contraseña nueva
         title: Cambia tu contraseña
       new:
-        email_label: Tu correo electrónico
         send_submit: Recibir instrucciones
         title: '¿Has olvidado tu contraseña?'
     sessions:
       new:
-        login_label: Email o nombre de usuario
-        password_label: Contraseña que utilizarás para acceder a este sitio web
         remember_me: Recordarme
         submit: Entrar
         title: iniciar sesión
@@ -101,12 +97,9 @@ es-PE:
           waiting_for: "Esperando confirmación de:"
         new:
           cancel: Cancelar login
-          email_label: Tu correo electrónico
           organization_signup: '¿Representas a una organización / colectivo? %{signup_link}'
           organization_signup_link: Regístrate aquí
           password_confirmation_label: Repite la contraseña anterior
-          password_label: Contraseña que utilizarás para acceder a este sitio web
-          redeemable_code: Tu código de verificación (si has recibido una carta con él)
           submit: Registrarse
           terms: Al registrarte aceptas las %{terms}
           terms_link: condiciones de uso
@@ -114,8 +107,10 @@ es-PE:
           title: Registrarse
           username_is_available: Nombre de usuario disponible
           username_is_not_available: Nombre de usuario ya existente
-          username_label: Nombre de usuario
           username_note: Nombre público que aparecerá en tus publicaciones
         success:
           back_to_index: Entendido, volver a la página principal
+          instructions_1: Por favor <b>revisa tu correo electrónico</b> - te hemos enviado un <b>enlace para confirmar tu cuenta</b>.
+          instructions_2: Una vez confirmado, podrás empezar a participar.
+          thank_you: Gracias por registrarte en la web. Ahora debes <b>confirmar tu correo</b>.
           title: Revisa tu correo

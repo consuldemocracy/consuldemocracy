@@ -16,6 +16,18 @@ zh-TW:
         no_polls: 您不用在任何活躍投票的最終重新計票中當值
         select_poll: 選擇投票項
         add_results: 添加結果
+    poll_budgets:
+      index:
+        ballot_sheet_name: 名字
+        ballot_sheet_author: 作者
+        ballot_sheet_creation_date: 創建日期
+      new:
+        booth: 投票亭
+        select_booth: 選擇投票亭
+        submit: 儲存
+      show:
+        created_at: 創建日期
+        author: 作者
     results:
       flash:
         create: "結果已儲存"
@@ -47,7 +59,6 @@ zh-TW:
         not_allowed: "你今天沒有辦公室輪班"
       new:
         title: 驗證文檔
-        document_number: "文檔編號 (包括字母)"
         submit: 驗證文檔
         error_verifying_census: "人口普查無法核實此文件。"
         form_errors: 阻止了對此文件的核實

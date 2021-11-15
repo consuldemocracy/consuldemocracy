@@ -536,10 +536,6 @@ el:
           attributes:
             segment_recipient:
               invalid: "Το τμήμα παραληπτών του χρήστη δεν είναι έγκυρο"
-        map_location:
-          attributes:
-            map:
-              invalid: Ο χάρτης τοποθεσίας δεν μπορεί να είναι κενός. Τοποθετήστε ένα δείκτη ή επιλέξτε το πλαίσιο ελέγχου εάν ο εντοπισµός "geolocalization' δεν είναι απαραίτητος
         poll/voter:
           attributes:
             document_number:

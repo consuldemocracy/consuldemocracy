@@ -43,14 +43,12 @@ de:
       title: Benutzerverwaltung
       under_age: "Sie erfüllen nicht das erforderliche Alter, um Ihr Konto verifizieren."
       verify: Verifizieren
-    email_label: E-Mail
     date_of_birth: Geburtsdatum
     email_verifications:
       already_verified: Das Benutzerkonto ist bereits verifiziert.
       choose_options: "Bitte wählen Sie eine der folgenden Optionen aus:"
       document_found_in_census: Dieses Dokument wurde in der Volkszählung gefunden, hat aber kein dazugehöriges Benutzerkonto.
       document_mismatch: "Diese E-Mail-Adresse gehört zu einem Nutzer mit einer bereits zugehörigen ID:%{document_number}(%{document_type})"
-      email_placeholder: Schreiben Sie die E-Mail, welche benutzt wurde, um sein oder ihr Benutzerkonto zu erstellen
       email_sent_instructions: Um diesen Benutzer vollständig zu verifizieren, ist es notwendig, dass der Benutzer auf einen Link klickt, den wir an die obige E-Mail-Adresse verschickt haben. Dieser Schritt ist erforderlich, um sicherzustellen, dass die Adresse zu ihm/ihr gehört.
       if_existing_account: Wenn die Person bereits ein Benutzerkonto auf der Webseite erstellt hat,
       if_no_existing_account: Falls die Person noch kein Konto erstellt hat

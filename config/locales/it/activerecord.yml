@@ -4,6 +4,10 @@ it:
     results_enabled: "Mostra risultati"
     stats_enabled: "Mostra statistiche"
     advanced_stats_enabled: "Mostra statistiche avanzate"
+    name: Nome
+    email: Email
+    description: Descrizione
+    related_sdg_list: Scopi e Obiettivi
   activerecord:
     models:
       activity:
@@ -72,6 +76,18 @@ it:
       proposal:
         one: "Proposta cittadina"
         other: "Proposte cittadine"
+      sdg/goal:
+        one: "scopo"
+        other: "scopi"
+      sdg/local_target:
+        one: "obiettivo locale"
+        other: "obiettivi locali"
+      sdg/manager:
+        one: "Gestore SDG"
+        other: "Gestori SDG"
+      sdg/target:
+        one: "obiettivo"
+        other: "obiettivi"
       site_customization/page:
         one: Pagina personalizzata
         other: Pagine personalizzate
@@ -141,7 +157,12 @@ it:
         description_finished: "Descrizione durante la fase della Approvazione del Bilancio / Risultati"
         phase: "Fase"
         currency_symbol: "Valuta"
+        voting_style: "Stile finale di votazione"
+        voting_style_knapsack: "Zaino"
+        voting_style_approval: "Approvazione"
       budget/translation:
+        main_link_text: "Testo sul link"
+        main_link_url: "Il link ti porta a (aggiungi un link)"
         name: "Nome"
       budget/investment:
         heading_id: "Intestazione"
@@ -203,6 +224,7 @@ it:
         name: "Denominazione della voce di bilancio"
         price: "Costi"
         population: "Popolazione"
+        max_ballot_lines: "Voti consentiti"
       budget/heading/translation:
         name: "Nome voce"
       budget/phase:
@@ -210,8 +232,11 @@ it:
         ends_at: "Data fine"
         starts_at: "Data inizio"
       budget/phase/translation:
+        name: "Nome"
         description: "Descrizione"
         summary: "Sommario"
+        main_link_text: "Testo sul link"
+        main_link_url: "Il link ti porta a (aggiungi un link)"
       comment:
         body: "Commentare"
         user: "Utente"
@@ -268,6 +293,7 @@ it:
         responsible_name: "La persona responsabile per l'organzzazione"
       poll:
         name: "Nominativo"
+        title: "Nome"
         starts_at: "Data inizio"
         ends_at: "Data chiusura"
         geozone_restricted: "Ristretto alla zona geografica"
@@ -300,9 +326,28 @@ it:
         body: "Messaggio"
         title: "Titolo"
       signature_sheet:
+        title: "Titolo"
         signable_type: "Tipo Foglio firme"
         signable_id: "ID Proposta"
         document_numbers: "Numero di documenti"
+      sdg/goal:
+        code: "Codice"
+        title: "Titolo"
+        description: "Descrizione"
+      sdg/local_target:
+        code: "Codice"
+        target_id: "Obiettivo"
+        title: "Titolo"
+      sdg/local_target/translation:
+        title: "Titolo"
+        description: "Descrizione"
+      sdg/phase/kind:
+        sensitization: "Sensibilizzazione"
+        planning: "Pianificazione"
+        monitoring: "Monitoraggio"
+      sdg/target:
+        code: "Codice"
+        title: "Titolo"
       site_customization/page:
         content: Contenuto
         created_at: Creato
@@ -495,14 +540,12 @@ it:
           attributes:
             segment_recipient:
               invalid: "Il segmento dei destinatari è errato"
-        map_location:
-          attributes:
-            map:
-              invalid: La posizione sulla mappa non può essere lasciata in bianco. Posiziona un segnaposto o seleziona l’apposita spunta se la geolocalizzazione non è necessaria
         poll/voter:
           attributes:
             document_number:
               not_in_census: "Il documento non è presente negli archivi istituzionali"
+            user_id:
+              has_voted: "L'utente ha già votato"
         legislation/process:
           attributes:
             end_date:
@@ -513,6 +556,10 @@ it:
               invalid_date_range: deve essere uguale o successivo la data di inizio della bozza
             allegations_end_date:
               invalid_date_range: deve essere uguale o successivo alla data di inizio dei commenti
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: non è incluso nell'elenco, i valori consentiti sono 1 per DNI, 2 per il passaporto e 3 per la carta di residenza.
         proposal:
           attributes:
             tag_list:
@@ -543,6 +590,14 @@ it:
           attributes:
             valuation:
               cannot_comment_valuation: "Non si può commentare una stima"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Risorsa già tradotta
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "deve iniziare con lo stesso codice del suo obiettivo seguito da un punto e terminante con un numero"
       messages:
         translations_too_short: È obbligatorio fornire almeno una traduzione
         record_invalid: "Verifica non riuscita: %{errors}"

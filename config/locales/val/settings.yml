@@ -60,6 +60,9 @@ val:
     meta_keywords_description: 'Paraules clau <meta name="keywords">, utilitzades per a millorar el SEO'
     min_age_to_participate: Edat mínima per a participar
     min_age_to_participate_description: "Els usuaris majors d'edat podran participar en tots els processos"
+    proposals:
+      poll_short_title: Votacions
+      email_short_title: Correu electrònic
     analytics_url: "URL d'estadístiques externes"
     feature:
       twitter_login: "Registre amb Twitter"
@@ -95,3 +98,23 @@ val:
       public_stats_description: "Mostra les estadístiques públiques en el panell d'Administració"
       help_page: "Pàgina d'ajuda"
       help_page_description: 'Mostra un menú Ajuda que conté una pàgina amb una secció d''informació sobre cada funcionalitat habilitada'
+    map:
+      latitude: "Latitud"
+      latitude_description: "Latitud per a mostrar la posició del mapa"
+      longitude: "Longitud"
+      longitude_description: "Longitud per a mostrar la posició del mapa"
+      zoom: "Zoom"
+      zoom_description: "Zoom per a mostrar la posició del mapa"
+    process:
+      debates: "Debats"
+      debates_description: "L'espai de debats ciutadans està dirigit a que quansevol persona puga exposar temes que li preocupen i sobre els que vullga compartir punts de vista amb altres persones"
+      proposals: "Propostes"
+      polls: "Votacions"
+      polls_description: "Les votacions ciutadanes son un mecanisme de participació pel que la ciutadania amb dret a vot pot prendre decisions de forma directa"
+      budgets: "Pressupostos participatius"
+      legislation: "Legislació col·laborativa"
+    html:
+      per_page_code_head: "Códi a incloure en cada pàgina (<head>)"
+      per_page_code_head_description: "Aquest codi apareixerà dins de l'etiqueta <head>. Pot gastar-se per a insertar scripts personalitzats, analítiques..."
+      per_page_code_body: "Códi a incloure en cada pàgina (<body>)"
+      per_page_code_body_description: "Aquest codi apareixerà dins de l'etiqueta <body>. Pot gastar-se per a insertar scripts personalitzats, analítiques..."

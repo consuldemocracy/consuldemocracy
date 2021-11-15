@@ -12,9 +12,8 @@ da:
         headers:
           comment: Kommentar
           moderate: Moderér
-        hide_comments: Skjul kommentarer
+        hide: Skjul kommentarer
         ignore_flags: Markér som set
-        order: Orden
         orders:
           flags: Mest markeret
           newest: Nyeste
@@ -34,9 +33,8 @@ da:
         headers:
           debate: Debat
           moderate: Moderér
-        hide_debates: Skjul debatindlæg
+        hide: Skjul debatindlæg
         ignore_flags: Markér som set
-        order: Orden
         orders:
           created_at: Nyeste
           flags: Mest markeret
@@ -62,9 +60,8 @@ da:
         headers:
           moderate: Moderér
           proposal: Borgerforslag
-        hide_proposals: Skjul forslag
+        hide: Skjul forslag
         ignore_flags: Markér som set
-        order: Sorter efter
         orders:
           created_at: Seneste
           flags: Mest markeret
@@ -81,9 +78,8 @@ da:
         headers:
           moderate: Moderér
           budget_investment: Budgetidéer
-        hide_budget_investments: Skjul
+        hide: Skjul
         ignore_flags: Markér som set
-        order: Sorter efter
         orders:
           created_at: Seneste
           flags: Mest markeret
@@ -100,9 +96,8 @@ da:
         headers:
           moderate: Moderér
           proposal_notification: Notifikationer om forslag
-        hide_proposal_notifications: Skjul forslag
+        hide: Skjul forslag
         ignore_flags: Markér som set
-        order: Sorter efter
         orders:
           created_at: Seneste
           moderated: Modereret

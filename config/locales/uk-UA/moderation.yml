@@ -12,9 +12,8 @@ uk-UA:
         headers:
           comment: Коментар
           moderate: Модерувати
-        hide_comments: Приховати коментарі
+        hide: Приховати коментарі
         ignore_flags: Позначити як переглянуте
-        order: Порядок
         orders:
           flags: З найбільшою кількістю відміток
           newest: Найновіші
@@ -34,9 +33,8 @@ uk-UA:
         headers:
           debate: Обговорення
           moderate: Модерувати
-        hide_debates: Приховати обговорення
+        hide: Приховати обговорення
         ignore_flags: Позначити як переглянуте
-        order: Порядок
         orders:
           created_at: Найновіші
           flags: З найбільшою кількістю відміток
@@ -62,9 +60,8 @@ uk-UA:
         headers:
           moderate: Модерувати
           proposal: Пропозиція
-        hide_proposals: Приховати пропозиції
+        hide: Приховати пропозиції
         ignore_flags: Позначити як переглянуте
-        order: Сортувати за
         orders:
           created_at: Найновіші
           flags: З найбільшою кількістю відміток
@@ -81,9 +78,8 @@ uk-UA:
         headers:
           moderate: Модерувати
           budget_investment: Бюджетна інвестиція
-        hide_budget_investments: Приховати бюджетні інвестиції
+        hide: Приховати бюджетні інвестиції
         ignore_flags: Позначити як переглянуте
-        order: Сортувати за
         orders:
           created_at: Найновіші
           flags: З найбільшою кількістю відміток
@@ -100,9 +96,8 @@ uk-UA:
         headers:
           moderate: Модерувати
           proposal_notification: Сповіщення щодо пропозицій
-        hide_proposal_notifications: Приховати пропозиції
+        hide: Приховати пропозиції
         ignore_flags: Позначити як переглянуте
-        order: Сортувати за
         orders:
           created_at: Найновіші
           moderated: Відмодеровано

@@ -5,7 +5,7 @@ sv:
     additional: Ytterligare dokumentation
     form:
       title: Dokument
-      title_placeholder: Lägg till en titel för dokumentet
+      title_placeholder: Lägg till en beskrivande titel för dokumentet
       delete_button: Radera dokument
       cancel_button: Avbryt
       note: "Du kan maximalt ladda upp %{max_documents_allowed} dokument av de följande innehållstyperna: %{accepted_content_types}, upp till %{max_file_size} MB per fil."

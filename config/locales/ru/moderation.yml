@@ -12,9 +12,8 @@ ru:
         headers:
           comment: Отзыв
           moderate: Модерировать
-        hide_comments: Скрыть комментарии
+        hide: Скрыть комментарии
         ignore_flags: Отметить как просмотренное
-        order: Порядок
         orders:
           flags: Самое помечаемое
           newest: Самое новое
@@ -34,9 +33,8 @@ ru:
         headers:
           debate: Обсуждение
           moderate: Модерировать
-        hide_debates: Скрыть обсуждения
+        hide: Скрыть обсуждения
         ignore_flags: Отметить как просмотренное
-        order: Порядок
         orders:
           created_at: Самое новое
           flags: Самое помечаемое
@@ -62,9 +60,8 @@ ru:
         headers:
           moderate: Модерировать
           proposal: Заявка
-        hide_proposals: Скрыть предложения
+        hide: Скрыть предложения
         ignore_flags: Отметить как просмотренное
-        order: Упорядочить но
         orders:
           created_at: Самое свежее
           flags: Самое помечаемое
@@ -81,9 +78,8 @@ ru:
         headers:
           moderate: Модерировать
           budget_investment: Бюджетное инвестирование
-        hide_budget_investments: Скрыть бюджетные инвестиции
+        hide: Скрыть бюджетные инвестиции
         ignore_flags: Отметить как просмотренное
-        order: Упорядочить по
         orders:
           created_at: Самое свежее
           flags: Самое отмечаемое
@@ -100,9 +96,8 @@ ru:
         headers:
           moderate: Модерировать
           proposal_notification: Уведомление о предложении
-        hide_proposal_notifications: Скрыть предложения
+        hide: Скрыть предложения
         ignore_flags: Отметить как просмотренное
-        order: Упорядочить
         orders:
           created_at: Самое свежее
           moderated: Отмодерировано

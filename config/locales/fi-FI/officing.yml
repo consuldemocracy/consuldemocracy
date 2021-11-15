@@ -3,8 +3,11 @@ fi:
     poll_budgets:
       index:
         ballot_sheet_name: Nimi
+        ballot_sheet_author: Tekijä
       new:
         submit: Tallenna
+      show:
+        author: Tekijä
     results:
       new:
         date: "Päivämäärä"
@@ -13,9 +16,6 @@ fi:
       index:
         table_answer: Vastaus
         table_votes: Äänet
-    residence:
-      new:
-        document_number: "Asiakirjan numero (myös kirjaimet)"
     voters:
       new:
         title: Kyselyt

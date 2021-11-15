@@ -11,9 +11,8 @@ fi:
           with_ignored_flag: Merkitty katsotuksi
         headers:
           comment: Kommentti
-        hide_comments: Piilota kommentit
+        hide: Piilota kommentit
         ignore_flags: Merkitse katsotuksi
-        order: Järjestys
         orders:
           newest: Uusin
         title: Kommentit
@@ -27,7 +26,6 @@ fi:
           pending_flag_review: Vireillä
           with_ignored_flag: Merkitty katsotuksi
         ignore_flags: Merkitse katsotuksi
-        order: Järjestys
         orders:
           created_at: Uusin
     menu:
@@ -45,7 +43,7 @@ fi:
           with_ignored_flag: Merkitse katsotuksi
         headers:
           proposal: Ehdotus
-        hide_proposals: Piilota ehdotukset
+        hide: Piilota ehdotukset
         ignore_flags: Merkitse katsotuksi
         orders:
           created_at: Viimeisin
@@ -71,7 +69,7 @@ fi:
           all: Kaikki
           pending_review: Odottaa tarkastelua
           ignored: Merkitse katsotuksi
-        hide_proposal_notifications: Piilota ehdotukset
+        hide: Piilota ehdotukset
         ignore_flags: Merkitse katsotuksi
         orders:
           created_at: Viimeisin

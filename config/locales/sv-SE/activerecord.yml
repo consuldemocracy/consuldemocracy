@@ -113,7 +113,7 @@ sv:
         one: "Fråga"
         other: "Frågor"
       legislation/question_options:
-        one: "Svarsalternativ"
+        one: "Frågealternativ"
         other: "Svarsalternativ"
       legislation/answers:
         one: "Svar"
@@ -161,6 +161,8 @@ sv:
         voting_style_knapsack: "Ryggsäck"
         voting_style_approval: "Godkännande"
       budget/translation:
+        main_link_text: "Text på länken"
+        main_link_url: "Länken leder till (lägg till en länk)"
         name: "Namn"
       budget/investment:
         heading_id: "Område"
@@ -207,7 +209,7 @@ sv:
       progress_bar:
         kind: "Typ"
         title: "Titel"
-        percentage: "Aktuellt framsteg"
+        percentage: "Aktuellt förlopp"
       progress_bar/kind:
         primary: "Primär"
         secondary: "Sekundär"
@@ -217,7 +219,7 @@ sv:
         name: "Gruppnamn"
       budget/heading:
         allow_custom_content: "Tillåt innehållsblock"
-        latitude: "Latitud (frivilligt fält)"
+        latitude: "Latitud (valfritt)"
         longitude: "Longitud (valfritt)"
         name: "Områdesnamn"
         price: "Belopp"
@@ -233,6 +235,8 @@ sv:
         name: "Namn"
         description: "Beskrivning"
         summary: "Sammanfattning"
+        main_link_text: "Text på länken"
+        main_link_url: "Länken leder till (lägg till en länk)"
       comment:
         body: "Kommentar"
         user: "Användare"
@@ -272,8 +276,8 @@ sv:
         email_on_comment_reply: "Meddela mig via e-post när någon svarar på mina kommentarer"
         email_on_direct_message: "Få e-post om direktmeddelanden"
         newsletter: "Få relevanta uppdateringar om webbplatsen med e-post"
-        official_position: "Titel"
-        official_position_badge: "Visa etikett för representant för staden"
+        official_position: "Tjänstemans position"
+        official_position_badge: "Visa märke för tjänstemannens position"
         official_level: "Tjänstepersonnivå"
         phone_number: "Telefonnummer"
         public_activity: "Visa min lista över aktiviteter offentligt"
@@ -315,7 +319,7 @@ sv:
       poll/ballot_sheet:
         data: CSV-data
         poll_id: Omröstning
-        officer_assignment_id: Tilldela funktionär
+        officer_assignment_id: Tilldela valarbetare
       poll/shift:
         task: "Uppgift"
       proposal_notification:
@@ -338,6 +342,7 @@ sv:
         title: "Titel"
         description: "Beskrivning"
       sdg/phase/kind:
+        sensitization: "Sensibilisering"
         planning: "Planering"
         monitoring: "Övervakning"
       sdg/target:
@@ -498,7 +503,7 @@ sv:
         url: Länk
       valuator:
         description: Beskrivning
-        valuator_group_id: Bedömningsgrupp
+        valuator_group_id: Bedömargrupp
         can_comment: Kan skapa kommentarer
         can_edit_dossier: Kan redigera rapporter
       valuator_group:
@@ -535,10 +540,6 @@ sv:
           attributes:
             segment_recipient:
               invalid: "Mottagardelen innehåller fel"
-        map_location:
-          attributes:
-            map:
-              invalid: Geografisk position kan inte lämnas tomt. Placera en markör eller markera kryssrutan om geografisk position inte är tillämpbar
         poll/voter:
           attributes:
             document_number:

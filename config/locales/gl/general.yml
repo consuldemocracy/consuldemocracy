@@ -5,10 +5,7 @@ gl:
       erase_account_link: Borrar a miña conta
       finish_verification: Finalizar verificación
       notifications: Notificacións
-      organization_name_label: Nome da organización
-      organization_responsible_name_placeholder: Representante da asociación/colectivo
       personal: Datos persoais
-      phone_number_label: Teléfono
       public_interests_my_title_list: Etiquetas dos elementos que seuges
       public_interests_user_title_list: Etiquetas dos elementos que segue este usuario
       save_changes_submit: Gardar cambios
@@ -22,7 +19,6 @@ gl:
       user_permission_verify: Para poder realizar todas as accións, verifica a túa conta.
       user_permission_verify_info: "* Só para persoas empadroadas."
       user_permission_votes: Participar nas votacións finais*
-      username_label: Nome de usuario/a
       verified_account: Conta verificada
       verify_my_account: Verificar a miña conta
   application:
@@ -62,7 +58,6 @@ gl:
       newest: Máis novos primeiro
       oldest: Máis antigos primeiro
       most_commented: Máis comentados
-    select_order: Ordenar por
     show:
       return_to_commentable: "Volver a"
   comments_helper:
@@ -90,7 +85,6 @@ gl:
         submit_button: Gardar so cambios
       show_link: Ver debate
     form:
-      debate_title: Título do debate
       tags_instructions: Etiqueta este debate.
       tags_placeholder: "Escribe as etiquetas que desexes separadas por unha coma (',')"
     index:
@@ -113,7 +107,9 @@ gl:
         button: Buscar
         placeholder: Buscar debates...
         title: Procurar
-      select_order: Ordenar por
+      search_results:
+        one: " contén o termo <strong>'%{search_term}'</strong>"
+        other: " contén o termo <strong>'%{search_term}'</strong>"
       start_debate: Comezar un debate
       title: Debates
       section_header:
@@ -128,8 +124,6 @@ gl:
     new:
       form:
         submit_button: Comezar un debate
-      info: Se o que queres é facer unha proposta, esta é a sección incorrecta, entra en %{info_link}.
-      info_link: crear nova proposta
       more_info: Máis información
       recommendation_four: Goza deste espazo, das voces que o enchen, tamén é teu.
       recommendation_one: Non escribas o título do debate ou frases enteiras en maiúsculas. En internet iso considérase berrar. E a ninguén lle gusta que lle berren.
@@ -163,6 +157,7 @@ gl:
     direct_message: a mensaxe privada
     error: erro
     errors: erros
+    not_saved: "impediron gardar %{resource}. <br>Revisa os campos marcados para saber como corrixilos:"
     policy: Política de privacidade
     proposal: a proposta
     proposal_notification: "a notificación"
@@ -218,7 +213,6 @@ gl:
     header:
       administration_menu: Admin
       administration: Administración
-      available_locales: Idiomas dispoñibles
       collaborative_legislation: Procesos lexislativos
       debates: Debates
       locale: "Idioma:"
@@ -280,6 +274,9 @@ gl:
       sign_in: Entra con Twitter
       sign_up: Rexístrate con Twitter
       name: Twitter
+    info:
+      sign_in: "Entra con:"
+      sign_up: "Rexístrate con:"
     or_fill: "Ou cubre o formulario seguinte:"
   proposals:
     create:
@@ -288,6 +285,7 @@ gl:
     created:
       title: Noraboa! Acabas de dar o primeiro paso.
       motivation: "É importante preparar a campaña de lanzamento para que a túa proposta teña éxito. Os primeiros días son decisivos."
+      motivation_2: "<strong>Se queres recomendacións para preparar a publicación, deixa a proposta en modo borrador e guiarémoste.</strong>"
       publish: Non, quero publicar a proposta
       dashboard: Si, preciso axuda e publicarei máis tarde
       preview_title: Este é o aspecto que terá a túa proposta cando se publique
@@ -323,7 +321,6 @@ gl:
       map_location: "Localización no mapa"
       map_location_instructions: "Navega polo mapa até a localización e coloca o marcador."
       map_remove_marker: "Borrar o marcador do mapa"
-      map_skip_checkbox: "Esta proposta non ten unha localización concreta ou non a coñezo."
     index:
       featured_proposals: Destacar
       orders:
@@ -358,7 +355,9 @@ gl:
         button: Procurar
         placeholder: Buscar propostas...
         title: Procurar
-      select_order: Ordenar por
+      search_results:
+        one: " contén o termo <strong>'%{search_term}'</strong>"
+        other: " contén o termo <strong>'%{search_term}'</strong>"
       select_order_long: "Estás vendo as propostas"
       start_proposal: Crea unha proposta
       title: Propostas cidadás
@@ -444,6 +443,7 @@ gl:
       poster: Cartel
       recommended_actions: Accións recomendadas
       messages: Mensaxe aos usuarios
+      related_content: Contido relacionado
     form:
       request: Petición
     create_request:
@@ -475,7 +475,28 @@ gl:
       resource_requested: Recurso xa solicitado
       request_resource: Solicitar recurso
       resource_locked: Recurso bloqueado
+    recommended_actions:
+      title: Accións recomendadas
+      pending_title: Pendentes
+      done_title: Realizadas
+    goal:
+      locked_resource: Recurso bloqueado
+    community:
+      access_community: Acceder á comunidade
+      participants: Participantes
+      debates: Debates
+      comments: Comentarios
     polls:
+      index:
+        title: Votacións
+        create: Crear votación
+        links: Ligazóns
+        additiontal_information: Información adicional
+      new:
+        title: Nova votación
+        submit: Crear votación
+      edit:
+        submit: Actualizar votación
       poll:
         alert_notice: Esta acción eliminará a enquisa e todas as preguntas relacionadas.
         success_notice: Enquisa eliminada correctamente
@@ -512,6 +533,7 @@ gl:
         sent: A mensaxe foi enviada
     mailer:
       forward:
+        subtitle: "Se me apoias, <br>conseguirémolo."
         support_button: Apoia esta proposta
         share_in: Compartir en
         hi: "Ola!"
@@ -548,6 +570,7 @@ gl:
       back: Volver ás votacións
       cant_answer_not_logged_in: "Precisas %{signin} ou %{signup} para participares."
       comments_tab: Comentarios
+      cant_answer_verify: "Debes %{verify_link} para poder responder."
       verify_link: "verifica a túa conta"
       cant_answer_expired: "A votación rematou."
       cant_answer_wrong_geozone: "Esta pregunta non está dispoñible na túa zona."
@@ -588,14 +611,13 @@ gl:
       back: "Volver á miña actividade"
   shared:
     edit: "Editar proposta"
+    filter: "Filtro"
     save: "Guardar"
     delete: "Borrar"
     "yes": "Si"
     "no": "Non"
     search_results: "Resultados da busca"
     advanced_search:
-      author_type: "Por categoría de autor"
-      author_type_blank: "Elixe unha categoría"
       date: "Por data"
       date_placeholder: "DD/MM/AAAA"
       date_range_blank: "Elixe unha data"
@@ -606,7 +628,6 @@ gl:
       date_5: "Personalizada"
       from: "Dende"
       general: "Co texto"
-      general_placeholder: "Escribe o texto"
       search: "Filtro"
       title: "Busca avanzada"
       to: "Ata"
@@ -649,6 +670,7 @@ gl:
       districts: "Zonas"
       districts_list: "Relación de zonas"
       categories: "Categorías"
+    target_blank: " (ábrese nunha nova xanela)"
     you_are_in: "Estás en"
     unflag: Desfacer denuncia
     unfollow_entity: "Deixar de seguir %{entity}"
@@ -668,6 +690,9 @@ gl:
       title: Recomendacións
       see_more: Ver máis recomendacións
       hide: Agochar as recomendacións
+    translations:
+      remove_language: Eliminar idioma
+      add_language: Engadir idioma
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -691,6 +716,11 @@ gl:
     manage:
       all: "Non tes permiso para realizar a acción '%{action}' sobre %{subject}."
   users:
+    login_to_comment: "Precisas %{signin} ou %{signup} para comentares."
+    login_to_continue: "Debes %{signin} ou %{signup} para continuares."
+    signin: "iniciar sesión"
+    signup: "rexistrate"
+    verify_account: "verificar a túa conta"
     direct_messages:
       new:
         direct_messages_bloqued: "Esta persoa usuaria decidiu non recibir mensaxes privadas"
@@ -705,6 +735,7 @@ gl:
       deleted_proposal: Esta proposta foi eliminada
       deleted_budget_investment: Este proxecto de investimento foi borrado
       proposals: Propostas cidadás
+      proposals_status: Estado
       debates: Debates
       budget_investments: Investimentos orzamentarios
       comments: Comentarios
@@ -732,7 +763,10 @@ gl:
       delete_alert: "Tes a certeza de que desexas borrar o proxecto de investimento? Está acción non se pode desfacer"
     proposals:
       retired: "Proposta retirada"
+      draft: Bosquexo
+      published: Publicada
       see: "Ver proposta"
+      actions: Accións
   votes:
     agree: Estou de acordo
     anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.
@@ -820,3 +854,9 @@ gl:
       alt: Escolle o texto que queres comentar e preme o botón que ten forma do lapis.
       text: Para comentar este documento, debes %{sign_in}%{sign_up}. Despois, escolle o texto que queres comentar e preme o botón que ten forma de lapis.
       title: Como podo comentar este documento?
+  links:
+    form:
+      delete_button: Borrar
+      cancel_button: Cancelar
+    nested_links:
+      title: Ligazóns

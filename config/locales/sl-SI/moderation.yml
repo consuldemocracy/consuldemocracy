@@ -12,9 +12,8 @@ sl:
         headers:
           comment: Komentiraj
           moderate: Moderiraj
-        hide_comments: Zbriši komentarje
+        hide: Zbriši komentarje
         ignore_flags: Označi kot videne
-        order: Vrstni red
         orders:
           flags: Najbolj označeni
           newest: Najnovejši
@@ -34,9 +33,8 @@ sl:
         headers:
           debate: Razprava
           moderate: Moderiraj
-        hide_debates: Skrij razprave
+        hide: Skrij razprave
         ignore_flags: Označi kot videne
-        order: Vrstni red
         orders:
           created_at: Najnovejše
           flags: Najbolj označene
@@ -46,6 +44,7 @@ sl:
     menu:
       flagged_comments: Komentarji
       flagged_debates: Razprave
+      flagged_investments: Proračunske naložbe
       proposals: Predlogi
       users: Blokiraj uporabnike
     proposals:
@@ -60,13 +59,45 @@ sl:
         headers:
           moderate: Moderiraj
           proposal: Predlog
-        hide_proposals: Skrij predloge
+        hide: Skrij predloge
         ignore_flags: Označi kot videne
-        order: Sortiraj po
         orders:
           created_at: Najnovejši
           flags: Najbolj označeni
         title: Predlogi
+    budget_investments:
+      index:
+        block_authors: Blokiraj avtorje
+        confirm: Si prepričan?
+        filter: Filtriraj
+        filters:
+          all: Vsi
+          pending_flag_review: V teku
+          with_ignored_flag: Označeni kot videni
+        headers:
+          moderate: Moderiraj
+          budget_investment: Proračunska naložba
+        ignore_flags: Označi kot videne
+        orders:
+          created_at: Najnovejši
+          flags: Najbolj označeni
+        title: Proračunske naložbe
+    proposal_notifications:
+      index:
+        block_authors: Blokiraj avtorje
+        confirm: Si prepričan?
+        filter: Filtriraj
+        filters:
+          all: Vsi
+          pending_review: Čakajoči na pregled
+          ignored: Označi kot videne
+        headers:
+          moderate: Moderiraj
+        hide: Skrij predloge
+        ignore_flags: Označi kot videne
+        orders:
+          created_at: Najnovejši
+        title: Obvestila predlogov
     users:
       index:
         hidden: Blokirani

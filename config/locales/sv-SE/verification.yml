@@ -75,7 +75,6 @@ sv:
         phone: Ange ditt mobilnummer för att ta emot koden
         phone_format: "<strong><em>(Till exempel: 0712345678 eller +46712345678)</em></strong>"
         phone_note: Vi använder bara ditt telefonnummer till att skicka bekräftelsekoden, aldrig för att kontakta dig.
-        phone_placeholder: "Till exempel: 0712345678 eller +46712345678"
         submit_button: Skicka
         title: Skicka bekräftelsekod
       update:

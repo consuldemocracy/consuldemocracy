@@ -4,6 +4,9 @@ hr:
     results_enabled: "Prikaži rezultate"
     stats_enabled: "Prikaži statistike"
     advanced_stats_enabled: "Prikaži napredne statistike"
+    name: Ime
+    email: E-mail
+    description: Opis
   activerecord:
     models:
       activity:
@@ -255,6 +258,7 @@ hr:
         ends_at: "Datum završetka"
         starts_at: "Datum početka"
       budget/phase/translation:
+        name: "Ime"
         description: "Opis"
         summary: "Sažetak"
       comment:
@@ -313,6 +317,7 @@ hr:
         responsible_name: "Osoba odgovorna za grupu"
       poll:
         name: "Ime"
+        title: "Ime"
         starts_at: "Datum početka"
         ends_at: "Datum zatvaranja"
         geozone_restricted: "Ograničeno geozonom"
@@ -349,6 +354,16 @@ hr:
         signable_type: "Tip potpisa"
         signable_id: "Potpis ID"
         document_numbers: "Broj dukumenata"
+      sdg/goal:
+        title: "Naziv"
+        description: "Opis"
+      sdg/local_target:
+        title: "Naziv"
+      sdg/local_target/translation:
+        title: "Naziv"
+        description: "Opis"
+      sdg/target:
+        title: "Naziv"
       site_customization/page:
         content: Sadržaj
         created_at: Stvoreno kod
@@ -541,10 +556,6 @@ hr:
           attributes:
             segment_recipient:
               invalid: "Segment korisničkih primatelja nije valjan"
-        map_location:
-          attributes:
-            map:
-              invalid: Lokacija karte ne može biti prazna. Postavite oznaku ili potvrdite okvir ako nije potrebna geolokalizacija
         poll/voter:
           attributes:
             document_number:

@@ -69,7 +69,6 @@ ro:
         not_allowed: "Nu ai schimburi oficiale astăzi"
       new:
         title: Validează document
-        document_number: "Numărul documentului (inclusiv litere)"
         submit: Validează document
         error_verifying_census: "Baza de date a recensământului nu a putut verifica acest document."
         form_errors: a împiedicat verificarea acestui documentului

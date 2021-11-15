@@ -56,6 +56,9 @@ so:
     meta_keywords_description: 'Erayo <meta name = "keywords">, ayaa loo isticmaalaa si loo hagaajiyo SEO'
     min_age_to_participate: Da'da ugu yar ee loo baahan yahay si looga qaybqaato
     min_age_to_participate_description: "Isticmaalayaasha da'adani way ka qaybqaadan karaan dhammaan hababka"
+    proposals:
+      poll_short_title: Doorashooyinka
+      email_short_title: Email
     analytics_url: "URLka falanqaynta"
     feature:
       twitter_login: "Galitaanka bogga Twitter"
@@ -89,3 +92,23 @@ so:
       public_stats_description: "Muuji tirooyinka dadweynaha ee guddiga maamulka"
       help_page: "Bogga Caawinta"
       help_page_description: 'Waxay muujisaa maqaallada caawimaadda oo ku jira bog leh qaybta macluumaadka ee ku saabsan muuqaal kasta oo awood leh'
+    map:
+      latitude: "Lol"
+      latitude_description: "Lolku wuxu muujiya jagada maabka"
+      longitude: "Dherer"
+      longitude_description: "Baaxadda si aad u muujiso jagada khariidada"
+      zoom: "Dhawaan"
+      zoom_description: "Sodhowee si ad u muujiso Jagada dhulka"
+    process:
+      debates: "Doodo"
+      debates_description: "Mawduuca doodaha muwaadiniinta waxaa loogu talagalay qof kasta oo soo bandhigi kara arrimaha iyaga ka hadlaya iyo waxa ay rabaan in ay la wadaagaan ra'yigooda dadka kale"
+      proposals: "Sojeedino"
+      polls: "Doorashooyinka"
+      polls_description: "Muwaadiniinta codbixinta waa farsamo ka qaybqaadasho leh oo muwaadiniinta leh xuquuqda codbixinta ay samayn karaan go'aano toos ah"
+      budgets: "Misaaniyada kaqayb qadashada"
+      legislation: "Xeerarka wada shaqeynta"
+    html:
+      per_page_code_head: "Xeerka lagu daro bog kasta (<head>)"
+      per_page_code_head_description: "Koodhkan ayaa ku dhex muuqan doona gudaha 'head>'. Faa'iido leh galitaanka qoraallada gaarka ah, falanqaynta..."
+      per_page_code_body: "Xeerka lagu daro bog kasta <body>"
+      per_page_code_body_description: "Koodhkan ayaa ku dhex muuqan doona gudaha <body> Faa'iido leh galitaanka qoraallada gaarka ah, falanqaynta..."

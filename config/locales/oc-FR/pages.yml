@@ -44,6 +44,7 @@ oc:
         title: "de procèsses"
         description: "A la %{link} la seccion, los ciutadans participan a la redaccion e modificacion de las regulacions qu'afèctan la vila e pòdon opinar sus las politicas municipalas en los debats anteriors."
         link: "de procèsses"
+        feature_link: "s'enregistrar %{org_name}"
       faq:
         title: "de Problèmas tecnics?"
         description: "Legís las questions frequentas e resòlv los tieus dobtes."

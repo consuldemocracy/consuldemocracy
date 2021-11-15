@@ -16,6 +16,28 @@ it:
         no_polls: Non sei incaricato degli scrutini finali in alcuna votazione attiva
         select_poll: Seleziona votazione
         add_results: Aggiungere i risultati
+    poll_budgets:
+      see_ballot_sheets: Visualizza l'elenco dei fogli elettorali
+      index:
+        title: "%{poll_budget} - Elenco dei fogli elettorali"
+        ballot_sheet: "Foglio elettorale %{id}"
+        ballot_sheet_name: Nominativo
+        ballot_sheet_author: Autore
+        ballot_sheet_creation_date: Data di creazione
+        empty_results: Non c'è ancora alcun foglio elettorale per questo voto
+      new:
+        title: "%{poll_budget} - Nuovo foglio elettorale"
+        booth: Urna
+        select_booth: Selezionare il seggio
+        csv_data: Dati CSV
+        submit: Salva
+      show:
+        created_at: Data di creazione
+        author: Autore
+        data: Dati CSV
+    booth:
+      new:
+        title: "Scegli la tua cabina"
     results:
       flash:
         create: "Risultati salvati"
@@ -47,7 +69,6 @@ it:
         not_allowed: "Oggi non hai turni da scrutatore"
       new:
         title: Convalida documento
-        document_number: "Numero del documento (lettere incluse)"
         submit: Convalida documento
         error_verifying_census: "L’Anagrafe non ha potuto verificare questo documento."
         form_errors: non hanno consentito di verificare il documento
@@ -60,6 +81,7 @@ it:
         not_to_vote: La persona ha deciso di non votare al momento
       show:
         can_vote: Puoi votare
+        cannot_vote: La persona non può votare perché non è registrata nel distretto/nei distretti dove avviene il voto.
         error_already_voted: Hai già partecipato a questa votazione
         submit: Conferma voto
         success: "Voto inserito!"

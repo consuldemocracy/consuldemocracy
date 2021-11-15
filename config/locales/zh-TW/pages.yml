@@ -18,6 +18,7 @@ zh-TW:
         title: "辯論"
         description: "在%{link} 部分，您可以向別人展示並分享您對與城市相關的問題之意見。 它並且是一個產生想法的地方，通過%{org} 的其他部分，能導致市議會的具體行動。"
         link: "公民辯論"
+        feature: "您可以打開辯論，評論和評估，使用<strong>我同意</strong>或<strong>我不同意</strong>。 為此您必須%{link}。"
         feature_link: "在%{org} 註冊"
         image_alt: "為辯論評分的按鈕"
         figcaption: '為辯論評分的“我同意”和“我不同意”按鈕。'
@@ -26,11 +27,13 @@ zh-TW:
         description: "在%{link} 部分，您可以向市議會提出建議，以便將其付諸實行。 這些建議需要得到支持，如果得到足夠的支持，就會受到公眾投票。 這些公民投票中通過的建議將會被市議會接受並實行。"
         link: "公民建議"
         image_alt: "支持建議的按鈕"
+        figcaption: '用於"支持"建議的按鈕'
       budgets:
         title: "參與性預算編制"
         description: "%{link} 部分可幫助人們直接決定如何使用市政預算的部分開支。"
         link: "參與性預算"
         image_alt: "參與式預算的不同階段"
+        figcaption: '參與式預算的“支持”和“投票”階段。'
       polls:
         title: "投票"
         description: "每當提案達到1%支持並進入投票，或市議會提出問題供人們決定時，%{link} 部分就會啟動。"
@@ -41,6 +44,7 @@ zh-TW:
         title: "過程"
         description: "在%{link} 部分，公民參與起草和修改影響城市的法規，並可以在已有的辯論中就市政政策發表意見。"
         link: "過程"
+        feature_link: "在%{org_name} 中註冊"
       faq:
         title: "技術問題？"
         description: "請閱讀常見問題解答來解決您的問題。"
@@ -154,6 +158,7 @@ zh-TW:
               description_column: 減少字體大小
       compatibility:
         title: 兼容標準和視覺設計
+        description: '本網站的所有頁面均符合<strong>輔助功能指南</strong>或由屬於W3C的<abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr>工作組建立的無障礙設計的一般原則。'
     titles:
       help: "什麼是%{org}？ - 公民參與"
     verify:

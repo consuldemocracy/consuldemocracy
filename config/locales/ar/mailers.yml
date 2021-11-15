@@ -10,6 +10,8 @@ ar:
       manage_email_subscriptions: لإيقاف استلام رسائل البريد الإلكتروني هذه عليك بتغيير الإعدادات الخاصة بك في
     email_verification:
       click_here_to_verify: هذا الرابط
+      instructions_2: سوف يتحقق هذا البريد الإلكتروني من حسابك باستخدام <b>%{document_type} %{document_number}</b>. إذا لم تكن هذه ملكًا لك، فالرجاء عدم النقر على الرابط السابق وتجاهل هذه الرسالة الإلكترونية.
+      instructions: لإكمال عملية التحقق من حساب المستخدم الخاص بك يجب عليك النقر على %{verification_link}.
       subject: تأكيد بريدك الإلكتروني
       thanks: شكرا جزيلا.
       title: أكد حسابك باستخدام الرابط التالي
@@ -32,6 +34,7 @@ ar:
       unsubscribe_account: حسابي
     direct_message_for_sender:
       subject: "لقد قمت بإرسال رسالة خاصة جديدة"
+      title: "وقد أرسلت رسالة خاصة جديدة إلى <strong>%{receiver}</strong> مع المحتوى:"
     user_invite:
       ignore: "إذا لم تقم بطلب هذه الدعوة لا تقلق، يمكنك تجاهل هذه الرسالة."
       text: "شكراً لك لتقديم طلب للإنضمام إلى %{org} ، خلال ثواني ستكون قادر على المشاركة ، الرجاء ملاً النموذج التالي:"
@@ -42,11 +45,15 @@ ar:
     budget_investment_created:
       subject: "شكرا لك لانشاء استثمار!"
       title: "شكرا لك لانشاء استثمار!"
+      intro: "مرحبا <strong>%{author}</strong>،"
+      text: "شكرا لك لإنشاء استثمارك <strong>%{investment}</strong> من اجل الميزانيات المشتركة <strong>%{budget}</strong>."
+      follow: "سوف نبلغك عن كيفية تقدم العملية، والتي يمكنك متابعتها على <strong>%{link}</strong>."
       follow_link: "الميزانية التشاركية"
       sincerely: "مع خالص التقدير،"
       share: "شارك مشروعك"
     budget_investment_unfeasible:
       hi: "عزيزي المستخدم،"
+      new: "لكل هذا، ندعوك لوضع <strong> استثمار جديد </strong> يتوافق مع شروط هذه العملية. يمكنك القيام بذلك باتباع هذا الرابط: %{url}."
       new_href: "مشروع استثماري جديد"
       sincerely: "مع خالص التقدير،"
       sorry: "عذراً للإزعاج وشكر على مشاركتكم."
@@ -67,6 +74,7 @@ ar:
       subject: "تعليق تقييم جديد"
       title: تعليق تقييم جديد لـ %{investment}
       hi: مرحبا
+      new_comment_by: هناك تعليق تقييم جديد من <strong>%{commenter}</strong> على استثمار الميزانية %{investment}
       commenter_info: "%{commenter}، %{time}:"
     new_actions_notification_rake_created:
       subject: "المزيد من الأخبار حول اقتراح المواطن الخاص بك"

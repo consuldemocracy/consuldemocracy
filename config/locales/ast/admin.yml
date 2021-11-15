@@ -5,6 +5,7 @@ ast:
     actions:
       actions: Acciones
       confirm: '¿Tas seguru?'
+      delete: "Borrar"
       hide: Despintar
       hide_author: Bloquiar a l'autor
       restore: Volver amosar
@@ -12,13 +13,10 @@ ast:
       unmark_featured: Quitar destacáu
       edit: Editar propuesta
       configure: Configurar
-      delete: Borrar
     banners:
       index:
         title: Banners
         create: Crear banner
-        edit: Editar el banner
-        delete: Esaniciar banner
         filters:
           all: Toes
           with_active: Activos
@@ -54,17 +52,22 @@ ast:
         title: Actividá de moderadores
         type: Tipu
     budgets:
+      actions:
+        edit: "Editar presupuestu"
+        preview: "Previsualizar"
       index:
         title: Presupuestu participativu
         new_link: Crear nuevu presupuestu
         filter: Filtru
         filters:
+          all: Toes
           open: Abiertu
           finished: Remataes
+        budget_investments: Propuestes d'inversión
+        table_budget_type: "Tipu"
+        table_draft: "Borrador"
         table_name: Nome
         table_phase: Fase
-        edit_groups: Editar grupos de partíes
-        edit_budget: Editar presupuestu
       create:
         notice: '¡Nueva campaña de presupuestos participativos creada con ésitu!'
       update:
@@ -75,13 +78,15 @@ ast:
         enabled: Habilitáu
         actions: Acciones
         active: Activos
-      new:
-        title: Nuevu presupuestu ciudadanu
+      show:
+        add_heading: "Añedir partida"
       winners:
         calculate: Calcular propuestes ganadores
         calculated: Calculando ganadoras, puede tardar un minutu.
     budget_groups:
       name: "Nome"
+      index:
+        new_button: "Añedir nuevu grupu"
     budget_headings:
       form:
         submit: "Guardar partida"
@@ -125,6 +130,8 @@ ast:
           feasibility: Viabilidá
           valuation_finished: Ev. Rem.
           selected: Escoyía
+          price: Costu
+          author: Autor
         see_results: "Ver resultancies"
       show:
         assigned_admin: Alministrador asignáu
@@ -156,11 +163,11 @@ ast:
       search_unfeasible: Buscar invidables
     milestones:
       index:
+        table_id: "ID"
         table_title: "Títulu"
         table_description: "Descripción detallada"
         table_status: Estáu
         table_actions: "Acciones"
-        delete: "Esaniciar finxu"
         no_milestones: "Nun hai finxos definíos"
         image: "Imaxe"
         documents: "Documentos"
@@ -183,17 +190,66 @@ ast:
         table_actions: Acciones
     progress_bars:
       index:
+        table_id: "ID"
         table_kind: "Tipu"
         table_title: "Títulu"
     comments:
       index:
+        id: "ID"
+        content: "Conteníu"
+        author: "Autor"
+        commentable_type: "Tipu"
+        title: Comentarios ocultos
+        table_link: "Enllaz"
+    hidden_comments:
+      index:
+        filter: Filtru
+        filters:
+          all: Toes
+          with_confirmed_hide: Confirmaos
+          without_confirmed_hide: Pindios
+        hidden_debate: Alderique ocultu
+        hidden_proposal: Propuesta oculta
         title: Comentarios ocultos
     dashboard:
       index:
         title: Alministración
+      actions:
+        index:
+          active: 'Sí'
+          inactive: 'Non'
+          action_title: Títulu
+          action_type: Tipu
+          action_active: Activos
+          order: Orden
+          default:
+            email: Corréu electrónicu
+            polls: Votaciones
+        form:
+          submit_button: Guardar
+      administrator_tasks:
+        index:
+          filter: Filtru
+          filters:
+            pending: Pindios
+        form:
+          proposal: la propuesta
     debates:
       index:
+        id: ID
+        author: Autor
         title: Alderiques ocultos
+    hidden_debates:
+      index:
+        filter: Filtru
+        filters:
+          all: Toes
+          with_confirmed_hide: Confirmaos
+          without_confirmed_hide: Pindios
+        title: Alderiques ocultos
+    documents:
+      index:
+        title: "Documentos"
     hidden_users:
       index:
         filter: Filtru
@@ -233,28 +289,26 @@ ast:
           process: Procesu
           debate_phase: Fase previa
           use_markdown: Usa Markdown pa dar formatu al testu
-          title_placeholder: Escribe'l títulu del procesu
-          summary_placeholder: Resume curtiu de la descripción
-          description_placeholder: Añede una descripción del procesu
-          additional_info_placeholder: Añede cualquier información adicional que pueda ser d'interés
         index:
           create: Nuevu procesu
           title: Procesos legislativos
           filters:
+            active: Activos
             all: Toes
         new:
           back: Volver
           title: Crear nuevu procesu de lexislación collaborativa
           submit_button: Crear procesu
         proposals:
-          select_order: Ordenar por
           orders:
-            title: Títulu
-            supports: Sofitos
+            title: "Títulu"
+            supports: "Sofitos"
         process:
           title: Procesu
           comments: Comentarios
           status: Estáu
+          start_date: Fecha d'entamu del procesu
+          end_date: Fecha de fin del procesu
           status_open: Abiertu
           status_closed: Pesllao
           status_planned: Próximamente
@@ -283,6 +337,7 @@ ast:
           submit_button: Guardar Cambeos
           warning: Editasti'l testu. Pa caltener de forma permanente los cambeos, nun escaezas de faer click en Guardar.
         form:
+          title: 'Editando <span class="strong">%{draft_version_title}</span> del procesu <span class="strong">%{process_title}</span>'
           launch_text_editor: Llanzar editor de testu
           close_text_editor: Pesllar editor de testu
           use_markdown: Usa Markdown pa dar formatu al testu
@@ -291,9 +346,7 @@ ast:
             status:
               draft: Puedes previsualizar como almin, naide más lu pue ver
               published: Visible pa tol mundu
-          title_placeholder: Escribe'l títulu d'esta versión del borrador
           changelog_placeholder: Describe cualesquier cambíu relevante cola versión anterior
-          body_placeholder: Escribe'l testu del borrador
         index:
           title: Versiones del borrador
           create: Crear versión
@@ -346,6 +399,9 @@ ast:
         title: Xestores
       manager:
         add: Añedir como Presidente de mesa
+    sdg/managers:
+      sdg/manager:
+        add: Añedir como Presidente de mesa
     menu:
       activity: Actividá de moderadores
       admin: Menú d'alministración
@@ -386,8 +442,11 @@ ast:
           save: "Guardar"
       title_moderated_content: Conteníu moderao
       title_profiles: Perfiles
+      title_settings: Configuración global
       legislation: Lexislación collaborativa
       users: Usuarios
+      debates: "Alderique"
+      comments: "Comentarios"
     administrators:
       index:
         title: Alministradores
@@ -411,6 +470,7 @@ ast:
       show:
         send: Enviar
         sent_at: Fecha de creación
+        from: Desde
     admin_notifications:
       index:
         section_title: Notificaciones
@@ -425,6 +485,11 @@ ast:
         title: Títulu
         body: Testu
         link: Enllaz
+    system_emails:
+      comment:
+        title: "Comentario"
+      reply:
+        title: "Responder"
     valuators:
       index:
         title: Evaluaores
@@ -501,6 +566,7 @@ ast:
     polls:
       index:
         title: "Llistáu de votaciones"
+        no_polls: "Nun hai nenguna votación."
         create: "Crear votación"
         name: "Nome"
         dates: "Feches"
@@ -541,6 +607,7 @@ ast:
         title: "Editar entruga ciudadana"
       new:
         title: "Crear entruga ciudadana para la encuesta %{poll}"
+        title_proposal: "Crear entruga pa votación"
       show:
         proposal: Propuesta ciudadana orixinal
         author: Autor
@@ -549,6 +616,7 @@ ast:
         answers:
           title: Respuesta
           description: Descripción detallada
+          images: Imaxes
           documents: Documentos
           document_title: Títulu
           document_actions: Acciones
@@ -556,6 +624,7 @@ ast:
       show:
         title: Títulu
         description: Descripción detallada
+        images: Imaxes
       videos:
         index:
           video_title: Títulu
@@ -563,6 +632,8 @@ ast:
       index:
         title: "Recuentos"
         no_recounts: "Nun hai nada de lo que faer recuentu"
+        total_final: "Recuentos finales"
+        total_system: "Votos (automáticu)"
         table_booth_name: "Urna"
         table_system_count: "Votos (automáticu)"
     results:
@@ -590,8 +661,6 @@ ast:
         submit_button: "Actualizar urna"
       show:
         location: "Allugamientu"
-      booth:
-        edit: "Editar urna"
     officials:
       edit:
         destroy: Esaniciar condición de 'Cargu Públicu'
@@ -610,7 +679,6 @@ ast:
       level_4: Nivel 4
       level_5: Nivel 5
       search:
-        edit_official: Editar cargu públicu
         make_official: Convertir en cargo público
         title: "Cargos Públicos: Búsqueda de usuarios"
     organizations:
@@ -621,6 +689,9 @@ ast:
           pending: Pindios
           rejected: Rechazada
           verified: Verificada
+        hidden_count:
+          one: Hay además <strong>una organización</strong> sin usuario o con el usuario bloqueado.
+          other: Hay <strong>%{count} organizaciones</strong> sin usuario o con el usuario bloqueado.
         name: Nome
         email: Corréu electrónicu
         status: Estáu
@@ -637,6 +708,8 @@ ast:
         title: Propuestes
         id: ID
         author: Autor
+        select: Escoyer
+        selected: Escoyía
         milestones: Siguimientu
     hidden_proposals:
       index:
@@ -646,27 +719,28 @@ ast:
           with_confirmed_hide: Confirmaos
           without_confirmed_hide: Pindios
         title: Propuestes ocultes
+    hidden_proposal_notifications:
+      index:
+        filter: Filtru
+        filters:
+          all: Toes
+          with_confirmed_hide: Confirmaos
+          without_confirmed_hide: Pindios
     settings:
       flash:
         updated: Valor actualizado
       index:
         title: Configuración global
+        general: Configuración global
         update_setting: Actualizar
         feature_flags: Funcionalidades
         features:
           enabled: "Funcionalidad activada"
-          disabled: "Funcionalidad desactivada"
-          enable: "Activar"
-          disable: "Desactivar"
         map:
           form:
             submit: Actualizar
-      setting_actions: Acciones
-      setting_status: Estáu
       setting_value: Valor
     shared:
-      true_value: "Sí"
-      false_value: "Non"
       search:
         label:
           booths: "Buscar urna por nombre"
@@ -675,6 +749,7 @@ ast:
           poll_questions: "Buscar preguntas"
           proposals: "Buscar propuestas por título, código, descripción o pregunta"
           users: "Buscar usuario por nombre o email"
+        search: "Atopar"
       search_results: "Resultados de búsqueda"
       no_search_results: "No se han encontrado resultados."
       actions: Acciones
@@ -720,6 +795,7 @@ ast:
       show:
         created_at: Creado
         author: Autor
+        users: Usuarios
         verified:
           one: "Hay %{count} firma válida"
           other: "Hay %{count} firmas válidas"
@@ -749,10 +825,20 @@ ast:
           visits: Visitas
           votes: Votos
         budgets_title: Presupuestos participativos
+        participatory_budgets: Presupuestos participativos
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
         incomplete_verifications: Verificaciones incompletas
         polls: Votaciones
+      graph:
+        debate_created: Alderique
+        visit: Visitas
+        proposal_created: Propuestes ciudadanes
+      budget_balloting:
+        vote_count: Votos
+      budget_supporting:
+        users: Usuarios
+        vote_count: Votos
       direct_messages:
         title: Mensajes directos
         total: Total
@@ -766,12 +852,17 @@ ast:
         table:
           poll_name: Votación
           question_name: Entruga
+      sdg:
+        debates: "Alderique"
+        polls: "Votaciones"
+        proposals: "Propuestes"
     tags:
       index:
         add_tag: Añade un nuevo tema de propuesta
         title: Temas de propuesta
     users:
       columns:
+        id: ID
         name: Nome
         email: Corréu electrónicu
         document_number: Número de documento
@@ -779,6 +870,9 @@ ast:
         verification_level: Nivel de verficación
       index:
         title: Usuariu
+        filter: Filtru
+        filters:
+          active: Activos
       search:
         placeholder: Buscar usuario por email, nombre o DNI
     verifications:
@@ -851,3 +945,14 @@ ast:
         proposals: Propuestes
         debates: Alderique
         processes: Procesos
+    audits:
+      id: "ID"
+      actions: "Acciones"
+    local_census_records:
+      index:
+        document_type: Tipu de documentu
+        document_number: Número de documento
+        date_of_birth: Fecha de nacencia
+    machine_learning:
+      tab_help: "Ayuda"
+      tags: "Temes"

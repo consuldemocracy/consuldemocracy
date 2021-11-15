@@ -43,14 +43,12 @@ ca:
       title: Gestió d'usuaris
       under_age: "No tens edat suficient per verificar el teu compte."
       verify: verificar usuari
-    email_label: El teu correu electrònic
     date_of_birth: Data de naixement
     email_verifications:
       already_verified: Aquest compte d'usuari ja està verificada.
       choose_options: "Tria una de les opcions següents:"
       document_found_in_census: Aquest document està en el registre del padró municipal, però encara no té un compte d'usuari associat.
       document_mismatch: "Aquest email correspon a un usuari que ja té associat el document %{document_number} (%{document_type})"
-      email_placeholder: Introdueix el correu electrònic de registre
       email_sent_instructions: Per acabar d'verificar aquest compte cal que feu clic a l'enllaç que li hem enviat a l'adreça de correu que figura a dalt. Aquest pas és necessari per confirmar que aquest compte d'usuari és seva.
       if_existing_account: Si la persona ja ha creat un compte d'usuari al web
       if_no_existing_account: Si la persona encara no ha creat un compte d'usuari al web

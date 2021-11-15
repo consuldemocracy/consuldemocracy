@@ -1,4 +1,8 @@
 fi:
+  attributes:
+    name: Nimi
+    email: Sähköposti
+    description: Kuvaus
   activerecord:
     models:
       budget:
@@ -34,6 +38,9 @@ fi:
       site_customization/page:
         one: Mukautettu sivu
         other: Mukautetut sivut
+      document:
+        one: Asiakirja
+        other: Asiakirjat
       legislation/process:
         one: "Prosessi"
         other: "Prosessit"
@@ -63,16 +70,29 @@ fi:
         name: "Nimi"
         phase: "Vaihe"
         currency_symbol: "Valuutta"
+      budget/translation:
+        name: "Nimi"
       budget/investment:
         description: "Kuvaus"
         administrator_id: "Järjestelmänvalvoja"
         location: "Sijainti (vapaaehtoinen)"
         image_title: "Kuvan otsikko"
+        feasibility_undecided: "Määrittelemätön"
+        feasibility_unfeasible: "Toteuttamiskelvoton"
+        selected: "Merkitse valituksi"
+        selected_true: "Valittu"
+        selected_false: "Ei valittu"
+        valuator_ids: "Ryhmät"
+        valuation_tag_list: "Tunnisteet"
+      budget/investment/translation:
+        description: "Kuvaus"
       geozone:
         name: Nimi
       milestone:
         status_id: "Nykyinen tila (valinnainen)"
         publication_date: "Julkaisupäivä"
+      milestone/translation:
+        description: "Kuvaus"
       milestone/status:
         name: "Nimi"
         description: "Kuvaus (vapaaehtoinen)"
@@ -81,20 +101,35 @@ fi:
       progress_bar/kind:
         primary: "Ensisijainen"
         secondary: "Toissijainen"
+      budget/group/translation:
+        name: "Ryhmän nimi"
       budget/heading:
+        latitude: "Leveysaste (valinnainen)"
+        longitude: "Pituusaste (valinnainen)"
         price: "Hinta"
+      budget/phase:
+        ends_at: "Päättymispäivä"
+        starts_at: "Aloituspäivä"
+      budget/phase/translation:
+        name: "Nimi"
+        description: "Kuvaus"
+        summary: "Yhteenveto"
       comment:
         body: "Kommentti"
         user: "Käyttäjä"
       debate:
         author: "Tekijä"
         description: "Mielipide"
+        tag_list: "Aiheet"
         terms_of_service: "Käyttöehdot"
       proposal:
         author: "Tekijä"
         question: "Kysymys"
         description: "Kuvaus"
+        selected: "Merkitse valituksi"
         terms_of_service: "Käyttöehdot"
+      proposal/translation:
+        retired_explanation: "Selitys"
       user:
         login: "Sähköposti tai käyttäjänimi"
         email: "Sähköposti"
@@ -103,24 +138,40 @@ fi:
         password: "Salasana"
         current_password: "Nykyinen salasana"
         phone_number: "Puhelinnumero"
+      direct_message:
+        body: "Viesti"
       organization:
         name: "Organisaation nimi"
       poll:
         name: "Nimi"
+        title: "Nimi"
         starts_at: "Aloituspäivä"
         ends_at: "Sulkeutumispäivä"
         summary: "Yhteenveto"
         description: "Kuvaus"
+      active_poll/translation:
+        description: "Kuvaus"
+      poll/booth:
+        name: "Nimi"
       poll/translation:
         name: "Nimi"
         summary: "Yhteenveto"
         description: "Kuvaus"
       poll/question:
+        poll_id: "Kysely"
         title: "Kysymys"
         summary: "Yhteenveto"
         description: "Kuvaus"
       poll/question/translation:
         title: "Kysymys"
+      poll/ballot_sheet:
+        poll_id: Kysely
+      proposal_notification:
+        body: "Viesti"
+      sdg/goal:
+        description: "Kuvaus"
+      sdg/local_target/translation:
+        description: "Kuvaus"
       site_customization/page:
         content: Sisältö
         created_at: Luotu
@@ -133,16 +184,29 @@ fi:
         image: Kuva
       site_customization/content_block:
         name: Nimi
+      banner:
+        target_url: "Linkki"
+      banner/translation:
+        description: "Kuvaus"
       legislation/process:
         summary: Yhteenveto
         description: Kuvaus
         additional_info: Lisätiedot
         start_date: Aloituspäivä
         end_date: Päättymispäivä
+        debate_start_date: Aloituspäivä
+        debate_end_date: Päättymispäivä
+        draft_start_date: Aloituspäivä
+        draft_end_date: Päättymispäivä
+        allegations_start_date: Aloituspäivä
+        allegations_end_date: Päättymispäivä
+        proposals_phase_start_date: Aloituspäivä
+        proposals_phase_end_date: Päättymispäivä
       legislation/process/translation:
         summary: Yhteenveto
         description: Kuvaus
         additional_info: Lisätiedot
+        homepage: "Kuvaus"
         milestones_summary: Yhteenveto
       legislation/draft_version:
         title: Version nimi
@@ -153,6 +217,8 @@ fi:
         title: Version nimi
         body: Teksti
         changelog: Muutokset
+      legislation/question/translation:
+        title: Kysymys
       legislation/annotation:
         text: Kommentti
       document:
@@ -182,8 +248,25 @@ fi:
       widget/card/translation:
         description: Kuvaus
         link_text: Linkin teksti
+      dashboard/action:
+        description: Kuvaus
+        active: Aktiivinen
+        action_type: Tyyppi
+      link:
+        url: URL
+      valuator:
+        description: Kuvaus
+      valuator_group:
+        name: "Ryhmän nimi"
+      local_census_record:
+        document_type: Asiakirjatyyppi
+        date_of_birth: Syntymäaika
     errors:
       models:
+        poll/voter:
+          attributes:
+            user_id:
+              has_voted: "Käyttäjä on jo äänestänyt"
         site_customization/image:
           attributes:
             image:

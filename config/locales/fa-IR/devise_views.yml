@@ -2,10 +2,10 @@ fa:
   devise_views:
     confirmations:
       new:
-        email_label: پست الکترونیکی
         submit: ارسال مجدد دستورالعمل 
         title: ارسال دوباره دستورالعمل تایید 
       show:
+        instructions: تایید حساب با ایمیل %{email}
         new_password_confirmation_label: تکرار رمز عبور دسترسی
         new_password_label: رمز عبور دسترسی جدید
         please_set_password: لطفا رمز عبور جدید خود را انتخاب کنید (به شما این امکان را می دهد که با ایمیل بالا وارد شوید)
@@ -38,17 +38,16 @@ fa:
     organizations:
       registrations:
         new:
-          email_label: پست الکترونیکی
-          organization_name_label: نام سازمان
           password_confirmation_label: تایید رمز عبور
-          password_label: رمز عبور
-          phone_number_label: شماره تلفن
-          responsible_name_label: نام کامل مسئول گروه
           responsible_name_note: این شخص نماینده انجمن / گروهی است که اسامی آنها ارائه شده است
           submit: ثبت
           title: ثبت نام به عنوان یک سازمان و یا جمعی
         success:
           back_to_index: من میفهمم؛ بازگشت به صفحه اصلی
+          instructions_1: "<b> ما به زودی با شما تماس خواهیم گرفت </ b> برای تأیید اینکه شما در واقع این گروه را نشان می دهید."
+          instructions_2: در حالی که <b> ایمیل شما بررسی شده است </ b>، ما یک پیوند <b> برای تایید حساب شما </ b> ارسال کردیم.
+          instructions_3: پس از تأیید، شما ممکن است شروع به شرکت در یک گروه تأیید نشده کنید.
+          thank_you: با تشکر از شما برای ثبت نام جمعی خود در وب سایت. اکنون <b> در انتظار تایید </ b> است.
           title: ثبت نام به عنوان یک سازمان و یا جمعی
     passwords:
       edit:
@@ -57,13 +56,10 @@ fa:
         password_label: رمز عبور جدید
         title: تغییر کلمه عبور
       new:
-        email_label: پست الکترونیکی
         send_submit: ' ارسال دستورالعمل'
         title: رمز عبور را فراموش کرده اید؟
     sessions:
       new:
-        login_label: نام کاربری یا ایمیل
-        password_label: رمز عبور
         remember_me: مرا به خاطر بسپار
         submit: ' ورود '
         title: ورود به برنامه
@@ -101,12 +97,9 @@ fa:
           waiting_for: "در انتظار تایید:"
         new:
           cancel: لغو کردن ورود
-          email_label: پست الکترونیکی
           organization_signup: آیا نماینده یک سازمان یا گروهی هستید؟%{signup_link}
           organization_signup_link: "اینجا ثبت نام کنید\n"
           password_confirmation_label: تایید رمز عبور
-          password_label: رمز عبور
-          redeemable_code: کد تایید  از طریق ایمیل دریافت شد.
           submit: ثبت
           terms: با ثبت نام شما قبول می کندکه %{terms}
           terms_link: شرایط و ضوابط مورد استفاده
@@ -114,8 +107,10 @@ fa:
           title: ثبت
           username_is_available: نام کاربری موجود
           username_is_not_available: نام کاربری در حال حاضر در حال استفاده است
-          username_label: نام کاربری
           username_note: نامی که در کنار پست های شما ظاهر می شود
         success:
           back_to_index: من میفهمم؛ بازگشت به صفحه اصلی
+          instructions_1: لطفا <b> ایمیل خود را بررسی کنید </ b> - ما یک پیوند <b> برای تأیید اعتبار شما ارسال کردیم </ b>.
+          instructions_2: پس از تأیید، شما ممکن است مشارکت را آغاز کنید.
+          thank_you: از ثبت نام برای وب سایت سپاسگزاریم اکنون باید <b> آدرس ایمیل خود را تایید کنید </ b>.
           title: ایمیل خود را تغییر دهید
