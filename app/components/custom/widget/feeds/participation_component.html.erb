@@ -1,0 +1,7 @@
+<div class="container bg-gray-200">  
+  <% feeds.each do |feed| %>
+    <% if feed_proposals?(feed) || feed_debates?(feed) %>
+      <%= render Widget::Feeds::FeedComponent.new(feed) %>
+    <% end %>
+  <% end %>
+</div>

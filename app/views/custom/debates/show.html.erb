@@ -4,6 +4,8 @@
 <% end %>
 
 <% cache [locale_and_user_status(@debate), @debate, @debate.author, Flag.flagged?(current_user, @debate), @debate_votes] do %>
+<div class="container-xxl">
+
 <div class="row">
     <div id="<%= dom_id(@debate) %>" class="col-12 col-md-8 order-1">
         <%= back_link_to %>
@@ -73,4 +75,5 @@
 <%= render "comments" %>
 </div>
 
+</div>
 </div>

@@ -1,11 +1,22 @@
-<div class="card bg-white shadow border-gray-300">
-  <div class="card-body p-3 p-lg-5">
-    <div class="row">
-      <div class="col-12 mb-4 mb-lg-0">
-        <h4 class="card-title mb-3"><%= link_to proposal.title, url_for(proposal) %></h4>
-        <p class="card-text text-muted"><%= proposal.summary %></p>
-        <div class="d-sm-flex">
-            <%= render SDG::TagListComponent.new(proposal, limit: 5) %>
+<div class="col-12 col-md-6 col-lg-4 mb-4">
+  <div class="card border-gray-300 p-4 h-100">
+    <div class="card-header bg-white border-0 pb-0">
+      <h2 class="h4 m-0"><%= link_to proposal.title, url_for(proposal) %></h2>
+    </div>
+    <div class="card-body">
+      <p><%= proposal.summary %></p>
+      <div class="d-sm-flex">
+        <%= render SDG::TagListComponent.new(proposal, limit: 5) %>
+      </div>
+    </div>
+    <div class="post-meta">
+      <div class="media d-flex align-items-center justify-content-between flex-wrap">
+        <div class="post-group">
+          <h5><%= t("proposals.proposal.supports", count: proposal.total_votes) %></h5>
+        </div>
+        <div class="post-group">
+          <span class="far fa-comments me-2"></span>
+          <%= link_to t("proposals.proposal.comments", count: proposal.comments_count), url_for(proposal) %>
         </div>
       </div>
     </div>

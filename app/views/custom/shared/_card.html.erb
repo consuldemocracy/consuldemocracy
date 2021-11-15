@@ -1,0 +1,19 @@
+<div class="col-12 col-md-6 col-lg-4 mb-5 mb-lg-0" id="<%= dom_id(card) %>">
+  <div class="card shadow h-100 d-flex justify-content-center">
+    <% if card.image.present? %>
+      <%= image_tag(card.image_url(:large), alt: card.image.title, class: "card-img-top rounded-top p-4 w-75") %>
+    <% end %>
+            <div class="card-body">
+              <% if card.label.present? %>
+                <span class="h6 icon-tertiary small"><%= card.label %></span>
+                <% end %>
+                <h3 class="h5 card-title mt-3"><%= card.title %></h3>
+                <p class="card-text"><%= card.description %></p>
+            </div>
+            <div class="post-meta">
+              <div class="media d-flex align-items-center justify-content-center flex-wrap pb-3">
+                  <a href="<%= card.link_url %>" class="btn btn-primary"><%= card.link_text %></a>
+              </div>
+            </div>
+        </div>
+</div>

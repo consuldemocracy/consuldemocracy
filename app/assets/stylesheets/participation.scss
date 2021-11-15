@@ -850,8 +850,7 @@
   }
 }
 
-.help-header,
-.section-header {
+.help-header {
   @include full-width-background;
   @include full-width-border(bottom, 1px solid #eee);
   background: #fafafa;

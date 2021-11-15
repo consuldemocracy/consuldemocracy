@@ -19,6 +19,8 @@
           Flag.flagged?(current_user, @proposal),
           @proposal.followed_by?(current_user),
           @proposal_votes] do %>
+          <div class="container-xxl">
+
     <div class="row">
     <div id="<%= dom_id(@proposal) %>" class="col-12 col-md-8 order-1">
         <%= back_link_to proposals_path unless preview %>
@@ -103,5 +105,6 @@
     <%= render "milestones/milestones", milestoneable: @proposal %>
   </div>
 <% end %>
+</div>
 </div>
 </div>

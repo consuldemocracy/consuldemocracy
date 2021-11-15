@@ -13,34 +13,23 @@
 
 <%= render "shared/header", header: @header %>
 
-<div class="container">
-
-  <div class="row">
 
   <%= render "feeds" %>
-  </div>
 
-  <div class="row">
-    <% if @cards.any? %>
-      <div class="small-12 column <%= "large-8" if feed_processes_enabled? %>">
-        <h2 class="title"><%= t("welcome.cards.title") %></h2>
+<% if @cards.any? %>
+<section class="section py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-9 col-lg-8 text-center mx-auto">
 
-        <%= render "shared/cards", cards: @cards %>
+          <h2 class="h1 mb-4">
+              <%= t("welcome.cards.title") %>
+            </h2>
+          </div>
       </div>
-    <% end %>
+              <%= render "shared/cards", cards: @cards %>
+            </div>
 
-    <% if feed_processes_enabled? %>
-      <div class="small-12 large-4 column">
-        <%= render "processes" %>
-      </div>
-    <% end %>
-  </div>
-  <div class="row">
 
-  <% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
-    <%= render "recommended",
-                recommended_debates: @recommended_debates,
-                recommended_proposals: @recommended_proposals %>
+  </section>
   <% end %>
-</div>
-</div>
