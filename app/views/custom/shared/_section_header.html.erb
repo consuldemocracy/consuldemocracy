@@ -7,10 +7,10 @@
         </div>
         <div class="px-3 inline-block">
             <div class="fas fa-info-circle"> </div>
-            <%= link_to t("#{i18n_namespace}.help"), "#collapseHelp", 'data-bs-toggle' => "collapse", class:"link-primary" %>
+            <%= link_to t("#{i18n_namespace}.help"), "#Help#{namespace}", 'data-bs-toggle' => "collapse", class:"link-primary", 'role' => "button", 'aria-expanded' => "truee" ,'aria-controls' => "Help" %>
         </div>
       </div>
-      <div class="collapse mx-auto" id="collapseHelp" data-magellan-target="section_help">
+      <div class="collapse mx-auto" id="Helpdebates_controller">
         <div class="card card-body">
           <strong><%= t("debates.index.section_footer.title") %></strong>
           <%= t("debates.index.section_footer.description") %>
@@ -18,6 +18,12 @@
           <%= sanitize(t("debates.index.section_footer.help_text_2", org: link_to(setting["org_name"], new_user_registration_path))) %>
         </div>
       </div>
+      <div class="collapse" id="Helpproposals_controller">
+        <div class="card card-body">
+            <strong><%= t("proposals.index.section_footer.title") %></strong>
+          <%= t("proposals.index.section_footer.description") %>
+        </div>
+        </div>
     </div>
   </div>
 </section>

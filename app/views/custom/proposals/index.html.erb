@@ -8,16 +8,11 @@
   <%= render "shared/canonical", href: proposals_url %>
 <% end %>
 
+<%= render "shared/section_header", i18n_namespace: "proposals.index.section_header", image: "proposals" %>
 <div class="container-xxl">
-<div class="row">
+<div class="row mt-n10">
   <div class="col-12">
-    <%= render "shared/section_header", i18n_namespace: "proposals.index.section_header", image: "proposals" %>
-    <div class="collapse" id="collapseHelp" data-magellan-target="section_help">
-      <div class="card card-body">
-          <strong><%= t("proposals.index.section_footer.title") %></strong>
-        <%= t("proposals.index.section_footer.description") %>
-      </div>
-      </div>
+
     </div>
 
     <div class="col-12 col-md-8">
