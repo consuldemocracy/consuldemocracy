@@ -10,49 +10,54 @@
 <%= render "shared/section_header", i18n_namespace: "debates.index.section_header", image: "debates" %>
 <div class="container-xxl">
   <div class="row mt-n10">
-    <div id="debates" class="col-12 col-md-8 order-2 order-md-1">
-      <% if @search_terms || @advanced_search_terms %>
-        <div class="alert alert-success" role="alert">
-          <%= back_link_to %>
-          <% if @search_terms || @advanced_search_terms %>
-            <div class="h2"><%= t("shared.search_results") %></div>
-            <%= page_entries_info @debates %>
-            <% if !@advanced_search_terms %>
-              <%= sanitize( t("debates.index.search_results", count: @debates.size, search_term: @search_terms) ) %>
-            <% end %>
-          <% end %>
-        </div>
-      <% end %>
-
+    <div id="debates" class="col-12 col-md-8">
       <nav class="navbar bg-primary text-white">
 
         <%= render "shared/order_links", i18n_namespace: "debates.index" %>
         <%= render Shared::AdvancedSearchComponent.new %>
 
       </nav>
+      <div class="pt-3">
 
-      <% if @debates.any? || current_user.blank? %>
-        <% if debates_default_view? %>
-          <%= render @debates %>
-        <% else %>
-          <% @debates.each do |debate| %>
-            <%= render "debates/debate_minimal", debate: debate %>
-          <% end %>
+        <% if @search_terms || @advanced_search_terms %>
+          <div class="alert alert-info" role="alert">
+            <%= back_link_to %>
+            <% if @search_terms || @advanced_search_terms %>
+              <div class="h2"><%= t("shared.search_results") %></div>
+              <%= page_entries_info @debates %>
+              <% if !@advanced_search_terms %>
+                <%= sanitize( t("debates.index.search_results", count: @debates.size, search_term: @search_terms) ) %>
+              <% end %>
+            <% end %>
+          </div>
         <% end %>
-      <% else %>
-        <%= empty_recommended_debates_message_text(current_user) %>
-      <% end %>
-      <%= paginate @debates %>
+
+        <% if @debates.any? || current_user.blank? %>
+          <% if debates_default_view? %>
+            <%= render @debates %>
+          <% else %>
+            <% @debates.each do |debate| %>
+              <%= render "debates/debate_minimal", debate: debate %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <%= empty_recommended_debates_message_text(current_user) %>
+        <% end %>
+        <%= paginate @debates %>
+      </div>
 
     </div>
 
-    <div class="col-12 col-md-4 order-1 order-md-2 ">
+    <div class="col-12 col-md-4 p-3">
 
-      <aside class="margin-bottom">
 
-        <%= link_to t("debates.index.start_debate"), new_debate_path, class: "btn btn-lg btn-white my-2 mx-2 w-100" %>
+
+        <%= link_to t("debates.index.start_debate"), new_debate_path, class: "d-block d-md-none btn btn-lg btn-primary my-2 mx-2 w-100" %>
+        <%= link_to t("debates.index.start_debate"), new_debate_path, class: "d-none d-md-block btn btn-lg btn-white my-2 mx-2 w-100" %>
+
+  <div class="card shadow p-4 my-5">
         <%= render "shared/tag_cloud", taggable: "Debate" %>
-      </aside>
+      </div>
     </div>
 
   </div>

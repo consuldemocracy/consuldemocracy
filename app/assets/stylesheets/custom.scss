@@ -50,3 +50,7 @@
     text-overflow: ellipsis;
   margin-bottom: 0;
 }
+
+.nav-pills .nav-link:hover {
+    color: $primary;
+}
