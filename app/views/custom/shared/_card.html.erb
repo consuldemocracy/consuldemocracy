@@ -1,7 +1,7 @@
 <div class="col-12 col-md-6 col-lg-4 mb-5 mb-lg-0" id="<%= dom_id(card) %>">
   <div class="card shadow h-100 d-flex justify-content-center">
     <% if card.image.present? %>
-      <%= image_tag(card.image_url(:large), alt: card.image.title, class: "card-img-top rounded-top p-4 w-75") %>
+      <%= image_tag(card.image_url(:large), alt: card.image.title, class: "card-img-top rounded-top p-5 w-75 mx-auto") %>
     <% end %>
             <div class="card-body">
               <% if card.label.present? %>

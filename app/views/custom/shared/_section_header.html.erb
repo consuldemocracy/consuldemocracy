@@ -1,9 +1,23 @@
-<div class="d-flex align-items-center p-3 my-3 rounded shadow-lg" data-magellan>
-  <%= image_tag "help/help_icon_#{image}.png", alt: t("#{i18n_namespace}.icon_alt"), class: "me-3" %>
-    <div class="h1 mb-0"><%= t("#{i18n_namespace}.title") %></div>
-
-    <div class="ms-auto">
-
-    <small><i class="fas fa-info-circle"></i> <%= link_to t("#{i18n_namespace}.help"), "#collapseHelp", 'data-bs-toggle' => "collapse"  %></small>
+<section class="section pb-10 pt-3 bg-primary text-white">
+  <div class="container">
+    <div class="row">
+      <div class="d-flex justify-content-between flex-wrap">
+        <div class="h1 text-center">
+          <%= t("#{i18n_namespace}.title") %>
+        </div>
+        <div class="px-3 inline-block">
+            <div class="fas fa-info-circle"> </div>
+            <%= link_to t("#{i18n_namespace}.help"), "#collapseHelp", 'data-bs-toggle' => "collapse", class:"link-primary" %>
+        </div>
+      </div>
+      <div class="collapse mx-auto" id="collapseHelp" data-magellan-target="section_help">
+        <div class="card card-body">
+          <strong><%= t("debates.index.section_footer.title") %></strong>
+          <%= t("debates.index.section_footer.description") %>
+          <%= t("debates.index.section_footer.help_text_1") %>
+          <%= sanitize(t("debates.index.section_footer.help_text_2", org: link_to(setting["org_name"], new_user_registration_path))) %>
+        </div>
+      </div>
+    </div>
   </div>
-  </div>
+</section>

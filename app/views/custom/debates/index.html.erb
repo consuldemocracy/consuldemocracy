@@ -7,11 +7,9 @@
   <%= render "shared/canonical", href: debates_url %>
 <% end %>
 
-<div class="container-xxl p-0">
-  <%= render "shared/section_header", i18n_namespace: "debates.index.section_header", image: "debates" %>
-
-  <div class="row">
-
+<%= render "shared/section_header", i18n_namespace: "debates.index.section_header", image: "debates" %>
+<div class="container-xxl">
+  <div class="row mt-n10">
     <div id="debates" class="col-12 col-md-8 order-2 order-md-1">
       <% if @search_terms || @advanced_search_terms %>
         <div class="alert alert-success" role="alert">
@@ -26,14 +24,12 @@
         </div>
       <% end %>
 
-      <%= render Shared::AdvancedSearchComponent.new %>
+      <nav class="navbar bg-primary text-white">
 
-      <nav class="navbar shadow-lg">
+        <%= render "shared/order_links", i18n_namespace: "debates.index" %>
+        <%= render Shared::AdvancedSearchComponent.new %>
 
-
-<%= render "shared/order_links", i18n_namespace: "debates.index" %>
-
-  </nav>
+      </nav>
 
       <% if @debates.any? || current_user.blank? %>
         <% if debates_default_view? %>
@@ -48,28 +44,17 @@
       <% end %>
       <%= paginate @debates %>
 
+    </div>
 
-      </div>
+    <div class="col-12 col-md-4 order-1 order-md-2 ">
 
-      <div class="col-12 col-md-4 order-1 order-md-2 ">
+      <aside class="margin-bottom">
 
-        <aside class="margin-bottom">
-
-          <%= link_to t("debates.index.start_debate"), new_debate_path, class: "btn btn-lg btn-primary my-2 mx-2 w-100" %>
-
-
-          <%= render "shared/tag_cloud", taggable: "Debate" %>
-        </aside>
-      </div>
-
-      <div class="collapse" id="collapseHelp" data-magellan-target="section_help">
-        <div class="card card-body">
-          <strong><%= t("debates.index.section_footer.title") %></strong>
-          <%= t("debates.index.section_footer.description") %>
-          <%= t("debates.index.section_footer.help_text_1") %>
-          <%= sanitize(t("debates.index.section_footer.help_text_2", org: link_to(setting["org_name"], new_user_registration_path))) %>
-        </div>
-      </div>
+        <%= link_to t("debates.index.start_debate"), new_debate_path, class: "btn btn-lg btn-white my-2 mx-2 w-100" %>
+        <%= render "shared/tag_cloud", taggable: "Debate" %>
+      </aside>
+    </div>
 
   </div>
+
 </div>
