@@ -326,7 +326,6 @@ describe "Budgets" do
 
   context "Show" do
     let!(:budget) { create(:budget, :selecting) }
-    let!(:group)  { create(:budget_group, budget: budget) }
 
     scenario "Take into account headings with the same name from a different budget" do
       group1 = create(:budget_group, budget: budget, name: "New York")
