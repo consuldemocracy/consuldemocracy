@@ -10,12 +10,19 @@
 
 <%= render "shared/section_header", i18n_namespace: "proposals.index.section_header", image: "proposals" %>
 <div class="container-xxl">
-<div class="row mt-n10">
-  <div class="col-12">
+  <div class="row mt-n10">
+    <div id="debates" class="col-12 col-md-8">
+      <nav class="navbar bg-primary text-white">
+        <% unless params[:selected].present? %>
+          <%= render "shared/order_links", i18n_namespace: "proposals.index" %>
+        <% end %>
 
-    </div>
+        <% unless params[:retired].present? || params[:selected].present? %>
+          <%= render Shared::AdvancedSearchComponent.new %>
+        <% end %>
+      </nav>
+      <div class="pt-3">
 
-    <div class="col-12 col-md-8">
 
     <% if [
           @search_terms,
@@ -68,14 +75,6 @@
         </div>
       <% end %>
 
-      <% unless params[:retired].present? || params[:selected].present? %>
-        <%= render Shared::AdvancedSearchComponent.new %>
-      <% end %>
-
-      <% unless params[:selected].present? %>
-        <%= render "shared/order_links", i18n_namespace: "proposals.index" %>
-      <% end %>
-
       <% if @proposals.any? %>
         <div class="show-for-small-only">
           <%= link_to t("proposals.index.start_proposal"),
@@ -102,19 +101,18 @@
   </div>
 
 </div>
+</div>
 
-    <div class="col-12 col-md-4">
-      <aside class="margin-bottom">
-        <%= link_to t("proposals.index.start_proposal"),
-                    new_proposal_path,
-                    class: "w-100 btn btn-primary" %>
+<div class="col-12 col-md-4 p-3">
+  <%= link_to t("proposals.index.start_proposal"),
+              new_proposal_path,
+              class: "d-block d-md-none btn btn-lg btn-primary my-2 mx-2 w-100" %>
+  <%= link_to t("proposals.index.start_proposal"),
+                          new_proposal_path,
+                          class: "d-none d-md-block btn btn-lg btn-white my-2 mx-2 w-100" %>
 
-        <div class="sidebar-divider"></div>
-        <h2 class="sidebar-title"><%= t("proposals.index.selected_proposals") %></h2>
-        <br>
-        <p class="small">
-          <%= link_to t("proposals.index.selected_proposals_link"), proposals_path(selected: "all") %>
-        </p>
+      <div class="card shadow p-4 my-5">
+
 
         <% if params[:retired].blank? %>
           <%= render "categories" %>
@@ -123,7 +121,7 @@
         <% end %>
         <%= render "retired" %>
         <%= render "proposals_lists" %>
-      </aside>
+      </div>
     </div>
 
   </div>
