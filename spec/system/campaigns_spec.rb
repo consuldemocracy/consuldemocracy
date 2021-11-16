@@ -24,12 +24,12 @@ describe "Email campaigns", :admin do
     visit root_path(track_id: Campaign.last.id + 1)
 
     visit admin_stats_path
+
+    expect(page).to have_content campaign1.name
+    expect(page).not_to have_content campaign2.name
+
     click_link campaign1.name
 
     expect(page).to have_content "#{campaign1.name} (1)"
-
-    click_link "Go back"
-
-    expect(page).not_to have_content campaign2.name.to_s
   end
 end
