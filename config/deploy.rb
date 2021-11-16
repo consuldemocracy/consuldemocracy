@@ -99,6 +99,16 @@ task :add_new_settings do
   end
 end
 
+task :resetdb do
+  on roles(:db) do
+    within release_path do
+      with rails_env: fetch(:rails_env) do
+        execute :rake, "db:seed"
+      end
+    end
+  end
+end
+
 task :execute_release_tasks do
   on roles(:app) do
     within release_path do
