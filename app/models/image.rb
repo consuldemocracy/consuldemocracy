@@ -26,7 +26,7 @@ class Image < ApplicationRecord
   end
 
   def self.accepted_content_types
-    Setting["uploads.images.content_types"]&.split(" ") || ["image/jpeg"]
+    Setting["uploads.images.content_types"]&.split(" ") || ["image/png"]
   end
 
   def self.humanized_accepted_content_types
