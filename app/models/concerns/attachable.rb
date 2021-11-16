@@ -26,7 +26,7 @@ module Attachable
   end
 
   def set_cached_attachment_from_attachment
-    self.cached_attachment = if Paperclip::Attachment.default_options[:storage] == :filesystem
+    self.cached_attachment = if filesystem_storage?
                                attachment.path
                              else
                                attachment.url
@@ -34,10 +34,10 @@ module Attachable
   end
 
   def set_attachment_from_cached_attachment
-    if Paperclip::Attachment.default_options[:storage] == :filesystem
+    if filesystem_storage?
       File.open(cached_attachment) { |file| self.attachment = file }
     else
-      self.attachment = URI.open(cached_attachment)
+      self.attachment = URI.parse(cached_attachment).open
     end
   end
 
@@ -50,6 +50,10 @@ module Attachable
   end
 
   private
+
+    def filesystem_storage?
+      Paperclip::Attachment.default_options[:storage] == :filesystem
+    end
 
     def validate_attachment_size
       if association_class && attachment_file_size > max_file_size.megabytes
