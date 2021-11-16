@@ -24,7 +24,6 @@ class Setting
       else
         consul_defaults.merge({
           # Overwrite default CONSUL settings or add new settings here
-          "uploads.images.content_types": "image/png"
         })
       end
     end

@@ -6,7 +6,7 @@ shared_examples "acts as imageable" do |imageable_factory|
   end
 
   describe "file extension" do
-    it "is not valid with '.jpg' extension" do
+    it "is not valid with '.png' extension" do
       image.attachment = File.new("spec/fixtures/files/clippy.png")
 
       expect(image).not_to be_valid
@@ -20,7 +20,7 @@ shared_examples "acts as imageable" do |imageable_factory|
       expect(image.errors[:attachment].size).to eq(1)
     end
 
-    it "is valid with '.png' extension" do
+    it "is valid with '.jpg' extension" do
       image.attachment = File.new("spec/fixtures/files/clippy.jpg")
 
       expect(image).to be_valid
