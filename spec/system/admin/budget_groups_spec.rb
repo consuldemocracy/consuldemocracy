@@ -30,7 +30,6 @@ describe "Admin budget groups", :admin do
       1.times { create(:budget_heading, group: above) }
       2.times { create(:budget_heading, group: below) }
 
-
       visit admin_budget_path(budget)
 
       within "section", text: "Heading groups" do
