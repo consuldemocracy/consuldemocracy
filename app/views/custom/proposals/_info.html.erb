@@ -34,9 +34,12 @@
     <div class="card-body py-4 px-0">
 
       <h1><%= @proposal.title %></h1>
+      <figure class="text-center">
 
-      <blockquote><%= @proposal.summary %></blockquote>
+      <blockquote class="blockquote">
+<%= @proposal.summary %></blockquote>
 
+</figure>
       <% unless @proposal.selected? %>
 
         <%= t("proposals.show.code") %>

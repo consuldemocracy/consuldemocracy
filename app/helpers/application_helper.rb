@@ -43,8 +43,8 @@ module ApplicationHelper
   end
 
   def back_link_to(destination = :back, text = t("shared.back"))
-    link_to destination, class: "back" do
-      tag.span(class: "icon-angle-left") + text
+    link_to destination, class: "btn btn-sm btn-white" do
+      tag.span(class: "fas fa-reply pe-1") + text
     end
   end
 

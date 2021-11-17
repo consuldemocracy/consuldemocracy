@@ -4,6 +4,8 @@
 <% end %>
 
 <% cache [locale_and_user_status(@debate), @debate, @debate.author, Flag.flagged?(current_user, @debate), @debate_votes] do %>
+<section class="section py-3 py-md-6">
+
 <div class="container-xxl">
 
 <div class="row">
@@ -77,3 +79,4 @@
 
 </div>
 </div>
+</section>

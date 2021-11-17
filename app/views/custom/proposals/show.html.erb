@@ -19,12 +19,21 @@
           Flag.flagged?(current_user, @proposal),
           @proposal.followed_by?(current_user),
           @proposal_votes] do %>
-          <div class="container-xxl">
 
-    <div class="row">
+          <section class="section pb-6 pt-3 bg-primary text-white">
+            <div class="container">
+              <div class="row">
+                <div class="d-flex justify-content-start flex-wrap">
+                  <%= back_link_to proposals_path unless preview %>
+                </div>
+              </div>
+            </div>
+          </section>
+
+<section class="section py-3 py-md-6">
+  <div class="container-xxl">
+    <div class="row mt-n6 mt-md-n7">
     <div id="<%= dom_id(@proposal) %>" class="col-12 col-md-8 order-1">
-        <%= back_link_to proposals_path unless preview %>
-
         <% if @proposal.retired? %>
           <div data-alert class="alert alert-warning">
             <strong>
@@ -108,3 +117,4 @@
 </div>
 </div>
 </div>
+</section>
