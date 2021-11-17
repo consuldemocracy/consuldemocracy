@@ -33,7 +33,7 @@
 <section class="section py-3 py-md-6">
   <div class="container-xxl">
     <div class="row mt-n6 mt-md-n7">
-    <div id="<%= dom_id(@proposal) %>" class="col-12 col-md-8 order-1">
+    <div id="<%= dom_id(@proposal) %>" class="col-12 col-md-8">
         <% if @proposal.retired? %>
           <div data-alert class="alert alert-warning">
             <strong>
@@ -56,40 +56,46 @@
       </div>
 
       <% unless preview %>
-        <div class="col-12 col-md-4 order-2">
+
+        <div class="col-12 col-md-4">
+          <div class="card shadow p-4">
 
           <%= render "proposals/support_status", proposal: @proposal %>
 
           <%= render "proposals/social_share", proposal: @proposal, share_title: t("proposals.show.share") %>
+        </div>
 
           <% if can?(:dashboard, @proposal) %>
-            <div class="sidebar-divider"></div>
+          <div class="card shadow p-4">
+
             <h2><%= t("proposals.show.author") %></h2>
-            <div class="show-actions-menu">
               <%= link_to progress_proposal_dashboard_path(@proposal),
-                          class: "btn btn-primary w-100",
+                          class: "btn btn-outline-primary w-100",
                           id: "proposal-dashboard-#{@proposal.id}" do %>
-                <span class="icon-edit"></span>
+                <i class="far fa-edit"></i>
                 <%= t("proposals.show.dashboard_proposal_link") %>
               <% end %>
             </div>
+
           <% end %>
 
           <% if current_user %>
-            <div class="sidebar-divider"></div>
-            <p class="sidebar-title"><%= t("shared.follow") %></p>
+          <div class="card shadow p-4">
+
+            <h2><%= t("shared.follow") %></h2>
 
             <%= render "follows/follow_button", follow: find_or_build_follow(current_user, @proposal) %>
           <% end %>
 
           <%= render "communities/access_button", community: @proposal.community %>
-        </div>
       <% end %>
-<% end %>
-</div>
-<div class="row">
 
-<div class="col-12 col-md-8 order-3">
+    </div>
+  </div>
+
+<% end %>
+
+<div class="col-12 col-md-8">
 
 <% unless @proposal.selected? %>
   <%= render "relationable/related_content", relationable: @proposal %>
