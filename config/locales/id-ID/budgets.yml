@@ -83,7 +83,6 @@ id:
           create: "Buat investasi anggaran"
           not_logged_in: "Untuk membuat sebuah anggaran investasi baru anda harus %{sign_in} atau %{sign_up}."
         filters:
-          feasible: "Layak"
           selected: "Dipilih"
           unfeasible: "Tidak layak"
           winners: "Pemenang"
