@@ -20,8 +20,10 @@ describe "Email campaigns", :admin do
   end
 
   scenario "Do not track erroneous track_ids" do
+    invalid_id = Campaign.last.id + 1
+
     visit root_path(track_id: campaign1.track_id)
-    visit root_path(track_id: Campaign.last.id + 1)
+    visit root_path(track_id: invalid_id)
 
     visit admin_stats_path
 
