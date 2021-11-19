@@ -64,7 +64,6 @@ ast:
           verified_only: "Pa crear una nueva propuesta d'inversión %{verify}."
           not_logged_in: "Pa crear una nueva propuesta d'inversión debes %{sign_in} o %{sign_up}."
         filters:
-          feasible: "Viable"
           selected: "Escoyía"
           unfeasible: "Invidable"
         orders:
