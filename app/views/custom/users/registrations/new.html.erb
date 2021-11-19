@@ -1,49 +1,59 @@
 <% provide :title do %><%= t("devise_views.users.registrations.new.title") %>
 <% end %>
-<section class="section py-3 py-md-6">
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-sm-8 col-md-6 col-lg-4 justify-content-center">
-
-      <div class="h2 fw-bold text-center"><%= t("devise_views.users.registrations.new.title") %></div>
-
-      <%= render "devise/omniauth_form", action: "sign_up" %>
-
-      <div class="fw-bold text-center">
-        <%= t("omniauth.or_fill") %></div>
-
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "shared/errors", resource: resource %>
-
-      <%= f.hidden_field :use_redeemable_code %>
-      <%= f.hidden_field :locale, value: I18n.locale %>
-
-      <%= f.text_field :username, autofocus: true, maxlength: User.username_max_length, class: "form-control" %>
-
-      <%= f.invisible_captcha :address %>
-
-      <%= f.email_field :email, class: "form-control" %>
-
-      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-
-      <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", label: t("devise_views.users.registrations.new.password_confirmation_label") %>
-
-      <% if resource.use_redeemable_code %>
-        <%= f.text_field :redeemable_code , class: "form-control" %>
-      <% end %>
-
-      <%= f.check_box :terms_of_service, title: t("devise_views.users.registrations.new.terms_title"), label: t("devise_views.users.registrations.new.terms", terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/conditions", title:
-      t("shared.target_blank"), target: "_blank") ) %>
-
-      <%= f.submit(t("devise_views.users.registrations.new.submit"), class: "w-100 btn btn-lg btn-primary") %>
-
-    <% end %>
-
-    <div class="text-start py-1">
-      <%= sanitize(t("devise_views.users.registrations.new.organization_signup", signup_link: link_to(t("devise_views.users.registrations.new.organization_signup_link"), new_organization_registration_path))) %>
-
+<section class="section pb-6 pb-md-5 pt-3 bg-primary text-white">
+  <div class="container">
+    <div class="row">
+      <div class="d-flex justify-content-between flex-wrap">
+        <div class="h1 text-center">
+          <%= t("devise_views.users.registrations.new.title") %>
+        </div>
+        <div class="px-3 inline-block">
+          <%= sanitize(t("devise_views.users.registrations.new.organization_signup", signup_link: link_to(t("devise_views.users.registrations.new.organization_signup_link"), new_organization_registration_path, class:"btn btn-sm btn-white"))) %>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
+<section class="d-flex align-items-center section">
+  <div class="container">
+    <div class="row justify-content-center mt-n7 mt-sm-n9 mt-md-n8">
+      <div class="col-12 d-flex align-items-center justify-content-center">
+        <div class="signin-inner my-4 my-lg-0 bg-white shadow-soft border rounded border-gray-300 p-4 p-lg-5 w-100 fmxw-500">
+          <div class="text-center text-md-center mb-4 mt-md-0">
+            <%= render "devise/omniauth_form", action: "sign_up" %>
+          </div>
+
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "shared/errors", resource: resource %>
+          <%= f.hidden_field :use_redeemable_code %>
+          <%= f.hidden_field :locale, value: I18n.locale %>
+
+            <%= f.text_field :username, autofocus: true, maxlength: User.username_max_length, class: "form-control" %>
+
+          <%= f.invisible_captcha :address %>
+          <%= f.email_field :email, class: "form-control" %>
+
+          <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", label: t("devise_views.users.registrations.new.password_confirmation_label") %>
+
+          <% if resource.use_redeemable_code %>
+            <%= f.text_field :redeemable_code , class: "form-control" %>
+          <% end %>
+
+          <%= f.check_box :terms_of_service, title: t("devise_views.users.registrations.new.terms_title"), label: t("devise_views.users.registrations.new.terms", terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/conditions", title:
+          t("shared.target_blank"), target: "_blank") ) %>
+
+          <%= f.submit(t("devise_views.users.registrations.new.submit"), class: "w-100 btn btn-lg btn-primary") %>
+
+        <% end %>
+        <div class="d-flex justify-content-center align-items-center mt-4">
+          <span class="fw-normal">
+            <%= render "devise/shared/links" %>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 </section>

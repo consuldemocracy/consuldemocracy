@@ -67,7 +67,7 @@
         <div class="d-flex flex-wrap flex-lg-nowrap align-items-center justify-content-between">
           <div class="col-12 post-details mb-3 mb-lg-0">
             <% if show_proposal_votes? %>
-              <div id="<%= dom_id(proposal) %>_votes" class="supports-container">
+              <div id="<%= dom_id(proposal) %>_votes">
                 <% if proposal.successful? %>
                   <div class="padding">
                     <div class="supports text-center">

@@ -9,16 +9,15 @@
     <%= raw setting["html.per_page_code_head"] %>
   </head>
 
-  <body>
+  <body class="min-vh-100">
     <%= raw setting["html.per_page_code_body"] %>
     <%= render "layouts/header", with_subnavigation: true %>
-    <div class="container-xxl min-vh-100">
+    <main class="bg-gray-200">
       <%= render "layouts/flash" %>
       <%= yield %>
-    </div>
+    </main>
 
-    <div class="footer">
       <%= render "layouts/footer" %>
-    </div>
+
   </body>
 </html>
