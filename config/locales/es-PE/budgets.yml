@@ -75,7 +75,6 @@ es-PE:
           create: "Crear nuevo proyecto"
           not_logged_in: "Para crear una nueva propuesta de inversión debes %{sign_in} o %{sign_up}."
         filters:
-          feasible: "Viable"
           selected: "Seleccionada"
           unfeasible: "Inviable"
           winners: "Ganadoras"
