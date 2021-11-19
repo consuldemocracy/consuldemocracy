@@ -92,7 +92,6 @@ ru:
           create: "Создать бюджетную инвестицию"
           not_logged_in: "Для создания новой бюджетной инвестиции необходимо %{sign_in} или %{sign_up}."
         filters:
-          feasible: "Выполнимо"
           selected: "Выбранные"
           unfeasible: "Невыполнимо"
           winners: "Победители"
