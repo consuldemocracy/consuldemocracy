@@ -84,7 +84,6 @@ sq:
           create: "Krijo një investim buxhetor"
           not_logged_in: "Për të krijuar një investim të ri buxhetor ju duhet %{sign_in} ose %{sign_up}."
         filters:
-          feasible: "I mundshëm"
           selected: "I zgjedhur"
           unfeasible: "Parealizueshme"
           winners: "Fituesit"
