@@ -71,7 +71,6 @@ eu:
           create: "Gastu proiektua sortu"
           not_logged_in: "Gastu proiektu berri bat sortzeko %{sign_in} edo %{sign_up} egin behar duzu."
         filters:
-          feasible: "Bideragarria"
           selected: "Hautatutakoak"
           unfeasible: "Bideraezina"
           winners: "Irabazleak"
