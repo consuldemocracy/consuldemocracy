@@ -81,7 +81,6 @@ zh-CN:
           create: "创建预算投资"
           not_logged_in: "要创建新的预算投资，您必须%{sign_in} 或者%{sign_up}。"
         filters:
-          feasible: "可行"
           selected: "已选"
           unfeasible: "不可行"
           winners: "胜出者"
