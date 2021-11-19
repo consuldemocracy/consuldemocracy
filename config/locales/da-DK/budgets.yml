@@ -116,7 +116,6 @@ da:
           not_logged_in: "For at oprette et forslag skal du %{sign_in} eller %{sign_up}."
         filter: "Filtrer projekter efter"
         filters:
-          feasible: "Kan gennemføres"
           not_unfeasible: "Ikke umuligt"
           selected: "Udvalgte"
           unfeasible: "Kan ikke gennemføres"
