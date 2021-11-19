@@ -12,7 +12,6 @@ mk:
         tags_label: Тагови
       index:
         filters:
-          feasible: "Изводливо"
           selected: "Селектирано"
           unfeasible: "Неизводливо"
       show:
