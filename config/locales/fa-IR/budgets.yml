@@ -81,7 +81,6 @@ fa:
           create: "ایجاد بودجه سرمایه گذاری \n"
           not_logged_in: "برای ایجاد یک سرمایه گذاری جدید بودجه باید%{sign_in} یا %{sign_up} کنید."
         filters:
-          feasible: "امکان پذیر"
           selected: "انتخاب شده"
           unfeasible: "غیر قابل پیش بینی"
           winners: "برندگان"
