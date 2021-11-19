@@ -1,21 +1,33 @@
 <% provide :title do %><%= t("devise_views.passwords.new.title") %>
 <% end %>
-<section class="section py-3 py-md-6">
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-sm-8 col-md-6 col-lg-4 justify-content-center">
-
-      <div class="h2 fw-bold text-center"><%= t("devise_views.passwords.new.title") %></div>
-
-      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-      <%= render "shared/errors", resource: resource %>
-
-      <%= f.email_field :email, autofocus: true, class: "form-control" %>
-
-      <%= f.submit t("devise_views.passwords.new.send_submit"), class: "bw-100 btn btn-lg btn-primary" %>
-
-    <% end %>
+<section class="section pb-6 pb-md-5 pt-3 bg-primary text-white">
+  <div class="container">
+    <div class="row">
+      <div class="d-flex justify-content-between flex-wrap">
+        <div class="h1 text-center">
+          <%= t("devise_views.passwords.new.title") %>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
+<section class="d-flex align-items-center section">
+  <div class="container">
+    <div class="row justify-content-center mt-n7 mt-sm-n8 mt-md-n8 mt-lg-n7">
+      <div class="col-12 d-flex align-items-center justify-content-center">
+        <div class="signin-inner my-4 my-lg-0 bg-white shadow-soft border rounded border-gray-300 p-4 p-lg-5 w-100 fmxw-500">
+
+          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <%= render "shared/errors", resource: resource %>
+
+          <%= f.email_field :email, autofocus: true, class: "form-control" %>
+
+          <%= f.submit t("devise_views.passwords.new.send_submit"), class: "w-100 btn btn-lg btn-primary" %>
+
+        <% end %>
+
+      </div>
+    </div>
+  </div>
 </div>
 </section>

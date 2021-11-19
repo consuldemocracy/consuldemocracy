@@ -41,7 +41,7 @@
             <%= f.text_field :redeemable_code , class: "form-control" %>
           <% end %>
 
-          <%= f.check_box :terms_of_service, title: t("devise_views.users.registrations.new.terms_title"), label: t("devise_views.users.registrations.new.terms", terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/conditions", title:
+          <%= f.check_box :terms_of_service, title: t("devise_views.users.registrations.new.terms_title") , class: "small text-right", label: t("devise_views.users.registrations.new.terms", terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/conditions", title:
           t("shared.target_blank"), target: "_blank") ) %>
 
           <%= f.submit(t("devise_views.users.registrations.new.submit"), class: "w-100 btn btn-lg btn-primary") %>
