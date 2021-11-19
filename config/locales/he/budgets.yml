@@ -93,7 +93,6 @@ he:
           create: "יצירת תקציב להשקעה"
           not_logged_in: "כדי ליצור תקציב השקעה חדש עליך ל- %{sign_in} או ל - %{sign_up}."
         filters:
-          feasible: "בר ביצוע"
           selected: "נבחר"
           unfeasible: "אינו בר ביצוע"
           winners: "זוכים"
