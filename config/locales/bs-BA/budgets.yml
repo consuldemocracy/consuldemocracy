@@ -36,7 +36,6 @@ bs:
         sidebar:
           create: "Formuliši budžetsku investiciju"
         filters:
-          feasible: "Izvodivo"
           selected: "Odabrano"
           unfeasible: "Nije izvodivo"
           winners: "Odabrane investicije"
