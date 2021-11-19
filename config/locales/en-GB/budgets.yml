@@ -47,7 +47,6 @@ en-GB:
           different_heading_assigned: "У вас є активні голоси в іншому заголовку: %{heading_link}"
           create: "Створити бюджетну інвестицію"
         filters:
-          feasible: "Доцільно"
           selected: "Вибрано"
           unfeasible: "Недоцільно"
           winners: "Переможці"
