@@ -84,7 +84,6 @@ so:
           create: "Saame misaaniyad malgashelin"
           not_logged_in: "Waa inaad samaysaa misaniyaad malgashi waana inaad%{sign_in} ama%{sign_up}."
         filters:
-          feasible: "Surtagal"
           selected: "Ladoortay"
           unfeasible: "An surtgak ahayn"
           winners: "Guleystayasha"
