@@ -5,10 +5,7 @@ ro:
       erase_account_link: Șterge contul
       finish_verification: Verificare completă
       notifications: Notificări
-      organization_name_label: Numele organizației
-      organization_responsible_name_placeholder: Reprezentant al organizației/colectivului
       personal: Detalii personale
-      phone_number_label: Număr de telefon
       public_interests_my_title_list: Tag-urile elementelor pe care le urmărești
       public_interests_user_title_list: Tag-urile elementelor pe care acest utilizator le folosește
       save_changes_submit: Salvează modificări
@@ -22,7 +19,6 @@ ro:
       user_permission_verify: Pentru a efectua toate acțiunile, verificați contul.
       user_permission_verify_info: "* Numai pentru utilizatorii aflați pe recensământ."
       user_permission_votes: Participă la votarea finală
-      username_label: Nume de utilizator
       verified_account: Cont verificat
       verify_my_account: Verifică-mi contul
   application:
@@ -69,7 +65,6 @@ ro:
       newest: Cel mai nou
       oldest: Cel mai vechi
       most_commented: Cel mai comentat
-    select_order: Sortează după
     show:
       return_to_commentable: "Mergi înapoi la "
   comments_helper:
@@ -99,7 +94,6 @@ ro:
         submit_button: Salvează modificări
       show_link: Vezi dezbatere
     form:
-      debate_title: Titlul dezbaterii
       tags_instructions: Etichetează această dezbatere.
       tags_placeholder: "Introduceți etichetele pe care doriți să le utilizați, separate prin virgule (',')"
     index:
@@ -126,7 +120,6 @@ ro:
         one: " conține termenul <strong>'%{search_term}'</strong>"
         few: " conține termenul <strong>'%{search_term}'</strong>"
         other: " conține termenul <strong>'%{search_term}'</strong>"
-      select_order: Ordonează după
       start_debate: Începe o dezbatere
       title: Dezbateri
       section_header:
@@ -141,8 +134,6 @@ ro:
     new:
       form:
         submit_button: Începe o dezbatere
-      info: Dacă doriți să faceți o propunere, aceasta este secțiunea greșită, introduceți %{info_link}.
-      info_link: crează o propunere nouă
       more_info: Mai multe informații
       recommendation_four: Bucurați-vă de acest spațiu, de vocile care îl umplu, este și al vostru.
       recommendation_one: Nu folosiți majuscule pentru titlul dezbaterii sau pentru propoziții întregi. Pe internet, acest lucru este considerat strigăt. Și nimănui nu-i place să-i fie strigat în față.
@@ -242,7 +233,6 @@ ro:
     header:
       administration_menu: Meniu
       administration: Administrare
-      available_locales: Limbi disponibile
       collaborative_legislation: Legislație colaborativă
       debates: Dezbateri
       locale: "Limbă:"
@@ -360,7 +350,6 @@ ro:
       map_location: "Localizare pe hartă"
       map_location_instructions: "Navigați pe hartă până la locație și plasați marcatorul."
       map_remove_marker: "Eliminați marcatorul de hartă"
-      map_skip_checkbox: "Această propunere nu are o locație concretă sau nu o cunosc."
     index:
       featured_proposals: Recomandări
       orders:
@@ -399,7 +388,6 @@ ro:
         one: " conține termenul <strong>'%{search_term}'</strong>"
         few: " conține termenii <strong>'%{search_term}'</strong>"
         other: " conține termenii <strong>'%{search_term}'</strong>"
-      select_order: Ordonează după
       select_order_long: "Vizionați propuneri conform:"
       start_proposal: Crează propunere
       title: Propuneri
@@ -699,14 +687,13 @@ ro:
       back: "Mergi înapoi la conținutul meu"
   shared:
     edit: "Editează"
+    filter: "Filtru"
     save: "Salvează"
     delete: "Șterge"
     "yes": "Da"
     "no": "Nu"
     search_results: "Rezultatele căutării"
     advanced_search:
-      author_type: "Pe categorii de autor"
-      author_type_blank: "Selectează o categorie"
       date: "După dată"
       date_placeholder: "ZZ/LL/AAAA"
       date_range_blank: "Alege o dată"
@@ -717,7 +704,6 @@ ro:
       date_5: "Personalizat"
       from: "De la"
       general: "Cu textul"
-      general_placeholder: "Scrie textul"
       goal: "După ODD"
       goal_blank: "Alege un obiectiv"
       search: "Filtru"
@@ -989,9 +975,6 @@ ro:
       title: Link-uri
       note: Adăugați linkurile care sunt de interes pentru dumneavoastră
       add_new_link: Adaugă un link nou
-    link_fields:
-      label_placeholder: Link către titlu
-      url_placeholder: Adresa link
   communities:
     show:
       surveys: Chestionare
@@ -1007,8 +990,9 @@ ro:
       enqueue_remote_translation: Traducerea a fost solicitată corect.
     button: Tradu pagina
   tags:
-    filter:
-      more:
-        one: "Încă o etichetă"
-        few: "Încă %{count} etichete"
-        other: "Încă %{count} etichete"
+    list:
+      filter:
+        more:
+          one: "Încă o etichetă"
+          few: "Încă %{count} etichete"
+          other: "Încă %{count} etichete"

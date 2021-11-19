@@ -28,6 +28,7 @@ de:
       new:
         explanation: "Um an der finalen Abstimmungen teilzunehmen, können Sie:"
         go_to_index: Vorschläge anzeigen
+        office: Bestätigen in einem Meldeamt
         send_letter: Schicken Sie mir einen Brief mit dem Code
         title: Glückwunsch!
         user_permission_info: Mit Ihrem Konto können Sie...
@@ -55,6 +56,7 @@ de:
           spanish_id: Personalausweis
         error_not_allowed_age: Sie erfüllen nicht das erforderliche Alter um teilnehmenzu können
         error_not_allowed_postal_code: Für die Verifizierung müssen Sie registriert sein.
+        error_verifying_census: Das Meldeamt konnte ihre Daten nicht verifizieren. Bitte bestätigen Sie, dass ihre Meldedaten korrekt sind, indem Sie das Amt persönlich oder telefonisch kontaktieren %{offices}.
         form_errors: haben die Überprüfung Ihres Wohnsitzes verhindert
         postal_code_note: Um Ihr Benutzerkonto zu verifizieren, müssen Sie registriert sein
         terms: Allgemeine Nutzungsbedingungen
@@ -73,7 +75,6 @@ de:
         phone: Geben Sie Ihre Handynummer ein, um den Code zu erhalten
         phone_format: "<strong>-<em>(Beispiel: 612345678 oder +34612345678)</em></strong>"
         phone_note: Wir verwenden Ihre Telefonnummer ausschließlich dafür Ihnen einen Code zu schicken, niemals um Sie zu kontaktieren.
-        phone_placeholder: "Beispiel: 612345678 oder +34612345678"
         submit_button: Senden
         title: Bestätigungscode senden
       update:

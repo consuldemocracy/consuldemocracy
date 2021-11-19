@@ -6,6 +6,9 @@ pt-BR:
       title: "Conteúdo de ODSs"
     homepage:
       title: "Configuração da homepage"
+      header:
+        create: "Criar cabeçalho"
+        title: "Cabeçalho"
       create_card: "Criar cartão %{phase}"
       no_cards: "Não há cartões para esta fase"
     menu:

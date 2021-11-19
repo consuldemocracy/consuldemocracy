@@ -12,9 +12,8 @@ bg:
         headers:
           comment: Коментар
           moderate: Модериране
-        hide_comments: Скриване на коментари
+        hide: Скриване на коментари
         ignore_flags: Маркиран като гледан
-        order: Подреждане
         orders:
           flags: Най-маркирани
           newest: Най-нови
@@ -34,9 +33,8 @@ bg:
         headers:
           debate: Дискусия
           moderate: Модериране
-        hide_debates: Скриване на дискусии
+        hide: Скриване на дискусии
         ignore_flags: Маркиран като гледан
-        order: Подреждане
         orders:
           created_at: Най-нови
           flags: Най-маркирани
@@ -62,9 +60,8 @@ bg:
         headers:
           moderate: Модериране
           proposal: Предложение
-        hide_proposals: Скриване на предложенията
+        hide: Скриване на предложенията
         ignore_flags: Маркиран като гледан
-        order: Подреждане по
         orders:
           created_at: Най-новите
           flags: Най-маркирани
@@ -81,9 +78,8 @@ bg:
         headers:
           moderate: Модериране
           budget_investment: Бюджетна инвестиция
-        hide_budget_investments: Скриване на бюджетните инвестиции
+        hide: Скриване на бюджетните инвестиции
         ignore_flags: Маркиран като гледан
-        order: Подреждане по
         orders:
           created_at: Най-скорошни
           flags: Най-маркирани
@@ -100,9 +96,8 @@ bg:
         headers:
           moderate: Модериране
           proposal_notification: Известия за предложения
-        hide_proposal_notifications: Скриване на предложения
+        hide: Скриване на предложенията
         ignore_flags: Маркиран като гледан
-        order: Подреждане по
         orders:
           created_at: Най-скорошни
           moderated: Модерирано

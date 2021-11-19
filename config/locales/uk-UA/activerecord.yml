@@ -299,6 +299,7 @@ uk-UA:
         ends_at: "Дата закінчення"
         starts_at: "Дата початку"
       budget/phase/translation:
+        name: "Назва"
         description: "Опис"
         summary: "Підсумок"
       comment:
@@ -357,6 +358,7 @@ uk-UA:
         responsible_name: "Особа, відповідальна за групу"
       poll:
         name: "Ім'я"
+        title: "Назва"
         starts_at: "Дата початку"
         ends_at: "Дата завершення"
         geozone_restricted: "Обмеження за геозоною"
@@ -394,7 +396,15 @@ uk-UA:
         signable_id: "ID, що підписується"
         document_numbers: "Номери документів"
       sdg/goal:
+        title: "Заголовок"
         description: "Опис"
+      sdg/local_target:
+        title: "Заголовок"
+      sdg/local_target/translation:
+        title: "Заголовок"
+        description: "Опис"
+      sdg/target:
+        title: "Заголовок"
       site_customization/page:
         content: Вміст
         created_at: Створено о
@@ -587,10 +597,6 @@ uk-UA:
           attributes:
             segment_recipient:
               invalid: "Недійсний сегмент одержувачів"
-        map_location:
-          attributes:
-            map:
-              invalid: Місцезнаходження не може бути відсутнім. Зробіть відмітку чи встановіть прапорець, якщо геолокалізація не потрібна
         poll/voter:
           attributes:
             document_number:

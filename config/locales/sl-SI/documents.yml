@@ -1,6 +1,8 @@
 sl:
   documents:
     title: Dokumenti
+    max_documents_allowed_reached: Dosegel si največje dovoljeno število dokumentov! <strong>Preden lahko naložiš novega, moraš vsaj enega izbrisati.</strong>
+    additional: Dodatna dokumentacija
     form:
       title: Dokumenti
       title_placeholder: Dodaj poveden naslov dokumenta

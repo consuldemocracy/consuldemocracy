@@ -69,7 +69,6 @@ oc:
         not_allowed: "Uèi pas tibat torn de president de taula"
       new:
         title: validar document
-        document_number: "Numèro de document (en i comprenent de letras)"
         submit: validar document
         error_verifying_census: "Lo Padró poguèt pas verificar aquel document."
         form_errors: evitèron verificar aquel document

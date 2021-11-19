@@ -75,7 +75,6 @@ oc:
         phone: Introduce tu teléfono móvil para recibir el código
         phone_format: "<strong><em>(Exemple: 612345678 o +34612345678)</em></strong>"
         phone_note: Utilizam solament lo vòstre telefòn per vos enviar un còdi, jamai per vos contactar.
-        phone_placeholder: "Ejemplo: 612345678 ó +34612345678"
         submit_button: Enviar
         title: SMS de confirmacion
       update:

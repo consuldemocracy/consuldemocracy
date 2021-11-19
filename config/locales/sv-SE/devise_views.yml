@@ -2,7 +2,6 @@ sv:
   devise_views:
     confirmations:
       new:
-        email_label: E-post
         submit: Skicka instruktioner igen
         title: Skicka bekräftelseinstruktioner igen
       show:
@@ -39,12 +38,7 @@ sv:
     organizations:
       registrations:
         new:
-          email_label: E-post
-          organization_name_label: Organisationens namn
           password_confirmation_label: Bekräfta lösenord
-          password_label: Lösenord
-          phone_number_label: Telefonnummer
-          responsible_name_label: Fullständigt namn på personen som representerar gruppen
           responsible_name_note: Det här är en person som representerar organisationen/gruppen som står bakom förslagen
           submit: Registrera dig
           title: Registrera er som organisation eller grupp
@@ -62,13 +56,10 @@ sv:
         password_label: Nytt lösenord
         title: Ändra ditt lösenord
       new:
-        email_label: E-post
         send_submit: Skicka instruktioner
         title: Har du glömt ditt lösenord?
     sessions:
       new:
-        login_label: E-post eller användarnamn
-        password_label: Lösenord
         remember_me: Kom ihåg mig
         submit: Logga in
         title: Logga in
@@ -91,7 +82,7 @@ sv:
         delete_form:
           erase_reason_label: Anledning
           info: Åtgärden kan inte ångras. Kontrollera att detta är vad du vill.
-          info_reason: Om du vill kan du skriva en anledning (frivilligt fält)
+          info_reason: Om du vill kan du skriva en anledning (valfritt)
           submit: Ta bort mitt konto
           title: Radera konto
         edit:
@@ -106,12 +97,9 @@ sv:
           waiting_for: "Väntar på bekräftelse av:"
         new:
           cancel: Avbryt inloggning
-          email_label: E-post
           organization_signup: Representerar du en organisation eller grupp? %{signup_link}
           organization_signup_link: Registrera dig här
           password_confirmation_label: Bekräfta lösenord
-          password_label: Lösenord
-          redeemable_code: Bekräftelsekod via e-post (frivilligt fält)
           submit: Registrera dig
           terms: Genom att registrera dig godkänner du %{terms}
           terms_link: användarvillkoren
@@ -119,7 +107,6 @@ sv:
           title: Registrera dig
           username_is_available: Användarnamnet är tillgängligt
           username_is_not_available: Användarnamnet är upptaget
-          username_label: Användarnamn
           username_note: Namn som visas vid dina inlägg
         success:
           back_to_index: Jag förstår; gå tillbaka till startsidan

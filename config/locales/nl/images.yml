@@ -7,8 +7,6 @@ nl:
       delete_button: Verwijder afbeelding
       note: "Je kunt een afbeelding van een van de volgende bestandstypen uploaden: %{accepted_content_types}, tot een maximum van %{max_file_size} MB."
       add_new_image: Voeg afbeelding toe
-      admin_title: "Afbeelding"
-      admin_alt_text: "Alternatieve tekst voor de afbeelding"
     actions:
       destroy:
         notice: Afbeelding is succesvol verwijderd.

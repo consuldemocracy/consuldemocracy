@@ -1,8 +1,12 @@
 he:
   attributes:
+    geozone_id: "היקף הפעילות"
     results_enabled: "הצג תוצאות"
     stats_enabled: "הצג נתונים סטטיסטיים"
     advanced_stats_enabled: "הצג נתונים סטטיסטיים מתקדמים"
+    name: Name
+    email: דואר אלקטרוני
+    description: תיאור
   activerecord:
     models:
       activity:
@@ -217,6 +221,8 @@ he:
         description_finished: "תיאור כאשר התקציב מסתיים"
         phase: "שלב"
         currency_symbol: "מטבע"
+      budget/translation:
+        name: "Name"
       budget/investment:
         heading_id: "כותרת"
         title: "כותרת"
@@ -227,6 +233,23 @@ he:
         organization_name: "אם אתה מציע בשם ארגון/קולקטיב, או עבור אנשים נוספים, רשום את השם שלהם"
         image: "תמונה המייצגת את ההצעה"
         image_title: "כותרת תמונה"
+        duration: "טווח זמן"
+        feasibility_feasible: "בר ביצוע"
+        feasibility_undecided: "Undefined"
+        feasibility_unfeasible: "אינו בר ביצוע"
+        incompatible: "סמן כלא תואם"
+        milestone_tag_list: "תגיות אבני דרך"
+        price_explanation: "ראה הסבר תמחור"
+        selected: "סמן כנבחר"
+        selected_true: "נבחר"
+        selected_false: "לא נבחר"
+        unfeasibility_explanation: "הסבר להיתכנות"
+        valuation_finished: "Valuation finished"
+        valuator_ids: "קבוצות"
+        valuation_tag_list: "תגיות"
+      budget/investment/translation:
+        title: "שם"
+        description: "תיאור"
       geozone:
         name: שם
         external_code: "קוד חיצוני (אופציונלי)"
@@ -237,6 +260,8 @@ he:
         title: "כותרת"
         description: "תיאור (אופציונלי אם יש סטטוס מוקצה)"
         publication_date: "תאריך פרסום"
+      milestone/translation:
+        description: "תיאור"
       milestone/status:
         name: "שם"
         description: "תיאור (אופציונלי)"
@@ -247,25 +272,51 @@ he:
       progress_bar/kind:
         primary: "ראשי"
         secondary: "משני"
+      budget/group/translation:
+        name: "Group name"
       budget/heading:
+        allow_custom_content: "אפשר חסימת תוכן"
+        latitude: "קו רוחב (אופציונלי)"
+        longitude: "קו רוחב (אופציונלי)"
         name: "שם כותרת"
         price: "מחיר"
         population: "אוכלוסיה"
+      budget/heading/translation:
+        name: "Heading name"
+      budget/phase:
+        enabled: "השלב מופעל"
+        ends_at: "תאריך סיום"
+        starts_at: "תאריך פתיחה"
+      budget/phase/translation:
+        name: "Name"
+        description: "תיאור"
+        summary: "תקציר"
       comment:
         body: "הערות"
         user: "משתמש/ת"
       debate:
         author: "מחבר/ת"
         description: "דעה"
+        tag_list: "נושאים"
         terms_of_service: "תנאי השימוש"
         title: "כותרת"
+      debate/translation:
+        title: "כותרת הדיון"
+        description: "מלל הדיון"
       proposal:
         author: "מחבר/ת"
         title: "כותרת"
         question: "שאלה"
         description: "תיאור"
+        responsible_name: "שם ושם משפחה מלא של מציע/ת ההצעה"
+        retired_reason: "הסיבה להסרת ההצעה"
         selected: "סמן כנבחר"
         terms_of_service: "תנאי השימוש"
+      proposal/translation:
+        title: "כותרת ההצעה"
+        description: "מלל ההצעה"
+        summary: "תקציר ההצעה"
+        retired_explanation: "הסבר"
       user:
         login: "כתובת דוא\"ל או שם משתמש"
         email: "דואר אלקטרוני"
@@ -273,25 +324,44 @@ he:
         password_confirmation: "אימות סיסמה"
         password: "סיסמה"
         current_password: "הסיסמה הנוכחית"
+        email_digest: "לקבל סיכום של ההודעות על הצעות חדשות"
+        email_on_comment: "הודיעו לי בדואר אלקטרוני בכל פעם שמישהו מעיר להצעות או לדיונים שלי"
+        email_on_comment_reply: "הודיעו לי בדואר אלקטרוני בכל פעם שמישהו מגיב על ההערות שלי"
+        email_on_direct_message: "לקבל בדואר אלקטרוני על פניות אישיות"
+        newsletter: "ארצה לקבל בדואר אלקטרוני מידע מהאתר"
         official_position: "תפקיד נושא משרה"
+        official_position_badge: "הצג את אות הדירוג הרשמי שלי"
         official_level: "רמת תפקיד נושא המשרה"
         phone_number: "מספר טלפון"
+        public_activity: "השאר את פירוט הפעילויות שלי גלוי לציבור"
+        recommended_debates: "הצג המלצות לדיונים"
+        recommended_proposals: "הצג המלצות להצעות"
         redeemable_code: "אימות הסיסמה יתקבל בדואר אלקטרוני"
+      direct_message:
+        title: "שם"
+        body: "תוכן ההודעה"
       organization:
         name: "שם הארגון"
         responsible_name: "האחראי/ת לקבוצה"
       poll:
         name: "שם"
+        title: "Name"
         starts_at: "תאריך פתיחה"
         ends_at: "תאריך סיום"
         geozone_restricted: "מוגבל על ידי האזור הגיאוגרפי"
         summary: "תקציר"
         description: "תיאור"
+      active_poll/translation:
+        description: "תיאור"
+      poll/booth:
+        name: "Name"
+        location: "מקום"
       poll/translation:
         name: "שם"
         summary: "תקציר"
         description: "תיאור"
       poll/question:
+        poll_id: "הצבעה"
         title: "שאלה"
         summary: "תקציר"
         description: "תיאור"
@@ -302,16 +372,34 @@ he:
         data: נתוני ה-CSV
         poll_id: סקר
         officer_assignment_id: משימת בעל המשרה
+      poll/shift:
+        task: "משימה"
+      proposal_notification:
+        body: "תוכן ההודעה"
+        title: "שם"
       signature_sheet:
+        title: "שם"
         signable_type: "סוג החתימה"
         signable_id: "סוג מזהה"
         document_numbers: "מספרי המסמכים"
+      sdg/goal:
+        title: "שם"
+        description: "תיאור"
+      sdg/local_target:
+        title: "שם"
+      sdg/local_target/translation:
+        title: "שם"
+        description: "תיאור"
+      sdg/target:
+        title: "שם"
       site_customization/page:
         content: תוכן
         created_at: נוצר ב
         subtitle: תת כותרת
         slug: אסימון
         status: סטטוס
+        status_draft: "טיוטה"
+        status_published: "פורסם"
         title: כותרת
         updated_at: עודכן ב
         more_info_flag: הצג בדף העזרה
@@ -328,9 +416,20 @@ he:
         name: שם
         locale: אזור
         body: גוף
+      tag:
+        name: "הקלד/י את שם הנושא"
+      topic:
+        title: "שם"
+        description: "טקסט ראשוני"
       banner:
         background_color: צבע הרקע
         font_color: צבע גופן
+        post_ended_at: "תאריך תפוגה"
+        post_started_at: "מתאריך"
+        target_url: "קישור"
+      banner/translation:
+        title: "שם"
+        description: "תיאור"
       legislation/process:
         title: כותרת התהליך
         summary: תקציר
@@ -350,17 +449,26 @@ he:
         result_publication_date: תאריך פרסום סופי לתוצאות
         background_color: צבע הרקע
         font_color: צבע גופן
+        homepage_enabled: "דף הבית מאופשר"
       legislation/process/translation:
         title: כותרת התהליך
         summary: תקציר
         description: תיאור
         additional_info: מידע נוסף
+        homepage: "תיאור"
         milestones_summary: תקציר
+      legislation/proposal:
+        description: "מלל ההצעה"
+        summary: "תקציר ההצעה"
+        title: "כותרת ההצעה"
+        video_url: "קישור לוידאו חיצוני"
       legislation/draft_version:
         title: גרסת כותרת
         body: טקסט
         changelog: שינויים
         status: סטטוס
+        status_draft: "טיוטה"
+        status_published: "פורסם"
         final_version: גרסה סופית
       legislation/draft_version/translation:
         title: גרסת כותרת
@@ -369,6 +477,8 @@ he:
       legislation/question:
         title: כותרת
         question_options: אפשרויות
+      legislation/question/translation:
+        title: שאלה
       legislation/question_option:
         value: ערך
       legislation/annotation:
@@ -426,6 +536,9 @@ he:
         order: באפשרותך להזין את המיקום שבה פעולה זו תוצג למשתמש ברשימת הפעולות
         active: פעיל
         action_type: סוג
+        action_type_proposed_action: "פעולה מוצעת"
+        action_type_resource: "משאב"
+        published_proposal: "עבור הצעות שפורסמו?"
       dashboard/administrator_task:
         source: מקור
         user: בוצע על ידי
@@ -437,6 +550,12 @@ he:
         valuator_group_id: קבוצת מעריך
         can_comment: ניתן ליצור הערות
         can_edit_dossier: ניתן לערוך את התיק
+      valuator_group:
+        name: "Group name"
+      local_census_record:
+        document_type: סוג תעודה מזהה
+        document_number: מספר תעודה מזהה
+        date_of_birth: תאריך לידה
     errors:
       models:
         user:
@@ -464,14 +583,12 @@ he:
           attributes:
             segment_recipient:
               invalid: "מקטע הנמענים אינו חוקי"
-        map_location:
-          attributes:
-            map:
-              invalid: מיקום המפה אינו יכול להיות ריק. הנח סמן או בחר את תיבת הסימון במידה והאזור הגאוגרפי אינו נחוץ
         poll/voter:
           attributes:
             document_number:
               not_in_census: "המסמך לא במפקד האוכלוסין"
+            user_id:
+              has_voted: "המשתמש כבר הצביע"
         legislation/process:
           attributes:
             end_date:

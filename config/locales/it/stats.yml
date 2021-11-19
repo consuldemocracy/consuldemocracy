@@ -1,1 +1,11 @@
 it:
+  stats:
+    title: "Dati di partecipazione"
+    total_participants: "Partecipanti"
+    total: "Totale"
+    budgets:
+      link: "Statistiche"
+      total_unfeasible_investments: "Progetti irrealizzabili"
+      total: "Totale"
+      heading: "Intestazione"
+      participants_every_phase: "Totale partecipanti"

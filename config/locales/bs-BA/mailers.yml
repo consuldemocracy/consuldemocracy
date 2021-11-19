@@ -9,6 +9,8 @@ bs:
       manage_email_subscriptions: Kako bi prestali dobijati ove emailove, promijenite svoje postavke u
     email_verification:
       click_here_to_verify: ovaj link
+      instructions_2: Ovaj email će potvrditi vaš nalog sa <b>%{document_type}%{document_number}</b>. Ako to nije vaše, nemojte kliknuti na prethodni link i zanemarite ovaj email.
+      instructions: Kako bi završili sa potvrdom vašeg korisničkog naloga, morate kliknuti na %{verification_link}.
       subject: Potvrdite vaš email
       thanks: Hvala puno.
       title: Potvrdite nalog ovim linkom
@@ -30,6 +32,7 @@ bs:
       unsubscribe_account: Moj nalog
     direct_message_for_sender:
       subject: "Poslali ste novu privatnu poruku"
+      title: "Poslali ste novu privatnu poruku <strong>%{receiver}</strong> sljedećeg sadržaja:"
     user_invite:
       ignore: "Ako niste tražili ovaj poziv, ne brinite, možete zanemariti ovaj email."
       text: "Hvala što ste se prijavili da se pridružite %{org}! Začas ćete početi učestvovati, samo ispunite formular dole:"
@@ -40,11 +43,15 @@ bs:
     budget_investment_created:
       subject: "Hvala što ste predložili investiciju!"
       title: "Hvala što ste predložili investiciju!"
+      intro: "Pozdrav <strong>%{author}</strong>,"
+      text: "Hvala što ste predložili investiciju <strong>%{investment}</strong> za Participativne budžete <strong>%{budget}</strong>."
+      follow: "Obavijestićemo vas o tome kako napreduje proces, koji isto tako možete pratiti na <strong>%{link}</strong>."
       follow_link: "Participativni budžeti"
       sincerely: "S poštovanjem"
       share: "Podijeli svoj projekat s drugima"
     budget_investment_unfeasible:
       hi: "Poštovani korisniče,"
+      new: "Za sve ovo, pozivamo vas da razradite <strong> novu investiciju </strong>, prilagođenu uvjetima u ovom procesu. To možete uraditi putem ovog linka: %{url}."
       new_href: "novi investicioni projekat"
       sincerely: "S poštovanjem"
       sorry: "Žao nam je zbog neugodnosti i hvala još jednom na vašem dragocjenom učešću."
@@ -61,6 +68,8 @@ bs:
       hi: "Poštovani korisniče,"
       thanks: "Hvala još jednom na učešću."
       sincerely: "S poštovanjem"
+    evaluation_comment:
+      hi: Pozdrav
     new_actions_notification_rake_created:
       subject: "Nove vijesti o vašem građanskom prijedlogu"
       hi: "Pozdrav %{name},"

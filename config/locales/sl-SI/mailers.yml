@@ -10,6 +10,8 @@ sl:
       manage_email_subscriptions: Če ne želiš več prejemati teh e-sporočil, spremeni svoje nastavitve
     email_verification:
       click_here_to_verify: tukaj
+      instructions_2: Ta e-pošta bo verificirala tvoj račun z <b>%{document_type} %{document_number}</b>. Če to ni prav, klikni na prejšnji link ali ignoriraj to sporočilo.
+      instructions: Da zaključiš preverjanje svojega uporabniškega računa na portalu Open Government, klikni %{verification_link}.
       subject: Potrdi svoj e-naslov
       thanks: Najlepša hvala.
       title: Potrdi svoj račun z uporabo naslednje povezave
@@ -32,6 +34,7 @@ sl:
       unsubscribe_account: Moj račun
     direct_message_for_sender:
       subject: "Imaš novo zasebno sporočilo"
+      title: "Poslal/-a si novo zasebno sporočilo uporabniku/-ci <strong>%{receiver}</strong>, in sicer s to vsebino:"
     user_invite:
       ignore: "Če nisi zahteval/-a tega povabila, ne skrbi, preprosto ignoriraj to e-pošto."
       text: "Hvala, ker se želiš pridružiti %{org}! V trenutku se lahko začneš odločati o tem, v kateri občini želiš sodelovati, le izpolni spodnji obrazec:"
@@ -42,11 +45,15 @@ sl:
     budget_investment_created:
       subject: "Hvala, ker si ustvaril/-a investicijo!"
       title: "Hvala, ker si ustvaril/-a investicijo!"
+      intro: "Hej <strong>%{author}</strong>,"
+      text: "Zahvaljujemo se ti za ustvarjeno investicijo <strong>%{investment}</strong> za participatorni proračun <strong>%{budget}</strong>."
+      follow: "O tem, kako proces napreduje, te bomo sproti obveščali, lahko pa se na obvestila tudi naročiš na povezavi <strong>%{link}</strong>."
       follow_link: "Participatorni proračuni"
       sincerely: "Z lepimi pozdravi,"
       share: "Deli svoj projekt"
     budget_investment_unfeasible:
       hi: "Dragi/-a uporabnik/-ca,"
+      new: "Vabimo te, da razviješ <strong>novo investicijo</strong>, ki ustreza zahtevanim pogojem tega procesa. To lahko storiš na naslednji povezavi: %{url}."
       new_href: "Nov naložbeni projekt"
       sincerely: "Z lepimi pozdravi,"
       sorry: "Opravičujemo se ti za morebitne nevšečnosti in se ti ponovno zahvaljujemo za sodelovanje."
@@ -63,3 +70,5 @@ sl:
       hi: "Dragi/-a uporabnik/-ca,"
       thanks: "Še enkrat hvala za sodelovanje."
       sincerely: "Naslednjič bo bolje,"
+    evaluation_comment:
+      hi: Hej

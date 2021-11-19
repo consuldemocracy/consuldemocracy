@@ -4,6 +4,11 @@ cs:
       verification:
         residence: "Bydliště"
         sms: "SMS"
+      local_census_records/import:
+        one: Import záznamu místního registru občanů
+        few: Importy záznamu místního registru občanů
+        many: Importů záznamů místního registru občanů
+        other: Importů záznamů místního registru občanů
     attributes:
       verification:
         residence:
@@ -35,3 +40,10 @@ cs:
         year_of_birth: "Rok narození"
       local_census_records/import:
         file: Soubor
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "Uvedený formát souboru je chybný. Povolený formát souboru je: %{valid_extensions}."
+              headers: "Uvedené hlavičky souborů jsou chybné. Hlavičky souborů musí mít následující názvy: %{required_headers}."

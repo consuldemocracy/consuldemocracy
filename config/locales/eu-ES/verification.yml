@@ -70,7 +70,6 @@ eu:
       new:
         phone: Mugikor zenbakia sartu ezazu kodea jaso ahal izateko
         phone_note: Zure telefono zenbakia kodea bialtzeko soilik erabiliko duguS, ez gara harremanetan jarriko inoiz.
-        phone_placeholder: "Ejemplo: 612345678 edo +34612345678"
         submit_button: Bidali
         title: Baieztapen SMS-a
       update:

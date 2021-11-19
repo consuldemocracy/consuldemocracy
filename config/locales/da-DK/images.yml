@@ -7,8 +7,6 @@ da:
       delete_button: Fjern billede
       note: "Du kan uploade et billede i følgende format: %{accepted_content_types}, op til %{max_file_size} MB."
       add_new_image: Tilføj billede
-      admin_title: "Billede"
-      admin_alt_text: "Alternativ tekst til billedet"
     actions:
       destroy:
         notice: Billedet blev slettet.

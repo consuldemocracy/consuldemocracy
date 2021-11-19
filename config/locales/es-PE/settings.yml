@@ -25,6 +25,9 @@ es-PE:
     meta_description: "Descripción del sitio (SEO)"
     meta_keywords: "Palabras clave (SEO)"
     min_age_to_participate: Edad mínima para participar
+    proposals:
+      poll_short_title: Votaciones
+      email_short_title: Tu correo electrónico
     feature:
       twitter_login: "Registro con Twitter"
       facebook_login: "Registro con Facebook"
@@ -33,3 +36,15 @@ es-PE:
       community: "Comunidad en propuestas y proyectos de inversión"
       map: "Geolocalización de propuestas y proyectos de inversión"
       allow_images: "Permitir subir y mostrar imágenes"
+    map:
+      latitude: "Latitud"
+      longitude: "Longitud"
+    process:
+      debates: "Discusiones"
+      proposals: "Propuestas"
+      polls: "Votaciones"
+      budgets: "Presupuestos participativos"
+      legislation: "Legislación colaborativa"
+    html:
+      per_page_code_head: "Código a incluir en cada página (<head>)"
+      per_page_code_body: "Código a incluir en cada página (<body>)"

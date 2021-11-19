@@ -43,14 +43,12 @@ hr:
       title: Korisnički menadžment
       under_age: "Nemate dovoljno godina kako biste potvrdili svoj račun."
       verify: Potvrdi
-    email_label: E-mail
     date_of_birth: Datum rođenja
     email_verifications:
       already_verified: Ovaj korisnički račun je već potvrđen.
       choose_options: "Molimo vas da odaberete jednu od sljedećih opcija:"
       document_found_in_census: Ovaj dokument je pronađen u cenzusu, ali nema korisnika koji su povezani s njime.
       document_mismatch: "Ovaj e-mail pripada korisniku koji već ima povezan id: %{document_number}(%{document_type})"
-      email_placeholder: Napiši e-mail koji ovaj korisnik koristi za njegov ili njezin račun
       email_sent_instructions: Kako biste dovršili verifikaciju ovog korisnika potrebno je kliknuti na poveznicu pristiglu na navedeni e-mail. Ovaj korak je potreban kako biste potvrdili da adresa pripada njemu.
       if_existing_account: Ako je osoba već napravila korisnički račun na stranici,
       if_no_existing_account: Ako ova osoba nije još stvorila račun

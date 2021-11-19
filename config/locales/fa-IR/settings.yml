@@ -25,6 +25,9 @@ fa:
     meta_description: "توضیحات سایت (SEO)"
     meta_keywords: "واژه هاي كليدي (SEO)"
     min_age_to_participate: حداقل سن مورد نیاز برای شرکت 
+    proposals:
+      poll_short_title: نظر سنجی ها
+      email_short_title: پست الکترونیکی
     feature:
       twitter_login: "ورود توییتر"
       facebook_login: "ورود فیس بوک"
@@ -37,3 +40,16 @@ fa:
       map: "پیشنهادات و جغرافیای سرمایه گذاری بودجه"
       allow_images: "اجازه آپلود و نمایش تصاویر"
       allow_attached_documents: "اجازه آپلود و نمایش اسناد متصل"
+    map:
+      latitude: "عرض جغرافیایی\n"
+      longitude: "طول جغرافیایی"
+      zoom: "زوم"
+    process:
+      debates: "مباحثه"
+      proposals: "طرح های پیشنهادی"
+      polls: "نظر سنجی ها"
+      budgets: "بودجه مشارکتی"
+      legislation: "قانون همکاری"
+    html:
+      per_page_code_head: "کد موجود در هر صفحه (<head>)"
+      per_page_code_body: "کد موجود در هر صفحه (<head>)"

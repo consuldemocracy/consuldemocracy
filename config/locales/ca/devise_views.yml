@@ -2,7 +2,6 @@ ca:
   devise_views:
     confirmations:
       new:
-        email_label: El teu correu electrònic
         submit: Reenviar instruccions
         title: Reenviar instruccions de confirmació
       show:
@@ -39,12 +38,7 @@ ca:
     organizations:
       registrations:
         new:
-          email_label: El teu correu electrònic
-          organization_name_label: Nom de l'organització
           password_confirmation_label: Repeteix la contrasenya anterior
-          password_label: Clau
-          phone_number_label: telèfon
-          responsible_name_label: Nom i cognoms de la persona responsable del col·lectiu
           responsible_name_note: Serà la persona representant de l'associació / col·lectiu en nom del qual presentin les propostes
           submit: Registrar
           title: Registrar-se com organització / col·lectiu
@@ -62,13 +56,10 @@ ca:
         password_label: Nova contrasenya
         title: Canvia la teua contrasenya
       new:
-        email_label: El teu correu electrònic
         send_submit: rebre instruccions
         title: '¿Ha oblidat la seva contrasenya?'
     sessions:
       new:
-        login_label: E-mail o nom d'usuari
-        password_label: Clau
         remember_me: Recordar-me
         submit: Entrada
         title: Entrada
@@ -106,12 +97,9 @@ ca:
           waiting_for: "Esperant confirmació de:"
         new:
           cancel: Cancel·la la sessió
-          email_label: El teu correu electrònic
           organization_signup: '¿Representes a una organització / col·lectiu? %{signup_link}'
           organization_signup_link: Registra't aquí
           password_confirmation_label: Repeteix la contrasenya anterior
-          password_label: Clau
-          redeemable_code: El teu codi de verificació (si has rebut una carta amb ell)
           submit: Registrar
           terms: En registrar acceptes les %{terms}
           terms_link: condicions d'ús
@@ -119,7 +107,6 @@ ca:
           title: Registrar
           username_is_available: Nom d'usuari disponible
           username_is_not_available: Nom d'usuari ja existent
-          username_label: Nom d'usuari
           username_note: Nom públic que apareixerà en les teves publicacions
         success:
           back_to_index: Entès, tornar a la pàgina principal

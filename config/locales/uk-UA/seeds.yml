@@ -32,6 +32,7 @@ uk-UA:
       environment: Навколишнє середовище
     budgets:
       budget: Партисипативний бюджет
+      currency: '€'
       groups:
         all_city: Все місто
         districts: Райони

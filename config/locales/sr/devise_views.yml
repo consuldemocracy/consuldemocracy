@@ -2,7 +2,6 @@ sr:
   devise_views:
     confirmations:
       new:
-        email_label: Емаил
         submit: Поново пошаљите упутство
         title: Поново пошаљите упутство за потврђивање
       show:
@@ -39,12 +38,7 @@ sr:
     organizations:
       registrations:
         new:
-          email_label: Емаил
-          organization_name_label: Назив организације
           password_confirmation_label: Потврдите лозинку
-          password_label: Лозинка
-          phone_number_label: Број телефона
-          responsible_name_label: Пуно име и презиме особе која представља организацију
           responsible_name_note: Ово је особа која представља удружење/заједницу у чије се име подносе предлози
           submit: Региструјте се
           title: Региструјте се као организација или заједница
@@ -62,13 +56,10 @@ sr:
         password_label: Нова лозинка
         title: Промените своју лозинку
       new:
-        email_label: Емаил
         send_submit: Пошаљите упутства
         title: Заборавили сте лозинку?
     sessions:
       new:
-        login_label: Емаил или корисничко име
-        password_label: Лозинка
         remember_me: Сећаш ли ме се
         submit: Унеси
         title: Упиши се
@@ -106,12 +97,9 @@ sr:
           waiting_for: "Чека се потврда:"
         new:
           cancel: Откажи пријаву
-          email_label: Емаил
           organization_signup: Да ли представљате организацију или колектив? %{signup_link}
           organization_signup_link: Упишите се овде
           password_confirmation_label: Потврдите лозинку
-          password_label: Лозинка
-          redeemable_code: Верификациони код примљен путем е-маила (опционално)
           submit: Регистрација
           terms: Регистрацијом прихватате %{terms}
           terms_link: услови коришћења
@@ -119,7 +107,6 @@ sr:
           title: Регистрација
           username_is_available: Корисничко име доступно
           username_is_not_available: Корисничко име је већ у употреби
-          username_label: Корисничко име
           username_note: Име које се појављује поред ваших објава
         success:
           back_to_index: Разумем; вратите се на почетну страну

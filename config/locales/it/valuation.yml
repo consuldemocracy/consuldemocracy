@@ -52,8 +52,11 @@ it:
         responsibles: Responsabili
         assigned_admin: Admin assegnato
         assigned_valuators: Stimatori assegnati
+        preview: Anteprima investimento
       edit:
         dossier: Dossier
+        price: "Prezzo (%{currency})"
+        price_first_year: "Costo durante il primo anno (%{currency}) <small>(dati facoltativi, non pubblici)</small>"
         feasibility: Fattibilità
         save: Salva modifiche
       notice:

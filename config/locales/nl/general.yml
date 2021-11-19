@@ -5,10 +5,7 @@ nl:
       erase_account_link: Verwijder mijn account
       finish_verification: Maak verificatieproces af
       notifications: Meldingen
-      organization_name_label: Naam van de organisatie
-      organization_responsible_name_placeholder: Vertegenwoordiger van de organisatie of het collectief
       personal: Persoonlijke gegevens
-      phone_number_label: Telefoonnummer
       public_interests_my_title_list: Labels van zaken die je volgt
       public_interests_user_title_list: Termen die deze persoon volgt
       save_changes_submit: Save changes
@@ -22,7 +19,6 @@ nl:
       user_permission_verify: Verifieer uw account om alles te kunnen.
       user_permission_verify_info: "* Alleen voor gebruikers in de regio."
       user_permission_votes: Neem deel aan definitieve stemronde
-      username_label: Username
       verified_account: Account geverifiëerd
       verify_my_account: Verifieer mijn account
   application:
@@ -40,6 +36,10 @@ nl:
         zero: Geen reacties
         one: 1 reactie
         other: "%{count} reacties"
+      responses_show:
+        zero: Geen reacties
+      responses_collapse:
+        zero: Geen reacties
       user_deleted: Deelnemer verwijdert
       votes:
         zero: Geen stemmen
@@ -54,7 +54,6 @@ nl:
       newest: Nieuwste boven
       oldest: Oudste boven
       most_commented: Meeste reacties
-    select_order: Sorteer op
     show:
       return_to_commentable: "Ga terug naar "
   comments_helper:
@@ -82,7 +81,6 @@ nl:
         submit_button: Bewaar wijzigingen
       show_link: Debat bekijken
     form:
-      debate_title: Onderwerp
       tags_instructions: Voeg termen toe.
       tags_placeholder: "Voeg de gewenste labels toe, gescheiden door een komma (',')"
     index:
@@ -105,7 +103,9 @@ nl:
         button: Search
         placeholder: Debatten zoeken...
         title: Search
-      select_order: Order by
+      search_results:
+        one: " bevat de term <strong>'%{search_term}'</strong>"
+        other: " bevat de term <strong>'%{search_term}'</strong>"
       start_debate: Debat starten
       title: Debatten
       section_header:
@@ -120,8 +120,6 @@ nl:
     new:
       form:
         submit_button: Debat starten
-      info: Dit is niet de juiste plek voor voorstellen; ga daarvoor naar %{info_link}.
-      info_link: nieuw voorstel
       more_info: Meer informatie
       recommendation_four: Geniet van deze ruimte, en van de stemmen die 'm vullen.
       recommendation_one: Gebruik geen hoofdletters voor de titel, of voor hele zinnen. Dit is equivalent aan schreeuwen op het internet, en niemand houdt ervan toegeschreeuwd te worden.
@@ -155,6 +153,7 @@ nl:
     direct_message: privébericht
     error: fout
     errors: fouten
+    not_saved: "voorkwam dat %{resource} werd opgeslagen.<br>Controleer alsjeblieft de gemarkeerde velden om ze aan te passen:"
     policy: Privacy Verklaring
     proposal: Voorstel
     proposal_notification: "Melding"
@@ -177,6 +176,14 @@ nl:
       firefox: Firefox
       ie: U gebruikt Internet Explorer. We raden %{firefox} of %{chrome} aan voor de beste resultaten.
       ie_title: Deze site is niet geoptimaliseert voor uw browser
+    dashboard:
+      proposal_header:
+        published: Gepubliceerd
+        draft: Concept
+        retired: Teruggetrokken
+      proposal_totals:
+        supports:
+          zero: Geen steunbetuigingen
     footer:
       accessibility: Toegankelijkheid
       conditions: Gebruiksvoorwaarden
@@ -193,7 +200,6 @@ nl:
     header:
       administration_menu: Beheerder
       administration: Administration
-      available_locales: Beschikbare talen
       collaborative_legislation: Wetgevingsproces
       debates: Debatten
       locale: "Taal:"
@@ -255,12 +261,16 @@ nl:
       sign_in: Log in via Twitter
       sign_up: Registreer via Twitter
       name: Twitter
+    info:
+      sign_in: "Aanmelden met:"
+      sign_up: "Registreren met:"
     or_fill: "Of vul het volgende in:"
   proposals:
     create:
       form:
         submit_button: Voorstel indienen
     share:
+      dashboard: Bekijk meer informatie
       message: "Ik heb op het voorstel %{title} in %{handle} gestemd. Stem ook!"
     edit:
       editing: Bewerk voorstel
@@ -290,7 +300,6 @@ nl:
       map_location: "Locatie"
       map_location_instructions: "Beweeg de kaart en wijs de locatie aan."
       map_remove_marker: "Locatie verwijderen"
-      map_skip_checkbox: "De locatie voor het voorstel is niet bekend."
     index:
       featured_proposals: Featured
       orders:
@@ -321,7 +330,9 @@ nl:
         button: Search
         placeholder: Zoek voorstellen..
         title: Search
-      select_order: Order by
+      search_results:
+        one: " bevat de term <strong>'%{search_term}'</strong>"
+        other: " bevat de term <strong>'%{search_term}'</strong>"
       select_order_long: "U ziet de voorstellen op:"
       start_proposal: Maak een nieuw voorstel
       title: Voorstellen
@@ -392,6 +403,51 @@ nl:
     update:
       form:
         submit_button: Bewaar wijzigingen
+  dashboard:
+    menu:
+      progress: Voortgang
+      community: Community
+      polls: Polls
+      related_content: Gerelateerde inhoud
+    progress:
+      supports: Steunt
+    index:
+      edit_proposal_link: Wijzig voorstel
+      retire: Trek voorstel terug
+    new_request:
+      links: Links
+    recommended_actions:
+      pending_title: In afwachting
+      done_title: Is al gereed
+    community:
+      access_community: Naar de community
+      participants: deelnemers
+      debates: Discussie
+      comments: Comments
+    polls:
+      index:
+        title: Polls
+        create: Nieuwe peiling
+        links: Links
+        additiontal_information: Aanvullende informatie
+      new:
+        title: Nieuwe peiling
+        submit: Nieuwe peiling
+      edit:
+        submit: Sla op
+      form:
+        add_question: titel
+      question_fields:
+        add_answer: Voeg antwoord toe
+    poster:
+      options:
+        preview: Preview
+    mailing:
+      mailing_options:
+        preview: Preview
+    mailer:
+      forward:
+        support_button: Steun dit voorstel
   polls:
     all: "All"
     no_dates: "geen datum toegewezen"
@@ -425,6 +481,7 @@ nl:
       back: Terug naar stemmen
       cant_answer_not_logged_in: "Je moet %{signin} of %{signup} om deel te nemen."
       comments_tab: Comments
+      cant_answer_verify: "Je moet %{verify_link} om te kunnen antwoorden."
       verify_link: "verifieer uw account"
       cant_answer_expired: "Deze stemronde is voorbij."
       cant_answer_wrong_geozone: "Deze vraag wordt niet behandeld in uw regio"
@@ -462,14 +519,13 @@ nl:
       back: "Terug naar mijn bijdragen"
   shared:
     edit: "Edit"
+    filter: "Filter"
     save: "Save"
     delete: "Delete"
     "yes": "Ja"
     "no": "Nee"
     search_results: "Zoek resultaten"
     advanced_search:
-      author_type: "Op auteur categorie"
-      author_type_blank: "Selecteer een categorie"
       date: "Op datum"
       date_placeholder: "DD/MM/JJJJ"
       date_range_blank: "Kies een datum"
@@ -480,7 +536,6 @@ nl:
       date_5: "Aangepast"
       from: "Van"
       general: "Met tekst:"
-      general_placeholder: "Schrijf de tekst"
       search: "Filter"
       title: "Geavanceerd zoeken"
       to: "Aan"
@@ -523,6 +578,7 @@ nl:
       districts: "Regio's"
       districts_list: "Regio lijst"
       categories: "Categorieen"
+    target_blank: " (opent een nieuw venster)"
     you_are_in: "U bent in"
     unflag: Hef markering op
     unfollow_entity: "Ontvolg %{entity}"
@@ -542,6 +598,9 @@ nl:
       title: Aanbevelingen
       see_more: Meer aanbevelingen bekijken
       hide: Verborgen aanbevelingen
+    translations:
+      remove_language: Verwijder taal
+      add_language: Taal toevoegen
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -565,6 +624,11 @@ nl:
     manage:
       all: "U heeft geen toestemming '%{action}' op %{subject} uit te voeren."
   users:
+    login_to_comment: "Je moet %{signin} of %{signup} om een reactie te plaatsen."
+    login_to_continue: "Je moet %{signin} of %{signup} om verder te gaan."
+    signin: "aanmelden"
+    signup: "registreren"
+    verify_account: "je account verifieren"
     direct_messages:
       new:
         direct_messages_bloqued: "Deze deelnemer heeft ervoor gekozen geen directe berichten te ontvangen"
@@ -579,6 +643,7 @@ nl:
       deleted_proposal: Dit voorstel is verwijderd
       deleted_budget_investment: Dit begrotingsvoorstel is verwijderd
       proposals: Voorstellen
+      proposals_status: Status
       debates: Debatten
       budget_investments: Begrotingsvoorstellen
       comments: Comments
@@ -606,7 +671,10 @@ nl:
       delete_alert: "Weet je zeker dat je jouw investeringsproject wilt verwijderen? Dit kan niet ongedaan gemaakt worden."
     proposals:
       retired: "Teruggetrokken"
+      draft: Concept
+      published: Gepubliceerd
       see: "Bekijk voorstel"
+      actions: Activiteiten
   votes:
     agree: Ik ben het eens
     anonymous: Er zijn al te veel anonieme stemmen; %{verify_account}.
@@ -692,3 +760,9 @@ nl:
       alt: Selecteer de tekst waarop u wilt reageren en druk op de knop met het potlood.
       text: Om te reageren moet je %{sign_in} of %{sign_up}. Selecteer daarna de tekst waarop u wilt reageren en druk op de knop met het potlood.
       title: Hoe kan ik reageren op dit document?
+  links:
+    form:
+      delete_button: Delete
+      cancel_button: Cancel
+    nested_links:
+      title: Links

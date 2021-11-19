@@ -49,6 +49,8 @@ eu:
         more_info: Informazio gehiago eta testuingurua
       proposals:
         empty_proposals: Ez daude proposamenik
+        filters:
+          winners: Hautatutakoak
       debate:
         empty_questions: Ez dago galderarik
         participate: Hurrengo gaietan parte hartuz aurretiko eztabaidetan ekarpenak egin ditzazu.
@@ -75,10 +77,12 @@ eu:
         see_latest_comments_title: Prosezu honetan ekarpenak egin
       shared:
         key_dates: Gako datak
+        homepage: Orri nagusia
         debate_dates: Eztabaida
         draft_publication_date: Zirriborroa argitaratu
         allegations_dates: Alegazioak
         result_publication_date: Emaitz argitaraketa
+        milestones_date: Jarraitzen
         proposals_dates: Proposamenak
     questions:
       comments:
@@ -112,3 +116,17 @@ eu:
       form:
         tags_label: "Mailak"
       not_verified: "%{verify_account} proposamenak bozkatzeko."
+      process_title: Elkarlan legedi prosezua
+    summary:
+      title: "Laburpena"
+      votes:
+        zero: "%{count} bozka"
+      debate_phase: "Eztabaida fasea"
+      proposals_phase: "Proposamen fasea"
+      allegations_phase: "Idazketa fasea"
+      comments:
+        zero: "Iruzkin gabe"
+        one: "Iruzkin %{count}"
+        other: "%{count} Iruzkin"
+      top_comments:
+        zero: "Iruzkin gabe"

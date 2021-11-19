@@ -6,6 +6,7 @@ cs:
       description: Informační stránka o podmínkách používání, soukromí a ochraně osobních údajů.
     help:
       title: "%{org} je platforma pro zapojování občanů do spolurozhodování"
+      guide: "Tato příručka vysvětluje, k čemu slouží jednotlivé sekce %{org} a jak fungují."
       menu:
         debates: "Debaty"
         proposals: "Návrhy"
@@ -44,6 +45,7 @@ cs:
         description: "V části %{link} se občané podílejí na přípravě a úpravách předpisů, které mají vliv na město a mohou se vyjádřit např. k návrhům obecních vyhlášek v předchozích debatách."
         link: "procesy"
         feature: "K účasti v hlasování využijte následující odkaz %{link} a ověřte svůj účet."
+        feature_link: "registrovat v %{org_name}"
       faq:
         title: "Technické problémy?"
         description: "Přečtěte si časté otázky a řešit vaše dotazy."
@@ -54,6 +56,7 @@ cs:
       other:
         title: "Další zajímavé informace"
         how_to_use: "Použijte %{org_name} ve vašem městě"
+        sdg: "Cíle udržitelného rozvoje - nápověda"
       how_to_use:
         text: |-
           Použijte tento program ve své lokalitě, nebo nám ho pomozte zlepšit, je to svobodný software.
@@ -157,6 +160,7 @@ cs:
               description_column: Zmenšit velikost textu
       compatibility:
         title: Kompatibilita se standardy a vizuální design
+        description: 'Všechny stránky tohoto webu splňují <strong>Pokyny pro přístupnost</strong> neboli Obecné zásady přístupného designu stanovené pracovní skupinou <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> patřící pod W3C.'
     titles:
       help: "Co je %{org}? - Zapojování občanů"
     verify:

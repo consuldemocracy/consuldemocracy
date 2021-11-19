@@ -206,6 +206,8 @@ ro:
         voting_style_knapsack: "Votare de tip Knapsack"
         voting_style_approval: "Aprobare"
       budget/translation:
+        main_link_text: "Text pe link"
+        main_link_url: "Link-ul te duce către (adaugă un link)"
         name: "Nume"
       budget/investment:
         heading_id: "Rubrică"
@@ -278,6 +280,8 @@ ro:
         name: "Nume"
         description: "Descriere"
         summary: "Sumar"
+        main_link_text: "Text pe link"
+        main_link_url: "Link-ul te duce către (adaugă un link)"
       comment:
         body: "Comentariu"
         user: "Utilizator"
@@ -581,10 +585,6 @@ ro:
           attributes:
             segment_recipient:
               invalid: "Segmentul destinatarilor este incorect"
-        map_location:
-          attributes:
-            map:
-              invalid: Locația nu poate fi goală. Plasați un marker sau bifați caseta dacă nu este necesară localizarea
         poll/voter:
           attributes:
             document_number:

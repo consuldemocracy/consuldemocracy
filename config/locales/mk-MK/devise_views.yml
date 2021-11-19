@@ -2,7 +2,6 @@ mk:
   devise_views:
     confirmations:
       new:
-        email_label: Е-пошта
         submit: Повторно испрати инструкции
         title: Повторно испрати инструкции за потврда
       show:
@@ -39,12 +38,7 @@ mk:
     organizations:
       registrations:
         new:
-          email_label: Електронска адреса
-          organization_name_label: Име на организацијата
           password_confirmation_label: Потврди лозинка
-          password_label: Лозинка
-          phone_number_label: Телефонски број
-          responsible_name_label: Цело име на личноста одговорна за колективот
           responsible_name_note: Ова е личноста која ја претставува асоцијацијата/колективот во чие име предлозите се презентирани
           submit: Регистрирај се
           title: Регистрирај се како организација или колектив
@@ -62,13 +56,10 @@ mk:
         password_label: Нова лозинка
         title: Промени ја лозинката
       new:
-        email_label: Електронска адреса
         send_submit: Испрати инструкции
         title: Заборавена лозинка?
     sessions:
       new:
-        login_label: Електронска адреса или корисничко име
-        password_label: Лозинка
         remember_me: Запамти ме
         submit: Влез
         title: Логирај се
@@ -106,4 +97,8 @@ mk:
           waiting_for: "Во очекување на потврда на:"
         new:
           cancel: Откажи логирање
-          email_label: Електронска адреса
+          password_confirmation_label: Потврди лозинка
+          submit: Регистрирај се
+          title: Регистрирај се
+        success:
+          back_to_index: Разбирам; врати се на главната страница

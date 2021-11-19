@@ -5,6 +5,7 @@ es-PE:
     actions:
       actions: Acciones
       confirm: '¿Estás seguro?'
+      delete: "Borrar"
       hide: Ocultar
       hide_author: Bloquear al autor
       restore: Volver a mostrar
@@ -12,12 +13,9 @@ es-PE:
       unmark_featured: Quitar destacado
       edit: Editar propuesta
       configure: Configurar
-      delete: Borrar
     banners:
       index:
         create: Crear banner
-        edit: Editar el banner
-        delete: Eliminar banner
         filters:
           all: Todas
           with_active: Activos
@@ -25,6 +23,7 @@ es-PE:
         preview: Previsualizar
       banner:
         sections:
+          debates: Discusiones
           proposals: Propuestas
           budgets: Presupuestos participativos
       edit:
@@ -46,22 +45,28 @@ es-PE:
         filters:
           all: Todas
           on_comments: Comentarios
+          on_debates: Discusiones
           on_proposals: Propuestas
           on_users: Usuarios
         title: Actividad de moderadores
         type: Tipo
     budgets:
+      actions:
+        edit: "Editar presupuesto"
+        preview: "Previsualizar"
       index:
         title: Presupuestos participativos
         new_link: Crear nuevo presupuesto
         filter: Filtrar
         filters:
+          all: Todas
           open: Abierto
           finished: Finalizadas
+        budget_investments: Propuestas de inversión
+        table_budget_type: "Tipo"
+        table_draft: "Borrador"
         table_name: Nombre
         table_phase: Fase
-        edit_groups: Editar grupos de partidas
-        edit_budget: Editar presupuesto
       create:
         notice: '¡Nueva campaña de presupuestos participativos creada con éxito!'
       update:
@@ -76,13 +81,15 @@ es-PE:
       destroy:
         success_notice: Presupuesto eliminado correctamente
         unable_notice: No se puede eliminar un presupuesto con proyectos asociados
-      new:
-        title: Nuevo presupuesto ciudadano
+      show:
+        add_heading: "Añadir partida"
       winners:
         calculate: Calcular propuestas ganadoras
         calculated: Calculando ganadoras, puede tardar un minuto.
     budget_groups:
       name: "Nombre"
+      index:
+        new_button: "Añadir nuevo grupo"
     budget_headings:
       form:
         population_info: "El campo población de las partidas presupuestarias se usa con fines estadísticos únicamente, con el objetivo de mostrar el porcentaje de votos habidos en cada partida que represente un área con población. Es un campo opcional, así que puedes dejarlo en blanco si no aplica."
@@ -129,6 +136,8 @@ es-PE:
           feasibility: Viabilidad
           valuation_finished: Ev. Fin.
           selected: Seleccionada
+          price: Coste
+          author: Autor
         see_results: "Ver resultados"
       show:
         assigned_admin: Administrador asignado
@@ -170,7 +179,6 @@ es-PE:
         table_publication_date: "Fecha de publicación"
         table_status: Estado
         table_actions: "Acciones"
-        delete: "Eliminar hito"
         no_milestones: "No hay hitos definidos"
         image: "Imagen"
         show_image: "Mostrar imagen"
@@ -198,15 +206,61 @@ es-PE:
         table_title: "Título"
     comments:
       index:
+        content: "Contenido"
+        author: "Autor"
+        commentable_type: "Tipo"
+        title: Comentarios ocultos
+        table_link: "Enlace"
+    hidden_comments:
+      index:
+        filter: Filtrar
+        filters:
+          all: Todas
+          with_confirmed_hide: Confirmadas
+          without_confirmed_hide: Sin decidir
+        hidden_debate: Debate oculto
+        hidden_proposal: Propuesta oculta
         title: Comentarios ocultos
     dashboard:
       index:
         back: Volver a %{org}
         title: Administración
         description: Bienvenido al panel de administración de %{org}.
+      actions:
+        index:
+          active: 'Si'
+          action_title: Título
+          action_type: Tipo
+          action_active: Activos
+          order: Orden
+          default:
+            email: Tu correo electrónico
+            polls: Votaciones
+        form:
+          submit_button: Guardar
+      administrator_tasks:
+        index:
+          filter: Filtrar
+          filters:
+            pending: Sin decidir
+        form:
+          proposal: la propuesta
     debates:
       index:
+        author: Autor
         title: Debates ocultos
+    hidden_debates:
+      index:
+        filter: Filtrar
+        filters:
+          all: Todas
+          with_confirmed_hide: Confirmadas
+          without_confirmed_hide: Sin decidir
+        title: Debates ocultos
+    documents:
+      index:
+        new_link: "Añadir nuevo documento"
+        title: "Documentos"
     hidden_users:
       index:
         filter: Filtrar
@@ -245,30 +299,29 @@ es-PE:
           enabled: Habilitado
           process: Proceso
           debate_phase: Fase previa
+          allegations_phase: Fase de comentarios
           proposals_phase: Fase de propuestas
           use_markdown: Usa Markdown para formatear el texto
-          title_placeholder: Escribe el título del proceso
-          summary_placeholder: Resumen corto de la descripción
-          description_placeholder: Añade una descripción del proceso
-          additional_info_placeholder: Añade cualquier información adicional que pueda ser de interés
         index:
           create: Nuevo proceso
           title: Procesos legislativos
           filters:
+            active: Activos
             all: Todas
         new:
           back: Volver
           title: Crear nuevo proceso de legislación colaborativa
           submit_button: Crear proceso
         proposals:
-          select_order: Ordenar por
           orders:
-            title: Título
-            supports: Apoyos
+            title: "Título"
+            supports: "Apoyos"
         process:
           title: Proceso
           comments: Comentarios
           status: Estado
+          start_date: Fecha de inicio del proceso
+          end_date: Fecha de fin del proceso
           status_open: Abierto
           status_closed: Cerrado
           status_planned: Próximamente
@@ -299,6 +352,7 @@ es-PE:
           submit_button: Guardar cambios
           warning: Ojo, has editado el texto. Para conservar de forma permanente los cambios, no te olvides de hacer click en Guardar.
         form:
+          title: 'Editando <span class="strong">%{draft_version_title}</span> del proceso <span class="strong">%{process_title}</span>'
           launch_text_editor: Lanzar editor de texto
           close_text_editor: Cerrar editor de texto
           use_markdown: Usa Markdown para formatear el texto
@@ -307,9 +361,7 @@ es-PE:
             status:
               draft: Podrás previsualizarlo como logueado, nadie más lo podrá ver
               published: Será visible para todo el mundo
-          title_placeholder: Escribe el título de esta versión del borrador
           changelog_placeholder: Describe cualquier cambio relevante con la versión anterior
-          body_placeholder: Escribe el texto del borrador
         index:
           title: Versiones del borrador
           create: Crear versión
@@ -368,6 +420,12 @@ es-PE:
         add: Añadir como Presidente de mesa
       search:
         title: "Gestores: Búsqueda de usuarios"
+    sdg_managers:
+      index:
+        no_sdg_managers: No hay usuarios.
+    sdg/managers:
+      sdg/manager:
+        add: Añadir como Presidente de mesa
     menu:
       activity: Actividad de moderadores
       admin: Menú de administración
@@ -400,6 +458,7 @@ es-PE:
         images: Personalizar imágenes
         content_blocks: Personalizar bloques
         information_texts_menu:
+          debates: "Discusiones"
           community: "Comunidad"
           proposals: "Propuestas"
           polls: "Votaciones"
@@ -409,8 +468,11 @@ es-PE:
           save: "Guardar"
       title_moderated_content: Contenido moderado
       title_profiles: Perfiles
+      title_settings: Configuración global
       legislation: Legislación colaborativa
       users: Usuarios
+      debates: "Discusiones"
+      comments: "Comentarios"
     administrators:
       index:
         title: Administradores
@@ -440,6 +502,7 @@ es-PE:
       show:
         send: Enviar
         sent_at: Fecha de creación
+        from: Desde
     admin_notifications:
       index:
         section_title: Notificaciones
@@ -454,6 +517,11 @@ es-PE:
         title: Título
         body: Texto
         link: Enlace
+    system_emails:
+      comment:
+        title: "Comentario"
+      reply:
+        title: "Responder"
     valuators:
       index:
         title: Evaluadores
@@ -556,6 +624,7 @@ es-PE:
     polls:
       index:
         title: "Listado de votaciones"
+        no_polls: "No hay ninguna votación."
         create: "Crear votación"
         name: "Nombre"
         dates: "Fechas"
@@ -597,6 +666,7 @@ es-PE:
         title: "Editar pregunta ciudadana"
       new:
         title: "Crear pregunta ciudadana para la encuesta %{poll}"
+        title_proposal: "Crear pregunta para votación"
       answers:
         images:
           add_image: "Añadir imagen"
@@ -645,6 +715,8 @@ es-PE:
       index:
         title: "Recuentos"
         no_recounts: "No hay nada de lo que hacer recuento"
+        total_final: "Recuentos finales"
+        total_system: "Votos (automático)"
         table_booth_name: "Urna"
         table_total_recount: "Recuento total (presidente de mesa)"
         table_system_count: "Votos (automático)"
@@ -679,7 +751,6 @@ es-PE:
         location: "Ubicación"
       booth:
         shifts: "Asignar turnos"
-        edit: "Editar urna"
     officials:
       edit:
         destroy: Eliminar condición de 'Cargo Público'
@@ -700,7 +771,6 @@ es-PE:
       level_4: Nivel 4
       level_5: Nivel 5
       search:
-        edit_official: Editar cargo público
         make_official: Convertir en cargo público
         title: "Cargos Públicos: Búsqueda de usuarios"
         no_results: No se han encontrado cargos públicos.
@@ -712,6 +782,9 @@ es-PE:
           pending: Sin decidir
           rejected: Rechazada
           verified: Verificada
+        hidden_count:
+          one: Hay además <strong>una organización</strong> sin usuario o con el usuario bloqueado.
+          other: Hay <strong>%{count} organizaciones</strong> sin usuario o con el usuario bloqueado.
         name: Nombre
         email: Tu correo electrónico
         phone_number: Teléfono
@@ -731,6 +804,8 @@ es-PE:
       index:
         title: Propuestas
         author: Autor
+        select: Seleccionar
+        selected: Seleccionada
         milestones: Seguimiento
     hidden_proposals:
       index:
@@ -741,18 +816,23 @@ es-PE:
           without_confirmed_hide: Sin decidir
         title: Propuestas ocultas
         no_hidden_proposals: No hay propuestas ocultas.
+    hidden_proposal_notifications:
+      index:
+        filter: Filtrar
+        filters:
+          all: Todas
+          with_confirmed_hide: Confirmadas
+          without_confirmed_hide: Sin decidir
     settings:
       flash:
         updated: Valor actualizado
       index:
         title: Configuración global
+        general: Configuración global
         update_setting: Actualizar
         feature_flags: Funcionalidades
         features:
           enabled: "Funcionalidad activada"
-          disabled: "Funcionalidad desactivada"
-          enable: "Activar"
-          disable: "Desactivar"
         map:
           title: Configuración del mapa
           help: Aquí puedes personalizar la manera en la que se muestra el mapa a los usuarios. Arrastra el marcador o pulsa sobre cualquier parte del mapa, ajusta el zoom y pulsa el botón 'Actualizar'.
@@ -760,12 +840,9 @@ es-PE:
             update: La configuración del mapa se ha guardado correctamente.
           form:
             submit: Actualizar
-      setting_actions: Acciones
-      setting_status: Estado
       setting_value: Valor
       no_description: "Sin descripción"
     shared:
-      true_value: "Si"
       search:
         label:
           booths: "Buscar urna por nombre"
@@ -774,6 +851,7 @@ es-PE:
           poll_questions: "Buscar preguntas"
           proposals: "Buscar propuestas por título, código, descripción o pregunta"
           users: "Buscar usuario por nombre o email"
+        search: "Buscar"
       search_results: "Resultados de la búsqueda"
       no_search_results: "No se han encontrado resultados."
       actions: Acciones
@@ -785,6 +863,7 @@ es-PE:
       author: Autor
       content: Contenido
       created_at: Creado
+      show_results_and_stats: "Mostrar resultados y estadísticas"
     geozones:
       index:
         title: Distritos
@@ -820,6 +899,7 @@ es-PE:
       show:
         created_at: Creado
         author: Autor
+        users: Usuarios
         verified:
           one: "Hay %{count} firma válida"
           other: "Hay %{count} firmas válidas"
@@ -835,6 +915,7 @@ es-PE:
           comment_votes: Votos en comentarios
           comments: Comentarios
           debate_votes: Votos en debates
+          debates: Discusiones
           proposal_votes: Votos en propuestas
           proposals: Propuestas
           budgets: Presupuestos abiertos
@@ -848,10 +929,22 @@ es-PE:
           visits: Visitas
           votes: Votos
         budgets_title: Presupuestos participativos
+        participatory_budgets: Presupuestos participativos
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
         incomplete_verifications: Verificaciones incompletas
         polls: Votaciones
+      graph:
+        debate_created: Discusiones
+        visit: Visitas
+        proposal_created: Propuestas ciudadanas
+      budget_balloting:
+        vote_count: Votos
+        participant_count: Participantes
+      budget_supporting:
+        users: Usuarios
+        vote_count: Votos
+        participant_count: Participantes
       direct_messages:
         title: Mensajes directos
         users_who_have_sent_message: Usuarios que han enviado un mensaje privado
@@ -869,9 +962,12 @@ es-PE:
           question_name: Pregunta
           origin_web: Participantes en Web
           origin_total: Participantes Totales
+      sdg:
+        debates: "Discusiones"
+        polls: "Votaciones"
+        proposals: "Propuestas"
     tags:
       create: Crea un tema
-      destroy: Eliminar tema
       index:
         add_tag: Añade un nuevo tema de propuesta
         title: Temas de propuesta
@@ -885,6 +981,9 @@ es-PE:
       index:
         title: Usuarios
         no_users: No hay usuarios.
+        filter: Filtrar
+        filters:
+          active: Activos
       search:
         placeholder: Buscar usuario por email, nombre o DNI
     verifications:
@@ -954,4 +1053,16 @@ es-PE:
     homepage:
       feeds:
         proposals: Propuestas
+        debates: Discusiones
         processes: Procesos
+    audits:
+      actions: "Acciones"
+    local_census_records:
+      index:
+        document_type: Tipo de documento
+        document_number: Número de documento
+        date_of_birth: Fecha de nacimiento
+    machine_learning:
+      related_content: "Contenido relacionado"
+      tab_help: "Ayuda"
+      tags: "Etiquetas"

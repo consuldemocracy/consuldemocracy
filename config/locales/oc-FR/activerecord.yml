@@ -4,6 +4,9 @@ oc:
     results_enabled: "Mòstra los resultats"
     stats_enabled: "Mòstra las estatisticas"
     advanced_stats_enabled: "Mòstra estatistica avançada"
+    name: Nome
+    email: Lo tieu corrièr electronic
+    description: Descripcion detalhada
   activerecord:
     models:
       activity:
@@ -210,6 +213,7 @@ oc:
         ends_at: "Data de finalizacion"
         starts_at: "Data d'inici"
       budget/phase/translation:
+        name: "Nome"
         description: "Descripcion"
         summary: "Resumit"
       comment:
@@ -268,6 +272,7 @@ oc:
         responsible_name: "Persona responsabla de l'associacion"
       poll:
         name: "Nome"
+        title: "Nome"
         starts_at: "Fecha de apertura"
         ends_at: "Fecha de cierre"
         geozone_restricted: "Restringida paur zonas"
@@ -304,6 +309,16 @@ oc:
         signable_type: "Tipe de fuèlha de signaturas"
         signable_id: "ID Proposicion ciutadana/Prepausada inversion"
         document_numbers: "de Nombres de documents"
+      sdg/goal:
+        title: "Títol"
+        description: "Descripcion detalhada"
+      sdg/local_target:
+        title: "Títol"
+      sdg/local_target/translation:
+        title: "Títol"
+        description: "Descripcion detalhada"
+      sdg/target:
+        title: "Títol"
       site_customization/page:
         content: contengut
         created_at: creat
@@ -496,14 +511,12 @@ oc:
           attributes:
             segment_recipient:
               invalid: "Lo segment de destinataris d’usatgièrs es pas valids"
-        map_location:
-          attributes:
-            map:
-              invalid: L'ubicacion de la mapa pòt pas èsser en blanc. Plaça un mercador o selecciona lo caleishon de seleccion s'es pas necessària la geolocalització
         poll/voter:
           attributes:
             document_number:
               not_in_census: "Aquel documenti pas aparece en lo censo"
+            user_id:
+              has_voted: "Aquel usuario ya a votado"
         legislation/process:
           attributes:
             end_date:

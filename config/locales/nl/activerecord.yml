@@ -1,4 +1,11 @@
 nl:
+  attributes:
+    geozone_id: "Betreffende regio"
+    results_enabled: "Toon resultaten"
+    stats_enabled: "Toon statistieken"
+    name: Name
+    email: E-mail
+    description: Beschrijving
   activerecord:
     models:
       activity:
@@ -130,6 +137,8 @@ nl:
         description_finished: "Omschrijving wanneer het budget is afgerond"
         phase: "Fase"
         currency_symbol: "Valuta"
+      budget/translation:
+        name: "Name"
       budget/investment:
         heading_id: "Kop"
         title: "Titel"
@@ -140,6 +149,22 @@ nl:
         organization_name: "Als je een voorstel doet uit naam van een collectief/organisatie, voer dan hier de naam in"
         image: "Afbeelding bij het budget"
         image_title: "Naam van de afbeelding"
+        duration: "Tijdsspanne"
+        feasibility_feasible: "Haalbaar"
+        feasibility_undecided: "Niet gedefinieerd"
+        feasibility_unfeasible: "Unfeasible"
+        incompatible: "Markeer als incompatibel"
+        price_explanation: "Price explanation"
+        selected: "Markeer als geselecteerd"
+        selected_true: "Geselecteerd"
+        selected_false: "Niet geselecteerd"
+        unfeasibility_explanation: "Toelichting op de haalbaarheid"
+        valuation_finished: "Beoordeling voltooid"
+        valuator_ids: "Groepen"
+        valuation_tag_list: "Tags"
+      budget/investment/translation:
+        title: "Title"
+        description: "Beschrijving"
       geozone:
         name: Naam
         external_code: "Externe code (optioneel)"
@@ -150,6 +175,8 @@ nl:
         title: "Titel"
         description: "Omschrijving"
         publication_date: "Publicatiedatum"
+      milestone/translation:
+        description: "Beschrijving"
       milestone/status:
         name: "Naam"
         description: "Omschrijving (optioneel)"
@@ -160,24 +187,51 @@ nl:
       progress_bar/kind:
         primary: "Primair"
         secondary: "Secundair"
+      budget/group/translation:
+        name: "Groepsnaam"
       budget/heading:
+        allow_custom_content: "Inhoudsblok toestaan"
+        latitude: "Breedte"
+        longitude: "Lengte"
         name: "Naam"
         price: "Kosten"
         population: "Populatie"
+      budget/heading/translation:
+        name: "Kop naam"
+      budget/phase:
+        enabled: "Fase actief"
+        ends_at: "Einddatum"
+        starts_at: "Startdatum"
+      budget/phase/translation:
+        name: "Name"
+        description: "Beschrijving"
+        summary: "Samenvatting"
       comment:
         body: "Reactie"
         user: "Gebruiker"
       debate:
         author: "Auteur"
         description: "Omschrijving"
+        tag_list: "Termen"
         terms_of_service: "Gebruiksvoorwaarden"
         title: "Titel"
+      debate/translation:
+        title: "Onderwerp"
+        description: "Omschrijving"
       proposal:
         author: "Auteur"
         title: "Titel"
         question: "Vraag"
         description: "Omschrijving"
+        responsible_name: "Volledige naam van persoon die het voorstel doet"
+        retired_reason: "Reden het voorstel terug te trekken"
+        selected: "Markeer als geselecteerd"
         terms_of_service: "Gebruiksvoorwaarden"
+      proposal/translation:
+        title: "Titel van het voorstel"
+        description: "Beschrijving van het voorstel"
+        summary: "Samenvatting voorstel"
+        retired_explanation: "Toelichting"
       user:
         login: "Email of gebruikersnaam"
         email: "Email"
@@ -185,25 +239,44 @@ nl:
         password_confirmation: "Wachtwoord bevestiging"
         password: "Wachtwoord"
         current_password: "Huidig wachtwoord"
+        email_digest: "Stuur een samenvatting van notificaties op voorstellen"
+        email_on_comment: "Stuur me een email als iemand op mijn voorstellen of discussies reageert"
+        email_on_comment_reply: "Wanneer iemand reageert op mijn reacties"
+        email_on_direct_message: "Email ontvangen wanneer er privéberichten zijn"
+        newsletter: "Stuur me email met relevante informatie over de website"
         official_position: "Positie"
+        official_position_badge: "Toon positiebadge"
         official_level: "Niveau"
         phone_number: "Telefoonnummer"
+        public_activity: "Anderen mogen mijn activiteit zien"
+        recommended_debates: "Aanbevolen debatten weergeven"
+        recommended_proposals: "Laat aanbevolen voorstellen zien"
         redeemable_code: "Verificatiecode ontvangen via email"
+      direct_message:
+        title: "Title"
+        body: "Bericht"
       organization:
         name: "Organisatienaam"
         responsible_name: "Verantwoordelijke"
       poll:
         name: "Naam"
+        title: "Name"
         starts_at: "Begindatum"
         ends_at: "Einddatum"
         geozone_restricted: "Beperkt tot gebied"
         summary: "Samenvatting"
         description: "Omschrijving"
+      active_poll/translation:
+        description: "Beschrijving"
+      poll/booth:
+        name: "Name"
+        location: "Location"
       poll/translation:
         name: "Naam"
         summary: "Samenvatting"
         description: "Omschrijving"
       poll/question:
+        poll_id: "Poll"
         title: "Vraag"
         summary: "Samenvatting"
         description: "Omschrijving"
@@ -214,16 +287,34 @@ nl:
         data: CSV data
         poll_id: Peiling
         officer_assignment_id: Toewijzing
+      poll/shift:
+        task: "Taak"
+      proposal_notification:
+        body: "Bericht"
+        title: "Title"
       signature_sheet:
+        title: "Title"
         signable_type: "Geschikt voor tekenen"
         signable_id: "Geschikt voor identificatie"
         document_numbers: "Documentnummers"
+      sdg/goal:
+        title: "Title"
+        description: "Beschrijving"
+      sdg/local_target:
+        title: "Title"
+      sdg/local_target/translation:
+        title: "Title"
+        description: "Beschrijving"
+      sdg/target:
+        title: "Title"
       site_customization/page:
         content: Inhoud
         created_at: Aangemaakt op
         subtitle: Ondertitel
         slug: Slug
         status: Status
+        status_draft: "Concept"
+        status_published: "Gepubliceerd"
         title: Titel
         updated_at: Bijgewerkt op
         more_info_flag: In de help-pagina weergeven
@@ -240,9 +331,20 @@ nl:
         name: Naam
         locale: taal
         body: Platte tekst
+      tag:
+        name: "Type the naam van het onderwerp"
+      topic:
+        title: "Title"
+        description: "Tekst"
       banner:
         background_color: Achtergrondkleur
         font_color: Tekstkleur
+        post_ended_at: "Bijdrage eindigt op"
+        post_started_at: "Bijdrage start op"
+        target_url: "Link"
+      banner/translation:
+        title: "Title"
+        description: "Beschrijving"
       legislation/process:
         title: Titel
         summary: Samenvatting
@@ -262,17 +364,26 @@ nl:
         result_publication_date: Publicatiedatum eindresultaat
         background_color: Achtergrondkleur
         font_color: Tekstkleur
+        homepage_enabled: "Homepage ingeschakeld"
       legislation/process/translation:
         title: Titel
         summary: Samenvatting
         description: Omschrijving
         additional_info: Aanvullende informatie
+        homepage: "Beschrijving"
         milestones_summary: Samenvatting
+      legislation/proposal:
+        description: "Beschrijving van het voorstel"
+        summary: "Samenvatting voorstel"
+        title: "Titel van het voorstel"
+        video_url: "Link naar video"
       legislation/draft_version:
         title: Titel
         body: Tekst
         changelog: Wijzigingen
         status: Status
+        status_draft: "Concept"
+        status_published: "Gepubliceerd"
         final_version: Eindversie
       legislation/draft_version/translation:
         title: Titel
@@ -281,6 +392,8 @@ nl:
       legislation/question:
         title: Titel
         question_options: Opties
+      legislation/question/translation:
+        title: Question
       legislation/question_option:
         value: Waarde
       legislation/annotation:
@@ -329,6 +442,7 @@ nl:
         limit: Aantal items
       dashboard/action:
         title: Titel
+        description: Beschrijving
         active: Actief
         action_type: Type
       dashboard/administrator_task:
@@ -336,6 +450,15 @@ nl:
       link:
         label: Titel
         url: Link
+      valuator:
+        description: Beschrijving
+        valuator_group_id: Beoordelaarsgroep
+      valuator_group:
+        name: "Groepsnaam"
+      local_census_record:
+        document_type: Documentsoort
+        document_number: Document nummer
+        date_of_birth: Date of birth
     errors:
       models:
         user:
@@ -363,14 +486,12 @@ nl:
           attributes:
             segment_recipient:
               invalid: "Het onderdeel ontvangers is ongeldig"
-        map_location:
-          attributes:
-            map:
-              invalid: Locatie mag niet leeg zijn. Plaats een markering of vink aan als de locatie niet nodig is
         poll/voter:
           attributes:
             document_number:
               not_in_census: "Niet geverifieerd"
+            user_id:
+              has_voted: "Gebruiker heeft al gestemd"
         legislation/process:
           attributes:
             end_date:

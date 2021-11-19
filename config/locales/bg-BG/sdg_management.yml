@@ -1,1 +1,18 @@
 bg:
+  sdg_management:
+    homepage:
+      header:
+        create: "Създайте заглавка"
+        title: "Заглавка"
+    menu:
+      budget_investments: "Бюджети с участие"
+      debates: "Дискусии"
+      polls: "Анкети"
+      proposals: "Предложения"
+      sdg_content: "Цели и задачи"
+    relations:
+      index:
+        filter: "Филтър"
+        filters:
+          all: "Всички"
+          pending_sdg_review: "Изчакване"

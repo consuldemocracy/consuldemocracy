@@ -5,10 +5,7 @@ tr:
       erase_account_link: Hesabımı sil
       finish_verification: Doğrulamayı tamamla
       notifications: Bildirimler
-      organization_name_label: Kurumun adı
-      organization_responsible_name_placeholder: Kurum/topluluk temsilcisi
       personal: Kişisel bilgiler
-      phone_number_label: Telefon numarası
       public_interests_my_title_list: Takip ettiğiniz öğelerin etiketleri
       public_interests_user_title_list: Bu kullanıcının takip ettiği öğelerin etiketleri
       save_changes_submit: Değişiklikleri kaydet
@@ -22,7 +19,6 @@ tr:
       user_permission_verify: Tüm eylemleri gerçekleştirmek için hesabınızı doğrulayın.
       user_permission_verify_info: "* Sadece Pusula'daki kullanıcılar için."
       user_permission_votes: Son oylamaya katıl
-      username_label: Kullanıcı adı
       verified_account: Hesap doğrulandı
       verify_my_account: Hesabımı doğrula
   application:
@@ -65,7 +61,6 @@ tr:
       newest: Önce en yeniler
       oldest: Önce en eskiler
       most_commented: En çok yorumlanan
-    select_order: Buna göre sırala
     show:
       return_to_commentable: "Geri dön "
   comments_helper:
@@ -93,7 +88,6 @@ tr:
         submit_button: Değişiklikleri kaydet
       show_link: Tartışmayı göster
     form:
-      debate_title: Tartışma başlığı
       tags_instructions: Bu tartışmayı etiketle.
       tags_placeholder: "Kullanmak istediğiniz etiketleri virgülle ayırarak yazın (',')"
     index:
@@ -119,7 +113,6 @@ tr:
       search_results:
         one: " <strong>'%{search_term}'</strong>terimini içeren"
         other: " <strong>'%{search_term}'</strong>terimini içeren"
-      select_order: Şuna göre sırala
       start_debate: Bir tartışma başlat
       title: Tartışmalar
       section_header:
@@ -134,13 +127,11 @@ tr:
     new:
       form:
         submit_button: Bir tartışma başlat
-      info: Eğer bir öneride bulunmak istiyorsanız, %{info_link} 'i ziyaret ediniz.
-      info_link: yeni öneri oluştur
       more_info: Daha fazla bilgi
       recommendation_four: Bu alanı ve burada paylaşılan farklı seslerin tadını çıkarın. Bu alan size de ait.
       recommendation_one: Tartışma konusu veya cümlelerin tümü için büyük harfler kullanmayın. İnternet üzerinde, bu bağırmak olarak algılanmaktadır. Ve kimse bağrılmaktan hoşlanmaz.
       recommendation_three: Acımasız eleştirilere açığız. Burası düşüncelerin paylaşıldığı bir alandır. Fakat inceliğe ve anlayışa sadık kalmanızı öneriyoruz. Dünya bu erdemler sayesinde daha iyi bir yer olmaktadır.
-      recommendation_two: Yasadışı eylem öneren herhangi bir öneri veya yorum silinecektir, bunun yanı sıra tartışma alanlarını sabote etmek isteyenler de silinecektir. Bunların dışında her şeye izin verilir. 
+      recommendation_two: Yasadışı eylem öneren herhangi bir öneri veya yorum silinecektir, bunun yanı sıra tartışma alanlarını sabote etmek isteyenler de silinecektir. Bunların dışında her şeye izin verilir.
       recommendations_title: Bir tartışma oluşturmak için öneriler
       start_new: Bir tartışma başlat
     show:
@@ -233,7 +224,6 @@ tr:
     header:
       administration_menu: Menü
       administration: Yönetim
-      available_locales: Mevcut diller
       collaborative_legislation: Katılımcı mevzuat
       debates: Tartışmalar
       locale: "Dil:"
@@ -347,7 +337,6 @@ tr:
       map_location: "Harita konumu"
       map_location_instructions: "Harita ile konuma gidin ve işaretçiyi yerleştirin."
       map_remove_marker: "Harita işaretçisini kaldır"
-      map_skip_checkbox: "Bu teklifin somut bir konumu yok veya ben farkında değilim."
     index:
       featured_proposals: Öne Çıkan
       orders:
@@ -385,7 +374,6 @@ tr:
       search_results:
         one: " <strong>'%{search_term}'</strong>terimini içeren"
         other: " <strong>'%{search_term}'</strong>terimini içeren"
-      select_order: Şuna göre sırala
       select_order_long: "Şuna göre önerileri görüntülüyorsunuz:"
       start_proposal: Bir öneri oluştur
       title: Öneriler
@@ -677,14 +665,13 @@ tr:
       back: "Faaliyetlerime geri dön"
   shared:
     edit: "Düzenle"
+    filter: "Filtre"
     save: "Kaydet"
     delete: "Sil"
     "yes": "Evet"
     "no": "Hayır"
     search_results: "Arama sonuçları"
     advanced_search:
-      author_type: "Fikir sahibi kategorisine göre"
-      author_type_blank: "Bir kategori seç"
       date: "Tarihe göre"
       date_placeholder: "GG/AA/YYYY"
       date_range_blank: "Bir tarih seç"
@@ -695,7 +682,6 @@ tr:
       date_5: "Uyarlanmış"
       from: "Kaynak"
       general: "Metin ile"
-      general_placeholder: "Metni yaz"
       goal: "SKH'ye göre"
       goal_blank: "Hedef seç"
       search: "Filtre"
@@ -782,6 +768,8 @@ tr:
         zero: "0 dil kullanımda"
         one: "1 dil kullanımda"
         other: "%{count} dil kullanımda"
+    optional: "Opsiyonel"
+    required: "Gerekli"
   social:
     facebook: "Facebook %{org}"
     twitter: "Twitter %{org}"
@@ -932,6 +920,7 @@ tr:
     help: "Siz %{org} içinden %{models} bağlantıları ekleyebilirsiniz."
     submit: "Ekle"
     error: "Bağlantı geçerli değil. %{url} ile başlamayı unutmayın."
+    error_duplicate: "Eklemekte olduğunuz içerik zaten mevcut."
     error_itself: "Bağlantı geçerli değil. Bir içeriği kendisiyle ilişkilendiremezsiniz."
     success: "Yeni bir ilgili içerik eklediniz"
     is_related: "Bu ilgili içerik mi?"
@@ -957,9 +946,6 @@ tr:
       title: Bağlantılar
       note: İlgilendiğiniz bağlantıları ekleyin
       add_new_link: Yeni bağlantı ekle
-    link_fields:
-      label_placeholder: Bağlantı başlığı
-      url_placeholder: Bağlantı adresi
   communities:
     show:
       surveys: Anketler
@@ -975,7 +961,8 @@ tr:
       enqueue_remote_translation: Tercümeler doğru bir şekilde talep edildi.
     button: Sayfayı çevir
   tags:
-    filter:
-      more:
-        one: "Bir etiket daha"
-        other: "%{count} etiket daha"
+    list:
+      filter:
+        more:
+          one: "Bir etiket daha"
+          other: "%{count} etiket daha"

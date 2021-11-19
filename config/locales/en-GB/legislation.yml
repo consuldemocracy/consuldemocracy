@@ -1,1 +1,81 @@
 en-GB:
+  legislation:
+    annotations:
+      comments:
+        see_all: Переглянути все
+        comments_count:
+          one: "%{count} коментар"
+          other: "%{count} коментарів"
+        cancel: Відмінити
+      form:
+        phase_not_open: Цей етап не відкрито
+      index:
+        title: Коментарі
+        comments_count:
+          one: "%{count} коментар"
+          other: "%{count} коментарів"
+      show:
+        title: Коментар
+      version_chooser:
+        see_text: Переглянути чернетку тексту
+    draft_versions:
+      changes:
+        title: Зміни
+        see_text: Переглянути чернетку тексту
+      show:
+        text_body: Текст
+        text_comments: Коментарі
+    processes:
+      header:
+        additional_info: Додаткова інформація
+        description: Опис
+      proposals:
+        filters:
+          winners: Вибрано
+      index:
+        filter: Фільтр
+        filters:
+          open: Відкрити процеси
+        section_header:
+          title: Спільна законотворчість
+          help: Допомога щодо спільної законотворчості
+        section_footer:
+          title: Допомога щодо спільної законотворчості
+      shared:
+        homepage: Домашня сторінка
+        debate_dates: Обговорення
+        allegations_dates: Коментарі
+        milestones_date: Відслідковувані
+        proposals_dates: Пропозиції
+    questions:
+      question:
+        comments:
+          zero: Коментарі відсутні
+          one: "%{count} коментар"
+          other: "%{count} коментарів"
+        debate: Обговорення
+      show:
+        share: Поділитися
+        title: Процес спільної законотворчості
+      participation:
+        phase_not_open: Цей етап не відкрито
+        unauthenticated: Для продовження %{signin} або %{signup}.
+    shared:
+      share: Поділитися
+    proposals:
+      form:
+        tags_label: "Категорії"
+      process_title: Процес спільної законотворчості
+    summary:
+      title: "Підсумок"
+      votes:
+        zero: "%{count} голосів"
+      debate_phase: "Етап обговорення"
+      proposals_phase: "Етап подання пропозицій"
+      allegations_phase: "Етап коментування"
+      comments:
+        zero: "Коментарі відсутні"
+        one: "%{count} коментар"
+        other: "%{count} коментарів"
+      top_comments:
+        zero: "Коментарі відсутні"

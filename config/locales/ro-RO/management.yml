@@ -43,14 +43,12 @@ ro:
       title: Administrarea utilizatorilor
       under_age: "Nu aveți vârsta necesară pentru a vă verifica contul."
       verify: Verifică
-    email_label: Email
     date_of_birth: Data nașterii
     email_verifications:
       already_verified: Acest cont este deja verificat.
       choose_options: "Vă rugăm alegeți una dintre următoarele opțiuni:"
       document_found_in_census: Acest document a fost găsit în recensământ, dar nu este nici un cont de utilizator asociat acestuia.
       document_mismatch: "Acest email aparține unui utilizator care deja are asociat un id: %{document_number}(%{document_type})"
-      email_placeholder: Scrieți emailul pe care această persoană l-a folosit pentru a-și crea contul
       email_sent_instructions: Pentru a verifica complet acest utilizator, este necesar ca utilizatorul să facă clic pe un link pe care l-am trimis la adresa de e-mail de mai sus. Acest pas este necesar pentru a confirma că adresa îi aparține.
       if_existing_account: Dacă persoana are deja un cont de utilizator creat în site,
       if_no_existing_account: Dacă această persoană nu a creat un cont încă

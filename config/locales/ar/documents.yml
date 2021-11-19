@@ -1,6 +1,7 @@
 ar:
   documents:
     title: الوثائق
+    max_documents_allowed_reached: لقد وصلت الى الحد الاقصى لعدد الوثائق المسموح به! <strong> يجب عليك ان تحذف واحدة قبل ان ترفع اخرى.</strong>
     additional: وثائق إضافية
     form:
       title: الوثائق

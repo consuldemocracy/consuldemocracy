@@ -1,1 +1,51 @@
 en-GB:
+  valuation:
+    header:
+      title: Оцінка
+    menu:
+      title: Оцінка
+      budgets: Бюджети участі
+    budgets:
+      index:
+        title: Бюджети участі
+        filters:
+          current: Відкрити
+          finished: Завершено
+        table_name: Назва
+        table_phase: Етап
+        table_actions: Дії
+    budget_investments:
+      index:
+        headings_filter_all: Усі рубрики
+        filters:
+          valuation_open: Відкриті
+          valuating: В процесі оцінювання
+          valuation_finished: Оцінювання завершено
+        title: Інвестиційні проєкти
+        edit: Редагувати досьє
+        table_id: ID
+        table_title: Заголовок
+        table_heading_name: Назва рубрики
+        table_actions: Дії
+        no_investments: "Інвестиційні проєкти відсутні."
+      show:
+        back: Назад
+        title: Інвестиційний проєкт
+        sent: Надіслано о
+        heading: Розділ
+        dossier: Досьє
+        edit_dossier: Редагувати досьє
+        price: Вартість
+        currency: "€"
+        feasibility: Доцільність
+        feasible: Реалізація доцільна
+        unfeasible: Недоцільно
+        undefined: Не визначено
+        valuation_finished: Оцінювання завершено
+        duration: Часовий діапазон
+        assigned_valuators: Призначені оцінювачі
+        preview: Попередній перегляд інвестиції
+      edit:
+        dossier: Досьє
+        feasibility: Доцільність
+        save: Зберегти зміни

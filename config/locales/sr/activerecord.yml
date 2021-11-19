@@ -4,6 +4,9 @@ sr:
     results_enabled: "Prikaži rezultate"
     stats_enabled: "Прикажи статистике"
     advanced_stats_enabled: "Прикажи напредне статистике"
+    name: Име
+    email: Емаил
+    description: Опис
   activerecord:
     models:
       activity:
@@ -255,6 +258,7 @@ sr:
         ends_at: "Датум затварања"
         starts_at: "Датум почетка"
       budget/phase/translation:
+        name: "Име"
         description: "Опис"
         summary: "Сажетак"
       comment:
@@ -313,6 +317,7 @@ sr:
         responsible_name: "Одговорна особа за групу"
       poll:
         name: "Име"
+        title: "Име"
         starts_at: "Датум почетка"
         ends_at: "Датум завршетка"
         geozone_restricted: "Ограничено геозоном"
@@ -349,6 +354,16 @@ sr:
         signable_type: "Тип који се може уписати"
         signable_id: "ИД за пријављивање"
         document_numbers: "Бројеви докумената"
+      sdg/goal:
+        title: "Наслов"
+        description: "Опис"
+      sdg/local_target:
+        title: "Наслов"
+      sdg/local_target/translation:
+        title: "Наслов"
+        description: "Опис"
+      sdg/target:
+        title: "Наслов"
       site_customization/page:
         content: Садржај
         created_at: Креирано у
@@ -541,10 +556,6 @@ sr:
           attributes:
             segment_recipient:
               invalid: "Сегмент прималаца корисника је неважећи"
-        map_location:
-          attributes:
-            map:
-              invalid: Локација мапе не може бити празна. Поставите означиваче или изаберите поље за потврду ако геолокализација није потребна
         poll/voter:
           attributes:
             document_number:

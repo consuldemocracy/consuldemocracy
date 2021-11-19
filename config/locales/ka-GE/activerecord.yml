@@ -4,6 +4,9 @@ ka:
     results_enabled: "შედეგების ჩვენება"
     stats_enabled: "სტატისტიკის ჩვენება"
     advanced_stats_enabled: "მოწინავე სტატისტიკის ჩვენება"
+    name: სახელი
+    email: ელ.ფოსტა
+    description: აღწერა
   activerecord:
     models:
       activity:
@@ -214,6 +217,7 @@ ka:
         ends_at: "დასრულების თარიღი"
         starts_at: "დაწყების თარიღი"
       budget/phase/translation:
+        name: "სახელი"
         description: "აღწერა"
         summary: "შეჯამება"
       comment:
@@ -272,6 +276,7 @@ ka:
         responsible_name: "ჯგუფზე პასუხისმგებელი პირი"
       poll:
         name: "სახელი"
+        title: "სახელი"
         starts_at: "დაწყების თარიღი"
         ends_at: "დასრულების თარიღი"
         geozone_restricted: "შეზღუდულია გეოგრაფიული ზონით"
@@ -308,6 +313,16 @@ ka:
         signable_type: "ხელმოსაწერი ფურცლის ტიპი"
         signable_id: "ხელმოსაწერი ფურცლის ID"
         document_numbers: "დოკუმენტების ნომრები"
+      sdg/goal:
+        title: "სათაური"
+        description: "აღწერა"
+      sdg/local_target:
+        title: "სათაური"
+      sdg/local_target/translation:
+        title: "სათაური"
+        description: "აღწერა"
+      sdg/target:
+        title: "სათაური"
       site_customization/page:
         content: შინაარსი
         created_at: შექმნილია
@@ -500,10 +515,6 @@ ka:
           attributes:
             segment_recipient:
               invalid: "მიმღები მომხმარებლების სეგმენტი არასწორია"
-        map_location:
-          attributes:
-            map:
-              invalid: რუკის ადგილმდებარეობა ცარიელი ვერ იქნება. დასვით მარკერი ან მონიშნეთ უჯრედი, იმ შემთხვევაში თუ გეოლოკალიზაცია საჭირო არ არის
         poll/voter:
           attributes:
             document_number:
