@@ -96,7 +96,6 @@ it:
           create: "Crea un investimento di bilancio"
           not_logged_in: "Per creare un nuovo investimento di bilancio è necessario %{sign_in} o %{sign_up}."
         filters:
-          feasible: "Fattibile"
           selected: "Selezionato"
           unfeasible: "Irrealizzabile"
           winners: "Vincitori"
