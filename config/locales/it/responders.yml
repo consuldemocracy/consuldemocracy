@@ -14,6 +14,7 @@ it:
         proposal_notification: "Il tuo messaggio è stato inviato correttamente."
         budget_investment: "Proposta di investimento creata correttamente."
         signature_sheet: "Foglio per le firme creato correttamente"
+        support: "Investimento supportato correttamente"
         topic: "Argomento creato con successo."
         valuator_group: "Gruppo di stimatori creato con successo"
       save_changes:
@@ -23,6 +24,7 @@ it:
         debate: "Dibattito creato correttamente."
         poll: "Sondaggio creato correttamente."
         poll_booth: "Seggio creato correttamente."
+        active_poll: "Descrizione dei voti aggiornata correttamente."
         proposal: "Proposta aggiornata correttamente."
         budget_investment: "Progetto di investimento aggiornato correttamente."
         topic: "Argomento aggiornato con successo."

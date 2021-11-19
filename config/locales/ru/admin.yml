@@ -6,6 +6,7 @@ ru:
       actions: Действия
       confirm: Вы уверены?
       confirm_hide: Подтвердить модерацию
+      delete: "Удалить"
       hide: Скрыть
       hide_author: Скрыть автора
       restore: Восстановить
@@ -13,15 +14,12 @@ ru:
       unmark_featured: Убрать из особенных
       edit: Редактировать
       configure: Конфигурировать
-      delete: Удалить
     officing_booth:
       title: "Вы служите в участке, находящимся по адресу %{booth}. Если эта информация не верна, не продолжайте и позвоните по справочному телефону. Спасибо."
     banners:
       index:
         title: Баннеры
         create: Создать баннер
-        edit: Редактировать баннер
-        delete: Удалить баннер
         filters:
           all: Все
           with_active: Активные
@@ -62,18 +60,23 @@ ru:
         type: Тип
         no_activity: Активность модераторов отсутствует.
     budgets:
+      actions:
+        edit: "Редактировать бюджет"
+        preview: "Предпросмотр"
       index:
         title: Партисипаторные бюджеты
         new_link: Создать новый бюджет
         filter: Фильтровать
         filters:
+          all: Все
           open: Открытые
           finished: Завершены
         budget_investments: Управлять проектами
+        table_budget_type: "Тип"
+        table_draft: "Черновик"
+        table_duration: "Продолжительность"
         table_name: Имя
         table_phase: Этап
-        edit_groups: Редактировать группы заголовков
-        edit_budget: Редактировать бюджет
         admin_ballots: Администрирование бюллетеней
         no_budgets: "Нет бюджетов."
       create:
@@ -84,17 +87,15 @@ ru:
         title: Редактировать совместный бюджет
         delete: Удалить бюджет
         phase: Этап
+        duration: "Продолжительность"
         enabled: Включено
         actions: Действия
-        edit_phase: Редактировать фазу
         active: Активное
         blank_dates: Даты пустые
       destroy:
         success_notice: Бюджет успешно удален
         unable_notice: Вы не можете уничтожить бюджет, для которого есть связанные инвестиции
         unable_notice_polls: Вы не можете удалить бюджет, который связан с голосованием
-      new:
-        title: Новый совместный бюджет
       winners:
         calculate: Посчитать выигравшие инвестиции
         calculated: Победители подсчитываются, это может занять минуту.
@@ -120,15 +121,8 @@ ru:
         create: "Создать новую группу"
         edit: "Редактировать группу"
         submit: "Сохранить группу"
-      index:
-        back: "Вернуться к бюджетам"
     budget_headings:
       no_headings: "Заголовков нет."
-      amount:
-        one: "Есть один заголовок"
-        few: "Есть %{count} заголовков"
-        many: "Есть %{count} заголовков"
-        other: "Есть %{count} заголовков"
       create:
         notice: "Заголовок успешно создан!"
       update:
@@ -147,6 +141,7 @@ ru:
         back: "Вернуться к группам"
     budget_phases:
       edit:
+        title: "Редактировать фазу"
         description_help_text: Этот текст появится в заголовке, когда фаза станет активной
         enabled_help_text: Эта фала будет публичной в расписании бюджетных фаз, а также активной для любых других целей
         save_changes: Сохранить изменения
@@ -171,6 +166,8 @@ ru:
           min_total_supports: Минимум поддержек
           max_total_supports: Максимум поддержек
           winners: Победители
+          one_filter: "Текущие примененные фильтры: <b><em>%{filter}</em></b>"
+          two_filters: "Текущие примененные фильтры: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Отфильтровать
         download_current_selection: "Скачать текущий выбор"
@@ -200,6 +197,7 @@ ru:
           author_username: Имя пользователя автора
           incompatible: Несовместимая
           price: Цена
+          author: Автор
         cannot_calculate_winners: Бюджет должен остаться в фазе "Проекты баллотирования", "Анализ бюллетеней" или "Оконченный бюджет", чтобы посчитать выигравшие проекты
         see_results: "Просмотр результатов"
       show:
@@ -239,14 +237,19 @@ ru:
         tags_placeholder: "Напишите желаемые метки, разделенные запятыми (,)"
         undefined: Неопределено
       search_unfeasible: Поиск невыполним
+    budgets_wizard:
+      creation_timeline:
+        budget: Бюджет
+        groups: Группы
+        headings: Заголовки
     milestones:
       index:
+        table_id: "ID"
         table_title: "Название"
         table_description: "Описание"
         table_publication_date: "Дата публикации"
         table_status: Статус
         table_actions: "Действия"
-        delete: "Удалить этап"
         no_milestones: "Не имеет определенных основных этапов"
         image: "Изображение"
         show_image: "Показать изображение"
@@ -291,6 +294,7 @@ ru:
         no_progress_bars: "Нет индикаторов выполнения"
         new_progress_bar: "Создать индикатор выполнения"
         primary: "Основной индикатор выполнения"
+        table_id: "ID"
         table_kind: "Тип"
         table_title: "Название"
         table_percentage: "Ход выполнения"
@@ -308,7 +312,12 @@ ru:
         notice: "Индикатор выполнения успешно удален"
     comments:
       index:
+        id: "ID"
+        content: "Содержание"
+        author: "Автор"
+        commentable_type: "Тип"
         title: Скрытые комментарии
+        table_link: "Ссылка"
     hidden_comments:
       index:
         filter: Фильтровать
@@ -380,6 +389,8 @@ ru:
           success: Задача была помечена как решенная.
     debates:
       index:
+        id: ID
+        author: Автор
         title: Скрытые дебаты
     hidden_debates:
       index:
@@ -452,10 +463,6 @@ ru:
           allegations_phase: Фаза комментирования
           proposals_phase: Фаза предложений
           use_markdown: Форматируйте текст при помощи разметки Markdown
-          title_placeholder: Заголовок процесса
-          summary_placeholder: Краткая выжимка из описания
-          description_placeholder: Добавить описание процесса
-          additional_info_placeholder: Добавить информацию, которую вы считаете полезной
           homepage_description: Здесь вы можете описать содержимое процесса
           banner_title: Цвета заголовка
         index:
@@ -469,11 +476,10 @@ ru:
           title: Создать новый совместный законотворческий процесс
           submit_button: Создать процесс
         proposals:
-          select_order: Сортировать по
           orders:
-            id: Id
-            title: Название
-            supports: Поддержки
+            id: "Id"
+            title: "Название"
+            supports: "Поддержки"
         process:
           title: Процесс
           comments: Комментарии
@@ -517,6 +523,7 @@ ru:
           submit_button: Сохранить изменения
           warning: Вы отредактировали текст, не забудьте нажать Сохранить, чтобы изменения сохранились в базе.
         form:
+          title: 'Редактирование <span class="strong">%{draft_version_title}</span> из процесса <span class="strong">%{process_title}</span>'
           launch_text_editor: Запустить редактор текста
           close_text_editor: Закрыть редактор текста
           use_markdown: Для форматирования текста используйте разметку Markdown
@@ -525,9 +532,7 @@ ru:
             status:
               draft: Вы можете предварительно просмотреть как администратор, больше никто не может это видеть
               published: Видимо для всех
-          title_placeholder: Напишите название версии черновика
           changelog_placeholder: Добавьте основные изменения из предыдущей версии
-          body_placeholder: Впишите текст черновика
         index:
           title: Предварительные варианты
           create: Создать версию
@@ -558,7 +563,6 @@ ru:
           submit_button: Сохранить изменения
         form:
           add_option: Добавить вариант
-          title_placeholder: Добавить вопрос
           value_placeholder: Добавить закрытый ответ
           question_options: "Возможные ответы (не обязательно, по умолчанию открытые ответы)"
         index:
@@ -588,6 +592,12 @@ ru:
         add: Добавить
       search:
         title: "Менеджеры: Поиск пользователей"
+    sdg_managers:
+      index:
+        no_sdg_managers: Нет пользователей.
+    sdg/managers:
+      sdg/manager:
+        add: Добавить
     menu:
       activity: Активность модератора
       admin: Меню администрирования
@@ -652,6 +662,8 @@ ru:
       dashboard: Панель управления предложениями
       administrator_tasks: Запрошенные ресурсы
       dashboard_actions: Ресурсы и действия
+      debates: "Обсуждения проблем"
+      comments: "Комментарии"
     administrators:
       index:
         title: Администраторы
@@ -701,6 +713,7 @@ ru:
         empty_newsletters: Нет новостных писем для отображения
       new:
         title: Новое новостное письмо
+        header_footer_help_text: "Заголовок и подвал одинаковы для всех e-mail'ов. Вы можете их изменить по адресу <code>app/views/layouts/mailer_header</code> и <code>app/views/layouts/mailer_footer</code>.<br>Вы можете заменить изображение в заголовке по ссылке %{link}."
         image_link: "пользовательские изображения"
       edit:
         title: Редактировать новостное письмо
@@ -1079,7 +1092,6 @@ ru:
         location: "Местоположение"
       booth:
         shifts: "Управление сменами"
-        edit: "Редактировать кабинку"
     officials:
       edit:
         destroy: Убрать статус 'Чиновник'
@@ -1101,7 +1113,6 @@ ru:
       level_4: Уровень 4
       level_5: Уровень 5
       search:
-        edit_official: Редактировать чиновника
         make_official: Сделать чиновником
         title: "Позиции чиновников: Поиск пользователя"
         no_results: Позиции чиновников не найдены.
@@ -1113,6 +1124,11 @@ ru:
           pending: Ожидают
           rejected: Отклоненные
           verified: Верифицированные
+        hidden_count:
+          one: Есть еще <strong>одна организация</strong>, в которой нет пользователей, либо со скрытым пользователем.
+          few: Есть еще <strong>%{count} организаций</strong>, в которой нет пользователей, либо со скрытым пользователем.
+          many: Есть еще <strong>%{count} организаций</strong>, в которой нет пользователей, либо со скрытым пользователем.
+          other: Есть еще <strong>%{count} организаций</strong>, в которой нет пользователей, либо со скрытым пользователем.
         name: Имя
         email: Электронный адрес
         phone_number: Телефон
@@ -1152,20 +1168,27 @@ ru:
           without_confirmed_hide: На рассмотрении
         title: Скрытые предложения
         no_hidden_proposals: Нет скрытых предложений.
+    hidden_proposal_notifications:
+      index:
+        filter: Фильтр
+        filters:
+          all: Все
+          with_confirmed_hide: Неподтвержденные
+          without_confirmed_hide: Ожидающие
+        title: Скрытые уведомления
+        no_hidden_proposals: Нет скрытых уведомлений.
     settings:
       flash:
         updated: Значение обновлено
       index:
         title: Настройки конфигурации
+        general: Настройки конфигурации
         update_setting: Обновить
         participation_processes: "Процессы участия"
         images_and_documents: "Изображения и документы"
         feature_flags: Функции
         features:
           enabled: "Функция включена"
-          disabled: "Функция отключена"
-          enable: "Включить"
-          disable: "Выключить"
         map:
           title: Конфигурация карты
           help: Здесь вы можете настроить способ отображения карты для пользователей. Переместите маркер карты или нажмите где-либо на карте, установите желаемое приближение и нажмите на кнопку  "Обновить".
@@ -1177,14 +1200,10 @@ ru:
         dashboard:
           title: Панель управления предложениями
       setting: Особенность
-      setting_actions: Действия
       setting_name: Настройка
-      setting_status: Статус
       setting_value: Значение
       no_description: "Нет описания"
     shared:
-      true_value: "Да"
-      false_value: "Нет"
       search:
         label:
           booths: "Искать кабинку по имени"
@@ -1193,6 +1212,7 @@ ru:
           poll_questions: "Искать вопросы голосования"
           proposals: "Искать предложения по названию, коду, описанию или вопросу"
           users: "Искать пользователя по имени или email"
+        search: "Поиск"
       search_results: "Результаты поиска"
       no_search_results: "Результаты не найдены."
       actions: Действия
@@ -1246,6 +1266,7 @@ ru:
       show:
         created_at: Создано
         author: Автор
+        users: Пользователи
         verified:
           one: "Найдена %{count} верная подпись"
           few: "Найдено %{count} верных подписей"
@@ -1327,9 +1348,12 @@ ru:
           question_name: Вопрос
           origin_web: Участники сети
           origin_total: Всего участников
+      sdg:
+        debates: "Обсуждения проблем"
+        polls: "Опросы"
+        proposals: "Заявки"
     tags:
       create: Создать тему
-      destroy: Удалить тему
       index:
         add_tag: Добавить новую тему предложения
         title: Темы предложения
@@ -1337,6 +1361,7 @@ ru:
         help: "Когда пользователь создает предложение, то следующие темы предлагаются как метки по умолчанию."
     users:
       columns:
+        id: ID
         name: Имя
         email: Электронный адрес
         document_number: Номер документа
@@ -1345,6 +1370,9 @@ ru:
       index:
         title: Пользователь
         no_users: Нет пользователей.
+        filter: Фильтр
+        filters:
+          active: Активные
       search:
         placeholder: Искать пользователя по email'у, имени или номеру документа
     verifications:
@@ -1414,6 +1442,7 @@ ru:
           see_page: Смотреть страницу
         new:
           title: Создать новую настраиваемую страницу
+          slug_help: "Текст для идентификации этой страницы в адресе URL, к примеру <code>https://consulproject.org/страница-заголовок</code>"
         page:
           created_at: Создано в
           status: Статус
@@ -1455,3 +1484,15 @@ ru:
         submit_header: Сохранить заголовок
         card_title: Редактировать карту
         submit_card: Сохранить карту
+    audits:
+      id: "ID"
+      actions: "Действия"
+    local_census_records:
+      index:
+        document_type: Тип документа
+        document_number: Номер документа
+        date_of_birth: Дата рождения
+    machine_learning:
+      related_content: "Соответствующее содержимое"
+      tab_help: "Помощь"
+      tags: "Метки"

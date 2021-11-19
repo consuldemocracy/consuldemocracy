@@ -471,7 +471,7 @@ en:
       group_by_month: Monthly
       group_by_week: Weekly
       group_by_date: Daily
-      progress: Acumulated progress
+      progress: Accumulated progress
       supports: Supports
       success: Ideal progress
       new_action: New

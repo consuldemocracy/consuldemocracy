@@ -60,6 +60,11 @@ ru:
     meta_keywords_description: 'Ключевые слова <meta name="keywords">, используемые для улучшения SEO'
     min_age_to_participate: Минимальный возраст для участия
     min_age_to_participate_description: "Пользователи старше этого возраста могут участвовать во всех процессах"
+    proposals:
+      poll_short_title: Опросы
+      poll_description: Описание опросов
+      email_short_title: Электронный адрес
+      poster_short_title: Анонс
     analytics_url: "URL аналитики"
     proposal_notification_minimum_interval_in_days: "Минимальный интервал (в днях) для отправки авторам предложений уведомлений о новых предложениях"
     proposal_notification_minimum_interval_in_days_description: "Количество дней, в течение которого пользователь может отправлять уведомления всем тем, кто поддержал их предложение"

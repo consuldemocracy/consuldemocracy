@@ -2,10 +2,10 @@ sl:
   devise_views:
     confirmations:
       new:
-        email_label: E-naslov
         submit: Ponovno pošlji navodila
         title: Ponovno pošlji potrditvena navodila
       show:
+        instructions: Potrjujevanje računa z e-naslovom %{email}
         new_password_confirmation_label: Ponovno vpiši dostopno geslo
         new_password_label: Novo dostopno geslo
         please_set_password: Izberi svoje novo geslo. Omogočalo ti bo, da se vpišeš z zgornjim e-naslovom.
@@ -38,17 +38,16 @@ sl:
     organizations:
       registrations:
         new:
-          email_label: E-naslov
-          organization_name_label: Ime organizacije
           password_confirmation_label: Potrdi geslo
-          password_label: Geslo
-          phone_number_label: Telefonska številka
-          responsible_name_label: Polno ime odgovorne osebe
           responsible_name_note: Gre za osebo, ki predstavlja društvo, zavod oz. organizacijo, v čigar imenu so objavljeni predlogi
           submit: Registriraj se
           title: Registriraj se kot organisazacija ali kolektiv
         success:
           back_to_index: Razumem; nazaj na glavno stran
+          instructions_1: "<b>Kmalu te bomo kontaktirali,</b> da preverimo, da v resnici predstavljaš to organizacijo oz. kolektiv."
+          instructions_2: Dokler <b>preverjamo tvoj e-naslov</b>, smo ti poslali <b>povezavo, s katero lahko potrdiš svoj račun</b>.
+          instructions_3: Ko potrdiš svoj e-naslov, lahko začneš sodelovati kot nepreverjen kolektiv.
+          thank_you: Hvala za registracijo tvoje organizacije ali kolektiva. Zdaj <b>čaka še na verifikacijo</b>.
           title: Registracija organizacije / kolektiva
     passwords:
       edit:
@@ -57,13 +56,10 @@ sl:
         password_label: Novo geslo
         title: Spremeni svoje geslo
       new:
-        email_label: E-naslov
         send_submit: Pošlji navodila
         title: Pozabljeno geslo?
     sessions:
       new:
-        login_label: E-naslov ali uporabniško ime
-        password_label: Geslo
         remember_me: Zapomni si me
         submit: Vstopi
         title: Vpiši se
@@ -101,12 +97,9 @@ sl:
           waiting_for: "Čakam potrditev:"
         new:
           cancel: Prekliči prijavo
-          email_label: E-naslov
           organization_signup: Ali predstavljaš organizacijo ali kolektiv? %{signup_link}
           organization_signup_link: Registriraj se tukaj
           password_confirmation_label: Potrdi geslo
-          password_label: Geslo
-          redeemable_code: Potrditvena koda, prejeta preko e-pošte (neobvezno)
           submit: Registriraj se
           terms: Z registracijo sprejemaš %{terms}
           terms_link: Pogoji uporabe
@@ -114,8 +107,10 @@ sl:
           title: Registriraj se
           username_is_available: Uporabniško ime na voljo
           username_is_not_available: Uporabniško ime že zasedeno
-          username_label: Uporabniško ime
           username_note: Ime, ki ga prikazujemo ob tvojih objavah
         success:
           back_to_index: Razumem; vrni se na glavno stran
+          instructions_1: Prosimo, <b>preveri svojo e-pošto</b> - poslali smo ti <b>povezavo za potrditev tvojega računa</b>.
+          instructions_2: Ko potrdiš račun, lahko začneš sodelovati.
+          thank_you: Hvala za registracijo na spletnem portalu. Zdaj moraš <b>potrditi svoj e-naslov</b>.
           title: Registracija

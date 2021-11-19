@@ -75,7 +75,6 @@ pt-BR:
         phone: Digite seu número de telefone para receber o código
         phone_format: "<strong><em>(Exemplo: 6132345678 ou +556132345678)</em></strong>"
         phone_note: Nós apenas usamos seu número de telefone para enviá-lo um código, nunca para entrar em contato com você.
-        phone_placeholder: "Exemplo: 612345678 ou +34612345678"
         submit_button: Enviar
         title: Enviar código de confirmação
       update:

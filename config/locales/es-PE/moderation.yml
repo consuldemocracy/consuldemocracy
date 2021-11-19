@@ -12,9 +12,8 @@ es-PE:
         headers:
           comment: Comentario
           moderate: Moderar
-        hide_comments: Ocultar comentarios
+        hide: Ocultar comentarios
         ignore_flags: Marcar como revisadas
-        order: Orden
         orders:
           flags: Más denunciadas
           newest: Más nuevos
@@ -34,16 +33,17 @@ es-PE:
         headers:
           debate: el debate
           moderate: Moderar
-        hide_debates: Ocultar debates
+        hide: Ocultar debates
         ignore_flags: Marcar como revisadas
-        order: Orden
         orders:
           created_at: Más nuevos
           flags: Más denunciadas
+        title: Discusiones
     header:
       title: Moderar
     menu:
       flagged_comments: Comentarios
+      flagged_debates: Discusiones
       flagged_investments: Proyectos de presupuestos participativos
       proposals: Propuestas
       users: Bloquear usuarios
@@ -59,9 +59,8 @@ es-PE:
         headers:
           moderate: Moderar
           proposal: la propuesta
-        hide_proposals: Ocultar Propuestas
+        hide: Ocultar Propuestas
         ignore_flags: Marcar como revisadas
-        order: Ordenado por
         orders:
           created_at: Más recientes
           flags: Más denunciadas
@@ -79,7 +78,6 @@ es-PE:
           moderate: Moderar
           budget_investment: Propuesta de inversión
         ignore_flags: Marcar como revisadas
-        order: Ordenado por
         orders:
           created_at: Más recientes
           flags: Más denunciadas
@@ -95,9 +93,8 @@ es-PE:
           ignored: Marcar como revisadas
         headers:
           moderate: Moderar
-        hide_proposal_notifications: Ocultar Propuestas
+        hide: Ocultar Propuestas
         ignore_flags: Marcar como revisadas
-        order: Ordenado por
         orders:
           created_at: Más recientes
         title: Notificaciones de propuestas

@@ -75,7 +75,6 @@ da:
         phone: Skriv dit telefonnummer for at modtage koden
         phone_format: "<strong><em>(Eksempel: 612345678 eller +34612345678)</em></strong>"
         phone_note: Vi bruger kun dit telefonnummer til at sende dig en kode. Vi vil aldrig kontakte dig.
-        phone_placeholder: "Eksempel: 612345678 eller +45612345678"
         submit_button: Send
         title: Send bekræftelseskode
       update:

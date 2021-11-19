@@ -12,9 +12,8 @@ pl:
         headers:
           comment: Komentarz
           moderate: Moderuj
-        hide_comments: Ukryj komentarze
+        hide: Ukryj komentarze
         ignore_flags: Oznacz jako wyświetlone
-        order: Porządkuj
         orders:
           flags: Najbardziej oflagowane
           newest: Najnowsze
@@ -34,9 +33,8 @@ pl:
         headers:
           debate: Debata
           moderate: Moderuj
-        hide_debates: Ukryj debaty
+        hide: Ukryj debaty
         ignore_flags: Oznacz jako wyświetlone
-        order: Porządkuj
         orders:
           created_at: Najnowsze
           flags: Najbardziej oflagowane
@@ -62,9 +60,8 @@ pl:
         headers:
           moderate: Moderuj
           proposal: Wniosek
-        hide_proposals: Ukryj propozycje
+        hide: Ukryj propozycje
         ignore_flags: Oznacz jako wyświetlone
-        order: Uporządkuj według
         orders:
           created_at: Najnowsze
           flags: Najbardziej oflagowane
@@ -81,9 +78,8 @@ pl:
         headers:
           moderate: Moderuj
           budget_investment: Inwestycje budżetowe
-        hide_budget_investments: Ukryj inwestycje budżetowe
+        hide: Ukryj inwestycje budżetowe
         ignore_flags: Oznacz jako wyświetlone
-        order: Uporządkuj według
         orders:
           created_at: Najnowsze
           flags: Najbardziej oflagowane
@@ -100,9 +96,8 @@ pl:
         headers:
           moderate: Moderuj
           proposal_notification: Powiadomienie o wniosku
-        hide_proposal_notifications: Ukryj propozycje
+        hide: Ukryj propozycje
         ignore_flags: Oznacz jako wyświetlone
-        order: Uporządkuj według
         orders:
           created_at: Ostatnie
           moderated: Moderowany

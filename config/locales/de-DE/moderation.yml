@@ -12,9 +12,8 @@ de:
         headers:
           comment: Kommentar
           moderate: Moderieren
-        hide_comments: Kommentare ausblenden
+        hide: Kommentare ausblenden
         ignore_flags: Als gelesen markieren
-        order: Bestellung
         orders:
           flags: Am meisten markiert
           newest: Neueste
@@ -34,9 +33,8 @@ de:
         headers:
           debate: Diskussion
           moderate: Moderieren
-        hide_debates: Diskussionen ausblenden
+        hide: Diskussionen ausblenden
         ignore_flags: Als gelesen markieren
-        order: Bestellung
         orders:
           created_at: Neueste
           flags: Am meisten markiert
@@ -62,9 +60,8 @@ de:
         headers:
           moderate: Moderieren
           proposal: Vorschlag
-        hide_proposals: Anträge ausblenden
+        hide: Anträge ausblenden
         ignore_flags: Als gelesen markieren
-        order: Sortieren nach
         orders:
           created_at: Neuste
           flags: Am meisten markiert
@@ -81,9 +78,8 @@ de:
         headers:
           moderate: Moderieren
           budget_investment: Haushaltsinvestitionen
-        hide_budget_investments: Budgetinvestitionen verbergen
+        hide: Budgetinvestitionen verbergen
         ignore_flags: Als gelesen markieren
-        order: Sortieren nach
         orders:
           created_at: neuestes
           flags: Am meisten markiert
@@ -100,9 +96,8 @@ de:
         headers:
           moderate: Moderieren
           proposal_notification: Benachrichtigung zu einem Vorschlag
-        hide_proposal_notifications: Vorschläge ausblenden
+        hide: Anträge ausblenden
         ignore_flags: Als gelesen markieren
-        order: Sortieren nach
         orders:
           created_at: neuestes
           moderated: Moderiert

@@ -7,8 +7,6 @@ bg:
       delete_button: Изтриване на изображението
       note: "Можете да качите едно изображение от следните типове съдържание: %{accepted_content_types}, до %{max_file_size} MB."
       add_new_image: Добавяне на изображение
-      admin_title: "Изображение"
-      admin_alt_text: "Алтернативен текст за изображението"
     actions:
       destroy:
         notice: Изображението бе изтрито успешно.

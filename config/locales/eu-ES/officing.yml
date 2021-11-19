@@ -16,6 +16,18 @@ eu:
         no_polls: Ez duzu baimenik duela gutxi amaitutako bozkaketen azken zenbaketak ikusteko.
         select_poll: Bozkaketa aukeratu
         add_results: Emaitzak gehitu
+    poll_budgets:
+      index:
+        ballot_sheet_name: Izena
+        ballot_sheet_author: Sortzailea
+        ballot_sheet_creation_date: Sortze data
+      new:
+        booth: Hautetsontzia
+        select_booth: Hautetsontzia aukeratu
+        submit: Gorde
+      show:
+        created_at: Sortze data
+        author: Sortzailea
     results:
       flash:
         create: "Datuak gordeta"
@@ -47,7 +59,6 @@ eu:
         not_allowed: "Gaur ez duzu mahaiburu izateko txandarik"
       new:
         title: Agiria egiaztatu
-        document_number: "Dokumentu zenbakia (letrak barne)"
         submit: Agiria egiaztatu
         error_verifying_census: "Erroldak ezin izan du agiri hau egiaztatu."
         form_errors: agiri hau egiaztatzea ekidin zuten

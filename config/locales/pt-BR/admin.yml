@@ -6,6 +6,7 @@ pt-BR:
       actions: Ações
       confirm: Tem certeza?
       confirm_hide: Confirmar a moderação
+      delete: "Apagar"
       hide: Ocultar
       hide_author: Esconder o autor
       restore: Restaurar
@@ -13,15 +14,12 @@ pt-BR:
       unmark_featured: Desmarcar destaques
       edit: Editar
       configure: Configurar
-      delete: Apagar
     officing_booth:
       title: "Você é responsável pela cabine localizada em %{booth}. Se isto estiver errado, não faça nada e peça ajuda por telefone. Obrigado."
     banners:
       index:
         title: Banners
         create: Criar banner
-        edit: Editar banner
-        delete: Excluir banner
         filters:
           all: Tudo
           with_active: Ativo
@@ -63,18 +61,23 @@ pt-BR:
         type: Tipo
         no_activity: Não há nenhuma atividade de moderadores.
     budgets:
+      actions:
+        ballots: "Criar urnas"
+        edit: "Editar orçamento"
+        preview: "Prévia"
       index:
         title: Orçamentos participativos
         new_link: Criar novo orçamento
         filter: Filtro
         filters:
+          all: Tudo
           open: Aberto
           finished: Finalizados
         budget_investments: Gerenciar projetos
+        table_budget_type: "Tipo"
+        table_draft: "Rascunho"
         table_name: Nome
         table_phase: Estágio
-        edit_groups: Editar grupos de títulos
-        edit_budget: Editar orçamento
         admin_ballots: Administrar cédulas
         no_budgets: "Não há orçamentos."
       create:
@@ -87,7 +90,6 @@ pt-BR:
         phase: Estágio
         enabled: Habilitado
         actions: Ações
-        edit_phase: Editar estágio
         active: Ativo
         blank_dates: Datas estão em branco
         administrators:
@@ -104,8 +106,9 @@ pt-BR:
         success_notice: Orçamento excluído com sucesso
         unable_notice: Você não pode destruir um orçamento que tem investimentos associados
         unable_notice_polls: Não é possível excluir um orçamento com uma votação associada
-      new:
-        title: Novo orçamento participativo
+      show:
+        add_heading: "Adicionar título"
+        groups_and_headings: "Grupos de títulos"
       winners:
         calculate: Calcular os investimentos vencedores
         calculated: Vencedores sendo calculados, pode demorar um minuto.
@@ -131,12 +134,9 @@ pt-BR:
         max_votable_headings_info: "Aplica-se apenas à fase de seleção de projetos. Durante a fase de votação de projetos, os usuários podem apenas votar em um cabeçalho por grupo."
         submit: "Salvar grupo"
       index:
-        back: "Voltar aos orçamentos"
+        new_button: "Adicionar novo grupo"
     budget_headings:
       no_headings: "Não há títulos."
-      amount:
-        one: "Há 1 título"
-        other: "Há %{count} títulos"
       create:
         notice: "Título criado com sucesso!"
       update:
@@ -156,6 +156,7 @@ pt-BR:
         back: "Voltar a grupos"
     budget_phases:
       edit:
+        title: "Editar estágio"
         description_help_text: Esse texto será exibido no cabeçalho quando a fase estiver ativa
         enabled_help_text: Esta fase será pública no cronograma de fases do orçamento, bem como ativa para qualquer outra finalidade
         save_changes: Salvar alterações
@@ -254,6 +255,11 @@ pt-BR:
         tags_placeholder: "Escreva as marcações que deseja separadas por vírgulas (,)"
         undefined: Não definido
       search_unfeasible: Pesquisar inviáveis
+    budgets_wizard:
+      creation_timeline:
+        budget: Orçamento
+        groups: Grupos
+        headings: Títulos
     milestones:
       index:
         table_id: "ID"
@@ -262,7 +268,6 @@ pt-BR:
         table_publication_date: "Data de publicação"
         table_status: Status
         table_actions: "Ações"
-        delete: "Deletar marco"
         no_milestones: "Não possui marcos definidos"
         image: "Imagem"
         show_image: "Mostrar imagem"
@@ -479,10 +484,6 @@ pt-BR:
           allegations_phase: Fase de comentários
           proposals_phase: Fase de propostas
           use_markdown: Usar Remarcação para formatar o texto
-          title_placeholder: O título do processo
-          summary_placeholder: Breve resumo da descrição
-          description_placeholder: Adicione uma descrição do processo
-          additional_info_placeholder: Adicione informação adicional que você considera útil
           homepage_description: Aqui você pode explicar o conteúdo do processo
           banner_title: Cores do cabeçalho
         index:
@@ -496,11 +497,10 @@ pt-BR:
           title: Criar novo processo colaborativo de legislação
           submit_button: Criar processo
         proposals:
-          select_order: Organizado por
           orders:
-            id: ID
-            title: Título
-            supports: Apoios
+            id: "ID"
+            title: "Título"
+            supports: "Apoios"
         process:
           title: Processo
           comments: Comentários
@@ -554,9 +554,7 @@ pt-BR:
             status:
               draft: Você pode visualizar como admin, ninguém mais pode vê-lo
               published: Visível para todos
-          title_placeholder: Escreva o título do rascunho
           changelog_placeholder: Adicionar as principais alterações a partir da versão anterior
-          body_placeholder: Escreva o rascunho do texto
         index:
           title: Versões preliminares
           create: Criar versão
@@ -587,7 +585,6 @@ pt-BR:
           submit_button: Salvar alterações
         form:
           add_option: Adicionar opção
-          title_placeholder: Adicionar pergunta
           value_placeholder: Adicionar resposta fechada
           question_options: "Respostas possíveis (opcionais, por respostas abertas padrão)"
         index:
@@ -1122,7 +1119,6 @@ pt-BR:
         location: "Localização"
       booth:
         shifts: "Gerenciar turnos"
-        edit: "Editar urna"
     officials:
       edit:
         destroy: Remover condição de 'Cargo Público'
@@ -1144,7 +1140,6 @@ pt-BR:
       level_4: Nível 4
       level_5: Nível 5
       search:
-        edit_official: Editar cargo público
         make_official: Converter em cargo público
         title: "Cargos públicos: Busca de usuários"
         no_results: Cargos públicos não encontrados.
@@ -1219,9 +1214,6 @@ pt-BR:
         feature_flags: Atributos
         features:
           enabled: "Atributo habilitado"
-          disabled: "Atributo não habilitado"
-          enable: "Habilitar"
-          disable: "Desabilitar"
         map:
           title: Configuração do mapa
           help: Aqui você pode personalizar a maneira como o mapa é exibido para os usuários. Arraste o marcador do mapa ou clique em qualquer lugar do mapa, defina o zoom desejado e clique no botão "Atualizar".
@@ -1242,14 +1234,10 @@ pt-BR:
       remote_census_request_name: Solicitação - Dados
       remote_census_response_name: Respostas - Dados
       setting: Caracteristica
-      setting_actions: Ações
       setting_name: Configuração
-      setting_status: Status
       setting_value: Valor
       no_description: "Não há descrição"
     shared:
-      true_value: "Sim"
-      false_value: "Não"
       search:
         advanced_filters:
           sdg_goals:
@@ -1424,7 +1412,6 @@ pt-BR:
         title: "Objetivos de Desenvolvimento Sustentável - Estatísticas"
     tags:
       create: Criar tópico
-      destroy: Deletar tópico
       index:
         add_tag: Adicionar um novo tópico de proposta
         title: Tópicos da proposta
@@ -1602,3 +1589,7 @@ pt-BR:
           created: Registros criados
         local_census_records:
           no_records_found: Nenhum registro encontrado.
+    machine_learning:
+      related_content: "Conteúdo relacionado"
+      tab_help: "Ajuda"
+      tags: "Marcação"

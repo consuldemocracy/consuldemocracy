@@ -1,8 +1,12 @@
 ar:
   attributes:
+    geozone_id: "نطاق العملية"
     results_enabled: "إظهار النتائج"
     stats_enabled: "إظهار الإحصائيات"
     advanced_stats_enabled: "عرض احصائيات متقدمة"
+    name: الإ سم
+    email: البريد الإلكتروني
+    description: الوصف
   activerecord:
     models:
       activity:
@@ -297,6 +301,8 @@ ar:
         description_finished: "الوصف عند الإنتهاء من الميزانية"
         phase: "المرحلة"
         currency_symbol: "العملة"
+      budget/translation:
+        name: "الإ سم"
       budget/investment:
         heading_id: "عنوان"
         title: "عنوان"
@@ -307,6 +313,20 @@ ar:
         organization_name: "إذا كنت تقترح بإسم جماعي/منظمة, أو نيابة عن أشخاص آخرين, اكتب إسمها"
         image: "اقتراح صورة وصفية"
         image_title: "عنوان الصورة"
+        duration: "الوقت المتاح"
+        feasibility_feasible: "مجدي"
+        feasibility_undecided: "غير معرف"
+        feasibility_unfeasible: "غير مجدي"
+        incompatible: "وضع علامة غير متوافق"
+        milestone_tag_list: "علامات المعلم"
+        price_explanation: "توضيح الاسعار"
+        selected: "وضع علامة مختار"
+        selected_true: "محدّد"
+        selected_false: "غير محدد"
+        unfeasibility_explanation: "تفسير مجدي \\ ممكن"
+        valuation_finished: "انتهى التقييم"
+        valuator_ids: "المجموعات"
+        valuation_tag_list: "علامات"
       budget/investment/translation:
         title: "العنوان"
         description: "الوصف"
@@ -320,6 +340,8 @@ ar:
         title: "عنوان"
         description: "الوصف (إختياري ان كان هناك حالة معينة)"
         publication_date: "تاريخ النشر"
+      milestone/translation:
+        description: "الوصف"
       milestone/status:
         name: "الإ سم"
         description: "الوصف (إختياري)"
@@ -330,16 +352,32 @@ ar:
       progress_bar/kind:
         primary: "ابتدائي"
         secondary: "ثانوي"
+      budget/group/translation:
+        name: "اسم المجموعة"
       budget/heading:
+        allow_custom_content: "السماح بكتل المحتوى"
+        latitude: "خط العرض (اختياري)"
+        longitude: "خط الطول (اختياري)"
         name: "اسم العنوان"
         price: "السعر"
         population: "عدد السكان"
+      budget/heading/translation:
+        name: "اسم العنوان"
+      budget/phase:
+        enabled: "المرحلة مفعلة"
+        ends_at: "تاريخ الإنتهاء"
+        starts_at: "تاريخ البدء"
+      budget/phase/translation:
+        name: "الإ سم"
+        description: "الوصف"
+        summary: "ملخص"
       comment:
         body: "التعليق"
         user: "المستخدم"
       debate:
         author: "كاتب"
         description: "رأي"
+        tag_list: "مواضبع"
         terms_of_service: "شروط الخدمة"
         title: "عنوان"
       debate/translation:
@@ -350,6 +388,8 @@ ar:
         title: "عنوان"
         question: "سؤال"
         description: "الوصف"
+        responsible_name: "الاسم الكامل للشخص الذي قدم الاقتراح"
+        retired_reason: "سبب سحب المقترح"
         selected: "وضع علامة مختار"
         terms_of_service: "شروط الخدمة"
       proposal/translation:
@@ -364,25 +404,44 @@ ar:
         password_confirmation: "تأكيد كلمة المرور"
         password: "كلمة المرور"
         current_password: "كلمة المرور الحالية"
+        email_digest: "استلام ملخص عن إشعارات مقترح"
+        email_on_comment: "أبلغني عن طريق البريد الإلكتروني عندما شخص التعليقات على المقترحات أو المناقشات"
+        email_on_comment_reply: "أبلغني عن طريق البريد الإلكتروني عندما يرد شخص ما على تعليقاتي"
+        email_on_direct_message: "تلقي رسائل البريد الإلكتروني عند الحصول على الرسائل المباشرة"
+        newsletter: "تلقي المعلومات المهمّة عن طريق البريد الإلكتروني"
         official_position: "الموقف الرسمي"
+        official_position_badge: "اظهر بطاقة الموقف الرسمي"
         official_level: "المستوى الرسمي"
         phone_number: "رقم الهاتف"
+        public_activity: "أترك قائمة الأنشطة الخاصة بي عامة"
+        recommended_debates: "إظهار توصيات المناقشات"
+        recommended_proposals: "إظهار توصيات المقترحات"
         redeemable_code: "رمز التحقق الواردة عبر البريد الإلكتروني"
+      direct_message:
+        title: "عنوان"
+        body: "رسالة"
       organization:
         name: "اسم المنظمة"
         responsible_name: "الشخص المسؤول عن المجموعة"
       poll:
         name: "الإ سم"
+        title: "الإ سم"
         starts_at: "تاريخ البدء"
         ends_at: "تاريخ الإغلاق"
         geozone_restricted: "مقيد حسب المناطق"
         summary: "ملخص"
         description: "الوصف"
+      active_poll/translation:
+        description: "الوصف"
+      poll/booth:
+        name: "الإ سم"
+        location: "الموقع"
       poll/translation:
         name: "الإ سم"
         summary: "ملخص"
         description: "الوصف"
       poll/question:
+        poll_id: "استطلاع"
         title: "سؤال"
         summary: "ملخص"
         description: "الوصف"
@@ -393,16 +452,34 @@ ar:
         data: بيانات CSV
         poll_id: استطلاع
         officer_assignment_id: مهمة الضابط
+      poll/shift:
+        task: "المهمة"
+      proposal_notification:
+        body: "رسالة"
+        title: "عنوان"
       signature_sheet:
+        title: "عنوان"
         signable_type: "نوع القابلة"
         signable_id: "معرف القابلة"
         document_numbers: "أرقام المستندات"
+      sdg/goal:
+        title: "عنوان"
+        description: "الوصف"
+      sdg/local_target:
+        title: "عنوان"
+      sdg/local_target/translation:
+        title: "عنوان"
+        description: "الوصف"
+      sdg/target:
+        title: "عنوان"
       site_customization/page:
         content: المحتوى
         created_at: أنشئت في
         subtitle: عنوان فرعي
         slug: سبيكة
         status: حالة
+        status_draft: "مسودة"
+        status_published: "منشورة"
         title: عنوان
         updated_at: تم التحديث في
         more_info_flag: ظهر في صفحة المساعدة
@@ -419,9 +496,20 @@ ar:
         name: الإ سم
         locale: الإعدادات المحلية
         body: الهيئة
+      tag:
+        name: "اكتب اسم الموضوع"
+      topic:
+        title: "عنوان"
+        description: "النص الأولي"
       banner:
         background_color: لون الخلفية
         font_color: لون الخط
+        post_ended_at: "المشاركة انتهت في"
+        post_started_at: "المشاركة بدأت في"
+        target_url: "رابط"
+      banner/translation:
+        title: "عنوان"
+        description: "الوصف"
       legislation/process:
         title: عنوان العملية
         summary: ملخص
@@ -441,17 +529,26 @@ ar:
         result_publication_date: تاريخ نشر النتيجة النهائية
         background_color: لون الخلفية
         font_color: لون الخط
+        homepage_enabled: "تم تفعيل الصفحة الرئيسية"
       legislation/process/translation:
         title: عنوان العملية
         summary: ملخص
         description: الوصف
         additional_info: معلومات إضافية
+        homepage: "الوصف"
         milestones_summary: ملخص
+      legislation/proposal:
+        description: "نص المقترح"
+        summary: "ملخص المقترح"
+        title: "عنوان الاقتراح"
+        video_url: "رابط إلى فيديو خارجي"
       legislation/draft_version:
         title: عنوان الإصدار
         body: نص
         changelog: تغييرات
         status: حالة
+        status_draft: "مسودة"
+        status_published: "منشورة"
         final_version: الإصدار الأخير
       legislation/draft_version/translation:
         title: عنوان الإصدار
@@ -460,6 +557,8 @@ ar:
       legislation/question:
         title: عنوان
         question_options: خيارات
+      legislation/question/translation:
+        title: سؤال
       legislation/question_option:
         value: القيمة
       legislation/annotation:
@@ -517,6 +616,9 @@ ar:
         order: يمكنك تحديد مكان عرض هذا الإجراء للمستخدم في قائمة الإجراءات
         active: نشِط
         action_type: النوع
+        action_type_proposed_action: "الإجراء المقترح"
+        action_type_resource: "مورد"
+        published_proposal: "للمقترحات المنشورة؟"
       dashboard/administrator_task:
         source: المصدر
         user: تم تنفيذه من طرف
@@ -528,6 +630,12 @@ ar:
         valuator_group_id: مجموعة تقييم
         can_comment: يمكنك إنشاء تعليقات
         can_edit_dossier: يمكنك تعديل الملفات
+      valuator_group:
+        name: "اسم المجموعة"
+      local_census_record:
+        document_type: نوع الوثيقة
+        document_number: رقم الوثيقة
+        date_of_birth: تاريخ الميلاد
     errors:
       models:
         user:
@@ -555,14 +663,12 @@ ar:
           attributes:
             segment_recipient:
               invalid: "شريحة مستلم المستخدم غير صالحة"
-        map_location:
-          attributes:
-            map:
-              invalid: لا يمكن ان يكون موقع الخريطة فارغًا. حدد علامة أو حدد مربع الإختيار اذا لم تكن هناك حاجة لتحديد الموقع
         poll/voter:
           attributes:
             document_number:
               not_in_census: "الوثيقة ليست في التعداد"
+            user_id:
+              has_voted: "هذا المستخدم قد صوت بالفعل"
         legislation/process:
           attributes:
             end_date:

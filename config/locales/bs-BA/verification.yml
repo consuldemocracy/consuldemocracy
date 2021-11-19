@@ -17,6 +17,9 @@ bs:
     letter:
       alert:
         unconfirmed_code: Niste unijeli verifikacioni kod
+      create:
+        flash:
+          success: Hvala što se tražili svoj <b> (maksimalno zaštićeni kod) (koji je samo potreban za finalno glasanje </b>. Za nekoliko dana poslaćemo vam kod na adresu koju imamo u našim podacima. Ako želite, alternativa je da uzmete kod u bilo kojoj kancelariji za pružanje podrške građanima.
       edit:
         see_all: Vidi prijedloge
         title: Zatražena poruka
@@ -46,6 +49,7 @@ bs:
         accept_terms_text_title: Prihvatam uvjete za pristup popisu
         document_number: Broj isprave
         document_number_help_title: Pomoć
+        document_number_help_text: "<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Residence card</strong>: X1234567P"
         document_type:
           passport: Pasoš
           residence_card: Lična karta
@@ -69,8 +73,8 @@ bs:
         title: Potvrda zaštitnog koda
       new:
         phone: Unesite broj mobilnog telefona kako biste dobili kod
+        phone_format: "<strong><em>(Primjer: 612345678 ili +34612345678)</em></strong>"
         phone_note: Koristimo vaš broj telefona samo da bi vam poslali kod, nećemo vas kontaktirati.
-        phone_placeholder: "Primjer: 612345678 ili +34612345678"
         submit_button: Pošalji
         title: Pošalji verifikacioni kod
       update:

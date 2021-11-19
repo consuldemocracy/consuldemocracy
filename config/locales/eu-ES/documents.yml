@@ -1,6 +1,7 @@
 eu:
   documents:
     title: Dokumentuak
+    additional: Gehigarrizko agiriak
     form:
       title: Dokumentuak
       title_placeholder: Deskribapen izenburu bat idatzi agiriarentzako

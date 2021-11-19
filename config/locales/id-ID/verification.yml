@@ -45,6 +45,7 @@ id:
         accept_terms_text_title: Saya menerima syarat dan ketentuan dari akses Sensus
         document_number: Nomor Dokumen
         document_number_help_title: Bantuan
+        document_number_help_text: "<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>kartu</strong>: X1234567P"
         document_type:
           passport: Paspor
           residence_card: Kartu kediaman
@@ -67,7 +68,7 @@ id:
         title: Konfirmasi kode keamanan
       new:
         phone: Masukan nomor ponsel anda untuk menerima kode
-        phone_placeholder: "Contoh: 612345678 or +34612345678"
+        phone_format: "<strong><em>(Contoh: 612345678 atau +34612345678)</em></strong>"
         submit_button: Kirim
         title: Kirim kode konfirmasi
       update:

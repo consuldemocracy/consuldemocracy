@@ -16,6 +16,19 @@ he:
           confirmation_code: "קוד אישור"
         email:
           recipient: "דואר אלקטרוני"
+      verification/letter:
+        email: "דואר אלקטרוני"
+        password: "סיסמה"
+        verification_code: "הקוד אותו קיבלת בדואר אלקטרוני"
+      verification/management/document:
+        document_type: "סוג תעודה מזהה"
+        document_number: "מספר תעודה מזהה"
+      verification/residence:
+        date_of_birth: "תאריך לידה"
+        document_type: "סוג תעודה מזהה"
+        postal_code: "מיקוד"
+      verification/sms:
+        confirmation_code: "נא להזין כאן את קוד אישור האבטחה שנשלח אליך בסמרטפון"
       officing/residence:
         document_type: "סוג תעודה מזהה"
         document_number: "מספר מזהה (כולל אותיות)"

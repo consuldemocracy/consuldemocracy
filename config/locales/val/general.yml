@@ -5,10 +5,7 @@ val:
       erase_account_link: Eliminar el meu compte
       finish_verification: Finalitzar verificació
       notifications: Notificacions
-      organization_name_label: Nom de l'organització
-      organization_responsible_name_placeholder: Representant de l'asociació/colectiu
       personal: Dades personals
-      phone_number_label: Telèfon
       public_interests_my_title_list: Etiquetes d'elements que segueixes
       public_interests_user_title_list: Etiquetes d'elements que segueix aquest usuari
       save_changes_submit: Guardar canvis
@@ -22,7 +19,6 @@ val:
       user_permission_verify: Per a poder realitzar totes les accions verifica el teu compte.
       user_permission_verify_info: "* Sols usuaris empadronats."
       user_permission_votes: Participar en les votacions finals
-      username_label: Nom d'usuari
       verified_account: Compte verificat
       verify_my_account: Verificar el meu compte
   application:
@@ -40,6 +36,10 @@ val:
         zero: Sense respostes
         one: 1 resposta
         other: "%{count} respostes"
+      responses_show:
+        zero: Sense respostes
+      responses_collapse:
+        zero: Sense respostes
       user_deleted: Usuari eliminat
       votes:
         zero: Sense vots
@@ -54,7 +54,6 @@ val:
       newest: Més nous primer
       oldest: Més antics primer
       most_commented: Més comentats
-    select_order: Ordenar per
     show:
       return_to_commentable: "Tornar a "
   comments_helper:
@@ -82,7 +81,6 @@ val:
         submit_button: Guardar canvis
       show_link: Vore debat
     form:
-      debate_title: Títol del debat
       tags_instructions: Etiqueta aquest debat.
       tags_placeholder: "Escriu les etiquetes que desitges separades per una coma (',')"
     index:
@@ -105,7 +103,9 @@ val:
         button: Cercar
         placeholder: Cercar debats...
         title: Cercar
-      select_order: Ordenar per
+      search_results:
+        one: " que conté <strong>'%{search_term}'</strong>"
+        other: " que conté <strong>'%{search_term}'</strong>"
       start_debate: Iniciar un debat
       title: Debats
       section_header:
@@ -120,8 +120,6 @@ val:
     new:
       form:
         submit_button: Iniciar un debat
-      info: Si el que vols es fer una proposta, esta es la secció incorrecta, entra en %{info_link}.
-      info_link: crear nova proposta
       more_info: Més informació
       recommendation_four: Gaudeix d'aquest espai, de les veus que l'omplin, també es el teu.
       recommendation_one: No escrigues el títol del debat o frases senceres en majuscules. En internet això es considera cridar. I a ningú li agrada que li criden.
@@ -155,6 +153,7 @@ val:
     direct_message: el missatge privat
     error: error
     errors: errors
+    not_saved: "1 error impedeix salvar este %{resource}.<br>Si us plau verifica els camps marcats per a corregirlos:"
     policy: Política de privacitat
     proposal: Proposta
     proposal_notification: "Notificació"
@@ -176,6 +175,13 @@ val:
       firefox: Firefox
       ie: Hem detectat que estàs navegant desde Internet Explorer. Per a una millor experiència et recomanem utilitzar %{firefox} o %{chrome}.
       ie_title: Esta web no està optimitzada per al teu navegador
+    dashboard:
+      proposal_header:
+        published: Publicada
+        draft: Esborrany
+      proposal_totals:
+        supports:
+          zero: Sense avals
     footer:
       accessibility: Accessibilitat
       conditions: Termes i condicions d'us
@@ -192,7 +198,6 @@ val:
     header:
       administration_menu: Admin
       administration: Administració
-      available_locales: Idiomes disponibles
       collaborative_legislation: Processos legislatius
       debates: Debats
       locale: "Idioma:"
@@ -254,12 +259,16 @@ val:
       sign_in: Entra amb Twitter
       sign_up: Regístrat amb Twitter
       name: Twitter
+    info:
+      sign_in: "Entra amb:"
+      sign_up: "Regístrat amb:"
     or_fill: "O ompli el següent formulari:"
   proposals:
     create:
       form:
         submit_button: Crear proposta
     share:
+      dashboard: Vore més informació
       message: "He avalat la proposta %{title} en %{handle}. Si t'interessa, avala tu també!"
     edit:
       editing: Editar proposta
@@ -289,7 +298,6 @@ val:
       map_location: "Ubicació en el mapa"
       map_location_instructions: "Navega per el mapa fins la ubicació i deixa el marcador."
       map_remove_marker: "Eliminar el marcador"
-      map_skip_checkbox: "Esta proposta no te una ubicació concreta o no la coneixem."
     index:
       featured_proposals: Destacar
       orders:
@@ -320,7 +328,9 @@ val:
         button: Cercar
         placeholder: Cercar propostes...
         title: Cercar
-      select_order: Ordenar per
+      search_results:
+        one: " que conté <strong>'%{search_term}'</strong>"
+        other: " que conté <strong>'%{search_term}'</strong>"
       select_order_long: "Estas veient les propostes en funció de:"
       start_proposal: Crear una proposta
       title: Propostes
@@ -391,6 +401,47 @@ val:
     update:
       form:
         submit_button: Guardar canvis
+  dashboard:
+    menu:
+      community: Comunitat
+      polls: Votacions
+      related_content: Contingut relacionat
+    progress:
+      supports: Avals
+    index:
+      edit_proposal_link: Editar proposta
+      retire: Retirar proposta
+    recommended_actions:
+      pending_title: Pendents
+      done_title: Realitzada
+    community:
+      access_community: Accedir a la comunitat
+      participants: Participants
+      debates: Debats
+      comments: Comentaris
+    polls:
+      index:
+        title: Votacions
+        create: Crear votació
+        additiontal_information: Informació adicional
+      new:
+        title: Nova votació
+        submit: Crear votació
+      edit:
+        submit: Actualitzar votació
+      form:
+        add_question: Escriu un títol a la pregunta
+      question_fields:
+        add_answer: Afegir resposta
+    poster:
+      options:
+        preview: Vista previa
+    mailing:
+      mailing_options:
+        preview: Vista previa
+    mailer:
+      forward:
+        support_button: Avalar aquesta proposta
   polls:
     all: "Totes"
     no_dates: "sense data asignada"
@@ -424,6 +475,7 @@ val:
       back: Tornar a les votacions
       cant_answer_not_logged_in: "Necessites %{signin} o %{signup} per a participar."
       comments_tab: Comentaris
+      cant_answer_verify: "Si us plau %{verify_link} per a poder respondre."
       verify_link: "verifica el teu compte"
       cant_answer_expired: "Esta votació ha acabat."
       cant_answer_wrong_geozone: "Esta votació no està disponible en la teua zona."
@@ -461,14 +513,13 @@ val:
       back: "Tornar a la meua activitat"
   shared:
     edit: "Editar"
+    filter: "Filtre"
     save: "Guardar"
     delete: "Eliminar"
     "yes": "Si"
     "no": "No"
     search_results: "Resultats de la cerca"
     advanced_search:
-      author_type: "Per categoria d'autor"
-      author_type_blank: "Eligeix una categoria"
       date: "Per data"
       date_placeholder: "DD/MM/AAAA"
       date_range_blank: "Eligeix una data"
@@ -479,7 +530,6 @@ val:
       date_5: "Personalitzada"
       from: "De"
       general: "Amb el text"
-      general_placeholder: "Escriu el text"
       search: "Filtre"
       title: "Cerca avançada"
       to: "Fins"
@@ -522,6 +572,7 @@ val:
       districts: "Districtes"
       districts_list: "Llista de districtes"
       categories: "Categoríes"
+    target_blank: " (s'obri en una nova finestra)"
     you_are_in: "Estàs en"
     unflag: Desfer denuncia
     unfollow_entity: "Deixar de seguir %{entity}"
@@ -541,6 +592,9 @@ val:
       title: Recomanacions
       see_more: Veure més recomanacions
       hide: Ocultar recomanacions
+    translations:
+      remove_language: Eliminar idioma
+      add_language: Afegir idioma
   social:
     facebook: "Facebook de %{org}"
     twitter: "Twitter de %{org}"
@@ -564,6 +618,11 @@ val:
     manage:
       all: "No tens permís per a realitzar l'acció '%{action}' sobre '%{subject}'."
   users:
+    login_to_comment: "Necessites %{signin} o %{signup} per a comentar."
+    login_to_continue: "Necessites %{signin} o %{signup}."
+    signin: "iniciar sessió"
+    signup: "registrar-te"
+    verify_account: "verifica el teu compte"
     direct_messages:
       new:
         direct_messages_bloqued: "Este usuari ha decidit no rebre missatges privats"
@@ -578,6 +637,7 @@ val:
       deleted_proposal: Esta proposta ha segut eliminada
       deleted_budget_investment: Esta proposta d'inversió ha segut eliminada
       proposals: Propostes
+      proposals_status: Estat
       debates: Debats
       budget_investments: Propostes
       comments: Comentaris
@@ -605,7 +665,10 @@ val:
       delete_alert: "Segur que desitges eliminar aquesta proposta? Aquesta acció no es pot desfer"
     proposals:
       retired: "Proposta retirada"
+      draft: Esborrany
+      published: Publicada
       see: "Vore proposta"
+      actions: Accions
   votes:
     agree: Estic d'acord
     anonymous: Massa vots anònims, per a poder votar %{verify_account}.
@@ -690,3 +753,7 @@ val:
       alt: Selecciona el text que vols comentar i polsa el botó amb el llapis.
       text: Per a comentar este document has de %{sign_in} o %{sign_up}. Després selecciona el texte que vols comentar i polsa el botó amb el llapis.
       title: Com puc comentar aquest document?
+  links:
+    form:
+      delete_button: Eliminar
+      cancel_button: Cancel·lar

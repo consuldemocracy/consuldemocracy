@@ -7,8 +7,6 @@ uk-UA:
       delete_button: Видалити зображення
       note: "Ви можете завантажити одне зображення наступних типів: %{accepted_content_types}, до %{max_file_size} мегабайт."
       add_new_image: Додати зображення
-      admin_title: "Зображення"
-      admin_alt_text: "Альтернативний текст для зображення"
     actions:
       destroy:
         notice: Зображення видалено.

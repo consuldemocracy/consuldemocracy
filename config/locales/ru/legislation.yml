@@ -125,3 +125,19 @@ ru:
       form:
         tags_label: "Категории"
       not_verified: "Для предложений голосов, %{verify_account}."
+      process_title: Процесс совместного законотворчества
+    summary:
+      title: "Резюме"
+      votes:
+        zero: "%{count} голосов"
+      debate_phase: "Фаза дебатов"
+      proposals_phase: "Фаза предложений"
+      allegations_phase: "Фаза комментирования"
+      comments:
+        zero: "Нет комментариев"
+        one: "%{count} комментарий"
+        few: "%{count} комментария(иев)"
+        many: "%{count} комментария(иев)"
+        other: "%{count} комментария(иев)"
+      top_comments:
+        zero: "Нет комментариев"

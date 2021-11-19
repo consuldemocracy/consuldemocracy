@@ -1,4 +1,8 @@
 eu:
+  attributes:
+    name: Izena
+    email: E-mail
+    description: Deskribapena
   activerecord:
     models:
       activity:
@@ -64,9 +68,15 @@ eu:
       site_customization/content_block:
         one: Bloke
         other: Blokeak
+      document:
+        one: Dokumentua
+        other: Dokumentuak
       legislation/process:
         one: "Prozesu"
         other: "Prozesuak"
+      legislation/proposal:
+        one: "Proposamena"
+        other: "Proposamenak"
       legislation/draft_versions:
         one: "Zirriborro bertsioa"
         other: "Zirriborro bertsioak"
@@ -106,6 +116,8 @@ eu:
         description_finished: "Aurrekontua amaitu/emaitza faseko deskribapena"
         phase: "Faseaa"
         currency_symbol: "Dibisa"
+      budget/translation:
+        name: "Izena"
       budget/investment:
         heading_id: "Aurrekontu saila"
         title: "Izenbrua"
@@ -116,20 +128,50 @@ eu:
         organization_name: "Erakunde/kolektibo edo beste pertsona batzuen izenean proposatzen ari bazara, beraien izenak idatzi"
         image: "Gastu proiektuaren irudi deskriptiboa"
         image_title: "Irudiaren izenburua"
+        duration: "Exekuzio epea"
+        feasibility_feasible: "Bideragarria"
+        feasibility_undecided: "Zehaztu gabe"
+        feasibility_unfeasible: "Bideraezina"
+        price_explanation: "Kostu txostena"
+        selected_true: "Hautatutakoak"
+        valuation_finished: "Ebaluaketa amaituta"
+        valuation_tag_list: "Gaiak"
+      budget/investment/translation:
+        title: "Izenburua"
+        description: "Deskribapena"
+      geozone:
+        name: Izena
+      milestone:
+        title: "Izenburua"
+        publication_date: "Data"
+      milestone/translation:
+        description: "Deskribapena"
       milestone/status:
         name: "Izena"
+      progress_bar:
+        kind: "Mota"
+        title: "Izenburua"
       budget/heading:
         name: "Aurrekontu sailaren izenburua"
         price: "Kantitatea"
         population: "Biztanleak"
+      budget/heading/translation:
+        name: "Elementuaren izenburua"
+      budget/phase/translation:
+        name: "Izena"
+        description: "Deskribapena"
+        summary: "Laburpena"
       comment:
         body: "Iruzkin"
         user: "Erabiltzailea"
       debate:
         author: "Sortzailea"
         description: "Iritzia"
+        tag_list: "Gaiak"
         terms_of_service: "Zerbitzu baldintzak"
         title: "Izenburua"
+      debate/translation:
+        title: "Eztabaidaren izenburua"
       proposal:
         author: "Sortzailea"
         title: "Izenburua"
@@ -147,40 +189,71 @@ eu:
         official_level: "Kargu maila"
         phone_number: "Telefonoa"
         redeemable_code: "Eskutitz bidezko egiaztapen kodea (aukerakoa)"
+      direct_message:
+        title: "Izenburua"
       organization:
         name: "Erakundearen izena"
         responsible_name: "Kolektibo/talde arduraduna"
       poll:
         name: "Izena"
+        title: "Izena"
         starts_at: "Irekiera data"
         ends_at: "Itxiera data"
         geozone_restricted: "Zonaldeka mugatuta"
         summary: "Laburpena"
         description: "Deskribapena"
+      active_poll/translation:
+        description: "Deskribapena"
+      poll/booth:
+        name: "Izena"
+        location: "Kokapena"
       poll/translation:
         name: "Izena"
+        summary: "Laburpena"
+        description: "Deskribapena"
       poll/question:
+        poll_id: "Bozkaketa"
         title: "Galdera"
         summary: "Laburpena"
         description: "Deskribapena"
         external_url: "Gehigarrizko agirietara lotura"
       poll/question/translation:
         title: "Galdera"
+      poll/ballot_sheet:
+        poll_id: Bozkaketa
+      proposal_notification:
+        title: "Izenburua"
       signature_sheet:
+        title: "Izenburua"
         signable_type: "Firma orri mota"
         signable_id: "Herri proposamen/Gastu proiektu ID-a"
         document_numbers: "Agiri zenbakiak"
+      sdg/goal:
+        title: "Izenburua"
+        description: "Deskribapena"
+      sdg/local_target:
+        title: "Izenburua"
+      sdg/local_target/translation:
+        title: "Izenburua"
+        description: "Deskribapena"
+      sdg/target:
+        title: "Izenburua"
       site_customization/page:
         content: Edukia
         created_at: Sortuta
         subtitle: Azpititulua
         slug: Slug
         status: Egoera
+        status_draft: "Zirriborroa"
         title: Izenburua
         updated_at: Azken eguneraketa
         more_info_flag: Laguntza orrian erakutsi
         print_content_flag: Edukia inprimitzeko botoia
         locale: Hizkuntza
+      site_customization/page/translation:
+        title: Izenburua
+        subtitle: Azpititulua
+        content: Edukia
       site_customization/image:
         name: Izena
         image: Irudia
@@ -188,6 +261,11 @@ eu:
         name: Izena
         locale: Hizkuntza
         body: Edukia
+      topic:
+        title: "Izenburua"
+      banner/translation:
+        title: "Izenburua"
+        description: "Deskribapena"
       legislation/process:
         title: Prosezu izenburua
         summary: Laburpena
@@ -197,21 +275,37 @@ eu:
         end_date: Prosezuaren amaiera data
         debate_start_date: Eztabaidaren hasiera data
         debate_end_date: Eztabaidaren amaiera data
+        draft_start_date: Hasi
+        draft_end_date: Amaitu
         draft_publication_date: Zirriborroaren argitarapen data
         allegations_start_date: Alegazioen hasiera data
         allegations_end_date: Alegazioen amaiera data
         proposals_phase_start_date: Hasi
         proposals_phase_end_date: Amaitu
         result_publication_date: Azken emaitzen argitarapen data
+      legislation/process/translation:
+        title: Prosezu izenburua
+        summary: Laburpena
+        description: Deskribapena
+        additional_info: Gehigarrizko informazioa
+        homepage: "Deskribapena"
+        milestones_summary: Laburpena
       legislation/draft_version:
         title: Bertsio izenburua
         body: Testua
         changelog: Aldaketak
         status: Egoera
+        status_draft: "Zirriborroa"
         final_version: Azken bertsioa
+      legislation/draft_version/translation:
+        title: Bertsio izenburua
+        body: Testua
+        changelog: Aldaketak
       legislation/question:
         title: Izenburua
         question_options: Erantzunak
+      legislation/question/translation:
+        title: Galdera
       legislation/question_option:
         value: Balorea
       legislation/annotation:
@@ -227,6 +321,7 @@ eu:
         description: Deskribapena
       poll/question/answer/translation:
         title: Erantzuna
+        description: Deskribapena
       poll/question/answer/video:
         title: Izenburua
         url: Kanpo bideoa
@@ -235,14 +330,40 @@ eu:
         subject: Gaia
         from: "Bidaltzailea"
         body: Emailaren edukia
+      admin_notification:
+        segment_recipient: Hartzaileak
+        title: Izenburua
+        body: Testua
+      admin_notification/translation:
+        title: Izenburua
+        body: Testua
       widget/card:
         label: Etiketa (aukerakoa)
         title: Izenburua
         description: Deskribapena
         link_text: Loturaren testua
         link_url: URL lotura
+      widget/card/translation:
+        label: Etiketa (aukerakoa)
+        title: Izenburua
+        description: Deskribapena
+        link_text: Lotura testua
       widget/feed:
         limit: Elementu kopurua
+      dashboard/action:
+        title: Izenburua
+        description: Deskribapena
+        active: Aktiboak
+        action_type: Mota
+      link:
+        label: Izenburua
+      valuator:
+        description: Deskribapena
+        valuator_group_id: Ebaluatzaile taldea
+      local_census_record:
+        document_type: Agiri mota
+        document_number: NAN/Pasaportea/Egoitza txartela
+        date_of_birth: Jaiotze data
     errors:
       models:
         user:
@@ -266,14 +387,16 @@ eu:
           attributes:
             segment_recipient:
               invalid: "Erabiltzaile segmentua baliogabekoa da"
-        map_location:
+        admin_notification:
           attributes:
-            map:
-              invalid: Mapa ezin da hutsik gelditu. Puntu bat gehitu mapan edo maparik ez dela behar markatu.
+            segment_recipient:
+              invalid: "Erabiltzaile segmentua baliogabekoa da"
         poll/voter:
           attributes:
             document_number:
               not_in_census: "Agiri hau ez da erroldan ageri"
+            user_id:
+              has_voted: "Erabiltzailea honek bozkatu du"
         legislation/process:
           attributes:
             end_date:

@@ -2,10 +2,10 @@ it:
   devise_views:
     confirmations:
       new:
-        email_label: Email
         submit: Inviare nuovamente le istruzioni
         title: Inviare nuovamente le istruzioni di conferma
       show:
+        instructions: Stiamo confermando l'account con email %{email}
         new_password_confirmation_label: Reintrodurre la password
         new_password_label: Nuova password
         please_set_password: Si prega di scegliere la nuova pasword (che permetterà di accedere con l'email di cui sopra)
@@ -38,17 +38,16 @@ it:
     organizations:
       registrations:
         new:
-          email_label: Email
-          organization_name_label: Nome dell'organizzazione
           password_confirmation_label: Ripeti la password
-          password_label: Password
-          phone_number_label: Numero di telefono
-          responsible_name_label: Nome e cognome della persona responsabile per l'associazione
           responsible_name_note: Questa sarà la persona che rappresenterà l'associazione a cui nome sono presentate le proposte
           submit: Registrarsi
           title: Registrarsi come un'organizzazione o associazione
         success:
           back_to_index: 'Ho capito: torno alla pagina principale'
+          instructions_1: "<b>Ti contatteremo a breve</b> al fine di verificare che tu sia effettivamente il rappresentante di questo collettivo."
+          instructions_2: Mentre <b>verifichiamo la tua e-mail</b>, ti abbiamo inviato un <b>link per la verifica dell’account</b>.
+          instructions_3: Una volta confermato, si potrà iniziare a partecipare come collettivo non verificato.
+          thank_you: Grazie per aver registrato il tuo collettivo su questo sito. Ora è <b>in attesa di verifica</b>.
           title: Registrazione dell'organizzazione / associazione
     passwords:
       edit:
@@ -57,13 +56,10 @@ it:
         password_label: Nuova password
         title: Cambia la password
       new:
-        email_label: Email
         send_submit: Inviare le istruzioni
         title: Password dimenticata?
     sessions:
       new:
-        login_label: Email o username
-        password_label: Password
         remember_me: Ricordami
         submit: Entrare
         title: Accedere
@@ -101,12 +97,9 @@ it:
           waiting_for: "In attesa di conferma di:"
         new:
           cancel: Annulla login
-          email_label: Email
           organization_signup: Rappresenti un'organizzazione o una associazione? %{signup_link}
           organization_signup_link: Registrati qui
           password_confirmation_label: Conferma la password
-          password_label: Password
-          redeemable_code: Codice di verifica ricevuto via e-mail (opzionale)
           submit: Registrarsi
           terms: Registrandoti accetti %{terms}
           terms_link: termini e condizioni d'uso
@@ -114,8 +107,10 @@ it:
           title: Registrarsi
           username_is_available: Nome utente disponibile
           username_is_not_available: Nome utente già in uso
-          username_label: Nome utente
           username_note: Nome che appare accanto ai tuoi post
         success:
           back_to_index: Ho capito; torna alla pagina principale
+          instructions_1: Si prega di <b>controllare l’e-mail</b> - abbiamo inviato <b>un link di per confermare l’account</b>.
+          instructions_2: Una volta confermati, si può iniziare a partecipare.
+          thank_you: Grazie per esserti registrato/a. Ora è necessario <b>confermare il tuo indirizzo e-mail</b>.
           title: Modifica il tuo indirizzo email

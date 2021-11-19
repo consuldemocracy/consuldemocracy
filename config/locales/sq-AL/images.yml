@@ -7,8 +7,6 @@ sq:
       delete_button: Hiq imazhin
       note: "Ju mund të ngarkoni një imazh të llojeve të mëposhtme të përmbajtjes: %{accepted_content_types}, deri në %{max_file_size} MB"
       add_new_image: Shto imazhin
-      admin_title: "Imazh"
-      admin_alt_text: "Teksti alternativ për imazhin"
     actions:
       destroy:
         notice: Imazhi u fshi me sukses

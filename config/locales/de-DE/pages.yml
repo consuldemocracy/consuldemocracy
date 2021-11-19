@@ -44,6 +44,7 @@ de:
         title: "Beteiligungsverfahren"
         description: "Im %{link}-Abschnitt nehmen Bürger an der Ausarbeitung und Änderung von, die Stadt betreffenden, Bestimmungen teil und können ihre Meinung bezüglich kommunaler Richtlinien in vorausgehenden Debatten äußern."
         link: "Prozesse"
+        feature_link: "registrieren für %{org_name}"
       faq:
         title: "Technische Probleme?"
         description: "Lesen Sie die FAQs und finden Sie Antworten auf Ihre Fragen."

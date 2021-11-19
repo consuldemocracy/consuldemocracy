@@ -16,6 +16,19 @@ nl:
           confirmation_code: "Bevestigingscode"
         email:
           recipient: "Email"
+      verification/letter:
+        email: "E-mail"
+        password: "Wachtwoord"
+        verification_code: "Code die je in je email ontvangt"
+      verification/management/document:
+        document_type: "Document soort:"
+        document_number: "Document nummer"
+      verification/residence:
+        date_of_birth: "Date of birth"
+        document_type: "Documentsoort"
+        postal_code: "Postcode"
+      verification/sms:
+        confirmation_code: "Voer de code in die je hebt ontvangen op je mobiele telefoon"
       officing/residence:
         document_type: "Documentsoort"
         document_number: "Documentnummer (inclusief letters)"

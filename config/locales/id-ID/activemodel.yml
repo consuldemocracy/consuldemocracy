@@ -16,6 +16,19 @@ id:
           confirmation_code: "Kode konfirmasi"
         email:
           recipient: "Surel"
+      verification/letter:
+        email: "Email"
+        password: "Kata Sandi"
+        verification_code: "Kode yang anda terima di surat"
+      verification/management/document:
+        document_type: "Jenis Dokumen:"
+        document_number: "Nomor Dokumen"
+      verification/residence:
+        date_of_birth: "Tanggal lahir"
+        document_type: "Tipe dokumen"
+        postal_code: "Kode Pos"
+      verification/sms:
+        confirmation_code: "Masukkan kode yang anda terima di ponsel anda"
       officing/residence:
         document_type: "Tipe dokumen"
         document_number: "Nomor dokumen (termasuk huruf)"

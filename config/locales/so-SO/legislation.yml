@@ -117,3 +117,17 @@ so:
       form:
         tags_label: "Qaybaha"
       not_verified: "Soo jeedinta cod bixinta%{verify_account}."
+      process_title: Nidaamka sharciyeed ee wadajirka ah
+    summary:
+      title: "Sookobiid"
+      votes:
+        zero: "%{count} codadka"
+      debate_phase: "Wajiga doodda"
+      proposals_phase: "Wajiga soo jeedinada"
+      allegations_phase: "Heerarka faallooyinka"
+      comments:
+        zero: "Falooyin majiraan"
+        one: "%{count} Falo"
+        other: "%{count} falooyinka"
+      top_comments:
+        zero: "Falooyin majiraan"

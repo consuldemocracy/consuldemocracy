@@ -198,10 +198,12 @@ class Budget < ApplicationRecord
 
   def investments_filters
     [
-      (%w[not_unfeasible feasible unfeasible] if valuating_or_later?),
-      (%w[selected unselected] if publishing_prices_or_later?),
-      ("winners" if finished?)
-    ].compact.flatten
+      ("winners" if finished?),
+      ("selected" if publishing_prices_or_later? && !finished?),
+      ("unselected" if publishing_prices_or_later?),
+      ("not_unfeasible" if valuating?),
+      ("unfeasible" if valuating_or_later?)
+    ].compact
   end
 
   def email_selected

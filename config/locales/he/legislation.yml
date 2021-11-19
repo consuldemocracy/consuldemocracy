@@ -126,3 +126,30 @@ he:
         tags_label: "קטגוריות"
       not_verified: "עבור הצבעה להצעות %{verify_account}."
       process_title: תהליך חקיקה שיתופית
+    summary:
+      title: "תקציר"
+      votes:
+        zero: "%{count} הצבעות"
+      debate_phase: "שלב הדיון"
+      proposals_phase: "שלב ההצעות"
+      allegations_phase: "שלב ההערות"
+      debates:
+        zero: "אין דיונים"
+        one: "%{count} דיון"
+        two: "%{count} דיונים"
+        many: "%{count} דיונים"
+        other: "%{count} דיונים"
+      proposals:
+        zero: "אין הצעות"
+        one: "%{count} הצעה"
+        two: "%{count} הצעות"
+        many: "%{count} הצעות"
+        other: "%{count} הצעות"
+      comments:
+        zero: "אין תגובות"
+        one: "%{count} תגובה"
+        two: "%{count} תגובות"
+        many: "%{count} תגובות"
+        other: "%{count} תגובות"
+      top_comments:
+        zero: "אין תגובות"

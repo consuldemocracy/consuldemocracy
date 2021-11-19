@@ -123,6 +123,7 @@ da:
       translation_interface: "Oversættelses interface"
       valuation_comment_notification: "Notifikation"
       valuation_comment_notification_description: "Send en e-mail til alle brugere (med undtagelse af evaluatorerne) når en ny vurdering af foretaget"
+      sdg: Verdensmål
     map:
       latitude: "Breddegrad"
       latitude_description: "Breddegrader"

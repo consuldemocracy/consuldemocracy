@@ -75,6 +75,9 @@ fr:
       x_days:
         one: 1 jour
         other: "%{count} jours"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
       x_months:
         one: 1 mois
         other: "%{count} mois"
@@ -92,6 +95,7 @@ fr:
       second: Secondes
       year: Année
   errors:
+    format: "%{attribute} %{message}"
     messages:
       accepted: doit être accepté
       blank: ne peut pas être vide
@@ -181,11 +185,14 @@ fr:
     array:
       last_word_connector: " et "
       two_words_connector: " et "
+      words_connector: ", "
   time:
     am: du matin
     formats:
       datetime: "%d/%m/%Y %H:%M:%S"
       default: "%A, %d %B %Y %H:%M:%S %z"
       long: "%d %B %Y %H:%M"
+      short: "%d %b %H:%M"
+      short_datetime: "%Y-%m-%d %H:%M"
       api: "%H %d/%m/%Y"
     pm: de l'après-midi

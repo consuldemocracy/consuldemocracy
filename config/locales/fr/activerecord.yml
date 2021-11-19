@@ -7,6 +7,7 @@ fr:
     name: Nom
     email: Email
     description: Description
+    related_sdg_list: Buts et Objectifs
   activerecord:
     models:
       activity:
@@ -24,6 +25,9 @@ fr:
       milestone/status:
         one: "Statut d’investissement"
         other: "Statuts d’investissement"
+      progress_bar:
+        one: "Barre de progrès"
+        other: "Barres de progrès"
       comment:
         one: "Commentaire"
         other: "Commentaires"
@@ -66,9 +70,24 @@ fr:
       poll/officer:
         one: "président"
         other: "présidents"
+      poll/ballot_sheet:
+        one: Feuilles de bulletin de vote
+        other: Feuilles de bulletin de vote
       proposal:
         one: "Proposition citoyenne"
         other: "Propositions citoyennes"
+      sdg/goal:
+        one: "objectif"
+        other: "objectifs"
+      sdg/local_target:
+        one: "objectif local"
+        other: "objectifs locaux"
+      sdg/manager:
+        one: "Gestionnaire ODD"
+        other: "Gestionnaires ODD"
+      sdg/target:
+        one: "objectif"
+        other: "objectifs"
       site_customization/page:
         one: Page personnalisée
         other: Pages personnalisées
@@ -78,6 +97,9 @@ fr:
       site_customization/content_block:
         one: Bloc de contenu personnalisé
         other: Blocs de contenu personnalisés
+      document:
+        one: Document
+        other: Documents
       legislation/process:
         one: "Processus"
         other: "Processus législatifs"
@@ -114,9 +136,15 @@ fr:
       dashboard/action:
         one: Tableau de bord des Propositons d'action
         other: Tableau de bord des Propositons d'actions
+      dashboard/administrator_task:
+        one: Tâche
+        other: Tâches
       link:
         one: Lien
         other: Liens
+      local_census_record:
+        one: Donnée du recensement local
+        other: Données du recensement local
     attributes:
       budget:
         name: "Nom"
@@ -129,7 +157,12 @@ fr:
         description_finished: "Description quand le budget est finalisé"
         phase: "Phases"
         currency_symbol: "Devise"
+        voting_style: "Style du vote final"
+        voting_style_knapsack: "Sac à dos"
+        voting_style_approval: "Approbation"
       budget/translation:
+        main_link_text: "Texte sur le lien"
+        main_link_url: "Le lien vous renvoie à (ajouter un lien)"
         name: "Nom"
       budget/investment:
         heading_id: "Titre"
@@ -152,8 +185,12 @@ fr:
         selected_true: "Sélecté"
         selected_false: "Pas sélecté"
         unfeasibility_explanation: "Informations sur la viabilité"
+        valuation_finished: "Évaluation terminée"
+        valuator_ids: "Groupes"
+        valuation_tag_list: "Mots clés"
       budget/investment/translation:
         title: "Titre"
+        description: "Description"
       geozone:
         name: Nom
         external_code: "Code externe (optionnel)"
@@ -164,6 +201,8 @@ fr:
         title: "Titre"
         description: "Description (facultative si un statut est affecté)"
         publication_date: "Date de publication"
+      milestone/translation:
+        description: "Description"
       milestone/status:
         name: "Nom"
         description: "Description (optionnel)"
@@ -174,15 +213,30 @@ fr:
       progress_bar/kind:
         primary: "Primaire"
         secondary: "Secondaire"
+      budget/group:
+        max_votable_headings: "Nombre maxium de rubriques dans lequel un utilisateur peut sélectionner un projet"
       budget/group/translation:
         name: "Nom de groupe"
       budget/heading:
+        allow_custom_content: "Autoriser un bloc de contenu"
+        latitude: "Latitude (facultatif)"
+        longitude: "Longitude (facultatif)"
         name: "Nom du titre"
         price: "Coût"
         population: "Population"
+        max_ballot_lines: "Votes autorisés"
+      budget/heading/translation:
+        name: "Nom de la rubrique"
       budget/phase:
+        enabled: "Phase active"
         ends_at: "Date de fin"
         starts_at: "Date de commencement"
+      budget/phase/translation:
+        name: "Nom"
+        description: "Description"
+        summary: "Résumé"
+        main_link_text: "Texte sur le lien"
+        main_link_url: "Le lien vous renvoie à (ajouter un lien)"
       comment:
         body: "Commentaire"
         user: "Utilisateurs masqués"
@@ -192,14 +246,23 @@ fr:
         tag_list: "Sujets"
         terms_of_service: "Conditions d'utilisation"
         title: "Titre"
+      debate/translation:
+        title: "Titre du débat"
+        description: "Texte initial du debat"
       proposal:
         author: "Auteur"
         title: "Titre"
         question: "Question"
         description: "Description"
+        responsible_name: "Nom complet de la personne qui soumet la proposition"
+        retired_reason: "Raison pour retirer la proposition"
+        selected: "Marquer comme sélectionné"
         terms_of_service: "Conditions d'utilisation"
+        video_url: "URL de la vidéo externe"
       proposal/translation:
         title: "Titre de la proposition"
+        description: "Texte de la proposition"
+        summary: "Résumé de la proposition"
         retired_explanation: "Explication"
       user:
         login: "Email ou nom d’utilisateur"
@@ -208,9 +271,19 @@ fr:
         password_confirmation: "Confirmation du mot de passe"
         password: "Mot de passe"
         current_password: "Mot de passe actuel"
+        email_digest: "Recevoir un résumé des notifications de proposition"
+        email_on_comment: "Me notifier par email quand quelqu'un commente mes propositions ou mes débats"
+        email_on_comment_reply: "Me notifier par email quand quelqu'un répond à mes commentaires"
+        email_on_direct_message: "Recevoir un e-mail en cas de message personnel"
+        newsletter: "Recevoir par email la newsletter"
         official_position: "Position officielle"
+        official_position_badge: "Afficher le badge de position officielle"
         official_level: "Niveau officiel"
         phone_number: "Numéro de téléphone"
+        public_activity: "Garder publique ma liste d'activités"
+        public_interests: "Rendre publiques les étiquettes des éléments que je suis"
+        recommended_debates: "Voir les recommandations des débats"
+        recommended_proposals: "Voir les recommandations des propositions"
         redeemable_code: "Vérification du code reçu par courriel"
       direct_message:
         title: "Titre"
@@ -220,18 +293,23 @@ fr:
         responsible_name: "Personne responsable pour le groupe"
       poll:
         name: "Nom"
+        title: "Nom"
         starts_at: "Date de début"
         ends_at: "Date de fin"
         geozone_restricted: "Restreint selon la zone géographique"
         summary: "Résumé"
         description: "Description"
+      active_poll/translation:
+        description: "Description"
       poll/booth:
         name: "Nom"
+        location: "Lieu"
       poll/translation:
         name: "Nom"
         summary: "Résumé"
         description: "Description"
       poll/question:
+        poll_id: "Vote"
         title: "Question"
         summary: "Résumé"
         description: "Description"
@@ -252,12 +330,32 @@ fr:
         signable_type: "Type de signature"
         signable_id: "Identifiant de la signature"
         document_numbers: "Nombre de documents"
+      sdg/goal:
+        code: "Code"
+        title: "Titre"
+        description: "Description"
+      sdg/local_target:
+        code: "Code"
+        target_id: "Objectif"
+        title: "Titre"
+      sdg/local_target/translation:
+        title: "Titre"
+        description: "Description"
+      sdg/phase/kind:
+        sensitization: "Sensibilisation"
+        planning: "Planification"
+        monitoring: "Surveillance"
+      sdg/target:
+        code: "Code"
+        title: "Titre"
       site_customization/page:
         content: Contenu
         created_at: Créé le
         subtitle: Sous-titres
         slug: Slug
         status: Statut
+        status_draft: "Brouillon"
+        status_published: "Publié"
         title: Titre
         updated_at: Mis-à-jour le
         more_info_flag: Montrer dans la page Plus d'informations
@@ -274,13 +372,20 @@ fr:
         name: Nom
         locale: Langue
         body: Contenu
+      tag:
+        name: "Saisir le nom du sujet"
+      topic:
+        title: "Titre"
+        description: "Texte initial"
       banner:
         background_color: Couleur de l'arrière-plan
         font_color: Couleur de la police
         post_ended_at: "Poste a fini à"
         post_started_at: "Post a commencé à"
+        target_url: "Lien"
       banner/translation:
         title: "Titre"
+        description: "Description"
       legislation/process:
         title: Titre du processus
         summary: Résumé
@@ -300,17 +405,26 @@ fr:
         result_publication_date: Date de publication du résultat final
         background_color: Couleur de l'arrière-plan
         font_color: Couleur de la police
+        homepage_enabled: "Page d'accueil activée"
       legislation/process/translation:
         title: Titre du processus
         summary: Résumé
         description: Description
         additional_info: Plus d'infos
+        homepage: "Description"
         milestones_summary: Résumé
+      legislation/proposal:
+        description: "Texte de la proposition"
+        summary: "Résumé de la proposition"
+        title: "Titre de la proposition"
+        video_url: "Lien vers une vidéo externe"
       legislation/draft_version:
         title: Titre de la version
         body: Texte
         changelog: Changements
         status: Statut
+        status_draft: "Brouillon"
+        status_published: "Publié"
         final_version: Version finale
       legislation/draft_version/translation:
         title: Titre de la version
@@ -378,14 +492,27 @@ fr:
         order: Vous pouvez entrer la position où cette action sera affichée pour l'utilisateur dans la liste d'actions
         active: Actif
         action_type: Type
+        action_type_proposed_action: "Action proposée"
+        action_type_resource: "Ressource"
+        published_proposal: "Pour les propositions publiées?"
       dashboard/administrator_task:
         source: Source
         user: Exectué par
       link:
         label: Titre
         url: Lien
+      valuator:
+        description: Description
+        valuator_group_id: Groupe d’évaluateurs
+        can_comment: Peut créer des commentaires
+        can_edit_dossier: Peut éditer des dossiers
+      valuator_group:
+        name: "Nom du groupe"
       local_census_record:
+        document_type: Type de document
+        document_number: Numéro de document
         date_of_birth: Date de naissance
+        postal_code: Code postal
     errors:
       models:
         user:
@@ -413,14 +540,12 @@ fr:
           attributes:
             segment_recipient:
               invalid: "Le segment des utilisateurs destinataires est invalide"
-        map_location:
-          attributes:
-            map:
-              invalid: Un emplacement doit être défini sur la carte. Placez un marqueur ou désélectionnez la position si elle n'est pas nécessaire
         poll/voter:
           attributes:
             document_number:
               not_in_census: "Ce document n'est pas dans le recensement"
+            user_id:
+              has_voted: "L'utilisateur a déjà voté"
         legislation/process:
           attributes:
             end_date:
@@ -431,6 +556,10 @@ fr:
               invalid_date_range: doit être à la même date ou plus tard que celle de la création du brouillon
             allegations_end_date:
               invalid_date_range: doit être égal ou postérieur à la date de début des allégations
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: n'est pas inclus dans la liste, les valeurs autorisées sont 1 pour le DNI, 2 pour le passeport et 3 pour la carte de séjour.
         proposal:
           attributes:
             tag_list:
@@ -461,6 +590,14 @@ fr:
           attributes:
             valuation:
               cannot_comment_valuation: "Vous ne pouvez pas commenter une évaluation"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Ressource déjà traduite
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "doit commencer par le même code que sa cible suivi d'un point et se terminer par un nombre"
       messages:
         translations_too_short: Être obligatoire de fournir au moins un translation
         record_invalid: "La validation omise : %{errors}"

@@ -45,6 +45,7 @@ so:
         accept_terms_text_title: Waxaan aqbalayaa shuruudaha iyo xaaladaha helitaanka tirakoobka
         document_number: Lambarka dukumeentiga
         document_number_help_title: Caawin
+        document_number_help_text: "<strong>DNI</strong>: 12345678A<br><strong>Basab</strongoorAAA000001<br><strong>Kaarka degganaanshaha\n</strong>: X1234567P"
         document_type:
           passport: Baasaboor
           residence_card: Kaarka degananshaha
@@ -67,8 +68,8 @@ so:
         title: Xaqiijinta koodhka amniga
       new:
         phone: Geli lamabarkaTalefoonkaga si ad u hesho koodhka
+        phone_format: "<strong>Tusaale: 612345678 or+34612345678</em></strong><strong>"
         phone_note: Waxaanu isticmaalnaa oo kaliya telefoonkaaga si aan kuu soo dirno kodhka, marnaba kula soo xiriiri.
-        phone_placeholder: "Tusaale: 6123445678 ama +34612345678"
         submit_button: Diriid
         title: Xaqiijinta koodhka diir
       update:

@@ -7,8 +7,6 @@ ar:
       delete_button: إزالة الصورة
       note: "يمكنك رفع صورة باحد الإمتدادات التالية: %{accepted_content_types}، وبحجم يصل إلى %{max_file_size} ميغابايت."
       add_new_image: إضافة صورة
-      admin_title: "صورة"
-      admin_alt_text: "نص بديل للصورة"
     actions:
       destroy:
         notice: تم حذف الصورة بنجاح.

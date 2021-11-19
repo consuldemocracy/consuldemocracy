@@ -1,6 +1,8 @@
 sq:
   documents:
     title: Dokumentet
+    max_documents_allowed_reached: Ju keni arritur numrin maksimal të dokumenteve të lejuara! <strong> Duhet të fshish një para se të ngarkosh një tjetër. </ strong
+    additional: Dokumentacion shtesë
     form:
       title: Dokumentet
       title_placeholder: Shto një titull përshkrues për dokumentin
