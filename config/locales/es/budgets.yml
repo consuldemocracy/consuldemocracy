@@ -110,7 +110,6 @@ es:
           create: "Crear proyecto de gasto"
           not_logged_in: "Para crear un nuevo proyecto de gasto debes %{sign_in} o %{sign_up}."
         filters:
-          feasible: "Viable"
           selected: "Seleccionados"
           unfeasible: "No viables"
           winners: "Ganadores"
