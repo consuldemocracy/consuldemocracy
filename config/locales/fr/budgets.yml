@@ -84,7 +84,6 @@ fr:
           create: "Créer un nouveau projet"
           not_logged_in: "Pour créer une proposition d'investissement, vous devez vous %{sign_in} ou %{sign_up}."
         filters:
-          feasible: "Faisable"
           selected: "Sélectionné"
           unfeasible: "Infaisable"
           winners: "Gagnants"
