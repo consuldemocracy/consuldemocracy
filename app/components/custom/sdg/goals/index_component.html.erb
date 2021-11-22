@@ -1,0 +1,41 @@
+<% provide(:title) { title } %>
+
+<section class="section pb-3 pt-3 bg-primary text-white">
+  <div class="container">
+    <div class="row">
+      <div class="d-flex justify-content-center flex-wrap">
+        <div class="h1 text-center">
+          <% if header.present? %>
+            <%= render "shared/header", header: header %>
+          <% else %>
+            <%= title %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section py-3 py-md-6">
+  <div class="container-xxl">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 mb-3">
+
+  <%= render Shared::BannerComponent.new("sdg") %>
+
+
+  <%= link_list(*goal_links, class: "nav nav-justified justify-content-center") %>
+
+  <% phases.each do |phase| %>
+    <section class="sdg-phase" id="sdg_phase_<%= phase.kind %>">
+      <header>
+        <h2 class="title"><%= phase.title %></h2>
+      </header>
+
+      <%= render "shared/cards", cards: phase.cards %>
+    </section>
+  <% end %>
+  </div>
+  </div>
+  </div>
+</section>
