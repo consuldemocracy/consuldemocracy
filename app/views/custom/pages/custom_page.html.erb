@@ -1,0 +1,41 @@
+<%= content_for :body_class, "custom-page" %>
+<% provide :title do %><%= @custom_page.title %><% end %>
+
+<section class="section pb-3 pt-3 bg-primary text-white">
+  <div class="container">
+    <div class="row">
+      <div class="d-flex justify-content-center flex-wrap">
+        <div class="h1 text-center">
+          <%= @custom_page.title %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section py-3 py-md-6">
+  <div class="container-xxl">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 mb-3">
+    <% if @custom_page.subtitle.present? %>
+        <div class="h1 text-center"><%= @custom_page.subtitle %></div>
+    <% end %>
+
+    <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(@custom_page.content) %>
+  </div>
+</div>
+
+  <% if @custom_page.print_content_flag %>
+  <div class="row justify-content-center">
+      <%= render "/shared/print" %>
+    </div>
+  <% end %>
+
+  <% if @cards.any? %>
+  <div class="row justify-content-center">
+      <%= render "shared/cards", cards: @cards %>
+    </div>
+  <% end %>
+
+</div>
+</section>
