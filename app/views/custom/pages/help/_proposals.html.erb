@@ -1,0 +1,11 @@
+<div class="card shadow">
+  <div class="card-body">
+
+<%= render Pages::Help::SectionComponent.new("proposals") do %>
+  <p>
+    <%= sanitize(t("pages.help.proposals.description",
+            link: link_to(t("pages.help.proposals.link"), proposals_path))) %>
+  </p>
+<% end %>
+</div>
+</div>

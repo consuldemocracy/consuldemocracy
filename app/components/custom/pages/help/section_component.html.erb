@@ -1,0 +1,16 @@
+
+<div class="h5 card-title mt-3" id="<%= section %>">
+      <%= t("pages.help.#{section}.title") %>
+    </div>
+    <%= content %>
+
+<% if image_path %>
+<figure class="text-center">
+  <%= image_tag image_path, alt: t("pages.help.#{section}.image_alt") %>
+
+  <blockquote class="blockquote">
+<%= t("pages.help.#{section}.figcaption") %>
+  </blockquote>
+
+</figure>
+<% end %>

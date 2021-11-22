@@ -1,0 +1,21 @@
+<div class="card shadow">
+  <div class="card-body">
+
+    <div class="h5 card-title mt-3" id="other">
+        <%= t("pages.help.other.title") %>
+        </div>
+
+        <ul>
+          <li><%= link_to t("pages.help.other.how_to_use", org_name: setting["org_name"]), how_to_use_path %></li>
+
+          <% if feature?(:sdg) %>
+            <li><%= link_to t("pages.help.other.sdg"), sdg_help_path %></li>
+          <% end %>
+
+          <% SiteCustomization::Page.with_more_info_flag.with_same_locale.each do |custom_page| %>
+            <li><%= link_to custom_page.title, page_path(custom_page.slug) %></li>
+          <% end %>
+        </ul>
+
+  </div>
+</div>

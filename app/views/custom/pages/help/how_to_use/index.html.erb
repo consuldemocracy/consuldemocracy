@@ -1,0 +1,15 @@
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: how_to_use_url %>
+<% end %>
+
+<div class="row margin-top">
+  <div class="text small-12 column">
+    <% if feature?(:help_page) %>
+      <%= back_link_to help_path %>
+    <% end %>
+
+    <h1><%= t("pages.help.titles.how_to_use") %></h1>
+
+    <%= markdown t("pages.help.how_to_use.text") %>
+  </div>
+</div>

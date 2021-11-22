@@ -1,0 +1,22 @@
+
+
+
+<div class="card shadow">
+  <div class="card-body">
+    <%= render Pages::Help::SectionComponent.new("polls") do %>
+      <p>
+        <%= sanitize(t("pages.help.polls.description",
+              link: link_to(t("pages.help.polls.link"), polls_path))) %>
+      </p>
+      <ul>
+        <li>
+          <%= sanitize(t("pages.help.polls.feature_1",
+                link: link_to(t("pages.help.polls.feature_1_link", org_name: setting["org_name"]),
+                                 new_user_registration_path))) %>
+        </li>
+      </ul>
+    <% end %>
+
+
+</div>
+</div>

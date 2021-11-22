@@ -1,0 +1,56 @@
+<% provide :title do %><%= t("pages.titles.help", org: setting["org_name"]) %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: help_url %>
+<% end %>
+
+<%= render Shared::BannerComponent.new("help_page") %>
+
+<section class="section pb-3 pt-3 bg-primary text-white">
+  <div class="container">
+    <div class="row">
+      <div class="d-flex justify-content-between flex-wrap">
+        <div class="h1 text-center">
+          <%= t("pages.help.title", org: setting["org_name"]) %>
+        </div>
+        <div class="p text-center">
+          <%= t("pages.help.guide", org: setting["org_name"]) %>
+        </div>
+
+        <%= render "pages/help/menu" %>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section py-3 py-md-6">
+  <div class="container-xxl">
+    <div class="row">
+      <div class="col-lg-10 mb-3">
+        <% if feature?(:debates) %>
+          <%= render "pages/help/debates" %>
+        <% end %>
+
+        <% if feature?(:proposals) %>
+          <%= render "pages/help/proposals" %>
+        <% end %>
+
+        <% if feature?(:budgets) %>
+          <%= render "pages/help/budgets" %>
+        <% end %>
+
+        <% if feature?(:polls) %>
+          <%= render "pages/help/polls" %>
+        <% end %>
+
+        <% if feature?(:legislation) %>
+          <%= render "pages/help/processes" %>
+        <% end %>
+
+        <%= render "pages/help/other" %>
+        <%= render "pages/help/sidebar" %>
+      </div>
+    </div>
+  </div>
+</section>

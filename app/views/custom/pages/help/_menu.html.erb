@@ -1,0 +1,43 @@
+<nav class="navbar bg-primary text-white">
+    <%= link_list(
+      (
+        [
+          t("pages.help.menu.debates"),
+          "#debates",
+          class: "nav-link m-2"
+        ] if feature?(:debates)
+      ),
+      (
+        [
+          t("pages.help.menu.proposals"),
+          "#proposals",
+          class: "nav-link m-2"
+        ] if feature?(:proposals)
+      ),
+      (
+        [
+          t("pages.help.menu.budgets"),
+          "#budgets",
+          class: "nav-link m-2"
+        ] if feature?(:budgets)
+      ),
+      (
+        [
+          t("pages.help.menu.polls"),
+          "#polls",
+          class: "nav-link m-2"
+        ] if feature?(:polls)
+      ),
+      [
+        t("pages.help.menu.processes"),
+        "#processes",
+        class: "nav-link m-2"
+      ],
+      [
+        t("pages.help.menu.other"),
+        "#other",
+        class: "nav-link m-2"
+      ],
+      class: "nav nav-pills"
+    ) %>
+  </nav>
