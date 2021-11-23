@@ -84,7 +84,6 @@ val:
           create: "Crear nou projecte"
           not_logged_in: "Per a crear una nova proposta d'inversió has de %{sign_in} o %{sign_up}."
         filters:
-          feasible: "Viable"
           selected: "Seleccionades"
           unfeasible: "Inviable"
           winners: "Guanyadores"

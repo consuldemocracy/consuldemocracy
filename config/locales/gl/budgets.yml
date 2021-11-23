@@ -88,7 +88,6 @@ gl:
           create: "Crear un proxecto novo"
           not_logged_in: "Para creares unha nova proposta de investimento debes %{sign_in} ou %{sign_up}."
         filters:
-          feasible: "Viable"
           selected: "Seleccionadas"
           unfeasible: "Non viables"
           winners: "Gañadores"

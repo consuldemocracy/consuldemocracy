@@ -74,7 +74,6 @@ sl:
           create: "Dodaj svoj predlog!"
           not_logged_in: "Za ustvarjanje nove proračunske naložbe se moraš %{sign_in} ali %{sign_up}."
         filters:
-          feasible: "Izvedljiv"
           selected: "Označeno"
           unfeasible: "Neizvedljiv"
           winners: "Zmagovalci"

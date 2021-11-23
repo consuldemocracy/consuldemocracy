@@ -86,7 +86,6 @@ nl:
           create: "Nieuw begrotingsvoorstel maken"
           not_logged_in: "Om een nieuw begrotingsvoorstel te doen moet je %{sign_in} of %{sign_up}."
         filters:
-          feasible: "Haalbaar"
           selected: "Geselecteerd"
           unfeasible: "Unfeasible"
           winners: "Winnaars"

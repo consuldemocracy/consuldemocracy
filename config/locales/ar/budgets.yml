@@ -98,7 +98,6 @@ ar:
           create: "انشاء ميزانية استثمار"
           not_logged_in: "لانشاء ميزانية استثمار جديدة يجب عليك %{sign_in} او %{sign_up}."
         filters:
-          feasible: "مجدي"
           selected: "محدّد"
           unfeasible: "غير مجدي"
           winners: "الفائزين"
