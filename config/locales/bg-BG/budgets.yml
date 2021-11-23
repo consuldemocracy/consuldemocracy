@@ -116,7 +116,6 @@ bg:
           not_logged_in: "За да създадете нова бюджетна инвестиция, трябва да %{sign_in} или %{sign_up}."
         filter: "Филтриране на проекти по"
         filters:
-          feasible: "Изпълним"
           not_unfeasible: "Реализуем"
           selected: "Избран"
           unfeasible: "Неизпълним"

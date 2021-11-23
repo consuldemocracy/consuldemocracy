@@ -117,7 +117,6 @@ tr:
           not_logged_in: "Yeni bir bütçe yatırımı oluşturmak istiyorsanız %{sign_in} ya da %{sign_up}."
         filter: "Projelere göre filtreleme"
         filters:
-          feasible: "Uygulanabilir"
           not_unfeasible: "Uygulanabilir"
           selected: "Seçilmiş"
           unfeasible: "Uygulanamaz"

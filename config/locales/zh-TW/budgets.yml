@@ -81,7 +81,6 @@ zh-TW:
           create: "創建預算投資"
           not_logged_in: "要創建新的預算投資, 您必須 %{sign_in} 或 %{sign_up}。"
         filters:
-          feasible: "可行"
           selected: "已選擇"
           unfeasible: "不可行"
           winners: "勝出者"

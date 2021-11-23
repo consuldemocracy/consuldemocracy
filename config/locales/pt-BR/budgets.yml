@@ -111,7 +111,6 @@ pt-BR:
           create: "Criar um investimento orçamentário"
           not_logged_in: "Para criar um novo investimento orçamentário, você deve %{sign_in} ou %{sign_up}."
         filters:
-          feasible: "Factível"
           selected: "Selecionado"
           unfeasible: "Inviável"
           winners: "Vencedores"

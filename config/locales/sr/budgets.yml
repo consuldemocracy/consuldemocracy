@@ -118,7 +118,6 @@ sr:
           create: "Кренирајте буџетску инвестицију"
           not_logged_in: "Како бисте креирали нову буџетску инвестицију морате %{sign_in} или %{sign_up}."
         filters:
-          feasible: "Изводљиво"
           selected: "Изабрано"
           unfeasible: "Неизводљиво"
           winners: "Победници"
