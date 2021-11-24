@@ -111,7 +111,6 @@ ca:
           create: "Crear una inversió pressupostària"
           not_logged_in: "Per a crear una nova proposta d'inversió has de %{sign_in} o %{sign_up}."
         filters:
-          feasible: "Viable"
           selected: "seleccionada"
           unfeasible: "No viables"
           winners: "Guanyadors"

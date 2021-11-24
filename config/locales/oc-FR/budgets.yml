@@ -87,7 +87,6 @@ oc:
           create: "Crear una inversion budgetària"
           not_logged_in: "Per crear una nòva proposicion d'inversion te cal %{sign_in} o %{sign_up}."
         filters:
-          feasible: "Viable"
           selected: "seleccionada"
           unfeasible: "Pas viables"
           winners: "Ganhants"

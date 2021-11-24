@@ -117,7 +117,6 @@ de:
           not_logged_in: "Um einen neuen Ausgabenvorschlag erstellen zu können, müssen Sie %{sign_in} oder %{sign_up}."
         filter: "Projekte filtern nach"
         filters:
-          feasible: "Durchführbar"
           not_unfeasible: "Durchführbar"
           selected: "Ausgewählt"
           unfeasible: "Undurchführbar"

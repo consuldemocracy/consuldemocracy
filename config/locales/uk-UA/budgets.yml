@@ -125,7 +125,6 @@ uk-UA:
           create: "Створити бюджетну інвестицію"
           not_logged_in: "Щоб створити нову бюджетну інвестицію, потрібно %{sign_in} або %{sign_up}."
         filters:
-          feasible: "Доцільно"
           selected: "Вибрано"
           unfeasible: "Недоцільно"
           winners: "Переможці"

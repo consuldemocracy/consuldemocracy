@@ -105,7 +105,6 @@ ka:
           create: "საბიუჯეტო ინვესტიციის შექმნა"
           not_logged_in: "საბიუჯეტო ინვესტიციის შესაქმნელად საჭიროა %{sign_in} ან %{sign_up}."
         filters:
-          feasible: "განხორციელებადი"
           selected: "შერჩეული"
           unfeasible: "შეუძლებელი"
           winners: "გამარჯვებულები"

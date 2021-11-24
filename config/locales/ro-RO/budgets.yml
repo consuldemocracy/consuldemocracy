@@ -124,7 +124,6 @@ ro:
           not_logged_in: "Pentru a crea un nou buget de investiții trebuie să %{sign_in} sau %{sign_up}."
         filter: "Filtrează proiectele după"
         filters:
-          feasible: "Realizabil"
           not_unfeasible: "Realizabil"
           selected: "Selectat"
           unfeasible: "Nerealizabil"

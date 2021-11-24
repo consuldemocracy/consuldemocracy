@@ -91,7 +91,6 @@ pl:
           create: "Utwórz inwestycję budżetową"
           not_logged_in: "By stworzyć nową inwestycję budżetową musisz %{sign_in} lub %{sign_up}."
         filters:
-          feasible: "Wykonalne"
           selected: "Wybrany"
           unfeasible: "Niewykonalne"
           winners: "Zwycięzcy"

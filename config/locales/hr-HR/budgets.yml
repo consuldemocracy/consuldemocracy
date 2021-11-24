@@ -99,7 +99,6 @@ hr:
           create: "Stvori investicijski budžet"
           not_logged_in: "%{sign_in} ili %{sign_up} da biste izradili novo proračunsko ulaganje."
         filters:
-          feasible: "Izvodljivo"
           selected: "Odabrano"
           unfeasible: "Nevažeč"
           winners: "Pobjednici"
