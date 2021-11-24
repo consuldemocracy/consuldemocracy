@@ -1,81 +1,107 @@
-<% provide :title do %><%= @debate.title %><% end %>
+<% provide :title do %><%= @debate.title %>
+<% end %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: debate_url(@debate) %>
 <% end %>
 
 <% cache [locale_and_user_status(@debate), @debate, @debate.author, Flag.flagged?(current_user, @debate), @debate_votes] do %>
-<section class="section py-3 py-md-6">
 
-<div class="container-xxl">
-
-<div class="row">
-    <div id="<%= dom_id(@debate) %>" class="col-12 col-md-8 order-1">
-        <%= back_link_to %>
-        <h1><%= @debate.title %></h1>
-        <% if @debate.conflictive? %>
-          <div data-alert class="callout alert margin-top">
-            <strong><%= t("debates.show.flag") %></strong>
+  <section class="section pb-6 pt-3 bg-primary text-white">
+    <div class="container">
+      <div class="row">
+        <div class="d-flex justify-content-center flex-wrap">
+          <div class="me-auto">
+            <%= back_link_to %>
           </div>
-        <% end %>
+            <% if @debate.conflictive? %>
+            <div class="me-auto mt-2 mt-md-0">
 
-        <div class="debate-info">
-          <%= render "/shared/author_info", resource: @debate %>
+              <div data-alert="data-alert" class="alert alert-warning">
+                <strong><%= t("debates.show.flag") %></strong>
+              </div>
+            </div>
 
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <%= l @debate.created_at.to_date %>
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <span class="icon-comments"></span>&nbsp;
-          <%= link_to t("debates.show.comments", count: @debate.comments_count), "#comments" %>
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <span class="js-flag-actions">
-            <%= render "shared/flag_actions", flaggable: @debate %>
-          </span>
+            <% end %>
         </div>
 
-        <%= auto_link_already_sanitized_html wysiwyg(@debate.description) %>
-<%= render "shared/tags", taggable: @debate %>
-
       </div>
+    </div>
+  </section>
+
+  <section class="section py-3 py-md-6">
+    <div class="container-xxl">
+      <div class="row mt-n6 mt-md-n7">
+        <div id="<%= dom_id(@debate) %>" class="col-12 col-md-8">
+          <div class="card shadow p-2 p-md-4">
+            <div class="card-header border-0 bg-white p-0">
+              <div class="post-meta">
+                <div class="media d-flex align-items-center justify-content-between flex-wrap">
+                  <div class="post-group">
+                    <%= render "/shared/author_info", resource: @debate %>
+                  </div>
+
+                  <div class="d-flex align-items-center">
+                    <span class="small">
+                      <span class="far fa-calendar-alt me-2"></span>
+                      <%= l @debate.created_at.to_date %>
+                    </span>
+                  </div>
+
+                  <div class="d-flex align-items-center">
+                    <span class="far fa-comments me-2"></span>
+                    <%= link_to t("debates.show.comments", count: @debate.comments_count), "#comments" %>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="card-body py-4 px-0">
+
+                <div class="h1 text-center"><%= @debate.title %></div>
+
+                <%= auto_link_already_sanitized_html wysiwyg(@debate.description) %>
+                <%= render "shared/tags", taggable: @debate %>
+
+              </div>
+            </div>
+          </div>
+
 
       <div class="col-12 col-md-4 order-2">
-        <div class="row">
+        <div class="card shadow p-4">
 
-        <div class="col-6 col-md-12">
-        <h2><%= t("votes.supports") %></h2>
-        <div id="<%= dom_id(@debate) %>_votes">
-          <%= render "debates/votes", debate: @debate %>
-        </div>
+            <h2><%= t("votes.supports") %></h2>
+            <div id="<%= dom_id(@debate) %>_votes">
+              <%= render "debates/votes", debate: @debate %>
+            </div>
+          </div>
+
+          <div class="card shadow p-4">
+
+            <%= render "shared/social_share", share_title: t("debates.show.share"), title: @debate.title, url: debate_url(@debate), description: @debate.title, mobile: @debate.title %>
+          </div>
+
+        <% if current_user && @debate.editable_by?(current_user) %>
+        <div class="card shadow p-4">
+
+          <h2><%= t("debates.show.author") %></h2>
+          <%= link_to edit_debate_path(@debate), class: "w-100 btn btn-primary" do %>
+          <span class="icon-edit"></span>
+          <%= t("debates.show.edit_debate_link") %>
+        <% end %>
+      <% end %>
       </div>
+    </div>
+  <% end %>
+  <div class="col-12 col-lg-8 justify-content-center order-3">
+    <%= render "relationable/related_content", relationable: @debate %>
 
-        <div class="col-6 col-md-12">
-
-        <%= render "shared/social_share",
-          share_title: t("debates.show.share"),
-          title: @debate.title,
-          url: debate_url(@debate),
-          description: @debate.title,
-          mobile: @debate.title %>
-        </div>
-      </div>
-
-
-          <% if current_user && @debate.editable_by?(current_user) %>
-            <h2><%= t("debates.show.author") %></h2>
-            <%= link_to edit_debate_path(@debate), class: "w-100 btn btn-primary" do %>
-              <span class="icon-edit"></span>
-              <%= t("debates.show.edit_debate_link") %>
-            <% end %>
-          <% end %>
-      </div>
-<% end %>
-<div class="col-12 col-lg-8 justify-content-center order-3">
-  <%= render "relationable/related_content", relationable: @debate %>
-
-  <div class="js-moderator-debate-actions">
-    <%= render "actions", debate: @debate %>
+    <div class="js-moderator-debate-actions">
+      <%= render "actions", debate: @debate %>
+    </div>
+    <%= render "comments" %>
   </div>
-<%= render "comments" %>
-</div>
 
 </div>
 </div>
