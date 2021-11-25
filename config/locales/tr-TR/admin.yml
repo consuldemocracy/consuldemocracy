@@ -5,7 +5,7 @@ tr:
     actions:
       actions: Eylemler
       confirm: Emin misiniz?
-      confirm_delete: "Emin misiniz? Bu işlem %{resource_name} '%{name}' silecek ve geri alınamaz."
+      confirm_delete: "Emin misiniz? Bu işlem \"%{name}\" silecek ve geri alınamaz."
       confirm_hide: Moderasyonu onayla
       delete: "Sil"
       hide: Gizle

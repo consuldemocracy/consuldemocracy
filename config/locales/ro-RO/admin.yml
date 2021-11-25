@@ -5,7 +5,7 @@ ro:
     actions:
       actions: Acțiuni
       confirm: Sunteți sigur?
-      confirm_delete: "Sunteți sigur? Această acțiune va șterge %{resource_name} '%{name}' și nu se poate reveni."
+      confirm_delete: "Sunteți sigur? Această acțiune va șterge \"%{name}\" și nu se poate reveni."
       confirm_hide: Confirmați modificarea
       delete: "Șterge"
       hide: Ascunde
