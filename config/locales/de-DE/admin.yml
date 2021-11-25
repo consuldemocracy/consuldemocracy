@@ -5,7 +5,7 @@ de:
     actions:
       actions: Aktionen
       confirm: Sind Sie sich sicher?
-      confirm_delete: "Sind Sie sicher? Diese Aktion wird %{resource_name} '%{name}' löschen und kann nicht rückgängig gemacht werden."
+      confirm_delete: "Sind Sie sicher? Diese Aktion wird \"%{name}\" löschen und kann nicht rückgängig gemacht werden."
       confirm_hide: Moderation bestätigen
       delete: "Löschen"
       hide: Ausblenden
