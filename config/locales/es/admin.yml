@@ -176,9 +176,9 @@ es:
         table_name: Nombre
         table_phase: Fase
         table_physical_final_votes: Votos finales presenciales
-        table_admin_ballots: Urnas
+        table_admin_ballots: Proyectos de gasto
+        admin_ballots: Gestionar proyectos de gasto
         physical_final_votes: Gestionar votos
-        admin_ballots: Gestionar urnas
     budget_investments:
       index:
         heading_filter_all: Todas las partidas
