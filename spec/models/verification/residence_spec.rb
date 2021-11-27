@@ -126,6 +126,58 @@ describe Verification::Residence do
         expect(residence).to be_valid
       end
 
+      it "allows regular expressions" do
+        Setting["postal_codes"] = "007,[A-Za-z]{2}-[0-9]{3},86"
+
+        residence.postal_code = "007"
+        expect(residence).to be_valid
+
+        residence.postal_code = "86"
+        expect(residence).to be_valid
+
+        residence.postal_code = "AB-123"
+        expect(residence).to be_valid
+
+        residence.postal_code = "zz-789"
+        expect(residence).to be_valid
+
+        residence.postal_code = "006"
+        expect(residence).not_to be_valid
+
+        residence.postal_code = "87"
+        expect(residence).not_to be_valid
+
+        residence.postal_code = "AB-12"
+        expect(residence).not_to be_valid
+
+        residence.postal_code = "AB-1234"
+        expect(residence).not_to be_valid
+
+        residence.postal_code = "A-123"
+        expect(residence).not_to be_valid
+
+        residence.postal_code = "ABC-123"
+        expect(residence).not_to be_valid
+
+        residence.postal_code = "ABC-12"
+        expect(residence).not_to be_valid
+
+        residence.postal_code = "AB-A12"
+        expect(residence).not_to be_valid
+
+        residence.postal_code = "12A-12"
+        expect(residence).not_to be_valid
+
+        residence.postal_code = "123-12"
+        expect(residence).not_to be_valid
+
+        residence.postal_code = "ABC-A1"
+        expect(residence).not_to be_valid
+
+        residence.postal_code = "AB-123\n123"
+        expect(residence).not_to be_valid
+      end
+
       it "is not valid with postal codes not included in settings" do
         residence.postal_code = "12345"
         expect(residence).not_to be_valid

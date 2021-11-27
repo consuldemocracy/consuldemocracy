@@ -110,7 +110,7 @@ class Verification::Residence
         if code_or_range.include?(":")
           Range.new(*code_or_range.split(":").map(&:strip)).include?(postal_code&.strip)
         else
-          postal_code&.strip == code_or_range.strip
+          /\A#{code_or_range.strip}\Z/.match?(postal_code&.strip)
         end
       end
     end
