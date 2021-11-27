@@ -108,7 +108,7 @@ describe "Residence" do
 
     click_button "Verify residence"
 
-    expect(page).to have_content "In order to be verified, you must be registered"
+    expect(page).to have_content "Citizens from this postal code cannot participate"
   end
 
   scenario "Error on census" do

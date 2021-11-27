@@ -142,7 +142,7 @@ describe Verification::Residence do
         residence.postal_code = "28101"
         expect(residence).not_to be_valid
         expect(residence.errors.count).to eq 1
-        expect(residence.errors[:postal_code]).to eq ["In order to be verified, you must be registered."]
+        expect(residence.errors[:postal_code]).to eq ["Citizens from this postal code cannot participate"]
       end
 
       it "allows any postal code when the setting is blank" do
