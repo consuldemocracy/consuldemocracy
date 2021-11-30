@@ -131,15 +131,10 @@ to generate _Gemfile.lock_ before commiting and pushing to the server.
 
 ### Use Puma as a web server
 
-Heroku recommends to use Puma instead of the default web server to improve the responsiveness of your app on [a number of levels](http://blog.scoutapp.com/articles/2017/02/10/which-ruby-app-server-is-right-for-you).
-
-Since v1.0.0, CONSUL uses puma for the development and test environments. To use it in production as well, move the gem outside of the group `group :development, :test` in your _Gemfile_:
-
-```ruby
-gem 'puma'
-```
+Heroku recommends to use Puma to improve the responsiveness of your app on [a number of levels](http://blog.scoutapp.com/articles/2017/02/10/which-ruby-app-server-is-right-for-you).
 
 If you want to allow more concurrency, uncomment the line:
+
 ```ruby
 workers ENV.fetch("WEB_CONCURRENCY") { 2 }
 ```
