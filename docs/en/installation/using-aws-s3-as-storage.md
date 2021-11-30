@@ -84,5 +84,3 @@ config.paperclip_defaults = {
 ```
 
 You will need to restart to apply the changes.
-
-**WARNING:** There is currently a bug which causes an error 500 when creating a budget investment with an image stored on S3. You can find the fix on that pull request. If it isn't merged yet or your fork doesn't include it, you will have to apply the changes to your fork manually.
