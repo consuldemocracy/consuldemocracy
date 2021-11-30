@@ -80,16 +80,16 @@ cp config/database-docker.yml.example config/database.yml
 Then you'll have to build the container with:
 
 ```bash
-docker build -t consul .
+POSTGRES_PASSWORD=password docker-compose build
 ```
 
-Create your app database images:
+Start the database service:
 
 ```bash
 POSTGRES_PASSWORD=password docker-compose up -d database
 ```
 
-Once built you can initialize your development DB and populate it with:
+You can now initialize your development DB and populate it with:
 
 ```
 POSTGRES_PASSWORD=password docker-compose run app rake db:create db:migrate
