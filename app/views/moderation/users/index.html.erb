@@ -17,10 +17,10 @@
           <% if user.hidden? %>
             <%= t("moderation.users.index.hidden") %>
           <% else %>
-          <%= link_to t("moderation.users.index.hide"), hide_in_moderation_screen_moderation_user_path(user, request.query_parameters),
-                      method: :put, class: "button hollow alert" %>
+            <%= link_to t("moderation.users.index.hide"), hide_in_moderation_screen_moderation_user_path(user, request.query_parameters),
+                        method: :put, class: "button hollow alert" %>
+          <% end %>
         </td>
-      <% end %>
       </tr>
     <% end %>
   </tbody>
