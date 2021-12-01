@@ -16,7 +16,7 @@ describe "Admin hidden comments", :admin do
       accept_confirm("Are you sure? Hide author \"#{proposal.author.name}\"") { click_link "Hide author" }
     end
 
-    expect(page).to have_current_path debates_path
+    expect(page).to have_current_path proposals_path
 
     visit admin_hidden_comments_path
 

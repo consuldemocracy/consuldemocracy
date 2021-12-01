@@ -52,7 +52,6 @@ describe Abilities::Moderator do
     let(:ignored_proposal) { create(:proposal, :with_ignored_flag) }
 
     it { should be_able_to(:hide, comment) }
-    it { should be_able_to(:hide_in_moderation_screen, comment) }
     it { should_not be_able_to(:hide, hidden_comment) }
     it { should be_able_to(:hide, own_comment) }
 
@@ -60,12 +59,10 @@ describe Abilities::Moderator do
     it { should_not be_able_to(:moderate, own_comment) }
 
     it { should be_able_to(:hide, debate) }
-    it { should be_able_to(:hide_in_moderation_screen, debate) }
     it { should_not be_able_to(:hide, hidden_debate) }
     it { should_not be_able_to(:hide, own_debate) }
 
     it { should be_able_to(:hide, proposal) }
-    it { should be_able_to(:hide_in_moderation_screen, proposal) }
     it { should be_able_to(:hide, own_proposal) }
     it { should_not be_able_to(:hide, hidden_proposal) }
 

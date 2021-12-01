@@ -25,10 +25,7 @@ describe "Moderate budget investments" do
 
     accept_confirm("Are you sure? Hide author \"#{investment.author.name}\"") { click_link "Hide author" }
 
-    expect(page).to have_current_path(debates_path)
-
-    visit budget_investments_path(budget.id, heading_id: heading.id)
-
+    expect(page).to have_current_path(budget_investments_path(budget))
     expect(page).not_to have_content(investment.title)
   end
 

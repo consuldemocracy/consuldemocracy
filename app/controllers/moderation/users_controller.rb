@@ -6,16 +6,10 @@ class Moderation::UsersController < Moderation::BaseController
   def index
   end
 
-  def hide_in_moderation_screen
-    block_user
-
-    redirect_with_query_params_to({ action: :index }, { notice: I18n.t("moderation.users.notice_hide") })
-  end
-
   def hide
     block_user
 
-    redirect_to debates_path
+    redirect_with_query_params_to index_path_options, { notice: I18n.t("moderation.users.notice_hide") }
   end
 
   private
@@ -27,5 +21,18 @@ class Moderation::UsersController < Moderation::BaseController
     def block_user
       @user.block
       Activity.log(current_user, :block, @user)
+    end
+
+    def index_path_options
+      if request.referer
+        referer_params = Rails.application.routes.recognize_path(request.referer)
+
+        referer_params.except(:id).merge({
+          controller: "/#{referer_params[:controller]}",
+          action: :index
+        })
+      else
+        { action: :index }
+      end
     end
 end
