@@ -26,9 +26,7 @@ ka:
         voted_info_2: "თუმცა, ხმის შეცვლა მიმდინარე ფაზის დასრულებამდე ნებისმიერ დროს შეგიძლიათ."
         zero: თქვენ ჯერ არ მიგიციათ ხმა საინვესტიციო პროექტისთვის.
       reasons_for_not_balloting:
-        not_logged_in: გასაგრძელებლად თქვენ უნდა გაიაროთ %{signin} ან %{signup}.
         not_verified: მხოლოდ გადამოწმებული ანგარიშის მქონე მომხმარებლებს შეუძლიათ საინვესტიციო პროექტებზე ხმის მიცემა; %{verify_account}.
-        organization: ორგანიზაციებს ხმის მიცემა არ შეუძლიათ
         not_selected: მოუნიშნავ საინვესტიციო პროექტებზე ხმის მიცემა შეუძლებელია
         not_enough_money: "თქვენ უკვე გამოყავით ხელმისაწვდომი ბიუჯეტი.<br><small>გახსოვდეთ, შეგიძლიათ %{change_ballot} ნებისმიერ დროს</small>"
         no_ballots_allowed: შერჩევის ფაზა დახურულია
@@ -84,18 +82,12 @@ ka:
           button: ძებნა
           placeholder: საინვესტიციო პროექტების ძიება...
           title: ძებნა
-        search_results:
-          one: " შეიცავდეს საძიებო სიტყვას <strong>%{search_term}</strong>"
-          other: " შეიცავდეს საძიებო სიტყვას <strong>%{search_term}</strong>"
         sidebar:
           my_ballot: ჩემი ბიულეტენი
           voted_info:
             knapsack:
               one: "<strong>თქვენ ხმა მიეცით %{amount_spent} ღირებულების ერთ ინიციატივას</strong>"
               other: "<strong>თქვენ ხმა მიეცით %{count} ინიციატივას ღირებულებით %{amount_spent}</strong>"
-          change_vote_info:
-            knapsack: "თქვენ შეგიძლიათ %{link} ნებისმიერ დროს, სანამ ფაზა არ დაიხურება. საჭირო არ არის მთელი თანხის დახარჯვა."
-            approval: "თქვენ შეგიძლიათ %{link} ნებისმიერ დროს, სანამ ფაზა არ დაიხურება."
           change_vote_link: "ხმის შეცვლა"
           different_heading_assigned: "თქვენ უკვე მიეცით ხმა სხვა რუბრიკაზე: %{heading_link}"
           change_ballot: "თუ გადაწყვეტილებას შეცვლით, შეგიძლიათ %{check_ballot}-ში ხმების გაუქმება და თავიდან დაწყება."

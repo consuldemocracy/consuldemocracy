@@ -126,3 +126,9 @@ nl:
       per_page_code_head_description: "Deze code verschijnt in het <head> -label. Handig voor het invoeren van aangepaste scripts en analyses."
       per_page_code_body: "Code die ingevoegd wordt op elke pagina(<body>)"
       per_page_code_body_description: "Deze code verschijnt in het <body> -label. Dit kan handig zijn voor het invoeren van aangepaste scripts en analyses."
+    uploads:
+      documents:
+        max_amount: "Maximum aantal bestanden"
+        max_amount_description: "Maximum aantal bestanden die kunnen worden toegevoegd aan een voorstel, idee..."
+        max_size: "Maximumgrootte bestand"
+        max_size_description: "Toegestane maximumgrootte voor een geüpload bestand (in Megabytes/MB)"

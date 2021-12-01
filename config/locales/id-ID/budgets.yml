@@ -10,9 +10,7 @@ id:
         voted_info_2: "Tapi kamu dapat mengubah pilihanmu setiap waktu sampai poling di tutup."
         zero: Anda belum memilih suara di setiap proyek investasi.
       reasons_for_not_balloting:
-        not_logged_in: Anda harus %{signin} atau %{signup} untuk melanjutkan.
         not_verified: Hanya memverifikasi pengguna dapat memilih investasi; %{verify_account}.
-        organization: Organisasi tidak diizinkan untuk memilih
         not_selected: Tidak dipilih proyek-proyek investasi tidak dapat didukung
         not_enough_money: "Anda telah ditugaskan anggaran yang tersedia.<br><small>Ingat anda dapat %{change_ballot} di setiap waktu</small>"
         no_ballots_allowed: Fase pemilihan telah ditutup
@@ -67,8 +65,6 @@ id:
           button: Cari
           placeholder: Cari proyek investasi...
           title: Cari
-        search_results:
-          other: " berisi istilah <strong>%{search_term}</strong>"
         sidebar:
           my_ballot: Suara saya
           voted_info:

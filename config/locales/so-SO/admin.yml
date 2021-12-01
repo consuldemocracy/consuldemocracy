@@ -4,11 +4,9 @@ so:
       title: Mamul
     actions:
       actions: Tilaabooyin
-      confirm: Mahubtaa adigu?
       confirm_hide: Xaqiijinta dhexdhexaadinta
       delete: "Titiriid"
       hide: Qarin
-      hide_author: Qoore Qarson
       restore: Socelin
       mark_featured: Soobandhigiid/ Muqaal
       unmark_featured: Muqaal an Calamad lahayn
@@ -165,7 +163,6 @@ so:
           incompatible: Aan la isku hallayn karin
           price: Qime
           author: Qoraa
-        cannot_calculate_winners: Miisaaniyaddu waa inay ku sii jirtaa marxaladda "Mashruucyada Codsiga", "Dib u Eegista Codadka" ama "Miisaaniyadda Dhameystiran" si loo xisaabiyo mashaariicda guusha
         see_results: "Arag Natijada"
       show:
         assigned_admin: Mamulaha lamagcaabay

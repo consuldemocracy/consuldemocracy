@@ -64,11 +64,6 @@ bg:
       users: Управление на потребителите
       user_invites: Изпратете покани
       select_user: Изберете потребител
-    permissions:
-      create_proposals: Създавайте предложения
-      debates: Участвайте в дискусии
-      support_proposals: Предложения за подкрепа
-      vote_proposals: Предложения за гласуване
     print:
       proposals_info: Създайте предложението си на http://url.consul
       proposals_title: "Предложения:"
@@ -89,7 +84,7 @@ bg:
       table_name: Име
       table_phase: Фаза
       table_actions: Действия
-      no_budgets: Няма активни бюджети с участие.
+      no_budgets: Няма активни граждански бюджети.
     budget_investments:
       alert:
         unverified_user: Потребителят не е потвърден

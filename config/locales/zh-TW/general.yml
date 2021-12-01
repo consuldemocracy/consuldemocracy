@@ -11,14 +11,9 @@ zh-TW:
       save_changes_submit: 儲存更改
       recommendations: 推薦
       title: 我的帳戶
-      user_permission_debates: 參與辯論
       user_permission_info: 您可以用您的帳戶來...
-      user_permission_proposal: 創建新建議
-      user_permission_support_proposal: 支持建議
       user_permission_title: 參與
       user_permission_verify: 要執行所有操作，請核實您的帳戶。
-      user_permission_verify_info: "* 僅適用於人口普查的用戶。"
-      user_permission_votes: 參與最終投票
       verified_account: 帳戶已被核實
       verify_my_account: 核實我的帳戶
   application:
@@ -99,8 +94,6 @@ zh-TW:
         button: 搜尋
         placeholder: 搜尋辯論...
         title: 搜尋
-      search_results:
-        other: " 包含術語 <strong>'%{search_term}'</strong>"
       start_debate: 開始一個辯論
       title: 辯論
       section_header:
@@ -182,7 +175,6 @@ zh-TW:
       conditions: 使用條款及條件
       consul: CONSUL 應用程式
       consul_url: https://github.com/consul/consul
-      contact_us: 進入技術支援
       copyright: CONSUL, %{year}
       description: 此入口網頁使用%{consul}，即是%{open_source}。
       open_source: 開源軟件
@@ -323,7 +315,6 @@ zh-TW:
       select_order_long: "您正在查看的建議是依據："
       start_proposal: 創建一個建議
       title: 建議
-      top: 每週熱門
       top_link_proposals: 按類別，獲得支持最多的建議
       section_header:
         icon_alt: 建議圖標
@@ -655,15 +646,12 @@ zh-TW:
   votes:
     agree: 我同意
     anonymous: 太多的匿名投票，要允許投票%{verify_account}。
-    comment_unauthenticated: 您必須%{signin} 或%{signup} 才能投票。
     disagree: 我不同意
     organizations: 組織不允許投票
     supports: 支援
     verified_only: 只有已核實的用戶才能對建議投票；%{verify_account}。
     budget_investments:
-      not_logged_in: 您必須%{signin} 或%{signup} 才能繼續。
       not_verified: 只有已核實的用戶才能對投資項目投票；%{verify_account}。
-      organization: 組織不允許投票
       unfeasible: 不可行的投資項目不能獲得支持
       not_voting_allowed: 投票階段已結束
   welcome:
@@ -692,22 +680,12 @@ zh-TW:
       budget_investments:
         title: 推薦的投資
       slide: "查看%{title}"
-    verification:
-      i_dont_have_an_account: 我沒有帳戶
-      i_have_an_account: 我已經有帳戶
-      question: 您是否已在%{org_name} 中擁有帳戶？
-      title: 核實帳戶
     welcome:
       go_to_index: 查看建議和辯論
       title: 參與
-      user_permission_debates: 參與辯論
       user_permission_info: 您可以用您的帳戶來......
-      user_permission_proposal: 創建新建議
-      user_permission_support_proposal: 支持建議*
       user_permission_verify: "要執行所有操作，請核實您的帳戶。"
-      user_permission_verify_info: "*僅適用於人口普查的用戶。"
       user_permission_verify_my_account: 核實我的帳戶
-      user_permission_votes: 參與最終投票
   invisible_captcha:
     sentence_for_humans: "如果您是人，請忽略此字段"
     timestamp_error_message: "對不起，太快了！ 請重新提交。"

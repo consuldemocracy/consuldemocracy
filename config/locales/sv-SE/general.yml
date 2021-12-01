@@ -1,7 +1,7 @@
 sv:
   account:
     show:
-      change_credentials_link: Ändra mina uppgifter
+      change_credentials_link: Ändra mina inloggningsuppgifter
       erase_account_link: Radera mitt konto
       finish_verification: Slutför verifiering
       notifications: Aviseringar
@@ -11,14 +11,9 @@ sv:
       save_changes_submit: Spara ändringar
       recommendations: Rekommendationer
       title: Mitt konto
-      user_permission_debates: Delta i debatter
       user_permission_info: Med ditt konto kan du...
-      user_permission_proposal: Skapa nya förslag
-      user_permission_support_proposal: Stöd förslag
       user_permission_title: Deltagande
       user_permission_verify: Verifiera ditt konto för att få tillgång till alla funktioner.
-      user_permission_verify_info: "* Endast för användare skrivna i staden."
-      user_permission_votes: Delta i slutomröstningen
       verified_account: Kontot är verifierat
       verify_my_account: Verifiera mitt konto
   application:
@@ -110,9 +105,6 @@ sv:
         button: Sök
         placeholder: Sök debatter...
         title: Sök
-      search_results:
-        one: " som innehåller <strong>'%{search_term}'</strong>"
-        other: " som innehåller <strong>'%{search_term}'</strong>"
       start_debate: Starta en debatt
       title: Debatter
       section_header:
@@ -150,6 +142,7 @@ sv:
         submit_button: Spara ändringar
   errors:
     messages:
+      allowed_file_content_types: "innehållstypen måste vara en av %{types}"
       user_not_found: Användaren hittades inte
       invalid_date_range: "Felaktig datumföljd"
   form:
@@ -213,7 +206,6 @@ sv:
       conditions: användarvillkoren
       consul: Programvaran CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: För teknisk support gå till
       copyright: CONSUL, %{year}
       description: Den här webbplatsen använder %{consul} som är %{open_source}.
       open_source: en plattform med öppen källkod
@@ -377,7 +369,6 @@ sv:
       select_order_long: "Du visar förslag enligt:"
       start_proposal: Skapa ett förslag
       title: Förslag
-      top: Veckans populäraste förslag
       top_link_proposals: Populäraste förslagen från varje kategori
       section_header:
         icon_alt: Förslagsikonen
@@ -410,6 +401,7 @@ sv:
         one: 1 kommentar
         other: "%{count} kommentarer"
       support: Stöd
+      support_label: "Stöd %{proposal}"
       support_title: Stöd förslaget
       supports:
         zero: Inget stöd
@@ -847,16 +839,15 @@ sv:
       retired_help_text: Dashboard är inte tillgängligt för tillbakadragna förslag
   votes:
     agree: Jag håller med
+    agree_label: "Jag säger ja till %{title}"
     anonymous: För många anonyma röster för att godkänna omröstningen %{verify_account}.
-    comment_unauthenticated: Du behöver %{signin} eller %{signup} för att rösta.
     disagree: Jag håller inte med
+    disagree_label: "Jag säger nej till %{title}"
     organizations: Organisationer kan inte rösta
     supports: Stöd
     verified_only: Endast verifierade användare kan rösta på förslag; %{verify_account}.
     budget_investments:
-      not_logged_in: Du behöver %{signin} eller %{signup} för att fortsätta.
       not_verified: Endast verifierade användare kan rösta på budgetförslag; %{verify_account}.
-      organization: Organisationer kan inte rösta
       unfeasible: Det går inte att stödja investeringsprojekt som inte är genomförbara
       not_voting_allowed: Omröstningsfasen är avslutad
       different_heading_assigned:
@@ -892,23 +883,13 @@ sv:
       budget_investments:
         title: Rekommenderade budgetförslag
       slide: "Visa %{title}"
-    verification:
-      i_dont_have_an_account: Jag har inget konto
-      i_have_an_account: Jag har redan ett konto
-      question: Har du redan ett konto på %{org_name}?
-      title: Kontoverifiering
     welcome:
       go_to_index: Inte nu, gå till indexsidan
       start_using_consul: Gå till indexsidan
       title: Delta
-      user_permission_debates: Delta i debatter
       user_permission_info: Med ditt konto kan du...
-      user_permission_proposal: Skapa nya förslag
-      user_permission_support_proposal: Stödja förslag
       user_permission_verify: "Verifiera ditt konto för att få tillgång till alla funktioner."
-      user_permission_verify_info: "* Endast för användare skrivna i staden."
       user_permission_verify_my_account: Verifiera mitt konto
-      user_permission_votes: Delta i slutomröstningar
   invisible_captcha:
     sentence_for_humans: "Ignorera det här fältet om du är en människa"
     timestamp_error_message: "Oj, där gick det lite för snabbt! Var vänlig skicka in igen."

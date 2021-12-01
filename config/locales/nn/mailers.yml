@@ -1,6 +1,1 @@
 nn:
-  mailers:
-    proposal_notification_digest:
-      unsubscribe_account: Min konto
-    direct_message_for_receiver:
-      unsubscribe_account: Min konto

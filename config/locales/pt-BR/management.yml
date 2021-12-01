@@ -64,11 +64,6 @@ pt-BR:
       users: Gerenciamento de usuários
       user_invites: Enviar convites
       select_user: Selecione usuário
-    permissions:
-      create_proposals: Criar propostas
-      debates: Participar em debates
-      support_proposals: Apoiar propostas
-      vote_proposals: Votar propostas
     print:
       proposals_info: Crie sua proposta em http://url.consul
       proposals_title: "Propostas:"

@@ -4,11 +4,9 @@ sl:
       title: Administracija
     actions:
       actions: Dejanja
-      confirm: Si prepričan?
       confirm_hide: Potrdi
       delete: "Izbriši"
       hide: Skrij
-      hide_author: Skrij avtorja
       restore: Obnovi
       mark_featured: Izpostavljeno
       unmark_featured: Odznači izpostavljeno
@@ -144,7 +142,6 @@ sl:
           incompatible: Nekompatibilen
           price: Cena
           author: Avtor
-        cannot_calculate_winners: Proračun mora ostati v fazi "Projekti za glasovanje", "Pregled glasov", ali "Dokončan proračun", da se izračuna zmagovalni projekt
         see_results: "Poglej rezultate"
       show:
         assigned_admin: Dodeljeni skrbnik

@@ -60,7 +60,6 @@ ru:
           winners: Выбраны
       debate:
         empty_questions: Вопросов нет
-        participate: Участвовать в дебатах
       index:
         filter: Фильтровать
         filters:

@@ -2,20 +2,26 @@ tr:
   mailers:
     title: "Açık Yönetim"
     no_reply: "Bu mesaj yanıtları kabul etmeyen bir e-posta adresinden gönderildi."
+    already_confirmed:
+      info: "Hesabınızı onaylamak için size talimatlar göndermemiz doğrultusunda bir istek aldık. Ancak, hesabınız zaten onaylanmıştır, dolayısıyla tekrar onaylanmasına gerek bulunmamaktadır."
+      new_password: "Parolanızı unuttuysanız, aşağıdaki bağlantıdan sıfırlayabilirsiniz:"
+      subject: Hesabınız onaylıdır
     comment:
       hi: Merhaba
       new_comment_by: <strong>%{commenter}</strong> adlı kullanıcıdan yeni yorum
       subject: Birisi sizin %{commentable} paylaşımınız hakkında yorum yaptı
       title: Yeni yorum
     config:
-      manage_email_subscriptions: Bizden daha fazla e-posta almak istemiyorsanız, lütfen ayarlarınızı değiştirin
+      notifications_link: Bildirimler
+      unsubscribe_text: 'E-posta aboneliğinden ayrılmak için %{notification}''a gidin ve "%{notifications}%" seçeneğindeki onayı kaldırın.'
     email_verification:
       click_here_to_verify: bu bağlantı
       instructions_2: Bu e-posta ile hesabınız <b>%{document_type} %{document_number}</b> kullanılarak doğrulanacaktır. Bu bilgiler size ait değilse, lütfen linke tıklamadan bu mesajı göz ardı edin.
       instructions: Hesap doğrulama işlemini tamamlamak için linke tıklayın %{verification_link}.
       subject: E-postanızı onaylayın
       thanks: Çok teşekkür ederiz.
-      title: Aşağıdaki bağlantıyı kullanarak hesabınızı onaylayın
+      title: "Aşağıdaki bağlantıyı kullanarak hesabınızı onaylayın"
+      text: "Aşağıdaki bağlantıyı kullanarak hesabınızı onaylayınız."
     reply:
       hi: Merhaba
       new_reply_by: Yorumunuza <strong>%{commenter}</strong> kullanıcısı tarafından yeni bir yanıt verildi
@@ -26,17 +32,16 @@ tr:
       title: "%{org_name}'daki öneri bildirimleri"
       share: Öneriyi paylaş
       comment: Öneriye yorum yap
-      unsubscribe: "Eğer öneriyle ilgili bildirim almak istemiyorsanız, %{account}'u ziyaret edin ve 'Öneri bildirimlerinin bir özetini al' seçeneğindeki onay işaretini kaldırın."
-      unsubscribe_account: Hesabım
+      unsubscribe_text: "Öneri bildirimi almak istemiyorsanız %{notifications}'a gidin ve \"Öneri bildirimlerinin özetini al\" seçeneğindeki onayı kaldırın."
       unfollow: "Bildirim almaya son vermek için öneri sayfasını ziyaret edip takipten çıkarın."
     direct_message_for_receiver:
       subject: "Yeni bir özel mesaj aldınız"
       reply: '%{sender}''a yanıt ver'
-      unsubscribe: "Eğer doğrudan mesaj almak istemiyorsanız, %{account}'u ziyaret edin ve 'Doğrudan mesajlar hakkında e-posta al' seçeneğinin işaretini kaldırın."
-      unsubscribe_account: Hesabım
+      unsubscribe_text: "Doğrudan mesaj almak istemiyorsanız %{notifications}'a gidin ve \"Doğrudan mesajlarla ilgili e-posta al\" seçeneğindeki onayı kaldırın."
     direct_message_for_sender:
       subject: "Yeni bir özel mesaj gönderdiniz"
-      title: "Bu içerikle <strong>%{receiver}</strong>'a bir yeni özel mesaj gönderdiniz:"
+      title: "Yeni bir özel mesaj gönderdiniz"
+      text: "Bu içerikle <strong>%{receiver}</strong> 'a bir yeni mesaj gönderdiniz:"
     user_invite:
       ignore: "Eğer bu daveti talep etmemişseniz endişelenmeyin, bu e-postayı görmezden gelebilirsiniz."
       text: "%{org}'a katılım başvurunuz için teşekkür ederiz! Saniyeler içinde katılmaya başlayabilirsiniz, aşağıdaki formu doldurmanız yeterlidir:"
@@ -54,6 +59,7 @@ tr:
       sincerely: "İçtenlikle,"
       share: "Projenizi paylaşın"
     budget_investment_unfeasible:
+      title: "Yatırım projeniz uygulanamaz olarak işaretlenmiştir"
       hi: "Değerli kullanıcı,"
       new: "Tüm bunlar için, sizi bu sürecin koşullarına uygun olan <strong>yeni bir yatırım</strong> hazırlamaya davet ediyoruz. Bunun için bağlantıyı takip ediniz: %{url}."
       new_href: "yeni yatırım projesi"
@@ -62,6 +68,7 @@ tr:
       subject: "Sizin yatırım projeniz '%{code}' uygulanamaz olarak işaretlendi"
     budget_investment_selected:
       subject: "Yatırım projeniz '%{code}' seçildi"
+      title: "Yatırım projeniz seçilmiştir"
       hi: "Değerli kullanıcı,"
       share: "Yatırım projenizi sosyal paylaşım sitelerinde paylaşarak, oyları almaya başlayın. Fikirlerinizi gerçeğe dönüştürmek için paylaşım çok önemli."
       share_button: "Yatırım projenizi paylaşın"
@@ -69,6 +76,7 @@ tr:
       sincerely: "İçtenlikle"
     budget_investment_unselected:
       subject: "Sizin yatırım projeniz '%{code}' seçilmedi"
+      title: "Yatırım projeniz seçilmemiştir"
       hi: "Sevgili kullanıcı,"
       thanks: "Katıldığınız için tekrar teşekkür ederiz."
       sincerely: "İçtenlikle"

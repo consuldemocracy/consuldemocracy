@@ -5,15 +5,13 @@ bs:
       hi: Pozdrav
       subject: Neko je dao komentar na vaš %{commentable}
       title: Novi komentar
-    config:
-      manage_email_subscriptions: Kako bi prestali dobijati ove emailove, promijenite svoje postavke u
     email_verification:
       click_here_to_verify: ovaj link
       instructions_2: Ovaj email će potvrditi vaš nalog sa <b>%{document_type}%{document_number}</b>. Ako to nije vaše, nemojte kliknuti na prethodni link i zanemarite ovaj email.
       instructions: Kako bi završili sa potvrdom vašeg korisničkog naloga, morate kliknuti na %{verification_link}.
       subject: Potvrdite vaš email
       thanks: Hvala puno.
-      title: Potvrdite nalog ovim linkom
+      title: "Potvrdite nalog ovim linkom"
     reply:
       hi: Pozdrav
       subject: Neko je odgovorio na vaš komentar
@@ -23,16 +21,13 @@ bs:
       title: "Obavijesti o prijedlozima u %{org_name}"
       share: Podijeli prijedlog
       comment: Prijedlog komentara
-      unsubscribe: "Ako ne želite obavijesti o prijedlogu, idite na %{account} i odznačite \"Šaljite mi sažetke obavijesti o prijedlozima\"."
-      unsubscribe_account: Moj nalog
     direct_message_for_receiver:
       subject: "Dobili ste novu privatnu poruku"
       reply: Odgovori %{sender}
-      unsubscribe: "Ako ne želite direktne poruke, idite na %{account} i odznačite \"Šaljite mi emailove u vezi direktnih poruka\"."
-      unsubscribe_account: Moj nalog
     direct_message_for_sender:
       subject: "Poslali ste novu privatnu poruku"
-      title: "Poslali ste novu privatnu poruku <strong>%{receiver}</strong> sljedećeg sadržaja:"
+      title: "Poslali ste novu privatnu poruku"
+      text: "Poslali ste novu privatnu poruku <strong>%{receiver}</strong> sljedećeg sadržaja:"
     user_invite:
       ignore: "Ako niste tražili ovaj poziv, ne brinite, možete zanemariti ovaj email."
       text: "Hvala što ste se prijavili da se pridružite %{org}! Začas ćete početi učestvovati, samo ispunite formular dole:"

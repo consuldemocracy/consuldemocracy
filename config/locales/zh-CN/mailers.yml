@@ -6,15 +6,13 @@ zh-CN:
       new_comment_by: 来自<strong>%{commenter}</strong>的新评论
       subject: 有人对您的%{commentable} 做了评论
       title: 新评论
-    config:
-      manage_email_subscriptions: 要停止接收这些电子邮件请更改您的设置于
     email_verification:
       click_here_to_verify: 此链接
       instructions_2: 此电子邮件将用<b>%{document_type} %{document_number}</b>来验证您的账户。如果这些不属于您，请不要点击上个链接并忽略此电子邮件。
       instructions: 要完成您的用户账户验证，您必须点击%{verification_link}。
       subject: 确认您的电子邮件
       thanks: 非常感谢。
-      title: 使用以下链接来确认您的账户
+      title: "使用以下链接来确认您的账户"
     reply:
       hi: 您好
       new_reply_by: <strong>%{commenter}</strong> 对您评论有新回复
@@ -25,16 +23,13 @@ zh-CN:
       title: "在%{org_name} 中的提议通知"
       share: 分享提议
       comment: 评论提议
-      unsubscribe: "如果您不希望收到提议通知，请访问%{account} 并取消选中‘接收提议通知的总结’。"
-      unsubscribe_account: 我的帐号
     direct_message_for_receiver:
       subject: "您收到新的私人消息"
       reply: 回复 %{sender}
-      unsubscribe: "如果您不希望接收直接消息，请访问%{account} 并取消选中‘接收关于直接消息的电子邮件’。"
-      unsubscribe_account: 我的帐号
     direct_message_for_sender:
       subject: "您已发送一条新的私人消息"
-      title: "您已发送如下内容的新的私人消息给<strong>%{receiver}</strong>："
+      title: "您已发送一条新的私人消息"
+      text: "您已发送如下内容的新的私人消息给<strong>%{receiver}</strong>："
     user_invite:
       ignore: "如果您没有请求此邀请，请不要担心，您可以忽略此电子邮件。"
       text: "感谢您申请加入%{org}！在几秒钟后，您就可以开始参与，您只需填写以下表格："

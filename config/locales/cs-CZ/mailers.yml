@@ -2,20 +2,25 @@ cs:
   mailers:
     title: "Otevřený úřad"
     no_reply: "Tato zpráva byla odeslána z e-mailové adresy, která nepřijímá odpovědi."
+    already_confirmed:
+      info: "Obdrželi jsme žádost o zaslání pokynů k potvrzení vašeho účtu. Váš účet je však již potvrzen, takže to není třeba dělat znovu."
+      new_password: "Pokud jste zapomněli své heslo, můžete ho obnovit na následujícím odkazu:"
+      subject: Váš účet je již potvrzen
     comment:
       hi: Dobrý den
       new_comment_by: K dispozici je nový komentář od <strong>%{commenter}</strong>
       subject: Někdo komentoval váš příspěvek %{commentable}
       title: Nový komentář
     config:
-      manage_email_subscriptions: Chcete-li tyto e-maily přestat přijímat, změňte nastavení v
+      notifications_link: Upozornění
+      unsubscribe_text: 'Chcete-li se z odběru těchto e-mailů odhlásit, navštivte stránku %{notifications} a zrušte zaškrtnutí políčka "%{notification}".'
     email_verification:
       click_here_to_verify: tento odkaz
       instructions_2: Tento e-mail ověří váš účet pomocí <b>%{document_type} %{document_number} </b>. Pokud Vám email nepatří, prosím, neklikejte na předchozí odkaz a ignorujte tento e-mail.
       instructions: K dokončení ověření uživatelského účtu musíte kliknout na %{verification_link}.
       subject: Potvrďte svoji emailovou adresu
       thanks: Mockrát děkujeme.
-      title: Potvrďte svůj účet pomocí následujícího odkazu
+      title: "Potvrďte svůj účet pomocí následujícího odkazu"
     reply:
       hi: Dobrý den
       new_reply_by: Nová odpověď od <strong>%{commenter}</strong> na Váš komentář
@@ -26,17 +31,16 @@ cs:
       title: "Oznámení o návrhu v %{org_name}"
       share: Sdílet návrh
       comment: Připomínky k návrhu
-      unsubscribe: "Pokud nechcete dostávat oznámení o návrhu, přejděte na adresu %{account} a zrušte zaškrtnutí políčka \"Příjem oznámení o návrzích\"."
-      unsubscribe_account: Můj účet
+      unsubscribe_text: "Pokud nechcete dostávat žádná oznámení o návrzích, navštivte stránku %{notifications} a zrušte zaškrtnutí políčka \"Přijímání souhrnu oznámení o návrzích\"."
       unfollow: "Navštivte tento návrh a zrušte jeho sledování, abyste přestali dostávat oznámení."
     direct_message_for_receiver:
       subject: "Obdrželi jste novou soukromou zprávu"
       reply: Odpovědět uživateli %{sender}
-      unsubscribe: "Pokud nechcete přijímat přímé zprávy, navštivte stránku %{account} a zrušte zaškrtnutí políčka \"Příjem e-mailů o přímých zprávách\"."
-      unsubscribe_account: Můj účet
+      unsubscribe_text: "Pokud nechcete dostávat přímé zprávy, navštivte %{notifications} a zrušte zaškrtnutí políčka \"Dostávat e-maily o přímých zprávách\"."
     direct_message_for_sender:
       subject: "Odeslali jste novou soukromou zprávu"
-      title: "Do <strong>%{receiver} </strong> jste odeslali novou soukromou zprávu s obsahem:"
+      title: "Odeslali jste novou soukromou zprávu"
+      text: "Do <strong>%{receiver} </strong> jste odeslali novou soukromou zprávu s obsahem:"
     user_invite:
       ignore: "Pokud jste o tuto pozvánku nepožádali, nemusíte se obávat a můžete tento e-mail ignorovat."
       text: "Děkujeme za žádost o připojení k %{org}! Za pár vteřin se můžete zapojit, stačí vyplnit formulář níže:"

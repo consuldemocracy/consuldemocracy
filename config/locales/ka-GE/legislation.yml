@@ -54,7 +54,6 @@ ka:
           winners: შერჩეული
       debate:
         empty_questions: შეკითხვები არ მოიძებნა
-        participate: დებატებში მონაწილეობა
       index:
         filter: ფილტრი
         filters:

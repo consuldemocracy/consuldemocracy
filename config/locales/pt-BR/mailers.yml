@@ -7,15 +7,13 @@ pt-BR:
       new_comment_by: Há um novo comentário de <strong>%{commenter}</strong>
       subject: Alguém comentou sobre seu %{commentable}
       title: Novo comentário
-    config:
-      manage_email_subscriptions: Para parar de receber esses e-mails altere suas configurações no
     email_verification:
       click_here_to_verify: este link
       instructions_2: Este email visa verificar sua conta com <b>%{document_type} %{document_number}</b>. Se isto não lhe diz respeito, não clique no link anterior e ignore este email.
       instructions: Para completar a verificação da sua conta de usuário, você deve clicar em %{verification_link}.
       subject: Confirme seu email
       thanks: Muito Obrigado.
-      title: Confirme sua conta usando o seguinte link
+      title: "Confirme sua conta usando o seguinte link"
     reply:
       hi: Oi
       new_reply_by: Há uma nova resposta de <strong>%{commenter}</strong> ao seu comentário sobre
@@ -26,17 +24,14 @@ pt-BR:
       title: "Notificações de proposta em %{org_name}"
       share: Compartilhar proposta
       comment: Comentar proposta
-      unsubscribe: "Se você não quiser receber uma notificação de proposta, acesse %{account} e desmarque \"Receber um resumo das notificações da proposta\"."
-      unsubscribe_account: Minha conta
       unfollow: "Reveja esta proposta e deixe de segui-la para não receber mais notificações."
     direct_message_for_receiver:
       subject: "Você recebeu uma nova mensagem privada"
       reply: Responder para %{sender}
-      unsubscribe: "Se você não quiser receber mensagens diretas, acesse %{account} e desmarque \"Receber e-mails sobre mensagens diretas\"."
-      unsubscribe_account: Minha conta
     direct_message_for_sender:
       subject: "Você recebeu uma nova mensagem privada"
-      title: "Você enviou uma nova mensagem particular para <strong>%{receiver}</strong> com o conteúdo:"
+      title: "Você recebeu uma nova mensagem privada"
+      text: "Você enviou uma nova mensagem particular para <strong>%{receiver}</strong> com o conteúdo:"
     user_invite:
       ignore: "Se você não solicitou este convite, não se preocupe, você pode ignorar este e-mail."
       text: "Obrigado por se inscrever para participar do %{org}! Em segundos você pode começar a participar das decisões de sua cidade, basta preencher o formulário abaixo:"

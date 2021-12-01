@@ -54,7 +54,6 @@ gl:
           winners: Seleccionadas
       debate:
         empty_questions: Non hai ningunha pregunta
-        participate: Realiza as túas achegas ao debate previo participando nos temas seguintes
       index:
         filter: Filtro
         filters:

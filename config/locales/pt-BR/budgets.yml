@@ -29,9 +29,7 @@ pt-BR:
         voted_info_2: "Mas você pode alterar o seu voto a qualquer momento antes da conclusão desta fase."
         zero: Você não votou em um projeto de investimento.
       reasons_for_not_balloting:
-        not_logged_in: Você precisa %{signin} ou %{signup} para continuar.
         not_verified: Somente usuários verificados podem votar em investimentos; %{verify_account}.
-        organization: Organizações não tem permissão de voto
         not_selected: Projetos de investimento não selecionados não podem ser apoiados
         not_enough_money: "Você já atribuiu o orçamento disponível.<br><small>Lembre-se que pode %{change_ballot} a qualquer momento</small>"
         no_ballots_allowed: A fase de seleção está fechada
@@ -87,9 +85,6 @@ pt-BR:
           button: Buscar
           placeholder: Buscar projetos de investimento...
           title: Buscar
-        search_results:
-          one: " contendo o termo <strong>'%{search_term}'</strong>"
-          other: " contendo o termo <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Minha cédula
           voted_info:
@@ -99,9 +94,6 @@ pt-BR:
             approval:
               one: "<strong>Você votou em uma proposta</strong>"
               other: "<strong>Você votou em %{count} propostas</strong>"
-          change_vote_info:
-            knapsack: "Você pode %{link} a qualquer momento até o encerramento desta fase. Não há necessidade de gastar todo o dinheiro disponível."
-            approval: "Você pode %{link} a qualquer momento até o final desta fase."
           change_vote_link: "mudar seu voto"
           different_heading_assigned: "Você tem votos ativos num título diferente: %{heading_link}"
           change_ballot: "Se você mudar de ideia, poderá remover seus votos em %{check_ballot} e começar de novo."

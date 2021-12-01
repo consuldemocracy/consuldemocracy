@@ -1,9 +1,10 @@
 nl:
   moderation:
+    actions:
+      confirm_action: "Weet je het zeker?%{action}"
     comments:
       index:
         block_authors: Block authors
-        confirm: Bent u zeker?
         filter: Filter
         filters:
           all: All
@@ -24,7 +25,6 @@ nl:
     debates:
       index:
         block_authors: Blokkeer auteurs
-        confirm: Bent u zeker?
         filter: Filter
         filters:
           all: All
@@ -51,7 +51,6 @@ nl:
     proposals:
       index:
         block_authors: Auteurs blokkeren
-        confirm: Bent u zeker?
         filter: Filter
         filters:
           all: All
@@ -69,7 +68,6 @@ nl:
     budget_investments:
       index:
         block_authors: Blokkeer auteurs
-        confirm: Bent u zeker?
         filter: Filter
         filters:
           all: All
@@ -87,7 +85,6 @@ nl:
     proposal_notifications:
       index:
         block_authors: Blokkeer auteurs
-        confirm: Bent u zeker?
         filter: Filter
         filters:
           all: All
@@ -104,8 +101,11 @@ nl:
         title: Notificaties
     users:
       index:
-        hidden: Geblokkeerd
+        block: Blokkeer
+        confirm_block: "Weet je het zeker? Hierdoor is gebruiker \"%{name}\" en al hun inhoud niet meer zichtbaar."
+        confirm_hide: "Weet je het zeker? Hierdoor wordt gebruiker \"%{name}\" niet meer zichtbaar, maar de inhoud wel."
         hide: Block
         search_placeholder: email or name of user
         title: Blokkeer deelnemers
+      notice_block: De gebruiker is geblokkeerd. Alle inhoud die door deze gebruiker is gemaakt, is niet meer zichtbaar.
       notice_hide: De gebruiker is geblokkeerd. Debatten en reacties van deze gebruiker zijn verborgen.

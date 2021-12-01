@@ -30,6 +30,11 @@ cs:
         few: "milníky"
         many: "milníků"
         other: "milníky"
+      milestone/status:
+        one: "Stav milníku"
+        few: "Stavy milníku"
+        many: "Stavů milníků"
+        other: "Stavy milníku"
       progress_bar:
         one: "Ukazatel průběhu"
         few: "Ukazatele průběhu"
@@ -245,6 +250,7 @@ cs:
         voting_style: "Konečný styl hlasování"
         voting_style_knapsack: "Kombinatorická optimalizace"
         voting_style_approval: "Schválení"
+        hide_money: "Skrýt částku pro tento rozpočet"
       budget/translation:
         main_link_text: "Text na odkazu"
         main_link_url: "Odkaz vede na (přidat odkaz)"

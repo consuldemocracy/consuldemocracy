@@ -11,14 +11,9 @@ pt-BR:
       save_changes_submit: Salvar alterações
       recommendations: Recomendações
       title: Minha conta
-      user_permission_debates: Participar nos debates
       user_permission_info: Com a sua conta você pode...
-      user_permission_proposal: Criar novas propostas
-      user_permission_support_proposal: Apoiar propostas
       user_permission_title: Participação
       user_permission_verify: Para realizar todas as ações verifique sua conta.
-      user_permission_verify_info: "* Somente para usuários no Censo. "
-      user_permission_votes: Participar na votação final
       verified_account: Conta verificada
       verify_my_account: Verificar minha conta
   application:
@@ -107,9 +102,6 @@ pt-BR:
         button: Buscar
         placeholder: Buscar debates...
         title: Buscar
-      search_results:
-        one: " contendo o termo <strong>'%{search_term}'</strong>"
-        other: " contendo o termo <strong>'%{search_term}'</strong>"
       start_debate: Iniciar um debate
       title: Debates
       section_header:
@@ -210,7 +202,6 @@ pt-BR:
       conditions: Termos e condições de uso
       consul: Aplicativo Consul
       consul_url: https://github.com/consul/consul
-      contact_us: Para suporte técnico entre em
       copyright: Consul, %{year}
       description: Este portal usa o %{consul} que é %{open_source}. De Madrid para o mundo.
       open_source: programa de código aberto
@@ -374,7 +365,6 @@ pt-BR:
       select_order_long: "Você está vendo propostas de acordo para:"
       start_proposal: Criar proposta
       title: Propostas
-      top: Top semanal
       top_link_proposals: As propostas mais apoiadas por categoria
       section_header:
         icon_alt: Ícone de propostas
@@ -843,15 +833,12 @@ pt-BR:
   votes:
     agree: Eu concordo
     anonymous: Excesso de votos anônimos para admitir voto %{verify_account}
-    comment_unauthenticated: Você precisa %{signin} ou %{signup} para votar.
     disagree: Eu discordo
     organizations: Organizações não tem permissão de voto
     supports: Apoios
     verified_only: Somente usuários verificados podem votar em propostas;  %{verify_account}.
     budget_investments:
-      not_logged_in: Você precisa %{signin} ou %{signup} para continuar.
       not_verified: Somente usuários verificados podem votar em projetos de investimento; %{verify_account}.
-      organization: Organizações não tem permissão de voto
       unfeasible: Projetos de investimento inviáveis não podem ser apoiados
       not_voting_allowed: A fase de votação está fechada
       different_heading_assigned:
@@ -887,23 +874,13 @@ pt-BR:
       budget_investments:
         title: Investimentos recomendados
       slide: "Ver %{title}"
-    verification:
-      i_dont_have_an_account: Não possuo uma conta
-      i_have_an_account: Já possuo uma conta
-      question: Você já possui uma conta em %{org_name}?
-      title: Verificação de conta
     welcome:
       go_to_index: Veja propostas e debates
       start_using_consul: Ir para o índice
       title: Participar
-      user_permission_debates: Participar nos debates
       user_permission_info: Com sua conta, você pode...
-      user_permission_proposal: Criar novas propostas
-      user_permission_support_proposal: Apoiar propostas*
       user_permission_verify: "Para realizar todas as ações verifique sua conta."
-      user_permission_verify_info: "* Somente usuários no Censo de Madrid"
       user_permission_verify_my_account: Verificar minha conta
-      user_permission_votes: Participar na votação final
   invisible_captcha:
     sentence_for_humans: "Se você é humano, ignore este campo"
     timestamp_error_message: "Isto foi muito rápido. Por favor, reenvie o formulário."

@@ -44,7 +44,6 @@ sl:
           winners: Označeno
       debate:
         empty_questions: Ni vprašanj
-        participate: Sodeluj v razpravi
       index:
         filter: Filtriraj
         filters:

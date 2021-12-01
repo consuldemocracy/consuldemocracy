@@ -57,7 +57,6 @@ hr:
           winners: Odabrano
       debate:
         empty_questions: Ne postoje pitanja
-        participate: Sudjelujte u raspravi
       index:
         filter: Filter
         filters:

@@ -4,12 +4,11 @@ tr:
       title: Yönetim
     actions:
       actions: Eylemler
-      confirm: Emin misiniz?
+      block_author: "Yazarı engelle"
       confirm_delete: "Emin misiniz? Bu işlem \"%{name}\" silecek ve geri alınamaz."
       confirm_hide: Moderasyonu onayla
       delete: "Sil"
       hide: Gizle
-      hide_author: Yazarı gizle
       restore: Geri getir
       mark_featured: Öne Çıkan
       unmark_featured: Öne çıkan işaretini kaldır
@@ -124,6 +123,8 @@ tr:
         info:
           budget_settings: "Genel katılımcı bütçe ayarları"
           staff_settings: "Bütçeye atanan yönetici ve bilirkişiler"
+        hide_money: "Tutarı gizle"
+        hide_money_help_text: "Bu seçeneğin işaretlenmesi halinde, süreç boyunca para tutarını gösteren tüm alanlar gizlenecektir."
       destroy:
         success_notice: Bütçe başarıyla silindi
         unable_notice: Yatırımlarla ilişkili olan bir Bütçeyi yok edemezsiniz
@@ -165,7 +166,6 @@ tr:
       index:
         new_button: "Yeni grup ekle"
     budget_headings:
-      no_headings: "Hiç başlık yok."
       create:
         notice: "Başlık başarıyla oluşturuldu!"
       update:
@@ -191,6 +191,7 @@ tr:
     budget_phases:
       edit:
         title: "Aşama düzenle"
+        dates_help_text: "Yalnızca bilgi amaçlıdır"
         description_help_text: Aşama etkinken bu metin başlıkta görünecektir
         duration: "Aşama süresi"
         duration_description: "Bu aşamanın aktif olacağı süre."
@@ -254,7 +255,6 @@ tr:
           incompatible: Uyumsuz
           price: Fiyat
           author: Yazar
-        cannot_calculate_winners: Kazananın projelerin hesaplanması için bütçenin "Oylama Projeleri", "Oyların İncelenmesi" veya "Tamamlanan Bütçe" aşamasında kalması gerekiyor
         see_results: "Sonuçları gör"
         milestone_tags_filter_all: "Tüm kilometre taşı etiketleri"
       show:

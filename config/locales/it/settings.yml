@@ -1,53 +1,229 @@
 it:
   settings:
     comments_body_max_length: "Lunghezza massima dei commenti"
+    comments_body_max_length_description: "In numero di caratteri"
     official_level_1_name: "Funzionario pubblico di livello 1"
+    official_level_1_name_description: "Tag che apparirà sugli utenti contrassegnati come posizione ufficiale di Livello 1"
     official_level_2_name: "Funzionario pubblico di livello 2"
+    official_level_2_name_description: "Tag che apparirà sugli utenti contrassegnati come posizione ufficiale di Livello 2"
     official_level_3_name: "Funzionario pubblico di livello 3"
+    official_level_3_name_description: "Tag che apparirà sugli utenti contrassegnati come posizione ufficiale di Livello 3"
     official_level_4_name: "Funzionario pubblico di livello 4"
+    official_level_4_name_description: "Tag che apparirà sugli utenti contrassegnati come posizione ufficiale di Livello 4"
     official_level_5_name: "Funzionario pubblico di livello 5"
+    official_level_5_name_description: "Tag che apparirà sugli utenti contrassegnati come posizione ufficiale di Livello 5"
     max_ratio_anon_votes_on_debates: "Percentuale massima di voti anonimi per ogni dibattito"
+    max_ratio_anon_votes_on_debates_description: "I voti anonimi sono da utenti registrati con un profilo non verificato"
     max_votes_for_proposal_edit: "Numeri di voti necessari per non poter più modificare la proposta"
+    max_votes_for_proposal_edit_description: "Da questo numero di supporti, l'autore di una Proposta non può più modificarla"
     max_votes_for_debate_edit: "Numeri di voti necessari per non poter più modificare il dibattito"
+    max_votes_for_debate_edit_description: "Da questo numero di voti, l'autore di un Dibattito non può più modificarlo"
     proposal_code_prefix: "Prefisso per i codici di proposta"
+    proposal_code_prefix_description: "Questo prefisso apparirà nelle Proposte prima della data di creazione e del suo ID"
+    featured_proposals_number: "Numero di proposte in evidenza"
+    featured_proposals_number_description: "Numero di proposte in evidenza che saranno mostrate se la funzionalità Proposte in evidenza è attiva"
     votes_for_proposal_success: "Numero di voti necessari per approvare una proposta"
+    votes_for_proposal_success_description: "Quando una proposta raggiunge questo numero di supporti, non potrà più ricevere altri supporti e sarà considerata riuscita"
     months_to_archive_proposals: "Mesi per archiviare una proposta"
+    months_to_archive_proposals_description: "Dopo questo numero di mesi, le Proposte saranno archiviate e non potranno più ricevere supporti"
     email_domain_for_officials: "Dominio di posta elettronica per funzionari pubblici"
+    email_domain_for_officials_description: "Tutti gli utenti registrati con questo dominio avranno il proprio profilo verificato alla registrazione"
     twitter_handle: "Utente Twitter"
+    twitter_handle_description: "Se compilato apparirà nel piè di pagina"
     twitter_hashtag: "Hashtag per Twitter"
+    twitter_hashtag_description: "Hashtag che comparirà condividendo contenuti su Twitter"
     facebook_handle: "Utente Facebook"
+    facebook_handle_description: "Se compilato apparirà nel piè di pagina"
     youtube_handle: "Utente YouTube"
+    youtube_handle_description: "Se compilato apparirà nel piè di pagina"
     telegram_handle: "Utente Telegram"
+    telegram_handle_description: "Se compilato apparirà nel piè di pagina"
     instagram_handle: "Utente Instagram"
+    instagram_handle_description: "Se compilato apparirà nel piè di pagina"
     url: "URL principale"
+    url_description: "URL principale del tuo sito web"
     org_name: "Organizzazione"
+    org_name_description: "Questo nome apparirà sull'oggetto dei mittenti, pagine di supporto..."
+    related_content_score_threshold: "Soglia del punteggio del contenuto correlato"
+    related_content_score_threshold_description: "Secondo la valutazione dei voti in un contenuto correlato, nasconde i contenuti che gli utenti contrassegnano come non correlati"
+    hot_score_period_in_days: "Periodo (giorni) usato dal filtro 'più attivi'"
+    hot_score_period_in_days_description: "Il filtro 'più attivi' usato in diverse sezioni sarà basato sui voti durante gli ultimi X giorni"
     mailer_from_name: "Nome mittente email"
+    mailer_from_name_description: "Questo nome apparirà come nome del mittente nelle email inviate dall'applicazione"
     mailer_from_address: "Indirizzo email mittente"
+    mailer_from_address_description: "Questo indirizzo email apparirà nelle email inviate dall'applicazione"
+    meta_title: "Titolo del sito (SEO)"
+    meta_title_description: "Titolo per il sito <title>, usato per migliorare SEO"
     meta_description: "Descrizione del sito (SEO)"
+    meta_description_description: 'Descrizione del sito <meta name="description">, usata per migliorare SEO'
     meta_keywords: "Parole chiave (SEO)"
+    meta_keywords_description: 'Parole chiave <meta name="keywords">, usate per migliorare SEO'
     min_age_to_participate: Età minima necessaria per partecipare
+    min_age_to_participate_description: "Gli utenti oltre quest'età possono partecipare a tutti i processi in cui è necessario un profilo utente verificato"
+    postal_codes: "Codici Postali"
+    postal_codes_description: "Un elenco separato da virgole di codici postali validi; puoi anche introdurre diversi intervalli con i due punti. Esempio: 00001:00010,00024,AB3 45FG,00031:00035 consentirà i codici postali tra 00001 e 00010, il codice postale 00024, il codice postale AB3 45FG e i codici postali tra 00031 e 00035. Se lo lasci vuoto, tutti i codici postali saranno validi."
     proposals:
+      successful_proposal_id: Proposta riuscita
+      successful_proposal_id_description: Questa proposta è usata come un riferimento a una proposta riuscita nel numero di supporti e sarà mostrata nel grafico del pannello di controllo.
       poll_short_title: Votazioni
+      poll_short_title_description: Descrizione breve della funzionalità del sondaggio. Consente agli utenti di creare sondaggi su una proposta
       poll_description: Descrizione sondaggi
+      poll_description_description: Descrizione dettagliata della funzionalità di sondaggio
+      poll_link: Link di informazioni aggiuntive
+      poll_link_description: Aggiungi un link di informazioni aggiuntive alla funzionalità di sondaggio
       email_short_title: Email
+      email_short_title_description: 'Descrizione breve della funzionalità email. Consente agli utenti di inviare un''email per promuovere la propria proposta. Puoi trovare tutti i contenuti di quest''email in "/app/views/dashboard/mailer/forward.html.erb"'
+      email_description: Descrizione email
+      email_description_description: Descrizione dettagliata della funzionalità email
+      poster_short_title: Poster
+      poster_short_title_description: 'Descrizione breve della funzionalità poster. Consente agli utenti di scaricare un poster in formato PDF per promuovere la propria proposta. Puoi trovare tutti i contenuti di questo poster a "/app/views/dashboard/poster/index.pdf.erb"'
+      poster_description: Descrizione del poster
+      poster_description_description: Descrizione dettagliata della funzionalità poster
+    analytics_url: "URL delle Analitiche"
+    proposal_notification_minimum_interval_in_days: "Intervallo minimo (in giorni) per gli autori di proposte per inviare le notifiche della nuova proposta"
+    proposal_notification_minimum_interval_in_days_description: "Il numero di giorni per cui l'utente può inviare una notifica per tutti i seguaci della sua proposta"
+    direct_message_max_per_day: "Numero massimo di Messaggi Diretti per giorno"
+    direct_message_max_per_day_description: "Numero massimo di messaggi diretti che un utente può inviare al giorno"
     feature:
       twitter_login: "Accesso con Twitter"
+      twitter_login_description: "Consenti agli utenti di registrarsi col proprio profilo di Twitter"
       facebook_login: "Accesso con Facebook"
+      facebook_login_description: "Consenti agli utenti di registrarsi col proprio profilo di Facebook"
       google_login: "Accesso con Google"
+      google_login_description: "Consenti agli utenti di registrarsi col proprio Profilo di Google"
+      wordpress_login: "Accesso di Wordpress"
+      wordpress_login_description: "Consenti agli utenti di registrarsi col proprio Profilo di Wordpress"
+      featured_proposals: "Proposte in evidenza"
+      featured_proposals_description: "Mostra le proposte in evidenza sulla pagina delle proposte dell'indice"
       signature_sheets: "Fogli firma"
+      signature_sheets_description: "Consente di aggiungere dal pannello d'Amministrazione le firme raccolte sul sito alle Proposte e i progetti d'investimento dei Budget Partecipativi"
       user:
         recommendations: "Raccomandazioni"
+        recommendations_description: "Mostra i consigli degli utenti sulla pagina home in base ai tag dei seguenti elementi"
+        skip_verification: "Salta la verifica dell'utente"
+        skip_verification_description: "Questo disabiliterà la verifica degli utenti e tutti gli utenti registrati potranno partecipare a tutti i processi"
+        recommendations_on_debates: "Consigli sui dibattiti"
+        recommendations_on_debates_description: "Mostra i consigli degli utenti agli utenti sulla pagina dei dibattiti a seconda dei tag degli elementi seguiti"
+        recommendations_on_proposals: "Consigli sulle proposte"
+        recommendations_on_proposals_description: "Mostra i consigli agli utenti sulla pagina delle proposte a seconda dei tag degli elementi seguiti"
+      community: "Community su proposte e investimenti"
+      community_description: "Abilita la sezione della community nelle proposte e nei progetti d'investimento dei Budget Partecipativi"
+      machine_learning: "IA / Apprendimento Automatico"
+      machine_learning_description: "Abilita la sezione dell'IA / Apprendimento Automatico per eseguire script in Python e arricchire automaticamente il contenuto."
+      map: "Geolocalizzazione di proposte e investimenti del budget"
+      map_description: "Abilita la geolocalizzazione delle proposte e dei progetti d'investimento"
+      allow_images: "Consenti il caricamento e la visualizzazione di immagini"
+      allow_images_description: "Consente agli utenti di caricare immagini creando le proposte e i progetti d'investimento dai Budget Partecipativi"
+      allow_attached_documents: "Consenti il caricamento e la visualizzazione di documenti allegati"
+      allow_attached_documents_description: "Consente agli utenti di caricare documenti creando proposte e progetti d'investimento dai Budget partecipativi"
+      guides: "Guide alla creazione di proposte o progetti d'investimento"
+      guides_description: "Mostra una guida alle differenze tra proposte e progetti d'investimento se c'è un budget partecipativo attivo"
+      public_stats: "Statistiche pubbliche"
+      public_stats_description: "Mostra le statistiche pubbliche nel pannello d'Amministrazione"
       help_page: "Guida"
+      help_page_description: 'Mostra un menu d''Aiuto che contiene una pagina con una sezione di info su ogni funzionalità abilitata. Anche le pagine personalizzate e i menu sono creabili nelle sezioni "Pagine personalizzate" e "Blocchi di contenuto personalizzati"'
+      remote_translations: "Traduzione remota"
+      remote_translations_description: "Mostra un pulsante che consente agli utenti di richiedere una traduzione quando non ci sono contenuti nella loro lingua."
+      translation_interface: "Interfaccia di traduzione"
+      translation_interface_description: "Mostra l'interfaccia di traduzione manuale che consente agli utenti di inserire i propri contenuti in tutte le lingue disponibili. Quest'opzione influenza solo i moduli di richiesta dell'utente e sarà indipendentemente sempre attiva nel pannello d'amministrazione."
+      remote_census: "Configura la connessione al censimento remoto (SOAP)"
+      remote_census_description: "Consente di configurare la connessione al censimento remoto di ogni istituzione"
+      valuation_comment_notification: "Notifica del commento valutativo"
+      valuation_comment_notification_description: "Invia un'email a tutti gli utenti associati tranne l'utente del commento valutativo dell'investimento di budget quando è creato un nuovo commento valutativo"
+      graphql_api: "API di GraphQL"
+      dashboard:
+        notification_emails: "Email di notifica del pannello di controllo"
+        notification_emails_description: "Abilita l'invio di email di notifica del pannello di controllo agli autori della proposta"
       remove_investments_supports: "Consenti di rimuovere i supporti agli investimenti del budget"
       remove_investments_supports_description: "Consenti agli utenti di rimuovere i supporti agli investimenti di budget partecipatori durante la fase selettiva dei progetti."
       sdg: SDG
+      sdg_description: Abilita le sezioni degli Obiettivi di Sviluppo Sostenibile nel menu d'amministrazione e nelle Impostazioni Globali.
+    remote_census:
+      general:
+        endpoint: "Endpoint"
+        endpoint_description: "Nome dell'host in cui è disponibile il servizio di censimento (wsdl)"
+      request:
+        method_name: "Nome del metodo di richiesta"
+        method_name_description: "Nome del metodo di richiesta accettato da City Census WebService."
+        structure: "Struttura della Richiesta"
+        structure_description: 'Struttura della Richiesta da inviare al Census WebService Consiglio comunale. I valori "statici" di questa richiesta dovrebbero esser compilati. I valori correlati al Tipo di Documento, Numero di Documento, Data di Nascita e Codice Postale dovrebbero esser nulli. Esempio di un formato valido: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": q, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
+        document_type: "Percorso per il Tipo di Documento"
+        document_type_description: "Percorso nella struttura della richiesta che invia il Tipo di Documento. NON COMPILARE se il Servizio Web non richiede il Tipo di Documento per verificare un utente."
+        document_number: "Percorso per il Numero di Documento"
+        document_number_description: "Percorso nella struttura della richiesta che invia il Numero di Documento. NON COMPILARE se il Servizio Web non richiede il Numero di Documento per verificare un utente."
+        date_of_birth: "Percorso per la Data di Nascita"
+        date_of_birth_description: "Percorso nella struttura della richiesta che invia la Data di Nascita. NON COMPILARE se il Servizio Web non richiede il Data di Nascita per verificare un utente."
+        postal_code: "Percorso per il Codice Postale"
+        postal_code_description: "Percorso nella struttura della richiesta che invia il Codice Postale. NON COMPILARE se il Servizio Web non richiede il Codice Postale per verificare un utente."
+      response:
+        date_of_birth: "Percorso per la Data di Nascita"
+        date_of_birth_description: "In che percorso della risposta si trova la Data di Nascita dell'utente?"
+        postal_code: "Percorso per il Codice Postale"
+        postal_code_description: "In che percorso di risposta si trova il Codice Postale dell'utente?"
+        district: "Percorso per il Distretto"
+        district_description: "In che percorso di risposta si trova il Distretto dell'utente?"
+        gender: "Percorso per il Genere"
+        gender_description: "In che percorso di risposta si trova il Genere dell'utente?"
+        name: "Percorso per il Nome"
+        name_description: "In che percorso di risposta si trova il Nome dell'utente?"
+        surname: "Percorso per il Cognome"
+        surname_description: "In che percorso di risposta si trova il Cognome dell'utente?"
+        valid: "Condizione per rilevare una risposta valida"
+        valid_description: "Che percorso di risposta dev'esser informato perché una risposta sia considerata valida e un utente verificato"
+    map:
+      latitude: "Latitudine"
+      latitude_description: "Latitudine per mostrare la posizione della mappa"
+      longitude: "Longitudine"
+      longitude_description: "Longitudine per mostrare la posizione della mappa"
+      zoom: "Ingrandimento"
+      zoom_description: "Ingrandisci per mostrare la posizione della mappa"
     process:
       debates: "Dibattiti"
+      debates_description: "Lo spazio di dibattito dei cittadini è mirato a chiunque possa presentare problemi che riguardino loro e su cui vogliono condividere le proprie opinioni con altri"
       proposals: "Proposte"
+      proposals_description: "Le proposte dei cittadini sono un'opportunità per i vicinati e collettivi di decide direttamente come vogliano che la propria società sia, dopo aver ottenuto supporto sufficiente e averle passate al vaglio del voto cittadino"
       polls: "Votazioni"
       polls_description: "Le votazioni cittadine sono un meccanismo partecipativo attraverso il quale i cittadini con diritto di voto possono prendere decisioni in maniera diretta"
       budgets: "Bilancio partecipativo"
+      budgets_description: "Con i budget partecipativi, i cittadini decidono quali progetti presentati dai vicini riceveranno una parte del budget"
       legislation: "Legislazione Collaborativa"
+      legislation_description: "Nei processi partecipativi, ai cittadini è offerta l'opportunità di partecipare nella redazione e modifica di regolamenti che influenzano la società e per dare la propria opinione su certe azioni pianificate"
     html:
       per_page_code_head: "Codice da inserire in ogni pagina (<head>)"
+      per_page_code_head_description: "Questo codice apparirà nell'etichetta <head>. Utile per inserire script personalizzati, analitiche..."
       per_page_code_body: "Codice da inserire in ogni pagina (<body>)"
+      per_page_code_body_description: "Questo codice apparirà nell'etichetta <body>. Utile per inserire script personalizzati, analitiche..."
+    uploads:
+      images:
+        min_width: "Larghezza minima dell'immagine"
+        min_width_description: "Larghezza minima consentita per un'immagine caricata (in pixel)"
+        min_height: "Altezza minima dell'immagine"
+        min_height_description: "Altezza minima consentita per un'immagine caricata (in pixel)"
+        max_size: "Dimensione massima dell'immagine"
+        max_size_description: "Dimensione massima consentita per un'immagine caricata (in Megabyte/MB)"
+        content_types: "Tipi di contenuti accettati per le immagini"
+        content_types_description: "Seleziona tutti i tipi di contenuti consentiti per caricare le immagini"
+        title:
+          min_length: "Lunghezza minima del titolo dell'immagine"
+          min_length_description: "Titolo fornito dall'utente caricando un'immagine (usato come un attributo alternativo HTML)"
+          max_length: "Lunghezza massima del titolo dell'immagine"
+          max_length_description: "Titolo fornito dall'utente caricando un'immagine (usato come un attributo alt HTML)"
+      documents:
+        max_amount: "Numero massimo di documenti"
+        max_amount_description: "Numero massimo di documenti allegabili a una proposta, investimento..."
+        max_size: "Dimensione massima del documento"
+        max_size_description: "Dimensione massima consentita per un documento caricato (in Megabyte/MB)"
+        content_types: "Tipi di contenuti accettati per i documenti"
+        content_types_description: "Seleziona tutti i tipi di contenuti consentiti per caricare i documenti"
+    sdg:
+      process:
+        debates: SDG correlati nei dibattiti
+        debates_description: Consenti ai dibattiti di esser collegati agli Obiettivi di Sviluppo Sostenibile
+        proposals: SDG correlati nelle proposte
+        proposals_description: Consenti alle proposte di esser collegate agli Obiettivi di Sviluppo Sostenibile
+        polls: SDG correlati nei sondaggi
+        polls_description: Consenti alle indagini di esser collegate agli Obiettivi di Sviluppo Sostenibile
+        budgets: SDG correlati nei budget partecipativi
+        budgets_description: Consenti ai budget partecipativi di esser collegati agli Obiettivi di Sviluppo Sostenibile
+        legislation: SDG correlati nella legislazione collaborativa
+        legislation_description: Consenti alla legislazione collaborativa di esser collegata agli Obiettivi di Sviluppo Sostenibile

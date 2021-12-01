@@ -30,9 +30,7 @@ de:
         voted_info_2: "Aber Sie können Ihre Stimme jederzeit ändern, bis diese Phase abgeschlossen ist."
         zero: Sie haben noch über keinen Ausgabenvorschlag abgestimmt.
       reasons_for_not_balloting:
-        not_logged_in: Sie müssen sich %{signin} oder %{signup}, um fortfahren zu können.
         not_verified: Nur verifizierte Benutzer*innen können über einen Ausgabenvorschlag abstimmen; %{verify_account}.
-        organization: Organisationen ist es nicht erlaubt abzustimmen
         not_selected: Für nicht durchführbare Ausgabevorschläge kann nicht abgestimmt werden
         not_enough_money: "Sie haben bereits das gesamte verfügbare Budget zugewiesen.<br><small>Bitte denken Sie daran, dass Sie dies %{change_ballot} jederzeit</small>ändern können"
         no_ballots_allowed: Die Auswahlphase ist abgeschlossen
@@ -92,9 +90,6 @@ de:
           button: Suche
           placeholder: Suche Ausgabenvorschläge...
           title: Suche
-        search_results:
-          one: " enthält den Begriff <strong>'%{search_term}'</strong>"
-          other: " enthält den Begriff <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Meine Stimmen
           voted_info:
@@ -104,9 +99,6 @@ de:
             approval:
               one: "<strong>Sie haben für einen Vorschlag gestimmt</strong>"
               other: "<strong>Sie haben für %{count} Vorschläge gestimmt</strong>"
-          change_vote_info:
-            knapsack: "Sie können bis zur Schließung der Phase jederzeit %{link}. Es gibt keinen Grund sämtliches verfügbares Geld auszugeben."
-            approval: "Sie können jederzeit %{link} bis zum Ende dieser Phase."
           change_vote_link: "ihre Wahl ändern"
           different_heading_assigned: "Sie haben bereits in einer anderen Rubrik: %{heading_link} abgestimmt"
           change_ballot: "Wenn Sie Ihre Meinung ändern, können Sie Ihre Stimme unter %{check_ballot} entfernen und von vorne beginnen."

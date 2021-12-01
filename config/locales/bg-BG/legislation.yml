@@ -54,7 +54,6 @@ bg:
           winners: Избран
       debate:
         empty_questions: Няма въпроси
-        participate: Участвайте в дискусията
       index:
         filter: Филтър
         filters:

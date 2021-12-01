@@ -60,6 +60,8 @@ cs:
     meta_keywords_description: 'Klíčová slova <meta name="keywords">, použitá ke zlepšení SEO'
     min_age_to_participate: Minimální věk potřebný k účasti
     min_age_to_participate_description: "Uživatelé od tohoto věku se mohou účastnit všech procesů"
+    postal_codes: "PSČ"
+    postal_codes_description: "Seznam platných poštovních směrovacích čísel oddělených čárkou; můžete také uvést rozsahy oddělené dvojtečkou. Příklad: 00001:00010,00024,AB3 45FG,00031:00035 povolí poštovní směrovací čísla mezi 00001 a 00010, poštovní směrovací číslo 00024, poštovní směrovací číslo AB3 45FG a poštovní směrovací čísla mezi 00031 a 00035. Pokud jej necháte prázdný, budou platná všechna poštovní směrovací čísla."
     proposals:
       successful_proposal_id: Úspěšný návrh
       successful_proposal_id_description: Tento návrh slouží jako reference pro úspěšný návrh v množství podpory a zobrazí se v grafu ovládacího panelu.

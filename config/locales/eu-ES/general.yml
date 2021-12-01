@@ -11,14 +11,9 @@ eu:
       save_changes_submit: Aldaketak gorde
       recommendations: Gomendioak
       title: Nire kontua
-      user_permission_debates: Eztabaidetan parte hartu
       user_permission_info: Zure kontuarekin egin dezakezu...
-      user_permission_proposal: Proposamen berriak sortu
-      user_permission_support_proposal: Proposamenak babestu*
       user_permission_title: Partaidetza
       user_permission_verify: Akzio guztiak egin ahal izateko zure kontua egiazta ezazu.
-      user_permission_verify_info: "* Erroldatutako erabiltzaileak soilik."
-      user_permission_votes: Azken bozkaketetan parte hartu*
       verified_account: Egiaztatutako kontua
       verify_my_account: Nire kontua egiaztatu
   application:
@@ -113,7 +108,7 @@ eu:
         title: Eztabaidei buruzko laguntza
         description: Ardura zaizun gaietan beste pertsona batzuekin ikuspuntuak elkarbanatzeko eztabaida bat hasi ezazu.
         help_text_1: "Herri eztabaida ezpazioa arduratzen duten gaiak argitaratzeko eta beste pertsona batzuekin ikuspuntuak elkarbanatzeko balio du."
-        help_text_2: 'Eztabaida bat irekitzeko beharrezkoa da {org}-(e)n erregistratzea. Erregistratutako erabiltzaileek irekita dauden eztabaidetan parte hartu dezakete eta bertan aurkitzen diren "Ados nago" edo "Ez nago ados" botoiekin baloratu ditzakete.'
+        help_text_2: 'Eztabaida bat irekitzeko beharrezkoa da %{org}-(e)n erregistratzea. Erregistratutako erabiltzaileek irekita dauden eztabaidetan parte hartu dezakete eta bertan aurkitzen diren "Ados nago" edo "Ez nago ados" botoiekin baloratu ditzakete.'
     new:
       form:
         submit_button: Eztabaida bat hasi
@@ -182,7 +177,6 @@ eu:
       conditions: Erabilera baldintzak
       consul: CONSUL aplikazioa
       consul_url: https://github.com/consul/consul
-      contact_us: 'Asistentzia teknikoa nahi izan ezkero sakatu hemen:'
       copyright: CONSUL, %{year}
       description: Web atari honek %{consul} erbalitzen du eta %{open_source} da.
       open_source: Kode ireki softwarea
@@ -323,7 +317,6 @@ eu:
       select_order_long: "Proposamenak ikusten zabiltza"
       start_proposal: Proposamen bat sortu
       title: Proposamenak
-      top: Top astekoak
       top_link_proposals: Kategoria bakoitzeko proposamen babestuenak
       section_header:
         icon_alt: Proposamen ikonoa
@@ -367,7 +360,6 @@ eu:
       supports_necessary: "%{number} babes behar dira"
       total_percent: '%100'
       archived: "Proposamen hau artxibatu egin da eta ezin du babesik jaso."
-      successful: "Proposamen honek babes nahiko jaso ditu eta %{voting}ra pasatuko da."
     show:
       author_deleted: Erabiltzailea ezabatuta
       code: "Proposamen kodea:"
@@ -649,20 +641,14 @@ eu:
   votes:
     agree: Ados nago
     anonymous: Bozka anonimo larregi, %{verify_account} bozkatu ahal izateko.
-    comment_unauthenticated: Bozkatu ahal izateko %{signin} edo %{signup} egin behar zara.
     disagree: Ez nago ados
     organizations: Erakundeek ezin dute bozkatu
     supports: Babesak
     verified_only: Proposamenak egiaztatutako erabiltzaileek soilik bozka ditzakete, %{verify_account}.
     budget_investments:
-      not_logged_in: Jarraitu ahal izateko %{signin} edo %{signup} egin behar zara.
       not_verified: Gastu proposamenak egiaztatutako erabiltzaileek soilik bozka ditzakete, %{verify_account}.
-      organization: Erakundeek ezin dute bozkatu.
       unfeasible: Proposamen bideragarriezinak ezin dira bozkatu.
       not_voting_allowed: Bozka epea itxita dago.
-      different_heading_assigned:
-        one: "Auzko bateko gastu proiektuak soilik babes ditzakezu"
-        other: "%{count} auzoetako gastu proiektuak soilik babes ditzakezu"
   welcome:
     feed:
       most_active:
@@ -689,22 +675,12 @@ eu:
       budget_investments:
         title: Gomendatutako aurrekontuak
       slide: "%{title} ikusi"
-    verification:
-      i_dont_have_an_account: Ez daukat konturik. Kontu bat sortu eta egiaztatu nahi dut.
-      i_have_an_account: Egiaztatu nahi dudan kontu bat daukat
-      question: Kontua daukazu %{org_name}-(e)n?
-      title: Kontuaren egiaztapena
     welcome:
       go_to_index: Orain ez, proposamenak ikusi
       title: Parte hartzen hasi zaitez
-      user_permission_debates: Eztabaidetan parte hartu
       user_permission_info: Zure kontuakin egin dezakezu...
-      user_permission_proposal: Proposamen berriak sortu
-      user_permission_support_proposal: Proposamenak babestu*
       user_permission_verify: "Zure kontua egiazta ezazu web orriko ekintza guztiak egin ahal izateko."
-      user_permission_verify_info: "*Erroldatutako erabiltzaileak soilik."
       user_permission_verify_my_account: Nire kontua egiaztatu
-      user_permission_votes: Azken bozkaketetan parte hartu*
   invisible_captcha:
     sentence_for_humans: "Gizakia baldin bazara, mesedez hurrengo eremua ez ikusiarena egin"
     timestamp_error_message: "Hau lar arin joan da. Mesedez, formularioa berbidali."

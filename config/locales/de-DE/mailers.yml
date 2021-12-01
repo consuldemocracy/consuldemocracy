@@ -7,15 +7,13 @@ de:
       new_comment_by: Es gibt einen neuen Kommentar von <strong>%{commenter}</strong>
       subject: Jemand hat Ihre %{commentable} kommentiert.
       title: Neuer Kommentar
-    config:
-      manage_email_subscriptions: Wenn Sie keine E-Mails mehr empfangen möchten, ändern Sie bitte Ihre Einstellungen in
     email_verification:
       click_here_to_verify: diesen Link
       instructions_2: Diese E-Mail dient dazu Ihr Konto mit <b>%{document_type} %{document_number}</b>zu verifizieren. Wenn es sich hierbei nicht um Ihre Daten handelt, klicken Sie bitte nicht auf den vorherigen Link und ignorieren Sie diese E-Mail.
       instructions: Um die Überprüfung Ihres Benutzerkontos abzuschließen, müssen Sie auf %{verification_link} klicken.
       subject: Bestätigen Sie Ihre E-Mail-Adresse
       thanks: Vielen Dank.
-      title: Bestätigen Sie Ihr Konto über den folgenden Link
+      title: "Bestätigen Sie Ihr Konto über den folgenden Link"
     reply:
       hi: Hallo
       new_reply_by: Es gibt eine neue Antwort von <strong>%{commenter}</strong> auf Ihren Kommentar
@@ -26,17 +24,14 @@ de:
       title: "Antrags-Benachrichtigungen von %{org_name}"
       share: Vorschlag teilen
       comment: Vorschlag kommentieren
-      unsubscribe: "Wenn Sie keine Antrags-Benachrichtigungen erhalten möchten, besuchen Sie %{account} und entfernen Sie den Haken von 'Eine Zusammenfassung für Antrags-Benachrichtigungen erhalten'."
-      unsubscribe_account: Mein Konto
       unfollow: "Rufen Sie diesen Vorschlag auf und entflogen Sie ihn um keine weiteren Benachrichtigungen zu erhalten."
     direct_message_for_receiver:
       subject: "Sie haben eine neue persönliche Nachricht erhalten"
       reply: Auf %{sender} antworten
-      unsubscribe: "Wenn Sie keine direkten Nachrichten erhalten möchten, besuchen Sie %{account} und deaktivieren Sie \"E-Mails zu Direktnachrichten empfangen\"."
-      unsubscribe_account: Mein Konto
     direct_message_for_sender:
       subject: "Sie haben eine neue persönliche Nachricht gesendet"
-      title: "Sie haben eine neue persönliche Nachricht versendet an <strong>%{receiver}</strong> mit dem Inhalt:"
+      title: "Sie haben eine neue persönliche Nachricht gesendet"
+      text: "Sie haben eine neue persönliche Nachricht versendet an <strong>%{receiver}</strong> mit dem Inhalt:"
     user_invite:
       ignore: "Wenn Sie diese Einladung nicht angefordert haben, können Sie diese E-Mail einfach ignorieren."
       text: "Danke für Ihre Anmeldung bei %{org}! In wenigen Sekunden können Sie beginnen Ihre Stadt mitzugestalten. Füllen Sie einfach vorher das untenstehende Formular aus:"

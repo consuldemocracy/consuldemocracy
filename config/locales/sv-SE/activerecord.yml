@@ -160,6 +160,7 @@ sv:
         voting_style: "Slutgiltigt omröstningsformat"
         voting_style_knapsack: "Ryggsäck"
         voting_style_approval: "Godkännande"
+        hide_money: "Dölj belopp för denna budget"
       budget/translation:
         main_link_text: "Text på länken"
         main_link_url: "Länken leder till (lägg till en länk)"

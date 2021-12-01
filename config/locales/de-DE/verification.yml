@@ -19,7 +19,7 @@ de:
         unconfirmed_code: Sie haben den Bestätigungscode noch nicht eingegeben
       create:
         flash:
-          success: Danke, dass Sie Ihren <b>Hochsicherheitscode (nur für die finale Abstimmung erforderlich) </b> angefordert haben. Vor der Abstimmung erhalten Sie einen Brief mit der Anweisung, Ihr Konto zu bestätigen. Heben Sie den Brief gut auf, um sich persönlich in einem der Bürger Ämter verifizieren zu können.
+          success: Danke, dass Sie Ihren <b>Hochsicherheitscode (nur für die finale Abstimmung erforderlich) </b> angefordert haben. Vor der Abstimmung erhalten Sie einen Brief mit der Anweisung, Ihr Konto zu bestätigen. Heben Sie den Brief gut auf, um sich persönlich in einem Meldeamt verifizieren zu können.
       edit:
         see_all: Vorschläge anzeigen
         title: Brief angefordert
@@ -56,7 +56,6 @@ de:
           spanish_id: Personalausweis
         error_not_allowed_age: Sie erfüllen nicht das erforderliche Alter um teilnehmenzu können
         error_not_allowed_postal_code: Für die Verifizierung müssen Sie registriert sein.
-        error_verifying_census: Das Meldeamt konnte ihre Daten nicht verifizieren. Bitte bestätigen Sie, dass ihre Meldedaten korrekt sind, indem Sie das Amt persönlich oder telefonisch kontaktieren %{offices}.
         form_errors: haben die Überprüfung Ihres Wohnsitzes verhindert
         postal_code_note: Um Ihr Benutzerkonto zu verifizieren, müssen Sie registriert sein
         terms: Allgemeine Nutzungsbedingungen

@@ -64,11 +64,6 @@ da:
       users: Brugeradministration
       user_invites: Send invitationer
       select_user: Vælg bruger
-    permissions:
-      create_proposals: Opret forslag
-      debates: Deltag i debat
-      support_proposals: Støt op om forslag
-      vote_proposals: Stem på forslag
     print:
       proposals_info: Opret dit forslag på https://deltagbudget.aarhus.dk/
       proposals_title: "Borgerforslag:"

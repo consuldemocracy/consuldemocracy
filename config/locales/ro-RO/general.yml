@@ -11,14 +11,9 @@ ro:
       save_changes_submit: Salvează modificări
       recommendations: Recomandări
       title: Contul meu
-      user_permission_debates: Participă la dezbateri
       user_permission_info: Cu contul dumneavoastră puteți...
-      user_permission_proposal: Crează noi propuneri
-      user_permission_support_proposal: Sprijină propuneri
       user_permission_title: Participare
       user_permission_verify: Pentru a efectua toate acțiunile, verificați contul.
-      user_permission_verify_info: "* Numai pentru utilizatorii aflați pe recensământ."
-      user_permission_votes: Participă la votarea finală
       verified_account: Cont verificat
       verify_my_account: Verifică-mi contul
   application:
@@ -116,10 +111,6 @@ ro:
         button: Caută
         placeholder: Caută dezbateri...
         title: Caută
-      search_results:
-        one: " conține termenul <strong>'%{search_term}'</strong>"
-        few: " conține termenul <strong>'%{search_term}'</strong>"
-        other: " conține termenul <strong>'%{search_term}'</strong>"
       start_debate: Începe o dezbatere
       title: Dezbateri
       section_header:
@@ -222,7 +213,6 @@ ro:
       conditions: Termeni și condiții de utilizare
       consul: Cerere CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: Pentru ajutor tehnic mergeți la
       copyright: CONSUL, %{year}
       description: Acest portal folosește %{consul} care este %{open_source}.
       open_source: software open-source
@@ -391,7 +381,6 @@ ro:
       select_order_long: "Vizionați propuneri conform:"
       start_proposal: Crează propunere
       title: Propuneri
-      top: Top săptămânal
       top_link_proposals: Cea mai susținută propunere după categorie
       section_header:
         icon_alt: Pictograma propunerilor
@@ -877,15 +866,12 @@ ro:
   votes:
     agree: Sunt de acord
     anonymous: Prea multe voturi anonime pentru a aproba votul %{verify_account}.
-    comment_unauthenticated: Trebuie %{signin} sau %{signup} pentru a vota.
     disagree: Nu sunt de acord
     organizations: Organizațiile nu au voie să voteze
     supports: Susținători
     verified_only: Doar utilizatorii verificați pot vota propunerile; %{verify_account}.
     budget_investments:
-      not_logged_in: Trebuie %{signin} sau %{signup} pentru a continua.
       not_verified: Doar utilizatorii verificați pot vota investițiile; %{verify_account}.
-      organization: Organizațiile nu au voie să voteze
       unfeasible: Proiectele de investiții nerealizabile nu pot fi susținute
       not_voting_allowed: Etapa de votare este închisă
       different_heading_assigned:
@@ -922,23 +908,13 @@ ro:
       budget_investments:
         title: Investiții recomandate
       slide: "Vezi %{title}"
-    verification:
-      i_dont_have_an_account: Nu am un cont
-      i_have_an_account: Am deja un cont
-      question: Aveți deja un cont în %{org_name}?
-      title: Verificarea contului
     welcome:
       go_to_index: Nu acum, mergeți la pagina index
       start_using_consul: Mergeți la pagina index
       title: Participă
-      user_permission_debates: Participă la dezbateri
       user_permission_info: Cu contul dumneavoastră puteți...
-      user_permission_proposal: Crează noi propuneri
-      user_permission_support_proposal: Sprijină propunerile*
       user_permission_verify: "Pentru a efectua toate acțiunile, verificați-vă contul."
-      user_permission_verify_info: "* Numai pentru utilizatorii aflați pe recensământ."
       user_permission_verify_my_account: Verifică-mi contul
-      user_permission_votes: Participă la votarea finală
   invisible_captcha:
     sentence_for_humans: "Dacă sunteți om, ignorați acest câmp"
     timestamp_error_message: "Ne cerem scuze, a fost prea rapid! Vă rugăm să retrimiteți."
