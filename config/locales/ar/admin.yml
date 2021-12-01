@@ -142,7 +142,6 @@ ar:
         edit: "تعديل مجموعة"
         submit: "حفظ المجموعة"
     budget_headings:
-      no_headings: "لا توجد هناك عناوين."
       create:
         notice: "تم إنشاء العنوان بنجاح!"
       update:
