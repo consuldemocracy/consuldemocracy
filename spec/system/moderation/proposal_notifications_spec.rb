@@ -70,7 +70,7 @@ describe "Moderate proposal notifications" do
           click_button "Search"
 
           within "tr", text: proposal_notification.author.name do
-            expect(page).to have_link "Block"
+            expect(page).to have_button "Block"
           end
         end
 

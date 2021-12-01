@@ -64,7 +64,7 @@ describe "Moderate users" do
     within("#moderation_users") do
       expect(page).to have_content citizen.name
       expect(page).not_to have_content "Blocked"
-      click_link "Block"
+      click_button "Block"
     end
 
     within("#moderation_users") do

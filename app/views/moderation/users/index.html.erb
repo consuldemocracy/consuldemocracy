@@ -17,8 +17,14 @@
           <% if user.hidden? %>
             <%= t("moderation.users.index.hidden") %>
           <% else %>
-            <%= link_to t("moderation.users.index.hide"), hide_in_moderation_screen_moderation_user_path(user, request.query_parameters),
-                        method: :put, class: "button hollow alert" %>
+            <%= render Admin::ActionComponent.new(
+              :hide_in_moderation_screen,
+              user,
+              text: t("moderation.users.index.hide"),
+              method: :put,
+              "aria-label": true,
+              class: "button hollow alert"
+            ) %>
           <% end %>
         </td>
       </tr>

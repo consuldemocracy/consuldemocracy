@@ -66,7 +66,7 @@ describe "Moderate debates" do
           click_button "Search"
 
           within "tr", text: debate.author.name do
-            expect(page).to have_link "Block"
+            expect(page).to have_button "Block"
           end
         end
 

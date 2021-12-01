@@ -75,7 +75,7 @@ describe "Moderate budget investments" do
           click_button "Search"
 
           within "tr", text: investment.author.name do
-            expect(page).to have_link "Block"
+            expect(page).to have_button "Block"
           end
         end
 

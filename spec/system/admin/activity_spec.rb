@@ -239,7 +239,7 @@ describe "Admin activity" do
       visit moderation_users_path(search: user.username)
 
       within("#moderation_users") do
-        click_link "Block"
+        click_button "Block"
       end
 
       visit admin_activity_path
