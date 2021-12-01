@@ -1,5 +1,7 @@
 de:
   moderation:
+    actions:
+      confirm_action: "Bist du sicher? %{action}"
     comments:
       index:
         block_authors: Autoren blockieren
@@ -99,7 +101,11 @@ de:
         title: Benachrichtigungen zu einem Vorschlag
     users:
       index:
+        block: Block
+        confirm_block: "Bist du sicher? Dies wir den User \"%{name}\" and all seine Inhalte ausblenden. "
+        confirm_hide: "Bist du sicher? Dies wir den User \"%{name}\" ausblenden, aber nicht seine Inhalte."
         hide: Block
         search_placeholder: E-Mail oder Benutzername
         title: Benutzer blockieren
+      notice_block: Der User wurde blockiert. Alle Inhalte dieses Users sind nun ausgeblendet.
       notice_hide: Benutzer gesperrt. Alle Diskussionen und Kommentare dieses Benutzers wurden ausgeblendet.

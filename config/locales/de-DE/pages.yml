@@ -1,5 +1,8 @@
 de:
   pages:
+    census_terms:
+      title: "Allgemeinen Zugangsbedingungen des Melderegisters"
+      description: "Informationsseite zu den Allgemeinen Zugangsbedingungen des Melderegisters."
     conditions:
       title: Allgemeine Nutzungsbedingungen
       subtitle: RECHTLICHE HINWEISE BEZÜGLICH DER NUTZUNG, SCHUTZ DER PRIVATSPHÄRE UND PERSONENBEZOGENER DATEN DES OPEN GOVERNMENT-PORTALS
@@ -44,6 +47,7 @@ de:
         title: "Beteiligungsverfahren"
         description: "Im %{link}-Abschnitt nehmen Bürger an der Ausarbeitung und Änderung von, die Stadt betreffenden, Bestimmungen teil und können ihre Meinung bezüglich kommunaler Richtlinien in vorausgehenden Debatten äußern."
         link: "Prozesse"
+        feature: "Um am Prozess teilzunehmen, müssen Sie %{link} und Ihr Konto verifizieren."
         feature_link: "registrieren für %{org_name}"
       faq:
         title: "Technische Probleme?"
@@ -55,6 +59,7 @@ de:
       other:
         title: "Weitere interessante Informationen"
         how_to_use: "Verwenden Sie %{org_name} in Ihrer Stadt"
+        sdg: "Ziele für nachhaltige Entwicklung Hilfe"
       how_to_use:
         text: |-
           Verwenden Sie diese Anwendung in Ihrer lokalen Regierung, oder helfen Sie uns sie zu verbessern, die Software ist kostenlos.
