@@ -1,0 +1,10 @@
+.moderation-users-index {
+  th:last-child,
+  td:last-child {
+    text-align: $global-right;
+  }
+
+  .table-actions {
+    justify-content: flex-end;
+  }
+}
