@@ -121,7 +121,6 @@ nl:
       index:
         new_button: "Nieuwe groep toevoegen"
     budget_headings:
-      no_headings: "Er zijn geen rubrieken."
       create:
         notice: "Rubriek aangemaakt"
       update:
@@ -197,7 +196,6 @@ nl:
           incompatible: Onverenigbaar
           price: Bedrag
           author: Author
-        cannot_calculate_winners: Het budget moet in fase blijven "Ballotage projecten", "Rekening houden met stemmingen" of "Voltooide begroting" om winnaarsprojecten te kunnen berekenen
         see_results: "Bekijk resultaten"
       show:
         assigned_admin: Toegewezen beheerder
