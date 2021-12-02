@@ -186,7 +186,6 @@ cs:
       index:
         new_button: "Přidat novou skupinu"
     budget_headings:
-      no_headings: "Neexistují žádné kapitoly."
       create:
         notice: "Kapitola byla úspěšně vytvořena!"
       update:
@@ -278,7 +277,6 @@ cs:
           incompatible: Nekompatibilní
           price: Cena
           author: Autor
-        cannot_calculate_winners: Rozpočet musí zůstat na fázi "Hlasování o projektech", "Přezkoumání hlasování" nebo "Ukončený rozpočet" za účelem výpočtu vítězných projektů
         see_results: "Zobrazit výsledky"
         milestone_tags_filter_all: "Všechny značky milníků"
       show:
