@@ -17,9 +17,6 @@ pt-BR:
     letter:
       alert:
         unconfirmed_code: Você ainda não inseriu o código de confirmação.
-      create:
-        flash:
-          success: Agradecemos por solicitar o <b>código de segurança máxima (necessário apenas para as votações finais)</b>. Em alguns dias, o enviaremos para o endereço registrado. Lembre-se que, se preferir, pode retirar seu código em qualquer %{offices}.
       edit:
         see_all: Ver propostas
         title: Carta solicitada
