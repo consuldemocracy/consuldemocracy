@@ -8,11 +8,11 @@
     justify-content: flex-end;
   }
 
-  .soft-block-link {
+  .hide-link {
     @include hollow-button($color-warning);
   }
 
-  .hide-link {
+  .block-link {
     @include hollow-button($alert-color);
   }
 }

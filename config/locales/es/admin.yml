@@ -4,12 +4,12 @@ es:
       title: Administración
     actions:
       actions: Acciones
+      block_author: "Bloquear al autor"
       confirm_action: "¿Estás seguro? %{action} \"%{name}\""
       confirm_delete: "¿Estás seguro? Esta acción borrará \"%{name}\" y no se puede deshacer."
       confirm_hide: Confirmar moderación
       delete: Borrar
       hide: Ocultar
-      hide_author: Bloquear al autor
       label: "%{action} %{name}"
       restore: Volver a mostrar
       mark_featured: Destacar

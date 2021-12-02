@@ -4,7 +4,7 @@ namespace :moderation do
   resources :users, only: :index do
     member do
       put :hide
-      put :soft_block
+      put :block
     end
   end
 

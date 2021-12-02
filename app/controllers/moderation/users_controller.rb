@@ -6,16 +6,16 @@ class Moderation::UsersController < Moderation::BaseController
   def index
   end
 
-  def soft_block
-    soft_block_user
+  def hide
+    hide_user
 
-    redirect_with_query_params_to({ action: :index }, { notice: I18n.t("moderation.users.notice_soft_hide") })
+    redirect_with_query_params_to({ action: :index }, { notice: I18n.t("moderation.users.notice_hide") })
   end
 
-  def hide
+  def block
     block_user
 
-    redirect_with_query_params_to index_path_options, { notice: I18n.t("moderation.users.notice_hide") }
+    redirect_with_query_params_to index_path_options, { notice: I18n.t("moderation.users.notice_block") }
   end
 
   private
@@ -24,9 +24,9 @@ class Moderation::UsersController < Moderation::BaseController
       @users = User.with_hidden.search(params[:search]).page(params[:page]).for_render
     end
 
-    def soft_block_user
+    def hide_user
       @user.hide
-      Activity.log(current_user, :soft_block, @user)
+      Activity.log(current_user, :hide, @user)
     end
 
     def block_user

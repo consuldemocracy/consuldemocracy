@@ -6,7 +6,7 @@
 
   <% if can? :hide, record.author %>
     <%= raw separator %>
-    <%= link_to t("admin.actions.hide_author").capitalize, hide_moderation_user_path(record.author_id),
-                method: :put, data: { confirm: confirm_hide_author_text } %>
+    <%= link_to t("admin.actions.block_author").capitalize, block_moderation_user_path(record.author_id),
+                method: :put, data: { confirm: confirm_block_author_text } %>
   <% end %>
 </span>

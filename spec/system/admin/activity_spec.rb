@@ -217,7 +217,7 @@ describe "Admin activity" do
       visit proposal_path(proposal)
 
       within("#proposal_#{proposal.id}") do
-        accept_confirm("Are you sure? Hide author \"#{proposal.author.name}\"") { click_link "Hide author" }
+        accept_confirm("Are you sure? Block author \"#{proposal.author.name}\"") { click_link "Block author" }
 
         expect(page).to have_current_path(proposals_path)
       end

@@ -101,10 +101,10 @@ en:
         title: Proposal notifications
     users:
       index:
+        block: Block
         hidden: Blocked
-        hide: Block
+        hide: Hide
         search_placeholder: email or name of user
-        soft_hide: Soft Block
         title: Block users
-      notice_hide: User blocked. All of this user's debates and comments have been hidden.
-      notice_soft_hide: User blocked. All ot this user's debates and comments are still available.
+      notice_block: User blocked. All of this user's debates and comments have been hidden.
+      notice_hide: User blocked. All ot this user's debates and comments are still available.

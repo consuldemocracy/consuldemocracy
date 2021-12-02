@@ -6,7 +6,19 @@ describe Moderation::UsersController do
 
   describe "PUT hide" do
     it "keeps query parameters while using protected redirects" do
-      get :hide, params: { id: user, search: "user@consul.dev", host: "evil.dev" }
+      user = create(:user, email: "user@consul.dev")
+
+      get :hide, params: { id: user, name_or_email: "user@consul.dev", host: "evil.dev" }
+
+      expect(response).to redirect_to "/moderation/users?name_or_email=user%40consul.dev"
+    end
+  end
+
+  describe "PUT block" do
+    it "keeps query parameters while using protected redirects" do
+      user = create(:user, email: "user@consul.dev")
+
+      get :block, params: { id: user, search: "user@consul.dev", host: "evil.dev" }
 
       expect(response).to redirect_to "/moderation/users?search=user%40consul.dev"
     end
@@ -15,7 +27,7 @@ describe Moderation::UsersController do
       proposal = create(:proposal, author: user)
       request.env["HTTP_REFERER"] = proposal_path(proposal)
 
-      put :hide, params: { id: user }
+      put :block, params: { id: user }
 
       expect(response).to redirect_to proposals_path
       expect(flash[:notice]).to eq "User blocked. All of this user's debates and comments have been hidden."
@@ -25,19 +37,9 @@ describe Moderation::UsersController do
       investment = create(:budget_investment, author: user)
       request.env["HTTP_REFERER"] = budget_investment_path(investment.budget, investment)
 
-      put :hide, params: { id: user }
+      put :block, params: { id: user }
 
       expect(response).to redirect_to budget_investments_path(investment.budget)
-    end
-  end
-
-  describe "PUT soft_block" do
-    it "keeps query parameters while using protected redirects" do
-      user = create(:user, email: "user@consul.dev")
-
-      get :soft_block, params: { id: user, name_or_email: "user@consul.dev", host: "evil.dev" }
-
-      expect(response).to redirect_to "/moderation/users?name_or_email=user%40consul.dev"
     end
   end
 end
