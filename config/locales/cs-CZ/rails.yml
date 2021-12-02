@@ -106,6 +106,11 @@ cs:
         few: "%{count} roky"
         many: "%{count} let"
         other: "%{count} lety"
+      x_seconds:
+        one: 1 sekunda
+        few: "%{count} sekundy"
+        many: "%{count} sekund"
+        other: "%{count} sekundami"
     prompts:
       day: Den
       hour: Hodina
@@ -136,6 +141,11 @@ cs:
       odd: musí být liché
       required: musí existovat
       taken: již byla přijata
+      too_long:
+        one: je příliš dlouhé (maximum je 1 znak)
+        few: je příliš dlouhé (maximum jsou %{count} znaky)
+        many: je příliš dlouhé (maximum je %{count} znaků)
+        other: je příliš dlouhé (maximum je %{count} znaků)
       other_than: musí být jiný než %{count}
     template:
       body: "Došlo k problémům s následujícími poli:"
