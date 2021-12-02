@@ -118,7 +118,6 @@ gl:
       index:
         new_button: "Engadir un grupo novo"
     budget_headings:
-      no_headings: "Aínda non hai partidas creadas. Cada usuario poderá votar nunha soa partida de cada grupo."
       create:
         notice: "Partida creada correctamente!"
       update:
@@ -193,7 +192,6 @@ gl:
           incompatible: Incompatible
           price: Custo
           author: Autoría
-        cannot_calculate_winners: O orzamento debe manterse na fase «Proxecto en votación», «Revisión de votacións» ou «Orzamento rematado» para poder calcular os proxectos gañadores
         see_results: "Ver resultados"
       show:
         assigned_admin: Administrador asignado
