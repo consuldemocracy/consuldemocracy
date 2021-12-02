@@ -104,9 +104,6 @@ de:
             approval:
               one: "<strong>Sie haben für einen Vorschlag gestimmt</strong>"
               other: "<strong>Sie haben für %{count} Vorschläge gestimmt</strong>"
-          change_vote_info:
-            knapsack: "Sie können bis zur Schließung der Phase jederzeit %{link}. Es gibt keinen Grund sämtliches verfügbares Geld auszugeben."
-            approval: "Sie können jederzeit %{link} bis zum Ende dieser Phase."
           change_vote_link: "ihre Wahl ändern"
           different_heading_assigned: "Sie haben bereits in einer anderen Rubrik: %{heading_link} abgestimmt"
           change_ballot: "Wenn Sie Ihre Meinung ändern, können Sie Ihre Stimme unter %{check_ballot} entfernen und von vorne beginnen."
