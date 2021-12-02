@@ -100,8 +100,8 @@ ca:
               one: "<strong>Ha votat una proposta</strong>"
               other: "<strong>Ha votat %{count} propostes</strong>"
           change_vote_info:
-            knapsack: "Pot %{link} en qualsevol moment fins al tancament d’aquesta fase. No hi ha necessitat de gastar tot el diner disponible."
-            approval: "Pots %{link} en qualsevol moment fins al final d'aquesta fase."
+            knapsack: "Pot %{link} en qualsevol moment fins %{phase_end_date}. No hi ha necessitat de gastar tot el diner disponible."
+            approval: "Pots %{link} en qualsevol moment fins %{phase_end_date}."
           change_vote_link: "canvia el teu vot"
           different_heading_assigned: "Teniu vots actius en un altre títol: %{heading_link}"
           change_ballot: "Si canvies d'opinió pots esborrar els teus vots en %{check_ballot} i tornar a començar."
