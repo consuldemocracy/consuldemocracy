@@ -659,9 +659,6 @@ eu:
       organization: Erakundeek ezin dute bozkatu.
       unfeasible: Proposamen bideragarriezinak ezin dira bozkatu.
       not_voting_allowed: Bozka epea itxita dago.
-      different_heading_assigned:
-        one: "Auzko bateko gastu proiektuak soilik babes ditzakezu"
-        other: "%{count} auzoetako gastu proiektuak soilik babes ditzakezu"
   welcome:
     feed:
       most_active:
