@@ -88,8 +88,6 @@ hr:
               one: "<strong>Glasovali ste za prijedlog s iznosom %{amount_spent}</strong>"
               few: "<strong>Vi ste glasali %{count} za prijedloga s iznosom od %{amount_spent}</strong>"
               other: "<strong>Vi ste glasali %{count} za prijedloga s iznosom od %{amount_spent}</strong>"
-          change_vote_info:
-            knapsack: "Možete %{link} u bilo koje vrijeme do zatvaranja ove faze. Nema potrebe utrošiti sav dostupan novac."
           change_vote_link: "izmijeni svoj glas"
           different_heading_assigned: "Imate aktivne glasove u drugoj temi: %{heading_link}"
           change_ballot: "Ako se predomislite možete ukloniti vaš glas u %{check_ballot} i započeti ponovno."
