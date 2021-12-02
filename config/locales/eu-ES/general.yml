@@ -367,7 +367,6 @@ eu:
       supports_necessary: "%{number} babes behar dira"
       total_percent: '%100'
       archived: "Proposamen hau artxibatu egin da eta ezin du babesik jaso."
-      successful: "Proposamen honek babes nahiko jaso ditu eta %{voting}ra pasatuko da."
     show:
       author_deleted: Erabiltzailea ezabatuta
       code: "Proposamen kodea:"
