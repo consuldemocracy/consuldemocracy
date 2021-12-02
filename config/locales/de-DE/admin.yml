@@ -161,7 +161,6 @@ de:
       index:
         new_button: "Neue Gruppe hinzufügen"
     budget_headings:
-      no_headings: "Keine Rubriken vorhanden."
       create:
         notice: "Rubrik erfolgreich erstellt!"
       update:
