@@ -170,7 +170,6 @@ ro:
       index:
         new_button: "Adaugă un grup nou"
     budget_headings:
-      no_headings: "Nu există rubrici."
       create:
         notice: "Rubrică creată cu succes!"
       update:
@@ -257,7 +256,6 @@ ro:
           incompatible: Incompatibil
           price: Preț
           author: Autor
-        cannot_calculate_winners: Bugetul trebuie să rămână pe etapa „Proiecte în curs de votare”, „Revizuirea buletinelor de vot” sau „Buget finalizat” pentru a calcula proiectele câștigătoare
         see_results: "Vezi rezultatele"
         milestone_tags_filter_all: "Toate etichetele de reper"
       show:
