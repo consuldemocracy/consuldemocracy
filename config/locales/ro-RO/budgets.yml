@@ -111,9 +111,6 @@ ro:
               one: "<strong>Ați votat o propunere</strong>"
               few: "<strong>Ați votat %{count} propuneri</strong>"
               other: "<strong>Ați votat %{count} propuneri</strong>"
-          change_vote_info:
-            knapsack: "Puteți %{link} oricând până la închiderea acestei etape. Nu trebuie să cheltuiți toți banii valabili."
-            approval: "Puteți %{link} oricând până când se închide această etapă."
           change_vote_link: "schimbă-ți votul"
           different_heading_assigned: "Aveți voturi active în altă rubrică: %{heading_link}"
           change_ballot: "Dacă vă răzgândiți, puteți elimina voturile din %{check_ballot} și puteți începe din nou."
