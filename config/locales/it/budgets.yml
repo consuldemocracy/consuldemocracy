@@ -85,6 +85,8 @@ it:
             knapsack:
               one: "<strong>Hai votato una proposta con un costo di %{amount_spent}</strong>"
               other: "<strong>Hai votato %{count} proposte con un costo di %{amount_spent}</strong>"
+          change_vote_info:
+            knapsack: "Puoi %{link} in qualsiasi momento fino a %{phase_end_date}. Non serve spendere tutto il denaro disponibile."
           change_vote_link: "cambia il tuo voto"
           different_heading_assigned: "Hai voti attivi in un'altra intestazione: %{heading_link}"
           change_ballot: "Se cambi idea è possibile cancellare il tuo voto in %{check_ballot} e ricominciare da capo."
