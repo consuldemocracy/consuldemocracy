@@ -10,7 +10,7 @@ describe "Moderate proposals" do
     visit proposal_path(proposal)
 
     within("#proposal_#{proposal.id}") do
-      accept_confirm("Are you sure? Hide") { click_link "Hide" }
+      accept_confirm("Are you sure? Hide") { click_button "Hide" }
     end
 
     expect(page).to have_css("#proposal_#{proposal.id}.faded")
@@ -29,8 +29,8 @@ describe "Moderate proposals" do
     visit proposal_path(proposal)
 
     within("#proposal_#{proposal.id}") do
-      expect(page).to have_link("Hide")
-      expect(page).not_to have_link("Block author")
+      expect(page).to have_button "Hide"
+      expect(page).not_to have_button "Block author"
     end
   end
 

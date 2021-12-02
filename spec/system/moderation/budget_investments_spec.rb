@@ -10,7 +10,7 @@ describe "Moderate budget investments" do
     login_as(mod.user)
     visit budget_investment_path(budget, investment)
 
-    accept_confirm("Are you sure? Hide \"#{investment.title}\"") { click_link "Hide" }
+    accept_confirm("Are you sure? Hide \"#{investment.title}\"") { click_button "Hide" }
 
     expect(page).to have_css(".faded", count: 2)
 
@@ -23,7 +23,7 @@ describe "Moderate budget investments" do
     login_as(mod.user)
     visit budget_investment_path(budget, investment)
 
-    accept_confirm("Are you sure? Block author \"#{investment.author.name}\"") { click_link "Block author" }
+    accept_confirm("Are you sure? Block author \"#{investment.author.name}\"") { click_button "Block author" }
 
     expect(page).to have_current_path(budget_investments_path(budget))
     expect(page).not_to have_content(investment.title)
@@ -36,8 +36,8 @@ describe "Moderate budget investments" do
     visit budget_investment_path(budget, investment)
 
     within "#budget_investment_#{investment.id}" do
-      expect(page).not_to have_link("Hide")
-      expect(page).not_to have_link("Block author")
+      expect(page).not_to have_button "Hide"
+      expect(page).not_to have_button "Block author"
     end
   end
 

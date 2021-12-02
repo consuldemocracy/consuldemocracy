@@ -11,7 +11,7 @@ describe "Moderate comments" do
     visit debate_path(comment.commentable)
 
     within("#comment_#{comment.id}") do
-      accept_confirm("Are you sure? Hide") { click_link "Hide" }
+      accept_confirm("Are you sure? Hide") { click_button "Hide" }
       expect(page).to have_css(".comment .faded")
     end
 
@@ -31,8 +31,8 @@ describe "Moderate comments" do
     visit debate_path(comment.commentable)
 
     within("#comment_#{comment.id}") do
-      expect(page).not_to have_link("Hide")
-      expect(page).not_to have_link("Block author")
+      expect(page).not_to have_button "Hide"
+      expect(page).not_to have_button "Block author"
     end
   end
 

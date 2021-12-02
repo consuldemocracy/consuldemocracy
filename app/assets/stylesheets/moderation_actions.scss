@@ -1,0 +1,10 @@
+.moderation-actions {
+  &,
+  form {
+    display: inline;
+  }
+
+  button {
+    @include link;
+  }
+}

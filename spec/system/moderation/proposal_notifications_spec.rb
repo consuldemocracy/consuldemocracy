@@ -12,7 +12,7 @@ describe "Moderate proposal notifications" do
     click_link "Notifications (1)"
 
     within("#proposal_notification_#{proposal_notification.id}") do
-      accept_confirm("Are you sure? Hide") { click_link "Hide" }
+      accept_confirm("Are you sure? Hide") { click_button "Hide" }
     end
 
     expect(page).to have_css("#proposal_notification_#{proposal_notification.id}.faded")
@@ -34,8 +34,8 @@ describe "Moderate proposal notifications" do
     click_link "Notifications (1)"
 
     within("#proposal_notification_#{proposal_notification.id}") do
-      expect(page).not_to have_link("Hide")
-      expect(page).not_to have_link("Block author")
+      expect(page).not_to have_button "Hide"
+      expect(page).not_to have_button "Block author"
     end
   end
 

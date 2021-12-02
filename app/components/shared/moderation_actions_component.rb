@@ -7,21 +7,17 @@ class Shared::ModerationActionsComponent < ApplicationComponent
   end
 
   def render?
-    can?(:hide, record) || can?(:hide, record.author)
+    can?(:hide, record) || can?(:hide, author)
   end
 
   private
 
+    def author
+      record.author
+    end
+
     def hide_path
       polymorphic_path([:moderation, record], action: :hide)
-    end
-
-    def confirm_hide_text
-      t("admin.actions.confirm_action", action: t("admin.actions.hide"), name: record.human_name)
-    end
-
-    def confirm_block_author_text
-      t("admin.actions.confirm_action", action: t("admin.actions.block_author"), name: record.author.name)
     end
 
     def separator

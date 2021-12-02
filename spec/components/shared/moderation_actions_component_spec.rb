@@ -4,13 +4,15 @@ describe Shared::ModerationActionsComponent do
   include Rails.application.routes.url_helpers
   before { sign_in(create(:administrator).user) }
 
-  describe "Hide link" do
+  describe "Hide button" do
     it "is shown for debates" do
       debate = create(:debate)
 
       render_inline Shared::ModerationActionsComponent.new(debate)
 
-      expect(page).to have_link "Hide", href: hide_moderation_debate_path(debate)
+      page.find("form[action='#{hide_moderation_debate_path(debate)}']") do
+        expect(page).to have_button "Hide"
+      end
     end
 
     it "is shown for proposals" do
@@ -18,7 +20,9 @@ describe Shared::ModerationActionsComponent do
 
       render_inline Shared::ModerationActionsComponent.new(proposal)
 
-      expect(page).to have_link "Hide", href: hide_moderation_proposal_path(proposal)
+      page.find("form[action='#{hide_moderation_proposal_path(proposal)}']") do
+        expect(page).to have_button "Hide"
+      end
     end
 
     it "is shown for proposal notifications" do
@@ -26,7 +30,9 @@ describe Shared::ModerationActionsComponent do
 
       render_inline Shared::ModerationActionsComponent.new(notification)
 
-      expect(page).to have_link "Hide", href: hide_moderation_proposal_notification_path(notification)
+      page.find("form[action='#{hide_moderation_proposal_notification_path(notification)}']") do
+        expect(page).to have_button "Hide"
+      end
     end
 
     it "is shown for comments" do
@@ -34,7 +40,9 @@ describe Shared::ModerationActionsComponent do
 
       render_inline Shared::ModerationActionsComponent.new(comment)
 
-      expect(page).to have_link "Hide", href: hide_moderation_comment_path(comment)
+      page.find("form[action='#{hide_moderation_comment_path(comment)}']") do
+        expect(page).to have_button "Hide"
+      end
     end
 
     it "is shown for budget investments" do
@@ -42,7 +50,9 @@ describe Shared::ModerationActionsComponent do
 
       render_inline Shared::ModerationActionsComponent.new(investment)
 
-      expect(page).to have_link "Hide", href: hide_moderation_budget_investment_path(investment)
+      page.find("form[action='#{hide_moderation_budget_investment_path(investment)}']") do
+        expect(page).to have_button "Hide"
+      end
     end
 
     it "is shown for legislation proposals" do
@@ -50,7 +60,9 @@ describe Shared::ModerationActionsComponent do
 
       render_inline Shared::ModerationActionsComponent.new(proposal)
 
-      expect(page).to have_link "Hide", href: hide_moderation_legislation_proposal_path(proposal)
+      page.find("form[action='#{hide_moderation_legislation_proposal_path(proposal)}']") do
+        expect(page).to have_button "Hide"
+      end
     end
   end
 end
