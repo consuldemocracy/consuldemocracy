@@ -1033,7 +1033,6 @@ ar:
       edit:
         title: "تحرير سؤال"
       new:
-        title: "إنشاء سؤال"
         title_proposal: "إنشاء سؤال"
       answers:
         images:
