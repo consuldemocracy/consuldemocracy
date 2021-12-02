@@ -119,7 +119,6 @@ bs:
         edit: "Edituj grupu"
         submit: "Spasi grupu"
     budget_headings:
-      no_headings: "Nema poglavlja."
       create:
         notice: "Poglavlje uspješno kreirano!"
       update:
@@ -195,7 +194,6 @@ bs:
           incompatible: Nije kompatibilno
           price: Cijena
           author: Autor
-        cannot_calculate_winners: Kako bi se obračunale odabrane investicije, budžet mora biti u fazi "Glasanja za projekte", ili u fazi "Provjera glasačkih listića", ili u fazi "Budžet završen"
         see_results: "Vidi rezultate"
       show:
         assigned_admin: Dodijeljeni administrator
