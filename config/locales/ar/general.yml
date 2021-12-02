@@ -90,7 +90,7 @@ ar:
       comments:
         zero: لا توجد تعليقات
         zero: "%{count} تعليقات"
-        one: '%{count} تعليق'
+        one: 1 تعليق
         two: "%{count} تعليقات"
         few: "%{count} تعليقات"
         many: "%{count} تعليقات"
