@@ -113,7 +113,7 @@ eu:
         title: Eztabaidei buruzko laguntza
         description: Ardura zaizun gaietan beste pertsona batzuekin ikuspuntuak elkarbanatzeko eztabaida bat hasi ezazu.
         help_text_1: "Herri eztabaida ezpazioa arduratzen duten gaiak argitaratzeko eta beste pertsona batzuekin ikuspuntuak elkarbanatzeko balio du."
-        help_text_2: 'Eztabaida bat irekitzeko beharrezkoa da {org}-(e)n erregistratzea. Erregistratutako erabiltzaileek irekita dauden eztabaidetan parte hartu dezakete eta bertan aurkitzen diren "Ados nago" edo "Ez nago ados" botoiekin baloratu ditzakete.'
+        help_text_2: 'Eztabaida bat irekitzeko beharrezkoa da %{org}-(e)n erregistratzea. Erregistratutako erabiltzaileek irekita dauden eztabaidetan parte hartu dezakete eta bertan aurkitzen diren "Ados nago" edo "Ez nago ados" botoiekin baloratu ditzakete.'
     new:
       form:
         submit_button: Eztabaida bat hasi
