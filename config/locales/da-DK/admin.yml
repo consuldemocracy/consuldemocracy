@@ -130,7 +130,6 @@ da:
         edit: "Rediger gruppe"
         submit: "Gem gruppe"
     budget_headings:
-      no_headings: "Der er ingen overskrifter."
       create:
         notice: "Post oprettet!"
       update:
@@ -207,7 +206,6 @@ da:
           incompatible: Uforenelig
           price: Pris
           author: Oprettet af
-        cannot_calculate_winners: Budgettet skal enten være i "Afstemningsfasen", "Gennemgangsfasen" eller "Afslutningsfasen" for at kunne beregne, hvilke projekter, der har fået flest stemmer
         see_results: "Se resultat"
         milestone_tags_filter_all: "Alle proces tags"
       show:
