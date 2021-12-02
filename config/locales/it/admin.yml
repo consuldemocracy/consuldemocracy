@@ -1252,19 +1252,38 @@ it:
             update: Configurazione dela mappa aggiornata con successo.
           form:
             submit: Aggiorna
+        remote_census:
+          how_to_enable: 'Per configurare il censimento remoto (SOAP) devi abilitare "Configura la connessione al censimento remoto (SOAP)" sulla scheda "Funzionalità".'
+        sdg:
+          title: Configurazione SDG
+          how_to_enable: 'Per mostrare le opzioni della configurazione dagli Obiettivi di Sviluppo Sostenibile, devi abilitare "SDG" sulla scheda "Funzionalità".'
+      remote_census_general_name: Informazioni Generali
+      remote_census_request_name: Richiedi Dati
+      remote_census_response_name: Dati di Risposta
       setting: Funzionalità
       setting_name: Impostazione
       setting_value: Valore
       no_description: "Nessuna descrizione"
     shared:
       search:
+        advanced_filters:
+          sdg_goals:
+            all: "Tutti gli obiettivi"
+            label: "Per obiettivo"
+          sdg_targets:
+            all: "Tutti gli obiettivi"
+            label: "Per obiettivo"
         label:
           booths: "Ricercare seggio per nome"
+          budget_investments: "Cerca investimenti per titolo, descrizione o titolo"
           debates: "Cerca dibattiti per titolo o descrizione"
+          legislation_processes: "Cerca processi per titolo o descrizione"
+          legislation_proposals: "Cerca proposte per titolo o descrizione"
           local_census_records: "Cerca per numero del documento"
           organizations: "Nominativo, numero di telefono o e-mail"
           poll_officers: "Ricercare presidenti di seggio"
           poll_questions: "Cerca quesiti oggetto di votazione"
+          polls: "Cerca sondaggi per nome o descrizione"
           proposals: "Ricercare le proposte per titolo, codice. descrizione o domanda"
           users: "Cerca utente in base al nome o all’email"
         search: "Ricercare"
@@ -1283,6 +1302,8 @@ it:
       created_at: Creato al
       color_help: Formato esadecimale
       show_results_and_stats: "Visualizza risultati e statistiche"
+      close_modal: Chiudi modale
+      example_url: "Ad esempio, https://consulproject.org o /help"
     geozones:
       index:
         title: Geozona
@@ -1291,7 +1312,9 @@ it:
         name: Nominativo
         external_code: Codice esterno
         census_code: Codice anagrafico
+        code_help: Codice di risposta per questa zona geografica sull'API del censimento
         coordinates: Coordinate
+        coordinates_help: Coordinate che genereranno un'area cliccabile su una mappa dell'immagine HTML
       edit:
         form:
           submit_button: Salva modifiche
@@ -1315,6 +1338,8 @@ it:
         title: Nuovi fogli firma
         document_numbers_note: "Con i numeri separati da punto e virgola (;)"
         submit: Creare foglio di firma
+        text_help:
+          required_fields_note: "Per verificare un utente, la tua applicazione necessita di: Numero del documento"
       show:
         created_at: Creato
         author: Autore
