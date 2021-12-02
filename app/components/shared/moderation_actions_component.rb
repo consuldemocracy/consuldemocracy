@@ -19,12 +19,4 @@ class Shared::ModerationActionsComponent < ApplicationComponent
     def hide_path
       polymorphic_path([:moderation, record], action: :hide)
     end
-
-    def separator
-      if record.is_a?(Comment)
-        "&nbsp;&bull;&nbsp;"
-      else
-        "&nbsp;|&nbsp;"
-      end
-    end
 end

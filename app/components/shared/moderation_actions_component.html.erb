@@ -11,8 +11,6 @@
   <% end %>
 
   <% if can? :hide, author %>
-    <%= raw separator %>
-
     <%= render Admin::ActionComponent.new(
       :block_author,
       author,

@@ -3,8 +3,8 @@
 </span>
 
 <% if can?(:hide, comment) || can?(:hide, comment.user) %>
-  <span class="divider">&nbsp;&bull;&nbsp;</span>
   <% if comment.author == current_user %>
+    <span class="divider">&nbsp;&bull;&nbsp;</span>
     <%= link_to t("comments.actions.delete"),
                 hide_comment_path(comment),
                 method: :put, remote: true, class: "delete-comment",
