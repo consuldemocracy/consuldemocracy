@@ -83,6 +83,10 @@ class Comment < ApplicationRecord
     self.user = author
   end
 
+  def human_name
+    body.truncate(32)
+  end
+
   def total_votes
     cached_votes_total
   end

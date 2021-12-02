@@ -1,0 +1,12 @@
+<span class="moderation-actions">
+  <% if can? :hide, record %>
+    <%= link_to t("admin.actions.hide").capitalize, hide_path,
+                method: :put, remote: true, data: { confirm: confirm_hide_text } %>
+  <% end %>
+
+  <% if can? :hide, record.author %>
+    <%= raw separator %>
+    <%= link_to t("admin.actions.hide_author").capitalize, hide_moderation_user_path(record.author_id),
+                method: :put, data: { confirm: confirm_hide_author_text } %>
+  <% end %>
+</span>
