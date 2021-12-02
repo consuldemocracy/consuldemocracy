@@ -120,7 +120,6 @@ pl:
       index:
         new_button: "Dodaj nową grupę"
     budget_headings:
-      no_headings: "Nie ma nagłówków."
       create:
         notice: "Pomyślnie utworzono nagłówek!"
       update:
@@ -195,7 +194,6 @@ pl:
           incompatible: Niezgodne
           price: Koszt
           author: Autor
-        cannot_calculate_winners: Budżet musi pozostać w fazie "Projekty głosowania", "Przegląd głosów" lub "Gotowy budżet" w celu obliczenia zwycięzców projektów
         see_results: "Zobacz wyniki"
       show:
         assigned_admin: Przypisany administrator
