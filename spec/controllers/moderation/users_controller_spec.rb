@@ -30,7 +30,7 @@ describe Moderation::UsersController do
       put :block, params: { id: user }
 
       expect(response).to redirect_to proposals_path
-      expect(flash[:notice]).to eq "User blocked. All of this user's debates and comments have been hidden."
+      expect(flash[:notice]).to eq "The user has been blocked. All contents authored by this user have been hidden."
     end
 
     it "redirects to the index with a nested resource" do

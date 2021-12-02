@@ -106,5 +106,5 @@ es:
         hide: Ocultar
         search_placeholder: email o nombre de usuario
         title: Bloquear usuarios
-      notice_block: Usuario bloqueado. Se han ocultado todos sus debates y comentarios.
-      notice_hide: Usuario bloqueado. Todos sus debates y comentarios siguen disponibles.
+      notice_block: Usuario bloqueado. Se han ocultado todos sus contenidos y comentarios.
+      notice_hide: Usuario ocultado. Todos sus contenidos y comentarios siguen disponibles.

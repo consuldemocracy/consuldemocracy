@@ -106,5 +106,5 @@ en:
         hide: Hide
         search_placeholder: email or name of user
         title: Block users
-      notice_block: User blocked. All of this user's debates and comments have been hidden.
-      notice_hide: User blocked. All ot this user's debates and comments are still available.
+      notice_block: The user has been blocked. All contents authored by this user have been hidden.
+      notice_hide: The user has been hidden. Contents authored by this user are still available.

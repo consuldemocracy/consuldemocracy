@@ -164,5 +164,9 @@ FactoryBot.define do
     terms_of_service { "1" }
     process factory: :legislation_process
     author factory: :user
+
+    trait :hidden do
+      hidden_at { Time.current }
+    end
   end
 end
