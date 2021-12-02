@@ -69,8 +69,17 @@ it:
         no_activity: Non c’è alcuna attività dei moderatori.
     budgets:
       actions:
+        ballots: "Crea cabine"
+        confirm:
+          ballots: "Sei sicuro? Quest'azione è necessaria solo se userai delle cabine fisiche durante la fase di voto finale. I cittadini potranno ancora votare via web con o senza le cabine fisiche."
+          destroy: "Sei sicuro? Questo eliminerà il budget e tutte le sue voci e gruppi associati. Quest'azione non è annullabile."
+        descriptions:
+          ballots: "Questo ti consentirà di gestire i voti fisici. Usa quest'opzione solo se userai cabine fisiche per raccogliere i voti durante la fase finale di voto."
+          calculate_winners: 'Dopo il calcolo dei risultati, solo gli amministratori potranno accedervi. Saranno pubblici quando il progetto raggiunge la fase "%{phase}" <strong>se l''opzione "Mostra risultati" è abilitata</strong> modificando il budget.'
+          destroy: "Questo eliminerà il budget e tutte le sue voci e gruppi associati. Quest'azione non è annullabile."
         edit: "Modifica il budget"
         preview: "Anteprima"
+        preview_results: "Anteprima dei risultati"
       index:
         title: Bilanci partecipativi
         new_link: Creare un nuovo bilancio
@@ -121,6 +130,12 @@ it:
           other: "%{count} stimatori selezionati"
         empty_administrators: "Non ci sono amministratori"
         empty_valuators: "Non ci sono stimatori"
+        name_description: "Questo è il nome del budget partecipatorio usato sul titolo e le schede quando è attivo"
+        image_description: "Se un'immagine è caricata, sarà usata come banner in cima a questo budget partecipativo, altrimenti il colore predefinito per i budget sarà usato."
+        main_call_to_action: "Chiamata all'azione principale (facoltativo)"
+        main_call_to_action_description: "Questo link comparirà sul banner principale di questo budget partecipativo e incoraggerà il tuo utente a eseguire un'azione specifica come creare una proposta, votare quelle esistenti o scoprire di più sul processo."
+        info:
+          budget_settings: "Impostazioni generali del budget partecipativo"
       destroy:
         success_notice: Bilancio cancellato con successo
         unable_notice: Non è consentito eliminare un Bilancio cui risultano associati degli investimenti
@@ -153,6 +168,7 @@ it:
       index:
         new_button: "Aggiungi nuovo gruppo"
     budget_headings:
+      no_headings: "Nessun'intestazione nel gruppo <strong>%{group}</strong>."
       create:
         notice: "Voce creata con successo!"
       update:
