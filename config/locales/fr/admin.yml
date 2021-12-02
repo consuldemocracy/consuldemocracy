@@ -173,7 +173,6 @@ fr:
       index:
         new_button: "Ajouter un nouveau groupe"
     budget_headings:
-      no_headings: "Il n'y a pas de titre."
       create:
         notice: "Rubrique créée avec succès !"
       update:
@@ -254,7 +253,6 @@ fr:
           incompatible: Incompatibles
           price: Prix
           author: Auteur
-        cannot_calculate_winners: Le budget doit rester sur la phase "Vote des projets", "Dépouillage du bulletin de vote" ou "Budget terminé" afin de calculer les projets gagnants
         see_results: "Voir les résultats"
       show:
         assigned_admin: Administrateur affecté
