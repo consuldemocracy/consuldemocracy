@@ -25,7 +25,6 @@ eu:
       new:
         explanation: "Azken bozkaketetan parte hartzeko hurrengo egin dezakezu:"
         go_to_index: Proposamenak ikusi
-        office: '%{office}-tan presentzialki egiaztatzea.'
         send_letter: Posta zerbitzu eskutitza eskatu
         title: Zorionak!
         user_permission_info: Zure kontuagaz jada egin dezakezu...
