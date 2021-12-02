@@ -121,7 +121,6 @@ id:
       index:
         new_button: "Tambahkan grup baru"
     budget_headings:
-      no_headings: "Tidak ada judul."
       create:
         notice: "Tajuk berhasil dibuat!"
       update:
