@@ -153,7 +153,6 @@ it:
       index:
         new_button: "Aggiungi nuovo gruppo"
     budget_headings:
-      no_headings: "Non ci sono voci."
       create:
         notice: "Voce creata con successo!"
       update:
@@ -230,7 +229,6 @@ it:
           incompatible: Incompatibile
           price: Costo
           author: Autore
-        cannot_calculate_winners: Il bilancio deve rimanere nella fase “Progetti in votazione”, “Revisione Schede” o “Bilancio concluso” percalcolare i progetti vincitori
         see_results: "Vedi risultati"
         milestone_tags_filter_all: "Tutti i tag pietra miliare"
       show:
