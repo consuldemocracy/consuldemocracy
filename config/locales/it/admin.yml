@@ -136,12 +136,28 @@ it:
         main_call_to_action_description: "Questo link comparirà sul banner principale di questo budget partecipativo e incoraggerà il tuo utente a eseguire un'azione specifica come creare una proposta, votare quelle esistenti o scoprire di più sul processo."
         info:
           budget_settings: "Impostazioni generali del budget partecipativo"
+          staff_settings: "Amministratori e Valutatori assegnati al budget"
       destroy:
         success_notice: Bilancio cancellato con successo
         unable_notice: Non è consentito eliminare un Bilancio cui risultano associati degli investimenti
         unable_notice_polls: Non puoi eliminare un budget che non ha un sondaggio associato
+      new:
+        title_multiple: Nuovo budget di più titoli
+        title_single: Nuovo budget di un titolo
+      help:
+        budgets: "I budget partecipativi consentono ai cittadini di proporre e decidere direttamente come spendere parte del budget, monitorando e valutando rigorosamente le proposte dall'istituzione."
+        groups:
+          multiple: "I gruppi servono a organizzare i titoli. Dopo la creazione di un gruppo e che contiene i titoli, è possibile determinare quanti sono votabili da un utente per gruppo."
+          single: "I gruppi servono a organizzare i titoli, poiché questo budget conterrà solo un titolo, lo stesso nome è utilizzabile perché non comparirà da nessuna parte. Puoi semplicemente continuare alla fase successiva."
+        headings:
+          multiple: "I titoli servono a dividere il denaro del budget partecipativo. Qui puoi aggiungere i titoli per questo gruppo e assegnare l'importo di denaro che sarà usato per ognuno."
+          single: "I titoli servono a dividere il denaro del budget partecipativo. Poiché questo budget conterrà solo un titolo, questo è il luogo in cui stabilisci il denaro che sarà speso in questo budget partecipativo."
+        phases: "I budget partecipativi si compongono di diverse fasi. Qui puoi abilitare o disabilitare le fasi e personalizzarne ognuna."
       show:
+        add_group: "Aggiungi gruppo"
         add_heading: "Aggiungi voce di bilancio"
+        groups_and_headings: "Gruppi di titoli"
+        headings_caption: "Titoli in %{group}"
       winners:
         calculate: Calcolare gli investimenti del vincitore
         calculated: Stiamo calcolando i vincitori, ciò potrebbe richiedere alcuni minuti.
@@ -164,6 +180,7 @@ it:
       form:
         create: "Crea nuovo gruppo"
         edit: "Modifica gruppo"
+        max_votable_headings_info: "Si applica solo alla selezione della fase dei progetti. Durante la fase di votazione dei progetti, gli utenti possono votare solo in un titolo per gruppo."
         submit: "Salva gruppo"
       index:
         new_button: "Aggiungi nuovo gruppo"
@@ -177,20 +194,35 @@ it:
         success_notice: "Voce eliminata con successo"
         unable_notice: "Non puoi eliminare una Voce che ha investimenti associati"
       form:
+        max_ballot_lines_info: 'Il numero massimo di progetti che un utente può votare durante la fase di "Voto dei progetti". Solo per budget che usano il voto d''approvazione.'
         population_info: "Il campo popolazione tra le Voci di Bilancio è utilizzato a scopo Statistico al termine del Bilancio per evidenziare la percentuale di votanti relativa a ciascuna Voce rappresentativa di un’area abitata. Il campo è facoltativo e perciò può essere lasciato vuoto se non pertinente."
         coordinates_info: "Se latitudine e longitudine sono fornite, la pagina di investimenti per questa voce includerà una mappa. Questa mappa sarà centrata usando quelle coordinate."
         content_blocks_info: "Se consenti blocco contenuto è spuntato, potrai creare contenuti personalizzati a questo gestore dalla sezione Impostazioni > Blocchi contenuto personalizzati. Questo contenuto comparirà sulla pagina di investimenti per questo gestore."
         create: "Crea nuova voce"
         edit: "Modifica voce"
         submit: "Salvare voce di bilancio"
+      group_switcher:
+        currently_showing: "Mostrare i titoli dal gruppo <strong>%{group}</strong>."
+        different_group: "Gestire i titoli da un gruppo diverso"
+        the_other_group: "Gestire i titoli dal gruppo %{group}."
       index:
         back: "Torna ai gruppi"
+        new_button: "Aggiungi nuovo titolo"
+        title: "%{budget} / titoli di %{group}"
     budget_phases:
       edit:
         title: "Modifica fase"
         description_help_text: Questo paragrafo apparirà nell’intestazione quando la fase risulterà attiva
+        duration: "Durata della fase"
+        duration_description: "Il periodo di tempo in cui questa fase sarà attiva."
         enabled_help_text: Questa fase sarà visibile a tutti nella sequenza temporale delle fasi del bilancio e risulterà attiva ad ogni altro fine
+        image_description: "Se un'immagine è caricata, sarà mostrata affianco alla descrizione di questa fase."
+        main_call_to_action: "Chiamata all'azione principale (facoltativo)"
+        main_call_to_action_description: "Questo link comparirà sul banner principale di questo budget partecipativo quando questa fase è abilitata e incoraggerà il tuo utente a eseguire un'azione specifica come creare una proposta, votare quelle esistenti o scoprire di più sul processo."
+        name_help_text: "Questo è il titolo della fase che gli utenti leggeranno sul titolo ogni volta che questa fase è attiva."
         save_changes: Salva modifiche
+      index:
+        title: "Fasi di %{budget}"
     budget_investments:
       index:
         heading_filter_all: Tutte le intestazioni
@@ -245,6 +277,7 @@ it:
           incompatible: Incompatibile
           price: Costo
           author: Autore
+        cannot_calculate_winners: Il budget deve rimanere alla fase "%{phase}" per calcolare i progetti vincitori
         see_results: "Vedi risultati"
         milestone_tags_filter_all: "Tutti i tag pietra miliare"
       show:
@@ -291,6 +324,24 @@ it:
         groups: Gruppi
         headings: Intestazione
         phases: Fasi
+      budgets:
+        continue: "Continua ai gruppi"
+      groups:
+        back: "Torna a modificare il budget"
+        continue: "Continua ai titoli"
+      headings:
+        continue: "Continua alle fasi"
+        single:
+          back: "Torna al gruppo di modifica"
+      heading_mode:
+        multiple:
+          description: "Crea un processo con più gruppi, distretti o argomenti. Hai molto denaro. Per esempio, €25.000 per il \"Distretto Nord\", €30.000 per il \"Distretto Centrale\", €28.000 per il \"Distretto Sud\" e l'intera città. O per diversi temi, come sport, cultura o salute."
+          link: "Crea budget di più titoli"
+          title: "Budget di <strong>più titoli</strong>"
+        single:
+          description: "Crea un processo con un gruppo, distretto o argomento. Hai molto denaro. Ad esempio, €25.000 per il distretto o €10.000 per la cultura."
+          link: "Crea budget di un titolo"
+          title: "Budget di <strong>un titolo</strong>"
     milestones:
       index:
         table_id: "ID"
