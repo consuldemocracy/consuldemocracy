@@ -140,7 +140,6 @@ he:
       index:
         new_button: "Add new group"
     budget_headings:
-      no_headings: "אין כותרות."
       create:
         notice: "כותרת נוצרו בהצלחה!"
       update:
@@ -216,7 +215,6 @@ he:
           incompatible: אינו תואם
           price: מחיר
           author: מחבר/ת
-        cannot_calculate_winners: התקציב צריך להישאר על שלב "הצבעה לפרויקטים", "סקירת הצבעות" או "סיים תקציב" על מנת לחשב את הפרויקטים הזוכים
         see_results: "ראו תוצאות"
         milestone_tags_filter_all: "כל תגיות אבני הדרך"
       show:
