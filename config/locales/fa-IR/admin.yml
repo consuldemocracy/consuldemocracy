@@ -158,7 +158,6 @@ fa:
           incompatible: ناسازگار
           price: قیمت
           author: نویسنده
-        cannot_calculate_winners: بودجه باید در مرحله "رای گیری پروژه ها"، "بررسی رای گیری" یا " پایان بودجه" برای محاسبه پروژه های برنده باقی بماند
         see_results: "مشاهده نتایج"
       show:
         assigned_admin: سرپرست تعیین شده
