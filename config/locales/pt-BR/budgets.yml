@@ -101,7 +101,6 @@ pt-BR:
               other: "<strong>Você votou em %{count} propostas</strong>"
           change_vote_info:
             knapsack: "Você pode %{link} a qualquer momento até o encerramento desta fase. Não há necessidade de gastar todo o dinheiro disponível."
-            approval: "Você pode %{link} a qualquer momento até o final desta fase."
           change_vote_link: "mudar seu voto"
           different_heading_assigned: "Você tem votos ativos num título diferente: %{heading_link}"
           change_ballot: "Se você mudar de ideia, poderá remover seus votos em %{check_ballot} e começar de novo."
