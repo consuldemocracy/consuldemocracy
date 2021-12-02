@@ -238,7 +238,7 @@ nn:
         new_notifications:
           zero: "Du har ingen nye varsler"
           zero: Du har %{count} nye varsler
-          one: Du har %{count} nye varsel
+          one: Du har 1 nye varsel
           other: Du har %{count} nye varsler
         notifications: Varsler
   notifications:
@@ -256,7 +256,7 @@ nn:
           other: Det er %{count} nye kommentarer på
         proposal_notification:
           zero: Du har %{count} nye varsler om
-          one: Du har %{count} ny varsel om
+          one: Du har 1 ny varsel om
           other: Du har %{count} nye varsler om
         replies_to:
           zero: Du har fått %{count} svar på din kommentar om
