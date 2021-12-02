@@ -56,7 +56,6 @@ de:
           spanish_id: Personalausweis
         error_not_allowed_age: Sie erfüllen nicht das erforderliche Alter um teilnehmenzu können
         error_not_allowed_postal_code: Für die Verifizierung müssen Sie registriert sein.
-        error_verifying_census: Das Meldeamt konnte ihre Daten nicht verifizieren. Bitte bestätigen Sie, dass ihre Meldedaten korrekt sind, indem Sie das Amt persönlich oder telefonisch kontaktieren %{offices}.
         form_errors: haben die Überprüfung Ihres Wohnsitzes verhindert
         postal_code_note: Um Ihr Benutzerkonto zu verifizieren, müssen Sie registriert sein
         terms: Allgemeine Nutzungsbedingungen
