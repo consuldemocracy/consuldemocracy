@@ -113,9 +113,6 @@ uk-UA:
               few: "<strong>Ви проголосували за %{count} пропозиції</strong>"
               many: "<strong>Ви проголосували за %{count} пропозицій</strong>"
               other: "<strong>Ви проголосували за %{count} пропозицій</strong>"
-          change_vote_info:
-            knapsack: "Ви можете %{link} у будь-який час до завершення цього етапу. Немає потреби витрачати всі наявні кошти."
-            approval: "Ви можете %{link} у будь-який час до завершення цього етапу."
           change_vote_link: "змінити голос"
           different_heading_assigned: "У вас є активні голоси в іншому заголовку: %{heading_link}"
           change_ballot: "Якщо ви передумали, ви можете видалити свої голоси в %{check_ballot} і розпочати знову."
