@@ -838,7 +838,7 @@ sr:
           few: "%{count} коментара"
           other: "%{count} коментара"
         debates:
-          one: '%{count} Расправа'
+          one: 1 Расправа
           few: "%{count} Расправе"
           other: "%{count} Расправа"
         proposals:
