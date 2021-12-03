@@ -144,7 +144,6 @@ sl:
           incompatible: Nekompatibilen
           price: Cena
           author: Avtor
-        cannot_calculate_winners: Proračun mora ostati v fazi "Projekti za glasovanje", "Pregled glasov", ali "Dokončan proračun", da se izračuna zmagovalni projekt
         see_results: "Poglej rezultate"
       show:
         assigned_admin: Dodeljeni skrbnik
