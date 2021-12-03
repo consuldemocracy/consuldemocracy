@@ -150,9 +150,6 @@ sr:
       download: "Преузмите сажетак"
       top_comments:
         zero: "Нема коментара"
-        one: "%{count} коментар"
-        few: "%{count} коментара"
-        other: "%{count} коментара"
       most_voted_comments: "Коментари са највише гласова"
       no_allegation: "Нема коментара"
       process_empty: "Овај процес није прошао кроз партиципативне фазе"
