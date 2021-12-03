@@ -185,7 +185,6 @@ sv:
       index:
         new_button: "Lägg till ny grupp"
     budget_headings:
-      no_headings: "Det finns inga områden."
       create:
         notice: "Området har skapats!"
       update:
@@ -277,7 +276,6 @@ sv:
           incompatible: Oförenlig
           price: Pris
           author: Förslagslämnare
-        cannot_calculate_winners: Budgeten måste vara i någon av faserna "Omröstning", "Granskning av röstning" eller "Avslutad budget" för att kunna räkna fram vinnande förslag
         see_results: "Visa resultat"
         milestone_tags_filter_all: "Alla milstolpetaggar"
       show:
