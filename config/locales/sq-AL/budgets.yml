@@ -6,7 +6,7 @@ sq:
         no_balloted_group_yet: "Ju nuk keni votuar ende për këtë grup, shkoni të votoni!"
         remove: Hiq voten
         voted:
-          one: "Ju keni votuar <span>%{count}</span> investime."
+          one: "Ju keni votuar <span>një</span> investime."
           other: "Ju keni votuar <span>%{count}</span> investimet."
         zero: Ju nuk keni votuar në asnjë projekt investimi.
       reasons_for_not_balloting:
