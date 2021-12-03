@@ -106,7 +106,7 @@ sv:
               other: "<strong>Du röstade för %{count} förslag</strong>"
           change_vote_info:
             knapsack: "Du kan %{link} när som helst fram till %{phase_end_date}. Du behöver inte spendera hela din budget."
-            approval: "Du kan %{link} när som helst fram till slutet av denna fas."
+            approval: "Du kan %{link} när som helst fram till %{phase_end_date}."
           change_vote_link: "ändra din röst"
           different_heading_assigned: "Du röstar redan inom ett annat område: %{heading_link}"
           change_ballot: "Om du ändrar dig kan du ta bort dina röster i %{check_ballot} och börja om."
