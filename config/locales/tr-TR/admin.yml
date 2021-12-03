@@ -165,7 +165,6 @@ tr:
       index:
         new_button: "Yeni grup ekle"
     budget_headings:
-      no_headings: "Hiç başlık yok."
       create:
         notice: "Başlık başarıyla oluşturuldu!"
       update:
@@ -254,7 +253,6 @@ tr:
           incompatible: Uyumsuz
           price: Fiyat
           author: Yazar
-        cannot_calculate_winners: Kazananın projelerin hesaplanması için bütçenin "Oylama Projeleri", "Oyların İncelenmesi" veya "Tamamlanan Bütçe" aşamasında kalması gerekiyor
         see_results: "Sonuçları gör"
         milestone_tags_filter_all: "Tüm kilometre taşı etiketleri"
       show:
