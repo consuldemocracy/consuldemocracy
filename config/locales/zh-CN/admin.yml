@@ -165,7 +165,6 @@ zh-CN:
           incompatible: 不兼容
           price: 价格
           author: 作者
-        cannot_calculate_winners: 预算必须留在“投票项目”，“审查选票”或者“完成预算”阶段以便计算优胜者项目
         see_results: "查看结果"
       show:
         assigned_admin: 指定的管理员
