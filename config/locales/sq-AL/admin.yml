@@ -165,7 +165,6 @@ sq:
           incompatible: I papajtueshëm
           price: Çmim
           author: Autor
-        cannot_calculate_winners: Buxheti duhet të qëndrojë në fazën "Projektet e votimit", "Rishikimi i fletëve të votimit" ose "Buxheti i përfunduar" me qëllim të llogaritjes së projekteve të fituesve
         see_results: "Shiko rezultatet"
       show:
         assigned_admin: Administrator i caktuar
