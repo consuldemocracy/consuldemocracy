@@ -106,9 +106,6 @@ sr:
               one: "<strong>Гласали сте за један предлог</strong>"
               few: "<strong>Гласали сте за %{count} предлога</strong>"
               other: "<strong>Гласали сте за %{count} предлога</strong>"
-          change_vote_info:
-            knapsack: "Можете да %{link} било када све до затварања ове фазе. Није потребно да потрошите сав преостали новац."
-            approval: "Можете да %{link} било када све до затварања ове фазе."
           change_vote_link: "промените Ваш глас"
           different_heading_assigned: "Имате активна гласања у другом наслову: %{heading_link}"
           change_ballot: "Уколико промените Ваше мишљење можете променити свој глас у %{check_ballot} и започети поново."
