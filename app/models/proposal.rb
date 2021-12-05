@@ -1,5 +1,4 @@
 class Proposal < ApplicationRecord
-  include Rails.application.routes.url_helpers
   include Flaggable
   include Taggable
   include Conflictable
@@ -87,10 +86,6 @@ class Proposal < ApplicationRecord
   scope :published,                -> { where.not(published_at: nil) }
   scope :draft,                    -> { where(published_at: nil) }
   scope :created_by,               ->(author) { where(author: author) }
-
-  def url
-    proposal_path(self)
-  end
 
   def publish
     update!(published_at: Time.current)
