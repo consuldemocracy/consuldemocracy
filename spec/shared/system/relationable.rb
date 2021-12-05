@@ -3,7 +3,7 @@ shared_examples "relationable" do |relationable_model_name|
   let(:related1) { create([:proposal, :debate, :budget_investment].sample) }
   let(:related2) { create([:proposal, :debate, :budget_investment].sample) }
   let(:user) { create(:user) }
-  let!(:url) { Setting["url"] }
+  before { Setting["url"] = Capybara.app_host }
 
   scenario "related contents are listed" do
     create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
@@ -36,7 +36,7 @@ shared_examples "relationable" do |relationable_model_name|
     expect(page).to have_css ".add-related-content[aria-expanded='true']"
 
     within("#related_content") do
-      fill_in "Link to related content", with: "#{url}#{polymorphic_path(related1)}"
+      fill_in "Link to related content", with: polymorphic_url(related1)
       click_button "Add"
     end
 
@@ -53,7 +53,7 @@ shared_examples "relationable" do |relationable_model_name|
     click_button "Add related content"
 
     within("#related_content") do
-      fill_in "Link to related content", with: "#{url}#{polymorphic_path(related2)}"
+      fill_in "Link to related content", with: polymorphic_url(related2)
       click_button "Add"
     end
 
@@ -73,7 +73,7 @@ shared_examples "relationable" do |relationable_model_name|
       click_button "Add"
     end
 
-    expect(page).to have_content "Link not valid. Remember to start with #{url}."
+    expect(page).to have_content "Link not valid. Remember to start with #{Capybara.app_host}."
   end
 
   scenario "returns error when relating content URL to itself" do
@@ -83,7 +83,7 @@ shared_examples "relationable" do |relationable_model_name|
     click_button "Add related content"
 
     within("#related_content") do
-      fill_in "Link to related content", with: url + polymorphic_path(relationable)
+      fill_in "Link to related content", with: polymorphic_url(relationable)
       click_button "Add"
     end
 
@@ -107,7 +107,7 @@ shared_examples "relationable" do |relationable_model_name|
       click_button "Add related content"
 
       within("#related_content") do
-        fill_in "Link to related content", with: "#{url}/mypath/#{related.id}"
+        fill_in "Link to related content", with: "#{Capybara.app_host}/mypath/#{related.id}"
         click_button "Add"
       end
 
@@ -125,7 +125,7 @@ shared_examples "relationable" do |relationable_model_name|
     click_button "Add related content"
 
     within("#related_content") do
-      fill_in "url", with: url + polymorphic_path(related1)
+      fill_in "url", with: polymorphic_url(related1)
       click_button "Add"
     end
 
