@@ -3,8 +3,7 @@ FROM ruby:2.7.4-buster
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install essential Linux packages
-RUN apt-get update -qq
-RUN apt-get install -y build-essential libpq-dev postgresql-client nodejs imagemagick sudo libxss1 libappindicator1 libindicator7 unzip memcached cmake pkg-config shared-mime-info
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev postgresql-client nodejs imagemagick sudo libxss1 libappindicator1 libindicator7 unzip memcached cmake pkg-config shared-mime-info
 # Install Chromium for E2E integration tests
 RUN apt-get update -qq && apt-get install -y chromium
 
