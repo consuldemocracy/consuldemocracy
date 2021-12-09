@@ -4,10 +4,13 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
-# Ignore bundler config.
-.bundle/
+# Confidential information
+/config/database.yml
+/config/secrets.yml
+/config/deploy-secrets.yml
+/config/maintenance.yml
 
-# Ignore all logfiles and tempfiles.
+# Logfiles and tempfiles.
 log/*
 !log/.keep
 tmp/
@@ -25,7 +28,13 @@ log/*
 tmp/
 /coverage/
 
+# Bundler config, cache and gemsets
+.bundle/
+.ruby-gemset
+
+# Files used in local development
 .byebug_history
+.DS_Store
 # Files attached by users
 /public/system/
 /public/ckeditor_assets/
@@ -36,6 +45,9 @@ tmp/
 /public/assets/
 /public/machine_learning/data/
 
+# Test results
+/spec/examples.txt
+/coverage/
 # Bundler config, cache and gemsets
 .bundle/
 .ruby-gemset
