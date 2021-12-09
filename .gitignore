@@ -5,12 +5,12 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore bundler config.
-/.bundle
+.bundle/
 
 # Ignore all logfiles and tempfiles.
-/log/*
-!/log/.keep
-/tmp
+log/*
+!log/.keep
+tmp/
 
 /spec/examples.txt
 /config/database.yml
@@ -18,7 +18,7 @@
 /config/deploy-secrets.yml
 /config/maintenance.yml
 
-/coverage
+/coverage/
 
 .byebug_history
 
@@ -27,9 +27,9 @@
 
 .ruby-gemset
 
-public/sitemap.xml
-public/assets/
-public/machine_learning/data/
-public/system/
+/public/sitemap.xml
+/public/assets/
+/public/machine_learning/data/
+/public/system/
 /public/ckeditor_assets/
-storage/
+/storage/
