@@ -3,14 +3,30 @@ FROM ruby:2.7.4-buster
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install essential Linux packages
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev postgresql-client nodejs imagemagick sudo libxss1 libappindicator1 libindicator7 unzip memcached cmake pkg-config shared-mime-info
+RUN apt-get update -qq \
+ && apt-get install -y \
+    build-essential \
+    cmake \
+    imagemagick \
+    libappindicator1 \
+    libindicator7 \
+    libpq-dev \
+    libxss1 \
+    memcached \
+    nodejs \
+    pkg-config \
+    postgresql-client \
+    shared-mime-info \
+    sudo \
+    unzip
+
 # Install Chromium for E2E integration tests
 RUN apt-get update -qq && apt-get install -y chromium
 
 # Files created inside the container repect the ownership
 RUN adduser --shell /bin/bash --disabled-password --gecos "" consul \
-  && adduser consul sudo \
-  && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+ && adduser consul sudo \
+ && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 RUN echo 'Defaults secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bundle/bin"' > /etc/sudoers.d/secure_path
 RUN chmod 0440 /etc/sudoers.d/secure_path
