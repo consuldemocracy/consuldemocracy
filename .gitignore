@@ -24,6 +24,7 @@ log/*
 !log/.keep
 tmp/
 
+.byebug_history
 # Files attached by users
 /public/system/
 /public/ckeditor_assets/
