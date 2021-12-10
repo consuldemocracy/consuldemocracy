@@ -75,6 +75,7 @@ da:
     investments:
       form:
         title: "Opret din projektidé"
+        subtitle: "%{heading} (%{price})"
         tag_category_label: "Kategorier"
         tags_instructions: "Tilføj tags. Du kan vælge mellem de allerede viste kategorier eller tilføje dine egne"
         tags_label: Tags
@@ -167,13 +168,22 @@ da:
         confirm_group:
           one: "Du kan kun støtte op om forslag i %{count} distrikt. Hvis du fortsætter, kan du ikke ændre valget af dit distrikt. Er du sikker?"
           other: "Du kan kun støtte op om projektidéer i %{count} distrikt. Hvis du fortsætter, kan du ikke ændre valget af dit distrikt. Er du sikker?"
+        remove_support: "Fjern din støtte"
+        remove_support_label: "Fjern din støtte til %{investment}"
         support: "Støt"
+        support_label: "Støt %{investment}"
     investments_list:
       investment:
         price: "Pris"
+        read_more: "Læs mere"
         supports: "Støtte"
+      see_all: "Se alle investeringer"
+      title: "Liste over forslag"
     show:
       see_results: Se resultat
+    supports_info:
+      different: "Du må støtte lige så mange forskellige projekter som du har lyst til."
+      next: "Støt de projekter du gerne vil have går videre til næste fase."
     results:
       link: Resultater
       page_title: "%{budget} - Resultater"
