@@ -34,8 +34,8 @@ services:
       - "3000:3000"
     # map our application source code, in full, to the application root of our container
     volumes:
-      - .:/var/www/consul:delegated
-      - bundle:/usr/local/bundle:delegated
+      - .:/var/www/consul
+      - bundle:/usr/local/bundle
       - "$SSH_AUTH_SOCK:/tmp/agent.sock"
     environment:
       - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
