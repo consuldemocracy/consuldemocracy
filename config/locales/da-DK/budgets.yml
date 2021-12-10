@@ -184,6 +184,14 @@ da:
     supports_info:
       different: "Du må støtte lige så mange forskellige projekter som du har lyst til."
       next: "Støt de projekter du gerne vil have går videre til næste fase."
+      scrolling: "Fortsæt med at rulle ned for at se alle ideer"
+      share: "Del dine yndlingsprojekter igennem sociale medier for at give dem mere opmærksomhed"
+      supported:
+        one: "Du har støttet <strong> 1 projekt</strong>."
+        other: "Du har støttet <strong>%{count} projekter</strong>."
+      supported_not_logged_in: "Log ind for at <strong> støtte projekter</strong>."
+      time: "Indtil %{phase_end_date} kan du støtte projekter."
+      title: "Det er tid til <strong> at støtte </strong> projekter!"
     results:
       link: Resultater
       page_title: "%{budget} - Resultater"
