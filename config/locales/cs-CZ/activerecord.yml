@@ -30,6 +30,11 @@ cs:
         few: "milníky"
         many: "milníků"
         other: "milníky"
+      milestone/status:
+        one: "Stav milníku"
+        few: "Stavy milníku"
+        many: "Stavů milníků"
+        other: "Stavy milníku"
       progress_bar:
         one: "Ukazatel průběhu"
         few: "Ukazatele průběhu"
