@@ -772,6 +772,10 @@ cs:
       add_language: Přidat jazykovou sadu
       languages_in_use:
         zero: "0 používaných jazyků"
+        one: "1 používaný jazyk"
+        few: "%{count} používané jazyky"
+        many: "%{count} používaných jazyků"
+        other: "%{count} používaných jazyků"
     optional: "Volitelně"
     required: "Požadováno"
   social:
@@ -827,6 +831,11 @@ cs:
           few: "%{count} komentáře"
           many: "%{count} komentářů"
           other: "%{count} komentářů"
+        debates:
+          one: 1 Debata
+          few: "%{count} debaty"
+          many: "%{count} debat"
+          other: "%{count} debat"
         proposals:
           one: 1 Návrh
           few: "%{count} Návrhy"
@@ -837,6 +846,11 @@ cs:
           few: "%{count} Investice"
           many: "%{count} Investic"
           other: "%{count} investic"
+        follows:
+          one: 1 Sledující
+          few: "%{count} Sledující"
+          many: "%{count} Sledujících"
+          other: "%{count} sledovaných"
       no_activity: Uživatel nemá žádnou veřejnou aktivitu
       no_private_messages: "Tento uživatel nepřijímá soukromé zprávy."
       private_activity: Uživatel se rozhodl ponechat seznam svých aktivit soukromý.
