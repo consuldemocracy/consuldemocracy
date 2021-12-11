@@ -827,6 +827,16 @@ cs:
           few: "%{count} komentáře"
           many: "%{count} komentářů"
           other: "%{count} komentářů"
+        proposals:
+          one: 1 Návrh
+          few: "%{count} Návrhy"
+          many: "%{count} Návrhů"
+          other: "%{count} návrhů"
+        budget_investments:
+          one: Investice
+          few: "%{count} Investice"
+          many: "%{count} Investic"
+          other: "%{count} investic"
       no_activity: Uživatel nemá žádnou veřejnou aktivitu
       no_private_messages: "Tento uživatel nepřijímá soukromé zprávy."
       private_activity: Uživatel se rozhodl ponechat seznam svých aktivit soukromý.
