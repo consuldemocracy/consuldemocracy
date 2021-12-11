@@ -837,6 +837,11 @@ cs:
         title: Náhled informačního bulletinu
         send: Odeslat
         affected_users: (%{n} postižených uživatelů)
+        sent_emails:
+          one: 1 odeslaný e-mail
+          few: "%{count} e-maily odeslány"
+          many: "%{count} e-mailů odesláno"
+          other: "Odesláno %{count} emailů"
         sent_at: Odesláno v čase
         subject: Subject
         segment_recipient: Recipients
