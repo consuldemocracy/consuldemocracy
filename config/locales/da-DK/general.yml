@@ -210,7 +210,6 @@ da:
       conditions: Brugervilkår og betingelser
       consul: Consul programmet
       consul_url: https://github.com/consul/consul
-      contact_us: For teknisk assistance besøg
       copyright: CONSUL, %{year}
       description: Denne portal anvender %{consul}, som er en %{open_source}.
       open_source: open-source software
