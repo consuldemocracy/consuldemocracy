@@ -227,7 +227,6 @@ cs:
       conditions: Podmínky používání
       consul: aplikace CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: Kontaktujte technickou podporu
       copyright: CONSUL, %{year}
       description: Tento portál software %{consul}, což je %{open_source}.
       open_source: open source software
