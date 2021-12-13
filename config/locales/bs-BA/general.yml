@@ -203,7 +203,6 @@ bs:
       conditions: Uvjeti korištenja
       consul: Aplikacija CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: Posjeti za tehničku podršku
       copyright: CONSUL, (godina) %{year}
       description: Ovaj portal koristi %{consul}, koji je %{open_source} aplikacija.
       open_source: softver otvorenog koda
