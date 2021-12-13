@@ -209,7 +209,6 @@ ca:
       conditions: Condicions d'ús
       consul: Sol·licitud CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: Per a assistència tècnica, visiteu
       copyright: CONSUL, %{year}
       description: Aquest portal és una adaptació de la plataforma de %{open_source} %{consul} desenvolupada per l'Ajuntament de Madrid i adaptada per la Diputació de València.
       open_source: programari lliure
