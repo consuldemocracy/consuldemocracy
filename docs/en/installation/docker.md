@@ -64,7 +64,7 @@ If you encounter the "WSL 2 installation incomplete" error:
 Clone the repo on your computer and enter the folder:
 
 ```bash
-git clone git@github.com:consul/consul.git
+git clone https://github.com/consul/consul.git
 cd consul
 ```
 
