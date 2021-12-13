@@ -79,7 +79,7 @@ es:
       poster_description_description: Descripción detallada de la funcionalidad de póster
     analytics_url: "URL de estadísticas externas"
     proposal_notification_minimum_interval_in_days: "Intervalo mínimo (en días) para que los autores de propuestas puedan enviar nuevas notificaciones de propuesta"
-    proposal_notification_minimum_interval_in_days_description: "El número de días en los que un usuario puede enviar una notificación a todos los que siguen su propuesta"
+    proposal_notification_minimum_interval_in_days_description: "El número de días en los que un usuario puede enviar una notificación a todos los que apoyan su propuesta"
     direct_message_max_per_day: "Mensajes directos máximos por día"
     direct_message_max_per_day_description: "Número de mensajes directos máximos que un usuario puede enviar por día"
     feature:
@@ -106,8 +106,6 @@ es:
         recommendations_on_proposals_description: "Muestra a los usuarios recomendaciones en la página de propuestas basado en las etiquetas de los elementos que sigue"
       community: "Comunidad en propuestas y proyectos de gasto"
       community_description: "Activa la sección de comunidad en las propuestas y en los proyectos de gasto de los Presupuestos participativos"
-      machine_learning: "IA / Machine learning"
-      machine_learning_description: "Habilita la sección de IA / Machine Learning para ejecutar scripts de python y enriquecer el contenido automáticamente."
       map: "Geolocalización de propuestas y proyectos de gasto"
       map_description: "Activa la geolocalización de propuestas y proyectos de gasto"
       allow_images: "Permitir subir y mostrar imágenes"
@@ -132,19 +130,15 @@ es:
       dashboard:
         notification_emails: "Emails del panel de progreso"
         notification_emails_description: "Activar el envío de emails de notificaciones a los autores de las propuestas en la sección de panel de progreso"
-      remove_investments_supports: "Permitir retirar los apoyos en los proyectos de gasto"
-      remove_investments_supports_description: "Permite que los usuarios retiren su apoyo en los proyectos de gasto de los presupuestos participativos durante la fase de apoyos."
-      sdg: ODS
-      sdg_description: Habilitar secciones relacionadas con Objetivos de Desarrollo Sostenible en el menú de administración y en la sección de Configuración Global.
     remote_census:
       general:
         endpoint: "Endpoint"
         endpoint_description: "Nombre del host donde se encuentra el servicio del censo (wsdl)"
       request:
         method_name: "Nombre del método de la petición"
-        method_name_description: "Nombre del método qe acepta el WebService del Censo del Ayuntamiento."
+        method_name_description: "Nombre del método que acepta el WebService del Censo del Ayuntamiento."
         structure: "Estructura de la petición"
-        structure_description: 'Estructura de la petición a enviar al WebService del Censo del Ayuntamiento. Los valores "fijos" de esta petición deberan informarse. Los valores relacionado con Tipo de Documento, Número de Documento, Fecha de Nacimiento y Código Postal deberán dejarse con valor null. Ejemplo de formato válido: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": 1, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
+        structure_description: 'Estructura de la petición que recibe el WebService del Censo del Ayuntamiento. Los valores "fijos" de esta petición deberan informarse. Los valores relacionados con Tipo de Documento, Número de Documento, Fecha de Nacimiento y Código Postal deberán dejarse con valor null. Ejemplo de formato válido: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": 1, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
         document_type: "Ruta para Tipo de Documento"
         document_type_description: "Ruta donde se encuentra el campo en la estructura de la petición que envia el Tipo de Documento. NO RELLENAR en caso de que el WebService no requiera el Tipo de Documento para verificar un usuario."
         document_number: "Ruta para Número de Documento"
@@ -213,15 +207,3 @@ es:
         max_size_description: "Tamaño máximo permitido al subir un documento (en Megabytes/MB)"
         content_types: "Tipos de documentos permitidos"
         content_types_description: "Selecciona todos los tipos permitidos para los documentos subidos"
-    sdg:
-      process:
-        debates: Alineamiento ODS en debates
-        debates_description: Permitir alineamiento de los Objetivos de Desarrollo Sostenible en debates
-        proposals: Alineamiento ODS en propuestas
-        proposals_description: Permitir alineamiento de los Objetivos de Desarrollo Sostenible en propuestas
-        polls: Alineamiento ODS en votaciones
-        polls_description: Permitir alineamiento de los Objetivos de Desarrollo Sostenible en votaciones
-        budgets: Alineamiento ODS en presupuestos participativos
-        budgets_description: Permitir alineamiento de los Objetivos de Desarrollo Sostenible en presupuestos participativos
-        legislation: Alineamiento ODS en legislación colaborativa
-        legislation_description: Permitir alineamiento de los Objetivos de Desarrollo Sostenible en legislación colaborativa
