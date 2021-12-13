@@ -200,7 +200,6 @@ pl:
       conditions: Regulamin
       consul: Aplikacja CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: Do centrów pomocy technicznej
       copyright: CONSUL, %{year}
       description: Ten portal używa %{consul}, który jest %{open_source}.
       open_source: oprogramowanie open-source
