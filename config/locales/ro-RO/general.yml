@@ -222,7 +222,6 @@ ro:
       conditions: Termeni și condiții de utilizare
       consul: Cerere CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: Pentru ajutor tehnic mergeți la
       copyright: CONSUL, %{year}
       description: Acest portal folosește %{consul} care este %{open_source}.
       open_source: software open-source
