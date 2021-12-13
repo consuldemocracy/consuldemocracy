@@ -214,7 +214,6 @@ ru:
       conditions: Положения и условия пользования
       consul: Приложение CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: Для технической поддержки используйте
       copyright: CONSUL, %{year}
       description: Этот портал использует %{consul}, являющийся %{open_source}.
       open_source: открытым программным обеспечением
