@@ -177,7 +177,6 @@ id:
       conditions: Syarat dan ketentuan penggunaan
       consul: Konsul aplikasi
       consul_url: https://github.com/consul/consul
-      contact_us: Untuk bantuan teknis memasuki
       copyright: KONSUL, %{year}
       description: Portal ini menggunakan %{consul} Itulah %{open_source}.
       open_source: perangkat lunak open-source
