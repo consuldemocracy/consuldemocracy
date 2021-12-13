@@ -187,7 +187,6 @@ so:
       conditions: Shuruudaha iyo xaaladaha isticmaalka
       consul: Codsiga Qunsulka
       consul_url: https://github.com/consul/qonsul
-      contact_us: Booqashada gargaar farsamo
       copyright: Qonsul%{year}
       description: Qeybtaani waxay isticmaashaa%{consul} kaas oo ah%{open_source}.
       open_source: ilo Softiweer oo furan
