@@ -210,7 +210,6 @@ pt-BR:
       conditions: Termos e condições de uso
       consul: Aplicativo Consul
       consul_url: https://github.com/consul/consul
-      contact_us: Para suporte técnico entre em
       copyright: Consul, %{year}
       description: Este portal usa o %{consul} que é %{open_source}. De Madrid para o mundo.
       open_source: programa de código aberto
