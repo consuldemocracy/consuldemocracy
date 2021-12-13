@@ -209,7 +209,6 @@ oc:
       conditions: De condicions d'usatge
       consul: Sollicitud CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: Per assisténcia tecnica, visitatz
       copyright: CONSUL, %{year}
       description: Aquel portal es una adaptacion de la plataforma de %{open_source} %{consul} desvolopada per la Comuna de Madrid e adaptada per la Deputacion de Valéncia.
       open_source: logicial liure
