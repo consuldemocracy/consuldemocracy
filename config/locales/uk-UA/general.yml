@@ -227,7 +227,6 @@ uk-UA:
       conditions: Правила та умови користування
       consul: Додаток CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: Для технічної допомоги перейдіть
       copyright: CONSUL, %{year}
       description: Цей портал використовує %{consul} який знаходиться %{open_source}.
       open_source: відкрите програмне забезпечення
