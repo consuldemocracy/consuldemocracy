@@ -22,5 +22,11 @@ describe Mailer do
 
       expect(email).to deliver_from "New organization <new@consul.dev>"
     end
+
+    it "sends emails for comments on legislation proposals" do
+      email = Mailer.comment(create(:legislation_proposal_comment))
+
+      expect(email.subject).to include("commented on your proposal")
+    end
   end
 end
