@@ -201,7 +201,6 @@ el:
       conditions: Όροι και προϋποθέσεις χρήσης
       consul: Εφαρμογή CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: Για τεχνική υποστήριξη επισκεφτείτε
       copyright: CONSUL, %{year}
       description: Αυτή η πύλη χρησιμοποιεί το %{consul}, το οποίο είναι %{open_source}.
       open_source: λογισμικό ανοικτού κώδικα
