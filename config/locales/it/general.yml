@@ -213,7 +213,6 @@ it:
       conditions: Termini e condizioni d'uso
       consul: app CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: Per assistenza tecnica entra
       copyright: CONSOLE, %{year}
       description: Questo portale utilizza %{consul} che è %{open_source}.
       open_source: software open-source
