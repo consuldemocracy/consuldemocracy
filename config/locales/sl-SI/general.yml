@@ -165,7 +165,6 @@ sl:
       accessibility: Dostopnosti
       conditions: Pogoji uporabe
       consul: Aplikacija CONSUL
-      contact_us: Tehnična pomoč
       description: Ta portal uporablja %{consul}, ki je %{open_source}.
       open_source: odprtokodna programska oprema
       participation_text: Odloči se, kako sooblikovati tako mesto, v kakršnem si želiš živeti.
