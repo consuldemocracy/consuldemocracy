@@ -209,7 +209,6 @@ nn:
       conditions: Brukervilkår
       consul: CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: For teknisk support gå til
       copyright: CONSUL, %{year}
       description: Denne portalen bruker %{consul} som er %{open_source}.
       open_source: open-source software
