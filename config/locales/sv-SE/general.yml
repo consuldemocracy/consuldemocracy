@@ -213,7 +213,6 @@ sv:
       conditions: användarvillkoren
       consul: Programvaran CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: För teknisk support gå till
       copyright: CONSUL, %{year}
       description: Den här webbplatsen använder %{consul} som är %{open_source}.
       open_source: en plattform med öppen källkod
