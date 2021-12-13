@@ -187,7 +187,6 @@ sq:
       conditions: Termat dhe kushtet e përdorimit
       consul: Consul Tirana
       consul_url: https://github.com/consul/consul
-      contact_us: Për ndihmë teknike hyni në
       copyright: Bashkia Tiranë, %{year}
       description: Ky portal përdor %{consul} i cili është %{open_source}.
       open_source: programet open-source
