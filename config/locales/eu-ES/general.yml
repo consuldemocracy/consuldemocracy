@@ -182,7 +182,6 @@ eu:
       conditions: Erabilera baldintzak
       consul: CONSUL aplikazioa
       consul_url: https://github.com/consul/consul
-      contact_us: 'Asistentzia teknikoa nahi izan ezkero sakatu hemen:'
       copyright: CONSUL, %{year}
       description: Web atari honek %{consul} erbalitzen du eta %{open_source} da.
       open_source: Kode ireki softwarea
