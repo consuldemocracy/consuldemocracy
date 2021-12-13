@@ -182,7 +182,6 @@ zh-TW:
       conditions: 使用條款及條件
       consul: CONSUL 應用程式
       consul_url: https://github.com/consul/consul
-      contact_us: 進入技術支援
       copyright: CONSUL, %{year}
       description: 此入口網頁使用%{consul}，即是%{open_source}。
       open_source: 開源軟件
