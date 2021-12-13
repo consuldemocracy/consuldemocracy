@@ -80,16 +80,16 @@ cp config/database-docker.yml.example config/database.yml
 Y generamos el contenedor:
 
 ```bash
-docker build -t consul .
+POSTGRES_PASSWORD=password docker-compose build
 ```
 
-Creamos las imágenes de base de datos:
+Arrancamos el servicio de base de datos:
 
 ```bash
 POSTGRES_PASSWORD=password docker-compose up -d database
 ```
 
-Una vez creada la imagen, podemos crear la base de datos e introducir datos de prueba:
+Ahora podemos crear la base de datos e introducir datos de prueba:
 
 ```
 POSTGRES_PASSWORD=password docker-compose run app rake db:create db:migrate
