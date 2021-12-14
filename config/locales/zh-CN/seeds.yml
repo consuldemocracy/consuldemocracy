@@ -36,11 +36,6 @@ zh-CN:
       groups:
         all_city: 所有城市
         districts: 地区
-      valuator_groups:
-        culture_and_sports: 文化&体育
-        gender_and_diversity: 性别 & 多元化政策
-        urban_development: 可持续城市发展
-        equity_and_employment: 平等&就业
       statuses:
         studying_project: 研究此项目
         bidding: 投票
