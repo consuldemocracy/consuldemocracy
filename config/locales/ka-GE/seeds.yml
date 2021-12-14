@@ -36,11 +36,6 @@ ka:
       groups:
         all_city: მთელი ქალაქი
         districts: ოლქები
-      valuator_groups:
-        culture_and_sports: კულტურა და სპორტი
-        gender_and_diversity: გენდერი და მრავალფეროვნების პოლიტიკა
-        urban_development: მდგრადი ურბანული განვითარება
-        equity_and_employment: სამართლიანობა და დასაქმება
       statuses:
         studying_project: პროექტის შესწავლა
         bidding: ტენდერი
