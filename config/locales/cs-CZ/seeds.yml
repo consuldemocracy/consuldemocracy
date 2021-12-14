@@ -32,6 +32,9 @@ cs:
         title: "Jak fungují participativní rozpočty?"
         description: "Participativní rozpočty umožňují občanům navrhovat a přímo rozhodovat o tom, jak utratit část rozpočtu, přičemž instituce návrhy monitoruje a důsledně hodnotí. Maximální efektivita a kontrola se spokojeností pro všechny."
         link_text: "Více o participativních rozpočtech"
+        label: "Participativní rozpočty"
+      debate:
+        title: "Jak debaty fungují?"
     categories:
       associations: Sdružení
       culture: Kultura
