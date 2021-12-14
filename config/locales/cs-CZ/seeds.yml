@@ -1,5 +1,18 @@
 cs:
   seeds:
+    admin_notifications:
+      budget:
+        title: "Uzavíráme participativní rozpočet!"
+        body: "Pospěšte si a vytvořte návrh dříve, než v příštích dnech skončí!"
+      help:
+        title: "Pomozte nám přeložit consul"
+        body: "Pokud ovládáte nějaký jazyk, pomozte nám přeložit Consul!"
+      map:
+        title: "Nyní můžete geolokalizovat návrhy a investice"
+        body: "Při vytváření návrhu nebo investice můžete nyní zadat bod na mapě."
+      proposal:
+        title: "Máte návrh?"
+        body: "Nezapomeňte, že můžete vytvořit návrh se svými nápady a lidé o něm budou diskutovat a podporovat ho."
     settings:
       official_level_1_name: Oficiální pozice 1
       official_level_2_name: Oficiální pozice 2
@@ -14,6 +27,11 @@ cs:
     organizations:
       human_rights: Lidská práva
       neighborhood_association: Sdružování
+    cards:
+      budget:
+        title: "Jak fungují participativní rozpočty?"
+        description: "Participativní rozpočty umožňují občanům navrhovat a přímo rozhodovat o tom, jak utratit část rozpočtu, přičemž instituce návrhy monitoruje a důsledně hodnotí. Maximální efektivita a kontrola se spokojeností pro všechny."
+        link_text: "Více o participativních rozpočtech"
     categories:
       associations: Sdružení
       culture: Kultura
