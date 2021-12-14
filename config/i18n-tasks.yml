@@ -47,6 +47,7 @@ data:
     - config/locales/%{locale}/milestones.yml
     - config/locales/%{locale}/sdg.yml
     - config/locales/%{locale}/sdg_management.yml
+    - config/locales/%{locale}/seeds.yml
     - config/locales/%{locale}/stats.yml
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
@@ -79,6 +80,7 @@ search:
   paths:
    - app/
    - db/pages/
+   - db/dev_seeds/
 
   ## Root directories for relative keys resolution.
   # relative_roots:
@@ -122,7 +124,6 @@ ignore_missing:
   - "devise.failure.invalid"
   - "devise.registrations.destroyed"
   - "devise.password_expired.*"
-  - "seeds.settings.*"
 
 ## Consider these keys used:
 ignore_unused:
@@ -215,7 +216,6 @@ ignore_unused:
   - admin.stats.polls.expired
   - "stats.polls.*_percentage"
   - landings.cambia_tu_ciudad.*
-  - "seeds.settings.*"
   - "dashboard.polls.*.submit"
   - "related_content.content_title.*"
   - "sdg.goals.goal_*"
