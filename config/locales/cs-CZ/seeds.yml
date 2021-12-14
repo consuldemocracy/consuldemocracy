@@ -35,6 +35,12 @@ cs:
         label: "Participativní rozpočty"
       debate:
         title: "Jak debaty fungují?"
+        description: "Kdokoli může otevřít vlákno na libovolné téma a vytvořit samostatný prostor, kde mohou lidé diskutovat o navrhovaném tématu. Debaty jsou ceněny všemi, aby se zdůraznila nejdůležitější témata."
+        link_text: "Více o debatách"
+        label: "Debaty"
+      header:
+        title: "CONSUL"
+        description: "Bezplatný software pro účast občanů."
     categories:
       associations: Sdružení
       culture: Kultura
