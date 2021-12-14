@@ -36,11 +36,6 @@ it:
       groups:
         all_city: Tutta la Città
         districts: Distretti
-      valuator_groups:
-        culture_and_sports: Cultura & Sport
-        gender_and_diversity: Politiche di Genere & Diversità
-        urban_development: Sviluppo Urbano Sostenibile
-        equity_and_employment: Equità & Occupazione
       statuses:
         studying_project: Lo studio del progetto
         bidding: Offerta
