@@ -185,6 +185,7 @@ sv:
       index:
         new_button: "Lägg till ny grupp"
     budget_headings:
+      no_headings: "Det finns inga områden i gruppen <strong>%{group}</strong>."
       create:
         notice: "Området har skapats!"
       update:
