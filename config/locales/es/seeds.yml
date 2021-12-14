@@ -73,11 +73,6 @@ es:
       phases:
         description: "Descripción en %{language}"
         summary: "Resumen en %{language}"
-      valuator_groups:
-        culture_and_sports: Cultura y Deportes
-        gender_and_diversity: Políticas de Género y Diversidad
-        urban_development: Desarrollo Urbano Sostenible
-        equity_and_employment: Equidad y Empleo
       statuses:
         studying_project: Estudiando el proyecto
         bidding: Licitación
