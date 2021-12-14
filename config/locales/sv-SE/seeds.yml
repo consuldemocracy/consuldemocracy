@@ -45,6 +45,9 @@ sv:
         label: "Välkommen till"
       proposal:
         title: "Hur fungerar medborgarförslag?"
+        description: "Ett utrymme där alla kan skapa ett medborgarförslag och söka stöd. Förslag som får tillräckligt stöd går vidare till omröstning, och på så vis kan vi tillsammans avgöra de frågor som är viktiga för oss."
+        link_text: "Mer om förslag"
+        label: "Medborgarförslag"
     categories:
       associations: Föreningar
       culture: Kultur
@@ -67,11 +70,17 @@ sv:
       groups:
         all_city: Hela staden
         districts: Distrikt
+      phases:
+        description: "Beskrivning på %{language}"
+        summary: "Sammanfattning på %{language}"
       statuses:
         studying_project: Granskning av projekt
         bidding: Budgivning
         executing_project: Genomförande av projekt
         executed: Genomfört
+    legislation:
+      draft_versions:
+        title: "Version %{number}"
     polls:
       current_poll: "Aktuell omröstning"
       current_poll_geozone_restricted: "Omröstningen är begränsad till ett geografiskt område"
