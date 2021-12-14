@@ -7,6 +7,8 @@ sv:
       help:
         title: "Hjälp oss att översätta consul"
         body: "Om du talar ett språk flytande, ber vi dig hjälpa oss att översätta consul!"
+      map:
+        title: "Du kan nu geografiskt placera förslag och investeringar"
     settings:
       official_level_1_name: Tjänsteman nivå 1
       official_level_2_name: Tjänsteman nivå 2
