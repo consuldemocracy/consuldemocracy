@@ -41,6 +41,13 @@ cs:
       header:
         title: "CONSUL"
         description: "Bezplatný software pro účast občanů."
+        link_text: "Více informací"
+        label: "Vítejte v"
+      proposal:
+        title: "Jak fungují návrhy občanů?"
+        description: "Prostor pro každého, kdo chce vytvořit občanský návrh a hledat podporu. O návrzích, které získají dostatečnou podporu, se bude hlasovat a společně tak můžeme rozhodovat o věcech, na kterých nám záleží."
+        link_text: "Více o návrzích"
+        label: "Návrhy občanů"
     categories:
       associations: Sdružení
       culture: Kultura
@@ -63,11 +70,18 @@ cs:
       groups:
         all_city: Celé město
         districts: Městské části
+      phases:
+        description: "Popis v %{language}"
+        summary: "Shrnutí v %{language}"
       statuses:
         studying_project: Studium projektu
         bidding: Nabídka
         executing_project: Realizace projektu
         executed: Realizováno
+    legislation:
+      draft_versions:
+        title: "Verze %{number}"
+        body: "Verze návrhu v %{language}"
     polls:
       current_poll: "Aktuální průzkum"
       current_poll_geozone_restricted: "Geozóna aktuální ankety byla omezena"
