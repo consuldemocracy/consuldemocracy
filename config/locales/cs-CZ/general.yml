@@ -46,7 +46,7 @@ cs:
       responses_collapse:
         zero: Žádné odezvy
         one: "1 reakce (sbaleno)"
-        few: "%{count} reakce (sbaleno)"
+        few: "%{count} reakce (sbalit)"
         many: "%{count} reakcí (sbaleno)"
         other: "%{count} reakcí (sbaleno)"
       user_deleted: Uživatel smazán
