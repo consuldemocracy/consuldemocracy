@@ -43,6 +43,8 @@ sv:
         description: "Kostnadsfri programvara för medborgardeltagande."
         link_text: "Mer information"
         label: "Välkommen till"
+      proposal:
+        title: "Hur fungerar medborgarförslag?"
     categories:
       associations: Föreningar
       culture: Kultur
