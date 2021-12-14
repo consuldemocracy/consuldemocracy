@@ -36,11 +36,6 @@ bg:
       groups:
         all_city: Всички градове
         districts: Райони
-      valuator_groups:
-        culture_and_sports: Култура и спорт
-        gender_and_diversity: Политики за равенство между половете и многообразие
-        urban_development: Устойчиво градско развитие
-        equity_and_employment: Капитал и заетост
       statuses:
         studying_project: Изучаване на проекта
         bidding: Наддаване
