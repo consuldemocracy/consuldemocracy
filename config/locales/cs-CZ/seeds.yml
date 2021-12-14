@@ -36,11 +36,6 @@ cs:
       groups:
         all_city: Celé město
         districts: Městské části
-      valuator_groups:
-        culture_and_sports: Kultura & Sport
-        gender_and_diversity: Politiky v oblasti rovnosti žen a mužů
-        urban_development: Udržitelný urbání rozboj
-        equity_and_employment: Vlastní kapitál & zaměstnanost
       statuses:
         studying_project: Studium projektu
         bidding: Nabídka
