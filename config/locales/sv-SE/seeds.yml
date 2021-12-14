@@ -36,11 +36,6 @@ sv:
       groups:
         all_city: Hela staden
         districts: Distrikt
-      valuator_groups:
-        culture_and_sports: Kultur och sport
-        gender_and_diversity: Jämställdhet och mångfald
-        urban_development: Hållbar stadsutveckling
-        equity_and_employment: Jämlikhet och sysselsättning
       statuses:
         studying_project: Granskning av projekt
         bidding: Budgivning
