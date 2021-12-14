@@ -35,6 +35,14 @@ sv:
         label: "Medborgarbudgetar"
       debate:
         title: "Hur fungerar debatter?"
+        description: "Vem som helst kan starta trådar om vilket ämne som helst och skapa separata utrymmen där alla kan diskutera det föreslagna ämnet. Debatter uppskattas av alla och lyfter fram de viktigaste frågorna."
+        link_text: "Mer om debatter"
+        label: "Debatter"
+      header:
+        title: "CONSUL"
+        description: "Kostnadsfri programvara för medborgardeltagande."
+        link_text: "Mer information"
+        label: "Välkommen till"
     categories:
       associations: Föreningar
       culture: Kultur
