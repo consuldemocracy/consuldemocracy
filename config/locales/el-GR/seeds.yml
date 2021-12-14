@@ -36,11 +36,6 @@ el:
       groups:
         all_city: Όλες οι πόλεις
         districts: Περιφέριες
-      valuator_groups:
-        culture_and_sports: Πολιτισμός & Αθλητικά
-        gender_and_diversity: Πολιτική για την Ισότητα των Φύλων και της Διαφορετικότητας
-        urban_development: Βιώσιμη αστική ανάπτυξη
-        equity_and_employment: Μετοχικό κεφάλαιο & Εργασιακή απασχόληση
       statuses:
         studying_project: Μελετώντας το έργο
         bidding: Υποβολή προσφορών
@@ -50,5 +45,5 @@ el:
       current_poll: "Τρέχουσα δημοσκόπηση"
       current_poll_geozone_restricted: "Η τρέχουσα δημοσκόπηση περιορίζεται από την παράμετρο Geozone"
       recounting_poll: "Επανάληψη δημοσκόπησης"
-      expired_poll_without_stats: "Η δημοσκόπηση έληξε χωρίς στατιστικά στοιχεία και αποτελέσματα"
+      expired_poll_without_stats: "Η δημοσκόπηση έχει ολοκληρωθεί χωρίς να εμπεριέχει στατιστικά στοιχεία και αποτελέσματα"
       expired_poll_with_stats: "Η δημοσκόπηση έχει ολοκληρωθεί και εμπεριέχει στατιστικά στοιχεία και αποτελέσματα"
