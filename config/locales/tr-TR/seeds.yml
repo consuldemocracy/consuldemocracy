@@ -36,11 +36,6 @@ tr:
       groups:
         all_city: Tüm şehir
         districts: İlçeler
-      valuator_groups:
-        culture_and_sports: Kültür & Spor
-        gender_and_diversity: Cinsiyet & Çeşitlilik Politikaları
-        urban_development: Sürdürülebilir Kentsel Gelişim
-        equity_and_employment: Eşitlik & İstihdam
       statuses:
         studying_project: Projenin incelenmesi
         bidding: Teklif verme
