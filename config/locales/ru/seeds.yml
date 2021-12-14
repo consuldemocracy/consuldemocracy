@@ -36,11 +36,6 @@ ru:
       groups:
         all_city: Весь город
         districts: Районы
-      valuator_groups:
-        culture_and_sports: Культура и спорт
-        gender_and_diversity: Политика в отношении полов и их разнообразия
-        urban_development: Устойчивое городское развитие
-        equity_and_employment: Справедливость и занятость
       statuses:
         studying_project: Изучение проекта
         bidding: Проведение тендера
