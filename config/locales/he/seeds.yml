@@ -36,11 +36,6 @@ he:
       groups:
         all_city: כל העיר
         districts: רובעים
-      valuator_groups:
-        culture_and_sports: תרבות וספורט
-        gender_and_diversity: מדיניות מגדר ומגוון
-        urban_development: פיתוח עירוני בר קיימא
-        equity_and_employment: תעסוקה והון
       statuses:
         studying_project: למידת הפרויקט
         bidding: מתן הצעות מחיר
