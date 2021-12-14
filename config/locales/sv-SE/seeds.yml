@@ -30,6 +30,11 @@ sv:
     cards:
       budget:
         title: "Hur fungerar medborgarbudgetar?"
+        description: "Med medborgarbudgetar kan medborgarna föreslå och direkt bestämma hur en del av budgeten ska användas, med institutionell övervakning och rigorös utvärdering av förslag. Maximal effektivitet och kontroll så att alla blir nöjda."
+        link_text: "Mer om medborgarbudgetar"
+        label: "Medborgarbudgetar"
+      debate:
+        title: "Hur fungerar debatter?"
     categories:
       associations: Föreningar
       culture: Kultur
