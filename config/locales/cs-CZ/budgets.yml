@@ -129,7 +129,7 @@ cs:
           verified_only: "Pro vytvoření nové položky participativního rozpočtu %{verify}."
           create: "Přidat investiční projekt"
           not_logged_in: "Pro vytvoření nové položky participativního rozpočtu musíte %{sign_in} nebo%{sign_up}."
-        filter: "Filtrování pprojektů podle"
+        filter: "Filtrování projektů podle"
         filters:
           not_unfeasible: "Není neproveditelné"
           selected: "Vybrané"
