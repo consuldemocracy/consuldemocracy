@@ -171,6 +171,11 @@ cs:
       headings_name: "Kapitoly"
       headings_manage: "Spravovat kapitoly"
       no_groups: "Neexistují žádné skupiny."
+      amount:
+        one: "Je tu 1 skupina"
+        few: "Jsou tu %{count} skupiny"
+        many: "Je tu %{count} skupin"
+        other: "Je zde %{count} skupin"
       create:
         notice: "Skupina byla úspěšně vytvořena!"
       update:
