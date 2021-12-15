@@ -277,6 +277,7 @@ sv:
           incompatible: Oförenlig
           price: Pris
           author: Förslagslämnare
+        cannot_calculate_winners: Budgeten måste vara i fasen "%{phase}" för att kunna räkna fram vinnande förslag
         see_results: "Visa resultat"
         milestone_tags_filter_all: "Alla milstolpetaggar"
       show:
