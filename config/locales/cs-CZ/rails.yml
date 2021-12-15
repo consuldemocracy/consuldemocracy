@@ -198,6 +198,11 @@ cs:
       storage_units:
         format: "%n %u"
         units:
+          byte:
+            one: Bajt
+            few: Bajty
+            many: Bajtů
+            other: Bajtů
           gb: GB
           kb: KB
           mb: MB
