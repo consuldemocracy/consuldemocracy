@@ -272,6 +272,17 @@ cs:
       title: Upozornění
       unread: Nepřečtené
     notification:
+      action:
+        comments_on:
+          one: Někdo komentoval v
+          few: Jsou %{count} nové komentárře na
+          many: Je %{count} nových komentářů na
+          other: Celkem %{count} nových komentářů v
+        proposal_notification:
+          one: Máte jedno nové oznámení na
+          few: Jsou tu %{count} nová oznámení na
+          many: Je tu %{count} nových oznámení na
+          other: Je tu %{count} nových oznámení na
       mark_as_read: Označit za přečtené
       mark_as_unread: Označit za nepřečtené
       notifiable_hidden: Tento prostředek není k dispozici.
