@@ -37,6 +37,10 @@ cs:
       moderator: Moderátor
       responses:
         zero: Žádné odezvy
+        one: 1 reakce
+        few: "%{count} reakce"
+        many: "%{count} reakcí"
+        other: "%{count} reakcí"
       responses_show:
         zero: Žádné odezvy
         one: "1 odpověď (zobrazit)"
@@ -254,6 +258,10 @@ cs:
       notification_item:
         new_notifications:
           zero: "Nemáte žádná nová upozornění"
+          one: Máte nové oznámení
+          few: Máte %{count} nová oznámení
+          many: Máte %{count} nových oznámení
+          other: Máte %{count} nových oznámení
         notifications: Upozornění
       sdg: "SDG"
   notifications:
