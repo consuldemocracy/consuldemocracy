@@ -24,7 +24,7 @@
                 <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length %>
                 <%= fo.text_field :responsible_name, autofocus: true, maxlength: Organization.responsible_name_max_length %>
               <% end %>
-              <%= f.text_field :phone_number %>
+              <%= f.phone_field :phone_number %>
 
             <% else %>
               <%= f.text_field :username, maxlength: User.username_max_length %>
