@@ -29,7 +29,7 @@
           <% end %>
         </td>
         <td>
-          <%= render Admin::TableActionsComponent.new(newsletter) do |actions| %>
+          <%= render Admin::TableActionsComponent.new(newsletter, available_actions(newsletter)) do |actions| %>
             <%= actions.action :preview, text: t("admin.newsletters.index.preview") %>
           <% end %>
         </td>
