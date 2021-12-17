@@ -125,14 +125,16 @@ describe "Admin Notifications", :admin do
       expect(page).to have_css(".notification", count: 0)
     end
 
-    scenario "Sent notification can not be destroyed" do
+    scenario "Sent notification can be destroyed" do
       notification = create(:admin_notification, :sent)
 
       visit admin_admin_notifications_path
-
       within("#admin_notification_#{notification.id}") do
-        expect(page).not_to have_button "Delete"
+        accept_confirm { click_button "Delete" }
       end
+
+      expect(page).to have_content "Notification deleted successfully"
+      expect(page).to have_css(".notification", count: 0)
     end
   end
 
