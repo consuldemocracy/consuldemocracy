@@ -224,7 +224,7 @@ cs:
         enabled_help_text: Fáze bude zveřejněna v časovém rozvrhu participativního rozpočtu a bude aktivní pro jakýkoli jiný účel
         image_description: "Pokud je obrázek nahrán, zobrazí se vedle popisu této fáze."
         main_call_to_action: "Hlavní výzva k akci (nepovinné)"
-        main_call_to_action_description: "Tento odkaz se zobrazí na hlavním banneru tohoto participativního rozpočtu, pokud je tato fáze povolena, a vybízí uživatele k provedení konkrétní akce, jako je vytvoření návrhu, hlasování pro stávající návrhy nebo získání dalších informací o procesu."
+        main_call_to_action_description: "Tento odkaz se zobrazí na hlavním obrázku tohoto participativního rozpočtu, pokud je tato fáze povolena, a vybízí uživatele k provedení konkrétní akce, jako je vytvoření návrhu, hlasování pro stávající návrhy nebo získání dalších informací o procesu."
         name_help_text: "Toto je název fáze, který si uživatelé přečtou v záhlaví, kdykoli je tato fáze aktivní."
         save_changes: Uložit změny
       index:
