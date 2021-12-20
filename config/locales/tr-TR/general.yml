@@ -891,11 +891,6 @@ tr:
       budget_investments:
         title: Tavsiye edilen yatırımlar
       slide: "Bak %{title}"
-    verification:
-      i_dont_have_an_account: Benim bir hesabım yok
-      i_have_an_account: Benim zaten bir hesabım var
-      question: Sizin zaten %{org_name} 'de bir hesabınız mı var?
-      title: Hesap doğrulama
     welcome:
       go_to_index: Önerileri ve tartışmaları gör
       start_using_consul: Dizin sayfasına git
