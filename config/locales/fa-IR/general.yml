@@ -438,11 +438,6 @@ fa:
       budget_investments:
         title: سرمایه گذاری های توصیه شده
       slide: "ببینید %{title}"
-    verification:
-      i_dont_have_an_account: من حسابی ندارم
-      i_have_an_account: "من یک اکانت از قبل دارم\n"
-      question: در حال حاضر یک حساب در %{org_name} دارید؟
-      title: حساب تایید شده
     welcome:
       go_to_index: پیشنهادات و بحث ها را ببینید
       title: "مشارکت\n"
