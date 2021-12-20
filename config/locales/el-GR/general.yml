@@ -846,11 +846,6 @@ el:
       budget_investments:
         title: Συνιστώμενες επενδύσεις
       slide: "Προβολή %{title}"
-    verification:
-      i_dont_have_an_account: Δεν έχω λογαριασμό
-      i_have_an_account: Έχω ήδη λογαριασμό
-      question: Έχετε ήδη λογαριασμό στο %{org_name};
-      title: Επιβεβαίωση λογαριασμού
     welcome:
       go_to_index: Όχι τώρα, μετάβαση στη σελίδα ευρετηρίου
       start_using_consul: Μετάβαση στη σελίδα ευρετηρίου
