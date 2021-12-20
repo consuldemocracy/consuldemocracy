@@ -15,7 +15,7 @@ class Newsletter < ApplicationRecord
   end
 
   def valid_segment_recipient?
-    segment_recipient && UserSegments.respond_to?(segment_recipient)
+    UserSegments.valid_segment?(segment_recipient)
   end
 
   def draft?
