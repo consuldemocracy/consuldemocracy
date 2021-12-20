@@ -684,11 +684,6 @@ eu:
       budget_investments:
         title: Gomendatutako aurrekontuak
       slide: "%{title} ikusi"
-    verification:
-      i_dont_have_an_account: Ez daukat konturik. Kontu bat sortu eta egiaztatu nahi dut.
-      i_have_an_account: Egiaztatu nahi dudan kontu bat daukat
-      question: Kontua daukazu %{org_name}-(e)n?
-      title: Kontuaren egiaztapena
     welcome:
       go_to_index: Orain ez, proposamenak ikusi
       title: Parte hartzen hasi zaitez
