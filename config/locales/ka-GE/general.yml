@@ -876,11 +876,6 @@ ka:
       budget_investments:
         title: რეკომენდირებული ინვესტიციები
       slide: "იხილეთ %{title}"
-    verification:
-      i_dont_have_an_account: არ მაქვს ანგარიში
-      i_have_an_account: უკვე მაქვს ანგარიში
-      question: უკვე გაქვთ ანგარი შექმნილი %{org_name}-ში?
-      title: ანგარიშის ვერიფიკაცია
     welcome:
       go_to_index: ახლა არა, გადადით მთავარ გვერდზე
       start_using_consul: მთავარ გვერდზე გადასვლა
