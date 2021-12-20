@@ -891,11 +891,6 @@ sv:
       budget_investments:
         title: Rekommenderade budgetförslag
       slide: "Visa %{title}"
-    verification:
-      i_dont_have_an_account: Jag har inget konto
-      i_have_an_account: Jag har redan ett konto
-      question: Har du redan ett konto på %{org_name}?
-      title: Kontoverifiering
     welcome:
       go_to_index: Inte nu, gå till indexsidan
       start_using_consul: Gå till indexsidan
