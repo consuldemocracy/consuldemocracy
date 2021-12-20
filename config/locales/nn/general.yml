@@ -872,11 +872,6 @@ nn:
       budget_investments:
         title: Anbefalte investeringer
       slide: "Se %{title}"
-    verification:
-      i_dont_have_an_account: Jeg har ingen konto
-      i_have_an_account: Jeg har allerede en konto
-      question: Har du allerede en konto i %{org_name}?
-      title: Verifisering av konto
     welcome:
       go_to_index: Vis forslag og debatter
       start_using_consul: Gå til indekssiden
