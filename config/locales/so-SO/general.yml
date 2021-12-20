@@ -708,11 +708,6 @@ so:
       budget_investments:
         title: Malgashiyada lugu taliyey
       slide: "Arag%{title}"
-    verification:
-      i_dont_have_an_account: Ma haysto xisaab
-      i_have_an_account: Hore ayaan haystay xisaab
-      question: Ma horey ayaad xisaab ugu leedahay%{org_name}?
-      title: Cadeynta xisaabta
     welcome:
       go_to_index: Eeg soojeedinta iyo doodaha
       title: Kaqayb gal
