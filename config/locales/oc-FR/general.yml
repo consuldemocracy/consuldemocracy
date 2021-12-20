@@ -876,11 +876,6 @@ oc:
       budget_investments:
         title: d'Inversions recomandadas
       slide: "Veire %{title}"
-    verification:
-      i_dont_have_an_account: Avètz pas compte, vòli crear un e o verificar
-      i_have_an_account: Ai ja un compte que vòli verificar
-      question: As ja un compte en %{org_name}?
-      title: Verificacion de compte
     welcome:
       go_to_index: Ara pas, veire de proposicions
       start_using_consul: Vai a la pagina d’indèx
