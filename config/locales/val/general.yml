@@ -708,11 +708,6 @@ val:
       budget_investments:
         title: Pressupostos recomanats
       slide: "Veure %{title}"
-    verification:
-      i_dont_have_an_account: No tinc compte, vull crear-ne un i verificar-lo
-      i_have_an_account: Ja tinc un compte que vull verificar
-      question: Tens ja un compte en %{org_name}?
-      title: Verificació de compte
     welcome:
       go_to_index: Vore propostes i debats
       title: Participa
