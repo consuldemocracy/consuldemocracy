@@ -650,11 +650,6 @@ id:
         btn_text_link: Semua dianjurkan proposal
       budget_investments:
         title: Direkomendasikan investasi
-    verification:
-      i_dont_have_an_account: Saya tidak memiliki akun
-      i_have_an_account: Saya sudah memiliki akun
-      question: Apakah anda sudah memiliki akun di %{org_name}?
-      title: Verifikasi akun
     welcome:
       go_to_index: Melihat proposal dan perdebatan
       title: Ikut
