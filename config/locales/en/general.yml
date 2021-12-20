@@ -892,11 +892,6 @@ en:
       budget_investments:
         title: Recommended investments
       slide: "See %{title}"
-    verification:
-      i_dont_have_an_account: I don't have an account
-      i_have_an_account: I already have an account
-      question: Do you already have an account in %{org_name}?
-      title: Account verification
     welcome:
       go_to_index: Not now, go to index page
       start_using_consul: Go to index page
