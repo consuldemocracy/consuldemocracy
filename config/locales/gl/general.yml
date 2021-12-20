@@ -809,11 +809,6 @@ gl:
       budget_investments:
         title: Orzamentos recomendados
       slide: "Ver %{title}"
-    verification:
-      i_dont_have_an_account: Non teño conta, quero crear unha e verificala
-      i_have_an_account: Xa teño unha conta que quero verificar
-      question: Tes xa unha conta en %{org_name}?
-      title: Verificación de conta
     welcome:
       go_to_index: Agora non, ver propostas
       title: Comeza a participar
