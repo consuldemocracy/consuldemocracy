@@ -31,6 +31,16 @@ describe UserSegments do
         expect(UserSegments.segment_name("lowlands_and_highlands")).to eq "Lowlands and Highlands"
       end
 
+      it "supports international alphabets" do
+        create(:geozone, name: "Česká republika")
+        create(:geozone, name: "България")
+        create(:geozone, name: "日本")
+
+        expect(UserSegments.segment_name("ceska_republika")).to eq "Česká republika"
+        expect(UserSegments.segment_name("България")).to eq "България"
+        expect(UserSegments.segment_name("日本")).to eq "日本"
+      end
+
       it "returns regular segments when the geozone doesn't exist" do
         expect(UserSegments.segment_name("all_users")).to eq "All users"
       end
