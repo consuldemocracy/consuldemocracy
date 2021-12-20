@@ -940,11 +940,6 @@ uk-UA:
       budget_investments:
         title: Рекомендовані інвестиції
       slide: "Переглянути %{title}"
-    verification:
-      i_dont_have_an_account: У мене немає облікового запису
-      i_have_an_account: У мене є обліковий запис
-      question: Чи є у вас обліковий запис у %{org_name}?
-      title: Підтвердження облікового запису
     welcome:
       go_to_index: Не зараз, перейти до сторінки індексу
       start_using_consul: Перейти до сторінки індексу
