@@ -897,11 +897,6 @@ ru:
       budget_investments:
         title: Рекомендуемые инвестиции
       slide: "Смотрите %{title}"
-    verification:
-      i_dont_have_an_account: У меня нет аккаунта
-      i_have_an_account: У меня уже есть аккаунт
-      question: У вас уже есть аккаунт в %{org_name}?
-      title: Верификация аккаунта
     welcome:
       go_to_index: Просмотреть предложения и дебаты
       start_using_consul: Перейти на страницу индекса
