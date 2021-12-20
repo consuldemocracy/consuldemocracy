@@ -33,3 +33,5 @@ nl:
         document_type: "Documentsoort"
         document_number: "Documentnummer (inclusief letters)"
         year_of_birth: "Geboortejaar"
+      local_census_records/import:
+        file: Bestand
