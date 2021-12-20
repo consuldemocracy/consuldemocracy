@@ -608,11 +608,6 @@ sl:
       budget_investments:
         title: Priporočene investicije
       slide: "Poglej %{title}"
-    verification:
-      i_dont_have_an_account: Nimam uporabniškega računa
-      i_have_an_account: Že imam uporabniški račun
-      question: Ali že imaš uporabniški račun v %{org_name}?
-      title: Potrditev računa
     welcome:
       go_to_index: Oglej si predloge in razprave
       title: Sodeluj
