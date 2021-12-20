@@ -906,11 +906,6 @@ he:
       budget_investments:
         title: השקעות מומלצות
       slide: "ראה %{title}"
-    verification:
-      i_dont_have_an_account: אין לי חשבון
-      i_have_an_account: כבר יש לי חשבון
-      question: האם כבר יש לך חשבון ב %{org_name}?
-      title: אימות החשבון
     welcome:
       go_to_index: לצפייה בהצעות ובדיונים
       start_using_consul: גש לדף הבית
