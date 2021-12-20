@@ -891,11 +891,6 @@ it:
       budget_investments:
         title: Investimenti consigliati
       slide: "Vedi %{title}"
-    verification:
-      i_dont_have_an_account: Non ho un account
-      i_have_an_account: Ho già un account
-      question: Hai già un account su %{org_name}?
-      title: Verifica dell'account
     welcome:
       go_to_index: Vedi proposte e dibattiti
       start_using_consul: Vai alla pagina dell'indice
