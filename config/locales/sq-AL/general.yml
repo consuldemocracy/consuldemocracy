@@ -708,11 +708,6 @@ sq:
       budget_investments:
         title: Investimet e rekomanduara
       slide: "Shih %{title}"
-    verification:
-      i_dont_have_an_account: Unë nuk kam një llogari
-      i_have_an_account: Unë  kam tashmë një llogari
-      question: A keni një llogari në %{org_name} ?
-      title: Verifikimi llogarisë
     welcome:
       go_to_index: Shiko propozimet dhe debatet
       title: Mer pjesë
