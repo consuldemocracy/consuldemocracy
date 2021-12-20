@@ -558,11 +558,6 @@ ast:
       process_label: Procesu
     cards:
       title: Destacadas
-    verification:
-      i_dont_have_an_account: No tengo cuenta, quiero crear una y verificarla
-      i_have_an_account: Ya tengo una cuenta que quiero verificar
-      question: '¿Tienes ya una cuenta en %{org_name}?'
-      title: Verificación de cuenta
     welcome:
       go_to_index: Ahora no, ver propuestas
       title: Colabora en la elaboración de la normativa sobre
