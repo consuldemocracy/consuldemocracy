@@ -756,11 +756,6 @@ pl:
       budget_investments:
         title: Rekomendowane inwestycje
       slide: "Zobacz %{title}"
-    verification:
-      i_dont_have_an_account: Nie mam konta
-      i_have_an_account: Mam już konto
-      question: Czy masz już konto w %{org_name}?
-      title: Weryfikacja konta
     welcome:
       go_to_index: Zobacz propozycje i debaty
       start_using_consul: Przejdź do strony indeksu
