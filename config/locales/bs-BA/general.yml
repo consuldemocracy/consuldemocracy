@@ -854,11 +854,6 @@ bs:
       budget_investments:
         title: Preporučene investicije
       slide: "Vidi %{title}"
-    verification:
-      i_dont_have_an_account: Nemam nalog
-      i_have_an_account: Imam nalog
-      question: Imate nalog u %{org_name}?
-      title: Potvrda naloga
     welcome:
       go_to_index: Ne sada, idi na indeksnu stranicu
       start_using_consul: Idi na indeksnu stranicu
