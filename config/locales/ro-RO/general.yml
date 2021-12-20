@@ -921,11 +921,6 @@ ro:
       budget_investments:
         title: Investiții recomandate
       slide: "Vezi %{title}"
-    verification:
-      i_dont_have_an_account: Nu am un cont
-      i_have_an_account: Am deja un cont
-      question: Aveți deja un cont în %{org_name}?
-      title: Verificarea contului
     welcome:
       go_to_index: Nu acum, mergeți la pagina index
       start_using_consul: Mergeți la pagina index
