@@ -908,11 +908,6 @@ sr:
       budget_investments:
         title: Препоручене инвестиције
       slide: "Види %{title}"
-    verification:
-      i_dont_have_an_account: Немам налог
-      i_have_an_account: Већ имам налог
-      question: Да ли већ имате налог у %{org_name}?
-      title: Налог потврђен
     welcome:
       go_to_index: Не сад, идите на индекс страну
       start_using_consul: Идите на индекс страну
