@@ -692,11 +692,6 @@ zh-CN:
       budget_investments:
         title: 推荐的投资
       slide: "查看%{title}"
-    verification:
-      i_dont_have_an_account: 我没有账户
-      i_have_an_account: 我已经有一个账户
-      question: 您是否已经在%{org_name} 拥有账户？
-      title: 账户验证
     welcome:
       go_to_index: 查看提议和辩论
       title: 参与
