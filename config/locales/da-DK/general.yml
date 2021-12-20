@@ -882,11 +882,6 @@ da:
       budget_investments:
         title: Projekter, der kunne have din interesse
       slide: "Se %{title}"
-    verification:
-      i_dont_have_an_account: Jeg er ikke tilmeldt
-      i_have_an_account: Jeg er allerede tilmeldt
-      question: Har du allerede en konto i %{org_name}?
-      title: Kontoverificering
     welcome:
       go_to_index: Se borgerforslag og debatindlæg
       start_using_consul: Gå til indekssiden
