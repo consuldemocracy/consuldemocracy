@@ -930,11 +930,6 @@ cs:
       budget_investments:
         title: Doporučené investice
       slide: "Zobrazit %{title}"
-    verification:
-      i_dont_have_an_account: Nemám ještě účet
-      i_have_an_account: Účet již mám
-      question: Máte již účet na portále %{org_name}?
-      title: Ověření účtu
     welcome:
       go_to_index: Zobrazit návrhy a debaty
       start_using_consul: Přejít na úvodní stránku
