@@ -359,10 +359,6 @@ fi:
       see_process: Näytä prosessit
     recommended:
       slide: "Näytä %{title}"
-    verification:
-      i_dont_have_an_account: Minulla ei ole tunnusta
-      i_have_an_account: Minulla on jo tili
-      title: Tilin vahvistus
     welcome:
       title: Osallistu
       user_permission_info: Tililläsi voit...
