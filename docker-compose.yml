@@ -10,7 +10,7 @@ services:
       - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
     # persist the database between containers by storing it in a volume
     volumes:
-      - docker-example-postgres:/var/lib/postgresql/data
+      - db_data:/var/lib/postgresql/data
 
   # service configuration for our dockerized Rails app
   app:
@@ -39,5 +39,5 @@ services:
       - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
       - SSH_AUTH_SOCK=/tmp/agent.sock
 volumes:
-  docker-example-postgres: {}
+  db_data: {}
   bundle: {}
