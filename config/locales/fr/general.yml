@@ -820,11 +820,6 @@ fr:
       budget_investments:
         title: Investissements recommandés
       slide: "Voir %{title}"
-    verification:
-      i_dont_have_an_account: Je n'ai pas de compte
-      i_have_an_account: J'ai déjà un compte
-      question: Avez-vous déjà un compte à %{org_name} ?
-      title: Vérification du compte
     welcome:
       go_to_index: Voir les propositions et les débats
       title: Participer
