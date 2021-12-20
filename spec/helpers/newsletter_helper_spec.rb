@@ -12,7 +12,7 @@ describe NewsletterHelper do
       end
     end
     context "when the newsletter has already been sent" do
-      let(:newsletter) { build(:newsletter, sent_at: Date.today) }
+      let(:newsletter) { build(:newsletter, :sent) }
 
       it "returns a hash containing an array that includes only :destroy action" do
         expect(available_actions(newsletter)).to eq({ actions: [:destroy] })
