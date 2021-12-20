@@ -714,11 +714,6 @@ nl:
       budget_investments:
         title: Aanbevolen investeringsprojecten
       slide: "Zie %{title}"
-    verification:
-      i_dont_have_an_account: Ik heb nog geen account
-      i_have_an_account: Ik heb al een account
-      question: Heeft u al een account bij %{org_name}?
-      title: Account verificatie
     welcome:
       go_to_index: Ga naar voorstellen en debatten
       start_using_consul: Ga naar indexpagina
