@@ -3,6 +3,20 @@ nl:
     ballots:
       show:
         title: Uw keuze
+        amount_available:
+          knapsack: "Zoveel <span>%{count}</span> kan je nog besteden"
+          approval:
+            zero: "Je kan nog steeds <span>%{count}</span> stemmen uitbrengen."
+            one: "Je kan nog steeds <span>%{count}</span> stem uitbrengen."
+            other: "Je kan nog steeds <span>%{count}</span> stemmen uitbrengen."
+        amount_spent:
+          knapsack: "Bestede bedrag <span>%{count}</span>"
+          approval:
+            zero: "Uitgebrachte stemmen: <span>%{count}</span>"
+            one: "Uitgebrachte stemmen: <span>%{count}</span>"
+            other: "Uitgebrachte stemmen: <span>%{count}</span>"
+        amount_limit:
+          knapsack: "Totale budget <span>%{count}</span>"
         no_balloted_group_yet: "U hebt nog niet gestemd op deze groep, stem nu!"
         remove: Verwijder keuze
         voted:
