@@ -3,6 +3,7 @@ nl:
     ballots:
       show:
         title: Uw keuze
+        amount_progress: "%{amount_spent}/%{amount_limit}"
         amount_available:
           knapsack: "Zoveel <span>%{count}</span> kan je nog besteden"
           approval:
@@ -17,11 +18,15 @@ nl:
             other: "Uitgebrachte stemmen: <span>%{count}</span>"
         amount_limit:
           knapsack: "Totale budget <span>%{count}</span>"
+          approval:
+            one: "Je kan op <span>1</span> project stemmen"
+            other: "Je kan op maximaal <span>%{count}</span> projecten stemmen"
         no_balloted_group_yet: "U hebt nog niet gestemd op deze groep, stem nu!"
         remove: Verwijder keuze
         voted:
           one: "U heeft op <span>één</span> voorstel gestemd."
           other: "U heeft op <span>%{count}</span> voorstellen gestemd."
+        voted_info: "Je stem is bevestigd!"
         voted_info_2: "Je kunt je stem altijd aanpassen tot deze fase wordt gesloten."
         zero: U heeft op geen enkel voorstel gestemd.
       reasons_for_not_balloting:
@@ -32,6 +37,7 @@ nl:
         not_enough_money: "Je hebt al het beschikbare budget toegewezen.<br><small>Je kunt op elk gewenst moment %{change_ballot}</small>"
         no_ballots_allowed: De selectiefase is voorbij
         different_heading_assigned: "Je hebt al gestemd in een andere rubriek: %{heading_link}"
+        not_enough_available_votes: "Je hebt het maximum aantal stemmen bereikt"
         change_ballot: wijzig uw stem
         casted_offline: Je hebt al offline deelgenomen
     groups:
@@ -56,6 +62,9 @@ nl:
         title: Participatory budgets
         help: Hulp bij burgerbegrotingen
       all_phases: Investeringsfases
+      next_phase: Volgende fase
+      prev_phase: Vorige fase
+      current_phase: Huidige fase
       map: Investeringen geografisch weergegeven
       finished_budgets: Afgeronde burgerbegrotingen
       see_results: Bekijk resultaten
