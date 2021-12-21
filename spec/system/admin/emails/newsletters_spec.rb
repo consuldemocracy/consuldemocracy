@@ -76,26 +76,37 @@ describe "Admin newsletter emails", :admin do
     expect(page).to have_content "This is a body"
   end
 
-  scenario "Update" do
-    newsletter = create(:newsletter)
+  context "Update" do
+    scenario "A draft newsletter can be updated" do
+      newsletter = create(:newsletter)
 
-    visit admin_newsletters_path
-    within("#newsletter_#{newsletter.id}") do
-      click_link "Edit"
+      visit admin_newsletters_path
+      within("#newsletter_#{newsletter.id}") do
+        click_link "Edit"
+      end
+
+      expect(page).to have_link "Go back", href: admin_newsletters_path
+
+      fill_in_newsletter_form(subject: "This is a subject",
+                              segment_recipient: "Investment authors in the current budget",
+                              body: "This is a body")
+      click_button "Update Newsletter"
+
+      expect(page).to have_content "Newsletter updated successfully"
+      expect(page).to have_content "This is a subject"
+      expect(page).to have_content "Investment authors in the current budget"
+      expect(page).to have_content "no-reply@consul.dev"
+      expect(page).to have_content "This is a body"
     end
 
-    expect(page).to have_link "Go back", href: admin_newsletters_path
+    scenario "A sent newsletter can not be updated" do
+      newsletter = create(:newsletter, :sent)
 
-    fill_in_newsletter_form(subject: "This is a subject",
-                            segment_recipient: "Investment authors in the current budget",
-                            body: "This is a body")
-    click_button "Update Newsletter"
-
-    expect(page).to have_content "Newsletter updated successfully"
-    expect(page).to have_content "This is a subject"
-    expect(page).to have_content "Investment authors in the current budget"
-    expect(page).to have_content "no-reply@consul.dev"
-    expect(page).to have_content "This is a body"
+      visit admin_newsletters_path
+      within("#newsletter_#{newsletter.id}") do
+        expect(page).not_to have_link "Edit"
+      end
+    end
   end
 
   scenario "Destroy" do
