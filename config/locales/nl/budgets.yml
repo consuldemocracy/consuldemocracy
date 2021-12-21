@@ -75,6 +75,7 @@ nl:
     investments:
       form:
         title: "Nieuw begrotingsvoorstel maken"
+        subtitle: "%{heading}(%{price})"
         tag_category_label: "Categorieen"
         tags_instructions: "Voeg termen toe aan dit voorstel. Je kunt kiezen uit voorgestelde termen of je eigen term kiezen"
         tags_label: Tags
@@ -100,6 +101,9 @@ nl:
             knapsack:
               one: "<strong>Je hebt gestemd op een voorstel dat %{amount_spent} kost</strong>"
               other: "<strong>Je hebt gestemd  op %{count} voorstellen die %{amount_spent}</strong> kosten"
+            approval:
+              one: "<strong>Je hebt op één voorstel gestemd</strong>"
+              other: "<strong>Je hebt op %{count} voorstellen gestemd</strong>"
           change_vote_link: "je stem wijzigen"
           different_heading_assigned: "Je steunt al in een ander onderdeel van het voorstel: %{heading_link}"
           change_ballot: "Als u zich bedenkt kunt uw uw stemmen in %{check_ballot} verwijderen opnieuw beginnen."
