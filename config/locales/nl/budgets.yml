@@ -104,6 +104,9 @@ nl:
             approval:
               one: "<strong>Je hebt op één voorstel gestemd</strong>"
               other: "<strong>Je hebt op %{count} voorstellen gestemd</strong>"
+          change_vote_info:
+            knapsack: "Tot het einde van deze fase,%{phase_end_date}, kun je %{link}. Het is niet nodig om al het geld te besteden."
+            approval: "Je kan %{link} op elk moment tot %{phase_end_date}."
           change_vote_link: "je stem wijzigen"
           different_heading_assigned: "Je steunt al in een ander onderdeel van het voorstel: %{heading_link}"
           change_ballot: "Als u zich bedenkt kunt uw uw stemmen in %{check_ballot} verwijderen opnieuw beginnen."
