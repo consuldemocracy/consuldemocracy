@@ -31,8 +31,6 @@ RUN adduser --shell /bin/bash --disabled-password --gecos "" consul \
 RUN echo 'Defaults secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bundle/bin"' > /etc/sudoers.d/secure_path
 RUN chmod 0440 /etc/sudoers.d/secure_path
 
-COPY scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
-
 # Define where our application will live inside the image
 ENV RAILS_ROOT /var/www/consul
 
@@ -50,6 +48,7 @@ RUN bundle install
 # Copy the Rails application into place
 COPY . .
 
+ENTRYPOINT ["./docker-entrypoint.sh"]
 # Define the script we want run once the container boots
 # Use the "exec" form of CMD so our script shuts down gracefully on SIGTERM (i.e. `docker stop`)
 # CMD [ "config/containers/app_cmd.sh" ]
