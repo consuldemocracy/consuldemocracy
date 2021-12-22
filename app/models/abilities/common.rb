@@ -95,7 +95,6 @@ module Abilities
         can :create, Legislation::Answer
 
         can :create, Budget::Investment,               budget: { phase: "accepting" }
-        can :edit, Budget::Investment,                 budget: { phase: "accepting" }, author_id: user.id
         can :update, Budget::Investment,               budget: { phase: "accepting" }, author_id: user.id
         can :suggest, Budget::Investment,              budget: { phase: "accepting" }
         can :destroy, Budget::Investment,              budget: { phase: ["accepting", "reviewing"] }, author_id: user.id
