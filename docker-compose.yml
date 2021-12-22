@@ -17,7 +17,6 @@ services:
 
     # use the Dockerfile next to this file
     build: .
-    entrypoint: /usr/local/bin/entrypoint.sh
 
     # rely on the RAILS_ENV value of the host machine
     # environment:
