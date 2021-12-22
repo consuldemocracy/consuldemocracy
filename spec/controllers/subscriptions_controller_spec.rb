@@ -12,5 +12,12 @@ describe SubscriptionsController do
       expect(response).to redirect_to "/"
       expect(flash[:alert]).to eq "You do not have permission to access this page."
     end
+
+    it "shows the 'not allowed' message in the current locale" do
+      get :edit, params: { token: "", locale: :es }
+
+      expect(response).to redirect_to "/"
+      expect(flash[:alert]).to eq "No tienes permiso para acceder a esta página."
+    end
   end
 end
