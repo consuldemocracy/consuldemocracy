@@ -83,7 +83,7 @@ describe "Admin hidden users", :admin do
 
     visit admin_hidden_users_path(filter: "with_confirmed_hide", page: 2)
 
-    accept_confirm("Are you sure? Restore \"#{users[2].name}\"") do
+    accept_confirm("Are you sure? Restore \"#{users[-3].name}\"") do
       click_button "Restore", match: :first, exact: true
     end
 
