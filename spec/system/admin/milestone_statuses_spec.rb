@@ -78,7 +78,9 @@ describe "Admin milestone statuses", :admin do
       visit admin_milestone_statuses_path
 
       within("#milestone_status_#{status.id}") do
-        accept_confirm { click_button "Delete" }
+        accept_confirm("Are you sure? This action will delete \"#{status.name}\" and can't be undone.") do
+          click_button "Delete"
+        end
       end
 
       expect(page).not_to have_content status.name

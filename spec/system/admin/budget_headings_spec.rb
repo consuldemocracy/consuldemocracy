@@ -51,7 +51,11 @@ describe "Admin budget headings", :admin do
 
       visit admin_budget_path(budget)
 
-      within("tr", text: "Lemuria") { accept_confirm { click_button "Delete" } }
+      within("tr", text: "Lemuria") do
+        accept_confirm("Are you sure? This action will delete \"Lemuria\" and can't be undone.") do
+          click_button "Delete"
+        end
+      end
 
       expect(page).to have_content "Heading deleted successfully"
       expect(page).not_to have_content "Lemuria"
@@ -62,7 +66,12 @@ describe "Admin budget headings", :admin do
       create(:budget_investment, heading: heading)
 
       visit admin_budget_path(budget)
-      within(".heading", text: "Atlantis") { accept_confirm { click_button "Delete" } }
+
+      within(".heading", text: "Atlantis") do
+        accept_confirm("Are you sure? This action will delete \"Atlantis\" and can't be undone.") do
+          click_button "Delete"
+        end
+      end
 
       expect(page).to have_content "You cannot delete a Heading that has associated investments"
       expect(page).to have_content "Atlantis"

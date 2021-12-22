@@ -117,8 +117,10 @@ describe "Admin Notifications", :admin do
       notification = create(:admin_notification)
 
       visit admin_admin_notifications_path
+
+      confirmation = "Are you sure? This action will delete \"#{notification.title}\" and can't be undone."
       within("#admin_notification_#{notification.id}") do
-        accept_confirm { click_button "Delete" }
+        accept_confirm(confirmation) { click_button "Delete" }
       end
 
       expect(page).to have_content "Notification deleted successfully"

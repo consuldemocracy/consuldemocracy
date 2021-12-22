@@ -75,7 +75,9 @@ describe "Documents", :admin do
     visit admin_site_customization_documents_path
 
     within("#document_#{document.id}") do
-      accept_confirm { click_button "Delete" }
+      accept_confirm("Are you sure? This action will delete \"#{document.title}\" and can't be undone.") do
+        click_button "Delete"
+      end
     end
 
     expect(page).to have_content "Document deleted succesfully"

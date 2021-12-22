@@ -53,7 +53,7 @@ describe "Images", :admin do
     expect(page).to have_css("img[title='#{image.title}']")
     expect(page).to have_content(image.title)
 
-    accept_confirm "Are you sure?" do
+    accept_confirm "Are you sure? Remove image \"#{image.title}\"" do
       click_link "Remove image"
     end
 

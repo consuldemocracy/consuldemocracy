@@ -800,7 +800,7 @@ describe "Debates" do
     end
 
     click_link debate.title
-    accept_confirm { click_link "Featured" }
+    accept_confirm("Are you sure? Featured") { click_link "Featured" }
 
     within("#debates") do
       expect(page).to have_content "FEATURED"
@@ -812,7 +812,7 @@ describe "Debates" do
       click_link debate.title
     end
 
-    accept_confirm { click_link "Unmark featured" }
+    accept_confirm("Are you sure? Unmark featured") { click_link "Unmark featured" }
 
     within("#debates") do
       expect(page).not_to have_content "FEATURED"

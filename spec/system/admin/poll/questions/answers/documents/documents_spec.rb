@@ -28,7 +28,9 @@ describe "Documents", :admin do
     visit admin_answer_documents_path(answer)
     expect(page).to have_content(document.title)
 
-    accept_confirm { click_button "Delete" }
+    accept_confirm("Are you sure? This action will delete \"#{document.title}\" and can't be undone.") do
+      click_button "Delete"
+    end
 
     expect(page).not_to have_content(document.title)
   end

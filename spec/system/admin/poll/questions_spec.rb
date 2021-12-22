@@ -142,7 +142,9 @@ describe "Admin poll questions", :admin do
     visit admin_poll_path(poll)
 
     within("#poll_question_#{question1.id}") do
-      accept_confirm { click_button "Delete" }
+      accept_confirm("Are you sure? This action will delete \"#{question1.title}\" and can't be undone.") do
+        click_button "Delete"
+      end
     end
 
     expect(page).not_to have_content(question1.title)

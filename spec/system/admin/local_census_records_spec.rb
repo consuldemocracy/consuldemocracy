@@ -139,7 +139,10 @@ describe "Admin local census records", :admin do
 
       expect(page).to have_content deleted_document_number
 
-      accept_confirm { click_on "Delete" }
+      confirmation = "Are you sure? This action will delete "\
+        "\"#{local_census_record.title}\" and can't be undone."
+
+      accept_confirm(confirmation) { click_on "Delete" }
 
       expect(page).to have_content "Local census record removed successfully!"
       expect(page).not_to have_content deleted_document_number

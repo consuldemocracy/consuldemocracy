@@ -24,7 +24,7 @@ describe "Moderate users" do
     visit debate_path(debate1)
 
     within("#debate_#{debate1.id}") do
-      accept_confirm { click_link "Hide author" }
+      accept_confirm("Are you sure? Hide author \"#{debate1.author.name}\"") { click_link "Hide author" }
     end
 
     expect(page).to have_current_path(debates_path)

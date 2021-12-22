@@ -1,9 +1,10 @@
 es:
   moderation:
+    actions:
+      confirm_action: "¿Estás seguro? %{action}"
     comments:
       index:
         block_authors: Bloquear autores
-        confirm: '¿Estás seguro?'
         filter: Filtro
         filters:
           all: Todos
@@ -24,7 +25,6 @@ es:
     debates:
       index:
         block_authors: Bloquear autores
-        confirm: '¿Estás seguro?'
         filter: Filtrar
         filters:
           all: Todos
@@ -51,7 +51,6 @@ es:
     proposals:
       index:
         block_authors: Bloquear autores
-        confirm: '¿Estás seguro?'
         filter: Filtro
         filters:
           all: Todas
@@ -69,7 +68,6 @@ es:
     budget_investments:
       index:
         block_authors: Bloquear autores
-        confirm: '¿Estás seguro?'
         filter: Filtro
         filters:
           all: Todos
@@ -87,7 +85,6 @@ es:
     proposal_notifications:
       index:
         block_authors: Bloquear autores
-        confirm: '¿Estás seguro?'
         filter: Filtro
         filters:
           all: Todas

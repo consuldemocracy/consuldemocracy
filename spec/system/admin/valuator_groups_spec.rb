@@ -64,10 +64,12 @@ describe "Valuator groups", :admin do
   end
 
   scenario "Delete" do
-    create(:valuator_group)
+    create(:valuator_group, name: "Economy")
 
     visit admin_valuator_groups_path
-    accept_confirm { click_button "Delete" }
+
+    confirmation = "Are you sure? This action will delete \"Economy\" and can't be undone."
+    accept_confirm(confirmation) { click_button "Delete" }
 
     expect(page).to have_content "Valuator group deleted successfully"
     expect(page).to have_content "There are no valuator groups"
