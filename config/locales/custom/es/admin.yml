@@ -36,6 +36,7 @@ es:
         summary:
           budget_votes: "PROYECTOS VOTADOS DEL PRESUPUESTO ACTUAL"
           budget_voters: "VOTOS DEL PRESUPUESTO ACTUAL"
+          physical_votes: "VOTOS FINALES PRESENCIALES"
     physical_final_votes:
       name: Proyecto
       booth: Mesa electoral

@@ -14,6 +14,7 @@ class Admin::StatsController < Admin::BaseController
     @comment_votes  = Vote.where(votable_type: "Comment").count
 
     @votes = Vote.count
+    @physical_votes = PhysicalFinalVote.sum(:total_votes)
 
     @user_level_two   = User.active.level_two_verified.count
     @user_level_three = User.active.level_three_verified.count

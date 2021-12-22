@@ -27,15 +27,28 @@
 </div>
 
 <table class="investment-projects-summary">
-  <th colspan="2"><%= t("admin.stats.budget_balloting.votes_per_heading") %></th>
-
-  <% @vote_count_by_heading.each do |heading_name, count| %>
+  <th colspan="3"><%= t("admin.stats.budget_balloting.votes_per_heading") %></th>
+  <tr>
+    <td>
+      <u>Zona</u>
+    </td>
+    <td>
+      <u>Votos</u>
+    </td>
+    <td>
+      <u>Votos presenciales</u>
+    </td>
+  </tr>
+  <% @vote_count_by_heading.each do |heading_name, vals| %>
     <tr id="vote_count_<%= heading_name.parameterize %>">
       <td class="name">
         <%= heading_name %>
       </td>
       <td class="name">
-        <%= number_with_delimiter count %>
+        <%= number_with_delimiter vals[0] %>
+      </td>
+      <td class="name">
+        <%= number_with_delimiter vals[1] %>
       </td>
     </tr>
   <% end %>
