@@ -25,16 +25,17 @@
 		onAdd: function (map) {
 			var className = 'leaflet-control-pan',
 				container = L.DomUtil.create('div', className),
-				off = this.options.panOffset;
+				verticalOffset = map.getContainer().offsetHeight / 2,
+				horizontalOffset = map.getContainer().offsetWidth / 3;
 
 			this._panButton('Up'   , className + '-up',
-							container, map, new L.Point(    0 , -off));
+							container, map, new L.Point(    0 , -verticalOffset));
 			this._panButton('Left' , className + '-left',
-							container, map, new L.Point( -off ,  0));
+							container, map, new L.Point( -horizontalOffset ,  0));
 			this._panButton('Right', className + '-right',
-							container, map, new L.Point(  off ,  0));
+							container, map, new L.Point(  horizontalOffset ,  0));
 			this._panButton('Down' , className + '-down',
-							container, map, new L.Point(    0 ,  off));
+							container, map, new L.Point(    0 ,  verticalOffset));
 
 			// Add pan control class to the control container
 			if (this.options.position === 'topleft') {
