@@ -11,6 +11,8 @@
 @import "jquery-ui/datepicker";
 @import "jquery-ui/sortable";
 @import "leaflet";
+@import "L.Control.Pan";
+@import "L.Control.Pan.ie";
 
 @import "foundation_and_overrides";
 @import "fonts";

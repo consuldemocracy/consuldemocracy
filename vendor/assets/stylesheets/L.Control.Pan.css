@@ -90,16 +90,16 @@
 }
 
 .leaflet-control-pan-up {
-	background-image: url(images/pan-up.png);
+	background-image: image-url("L.Control.Pan/pan-up.png");
 }
 .leaflet-control-pan-left {
-	background-image: url(images/pan-left.png);
+	background-image: image-url("L.Control.Pan/pan-left.png");
 }
 .leaflet-control-pan-right {
-	background-image: url(images/pan-right.png);
+	background-image: image-url("L.Control.Pan/pan-right.png");
 }
 .leaflet-control-pan-down {
-	background-image: url(images/pan-down.png);
+	background-image: image-url("L.Control.Pan/pan-down.png");
 }
 
 /****** Touch Alterations ******/

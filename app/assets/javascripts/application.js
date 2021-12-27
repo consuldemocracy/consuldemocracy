@@ -97,6 +97,7 @@
 //= require tag_autocomplete
 //= require polls_admin
 //= require leaflet
+//= require L.Control.Pan
 //= require map
 //= require polls
 //= require sortable
