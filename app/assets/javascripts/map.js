@@ -114,11 +114,13 @@
         });
       };
       mapOptions = function() {
+        var options;
         if (L.Browser.mobile) {
-          return { dragging: false, tap: false };
+          options = { dragging: false, tap: false };
         } else {
-          return { scrollWheelZoom: false };
+          options = { scrollWheelZoom: false };
         }
+        return { ...options, panControl: true }
       };
       getPopupContent = function(data) {
         return "<a href='/budgets/" + data.budget_id + "/investments/" + data.investment_id + "'>" + data.investment_title + "</a>";

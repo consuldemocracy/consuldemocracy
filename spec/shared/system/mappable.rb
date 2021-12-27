@@ -290,6 +290,18 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
       expect(page).not_to have_css(".map_location")
     end
+
+    scenario "Should display controls to move the map" do
+      arguments[:id] = mappable.id
+
+      do_login_for(user) if management
+      visit send(mappable_show_path, arguments)
+
+      expect(page).to have_css(".leaflet-control-pan-up")
+      expect(page).to have_css(".leaflet-control-pan-down")
+      expect(page).to have_css(".leaflet-control-pan-left")
+      expect(page).to have_css(".leaflet-control-pan-right")
+    end
   end
 end
 
