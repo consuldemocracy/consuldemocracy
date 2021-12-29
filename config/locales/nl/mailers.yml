@@ -1,5 +1,6 @@
 nl:
   mailers:
+    title: "Open overheid"
     no_reply: "This message was sent from an email address that does not accept replies."
     comment:
       hi: Hi
@@ -27,6 +28,7 @@ nl:
       comment: Reageren op het voorstel
       unsubscribe: "Als je geen notificaties van voorstellen wilt ontvangen, ga je naar %{account} en verwijder je het vinkje bij 'Een samenvatting van notificaties ontvangen'."
       unsubscribe_account: My account
+      unfollow: "Ga naar dit voorstel en stop met volgen om geen meldingen meer te ontvangen."
     direct_message_for_receiver:
       subject: "You have received a new private message"
       reply: Reply to %{sender}
@@ -71,4 +73,21 @@ nl:
       thanks: "Dank u nogmaals voor uw deelname."
       sincerely: "Hoogachtend"
     evaluation_comment:
+      subject: "Nieuw evaluatiecommentaar"
+      title: Nieuw evaluatiecommentaar voor %{investment}
       hi: Hoi
+      new_comment_by: Er is nieuw evaluatiecommentaar van <strong>%{commenter}</strong> op investering %{investment}
+      commenter_info: "%{commenter},%{time}:"
+    machine_learning_error:
+      link: "Bekijk Machine Learning panel"
+      subject: "Machine Learning - Er is een fout opgetreden bij het uitvoeren van het script"
+      text: "Er is een fout opgetreden bij het uitvoeren van het Machine Learning script."
+      title: "Machine Learning script"
+    machine_learning_success:
+      link: "Bekijk Machine Learning panel"
+      subject: "Machine Learning - Content werd succesvol gegenereerd"
+      text: "Content werd succesvol gegenereerd."
+      title: "Machine Learning script"
+    new_actions_notification_rake_created:
+      subject: "Meer nieuws over je voorstel"
+      hi: "Hallo %{name},"
