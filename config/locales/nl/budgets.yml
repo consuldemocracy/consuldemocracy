@@ -189,6 +189,9 @@ nl:
       supported:
         one: "Tot nu toe heb je <strong>1 project</strong> gesteund."
         other: "Tot nu toe heb je <strong>%{count} projecten</strong> gesteund."
+      supported_not_logged_in: "Log in om <strong>projecten te steunen</strong>."
+      time: "Er is tijd om projecten te steunen tot %{phase_end_date}."
+      title: "Het is tijd om projecten te <strong>steunen</strong>!"
     results:
       link: Resultaten
       page_title: "%{budget} - resultaten"
@@ -202,6 +205,7 @@ nl:
       accepted: "Geaccepteerde budgetten: "
       discarded: "Verworpen budgetten: "
       incompatibles: Niet compatibel
+      investment_title: Projecttitel
       investment_proyects: Lijst van alle investeringsvoorstellen
       unfeasible_investment_proyects: Lijst van alle niet haalbare investeringsvoorstellen
       not_selected_investment_proyects: Lijst van alle investeringsprojecten niet geselecteerd voor stemming
