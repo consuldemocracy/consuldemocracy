@@ -5,6 +5,8 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install essential Linux packages
 RUN apt-get update -qq
 RUN apt-get install -y build-essential libpq-dev postgresql-client nodejs imagemagick sudo libxss1 libappindicator1 libindicator7 unzip memcached cmake pkg-config shared-mime-info
+# Install Chromium for E2E integration tests
+RUN apt-get update -qq && apt-get install -y chromium
 
 # Files created inside the container repect the ownership
 RUN adduser --shell /bin/bash --disabled-password --gecos "" consul \
@@ -31,9 +33,6 @@ COPY Gemfile* ./
 
 # Finish establishing our Ruby environment
 RUN bundle install --full-index
-
-# Install Chromium for E2E integration tests
-RUN apt-get update -qq && apt-get install -y chromium
 
 # Copy the Rails application into place
 COPY . .
