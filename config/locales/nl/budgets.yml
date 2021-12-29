@@ -115,9 +115,12 @@ nl:
           verified_only: "%{verify} je account om een nieuw begrotingsvoorstel te doen."
           create: "Nieuw begrotingsvoorstel maken"
           not_logged_in: "Om een nieuw begrotingsvoorstel te doen moet je %{sign_in} of %{sign_up}."
+        filter: "Filter projecten op"
         filters:
+          not_unfeasible: "Actief"
           selected: "Geselecteerd"
           unfeasible: "Unfeasible"
+          unselected: "Niet geselecteerd"
           winners: "Winnaars"
         orders:
           random: willekeurig
@@ -165,11 +168,17 @@ nl:
         confirm_group:
           one: "Je kunt maar in %{count} wijk voorstellen steunen. Als je verder gaat is dat definitief. Weet je het zeker?"
           other: "Je kunt maar in %{count} wijk voorstellen steunen. Als je verder gaat is dat definitief. Weet je het zeker?"
+        remove_support: "Steun intrekken"
+        remove_support_label: "Steun voor %{investment} intrekken"
         support: "Support"
+        support_label: "Steun %{investment}"
     investments_list:
       investment:
         price: "Prijs"
+        read_more: "Lees meer"
         supports: "Steunt"
+      see_all: "Alle investeringen bekijken"
+      title: "Lijst van investeringen"
     show:
       see_results: Bekijk resultaten
     results:
