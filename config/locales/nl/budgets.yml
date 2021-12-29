@@ -181,6 +181,14 @@ nl:
       title: "Lijst van investeringen"
     show:
       see_results: Bekijk resultaten
+    supports_info:
+      different: "Je mag zoveel verschillende projecten steunen als je wilt."
+      next: "Steun de projecten die je graag naar de volgende fase ziet gaan."
+      scrolling: "Blijf scrollen om alle ideeën te zien"
+      share: "Je kunt de projecten die je gesteund hebt delen op social media en zo meer steun en aandacht voor ze krijgen!"
+      supported:
+        one: "Tot nu toe heb je <strong>1 project</strong> gesteund."
+        other: "Tot nu toe heb je <strong>%{count} projecten</strong> gesteund."
     results:
       link: Resultaten
       page_title: "%{budget} - resultaten"
