@@ -23,7 +23,9 @@ describe "Moderate budget investments" do
     login_as(mod.user)
     visit budget_investment_path(budget, investment)
 
-    accept_confirm("Are you sure? Block author \"#{investment.author.name}\"") { click_button "Block author" }
+    accept_confirm("Are you sure? This will hide the user \"#{investment.author.name}\" and all their contents.") do
+      click_button "Block author"
+    end
 
     expect(page).to have_current_path(budget_investments_path(budget))
     expect(page).not_to have_content(investment.title)

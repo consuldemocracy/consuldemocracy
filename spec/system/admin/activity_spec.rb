@@ -217,7 +217,9 @@ describe "Admin activity" do
       visit proposal_path(proposal)
 
       within("#proposal_#{proposal.id}") do
-        accept_confirm("Are you sure? Block author \"#{proposal.author.name}\"") { click_button "Block author" }
+        accept_confirm("Are you sure? This will hide the user \"#{proposal.author.name}\" and all their contents.") do
+          click_button "Block author"
+        end
 
         expect(page).to have_current_path(proposals_path)
       end
@@ -239,8 +241,10 @@ describe "Admin activity" do
       visit moderation_users_path(search: user.username)
 
       within("#moderation_users") do
-        click_button "Block"
+        accept_confirm { click_button "Block" }
       end
+
+      expect(page).to have_content "The user has been blocked"
 
       visit admin_activity_path
 

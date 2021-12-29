@@ -102,6 +102,8 @@ en:
     users:
       index:
         block: Block
+        confirm_block: "Are you sure? This will hide the user \"%{name}\" and all their contents."
+        confirm_hide: "Are you sure? This will hide the user \"%{name}\" without hiding their contents."
         hidden: Blocked
         hide: Hide
         search_placeholder: email or name of user

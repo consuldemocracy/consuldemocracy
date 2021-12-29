@@ -24,7 +24,9 @@ describe "Moderate users" do
     visit debate_path(debate1)
 
     within("#debate_#{debate1.id}") do
-      accept_confirm("Are you sure? Block author \"#{debate1.author.name}\"") { click_button "Block author" }
+      accept_confirm("Are you sure? This will hide the user \"#{debate1.author.name}\" and all their contents.") do
+        click_button "Block author"
+      end
     end
 
     expect(page).to have_current_path(debates_path)
@@ -64,7 +66,8 @@ describe "Moderate users" do
     within("#moderation_users") do
       expect(page).to have_content citizen.name
       expect(page).not_to have_content "Blocked"
-      click_button "Block"
+
+      accept_confirm { click_button "Block" }
     end
 
     within("#moderation_users") do
