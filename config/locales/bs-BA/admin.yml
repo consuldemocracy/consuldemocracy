@@ -4,11 +4,9 @@ bs:
       title: Administracija
     actions:
       actions: Radnje
-      confirm: Jeste sigurni?
       confirm_hide: Potvrdi moderiranje
       delete: "Obriši"
       hide: Sakrij
-      hide_author: Sakrij ime autora
       restore: Vrati
       mark_featured: Označi
       unmark_featured: Ukloni oznaku
