@@ -4,11 +4,9 @@ uk-UA:
       title: Адміністрування
     actions:
       actions: Дії
-      confirm: Ви впевнені?
       confirm_hide: Підтвердити модерацію
       delete: "Видалити"
       hide: Приховати
-      hide_author: Приховати автора
       restore: Відновити
       mark_featured: Рекомендовані
       unmark_featured: Не показувати рекомендовані
