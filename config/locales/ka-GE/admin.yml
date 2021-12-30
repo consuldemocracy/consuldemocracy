@@ -4,11 +4,9 @@ ka:
       title: ადმინისტრაცია
     actions:
       actions: მოქმედებები
-      confirm: დარწმუნებული ხართ?
       confirm_hide: მოდერაციის დადასტურება
       delete: "წაშლა"
       hide: დამალვა
-      hide_author: ავტორის დამალვა
       restore: აღდგენა
       mark_featured: გამორჩეული
       unmark_featured: გამორჩეულებიდან წაშლა
