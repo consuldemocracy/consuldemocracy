@@ -107,4 +107,5 @@ sv:
         hide: Blockera
         search_placeholder: användares e-postadress eller namn
         title: Blockera användare
+      notice_block: Användaren har blockerats. Allt innehåll som har skapats av denna användare har dolts.
       notice_hide: Användaren blockerades. Användarens alla inlägg och kommentarer har dolts.
