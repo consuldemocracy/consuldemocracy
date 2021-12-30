@@ -4,11 +4,9 @@ nl:
       title: Administration
     actions:
       actions: Actions
-      confirm: Are you sure?
       confirm_hide: Bevestig
       delete: "Delete"
       hide: Hide
-      hide_author: Hide author
       restore: Restore
       mark_featured: Featured
       unmark_featured: Unmark featured
