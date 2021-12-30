@@ -4,11 +4,9 @@ sr:
       title: Администрација
     actions:
       actions: Радње
-      confirm: Да ли сте сигурни?
       confirm_hide: Потврдите умереност
       delete: "Избришите"
       hide: Сакрите
-      hide_author: Сакрите аутора
       restore: Вратите
       mark_featured: Истакнуте
       unmark_featured: Одзначите истакнуто
