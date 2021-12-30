@@ -4,10 +4,8 @@ es-PE:
       title: Administración
     actions:
       actions: Acciones
-      confirm: '¿Estás seguro?'
       delete: "Borrar"
       hide: Ocultar
-      hide_author: Bloquear al autor
       restore: Volver a mostrar
       mark_featured: Destacar
       unmark_featured: Quitar destacado
