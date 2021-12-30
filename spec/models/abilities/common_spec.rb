@@ -14,6 +14,7 @@ describe Abilities::Common do
   let(:own_debate)   { create(:debate,   author: user) }
   let(:own_comment)  { create(:comment,  author: user) }
   let(:own_proposal) { create(:proposal, author: user) }
+  let(:own_legislation_proposal) { create(:legislation_proposal, author: user) }
 
   let(:accepting_budget) { create(:budget, :accepting) }
   let(:reviewing_budget) { create(:budget, :reviewing) }
@@ -166,6 +167,9 @@ describe Abilities::Common do
     it { should_not be_able_to(:destroy, proposal_image)         }
     it { should_not be_able_to(:destroy, proposal_document)      }
   end
+
+  it { should_not be_able_to(:edit, own_legislation_proposal) }
+  it { should_not be_able_to(:update, own_legislation_proposal) }
 
   describe "proposals dashboard" do
     it { should be_able_to(:dashboard, own_proposal) }
