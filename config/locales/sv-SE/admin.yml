@@ -4,13 +4,11 @@ sv:
       title: Administration
     actions:
       actions: Åtgärder
-      confirm: Är du säker?
       confirm_action: "Är du säker? %{action} \"%{name}\""
       confirm_delete: "Är du säker? Den här åtgärden kommer att radera \"%{name}\" och kan inte ångras."
       confirm_hide: Bekräfta moderering
       delete: "Ta bort"
       hide: Dölj
-      hide_author: Dölj skribent
       label: "%{action} %{name}"
       restore: Återställ
       mark_featured: Utvalda
