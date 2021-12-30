@@ -1,5 +1,7 @@
 sv:
   moderation:
+    actions:
+      confirm_action: "Är du säker? %{action}"
     comments:
       index:
         block_authors: Blockera användare
@@ -99,6 +101,9 @@ sv:
         title: Aviseringar om förslag
     users:
       index:
+        block: Blockera
+        confirm_block: "Är du säker? Det här kommer att dölja användaren \"%{name}\" och användarens hela innehåll."
+        confirm_hide: "Är du säker? Det här kommer att dölja användaren \"%{name}\" utan att dölja användarens innehåll."
         hide: Blockera
         search_placeholder: användares e-postadress eller namn
         title: Blockera användare
