@@ -4,11 +4,9 @@ bg:
       title: Администрация
     actions:
       actions: Действия
-      confirm: Сигурни ли сте?
       confirm_hide: Потвърждаване на модерация
       delete: "Изтриване"
       hide: Скриване
-      hide_author: Скриване на автора
       restore: Възстановяване
       mark_featured: Представен
       unmark_featured: Отмяна на маркирането
