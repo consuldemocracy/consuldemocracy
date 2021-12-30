@@ -4,13 +4,11 @@ fr:
       title: Administration
     actions:
       actions: Statut des votes
-      confirm: Êtes-vous sûr(e) ?
       confirm_action: "Êtes-vous sûr? %{action} \"%{name}\""
       confirm_delete: "Êtes-vous sûr? Cette action supprimera \"%{name}\" et ne peut pas être annulée."
       confirm_hide: Confirmer
       delete: "Supprimer"
       hide: Cacher
-      hide_author: Cacher l'auteur
       label: "%{action} %{name}"
       restore: Restaurer
       mark_featured: Mis en avant
