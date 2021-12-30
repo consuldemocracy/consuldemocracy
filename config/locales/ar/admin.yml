@@ -4,11 +4,9 @@ ar:
       title: الإدارة
     actions:
       actions: الإجراءات
-      confirm: هل أنت متأكد؟
       confirm_hide: تأكيد
       delete: "حذف"
       hide: إخفاء
-      hide_author: إخفاء الكاتب
       restore: إسترجاع
       mark_featured: مميز
       unmark_featured: إلغاء تحديد مميز
