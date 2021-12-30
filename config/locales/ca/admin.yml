@@ -4,11 +4,9 @@ ca:
       title: Administrar
     actions:
       actions: Accions
-      confirm: '¿Estás segur?'
       confirm_hide: Confirmeu la moderació
       delete: "Borrar"
       hide: Ocultar
-      hide_author: Bloquejar l'autor
       restore: Tornar a mostrar
       mark_featured: Destacades
       unmark_featured: treure destacat
