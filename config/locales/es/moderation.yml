@@ -104,7 +104,6 @@ es:
         block: Bloquear
         confirm_block: "¿Seguro? Esto ocultará a \"%{name}\" así como todos sus contenidos."
         confirm_hide: "¿Seguro? Esto ocultará a \"%{name}\" sin ocultar sus contenidos."
-        hidden: Bloqueado
         hide: Ocultar
         search_placeholder: email o nombre de usuario
         title: Bloquear usuarios
