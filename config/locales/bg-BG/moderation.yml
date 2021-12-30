@@ -3,7 +3,6 @@ bg:
     comments:
       index:
         block_authors: Блокиране на автори
-        confirm: Сигурни ли сте?
         filter: Филтър
         filters:
           all: Всички
@@ -24,7 +23,6 @@ bg:
     debates:
       index:
         block_authors: Блокиране на автори
-        confirm: Сигурни ли сте?
         filter: Филтър
         filters:
           all: Всички
@@ -51,7 +49,6 @@ bg:
     proposals:
       index:
         block_authors: Блокиране на автори
-        confirm: Сигурни ли сте?
         filter: Филтър
         filters:
           all: Всички
@@ -69,7 +66,6 @@ bg:
     budget_investments:
       index:
         block_authors: Блокиране на автори
-        confirm: Сигурни ли сте?
         filter: Филтър
         filters:
           all: Всички
@@ -87,7 +83,6 @@ bg:
     proposal_notifications:
       index:
         block_authors: Блокиране на автори
-        confirm: Сигурни ли сте?
         filter: Филтър
         filters:
           all: Всички
@@ -104,7 +99,6 @@ bg:
         title: Известия за предложения
     users:
       index:
-        hidden: Блокиран
         hide: Блокиране
         search_placeholder: имейл или име на потребителя
         title: Блокиране на потребители
