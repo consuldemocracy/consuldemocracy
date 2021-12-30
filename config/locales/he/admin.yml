@@ -4,11 +4,9 @@ he:
       title: ניהול
     actions:
       actions: פעולות
-      confirm: האם את/ה בטוח/ה?
       confirm_hide: אשר מנחה
       delete: "מחיקה"
       hide: הסתר
-      hide_author: הסתר את יוצר התוכן
       restore: שחזר
       mark_featured: מוצע
       unmark_featured: לא מקודם
