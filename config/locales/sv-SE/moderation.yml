@@ -3,7 +3,6 @@ sv:
     comments:
       index:
         block_authors: Blockera användare
-        confirm: Är du säker?
         filter: Filtrera
         filters:
           all: Alla
@@ -24,7 +23,6 @@ sv:
     debates:
       index:
         block_authors: Blockera förslagslämnare
-        confirm: Är du säker?
         filter: Filtrera
         filters:
           all: Alla
@@ -51,7 +49,6 @@ sv:
     proposals:
       index:
         block_authors: Blockera förslagslämnare
-        confirm: Är du säker?
         filter: Filtrera
         filters:
           all: Alla
@@ -69,7 +66,6 @@ sv:
     budget_investments:
       index:
         block_authors: Blockera användare
-        confirm: Är du säker?
         filter: Filtrera
         filters:
           all: Alla
@@ -87,7 +83,6 @@ sv:
     proposal_notifications:
       index:
         block_authors: Blockera användare
-        confirm: Är du säker?
         filter: Filtrera
         filters:
           all: Alla
@@ -104,7 +99,6 @@ sv:
         title: Aviseringar om förslag
     users:
       index:
-        hidden: Blockerad
         hide: Blockera
         search_placeholder: användares e-postadress eller namn
         title: Blockera användare
