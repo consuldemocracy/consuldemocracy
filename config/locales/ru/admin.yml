@@ -4,11 +4,9 @@ ru:
       title: Администрирование
     actions:
       actions: Действия
-      confirm: Вы уверены?
       confirm_hide: Подтвердить модерацию
       delete: "Удалить"
       hide: Скрыть
-      hide_author: Скрыть автора
       restore: Восстановить
       mark_featured: Особенное
       unmark_featured: Убрать из особенных
