@@ -99,6 +99,7 @@ cs:
         title: Upozornění k návrhům
     users:
       index:
+        block: Blokovat
         hide: Blokovat
         search_placeholder: email nebo jméno uživatele
         title: Blokovat uživatele
