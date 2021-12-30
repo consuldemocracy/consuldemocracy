@@ -4,11 +4,9 @@ pt-BR:
       title: Administração
     actions:
       actions: Ações
-      confirm: Tem certeza?
       confirm_hide: Confirmar a moderação
       delete: "Apagar"
       hide: Ocultar
-      hide_author: Esconder o autor
       restore: Restaurar
       mark_featured: Destacado
       unmark_featured: Desmarcar destaques
