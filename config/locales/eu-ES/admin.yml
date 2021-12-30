@@ -4,11 +4,9 @@ eu:
       title: Administrazioa
     actions:
       actions: Ekintzak
-      confirm: Ziur zaude?
       confirm_hide: Baieztatu moderaketa
       delete: "Ezabatu"
       hide: Ezkutatu
-      hide_author: Sortzailea blokeatu
       restore: Berriz erakutsi
       mark_featured: Nabarmendu
       unmark_featured: Nabarmendutakoa kendu
