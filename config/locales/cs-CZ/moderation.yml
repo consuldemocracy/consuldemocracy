@@ -3,7 +3,6 @@ cs:
     comments:
       index:
         block_authors: Blokovat autory
-        confirm: Jste si jisti?
         filter: Filtr
         filters:
           all: Vše
@@ -24,7 +23,6 @@ cs:
     debates:
       index:
         block_authors: Blokovat autory
-        confirm: Jste si jisti?
         filter: Filtr
         filters:
           all: Vše
@@ -51,7 +49,6 @@ cs:
     proposals:
       index:
         block_authors: Blokovat autory
-        confirm: Jste si jisti?
         filter: Filtr
         filters:
           all: Vše
@@ -69,7 +66,6 @@ cs:
     budget_investments:
       index:
         block_authors: Blokovat autory
-        confirm: Jste si jisti?
         filter: Filtr
         filters:
           all: Vše
@@ -87,7 +83,6 @@ cs:
     proposal_notifications:
       index:
         block_authors: Blokovat autory
-        confirm: Jste si jisti?
         filter: Filtr
         filters:
           all: Vše
@@ -104,7 +99,6 @@ cs:
         title: Upozornění k návrhům
     users:
       index:
-        hidden: Blokováno
         hide: Blokovat
         search_placeholder: email nebo jméno uživatele
         title: Blokovat uživatele
