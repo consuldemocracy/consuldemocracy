@@ -4,12 +4,10 @@ tr:
       title: Yönetim
     actions:
       actions: Eylemler
-      confirm: Emin misiniz?
       confirm_delete: "Emin misiniz? Bu işlem \"%{name}\" silecek ve geri alınamaz."
       confirm_hide: Moderasyonu onayla
       delete: "Sil"
       hide: Gizle
-      hide_author: Yazarı gizle
       restore: Geri getir
       mark_featured: Öne Çıkan
       unmark_featured: Öne çıkan işaretini kaldır
