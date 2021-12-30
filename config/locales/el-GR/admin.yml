@@ -4,11 +4,9 @@ el:
       title: Διαχείριση
     actions:
       actions: Ενέργειες
-      confirm: Είστε βέβαιοι;
       confirm_hide: Επιβεβαίωση μέτρησης
       delete: "Διαγραφή"
       hide: Απόκρυψη
-      hide_author: Απόκρυψη συντάκτη
       restore: Επαναφορά
       mark_featured: Προτεινόμενα
       unmark_featured: Ξεμαρκάρισμα των επιλεγμένων
