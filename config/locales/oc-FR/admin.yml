@@ -4,11 +4,9 @@ oc:
       title: Administrar
     actions:
       actions: d'Accions
-      confirm: '¿Estás segur?'
       confirm_hide: Confirmatz la moderacion
       delete: "Borrar"
       hide: Amagar
-      hide_author: Bloquejar l'autor
       restore: Tornar a mostrar
       mark_featured: Destacadas
       unmark_featured: traire destacat
