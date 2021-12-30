@@ -4,11 +4,9 @@ sl:
       title: Administracija
     actions:
       actions: Dejanja
-      confirm: Si prepričan?
       confirm_hide: Potrdi
       delete: "Izbriši"
       hide: Skrij
-      hide_author: Skrij avtorja
       restore: Obnovi
       mark_featured: Izpostavljeno
       unmark_featured: Odznači izpostavljeno
