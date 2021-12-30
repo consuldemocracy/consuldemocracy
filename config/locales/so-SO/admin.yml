@@ -4,11 +4,9 @@ so:
       title: Mamul
     actions:
       actions: Tilaabooyin
-      confirm: Mahubtaa adigu?
       confirm_hide: Xaqiijinta dhexdhexaadinta
       delete: "Titiriid"
       hide: Qarin
-      hide_author: Qoore Qarson
       restore: Socelin
       mark_featured: Soobandhigiid/ Muqaal
       unmark_featured: Muqaal an Calamad lahayn
