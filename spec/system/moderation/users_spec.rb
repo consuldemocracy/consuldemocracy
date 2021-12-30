@@ -24,7 +24,9 @@ describe "Moderate users" do
     visit debate_path(debate1)
 
     within("#debate_#{debate1.id}") do
-      accept_confirm("Are you sure? Hide author \"#{debate1.author.name}\"") { click_link "Hide author" }
+      accept_confirm("Are you sure? This will hide the user \"#{debate1.author.name}\" and all their contents.") do
+        click_button "Block author"
+      end
     end
 
     expect(page).to have_current_path(debates_path)
@@ -64,12 +66,32 @@ describe "Moderate users" do
     within("#moderation_users") do
       expect(page).to have_content citizen.name
       expect(page).not_to have_content "Blocked"
-      click_link "Block"
+
+      accept_confirm { click_button "Block" }
     end
 
     within("#moderation_users") do
       expect(page).to have_content citizen.name
       expect(page).to have_content "Blocked"
+    end
+  end
+
+  scenario "Hide users in the moderation section" do
+    create(:user, username: "Rick")
+
+    login_as(create(:moderator).user)
+    visit moderation_users_path(search: "Rick")
+
+    within("#moderation_users") do
+      accept_confirm('This will hide the user "Rick" without hiding their contents') do
+        click_button "Hide"
+      end
+    end
+
+    expect(page).to have_content "The user has been hidden"
+
+    within("#moderation_users") do
+      expect(page).to have_content "Hidden"
     end
   end
 end

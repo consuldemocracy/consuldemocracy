@@ -275,7 +275,7 @@ describe "Internal valuation comments on Budget::Investments" do
 
       expect(page).to have_no_css(".comment-votes")
       expect(page).to have_no_css(".js-flag-actions")
-      expect(page).to have_no_css(".js-moderation-actions")
+      expect(page).to have_no_css(".moderation-actions")
     end
   end
 

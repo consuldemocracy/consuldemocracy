@@ -14,7 +14,7 @@ describe "Admin activity" do
       visit proposal_path(proposal)
 
       within("#proposal_#{proposal.id}") do
-        accept_confirm("Are you sure? Hide \"#{proposal.title}\"") { click_link "Hide" }
+        accept_confirm("Are you sure? Hide \"#{proposal.title}\"") { click_button "Hide" }
       end
       expect(page).to have_css("#proposal_#{proposal.id}.faded")
 
@@ -82,7 +82,7 @@ describe "Admin activity" do
       visit debate_path(debate)
 
       within("#debate_#{debate.id}") do
-        accept_confirm("Are you sure? Hide \"#{debate.title}\"") { click_link "Hide" }
+        accept_confirm("Are you sure? Hide \"#{debate.title}\"") { click_button "Hide" }
       end
       expect(page).to have_css("#debate_#{debate.id}.faded")
 
@@ -150,7 +150,7 @@ describe "Admin activity" do
       visit debate_path(debate)
 
       within("#comment_#{comment.id}") do
-        accept_confirm("Are you sure? Hide \"#{comment.body}\"") { click_link "Hide" }
+        accept_confirm("Are you sure? Hide \"#{comment.body}\"") { click_button "Hide" }
         expect(page).to have_css(".faded")
       end
 
@@ -217,9 +217,11 @@ describe "Admin activity" do
       visit proposal_path(proposal)
 
       within("#proposal_#{proposal.id}") do
-        accept_confirm("Are you sure? Hide author \"#{proposal.author.name}\"") { click_link "Hide author" }
+        accept_confirm("Are you sure? This will hide the user \"#{proposal.author.name}\" and all their contents.") do
+          click_button "Block author"
+        end
 
-        expect(page).to have_current_path(debates_path)
+        expect(page).to have_current_path(proposals_path)
       end
 
       visit admin_activity_path
@@ -239,8 +241,10 @@ describe "Admin activity" do
       visit moderation_users_path(search: user.username)
 
       within("#moderation_users") do
-        click_link "Block"
+        accept_confirm { click_button "Block" }
       end
+
+      expect(page).to have_content "The user has been blocked"
 
       visit admin_activity_path
 

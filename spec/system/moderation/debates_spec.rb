@@ -11,7 +11,7 @@ describe "Moderate debates" do
     visit debate_path(debate)
 
     within("#debate_#{debate.id}") do
-      accept_confirm("Are you sure? Hide") { click_link "Hide" }
+      accept_confirm("Are you sure? Hide") { click_button "Hide" }
     end
 
     expect(find("div#debate_#{debate.id}.faded")).to have_text debate.title
@@ -30,8 +30,8 @@ describe "Moderate debates" do
     visit debate_path(debate)
 
     within("#debate_#{debate.id}") do
-      expect(page).not_to have_link("Hide")
-      expect(page).not_to have_link("Block author")
+      expect(page).not_to have_button "Hide"
+      expect(page).not_to have_button "Block author"
     end
   end
 
@@ -66,7 +66,7 @@ describe "Moderate debates" do
           click_button "Search"
 
           within "tr", text: debate.author.name do
-            expect(page).to have_link "Block"
+            expect(page).to have_button "Block"
           end
         end
 

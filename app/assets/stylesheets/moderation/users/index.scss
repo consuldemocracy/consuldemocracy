@@ -1,0 +1,18 @@
+.moderation-users-index {
+  th:last-child,
+  td:last-child {
+    text-align: $global-right;
+  }
+
+  .table-actions {
+    justify-content: flex-end;
+  }
+
+  .hide-link {
+    @include hollow-button($color-warning);
+  }
+
+  .block-link {
+    @include hollow-button($alert-color);
+  }
+}

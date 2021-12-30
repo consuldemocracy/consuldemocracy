@@ -1,0 +1,47 @@
+<main class="moderation-users-index">
+  <h2><%= t("moderation.users.index.title") %></h2>
+
+  <%= render Admin::SearchComponent.new(label: t("moderation.users.index.search_placeholder")) %>
+
+  <% if users.present? %>
+    <h3><%= page_entries_info users %></h3>
+
+    <table id="moderation_users" class="moderation-users">
+      <thead>
+        <th><%= t("admin.hidden_users.index.user") %></th>
+        <th><%= t("admin.actions.actions") %></th>
+      </thead>
+      <tbody>
+        <% users.each do |user| %>
+          <tr>
+            <td>
+              <%= user.name %>
+            </td>
+            <td>
+              <% if user.hidden? %>
+                <%= status(user) %>
+              <% else %>
+                <%= render Admin::TableActionsComponent.new(user, actions: []) do |actions| %>
+                  <%= actions.action(
+                    :hide,
+                    text: t("moderation.users.index.hide"),
+                    confirm: ->(name) { t("moderation.users.index.confirm_hide", name: name) },
+                    method: :put
+                  ) %>
+                  <%= actions.action(
+                    :block,
+                    text: t("moderation.users.index.block"),
+                    confirm: ->(name) { t("moderation.users.index.confirm_block", name: name) },
+                    method: :put
+                  ) %>
+                <% end %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= paginate users %>
+  <% end %>
+</main>

@@ -371,6 +371,16 @@ describe "Commenting debates" do
     end
   end
 
+  scenario "Show comment when the author is hidden" do
+    create(:comment, body: "This is pointless", commentable: debate, author: create(:user, :hidden))
+
+    visit debate_path(debate)
+
+    within ".comment", text: "This is pointless" do
+      expect(page).to have_content "User deleted"
+    end
+  end
+
   scenario "Errors on reply" do
     comment = create(:comment, commentable: debate, user: user)
 

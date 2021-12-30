@@ -68,6 +68,8 @@ class Admin::ActionComponent < ApplicationComponent
         else
           t("admin.actions.confirm_action", action: text, name: record_name)
         end
+      elsif options[:confirm].respond_to?(:call)
+        options[:confirm].call(record_name)
       else
         options[:confirm]
       end

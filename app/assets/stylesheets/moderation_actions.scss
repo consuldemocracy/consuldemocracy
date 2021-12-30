@@ -1,0 +1,36 @@
+.moderation-actions {
+  &,
+  form {
+    display: inline;
+  }
+
+  button {
+    @include link;
+  }
+
+  @mixin separator {
+    content: "";
+    display: inline-block;
+    margin: 0 0.3em;
+    vertical-align: middle;
+  }
+
+  > * + *::before {
+    @include separator;
+    background: currentcolor;
+    height: 1em;
+    opacity: 0.5;
+    width: 1px;
+  }
+
+  .comment & {
+    > *::before {
+      @include separator;
+      background: $text-light;
+      border-radius: 100%;
+      opacity: 1;
+      height: 0.25em;
+      width: 0.25em;
+    }
+  }
+}

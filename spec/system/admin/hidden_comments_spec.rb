@@ -13,10 +13,12 @@ describe "Admin hidden comments", :admin do
     visit proposal_path(proposal)
 
     within("#proposal_#{proposal.id}") do
-      accept_confirm("Are you sure? Hide author \"#{proposal.author.name}\"") { click_link "Hide author" }
+      accept_confirm("Are you sure? This will hide the user \"#{proposal.author.name}\" and all their contents.") do
+        click_button "Block author"
+      end
     end
 
-    expect(page).to have_current_path debates_path
+    expect(page).to have_current_path proposals_path
 
     visit admin_hidden_comments_path
 

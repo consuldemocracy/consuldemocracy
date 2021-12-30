@@ -4,7 +4,7 @@ namespace :moderation do
   resources :users, only: :index do
     member do
       put :hide
-      put :hide_in_moderation_screen
+      put :block
     end
   end
 
