@@ -4,10 +4,8 @@ fa:
       title: مدیران
     actions:
       actions: اقدامات
-      confirm: آیا مطمئن هستید؟
       delete: "حذف"
       hide: پنهان کردن
-      hide_author: پنهان کردن نویسنده
       restore: بازیابی
       mark_featured: "ویژه\n"
       unmark_featured: برداشتن علامتگذاری برجسته
