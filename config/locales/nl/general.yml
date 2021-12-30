@@ -155,11 +155,15 @@ nl:
     errors: fouten
     not_saved: "voorkwam dat %{resource} werd opgeslagen.<br>Controleer alsjeblieft de gemarkeerde velden om ze aan te passen:"
     policy: Privacy Verklaring
+    banner: banner
     proposal: Voorstel
     proposal_notification: "Melding"
     budget/investment: Investering
     budget/group: Budgetgroep
     budget/heading: Budget onderdeel
+    legislation/draft_version: concept
+    legislation/process: proces
+    legislation/question: vraag
     poll/shift: Dienst
     poll/question/answer: Antwoord
     user: Deelnemer
@@ -168,6 +172,7 @@ nl:
     document: Document
     topic: Onderwerp
     image: Afbeelding
+    site_customization/page: pagina
   geozones:
     none: Hele stad
   layouts:
@@ -184,6 +189,8 @@ nl:
       proposal_totals:
         supports:
           zero: Geen steunbetuigingen
+          one: 1 steunbetuiging
+          other: "Steunt"
     footer:
       accessibility: Toegankelijkheid
       conditions: Gebruiksvoorwaarden
@@ -256,6 +263,10 @@ nl:
       sign_in: Log in via Google
       sign_up: Registreer via Google
       name: Google
+    wordpress_oauth2:
+      sign_in: Inloggen met Wordpress
+      sign_up: Registreren met Wordpress
+      name: Wordpress
     twitter:
       sign_in: Log in via Twitter
       sign_up: Registreer via Twitter
@@ -388,6 +399,7 @@ nl:
         one: 1 opmerking
         other: "%{count} opmerkingen"
       comments_tab: Comments
+      dashboard_proposal_link: Dashboard
       flag: Dit voorstel is door verschillende deelnemers aangemerkt als ongepast.
       notifications_tab: Notificaties
       milestones_tab: Mijlpalen
@@ -407,8 +419,13 @@ nl:
       progress: Voortgang
       community: Community
       polls: Polls
+      mailing: E-mail
       related_content: Gerelateerde inhoud
+    form:
+      request: Verzoek
     progress:
+      group_by_month: Maandelijks
+      group_by_week: Wekelijks
       supports: Steunt
     index:
       edit_proposal_link: Wijzig voorstel
@@ -418,6 +435,10 @@ nl:
     recommended_actions:
       pending_title: In afwachting
       done_title: Is al gereed
+    goal:
+      days:
+        one: "%{count} dag"
+        other: "%{count} dagen"
     community:
       access_community: Naar de community
       participants: deelnemers
@@ -434,6 +455,10 @@ nl:
         submit: Nieuwe peiling
       edit:
         submit: Sla op
+      poll:
+        responses:
+          one: "%{count} reactie"
+          other: "%{count} reacties"
       form:
         add_question: titel
       question_fields:
@@ -441,12 +466,16 @@ nl:
     poster:
       options:
         preview: Preview
+        download: Download
     mailing:
       mailing_options:
         preview: Preview
+      create:
+        sent: De e-mail is verstuurd
     mailer:
       forward:
         support_button: Steun dit voorstel
+        hi: "Hallo!"
   polls:
     all: "All"
     no_dates: "geen datum toegewezen"
@@ -497,6 +526,7 @@ nl:
         total_votes: "Totaal aantal stemmen"
         votes: "stemmen"
         web: "web"
+        mail: "Per post"
         booth: "Stemlocatie"
         total: "Totaal"
         valid: "Geldig"
@@ -540,6 +570,7 @@ nl:
       to: "Aan"
     author_info:
       author_deleted: Gebruiker verwijderd
+      email_deleted: E-mail verwijderd
     back: Go back
     check: Select
     check_all: All
@@ -760,3 +791,8 @@ nl:
       cancel_button: Cancel
     nested_links:
       title: Links
+  communities:
+    subnav:
+      surveys: Enquetes
+  remote_translations:
+    button: Vertaal pagina
