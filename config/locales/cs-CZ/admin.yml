@@ -4,6 +4,7 @@ cs:
       title: Administrace
     actions:
       actions: Akce
+      block_author: "Blokovat autora"
       confirm_action: "Jste si jist? %{action} \"%{name}\""
       confirm_delete: "Jste si jistý? Tato akce odstraní \"%{name}\" a nelze ji vrátit zpět."
       confirm_hide: Potvrdit moderování
