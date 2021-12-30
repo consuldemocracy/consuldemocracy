@@ -4,10 +4,8 @@ ast:
       title: Alministración
     actions:
       actions: Acciones
-      confirm: '¿Tas seguru?'
       delete: "Borrar"
       hide: Despintar
-      hide_author: Bloquiar a l'autor
       restore: Volver amosar
       mark_featured: Destacadas
       unmark_featured: Quitar destacáu
