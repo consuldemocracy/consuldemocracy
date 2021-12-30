@@ -26,6 +26,8 @@ nl:
       investments_sent: "Verzonden investeringsvoorstellen"
       participants_every_phase: "Aantal deelnemers"
     polls:
+      by_channel: "Deelnemers per kanaal"
+      vote_by_channel: "Stem type per kanaal"
       web_percentage: "%{percentage} website"
       booth_percentage: "%{percentage} Cabines"
       letter_percentage: "%{percentage} brief"
