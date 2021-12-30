@@ -4,11 +4,9 @@ pl:
       title: Administracja
     actions:
       actions: Akcje
-      confirm: Jesteś pewny/a?
       confirm_hide: Potwierdź moderację
       delete: "Usuń"
       hide: Ukryj
-      hide_author: Ukryj autora
       restore: Przywróć
       mark_featured: Opisany
       unmark_featured: Odznaczono funkcję
