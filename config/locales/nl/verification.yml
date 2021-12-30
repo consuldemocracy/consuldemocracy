@@ -17,6 +17,9 @@ nl:
     letter:
       alert:
         unconfirmed_code: You have not yet entered the confirmation code
+      create:
+        flash:
+          success: Bedankt voor het aanvragen van je <b>veiligheidscode (deze is alleen nodig voor de definitieve stemming)</b>. Binnen een paar dagen sturen we deze code naar het adres wat bij ons bekend is. Onthoud, indien gewenst, kan de code ook afgehaald worden op een van de locaties opgehaald worden.
       edit:
         see_all: Voorstellen bekijken
         title: Letter requested
