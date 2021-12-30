@@ -4,11 +4,9 @@ sq:
       title: Administrim
     actions:
       actions: Veprimet
-      confirm: A je i sigurt?
       confirm_hide: Konfirmo moderimin
       delete: "Fshi"
       hide: Fshih
-      hide_author: Fshih autorin
       restore: Kthej
       mark_featured: Karakteristika
       unmark_featured: Çaktivizo karakteristikat
