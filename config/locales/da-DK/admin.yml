@@ -4,11 +4,9 @@ da:
       title: Administration
     actions:
       actions: Handlinger
-      confirm: Er du sikker?
       confirm_hide: Bekræft moderation
       delete: "Slet"
       hide: Skjul
-      hide_author: Skjul bruger
       restore: Gendan
       mark_featured: Fremhævet
       unmark_featured: Fjern fremhævning
