@@ -4,13 +4,11 @@ it:
       title: Amministrazione
     actions:
       actions: Azioni
-      confirm: Sei sicuro?
       confirm_action: "Sei sicuro? %{action} \"%{name}\""
       confirm_delete: "Sei sicuro? Quest'azione eliminerà \"%{name}\" e non è annullabile."
       confirm_hide: Confermare intervento di moderazione
       delete: "Eliminare"
       hide: Nascondi
-      hide_author: Nascondi l'autore
       label: "%{action} %{name}"
       restore: Ripristino
       mark_featured: In primo piano
