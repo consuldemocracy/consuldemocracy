@@ -4,11 +4,9 @@ hr:
       title: Administracija
     actions:
       actions: Akcije
-      confirm: Jeste li sigurni?
       confirm_hide: Potvrdi izmjene
       delete: "Obriši"
       hide: Sakrij
-      hide_author: Sakrij autora
       restore: Vrati
       mark_featured: Istaknuto
       unmark_featured: Odznači istaknuto
