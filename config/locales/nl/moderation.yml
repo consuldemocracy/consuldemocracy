@@ -1,5 +1,7 @@
 nl:
   moderation:
+    actions:
+      confirm_action: "Weet je het zeker?%{action}"
     comments:
       index:
         block_authors: Block authors
@@ -99,6 +101,8 @@ nl:
         title: Notificaties
     users:
       index:
+        block: Blokkeer
+        confirm_block: "Weet je het zeker? Hierdoor is gebruiker \"%{name}\" en al hun inhoud niet meer zichtbaar."
         hide: Block
         search_placeholder: email or name of user
         title: Blokkeer deelnemers
