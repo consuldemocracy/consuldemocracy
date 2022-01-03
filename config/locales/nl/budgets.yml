@@ -220,6 +220,7 @@ nl:
           label: "Status van het project"
           all: "Alle (%{count})"
         milestone_tag:
+          label: "Mijlpaaltag"
           all: "Alle (%{count})"
     phases:
       errors:
