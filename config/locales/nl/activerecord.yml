@@ -3,9 +3,11 @@ nl:
     geozone_id: "Betreffende regio"
     results_enabled: "Toon resultaten"
     stats_enabled: "Toon statistieken"
+    advanced_stats_enabled: "Toon geavanceerde statistieken"
     name: Name
     email: E-mail
     description: Beschrijving
+    related_sdg_list: Doelen en Doelstellingen
   activerecord:
     models:
       activity:
@@ -74,6 +76,18 @@ nl:
       proposal:
         one: "Voorstel"
         other: "Voorstellen"
+      sdg/goal:
+        one: "doel"
+        other: "doelen"
+      sdg/local_target:
+        one: "lokale doelstelling"
+        other: "lokale doelstellingen"
+      sdg/manager:
+        one: "SDG manager"
+        other: "SDG managers"
+      sdg/target:
+        one: "doelstelling"
+        other: "doelstellingen"
       site_customization/page:
         one: Aangepaste pagina
         other: Aangepaste pagina's
