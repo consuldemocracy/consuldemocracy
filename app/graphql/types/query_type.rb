@@ -25,6 +25,27 @@ module Types
       argument :id, ID, required: true, default_value: false
     end
 
+    # Support deprecated API
+    field(
+      :proposal_notifications,
+      Types::ProposalNotificationType.connection_type,
+      "Returns all proposal notifications",
+      null: false,
+      camelize: false,
+      deprecation_reason: "Snake case fields are deprecated. Please use proposalNotifications."
+    )
+
+    field(
+      :proposal_notification,
+      Types::ProposalNotificationType,
+      "Returns proposal notification for ID",
+      null: false,
+      camelize: false,
+      deprecation_reason: "Snake case fields are deprecated. Please use proposalNotification."
+    ) do
+      argument :id, ID, required: true, default_value: false
+    end
+
     field :tags, Types::TagType.connection_type, "Returns all tags", null: false
     field :tag, Types::TagType, "Returns tag for ID", null: false do
       argument :id, ID, required: true, default_value: false
