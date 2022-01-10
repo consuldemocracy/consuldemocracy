@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  include GraphqlDevise::Concerns::Model
   include Verification
   attribute :registering_from_web, default: false
 
