@@ -1,5 +1,4 @@
 module Mutations
-  class BaseMutation < GraphQL::Schema::RelayClassicMutation
-    object_class Types::BaseObject
+  class BaseMutation < GraphQL::Schema::Mutation
   end
 end
