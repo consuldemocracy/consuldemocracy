@@ -15,6 +15,13 @@ module Types
       argument :id, ID, required: true, default_value: false
     end
 
+    field :polls, Types::PollType.connection_type, "Returns all polls [for filter]", null: false do
+      argument :filter, String, required: false, default_value: "current"
+    end
+    field :poll, Types::PollType, "Returns a poll", null: false do
+      argument :id, ID, required: true, default_value: false
+    end
+
     field :proposals, Types::ProposalType.connection_type, "Returns all proposals", null: false
     field :proposal, Types::ProposalType, "Returns proposal for ID", null: false do
       argument :id, ID, required: true, default_value: false
@@ -83,6 +90,14 @@ module Types
 
     def geozone(id:)
       Geozone.find(id)
+    end
+
+    def polls(filter:)
+      ::Poll.all.created_by_admin.not_budget.send(filter).includes(:geozones) #.sort_for_list(current_user)
+    end
+
+    def poll(id:)
+      Poll.find(id)
     end
 
     def proposals
