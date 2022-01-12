@@ -1,4 +1,4 @@
-<div class="js-participation supports ballot">
+<div class="supports ballot">
   <% if voted? %>
     <div class="remove supported">
       <span class="icon-check-circle"
@@ -36,7 +36,7 @@
   <% end %>
 
   <% if reason.present? && !voted? %>
-    <div class="js-participation-not-allowed participation-not-allowed" style="display:none">
+    <div class="participation-not-allowed" style="display:none">
       <p>
         <small>
           <%= sanitize(t("budgets.ballots.reasons_for_not_balloting.#{reason}",
