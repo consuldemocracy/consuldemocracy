@@ -1,5 +1,5 @@
 <div class="in-favor-against">
-  <div class="in-favor inline-block">
+  <div class="in-favor">
     <%= button_to polymorphic_path(votable, action: :vote, value: "yes"),
         class: "like #{voted_classes[:in_favor]}",
         title: t("votes.agree"),
@@ -10,13 +10,13 @@
       <span class="icon-like">
         <span class="show-for-sr"><%= t("votes.agree") %></span>
       </span>
-      <span class="percentage"><%= votes_percentage("likes", votable) %></span>
     <% end %>
+    <span class="percentage"><%= votes_percentage("likes", votable) %></span>
   </div>
 
   <span class="divider"></span>
 
-  <div class="against inline-block">
+  <div class="against">
     <%= button_to polymorphic_path(votable, action: :vote, value: "no"),
         class: "unlike #{voted_classes[:against]}",
         title: t("votes.disagree"),
@@ -27,7 +27,7 @@
       <span class="icon-unlike">
         <span class="show-for-sr"><%= t("votes.disagree") %></span>
       </span>
-      <span class="percentage"><%= votes_percentage("dislikes", votable) %></span>
     <% end %>
+    <span class="percentage"><%= votes_percentage("dislikes", votable) %></span>
   </div>
 </div>
