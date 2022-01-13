@@ -1,43 +1,6 @@
 <div class="votes">
   <% if proposal.process.proposals_phase.open? %>
-    <div class="in-favor inline-block">
-      <% if current_user %>
-        <%= link_to vote_legislation_process_proposal_path(process_id: proposal.process, id: proposal, value: "yes"),
-            class: "like #{voted_classes[:in_favor]}", title: t("votes.agree"), method: "post", remote: true do %>
-          <span class="icon-like">
-            <span class="show-for-sr"><%= t("votes.agree") %></span>
-          </span>
-          <span class="percentage"><%= votes_percentage("likes", proposal) %></span>
-        <% end %>
-      <% else %>
-        <div class="like">
-          <span class="icon-like">
-            <span class="show-for-sr"><%= t("votes.agree") %></span>
-          </span>
-          <span class="percentage"><%= votes_percentage("likes", proposal) %></span>
-        </div>
-      <% end %>
-    </div>
-
-    <span class="divider"></span>
-
-    <div class="against inline-block">
-      <% if current_user %>
-        <%= link_to vote_legislation_process_proposal_path(process_id: proposal.process, id: proposal, value: "no"), class: "unlike #{voted_classes[:against]}", title: t("votes.disagree"), method: "post", remote: true do %>
-          <span class="icon-unlike">
-            <span class="show-for-sr"><%= t("votes.disagree") %></span>
-          </span>
-          <span class="percentage"><%= votes_percentage("dislikes", proposal) %></span>
-        <% end %>
-      <% else %>
-        <div class="unlike">
-          <span class="icon-unlike">
-            <span class="show-for-sr"><%= t("votes.disagree") %></span>
-          </span>
-          <span class="percentage"><%= votes_percentage("dislikes", proposal) %></span>
-        </div>
-      <% end %>
-    </div>
+    <%= render Shared::InFavorAgainstComponent.new(proposal) %>
   <% end %>
 
   <span class="total-votes">

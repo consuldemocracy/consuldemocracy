@@ -1,42 +1,5 @@
 <div class="votes">
-  <div class="in-favor inline-block">
-    <% if current_user %>
-      <%= link_to vote_debate_path(debate, value: "yes"),
-          class: "like #{voted_classes[:in_favor]}", title: t("votes.agree"), method: "post", remote: true do %>
-        <span class="icon-like">
-          <span class="show-for-sr"><%= t("votes.agree") %></span>
-        </span>
-        <span class="percentage"><%= votes_percentage("likes", debate) %></span>
-      <% end %>
-    <% else %>
-      <div class="like">
-        <span class="icon-like">
-          <span class="show-for-sr"><%= t("votes.agree") %></span>
-        </span>
-        <span class="percentage"><%= votes_percentage("likes", debate) %></span>
-      </div>
-    <% end %>
-  </div>
-
-  <span class="divider"></span>
-
-  <div class="against inline-block">
-    <% if current_user %>
-      <%= link_to vote_debate_path(debate, value: "no"), class: "unlike #{voted_classes[:against]}", title: t("votes.disagree"), method: "post", remote: true do %>
-        <span class="icon-unlike">
-          <span class="show-for-sr"><%= t("votes.disagree") %></span>
-        </span>
-        <span class="percentage"><%= votes_percentage("dislikes", debate) %></span>
-      <% end %>
-    <% else %>
-      <div class="unlike">
-        <span class="icon-unlike">
-          <span class="show-for-sr"><%= t("votes.disagree") %></span>
-        </span>
-        <span class="percentage"><%= votes_percentage("dislikes", debate) %></span>
-      </div>
-    <% end %>
-  </div>
+  <%= render Shared::InFavorAgainstComponent.new(debate) %>
 
   <span class="total-votes">
     <%= t("debates.debate.votes", count: debate.votes_score) %>
