@@ -7,9 +7,7 @@
         method: "post",
         remote: true,
         disabled: !current_user do %>
-      <span class="icon-like">
-        <span class="show-for-sr"><%= t("votes.agree") %></span>
-      </span>
+      <span class="show-for-sr"><%= t("votes.agree") %></span>
     <% end %>
     <span class="percentage"><%= votes_percentage("likes", votable) %></span>
   </div>
@@ -24,9 +22,7 @@
         method: "post",
         remote: true,
         disabled: !current_user do %>
-      <span class="icon-unlike">
-        <span class="show-for-sr"><%= t("votes.disagree") %></span>
-      </span>
+      <span class="show-for-sr"><%= t("votes.disagree") %></span>
     <% end %>
     <span class="percentage"><%= votes_percentage("dislikes", votable) %></span>
   </div>
