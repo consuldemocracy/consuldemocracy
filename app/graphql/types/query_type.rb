@@ -97,7 +97,7 @@ module Types
     end
 
     def poll(id:)
-      Poll.find(id)
+      ::Poll.find(id)
     end
 
     def proposals
