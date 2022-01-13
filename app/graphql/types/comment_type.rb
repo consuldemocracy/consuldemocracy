@@ -9,6 +9,7 @@ module Types
     field :commentable_type, String, null: true
     field :confidence_score, Integer, null: false
     field :id, ID, null: false
+    field :parent_id, ID, null: true
     field :public_author, Types::UserType, null: true
     field :public_created_at, String, null: true
     field :votes_for, Types::VoteType.connection_type, null: true

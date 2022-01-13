@@ -9,6 +9,7 @@ module Types
 
     field :geozone, Types::GeozoneType, null: true
     field :questions, [Types::Poll::QuestionType], null: true
+    field :comments, [Types::CommentType], null: true
 
     field :token, String, null: true, authenticate: true
 
@@ -21,6 +22,7 @@ module Types
       object.questions
         .includes(:question_answers)
         .includes(:answers)
+        .includes(:comments)
     end
   end
 end
