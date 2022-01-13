@@ -1,4 +1,9 @@
 .in-favor-against {
+  @include flex-with-gap($line-height / 4);
+
+  @include breakpoint(medium) {
+    @include flex-with-gap($line-height * 3 / 4);
+  }
 
   &,
   .in-favor,
@@ -83,13 +88,5 @@
 
   .no-voted {
     opacity: 0.3;
-  }
-
-  .against {
-    margin-left: $line-height / 4;
-  }
-
-  .divider {
-    margin: 0 rem-calc(6);
   }
 }
