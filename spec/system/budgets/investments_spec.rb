@@ -1389,6 +1389,22 @@ describe "Budget Investments" do
       expect(page).to have_content "€10,000"
     end
 
+    scenario "Show message if user already voted in other heading" do
+      group = create(:budget_group, budget: budget, name: "Global Group")
+      heading = create(:budget_heading, group: group, name: "Heading 1")
+      investment = create(:budget_investment, :selected, heading: heading)
+      heading2 = create(:budget_heading, group: group, name: "Heading 2")
+      investment2 = create(:budget_investment, :selected, heading: heading2)
+      user = create(:user, :level_two, ballot_lines: [investment])
+
+      login_as(user)
+      visit budget_investment_path(budget, investment2)
+
+      expect(page).to have_selector(".participation-not-allowed",
+                                    text: "You have already voted a different heading: Heading 1",
+                                    visible: :hidden)
+    end
+
     scenario "Sidebar in show should display vote text" do
       investment = create(:budget_investment, :selected, budget: budget)
       visit budget_investment_path(budget, investment)
