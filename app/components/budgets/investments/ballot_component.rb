@@ -1,12 +1,11 @@
 class Budgets::Investments::BallotComponent < ApplicationComponent
-  attr_reader :investment, :investment_ids, :ballot, :assigned_heading
+  attr_reader :investment, :investment_ids, :ballot
   delegate :current_user, :heading_link, :link_to_verify_account, to: :helpers
 
-  def initialize(investment:, investment_ids:, ballot:, assigned_heading:)
+  def initialize(investment:, investment_ids:, ballot:)
     @investment = investment
     @investment_ids = investment_ids
     @ballot = ballot
-    @assigned_heading = assigned_heading
   end
 
   private
@@ -40,6 +39,10 @@ class Budgets::Investments::BallotComponent < ApplicationComponent
     def link_to_change_ballot
       link_to(t("budgets.ballots.reasons_for_not_balloting.change_ballot"),
               budget_ballot_path(budget))
+    end
+
+    def assigned_heading
+      ballot.heading_for_group(investment.group)
     end
 
     def cannot_vote_text
