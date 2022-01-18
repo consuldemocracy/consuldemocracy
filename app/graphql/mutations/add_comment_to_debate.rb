@@ -2,7 +2,6 @@ module Mutations
   class AddCommentToDebate < BaseMutation
     argument :debate_id, ID, required: true
     argument :body, String, required: true, validates: { allow_blank: false }
-    argument :parent_id, ID, required: false
 
     type Types::CommentType
 
@@ -12,11 +11,10 @@ module Mutations
           body: body,
           commentable_type: "Debate",
           commentable_id: debate_id,
-          parent_id: parent_id,
           user_id: context[:current_resource].id
         })
       rescue ActiveRecord::RecordInvalid => e
-        raise GraphQL::ExecutionError, "#{e.message}"
+        raise GraphQL::ExecutionError, e.message
       end
 
       # TODO: Do we want notifications like in CommentsController?
