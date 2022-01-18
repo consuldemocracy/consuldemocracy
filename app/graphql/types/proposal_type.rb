@@ -21,12 +21,23 @@ module Types
     field :video_url, String, null: true
     field :votes_for, Types::VoteType.connection_type, null: true
 
+    # Requires authentication
+    field :current_user_has_voted, Boolean, null: true
+
     def tags
       object.tags.public_for_api
     end
 
     def geozone
       Geozone.public_for_api.find_by(id: object.geozone)
+    end
+
+    def current_user_has_voted
+      unless context[:current_resource]
+        raise GraphQL::ExecutionError, "currentUserHasVoted requires authentication"
+      end
+
+      context[:current_resource].votes.for_proposals([object.id]).first.present?
     end
   end
 end
