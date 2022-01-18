@@ -12,9 +12,8 @@ cs:
         headers:
           comment: Komentář
           moderate: Moderovat
-        hide_comments: Skrýt komentáře
+        hide: Skrýt komentáře
         ignore_flags: Označené jako přečtené
-        order: Pořadí
         orders:
           flags: Nejvíce označené
           newest: Nejnovější
@@ -34,9 +33,8 @@ cs:
         headers:
           debate: Debata
           moderate: Moderovat
-        hide_debates: Skrýt debaty
+        hide: Skrýt debaty
         ignore_flags: Označit za přečtené
-        order: Pořadí
         orders:
           created_at: Nejnovější
           flags: Nejvíce označené
@@ -62,9 +60,8 @@ cs:
         headers:
           moderate: Moderovat
           proposal: Návrhy
-        hide_proposals: Skrýt návrhy
+        hide: Skrýt návrhy
         ignore_flags: Označit za přečtené
-        order: Seřadit podle
         orders:
           created_at: Nejnovější
           flags: Nejvíce označené
@@ -81,9 +78,8 @@ cs:
         headers:
           moderate: Moderovat
           budget_investment: Rozpočet
-        hide_budget_investments: Skrýt rozpočtové investice
+        hide: Skrýt rozpočtové investice
         ignore_flags: Označit za přečtené
-        order: Seřadit podle
         orders:
           created_at: Nejnovější
           flags: Nejvíce označené
@@ -100,9 +96,8 @@ cs:
         headers:
           moderate: Moderovat
           proposal_notification: Upozornění k návrhům
-        hide_proposal_notifications: Skrýt návrhy
+        hide: Skrýt návrhy
         ignore_flags: Označit za přečtené
-        order: Seřadit podle
         orders:
           created_at: Nejnovější
           moderated: Moderované

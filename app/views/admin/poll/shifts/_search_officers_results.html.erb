@@ -24,6 +24,7 @@
         </td>
         <td>
           <%= render Admin::TableActionsComponent.new(
+            user,
             actions: [:edit],
             edit_text: t("admin.poll_shifts.new.edit_shifts"),
             edit_path: new_admin_booth_shift_path(officer_id: user.poll_officer.id)

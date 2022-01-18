@@ -6,9 +6,7 @@ describe "Admin budget investments", :admin do
     create(:administrator, user: create(:user, username: "Ana", email: "ana@admins.org"))
   end
 
-  it_behaves_like "admin_milestoneable",
-                  :budget_investment,
-                  "admin_polymorphic_path"
+  it_behaves_like "admin_milestoneable", :budget_investment, "admin_polymorphic_path"
 
   context "Load" do
     let!(:investment) { create(:budget_investment, budget: budget) }
@@ -253,13 +251,8 @@ describe "Admin budget investments", :admin do
     end
 
     scenario "Filtering by without assigned admin" do
-      create(:budget_investment,
-        title: "Investment without admin",
-        budget: budget)
-      create(:budget_investment,
-        :with_administrator,
-        title: "Investment with admin",
-        budget: budget)
+      create(:budget_investment, title: "Investment without admin", budget: budget)
+      create(:budget_investment, :with_administrator, title: "Investment with admin", budget: budget)
 
       visit admin_budget_budget_investments_path(budget_id: budget)
       expect(page).to have_link("Investment without admin")
@@ -282,15 +275,8 @@ describe "Admin budget investments", :admin do
     end
 
     scenario "Filtering by without assigned valuator" do
-      user = create(:user)
-      valuator = create(:valuator, user: user)
-      create(:budget_investment,
-        title: "Investment without valuator",
-        budget: budget)
-      create(:budget_investment,
-        title: "Investment with valuator",
-        budget: budget,
-        valuators: [valuator])
+      create(:budget_investment, title: "Investment without valuator", budget: budget)
+      create(:budget_investment, :with_valuator, title: "Investment with valuator", budget: budget)
 
       visit admin_budget_budget_investments_path(budget_id: budget)
       expect(page).to have_link("Investment without valuator")
@@ -313,14 +299,12 @@ describe "Admin budget investments", :admin do
     end
 
     scenario "Filtering by under valuation" do
-      user = create(:user)
-      valuator = create(:valuator, user: user)
       create(:budget_investment,
         :with_administrator,
+        :with_valuator,
         :open,
         title: "Investment without valuation",
-        budget: budget,
-        valuators: [valuator])
+        budget: budget)
       create(:budget_investment,
         :with_administrator,
         title: "Investment with valuation",
@@ -347,13 +331,8 @@ describe "Admin budget investments", :admin do
     end
 
     scenario "Filtering by valuation finished" do
-      create(:budget_investment,
-        title: "Investment valuation open",
-        budget: budget)
-      create(:budget_investment,
-        :finished,
-        title: "Investment valuation finished",
-        budget: budget)
+      create(:budget_investment, title: "Investment valuation open", budget: budget)
+      create(:budget_investment, :finished, title: "Investment valuation finished", budget: budget)
 
       visit admin_budget_budget_investments_path(budget_id: budget)
       expect(page).to have_link("Investment valuation open")
@@ -376,14 +355,8 @@ describe "Admin budget investments", :admin do
     end
 
     scenario "Filtering by winners" do
-      create(:budget_investment,
-        :winner,
-        :finished,
-        title: "Investment winner",
-        budget: budget)
-      create(:budget_investment,
-        title: "Investment without winner",
-        budget: budget)
+      create(:budget_investment, :winner, :finished, title: "Investment winner", budget: budget)
+      create(:budget_investment, title: "Investment without winner", budget: budget)
 
       visit admin_budget_budget_investments_path(budget_id: budget)
       expect(page).to have_link("Investment winner")
@@ -536,12 +509,13 @@ describe "Admin budget investments", :admin do
       check "Winners"
       click_button "Filter"
 
-      expect(page).to have_link "Calculate Winner Investments"
+      expect(page).to have_button "Calculate Winner Investments"
 
-      visit edit_admin_budget_path(budget)
+      visit admin_budget_path(budget)
 
-      expect(page).to have_link "Calculate Winner Investments"
+      expect(page).to have_button "Calculate Winner Investments"
 
+      click_link "Edit budget"
       select "Accepting projects", from: "Active phase"
       click_button "Update Budget"
 
@@ -553,14 +527,13 @@ describe "Admin budget investments", :admin do
       check "Winners"
       click_button "Filter"
 
-      expect(page).not_to have_link "Calculate Winner Investments"
-      expect(page).to have_content 'The budget has to stay on phase "Balloting projects", '\
-                                   '"Reviewing Ballots" or "Finished budget" in order '\
-                                   "to calculate winners projects"
+      expect(page).not_to have_button "Calculate Winner Investments"
+      expect(page).to have_content 'The budget has to stay on phase "Reviewing voting" '\
+                                   "in order to calculate winners projects"
 
-      visit edit_admin_budget_path(budget)
+      visit admin_budget_path(budget)
 
-      expect(page).not_to have_link "Calculate Winner Investments"
+      expect(page).not_to have_button "Calculate Winner Investments"
     end
 
     scenario "Filtering by minimum number of votes" do

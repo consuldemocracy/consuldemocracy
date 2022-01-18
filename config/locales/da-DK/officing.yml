@@ -69,7 +69,6 @@ da:
         not_allowed: "Du har ingen arbejdsopgaver i dag"
       new:
         title: Erklær dokument gyldigt
-        document_number: "Dokumentnummer (bogstaver inkluderet)"
         submit: Erklær dokument gyldigt
         error_verifying_census: "Dit identitetsdokument kunne ikke verificeres."
         form_errors: forhindrede verificeringen af dit identitetsdokument

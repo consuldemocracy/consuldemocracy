@@ -43,14 +43,12 @@ sr:
       title: Корисничко управљање
       under_age: "Немате одговарајуће године да потврдите свој налог."
       verify: Потврдите
-    email_label: Електронска пошта
     date_of_birth: Датум рођења
     email_verifications:
       already_verified: Овај кориснички налог је већ потврђен.
       choose_options: "Молимо вас изаберите једну од следећих опција:"
       document_found_in_census: Овај документ је нађен у избору, али нема кориснички налог са којим је повезан.
       document_mismatch: "Ова адреса припада кориснику који већ има додељени ид: %{document_number}(%{document_type})"
-      email_placeholder: Напишите адресу електронске поште коју је ова особа користила да креира свој налог
       email_sent_instructions: Да би се успешно завршила верификација, неопходно је да корисник кликне на линк који је послат на горе наведену адресу електронске поште. Овај корак је неопходан да би се потврдило да адреса припада кориснику.
       if_existing_account: Ako korisnik već ima napravljen nalog,
       if_no_existing_account: Ako korisnik još uvek nema napravljen nalog

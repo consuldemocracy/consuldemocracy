@@ -14,12 +14,12 @@ describe "Admin settings", :admin do
   end
 
   scenario "Update" do
-    setting = create(:setting, key: "super.users.first")
+    create(:setting, key: "super.users.first")
 
     visit admin_settings_path
 
-    within("#edit_setting_#{setting.id}") do
-      fill_in "setting_#{setting.id}", with: "Super Users of level 1"
+    within "tr", text: "First" do
+      fill_in "First", with: "Super Users of level 1"
       click_button "Update"
     end
 
@@ -173,13 +173,13 @@ describe "Admin settings", :admin do
       end
 
       scenario "On #tab-remote-census-configuration" do
-        remote_census_setting = create(:setting, key: "remote_census.general.whatever")
+        create(:setting, key: "remote_census.general.whatever")
 
         visit admin_settings_path
         find("#remote-census-tab").click
 
-        within("#edit_setting_#{remote_census_setting.id}") do
-          fill_in "setting_#{remote_census_setting.id}", with: "New value"
+        within "tr", text: "Whatever" do
+          fill_in "Whatever", with: "New value"
           click_button "Update"
         end
 
@@ -189,13 +189,13 @@ describe "Admin settings", :admin do
     end
 
     scenario "On #tab-configuration" do
-      configuration_setting = Setting.create!(key: "whatever")
+      Setting.create!(key: "whatever")
 
       visit admin_settings_path
       find("#tab-configuration").click
 
-      within("#edit_setting_#{configuration_setting.id}") do
-        fill_in "setting_#{configuration_setting.id}", with: "New value"
+      within "tr", text: "Whatever" do
+        fill_in "Whatever", with: "New value"
         click_button "Update"
       end
 
@@ -209,13 +209,13 @@ describe "Admin settings", :admin do
       end
 
       scenario "On #tab-map-configuration" do
-        map_setting = Setting.create!(key: "map.whatever")
+        Setting.create!(key: "map.whatever")
 
         visit admin_settings_path
         click_link "Map configuration"
 
-        within("#edit_setting_#{map_setting.id}") do
-          fill_in "setting_#{map_setting.id}", with: "New value"
+        within "tr", text: "Whatever" do
+          fill_in "Whatever", with: "New value"
           click_button "Update"
         end
 
@@ -225,13 +225,13 @@ describe "Admin settings", :admin do
     end
 
     scenario "On #tab-proposals" do
-      proposal_dashboard_setting = Setting.create!(key: "proposals.whatever")
+      Setting.create!(key: "proposals.whatever")
 
       visit admin_settings_path
       find("#proposals-tab").click
 
-      within("#edit_setting_#{proposal_dashboard_setting.id}") do
-        fill_in "setting_#{proposal_dashboard_setting.id}", with: "New value"
+      within "tr", text: "Whatever" do
+        fill_in "Whatever", with: "New value"
         click_button "Update"
       end
 
@@ -240,28 +240,22 @@ describe "Admin settings", :admin do
     end
 
     scenario "On #tab-participation-processes" do
-      process_setting = Setting.create!(key: "process.whatever")
+      Setting.create!(key: "process.whatever")
 
       visit admin_settings_path
       find("#participation-processes-tab").click
-
-      accept_alert do
-        find("#edit_setting_#{process_setting.id} .button").click
-      end
+      within("tr", text: "Whatever") { click_button "No" }
 
       expect(page).to have_current_path(admin_settings_path)
       expect(page).to have_css("div#tab-participation-processes.is-active")
     end
 
     scenario "On #tab-feature-flags" do
-      feature_setting = Setting.create!(key: "feature.whatever")
+      Setting.create!(key: "feature.whatever")
 
       visit admin_settings_path
       find("#features-tab").click
-
-      accept_alert do
-        find("#edit_setting_#{feature_setting.id} .button").click
-      end
+      within("tr", text: "Whatever") { click_button "No" }
 
       expect(page).to have_current_path(admin_settings_path)
       expect(page).to have_css("div#tab-feature-flags.is-active")
@@ -275,8 +269,10 @@ describe "Admin settings", :admin do
       visit admin_settings_path
       click_link "SDG configuration"
 
-      accept_alert do
-        within("tr", text: "Whatever") { click_button "Enable" }
+      within("tr", text: "Whatever") do
+        click_button "No"
+
+        expect(page).to have_button "Yes"
       end
 
       expect(page).to have_current_path(admin_settings_path)
@@ -287,32 +283,28 @@ describe "Admin settings", :admin do
   describe "Skip verification" do
     scenario "deactivate skip verification" do
       Setting["feature.user.skip_verification"] = "true"
-      setting = Setting.find_by(key: "feature.user.skip_verification")
 
       visit admin_settings_path
       find("#features-tab").click
 
-      accept_alert do
-        find("#edit_setting_#{setting.id} .button").click
-      end
+      within("tr", text: "Skip user verification") do
+        click_button "Yes"
 
-      expect(page).to have_content "Value updated"
+        expect(page).to have_button "No"
+      end
     end
 
     scenario "activate skip verification" do
       Setting["feature.user.skip_verification"] = nil
-      setting = Setting.find_by(key: "feature.user.skip_verification")
 
       visit admin_settings_path
       find("#features-tab").click
 
-      accept_alert do
-        find("#edit_setting_#{setting.id} .button").click
+      within("tr", text: "Skip user verification") do
+        click_button "No"
+
+        expect(page).to have_button "Yes"
       end
-
-      expect(page).to have_content "Value updated"
-
-      Setting["feature.user.skip_verification"] = nil
     end
   end
 
@@ -337,6 +329,25 @@ describe "Admin settings", :admin do
       expect(page).to have_content "To show the configuration options from " \
                                    "Sustainable Development Goals you must " \
                                    'enable "SDG" on "Features" tab.'
+    end
+
+    scenario "is enabled right after enabling the feature" do
+      Setting["feature.sdg"] = false
+      login_as(create(:administrator).user)
+
+      visit admin_settings_path
+
+      click_link "Features"
+
+      within("tr", text: "SDG") do
+        click_button "No"
+
+        expect(page).to have_button "Yes"
+      end
+
+      click_link "SDG configuration"
+
+      expect(page).to have_css "h2", exact_text: "SDG configuration"
     end
   end
 end

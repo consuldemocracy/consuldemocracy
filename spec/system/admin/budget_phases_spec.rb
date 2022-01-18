@@ -23,60 +23,48 @@ describe "Admin budget phases" do
     end
 
     scenario "Show default phase name or custom if present" do
-      visit edit_admin_budget_path(budget)
-      phase = budget.current_phase
+      visit admin_budget_path(budget)
 
-      within "#budget_phase_#{phase.id}" do
+      within_table "Phases" do
         expect(page).to have_content "Accepting projects"
         expect(page).not_to have_content "My phase custom name"
-        click_link "Edit phase"
+
+        within("tr", text: "Accepting projects") { click_link "Edit" }
       end
+
+      expect(page).to have_css "h2", exact_text: "Edit phase - Accepting projects"
 
       fill_in "Phase's Name", with: "My phase custom name"
       click_button "Save changes"
 
-      within "#budget_phase_#{phase.id}" do
+      within_table "Phases" do
         expect(page).to have_content "My phase custom name"
         expect(page).to have_content "(Accepting projects)"
       end
     end
 
-    scenario "Show CTA button in public site if added" do
-      visit edit_admin_budget_budget_phase_path(budget, budget.current_phase)
-      expect(page).to have_content "Main call to action (optional)"
-
-      fill_in "Text on the button", with: "Button on the phase"
-      fill_in "The button takes you to (add a link)", with: "https://consulproject.org"
-      click_button "Save changes"
-
-      visit budgets_path
-      within "##{budget.current_phase.kind.parameterize}" do
-        expect(page).to have_link("Button on the phase", href: "https://consulproject.org")
-      end
-    end
-
     scenario "Enable and disable a phase is possible from the budget view" do
-      visit edit_admin_budget_path(budget)
+      visit admin_budget_path(budget)
       phase = budget.phases.enabled.sample
 
       expect(phase.enabled).to be true
       within "#budget_phase_#{phase.id}" do
-        expect(find("#phase_enabled")).to be_checked
-        uncheck "phase_enabled"
+        expect(page).to have_button "Yes"
+        click_button "Yes"
       end
 
-      visit edit_admin_budget_path(budget)
+      visit admin_budget_path(budget)
 
       within "#budget_phase_#{phase.id}" do
-        expect(find("#phase_enabled")).not_to be_checked
+        expect(page).to have_button "No"
         expect(phase.reload.enabled).to be false
-        check "phase_enabled"
+        click_button "No"
       end
 
-      visit edit_admin_budget_path(budget)
+      visit admin_budget_path(budget)
 
       within "#budget_phase_#{phase.id}" do
-        expect(find("#phase_enabled")).to be_checked
+        expect(page).to have_button "Yes"
       end
       expect(phase.reload.enabled).to be true
     end
@@ -100,6 +88,32 @@ describe "Admin budget phases" do
       expect(budget.published_phases.last.ends_at.to_date).to eq(("04/04/2020").to_date)
       expect(budget.published_phases.first.enabled).to be(true)
       expect(budget.published_phases.last.enabled).to be(true)
+    end
+
+    scenario "shows successful notice when updating the phase with a valid image" do
+      visit edit_admin_budget_budget_phase_path(budget, budget.current_phase)
+
+      imageable_attach_new_file(Rails.root.join("spec/fixtures/files/clippy.jpg"))
+
+      click_on "Save changes"
+
+      expect(page).to have_content "Changes saved"
+    end
+
+    scenario "shows CTA link in public site if added" do
+      visit edit_admin_budget_budget_phase_path(budget, budget.current_phase)
+
+      expect(page).to have_content "Main call to action (optional)"
+
+      fill_in "Text on the link", with: "Link on the phase"
+      fill_in "The link takes you to (add a link)", with: "https://consulproject.org"
+      click_button "Save changes"
+
+      expect(page).to have_content("Changes saved")
+
+      visit budgets_path
+
+      expect(page).to have_link("Link on the phase", href: "https://consulproject.org")
     end
   end
 end

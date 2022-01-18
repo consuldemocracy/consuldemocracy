@@ -20,11 +20,11 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="row">
     <div class="small-12 column">
-      <%= f.text_field :login, autofocus: true, placeholder: t("devise_views.sessions.new.login_label") %>
+      <%= f.text_field :login, autofocus: true %>
     </div>
 
     <div class="small-12 column">
-      <%= f.password_field :password, autocomplete: "off", placeholder: t("devise_views.sessions.new.password_label") %>
+      <%= f.password_field :password, autocomplete: "off" %>
       <%= link_to t("devise_views.shared.links.new_password"), new_password_path(resource_name),
                   class: "float-right no-margin-top" %>
     </div>

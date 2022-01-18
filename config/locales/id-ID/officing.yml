@@ -15,6 +15,20 @@ id:
         no_polls: Anda tidak officing final menceritakan aktif dalam setiap jajak pendapat
         select_poll: Pilih jajak pendapat
         add_results: Tambahkan hasil
+    poll_budgets:
+      index:
+        ballot_sheet_name: Nama
+        ballot_sheet_author: Penulis
+        ballot_sheet_creation_date: Tanggal pembuatan
+      new:
+        booth: Bilik
+        select_booth: Pilih booth
+        csv_data: Data CSV
+        submit: Simpan
+      show:
+        created_at: Tanggal pembuatan
+        author: Penulis
+        data: Data CSV
     results:
       flash:
         create: "Hasil disimpan"
@@ -46,7 +60,6 @@ id:
         not_allowed: "Anda tidak memiliki officing pergeseran hari ini"
       new:
         title: Mengesahkan dokumen
-        document_number: "Nomor dokumen (termasuk huruf)"
         submit: Mengesahkan dokumen
         error_verifying_census: "Sensus itu dapat memverifikasi dokumen ini."
         form_errors: mencegah verifikasi dari dokumen ini

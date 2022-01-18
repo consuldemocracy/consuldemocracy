@@ -118,13 +118,14 @@ describe "Moderate proposal notifications" do
 
       scenario "remembering page, filter and order" do
         stub_const("#{ModerateActions}::PER_PAGE", 2)
-        create_list(:proposal, 4)
+        create_list(:proposal_notification, 4)
 
         visit moderation_proposal_notifications_path(filter: "all", page: "2", order: "created_at")
 
         accept_confirm { click_button "Mark as viewed" }
 
-        expect(page).to have_selector(".js-order-selector[data-order='created_at']")
+        expect(page).to have_link "Most recent", class: "is-active"
+        expect(page).to have_link "Moderated"
 
         expect(page).to have_current_path(/filter=all/)
         expect(page).to have_current_path(/page=2/)

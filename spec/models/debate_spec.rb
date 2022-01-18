@@ -45,8 +45,13 @@ describe Debate do
     end
 
     it "is not valid when very short" do
-      debate.description = "abc"
+      debate.description = "<a><h1><u>abc</u></h1></a>"
       expect(debate).not_to be_valid
+    end
+
+    it "is valid when very long and sanitized" do
+      debate.description = "<a><h1>a</h1></a>" * 6000
+      expect(debate).to be_valid
     end
 
     it "is not valid when very long" do
@@ -350,49 +355,44 @@ describe Debate do
     let(:debate) { create(:debate) }
 
     it "expires cache when it has a new comment" do
-      expect { create(:comment, commentable: debate) }
-      .to change { debate.updated_at }
+      expect { create(:comment, commentable: debate) }.to change { debate.cache_version }
     end
 
     it "expires cache when it has a new vote" do
-      expect { create(:vote, votable: debate) }
-      .to change { debate.updated_at }
+      expect { create(:vote, votable: debate) }.to change { debate.cache_version }
     end
 
     it "expires cache when it has a new flag" do
-      expect { create(:flag, flaggable: debate) }
-      .to change { debate.reload.updated_at }
+      expect { create(:flag, flaggable: debate) }.to change { debate.reload.cache_version }
     end
 
     it "expires cache when it has a new tag" do
-      expect { debate.update(tag_list: "new tag") }
-      .to change { debate.updated_at }
+      expect { debate.update(tag_list: "new tag") }.to change { debate.cache_version }
     end
 
     it "expires cache when hidden" do
-      expect { debate.hide }
-      .to change { debate.updated_at }
+      expect { debate.hide }.to change { debate.cache_version }
     end
 
     it "expires cache when the author is hidden" do
       expect { debate.author.hide }
-      .to change { [debate.reload.updated_at, debate.author.updated_at] }
+      .to change { [debate.reload.cache_version, debate.author.cache_version] }
     end
 
     it "expires cache when the author is erased" do
       expect { debate.author.erase }
-      .to change { [debate.reload.updated_at, debate.author.updated_at] }
+      .to change { [debate.reload.cache_version, debate.author.cache_version] }
     end
 
     it "expires cache when its author changes" do
       expect { debate.author.update(username: "Eva") }
-      .to change { [debate.reload.updated_at, debate.author.updated_at] }
+      .to change { [debate.reload.cache_version, debate.author.cache_version] }
     end
 
     it "expires cache when the author's organization get verified" do
       create(:organization, user: debate.author)
       expect { debate.author.organization.verify }
-      .to change { [debate.reload.updated_at, debate.author.updated_at] }
+      .to change { [debate.reload.cache_version, debate.author.cache_version] }
     end
   end
 

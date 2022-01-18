@@ -2,7 +2,6 @@ ro:
   devise_views:
     confirmations:
       new:
-        email_label: Email
         submit: Retrimite instrucțiuni
         title: Retrimite instrucțiuni de confirmare
       show:
@@ -39,12 +38,7 @@ ro:
     organizations:
       registrations:
         new:
-          email_label: Email
-          organization_name_label: Numele organizației
           password_confirmation_label: Confirmă parola
-          password_label: Parolă
-          phone_number_label: Număr de telefon
-          responsible_name_label: Numele complet al persoanei responsabile de colectiv
           responsible_name_note: Aceasta ar fi persoana care reprezintă asociația/colectivul în numele căruia sunt prezentate propunerile
           submit: Înregistrare
           title: Înregistrează-te ca organizație sau colectiv
@@ -62,13 +56,10 @@ ro:
         password_label: Parola nouă
         title: Schimbă parola
       new:
-        email_label: Email
         send_submit: Trimite instrucțiuni
         title: Parolă uitată?
     sessions:
       new:
-        login_label: Email sau Nume de utilizator
-        password_label: Parolă
         remember_me: Ține minte datele mele
         submit: Enter
         title: Conectare
@@ -106,12 +97,9 @@ ro:
           waiting_for: "Se așteaptă confirmarea:"
         new:
           cancel: Anulează conectare
-          email_label: Email
           organization_signup: Reprezentați o organizație sau un colectiv? %{signup_link}
           organization_signup_link: Înregistrați-vă aici
           password_confirmation_label: Confirmă parolă
-          password_label: Parolă
-          redeemable_code: Cod de verificare primit prin e-mail (optional)
           submit: Înregistrare
           terms: Înregistrându-vă acceptați %{terms}
           terms_link: termeni și condiții de utilizare
@@ -119,7 +107,6 @@ ro:
           title: Înregistrare
           username_is_available: Nume de utilizator valabil
           username_is_not_available: Nume de utilizator deja în uz
-          username_label: Nume de utilizator
           username_note: Numele care apare în dreptul postărilor dumneavoastră
         success:
           back_to_index: Înțeleg; mergi înapoi în pagina principală

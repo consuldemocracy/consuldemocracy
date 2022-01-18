@@ -12,9 +12,8 @@ fr:
         headers:
           comment: Commentaire
           moderate: Modérer
-        hide_comments: Masquer les commentaires
+        hide: Masquer les commentaires
         ignore_flags: Marqué comme vu
-        order: Ordre
         orders:
           flags: Les plus signalés
           newest: Les plus récents
@@ -34,9 +33,8 @@ fr:
         headers:
           debate: Débat
           moderate: Modérer
-        hide_debates: Masquer les débats
+        hide: Masquer les débats
         ignore_flags: Marqué comme vu
-        order: Ordre
         orders:
           created_at: Les plus récents
           flags: Les plus signalés
@@ -62,9 +60,8 @@ fr:
         headers:
           moderate: Modérer
           proposal: Proposition
-        hide_proposals: Masquer les propositions
+        hide: Masquer les propositions
         ignore_flags: Marqué comme vu
-        order: Trier par
         orders:
           created_at: Les plus récents
           flags: Les plus signalés
@@ -81,9 +78,8 @@ fr:
         headers:
           moderate: Modérer
           budget_investment: Proposition d'investissement
-        hide_budget_investments: Cacher les propositions d'investissement
+        hide: Cacher les propositions d'investissement
         ignore_flags: Marqué comme vu
-        order: Trier par
         orders:
           created_at: Les plus récents
           flags: Les plus signalés
@@ -100,9 +96,8 @@ fr:
         headers:
           moderate: Modérer
           proposal_notification: Notification de proposition
-        hide_proposal_notifications: Masquer les propositions
+        hide: Masquer les propositions
         ignore_flags: Marqué comme vu
-        order: Trier par
         orders:
           created_at: Les plus récents
           moderated: Modéré

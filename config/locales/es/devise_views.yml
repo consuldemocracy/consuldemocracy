@@ -2,7 +2,6 @@ es:
   devise_views:
     confirmations:
       new:
-        email_label: Email
         submit: Reenviar instrucciones
         title: Reenviar instrucciones de confirmación
       show:
@@ -39,12 +38,7 @@ es:
     organizations:
       registrations:
         new:
-          email_label: Email
-          organization_name_label: Nombre de la organización
           password_confirmation_label: Repite la contraseña anterior
-          password_label: Contraseña que utilizarás para acceder a este sitio web
-          phone_number_label: Teléfono
-          responsible_name_label: Nombre y apellidos de la persona responsable del colectivo
           responsible_name_note: Será la persona representante de la asociación/colectivo en cuyo nombre se presenten las propuestas
           submit: Registrarse
           title: Registrarse como organización / colectivo
@@ -62,13 +56,10 @@ es:
         password_label: Contraseña nueva
         title: Cambia tu contraseña
       new:
-        email_label: Email
         send_submit: Recibir instrucciones
         title: '¿Has olvidado tu contraseña?'
     sessions:
       new:
-        login_label: Email o nombre de usuario
-        password_label: Contraseña que utilizarás para acceder a este sitio web
         remember_me: Recordarme
         submit: Entrar
         title: Iniciar sesión
@@ -96,7 +87,7 @@ es:
           title: Darme de baja
         edit:
           current_password_label: Contraseña actual
-          edit: Editar propuesta
+          edit: Editar
           email_label: Email
           leave_blank: Dejar en blanco si no deseas cambiarla
           need_current: Necesitamos tu contraseña actual para confirmar los cambios
@@ -106,12 +97,9 @@ es:
           waiting_for: "Esperando confirmación de:"
         new:
           cancel: Cancelar login
-          email_label: Tu correo electrónico
           organization_signup: '¿Representas a una organización / colectivo? %{signup_link}'
           organization_signup_link: Regístrate aquí
           password_confirmation_label: Repite la contraseña anterior
-          password_label: Contraseña que utilizarás para acceder a este sitio web
-          redeemable_code: Tu código de verificación (si has recibido una carta con él)
           submit: Registrarse
           terms: Al registrarte aceptas las %{terms}
           terms_link: condiciones de uso
@@ -119,7 +107,6 @@ es:
           title: Registrarse
           username_is_available: Nombre de usuario disponible
           username_is_not_available: Nombre de usuario ya existente
-          username_label: Nombre de usuario
           username_note: Nombre público que aparecerá en tus publicaciones
         success:
           back_to_index: Entendido, volver a la página principal

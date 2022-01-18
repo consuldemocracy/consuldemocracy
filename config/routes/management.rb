@@ -39,8 +39,9 @@ namespace :management do
     end
 
     resources :investments, only: [:index, :new, :create, :show, :destroy], controller: "budgets/investments" do
-      post :vote, on: :member
       get :print, on: :collection
+
+      resources :votes, controller: "budgets/investments/votes", only: [:create, :destroy]
     end
   end
 end

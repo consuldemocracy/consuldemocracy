@@ -21,9 +21,15 @@ it:
     instagram_handle: "Utente Instagram"
     url: "URL principale"
     org_name: "Organizzazione"
+    mailer_from_name: "Nome mittente email"
+    mailer_from_address: "Indirizzo email mittente"
     meta_description: "Descrizione del sito (SEO)"
     meta_keywords: "Parole chiave (SEO)"
     min_age_to_participate: Età minima necessaria per partecipare
+    proposals:
+      poll_short_title: Votazioni
+      poll_description: Descrizione sondaggi
+      email_short_title: Email
     feature:
       twitter_login: "Accesso con Twitter"
       facebook_login: "Accesso con Facebook"
@@ -32,3 +38,16 @@ it:
       user:
         recommendations: "Raccomandazioni"
       help_page: "Guida"
+      remove_investments_supports: "Consenti di rimuovere i supporti agli investimenti del budget"
+      remove_investments_supports_description: "Consenti agli utenti di rimuovere i supporti agli investimenti di budget partecipatori durante la fase selettiva dei progetti."
+      sdg: SDG
+    process:
+      debates: "Dibattiti"
+      proposals: "Proposte"
+      polls: "Votazioni"
+      polls_description: "Le votazioni cittadine sono un meccanismo partecipativo attraverso il quale i cittadini con diritto di voto possono prendere decisioni in maniera diretta"
+      budgets: "Bilancio partecipativo"
+      legislation: "Legislazione Collaborativa"
+    html:
+      per_page_code_head: "Codice da inserire in ogni pagina (<head>)"
+      per_page_code_body: "Codice da inserire in ogni pagina (<body>)"

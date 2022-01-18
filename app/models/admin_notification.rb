@@ -43,7 +43,7 @@ class AdminNotification < ApplicationRecord
       return unless link.present?
 
       unless link =~ /\A(http:\/\/|https:\/\/|\/)/
-        self.link = "http://#{self.link}"
+        self.link = "http://#{link}"
       end
     end
 end

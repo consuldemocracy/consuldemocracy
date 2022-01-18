@@ -5,21 +5,22 @@ val:
         title: Els meus vots
         no_balloted_group_yet: "Encara no has votat projectes d'aquest grup, ¡vota!"
         remove: Llevar vot
+        voted:
+          one: "Has votat <span>una</span> proposta."
+          other: "Has votat <span>%{count}</span> propostes."
         zero: Encara no has votat cap proposta d'inversió.
       reasons_for_not_balloting:
         not_logged_in: Necessites %{signin} o %{signup}.
         not_verified: Les propostes d'inversió només poden ser avalades per usuaris verificats, %{verify_account}.
         organization: Les organitzacions no poden votar
         not_selected: No es poden votar propostes inviables
+        not_enough_money: "Ja has assignat el pressupost disponible. <br> <small>Recorda que pots %{change_ballot} en qualsevol moment</small>"
         no_ballots_allowed: El període de votació està tancat
+        different_heading_assigned: "Ja has votat en una secció diferent del pressupost: %{heading_link}"
         change_ballot: canviar els teus vots
     groups:
       show:
         title: Selecciona una opció
-        unfeasible_title: Propostes inviables
-        unfeasible: Vore les propostes inviables
-        unselected_title: Propostes no seleccionades per a la votació final
-        unselected: Veure les propostes no seleccionades per a la votació final
     phase:
       drafting: Esborrany (No visible per al públic)
       informing: Informació
@@ -48,6 +49,7 @@ val:
       milestones: Seguiments
     investments:
       form:
+        title: "Crear nou projecte"
         tag_category_label: "Categoríes"
         tags_instructions: "Etiqueta esta proposta. Pots elegir entre les categories propostes o introduir les que desitges"
         tags_label: Temes
@@ -55,7 +57,6 @@ val:
         map_location: "Ubicació en el mapa"
         map_location_instructions: "Navega per el mapa fins la ubicació i deixa el marcador."
         map_remove_marker: "Eliminar marcador"
-        map_skip_checkbox: "Esta proposta no te una ubicació concreta o no la conec."
       index:
         title: Pressupostos participatius
         unfeasible: Propostes d'inversió no viables
@@ -65,14 +66,27 @@ val:
           button: Cercar
           placeholder: Cercar propostes d'inversió...
           title: Cercar
+        search_results:
+          one: " que conté <strong>'%{search_term}'</strong>"
+          other: " que conté <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Els meus vots
+          voted_info:
+            knapsack:
+              one: "<strong>Has votat una proposta per un valor de %{amount_spent}</strong>"
+              other: "<strong>Has votat %{count} propostes per un valor de %{amount_spent}</strong>"
+          change_vote_link: "canviar el teu vot"
+          different_heading_assigned: "Ja vas votar propostes d'un altra secció del presupost %{heading_link}"
           change_ballot: "Si canvies d'opinió pots borrar els teus vots en %{check_ballot} i tornar a començar."
           check_ballot_link: "revisar els meus vots"
           zero: Encara no has votat cap proposta d'inversió en aquest àmbit del pressupost.
           verified_only: "Per a crear una nova proposta d'inversió %{verify}."
           create: "Crear nou projecte"
           not_logged_in: "Per a crear una nova proposta d'inversió has de %{sign_in} o %{sign_up}."
+        filters:
+          selected: "Seleccionades"
+          unfeasible: "Inviable"
+          winners: "Guanyadores"
         orders:
           random: aleatòries
           confidence_score: millor valorats
@@ -83,6 +97,9 @@ val:
         author_deleted: Usuari eliminat
         price_explanation: Informe de cost
         unfeasibility_explanation: Informe de inviabilitat
+        code: "Codi proposta d'inversió: <strong>%{code}</strong>"
+        location: "Ubicació: <strong>%{location}</strong>"
+        organization_name: "Proposat en nom de: <strong>%{name}</strong>"
         share: Compartir
         title: Proposta d'inversió
         supports: Avals
@@ -91,27 +108,36 @@ val:
         comments_tab: Comentaris
         milestones_tab: Fites
         author: Autor
+        project_unfeasible: "Esta proposta <strong>ha sigut marcada com inviable</strong> i no passarà a la fase de votació."
+        project_selected: "Este projecte d'inversió <strong>ha sigut seleccionat</strong> per a la fase de votació."
         project_winner: "Proposta d'inversió guanyadora"
+        project_not_selected: "Esta proposta <strong>no ha sigut seleccionada</strong> per a la fase de votació."
         see_price_explanation: Veure informe de cost
       wrong_price_format: Solament pot incloure caràcters numèrics
       investment:
         add: Vot
         already_added: Ja has afegit aquesta proposta d'inversió
-        already_supported: Ja has avalat aquest projecte d'inversió. Comparteixlo!
         support_title: Avalar este projecte
-        confirm_group:
-          one: "Sols pots avalar propostes en %{count} districtes. Si segueixes no podras canviar la elecció d'aquest districte. ¿Estas segur?"
-          other: "Sols pots avalar propostes en %{count} districtes. Si segueixes no podras canviar la elecció d'aquest districte. ¿Estas segur?"
         supports:
           zero: Sense avals
           one: 1 aval
           other: "%{count} avals"
-        give_support: Avalar
       header:
         check_ballot: "Revisar els meus vots"
+        different_heading_assigned: "Ja vas votar propostes d'un altra secció del presupost %{heading_link}"
         change_ballot: "Si canvies d'opinió pots esborrar els teus vots en %{check_ballot} i tornar a començar."
         check_ballot_link: "revisar els meus vots"
         price: "Esta partida te un pressupost de"
+      votes:
+        already_supported: "Ja has avalat aquest projecte d'inversió. Comparteixlo!"
+        confirm_group:
+          one: "Sols pots avalar propostes en %{count} districtes. Si segueixes no podras canviar la elecció d'aquest districte. ¿Estas segur?"
+          other: "Sols pots avalar propostes en %{count} districtes. Si segueixes no podras canviar la elecció d'aquest districte. ¿Estas segur?"
+        support: "Avalar"
+    investments_list:
+      investment:
+        price: "Cost"
+        supports: "Avals"
     show:
       see_results: Vore resultats
     results:
@@ -139,6 +165,8 @@ val:
       filters:
         status:
           label: "Estat actual del projecte"
+          all: "Tots (%{count})"
+        milestone_tag:
           all: "Tots (%{count})"
     phases:
       errors:

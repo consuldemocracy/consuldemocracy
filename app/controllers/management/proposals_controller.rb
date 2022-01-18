@@ -7,7 +7,6 @@ class Management::ProposalsController < Management::BaseController
   before_action :only_verified_users, except: :print
   before_action :set_proposal, only: [:vote, :show]
   before_action :parse_search_terms, only: :index
-  before_action :load_categories, only: [:new, :edit]
   before_action :load_geozones, only: [:edit]
 
   has_orders %w[confidence_score hot_score created_at most_commented random], only: [:index, :print]
@@ -22,7 +21,6 @@ class Management::ProposalsController < Management::BaseController
       redirect_path = url_for(controller: controller_name, action: :show, id: @resource.id)
       redirect_to redirect_path, notice: t("flash.actions.create.#{resource_name.underscore}")
     else
-      load_categories
       load_geozones
       set_resource_instance
       render :new
@@ -32,7 +30,6 @@ class Management::ProposalsController < Management::BaseController
   def show
     super
     @notifications = @proposal.notifications
-    @related_contents = Kaminari.paginate_array(@proposal.relationed_contents).page(params[:page]).per(5)
 
     redirect_to management_proposal_path(@proposal), status: :moved_permanently if request.path != management_proposal_path(@proposal)
   end

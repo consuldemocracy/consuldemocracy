@@ -17,7 +17,7 @@ describe "Admin poll questions", :admin do
       expect(page).to have_content(question1.title)
       expect(page).to have_link "Edit answers"
       expect(page).to have_link "Edit"
-      expect(page).to have_link "Delete"
+      expect(page).to have_button "Delete"
     end
 
     visit admin_poll_path(poll2)
@@ -27,7 +27,7 @@ describe "Admin poll questions", :admin do
       expect(page).to have_content question2.title
       expect(page).to have_link "Edit answers"
       expect(page).to have_link "Edit"
-      expect(page).to have_link "Delete"
+      expect(page).to have_button "Delete"
     end
 
     visit admin_poll_path(poll3)
@@ -38,7 +38,7 @@ describe "Admin poll questions", :admin do
       expect(page).to have_link "(See proposal)", href: proposal_path(question3.proposal)
       expect(page).to have_link "Edit answers"
       expect(page).to have_link "Edit"
-      expect(page).to have_link "Delete"
+      expect(page).to have_button "Delete"
     end
   end
 
@@ -142,7 +142,7 @@ describe "Admin poll questions", :admin do
     visit admin_poll_path(poll)
 
     within("#poll_question_#{question1.id}") do
-      accept_confirm { click_link "Delete" }
+      accept_confirm { click_button "Delete" }
     end
 
     expect(page).not_to have_content(question1.title)
@@ -162,7 +162,7 @@ describe "Admin poll questions", :admin do
 
       expect(page).to have_select("poll_question_poll_id", options: ["Select Poll", poll.name_en])
 
-      select("Español", from: "locale-switcher")
+      select "Español", from: "Language:"
 
       expect(page).to have_select("poll_question_poll_id",
                                   options: ["Seleccionar votación", poll.name_es])
@@ -181,7 +181,7 @@ describe "Admin poll questions", :admin do
 
       expect(page).to have_select("poll_question_poll_id", options: ["Select Poll", poll.name_en])
 
-      select("Français", from: "locale-switcher")
+      select "Français", from: "Language:"
 
       expect(page).to have_select("poll_question_poll_id",
                                   options: ["Sélectionner un vote", poll.name_es])

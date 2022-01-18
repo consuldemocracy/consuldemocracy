@@ -99,9 +99,9 @@ class Legislation::AnnotationsController < Legislation::BaseController
     end
 
     def track_event
-      ahoy.track "legislation_annotation_created".to_sym,
-                 "legislation_annotation_id": @annotation.id,
-                 "legislation_draft_version_id": @draft_version.id
+      ahoy.track :legislation_annotation_created,
+                 legislation_annotation_id: @annotation.id,
+                 legislation_draft_version_id: @draft_version.id
     end
 
     def convert_ranges_parameters

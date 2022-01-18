@@ -6,7 +6,7 @@ class Admin::Budgets::DurationComponent < ApplicationComponent
   end
 
   def dates
-    safe_join([formatted_start_date, "-", formatted_end_date], " ")
+    Admin::DateRangeComponent.new(start_time, end_time).call
   end
 
   def duration
@@ -15,15 +15,11 @@ class Admin::Budgets::DurationComponent < ApplicationComponent
 
   private
 
-    def formatted_start_date
-      formatted_date(durable.starts_at) if durable.starts_at.present?
+    def start_time
+      durable.starts_at
     end
 
-    def formatted_end_date
-      formatted_date(durable.ends_at - 1.second) if durable.ends_at.present?
-    end
-
-    def formatted_date(time)
-      time_tag(time, format: :datetime)
+    def end_time
+      durable.ends_at - 1.second if durable.ends_at.present?
     end
 end

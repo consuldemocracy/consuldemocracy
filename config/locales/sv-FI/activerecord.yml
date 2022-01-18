@@ -9,3 +9,5 @@ sv-FI:
         body: "Kommentit"
       legislation/annotation:
         text: Kommentit
+      local_census_record:
+        date_of_birth: Födelsedatum

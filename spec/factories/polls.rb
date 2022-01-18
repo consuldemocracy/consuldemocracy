@@ -73,6 +73,18 @@ FactoryBot.define do
     transient { poll { association(:poll) } }
 
     question { association(:poll_question, poll: poll) }
+
+    trait :with_image do
+      after(:create) { |answer| create(:image, imageable: answer) }
+    end
+
+    trait :with_document do
+      after(:create) { |answer| create(:document, documentable: answer) }
+    end
+
+    trait :with_video do
+      after(:create) { |answer| create(:poll_answer_video, answer: answer) }
+    end
   end
 
   factory :poll_answer_video, class: "Poll::Question::Answer::Video" do
@@ -214,6 +226,5 @@ FactoryBot.define do
     end
   end
 
-  factory :active_poll do
-  end
+  factory :active_poll
 end

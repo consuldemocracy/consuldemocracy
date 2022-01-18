@@ -25,7 +25,7 @@ describe "Admin local census records", :admin do
 
       within "#local_census_record_#{local_census_record.id}" do
         expect(page).to have_link "Edit"
-        expect(page).to have_link "Delete"
+        expect(page).to have_button "Delete"
       end
     end
 

@@ -7,8 +7,6 @@ ru:
       delete_button: Убрать изображение
       note: "Вы можете загрузить одно изображение следующих типов контента: %{accepted_content_types}, до %{max_file_size} Мб."
       add_new_image: Добавить изображение
-      admin_title: "Изображение"
-      admin_alt_text: "Альтернативный текст для изображения"
     actions:
       destroy:
         notice: Изображение было успешно удалено.

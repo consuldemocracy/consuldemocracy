@@ -11,10 +11,7 @@ class Dashboard::Action < ApplicationRecord
 
   enum action_type: [:proposed_action, :resource]
 
-  validates :title,
-            presence: true,
-            allow_blank: false,
-            length: { in: 4..80 }
+  validates :title, presence: true, allow_blank: false, length: { in: 4..80 }
 
   validates :action_type, presence: true
 
@@ -86,10 +83,7 @@ class Dashboard::Action < ApplicationRecord
     actions_for_today = get_actions_for_today(proposal)
     actions_for_date = get_actions_for_date(proposal, date)
 
-    actions_for_today_ids = actions_for_today.pluck(:id)
-    actions_for_date_ids = actions_for_date.pluck(:id)
-
-    actions_for_today_ids - actions_for_date_ids
+    actions_for_today.ids - actions_for_date.ids
   end
 
   private

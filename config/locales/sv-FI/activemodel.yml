@@ -7,5 +7,7 @@ sv-FI:
       verification:
         residence:
           date_of_birth: "Födelsedatum"
+      verification/residence:
+        date_of_birth: "Födelsedatum"
       officing/residence:
         year_of_birth: "Födelseår"

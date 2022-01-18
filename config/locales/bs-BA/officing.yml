@@ -69,7 +69,6 @@ bs:
         not_allowed: "Danas nemate anketarskih smjena u rasporedu"
       new:
         title: Potvrdi dokument
-        document_number: "Broj isprave"
         submit: Potvrdi dokument
         error_verifying_census: "Dokument se ne može potvrditi u popisu."
         form_errors: je razlog zašto je spriječena verifikacija ovog dokumenta

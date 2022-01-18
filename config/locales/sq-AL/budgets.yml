@@ -5,21 +5,22 @@ sq:
         title: Votimi juaj
         no_balloted_group_yet: "Ju nuk keni votuar ende për këtë grup, shkoni të votoni!"
         remove: Hiq voten
+        voted:
+          one: "Ju keni votuar <span>%{count}</span> investime."
+          other: "Ju keni votuar <span>%{count}</span> investimet."
         zero: Ju nuk keni votuar në asnjë projekt investimi.
       reasons_for_not_balloting:
         not_logged_in: Ju duhet %{signin} ose %{signup} për të vazhduar.
         not_verified: Vetëm përdoruesit e verifikuar mund të votojnë për investimet; %{verify_account}.
         organization: Organizatat nuk lejohen të votojnë
         not_selected: Projektet e investimeve të pazgjedhura nuk mund të mbështeten.
+        not_enough_money: "Ju tashmë keni caktuar buxhetin në dispozicion. <small> Mos harroni që ju mund të %{change_ballot} në cdo kohë </small>"
         no_ballots_allowed: Faza e zgjedhjes është e mbyllur
+        different_heading_assigned: "Ju keni votuar tashmë një titull tjetër: %{heading_link}"
         change_ballot: Ndryshoni votat tuaja
     groups:
       show:
         title: Zgjidh një opsion
-        unfeasible_title: Investimet e papranueshme
-        unfeasible: Shih Investimet e papranueshme
-        unselected_title: Investimet që nuk janë përzgjedhur për fazën e votimit
-        unselected: Shih investimet që nuk janë përzgjedhur për fazën e votimit
     phase:
       drafting: Draft (jo i dukshëm për publikun)
       informing: Informacion
@@ -48,6 +49,7 @@ sq:
       milestones: Pikëarritje
     investments:
       form:
+        title: "Krijo një investim buxhetor"
         tag_category_label: "Kategoritë"
         tags_instructions: "Etiketoni këtë propozim. Ju mund të zgjidhni nga kategoritë e propozuara ose të shtoni tuajën"
         tags_label: Etiketë
@@ -55,7 +57,6 @@ sq:
         map_location: "Vendndodhja në hartë"
         map_location_instructions: "Lundroni në hartë në vendndodhje dhe vendosni shënuesin."
         map_remove_marker: "Hiq shënuesin e hartës"
-        map_skip_checkbox: "Ky investim nuk ka një vend konkret ose nuk jam i vetëdijshëm për të."
       index:
         title: Buxhetet  pjesëmarrës
         unfeasible: Investimet e papranueshme
@@ -65,14 +66,27 @@ sq:
           button: Kërko
           placeholder: Kërkoni projekte investimi ...
           title: Kërko
+        search_results:
+          one: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
+          other: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Votimi im
+          voted_info:
+            knapsack:
+              one: "<strong>Ke votuar një propozim me një kosto prej%{amount_spent}</strong>"
+              other: "<strong>Ke votuar %{count} propozime me një kosto prej %{amount_spent}</strong>"
+          change_vote_link: "Ndryshoni votat tuaja"
+          different_heading_assigned: "Ju keni votuar tashmë një titull tjetër: %{heading_link}"
           change_ballot: "Nëse ndryshoni mendjen tuaj, ju mund të hiqni votat tuaja në %{check_ballot} dhe të filloni përsëri."
           check_ballot_link: "Kontrolloni votimin tim"
           zero: Ju nuk keni votuar në asnjë projekt investimi në këtë grup
           verified_only: "Për të krijuar një investim të ri buxhetor %{verify}"
           create: "Krijo një investim buxhetor"
           not_logged_in: "Për të krijuar një investim të ri buxhetor ju duhet %{sign_in} ose %{sign_up}."
+        filters:
+          selected: "I zgjedhur"
+          unfeasible: "Parealizueshme"
+          winners: "Fituesit"
         orders:
           random: "\ni rastësishëm\n"
           confidence_score: më të vlerësuarat
@@ -83,6 +97,9 @@ sq:
         author_deleted: Përdoruesi u fshi
         price_explanation: Shpjegimi i çmimit
         unfeasibility_explanation: Shpjegim i parealizuar
+        code: "Kodi i projekteve të investimeve: <strong>%{code}</strong>"
+        location: "Vendodhja:<strong>%{location}</strong>"
+        organization_name: "Propozuar në emër të: <strong>%{name}</strong>"
         share: Shpërndaj
         title: Projekt investimi
         supports: Suporti
@@ -91,26 +108,35 @@ sq:
         comments_tab: Komentet
         milestones_tab: Pikëarritje
         author: Autor
+        project_unfeasible: "Ky projekt investimi <strong> është shënuar si jo e realizueshme </strong> dhe nuk do të shkojë në fazën e votimit."
+        project_selected: "Ky projekt investimi <strong> është përzgjedhur</strong>  për fazën e votimit."
         project_winner: "Projekti fitues i investimeve"
+        project_not_selected: "Ky projekt investimi <strong>  nuk eshte selektuar </strong> për fazën e votimit."
       wrong_price_format: Vetëm numra të plotë
       investment:
         add: Votim
         already_added: Ju e keni shtuar tashmë këtë projekt investimi
-        already_supported: Ju e keni mbështetur tashmë këtë projekt investimi. Shperndaje!
         support_title: Mbështetni këtë projekt
-        confirm_group:
-          one: "Ju mund të mbështesni vetëm investimet në %{count} rrethe .Nëse vazhdoni ju nuk mund të ndryshoni zgjedhjen e rrethit tuaj. A je i sigurt?"
-          other: "Ju mund të mbështesni vetëm investimet në %{count} rrethe .Nëse vazhdoni ju nuk mund të ndryshoni zgjedhjen e rrethit tuaj. A je i sigurt?"
         supports:
           zero: Asnjë mbështetje
           one: 1  mbështetje
           other: "1%{count} mbështetje"
-        give_support: Suporti
       header:
         check_ballot: "Kontrolloni votimin tim"
+        different_heading_assigned: "Ju keni votuar tashmë një titull tjetër: %{heading_link}"
         change_ballot: "Nëse ndryshoni mendjen tuaj, ju mund të hiqni votat tuaja në %{check_ballot} dhe të filloni përsëri."
         check_ballot_link: "Kontrolloni votimin tim"
         price: "Ky titull ka një buxhet prej"
+      votes:
+        already_supported: "Ju e keni mbështetur tashmë këtë projekt investimi. Shperndaje!"
+        confirm_group:
+          one: "Ju mund të mbështesni vetëm investimet në %{count} rrethe .Nëse vazhdoni ju nuk mund të ndryshoni zgjedhjen e rrethit tuaj. A je i sigurt?"
+          other: "Ju mund të mbështesni vetëm investimet në %{count} rrethe .Nëse vazhdoni ju nuk mund të ndryshoni zgjedhjen e rrethit tuaj. A je i sigurt?"
+        support: "Suporti"
+    investments_list:
+      investment:
+        price: "Çmim"
+        supports: "Suporti"
     show:
       see_results: Shiko rezultatet
     results:
@@ -138,6 +164,8 @@ sq:
       filters:
         status:
           label: "Gjendja aktuale e projektit"
+          all: "Të gjitha (%{count})"
+        milestone_tag:
           all: "Të gjitha (%{count})"
     phases:
       errors:

@@ -11,7 +11,7 @@
         <td class="small-6">
           <strong><%= t("settings.#{setting.key}") %></strong>
           <br>
-          <span class="small">
+          <span id="<%= dom_id(setting, :description) %>" class="small">
             <%= t("settings.#{setting.key}_description", default: t("admin.settings.no_description")) %>
           </span>
         </td>

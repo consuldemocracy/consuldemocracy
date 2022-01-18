@@ -44,8 +44,9 @@ When we review your pull request and ask for changes, if you're proficient using
 ### Core team members
 
 * [Javi Martín](https://github.com/javierm)
-* [Julián Herrero](https://github.com/microweb10)
 * [Raimond García](https://github.com/voodoorai2000)
+* [Sebastià Roig](https://github.com/taitus)
+* [Senén Rodero](https://github.com/Senen)
 
 ### All other contributors
 
@@ -53,4 +54,4 @@ In addition to the formal team, there are [over a hundred contributors](https://
 
 Finally a special thanks to the former core team members. Lovingly known as The Alumni:
 
-[Juanjo Bazán](https://github.com/xuanxu), [Enrique García Cota](https://github.com/kikito), [Alberto Calderón](https://github.com/bertocq), [María Checa](https://github.com/mariacheca), [Alberto García](https://github.com/decabeza)
+[Juanjo Bazán](https://github.com/xuanxu), [Enrique García Cota](https://github.com/kikito), [Alberto Calderón](https://github.com/bertocq), [María Checa](https://github.com/mariacheca), [Alberto García](https://github.com/decabeza), [Julián Herrero](https://github.com/microweb10)

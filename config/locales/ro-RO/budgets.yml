@@ -47,10 +47,6 @@ ro:
     groups:
       show:
         title: Selectați o opțiune
-        unfeasible_title: Investiții imposibile
-        unfeasible: Vezi investițiile nerealizabile
-        unselected_title: Investiții neselectate pentru faza de votare
-        unselected: Vezi investițiile neselectate pentru faza de votare
     phase:
       drafting: Schiță (Nu este vizibil publicului)
       informing: Informații
@@ -82,6 +78,8 @@ ro:
       milestones: Repere
     investments:
       form:
+        title: "Crează buget de investiții"
+        subtitle: "%{heading} (%{price})"
         tag_category_label: "Categorii"
         tags_instructions: "Etichetați această propunere. Puteți alege dintre categoriile propuse sau adăugați una proprie"
         tags_label: Etichete
@@ -89,7 +87,6 @@ ro:
         map_location: "Localizare pe hartă"
         map_location_instructions: "Navigați pe hartă până la locație și plasați marcatorul."
         map_remove_marker: "Eliminați marcatorul de hartă"
-        map_skip_checkbox: "Această investiție nu are o locație concretă sau nu o cunosc."
       index:
         title: Bugetare participativă
         unfeasible: Proiecte de investiții imposibile
@@ -162,26 +159,43 @@ ro:
       investment:
         add: Vot
         already_added: Ați adăugat deja acest proiect de investiții
-        already_supported: Ați susținut deja acest proiect de investiții. Distribuiți-l!
         support_title: Sprijină acest proiect
-        confirm_group:
-          one: "Poți susține investiții în %{count} district. Dacă continui nu vei putea schimba selecția districtului. Ești sigur?"
-          few: "Poți susține investiții în %{count} districte. Dacă continui nu vei putea schimba selecția districtului. Ești sigur?"
-          other: "Poți susține investiții în %{count} districte. Dacă continui nu vei putea schimba selecția districtului. Ești sigur?"
         supports:
           zero: Fără susținători
           one: 1 susținător
           few: "%{count} persoane susțin"
           other: "%{count} persoane susțin"
-        give_support: Sprijină
       header:
         check_ballot: "Verifică și confirmă votul"
         different_heading_assigned: "Aveți voturi active în altă rubrică: %{heading_link}"
         change_ballot: "Dacă vă răzgândiți, puteți elimina voturile din %{check_ballot} și puteți începe din nou."
         check_ballot_link: "verifică și confirmă votul"
         price: "Această rubrică are un buget de"
+      votes:
+        already_supported: "Ați susținut deja acest proiect de investiții. Distribuiți-l!"
+        confirm_group:
+          one: "Poți susține investiții în %{count} district. Dacă continui nu vei putea schimba selecția districtului. Ești sigur?"
+          few: "Poți susține investiții în %{count} districte. Dacă continui nu vei putea schimba selecția districtului. Ești sigur?"
+          other: "Poți susține investiții în %{count} districte. Dacă continui nu vei putea schimba selecția districtului. Ești sigur?"
+        remove_support: "Șterge votul"
+        remove_support_label: "Șterge susținerea pentru %{investment}"
+        support: "Sprijină"
+        support_label: "Votează %{investment}"
+    investments_list:
+      investment:
+        price: "Preț"
+        read_more: "Citește mai mult"
+        supports: "Suporturi"
+      see_all: "Vezi toate investițiile"
+      title: "Lista investițiilor"
     show:
       see_results: Vezi rezultatele
+    supports_info:
+      different: "Puteți vota oricâte proiecte doriți."
+      next: "Votează proiectul pe care ți-ai dori să îl vezi în etapa următoare."
+      scrolling: "Continuați să derulați pentru a vedea toate ideile"
+      share: "Puteți împărtăși proiectele pe care le-ați susținut prin intermediul rețelelor sociale și să atrageți mai multă atenție și susținere asupra lor!"
+      title: "Este timpul să <strong>susții</strong> proiectele!"
     results:
       link: Rezultate
       page_title: "%{budget} - Rezultate"

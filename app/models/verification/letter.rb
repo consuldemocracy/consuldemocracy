@@ -12,8 +12,7 @@ class Verification::Letter
   validate :validate_correct_code, if: :verify?
 
   def save
-    valid? &&
-    letter_requested!
+    valid? && letter_requested!
   end
 
   def save!

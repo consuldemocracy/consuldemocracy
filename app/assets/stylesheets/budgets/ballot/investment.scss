@@ -11,7 +11,7 @@
   position: relative;
 
   a {
-    color: $text;
+    color: inherit;
   }
 
   .ballot-list-title {
@@ -34,18 +34,13 @@
     position: absolute;
     right: $close-icon-margin;
     top: $close-icon-margin;
-
-    &::before {
-      margin-right: 0;
-    }
   }
 
   &:hover {
     @include brand-background;
 
-    a,
     span {
-      color: #fff;
+      color: inherit;
       outline: 0;
       text-decoration: none;
     }

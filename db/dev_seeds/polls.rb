@@ -48,7 +48,7 @@ end
 section "Creating Poll Questions & Answers" do
   Poll.find_each do |poll|
     (1..4).to_a.sample.times do
-      question_title = Faker::Lorem.sentence(3).truncate(60) + "?"
+      question_title = Faker::Lorem.sentence(word_count: 3).truncate(60) + "?"
       question = Poll::Question.new(author: User.all.sample,
                                     title: question_title,
                                     poll: poll)
@@ -58,7 +58,7 @@ section "Creating Poll Questions & Answers" do
         end
       end
       question.save!
-      Faker::Lorem.words((2..4).to_a.sample).each_with_index do |title, index|
+      Faker::Lorem.words(number: (2..4).to_a.sample).each_with_index do |title, index|
         description = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"
         answer = Poll::Question::Answer.new(question: question,
                                             title: title.capitalize,
@@ -226,7 +226,7 @@ section "Creating Poll Questions from Proposals" do
       end
     end
     question.save!
-    Faker::Lorem.words((2..4).to_a.sample).each_with_index do |title, index|
+    Faker::Lorem.words(number: (2..4).to_a.sample).each_with_index do |title, index|
       description = "<p>#{Faker::ChuckNorris.fact}</p>"
       answer = Poll::Question::Answer.new(question: question,
                                           title: title.capitalize,
@@ -256,7 +256,7 @@ section "Creating Successful Proposals" do
       end
     end
     question.save!
-    Faker::Lorem.words((2..4).to_a.sample).each_with_index do |title, index|
+    Faker::Lorem.words(number: (2..4).to_a.sample).each_with_index do |title, index|
       description = "<p>#{Faker::ChuckNorris.fact}</p>"
       answer = Poll::Question::Answer.new(question: question,
                                           title: title.capitalize,

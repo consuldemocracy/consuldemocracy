@@ -110,7 +110,7 @@ class Legislation::Process < ApplicationRecord
   end
 
   def total_comments
-    questions.sum(:comments_count) + draft_versions.map(&:total_comments).sum
+    questions.sum(:comments_count) + draft_versions.sum(&:total_comments)
   end
 
   def status

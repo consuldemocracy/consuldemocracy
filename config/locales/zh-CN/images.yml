@@ -7,8 +7,6 @@ zh-CN:
       delete_button: 删除图像
       note: "您可上传以下内容类型的一个图像：%{accepted_content_types}，最多可以%{max_file_size} MB。"
       add_new_image: 添加图像
-      admin_title: "图像"
-      admin_alt_text: "图像的替代文本"
     actions:
       destroy:
         notice: 图像已成功删除。

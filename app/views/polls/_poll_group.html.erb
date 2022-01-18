@@ -17,12 +17,9 @@
           <h4><%= link_to_poll poll.name, poll %></h4>
           <small><%= poll_dates(poll) %></small>
 
-          <ul class="question-list no-bullet margin-top">
-            <% poll.questions.each_with_index do |question, index| %>
-              <li>
-                <span class="question-list-label"><%= t("polls.question") %> <%= index + 1 %></span>
-                <%= question.title %>
-              </li>
+          <ul class="margin-top">
+            <% poll.questions.sort_for_list.each do |question| %>
+              <li><%= question.title %></li>
             <% end %>
           </ul>
         <% end %>

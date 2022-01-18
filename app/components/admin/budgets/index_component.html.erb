@@ -1,11 +1,8 @@
-<button class="button float-right" data-open="new_budget_reveal">
-  <strong><%= t("admin.budgets.index.new_button") %></strong>
-</button>
-
 <%= header do %>
-  <%= render "new_budget_reveal" %>
+  <button data-open="heading_mode"><%= t("admin.budgets.index.new_link") %></button>
 <% end %>
 
+<%= render Admin::Budgets::HeadingModeComponent.new %>
 <%= render Admin::Budgets::HelpComponent.new("budgets") %>
 <%= render "shared/filter_subnav", i18n_namespace: "admin.budgets.index" %>
 
@@ -33,13 +30,7 @@
             <%= budget.current_phase.name %>
             <small><%= phase_progress_text(budget) %></small>
           </td>
-          <td>
-            <% if budget.single_heading? %>
-              <%= t("admin.budgets.index.type_single") %>
-            <% else %>
-              <%= t("admin.budgets.index.type_multiple") %>
-            <% end %>
-          </td>
+          <td><%= type(budget) %></td>
           <td>
             <%= dates(budget) %>
             <%= duration(budget) %>

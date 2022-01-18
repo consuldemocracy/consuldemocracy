@@ -12,7 +12,7 @@ describe "Public area translatable records" do
     scenario "Add only single translation at once" do
       visit new_debate_path
 
-      fill_in "Debate title", with: "Who won the debate?"
+      fill_in_new_debate_title with: "Who won the debate?"
       fill_in_ckeditor "Initial debate text", with: "And who will win this debate?"
       click_button "Start a debate"
 
@@ -22,7 +22,7 @@ describe "Public area translatable records" do
     scenario "Add single translation maintains introduced field values" do
       visit new_proposal_path
 
-      fill_in "Proposal title", with: "Olympic Games in Melbourne"
+      fill_in_new_proposal_title with: "Olympic Games in Melbourne"
       fill_in "Proposal summary", with: "Full proposal for our candidature"
       fill_in_ckeditor "Proposal text", with: "2032 will make Australia famous again"
       click_button "Create proposal"
@@ -39,15 +39,12 @@ describe "Public area translatable records" do
 
       visit new_budget_investment_path(budget)
 
-      fill_in "Title", with: "My awesome project"
+      fill_in_new_investment_title with: "My awesome project"
       fill_in_ckeditor "Description", with: "Everything is awesome!"
 
       select "Français", from: :add_language
-      fill_in "Title", with: "Titre en Français"
+      fill_in_new_investment_title with: "Titre en Français"
       fill_in_ckeditor "Description", with: "Contenu en Français"
-
-      expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
-                                     visible: false)
 
       click_button "Create Investment"
 
@@ -59,7 +56,7 @@ describe "Public area translatable records" do
       click_link "Remove language"
       select "Français", from: :add_language
 
-      fill_in "Proposal title", with: "Titre en Français"
+      fill_in_new_proposal_title with: "Titre en Français"
       fill_in "Proposal summary", with: "Résumé en Français"
       click_button "Create proposal"
 
@@ -73,11 +70,8 @@ describe "Public area translatable records" do
       visit new_budget_investment_path(budget)
       click_link "Remove language"
       select "Português brasileiro", from: :add_language
-      fill_in "Title", with: "Titre en Français"
+      fill_in_new_investment_title with: "Titre en Français"
       fill_in_ckeditor "Description", with: "Contenu en Français"
-
-      expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
-                                     visible: false)
 
       click_button "Create Investment"
 
@@ -100,9 +94,6 @@ describe "Public area translatable records" do
       visit new_budget_investment_path(budget)
       click_link "Remove language"
 
-      expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
-                                     visible: false)
-
       click_button "Create Investment"
 
       expect(page).to have_css "#error_explanation"
@@ -120,7 +111,7 @@ describe "Public area translatable records" do
     scenario "Highlight new locale added" do
       visit new_proposal_path
 
-      select "Español", from: "locale-switcher"
+      select "Español", from: "Language:"
 
       expect_to_have_language_selected "Español"
     end
@@ -211,7 +202,7 @@ describe "Public area translatable records" do
 
           expect(page).to have_field "Debate title", with: "Title in English"
 
-          select "Español", from: "locale-switcher"
+          select "Español", from: "Language:"
 
           expect(page).to have_field "Título del debate", with: "Título corregido"
           expect(page).to have_ckeditor "Texto inicial del debate", with: "Texto corregido"

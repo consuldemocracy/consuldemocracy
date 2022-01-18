@@ -6,7 +6,7 @@ module Followable
     has_many :followers, through: :follows, source: :user
 
     scope :followed_by_user, ->(user) {
-      joins(:follows).where("follows.user_id = ?", user.id)
+      joins(:follows).where(follows: { user_id: user.id })
     }
   end
 

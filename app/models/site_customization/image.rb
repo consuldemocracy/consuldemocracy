@@ -1,4 +1,6 @@
 class SiteCustomization::Image < ApplicationRecord
+  include HasAttachment
+
   VALID_IMAGES = {
     "logo_header" => [260, 80],
     "social_media_icon" => [470, 246],
@@ -12,7 +14,7 @@ class SiteCustomization::Image < ApplicationRecord
     "auth_bg" => [934, 1398]
   }.freeze
 
-  has_attached_file :image
+  has_attachment :image
 
   validates :name, presence: true, uniqueness: true, inclusion: { in: VALID_IMAGES.keys }
   validates_attachment_content_type :image, content_type: ["image/png", "image/jpeg"]
@@ -46,12 +48,12 @@ class SiteCustomization::Image < ApplicationRecord
 
       dimensions = Paperclip::Geometry.from_file(image.queued_for_write[:original].path)
 
-      unless dimensions.width >= required_width
-        errors.add(:image, :image_width, required_width: required_width)
+      if name == "logo_header"
+        errors.add(:image, :image_width, required_width: required_width) unless dimensions.width <= required_width
+      else
+        errors.add(:image, :image_width, required_width: required_width) unless dimensions.width == required_width
       end
 
-      unless dimensions.height >= required_height
-        errors.add(:image, :image_height, required_height: required_height)
-      end
+      errors.add(:image, :image_height, required_height: required_height) unless dimensions.height == required_height
     end
 end

@@ -25,6 +25,7 @@ it:
       new:
         explanation: "Per partecipare alla votazione finale puoi:"
         go_to_index: Vedere le proposte
+        office: Verifica in ogni Ufficio di Supporto al Cittadino
         send_letter: Inviatemi una lettera con il codice
         title: Congratulazioni!
         user_permission_info: Con il tuo account puoi...
@@ -41,6 +42,7 @@ it:
         document_type:
           passport: Passaporto
         error_not_allowed_age: Non hai l'età minima richiesta per partecipare
+        error_verifying_census: Il Censo non ha potuto verificare le tue informazioni. Sei pregato di confermare che i tuoi dettagli di censo siano corretti chiamando il Consiglio Cittadino o visitando un Ufficio di Supporto del Cittadino.
         terms: termini e condizioni d'uso
     sms:
       create:
@@ -53,6 +55,7 @@ it:
         title: SMS di conferma
       new:
         phone: Inserisci il tuo numero di cellulare per ricevere il codice
+        phone_note: Usiamo il tuo telefono solo per inviarti un codice, mai per contattarti.
         submit_button: Inviare
         title: Inviare SMS di conferma
       update:

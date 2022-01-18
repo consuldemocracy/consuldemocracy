@@ -36,6 +36,10 @@ end
 #   rake "dashboards:send_notifications"
 # end
 
+every 1.day, at: "1:00 am", roles: [:cron] do
+  rake "files:remove_old_cached_attachments"
+end
+
 every 1.day, at: "3:00 am", roles: [:cron] do
   rake "votes:reset_hot_score"
 end

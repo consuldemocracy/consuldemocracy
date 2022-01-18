@@ -2,10 +2,10 @@ he:
   devise_views:
     confirmations:
       new:
-        email_label: דואר אלקטרוני
         submit: שליחת הוראות שוב
         title: שליחה חוזרת של אישור הוראות
       show:
+        instructions: מאשרים את החשבון בדואר אלקטרוני %{email}
         new_password_confirmation_label: חזור על סיסמת הגישה
         new_password_label: הכנסת סיסמה חדשה
         please_set_password: לבחור בבקשה סיסמה חדשה (זה יאפשר לך להתחבר עם הדואר האלקטרוני שלמעלה)
@@ -38,17 +38,16 @@ he:
     organizations:
       registrations:
         new:
-          email_label: דואר אלקטרוני
-          organization_name_label: שם הארגון
           password_confirmation_label: אשר/י סיסמה
-          password_label: סיסמה
-          phone_number_label: מספר טלפון
-          responsible_name_label: שם מלא של אחראי/ת הקבוצה
           responsible_name_note: זה יהיה האיש/ה המייצג את הקבוצה/ארגון ובשמו/ה יוצגו ההצעות
           submit: הרשמה
           title: הרשמה כארגון או כקבוצה
         success:
           back_to_index: הבנתי ; חזור לדף הבית
+          instructions_1: "<b>ניצור איתך קשר בקרוב</b>כדי לוודא שאת/ה מייצג/ת את הקבוצה"
+          instructions_2: אנו בודקים  <b>את הדואר האלקטרוני שלך</b>, שלחנו לך <b>קישור לאימות חשבונך</b>.
+          instructions_3: לאחר האישור, ניתן להתחיל להשתתף כקבוצה לא מאושרת
+          thank_you: תודה על הרשמת קבוצתך באתר. הקבוצה <b>ממתינה לאישור</b>.
           title: הרשמה של ארגונים וקבוצות
     passwords:
       edit:
@@ -57,13 +56,10 @@ he:
         password_label: סיסמה חדשה
         title: שנה את הסיסמה
       new:
-        email_label: דואר אלקטרוני
         send_submit: שלח הנחיות
         title: שכחת את הסיסמה?
     sessions:
       new:
-        login_label: כתובת דוא"ל או שם משתמש
-        password_label: סיסמה
         remember_me: זכור אותי
         submit: הקש/י לאישור
         title: התחברות
@@ -101,12 +97,9 @@ he:
           waiting_for: "‘הסיבה ממתין לאישור של:’"
         new:
           cancel: הכניסה בוטלה
-          email_label: דואר אלקטרוני
           organization_signup: האם את/ה מייצג קבוצה או ארגון? %{signup_link}
           organization_signup_link: הרשם/י כאן
           password_confirmation_label: אשר/י סיסמה
-          password_label: סיסמה
-          redeemable_code: (קבלת קוד אימות בדואר אלקטרוני (אופציה
           submit: הרשמה
           terms: בהרשמה הנך מסכים/ה ל %{terms}
           terms_link: תנאים והתניות לשימוש באתר
@@ -114,8 +107,10 @@ he:
           title: הרשמה
           username_is_available: שם משתמש זמין
           username_is_not_available: שם משתמש לא זמין
-          username_label: שם המשתמש/ת
           username_note: השם שיופיע ליד הפוסטים שלך
         success:
           back_to_index: הבנתי ; חזור לדף הבית
+          instructions_1: בבקשה <b>בדוק/י את הדואר האלקטרוני</b> - שלחנו לך <b>קישור לאישור חשבונך</b>.
+          instructions_2: לאחר האישור, יהיה אפשרי להתחיל להשתתף.
+          thank_you: תודה על הרשמתך לאתר. בבקשה <b>לאשר את כתובת הדואר האלקטרוני שלך</b>.
           title: נא לבדוק את הדואר האלקטרוני שלך

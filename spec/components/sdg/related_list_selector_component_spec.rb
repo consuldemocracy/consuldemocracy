@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe SDG::RelatedListSelectorComponent, type: :component do
+describe SDG::RelatedListSelectorComponent do
   let(:debate) { create(:debate) }
   let(:form) { ConsulFormBuilder.new(:debate, debate, ActionView::Base.new, {}) }
   let(:component) { SDG::RelatedListSelectorComponent.new(form) }
@@ -15,7 +15,7 @@ describe SDG::RelatedListSelectorComponent, type: :component do
 
     render_inline component
 
-    expect(page).not_to have_css ".sdg-related-list-selector"
+    expect(page).not_to be_rendered
   end
 
   it "does not render when the SDG process feature is disabled" do
@@ -23,7 +23,7 @@ describe SDG::RelatedListSelectorComponent, type: :component do
 
     render_inline component
 
-    expect(page).not_to have_css ".sdg-related-list-selector"
+    expect(page).not_to be_rendered
   end
 
   it "renders related_sdg_list field" do
@@ -62,7 +62,7 @@ describe SDG::RelatedListSelectorComponent, type: :component do
       suggestion = component.suggestion_tag_for(SDG::Target[1.1])
 
       expect(suggestion).to eq({
-        tag: "1.1. By 2030 eradicate extreme poverty for all people everywhere currently measured as people living on less than $1.25 a day",
+        tag: "1.1. Eradicate Extreme Poverty",
         display_text: "1.1",
         title: "By 2030, eradicate extreme poverty for all people everywhere, currently measured as people living on less than $1.25 a day",
         value: "1.1"

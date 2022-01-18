@@ -12,8 +12,8 @@ class CommentNotifier
   private
 
     def send_comment_email
-      unless @comment.commentable.is_a?(Legislation::Annotation)
-        Mailer.comment(@comment).deliver_later if email_on_comment?
+      if !@comment.commentable.is_a?(Legislation::Annotation) && email_on_comment?
+        Mailer.comment(@comment).deliver_later
       end
     end
 

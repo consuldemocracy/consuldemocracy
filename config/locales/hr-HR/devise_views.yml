@@ -2,7 +2,6 @@ hr:
   devise_views:
     confirmations:
       new:
-        email_label: E-mail
         submit: Ponovno pošalji upute
         title: Ponovno pošalji upute za potvrđivanje
       show:
@@ -39,12 +38,7 @@ hr:
     organizations:
       registrations:
         new:
-          email_label: E-mail
-          organization_name_label: Naziv organizacije
           password_confirmation_label: Potvrdi lozinku
-          password_label: Zaporka
-          phone_number_label: Broj telefona
-          responsible_name_label: Puno ime osobe odgovorne za kolektiv
           responsible_name_note: To bi bila osoba koja predstavlja udrugu / kolektiv u čije ime su predstavljeni prijedlozi
           submit: Registriraj se
           title: Registriraj organizaciju ili kolektiv
@@ -62,13 +56,10 @@ hr:
         password_label: Nova zaporka
         title: Promijenite Vašu zaporku
       new:
-        email_label: E-mail
         send_submit: Pošalji upute
         title: Zaboravnjena zaporka?
     sessions:
       new:
-        login_label: Email ili korisničko ime
-        password_label: Zaporka
         remember_me: Zapamti me
         submit: Prijavite se
         title: Prijavite se
@@ -106,12 +97,9 @@ hr:
           waiting_for: "Čeka se potvrda:"
         new:
           cancel: Odustani od prijave
-          email_label: Email
           organization_signup: Predstavljate li organizaciju ili kolektiv? %{signup_link}
           organization_signup_link: Registrirajte se ovdje
           password_confirmation_label: Potvrdi zaporku
-          password_label: Zaporka
-          redeemable_code: Verifikacijski kôd ćete primiti putem emaila (neobavezno)
           submit: Registriraj se
           terms: Registracijom se prihvaćaju %{terms}
           terms_link: uvjeti korištenja
@@ -119,7 +107,6 @@ hr:
           title: Registriraj se
           username_is_available: Korisničko ime dostupno
           username_is_not_available: Korisničko ime nije dostupno
-          username_label: Korisničko ime
           username_note: Ime koje se pojavljuje pored Vaše objave
         success:
           back_to_index: Razumijem; vrati se na glavnu stranicu

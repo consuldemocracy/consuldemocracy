@@ -1,1 +1,4 @@
 nn:
+  milestones:
+    index:
+      progress: Fremdrift

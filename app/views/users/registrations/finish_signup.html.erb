@@ -8,13 +8,13 @@
   </div>
 
   <% if current_user.errors.include? :username %>
-    <%= f.text_field :username, placeholder: t("devise_views.users.registrations.new.username_label") %>
+    <%= f.text_field :username %>
   <% else %>
     <%= f.hidden_field :username %>
   <% end %>
 
   <% if current_user.errors.include? :email %>
-    <%= f.email_field :email, placeholder: t("devise_views.users.registrations.new.email_label") %>
+    <%= f.email_field :email %>
   <% else %>
     <%= f.hidden_field :email %>
   <% end %>

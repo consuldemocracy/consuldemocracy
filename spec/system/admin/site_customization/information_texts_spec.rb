@@ -91,13 +91,11 @@ describe "Admin custom information texts", :admin do
     end
 
     scenario "Remove a translation" do
-      first_key = "debates.form.debate_title"
-      debate_title = create(:i18n_content, key: first_key,
-                                           value_en: "Custom debate title",
-                                           value_es: "Título personalizado de debate")
+      featured = create(:i18n_content, key: "debates.index.featured_debates",
+                                       value_en: "Custom featured",
+                                       value_es: "Destacar personalizado")
 
-      second_key = "debates.new.start_new"
-      page_title = create(:i18n_content, key: second_key,
+      page_title = create(:i18n_content, key: "debates.new.start_new",
                                           value_en: "Start a new debate",
                                           value_es: "Empezar un debate")
 
@@ -113,15 +111,15 @@ describe "Admin custom information texts", :admin do
       select "English", from: :select_language
 
       expect(page).to have_content "Start a new debate"
-      expect(page).to have_content "Custom debate title"
+      expect(page).to have_content "Custom featured"
 
-      debate_title.reload
+      featured.reload
       page_title.reload
 
-      expect(page_title.value_es).to be(nil)
-      expect(debate_title.value_es).to be(nil)
-      expect(page_title.value_en).to eq("Start a new debate")
-      expect(debate_title.value_en).to eq("Custom debate title")
+      expect(page_title.value_es).to be nil
+      expect(featured.value_es).to be nil
+      expect(page_title.value_en).to eq "Start a new debate"
+      expect(featured.value_en).to eq "Custom featured"
     end
   end
 end

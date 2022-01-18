@@ -7,7 +7,11 @@ class SDG::Goals::IconComponent < ApplicationComponent
   end
 
   def image_path
-    "sdg/#{folder}/goal_#{code}.png"
+    if svg_available?
+      svg_path(locale)
+    else
+      png_path(locale)
+    end
   end
 
   private
@@ -16,9 +20,26 @@ class SDG::Goals::IconComponent < ApplicationComponent
       goal.code_and_title
     end
 
-    def folder
-      [*I18n.fallbacks[I18n.locale], "default"].find do |locale|
-        AssetFinder.find_asset("sdg/#{locale}/goal_#{code}.png")
+    def locale
+      @locale ||= [*I18n.fallbacks[I18n.locale], "default"].find do |fallback|
+        AssetFinder.find_asset(svg_path(fallback)) ||
+          AssetFinder.find_asset(png_path(fallback))
       end
+    end
+
+    def svg_available?
+      AssetFinder.find_asset(svg_path(locale))
+    end
+
+    def svg_path(locale)
+      "#{base_path(locale)}.svg"
+    end
+
+    def png_path(locale)
+      "#{base_path(locale)}.png"
+    end
+
+    def base_path(locale)
+      "sdg/#{locale}/goal_#{code}"
     end
 end

@@ -1,5 +1,5 @@
 <% if phases.present? %>
-  <table class="budget-phases-table table-for-mobile">
+  <table class="budget-phases-table">
     <caption><%= t("admin.budgets.edit.phases_caption") %></caption>
     <thead>
       <tr>
@@ -31,14 +31,12 @@
           <% end %>
         </td>
         <td class="text-center">
-          <%= check_box :phase, :enabled, checked: phase.enabled?, label: false,
-                        class: "js-toggle-budget-phase-enable",
-                        data: { "js-url" => toggle_enable_admin_budget_budget_phase_path(phase.budget, phase) } %>
+          <%= enabled_cell(phase) %>
         </td>
         <td>
           <%= render Admin::TableActionsComponent.new(phase,
             actions: [:edit],
-            edit_text: t("admin.budgets.edit.edit_phase")
+            edit_path: edit_path(phase)
           ) %>
         </td>
       </tr>

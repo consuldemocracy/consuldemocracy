@@ -78,6 +78,8 @@ ro:
       hi: Bună
       new_comment_by: Există un nou comentariu de evaluare de la <strong>%{commenter}</strong> la investiția bugetară %{investment}
       commenter_info: "%{commenter},%{time}:"
+    machine_learning_success:
+      text: "Conținutul a fost generat cu succes."
     new_actions_notification_rake_created:
       subject: "Mai multe știri despre propunerea dumneavoastră"
       hi: "Bună %{name},"

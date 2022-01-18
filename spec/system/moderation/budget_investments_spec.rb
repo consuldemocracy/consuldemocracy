@@ -126,7 +126,8 @@ describe "Moderate budget investments" do
 
         accept_confirm { click_button "Mark as viewed" }
 
-        expect(page).to have_selector(".js-order-selector[data-order='created_at']")
+        expect(page).to have_link "Most recent", class: "is-active"
+        expect(page).to have_link "Most flagged"
 
         expect(page).to have_current_path(/filter=all/)
         expect(page).to have_current_path(/page=2/)

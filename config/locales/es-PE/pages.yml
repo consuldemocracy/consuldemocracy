@@ -18,6 +18,7 @@ es-PE:
         title: "Discusiones"
         description: "En la sección de %{link} puedes exponer y compartir tu opinión con otras personas sobre temas de tu interés relacionados con la ciudad. También es un lugar para generar ideas que a través de las otras secciones de %{org} conducen a acciones concretas por parte del Consejo Municipal."
         link: "discusiones ciudadanas"
+        feature: "Puedes abrir discusiones, comentarlas y valorarlas con los botones de <strong>Estoy de acuerdo</strong> o <strong>No estoy de acuerdo</strong>. Para ello tienes que %{link}."
         feature_link: "regístrate en %{org}"
         image_alt: "Botones para valorar los debates"
         figcaption: 'Botones "Estoy de acuerdo" y "No estoy de acuerdo" para valorar los debates.'
@@ -26,11 +27,13 @@ es-PE:
         description: "En la sección de %{link} puedes plantear propuestas para que el Consejo Municipal las lleve a cabo. Las propuestas necesitan apoyo, y si alcanzan el apoyo necesario, se someten a votación ciudadana. Las propuestas aprobadas en estas votaciones ciudadanas son asumidas por el Consejo Municipal y se llevan a cabo."
         link: "propuestas ciudadanas"
         image_alt: "Botón para apoyar una propuesta"
+        figcaption: 'Botón para "Apoyar" una propuesta.'
       budgets:
         title: "Presupuestos participativos"
         description: "La sección de %{link} sirve para que la gente decida de manera directa a qué se destina una parte del presupuesto municipal."
         link: "presupuestos participativos"
         image_alt: "Diferentes fases de un presupuesto participativo"
+        figcaption: 'Fase de "Apoyos" y fase de "Votación" de los presupuestos participativos.'
       polls:
         title: "Votaciones"
         description: "La sección de %{link} se activa cada vez que una propuesta alcanza el 1% de apoyo y pasa a votación o cuando el Consejo Municipal propone un tema para que la gente decida sobre él."
@@ -41,6 +44,7 @@ es-PE:
         title: "Procesos"
         description: "En la sección de %{link} la ciudadanía participa en la elaboración y modificación de normativa que afecta a la ciudad y puede dar su opinión sobre las políticas municipales en discusiones previas."
         link: "procesos"
+        feature_link: "regístrate en %{org_name}"
       faq:
         title: "¿Problemas técnicos?"
         description: "Lee las preguntas frecuentes y resuelve tus dudas."
@@ -154,6 +158,7 @@ es-PE:
               description_column: Para reducir el tamaño del texto
       compatibility:
         title: Compatibilidad con estándares y diseño visual
+        description: 'Todas las páginas de este sitio web cumplen con las <strong>Pautas de Accesibilidad</strong> o Principios Generales de Diseño Accesible establecidas por el Grupo de Trabajo <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> perteneciente al W3C.'
     titles:
       help: "¿Qué es %{org}? - Participación ciudadana"
     verify:

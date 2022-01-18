@@ -12,9 +12,8 @@ tr:
         headers:
           comment: Yorum
           moderate: Yönet
-        hide_comments: Yorumları gizle
+        hide: Yorumları gizle
         ignore_flags: Görüldü olarak işaretle
-        order: Sipariş
         orders:
           flags: En çok işaretlenen
           newest: En yeni
@@ -34,9 +33,8 @@ tr:
         headers:
           debate: Tartışma
           moderate: Yönet
-        hide_debates: Tartışmaları gizle
+        hide: Tartışmaları gizle
         ignore_flags: Görüldü olarak işaretle
-        order: Düzen
         orders:
           created_at: En yeni
           flags: En çok işaretlenen
@@ -62,9 +60,8 @@ tr:
         headers:
           moderate: Yönet
           proposal: Öneri
-        hide_proposals: Önerileri gizle
+        hide: Önerileri gizle
         ignore_flags: Görüldü olarak işaretle
-        order: Şuna göre sırala
         orders:
           created_at: En son
           flags: En çok işaretlenen
@@ -81,9 +78,8 @@ tr:
         headers:
           moderate: Yönet
           budget_investment: Bütçe yatırımı
-        hide_budget_investments: Bütçe yatırımlarını gizle
+        hide: Bütçe yatırımlarını gizle
         ignore_flags: Görüldü olarak işaretle
-        order: Şuna göre sırala
         orders:
           created_at: En son
           flags: En çok işaretlenen
@@ -100,9 +96,8 @@ tr:
         headers:
           moderate: Yönet
           proposal_notification: Öneri bildirimi
-        hide_proposal_notifications: Önerileri gizle
+        hide: Önerileri gizle
         ignore_flags: Görüldü olarak işaretle
-        order: Şuna göre sırala
         orders:
           created_at: En son
           moderated: Denetlendi

@@ -160,7 +160,7 @@ describe "Voters" do
   end
 
   scenario "Store officer and booth information" do
-    create(:user, :in_census, id: rand(9999999))
+    create(:user, :in_census)
     poll1 = create(:poll, name: "¿Quieres que XYZ sea aprobado?")
     poll2 = create(:poll, name: "Pregunta de votación de prueba")
 

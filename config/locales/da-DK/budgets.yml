@@ -43,10 +43,6 @@ da:
     groups:
       show:
         title: Vælg en mulighed
-        unfeasible_title: Projekter, der ikke er mulige at gennemføre
-        unfeasible: Se projekter, der ikke kan gennemføres
-        unselected_title: Projekter, der ikke er udvalgt til afstemningsfasen
-        unselected: Se projekter, der ikke er udvalgt til afstemningsfasen
     phase:
       drafting: Udkast (Ikke offentligt)
       informing: Information
@@ -78,6 +74,7 @@ da:
       milestones: Milepæle
     investments:
       form:
+        title: "Opret din projektidé"
         tag_category_label: "Kategorier"
         tags_instructions: "Tilføj tags. Du kan vælge mellem de allerede viste kategorier eller tilføje dine egne"
         tags_label: Tags
@@ -85,7 +82,6 @@ da:
         map_location: "Lokation"
         map_location_instructions: "Naviger kortet til den rette lokation og placer markøren."
         map_remove_marker: "Fjern markøren"
-        map_skip_checkbox: "Denne investering har ikke en konkret lokation"
       index:
         title: Deltagerbudgetter
         unfeasible: Projekter, der ikke er mulige at gennemføre
@@ -155,22 +151,27 @@ da:
       investment:
         add: Stem
         already_added: Du har allerede tilføjet projektet
-        already_supported: Du har allerede støttet dette forslag. Del det!
         support_title: Støt forslaget
-        confirm_group:
-          one: "Du kan kun støtte op om forslag i %{count} distrikt. Hvis du fortsætter, kan du ikke ændre valget af dit distrikt. Er du sikker?"
-          other: "Du kan kun støtte op om projektidéer i %{count} distrikt. Hvis du fortsætter, kan du ikke ændre valget af dit distrikt. Er du sikker?"
         supports:
           zero: Ingen støtte
           one: 1 støtter op om projektet
           other: "%{count} støtter op om projektet"
-        give_support: Støt
       header:
         check_ballot: "Tjek min afstemning"
         different_heading_assigned: "Du har aktive stemmer i en anden post: %{heading_link}"
         change_ballot: "Hvis du ombestemmer dig, kan du fjerne din stemme in %{check_ballot} og starte forfra."
         check_ballot_link: "kontroller og bekræft min afstemning"
         price: "Denne post har et budget på"
+      votes:
+        already_supported: "Du har allerede støttet dette forslag. Del det!"
+        confirm_group:
+          one: "Du kan kun støtte op om forslag i %{count} distrikt. Hvis du fortsætter, kan du ikke ændre valget af dit distrikt. Er du sikker?"
+          other: "Du kan kun støtte op om projektidéer i %{count} distrikt. Hvis du fortsætter, kan du ikke ændre valget af dit distrikt. Er du sikker?"
+        support: "Støt"
+    investments_list:
+      investment:
+        price: "Pris"
+        supports: "Støtte"
     show:
       see_results: Se resultat
     results:

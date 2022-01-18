@@ -43,14 +43,12 @@ en:
       title: User management
       under_age: "You don't have the required age to verify your account."
       verify: Verify
-    email_label: Email
     date_of_birth: Date of birth
     email_verifications:
       already_verified: This user account is already verified.
       choose_options: "Please choose one of the following options:"
       document_found_in_census: This document was found in the census, but it has no user account associated to it.
       document_mismatch: "This email belongs to a user which already has an associated id: %{document_number}(%{document_type})"
-      email_placeholder: Write the email this person used to create his or her account
       email_sent_instructions: In order to completely verify this user, it is necessary that the user clicks on a link which we have sent to the email address above. This step is needed in order to confirm that the address belongs to him.
       if_existing_account: If the person has already a user account created in the website,
       if_no_existing_account: If this person has not created an account yet

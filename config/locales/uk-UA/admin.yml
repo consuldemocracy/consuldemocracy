@@ -6,6 +6,7 @@ uk-UA:
       actions: Дії
       confirm: Ви впевнені?
       confirm_hide: Підтвердити модерацію
+      delete: "Видалити"
       hide: Приховати
       hide_author: Приховати автора
       restore: Відновити
@@ -13,15 +14,12 @@ uk-UA:
       unmark_featured: Не показувати рекомендовані
       edit: Редагувати
       configure: Налаштувати
-      delete: Видалити
     officing_booth:
       title: "Ви призначені на кабінку, розташовану в %{booth}. Якщо це не так, не продовжуйте і зателефонуйте в службу підтримки. Дякуємо."
     banners:
       index:
         title: Постери
         create: Створити постер
-        edit: Редагувати постер
-        delete: Видалити постер
         filters:
           all: Усі
           with_active: Активні
@@ -62,18 +60,22 @@ uk-UA:
         type: Тип
         no_activity: Посередницька діяльність відсутня.
     budgets:
+      actions:
+        edit: "Редагувати бюджет"
+        preview: "Попередній перегляд"
       index:
         title: Бюджети участі
         new_link: Створити новий бюджет
         filter: Фільтр
         filters:
+          all: Усі
           open: Відкрити
           finished: Завершено
         budget_investments: Управляти проектами
+        table_budget_type: "Тип"
+        table_draft: "Чернетка"
         table_name: Назва
         table_phase: Етап
-        edit_groups: Редагувати групи розділів
-        edit_budget: Редагувати бюджет
         admin_ballots: Адмініструвати бюлетені
         no_budgets: "Бюджети відсутні."
       create:
@@ -86,7 +88,6 @@ uk-UA:
         phase: Етап
         enabled: Дозволено
         actions: Дії
-        edit_phase: Редагувати етап
         active: Активні
         blank_dates: Дати порожні
         administrators:
@@ -107,8 +108,6 @@ uk-UA:
         success_notice: Бюджет видалений
         unable_notice: Ви не можете видалити бюджет, який має пов'язані інвестиції
         unable_notice_polls: Ви не можете видалити бюджет, який має пов'язане опитування
-      new:
-        title: Новий бюджет участі
       winners:
         calculate: Вирахувати переможні інвестиції
         calculated: Переможці вираховуються, це може зайняти деякий час.
@@ -135,15 +134,8 @@ uk-UA:
         edit: "Редагувати групу"
         max_votable_headings_info: "Стосується лише етапу відбору проєктів. На етапі голосування за проєкти користувачі можуть проголосувати лише за одну рубрику в групі."
         submit: "Зберегти групу"
-      index:
-        back: "Повернутися до бюджетів"
     budget_headings:
       no_headings: "Рубрики відсутні."
-      amount:
-        one: "Є 1 заголовок"
-        few: "Є %{count} заголовки"
-        many: "Є %{count} заголовків"
-        other: "Є %{count} заголовків"
       create:
         notice: "Рубрику створено!"
       update:
@@ -163,6 +155,7 @@ uk-UA:
         back: "Повернутися до груп"
     budget_phases:
       edit:
+        title: "Редагувати етап"
         description_help_text: Цей текст з'являтиметься у заголовку, якщо етап є активним
         enabled_help_text: Цей етап буде загальнодоступним на часовій шкалі етапів бюджету та активним для будь-яких інших цілей
         save_changes: Зберегти зміни
@@ -261,6 +254,11 @@ uk-UA:
         tags_placeholder: "Напишіть бажані теги, розділивши їх комами (,)"
         undefined: Не визначено
       search_unfeasible: Пошук неможливий
+    budgets_wizard:
+      creation_timeline:
+        budget: Бюджет
+        groups: Групи
+        headings: Рубрики
     milestones:
       index:
         table_id: "ID"
@@ -269,7 +267,6 @@ uk-UA:
         table_publication_date: "Дата публікування"
         table_status: Статус
         table_actions: "Дії"
-        delete: "Видалити віху"
         no_milestones: "Немає визначених віх"
         image: "Зображення"
         show_image: "Показати зображення"
@@ -486,10 +483,6 @@ uk-UA:
           allegations_phase: Етап коментування
           proposals_phase: Етап подання пропозицій
           use_markdown: Використовуйте Markdown, щоб відформатувати текст
-          title_placeholder: Назва процесу
-          summary_placeholder: Короткий виклад опису
-          description_placeholder: Додати опис процесу
-          additional_info_placeholder: Додати додаткову інформацію, яку ви вважаєте корисною
           homepage_description: Тут ви можете пояснити зміст процесу
           banner_title: Кольори рубрик
         index:
@@ -503,11 +496,10 @@ uk-UA:
           title: Створити новий спільний законодавчий процес
           submit_button: Створити процес
         proposals:
-          select_order: Сортувати за
           orders:
-            id: Id
-            title: Назва
-            supports: Загальна підтримка
+            id: "Id"
+            title: "Назва"
+            supports: "Загальна підтримка"
         process:
           title: Процес
           comments: Коментарі
@@ -561,9 +553,7 @@ uk-UA:
             status:
               draft: Ви можете здійснити попередній перегляд як адміністратор, ніхто інший не може бачити попередній перегляд
               published: Видимий для всіх
-          title_placeholder: Напишіть назву чорнової версії
           changelog_placeholder: Додати основні зміни з попередньої версії
-          body_placeholder: Записати чорновий текст
         index:
           title: Чорнові версії
           create: Створити версію
@@ -594,7 +584,6 @@ uk-UA:
           submit_button: Зберегти зміни
         form:
           add_option: Додати опцію
-          title_placeholder: Додати запитання
           value_placeholder: Додати закриту відповідь
           question_options: "Можливі відповіді (за бажанням; за замовчуванням - відкриті відповіді)"
         index:
@@ -624,6 +613,12 @@ uk-UA:
         add: Додати
       search:
         title: "Керівники: користувацький пошук"
+    sdg_managers:
+      index:
+        no_sdg_managers: Користувачів немає.
+    sdg/managers:
+      sdg/manager:
+        add: Додати
     menu:
       activity: Посередницька діяльність
       admin: Меню адміністратора
@@ -1124,7 +1119,6 @@ uk-UA:
         location: "Розташування"
       booth:
         shifts: "Керувати змінами"
-        edit: "Редагувати кабінку"
     officials:
       edit:
         destroy: Прибрати статус "Службовець"
@@ -1146,7 +1140,6 @@ uk-UA:
       level_4: Рівень 4
       level_5: Рівень 5
       search:
-        edit_official: Редагувати службовця
         make_official: Зробити службовцем
         title: "Посади службовців: пошук користувача"
         no_results: Посад службовців не знайдено.
@@ -1223,9 +1216,6 @@ uk-UA:
         feature_flags: Функції
         features:
           enabled: "Функцію ввімкнено"
-          disabled: "Функцію вимкнено"
-          enable: "Увімкнути"
-          disable: "Вимкнути"
         map:
           title: Налаштування карти
           help: Тут ви можете налаштувати спосіб відображення карти для користувачів. Перетягніть маркер карти або клацніть де-небудь над картою, встановіть бажане масштабування та натисніть кнопку «Оновити».
@@ -1243,14 +1233,10 @@ uk-UA:
       remote_census_request_name: Запит даних
       remote_census_response_name: Надання даних
       setting: Функція
-      setting_actions: Дії
       setting_name: Налаштування
-      setting_status: Статус
       setting_value: Значення
       no_description: "Опис відсутній"
     shared:
-      true_value: "Так"
-      false_value: "Ні"
       search:
         label:
           booths: "Шукати кабінку за назвою або розташуванням"
@@ -1261,6 +1247,7 @@ uk-UA:
           poll_questions: "Шукати запитання голосувань"
           proposals: "Шукати пропозиції за назвою, кодом, описом або запитанням"
           users: "Шукати користувача за ім'ям або електронною адресою"
+        search: "Пошук"
       search_results: "Результати пошуку"
       no_search_results: "Результатів не знайдено."
       actions: Дії
@@ -1408,9 +1395,12 @@ uk-UA:
           question_name: Запитання
           origin_web: Учасники в мережі
           origin_total: Загалом учасників
+      sdg:
+        debates: "Обговорення"
+        polls: "Голосування"
+        proposals: "Пропозиції"
     tags:
       create: Створити тему
-      destroy: Видалити тему
       index:
         add_tag: Додати тему нової пропозиції
         title: Теми пропозицій
@@ -1588,3 +1578,7 @@ uk-UA:
           created: Створені записи
         local_census_records:
           no_records_found: Записів не знайдено.
+    machine_learning:
+      related_content: "Пов'язаний контент"
+      tab_help: "Допомога"
+      tags: "Теги"

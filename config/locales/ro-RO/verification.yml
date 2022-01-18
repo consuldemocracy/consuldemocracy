@@ -75,7 +75,6 @@ ro:
         phone: Introduceți numărul de telefon pentru a primi codul
         phone_format: "<strong><em>(Exemplu: 612345678 sau +34612345678)</em></strong>"
         phone_note: Folosim numărul dvs. de telefon doar pentru a vă trimite un cod, nu vă vom contacta niciodată.
-        phone_placeholder: "Exemplu: 612345678 sau +34612345678"
         submit_button: Trimite
         title: Trimite codul de confirmare
       update:

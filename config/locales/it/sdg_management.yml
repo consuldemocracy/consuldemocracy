@@ -1,1 +1,24 @@
 it:
+  sdg_management:
+    actions:
+      edit: "Gestisci obiettivi e scopi"
+    header:
+      title: "Contenuto del SDG"
+    homepage:
+      title: "Configurazione della homepage"
+      header:
+        create: "Crea intestazione"
+        title: "Intestazione"
+    menu:
+      budget_investments: "Bilanci partecipativi"
+      debates: "Dibattiti"
+      legislation_processes: "Processi di legislazione"
+      polls: "Votazioni"
+      proposals: "Proposte"
+      sdg_content: "Scopi e Obiettivi"
+    relations:
+      index:
+        filter: "Filtra"
+        filters:
+          all: "Tutti"
+          pending_sdg_review: "In sospeso"

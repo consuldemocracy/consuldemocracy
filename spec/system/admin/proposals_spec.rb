@@ -1,9 +1,7 @@
 require "rails_helper"
 
 describe "Admin proposals", :admin do
-  it_behaves_like "admin_milestoneable",
-                  :proposal,
-                  "admin_polymorphic_path"
+  it_behaves_like "admin_milestoneable", :proposal, "admin_polymorphic_path"
 
   context "Index" do
     scenario "Search" do

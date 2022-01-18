@@ -2,10 +2,10 @@ id:
   devise_views:
     confirmations:
       new:
-        email_label: Email
         submit: Kirim ulang instruksi
         title: Kirim ulang instruksi konfirmasi
       show:
+        instructions: Mengonfirmasi akun dengan email %{email}
         new_password_confirmation_label: Ulangi kata sandi akses
         new_password_label: Kata sandi baru
         please_set_password: Silakan pilih kata sandi baru anda (ini akan memungkinkan anda masuk dengan email di atas)
@@ -38,17 +38,16 @@ id:
     organizations:
       registrations:
         new:
-          email_label: Email
-          organization_name_label: Nama organisasi
           password_confirmation_label: Konfirmasi kata sandi
-          password_label: Kata sandi
-          phone_number_label: Nomor telepon
-          responsible_name_label: Nama lengkap orang yang bertanggung jawab atas kolektif
           responsible_name_note: Ini akan menjadi orang yang mewakili asosiasi / kolektif dalam yang namanya proposal disajikan
           submit: Daftar
           title: Mendaftar sebagai organisasi atau kolektif
         success:
           back_to_index: Saya mengerti; kembali ke halaman utama
+          instructions_1: "<b> Kami akan menghubungi anda segera</b> untuk memverifikasi bahwa Anda sebenarnya mewakili kolektif ini."
+          instructions_2: Sementara anda <b>email ditinjau</b>, kami telah mengirim anda <b>link untuk mengkonfirmasi akun anda</b>.
+          instructions_3: Setelah dikonfirmasi, anda mungkin mulai berpartisipasi sebagai kolektif yang tidak terverifikasi.
+          thank_you: Terima kasih telah mendaftarkan kolektif Anda di situs web. Sekarang <b>verifikasi tertunda</b>.
           title: Pendaftaran organisasi / kolektif
     passwords:
       edit:
@@ -57,13 +56,10 @@ id:
         password_label: Kata sandi baru
         title: Ubah kata sandi anda
       new:
-        email_label: Email
         send_submit: Kirim instruksi
         title: Lupa kata sandi?
     sessions:
       new:
-        login_label: Surel atau nama pengguna
-        password_label: Kata Sandi
         remember_me: Ingat saya
         submit: Masukan
         title: Masuk
@@ -101,12 +97,9 @@ id:
           waiting_for: "Menunggu konfirmasi dari:"
         new:
           cancel: Batalkan masuk
-          email_label: Email
           organization_signup: Apakah Anda mewakili sebuah organisasi atau kolektif? %{signup_link}
           organization_signup_link: Daftar disini
           password_confirmation_label: Konfirmasi sandi
-          password_label: Kata Sandi
-          redeemable_code: Kode verifikasi akan diterima melalui email (opsional)
           submit: Daftar
           terms: Dengan mendaftarkan anda akan menerima %{terms}
           terms_link: syarat dan ketentuan penggunaan
@@ -114,8 +107,10 @@ id:
           title: Daftar
           username_is_available: Nama pengguna tersedia
           username_is_not_available: Nama pengguna sudah digunakan
-          username_label: Nama pengguna
           username_note: Nama ini akan muncul di postingan anda selanjutnya
         success:
           back_to_index: Saya mengerti; kembali ke halaman utama
+          instructions_1: Silakan <b>periksa email anda</b> - kami telah mengirimi anda<b>tautan untuk mengkonfirmasi akun anda</b>.
+          instructions_2: Setelah dikonfirmasi, anda bisa mulai berpartisipasi.
+          thank_you: Terima kasih telah mendaftar untuk situs webnya. Anda sekarang harus<b>mengkonfirmasi alamat email anda</b>.
           title: Modifikasi emai anda

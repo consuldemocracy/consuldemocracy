@@ -74,7 +74,7 @@ describe "Admin geozones", :admin do
 
     visit admin_geozones_path
 
-    within("#geozone_#{geozone.id}") { accept_confirm { click_link "Delete" } }
+    within("#geozone_#{geozone.id}") { accept_confirm { click_button "Delete" } }
 
     expect(page).to have_content "Geozone successfully deleted"
     expect(page).not_to have_content("Delete me!")
@@ -86,7 +86,7 @@ describe "Admin geozones", :admin do
 
     visit admin_geozones_path
 
-    within("#geozone_#{geozone.id}") { accept_confirm { click_link "Delete" } }
+    within("#geozone_#{geozone.id}") { accept_confirm { click_button "Delete" } }
 
     expect(page).to have_content "This geozone can't be deleted since there are elements attached to it"
 

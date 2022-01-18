@@ -15,11 +15,11 @@
           </p>
         </td>
         <td>
-          <%= render Admin::TableActionsComponent.new(actions: []) do |actions| %>
-            <%= actions.link_to t("admin.shared.view"), proposal_path(proposal), class: "show-link" %>
-            <%= actions.link_to t("admin.questions.index.create_question"),
-                  new_admin_question_path(proposal_id: proposal.id),
-                  class: "new-link" %>
+          <%= render Admin::TableActionsComponent.new(proposal, actions: []) do |actions| %>
+            <%= actions.action(:show, text: t("admin.shared.view"), path: proposal_path(proposal)) %>
+            <%= actions.action(:new,
+                               text: t("admin.questions.index.create_question"),
+                               path: new_admin_question_path(proposal_id: proposal.id)) %>
           <% end %>
         </td>
       </tr>

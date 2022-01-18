@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_01_100648) do
+ActiveRecord::Schema.define(version: 2021_11_03_112944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -30,6 +30,27 @@ ActiveRecord::Schema.define(version: 2021_04_01_100648) do
   create_table "active_polls", id: :serial, force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
   create_table "activities", id: :serial, force: :cascade do |t|
@@ -155,6 +176,9 @@ ActiveRecord::Schema.define(version: 2021_04_01_100648) do
     t.integer "heading_id"
     t.index ["ballot_id", "investment_id"], name: "index_budget_ballot_lines_on_ballot_id_and_investment_id", unique: true
     t.index ["ballot_id"], name: "index_budget_ballot_lines_on_ballot_id"
+    t.index ["budget_id"], name: "index_budget_ballot_lines_on_budget_id"
+    t.index ["group_id"], name: "index_budget_ballot_lines_on_group_id"
+    t.index ["heading_id"], name: "index_budget_ballot_lines_on_heading_id"
     t.index ["investment_id"], name: "index_budget_ballot_lines_on_investment_id"
   end
 
@@ -277,10 +301,14 @@ ActiveRecord::Schema.define(version: 2021_04_01_100648) do
     t.text "feasibility_explanation"
     t.index ["administrator_id"], name: "index_budget_investments_on_administrator_id"
     t.index ["author_id"], name: "index_budget_investments_on_author_id"
+    t.index ["budget_id"], name: "index_budget_investments_on_budget_id"
     t.index ["cached_votes_down"], name: "index_budget_investments_on_cached_votes_down"
     t.index ["cached_votes_total"], name: "index_budget_investments_on_cached_votes_total"
     t.index ["community_id"], name: "index_budget_investments_on_community_id"
+    t.index ["group_id"], name: "index_budget_investments_on_group_id"
     t.index ["heading_id"], name: "index_budget_investments_on_heading_id"
+    t.index ["incompatible"], name: "index_budget_investments_on_incompatible"
+    t.index ["selected"], name: "index_budget_investments_on_selected"
     t.index ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
   end
 
@@ -292,6 +320,8 @@ ActiveRecord::Schema.define(version: 2021_04_01_100648) do
     t.text "description"
     t.text "summary"
     t.string "name"
+    t.string "main_link_text"
+    t.string "main_link_url"
     t.index ["budget_phase_id"], name: "index_budget_phase_translations_on_budget_phase_id"
     t.index ["locale"], name: "index_budget_phase_translations_on_locale"
   end
@@ -303,8 +333,6 @@ ActiveRecord::Schema.define(version: 2021_04_01_100648) do
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.boolean "enabled", default: true
-    t.string "main_button_text"
-    t.string "main_button_url"
     t.index ["ends_at"], name: "index_budget_phases_on_ends_at"
     t.index ["kind"], name: "index_budget_phases_on_kind"
     t.index ["next_phase_id"], name: "index_budget_phases_on_next_phase_id"
@@ -325,6 +353,8 @@ ActiveRecord::Schema.define(version: 2021_04_01_100648) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.string "main_link_text"
+    t.string "main_link_url"
     t.index ["budget_id"], name: "index_budget_translations_on_budget_id"
     t.index ["locale"], name: "index_budget_translations_on_locale"
   end
@@ -369,8 +399,6 @@ ActiveRecord::Schema.define(version: 2021_04_01_100648) do
     t.text "description_informing"
     t.string "voting_style", default: "knapsack"
     t.boolean "published"
-    t.string "main_button_text"
-    t.string "main_button_url"
     t.boolean "hide_money", default: false
   end
 
@@ -430,6 +458,7 @@ ActiveRecord::Schema.define(version: 2021_04_01_100648) do
     t.index ["cached_votes_total"], name: "index_comments_on_cached_votes_total"
     t.index ["cached_votes_up"], name: "index_comments_on_cached_votes_up"
     t.index ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type"
+    t.index ["confidence_score"], name: "index_comments_on_confidence_score"
     t.index ["hidden_at"], name: "index_comments_on_hidden_at"
     t.index ["user_id"], name: "index_comments_on_user_id"
     t.index ["valuation"], name: "index_comments_on_valuation"
@@ -443,7 +472,6 @@ ActiveRecord::Schema.define(version: 2021_04_01_100648) do
   create_table "dashboard_actions", id: :serial, force: :cascade do |t|
     t.string "title", limit: 80
     t.text "description"
-    t.string "link"
     t.boolean "request_to_administrators", default: false
     t.integer "day_offset", default: 0
     t.integer "required_supports", default: 0
@@ -576,6 +604,7 @@ ActiveRecord::Schema.define(version: 2021_04_01_100648) do
     t.string "district_code"
     t.integer "poll_officer_id"
     t.integer "year_of_birth"
+    t.index ["poll_officer_id"], name: "index_failed_census_calls_on_poll_officer_id"
     t.index ["user_id"], name: "index_failed_census_calls_on_user_id"
   end
 
@@ -881,6 +910,26 @@ ActiveRecord::Schema.define(version: 2021_04_01_100648) do
     t.index ["user_id"], name: "index_locks_on_user_id"
   end
 
+  create_table "machine_learning_infos", force: :cascade do |t|
+    t.string "kind"
+    t.datetime "generated_at"
+    t.string "script"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "machine_learning_jobs", force: :cascade do |t|
+    t.datetime "started_at"
+    t.datetime "finished_at"
+    t.string "script"
+    t.integer "pid"
+    t.string "error"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_machine_learning_jobs_on_user_id"
+  end
+
   create_table "managers", id: :serial, force: :cascade do |t|
     t.integer "user_id"
     t.index ["user_id"], name: "index_managers_on_user_id"
@@ -924,6 +973,14 @@ ActiveRecord::Schema.define(version: 2021_04_01_100648) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["status_id"], name: "index_milestones_on_status_id"
+  end
+
+  create_table "ml_summary_comments", force: :cascade do |t|
+    t.integer "commentable_id"
+    t.string "commentable_type"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "moderators", id: :serial, force: :cascade do |t|
@@ -1181,6 +1238,7 @@ ActiveRecord::Schema.define(version: 2021_04_01_100648) do
     t.integer "related_id"
     t.tsvector "tsv"
     t.index ["budget_id"], name: "index_polls_on_budget_id", unique: true
+    t.index ["geozone_restricted"], name: "index_polls_on_geozone_restricted"
     t.index ["related_type", "related_id"], name: "index_polls_on_related_type_and_related_id"
     t.index ["starts_at", "ends_at"], name: "index_polls_on_starts_at_and_ends_at"
   end
@@ -1261,6 +1319,7 @@ ActiveRecord::Schema.define(version: 2021_04_01_100648) do
     t.index ["geozone_id"], name: "index_proposals_on_geozone_id"
     t.index ["hidden_at"], name: "index_proposals_on_hidden_at"
     t.index ["hot_score"], name: "index_proposals_on_hot_score"
+    t.index ["selected"], name: "index_proposals_on_selected"
     t.index ["tsv"], name: "index_proposals_on_tsv", using: :gin
   end
 
@@ -1284,6 +1343,8 @@ ActiveRecord::Schema.define(version: 2021_04_01_100648) do
     t.datetime "hidden_at"
     t.integer "related_content_scores_count", default: 0
     t.integer "author_id"
+    t.boolean "machine_learning", default: false
+    t.integer "machine_learning_score", default: 0
     t.index ["child_relationable_type", "child_relationable_id"], name: "index_related_contents_on_child_relationable"
     t.index ["hidden_at"], name: "index_related_contents_on_hidden_at"
     t.index ["parent_relationable_id", "parent_relationable_type", "child_relationable_id", "child_relationable_type"], name: "unique_parent_child_related_content", unique: true
@@ -1571,7 +1632,9 @@ ActiveRecord::Schema.define(version: 2021_04_01_100648) do
     t.boolean "recommended_debates", default: true
     t.boolean "recommended_proposals", default: true
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.index ["date_of_birth"], name: "index_users_on_date_of_birth"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["gender"], name: "index_users_on_gender"
     t.index ["geozone_id"], name: "index_users_on_geozone_id"
     t.index ["hidden_at"], name: "index_users_on_hidden_at"
     t.index ["password_changed_at"], name: "index_users_on_password_changed_at"
@@ -1689,6 +1752,7 @@ ActiveRecord::Schema.define(version: 2021_04_01_100648) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "administrators", "users"
   add_foreign_key "budget_administrators", "administrators"
   add_foreign_key "budget_administrators", "budgets"
@@ -1710,6 +1774,7 @@ ActiveRecord::Schema.define(version: 2021_04_01_100648) do
   add_foreign_key "legislation_draft_versions", "legislation_processes"
   add_foreign_key "legislation_proposals", "legislation_processes"
   add_foreign_key "locks", "users"
+  add_foreign_key "machine_learning_jobs", "users"
   add_foreign_key "managers", "users"
   add_foreign_key "moderators", "users"
   add_foreign_key "notifications", "users"

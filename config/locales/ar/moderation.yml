@@ -12,9 +12,8 @@ ar:
         headers:
           comment: التعليق
           moderate: المشرف
-        hide_comments: إخفاء التعليقات
+        hide: إخفاء التعليقات
         ignore_flags: شوهد
-        order: طلب
         orders:
           flags: العلامة مطلوبة
           newest: الأحدث
@@ -34,9 +33,8 @@ ar:
         headers:
           debate: النقاشات
           moderate: المشرف
-        hide_debates: حوارات مخفية
+        hide: حوارات مخفية
         ignore_flags: شوهد
-        order: طلب
         orders:
           created_at: الأحدث
           flags: العلامة مطلوبة
@@ -62,9 +60,8 @@ ar:
         headers:
           moderate: المشرف
           proposal: اقتراح
-        hide_proposals: الإقتراحات المخفية
+        hide: الإقتراحات المخفية
         ignore_flags: شوهد
-        order: ترتيب حسب
         orders:
           created_at: الأحدث
           flags: العلامة مطلوبة
@@ -81,9 +78,8 @@ ar:
         headers:
           moderate: المشرف
           budget_investment: ميزانية الاستثمار
-        hide_budget_investments: إخفاء استثمارات الميزانية
+        hide: إخفاء استثمارات الميزانية
         ignore_flags: شوهد
-        order: ترتيب حسب
         orders:
           created_at: الأحدث
           flags: العلامة مطلوبة
@@ -100,9 +96,8 @@ ar:
         headers:
           moderate: المشرف
           proposal_notification: إشعار المقترح
-        hide_proposal_notifications: الإقتراحات المخفية
+        hide: الإقتراحات المخفية
         ignore_flags: شوهد
-        order: ترتيب حسب
         orders:
           created_at: الأحدث
           moderated: تمت المراجعة

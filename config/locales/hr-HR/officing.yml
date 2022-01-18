@@ -69,7 +69,6 @@ hr:
         not_allowed: "Danas nemate službene smjene"
       new:
         title: Potvrdi dokument
-        document_number: "Broj dokumenta (uključujući znakove)"
         submit: Potvrdi dokument
         error_verifying_census: "Cenzus nije u mogućnosti potvriditi ovaj dokument."
         form_errors: spriječena je verifikacija ovog dokumenta

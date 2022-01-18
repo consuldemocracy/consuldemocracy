@@ -99,7 +99,7 @@ class Officing::ResultsController < Officing::BaseController
                   joins(:booth_assignment).
                   final.
                   where(id: current_user.poll_officer.officer_assignment_ids).
-                  where("poll_booth_assignments.poll_id = ?", @poll.id).
+                  where(poll_booth_assignments: { poll_id: @poll.id }).
                   where(date: Date.current)
     end
 

@@ -2,15 +2,15 @@
   <td><strong><%= poll.name %></strong></td>
   <td class="text-center"><%= l poll.starts_at.to_date %></td>
   <td class="text-center"><%= l poll.ends_at.to_date %></td>
-  <td class="text-center"><%= poll.sdg_goal_list %></td>
-  <td class="text-center"><%= poll.sdg_target_list %></td>
+  <% if feature?(:sdg) %>
+    <td class="text-center"><%= poll.sdg_goal_list %></td>
+    <td class="text-center"><%= poll.sdg_target_list %></td>
+  <% end %>
   <td>
     <%= render Admin::TableActionsComponent.new(poll,
       destroy_confirmation: t("admin.polls.destroy.alert")
     ) do |actions| %>
-      <%= actions.link_to t("admin.actions.configure"),
-                          admin_poll_path(poll),
-                          class: "configure-link" %>
+      <%= actions.action(:configure) %>
     <% end %>
   </td>
 </tr>

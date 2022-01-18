@@ -164,6 +164,8 @@ en:
         main_button_url: "The button takes you to (add a link)"
         hide_money: "Hide money amount for this budget"
       budget/translation:
+        main_link_text: "Text on the link"
+        main_link_url: "The link takes you to (add a link)"
         name: "Name"
       budget/investment:
         heading_id: "Heading"
@@ -239,6 +241,8 @@ en:
         name: "Phase's Name"
         description: "Description"
         summary: "Summary"
+        main_link_text: "Text on the link"
+        main_link_url: "The link takes you to (add a link)"
       comment:
         body: "Comment"
         user: "User"
@@ -283,7 +287,7 @@ en:
         official_level: "Official level"
         phone_number: "Phone number"
         public_activity: "Keep my list of activities public"
-        public_interests: "Keep the labels of the elements I follow public"
+        public_interests: "Keep the elements I follow public"
         recommended_debates: "Show debates recommendations"
         recommended_proposals: "Show proposals recommendations"
         redeemable_code: "Verification code received via email"
@@ -502,7 +506,7 @@ en:
         user: Executed by
       link:
         label: Title
-        url: Link
+        url: URL
       valuator:
         description: Description
         valuator_group_id: Valuator group

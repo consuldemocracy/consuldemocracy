@@ -77,12 +77,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
 
       click_link "Add new document"
       within "#nested-documents" do
-        document = find(".document input[type=file]", visible: :hidden)
-        attach_file(
-          document[:id],
-          Rails.root.join("spec/fixtures/files/empty.pdf"),
-          make_visible: true
-        )
+        attach_file "Choose document", Rails.root.join("spec/fixtures/files/empty.pdf")
 
         expect(page).to have_css ".loading-bar.complete"
       end
@@ -109,12 +104,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       within "#nested-documents" do
         input = find("input[name$='[title]']")
         fill_in input[:id], with: "My Title"
-        document_input = find("input[type=file]", visible: :hidden)
-        attach_file(
-          document_input[:id],
-          Rails.root.join("spec/fixtures/files/empty.pdf"),
-          make_visible: true
-        )
+        attach_file "Choose document", Rails.root.join("spec/fixtures/files/empty.pdf")
 
         expect(page).to have_css ".loading-bar.complete"
       end
@@ -320,9 +310,8 @@ end
 def documentable_attach_new_file(path, success = true)
   click_link "Add new document"
 
-  document = all("#new_document").last
-  document_input = document.find("input[type=file]", visible: :hidden)
-  attach_file(document_input[:id], path, make_visible: true)
+  document = all(".document").last
+  attach_file "Choose document", path
 
   within document do
     if success
@@ -350,7 +339,7 @@ def expect_document_has_cached_attachment(index, extension)
 end
 
 def documentable_fill_new_valid_proposal
-  fill_in "Proposal title", with: "Proposal title #{rand(9999)}"
+  fill_in_new_proposal_title with: "Proposal title #{rand(9999)}"
   fill_in "Proposal summary", with: "Proposal summary"
   # Check terms of service by default
   # check :proposal_terms_of_service
@@ -362,7 +351,7 @@ def documentable_fill_new_valid_dashboard_action
 end
 
 def documentable_fill_new_valid_budget_investment
-  fill_in "Title", with: "Budget investment title"
+  fill_in_new_investment_title with: "Budget investment title"
   fill_in_ckeditor "Description", with: "Budget investment description"
   # Check terms of service by default
   # check :budget_investment_terms_of_service

@@ -16,6 +16,18 @@ sq:
         no_polls: Ju nuk po ofroni  rinumërim përfundimtar në çdo sondazh aktiv
         select_poll: Zgjidh sondazhin
         add_results: Shto rezultatet
+    poll_budgets:
+      index:
+        ballot_sheet_name: Emri
+        ballot_sheet_author: Autor
+        ballot_sheet_creation_date: Data e krijimit
+      new:
+        booth: Kabinë
+        select_booth: Zgjidh stendën
+        submit: Ruaj
+      show:
+        created_at: Data e krijimit
+        author: Autor
     results:
       flash:
         create: "\nRezultatet u ruajtën"
@@ -47,7 +59,6 @@ sq:
         not_allowed: "Ju nuk keni ndërrime zyrtare sot."
       new:
         title: Validoni dokumentin
-        document_number: "Numri i dokumentit ( përfshirë letër)"
         submit: Validoni dokumentin
         error_verifying_census: "\nRegjistri nuk ishte në gjendje të verifikonte këtë dokument."
         form_errors: pengoi verifikimin e ketij dokumenti

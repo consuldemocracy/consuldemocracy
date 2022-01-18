@@ -4,7 +4,7 @@ module MilestonesHelper
 
     tag.div class: "progress",
             role:  "progressbar",
-            "aria-valuenow": "#{progress_bar.percentage}",
+            "aria-valuenow": progress_bar.percentage,
             "aria-valuetext": "#{progress_bar.percentage}%",
             "aria-valuemax": ProgressBar::RANGE.max,
             "aria-valuemin": "0",

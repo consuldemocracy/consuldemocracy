@@ -1,0 +1,8 @@
+.budgets-index {
+
+  > header {
+    @extend %budget-header;
+    @include grid-column-gutter;
+    margin-bottom: $line-height;
+  }
+}

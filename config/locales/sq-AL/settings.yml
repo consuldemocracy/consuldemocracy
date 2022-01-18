@@ -56,6 +56,9 @@ sq:
     meta_keywords_description: "\nFjalë kyçe <meta name=\"keywords\">,përdoret për të përmirësuar SEO"
     min_age_to_participate: Mosha minimale e nevojshme për të marrë pjesë
     min_age_to_participate_description: "Përdoruesit e kësaj moshe mund të marrin pjesë në të gjitha proceset"
+    proposals:
+      poll_short_title: Sondazhet
+      email_short_title: Email
     analytics_url: "URL e analitikës"
     feature:
       twitter_login: "\nIdentifikohu në Twitter"
@@ -89,3 +92,23 @@ sq:
       public_stats_description: "Shfaqni statistikat publike në panelin e Administratës"
       help_page: "Faqja ndihmëse"
       help_page_description: 'Shfaq një meny Ndihmë që përmban një faqe me një seksion informacioni rreth secilës janë të akitivizuar vecoritë'
+    map:
+      latitude: "Gjerësi"
+      latitude_description: "\nGjerësia për të treguar pozicionin e hartës"
+      longitude: "Gjatësi"
+      longitude_description: "Gjatësia për të treguar pozicionin e hartës"
+      zoom: "Zmadhoje"
+      zoom_description: "Zmadho për të treguar pozicionin e hartës"
+    process:
+      debates: "Debate"
+      debates_description: "Hapësira e debatit të qytetarëve mundëson që ata të mund të paraqesin çështje që i prekin  dhe për të cilën ata duan të ndajnë pikëpamjet e tyre me të tjerët"
+      proposals: "Propozime"
+      polls: "Sondazhet"
+      polls_description: "Sondazhet e qytetarëve janë një mekanizëm pjesëmarrës përmes të cilit qytetarët me të drejtë vote mund të marrin vendime të drejtpërdrejta"
+      budgets: "Buxhetet  pjesëmarrës"
+      legislation: "Legjislacioni Bashkëpunues"
+    html:
+      per_page_code_head: "Kodi duhet të përfshihet në çdo faqe (<head>)"
+      per_page_code_head_description: "Ky kod do të shfaqet brenda etiketës<head>. E dobishme për të hyrë në skriptet e personalizuara, analitika ..."
+      per_page_code_body: "Kodi duhet të përfshihet në çdo faqe (<body>)"
+      per_page_code_body_description: "Ky kod do të shfaqet brenda etiketës<body>. E dobishme për të hyrë në skriptet e personalizuara, analitika ..."

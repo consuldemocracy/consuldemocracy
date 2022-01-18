@@ -74,6 +74,7 @@ class User < ApplicationRecord
     class_name:  "Poll::Recount",
     foreign_key: :author_id,
     inverse_of:  :author
+  has_many :related_contents, foreign_key: :author_id, inverse_of: :author, dependent: nil
   has_many :topics, foreign_key: :author_id, inverse_of: :author
   belongs_to :geozone
 
@@ -252,7 +253,7 @@ class User < ApplicationRecord
     Comment.hide_all comment_ids
     Proposal.hide_all proposal_ids
     Budget::Investment.hide_all budget_investment_ids
-    ProposalNotification.hide_all ProposalNotification.where(author_id: id).pluck(:id)
+    ProposalNotification.hide_all ProposalNotification.where(author_id: id).ids
   end
 
   def full_restore
@@ -357,7 +358,7 @@ class User < ApplicationRecord
   end
 
   def send_oauth_confirmation_instructions
-    if oauth_email != email
+    if oauth_email != email || confirmed_at.nil?
       update(confirmed_at: nil)
       send_confirmation_instructions
     end

@@ -536,10 +536,6 @@ bg:
           attributes:
             segment_recipient:
               invalid: "Сегментът на получателите на потребители е невалиден"
-        map_location:
-          attributes:
-            map:
-              invalid: Местоположението на картата не може да бъде празно. Поставете маркер или поставете отметка в квадратчето, ако не е необходима геолокализация
         poll/voter:
           attributes:
             document_number:

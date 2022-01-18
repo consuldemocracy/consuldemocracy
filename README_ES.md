@@ -20,7 +20,7 @@ Aplicación de Participación Ciudadana y Gobierno Abierto
 [![A11y issues checked with Rocket Validator](https://rocketvalidator.com/badges/checked_with_rocket_validator.svg?url=https://rocketvalidator.com)](https://rocketvalidator.com/opensource)
 
 [![Join the chat at https://gitter.im/consul/consul](https://badges.gitter.im/consul/consul.svg)](https://gitter.im/consul/consul?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Help wanted](https://img.shields.io/badge/help-wanted-brightgreen.svg?style=flat-square)](https://github.com/consul/consul/issues?q=is%3Aissue+is%3Aopen+label%3A"help+wanted")
+[![Help wanted](https://img.shields.io/badge/help-wanted-brightgreen.svg?style=flat-square)](https://github.com/consul/consul/issues?q=is%3Aopen+label%3A"help+wanted")
 
 Este es el repositorio de código abierto de la Aplicación de Participación Ciudadana CONSUL, creada originariamente por el Ayuntamiento de Madrid.
 
@@ -36,7 +36,7 @@ Puedes acceder a la página principal del proyecto en [http://consulproject.org]
 
 **NOTA**: para unas instrucciones más detalladas consulta la [documentación](https://docs.consulproject.org)
 
-Prerequisitos: tener instalado git, Ruby 2.6.7, CMake, pkg-config, shared-mime-info, Node.js y PostgreSQL (9.5 o superior).
+Prerequisitos: tener instalado git, Ruby 2.7.4, CMake, pkg-config, shared-mime-info, Node.js y PostgreSQL (9.5 o superior).
 
 ```bash
 git clone https://github.com/consul/consul.git

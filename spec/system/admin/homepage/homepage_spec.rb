@@ -35,7 +35,9 @@ describe "Homepage", :admin do
 
       within("#widget_feed_#{proposals_feed.id}") do
         select "1", from: "widget_feed_limit"
-        click_button "Enable"
+        click_button "No"
+
+        expect(page).to have_button "Yes"
       end
 
       visit root_path
@@ -54,7 +56,9 @@ describe "Homepage", :admin do
       visit admin_homepage_path
       within("#widget_feed_#{debates_feed.id}") do
         select "2", from: "widget_feed_limit"
-        click_button "Enable"
+        click_button "No"
+
+        expect(page).to have_button "Yes"
       end
 
       visit root_path
@@ -73,7 +77,9 @@ describe "Homepage", :admin do
       visit admin_homepage_path
       within("#widget_feed_#{processes_feed.id}") do
         select "3", from: "widget_feed_limit"
-        click_button "Enable"
+        click_button "No"
+
+        expect(page).to have_button "Yes"
       end
 
       visit root_path
@@ -89,7 +95,9 @@ describe "Homepage", :admin do
 
       within("#widget_feed_#{budgets_feed.id}") do
         select "2", from: "widget_feed_limit"
-        click_button "Enable"
+        click_button "No"
+
+        expect(page).to have_button "Yes"
       end
 
       visit root_path
@@ -104,10 +112,11 @@ describe "Homepage", :admin do
       budget = create(:budget)
 
       visit admin_homepage_path
-
       within("#widget_feed_#{budgets_feed.id}") do
-        select "1", from: "widget_feed_limit"
-        click_button "Enable"
+        select "3", from: "widget_feed_limit"
+        click_button "No"
+
+        expect(page).to have_button "Yes"
       end
 
       budget.current_phase.update!(description: "<p>Description of the phase with a link to "\
@@ -165,11 +174,12 @@ describe "Homepage", :admin do
     create(:proposal, tag_list: "Sport")
 
     visit admin_homepage_path
-    within("#setting_#{user_recommendations.id}") do
-      click_button "Enable"
-    end
 
-    expect(page).to have_content "Value updated"
+    within("#edit_setting_#{user_recommendations.id}") do
+      click_button "No"
+
+      expect(page).to have_button "Yes"
+    end
 
     login_as(user)
     visit root_path

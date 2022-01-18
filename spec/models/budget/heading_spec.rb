@@ -338,4 +338,33 @@ describe Budget::Heading do
       expect(build(:budget_heading, group: group, price: nil)).not_to be_valid
     end
   end
+
+  describe "#name_scoped_by_group" do
+    it "returns heading name in budgets with a single heading" do
+      heading = create(:budget_heading, group: group, name: "One and only")
+
+      expect(heading.name_scoped_by_group).to eq "One and only"
+    end
+
+    it "returns heading name in budgets with one group and many headings" do
+      schools = create(:budget_heading, group: group, name: "Schools")
+      universities = create(:budget_heading, group: group, name: "Universities")
+
+      expect(schools.name_scoped_by_group).to eq "Schools"
+      expect(universities.name_scoped_by_group).to eq "Universities"
+    end
+
+    it "returns heading name in groups with many headings in budgets with many groups" do
+      education = create(:budget_group, budget: budget, name: "Education")
+      health = create(:budget_group, budget: budget, name: "Health")
+
+      schools = create(:budget_heading, group: education, name: "Schools")
+      universities = create(:budget_heading, group: education, name: "Universities")
+      supplies = create(:budget_heading, group: health, name: "Medical supplies")
+
+      expect(schools.name_scoped_by_group).to eq "Education: Schools"
+      expect(universities.name_scoped_by_group).to eq "Education: Universities"
+      expect(supplies.name_scoped_by_group).to eq "Health: Medical supplies"
+    end
+  end
 end

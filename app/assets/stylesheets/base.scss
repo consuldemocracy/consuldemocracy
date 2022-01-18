@@ -19,6 +19,7 @@
 // ------------------------------
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import "font-awesome/icons";
 
 body,
 h1,
@@ -448,8 +449,17 @@ body > header,
 
 .top-bar {
   background: #fff !important;
+  justify-content: space-between;
+
+  .menu {
+    border-bottom: 0;
+  }
 
   .menu > li {
+
+    a {
+      line-height: $line-height * 2;
+    }
 
     a,
     .button {
@@ -479,17 +489,17 @@ body > header,
   @include breakpoint(medium) {
     padding-bottom: $line-height;
     padding-top: $line-height;
-  }
 
-  &::before {
-    background: $brand;
-    content: "";
-    height: 100%;
-    left: -999%;
-    position: absolute;
-    top: 0;
-    width: 999%;
-    z-index: -1;
+    &::before {
+      background: $brand;
+      content: "";
+      height: 100%;
+      left: -999%;
+      position: absolute;
+      top: 0;
+      width: 999%;
+      z-index: -1;
+    }
   }
 
   a {
@@ -500,6 +510,14 @@ body > header,
     img {
       height: 100% !important;
     }
+  }
+}
+
+.top-bar .top-bar-title {
+
+  @include breakpoint(medium) {
+    flex: unset;
+    flex-grow: unset;
   }
 }
 
@@ -528,6 +546,7 @@ body > header,
 }
 
 .menu-icon {
+  @include hamburger($color: $brand, $color-hover: $brand);
 
   &.dark {
 
@@ -545,6 +564,10 @@ body > header,
   box-shadow: 0 7px 0 $brand, 0 14px 0 $brand;
 }
 
+.menu-button {
+  color: $brand;
+}
+
 .subnavigation {
   background: $light;
   padding: $line-height / 2 0;
@@ -552,6 +575,8 @@ body > header,
 
 .subnavigation a {
   color: $text;
+  font-size: 16px;
+  line-height: $line-height * 2;
   position: relative;
 
   @include breakpoint(medium) {
@@ -611,7 +636,7 @@ body > header,
         display: block;
         position: absolute;
         right: -7px;
-        top: 20px;
+        top: 22px;
       }
 
       > a::after {
@@ -631,7 +656,7 @@ body > header,
     }
 
     a {
-      font-size: rem-calc(16);
+      font-size: 16px;
       padding-left: $line-height / 4;
       padding-right: $line-height / 4;
     }
@@ -654,6 +679,11 @@ body > header,
   }
 }
 
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+  border-top-color: transparent;
+  margin-top: -8px;
+}
+
 .top-bar {
 
   .avatar {
@@ -671,6 +701,10 @@ body > header,
       top: -8px;
     }
   }
+}
+
+.public > .wrapper > header::after {
+  border-bottom: 0;
 }
 
 // 2. Homepage and custom pages

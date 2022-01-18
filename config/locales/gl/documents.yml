@@ -1,6 +1,8 @@
 gl:
   documents:
     title: Documentos
+    max_documents_allowed_reached: Chegaches ao número máximo de documentos que se permiten! <strong>Tes que borrar un antes de subires outro.</strong>
+    additional: Documentación adicional
     form:
       title: Documentos
       title_placeholder: Engade un título descritivo para o documento

@@ -113,3 +113,17 @@ zh-CN:
       form:
         tags_label: "类别"
       not_verified: "为投票提议%{verify_account}。"
+      process_title: 合作立法进程
+    summary:
+      title: "总结"
+      votes:
+        zero: "%{count} 个投票"
+        other: "%{count} 个投票"
+      debate_phase: "辩论阶段"
+      proposals_phase: "提议阶段"
+      allegations_phase: "评论阶段"
+      comments:
+        zero: "没有评论"
+        other: "%{count} 个评论"
+      top_comments:
+        zero: "没有评论"

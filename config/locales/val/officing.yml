@@ -16,6 +16,18 @@ val:
         no_polls: No tens permís per al recompte final en cap votació recent
         select_poll: Selecciona votació
         add_results: Afegir resultats
+    poll_budgets:
+      index:
+        ballot_sheet_name: Nom
+        ballot_sheet_author: Autor
+        ballot_sheet_creation_date: Data creació
+      new:
+        booth: Urna
+        select_booth: Eligeix urna
+        submit: Guardar
+      show:
+        created_at: Data creació
+        author: Autor
     results:
       flash:
         create: "Resultats guardats"
@@ -47,7 +59,6 @@ val:
         not_allowed: "Hui no tens torn de president de taula"
       new:
         title: Validar document i votar
-        document_number: "Número de document (inclosa lletra)"
         submit: Validar document i votar
         error_verifying_census: "El Padró no ha pogut verificar aquest document."
         form_errors: evitaren verificar aquest document

@@ -4,6 +4,9 @@ mk:
     results_enabled: "Покажи резултати"
     stats_enabled: "Покажи статистики"
     advanced_stats_enabled: "Покажи напредни статистики"
+    name: Име
+    email: Е-пошта
+    description: Опис
   activerecord:
     models:
       activity:
@@ -210,6 +213,7 @@ mk:
         ends_at: "Краен датум"
         starts_at: "Почетен датум"
       budget/phase/translation:
+        name: "Име"
         description: "Опис"
         summary: "Краток опис"
       comment:
@@ -268,6 +272,7 @@ mk:
         responsible_name: "Личност одговорна за групата"
       poll:
         name: "Име"
+        title: "Име"
         starts_at: "Почетен датум"
         ends_at: "Краен датум"
         geozone_restricted: "Ограничено од геозона"
@@ -304,6 +309,16 @@ mk:
         signable_type: "Тип за потпис"
         signable_id: "Идентификација за потпис"
         document_numbers: "Број на документ"
+      sdg/goal:
+        title: "Наслов"
+        description: "Опис"
+      sdg/local_target:
+        title: "Наслов"
+      sdg/local_target/translation:
+        title: "Наслов"
+        description: "Опис"
+      sdg/target:
+        title: "Наслов"
       site_customization/page:
         content: Содржина
         created_at: Креирано на
@@ -496,14 +511,12 @@ mk:
           attributes:
             segment_recipient:
               invalid: "Сегментот на корисници што примаат не е валиден"
-        map_location:
-          attributes:
-            map:
-              invalid: Локацијата на мапата не може да биде празна. Поставете означувач или изберете од опциите ако геолокализација не е потребна
         poll/voter:
           attributes:
             document_number:
               not_in_census: "Документот не е во цензусот"
+            user_id:
+              has_voted: "Корисникот веќе гласал"
         legislation/process:
           attributes:
             end_date:

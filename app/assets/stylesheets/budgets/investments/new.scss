@@ -1,0 +1,7 @@
+.budget-investment-new {
+  @extend %public-form-header;
+
+  h1 {
+    @include has-fa-icon(chart-pie, solid, after);
+  }
+}

@@ -5,10 +5,7 @@ el:
       erase_account_link: Διαγράψτε το λογαριασμό μου
       finish_verification: Ολοκλήρωση επαλήθευσης
       notifications: Ειδοποιήσεις
-      organization_name_label: Όνομα οργανισμού
-      organization_responsible_name_placeholder: Εκπρόσωπος της οργάνωσης/συλλόγου
       personal: Προσωπικά στοιχεία
-      phone_number_label: Αριθμός τηλεφώνου
       public_interests_my_title_list: Ετικέτες στοιχείων που ακολουθείτε
       public_interests_user_title_list: Ετικέτες στοιχείων που ακολουθεί αυτός ο χρήστης
       save_changes_submit: Αποθηκεύστε τις αλλαγές
@@ -22,7 +19,6 @@ el:
       user_permission_verify: Για να εκτελέσετε όλες τις ενέργειες, επαληθεύστε το λογαριασμό σας.
       user_permission_verify_info: "* Μόνο για τους χρήστες που βρίσκονται στην απογραφή."
       user_permission_votes: Συμμετοχή στην τελική ψηφοφορία
-      username_label: Όνομα χρήστη
       verified_account: Ο λογαριασμός σας έχει επαληθευθεί
       verify_my_account: Επαλήθευση του λογαριασμού μου
   application:
@@ -62,7 +58,6 @@ el:
       newest: Τα νεότερα πρώτα
       oldest: Τα παλιότερα πρώτα
       most_commented: Με τα περισσότερα σχόλια
-    select_order: Ταξινόμηση κατά
     show:
       return_to_commentable: "Πήγαινε πίσω στο "
   comments_helper:
@@ -90,7 +85,6 @@ el:
         submit_button: Αποθήκευση αλλαγών
       show_link: Προβολή συζήτησης
     form:
-      debate_title: Τίτλος συζήτησης
       tags_instructions: Προσθήκη ετικέτας σε αυτή τη συζήτηση.
       tags_placeholder: "Εισαγάγετε τις ετικέτες που θα θέλατε να χρησιμοποιήσετε, διαχωρισμένες με κόμματα (',')"
     index:
@@ -113,7 +107,9 @@ el:
         button: Αναζήτηση
         placeholder: Αναζήτηση συζητήσεων...
         title: Αναζήτηση
-      select_order: Ταξινόμηση κατά
+      search_results:
+        one: " που εμπεριέχει τον όρο <strong>'%{search_term}'</strong>"
+        other: " που εμπεριέχει τον όρο <strong>'%{search_term}'</strong>"
       start_debate: Ξεκινήστε μια συζήτηση
       title: Συζητήσεις
       section_header:
@@ -128,8 +124,6 @@ el:
     new:
       form:
         submit_button: Ξεκινήστε μια συζήτηση
-      info: Εαν επιθυμήτε να δημιουργήσετε μια πρόταση, αυτή είναι η λάθος ενότητα, πληκτρολογήστε %{info_link}.
-      info_link: δημιουργήστε νέα πρόταση
       more_info: Περισσότερες πληροφορίες
       recommendation_four: Απολαύστε το χώρο αυτό και τις φωνές που τον γεμίζουν. Ο χώρος αυτός είναι και δικός σας.
       recommendation_one: Μη χρησιμοποιείτε κεφαλαία γράμματα στον τίτλο συζήτησης ή σε ολόκληρες προτάσεις. Στο διαδίκτυο, αυτό θεωρείται ότι φωνάζετε. Και σε κανένα δεν αρέσει να του φωνάζουν.
@@ -163,6 +157,7 @@ el:
     direct_message: προσωπικό μήνυμα
     error: σφάλμα
     errors: σφάλματα
+    not_saved: "ένα σφάλμα μας εμπόδισε να αποθηκεύσουμε αυτό το %{resource}. <br>Ελέγξτε τα επιλεγμένα πεδία για να δείτε πώς μπορούν να διορθωθούν:"
     policy: Πολιτική Απορρήτου
     proposal: Πρόταση
     proposal_notification: "Ειδοποιήσεις"
@@ -177,6 +172,7 @@ el:
     document: Έγγραφο
     topic: Θέμα
     image: Εικόνα
+    sdg/local_target: τοπικός στόχος
   geozones:
     none: Σε όλη την πόλη
   layouts:
@@ -216,7 +212,6 @@ el:
     header:
       administration_menu: Μενού
       administration: Διαχείριση
-      available_locales: Διαθέσιμες γλώσσες
       collaborative_legislation: Συνεργατική νομοθεσία
       debates: Συζητήσεις
       locale: "Γλώσσα:"
@@ -237,6 +232,7 @@ el:
           one: Έχετε μια νέα ειδοποίηση
           other: Έχετε %{count} νέες ειδοποιήσεις
         notifications: Ειδοποιήσεις
+      sdg: "ΣΒΑ"
   notifications:
     index:
       empty_notifications: Δεν έχετε νέες ειδοποιήσεις.
@@ -278,6 +274,9 @@ el:
       sign_in: Σύνδεση μέσω Twitter
       sign_up: Εγγραφή μέσω Twitter
       name: Twitter
+    info:
+      sign_in: "Σύνδεση με:"
+      sign_up: "Εγγραφή με:"
     or_fill: "Ή συμπληρώστε την παρακάτω φόρμα:"
   proposals:
     create:
@@ -286,6 +285,7 @@ el:
     created:
       title: Συγχαρητήρια! Έχετε κάνει το πρώτο βήμα.
       motivation: "Είναι σημαντικό να προετοιμάσετε την εκστρατεία έναρξης ώστε η πρότασή σας να είναι επιτυχής. Οι πρώτες μέρες είναι καθοριστικές."
+      motivation_2: "<strong>Αν θέλετε προτάσεις για την προετοιμασία της έκδοσης, αφήστε την πρότασή σας ως σχέδιο και θα σας καθοδηγήσουμε.</strong>"
       publish: Όχι, θέλω να δημοσιεύσω την πρόταση
       dashboard: Ναι, θέλω βοήθεια και θα δημοσιεύσω αργότερα
       preview_title: Με τη δημοσιεύση της, η πρόταση σας θα εμφανίζεται με αυτό τον τρόπο
@@ -321,7 +321,6 @@ el:
       map_location: "Χάρτης τοποθεσίας"
       map_location_instructions: "Περιηγηθείτε στο χάρτη προς την τοποθεσία και τοποθετήστε το δείκτη."
       map_remove_marker: "Αφαιρέστε τον δείκτη του χάρτη"
-      map_skip_checkbox: "Η πρόταση αυτή δεν έχει μια συγκεκριμένη τοποθεσία ή δεν έχω επίγνωση για αυτήν."
     index:
       featured_proposals: Προτεινόμενα
       orders:
@@ -356,7 +355,9 @@ el:
         button: Αναζήτηση
         placeholder: Αναζήτηση προτάσεων...
         title: Αναζήτηση
-      select_order: Ταξινόμηση κατά
+      search_results:
+        one: " που εμπεριέχει τον όρο <strong>'%{search_term}'</strong>"
+        other: " που εμπεριέχει τον όρο <strong>'%{search_term}'</strong>"
       select_order_long: "Βλέπετε τις προτάσεις σύμφωνα με:"
       start_proposal: Δημιουργία πρότασης
       title: Προτάσεις
@@ -442,6 +443,7 @@ el:
       poster: Αφίσα
       recommended_actions: Συνιστώμενες ενέργειες
       messages: Μήνυμα προς τους χρήστες
+      related_content: Σχετικό περιεχόμενο
     form:
       request: Αίτημα
     create_request:
@@ -563,6 +565,7 @@ el:
         sent: Το E-mail έχει αποσταλεί
     mailer:
       forward:
+        subtitle: "Αν με στηρίξετε, <br> θα το πετύχουμε."
         support_button: Στηρίξτε την πρότασή μου
         share_in: Μοιραστείτε το στο
         hi: "Γεια σας!"
@@ -602,6 +605,7 @@ el:
       back: Πίσω στην ψηφοφορία
       cant_answer_not_logged_in: "Θα πρέπει να %{signin} ή %{signup} για να συμμετάσχετε."
       comments_tab: Σχόλια
+      cant_answer_verify: "Θα πρέπει να %{verify_link} προκειμένου να απαντήσετε."
       verify_link: "επαλήθευση του λογαριασμού σας"
       cant_answer_expired: "Αυτή τη δημοσκόπηση έχει ολοκληρωθεί."
       cant_answer_wrong_geozone: "Αυτή η ερώτηση δεν είναι διαθέσιμη στο geozone σας."
@@ -642,14 +646,13 @@ el:
       back: "Πίσω στη δραστηριότητά μου"
   shared:
     edit: "Επεξεργασία"
+    filter: "Φίλτρο"
     save: "Αποθήκευση"
     delete: "Διαγραφή"
     "yes": "Ναι"
     "no": "Όχι"
     search_results: "Αναζήτηση αποτελεσμάτων"
     advanced_search:
-      author_type: "Κατά κατηγορία συντάκτη"
-      author_type_blank: "Επιλέξτε μια κατηγορία"
       date: "Ανά ημερομηνία"
       date_placeholder: "ΗΗ/ΜΜ/ΕΕΕΕ"
       date_range_blank: "Διάλεξε ημερομηνία"
@@ -660,7 +663,6 @@ el:
       date_5: "Προσαρμοσμένα"
       from: "Από"
       general: "Με το κείμενο"
-      general_placeholder: "Σύνταξη κειμένου"
       search: "Φίλτρο"
       title: "Προχωρημένη Αναζήτηση"
       to: "Σε"
@@ -704,6 +706,7 @@ el:
       districts: "Περιοχές"
       districts_list: "Λίστα περιοχών"
       categories: "Κατηγορίες"
+    target_blank: " (οι σύνδεσμοι ανοίγουν σε νέο παράθυρο)"
     you_are_in: "Βρίσκεστε στο"
     unflag: Αφαίρεση σημαίας
     unfollow_entity: "Σταματήστε να ακολουθείτε %{entity}"
@@ -723,6 +726,9 @@ el:
       title: Συστάσεις
       see_more: Δείτε περισσότερες συστάσεις
       hide: Απόκρυψη των συστάσεων
+    translations:
+      remove_language: Κατάργηση γλώσσας
+      add_language: Προσθήκη γλώσσας
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -746,6 +752,11 @@ el:
     manage:
       all: "Δεν έχετε άδεια εκτέλεσης της ενέργειας '%{action}' στο %{subject}."
   users:
+    login_to_comment: "Πρέπει να %{signin} ή %{signup} για να αφήσετε ένα σχόλιο."
+    login_to_continue: "Θα πρέπει να %{signin} ή %{signup} για να συνεχίσετε."
+    signin: "είσοδος"
+    signup: "εγγραφή"
+    verify_account: "επαλήθευση του λογαριασμού σας"
     direct_messages:
       new:
         direct_messages_bloqued: "Αυτός ο χρήστης αποφάσισε να μην λάμβάνει άμεσα μηνύματα"
@@ -889,9 +900,6 @@ el:
       title: Σύνδεσμοι
       note: Προσθέστε τους συνδέσμους που σας ενδιαφέρουν
       add_new_link: Πρόσθήκη νέου συνδέσμου
-    link_fields:
-      label_placeholder: Τίτλος συνδέσμου
-      url_placeholder: Διεύθυνση συνδέσμου
   communities:
     show:
       surveys: Δημοσκοπήσεις

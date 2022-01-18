@@ -12,9 +12,8 @@ mk:
         headers:
           comment: Коментирај
           moderate: Модерирај
-        hide_comments: Сокриј коментари
+        hide: Сокриј коментари
         ignore_flags: Означи како прегледано
-        order: Ред
         orders:
           flags: Најобележан
           newest: Најново
@@ -34,9 +33,8 @@ mk:
         headers:
           debate: Дебатирај
           moderate: Модерирај
-        hide_debates: Скриј дебати
+        hide: Скриј дебати
         ignore_flags: Означи како прегледано
-        order: Ред
         orders:
           created_at: Најново
           flags: Најобележан
@@ -62,9 +60,8 @@ mk:
         headers:
           moderate: Модерирај
           proposal: Предлог
-        hide_proposals: Скриј предлози
+        hide: Скриј предлози
         ignore_flags: Означи како прегледано
-        order: Подреди според
         orders:
           created_at: Најново
           flags: Најобележано
@@ -81,3 +78,28 @@ mk:
         headers:
           moderate: Модерирај
           budget_investment: Буџетски инвестиции
+        ignore_flags: Означи како прегледано
+        orders:
+          created_at: Најново
+          flags: Најобележан
+        title: Буџетски инвестиции
+    proposal_notifications:
+      index:
+        block_authors: Блокирај ги авторите
+        confirm: Дали сте сигурни?
+        filter: Филтрирај
+        filters:
+          all: Сите
+          pending_review: Во очекување на извештај
+          ignored: Означи како прегледано
+        headers:
+          moderate: Модерирај
+          proposal_notification: Предлог нотификација
+        hide: Скриј предлози
+        ignore_flags: Означи како прегледано
+        orders:
+          created_at: Најново
+        title: Предлог нотификации
+    users:
+      index:
+        title: Блокирај корисници

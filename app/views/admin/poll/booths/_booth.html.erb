@@ -7,16 +7,13 @@
   </td>
   <td>
     <% if controller_name == "shifts" || controller_name == "booths" && action_name == "available" %>
-      <%= render Admin::TableActionsComponent.new(actions: []) do |actions| %>
-        <%= actions.link_to t("admin.booths.booth.shifts"),
-                            new_admin_booth_shift_path(booth),
-                            class: "shifts-link" %>
+      <%= render Admin::TableActionsComponent.new(booth, actions: []) do |actions| %>
+        <%= actions.action(:shifts,
+                           text: t("admin.booths.booth.shifts"),
+                           path: new_admin_booth_shift_path(booth)) %>
       <% end %>
     <% else %>
-      <%= render Admin::TableActionsComponent.new(booth,
-        actions: [:edit],
-        edit_text: t("admin.booths.booth.edit")
-      ) %>
+      <%= render Admin::TableActionsComponent.new(booth, actions: [:edit]) %>
     <% end %>
   </td>
 </tr>

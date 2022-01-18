@@ -5,9 +5,17 @@ class Admin::Budgets::HelpComponent < ApplicationComponent
     @i18n_namespace = i18n_namespace
   end
 
+  def budget_mode
+    (helpers.budget_mode if helpers.respond_to?(:budget_mode)).presence || "multiple"
+  end
+
   private
 
     def text
-      t("admin.#{i18n_namespace}.index.help")
+      if t("admin.budgets.help.#{i18n_namespace}").is_a?(Hash)
+        t("admin.budgets.help.#{i18n_namespace}.#{budget_mode}")
+      else
+        t("admin.budgets.help.#{i18n_namespace}")
+      end
     end
 end

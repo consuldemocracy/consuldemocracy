@@ -1,3 +1,5 @@
+require "airbrake/delayed_job" if defined?(Delayed)
+
 Airbrake.configure do |config|
   config.host = Rails.application.secrets.errbit_host
   config.project_id = Rails.application.secrets.errbit_project_id

@@ -1,6 +1,7 @@
 bs:
   documents:
     title: Dokumenti
+    max_documents_allowed_reached: Došli ste do maksimalnog broja dozvoljenih dokumenata! <strong> Morate obrisati jedan kako bi mogli učitati drugi.</strong>
     additional: Dodatna dokumentacija
     form:
       title: Dokumenti

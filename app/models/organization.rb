@@ -24,13 +24,11 @@ class Organization < ApplicationRecord
   end
 
   def verified?
-    verified_at.present? &&
-      (rejected_at.blank? || rejected_at < verified_at)
+    verified_at.present? && (rejected_at.blank? || rejected_at < verified_at)
   end
 
   def rejected?
-    rejected_at.present? &&
-      (verified_at.blank? || verified_at < rejected_at)
+    rejected_at.present? && (verified_at.blank? || verified_at < rejected_at)
   end
 
   def self.search(text)

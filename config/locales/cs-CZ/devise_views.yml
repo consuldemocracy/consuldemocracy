@@ -2,7 +2,6 @@ cs:
   devise_views:
     confirmations:
       new:
-        email_label: Email
         submit: Opětovné odeslání pokynů
         title: Opětovné zaslání pokynů k potvrzení
       show:
@@ -39,12 +38,7 @@ cs:
     organizations:
       registrations:
         new:
-          email_label: Email
-          organization_name_label: Název organizace
           password_confirmation_label: Potvrďte heslo
-          password_label: Heslo
-          phone_number_label: Telefonní číslo
-          responsible_name_label: Úplné jméno osoby odpovědné za organizaci / kolektiv
           responsible_name_note: Měla by být osoba zastupující a prezentující organizaci / kolektiv
           submit: Registrovat se
           title: Zaregistrujte se jako organizace nebo kolektiv
@@ -62,13 +56,10 @@ cs:
         password_label: Nové heslo
         title: Změňte si své heslo
       new:
-        email_label: Email
         send_submit: Odeslat instrukce
         title: Zapomněli jste heslo?
     sessions:
       new:
-        login_label: Email nebo uživatelské jméno
-        password_label: Heslo
         remember_me: Zapamatovat si
         submit: Odeslat
         title: Přihlásit se
@@ -106,12 +97,9 @@ cs:
           waiting_for: "Čeká na potvrzení:"
         new:
           cancel: Zrušit přihlášení
-          email_label: Email
           organization_signup: Zastupujete organizaci nebo kolektiv? %{signup_link}
           organization_signup_link: Registrujte se zde
           password_confirmation_label: Potvrdit heslo
-          password_label: Heslo
-          redeemable_code: Ověřovací kód získat e-mailem (volitelně)
           submit: Registrovat se
           terms: Registrováním souhlasíte se %{terms}
           terms_link: zpracováním osobních údajů a podmínkami používání portálu
@@ -119,7 +107,6 @@ cs:
           title: Registrovat se
           username_is_available: Uživatelské jméno je k dispozici
           username_is_not_available: Uživatelské jméno je již použito
-          username_label: Uživatelské jméno
           username_note: Název, který se zobrazí vedle vašich příspěvků
         success:
           back_to_index: Rozumím; jít zpět na hlavní stránku

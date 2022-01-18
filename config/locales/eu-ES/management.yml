@@ -42,14 +42,12 @@ eu:
       title: Erabiltzaile kudeaketa
       under_age: "Ez duzu adin nahiko zure kontua egiaztatzeko."
       verify: Erabiltzailea egiaztatu
-    email_label: E-mail
     date_of_birth: Jaiotze data
     email_verifications:
       already_verified: Erabiltzaile kontu hau egiaztatuta dago.
       choose_options: "Hurrengo aukeretatik bat aukeratu:"
       document_found_in_census: Agiri hau udal erroldan dago, baina oraindik ez zaio erabiltzaile kontu bat elkartu.
       document_mismatch: "Email hori agiria elkartuta duen erabiltzaile bateri dagokio %{document_number}(%{document_type})"
-      email_placeholder: Erregistroaren email sartu
       email_sent_instructions: Kontua egiaztatzeko linka email batean bialdu dizugu  zuk emandako email helbidera. Beharrezkoa da bertan klikatzea kontua egiaztatzeko.
       if_existing_account: Pertsonak web orrian erabiltzaile kontua sortu badu
       if_no_existing_account: Oraindik pertsonak ez badu web orrian erabiltzaile kontua sortu

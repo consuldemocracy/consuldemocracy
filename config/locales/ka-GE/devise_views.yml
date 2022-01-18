@@ -2,7 +2,6 @@ ka:
   devise_views:
     confirmations:
       new:
-        email_label: ელ.ფოსტა
         submit: ინსტრუქციის ხელახლა გაგზავნა
         title: დადასტურების ინსტრუქციის ხელახლა გაგზავნა
       show:
@@ -39,12 +38,7 @@ ka:
     organizations:
       registrations:
         new:
-          email_label: ელ.ფოსტა
-          organization_name_label: ორგანიზაციის დასახელება
           password_confirmation_label: პაროლის დადასტურება
-          password_label: პაროლი
-          phone_number_label: ტელეფონის ნომერი
-          responsible_name_label: პასუხისმგებელი პირის სრული სახელი
           responsible_name_note: ეს იქნება ასოციაციის/ჯგუფის წარმომადგენელი პიროვნება, ვისი სახელითაც მოხდება ინიციატივების წარდგენა
           submit: რეგისტრაცია
           title: რეგისტრაცია, როგორც ორგანიზაცია, ან ჯგუფი
@@ -62,13 +56,10 @@ ka:
         password_label: ახალი პაროლი
         title: პაროლის შეცვლა
       new:
-        email_label: ელ.ფოსტა
         send_submit: ინსტრუქციის გაგზავნა
         title: დაგავიწყდა პაროლი?
     sessions:
       new:
-        login_label: ელ.ფოსტა ან მომხმარებლის სახელი
-        password_label: პაროლი
         remember_me: დამახსოვრება
         submit: შესვლა
         title: ავტორიზაცია
@@ -106,12 +97,9 @@ ka:
           waiting_for: "ველოდებით დადასტურებას:"
         new:
           cancel: ავტორიზაციის გაუქმება
-          email_label: ელ.ფოსტა
           organization_signup: ორგანიზაციას, ან ჯგუფს წარმოადგენთ? %{signup_link}
           organization_signup_link: დარეგისტრირდით აქ
           password_confirmation_label: პაროლის დადასტურება
-          password_label: პაროლი
-          redeemable_code: ელ.ფოსტით მიღებული დადასტურების კოდი (არასავალდებულო)
           submit: რეგისტრაცია
           terms: რეგისტრაციით თქვენ ეთანხმებით %{terms}
           terms_link: სარგებლობის წესებსა და პირობებს
@@ -119,7 +107,6 @@ ka:
           title: რეგისტრაცია
           username_is_available: მომხმარებლის სახელი ხელმისაწვდომია
           username_is_not_available: მომხმარებლის სახელი დაკავებულია
-          username_label: მომხმარებლის სახელი
           username_note: სახელი, რომელიც თქვენი პოსტების გევრდით გამოჩნდება
         success:
           back_to_index: გასაგებია; მთავარ გვერდზე დაბრუნება

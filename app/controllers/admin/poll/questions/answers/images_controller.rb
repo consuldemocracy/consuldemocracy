@@ -7,11 +7,9 @@ class Admin::Poll::Questions::Answers::ImagesController < Admin::Poll::BaseContr
   end
 
   def new
-    @answer = ::Poll::Question::Answer.find(params[:answer_id])
   end
 
   def create
-    @answer = ::Poll::Question::Answer.find(params[:answer_id])
     @answer.attributes = images_params
 
     if @answer.save

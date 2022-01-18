@@ -6,7 +6,6 @@
 <%= render "/budgets/investments/investment_show",
   investment: @investment,
   investment_ids: @investment_ids,
-  investment_votes: @investment_votes,
   ballot: @ballot %>
 
 <div class="row">
@@ -17,6 +16,8 @@
 
 <div class="tabs-content" data-tabs-content="investments_tabs">
   <div class="tabs-panel is-active" id="tab-comments">
+    <%= render MachineLearning::CommentsSummaryComponent.new(@investment) %>
+
     <%= render "/comments/comment_tree", comment_tree: @comment_tree,
                                          display_comments_count: false %>
   </div>

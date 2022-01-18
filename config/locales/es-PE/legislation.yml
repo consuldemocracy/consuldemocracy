@@ -113,10 +113,13 @@ es-PE:
       form:
         tags_label: "Categorías"
       not_verified: "Para votar propuestas %{verify_account}."
+      process_title: Proceso de legislación colaborativa
     summary:
       title: "Resumen"
       votes:
         zero: "%{count} votos"
+        one: "%{count} voto"
+        other: "%{count} votos"
       debate_phase: "Fase de debate"
       proposals_phase: "Fase de propuestas"
       allegations_phase: "Fase de comentarios"
@@ -126,3 +129,9 @@ es-PE:
         other: "%{count} debates"
       proposals:
         zero: "No hay propuestas"
+      comments:
+        zero: "Sin comentarios"
+        one: "%{count} comentario"
+        other: "%{count} Comentarios"
+      top_comments:
+        zero: "Sin comentarios"

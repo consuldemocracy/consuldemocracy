@@ -37,10 +37,6 @@ class DirectUpload
     @relation.attachment.save
   end
 
-  def destroy_attachment
-    @relation.attachment.destroy
-  end
-
   def persisted?
     false
   end
@@ -57,7 +53,7 @@ class DirectUpload
 
     def relation_attributtes
       {
-        attachment: @attachment,
+        paperclip_attachment: @attachment,
         cached_attachment: @cached_attachment,
         user: @user
       }

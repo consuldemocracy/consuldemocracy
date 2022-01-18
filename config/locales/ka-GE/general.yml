@@ -5,10 +5,7 @@ ka:
       erase_account_link: ჩემი ანგარიშის წაშლა
       finish_verification: ვერიფიკაციის დასრულება
       notifications: შეტყობინებები
-      organization_name_label: ორგანიზაციის დასახელება
-      organization_responsible_name_placeholder: ორგანიზაციის/ჯგუფის წარმომადგენელი
       personal: პერსონალური მონაცემები
-      phone_number_label: ტელეფონის ნომერი
       public_interests_my_title_list: იმ ელემენტების ტეგები, რომლებსაც თქვენ მიჰყვებით
       public_interests_user_title_list: იმ ელემენტების ტეგები, რომლებსაც ეს მომხმარებელი მიჰყვება
       save_changes_submit: ცვლილებების შენახვა
@@ -22,7 +19,6 @@ ka:
       user_permission_verify: ყველა ფუნქციით სარგებლობისთვის, გაიარეთ ანგარიშის გადამოწმება.
       user_permission_verify_info: "* მხოლოდ აღწერაში მონაწილე მომხმარებლებისთვის."
       user_permission_votes: საბოლოო კენჭისყრაში მონაწილეობა
-      username_label: მომხმარებლის სახელი
       verified_account: ანგარიში გადამოწმებულია
       verify_my_account: ჩემი ანგარიშის დადასტურება
   application:
@@ -62,7 +58,6 @@ ka:
       newest: უახლესი პირველ რიგში
       oldest: უძველესი პირველ რიგში
       most_commented: ყველაზე მეტი კომენტარის მქონე
-    select_order: დალაგება
     show:
       return_to_commentable: "უკან დაბრუნება "
   comments_helper:
@@ -90,7 +85,6 @@ ka:
         submit_button: ცვლილებების შენახვა
       show_link: დებატის ნახვა
     form:
-      debate_title: დებატების დასახელება
       tags_instructions: დებატის მონიშვნა.
       tags_placeholder: "შეიყვანეთ ის ტეგები, რომელთა გამოყენებაც გსურთ, გამოყავით ისინი მძიმით (',')"
     index:
@@ -116,7 +110,6 @@ ka:
       search_results:
         one: " შეიცავდეს საძიებო სიტყვას <strong>%{search_term}</strong>"
         other: " შეიცავდეს საძიებო სიტყვას <strong>%{search_term}</strong>"
-      select_order: დალაგება
       start_debate: დებატის დაწყება
       title: დებატები
       section_header:
@@ -131,8 +124,6 @@ ka:
     new:
       form:
         submit_button: დებატის დაწყება
-      info: 'თუ გსურთ ინიციატივის გაკეთება, თქვენ არასწორ ადგილას აღმოჩნდით, გადადით შემდეგ ბმულზე: %{info_link}.'
-      info_link: ახალი ინიციატივის შექმნა
       more_info: დამატებითი ინფორმაცია
       recommendation_four: გამოიყენეთ ეს სივრცე საკუთარი აზრის გამოსახატავად.
       recommendation_one: ნუ გამოიყენებთ მხოლოდ დიდ ასოებს დებატის დასასათაურებლად ან წინადადებების შესადგენად.
@@ -229,7 +220,6 @@ ka:
     header:
       administration_menu: მენიუ
       administration: ადმინისტრაცია
-      available_locales: ხელმისაწვდომი ენები
       collaborative_legislation: ერთობლივი სამოქალაქო ინიციატივა
       debates: დებატები
       locale: "ენა:"
@@ -342,7 +332,6 @@ ka:
       map_location: "ლოკაცია რუკაზე"
       map_location_instructions: "დასვით მარკერი რუკის სასურველ პოზიციაზე."
       map_remove_marker: "მარკერის წაშლა"
-      map_skip_checkbox: "ამ ინიციატივას არ აქვს ზუსტად განსაზღვრული ლოკაცია, ან მე მის შესახებ ინფორმაციას არ ვფლობ."
     index:
       featured_proposals: გამორჩეული
       orders:
@@ -380,7 +369,6 @@ ka:
       search_results:
         one: " შეიცავდეს საძიებო სიტყვას <strong>%{search_term}</strong>"
         other: " შეიცავდეს საძიებო სიტყვას <strong>%{search_term}</strong>"
-      select_order: დალაგება
       select_order_long: "ინიციატივები ნაჩვენებია:"
       start_proposal: ახალი ინიციატივის შექმნა
       title: ინიციატივები
@@ -672,14 +660,13 @@ ka:
       back: "'ჩემს აქტივობაში' დაბრუნება"
   shared:
     edit: "რედაქტირება"
+    filter: "ფილტრი"
     save: "დამახსოვრება"
     delete: "წაშლა"
     "yes": "დიახ"
     "no": "არა"
     search_results: "ძებნის შედეგები"
     advanced_search:
-      author_type: "კატეგორიის ავტორის მიხედვით"
-      author_type_blank: "კატეგორიის შერჩევა"
       date: "თარიღის მიხედვით"
       date_placeholder: "DD/MM/YYYY"
       date_range_blank: "თარიღის არჩევა"
@@ -690,7 +677,6 @@ ka:
       date_5: "პერსონალიზებული"
       from: "დან"
       general: "ტექსტით"
-      general_placeholder: "ტექსტის დაწერა"
       search: "ფილტრი"
       title: "დეტალური ძებნა"
       to: "მდე"
@@ -944,9 +930,6 @@ ka:
       title: ბმულები
       note: საინტერესო ბმულების დამატება
       add_new_link: ახალი ბმულის დამატება
-    link_fields:
-      label_placeholder: ბმულის დასახელება
-      url_placeholder: ბმულის მისამართი
   communities:
     show:
       surveys: გამოკითხვები

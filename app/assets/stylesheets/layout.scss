@@ -33,19 +33,49 @@
   @include normal-selection;
 }
 
+html {
+  font-size: calc(0.25em + Max(0.75em, 0.75vw));
+}
+
 html,
 body {
-  height: 100%;
   margin: 0;
+}
+
+html {
+  height: 100%;
 }
 
 body {
   display: flex;
   flex-direction: column;
   font-size: $base-font-size;
+  min-height: 100%;
+
+  &.public {
+    @include breakpoint($global-width) {
+      margin-left: $body-margin;
+      margin-right: $body-margin;
+    }
+  }
 
   > .wrapper {
-    flex: 1;
+    flex-grow: 1;
+  }
+}
+
+main {
+  display: block;
+
+  &.budget-groups-index,
+  &.budget-investment-new,
+  &.debate-new,
+  &.proposal-new,
+  &.sdg-goals-index,
+  &.sdg-goal-show,
+  &.topic-edit,
+  &.topic-new {
+    @include grid-column-gutter;
   }
 }
 
@@ -76,6 +106,27 @@ a {
 
   &:focus {
     color: $link-hover;
+  }
+}
+
+a,
+button,
+[type="button"],
+[type="submit"] {
+  &:focus {
+    outline: $outline-focus;
+  }
+
+  &:focus-visible {
+    outline: $outline-focus;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:active,
+  &:focus:active {
     outline: $outline-focus;
   }
 }
@@ -110,7 +161,7 @@ a {
 
 .button.hollow {
   @include normal-selection;
-  border: 1px solid $link;
+  border: 1px solid;
   color: $link;
 }
 
@@ -145,25 +196,6 @@ a {
 
   &:first-child {
     margin-top: 0;
-  }
-}
-
-.f-dropdown {
-  li a {
-    font-size: $small-font-size;
-
-    &:hover {
-      color: $link-hover;
-    }
-  }
-
-  li:hover,
-  .f-dropdown li:focus {
-    background: #fff;
-  }
-
-  &.open {
-    outline: none;
   }
 }
 
@@ -270,7 +302,7 @@ a {
     }
 
     a {
-      color: $text;
+      color: inherit;
       display: inline-block;
       font-weight: bold;
       position: relative;
@@ -287,12 +319,8 @@ a {
 
     &.is-active {
       @include brand-text;
-      border-bottom: 2px solid $brand;
+      border-bottom: 2px solid;
       padding-bottom: rem-calc(1);
-
-      h2 a {
-        @include brand-text;
-      }
     }
 
     &:not(.is-active) {
@@ -328,7 +356,7 @@ a {
 
     &.is-active {
       @include brand-text;
-      border-bottom: 2px solid $brand;
+      border-bottom: 2px solid;
     }
   }
 
@@ -354,7 +382,6 @@ a {
 }
 
 .close-button {
-  color: $text;
   top: $line-height / 2;
 }
 
@@ -402,8 +429,7 @@ a {
       font-weight: bold;
 
       &::after {
-        background: $brand;
-        border-bottom: 2px solid $brand;
+        border-bottom: 2px solid;
         bottom: 0;
         content: "";
         left: 0;
@@ -471,6 +497,7 @@ a {
     > nav {
       flex: 20%;
       min-width: $side-menu-min-width;
+      max-width: max-content;
 
       + * {
         flex: 80%;
@@ -531,8 +558,7 @@ a {
 
 body > header,
 .wrapper > header {
-  @extend %brand-background;
-  border-bottom: 1px solid $border;
+  @include grid-column-gutter;
   margin-bottom: $line-height;
 
   @include breakpoint(small down) {
@@ -542,24 +568,6 @@ body > header,
 
   .selected {
     border-bottom: 1px solid #fff;
-  }
-
-  .locale {
-    float: left;
-    height: $line-height * 1.5;
-    margin-left: $line-height / 2;
-    position: relative;
-
-    &::after {
-      color: #808080;
-      content: "\61";
-      font-family: "icons" !important;
-      font-size: $small-font-size;
-      pointer-events: none;
-      position: absolute;
-      right: 2px;
-      top: 9px;
-    }
   }
 
   .remote-translations-button {
@@ -583,55 +591,46 @@ body > header,
   }
 
   .external-links {
-    float: none;
     padding: rem-calc(6) 0;
     text-align: center;
+  }
+}
 
-    @include breakpoint(medium) {
-      float: right;
-    }
+.public > .wrapper > header,
+.proposal-dashboard > header {
+  @include full-width-border(bottom, 1px solid $border);
+
+  > * {
+    @include full-width-background($adjust-padding: true);
+  }
+
+  .top-bar {
+    @extend %brand-background;
+  }
+}
+
+.proposal-dashboard > header {
+
+  @include breakpoint($global-width) {
+    margin-left: $body-margin;
+    margin-right: $body-margin;
   }
 }
 
 .top-bar {
-  @extend %brand-background;
-  padding-bottom: 0;
-  padding-top: 0;
+  background-color: inherit;
+  padding: 0;
 
   @include breakpoint(medium) {
-    padding: 0;
+    justify-content: flex-start;
+
+    .top-bar-title {
+      flex-grow: 1;
+    }
   }
 
   ul {
     background: none;
-    padding-right: rem-calc(15);
-  }
-
-  .menu .menu-text {
-    padding: 0;
-
-    a {
-      color: #fff;
-      display: inline-block;
-      font-family: "Lato" !important;
-      font-size: rem-calc(24);
-      font-weight: lighter;
-      line-height: $line-height * 2;
-      padding: 0;
-
-      @include breakpoint(medium) {
-        line-height: rem-calc(80);
-        margin-top: 0;
-      }
-
-      img {
-
-        @include breakpoint(medium) {
-          margin-right: $line-height / 2;
-          margin-top: 0;
-        }
-      }
-    }
   }
 
   .menu > li {
@@ -643,12 +642,13 @@ body > header,
     }
 
     a {
-      color: #fff;
+      color: inherit;
+      line-height: inherit;
       padding-left: 0;
 
       @include breakpoint(medium) {
         font-size: $small-font-size;
-        padding: rem-calc(11) rem-calc(16);
+        padding: rem-calc(8) rem-calc(16);
       }
     }
 
@@ -658,7 +658,7 @@ body > header,
 
       @include breakpoint(medium) {
         @include brand-text;
-        background: #fff;
+        background: $body-background;
         text-align: center;
       }
     }
@@ -667,15 +667,26 @@ body > header,
   .has-submenu {
 
     &.is-active a {
-      color: #fff;
       font-weight: bold;
     }
   }
 
   .menu {
 
+    @include breakpoint(small only) {
+      border-bottom: 1px solid $border;
+      margin-bottom: $line-height;
+      margin-top: $line-height / 2;
+      padding-bottom: $line-height;
+
+      .submenu {
+        margin-top: 0;
+      }
+    }
+
     &.is-dropdown-submenu {
-      background: #fff;
+      background: $body-background;
+      color: $text;
       margin: 0;
       margin-top: rem-calc(-12);
       padding: 0;
@@ -686,15 +697,12 @@ body > header,
       display: block;
       height: auto;
       margin-bottom: 0;
-
-      a {
-        color: $text;
-      }
     }
   }
 
   .top-bar-title {
     line-height: $line-height;
+    margin-right: 0;
 
     a img {
       height: rem-calc(48);
@@ -732,22 +740,27 @@ body > header,
   }
 
   &.is-active > a {
-    color: #fff;
+    color: inherit;
   }
 
   &.is-dropdown-submenu-parent > a::after {
-    border-color: #fff transparent transparent;
+    border-top-color: currentcolor;
   }
 }
 
 .top-links {
   background: $dark;
-  color: #fff;
+  color: $white;
+  display: flex;
+  flex-wrap: wrap;
   font-size: $small-font-size;
-  padding-right: $line-height / 2;
+
+  > :first-child {
+    flex-grow: 1;
+  }
 
   a {
-    color: #fff;
+    color: inherit;
     margin: 0 rem-calc(6);
 
     &:hover {
@@ -777,10 +790,18 @@ body > header,
 }
 
 .subnavigation {
+  display: flex;
+  flex-direction: column;
 
   @include breakpoint(medium) {
-    background: #fff;
+    background: $body-background;
+    color: $text;
+    flex-direction: row;
     padding-bottom: 0;
+
+    > :first-child {
+      flex-grow: 1;
+    }
   }
 
   ul {
@@ -796,15 +817,15 @@ body > header,
   }
 
   a {
-    color: #fff;
+    color: inherit;
     display: inline-block;
-    line-height: $line-height * 2;
+    padding-bottom: $line-height / 2;
+    padding-top: $line-height / 2;
     position: relative;
     text-align: left;
     width: 100%;
 
     @include breakpoint(medium) {
-      color: $text;
       display: block;
       font-weight: bold;
       width: auto;
@@ -814,12 +835,17 @@ body > header,
       }
     }
 
+    &:focus {
+      z-index: 1;
+    }
+
     &.is-active {
       color: #fff;
 
       @include breakpoint(medium) {
         @include brand-text;
-        border-bottom: 2px solid $brand;
+        border-bottom: 2px solid;
+        margin-bottom: 1px;
       }
     }
   }
@@ -873,7 +899,7 @@ body > header,
   margin-bottom: $line-height / 2;
 
   a {
-    color: $text;
+    color: inherit;
     display: inline-block;
     font-weight: bold;
     margin-right: $line-height / 2;
@@ -891,7 +917,7 @@ body > header,
 
   .is-active {
     @include brand-text;
-    border-bottom: 2px solid $brand;
+    border-bottom: 2px solid;
 
     &:hover {
       text-decoration: none;
@@ -911,7 +937,9 @@ body > header,
 // ----------
 
 footer {
-  color: $text;
+  .logo {
+    color: inherit;
+  }
 
   .logo a {
     font-family: "Lato" !important;
@@ -933,7 +961,7 @@ footer {
   a,
   a:active,
   a:focus {
-    color: $text;
+    color: inherit;
     text-decoration: underline;
 
     &:hover {
@@ -957,6 +985,10 @@ footer {
   margin-top: $line-height * 2;
   padding-bottom: $line-height;
   padding-top: $line-height;
+
+  .public & {
+    @include full-width-background;
+  }
 }
 
 .subfooter {
@@ -986,13 +1018,6 @@ footer {
   }
 }
 
-.sidebar-map {
-
-  .map {
-    z-index: 0;
-  }
-}
-
 .sidebar-title {
   border-top: 2px solid $brand;
   display: inline-block;
@@ -1017,6 +1042,7 @@ footer {
   background: $brand image-url("auth_bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  color: $white;
 
   @include breakpoint(medium) {
     min-height: $line-height * 42;
@@ -1026,7 +1052,7 @@ footer {
     margin-top: $line-height;
 
     a {
-      color: #fff;
+      color: inherit;
       display: block;
       text-align: center;
 
@@ -1052,59 +1078,22 @@ footer {
 }
 
 .auth-divider {
-  border-bottom: 1px solid $border;
-  height: rem-calc(14);
-  margin: $line-height 0;
+  border-top: 1px solid $border;
+  margin-top: $line-height * 1.5;
   text-align: center;
 
   span {
-    background: #fff;
+    background: $body-background;
+    box-decoration-break: clone;
     font-weight: bold;
     padding: 0 $line-height / 2;
+    position: relative;
+    top: -$line-height / 2;
   }
 }
 
 // 06. Forms
 // ---------
-
-.locale-form {
-  display: inline-block;
-  position: relative;
-
-  label {
-    color: #fff;
-    font-size: $tiny-font-size;
-    font-weight: normal;
-  }
-
-  select {
-
-    option {
-      background: #fff;
-      color: $text;
-      border: 0;
-      outline: none;
-    }
-  }
-
-  .locale-switcher {
-    background: #001d33;
-    border: 0;
-    border-radius: rem-calc(4);
-    color: #fff;
-    font-size: $small-font-size;
-    height: $line-height;
-    margin-bottom: 0;
-    margin-top: $line-height / 4;
-    outline: none;
-    padding: 0 $line-height / 4;
-    width: auto;
-
-    &:focus {
-      outline: $outline-focus;
-    }
-  }
-}
 
 form {
 
@@ -1190,7 +1179,6 @@ form {
 
   .checkbox,
   .radio {
-    color: $text;
     font-weight: normal;
     line-height: $line-height;
     vertical-align: middle;
@@ -1518,7 +1506,7 @@ form {
   }
 
   &::before {
-    background: #fff;
+    background: $body-background;
     color: $brand;
     content: "\4d";
     font-family: "icons" !important;
@@ -1599,11 +1587,11 @@ table {
     }
 
     &:nth-child(odd) {
-      background: #fff;
+      background: $table-background;
     }
 
     &:nth-child(even) {
-      background: #fafcfb;
+      background: adjust-color($table-background, $red: -3, $green: -1, $blue: -2);
     }
   }
 
@@ -1635,6 +1623,7 @@ table {
 
   &::before {
     font-size: rem-calc(24);
+    margin-right: $font-icon-margin;
   }
 }
 
@@ -1742,23 +1731,6 @@ table {
   .ssb-telegram,
   .ssb-whatsapp_app {
     display: none !important;
-  }
-}
-
-.social {
-
-  li {
-    display: inline-block;
-  }
-
-  a {
-    font-size: rem-calc(24);
-    margin: 0 $line-height / 2;
-    text-decoration: none;
-
-    &:hover {
-      @include brand-text;
-    }
   }
 }
 
@@ -1955,7 +1927,7 @@ table {
     position: relative;
 
     .icon-letter {
-      background: #fff;
+      background: $body-background;
       color: $color-info;
       font-size: rem-calc(24);
       margin-left: -27px;
@@ -1970,7 +1942,7 @@ table {
 // ------------
 
 .comments {
-  background: #fff;
+  background: $body-background;
   background-repeat: repeat-x;
   padding-bottom: $line-height * 4;
 
@@ -1983,6 +1955,11 @@ table {
       font-weight: normal;
       opacity: 0.8;
     }
+  }
+
+  .order-links {
+    margin-bottom: $line-height;
+    margin-top: $line-height;
   }
 
   .comment {
@@ -2010,7 +1987,6 @@ table {
   }
 
   .reply {
-    background: #fff;
     border: 1px solid $border;
     border-left: 0;
     border-right: 0;
@@ -2040,6 +2016,7 @@ table {
 
     .show-children::before,
     .collapse-children::before {
+      margin-right: $font-icon-margin;
       transform: translateY(-1px);
     }
 
@@ -2068,6 +2045,7 @@ table {
     }
 
     &::before {
+      margin-right: $font-icon-margin;
       transform: translateY(-1px);
     }
   }
@@ -2163,25 +2141,6 @@ table {
   opacity: 0.4;
 }
 
-.wide-order-selector {
-  float: none;
-  margin-top: 0;
-
-  @include breakpoint(medium) {
-    float: right;
-    margin-top: rem-calc(-24);
-  }
-
-  label {
-    padding-right: $line-height / 2;
-    float: none;
-
-    @include breakpoint(medium) {
-      float: right;
-    }
-  }
-}
-
 .comment-form {
   display: inline-block;
   width: 100%;
@@ -2274,9 +2233,15 @@ table {
 // -----------
 
 .banner {
+  @include full-width-background;
+
+  .debates-list &::before,
+  .proposals-list &::before,
+  .admin &::before {
+    content: none;
+  }
 
   a > * {
-    @include grid-row;
     padding: 0 rem-calc(16);
 
     &:empty {
@@ -2285,6 +2250,7 @@ table {
   }
 
   + .budget-header,
+  + .budgets-index > .budget-header,
   + .jumbo {
     margin-top: 0;
   }
@@ -2370,7 +2336,6 @@ table {
   .debates-inner,
   .proposals-inner,
   .budget-investments-inner {
-    background: #fff;
     max-height: rem-calc(350);
 
     @include breakpoint(small) {
@@ -2434,8 +2399,10 @@ table {
 }
 
 .recommended-index {
+  @include full-width-background;
+  @include full-width-border(bottom, 1px solid #eee);
+  @include full-width-border(top, 1px solid #fafafa);
   background: #fafafa;
-  border-bottom: 1px solid #eee;
   margin-bottom: $line-height;
   margin-top: rem-calc(-25);
   padding: $line-height 0 $line-height / 2;
@@ -2462,7 +2429,7 @@ table {
   }
 
   .recommendation {
-    background: #fff;
+    background: $body-background;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
     display: block;
     margin-bottom: $line-height / 4;
@@ -2573,56 +2540,17 @@ table {
 }
 
 .add-related-content {
+  color: $link;
+  cursor: pointer;
   display: block;
+  margin-bottom: $line-height;
 
   @include breakpoint(medium) {
     float: right;
   }
-}
 
-.related-content-list {
-  list-style-type: none;
-  margin-left: 0;
-
-  li {
-    border-bottom: 1px solid $border;
-    margin-bottom: 0 !important;
-    padding: $line-height / 2;
-
-    @include breakpoint(medium) {
-
-      .score-actions {
-        display: none;
-        float: right;
-      }
-    }
-
-    &:first-child {
-      border-top: 1px solid $border;
-    }
-
-    &:hover {
-      background: #f9f9f9;
-
-      .score-actions {
-        display: block;
-      }
-    }
-  }
-
-  h3 {
-    font-size: $base-font-size;
-    font-weight: normal;
-  }
-
-  .related-content-title {
-    color: #4f4f4f;
-    font-size: rem-calc(12);
-    text-transform: uppercase;
-  }
-
-  .flag {
-    margin-top: $line-height / 2;
+  &[aria-expanded="false"] + form {
+    display: none;
   }
 }
 
@@ -2636,33 +2564,20 @@ table {
   a {
     font-weight: bold;
     margin-right: $line-height;
-    padding-left: rem-calc(20);
-    position: relative;
     text-decoration: none;
 
-    &.score-positive::before,
-    &.score-negative::before {
-      font-family: "icons";
-      left: 0;
-      position: absolute;
-    }
-
     &.score-positive {
+      @include has-fa-icon(check, solid);
       color: $color-success;
-
-      &::before {
-        color: $color-success;
-        content: "\6c";
-      }
     }
 
     &.score-negative {
+      @include has-fa-icon(times, solid);
       color: $color-alert;
+    }
 
-      &::before {
-        color: $color-alert;
-        content: "\76";
-      }
+    &::before {
+      margin-right: $font-icon-margin;
     }
   }
 }
@@ -2705,7 +2620,7 @@ table {
   &:hover,
   &:active,
   &:focus {
-    border-bottom: 1px solid #cf2a0e;
+    border-bottom-style: solid;
     color: #cf2a0e;
     text-decoration: none;
   }
@@ -2759,6 +2674,11 @@ table {
     height: $line-height * 2;
     background: $highlight;
     margin-top: rem-calc(-48);
+
+    @include breakpoint($global-width) {
+      margin-left: calc(#{$full-width-margin});
+      margin-right: calc(#{$full-width-margin});
+    }
   }
 
   .cards-container {
@@ -2810,7 +2730,6 @@ table {
       display: inline-block;
       border-top: 4px solid $brand;
       margin-bottom: 0;
-      min-width: rem-calc(240);
       padding: $line-height / 2 0;
     }
   }
@@ -2819,6 +2738,10 @@ table {
     height: 100%;
     width: 100%;
   }
+}
+
+.home-page .feeds-participation {
+  @include grid-column-gutter;
 }
 
 .feeds-list {
@@ -2892,9 +2815,9 @@ table {
     }
 
     span {
-      background: #fff;
+      background: $body-background;
       border-radius: rem-calc(4);
-      color: #000;
+      color: $text;
       display: inline-block;
       font-size: $small-font-size;
       font-weight: bold;

@@ -8,7 +8,6 @@ module Budgets
     include DocumentAttributes
     include MapLocationAttributes
     include Translatable
-    include InvestmentFilters
 
     PER_PAGE = 10
 
@@ -23,7 +22,7 @@ module Budgets
     before_action :load_heading, only: [:index, :show]
     before_action :load_assigned_heading, only: [:show]
     before_action :set_random_seed, only: :index
-    before_action :load_categories, only: [:index, :new, :create, :edit, :update]
+    before_action :load_categories, only: :index
     before_action :set_default_investment_filter, only: :index
     before_action :set_view, only: :index
     before_action :load_content_blocks, only: :index
@@ -34,8 +33,7 @@ module Budgets
 
     has_orders %w[most_voted newest oldest], only: :show
     has_orders ->(c) { c.instance_variable_get(:@budget).investments_orders }, only: :index
-
-    has_filters investment_filters, only: [:index, :show, :suggest]
+    has_filters ->(c) { c.instance_variable_get(:@budget).investments_filters }, only: [:index, :show, :suggest]
 
     invisible_captcha only: [:create, :update], honeypot: :subtitle, scope: :budget_investment
 
@@ -45,7 +43,7 @@ module Budgets
     def index
       @investments = investments.page(params[:page]).per(PER_PAGE).for_render
 
-      @investment_ids = @investments.pluck(:id)
+      @investment_ids = @investments.ids
       @investments_map_coordinates = MapLocation.where(investment: investments).map(&:json_data)
 
       load_investment_votes(@investments)
@@ -59,7 +57,6 @@ module Budgets
     def show
       @commentable = @investment
       @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
-      @related_contents = Kaminari.paginate_array(@investment.relationed_contents).page(params[:page]).per(5)
       set_comment_flags(@comment_tree.comments)
       load_investment_votes(@investment)
       @investment_ids = [@investment.id]
@@ -68,6 +65,7 @@ module Budgets
 
     def create
       @investment.author = current_user
+      @investment.heading = @budget.headings.first if @budget.single_heading?
 
       if @investment.save
         Mailer.budget_investment_created(@investment).deliver_later
@@ -153,6 +151,9 @@ module Budgets
           @heading = @budget.headings.find_by_slug_or_id! params[:heading_id]
           @assigned_heading = @ballot&.heading_for_group(@heading.group)
           load_map
+        elsif @budget.single_heading?
+          @heading = @budget.headings.first
+          load_map
         end
       end
 
@@ -187,6 +188,14 @@ module Budgets
         else
           @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
                              .send("sort_by_#{@current_order}")
+        end
+      end
+
+      def set_default_investment_filter
+        if @budget&.finished?
+          params[:filter] ||= "winners"
+        elsif @budget&.publishing_prices_or_later?
+          params[:filter] ||= "selected"
         end
       end
 

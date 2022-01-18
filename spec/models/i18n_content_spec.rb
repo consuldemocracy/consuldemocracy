@@ -45,39 +45,17 @@ RSpec.describe I18nContent, type: :model do
 
   describe "#flat_hash" do
     it "uses one parameter" do
-      expect(I18nContent.flat_hash(nil)).to eq({
-        nil => nil
-      })
-
-      expect(I18nContent.flat_hash("string")).to eq({
-        nil => "string"
-      })
-
-      expect(I18nContent.flat_hash({ w: "string" })).to eq({
-        "w" => "string"
-      })
-
-      expect(I18nContent.flat_hash({ w: { p: "string" }})).to eq({
-        "w.p" => "string"
-      })
+      expect(I18nContent.flat_hash(nil)).to eq({ nil => nil })
+      expect(I18nContent.flat_hash("string")).to eq({ nil => "string" })
+      expect(I18nContent.flat_hash({ w: "string" })).to eq({ "w" => "string" })
+      expect(I18nContent.flat_hash({ w: { p: "string" }})).to eq({ "w.p" => "string" })
     end
 
     it "uses the first two parameters" do
-      expect(I18nContent.flat_hash("string", "f")).to eq({
-        "f" => "string"
-      })
-
-      expect(I18nContent.flat_hash(nil, "f")).to eq({
-        "f" => nil
-      })
-
-      expect(I18nContent.flat_hash({ w: "string" }, "f")).to eq({
-        "f.w" => "string"
-      })
-
-      expect(I18nContent.flat_hash({ w: { p: "string" }}, "f")).to eq({
-        "f.w.p" => "string"
-      })
+      expect(I18nContent.flat_hash("string", "f")).to eq({ "f" => "string" })
+      expect(I18nContent.flat_hash(nil, "f")).to eq({ "f" => nil })
+      expect(I18nContent.flat_hash({ w: "string" }, "f")).to eq({ "f.w" => "string" })
+      expect(I18nContent.flat_hash({ w: { p: "string" }}, "f")).to eq({ "f.w.p" => "string" })
     end
 
     it "uses the first and last parameters" do
@@ -153,6 +131,38 @@ RSpec.describe I18nContent, type: :model do
       I18nContent.delete_all
 
       expect(I18nContent.translations_hash(:en)["great"]).to be nil
+    end
+  end
+
+  describe ".update" do
+    it "stores new keys with a different translation" do
+      I18nContent.update([{ id: "shared.yes", values: { "value_en" => "Oh, yeah" }}])
+
+      expect(I18nContent.count).to eq 1
+      expect(I18nContent.first.translations.count).to eq 1
+      expect(I18nContent.first.value).to eq "Oh, yeah"
+    end
+
+    it "does not store new keys with the default translation" do
+      I18nContent.update([{ id: "shared.yes", values: { "value_en" => "Yes" }}])
+
+      expect(I18nContent.all).to be_empty
+    end
+
+    it "updates existing keys with the default translation" do
+      I18nContent.create!(key: "shared.yes", value_en: "Oh, yeah")
+
+      I18nContent.update([{ id: "shared.yes", values: { "value_en" => "Yes" }}])
+
+      expect(I18nContent.count).to eq 1
+      expect(I18nContent.first.translations.count).to eq 1
+      expect(I18nContent.first.value).to eq "Yes"
+    end
+
+    it "does not store new keys for disabled translations" do
+      I18nContent.update([{ id: "shared.yes", values: { "value_en" => "Oh, yeah" }}], [:es])
+
+      expect(I18nContent.all).to be_empty
     end
   end
 end

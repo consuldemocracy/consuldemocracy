@@ -9,6 +9,7 @@ class Widget::Card < ApplicationRecord
   include Globalizable
 
   validates_translation :title, presence: true
+  validates :link_url, presence: true, if: -> { !header? || link_text.present? }
 
   def self.header
     where(header: true)

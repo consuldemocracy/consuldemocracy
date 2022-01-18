@@ -5,21 +5,21 @@ es-PE:
         title: Mis votos
         no_balloted_group_yet: "Todavía no has votado proyectos de este grupo, ¡vota!"
         remove: Quitar voto
+        voted:
+          one: "Has votado <span>una</span> propuesta."
+          other: "Has votado <span>%{count}</span> propuestas."
         zero: Todavía no has votado ninguna propuesta de inversión.
       reasons_for_not_balloting:
         not_logged_in: Necesitas %{signin} o %{signup}.
         not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
         organization: Las organizaciones no pueden votar
         not_selected: No se pueden votar propuestas inviables.
+        not_enough_money: "Ya has asignado el presupuesto disponible.<br><small>Recuerda que puedes %{change_ballot} en cualquier momento</small>"
         no_ballots_allowed: El periodo de votación está cerrado.
         change_ballot: cambiar tus votos
     groups:
       show:
         title: Selecciona una opción
-        unfeasible_title: Propuestas inviables
-        unfeasible: Ver las propuestas inviables
-        unselected_title: Propuestas no seleccionadas para la votación final
-        unselected: Ver las propuestas no seleccionadas para la votación final
     phase:
       drafting: Borrador (No visible para el público)
       informing: Información
@@ -41,6 +41,7 @@ es-PE:
       milestones: Seguimiento
     investments:
       form:
+        title: "Crear nuevo proyecto"
         tag_category_label: "Categorías"
         tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
         tags_label: Etiquetas
@@ -56,14 +57,27 @@ es-PE:
           button: Buscar
           placeholder: Buscar propuestas de inversión...
           title: Buscar
+        search_results:
+          one: " que contienen <strong>'%{search_term}'</strong>"
+          other: " que contienen <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Mis votos
+          voted_info:
+            knapsack:
+              one: "<strong>Has votado una propuesta por un valor de %{amount_spent}</strong>"
+              other: "<strong>Has votado %{count} propuestas por un valor de %{amount_spent}</strong>"
+          change_vote_link: "cambiar tus votos"
+          different_heading_assigned: "Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}"
           change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
           check_ballot_link: "revisar mis votos"
           zero: Todavía no has votado ninguna propuesta de inversión en este ámbito del presupuesto.
           verified_only: "Para crear una nueva propuesta de inversión %{verify}."
           create: "Crear nuevo proyecto"
           not_logged_in: "Para crear una nueva propuesta de inversión debes %{sign_in} o %{sign_up}."
+        filters:
+          selected: "Seleccionada"
+          unfeasible: "Inviable"
+          winners: "Ganadoras"
         orders:
           random: Aleatorias
           confidence_score: Mejor valorados
@@ -72,6 +86,9 @@ es-PE:
         author_deleted: Usuario eliminado
         price_explanation: Informe de coste <small>(opcional, dato público)</small>
         unfeasibility_explanation: Informe de inviabilidad
+        code: "Código propuesta de gasto: <strong>%{code}</strong>"
+        location: "Ubicación: <strong>%{location}</strong>"
+        organization_name: "Propuesto en nombre de: <strong>%{name}</strong>"
         share: Compartir
         title: Propuesta de inversión
         supports: Apoyos
@@ -84,18 +101,24 @@ es-PE:
       investment:
         add: Votar
         already_added: Ya has añadido esta propuesta de inversión
-        already_supported: Ya has apoyado este proyecto de inversión. ¡Compártelo!
         support_title: Apoyar este proyecto
         supports:
           zero: Sin apoyos
           one: 1 apoyo
           other: "%{count} apoyos"
-        give_support: Apoyar
       header:
         check_ballot: "Revisar mis votos"
+        different_heading_assigned: "Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}"
         change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
         check_ballot_link: "revisar mis votos"
         price: "Esta partida tiene un presupuesto de"
+      votes:
+        already_supported: "Ya has apoyado este proyecto de inversión. ¡Compártelo!"
+        support: "Apoyar"
+    investments_list:
+      investment:
+        price: "Coste"
+        supports: "Apoyos"
     show:
       see_results: Ver resultados
     results:
