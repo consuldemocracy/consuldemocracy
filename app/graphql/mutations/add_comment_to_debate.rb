@@ -1,28 +1,11 @@
 module Mutations
-  class AddCommentToDebate < BaseMutation
+  class AddCommentToDebate < AddComment
     argument :debate_id, ID, required: true
-    argument :body, String, required: true, validates: { allow_blank: false }
 
     type Types::CommentType
 
-    def resolve(debate_id:, body:, parent_id: nil)
-      begin
-        Comment.create!({
-          body: body,
-          commentable_type: "Debate",
-          commentable_id: debate_id,
-          user_id: context[:current_resource].id
-        })
-      rescue ActiveRecord::RecordInvalid => e
-        raise GraphQL::ExecutionError, e.message
-      end
-
-      # TODO: Do we want notifications like in CommentsController?
-      # notifiable = comment.reply? ? comment.parent : comment.commentable
-      # notifiable_author_id = notifiable&.author_id
-      # if notifiable_author_id.present? && notifiable_author_id != comment.author_id
-      #   Notification.add(notifiable.author, notifiable)
-      # end
+    def resolve(debate_id:, body:)
+      super(commentable_type: "Debate", commentable_id: debate_id, body: body)
     end
   end
 end
