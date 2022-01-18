@@ -1,9 +1,10 @@
 module Types
   class MutationType < Types::BaseObject
-    field :answer, mutation: Mutations::Answer, authenticate: true
+    field :provide_answer_to_poll_question, mutation: Mutations::ProvideAnswerToPollQuestion, authenticate: true
     field :add_comment_to_poll, mutation: Mutations::AddCommentToPoll, authenticate: true
     field :add_comment_to_debate, mutation: Mutations::AddCommentToDebate, authenticate: true
     field :start_debate, mutation: Mutations::StartDebate, authenticate: true
     field :cast_vote_on_comment, mutation: Mutations::CastVoteOnComment, authenticate: true
+    field :submit_proposal, mutation: Mutations::SubmitProposal, authenticate: true
   end
 end
