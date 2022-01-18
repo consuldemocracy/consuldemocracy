@@ -22,7 +22,7 @@ module Mutations
           terms_of_service: terms_of_service
         })
       rescue ActiveRecord::RecordInvalid => e
-        raise GraphQL::ExecutionError, "#{e.message}"
+        raise GraphQL::ExecutionError, e.message
       end
     end
   end
