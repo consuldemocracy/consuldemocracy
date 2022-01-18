@@ -2,6 +2,18 @@
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+## [1.4.1](https://github.com/consul/consul/tree/1.4.1) (2021-11-25)
+
+[Full Changelog](https://github.com/consul/consul/compare/1.4.0...1.4.1)
+
+### Changed
+
+- **Translations:** Change the way we handle source strings updates [\#4748](https://github.com/consul/consul/pull/4748)
+
+### Fixed
+
+- **Translations:** New Crowdin updates [\#4747](https://github.com/consul/consul/pull/4747)
+
 ## [1.4.0](https://github.com/consul/consul/tree/1.4.0) (2021-11-24)
 
 [Full Changelog](https://github.com/consul/consul/compare/1.3.1...1.4.0)

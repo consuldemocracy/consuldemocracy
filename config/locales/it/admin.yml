@@ -6,7 +6,7 @@ it:
       actions: Azioni
       confirm: Sei sicuro?
       confirm_action: "Sei sicuro? %{action} \"%{name}\""
-      confirm_delete: "Sei sicuro? Quest'azione eliminerà %{resource_name} '%{name}' e non è annullabile."
+      confirm_delete: "Sei sicuro? Quest'azione eliminerà \"%{name}\" e non è annullabile."
       confirm_hide: Confermare intervento di moderazione
       delete: "Eliminare"
       hide: Nascondi
