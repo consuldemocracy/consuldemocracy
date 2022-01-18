@@ -6,5 +6,6 @@ module Types
     field :start_debate, mutation: Mutations::StartDebate, authenticate: true
     field :cast_vote_on_comment, mutation: Mutations::CastVoteOnComment, authenticate: true
     field :submit_proposal, mutation: Mutations::SubmitProposal, authenticate: true
+    field :support_proposal, mutation: Mutations::SupportProposal, authenticate: true
   end
 end
