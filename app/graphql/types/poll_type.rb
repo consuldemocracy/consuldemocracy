@@ -11,10 +11,14 @@ module Types
     field :questions, [Types::Poll::QuestionType], null: true
     field :comments, [Types::CommentType], null: true
 
-    field :token, String, null: true, authenticate: true
+    # Requires authentication
+    field :token, String, null: true
 
     def token
-      user = context[:current_resource]
+      unless user = context[:current_resource]
+        raise GraphQL::ExecutionError, "token requires authentication"
+      end
+
       ::Poll::Voter.find_by(poll: object, user: user, origin: "web")&.token || ""
     end
 
