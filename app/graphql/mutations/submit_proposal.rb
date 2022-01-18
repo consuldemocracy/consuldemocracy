@@ -21,6 +21,13 @@ module Mutations
     argument :image, FileUploadAttributes, required: false
     argument :documents, [FileUploadAttributes], required: false
 
+    class MapLocationAttributes < Types::BaseInputObject
+      argument :latitude, Float, required: true
+      argument :longitude, Float, required: true
+      argument :zoom, Integer, required: true
+    end
+    argument :map_location, MapLocationAttributes, required: false
+
     type Types::ProposalType
 
     def resolve(args)
@@ -61,6 +68,10 @@ module Mutations
               }
             end
           })
+        end
+
+        if args[:map_location].present?
+        proposal_args.merge!({ map_location_attributes: args[:map_location].to_hash })
         end
 
         Proposal.create!(proposal_args)
