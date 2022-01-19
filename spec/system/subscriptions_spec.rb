@@ -9,8 +9,7 @@ describe "Subscriptions" do
       visit edit_subscriptions_path(token: user.subscriptions_token)
 
       expect(page).to have_content "Notificaciones"
-      expect(page).to have_field "Recibir un email cuando alguien comenta en mis propuestas o debates",
-                                  type: :checkbox
+      expect(page).to have_field "Recibir un email cuando alguien comenta en mis contenidos", type: :checkbox
       expect(page).to have_field "Recibir un email cuando alguien contesta a mis comentarios", type: :checkbox
       expect(page).to have_field "Recibir emails con información interesante sobre la web", type: :checkbox
       expect(page).to have_field "Recibir resumen de notificaciones sobre propuestas", type: :checkbox
@@ -34,7 +33,7 @@ describe "Subscriptions" do
                    email_on_direct_message: true)
       visit edit_subscriptions_path(token: user.subscriptions_token)
 
-      check "Notify me by email when someone comments on my proposals or debates"
+      check "Notify me by email when someone comments on my contents"
       uncheck "Notify me by email when someone replies to my comments"
       uncheck "Receive by email website relevant information"
       check "Receive a summary of proposal notifications"

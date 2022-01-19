@@ -272,7 +272,7 @@ en:
         password: "Password"
         current_password: "Current password"
         email_digest: "Receive a summary of proposal notifications"
-        email_on_comment: "Notify me by email when someone comments on my proposals or debates"
+        email_on_comment: "Notify me by email when someone comments on my contents"
         email_on_comment_reply: "Notify me by email when someone replies to my comments"
         email_on_direct_message: "Receive emails about direct messages"
         newsletter: "Receive by email website relevant information"

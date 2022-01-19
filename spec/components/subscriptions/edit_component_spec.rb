@@ -8,8 +8,7 @@ describe Subscriptions::EditComponent do
     render_inline component
 
     expect(page).to have_content "Notifications"
-    expect(page).to have_field "Notify me by email when someone comments on my proposals or debates",
-                                type: :checkbox
+    expect(page).to have_field "Notify me by email when someone comments on my contents", type: :checkbox
     expect(page).to have_field "Notify me by email when someone replies to my comments", type: :checkbox
     expect(page).to have_field "Receive by email website relevant information", type: :checkbox
     expect(page).to have_field "Receive a summary of proposal notifications", type: :checkbox
