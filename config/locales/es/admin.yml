@@ -243,6 +243,8 @@ es:
       population: Población
       allow_custom_content: Permitir bloque de contenidos
       no_headings: "El grupo <strong>%{group}</strong> no tiene ninguna partida."
+      yes:  "Sí"
+      no: "No"
       amount:
         one: "Hay 1 partida presupuestarias"
         other: "Hay %{count} partidas presupuestarias"

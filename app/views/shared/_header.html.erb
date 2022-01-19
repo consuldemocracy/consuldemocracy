@@ -1,5 +1,6 @@
 <% if header.present? %>
-  <div class="header-card jumbo highlight">
+  <div class="header-card jumbo highlight"
+       style="background-image: url(<%= image_path_for(header.image_url(:original)) if header.image.present? %>)">
     <div class="row">
       <div class="small-12 large-7 column">
         <span><%= header.label %></span>

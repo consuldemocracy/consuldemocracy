@@ -471,8 +471,7 @@ describe "Budgets" do
       heading3 = create(:budget_heading, group: group2, name: "Brooklyn")
       heading4 = create(:budget_heading, group: group2, name: "Queens")
 
-      visit budget_path(budget)
-      click_link "See all investments"
+      visit budget_group_path(budget, group1)
 
       expect(page).to have_css("#budget_heading_#{heading1.id}")
       expect(page).to have_css("#budget_heading_#{heading2.id}")
@@ -506,7 +505,9 @@ describe "Budgets" do
       end
 
       expect(page).to have_link "See all investments",
-                                href: budget_investments_path(budget)
+                                href: budget_investments_path(budget,
+                                                              heading_id: budget.headings.first.id,
+                                                              filter: "selected")
     end
 
     scenario "Show investments list when budget has multiple headings" do
@@ -540,7 +541,7 @@ describe "Budgets" do
       group = create(:budget_group, budget: budget)
       heading = create(:budget_heading, group: group)
 
-      create_list(:budget_investment, 3, :selected, heading: heading, price: 999)
+      create_list(:budget_investment, 3, :winner, heading: heading, price: 999)
 
       budget.update!(phase: "informing")
 
@@ -598,32 +599,26 @@ describe "Budgets" do
 
         visit budget_path(budget)
 
-        within(".budget-investment-index-list") do
-          expect(page).to have_content "List of investments"
-          expect(page).not_to have_content "SUPPORTS"
-          expect(page).not_to have_content "PRICE"
-        end
+        expect(page).to have_content "List of investments"
+        expect(page).not_to have_content "SUPPORTS"
+        expect(page).not_to have_content "PRICE"
       end
 
       budget.update!(phase: "valuating")
 
       visit budget_path(budget)
 
-      within(".budget-investment-index-list") do
-        expect(page).to have_content "List of investments"
-        expect(page).to have_content("SUPPORTS", count: 3)
-        expect(page).not_to have_content "PRICE"
-      end
+      expect(page).to have_content "List of investments"
+      expect(page).to have_content("SUPPORTS", count: 3)
+      expect(page).not_to have_content "PRICE"
 
       %w[publishing_prices balloting reviewing_ballots].each do |phase_name|
         budget.update!(phase: phase_name)
 
         visit budget_path(budget)
 
-        within(".budget-investment-index-list") do
-          expect(page).to have_content "List of investments"
-          expect(page).to have_content("PRICE", count: 3)
-        end
+        expect(page).to have_content "List of investments"
+        expect(page).to have_content("PRICE", count: 3)
       end
     end
 
@@ -643,10 +638,8 @@ describe "Budgets" do
         expect(page).not_to have_content "It's time to support projects!"
         expect(page).not_to have_content "Support the projects you would like to see move on "\
                                          "to the next phase."
-        expect(page).not_to have_content "Remember! You can only cast your support once for each project "\
-                                         "and each support is irreversible."
         expect(page).not_to have_content "You may support on as many different projects as you would like."
-        expect(page).not_to have_content "So far you supported 0 projects."
+        expect(page).not_to have_content "So far you've supported 0 projects."
         expect(page).not_to have_content "Log in to start supporting projects."
         expect(page).not_to have_content "There's still time until"
         expect(page).not_to have_content "You can share the projects you have supported on through social "\
@@ -660,8 +653,6 @@ describe "Budgets" do
       expect(page).to have_content "It's time to support projects!"
       expect(page).to have_content "Support the projects you would like to see move on "\
                                    "to the next phase."
-      expect(page).to have_content "Remember! You can only cast your support once for each project "\
-                                   "and each support is irreversible."
       expect(page).to have_content "You may support on as many different projects as you would like."
       expect(page).to have_content "Log in to start supporting projects"
       expect(page).to have_content "There's still time until"
@@ -673,19 +664,19 @@ describe "Budgets" do
 
       visit budget_path(budget)
 
-      expect(page).to have_content "So far you supported 0 projects."
+      expect(page).to have_content "So far you've supported 0 projects."
 
       create(:budget_investment, :selected, heading: heading, voters: [voter])
 
       visit budget_path(budget)
 
-      expect(page).to have_content "So far you supported 1 project."
+      expect(page).to have_content "So far you've supported 1 project."
 
       create_list(:budget_investment, 3, :selected, heading: heading, voters: [voter])
 
       visit budget_path(budget)
 
-      expect(page).to have_content "So far you supported 4 projects."
+      expect(page).to have_content "So far you've supported 4 projects."
     end
 
     scenario "Show supports only for current budget" do
@@ -704,14 +695,13 @@ describe "Budgets" do
       login_as(voter)
 
       visit budget_path(first_budget)
-      expect(page).to have_content "So far you supported 2 projects."
+      expect(page).to have_content "So far you've supported 2 projects."
 
       visit budget_path(second_budget)
-      expect(page).to have_content "So far you supported 3 projects."
+      expect(page).to have_content "So far you've supported 3 projects."
     end
 
     scenario "Show supports only if the support has not been removed" do
-      Setting["feature.remove_investments_supports"] = true
       voter = create(:user, :level_two)
       budget = create(:budget, phase: "selecting")
       investment = create(:budget_investment, :selected, budget: budget)

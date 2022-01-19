@@ -65,9 +65,6 @@ describe "Budget Investments" do
         expect(page).to have_content user.document_number
       end
 
-      expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
-                                     visible: false)
-
       fill_in_new_investment_title with: "Build a park in my neighborhood"
       fill_in_ckeditor "Description", with: "There is no parks here..."
       fill_in "budget_investment_location", with: "City center"
@@ -337,7 +334,6 @@ describe "Budget Investments" do
     end
 
     scenario "Remove support on behalf of someone else in index view" do
-      Setting["feature.remove_investments_supports"] = true
       create(:budget_investment, heading: heading)
 
       login_managed_user(user)
@@ -358,7 +354,6 @@ describe "Budget Investments" do
     end
 
     scenario "Remove support on behalf of someone else in show view" do
-      Setting["feature.remove_investments_supports"] = true
       create(:budget_investment, heading: heading, title: "Don't support me!")
 
       login_managed_user(user)

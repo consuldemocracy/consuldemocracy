@@ -2,36 +2,34 @@
 
   <%= render "shared/errors", resource: investment %>
 
-  <div class="light expand">
-    <fieldset class="required-fields">
-      <legend><%= t("shared.required") %></legend>
+  <fieldset class="required-fields">
+    <legend><%= t("shared.required") %></legend>
 
-      <% unless budget.single_heading? %>
-        <div>
-          <%= f.select :heading_id, budget_heading_select_options(budget), { include_blank: true } %>
-        </div>
-      <% end %>
+    <% unless budget.single_heading? %>
+      <div>
+        <%= f.select :heading_id, budget_heading_select_options(budget), { include_blank: true } %>
+      </div>
+    <% end %>
+
+    <div>
+      <%= render "shared/globalize_locales", resource: investment %>
+    </div>
+
+    <%= f.translatable_fields do |translations_form| %>
+      <div>
+        <%= translations_form.text_field :title,
+              maxlength: Budget::Investment.title_max_length,
+              data: suggest_data(investment) %>
+      </div>
+      <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
 
       <div>
-        <%= render "shared/globalize_locales", resource: investment %>
+        <%= translations_form.text_area :description,
+              maxlength: Budget::Investment.description_max_length,
+              class: "html-area" %>
       </div>
-
-      <%= f.translatable_fields do |translations_form| %>
-        <div>
-          <%= translations_form.text_field :title,
-                maxlength: Budget::Investment.title_max_length,
-                data: suggest_data(investment) %>
-        </div>
-        <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
-
-        <div>
-          <%= translations_form.text_area :description,
-                maxlength: Budget::Investment.description_max_length,
-                class: "html-area" %>
-        </div>
-      <% end %>
-    </fieldset>
-  </div>
+    <% end %>
+  </fieldset>
 
   <%= f.invisible_captcha :subtitle %>
 

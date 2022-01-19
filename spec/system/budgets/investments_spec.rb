@@ -525,9 +525,6 @@ describe "Budget Investments" do
       login_as(author)
       visit new_budget_investment_path(budget)
 
-      expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
-                                     visible: false)
-
       fill_in "Title", with: "I am a bot"
       fill_in "budget_investment_subtitle", with: "This is the honeypot"
       fill_in "Description", with: "This is the description"
@@ -545,9 +542,6 @@ describe "Budget Investments" do
       login_as(author)
       visit new_budget_investment_path(budget)
 
-      expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
-                                     visible: false)
-
       fill_in_new_investment_title with: "I am a bot"
       fill_in_ckeditor "Description", with: "This is the description"
 
@@ -563,9 +557,6 @@ describe "Budget Investments" do
       visit new_budget_investment_path(budget)
 
       expect(page).to have_content("#{heading.name} (#{budget.formatted_heading_price(heading)})")
-
-      expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
-                                     visible: :hidden)
 
       fill_in "Title", with: "Build a skyscraper"
       fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
@@ -684,11 +675,10 @@ describe "Budget Investments" do
 
       fill_in_new_investment_title with: "Build a skyscraper"
       fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
-      fill_in "Location additional info", with: "City center"
+      fill_in "Information about the location", with: "City center"
       fill_in "If you are proposing in the name of a collective/organization, "\
         "or on behalf of more people, write its name", with: "T.I.A."
       fill_in "Tags", with: "Towers"
-      check "I agree to the Privacy Policy and the Terms and conditions of use"
 
       click_button "Create Investment"
 
@@ -1287,7 +1277,6 @@ describe "Budget Investments" do
     end
 
     scenario "Remove a support from show view" do
-      Setting["feature.remove_investments_supports"] = true
       investment = create(:budget_investment, budget: budget)
 
       login_as(author)
@@ -1309,7 +1298,6 @@ describe "Budget Investments" do
     end
 
     scenario "Remove a support from index view" do
-      Setting["feature.remove_investments_supports"] = true
       investment = create(:budget_investment, budget: budget)
 
       login_as(author)

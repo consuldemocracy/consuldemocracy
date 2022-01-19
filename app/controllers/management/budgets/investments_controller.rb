@@ -52,6 +52,10 @@ class Management::Budgets::InvestmentsController < Management::BaseController
 
   private
 
+    def load_investment_votes(investments)
+      @investment_votes = managed_user ? managed_user.budget_investment_votes(investments) : {}
+    end
+
     def investment_params
       attributes = [:external_url, :heading_id, :tag_list, :organization_name, :location,
                     image_attributes: image_attributes,

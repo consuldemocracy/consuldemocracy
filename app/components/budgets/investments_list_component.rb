@@ -13,6 +13,8 @@ class Budgets::InvestmentsListComponent < ApplicationComponent
       budget.investments.feasible.sample(limit)
     when "balloting", "reviewing_ballots"
       budget.investments.selected.sample(limit)
+    when "finished"
+      budget.investments.winners.sample(limit)
     else
       budget.investments.none
     end

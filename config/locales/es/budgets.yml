@@ -90,7 +90,8 @@ es:
     investments:
       form:
         title: "Crear nuevo proyecto"
-        subtitle: "%{heading} (%{price})"
+        subtitle: "%{heading}"
+        subtitle_show_money: "%{heading} (%{price})"
         tag_category_label: "Categorías"
         tags_instructions: "Etiqueta este proyecto. Puedes elegir entre las categorías propuestas o introducir las que desees"
         tags_label: Etiquetas

@@ -86,7 +86,8 @@ en:
     investments:
       form:
         title: "Create a budget investment"
-        subtitle: "%{heading} (%{price})"
+        subtitle: "%{heading}"
+        subtitle_show_money: "%{heading} (%{price})"
         tag_category_label: "Categories"
         tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
         tags_label: Tags
@@ -223,9 +224,6 @@ en:
       discarded: "Discarded investment: "
       incompatibles: Incompatibles
       investment_title: Project title
-      investment_proyects: "List of all investment projects"
-      unfeasible_investment_proyects: "List of all unfeasible investment projects"
-      not_selected_investment_proyects: "List of all investment projects not selected for balloting"
     executions:
       link: "Milestones"
       page_title: "%{budget} - Milestones"

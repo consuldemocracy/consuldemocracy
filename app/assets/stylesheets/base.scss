@@ -31,7 +31,9 @@ a {
   font-family: "Montserrat", sans-serif !important;
 }
 
+button,
 .button {
+  font-weight: bold;
   min-height: $line-height * 2;
 }
 
@@ -76,6 +78,13 @@ main {
 
     .button {
       box-shadow: none;
+
+      &::before {
+
+        &:hover {
+          color: #fff;
+        }
+      }
     }
   }
 }
@@ -458,7 +467,7 @@ body > header,
   .menu > li {
 
     a {
-      line-height: $line-height * 2;
+      line-height: $line-height;
     }
 
     a,
@@ -641,7 +650,7 @@ body > header,
 
       > a::after {
         border: 0;
-        margin-top: 0;
+        margin-top: -6px;
         top: auto;
       }
     }
@@ -698,7 +707,7 @@ body > header,
 
     .avatar-image {
       position: absolute;
-      top: -8px;
+      top: -4px;
     }
   }
 }
@@ -1319,13 +1328,31 @@ footer {
   }
 }
 
+.admin-budgets-show {
+
+  button {
+    font-weight: normal;
+  }
+
+  .groups-and-headings .heading a {
+
+    &:hover {
+      transform: none;
+    }
+  }
+
+  .new-link {
+    border-width: 2px;
+    font-weight: bold;
+  }
+}
+
 .jumbo-budget {
   background: #fff;
-  border-bottom: 2px solid $border;
 
   &.budget-heading {
     background: #fff;
-    border-bottom: 2px solid $border;
+    border-bottom: 0;
   }
 
   h1,
@@ -1394,6 +1421,7 @@ footer {
 
   &.is-fixed {
     border-bottom: 2px solid $border;
+    z-index: 10;
   }
 }
 
@@ -1454,21 +1482,9 @@ footer {
       font-size: $base-font-size;
     }
   }
-}
 
-.amount-available span {
-  color: $brand;
-}
-
-.progress-votes .total-amount {
-  font-size: $tiny-font-size;
-
-  .amount-spent {
+  .amount-available span {
     color: $brand;
-  }
-
-  .amount-spent,
-  .price {
     font-size: $base-font-size;
   }
 }
@@ -1523,7 +1539,7 @@ footer {
 }
 
 .budget-info,
-.budget-investment-index-list {
+.investments-list {
 
   h2 {
     font-size: rem-calc(20);
@@ -1531,7 +1547,7 @@ footer {
   }
 }
 
-.budget-investment-index-list {
+.investments-list {
 
   .budget-investment .panel {
 
@@ -1704,7 +1720,6 @@ footer {
 }
 
 .legislation-content {
-  background: $light;
   padding: $line-height;
   margin-bottom: $line-height * 2;
 }
@@ -1719,12 +1734,15 @@ footer {
 }
 
 .legislation-process-list {
-  border-bottom: 2px solid $border;
 
   h3 {
     color: $label;
     font-size: $small-font-size;
     text-transform: uppercase;
+  }
+
+  &::after {
+    border-bottom: 2px solid $border;
   }
 }
 
@@ -2093,6 +2111,19 @@ footer {
 // 7. Admin
 // --------------------
 
+.admin .heading-mode {
+
+  h2 {
+    font-size: rem-calc(20);
+  }
+
+  a {
+    border-width: 2px;
+    font-size: $small-font-size;
+    font-weight: bold;
+  }
+}
+
 .admin table {
   font-size: $small-font-size;
 
@@ -2122,6 +2153,43 @@ footer {
 
 .ui-datepicker-calendar thead tr th {
   border: 1px solid $border;
+}
+
+.admin-budgets-show {
+
+  h3 {
+    color: $admin-text;
+    font-size: rem-calc(20);
+    font-weight: bold;
+    padding-right: $line-height / 2;
+    position: relative;
+    text-transform: uppercase;
+
+    &::after {
+      border-bottom: 4px solid $admin-border-color;
+      content: "";
+      margin-left: $line-height / 4;
+      position: absolute;
+      top: 12px;
+      width: 100%;
+    }
+  }
+}
+
+.reveal button {
+
+  &.close-button {
+    min-height: 0;
+  }
+}
+
+.budget-draft,
+.budget-completed {
+
+  span {
+    font-style: normal;
+    text-transform: uppercase;
+  }
 }
 
 // 8. Debates
@@ -2233,6 +2301,24 @@ footer {
         background: $unlike;
       }
     }
+  }
+}
+
+.debate-show,
+.proposal-show,
+.poll-question-show,
+.budget-investment-show,
+.polls-show,
+.debate-quiz,
+.budget-investment-show,
+.draft-panels,
+.debate-questions,
+.communities-show,
+.topic-show,
+.milestone-content {
+
+  .author-photo {
+    vertical-align: middle;
   }
 }
 
@@ -2767,7 +2853,7 @@ footer {
   }
 }
 
-.budget-investment-index-list {
+.investments-list {
   display: flex;
   flex-wrap: wrap;
 
@@ -2793,7 +2879,7 @@ footer {
 }
 
 .budget-info,
-.budget-investment-index-list {
+.investments-list {
 
   h2 {
     font-size: rem-calc(20);
@@ -2972,7 +3058,6 @@ footer {
 
 .budget-phases {
   background: $light;
-  border-top: 2px solid $border;
   padding-bottom: $line-height * 2;
 
   h2 {

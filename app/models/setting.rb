@@ -103,7 +103,7 @@ class Setting < ApplicationRecord
         "feature.link_to_top": true,
         "feature.sdg": true,
         "feature.machine_learning": false,
-        "feature.remove_investments_supports": false,
+        "feature.remove_investments_supports": true,
         "homepage.widgets.feeds.debates": true,
         "homepage.widgets.feeds.processes": true,
         "homepage.widgets.feeds.proposals": true,

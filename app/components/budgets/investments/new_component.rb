@@ -18,9 +18,13 @@ class Budgets::Investments::NewComponent < ApplicationComponent
 
     def subtitle
       if budget.single_heading?
-        tag.span t("budgets.investments.form.subtitle",
-                   heading: budget.headings.first.name,
-                   price: budget.formatted_heading_price(budget.headings.first))
+        if budget.show_money?
+          tag.span t("budgets.investments.form.subtitle_show_money",
+                     heading: budget.headings.first.name,
+                     price: budget.formatted_heading_price(budget.headings.first))
+        else
+          tag.span t("budgets.investments.form.subtitle", heading: budget.headings.first.name)
+        end
       end
     end
 end

@@ -110,26 +110,37 @@ describe "Votes" do
       other_investment = create(:budget_investment, heading: other_heading)
 
       visit budget_investment_path(budget, investment)
-      accept_confirm { find(".in-favor a").click }
-      expect(page).to have_content "1 support"
-      expect(page).to have_content "You have already supported this investment project. Share it!"
+      within("#budget_investment_#{investment.id}") do
+        accept_confirm { click_button "Support" }
+
+        expect(page).to have_content "1 support"
+        expect(page).to have_content "You have already supported this investment project. "\
+                                     "Share it!"
+      end
 
       visit budget_investment_path(budget, other_investment)
-      find(".in-favor a").click
-      expect(page).to have_content "You can only support investment projects in 1 district. "\
-                                   "You have already supported investments in"
+      within("#budget_investment_#{other_investment.id}") do
+        find_button("Support").click
+
+        expect(page).to have_content "You can only support investment projects in 1 district. "\
+                                     "You have already supported investments in"
+      end
 
       visit budget_investment_path(budget, investment)
-      within("aside") do
-        expect(page).to have_content "1 support"
-        click_link "Remove your support"
+      within("#budget_investment_#{investment.id}") do
+        click_button "Remove your support"
+
+        expect(page).to have_content "No supports"
       end
-      expect(page).to have_content "No supports"
 
       visit budget_investment_path(budget, other_investment)
-      accept_confirm { find(".in-favor a").click }
-      expect(page).to have_content "1 support"
-      expect(page).to have_content "You have already supported this investment project. Share it!"
+      within("#budget_investment_#{other_investment.id}") do
+        accept_confirm { click_button "Support" }
+
+        expect(page).to have_content "1 support"
+        expect(page).to have_content "You have already supported this investment project. "\
+                                     "Share it!"
+      end
     end
 
     context "Voting in multiple headings of a single group" do

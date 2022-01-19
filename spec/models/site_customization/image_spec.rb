@@ -29,12 +29,12 @@ describe SiteCustomization::Image do
       expect(image).to be_valid
     end
 
-    it "is not valid with a 400x80 image" do
+    it "is valid with a 400x80 image" do
       image = build(:site_customization_image,
                     name: "logo_header",
                     image: File.new("spec/fixtures/files/logo_email_custom.png"))
 
-      expect(image).not_to be_valid
+      expect(image).to be_valid
     end
   end
 end

@@ -25,12 +25,8 @@ $sidebar:        #245b80;
 $sidebar-hover:  #25597c;
 $sidebar-active: #f4fcd0;
 
-$table-header:   #ecf1f6;
 $table-border:   $admin-border;
-$table-color:    #4f5860;
-
-$admin-title:    #2f82b4;
-$admin-text:     #434d54;
+$table-header:   #ecf1f6;
 
 .admin {
   @include admin-layout;
@@ -44,7 +40,7 @@ $admin-text:     #434d54;
   }
 
   h2 {
-    font-weight: 500;
+    font-weight: 100;
     margin-bottom: $line-height;
 
     small {
@@ -58,21 +54,6 @@ $admin-text:     #434d54;
 
   h3 {
     margin: $line-height 0;
-    color: $admin-title;
-
-    &.inline-block {
-      margin-bottom: 0;
-    }
-  }
-
-  a {
-
-    &.icon-link {
-
-      &:hover {
-        text-decoration: none;
-      }
-    }
   }
 
   .back {
@@ -205,8 +186,6 @@ $admin-text:     #434d54;
     }
 
     thead {
-      border: 0;
-      color: $table-color;
 
       &,
       tr {
@@ -222,35 +201,22 @@ $admin-text:     #434d54;
       }
     }
 
-    caption {
-      @include element-invisible;
-    }
-
-
     th {
       background: $table-header;
       color: $admin-text;
       padding: $line-height / 2;
-
-      &:first-child {
-        border-top-left-radius: rem-calc(8);
-      }
-
-      &:last-child {
-        border-top-right-radius: rem-calc(8);
-      }
 
       label {
         color: $white;
       }
 
       a {
+        color: inherit;
         white-space: nowrap;
       }
     }
 
     tr {
-      background: #fff;
       border: $table-border;
 
       &:hover {
@@ -341,22 +307,8 @@ $admin-text:     #434d54;
     font-size: $base-font-size;
   }
 
-  .button {
-    font-weight: bold;
-    min-width: rem-calc(140);
-    max-height: $line-height * 2;
-
-    &.hollow {
-      border-width: 2px;
-    }
-
-    &.secondary {
-      margin-right: rem-calc(12);
-    }
-
-    .far {
-      padding: 0 $line-height / 4;
-    }
+  .button.secondary {
+    margin-right: rem-calc(12);
   }
 
   .admin-content {
@@ -477,170 +429,6 @@ code {
 
   label {
     margin-left: 0 !important;
-  }
-}
-
-.help-block {
-  background: $table-header;
-  border-radius: rem-calc(6);
-  color: $admin-text;
-  padding: $line-height / 2;
-  padding-right: $line-height * 2;
-  position: relative;
-
-  p {
-    font-size: $small-font-size;
-    font-style: italic;
-  }
-
-  .help-block-link {
-    display: block;
-    font-size: $small-font-size;
-    text-align: right;
-  }
-
-  .quote {
-    background: #ccd8e4;
-    display: table;
-    height: 100%;
-    position: absolute;
-    right: 12px;
-    top: 0;
-
-    span {
-      color: #fff;
-      display: table-cell;
-      padding: $line-height / 4;
-      vertical-align: bottom;
-    }
-  }
-}
-
-.reveal {
-  border-radius: rem-calc(12);
-
-  @include breakpoint(large) {
-    .row {
-      display: flex;
-      margin-bottom: $line-height * 2;
-    }
-
-    .column {
-      display: flex;
-      flex-flow: column;
-
-      &:last-child {
-        border-left: 2px solid $admin-border;
-      }
-    }
-  }
-
-  &:focus {
-    outline: 0;
-  }
-
-  .reveal-description {
-    color: $admin-text;
-    font-style: italic;
-    flex: 1;
-    text-align: center;
-
-    p {
-      font-size: $small-font-size;
-      text-align: left;
-    }
-  }
-
-  h1 {
-    color: $admin-text;
-    font-size: rem-calc(24);
-    margin-bottom: $line-height * 2;
-    margin-top: $line-height;
-    text-align: center;
-    text-transform: uppercase;
-  }
-
-  h2 {
-    font-size: rem-calc(24);
-    padding-top: $line-height;
-  }
-
-  .close-button {
-    border: 3px solid $admin-text;
-    border-radius: rem-calc(30);
-    color: $admin-text;
-    font-size: rem-calc(23);
-    font-weight: bold;
-    height: rem-calc(30);
-    width: rem-calc(30);
-  }
-
-  .button {
-
-    &.hollow {
-      display: inline-table;
-    }
-  }
-}
-
-.form-section-divider {
-  color: $admin-text;
-  clear: both;
-  font-size: $small-font-size;
-  font-weight: bold;
-  margin-top: $line-height * 2;
-  position: relative;
-  text-transform: uppercase;
-
-  span {
-    background: #fff;
-    display: inline-block;
-    padding-right: $line-height / 2;
-  }
-
-  &::after {
-    border: 2px solid $admin-border;
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 10px;
-    width: 100%;
-    z-index: -1;
-  }
-}
-
-.timeline-steps {
-  display: flex;
-  list-style-type: none;
-  margin: $line-height * 2 0;
-  position: relative;
-
-  li {
-    border-top: 4px solid $admin-border;
-    display: inline-block;
-    font-size: $small-font-size;
-    font-weight: bold;
-    padding: $line-height / 2 $line-height * 3 0;
-    text-transform: uppercase;
-
-    &::before {
-      background: $admin-border;
-      border-radius: rem-calc(20);
-      content: "";
-      height: 20px;
-      margin-left: $line-height / 2;
-      position: absolute;
-      top: -8px;
-      width: 20px;
-    }
-
-    &.step-active {
-      border-top: 4px solid $brand;
-
-      &::before {
-        background: $brand;
-      }
-    }
   }
 }
 
@@ -1296,56 +1084,6 @@ table {
 // 10. Budgets
 // -----------------
 
-.budget {
-
-  th,
-  td {
-    vertical-align: top;
-
-    &:first-child {
-      padding-left: $line-height;
-    }
-  }
-}
-
-.budget-draft,
-.budget-completed {
-  position: relative;
-
-  &::before {
-    color: $admin-border;
-    content: "\f023";
-    font-family: "Font Awesome 5 Free";
-    font-weight: bold;
-    left: 4px;
-    position: absolute;
-    top: 20px;
-  }
-
-  span {
-    color: $admin-text;
-    display: block;
-    font-size: $tiny-font-size;
-    font-weight: bold;
-    line-height: rem-calc(12);
-    text-transform: uppercase;
-  }
-}
-
-.budget-draft {
-
-  &::before {
-    content: "\f303";
-  }
-}
-
-.budget-completed {
-
-  &::before {
-    content: "\f023";
-  }
-}
-
 .advanced-filters {
   margin: $line-height 0;
 
@@ -1387,10 +1125,6 @@ table {
     + .columns-selector-wrapper {
       display: none;
     }
-  }
-
-  [class^="icon-"] {
-    vertical-align: middle;
   }
 
   &[aria-expanded='true'] {

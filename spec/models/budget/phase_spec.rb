@@ -60,28 +60,6 @@ describe Budget::Phase do
       end
     end
 
-    describe "main_button_url" do
-      it "is not required if main_button_text is not provided" do
-        valid_budget = build(:budget,
-                             name_en: "object name",
-                             main_button_text: "button text",
-                             main_button_url: "http://domain.com")
-
-        expect(valid_budget).to be_valid
-      end
-
-      it "is required if main_button_text is provided" do
-        invalid_budget = build(:budget,
-                               name_en: "object name",
-                               main_button_text: "button text")
-
-        expect(invalid_budget).not_to be_valid
-        expect(invalid_budget.errors.count).to be 1
-        expect(invalid_budget.errors[:main_button_url].count).to be 1
-        expect(invalid_budget.errors[:main_button_url].first).to eq "can't be blank"
-      end
-    end
-
     describe "main_link_url" do
       it "is not required if main_link_text is not provided" do
         valid_budget = build(:budget, main_link_text: nil)

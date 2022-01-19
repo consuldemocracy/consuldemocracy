@@ -4,6 +4,7 @@ class Budget < ApplicationRecord
   include StatsVersionable
   include Reportable
   include Imageable
+  include SDG::Relatable
 
   translates :name, :main_link_text, :main_link_url, touch: true
   include Globalizable

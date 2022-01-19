@@ -54,8 +54,10 @@ class Poll::Question < ApplicationRecord
     end
   end
 
-  def answers_with_description
-    question_answers.select { |answer| answer.description.present? }
+  def answers_with_content
+    question_answers.select do |answer|
+      answer.description.present? || answer.images.any? || answer.documents.any? || answer.videos.any?
+    end
   end
 
   delegate :answerable_by?, to: :poll

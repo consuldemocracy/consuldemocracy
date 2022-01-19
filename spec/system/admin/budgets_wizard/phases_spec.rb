@@ -43,7 +43,7 @@ describe "Budgets wizard, phases step", :admin do
 
       click_link "Finish"
 
-      expect(page).to have_css "section h3", exact_text: "Phases"
+      expect(page).to have_css "section h3", exact_text: "PHASES"
 
       within "tr", text: "Information" do
         expect(page).to have_content "No"
@@ -70,7 +70,7 @@ describe "Budgets wizard, phases step", :admin do
       expect(page).to have_css ".creation-timeline"
 
       within("tr", text: "Selecting projects") { click_link "Edit" }
-      fill_in "Name", with: "Choosing projects"
+      fill_in "Phase's Name", with: "Choosing projects"
       click_button "Save changes"
 
       expect(page).to have_content "Changes saved"
@@ -82,13 +82,13 @@ describe "Budgets wizard, phases step", :admin do
       phase = budget.phases.accepting
 
       visit edit_admin_budgets_wizard_budget_budget_phase_path(budget, phase)
-      fill_in "Name", with: ""
+      fill_in "Phase's Name", with: ""
       click_button "Save changes"
 
       expect(page).to have_css "#error_explanation"
       expect(page).to have_css ".creation-timeline"
 
-      fill_in "Name", with: "Welcoming projects"
+      fill_in "Phase's Name", with: "Welcoming projects"
       click_button "Save changes"
 
       expect(page).to have_content "Changes saved"
@@ -100,7 +100,7 @@ describe "Budgets wizard, phases step", :admin do
       visit admin_budgets_wizard_budget_budget_phases_path(budget, mode: "single")
 
       within("tr", text: "Selecting projects") { click_link "Edit" }
-      fill_in "Name", with: "Choosing projects"
+      fill_in "Phase's Name", with: "Choosing projects"
       click_button "Save changes"
 
       expect(page).to have_content "Changes saved"

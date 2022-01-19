@@ -304,8 +304,8 @@ class Budget
       user.headings_voted_within_group(group).where(id: heading.id).exists?
     end
 
-    def register_selection(user, vote)
-      vote_by(voter: user, vote: vote) if selectable_by?(user)
+    def register_selection(user)
+      vote_by(voter: user, vote: "yes") if selectable_by?(user)
     end
 
     def calculate_confidence_score

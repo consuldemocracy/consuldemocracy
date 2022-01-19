@@ -62,7 +62,7 @@ describe "Admin administrators" do
     visit admin_administrators_path
 
     within "#administrator_#{user_administrator.id}" do
-      accept_confirm { click_link "Delete" }
+      accept_confirm { click_button "Delete" }
     end
 
     within("#administrators") do

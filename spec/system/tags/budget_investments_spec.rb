@@ -66,9 +66,6 @@ describe "Tags" do
 
     visit new_budget_investment_path(budget_id: budget.id)
 
-    expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
-                                   visible: false)
-
     fill_in_new_investment_title with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
 
@@ -85,9 +82,6 @@ describe "Tags" do
     login_as(author)
 
     visit new_budget_investment_path(budget_id: budget.id)
-
-    expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
-                                   visible: false)
 
     fill_in_new_investment_title with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
@@ -112,9 +106,6 @@ describe "Tags" do
     visit budget_path(budget)
     click_link "Create a budget investment"
 
-    expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
-                                   visible: false)
-
     fill_in_new_investment_title with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
 
@@ -138,9 +129,6 @@ describe "Tags" do
     visit budget_investments_path(budget, heading_id: heading.id)
     click_link "Create a budget investment"
 
-    expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
-                                   visible: false)
-
     fill_in_new_investment_title with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
 
@@ -161,9 +149,6 @@ describe "Tags" do
 
     visit new_budget_investment_path(budget_id: budget.id)
 
-    expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
-                                   visible: false)
-
     fill_in_new_investment_title with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
 
@@ -179,9 +164,6 @@ describe "Tags" do
     login_as(author)
 
     visit new_budget_investment_path(budget_id: budget.id)
-
-    expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
-                                   visible: false)
 
     fill_in_new_investment_title with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"

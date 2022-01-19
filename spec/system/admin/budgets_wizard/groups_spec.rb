@@ -114,7 +114,7 @@ describe "Budgets wizard, groups step", :admin do
 
       visit admin_budget_path(budget)
 
-      within "section", text: "Heading groups" do
+      within "section", text: "HEADING GROUPS" do
         expect(page).to have_css "h4", exact_text: "Group without typos"
       end
     end

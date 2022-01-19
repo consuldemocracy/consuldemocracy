@@ -42,7 +42,7 @@ describe "Budget Groups" do
       visit budget_groups_path(budget)
 
       expect(page).to have_content "Select a heading"
-      expect(page).to have_link "New heading name"
+      expect(page).to have_link "New heading name €1,000,000"
       expect(page).to have_link "Go back", href: budget_path(budget)
     end
   end

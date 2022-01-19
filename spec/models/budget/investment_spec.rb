@@ -1118,7 +1118,7 @@ describe Budget::Investment do
       budget = create(:budget, :selecting)
       investment = create(:budget_investment, budget: budget)
 
-      investment.register_selection(create(:user, :level_two), "yes")
+      investment.register_selection(create(:user, :level_two))
       expect(investment.total_votes).to eq(1)
 
       investment.physical_votes = 10
