@@ -12,5 +12,6 @@ module Types
     field :submit_proposal, mutation: Mutations::SubmitProposal, authenticate: true
     field :support_proposal, mutation: Mutations::SupportProposal, authenticate: true
     field :update_debate, mutation: Mutations::UpdateDebate, authenticate: true
+    field :update_proposal, mutation: Mutations::UpdateProposal, authenticate: true
   end
 end
