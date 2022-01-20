@@ -15,7 +15,10 @@ module Mutations
           raise GraphQL::ExecutionError, "User '#{user.username}' is not authorized to update Debate with id '#{debate.id}'"
         end
 
-        debate.update_attributes!(attributes.to_hash)
+        attributes_hash = attributes.to_hash
+        attributes_hash[:translations_attributes].each { |translation| translation[:locale] = user.locale }
+
+        debate.update_attributes!(attributes_hash)
         debate
       rescue ActiveRecord::RecordInvalid, ActiveRecord::RecordNotFound => e
         raise GraphQL::ExecutionError, e.message
