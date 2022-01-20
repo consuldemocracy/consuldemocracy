@@ -1,24 +1,23 @@
 module Mutations
   class StartDebate < BaseMutation
-    argument :title, String, required: true, validates: { allow_blank: false }
-    argument :description, String, required: true, validates: { allow_blank: false }
-    argument :tag_list, String, required: false
+
+    argument :attributes, Types::DebateAttributes, required: true
     argument :terms_of_service, Boolean, required: true
 
     type Types::DebateType
 
-    def resolve(title:, description:, terms_of_service:, tag_list: nil)
+    def resolve(attributes:, terms_of_service:)
       begin
         Debate.create!({
           translations_attributes: {
             '0': {
               locale: context[:current_resource].locale,
-              title: title,
-              description: description
+              title: arguments[:title],
+              description: arguments[:description]
             }
           },
           author: context[:current_resource],
-          tag_list: tag_list,
+          tag_list: arguments[:tag_list],
           terms_of_service: terms_of_service
         })
       rescue ActiveRecord::RecordInvalid => e
