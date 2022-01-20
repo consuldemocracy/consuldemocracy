@@ -8,6 +8,7 @@ module Types
     field :provide_answer_to_poll_question, mutation: Mutations::ProvideAnswerToPollQuestion, authenticate: true
     field :publish_proposal, mutation: Mutations::PublishProposal, authenticate: true
     field :start_debate, mutation: Mutations::StartDebate, authenticate: true
+    field :start_poll_for_proposal, mutation: Mutations::StartPollForProposal, authenticate: true
     field :submit_proposal, mutation: Mutations::SubmitProposal, authenticate: true
     field :support_proposal, mutation: Mutations::SupportProposal, authenticate: true
     field :update_debate, mutation: Mutations::UpdateDebate, authenticate: true
