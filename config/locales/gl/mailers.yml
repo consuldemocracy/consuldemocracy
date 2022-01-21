@@ -7,8 +7,6 @@ gl:
       new_comment_by: Hai un novo comentario de <strong>%{commenter}</strong> en
       subject: Alguén comentou no teu %{commentable}
       title: Novo comentario
-    config:
-      manage_email_subscriptions: Podes deixar de recibir estes correos electrónicos cambiando a túa configuración en
     email_verification:
       click_here_to_verify: neste enlace
       instructions_2: Este correo electrónico é para verificar a túa conta con <b>%{document_type} %{document_number}</b>. Se eses non son os teus datos, por favor non premas a ligazón anterior e ignora este correo.
@@ -26,13 +24,9 @@ gl:
       title: "Notificacións de propostas en %{org_name}"
       share: Compartir proposta
       comment: Comentar proposta
-      unsubscribe: "Se non desexas recibir notificacións sobre as propostas, visita %{account} e desmarca 'Recibir un resumo coas notificacións de propostas'."
-      unsubscribe_account: A miña conta
     direct_message_for_receiver:
       subject: "Recibiches unha nova mensaxe privada"
       reply: Responder a %{sender}
-      unsubscribe: "Se non desexas recibir mensaxes directas, visita %{account} e desmarca 'Recibir correos coas mensaxes privadas'."
-      unsubscribe_account: A miña conta
     direct_message_for_sender:
       subject: "Acabas de enviar unha nova mensaxe privada"
       title: "Acabas de enviar unha nova mensaxe privada a <strong>%{receiver}</strong> co seguinte contido:"
