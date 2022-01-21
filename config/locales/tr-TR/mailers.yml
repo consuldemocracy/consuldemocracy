@@ -7,8 +7,6 @@ tr:
       new_comment_by: <strong>%{commenter}</strong> adlı kullanıcıdan yeni yorum
       subject: Birisi sizin %{commentable} paylaşımınız hakkında yorum yaptı
       title: Yeni yorum
-    config:
-      manage_email_subscriptions: Bizden daha fazla e-posta almak istemiyorsanız, lütfen ayarlarınızı değiştirin
     email_verification:
       click_here_to_verify: bu bağlantı
       instructions_2: Bu e-posta ile hesabınız <b>%{document_type} %{document_number}</b> kullanılarak doğrulanacaktır. Bu bilgiler size ait değilse, lütfen linke tıklamadan bu mesajı göz ardı edin.
@@ -26,14 +24,10 @@ tr:
       title: "%{org_name}'daki öneri bildirimleri"
       share: Öneriyi paylaş
       comment: Öneriye yorum yap
-      unsubscribe: "Eğer öneriyle ilgili bildirim almak istemiyorsanız, %{account}'u ziyaret edin ve 'Öneri bildirimlerinin bir özetini al' seçeneğindeki onay işaretini kaldırın."
-      unsubscribe_account: Hesabım
       unfollow: "Bildirim almaya son vermek için öneri sayfasını ziyaret edip takipten çıkarın."
     direct_message_for_receiver:
       subject: "Yeni bir özel mesaj aldınız"
       reply: '%{sender}''a yanıt ver'
-      unsubscribe: "Eğer doğrudan mesaj almak istemiyorsanız, %{account}'u ziyaret edin ve 'Doğrudan mesajlar hakkında e-posta al' seçeneğinin işaretini kaldırın."
-      unsubscribe_account: Hesabım
     direct_message_for_sender:
       subject: "Yeni bir özel mesaj gönderdiniz"
       title: "Bu içerikle <strong>%{receiver}</strong>'a bir yeni özel mesaj gönderdiniz:"
