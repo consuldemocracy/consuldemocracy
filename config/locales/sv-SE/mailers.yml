@@ -27,10 +27,12 @@ sv:
       title: "Aviseringar om förslag i %{org_name}"
       share: Dela förslaget
       comment: Kommentera förslaget
+      unsubscribe_text: "Om du inte vill få några förslagsaviseringar går du till %{notifications} och avmarkerar 'Få sammanfattningar av aviseringar om förslag'."
       unfollow: "Sluta att få aviseringar genom att besöka förslaget och sluta att följa."
     direct_message_for_receiver:
       subject: "Du har fått ett nytt privat meddelande"
       reply: Svara till %{sender}
+      unsubscribe_text: "Om du inte vill få direktmeddelanden, går du till %{notifications} och avmarkerar 'Få e-post om direktmeddelanden'."
     direct_message_for_sender:
       subject: "Du har skickat ett nytt privat meddelande"
       title: "Du har skickat ett nytt privat meddelande till <strong>%{receiver}</strong> med innehållet:"
