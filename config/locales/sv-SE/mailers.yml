@@ -7,8 +7,6 @@ sv:
       new_comment_by: Det finns en ny kommentar från <strong>%{commenter}</strong>
       subject: Någon har kommenterat på ditt %{commentable}
       title: Ny kommentar
-    config:
-      manage_email_subscriptions: För att sluta få denna e-post kan du ändra dina inställningar i
     email_verification:
       click_here_to_verify: den här länken
       instructions_2: Det här e-postmeddelandet är för att verifiera ditt konto med <b>%{document_type} %{document_number}</b>. Klicka inte på länken ovan om de inte tillhör dig.
@@ -26,14 +24,10 @@ sv:
       title: "Aviseringar om förslag i %{org_name}"
       share: Dela förslaget
       comment: Kommentera förslaget
-      unsubscribe: "Gå till %{account} och avmarkera 'Få sammanfattningar av aviseringar om förslag', om du inte längre vill få aviseringar om förslag."
-      unsubscribe_account: Mitt konto
       unfollow: "Sluta att få aviseringar genom att besöka förslaget och sluta att följa."
     direct_message_for_receiver:
       subject: "Du har fått ett nytt privat meddelande"
       reply: Svara till %{sender}
-      unsubscribe: "Om du inte vill få direktmeddelanden, går du till %{account} och avmarkerar 'Få e-post om direktmeddelanden'."
-      unsubscribe_account: Mitt konto
     direct_message_for_sender:
       subject: "Du har skickat ett nytt privat meddelande"
       title: "Du har skickat ett nytt privat meddelande till <strong>%{receiver}</strong> med innehållet:"
