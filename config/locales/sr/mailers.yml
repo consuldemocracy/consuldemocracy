@@ -7,8 +7,6 @@ sr:
       new_comment_by: Нови коментар од <strong>%{commenter}</strong>
       subject: Неко је оставио коментар на твом %{commentable}
       title: Нови коментар
-    config:
-      manage_email_subscriptions: Да престанете да примате ове емаил-ове, промените Ваша подешавања у
     email_verification:
       click_here_to_verify: овај линк
       instructions_2: Овај емаил ће верификовати Ваш налог са <b>%{document_type} %{document_number}</b>. Ако ово не припада Вама, молимо да не кликнете на претходни линк и да игноришете овај емаил.
@@ -26,14 +24,10 @@ sr:
       title: "Обавештење предлога у %{org_name}"
       share: Поделите предлог
       comment: Коментаришите предлог
-      unsubscribe: "Уколико не желите да примате обавештења о предлогу, посетите %{account} и одштиклирајте \"Примање сажетка о обавештењу предлога\"."
-      unsubscribe_account: Мој налог
       unfollow: "Посетите овај предлог и престаните да га пратите да не би више добијали обавештења."
     direct_message_for_receiver:
       subject: "Примили сте нову приватну поруку"
       reply: Одговорите %{sender}
-      unsubscribe: "Уколико не желите да примате директне поруке, посетите %{account} и одштиклирајте 'Примање емаилова о директним порукама'."
-      unsubscribe_account: Мој налог
     direct_message_for_sender:
       subject: "Послали сте нову приватну поруку"
       title: "Послали сте нову приватну поруку <strong>%{receiver}</strong> са садржајем:"
