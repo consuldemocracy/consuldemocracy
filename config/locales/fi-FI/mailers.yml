@@ -15,9 +15,6 @@ fi:
     proposal_notification_digest:
       share: Jaa ehdotus
       comment: Kommentoi ehdotusta
-      unsubscribe_account: Tilini
-    direct_message_for_receiver:
-      unsubscribe_account: Tilini
     user_invite:
       thanks: "Kiitoksia paljon."
     budget_investment_created:
