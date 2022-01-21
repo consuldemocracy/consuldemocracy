@@ -5,8 +5,6 @@ eu:
       hi: Kaixo
       subject: norbaitek zure %{commentable} iruzkinan idatzi du
       title: Iruzkin berria
-    config:
-      manage_email_subscriptions: 'Email hauek jasotzeari usteko aldatu zure konfigurazioa:'
     email_verification:
       click_here_to_verify: lotura honetan
       subject: Zure emaila egiaztatu
@@ -21,13 +19,9 @@ eu:
       title: "%{org_name}-(e)n proposatutako jakinarzpen berriak"
       share: Proposamena partekatu
       comment: Proposamena iruzkindu
-      unsubscribe: "Proposamen jakinarazpenik jaso nahi ez baduzu, %{account}-(e)n sartu zaitezke eta  'Proposamenei buruz jakinarazpenak jaso' aukera desmarkatu dezakezu."
-      unsubscribe_account: Nire kontua
     direct_message_for_receiver:
       subject: "Mezu pribatu berri bat jaso duzu"
       reply: '%{sender} erantzun'
-      unsubscribe: "Mezu pribaturik jaso nahi ez baduzu, %{account}-(e)n sartu zaitezke eta 'Mezu pribatudun emailak jaso' aukera desmarkatu dezakezu."
-      unsubscribe_account: Nire kontua
     direct_message_for_sender:
       subject: "Mezu pribatu berri bat bidali duzu"
     user_invite:
