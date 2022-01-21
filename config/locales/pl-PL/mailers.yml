@@ -6,8 +6,6 @@ pl:
       new_comment_by: Nowy komentarz od <strong>%{commenter}</strong>
       subject: Ktoś skomentował Twój %{commentable}
       title: Nowy komentarz
-    config:
-      manage_email_subscriptions: Aby zrezygnować z otrzymywania tych wiadomości e-mail, zmień ustawienia w
     email_verification:
       click_here_to_verify: ten link
       instructions_2: Ten e-mail zweryfikuje Twoje konto z <b>%{document_type}%{document_number}</b>. Jeśli nie należą one do Ciebie, nie klikaj w powyższy link i zignoruj ten e-mail.
@@ -25,13 +23,9 @@ pl:
       title: "Powiadomienia o wniosku w %{org_name}"
       share: Udostępnij wniosek
       comment: Skomentuj wniosek
-      unsubscribe: "Jeśli nie chcesz otrzymywać powiadomień propozycji, odwiedź %{account} i odznacz 'o podsumowaniu powiadomień dotyczących pomysłów'."
-      unsubscribe_account: Moje konto
     direct_message_for_receiver:
       subject: "Otrzymałeś nową wiadomość prywatną"
       reply: Odpowiedz %{sender}
-      unsubscribe: "Jeśli nie chcesz otrzymywać wiadomości bezpośrednich, odwiedź %{account} i odznacz 'gdy ktoś wyśle mi wiadomość bezpośrednią'."
-      unsubscribe_account: Moje konto
     direct_message_for_sender:
       subject: "Wysłałeś nową wiadomość prywatną"
       title: "Wysłałeś nową wiadomość prywatną do <strong>%{receiver}</strong> o następującej treści:"
