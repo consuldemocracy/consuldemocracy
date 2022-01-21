@@ -823,4 +823,22 @@ describe User do
       expect(other_user_legislation_proposal.reload).to be_hidden
     end
   end
+
+  describe "#add_subscriptions_token" do
+    let(:user) { build(:user, subscriptions_token: nil) }
+
+    it "generates a subscriptions token when the user doesn't have one" do
+      user.add_subscriptions_token
+
+      expect(user.subscriptions_token).to be_present
+    end
+
+    it "keeps the existing subscriptions token when the user already has one" do
+      user.update!(subscriptions_token: "already_set")
+
+      user.add_subscriptions_token
+
+      expect(user.subscriptions_token).to eq "already_set"
+    end
+  end
 end

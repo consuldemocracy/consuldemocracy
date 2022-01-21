@@ -92,6 +92,7 @@ describe "System Emails" do
                                 href: proposal_url(proposal_b, anchor: "tab-notifications", host: app_host))
       expect(page).to have_content("Proposal A Notification Body")
       expect(page).to have_content("Proposal B Notification Body")
+      expect(page).to have_link "Notifications"
     end
 
     scenario "#budget_investment_created" do
@@ -155,6 +156,9 @@ describe "System Emails" do
       expect(page).to have_content comment.body
 
       expect(page).to have_link "Let's do...", href: debate_url(debate, host: app_host)
+      expect(page).to have_link("Notifications",
+                                href: edit_subscriptions_url(token: user.subscriptions_token,
+                                                             host: app_host))
     end
 
     scenario "#reply" do
@@ -172,6 +176,9 @@ describe "System Emails" do
       expect(page).to have_content reply.body
 
       expect(page).to have_link "Let's do...", href: comment_url(reply, host: app_host)
+      expect(page).to have_link("Notifications",
+                                href: edit_subscriptions_url(token: user.subscriptions_token,
+                                                             host: app_host))
     end
 
     scenario "#direct_message_for_receiver" do
@@ -182,6 +189,9 @@ describe "System Emails" do
       expect(page).to have_content "This is a sample of message's content."
 
       expect(page).to have_link "Reply to #{admin.user.name}", href: user_url(admin.user, host: app_host)
+      expect(page).to have_link("Notifications",
+                                href: edit_subscriptions_url(token: admin.user.subscriptions_token,
+                                                             host: app_host))
     end
 
     scenario "#direct_message_for_sender" do

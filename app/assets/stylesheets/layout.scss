@@ -74,7 +74,8 @@ main {
   &.sdg-goals-index,
   &.sdg-goal-show,
   &.topic-edit,
-  &.topic-new {
+  &.topic-new,
+  &.subscriptions-edit {
     @include grid-column-gutter;
   }
 }
