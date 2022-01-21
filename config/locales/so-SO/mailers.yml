@@ -6,8 +6,6 @@ so:
       new_comment_by: Waxa jira faalo cusub<strong>%{commenter}</strong>
       subject: Qof ayaa ka falooday%{commentable}
       title: Faalo cusub
-    config:
-      manage_email_subscriptions: Si aad u joojiso helitaanka emailladahaan waxay bedeshaa goobahaaga
     email_verification:
       click_here_to_verify: xidhiidhkan
       instructions_2: E-maylkan ayaa xaqiijin doona koontadaada <b> %{document_type}%{document_number} </b>. Haddii aysan kuwaan ku jirin, fadlan ha guji xiriirka hore oo iska dheji emailkan.
@@ -25,13 +23,9 @@ so:
       title: "Ogeysiisyada soo jeedinta ee%{org_name}"
       share: Lawadaag soo jeeedinta
       comment: Faalada soo jeedinta
-      unsubscribe: "Haddii aadan rabin inaad hesho ogeysiis soo jeedin, booqo%{account} oo aanad 'helin soo koobidda ogeysiinta soo jeedinta'."
-      unsubscribe_account: Xisaabteyda
     direct_message_for_receiver:
       subject: "Waxaad heshay farriin cusub oo gaar ah"
       reply: Jawaab u diir%{sender}
-      unsubscribe: "Haddii aadan rabin inaad hesho fariin toos ah, booqo%{account} oo aanad 'Helin emails wixii ku saabsan fariimaha tooska'."
-      unsubscribe_account: Xisaabteyda
     direct_message_for_sender:
       subject: "Waxaad soo dirtay farriin cusub oo gaar ah"
       title: "Waxaad fariin gaar ah u dirtay <strong>% %{receiver}</strong> oo leh mawduuc:"
