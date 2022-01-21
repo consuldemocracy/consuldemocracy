@@ -6,8 +6,6 @@ it:
       new_comment_by: C'è un nuovo commento da <strong>%{commenter}</strong>
       subject: Qualcuno ha commentato sul tuo %{commentable}
       title: Nuovo commento
-    config:
-      manage_email_subscriptions: Per non ricevere più queste email, modifica le impostazioni
     email_verification:
       click_here_to_verify: questo link
       instructions_2: Questa email consente di verificare il tuo account con <b>%{document_type} %{document_number}</b>. Se questi documenti non ti appartengono, non cliccare sul link precedente e ignorare questa email.
@@ -25,13 +23,9 @@ it:
       title: "Notifiche di proposte su %{org_name}"
       share: Condividi la proposta
       comment: Commenta la proposta
-      unsubscribe: "Se non si desidera ricevere notifiche relativamente alle proposte, visita %{account} e togli la spunta a 'Ricevi un riassunto delle notifiche relative alle proposte'."
-      unsubscribe_account: Il mio account
     direct_message_for_receiver:
       subject: "Hai ricevuto un nuovo messaggio privato"
       reply: Rispondere a %{sender}
-      unsubscribe: "Se non si desidera ricevere messaggi diretti, visita %{account} e togli la spunta a 'Ricevi email sui messaggi diretti'."
-      unsubscribe_account: Il mio account
     direct_message_for_sender:
       subject: "Hai inviato un nuovo messaggio privato"
       title: "Hai inviato un nuovo messaggio privato a <strong>%{receiver}</strong> con il contenuto:"
