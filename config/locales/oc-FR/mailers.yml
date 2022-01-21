@@ -7,8 +7,6 @@ oc:
       new_comment_by: I a un nòu comentari de <strong>%{commenter}</strong> en
       subject: Quauquarrés a comentat en lo tieu %{commentable}
       title: Nòu comentari
-    config:
-      manage_email_subscriptions: Pòdes quitar de recebre aqueles emails en cambiant la tiá configuracion en
     email_verification:
       click_here_to_verify: en aquel ligam
       instructions_2: Aquel corrièr electronic verificarà lo vòstre compte <b>%{document_type} %{document_number}</b>. S'aqueles vos apertenon pas, faguèt pas clic a l’ligam anterior e ignoratz aquel corrièr electronic.
@@ -26,14 +24,10 @@ oc:
       title: "Notificacions de proposicions en %{org_name}"
       share: Partejar proposicion
       comment: Comentar proposicion
-      unsubscribe: "se Volètz pas recebre cap de notificacion de proposicion, visitatz %{account} e desmarcatz \"Recep un resumit de las notificacions de las proposicions\"."
-      unsubscribe_account: Lo mieu compte
       unfollow: "Visita aquela proposicion e daissa-la sens quitar de recebre de notificacions."
     direct_message_for_receiver:
       subject: "As recebut un nòu messatge privat"
       reply: Respondre a %{sender}
-      unsubscribe: "se Volètz pas recebre de messatges dirèctes, visitatz %{account} e desmarcatz \"Recep de messatges de corrièr electronic sus messatges dirèctes\"."
-      unsubscribe_account: Lo mieu compte
     direct_message_for_sender:
       subject: "Avètz enviat un messatge privat nòu"
       title: "Avètz enviat un messatge privat nòu a <strong>%{receiver}</strong> amb lo contengut:"
