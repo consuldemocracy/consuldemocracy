@@ -7,6 +7,9 @@ sv:
       new_comment_by: Det finns en ny kommentar från <strong>%{commenter}</strong>
       subject: Någon har kommenterat på ditt %{commentable}
       title: Ny kommentar
+    config:
+      notifications_link: Aviseringar
+      unsubscribe_text: 'För att avsluta prenumerationen på dessa e-postmeddelanden går du till %{notifications} och avmarkera "%{notification}".'
     email_verification:
       click_here_to_verify: den här länken
       instructions_2: Det här e-postmeddelandet är för att verifiera ditt konto med <b>%{document_type} %{document_number}</b>. Klicka inte på länken ovan om de inte tillhör dig.
