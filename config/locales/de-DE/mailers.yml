@@ -7,8 +7,6 @@ de:
       new_comment_by: Es gibt einen neuen Kommentar von <strong>%{commenter}</strong>
       subject: Jemand hat Ihre %{commentable} kommentiert.
       title: Neuer Kommentar
-    config:
-      manage_email_subscriptions: Wenn Sie keine E-Mails mehr empfangen möchten, ändern Sie bitte Ihre Einstellungen in
     email_verification:
       click_here_to_verify: diesen Link
       instructions_2: Diese E-Mail dient dazu Ihr Konto mit <b>%{document_type} %{document_number}</b>zu verifizieren. Wenn es sich hierbei nicht um Ihre Daten handelt, klicken Sie bitte nicht auf den vorherigen Link und ignorieren Sie diese E-Mail.
@@ -26,14 +24,10 @@ de:
       title: "Antrags-Benachrichtigungen von %{org_name}"
       share: Vorschlag teilen
       comment: Vorschlag kommentieren
-      unsubscribe: "Wenn Sie keine Antrags-Benachrichtigungen erhalten möchten, besuchen Sie %{account} und entfernen Sie den Haken von 'Eine Zusammenfassung für Antrags-Benachrichtigungen erhalten'."
-      unsubscribe_account: Mein Konto
       unfollow: "Rufen Sie diesen Vorschlag auf und entflogen Sie ihn um keine weiteren Benachrichtigungen zu erhalten."
     direct_message_for_receiver:
       subject: "Sie haben eine neue persönliche Nachricht erhalten"
       reply: Auf %{sender} antworten
-      unsubscribe: "Wenn Sie keine direkten Nachrichten erhalten möchten, besuchen Sie %{account} und deaktivieren Sie \"E-Mails zu Direktnachrichten empfangen\"."
-      unsubscribe_account: Mein Konto
     direct_message_for_sender:
       subject: "Sie haben eine neue persönliche Nachricht gesendet"
       title: "Sie haben eine neue persönliche Nachricht versendet an <strong>%{receiver}</strong> mit dem Inhalt:"
