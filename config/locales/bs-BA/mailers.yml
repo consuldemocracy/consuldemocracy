@@ -5,8 +5,6 @@ bs:
       hi: Pozdrav
       subject: Neko je dao komentar na vaš %{commentable}
       title: Novi komentar
-    config:
-      manage_email_subscriptions: Kako bi prestali dobijati ove emailove, promijenite svoje postavke u
     email_verification:
       click_here_to_verify: ovaj link
       instructions_2: Ovaj email će potvrditi vaš nalog sa <b>%{document_type}%{document_number}</b>. Ako to nije vaše, nemojte kliknuti na prethodni link i zanemarite ovaj email.
@@ -23,13 +21,9 @@ bs:
       title: "Obavijesti o prijedlozima u %{org_name}"
       share: Podijeli prijedlog
       comment: Prijedlog komentara
-      unsubscribe: "Ako ne želite obavijesti o prijedlogu, idite na %{account} i odznačite \"Šaljite mi sažetke obavijesti o prijedlozima\"."
-      unsubscribe_account: Moj nalog
     direct_message_for_receiver:
       subject: "Dobili ste novu privatnu poruku"
       reply: Odgovori %{sender}
-      unsubscribe: "Ako ne želite direktne poruke, idite na %{account} i odznačite \"Šaljite mi emailove u vezi direktnih poruka\"."
-      unsubscribe_account: Moj nalog
     direct_message_for_sender:
       subject: "Poslali ste novu privatnu poruku"
       title: "Poslali ste novu privatnu poruku <strong>%{receiver}</strong> sljedećeg sadržaja:"
