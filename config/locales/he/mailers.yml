@@ -6,8 +6,6 @@ he:
       new_comment_by: ישנה הערה חדשה מ <strong>%{commenter}</strong>
       subject: ישנה הערה חדשה %{commentable}
       title: הערה חדשה
-    config:
-      manage_email_subscriptions: כדי להפסיק לקבל דואר דומה עליכם לשנות את הגדרות הדואר
     email_verification:
       click_here_to_verify: קישור זה
       instructions_2: האימייל זה יאמת את החשבון שלך עם <b>-%{document_type} - %{document_number}-</b>. אם אלו שלא שייכים לך, נא לא ללחוץ על הקישור הקודם, התעלם מדוא"ל זה.
@@ -25,13 +23,9 @@ he:
       title: "התרעות הצעות ב-%{org_name}"
       share: שיתוף ההצעה
       comment: תגובה על ההצעה
-      unsubscribe: "אם אין ברצונך לקבל התרעות על ההצעה, גש/י אל %{account} והסר/י את הסימון במשבצת 'קבלת סיכום ההודעות על הצעות'."
-      unsubscribe_account: החשבון שלי
     direct_message_for_receiver:
       subject: "התקבלה הודעה פרטית חדשה"
       reply: השב ל %{sender}
-      unsubscribe: "אם אינך רוצה לקבל הודעות ישירות, גש/י אל %{account} והסר/י את הסימון במשבצת 'קבלת דואר אלקטרוני על הודעות ישירות'."
-      unsubscribe_account: החשבון שלי
     direct_message_for_sender:
       subject: "שלחת הודעה פרטית חדשה"
       title: "שלחת הודעה פרטית אל <strong>%{receiver}</strong> שהתוכן בה:"
