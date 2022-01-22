@@ -9,6 +9,10 @@ tr:
         body: "Eğer bir dilde yetkinseniz, lütfen Consul'u tercüme etmemize yardımcı olun!"
       map:
         title: "Artık teklifleri ve yatırımları konumlandırabilirsiniz"
+        body: "Bir teklif veya yatırım oluşturduğunuzda harita üzerinde bir nokta belirtebilirsiniz."
+      proposal:
+        title: "Teklifiniz var mı?"
+        body: "Fikirlerinizle bir teklif oluşturabileceğinizi ve insanların bunu tartışıp destekleyeceğini hatırlayın."
     settings:
       official_level_1_name: Resmi pozisyon 1
       official_level_2_name: Resmi pozisyon 2
@@ -23,6 +27,22 @@ tr:
     organizations:
       human_rights: İnsan Hakları
       neighborhood_association: Mahalle Derneği
+    cards:
+      budget:
+        title: "Katılımcı bütçe nasıl çalışır?"
+        link_text: "Katılımcı bütçeler hakkında daha fazlası"
+        label: "Katılımcı bütçeleri"
+      debate:
+        title: "Münazaralar nasıl gerçekleşir?"
+        link_text: "Münazaralar hakkında daha fazlası"
+        label: "Münazaralar"
+      header:
+        title: "CONSUL"
+        link_text: "Daha fazla bilgi"
+        label: "Hoş geldiniz"
+      proposal:
+        link_text: "Öneriler hakkında daha fazlası"
+        label: "Vatandaş önerileri"
     categories:
       associations: Dernekler
       culture: Kültür
@@ -45,11 +65,18 @@ tr:
       groups:
         all_city: Tüm şehir
         districts: İlçeler
+      phases:
+        description: "%{language} açıklama"
+        summary: "%{language} özet"
       statuses:
         studying_project: Projenin incelenmesi
         bidding: Teklif verme
         executing_project: Projeyi yürütmek
         executed: Gerçekleştirilen
+    legislation:
+      draft_versions:
+        title: "Versiyon %{number}"
+        body: "%{language} versiyon taslağı"
     polls:
       current_poll: "Geçerli Anket"
       current_poll_geozone_restricted: "Geçerli Anket Geozone sınırlı"
