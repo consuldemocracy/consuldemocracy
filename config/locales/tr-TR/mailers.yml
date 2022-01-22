@@ -7,6 +7,8 @@ tr:
       new_comment_by: <strong>%{commenter}</strong> adlı kullanıcıdan yeni yorum
       subject: Birisi sizin %{commentable} paylaşımınız hakkında yorum yaptı
       title: Yeni yorum
+    config:
+      notifications_link: Bildirimler
     email_verification:
       click_here_to_verify: bu bağlantı
       instructions_2: Bu e-posta ile hesabınız <b>%{document_type} %{document_number}</b> kullanılarak doğrulanacaktır. Bu bilgiler size ait değilse, lütfen linke tıklamadan bu mesajı göz ardı edin.
