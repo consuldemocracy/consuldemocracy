@@ -30,6 +30,7 @@ tr:
     cards:
       budget:
         title: "Katılımcı bütçe nasıl çalışır?"
+        description: "Katılımcı bütçeler, vatandaşların bütçenin bir kısmının nasıl harcanacağına doğrudan karar vermelerini, kurumun vatandaş tekliflerini titiz bir şekilde izlemesi ve değerlendirmesi ile sağlar. Herkes için azami etki ve kontrol memnuniyeti."
         link_text: "Katılımcı bütçeler hakkında daha fazlası"
         label: "Katılımcı bütçeleri"
       debate:
@@ -38,9 +39,11 @@ tr:
         label: "Münazaralar"
       header:
         title: "CONSUL"
+        description: "Vatandaş katılımı için ücretsiz yazılım."
         link_text: "Daha fazla bilgi"
         label: "Hoş geldiniz"
       proposal:
+        title: "Vatandaş önerileri nasıl gerçekleşir?"
         link_text: "Öneriler hakkında daha fazlası"
         label: "Vatandaş önerileri"
     categories:
