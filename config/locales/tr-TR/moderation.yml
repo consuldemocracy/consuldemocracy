@@ -1,5 +1,7 @@
 tr:
   moderation:
+    actions:
+      confirm_action: "\"%{action}\" yapmak istediğinizden emin misiniz"
     comments:
       index:
         block_authors: Yazarları engelle
@@ -99,6 +101,7 @@ tr:
         title: Öneri bildirimleri
     users:
       index:
+        block: Engelle
         hide: Engelle
         search_placeholder: e-posta veya kullanıcının adı
         title: Kullanıcıları engelle
