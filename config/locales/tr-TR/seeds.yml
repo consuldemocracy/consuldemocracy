@@ -35,6 +35,7 @@ tr:
         label: "Katılımcı bütçeleri"
       debate:
         title: "Münazaralar nasıl gerçekleşir?"
+        description: "Herkes herhangi bir konuda başlık açarak insanların önerilen konuyu tartışabileceği ayrı alanlar yaratabilir. Tartışmalar, herkes için önem arz eden konulara değinmek için değerlidir."
         link_text: "Münazaralar hakkında daha fazlası"
         label: "Münazaralar"
       header:
@@ -44,6 +45,7 @@ tr:
         label: "Hoş geldiniz"
       proposal:
         title: "Vatandaş önerileri nasıl gerçekleşir?"
+        description: "Herkesin, bir vatandaş teklifi oluşturması ve destek kazanması için bir platform. Yeterli desteğe ulaşan teklifler oylanacak ve böylece hepimiz için önem arz eden sorunlara birlikte karar vereceğiz."
         link_text: "Öneriler hakkında daha fazlası"
         label: "Vatandaş önerileri"
     categories:
