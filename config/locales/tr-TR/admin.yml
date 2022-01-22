@@ -4,6 +4,7 @@ tr:
       title: Yönetim
     actions:
       actions: Eylemler
+      block_author: "Yazarı engelle"
       confirm_delete: "Emin misiniz? Bu işlem \"%{name}\" silecek ve geri alınamaz."
       confirm_hide: Moderasyonu onayla
       delete: "Sil"
