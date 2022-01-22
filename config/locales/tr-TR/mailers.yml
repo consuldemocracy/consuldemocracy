@@ -9,6 +9,7 @@ tr:
       title: Yeni yorum
     config:
       notifications_link: Bildirimler
+      unsubscribe_text: 'E-posta aboneliğinden ayrılmak için %{notification}''a gidin ve "%{notifications}%" seçeneğindeki onayı kaldırın.'
     email_verification:
       click_here_to_verify: bu bağlantı
       instructions_2: Bu e-posta ile hesabınız <b>%{document_type} %{document_number}</b> kullanılarak doğrulanacaktır. Bu bilgiler size ait değilse, lütfen linke tıklamadan bu mesajı göz ardı edin.
@@ -26,10 +27,12 @@ tr:
       title: "%{org_name}'daki öneri bildirimleri"
       share: Öneriyi paylaş
       comment: Öneriye yorum yap
+      unsubscribe_text: "Öneri bildirimi almak istemiyorsanız %{notifications}'a gidin ve \"Öneri bildirimlerinin özetini al\" seçeneğindeki onayı kaldırın."
       unfollow: "Bildirim almaya son vermek için öneri sayfasını ziyaret edip takipten çıkarın."
     direct_message_for_receiver:
       subject: "Yeni bir özel mesaj aldınız"
       reply: '%{sender}''a yanıt ver'
+      unsubscribe_text: "Doğrudan mesaj almak istemiyorsanız %{notifications}'a gidin ve \"Doğrudan mesajlarla ilgili e-posta al\" seçeneğindeki onayı kaldırın."
     direct_message_for_sender:
       subject: "Yeni bir özel mesaj gönderdiniz"
       title: "Bu içerikle <strong>%{receiver}</strong>'a bir yeni özel mesaj gönderdiniz:"
