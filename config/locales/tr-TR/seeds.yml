@@ -1,5 +1,14 @@
 tr:
   seeds:
+    admin_notifications:
+      budget:
+        title: "Katılımcı Bütçe'yi kapatıyoruz!"
+        body: "Acele edin ve birkaç gün içinde bitmeden önce bir teklif oluşturun!"
+      help:
+        title: "Consul'u tercüme etmemize yardımcı olun"
+        body: "Eğer bir dilde yetkinseniz, lütfen Consul'u tercüme etmemize yardımcı olun!"
+      map:
+        title: "Artık teklifleri ve yatırımları konumlandırabilirsiniz"
     settings:
       official_level_1_name: Resmi pozisyon 1
       official_level_2_name: Resmi pozisyon 2
