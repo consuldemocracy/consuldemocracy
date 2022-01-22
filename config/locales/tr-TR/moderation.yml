@@ -102,7 +102,10 @@ tr:
     users:
       index:
         block: Engelle
+        confirm_block: "Emin misiniz? Bu, \"%{name}\" kullanıcısını ve tüm içeriklerini gizleyecektir."
+        confirm_hide: "Emin misiniz? Bu, içeriklerini gizlemeden \"%{name}\" kullanıcısını gizleyecektir."
         hide: Engelle
         search_placeholder: e-posta veya kullanıcının adı
         title: Kullanıcıları engelle
+      notice_block: Kullanıcı engellenmiştir. Bu kullanıcı tarafından yazılan tüm içerikler gizlenmiştir.
       notice_hide: Kullanıcı engellendi. Bu kullanıcının tüm tartışmaları ve yorumları gizlendi.
