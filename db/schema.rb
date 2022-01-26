@@ -394,6 +394,7 @@ ActiveRecord::Schema.define(version: 2021_11_03_112944) do
     t.text "description_informing"
     t.string "voting_style", default: "knapsack"
     t.boolean "published"
+    t.boolean "hide_money", default: false
   end
 
   create_table "campaigns", id: :serial, force: :cascade do |t|
