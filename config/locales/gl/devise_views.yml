@@ -2,10 +2,10 @@ gl:
   devise_views:
     confirmations:
       new:
-        email_label: O teu correo electrónico
         submit: Reenviar instrucións
         title: Reenviar instrucións de confirmación
       show:
+        instructions: Imos confirmar a conta co correo electrónico %{email}
         new_password_confirmation_label: Repite a clave de novo
         new_password_label: Nova clave de acceso
         please_set_password: Por favor, introduce unha nova clave de acceso para a túa conta (permitirache identificarte co correo electrónico de máis arriba)
@@ -38,17 +38,16 @@ gl:
     organizations:
       registrations:
         new:
-          email_label: O teu correo electrónico
-          organization_name_label: Nome de organización
           password_confirmation_label: Repite o contrasinal anterior
-          password_label: Contrasinal que empregarás para acceder a este sitio web
-          phone_number_label: Teléfono
-          responsible_name_label: Nome e apelidos da persoa responsable do colectivo
           responsible_name_note: Será a persoa representante da asociación/colectivo en cuxo nome se presenten as propostas
           submit: Rexistrarse
           title: Rexistrarse como organización / colectivo
         success:
           back_to_index: Entendido, volver á páxina principal
+          instructions_1: "Axiña <b>contactaremos contigo</b> para verificarmos que representas a este colectivo."
+          instructions_2: Mentres <b>o teu correo é revisado</b>, enviámosche <b>unha ligazón para confirmares a túa conta</b>.
+          instructions_3: Logo de o confirmares, podes comezar a participar como colectivo non verificado.
+          thank_you: Grazas por rexistrares o teu colectivo na web. Agora está <b>pendente de verificación</b>.
           title: Rexistro de organización / colectivo
     passwords:
       edit:
@@ -57,13 +56,10 @@ gl:
         password_label: Contrasinal novo
         title: Cambia o teu contrasinal
       new:
-        email_label: O teu correo electrónico
         send_submit: Recibir instrucións
         title: Esqueciches o teu contrasinal?
     sessions:
       new:
-        login_label: Enderezo de correo electrónico ou nome de usuario
-        password_label: Contrasinal que empregarás para acceder a este sitio web
         remember_me: Recordarme
         submit: Entrar
         title: Entrar
@@ -101,12 +97,9 @@ gl:
           waiting_for: "Esperando confirmación de:"
         new:
           cancel: Cancelar login
-          email_label: O teu correo electrónico
           organization_signup: Representas unha organización / colectivo? %{signup_link}
           organization_signup_link: Rexístrate aquí
           password_confirmation_label: Repite o contrasinal anterior
-          password_label: Contrasinal que empregarás para acceder a este sitio web
-          redeemable_code: O teu código de verificación (se recibiches unha carta con el)
           submit: Rexistrarse
           terms: Ao rexistrarte aceptas as %{terms}
           terms_link: condicións de uso
@@ -114,8 +107,10 @@ gl:
           title: Rexistrarse
           username_is_available: Nome de usuario dispoñible
           username_is_not_available: Nome de usuario xa existente
-          username_label: Nome de usuario
           username_note: Nome público que aparecerá nas túas publicacións
         success:
           back_to_index: Enténdoo; regresar á páxina principal
+          instructions_1: Por favor, <b>comproba o teu correo electrónico</b> - enviámosche unha <b>ligazón para confirmares a túa conta</b>.
+          instructions_2: Logo de a confirmares, poderás comezar a participar.
+          thank_you: Grazas por te rexistrares na web. Agora debes <b>confirmar o teu correo</b>.
           title: Modifica o teu correo

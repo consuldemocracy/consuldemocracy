@@ -28,7 +28,7 @@
             <%= task.source.action.title %>
           </td>
           <td>
-            <% unless task.executed_at? %>
+            <% unless task.executed_at? || task.source.proposal.nil? %>
               <%= render Admin::TableActionsComponent.new(task,
                 actions: [:edit],
                 edit_text: t("admin.dashboard.administrator_tasks.index.solve")

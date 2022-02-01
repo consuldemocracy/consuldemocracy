@@ -483,19 +483,16 @@ describe User do
     let(:user) { create(:user) }
 
     it "expires cache with becoming a moderator" do
-      expect { create(:moderator, user: user) }
-      .to change { user.updated_at }
+      expect { create(:moderator, user: user) }.to change { user.cache_version }
     end
 
     it "expires cache with becoming an admin" do
-      expect { create(:administrator, user: user) }
-      .to change { user.updated_at }
+      expect { create(:administrator, user: user) }.to change { user.cache_version }
     end
 
     it "expires cache with becoming a veridied organization" do
       create(:organization, user: user)
-      expect { user.organization.verify }
-      .to change { user.reload.updated_at }
+      expect { user.organization.verify }.to change { user.reload.cache_version }
     end
   end
 
@@ -546,9 +543,7 @@ describe User do
     end
 
     it "maintains associated identification document" do
-      user = create(:user,
-                     document_number: "1234",
-                     document_type:   "1")
+      user = create(:user, document_number: "1234", document_type: "1")
       user.erase
       user.reload
 
@@ -711,10 +706,7 @@ describe User do
     end
 
     it "is false for verified users with no email" do
-      user = create(:user,
-                     username: "Lois",
-                     email: "",
-                     verified_at: Time.current)
+      user = create(:user, username: "Lois", email: "", verified_at: Time.current)
 
       expect(user).to be_valid
       expect(user.email_required?).to eq(false)
@@ -744,6 +736,12 @@ describe User do
       create(:budget_investment, tag_list: "Sport", followers: [user])
 
       expect(user.interests).to eq ["Sport"]
+    end
+  end
+
+  describe "#public_interests" do
+    it "is false by default" do
+      expect(User.new.public_interests).to be false
     end
   end
 

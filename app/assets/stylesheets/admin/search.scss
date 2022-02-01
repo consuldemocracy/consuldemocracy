@@ -31,12 +31,8 @@
   }
 
   [type="submit"] {
-    @include button($background: $link);
+    @include regular-button;
     border-radius: 0;
     font-size: 1rem;
-
-    &[disabled] {
-      @include button-disabled;
-    }
   }
 }

@@ -2,7 +2,6 @@ tr:
   devise_views:
     confirmations:
       new:
-        email_label: E-posta
         submit: Açıklamaları tekrar gönder
         title: Onay açıklamalarını tekrar gönder
       show:
@@ -39,12 +38,7 @@ tr:
     organizations:
       registrations:
         new:
-          email_label: E-posta
-          organization_name_label: Kurumun adı
           password_confirmation_label: Şifreyi onayla
-          password_label: Şifre
-          phone_number_label: Telefon numarası
-          responsible_name_label: Topluluktan sorumlu kişinin tam adı
           responsible_name_note: Bu, önerileri sunan dernek/topluluğu temsil eden kişi olacaktır
           submit: Kaydol
           title: Bir kurum veya topluluk olarak kaydol
@@ -62,13 +56,10 @@ tr:
         password_label: Yeni şifre
         title: Şifrenizi değiştirin
       new:
-        email_label: E-posta
         send_submit: Açıklamaları gönder
         title: Şifrenizi mi unuttunuz?
     sessions:
       new:
-        login_label: E-posta veya kullanıcı adı
-        password_label: Şifre
         remember_me: Beni hatırla
         submit: Giriş
         title: Oturum aç
@@ -106,12 +97,9 @@ tr:
           waiting_for: "Onayı bekleniyor:"
         new:
           cancel: Girişi iptal et
-          email_label: E-posta
           organization_signup: Bir kurumu veya topluluğu mu temsil ediyorsunuz? %{signup_link}
           organization_signup_link: Buradan kaydolun
           password_confirmation_label: Şifreyi onayla
-          password_label: Şifre
-          redeemable_code: Doğrulama kodu e-posta ile alındı (tercihe bağlı)
           submit: Kaydol
           terms: Kayıt yaparak %{terms} kabul etmiş sayılırsınız
           terms_link: şartlar ve kullanım koşulları
@@ -119,7 +107,6 @@ tr:
           title: Kaydol
           username_is_available: Kullanıcı adı müsait
           username_is_not_available: Kullanıcı adı zaten kullanılıyor
-          username_label: Kullanıcı adı
           username_note: Gönderilerinizin yanında görünen isim
         success:
           back_to_index: Anladım; ana sayfaya geri dön

@@ -30,6 +30,7 @@ ar:
       by_heading: "المشاركون حسب المرحلة والعنوان"
       total: "المجموع"
       heading: "عنوان"
+      investments_sent: "تمّ ارسال مقترح الاستثمار"
       participants_support_phase: "المشاركون في مرحلة الدّعم"
       participants_vote_phase: "المشاركون في مرحلة التصويت"
       participants_every_phase: "مجموع المشاركين"

@@ -1,10 +1,9 @@
-<%= render "shared/globalize_locales", resource: @group %>
+<%= translatable_form_for group, url: path, html: { class: "budget-groups-form" } do |f| %>
+  <%= render "shared/globalize_locales", resource: group %>
 
-<%= translatable_form_for [:admin, @budget, @group], url: path do |f| %>
+  <%= render "shared/errors", resource: group %>
 
-  <%= render "shared/errors", resource: @group %>
-
-  <%= hidden_field :heading, :mode, value: @mode %>
+  <%= render Admin::BudgetsWizard::ModeFieldComponent.new %>
 
   <%= f.translatable_fields do |translations_form| %>
     <div class="small-12 medium-6 column end">
@@ -12,17 +11,17 @@
     </div>
   <% end %>
 
-  <% if @group.persisted? && @group.headings.any? %>
+  <% if group.multiple_headings? %>
     <div class="small-12 medium-6 column margin">
       <%= f.select :max_votable_headings,
-                   (1..@group.headings.count),
+                   (1..group.headings.count),
                    hint: t("admin.budget_groups.form.max_votable_headings_info") %>
     </div>
   <% end %>
 
   <div class="clear">
-    <% if @mode == "single" %>
-      <%= f.submit t("admin.budget_groups.create.button.continue"), class: "button success" %>
+    <% if respond_to?(:single_heading?) && single_heading? %>
+      <%= f.submit t("admin.budgets_wizard.groups.continue"), class: "button success" %>
     <% else %>
       <%= f.submit t("admin.budget_groups.form.#{action}"), class: "button hollow" %>
     <% end %>

@@ -7,8 +7,8 @@
     @include has-fa-icon(circle, solid, after);
 
     &::before {
-      @include breakpoint(medium) {
-        margin-right: 0;
+      @include breakpoint(small only) {
+        margin-right: $font-icon-margin;
       }
     }
 
@@ -18,7 +18,6 @@
 
       color: #ecf00b;
       font-size: $circle-icon-size;
-      margin-right: 0;
       position: absolute;
       left: $notification-icon-size - rem-calc(5);
       top: $menu-link-top-padding - $circle-icon-size / 2;

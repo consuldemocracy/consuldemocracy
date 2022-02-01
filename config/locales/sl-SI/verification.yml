@@ -46,6 +46,7 @@ sl:
         accept_terms_text_title: Sprejmem pogoje uporabe dostopa do popisa
         document_number: Številka dokumenta
         document_number_help_title: Pomoč
+        document_number_help_text: "<strong>DNI</strong>: 12345678A<br> <strong>Potni list</strong>: AAA000001<br> <strong>Potrdilo o prebivališču</strong>: X1234567P"
         document_type:
           passport: Potni list
           residence_card: Potrdilo o prebivališču
@@ -69,8 +70,8 @@ sl:
         title: Potrditev varnostne kode
       new:
         phone: Vnesi svojo mobilno številko
+        phone_format: "<strong><em>(Primer: 041218401 ali +38631572849)</em></strong>"
         phone_note: Tvojo številko bomo uporabili le za pošiljanje kode, nikoli te ne bomo poklicali.
-        phone_placeholder: "Primer: 041218401 ali +38631572849"
         submit_button: Pošlji
         title: Pošlji potrditveno kodo
       update:

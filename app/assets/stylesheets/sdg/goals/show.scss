@@ -1,14 +1,8 @@
 .sdg-goal-show {
-  @include grid-row;
-
-  > :not(.feeds-participation) {
-    @include grid-column-gutter;
-  }
 
   .sdg-goal {
 
     > header {
-      @include grid-column-gutter;
       align-items: center;
       color: #fff;
       display: flex;
@@ -33,7 +27,7 @@
     h1 {
       align-items: center;
       display: flex;
-      font-family: "Oswald" !important;
+      font-family: "Oswald", "Source Sans Pro", sans-serif  !important;
       font-weight: 500;
       letter-spacing: -1px;
       line-height: 1.1;
@@ -56,6 +50,7 @@
 
     @each $code, $color in $sdg-colors {
       &.sdg-goal-#{$code} > header {
+        @include full-width-background($adjust-padding: true);
         background-color: $color;
 
         &::after {

@@ -16,10 +16,6 @@ eu:
     groups:
       show:
         title: Aukera bat hautatu ezazu
-        unfeasible_title: Proiektu bideragarriezinak
-        unfeasible: Proiektu bideragarriezinak ikusi
-        unselected_title: Azken bozkaketarako aukeratu ez diran proiektuak
-        unselected: Azken bozkaketarako aukeratu ez diran proiektuak ikusi
     phase:
       drafting: Zirriborroa (Publikoarentzat ikusezina)
       informing: Informazioa
@@ -45,8 +41,10 @@ eu:
       section_footer:
         title: Partaidetzazko aurrekontuei buruzko laguntza
         description: Partaidetzazko aurrekontuekin, udal aurrekontuaren zati bat zertan gastatu herritarrek erabakitzen dute.
+      milestones: Jarraipena
     investments:
       form:
+        title: "Gastu proiektua sortu"
         tag_category_label: "Kategoriak"
         tags_instructions: "Proposamen hau etiketatu. Proosatutako kategorietatik bat aukeratu edo berri bat sartu dezakezu"
         tags_label: Etiketak
@@ -54,7 +52,6 @@ eu:
         map_location: "Kokapena mapan"
         map_location_instructions: "Mapatik ibili kokalekura heldu arte eta markagailua jarri."
         map_remove_marker: "Markagailua ezabatu"
-        map_skip_checkbox: "Proposamen honek ez du kokaleku zehatzik edo ez dut ezagutzen."
       index:
         title: Partaidetzazko aurrekontuak
         unfeasible: Gastu proiektu bideragarriezinak
@@ -66,12 +63,17 @@ eu:
           title: Bilatu
         sidebar:
           my_ballot: Nire bozkak
+          change_vote_link: "zure bozkak aldatu"
           change_ballot: "Iritzia aldatu ezkero zure bozkak aldatu ditzakezu %{check_ballot}-(e)n eta berriz hasi zaitezke."
           check_ballot_link: "Nire bozkak berrikusi"
           zero: Oraindik ez duzu arrekontu sail honetako gastu proiekturik bozkatu.
           verified_only: "%{verify} Gastu proiektu berri bat sortzeko."
           create: "Gastu proiektua sortu"
           not_logged_in: "Gastu proiektu berri bat sortzeko %{sign_in} edo %{sign_up} egin behar duzu."
+        filters:
+          selected: "Hautatutakoak"
+          unfeasible: "Bideraezina"
+          winners: "Irabazleak"
         orders:
           random: Zorizkoak
           confidence_score: Hobekien baloratuta
@@ -93,21 +95,26 @@ eu:
       investment:
         add: Bozkatu
         already_added: Gastu proiektua gehitu duzu
-        already_supported: Gastu proiektu hau babestu duzu. Partekatu ezazu!
         support_title: Proiektu hau babestu
-        confirm_group:
-          one: "Proiektuak auzo baten soilik babes ditzakezu. Aurrera jarraitu ezkero ezingo duzu auzo hau aldatu. Ziur zaude?"
-          other: "Proiektuak %{count} auzotan soilik babes ditzakezu. Aurrera jarraitu ezkero ezingo duzu auzo hau aldatu. Ziur zaude?"
         supports:
           zero: Babes gabe
           one: babes 1
           other: "%{count} babes"
-        give_support: Babestu
       header:
         check_ballot: "Nire bozkak berrikusi"
         change_ballot: "Iritzia aldatu ezkero zure bozkak aldatu ditzakezu %{check_ballot}-(e)n eta berriz hasi zaitezke."
         check_ballot_link: "Nire bozkak berrikusi"
         price: "Sail honen aurrekontua"
+      votes:
+        already_supported: "Gastu proiektu hau babestu duzu. Partekatu ezazu!"
+        confirm_group:
+          one: "Proiektuak auzo baten soilik babes ditzakezu. Aurrera jarraitu ezkero ezingo duzu auzo hau aldatu. Ziur zaude?"
+          other: "Proiektuak %{count} auzotan soilik babes ditzakezu. Aurrera jarraitu ezkero ezingo duzu auzo hau aldatu. Ziur zaude?"
+        support: "Babestu"
+    investments_list:
+      investment:
+        price: "Kostua"
+        supports: "Babesak"
     show:
       see_results: Emaitzak ikusi
     results:
@@ -126,6 +133,9 @@ eu:
       investment_proyects: Gastu proiektu zerrenda osoa ikusi
       unfeasible_investment_proyects: Gastu proiektu bideragarriezin zerrenda ikusi
       not_selected_investment_proyects: Azken bozkaketarako aukeratu ez direnen gastu proiektu zerrenda ikusi
+    executions:
+      link: "Jarraipena"
+      heading_selection_title: "Eremua"
     phases:
       errors:
         dates_range_invalid: "Hasiera data ezin da amaiera data baino handiago edo berdina izan"

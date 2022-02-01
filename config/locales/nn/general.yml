@@ -5,10 +5,7 @@ nn:
       erase_account_link: Slett min konto
       finish_verification: Fullfør verifisering
       notifications: Varsler
-      organization_name_label: Navn på organisasjonen
-      organization_responsible_name_placeholder: Representant for organisasjonen/gruppen
       personal: Personlige detaljer
-      phone_number_label: Telefonnr
       public_interests_my_title_list: Tagger for emnene du følger
       public_interests_user_title_list: Tagger for emner denne brukeren følger
       save_changes_submit: Lagre endringer
@@ -22,7 +19,6 @@ nn:
       user_permission_verify: Verifiser din konto for å få tilgang til alle funksjoner.
       user_permission_verify_info: "* Kun for brukere av Census."
       user_permission_votes: Delta i endelig avstemning
-      username_label: Brukernavn
       verified_account: Konto er verifisert
       verify_my_account: Verifiser min konto
   application:
@@ -66,7 +62,6 @@ nn:
       newest: Nyeste først
       oldest: Eldste først
       most_commented: Mest kommentert
-    select_order: Sorter etter
     show:
       return_to_commentable: "Gå tilbake til "
   comments_helper:
@@ -96,7 +91,6 @@ nn:
         submit_button: Lagre endringer
       show_link: Vis debatt
     form:
-      debate_title: Tittel på debatt
       tags_instructions: Tag denne debatten.
       tags_placeholder: "Skriv tag'ene du vil bruke, avgrenset med komma (',')"
     index:
@@ -119,7 +113,10 @@ nn:
         button: Søk
         placeholder: Søk debatter...
         title: Søk
-      select_order: Sortere etter
+      search_results:
+        zero: " som inneholder <strong>'%{search_term}'</strong>"
+        one: " som inneholder <strong>'%{search_term}'</strong>"
+        other: " som inneholder <strong>'%{search_term}'</strong>"
       start_debate: Start en debatt
       title: Debatter
       section_header:
@@ -134,8 +131,6 @@ nn:
     new:
       form:
         submit_button: Start en debatt
-      info: Hvis du vil legge til et forslag, så er dette feil seksjon, gå inn på %{info_link}.
-      info_link: opprett et nytt forslag
       more_info: Mer informasjon
       recommendation_four: Dette er din plass, du skal kunne trives og sørge for at din stemme blir hørt.
       recommendation_one: Ikke bruk bare store bokstaver i debatt-titler eller i hele setninger. På internet blir dette oppfattet som roping, og ingen liker og bli ropt til.
@@ -170,6 +165,7 @@ nn:
     direct_message: private meldinger
     error: feil
     errors: feil
+    not_saved: "gjorde at %{resource} ikke kunne lagres. <br>Kontroller og endre de markerte feltene:"
     policy: Personvernpolicy
     proposal: Forslag
     proposal_notification: "Varsler"
@@ -224,7 +220,6 @@ nn:
     header:
       administration_menu: Meny
       administration: Administrasjon
-      available_locales: Tilgjengelige språk
       collaborative_legislation: Deltakende lovgivning
       debates: Debatter
       locale: "Språk:"
@@ -290,6 +285,9 @@ nn:
       sign_in: Logg inn via Twitter
       sign_up: Registrer deg med Twitter
       name: Twitter
+    info:
+      sign_in: "Logg på med:"
+      sign_up: "Registrer deg med:"
     or_fill: "Eller fyll ut følgende skjema:"
   proposals:
     create:
@@ -298,6 +296,7 @@ nn:
     created:
       title: Gratulerer! Du har gjennomført først steg.
       motivation: "Det er viktig å forberede en introduksjonskampanje for at forslaget ditt skal bli en suksess. Det første dagene er avgjørende."
+      motivation_2: "<strong>Hvis du vil ha anbefalinger til forberedelsene før forslaget blir offentliggjort, kan du la forslaget stå som utkast, og vi vil veilede deg.</strong>"
       publish: Nei, jeg vil offentliggjøre forslaget
       dashboard: Ja, jeg ønsker hjelp, og offentligjør forslaget senere
       preview_title: Dette er hvordan forslaget ditt vil se ut når det er offentliggjort
@@ -333,7 +332,6 @@ nn:
       map_location: "Kartposisjon"
       map_location_instructions: "Naviger til plassen på kartet og plasser markøren."
       map_remove_marker: "Fjern kartmarkøren"
-      map_skip_checkbox: "Det finnes ingen konkret geografisk plassering for forslaget, eller jeg kjenner ikke til plasseringen."
     index:
       featured_proposals: Utvalgte
       orders:
@@ -368,7 +366,10 @@ nn:
         button: Søk
         placeholder: Søk forslag...
         title: Søk
-      select_order: Sorter etter
+      search_results:
+        zero: " som inneholder <strong>'%{search_term}'</strong>"
+        one: " som inneholder <strong>'%{search_term}'</strong>"
+        other: " som inneholder <strong>'%{search_term}'</strong>"
       select_order_long: "Du viser forslag i henhold til:"
       start_proposal: Opprett et forslag
       title: Forslag
@@ -458,6 +459,7 @@ nn:
       poster: Plakat
       recommended_actions: Anbefalte handlinger
       messages: Melding til brukere
+      related_content: Relatert innhold
     form:
       request: Forespørsel
     create_request:
@@ -583,6 +585,7 @@ nn:
         sent: Eposten har blitt sendt
     mailer:
       forward:
+        subtitle: "Om du støtte meg, <br> vil vi oppnå det."
         support_button: Støtt forslag
         share_in: Del i
         hi: "Hei!"
@@ -622,6 +625,7 @@ nn:
       back: Tilbake til avstemningen
       cant_answer_not_logged_in: "Du må %{signin} eller %{signup} for å delta."
       comments_tab: Kommentarer
+      cant_answer_verify: "Du må %{verify_link} for å svare."
       verify_link: "verifiser din konto"
       cant_answer_expired: "Denne avstemningen er avsluttet."
       cant_answer_wrong_geozone: "Dette spørsmålet er ikke tilgjengelig i ditt geografiske område."
@@ -662,14 +666,13 @@ nn:
       back: "Gå tilbake til mitt innhold"
   shared:
     edit: "Rediger"
+    filter: "Filter"
     save: "Lagre"
     delete: "Slett"
     "yes": "Ja"
     "no": "Nei"
     search_results: "Søk i resultater"
     advanced_search:
-      author_type: "Per kategori for forslagsstillere"
-      author_type_blank: "Velg en kategori"
       date: "Etter dato"
       date_placeholder: "DD/MM/ÅÅÅÅ"
       date_range_blank: "Velg en dato"
@@ -680,7 +683,6 @@ nn:
       date_5: "Tilpasset"
       from: "Fra"
       general: "Med teksten"
-      general_placeholder: "Skriv tekst"
       search: "Filter"
       title: "Avansert søk"
       to: "Til"
@@ -727,6 +729,7 @@ nn:
       districts: "Distrikter"
       districts_list: "Liste over distrikter"
       categories: "Kategorier"
+    target_blank: " (link åpnes i et nytt vindu)"
     you_are_in: "Du er inne"
     unflag: Ta bort flagg
     unfollow_entity: "Ikke lenger følg %{entity}"
@@ -769,6 +772,11 @@ nn:
     manage:
       all: "Du har ikke tillatelse til å utføre handlingen '%{action}' på %{subject}."
   users:
+    login_to_comment: "Du må %{signin} eller %{signup} for å kunne kommentere."
+    login_to_continue: "Du må %{signin} eller %{signup} for å fortsette."
+    signin: "logg inn"
+    signup: "registrer deg"
+    verify_account: "verifiser din konto"
     direct_messages:
       new:
         direct_messages_bloqued: "Denne brukeren har besluttet å ikke motta direktemeldinger"
@@ -918,9 +926,6 @@ nn:
       title: Linker
       note: Legg til linkene som er av interesse
       add_new_link: Legg til ny link
-    link_fields:
-      label_placeholder: Tittel på link
-      url_placeholder: Link
   communities:
     show:
       surveys: Undersøkelser

@@ -1,0 +1,61 @@
+<!--
+Downloaded from The Global Goals - https://www.globalgoals.org/
+License - https://creativecommons.org/licenses/by-sa/3.0/
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fd6925;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <title>9 Industry, Innovation and Infrastructure</title>
+  <rect id="_Path_" data-name="&lt;Path&gt;" class="cls-1" y="-0.01" width="1000" height="1000.02"/>
+  <path id="_Compound_Path_" data-name="&lt;Compound Path&gt;" class="cls-2" d="M183.15,134.53c0-31.22-13.68-53.8-49.34-53.8-36,0-49.94,19.61-49.94,50.82v29.73c0,33,13.07,49.64,37.46,49.64,14.27,0,22.88-6.55,27.93-16.34h.29V238c0,12.19-4.75,20.81-16.93,20.81S116,251.64,116,239.15V225.78H85.05v10.71c0,29.71,10.71,50.52,48.17,50.52,35.65,0,49.93-22.89,49.93-54.4Zm-33.6,30.91c-.59,11.29-5.34,18.42-16,18.42-11.58,0-16-7.13-16-20.21V128.58c0-12.78,4.74-20.21,16.35-20.21,11.29,0,15.74,7.72,15.74,20.21Z"/>
+  <path id="_Compound_Path_2" data-name="&lt;Compound Path&gt;" class="cls-2" d="M749.88,657.28,631,588.67V451.42a8.1,8.1,0,0,0-4-7l-122.9-71a8.1,8.1,0,0,0-8.11,0L373,444.4a8.1,8.1,0,0,0-4,7V588.67L250.12,657.28a8.11,8.11,0,0,0-4.06,7v142a8.12,8.12,0,0,0,4.06,7l122.91,71a8.15,8.15,0,0,0,8.11,0L500,815.61l118.84,68.61a8.15,8.15,0,0,0,8.11,0l122.93-71a8.12,8.12,0,0,0,4.06-7v-142A8.09,8.09,0,0,0,749.88,657.28Zm-258,134.92L393.3,735.27l98.59-56.92ZM606.68,593.36,508.1,650.25V536.43Zm-114.79,56.9-98.58-56.91,98.58-56.92Zm24.33,14L622.9,602.72,729.61,664.3,622.9,725.91Zm98.57-85-98.57-56.93,98.57-56.91Zm-131-56.93-98.59,56.93V465.47ZM369,863.15l-106.7-61.59V678.35L369,740Zm16.21,0V749.32l98.59,56.93Zm352.53-61.59L631,863.15V740l106.72-61.61Z"/>
+  <g id="_Group_" data-name="&lt;Group&gt;">
+    <path id="_Compound_Path_3" data-name="&lt;Compound Path&gt;" class="cls-2" d="M236.07,85.38h13.1v78h-13.1Z"/>
+    <path id="_Compound_Path_4" data-name="&lt;Compound Path&gt;" class="cls-2" d="M266.07,114.35v49H255v-78h12.87l14.14,44.72V85.38H293v78H281.48Z"/>
+    <path id="_Compound_Path_5" data-name="&lt;Compound Path&gt;" class="cls-2" d="M337.92,106.31V142.4c0,12-4.94,20.93-19,20.93H298.72v-78H319C333,85.38,337.92,94.24,337.92,106.31Zm-20.58,46.33c5.41,0,7.48-3.22,7.48-7.94V103.89c0-4.6-2.07-7.81-7.48-7.81h-5.51v56.56Z"/>
+    <path id="_Compound_Path_6" data-name="&lt;Compound Path&gt;" class="cls-2" d="M381.72,85.38v59c0,12.07-5.17,19.89-18.51,19.89-13.79,0-19.54-7.82-19.54-19.89v-59h13.11v60.24c0,4.6,1.83,7.71,6.43,7.71s6.44-3.11,6.44-7.71V85.38Z"/>
+    <path id="_Compound_Path_7" data-name="&lt;Compound Path&gt;" class="cls-2" d="M386.78,146.54V136.08H399v10.69c0,4.37,1.95,6.9,6.43,6.9,4.14,0,6-2.76,6-6.9v-3c0-4.48-1.84-7.24-5.86-11l-7.7-7.71c-7.48-7.35-10.93-11.84-10.93-20.8v-2.65c0-9.65,5.64-17.13,18.4-17.13,13.1,0,18.28,6.44,18.28,17.71v6.32h-12v-6.78c0-4.49-2.07-6.67-6.21-6.67-3.68,0-6.2,2.07-6.2,6.44v1.61c0,4.37,2.41,6.9,6.2,10.57l8.4,8.28c7.12,7.24,10.57,11.61,10.57,20.23V146c0,10.69-5.75,18.28-19.08,18.28S386.78,156.77,386.78,146.54Z"/>
+    <path id="_Compound_Path_8" data-name="&lt;Compound Path&gt;" class="cls-2" d="M425.18,85.38H460v10.7H449.2v67.25H436V96.08h-10.8Z"/>
+    <path id="_Compound_Path_9" data-name="&lt;Compound Path&gt;" class="cls-2" d="M477.48,127.57v35.76h-13.1v-78h19.08c13.22,0,18.05,6.56,18.05,17.48v10c0,8.39-3,13.33-10.46,15.06l12.53,35.41h-13.8Zm0-31.49v24.25h4.37c4.48,0,6.44-2.3,6.44-6.44V102.4c0-4.26-2-6.32-6.44-6.32Z"/>
+    <path id="_Compound_Path_10" data-name="&lt;Compound Path&gt;" class="cls-2" d="M529.56,133.67v29.66H516.45V133.67l-14.6-48.29h13.68l7.94,29.55h.11l7.93-29.55H544Z"/>
+    <path id="_Compound_Path_11" data-name="&lt;Compound Path&gt;" class="cls-2" d="M555.31,151.83l-6.67,17.59h-7.35l1.6-18.62h12.42Z"/>
+    <path id="_Compound_Path_12" data-name="&lt;Compound Path&gt;" class="cls-2" d="M571.41,85.38h13.1v78h-13.1Z"/>
+    <path id="_Compound_Path_13" data-name="&lt;Compound Path&gt;" class="cls-2" d="M601.41,114.35v49h-11v-78h12.88l14.14,44.72V85.38h10.92v78h-11.5Z"/>
+    <path id="_Compound_Path_14" data-name="&lt;Compound Path&gt;" class="cls-2" d="M645.09,114.35v49h-11v-78h12.87l14.14,44.72V85.38H672v78H660.5Z"/>
+    <path id="_Compound_Path_15" data-name="&lt;Compound Path&gt;" class="cls-2" d="M677.74,143.21V105.5c0-12.18,6-21,19.77-21s19.89,8.86,19.89,21v37.71c0,12.07-6,21-19.89,21S677.74,155.28,677.74,143.21Zm26.56,2.07V103.43c0-4.71-2.07-8-6.79-8s-6.66,3.33-6.66,8v41.85c0,4.71,2.07,8.05,6.66,8.05S704.3,150,704.3,145.28Z"/>
+    <path id="_Compound_Path_16" data-name="&lt;Compound Path&gt;" class="cls-2" d="M765.11,85.38l-14.83,78H736l-14.82-78h13.33l9,54.38h.11l9.2-54.38Z"/>
+    <path id="_Compound_Path_17" data-name="&lt;Compound Path&gt;" class="cls-2" d="M761,163.33l14.71-78h15l14.83,78H792l-2.42-14.26H775.68l-2.29,14.26Zm16.44-24.72h10.46l-5.17-31.27h-.12Z"/>
+    <path id="_Compound_Path_18" data-name="&lt;Compound Path&gt;" class="cls-2" d="M801.9,85.38h34.83v10.7H825.92v67.25H812.7V96.08H801.9Z"/>
+    <path id="_Compound_Path_19" data-name="&lt;Compound Path&gt;" class="cls-2" d="M841.1,85.38h13.1v78H841.1Z"/>
+    <path id="_Compound_Path_20" data-name="&lt;Compound Path&gt;" class="cls-2" d="M860.06,143.21V105.5c0-12.18,6-21,19.78-21s19.88,8.86,19.88,21v37.71c0,12.07-6,21-19.88,21S860.06,155.28,860.06,143.21Zm26.56,2.07V103.43c0-4.71-2.07-8-6.78-8s-6.67,3.33-6.67,8v41.85c0,4.71,2.07,8.05,6.67,8.05S886.62,150,886.62,145.28Z"/>
+    <path id="_Compound_Path_21" data-name="&lt;Compound Path&gt;" class="cls-2" d="M916.51,114.35v49h-11v-78h12.88l14.14,44.72V85.38h10.92v78h-11.5Z"/>
+  </g>
+  <g id="_Group_2" data-name="&lt;Group&gt;">
+    <path id="_Compound_Path_22" data-name="&lt;Compound Path&gt;" class="cls-2" d="M234,283.44l14.71-77.94H263.6l14.83,77.94H265l-2.41-14.25H248.66l-2.3,14.25Zm16.43-24.71h10.47l-5.18-31.27h-.11Z"/>
+    <path id="_Compound_Path_23" data-name="&lt;Compound Path&gt;" class="cls-2" d="M294.3,234.47v49h-11V205.5h12.88l14.14,44.72V205.5H321.2v77.94H309.7Z"/>
+    <path id="_Compound_Path_24" data-name="&lt;Compound Path&gt;" class="cls-2" d="M367.3,226.42v36.1c0,12-4.95,20.92-19,20.92H328.1V205.5h20.23C362.35,205.5,367.3,214.35,367.3,226.42Zm-20.58,46.33c5.4,0,7.47-3.22,7.47-7.93V224c0-4.6-2.07-7.82-7.47-7.82H341.2v56.56Z"/>
+    <path id="_Compound_Path_25" data-name="&lt;Compound Path&gt;" class="cls-2" d="M385.69,205.5H398.8v77.94H385.69Z"/>
+    <path id="_Compound_Path_26" data-name="&lt;Compound Path&gt;" class="cls-2" d="M416.84,234.47v49h-11V205.5h12.87l14.14,44.72V205.5h10.92v77.94H432.25Z"/>
+    <path id="_Compound_Path_27" data-name="&lt;Compound Path&gt;" class="cls-2" d="M450.64,205.5h30.7v10.69H463.75V238.5h13.1v10.57h-13.1v34.37H450.64Z"/>
+    <path id="_Compound_Path_28" data-name="&lt;Compound Path&gt;" class="cls-2" d="M499.61,247.69v35.75h-13.1V205.5h19.08c13.22,0,18.05,6.55,18.05,17.48v10c0,8.39-3,13.33-10.46,15.06l12.53,35.4h-13.8Zm0-31.5v24.26H504c4.48,0,6.44-2.3,6.44-6.44V222.52c0-4.26-2-6.33-6.44-6.33Z"/>
+    <path id="_Compound_Path_29" data-name="&lt;Compound Path&gt;" class="cls-2" d="M528.12,283.44l14.72-77.94h14.94l14.83,77.94H559.16l-2.41-14.25H542.84l-2.3,14.25Zm16.44-24.71H555l-5.17-31.27h-.11Z"/>
+    <path id="_Compound_Path_30" data-name="&lt;Compound Path&gt;" class="cls-2" d="M575.6,266.66V256.2h12.19v10.69c0,4.37,2,6.9,6.43,6.9,4.14,0,6-2.76,6-6.9v-3c0-4.48-1.84-7.24-5.86-11l-7.7-7.71c-7.47-7.35-10.92-11.84-10.92-20.81v-2.64c0-9.66,5.63-17.13,18.39-17.13,13.1,0,18.28,6.44,18.28,17.71v6.32h-12v-6.78c0-4.49-2.07-6.67-6.21-6.67-3.68,0-6.2,2.07-6.2,6.44v1.61c0,4.36,2.41,6.89,6.2,10.57l8.4,8.28c7.12,7.24,10.57,11.61,10.57,20.23v3.8c0,10.69-5.75,18.27-19.08,18.27S575.6,276.89,575.6,266.66Z"/>
+    <path id="_Compound_Path_31" data-name="&lt;Compound Path&gt;" class="cls-2" d="M616.3,205.5h34.83v10.69H640.32v67.25H627.1V216.19H616.3Z"/>
+    <path id="_Compound_Path_32" data-name="&lt;Compound Path&gt;" class="cls-2" d="M669.75,247.69v35.75h-13.1V205.5h19.08c13.22,0,18,6.55,18,17.48v10c0,8.39-3,13.33-10.46,15.06l12.53,35.4h-13.8Zm0-31.5v24.26h4.37c4.48,0,6.44-2.3,6.44-6.44V222.52c0-4.26-2-6.33-6.44-6.33Z"/>
+    <path id="_Compound_Path_33" data-name="&lt;Compound Path&gt;" class="cls-2" d="M738.38,205.5v59c0,12.07-5.17,19.88-18.51,19.88-13.79,0-19.54-7.81-19.54-19.88v-59h13.11v60.24c0,4.6,1.84,7.7,6.43,7.7s6.44-3.1,6.44-7.7V205.5Z"/>
+    <path id="_Compound_Path_34" data-name="&lt;Compound Path&gt;" class="cls-2" d="M745.28,263.33V225.62c0-12.19,5.75-21,19.54-21,14.49,0,18.51,8,18.51,19.54v9.2h-12V223.09c0-4.83-1.61-7.59-6.33-7.59s-6.66,3.34-6.66,8.05V265.4c0,4.71,2,8,6.66,8s6.33-3,6.33-7.58V251.49h12v13.45c0,11.15-4.6,19.42-18.51,19.42S745.28,275.4,745.28,263.33Z"/>
+    <path id="_Compound_Path_35" data-name="&lt;Compound Path&gt;" class="cls-2" d="M785.52,205.5h34.83v10.69H809.54v67.25H796.32V216.19h-10.8Z"/>
+    <path id="_Compound_Path_36" data-name="&lt;Compound Path&gt;" class="cls-2" d="M863.92,205.5v59c0,12.07-5.17,19.88-18.51,19.88-13.8,0-19.54-7.81-19.54-19.88v-59H839v60.24c0,4.6,1.84,7.7,6.44,7.7s6.44-3.1,6.44-7.7V205.5Z"/>
+    <path id="_Compound_Path_37" data-name="&lt;Compound Path&gt;" class="cls-2" d="M883.92,247.69v35.75h-13.1V205.5H889.9c13.22,0,18.05,6.55,18.05,17.48v10c0,8.39-3,13.33-10.46,15.06L910,283.44h-13.8Zm0-31.5v24.26h4.37c4.48,0,6.44-2.3,6.44-6.44V222.52c0-4.26-2-6.33-6.44-6.33Z"/>
+    <path id="_Compound_Path_38" data-name="&lt;Compound Path&gt;" class="cls-2" d="M914.5,205.5h31.27v10.69H927.61V238.5h13v10.57h-13v23.68h18.16v10.69H914.5Z"/>
+  </g>
+</svg>

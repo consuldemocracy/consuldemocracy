@@ -6,21 +6,23 @@ INVESTMENT_IMAGE_FILES = %w[
   olesya-grichina-218176-unsplash_713x475.jpg
   sole-d-alessandro-340443-unsplash_713x475.jpg
 ].map do |filename|
-  File.new(Rails.root.join("db",
-                           "dev_seeds",
-                           "images",
-                           "budget",
-                           "investments", filename))
+  Rails.root.join("db",
+                  "dev_seeds",
+                  "images",
+                  "budget",
+                  "investments", filename)
 end
 
 def add_image_to(imageable)
   # imageable should respond to #title & #author
-  imageable.image = Image.create!({
-    imageable: imageable,
-    title: imageable.title,
-    attachment: INVESTMENT_IMAGE_FILES.sample,
-    user: imageable.author
-  })
+  File.open(INVESTMENT_IMAGE_FILES.sample) do |file|
+    imageable.image = Image.create!({
+      imageable: imageable,
+      title: imageable.title,
+      attachment: file,
+      user: imageable.author
+    })
+  end
   imageable.save!
 end
 
@@ -120,7 +122,7 @@ section "Creating Budgets" do
 end
 
 section "Creating Investments" do
-  tags = Faker::Lorem.words(10)
+  tags = Faker::Lorem.words(number: 10)
   100.times do
     heading = Budget::Heading.all.sample
 
@@ -179,7 +181,7 @@ section "Winner Investments" do
       heading: heading,
       group: heading.group,
       budget: heading.group.budget,
-      title: Faker::Lorem.sentence(3).truncate(60),
+      title: Faker::Lorem.sentence(word_count: 3).truncate(60),
       description: "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>",
       created_at: rand((Time.current - 1.week)..Time.current),
       feasibility: "feasible",

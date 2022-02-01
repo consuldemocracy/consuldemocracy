@@ -13,6 +13,18 @@ require "capybara/rspec"
 require "selenium/webdriver"
 require "view_component/test_helpers"
 
+module ViewComponent
+  module TestHelpers
+    def sign_in(user)
+      allow(controller).to receive(:current_user).and_return(user)
+    end
+
+    def within(...)
+      raise "`within` doesn't work in component tests. Use `page.find` instead."
+    end
+  end
+end
+
 RSpec.configure do |config|
   config.include ViewComponent::TestHelpers, type: :component
 end
@@ -31,6 +43,8 @@ RSpec.configure do |config|
   end
 end
 
+FactoryBot.use_parent_strategy = false
+
 Capybara.register_driver :headless_chrome do |app|
   capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
     "goog:chromeOptions" => {
@@ -47,7 +61,7 @@ end
 
 Capybara.exact = true
 Capybara.enable_aria_label = true
-Capybara.default_set_options = { clear: :backspace }
 Capybara.disable_animation = true
+Capybara.default_max_wait_time = 5
 
 OmniAuth.config.test_mode = true

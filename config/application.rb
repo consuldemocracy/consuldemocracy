@@ -1,17 +1,6 @@
 require_relative "boot"
 
-require "rails"
-# Pick the frameworks you want:
-require "active_model/railtie"
-require "active_job/railtie"
-require "active_record/railtie"
-# require "active_storage/engine"
-require "action_controller/railtie"
-require "action_mailer/railtie"
-require "action_view/railtie"
-require "action_cable/engine"
-require "sprockets/railtie"
-require "rails/test_unit/railtie"
+require "rails/all"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -28,13 +17,15 @@ module Consul
     # Use local forms with `form_with`, so it works like `form_for`
     config.action_view.form_with_generates_remote_forms = false
 
-    # Keep disabling cache versioning until we verify it's compatible
-    # with `:dalli_store` and with the way we cache stats
-    config.active_record.cache_versioning = false
-
     # Keep using AES-256-CBC for message encryption in case it's used
     # in any CONSUL installations
     config.active_support.use_authenticated_message_encryption = false
+
+    # Handle custom exceptions
+    config.action_dispatch.rescue_responses["FeatureFlags::FeatureDisabled"] = :forbidden
+
+    # Store files locally.
+    config.active_storage.service = :local
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.

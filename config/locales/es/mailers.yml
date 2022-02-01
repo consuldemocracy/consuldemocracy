@@ -78,6 +78,16 @@ es:
       hi: Hola
       new_comment_by: Hay un nuevo comentario de evaluación de <strong>%{commenter}</strong> en el presupuesto participativo %{investment}
       commenter_info: "%{commenter}, %{time}"
+    machine_learning_error:
+      link: "Visitar el panel de Machine Learning"
+      subject: "Machine learning - Se ha producido un error"
+      text: "Se ha producido un error ejecutando el script de Machine Learning."
+      title: "Script Machine Learning"
+    machine_learning_success:
+      link: "Visitar el panel de Machine Learning"
+      subject: "Machine learning - Contenido generado correctamente"
+      text: "El contenido ha sido generado correctamente."
+      title: "Script Machine Learning"
     new_actions_notification_rake_created:
       subject: "Más novedades de tu propuesta ciudadana"
       hi: "Hola %{name},"

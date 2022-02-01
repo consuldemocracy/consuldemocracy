@@ -25,7 +25,7 @@
       <% @answer.videos.each do |video| %>
         <tr id="<%= dom_id(video) %>" class="poll_question_answer_video">
           <td><%= video.title %></td>
-          <td><%= link_to "#{video.url}", video.url %></td>
+          <td><%= link_to video.url, video.url %></td>
           <td>
             <%= render Admin::TableActionsComponent.new(video) %>
           </td>

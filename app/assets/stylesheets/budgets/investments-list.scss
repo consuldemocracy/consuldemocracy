@@ -1,0 +1,77 @@
+.investments-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: $line-height;
+
+  > header {
+    @include grid-column-gutter;
+    width: 100%;
+  }
+
+  .investments-list-item {
+    @extend %panel;
+    @include xy-gutters;
+    border-radius: rem-calc(6);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin-bottom: $line-height / 2;
+    position: relative;
+    width: 100%;
+
+    @include breakpoint(medium) {
+      $gap: rem-calc(map-get($grid-margin-gutters, medium));
+      width: calc(33.33% - #{$gap});
+    }
+
+    img {
+      border-top-left-radius: rem-calc(6);
+      border-top-right-radius: rem-calc(6);
+      height: $line-height * 10;
+      object-fit: cover;
+
+      @include breakpoint(medium only) {
+        height: $line-height * 10;
+      }
+    }
+
+    .budget-investment-content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 0 rem-calc(12) rem-calc(6);
+      min-height: $line-height * 8;
+
+      .investment-project-info {
+        flex: 1;
+        margin-bottom: $line-height * 2;
+      }
+    }
+
+    .read-more {
+      align-self: flex-end;
+    }
+  }
+
+  .supports-and-price {
+    @include has-fa-icon(award, solid, after);
+    background: $light;
+    display: flex;
+    flex-wrap: wrap;
+    padding: rem-calc(6) rem-calc(12);
+
+    .price-title,
+    .supports-title {
+      color: #696969;
+      font-size: $small-font-size;
+      text-transform: uppercase;
+      width: 100%;
+    }
+
+    &::after {
+      font-size: 2em;
+      margin-left: auto;
+      transform: translateY(-25%);
+    }
+  }
+}

@@ -5,7 +5,9 @@ tr:
     actions:
       actions: Eylemler
       confirm: Emin misiniz?
+      confirm_delete: "Emin misiniz? Bu işlem \"%{name}\" silecek ve geri alınamaz."
       confirm_hide: Moderasyonu onayla
+      delete: "Sil"
       hide: Gizle
       hide_author: Yazarı gizle
       restore: Geri getir
@@ -13,15 +15,12 @@ tr:
       unmark_featured: Öne çıkan işaretini kaldır
       edit: Düzenle
       configure: Ayarla
-      delete: Sil
     officing_booth:
       title: "Siz %{booth}'ta bulunan kabini görüyorsunuz. Eğer bu doğru değilse, devam etmeyin ve yardım telefon numarasını aramayın. Teşekkürler."
     banners:
       index:
         title: Bannerlar
         create: Banner oluştur
-        edit: Banner düzenleme
-        delete: Banner silme
         filters:
           all: Tüm
           with_active: Aktif
@@ -68,6 +67,7 @@ tr:
         no_activity: Hiç moderatör faaliyeti yok.
     budgets:
       actions:
+        edit: "Bütçe düzenleme"
         preview: "Bütçeyi Görüntüle"
       index:
         title: Katılımcı bütçe
@@ -77,16 +77,17 @@ tr:
           all: Tümü
           open: Açık
           finished: Bitmiş
-        help: "Katılımcı bütçeler, vatandaşların teklif vermesine ve bütçenin bir kısmının nasıl harcanacağına doğrudan karar vermesine olanak tanımakla beraber, tekliflerin kurum tarafından izlenmesine ve titiz bir şekilde değerlendirilmesine de olanak tanır."
         budget_investments: Projeleri yönetme
+        table_budget_type: "Tür"
         table_completed: Tamamlandı
         table_draft: "Taslak"
         table_duration: "Süreç"
         table_name: Ad
         table_phase: Aşama
         table_phase_progress: "(%{current_phase_number}/%{total_phases})"
-        edit_groups: Başlıklar gruplarını düzenle
-        edit_budget: Bütçe düzenleme
+        type_multiple: "Çoklu başlıklar"
+        type_pending: "Beklemede: Henüz başlık yok"
+        type_single: "Tekli başlık"
         admin_ballots: Yönetici oyları
         no_budgets: "Hiç bütçe yok."
       create:
@@ -105,7 +106,6 @@ tr:
         duration: "Süreç"
         enabled: Etkinleştirildi
         actions: Aksiyon
-        edit_phase: Aşama düzenleme
         active: Aktif
         blank_dates: Tarihler boş
         administrators:
@@ -119,16 +119,25 @@ tr:
         empty_administrators: "Hiç yönetici yok"
         empty_valuators: "Hiç bilirkişi yok"
         name_description: "Bu, etkin olduğu zaman başlıkta ve kartlarda kullanılan katılımcı bütçenin adıdır"
+        main_call_to_action: "Eylem için ana mesaj (isteğe bağlı)"
+        main_call_to_action_description: "Bu bağlantı, katılımcı bütçenin ana başlığında görünecek ve kullanıcınızı bir teklif oluşturma, mevcut tekliflere oy verme veya süreç hakkında daha fazla bilgi edinme gibi belirli bir eylemi gerçekleştirmeye teşvik edecektir."
         info:
           budget_settings: "Genel katılımcı bütçe ayarları"
-          phases_settings: "Aşama ayarları"
           staff_settings: "Bütçeye atanan yönetici ve bilirkişiler"
       destroy:
         success_notice: Bütçe başarıyla silindi
         unable_notice: Yatırımlarla ilişkili olan bir Bütçeyi yok edemezsiniz
         unable_notice_polls: İlişkili bir ankete sahip bir bütçeyi silemezsiniz
       new:
-        title: Yeni katılımcı bütçe
+        title_multiple: Çoklu yeni başlık bütçesi
+        title_single: Tekli yeni başlık bütçesi
+      help:
+        budgets: "Katılımcı bütçeler, vatandaşların teklif vermesine ve bütçenin bir kısmının nasıl harcanacağına doğrudan karar vermesine olanak tanımakla beraber, tekliflerin kurum tarafından izlenmesine ve titiz bir şekilde değerlendirilmesine de olanak tanır."
+        groups:
+          multiple: "Grupların başlıkları düzenlemesi hedeflenmiştir. Grup ve içerikleri oluşturulduktan sonra, bir kullanıcının grup başına kaç başlıkta oy verebileceğini belirlemek mümkündür."
+        headings:
+          multiple: "Başlıklar, katılımcı bütçedeki parayı ayırmak içindir. Burada, grup için başlıklar ekleyebilir ve her başlık için kullanılacak miktarı belirleyebilirsiniz."
+        phases: "Katılımcı bütçelerin farklı aşamaları vardır. Burada, aşamaları etkinleştirip devre dışı bırakabilir ve her bir aşamayı özelleştirebilirsiniz."
       winners:
         calculate: Kazanan Yatırımları Hesapla
         calculated: Kazananlar hesaplanıyor, bu bir dakika sürebilir.
@@ -154,13 +163,9 @@ tr:
         max_votable_headings_info: "Sadece proje seçim aşaması döneminde geçerlidir. Proje seçim aşamasında kullanıcılar grup başı sadece bir başlıktan seçim yapabilirler."
         submit: "Grubu kaydet"
       index:
-        back: "Bütçelere geri dön"
-        help: "Grupların başlıkları düzenlemesi hedeflenmiştir. Grup ve içerikleri oluşturulduktan sonra, bir kullanıcının grup başına kaç başlıkta oy verebileceğini belirlemek mümkündür."
+        new_button: "Yeni grup ekle"
     budget_headings:
       no_headings: "Hiç başlık yok."
-      amount:
-        one: "1 başlık var"
-        other: "%{count} başlıklar var"
       create:
         notice: "Başlık başarıyla oluşturuldu!"
       update:
@@ -176,19 +181,25 @@ tr:
         create: "Yeni başlık oluştur"
         edit: "Başlığı düzenle"
         submit: "Başlığı kaydet"
+      group_switcher:
+        different_group: "Farklı bir gruptan başlıkları yönet"
+        the_other_group: "%{group} grubundan başlıkları yönetin."
       index:
         back: "Gruplara geri dön"
-        help: "Başlıklar, katılımcı bütçedeki parayı ayırmak içindir. Burada, grup için başlıklar ekleyebilir ve her başlık için kullanılacak miktarı belirleyebilirsiniz."
+        new_button: "Yeni başlık ekle"
+        title: "%{budget} / %{group} başlıkları"
     budget_phases:
       edit:
+        title: "Aşama düzenle"
         description_help_text: Aşama etkinken bu metin başlıkta görünecektir
         duration: "Aşama süresi"
         duration_description: "Bu aşamanın aktif olacağı süre."
         enabled_help_text: Bu aşama, bütçe'nin aşamaları zaman çizelgesinde herkese açık olacak, başka herhangi bir amaç için aktif olduğu kadar aktif olacak
+        main_call_to_action: "Eylem için ana mesaj (isteğe bağlı)"
         name_help_text: "Bu, bu aşama etkin olduğunda kullanıcıların başlıkta okuyacağı başlıktır."
         save_changes: Değişiklikleri kaydet
       index:
-        help: "Katılımcı bütçelerin farklı aşamaları vardır. Burada, aşamaları etkinleştirip devre dışı bırakabilir ve her bir aşamayı özelleştirebilirsiniz."
+        title: "%{budget} aşamaları"
     budget_investments:
       index:
         heading_filter_all: Tüm başlıklar
@@ -284,6 +295,33 @@ tr:
         tags_placeholder: "Virgülle ayırmak istediğiniz etiketleri yazın (,)"
         undefined: Tanımsız
       search_unfeasible: Arama uygulanamaz
+    budgets_wizard:
+      creation_timeline:
+        budget: Bütçe
+        groups: Gruplar
+        headings: Başlıklar
+        phases: Aşamalar
+      budgets:
+        continue: "Gruplara devam et"
+      groups:
+        back: "Bütçe düzenlemeye geri dön"
+        continue: "Başlıklara devam et"
+      headings:
+        continue: "Aşamalara devam et"
+        single:
+          back: "Grupları düzenlemeye geri dön"
+      heading_mode:
+        multiple:
+          link: "Çoklu başlık bütçesi oluştur"
+        single:
+          link: "Tekli başlık bütçesi oluştur"
+        title: "Katılımcı bütçe türü"
+      phases:
+        continue: "Bitir"
+        multiple:
+          back: "Başlıklara geri dön"
+        single:
+          back: "Başlıkları düzenlemeye geri dön"
     milestones:
       index:
         table_id: "KİMLİK"
@@ -292,7 +330,6 @@ tr:
         table_publication_date: "Yayın tarihi"
         table_status: Durum
         table_actions: "Aksiyon"
-        delete: "Kilometre taşı sil"
         no_milestones: "Tanımlanmış kilometre taşları yok"
         image: "Fotoğraf"
         show_image: "Resmi göster"
@@ -509,10 +546,6 @@ tr:
           allegations_phase: Yorumlar aşaması
           proposals_phase: Öneriler aşaması
           use_markdown: Metni biçimlendirmek için Markdown'ı kullanın
-          title_placeholder: İşlem başlığı
-          summary_placeholder: Tanımlamanın kısa özeti
-          description_placeholder: İşlemin bir tanımlamasını ekleyin
-          additional_info_placeholder: Yararlı olduğunu düşündüğünüz bir ek bilgi ekleyin
           homepage_description: Burada işlemin içeriğini açıklayabilirsiniz
           banner_title: Başlık renkleri
         index:
@@ -526,11 +559,10 @@ tr:
           title: Yeni katılımcı mevzuat süreci oluşturun
           submit_button: İşlem oluşturma
         proposals:
-          select_order: Sıralama ölçütü
           orders:
-            id: Kimlik
-            title: İsim
-            supports: Tam destek
+            id: "Kimlik"
+            title: "İsim"
+            supports: "Tam destek"
         process:
           title: İşlem
           comments: Yorumlar
@@ -584,9 +616,7 @@ tr:
             status:
               draft: Yönetici olarak önizleme yapabilirsiniz, başka kimse göremez
               published: Herkes için görünür
-          title_placeholder: Taslak sürümün başlığını yaz
           changelog_placeholder: Önceki sürümden ana değişiklikleri ekle
-          body_placeholder: Taslak metni yaz
         index:
           title: Taslak sürümler
           create: Sürüm oluştur
@@ -617,7 +647,6 @@ tr:
           submit_button: Değişiklikleri kaydet
         form:
           add_option: Seçenek ekle
-          title_placeholder: Soru ekle
           value_placeholder: Bir kapalı cevap ekle
           question_options: "Olası yanıtlar (isteğe bağlı, varsayılan açık cevaplar tarafından)"
         index:
@@ -1152,7 +1181,6 @@ tr:
         location: "Konum"
       booth:
         shifts: "Vardiyaları yönet"
-        edit: "Kabin düzenle"
     officials:
       edit:
         destroy: '''Yetkili'' durumunu kaldır'
@@ -1174,7 +1202,6 @@ tr:
       level_4: Seviye 4
       level_5: Seviye 5
       search:
-        edit_official: Yetkiliyi düzenle
         make_official: Yetkili yap
         title: "Resmi pozisyonlar: Kullanıcı ara"
         no_results: Resmi pozisyonlar bulunamadı.
@@ -1249,9 +1276,6 @@ tr:
         feature_flags: Özellikler
         features:
           enabled: "Özellik etkinleştirildi"
-          disabled: "Özellik devre dışı"
-          enable: "Etkinleştir"
-          disable: "Devre dışı bırakma"
         map:
           title: Harita yapılandırma
           help: Burada haritanın kullanıcılara gösterilme şeklini kişiselleştirebilirsiniz. Harita işaretçisini sürükleyin veya haritanın herhangi bir yerine tıklayın, istediğiniz yakınlaştırmayı ayarlayın ve "Güncelle" düğmesine tıklayın.
@@ -1272,14 +1296,10 @@ tr:
       remote_census_request_name: Veri Talebi
       remote_census_response_name: Yanıt Verisi
       setting: Özellik
-      setting_actions: Aksiyon
       setting_name: Ayar
-      setting_status: Durum
       setting_value: Değer
       no_description: "Tanımlama yok"
     shared:
-      true_value: "Evet"
-      false_value: "Hayır"
       search:
         advanced_filters:
           sdg_goals:
@@ -1318,6 +1338,8 @@ tr:
       color_help: Onaltılık format
       show_results_and_stats: "Sonuçları ve istatistikleri göster"
       results_and_stats_reminder: "Bu onay kutularını işaretleyince sonuçlar ve/veya istatistikleri herkese açık olacak ve her kullanıcı bunları görecek."
+      close_modal: Yakın model
+      example_url: "https://consulproject.org"
     geozones:
       index:
         title: Coğrafi Bölge (Geozone)
@@ -1455,7 +1477,6 @@ tr:
         title: "Sürdürülebilir Kalkınma Hedefleri - İstatistikler"
     tags:
       create: Konu oluştur
-      destroy: Konuyu yok etmek
       index:
         add_tag: Yeni bir öneri konusu ekle
         title: Öneri konuları
@@ -1633,3 +1654,7 @@ tr:
           created: Oluşturulan kayıtlar
         local_census_records:
           no_records_found: Kayıt bulunamadı.
+    machine_learning:
+      related_content: "İlgili içerik"
+      tab_help: "Yardım"
+      tags: "Etiketler"

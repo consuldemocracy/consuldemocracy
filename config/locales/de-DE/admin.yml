@@ -5,7 +5,9 @@ de:
     actions:
       actions: Aktionen
       confirm: Sind Sie sich sicher?
+      confirm_delete: "Sind Sie sicher? Diese Aktion wird \"%{name}\" löschen und kann nicht rückgängig gemacht werden."
       confirm_hide: Moderation bestätigen
+      delete: "Löschen"
       hide: Ausblenden
       hide_author: Verfasser*in verbergen
       restore: Wiederherstellen
@@ -13,15 +15,12 @@ de:
       unmark_featured: Markierung aufheben
       edit: Bearbeiten
       configure: Konfigurieren
-      delete: Löschen
     officing_booth:
       title: "Sie verlassen den Raum, der sich in %{booth} befindet. Wenn dies nicht korrekt ist, fahren Sie nicht fort und rufen Sie die Hilfe-Rufnummer an. Vielen Dank."
     banners:
       index:
         title: Banner
         create: Banner erstellen
-        edit: Banner bearbeiten
-        delete: Banner löschen
         filters:
           all: Alle
           with_active: Aktiv
@@ -68,6 +67,7 @@ de:
         no_activity: Hier sind keine Moderator*innen aktiv.
     budgets:
       actions:
+        edit: "Bürgerhaushalt bearbeiten"
         preview: "Ansicht Budget"
       index:
         title: Bürgerhaushalte
@@ -77,15 +77,17 @@ de:
           all: Alle
           open: Offen
           finished: Abgeschlossen
-        help: "Bürgerhaushalte ermöglichen es den Bürger: innen, Vorschläge einzubringen und zu entscheiden, wie ein Teil des Haushalts ausgegeben werden soll, wobei die Vorschläge von der Verwaltung kontrolliert und bewertet werden."
         budget_investments: Ausgabenprojekte verwalten
+        table_budget_type: "Typ"
         table_completed: Abgeschlossen
+        table_draft: "Entwurf"
         table_duration: "Laufzeit"
         table_name: Name
         table_phase: Phase
         table_phase_progress: "(%{current_phase_number}/%{total_phases})"
-        edit_groups: Gruppierungen von Rubriken bearbeiten
-        edit_budget: Bürgerhaushalt bearbeiten
+        type_multiple: "Mehrere Rubriken"
+        type_pending: "Offen: Noch keine Rubrik"
+        type_single: "Einzelne Rubrik"
         admin_ballots: Admin Stimmzettel
         no_budgets: "Kein Bürgerhaushalte vorhanden."
       create:
@@ -104,7 +106,7 @@ de:
         duration: "Laufzeit"
         enabled: Aktiviert
         actions: Aktionen
-        edit_phase: Phase bearbeiten
+        enable_phase: "Phase %{phase} freischalten"
         active: Aktiv
         blank_dates: Das Datumfeld ist leer
         administrators:
@@ -120,14 +122,18 @@ de:
         name_description: "Dies ist der Name des Bürgerhaushalts, der in der Kopfzeile und auf den Kacheln verwendet wird, wenn er aktiv ist"
         info:
           budget_settings: "Allgemeine Einstellungen Bürgerhaushalt"
-          phases_settings: "Einstellungen Phasen"
           staff_settings: "Administratoren und Bewerter, die dem Bürgerhaushalt zugeordnet sind"
       destroy:
         success_notice: Bürgerhaushalt erfolgreich gelöscht
         unable_notice: Ein Bürgerhaushalt mit zugehörigen Ausgabenvorschlägen kann nicht gelöscht werden
         unable_notice_polls: Sie können kein Budget löschen, das eine zugehörige Abstimmung hat
-      new:
-        title: Neuer Bürgerhaushalt
+      help:
+        budgets: "Bürgerhaushalte ermöglichen es den Bürger: innen, Vorschläge einzubringen und zu entscheiden, wie ein Teil des Haushalts ausgegeben werden soll, wobei die Vorschläge von der Verwaltung kontrolliert und bewertet werden."
+        groups:
+          multiple: "Gruppen sind dazu gedacht, Rubriken zu organisieren. Nachdem eine Gruppe erstellt wurde und sie Rubriken enthält, kann festgelegt werden, in wie vielen Rubriken ein Benutzer pro Gruppe abstimmen kann."
+        phases: "Bürgerhaushalte haben verschiedene Phasen. Hier können Sie Phasen aktivieren oder deaktivieren und auch jede einzelne Phase individuell anpassen."
+      show:
+        add_heading: "Rubrik hinzufügen"
       winners:
         calculate: Bestbewertete Vorschläge ermitteln
         calculated: Die bestbewerteten Vorschläge werden ermittelt. Dies kann einen Moment dauern.
@@ -153,13 +159,9 @@ de:
         max_votable_headings_info: "Gilt nur für die Phase der Projektauswahl. Während der Phase \"Projekte wählen\" können Benutzer nur in einer Rubrik pro Gruppe abstimmen."
         submit: "Gruppe speichern"
       index:
-        back: "Zurück zu Bürgerhaushalten"
-        help: "Gruppen sind dazu gedacht, Rubriken zu organisieren. Nachdem eine Gruppe erstellt wurde und sie Rubriken enthält, kann festgelegt werden, in wie vielen Rubriken ein Benutzer pro Gruppe abstimmen kann."
+        new_button: "Neue Gruppe hinzufügen"
     budget_headings:
       no_headings: "Keine Rubriken vorhanden."
-      amount:
-        one: "Es gibt 1 Rubrik"
-        other: "Es gibt %{count} Rubriken"
       create:
         notice: "Rubrik erfolgreich erstellt!"
       update:
@@ -175,10 +177,17 @@ de:
         create: "Neue Rubrik erstellen"
         edit: "Rubrik bearbeiten"
         submit: "Rubrik speichern"
+      group_switcher:
+        currently_showing: "Rubriken aus der Gruppe %{group} anzeigen."
+        different_group: "Rubriken einer anderen Gruppe verwalten"
+        the_other_group: "Rubriken aus der Gruppe %{group} verwalten."
       index:
         back: "Zurück zu Gruppen"
+        new_button: "Rubrik hinzufügen"
+        title: "%{budget} / %{group} Rubrik"
     budget_phases:
       edit:
+        title: "Phase bearbeiten"
         description_help_text: Dieser Text erscheint in der Kopfzeile, wenn die Phase aktiv ist
         duration: "Laufzeit dieser Phase"
         duration_description: "Der Zeitraum, in dem diese Phase aktiv sein wird."
@@ -186,7 +195,7 @@ de:
         name_help_text: "Dies ist der Titel der Phase, den die Benutzer in der Kopfzeile lesen, wenn diese Phase aktiv ist."
         save_changes: Änderungen speichern
       index:
-        help: "Bürgerhaushalte haben verschiedene Phasen. Hier können Sie Phasen aktivieren oder deaktivieren und auch jede einzelne Phase individuell anpassen."
+        title: "%{budget} Phasen"
     budget_investments:
       index:
         heading_filter_all: Alle Überschriften
@@ -282,6 +291,27 @@ de:
         tags_placeholder: "Geben Sie die gewünschten Tags durch Kommas (,) getrennt ein"
         undefined: Undefiniert
       search_unfeasible: Suche undurchführbar
+    budgets_wizard:
+      creation_timeline:
+        budget: Bürgerhaushalt
+        groups: Gruppen
+        headings: Rubriken
+        phases: Phasen
+      budgets:
+        continue: "Weiter zu Gruppen"
+      groups:
+        back: "Zurück zum Bearbeiten von Bürgerhaushalten"
+        continue: "Weiter zu Rubriken"
+      headings:
+        continue: "Weiter zu Phasen"
+      heading_mode:
+        title: "Bürgerhaushaltstyp"
+      phases:
+        continue: "Abschließen"
+        multiple:
+          back: "Zurück zu Rubriken"
+        single:
+          back: "Zurück zum Bearbeiten von Rubriken"
     milestones:
       index:
         table_id: "ID"
@@ -290,7 +320,6 @@ de:
         table_publication_date: "Datum der Veröffentlichung"
         table_status: Status
         table_actions: "Aktionen"
-        delete: "Meilenstein löschen"
         no_milestones: "Keine Meilensteine definiert"
         image: "Bild"
         show_image: "Bild anzeigen"
@@ -507,10 +536,6 @@ de:
           allegations_phase: Kommentierphase
           proposals_phase: Vorschlagsphase
           use_markdown: Verwenden Sie Markdown, um den Text zu formationen
-          title_placeholder: Titel des Beteiligungsverfahrens
-          summary_placeholder: Kurze Zusammenfassung der Beschreibung
-          description_placeholder: Fügen Sie eine Beschreibung des Beteiligungsverfahrens hinzu
-          additional_info_placeholder: Fügen Sie zusätzliche Informationen hinzu, die Sie für nützlich halten
           homepage_description: Hier können Sie den Inhalt des Beteiligungsverfahrens erläutern
           banner_title: Farben Header
         index:
@@ -524,11 +549,10 @@ de:
           title: Neues kollaboratives Gesetzgebungsverfahren erstellen
           submit_button: Beteiligungsverfahren erstellen
         proposals:
-          select_order: Sortieren nach
           orders:
-            id: ID
-            title: Titel
-            supports: Unterstützung
+            id: "ID"
+            title: "Titel"
+            supports: "Unterstützung"
         process:
           title: Beteiligungsverfahren
           comments: Kommentare
@@ -582,9 +606,7 @@ de:
             status:
               draft: Als Admin können Sie eine Vorschau anzeigen lassen, die niemand sonst sehen kann
               published: Für alle sichtbar
-          title_placeholder: Titel der Entwurfsfassung
           changelog_placeholder: Beschreiben Sie alle relevanten Änderungen der vorherigen Version
-          body_placeholder: Schreiben Sie einen Entwurfstext
         index:
           title: Entwurfsfassungen
           create: Version erstellen
@@ -615,7 +637,6 @@ de:
           submit_button: Änderungen speichern
         form:
           add_option: Antwortmöglichkeit hinzufügen
-          title_placeholder: Frage hinzufügen
           value_placeholder: Geschlossene Antwort hinzufügen
           question_options: "Mögliche Antworten (optional, standardmäßig offene Antworten)"
         index:
@@ -1150,7 +1171,6 @@ de:
         location: "Lage"
       booth:
         shifts: "Arbeitsschichten verwalten"
-        edit: "Wahlkabine bearbeiten"
     officials:
       edit:
         destroy: Status "Beamter/in" entfernen
@@ -1172,7 +1192,6 @@ de:
       level_4: Stufe 4
       level_5: Stufe 5
       search:
-        edit_official: Beamte*n bearbeiten
         make_official: Beamten/in erstellen
         title: "Beamte/innen: Benutzer*innensuche"
         no_results: Keine Beamten/innen gefunden.
@@ -1247,9 +1266,6 @@ de:
         feature_flags: Funktionen
         features:
           enabled: "Funktion aktiviert"
-          disabled: "Funktion deaktiviert"
-          enable: "Aktivieren"
-          disable: "Deaktivieren"
         map:
           title: Kartenkonfiguration
           help: Hier können Sie festlegen, wie die Karte den Benutzer*innen angezeigt wird. Bewegen Sie den Marker oder klicken Sie auf einen beliebigen Teil der Karte, passen Sie den Zoom an und klicken Sie auf die Schaltfläche "Aktualisieren".
@@ -1270,14 +1286,10 @@ de:
       remote_census_request_name: Anfrage Daten
       remote_census_response_name: Antwort Daten
       setting: Funktion
-      setting_actions: Aktionen
       setting_name: Einstellung
-      setting_status: Status
       setting_value: Wert
       no_description: "Ohne Beschreibung"
     shared:
-      true_value: "Ja"
-      false_value: "Nein"
       search:
         advanced_filters:
           sdg_goals:
@@ -1316,6 +1328,8 @@ de:
       color_help: Hexadezimales Format
       show_results_and_stats: "Ergebnisse und Statistiken anzeigen"
       results_and_stats_reminder: "Durch das Markieren dieses Kontrollkästchens werden die Resultate und/oder Statistiken dieser Abstimmung öffentlich abrufbar und für alle Benutzer*innen sichtbar."
+      close_modal: Fenster schließen
+      example_url: "https://consulproject.org"
     geozones:
       index:
         title: Bezirke
@@ -1407,7 +1421,7 @@ de:
         proposal_created: Bürgervorschläge
       budgets:
         no_data_before_balloting_phase: "Es gibt keine Daten, die vor der Abstimmungsphase angezeigt werden können."
-        title: "Bürgerhaushale - Beteiligung Statistik"
+        title: "Bürgerhaushalte - Beteiligungstatistik"
         supporting_phase: Unterstützungsphase
         balloting_phase: Finale Abstimmung
       budget_balloting:
@@ -1453,7 +1467,6 @@ de:
         title: "Ziele für nachhaltige Entwicklung - Statistiken"
     tags:
       create: Thema erstellen
-      destroy: Thema löschen
       index:
         add_tag: Neues Vorschlagsthema hinzufügen
         title: Themen der Vorschläge
@@ -1631,3 +1644,7 @@ de:
           created: Erstellte Datensätze
         local_census_records:
           no_records_found: Keine Datensätze gefunden.
+    machine_learning:
+      related_content: "Verwandte Inhalte"
+      tab_help: "Hilfe"
+      tags: "Tags"

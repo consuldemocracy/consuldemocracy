@@ -1,13 +1,6 @@
 (function() {
   "use strict";
   App.AdvancedSearch = {
-    advanced_search_terms: function() {
-      return $("#js-advanced-search").data("advanced-search-terms");
-    },
-    toggle_form: function(event) {
-      event.preventDefault();
-      $("#js-advanced-search").slideToggle();
-    },
     toggle_date_options: function() {
       if ($("#js-advanced-search-date-min").val() === "custom") {
         $("#js-custom-date").show();
@@ -18,13 +11,19 @@
       }
     },
     initialize: function() {
-      if (App.AdvancedSearch.advanced_search_terms()) {
-        $("#js-advanced-search").show();
+      var toggle_button = $("#js-advanced-search-title");
+
+      toggle_button.removeAttr("hidden");
+
+      if (toggle_button.attr("aria-expanded") === "true") {
         App.AdvancedSearch.toggle_date_options();
+      } else {
+        toggle_button.next().hide();
       }
-      $("#js-advanced-search-title").on({
-        click: function(event) {
-          App.AdvancedSearch.toggle_form(event);
+      toggle_button.on({
+        click: function() {
+          $(this).attr("aria-expanded", !JSON.parse($(this).attr("aria-expanded")));
+          $(this).next().slideToggle();
         }
       });
       $("#js-advanced-search-date-min").on({

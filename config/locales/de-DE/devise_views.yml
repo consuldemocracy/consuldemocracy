@@ -2,7 +2,6 @@ de:
   devise_views:
     confirmations:
       new:
-        email_label: E-Mail
         submit: Erneut Anweisungen zusenden
         title: Erneut Anweisungen zur Bestätigung zusenden
       show:
@@ -39,12 +38,7 @@ de:
     organizations:
       registrations:
         new:
-          email_label: E-Mail
-          organization_name_label: Name der Organisation
           password_confirmation_label: Passwort bestätigen
-          password_label: Passwort
-          phone_number_label: Telefonnummer
-          responsible_name_label: Vollständiger Name der Person, die die Gruppe/Organsiation repräsentiert
           responsible_name_note: Dies wäre die Person, die den Verein oder das Kollektiv repräsentiert und in dessen Namen die Anträge präsentiert werden
           submit: Registrieren
           title: Als Organisation oder Gruppe registrieren
@@ -62,13 +56,10 @@ de:
         password_label: Neues Passwort
         title: Mein Passwort ändern
       new:
-        email_label: E-Mail
         send_submit: Anweisungen zusenden
         title: Passwort vergessen?
     sessions:
       new:
-        login_label: E-Mail oder Benutzer*innenname
-        password_label: Passwort
         remember_me: Passwort speichern
         submit: Eingabe
         title: Anmelden
@@ -106,12 +97,9 @@ de:
           waiting_for: "Warten auf Bestätigung von:"
         new:
           cancel: Anmeldung abbrechen
-          email_label: E-Mail
           organization_signup: Vertreten Sie eine Organisation oder ein Kollektiv? %{signup_link}
           organization_signup_link: Registrieren Sie sich hier
           password_confirmation_label: Passwort bestätigen
-          password_label: Passwort
-          redeemable_code: Bestätigungscode per E-Mail erhalten (optional)
           submit: Registrieren
           terms: Mit der Registrierung akzeptieren Sie die %{terms}
           terms_link: Allgemeine Nutzungsbedingungen
@@ -119,7 +107,6 @@ de:
           title: Registrieren
           username_is_available: Benutzer*innenname verfügbar
           username_is_not_available: Benutzer*innenname bereits vergeben
-          username_label: Benutzer*innenname
           username_note: Name, der öffentlich neben ihren Beiträgen angezeigt wird
         success:
           back_to_index: Ich verstehe; zurück zur Startseite

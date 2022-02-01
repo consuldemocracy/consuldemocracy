@@ -6,6 +6,7 @@ da:
       actions: Handlinger
       confirm: Er du sikker?
       confirm_hide: Bekræft moderation
+      delete: "Slet"
       hide: Skjul
       hide_author: Skjul bruger
       restore: Gendan
@@ -13,15 +14,12 @@ da:
       unmark_featured: Fjern fremhævning
       edit: Rediger
       configure: Konfigurere
-      delete: Slet
     officing_booth:
       title: "Du er medansvarlig for valgstedet på %{booth}. Hvis det ikke er korrekt, skal du ikke fortsætte, men ringe efter hjælp på hjælpetelefonen. Tak."
     banners:
       index:
         title: Bannere
         create: Opret banner
-        edit: Rediger banner
-        delete: Slet banner
         filters:
           all: Alle
           with_active: Aktive
@@ -63,18 +61,22 @@ da:
         type: Type
         no_activity: Der er ingen moderator aktivitet.
     budgets:
+      actions:
+        edit: "Rediger budget"
+        preview: "Forhåndsvisning"
       index:
         title: Deltagerbudgetter
         new_link: Opret nyt budget
         filter: Søg
         filters:
+          all: Alle
           open: Aktive budgetter
           finished: Færdig
         budget_investments: Administrer projekter
+        table_budget_type: "Type"
+        table_draft: "Udkast"
         table_name: Navn
         table_phase: Fase
-        edit_groups: Rediger områder
-        edit_budget: Rediger budget
         admin_ballots: Administrer valgsteder
         no_budgets: "Der er ingen budgetter."
       create:
@@ -85,9 +87,9 @@ da:
         title: Rediger deltagerbudget
         delete: Slet budget
         phase: Fase
+        phases_caption: "Faser"
         enabled: Aktiveret
         actions: Handlinger
-        edit_phase: Rediger fase
         active: Aktiv
         blank_dates: Ingen datoer
         administrators:
@@ -104,8 +106,6 @@ da:
         success_notice: Budgettet blev slettet
         unable_notice: Du kan ikke slette et budget, der har modtaget projektidéer fra brugere
         unable_notice_polls: Du kan ikke slette et budget med et tilknyttet valgsted
-      new:
-        title: Nyt deltagerbudget
       winners:
         calculate: Beregn resultat
         calculated: Udregner vinderne, det kan tage et minut.
@@ -129,13 +129,8 @@ da:
         create: "Opret ny gruppe"
         edit: "Rediger gruppe"
         submit: "Gem gruppe"
-      index:
-        back: "Gå tilbage til budgetter"
     budget_headings:
       no_headings: "Der er ingen overskrifter."
-      amount:
-        one: "Der er 1 post"
-        other: "Der er %{count} overskrifter"
       create:
         notice: "Post oprettet!"
       update:
@@ -154,6 +149,7 @@ da:
         back: "Gå tilbage til grupper"
     budget_phases:
       edit:
+        title: "Rediger fase"
         description_help_text: Teksten vil være synlig i sidehovedet (øverst på siden), når fasen er aktiv
         enabled_help_text: Fasen vil være synlig i budgettets tidslinje
         save_changes: Gem ændringer
@@ -252,6 +248,12 @@ da:
         tags_placeholder: "Tilføj tags adskilt med komma (,)"
         undefined: Udefineret
       search_unfeasible: Søg uigennemførlige projekter
+    budgets_wizard:
+      creation_timeline:
+        budget: Budget
+        groups: Grupper
+        headings: Områder
+        phases: Faser
     milestones:
       index:
         table_id: "ID"
@@ -260,7 +262,6 @@ da:
         table_publication_date: "Dato for offentliggørelse"
         table_status: Status
         table_actions: "Handlinger"
-        delete: "Slet proces"
         no_milestones: "Har ingen definerede milepæle"
         image: "Billede"
         show_image: "Vis billede"
@@ -477,10 +478,6 @@ da:
           allegations_phase: Kommentarfasen
           proposals_phase: Forslagsfasen
           use_markdown: Anvend Markdown til at formatere teksten
-          title_placeholder: Titel på proces
-          summary_placeholder: Kort resumé af beskrivelsen
-          description_placeholder: Tilføj en beskrivelse af processen
-          additional_info_placeholder: Tilføj supplerende brugbar information
           homepage_description: Her kan du forklare processens indhold
           banner_title: Farve på overskrift
         index:
@@ -494,11 +491,10 @@ da:
           title: Opret ny medborgerdialog
           submit_button: Opret proces
         proposals:
-          select_order: Sorter efter
           orders:
-            id: Id
-            title: Titel
-            supports: Samlet støtte
+            id: "Id"
+            title: "Titel"
+            supports: "Samlet støtte"
         process:
           title: Proces
           comments: Kommentarer
@@ -551,9 +547,7 @@ da:
             status:
               draft: Du kan som admin se forhåndsvisning. Ingen andre kan se den
               published: Synlig for alle
-          title_placeholder: Skriv titlen på udkastet
           changelog_placeholder: Tilføj de vigtigste ændringer fra den tidligere version
-          body_placeholder: Skriv udkast
         index:
           title: Kladdeversion
           create: Opret version
@@ -584,7 +578,6 @@ da:
           submit_button: Gem ændringer
         form:
           add_option: Tilføj valgmulighed
-          title_placeholder: Tilføj et spørgsmål
           value_placeholder: Tilføj et lukket svar
           question_options: "Mulige svar (valgfrit, åben svar som standard)"
         index:
@@ -614,6 +607,12 @@ da:
         add: Tilføj
       search:
         title: "Managers: Søg bruger"
+    sdg_managers:
+      index:
+        no_sdg_managers: Der er ingen brugere.
+    sdg/managers:
+      sdg/manager:
+        add: Tilføj
     menu:
       activity: Moderator aktivitet
       admin: Admin menu
@@ -1110,7 +1109,6 @@ da:
         location: "Lokation"
       booth:
         shifts: "Administrer arbejdsfordeling"
-        edit: "Rediger valgsted"
     officials:
       edit:
         destroy: Fjern "Embedsmand"-status
@@ -1132,7 +1130,6 @@ da:
       level_4: Niveau 4
       level_5: Niveau 5
       search:
-        edit_official: Rediger embedsmand
         make_official: Gør til embedsmand
         title: "Funktionærposition: Søg bruger"
         no_results: Funktionærposition ikke fundet.
@@ -1186,6 +1183,15 @@ da:
           without_confirmed_hide: Under behandling
         title: Skjulte forslag
         no_hidden_proposals: Der er ingen skjulte forslag.
+    hidden_proposal_notifications:
+      index:
+        filter: Filtrere
+        filters:
+          all: Alle
+          with_confirmed_hide: Bekræftet
+          without_confirmed_hide: Under behandling
+        title: Skjulte notifikationer
+        no_hidden_proposals: Der er ingen skjulte notifikationer.
     settings:
       flash:
         updated: Pris opdateret
@@ -1198,9 +1204,6 @@ da:
         feature_flags: Funktioner
         features:
           enabled: "Funktion aktiveret"
-          disabled: "Funktion deaktiveret"
-          enable: "Aktiver"
-          disable: "Deaktiver"
         map:
           title: Kortindstillinger
           help: Her kan du indstille, hvordan kortet vises til brugerne. Træk kortmarkøren eller klik på kortet, indstil den ønskede zoom og klik på knappen "Opdater".
@@ -1213,14 +1216,10 @@ da:
           title: Dashboard for forslag
       remote_census_general_name: Generel information
       setting: Funktioner
-      setting_actions: Handlinger
       setting_name: Indstillinger
-      setting_status: Status
       setting_value: Værdi
       no_description: "Ingen beskrivelse"
     shared:
-      true_value: "Ja"
-      false_value: "Nej"
       search:
         label:
           booths: "Søg stemmeboks vis navn"
@@ -1229,6 +1228,7 @@ da:
           poll_questions: "Søg spørgsmål til afstemning"
           proposals: "Søg borgerforslag via titel, kode, beskrivelse eller spørgsmål"
           users: "Søg bruger vis navn eller e-mail"
+        search: "Søg"
       search_results: "Søgningsresultater"
       no_search_results: "Ingen resultater fundet."
       actions: Handlinger
@@ -1243,6 +1243,7 @@ da:
       content: Indhold
       created_at: Oprettet den
       color_help: Hexadecimalt format
+      show_results_and_stats: "Vis resultater og statistik"
     geozones:
       index:
         title: Geografisk område
@@ -1280,6 +1281,7 @@ da:
       show:
         created_at: Oprettet
         author: Oprettet af
+        users: Brugere
         verified:
           one: "Der er %{count} gyldig underskrift"
           other: "Der er %{count} gyldige underskrifter"
@@ -1309,11 +1311,15 @@ da:
           visits: Besøg
           votes: Sammenlagt antal stemmer
         budgets_title: Deltagerbudget
+        participatory_budgets: Deltagerbudgetter
         direct_messages: Direkte beskeder
         proposal_notifications: Underretning om forslag
         incomplete_verifications: Ufærdige verificeringer
         polls: Afstemninger
+        sdg: Verdensmål
       graph:
+        debate_created: Debatforum
+        visit: Besøg
         proposal_created: Borgerforslag
       budgets:
         supporting_phase: Støt de forslag der skal gå videre
@@ -1326,6 +1332,7 @@ da:
         participants_per_district: Deltagere pr. distrikt
       budget_supporting:
         title: "Statistik over støttefasen"
+        headings: Områder
         users: Brugere
         vote_count: Stemmer
         participant_count: Deltagere
@@ -1349,9 +1356,12 @@ da:
           question_name: Spørgsmål
           origin_web: Webdeltagere
           origin_total: Samlet antal deltagere
+      sdg:
+        debates: "Debatforum"
+        polls: "Afstemning"
+        proposals: "Forslag"
     tags:
       create: Opret emne
-      destroy: Fjern emne
       index:
         add_tag: Tilføj et nyt emne
         title: Emner
@@ -1442,6 +1452,7 @@ da:
           see_page: Vis side
         new:
           title: Opret ny brugerdefineret side
+          slug_help: "Tekst til at identificere siden på URL, for eksempel <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: Oprettet den
           status: Status
@@ -1483,3 +1494,26 @@ da:
         submit_header: Gem topmargintekst
         card_title: Rediger informationsboks
         submit_card: Gem informationsboks
+    audits:
+      id: "ID"
+      new_value: "Ny værdi"
+      old_value: "Tidligere værdi"
+      edited_at: "Redigeret den"
+      edited_by: "Redigeret af"
+      actions: "Handlinger"
+    local_census_records:
+      index:
+        title: Administrer lokal census data
+        document_type: Dokumenttype
+        document_number: Dokumentnummer
+        date_of_birth: Fødselsdato
+        postal_code: Postnummer
+      imports:
+        new:
+          title: Lokal census data
+        show:
+          title: Administrer lokal census data
+    machine_learning:
+      related_content: "Relateret indhold"
+      tab_help: "Hjælp"
+      tags: "Tags"

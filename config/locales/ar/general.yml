@@ -5,10 +5,7 @@ ar:
       erase_account_link: مسح حسابي
       finish_verification: عملية التحقق مكتملة
       notifications: إشعارات
-      organization_name_label: اسم المنظمة
-      organization_responsible_name_placeholder: ممثل المنظمة/الوحدة
       personal: البيانات الشخصية
-      phone_number_label: رقم الهاتف
       public_interests_my_title_list: علامات للعناصر التي تتابعها
       public_interests_user_title_list: علامات للعناصر التي يتتبعها المستخدم
       save_changes_submit: حفظ التغييرات
@@ -22,7 +19,6 @@ ar:
       user_permission_verify: لتنفيذ كافة الإجراءات يرجى التحقق من الحساب الخاص بك.
       user_permission_verify_info: "* فقط للمستخدمين في التعداد."
       user_permission_votes: المشاركة في التصويت النهائي
-      username_label: اسم المستخدم
       verified_account: تم التحقق من الحساب
       verify_my_account: التحقق من حسابي
   application:
@@ -78,7 +74,6 @@ ar:
       newest: الأحدث أولاً
       oldest: الأقدم أولاً
       most_commented: الأكثر تعليقات
-    select_order: ترتيب حسب
     show:
       return_to_commentable: "العودة إلى "
   comments_helper:
@@ -114,7 +109,6 @@ ar:
         submit_button: حفظ التغييرات
       show_link: عرض المناقشة
     form:
-      debate_title: عنوان المناقشة
       tags_instructions: ضع علامة على هذا النقاش.
       tags_placeholder: "ادخل العلامات التي ترغب في استخدامها، مفصولة بفواصل (',')"
     index:
@@ -137,7 +131,13 @@ ar:
         button: بحث
         placeholder: البحث عن مناقشات...
         title: بحث
-      select_order: ترتيب حسب
+      search_results:
+        zero: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
+        one: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
+        two: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
+        few: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
+        many: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
+        other: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
       start_debate: بدء مناقشة
       title: النقاشات
       section_header:
@@ -152,8 +152,6 @@ ar:
     new:
       form:
         submit_button: بدء مناقشة
-      info: إذا كنت تريد تقديم اقتراح ، فهذا القسم الخاطئ ، إذهب إلى %{info_link}.
-      info_link: انشاء مقترح جديدة
       more_info: مزيد من المعلومات
       recommendation_four: استمتع بهذه المساحة والأصوات التي تملأها. إنها ملكك أيضًا.
       recommendation_one: لا تكتب عنوان المناقشة أو الجمل الكاملة بأحرف كبيرة فذلك يعتبر صراخا على شبكة الإنترنت ولا أحد يحب أن يُصرخ عليه.
@@ -191,6 +189,7 @@ ar:
     direct_message: رسالة خاصة
     error: خطأ
     errors: أخطاء
+    not_saved: "هنا أخطاء منعت من حفظ الـ %{resource}. \n<br>\nالرجاء التحقق من الحقول المميزة وتصحيحيها:"
     policy: سياسة الخصوصية
     proposal: اقتراح
     proposal_notification: "إشعار"
@@ -248,7 +247,6 @@ ar:
     header:
       administration_menu: المدير
       administration: الإدارة
-      available_locales: اللغات المتوفرة
       collaborative_legislation: العمليات التشريعية
       debates: النقاشات
       locale: "لغة:"
@@ -326,6 +324,9 @@ ar:
       sign_in: تسجيل الدخول باستخدام Twitter
       sign_up: تسجيل باستخدام Twitter
       name: Twitter
+    info:
+      sign_in: "تسجيل الدخول باستخدام:"
+      sign_up: "تسجيل الدخول باستخدام:"
     or_fill: "أو املأ النموذج التالي:"
   proposals:
     create:
@@ -334,6 +335,7 @@ ar:
     created:
       title: تهانينا! لقد اتخذت الخطوة الأولى.
       motivation: "من المهم تحضير حملة الإطلاق لمقترحك حتى يكون ناجحًا. الأيام القليلة الأولى حاسمة."
+      motivation_2: "<strong>إذا كنت تريد توصيات للإستعداد للنشر ، فاترك مقترحك كمسودة وسنوجهك</strong>"
       publish: لا ، أريد أن أنشر الاقتراح
       dashboard: نعم ، أريد المساعدة و سأقوم بالنشر لاحقًا
       preview_title: سيظهر مقترحك بهذا الشكل عند نشره
@@ -369,7 +371,6 @@ ar:
       map_location: "موقع الخريطة"
       map_location_instructions: "تنقل في الخريطة الى الموقع و ضع العلامة."
       map_remove_marker: "ازل علامة الخريطة"
-      map_skip_checkbox: "هذا المقترح لا يملك موقع ملموس أو لست على دراية به."
     index:
       featured_proposals: مميز
       orders:
@@ -404,7 +405,13 @@ ar:
         button: بحث
         placeholder: البحث عن مقترحات...
         title: بحث
-      select_order: ترتيب حسب
+      search_results:
+        zero: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
+        one: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
+        two: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
+        few: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
+        many: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
+        other: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
       select_order_long: "أنت تشاهد المقترحات وفقًا لـ:"
       start_proposal: إنشاء مقترح
       title: إقتراحات
@@ -506,6 +513,7 @@ ar:
       poster: ملصقة
       recommended_actions: الإجراءات الموصى بها
       messages: رسالة للمستخدمين
+      related_content: محتوى ذات الصلة
     form:
       request: طلب
     create_request:
@@ -643,6 +651,7 @@ ar:
         sent: تم إرسال البريد الإلكتروني
     mailer:
       forward:
+        subtitle: "إذا قمت بدعمي، <br>فسوف نحقق ذلك."
         support_button: دعم هذا المقترح
         share_in: نشر في
         hi: "مرحبا!"
@@ -682,6 +691,7 @@ ar:
       back: العودة إلى التصويت
       cant_answer_not_logged_in: "تحتاج الى %{signin} او %{signup} للمتابعة."
       comments_tab: تعليقات
+      cant_answer_verify: "يجب عليك %{verify_link} للإجابة."
       verify_link: "تحقق من حسابك"
       cant_answer_expired: "انتهى هذا الاستطلاع."
       cant_answer_wrong_geozone: "هذا السؤال غير متوفر في منطقتك الجغرافية."
@@ -722,14 +732,13 @@ ar:
       back: "عودة"
   shared:
     edit: "تعديل"
+    filter: "ترشيح"
     save: "حفظ"
     delete: "حذف"
     "yes": "نعم"
     "no": "لا"
     search_results: "نتائج البحث"
     advanced_search:
-      author_type: "حسب فئة المؤلف"
-      author_type_blank: "حدد فئة"
       date: "حسب التاريخ"
       date_placeholder: "DD/MM/YYYY"
       date_range_blank: "اختر التاريخ"
@@ -740,7 +749,6 @@ ar:
       date_5: "حسب الطلب"
       from: "من"
       general: "مع النص"
-      general_placeholder: "اكتب النص"
       search: "ترشيح"
       title: "البحث المتقدم"
       to: "إلى"
@@ -796,6 +804,7 @@ ar:
       districts: "مقاطعات"
       districts_list: "قائمة المقاطعات"
       categories: "فئات"
+    target_blank: " (سيفتح الرابط في نافذة جديدة)"
     you_are_in: "أنت في"
     unflag: حذف بلاغ عن عدم الملاءمة
     unfollow_entity: "توقف عن متابعة %{entity}"
@@ -842,6 +851,11 @@ ar:
     manage:
       all: "ليس لديك إذن لتنفيذ عملية '%{action}' على %{subject}."
   users:
+    login_to_comment: "تحتاج الى %{signin} او %{signup} للمتابعة والتعليق."
+    login_to_continue: "تحتاج الى %{signin} او %{signup} للمتابعة."
+    signin: "تسجيل الدخول"
+    signup: "انشاء حساب"
+    verify_account: "التحقق من حسابك"
     direct_messages:
       new:
         direct_messages_bloqued: "هذا المستخدم اختار عدم تلقي رسائل مباشرة"
@@ -1009,9 +1023,6 @@ ar:
       title: روابط
       note: أضف الروابط التي تهمك
       add_new_link: إضافة رابط جديد
-    link_fields:
-      label_placeholder: عنوان الرابط
-      url_placeholder: عنوان الرابط
   communities:
     show:
       surveys: الاستطلاعات

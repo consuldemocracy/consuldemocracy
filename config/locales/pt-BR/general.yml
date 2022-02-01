@@ -5,10 +5,7 @@ pt-BR:
       erase_account_link: Apagar minha conta
       finish_verification: Completar verificação
       notifications: Notificações
-      organization_name_label: Nome da organização
-      organization_responsible_name_placeholder: Representante de organização/coletivo
       personal: Dados pessoais
-      phone_number_label: Número de Telefone
       public_interests_my_title_list: Marcações dos elementos que você segue
       public_interests_user_title_list: Marcações dos elementos que esse usuário segue
       save_changes_submit: Salvar alterações
@@ -22,7 +19,6 @@ pt-BR:
       user_permission_verify: Para realizar todas as ações verifique sua conta.
       user_permission_verify_info: "* Somente para usuários no Censo. "
       user_permission_votes: Participar na votação final
-      username_label: Nome de usuário
       verified_account: Conta verificada
       verify_my_account: Verificar minha conta
   application:
@@ -62,7 +58,6 @@ pt-BR:
       newest: Mais recente primeiro
       oldest: Mais antigo primeiro
       most_commented: Mais comentadas
-    select_order: Organizado por
     show:
       return_to_commentable: "Voltar para"
   comments_helper:
@@ -90,7 +85,6 @@ pt-BR:
         submit_button: Salvar alterações
       show_link: Ver debate
     form:
-      debate_title: Título do debate
       tags_instructions: Marcar este debate.
       tags_placeholder: "Entre com as marcações que você deseja usar, separadas por vírgulas ('s\")"
     index:
@@ -116,7 +110,6 @@ pt-BR:
       search_results:
         one: " contendo o termo <strong>'%{search_term}'</strong>"
         other: " contendo o termo <strong>'%{search_term}'</strong>"
-      select_order: Ordenado por
       start_debate: Iniciar um debate
       title: Debates
       section_header:
@@ -131,8 +124,6 @@ pt-BR:
     new:
       form:
         submit_button: Iniciar um debate
-      info: Se quiser elaborar uma proposta, esta seção é inadequada, entre %{info_link}.
-      info_link: criar nova proposta
       more_info: Mais informações
       recommendation_four: Aproveite este espaço e as vozes que o preenchem. Ele pertence a você também.
       recommendation_one: Não use letras maiúsculas para o título do debate ou para sentenças completas. Na internet, isto é considerado gritaria. Ninguém gosta de ser tratado com gritos.
@@ -230,7 +221,6 @@ pt-BR:
     header:
       administration_menu: Admin
       administration: Administração
-      available_locales: Idiomas disponíveis
       collaborative_legislation: Processos legislativos
       debates: Debates
       locale: "Idioma:"
@@ -344,7 +334,6 @@ pt-BR:
       map_location: "Localização do mapa"
       map_location_instructions: "Navegue no mapa até o local e fixe o marcador."
       map_remove_marker: "Remover o marcador do mapa"
-      map_skip_checkbox: "Esta proposta não tem uma localização concreta ou não a conheço."
     index:
       featured_proposals: Destacado
       orders:
@@ -382,7 +371,6 @@ pt-BR:
       search_results:
         one: " contendo o termo <strong>'%{search_term}'</strong>"
         other: " contendo o termo <strong>'%{search_term}'</strong>"
-      select_order: Ordenado por
       select_order_long: "Você está vendo propostas de acordo para:"
       start_proposal: Criar proposta
       title: Propostas
@@ -674,14 +662,13 @@ pt-BR:
       back: "Voltar para minha atividade"
   shared:
     edit: "Editar"
+    filter: "Filtro"
     save: "Salvar"
     delete: "Excluir"
     "yes": "Sim"
     "no": "Não"
     search_results: "Buscar resultados"
     advanced_search:
-      author_type: "Por categoria de autor"
-      author_type_blank: "Selecione um categoria"
       date: "Por data"
       date_placeholder: "DD/MM/AAAA"
       date_range_blank: "Escolha uma data"
@@ -692,7 +679,6 @@ pt-BR:
       date_5: "Personalizado"
       from: "De"
       general: "Com o texto"
-      general_placeholder: "Escrever o texto"
       goal: "Por ODS (SDG)"
       goal_blank: "Selecione um objetivo"
       search: "Filtro"
@@ -954,9 +940,6 @@ pt-BR:
       title: Links
       note: Adicione links que sejam que sejam de interesse
       add_new_link: Adicionar novo link
-    link_fields:
-      label_placeholder: Título do link
-      url_placeholder: Endereço do link
   communities:
     show:
       surveys: Pesquisas
@@ -972,7 +955,8 @@ pt-BR:
       enqueue_remote_translation: As traduções foram solicitadas corretamente.
     button: Traduzir página
   tags:
-    filter:
-      more:
-        one: "Mais uma tag"
-        other: "Mais %{count} tags"
+    list:
+      filter:
+        more:
+          one: "Mais uma tag"
+          other: "Mais %{count} tags"

@@ -27,7 +27,7 @@ describe Tag do
 
   describe "name validation" do
     it "160 char name should be valid" do
-      tag = build(:tag, name: Faker::Lorem.characters(160))
+      tag = build(:tag, name: Faker::Lorem.characters(number: 160))
       expect(tag).to be_valid
     end
   end

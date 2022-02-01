@@ -13,7 +13,7 @@ class Admin::MenuComponent < ApplicationComponent
     end
 
     def budgets?
-      controller_name.starts_with?("budget")
+      controller_name.starts_with?("budget") || controller_path =~ /budgets_wizard/
     end
 
     def polls?

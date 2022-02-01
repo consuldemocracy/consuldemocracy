@@ -1,0 +1,6 @@
+<%= back_link_to admin_budgets_path %>
+
+<%= header %>
+
+<%= render Admin::BudgetsWizard::CreationTimelineComponent.new("budget") %>
+<%= render Admin::Budgets::FormComponent.new(budget, wizard: true) %>

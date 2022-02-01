@@ -75,7 +75,6 @@ hr:
         phone: Unesite svoj broj mobilnog telefona kako bi ste primili kôd
         phone_format: "<strong><em>(Primjer: 612345678 ili +34612345678)</em></strong>"
         phone_note: Koristimo broj vašeg mobilnog uređaja samo za slanje kôda, nikad da bismo vas kontaktirali.
-        phone_placeholder: "Primjer: 612345678 ili +34612345678"
         submit_button: Šalji
         title: Pošalji potvrdni kôd
       update:

@@ -69,7 +69,6 @@ ca:
         not_allowed: "Avui no tens torn de president de taula"
       new:
         title: validar document
-        document_number: "Número de document (incloent-hi lletres)"
         submit: validar document
         error_verifying_census: "El Padró no va poder verificar aquest document."
         form_errors: van evitar verificar aquest document

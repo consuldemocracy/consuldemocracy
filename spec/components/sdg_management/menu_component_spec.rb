@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe SDGManagement::MenuComponent, type: :component do
+describe SDGManagement::MenuComponent do
   let(:component) { SDGManagement::MenuComponent.new }
 
   before do

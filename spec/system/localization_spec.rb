@@ -16,34 +16,18 @@ describe "Localization" do
     expect(page).to have_text("Bienvenido a CONSUL")
   end
 
-  scenario "Available locales appear in the locale switcher" do
-    visit "/"
-
-    within(".locale-form .js-location-changer") do
-      expect(page).to have_content "Español"
-      expect(page).to have_content "English"
-    end
-  end
-
-  scenario "The current locale is selected" do
-    visit "/"
-    expect(page).to have_select("locale-switcher", selected: "English")
-  end
-
   scenario "Changing the locale" do
     visit "/"
-    expect(page).to have_content("Language")
+    select "Español", from: "Language:"
 
-    select("Español", from: "locale-switcher")
-    expect(page).to have_content("Idioma")
-    expect(page).not_to have_content("Language")
-    expect(page).to have_select("locale-switcher", selected: "Español")
+    expect(page).not_to have_select "Language:"
+    expect(page).to have_select "Idioma:", selected: "Español"
   end
 
   scenario "Keeps query parameters while using protected redirects" do
     visit "/debates?order=created_at&host=evil.dev"
 
-    select("Español", from: "locale-switcher")
+    select "Español", from: "Language:"
 
     expect(current_host).to eq "http://127.0.0.1"
     expect(page).to have_current_path "/debates?locale=es&order=created_at"

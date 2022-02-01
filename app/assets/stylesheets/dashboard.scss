@@ -182,14 +182,13 @@
     background: #feeaeb;
 
     &::before {
-      border: 2px solid #fb9497;
       color: #fb9497;
       content: "\74";
     }
   }
 
   &::before {
-    border: 2px solid #00cb96;
+    border: 2px solid;
     border-radius: rem-calc(40);
     color: #00cb96;
     content: "\6c";
@@ -235,10 +234,9 @@
   position: relative;
 
   &::before {
-    background: #fff;
+    background: $body-background;
     border: 1px solid $border;
     border-radius: rem-calc(36);
-    color: #000;
     content: "\77";
     font-family: "icons";
     font-size: rem-calc(24);
@@ -265,7 +263,6 @@
   position: relative;
 
   &::before {
-    color: #000;
     font-family: "icons";
     font-size: rem-calc(24);
     left: 6px;
@@ -332,7 +329,7 @@
   }
 
   a {
-    color: $text;
+    color: inherit;
   }
 
   .is-active {
@@ -341,7 +338,7 @@
 
     &::before {
       background: linear-gradient(to right, rgba(231, 236, 240, 1) 0%, rgba(251, 251, 251, 1) 90%);
-      border-left: 4px solid $brand;
+      border-left: 4px solid;
       content: "";
       height: rem-calc(48);
       left: 0;
@@ -352,10 +349,6 @@
 
     a {
       @include brand-text;
-
-      ~ a {
-        color: $text;
-      }
     }
 
     [class^="icon-"] {
@@ -371,7 +364,7 @@
   }
 
   .submenu-active {
-    border-bottom: 2px solid $brand;
+    border-bottom: 2px solid;
 
     .has-tip {
       @include brand-text;

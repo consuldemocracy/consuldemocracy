@@ -56,7 +56,7 @@ describe "Admin valuators", :admin do
     scenario "Valuator not assigned to a budget" do
       visit admin_valuators_path
 
-      accept_confirm { click_link "Delete" }
+      accept_confirm { click_button "Delete" }
 
       within("#valuators") do
         expect(page).not_to have_content(valuator.name)
@@ -68,7 +68,7 @@ describe "Admin valuators", :admin do
 
       visit admin_valuators_path
 
-      accept_confirm { click_link "Delete" }
+      accept_confirm { click_button "Delete" }
 
       within("#valuators") do
         expect(page).not_to have_content(valuator.name)

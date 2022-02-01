@@ -1,0 +1,11 @@
+var form = $("<%= j render Admin::Settings::FeaturedSettingsFormComponent.new(
+  @setting,
+  tab: params[:setting][:tab],
+  describedby: params[:setting][:describedby]
+) %>");
+
+$("#" + form.attr("id")).html(form.html()).find("[type='submit']").focus();
+
+<% if @setting.type == "feature" || @setting.type == "process" %>
+  $("#side_menu").html("<%= j render Admin::MenuComponent.new %>").foundation();
+<% end %>

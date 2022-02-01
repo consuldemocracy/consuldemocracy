@@ -161,6 +161,8 @@ pt-BR:
         voting_style_knapsack: "Mochila"
         voting_style_approval: "Aprovação"
       budget/translation:
+        main_link_text: "Texto no link"
+        main_link_url: "O link te leva para (adicionar link)"
         name: "Nome"
       budget/investment:
         heading_id: "Título"
@@ -230,8 +232,11 @@ pt-BR:
         ends_at: "Data final"
         starts_at: "Data de início"
       budget/phase/translation:
+        name: "Nome"
         description: "Descrição"
         summary: "Resumo"
+        main_link_text: "Texto no link"
+        main_link_url: "O link te leva para (adicionar link)"
       comment:
         body: "Comentar"
         user: "Usuário"
@@ -535,10 +540,6 @@ pt-BR:
           attributes:
             segment_recipient:
               invalid: "O segmento de destinatários do usuário é inválido"
-        map_location:
-          attributes:
-            map:
-              invalid: Localização no mapa não pode ser em branco. Coloque um marcador ou selecione a caixa de seleção se não houver necessidade de geolocalização
         poll/voter:
           attributes:
             document_number:

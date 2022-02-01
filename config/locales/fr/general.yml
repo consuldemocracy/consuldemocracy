@@ -5,10 +5,7 @@ fr:
       erase_account_link: Supprimer mon compte
       finish_verification: Finir la vérification
       notifications: Notifications
-      organization_name_label: Nom de l'organisation
-      organization_responsible_name_placeholder: Représentant de l'organisation ou du collectif
       personal: Détails personnels
-      phone_number_label: Numéro de téléphone
       public_interests_my_title_list: Étiquettes des éléments que vous suivez
       public_interests_user_title_list: Étiquettes des éléments que l'utilisateur suit
       save_changes_submit: Sauvegarder des changements
@@ -22,13 +19,15 @@ fr:
       user_permission_verify: Pour effectuer toutes les actions, vérifiez votre compte.
       user_permission_verify_info: "* Uniquement pour les utilisateurs inscrits sur\nle recensement de Madrid"
       user_permission_votes: Participer au vote final
-      username_label: Nom d'utilisateur
       verified_account: Compte vérifié
       verify_my_account: Vérifier mon compte
   application:
     close: Fermer
     menu: Menu
   comments:
+    actions:
+      confirm_delete: "Êtes-vous sûr? Cette action supprimera ce commentaire. Vous ne pouvez pas annuler cette action."
+      delete: "Supprimer le commentaire"
     comments_closed: Les commentaires sont fermés
     verified_only: Pour participer, %{verify_account}
     comment:
@@ -60,7 +59,6 @@ fr:
       newest: Plus récent en premier
       oldest: Plus ancien en premier
       most_commented: Plus commentés
-    select_order: Trier par
     show:
       return_to_commentable: "Revenir à"
   comments_helper:
@@ -88,7 +86,6 @@ fr:
         submit_button: Sauvegarder des changements
       show_link: Voir le débat
     form:
-      debate_title: Titre du débat
       tags_instructions: Étiquetter ce débat
       tags_placeholder: "Entrez les étiquettes que vous voudriez utiliser, séparer par des virgules (',')"
     index:
@@ -111,7 +108,9 @@ fr:
         button: Chercher
         placeholder: Rechercher des débats...
         title: Chercher
-      select_order: Trier par
+      search_results:
+        one: " contenant le terme <strong>'%{search_term}'</strong>"
+        other: " contenant le mot <strong>'%{search_term}'</strong>"
       start_debate: Commencer un débat
       title: Débats
       section_header:
@@ -126,8 +125,6 @@ fr:
     new:
       form:
         submit_button: Commencer un débat
-      info: Si vous souhaitez faire une proposition, vous êtez dans la mauvaise section, entrez %{info_link}.
-      info_link: créer une nouvelle proposition
       more_info: Plus d'information
       recommendation_four: Appréciez ces espaces et les voix qui le remplissent. Tout vous appartient.
       recommendation_one: Ne pas utiliser de lettres capitales pour le titre du débat ou pour des phrases entières. Sur internet, c'est considéré comme crier. Et personne n'aime se faire crier dessus.
@@ -185,6 +182,7 @@ fr:
     local_census_records/import: Importer les données du recensement local
     site_customization/content_block: content block
     site_customization/page: page
+    sdg/local_target: objectif local
   geozones:
     none: Toute la ville
   layouts:
@@ -204,6 +202,10 @@ fr:
         show_proposal: Voir la proposition
         preview_proposal: Preview la proposition
         current_goal: Objectif en cours
+        supports:
+          zero: Pas de soutiens
+          one: 1 Soutien
+          other: "Soutiens"
     footer:
       accessibility: Accessibilité
       conditions: Conditions légales
@@ -220,7 +222,6 @@ fr:
     header:
       administration_menu: Admin
       administration: Administration
-      available_locales: Langues disponibles
       collaborative_legislation: Processus législatifs
       debates: Débats
       locale: "Langue :"
@@ -241,6 +242,7 @@ fr:
           one: Vous avez une nouvelle notification
           other: Vous avez %{count} nouvelles notifications
         notifications: Notifications
+      sdg: "ODD"
   notifications:
     index:
       empty_notifications: Vous n'avez pas de nouvelles notifications
@@ -279,6 +281,8 @@ fr:
       sign_up: S'enregistrer avec Google
       name: Google
     wordpress_oauth2:
+      sign_in: Connectez-vous avec Wordpress
+      sign_up: Inscrivez-vous avec Wordpress
       name: Wordpress
     twitter:
       sign_in: S'enregistrer avec Twitter
@@ -331,7 +335,6 @@ fr:
       map_location: "Emplacement sur la carte"
       map_location_instructions: "Positionnez le marqueur à l'emplacement correspondant sur la carte."
       map_remove_marker: "Supprimer le marqueur"
-      map_skip_checkbox: "Cette proposition n'a pas d'emplacement associé à ma connaissance."
     index:
       featured_proposals: Mis en avant
       orders:
@@ -354,6 +357,7 @@ fr:
       selected_proposals: Propositions sélectionnées
       selected_proposals_link: Afficher les propositions sélectionnées
       archived_proposals: Propositions archivées
+      proposals_lists: Listes de propositions
       retired_links:
         all: Tous
         duplicated: Duplicata d'une autre proposition
@@ -365,7 +369,9 @@ fr:
         button: Chercher
         placeholder: Chercher des propositions
         title: Chercher
-      select_order: Trier par
+      search_results:
+        one: " contenant le terme <strong>'%{search_term}'</strong>"
+        other: " contenant le terme <strong>'%{search_term}'</strong>"
       select_order_long: "Vous êtes en train de voir les propositions en fonction de"
       start_proposal: Créer une proposition
       title: Propositions
@@ -389,6 +395,7 @@ fr:
       start_new: Créer une nouvelle proposition
     notice:
       retired: Proposition retirée
+      published: La proposition a été publiée
     proposal:
       created: "Vous venez de créer une proposition !"
       share:
@@ -414,6 +421,7 @@ fr:
       total_percent: 100%
       archived: "Cette proposition a été archivée et ne peut recueillir de soutiens."
       successful: "Cette proposition a atteint les soutiens requis."
+      selected: "Proposition sélectionnée"
     show:
       author_deleted: Utilisateur effacé
       code: "Code de la proposition"
@@ -422,6 +430,7 @@ fr:
         one: 1 commentaire
         other: "%{count} commentaires"
       comments_tab: Commentaires
+      dashboard_proposal_link: Tableau de bord
       flag: Cette proposition a été signalée comme inappropriée par plusieurs utilisateurs
       notifications_tab: Notifications
       milestones_tab: Jalons
@@ -433,19 +442,78 @@ fr:
       embed_video_title: "Vidéo de %{proposal}"
       title_video_url: "Vidéo externe"
       author: Auteur
+      draft: Proposition en construction. Ne peut pas encore obtenir de soutiens et n'apparaît pas non plus dans la liste des propositions.
     update:
       form:
         submit_button: Sauvegarder des changements
   dashboard:
     menu:
+      my_proposal: Modifier ma proposition
+      progress: Progression
+      resources: Ressources
+      community: Communauté
+      polls: Sondages
+      mailing: E-mail
+      poster: Affiche
+      recommended_actions: Actions recommandées
       messages: Message aux utilisateurs
+      related_content: Contenu associé
+    form:
+      request: Demande
+    create_request:
+      success: La demande a été envoyée avec succès. Nous vous contacterons dans les plus brefs délais pour vous en informer.
+      archived: Cette proposition est archivée et ne peut pas demander de ressources.
     progress:
+      title: Graphique
+      group_by_month: Mensuel
+      group_by_week: Hebdomadaire
+      group_by_date: Journalier
+      progress: Progrès accumulé
+      supports: Soutiens
+      success: Progrès idéal
       new_action: Nouveau
+    index:
+      title: Modification
+      edit_proposal_link: Modifier la proposition
+      publish: Proposition publiée
+      retire: Retirer la proposition
+    new_request:
+      links: Liens
+    resources:
+      available_resources: Ressources disponibles
     resource:
+      required_days: "%{days} jours requis"
+      required_supports: "%{supports} soutiens requis"
       and: et
+      view_resource: Voir les ressources
+      resource_requested: Ressource déjà demandée
+      request_resource: Demander une ressource
+      resource_locked: Ressource bloquée
     recommended_actions:
+      title: Actions recommandées
+      goto_proposed_actions: Accéder aux actions recommandées
+      see_proposed_actions: Consultez les actions recommandées
+      hide_proposed_actions: Masquer les actions recommandées
+      pending_title: En attente
       done_title: Fini
+    goal:
+      locked_resource: Ressource bloquée
+    community:
+      access_community: Accéder à la communauté
+      participants: Participants
+      debates: Débats
+      comments: Commentaires
     polls:
+      index:
+        title: Votes
+        create: Créer le vote
+        links: Liens
+        additiontal_information: Information supplémentaire
+      new:
+        title: Nouveau vote
+        submit: Créer le vote
+      edit:
+        submit: Mettre à jour le vote
       poll:
         view_results: Inspecter les résultats
       form:
@@ -454,10 +522,20 @@ fr:
         add_answer: Ajouter une réponse
     poster:
       options:
+        preview: Aperçu
         download: Télécharger
+    mailing:
+      mailing_options:
+        preview: Aperçu
     mailer:
       forward:
+        subtitle: "Si vous me soutenez, <br>nous y parviendrons."
+        support_button: Soutenez cette proposition
+        share_in: Partager sur
         hi: "Bonjour!"
+        introduction: Je vous écris pour vous informer que je participe à %{org}, la plateforme sur laquelle nous pouvons décider quelle ville nous voulons. Et pour cela, j'ai créé ma propre proposition citoyenne et maintenant, je vais avoir besoin de votre soutien ! Mais ne vous inquiétez pas car c'est très simple.
+        support: "Il vous suffit de cliquer sur le bouton que vous verrez ci-dessous 'Soutenir cette proposition' et vous pourrez vous renseigner avant de la promouvoir. Seules les propositions qui obtiendront le maximum de soutien seront réalisées par la Mairie, et j'ai pensé que vous, je suis sûr que vous m'aidez à y parvenir !"
+        share: "Et si vous aussi vous me faites la faveur de partager ma proposition avec vos amis, votre famille et vos contacts, ce serait parfait !"
   polls:
     all: "Toutes"
     no_dates: "aucune date fixée"
@@ -475,6 +553,8 @@ fr:
       geozone_info: "Peuvent participer les personnes issues du recensement de : "
       already_answer: "Vous avez déjà participé à ce vote"
       not_logged_in: "Vous devez vous connecter ou vous inscrire pour participer"
+      unverified: "Vous devez vérifier votre compte pour participer"
+      cant_answer: "Ce sondage n'est pas disponible pour votre zone géographique"
       section_header:
         icon_alt: Icône de vote
         title: Votes
@@ -489,6 +569,7 @@ fr:
       back: Retour au vote
       cant_answer_not_logged_in: "Il est nécessaire de %{signin} ou de %{signup} pour participer."
       comments_tab: Commentaires
+      cant_answer_verify: "Vous devez %{verify_link} pour pouvoir répondre."
       verify_link: "Vérifier votre compte"
       cant_answer_expired: "Ce vote est terminé."
       cant_answer_wrong_geozone: "Cette question n'est pas disponible pour votre zone géographique."
@@ -505,6 +586,7 @@ fr:
         total_votes: "Nombre de votes"
         votes: "VOTES"
         web: "INTERNET"
+        mail: "COURRIER"
         booth: "BUREAU"
         total: "TOTAL"
         valid: "Valides"
@@ -513,6 +595,8 @@ fr:
       results:
         title: "Questions"
         most_voted_answer: "Choix le plus voté : "
+    poll_header:
+      back_to_proposal: Retour à la proposition
   poll_questions:
     show:
       vote_answer: "Voter %{answer}"
@@ -521,19 +605,19 @@ fr:
     new:
       title: "Envoyer un message"
       submit_button: "Envoyer un message"
+      info_about_receivers: "Cette notification sera envoyée à <strong>%{count} personnes</strong> et elle sera visible dans %{proposal_page}.<br> Les notifications ne sont pas envoyées immédiatement, les utilisateurs recevront périodiquement un e-mail avec toutes les notifications de proposition."
       proposal_page: "la page de la proposition"
     show:
       back: "Retour à mon activité"
   shared:
     edit: "Éditer"
+    filter: "Filtrer"
     save: "Sauvegarder"
     delete: "Supprimer"
     "yes": "Oui"
     "no": "Non"
     search_results: "Résultats de recherche"
     advanced_search:
-      author_type: "Par catégorie d'auteur"
-      author_type_blank: "Sélectionner une catégorie"
       date: "Par date"
       date_placeholder: "JJ/MM/AAAA"
       date_range_blank: "Choisir une date"
@@ -544,12 +628,16 @@ fr:
       date_5: "La période de votre choix"
       from: "Depuis"
       general: "Avec le texte"
-      general_placeholder: "Écrire le texte"
+      goal: "Par ODD"
+      goal_blank: "Sélectionnez un objectif"
       search: "Filtre"
+      target: "Par cible"
+      target_blank: "Sélectionnez une cible"
       title: "Recherche avancée"
       to: "Pour"
     author_info:
       author_deleted: Utilisateur effacé
+      email_deleted: E-mail supprimé
     back: Revenir
     check: Sélectionner
     check_all: Toutes
@@ -559,6 +647,12 @@ fr:
     follow: "Suivre"
     following: "Suivent"
     follow_entity: "Suivre %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice: "Vous suivez à présent cette proposition d'investissement ! <br>Nous vous tiendrons informé des changements au fur et à mesure."
+        destroy:
+          notice: "Vous ne suivez plus ce projet d'investissement ! <br> Vous ne recevrez plus de notifications liées à ce projet."
     print:
       print_button: Imprimer cette info
     search: Chercher
@@ -587,6 +681,7 @@ fr:
       districts: "Secteurs"
       districts_list: "Liste des districts"
       categories: "Catégories"
+    target_blank: " (ce lien s’ouvre dans une nouvelle fenêtre)"
     you_are_in: "Vous êtes à"
     unflag: Désignaler
     unfollow_entity: "Ne plus suivre %{entity}"
@@ -635,6 +730,11 @@ fr:
     manage:
       all: "Vous n'êtes pas autorisé(e) à effectuer l'action '%{action}' sur %{subject}."
   users:
+    login_to_comment: "Vous devez %{signin} ou %{signup} pour laisser un commentaire."
+    login_to_continue: "Il est nécessaire de %{signin} ou de %{signup} pour continuer."
+    signin: "se connecter"
+    signup: "s'inscrire"
+    verify_account: "vérifier votre compte"
     direct_messages:
       new:
         direct_messages_bloqued: "Cet utilisateur a décidé de ne pas recevoir de messages privés"
@@ -649,6 +749,7 @@ fr:
       deleted_proposal: Cette proposition a été effacée
       deleted_budget_investment: Cette proposition d'investissement a été supprimée
       proposals: Propositions
+      proposals_status: Statut
       debates: Débats
       budget_investments: Propositions d'investissement
       comments: Commentaires
@@ -676,7 +777,10 @@ fr:
       delete_alert: "Êtes-vous sûr. e de vouloir supprimer votre projet d'investissement ? Cette action est irréversible"
     proposals:
       retired: "Proposition retirée"
+      draft: Brouillon
+      published: Publié
       see: "Voir la proposition"
+      actions: Actions
   votes:
     agree: Je suis d'accord
     anonymous: Trop de votes anonymes pour accepter le vote %{verify_account}.
@@ -761,3 +865,9 @@ fr:
       alt: Sélectionnez le texte que vous souhaitez commenter et appuyez sur le bouton avec le crayon.
       text: Pour commenter ce document, il est nécessaire de %{sign_in} ou %{sign_up}. Puis, sélectionnez le texte que vous souhaitez commenter et pressez le bouton avec le crayon.
       title: Comment puis-je commenter ce document ?
+  links:
+    form:
+      delete_button: Supprimer
+      cancel_button: Annuler
+    nested_links:
+      title: Liens

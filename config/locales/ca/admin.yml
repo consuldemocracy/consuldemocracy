@@ -6,6 +6,7 @@ ca:
       actions: Accions
       confirm: '¿Estás segur?'
       confirm_hide: Confirmeu la moderació
+      delete: "Borrar"
       hide: Ocultar
       hide_author: Bloquejar l'autor
       restore: Tornar a mostrar
@@ -13,15 +14,12 @@ ca:
       unmark_featured: treure destacat
       edit: Editar proposta
       configure: Configurar
-      delete: Borrar
     officing_booth:
       title: "Podeu oficialitzar l'estand situat a %{booth}. Si això no és correcte, no continueu i truqueu al número de telèfon d’ajuda. Gràcies."
     banners:
       index:
         title: Banners
         create: crear banner
-        edit: Edita banner
-        delete: eliminar banner
         filters:
           all: tots
           with_active: Actius
@@ -62,18 +60,22 @@ ca:
         type: tipus
         no_activity: No hi ha activitat de moderadors.
     budgets:
+      actions:
+        edit: "Edita pressupost"
+        preview: "Previsualitzar"
       index:
         title: Pressupostos participatius
         new_link: Crear nou pressupost
         filter: Filtrar
         filters:
+          all: tots
           open: obert
           finished: Finalitzats
         budget_investments: Gestionar projectes
+        table_budget_type: "tipus"
+        table_draft: "Esborrany"
         table_name: Nome
         table_phase: fase
-        edit_groups: Edita grups de partides
-        edit_budget: Edita pressupost
         admin_ballots: Paperetes d’administració
         no_budgets: "No hi ha pressupostos."
       create:
@@ -86,7 +88,6 @@ ca:
         phase: fase
         enabled: activa
         actions: Accions
-        edit_phase: Fase d'edició
         active: Actius
         blank_dates: Les dates són en blanc
         administrators:
@@ -103,8 +104,8 @@ ca:
         success_notice: El pressupost s'ha suprimit correctament
         unable_notice: No podeu suprimir un pressupost que tingui inversions associades
         unable_notice_polls: No podeu suprimir un pressupost que tingui un sondeig associat
-      new:
-        title: Nou pressupost ciutadà
+      show:
+        add_heading: "Afegir partida"
       winners:
         calculate: Calculeu les inversions del guanyador
         calculated: Es calcularan els guanyadors, pot trigar un minut.
@@ -129,12 +130,9 @@ ca:
         edit: "Edita el grup"
         submit: "Desa el grup"
       index:
-        back: "Tornar als pressupostos"
+        new_button: "Afegeix nou grup"
     budget_headings:
       no_headings: "No hi ha cap títol."
-      amount:
-        one: "Hi ha 1 encapçalament"
-        other: "N’hi ha %{count} títols"
       create:
         notice: "L'encapçalament creat correctament!"
       update:
@@ -154,6 +152,7 @@ ca:
         back: "Torneu a grups"
     budget_phases:
       edit:
+        title: "Fase d'edició"
         description_help_text: Aquest text apareixerà a la capçalera quan la fase estigui activa
         enabled_help_text: Aquesta fase serà pública en el calendari de fases del pressupost, a més d’activa per a qualsevol altre propòsit
         save_changes: Guardar canvis
@@ -252,6 +251,11 @@ ca:
         tags_placeholder: "Escriu les etiquetes que vulguis separades per comes (,)"
         undefined: Sense definir
       search_unfeasible: Cercar inviables
+    budgets_wizard:
+      creation_timeline:
+        budget: Pressupost participatiu
+        groups: Grups
+        headings: Rúbriques
     milestones:
       index:
         table_id: "ID"
@@ -260,7 +264,6 @@ ca:
         table_publication_date: "Data de publicació"
         table_status: Estat
         table_actions: "Accions"
-        delete: "Elimina la fita"
         no_milestones: "No heu definit fites"
         image: "Imatge"
         show_image: "Mostra la imatge"
@@ -477,10 +480,6 @@ ca:
           allegations_phase: Fase de comentaris
           proposals_phase: Fase de propostes
           use_markdown: Fes servir Markdown per formatar el text
-          title_placeholder: Escriu el títol del procés
-          summary_placeholder: Resum curt de la descripció
-          description_placeholder: Afegeix una descripció del procés
-          additional_info_placeholder: Afegeix qualsevol informació addicional que pugui ser d'interès
           homepage_description: Aquí podeu explicar el contingut del procés
           banner_title: Colors de capçalera
         index:
@@ -494,11 +493,10 @@ ca:
           title: Crear nou procés de legislació col·laborativa
           submit_button: crear procés
         proposals:
-          select_order: Ordenar per
           orders:
-            id: Id
-            title: Títol
-            supports: Avals
+            id: "Id"
+            title: "Títol"
+            supports: "Avals"
         process:
           title: procés
           comments: Comentarios
@@ -552,9 +550,7 @@ ca:
             status:
               draft: Podràs previsualitzar-com loguejat, ningú més ho podrà veure
               published: Serà visible per a tothom
-          title_placeholder: Escriu el títol d'aquesta versió de l'esborrany
           changelog_placeholder: Descriu qualsevol canvi rellevant amb la versió anterior
-          body_placeholder: Escriu el text de l'esborrany
         index:
           title: Versions de l'esborrany
           create: crear versió
@@ -585,7 +581,6 @@ ca:
           submit_button: Guardar canvis
         form:
           add_option: + Afegir resposta tancada
-          title_placeholder: Afegeix una pregunta
           value_placeholder: Escriu una resposta tancada
           question_options: "Respostes possibles (opcional, per defecte, respostes obertes)"
         index:
@@ -615,6 +610,12 @@ ca:
         add: Añadir como President de taula
       search:
         title: "Gestors: cerca d’usuaris"
+    sdg_managers:
+      index:
+        no_sdg_managers: No hi ha usuaris.
+    sdg/managers:
+      sdg/manager:
+        add: Añadir como President de taula
     menu:
       activity: Activitat de moderadors
       admin: Menú d'administració
@@ -1113,7 +1114,6 @@ ca:
         location: "Ubicació"
       booth:
         shifts: "Gestiona els torns"
-        edit: "Editar bústia"
     officials:
       edit:
         destroy: Eliminar condició de 'Càrrec Público'
@@ -1135,7 +1135,6 @@ ca:
       level_4: nivell 4
       level_5: nivell 5
       search:
-        edit_official: Edita càrrec públic
         make_official: Convertir a càrrec públic
         title: "Càrrecs Públics: Cerca d'usuaris"
         no_results: No s’han trobat posicions oficials.
@@ -1210,9 +1209,6 @@ ca:
         feature_flags: Funcionalitats
         features:
           enabled: "Funcionalitat activada"
-          disabled: "Funcionalitat desactivada"
-          enable: "Activa"
-          disable: "Desactivar"
         map:
           title: Configuració del mapa
           help: Aquí podeu personalitzar la manera com es mostra el mapa als usuaris. Arrossegueu el marcador del mapa o feu clic a qualsevol lloc sobre el mapa, configureu el botó desitjat i feu clic al botó"Actualitza".
@@ -1230,14 +1226,10 @@ ca:
       remote_census_request_name: Sol·licita dades
       remote_census_response_name: Dades de resposta
       setting: Característica
-      setting_actions: Accions
       setting_name: Ambientació
-      setting_status: Estat
       setting_value: valor
       no_description: "Sense descripció"
     shared:
-      true_value: "Sí"
-      false_value: "No"
       search:
         label:
           booths: "Cercar bústia per nom"
@@ -1248,6 +1240,7 @@ ca:
           poll_questions: "Cercar preguntes"
           proposals: "Cercar propostes per títol, codi, descripció o pregunta"
           users: "Cercar usuari per nom o e-mail"
+        search: "Buscar"
       search_results: "Resultats de cerca"
       no_search_results: "No s'an trobat resultats."
       actions: Accions
@@ -1389,9 +1382,12 @@ ca:
           question_name: pregunta
           origin_web: Participants web
           origin_total: Total de participants
+      sdg:
+        debates: "Debats"
+        polls: "votacions"
+        proposals: "Propostes ciutadanes"
     tags:
       create: Crea tema
-      destroy: Suprimeix el tema
       index:
         add_tag: Afegeix un nou tema de debat
         title: Temes de debat
@@ -1569,3 +1565,7 @@ ca:
           created: Registres creats
         local_census_records:
           no_records_found: No s’han trobat registres.
+    machine_learning:
+      related_content: "Contingut relacionat"
+      tab_help: "Ajuda"
+      tags: "Etiquetes"

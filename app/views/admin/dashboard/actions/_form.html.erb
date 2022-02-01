@@ -62,7 +62,7 @@
 <% if feature?(:allow_attached_documents) %>
   <div class="documents small-12 column">
     <hr>
-    <%= render "documents/nested_documents", documentable: dashboard_action, f: f %>
+    <%= render "documents/nested_documents", f: f %>
     <hr>
   </div>
 <% end %>

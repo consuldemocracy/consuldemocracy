@@ -6,6 +6,7 @@ sr:
       actions: Радње
       confirm: Да ли сте сигурни?
       confirm_hide: Потврдите умереност
+      delete: "Избришите"
       hide: Сакрите
       hide_author: Сакрите аутора
       restore: Вратите
@@ -13,15 +14,12 @@ sr:
       unmark_featured: Одзначите истакнуто
       edit: Измените
       configure: Конфигурисање
-      delete: Избришите
     officing_booth:
       title: "Ви тражите говорницу која се налази на%{booth}. Ако ово није тачно, немојте наставити са позивом на телефонски број за помоћ. Хвала вам."
     banners:
       index:
         title: Банери
         create: Креирајте банер
-        edit: Измените банер
-        delete: Обришите банер
         filters:
           all: Све
           with_active: Активно
@@ -62,18 +60,22 @@ sr:
         type: Тип
         no_activity: Не постоји активност модератора.
     budgets:
+      actions:
+        edit: "Уредити буџет"
+        preview: "Преглед"
       index:
         title: Партиципативни буџети
         new_link: Креирајте нови буџет
         filter: Филтер
         filters:
+          all: Све
           open: Отворите
           finished: Завршено
         budget_investments: Управљање пројектима
+        table_budget_type: "Тип"
+        table_draft: "Нацрт"
         table_name: Име
         table_phase: Фаза
-        edit_groups: Уреди групе наслова
-        edit_budget: Уредити буџет
         admin_ballots: Админ листићи
         no_budgets: "Нема буџета."
       create:
@@ -86,7 +88,6 @@ sr:
         phase: Фаза
         enabled: Омогућено
         actions: Радња
-        edit_phase: Уредите фазу
         active: Активно
         blank_dates: Датуми су празни
         administrators:
@@ -105,8 +106,6 @@ sr:
         success_notice: Буџет је успешно обрисан
         unable_notice: Не можете обрисати буџет који је повезан са инвестицијама
         unable_notice_polls: Не можете обрисати буџет који има придружену анкету
-      new:
-        title: Нови партиципативни буџет
       winners:
         calculate: Израчунајте Победничке Инвестиције
         calculated: Победници се рачунају, може потрајати минут.
@@ -132,14 +131,8 @@ sr:
         edit: "Уредите групу"
         max_votable_headings_info: "Примењиво само на фазу одабира пројеката. За време фазе гласања о пројектима, корисници могу да гласају у само једном заглављу по групи."
         submit: "Сачувајте групу"
-      index:
-        back: "Вратите се на буџете"
     budget_headings:
       no_headings: "Нема наслова."
-      amount:
-        one: "Постоји 1 наслов"
-        few: "Постоји %{count} наслова"
-        other: "Постоји %{count} наслова"
       create:
         notice: "Наслов креиран успешно!"
       update:
@@ -159,6 +152,7 @@ sr:
         back: "Вратите се групама"
     budget_phases:
       edit:
+        title: "Уредите фазу"
         description_help_text: Овај текст ће се појавити у заглављу када је фаза активна
         enabled_help_text: Ова фаза ће бити јавна у редоследу фаза буџета, као и активна у друге сврхе
         save_changes: Сачувајте измене
@@ -257,6 +251,11 @@ sr:
         tags_placeholder: "Напишите ознаке које желите да одвојите зарезима (,)"
         undefined: Неодређено
       search_unfeasible: Тражите неизводљиво
+    budgets_wizard:
+      creation_timeline:
+        budget: Буџет
+        groups: Групе
+        headings: Наслови
     milestones:
       index:
         table_id: "ИД"
@@ -265,7 +264,6 @@ sr:
         table_publication_date: "Датум објављивања"
         table_status: Статус
         table_actions: "Радња"
-        delete: "Избришите прекретницу"
         no_milestones: "Нема одређених прекретница"
         image: "Слика"
         show_image: "Прикажи слику"
@@ -482,10 +480,6 @@ sr:
           allegations_phase: Коментари фазе
           proposals_phase: Предлози фазе
           use_markdown: Користите функцију Маркирајте да бисте обликовали текст
-          title_placeholder: Наслов процеса
-          summary_placeholder: Кратак сажетак описа
-          description_placeholder: Додајте опис процеса
-          additional_info_placeholder: Додајте додатне информације које сматрате корисним
           homepage_description: Овде можете објаснити садржај процеса
           banner_title: Боје наслова
         index:
@@ -499,11 +493,10 @@ sr:
           title: Креирајте нови заједнички законодавни процес
           submit_button: Креирајте процес
         proposals:
-          select_order: Разврстано по
           orders:
-            id: Ид
-            title: Наслов
-            supports: Укупна подршка
+            id: "Ид"
+            title: "Наслов"
+            supports: "Укупна подршка"
         process:
           title: Процес
           comments: Коментари
@@ -557,9 +550,7 @@ sr:
             status:
               draft: Можете да прегледате као админ, нико други не може да га види
               published: Видљиво свима
-          title_placeholder: Напиши наслов нацрта
           changelog_placeholder: Додај главне измене из претходне верзије
-          body_placeholder: Напиши текст нацрта
         index:
           title: Верзије нацрта
           create: Креирај верзију
@@ -590,7 +581,6 @@ sr:
           submit_button: Сачувати измене
         form:
           add_option: Додати опцију
-          title_placeholder: Додати питање
           value_placeholder: Додати затворен одговор
           question_options: "Могући одговори (опционално, подразумевано отворени одговори)"
         index:
@@ -620,6 +610,12 @@ sr:
         add: Додати
       search:
         title: "Управљачи: Корисничка претрага"
+    sdg_managers:
+      index:
+        no_sdg_managers: Нема корисника.
+    sdg/managers:
+      sdg/manager:
+        add: Додати
     menu:
       activity: Активности модератора
       admin: Административни мени
@@ -1119,7 +1115,6 @@ sr:
         location: "Локација"
       booth:
         shifts: "Управљај сменама"
-        edit: "Уредите гласачко место"
     officials:
       edit:
         destroy: Уклоните "Званични" статус
@@ -1141,7 +1136,6 @@ sr:
       level_4: Ниво 4
       level_5: Ниво 5
       search:
-        edit_official: Уреди званично
         make_official: Начини званично
         title: "Званична позиција: Корисничка претрага"
         no_results: Званична позиција није пронађена.
@@ -1217,9 +1211,6 @@ sr:
         feature_flags: Истакнуто
         features:
           enabled: "Омогућена функција"
-          disabled: "Онемогућена функција"
-          enable: "Омогући"
-          disable: "Онемогући"
         map:
           title: Конфигурација мапе
           help: Овде можете прилагодити начин на који се мапа приказује корисницима. Превуците означивач мапе или кликните било где преко мапе, поставите жељено зумирање и кликните на дугме "Ажурирај ".
@@ -1237,14 +1228,10 @@ sr:
       remote_census_request_name: Захтевај податке
       remote_census_response_name: Подаци о одзиву
       setting: Истакнуто
-      setting_actions: Радње
       setting_name: Подешавања
-      setting_status: Статус
       setting_value: Вредност
       no_description: "Нема описа"
     shared:
-      true_value: "Да"
-      false_value: "Не"
       search:
         label:
           booths: "Тражите гласачко место по називу или локацији"
@@ -1255,6 +1242,7 @@ sr:
           poll_questions: "Тражите анктена питања"
           proposals: "Тражите предлоге по наслову, коду, опису или питању"
           users: "Тражи корисника по имену или емаилу"
+        search: "Тражите"
       search_results: "Тражите резултате"
       no_search_results: "Нема нађених резултата."
       actions: Радње
@@ -1399,9 +1387,12 @@ sr:
           question_name: Питање
           origin_web: Веб корисници
           origin_total: Укупно учесника
+      sdg:
+        debates: "Расправе"
+        polls: "Гласање"
+        proposals: "Предлози"
     tags:
       create: Креирајте тему
-      destroy: Обришите тему
       index:
         add_tag: Додајте нову тему предлога
         title: Теме предлога
@@ -1579,3 +1570,7 @@ sr:
           created: Креирани записи
         local_census_records:
           no_records_found: Нема нађених записа.
+    machine_learning:
+      related_content: "Повезани садржај"
+      tab_help: "Помоћ"
+      tags: "Ознаке"

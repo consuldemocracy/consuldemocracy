@@ -40,6 +40,8 @@ sl:
         more_info: Več informacij in kontekst
       proposals:
         empty_proposals: Ni predlogov
+        filters:
+          winners: Označeno
       debate:
         empty_questions: Ni vprašanj
         participate: Sodeluj v razpravi
@@ -66,10 +68,12 @@ sl:
         see_latest_comments_title: Komentarji na ta proces
       shared:
         key_dates: Ključni datumi
+        homepage: Domača stran
         debate_dates: Razprava
         draft_publication_date: Objava osnutka
         allegations_dates: Obtožbe
         result_publication_date: Objava končnega rezultata
+        milestones_date: Sledim
         proposals_dates: Predlogi
     questions:
       comments:
@@ -101,3 +105,13 @@ sl:
       form:
         tags_label: "Kategorije"
       not_verified: "Za glasovanje o predlogih %{verify_account}."
+      process_title: Sodelovalni zakonodajni proces
+    summary:
+      title: "Povzetek"
+      debate_phase: "Faza debate"
+      proposals_phase: "Faza predlogov"
+      allegations_phase: "Faza obtožb"
+      comments:
+        zero: "Brez komentarjev"
+      top_comments:
+        zero: "Brez komentarjev"

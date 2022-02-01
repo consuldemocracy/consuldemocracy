@@ -55,6 +55,8 @@ pl:
         assigned_valuators: Przypisani wyceniający
       edit:
         dossier: Dokumentacja
+        price: "Koszt (%{currency})"
+        price_first_year: "Koszt w pierwszym roku (%{currency}) <small>(opcjonalnie, dane nie są publiczne)</small>"
         feasibility: Wykonalność
         valuation_finished_alert: "Czy na pewno chcesz oznaczyć ten raport jako ukończony? Jeśli to zrobisz, nie może on być dalej modyfikowany."
         not_feasible_alert: "E-mail zostanie wysłany niezwłocznie do autora projektu wraz z raportem niewykonalności."

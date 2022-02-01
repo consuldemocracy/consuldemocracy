@@ -26,6 +26,7 @@ el:
       by_heading: "Συμμετέχοντες ανά φάση και επικεφαλίδα"
       total: "Σύνολο"
       heading: "Επικεφαλίδα"
+      investments_sent: "Επενδυτικές προτάσεις οι οποίες έχουν σταλεί"
       participants_support_phase: "Φάση υποστήριξης από τους συμμετέχοντες"
       participants_vote_phase: "Φάση ψηφοφορίας συμμετεχόντων"
       participants_every_phase: "Σύνολο συμμετεχόντων"

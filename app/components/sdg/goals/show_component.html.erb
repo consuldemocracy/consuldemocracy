@@ -1,6 +1,6 @@
 <% provide(:title) { goal.title } %>
 
-<div class="sdg-goal-show">
+<main class="sdg-goal-show">
   <%= back_link_to sdg_goals_path %>
 
   <article class="sdg-goal sdg-goal-<%= code %>">
@@ -36,4 +36,4 @@
   <% end %>
 
   <%= render SDG::Goals::TargetsComponent.new(goal) %>
-</div>
+</main>

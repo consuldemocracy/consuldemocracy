@@ -2,7 +2,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <title><%= content_for?(:title) ? yield(:title) : default_title %></title>
-<%= stylesheet_link_tag "application" %>
+<% if rtl? %>
+  <%= stylesheet_link_tag "application-rtl" %>
+<% else %>
+  <%= stylesheet_link_tag "application" %>
+<% end %>
 <%= javascript_include_tag "application", "data-turbolinks-track" => "reload" %>
 <%= csrf_meta_tags %>
 <%= favicon_link_tag "favicon.ico" %>

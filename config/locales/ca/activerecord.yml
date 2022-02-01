@@ -4,6 +4,9 @@ ca:
     results_enabled: "Mostra els resultats"
     stats_enabled: "Mostra les estadístiques"
     advanced_stats_enabled: "Mostra estadístiques avançades"
+    name: Nome
+    email: El teu correu electrònic
+    description: Descripció detallada
   activerecord:
     models:
       activity:
@@ -214,6 +217,7 @@ ca:
         ends_at: "Data de finalització"
         starts_at: "Data d'inici"
       budget/phase/translation:
+        name: "Nome"
         description: "Descripció"
         summary: "Resum"
       comment:
@@ -272,6 +276,7 @@ ca:
         responsible_name: "Persona responsable de l'associació"
       poll:
         name: "Nome"
+        title: "Nome"
         starts_at: "Fecha de apertura"
         ends_at: "Fecha de cierre"
         geozone_restricted: "Restringida por zonas"
@@ -308,6 +313,16 @@ ca:
         signable_type: "Tipus de fulla de signatures"
         signable_id: "ID Proposta ciutadana/Proposada inversió"
         document_numbers: "Nombres de documents"
+      sdg/goal:
+        title: "Títol"
+        description: "Descripció detallada"
+      sdg/local_target:
+        title: "Títol"
+      sdg/local_target/translation:
+        title: "Títol"
+        description: "Descripció detallada"
+      sdg/target:
+        title: "Títol"
       site_customization/page:
         content: contingut
         created_at: creat
@@ -500,10 +515,6 @@ ca:
           attributes:
             segment_recipient:
               invalid: "El segment de destinataris d’usuaris no és vàlid"
-        map_location:
-          attributes:
-            map:
-              invalid: La ubicació del mapa no pot estar en blanc. Col·loca un marcador o selecciona la casella de selecció si no és necessària la geolocalització
         poll/voter:
           attributes:
             document_number:

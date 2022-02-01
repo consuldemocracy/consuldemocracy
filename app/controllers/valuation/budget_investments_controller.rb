@@ -105,7 +105,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
 
     def restrict_access
       unless current_user.administrator? || @budget.valuating?
-        raise CanCan::AccessDenied.new(I18n.t("valuation.budget_investments.not_in_valuating_phase"))
+        raise CanCan::AccessDenied, I18n.t("valuation.budget_investments.not_in_valuating_phase")
       end
     end
 
@@ -114,7 +114,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
                 Budget::ValuatorAssignment.exists?(investment_id: params[:id],
                                                    valuator_id: current_user.valuator.id)
 
-      raise ActionController::RoutingError.new("Not Found")
+      raise ActionController::RoutingError, "Not Found"
     end
 
     def valid_price_params?

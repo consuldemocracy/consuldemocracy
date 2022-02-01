@@ -5,21 +5,22 @@ fa:
         title: ' رای شما'
         no_balloted_group_yet: "شما هنوز به این گروه رای نداده اید، رأی دهید"
         remove: حذف رای
+        voted:
+          one: "\nشما به <span> یک </ span> سرمایه گذاریرای داده اید."
+          other: "\nشما به <span> %{count} </ span> سرمایه گذاری هارای داده اید."
         zero: شما به پروژه سرمایه گذاری رای نداده اید
       reasons_for_not_balloting:
         not_logged_in: شما باید %{signin} یا %{signup} کنید برای ادامه دادن.
         not_verified: فقط کاربران تأییدشده می توانند در مورد سرمایه گذاری رای دهند%{verify_account}
         organization: سازمان ها مجاز به رای دادن نیستند
         not_selected: پروژه های سرمایه گذاری انتخاب نشده پشتیبانی نمی شود
+        not_enough_money: "شما قبلا بودجه موجود را تعیین کرده اید. <br> <small> به یاد داشته باشید که می توانید هر%{change_ballot} را در هر زمان </small> تغییر دهید"
         no_ballots_allowed: فازانتخاب  بسته است
+        different_heading_assigned: "شما قبلا یک عنوان متفاوت را رأی داده اید: %{heading_link}"
         change_ballot: تغییر رای خود 
     groups:
       show:
         title: یک گزینه را انتخاب کنید
-        unfeasible_title: سرمایه گذاری غیر قابل پیش بینی
-        unfeasible: سرمایه گذاری های غیرقابل پیش بینی را ببینید
-        unselected_title: سرمایه گذاری هایی برای مرحله رای گیری انتخاب نشده اند
-        unselected: دیدن سرمایه گذاری هایی که برای مرحله رای گیری انتخاب نشده اند
     phase:
       drafting: پیش نویس ( غیرقابل مشاهده برای عموم)
       informing: اطلاعات
@@ -45,6 +46,7 @@ fa:
       milestones: نقطه عطف
     investments:
       form:
+        title: "ایجاد بودجه سرمایه گذاری \n"
         tag_category_label: "دسته بندی ها\n"
         tags_instructions: "برچسب این پیشنهاد. شما می توانید از دسته های پیشنهاد شده را انتخاب کنید یا خودتان را اضافه کنید"
         tags_label: برچسب ها
@@ -52,7 +54,6 @@ fa:
         map_location: "نقشه محل"
         map_location_instructions: "نقشه محل حرکت و نشانگر محل."
         map_remove_marker: "حذف  نشانگر نقشه"
-        map_skip_checkbox: "این سرمایه گذاری مکان خاصی ندارد و من از آن آگاه نیستم."
       index:
         title: بودجه مشارکتی
         unfeasible: سرمایه گذاری غیر قابل پیش بینی
@@ -62,14 +63,27 @@ fa:
           button: جستجو
           placeholder: جستجو پروژه های سرمایه گذاری ...
           title: جستجو
+        search_results:
+          one: "حاوی اصطلاح<strong>%{search_term}</strong>"
+          other: "حاوی اصطلاح<strong>%{search_term}</strong>"
         sidebar:
           my_ballot: رای من
+          voted_info:
+            knapsack:
+              one: "<strong>شما یک پیشنهاد را با هزینه یک رأی دادید%{amount_spent}</strong>"
+              other: "<strong>شما %{count} پیشنهاد را با هزینه یک رأی دادید%{amount_spent}</strong>"
+          change_vote_link: "تغییر رای خود "
+          different_heading_assigned: "شما قبلا یک عنوان متفاوت را رأی داده اید: %{heading_link}"
           change_ballot: "اگر نظر شما تغییر کند، می توانید رای خود را در%{check_ballot} حذف کنید و دوباره شروع کنید."
           check_ballot_link: "رای من را چک کن"
           zero: شما به هیچ پروژه سرمایه گذاری در این گروه رأی نداده اید.
           verified_only: "برای ایجاد یک سرمایه گذاری جدید بودجه%{verify}"
           create: "ایجاد بودجه سرمایه گذاری \n"
           not_logged_in: "برای ایجاد یک سرمایه گذاری جدید بودجه باید%{sign_in} یا %{sign_up} کنید."
+        filters:
+          selected: "انتخاب شده"
+          unfeasible: "غیر قابل پیش بینی"
+          winners: "برندگان"
         orders:
           random: "تصادفی\n"
           confidence_score: بالاترین امتیاز
@@ -78,6 +92,9 @@ fa:
         author_deleted: کاربر حذف شد
         price_explanation: توضیح قیمت
         unfeasibility_explanation: توضیح امکان سنجی 
+        code: "کد پروژه سرمایه گذاری:<strong>%{code}</strong>"
+        location: "محل:\n%{location}</strong>"
+        organization_name: "پیشنهاد از طرف:<strong>%{name}</strong>"
         share: "اشتراک گذاری\n"
         title: پروژه سرمایه گذاری
         supports: پشتیبانی ها
@@ -86,25 +103,33 @@ fa:
         comments_tab: توضیحات
         milestones_tab: نقطه عطف
         author: نویسنده
+        project_unfeasible: "این پروژه سرمایه گذاری <strong> به عنوان غیرقابل توصیف مشخص شده است </ strong> و به مرحله رای گیری نرسیده است"
+        project_not_selected: "این پروژه سرمایه گذاری <strong> انتخاب نشده است </ strong> برای مرحله رای گیری ."
       wrong_price_format: فقط اعداد صحیح 
       investment:
         add: رای
         already_added: شما قبلا این پروژه سرمایه گذاری را اضافه کرده اید
-        already_supported: شما قبلا این پروژه سرمایه گذاری را پشتیبانی کرده اید. به اشتراک بگذارید
         support_title: پشتیبانی از این پروژه
-        confirm_group:
-          one: "شما فقط می توانید از سرمایه گذاری در%{count} منطقه حمایت کنید. اگر همچنان ادامه دهید، نمی توانید انتخابات منطقه خود را تغییر دهید. شما مطمئن هستید؟"
-          other: "شما فقط می توانید از سرمایه گذاری در%{count} منطقه حمایت کنید. اگر همچنان ادامه دهید، نمی توانید انتخابات منطقه خود را تغییر دهید. شما مطمئن هستید؟"
         supports:
           zero: بدون پشتیبانی 
           one: 1 پشتیبانی
           other: "%{count}پشتیبانی"
-        give_support: پشتیبانی
       header:
         check_ballot: "رای من را چک کن"
+        different_heading_assigned: "شما قبلا یک عنوان متفاوت را رأی داده اید: %{heading_link}"
         change_ballot: "اگر نظر شما تغییر کند، می توانید رای خود را در%{check_ballot} حذف کنید و دوباره شروع کنید."
         check_ballot_link: "رای من را چک کن"
         price: "این عنوان یک بودجه دارد"
+      votes:
+        already_supported: "شما قبلا این پروژه سرمایه گذاری را پشتیبانی کرده اید. به اشتراک بگذارید"
+        confirm_group:
+          one: "شما فقط می توانید از سرمایه گذاری در%{count} منطقه حمایت کنید. اگر همچنان ادامه دهید، نمی توانید انتخابات منطقه خود را تغییر دهید. شما مطمئن هستید؟"
+          other: "شما فقط می توانید از سرمایه گذاری در%{count} منطقه حمایت کنید. اگر همچنان ادامه دهید، نمی توانید انتخابات منطقه خود را تغییر دهید. شما مطمئن هستید؟"
+        support: "پشتیبانی"
+    investments_list:
+      investment:
+        price: "قیمت"
+        supports: "پشتیبانی ها"
     show:
       see_results: مشاهده نتایج
     results:

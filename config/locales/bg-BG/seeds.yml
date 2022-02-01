@@ -32,6 +32,7 @@ bg:
       environment: Околна среда
     budgets:
       budget: Бюджетиране чрез участие
+      currency: '€'
       groups:
         all_city: Всички градове
         districts: Райони

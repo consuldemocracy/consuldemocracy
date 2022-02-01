@@ -43,19 +43,20 @@
             <% end %>
           </div>
 
-          <div id="<%= phase.kind.parameterize %>" class="row budget-phase">
-            <div class="small-12 column <%= "medium-6" if phase.image.present? %>">
+          <div id="<%= phase.kind.parameterize %>" class="budget-phase">
+            <div class="budget-phase-content">
               <h3><%= phase.name %></h3>
               <p><%= start_date(phase) %> - <%= end_date(phase) %></p>
               <%= auto_link_already_sanitized_html(wysiwyg(phase.description)) %>
-              <% if phase.main_button_text.present? && phase.main_button_url.present? %>
-                <%= link_to phase.main_button_text, phase.main_button_url, class: "button" %>
+
+              <% if phase.main_link_text.present? && phase.main_link_url.present? %>
+                <%= link_to phase.main_link_text, phase.main_link_url, class: "main-link" %>
               <% end %>
             </div>
 
             <% if phase.image.present? %>
-              <div class="small-12 medium-6 column text-center margin-top">
-                <%= image_tag phase.image.attachment.url(:large) %>
+              <div class="budget-phase-image">
+                <%= image_tag phase.image.attachment.url(:large), alt: "" %>
               </div>
             <% end %>
           </div>

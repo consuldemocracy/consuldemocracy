@@ -68,6 +68,10 @@ FactoryBot.define do
     trait :hide_money do
       hide_money { true }
     end
+
+    trait :with_winner do
+      after(:create) { |budget| create(:budget_investment, :winner, budget: budget) }
+    end
   end
 
   factory :budget_group, class: "Budget::Group" do
@@ -233,8 +237,8 @@ FactoryBot.define do
   factory :budget_phase, class: "Budget::Phase" do
     budget
     kind        { :balloting }
-    summary     { Faker::Lorem.sentence(3) }
-    description { Faker::Lorem.sentence(10) }
+    summary     { Faker::Lorem.sentence(word_count: 3) }
+    description { Faker::Lorem.sentence(word_count: 10) }
     starts_at   { Date.yesterday }
     ends_at     { Date.tomorrow }
     enabled     { true }

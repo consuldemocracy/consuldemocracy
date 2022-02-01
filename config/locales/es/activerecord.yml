@@ -164,6 +164,8 @@ es:
         main_button_url: "El botón te lleva a (añade un enlace)"
         hide_money: "Ocultar la cantidad de dinero para este presupuesto"
       budget/translation:
+        main_link_text: "Texto del enlace"
+        main_link_url: "El enlace te lleva a (añade un enlace)"
         name: "Nombre"
       budget/investment:
         heading_id: "Partida presupuestaria"
@@ -239,6 +241,8 @@ es:
         name: "Nombre"
         description: "Descripción"
         summary: "Resumen"
+        main_link_text: "Texto del enlace"
+        main_link_url: "El enlace te lleva a (añade un enlace)"
       comment:
         body: "Comentario"
         user: "Usuario"
@@ -283,7 +287,7 @@ es:
         official_level: "Nivel del cargo"
         phone_number: "Teléfono"
         public_activity: "Mostrar públicamente mi lista de actividades"
-        public_interests: "Mostrar públicamente las etiquetas de los elementos que sigo"
+        public_interests: "Mostrar públicamente los elementos que sigo"
         recommended_debates: "Mostrar recomendaciones en el listado de debates"
         recommended_proposals: "Mostrar recomendaciones en el listado de propuestas"
         redeemable_code: "Código de verificación por carta (opcional)"
@@ -502,7 +506,7 @@ es:
         user: Ejecutado por
       link:
         label: Título
-        url: Enlace
+        url: URL
       valuator:
         description: Descripción
         valuator_group_id: Grupo de evaluación

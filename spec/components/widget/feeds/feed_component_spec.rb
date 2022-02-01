@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Widget::Feeds::FeedComponent, type: :component do
+describe Widget::Feeds::FeedComponent do
   it "renders a message when there are no items" do
     feed = double(kind: "debates", items: [])
     component = Widget::Feeds::FeedComponent.new(feed)

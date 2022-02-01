@@ -29,9 +29,9 @@
           </td>
           <td>
             <%= render Admin::TableActionsComponent.new(
+              official,
               actions: [:edit],
-              edit_path: edit_admin_official_path(official),
-              edit_text: t("admin.officials.search.edit_official")
+              edit_path: edit_admin_official_path(official)
             ) %>
           </td>
         </tr>

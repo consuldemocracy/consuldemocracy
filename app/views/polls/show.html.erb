@@ -38,23 +38,20 @@
   </div>
 
   <div id="poll_more_info_answers" class="expanded poll-more-info-answers">
-    <% @poll.questions_with_answer_descriptions.each do |question| %>
+    <% @poll.questions_with_answer_content.each do |question| %>
       <div class="poll-more-info-answers-divider"></div>
       <div class="row">
         <div class="small-12 column padding answer-question">
           <span class="label-title"><%= t("polls.show.more_info_title") %></span>
-          <h2 id="answer_<%= question.answers_with_description.first.id %>">
+          <h2 id="answer_<%= question.answers_with_content.first.id %>">
             <%= question.title %>
           </h2>
         </div>
       </div>
       <div class="row padding">
-        <% question.answers_with_description.each do |answer| %>
+        <% question.answers_with_content.each do |answer| %>
           <div class="small-12 medium-6 column end answer <%= cycle("first", "float-right") %>">
-
-            <% if answer.description.present? %>
-              <h3><%= answer.title %></h3>
-            <% end %>
+            <h3><%= answer.title %></h3>
 
             <% if answer.images.any? %>
               <%= render "gallery", answer: answer %>

@@ -29,8 +29,7 @@
         </td>
         <td>
           <%= render Admin::TableActionsComponent.new(question) do |actions| %>
-            <%= actions.link_to t("admin.polls.show.edit_answers"), admin_question_path(question),
-                                                                    class: "answers-link" %>
+            <%= actions.action(:answers, text: t("admin.polls.show.edit_answers")) %>
           <% end %>
         </td>
       </tr>

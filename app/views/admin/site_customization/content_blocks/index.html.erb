@@ -34,10 +34,7 @@
         <td><%= link_to "#{content_block.name} (#{content_block.locale})", edit_admin_site_customization_content_block_path(content_block) %></td>
         <td><%= raw content_block.body %></td>
         <td>
-          <%= render Admin::TableActionsComponent.new(content_block,
-            actions: [:destroy],
-            destroy_text: t("admin.site_customization.content_blocks.index.delete")
-          ) %>
+          <%= render Admin::TableActionsComponent.new(content_block, actions: [:destroy]) %>
         </td>
       </tr>
     <% end %>
@@ -47,8 +44,8 @@
         <td><%= raw content_block.body %></td>
         <td>
           <%= render Admin::TableActionsComponent.new(
+            content_block,
             actions: [:destroy],
-            destroy_text: t("admin.site_customization.content_blocks.index.delete"),
             destroy_path: admin_site_customization_delete_heading_content_block_path(content_block)
           ) %>
         </td>

@@ -19,7 +19,9 @@ describe "Admin moderators", :admin do
     click_button "Search"
 
     expect(page).to have_content user.name
-    click_link "Add"
+
+    click_button "Add"
+
     within("#moderators") do
       expect(page).to have_content user.name
     end
@@ -28,7 +30,7 @@ describe "Admin moderators", :admin do
   scenario "Delete Moderator" do
     visit admin_moderators_path
 
-    accept_confirm { click_link "Delete" }
+    accept_confirm { click_button "Delete" }
 
     within("#moderators") do
       expect(page).not_to have_content moderator.name
@@ -88,7 +90,7 @@ describe "Admin moderators", :admin do
       fill_in "Search user by name or email", with: moderator2.email
       click_button "Search"
 
-      accept_confirm { click_link "Delete" }
+      accept_confirm { click_button "Delete" }
 
       expect(page).to have_content(moderator1.email)
       expect(page).not_to have_content(moderator2.email)

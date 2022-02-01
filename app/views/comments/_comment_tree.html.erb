@@ -11,8 +11,6 @@
           </h2>
         <% end %>
 
-        <%= render "shared/wide_order_selector", i18n_namespace: "comments" %>
-
         <% if user_signed_in? %>
           <% if comments_closed_for_commentable?(commentable) %>
             <br>
@@ -30,12 +28,12 @@
                                           valuation: valuation } %>
           <% end %>
         <% else %>
-          <br>
           <%= render "shared/login_to_comment" %>
         <% end %>
 
+        <%= render Shared::OrderLinksComponent.new("comments", anchor: "comments") %>
         <%= render "comments/comment_list", comments: comment_tree.root_comments, valuation: valuation %>
-        <%= paginate comment_tree.root_comments %>
+        <%= paginate comment_tree.root_comments, params: { anchor: "comments" } %>
       </div>
     </div>
   </section>

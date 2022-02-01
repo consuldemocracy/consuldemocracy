@@ -33,3 +33,16 @@ nn:
           success: Riktig kode. Din konto er nå verifisert
     redirect_notices:
       already_verified: Din konto er allerede verifisert
+    residence:
+      new:
+        document_number_help_title: Hjelp
+    sms:
+      update:
+        flash:
+          level_three:
+            success: Riktig kode. Din konto er nå verifisert
+    step_1: Adresse
+    step_2: Bekreftelseskode
+    user_permission_debates: Delta i debatter
+    user_permission_proposal: Lag nye forslag
+    user_permission_support_proposal: Støtt forslag

@@ -70,15 +70,12 @@
         <%= render("shared/order_links", i18n_namespace: "budgets.investments.index") %>
       <% end %>
 
-      <%= render Shared::FilterSelectorComponent.new(i18n_namespace: "budgets.investments.index") %>
-
       <% if investments_default_view? %>
 
         <% @investments.each do |investment| %>
           <%= render "/budgets/investments/investment",
                      investment: investment,
                      investment_ids: @investment_ids,
-                     investment_votes: @investment_votes,
                      ballot: @ballot %>
         <% end %>
       <% else %>

@@ -161,6 +161,8 @@ de:
         voting_style_knapsack: "Rucksack"
         voting_style_approval: "Freigabe"
       budget/translation:
+        main_link_text: "Linktext"
+        main_link_url: "Der Link führt zu (Link hinzufügen)"
         name: "Name"
       budget/investment:
         heading_id: "Rubrik"
@@ -233,6 +235,8 @@ de:
         name: "Name"
         description: "Beschreibung"
         summary: "Zusammenfassung"
+        main_link_text: "Linktext"
+        main_link_url: "Der Link führt zu (Link hinzufügen)"
       comment:
         body: "Kommentar"
         user: "Benutzer*in"
@@ -536,10 +540,6 @@ de:
           attributes:
             segment_recipient:
               invalid: "Das Benutzer*innensegment ist ungültig"
-        map_location:
-          attributes:
-            map:
-              invalid: Der Kartenstandort darf nicht leer sein. Platzieren Sie einen Marker oder aktivieren Sie das Kontrollkästchen, wenn eine Standorterkennung nicht möglich ist
         poll/voter:
           attributes:
             document_number:

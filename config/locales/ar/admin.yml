@@ -6,6 +6,7 @@ ar:
       actions: الإجراءات
       confirm: هل أنت متأكد؟
       confirm_hide: تأكيد
+      delete: "حذف"
       hide: إخفاء
       hide_author: إخفاء الكاتب
       restore: إسترجاع
@@ -13,15 +14,12 @@ ar:
       unmark_featured: إلغاء تحديد مميز
       edit: تعديل
       configure: تهيئة
-      delete: حذف
     officing_booth:
       title: "أنت تشغل مكتب الإقتراع الموجود في %{booth}. إذا لم يكن هذا صحيحًا، فلا تقم بالمتابعة واتصل برقم هاتف المساعدة. شكرا."
     banners:
       index:
         title: لافتات
         create: إنشاء لافتة
-        edit: تعديل لافتة
-        delete: حذف لافتة
         filters:
           all: الكل
           with_active: نشِط
@@ -62,18 +60,23 @@ ar:
         type: النوع
         no_activity: ليس هناك أي نشاط للمشرفين.
     budgets:
+      actions:
+        edit: "تعديل الميزانية"
+        preview: "معاينة"
       index:
         title: الميزانيات المشاركة
         new_link: إنشاء ميزانية جديدة
         filter: ترشيح
         filters:
+          all: الكل
           open: فتح
           finished: انتهى
         budget_investments: إدارة المشاريع
+        table_budget_type: "النوع"
+        table_draft: "مسودة"
+        table_duration: "المدة الزمنية"
         table_name: الإ سم
         table_phase: مرحلة
-        edit_groups: تعديل مجموعات العناوين
-        edit_budget: تعديل الميزانية
         admin_ballots: بطاقات الاقتراع الادارية
         no_budgets: "لا يوجد ميزانيات."
       create:
@@ -84,9 +87,9 @@ ar:
         title: تعديل الميزانية المشاركة
         delete: حذف الميزانية
         phase: مرحلة
+        duration: "المدة الزمنية"
         enabled: تفعيل
         actions: الإجراءات
-        edit_phase: تعديل المرحلة
         active: نشِط
         blank_dates: التواريخ فارغة
         administrators:
@@ -111,8 +114,6 @@ ar:
         success_notice: تم حذف الميزانية بنجاح
         unable_notice: لا يمكن حذف ميزانية لها استثمارات مرتبطة
         unable_notice_polls: لا يمكنك حذف ميزانية لها استطلاع مقترن
-      new:
-        title: ميزانية تشاركية جديدة
       winners:
         calculate: حساب الاستثمارات الفائزة
         calculated: جاري حساب الفائزين، قد يستغرق ذلك دقيقة.
@@ -140,17 +141,8 @@ ar:
         create: "إنشاء مجموعة جديدة"
         edit: "تعديل مجموعة"
         submit: "حفظ المجموعة"
-      index:
-        back: "العودة إلى الميزانيات"
     budget_headings:
       no_headings: "لا توجد هناك عناوين."
-      amount:
-        zero: "%{count} لا توجد هناك عناوين"
-        one: "هناك عنوان %{count}"
-        two: "هناك %{count} عناوين"
-        few: "هناك %{count} عناوين"
-        many: "هناك %{count} عنوانا"
-        other: "هناك %{count} عنوانا"
       create:
         notice: "تم إنشاء العنوان بنجاح!"
       update:
@@ -169,6 +161,7 @@ ar:
         back: "العودة إلى المجموعات"
     budget_phases:
       edit:
+        title: "تعديل المرحلة"
         description_help_text: سيظهر هذا النص في الرأس عندما تكون المرحلة نشطة
         enabled_help_text: ستكون هذه المرحلة أحد المراحل المتاحة للعامة من بين مراحل الموازنة، إلى جانب كونها نشطة لأي غرض آخر
         save_changes: حفظ التغييرات
@@ -193,6 +186,8 @@ ar:
           min_total_supports: الحد الأدنى من الدعم
           max_total_supports: الحد الأقصى من الدعم
           winners: الفائزين
+          one_filter: "الفلتر المطبق حاليا: <b><em>%{filter}</em></b>"
+          two_filters: "الفلتر المطبق حاليا: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: ترشيح
         download_current_selection: "تنزيل التحديد الحالي"
@@ -264,14 +259,19 @@ ar:
         tags_placeholder: "اكتب العلامات التي تريدها مفصولة بفواصل (،)"
         undefined: غير معرف
       search_unfeasible: بحث غير مجد
+    budgets_wizard:
+      creation_timeline:
+        budget: ميزانية
+        groups: المجموعات
+        headings: العناوين
     milestones:
       index:
+        table_id: "ID"
         table_title: "عنوان"
         table_description: "الوصف"
         table_publication_date: "تاريخ النشر"
         table_status: حالة
         table_actions: "الإجراءات"
-        delete: "حذف معلم"
         no_milestones: "لا يوجد معالم محددة"
         image: "صورة"
         show_image: "رؤية الصورة"
@@ -317,6 +317,7 @@ ar:
         no_progress_bars: "ليس هناك أية أشرطة تقدم"
         new_progress_bar: "إنشاء شريط تقدم جديد"
         primary: "شريط التقدم الرئيسي"
+        table_id: "ID"
         table_kind: "النوع"
         table_title: "عنوان"
         table_percentage: "التقدم الحالي"
@@ -487,10 +488,6 @@ ar:
           allegations_phase: مرحلة التعليقات
           proposals_phase: مرحلة الاقتراحات
           use_markdown: استخدم Markdown لتنسيق النص
-          title_placeholder: عنوان العملية
-          summary_placeholder: موجز قصير للوصف
-          description_placeholder: إضافة وصف للعملية
-          additional_info_placeholder: إضافة معلومات إضافية تعتبرها مفيدة
           homepage_description: هنا يمكنك شرح محتوى العملية
           banner_title: لون العنوان
         index:
@@ -504,11 +501,10 @@ ar:
           title: قم بإنشاء عملية تشريع تشاركية جديدة
           submit_button: إنشاء عملية
         proposals:
-          select_order: فرز حسب
           orders:
-            id: Id
-            title: عنوان
-            supports: دعم
+            id: "Id"
+            title: "عنوان"
+            supports: "دعم"
         process:
           title: عملية
           comments: تعليقات
@@ -552,6 +548,7 @@ ar:
           submit_button: حفظ التغييرات
           warning: لقد قمت بتحرير النص، لا تنسى أن تنقر على "حفظ" لحفظ التغييرات بشكل دائم.
         form:
+          title: 'تعديل <span class="strong">%{draft_version_title}</span> من العملية <span class="strong">%{process_title}</span>'
           launch_text_editor: تشغيل محرر النص
           close_text_editor: إغلاق محرر النص
           use_markdown: استخدم Markdown لتنسيق النص
@@ -560,9 +557,7 @@ ar:
             status:
               draft: يمكنك المعاينة كمدير، لا يمكن لأي شخص آخر أن يرى ذلك
               published: مرئية للجميع
-          title_placeholder: اكتب عنوان إصدار المسودّة
           changelog_placeholder: إضافة التغييرات الرئيسية من النسخة السابقة
-          body_placeholder: كتابة نص المسودة
         index:
           title: إصدارا المسودّة
           create: إنشاء إصدار
@@ -593,7 +588,6 @@ ar:
           submit_button: حفظ التغييرات
         form:
           add_option: إضافة خيار
-          title_placeholder: إضافة سؤال
           value_placeholder: إضافة إجابة مغلقة
           question_options: "الإجابات المحتملة (اختياري، الإجابات مفتوحة مبدئيا)"
         index:
@@ -623,6 +617,12 @@ ar:
         add: إضافة
       search:
         title: "المدراء: البحث عن المستخدم"
+    sdg_managers:
+      index:
+        no_sdg_managers: لا يوجد مستخدمين.
+    sdg/managers:
+      sdg/manager:
+        add: إضافة
     menu:
       activity: نشاط المشرف
       admin: قائمة المدير
@@ -738,6 +738,7 @@ ar:
         empty_newsletters: لا توجد أية رسائل إخبارية للإظهار
       new:
         title: رسائلة إخبارية جديدة
+        header_footer_help_text: "العنوان وذيل الصفحة متماثلان لجميع رسائل البريد الإلكتروني ، ويمكنك تعديلهما على\n<code>تطبيق/المشاهدات/تصاميم_الصفحة/عنوان البريد الالكتروني</code> و <code>تطبيق/المشاهدات/تصاميم_الصفحة/عنوان البريد الالكتروني</code>.<br>يمكنك تعويض صورة العنوان في %{link}."
         image_link: "صور مخصصة"
       edit:
         title: تعديل الرسالة الإخبارية
@@ -1123,7 +1124,6 @@ ar:
         location: "الموقع"
       booth:
         shifts: "إدارة المناوبات"
-        edit: "تعديل مكتب الإقتراع"
     officials:
       edit:
         destroy: إزالة حالة 'رسمي'
@@ -1145,7 +1145,6 @@ ar:
       level_4: المستوى 4
       level_5: المستوى 5
       search:
-        edit_official: تعديل مسؤول
         make_official: تعيين مسؤول
         title: "المناصب الرسمية: البحث عن مستخدم"
         no_results: لم يتم العثور على مناصب رسمية.
@@ -1157,6 +1156,13 @@ ar:
           pending: معلق
           rejected: مرفوضة
           verified: تم التثبت
+        hidden_count:
+          zero: هناك <strong>%{count} منظمة</strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          one: هناك أيضا <strong>منظمة واحدة</strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          two: هناك <strong>%{count} منظمة</strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          few: هناك <strong>%{count} منظمة</strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          many: هناك <strong>%{count} منظمة</strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          other: هناك <strong>%{count} منظمة</strong> بدون مستخدمين أو بمستخدمين مخفيين.
         name: الإ سم
         email: البريد الإلكتروني
         phone_number: الهاتف
@@ -1196,20 +1202,27 @@ ar:
           without_confirmed_hide: معلق
         title: الإقتراحات المخفية
         no_hidden_proposals: لا توجد أي إقتراحات مخفية.
+    hidden_proposal_notifications:
+      index:
+        filter: ترشيح
+        filters:
+          all: الكل
+          with_confirmed_hide: مؤكد
+          without_confirmed_hide: معلق
+        title: الإشعارات المخفية
+        no_hidden_proposals: لايوجد إشعارات مخفية.
     settings:
       flash:
         updated: تم تحديث القيمة
       index:
         title: ضبط الترتيبات
+        general: ضبط الترتيبات
         update_setting: تحديث
         participation_processes: "عمليات المشاركة"
         images_and_documents: "الصور والوثائق"
         feature_flags: المميزات
         features:
           enabled: "تم تفعيل الميزة"
-          disabled: "تم إلغاء الميزة"
-          enable: "تفعيل"
-          disable: "تعطيل"
         map:
           title: تعديل الخريطة
           help: هنا يمكنك تخصيص طريقة عرض الخريطة للمستخدمين. اسحب محدد الخريطة أو انقر في أي مكان على الخريطة، حدد التكبير المطلوب وانقر على زر "تحديث".
@@ -1221,14 +1234,10 @@ ar:
         dashboard:
           title: لوحة القيادة الخاصة بالمقترحات
       setting: الميزة
-      setting_actions: الإجراءات
       setting_name: إعداد
-      setting_status: حالة
       setting_value: القيمة
       no_description: "بدون وصف"
     shared:
-      true_value: "نعم"
-      false_value: "لا"
       search:
         label:
           booths: "البحث عند مكتب إقتراع وفقا للاسم"
@@ -1238,6 +1247,7 @@ ar:
           poll_questions: "البحث عن أسئلة الاستطلاع"
           proposals: "البحث عن الاقتراحات عن طريق العنوان أو الرمز أو الوصف أو السؤال"
           users: "بحث عن مستخدم عن طريق الاسم أو البريد الإلكتروني"
+        search: "بحث"
       search_results: "نتائج البحث"
       no_search_results: "لا توجد نتائج."
       actions: الإجراءات
@@ -1291,6 +1301,7 @@ ar:
       show:
         created_at: تم الإنشاء
         author: كاتب
+        users: المستخدمين
         verified:
           zero: "هناك %{count} توقيعات صالحة"
           one: "هناك توقيع %{count} صالح"
@@ -1383,9 +1394,12 @@ ar:
           question_name: سؤال
           origin_web: المشاركون عبر ويب
           origin_total: مجموع المشاركين
+      sdg:
+        debates: "النقاشات"
+        polls: "استطلاعات"
+        proposals: "إقتراحات"
     tags:
       create: إنشاء موضوع
-      destroy: حذف الموضوع
       index:
         add_tag: إضافة موضوع اقتراح جديد
         title: مواضيع المقترح
@@ -1393,6 +1407,7 @@ ar:
         help: "عندما ينشئ المستخدم مقترحا، تُقترح الموضوعات التالية كعلامات نموذجية."
     users:
       columns:
+        id: ID
         name: الإ سم
         email: البريد الإلكتروني
         document_number: رقم الوثيقة
@@ -1401,6 +1416,9 @@ ar:
       index:
         title: المستخدم
         no_users: لا يوجد مستخدمين.
+        filter: ترشيح
+        filters:
+          active: نشِط
       search:
         placeholder: البحث عن المستخدم عبر البريد الإلكتروني أو الاسم أو رقم الوثيقة
     verifications:
@@ -1470,6 +1488,7 @@ ar:
           see_page: رؤية الصفحة
         new:
           title: إنشاء صفحة مخصصة جديدة
+          slug_help: "نص لتعريف هذه الصفحة على عنوان URL ، على سبيل المثال <code> https://consulproject.org/page-slug</code>>"
         page:
           created_at: أنشئت في
           status: حالة
@@ -1511,3 +1530,21 @@ ar:
         submit_header: حفظ العنوان
         card_title: تحرير البطاقة
         submit_card: حفظ البطاقة
+    audits:
+      title: "تغيير السجل"
+      id: "ID"
+      field: "حقل"
+      new_value: "القيمة الجديدة"
+      old_value: "القيمة القديمة"
+      edited_at: "تم التحرير في"
+      edited_by: "تم التحرير من قبل"
+      actions: "الإجراءات"
+    local_census_records:
+      index:
+        document_type: نوع الوثيقة
+        document_number: رقم الوثيقة
+        date_of_birth: تاريخ الميلاد
+    machine_learning:
+      related_content: "محتوى ذات الصلة"
+      tab_help: "المساعدة"
+      tags: "علامات"

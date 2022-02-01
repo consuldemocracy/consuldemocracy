@@ -252,128 +252,6 @@ describe "Users" do
     end
   end
 
-  describe "Public interests" do
-    let(:user) { create(:user) }
-
-    scenario "Display interests" do
-      create(:proposal, tag_list: "Sport", followers: [user])
-
-      login_as(user)
-      visit account_path
-
-      check "account_public_interests"
-      click_button "Save changes"
-
-      logout
-
-      visit user_path(user)
-      expect(page).to have_content("Sport")
-    end
-
-    scenario "Not display interests when proposal has been destroyed" do
-      proposal = create(:proposal, tag_list: "Sport", followers: [user])
-      proposal.destroy!
-
-      login_as(user)
-      visit account_path
-
-      check "account_public_interests"
-      click_button "Save changes"
-
-      logout
-
-      visit user_path(user)
-      expect(page).not_to have_content("Sport")
-    end
-
-    scenario "No visible by default" do
-      visit user_path(user)
-
-      expect(page).to have_content(user.username)
-      expect(page).not_to have_css("#public_interests")
-    end
-
-    scenario "User can display public page" do
-      create(:proposal, tag_list: "Sport", followers: [user])
-
-      login_as(user)
-      visit account_path
-
-      check "account_public_interests"
-      click_button "Save changes"
-
-      logout
-
-      visit user_path(user, filter: "follows", page: "1")
-
-      expect(page).to have_css("#public_interests")
-    end
-
-    scenario "Is always visible for the owner" do
-      create(:proposal, tag_list: "Sport", followers: [user])
-
-      login_as(user)
-      visit account_path
-
-      uncheck "account_public_interests"
-      click_button "Save changes"
-
-      visit user_path(user, filter: "follows", page: "1")
-      expect(page).to have_css("#public_interests")
-    end
-
-    scenario "Is always visible for admins" do
-      create(:proposal, tag_list: "Sport", followers: [user])
-
-      login_as(user)
-      visit account_path
-
-      uncheck "account_public_interests"
-      click_button "Save changes"
-
-      logout
-
-      login_as(create(:administrator).user)
-      visit user_path(user, filter: "follows", page: "1")
-      expect(page).to have_css("#public_interests")
-    end
-
-    scenario "Is always visible for moderators" do
-      create(:proposal, tag_list: "Sport", followers: [user])
-
-      login_as(user)
-      visit account_path
-
-      uncheck "account_public_interests"
-      click_button "Save changes"
-
-      logout
-
-      login_as(create(:moderator).user)
-      visit user_path(user, filter: "follows", page: "1")
-      expect(page).to have_css("#public_interests")
-    end
-
-    scenario "Should display generic interests title" do
-      create(:proposal, tag_list: "Sport", followers: [user])
-
-      user.update!(public_interests: true)
-      visit user_path(user, filter: "follows", page: "1")
-
-      expect(page).to have_content("Tags of elements this user follows")
-    end
-
-    scenario "Should display custom interests title when user is visiting own user page" do
-      create(:proposal, tag_list: "Sport", followers: [user])
-
-      user.update!(public_interests: true)
-      login_as(user)
-      visit user_path(user, filter: "follows", page: "1")
-
-      expect(page).to have_content("Tags of elements you follow")
-    end
-  end
-
   describe "Special comments" do
     scenario "comments posted as moderator are not visible in user activity" do
       moderator = create(:administrator).user
@@ -429,117 +307,203 @@ describe "Users" do
   describe "Following (public page)" do
     let(:user) { create(:user) }
 
-    scenario "Do not display follows' tab when user is not following any followables" do
-      visit user_path(user)
+    context "public interests is checked" do
+      let(:user) { create(:user, public_interests: true) }
 
-      expect(page).not_to have_content("0 Following")
+      scenario "can be accessed by anyone" do
+        create(:proposal, followers: [user], title: "Others follow me")
+
+        visit user_path(user, filter: "follows")
+
+        expect(page).to have_content "1 Following"
+        expect(page).to have_content "Others follow me"
+      end
+
+      scenario "Gracefully handle followables that have been hidden" do
+        create(:proposal, followers: [user])
+        create(:proposal, followers: [user], &:hide)
+
+        visit user_path(user)
+
+        expect(page).to have_content("1 Following")
+      end
+
+      scenario "displays generic interests title" do
+        create(:proposal, tag_list: "Sport", followers: [user])
+
+        visit user_path(user, filter: "follows", page: "1")
+
+        expect(page).to have_content("Tags of elements this user follows")
+      end
+
+      describe "Proposals" do
+        scenario "Display following tab when user is following one proposal at least" do
+          create(:proposal, followers: [user])
+
+          visit user_path(user)
+
+          expect(page).to have_content("1 Following")
+        end
+
+        scenario "Display proposal tab when user is following one proposal at least" do
+          create(:proposal, followers: [user])
+
+          visit user_path(user, filter: "follows")
+
+          expect(page).to have_link("Citizen proposals", href: "#citizen_proposals")
+        end
+
+        scenario "Do not display proposals' tab when user is not following any proposal" do
+          visit user_path(user, filter: "follows")
+
+          expect(page).not_to have_link("Citizen proposals", href: "#citizen_proposals")
+        end
+
+        scenario "Display proposals with link to proposal" do
+          proposal = create(:proposal, author: user, followers: [user])
+
+          login_as user
+
+          visit user_path(user, filter: "follows")
+
+          expect(page).to have_link "Citizen proposals", href: "#citizen_proposals"
+          expect(page).to have_content proposal.title
+        end
+
+        scenario "Retired proposals do not have a link to the dashboard" do
+          proposal = create(:proposal, :retired, author: user)
+          login_as user
+
+          visit user_path(user)
+
+          expect(page).to have_content proposal.title
+          expect(page).not_to have_link "Dashboard"
+          expect(page).to have_content("Dashboard not available for retired proposals")
+        end
+
+        scenario "Published proposals have a link to the dashboard" do
+          proposal = create(:proposal, :published, author: user)
+          login_as user
+
+          visit user_path(user)
+
+          expect(page).to have_content proposal.title
+          expect(page).to have_link "Dashboard"
+        end
+      end
+
+      describe "Budget Investments" do
+        scenario "Display following tab when user is following one budget investment at least" do
+          create(:budget_investment, followers: [user])
+
+          visit user_path(user)
+
+          expect(page).to have_content("1 Following")
+        end
+
+        scenario "Display budget investment tab when user is following one budget investment at least" do
+          create(:budget_investment, followers: [user])
+
+          visit user_path(user, filter: "follows")
+
+          expect(page).to have_link("Investments", href: "#investments")
+        end
+
+        scenario "Do not display budget investment tab when user is not following any budget investment" do
+          visit user_path(user, filter: "follows")
+
+          expect(page).not_to have_link("Investments", href: "#investments")
+        end
+
+        scenario "Display budget investment with link to budget investment" do
+          budget_investment = create(:budget_investment, author: user, followers: [user])
+
+          visit user_path(user, filter: "follows")
+
+          expect(page).to have_link "Investments", href: "#investments"
+          expect(page).to have_link budget_investment.title
+        end
+      end
     end
 
-    scenario "Active following tab by default when follows filters selected" do
-      create(:proposal, author: user, followers: [user])
+    context "public interests is not checked" do
+      let(:user) { create(:user, public_interests: false) }
+
+      scenario "can be accessed by its owner" do
+        create(:proposal, followers: [user], title: "Follow me!")
+
+        login_as(user)
+
+        visit user_path(user, filter: "follows")
+
+        expect(page).to have_content "1 Following"
+        expect(page).to have_content "Follow me!"
+        expect(page).to have_content "Tags of elements you follow"
+      end
+
+      scenario "cannot be accessed by anonymous users" do
+        create(:proposal, followers: [user])
+
+        visit user_path(user, filter: "follows")
+
+        expect(page).to have_content "You do not have permission to access this page"
+        expect(page).to have_current_path root_path
+      end
+
+      scenario "cannot be accessed by other users" do
+        create(:proposal, followers: [user])
+
+        login_as(create(:user))
+
+        visit user_path(user, filter: "follows")
+
+        expect(page).to have_content "You do not have permission to access this page"
+        expect(page).to have_current_path root_path
+      end
+
+      scenario "cannot be accessed by administrators" do
+        create(:proposal, followers: [user])
+
+        login_as(create(:administrator).user)
+
+        visit user_path(user, filter: "follows")
+
+        expect(page).to have_content "You do not have permission to access this page"
+        expect(page).to have_current_path root_path
+      end
+    end
+
+    scenario "Display interests" do
+      create(:proposal, tag_list: "Sport", followers: [user])
+
+      login_as(user)
+      visit account_path
+
+      check "account_public_interests"
+      click_button "Save changes"
+
+      logout
 
       visit user_path(user, filter: "follows")
 
-      expect(page).to have_selector(".activity li.is-active", text: "1 Following")
+      expect(page).to have_css "#public_interests"
+      expect(page).to have_content "Sport"
     end
 
-    scenario "Gracefully handle followables that have been hidden" do
-      create(:proposal, followers: [user])
-      create(:proposal, followers: [user], &:hide)
+    scenario "Do not display interests when proposal has been destroyed" do
+      proposal = create(:proposal, tag_list: "Sport", followers: [user])
+      proposal.destroy!
+
+      login_as(user)
+      visit account_path
+
+      check "account_public_interests"
+      click_button "Save changes"
+
+      logout
 
       visit user_path(user)
-
-      expect(page).to have_content("1 Following")
-    end
-
-    describe "Proposals" do
-      scenario "Display following tab when user is following one proposal at least" do
-        create(:proposal, followers: [user])
-
-        visit user_path(user)
-
-        expect(page).to have_content("1 Following")
-      end
-
-      scenario "Display proposal tab when user is following one proposal at least" do
-        create(:proposal, followers: [user])
-
-        visit user_path(user, filter: "follows")
-
-        expect(page).to have_link("Citizen proposals", href: "#citizen_proposals")
-      end
-
-      scenario "Do not display proposals' tab when user is not following any proposal" do
-        visit user_path(user, filter: "follows")
-
-        expect(page).not_to have_link("Citizen proposals", href: "#citizen_proposals")
-      end
-
-      scenario "Display proposals with link to proposal" do
-        proposal = create(:proposal, author: user, followers: [user])
-
-        login_as user
-
-        visit user_path(user, filter: "follows")
-        click_link "Citizen proposals"
-
-        expect(page).to have_content proposal.title
-      end
-
-      scenario "Retired proposals do not have a link to the dashboard" do
-        proposal = create(:proposal, :retired, author: user)
-        login_as user
-
-        visit user_path(user)
-
-        expect(page).to have_content proposal.title
-        expect(page).not_to have_link "Dashboard"
-        expect(page).to have_content("Dashboard not available for retired proposals")
-      end
-
-      scenario "Published proposals have a link to the dashboard" do
-        proposal = create(:proposal, :published, author: user)
-        login_as user
-
-        visit user_path(user)
-
-        expect(page).to have_content proposal.title
-        expect(page).to have_link "Dashboard"
-      end
-    end
-
-    describe "Budget Investments" do
-      scenario "Display following tab when user is following one budget investment at least" do
-        create(:budget_investment, followers: [user])
-
-        visit user_path(user)
-
-        expect(page).to have_content("1 Following")
-      end
-
-      scenario "Display budget investment tab when user is following one budget investment at least" do
-        create(:budget_investment, followers: [user])
-
-        visit user_path(user, filter: "follows")
-
-        expect(page).to have_link("Investments", href: "#investments")
-      end
-
-      scenario "Not display budget investment tab when user is not following any budget investment" do
-        visit user_path(user, filter: "follows")
-
-        expect(page).not_to have_link("Investments", href: "#investments")
-      end
-
-      scenario "Display budget investment with link to budget investment" do
-        user = create(:user, :level_two)
-        budget_investment = create(:budget_investment, author: user, followers: [user])
-
-        visit user_path(user, filter: "follows")
-        click_link "Investments"
-
-        expect(page).to have_link budget_investment.title
-      end
+      expect(page).not_to have_content("Sport")
     end
   end
 

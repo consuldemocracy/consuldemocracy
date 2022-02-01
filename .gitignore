@@ -36,5 +36,8 @@
 .ruby-gemset
 
 public/sitemap.xml
+public/assets/
+public/machine_learning/data/
 public/system/
 /public/ckeditor_assets/
+storage/

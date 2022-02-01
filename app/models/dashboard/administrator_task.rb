@@ -8,4 +8,8 @@ class Dashboard::AdministratorTask < ApplicationRecord
 
   scope :pending, -> { where(executed_at: nil) }
   scope :done, -> { where.not(executed_at: nil) }
+
+  def title
+    "#{source.proposal.title} #{source.action.title}"
+  end
 end

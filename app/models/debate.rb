@@ -29,7 +29,8 @@ class Debate < ApplicationRecord
   has_many :comments, as: :commentable, inverse_of: :commentable
 
   validates_translation :title, presence: true, length: { in: 4..Debate.title_max_length }
-  validates_translation :description, presence: true, length: { in: 10..Debate.description_max_length }
+  validates_translation :description, presence: true
+  validate :description_length
   validates :author, presence: true
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
@@ -45,11 +46,10 @@ class Debate < ApplicationRecord
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :sort_by_recommendations,  -> { order(cached_votes_total: :desc) }
   scope :last_week,                -> { where("created_at >= ?", 7.days.ago) }
-  scope :featured,                 -> { where("featured_at is not null") }
+  scope :featured,                 -> { where.not(featured_at: nil) }
   scope :public_for_api,           -> { all }
 
-  # Ahoy setup
-  visitable # Ahoy will automatically assign visit_id on create
+  visitable class_name: "Visit"
 
   attr_accessor :link_required
 
@@ -58,8 +58,7 @@ class Debate < ApplicationRecord
   end
 
   def self.recommendations(user)
-    tagged_with(user.interests, any: true)
-      .where("author_id != ?", user.id)
+    tagged_with(user.interests, any: true).where.not(author_id: user.id)
   end
 
   def searchable_translations_definitions
@@ -163,5 +162,19 @@ class Debate < ApplicationRecord
     orders = %w[hot_score confidence_score created_at relevance]
     orders << "recommendations" if Setting["feature.user.recommendations_on_debates"] && user&.recommended_debates
     orders
+  end
+
+  def description_length
+    real_description_length = ActionView::Base.full_sanitizer.sanitize(description.to_s).squish.length
+
+    if real_description_length < Debate.description_min_length
+      errors.add(:description, :too_short, count: Debate.description_min_length)
+      translation.errors.add(:description, :too_short, count: Debate.description_min_length)
+    end
+
+    if real_description_length > Debate.description_max_length
+      errors.add(:description, :too_long, count: Debate.description_max_length)
+      translation.errors.add(:description, :too_long, count: Debate.description_max_length)
+    end
   end
 end

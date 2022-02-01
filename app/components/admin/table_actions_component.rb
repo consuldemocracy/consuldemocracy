@@ -1,11 +1,13 @@
 class Admin::TableActionsComponent < ApplicationComponent
-  include TableActionLink
   attr_reader :record, :options
-  delegate :namespace, to: :helpers
 
-  def initialize(record = nil, **options)
+  def initialize(record, **options)
     @record = record
     @options = options
+  end
+
+  def action(action_name, **args)
+    render Admin::ActionComponent.new(action_name, record, "aria-label": true, **args)
   end
 
   private
@@ -15,34 +17,29 @@ class Admin::TableActionsComponent < ApplicationComponent
     end
 
     def edit_text
-      options[:edit_text] || t("admin.actions.edit")
+      options[:edit_text]
     end
 
     def edit_path
-      options[:edit_path] || namespaced_polymorphic_path(namespace, record, action: :edit)
+      options[:edit_path]
     end
 
     def edit_options
-      { class: "edit-link" }.merge(options[:edit_options] || {})
+      options[:edit_options] || {}
     end
 
     def destroy_text
-      options[:destroy_text] || t("admin.actions.delete")
+      options[:destroy_text]
     end
 
     def destroy_path
-      options[:destroy_path] || namespaced_polymorphic_path(namespace, record)
+      options[:destroy_path]
     end
 
     def destroy_options
       {
         method: :delete,
-        class: "destroy-link",
-        data: { confirm: destroy_confirmation }
+        confirm: options[:destroy_confirmation] || true
       }.merge(options[:destroy_options] || {})
-    end
-
-    def destroy_confirmation
-      options[:destroy_confirmation] || t("admin.actions.confirm")
     end
 end

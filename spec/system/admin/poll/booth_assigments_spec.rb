@@ -61,11 +61,11 @@ describe "Admin booths assignments", :admin do
         expect(page).to have_content(booth.name)
         expect(page).to have_content "Unassigned"
 
-        click_link "Assign booth"
+        click_button "Assign booth"
 
         expect(page).not_to have_content "Unassigned"
         expect(page).to have_content "Assigned"
-        expect(page).to have_link "Unassign booth"
+        expect(page).to have_button "Unassign booth"
       end
 
       visit admin_poll_path(poll)
@@ -100,11 +100,11 @@ describe "Admin booths assignments", :admin do
         expect(page).to have_content(booth.name)
         expect(page).to have_content "Assigned"
 
-        click_link "Unassign booth"
+        click_button "Unassign booth"
 
         expect(page).to have_content "Unassigned"
         expect(page).not_to have_content "Assigned"
-        expect(page).to have_link "Assign booth"
+        expect(page).to have_button "Assign booth"
       end
 
       visit admin_poll_path(poll)
@@ -127,11 +127,11 @@ describe "Admin booths assignments", :admin do
         expect(page).to have_content(booth.name)
         expect(page).to have_content "Assigned"
 
-        accept_confirm { click_link "Unassign booth" }
+        accept_confirm { click_button "Unassign booth" }
 
         expect(page).to have_content "Unassigned"
         expect(page).not_to have_content "Assigned"
-        expect(page).to have_link "Assign booth"
+        expect(page).to have_button "Assign booth"
       end
     end
 
@@ -143,8 +143,7 @@ describe "Admin booths assignments", :admin do
       within("#poll_booth_#{booth.id}") do
         expect(page).to have_content(booth.name)
         expect(page).to have_content "Assigned"
-
-        expect(page).not_to have_link "Unassign booth"
+        expect(page).not_to have_button "Unassign booth"
       end
     end
   end

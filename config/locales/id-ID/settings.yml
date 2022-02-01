@@ -25,6 +25,9 @@ id:
     meta_description: "Deskripsi situs (SEO)"
     meta_keywords: "Kata kunci (SEO)"
     min_age_to_participate: Usia Minimum yang diperlukan untuk berpartisipasi
+    proposals:
+      poll_short_title: Jajak pendapat
+      email_short_title: Email
     feature:
       twitter_login: "Twitter masuk"
       facebook_login: "Facebook masuk"
@@ -33,3 +36,17 @@ id:
       community: "Masyarakat pada proposal dan investasi"
       map: "Proposal dan anggaran investasi"
       allow_images: "Mengizinkan unggah dan tampilkan gambar"
+      help_page: "Halaman bantuan"
+    map:
+      latitude: "Garis lintang"
+      longitude: "Garis bujur"
+      zoom: "Zoom"
+    process:
+      debates: "Perdebatan"
+      proposals: "Proposal"
+      polls: "Jajak pendapat"
+      budgets: "Penganggaran partisipatif"
+      legislation: "Undang-undang kolaboratif"
+    html:
+      per_page_code_head: "Kode untuk disertakan pada setiap halaman (<head>)"
+      per_page_code_body: "Kode untuk disertakan pada setiap halaman (<body>)"

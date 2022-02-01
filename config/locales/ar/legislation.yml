@@ -134,3 +134,36 @@ ar:
         tags_label: "فئات"
       not_verified: "لمقترحات التصويت %{verify_account}."
       process_title: عملية تشريع تشاركية
+    summary:
+      title: "ملخص"
+      votes:
+        zero: "%{count} أصوات"
+      debate_phase: "مرحلة النقاش"
+      proposals_phase: "مرحلة الاقتراحات"
+      allegations_phase: "مرحلة التعليقات"
+      debates:
+        zero: "لا توجد مناقشات"
+        zero: "مناقشتان %{count}"
+        one: "مناقشة %{count}"
+        two: "مناقشتان %{count}"
+        few: "مناقشتان %{count}"
+        many: "مناقشتان %{count}"
+        other: "مناقشتان %{count}"
+      proposals:
+        zero: "لا توجد مقترحات"
+        zero: "%{count} مقترحات"
+        one: "مقترح %{count}"
+        two: "%{count} مقترحات"
+        few: "%{count} مقترحات"
+        many: "%{count} مقترحات"
+        other: "%{count} مقترحات"
+      comments:
+        zero: "لا توجد تعليقات"
+        zero: "%{count} تعليقات"
+        one: "تعليق %{count}"
+        two: "%{count} تعليقات"
+        few: "%{count} تعليقات"
+        many: "%{count} تعليقات"
+        other: "%{count} تعليقات"
+      top_comments:
+        zero: "لا توجد تعليقات"

@@ -8,19 +8,21 @@ class Budget
     translates :name, touch: true
     translates :summary, touch: true
     translates :description, touch: true
+    translates :main_link_text, touch: true
+    translates :main_link_url, touch: true
     include Globalizable
     include Sanitizable
     include Imageable
 
     belongs_to :budget, touch: true
-    belongs_to :next_phase, class_name: self.name, inverse_of: :prev_phase
-    has_one :prev_phase, class_name: self.name, foreign_key: :next_phase_id, inverse_of: :next_phase
+    belongs_to :next_phase, class_name: name, inverse_of: :prev_phase
+    has_one :prev_phase, class_name: name, foreign_key: :next_phase_id, inverse_of: :next_phase
 
     validates_translation :name, presence: true
     validates_translation :description, length: { maximum: DESCRIPTION_MAX_LENGTH }
+    validates_translation :main_link_url, presence: true, unless: -> { main_link_text.blank? }
     validates :budget, presence: true
     validates :kind, presence: true, uniqueness: { scope: :budget }, inclusion: { in: PHASE_KINDS }
-    validates :main_button_url, presence: true, if: -> { main_button_text.present? }
     validates :starts_at, presence: true
     validates :ends_at, presence: true
     validate :invalid_dates_range?

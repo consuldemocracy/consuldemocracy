@@ -1,0 +1,7 @@
+<%= back_link_to admin_budgets_wizard_budget_groups_path(budget) %>
+
+<%= header %>
+
+<%= render Admin::BudgetsWizard::CreationTimelineComponent.new("groups") %>
+
+<%= render "/admin/budget_groups/form", group: group, path: form_path, action: "submit" %>

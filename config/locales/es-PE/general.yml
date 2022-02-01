@@ -5,10 +5,7 @@ es-PE:
       erase_account_link: Darme de baja
       finish_verification: Completar verificação
       notifications: Notificações
-      organization_name_label: Nome da organização
-      organization_responsible_name_placeholder: Representante de organização/coletivo
       personal: Dados pessoais
-      phone_number_label: Teléfono
       public_interests_my_title_list: Etiquetas de los elementos que sigues
       public_interests_user_title_list: Etiquetas de los elementos que sigue este usuario
       save_changes_submit: Guardar cambios
@@ -21,7 +18,6 @@ es-PE:
       user_permission_verify: Para poder realizar todas las acciones verifica tu cuenta.
       user_permission_verify_info: "* Sólo usuarios empadronados."
       user_permission_votes: Participar na votação final
-      username_label: Nombre de usuario
       verified_account: Conta verificada
       verify_my_account: Verificar mi cuenta
   application:
@@ -39,6 +35,10 @@ es-PE:
         zero: Sin respuestas
         one: 1 resposta
         other: "%{count} respostas"
+      responses_show:
+        zero: Sin respuestas
+      responses_collapse:
+        zero: Sin respuestas
       user_deleted: Usuario eliminado
       votes:
         zero: Sin votos
@@ -53,7 +53,6 @@ es-PE:
       newest: Mais recente primeiro
       oldest: Mais antigo primeiro
       most_commented: Más comentados
-    select_order: Organizado por
     show:
       return_to_commentable: "Voltar para"
   comments_helper:
@@ -81,7 +80,6 @@ es-PE:
         submit_button: Guardar cambios
       show_link: Ver debate
     form:
-      debate_title: Título do debate
       tags_instructions: Marcar este debate.
       tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
     index:
@@ -100,10 +98,14 @@ es-PE:
         button: Buscar
         placeholder: Buscar debates...
         title: Buscar
-      select_order: Ordenado por
+      search_results:
+        one: " que contienen <strong>'%{search_term}'</strong>"
+        other: " que contienen <strong>'%{search_term}'</strong>"
       start_debate: Empieza un debate
+      title: Discusiones
       section_header:
         icon_alt: Icono de Debates
+        title: Discusiones
         help: Ayuda sobre los debates
       section_footer:
         title: Ayuda sobre los debates
@@ -113,8 +115,6 @@ es-PE:
     new:
       form:
         submit_button: Empieza un debate
-      info: Se quiser elaborar uma proposta, esta seção é inadequada, entre %{info_link}.
-      info_link: criar nova proposta
       more_info: Mais informações
       recommendation_four: Aproveite este espaço e as vozes que o preenchem. Ele pertence a você também.
       recommendation_one: Não use letras maiúsculas para o título do debate ou para sentenças completas. Na internet, isto é considerado gritaria. Ninguém gosta de ser tratado com gritos.
@@ -148,6 +148,7 @@ es-PE:
     direct_message: el mensaje privado
     error: erro
     errors: erros
+    not_saved: "impidieron guardar %{resource}. <br>Por favor revisa los campos marcados para saber cómo corregirlos:"
     policy: Política de Privacidad
     proposal: Propuesta
     proposal_notification: "la notificación"
@@ -165,8 +166,16 @@ es-PE:
     none: Toda a cidade
   layouts:
     application:
+      firefox: Firefox
       ie: Nós detectamos que você está navegando com o Internet Explorer. Para uma melhor experiência, nós recomendamos o uso do %{chrome} ou %{firefox}.
       ie_title: Este website não está otimizado para o seu navegador
+    dashboard:
+      proposal_header:
+        published: Publicada
+        draft: Borrador
+      proposal_totals:
+        supports:
+          zero: Sin apoyos
     footer:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
@@ -178,9 +187,10 @@ es-PE:
       participation_title: Participación
       privacy: Política de privacidad
     header:
+      administration_menu: Menú
       administration: Administración
-      available_locales: Idiomas disponibles
       collaborative_legislation: Procesos legislativos
+      debates: Discusiones
       locale: "Idioma:"
       management: Gestión
       moderation: Moderación
@@ -233,11 +243,16 @@ es-PE:
     twitter:
       sign_in: Iniciar sessão com o Twitter
       sign_up: Inscrever-se com o Twitter
+    info:
+      sign_in: "Entra con:"
+      sign_up: "Regístrate con:"
     or_fill: "O rellena el siguiente formulario:"
   proposals:
     create:
       form:
         submit_button: Crear propuesta
+    share:
+      dashboard: Ver más información
     edit:
       editing: Editar proposta
       form:
@@ -266,7 +281,6 @@ es-PE:
       map_location: "Ubicación en el mapa"
       map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
       map_remove_marker: "Eliminar el marcador"
-      map_skip_checkbox: "Esta propuesta no tiene una ubicación concreta o no la conozco."
     index:
       featured_proposals: Destacar
       orders:
@@ -293,7 +307,9 @@ es-PE:
         button: Buscar
         placeholder: Buscar propostas...
         title: Buscar
-      select_order: Ordenado por
+      search_results:
+        one: " que contienen <strong>'%{search_term}'</strong>"
+        other: " que contienen <strong>'%{search_term}'</strong>"
       select_order_long: "Você está vendo propostas de acordo para:"
       start_proposal: Crea una propuesta
       title: Propuestas
@@ -361,6 +377,44 @@ es-PE:
     update:
       form:
         submit_button: Guardar cambios
+  dashboard:
+    menu:
+      community: Comunidad
+      polls: Votaciones
+      related_content: Contenido relacionado
+    progress:
+      supports: Apoyos
+    index:
+      edit_proposal_link: Editar propuesta
+      retire: Retirar propuesta
+    recommended_actions:
+      pending_title: Sin decidir
+      done_title: Realizada
+    community:
+      access_community: Acceder a la comunidad
+      participants: Participantes
+      debates: Discusiones
+      comments: Comentarios
+    polls:
+      index:
+        title: Votaciones
+        create: Crear votación
+      new:
+        title: Nueva votación
+        submit: Crear votación
+      edit:
+        submit: Actualizar votación
+      question_fields:
+        add_answer: Añadir respuesta
+    poster:
+      options:
+        preview: Previsualizar
+    mailing:
+      mailing_options:
+        preview: Previsualizar
+    mailer:
+      forward:
+        support_button: Apoyar esta propuesta
   polls:
     all: "Todas"
     no_dates: "sin fecha asignada"
@@ -389,6 +443,7 @@ es-PE:
       back: Volver a votaciones
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar en el debate."
       comments_tab: Comentarios
+      cant_answer_verify: "Por favor %{verify_link} para poder responder."
       verify_link: "verifica tu cuenta"
       cant_answer_expired: "Esta votación ha terminado."
       cant_answer_wrong_geozone: "Esta votación no está disponible en tu zona."
@@ -424,13 +479,12 @@ es-PE:
       back: "Volver a mi actividad"
   shared:
     edit: "Editar propuesta"
+    filter: "Filtrar"
     save: "Guardar"
     delete: "Borrar"
     "yes": "Si"
     search_results: "Resultados de la búsqueda"
     advanced_search:
-      author_type: "Por categoria de autor"
-      author_type_blank: "Selecione um categoria"
       date: "Por data"
       date_placeholder: "DD/MM/AAAA"
       date_range_blank: "Escolha uma data"
@@ -441,7 +495,6 @@ es-PE:
       date_5: "Personalizado"
       from: "De"
       general: "Com o texto"
-      general_placeholder: "Escrever o texto"
       search: "Filtrar"
       title: "Busca avançada"
       to: "Para"
@@ -484,6 +537,7 @@ es-PE:
       districts: "Distritos"
       districts_list: "Listado de distritos"
       categories: "Categorías"
+    target_blank: " (se abre en ventana nueva)"
     you_are_in: "Estás en"
     unflag: Desmarcar
     unfollow_entity: "Dejar de seguir %{entity}"
@@ -504,6 +558,7 @@ es-PE:
   stats:
     index:
       visits: Visitas
+      debates: Discusiones
       proposals: Propuestas
       comments: Comentarios
       proposal_votes: Votos en propuestas
@@ -517,6 +572,11 @@ es-PE:
     manage:
       all: "Você não possui permissão para executar esta ação '%{action}' em %{subject}."
   users:
+    login_to_comment: "Necesitas %{signin} o %{signup} para comentar."
+    login_to_continue: "Necesitas %{signin} o %{signup}."
+    signin: "iniciar sesión"
+    signup: "registrarte"
+    verify_account: "verifica tu cuenta"
     direct_messages:
       new:
         direct_messages_bloqued: "Este usuario ha decidido no recibir mensajes privados"
@@ -531,6 +591,8 @@ es-PE:
       deleted_proposal: Esta proposta foi apagado
       deleted_budget_investment: Esta propuesta de inversión ha sido eliminada
       proposals: Propuestas
+      proposals_status: Estado
+      debates: Discusiones
       budget_investments: Proyectos de presupuestos participativos
       comments: Comentarios
       actions: Acciones
@@ -553,7 +615,10 @@ es-PE:
       send_private_message: "Enviar un mensaje privado"
     proposals:
       retired: "Propuesta retirada"
+      draft: Borrador
+      published: Publicada
       see: "Ver propuesta"
+      actions: Acciones
   votes:
     agree: Eu concordo
     anonymous: Excesso de votos anônimos para admitir voto %{verify_account}
@@ -626,3 +691,7 @@ es-PE:
       alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
       text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
       title: '¿Cómo puedo comentar este documento?'
+  links:
+    form:
+      delete_button: Borrar
+      cancel_button: Cancelar

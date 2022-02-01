@@ -43,10 +43,6 @@ en:
     groups:
       show:
         title: Select a heading
-        unfeasible_title: Unfeasible investments
-        unfeasible: See unfeasible investments
-        unselected_title: Investments not selected for balloting phase
-        unselected: See investments not selected for balloting phase
     phase:
       drafting: Draft (Not visible to the public)
       informing: Information
@@ -90,6 +86,8 @@ en:
     investments:
       form:
         title: "Create a budget investment"
+        subtitle: "%{heading}"
+        subtitle_show_money: "%{heading} (%{price})"
         tag_category_label: "Categories"
         tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
         tags_label: Tags
@@ -131,11 +129,10 @@ en:
           not_logged_in: "To create a new budget investment you must %{sign_in} or %{sign_up}."
         filter: "Filtering projects by"
         filters:
-          not_unfeasible: "Not unfeasible"
-          feasible: "Feasible"
+          not_unfeasible: "Active"
+          selected: "Active"
           unfeasible: "Unfeasible"
-          unselected: "Unselected"
-          selected: "Selected"
+          unselected: "Not selected for the final voting"
           winners: "Winners"
         orders:
           random: random
@@ -169,31 +166,50 @@ en:
       investment:
         add: Vote
         already_added: You have already added this investment project
-        already_supported: You have already supported this investment project. Share it!
-        support_title: Support this project
-        confirm_group:
-          one: "You can only support investments in %{count} district. If you continue you cannot change the election of your district. Are you sure?"
-          other: "You can only support investments in %{count} districts. If you continue you cannot change the election of your district. Are you sure?"
         price_title: "Price"
-        support_title: "Supports"
+        support_title: Support this project
         supports:
           one: 1 support
           other: "%{count} supports"
           zero: No supports
-        give_support: Support
       header:
         check_ballot: "Submit my ballot"
         different_heading_assigned: "You have active votes in another heading: %{heading_link}"
         change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
         check_ballot_link: "submit my ballot"
         price: "Total budget"
+      votes:
+        already_supported: "You have already supported this investment project. Share it!"
+        confirm_group:
+          one: "You can only support investments in %{count} district. If you continue you cannot change the election of your district. Are you sure?"
+          other: "You can only support investments in %{count} districts. If you continue you cannot change the election of your district. Are you sure?"
+        remove_support: "Remove your support"
+        remove_support_label: "Remove your support to %{investment}"
+        support: "Support"
+        support_label: "Support %{investment}"
     progress_bar:
       assigned: "You have assigned: "
       available: "Available budget: "
+    investments_list:
+      investment:
+        price: "Price"
+        read_more: "Read more"
+        supports: "Supports"
+      see_all: "See all investments"
+      title: "List of investments"
     show:
       see_results: See results
-      see_all_investments: "See all investments"
-      investments_list: "List of investments"
+    supports_info:
+      different: "You may support on as many different projects as you would like."
+      next: "Support the projects you would like to see move on to the next phase."
+      scrolling: "Keep scrolling to see all ideas"
+      share: "You can share the projects you have supported on through social media and attract more attention and support to them!"
+      supported:
+        one: "So far you've supported <strong>1 project</strong>."
+        other: "So far you've supported <strong>%{count} projects</strong>."
+      supported_not_logged_in: "Log in to start <strong>supporting projects</strong>."
+      time: "There's still time until %{phase_end_date} to support projects."
+      title: "It's time to <strong>support</strong> projects!"
     results:
       link: Results
       page_title: "%{budget} - Results"
@@ -208,9 +224,6 @@ en:
       discarded: "Discarded investment: "
       incompatibles: Incompatibles
       investment_title: Project title
-      investment_proyects: "List of all investment projects"
-      unfeasible_investment_proyects: "List of all unfeasible investment projects"
-      not_selected_investment_proyects: "List of all investment projects not selected for balloting"
     executions:
       link: "Milestones"
       page_title: "%{budget} - Milestones"

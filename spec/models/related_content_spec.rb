@@ -3,9 +3,10 @@ require "rails_helper"
 describe RelatedContent do
   let(:parent_relationable) { create([:proposal, :debate].sample) }
   let(:child_relationable) { create([:proposal, :debate].sample) }
+  let(:related_content) { build(:related_content) }
 
   it "is valid" do
-    expect(build(:related_content)).to be_valid
+    expect(related_content).to be_valid
   end
 
   it "allows relationables from various classes" do
@@ -23,6 +24,38 @@ describe RelatedContent do
     related_content = create(:related_content, parent_relationable: parent_relationable, child_relationable: child_relationable, author: build(:user))
     new_related_content = build(:related_content, parent_relationable: related_content.parent_relationable, child_relationable: related_content.child_relationable)
     expect(new_related_content).not_to be_valid
+  end
+
+  it "does not allow relating a content to itself" do
+    related_content = build(:related_content,
+                            parent_relationable: parent_relationable,
+                            child_relationable: parent_relationable)
+
+    expect(related_content).not_to be_valid
+  end
+
+  it "is not valid with an invalid parent relationable type" do
+    related_content.parent_relationable_type = "NotARealModel"
+
+    expect { related_content.valid? }.to raise_exception "uninitialized constant NotARealModel"
+  end
+
+  it "is not valid with parent relationable ID of a non-existent record" do
+    related_content.parent_relationable_id = related_content.parent_relationable.class.last.id + 1
+
+    expect(related_content).not_to be_valid
+  end
+
+  it "is not valid with an invalid child relationable type" do
+    related_content.child_relationable_type = "NotARealModel"
+
+    expect { related_content.valid? }.to raise_exception "uninitialized constant NotARealModel"
+  end
+
+  it "is not valid with child relationable ID of a non-existent record" do
+    related_content.child_relationable_id = related_content.child_relationable.class.last.id + 1
+
+    expect(related_content).not_to be_valid
   end
 
   describe "create_opposite_related_content" do

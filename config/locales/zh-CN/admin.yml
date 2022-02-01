@@ -6,6 +6,7 @@ zh-CN:
       actions: 行动
       confirm: 您确定吗？
       confirm_hide: 确认审核
+      delete: "删除"
       hide: 隐藏
       hide_author: 隐藏作者
       restore: 恢复
@@ -13,13 +14,10 @@ zh-CN:
       unmark_featured: 取消特色标记
       edit: 编辑
       configure: 配置
-      delete: 删除
     banners:
       index:
         title: 横幅
         create: 创建横幅
-        edit: 编辑横幅
-        delete: 删除横幅
         filters:
           all: 所有
           with_active: 活跃
@@ -60,18 +58,22 @@ zh-CN:
         type: 类型
         no_activity: 没有审核员活动。
     budgets:
+      actions:
+        edit: "编辑预算"
+        preview: "预览"
       index:
         title: 参与性预算
         new_link: 创建新预算
         filter: 过滤器
         filters:
+          all: 所有
           open: 打开
           finished: 已完成
         budget_investments: 管理项目
+        table_budget_type: "类型"
+        table_draft: "起草"
         table_name: 名字
         table_phase: 阶段
-        edit_groups: 编辑标题组
-        edit_budget: 编辑预算
         no_budgets: "没有预算。"
       create:
         notice: 新的参与性预算创建成功！
@@ -83,14 +85,13 @@ zh-CN:
         phase: 阶段
         enabled: 已启用
         actions: 行动
-        edit_phase: 编辑阶段
         active: 活跃
         blank_dates: 日期为空
       destroy:
         success_notice: 预算已成功删除
         unable_notice: 您不能销毁具有相关投资的预算
-      new:
-        title: 新的参与性预算
+      show:
+        add_heading: "添加标题"
       winners:
         calculate: 计算胜出者投资
         calculated: 计算胜出者中，可能需要一分钟时间。
@@ -100,12 +101,15 @@ zh-CN:
       form:
         edit: "编辑组"
         submit: "保存组"
+      index:
+        new_button: "添加新组"
     budget_headings:
       form:
         population_info: "预算标题人口字段用于统计目的，在预算结束后显示每个标题，代表一个地区与人口百分比投票率。此字段为可选，因此如果不适用，您可以将其留空。"
         submit: "保存标题"
     budget_phases:
       edit:
+        title: "编辑阶段"
         description_help_text: 当阶段处于活跃状态时，此文本将显示在页眉中
         enabled_help_text: 这一阶段将在预算的阶段时间内公开，并为其他目的保持活跃
         save_changes: 保存更改
@@ -129,6 +133,8 @@ zh-CN:
           unfeasible: 不可行
           min_total_supports: 最小支持
           winners: 胜出者
+          one_filter: "当前应用的过滤器：<b><em>%{filter}</em></b>"
+          two_filters: "当前应用的过滤器： <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: 过滤器
         download_current_selection: "下载当前选择"
@@ -157,6 +163,8 @@ zh-CN:
           visible_to_valuators: 显示给评估员
           author_username: 作者用户名
           incompatible: 不兼容
+          price: 价格
+          author: 作者
         cannot_calculate_winners: 预算必须留在“投票项目”，“审查选票”或者“完成预算”阶段以便计算优胜者项目
         see_results: "查看结果"
       show:
@@ -196,14 +204,17 @@ zh-CN:
         tags_placeholder: "编写想要的标签，用逗号 (,) 分割"
         undefined: 未定义
       search_unfeasible: 搜索不可行
+    budgets_wizard:
+      creation_timeline:
+        groups: 组
     milestones:
       index:
+        table_id: "ID"
         table_title: "标题"
         table_description: "说明"
         table_publication_date: "出版日期"
         table_status: 状态
         table_actions: "行动"
-        delete: "删除里程碑"
         no_milestones: "没有已定义的里程碑"
         image: "图像"
         show_image: "显示图像"
@@ -243,10 +254,26 @@ zh-CN:
         notice: 投资状态已成功删除
     progress_bars:
       index:
+        table_id: "ID"
         table_kind: "类型"
         table_title: "标题"
     comments:
       index:
+        id: "ID"
+        content: "内容"
+        author: "作者"
+        commentable_type: "类型"
+        title: 隐藏的评论
+        table_link: "链接"
+    hidden_comments:
+      index:
+        filter: 过滤器
+        filters:
+          all: 所有
+          with_confirmed_hide: 已确认
+          without_confirmed_hide: 有待
+        hidden_debate: 隐藏的辩论
+        hidden_proposal: 隐藏的提议
         title: 隐藏的评论
     dashboard:
       index:
@@ -257,9 +284,39 @@ zh-CN:
         index:
           active: '是'
           inactive: '不是'
+          action_title: 标题
+          action_type: 类型
+          action_active: 活跃
+          order: 排序
+          default:
+            email: 电子邮件地址
+            polls: 投票
+        form:
+          submit_button: 保存
+      administrator_tasks:
+        index:
+          filter: 过滤器
+          filters:
+            pending: 有待
+        form:
+          proposal: 提议
     debates:
       index:
+        id: ID
+        author: 作者
         title: 隐藏的辩论
+    hidden_debates:
+      index:
+        filter: 过滤器
+        filters:
+          all: 所有
+          with_confirmed_hide: 已确认
+          without_confirmed_hide: 有待
+        title: 隐藏的辩论
+    documents:
+      index:
+        new_link: "添加新文档"
+        title: "文档"
     hidden_users:
       index:
         filter: 过滤器
@@ -306,29 +363,27 @@ zh-CN:
           allegations_phase: 评论阶段
           proposals_phase: 提议阶段
           use_markdown: 使用Markdown 来格式化文本
-          title_placeholder: 进程的标题
-          summary_placeholder: 描述的简短总结
-          description_placeholder: 添加进程描述
-          additional_info_placeholder: 添加您认为有用的其他信息
         index:
           create: 新进程
           title: 立法进程
           filters:
+            active: 活跃
             all: 所有
         new:
           back: 返回
           title: 创建新的合作立法过程
           submit_button: 创建进程
         proposals:
-          select_order: 排序依据
           orders:
-            id: Id
-            title: 标题
-            supports: 支持
+            id: "Id"
+            title: "标题"
+            supports: "支持"
         process:
           title: 进程
           comments: 评论
           status: 状态
+          start_date: 开始日期
+          end_date: 结束日期
           status_open: 打开
           status_closed: 关闭
           status_planned: 计划
@@ -363,6 +418,7 @@ zh-CN:
           submit_button: 保存更改
           warning: 您已经编辑文本，请不要忘了点击保存来永久保存所做的更改。
         form:
+          title: '从进程<span class="strong">%{process_title}</span>编辑<span class="strong">%{draft_version_title}</span>'
           launch_text_editor: 启动文本编辑器
           close_text_editor: 关闭文本编辑器
           use_markdown: 使用Markdown 来格式化文本
@@ -371,9 +427,7 @@ zh-CN:
             status:
               draft: 您作为管理员可以预览，其它人不能看到它
               published: 人人可见
-          title_placeholder: 编写草稿版本的标题
           changelog_placeholder: 添加早期版本中的主要更改
-          body_placeholder: 写下草稿文本
         index:
           title: 草稿版本
           create: 创建版本
@@ -404,7 +458,6 @@ zh-CN:
           submit_button: 保存更改
         form:
           add_option: 添加选项
-          title_placeholder: 添加问题
           value_placeholder: 添加已关闭的答案
           question_options: "可能的答案（可选，默认情况下打开答案）"
         index:
@@ -434,6 +487,12 @@ zh-CN:
         add: 添加
       search:
         title: "经理：用户搜索"
+    sdg_managers:
+      index:
+        no_sdg_managers: 没有用户。
+    sdg/managers:
+      sdg/manager:
+        add: 添加
     menu:
       activity: 审核员活动
       admin: 管理菜单
@@ -493,6 +552,8 @@ zh-CN:
       title_booths: 投票亭
       legislation: 合作立法
       users: 用户
+      debates: "辩论"
+      comments: "评论"
     administrators:
       index:
         title: 管理员
@@ -600,6 +661,10 @@ zh-CN:
         title: "提议通知摘要"
         description: "在单个信息中收集给用户的所有提议通知，避免太多电子邮件。"
         preview_detail: "用户将只接收到他们跟随提议的通知"
+      comment:
+        title: "评论"
+      reply:
+        title: "答复"
     emails_download:
       index:
         title: 电子邮件下载
@@ -766,6 +831,8 @@ zh-CN:
         table_poll: "投票"
       edit:
         title: "编辑问题"
+      new:
+        title_proposal: "创建问题"
       answers:
         images:
           add_image: "添加图像"
@@ -814,6 +881,7 @@ zh-CN:
       index:
         title: "重新计票"
         no_recounts: "没有什么需要重新计票"
+        total_system: "投票（自动）"
         table_booth_name: "投票亭"
         table_total_recount: "总的重新计票数（由官员）"
         table_system_count: "投票（自动）"
@@ -850,7 +918,6 @@ zh-CN:
         location: "位置"
       booth:
         shifts: "管理轮班"
-        edit: "编辑投票亭"
     officials:
       edit:
         destroy: 删除‘官方’状态
@@ -871,7 +938,6 @@ zh-CN:
       level_4: 级别4
       level_5: 级别5
       search:
-        edit_official: 编辑官员
         make_official: 成为官员
         title: "官方职位：用户搜索"
         no_results: 未找到官方职位。
@@ -883,6 +949,8 @@ zh-CN:
           pending: 有待
           rejected: 已拒绝
           verified: 已验证
+        hidden_count:
+          other: "也有<strong>一个组织</strong>没有用户或者有一名隐藏用户。\n有<strong>%{count} 个组织</strong>没有用户或者有一名隐藏用户。"
         name: 名字
         email: 电子邮件地址
         phone_number: 电话
@@ -903,6 +971,8 @@ zh-CN:
         title: 提议
         id: ID
         author: 作者
+        select: 选择
+        selected: 已选
         milestones: 里程碑
         no_proposals: 没有提议。
     hidden_proposals:
@@ -914,18 +984,25 @@ zh-CN:
           without_confirmed_hide: 有待
         title: 隐藏的提议
         no_hidden_proposals: 没有隐藏的提议。
+    hidden_proposal_notifications:
+      index:
+        filter: 过滤器
+        filters:
+          all: 所有
+          with_confirmed_hide: 已确认
+          without_confirmed_hide: 有待
+        title: 隐藏的通知
+        no_hidden_proposals: 没有隐藏的通知。
     settings:
       flash:
         updated: 价值已更新
       index:
         title: 配置设置
+        general: 配置设置
         update_setting: 更新
         feature_flags: 功能
         features:
           enabled: "功能已启用"
-          disabled: "功能已禁用"
-          enable: "启用"
-          disable: "禁用"
         map:
           title: 地图配置
           help: 在这里您可以自定义地图显示给用户的方式。拖动地图标记或者点击地图上的任意位置，设置所需的缩放，并点击“更新”按钮“。
@@ -934,14 +1011,10 @@ zh-CN:
           form:
             submit: 更新
       setting: 特性
-      setting_actions: 行动
       setting_name: 设置
-      setting_status: 状态
       setting_value: 价值
       no_description: "没有描述"
     shared:
-      true_value: "是"
-      false_value: "不是"
       search:
         label:
           booths: "按名字搜索投票亭"
@@ -950,6 +1023,7 @@ zh-CN:
           poll_questions: "搜索投票项问题"
           proposals: "按标题，代码，描述或问题搜索提议"
           users: "按名字或电子邮件搜索用户"
+        search: "搜索"
       search_results: "搜索结果"
       no_search_results: "未找到结果。"
       actions: 行动
@@ -963,6 +1037,7 @@ zh-CN:
       author: 作者
       content: 内容
       created_at: 创建于
+      show_results_and_stats: "显示结果和统计信息"
     geozones:
       index:
         title: 地理区域
@@ -998,6 +1073,7 @@ zh-CN:
       show:
         created_at: 已创建
         author: 作者
+        users: 用户
         verified:
           other: "有%{count} 个有效签名"
         unverified:
@@ -1025,10 +1101,22 @@ zh-CN:
           visits: 访问
           votes: 总投票数
         budgets_title: 参与性预算
+        participatory_budgets: 参与性预算
         direct_messages: 直接信息
         proposal_notifications: 提议通知
         incomplete_verifications: 不完全验证
         polls: 投票
+      graph:
+        debate_created: 辩论
+        visit: 访问
+        proposal_created: 公民提议
+      budget_balloting:
+        vote_count: 投票
+        participant_count: 参与者
+      budget_supporting:
+        users: 用户
+        vote_count: 投票
+        participant_count: 参与者
       direct_messages:
         title: 直接消息
         total: 总计
@@ -1048,9 +1136,12 @@ zh-CN:
           question_name: 问题
           origin_web: 网络参与者
           origin_total: 总参与人数
+      sdg:
+        debates: "辩论"
+        polls: "投票"
+        proposals: "提议"
     tags:
       create: 创建主题
-      destroy: 销毁主题
       index:
         add_tag: 添加新的提议主题
         title: 提议主题
@@ -1058,6 +1149,7 @@ zh-CN:
         help: "当用户创建提议，建议使用以下主题作为默认标签。"
     users:
       columns:
+        id: ID
         name: 名字
         email: 电子邮件地址
         document_number: 文档编号
@@ -1066,6 +1158,9 @@ zh-CN:
       index:
         title: 用户
         no_users: 没有用户。
+        filter: 过滤器
+        filters:
+          active: 活跃
       search:
         placeholder: 通过电子邮件，名字或者文档编号搜索用户
     verifications:
@@ -1166,3 +1261,15 @@ zh-CN:
         submit_header: 保存页眉
         card_title: 编辑卡
         submit_card: 保存卡
+    audits:
+      id: "ID"
+      actions: "行动"
+    local_census_records:
+      index:
+        document_type: 文档类型
+        document_number: 文档编号
+        date_of_birth: 出生日期
+    machine_learning:
+      related_content: "相关的内容"
+      tab_help: "帮助"
+      tags: "标签"

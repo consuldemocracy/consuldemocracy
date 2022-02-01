@@ -33,6 +33,7 @@ end
 
 section "Creating SDG homepage cards" do
   SDG::Phase.all.each do |phase|
-    Widget::Card.create!(cardable: phase, title: "#{phase.title} card")
+    Widget::Card.create!(cardable: phase, title: "#{phase.title} card",
+                        link_text: "Link Text", link_url: "/any_path")
   end
 end

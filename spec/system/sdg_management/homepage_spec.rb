@@ -22,6 +22,7 @@ describe "SDG homepage configuration" do
       click_link "Create planning card"
 
       within(".translatable-fields") { fill_in "Title", with: "My planning card" }
+      fill_in "Link URL", with: "/any_path"
       click_button "Create card"
 
       within(".planning-cards") do
@@ -54,6 +55,7 @@ describe "SDG homepage configuration" do
       click_link "Create header"
 
       within(".translatable-fields") { fill_in "Title", with: "My header" }
+      fill_in "Link URL", with: "/any_path"
       click_button "Create card"
 
       within(".sdg-header") do
@@ -80,7 +82,7 @@ describe "SDG homepage configuration" do
       visit sdg_management_homepage_path
 
       within ".sdg-header" do
-        accept_confirm { click_link "Delete" }
+        accept_confirm { click_button "Delete" }
       end
 
       expect(page).not_to have_content "SDG Header"

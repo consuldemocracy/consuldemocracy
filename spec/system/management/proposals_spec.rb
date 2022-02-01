@@ -16,7 +16,7 @@ describe "Proposals" do
         expect(page).to have_content user.document_number.to_s
       end
 
-      fill_in "Proposal title", with: "Help refugees"
+      fill_in_new_proposal_title with: "Help refugees"
       fill_in "Proposal summary", with: "In summary, what we want is..."
       fill_in_ckeditor "Proposal text", with: "This is very important because..."
       fill_in "External video URL", with: "https://www.youtube.com/watch?v=yRYFKcMa_Ek"
@@ -216,16 +216,16 @@ describe "Proposals" do
       login_as_manager
       click_link "Print proposals"
 
-      expect(page).to have_selector(".js-order-selector[data-order='confidence_score']")
+      expect(page).to have_link "Highest rated", class: "is-active"
 
       within(".proposals-list") do
         expect(best_proposal.title).to appear_before(medium_proposal.title)
         expect(medium_proposal.title).to appear_before(worst_proposal.title)
       end
 
-      select "Newest", from: "order-selector"
+      click_link "Newest"
 
-      expect(page).to have_selector(".js-order-selector[data-order='created_at']")
+      expect(page).to have_link "Newest", class: "is-active"
 
       expect(page).to have_current_path(/order=created_at/)
       expect(page).to have_current_path(/page=1/)

@@ -47,7 +47,7 @@ class Management::UsersController < Management::BaseController
     end
 
     def user_without_email
-      new_password = "aAbcdeEfghiJkmnpqrstuUvwxyz23456789$!".split("").sample(10).join("")
+      new_password = "aAbcdeEfghiJkmnpqrstuUvwxyz23456789$!".chars.sample(10).join
       @user.password = new_password
       @user.password_confirmation = new_password
 

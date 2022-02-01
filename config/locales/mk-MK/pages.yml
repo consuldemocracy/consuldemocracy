@@ -44,6 +44,7 @@ mk:
         title: "Процеси"
         description: "Во одделот %{link}, граѓаните учествуваат во составувањето и модифицирањето на правила кои влијаат на градот и можат да го дадат нивното мислење за општински политики во претходни дебати."
         link: "процеси"
+        feature_link: "регистрирај се во %{org_name}"
       faq:
         title: "Технички проблеми?"
         description: "Прочитај ги најчесто поставуваните прашања и најди одговор на прашањата."
@@ -96,6 +97,18 @@ mk:
             - 
               browser_column: Firefox
               key_column: ALT + CAPS + кратенка
+            - 
+              browser_column: Chrome
+            - 
+            - 
+      textsize:
+        browser_settings_table:
+          browser_header: Прелистувач
+          rows:
+            - 
+              browser_column: Прегледувач
+            - 
+              browser_column: Firefox
             - 
               browser_column: Chrome
             - 

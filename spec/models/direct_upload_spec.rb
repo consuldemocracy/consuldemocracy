@@ -43,16 +43,4 @@ describe DirectUpload do
       expect(proposal_document_direct_upload.relation.attachment.path).to include("cached_attachments")
     end
   end
-
-  context "destroy_attachment" do
-    it "removes uploaded file" do
-      proposal_document_direct_upload = build(:direct_upload, :proposal, :documents)
-
-      proposal_document_direct_upload.save_attachment
-      uploaded_path = proposal_document_direct_upload.relation.attachment.path
-      proposal_document_direct_upload.destroy_attachment
-
-      expect(File.exist?(uploaded_path)).to eq(false)
-    end
-  end
 end

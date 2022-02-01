@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Widget::Feeds::ProposalComponent, type: :component do
+describe Widget::Feeds::ProposalComponent do
   let(:proposal) { create(:proposal, sdg_goals: [SDG::Goal[1]]) }
   let(:component) { Widget::Feeds::ProposalComponent.new(proposal) }
 

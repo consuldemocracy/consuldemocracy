@@ -5,10 +5,7 @@ da:
       erase_account_link: Slet min konto
       finish_verification: Færdiggør verificering
       notifications: Notifikationer
-      organization_name_label: Navn på organisation
-      organization_responsible_name_placeholder: Repræsentant for organisationen/gruppen
       personal: Personlige oplysninger
-      phone_number_label: Telefonnummer
       public_interests_my_title_list: Tags jeg følger
       public_interests_user_title_list: Tags denne bruger følger
       save_changes_submit: Gem ændringer
@@ -22,7 +19,6 @@ da:
       user_permission_verify: For at kunne foretage handlingerne, skal din konto være verificeret.
       user_permission_verify_info: "* Kun for brugere af Census."
       user_permission_votes: Deltage i den endelige afstemning
-      username_label: Brugernavn
       verified_account: Konto verificeret
       verify_my_account: Verificer min konto
   application:
@@ -62,7 +58,6 @@ da:
       newest: Nyeste først
       oldest: Ældste først
       most_commented: Flest kommentarer
-    select_order: Sorter efter
     show:
       return_to_commentable: "Gå tilbage til "
   comments_helper:
@@ -90,7 +85,6 @@ da:
         submit_button: Gem ændringer
       show_link: Se debatindlæg
     form:
-      debate_title: Titel på debatindlæg
       tags_instructions: Tag denne debat.
       tags_placeholder: "Tilføj de tags du gerne vil anvende og adskil dem med komma (',')"
     index:
@@ -116,7 +110,6 @@ da:
       search_results:
         one: " som indeholder <strong>'%{search_term}'</strong>"
         other: " som indeholder <strong>'%{search_term}'</strong>"
-      select_order: Sorter efter
       start_debate: Start en debat
       title: Debatforum
       section_header:
@@ -131,8 +124,6 @@ da:
     new:
       form:
         submit_button: Start en debat
-      info: Hvis du ønsker at oprette et forslag, befinder du dig i den forkerte sektion, klik på %{info_link}.
-      info_link: opret et forslag
       more_info: Flere oplysninger
       recommendation_four: Tag del i debatten. Den tilhører også dig.
       recommendation_one: Anvend ikke udelukkende store bogstaver i debattitlen eller i hele sætninger. På internettet betragtes dette som råberi. Og ingen kan lide at blive råbt af.
@@ -190,6 +181,7 @@ da:
     local_census_records/import: Lokal census data import
     site_customization/content_block: indholdsblok
     site_customization/page: side
+    sdg/local_target: lokale delmål
   geozones:
     none: Hele byen
   layouts:
@@ -229,7 +221,6 @@ da:
     header:
       administration_menu: Admin
       administration: Administration
-      available_locales: Sprog
       collaborative_legislation: Kollaborativ lovgivning
       debates: Debatforum
       locale: "Sprog:"
@@ -250,6 +241,7 @@ da:
           one: Du har en ny notifikation
           other: Du har %{count} nye notifikationer
         notifications: Notifikationer
+      sdg: "Verdensmål"
   notifications:
     index:
       empty_notifications: Du har ingen nye notifikationer.
@@ -295,6 +287,9 @@ da:
       sign_in: Log ind med Twitter
       sign_up: Tilmeld dig via Twitter
       name: Twitter
+    info:
+      sign_in: "Log ind med:"
+      sign_up: "Tilmeld dig med:"
     or_fill: "Eller udfyld nedenstående formular:"
   proposals:
     create:
@@ -339,7 +334,6 @@ da:
       map_location: "Lokation"
       map_location_instructions: "Naviger kortet til den rette lokation og placer markøren."
       map_remove_marker: "Flyt markøren"
-      map_skip_checkbox: "Dette forslag omhandler ikke en specifik lokation, eller også kender jeg ikke til den."
     index:
       featured_proposals: Vist
       orders:
@@ -377,7 +371,6 @@ da:
       search_results:
         one: " indeholder betegnelserne <strong>'%{search_term}'</strong>"
         other: " indeholder betegnelserne <strong>'%{search_term}'</strong>"
-      select_order: Sorter efter
       select_order_long: "Forslag i henhold til:"
       start_proposal: Opret et borgerforslag
       title: Borgerforslag
@@ -669,14 +662,13 @@ da:
       back: "Gå tilbage til min aktivitet"
   shared:
     edit: "Rediger"
+    filter: "Filtrere"
     save: "Gem"
     delete: "Slet"
     "yes": "Ja"
     "no": "Nej"
     search_results: "Søgeresultater"
     advanced_search:
-      author_type: "Sorteret efter brugere"
-      author_type_blank: "Vælg en kategori"
       date: "Efter dato"
       date_placeholder: "DD/MM/ÅÅÅÅ"
       date_range_blank: "Vælg en dato"
@@ -687,7 +679,6 @@ da:
       date_5: "Brugertilpasset"
       from: "Fra"
       general: "Med teksten"
-      general_placeholder: "Skriv tekst"
       search: "Filtre"
       title: "Avanceret søgning"
       to: "Til"
@@ -920,6 +911,7 @@ da:
     help: "Du kan tilføje links af %{models} inden for %{org}."
     submit: "Tilføj"
     error: "Linket er ikke gyldigt. Husk at begynde med %{url}."
+    error_duplicate: "Det indhold du tilføjer eksisterer allerede."
     error_itself: "Linket er ikke gyldigt. Du kan ikke relatere indholdet til sig selv."
     success: "Du har tilføjet nyt relateret indhold"
     is_related: "Er det relateret indhold?"
@@ -945,9 +937,6 @@ da:
       title: Links
       note: Tilføj de links. der kan have interesse
       add_new_link: Tilføj nyt link
-    link_fields:
-      label_placeholder: Titel på link
-      url_placeholder: Link
   communities:
     show:
       surveys: Undersøgelser
@@ -963,7 +952,8 @@ da:
       enqueue_remote_translation: Oversættelser er blevet korrekt anmodet.
     button: Oversæt side
   tags:
-    filter:
-      more:
-        one: "Et tag mere"
-        other: "%{count} flere tags"
+    list:
+      filter:
+        more:
+          one: "Et tag mere"
+          other: "%{count} flere tags"

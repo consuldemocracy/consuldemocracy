@@ -16,6 +16,10 @@ class Poll
     after_create :create_officer_assignments
     before_destroy :destroy_officer_assignments
 
+    def title
+      "#{I18n.t("admin.poll_shifts.#{task}")} #{officer_name} #{I18n.l(date.to_date, format: :long)}"
+    end
+
     def persist_data
       self.officer_name = officer.name
       self.officer_email = officer.email

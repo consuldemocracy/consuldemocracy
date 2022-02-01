@@ -41,6 +41,7 @@ class Proposal < ApplicationRecord
   has_many :dashboard_executed_actions, dependent: :destroy, class_name: "Dashboard::ExecutedAction"
   has_many :dashboard_actions, through: :dashboard_executed_actions, class_name: "Dashboard::Action"
   has_many :polls, as: :related, inverse_of: :related
+  has_one :summary_comment, as: :commentable, class_name: "MlSummaryComment", dependent: :destroy
 
   validates_translation :title, presence: true, length: { in: 4..Proposal.title_max_length }
   validates_translation :description, length: { maximum: Proposal.description_max_length }
@@ -106,7 +107,7 @@ class Proposal < ApplicationRecord
 
   def self.recommendations(user)
     tagged_with(user.interests, any: true)
-      .where("author_id != ?", user.id)
+      .where.not(author_id: user.id)
       .unsuccessful
       .not_followed_by_user(user)
       .not_archived
@@ -114,7 +115,7 @@ class Proposal < ApplicationRecord
   end
 
   def self.not_followed_by_user(user)
-    where.not(id: followed_by_user(user).pluck(:id))
+    where.not(id: followed_by_user(user).ids)
   end
 
   def to_param

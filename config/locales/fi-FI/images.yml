@@ -7,8 +7,6 @@ fi:
       delete_button: Poista kuva
       note: "Voit lisätä yhden kuvan muodossa: %{accepted_content_types}, jonka koko on korkeintaan %{max_file_size} MB."
       add_new_image: Lisää kuva
-      admin_title: "Kuva"
-      admin_alt_text: "Vaihtoehtoinen kuvateksti"
     actions:
       destroy:
         notice: Kuva poistettiin onnistuneesti.

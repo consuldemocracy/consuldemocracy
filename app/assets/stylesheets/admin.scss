@@ -25,18 +25,22 @@ $sidebar:        #245b80;
 $sidebar-hover:  #25597c;
 $sidebar-active: #f4fcd0;
 
-$table-header:   #ecf1f6;
 $table-border:   $admin-border;
-$table-color:    #4f5860;
-
-$admin-title:    #2f82b4;
-$admin-text:     #434d54;
+$table-header:   #ecf1f6;
 
 .admin {
   @include admin-layout;
 
+  > header {
+    border-bottom: 1px solid #eee;
+
+    > * {
+      @include full-width-background($adjust-margin: false, $adjust-padding: true);
+    }
+  }
+
   h2 {
-    font-weight: 500;
+    font-weight: 100;
     margin-bottom: $line-height;
 
     small {
@@ -50,47 +54,22 @@ $admin-text:     #434d54;
 
   h3 {
     margin: $line-height 0;
-    color: $admin-title;
-
-    &.inline-block {
-      margin-bottom: 0;
-    }
-  }
-
-  a {
-
-    &.icon-link {
-
-      &:hover {
-        text-decoration: none;
-      }
-    }
   }
 
   .back {
     float: none;
   }
 
-  .header {
-    border: 0;
-  }
-
   .top-links {
     background: #000;
+    color: $white;
 
     a {
       line-height: rem-calc($line-height * 1.5);
     }
   }
 
-  .admin-top-bar {
-    background: #fff;
-  }
-
   .top-bar {
-    background: #fff !important;
-    border-bottom: 1px solid #eee;
-    color: #000;
     height: auto;
     padding-top: $line-height / 2;
 
@@ -102,25 +81,18 @@ $admin-text:     #434d54;
 
       .top-bar-right {
 
+        > ul {
+          border-bottom: 0;
+          padding-bottom: 0;
+          margin-bottom: 0;
+        }
+
         .submenu {
-          border: 0;
-          display: block;
-          margin-top: 0;
           position: initial;
-          width: 100%;
-        }
-
-        .is-active {
-          font-weight: normal;
-          text-decoration: none;
-        }
-
-        .is-submenu-item {
-          padding: $line-height / 2 0;
         }
 
         a {
-          font-weight: normal !important;
+          font-weight: normal;
         }
       }
 
@@ -132,31 +104,27 @@ $admin-text:     #434d54;
     [class^="icon-"] {
       font-size: $base-font-size;
     }
-  }
-
-  .menu .menu-text {
 
     h1 {
       margin-top: $line-height / 2;
       margin-bottom: 0;
 
       @include breakpoint(medium) {
-        margin-left: $line-height / 2;
         margin-top: 0;
       }
 
       small {
-        color: #000;
+        color: inherit;
         text-transform: uppercase;
       }
-    }
 
-    a {
-      color: #000 !important;
-      line-height: $line-height !important;
-
-      @include breakpoint(medium) {
-        line-height: $line-height !important;
+      a {
+        color: inherit;
+        display: inline-block;
+        font-family: "Lato" !important;
+        font-size: rem-calc(24);
+        font-weight: lighter;
+        line-height: 1;
       }
     }
   }
@@ -165,10 +133,6 @@ $admin-text:     #434d54;
 
     @include breakpoint(medium) {
       height: auto !important;
-    }
-
-    a {
-      color: #000 !important;
     }
   }
 
@@ -180,33 +144,6 @@ $admin-text:     #434d54;
 
   .notifications.unread-notifications::after {
     color: $admin-color;
-  }
-
-  .dropdown.menu > .is-dropdown-submenu-parent > a::after {
-    border-color: #000 transparent transparent;
-  }
-
-  .dropdown-pane {
-    padding: 0;
-    width: auto;
-
-    ul {
-      list-style-type: none;
-      margin: 0;
-    }
-
-    li {
-      border-bottom: 1px solid $admin-border;
-      border-top: 1px solid $admin-border;
-      display: block;
-      padding: $line-height / 2;
-      width: 100%;
-
-      &:first-child,
-      &:last-child {
-        border: 0;
-      }
-    }
   }
 
   .fieldset {
@@ -236,30 +173,19 @@ $admin-text:     #434d54;
 
     &.with-button {
       line-height: $line-height * 2;
-
-      .button {
-        @include brand-text;
-        background: #fff;
-      }
     }
   }
 
   table {
 
-    tbody {
-      border: 0;
-    }
-
-    tr {
-
-      &:last-child {
-        border-bottom: 2px solid $table-border;
-      }
+    caption {
+      font-style: italic;
+      font-weight: normal;
+      padding: 0;
+      text-align: $global-left;
     }
 
     thead {
-      border: 0;
-      color: $table-color;
 
       &,
       tr {
@@ -275,39 +201,26 @@ $admin-text:     #434d54;
       }
     }
 
-    caption {
-      @include element-invisible;
-    }
-
-
     th {
       background: $table-header;
       color: $admin-text;
       padding: $line-height / 2;
-
-      &:first-child {
-        border-top-left-radius: rem-calc(8);
-      }
-
-      &:last-child {
-        border-top-right-radius: rem-calc(8);
-      }
 
       label {
         color: $white;
       }
 
       a {
+        color: inherit;
         white-space: nowrap;
       }
     }
 
     tr {
-      background: #fff;
       border: $table-border;
 
       &:hover {
-        background: #f3f6f7;
+        background: adjust-color(darken($table-background, 2%), $red: -4, $green: -1);
       }
     }
 
@@ -321,6 +234,11 @@ $admin-text:     #434d54;
 
     [type="submit"] ~ a {
       margin-left: $line-height / 2;
+    }
+
+    [type="checkbox"] {
+      margin-bottom: 0;
+      vertical-align: middle;
     }
   }
 
@@ -349,45 +267,20 @@ $admin-text:     #434d54;
       border: $admin-border;
       border-radius: rem-calc(6);
       box-shadow: none;
-      margin-bottom: $line-height * 1.5;
-    }
 
-    [type]:not([type="submit"], [type="button"]) {
-      background: #fff !important;
-    }
-
-    label {
-      color: $admin-title;
-      margin-bottom: $line-height / 2;
-    }
-
-    .locale-form {
-
-      label {
-        color: #fff;
+      &:focus {
+        border: $input-border-focus;
       }
     }
   }
 
   .form-label {
-    color: $admin-title;
     font-weight: bold;
-    margin-bottom: $line-height / 2;
+    margin-bottom: 0;
   }
 
-  label,
-  .form-label {
-
-    + .help-text {
-      margin-top: rem-calc(-12);
-    }
-  }
-
-  .globalize-languages {
-    max-width: none;
-  }
-
-  .menu.simple {
+  .menu.simple,
+  .order-links {
     margin-bottom: $line-height / 2;
 
     h2 {
@@ -396,10 +289,13 @@ $admin-text:     #434d54;
     }
 
     .is-active {
-      border-bottom: 2px solid $admin-color;
       color: $admin-color;
       font-weight: bold;
     }
+  }
+
+  .order-links {
+    margin-bottom: $line-height;
   }
 
   .tabs-panel {
@@ -411,36 +307,18 @@ $admin-text:     #434d54;
     font-size: $base-font-size;
   }
 
-  .button {
-    font-weight: bold;
-    min-width: rem-calc(140);
-    max-height: $line-height * 2;
-
-    &.hollow {
-      border-width: 2px;
-    }
-
-    &.secondary {
-      margin-right: rem-calc(12);
-    }
-
-    .far {
-      padding: 0 $line-height / 4;
-    }
+  .button.secondary {
+    margin-right: rem-calc(12);
   }
 
   .admin-content {
-    .proposal-form {
+    .proposal-new {
       padding-top: 0;
     }
   }
 
   .is-featured {
     margin-top: rem-calc(36);
-  }
-
-  .select-order {
-    min-width: rem-calc(160);
   }
 }
 
@@ -554,170 +432,6 @@ code {
   }
 }
 
-.help-block {
-  background: $table-header;
-  border-radius: rem-calc(6);
-  color: $admin-text;
-  padding: $line-height / 2;
-  padding-right: $line-height * 2;
-  position: relative;
-
-  p {
-    font-size: $small-font-size;
-    font-style: italic;
-  }
-
-  .help-block-link {
-    display: block;
-    font-size: $small-font-size;
-    text-align: right;
-  }
-
-  .quote {
-    background: #ccd8e4;
-    display: table;
-    height: 100%;
-    position: absolute;
-    right: 12px;
-    top: 0;
-
-    span {
-      color: #fff;
-      display: table-cell;
-      padding: $line-height / 4;
-      vertical-align: bottom;
-    }
-  }
-}
-
-.reveal {
-  border-radius: rem-calc(12);
-
-  @include breakpoint(large) {
-    .row {
-      display: flex;
-      margin-bottom: $line-height * 2;
-    }
-
-    .column {
-      display: flex;
-      flex-flow: column;
-
-      &:last-child {
-        border-left: 2px solid $admin-border;
-      }
-    }
-  }
-
-  &:focus {
-    outline: 0;
-  }
-
-  .reveal-description {
-    color: $admin-text;
-    font-style: italic;
-    flex: 1;
-    text-align: center;
-
-    p {
-      font-size: $small-font-size;
-      text-align: left;
-    }
-  }
-
-  h1 {
-    color: $admin-text;
-    font-size: rem-calc(24);
-    margin-bottom: $line-height * 2;
-    margin-top: $line-height;
-    text-align: center;
-    text-transform: uppercase;
-  }
-
-  h2 {
-    font-size: rem-calc(24);
-    padding-top: $line-height;
-  }
-
-  .close-button {
-    border: 3px solid $admin-text;
-    border-radius: rem-calc(30);
-    color: $admin-text;
-    font-size: rem-calc(23);
-    font-weight: bold;
-    height: rem-calc(30);
-    width: rem-calc(30);
-  }
-
-  .button {
-
-    &.hollow {
-      display: inline-table;
-    }
-  }
-}
-
-.form-section-divider {
-  color: $admin-text;
-  clear: both;
-  font-size: $small-font-size;
-  font-weight: bold;
-  margin-top: $line-height * 2;
-  position: relative;
-  text-transform: uppercase;
-
-  span {
-    background: #fff;
-    display: inline-block;
-    padding-right: $line-height / 2;
-  }
-
-  &::after {
-    border: 2px solid $admin-border;
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 10px;
-    width: 100%;
-    z-index: -1;
-  }
-}
-
-.timeline-steps {
-  display: flex;
-  list-style-type: none;
-  margin: $line-height * 2 0;
-  position: relative;
-
-  li {
-    border-top: 4px solid $admin-border;
-    display: inline-block;
-    font-size: $small-font-size;
-    font-weight: bold;
-    padding: $line-height / 2 $line-height * 3 0;
-    text-transform: uppercase;
-
-    &::before {
-      background: $admin-border;
-      border-radius: rem-calc(20);
-      content: "";
-      height: 20px;
-      margin-left: $line-height / 2;
-      position: absolute;
-      top: -8px;
-      width: 20px;
-    }
-
-    &.step-active {
-      border-top: 4px solid $brand;
-
-      &::before {
-        background: $brand;
-      }
-    }
-  }
-}
-
 // 02. Sidebar
 // -----------
 
@@ -734,7 +448,7 @@ code {
   &:hover,
   &:active,
   &:focus {
-    border-bottom: 1px dotted #fff;
+    border-bottom-color: transparent;
     color: #cf2a0e;
   }
 }
@@ -742,16 +456,6 @@ code {
 [class^="icon-"].delete {
   border: 0;
   font-size: $base-font-size;
-}
-
-.verified {
-  color: $check;
-
-  a {
-    border-bottom: 1px dotted $check;
-    color: $check;
-    font-size: rem-calc(12);
-  }
 }
 
 .archived {
@@ -802,10 +506,6 @@ code {
 
 // 04. Stats
 // ---------
-
-.stats {
-  background: #fff;
-}
 
 .stats-numbers {
   p {
@@ -875,7 +575,7 @@ code {
   background: #fafafa;
   border-bottom-left-radius: rem-calc(6);
   border-bottom-right-radius: rem-calc(6);
-  border-top: 2px solid #000;
+  border-top: 2px solid;
   font-size: $small-font-size;
   padding: $line-height / 2;
 }
@@ -890,13 +590,6 @@ code {
   p {
     font-size: $small-font-size;
     margin-bottom: 0;
-  }
-}
-
-.admin {
-
-  .investment-projects-list.medium-9 {
-    width: 100%;
   }
 }
 
@@ -932,7 +625,8 @@ code {
   display: flex;
   flex-wrap: wrap;
 
-  a {
+  a,
+  button {
     @include regular-button;
     margin-left: auto;
   }
@@ -942,7 +636,7 @@ code {
 .admin-content .select-heading {
 
   a {
-    color: $text;
+    color: inherit;
     display: block;
 
     &.is-active {
@@ -1008,7 +702,7 @@ table {
 // ---------------
 
 .markdown-editor {
-  background-color: #fff;
+  background-color: $body-background;
 
   .markdown-area,
   .markdown-preview {
@@ -1274,17 +968,6 @@ table {
     }
   }
 
-  .legislation-draft-version-body {
-    font-family: $font-family-serif;
-    background: #f5f5f5;
-    height: 16em;
-
-    &:focus {
-      border: 1px solid #cacaca;
-      box-shadow: inset 0 1px 2px rgba(34, 34, 34, 0.1);
-    }
-  }
-
   .markdown-preview {
     font-family: $font-family-serif;
     border: 1px solid #cacaca;
@@ -1328,11 +1011,14 @@ table {
 
     .legislation-draft-version-body {
       border-radius: 0;
-      padding: 1rem;
-      border: 0;
 
       @include breakpoint(medium) {
-        padding: 1rem 2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+
+      &:focus {
+        box-shadow: inset 0 1px 2px rgba(34, 34, 34, 0.1);
       }
     }
 
@@ -1344,12 +1030,6 @@ table {
         padding: 1rem 2rem;
       }
     }
-  }
-}
-
-.legislation-draft-version-body {
-  &:focus {
-    border: 0;
   }
 }
 
@@ -1404,56 +1084,6 @@ table {
 // 10. Budgets
 // -----------------
 
-.budget {
-
-  th,
-  td {
-    vertical-align: top;
-
-    &:first-child {
-      padding-left: $line-height;
-    }
-  }
-}
-
-.budget-draft,
-.budget-completed {
-  position: relative;
-
-  &::before {
-    color: $admin-border;
-    content: "\f023";
-    font-family: "Font Awesome 5 Free";
-    font-weight: bold;
-    left: 4px;
-    position: absolute;
-    top: 20px;
-  }
-
-  span {
-    color: $admin-text;
-    display: block;
-    font-size: $tiny-font-size;
-    font-weight: bold;
-    line-height: rem-calc(12);
-    text-transform: uppercase;
-  }
-}
-
-.budget-draft {
-
-  &::before {
-    content: "\f303";
-  }
-}
-
-.budget-completed {
-
-  &::before {
-    content: "\f023";
-  }
-}
-
 .advanced-filters {
   margin: $line-height 0;
 
@@ -1497,10 +1127,6 @@ table {
     }
   }
 
-  [class^="icon-"] {
-    vertical-align: middle;
-  }
-
   &[aria-expanded='true'] {
     @include regular-button;
   }
@@ -1520,7 +1146,7 @@ table {
     }
 
     label {
-      font-size: 17px;
+      font-size: $base-font-size;
       line-height: 1.5rem;
     }
   }
@@ -1536,7 +1162,7 @@ table {
 // 11. Newsletters
 // -----------------
 
-.newsletter-body-content {
+.admin .newsletter-body-content {
 
   table,
   tbody,

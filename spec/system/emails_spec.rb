@@ -316,8 +316,7 @@ describe "Emails" do
       expect { open_last_email }.to raise_error "No email has been sent!"
     end
 
-    xscenario "Delete all Notifications included in the digest after email sent" do
-    end
+    xscenario "Delete all Notifications included in the digest after email sent"
   end
 
   context "User invites" do
@@ -342,18 +341,15 @@ describe "Emails" do
   end
 
   context "Budgets" do
-    let(:author)   { create(:user, :level_two) }
-    let(:budget)   { create(:budget) }
-    let!(:heading) { create(:budget_heading, name: "More hospitals", budget: budget) }
+    let(:author) { create(:user, :level_two) }
+    let(:budget) { create(:budget) }
+    before { create(:budget_heading, name: "More hospitals", budget: budget) }
 
     scenario "Investment created" do
       login_as(author)
       visit new_budget_investment_path(budget_id: budget.id)
 
-      expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
-                                     visible: false)
-
-      fill_in "Title", with: "Build a hospital"
+      fill_in_new_investment_title with: "Build a hospital"
       fill_in_ckeditor "Description", with: "We have lots of people that require medical attention"
 
       click_button "Create Investment"

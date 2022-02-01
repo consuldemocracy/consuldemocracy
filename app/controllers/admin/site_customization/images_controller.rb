@@ -26,8 +26,7 @@ class Admin::SiteCustomization::ImagesController < Admin::SiteCustomization::Bas
   end
 
   def destroy
-    @image.image = nil
-    if @image.save
+    if @image.update(image: nil)
       notice = t("admin.site_customization.images.destroy.notice")
     else
       notice = t("admin.site_customization.images.destroy.error")
@@ -39,8 +38,6 @@ class Admin::SiteCustomization::ImagesController < Admin::SiteCustomization::Bas
   private
 
     def image_params
-      params.require(:site_customization_image).permit(
-        :image
-      )
+      params.require(:site_customization_image).permit(:image)
     end
 end

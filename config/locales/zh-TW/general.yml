@@ -5,10 +5,7 @@ zh-TW:
       erase_account_link: 刪除我的帳戶
       finish_verification: 完成驗證
       notifications: 通知
-      organization_name_label: 組織名稱
-      organization_responsible_name_placeholder: 組織/集體的代表人
       personal: 個人資料
-      phone_number_label: 電話號碼
       public_interests_my_title_list: 您跟蹤的元素之標籤
       public_interests_user_title_list: 此用戶跟蹤的元素之標籤
       save_changes_submit: 儲存更改
@@ -22,7 +19,6 @@ zh-TW:
       user_permission_verify: 要執行所有操作，請核實您的帳戶。
       user_permission_verify_info: "* 僅適用於人口普查的用戶。"
       user_permission_votes: 參與最終投票
-      username_label: 用戶名
       verified_account: 帳戶已被核實
       verify_my_account: 核實我的帳戶
   application:
@@ -39,6 +35,10 @@ zh-TW:
       responses:
         zero: 沒有回覆
         other: "%{count} 個回覆"
+      responses_show:
+        zero: 沒有回覆
+      responses_collapse:
+        zero: 沒有回覆
       user_deleted: 用戶已刪除
       votes:
         zero: 沒有投票
@@ -52,7 +52,6 @@ zh-TW:
       newest: 最新排先
       oldest: 最舊排先
       most_commented: 最多評論
-    select_order: 排序依據
     show:
       return_to_commentable: "返回到 "
   comments_helper:
@@ -78,7 +77,6 @@ zh-TW:
         submit_button: 儲存更改
       show_link: 查看辯論
     form:
-      debate_title: 辯論標題
       tags_instructions: 為此辯論加標籤。
       tags_placeholder: "輸入您要用的標籤，以逗號分隔 (',')"
     index:
@@ -101,7 +99,8 @@ zh-TW:
         button: 搜尋
         placeholder: 搜尋辯論...
         title: 搜尋
-      select_order: 排序依據
+      search_results:
+        other: " 包含術語 <strong>'%{search_term}'</strong>"
       start_debate: 開始一個辯論
       title: 辯論
       section_header:
@@ -116,8 +115,6 @@ zh-TW:
     new:
       form:
         submit_button: 開始一個辯論
-      info: 如果您想要提出建議，這是錯誤的位置，請進入%{info_link}。
-      info_link: 創建新建議
       more_info: 更多資訊
       recommendation_four: 享受這片空間和其中充滿的聲音。 這也是你的空間。
       recommendation_one: 不要用大寫字母寫辯論標題或整個句子。 在互聯網上，這是被當作為＂叫喊＂。沒有人喜歡被呼喝的。
@@ -150,6 +147,7 @@ zh-TW:
     direct_message: 私人信息
     error: 錯誤
     errors: 錯誤
+    not_saved: "阻止此%{resource} 的儲存。 <br>請檢查標記的字段以了解如何更正它們："
     policy: 隱私政策
     proposal: 建議
     proposal_notification: "通知"
@@ -171,6 +169,14 @@ zh-TW:
       firefox: Firefox
       ie: 我們檢測到您正在使用Internet Explorer來瀏覽。 為了增強體驗，我們建議您使用%{firefox} 或%{chrome}。
       ie_title: 此網站沒有為您的瀏覽器優化
+    dashboard:
+      proposal_header:
+        published: 發表
+        draft: 草稿
+      proposal_totals:
+        supports:
+          zero: 沒有支持
+          other: "支持"
     footer:
       accessibility: 無障礙功能
       conditions: 使用條款及條件
@@ -187,7 +193,6 @@ zh-TW:
     header:
       administration_menu: 管理員
       administration: 管理
-      available_locales: 可用語言
       collaborative_legislation: 立法進程
       debates: 辯論
       locale: "語言："
@@ -245,11 +250,16 @@ zh-TW:
       sign_in: 用Twitter登錄
       sign_up: 用Twitter登記
       name: Twitter
+    info:
+      sign_in: "登錄用："
+      sign_up: "登記用："
     or_fill: "或填寫以下表格："
   proposals:
     create:
       form:
         submit_button: 創建建議
+    share:
+      dashboard: 查看更多資訊
     edit:
       editing: 編輯建議
       form:
@@ -278,7 +288,6 @@ zh-TW:
       map_location: "地圖位置"
       map_location_instructions: "將地圖導航到該位置，並放置標記。"
       map_remove_marker: "刪除地圖標記"
-      map_skip_checkbox: "這個建議沒有具體的位置，或我沒有注意到。"
     index:
       featured_proposals: 特色
       orders:
@@ -309,7 +318,8 @@ zh-TW:
         button: 搜尋
         placeholder: 搜尋建議...
         title: 搜尋
-      select_order: 排序依據
+      search_results:
+        other: " 包含術語 <strong>'%{search_term}'</strong>"
       select_order_long: "您正在查看的建議是依據："
       start_proposal: 創建一個建議
       title: 建議
@@ -376,6 +386,53 @@ zh-TW:
     update:
       form:
         submit_button: 儲存更改
+  dashboard:
+    menu:
+      community: 社群
+      polls: 投票
+      related_content: 相關內容
+    progress:
+      supports: 支持
+    index:
+      edit_proposal_link: 編輯建議
+      retire: 撤回建議
+    recommended_actions:
+      pending_title: 有待
+      done_title: 完成
+    goal:
+      days:
+        other: "%{count} 日"
+    community:
+      access_community: 訪問社群
+      participants: 參與者
+      debates: 辯論
+      comments: 評論
+    polls:
+      index:
+        title: 投票
+        create: 創建投票項
+        additiontal_information: 額外資訊
+      new:
+        title: 新投票項
+        submit: 創建投票項
+      edit:
+        submit: 更新投票項
+      poll:
+        responses:
+          other: "%{count} 個回覆"
+      form:
+        add_question: 添加問題
+      question_fields:
+        add_answer: 添加答案
+    poster:
+      options:
+        preview: 預覽
+    mailing:
+      mailing_options:
+        preview: 預覽
+    mailer:
+      forward:
+        support_button: 支持此建議
   polls:
     all: "所有"
     no_dates: "未分配日期"
@@ -409,6 +466,7 @@ zh-TW:
       back: 返回投票
       cant_answer_not_logged_in: "您必須%{signin} 或%{signup} 才能參與。"
       comments_tab: 評論
+      cant_answer_verify: "您必須%{verify_link} 才能回答。"
       verify_link: "核實您的帳戶"
       cant_answer_expired: "此投票項已結束。"
       cant_answer_wrong_geozone: "此問題並不適用於您的地理區域。"
@@ -446,14 +504,13 @@ zh-TW:
       back: "回到我的活動"
   shared:
     edit: "編輯"
+    filter: "篩選器"
     save: "儲存"
     delete: "刪除"
     "yes": "是的"
     "no": "否"
     search_results: "搜尋結果"
     advanced_search:
-      author_type: "按作者類別"
-      author_type_blank: "選擇一個類別"
       date: "按日期"
       date_placeholder: "DD/MM/YYYY"
       date_range_blank: "選擇一個日期"
@@ -464,7 +521,6 @@ zh-TW:
       date_5: "自定"
       from: "從"
       general: "隨著文本"
-      general_placeholder: "編寫文本"
       search: "篩選器"
       title: "進階搜尋"
       to: "到"
@@ -504,6 +560,7 @@ zh-TW:
       districts: "地區"
       districts_list: "地區清單"
       categories: "類別"
+    target_blank: " (鏈接在新視窗中打開)"
     you_are_in: "你在"
     unflag: 取消標記
     unfollow_entity: "取消跟隨%{entity}"
@@ -523,6 +580,9 @@ zh-TW:
       title: 推薦
       see_more: 查看更多推薦
       hide: 隱藏推薦
+    translations:
+      remove_language: 刪除語言
+      add_language: 添加語言
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -546,6 +606,11 @@ zh-TW:
     manage:
       all: "您沒有權限在%{subject} 上執行操作'%{action}'。"
   users:
+    login_to_comment: "您必須%{signin} 或%{signup} 才能留下評論。"
+    login_to_continue: "您必須%{signin} 或%{signup} 才能繼續。"
+    signin: "登錄"
+    signup: "登記"
+    verify_account: "核實您的帳戶"
     direct_messages:
       new:
         direct_messages_bloqued: "此用戶已決定不接收直接消息"
@@ -560,6 +625,7 @@ zh-TW:
       deleted_proposal: 此建議已被刪除
       deleted_budget_investment: 此投資項目已被刪除
       proposals: 建議
+      proposals_status: 狀態
       debates: 辯論
       budget_investments: 預算投資
       comments: 評論
@@ -582,7 +648,10 @@ zh-TW:
       delete_alert: "您確定要刪除您的投資項目嗎？ 此操作將無法撤消"
     proposals:
       retired: "已撤回建議"
+      draft: 草稿
+      published: 發表
       see: "查看建議"
+      actions: 行動
   votes:
     agree: 我同意
     anonymous: 太多的匿名投票，要允許投票%{verify_account}。
@@ -667,3 +736,7 @@ zh-TW:
       alt: 選擇要評論的文本，然後按下鉛筆按鈕。
       text: 要對此文檔發表評論，您必須%{sign_in} 或%{sign_up}。 然後選擇要評論的文本，並按下鉛筆按鈕。
       title: 我怎樣能對此文檔作評論？
+  links:
+    form:
+      delete_button: 刪除
+      cancel_button: 取消

@@ -7,9 +7,9 @@
     <%= question.title %>
   </h3>
 
-  <% if question.answers_with_description.any? %>
+  <% if question.answers_with_content.any? %>
     <br>
-    <a href="#answer_<%= "#{question.answers_with_description.first.id}" %>" class="small" data-smooth-scroll>
+    <a href="#answer_<%= question.answers_with_content.first.id %>" class="small" data-smooth-scroll>
       <%= t("polls.show.more_info_options") %>
     </a>
   <% end %>

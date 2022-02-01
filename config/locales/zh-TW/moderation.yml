@@ -12,9 +12,8 @@ zh-TW:
         headers:
           comment: 評論
           moderate: 審核
-        hide_comments: 隱藏評論
+        hide: 隱藏評論
         ignore_flags: 標記為已查看
-        order: 排序
         orders:
           flags: 最多標記
           newest: 最新
@@ -34,9 +33,8 @@ zh-TW:
         headers:
           debate: 辯論
           moderate: 審核
-        hide_debates: 隱藏辯論
+        hide: 隱藏辯論
         ignore_flags: 標記為已查看
-        order: 排序
         orders:
           created_at: 最新
           flags: 最多標記
@@ -62,9 +60,8 @@ zh-TW:
         headers:
           moderate: 審核
           proposal: 建議
-        hide_proposals: 隱藏建議
+        hide: 隱藏建議
         ignore_flags: 標記為已查看
-        order: 排序依據
         orders:
           created_at: 最新
           flags: 最多標記
@@ -81,9 +78,8 @@ zh-TW:
         headers:
           moderate: 審核
           budget_investment: 預算投資
-        hide_budget_investments: 隱藏預算投資
+        hide: 隱藏預算投資
         ignore_flags: 標記為已查看
-        order: 排序依據
         orders:
           created_at: 最新
           flags: 最多標記
@@ -100,9 +96,8 @@ zh-TW:
         headers:
           moderate: 審核
           proposal_notification: 建議通知
-        hide_proposal_notifications: 隱藏建議
+        hide: 隱藏建議
         ignore_flags: 標記為已查看
-        order: 排序依據
         orders:
           created_at: 最新
           moderated: 已審核

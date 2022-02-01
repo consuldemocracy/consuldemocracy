@@ -5,10 +5,7 @@ sr:
       erase_account_link: Обриши мој налог
       finish_verification: Доврши потврђивање
       notifications: Обавештења
-      organization_name_label: Назив организације
-      organization_responsible_name_placeholder: Представници организације/колектива
       personal: Лични детаљи
-      phone_number_label: Број телефона
       public_interests_my_title_list: Ознаке елемената које пратите
       public_interests_user_title_list: Ознаке елемената које овај корисник прати
       save_changes_submit: Сачувајте измене
@@ -22,7 +19,6 @@ sr:
       user_permission_verify: Како бисте извели све радње потврдите ваш налог.
       user_permission_verify_info: "*Само за кориснике на Попису."
       user_permission_votes: Учествујте у завршном гласању
-      username_label: Корисничко име
       verified_account: Налог потврђен
       verify_my_account: Потврди мој налог
   application:
@@ -66,7 +62,6 @@ sr:
       newest: Најновије прво
       oldest: Најстарије прво
       most_commented: Са највише коментара
-    select_order: Разврстано по
     show:
       return_to_commentable: "Иди назад на "
   comments_helper:
@@ -96,7 +91,6 @@ sr:
         submit_button: Сачувајте измене
       show_link: Видите расправу
     form:
-      debate_title: Наслов расправе
       tags_instructions: Ознака ове расправе.
       tags_placeholder: "Унесите ознаке које желите да користите, одвојене зарезима (',')"
     index:
@@ -123,7 +117,6 @@ sr:
         one: " која садржи појам<strong>%{search_term}</strong>"
         few: " који садрже појам <strong>%{search_term}</strong>"
         other: " који садржи појам <strong>%{search_term}</strong>"
-      select_order: Наручено по
       start_debate: Започните расправу
       title: Расправе
       section_header:
@@ -138,8 +131,6 @@ sr:
     new:
       form:
         submit_button: Започните дебату
-      info: Ако желите да направите предлог, ово је погрешан одељак, унесите %{info_link}.
-      info_link: креирајте нови предлог
       more_info: Још информација
       recommendation_four: Уживајте у овом простору и гласовима који га испуњавају. Припадају вама.
       recommendation_one: Немојте користити велика слова за наслов расправе или за целе реченице. На интернету, ово се разуме као викање. А нико не воли да се на њега виче.
@@ -238,7 +229,6 @@ sr:
     header:
       administration_menu: Menu
       administration: Администрација
-      available_locales: Доступни језици
       collaborative_legislation: Заједнички закон
       debates: Расправе
       locale: "Језик:"
@@ -355,7 +345,6 @@ sr:
       map_location: "Мапирајте локацију"
       map_location_instructions: "Навигујте мапу до локације и поставите маркер."
       map_remove_marker: "Уклоните маркер са мапе"
-      map_skip_checkbox: "Ова инвестиција не поседује одређену локацију или ја тога нисам свестан."
     index:
       featured_proposals: Истакнуто
       orders:
@@ -394,7 +383,6 @@ sr:
         one: " који садржи термин <strong>'%{search_term}'</strong>"
         few: " који садржи термин <strong>'%{search_term}'</strong>"
         other: " који садржи термин <strong>'%{search_term}'</strong>"
-      select_order: Наручено по
       select_order_long: "Предлози су приказани на основу:"
       start_proposal: Креирајте предлог
       title: Предлози
@@ -694,14 +682,13 @@ sr:
       back: "Вратите се на мој садржај"
   shared:
     edit: "Уреди"
+    filter: "Филтер"
     save: "Сачувај"
     delete: "Обриши"
     "yes": "Да"
     "no": "Не"
     search_results: "Види резултате"
     advanced_search:
-      author_type: "По категорији аутора"
-      author_type_blank: "Одаберите категорију"
       date: "По датуму"
       date_placeholder: "DD/MM/YYYY"
       date_range_blank: "Изаберите датум"
@@ -712,7 +699,6 @@ sr:
       date_5: "Прилагођени"
       from: "Од"
       general: "Са текстом"
-      general_placeholder: "Напишите текст"
       search: "Филтер"
       title: "Унапређена претрага"
       to: "За"
@@ -976,9 +962,6 @@ sr:
       title: Линкови
       note: Додајте линкове који су од интереса
       add_new_link: Додај нови линк
-    link_fields:
-      label_placeholder: Назив линка
-      url_placeholder: Адреса линка
   communities:
     show:
       surveys: Анкете

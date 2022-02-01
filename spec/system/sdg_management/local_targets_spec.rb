@@ -16,7 +16,7 @@ describe "Local Targets" do
       expect(page).to have_title "SDG content - Local Targets"
       within("table tr", text: "Affordable food") do
         expect(page).to have_link "Edit"
-        expect(page).to have_link "Delete"
+        expect(page).to have_button "Delete"
       end
       expect(page).to have_link "Create local target"
     end
@@ -39,8 +39,7 @@ describe "Local Targets" do
     scenario "Shows succesful notice when form is fullfilled correctly" do
       visit new_sdg_management_local_target_path
 
-      target = SDG::Target["1.1"]
-      select "#{target.code} #{target.title}", from: "Target"
+      select "1.1. Eradicate Extreme Poverty", from: "Target"
       fill_in "Code", with: "1.1.1"
       fill_in "Title", with: "Local target title"
       fill_in "Description", with: "Local target description"
@@ -53,8 +52,7 @@ describe "Local Targets" do
     scenario "Shows form errors when not valid" do
       visit new_sdg_management_local_target_path
 
-      target = SDG::Target["2.3"]
-      code_and_title = "#{target.code} #{target.title}"
+      code_and_title = "2.3. Double the Productivity and Incomes of Small-Scale Food Producers"
       select code_and_title, from: "Target"
       click_button "Create local target"
 
@@ -91,7 +89,7 @@ describe "Local Targets" do
       create(:sdg_local_target, code: "1.1.1")
       visit sdg_management_local_targets_path
 
-      accept_confirm { click_link "Delete" }
+      accept_confirm { click_button "Delete" }
 
       expect(page).to have_content("Local target deleted successfully")
       expect(page).not_to have_content("1.1.1")

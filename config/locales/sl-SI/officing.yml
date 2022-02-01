@@ -15,6 +15,18 @@ sl:
         no_polls: Ne nadzoruješ nobenih končnih štetij v nobenem od aktivnih glasovanj
         select_poll: Izberi glasovanje
         add_results: Dodaj rezultate
+    poll_budgets:
+      index:
+        ballot_sheet_name: Ime
+        ballot_sheet_author: Avtor
+        ballot_sheet_creation_date: Datum ustvarjanja
+      new:
+        booth: Volišče
+        select_booth: Izberi volišče
+        submit: Shrani
+      show:
+        created_at: Datum ustvarjanja
+        author: Avtor
     results:
       flash:
         create: "Rezultati shranjeni"
@@ -46,7 +58,6 @@ sl:
         not_allowed: "Danes tukaj nimaš opravkov"
       new:
         title: Preveri dokument
-        document_number: "Številka dokumenta (vključno s črkami)"
         submit: Preveri dokument
         error_verifying_census: "Popis ni mogel verificirati tega dokumenta."
         form_errors: preprečuje verifikacijo tega dokumenta

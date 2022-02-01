@@ -1,12 +1,11 @@
 <p class="form-section-divider"><span><%= t("admin.budgets.edit.info.heading_settings") %></span></p>
 
-<%= render "shared/globalize_locales", resource: @heading %>
+<%= translatable_form_for heading, url: path, html: { class: "budget-headings-form" } do |f| %>
+  <%= render "shared/globalize_locales", resource: heading %>
 
-<%= translatable_form_for [:admin, @budget, @group, @heading], url: path do |f| %>
+  <%= render "shared/errors", resource: heading %>
 
-  <%= render "shared/errors", resource: @heading %>
-
-  <%= hidden_field :budget, :mode, value: @mode %>
+  <%= render Admin::BudgetsWizard::ModeFieldComponent.new %>
 
   <%= f.translatable_fields do |translations_form| %>
     <div class="small-12 medium-6 column end">
@@ -21,10 +20,9 @@
       <%= f.hidden_field :price, value: 0 %>
     <% end %>
 
-    <% if @heading.budget.approval_voting? %>
+    <% if heading.budget.approval_voting? %>
       <%= f.number_field :max_ballot_lines,
-                         hint: t("admin.budget_headings.form.max_ballot_lines_info") %>
-
+                           hint: t("admin.budget_headings.form.max_ballot_lines_info") %>
     <% end %>
 
     <%= f.text_field :population,
@@ -45,8 +43,8 @@
   </div>
 
   <div class="clear">
-    <% if @mode == "single" %>
-      <%= f.submit t("admin.budget_headings.create.button.continue"), class: "button success" %>
+    <% if respond_to?(:single_heading?) && single_heading? %>
+      <%= f.submit t("admin.budgets_wizard.headings.continue"), class: "button success" %>
     <% else %>
       <%= f.submit t("admin.budget_headings.form.#{action}"), class: "button hollow" %>
     <% end %>

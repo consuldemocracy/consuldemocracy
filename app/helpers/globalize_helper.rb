@@ -130,9 +130,7 @@ module GlobalizeHelper
     hidden_field_tag("enabled_translations[#{locale}]", (enabled ? 1 : 0))
   end
 
-  def globalize(locale)
-    Globalize.with_locale(locale) do
-      yield
-    end
+  def globalize(locale, &block)
+    Globalize.with_locale(locale, &block)
   end
 end

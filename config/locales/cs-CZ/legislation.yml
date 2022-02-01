@@ -4,6 +4,16 @@ cs:
       comments:
         see_all: Zobrazit vše
         see_complete: Zobrazit vše
+        comments_count:
+          one: "%{count} komentář"
+          few: "%{count} komentářů"
+          many: "%{count} komentářů"
+          other: "%{count} komentářů"
+        replies_count:
+          one: "%{count} odpověď"
+          few: "%{count} odpovědi"
+          many: "%{count} odpovědí"
+          other: "%{count} odpovědí"
         cancel: Zrušit
         publish_comment: Zveřejnit komentář
       form:
@@ -12,6 +22,11 @@ cs:
         title: Komentáře
         comments_about: Komentáře k
         see_in_context: Zobrazit v textu
+        comments_count:
+          one: "%{count} komentář"
+          few: "%{count} komentářů"
+          many: "%{count} komentářů"
+          other: "%{count} komentářů"
       show:
         title: Komentář
       version_chooser:
@@ -86,6 +101,10 @@ cs:
       question:
         comments:
           zero: Žádné komentáře
+          one: "%{count} komentář"
+          few: "%{count} komentářů"
+          many: "%{count} komentářů"
+          other: "%{count} komentářů"
         debate: Debata
       show:
         answer_question: Odeslat odpověď
@@ -106,3 +125,35 @@ cs:
       form:
         tags_label: "Kategorie"
       not_verified: "Pro hlasování o návrzích %{verify_account}."
+      process_title: Participativní legislativní proces
+    summary:
+      title: "Souhrn"
+      votes:
+        zero: "%{count} hlasů"
+      debate_phase: "Fáze debaty"
+      proposals_phase: "Fáze návrhu"
+      allegations_phase: "Fáze připomínkování"
+      debates:
+        zero: "Žádné debaty"
+      proposals:
+        zero: "Žádné návrhy"
+        one: "%{count} návrh"
+        few: "%{count} návrhy"
+        many: "%{count} návrhů"
+        other: "%{count} návrhů"
+      comments:
+        zero: "Žádné komentáře"
+        one: "%{count} komentář"
+        few: "%{count} komentáře"
+        many: "%{count} komentářů"
+        other: "%{count} komentářů"
+      download: "Stáhnout shrnutí"
+      top_comments:
+        zero: "Žádné komentáře"
+        one: "%{count} komentář"
+        few: "Nejlepší komentáře"
+        many: "Nejlepších komentářů"
+        other: "Nejlepší komentáře"
+      most_voted_comments: "Nejčastěji hlasované komentáře"
+      no_allegation: "Nejsou žádné komentáře"
+      process_empty: "Tento proces neměl žádné fáze účasti"

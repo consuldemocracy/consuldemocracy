@@ -12,9 +12,8 @@ gl:
         headers:
           comment: Comentar
           moderate: Moderar
-        hide_comments: Ocultar comentarios
+        hide: Ocultar comentarios
         ignore_flags: Marcar como revisadas
-        order: Orde
         orders:
           flags: Máis denunciadas
           newest: Máis novos
@@ -34,9 +33,8 @@ gl:
         headers:
           debate: o debate
           moderate: Moderar
-        hide_debates: Ocultar debates
+        hide: Ocultar debates
         ignore_flags: Marcar como revisado
-        order: Orde
         orders:
           created_at: Máis novos
           flags: Máis denunciadas
@@ -62,9 +60,8 @@ gl:
         headers:
           moderate: Moderar
           proposal: a proposta
-        hide_proposals: Ocultar propostas
+        hide: Ocultar propostas
         ignore_flags: Marcar como revisado
-        order: Ordenar por
         orders:
           created_at: Máis recentes
           flags: Máis denunciadas
@@ -81,9 +78,8 @@ gl:
         headers:
           moderate: Moderar
           budget_investment: Proposta de investimento
-        hide_budget_investments: Agochar investimentos orzamentarios
+        hide: Agochar investimentos orzamentarios
         ignore_flags: Marcar como revisado
-        order: Ordenar por
         orders:
           created_at: Máis recentes
           flags: Máis denunciadas
@@ -100,9 +96,8 @@ gl:
         headers:
           moderate: Moderar
           proposal_notification: Aviso de proposta
-        hide_proposal_notifications: Agochar propostas
+        hide: Ocultar propostas
         ignore_flags: Marcar como revisado
-        order: Ordenar por
         orders:
           created_at: Máis recentes
           moderated: Moderado

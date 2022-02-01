@@ -12,7 +12,7 @@ module Documentable
     end
 
     def max_file_size
-      Setting["uploads.documents.max_size"].to_i.megabytes
+      Setting["uploads.documents.max_size"].to_i
     end
 
     def accepted_content_types

@@ -1,12 +1,7 @@
-<div class="row">
+<main class="topic-edit">
+  <%= back_link_to community_path(@community) %>
 
-  <div class="small-12 medium-9 column">
-    <%= back_link_to community_path(@community) %>
-    <h1><%= t("community.topic.edit") %></h1>
-    <%= render "form" %>
-  </div>
+  <h1><%= t("community.topic.edit") %></h1>
 
-  <div class="small-12 medium-3 column">
-    <%= render "recommendations" %>
-  </div>
-</div>
+  <%= render "form" %>
+</main>

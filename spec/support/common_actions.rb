@@ -33,13 +33,31 @@ module CommonActions
   end
 
   def fill_in_proposal
-    fill_in "Proposal title", with: "Help refugees"
+    fill_in_new_proposal_title with: "Help refugees"
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in_ckeditor "Proposal text", with: "This is very important because..."
     fill_in "External video URL", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
     fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
     # Check terms of service by default
     # check "I agree to the Privacy Policy and the Terms and conditions of use"
+  end
+
+  def fill_in_new_proposal_title(with:)
+    fill_in "Proposal title", with: with
+
+    expect(page).to have_css ".suggest-success"
+  end
+
+  def fill_in_new_debate_title(with:)
+    fill_in "Debate title", with: with
+
+    expect(page).to have_css ".suggest-success"
+  end
+
+  def fill_in_new_investment_title(with:)
+    fill_in "Title", with: with
+
+    expect(page).to have_css ".suggest-success"
   end
 
   def set_officing_booth(booth = nil)

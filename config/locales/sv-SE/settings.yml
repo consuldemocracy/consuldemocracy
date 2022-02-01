@@ -2,16 +2,16 @@ sv:
   settings:
     comments_body_max_length: "Maximal längd på kommentarer"
     comments_body_max_length_description: "I antal tecken"
-    official_level_1_name: "Tjänsteperson nivå 1"
-    official_level_1_name_description: "Tagg som visas för användare markerade som funktionärer på nivå 1"
-    official_level_2_name: "Tjänsteperson nivå 2"
-    official_level_2_name_description: "Tagg som visas för användare markerade som funktionärer på nivå 2"
-    official_level_3_name: "Tjänsteperson nivå 3"
-    official_level_3_name_description: "Tagg som visas för användare markerade som funktionärer på nivå 3"
-    official_level_4_name: "Tjänsteperson nivå 4"
-    official_level_4_name_description: "Tagg som visas för användare markerade som funktionärer på nivå 4"
-    official_level_5_name: "Tjänsteperson nivå 5"
-    official_level_5_name_description: "Tagg som visas för användare markerade som funktionärer på nivå 5"
+    official_level_1_name: "Nivå 1-tjänsteman"
+    official_level_1_name_description: "Tagg som visas för användare markerade som tjänsteman på nivå 1"
+    official_level_2_name: "Nivå 2-tjänsteman"
+    official_level_2_name_description: "Tagg som visas för användare markerade som tjänsteman på nivå 2"
+    official_level_3_name: "Nivå 3-tjänsteman"
+    official_level_3_name_description: "Tagg som visas för användare markerade som tjänsteman på nivå 3"
+    official_level_4_name: "Nivå 4-tjänsteman"
+    official_level_4_name_description: "Tagg som visas för användare markerade som tjänsteman på nivå 4"
+    official_level_5_name: "Nivå 5-tjänsteman"
+    official_level_5_name_description: "Tagg som visas för användare markerade som tjänsteman på nivå 5"
     max_ratio_anon_votes_on_debates: "Maximal andel anonyma röster per debatt"
     max_ratio_anon_votes_on_debates_description: "Anonyma röster kommer från registrerade användare vars konton ej är verifierade"
     max_votes_for_proposal_edit: "Gräns för antal röster efter vilket ett förslag inte längre kan redigeras"
@@ -23,10 +23,10 @@ sv:
     featured_proposals_number: "Antal uppmärksammade förslag"
     featured_proposals_number_description: "Antal uppmärksammade förslag som ska visas om funktionen Uppmärksammade förslag är aktiv"
     votes_for_proposal_success: "Antal röster som krävs för att ett förslag ska antas"
-    votes_for_proposal_success_description: "När ett förslag uppnår detta antal stöd kan det inte längre ta emot fler stöd och anses vara framgångsrik"
+    votes_for_proposal_success_description: "När ett förslag uppnår detta antal stöd kan det inte längre ta emot fler och anses ha lyckats"
     months_to_archive_proposals: "Antal månader innan förslag arkiveras"
     months_to_archive_proposals_description: "Efter detta antal månader blir förslagen arkiverade och kan inte längre ta emot stöd"
-    email_domain_for_officials: "E-postdomän för tjänstepersoner"
+    email_domain_for_officials: "E-postdomän för tjänstemän"
     email_domain_for_officials_description: "Alla användare registrerade med denna domän får sitt konto verifierat vid registrering"
     twitter_handle: "Användarnamn på Twitter"
     twitter_handle_description: "Om ifyllt visas det i sidfoten"
@@ -48,7 +48,7 @@ sv:
     related_content_score_threshold_description: "Baserat på betygen på röster i relaterat innehåll gömmer detta innehåll som användare markerat som ej relaterat"
     hot_score_period_in_days: "Period (dagar) som används av filtret 'mest aktiva'"
     hot_score_period_in_days_description: "Filtret 'mest aktiva' används i flera avsnitt och baseras på rösterna under de senaste X dagarna"
-    mailer_from_name: "Ursprunglig e-postadress"
+    mailer_from_name: "Avsändarnamn för e-post"
     mailer_from_name_description: "Detta namn visas som avsändarnamn i e-brev som skickas från programmet"
     mailer_from_address: "E-postadress för avsändare"
     mailer_from_address_description: "Denna e-postadress visas i e-brev som skickas av programmet"
@@ -64,21 +64,21 @@ sv:
       successful_proposal_id: Framgångsrikt förslag
       successful_proposal_id_description: Detta förslag används som en riktlinje för ett lyckat förslag i antal stöd och visas i diagrammet i dashboard.
       poll_short_title: Omröstningar
-      poll_short_title_description: Kort beskrivning av enkätfunktionen. Tillåter användare att skapa enkäter kring ett förslag
+      poll_short_title_description: Kort beskrivning av enkätfunktionen, med vilken användare kan skapa enkäter kring ett förslag
       poll_description: Omröstningsbeskrivning
       poll_description_description: Detaljerad beskrivning av enkätfunktionen
       poll_link: Länk till ytterligare information
       poll_link_description: Lägger till ytterligare en informationslänk om enkätfunktionen
       email_short_title: E-post
-      email_short_title_description: 'Kort beskrivning av e-mejl funktionen. Den tillåter användare att skicka ett mejl för att marknadsföra sitt förslag. Du kan hitta allt innehåll för detta mejl i "/app/views/dashboard/mailer/forward.html.erb"'
-      email_description: E-posts beskrivning
+      email_short_title_description: 'Kort beskrivning av e-postfunktionen, med vilken användare kan skicka e-post som stöd för sitt förslag. Du hittar allt innehåll för detta e-postmeddelande i "/app/views/dashboard/mailer/forward.html.erb"'
+      email_description: E-postbeskrivning
       email_description_description: Detaljerad beskrivning av e-postfunktionen
       poster_short_title: Affisch
-      poster_short_title_description: 'Kort beskrivning av affischfunktionen. Användare kan hämta en affisch i PDF-format för att marknadsföra sitt förslag. Du kan hitta allt innehåll för affischen i "/app/views/dashboard/poster/index.pdf.erb"'
+      poster_short_title_description: 'Kort beskrivning av affischfunktionen, med vilken användare kan hämta en affisch i PDF-format som stöd för sitt förslag. Du hittar allt innehåll för affischen i "/app/views/dashboard/poster/index.pdf.erb"'
       poster_description: Beskrivning av affischen
       poster_description_description: Detaljerad beskrivning av affischfunktionen
-    analytics_url: "Analytiker URL"
-    proposal_notification_minimum_interval_in_days: "Minsta intervall (i dagar) mellan att författare av förslag kan skicka nya aviseringar om förslag"
+    analytics_url: "Analytiker-URL"
+    proposal_notification_minimum_interval_in_days: "Minsta intervall (i dagar) mellan att förslagslämnare kan skicka nya aviseringar om förslag"
     proposal_notification_minimum_interval_in_days_description: "Antalet dagar som en användare kan skicka en avisering till alla som följer deras förslag"
     direct_message_max_per_day: "Högsta antalet direktmeddelanden per dag"
     direct_message_max_per_day_description: "Högsta antalet av direktmeddelanden som en användare kan skicka per dag"
@@ -94,26 +94,28 @@ sv:
       featured_proposals: "Uppmärksammade förslag"
       featured_proposals_description: "Visar uppmärksammade förslag på indexsidan för förslag"
       signature_sheets: "Namninsamlingar"
-      signature_sheets_description: "Tillåter att röster om förslag och budgetförslag i medborgarbudgetar som samlats in på plats kan läggas in via administrationspanelen"
+      signature_sheets_description: "Tillåter att röster om förslag och investeringsprojekt i medborgarbudgetar som samlats in på plats kan läggas in via administrationspanelen"
       user:
         recommendations: "Rekommendationer"
         recommendations_description: "Visar rekommendationer för användare på startsidan baserat på taggarna i objekten de följer"
         skip_verification: "Hoppa över användarverifiering"
-        skip_verification_description: "Detta avaktiverar verifiering av användarna och alla registrerade använder kan delta i alla processer"
+        skip_verification_description: "Detta inaktiverar verifiering av användare och alla registrerade användare kan delta i alla processer"
         recommendations_on_debates: "Rekommenderade debatter"
-        recommendations_on_debates_description: "Visar rekommendationer från användare på debattsidan baserat på taggarna i objekten som de följer"
+        recommendations_on_debates_description: "Visar rekommendationer för användare på debattsidan baserat på taggarna i objekten som de följer"
         recommendations_on_proposals: "Rekommenderade förslag"
-        recommendations_on_proposals_description: "Visar rekommendationer från användare på förslagssidan baserat på taggarna i objekten som de följer"
-      community: "Gemenskap kring förslag och budgetförslag"
-      community_description: "Aktiverar gemenskapsavsnitten i förslagen och budgetförslagen i medborgarbudgetarna"
-      map: "Geografisk plats för förslag och budgetförslag"
-      map_description: "Aktiverar geografiska positioner av förslag och investeringsprojekt"
+        recommendations_on_proposals_description: "Visar rekommendationer för användare på förslagssidan baserat på taggarna i objekten som de följer"
+      community: "Gemenskap kring förslag och investeringar"
+      community_description: "Aktiverar gemenskapsavsnitten i förslagen och investeringsprojekten i medborgarbudgetarna"
+      machine_learning: "AI/maskininlärning"
+      machine_learning_description: "Aktivera avsnittet AI/maskininlärning för att köra python-skript och berika innehåll automatiskt."
+      map: "Geografisk plats för förslag och budgetinvesteringar"
+      map_description: "Aktiverar förslags och investeringsprojekts geografiska positioner"
       allow_images: "Tillåt uppladdning och visning av bilder"
-      allow_images_description: "Tillåter användare att skicka in bilder när de skapar förslag och budgetförslag i medborgarbudgetar"
+      allow_images_description: "Tillåter användare att skicka in bilder när de skapar förslag och investeringsprojekt i medborgarbudgetar"
       allow_attached_documents: "Tillåt uppladdning och visning av dokument"
-      allow_attached_documents_description: "Tillåter användare att skicka in dokument när de skapar förslag och budgetförslag i medborgarbudgetar"
-      guides: "Instruktioner för att skapa förslag eller budgetförslag"
-      guides_description: "Visar en guide över skillnaderna mellan förslag och budgetförslag om det finns en aktiv medborgarbudget"
+      allow_attached_documents_description: "Tillåter användare att skicka in dokument när de skapar förslag och investeringsprojekt i medborgarbudgetar"
+      guides: "Instruktioner för att skapa förslag och investeringsprojekt"
+      guides_description: "Visar en guide över skillnaderna mellan förslag och investeringsprojekt om det finns en aktiv medborgarbudget"
       public_stats: "Offentlig statistik"
       public_stats_description: "Visar offentlig statistik i administratörspanelen"
       help_page: "Hjälpsida"
@@ -125,11 +127,13 @@ sv:
       remote_census: "Konfigurera anslutning till fjärradressregister (SOAP)"
       remote_census_description: "Tillåter konfiguration av anslutningen till fjärradressregistret för varje institution"
       valuation_comment_notification: "Avisering om bedömningskommentar"
-      valuation_comment_notification_description: "Skicka e-post till alla berörda användare, utom den som gör kommentaren till budgetförslaget, när en ny bedömningskommentar skapas"
+      valuation_comment_notification_description: "Skicka e-post till alla berörda användare, utom den som gör kommentaren till budgetinvesteringen, när en ny kostnadsberäkningskommentar skapas"
       graphql_api: "GraphQL API"
       dashboard:
         notification_emails: "Dashboard för e-postaviseringar"
         notification_emails_description: "Aktivera skickande av dashboard-aviseringar via e-post till förslagslämnare"
+      remove_investments_supports: "Tillåt borttagning av stöd för budgetinvesteringar"
+      remove_investments_supports_description: "Tillåt att användare tar bort stöd för medborgarbudgetinvesteringar under projektvalsfasen."
       sdg: Globala målen
       sdg_description: Aktivera delarna Globala mål för hållbar utveckling i administrationsmenyn och i Globala inställningar.
     remote_census:
@@ -154,8 +158,8 @@ sv:
         date_of_birth_description: "Vad är sökvägen i svaret till användarens födelsedatum?"
         postal_code: "Sökväg för postnummer"
         postal_code_description: "Vad är sökvägen i svaret till användarens postnummer?"
-        district: "Sökväg för stadsdel"
-        district_description: "Vad är sökvägen i svaret till användarens stadsdel?"
+        district: "Sökväg för distrikt"
+        district_description: "Vad är sökvägen i svaret till användarens distrikt?"
         gender: "Sökväg för kön"
         gender_description: "Vad är sökvägen i svaret till användarens kön?"
         name: "Sökväg för namn"
@@ -180,8 +184,8 @@ sv:
       polls_description: "Medborgaromröstningar är en deltagandeprocess där röstberättigade medborgare fattar beslut genom omröstning"
       budgets: "Medborgarbudget"
       budgets_description: "I medborgarbudgeten bestämmer medborgarna om en del av den kommunala budgeten genom att skapa och rösta på budgetförslag"
-      legislation: "Planering"
-      legislation_description: "Deltagarprocesser ger möjlighet till medborgarna att delta i utformandet av regelverk som påverkar samhället och ge sina synpunkter på olika planerade åtgärder"
+      legislation: "Medborgardialoger"
+      legislation_description: "Deltagarprocesser ger medborgarna möjlighet att delta i utformandet av regelverk som påverkar samhället och ge sina synpunkter beträffande olika planerade åtgärder"
     html:
       per_page_code_head: "Kod att inkludera på varje sida (<head>)"
       per_page_code_head_description: "Denna kod visas inuti etiketten <head>. Användbart för anpassade skript, analys..."

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe SDG::Goals::IndexComponent, type: :component do
+describe SDG::Goals::IndexComponent do
   let!(:goals) { SDG::Goal.all }
   let!(:phases) { SDG::Phase.all }
   let!(:component) { SDG::Goals::IndexComponent.new(goals, header: nil, phases: phases) }

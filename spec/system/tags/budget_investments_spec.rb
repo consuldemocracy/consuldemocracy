@@ -66,10 +66,7 @@ describe "Tags" do
 
     visit new_budget_investment_path(budget_id: budget.id)
 
-    expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
-                                   visible: false)
-
-    fill_in "Title", with: "Build a skyscraper"
+    fill_in_new_investment_title with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
 
     fill_in "budget_investment_tag_list", with: "#{tag_medio_ambiente.name}, #{tag_economia.name}"
@@ -86,10 +83,7 @@ describe "Tags" do
 
     visit new_budget_investment_path(budget_id: budget.id)
 
-    expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
-                                   visible: false)
-
-    fill_in "Title", with: "Build a skyscraper"
+    fill_in_new_investment_title with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
 
     find(".js-add-tag-link", text: tag_economia.name).click
@@ -112,10 +106,7 @@ describe "Tags" do
     visit budget_path(budget)
     click_link "Create a budget investment"
 
-    expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
-                                   visible: false)
-
-    fill_in "Title", with: "Build a skyscraper"
+    fill_in_new_investment_title with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
 
     find(".js-add-tag-link", text: "Education").click
@@ -138,10 +129,7 @@ describe "Tags" do
     visit budget_investments_path(budget, heading_id: heading.id)
     click_link "Create a budget investment"
 
-    expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
-                                   visible: false)
-
-    fill_in "Title", with: "Build a skyscraper"
+    fill_in_new_investment_title with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
 
     find(".js-add-tag-link", text: "Education").click
@@ -161,10 +149,7 @@ describe "Tags" do
 
     visit new_budget_investment_path(budget_id: budget.id)
 
-    expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
-                                   visible: false)
-
-    fill_in "Title", with: "Build a skyscraper"
+    fill_in_new_investment_title with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
 
     fill_in "budget_investment_tag_list", with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
@@ -180,10 +165,7 @@ describe "Tags" do
 
     visit new_budget_investment_path(budget_id: budget.id)
 
-    expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
-                                   visible: false)
-
-    fill_in "Title", with: "Build a skyscraper"
+    fill_in_new_investment_title with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
 
     fill_in "budget_investment_tag_list", with: "user_id=1, &a=3, <script>alert('hey');</script>"

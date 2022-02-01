@@ -53,11 +53,7 @@
               <% end %>
             <% end %>
           </td>
-          <td>
-            <%= render Admin::TableActionsComponent.new(milestone,
-              destroy_text: t("admin.milestones.index.delete")
-            ) %>
-          </td>
+          <td><%= render Admin::TableActionsComponent.new(milestone) %></td>
         </tr>
       <% end %>
     </tbody>

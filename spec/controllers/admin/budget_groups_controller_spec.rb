@@ -1,12 +1,12 @@
 require "rails_helper"
 
 describe Admin::BudgetGroupsController, :admin do
-  describe "GET index" do
+  describe "GET new" do
     it "raises an exception when the feature is disabled" do
       Setting["process.budgets"] = false
 
       expect do
-        get :index, params: { budget_id: create(:budget).id }
+        get :new, params: { budget_id: create(:budget).id }
       end.to raise_exception(FeatureFlags::FeatureDisabled)
     end
   end

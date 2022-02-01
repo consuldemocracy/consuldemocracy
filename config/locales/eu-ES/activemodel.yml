@@ -16,6 +16,16 @@ eu:
           confirmation_code: "Konfirmazio kodea"
         email:
           recipient: "E-mail"
+      verification/letter:
+        email: "E-mail"
+        password: "Web orri honetara sartzeko erabiliko duzun pasahitza"
+      verification/management/document:
+        document_type: "Agiri mota:"
+        document_number: "NAN/Pasaportea/Egoitza txartela"
+      verification/residence:
+        date_of_birth: "Jaiotze data"
+        document_type: "Agiri mota"
+        postal_code: "Posta-kodea"
       officing/residence:
         document_type: "Agiri mota"
         document_number: "Dokumentu zenbakia (letrak barne)"

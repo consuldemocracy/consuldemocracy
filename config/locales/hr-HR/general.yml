@@ -5,10 +5,7 @@ hr:
       erase_account_link: Obriši moj račun
       finish_verification: Završi provjeru
       notifications: Obavijesti
-      organization_name_label: Ime organizacije
-      organization_responsible_name_placeholder: Predstavnik organizacije/skupine
       personal: Osobni podaci
-      phone_number_label: Broj telefona
       public_interests_my_title_list: Oznake elemenata koje pratite
       public_interests_user_title_list: Oznake elemenata koje ovaj korisnik prati
       save_changes_submit: Spremi promjene
@@ -22,7 +19,6 @@ hr:
       user_permission_verify: Kako biste izvodili ove aktivnosti, potvrdite svoj račun.
       user_permission_verify_info: "* Samo za korisnike Cenzusa."
       user_permission_votes: Sudjelovati u završnom glasanju
-      username_label: Korisničko ime
       verified_account: Račun provjeren
       verify_my_account: Potvrdi moj račun
   application:
@@ -66,7 +62,6 @@ hr:
       newest: Najnoviji prvo
       oldest: Najstariji prvo
       most_commented: Najviše komentirani
-    select_order: Sortiraj po
     show:
       return_to_commentable: "Vrati se na "
   comments_helper:
@@ -96,7 +91,6 @@ hr:
         submit_button: Spremi promjene
       show_link: Pogledaj raspravu
     form:
-      debate_title: Naslov rasprave
       tags_instructions: Označi ovu raspravu.
       tags_placeholder: "Unesite oznake koje želite koristite, odvojene zarezima (',')"
     index:
@@ -123,7 +117,6 @@ hr:
         one: " sadrži termin <strong>%{search_term}</strong>"
         few: " sadrži termine <strong>%{search_term}</strong>"
         other: " sadrži termine <strong>%{search_term}</strong>"
-      select_order: Naruči po
       start_debate: Započnite raspravu
       title: Rasprave
       section_header:
@@ -138,8 +131,6 @@ hr:
     new:
       form:
         submit_button: Započnite raspravu
-      info: Ako želite napraviti prijedlog, onda je ova pogrešna sekcija, slijedite %{info_link}.
-      info_link: izradite novi prijedlog
       more_info: Više informacija
       recommendation_four: Uživajte na ovom mjestu, nek se i vaš glas čuje.
       recommendation_one: Ne koristite velika početna slova za naslove rasprave niti cijele rečenice. Na internetu se takav način može shvatiti kao vikanje, a nitko ne želi da se na njega viče.
@@ -238,7 +229,6 @@ hr:
     header:
       administration_menu: Administrator
       administration: Administracija
-      available_locales: Dostupni jezici
       collaborative_legislation: Javno savjetovanje
       debates: Rasprave
       locale: "Jezik:"
@@ -355,7 +345,6 @@ hr:
       map_location: "Lokacija na mapi"
       map_location_instructions: "Pronađi lokaciju na mapi i stavi marker."
       map_remove_marker: "Ukloni marker na mapi"
-      map_skip_checkbox: "Ovaj prijedlog ne mora imati konkretnu lokaciju ili ja nisam svijestan toga."
     index:
       featured_proposals: Istaknuto
       orders:
@@ -394,7 +383,6 @@ hr:
         one: " sadrži termin <strong>%{search_term}</strong>"
         few: " sadrže termin <strong>%{search_term}</strong>"
         other: " sadrže termin <strong>%{search_term}</strong>"
-      select_order: Poredaj po
       select_order_long: "Vršite pregled prijedloga po:"
       start_proposal: Izradi prijedlog
       title: Prijedlozi
@@ -694,14 +682,13 @@ hr:
       back: "Nzad na moju aktivnost"
   shared:
     edit: "Uredi"
+    filter: "Filter"
     save: "Spremi"
     delete: "Izbriši"
     "yes": "Da"
     "no": "Ne"
     search_results: "Pretraži rezultate"
     advanced_search:
-      author_type: "Po kategoriji autora"
-      author_type_blank: "Odaberi kategoriju"
       date: "Po datumu"
       date_placeholder: "DD/MM/YYYY"
       date_range_blank: "Odaberi datum"
@@ -712,7 +699,6 @@ hr:
       date_5: "Prilagođeno"
       from: "Od"
       general: "S tekstom"
-      general_placeholder: "Napiši tekst"
       search: "Filter"
       title: "Napredna pretraga"
       to: "Do"
@@ -976,9 +962,6 @@ hr:
       title: Poveznice
       note: Dodaj poveznice koje vas zanimaju
       add_new_link: Dodaj novu poveznicu
-    link_fields:
-      label_placeholder: Naslov poveznice
-      url_placeholder: Adresa poveznice
   communities:
     show:
       surveys: Ankete

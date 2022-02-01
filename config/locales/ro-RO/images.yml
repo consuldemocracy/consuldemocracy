@@ -7,8 +7,6 @@ ro:
       delete_button: Șterge imagine
       note: "Puteți încărca o imagine cu următoarele tipuri de conținut: %{accepted_content_types}, până la %{max_file_size} MB."
       add_new_image: Adaugă imagine
-      admin_title: "Imagine"
-      admin_alt_text: "Text alternativ pentru imagine"
     actions:
       destroy:
         notice: Imaginea a fost ștearsă cu succes.

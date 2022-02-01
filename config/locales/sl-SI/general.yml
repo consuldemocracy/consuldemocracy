@@ -5,13 +5,11 @@ sl:
       erase_account_link: Izbriši moj račun
       finish_verification: Zaključi verifikacijo
       notifications: Obvestila
-      organization_name_label: Ime organizacije
-      organization_responsible_name_placeholder: Predstavnik/-ca organizacije/kolektiva
       personal: Osebni podatki
-      phone_number_label: Telefonska številka
       public_interests_my_title_list: Oznake elementov, ki jim slediš
       public_interests_user_title_list: Oznake elementov, ki jim sledi ta uporabnik
       save_changes_submit: Shrani spremembe
+      recommendations: Priporočila
       title: Moj račun
       user_permission_debates: Sodeluješ v debatah
       user_permission_info: S svojim računom lahko ...
@@ -21,7 +19,6 @@ sl:
       user_permission_verify: Za izvedbo vseh dejanj potrdi svoj račun.
       user_permission_verify_info: "* Samo za uporabnike, ki so na popisu."
       user_permission_votes: Sodeluješ v končnem glasovanju
-      username_label: Uporabniško ime
       verified_account: Račun potrjen
       verify_my_account: Potrdi moj račun
   application:
@@ -35,6 +32,10 @@ sl:
       deleted: Ta komentar je bil izbrisan
       responses:
         zero: Ni odgovorov
+      responses_show:
+        zero: Ni odgovorov
+      responses_collapse:
+        zero: Ni odgovorov
       user_deleted: Uporabnik izbrisan
       votes:
         zero: Ni glasov
@@ -47,7 +48,6 @@ sl:
       newest: Novejši naprej
       oldest: Starejši naprej
       most_commented: Največ komentarjev
-    select_order: Uredi po
     show:
       return_to_commentable: "Pojdi nazaj na "
   comments_helper:
@@ -71,7 +71,6 @@ sl:
         submit_button: Shrani spremembe
       show_link: Poglej razpravo
     form:
-      debate_title: Naslov razprave
       tags_instructions: Dodaj oznake tej razpravi.
       tags_placeholder: "Vnesi oznake, ki jih želiš uporabiti, in jih loči z vejico (',')"
     index:
@@ -90,7 +89,6 @@ sl:
         button: Išči
         placeholder: Išči razprave...
         title: Išči
-      select_order: Uredi po
       start_debate: Začni razpravo
       title: Razprave
       section_header:
@@ -105,8 +103,6 @@ sl:
     new:
       form:
         submit_button: Začni razpravo
-      info: Če želiš dodati predlog, nisi na pravem koncu spletne strani, pojdi raje na %{info_link}.
-      info_link: ustvarjanje novega predloga
       more_info: Več informacij
       recommendation_four: Uživaj v tem prostoru in v glasovih, ki ga naseljujejo. Ta prostor pripada tudi tebi.
       recommendation_one: Ne uporabljaj velikih tiskanih črk za naslov razprave ali za pisanje celih stavkov. Na internetu to pomeni, da kričiš - in nihče ne mara, da kričijo nanj.
@@ -138,11 +134,13 @@ sl:
     direct_message: Zasebno sporočilo
     error: Napaka
     errors: Napake
+    not_saved: "preprečil ta %{resource}, da bi se shranil. <br>Prosimo, preveri označena polja:"
     policy: Politiko zasebnosti
     proposal: Predlog
     proposal_notification: "Obvestilo"
     budget/investment: Naložba
     budget/heading: Proračunska postavka
+    poll/shift: Izmena
     poll/question/answer: Odgovor
     user: Račun
     verification/sms: telefon
@@ -156,6 +154,13 @@ sl:
     application:
       ie: Zaznali smo, da za brskanje po internetu uporabljaš Internet Explorer. Za boljšo izkušno te spletne strani, ti predlagamo preklop na %{firefox} ali %{chrome}.
       ie_title: Ta spletna stran ni optimizirana za tvoj brskalnik
+    dashboard:
+      proposal_header:
+        published: Objavljena
+        draft: Osnutek
+      proposal_totals:
+        supports:
+          zero: Brez podpornikov
     footer:
       accessibility: Dostopnosti
       conditions: Pogoji uporabe
@@ -167,8 +172,8 @@ sl:
       participation_title: Sodelovanje
       privacy: Politiko zasebnosti
     header:
+      administration_menu: Meni
       administration: Administracija
-      available_locales: Razpoložljivi jeziki
       collaborative_legislation: Zakonodajni procesi
       debates: Razprave
       locale: "Jezik:"
@@ -215,11 +220,16 @@ sl:
     twitter:
       sign_in: Vpiši se s Twitterjem
       sign_up: Vpiši se s Twitterjem
+    info:
+      sign_in: "Vpiši se z:"
+      sign_up: "Registriraj se z:"
     or_fill: "Ali izpolni ta obrazec:"
   proposals:
     create:
       form:
         submit_button: Ustvari predlog
+    share:
+      dashboard: Oglej si več informacij
     edit:
       editing: Uredi predlog
       form:
@@ -248,7 +258,6 @@ sl:
       map_location: "Lokacija na zemljevidu"
       map_location_instructions: "Na zemljevidu najdi lokacijo in postavi označevalec."
       map_remove_marker: "Odstrani označevalec"
-      map_skip_checkbox: "Ta predlog nima konkretne lokacije ali je ne poznam."
     index:
       featured_proposals: Izpostavljeno
       orders:
@@ -275,7 +284,6 @@ sl:
         button: Išči
         placeholder: Išči predloge...
         title: Išči
-      select_order: Razvrsti po
       select_order_long: "Predloge si ogleduješ glede na:"
       start_proposal: Ustvari predlog
       title: Predlogi
@@ -326,6 +334,7 @@ sl:
       comments_tab: Komentarji
       flag: Ta predlog je več uporabnikov označilo kot neprimeren.
       notifications_tab: Obvestila
+      milestones_tab: Mejniki
       retired_warning: "Avtor meni, da ta predlog ne bi smel več dobivati podpore."
       retired_warning_link_to_explanation: Preberi razlago, preden glasuješ zanj.
       retired: Predlog upokojen s strani avtorja
@@ -337,6 +346,44 @@ sl:
     update:
       form:
         submit_button: Shrani spremembe
+  dashboard:
+    menu:
+      polls: Glasovanja
+      related_content: Povezane vsebine
+    progress:
+      supports: Glasovi
+    index:
+      edit_proposal_link: Uredi predlog
+      retire: Upokoji predlog
+    recommended_actions:
+      pending_title: V teku
+      done_title: Izveden
+    community:
+      debates: Razprave
+      comments: Komentarji
+    polls:
+      index:
+        title: Glasovanja
+        create: Ustvari glasovanje
+        additiontal_information: Dodatne informacije
+      new:
+        title: Novo glasovanja
+        submit: Ustvari glasovanje
+      edit:
+        submit: Posodobi glasovanje
+      form:
+        add_question: Dodaj naslov
+      question_fields:
+        add_answer: Dodaj odgovor
+    poster:
+      options:
+        preview: Predogled
+    mailing:
+      mailing_options:
+        preview: Predogled
+    mailer:
+      forward:
+        support_button: Podpri ta predlog
   polls:
     all: "Vsi"
     no_dates: "Brez datuma"
@@ -367,6 +414,7 @@ sl:
       back: Nazaj na glasovanje
       cant_answer_not_logged_in: "Za sodelovaje se moraš %{signin} ali %{signup}."
       comments_tab: Komentarji
+      cant_answer_verify: "Za odgovarjanje moraš %{verify_link}."
       verify_link: "potrditi svoj račun"
       cant_answer_expired: "To glasovanje je že končano."
       cant_answer_wrong_geozone: "To vprašanje ni na voljo v tvojem mestu/občini."
@@ -404,14 +452,13 @@ sl:
       back: "Vrni se na mojo aktivnost"
   shared:
     edit: "Uredi"
+    filter: "Filtriraj"
     save: "Shrani"
     delete: "Izbriši"
     "yes": "Da"
     "no": "Ne"
     search_results: "Rezultati iskanja"
     advanced_search:
-      author_type: "Po kategoriji avtorja"
-      author_type_blank: "Izberi kategorijo"
       date: "Po datumu"
       date_range_blank: "Izberi datum"
       date_1: "Zadnjih 24 ur"
@@ -421,7 +468,6 @@ sl:
       date_5: "Po meri"
       from: "Od"
       general: "Z besedilom"
-      general_placeholder: "napiši besedilo"
       search: "Filtriraj"
       title: "Napredno iskanje"
       to: "Za"
@@ -454,6 +500,7 @@ sl:
       districts: "Področja"
       districts_list: "Seznam področij"
       categories: "Kategorije"
+    target_blank: " (povezava se odpre v novem oknu)"
     you_are_in: "Si v"
     unflag: Odznači
     unfollow_entity: "Prenehaj slediti %{entity}"
@@ -469,6 +516,8 @@ sl:
       title: Način prikaza
       cards: Kartice
       list: Seznam
+    recommended_index:
+      title: Priporočila
   stats:
     index:
       visits: Obiski
@@ -486,6 +535,11 @@ sl:
     manage:
       all: "Nimaš dovoljenja za izvedbo '%{action}' glede %{subject}."
   users:
+    login_to_comment: "Če želiš komentirati, se moraš %{signin} ali %{signup}."
+    login_to_continue: "Za nadaljevanje se moraš %{signin} ali %{signup}."
+    signin: "vpisati"
+    signup: "registrirati"
+    verify_account: "potrditi svoj račun"
     direct_messages:
       new:
         direct_messages_bloqued: "Ta uporabnik/-ca se je odločil/-a, da ne želi prejemati direktnih sporočil."
@@ -511,7 +565,10 @@ sl:
       delete_alert: "Si prepričan/-a, da želiš izbrisati svoj naložbeni projekt? Tega ni mogoče razveljaviti."
     proposals:
       retired: "Upokoji predlog"
+      draft: Osnutek
+      published: Objavljena
       see: "Poglej predlog"
+      actions: Dejanja
   votes:
     agree: Strinjam se
     anonymous: Preveč anonimnih glasov za sprejetje glasu %{verify_account}.
@@ -590,3 +647,7 @@ sl:
   admin/widget:
     header:
       title: Administracija
+  links:
+    form:
+      delete_button: Izbriši
+      cancel_button: Prekliči

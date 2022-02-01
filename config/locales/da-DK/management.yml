@@ -43,14 +43,12 @@ da:
       title: Brugeradministration
       under_age: "Du er ikke gammel nok til at deltage."
       verify: Verificer
-    email_label: E-mail
     date_of_birth: Fødselsdato
     email_verifications:
       already_verified: Brugerkontoen er allerede verificeret.
       choose_options: "Vær venlig at vælge en af de følgende valgmuligheder:"
       document_found_in_census: Identitetsdokumentet er registreret, men er ikke knyttet til en brugerkonto.
       document_mismatch: "Denne e-mail tilhører en bruger, der allerede har et tilknyttet id: %{document_number}%{document_type}"
-      email_placeholder: Skriv den e-mail denne person anvendte til at oprette sin konto med
       email_sent_instructions: For at kunne færdiggøre verificeringen af brugeren, er det nødvendigt, at vedkommende klikker på det link, vi har sendt til den angivede e-mail ovenfor. Dette for at sikre, at mailen faktisk tilhører vedkommende.
       if_existing_account: Hvis personen allerede har oprettet en brugerkonto på hjemmesiden,
       if_no_existing_account: Hvis personen endnu ikke har oprettet en brugerkonto

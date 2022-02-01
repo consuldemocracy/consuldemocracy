@@ -11,13 +11,32 @@ namespace :budgets do
     end
   end
 
-  desc "Update existing budgets in drafting phase"
-  task update_drafting_budgets: :environment do
-    Budget.where(phase: "drafting").each do |budget|
-      budget.update!(phase: "informing", published: false)
+  desc "Updates custom links for budgets"
+  task custom_links: :environment do
+    Budget.find_each do |budget|
+      unless budget.main_link_url.present? && budget.main_link_text.present?
+        if budget.main_button_url.present?
+          budget.main_link_url = budget.main_button_url
+          budget.save!
+        end
+        if budget.main_button_text.present?
+          budget.main_link_text = budget.main_button_text
+          budget.save!
+        end
+      end
     end
-    if Budget.where(phase: "drafting").empty?
-      Budget::Phase.where(kind: "drafting").destroy_all
+
+    Budget::Phase.find_each do |phase|
+      unless phase.main_link_url.present? && phase.main_link_text.present?
+        if phase.main_button_url.present?
+          phase.main_link_url = phase.main_button_url
+          phase.save!
+        end
+        if phase.main_button_text.present?
+          phase.main_link_text = phase.main_button_text
+          phase.save!
+        end
+      end
     end
   end
 end

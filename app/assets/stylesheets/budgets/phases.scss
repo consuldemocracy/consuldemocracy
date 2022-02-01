@@ -1,12 +1,9 @@
 .budget-phases {
+  @include grid-column-gutter;
+  @include full-width-background;
+  @include full-width-border(top, 2px solid $border);
   background: $light;
-  border-top: 2px solid $border;
   padding-bottom: $line-height * 2;
-
-  > * {
-    @include grid-column-gutter;
-    @include grid-row;
-  }
 
   h2 {
     font-size: $base-font-size;
@@ -74,14 +71,14 @@
     }
 
     a {
-      background: $white;
-      color: $black;
+      background: $body-background;
+      color: inherit;
       height: 100%;
       padding: $line-height $line-height * 1.5;
 
       &:hover {
         background: #e6e6e6;
-        color: $black;
+        color: inherit;
       }
 
       &:focus {
@@ -179,8 +176,31 @@
   }
 
   .budget-phase {
+    margin-top: $line-height;
+
     @include breakpoint(medium) {
-      width: 50%;
+      @include flex-with-gap;
+
+      > * {
+        width: 50%;
+      }
+
+      .budget-phase-image {
+        text-align: center;
+      }
+    }
+
+    .main-link {
+      @include has-fa-icon(chevron-right, solid, "after");
+      @include regular-button;
+      font-size: map-get($button-sizes, large);
+      margin-top: $line-height;
+      padding-right: 0.5em;
+
+      &::after {
+        font-weight: bold;
+        margin-left: 0.5em;
+      }
     }
   }
 }

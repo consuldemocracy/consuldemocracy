@@ -30,6 +30,10 @@ class Budget
       all.sort_by(&:name)
     end
 
+    def multiple_headings?
+      headings.size > 1
+    end
+
     private
 
       def generate_slug?

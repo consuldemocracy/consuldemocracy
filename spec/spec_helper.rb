@@ -10,8 +10,7 @@ Dir["./spec/shared/**/*.rb"].sort.each  { |f| require f }
 RSpec.configure do |config|
   config.use_transactional_fixtures = true
 
-  config.filter_run :focus
-  config.run_all_when_everything_filtered = true
+  config.filter_run_when_matching :focus
   config.include RequestSpecHelper, type: :request
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Devise::Test::ControllerHelpers, type: :view
@@ -20,6 +19,10 @@ RSpec.configure do |config|
   config.include(EmailSpec::Matchers)
   config.include(CommonActions)
   config.include(ActiveSupport::Testing::TimeHelpers)
+
+  config.define_derived_metadata(file_path: Regexp.new("/spec/components/")) do |metadata|
+    metadata[:type] = :component
+  end
 
   config.before(:suite) do
     Rails.application.load_seed
@@ -54,10 +57,12 @@ RSpec.configure do |config|
 
   config.before(:each, type: :system) do |example|
     driven_by :headless_chrome
+    Capybara.default_set_options = { clear: :backspace }
   end
 
   config.before(:each, type: :system, no_js: true) do
     driven_by :rack_test
+    Capybara.default_set_options = {}
   end
 
   config.before(:each, type: :system) do
@@ -76,6 +81,14 @@ RSpec.configure do |config|
 
   config.before(:each, :admin, type: :controller) do
     sign_in(create(:administrator).user)
+  end
+
+  config.before(:each, type: :component) do
+    sign_in(nil)
+  end
+
+  config.around(:each, :controller, type: :component) do |example|
+    with_controller_class(example.metadata[:controller]) { example.run }
   end
 
   config.before(:each, :show_exceptions) do

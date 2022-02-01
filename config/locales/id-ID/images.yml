@@ -7,8 +7,6 @@ id:
       delete_button: Hapus gambar
       note: "Anda dapat mengunggah satu gambar dari jenis konten berikut: %{accepted_content_types}, hingga %{max_file_size} MB."
       add_new_image: Tambahkan Gambar
-      admin_title: "Gambar"
-      admin_alt_text: "Teks alternatif untuk gambar"
     actions:
       destroy:
         notice: Gambar telah berhasil dihapus.

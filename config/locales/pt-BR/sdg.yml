@@ -7,30 +7,30 @@ pt-BR:
         description: "Acabem com a pobreza em todas as suas formas, em todos os lugares."
         targets:
           target_1_1:
-            title: "Até 2030, erradicar a pobreza extrema de todas as pessoas em todos os lugares, medida atualmente em pessoas vivendo com menos de US$ 1,25 por dia"
+            long_title: "Até 2030, erradicar a pobreza extrema de todas as pessoas em todos os lugares, medida atualmente em pessoas vivendo com menos de US$ 1,25 por dia"
           target_1_2:
-            title: "Até 2030, reduzir em pelo menos a metade de homens, mulheres e crianças de todas as idades vivendo em pobreza em todas as suas dimensões de acordo com as determinações nacionais"
+            long_title: "Até 2030, reduzir em pelo menos a metade de homens, mulheres e crianças de todas as idades vivendo em pobreza em todas as suas dimensões de acordo com as determinações nacionais"
           target_1_3:
-            title: "Implementar sistemas de proteção social apropriado em âmbito nacional para todos, incluindo os mais básicos, e até 2030 atingir cobertura substancial para os pobres e vulneráveis"
+            long_title: "Implementar sistemas de proteção social apropriado em âmbito nacional para todos, incluindo os mais básicos, e até 2030 atingir cobertura substancial para os pobres e vulneráveis"
           target_1_4:
-            title: "Até 2030, assegurara que todos os homens e mulheres, em particular os pobres e vulneráveis, tenham direitos iguais a recursos econômicos, bem como acesso a serviços básicos, propriedade e controle sobre terras e outras formas de imóveis, herança, recursos naturais, novas tecnologias e serviços financeiros apropriados, incluindo microcrédito"
+            long_title: "Até 2030, assegurara que todos os homens e mulheres, em particular os pobres e vulneráveis, tenham direitos iguais a recursos econômicos, bem como acesso a serviços básicos, propriedade e controle sobre terras e outras formas de imóveis, herança, recursos naturais, novas tecnologias e serviços financeiros apropriados, incluindo microcrédito"
           target_1_5:
-            title: "Até 2030, construir a resiliência dos pobres e daqueles em situações vulneráveis, e reduzir a exposição e a vulnerabilidade deles a eventos extremos relacionados ao clima e outros desastres e incidentes sociais e ambientais"
+            long_title: "Até 2030, construir a resiliência dos pobres e daqueles em situações vulneráveis, e reduzir a exposição e a vulnerabilidade deles a eventos extremos relacionados ao clima e outros desastres e incidentes sociais e ambientais"
           target_1_A:
-            title: "Assegurar significante mobilização de recursos a partir de uma variedade de fontes, inclusive através de cooperação de desenvolvimento avançada, a fim de oferecer meios adequados e previsíveis para países em desenvolvimento, em particular aqueles menos desenvolvidos, para implementar programas e políticas para acabar com a pobreza em todas as suas dimensões"
+            long_title: "Assegurar significante mobilização de recursos a partir de uma variedade de fontes, inclusive através de cooperação de desenvolvimento avançada, a fim de oferecer meios adequados e previsíveis para países em desenvolvimento, em particular aqueles menos desenvolvidos, para implementar programas e políticas para acabar com a pobreza em todas as suas dimensões"
           target_1_B:
-            title: "Criar estruturas de políticas seguras nos âmbitos nacional, regional e internacional, baseadas em estratégias de desenvolvimento a favor dos pobres e sensíveis às questões de gênero, para apoiar investimento acelerado em ações de erradicação da pobreza"
+            long_title: "Criar estruturas de políticas seguras nos âmbitos nacional, regional e internacional, baseadas em estratégias de desenvolvimento a favor dos pobres e sensíveis às questões de gênero, para apoiar investimento acelerado em ações de erradicação da pobreza"
       goal_2:
         title: "Fome zero"
         title_in_two_lines: "Fome zero"
         description: "Fome zero."
         targets:
           target_2_1:
-            title: "Até 2030, acabar com a fome e assegurar o acesso de todas as pessoas, em particular os pobres e aqueles em situações vulneráveis, incluindo crianças pequenas, a comida saudável, nutritiva e suficiente o ano todo."
+            long_title: "Até 2030, acabar com a fome e assegurar o acesso de todas as pessoas, em particular os pobres e aqueles em situações vulneráveis, incluindo crianças pequenas, a comida saudável, nutritiva e suficiente o ano todo."
           target_2_2:
-            title: "Até 2030, acabar com todas as formas de subnutrição, incluindo atingir, até 2025, as metas acordadas internacionalmente sobre baixa estatura e baixo peso em crianças abaixo de 5 anos de idade, e tratar das necessidades nutricionais de garotas adolescentes, grávidas e mulheres lactantes e idosos."
+            long_title: "Até 2030, acabar com todas as formas de subnutrição, incluindo atingir, até 2025, as metas acordadas internacionalmente sobre baixa estatura e baixo peso em crianças abaixo de 5 anos de idade, e tratar das necessidades nutricionais de garotas adolescentes, grávidas e mulheres lactantes e idosos."
           target_2_3:
-            title: "Até 2030, duplicar a produtividade de agricultura e receitas de pequenos produtores de comida, em particular mulheres, povos indígenas, \n famílias fazendeiras, pastores e pescadores, incluindo acesso seguro e igualitário à terra, outros recursos e meios produtivos, conhecimento, serviços financeiros, mercados e oportunidades para mais valia e emprego fora das fazendas."
+            long_title: "Até 2030, duplicar a produtividade de agricultura e receitas de pequenos produtores de comida, em particular mulheres, povos indígenas, \n famílias fazendeiras, pastores e pescadores, incluindo acesso seguro e igualitário à terra, outros recursos e meios produtivos, conhecimento, serviços financeiros, mercados e oportunidades para mais valia e emprego fora das fazendas."
       goal_3:
         title: "Boa saúde e bem-estar"
         title_in_two_lines: "Boa saúde e bem-estar"
@@ -45,7 +45,7 @@ pt-BR:
         description: "Atingir igualdade de gênero e empoderar todas as mulheres e garotas."
         targets:
           target_5_1:
-            title: "Acabar com todas as formas de discriminação contra todas as mulheres e garotas em todos os lugares."
+            long_title: "Acabar com todas as formas de discriminação contra todas as mulheres e garotas em todos os lugares."
       goal_6:
         title: "Água tratada e saneamento"
         title_in_two_lines: "Água tratada e saneamento"
@@ -91,4 +91,5 @@ pt-BR:
     related_list_selector:
       help:
         text: "Página de ajuda ODS (SDG)"
+      remove_tag: "Remover"
       title: "Objetivos e Metas de Desenvolvimento Sustentável"

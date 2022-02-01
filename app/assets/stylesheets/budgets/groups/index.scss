@@ -1,0 +1,7 @@
+.budget-groups-index {
+
+  > header {
+    @extend %budget-header;
+    @include full-width-background($adjust-padding: true);
+  }
+}

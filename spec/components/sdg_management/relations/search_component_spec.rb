@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe SDGManagement::Relations::SearchComponent, type: :component do
+describe SDGManagement::Relations::SearchComponent do
   describe "#goal_options" do
     it "orders goals by code in the select" do
       component = SDGManagement::Relations::SearchComponent.new(label: "Search proposals")

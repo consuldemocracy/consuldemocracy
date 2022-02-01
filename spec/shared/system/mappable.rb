@@ -298,7 +298,7 @@ def do_login_for(user)
 end
 
 def fill_in_proposal_form
-  fill_in "Proposal title", with: "Help refugees"
+  fill_in_new_proposal_title with: "Help refugees"
   fill_in "Proposal summary", with: "In summary, what we want is..."
 end
 
@@ -320,7 +320,7 @@ def validate_latitude_longitude(mappable_factory_name)
 end
 
 def fill_in_budget_investment_form
-  fill_in "Title", with: "Budget investment title"
+  fill_in_new_investment_title with: "Budget investment title"
   fill_in_ckeditor "Description", with: "Budget investment description"
   # Check terms of service by default
   # check :budget_investment_terms_of_service

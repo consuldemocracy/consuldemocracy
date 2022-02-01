@@ -1,8 +1,12 @@
 ru:
   attributes:
+    geozone_id: "Сфера деятельности"
     results_enabled: "Показать результаты"
     stats_enabled: "Показать статистику"
     advanced_stats_enabled: "Показать расширенную статистику"
+    name: Имя
+    email: Электронный адрес
+    description: Описание
   activerecord:
     models:
       activity:
@@ -217,6 +221,8 @@ ru:
         description_finished: "Описание по завершению бюджета"
         phase: "Этап"
         currency_symbol: "Валюта"
+      budget/translation:
+        name: "Имя"
       budget/investment:
         heading_id: "Заглавие"
         title: "Название"
@@ -227,6 +233,22 @@ ru:
         organization_name: "Если вы делаете предложение от имени коллектива/организации или от имени большего числа людей, напишите его название"
         image: "Иллюстративное изображение предложения"
         image_title: "Название изображения"
+        duration: "Объем времени"
+        feasibility_feasible: "Выполнимо"
+        feasibility_undecided: "Неопределено"
+        feasibility_unfeasible: "Невыполнимо"
+        incompatible: "Отметить как несовместимое"
+        price_explanation: "Описание цены"
+        selected: "Отметить как выбранную"
+        selected_true: "Выбранные"
+        selected_false: "Не выбрано"
+        unfeasibility_explanation: "Разъяснение выполнимости"
+        valuation_finished: "Оценка окончена"
+        valuator_ids: "Группы"
+        valuation_tag_list: "Метки"
+      budget/investment/translation:
+        title: "Название"
+        description: "Описание"
       geozone:
         name: Название
         external_code: "Внешний код (опционально)"
@@ -237,6 +259,8 @@ ru:
         title: "Название"
         description: "Описание (опционально, если присвоен статус)"
         publication_date: "Дата публикации"
+      milestone/translation:
+        description: "Описание"
       milestone/status:
         name: "Имя"
         description: "Описание (опционально)"
@@ -247,25 +271,51 @@ ru:
       progress_bar/kind:
         primary: "Основной"
         secondary: "Второстепенный"
+      budget/group/translation:
+        name: "Название группы"
       budget/heading:
+        allow_custom_content: "Разрешить блок содержимого"
+        latitude: "Широта (опционально)"
+        longitude: "Долгота (опционально)"
         name: "Название раздела"
         price: "Цена"
         population: "Население"
+      budget/heading/translation:
+        name: "Название раздела"
+      budget/phase:
+        enabled: "Фаза включена"
+        ends_at: "Дата окончания"
+        starts_at: "Дата начала"
+      budget/phase/translation:
+        name: "Имя"
+        description: "Описание"
+        summary: "Резюме"
       comment:
         body: "Отзыв"
         user: "Пользователь"
       debate:
         author: "Автор"
         description: "Мнение"
+        tag_list: "Темы"
         terms_of_service: "Условия предоставления услуг"
         title: "Название"
+      debate/translation:
+        title: "Название дебатов"
+        description: "Начальный текст дебатов"
       proposal:
         author: "Автор"
         title: "Название"
         question: "Вопрос"
         description: "Описание"
+        responsible_name: "Полное имя лица, отправляющего предложение"
+        retired_reason: "Причина снятия предложения"
         selected: "Пометить как выбранное"
         terms_of_service: "Условия предоставления услуг"
+      proposal/translation:
+        title: "Заголовок предложения"
+        description: "Текст предложения"
+        summary: "Краткое изложение предложения"
+        retired_explanation: "Объяснение"
       user:
         login: "Электронный адрес или имя пользователя"
         email: "Электронный адрес"
@@ -273,25 +323,44 @@ ru:
         password_confirmation: "Подтверждение пароля"
         password: "Пароль"
         current_password: "Текущий пароль"
+        email_digest: "Получать сводку уведомлений по предложению"
+        email_on_comment: "Уведомлять меня по email, когда кто-то комментирует мои предложения или дебаты"
+        email_on_comment_reply: "Уведомлять меня по email, когда кто-то отвечает на мои комментарии"
+        email_on_direct_message: "Получать email'ы о прямых сообщениях"
+        newsletter: "Получать по email информацию, относящуюся к вебсайту"
         official_position: "Официальная позиция"
+        official_position_badge: "Показывать бейдж позиции госслужащего"
         official_level: "Официальный уровень"
         phone_number: "Номер телефона"
+        public_activity: "Оставить мой список действий публичным"
+        recommended_debates: "Показывать некомендации дебатов"
+        recommended_proposals: "Показывать рекомендации предложений"
         redeemable_code: "Код подтверждения получен по электронному адресу"
+      direct_message:
+        title: "Название"
+        body: "Сообщение"
       organization:
         name: "Название организации"
         responsible_name: "Лицо, ответственное за группу"
       poll:
         name: "Имя"
+        title: "Имя"
         starts_at: "Дата начала"
         ends_at: "Дата закрытия"
         geozone_restricted: "Ограничено географической зоной"
         summary: "Резюме"
         description: "Описание"
+      active_poll/translation:
+        description: "Описание"
+      poll/booth:
+        name: "Имя"
+        location: "Место"
       poll/translation:
         name: "Имя"
         summary: "Резюме"
         description: "Описание"
       poll/question:
+        poll_id: "Опрос"
         title: "Вопрос"
         summary: "Резюме"
         description: "Описание"
@@ -302,16 +371,34 @@ ru:
         data: Данные в CSV
         poll_id: Голосование
         officer_assignment_id: Назначение служащего
+      poll/shift:
+        task: "Задача"
+      proposal_notification:
+        body: "Сообщение"
+        title: "Название"
       signature_sheet:
+        title: "Название"
         signable_type: "Тип подписываемого"
         signable_id: "Подписываемое ID"
         document_numbers: "Номера документов"
+      sdg/goal:
+        title: "Название"
+        description: "Описание"
+      sdg/local_target:
+        title: "Название"
+      sdg/local_target/translation:
+        title: "Название"
+        description: "Описание"
+      sdg/target:
+        title: "Название"
       site_customization/page:
         content: Содержание
         created_at: Создано в
         subtitle: Субтитр
         slug: URL-наименование
         status: Статус
+        status_draft: "Черновик"
+        status_published: "Опубликовано"
         title: Название
         updated_at: Обновлено в
         more_info_flag: Показать на странице справки
@@ -328,9 +415,20 @@ ru:
         name: Имя
         locale: Язык
         body: Тело
+      tag:
+        name: "Впишите название темы"
+      topic:
+        title: "Название"
+        description: "Первоначальный текст"
       banner:
         background_color: Цвет фона
         font_color: Цвет шрифта
+        post_ended_at: "Пост окончен"
+        post_started_at: "Пост начат"
+        target_url: "Ссылка"
+      banner/translation:
+        title: "Название"
+        description: "Описание"
       legislation/process:
         title: Название процесса
         summary: Резюме
@@ -350,17 +448,26 @@ ru:
         result_publication_date: Дата публикации окончательного результата
         background_color: Цвет фона
         font_color: Цвет шрифта
+        homepage_enabled: "Домашняя страница включена"
       legislation/process/translation:
         title: Название процесса
         summary: Резюме
         description: Описание
         additional_info: Дополнительная информация
+        homepage: "Описание"
         milestones_summary: Резюме
+      legislation/proposal:
+        description: "Текст предложения"
+        summary: "Краткое изложение предложения"
+        title: "Заголовок предложения"
+        video_url: "Ссылка на внешнее видео"
       legislation/draft_version:
         title: Название версии
         body: Текст
         changelog: Изменения
         status: Статус
+        status_draft: "Черновик"
+        status_published: "Опубликовано"
         final_version: Окончательная версия
       legislation/draft_version/translation:
         title: Название версии
@@ -369,6 +476,8 @@ ru:
       legislation/question:
         title: Название
         question_options: Опции
+      legislation/question/translation:
+        title: Вопрос
       legislation/question_option:
         value: Значение
       legislation/annotation:
@@ -426,12 +535,24 @@ ru:
         order: Вы можете задать позицию, на которой это действие будет показываться пользователю в списке действий
         active: Активно
         action_type: Тип
+        action_type_proposed_action: "Предлагаемое действие"
+        action_type_resource: "Ресурс"
+        published_proposal: "Для опубликованных предложений?"
       dashboard/administrator_task:
         source: Источник
         user: Исполнитель -
       link:
         label: Заголовок
         url: Ссылка
+      valuator:
+        description: Описание
+        valuator_group_id: Группа оценки
+      valuator_group:
+        name: "Название группы"
+      local_census_record:
+        document_type: Тип документа
+        document_number: Номер документа
+        date_of_birth: Дата рождения
     errors:
       models:
         user:
@@ -459,14 +580,12 @@ ru:
           attributes:
             segment_recipient:
               invalid: "Сегмент получателей пользователя является недействительным"
-        map_location:
-          attributes:
-            map:
-              invalid: Расположение на карте не может быть пустым. Поместите маркер или установите флажок, если геолокация не требуется
         poll/voter:
           attributes:
             document_number:
               not_in_census: "Документ не в переписи"
+            user_id:
+              has_voted: "Пользователь уже проголосовал"
         legislation/process:
           attributes:
             end_date:

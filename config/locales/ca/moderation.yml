@@ -12,9 +12,8 @@ ca:
         headers:
           comment: Comentar
           moderate: Moderar
-        hide_comments: Ocultar comentaris
+        hide: Ocultar comentaris
         ignore_flags: Marcar como revisades
-        order: Ordre
         orders:
           flags: Més denunciades
           newest: Més nous
@@ -34,9 +33,8 @@ ca:
         headers:
           debate: debat previ
           moderate: Moderar
-        hide_debates: Ocultar debats
+        hide: Ocultar debats
         ignore_flags: Marcar como revisades
-        order: Ordre
         orders:
           created_at: Més nous
           flags: Més denunciades
@@ -62,9 +60,8 @@ ca:
         headers:
           moderate: Moderar
           proposal: la proposta
-        hide_proposals: Ocultar Propostes
+        hide: Ocultar Propostes
         ignore_flags: Marcar como revisades
-        order: Ordenar per
         orders:
           created_at: Més recents
           flags: Més denunciades
@@ -81,9 +78,8 @@ ca:
         headers:
           moderate: Moderar
           budget_investment: Inversió pressupostària
-        hide_budget_investments: Amagueu les inversions pressupostàries
+        hide: Amagueu les inversions pressupostàries
         ignore_flags: Marcar como revisades
-        order: Ordenar per
         orders:
           created_at: Més recents
           flags: Més denunciades
@@ -100,9 +96,8 @@ ca:
         headers:
           moderate: Moderar
           proposal_notification: Notificació de la proposta
-        hide_proposal_notifications: Ocultar Propostes
+        hide: Ocultar Propostes
         ignore_flags: Marcar como revisades
-        order: Ordenar per
         orders:
           created_at: Més recents
           moderated: Moderada
