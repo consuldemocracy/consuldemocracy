@@ -456,6 +456,7 @@ nl:
       administrator_tasks: "Aangevraagde promotiemiddelen"
       dashboard_actions: "Promotiemiddelen"
       local_census_records: "Lokale volkstelling"
+      maps: "Kaart"
     administrators:
       index:
         name: "Gebruikersnaam"
@@ -520,6 +521,7 @@ nl:
       close_modal: "Venster sluiten"
       learn_more: "Meer informatie"
       example_url: "https://consulproject.org"
+      back: "Go back"
     dashboard:
       index:
         title: "Admin"
@@ -622,3 +624,20 @@ nl:
         creating: "Nieuwe volkstelling maken"
       destroy:
         notice: "Volkstelling succesvol verwijderd!"
+    maps:
+      index:
+        title: "Kaart instellen"
+        help: "Hier kun je aanpassen hoe de kaart wordt weergegeven aan gebruikers. Versleep de markering op de kaart of klik ergens op de kaart om een locatie te selecteren. Stel de gewenste zoom in. Om op te slaan klik op de knop \"Kaart opslaan\"."
+        how_to_enable: "Om gebruikers de kaart te laten zien, moet je de geolocatie van initiatieven en ideeèn inschakelen op het tabblad \"functies\"."
+        budget: "Ideeën"
+        default_map: "Standaard kaart"
+        new_button: "Creëer nieuwe kaart"
+      edit:
+        submit: "Kaart opslaan"
+      flash:
+        create: "Kaart succesvol aangemaakt."
+        destroy: "Kaart succesvol verwijderd."
+        update: "Kaart succesvol bewerkt."
+      form:
+        continue: "Continue"
+        submit: "Coördinaten opslaan"

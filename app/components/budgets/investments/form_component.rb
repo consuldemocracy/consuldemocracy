@@ -18,4 +18,8 @@ class Budgets::Investments::FormComponent < ApplicationComponent
     def categories
       Tag.category.order(:name)
     end
+
+    def budget_map
+      Map.find_by(budget: budget)
+    end
 end

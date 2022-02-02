@@ -107,7 +107,6 @@
 //= require i18n
 //= require globalize
 //= require send_admin_notification_alert
-//= require settings
 //= require cookies
 //= require columns_selector
 //= require budget_edit_associations
@@ -163,7 +162,6 @@ var initialize_modules = function() {
   App.Managers.initialize();
   App.Globalize.initialize();
   App.SendAdminNotificationAlert.initialize();
-  App.Settings.initialize();
   if ($("#js-columns-selector").length) {
     App.ColumnsSelector.initialize();
   }

@@ -1,0 +1,43 @@
+<% if feature?(:map) %>
+  <%= link_to t("admin.maps.index.new_button"), new_admin_map_path, class: "button float-right" %>
+
+  <h2 class="inline-block"><%= t("admin.maps.index.title") %></h2>
+
+  <% if @maps.present? %>
+    <table>
+      <thead>
+        <tr>
+          <th><%= t("admin.maps.index.budget") %></th>
+          <th class="small-3"><%= t("admin.actions.actions") %></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @maps.each do |map| %>
+          <tr id="<%= dom_id(map) %>">
+            <td><%= map_budget_name(map.budget_id) %></td>
+            <td>
+              <div class="small-6 column">
+                <%= link_to t("admin.actions.edit"),
+                            edit_admin_map_map_location_path(map, map.map_location),
+                            class: "button hollow expanded" %>
+              </div>
+              <div class="small-6 column">
+                <% unless map.budget_id == 0 %>
+                  <%= link_to t("admin.actions.delete"),
+                              admin_map_path(map),
+                              method: :delete,
+                              class: "button hollow alert expanded" %>
+                <% end %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.maps.index.how_to_enable") %>
+  </div>
+<% end %>

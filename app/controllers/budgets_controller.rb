@@ -5,6 +5,7 @@ class BudgetsController < ApplicationController
 
   before_action :load_budget, only: :show
   before_action :load_current_budget, only: :index
+  before_action :load_budget_map, only: [:index, :show]
   before_action :load_map_locations, only: [:index, :show]
   before_action :load_banners, only: [:index, :show]
   before_action :load_investments, only: [:index, :show]
@@ -30,6 +31,11 @@ class BudgetsController < ApplicationController
 
     def load_current_budget
       @budget = current_budget
+    end
+
+    def load_budget_map
+      budget = @budget || Budget.current
+      @budget_map = Map.find_by(budget: budget)
     end
 
     def load_map_locations

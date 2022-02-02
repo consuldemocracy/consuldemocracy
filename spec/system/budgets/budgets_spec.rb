@@ -373,6 +373,29 @@ describe "Budgets" do
       Setting["feature.map"] = true
     end
 
+    scenario "Display default map" do
+      visit budget_path(budget)
+
+      within ".map.inline" do
+        expect(page).to have_selector("[data-map-center-latitude=\"#{MapLocation.default_latitude}\"]")
+        expect(page).to have_selector("[data-map-center-longitude=\"#{MapLocation.default_longitude}\"]")
+        expect(page).to have_selector("[data-map-zoom=\"#{MapLocation.default_zoom}\"]")
+      end
+    end
+
+    scenario "Display custom map" do
+      map = create(:map, budget: budget)
+      MapLocation.create!(latitude: 30.0, longitude: 40.0, zoom: 5, map: map)
+
+      visit budget_path(budget)
+
+      within ".map.inline" do
+        expect(page).to have_selector("[data-map-center-latitude=\"30.0\"]")
+        expect(page).to have_selector("[data-map-center-longitude=\"40.0\"]")
+        expect(page).to have_selector("[data-map-zoom=\"5\"]")
+      end
+    end
+
     scenario "Display investment's map location markers" do
       investment1 = create(:budget_investment, heading: heading)
       investment2 = create(:budget_investment, heading: heading)

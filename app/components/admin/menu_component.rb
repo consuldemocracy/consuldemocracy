@@ -33,7 +33,7 @@ class Admin::MenuComponent < ApplicationComponent
 
     def settings?
       controllers_names = ["settings", "tags", "geozones", "images", "content_blocks",
-                           "local_census_records", "imports"]
+                           "local_census_records", "imports", "maps"]
       controllers_names.include?(controller_name) &&
         controller.class.parent != Admin::Poll::Questions::Answers
     end
@@ -58,6 +58,10 @@ class Admin::MenuComponent < ApplicationComponent
     def local_census_records?
       controller_name == "local_census_records" ||
         (controller_name == "imports" && controller.class.parent == Admin::LocalCensusRecords)
+    end
+
+    def maps?
+      controller_name == "maps"
     end
 
     def messages_menu_active?
@@ -337,6 +341,14 @@ class Admin::MenuComponent < ApplicationComponent
         t("admin.menu.local_census_records"),
         admin_local_census_records_path,
         local_census_records?
+      ]
+    end
+
+    def maps_link
+      [
+        t("admin.menu.maps"),
+        admin_maps_path,
+        maps?
       ]
     end
 
