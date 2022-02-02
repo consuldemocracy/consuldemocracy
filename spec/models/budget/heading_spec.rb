@@ -333,6 +333,12 @@ describe Budget::Heading do
     end
   end
 
+  describe "price" do
+    it "can't be blank" do
+      expect(build(:budget_heading, group: group, price: nil)).not_to be_valid
+    end
+  end
+
   describe "#name_scoped_by_group" do
     it "returns heading name in budgets with a single heading" do
       heading = create(:budget_heading, group: group, name: "One and only")

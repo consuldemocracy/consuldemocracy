@@ -123,6 +123,19 @@ describe "Admin budget headings", :admin do
       expect(page).to have_content "can't be blank"
     end
 
+    scenario "Heading money field is hidden if hide money is true" do
+      budget_hide_money = create(:budget, :hide_money)
+      group = create(:budget_group, budget: budget_hide_money)
+
+      visit new_admin_budget_group_heading_path(budget_hide_money, group)
+
+      fill_in "Heading name", with: "Heading without money"
+      click_button "Create new heading"
+
+      expect(page).to have_content "Heading created successfully!"
+      expect(page).not_to have_content "Money amount"
+    end
+
     describe "Max votes is optional" do
       scenario "do no show max_ballot_lines field for knapsack budgets" do
         visit new_admin_budget_group_heading_path(budget, group)

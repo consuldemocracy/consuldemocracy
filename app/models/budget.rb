@@ -230,6 +230,10 @@ class Budget < ApplicationRecord
     voting_style == "approval"
   end
 
+  def show_money?
+    !hide_money?
+  end
+
   private
 
     def generate_phases

@@ -161,6 +161,8 @@ describe "Admin budgets", :admin do
       expect(page).to have_content "All city"
       expect(page).to have_link "Continue to phases"
       expect(page).not_to have_content "There are no headings."
+      expect(page).not_to have_content "Money amount"
+      expect(page).not_to have_content "€"
     end
   end
 
@@ -341,6 +343,8 @@ describe "Admin budgets", :admin do
 
       expect(page).to have_content heading.name
       expect(page).to have_content heading_2.name
+      expect(page).not_to have_content "Money amount"
+      expect(page).not_to have_content "€"
 
       visit edit_admin_budget_path(budget_hide_money)
 
