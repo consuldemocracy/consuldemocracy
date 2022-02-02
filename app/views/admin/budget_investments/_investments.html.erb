@@ -30,7 +30,9 @@
         </th>
         <th data-field="geozone"><%= t("admin.budget_investments.index.list.geozone") %></th>
         <th data-field="feasibility"><%= t("admin.budget_investments.index.list.feasibility") %></th>
-        <th data-field="price"><%= t("admin.budget_investments.index.list.price") %></th>
+        <% if @budget.show_money? %>
+          <th data-field="price"><%= t("admin.budget_investments.index.list.price") %></th>
+        <% end %>
         <th data-field="valuation_finished">
           <%= t("admin.budget_investments.index.list.valuation_finished") %>
         </th>

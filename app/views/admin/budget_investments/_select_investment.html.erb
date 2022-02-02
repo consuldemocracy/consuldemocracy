@@ -42,9 +42,11 @@
   <%= t("admin.budget_investments.index.feasibility.#{investment.feasibility}") %>
 </td>
 
-<td class="small" data-field="price">
-  <%= investment.formatted_price %>
-</td>
+<% if @budget.show_money? %>
+  <td class="small" data-field="price">
+    <%= investment.formatted_price %>
+  </td>
+<% end %>
 
 <td class="small text-center" data-field="valuation_finished">
   <%= investment.valuation_finished? ? t("shared.yes") : t("shared.no") %>
