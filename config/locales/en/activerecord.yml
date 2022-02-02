@@ -160,6 +160,7 @@ en:
         voting_style: "Final voting style"
         voting_style_knapsack: "Knapsack"
         voting_style_approval: "Approval"
+        hide_money: "Hide money amount for this budget"
       budget/translation:
         main_link_text: "Text on the link"
         main_link_url: "The link takes you to (add a link)"
