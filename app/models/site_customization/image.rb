@@ -11,6 +11,9 @@ class SiteCustomization::Image < ApplicationRecord
     "budget_no_image" => [400, 300],
     "map" => [420, 500],
     "logo_email" => [400, 80],
+    "welcome/step_1" => [270, 240],
+    "welcome/step_2" => [270, 240],
+    "welcome/step_3" => [270, 240],
     "auth_bg" => [934, 1398]
   }.freeze
 

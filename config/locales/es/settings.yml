@@ -138,6 +138,8 @@ es:
       remove_investments_supports_description: "Permite que los usuarios retiren su apoyo en los proyectos de gasto de los presupuestos participativos durante la fase de apoyos."
       sdg: ODS
       sdg_description: Habilitar secciones relacionadas con Objetivos de Desarrollo Sostenible en el menú de administración y en la sección de Configuración Global.
+      welcome_steps: "Sección pasos en página principal"
+      welcome_steps_description: "Muestra una sección de tres pasos a modo de resumen en la página principal."
     remote_census:
       general:
         endpoint: "Endpoint"

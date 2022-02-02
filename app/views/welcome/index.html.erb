@@ -14,6 +14,10 @@
 <%= render "shared/header", header: @header %>
 
 <main>
+  <% if feature?(:welcome_steps) %>
+    <%= render "steps" %>
+  <% end %>
+
   <%= render "feeds" %>
 
   <div id="welcome_cards" class="row">
