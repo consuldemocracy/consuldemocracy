@@ -233,7 +233,7 @@ class Budget
     end
 
     def price_required?
-      feasible? && valuation_finished?
+      feasible? && valuation_finished? && budget.show_money?
     end
 
     def unfeasible_email_pending?
@@ -333,7 +333,7 @@ class Budget
     end
 
     def should_show_price?
-      selected? && price.present? && budget.published_prices?
+      selected? && price.present? && budget.published_prices? && budget.show_money?
     end
 
     def should_show_price_explanation?

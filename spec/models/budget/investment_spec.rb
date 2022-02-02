@@ -245,6 +245,12 @@ describe Budget::Investment do
 
       expect(investment.should_show_price?).to eq(false)
     end
+
+    it "returns false if budget hide money is active" do
+      budget.update!(hide_money: true)
+
+      expect(investment.should_show_price?).to eq(false)
+    end
   end
 
   describe "#should_show_price_explanation?" do
