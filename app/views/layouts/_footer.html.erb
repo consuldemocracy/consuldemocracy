@@ -12,6 +12,12 @@
   </div>
 
   <div class="subfooter row">
+    <% if feature?(:background_image_footer) %>
+      <div id="bg_footer" class="margin-bottom">
+        <%= image_tag(image_path_for("bg_footer.png"), alt: "") %>
+      </div>
+    <% end %>
+
     <div class="small-12 medium-8 column">
       <%= t("layouts.footer.copyright", version: "1.4.1", year: Time.current.year) %>
       <ul class="no-bullet inline-block">

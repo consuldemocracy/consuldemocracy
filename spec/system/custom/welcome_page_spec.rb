@@ -91,4 +91,20 @@ describe "Welcome page" do
       expect(page).to have_link "Another optional call to action"
     end
   end
+
+  scenario "Show footer background image only if feature is enabled" do
+    Setting["feature.background_image_footer"] = false
+
+    visit root_path
+
+    expect(page).not_to have_selector "#bg_footer"
+
+    Setting["feature.background_image_footer"] = true
+
+    visit root_path
+
+    within "#bg_footer" do
+      expect(page).to have_css("img[alt=\"\"]")
+    end
+  end
 end

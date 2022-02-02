@@ -105,6 +105,7 @@ class Setting < ApplicationRecord
         "feature.machine_learning": false,
         "feature.remove_investments_supports": true,
         "feature.welcome_steps": false,
+        "feature.background_image_footer": false,
         "homepage.widgets.feeds.debates": true,
         "homepage.widgets.feeds.processes": true,
         "homepage.widgets.feeds.proposals": true,
