@@ -727,9 +727,6 @@ body > header,
 
   .jumbo {
     background: none;
-    margin-left: calc(#{$global-width / 2} - 50vw);
-    margin-right: calc(#{$global-width / 2} - 50vw);
-    overflow-x: hidden;
 
     @include breakpoint(large) {
       background: none;
@@ -738,6 +735,12 @@ body > header,
       background-size: contain;
       margin-top: $line-height * 2;
       min-height: $line-height * 20;
+    }
+
+    &.header-card-full {
+      margin-left: calc(#{$global-width / 2} - 50vw);
+      margin-right: calc(#{$global-width / 2} - 50vw);
+      overflow-x: hidden;
     }
 
     h1 {
