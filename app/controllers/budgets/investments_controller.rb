@@ -24,6 +24,7 @@ module Budgets
     before_action :set_random_seed, only: :index
     before_action :load_categories, only: :index
     before_action :set_default_investment_filter, only: :index
+    before_action :load_budget_map, only: [:new, :edit]
     before_action :set_view, only: :index
     before_action :load_content_blocks, only: :index
 
@@ -188,6 +189,10 @@ module Budgets
         elsif @budget&.publishing_prices_or_later?
           params[:filter] ||= "selected"
         end
+      end
+
+      def load_budget_map
+        @budget_map = Map.find_by(budget: @budget)
       end
 
       def load_map

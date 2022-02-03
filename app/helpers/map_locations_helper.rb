@@ -4,15 +4,15 @@ module MapLocationsHelper
   end
 
   def map_location_latitude(map_location)
-    map_location.present? && map_location.latitude.present? ? map_location.latitude : Setting["map.latitude"]
+    map_location.present? && map_location.latitude.present? ? map_location.latitude : Map.default.map_location.latitude
   end
 
   def map_location_longitude(map_location)
-    map_location.present? && map_location.longitude.present? ? map_location.longitude : Setting["map.longitude"]
+    map_location.present? && map_location.longitude.present? ? map_location.longitude : Map.default.map_location.longitude
   end
 
   def map_location_zoom(map_location)
-    map_location.present? && map_location.zoom.present? ? map_location.zoom : Setting["map.zoom"]
+    map_location.present? && map_location.zoom.present? ? map_location.zoom : Map.default.map_location.zoom
   end
 
   def map_location_input_id(prefix, attribute)

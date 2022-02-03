@@ -32,4 +32,33 @@ namespace :migrations do
       end
     end
   end
+
+  desc "Migrates map location settings"
+  task migrate_map_location_settings: :environment do
+    latitude  = Setting["map.latitude"]
+    longitude = Setting["map.longitude"]
+    zoom      = Setting["map.zoom"]
+
+    if latitude.present? || longitude.present? || zoom.present?
+      map_location = Map.default.map_location
+
+      if latitude.present?
+        map_location.latitude = latitude.to_f
+        map_location.save!
+        Setting.remove("map.latitude")
+      end
+
+      if longitude.present?
+        map_location.longitude = longitude.to_f
+        map_location.save!
+        Setting.remove("map.longitude")
+      end
+
+      if zoom.present?
+        map_location.zoom = zoom
+        map_location.save!
+        Setting.remove("map.zoom")
+      end
+    end
+  end
 end

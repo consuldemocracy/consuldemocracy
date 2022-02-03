@@ -813,6 +813,7 @@ en:
       comments: "Comments"
       local_census_records: Manage local census
       machine_learning: "AI / Machine learning"
+      maps: "Maps"
     administrators:
       index:
         title: Administrators
@@ -1341,14 +1342,6 @@ en:
         feature_flags: Features
         features:
           enabled: "Enabled"
-        map:
-          title: Map configuration
-          help: Here you can customize the way the map is displayed to users. Drag map marker or click anywhere over the map, set desired zoom and click button "Update".
-          flash:
-            update: Map configuration updated succesfully.
-          form:
-            submit: Update
-          how_to_enable: 'To show the map to users you must enable "Proposals and budget investments geolocation" on "Features" tab.'
         dashboard:
           title: Proposals dashboard
         remote_census:
@@ -1406,6 +1399,7 @@ en:
       close_modal: Close modal
       learn_more: "Learn more"
       example_url: "For example, https://consulproject.org or /help"
+      back: "Go back"
     geozones:
       index:
         title: Geozone
@@ -1428,6 +1422,23 @@ en:
       delete:
         success: Geozone successfully deleted
         error: This geozone can't be deleted since there are elements attached to it
+    maps:
+      index:
+        title: "Map configuration"
+        help: "Here you can customize the way the map is displayed to users. Drag map marker or click anywhere over the map, set desired zoom and click button \"Save map\"."
+        how_to_enable: "To show the map to users you must enable \"Proposals and budget investments geolocation\" on \"Features\" tab."
+        budget: "Participatory Budget"
+        default_map: "Default map"
+        new_button: "Create new map"
+      edit:
+        submit: "Save map"
+      flash:
+        create: "Map created succesfully."
+        destroy: "Map deleted succesfully."
+        update: "Map updated succesfully."
+      form:
+        continue: "Continue"
+        submit: "Save coordinates"
     signature_sheets:
       author: Author
       created_at: Creation date

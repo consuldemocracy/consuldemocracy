@@ -1,0 +1,51 @@
+<%= form_for [:admin, @map, @map_location] do |f| %>
+  <%= render "shared/errors", resource: @map_location %>
+
+  <div class="small-12 medium-4 column">
+    <%= f.text_field :latitude, value: @map_location.latitude,
+                                  id: map_location_input_id("map_locations", "latitude") %>
+  </div>
+
+  <div class="small-12 medium-4 column">
+    <%= f.text_field :longitude, value: @map_location.longitude,
+                                   id: map_location_input_id("map_locations", "longitude") %>
+  </div>
+
+  <div class="small-12 medium-4 column">
+    <%= f.text_field :zoom, value: @map_location.zoom,
+                              id: map_location_input_id("map_locations", "zoom") %>
+  </div>
+
+  <div class="small-12 column">
+    <%= f.submit(value: t("admin.maps.form.submit"), class: "button success") %>
+  </div>
+<% end %>
+
+<div class="small-12 column">
+  <p class="help-text"><%= t("admin.maps.index.help") %></p>
+
+  <div id="admin-map" class="map"
+                      data-map
+                      data-map-center-latitude="<%= @map_location.latitude %>"
+                      data-map-center-longitude="<%= @map_location.longitude %>"
+                      data-map-zoom="<%= @map_location.zoom %>"
+                      data-map-tiles-provider="<%= Rails.application.secrets.map_tiles_provider %>"
+                      data-map-tiles-provider-attribution="<%= Rails.application.secrets.map_tiles_provider_attribution %>"
+                      data-marker-editable="true"
+                      data-marker-latitude="<%= @map_location.latitude %>"
+                      data-marker-longitude="<%= @map_location.longitude %>"
+                      data-latitude-input-selector="#latitude"
+                      data-longitude-input-selector="#longitude"
+                      data-zoom-input-selector="#zoom">
+  </div>
+
+  <%= form_tag admin_map_map_location_update_from_map_path(@map_location.map, @map_location), method: :put, id: "map-form" do |f| %>
+
+    <%= hidden_field_tag :latitude, @map_location.latitude %>
+    <%= hidden_field_tag :longitude, @map_location.longitude %>
+    <%= hidden_field_tag :zoom, @map_location.zoom %>
+
+    <%= submit_tag t("admin.maps.edit.submit"), class: "button success margin-top" %>
+
+  <% end %>
+</div>

@@ -19,4 +19,8 @@ class Budgets::BudgetComponent < ApplicationComponent
 
       MapLocation.where(investment_id: investments).map(&:json_data)
     end
+
+    def budget_map
+      Map.find_by(budget: budget)
+    end
 end

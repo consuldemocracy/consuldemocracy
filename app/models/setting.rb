@@ -114,9 +114,6 @@ class Setting < ApplicationRecord
         "html.per_page_code_body": "",
         # Code to be included at the top (inside <head>) of every page (useful for tracking)
         "html.per_page_code_head": "",
-        "map.latitude": 51.48,
-        "map.longitude": 0.0,
-        "map.zoom": 10,
         "process.debates": true,
         "process.proposals": true,
         "process.polls": true,
