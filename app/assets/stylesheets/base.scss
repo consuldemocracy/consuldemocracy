@@ -21,6 +21,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 @import "font-awesome/icons";
 
+html {
+  font-size: unset;
+}
+
 body,
 h1,
 h2,
@@ -723,12 +727,15 @@ body > header,
 
   .jumbo {
     background: none;
-    background-size: 0;
+    margin-left: calc(#{$global-width / 2} - 50vw);
+    margin-right: calc(#{$global-width / 2} - 50vw);
+    overflow-x: hidden;
 
     @include breakpoint(large) {
       background: none;
-      background-position: 85% 30%;
+      background-position: 100% 30%;
       background-repeat: no-repeat;
+      background-size: contain;
       margin-top: $line-height * 2;
       min-height: $line-height * 20;
     }
@@ -1156,6 +1163,9 @@ footer {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    margin-left: calc(#{$global-width / 2} - 50vw);
+    margin-right: calc(#{$global-width / 2} - 50vw);
+    overflow-x: hidden;
   }
 
   &.groups {
