@@ -690,6 +690,24 @@ nl:
       unfeasible: Onhaalbare voorstellen kunnen niet gesteund worden.
       not_voting_allowed: Stemronde is gesloten.
   welcome:
+    steps:
+      title: "Doe mee in drie stappen"
+      subtitle: ""
+      step_1:
+        number: "1"
+        title: "Registreren"
+        description: "Gebruik Google, of jouw mailadres om in te loggen."
+        link: "Meld je binnen drie minuten aan"
+      step_2:
+        number: "2"
+        title: "Stem"
+        description: "Stem op ideeën die jij belangrijk vindt."
+        link: "Bekijk wat er in de gemeente gebeurt"
+      step_3:
+        number: "3"
+        title: "Deel"
+        description: "Blijf betrokken bij ideeën die jij belangrijk vindt en deel ze via social media."
+        link: ""
     feed:
       most_active:
         debates: "Actieve debatten"

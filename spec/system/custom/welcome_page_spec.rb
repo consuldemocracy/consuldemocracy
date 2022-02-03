@@ -62,4 +62,49 @@ describe "Welcome page" do
       end
     end
   end
+
+  scenario "Show three steps section only if feature is enabled" do
+    Setting["feature.welcome_steps"] = false
+
+    visit root_path
+
+    expect(page).not_to have_selector "#home_page_steps"
+
+    Setting["feature.welcome_steps"] = true
+
+    visit root_path
+
+    within "#home_page_steps" do
+      expect(page).to have_content "1"
+      expect(page).to have_content "Sign-up"
+      expect(page).to have_content "Short text describing some of the data that is expected to be "\
+                                   "asked when making an account."
+      expect(page).to have_link "Make an account in 5 minutes"
+      expect(page).to have_content "2"
+      expect(page).to have_content "Decide"
+      expect(page).to have_content "Share your ideas and vote on the changes you want to see in the city."
+      expect(page).to have_link "See what's happening around the city right now"
+      expect(page).to have_content "3"
+      expect(page).to have_content "Share"
+      expect(page).to have_content "Keep up with the ideas that matter to you the most, and share them "\
+                                   "through social media."
+      expect(page).to have_link "Another optional call to action"
+    end
+  end
+
+  scenario "Show footer background image only if feature is enabled" do
+    Setting["feature.background_image_footer"] = false
+
+    visit root_path
+
+    expect(page).not_to have_selector "#bg_footer"
+
+    Setting["feature.background_image_footer"] = true
+
+    visit root_path
+
+    within "#bg_footer" do
+      expect(page).to have_css("img[alt=\"\"]")
+    end
+  end
 end
