@@ -1,25 +1,25 @@
 <% if header.present? %>
-  <div class="header-card jumbo highlight"
-       style="background-image: url(<%= image_path_for(header.image_url(:original)) if header.image.present? %>)">
-    <div class="row">
-      <div class="small-12 large-7 column">
-        <span><%= header.label %></span>
-        <h1><%= header.title %></h1>
+  <% if header.image.present? && header.background_image? %>
+    <div id="header_background_image" class="header-card jumbo highlight header-card-full"
+         style="background-image: url(<%= image_path_for(header.image_url(:original)) %>)">
 
-        <p class="lead"><%= header.description %></p>
+      <%= render "shared/header_content", header: header %>
+    </div>
+  <% elsif header.image.present? %>
+    <div class="header-card jumbo highlight">
+      <div class="row">
+        <%= render "shared/header_content", header: header %>
 
-        <% if header.link_text.present? && header.link_url.present? %>
-          <div class="small-12 medium-6 <%= "small-centered" unless header.image.present? %>">
-            <%= link_to header.link_text, header.link_url, class: "button expanded large" %>
-          </div>
-        <% end %>
-      </div>
-
-      <% if header.image.present? %>
-        <div class="small-12 column hide-for-large">
+        <div id="header_image" class="small-12 medium-6 column">
           <%= image_tag(header.image_url(:large), class: "margin", alt: header.image.title) %>
         </div>
-      <% end %>
+      </div>
     </div>
-  </div>
+  <% else %>
+    <div class="header-card jumbo highlight">
+      <div class="row">
+        <%= render "shared/header_content", header: header %>
+      </div>
+    </div>
+  <% end %>
 <% end %>

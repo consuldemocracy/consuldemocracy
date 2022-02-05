@@ -480,6 +480,7 @@ es:
         link_text: Texto del enlace
         link_url: URL del enlace
         columns: Número de columnas
+        background_image: "Utilizar la imagen como fondo"
       widget/card/translation:
         label: Etiqueta (opcional)
         title: Título
