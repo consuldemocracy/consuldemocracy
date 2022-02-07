@@ -491,7 +491,7 @@ describe "Commenting topics from proposals" do
       visit community_topic_path(proposal.community, topic)
 
       within("#comment_#{comment.id}_votes") do
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
@@ -509,7 +509,7 @@ describe "Commenting topics from proposals" do
       within("#comment_#{comment.id}_votes") do
         click_button "I agree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
@@ -527,13 +527,13 @@ describe "Commenting topics from proposals" do
       within("#comment_#{comment.id}_votes") do
         click_button "I agree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
         click_button "I disagree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "0"
         end
 
@@ -551,13 +551,13 @@ describe "Commenting topics from proposals" do
       within("#comment_#{comment.id}_votes") do
         click_button "I agree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
         click_button "I agree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
@@ -1002,7 +1002,7 @@ describe "Commenting topics from budget investments" do
       visit community_topic_path(investment.community, topic)
 
       within("#comment_#{comment.id}_votes") do
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
@@ -1020,7 +1020,7 @@ describe "Commenting topics from budget investments" do
       within("#comment_#{comment.id}_votes") do
         click_button "I agree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
@@ -1038,13 +1038,13 @@ describe "Commenting topics from budget investments" do
       within("#comment_#{comment.id}_votes") do
         click_button "I agree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
         click_button "I disagree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "0"
         end
 
@@ -1062,13 +1062,13 @@ describe "Commenting topics from budget investments" do
       within("#comment_#{comment.id}_votes") do
         click_button "I agree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
         click_button "I agree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 

@@ -2,15 +2,13 @@
   <%= t("comments.comment.votes", count: comment.total_votes) %>
   &nbsp;|&nbsp;
 
-  <span class="in_favor">
+  <span class="in-favor">
     <%= button_to vote_comment_path(comment, value: "yes"),
         method: "post",
         remote: true,
         title: t("votes.agree"),
         disabled: !can?(:vote, comment) do %>
-      <span class="icon-like">
-        <span class="show-for-sr"><%= t("votes.agree") %></span>
-      </span>
+      <span class="show-for-sr"><%= t("votes.agree") %></span>
     <% end %>
     <%= comment.total_likes %>
   </span>
@@ -21,9 +19,7 @@
         remote: true,
         title: t("votes.disagree"),
         disabled: !can?(:vote, comment) do %>
-      <span class="icon-unlike">
-        <span class="show-for-sr"><%= t("votes.disagree") %></span>
-      </span>
+      <span class="show-for-sr"><%= t("votes.disagree") %></span>
     <% end %>
     <%= comment.total_dislikes %>
   </span>

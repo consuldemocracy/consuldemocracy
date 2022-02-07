@@ -2006,22 +2006,30 @@ table {
 
   button,
   form {
+    color: $text-light;
     display: inline-block;
   }
 
-  .icon-like,
-  .icon-unlike {
-    color: $text-light;
+  button {
+    font-size: $base-font-size;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
-  button:hover {
-    cursor: pointer;
+  .in-favor button {
+    @include has-fa-icon(thumbs-up, solid);
 
-    .icon-like {
+    &:hover {
       color: $like;
     }
+  }
 
-    .icon-unlike {
+  .against button {
+    @include has-fa-icon(thumbs-down, solid);
+
+    &:hover {
       color: $unlike;
     }
   }

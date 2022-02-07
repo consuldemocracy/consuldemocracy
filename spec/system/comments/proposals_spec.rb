@@ -441,7 +441,7 @@ describe "Commenting proposals" do
       visit proposal_path(proposal)
 
       within("#comment_#{comment.id}_votes") do
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
@@ -459,7 +459,7 @@ describe "Commenting proposals" do
       within("#comment_#{comment.id}_votes") do
         click_button "I agree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
@@ -477,13 +477,13 @@ describe "Commenting proposals" do
       within("#comment_#{comment.id}_votes") do
         click_button "I agree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
         click_button "I disagree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "0"
         end
 
@@ -501,13 +501,13 @@ describe "Commenting proposals" do
       within("#comment_#{comment.id}_votes") do
         click_button "I agree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
         click_button "I agree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 

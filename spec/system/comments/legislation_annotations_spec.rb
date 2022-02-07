@@ -523,7 +523,7 @@ describe "Commenting legislation questions" do
                                                               annotation)
 
       within("#comment_#{comment.id}_votes") do
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
@@ -543,7 +543,7 @@ describe "Commenting legislation questions" do
       within("#comment_#{comment.id}_votes") do
         click_button "I agree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
@@ -563,13 +563,13 @@ describe "Commenting legislation questions" do
       within("#comment_#{comment.id}_votes") do
         click_button "I agree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
         click_button "I disagree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "0"
         end
 
@@ -588,12 +588,12 @@ describe "Commenting legislation questions" do
 
       within("#comment_#{comment.id}_votes") do
         click_button "I agree"
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
         click_button "I agree"
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).not_to have_content "2"
           expect(page).to have_content "1"
         end
