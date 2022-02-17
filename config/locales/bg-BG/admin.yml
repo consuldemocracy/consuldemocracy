@@ -236,6 +236,7 @@ bg:
           incompatible: Несъвместимо
           price: Цена
           author: Автор
+        cannot_calculate_winners: Бюджетът трябва да остане на фаза "%{phase}", за да се изчислят проектите победители
         see_results: "Вижте резултатите"
         milestone_tags_filter_all: "Всички тагове за основни събития"
       show:
