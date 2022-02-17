@@ -768,7 +768,7 @@ bg:
         one: "1 език в употреба"
         other: "%{count} езика в употреба"
     optional: "По избор"
-    required: "Задължително"
+    required: "Задължително поле"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
