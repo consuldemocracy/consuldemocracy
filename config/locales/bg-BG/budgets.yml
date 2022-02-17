@@ -105,7 +105,7 @@ bg:
               one: "<strong>Вие гласувахте за едно предложение</strong>"
               other: "<strong>Вие гласувахте за %{count} предложения</strong>"
           change_vote_info:
-            knapsack: "Можете да %{link} по всяко време до %{phase_end_date}. Няма нужда да харчите всички налични средства."
+            knapsack: "Можете да %{link} по всяко време до %{phase_end_date}. Няма нужда да разпределяте всички налични средства."
             approval: "Можете да %{link} по всяко време до %{phase_end_date}."
           change_vote_link: "променете Вашето гласуване"
           different_heading_assigned: "Имате активни гласове в друга рубрика: %{heading_link}"
