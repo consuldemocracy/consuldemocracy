@@ -25,6 +25,9 @@ bg:
     close: Затваряне
     menu: Меню
   comments:
+    actions:
+      confirm_delete: "Сигурен ли сте? Това действие ще изтрие този коментар. Действието не може да бъде отменено."
+      delete: "Изтриване на коментара"
     comments_closed: Коментарите са затворени
     verified_only: За да участвате %{verify_account}
     comment:
@@ -957,3 +960,5 @@ bg:
         more:
           one: "Още един таг"
           other: "%{count} повече тагове"
+  machine_learning:
+    comments_summary: "Резюме на коментарите"
