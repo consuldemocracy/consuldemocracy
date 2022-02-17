@@ -1,5 +1,7 @@
 cs:
   moderation:
+    actions:
+      confirm_action: "Jste si jistý? %{action}"
     comments:
       index:
         block_authors: Blokovat autory
@@ -103,4 +105,5 @@ cs:
         hide: Blokovat
         search_placeholder: email nebo jméno uživatele
         title: Blokovat uživatele
+      notice_block: Uživatel byl zablokován. Veškerý obsah, jehož je tento uživatel autorem, byl skryt.
       notice_hide: Uživatel byl zablokován. Všechny debaty a komentáře tohoto uživatele byly skryty.
