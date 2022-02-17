@@ -7,6 +7,9 @@ bg:
       new_comment_by: Има нов коментар от <strong>%{commenter}</strong>
       subject: Някой е коментирал вашето %{commentable}
       title: Нов коментар
+    config:
+      notifications_link: Известия
+      unsubscribe_text: 'За да прекратите абонамента си за тези писма посетете %{notifications} и премахнете отметките на "%{notification}".'
     email_verification:
       click_here_to_verify: тази връзка
       instructions_2: Този имейл ще потвърди вашия профил с <b>%{document_type} %{document_number}</b>. Ако те не принадлежат на вас, моля, не следвайте предишната връзка и игнорирайте този имейл.
@@ -24,10 +27,12 @@ bg:
       title: "Известия за предложения в %{org_name}"
       share: Споделете предложение
       comment: Коментирайте предложение
+      unsubscribe_text: "Ако не искате да получавате никакви известие за предложения, посетете %{notifications} и премахнете отметката от 'Получаване на обобщение на известията за предложения'."
       unfollow: "Посетете това предложение и спрете да го следите, за да не получавате повече известия."
     direct_message_for_receiver:
       subject: "Получихте ново лично съобщение"
       reply: Отговорете на %{sender}
+      unsubscribe_text: "Ако не искате да получавате директни съобщения, посетете %{notifications} и премахнете отметката от 'Получаване на имейли за директни съобщения'."
     direct_message_for_sender:
       subject: "Изпратихте ново лично съобщение"
       title: "Изпратихте ново лично съобщение до <strong>%{receiver}</strong> със съдържание:"
