@@ -161,6 +161,8 @@ bg:
         voting_style_knapsack: "Раница"
         voting_style_approval: "Одобрение"
       budget/translation:
+        main_link_text: "Текст на връзката"
+        main_link_url: "Връзката ви отвежда до (добавете връзка)"
         name: "Име"
       budget/investment:
         heading_id: "Заглавие"
@@ -233,6 +235,8 @@ bg:
         name: "Име"
         description: "Описание"
         summary: "Резюме"
+        main_link_text: "Текст на връзката"
+        main_link_url: "Връзката ви отвежда до (добавете връзка)"
       comment:
         body: "Коментар"
         user: "Потребител"
