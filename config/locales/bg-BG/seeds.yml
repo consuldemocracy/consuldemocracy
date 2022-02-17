@@ -1,5 +1,8 @@
 bg:
   seeds:
+    admin_notifications:
+      budget:
+        title: "Затваряме гражданския бюджет!"
     settings:
       official_level_1_name: Официална позиция 1
       official_level_2_name: Официална позиция 2
@@ -14,6 +17,11 @@ bg:
     organizations:
       human_rights: Човешки права
       neighborhood_association: Местна асоциация
+    cards:
+      budget:
+        title: "Как работят гражданските бюджети?"
+        description: "Гражданските бюджети позволяват на гражданите да предлагат и решават директно как да изразходват част от бюджета, при наблюдение и стриктна оценка на предложенията от институцията. Максимална ефективност и контрол със задоволство за всеки."
+        link_text: "Още за гражданските бюджети"
     categories:
       associations: Асоциации
       culture: Култура
