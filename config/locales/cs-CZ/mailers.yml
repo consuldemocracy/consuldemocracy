@@ -7,6 +7,9 @@ cs:
       new_comment_by: K dispozici je nový komentář od <strong>%{commenter}</strong>
       subject: Někdo komentoval váš příspěvek %{commentable}
       title: Nový komentář
+    config:
+      notifications_link: Upozornění
+      unsubscribe_text: 'Chcete-li se z odběru těchto e-mailů odhlásit, navštivte stránku %{notifications} a zrušte zaškrtnutí políčka "%{notification}".'
     email_verification:
       click_here_to_verify: tento odkaz
       instructions_2: Tento e-mail ověří váš účet pomocí <b>%{document_type} %{document_number} </b>. Pokud Vám email nepatří, prosím, neklikejte na předchozí odkaz a ignorujte tento e-mail.
@@ -24,10 +27,12 @@ cs:
       title: "Oznámení o návrhu v %{org_name}"
       share: Sdílet návrh
       comment: Připomínky k návrhu
+      unsubscribe_text: "Pokud nechcete dostávat žádná oznámení o návrzích, navštivte stránku %{notifications} a zrušte zaškrtnutí políčka \"Přijímání souhrnu oznámení o návrzích\"."
       unfollow: "Navštivte tento návrh a zrušte jeho sledování, abyste přestali dostávat oznámení."
     direct_message_for_receiver:
       subject: "Obdrželi jste novou soukromou zprávu"
       reply: Odpovědět uživateli %{sender}
+      unsubscribe_text: "Pokud nechcete dostávat přímé zprávy, navštivte %{notifications} a zrušte zaškrtnutí políčka \"Dostávat e-maily o přímých zprávách\"."
     direct_message_for_sender:
       subject: "Odeslali jste novou soukromou zprávu"
       title: "Do <strong>%{receiver} </strong> jste odeslali novou soukromou zprávu s obsahem:"
