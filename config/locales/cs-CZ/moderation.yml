@@ -102,6 +102,8 @@ cs:
     users:
       index:
         block: Blokovat
+        confirm_block: "Jste si jistý? Tím se skryje uživatel \"%{name}\" a veškerý jeho obsah."
+        confirm_hide: "Jste si jistý? Tím se skryje uživatel \"%{name}\", aniž by se skryl jeho obsah."
         hide: Blokovat
         search_placeholder: email nebo jméno uživatele
         title: Blokovat uživatele
