@@ -33,7 +33,7 @@ bg:
           homepage: Начална страница
           debates: Дискусии
           proposals: Предложения
-          budgets: Бюджетиране чрез участие на гражданите
+          budgets: Граждански бюджет
           help_page: Помощна страница
           sdg: Цели за устойчиво развитие
       edit:
@@ -67,7 +67,7 @@ bg:
         edit: "Редактиране на бюджета"
         preview: "Изглед на бюджета"
       index:
-        title: Бюджетиране чрез участие на гражданите
+        title: Граждански бюджет
         new_link: Създайте нов бюджет
         filter: Филтър
         filters:
@@ -1379,7 +1379,7 @@ bg:
           verified_users_who_didnt_vote_proposals: Проверени потребители, които не са гласували предложения
           visits: Посещения
           votes: Общо гласове
-        budgets_title: Бюджетиране с участие
+        budgets_title: Граждански бюджет
         participatory_budgets: Бюджети с участие
         direct_messages: Директно съобщение
         proposal_notifications: Известия за предложения
