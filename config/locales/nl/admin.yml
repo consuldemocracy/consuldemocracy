@@ -363,9 +363,21 @@ nl:
           without_confirmed_hide: In afwachting
         title: Verborgen debatten
     documents:
+      new:
+        title: "Bestand uploaden"
+        submit_button: "Uploaden"
       index:
         new_link: "Nieuw bestand toevoegen"
+        no_documents: "Er zijn geen bestanden."
         title: "Documenten"
+        format: "Type"
+        size: "Formaat"
+        url: "URL"
+      create:
+        success_notice: "Bestand is geupload"
+        unable_notice: "Ongeldig document"
+      destroy:
+        success_notice: "Bestand is verwijderd"
     hidden_users:
       index:
         filter: Filter
