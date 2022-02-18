@@ -143,7 +143,7 @@ nl:
         comments_tab: Comments
         milestones_tab: Mijlpalen
         author: Author
-        project_unfeasible: "Dit investeringsproject <strong> is gemarkeerd als niet haalbaar </ strong> en gaat niet naar de beslissingsfase."
+        project_unfeasible: "Dit investeringsproject <strong> is gemarkeerd als niet haalbaar </strong> en gaat niet naar de beslissingsfase."
         project_selected: "Dit investeringsproject <strong> is geselecteerd </strong> voor beslissingsfase."
         project_winner: "Winnend investeringsproject"
         project_not_selected: "Dit investeringsproject <strong> is niet geselecteerd </strong> voor beslissingsfase."
