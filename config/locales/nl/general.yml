@@ -459,16 +459,33 @@ nl:
         responses:
           one: "%{count} reactie"
           other: "%{count} reacties"
+        unable_notice: Je kan een vragenlijst met antwoorden niet verwijderen
       form:
+        name: Vragenlijsttitel
         add_question: titel
       question_fields:
+        remove_question: Vraag verwijderen
         add_answer: Voeg antwoord toe
+      question_answer_fields:
+        remove_answer: Antwoord verwijderen
     poster:
+      index:
+        title: Poster preview
+        poster_title: "Blijf niet kijken"
+        poster_subtitle: "maar steun me! ;)"
+        support: Steun mijn voorstel
+      new:
+        title: Poster van je voorstel
       options:
         preview: Preview
         download: Download
     mailing:
+      index:
+        title: E-mail preview
+      new:
+        title: E-mail model om te delen
       mailing_options:
+        send: Stuur naar %{address}
         preview: Preview
       create:
         sent: De e-mail is verstuurd
