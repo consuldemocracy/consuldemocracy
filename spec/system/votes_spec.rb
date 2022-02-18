@@ -278,10 +278,12 @@ describe "Votes" do
     comment = create(:comment, commentable: debate)
 
     visit comment_path(comment)
+
     within("#comment_#{comment.id}") do
-      find("div.votes").hover
-      expect_message_you_need_to_sign_in_to_vote_comments
+      click_button "I agree"
     end
+
+    expect(page).to have_current_path new_user_session_path
   end
 
   scenario "Not logged user trying to vote comments in proposals" do
@@ -289,10 +291,12 @@ describe "Votes" do
     comment = create(:comment, commentable: proposal)
 
     visit comment_path(comment)
+
     within("#comment_#{comment.id}_reply") do
-      find("div.votes").hover
-      expect_message_you_need_to_sign_in_to_vote_comments
+      click_button "I agree"
     end
+
+    expect(page).to have_current_path new_user_session_path
   end
 
   scenario "Anonymous user trying to vote debates" do
