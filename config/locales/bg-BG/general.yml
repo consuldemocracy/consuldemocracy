@@ -236,7 +236,7 @@ bg:
       open_gov: Отворено управление
       proposals: Предложения
       poll_questions: Гласуване
-      budgets: Бюджетиране с участие
+      budgets: Граждански бюджет
       notification_item:
         new_notifications:
           zero: "Нямате нови известия"
