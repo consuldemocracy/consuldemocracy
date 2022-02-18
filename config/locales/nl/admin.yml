@@ -593,6 +593,7 @@ nl:
       stats: Statistics
       signature_sheets: Signature Sheets
       site_customization:
+        documents: Custom bestanden
         homepage: Homepage
         pages: Aangepaste pagina's
         images: Aangepaste afbeeldingen
@@ -1118,6 +1119,7 @@ nl:
         general: Configuration settings
         update_setting: Update
         participation_processes: "Deelnameprocessen"
+        images_and_documents: "Afbeeldingen en bestanden"
         feature_flags: Features
         features:
           enabled: "Feature enabled"
@@ -1190,7 +1192,7 @@ nl:
         new: New signature sheets
       new:
         title: Niewe handtekeninglijst
-        document_numbers_note: "Write the numbers separated by commas (,)"
+        document_numbers_note: "Voeg nummers toe, gescheiden door komma's (,)"
         submit: Create signature sheet
       show:
         created_at: Aangemaakt
