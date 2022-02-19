@@ -98,15 +98,11 @@
 .participation-not-allowed {
   background: $warning-bg;
   color: $color-warning;
-  left: 0;
+  display: none;
   line-height: $line-height;
-  min-height: 100%;
   padding: $line-height / 2;
-  position: absolute;
   text-align: center;
-  top: 0;
   width: 100%;
-  z-index: 2;
 
   &,
   p {
@@ -327,7 +323,7 @@
 }
 
 .debate-questions .debate-questions .participation-not-allowed {
-  position: static;
+  display: block;
 }
 
 .bullet {
@@ -666,10 +662,6 @@
       color: #fff;
       font-size: $base-font-size;
       font-weight: bold;
-
-      &:disabled {
-        opacity: 1;
-      }
 
       &:hover {
         background: $budget-hover;

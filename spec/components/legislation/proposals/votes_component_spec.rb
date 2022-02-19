@@ -18,11 +18,11 @@ describe Legislation::Proposals::VotesComponent do
       expect(page).not_to have_button "I disagree", disabled: :all
     end
 
-    it "is disabled to anonymous users" do
+    it "is shown to anonymous users alongside a reminder to sign in" do
       render_inline component
 
-      expect(page).to have_button "I agree", disabled: true
-      expect(page).to have_button "I disagree", disabled: true
+      expect(page).to have_button "I agree"
+      expect(page).to have_button "I disagree"
       expect(page).to have_content "You must sign in or sign up to continue."
     end
 

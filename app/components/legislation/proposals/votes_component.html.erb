@@ -3,11 +3,11 @@
     <%= render Shared::InFavorAgainstComponent.new(proposal) %>
   <% end %>
 
+  <%= render Shared::ParticipationNotAllowedComponent.new(proposal, cannot_vote_text: cannot_vote_text) %>
+
   <span class="total-votes">
     <%= t("proposals.proposal.votes", count: proposal.votes_score) %>
   </span>
-
-  <%= render Shared::ParticipationNotAllowedComponent.new(proposal, cannot_vote_text: cannot_vote_text) %>
 
   <% if current_user&.voted_as_when_voted_for(proposal) && setting["twitter_handle"] %>
     <div class="share-supported">

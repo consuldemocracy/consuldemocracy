@@ -5,8 +5,7 @@
         title: t("votes.agree"),
         "aria-label": agree_aria_label,
         method: "post",
-        remote: true,
-        disabled: !current_user do %>
+        remote: true do %>
       <span class="show-for-sr"><%= t("votes.agree") %></span>
     <% end %>
     <span class="percentage"><%= votes_percentage("likes", votable) %></span>
@@ -18,8 +17,7 @@
         title: t("votes.disagree"),
         "aria-label": disagree_aria_label,
         method: "post",
-        remote: true,
-        disabled: !current_user do %>
+        remote: true do %>
       <span class="show-for-sr"><%= t("votes.disagree") %></span>
     <% end %>
     <span class="percentage"><%= votes_percentage("dislikes", votable) %></span>

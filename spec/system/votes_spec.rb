@@ -252,8 +252,11 @@ describe "Votes" do
 
     visit debates_path
     within("#debate_#{debate.id}") do
-      find("div.votes").hover
-      expect_message_you_need_to_sign_in
+      click_button "I agree"
+
+      expect(page).to have_content "You must sign in or sign up to continue"
+      expect(page).to have_button "I agree", disabled: true
+      expect(page).to have_button "I disagree", disabled: true
     end
   end
 
@@ -262,14 +265,18 @@ describe "Votes" do
 
     visit proposals_path
     within("#proposal_#{proposal.id}") do
-      find("div.supports").hover
-      expect_message_you_need_to_sign_in
+      click_button "Support"
+
+      expect(page).to have_content "You must sign in or sign up to continue"
+      expect(page).not_to have_button "Support", disabled: :all
     end
 
     visit proposal_path(proposal)
     within("#proposal_#{proposal.id}") do
-      find("div.supports").hover
-      expect_message_you_need_to_sign_in
+      click_button "Support"
+
+      expect(page).to have_content "You must sign in or sign up to continue"
+      expect(page).not_to have_button "Support", disabled: :all
     end
   end
 
@@ -310,14 +317,18 @@ describe "Votes" do
 
     visit debates_path
     within("#debate_#{debate.id}") do
-      find("div.votes").hover
-      expect_message_to_many_anonymous_votes
+      click_button "I agree"
+
+      expect(page).to have_content "Too many anonymous votes to admit vote"
+      expect(page).to have_button "I agree", disabled: true
     end
 
     visit debate_path(debate)
     within("#debate_#{debate.id}") do
-      find("div.votes").hover
-      expect_message_to_many_anonymous_votes
+      click_button "I agree"
+
+      expect(page).to have_content "Too many anonymous votes to admit vote"
+      expect(page).to have_button "I agree", disabled: true
     end
   end
 
@@ -329,14 +340,18 @@ describe "Votes" do
     visit proposals_path
 
     within("#proposal_#{proposal.id}") do
-      find("div.supports").hover
-      expect_message_only_verified_can_vote_proposals
+      click_button "Support"
+
+      expect(page).to have_content "Only verified users can vote on proposals"
+      expect(page).not_to have_button "Support", disabled: :all
     end
 
     visit proposal_path(proposal)
     within("#proposal_#{proposal.id}") do
-      find("div.supports").hover
-      expect_message_only_verified_can_vote_proposals
+      click_button "Support"
+
+      expect(page).to have_content "Only verified users can vote on proposals"
+      expect(page).not_to have_button "Support", disabled: :all
     end
   end
 end
