@@ -25,7 +25,7 @@ class Proposals::VotesComponent < ApplicationComponent
       t("proposals.proposal.support_label", proposal: proposal.title)
     end
 
-    def organization?
-      current_user&.organization?
+    def cannot_vote_text
+      t("votes.verified_only", verify_account: link_to_verify_account) unless can_vote?
     end
 end

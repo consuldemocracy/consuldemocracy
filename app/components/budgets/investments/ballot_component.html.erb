@@ -40,17 +40,5 @@
     </div>
   <% end %>
 
-  <% if reason.present? && !voted? %>
-    <div tabindex="0">
-      <div class="participation-not-allowed" style="display:none">
-        <p>
-          <%= sanitize(t("budgets.ballots.reasons_for_not_balloting.#{reason}",
-                verify_account: link_to_verify_account, signin: link_to_signin,
-                signup: link_to_signup, my_heading: link_to_my_heading,
-                change_ballot: link_to_change_ballot,
-                heading_link: heading_link(assigned_heading, budget))) %>
-        </p>
-      </div>
-    </div>
-  <% end %>
+  <%= render Shared::ParticipationNotAllowedComponent.new(investment, cannot_vote_text: cannot_vote_text) %>
 </div>

@@ -855,9 +855,7 @@ es:
     supports: Apoyos
     verified_only: Las propuestas sólo pueden ser votadas por usuarios verificados, %{verify_account}.
     budget_investments:
-      not_logged_in: Necesitas %{signin} o %{signup} para continuar.
       not_verified: Los proyectos de gasto sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
-      organization: Las organizaciones no pueden votar.
       unfeasible: No se pueden votar propuestas inviables.
       not_voting_allowed: El periodo de votación está cerrado.
       different_heading_assigned:

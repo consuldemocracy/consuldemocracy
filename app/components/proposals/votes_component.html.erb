@@ -19,25 +19,7 @@
     <% end %>
   </div>
 
-  <% if !current_user %>
-    <div tabindex="0">
-      <%= render "shared/login_to_vote" %>
-    </div>
-  <% elsif organization? %>
-    <div class="participation-not-allowed" style="display:none" aria-hidden="false">
-      <p>
-        <%= t("votes.organizations") %>
-      </p>
-    </div>
-  <% elsif !can_vote? %>
-    <div tabindex="0">
-      <div class="participation-not-allowed" style="display:none" aria-hidden="false">
-        <p>
-          <%= sanitize(t("votes.verified_only", verify_account: link_to_verify_account)) %>
-        </p>
-      </div>
-    </div>
-  <% end %>
+  <%= render Shared::ParticipationNotAllowedComponent.new(proposal, cannot_vote_text: cannot_vote_text) %>
 
   <% if voted? && setting["twitter_handle"] %>
     <div class="share-supported">

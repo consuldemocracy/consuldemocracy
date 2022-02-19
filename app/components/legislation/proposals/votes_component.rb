@@ -12,7 +12,7 @@ class Legislation::Proposals::VotesComponent < ApplicationComponent
       proposal.votable_by?(current_user)
     end
 
-    def organization?
-      current_user&.organization?
+    def cannot_vote_text
+      t("legislation.proposals.not_verified", verify_account: link_to_verify_account) unless can_vote?
     end
 end

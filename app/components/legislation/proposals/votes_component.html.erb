@@ -7,24 +7,7 @@
     <%= t("proposals.proposal.votes", count: proposal.votes_score) %>
   </span>
 
-  <% if !current_user %>
-    <div tabindex="0">
-      <%= render "shared/login_to_vote" %>
-    </div>
-  <% elsif organization? %>
-    <div class="participation-not-allowed" style="display:none" aria-hidden="false">
-      <p>
-        <%= t("votes.organizations") %>
-      </p>
-    </div>
-  <% elsif !can_vote? %>
-    <div class="participation-not-allowed" style="display:none" aria-hidden="false">
-      <p>
-        <%= sanitize(t("legislation.proposals.not_verified",
-            verify_account: link_to_verify_account)) %>
-      </p>
-    </div>
-  <% end %>
+  <%= render Shared::ParticipationNotAllowedComponent.new(proposal, cannot_vote_text: cannot_vote_text) %>
 
   <% if current_user&.voted_as_when_voted_for(proposal) && setting["twitter_handle"] %>
     <div class="share-supported">
