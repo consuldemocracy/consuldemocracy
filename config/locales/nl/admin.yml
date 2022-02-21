@@ -61,44 +61,68 @@ nl:
         no_activity: Er is geen moderator activiteit.
     budgets:
       actions:
-        edit: "Edit budget"
+        edit: "Bewerk begroting"
         preview: "Preview"
+        preview_results: "Preview resultaten"
+        ballots: "Maak stemhok"
+        confirm:
+          ballots: "Weet je het zeker? Dit is alleen relevant wanneer je fysieke (papieren) stemmen gaat inzamelen, in de stemfase. Inwoners kunnen altijd online hun stem uitbrengen, ook mét de aanwezigheid van een fysiek stemhokje."
+          destroy: "Weet je het zeker? Je verwijdert dan de begroting en alle bijbehorende groepen en rubrieken. Deze actie kan je niet ongedaan maken."
+        descriptions:
+          ballots: "Hiermee kan je fysieke stemmen beheren. Activeer deze optie alleen als je fysieke stemhokjes gebruikt om fysieke (papieren) te verzamelen in de stemfase."
+          calculate_winners: "Nadat de uitslag is berekend kunnen alleen admins de uitslag zien. De uitslag is openbaar zodra de \"%{phase}\" fase actief is en de optie  \"Show results\" is aangezet bij het bewerken van de beroting."
+          destroy: "Je verwijdert de begroting en alle bijbehorende groepen en rubrieken. Deze actie kan je niet ongedaan maken."
       index:
-        title: Participatory budgets
-        new_link: Create new budget
+        title: "Ideeën"
+        new_link: "Creëer nieuwe begroting"
         filter: Filter
         filters:
-          all: All
-          open: Open
-          finished: Finished
+          all: "Alle"
+          open: "Actief"
+          finished: "Afgesloten"
         budget_investments: Zie begrotingsvoorstellen
         table_budget_type: "Type"
         table_draft: "Concept"
-        table_name: Name
-        table_phase: Phase
-        admin_ballots: Stembiljetten
+        table_name: "Titel"
+        table_phase: "Fase"
+        admin_ballots: "Papieren stemmen"
         no_budgets: "Er zijn geen budgetten."
       create:
-        notice: New participatory budget created successfully!
+        notice: "Nieuwe burgerbegroting gemaakt!"
       update:
-        notice: Participatory budget updated successfully
+        notice: "Burgerbegroting is bewerkt!"
+      publish:
+        notice: "Burgerbegroting succesvol gepubliceerd!"
       edit:
-        title: Edit Participatory budget
+        title: "Bewerk begroting"
         delete: Verwijder begroting
-        phase: Phase
+        phase: "Fase"
         enabled: Actief
         actions: Activiteiten
         active: Actieve
         blank_dates: Datums zijn leeg
+        phases_caption: "Instellingen fases"
       destroy:
         success_notice: Begroting verwijderd
         unable_notice: U kunt een begroting met voorstellen niet verwijderen
       show:
-        add_heading: "Voeg kop toe"
+        add_group: "Groep toevoegen"
+        add_heading: "Rubriek toevoegen"
+        groups_and_headings: "Instellingen voor groepen en rubrieken"
+        headings_caption: "Rubieken in %{group}"
       winners:
         calculate: Bereken gewonnen bestemmingen
         calculated: Bestemmingen worden berekend, kan even duren.
         recalculate: Herbereken gewonnen investeringen
+      help:
+        budgets: "Bij een burgerbegroting kunnen inwoners direct beslissen wat er met geld van de gemeente gebeurt. De gemeente monitort en evalueert de ideeën."
+        groups:
+          multiple: "Groepen organiseren rubrieken. Nadat een groep  is aangemaakt en deze verschillende rubrieken  bevat, kan bepaalt worden in hoeveel rubrieken een gebruiker per groep  kan stemmen."
+          single: "Groepen organiseren rubrieken. Dit budget heeft slechts één rubriek en hier kan dezelfde naam worden gebruikt als voor  de groep. Deze naam van de rubriek  verschijnt nergens op de website. Je kunt daarom gewoon doorgaan naar de volgende stap."
+        headings:
+          multiple: "Rubrieken verdelen het geld van de burgerbegroting. Hier kun je rubrieken voor de groep toevoegen en het te besteden bedrag voor elke rubriek toewijzen."
+          single: "Rubrieken verdelen het geld van de burgerbegroting. Dit budget heeft slechts één rubriek . Daarom is vooraf al bepaalt waar het geld in deze begroting aan wordt uitgegeven."
+        phases: "Een burgerbegroting bestaat uit verschillende fasen. Hieronder kun je fases aan- of uitzetten en vullen met content."
     budget_groups:
       name: "Name"
       headings_name: "Rubrieken"
@@ -238,9 +262,35 @@ nl:
       search_unfeasible: Search unfeasible
     budgets_wizard:
       creation_timeline:
-        budget: Budget
-        groups: Groepen
-        headings: Rubrieken
+        budget: "Budget"
+        groups: "Groepen"
+        headings: "Rubrieken"
+        phases: "Fases"
+      budgets:
+        continue: "Door naar groepen"
+      groups:
+        back: "Ga terug"
+        continue: "Door naar rubrieken"
+      headings:
+        continue: "Door naar fases"
+        single:
+          back: "Ga terug"
+      heading_mode:
+        multiple:
+          description: "Hier creëer je een proces met meerdere groepen, wijken of thema's. Je hebt als het ware meerdere zakken geld. Bijvoorbeeld 25.000 voor \"Oosterparkwijk\", 30.000 voor het \"Centrum\", 28.000 voor de \"Westerparkwijk\" en de hele stad. Of voor verschillende thema's zoals sport, cultuur of gezondheid."
+          link: "Creeër meervoudig budget"
+          title: "<strong>Meervoudig</strong> budget"
+        single:
+          description: "Hier creëer je een proces met één groep, wijk of thema. Je hebt als het ware één zak geld. Bijvoorbeeld 25.000 euro voor de \"Oosterparkwijk\", of 10.000 voor cultuur."
+          link: "Creëer enkelvoudig budget"
+          title: "<strong>Enkelvoudig</strong> budget"
+        title: "Type burgerbegroting"
+      phases:
+        continue: "Voltooien"
+        multiple:
+          back: "Ga terug"
+        single:
+          back: "Ga terug"
     milestones:
       index:
         table_id: "ID"

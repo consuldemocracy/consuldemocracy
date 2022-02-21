@@ -649,6 +649,7 @@ describe "Budgets" do
       budget = create(:budget)
       group = create(:budget_group, budget: budget)
       heading = create(:budget_heading, group: group)
+      create(:budget_investment, heading: heading)
 
       voter = create(:user, :level_two)
 

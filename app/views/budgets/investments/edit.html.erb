@@ -1,7 +1,9 @@
-<div class="budget-investment-new">
-  <div>
-    <h1><%= t("management.budget_investments.edit") %></h1>
+<main class="budget-investment-new no-margin-top">
+  <div class="small-12 column light expand padding-top">
+    <header>
+      <h1><%= t("management.budget_investments.edit") %></h1>
+    </header>
   </div>
 
   <%= render "/budgets/investments/form", form_url: budget_investment_path(@budget, @investment) %>
-</div>
+</main>

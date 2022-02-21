@@ -1,11 +1,7 @@
 class Image < ApplicationRecord
   include Attachable
 
-  has_attachment :attachment, styles: {
-                                large: "x#{Setting["uploads.images.min_height"]}",
-                                medium: "300x300#",
-                                thumb: "140x245#"
-                              },
+  has_attachment :attachment, styles: { large: "x475", medium: "300x300#", thumb: "140x245#" },
                               url: "/system/:class/:prefix/:style/:hash.:extension",
                               hash_data: ":class/:style",
                               use_timestamp: false,
