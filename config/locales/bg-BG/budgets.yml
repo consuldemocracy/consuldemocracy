@@ -212,7 +212,7 @@ bg:
     executions:
       link: "Основни етапи"
       page_title: "%{budget} - Основни етапи"
-      heading: "Основни етапи в бюджета с участие"
+      heading: "Основни етапи в гражданския бюджет"
       heading_selection_title: "По район"
       no_winner_investments: "Няма печеливши инвестиции на този етап"
       filters:
