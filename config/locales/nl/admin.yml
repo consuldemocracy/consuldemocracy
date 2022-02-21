@@ -143,7 +143,7 @@ nl:
         save_changes: Bewaar wijzigingen
     budget_investments:
       index:
-        heading_filter_all: All headings
+        heading_filter_all: Alle koppen
         administrator_filter_all: All administrators
         valuator_filter_all: All valuators
         tags_filter_all: All tags
@@ -226,7 +226,7 @@ nl:
         compatibility: Compatibiliteit
         selection: Selection
         assigned_valuators: Valuators
-        select_heading: Select heading
+        select_heading: Selecteer kop
         submit_button: Update
         user_tags: Door deelnemer toegewezen labels
         tags_placeholder: "Write the tags you want separated by commas (,)"
