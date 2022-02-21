@@ -47,9 +47,9 @@ bg:
       subject: "Благодарим ви, че създадохте инвестиция!"
       title: "Благодарим ви, че създадохте инвестиция!"
       intro: "Здравейте <strong>%{author}</strong>,"
-      text: "Благодарим ви, че създадохте инвестицията си <strong>%{investment} </strong> за бюджети с участие <strong> %{budget} </strong>."
+      text: "Благодарим ви, че създадохте инвестицията си <strong>%{investment} </strong> за граждански бюджети <strong> %{budget} </strong>."
       follow: "Ние ще Ви информираме как протича процеса, който също така можете да следите на <strong>%{link}</strong>."
-      follow_link: "Бюджети с участие"
+      follow_link: "Граждански бюджети"
       sincerely: "На Ваше разположение,"
       share: "Споделете вашия проект"
     budget_investment_unfeasible:
