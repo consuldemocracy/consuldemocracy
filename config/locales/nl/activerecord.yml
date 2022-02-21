@@ -215,8 +215,8 @@ nl:
         name: "Groepsnaam"
       budget/heading:
         allow_custom_content: "Inhoudsblok toestaan"
-        latitude: "Breedte"
-        longitude: "Lengte"
+        latitude: "Breedte (optioneel)"
+        longitude: "Lengte (optioneel)"
         name: "Naam"
         price: "Kosten"
         population: "Populatie"
