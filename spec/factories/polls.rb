@@ -4,27 +4,25 @@ FactoryBot.define do
 
     slug { "this-is-a-slug" }
 
-    starts_at { 1.month.ago }
-    ends_at { 1.month.from_now }
+    starts_at { 1.month.from_now }
+    ends_at { 2.months.from_now }
 
     trait :current do
-      starts_at { 2.days.ago }
-      ends_at { 2.days.from_now }
+      after(:create) { |poll| poll.update_columns starts_at: 2.days.ago, ends_at: 2.days.from_now }
     end
 
     trait :expired do
-      starts_at { 1.month.ago }
-      ends_at { 15.days.ago }
+      after(:create) { |poll| poll.update_columns starts_at: 1.month.ago, ends_at: 15.days.ago }
     end
 
     trait :old do
-      starts_at { 3.months.ago }
-      ends_at { 2.months.ago }
+      after(:create) { |poll| poll.update_columns starts_at: 3.months.ago, ends_at: 2.months.ago }
     end
 
     trait :recounting do
-      starts_at { 1.month.ago }
-      ends_at { Date.current }
+      after(:create) do |poll|
+        poll.update_columns starts_at: 1.month.ago, ends_at: Date.current.beginning_of_day
+      end
     end
 
     trait :published do

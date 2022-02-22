@@ -161,8 +161,8 @@ describe "Voters" do
 
   scenario "Store officer and booth information" do
     create(:user, :in_census)
-    poll1 = create(:poll, name: "¿Quieres que XYZ sea aprobado?")
-    poll2 = create(:poll, name: "Pregunta de votación de prueba")
+    poll1 = create(:poll, :current)
+    poll2 = create(:poll, :current)
 
     second_booth = create(:poll_booth)
 

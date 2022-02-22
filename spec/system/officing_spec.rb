@@ -89,7 +89,7 @@ describe "Poll Officing" do
 
   scenario "Access as an administrator is not authorized" do
     create(:administrator, user: user)
-    create(:poll)
+    create(:poll, :current)
 
     login_as(user)
     visit root_path
@@ -109,7 +109,7 @@ describe "Poll Officing" do
   scenario "Access as an administrator with poll officer role is authorized" do
     create(:administrator, user: user)
     create(:poll_officer, user: user)
-    create(:poll)
+    create(:poll, :current)
     login_as(user)
     visit root_path
 
@@ -122,7 +122,7 @@ describe "Poll Officing" do
 
   scenario "Access as an poll officer is authorized" do
     create(:poll_officer, user: user)
-    create(:poll)
+    create(:poll, :current)
     login_as(user)
     visit root_path
 
@@ -134,7 +134,7 @@ describe "Poll Officing" do
   end
 
   scenario "Poll officer access links" do
-    create(:poll)
+    create(:poll, :current)
     create(:poll_officer, user: user)
     login_as(user)
     visit root_path
@@ -149,7 +149,7 @@ describe "Poll Officing" do
 
   scenario "Officing dashboard" do
     create(:poll_officer, user: user)
-    create(:poll)
+    create(:poll, :current)
     login_as(user)
     visit root_path
 
@@ -165,7 +165,7 @@ describe "Poll Officing" do
   end
 
   scenario "Officing dashboard available for multiple sessions", :with_frozen_time do
-    poll = create(:poll)
+    poll = create(:poll, :current)
     booth = create(:poll_booth)
     booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
 

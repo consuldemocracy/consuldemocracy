@@ -2,11 +2,11 @@ require "rails_helper"
 
 describe "Admin booths assignments", :admin do
   describe "Admin Booth Assignment management" do
-    let!(:poll) { create(:poll) }
+    let!(:poll) { create(:poll, :current) }
     let!(:booth) { create(:poll_booth) }
 
     scenario "List Polls and Booths to manage" do
-      second_poll = create(:poll)
+      second_poll = create(:poll, :current)
       second_booth = create(:poll_booth)
 
       visit booth_assignments_admin_polls_path
@@ -31,8 +31,8 @@ describe "Admin booths assignments", :admin do
     end
 
     scenario "Index do not show polls created by users from proposals dashboard" do
-      create(:poll, name: "Poll created by admin")
-      create(:poll, name: "Poll from user's proposal", related_type: "Proposal")
+      create(:poll, :current, name: "Poll created by admin")
+      create(:poll, :current, name: "Poll from user's proposal", related_type: "Proposal")
 
       visit booth_assignments_admin_polls_path
 

@@ -89,21 +89,21 @@ describe Poll do
   describe "#opened?" do
     it "returns true only when it isn't too late" do
       expect(create(:poll, :expired)).not_to be_current
-      expect(create(:poll)).to be_current
+      expect(create(:poll, :current)).to be_current
     end
   end
 
   describe "#expired?" do
     it "returns true only when it is too late" do
       expect(create(:poll, :expired)).to be_expired
-      expect(create(:poll)).not_to be_expired
+      expect(create(:poll, :current)).not_to be_expired
     end
   end
 
   describe "#published?" do
     it "returns true only when published is true" do
-      expect(create(:poll)).not_to be_published
-      expect(create(:poll, :published)).to be_published
+      expect(create(:poll, :current)).not_to be_published
+      expect(create(:poll, :current, :published)).to be_published
     end
   end
 
@@ -137,10 +137,13 @@ describe Poll do
   describe "answerable_by" do
     let(:geozone) { create(:geozone) }
 
-    let!(:current_poll) { create(:poll) }
+    let!(:current_poll) { create(:poll, :current) }
     let!(:expired_poll) { create(:poll, :expired) }
 
-    let!(:current_restricted_poll) { create(:poll, geozone_restricted: true, geozones: [geozone]) }
+    let!(:current_restricted_poll) do
+      create(:poll, :current, geozone_restricted: true, geozones: [geozone])
+    end
+
     let!(:expired_restricted_poll) do
       create(:poll, :expired, geozone_restricted: true, geozones: [geozone])
     end
@@ -202,9 +205,9 @@ describe Poll do
     it "returns polls that have not been voted by a user" do
       user = create(:user, :level_two)
 
-      poll1 = create(:poll)
-      poll2 = create(:poll)
-      poll3 = create(:poll)
+      poll1 = create(:poll, :current)
+      poll2 = create(:poll, :current)
+      poll3 = create(:poll, :current)
 
       create(:poll_voter, user: user, poll: poll1)
 
@@ -213,8 +216,8 @@ describe Poll do
 
     it "returns polls that are answerable by a user" do
       user = create(:user, :level_two, geozone: nil)
-      poll1 = create(:poll)
-      poll2 = create(:poll)
+      poll1 = create(:poll, :current)
+      poll2 = create(:poll, :current)
 
       allow(Poll).to receive(:answerable_by).and_return(Poll.where(id: poll1))
 
@@ -224,7 +227,7 @@ describe Poll do
 
     it "returns polls even if there are no voters yet" do
       user = create(:user, :level_two)
-      poll = create(:poll)
+      poll = create(:poll, :current)
 
       expect(Poll.votable_by(user)).to eq [poll]
     end
@@ -233,7 +236,7 @@ describe Poll do
   describe "#votable_by" do
     it "returns false if the user has already voted the poll" do
       user = create(:user, :level_two)
-      poll = create(:poll)
+      poll = create(:poll, :current)
 
       create(:poll_voter, user: user, poll: poll)
 
@@ -242,7 +245,7 @@ describe Poll do
 
     it "returns false if the poll is not answerable by the user" do
       user = create(:user, :level_two)
-      poll = create(:poll)
+      poll = create(:poll, :current)
 
       allow_any_instance_of(Poll).to receive(:answerable_by?).and_return(false)
 
@@ -251,7 +254,7 @@ describe Poll do
 
     it "return true if a poll is answerable and has not been voted by the user" do
       user = create(:user, :level_two)
-      poll = create(:poll)
+      poll = create(:poll, :current)
 
       allow_any_instance_of(Poll).to receive(:answerable_by?).and_return(true)
 
@@ -262,14 +265,14 @@ describe Poll do
   describe "#voted_by?" do
     it "return false if the user has not voted for this poll" do
       user = create(:user, :level_two)
-      poll = create(:poll)
+      poll = create(:poll, :current)
 
       expect(poll.voted_by?(user)).to eq(false)
     end
 
     it "returns true if the user has voted for this poll" do
       user = create(:user, :level_two)
-      poll = create(:poll)
+      poll = create(:poll, :current)
 
       create(:poll_voter, user: user, poll: poll)
 
@@ -280,7 +283,7 @@ describe Poll do
   describe "#voted_in_booth?" do
     it "returns true if the user has already voted in booth" do
       user = create(:user, :level_two)
-      poll = create(:poll)
+      poll = create(:poll, :current)
 
       create(:poll_voter, :from_booth, poll: poll, user: user)
 
@@ -289,14 +292,14 @@ describe Poll do
 
     it "returns false if the user has not already voted in a booth" do
       user = create(:user, :level_two)
-      poll = create(:poll)
+      poll = create(:poll, :current)
 
       expect(poll.voted_in_booth?(user)).not_to be
     end
 
     it "returns false if the user has voted in web" do
       user = create(:user, :level_two)
-      poll = create(:poll)
+      poll = create(:poll, :current)
 
       create(:poll_voter, :from_web, poll: poll, user: user)
 
@@ -340,9 +343,9 @@ describe Poll do
   context "scopes" do
     describe "#not_budget" do
       it "returns polls not associated to a budget" do
-        poll1 = create(:poll)
-        poll2 = create(:poll)
-        poll3 = create(:poll, :for_budget)
+        poll1 = create(:poll, :current)
+        poll2 = create(:poll, :current)
+        poll3 = create(:poll, :current, :for_budget)
 
         expect(Poll.not_budget).to match_array [poll1, poll2]
         expect(Poll.not_budget).not_to include(poll3)
@@ -362,19 +365,19 @@ describe Poll do
 
     it "returns not geozone restricted polls first" do
       starts_at = Time.current + 1.day
-      poll1 = create(:poll, geozone_restricted: false, starts_at: starts_at, name: "Zzz...")
-      poll2 = create(:poll, geozone_restricted: true, starts_at: starts_at, name: "Aaaaaah!")
+      poll1 = create(:poll, :current, geozone_restricted: false, starts_at: starts_at, name: "Zzz...")
+      poll2 = create(:poll, :current, geozone_restricted: true, starts_at: starts_at, name: "Aaaaaah!")
 
       expect(Poll.sort_for_list).to eq [poll1, poll2]
     end
 
     it "returns polls for the user's geozone first" do
       geozone = create(:geozone)
-      poll1 = create(:poll, geozone_restricted: true)
-      poll2 = create(:poll, geozone_restricted: true)
-      poll3 = create(:poll)
-      poll_geozone_1 = create(:poll, geozone_restricted: true, geozones: [geozone])
-      poll_geozone_2 = create(:poll, geozone_restricted: true, geozones: [geozone])
+      poll1 = create(:poll, :current, geozone_restricted: true)
+      poll2 = create(:poll, :current, geozone_restricted: true)
+      poll3 = create(:poll, :current)
+      poll_geozone_1 = create(:poll, :current, geozone_restricted: true, geozones: [geozone])
+      poll_geozone_2 = create(:poll, :current, geozone_restricted: true, geozones: [geozone])
       geozone_user = create(:user, :level_two, geozone: geozone)
 
       expect(Poll.sort_for_list).to eq [poll3, poll1, poll2, poll_geozone_1, poll_geozone_2]
@@ -383,14 +386,14 @@ describe Poll do
 
     it "returns polls earlier to start first" do
       starts_at = Time.current + 1.day
-      poll1 = create(:poll, geozone_restricted: false, starts_at: starts_at - 1.hour, name: "Zzz...")
-      poll2 = create(:poll, geozone_restricted: false, starts_at: starts_at, name: "Aaaaah!")
+      poll1 = create(:poll, :current, geozone_restricted: false, starts_at: starts_at - 1.hour, name: "Zzz...")
+      poll2 = create(:poll, :current, geozone_restricted: false, starts_at: starts_at, name: "Aaaaah!")
 
       expect(Poll.sort_for_list).to eq [poll1, poll2]
     end
 
     it "returns polls with multiple translations only once" do
-      create(:poll, name_en: "English", name_es: "Spanish")
+      create(:poll, :current, name_en: "English", name_es: "Spanish")
 
       expect(Poll.sort_for_list.count).to eq 1
     end
@@ -431,13 +434,15 @@ describe Poll do
     end
 
     it "is false for polls which finished less than a month ago" do
-      poll = create(:poll, starts_at: 3.months.ago, ends_at: 27.days.ago)
+      poll = create(:poll)
+      poll.update_columns starts_at: 3.months.ago, ends_at: 27.days.ago
 
       expect(poll.recounts_confirmed?).to be false
     end
 
     it "is true for polls which finished more than a month ago" do
-      poll = create(:poll, starts_at: 3.months.ago, ends_at: 1.month.ago - 1.day)
+      poll = create(:poll)
+      poll.update_columns starts_at: 3.months.ago, ends_at: 1.month.ago - 1.day
 
       expect(poll.recounts_confirmed?).to be true
     end
@@ -445,11 +450,11 @@ describe Poll do
 
   describe ".search" do
     let!(:square) do
-      create(:poll, name: "Square reform", summary: "Next to the park", description: "Give it more space")
+      create(:poll, :current, name: "Square reform", summary: "Next to the park", description: "Give it more space")
     end
 
     let!(:park) do
-      create(:poll, name: "New park", summary: "Green spaces", description: "Next to the square")
+      create(:poll, :current, name: "New park", summary: "Green spaces", description: "Next to the square")
     end
 
     it "returns only matching polls" do

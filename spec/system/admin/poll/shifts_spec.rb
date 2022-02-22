@@ -184,7 +184,8 @@ describe "Admin shifts", :admin do
   end
 
   scenario "Try to destroy with associated recount" do
-    assignment = create(:poll_booth_assignment)
+    poll = create(:poll, :current)
+    assignment = create(:poll_booth_assignment, poll: poll)
     officer_assignment = create(:poll_officer_assignment, booth_assignment: assignment)
     create(:poll_recount, booth_assignment: assignment, officer_assignment: officer_assignment)
 
@@ -211,7 +212,8 @@ describe "Admin shifts", :admin do
   end
 
   scenario "try to destroy with associated partial results" do
-    assignment = create(:poll_booth_assignment)
+    poll = create(:poll, :current)
+    assignment = create(:poll_booth_assignment, poll: poll)
     officer_assignment = create(:poll_officer_assignment, booth_assignment: assignment)
     create(:poll_partial_result,
            booth_assignment: assignment,

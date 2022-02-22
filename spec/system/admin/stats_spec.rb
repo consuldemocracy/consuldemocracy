@@ -310,7 +310,7 @@ describe "Stats", :admin do
   context "Polls" do
     scenario "Total participants by origin" do
       create(:poll_officer_assignment)
-      3.times { create(:poll_voter, origin: "web") }
+      3.times { create(:poll_voter, poll: create(:poll, :current), origin: "web") }
 
       visit admin_stats_path
 
@@ -325,8 +325,8 @@ describe "Stats", :admin do
 
     scenario "Total participants" do
       user = create(:user, :level_two)
-      3.times { create(:poll_voter, user: user) }
-      create(:poll_voter)
+      3.times { create(:poll_voter, poll: create(:poll, :current), user: user) }
+      create :poll_voter, poll: create(:poll, :current)
 
       visit admin_stats_path
 
@@ -340,8 +340,8 @@ describe "Stats", :admin do
     end
 
     scenario "Participants by poll" do
-      poll1 = create(:poll)
-      poll2 = create(:poll)
+      poll1 = create(:poll, :current)
+      poll2 = create(:poll, :current)
 
       1.times { create(:poll_voter, poll: poll1, origin: "web") }
       2.times { create(:poll_voter, poll: poll2, origin: "web") }
@@ -367,7 +367,7 @@ describe "Stats", :admin do
       user1 = create(:user, :level_two)
       user2 = create(:user, :level_two)
 
-      poll = create(:poll)
+      poll = create(:poll, :current)
 
       question1 = create(:poll_question, :yes_no, poll: poll)
       question2 = create(:poll_question, :yes_no, poll: poll)

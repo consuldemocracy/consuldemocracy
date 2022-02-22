@@ -33,13 +33,13 @@ describe Abilities::Common do
   let(:ballot_in_selecting_budget) { create(:budget_ballot, budget: selecting_budget) }
   let(:ballot_in_balloting_budget) { create(:budget_ballot, budget: balloting_budget) }
 
-  let(:current_poll) { create(:poll) }
+  let(:current_poll) { create(:poll, :current) }
   let(:expired_poll) { create(:poll, :expired) }
   let(:expired_poll_from_own_geozone) { create(:poll, :expired, geozone_restricted: true, geozones: [geozone]) }
   let(:expired_poll_from_other_geozone) { create(:poll, :expired, geozone_restricted: true, geozones: [create(:geozone)]) }
-  let(:poll) { create(:poll, geozone_restricted: false) }
-  let(:poll_from_own_geozone) { create(:poll, geozone_restricted: true, geozones: [geozone]) }
-  let(:poll_from_other_geozone) { create(:poll, geozone_restricted: true, geozones: [create(:geozone)]) }
+  let(:poll) { create(:poll, :current, geozone_restricted: false) }
+  let(:poll_from_own_geozone) { create(:poll, :current, geozone_restricted: true, geozones: [geozone]) }
+  let(:poll_from_other_geozone) { create(:poll, :current, geozone_restricted: true, geozones: [create(:geozone)]) }
 
   let(:poll_question_from_own_geozone)   { create(:poll_question, poll: poll_from_own_geozone) }
   let(:poll_question_from_other_geozone) { create(:poll_question, poll: poll_from_other_geozone) }

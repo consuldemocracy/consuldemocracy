@@ -23,7 +23,7 @@ describe "Polls" do
       visit polls_path
       expect(page).to have_content("There are no open votings")
 
-      polls = create_list(:poll, 3, :with_image)
+      polls = create_list(:poll, 3, :current, :with_image)
 
       visit polls_path
 
@@ -43,7 +43,7 @@ describe "Polls" do
     end
 
     scenario "Filtering polls" do
-      create(:poll, name: "Current poll")
+      create(:poll, :current, name: "Current poll")
       create(:poll, :expired, name: "Expired poll")
 
       visit polls_path
@@ -68,8 +68,7 @@ describe "Polls" do
     end
 
     scenario "Displays icon correctly" do
-      create_list(:poll, 3)
-
+      create_list(:poll, 3, :current)
       visit polls_path
 
       expect(page).to have_css(".not-logged-in", count: 3)
@@ -85,7 +84,7 @@ describe "Polls" do
     end
 
     scenario "Geozone poll" do
-      create(:poll, geozone_restricted: true)
+      create(:poll, :current, geozone_restricted: true)
 
       login_as(create(:user, :level_two))
       visit polls_path
@@ -95,7 +94,7 @@ describe "Polls" do
     end
 
     scenario "Already participated in a poll" do
-      poll_with_question = create(:poll)
+      poll_with_question = create(:poll, :current)
       question = create(:poll_question, :yes_no, poll: poll_with_question)
 
       login_as(create(:user, :level_two))
@@ -129,7 +128,7 @@ describe "Polls" do
       Setting["feature.sdg"] = true
       Setting["sdg.process.polls"] = true
 
-      create(:poll, sdg_goals: [SDG::Goal[1]], sdg_targets: [SDG::Target["1.1"]])
+      create(:poll, :current, sdg_goals: [SDG::Goal[1]], sdg_targets: [SDG::Target["1.1"]])
 
       visit polls_path
 
@@ -140,7 +139,7 @@ describe "Polls" do
 
   context "Show" do
     let(:geozone) { create(:geozone) }
-    let(:poll) { create(:poll, summary: "Summary", description: "Description") }
+    let(:poll) { create(:poll, :current, summary: "Summary", description: "Description") }
 
     scenario "Visit path with id" do
       visit poll_path(poll.id)
@@ -440,9 +439,9 @@ describe "Polls" do
     end
 
     scenario "Polls with users same-geozone listed first" do
-      create(:poll, geozone_restricted: true, name: "A Poll")
-      create(:poll, name: "Not restricted")
-      create(:poll, geozone_restricted: true, geozones: [geozone], name: "Geozone Poll")
+      create(:poll, :current, geozone_restricted: true, name: "A Poll")
+      create(:poll, :current, name: "Not restricted")
+      create(:poll, :current, geozone_restricted: true, geozones: [geozone], name: "Geozone Poll")
 
       login_as(create(:user, :level_two, geozone: geozone))
       visit polls_path(poll)
@@ -453,7 +452,7 @@ describe "Polls" do
   end
 
   context "Booth & Website", :with_frozen_time do
-    let(:poll) { create(:poll, summary: "Summary", description: "Description") }
+    let(:poll) { create(:poll, :current, summary: "Summary", description: "Description") }
     let(:booth) { create(:poll_booth) }
     let(:officer) { create(:poll_officer) }
 

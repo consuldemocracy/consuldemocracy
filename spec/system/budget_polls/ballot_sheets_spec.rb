@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Poll budget ballot sheets" do
-  let(:poll) { create(:poll, :for_budget, ends_at: 1.day.ago) }
+  let(:poll) { create(:poll, :current, :for_budget) }
   let(:booth) { create(:poll_booth, polls: [poll]) }
   let(:poll_officer) { create(:poll_officer) }
 
@@ -13,6 +13,8 @@ describe "Poll budget ballot sheets" do
 
       login_as(poll_officer.user)
       set_officing_booth(booth)
+
+      poll.update_columns ends_at: Date.current.beginning_of_day
     end
 
     scenario "Budget polls are visible" do

@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Officing Results", :with_frozen_time do
-  let(:poll) { create(:poll, ends_at: 1.day.ago) }
+  let(:poll) { create(:poll, :current) }
   let(:booth) { create(:poll_booth, polls: [poll]) }
   let(:poll_officer) { create(:poll_officer) }
   let(:question_1) { create(:poll_question, poll: poll) }
@@ -17,11 +17,13 @@ describe "Officing Results", :with_frozen_time do
 
     login_as(poll_officer.user)
     set_officing_booth(booth)
+
+    poll.update_columns ends_at: Date.current.beginning_of_day
   end
 
   scenario "Only polls where user is officer for results are accessible" do
     not_allowed_poll_1 = create(:poll, :expired)
-    not_allowed_poll_2 = create(:poll, officers: [poll_officer], ends_at: 1.day.ago)
+    not_allowed_poll_2 = create(:poll, :expired, officers: [poll_officer])
     not_allowed_poll_3 = create(:poll, officers: [poll_officer])
 
     visit root_path
@@ -39,8 +41,10 @@ describe "Officing Results", :with_frozen_time do
     expect(page).not_to have_content(not_allowed_poll_3.name)
     expect(page).to have_content(poll.name)
 
-    visit new_officing_poll_result_path(not_allowed_poll_1)
-    expect(page).to have_content("You are not allowed to add results for this poll")
+    [not_allowed_poll_1, not_allowed_poll_2, not_allowed_poll_3].each do |not_allowed_poll|
+      visit new_officing_poll_result_path(not_allowed_poll)
+      expect(page).to have_content("You are not allowed to add results for this poll")
+    end
   end
 
   scenario "Add results" do

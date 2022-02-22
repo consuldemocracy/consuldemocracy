@@ -16,6 +16,8 @@ describe "Poll Results" do
     answer4 = create(:poll_question_answer, question: question2, title: "Green")
     answer5 = create(:poll_question_answer, question: question2, title: "Yellow")
 
+    poll.update_columns starts_at: 1.day.ago
+
     login_as user1
     vote_for_poll_via_web(poll, question1, "Yes")
     vote_for_poll_via_web(poll, question2, "Blue")
@@ -34,7 +36,7 @@ describe "Poll Results" do
     expect(Poll::Voter.count).to eq(3)
     logout
 
-    poll.update!(ends_at: 1.day.ago)
+    poll.update_columns ends_at: 1.day.ago
 
     visit results_poll_path(poll)
 

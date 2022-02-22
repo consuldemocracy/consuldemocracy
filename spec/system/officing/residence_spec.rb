@@ -91,7 +91,7 @@ describe "Residence", :with_frozen_time do
 
   scenario "Verify booth" do
     booth = create(:poll_booth)
-    poll = create(:poll)
+    poll = create(:poll, :current)
 
     create(:poll_officer_assignment, officer: officer, poll: poll, booth: booth)
     create(:poll_shift, officer: officer, booth: booth, date: Date.current)
