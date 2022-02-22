@@ -138,7 +138,9 @@ nl:
         phase: "Fase"
         currency_symbol: "Valuta"
       budget/translation:
-        name: "Name"
+        name: "Titel"
+        main_link_text: "Tekst knop"
+        main_link_url: "Link knop"
       budget/investment:
         heading_id: "Kop"
         title: "Titel"
@@ -203,9 +205,11 @@ nl:
         ends_at: "Einddatum"
         starts_at: "Startdatum"
       budget/phase/translation:
-        name: "Name"
-        description: "Beschrijving"
+        name: "Naam fase"
+        description: "Omschrijving"
         summary: "Samenvatting"
+        main_link_text: "Tekst knop"
+        main_link_url: "Link knop"
       comment:
         body: "Reactie"
         user: "Gebruiker"
@@ -433,6 +437,7 @@ nl:
         link_text: Tekst link
         link_url: URL link
         columns: Aantal kolommen
+        background_image: "Stel afbeelding in als achtergrond"
       widget/card/translation:
         label: Term (optioneel)
         title: Titel

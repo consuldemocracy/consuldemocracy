@@ -310,8 +310,8 @@ aside {
     @include breakpoint(medium) {
 
       img {
-        border-bottom-left-radius: rem-calc(10);
-        border-top-left-radius: rem-calc(10);
+        border-bottom-left-radius: rem-calc(12);
+        border-top-left-radius: rem-calc(12);
         max-width: none;
         height: 100%;
       }
@@ -738,7 +738,6 @@ body > header,
     }
 
     &.header-card-full {
-      margin-left: calc(#{$global-width / 2} - 50vw);
       margin-right: calc(#{$global-width / 2} - 50vw);
       overflow-x: hidden;
     }
@@ -883,7 +882,6 @@ body > header,
       color: $text;
       padding: 0;
       text-align: left;
-      text-decoration: none;
     }
   }
 }
@@ -1048,6 +1046,7 @@ footer {
   }
 
   .social {
+    width: auto;
 
     [class^="fa"] {
       color: $footer;
@@ -1748,6 +1747,7 @@ footer {
 }
 
 .legislation-process-list {
+  border-bottom: 0;
 
   h3 {
     color: $label;
@@ -1885,6 +1885,18 @@ footer {
   margin-top: $line-height * 2;
   height: 100%;
   position: relative;
+}
+
+.draft-panels .draft-allegation .calc-comments {
+
+  .comments-box-container {
+    top: rem-calc(100) !important;
+  }
+
+  .comment-box .comment-input {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
 }
 
 .comments-box-container .comment-meta .comment-votes {
@@ -2547,6 +2559,13 @@ footer {
 
   &.is-stuck {
     top: auto !important;
+  }
+}
+
+.proposal-dashboard .button {
+
+  &.expanded {
+    word-break: break-word;
   }
 }
 
@@ -3245,6 +3264,12 @@ footer {
     }
   }
 
+  .budget-phase {
+    @include breakpoint(medium) {
+      width: auto;
+    }
+  }
+
   .budget-prev-phase,
   .budget-next-phase,
   .budget-prev-phase-disabled,
@@ -3428,6 +3453,10 @@ footer {
   .orbit-previous {
     background: rgba(34, 34, 34, 0.25);
   }
+}
+
+.orbit-bullets button {
+  min-height: 0;
 }
 
 .sdg-related-list-selector {
