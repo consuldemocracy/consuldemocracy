@@ -309,7 +309,6 @@ id:
       select_order_long: "Anda sedang melihat proposal sesuai untuk:"
       start_proposal: Buat proposal
       title: Proposal
-      top: Top mingguan
       top_link_proposals: Yang paling didukung proposal berdasarkan kategori
       section_header:
         icon_alt: Proposal ikon
@@ -622,15 +621,12 @@ id:
   votes:
     agree: Saya setuju
     anonymous: Terlalu banyak anonim suara untuk mengakui suara %{verify_account}.
-    comment_unauthenticated: Anda harus %{signin} atau %{signup} untuk memilih.
     disagree: Saya tidak setuju
     organizations: Organisasi tidak diizinkan untuk memilih
     supports: Mendukung
     verified_only: Hanya memverifikasi pengguna dapat memilih pada proposal; %{verify_account}.
     budget_investments:
-      not_logged_in: Anda harus %{signin} atau %{signup} untuk melanjutkan.
       not_verified: Hanya memverifikasi pengguna dapat memilih pada proyek-proyek investasi; %{verify_account}.
-      organization: Organisasi tidak diizinkan untuk memilih
       unfeasible: Tidak layak proyek-proyek investasi tidak dapat didukung
       not_voting_allowed: Tahap Voting ditutup
   welcome:
