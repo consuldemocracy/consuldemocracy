@@ -10,9 +10,7 @@ so:
           other: "Waxaad adigu u codsatay <span> %{count}</ span> maalgashiga."
         zero: Uma codeynin wax mashruuc maalgashi.
       reasons_for_not_balloting:
-        not_logged_in: Waa inad igu %{signin} ama%{signup} si wada.
         not_verified: Kaliya dadka isticmaala hubinta ayaa codayn kara maalgashiga; %{verify_account}.
-        organization: Ururada loma fasixin iney codeyaan
         not_selected: Mashariicda Malagashiga e an la dooran lana tageeri karin
         not_enough_money: "Waxaad horay u qoondeeysay miisaaniyadda la heli karo. <br> <yari> Xusuusnow inaad awoodi karto %{change_ballot} wakhti kasta </small>"
         no_ballots_allowed: Xulashada wajiga waa la xidhay
