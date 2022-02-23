@@ -386,7 +386,6 @@ he:
       select_order_long: "ההצעות מוצגות לך על-פי סדר:"
       start_proposal: העל/י הצעה חדשה
       title: הצעות
-      top: בראש סדר היום השבוע
       top_link_proposals: ההצעות שצברו הכי הרבה תמיכה, לפי נושא
       section_header:
         icon_alt: סמל הצעה
@@ -864,15 +863,12 @@ he:
   votes:
     agree: מסכים
     anonymous: יותר מדי קולות אנונימיים לאמת את ההצבעה %{verify_account}.
-    comment_unauthenticated: נדרשת %{signin} או %{signup} בכדי להצביע
     disagree: אני מסתייג
     organizations: ארגונים אינם רשאים להצביע
     supports: לחיצה לתמיכה
     verified_only: רק משתמשים מאומתים יכולים להצביע על הצעות; %{verify_account}.
     budget_investments:
-      not_logged_in: נדרשת %{signin} או %{signup} בכדי להמשיך
       not_verified: רק משתמשים שאומת חשבונם יכולים להצביע על ההצעות; %{verify_account}.
-      organization: ארגונים אינם רשאים להצביע
       unfeasible: לא ניתן לתמוך בפרויקטים שאינם ברי ביצוע
       not_voting_allowed: שלב ההצבעות נסגר
       different_heading_assigned:
