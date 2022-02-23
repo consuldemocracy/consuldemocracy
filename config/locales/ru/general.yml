@@ -381,7 +381,6 @@ ru:
       select_order_long: "Вы просматриваете предложения в соответствии с:"
       start_proposal: Создать предложение
       title: Заявки
-      top: Лучшие за неделю
       top_link_proposals: Самые поддерживаемые предложения по категориям
       section_header:
         icon_alt: Иконка предложений
@@ -860,15 +859,12 @@ ru:
   votes:
     agree: Я согласен
     anonymous: Слишком много анонимных голосов, чтобы признать голос %{verify_account}.
-    comment_unauthenticated: Вы должны %{signin} или %{signup}, чтобы голосовать.
     disagree: Я не согласен
     organizations: Организациям не разрешается голосовать
     supports: Поддержки
     verified_only: Только верифицированные пользователи могут голосовать по предложениям; %{verify_account}.
     budget_investments:
-      not_logged_in: Чтобы продолжить, %{signin} или %{signup}.
       not_verified: Только верифицированные пользователи могут голосовать по проектам инвестирования; %{verify_account}.
-      organization: Организациям не разрешается голосовать
       unfeasible: Невыполнимые проекты инвестирования нельзя поддерживать
       not_voting_allowed: Фаза голосования закрыта
   welcome:
