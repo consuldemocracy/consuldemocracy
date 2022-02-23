@@ -371,7 +371,6 @@ oc:
       select_order_long: "veses las proposicions"
       start_proposal: Crèa una proposicion
       title: De proposicions ciutadanas
-      top: Top setmanièr
       top_link_proposals: Proposicions mai avaladas per categoria
       section_header:
         icon_alt: Icòna de proposicions
@@ -836,15 +835,12 @@ oc:
   votes:
     agree: Soi d'acòrdi
     anonymous: Tròp de vòts anonimes, per poder votar %{verify_account}.
-    comment_unauthenticated: As de besonh %{signin} o %{signup} per poder votar.
     disagree: Soi pas d'acòrdi
     organizations: Las associacions pòdon pas avalar
     supports: d'Avals
     verified_only: Las proposicions pòdon solament èsser votadas per usatgièrs verificats, %{verify_account}.
     budget_investments:
-      not_logged_in: As de besonh %{signin} o %{signup}.
       not_verified: Solament los usatgièrs verificats pòdon votar los projèctes d’inversion; %{verify_account}.
-      organization: Las associacions pòdon pas avalar
       unfeasible: Se pòdon pas avalar de proposicions inviables
       not_voting_allowed: Lo periòde de recuelhuda d'avals aquel barrat.
       different_heading_assigned:
