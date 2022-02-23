@@ -399,7 +399,6 @@ uk-UA:
       select_order_long: "Ви переглядаєте пропозиції згідно з:"
       start_proposal: Подати пропозицію
       title: Пропозиції
-      top: Топ за тиждень
       top_link_proposals: Найбільш підтримувані пропозиції за категоріями
       section_header:
         icon_alt: Значок пропозицій
@@ -898,15 +897,12 @@ uk-UA:
   votes:
     agree: Я погоджуюсь
     anonymous: Надто багато анонімних голосів, щоб визнати голос %{verify_account}.
-    comment_unauthenticated: Щоб проголосувати, необхідно %{signin} або %{signup}.
     disagree: Я не погоджуюсь
     organizations: Організації не допускаються до голосування
     supports: Підтримання
     verified_only: Тільки користувачі, які підтвердили свій обліковий запис, можуть віддавати голоси за пропозиції; %{verify_account}.
     budget_investments:
-      not_logged_in: Щоб продовжити, %{signin} або %{signup}.
       not_verified: Тільки підтверджені користувачі можуть віддавати голоси за інвестиційні проєкти; %{verify_account}.
-      organization: Організації не допускаються до голосування
       unfeasible: Не можна підтримати недоцільні інвестиційні проєкти
       not_voting_allowed: Етап голосування завершено
       different_heading_assigned:
