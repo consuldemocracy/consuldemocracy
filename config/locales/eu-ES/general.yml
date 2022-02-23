@@ -322,7 +322,6 @@ eu:
       select_order_long: "Proposamenak ikusten zabiltza"
       start_proposal: Proposamen bat sortu
       title: Proposamenak
-      top: Top astekoak
       top_link_proposals: Kategoria bakoitzeko proposamen babestuenak
       section_header:
         icon_alt: Proposamen ikonoa
@@ -647,15 +646,12 @@ eu:
   votes:
     agree: Ados nago
     anonymous: Bozka anonimo larregi, %{verify_account} bozkatu ahal izateko.
-    comment_unauthenticated: Bozkatu ahal izateko %{signin} edo %{signup} egin behar zara.
     disagree: Ez nago ados
     organizations: Erakundeek ezin dute bozkatu
     supports: Babesak
     verified_only: Proposamenak egiaztatutako erabiltzaileek soilik bozka ditzakete, %{verify_account}.
     budget_investments:
-      not_logged_in: Jarraitu ahal izateko %{signin} edo %{signup} egin behar zara.
       not_verified: Gastu proposamenak egiaztatutako erabiltzaileek soilik bozka ditzakete, %{verify_account}.
-      organization: Erakundeek ezin dute bozkatu.
       unfeasible: Proposamen bideragarriezinak ezin dira bozkatu.
       not_voting_allowed: Bozka epea itxita dago.
   welcome:
