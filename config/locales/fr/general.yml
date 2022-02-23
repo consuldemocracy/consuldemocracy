@@ -374,7 +374,6 @@ fr:
       select_order_long: "Vous êtes en train de voir les propositions en fonction de"
       start_proposal: Créer une proposition
       title: Propositions
-      top: Top de la semaine
       top_link_proposals: Les propositions les plus soutenues par catégorie
       section_header:
         icon_alt: Icône des propositions
@@ -783,15 +782,12 @@ fr:
   votes:
     agree: Je suis d'accord
     anonymous: Trop de votes anonymes pour accepter le vote %{verify_account}.
-    comment_unauthenticated: Il est nécessaire de %{signin} ou de %{signup} pour voter.
     disagree: Je ne suis pas d'accord
     organizations: Les organisations ne sont pas autorisées à voter
     supports: Soutiens
     verified_only: Seuls les utilisateurs vérifiés peuvent voter sur les propositions; %{verify_account}.
     budget_investments:
-      not_logged_in: Il est nécessaire de %{signin} ou de %{signup} pour continuer.
       not_verified: Seuls les utilisateurs vérifiés peuvent voter pour les propositions d'investissement, %{verify_account}.
-      organization: Les organisations ne sont pas autorisées à voter
       unfeasible: Les propositions d'investissement jugées irréalisables ne peuvent être soutenues
       not_voting_allowed: La phase de vote est terminée
   welcome:
