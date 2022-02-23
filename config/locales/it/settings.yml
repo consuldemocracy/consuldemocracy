@@ -69,6 +69,13 @@ it:
       poll_link: Link di informazioni aggiuntive
       poll_link_description: Aggiungi un link di informazioni aggiuntive alla funzionalità di sondaggio
       email_short_title: Email
+      email_short_title_description: 'Descrizione breve della funzionalità email. Consente agli utenti di inviare un''email per promuovere la propria proposta. Puoi trovare tutti i contenuti di quest''email in "/app/views/dashboard/mailer/forward.html.erb"'
+      email_description: Descrizione email
+      email_description_description: Descrizione dettagliata della funzionalità email
+      poster_short_title: Poster
+      poster_short_title_description: 'Descrizione breve della funzionalità poster. Consente agli utenti di scaricare un poster in formato PDF per promuovere la propria proposta. Puoi trovare tutti i contenuti di questo poster a "/app/views/dashboard/poster/index.pdf.erb"'
+      poster_description: Descrizione del poster
+      poster_description_description: Descrizione dettagliata della funzionalità poster
     feature:
       twitter_login: "Accesso con Twitter"
       facebook_login: "Accesso con Facebook"
@@ -80,13 +87,65 @@ it:
       remove_investments_supports: "Consenti di rimuovere i supporti agli investimenti del budget"
       remove_investments_supports_description: "Consenti agli utenti di rimuovere i supporti agli investimenti di budget partecipatori durante la fase selettiva dei progetti."
       sdg: SDG
+    remote_census:
+      general:
+        endpoint: "Endpoint"
+        endpoint_description: "Nome dell'host in cui è disponibile il servizio di censimento (wsdl)"
+      request:
+        method_name: "Nome del metodo di richiesta"
+        method_name_description: "Nome del metodo di richiesta accettato da City Census WebService."
+        structure: "Struttura della Richiesta"
+        structure_description: 'Struttura della Richiesta da inviare al Census WebService Consiglio comunale. I valori "statici" di questa richiesta dovrebbero esser compilati. I valori correlati al Tipo di Documento, Numero di Documento, Data di Nascita e Codice Postale dovrebbero esser nulli. Esempio di un formato valido: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": q, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
+        document_type: "Percorso per il Tipo di Documento"
+        document_number: "Percorso per il Numero di Documento"
+        date_of_birth: "Percorso per la Data di Nascita"
+        postal_code: "Percorso per il Codice Postale"
+      response:
+        date_of_birth: "Percorso per la Data di Nascita"
+        postal_code: "Percorso per il Codice Postale"
+        district: "Percorso per il Distretto"
+        gender: "Percorso per il Genere"
+        name: "Percorso per il Nome"
+        surname: "Percorso per il Cognome"
+    map:
+      latitude: "Latitudine"
+      longitude: "Longitudine"
+      zoom: "Ingrandimento"
+      zoom_description: "Ingrandisci per mostrare la posizione della mappa"
     process:
       debates: "Dibattiti"
+      debates_description: "Lo spazio di dibattito dei cittadini è mirato a chiunque possa presentare problemi che riguardino loro e su cui vogliono condividere le proprie opinioni con altri"
       proposals: "Proposte"
+      proposals_description: "Le proposte dei cittadini sono un'opportunità per i vicinati e collettivi di decide direttamente come vogliano che la propria società sia, dopo aver ottenuto supporto sufficiente e averle passate al vaglio del voto cittadino"
       polls: "Votazioni"
       polls_description: "Le votazioni cittadine sono un meccanismo partecipativo attraverso il quale i cittadini con diritto di voto possono prendere decisioni in maniera diretta"
       budgets: "Bilancio partecipativo"
+      budgets_description: "Con i budget partecipativi, i cittadini decidono quali progetti presentati dai vicini riceveranno una parte del budget"
       legislation: "Legislazione Collaborativa"
+      legislation_description: "Nei processi partecipativi, ai cittadini è offerta l'opportunità di partecipare nella redazione e modifica di regolamenti che influenzano la società e per dare la propria opinione su certe azioni pianificate"
     html:
       per_page_code_head: "Codice da inserire in ogni pagina (<head>)"
+      per_page_code_head_description: "Questo codice apparirà nell'etichetta <head>. Utile per inserire script personalizzati, analitiche..."
       per_page_code_body: "Codice da inserire in ogni pagina (<body>)"
+      per_page_code_body_description: "Questo codice apparirà nell'etichetta <body>. Utile per inserire script personalizzati, analitiche..."
+    uploads:
+      images:
+        min_width: "Larghezza minima dell'immagine"
+        min_height: "Altezza minima dell'immagine"
+        max_size: "Dimensione massima dell'immagine"
+        content_types: "Tipi di contenuti accettati per le immagini"
+        title:
+          min_length: "Lunghezza minima del titolo dell'immagine"
+          max_length: "Lunghezza massima del titolo dell'immagine"
+          max_length_description: "Titolo fornito dall'utente caricando un'immagine (usato come un attributo alt HTML)"
+      documents:
+        max_amount: "Numero massimo di documenti"
+        max_amount_description: "Numero massimo di documenti allegabili a una proposta, investimento..."
+        max_size: "Dimensione massima del documento"
+        content_types: "Tipi di contenuti accettati per i documenti"
+    sdg:
+      process:
+        debates: SDG correlati nei dibattiti
+        proposals: SDG correlati nelle proposte
+        polls: SDG correlati nei sondaggi
+        budgets: SDG correlati nei budget partecipativi
