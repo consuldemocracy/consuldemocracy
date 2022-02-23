@@ -360,7 +360,6 @@ el:
       select_order_long: "Βλέπετε τις προτάσεις σύμφωνα με:"
       start_proposal: Δημιουργία πρότασης
       title: Προτάσεις
-      top: Τα καλύτερα της εβδομάδας
       top_link_proposals: Προτάσεις με την υψηλότερη στήριξη ανά κατηγορία
       section_header:
         icon_alt: Εικονίδιο προτάσεων
@@ -806,15 +805,12 @@ el:
   votes:
     agree: Συμφωνώ
     anonymous: Υπάρχουν πολλές ανώνυμες ψήφοι γεγονός το οπόιο μας εμποδίζει από το να αποδεχτούμε τη ψήφο %{verify_account}.
-    comment_unauthenticated: Για να ψηφίσετε θα πρέπει να %{signin} ή %{signup}. 
     disagree: Διαφωνώ
     organizations: Οι οργανισμοί δεν επιτρέπεται να ψηφίσουν
     supports: Υποστηρίξεις
     verified_only: Μόνο επιβεβαιωμένοι χρήστες μπορούν να ψηφίσουν προτάσεις; %{verify_account}.
     budget_investments:
-      not_logged_in: Θα πρέπει να %{signin} ή %{signup} για να συνεχίσετε.
       not_verified: Μόνο επιβεβαιωμένοι χρήστες μπορούν να ψηφίσουν επενδυτικά έργα; %{verify_account}.
-      organization: Οι οργανισμοί δεν επιτρέπεται να ψηφίσουν
       unfeasible: Τα ανέφικτα επενδυτικά σχέδια δεν μπορούν να υποστηριχθούν
       not_voting_allowed: Η φάση της ψηφοφορίας είναι κλειστή
       different_heading_assigned:
