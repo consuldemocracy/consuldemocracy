@@ -1,5 +1,7 @@
 it:
   moderation:
+    actions:
+      confirm_action: "Sei sicuro? %{action}"
     comments:
       index:
         block_authors: Blocca gli autori
@@ -99,6 +101,8 @@ it:
         title: Notifiche di proposta
     users:
       index:
+        block: Blocca
+        confirm_block: "Sei sicuro? Questo nasconderà l'utente \"%{name}\" e tutti i suoi contenuti."
         hide: Blocco
         search_placeholder: e-mail o nome utente
         title: Blocca gli utenti
