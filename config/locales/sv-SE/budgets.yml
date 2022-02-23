@@ -23,6 +23,7 @@ sv:
             other: "Du kan rösta i <span>%{count}</span> projekt"
         no_balloted_group_yet: "Du har inte röstat på den här gruppen än, rösta nu!"
         remove: Dra tillbaka din röst
+        remove_label: "Ta bort din röst för %{investment}"
         voted:
           one: "Du har röstat på <span>ett</span> budgetförslag."
           other: "Du har röstat på <span>%{count}</span> budgetförslag."
@@ -149,6 +150,7 @@ sv:
       wrong_price_format: Endast heltal
       investment:
         add: Rösta
+        add_label: "Rösta för %{investment}"
         already_added: Du har redan skapat det här investeringsprojektet
         support_title: Stöd projektet
         supports:
