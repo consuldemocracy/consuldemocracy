@@ -29,9 +29,7 @@ pt-BR:
         voted_info_2: "Mas você pode alterar o seu voto a qualquer momento antes da conclusão desta fase."
         zero: Você não votou em um projeto de investimento.
       reasons_for_not_balloting:
-        not_logged_in: Você precisa %{signin} ou %{signup} para continuar.
         not_verified: Somente usuários verificados podem votar em investimentos; %{verify_account}.
-        organization: Organizações não tem permissão de voto
         not_selected: Projetos de investimento não selecionados não podem ser apoiados
         not_enough_money: "Você já atribuiu o orçamento disponível.<br><small>Lembre-se que pode %{change_ballot} a qualquer momento</small>"
         no_ballots_allowed: A fase de seleção está fechada
