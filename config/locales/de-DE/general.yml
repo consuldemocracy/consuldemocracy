@@ -376,7 +376,6 @@ de:
       select_order_long: "Sie sehen Vorschläge nach:"
       start_proposal: Vorschlag erstellen
       title: Vorschläge
-      top: Tops der Woche
       top_link_proposals: Die am meisten unterstützten Vorschläge nach Kategorie
       section_header:
         icon_alt: Vorschläge-Symbol
@@ -845,15 +844,12 @@ de:
   votes:
     agree: Ich stimme zu
     anonymous: Zu viele anonyme Stimmen, um die Wahl anzuerkennen %{verify_account}.
-    comment_unauthenticated: Sie müssen sich %{signin} oder %{signup}, um abzustimmen.
     disagree: Ich stimme nicht zu
     organizations: Organisationen ist es nicht erlaubt abzustimmen
     supports: Unterstützer*innen
     verified_only: 'Nur verifizierte Benutzer können Vorschläge bewerten: %{verify_account}.'
     budget_investments:
-      not_logged_in: Sie müssen sich %{signin} oder %{signup}, um fortfahren zu können.
       not_verified: Nur verifizierte Benutzer können über ein Investitionsprojekt abstimmen; %{verify_account}.
-      organization: Organisationen ist es nicht erlaubt abzustimmen
       unfeasible: Undurchführbare Investitionsprojekte können nicht unterstützt werden
       not_voting_allowed: Die Abstimmungsphase ist beendet
       different_heading_assigned:
