@@ -323,7 +323,6 @@ zh-CN:
       select_order_long: "您正在查看的提议是依据："
       start_proposal: 创建提议
       title: 提议
-      top: 每周热门
       top_link_proposals: 按类别得到最多支持的提议
       section_header:
         icon_alt: 提议图标
@@ -655,15 +654,12 @@ zh-CN:
   votes:
     agree: 我同意
     anonymous: 太多匿名投票而不能承认投票%{verify_account}。
-    comment_unauthenticated: 您必须%{signin} 或者%{signup} 才可以进行投票。
     disagree: 我不同意
     organizations: 组织不得投票
     supports: 支持
     verified_only: 只有已验证的用户可以对提议进行投票；%{verify_account}。
     budget_investments:
-      not_logged_in: 您必须%{signin} 或者%{signup} 才能继续。
       not_verified: 只有已验证的用户可以对投资项目进行投票；%{verify_account}。
-      organization: 组织不得投票
       unfeasible: 不可行的投资项目无法得到支持
       not_voting_allowed: 投票阶段已结束
   welcome:
