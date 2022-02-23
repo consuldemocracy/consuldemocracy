@@ -1,4 +1,42 @@
 it:
   sdg:
+    goals:
+      goal_1:
+        title: "Nessuna Povertà"
+        title_in_two_lines: "Nessuna Povertà"
+        description: "Metter fine alla povertà in ogni sua forma, ovunque."
+        targets:
+          target_1_1:
+            long_title: "Per il 2030, eradicare la povertà estrema per tutte le persone di tutto il monto, correntemente misurate come le persone che vivono con meno di $1,25 al giorno"
+            short_title: "Eradicare la Povertà Estrema"
+          target_1_2:
+            long_title: "Per il 2030, ridurre almeno di metà la proporzione di uomini, donne e bambini di tutte le età che vivono in povertà in tutte le sue forme, secondo le definizioni nazionali"
+            short_title: "Ridurre la Povertà di Almeno il 50%"
+          target_1_3:
+            short_title: "Implementare Sistemi di Protezione Sociale"
+          target_1_4:
+            long_title: "Per il 2030, assicurarsi che tutti gli uomini e donne, in particolare i poveri e vulnerabili, abbiano pari diritti alle risorse economiche, nonché accesso ai servizi di base, possesso e controllo terriero e altre forme di proprietà, eredità, risorse naturali, nuove tecnologie appropriate e servizi finanziari, microfinanze incluse"
+            short_title: "Pari Diritti a Possesso, Servizi Base, Tecnologia e Risorse Economiche"
+          target_1_5:
+            short_title: "Creare Resilienza ai Disastri Ambientali, Economici e Sociali"
+          target_1_A:
+            long_title: "Assicurare una significativa mobilitazione di risorse da ogni varietà di fonti, incluso tramite la cooperazione di sviluppo migliorata, per poter fornire mezzi adeguati e prevedibili per i paesi in via di sviluppo, in particolare i meno sviluppati, per implementare programmi e politiche per metter fine alla povertà in tutte le sue forme"
+            short_title: "Mobilizzare Risorse per Implementare Politiche per Metter Fine alla Povertà"
+      goal_2:
+        title: "Zero Fame"
+        title_in_two_lines: "Zero\nFame"
+        description: "Zero Fame."
+        targets:
+          target_2_1:
+            long_title: "Per il 2030, metter fine alla fame e assicurare accesso a tutte le persone, in particolare i poveri e le persone in situazioni vulnerabili, inclusi infanti, a cibo sano, nutriente e sufficiente per tutto l'anno."
+            short_title: "Accesso Universale a Cibo Sano e Nutriente"
+          target_2_2:
+            short_title: "Porre Fine a Tutte le Forme di Malnutrizione"
+          target_2_3:
+            long_title: "Per il 2030, raddoppiare la produttività e le entrate agricole dei produttori alimentari su piccola scala, in particolare donne, persone indigene, famiglie di contadini, pastori e pescatori, incluso tramite l'accesso sicuro ed equo alla terra, ad altre risorse produttive e input, conoscenze, servizi finanziari, mercati e opportunità per l'aggiunta di valore e impiego non agricolo."
+            short_title: "Raddoppiare la Produttività e le Entrate dei Produttori Alimentari su Piccola Scala"
+          target_2_4:
+            long_title: "Per il 2030, assicurare sistemi di produzione alimentare sostenibili e implementare pratiche agricole resilienti che aumentino produttività e produzione, che aiutino a mantenere gli ecosistemi, che rafforzino la capacità d'adattamento al cambiamento climatico, meteo estremo, siccità, allagamento e altri disastri e che progressivamente migliori la qualità della terra e del suolo."
+            short_title: "Produzione Alimentare Sostenibile e Pratiche Agricole Resilienti"
     related_list_selector:
       remove_tag: "Rimuovere"
