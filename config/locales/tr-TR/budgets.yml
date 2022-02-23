@@ -30,9 +30,7 @@ tr:
         voted_info_2: "Ancak bu aşama tamamlanana kadar oyunuzu istediğiniz zaman değiştirebilirsiniz."
         zero: Herhangi bir yatırım projesine oy vermediniz.
       reasons_for_not_balloting:
-        not_logged_in: '%{signin} veya %{signup} yaparak devam edebilirsiniz.'
         not_verified: Yalnızca doğrulanan kullanıcılar yatırımlara oy verebilir; %{verify_account}.
-        organization: Kuruluşların oylama aşamasına katılması mümkün değil
         not_selected: Seçilmeyen yatırım projeleri desteklenemez
         not_enough_money: "Mevcut bütçeyi zaten atadınız. <br> <small> İstediğiniz zaman%{change_ballot} yapabileceğinizi unutmayın </small>"
         no_ballots_allowed: Seçim aşaması tamamlanmıştır
