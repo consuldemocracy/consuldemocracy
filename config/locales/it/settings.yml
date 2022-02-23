@@ -15,8 +15,11 @@ it:
     max_ratio_anon_votes_on_debates: "Percentuale massima di voti anonimi per ogni dibattito"
     max_ratio_anon_votes_on_debates_description: "I voti anonimi sono da utenti registrati con un profilo non verificato"
     max_votes_for_proposal_edit: "Numeri di voti necessari per non poter più modificare la proposta"
+    max_votes_for_proposal_edit_description: "Da questo numero di supporti, l'autore di una Proposta non può più modificarla"
     max_votes_for_debate_edit: "Numeri di voti necessari per non poter più modificare il dibattito"
+    max_votes_for_debate_edit_description: "Da questo numero di voti, l'autore di un Dibattito non può più modificarlo"
     proposal_code_prefix: "Prefisso per i codici di proposta"
+    proposal_code_prefix_description: "Questo prefisso apparirà nelle Proposte prima della data di creazione e del suo ID"
     featured_proposals_number: "Numero di proposte in evidenza"
     featured_proposals_number_description: "Numero di proposte in evidenza che saranno mostrate se la funzionalità Proposte in evidenza è attiva"
     votes_for_proposal_success: "Numero di voti necessari per approvare una proposta"
@@ -76,6 +79,8 @@ it:
       poster_short_title_description: 'Descrizione breve della funzionalità poster. Consente agli utenti di scaricare un poster in formato PDF per promuovere la propria proposta. Puoi trovare tutti i contenuti di questo poster a "/app/views/dashboard/poster/index.pdf.erb"'
       poster_description: Descrizione del poster
       poster_description_description: Descrizione dettagliata della funzionalità poster
+    analytics_url: "URL delle Analitiche"
+    proposal_notification_minimum_interval_in_days: "Intervallo minimo (in giorni) per gli autori di proposte per inviare le notifiche della nuova proposta"
     feature:
       twitter_login: "Accesso con Twitter"
       facebook_login: "Accesso con Facebook"
@@ -149,3 +154,4 @@ it:
         proposals: SDG correlati nelle proposte
         polls: SDG correlati nei sondaggi
         budgets: SDG correlati nei budget partecipativi
+        legislation: SDG correlati nella legislazione collaborativa
