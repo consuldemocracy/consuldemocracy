@@ -312,7 +312,6 @@ es-PE:
       select_order_long: "Você está vendo propostas de acordo para:"
       start_proposal: Crea una propuesta
       title: Propuestas
-      top: Top semanal
       top_link_proposals: Propuestas más apoyadas por categoría
       section_header:
         icon_alt: Icono de Propuestas
@@ -621,15 +620,12 @@ es-PE:
   votes:
     agree: Eu concordo
     anonymous: Excesso de votos anônimos para admitir voto %{verify_account}
-    comment_unauthenticated: Necesitas %{signin} o %{signup} para poder votar.
     disagree: Eu discordo
     organizations: Las organizaciones no pueden votar.
     supports: Apoyos
     verified_only: Somente usuários verificados podem votar em propostas;  %{verify_account}.
     budget_investments:
-      not_logged_in: Necesitas %{signin} o %{signup}.
       not_verified: Los proyectos de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
-      organization: Las organizaciones no pueden votar
       unfeasible: No se pueden votar propuestas inviables.
       not_voting_allowed: El periodo de votación está cerrado.
   welcome:
