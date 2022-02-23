@@ -12,6 +12,7 @@ it:
           knapsack: "%{count}"
         no_balloted_group_yet: "Non hai ancora votato in questo gruppo, vota!"
         remove: Rimuovere il voto
+        remove_label: "Rimuovi il tuo voto per %{investment}"
         voted:
           one: "Hai votato <span>un</span> investimento."
           other: "Hai votato <span>%{count}</span> investimenti."
@@ -125,6 +126,7 @@ it:
       wrong_price_format: Solo numeri interi
       investment:
         add: Votare
+        add_label: "Vota %{investment}"
         already_added: Hai già aggiunto questo progetto di investimento
         support_title: Sostieni questo progetto
         supports:
