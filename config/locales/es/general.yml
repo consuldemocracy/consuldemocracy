@@ -371,7 +371,6 @@ es:
       select_order_long: "Estas viendo las propuestas"
       start_proposal: Crea una propuesta
       title: Propuestas ciudadanas
-      top: Top semanal
       top_link_proposals: Propuestas más apoyadas por categoría
       section_header:
         icon_alt: Icono de Propuestas
@@ -836,15 +835,12 @@ es:
   votes:
     agree: Estoy de acuerdo
     anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.
-    comment_unauthenticated: Necesitas %{signin} o %{signup} para poder votar.
     disagree: No estoy de acuerdo
     organizations: Las organizaciones no pueden votar.
     supports: Apoyos
     verified_only: Las propuestas sólo pueden ser votadas por usuarios verificados, %{verify_account}.
     budget_investments:
-      not_logged_in: Necesitas %{signin} o %{signup} para continuar.
       not_verified: Los proyectos de gasto sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
-      organization: Las organizaciones no pueden votar.
       unfeasible: No se pueden votar propuestas inviables.
       not_voting_allowed: El periodo de votación está cerrado.
       different_heading_assigned:
