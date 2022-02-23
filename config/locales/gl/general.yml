@@ -360,7 +360,6 @@ gl:
       select_order_long: "Estás vendo as propostas"
       start_proposal: Crea unha proposta
       title: Propostas cidadás
-      top: Top semanal
       top_link_proposals: Propostas máis apoiadas por categoría
       section_header:
         icon_alt: Icona das propostas
@@ -769,15 +768,12 @@ gl:
   votes:
     agree: Estou de acordo
     anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.
-    comment_unauthenticated: Necesitas %{signin} ou %{signup} para poder votar.
     disagree: Non estou de acordo
     organizations: As organizacións non poden votar.
     supports: Apoios
     verified_only: As propostas de investimento só poden ser apoiadas por usuarios verificados, %{verify_account}.
     budget_investments:
-      not_logged_in: Debes %{signin} ou %{signup} para continuares.
       not_verified: Os proxectos de investimento só poden ser votados por usuarios con contas verificadas, polo que %{verify_account}.
-      organization: As organizacións non poden votar.
       unfeasible: Non se poden votar proxectos de investimento inviables
       not_voting_allowed: A fase de votación está pechada
       different_heading_assigned:
