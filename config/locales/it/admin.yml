@@ -4,6 +4,7 @@ it:
       title: Amministrazione
     actions:
       actions: Azioni
+      block_author: "Blocca autore"
       confirm_action: "Sei sicuro? %{action} \"%{name}\""
       confirm_delete: "Sei sicuro? Quest'azione eliminerà \"%{name}\" e non è annullabile."
       confirm_hide: Confermare intervento di moderazione
@@ -1216,6 +1217,7 @@ it:
         official_updated: Dettagli del pubblico ufficiale salvati
       index:
         title: Funzionari
+        help: I profili utente segnati come ufficiali avranno i propri interventi sulla piattaforma evidenziati. Puoi definire l'etichetta che appare affianco ai nomi utente di questi profili dal più (livello 1) al meno importante (livello 5).
         no_officials: Non ci sono funzionari.
         name: Nominativo
         official_position: Incarico ufficiale
@@ -1362,6 +1364,7 @@ it:
       created_at: Creato al
       color_help: Formato esadecimale
       show_results_and_stats: "Visualizza risultati e statistiche"
+      results_and_stats_reminder: "Contrassegnando queste caselle di controllo, i risultati e/o le statistiche saranno pubblicamente disponibili e ogni utente potrà vederli."
       close_modal: Chiudi modale
       example_url: "Ad esempio, https://consulproject.org o /help"
     geozones:
@@ -1402,6 +1405,7 @@ it:
           required_fields_note: "Per verificare un utente, la tua applicazione necessita di: Numero del documento"
           date_of_birth_note: ", Data di nascita (gg/mm/aaaa)"
           postal_code_note: " e Codice Postale"
+          required_fields_structure_note: "I campi richiesti per ogni utente devono esser separati da virgole e ogni utente dev'esser separato da punti e virgola."
           example_text: "Esempio: "
       show:
         created_at: Creato
@@ -1415,6 +1419,10 @@ it:
           one: "Ci sono %{count} firme non valide"
           other: "Ci sono %{count} firme non valide"
         unverified_error: (non verificato in anagrafe)
+        voted:
+          zero: "Nessun voto creato dalle firme verificate."
+          one: "%{count} voto creato dalle firme verificate."
+          other: "%{count} voti creato dalle firme verificate."
         loading: "Ci sono ancora le firme da verificare in anagrafe, attende e riaggiornare la pagina"
     stats:
       show:
@@ -1486,9 +1494,14 @@ it:
           origin_web: Partecipanti via web
           origin_total: Totale partecipanti
       sdg:
+        budget_investments:
+          amount: "Importo approvato"
+          winners: "Vincitori dei progetti d'investimento"
+          sent: "Progetti d'investimento inviati"
         debates: "Dibattiti"
         polls: "Votazioni"
         proposals: "Proposte"
+        title: "Obiettivi di Sviluppo Sostenibile - Statistiche"
     tags:
       create: Crea argomento
       index:
@@ -1499,6 +1512,7 @@ it:
     users:
       columns:
         id: ID
+        erase_reason: Cancella motivo
         name: Nominativo
         email: Email
         document_number: Numero del documento
@@ -1510,6 +1524,7 @@ it:
         filter: Filtra
         filters:
           active: Attivo
+          erased: Cancellato
       search:
         placeholder: Ricerca utente per e-mail, nome o documento
     verifications:
@@ -1545,6 +1560,8 @@ it:
           names:
             top_links: Collegamenti Migliori
             footer: Piè di Pagina
+            subnavigation_left: Navigazione Principale Sinistra
+            subnavigation_right: Navigazione Principale Destra
       images:
         index:
           title: Immagini personalizzate
@@ -1577,15 +1594,25 @@ it:
           see_page: Vedere la pagina
         new:
           title: Creare la nuova pagina personalizzata
+          slug_help: "Testo per identificare questa pagina sull'URL, ad esempio <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: Creato al
           status: Stato
           updated_at: Aggiornato al
           title: Titolo
           slug: Slug
+          see_cards: Gestisci le carte
         cards:
+          cards_title: carte
           create_card: Crea scheda
           no_cards: Non c’è alcuna scheda.
+          columns_help: "Larghezza della carta in numero di colonne. Sugli schermi mobile è sempre una larghezza del 100%."
+          create:
+            notice: "Carta creata correttamente!"
+          update:
+            notice: "Carta aggiornata correttamente"
+          destroy:
+            notice: "Carta rimossa correttamente"
     homepage:
       title: Homepage
       description: I moduli attivi vengono visualizzati nella homepage nello stesso ordine qui riportato.
@@ -1622,14 +1649,53 @@ it:
       empty: "Non ci sono modifiche registrate"
     local_census_records:
       index:
+        title: Gestisci il censimento locale
+        create: Crea nuovo registro del censimento locale
+        no_local_census_records: Nessun registro del censimento locale.
         document_type: Tipo di documento
         document_number: Numero del documento
         date_of_birth: Data di nascita
         postal_code: Codice Postale
+        import: Importa CSV
+      new:
+        creating: Creando nuovo registro del censimento locale
+      create:
+        notice: Nuovo registro del censimento locale creato correttamente!
+      edit:
+        editing: Modificando il registro del censimento locale
+      update:
+        notice: Registro del censimento locale aggiornato correttamente!
+      destroy:
+        notice: Registro del censimento locale rimosso correttamente!
       imports:
         new:
           title: Registri censo locale
+          subtitle: Importa file CSV
+        create:
+          notice: Processo d'importazione dei registri del censimento locale eseguiti correttamente!
+        show:
+          title: Gestisci il censimento locale
+          subtitle: Importa i risultati del processo
+          import: Importa di nuovo
+          created: Registri creati
+        local_census_records:
+          no_records_found: Nessun registro trovato.
     machine_learning:
+      cancel: "Annulla l'operazione"
+      cancel_alert: "Quest'azione annullerà lo script corrente e sarà necessario eseguirlo nuovamente."
+      comments_summary: "Riepilogo dei commenti"
+      comments_summary_description: "Mostra un riepilogo dei commenti generato automaticamente su tutti gli elementi commentabili."
+      data_folder_content: "Contenuto della cartella di dati"
+      error: "Errore:"
+      execute_script: "Esegui script"
+      executed_by: "Eseguito da:"
+      executed_script: "Script eseguito:"
+      feature_disabled: "Questa funzionalità è disabilitata. Per usare l'Apprendimento Automatico puoi abilitarlo dal %{link}."
+      feature_disabled_link: "pagina delle impostazioni"
+      help:
+        title_1: "Cos'è l'IA/Apprendimento Automatico?"
+        description_1: "Tradizionalmente, i programmi informatici sono progettati stabilendo regole precise su cosa il programma dovrebbe fare in ogni situazione e come elaborare le informazioni disponibili in qualsiasi momento. Ciò che è comunemente noto come IA/Apprendimento Automatico è un tipo di programmi per cui ciò che è precisamente stabilito è quale attività eseguire e come valutare se questa sia eseguita meglio o peggio. Ma, a differenza di quanto detto sopra, il sistema scopre o impara quale sarebbe il metodo più adatto per eseguire l'attività."
+        title_3: "Come usare questo modulo"
       related_content: "Contenuti correlati"
       tab_help: "Aiuto"
       tags: "Etichette"
