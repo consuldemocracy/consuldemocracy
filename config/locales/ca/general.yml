@@ -371,7 +371,6 @@ ca:
       select_order_long: "Estàs veient les propostes"
       start_proposal: Crea una proposta
       title: Propostes ciutadanes
-      top: Top setmanal
       top_link_proposals: Propostes més avalades per categoria
       section_header:
         icon_alt: Icona de propostes
@@ -836,15 +835,12 @@ ca:
   votes:
     agree: Estic d'acord
     anonymous: Massa vots anònims, per a poder votar %{verify_account}.
-    comment_unauthenticated: Necessites %{signin} o %{signup} per a poder votar.
     disagree: No estic d'acord
     organizations: Les associacions no poden avalar
     supports: Avals
     verified_only: Les propostes només poden ser votades per usuaris verificats, %{verify_account}.
     budget_investments:
-      not_logged_in: Necessites %{signin} o %{signup}.
       not_verified: Només els usuaris verificats poden votar els projectes d’inversió; %{verify_account}.
-      organization: Les associacions no poden avalar
       unfeasible: No es poden avalar propostes inviables
       not_voting_allowed: El periode de recollida d'avals esta tancat.
       different_heading_assigned:
