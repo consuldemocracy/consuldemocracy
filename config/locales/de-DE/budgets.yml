@@ -30,9 +30,7 @@ de:
         voted_info_2: "Aber Sie können Ihre Stimme jederzeit ändern, bis diese Phase abgeschlossen ist."
         zero: Sie haben noch über keinen Ausgabenvorschlag abgestimmt.
       reasons_for_not_balloting:
-        not_logged_in: Sie müssen sich %{signin} oder %{signup}, um fortfahren zu können.
         not_verified: Nur verifizierte Benutzer*innen können über einen Ausgabenvorschlag abstimmen; %{verify_account}.
-        organization: Organisationen ist es nicht erlaubt abzustimmen
         not_selected: Für nicht durchführbare Ausgabevorschläge kann nicht abgestimmt werden
         not_enough_money: "Sie haben bereits das gesamte verfügbare Budget zugewiesen.<br><small>Bitte denken Sie daran, dass Sie dies %{change_ballot} jederzeit</small>ändern können"
         no_ballots_allowed: Die Auswahlphase ist abgeschlossen
