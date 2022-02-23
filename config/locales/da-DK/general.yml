@@ -373,7 +373,6 @@ da:
       select_order_long: "Forslag i henhold til:"
       start_proposal: Opret et borgerforslag
       title: Borgerforslag
-      top: Ugens mest populære forslag
       top_link_proposals: Mest populære forslag fra hver kategori
       section_header:
         icon_alt: Forslagsikon
@@ -838,15 +837,12 @@ da:
   votes:
     agree: Jeg er enig
     anonymous: For mange anonyme stemmer til at godkende stemme %{verify_account}.
-    comment_unauthenticated: Du skal %{signin} eller %{signup} for at stemme.
     disagree: Jeg er uenig
     organizations: Det er ikke tilladt for organisationer at stemme
     supports: Støtte
     verified_only: Kun verificerede brugere kan stemme på forslag; %{verify_account}.
     budget_investments:
-      not_logged_in: Du skal %{signin} eller %{signup} for at fortsætte.
       not_verified: Kun verificerede brugere kan stemme på projektidéer; %{verify_account}.
-      organization: Det er ikke tilladt for organisationer at stemme
       unfeasible: Du kan ikke støtte op om projekter, der ikke kan gennemføres
       not_voting_allowed: Afstemningsfasen er afsluttet
       different_heading_assigned:
