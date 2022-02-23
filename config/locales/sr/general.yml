@@ -385,7 +385,6 @@ sr:
       select_order_long: "Предлози су приказани на основу:"
       start_proposal: Креирајте предлог
       title: Предлози
-      top: Најпопуларнији у току недеље
       top_link_proposals: Предлози са највише подршке по категорији
       section_header:
         icon_alt: Икона предлога
@@ -867,15 +866,12 @@ sr:
   votes:
     agree: Слажем се
     anonymous: Превише анонимних гласова да призна гласање%{verify_account}.
-    comment_unauthenticated: Морате %{signin} или %{signup} да бисте гласали.
     disagree: Не слажем се
     organizations: Организацијама није дозвољено гласање
     supports: Подршке
     verified_only: Само потврђени корисници могу гласати за предлоге; %{verify_account}.
     budget_investments:
-      not_logged_in: Морате %{signin} или %{signup} да бисте наставили.
       not_verified: Само потврђени корисници могу гласати за инвестиционе пројекте; %{verify_account}.
-      organization: Организацијама није дозвољено гласање
       unfeasible: Неизводљиви инвестициони пројекти не могу бити подржани
       not_voting_allowed: Фаза гласања је затворена
       different_heading_assigned:
