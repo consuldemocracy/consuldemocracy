@@ -399,7 +399,6 @@ cs:
       select_order_long: "Zobrazit návrhy podle:"
       start_proposal: Vytvořit návrh
       title: Návrhy
-      top: Top týden
       top_link_proposals: Nejvíce podporované návrhy podle kategorií
       section_header:
         icon_alt: Ikona návrhů
@@ -884,15 +883,12 @@ cs:
   votes:
     agree: Souhlasím
     anonymous: Příliš mnoho anonymních hlasů k přijetí hlasování %{verify_account}.
-    comment_unauthenticated: Pro hlasování musíte být přihlášeni %{signin} nebo %{signup}.
     disagree: Nesouhlasím
     organizations: Organizacím není dovoleno hlasovat
     supports: Podporovatelé
     verified_only: O návrzích mohou hlasovat pouze ověření uživatelé; %{verify_account}.
     budget_investments:
-      not_logged_in: Pro pokračování je nutné %{signin} nebo %{signup}.
       not_verified: O investičních projektech mohou hlasovat pouze ověření uživatelé; %{verify_account}.
-      organization: Organizacím není dovoleno hlasovat
       unfeasible: Neuskutečnitelné investiční projekty nelze podpořit
       not_voting_allowed: Fáze hlasování byla ukončena.
       different_heading_assigned:
