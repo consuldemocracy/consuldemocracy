@@ -103,7 +103,9 @@ it:
       index:
         block: Blocca
         confirm_block: "Sei sicuro? Questo nasconderà l'utente \"%{name}\" e tutti i suoi contenuti."
+        confirm_hide: "Sei sicuro? Questo nasconderà l'utente \"%{name}\" senza nasconderne i contenuti."
         hide: Blocco
         search_placeholder: e-mail o nome utente
         title: Blocca gli utenti
+      notice_block: Questo utente è stato bloccato. Tutti i contenuti autorizzati da quest'utente sono stati nascosti.
       notice_hide: Utente bloccato. Tutti i dibattiti e commenti di questo utente sono state nascostie.
