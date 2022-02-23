@@ -390,7 +390,6 @@ ro:
       select_order_long: "Vizionați propuneri conform:"
       start_proposal: Crează propunere
       title: Propuneri
-      top: Top săptămânal
       top_link_proposals: Cea mai susținută propunere după categorie
       section_header:
         icon_alt: Pictograma propunerilor
@@ -876,15 +875,12 @@ ro:
   votes:
     agree: Sunt de acord
     anonymous: Prea multe voturi anonime pentru a aproba votul %{verify_account}.
-    comment_unauthenticated: Trebuie %{signin} sau %{signup} pentru a vota.
     disagree: Nu sunt de acord
     organizations: Organizațiile nu au voie să voteze
     supports: Susținători
     verified_only: Doar utilizatorii verificați pot vota propunerile; %{verify_account}.
     budget_investments:
-      not_logged_in: Trebuie %{signin} sau %{signup} pentru a continua.
       not_verified: Doar utilizatorii verificați pot vota investițiile; %{verify_account}.
-      organization: Organizațiile nu au voie să voteze
       unfeasible: Proiectele de investiții nerealizabile nu pot fi susținute
       not_voting_allowed: Etapa de votare este închisă
       different_heading_assigned:
