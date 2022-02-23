@@ -386,9 +386,6 @@ en-GB:
   votes:
     organizations: Організації не допускаються до голосування
     supports: Підтримки
-    budget_investments:
-      not_logged_in: Щоб продовжити, необхідно %{signin} або %{signup}.
-      organization: Організації не допускаються до голосування
   welcome:
     feed:
       most_active:
