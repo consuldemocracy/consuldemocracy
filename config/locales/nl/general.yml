@@ -346,7 +346,6 @@ nl:
       select_order_long: "U ziet de voorstellen op:"
       start_proposal: Maak een nieuw voorstel
       title: Voorstellen
-      top: Wekelijkse top
       top_link_proposals: De meest gesteunde voorstellen per categorie
       section_header:
         icon_alt: Voorgestelde pictogrammen
@@ -725,15 +724,12 @@ nl:
   votes:
     agree: Ik ben het eens
     anonymous: Er zijn al te veel anonieme stemmen; %{verify_account}.
-    comment_unauthenticated: Je moet %{signin} of %{signup} om te stemmen.
     disagree: Ik ben het oneens
     organizations: Organisaties kunnen niet stemmen
     supports: Steunt
     verified_only: Alleen geverifieerde deelnemers kunnen stemmen op voorstellen; %{verify_account}.
     budget_investments:
-      not_logged_in: Je moet %{signin} of %{signup} om verder te gaan.
       not_verified: Alleen geverifieerde gebruikers mogen stemmen op begrotingsvoorstellen; %{verify_account}.
-      organization: Organisaties mogen niet stemmen
       unfeasible: Onhaalbare voorstellen kunnen niet gesteund worden.
       not_voting_allowed: Stemronde is gesloten.
   welcome:
