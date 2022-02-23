@@ -356,7 +356,6 @@ pl:
       select_order_long: "Przeglądasz wnioski według:"
       start_proposal: Zaproponuj swój pomysł
       title: Zrealizowane projekty
-      top: TOP w tym tygodniu
       top_link_proposals: Najbardziej popularne propozycje według kategorii
       section_header:
         icon_alt: Ikona wniosków
@@ -719,15 +718,12 @@ pl:
   votes:
     agree: Zgadzam się
     anonymous: Zbyt wiele anonimowych głosów, by móc głosować %{verify_account}.
-    comment_unauthenticated: Aby zagłosować, musisz %{signin} lub %{signup}.
     disagree: Nie zgadzam się
     organizations: Organizacje nie mogą głosować
     supports: Wspiera
     verified_only: Tylko zweryfikowani użytkownicy mogą głosować na propozycje; %{verify_account}.
     budget_investments:
-      not_logged_in: Aby kontynuować, musisz %{signin} lub %{signup}.
       not_verified: Tylko zweryfikowani użytkownicy mogą głosować na projekty inwestycyjne; %{verify_account}.
-      organization: Organizacje nie mogą głosować
       unfeasible: Nie można zrealizować niemożliwych do zrealizowania projektów inwestycyjnych
       not_voting_allowed: Faza głosowania jest zamknięta
   welcome:
