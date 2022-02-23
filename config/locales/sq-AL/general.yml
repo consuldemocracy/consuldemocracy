@@ -333,7 +333,6 @@ sq:
       select_order_long: "Ju shikoni propozime sipas:"
       start_proposal: Krijo propozim
       title: Propozime
-      top: Top javore
       top_link_proposals: Propozimet më të mbështetura sipas kategorisë
       section_header:
         icon_alt: Ikona propozimeve
@@ -671,15 +670,12 @@ sq:
   votes:
     agree: Jam dakort
     anonymous: Shumë vota anonime për të lejuar votën %{verify_account}.
-    comment_unauthenticated: Ju duhet %{signin} ose %{signup} për të votuar.
     disagree: Nuk jam dakort
     organizations: Organizatat nuk lejohen të votojnë
     supports: Suporti
     verified_only: Vetëm përdoruesit e verifikuar mund të votojnë për propozimet; %{verify_account}.
     budget_investments:
-      not_logged_in: Ju duhet %{signin} ose %{signup} për të vazhduar.
       not_verified: Vetëm përdoruesit e verifikuar mund të votojnë për projektet e investimeve; %{verify_account}.
-      organization: Organizatat nuk lejohen të votojnë
       unfeasible: Projektet e papërshtatshme të investimeve nuk mund të mbështeten
       not_voting_allowed: Faza e zgjedhjes është e mbyllur
   welcome:
