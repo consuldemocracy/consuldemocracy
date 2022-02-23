@@ -371,7 +371,6 @@ ka:
       select_order_long: "ინიციატივები ნაჩვენებია:"
       start_proposal: ახალი ინიციატივის შექმნა
       title: ინიციატივები
-      top: კვირის მოწინავე
       top_link_proposals: კატეგორიის მიხედვით ყველაზე მეტი ხმის მქონე ინიციატივები
       section_header:
         icon_alt: ინიციატივების ნიშანი
@@ -836,15 +835,12 @@ ka:
   votes:
     agree: ვეთანხმები
     anonymous: ზედმეტად ბევრი ანონიმური ხმაა იმისათვის, რომ ეს ხმა ჩაითვალოს %{verify_account}.
-    comment_unauthenticated: ხმის მისაცემად გაიარეთ %{signin} ან %{signup}.
     disagree: არ ვეთანხმები
     organizations: ორგანიზაციებს ხმის მიცემა არ შეუძლიათ
     supports: მხარდამჭერები
     verified_only: მხოლოდ გადამოწმებული ანგარიშის მქონე მომხმარებლებს შეუძლიათ ინიციატივაზე ხმის მიცემა; %{verify_account}.
     budget_investments:
-      not_logged_in: გასაგრძელებლად თქვენ უნდა გაიაროთ %{signin} ან %{signup}.
       not_verified: მხოლოდ გადამოწმებული ანგარიშის მქონე მომხმარებლებს შეუძლიათ საინვესტიციო პროექტებზე ხმის მიცემა; %{verify_account}.
-      organization: ორგანიზაციებს ხმის მიცემა არ შეუძლიათ
       unfeasible: არაგანხორციელებად საინვესტიციო პროექტებზე ხმის მიცემა შეუძლებელია
       not_voting_allowed: ხმის მიცემის ფაზა დასრულებულია
       different_heading_assigned:
