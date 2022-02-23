@@ -385,7 +385,6 @@ hr:
       select_order_long: "Vršite pregled prijedloga po:"
       start_proposal: Izradi prijedlog
       title: Prijedlozi
-      top: Tjedno najpopularniji
       top_link_proposals: Prijedlozi koji imaju naviše potpore po kategoriji
       section_header:
         icon_alt: Ikona prijedloga
@@ -867,15 +866,12 @@ hr:
   votes:
     agree: Slažem se
     anonymous: Previše anonimnih glasova kako bi se prihvatio glas %{verify_account}.
-    comment_unauthenticated: '%{signin} ili %{signup} da biste glasali.'
     disagree: Ne slažem se
     organizations: Organizacijama nije dopušteno glasanje
     supports: Potpore
     verified_only: Samo potvrđenim korisnicima je dozvoljeno glasanje za prijedloge; %{verify_account}.
     budget_investments:
-      not_logged_in: '%{signin} ili %{signup} da biste nastavili.'
       not_verified: Samo potvrđeni korisnici mogu glasati za investicijske projekte, %{verify_account}.
-      organization: Organizacijama nije dopušteno glasanje
       unfeasible: Projekti koji nisu izvedivi ne mogu dobiti podršku
       not_voting_allowed: Faza glasanja je zatvorena
       different_heading_assigned:
