@@ -29,9 +29,7 @@ ca:
         voted_info_2: "Però podeu canviar el vostre vot en qualsevol moment fins que es tanqui aquesta fase."
         zero: Encara no has votat cap proposta d'inversió.
       reasons_for_not_balloting:
-        not_logged_in: Necessites %{signin} o %{signup}.
         not_verified: Les propostes d'inversió només poden ser avalades per usuaris verificats, %{verify_account}.
-        organization: Les associacions no poden avalar
         not_selected: No es poden votar propostes inviables.
         not_enough_money: "Ja heu assignat el pressupost disponible.<br><small>Recordeu que podeu %{change_ballot} a qualsevol hora</small>"
         no_ballots_allowed: El període de votació està tancat.
