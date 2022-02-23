@@ -414,7 +414,6 @@ ar:
       select_order_long: "أنت تشاهد المقترحات وفقًا لـ:"
       start_proposal: إنشاء مقترح
       title: إقتراحات
-      top: الأعلى أسبوعيا
       top_link_proposals: المقترحات الأكثر تأييدا حسب الفئة
       section_header:
         icon_alt: إيقونة المقترحات
@@ -925,15 +924,12 @@ ar:
   votes:
     agree: أنا أوافق
     anonymous: لا يمكن قبول التصويت لأنّ هناك عدد كبير جدًا من الأصوات المجهولة %{verify_account}.
-    comment_unauthenticated: تحتاج الى %{signin} او %{signup} كي تصبح قدرا على التصويت.
     disagree: أنا لا أوافق
     organizations: المنظمات لا يسمح لها بالتصويت
     supports: دعم
     verified_only: يمكن للمستخدمين الذين تم التحقق منهم فقط التصويت على المقترحات؛ %{verify_account}.
     budget_investments:
-      not_logged_in: تحتاج الى %{signin} او %{signup} للمتابعة.
       not_verified: يمكن للمستخدمين الذين تم التحقق منهم فقط التصويت على مشاريع الاستثمارات; %{verify_account}.
-      organization: المنظمات لا يسمح لها بالتصويت
       unfeasible: لا يمكن دعم المشاريع الإستثمارية الغير مجدية
       not_voting_allowed: مرحلة التصويت مغلقة
       different_heading_assigned:
