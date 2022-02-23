@@ -38,5 +38,31 @@ it:
           target_2_4:
             long_title: "Per il 2030, assicurare sistemi di produzione alimentare sostenibili e implementare pratiche agricole resilienti che aumentino produttività e produzione, che aiutino a mantenere gli ecosistemi, che rafforzino la capacità d'adattamento al cambiamento climatico, meteo estremo, siccità, allagamento e altri disastri e che progressivamente migliori la qualità della terra e del suolo."
             short_title: "Produzione Alimentare Sostenibile e Pratiche Agricole Resilienti"
+          target_2_5:
+            long_title: "Per il 2020, mantenere la diversità genetica dei semi, delle piante coltivate e degli animali addomesticati e le loro specie selvatiche correlate, incluso tramite banche di semi e piante ben gestite e diversificate ai livelli nazionale, regionali e internazionali e promuovere l'accesso a e l'equa e giusta condivisione di benefici sorti dall'uso delle risorse genetiche e le conoscenze tradizionali associate, come acconsentito internazionalmente."
+            short_title: "Mantenere la Diversità Genetica nella Produzione Alimentare"
+          target_2_A:
+            long_title: "Aumentare investimento, incluso tramite la maggiore cooperazione internazionale, nell'infrastruttura rurale, ricerca agricola e servizi d'estensione, sviluppo tecnologico e banche genetiche di piante e bestiame per poter migliorare la capacità produttiva agricola nei paesi in via di sviluppo, in particolare nei paesi meno sviluppati."
+            short_title: "Investire nell'Infrastruttura Rurale, Ricerca Agricola, Tecnologia e Banche Genetiche"
+          target_2_B:
+            long_title: "Correggere e impedire le limitazioni commerciali e le distorsioni nei mercati agricoli del mondo, incluso tramite l'eliminazione parallela di tutte le forme di sussidi d'esportazione agricola e tutte le misure d'esportazione con effetto equivalente, secondo il mandato del Doha Development Round."
+            short_title: "Prevenire Limitazioni Commerciali Agricole, Distorsioni di Mercato e Sussidi d'Esportazione"
+          target_2_C:
+            long_title: "Adottare misure per assicurare il giusto funzionamento dei mercati di merce alimentare e loro derivati e facilitare l'accesso opportuno alle informazioni del mercato, incluse su riserve alimentari, per poter aiutare a limitare l'estrema volatilità del prezzo degli alimenti."
+            short_title: "Assicurare Mercati di Merce Alimentare Stabili e Accesso Opportuno alle Informazioni"
+      goal_3:
+        title: "Buona Salute e Benessere"
+        title_in_two_lines: "Buona Salute\ne Benessere"
+        description: "Assicurare vite sane e promuovere il benessere per tutti a tutte le età."
+        targets:
+          target_3_1:
+            long_title: "Per il 2030, ridurre il rapporto di mortalità materna globale a meno di 70 su 100.000 nascite."
+            short_title: "Ridurre la Mortalità Materna"
+          target_3_2:
+            long_title: "Per il 2030, porre fine alle morti prevenibili di neonati e bambini sotto i 5 anni d'età, mirando alla riduzione internazionale della mortalità neonatale a meno di 12 su 1.000 nascite e mortalità dei minori di 5 anni a meno di 25 a 1.000 nascite."
+            short_title: "Metter Fine a Tutte le Morti Prevenibili Sotto ai 5 Anni d'Età"
+          target_3_3:
+            long_title: "Per il 2030, metter fine alle epidemie di AIDS, tubercolosi, malaria e malattie tropicali trascurate e combattere l'epatite, le malattie a base d'acqua e altre malattie trasmissibili."
+            short_title: "Combattere le Malattie Trasmissibili"
     related_list_selector:
       remove_tag: "Rimuovere"
