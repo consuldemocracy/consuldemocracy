@@ -2004,7 +2004,9 @@ table {
 
 .comment-votes {
 
-  a {
+  a,
+  .icon-like,
+  .icon-unlike {
     color: $text-light;
     display: inline-block;
     vertical-align: top;

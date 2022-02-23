@@ -1,4 +1,4 @@
-<div class="supports js-participation">
+<div class="supports">
 
   <span class="total-supports <%= "no-button" unless voting_allowed? || user_voted_for? %>">
     <%= t("budgets.investments.investment.supports", count: investment.total_votes) %>
@@ -36,7 +36,7 @@
 
   <% if reason.present? && !user_voted_for? %>
     <div tabindex="0">
-      <div class="js-participation-not-allowed participation-not-allowed" style="display:none" aria-hidden="false">
+      <div class="participation-not-allowed" style="display:none" aria-hidden="false">
         <p>
           <small>
             <%= sanitize(t("votes.budget_investments.#{reason}",

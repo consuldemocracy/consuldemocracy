@@ -1,0 +1,47 @@
+<div class="supports text-center">
+  <%= render "proposals/supports", proposal: proposal %>
+
+  <div class="in-favor">
+    <% if voted? %>
+      <div class="supported callout success">
+        <%= t("proposals.proposal.already_supported") %>
+      </div>
+    <% elsif can_vote? %>
+      <%= link_to t("proposals.proposal.support"), vote_url,
+          class: "button button-support small expanded",
+          title: t("proposals.proposal.support_title"),
+          method: "post",
+          remote: true %>
+    <% else %>
+      <div class="button button-support small expanded">
+        <%= t("proposals.proposal.support") %>
+      </div>
+    <% end %>
+  </div>
+
+  <% if !current_user %>
+    <div tabindex="0">
+      <%= render "shared/login_to_vote" %>
+    </div>
+  <% elsif organization? %>
+    <div class="participation-not-allowed" style="display:none" aria-hidden="false">
+      <p>
+        <%= t("votes.organizations") %>
+      </p>
+    </div>
+  <% elsif !can_vote? %>
+    <div tabindex="0">
+      <div class="participation-not-allowed" style="display:none" aria-hidden="false">
+        <p>
+          <%= sanitize(t("votes.verified_only", verify_account: link_to_verify_account)) %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+
+  <% if voted? && setting["twitter_handle"] %>
+    <div class="share-supported">
+      <%= render "proposals/social_share", proposal: proposal, share_title: false %>
+    </div>
+  <% end %>
+</div>

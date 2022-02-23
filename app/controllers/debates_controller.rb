@@ -30,7 +30,6 @@ class DebatesController < ApplicationController
 
   def vote
     @debate.register_vote(current_user, params[:value])
-    set_debate_votes(@debate)
   end
 
   def unmark_featured

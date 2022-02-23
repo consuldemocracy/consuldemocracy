@@ -1,0 +1,44 @@
+<div class="votes">
+  <%= t("comments.comment.votes", count: comment.total_votes) %>
+  &nbsp;|&nbsp;
+
+  <span class="in_favor">
+    <% if can?(:vote, comment) %>
+      <%= link_to vote_comment_path(comment, value: "yes"),
+          method: "post", remote: true, title: t("votes.agree") do %>
+          <span class="icon-like">
+            <span class="show-for-sr"><%= t("votes.agree") %></span>
+          </span>
+      <% end %>
+    <% else %>
+      <span class="icon-like">
+        <span class="show-for-sr"><%= t("votes.agree") %></span>
+      </span>
+    <% end %>
+    <%= comment.total_likes %>
+  </span>
+
+  <span class="against">
+    <% if can?(:vote, comment) %>
+      <%= link_to vote_comment_path(comment, value: "no"),
+          method: "post", remote: true, title: t("votes.disagree") do %>
+          <span class="icon-unlike">
+            <span class="show-for-sr"><%= t("votes.disagree") %></span>
+          </span>
+      <% end %>
+    <% else %>
+      <span class="icon-unlike">
+        <span class="show-for-sr"><%= t("votes.disagree") %></span>
+      </span>
+    <% end %>
+    <%= comment.total_dislikes %>
+  </span>
+
+  <% unless current_user %>
+    <div tabindex="0">
+      <div class="participation-not-allowed" style="display:none" aria-hidden="false">
+        <%= sanitize(t("votes.comment_unauthenticated", signin: link_to_signin, signup: link_to_signup)) %>
+      </div>
+    </div>
+  <% end %>
+</div>

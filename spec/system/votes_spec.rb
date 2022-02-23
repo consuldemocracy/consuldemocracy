@@ -181,28 +181,6 @@ describe "Votes" do
   describe "Proposals" do
     before { login_as(verified) }
 
-    scenario "Index shows user votes on proposals" do
-      proposal1 = create(:proposal, voters: [verified])
-      proposal2 = create(:proposal)
-      proposal3 = create(:proposal)
-
-      visit proposals_path
-
-      within("#proposals") do
-        within("#proposal_#{proposal1.id}_votes") do
-          expect(page).to have_content "You have already supported this proposal. Share it!"
-        end
-
-        within("#proposal_#{proposal2.id}_votes") do
-          expect(page).not_to have_content "You have already supported this proposal. Share it!"
-        end
-
-        within("#proposal_#{proposal3.id}_votes") do
-          expect(page).not_to have_content "You have already supported this proposal. Share it!"
-        end
-      end
-    end
-
     describe "Single proposal" do
       let!(:proposal) { create(:proposal) }
 

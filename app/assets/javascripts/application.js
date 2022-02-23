@@ -66,7 +66,6 @@
 //= require tags
 //= require users
 //= require votes
-//= require allow_participation
 //= require advanced_search
 //= require registration_form
 //= require suggest
@@ -124,7 +123,6 @@ var initialize_modules = function() {
   App.Comments.initialize();
   App.Users.initialize();
   App.Votes.initialize();
-  App.AllowParticipation.initialize();
   App.Tags.initialize();
   App.FoundationExtras.initialize();
   App.LocationChanger.initialize();

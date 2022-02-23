@@ -21,7 +21,11 @@
   </div>
 </div>
 
-<% cache [locale_and_user_status(@proposal), @proposal, @proposal.author, Flag.flagged?(current_user, @proposal), @legislation_proposal_votes] do %>
+<% cache [locale_and_user_status(@proposal),
+          @proposal,
+          @proposal.author,
+          Flag.flagged?(current_user, @proposal),
+          current_user&.voted_as_when_voted_for(@proposal)] do %>
   <div class="proposal-show legislation-proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">

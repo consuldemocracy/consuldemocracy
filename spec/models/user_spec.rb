@@ -33,28 +33,6 @@ describe User do
     end
   end
 
-  describe "#debate_votes" do
-    let(:user) { create(:user) }
-
-    it "returns {} if no debate" do
-      expect(user.debate_votes([])).to eq({})
-    end
-
-    it "returns a hash of debates ids and votes" do
-      debate1 = create(:debate)
-      debate2 = create(:debate)
-      debate3 = create(:debate)
-      create(:vote, voter: user, votable: debate1, vote_flag: true)
-      create(:vote, voter: user, votable: debate3, vote_flag: false)
-
-      voted = user.debate_votes([debate1, debate2, debate3])
-
-      expect(voted[debate1.id]).to eq(true)
-      expect(voted[debate2.id]).to eq(nil)
-      expect(voted[debate3.id]).to eq(false)
-    end
-  end
-
   describe "#comment_flags" do
     let(:user) { create(:user) }
 
