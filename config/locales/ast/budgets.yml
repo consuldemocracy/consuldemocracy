@@ -10,9 +10,7 @@ ast:
           other: "Votasti <span>%{count}</span> propuestes."
         zero: Entovía nun votasti nenguna propuesta d'inversión.
       reasons_for_not_balloting:
-        not_logged_in: Precises %{signin} o %{signup} pa siguir.
         not_verified: Les propuestes d'inversión namás puen ser sofitaes por usuarios verificaos, %{verify_account}.
-        organization: Les organizaciones nun puen votar
         not_selected: Non puen votase propuestes invidables
         not_enough_money: "Yá asignasti'l presupuestu disponible.<br><small>Recuerda que pues %{change_ballot} en cualesquier momentu</small>"
         no_ballots_allowed: El periodu de votación ta zarráu
