@@ -30,9 +30,7 @@ sv:
         voted_info_2: "Men du kan ändra din röst när som helst fram till att denna fas har stängts."
         zero: Du har inte röstat på några budgetförslag.
       reasons_for_not_balloting:
-        not_logged_in: Du måste %{signin} eller %{signup} för att fortsätta.
         not_verified: Endast verifierade användare kan rösta på budgetförslag; %{verify_account}.
-        organization: Organisationer kan inte rösta
         not_selected: Omarkerade budgetförslag kan inte stödjas
         not_enough_money: "Du har redan använt hela din budget.<br><small>Kom ihåg att du kan %{change_ballot} när som helst</small>"
         no_ballots_allowed: Urvalsfasen är stängd
