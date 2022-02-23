@@ -372,7 +372,6 @@ nn:
       select_order_long: "Du viser forslag i henhold til:"
       start_proposal: Opprett et forslag
       title: Forslag
-      top: Ukens mest populære forslag
       top_link_proposals: Mest populære forslag fra hver kategori
       section_header:
         icon_alt: Forslagsikon
@@ -831,15 +830,12 @@ nn:
   votes:
     agree: Jeg er enig
     anonymous: For mange anonyme stemmer til å godkjenne stemme %{verify_account}.
-    comment_unauthenticated: Du må %{signin} eller %{signup} for å stemme.
     disagree: Jeg er uenig
     organizations: Organisasjoner er ikke berettiget til å stemme
     supports: Støtte
     verified_only: Kun verifiserte brukere kan stemme på forslag; %{verify_account}.
     budget_investments:
-      not_logged_in: Du må %{signin} eller %{signup} for å fortsette.
       not_verified: Kun verifiserte brukere kan stemme på investeringsprosjekter; %{verify_account}.
-      organization: Organisasjoner er ikke berettiget til å stemme
       unfeasible: Du kan ikke gi støtte til investeringsprojekter, som ikke kan gennemføres
       not_voting_allowed: Avstemmingsfasen er avsluttet
       different_heading_assigned:
