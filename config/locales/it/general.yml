@@ -408,6 +408,7 @@ it:
         one: 1 commento
         other: "%{count} commenti"
       support: Sostenere
+      support_label: "Supporta %{proposal}"
       support_title: Sostieni questa proposta
       supports:
         zero: Nessun sostegno
@@ -845,8 +846,10 @@ it:
       retired_help_text: Pannello di controllo non disponibile per le proposte ritirate
   votes:
     agree: Sono d'accordo
+    agree_label: "Acconsento con %{title}"
     anonymous: Troppi voti anonimi per ammettere il voto %{verify_account}.
     disagree: Non sono d'accordo
+    disagree_label: "Non acconsento con %{title}"
     organizations: Le organizzazioni non sono ammesse a votare
     supports: Supporti
     verified_only: Solo gli utenti verificati possono votare le proposte; %{verify_account}.
