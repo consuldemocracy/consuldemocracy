@@ -19,9 +19,7 @@ hr:
         voted_info_2: "Možete promjeniti svoj glas u bilo koje vrijeme do završetka ove faze."
         zero: Niste glasali niti za jedan investicijski projekt.
       reasons_for_not_balloting:
-        not_logged_in: '%{signin} ili %{signup} da biste nastavili.'
         not_verified: Samo potvrđeni korisnici mogu glasati za investicije, %{verify_account}.
-        organization: Organizacijama nije dozvoljeno glasanje
         not_selected: Investicijski projekti koji nisu odabrani ne mogu dobiti podršku
         not_enough_money: "Već ste odabrali dostupan proračun.<br><small>Možete %{change_ballot} u bilo kojem trenutku</small>"
         no_ballots_allowed: Faza odabira je zatvorena
