@@ -1887,7 +1887,7 @@ table {
       display: inline-block;
     }
 
-    form {
+    .comment-form form {
       margin-top: $line-height / 2;
     }
   }
@@ -2004,23 +2004,32 @@ table {
 
 .comment-votes {
 
-  a,
-  .icon-like,
-  .icon-unlike {
+  button,
+  form {
     color: $text-light;
     display: inline-block;
-    vertical-align: top;
   }
 
-  a:hover {
-    color: $text-medium;
-    text-decoration: none;
+  button {
+    font-size: $base-font-size;
 
-    .icon-like {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .in-favor button {
+    @include has-fa-icon(thumbs-up, solid);
+
+    &:hover {
       color: $like;
     }
+  }
 
-    .icon-unlike {
+  .against button {
+    @include has-fa-icon(thumbs-down, solid);
+
+    &:hover {
       color: $unlike;
     }
   }

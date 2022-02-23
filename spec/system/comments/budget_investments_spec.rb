@@ -509,7 +509,7 @@ describe "Commenting Budget::Investments" do
       visit budget_investment_path(budget, investment)
 
       within("#comment_#{comment.id}_votes") do
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
@@ -525,9 +525,9 @@ describe "Commenting Budget::Investments" do
       visit budget_investment_path(budget, investment)
 
       within("#comment_#{comment.id}_votes") do
-        find(".in_favor a").click
+        click_button "I agree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
@@ -543,15 +543,15 @@ describe "Commenting Budget::Investments" do
       visit budget_investment_path(budget, investment)
 
       within("#comment_#{comment.id}_votes") do
-        find(".in_favor a").click
+        click_button "I agree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
-        find(".against a").click
+        click_button "I disagree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "0"
         end
 
@@ -567,15 +567,15 @@ describe "Commenting Budget::Investments" do
       visit budget_investment_path(budget, investment)
 
       within("#comment_#{comment.id}_votes") do
-        find(".in_favor a").click
+        click_button "I agree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
-        find(".in_favor a").click
+        click_button "I agree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 

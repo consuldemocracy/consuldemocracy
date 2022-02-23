@@ -21,6 +21,10 @@ class Proposals::VotesComponent < ApplicationComponent
       proposal.votable_by?(current_user)
     end
 
+    def support_aria_label
+      t("proposals.proposal.support_label", proposal: proposal.title)
+    end
+
     def organization?
       current_user&.organization?
     end

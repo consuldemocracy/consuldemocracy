@@ -1,8 +1,18 @@
 .in-favor-against {
-  display: inline-block;
+  @include flex-with-gap($line-height / 4);
 
-  .icon-like,
-  .icon-unlike {
+  @include breakpoint(medium) {
+    @include flex-with-gap($line-height * 3 / 4);
+  }
+
+  &,
+  .in-favor,
+  .against,
+  form {
+    display: inline-block;
+  }
+
+  button {
     background: #fff;
     border: 2px solid;
     border-radius: rem-calc(3);
@@ -10,7 +20,7 @@
     display: inline-block;
     font-size: rem-calc(30);
     line-height: rem-calc(30);
-    padding: rem-calc(3) rem-calc(6);
+    padding: rem-calc(3) rem-calc(6) rem-calc(6);
     position: relative;
 
     &:hover,
@@ -21,7 +31,8 @@
     }
   }
 
-  .icon-like {
+  .in-favor button {
+    @include has-fa-icon(thumbs-up, solid);
 
     &:hover,
     &:active {
@@ -30,7 +41,8 @@
     }
   }
 
-  .icon-unlike {
+  .against button {
+    @include has-fa-icon(thumbs-down, solid);
 
     &:hover,
     &:active {
@@ -41,57 +53,40 @@
 
   .like,
   .unlike {
-    line-height: rem-calc(48);
     vertical-align: super;
     text-decoration: none;
+  }
 
-    .percentage {
-      color: $text;
-      display: inline-block;
-      font-size: $small-font-size;
-      line-height: $line-height * 2;
-      padding-right: $line-height / 2;
-      vertical-align: top;
+  .percentage {
+    color: $text;
+    display: inline-block;
+    font-size: $small-font-size;
+    line-height: $line-height * 2;
+    padding-right: $line-height / 2;
+    vertical-align: top;
 
-      @include breakpoint(medium) {
-        display: block;
-        line-height: $line-height;
-        padding-right: 0;
-      }
+    @include breakpoint(medium) {
+      display: block;
+      line-height: $line-height;
+      padding-right: 0;
     }
   }
 
   .voted {
+    color: #fff;
+  }
 
-    .icon-like,
-    .icon-unlike {
-      color: #fff;
-    }
+  .in-favor .voted {
+    background: $like;
+    border: 2px solid $like;
+  }
 
-    .icon-like {
-      background: $like;
-      border: 2px solid $like;
-    }
-
-    .icon-unlike {
-      background: $unlike;
-      border: 2px solid $unlike;
-    }
+  .against .voted {
+    background: $unlike;
+    border: 2px solid $unlike;
   }
 
   .no-voted {
-
-    .icon-like,
-    .icon-unlike {
-      opacity: 0.3;
-    }
-  }
-
-  .against {
-    margin-left: $line-height / 4;
-  }
-
-  .divider {
-    margin: 0 rem-calc(6);
+    opacity: 0.3;
   }
 }

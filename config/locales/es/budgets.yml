@@ -23,6 +23,7 @@ es:
             other: "Puedes votar hasta <span>%{count}</span> proyectos"
         no_balloted_group_yet: "Todavía no has votado proyectos de este grupo, ¡vota!"
         remove: Quitar voto
+        remove_label: "Quitar tu voto a %{investment}"
         voted:
           one: "Has votado <span>un</span> proyecto."
           other: "Has votado <span>%{count}</span> proyectos."
@@ -151,6 +152,7 @@ es:
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
         add: Votar
+        add_label: "Votar %{investment}"
         already_added: Ya has añadido este proyecto de gasto
         support_title: Apoyar este proyecto
         supports:

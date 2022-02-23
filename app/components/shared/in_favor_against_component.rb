@@ -22,4 +22,12 @@ class Shared::InFavorAgainstComponent < ApplicationComponent
         { in_favor: "", against: "" }
       end
     end
+
+    def agree_aria_label
+      t("votes.agree_label", title: votable.title)
+    end
+
+    def disagree_aria_label
+      t("votes.disagree_label", title: votable.title)
+    end
 end

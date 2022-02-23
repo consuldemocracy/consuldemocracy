@@ -746,22 +746,6 @@
                   content: "|";
                 }
               }
-
-              .icon-like,
-              .icon-unlike {
-                cursor: pointer;
-                color: #c7c7c7;
-
-                &:hover,
-                &:active,
-                &:focus {
-                  color: #838383;
-                }
-              }
-
-              .icon-like {
-                margin-right: rem-calc(4);
-              }
             }
           }
         }
