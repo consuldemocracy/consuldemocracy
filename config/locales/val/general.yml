@@ -333,7 +333,6 @@ val:
       select_order_long: "Estas veient les propostes en funció de:"
       start_proposal: Crear una proposta
       title: Propostes
-      top: Top semanal
       top_link_proposals: Propostes més avalades per categoria
       section_header:
         icon_alt: Icona de Propostes
@@ -671,15 +670,12 @@ val:
   votes:
     agree: Estic d'acord
     anonymous: Massa vots anònims, per a poder votar %{verify_account}.
-    comment_unauthenticated: Necessites %{signin} o %{signup} per a votar.
     disagree: No estic d'acord
     organizations: Les organitzacions no poden votar
     supports: Avals
     verified_only: Les propostes d'inversió només poden ser votades per usuaris verificats, %{verify_account}.
     budget_investments:
-      not_logged_in: Necessites %{signin} o %{signup}.
       not_verified: El projectes d'inversió només poden ser avalades per usuaris verificats, %{verify_account}.
-      organization: Les organitzacions no poden votar
       unfeasible: No es poden votar propostes inviables
       not_voting_allowed: El període de votació està tancat
   welcome:
