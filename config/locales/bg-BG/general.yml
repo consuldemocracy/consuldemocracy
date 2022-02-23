@@ -376,7 +376,6 @@ bg:
       select_order_long: "Разглеждате предложения според:"
       start_proposal: Създайте предложение
       title: Предложения
-      top: Най-високо за седмицата
       top_link_proposals: Най-подкрепяните предложения по категории
       section_header:
         icon_alt: Икона за предложения
@@ -847,15 +846,12 @@ bg:
   votes:
     agree: Съгласен съм
     anonymous: Твърде много анонимни гласове за допускане на гласуване %{verify_account}.
-    comment_unauthenticated: Вие трябва да %{signin} или да %{signup}, за да гласувате.
     disagree: Не съм съгласен
     organizations: Организациите нямат право да гласуват
     supports: Гласове за подкрепа
     verified_only: Само проверени потребители могат да гласуват предложения; %{verify_account}.
     budget_investments:
-      not_logged_in: Вие трябва да %{signin} или да %{signup}, за да продължите.
       not_verified: Само проверени потребители могат да гласуват инвестиционни проекти; %{verify_account}.
-      organization: Организациите нямат право да гласуват
       unfeasible: Неизпълними инвестиционни проекти не могат да бъдат подкрепени
       not_voting_allowed: Фазата на гласуване е затворена
       different_heading_assigned:
