@@ -376,7 +376,6 @@ sv:
       select_order_long: "Du visar förslag enligt:"
       start_proposal: Skapa ett förslag
       title: Förslag
-      top: Veckans populäraste förslag
       top_link_proposals: Populäraste förslagen från varje kategori
       section_header:
         icon_alt: Förslagsikonen
@@ -847,15 +846,12 @@ sv:
   votes:
     agree: Jag håller med
     anonymous: För många anonyma röster för att godkänna omröstningen %{verify_account}.
-    comment_unauthenticated: Du behöver %{signin} eller %{signup} för att rösta.
     disagree: Jag håller inte med
     organizations: Organisationer kan inte rösta
     supports: Stöd
     verified_only: Endast verifierade användare kan rösta på förslag; %{verify_account}.
     budget_investments:
-      not_logged_in: Du behöver %{signin} eller %{signup} för att fortsätta.
       not_verified: Endast verifierade användare kan rösta på budgetförslag; %{verify_account}.
-      organization: Organisationer kan inte rösta
       unfeasible: Det går inte att stödja investeringsprojekt som inte är genomförbara
       not_voting_allowed: Omröstningsfasen är avslutad
       different_heading_assigned:
