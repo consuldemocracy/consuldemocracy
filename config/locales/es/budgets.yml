@@ -31,9 +31,7 @@ es:
         voted_info_2: "Pero puedes cambiarlos en cualquier momento hasta el cierre de esta fase."
         zero: Todavía no has votado ningún proyecto de gasto.
       reasons_for_not_balloting:
-        not_logged_in: Necesitas %{signin} o %{signup} para continuar.
         not_verified: Los proyectos de gasto sólo pueden ser apoyados por usuarios verificados, %{verify_account}.
-        organization: Las organizaciones no pueden votar.
         not_selected: No se pueden votar proyectos inviables.
         not_enough_money: "Ya has asignado el presupuesto disponible.<br><small>Recuerda que puedes %{change_ballot} en cualquier momento</small>"
         no_ballots_allowed: El periodo de votación está cerrado.

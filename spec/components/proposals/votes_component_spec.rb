@@ -5,12 +5,12 @@ describe Proposals::VotesComponent do
   let(:component) { Proposals::VotesComponent.new(proposal) }
 
   describe "support proposal button" do
-    it "is disabled to unverified users" do
+    it "is shown to unverified users" do
       sign_in(create(:user))
 
       render_inline component
 
-      expect(page).to have_button "Support", disabled: true
+      expect(page).to have_button "Support"
     end
 
     it "is shown to verified users" do
@@ -38,8 +38,8 @@ describe Proposals::VotesComponent do
     it "asks anonymous users to sign in or sign up" do
       render_inline component
 
-      expect(page).to have_link "sign in", visible: :hidden
-      expect(page).to have_link "sign up", visible: :hidden
+      expect(page).to have_link "sign in"
+      expect(page).to have_link "sign up"
     end
 
     it "says voting is not allowed to organizations" do
@@ -58,7 +58,7 @@ describe Proposals::VotesComponent do
       render_inline component
 
       expect(page).to have_content "Only verified users can vote on proposals"
-      expect(page).to have_link "verify your account", visible: :hidden
+      expect(page).to have_link "verify your account"
       expect(page).not_to have_link "sign in", visible: :all
       expect(page).not_to have_link "sign up", visible: :all
     end

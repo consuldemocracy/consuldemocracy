@@ -12,7 +12,7 @@ class Debates::VotesComponent < ApplicationComponent
       debate.votable_by?(current_user)
     end
 
-    def organization?
-      current_user&.organization?
+    def cannot_vote_text
+      t("votes.anonymous", verify_account: link_to_verify_account) unless can_vote?
     end
 end

@@ -65,7 +65,7 @@
 //= require jquery.amsify.suggestags
 //= require tags
 //= require users
-//= require votes
+//= require participation_not_allowed
 //= require advanced_search
 //= require registration_form
 //= require suggest
@@ -122,7 +122,7 @@ var initialize_modules = function() {
   App.Questions.initialize();
   App.Comments.initialize();
   App.Users.initialize();
-  App.Votes.initialize();
+  App.ParticipationNotAllowed.initialize();
   App.Tags.initialize();
   App.FoundationExtras.initialize();
   App.LocationChanger.initialize();

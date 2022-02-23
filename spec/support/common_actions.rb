@@ -13,7 +13,6 @@ module CommonActions
   include Translations
   include Users
   include Verifications
-  include Votes
 
   def app_host
     "#{Capybara.app_host}:#{Capybara::Server.ports.values.last}"

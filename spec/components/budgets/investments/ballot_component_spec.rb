@@ -18,7 +18,7 @@ describe Budgets::Investments::BallotComponent do
 
       render_inline component
 
-      expect(page).to have_button "Vote", disabled: true
+      expect(page).to have_button "Vote"
       expect(page).to have_content "Only verified users can vote on investments; verify your account."
     end
 
