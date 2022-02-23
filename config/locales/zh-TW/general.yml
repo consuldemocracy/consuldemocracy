@@ -322,7 +322,6 @@ zh-TW:
       select_order_long: "您正在查看的建議是依據："
       start_proposal: 創建一個建議
       title: 建議
-      top: 每週熱門
       top_link_proposals: 按類別，獲得支持最多的建議
       section_header:
         icon_alt: 建議圖標
@@ -654,15 +653,12 @@ zh-TW:
   votes:
     agree: 我同意
     anonymous: 太多的匿名投票，要允許投票%{verify_account}。
-    comment_unauthenticated: 您必須%{signin} 或%{signup} 才能投票。
     disagree: 我不同意
     organizations: 組織不允許投票
     supports: 支援
     verified_only: 只有已核實的用戶才能對建議投票；%{verify_account}。
     budget_investments:
-      not_logged_in: 您必須%{signin} 或%{signup} 才能繼續。
       not_verified: 只有已核實的用戶才能對投資項目投票；%{verify_account}。
-      organization: 組織不允許投票
       unfeasible: 不可行的投資項目不能獲得支持
       not_voting_allowed: 投票階段已結束
   welcome:
