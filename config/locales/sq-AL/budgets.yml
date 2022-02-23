@@ -10,9 +10,7 @@ sq:
           other: "Ju keni votuar <span>%{count}</span> investimet."
         zero: Ju nuk keni votuar në asnjë projekt investimi.
       reasons_for_not_balloting:
-        not_logged_in: Ju duhet %{signin} ose %{signup} për të vazhduar.
         not_verified: Vetëm përdoruesit e verifikuar mund të votojnë për investimet; %{verify_account}.
-        organization: Organizatat nuk lejohen të votojnë
         not_selected: Projektet e investimeve të pazgjedhura nuk mund të mbështeten.
         not_enough_money: "Ju tashmë keni caktuar buxhetin në dispozicion. <small> Mos harroni që ju mund të %{change_ballot} në cdo kohë </small>"
         no_ballots_allowed: Faza e zgjedhjes është e mbyllur
