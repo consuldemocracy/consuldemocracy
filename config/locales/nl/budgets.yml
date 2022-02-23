@@ -30,9 +30,7 @@ nl:
         voted_info_2: "Je kunt je stem altijd aanpassen tot deze fase wordt gesloten."
         zero: U heeft op geen enkel voorstel gestemd.
       reasons_for_not_balloting:
-        not_logged_in: Je moet %{signin} of %{signup} om verder te gaan.
         not_verified: Alleen geverrifieerde deelnemers kunnen op voorstellen stemmen; %{verify_account}.
-        organization: Organisaties mogen niet stemmen
         not_selected: Niet-geselecteerde voorstellen kunnen niet worden gesteund
         not_enough_money: "Je hebt al het beschikbare budget toegewezen.<br><small>Je kunt op elk gewenst moment %{change_ballot}</small>"
         no_ballots_allowed: De selectiefase is voorbij
