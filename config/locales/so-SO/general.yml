@@ -333,7 +333,6 @@ so:
       select_order_long: "Waxaad daawaneysaa soo jeedinada sida:"
       start_proposal: Abuur soo jeedin
       title: Sojeedino
-      top: Usbuuca ugu sarreeya
       top_link_proposals: Soo jeedinta ugu taageerada badan ee qaybta
       section_header:
         icon_alt: Icon soo jedinada
@@ -671,15 +670,12 @@ so:
   votes:
     agree: Wan aqbalay
     anonymous: Codad qarsoodi ah oo badan si ay u qirto codka%{verify_account}.
-    comment_unauthenticated: Waa inaad%{signin} ama%{signup} codka.
     disagree: Ma aqbalin
     organizations: Ururada loma fasixin iney codeyaan
     supports: Tageerayaal
     verified_only: Kaliya dadka isticmaala xaqiijiyay ayaa ku codayn kara soo jeedimaha%{verify_account}.
     budget_investments:
-      not_logged_in: Waa inad igu %{signin} ama%{signup} si wada.
       not_verified: Kaliya dadka isticmaala hubinta ayaa codayn kara Mashariicdamaalgashiga; %{verify_account}.
-      organization: Ururada loma fasixin iney codeyaan
       unfeasible: Mashaariicda maal-gashiga aan macquul ahayn lama taageeri karo
       not_voting_allowed: Heerka codbixinta waa la xiray
   welcome:
