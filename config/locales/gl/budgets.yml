@@ -13,9 +13,7 @@ gl:
         voted_info_2: "Mais podes cambiar o teu voto en calquera momento ata o peche desta fase."
         zero: Aínda non votaches ningunha proposta de investimento.
       reasons_for_not_balloting:
-        not_logged_in: Debes %{signin} ou %{signup} para continuares.
         not_verified: As propostas de investimento só poden ser apoiadas por usuarios con contas verificadas; %{verify_account}.
-        organization: As organizacións non poden votar.
         not_selected: Non se poden votar propostas inviables
         not_enough_money: "Xa asignaches o orzamento dispoñible.<br><small>Lembra que podes %{change_ballot} cando quixeres</small>"
         no_ballots_allowed: O período de votacións está pechado
