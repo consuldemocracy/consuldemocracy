@@ -407,9 +407,7 @@ fa:
     supports: پشتیبانی ها
     verified_only: فقط کاربران تأییدشده می توانند در مورد سرمایه گذاری رای دهند%{verify_account}
     budget_investments:
-      not_logged_in: شما باید %{signin} یا %{signup} کنید برای ادامه دادن.
       not_verified: فقط کاربران تأییدشده می توانند در مورد سرمایه گذاری رای دهند%{verify_account}
-      organization: سازمان ها مجاز به رای دادن نیستند
       unfeasible: پروژه های سرمایه گذاری انتخاب نشده پشتیبانی نمی شود
       not_voting_allowed: فازانتخاب  بسته است
   welcome:
