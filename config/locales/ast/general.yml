@@ -278,7 +278,6 @@ ast:
       select_order_long: "Estas viendo las propuestas"
       start_proposal: Crea una propuesta
       title: Propuestes
-      top: Top semanal
       top_link_proposals: Propuestas más apoyadas por categoría
       section_header:
         title: Propuestes
@@ -541,14 +540,11 @@ ast:
   votes:
     agree: Estoy de acuerdo
     anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.
-    comment_unauthenticated: Necesitas %{signin} o %{signup} para poder votar.
     disagree: No estoy de acuerdo
     organizations: Les organizaciones nun puen votar
     supports: Sofitos
     verified_only: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
     budget_investments:
-      not_logged_in: Precises %{signin} o %{signup} pa siguir.
-      organization: Les organizaciones nun puen votar
       unfeasible: No se pueden votar propuestas inviables.
       not_voting_allowed: El periodo de votación está cerrado.
   welcome:
