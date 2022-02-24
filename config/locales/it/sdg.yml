@@ -64,5 +64,64 @@ it:
           target_3_3:
             long_title: "Per il 2030, metter fine alle epidemie di AIDS, tubercolosi, malaria e malattie tropicali trascurate e combattere l'epatite, le malattie a base d'acqua e altre malattie trasmissibili."
             short_title: "Combattere le Malattie Trasmissibili"
+          target_3_4:
+            long_title: "Per il 2030, ridurre di un terzo la mortalità prematura da malattie non trasmissibili tramite la prevenzione e il trattamento e promuovere la salute mentale e il benessere."
+            short_title: "Ridurre la Mortalità da Malattie Non Trasmissibili e Promuovere la Salute Mentale"
+      goal_5:
+        title: "Uguaglianza di Genere"
+        title_in_two_lines: "Uguaglianza\ndi Genere"
+        targets:
+          target_5_1:
+            long_title: "Metter fine a tutte le forme di discriminazione contro le donne e le ragazze in tutto il mondo."
+            short_title: "Metter Fine alla Discriminazione Contro Donne e Ragazze"
+          target_5_2:
+            long_title: "Eliminare tutte le forme di violenza contro le donne e ragazze nelle sfere pubblica e privata, incluso il traffico sessuale e di altri tipi di sfruttamento."
+            short_title: "Metter Fine a Tutta la Violenza Contro e lo Sfruttamento di Donne e Ragazze"
+          target_5_3:
+            short_title: "Eliminare Matrimoni Forzati e Mutilazione Genitale"
+          target_5_4:
+            long_title: "Riconoscere e valutare la cura non pagata e il lavoro domestico tramite la provisione di servizi pubblici, infrastruttura e politiche di protezione sociale e la promozione di responsabilità condivisa entro l'abitazione e la famiglia come nazionalmente appropriato."
+            short_title: "Valutare la Cura Non Pagata e Promuovere le Responsabilità Domestiche Condivise"
+          target_5_5:
+            long_title: "Assicurare la completa ed effettiva partecipazione delle donne e pari opportunità di leadership a tutti i livelli della presa decisionale nella vita politica, economica e pubblica."
+            short_title: "Assicurare la Completa Partecipazione in Leadership e Presa Decisionale"
+          target_5_6:
+            long_title: "Assicurare l'accesso universale ai diritti sessuali, riproduttivi e di salute riproduttiva come acconsentito in accordo al Programma d'Azione della Conferenza Internazionale sulla Popolazione e lo Sviluppo e la Piattaforma d'Azione di Pechino e i documenti risultati delle loro conferenze di revisione."
+            short_title: "Accesso Universale a Salute Riproduttiva e Diritti"
+          target_5_A:
+            short_title: "Pari Diritti alle Risorse Economiche, Possesso di Proprietà e Servizi Finanziari"
+          target_5_B:
+            long_title: "Migliorare l'uso di tecnologia abilitante, in particolare delle informazioni e comunicazioni, per promuovere l'emancipazione delle donne."
+            short_title: "Promuovere l'Emancipazione delle Donne tramite la Tecnologia"
+          target_5_C:
+            short_title: "Adottare e Rafforzare Politiche e Legislazione Applicabile per l'Uguaglianza di Genere"
+      goal_6:
+        title: "Acqua Pulita e Sanificazione"
+        title_in_two_lines: "Acqua Pulita\ne Sanificazione"
+        description: "Assicurare accesso ad acqua e sanificazione per tutti."
+        targets:
+          target_6_1:
+            long_title: "Per il 2030, ottenere l'accesso universale ed equo ad acqua potabile sana ed economica per tutti."
+            short_title: "Acqua Potabile Sana ed Economica"
+          target_6_2:
+            long_title: "Per il 2030, ottenere l'accesso a sanificazione adeguata ed equa e igiene per tutti e metter fine alla defecazione all'aperto, dando speciale attenzione alle esigenze di donne e ragazze e di coloro in situazioni vulnerabili."
+            short_title: "Porre Fine alla Defecazione all'Aperto e Fornire Accesso a Sanificazione e Igiene"
+          target_6_3:
+            long_title: "Per il 2030, migliorare la qualità dell'acqua riducendo l'inquinamento, eliminando le discariche e minimizzando il rilascio di prodotti chimici e materiali pericolosi, dimezzando la proporzione di acque reflue non trattate e aumentando sostanzialmente il riciclaggio e il riutilizzo sicuri globalmente."
+            short_title: "Migliorare la Qualità dell'Acqua, Trattamento delle Acque Reflue e il Riuso Sicuro"
+          target_6_4:
+            long_title: "Per il 2030, aumentare sostanzialmente l'efficienza dell'uso idrico in tutti i settori e assicurare offerta e domanda sostenibili di acqua potabile per indirizzare la scarsità dell'acqua e sostanzialmente ridurre il numero di persone che soffrono dalla scarsità idrica."
+            short_title: "Aumentare l'Efficienza dell'Uso Idrico e Assicurare Forniture d'Acqua Potabile"
+          target_6_5:
+            long_title: "Per il 2030, implementare la gestione delle risorse idriche integrate a tutti i livelli, incluso tramite la cooperazione transfrontaliera come appropriata."
+            short_title: "Implementare la Gestione Integrata delle Risorse Idriche"
+          target_6_6:
+            long_title: "Per il 2020, proteggere e ripristinare ecosistemi idrici, incluse montagne, foreste, paludi, fiumi, falde acquifere e laghi."
+            short_title: "Proteggere e Ripristinare gli Ecosistemi Idrici"
+          target_6_A:
+            long_title: "Per il 2030, espandere la cooperazione internazionale e il supporto al rafforzamento della capacità per i paesi in via di sviluppo in attività e programmi correlati ad acqua e sanificazione, inclusa la raccolta d'acqua, desalificazione, efficienza idrica, trattamento delle acque reflue, tecnologie di riciclaggio e riutilizzo."
+            short_title: "Espandere il Supporto all'Acqua e la Sanificazione ai Paesi in Via di Sviluppo"
+          target_6_B:
+            long_title: "Supportare e rafforzare la partecipazione delle comunità locali nel migliorare la gestione idrica e della sanificazione."
     related_list_selector:
       remove_tag: "Rimuovere"
