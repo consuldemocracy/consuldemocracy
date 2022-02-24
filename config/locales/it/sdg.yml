@@ -123,5 +123,50 @@ it:
             short_title: "Espandere il Supporto all'Acqua e la Sanificazione ai Paesi in Via di Sviluppo"
           target_6_B:
             long_title: "Supportare e rafforzare la partecipazione delle comunità locali nel migliorare la gestione idrica e della sanificazione."
+            short_title: "Supportare l'Impegno Locale nella Gestione Idrica e di Sanificazione"
+      goal_7:
+        title: "Energia Pulita ed Economica"
+        title_in_two_lines: "Energia Pulita\ned Economica"
+        description: "Assicurare l'accesso a energia economica, affidabile, sostenibile e moderna."
+        targets:
+          target_7_1:
+            long_title: "Per il 2030, assicurare l'accesso universale a servizi energetici economici, affidabili e moderni."
+            short_title: "Accesso Universale alla Tecnologia Moderna"
+          target_7_2:
+            long_title: "Per il 2030, aumentare sostanzialmente la condivisione di energia rinnovabile nel miscuglio energetico globale."
+            short_title: "Aumentare la Percentuale Globale di Energia Rinnovabile"
+      goal_9:
+        targets:
+          target_9_3:
+            short_title: "Aumentare l'Accesso a Servizi Finanziari e Mercati"
+          target_9_4:
+            long_title: "Per il 2030, migliorare l'infrastruttura e le industrie di trasformazione per renderle sostenibili, con maggior efficienza d'uso delle risorse e maggiore adozione di tecnologie pulite e ambientalmente sicure e processi industriali, con la presa d'azione internazionale a seconda delle loro capacità rispettive."
+            short_title: "Migliorare Tutte le Industrie e Infrastrutture per Sostenibilità"
+          target_9_5:
+            long_title: "Migliorare la ricerca scientifica, migliorare le capacità tecnologiche dei settori industriali in tutti i paesi, in particolari nei paesi in via di sviluppo, incluso, per il 2030, incoraggiare l'innovazione e sostanzialmente aumentare il numero di lavoratori di ricerca e sviluppo per 1 milione di persone e ricerca pubblica e privata e spesa di sviluppo."
+            short_title: "Migliorare la Ricerca e Migliorare le Tecnologie Industriali "
+          target_9_A:
+            long_title: "Facilitare lo sviluppo sostenibile e resiliente dell'infrastruttura nei paesi in via di sviluppo, tramite supporto finanziario, tecnologico e tecnico migliorato ai paesi africani, paesi meno sviluppati, paesi in via di sviluppo senza sbocchi sul mare e Stati in via di sviluppo in piccole isole."
+            short_title: "Facilitare lo Sviluppo dell'Infrastruttura Sostenibile per i Paesi in Via di Sviluppo"
+          target_9_B:
+            long_title: "Supportare lo sviluppo della tecnologia domestica, ricerca e innovazione nei paesi in via di sviluppo, incluso assicurando un ambiente politico favorevole per, tra l'altro, diversificazione industriale e aggiunta di valore alle merci."
+            short_title: "Supporto allo Sviluppo Tecnologico Domestico e Diversificazione Industriale"
+          target_9_C:
+            long_title: "Aumentare significativamente l'accesso alla tecnologia informatica e delle comunicazioni e sforzarsi di fornire accesso universale ed economico a Internet nei paesi meno sviluppati per il 2020."
+            short_title: "Accesso Universale alle Tecnologie Informatiche e di Comunicazioni"
+      goal_10:
+        title: "Disuguaglianze Ridotte"
+        title_in_two_lines: "Disuguaglianze\nRidotte"
+        description: "Ridurre le disuguaglianze in e tra paesi."
+        targets:
+          target_10_1:
+            long_title: "Per il 2030, ottenere progressivamente e sostenere la crescita di reddito dell'ultimo 40% della popolazione a un tasso maggiore della media nazionale."
+            short_title: "Ridurre le Disuguaglianze di Reddito"
+          target_10_2:
+            long_title: "Per il 2030, emancipare e promuovere l'inclusione sociale, economica e politica di tutti, indipendentemente dall'età, sesso, disabilità, razza, etnia, origine, religione o condizione economica o altro stato."
+            short_title: "Promuovere l'Inclusione Sociale, Economica e Politica Universale"
+          target_10_3:
+            long_title: "Assicurare pari opportunità e ridurre le disuguaglianze d'esito, incluso eliminando leggi, politiche e pratiche discriminatorie e promuovendo la legislazione, politiche e azioni appropriate in questo ambito."
+            short_title: "Assicurare Pari Opportunità e Porre Fine alla Discriminazione"
     related_list_selector:
       remove_tag: "Rimuovere"
