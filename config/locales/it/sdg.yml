@@ -168,5 +168,69 @@ it:
           target_10_3:
             long_title: "Assicurare pari opportunità e ridurre le disuguaglianze d'esito, incluso eliminando leggi, politiche e pratiche discriminatorie e promuovendo la legislazione, politiche e azioni appropriate in questo ambito."
             short_title: "Assicurare Pari Opportunità e Porre Fine alla Discriminazione"
+          target_10_4:
+            long_title: "Adottare politiche, specialmente politiche fiscali, di salario e protezione sociale e progressivamente ottenere una maggiore uguaglianza."
+            short_title: "Adottare Politiche Fiscali e Sociali che Promuovono l'Uguaglianza"
+          target_10_5:
+            long_title: "Migliorare la regolamentazione e monitoraggio dei mercati finanziari globali e delle istituzioni e rafforzare l'implementazione di tali regolamentazioni."
+            short_title: "Regolamentazione Migliorata dei Mercati e le Istituzioni Finanziarie Globali"
+          target_10_6:
+            long_title: "Assicurare la maggiore rappresentazione e voce per i paesi in via di sviluppo nella presa di decisioni nelle istituzioni economiche e finanziarie internazionali e globali per poter fornire istituzioni più efficienti, credibili, responsabili e legittime."
+            short_title: "Migliore Rappresentanza per i Paesi in Via di Sviluppo nelle Istituzioni Finanziarie"
+          target_10_7:
+            long_title: "Facilitare la migrazione e mobilità di persone in modo ordinato, sicuro, regolare e responsabile, incluso tramite l'implementazione di politiche di migrazione pianificate e ben gestite."
+            short_title: "Politiche di Migrazione Responsabili e Ben Gestite"
+          target_10_A:
+            long_title: "Implementare il principio di trattamento speciale e differenziale per i paesi in via di sviluppo, in particolare nei paesi meno sviluppati, secondo gli accordi dell'Organizzazione Mondiale del Commercio."
+            short_title: "Trattamento Speciale e Differenziale per i Paesi in Via di Sviluppo"
+          target_10_B:
+            long_title: "Incoraggiare l'assistenza ufficiale allo sviluppo e i flussi finanziari, inclusi gli investimenti diretti internazionali, agli Stati dove il bisogno è maggiore, in particolare in quelli meno sviluppati, nei paesi africani, stati in via di sviluppo su piccole isole e paesi in via di sviluppo senza sbocco sul mare, secondo i piani e programmi nazionali."
+            short_title: "Incoraggiare l'Assistenza allo Sviluppo e Investimento nei Paesi Meno Sviluppati"
+          target_10_C:
+            long_title: "Per il 2030, ridurre a meno del 3% i costi di transazione delle rimesse dei migranti ed eliminare i corridoi di rimessa con costi maggiori del 5%."
+            short_title: "Ridurre i Costi di Transazione per le Rimesse dei Migranti"
+      goal_11:
+        title: "Città e Comunità Sostenibili"
+        title_in_two_lines: "Città e Comunità\nSostenibili"
+        description: "Rendere le città inclusive, sicure, resilienti e sostenibili."
+        targets:
+          target_11_1:
+            long_title: "Per il 2030, assicurare l'accesso per tutti a servizi di base e abitativi adeguati, sicuri ed economici e migliorare le baraccopoli."
+            short_title: "Abitazioni Sicure ed Economiche"
+          target_11_2:
+            long_title: "Per il 2030, fornire accesso a sistemi di trasporto sicuri, economici, accessibili e sostenibili per tutti, migliorando la sicurezza stradale, i particolare espandendo il trasporto pubblico, con attenzione speciale ai bisogni di coloro in situazioni vulnerabili, donne, bambini, persone con disabilità e anziani."
+            short_title: "Sistemi di Trasporto Economici e Sostenibili"
+          target_11_3:
+            long_title: "Per il 2030, migliorare l'urbanizzazione inclusiva e sostenibile e la capacità per la pianificazione degli insediamenti umani partecipativa, integrata e sostenibile e della gestione in tutti i paesi."
+            short_title: "Urbanizzazione Inclusiva e Sostenibile"
+          target_11_4:
+            long_title: "Rafforzare gli sforzi di proteggere e salvaguardare l'eredità culturale e naturale del mondo."
+            short_title: "Proteggere l'Eredità Culturale e Naturale del Mondo"
+          target_11_5:
+            long_title: "Per il 2030, ridurre significativamente il numero di decessi e il numero di persone affette e sostanzialmente ridurre le perdite economiche dirette relative al prodotto domestico lordo globale causato da disastri, inclusi disastri correlati all'acqua, con una concentrazione sulla protezione dei poveri e delle persone in situazioni vulnerabili."
+            short_title: "Ridurre gli Effetti Avversi dei Disastri Naturali"
+          target_11_6:
+            long_title: "Per il 2030, ridurre l'impatto ambientale pro capite avverso delle città, incluso facendo speciale attenzione alla qualità dell'aria e la gestione municipale e altre relative ai rifiuti."
+      goal_13:
+        targets:
+          target_13_B:
+            short_title: "Promuovere Meccanismi per Aumentare la Capacità di Pianificazione e Gestione"
+      goal_14:
+        title: "Vita Subacquea"
+        title_in_two_lines: "Vita\nSubacquea"
+        description: "Conservare e usare sostenibilmente oceani, mari e risorse marine."
+        targets:
+          target_14_1:
+            long_title: "Per il 2025, impedire e ridurre significativamente l'inquinamento marino d'ogni tipo, in particolare da attività terrestri, inclusi detriti marini e inquinamento da nutrienti."
+            short_title: "Ridurre l'Inquinamento Marino"
+          target_14_2:
+            long_title: "Per il 2020, gestire in modo sostenibile e proteggere gli ecosistemi marini e costieri per evitare impatti avversi significativi, incluso rafforzandone la resilienza e prendendo azione per il loro ripristino per degli oceani sani e produttivi."
+            short_title: "Proteggere e Ripristinare gli Ecosistemi"
+          target_14_3:
+            long_title: "Minimizzare e indirizzare gli impatti dell'acidificazione dell'oceano, incluso tramite la maggiore cooperazione scientifica a tutti i livelli."
+            short_title: "Ridurre l'Acidificazione dell'Oceano"
+          target_14_4:
+            long_title: "Per il 2020, regolare efficientemente la raccolta e metter fine alla pesca eccessiva, illegale, non documentata e non regolata e le pratiche di pesca distruttive e implementare piani di gestione a base scientifica, per poter ripristinare le riserve ittiche nel più breve tempo fattibile, almeno ai livelli di poter produrre una resa sostenibile massima come determinato dalle loro caratteristiche biologiche."
+            short_title: "Pesca Sostenibile"
     related_list_selector:
       remove_tag: "Rimuovere"
