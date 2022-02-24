@@ -15,7 +15,7 @@
   </table>
 
   <% if @proposal.image.present? %>
-    <%= image_tag @proposal.image.attachment.url(:large), style: "width: 100%; box-shadow: -16px 61px 49px -19px rgba(0,0,0,0.1);" %>
+    <%= image_tag @proposal.image.variant(:large), style: "width: 100%; box-shadow: -16px 61px 49px -19px rgba(0,0,0,0.1);" %>
   <% else %>
     <%= image_tag "default_mailing.jpg", style: "width: 100%; box-shadow: -16px 61px 49px -19px rgba(0,0,0,0.1);" %>
   <% end %>

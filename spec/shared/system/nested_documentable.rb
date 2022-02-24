@@ -51,7 +51,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       do_login_for user_to_login
       visit send(path, arguments)
       documentable.class.max_documents_allowed.times.each do
-        documentable_attach_new_file(Rails.root.join("spec/fixtures/files/empty.pdf"))
+        documentable_attach_new_file(file_fixture("empty.pdf"))
       end
 
       expect(page).to have_css ".max-documents-notice"
@@ -77,7 +77,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
 
       click_link "Add new document"
       within "#nested-documents" do
-        attach_file "Choose document", Rails.root.join("spec/fixtures/files/empty.pdf")
+        attach_file "Choose document", file_fixture("empty.pdf")
 
         expect(page).to have_css ".loading-bar.complete"
       end
@@ -90,7 +90,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       do_login_for user_to_login
       visit send(path, arguments)
 
-      documentable_attach_new_file(Rails.root.join("spec/fixtures/files/empty.pdf"))
+      documentable_attach_new_file(file_fixture("empty.pdf"))
 
       expect_document_has_title(0, "empty.pdf")
     end
@@ -104,7 +104,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       within "#nested-documents" do
         input = find("input[name$='[title]']")
         fill_in input[:id], with: "My Title"
-        attach_file "Choose document", Rails.root.join("spec/fixtures/files/empty.pdf")
+        attach_file "Choose document", file_fixture("empty.pdf")
 
         expect(page).to have_css ".loading-bar.complete"
       end
@@ -116,7 +116,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       do_login_for user_to_login
       visit send(path, arguments)
 
-      documentable_attach_new_file(Rails.root.join("spec/fixtures/files/empty.pdf"))
+      documentable_attach_new_file(file_fixture("empty.pdf"))
 
       expect(page).to have_css ".loading-bar.complete"
     end
@@ -125,10 +125,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       do_login_for user_to_login
       visit send(path, arguments)
 
-      documentable_attach_new_file(
-        Rails.root.join("spec/fixtures/files/logo_header.gif"),
-        false
-      )
+      documentable_attach_new_file(file_fixture("logo_header.gif"), false)
 
       expect(page).to have_css ".loading-bar.errors"
     end
@@ -137,21 +134,25 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       do_login_for user_to_login
       visit send(path, arguments)
 
-      documentable_attach_new_file(Rails.root.join("spec/fixtures/files/empty.pdf"))
+      click_link "Add new document"
 
-      expect_document_has_cached_attachment(0, ".pdf")
+      cached_attachment_field = find("input[name$='[cached_attachment]']", visible: :hidden)
+      expect(cached_attachment_field.value).to be_empty
+
+      attach_file "Choose document", file_fixture("empty.pdf")
+
+      expect(page).to have_css(".loading-bar.complete")
+      expect(cached_attachment_field.value).not_to be_empty
     end
 
     scenario "Should not update document cached_attachment field after invalid file upload" do
       do_login_for user_to_login
       visit send(path, arguments)
 
-      documentable_attach_new_file(
-        Rails.root.join("spec/fixtures/files/logo_header.gif"),
-        false
-      )
+      documentable_attach_new_file(file_fixture("logo_header.gif"), false)
 
-      expect_document_has_cached_attachment(0, "")
+      cached_attachment_field = find("input[name$='[cached_attachment]']", visible: :hidden)
+      expect(cached_attachment_field.value).to be_empty
     end
 
     scenario "Should show document errors after documentable submit with
@@ -171,7 +172,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       do_login_for user_to_login
       visit send(path, arguments)
 
-      documentable_attach_new_file(Rails.root.join("spec/fixtures/files/empty.pdf"))
+      documentable_attach_new_file(file_fixture("empty.pdf"))
       click_link "Remove document"
 
       expect(page).not_to have_css("#nested-documents .document")
@@ -194,7 +195,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       visit send(path, arguments)
       send(fill_resource_method_name) if fill_resource_method_name
 
-      documentable_attach_new_file(Rails.root.join("spec/fixtures/files/empty.pdf"))
+      documentable_attach_new_file(file_fixture("empty.pdf"))
       click_on submit_button
 
       expect(page).to have_content documentable_success_notice
@@ -208,7 +209,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       visit send(path, arguments)
       send(fill_resource_method_name) if fill_resource_method_name
 
-      documentable_attach_new_file(Rails.root.join("spec/fixtures/files/empty.pdf"))
+      documentable_attach_new_file(file_fixture("empty.pdf"))
       click_on submit_button
 
       documentable_redirected_to_resource_show_or_navigate_to
@@ -232,7 +233,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       send(fill_resource_method_name) if fill_resource_method_name
 
       %w[clippy empty logo].take(documentable.class.max_documents_allowed).each do |filename|
-        documentable_attach_new_file(Rails.root.join("spec/fixtures/files/#{filename}.pdf"))
+        documentable_attach_new_file(file_fixture("#{filename}.pdf"))
       end
 
       click_on submit_button
@@ -278,6 +279,26 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
         click_on "Remove document"
 
         expect(page).not_to have_css ".document"
+      end
+
+      scenario "Same attachment URL after editing the title" do
+        do_login_for user_to_login
+
+        visit send(path, arguments)
+        documentable_attach_new_file(file_fixture("empty.pdf"))
+        within_fieldset("Documents") { fill_in "Title", with: "Original" }
+        click_button submit_button
+
+        expect(page).to have_content documentable_success_notice
+
+        original_url = find_link("Download file")[:href]
+
+        visit send(path, arguments)
+        within_fieldset("Documents") { fill_in "Title", with: "Updated" }
+        click_button submit_button
+
+        expect(page).to have_content documentable_success_notice
+        expect(find_link("Download file")[:href]).to eq original_url
       end
     end
 
@@ -327,14 +348,6 @@ def expect_document_has_title(index, title)
 
   within document do
     expect(find("input[name$='[title]']").value).to eq title
-  end
-end
-
-def expect_document_has_cached_attachment(index, extension)
-  document = all(".document")[index]
-
-  within document do
-    expect(find("input[name$='[cached_attachment]']", visible: :hidden).value).to end_with(extension)
   end
 end
 

@@ -21,7 +21,7 @@ shared_examples "image validations" do |imageable_factory|
   it "is valid for all accepted content types" do
     acceptedcontenttypes.each do |content_type|
       extension = content_type.split("/").last
-      image.attachment = File.new("spec/fixtures/files/clippy.#{extension}")
+      image.attachment = fixture_file_upload("clippy.#{extension}")
 
       expect(image).to be_valid
     end
@@ -30,7 +30,7 @@ shared_examples "image validations" do |imageable_factory|
   it "is not valid for png and gif image content types" do
     ["gif", "png"].each do |content_type|
       extension = content_type.split("/").last
-      image.attachment = File.new("spec/fixtures/files/clippy.#{extension}")
+      image.attachment = fixture_file_upload("clippy.#{extension}")
 
       expect(image).not_to be_valid
     end
@@ -38,7 +38,7 @@ shared_examples "image validations" do |imageable_factory|
 
   it "is not valid for attachments larger than imageable max_file_size definition" do
     larger_size = Setting["uploads.images.max_size"].to_i.megabytes + 1.byte
-    allow(image).to receive(:attachment_file_size).and_return(larger_size)
+    allow(image.attachment).to receive(:byte_size).and_return(larger_size)
 
     expect(image).not_to be_valid
     expect(image.errors[:attachment]).to include "must be in between 0 Bytes and 1 MB"

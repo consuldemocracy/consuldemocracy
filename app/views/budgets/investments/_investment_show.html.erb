@@ -3,8 +3,8 @@
             social_url: budget_investments_path(investment),
             social_title: investment.title,
             social_description: investment.description,
-            twitter_image_url: (investment.image.present? ? investment.image_url(:thumb) : nil),
-            og_image_url: (investment.image.present? ? investment.image_url(:thumb) : nil) %>
+            twitter_image_url: (investment.image.present? ? polymorphic_path(investment.image.variant(:thumb)) : nil),
+            og_image_url: (investment.image.present? ? polymorphic_path(investment.image.variant(:thumb)) : nil) %>
 <% end %>
 
 <% cache [locale_and_user_status(investment),

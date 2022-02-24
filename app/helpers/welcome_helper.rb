@@ -24,8 +24,9 @@ module WelcomeHelper
   end
 
   def calculate_image_path(recommended, image_default)
-    if recommended.respond_to?(:image) && recommended.image.present? && recommended.image.attachment.exists?
-      recommended.image.attachment.send("url", :medium)
+    if recommended.respond_to?(:image) && recommended.image.present? &&
+        recommended.image.attachment.attached?
+      recommended.image.variant(:medium)
     elsif image_default.present?
       image_default
     end

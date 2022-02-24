@@ -46,7 +46,7 @@ describe "Admin budget phases" do
     scenario "shows successful notice when updating the phase with a valid image" do
       visit edit_admin_budget_budget_phase_path(budget, budget.current_phase)
 
-      imageable_attach_new_file(Rails.root.join("spec/fixtures/files/clippy.jpg"))
+      imageable_attach_new_file(file_fixture("clippy.jpg"))
 
       click_on "Save changes"
 

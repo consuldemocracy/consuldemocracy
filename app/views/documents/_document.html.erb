@@ -1,6 +1,6 @@
 <li id="<%= dom_id(document) %>">
   <%= link_to t("documents.buttons.download_document"),
-              document.attachment.url, target: "_blank",
+              document.attachment, target: "_blank",
               rel: "nofollow", class: "button hollow medium float-right" %>
 
   <strong><%= document.title %></strong>
