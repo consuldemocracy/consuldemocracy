@@ -2,7 +2,7 @@
   <% if @budget.approval_voting? %>
     <%= sanitize(ballot.amount_limit_info(heading)) %>
     <%= sanitize(ballot.amount_progress(heading)) %>
-  <% else %>
+  <% elsif @budget.show_money? %>
     <%= t("budgets.progress_bar.assigned") %>
     <span id="amount_spent"><%= @ballot.formatted_amount_spent(@heading) %></span> /
     <%= t("budgets.investments.header.price") %> <%= @budget.formatted_heading_price(@heading) %>
