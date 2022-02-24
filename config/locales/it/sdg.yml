@@ -232,5 +232,24 @@ it:
           target_14_4:
             long_title: "Per il 2020, regolare efficientemente la raccolta e metter fine alla pesca eccessiva, illegale, non documentata e non regolata e le pratiche di pesca distruttive e implementare piani di gestione a base scientifica, per poter ripristinare le riserve ittiche nel più breve tempo fattibile, almeno ai livelli di poter produrre una resa sostenibile massima come determinato dalle loro caratteristiche biologiche."
             short_title: "Pesca Sostenibile"
+          target_14_5:
+            long_title: "Per il 2020, conservare almeno il 10% delle aree costiere e marine, coerentemente alle leggi nazionali e internazionali e secondo le migliori informazioni scientifiche disponibili."
+            short_title: "Conservare le Aree Costiere e Marine"
+          target_14_6:
+            long_title: "Per il 2020, proibire certe forme di sussidi di pesca che contribuiscano alla pesca e capacità eccessive, eliminare i sussidi che contribuiscono a pesca illegale, non documentata e non regolata e astenersi dall'introdurre nuovi simili sussidi, riconoscendo che il trattamento appropriato ed effettivo speciale e differenziale per i paesi in via di sviluppo e meno sviluppati, dovrebbe essere una parte integrale della negoziazione dei sussidi di pesca dell'Organizzazione Mondiale del Commercio."
+            short_title: "Porre Fine ai Sussidi Contribuenti alla Pesca Eccessiva"
+          target_14_7:
+            long_title: "Per il 2030, migliorare i benefici economici agli Stati in via di sviluppo su Piccole Isole e meno sviluppati dall'uso sostenibile delle risorse marine, incluso tramite la gestione sostenibile di pescatori, acquaculture e turismo."
+            short_title: "Aumentare i Benefici Economici dall'Uso Sostenibile delle Risorse Marine"
+          target_14_B:
+            long_title: "Fornire accesso a pescatori artigianali su piccola scala alle risorse e i mercati marini."
+            short_title: "Supportare i Pescatori su Piccola Scala"
+          target_14_C:
+            long_title: "Migliorare la conservazione e l'uso sostenibile di oceani e loro risorse implementando le leggi internazionali come riflettute in UNCLOS, che forniscono il quadro legale per la conservazione e l'uso sostenibile di oceani e loro risorse, come richiamato nel paragrafo 158 de Il Futuro Che Vogliamo."
+            short_title: "Implementare e Imporre le Leggi Marine Internazionali"
+      goal_15:
+        title: "Vita sulla Terra"
+        title_in_two_lines: "Vita sulla\nTerra"
+        description: "Gestire sostenibilmente le foreste, combattere la desertificazione, interrompere e invertire la degradazione della terra, metter fine alla perdita di biodiversità."
     related_list_selector:
       remove_tag: "Rimuovere"
