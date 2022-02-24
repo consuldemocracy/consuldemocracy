@@ -150,6 +150,7 @@ sv:
         submit_button: Spara ändringar
   errors:
     messages:
+      allowed_file_content_types: "innehållstypen måste vara en av %{types}"
       user_not_found: Användaren hittades inte
       invalid_date_range: "Felaktig datumföljd"
   form:
