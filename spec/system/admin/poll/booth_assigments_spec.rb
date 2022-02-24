@@ -169,7 +169,7 @@ describe "Admin booths assignments", :admin do
     end
 
     scenario "Lists all recounts for the booth assignment" do
-      poll = create(:poll, starts_at: 2.weeks.ago, ends_at: 1.week.ago)
+      poll = create(:poll, :expired)
       booth = create(:poll_booth)
       booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
 

@@ -10,9 +10,9 @@ describe "Admin polls", :admin do
   end
 
   scenario "Index show polls list order by starts at date" do
-    poll_1 = create(:poll, name: "Poll first",  starts_at: 15.days.ago)
-    poll_2 = create(:poll, name: "Poll second", starts_at: 1.month.ago)
-    poll_3 = create(:poll, name: "Poll third",  starts_at: 2.days.ago)
+    poll_1 = create(:poll, name: "Poll first",  starts_at: 10.days.from_now)
+    poll_2 = create(:poll, name: "Poll second", starts_at: 1.day.from_now)
+    poll_3 = create(:poll, name: "Poll third",  starts_at: 20.days.from_now)
 
     visit admin_root_path
 

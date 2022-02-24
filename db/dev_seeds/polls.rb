@@ -2,35 +2,35 @@ require_dependency "poll/answer"
 require_dependency "poll/question/answer"
 
 section "Creating polls" do
-  Poll.create!(name: I18n.t("seeds.polls.current_poll"),
-               slug: I18n.t("seeds.polls.current_poll").parameterize,
-               starts_at: 7.days.ago,
-               ends_at:   7.days.from_now,
-               geozone_restricted: false)
+  Poll.new(name: I18n.t("seeds.polls.current_poll"),
+           slug: I18n.t("seeds.polls.current_poll").parameterize,
+           starts_at: 7.days.ago,
+           ends_at:   7.days.from_now,
+           geozone_restricted: false).save!(validate: false)
 
-  Poll.create!(name: I18n.t("seeds.polls.current_poll_geozone_restricted"),
-               slug: I18n.t("seeds.polls.current_poll_geozone_restricted").parameterize,
-               starts_at: 5.days.ago,
-               ends_at:   5.days.from_now,
-               geozone_restricted: true,
-               geozones: Geozone.sample(3))
+  Poll.new(name: I18n.t("seeds.polls.current_poll_geozone_restricted"),
+           slug: I18n.t("seeds.polls.current_poll_geozone_restricted").parameterize,
+           starts_at: 5.days.ago,
+           ends_at:   5.days.from_now,
+           geozone_restricted: true,
+           geozones: Geozone.sample(3)).save!(validate: false)
 
-  Poll.create!(name: I18n.t("seeds.polls.recounting_poll"),
-               slug: I18n.t("seeds.polls.recounting_poll").parameterize,
-               starts_at: 15.days.ago,
-               ends_at:   2.days.ago)
+  Poll.new(name: I18n.t("seeds.polls.recounting_poll"),
+           slug: I18n.t("seeds.polls.recounting_poll").parameterize,
+           starts_at: 15.days.ago,
+           ends_at:   2.days.ago).save!(validate: false)
 
-  Poll.create!(name: I18n.t("seeds.polls.expired_poll_without_stats"),
-               slug: I18n.t("seeds.polls.expired_poll_without_stats").parameterize,
-               starts_at: 2.months.ago,
-               ends_at:   1.month.ago)
+  Poll.new(name: I18n.t("seeds.polls.expired_poll_without_stats"),
+           slug: I18n.t("seeds.polls.expired_poll_without_stats").parameterize,
+           starts_at: 2.months.ago,
+           ends_at:   1.month.ago).save!(validate: false)
 
-  Poll.create!(name: I18n.t("seeds.polls.expired_poll_with_stats"),
-               slug: I18n.t("seeds.polls.expired_poll_with_stats").parameterize,
-               starts_at: 2.months.ago,
-               ends_at:   1.month.ago,
-               results_enabled: true,
-               stats_enabled: true)
+  Poll.new(name: I18n.t("seeds.polls.expired_poll_with_stats"),
+           slug: I18n.t("seeds.polls.expired_poll_with_stats").parameterize,
+           starts_at: 2.months.ago,
+           ends_at:   1.month.ago,
+           results_enabled: true,
+           stats_enabled: true).save!(validate: false)
 
   Poll.find_each do |poll|
     name = poll.name

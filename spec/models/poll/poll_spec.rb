@@ -31,8 +31,51 @@ describe Poll do
     end
 
     it "is not valid without a proper start/end date range" do
-      poll.starts_at = 1.week.ago
-      poll.ends_at = 2.months.ago
+      poll.starts_at = 2.weeks.from_now
+      poll.ends_at = 1.week.from_now
+      expect(poll).not_to be_valid
+    end
+
+    it "is only valid if start date is in the future" do
+      poll.starts_at = Date.current.beginning_of_day
+      expect(poll).not_to be_valid
+
+      poll.starts_at = 1.day.from_now
+      expect(poll).to be_valid
+    end
+
+    it "is not valid if changing the start date for an already started poll" do
+      poll.save!
+      poll.update_columns starts_at: Date.current.beginning_of_day
+      expect(poll).to be_valid
+
+      poll.starts_at = 1.day.from_now
+      expect(poll).not_to be_valid
+    end
+
+    it "is valid if changing the start date for a poll that did not started yet" do
+      poll.save!
+      expect(poll).to be_valid
+
+      poll.starts_at = 1.day.from_now
+      expect(poll).to be_valid
+    end
+
+    it "is not valid if changing the end date to a not future date for an already started poll" do
+      poll.save!
+      poll.update_columns starts_at: 1.month.ago
+      expect(poll).to be_valid
+
+      poll.ends_at = 1.day.ago
+      expect(poll).not_to be_valid
+    end
+
+    it "is not valid if changing the end date for an expired poll" do
+      poll.save!
+      poll.update_columns starts_at: 1.month.ago, ends_at: 1.day.ago
+      expect(poll).to be_valid
+
+      poll.ends_at = 1.day.from_now
       expect(poll).not_to be_valid
     end
   end

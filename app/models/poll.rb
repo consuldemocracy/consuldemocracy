@@ -37,6 +37,10 @@ class Poll < ApplicationRecord
 
   validates_translation :name, presence: true
   validate :date_range
+  validate :future_start_date, if: :new_record?
+  validate :start_date_change, unless: :new_record?
+  validate :future_end_date, unless: :new_record?
+  validate :end_date_change, unless: :new_record?
   validate :only_one_active, unless: :public?
 
   accepts_nested_attributes_for :questions, reject_if: :all_blank, allow_destroy: true
@@ -65,6 +69,10 @@ class Poll < ApplicationRecord
 
   def title
     name
+  end
+
+  def started?(timestamp = Date.current.beginning_of_day)
+    starts_at.present? && starts_at <= timestamp
   end
 
   def current?(timestamp = Date.current.beginning_of_day)
@@ -140,6 +148,30 @@ class Poll < ApplicationRecord
   def date_range
     unless starts_at.present? && ends_at.present? && starts_at <= ends_at
       errors.add(:starts_at, I18n.t("errors.messages.invalid_date_range"))
+    end
+  end
+
+  def future_start_date
+    unless starts_at.present? && starts_at > Date.current.beginning_of_day
+      errors.add(:starts_at, I18n.t("errors.messages.not_a_future_date"))
+    end
+  end
+
+  def start_date_change
+    if starts_at_changed? && Date.current.beginning_of_day >= starts_at_was
+      errors.add(:starts_at, I18n.t("errors.messages.cannot_change_date.poll_started"))
+    end
+  end
+
+  def future_end_date
+    if ends_at_changed? && Date.current.beginning_of_day > ends_at
+      errors.add(:ends_at, I18n.t("errors.messages.not_a_future_date"))
+    end
+  end
+
+  def end_date_change
+    if ends_at_changed? && Date.current.beginning_of_day > ends_at_was
+      errors.add(:ends_at, I18n.t("errors.messages.cannot_change_date.poll_ended"))
     end
   end
 
