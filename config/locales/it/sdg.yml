@@ -71,6 +71,44 @@ it:
           target_3_5:
             long_title: "Rafforzare la prevenzione e il trattamento dell'abuso di sostanze, incluso l'abuso di narcotici e uso dannoso di alcol."
             short_title: "Prevenire e Trattare l'Abuso di Sostanze"
+          target_3_6:
+            long_title: "Per il 2020, dimezzare il numero di morti e feriti globali dagli incidenti stradali."
+            short_title: "Ridurre Feriti e Morti Stradali"
+          target_3_7:
+            long_title: "Per il 2030, assicurare l'accesso universale a servizi sanitari sessuali e riproduttivi, incluso per la pianificazione familiare, informazione e istruzione e l'integrazione della salute riproduttiva in strategie e programmi nazionali."
+            short_title: "Accesso Universale alla Cura Sessuale e Riproduttiva, Pianificazione Familiare e Istruzione"
+          target_3_8:
+            long_title: "Ottenere copertura sanitaria universale, inclusa la protezione da rischi finanziari, accesso a servizi sanitari essenziali di qualità e accesso a medicine e vaccini sicuri, efficienti, di qualità ed economici per tutti."
+            short_title: "Ottenere la Copertura Sanitaria Universale"
+          target_3_9:
+            long_title: "Per il 2030, ridurre sostanzialmente il numero di morti e feriti da prodotti chimici pericolosi e inquinamento e contaminazione aerea, acqua e inquinamento del suolo."
+            short_title: "Ridurre Malattie e Morti da Prodotti Chimici Pericolosi e Inquinamento"
+          target_3_A:
+            long_title: "Rafforzare l'implementazione della Convenzione del Quadro dell'Organizzazione Mondiale della Sanità sul Controllo del Tabacco in tutti i paesi, come appropriato."
+            short_title: "Implementare la Convenzione del Quadro dell'OMS sul Controllo del Tabacco"
+          target_3_B:
+            long_title: "Supportare la ricerca e lo sviluppo di vacini e medicinali per malattie trasmissibili e non che influenzano principalmente i paesi in via di sviluppo, fornire l'accesso a medicinali e vaccini essenziali economici, secondo la Dichiarazione di Doha sull'Accordo TRIPS e la Sanità Pubblica, che afferma il diritto dei paesi in via di sviluppo a usare le intere provisioni nell'Accorso sugli Aspetti Correlati al Commercio dei Diritti di Proprietà Intellettuale, relatiamente alle flessibilità per proteggere la sanità pubblica e, in particolare, fornire accesso ai medicinali per tutti."
+            short_title: "Supportare Ricerca, Sviluppo e Accesso Universale a Vaccini e Medicinali Economici"
+          target_3_C:
+            long_title: "Aumentare sostanzialmente i finanziamenti sanitari e il reclutamento, sviluppo, formazione e ritenzione della forza lavoro sanitaria nei paesi in via di sviluppo, specialmente nei paesi meno sviluppati e gli Stati in via di sviluppo su isole piccole."
+            short_title: "Aumentare il Finanziamento Sanitario e Supportare la Forza Lavoro Sanitaria nei Paesi in Via di Sviluppo"
+          target_3_D:
+            long_title: "Rafforzare la capacità di tutti i paesi, in particolare i paesi in via di sviluppo, per avviso anticipato, riduzione dei rischi e gestione dei rischi sanitari nazionali e globali."
+            short_title: "Migliorare i Sistemi d'Avviso Anticipato per i Rischi Sanitari Globali"
+      goal_4:
+        title: "Istruzione di Qualità"
+        title_in_two_lines: "Istruzione\ndi Qualità"
+        description: "Istruzione di Qualità."
+        targets:
+          target_4_1:
+            long_title: "Per il 2030, assicurarsi che tutte le ragazze e i ragazzi completino l'istruzione gratuita, equa e di qualità primaria e secondaria, conducendo a risultati d'apprendimento efficiente rilevanti l'Obiettivo 4."
+            short_title: "Istruzione Primaria e Secondaria Libera"
+          target_4_2:
+            long_title: "Per il 2030, assicurarsi che tutte le ragazze e i ragazzi abbiano accesso all'istruzione di infanzia, sviluppo, cura e pre-primaria,, così che siano pronti all'istruzione primaria."
+            short_title: "Pari Accesso all'Istruzione Pre-Primaria di Qualità"
+          target_4_3:
+            long_title: "Per il 2030, assicurare accesso equo a tutte le donne e uomini a istruzione di qualità, tecnica, vocativa e terziaria, università inclusa."
+            short_title: "Pari Accesso a Istruzione Economica Tecnica, Vocativa e Superiore"
       goal_5:
         title: "Uguaglianza di Genere"
         title_in_two_lines: "Uguaglianza\ndi Genere"
