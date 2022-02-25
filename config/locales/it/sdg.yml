@@ -446,51 +446,102 @@ it:
             long_title: "Per il 2020, assicurare la conservazione, restauro e uso sostenibile degli ecosistemi terrestri e idrici interni e dei loro servizi, in particolare foreste, paludi, montagne e terre aride, in linea con le obbligazioni sotto gli accordi internazionali."
       goal_16:
         targets:
+          target_16_1:
+            long_title: "Ridurre significativamente tutte le forme di violenza e i relativi tassi di mortalità in tutto il mondo."
+            short_title: "Ridurre la Violenza Ovunque"
+          target_16_2:
+            long_title: "Porre fine ad abuso, sfruttamento, traffico e tutte le forme di violenza e tortura dei bambini."
+            short_title: "Proteggere i Bambini da Abuso, Sfruttamento, Traffico e Violenza"
+          target_16_3:
+            long_title: "Promuovere la regola di legge a livelli nazionale e internazionale e assicurare pari accesso alla giustizia per tutti."
+            short_title: "Promuuovere la Regola di Legge E Assicurare Pari Accesso alla Giustizia"
           target_16_4:
+            long_title: "Per il 2030, ridurre significativamente i flussi finanziari e d'armi illeciti, rafforzare il recupero e il reso delle risorse rubate e combattere ogni forma di crimine organizzato."
             short_title: "Combattere il Crimine Organizzato e i Flussi Illeciti Finanziari e di Armi"
           target_16_5:
+            long_title: "Ridurre sostanzialmente corruzione e concussione in tutte le loro forme."
             short_title: "Ridurre Sostanzialmente Corruzione e Concussione"
           target_16_6:
+            long_title: "Sviluppare istituzioni efficienti, affidabili e trasparenti a tutti i livelli."
             short_title: "Sviluppare Istituzioni Efficienti, Affidabili e Trasparenti"
           target_16_7:
+            long_title: "Assicurare la presa decisionale reattiva, inclusiva, partecipativa e rappresentativa a tutti i livelli."
             short_title: "Assicurare Presa Decisionale Reattiva, Inclusiva e Rappresentativa"
           target_16_8:
+            long_title: "Ampliare e rafforzare la partecipazione dei paesi in via di sviluppo nelle istituzioni dell'amministrazione globale."
             short_title: "Rafforzare la Partecipazione nell'Amministrazione Globale"
           target_16_9:
+            long_title: "Per il 2030, fornire l'identità legale a tutti, inclusa la registrazione delle nascite."
             short_title: "Fornire un'Identità Legale Universale"
           target_16_10:
+            long_title: "Assicurare l'accesso pubblico alle informazioni e proteggere le libertà fondamentali, a seconda degli accordi legislativi nazionali e internazionali."
             short_title: "Assicurare l'Accesso Pubblico alle Informazioni e Proteggere le Libertà Fondamentali"
           target_16_A:
+            long_title: "Rafforzare le istituzioni nazionali rilevanti, incluso tramite la cooperazione internazionale, per creare capacità a tutti i livelli, in particolare nei paesi in via di sviluppo, per prevenire la violenza e combattere terrorismo e crimine."
             short_title: "Rafforzare le Istituzioni Nazionali per Prevenire la Violenza e Combattere Terrorismo e Crimine"
           target_16_B:
+            long_title: "Promuovere e imporre leggi e politiche non discriminatorie per lo sviluppo sostenibile."
             short_title: "Promuovere e Imporre Leggi e Politiche Non Discriminatorie"
       goal_17:
+        title: "Collaborazioni Per gli Obiettivi"
+        title_in_two_lines: "Collaborazioni\nPer gli Obiettivi"
+        description: "Rivitalizzare la collaborazione globale per lo Sviluppo Sostenibile."
         targets:
           target_17_1:
+            long_title: "Rafforzare la mobilitazione di risorse domestiche, incluso tramite il supporto internazionale ai paesi in via di sviluppo, per migliorare la capacità domestica per la raccolta fiscale e di altre entrate."
             short_title: "Mobilizzare Risorse per Migliorare la Raccolta Reddituale Domestica "
+          target_17_2:
+            short_title: "Implementare Tutti gli Impegni d'Assistenza allo Sviluppo"
           target_17_3:
+            long_title: "Mobilitare risorse finanziarie aggiuntive per i paesi in via di sviluppo da diverse fonti."
             short_title: "Mobilizzare le Risorse Finanziarie per i Paesi in Via di Sviluppo"
           target_17_4:
             short_title: "Assitere i Paesi in Via di Sviluppo nel Raggiungimento della Sostenibilità del Debito"
           target_17_5:
+            long_title: "Adottare e implementare regimi di promozione degli investimenti per i paesi meno sviluppati."
             short_title: "Investire nei Paesi Meno Sviluppati"
           target_17_6:
             long_title: "Migliorare la cooperazione Nord-Sud, Sud-Sud e triangolare regionale e internazionale su e accesso a scienza, tecnologia e innovazione e migliorare la condivisione di conoscenze su termini mutualmente accordati, incluso tramite la migliore coordinazione tra meccanismi esistenti, in particolare a livello delle Nazioni Unite e tramite un meccanismo di facilitazione tecnologica globale."
             short_title: "Condivisione di Conoscenze e Cooperazione per l'Accesso a Scienza, Tecnologia e Innovazione"
           target_17_7:
+            long_title: "Promuovere lo sviluppo, trasferimento, disseminazione e diffusione di tecnologie ambientalmente adatte ai paesi in via di sviluppo su termini preferibili, incluso su termini concessionali e preferenziali, come mutualmente accordato."
             short_title: "Promuovere le Tecnologie Sostenibili nei Paesi in Via di Sviluppo"
           target_17_8:
             short_title: "Rafforzare la Capacità Scientifica, Tecnologica e Innovativa per i Paesi Meno Sviluppati"
           target_17_9:
             short_title: "Migliorare la Capacità degli SDG nei Paesi in Via di Sviluppo "
           target_17_10:
+            long_title: "Promuovere un sistema commerciale universale, basato su regole, aperto, non discriminatorio e multilaterale equo sotto l'Organizzazione Mondiale del Commercio, incluso tramite la conclusione delle negoziazioni sotto l'Agena di Sviluppo di Doha."
             short_title: "Promuovere un Sistema Commerciale Universale sotto l'OMC"
           target_17_11:
+            long_title: "Aumentare significativamente le esportazioni dei paesi in via di sviluppo, in particolare con una vista al raddoppiare la parte di paesi meno sviluppati di esportazioni globali, per il 2020."
             short_title: "Aumentare le Esportazioni dei Paesi in Via di Sviluppo"
           target_17_12:
             short_title: "Rimuovere le Barriere di Scambio per i Paesi Meno Sviluppati"
           target_17_13:
+            long_title: "Migliorare la stabilità macroeconomica globale, incluso tramite la coordinazione e la coerenza politica."
             short_title: "Migliorare la Stabilità Macroeconomica Globale"
+          target_17_14:
+            long_title: "Migliorare la coerenza politica per lo sviluppo sostenibile."
+            short_title: "Migliorare la Coerenza Politica per lo Sviluppo Sostenibile"
+          target_17_15:
+            long_title: "Rispettare lo spazio politico e governo di ogni paese per stabilire e implementare politiche per l'eradicazione della povertà e lo sviluppo sostenibile."
+            short_title: "Rispettare la Leadership Nazionale per Implementare Politiche per gli Obiettivi di Sviluppo Sostenibile"
+          target_17_17:
+            short_title: "Incoraggiare Collaborazioni Efficienti"
+          target_17_18:
+            long_title: "Per il 2020, migliorare il supporto alla capacità costruttiva dei paesi in via di sviluppo, inclusi i paesi meno sviluppati e in via di sviluppo su piccole isole, per migliorare significativamente la disponibilità di dati d'alta qualità, tempestivi e affidabili dissaggregati per reddito, genere, età, razza, etnia, stato migratorio, disabilità, posizione geografica e altre caratteristiche rilevanti nei contesti nazionali."
+            short_title: "Migliorare la Disponibilità di Dati Affidabili"
+          target_17_19:
+            short_title: "Sviluppare Ulteriormente le Misurazioni del Progresso"
+      help:
+        title: "Aiuto sugli Obiettivi di Sviluppo Globale"
+        description: "Puoi allineare i tuoi contributi alla community (dibattiti, proposte cittadine e progetti d'investimento) con l'Agenda 2030 degli Obiettivi di Sviluppo Sostenibile, questo ci consentirà di avere una panoramica del nostro contributo a ognuno degli Obiettivi di Sviluppo Sostenibile. Di seguito puoi scoprire tutti gli obiettivi, i loro scopi e fini localizzati."
+      show:
+        read_more: "Leggi di più su %{goal}"
+        read_less: "Leggi di meno su %{goal}"
+        targets:
+          no_local_targets: Quest'obiettivo non ha fini locali
     related_list_selector:
       help:
         title: "Quali SDG e obiettivi sono allineati al mio %{record}?"
