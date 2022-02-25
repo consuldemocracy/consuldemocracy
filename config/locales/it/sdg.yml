@@ -18,6 +18,7 @@ it:
             long_title: "Per il 2030, assicurarsi che tutti gli uomini e donne, in particolare i poveri e vulnerabili, abbiano pari diritti alle risorse economiche, nonché accesso ai servizi di base, possesso e controllo terriero e altre forme di proprietà, eredità, risorse naturali, nuove tecnologie appropriate e servizi finanziari, microfinanze incluse"
             short_title: "Pari Diritti a Possesso, Servizi Base, Tecnologia e Risorse Economiche"
           target_1_5:
+            long_title: "Per il 2030, creare la resilienza dei poveri e di coloro in situazioni vulnerabili e ridurre la loro esposizione e vulnerabilità agli eventi estremi correlati al clima e altri shock e disastri economici, sociali e ambientali"
             short_title: "Creare Resilienza ai Disastri Ambientali, Economici e Sociali"
           target_1_A:
             long_title: "Assicurare una significativa mobilitazione di risorse da ogni varietà di fonti, incluso tramite la cooperazione di sviluppo migliorata, per poter fornire mezzi adeguati e prevedibili per i paesi in via di sviluppo, in particolare i meno sviluppati, per implementare programmi e politiche per metter fine alla povertà in tutte le sue forme"
@@ -67,6 +68,9 @@ it:
           target_3_4:
             long_title: "Per il 2030, ridurre di un terzo la mortalità prematura da malattie non trasmissibili tramite la prevenzione e il trattamento e promuovere la salute mentale e il benessere."
             short_title: "Ridurre la Mortalità da Malattie Non Trasmissibili e Promuovere la Salute Mentale"
+          target_3_5:
+            long_title: "Rafforzare la prevenzione e il trattamento dell'abuso di sostanze, incluso l'abuso di narcotici e uso dannoso di alcol."
+            short_title: "Prevenire e Trattare l'Abuso di Sostanze"
       goal_5:
         title: "Uguaglianza di Genere"
         title_in_two_lines: "Uguaglianza\ndi Genere"
