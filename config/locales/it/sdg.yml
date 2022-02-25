@@ -141,6 +141,7 @@ it:
             long_title: "Eliminare tutte le forme di violenza contro le donne e ragazze nelle sfere pubblica e privata, incluso il traffico sessuale e di altri tipi di sfruttamento."
             short_title: "Metter Fine a Tutta la Violenza Contro e lo Sfruttamento di Donne e Ragazze"
           target_5_3:
+            long_title: "Eliminare tutte le pratiche dannose, come matrimonio forzato giovanile e con bambini e la mutilazione genitale femminile."
             short_title: "Eliminare Matrimoni Forzati e Mutilazione Genitale"
           target_5_4:
             long_title: "Riconoscere e valutare la cura non pagata e il lavoro domestico tramite la provisione di servizi pubblici, infrastruttura e politiche di protezione sociale e la promozione di responsabilità condivisa entro l'abitazione e la famiglia come nazionalmente appropriato."
@@ -403,5 +404,39 @@ it:
         targets:
           target_17_1:
             short_title: "Mobilizzare Risorse per Migliorare la Raccolta Reddituale Domestica "
+          target_17_3:
+            short_title: "Mobilizzare le Risorse Finanziarie per i Paesi in Via di Sviluppo"
+          target_17_4:
+            short_title: "Assitere i Paesi in Via di Sviluppo nel Raggiungimento della Sostenibilità del Debito"
+          target_17_5:
+            short_title: "Investire nei Paesi Meno Sviluppati"
+          target_17_6:
+            long_title: "Migliorare la cooperazione Nord-Sud, Sud-Sud e triangolare regionale e internazionale su e accesso a scienza, tecnologia e innovazione e migliorare la condivisione di conoscenze su termini mutualmente accordati, incluso tramite la migliore coordinazione tra meccanismi esistenti, in particolare a livello delle Nazioni Unite e tramite un meccanismo di facilitazione tecnologica globale."
+            short_title: "Condivisione di Conoscenze e Cooperazione per l'Accesso a Scienza, Tecnologia e Innovazione"
+          target_17_7:
+            short_title: "Promuovere le Tecnologie Sostenibili nei Paesi in Via di Sviluppo"
+          target_17_8:
+            short_title: "Rafforzare la Capacità Scientifica, Tecnologica e Innovativa per i Paesi Meno Sviluppati"
+          target_17_9:
+            short_title: "Migliorare la Capacità degli SDG nei Paesi in Via di Sviluppo "
+          target_17_10:
+            short_title: "Promuovere un Sistema Commerciale Universale sotto l'OMC"
+          target_17_11:
+            short_title: "Aumentare le Esportazioni dei Paesi in Via di Sviluppo"
+          target_17_12:
+            short_title: "Rimuovere le Barriere di Scambio per i Paesi Meno Sviluppati"
+          target_17_13:
+            short_title: "Migliorare la Stabilità Macroeconomica Globale"
     related_list_selector:
+      help:
+        title: "Quali SDG e obiettivi sono allineati al mio %{record}?"
+        text: "Pagina d'aiuto degli SDG"
+      hint: Puoi introdurre il codice di uno scopo/obiettivo specifico o un testo per trovarne uno. Per ulteriori informazioni visita in %{link}.
       remove_tag: "Rimuovere"
+      title: "Obiettivi di Sviluppo Sostenibili e Target"
+    targets:
+      filter:
+        link: "Visualizza tutti %{resources} correlati all'obiettivo %{code}"
+        more:
+          one: "Un altro obiettivo"
+          other: "%{count} altri obiettivi"
