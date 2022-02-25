@@ -26,9 +26,11 @@
                 <h2>
                   <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
                 </h2>
-                <div id="progress_bar">
-                  <%= render "budgets/ballot/progress_bar", ballot: @ballot, heading: @heading %>
-                </div>
+                <% if @budget.show_money? %>
+                  <div id="progress_bar">
+                    <%= render "budgets/ballot/progress_bar", ballot: @ballot, heading: @heading %>
+                  </div>
+                <% end %>
               </div>
             <% else %>
               <h2>
@@ -51,10 +53,12 @@
             <h2 class="margin-top">
               <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
             </h2>
-            <h3>
-              <span class="tagline"><%= t("budgets.investments.header.price") %></span>
-              <%= @budget.formatted_heading_price(@heading) %>
-            </h3>
+            <% if @budget.show_money? %>
+              <h3>
+                <span class="tagline"><%= t("budgets.investments.header.price") %></span>
+                <%= @budget.formatted_heading_price(@heading) %>
+              </h3>
+            <% end %>
           <% end %>
         </div>
       </div>
