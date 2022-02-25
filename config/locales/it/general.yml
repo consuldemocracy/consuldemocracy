@@ -150,6 +150,7 @@ it:
         submit_button: Salva modifiche
   errors:
     messages:
+      allowed_file_content_types: "il tipo di contenuto dev'essere uno di %{types}"
       user_not_found: Utente non trovato
       invalid_date_range: "Intervallo di date non valido"
   form:
