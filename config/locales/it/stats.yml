@@ -23,6 +23,7 @@ it:
       total_selected_investments: "Progetti nella fase di voto finale"
       total_unfeasible_investments: "Progetti irrealizzabili"
       by_phase: "Partecipanti per fase"
+      by_heading: "Partecipanti per fase e voce di bilancio"
       total: "Totale"
       heading: "Intestazione"
       investments_sent: "Proposte d'investimento inviate"
@@ -30,7 +31,9 @@ it:
       participants_vote_phase: "Fase di voto dei partecipanti"
       participants_every_phase: "Totale partecipanti"
       percent_total_participants: "% Partecipanti totali"
+      percent_heading_census: "% Censimento voce di bilancio"
       participatory_disclaimer: "** I numeri dei partecipanti totali si riferiscono alle persone che hanno creato, supportato o votato proposte d'investimento."
+      heading_disclaimer: "*** I dati sulle voci di bilancio si riferiscono a quella votata da ogni utente, non necessariamente quella in cui quella persona si è registrata."
     polls:
       by_channel: "Partecipanti per canale"
       vote_by_channel: "Tipo di voto per canale"
