@@ -225,6 +225,7 @@ it:
         title: "Lavoro Decente e Crescita Economica"
         title_in_two_lines: "Lavoro Decente e\nCrescita Economica"
         description: "Promuovere la crescita economica inclusiva e sostenibile, l'impiego e il lavoro decente per tutti."
+        long_description: '<p>La crescita economica sostenuta e inclusiva può guidare il progresso, creare lavori decenti per tutti e migliorare gli standard di vita.&nbsp;</p> <p>Il COVID-19 ha <a href="https://www.un.org/sites/un2.un.org/files/sg_report_socio-economic_impact_of_covid19.pdf">stravolto miliardi di vite</a> e ha messo in pericolo l''economia globale. Il Fondo Monetario Internazionale (IMF) prevede una <a href="https://blogs.imf.org/2020/04/14/the-great-lockdown-worst-economic-downturn-since-the-great-depression/">recessione globale</a> pari o peggiore di quella del 2009. All''escalare delle perdite di lavoro, l''Organizzazione Internazionale per il Lavoro stima che <a href="https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_743036/lang--en/index.htm">circa metà della forza lavoro globale è a rischio</a> di perdere la propria sussitenza.</p> <p><a href="https://developmentfinance.un.org/press-release-financing-sustainable-development-report-2020">Anche prima dello scoppio del COVID-19</a>, un paese su cinque, casa di miliardi di persone in povertà, avevano probabilità di veder stagnare o diminuire le entrate procapite nel 2020. Ora, gli <a href="https://developmentfinance.un.org/press-release-financing-sustainable-development-report-2020">shock finanziari ed economici</a> associati al COVID-19, come lo stravolgimento della produzione industriale, la caduta dei prezzi delle merci, la volatilità del mercato finanziario e la maggiore insicurezza, stanno facendo deragliare la già fiacca crescita economica e i maggiori rischi di capitalizzazione da altri fattori.&nbsp;&nbsp;</p>'
         targets:
           target_8_1:
             long_title: "Sostenere la crescita economica procapite secondo le circostanze nazionali e, in particolare, almeno il 7% di crescita del prodotto domestico lordo annuo nei paesi meno sviluppati."
@@ -233,6 +234,7 @@ it:
             long_title: "Ottenere livelli maggiori di produttività economica tramite la diversificazione, l'aggiornamento tecnologico e l'innovazione, incluso concentrandosi sull'alto valore aggiunto e i settori a lavoro intensivo."
             short_title: "Diversificare, Innovare e Aggiornare per la Produttività Economica"
           target_8_3:
+            long_title: "Promuovere politiche orientate allo sviluppo che supportino attività produttive, la creazione di lavoro decente, imprenditoria, creatività e innovazione e incoraggiare la formalizzazione e la crescita di micro-, piccole e medie imprese, incluso tramite l'accesso ai servizi finanziari."
             short_title: "Promuovere Politiche per Supportare la Creazione di Lavoro e lo Sviluppo delle Imprese"
           target_8_4:
             long_title: "Migliorare progressivamente, per il 2030, l'efficienza delle risorse globali nel consumo e la produzione e sforzarsi di disaccoppiare la crescita economica dal degrado ambientale, secondo il quadro di programmi sul consumo e la produzione sostenibili di 10 anni, facendo prendere il comando ai paesi sviluppati."
@@ -255,6 +257,9 @@ it:
           target_8_10:
             long_title: "Rafforzare la capacità delle istituzioni finanziarie domestiche per incoraggiare ed espandere l'accesso ai servizi bancari, assicurativi e finanziari per tutti."
             short_title: "Accesso Universale a Servizi Bancari, Assicurativi e Finanziari"
+          target_8_A:
+            long_title: "Aumentare il supporto degli Aiuti al Commercio per i paesi in via di sviluppo, in particolare i meno sviluppati, incluso tramite il Quadro Integrato Migliorato per l'Assistenza Tecnica Correlata al Commercio ai Paesi Meno Sviluppati."
+            short_title: "Maggiore Supporto all'Aiuto al Commercio"
           target_8_B:
             long_title: "Per il 2020, sviluppare e operazionalizzare una strategia globale per l'impiego giovanile e implementare il Patto Globale per il Lavoro dell'Organizzazione Internazionale del Lavoro."
             short_title: "Sviluppare una Strategia d'Impiego Giovanile Globale"
