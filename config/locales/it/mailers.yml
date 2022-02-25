@@ -6,6 +6,8 @@ it:
       new_comment_by: C'è un nuovo commento da <strong>%{commenter}</strong>
       subject: Qualcuno ha commentato sul tuo %{commentable}
       title: Nuovo commento
+    config:
+      notifications_link: Notifiche
     email_verification:
       click_here_to_verify: questo link
       instructions_2: Questa email consente di verificare il tuo account con <b>%{document_type} %{document_number}</b>. Se questi documenti non ti appartengono, non cliccare sul link precedente e ignorare questa email.
