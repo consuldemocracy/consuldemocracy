@@ -464,7 +464,40 @@ it:
           target_15_2:
             long_title: "Per il 2020, promuovere l'implementazione della gestione sostenibile di tutti i tipi di foreste, fermare la deforestazione, ripristinare le foreste degradate e aumentare sostanzialmente il rimoschimento e la riforestazione globalmente."
             short_title: "Porre Fine alla Deforestazione e Ripristinare le Foreste Degradate"
+          target_15_3:
+            long_title: "Per il 2030, combattere la desertificazione, ripristinare terra e suolo degradati, incluse le terre influenzate da desertificazione, siccità e alluvioni e sforzarsi di ottenere un mondo neutrale alla degradazione del terreno."
+            short_title: "Porre Fine alla Desertificazione e Ripristinare la Terra Degradata"
+          target_15_4:
+            long_title: "Per il 2030, assicurare la conservazione degli ecosistemi montuosi, inclusa la loro biodiversità, per poterne migliorare la capacità di fornire benefici essenziali per lo sviluppo sostenibile."
+            short_title: "Assicurare la Conservazione degli Ecosistemi Montuosi"
+          target_15_5:
+            long_title: "Intraprendere azioni urgenti e significative per ridurre il degrado degli habitat naturali, fermare la perdita di biodiversità e, per il 2020, proteggere e prevenire l'estinzione delle specie minacciate."
+            short_title: "Proteggere la Biodiversità e gli Habitat Naturali"
+          target_15_6:
+            long_title: "Promuovere la condivisione equa e solidale dei benefici originati dall'uso di risorse genetiche e promuovere l'accesso appropriato a tali risorse, come accordato internazionalmente."
+            short_title: "Promuovere l'Accesso alle Risorse Genetiche e la Condivisione Equa dei Benefici"
+          target_15_7:
+            long_title: "Intraprendere un'azione urgente per porre fine a bracconaggio e traffico di specie protette di flora e fauna e indirizzare sia la domanda che l'offerta di prodotti naturali illegali."
+            short_title: "Eliminare Bracconaggio e Traffico di Specie Protette"
+          target_15_8:
+            long_title: "Per il 2020, introdurre misure per prevenire l'introduzione e ridurre significativamente l'impatto di specie aliene invasive su ecosistemi terrestri e idrici e controllare o eradicare le specie prioritarie."
+            short_title: "Prevenire l'Invasione di Specie Aliene su Ecosistemi Terrestri e Idrici"
+          target_15_9:
+            long_title: "Per il 2020, integrare i valori di ecosistema e biodiversità nella pianificazione nazionale e locale, processi di sviluppo, strategie di riduzione della povertà e conti."
+            short_title: "Integrare Ecosistemi e Biodiversità nella Pianificazione Governativa"
+          target_15_A:
+            long_title: "Mobilitare e significativamente aumentare le risorse finanziarie da tutte le fonti per conservare e usare sostenibilmente biodiversità ed ecosistemi."
+            short_title: "Aumentare le Risorse Finanziarie per Conservare e Usare Sostenibilmente Ecosistema e Biodiversità"
+          target_15_B:
+            long_title: "Mobilitare significative risorse da tutte le fonti e su tutti i livelli per finanziare l'idonea gestione forestale e fornire incentivi adeguati ai paesi in via di sviluppo per inoltrare tale gestione, incluso per conservazione e riforestazione."
+            short_title: "Finanziare e Incentivare la Gestione Forestale Sostenibile"
+          target_15_C:
+            long_title: "Migliorare il supporto globale per sforzi di combattimento al bracconaggio e traffico di specie protette, incluso aumentando la capacità delle comunità locali di perseguire opportunità di sostentamento sostenibile."
+            short_title: "Combattere Bracconaggio e Traffico Globale"
       goal_16:
+        title: "Pace, Giustizia e Istituzioni Forti"
+        title_in_two_lines: "Pace, Giustizia e\nIstituzioni Forti"
+        description: "Promuovere società giuste, pacifiche e inclusive."
         targets:
           target_16_1:
             long_title: "Ridurre significativamente tutte le forme di violenza e i relativi tassi di mortalità in tutto il mondo."
