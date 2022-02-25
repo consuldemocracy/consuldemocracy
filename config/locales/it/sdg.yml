@@ -109,6 +109,27 @@ it:
           target_4_3:
             long_title: "Per il 2030, assicurare accesso equo a tutte le donne e uomini a istruzione di qualità, tecnica, vocativa e terziaria, università inclusa."
             short_title: "Pari Accesso a Istruzione Economica Tecnica, Vocativa e Superiore"
+          target_4_4:
+            long_title: "Per il 2030, aumentare sostanzialmente il numero di giovani e adulti aventi abilità rilevanti, incluse tecniche e vocative, per l'impiego, lavori decenti e imprenditoria."
+            short_title: "Aumentare il Numero di Persone con Abilità Rilevanti per il Successo Finanziario"
+          target_4_5:
+            long_title: "Per il 2030, eliminare le disuguaglianze di genere nell'istruzione e assicurare pari accesso a tutti i livelli d'istruzione e formazione vocativa per i vulnerabili, incluse persone con disabilità, indigeni e bambini in situazioni vulnerabili."
+            short_title: "Eliminare Tutta la Discriminazione nell'Istruzione"
+          target_4_6:
+            long_title: "Per il 2030, assicurarsi che tutta la gioventù e una proporzione sostanziale di adulti, sia uomini che donne, ottenga alfabetizzazione e istruzione matematica fondamentale."
+            short_title: "Alfabetizzazione e Istruzione Matematica Universale"
+          target_4_7:
+            long_title: "Per il 2030, assicurarsi che tutti gli studenti acquisiscano la conoscenza e l'abilità necessaria a promuovere lo sviluppo sostenibile, incluso, tra le altre cose, tramite l'istruzione per lo sviluppo sostenibile e gli stili di vita sostenibili, i diritti umani, l'uguaglianza di genere, la promozione di una cultura di pace e non violenza, la cittadinanza globale e l'apprezzamento della diversità culturale e del contributo culturale allo sviluppo sostenibile."
+            short_title: "Istruzione per lo Sviluppo Sostenibile e la Cittadinanza Globale"
+          target_4_A:
+            long_title: "Creare e aggiornare le strutture d'istruzione sensibili a bambini, disabilità e genere e fornire ambienti d'apprendimento sicuri, non violenti, inclusivi ed efficienti per tutti."
+            short_title: "Creare e Aggiornare Scuole Inclusive e Sicure"
+          target_4_B:
+            long_title: "Per il 2020, espandere sostanzialmente e globalmente il numero di borse di studio disponibili per i paesi in via di sviluppo, in particolare i paesi meno sviluppati, gli Stati in via di sviluppo su piccole isole e i paesi africani, per l'iscrizione all'istruzione superiore, inclusi formazione vocativa e tecnologie informatiche e delle comunicazioni, programmi tecnici, ingegneristici e scientifici, nei paesi sviluppati e altri paesi in via di sviluppo."
+            short_title: "Espandere le Borse di Studio per l'Istruzione Superiore per i Paesi in Via di Sviluppo"
+          target_4_C:
+            long_title: "Per il 2030, aumentare sostanzialmente la fornitura di insegnanti qualificati, incluso tramite la cooperazione internazionale per la formazione dei docenti nei paesi in via di sviluppo, specialmente nei paesi meno sviluppati e gli stati in via di sviluppo su piccole isole."
+            short_title: "Aumentare la Fornitura di Docenti Qualificati Nei Paesi in Via di Sviluppo"
       goal_5:
         title: "Uguaglianza di Genere"
         title_in_two_lines: "Uguaglianza\ndi Genere"
@@ -178,7 +199,14 @@ it:
             long_title: "Per il 2030, aumentare sostanzialmente la condivisione di energia rinnovabile nel miscuglio energetico globale."
             short_title: "Aumentare la Percentuale Globale di Energia Rinnovabile"
       goal_9:
+        title_in_two_lines: "Industria, Innovazione\ne Infrastruttura"
+        description: "Creare un'infrastruttura resiliente, promuovere l'industrializzazione sostenibile e favorire l'innovazione."
         targets:
+          target_9_1:
+            long_title: "Sviluppare un'infrastruttura di qualità, affidabile, sostenibile e resiliente, inclusa l'infrastruttura regionale e transfrontaliera, per supportare lo sviluppo economico e il benessere umano, concentrandosi su un accesso economico ed equo per tutti."
+            short_title: "Sviluppare Infrastrutture Sostenibili, Resilienti e Inclusive"
+          target_9_2:
+            long_title: "Promuovere l'industrializzazione inclusiva e sostenibile e, per il 2030, aumentare significativamente la quota d'impiego dell'industria e il prodotto domestico lordo, in linea con le circostanze nazionali e raddopiarne le quote nei paesi meno sviluppati."
           target_9_3:
             short_title: "Aumentare l'Accesso a Servizi Finanziari e Mercati"
           target_9_4:
