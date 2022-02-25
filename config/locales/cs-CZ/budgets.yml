@@ -29,6 +29,7 @@ cs:
             other: "Hlasovat můžete až pro <span>%{count}</span> projekty"
         no_balloted_group_yet: "Dosud jste o této skupině nehlasovali, hlasujte!"
         remove: Odstranit hlas
+        remove_label: "Odebrat svou podporu k %{investment}"
         voted:
           one: "Hlasovali jste pro <span>jednu</span> investici."
           few: "Hlasovali jste pro <span>%{count}</span>investic."
