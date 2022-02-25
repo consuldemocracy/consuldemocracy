@@ -562,6 +562,7 @@ it:
           target_17_8:
             short_title: "Rafforzare la Capacità Scientifica, Tecnologica e Innovativa per i Paesi Meno Sviluppati"
           target_17_9:
+            long_title: "Migliorare il supporto internazionale per implementare la costruzione di capacità efficiente e mirata nei paesi in via di sviluppo per supportare i piani nazionali per implementare tutti gli obiettivi di sviluppo sostenibile, incluso tramite la cooperazione Nord-Sud, Sud-Sud e triangolare."
             short_title: "Migliorare la Capacità degli SDG nei Paesi in Via di Sviluppo "
           target_17_10:
             long_title: "Promuovere un sistema commerciale universale, basato su regole, aperto, non discriminatorio e multilaterale equo sotto l'Organizzazione Mondiale del Commercio, incluso tramite la conclusione delle negoziazioni sotto l'Agena di Sviluppo di Doha."
@@ -570,6 +571,7 @@ it:
             long_title: "Aumentare significativamente le esportazioni dei paesi in via di sviluppo, in particolare con una vista al raddoppiare la parte di paesi meno sviluppati di esportazioni globali, per il 2020."
             short_title: "Aumentare le Esportazioni dei Paesi in Via di Sviluppo"
           target_17_12:
+            long_title: "Realizzare un'opportuna implementazione di accesso al mercato esente da dazi e contingenti su base duratura per tutti i paesi meno sviluppati, coerentemente alle decisioni dell'Organizzazione Mondiale del Commercio, incluso assicurandosi che le regole preferenziali di origine applicabile a importi dai paesi meno sviluppati siano trasparenti e semplici e contribuire a facilitare l'accesso al mercato."
             short_title: "Rimuovere le Barriere di Scambio per i Paesi Meno Sviluppati"
           target_17_13:
             long_title: "Migliorare la stabilità macroeconomica globale, incluso tramite la coordinazione e la coerenza politica."
@@ -580,12 +582,17 @@ it:
           target_17_15:
             long_title: "Rispettare lo spazio politico e governo di ogni paese per stabilire e implementare politiche per l'eradicazione della povertà e lo sviluppo sostenibile."
             short_title: "Rispettare la Leadership Nazionale per Implementare Politiche per gli Obiettivi di Sviluppo Sostenibile"
+          target_17_16:
+            long_title: "Migliorare la collaborazione globale per lo sviluppo sostenibile, complementata da cooperazioni a più parti interessante che mobilitino e condividano conoscenza, esperienza, tecnologia e risorse finanziarie, per supportare il raggiungimento degli obiettivi di sviluppo sostenibile in tutti i paesi, in particolare in via di sviluppo."
+            short_title: "Migliorare la Collaborazione Globale per lo Sviluppo Sostenibile"
           target_17_17:
+            long_title: "Incoraggiare e promuovere collaborazioni pubbliche, pubblico private e della società civili efficienti, costruendo sull'esperienza e con strategie di collaborazione."
             short_title: "Incoraggiare Collaborazioni Efficienti"
           target_17_18:
             long_title: "Per il 2020, migliorare il supporto alla capacità costruttiva dei paesi in via di sviluppo, inclusi i paesi meno sviluppati e in via di sviluppo su piccole isole, per migliorare significativamente la disponibilità di dati d'alta qualità, tempestivi e affidabili dissaggregati per reddito, genere, età, razza, etnia, stato migratorio, disabilità, posizione geografica e altre caratteristiche rilevanti nei contesti nazionali."
             short_title: "Migliorare la Disponibilità di Dati Affidabili"
           target_17_19:
+            long_title: "Per il 2030, costruire sulle iniziative esistenti per sviluppare misurazioni del progresso sullo sviluppo sostenibile che complementino il prodotto domestico lordo e supportare la costruzione di capacità statistica nei paesi in via di sviluppo."
             short_title: "Sviluppare Ulteriormente le Misurazioni del Progresso"
       help:
         title: "Aiuto sugli Obiettivi di Sviluppo Globale"
@@ -595,7 +602,16 @@ it:
         read_less: "Leggi di meno su %{goal}"
         targets:
           no_local_targets: Quest'obiettivo non ha fini locali
+      title: "Obiettivi di Sviluppo Sostenibile"
+      filter:
+        heading: "Filtra per SDG"
+        link: "Visualizza tutti %{resources} correlati all'obiettivo %{code}"
+        more:
+          one: "Un altro obiettivo"
+          other: "%{count} altri obiettivi"
     related_list_selector:
+      goal_identifier: "SDG%{code}"
+      goal_list: "Puoi scegliere uno o più SDG allineati al tuo %{record}"
       help:
         title: "Quali SDG e obiettivi sono allineati al mio %{record}?"
         text: "Pagina d'aiuto degli SDG"
