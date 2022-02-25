@@ -166,6 +166,7 @@ cs:
         submit_button: Uložit změny
   errors:
     messages:
+      allowed_file_content_types: "typ obsahu musí být jeden z %{types}"
       user_not_found: Uživatel nenalezen
       invalid_date_range: "Neplatný rozsah dat"
   form:
@@ -886,6 +887,7 @@ cs:
     agree_label: "Souhlasím s %{title}"
     anonymous: Příliš mnoho anonymních hlasů k přijetí hlasování %{verify_account}.
     disagree: Nesouhlasím
+    disagree_label: "Nesouhlasím s %{title}"
     organizations: Organizacím není dovoleno hlasovat
     supports: Podporovatelé
     verified_only: O návrzích mohou hlasovat pouze ověření uživatelé; %{verify_account}.
