@@ -24,7 +24,8 @@ it:
             long_title: "Assicurare una significativa mobilitazione di risorse da ogni varietà di fonti, incluso tramite la cooperazione di sviluppo migliorata, per poter fornire mezzi adeguati e prevedibili per i paesi in via di sviluppo, in particolare i meno sviluppati, per implementare programmi e politiche per metter fine alla povertà in tutte le sue forme"
             short_title: "Mobilizzare Risorse per Implementare Politiche per Metter Fine alla Povertà"
           target_1_B:
-            long_title: "Creare quadri politici adeguati a livello nazionale, regionale e internazionale, in base a strategie di sviluppo pro-povertà e sensibili al genere, per supportare l'investimento accelerato nelle azioni d'eradicazione della povertà"
+            long_title: "Creare quadri politici adeguati a livello nazionale, regionale e internazionale, in base a strategie di sviluppo nei confronti della povertà e sensibili al genere, per supportare l'investimento accelerato nelle azioni d'eradicazione della povertà"
+            short_title: "Creare Quadri Politici Sensibili a Genere e Povertà"
       goal_2:
         title: "Zero Fame"
         title_in_two_lines: "Zero\nFame"
@@ -135,6 +136,7 @@ it:
       goal_5:
         title: "Uguaglianza di Genere"
         title_in_two_lines: "Uguaglianza\ndi Genere"
+        description: "Ottenere l'uguaglianza di genere ed emancipare tutte le donne e ragazze."
         targets:
           target_5_1:
             long_title: "Metter fine a tutte le forme di discriminazione contro le donne e le ragazze in tutto il mondo."
@@ -226,8 +228,31 @@ it:
           target_8_3:
             short_title: "Promuovere Politiche per Supportare la Creazione di Lavoro e lo Sviluppo delle Imprese"
           target_8_4:
+            long_title: "Migliorare progressivamente, per il 2030, l'efficienza delle risorse globali nel consumo e la produzione e sforzarsi di disaccoppiare la crescita economica dal degrado ambientale, secondo il quadro di programmi sul consumo e la produzione sostenibili di 10 anni, facendo prendere il comando ai paesi sviluppati."
             short_title: "Migliorare l'Efficienza della Risorsa nel Consumo e la Produzione"
+          target_8_5:
+            long_title: "Per il 2030, ottenere il completo e produttivo impiego e lavoro decente per tutte le donne e uomini, inclusi i giovani e le persone con disabilità e paga equa per il lavoro di pari valore."
+            short_title: "Impiego Completo e Lavoro Decente con Paga Equa"
+          target_8_6:
+            long_title: "Per il 2020, ridurre sostanzialmente la proporzione di giovani disoccupati o in istruzione o formazione."
+            short_title: "Promuovere l'Impiego Giovanile, l'Istruzione e la Formazione"
+          target_8_7:
+            long_title: "Prendere misure immediate ed effettive per eradicare il lavoro forzato, porre fine alla schiavitù moderna e il traffico di umani e assicurare la proibizione e l'eliminazione delle peggiori forme di lavoro infantile, incluso il reclutamento e l'uso di bambini soldati e, per il 2025, porre fine al lavoro infantile in tutte le sue forme."
+            short_title: "Porre Fine a Schiavitù Moderna, Traffico e Lavoro Infantile"
+          target_8_8:
+            long_title: "Proteggere i diritti sul lavoro e promuovere ambienti lavorativi sicuri per tutti i lavoratori, inclusi i lavoratori migranti, in particolare migranti donne, e coloro in impiego precario."
+            short_title: "Proteggere i Diritti del Lavoro e Promuovere Ambienti Lavorativi Sicuri"
+          target_8_9:
+            long_title: "Per il 2030, ideare e implementare politiche per promuovere il turismo sostenibile che crei lavori e promuova la cultura e i prodotti locali"
+            short_title: "Promuovere il Turismo Benefico e Sostenibile"
+          target_8_10:
+            long_title: "Rafforzare la capacità delle istituzioni finanziarie domestiche per incoraggiare ed espandere l'accesso ai servizi bancari, assicurativi e finanziari per tutti."
+            short_title: "Accesso Universale a Servizi Bancari, Assicurativi e Finanziari"
+          target_8_B:
+            long_title: "Per il 2020, sviluppare e operazionalizzare una strategia globale per l'impiego giovanile e implementare il Patto Globale per il Lavoro dell'Organizzazione Internazionale del Lavoro."
+            short_title: "Sviluppare una Strategia d'Impiego Giovanile Globale"
       goal_9:
+        title: "Industria, Innovazione e Infrastruttura"
         title_in_two_lines: "Industria, Innovazione\ne Infrastruttura"
         description: "Creare un'infrastruttura resiliente, promuovere l'industrializzazione sostenibile e favorire l'innovazione."
         targets:
@@ -370,7 +395,12 @@ it:
         targets:
           target_13_1:
             long_title: "Rafforzare la capacità di resilienza e adattiva per pericoli correlati al clima e disastri naturali in tutti i paesi."
+            short_title: "Rafforzare la Resilienza e la Capacità Adattiva ai Disastri Correlati al Clima"
+          target_13_2:
+            long_title: "Integrare le misure di cambiamento climatico in politiche, strategie e piani nazionali."
+            short_title: "Integrare Misure di Cambiamento Climatico in Politiche e Piani"
           target_13_B:
+            long_title: "Promuovere meccanismi per aumentare la capacità di pianificazione e gestione efficiente correlata al cambiamento climatico nei paesi meno sviluppati e in via di sviluppo su piccole isole, inclusa la focalizzazione su donne, giovani e comunità locali e marginalizzate."
             short_title: "Promuovere Meccanismi per Aumentare la Capacità di Pianificazione e Gestione"
       goal_14:
         title: "Vita Subacquea"
@@ -398,6 +428,9 @@ it:
           target_14_7:
             long_title: "Per il 2030, migliorare i benefici economici agli Stati in via di sviluppo su Piccole Isole e meno sviluppati dall'uso sostenibile delle risorse marine, incluso tramite la gestione sostenibile di pescatori, acquaculture e turismo."
             short_title: "Aumentare i Benefici Economici dall'Uso Sostenibile delle Risorse Marine"
+          target_14_A:
+            long_title: "Aumentare la conoscenza scientifica, sviluppare la capacità di ricerca e trasferire la tecnologia marina, tenendo conto dei Criteri della Commissione Oceanografica Intergovernativa e delle Linee Guida sul Trasferimento della Tecnologia Marina, per poter migliorare la salute dell'oceano e il contributo della biodiversità marina allo sviluppo dei paesi in via di sviluppo, in particolare Stati in via di sviluppo su piccole isole e paesi meno sviluppati."
+            short_title: "Aumentare la Conoscenza Scientifica, la Ricerca e la Tecnologia per la Salute dell'Oceano"
           target_14_B:
             long_title: "Fornire accesso a pescatori artigianali su piccola scala alle risorse e i mercati marini."
             short_title: "Supportare i Pescatori su Piccola Scala"
@@ -408,6 +441,9 @@ it:
         title: "Vita sulla Terra"
         title_in_two_lines: "Vita sulla\nTerra"
         description: "Gestire sostenibilmente le foreste, combattere la desertificazione, interrompere e invertire la degradazione della terra, metter fine alla perdita di biodiversità."
+        targets:
+          target_15_1:
+            long_title: "Per il 2020, assicurare la conservazione, restauro e uso sostenibile degli ecosistemi terrestri e idrici interni e dei loro servizi, in particolare foreste, paludi, montagne e terre aride, in linea con le obbligazioni sotto gli accordi internazionali."
       goal_16:
         targets:
           target_16_4:
