@@ -318,8 +318,29 @@ it:
             short_title: "Ridurre Sostanzialmente la Generazione di Rifiuti"
           target_12_6:
             long_title: "Incoraggiare le aziende, specialmente grandi e transnazionali, ad adottare pratiche sostenibili e integrare le informazioni di sostenibilità nel loro ciclo di rapporti."
+            short_title: "Incoraggiare le Aziende ad Adottare Pratiche Sostenibili e Rapporti di Sostenibilità"
+          target_12_7:
+            long_title: "Promuovere le pratiche d'approvvigionamento pubblico che siano sostenibili, secondo le politiche e priorità nazionali."
+            short_title: "Promuovere le Pratiche d'Approvvigionamento Pubblico Sostenibile "
+          target_12_8:
+            long_title: "Per il 2030, assicurarsi che le persone in tutto il mondo abbiano informazioni rilevanti e consapevolezza per lo sviluppo sostenibile e gli stili di vita in armonia con la natura."
+            short_title: "Promuovere la Comprensione Universale degli Stili di Vita Sostenibili"
+          target_12_A:
+            long_title: "Supportare i paesi in via di sviluppo a rafforzare la propria capacità scientifica e tecnolocia per muoversi verso schemi più sostenibili di consumo e produzione."
+            short_title: "Supportare la Capacità Scientifica e Tecnologia dei Paesi in Via di Sviluppo per il Consumo e la Produzione Sostenibili"
+          target_12_B:
+            long_title: "Sviluppare e implementare strumenti per monitorare gli impatti dello sviluppo sostenibile per il turismo sostenibile, che crea lavori e promuove la cultura e i prodotti locali."
+            short_title: "Sviluppare e Implementare Strumenti per Monitorare il Turismo Sostenibile"
+          target_12_C:
+            long_title: "Razionalizzare i sussidi di combustibili fossili inefficienti che incoraggiano il consumo superfluo rimuovendo le distorzioni di mercato, a seconda delle circostanze nazionali, incluso ristrutturando la tassazione e rimuovendo quei dannosi sussidi, laddove esistenti, per rifletterne gli impatti ambientali, tenendo pienamente conto dei bisogni specifici e delle condizioni dei paesi in via di sviluppo e minimizzando i possibili impatti avversi sul loro sviluppo così che protegga i poveri e le comunità influenzate."
+            short_title: "Rimuovere Distorzioni di Mercato che Incoraggiano il Consumo Superfluo"
       goal_13:
+        title: "Azione Climatica"
+        title_in_two_lines: "Azione\nClimatica"
+        description: "Agire urgentemente per combattere il cambiamento climatico e i suoi impatti."
         targets:
+          target_13_1:
+            long_title: "Rafforzare la capacità di resilienza e adattiva per pericoli correlati al clima e disastri naturali in tutti i paesi."
           target_13_B:
             short_title: "Promuovere Meccanismi per Aumentare la Capacità di Pianificazione e Gestione"
       goal_14:
@@ -358,5 +379,29 @@ it:
         title: "Vita sulla Terra"
         title_in_two_lines: "Vita sulla\nTerra"
         description: "Gestire sostenibilmente le foreste, combattere la desertificazione, interrompere e invertire la degradazione della terra, metter fine alla perdita di biodiversità."
+      goal_16:
+        targets:
+          target_16_4:
+            short_title: "Combattere il Crimine Organizzato e i Flussi Illeciti Finanziari e di Armi"
+          target_16_5:
+            short_title: "Ridurre Sostanzialmente Corruzione e Concussione"
+          target_16_6:
+            short_title: "Sviluppare Istituzioni Efficienti, Affidabili e Trasparenti"
+          target_16_7:
+            short_title: "Assicurare Presa Decisionale Reattiva, Inclusiva e Rappresentativa"
+          target_16_8:
+            short_title: "Rafforzare la Partecipazione nell'Amministrazione Globale"
+          target_16_9:
+            short_title: "Fornire un'Identità Legale Universale"
+          target_16_10:
+            short_title: "Assicurare l'Accesso Pubblico alle Informazioni e Proteggere le Libertà Fondamentali"
+          target_16_A:
+            short_title: "Rafforzare le Istituzioni Nazionali per Prevenire la Violenza e Combattere Terrorismo e Crimine"
+          target_16_B:
+            short_title: "Promuovere e Imporre Leggi e Politiche Non Discriminatorie"
+      goal_17:
+        targets:
+          target_17_1:
+            short_title: "Mobilizzare Risorse per Migliorare la Raccolta Reddituale Domestica "
     related_list_selector:
       remove_tag: "Rimuovere"
