@@ -412,6 +412,9 @@ it:
           target_13_2:
             long_title: "Integrare le misure di cambiamento climatico in politiche, strategie e piani nazionali."
             short_title: "Integrare Misure di Cambiamento Climatico in Politiche e Piani"
+          target_13_A:
+            long_title: "Implementare l'impegno intrapreso dalle parti dei paesi sviluppati alla Convenzione del Quadro delle Nazioni Unite sul Cambiamento Climatio al fine di mobilitare unitamente $100 miliardi annualmente per il 2020, da tutte le fondi per indirizzare i bisogni dei paesi in via di sviluppo nel contesto delle significative azioni di mitigazione e della trasparenza sull'implementazione e operazionalizzare completamente il Fondo Climatico Verde tramite la sua capitalizzazione, il prima possibile."
+            short_title: "Implementare la Convenzione del Quadro dell'ONU sul Cambiamento Climatico"
           target_13_B:
             long_title: "Promuovere meccanismi per aumentare la capacità di pianificazione e gestione efficiente correlata al cambiamento climatico nei paesi meno sviluppati e in via di sviluppo su piccole isole, inclusa la focalizzazione su donne, giovani e comunità locali e marginalizzate."
             short_title: "Promuovere Meccanismi per Aumentare la Capacità di Pianificazione e Gestione"
@@ -457,6 +460,10 @@ it:
         targets:
           target_15_1:
             long_title: "Per il 2020, assicurare la conservazione, restauro e uso sostenibile degli ecosistemi terrestri e idrici interni e dei loro servizi, in particolare foreste, paludi, montagne e terre aride, in linea con le obbligazioni sotto gli accordi internazionali."
+            short_title: "Conservare e Ripristinare gli Ecosistemi Terrestri e d'Acqua Dolce"
+          target_15_2:
+            long_title: "Per il 2020, promuovere l'implementazione della gestione sostenibile di tutti i tipi di foreste, fermare la deforestazione, ripristinare le foreste degradate e aumentare sostanzialmente il rimoschimento e la riforestazione globalmente."
+            short_title: "Porre Fine alla Deforestazione e Ripristinare le Foreste Degradate"
       goal_16:
         targets:
           target_16_1:
