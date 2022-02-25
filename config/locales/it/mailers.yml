@@ -1,5 +1,6 @@
 it:
   mailers:
+    title: "Governo Aperto"
     no_reply: "Questo messaggio è stato inviato da un indirizzo di posta elettronica che non accetta risposte."
     comment:
       hi: Salve
@@ -8,6 +9,7 @@ it:
       title: Nuovo commento
     config:
       notifications_link: Notifiche
+      unsubscribe_text: 'Per disiscriverti da queste email, visita %{notifications} e rimuovi la spunta da "%{notification}".'
     email_verification:
       click_here_to_verify: questo link
       instructions_2: Questa email consente di verificare il tuo account con <b>%{document_type} %{document_number}</b>. Se questi documenti non ti appartengono, non cliccare sul link precedente e ignorare questa email.
@@ -25,6 +27,8 @@ it:
       title: "Notifiche di proposte su %{org_name}"
       share: Condividi la proposta
       comment: Commenta la proposta
+      unsubscribe_text: "Se non vuoi ricevere alcuna notifica di proposte, visita %{notifications} e rimuovi la spunta da 'Ricevi notifiche del riepilogo delle proposte'."
+      unfollow: "Visita questa proposta e smetti di seguirla per smettere di ricevere notifiche."
     direct_message_for_receiver:
       subject: "Hai ricevuto un nuovo messaggio privato"
       reply: Rispondere a %{sender}
