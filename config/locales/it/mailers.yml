@@ -32,6 +32,7 @@ it:
     direct_message_for_receiver:
       subject: "Hai ricevuto un nuovo messaggio privato"
       reply: Rispondere a %{sender}
+      unsubscribe_text: "Se non desideri ricevere messaggi diretti, visita %{notifications} e rimuovi la spunta da 'Ricevi email sui messaggi diretti'."
     direct_message_for_sender:
       subject: "Hai inviato un nuovo messaggio privato"
       title: "Hai inviato un nuovo messaggio privato a <strong>%{receiver}</strong> con il contenuto:"
@@ -72,4 +73,53 @@ it:
       sincerely: "Cordiali saluti"
     evaluation_comment:
       subject: "Nuovo commento di valutazione"
+      title: Nuovo commento di valutazione per %{investment}
       hi: Ciao
+      new_comment_by: C'è un nuovo commento valutativo da <strong>%{commenter}</strong> all'investimento di budget %{investment}
+      commenter_info: "%{commenter}, %{time}:"
+    machine_learning_error:
+      link: "Visita il pannello d'Apprendimento Automatico"
+      subject: "Apprendimento Automatico - Si è verificato un errore eseguendo lo script"
+      text: "Si è verificato un errore eseguendo lo script d'Apprendimento Automatico."
+      title: "Script d'Apprendimento Automatico"
+    machine_learning_success:
+      link: "Visita il pannello d'Apprendimento Automatico"
+      subject: "Apprendimento Automatico - Contenuto generato correttamente"
+      text: "Il contenuto è stato generato correttamente."
+      title: "Script d'Apprendimento Automatico"
+    new_actions_notification_rake_created:
+      subject: "Altre notizie sulla tua proposta cittadina"
+      hi: "Ciao %{name},"
+      new_resource: "NUOVA RISORSA SBLOCCATA"
+      introduction: "Come sai, il giorno %{created_at_day} del %{created_at_month} creato la proposta in modalità bozza %{title}."
+      text_1: "Quando vuoi, puoi pubblicare a questo link: %{link_to_published}. Se non sei ancora sicuro..."
+      text_2: "Cogli l'attimo! Impara, aggiungi altre persone con gli stessi interessi e prepara la diffusione di cui avrai bisogno pubblicando definitivamente la tua proposta."
+      text_3: "E per accompagnarti in questa sfida, ecco le novità..."
+      text_4: "Dà un'occhiata a questa NUOVA AZIONE consigliata:"
+      text_5: "La prossima azione consigliata è:"
+      footer_text: "Come sempre, accedi al Pannello delle Proposte e ti diremo nel dettaglio come usare queste risorse e come ottenere il massimo da esse."
+      dashboard_button: "Va avanti, scoprile!"
+    new_actions_notification_rake_published:
+      subject: "Altre notizie sulla tua proposta cittadina"
+      hi: "Ciao %{name},"
+      new_resource: "NUOVA RISORSA SBLOCCATA"
+      introduction: "Come sai, il giorno %{published_at_day} del %{published_at_month} hai pubblicato la proposta in modalità bozza %{title}."
+      text_1: "Bene, hai il supporto di %{votes_count}, finora. Congratulazioni!"
+      text_2: "E quindi, hai una nuova risorsa disponibile per aiutarti ad andare avanti."
+      text_3: "Ti mancano %{days_count} giorni prima che la tua proposta ottenga %{max_votes_count} supporti e vada al referendum. Rallegrati e continua a diffonderla. Sei a corto d'idee?"
+      text_4: "NUOVA AZIONE DI DIFFUSIONE CONSIGLIATA"
+      text_5: "E c'è dell'altro, guarda l'azione seguente:"
+      footer_text: "Come sempre, accedi al Pannello delle Proposte e ti diremo nel dettaglio come usare queste risorse e come ottenere il massimo da esse."
+      dashboard_button: "Va avanti, scoprile!"
+    new_actions_notification_on_create:
+      subject: "La bozza della tua proposta cittadina è stata creata"
+      hi: "Salve %{name}!"
+      introduction: "La tua proposta %{title} è stata creata correttamente."
+      text_1: "Avvantaggiati del fatto che la tua proposta non sia ancora pubblica e preparati a contattare tante persone."
+      text_2: "Quando sei pronto pubblica la tua proposta cittadina da questo <a href='%{link}'>link</a>."
+      text_4: "Hai uno strumento che sarà il tuo miglior alleato: Il pannello delle Proposte Cittadine."
+      list_1: "Accedi ogni giorno al pannello della tua proposta per usare consigli e risorse che condivideremo con te."
+      list_2: "Questi consigli, azioni e risorse ti daranno idee e soluzioni pratiche per ricevere maggiore supporto e una community più ampia. Non dimenticarli!"
+      list_3: "Ottenendo maggiore supporto, sbloccherai nuove, migliori risorse. Al momento, hai un modello email da inviare enormemente a tutti i tuoi contatti, un poster da stampare, tra altre funzionalità e premi che scoprirai. Non smettere di aggiungere supporto e non smetteremo di ricompensarti e aiutarti!"
+      list_4: "Hai %{max_month} mesi dalla pubblicazione della proposta per ottenere un supporto di %{max_votes} persone e la tua proposta possa divenire una realtà. Ma i primi giorni sono i più importanti. È una sfida. Preparati!"
+      text_5: "E perché tu inizi con tutta la motivazione,"
