@@ -23,6 +23,8 @@ it:
           target_1_A:
             long_title: "Assicurare una significativa mobilitazione di risorse da ogni varietà di fonti, incluso tramite la cooperazione di sviluppo migliorata, per poter fornire mezzi adeguati e prevedibili per i paesi in via di sviluppo, in particolare i meno sviluppati, per implementare programmi e politiche per metter fine alla povertà in tutte le sue forme"
             short_title: "Mobilizzare Risorse per Implementare Politiche per Metter Fine alla Povertà"
+          target_1_B:
+            long_title: "Creare quadri politici adeguati a livello nazionale, regionale e internazionale, in base a strategie di sviluppo pro-povertà e sensibili al genere, per supportare l'investimento accelerato nelle azioni d'eradicazione della povertà"
       goal_2:
         title: "Zero Fame"
         title_in_two_lines: "Zero\nFame"
