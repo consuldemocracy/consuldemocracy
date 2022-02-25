@@ -16,6 +16,7 @@ it:
         table_assigned_investments_valuation_open: Proposte di investimento assegnate in valutazione
         table_actions: Azioni
         evaluate: Valutare
+        no_budgets: "Nessun budget"
     budget_investments:
       index:
         headings_filter_all: Tutte le voci
@@ -58,6 +59,10 @@ it:
         price: "Prezzo (%{currency})"
         price_first_year: "Costo durante il primo anno (%{currency}) <small>(dati facoltativi, non pubblici)</small>"
         feasibility: Fattibilità
+        valuation_finished_alert: "Sei sicuro di voler contrassegnare questo rapporto come completo? Se lo fai, non sarà più modificabile."
+        not_feasible_alert: "Un'email sarà immediatamente inviata all'autore del progetto con il rapporto di irrealizzabilità."
         save: Salva modifiche
       notice:
         valuate: "Dossier aggiornato"
+      valuation_comments: Commenti valutativi
+      not_in_valuating_phase: Gli investimenti sono valutabili solo quando il Budget è nella fase valutativa
