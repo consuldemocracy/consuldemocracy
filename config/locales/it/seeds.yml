@@ -35,6 +35,7 @@ it:
         label: "Budget Partecipativi"
       debate:
         title: "Come funzionano i dibattiti?"
+        description: "Chiunque può aprire discussioni su ogni oggetto, creando spazi separati dove le persone possano discutere l'argomento proposto. I dibattiti sono valutati da tutti, per evidenziare i problemi più importanti."
         link_text: "Di più sui dibattiti"
         label: "Dibattiti"
       header:
@@ -80,6 +81,7 @@ it:
     legislation:
       draft_versions:
         title: "Versione %{number}"
+        body: "Versione della bozza in %{language}"
     polls:
       current_poll: "Votazione Corrente"
       current_poll_geozone_restricted: "Votazione Corrente Geograficamente Ristretta"
