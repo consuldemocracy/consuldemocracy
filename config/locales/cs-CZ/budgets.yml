@@ -164,6 +164,7 @@ cs:
       wrong_price_format: Pouze celá čísla
       investment:
         add: Hlasujte
+        add_label: "Hlasuji pro %{investment}"
         already_added: Tento investiční projekt jste již přidali
         support_title: Podpořit tento projekt
         supports:
