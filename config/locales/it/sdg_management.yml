@@ -10,6 +10,8 @@ it:
         create: "Crea intestazione"
         no_cards: "Nessun'intestazione"
         title: "Intestazione"
+      create_card: "Crea %{phase} scheda"
+      no_cards: "Nessuna scheda per questa fase"
     menu:
       budget_investments: "Bilanci partecipativi"
       debates: "Dibattiti"
