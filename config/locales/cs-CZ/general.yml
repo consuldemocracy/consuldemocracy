@@ -433,6 +433,7 @@ cs:
         many: "%{count} komentářů"
         other: "%{count} komentářů"
       support: Podpořit
+      support_label: "Podpořit %{proposal}"
       support_title: Podpořit tento návrh
       supports:
         zero: Žádná podpora
@@ -882,6 +883,7 @@ cs:
       retired_help_text: Ovládací panel není k dispozici pro vyřazené návrhy
   votes:
     agree: Souhlasím
+    agree_label: "Souhlasím s %{title}"
     anonymous: Příliš mnoho anonymních hlasů k přijetí hlasování %{verify_account}.
     disagree: Nesouhlasím
     organizations: Organizacím není dovoleno hlasovat
