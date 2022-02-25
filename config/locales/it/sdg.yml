@@ -204,6 +204,27 @@ it:
           target_7_3:
             long_title: "Per il 2030, raddoppiare il tasso globale di miglioramento nell'efficienza energetica."
             short_title: "Raddoppiare il Miglioramento in Efficienza Energetica"
+          target_7_A:
+            long_title: "Per il 2030, migliorare la cooperazione internazionale per facilitare l'accesso alla ricerca sull'energia pulita e la tecnologia, inclusa l'energia rinnovabile, l'efficienza energetica e la tecnologia di combustibili fossili avanzati e più puliti e promuovere l'investimento nell'infrastruttura energetica e nella tecnologia d'energia pulita."
+            short_title: "Promuovere Accesso a Ricerca, Tecnologia e Investimenti nell'Energia Pulita "
+          target_7_B:
+            long_title: "Per il 2030, espandere l'infrastruttura e aggiornare la tecnologia per fornire servizi energetici moderni e sostenbili per tutti i paesi in via di sviluppo, in particolare i paesi meno sviluppati, gli Stati in via di sviluppo su piccole isole e i paesi in via di sviluppo senza sbocco sul mare, a seconda dei loro rispettivi programmi di supporto."
+            short_title: "Espandere e Aggiornare i Servizi Energetici per i Paesi in Via di Sviluppo"
+      goal_8:
+        title: "Lavoro Decente e Crescita Economica"
+        title_in_two_lines: "Lavoro Decente e\nCrescita Economica"
+        description: "Promuovere la crescita economica inclusiva e sostenibile, l'impiego e il lavoro decente per tutti."
+        targets:
+          target_8_1:
+            long_title: "Sostenere la crescita economica procapite secondo le circostanze nazionali e, in particolare, almeno il 7% di crescita del prodotto domestico lordo annuo nei paesi meno sviluppati."
+            short_title: "Crescita Economica Sostenibile"
+          target_8_2:
+            long_title: "Ottenere livelli maggiori di produttività economica tramite la diversificazione, l'aggiornamento tecnologico e l'innovazione, incluso concentrandosi sull'alto valore aggiunto e i settori a lavoro intensivo."
+            short_title: "Diversificare, Innovare e Aggiornare per la Produttività Economica"
+          target_8_3:
+            short_title: "Promuovere Politiche per Supportare la Creazione di Lavoro e lo Sviluppo delle Imprese"
+          target_8_4:
+            short_title: "Migliorare l'Efficienza della Risorsa nel Consumo e la Produzione"
       goal_9:
         title_in_two_lines: "Industria, Innovazione\ne Infrastruttura"
         description: "Creare un'infrastruttura resiliente, promuovere l'industrializzazione sostenibile e favorire l'innovazione."
