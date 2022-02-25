@@ -153,11 +153,13 @@ it:
             long_title: "Assicurare l'accesso universale ai diritti sessuali, riproduttivi e di salute riproduttiva come acconsentito in accordo al Programma d'Azione della Conferenza Internazionale sulla Popolazione e lo Sviluppo e la Piattaforma d'Azione di Pechino e i documenti risultati delle loro conferenze di revisione."
             short_title: "Accesso Universale a Salute Riproduttiva e Diritti"
           target_5_A:
+            long_title: "Intraprendere riforme per dare alle donne pari diritti alle risorse economiche, nonché accesso alla proprietà e il controllo terriero e altre forme di proprietà, servizi finanziari, risorse ereditiere e naturali, secondo le leggi nazionali."
             short_title: "Pari Diritti alle Risorse Economiche, Possesso di Proprietà e Servizi Finanziari"
           target_5_B:
             long_title: "Migliorare l'uso di tecnologia abilitante, in particolare delle informazioni e comunicazioni, per promuovere l'emancipazione delle donne."
             short_title: "Promuovere l'Emancipazione delle Donne tramite la Tecnologia"
           target_5_C:
+            long_title: "Adottare e rafforzare polizie adatte e legislazione imponibile per la promozione dell'uguaglianza di genere e l'emancipazione di tutte le donne e ragazze a tutti i livelli."
             short_title: "Adottare e Rafforzare Politiche e Legislazione Applicabile per l'Uguaglianza di Genere"
       goal_6:
         title: "Acqua Pulita e Sanificazione"
@@ -199,6 +201,9 @@ it:
           target_7_2:
             long_title: "Per il 2030, aumentare sostanzialmente la condivisione di energia rinnovabile nel miscuglio energetico globale."
             short_title: "Aumentare la Percentuale Globale di Energia Rinnovabile"
+          target_7_3:
+            long_title: "Per il 2030, raddoppiare il tasso globale di miglioramento nell'efficienza energetica."
+            short_title: "Raddoppiare il Miglioramento in Efficienza Energetica"
       goal_9:
         title_in_two_lines: "Industria, Innovazione\ne Infrastruttura"
         description: "Creare un'infrastruttura resiliente, promuovere l'industrializzazione sostenibile e favorire l'innovazione."
