@@ -170,7 +170,7 @@ namespace :admin do
     end
 
     resources :questions, shallow: true do
-      resources :answers, except: [:index, :destroy], controller: "questions/answers" do
+      resources :answers, except: [:index, :show], controller: "questions/answers" do
         resources :images, controller: "questions/answers/images"
         resources :videos, controller: "questions/answers/videos"
         get :documents, to: "questions/answers#documents"

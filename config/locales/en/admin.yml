@@ -1140,7 +1140,6 @@ en:
         author: Author
         question: Question
         edit_question: Edit question
-        valid_answers: Valid answers
         add_answer: Add answer
         video_url: External video
         answers:
@@ -1157,14 +1156,10 @@ en:
     answers:
       new:
         title: New answer
-      show:
-        title: Title
-        description: Description
-        images: Images
-        images_list: Images list
-        edit: Edit answer
       edit:
         title: Edit answer
+      destroy:
+        success_notice: "Answer deleted succesfully"
       videos:
         index:
           title: Videos

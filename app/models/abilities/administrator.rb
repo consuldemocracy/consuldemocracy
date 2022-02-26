@@ -92,6 +92,10 @@ module Abilities
       can [:update, :destroy], Poll::Question do |question|
         question.poll.started? == false
       end
+      can [:read, :create, :documents, :order_answers], Poll::Question::Answer
+      can [:update, :destroy], Poll::Question::Answer do |answer|
+        answer.question.poll.started? == false
+      end
 
       can :manage, SiteCustomization::Page
       can :manage, SiteCustomization::Image

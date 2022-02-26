@@ -1139,7 +1139,6 @@ es:
         author: Autor
         question: Pregunta
         edit_question: Editar pregunta
-        valid_answers: Respuestas válidas
         add_answer: Añadir respuesta
         video_url: Vídeo externo
         answers:
@@ -1156,14 +1155,10 @@ es:
     answers:
       new:
         title: Nueva respuesta
-      show:
-        title: Título
-        description: Descripción
-        images: Imágenes
-        images_list: Lista de imágenes
-        edit: Editar respuesta
       edit:
         title: Editar respuesta
+      destroy:
+        success_notice: "Respuesta eliminada correctamente"
       videos:
         index:
           title: Vídeos

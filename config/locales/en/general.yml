@@ -791,10 +791,13 @@ en:
       all: "You do not have permission to carry out the action '%{action}' on %{subject}."
     create:
       poll/question: "It is not possible to create questions for an already started poll."
+      poll/question/answer: "It is not possible to create answers for an already started poll."
     update:
       poll/question: "It is not possible to modify questions for an already started poll."
+      poll/question/answer: "It is not possible to modify answers for an already started poll."
     destroy:
       poll/question: "It is not possible to delete questions for an already started poll."
+      poll/question/answer: "It is not possible to delete answers for an already started poll."
   users:
     login_to_comment: "You must %{signin} or %{signup} to leave a comment."
     login_to_continue: "You must %{signin} or %{signup} to continue."

@@ -791,10 +791,13 @@ es:
       all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
     create:
       poll/question: "No es posible añadir preguntas si la votación ya ha comenzado."
+      poll/question/answer: "No es posible añadir respuestas si la votación ya ha comenzado."
     update:
       poll/question: "No es posible modificar preguntas si la votación ya ha comenzado."
+      poll/question/answer: "No es posible modificar respuestas si la votación ya ha comenzado."
     destroy:
       poll/question: "No es posible eliminar preguntas si la votación ya ha comenzado."
+      poll/question/answer: "No es posible eliminar respuestas si la votación ya ha comenzado."
   users:
     login_to_comment: "Necesitas %{signin} o %{signup} para comentar."
     login_to_continue: "Necesitas %{signin} o %{signup} para continuar."
