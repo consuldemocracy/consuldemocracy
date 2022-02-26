@@ -1154,12 +1154,6 @@ en:
     answers:
       new:
         title: New answer
-      show:
-        title: Title
-        description: Description
-        images: Images
-        images_list: Images list
-        edit: Edit answer
       edit:
         title: Edit answer
       videos:

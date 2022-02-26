@@ -1153,12 +1153,6 @@ es:
     answers:
       new:
         title: Nueva respuesta
-      show:
-        title: Título
-        description: Descripción
-        images: Imágenes
-        images_list: Lista de imágenes
-        edit: Editar respuesta
       edit:
         title: Editar respuesta
       videos:

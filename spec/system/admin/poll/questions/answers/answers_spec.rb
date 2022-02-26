@@ -33,15 +33,13 @@ describe "Answers", :admin do
 
   scenario "Update" do
     question = create(:poll_question)
-    answer = create(:poll_question_answer, question: question, title: "Answer title", given_order: 2)
+    create(:poll_question_answer, question: question, title: "Answer title", given_order: 2)
     create(:poll_question_answer, question: question, title: "Another title", given_order: 1)
 
-    visit admin_question_answer_path(question, answer)
-
-    click_link "Edit answer"
+    visit admin_question_path(question)
+    within("tr", text: "Answer title") { click_link "Edit" }
 
     fill_in "Answer", with: "New title"
-
     click_button "Save"
 
     expect(page).to have_content "Changes saved"
