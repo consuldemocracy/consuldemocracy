@@ -1028,6 +1028,7 @@ it:
       flash:
         create: "Turno aggiunto"
         destroy: "Turno rimosso"
+        unable_to_destroy: "I cambiamenti di risultati o riconteggi associati non sono eliminabili"
         date_missing: "È necessario selezionare una data"
       vote_collection: Raccogli Voti
       recount_scrutiny: Riconteggio & Scrutinio
@@ -1677,6 +1678,7 @@ it:
           title: Gestisci il censimento locale
           subtitle: Importa i risultati del processo
           import: Importa di nuovo
+          errored: Righe errate
           created: Registri creati
         local_census_records:
           no_records_found: Nessun registro trovato.
