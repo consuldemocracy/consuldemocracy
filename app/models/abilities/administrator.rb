@@ -96,7 +96,7 @@ module Abilities
         !question.poll.started?
       end
       can [:read, :order_answers], Poll::Question::Answer
-      can [:create, :update], Poll::Question::Answer do |answer|
+      can [:create, :update, :destroy], Poll::Question::Answer do |answer|
         can?(:update, answer.question)
       end
       can :manage, Poll::Question::Answer::Video

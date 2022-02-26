@@ -9,6 +9,6 @@ class Admin::Poll::Questions::Answers::TableActionsComponent < ApplicationCompon
   private
 
     def actions
-      [:edit].select { |action| can?(action, answer) }
+      [:edit, :destroy].select { |action| can?(action, answer) }
     end
 end

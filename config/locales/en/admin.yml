@@ -1159,6 +1159,8 @@ en:
         title: New answer
       edit:
         title: Edit answer
+      destroy:
+        success_notice: "Answer deleted successfully"
       videos:
         index:
           title: Videos
