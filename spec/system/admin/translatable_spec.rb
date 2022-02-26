@@ -215,7 +215,7 @@ describe "Admin edit translatable records", :admin do
     end
 
     context "CKEditor fields" do
-      let(:translatable) { create(:poll_question_answer) }
+      let(:translatable) { create(:poll_question_answer, poll: create(:poll, :future)) }
       let(:path) { edit_admin_question_answer_path(translatable.question, translatable) }
 
       scenario "Changes the existing translation" do
