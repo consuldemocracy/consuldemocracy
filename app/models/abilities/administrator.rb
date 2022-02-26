@@ -95,7 +95,10 @@ module Abilities
       can [:update, :destroy], Poll::Question do |question|
         !question.poll.started?
       end
-      can :manage, Poll::Question::Answer
+      can [:read, :order_answers], Poll::Question::Answer
+      can [:create, :update], Poll::Question::Answer do |answer|
+        can?(:update, answer.question)
+      end
       can :manage, Poll::Question::Answer::Video
       can [:create, :destroy], Image do |image|
         image.imageable_type == "Poll::Question::Answer"

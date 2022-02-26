@@ -32,8 +32,14 @@
 </div>
 
 <div class="clear">
-  <%= link_to t("admin.questions.show.add_answer"), new_admin_question_answer_path(@question),
-              class: "button float-right" %>
+  <% if can?(:create, Poll::Question::Answer.new(question: @question)) %>
+    <%= link_to t("admin.questions.show.add_answer"), new_admin_question_answer_path(@question),
+                class: "button float-right" %>
+  <% else %>
+    <div class="callout warning">
+      <strong><%= t("admin.questions.no_edit") %></strong>
+    </div>
+  <% end %>
 </div>
 
 <table class="margin-top">
@@ -73,7 +79,7 @@
                       admin_answer_videos_path(answer) %>
         </td>
         <td>
-          <%= render Admin::TableActionsComponent.new(answer, actions: [:edit]) %>
+          <%= render Admin::Poll::Questions::Answers::TableActionsComponent.new(answer) %>
         </td>
       </tr>
     <% end %>

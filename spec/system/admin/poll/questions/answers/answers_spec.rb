@@ -1,40 +1,55 @@
 require "rails_helper"
 
 describe "Answers", :admin do
-  scenario "Create" do
-    question = create(:poll_question)
+  let(:future_poll) { create(:poll, :future) }
+  let(:current_poll) { create(:poll) }
 
-    visit admin_question_path(question)
-    click_link "Add answer"
+  describe "Create" do
+    scenario "Is possible for a not started poll" do
+      question = create(:poll_question, poll: future_poll)
 
-    expect(page).to have_link "Go back", href: admin_question_path(question)
+      visit admin_question_path(question)
+      click_link "Add answer"
 
-    fill_in "Answer", with: "The answer is always 42"
-    fill_in_ckeditor "Description", with: "The Hitchhiker's Guide To The Universe"
+      expect(page).to have_link "Go back", href: admin_question_path(question)
 
-    click_button "Save"
+      fill_in "Answer", with: "The answer is always 42"
+      fill_in_ckeditor "Description", with: "The Hitchhiker's Guide To The Universe"
 
-    expect(page).to have_content "The answer is always 42"
-    expect(page).to have_content "The Hitchhiker's Guide To The Universe"
-  end
+      click_button "Save"
 
-  scenario "Create second answer and place after the first one" do
-    question = create(:poll_question)
-    create(:poll_question_answer, title: "First", question: question, given_order: 1)
+      expect(page).to have_content "Answer created successfully"
+      expect(page).to have_content "The answer is always 42"
+      expect(page).to have_content "The Hitchhiker's Guide To The Universe"
+    end
 
-    visit admin_question_path(question)
-    click_link "Add answer"
+    scenario "Is not possible for an already started poll" do
+      question = create(:poll_question, poll: current_poll)
 
-    fill_in "Answer", with: "Second"
-    fill_in_ckeditor "Description", with: "Description"
+      visit admin_question_path(question)
 
-    click_button "Save"
+      expect(page).not_to have_link "Add answer"
+      expect(page).to have_content "Once the poll has started it will not be possible to create, edit or"
+    end
 
-    expect("First").to appear_before("Second")
+    scenario "Create second answer and place after the first one" do
+      question = create(:poll_question, poll: future_poll)
+      create(:poll_question_answer, title: "First", question: question, given_order: 1)
+
+      visit admin_question_path(question)
+      click_link "Add answer"
+
+      fill_in "Answer", with: "Second"
+      fill_in_ckeditor "Description", with: "Description"
+
+      click_button "Save"
+
+      expect("First").to appear_before("Second")
+    end
   end
 
   scenario "Update" do
-    question = create(:poll_question)
+    question = create(:poll_question, poll: future_poll)
     create(:poll_question_answer, question: question, title: "Answer title", given_order: 2)
     create(:poll_question_answer, question: question, title: "Another title", given_order: 1)
 
