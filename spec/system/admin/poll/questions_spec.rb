@@ -1,6 +1,9 @@
 require "rails_helper"
 
 describe "Admin poll questions", :admin do
+  let(:future_poll) { create(:poll, name: "Movies") }
+  let(:current_poll) { create(:poll, :current, name: "Movies") }
+
   scenario "Index" do
     poll1 = create(:poll)
     poll2 = create(:poll)
@@ -54,21 +57,35 @@ describe "Admin poll questions", :admin do
     expect(page).to have_content(question.author.name)
   end
 
-  scenario "Create" do
-    poll = create(:poll, name: "Movies")
-    title = "Star Wars: Episode IV - A New Hope"
+  context "Create" do
+    scenario "Is possible for a not started poll" do
+      visit admin_poll_path(future_poll)
+      click_link "Create question"
 
-    visit admin_poll_path(poll)
-    click_link "Create question"
+      expect(page).to have_content("Create question to poll Movies")
+      expect(page).to have_selector("input[id='poll_question_poll_id'][value='#{future_poll.id}']",
+                                    visible: :hidden)
+      fill_in "Question", with: "Star Wars: Episode IV - A New Hope"
 
-    expect(page).to have_content("Create question to poll Movies")
-    expect(page).to have_selector("input[id='poll_question_poll_id'][value='#{poll.id}']",
-                                   visible: :hidden)
-    fill_in "Question", with: title
+      click_button "Save"
+      expect(page).to have_content "Star Wars: Episode IV - A New Hope"
+      expect(future_poll.questions).not_to be_empty
+    end
 
-    click_button "Save"
+    scenario "Is not possible for an already started poll" do
+      visit admin_poll_path(current_poll)
+      click_link "Create question"
 
-    expect(page).to have_content(title)
+      expect(page).to have_content("Create question to poll Movies")
+      expect(page).to have_selector("input[id='poll_question_poll_id'][value='#{current_poll.id}']",
+                                    visible: :hidden)
+      fill_in "Question", with: "Star Wars: Episode IV - A New Hope"
+
+      click_button "Save"
+      expect(page).not_to have_content "Star Wars: Episode IV - A New Hope"
+      expect(page).to have_content "It is not possible to create questions for an already started poll."
+      expect(future_poll.questions).to be_empty
+    end
   end
 
   scenario "Create from proposal" do
@@ -113,42 +130,76 @@ describe "Admin poll questions", :admin do
     expect(page).to have_content(proposal.title)
   end
 
-  scenario "Update" do
-    poll = create(:poll)
-    question1 = create(:poll_question, poll: poll)
+  context "Update" do
+    scenario "Is possible for a not started poll" do
+      question = create(:poll_question, poll: future_poll)
+      old_title = question.title
+      new_title = "Vegetables are great and everyone should have one"
 
-    visit admin_poll_path(poll)
+      visit admin_poll_path(future_poll)
 
-    within("#poll_question_#{question1.id}") do
-      click_link "Edit"
+      within("#poll_question_#{question.id}") do
+        click_link "Edit"
+      end
+
+      fill_in "Question", with: new_title
+
+      click_button "Save"
+
+      expect(page).to have_content "Changes saved"
+      question.reload
+      expect(question.title).to eq new_title
+      expect(question.title).not_to eq old_title
     end
 
-    old_title = question1.title
-    new_title = "Potatoes are great and everyone should have one"
-    fill_in "Question", with: new_title
+    scenario "Is not possible for an already started poll" do
+      question = create(:poll_question, poll: current_poll)
+      old_title = question.title
+      new_title = "Vegetables are great and everyone should have one"
 
-    click_button "Save"
+      visit admin_poll_path(current_poll)
 
-    expect(page).to have_content "Changes saved"
-    expect(page).to have_content new_title
-    expect(page).not_to have_content(old_title)
+      within("#poll_question_#{question.id}") do
+        click_link "Edit"
+      end
+
+      expect(page).to have_content "It is not possible to modify questions for an already started poll."
+      question.reload
+      expect(question.title).not_to eq new_title
+      expect(question.title).to eq old_title
+    end
   end
 
-  scenario "Destroy" do
-    poll = create(:poll)
-    question1 = create(:poll_question, poll: poll)
-    question2 = create(:poll_question, poll: poll)
+  context "Destroy" do
+    scenario "Is possible for a not started poll" do
+      question1 = create(:poll_question, poll: future_poll)
+      question2 = create(:poll_question, poll: future_poll)
 
-    visit admin_poll_path(poll)
+      visit admin_poll_path(future_poll)
 
-    within("#poll_question_#{question1.id}") do
-      accept_confirm("Are you sure? This action will delete \"#{question1.title}\" and can't be undone.") do
-        click_button "Delete"
+      within("#poll_question_#{question1.id}") do
+        accept_confirm("Are you sure? This action will delete \"#{question1.title}\" and can't be undone.") do
+          click_button "Delete"
+        end
       end
+
+      expect(page).not_to have_content(question1.title)
+      expect(page).to have_content(question2.title)
+      expect(future_poll.questions.count).to be 1
     end
 
-    expect(page).not_to have_content(question1.title)
-    expect(page).to have_content(question2.title)
+    scenario "Is not possible for an already started poll" do
+      create_list(:poll_question, 2, poll: current_poll)
+
+      visit admin_poll_path(current_poll)
+
+      within("#poll_question_#{current_poll.questions.first.id}") do
+        accept_confirm { click_button "Delete" }
+      end
+
+      expect(page).to have_content "It is not possible to delete questions for an already started poll."
+      expect(current_poll.questions.count).to be 2
+    end
   end
 
   context "Poll select box" do

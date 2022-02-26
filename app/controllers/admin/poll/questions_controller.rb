@@ -5,6 +5,8 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
   load_and_authorize_resource :poll
   load_and_authorize_resource :question, class: "Poll::Question"
 
+  before_action :authorize_create_question, only: :create
+
   def index
     @polls = Poll.not_budget
     @questions = @questions.search(search_params).page(params[:page]).order("created_at DESC")
@@ -69,5 +71,12 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
 
     def resource
       @poll_question ||= Poll::Question.find(params[:id])
+    end
+
+    def authorize_create_question
+      poll = Poll.find_by id: question_params[:poll_id]
+      if poll&.started?
+        redirect_to admin_poll_path(poll), alert: t("unauthorized.create.poll/question")
+      end
     end
 end
