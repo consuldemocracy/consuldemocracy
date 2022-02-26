@@ -109,10 +109,35 @@ it:
       community: "Community su proposte e investimenti"
       community_description: "Abilita la sezione della community nelle proposte e nei progetti d'investimento dei Budget Partecipativi"
       machine_learning: "IA / Apprendimento Automatico"
+      machine_learning_description: "Abilita la sezione dell'IA / Apprendimento Automatico per eseguire script in Python e arricchire automaticamente il contenuto."
+      map: "Geolocalizzazione di proposte e investimenti del budget"
+      map_description: "Abilita la geolocalizzazione delle proposte e dei progetti d'investimento"
+      allow_images: "Consenti il caricamento e la visualizzazione di immagini"
+      allow_images_description: "Consente agli utenti di caricare immagini creando le proposte e i progetti d'investimento dai Budget Partecipativi"
+      allow_attached_documents: "Consenti il caricamento e la visualizzazione di documenti allegati"
+      allow_attached_documents_description: "Consente agli utenti di caricare documenti creando proposte e progetti d'investimento dai Budget partecipativi"
+      guides: "Guide alla creazione di proposte o progetti d'investimento"
+      guides_description: "Mostra una guida alle differenze tra proposte e progetti d'investimento se c'è un budget partecipativo attivo"
+      public_stats: "Statistiche pubbliche"
+      public_stats_description: "Mostra le statistiche pubbliche nel pannello d'Amministrazione"
       help_page: "Guida"
+      help_page_description: 'Mostra un menu d''Aiuto che contiene una pagina con una sezione di info su ogni funzionalità abilitata. Anche le pagine personalizzate e i menu sono creabili nelle sezioni "Pagine personalizzate" e "Blocchi di contenuto personalizzati"'
+      remote_translations: "Traduzione remota"
+      remote_translations_description: "Mostra un pulsante che consente agli utenti di richiedere una traduzione quando non ci sono contenuti nella loro lingua."
+      translation_interface: "Interfaccia di traduzione"
+      translation_interface_description: "Mostra l'interfaccia di traduzione manuale che consente agli utenti di inserire i propri contenuti in tutte le lingue disponibili. Quest'opzione influenza solo i moduli di richiesta dell'utente e sarà indipendentemente sempre attiva nel pannello d'amministrazione."
+      remote_census: "Configura la connessione al censimento remoto (SOAP)"
+      remote_census_description: "Consente di configurare la connessione al censimento remoto di ogni istituzione"
+      valuation_comment_notification: "Notifica del commento valutativo"
+      valuation_comment_notification_description: "Invia un'email a tutti gli utenti associati tranne l'utente del commento valutativo dell'investimento di budget quando è creato un nuovo commento valutativo"
+      graphql_api: "API di GraphQL"
+      dashboard:
+        notification_emails: "Email di notifica del pannello di controllo"
+        notification_emails_description: "Abilita l'invio di email di notifica del pannello di controllo agli autori della proposta"
       remove_investments_supports: "Consenti di rimuovere i supporti agli investimenti del budget"
       remove_investments_supports_description: "Consenti agli utenti di rimuovere i supporti agli investimenti di budget partecipatori durante la fase selettiva dei progetti."
       sdg: SDG
+      sdg_description: Abilita le sezioni degli Obiettivi di Sviluppo Sostenibile nel menu d'amministrazione e nelle Impostazioni Globali.
     remote_census:
       general:
         endpoint: "Endpoint"
@@ -123,19 +148,33 @@ it:
         structure: "Struttura della Richiesta"
         structure_description: 'Struttura della Richiesta da inviare al Census WebService Consiglio comunale. I valori "statici" di questa richiesta dovrebbero esser compilati. I valori correlati al Tipo di Documento, Numero di Documento, Data di Nascita e Codice Postale dovrebbero esser nulli. Esempio di un formato valido: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": q, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
         document_type: "Percorso per il Tipo di Documento"
+        document_type_description: "Percorso nella struttura della richiesta che invia il Tipo di Documento. NON COMPILARE se il Servizio Web non richiede il Tipo di Documento per verificare un utente."
         document_number: "Percorso per il Numero di Documento"
+        document_number_description: "Percorso nella struttura della richiesta che invia il Numero di Documento. NON COMPILARE se il Servizio Web non richiede il Numero di Documento per verificare un utente."
         date_of_birth: "Percorso per la Data di Nascita"
+        date_of_birth_description: "Percorso nella struttura della richiesta che invia la Data di Nascita. NON COMPILARE se il Servizio Web non richiede il Data di Nascita per verificare un utente."
         postal_code: "Percorso per il Codice Postale"
+        postal_code_description: "Percorso nella struttura della richiesta che invia il Codice Postale. NON COMPILARE se il Servizio Web non richiede il Codice Postale per verificare un utente."
       response:
         date_of_birth: "Percorso per la Data di Nascita"
+        date_of_birth_description: "In che percorso della risposta si trova la Data di Nascita dell'utente?"
         postal_code: "Percorso per il Codice Postale"
+        postal_code_description: "In che percorso di risposta si trova il Codice Postale dell'utente?"
         district: "Percorso per il Distretto"
+        district_description: "In che percorso di risposta si trova il Distretto dell'utente?"
         gender: "Percorso per il Genere"
+        gender_description: "In che percorso di risposta si trova il Genere dell'utente?"
         name: "Percorso per il Nome"
+        name_description: "In che percorso di risposta si trova il Nome dell'utente?"
         surname: "Percorso per il Cognome"
+        surname_description: "In che percorso di risposta si trova il Cognome dell'utente?"
+        valid: "Condizione per rilevare una risposta valida"
+        valid_description: "Che percorso di risposta dev'esser informato perché una risposta sia considerata valida e un utente verificato"
     map:
       latitude: "Latitudine"
+      latitude_description: "Latitudine per mostrare la posizione della mappa"
       longitude: "Longitudine"
+      longitude_description: "Longitudine per mostrare la posizione della mappa"
       zoom: "Ingrandimento"
       zoom_description: "Ingrandisci per mostrare la posizione della mappa"
     process:
@@ -157,22 +196,31 @@ it:
     uploads:
       images:
         min_width: "Larghezza minima dell'immagine"
+        min_width_description: "Larghezza minima consentita per un'immagine caricata (in pixel)"
         min_height: "Altezza minima dell'immagine"
+        min_height_description: "Altezza minima consentita per un'immagine caricata (in pixel)"
         max_size: "Dimensione massima dell'immagine"
+        max_size_description: "Dimensione massima consentita per un'immagine caricata (in Megabyte/MB)"
         content_types: "Tipi di contenuti accettati per le immagini"
+        content_types_description: "Seleziona tutti i tipi di contenuti consentiti per caricare le immagini"
         title:
           min_length: "Lunghezza minima del titolo dell'immagine"
+          min_length_description: "Titolo fornito dall'utente caricando un'immagine (usato come un attributo alternativo HTML)"
           max_length: "Lunghezza massima del titolo dell'immagine"
           max_length_description: "Titolo fornito dall'utente caricando un'immagine (usato come un attributo alt HTML)"
       documents:
         max_amount: "Numero massimo di documenti"
         max_amount_description: "Numero massimo di documenti allegabili a una proposta, investimento..."
         max_size: "Dimensione massima del documento"
+        max_size_description: "Dimensione massima consentita per un documento caricato (in Megabyte/MB)"
         content_types: "Tipi di contenuti accettati per i documenti"
+        content_types_description: "Seleziona tutti i tipi di contenuti consentiti per caricare i documenti"
     sdg:
       process:
         debates: SDG correlati nei dibattiti
+        debates_description: Consenti ai dibattiti di esser collegati agli Obiettivi di Sviluppo Sostenibile
         proposals: SDG correlati nelle proposte
+        proposals_description: Consenti alle proposte di esser collegate agli Obiettivi di Sviluppo Sostenibile
         polls: SDG correlati nei sondaggi
         budgets: SDG correlati nei budget partecipativi
         legislation: SDG correlati nella legislazione collaborativa
