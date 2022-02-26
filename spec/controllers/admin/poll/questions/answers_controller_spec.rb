@@ -85,4 +85,23 @@ describe Admin::Poll::Questions::AnswersController, :admin do
       expect(future_answer.reload.title).to eq "New title"
     end
   end
+
+  describe "DELETE destroy" do
+    it "is not possible for an already started poll" do
+      current_answer = create(:poll_question_answer, question: current_question)
+      delete :destroy, params: { question_id: current_question, id: current_answer }
+
+      expect(flash[:alert]).to eq "You do not have permission to carry out the action 'destroy' on Answer."
+      expect(Poll::Question::Answer.count).to eq 1
+    end
+
+    it "is possible for a not started poll" do
+      future_answer = create(:poll_question_answer, question: future_question)
+      delete :destroy, params: { question_id: future_question, id: future_answer }
+
+      expect(response).to redirect_to admin_question_path(future_question)
+      expect(flash[:notice]).to eq "Answer deleted successfully"
+      expect(Poll::Question::Answer.count).to eq 0
+    end
+  end
 end

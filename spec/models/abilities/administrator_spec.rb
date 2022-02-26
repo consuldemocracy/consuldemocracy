@@ -127,8 +127,10 @@ describe Abilities::Administrator do
   it { should be_able_to(:order_answers, Poll::Question::Answer) }
   it { should be_able_to(:create, future_poll_question_answer) }
   it { should be_able_to(:update, future_poll_question_answer) }
+  it { should be_able_to(:destroy, future_poll_question_answer) }
   it { should_not be_able_to(:create, current_poll_question_answer) }
   it { should_not be_able_to(:update, current_poll_question_answer) }
+  it { should_not be_able_to(:destroy, current_poll_question_answer) }
 
   it { should be_able_to(:manage, Poll::Question::Answer::Video) }
 

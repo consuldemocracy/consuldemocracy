@@ -1158,6 +1158,8 @@ es:
         title: Nueva respuesta
       edit:
         title: Editar respuesta
+      destroy:
+        success_notice: "Respuesta eliminada correctamente"
       videos:
         index:
           title: Vídeos

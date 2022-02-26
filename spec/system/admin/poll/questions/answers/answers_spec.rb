@@ -71,6 +71,21 @@ describe "Answers", :admin do
     expect("Another title").to appear_before("New title")
   end
 
+  scenario "Destroy" do
+    answer = create(:poll_question_answer, poll: future_poll, title: "I'm not useful")
+
+    visit admin_question_path(answer.question)
+
+    within("tr", text: "I'm not useful") do
+      accept_confirm("Are you sure? This action will delete \"I'm not useful\" and can't be undone.") do
+        click_button "Delete"
+      end
+    end
+
+    expect(page).to have_content "Answer deleted successfully"
+    expect(page).not_to have_content "I'm not useful"
+  end
+
   scenario "Reorder" do
     question = create(:poll_question)
     create(:poll_question_answer, question: question, title: "First", given_order: 1)
