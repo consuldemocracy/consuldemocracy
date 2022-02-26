@@ -18,9 +18,6 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
     end
   end
 
-  def show
-  end
-
   def edit
   end
 
