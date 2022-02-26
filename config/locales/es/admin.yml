@@ -1128,6 +1128,8 @@ es:
       new:
         title: "Crear pregunta ciudadana para la votación %{poll}"
         title_proposal: "Crear pregunta ciudadana"
+      destroy:
+        success_notice: "Pregunta eliminada correctamente"
       answers:
         images:
           add_image: "Añadir imagen"

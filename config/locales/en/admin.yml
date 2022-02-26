@@ -1129,6 +1129,8 @@ en:
       new:
         title: "Create question to poll %{poll}"
         title_proposal: "Create question"
+      destroy:
+        success_notice: "Question deleted succesfully"
       answers:
         images:
           add_image: "Add image"
