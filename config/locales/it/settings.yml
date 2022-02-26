@@ -222,5 +222,8 @@ it:
         proposals: SDG correlati nelle proposte
         proposals_description: Consenti alle proposte di esser collegate agli Obiettivi di Sviluppo Sostenibile
         polls: SDG correlati nei sondaggi
+        polls_description: Consenti alle indagini di esser collegate agli Obiettivi di Sviluppo Sostenibile
         budgets: SDG correlati nei budget partecipativi
+        budgets_description: Consenti ai budget partecipativi di esser collegati agli Obiettivi di Sviluppo Sostenibile
         legislation: SDG correlati nella legislazione collaborativa
+        legislation_description: Consenti alla legislazione collaborativa di esser collegata agli Obiettivi di Sviluppo Sostenibile
