@@ -10,6 +10,7 @@ class Admin::Poll::Questions::Answers::ImagesController < Admin::Poll::BaseContr
   end
 
   def create
+    authorize! :update, @answer
     @answer.attributes = images_params
 
     if @answer.save
@@ -22,6 +23,8 @@ class Admin::Poll::Questions::Answers::ImagesController < Admin::Poll::BaseContr
 
   def destroy
     @image = ::Image.find(params[:id])
+    authorize! :update, @image.imageable
+
     @image.destroy!
 
     respond_to do |format|

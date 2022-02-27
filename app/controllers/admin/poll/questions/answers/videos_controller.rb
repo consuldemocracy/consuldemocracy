@@ -10,6 +10,7 @@ class Admin::Poll::Questions::Answers::VideosController < Admin::Poll::BaseContr
   end
 
   def create
+    authorize! :update, @answer
     @video = ::Poll::Question::Answer::Video.new(video_params)
 
     if @video.save
@@ -24,6 +25,7 @@ class Admin::Poll::Questions::Answers::VideosController < Admin::Poll::BaseContr
   end
 
   def update
+    authorize! :update, @video.answer
     if @video.update(video_params)
       redirect_to admin_answer_videos_path(@video.answer_id),
                notice: t("flash.actions.save_changes.notice")
@@ -33,6 +35,7 @@ class Admin::Poll::Questions::Answers::VideosController < Admin::Poll::BaseContr
   end
 
   def destroy
+    authorize! :update, @video.answer
     notice = if @video.destroy
                t("flash.actions.destroy.poll_question_answer_video")
              else

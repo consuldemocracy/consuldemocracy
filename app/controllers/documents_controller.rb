@@ -1,9 +1,15 @@
 class DocumentsController < ApplicationController
   before_action :authenticate_user!
 
-  load_and_authorize_resource
+  load_resource
 
   def destroy
+    if @document.documentable&.is_a? Poll::Question::Answer
+      authorize! :update, @document.documentable
+    else
+      authorize! :destroy, @document
+    end
+
     respond_to do |format|
       format.html do
         if @document.destroy
