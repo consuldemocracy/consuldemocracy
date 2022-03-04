@@ -302,7 +302,7 @@ GEM
     httpi (2.4.5)
       rack
       socksify
-    i18n (1.8.10)
+    i18n (1.10.0)
       concurrent-ruby (~> 1.0)
     i18n-tasks (0.9.34)
       activesupport (>= 4.0.2)
@@ -376,7 +376,7 @@ GEM
     mini_magick (4.11.0)
     mini_mime (1.1.0)
     mini_portile2 (2.8.0)
-    minitest (5.14.4)
+    minitest (5.15.0)
     mixlib-cli (2.1.8)
     mixlib-config (3.0.9)
       tomlrb
@@ -651,7 +651,7 @@ GEM
     unicode-display_width (1.7.0)
     uniform_notifier (1.14.2)
     uuidtools (2.1.5)
-    view_component (2.37.0)
+    view_component (2.49.1)
       activesupport (>= 5.0.0, < 8.0)
       method_source (~> 1.0)
     warden (1.2.9)
@@ -780,7 +780,7 @@ DEPENDENCIES
   turnout (~> 2.5.0)
   uglifier (~> 4.2.0)
   uuidtools (~> 2.1.5)
-  view_component (~> 2.37.0)
+  view_component (~> 2.49.1)
   web-console (~> 3.7.0)
   webdrivers (~> 4.6.0)
   whenever (~> 1.0.0)
