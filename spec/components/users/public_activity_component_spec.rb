@@ -1,8 +1,10 @@
 require "rails_helper"
 
 describe Users::PublicActivityComponent, controller: UsersController do
+  include Rails.application.routes.url_helpers
+
   around do |example|
-    with_request_url(Rails.application.routes.url_helpers.user_path(user)) { example.run }
+    with_request_url(user_path(user)) { example.run }
   end
 
   describe "follows tab" do
@@ -28,11 +30,12 @@ describe Users::PublicActivityComponent, controller: UsersController do
 
       it "is the active tab when the follows filters is selected" do
         create(:proposal, author: user, followers: [user])
-        controller.params["filter"] = "follows"
 
-        render_inline component
+        with_request_url user_path(user, filter: "follows") do
+          render_inline component
 
-        expect(page).to have_selector "li.is-active", text: "1 Following"
+          expect(page).to have_selector "li.is-active", text: "1 Following"
+        end
       end
     end
 
