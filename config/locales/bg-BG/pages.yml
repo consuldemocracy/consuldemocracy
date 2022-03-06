@@ -1,1 +1,169 @@
 bg:
+  pages:
+    conditions:
+      title: Условия за ползване
+      subtitle: ПРАВНA ЗАБЕЛЕЖКА ОТНОСНО УСЛОВИЯТА ЗА УПОТРЕБА, ПОВЕРИТЕЛНОСТ И ЗАЩИТА НА ЛИЧНИТЕ ДАННИ НА ПОРТАЛА НА ОТВОРЕНОТО ПРАВИТЕЛСТВО
+      description: Информационна страница относно условията за употреба, поверителност и защита на личните данни.
+    help:
+      title: "%{org} е платформа за гражданско участие"
+      guide: "Това ръководство обяснява за какво са предназначени всички секции %{org} и как работят."
+      menu:
+        debates: "Дебати"
+        proposals: "Предложения"
+        budgets: "Бюджети с участие"
+        polls: "Анкети"
+        other: "Друга интересна информация"
+        processes: "Процеси"
+      debates:
+        title: "Дебати"
+        description: "В секцията %{link} можете да представяте и споделяте мнението си с други хора по въпроси, които ви вълнуват, във връзка с града. Това е и място за генериране на идеи, които чрез другите секции на %{org} водят до конкретни действия от страна на Общинския съвет."
+        link: "граждански дебати"
+        feature: "Можете да започвате дебати, да ги коментирате и оценявате с <strong> Съгласен съм </strong> или <strong> Не съм съгласен </strong>. За това трябва да %{link}."
+        feature_link: "регистрирайте се в %{org}"
+        image_alt: "Бутони за оценка на дебатите"
+        figcaption: 'Бутони "Съгласен съм" и "Не съм съгласен" за оценка на дебатите.'
+      proposals:
+        title: "Предложения"
+        description: "В секцията %{link} можете да правите предложения за изпълнение от Общинския съвет. Предложенията изискват подкрепа и ако получат достатъчна подкрепа, те се подлагат на публично гласуване. Предложенията, одобрени с гласовете на тези граждани, се приемат от Общинския съвет и се изпълняват."
+        link: "граждански предложения"
+        image_alt: "Бутон за подкрепа на предложение"
+        figcaption: 'Бутон за "Подкрепа" на предложение.'
+      budgets:
+        title: "Бюджетиране чрез участие"
+        description: "Секцията %{link} помага на хората да вземат пряко решение каква част от общинския бюджет се изразходва."
+        link: "бюджети с участие"
+        image_alt: "Различни фази на бюджета с участие"
+        figcaption: 'Фази "Подкрепа" и "Гласуване" на бюджети с участие.'
+      polls:
+        title: "Анкети"
+        description: "Секцията %{link} се активира всеки път, когато предложението достигне 1% подкрепа и отиде на гласуване или когато Общинският съвет предложи въпрос, който хората да решат."
+        link: "анкети"
+        feature_1: "За да участвате в гласуването, трябва да %{link} и да потвърдите акаунта си."
+        feature_1_link: "регистрирайте се в %{org_name}"
+      processes:
+        title: "Процеси"
+        description: "В секцията %{link} гражданите участват в съставянето и промяната на наредбите, касаещи града, и могат да дадат своето мнение за общинските политики в предишни дебати."
+        link: "процеси"
+        feature: "За да участвате в процесите трябва да %{link} и да проверите Вашият акаунт."
+        feature_link: "регистрирайте се в %{org_name}"
+      faq:
+        title: "Технически проблеми?"
+        description: "Прочетете Често задавани въпроси и намерете отговори на въпросите си."
+        button: "Прегледайте Често задавани въпроси"
+        page:
+          title: "Често задавани въпроси"
+          description: "Използвайте тази страница, за да разрешите често задаваните въпроси на потребителите на сайта."
+      other:
+        title: "Друга интересна информация"
+        how_to_use: "Използвайте %{org_name} във вашия град"
+      how_to_use:
+        text: |-
+          Използвайте го във Вашата община или ни помогнете да го подобрим, това е безплатен софтуер.
+
+          Този портал за отворено управление използва [CONSUL app](https://github.com/consul/consul 'consul github') , който е безплатен софтуер, с [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), което казано с прости думи означава, че всеки може да използва кода свободно, да го копира, да го преглежда в детайли, да го модифицира и разпространява с модификациите, които иска (разрешавайки на останалите да правят същото). Защото смятаме, че културата е по-добра и по-богата, когато бъде освободена.
+
+          Ако сте програмист, можете да намерите кода и да ни помогнете да го подобрим на [CONSUL app](https://github.com/consul/consul 'consul github').
+      titles:
+        how_to_use: Използвайте го в местната власт
+    privacy:
+      title: Политика за поверителност
+      subtitle: "Страница с информация за поверителността"
+    accessibility:
+      title: Достъпност
+      description: |-
+        Web accessibility refers to the possibility of access to the web and its contents by all people, regardless of the disabilities (physical, intellectual or technical) that may arise or from those that derive from the context of use (technological or environmental) .
+
+        When websites are designed with accessibility in mind, all users can access content in equal conditions, for example:
+      examples:
+        - Предоставяне на алтернативен текст на изображенията, така че незрящи или хора със зрителни увреждания могат да използват специални четци за достъп до информацията.
+        - Когато видео клиповете имат субтитри, потребителите със затруднен слух могат да ги разберат напълно.
+        - Ако съдържанието е написано на прост и илюстративен език, потребителите с проблеми в обучението имат по-добра възможност да ги разберат.
+        - Ако потребителят има проблеми с движението и трудно използва мишката, алтернативите с клавиатурата помагат в навигацията.
+      keyboard_shortcuts:
+        title: Комбинация от клавиши
+        navigation_table:
+          description: За да можете да навигирате през този уеб сайт по достъпен начин, е програмирана група ключове за бърз достъп, обединяващи основните секции от общ интерес, според които сайтът е организиран.
+          caption: Клавишни комбинации за менюто за навигация
+          key_header: Клавиш
+          page_header: Страница
+          rows:
+            - 
+              key_column: 0
+              page_column: Начало
+            - 
+              key_column: 1
+              page_column: Дебати
+            - 
+              key_column: 2
+              page_column: Предложения
+            - 
+              key_column: 3
+              page_column: Гласове
+            - 
+              key_column: 4
+              page_column: Бюджети с участие
+            - 
+              key_column: 5
+              page_column: Законодателно процеси
+        browser_table:
+          description: "В зависимост от използваната операционна система и браузъра, клавишната комбинация ще бъде следната:"
+          caption: Комбинация от клавиши в зависимост от операционната система и браузъра
+          browser_header: Браузър
+          key_header: Комбинация от клавиши
+          rows:
+            - 
+              browser_column: Explorer
+              key_column: ALT + shortcut then ENTER
+            - 
+              browser_column: Firefox
+              key_column: ALT + CAPS + shortcut
+            - 
+              browser_column: Chrome
+              key_column: ALT + shortcut (CTRL + ALT + shortcuts for MAC)
+            - 
+              browser_column: Safari
+              key_column: ALT + shortcut (CMD + shortcut for MAC)
+            - 
+              browser_column: Opera
+              key_column: CAPS + ESC + shortcut
+      textsize:
+        title: Размер на текста
+        browser_settings_table:
+          description: Достъпният дизайн на този уеб сайт позволява на потребителя да избере размера на текста, който го устройва. Това действие може да се извърши по различни начини, в зависимост от използвания браузър.
+          browser_header: Браузър
+          action_header: Действие, което трябва да се предприеме
+          rows:
+            - 
+              browser_column: Explorer
+              action_column: View > Text size
+            - 
+              browser_column: Firefox
+              action_column: View > Size
+            - 
+              browser_column: Chrome
+              action_column: Settings (icon) > Options > Advanced > Web Content > Text size
+            - 
+              browser_column: Safari
+              action_column: View > Zoom In/Zoom out
+            - 
+              browser_column: Opera
+              action_column: View > scale
+        browser_shortcuts_table:
+          description: "Друг начин за промяна на размера на текста е да се използват бързите клавишни комбинации, както са определени в браузърите, по-специално комбинацията:"
+          rows:
+            - 
+              shortcut_column: CTRL и + (CMD и + на MAC)
+              description_column: Увеличава размера на текста
+            - 
+              shortcut_column: CTRL и - (CMD и - на MAC)
+              description_column: Намалява размера на текста
+      compatibility:
+        title: Съвместимост със стандартите и визуалния дизайн
+        description: 'Всички страници на този уеб сайт отговарят на <strong>Насоките за достъпност</strong> или на Общите принципи на достъпния дизайн, установени от работната група <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> към W3C.'
+    titles:
+      help: "Какво е %{org}? - Гражданско участие"
+    verify:
+      info: "За да потвърдите акаунта си, въведете вашите данни за достъп:"
+      info_code: "Сега въведете кода, който сте получили в писмо:"
+      submit: Потвърдете акаунта ми
+      title: Потвърдете акаунта си

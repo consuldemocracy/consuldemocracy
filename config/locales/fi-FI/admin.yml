@@ -478,15 +478,6 @@ fi:
           without_confirmed_hide: Vireillä
         title: Piilotetut ehdotukset
         no_hidden_proposals: Ei piilotettuja ehdotuksia.
-    proposal_notifications:
-      index:
-        filter: Suodatin
-        filters:
-          all: Kaikki
-          with_confirmed_hide: Vahvistettu
-          without_confirmed_hide: Vireillä
-        title: Piilotetut ilmoitukset
-        no_hidden_proposals: Ei piilotettuja ilmoituksia.
     settings:
       index:
         update_setting: Päivitä

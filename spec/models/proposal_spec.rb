@@ -558,7 +558,7 @@ describe Proposal do
     end
 
     context "case" do
-      it "searches case insensite" do
+      it "searches case insensitive" do
         proposal = create(:proposal, title: "SHOUT")
 
         results = Proposal.search("shout")
@@ -889,22 +889,14 @@ describe Proposal do
   end
 
   describe "#user_to_notify" do
-    it "returns voters and followers" do
+    it "returns followers" do
       proposal = create(:proposal)
-      voter = create(:user, :level_two, votables: [proposal])
       follower = create(:user, :level_two, followables: [proposal])
 
-      expect(proposal.users_to_notify).to eq([voter, follower])
+      expect(proposal.users_to_notify).to eq([follower])
     end
 
-    it "returns voters and followers discarding duplicates" do
-      proposal = create(:proposal)
-      voter_and_follower = create(:user, :level_two, votables: [proposal], followables: [proposal])
-
-      expect(proposal.users_to_notify).to eq([voter_and_follower])
-    end
-
-    it "returns voters and followers except the proposal author" do
+    it "returns followers except the proposal author" do
       author = create(:user, :level_two)
       voter_and_follower = create(:user, :level_two)
       proposal = create(:proposal, author: author,
@@ -1053,7 +1045,7 @@ describe Proposal do
       let(:proposal) { create(:proposal, :with_milestone_tags) }
 
       it "has milestone_tags" do
-        expect(proposal.milestone_tag_list.count).to eq(1)
+        expect(proposal.reload.milestone_tag_list.count).to eq(1)
       end
     end
   end

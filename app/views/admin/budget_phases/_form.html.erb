@@ -6,16 +6,10 @@
 
   <div class="row">
     <div class="small-12 medium-6 column">
-      <%= f.text_field :starts_at,
-                        value: format_date_for_calendar_form(@phase.starts_at),
-                        class: "js-calendar-full",
-                        id: "start_date" %>
+      <%= f.date_field :starts_at, id: "start_date" %>
     </div>
     <div class="small-12 medium-6 column">
-      <%= f.text_field :ends_at,
-                        value: format_date_for_calendar_form(@phase.ends_at),
-                        class: "js-calendar-full",
-                        id: "end_date" %>
+      <%= f.date_field :ends_at, id: "end_date" %>
     </div>
   </div>
 

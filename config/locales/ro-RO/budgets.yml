@@ -1,1 +1,219 @@
 ro:
+  budgets:
+    ballots:
+      show:
+        title: Votul tău
+        amount_available:
+          knapsack: "Mai aveți <span>%{count}</span> de investit."
+        amount_spent:
+          knapsack: "Sumă cheltuită <span>%{count}</span>"
+        amount_limit:
+          knapsack: "%{count}"
+          approval:
+            one: "Puteți vota <span> 1 </span> proiect"
+            few: "Puteți vota până la <span>%{count}</span> proiecte"
+            other: "Puteți vota până la <span>%{count}</span> proiecte"
+        no_balloted_group_yet: "Încă nu ați votat în acest grup, mergeți să votați!"
+        remove: Înlătură vot
+        voted:
+          one: "Ați votat <span>1</span> investiție."
+          few: "Ați votat <span>%{count}</span> investiții."
+          other: "Ați votat <span>%{count}</span> investiții."
+        voted_info: "Votul dumneavoastră este confirmat!"
+        voted_info_2: "Dar puteți modifica votul în orice moment până când această etapă se închide."
+        zero: Nu ați votat niciun proiect de investiții.
+      reasons_for_not_balloting:
+        not_logged_in: Trebuie %{signin} sau %{signup} pentru a continua.
+        not_verified: Doar utilizatorii verificați pot vota investițiile; %{verify_account}.
+        organization: Organizațiile nu au voie să voteze
+        not_selected: Proiectele de investiții neselectate nu pot fi susținute
+        not_enough_money: "Ați alocat deja bugetul disponibil.<br><small>Amintiți-vă că puteți\n %{change_ballot} în orice moment</small>"
+        no_ballots_allowed: Etapa de selectare este închisă
+        different_heading_assigned: "Ați votat deja o altă rubrică: %{heading_link}"
+        not_enough_available_votes: "Ați atins numărul maxim de voturi permise pe zi"
+        change_ballot: schimbă-ți voturile
+        casted_offline: Ați participat deja offline
+    groups:
+      show:
+        title: Selectați o opțiune
+        unfeasible_title: Investiții imposibile
+        unfeasible: Vezi investițiile nerealizabile
+        unselected_title: Investiții neselectate pentru faza de votare
+        unselected: Vezi investițiile neselectate pentru faza de votare
+    phase:
+      drafting: Schiță (Nu este vizibil publicului)
+      informing: Informații
+      accepting: Se acceptă proiectele
+      reviewing: Se revizuiesc proiectele
+      selecting: Selectează proiectele
+      valuating: Evaluează proiectele
+      publishing_prices: Se publică costurile proiectelor
+      balloting: Votează proiecte
+      reviewing_ballots: Revizuirea votului
+      finished: Buget finalizat
+    index:
+      title: Bugete participative
+      empty_budgets: Nu există bugete.
+      section_header:
+        icon_alt: Pictograma bugetelor participative
+        title: Bugete participative
+        help: Ajutor cu procesele de bugetare participativă
+        all_phases: Vezi toate etapele
+      all_phases: Etapele bugetului de investiții
+      map: Propunerile investițiilor bugetare situate geografic
+      investment_proyects: Lista tuturor proiectelor de investiții
+      unfeasible_investment_proyects: Lista tuturor proiectelor de investiții imposibile
+      not_selected_investment_proyects: Lista tuturor proiectelor de investiții care nu sunt selectate pentru votare
+      finished_budgets: Bugete participative terminate
+      see_results: Vezi rezultatele
+      section_footer:
+        title: Ajutor cu procesele de bugetare participativă
+        description: Odată cu bugetele participative, cetățenii decid căror proiecte va fi destinată o parte din buget.
+      milestones: Repere
+    investments:
+      form:
+        tag_category_label: "Categorii"
+        tags_instructions: "Etichetați această propunere. Puteți alege dintre categoriile propuse sau adăugați una proprie"
+        tags_label: Etichete
+        tags_placeholder: "Introduceți etichetele pe care doriți să le utilizați, separate prin virgule (',')"
+        map_location: "Localizare pe hartă"
+        map_location_instructions: "Navigați pe hartă până la locație și plasați marcatorul."
+        map_remove_marker: "Eliminați marcatorul de hartă"
+        map_skip_checkbox: "Această investiție nu are o locație concretă sau nu o cunosc."
+      index:
+        title: Bugetare participativă
+        unfeasible: Proiecte de investiții imposibile
+        unfeasible_text: "Investițiile trebuie să îndeplinească o serie de criterii (legalitate, concretitudine, care să nu depășească limita bugetului) pentru a fi declarate viabile și pentru a ajunge la stadiul de vot final. Toate investițiile care nu îndeplinesc aceste criterii sunt marcate ca fiind imposibile și sunt publicate în lista aferentă, împreună cu raportul său de imposibilitate."
+        by_heading: "Proiecte de investiții cu domeniu de aplicare: %{heading}"
+        search_form:
+          button: Caută
+          placeholder: Căutați proiecte de investiții...
+          title: Caută
+        search_results:
+          one: " conține termenul <strong>'%{search_term}'</strong>"
+          few: " conține termenii <strong>'%{search_term}'</strong>"
+          other: " conține termenii <strong>'%{search_term}'</strong>"
+        sidebar:
+          my_ballot: Votul meu
+          voted_info:
+            knapsack:
+              one: "<strong>Ați votat o propunere de proiect în valoare de %{amount_spent}</strong>"
+              few: "<strong>Ați votat %{count} propuneri de proiect în valoare de %{amount_spent}</strong>"
+              other: "<strong>Ați votat %{count} propuneri de proiect în valoare de %{amount_spent}</strong>"
+            approval:
+              one: "<strong>Ați votat o propunere</strong>"
+              few: "<strong>Ați votat %{count} propuneri</strong>"
+              other: "<strong>Ați votat %{count} propuneri</strong>"
+          change_vote_info:
+            knapsack: "Puteți %{link} oricând până la închiderea acestei etape. Nu trebuie să cheltuiți toți banii valabili."
+            approval: "Puteți %{link} oricând până când se închide această etapă."
+          change_vote_link: "schimbă-ți votul"
+          different_heading_assigned: "Aveți voturi active în altă rubrică: %{heading_link}"
+          change_ballot: "Dacă vă răzgândiți, puteți elimina voturile din %{check_ballot} și puteți începe din nou."
+          check_ballot_link: "verifică și confirmă votul"
+          zero: Nu ați votat niciun proiect de investiții în acest grup.
+          verified_only: "Pentru a crea o nouă investiție bugetară %{verify}."
+          create: "Crează un buget de investiții"
+          not_logged_in: "Pentru a crea un nou buget de investiții trebuie să %{sign_in} sau %{sign_up}."
+          by_feasibility: După fezabilitate
+          feasible: Proiecte posibile
+          unfeasible: Proiecte imposibile
+        orders:
+          random: aleatoriu
+          confidence_score: cel mai bine cotat
+          price: după preț
+      share:
+        message: "Am creat proiectul de investiții %{title} în %{handle}. Creați și un proiect de investiții!"
+      show:
+        author_deleted: Utilizator șters
+        price_explanation: Explicația prețurilor
+        unfeasibility_explanation: Explicație de imposibilitate
+        code: "Codul proiectului de investiții: <strong>%{code}</strong>"
+        location: "Locație: <strong>%{location}</strong>"
+        organization_name: "Propus din partea: <strong>%{name}</strong>"
+        share: Distribuie
+        title: Proiect de investiții
+        supports: Susținători
+        votes: Voturi
+        price: Preț
+        comments_tab: Comentarii
+        milestones_tab: Repere
+        author: Autor
+        project_unfeasible: "Acest proiect de investiții <strong>a fost marcat ca ne fiind posibil</strong> și nu va trece la faza de votare."
+        project_selected: "Acest proiect de investiții <strong>a fost selectat</strong> pentru faza de votare."
+        project_winner: "Proiectul de investiții câștigător"
+        project_not_selected: "Acest proiect de investiții <strong>nu a fost selectat</strong> pentru faza de votare."
+        see_price_explanation: Vezi explicația prețurilor
+      wrong_price_format: Numai numere întregi
+      investment:
+        add: Vot
+        already_added: Ați adăugat deja acest proiect de investiții
+        already_supported: Ați susținut deja acest proiect de investiții. Distribuiți-l!
+        support_title: Sprijină acest proiect
+        confirm_group:
+          one: "Poți susține investiții în %{count} district. Dacă continui nu vei putea schimba selecția districtului. Ești sigur?"
+          few: "Poți susține investiții în %{count} districte. Dacă continui nu vei putea schimba selecția districtului. Ești sigur?"
+          other: "Poți susține investiții în %{count} districte. Dacă continui nu vei putea schimba selecția districtului. Ești sigur?"
+        supports:
+          zero: Fără susținători
+          one: 1 susținător
+          few: "%{count} persoane susțin"
+          other: "%{count} persoane susțin"
+        give_support: Sprijină
+      header:
+        check_ballot: Verifică și confirmă votul
+        different_heading_assigned: "Aveți voturi active în altă rubrică: %{heading_link}"
+        change_ballot: "Dacă vă răzgândiți, puteți elimina voturile din %{check_ballot} și puteți începe din nou."
+        check_ballot_link: "verifică și confirmă votul"
+        price: "Această rubrică are un buget de"
+    progress_bar:
+      assigned: "Ați atribuit: "
+      available: "Buget disponibil: "
+      votes:
+        zero: "Ați selectat <strong>0</strong> proiecte din <strong>%{limit}</strong>"
+        one: "Ați selectat <strong>1</strong> proiect din <strong>%{limit}</strong>"
+        few: "Ați selectat <strong>%{count}</strong> proiecte din <strong>%{limit}</strong>"
+        other: "Ați selectat <strong>%{count}</strong> proiecte din <strong>%{limit}</strong>"
+    show:
+      group: Grup
+      phase: Etapa actuală
+      unfeasible_title: Investiții imposibile
+      unfeasible: Vezi investițiile nerealizabile
+      unselected_title: Investiții neselectate pentru etapa de votare
+      unselected: Vezi investițiile neselectate pentru etapa de votare
+      see_results: Vezi rezultatele
+    results:
+      link: Rezultate
+      page_title: "%{budget} - Rezultate"
+      heading: "Rezultatele bugetului participativ"
+      heading_selection_title: "După district"
+      ballot_lines_count: Voturi
+      hide_discarded_link: Ascundeți proiectele neselectate
+      show_all_link: Arată tot
+      price: Preț
+      amount_available: Buget disponibil
+      accepted: "Investiție acceptată: "
+      discarded: "Investiție abandonată: "
+      incompatibles: Incompatibil
+      investment_title: Titlul proiectului
+      investment_proyects: Lista tuturor proiectelor de investiții
+      unfeasible_investment_proyects: Lista tuturor proiectelor de investiții imposibile
+      not_selected_investment_proyects: Lista tuturor proiectelor de investiții care nu sunt selectate pentru votare
+    executions:
+      link: "Repere"
+      page_title: "%{budget} - Repere"
+      heading: "Reperele bugetului participativ"
+      heading_selection_title: "După district"
+      no_winner_investments: "Nu există investiții câștigătoare în această stare"
+      filters:
+        status:
+          label: "Statusul proiectului"
+          all: "Toate (%{count})"
+        milestone_tag:
+          label: "Etichete reper"
+          all: "Toate (%{count})"
+    phases:
+      errors:
+        dates_range_invalid: "Data de început nu poate fi egală sau după data de încheiere"
+        prev_phase_dates_invalid: "Data de încheiere trebuie să fie după data de încheiere a următoarei faze activate (%{phase_name})"
+        next_phase_dates_invalid: "Data de încheiere trebuie să fie anterioară datei de încheiere a următoarei faze activate (%{phase_name})"

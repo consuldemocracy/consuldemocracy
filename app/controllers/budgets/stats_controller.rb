@@ -1,7 +1,7 @@
 module Budgets
   class StatsController < ApplicationController
     before_action :load_budget
-    load_and_authorize_resource :budget
+    authorize_resource :budget
 
     def show
       authorize! :read_stats, @budget

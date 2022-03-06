@@ -10,8 +10,8 @@ hr:
       - Sub
     abbr_month_names:
       - 
-      - Siječ
-      - Velj
+      - Siječanj
+      - Veljača
       - Ožuj
       - Trav
       - Svib
@@ -51,33 +51,33 @@ hr:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: oko 1 sata
-        few: oko %{count} sati
+        one: oko 1 sat
+        few: oko %{count} sata
         other: oko %{count} sati
       about_x_months:
         one: oko 1 mjesec
-        few: oko %{count} mjeseci
+        few: oko %{count} mjeseca
         other: oko %{count} mjeseci
       about_x_years:
         one: oko 1 godine
-        few: oko %{count} godina
+        few: oko %{count} godine
         other: oko %{count} godina
       almost_x_years:
         one: gotovo 1 godina
-        few: oko %{count} godina
+        few: oko %{count} godine
         other: gotovo %{count} godina
       half_a_minute: pola minute
       less_than_x_minutes:
         one: manje od minute
-        few: manje od %{count} minuta
+        few: manje od %{count} minute
         other: manje od %{count} minuta
       less_than_x_seconds:
         one: manje od 1 sekunde
-        few: manje od %{count} sekundi
+        few: manje od %{count} sekunde
         other: manje od %{count} sekundi
       over_x_years:
         one: više od 1 godine
-        few: više od %{count} godina
+        few: više od %{count} godine
         other: više od %{count} godina
       x_days:
         one: 1 dan
@@ -86,7 +86,7 @@ hr:
       x_minutes:
         one: 1 minuta
         few: "%{count} minute"
-        other: "%{count} minute"
+        other: "%{count} minuta"
       x_months:
         one: 1 mjesec
         few: "%{count} mjeseci"
@@ -145,7 +145,7 @@ hr:
     template:
       body: "Postoje poteškoće sa sljedećim poljima:"
       header:
-        one: 1 error nedozvoljava ovo %{model} spremanje
+        one: 1 greška ne dozvoljava pohranu ovog %{model}
         few: "%{count} errora nedozvoljava ovaj/e %{model} od spremanja"
         other: "%{count} errora nedozvoljava ovaj/e %{model} od spremanja"
   helpers:

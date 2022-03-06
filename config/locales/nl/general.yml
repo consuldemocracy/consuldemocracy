@@ -87,9 +87,6 @@ nl:
       tags_placeholder: "Voeg de gewenste labels toe, gescheiden door een komma (',')"
     index:
       featured_debates: Featured
-      filter_topic:
-        one: " met onderwerp '%{topic}'"
-        other: " met onderwerp '%{topic}'"
       orders:
         confidence_score: best gescored
         created_at: nieuwste
@@ -208,7 +205,6 @@ nl:
       help: Help
       my_account_link: My account
       my_activity_link: Mijn bijdragen
-      open: open
       open_gov: Open bestuur
       proposals: Voorstellen
       poll_questions: Stemmen
@@ -219,8 +215,6 @@ nl:
           other: U heeft %{count} nieuwe meldingen
         notifications: Notificaties
         no_notifications: "U heeft geen nieuwe meldingen"
-    admin:
-      watch_form_message: "U hebt niet-opgeslagen wijzigingen. Verlaat de pagina?"
   notifications:
     index:
       empty_notifications: U heeft geen nieuwe meldingen.
@@ -262,8 +256,6 @@ nl:
       sign_in: Log in via Twitter
       sign_up: Registreer via Twitter
       name: Twitter
-    info_sign_in: "Log in via:"
-    info_sign_up: "Registreer via:"
     or_fill: "Of vul het volgende in:"
   proposals:
     create:
@@ -302,9 +294,6 @@ nl:
       map_skip_checkbox: "De locatie voor het voorstel is niet bekend."
     index:
       featured_proposals: Featured
-      filter_topic:
-        one: " met onderwerp'%{topic}'"
-        other: " met onderwerp'%{topic}'"
       orders:
         confidence_score: best gescored
         created_at: nieuwste
@@ -507,7 +496,6 @@ nl:
     follow: "Volg"
     following: "Volgend"
     follow_entity: "Volg %{entity}"
-    hide: Hide
     print:
       print_button: Print this info
     search: Search

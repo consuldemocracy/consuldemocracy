@@ -26,6 +26,53 @@ describe Budget::Ballot::Line do
         investment.update!(price: heading.price - 1)
         expect(ballot_line).to be_valid
       end
+
+      it "validates sufficient funds when creating lines at the same time", :race_condition do
+        investment.update!(price: heading.price)
+        other_investment = create(:budget_investment, :selected, price: heading.price, heading: heading)
+        other_line = build(:budget_ballot_line, ballot: ballot, investment: other_investment)
+
+        [ballot_line, other_line].map do |line|
+          Thread.new { line.save }
+        end.each(&:join)
+
+        expect(Budget::Ballot::Line.count).to be 1
+      end
+    end
+
+    describe "Approval voting" do
+      before do
+        budget.update!(voting_style: "approval")
+        heading.update!(max_ballot_lines: 1)
+      end
+
+      it "is valid if there are votes left" do
+        expect(ballot_line).to be_valid
+      end
+
+      it "is not valid if there are no votes left" do
+        create(:budget_ballot_line, ballot: ballot,
+               investment: create(:budget_investment, :selected, heading: heading))
+
+        expect(ballot_line).not_to be_valid
+      end
+
+      it "is valid if insufficient funds but enough votes" do
+        investment.update!(price: heading.price + 1)
+
+        expect(ballot_line).to be_valid
+      end
+
+      it "validates votes when creating lines at the same time", :race_condition do
+        other_investment = create(:budget_investment, :selected, heading: heading)
+        other_line = build(:budget_ballot_line, ballot: ballot, investment: other_investment)
+
+        [ballot_line, other_line].map do |line|
+          Thread.new { line.save }
+        end.each(&:join)
+
+        expect(Budget::Ballot::Line.count).to be 1
+      end
     end
 
     describe "Selectibility" do
@@ -49,7 +96,7 @@ describe Budget::Ballot::Line do
 
       create(:budget_ballot_line, ballot: ballot, investment: investment)
 
-      expect(user.balloted_heading_id).to eq(investment.heading.id)
+      expect(user.reload.balloted_heading_id).to eq(investment.heading.id)
     end
   end
 

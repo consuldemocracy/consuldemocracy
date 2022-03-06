@@ -3,8 +3,6 @@ sl:
     ballots:
       show:
         title: Tvoje glasovanje
-        amount_spent: Porabljen znesek
-        remaining: "Za investirati imaš še <span>%{amount}</span>."
         no_balloted_group_yet: "Nisi še glasoval v tej skupini, glasuj zdaj!"
         remove: Odstrani glas
         zero: Nisi glasoval za noben naložbeni projekt.
@@ -72,8 +70,6 @@ sl:
           title: Išči
         sidebar:
           my_ballot: Moja glasovanja
-          voted_info: Lahko %{link} kadarkoli do konca te faze. Ni treba porabiti vsega denarja, ki je na voljo.
-          voted_info_link: spremeniš svoj glas
           change_ballot: "Če si premisliš, lahko odstraniš svoje glasove v %{check_ballot} in začneš znova."
           check_ballot_link: "preveri moja glasovanja"
           zero: Nisi glasoval za noben naložbeni projekt v tej skupini.

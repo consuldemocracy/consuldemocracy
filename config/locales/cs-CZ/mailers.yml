@@ -18,7 +18,7 @@ cs:
       title: Potvrďte svůj účet pomocí následujícího odkazu
     reply:
       hi: Dobrý den
-      new_reply_by: Nová odpověď od <b>%{commenter} </b> na Váš komentář
+      new_reply_by: Nová odpověď od <strong>%{commenter}</strong> na Váš komentář
       subject: Někdo odpověděl na váš komentář
       title: Nová odpověď na váš komentář
     proposal_notification_digest:
@@ -80,3 +80,14 @@ cs:
       hi: "Dobrý den %{name},"
     new_actions_notification_on_create:
       hi: "Ahoj %{name}!"
+    new_actions_notification_on_published:
+      text_1: "A teď jděte pro prvních 100 podpor!"
+      text_2: "Proč 100?"
+      text_6: "Pamatujte, že na panelu návrhů máte k dispozici nové zdroje a doporučení pro akce šíření."
+      list_1: "Přijďte každý den, abyste viděli svůj pokrok a používali tipy a zdroje, které s vámi sdílíme. Jsou to nápady a také praktická řešení pro získání podpory, kterou potřebujete."
+      list_2: "Jakmile získáte větší podporu, odemknete nové a lepší zdroje. Nepřestávejte přidávat podporu a nepřestaneme odměňovat a pomáhat vám!"
+      text_7: "A abyste mohli začít plnou rychlostí..."
+      text_8: "Zde je skvělý zdroj k dispozici!"
+      text_9: "Najdete také tuto novou doporučenou akci šíření..."
+      text_10: "Určitě máte k dispozici více zdrojů!"
+      dashboard_button: "Jen do toho, objevte je!"

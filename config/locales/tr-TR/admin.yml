@@ -1207,15 +1207,6 @@ tr:
           without_confirmed_hide: Beklemede
         title: Gizli öneriler
         no_hidden_proposals: Hiç gizli öneriler yok.
-    proposal_notifications:
-      index:
-        filter: Filtre
-        filters:
-          all: Tüm
-          with_confirmed_hide: Onaylanmış
-          without_confirmed_hide: Beklemede
-        title: Gizli bildirimler
-        no_hidden_proposals: Hiç gizli bildirimler yok.
     settings:
       flash:
         updated: Değer güncellendi

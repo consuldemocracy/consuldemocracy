@@ -1,0 +1,1609 @@
+oc:
+  admin:
+    header:
+      title: Administrar
+    actions:
+      actions: d'Accions
+      confirm: '¿Estás segur?'
+      confirm_hide: Confirmatz la moderacion
+      hide: Amagar
+      hide_author: Bloquejar l'autor
+      restore: Tornar a mostrar
+      mark_featured: Destacadas
+      unmark_featured: traire destacat
+      edit: Editar proposicion
+      configure: Configurar
+      delete: Borrar
+    officing_booth:
+      title: "Podètz oficialitzar l'estand situat a %{booth}. S'aiçò es pas corrècte, contunhatz pas e trucatz al numèro de telefòn d’ajuda. Mercés."
+    banners:
+      index:
+        title: Banners
+        create: crear banner
+        edit: crear banner
+        delete: eliminar banner
+        filters:
+          all: totes
+          with_active: Actius
+          with_inactive: Inactius
+        preview: Previsualitzar
+      banner:
+        sections_label: de Seccions ont apareisserà
+        sections:
+          homepage: Pagina iniciala
+          debates: de Debats
+          proposals: de Proposicions ciutadanas
+          budgets: de Budgèts ciutadans
+          help_page: Pagina d’ajuda
+      edit:
+        editing: Edita banner
+        form:
+          submit_button: Gardar de cambiaments
+      new:
+        creating: crear banner
+    activity:
+      show:
+        action: accion
+        actions:
+          block: Bloquejat
+          hide: amagat
+          restore: restaurat
+        by: Moderat per
+        content: contengut
+        filter: Mostrar
+        filters:
+          all: totes
+          on_comments: Comentarios
+          on_debates: de Debats
+          on_proposals: de Proposicions ciutadanas
+          on_users: d'usatgièrs
+          on_system_emails: Corrièr electronic del sistèma
+        title: Activitat de moderadors
+        type: tipe
+        no_activity: I a pas activitat de moderadors.
+    budgets:
+      index:
+        title: de Budgèts participatius
+        new_link: Crear nòu budgèt
+        filter: Filtrar
+        filters:
+          open: dobèrt
+          finished: Finalizats
+        budget_investments: Gerir de projèctes
+        table_name: Nome
+        table_phase: fasa
+        table_investments: de Proposicions d'inversion
+        table_edit_groups: de Grops de partidas
+        table_edit_budget: Editar proposicion
+        table_admin_ballots: ' de Bilhetas'
+        edit_groups: Edita de grops de partidas
+        edit_budget: Edita budgèt
+        admin_ballots: de Bilhetas d’administracion
+        no_budgets: "I a pas de budgèts."
+      create:
+        notice: Nòva campanha de budgèts participatius creats amb succès!
+      update:
+        notice: Campanha de budgèts participatius actualizats
+      edit:
+        title: Edita campanha de budgèts participatius
+        delete: Suprimís lo budgèt
+        phase: fasa
+        dates: Fechas
+        enabled: activa
+        actions: d'Accions
+        edit_phase: Fasa d'edicion
+        active: Actius
+        blank_dates: Las datas son en blanc
+        administrators:
+          zero: "Seleccionatz los administradors"
+          one: "S'es seleccionat 1 administrador"
+          other: "%{count} d'administradors seleccionats"
+        valuators:
+          zero: "Selecciona las avaloracions"
+          one: "S'es seleccionat 1 valorador"
+          other: "%{count} valoradors seleccionats"
+        empty_administrators: "I a pas d'administradors"
+        empty_valuators: "I a pas valoradors"
+      destroy:
+        success_notice: Lo budgèt s'es suprimit corrèctament
+        unable_notice: Podètz pas suprimir un budgèt qu'aja d'inversions associadas
+        unable_notice_polls: Podètz pas suprimir un budgèt qu'aja un sondatge associat
+      new:
+        title: Nòu budgèt ciutadan
+      winners:
+        calculate: Calculatz las inversions del ganhant
+        calculated: Se calcularàn los ganhants, pòt trigar una minuta.
+        recalculate: Calcular de nòu las inversions del ganhant
+    budget_groups:
+      name: "Nome"
+      headings_name: "Rúbriques"
+      headings_edit: "Edita los encapçalaments"
+      headings_manage: "Gerís los encapçalaments"
+      no_groups: "I a pas de grops."
+      amount:
+        one: "I a 1 grop"
+        other: "N’i a %{count} de grops"
+      create:
+        notice: "Grop creat amb succès!"
+      update:
+        notice: "Lo grop s'es actualizat corrèctament"
+      destroy:
+        success_notice: "Lo grop s'es suprimit corrèctament"
+        unable_notice: "Podètz pas suprimir un grop qu'aja encapçalaments associats"
+      form:
+        create: "Crèa un grop nòu"
+        edit: "Edita lo grop"
+        submit: "Plega lo grop"
+      index:
+        back: "Tornar als budgèts"
+    budget_headings:
+      no_headings: "I a pas cap de títol."
+      amount:
+        one: "I a 1 encapçalament"
+        other: "N’i a %{count} de títols"
+      create:
+        notice: "Lo encapçalament creat corrèctament!"
+      update:
+        notice: "Lo encapçalament s'es actualizat corrèctament"
+      destroy:
+        success_notice: "S'es eliminat lo encapçalament corrèctament"
+        unable_notice: "Podètz pas suprimir un encapçalament qu'aja d'inversions associadas"
+      form:
+        population_info: "Lo camp de populacion de la partida de budgèt s’utiliza amb fins estatisticas a la fin del budgèt per mostrar per cada encapçalament que representa una zòna amb populacion quina percentatge votèt. Lo camp es opcional, de sòrta que podètz lo daissar void se s'aplica pas."
+        coordinates_info: "Se se porgon latitud e longitud, la pagina d'inversions d'aquel títol comprendrà una mapa. Aquela mapa se centrarà mejançant aquelas coordenades."
+        content_blocks_info: "S'es activat lo blòc de contengut, poiretz crear contengut personalizat ligat a aquel encapçalament a la seccion Configuracion; de Blòcs de contengut personalizat Aquel contengut apareisserà a la pagina d'inversions d'aquel títol."
+        create: "Crèa un nòu títol"
+        edit: "Edita l’encapçalament"
+        submit: "Plegar partida"
+      index:
+        back: "Tornatz a grops"
+    budget_phases:
+      edit:
+        summary_help_text: En aquel tèxt s’informa sus una informacion especifica sus la fasa. Per la mostrar, e mai se la fasa siá pas activa, seleccionatz lo caleishon de seleccion seguenta
+        description_help_text: Aquel tèxt apareisserà a l'entèsta quand la fasa siá activa
+        enabled_help_text: Aquela fasa serà publica en lo calendari de fasas del budgèt, de mai d’activa per quina autra intencion que siá
+        save_changes: Gardar de cambiaments
+    budget_investments:
+      index:
+        heading_filter_all: Totas las partidas
+        administrator_filter_all: Totes los administradors
+        valuator_filter_all: Totes los avaluadors
+        tags_filter_all: Totas las etiquetas
+        advanced_filters: de Filtres avançats
+        placeholder: Cèrca de projèctes
+        filters:
+          all: totes
+          without_admin: Sens administrador
+          without_valuator: Sens avaluador assignat
+          under_valuation: En avaloracion
+          valuation_finished: avaloracion finalizada
+          feasible: Viable
+          selected: seleccionada
+          undecided: sens decidir
+          unfeasible: Pas viables
+          min_total_supports: de Supòrts minims
+          max_total_supports: Supòrt maximal
+          winners: Ganhants
+          one_filter: "Filtres actuales aplicats: <b><em>%{filter}</em></b>"
+          two_filters: "Filtres actuales aplicats: <b><em>%{filter}, %{advanced_filters}</em></b>"
+        buttons:
+          filter: Filtrar
+        download_current_selection: "Davalatz la seleccion actuala"
+        no_budget_investments: "I a pas projèctes d’inversion."
+        title: de Proposicions d'inversion
+        columns: de Colomnas
+        assigned_admin: Administrador assignat
+        no_admin_assigned: Sens admin assignat
+        no_valuators_assigned: Sens avaluador
+        feasibility:
+          feasible: "Viable"
+          unfeasible: "Pas viables"
+          undecided: "sens decidir"
+        selected: "seleccionada"
+        select: "Seleccionar"
+        list:
+          id: ID
+          title: Títol
+          supports: d'Avals
+          admin: Administrador
+          valuator: avaluador
+          valuation_group: Grop d'avaloracion
+          geozone: de Domenis d'accion
+          feasibility: Viabilitat
+          valuation_finished: Ev. Fin.
+          selected: seleccionada
+          visible_to_valuators: Espectacle als valoradors
+          author_username: Nom d'usatgièr de l'autor
+          incompatible: Incompatible
+          price: Prètz
+          author: Autor
+        cannot_calculate_winners: Lo budgèt li cal demorar en fasa "de Projèctes de votacion", "Revisar las bilhetas" o "Budgèt acabat" per calcular los projèctes ganhants
+        see_results: "veire de resultats"
+        milestone_tags_filter_all: "Totas las etiquetas de hita"
+      show:
+        assigned_admin: Administrador assignat
+        assigned_valuators: Avaluadors asignats
+        classification: Classament
+        info: "%{budget_name} - Grop: %{group_name} - Proposicion d'inversion %{id}"
+        edit: Editar proposicion
+        edit_classification: Edita classament
+        by: autor
+        sent: data
+        group: Grop
+        heading: Partida
+        dossier: Informe
+        edit_dossier: Editar informe
+        tags: d'Etiquetas
+        undefined: Sens definir
+        compatibility:
+          title: Compatibilitat
+          "true": Incompatible
+          "false": Compatible
+        selection:
+          title: seleccion
+        winner:
+          title: Ganhant
+          "true": "Òc"
+          "false": "Pas"
+        valuator_groups: "de Grops d'avaloracion"
+        preview: Vista prealabla de l'inversion
+      edit:
+        classification: Classament
+        compatibility: Compatibilitat
+        selection: seleccion
+        assigned_valuators: Avaluadors
+        select_heading: seleccionar partida
+        submit_button: Actualizar
+        user_tags: d'Etiquetas assignadas per l'usatgièr
+        tags_placeholder: "Escriu las etiquetas que vòlgas separadas per comes (,)"
+        undefined: Sens definir
+      search_unfeasible: Cercar inviables
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "Títol"
+        table_description: "Descripcion detalhada"
+        table_publication_date: "Data de publicacion"
+        table_status: Estat
+        table_actions: "d'Accions"
+        delete: "Elimina la hita"
+        no_milestones: "Avètz pas definit de hitas"
+        image: "image"
+        show_image: "Mòstra l'image"
+        documents: "de Documents"
+        milestone: Hita
+        new_milestone: Crèa una hita nòva
+        milestone_tags: d'Etiquetas de hita
+      form:
+        admin_statuses: Gerís los estats
+        no_statuses_defined: I es estat pas encara definits
+      new:
+        creating: Crear hita
+      edit:
+        title: Edita la hita
+      create:
+        notice: Nòva hita creada amb succès
+      update:
+        notice: Hita actualizada corrèctament
+      delete:
+        notice: La hita s'es suprimida corrèctament
+    statuses:
+      index:
+        title: Estatus de hita
+        empty_statuses: Se son pas creats d'estadis de hita creada
+        new_status: Crèa un estat de hita nòva
+        table_name: Nome
+        table_description: Descripcion detalhada
+        table_actions: d'Accions
+        delete: Borrar
+        edit: Editar proposicion
+      edit:
+        title: Edita l'estat de la hita
+      update:
+        notice: L’estat de la hita s’a actualizat corrèctament
+      new:
+        title: Crèa una estada hita
+      create:
+        notice: L’estat de hita creada corrèctament
+      delete:
+        notice: L'estat de la hita s'es suprimit corrèctament
+    progress_bars:
+      manage: "Gerís las barras de progrès"
+      index:
+        title: "de Barras de progrès"
+        no_progress_bars: "I a pas de barras de progrès"
+        new_progress_bar: "Creatz una nòva barra de progrès"
+        primary: "Barra de progrès primari"
+        table_id: "ID"
+        table_kind: "tipe"
+        table_title: "Títol"
+        table_percentage: "d'Avançadas actualas"
+      new:
+        creating: "Crea una barra de progrés"
+      edit:
+        title:
+          primary: "Edita la barra de progrés principal"
+          secondary: "Edita la barra de progrés %{title}"
+      create:
+        notice: "La barra de progrés es va crear correctament"
+      update:
+        notice: "La barra de progrés s'ha actualitzat correctament"
+      delete:
+        notice: "La barra de progrés s'ha suprimit correctament"
+    comments:
+      index:
+        id: "ID"
+        content: "Contingut"
+        author: "Autor"
+        commentable_type: "Tipus"
+        title: Comentaris ocults
+        no_comments: No hi ha comentaris.
+        table_link: "Enllaç"
+    hidden_comments:
+      index:
+        filter: Filtre
+        filters:
+          all: Tots
+          with_confirmed_hide: Confirmat
+          without_confirmed_hide: Pendents
+        hidden_debate: Debat amagat
+        hidden_proposal: Proposta oculta
+        title: Comentaris ocults
+        no_hidden_comments: No hi ha comentaris ocults.
+    dashboard:
+      index:
+        back: Tornar a %{org}
+        title: Administrar
+        description: Benvengut a la web %{org} plafon d’administracion.
+      actions:
+        index:
+          description: "Quand los usatgièrs crèan de proposicions pòdon accedir a un quadre de comandament de la siá proposicion, ont podètz prepausar de recorses e de recomandacions per obténer supòrt per la siá idèa."
+          create: Crear recors o accion
+          edit: Edita
+          delete: Suprimís
+          active: 'Òc'
+          inactive: 'Pas'
+          title: de Recorses e d'accions
+          action_title: Títol
+          action_type: Tipe
+          required_supports: Supòrt obligatòri
+          day_offset: de Jorns obligatòris
+          action_active: Actiu
+          order: Comanda
+          published_proposal: Proposta publicada
+          default:
+            email: Correu electrònic
+            polls: Enquestes
+            poster: Pòster
+        new:
+          creating: Nova acció per al tauler de propostes
+          back: Tornar a la llista
+        create:
+          notice: Acció creada correctament
+        edit:
+          editing: Edita l'acció del quadre de comandament de les propostes
+          back: Tornar a la llista
+        delete:
+          success: S'ha suprimit l'acció correctament
+        form:
+          submit_button: Desa
+          help_text: Introduïu 0 perquè aquest valor no es tingui en compte
+          published_proposal_help_text: Marqueu aquesta casella de selecció per crear l’acció només per a les propostes publicades
+      administrator_tasks:
+        index:
+          description: "Els recursos publicats al tauler de propostes poden incloure un botó a sol·licitar als administradors. A continuació, es mostren les peticions dels usuaris."
+          title: Recursos sol·licitats
+          solve: Resol
+          no_records: No hi ha recursos sol·licitats
+          source: Font
+          resource: Recurs sol·licitat
+          filter: Filtre
+          filters:
+            pending: Pendents
+            done: Resolució
+        edit:
+          back: Torna a la llista de tasques pendents
+          solving: Resol la tasca pendent
+        form:
+          solve: Marca com a resolt
+          proposal: Proposta
+          request: Recurs sol·licitat
+        update:
+          success: La tasca s'ha marcat com a resolt.
+    debates:
+      index:
+        id: ID
+        author: Autor
+        title: Debats ocults
+        no_debates: No hi ha debats.
+    hidden_debates:
+      index:
+        filter: Filtre
+        filters:
+          all: Tots
+          with_confirmed_hide: Confirmat
+          without_confirmed_hide: Pendents
+        title: Debats ocults
+        no_hidden_debates: No hi ha debats ocults.
+    documents:
+      new:
+        title: "Carregueu un document"
+        submit_button: "Carregueu"
+      index:
+        new_link: "Afegeix un document nou"
+        no_documents: "No hi ha documents."
+        title: "Documents"
+        format: "Format"
+        size: "Mida"
+        url: "URL"
+      create:
+        success_notice: "S'ha carregat document correctament"
+        unable_notice: "Document no vàlid"
+      destroy:
+        success_notice: "El document s'ha suprimit correctament"
+    hidden_users:
+      index:
+        filter: Filtrar
+        filters:
+          all: totes
+          with_confirmed_hide: Confirmadas
+          without_confirmed_hide: Sens decidir
+        title: d'Usatgièrs bloquejats
+        user: d'usatgièrs bloquejats
+        no_hidden_users: I a pas d'usatgièrs ocults.
+      show:
+        email: "E-mail:"
+        hidden_at: "Bloquejat:"
+        registered_at: "Data de nauta:"
+        title: Activitat de l'usatgièr (%{user})
+    hidden_budget_investments:
+      index:
+        filter: Filtrar
+        filters:
+          all: totes
+          with_confirmed_hide: Confirmadas
+          without_confirmed_hide: Sens decidir
+        title: d'Inversions de budgèts ocults
+        no_hidden_budget_investments: I a pas d'inversions de budgèt ocult
+    legislation:
+      processes:
+        create:
+          notice: 'Procès creat corrèctament. <a href="%{link}"> de Fes click per veire-hot. </a>'
+          error: S'es pas pogut crear lo procès
+        update:
+          notice: 'Procès actualizat corrèctament. <a href="%{link}"> de Fes click per o veire </a>'
+          error: S'es pas pogut actualizar lo procès
+        destroy:
+          notice: Procès eliminat corrèctament
+        edit:
+          back: Tornar
+          submit_button: Gardar de cambiaments
+        form:
+          enabled: activa
+          process: procès
+          debate_phase: fasa prealabla
+          draft_phase: Fasa de borrolhon
+          draft_phase_description: S'aquela fasa es activa, lo procès se mostrarà pas a l'indèx de procèsses. Permet previsualitzar lo procès e crear contengut abans del començament.
+          allegations_phase: Fasa de comentaris
+          proposals_phase: Fasa de proposicions
+          use_markdown: Emplega Markdown per formatar lo tèxt
+          title_placeholder: Escriu lo títol del procès
+          summary_placeholder: Resumit cuert de la descripcion
+          description_placeholder: Apond una descripcion del procès
+          additional_info_placeholder: Apond quina informacion addicionala que siá que pòsca èsser d'interès
+          homepage_description: Podètz aicí explicar lo contengut del procès
+          banner_title: de Colors d'entèsta
+        index:
+          create: nòu procès
+          delete: Borrar
+          title: de procèsses legislatius
+          filters:
+            active: Actiu
+            all: totes
+        new:
+          back: Tornar
+          title: Crear nòu procès de legislacion col·laborativa
+          submit_button: crear procès
+        proposals:
+          select_order: Ordenar per
+          orders:
+            id: Id
+            title: Títol
+            supports: d'Avals
+        process:
+          title: procès
+          comments: Comentarios
+          status: Estat
+          start_date: Data d'inici
+          end_date: Data de finalizacion
+          status_open: dobèrt
+          status_closed: barrat
+          status_planned: Pròplèument
+        subnav:
+          info: informacion
+          homepage: Pagina iniciala
+          draft_versions: Redaccion
+          questions: debat prealable
+          proposals: de Proposicions ciutadanas
+          milestones: De contunh
+      homepage:
+        edit:
+          title: Configura la pagina d'inici del procès
+      proposals:
+        index:
+          title: Títol
+          back: Tornar
+          id: Id
+          supports: d'Avals
+        form:
+          custom_categories: de Categorias
+          custom_categories_description: de Categorias que los usatgièrs pòdon seleccionar en creant la proposicion. Maximal 160 caractèrs.
+          custom_categories_placeholder: Introdusissètz las etiquetas que volètz utilizar, separadas per comes (,) e dintre cometas ("")
+      draft_versions:
+        create:
+          notice: 'Borrolhon creat corrèctament. <a href="%{link}"> de Fes click per veire-hot </a>'
+          error: S'es pas pogut crear lo borrolhon
+        update:
+          notice: 'Borrolhon actualizat corrèctament. <a href="%{link}"> de Fes click per o veire </a>'
+          error: S'es pas pogut actualizar lo borrolhon
+        destroy:
+          notice: Borrolhon eliminat corrèctament
+        edit:
+          back: Tornar
+          submit_button: Gardar de cambiaments
+          warning: Uèlh, as editat lo tèxt. Per conservar de manièra permanenta los cambiaments, te desbrembes pas de far clic a Plega.
+        form:
+          title: 'Edició <span class="strong">%{draft_version_title}</span> del procés <span class="strong">%{process_title}</span>'
+          launch_text_editor: Lançar editor de tèxt
+          close_text_editor: Barrar editor de tèxt
+          use_markdown: Emplega Markdown per formatar lo tèxt
+          hints:
+            final_version: Serà la version que se publique Publicacion de resultats. Aquela version se poirà pas comentar
+            status:
+              draft: Poiràs previsualitzar-coma loguejat, degun o poirà mai veire
+              published: Serà visible per totes
+          title_placeholder: Escriu lo títol d'aquela version del borrolhon
+          changelog_placeholder: Descriu quin cambiament considerable que siá amb la version anteriora
+          body_placeholder: Escriu lo tèxt del borrolhon
+        index:
+          title: de Versions del borrolhon
+          create: crear version
+          delete: Borrar
+          preview: Previsualitzar
+        new:
+          back: Tornar
+          title: Crear nòva version
+          submit_button: crear version
+        table:
+          title: Títol
+          created_at: creat
+          comments: Comentarios
+          final_version: version finala
+          status: Estat
+      questions:
+        create:
+          notice: 'Question creada corrèctament. <a href="%{link}"> de Fes click per veire </a>'
+          error: S'es pas pogut crear la question
+        update:
+          notice: 'Question actualizada corrèctament. <a href="%{link}"> de Fes click per veire </a>'
+          error: S'es pas pogut actualizar la question
+        destroy:
+          notice: Question eliminada corrèctament
+        edit:
+          back: Tornar
+          title: "Edita \"%{question_title}\""
+          submit_button: Gardar de cambiaments
+        form:
+          add_option: + Apondre responsa barrada
+          title_placeholder: Apond una question
+          value_placeholder: Escriu una responsa barrada
+          question_options: "de Responsas possiblas (opcional, per defècte, responsas dubèrtas)"
+        index:
+          back: Tornar
+          title: de Questions associadas a aquel procès
+          create: Crear question per votacion
+          delete: Borrar
+        new:
+          back: Tornar
+          title: Crear nòva question
+          submit_button: Crear question per votacion
+        table:
+          title: Títol
+          question_options: d'Opcions de responsa
+          answers_count: Nombre de responsas
+          comments_count: Nombre de comentaris
+        question_option_fields:
+          remove_option: eliminar
+      milestones:
+        index:
+          title: De contunh
+    managers:
+      index:
+        title: de Gestors
+        name: Nome
+        email: Lo tieu corrièr electronic
+        no_managers: I a pas de gestors.
+      manager:
+        add: Añadir como President de taula
+        delete: Borrar
+      search:
+        title: "de Gestors: cerca d’usatgièrs"
+    menu:
+      activity: Activitat de moderadors
+      admin: Menu d'administracion
+      banner: Gerir banners
+      proposals: de Proposicions ciutadanas
+      proposals_topics: de Tèmas de proposicions
+      budgets: de Budgèts participatius
+      geozones: Gerir de districtes
+      hidden_comments: de Comentaris ocults
+      hidden_debates: de Debats ocults
+      hidden_proposals: de Proposicions amagas
+      hidden_budget_investments: d'Inversions de budgèt ocult
+      hidden_proposal_notifications: de Notificacions de la proposicion amaga
+      hidden_users: d'Usatgièrs bloquejats
+      administrators: d'Administradors
+      managers: de Gestors
+      moderators: de Moderadors
+      messaging_users: de Messatges als usatgièrs
+      newsletters: Enviament de newsletters
+      admin_notifications: de Notificacions
+      system_emails: d'E-mails del sistèma
+      emails_download: Davalada de corrièrs electronics
+      valuators: Avaluadors
+      poll_officers: de Presidents de taula
+      polls: de votacions
+      poll_booths: Ubicacion de bóstia
+      poll_booth_assignments: de Matèrias d’estands
+      poll_shifts: Gerís los torns
+      officials: de Cargas Publicas
+      organizations: d'Organizacions
+      settings: Configuracion globala
+      stats: Estatisticas
+      signature_sheets: de Fuèlhas de signaturas
+      site_customization:
+        documents: Documents personalitzats
+        homepage: Pagina iniciala
+        pages: de Paginas
+        images: d'Images
+        content_blocks: Personalizar de blòcs
+        information_texts: de Tèxtes d’informacion personalizada
+        information_texts_menu:
+          basic: "Personalització bàsica"
+          debates: "de Debats"
+          community: "Comunitat"
+          proposals: "de Proposicions ciutadanas"
+          polls: "de votacions"
+          layouts: "de Disposicions"
+          mailers: "emails"
+          management: "gestion"
+          welcome: "Benvengut / a"
+        buttons:
+          save: "Plegar"
+          content_block:
+            update: "Actualiza lo blòc"
+      title_moderated_content: Contengut moderat
+      title_profiles: de Perfils
+      title_settings: Configuracion
+      title_site_customization: Contengut del luòc
+      title_booths: de Cabinas de votacion
+      legislation: legislacion col·laborativa
+      users: d'usatgièrs
+      dashboard: Tauler de comandes de propostes
+      administrator_tasks: Recursos sol·licitats
+      dashboard_actions: Recursos i accions
+      debates: "Debats"
+      comments: "Comentaris"
+      local_census_records: Gestiona el cens local
+    administrators:
+      index:
+        title: d'Administradors
+        name: Nome
+        email: Lo tieu corrièr electronic
+        description: Descripció
+        id: Identificador d’administrador
+        no_administrators: I a pas d'administradors.
+      administrator:
+        add: Añadir como President de taula
+        delete: Borrar
+        restricted_removal: "O sentèm, pòdes pas t'eliminar a tu meteis de la lista"
+      search:
+        title: "d'Administradors: cerca d’usatgièrs"
+      form:
+        edit_title: "Edita l'administrador"
+        updated: "S'ha actualitzat correctament l'administrador"
+    moderators:
+      index:
+        title: de Moderadors
+        name: Nome
+        email: Lo tieu corrièr electronic
+        no_moderators: I a pas de moderadors.
+      moderator:
+        add: Añadir como President de taula
+        delete: Borrar
+      search:
+        title: "de Moderadors: cerca d’usatgièrs"
+    segment_recipient:
+      all_users: Totes los usatgièrs
+      administrators: d'Administradors
+      all_proposal_authors: Autors de la proposta (inclosos arxivats i jubilats)
+      proposal_authors: d'Autors de la proposicion
+      investment_authors: d'Autors de l'inversion en lo budgèt actual
+      feasible_and_undecided_investment_authors: "d'Autors de qualque inversion del budgèt actual que complís pas: [valuation finished unfesasible]"
+      selected_investment_authors: d'Autors de las inversions seleccionadas del budgèt actual
+      winner_investment_authors: d'Autors de las inversions ganhantas del budgèt actual
+      not_supported_on_current_budget: Los usatgièrs qu'ajan pas acceptat d'inversions en lo budgèt actual
+      invalid_recipients_segment: "Lo segment d'usatgièrs dels destinataris es pas valid"
+    newsletters:
+      create_success: Lo bulletin s'es creat corrèctament
+      update_success: Lo bulletin s'es actualizat corrèctament
+      send_success: S'es enviat lo bulletin amb succès
+      delete_success: Lo bulletin s'es suprimit corrèctament
+      index:
+        title: Enviament de newsletters
+        new_newsletter: Nòu bulletin
+        subject: Matèria
+        segment_recipient: Destinataris
+        sent: data
+        actions: d'Accions
+        draft: Borrolhon
+        edit: Editar proposicion
+        delete: Borrar
+        preview: Previsualitzar
+        empty_newsletters: I a pas de bulletins per mostrar
+      new:
+        title: Nòu bulletin
+        header_footer_help_text: "L’encapçalament i el peu de pàgina són els mateixos per a tots els correus electrònics, podeu modificar-los <code>app/views/layouts/mailer_header</code> and <code>app/views/layouts/mailer_footer</code>.<br>Podeu substituir la imatge de la capçalera per %{link}."
+        image_link: "imatges personalitzades"
+      edit:
+        title: Edita lo bulletin
+      show:
+        title: Vista prealabla del bulletin
+        send: Enviar
+        affected_users: (%{n} d'usatgièrs afectats)
+        sent_emails:
+          one: S'es enviat 1 corrièr electronic
+          other: "%{count} de messatges de corrièr electronic enviat"
+        sent_at: Data de creacion
+        subject: Matèria
+        segment_recipient: Destinataris
+        from: Adreça de corrièr electronic qu'apareisserà coma enviament del bulletin
+        body: Contengut per corrièr electronic
+        body_help_text: Aital los usatgièrs veiràn lo corrièr electronic.
+        send_alert: Sètz segur que volètz enviar aquel bulletin a %{n} d'usatgièrs?
+    admin_notifications:
+      create_success: La notificacion s'es creada corrèctament
+      update_success: S'es actualizat corrèctament la notificacion
+      send_success: S'es enviat la notificacion corrèctament
+      delete_success: La notificacion s'es suprimida corrèctament
+      index:
+        section_title: de Notificacions
+        new_notification: Nòva notificacion
+        title: Títol
+        segment_recipient: Destinataris
+        sent: data
+        actions: d'Accions
+        draft: Borrolhon
+        edit: Editar proposicion
+        delete: Borrar
+        preview: Previsualitzar
+        view: Veire
+        empty_notifications: I a pas de notificacions a mostrar
+      new:
+        section_title: Nòva notificacion
+        submit_button: Crèa una notificacion
+      edit:
+        section_title: Edita la notificacion
+        submit_button: Actualiza la notificacion
+      show:
+        section_title: Vista prealabla de las notificacions
+        send: Enviar notificacion
+        will_get_notified: (%{n} los usatgièrs seràn avertits)
+        got_notified: (%{n} los usatgièrs an recebut una notificacion)
+        sent_at: Data de creacion
+        title: Títol
+        body: tèxt
+        link: ligam
+        segment_recipient: Destinataris
+        preview_guide: "Es aital coma los usatgièrs veiràn la notificacion:"
+        sent_guide: "Es aital coma los usatgièrs veson la notificacion:"
+        send_alert: Sètz segur que volètz enviar aquela notificacion a %{n} d'usatgièrs?
+    system_emails:
+      preview_pending:
+        action: Vista prealabla pendenta
+        preview_of: Vista prealabla de %{name}
+        pending_to_be_sent: Aquel es lo contengut pendent d’enviar
+        moderate_pending: Moderacion de la notificacion
+        send_pending: Envia pendent
+        send_pending_notification: Las notificacions pendentas s’an enviat corrèctament
+      proposal_notification_digest:
+        title: "Proposicion de notificacion digest"
+        description: "Amassa totas las notificacions de las proposicions per un usatgièr en un sol messatge per evitar tròp de corrièrs electronics."
+        preview_detail: "Los usatgièrs recebrián solament notificacions de las proposicions que seguisson"
+      budget_investment_created:
+        title: "Inversion budgetària creada"
+        description: "S'envia quand un usatgièr crèa una inversion budgetària."
+      budget_investment_selected:
+        title: "Inversion budgetària seleccionada"
+        description: "Enviat a l’autor quand s’a seleccionat la siá inversion budgetària."
+      budget_investment_unfeasible:
+        title: "Inversion budgetària inviable"
+        description: "Enviat a l’autor quand la siá inversion budgetària es estada considerada inviable."
+      budget_investment_unselected:
+        title: "Inversion budgetària pas seleccionada"
+        description: "Enviat a l’autor quand la siá inversion budgetària es pas estada seleccionada per la fasa de votacion."
+      comment:
+        title: "Comentari"
+        description: "Enviat a l’autor quand recep un comentari."
+      reply:
+        title: "Respond"
+        description: "Enviat a l’autor del comentari quan rep una resposta."
+      direct_message_for_receiver:
+        title: "Receptor de messatges privats"
+        description: "Enviada al receptor del messatge privat."
+      direct_message_for_sender:
+        title: "Emissor de messatges privats"
+        description: "Enviat al remitent del messatge privat."
+      email_verification:
+        title: "Verificacion per corrièr electronic"
+        description: "Enviat a un usatgièr nòu per verificar lo sieu compte."
+      user_invite:
+        title: "Invitacion d’usatgièr"
+        description: "Enviada a la persona qu'es estat convidada a enregistrar un compte."
+      evaluation_comment:
+        title: "Nou comentari d’avaluació"
+        description: "Enviat a administradors i avaluadors relacionats amb la inversió comentada"
+      edit_info: "Podètz editar aquel corrièr electronic a"
+      message_title: "Títol del messatge"
+      message_body: "Aquel es un exemple de contengut del messatge."
+      alert:
+        no_investments: "Pas s’a creat cap de inversion budgetària. S'an de besonh qualques exemples de donadas per previsualitzar lo corrièr electronic."
+        no_comments: "I a pas cap de comentari creat. S'an de besonh qualques exemples de donadas per previsualitzar lo corrièr electronic."
+        no_replies: "I a pas cap de responsa creada. S'an de besonh qualques exemples de donadas per previsualitzar lo corrièr electronic."
+        no_evaluation_comments: "No s'ha creat cap comentari d'avaluació. Es necessiten alguns exemples de dades per previsualitzar el correu electrònic."
+    emails_download:
+      index:
+        title: Davalada de corrièrs electronics
+        download_segment: Descargatz las adreças de corrièr electronic
+        download_segment_help_text: Davalada en format CSV
+        download_emails_button: Davalatz la lista de corrièrs electronics
+    valuators:
+      index:
+        title: Avaluadors
+        name: Nome
+        email: Lo tieu corrièr electronic
+        description: Descripcion detalhada
+        no_description: Sens descripcion
+        no_valuators: I a pas valoradors.
+        valuator_groups: "de Grops d'avaloracion"
+        group: "Grop"
+        no_group: "Sens grop"
+        abilities: "Habilitats"
+        can_comment: "Puc fer comentaris"
+        can_edit_dossier: "Es pot editar dossier"
+      valuator:
+        add: Apondre coma avaluador
+        delete: Borrar
+      search:
+        title: "Avaluadors: cerca d’usatgièrs"
+      form:
+        edit_title: "Avaluadors: edita la valor"
+        updated: "S'es actualizat corrèctament la valor"
+      show:
+        description: "Descripcion detalhada"
+        email: "Lo tieu corrièr electronic"
+        group: "Grop"
+        abilities: "Habilitats"
+        no_description: "Sens descripcion"
+        no_group: "Sens grop"
+        no_abilities: "Sense habilitats"
+    valuator_groups:
+      index:
+        title: "Grop de avaluadors"
+        new: "Crear grop d’avaluadors"
+        name: "Nome"
+        members: "de Membres"
+        no_groups: "I a pas de grops avaluadors"
+      show:
+        title: "Grop de taxadors: %{group}"
+        no_valuators: "I a pas assignadors d’avaloracion assignada a aquel grop"
+      form:
+        new: "Crear grop d’avaluadors"
+        edit: "Plega lo grop de taxadors"
+    poll_officers:
+      index:
+        title: de Presidents de taula
+      officer:
+        add: Añadir como President de taula
+        delete: Eliminar cargo
+        name: Nome
+        email: Lo tieu corrièr electronic
+        entry_name: president de taula
+      search:
+        email_placeholder: Cercar usuario paur email
+        search: Cercar
+        user_not_found: se trobèt pas l'usatgièr
+        help: "Per afegir o eliminar els agents de sondeig, utilitzeu el formulari de cerca següent."
+    poll_officer_assignments:
+      index:
+        officers_title: "Listado de presidents de taula asignados"
+        no_officers: "I a pas de presidents de taula asignados a aquela votación."
+        table_name: "Nome"
+        table_email: "Lo tieu corrièr electronic"
+      by_officer:
+        date: "data"
+        booth: "urna"
+        assignments: "de Torns coma president de taula en aquela votacion"
+        no_assignments: "Pas tiene de torns como president de taula en aquela votación."
+    poll_shifts:
+      new:
+        add_shift: "Apondre torn"
+        shift: "Asignació"
+        shifts: "de Torns en aquela caseta"
+        date: "data"
+        edit_shifts: Edita los torns
+        new_shift: "Nòu torn"
+        no_shifts: "Aquela caseta a pas cambiaments"
+        officer: "Oficial"
+        remove_shift: "Eliminar torn"
+        search_officer_button: Cercar
+        search_officer_placeholder: Foncionari de cèrca
+        search_officer_text: Cercatz un oficial per assignar un nòu cambiament
+        select_date: "Seleccionar día"
+        no_voting_days: "Se son acabats los jorns de votacion"
+        select_task: "Selecciona lo prètzfach"
+        table_shift: "de Majusculas"
+        table_email: "Lo tieu corrièr electronic"
+        table_name: "Nome"
+      flash:
+        create: "de Majusculas apondudas"
+        destroy: "S'es eliminat lo torn"
+        unable_to_destroy: "Se pòdon pas suprimir los cambiaments amb resultats o recomptes associats"
+        date_missing: "Cal seleccionar una data"
+      vote_collection: Recuèlh los vòts
+      recount_scrutiny: Comptar & Escrutinh
+    booth_assignments:
+      manage_assignments: Gerís los prètzfaches
+      manage:
+        assignments_list: "de Prètzfaches per la votacion '%{poll}'"
+        status:
+          assign_status: Asignació
+          assigned: Assignat
+          unassigned: Pas adscrich
+        actions:
+          assign: Assignar bóstia
+          unassign: Cabina sens assignar
+    poll_booth_assignments:
+      alert:
+        shifts: "I a de torns associats a aquela caseta. S'eliminatz lo prètzfach de la cabina, se suprimisson tanben los torns. Contunhar?"
+      show:
+        location: "Ubicacion"
+        officers: "de Presidents de taula"
+        officers_list: "Lista de presidents de taula asignats a aquela bóstia"
+        no_officers: "I a pas de presidents de taula para aquela bóstia"
+        recounts: "de Recomptes"
+        recounts_list: "Lista de recomptes d'aquela bóstia"
+        results: "de resultats"
+        date: "data"
+        count_final: "Recompte final (president de taula)"
+        count_by_system: "de Vòts (automático)"
+        total_system: Total de vòts (automatic)
+      index:
+        booths_title: "Listat de bóstias asignades"
+        no_booths: "I a pas de bóstias asignades a aquela votacion."
+        table_name: "Nome"
+        table_location: "Ubicacion"
+    active_polls:
+      edit:
+        title: "Descripcion de las enquèstas"
+      form:
+        description:
+          help_text: "Aquel tèxt apareisserà a l’encapçalament de la pagina de las enquèstas. Se pòt utilizar per apondre un contèxt a las enquèstas dubèrtas."
+    polls:
+      index:
+        title: "Listado de votaciones"
+        no_polls: "I a pas d'enquèstas."
+        create: "Crear votación"
+        name: "Nome"
+        dates: "Fechas"
+        start_date: "Fecha de apertura"
+        closing_date: "Fecha de cierre"
+        geozone_restricted: "Restringit als districtes"
+      new:
+        title: "Nueva votación"
+        submit_button: "Crear votación"
+      edit:
+        title: "Editar votación"
+        submit_button: "Actualizar votación"
+      show:
+        questions_tab: Demandas de ciutadanas
+        booths_tab: de bóstias
+        officers_tab: de Presidents de taula
+        recounts_tab: de Recomptes
+        results_tab: de resultats
+        no_questions: "I a pas de questions asignadas a aquela votación."
+        questions_title: "Listat de questions assignadas"
+        table_title: "Títol"
+        edit_answers: Edita las responsas
+        see_proposal: "(Veire proposicion)"
+      flash:
+        question_added: "Question añadida a aquela votación"
+        error_on_question_added: "Se pudi pas asignar la question"
+      destroy:
+        alert: "Aquesta acció eliminarà l'enquesta i totes les seves preguntes associades."
+        success_notice: "L'enquesta s'ha suprimit correctament"
+        unable_notice: "No podeu suprimir una enquesta amb vots"
+    questions:
+      index:
+        title: "Demandas de ciutadanas"
+        create: "Crear question per votacion"
+        no_questions: "I a pas ninguna demanda ciutadana."
+        filter_poll: Filtrar per votacion
+        select_poll: Seleccionar votacion
+        questions_tab: "Demandas de ciutadanas"
+        successful_proposals_tab: "de Proposicions qu'an superat lo umbral"
+        create_question: "Crear question per votacion"
+        table_proposal: "la proposicion"
+        table_question: "question"
+        table_poll: "votacion"
+        poll_not_assigned: "Enquèsta pas assignada"
+      edit:
+        title: "Editar demanda ciutadana"
+      new:
+        title: "Crear question per l'enquèsta %{poll}"
+        title_proposal: "Crèa una question"
+      answers:
+        images:
+          add_image: "Apondre image"
+          save_image: "Gardar image"
+      show:
+        proposal: Proposicion originala
+        author: Autor
+        question: question
+        edit_question: Edita la question
+        valid_answers: de Responsas válidas
+        add_answer: Apondètz responsa
+        video_url: Vidèo extèrne
+        answers:
+          title: Responsa
+          description: Descripcion detalhada
+          videos: de Vidèos
+          video_list: Lista de vidèos
+          images: d'Images
+          images_list: Lista d’images
+          documents: de Documents
+          documents_list: Lista de documents
+          document_title: Títol
+          document_actions: d'Accions
+    answers:
+      new:
+        title: Nòva responsa
+      show:
+        title: Títol
+        description: Descripcion detalhada
+        images: d'Images
+        images_list: Lista d’images
+        edit: Edita la responsa
+      edit:
+        title: Edita la responsa
+      videos:
+        index:
+          title: de Vidèos
+          add_video: Apond vidèo
+          video_title: Títol
+          video_url: Vidèo extèrne
+        new:
+          title: Nòu vidèo
+        edit:
+          title: Edita vidèo
+    recounts:
+      index:
+        title: "de Recomptes"
+        no_recounts: "I a pas res de lo que far recompte"
+        all_booths_total: "Total acumulat de totas las casetas:"
+        total_final: "de Comptes finales"
+        total_system: "de Vòts (automatics)"
+        table_booth_name: "urna"
+        table_total_recount: "Recompte total (per oficial)"
+        table_system_count: "de Vòts (automático)"
+    results:
+      index:
+        title: "de resultats"
+        no_results: "I a pas resultados"
+      result:
+        table_whites: "de Bilhetas totalament en blanc"
+        table_nulls: "de bilhetas nullas"
+        table_total: "de Bilhetas validas"
+        table_answer: Responsa
+        table_votes: de Votacions
+      results_by_booth:
+        booth: urna
+        results: de resultats
+        see_results: veire de resultats
+        title: "de Resultats per estand"
+    booths:
+      index:
+        title: "Lista d’estands actius"
+        no_booths: "I a pas cap de cas actiu per cap de prèpa enquèsta."
+        add_booth: "Apondre bóstia"
+        name: "Nome"
+        location: "Ubicacion"
+        no_location: "Sens ubicacion"
+      new:
+        title: "Nòva bóstia"
+        submit_button: "Crear bóstia"
+      edit:
+        title: "Editar bóstia"
+        submit_button: "Actualizar bóstia"
+      show:
+        location: "Ubicacion"
+      booth:
+        shifts: "Gerís los torns"
+        edit: "Editar bóstia"
+    officials:
+      edit:
+        destroy: Eliminar condicion de 'Carga Público'
+        title: "de Cargas Publicas: Edita usatgièr"
+      flash:
+        official_destroyed: "de Donadas gardadas: l'usatgièr es pas mai carga publica"
+        official_updated: de Donadas de la carga publica gardats
+      index:
+        title: de Cargas Publicas
+        help: Los comptes d’usatgièr marcat coma foncionaris auràn destacadas las siás intervencions a la plataforma. Podètz definir l'etiqueta qu'apareis al bòrd dels noms d'usatgièrs d'aqueles comptes dempuèi lo mai important (nivèl 1) al minim (nivèl 5).
+        no_officials: I a pas de foncionaris.
+        name: Nome
+        official_position: Carga publica
+        official_level: Nivèl
+      level_0: Es pas carga publica
+      level_1: nivèl 1
+      level_2: nivèl 2
+      level_3: nivèl 3
+      level_4: nivèl 4
+      level_5: nivèl 5
+      search:
+        edit_official: Edita carga publica
+        make_official: Convertir a carga publica
+        title: "de Cargas Publicas: Cèrca d'usatgièrs"
+        no_results: Pas s’an trobat de posicions oficialas.
+    organizations:
+      index:
+        filter: Filtrar
+        filters:
+          all: totes
+          pending: Sens decidir
+          rejected: refusada
+          verified: verificada
+        hidden_count:
+          one: També hi ha <strong>una organització</strong> sense usuaris ni amb un usuari ocult.
+          other: N’hi ha <strong>%{count} organitzacions</strong> sense usuaris ni amb un usuari ocult.
+        name: Nome
+        email: Lo tieu corrièr electronic
+        phone_number: Telefòn
+        responsible_name: Responsable
+        status: Estat
+        no_organizations: I a pas d'organizacions.
+        reject: refusar
+        rejected: refusada
+        search: Cercar
+        search_placeholder: Nom, email o telefòn
+        title: d'Organizacions
+        verified: verificada
+        verify: verificar usatgièr
+        pending: Sens decidir
+      search:
+        title: Cercar d'Organizacions
+        no_results: S'es pas trobat cap de organizacion.
+    proposals:
+      index:
+        title: de Proposicions ciutadanas
+        id: ID
+        author: Autor
+        select: Selecciona
+        selected: Seleccionat
+        milestones: de Hitas
+        no_proposals: I a pas de proposicions.
+      show:
+        create_question: Apondètz aquela proposicion a una enquèsta que se vòta
+      form:
+        update: Proposta d’actualització
+      update:
+        notice: Proposta actualitzada correctament
+    hidden_proposals:
+      index:
+        filter: Filtrar
+        filters:
+          all: totes
+          with_confirmed_hide: Confirmadas
+          without_confirmed_hide: Sens decidir
+        title: de Proposicions amagas
+        no_hidden_proposals: I a pas de proposicions amagas.
+    settings:
+      flash:
+        updated: Valor actualizada
+      index:
+        title: Configuracion globala
+        general: Configuració de configuració
+        update_setting: Actualizar
+        participation_processes: "de Procèsses de participacion"
+        images_and_documents: "Imatges i documents"
+        feature_flags: de Foncionalitats
+        features:
+          enabled: "Foncionalitat activada"
+          disabled: "Foncionalitat desactivada"
+          enable: "Activa"
+          disable: "Desactivar"
+        map:
+          title: Configuracion de la mapa
+          help: Podètz aicí personalizar la manièra coma se mòstra la mapa als usatgièrs. Arrossegueu Lo mercador de la mapa o faguèt clic a quin luòc que siá sus la mapa, configuratz lo boton desirat e faguèt clic al boton"Actualiza".
+          flash:
+            update: La configuracion de la mapa s'es actualizada corrèctament.
+          form:
+            submit: Actualizar
+          how_to_enable: 'Per mostrar la mapa als usatgièrs, vos cal l''activar "de Proposicions e geolocalització d’inversions budgetàrias" endavant "de Caracteristicas" ficha'
+        dashboard:
+          title: Tauler de comandes de propostes
+        remote_census:
+          title: Configuració del Cens remot
+          how_to_enable: 'Per configurar el cens remot (SOAP) heu d’activar "Configura la connexió al cens remot (SOAP)" on "Característiques" fitxa.'
+      remote_census_general_name: Informació general
+      remote_census_request_name: Sol·licita dades
+      remote_census_response_name: Dades de resposta
+      setting: Caracteristica
+      setting_actions: d'Accions
+      setting_name: Ambientació
+      setting_status: Estat
+      setting_value: valor
+      no_description: "Sens descripcion"
+    shared:
+      true_value: "Òc"
+      false_value: "Pas"
+      booths_search:
+        button: Cercar
+        placeholder: Cercar bóstia per nom
+      poll_officers_search:
+        button: Cercar
+        placeholder: Cercar de presidents de taula
+      poll_questions_search:
+        button: Cercar
+        placeholder: Cercar de questions
+      proposal_search:
+        button: Cercar
+        placeholder: Cercar de proposicions per títol, còdi, descripcion o question
+      debate_search:
+        button: Cerca
+        placeholder: Cerca debats per títol o descripció
+      user_search:
+        button: Cercar
+        placeholder: Cercar usatgièr per nom o e-mail
+      search_results: "de Resultats de cèrca"
+      no_search_results: "Pas se an de trobats resultats."
+      actions: d'Accions
+      title: Títol
+      description: Descripcion detalhada
+      image: image
+      show_image: Mòstra l'image
+      moderated_content: "Verificatz lo contengut moderat pels moderadors e confirmatz se la moderacion s’a fach corrèctament."
+      view: Veire
+      proposal: la proposicion
+      author: Autor
+      content: contengut
+      created_at: creat
+      delete: Borrar
+      color_help: Format hexadecimal
+      show_results_and_stats: "Mostra els resultats i les estadístiques"
+      results_and_stats_reminder: "En marcar aquestes caselles de selecció els resultats i / o estadístiques estaran a la disposició del públic i tots els usuaris els veuran."
+    geozones:
+      index:
+        title: de Districtes
+        create: Crear un districte
+        edit: Editar proposicion
+        delete: Borrar
+      geozone:
+        name: Nome
+        external_code: còdi extèrne
+        census_code: Còdi del cens
+        code_help: Còdi de responsa d'aquela geozona a l'API del cens
+        coordinates: Coordenades
+        coordinates_help: Coordenades que generaràn un airal que se pòt far clic en una mapa d'images HTML
+      edit:
+        form:
+          submit_button: Gardar de cambiaments
+        editing: S'edita districte
+        back: Tornar
+      new:
+        back: Tornar
+        creating: crear districte
+      delete:
+        success: Districte esborrat corrèctament
+        error: Se pòt pas esborrar lo districte perque a ja elements associats
+    signature_sheets:
+      author: Autor
+      created_at: Data de creacion
+      name: Nome
+      no_signature_sheets: "Existisson pas de fuèlhas de signaturas"
+      index:
+        title: Fuèlha de signaturas
+        new: Nòu fuèlha de signaturas
+      new:
+        title: Nòu fuèlha de signaturas
+        document_numbers_note: "Introdusís los numèros separats per ponch e coma(;)"
+        submit: Crear fuèlha de signaturas
+        text_help:
+          required_fields_note: "Per verificar un usuari, la vostra aplicació necessita: Número de document"
+          date_of_birth_note: ", Dia del naixement (dd/mm/yyyy)"
+          postal_code_note: " i Codi postal"
+          required_fields_structure_note: "Els camps obligatoris per a cada usuari han d’estar separats per comes i cada usuari s’ha de separar per punts i coma."
+          example_text: "Exemple: "
+      show:
+        created_at: Creat
+        author: Autor
+        users: Usuaris
+        signature_count: "Nombre de signatures:"
+        verified:
+          one: "I a %{count} signatura valida"
+          other: "I a %{count} de signaturas validas"
+        unverified:
+          one: "I a %{count} signatura invàlida"
+          other: "I a %{count} de signaturas invàlides"
+        unverified_error: (Pas verificadas pel Padró)
+        voted:
+          zero: "No hi ha vots creats a partir de les signatures verificades."
+          one: "N’hi ha %{count} vot creat a partir de les signatures verificades."
+          other: "N’hi ha %{count} vots creats a partir de signatures verificades."
+        loading: "I a encara de firmas que se verifican pel Padró, se vos plai refresca la pagina en unes instants"
+    stats:
+      show:
+        stats_title: Estatisticas
+        summary:
+          comment_votes: de Vòts en comentaris
+          comments: Comentarios
+          debate_votes: de Vòts en debats
+          debates: de Debats
+          proposal_votes: de Vòts en proposicions
+          proposals: de Proposicions ciutadanas
+          budgets: de Budgèts dubèrtes
+          budget_investments: de Proposicions d'inversion
+          unverified_users: d'Usatgièrs sens verificar
+          user_level_three: d'Usatgièrs de nivèl tres
+          user_level_two: d'Usatgièrs de nivèl dos
+          users: d'usatgièrs
+          verified_users: d'Usatgièrs verificats
+          verified_users_who_didnt_vote_proposals: d'Usatgièrs verificats qu'an pas votat de proposicions
+          visits: de Visitas
+          votes: de Vòts
+        budgets_title: de Budgèts ciutadans
+        participatory_budgets: Pressupostos participatius
+        direct_messages: de messatges dirèctes
+        proposal_notifications: de Notificacions de proposicions
+        incomplete_verifications: de Verificacions incompletes
+        polls: de votacions
+      graph:
+        debate_created: Debats
+        visit: Visites
+        level_2_user: Usuaris de nivell 2
+        proposal_created: Propostes ciutadanes
+      budgets:
+        no_data_before_balloting_phase: "No hi ha dades que es mostrin abans de la fase de votacions."
+        title: "Pressupostos participatius - estadístiques de participació"
+        supporting_phase: Fase de suport
+        balloting_phase: Votació definitiva
+      budget_balloting:
+        title: "Estadístiques de votació definitiva"
+        vote_count: Vots
+        participant_count: Participants
+        votes_per_heading: Vots per partida
+        participants_per_district: Participants per districte
+      budget_supporting:
+        title: "Estadístiques de fase de suport"
+        headings: Rúbriques
+        users: Usuaris
+        vote_count: Vots
+        participant_count: Participants
+      direct_messages:
+        title: de messatges dirèctes
+        total: total
+        users_who_have_sent_message: d'Usatgièrs qu'an enviat un messatge privat
+      proposal_notifications:
+        title: de Notificacions de proposicions
+        total: total
+        proposals_with_notifications: de Proposicions amb notificacions
+        not_available: "Proposicion pas disponibla"
+      polls:
+        title: Estatistica d’enquèsta
+        all: de votacions
+        web_participants: de Participants web
+        total_participants: Total de participants
+        poll_questions: "de Questions del sondatge: %{poll}"
+        table:
+          poll_name: votacion
+          question_name: question
+          origin_web: de Participants web
+          origin_total: Total de participants
+    tags:
+      create: Crèa tèma
+      destroy: Suprimís lo tèma
+      index:
+        add_tag: Apond un nòu tèma de debat
+        title: de Tèmas de debat
+        topic: Tèma
+        help: "Quand un usatgièr crèa una proposicion, los tèmas seguents se suggerisson coma etiquetas predeterminadas."
+    users:
+      columns:
+        name: Nome
+        email: Lo tieu corrièr electronic
+        document_number: Numèro de document
+        roles: de ròtles
+        verification_level: Nivèl de verficación
+      index:
+        title: d'usatgièrs bloquejats
+        no_users: I a pas d'usatgièrs.
+      search:
+        placeholder: Cercar usatgièr per email, nom o DNI
+        search: Cercar
+    verifications:
+      index:
+        phone_not_given: A pas donat lo sieu telefòn
+        sms_code_not_confirmed: A pas introdusit lo sieu còdi de seguretat
+        title: de Verificacions incompletes
+    site_customization:
+      content_blocks:
+        information: Informacion suls blòcs de tèxt
+        about: "Podètz crear de blòcs de contengut HTML que se pòdon inserir en desparièrs luòcs de lo vòstre luòc web."
+        html_format: "Un blòc de contengut es un grop de ligams, que li cal aver lo format seguent:"
+        no_blocks: "I a pas de blòcs de contengut."
+        create:
+          notice: Blòc creat corrèctament
+          error: S'es pas pogut crear lo blòc
+        update:
+          notice: Blòc actualizat corrèctament
+          error: S'es pas pogut actualizar lo blòc
+        destroy:
+          notice: Blòc esborrat corrèctament
+        edit:
+          title: Edita blòc
+        index:
+          create: Crear nòu blòc
+          delete: Esborrar
+          title: de Blòcs
+        new:
+          title: Crear nòu blòc
+        content_block:
+          body: Contengut
+          name: Nome
+          names:
+            top_links: de Ligams principals
+            footer: Pè de pagina
+            subnavigation_left: Navegacion principala a l'esquèrra
+            subnavigation_right: Principala navegacion drecha
+      images:
+        index:
+          title: d'Images
+          update: Actualizar
+          delete: Borrar
+          image: image
+        update:
+          notice: Image actualizada corrèctament
+          error: S'es pas pogut actualizar l'image
+        destroy:
+          notice: Image esborrada corrèctament
+          error: S'es pas pogut esborrar l'image
+      pages:
+        create:
+          notice: Pagina creada corrèctament
+          error: S'es pas pogut crear la pagina
+        update:
+          notice: Pagina actualizada corrèctament
+          error: S'es pas pogut actualizar la pagina
+        destroy:
+          notice: Pagina eliminada corrèctament
+        edit:
+          title: Edita %{page_title}
+        form:
+          options: d'Opcions
+        index:
+          create: Crear nòva pagina
+          delete: Esborrar
+          title: de Paginas
+          see_page: Veire pagina
+        new:
+          title: Nòva pagina
+          slug_help: "Text per identificar aquesta pàgina a l’URL, per exemple <code>https://consulproject.org/page-slug</code>"
+        page:
+          created_at: creat
+          status: Estat
+          updated_at: Darrièra actualizacion
+          title: Títol
+          slug: URL
+          cards_title: de Cartas
+          see_cards: Vejatz de Cartas
+        cards:
+          cards_title: de cartas
+          create_card: Crear carta
+          no_cards: I a pas de cartas.
+          title: Títol
+          description: Descripcion detalhada
+          link_text: Enllaça lo tèxt
+          link_url: URL de ligam
+          columns_help: "Amplada de la carta en nombre de colomnas. A las pantalhas mobilas es totjorn una amplada de 100%."
+          create:
+            notice: "S'es creat la carta corrèctament!"
+          update:
+            notice: "S'es actualizat corrèctament la carta"
+          destroy:
+            notice: "S'es eliminat corrèctament la carta"
+    homepage:
+      title: Pagina iniciala
+      description: Los moduls actius apareisson a la pagina principala en lo meteis òrdre qu'aicí.
+      header_title: Entèsta
+      no_header: I a pas d'entèstas.
+      create_header: Crèa entèsta
+      cards_title: de Cartas
+      create_card: Crear carta
+      no_cards: I a pas de cartas.
+      cards:
+        title: Títol
+        description: Descripcion detalhada
+        link_text: Enllaça lo tèxt
+        link_url: URL de ligam
+      feeds:
+        proposals: de Proposicions ciutadanas
+        debates: de Debats
+        processes: de procèsses
+      new:
+        header_title: Entèsta nòva
+        submit_header: Crèa entèsta
+        card_title: Nòva carta
+        submit_card: Crear carta
+      edit:
+        header_title: Edita l'entèsta
+        submit_header: Plega l'entèsta
+        card_title: Edita la carta
+        submit_card: Plega la carta
+    audits:
+      title: "Canviar el registre"
+      changes: "Llista de canvis"
+      id: "ID"
+      field: "Camp"
+      new_value: "Nou valor"
+      old_value: "Valor antic"
+      edited_at: "Editat a"
+      edited_by: "Editat per"
+      actions: "Accions"
+      empty: "No hi ha canvis registrats"
+    local_census_records:
+      index:
+        title: Gestiona el cens local
+        create: Creeu un registre de cens local nou
+        no_local_census_records: No hi ha registres locals de cens.
+        document_type: Tipus de document
+        document_number: Número de Document
+        date_of_birth: Data de naixement
+        postal_code: Codi Postal
+        search:
+          placeholder: Cerca per número de document
+          search: Cerca
+        import: Importa CSV
+      new:
+        creating: Creació d'un registre de cens local
+      create:
+        notice: S'ha creat un nou registre de cens local amb èxit.
+      edit:
+        editing: Edició de registre de cens local
+      update:
+        notice: S'ha actualitzat correctament el registre de cens local.
+      destroy:
+        notice: El registre de cens local s'ha suprimit correctament.
+      imports:
+        new:
+          title: Registres locals de cens
+          subtitle: Importa fitxer CSV
+        create:
+          notice: El procés d'importació dels registres de cens local s'ha executat correctament.
+        show:
+          title: Gestiona el cens local
+          subtitle: Importa els resultats del procés
+          import: Importa de nou
+          errored: S'han produït errors a les files
+          created: Registres creats
+        local_census_records:
+          no_records_found: No s’han trobat registres.

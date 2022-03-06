@@ -7,7 +7,7 @@ Rollbar.configure do |config|
 
   # Here we'll disable all environments except 'staging', 'preproduction' and 'production':
   if Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?
-    config.enabled = true
+    config.enabled = Rails.application.secrets.rollbar_server_token.present?
   else
     config.enabled = false
   end

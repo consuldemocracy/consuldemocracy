@@ -1,1 +1,149 @@
 eu:
+  budgets:
+    ballots:
+      show:
+        title: Nire bozkak
+        no_balloted_group_yet: "Oraindik ez duzu talde honetako proiekturik bozkatu, bozka ezazu!"
+        remove: Bozka kendu
+        zero: Oraindik ez duzu gastu proiekturik bozkatu.
+      reasons_for_not_balloting:
+        not_logged_in: Jarraitzeko %{signin} edo %{signup} egin behar zara.
+        not_verified: Gastu proiektuak egiaztatutako erabiltzaileek soilik babes ditzakete, %{verify_account}.
+        organization: Erakundeek ezin dute bozkatu
+        not_selected: Ezin dira bozkatu proiektu bideragarriezinak
+        no_ballots_allowed: Bozka sasoia itxita dago
+        change_ballot: zure bozkak aldatu
+    groups:
+      show:
+        title: Aukera bat hautatu ezazu
+        unfeasible_title: Proiektu bideragarriezinak
+        unfeasible: Proiektu bideragarriezinak ikusi
+        unselected_title: Azken bozkaketarako aukeratu ez diran proiektuak
+        unselected: Azken bozkaketarako aukeratu ez diran proiektuak ikusi
+    phase:
+      drafting: Zirriborroa (Publikoarentzat ikusezina)
+      informing: Informazioa
+      accepting: Proiektuen aurkezpena
+      reviewing: Proiektuen lehen azterketa
+      selecting: Babes fasea
+      valuating: Proiektu ebaluaketa
+      publishing_prices: Kostu azterketa
+      balloting: Azken bozkaketa
+      reviewing_ballots: Bozkaketa amaituta
+      finished: Emaitzak
+    index:
+      title: Partaidetzazko aurrekontuak
+      empty_budgets: Ez dago partaidetzazko aurrekonturik.
+      section_header:
+        icon_alt: Partaidetzazko aurrekontu ikonoa
+        title: Partaidetzazko aurrekontuak
+        help: Partaidetzazko aurrekontuei buruzko laguntza
+        all_phases: Fasea guztiak ikusi
+      all_phases: Partaidetzazko aurrekontuen faseak
+      map: Geografikoki koka daitezken proiektuak
+      investment_proyects: Gastu proiektu zerrenda osoa ikusi
+      unfeasible_investment_proyects: Gastu proiektu bideragarriezin zerrenda ikusi
+      not_selected_investment_proyects: Azken bozketarako aukeratu ez diren gastu proiektu zerrenda ikusi
+      finished_budgets: Amaitutako partaidetzazko aurrekontuak
+      see_results: Emaitzak ikusi
+      section_footer:
+        title: Partaidetzazko aurrekontuei buruzko laguntza
+        description: Partaidetzazko aurrekontuekin, udal aurrekontuaren zati bat zertan gastatu herritarrek erabakitzen dute.
+    investments:
+      form:
+        tag_category_label: "Kategoriak"
+        tags_instructions: "Proposamen hau etiketatu. Proosatutako kategorietatik bat aukeratu edo berri bat sartu dezakezu"
+        tags_label: Etiketak
+        tags_placeholder: "Nahi dituzun etiketak koma artean idatzi behar dituzu (',')"
+        map_location: "Kokapena mapan"
+        map_location_instructions: "Mapatik ibili kokalekura heldu arte eta markagailua jarri."
+        map_remove_marker: "Markagailua ezabatu"
+        map_skip_checkbox: "Proposamen honek ez du kokaleku zehatzik edo ez dut ezagutzen."
+      index:
+        title: Partaidetzazko aurrekontuak
+        unfeasible: Gastu proiektu bideragarriezinak
+        unfeasible_text: "Aurkeztutako proiektuak irizpide batzuk bete behar dituzte (legezkotasuna, zehaztasuna, udal konpetenzia izatea, aurrekontuaren muga ez gainditzea) bideragarriak izan daitezen eta azken bozkaketetararte heldu daitezan. Irizpide hauek betetzen ez dituzten proiektuak, beraien bediragarritasunezin txostenarekin, hurrengo zerrendan argitaratuko dira."
+        by_heading: "Eremua duten gastu proiektuak: %{heading}"
+        search_form:
+          button: Bilatu
+          placeholder: Gastu proiektuak bilatu...
+          title: Bilatu
+        sidebar:
+          my_ballot: Nire bozkak
+          change_ballot: "Iritzia aldatu ezkero zure bozkak aldatu ditzakezu %{check_ballot}-(e)n eta berriz hasi zaitezke."
+          check_ballot_link: "Nire bozkak berrikusi"
+          zero: Oraindik ez duzu arrekontu sail honetako gastu proiekturik bozkatu.
+          verified_only: "%{verify} Gastu proiektu berri bat sortzeko."
+          create: "Gastu proiektua sortu"
+          not_logged_in: "Gastu proiektu berri bat sortzeko %{sign_in} edo %{sign_up} egin behar duzu."
+          by_feasibility: Bideragarritasunarengaitik
+          feasible: Proiektu bideragarriak ikusi
+          unfeasible: Proiektu bideragarriezinak ikusi
+        orders:
+          random: Zorizkoak
+          confidence_score: Hobekien baloratuta
+          price: Kostuarengaitik
+      show:
+        author_deleted: Erabiltzailea ezabatuta
+        price_explanation: Kostu txostena
+        unfeasibility_explanation: Bideragarritsaun txostena
+        share: Partekatu
+        title: Gastu proiektua
+        supports: Babesak
+        votes: Bozkak
+        price: Kostua
+        comments_tab: Iruzkinak
+        milestones_tab: Jarraipena
+        author: Sortzailea
+        project_winner: "Gastu proiektu irabazlea"
+      wrong_price_format: Zenbakiak solik sartu daitezke
+      investment:
+        add: Bozkatu
+        already_added: Gastu proiektua gehitu duzu
+        already_supported: Gastu proiektu hau babestu duzu. Partekatu ezazu!
+        support_title: Proiektu hau babestu
+        confirm_group:
+          one: "Proiektuak auzo baten soilik babes ditzakezu. Aurrera jarraitu ezkero ezingo duzu auzo hau aldatu. Ziur zaude?"
+          other: "Proiektuak %{count} auzotan soilik babes ditzakezu. Aurrera jarraitu ezkero ezingo duzu auzo hau aldatu. Ziur zaude?"
+        supports:
+          zero: Babes gabe
+          one: babes 1
+          other: "%{count} babes"
+        give_support: Babestu
+      header:
+        check_ballot: Nire bozkak berrikusi
+        change_ballot: "Iritzia aldatu ezkero zure bozkak aldatu ditzakezu %{check_ballot}-(e)n eta berriz hasi zaitezke."
+        check_ballot_link: "Nire bozkak berrikusi"
+        price: "Sail honen aurrekontua"
+    progress_bar:
+      assigned: "Esleitutakoa: "
+      available: "Aurrekontu eskuragarria: "
+    show:
+      group: Taldea
+      phase: Oraingo fasea
+      unfeasible_title: Proiektu bideragarriezinak
+      unfeasible: Proiektu bideragarriezinak ikusi
+      unselected_title: Azken bozkaketarako aukeratu ez diran proiektuak
+      unselected: Azken bozkaketarako aukeratu ez diran proiektuak ikusi
+      see_results: Emaitzak ikusi
+    results:
+      link: Emaitzak
+      page_title: "%{budget} - Emaitzak"
+      heading: "Partaidetzazko aurrekontuen emaitzak"
+      heading_selection_title: "Eremua"
+      ballot_lines_count: Bozkak
+      hide_discarded_link: Beztertutakoak ezkutatu
+      show_all_link: Guztiak erakusi
+      price: Prezioa guztira
+      amount_available: Aurrekontu eskuragarria
+      accepted: "Onartutako gastu proiektua: "
+      discarded: "Baztertutako gastu proiektua: "
+      incompatibles: Bateraezinak
+      investment_proyects: Gastu proiektu zerrenda osoa ikusi
+      unfeasible_investment_proyects: Gastu proiektu bideragarriezin zerrenda ikusi
+      not_selected_investment_proyects: Azken bozkaketarako aukeratu ez direnen gastu proiektu zerrenda ikusi
+    phases:
+      errors:
+        dates_range_invalid: "Hasiera data ezin da amaiera data baino handiago edo berdina izan"
+        prev_phase_dates_invalid: "Hasiera data gaitutako aurreko fasearen (%{phase_name}) hasiera data baino beranduagokoa izan behar da"
+        next_phase_dates_invalid: "Amaiera data gaitutako huerrengo fasearen (%{phase_name}) amaiera data aurreragokoa izan behar da"

@@ -426,7 +426,6 @@ bs:
           attributes:
             document_number:
               not_in_census: "Dokument nije na popisu"
-              has_voted: "Korisnik je već glasao"
         legislation/process:
           attributes:
             end_date:

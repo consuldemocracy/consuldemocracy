@@ -179,7 +179,6 @@ sl:
       help: Pomoč
       my_account_link: Moj račun
       my_activity_link: Moje aktivnosti
-      open: odpri
       open_gov: Odprta vlada
       proposals: Predlogi
       poll_questions: Glasovanje
@@ -187,8 +186,6 @@ sl:
       notification_item:
         notifications: Obvestila
         no_notifications: "Nimaš novih obvestil"
-    admin:
-      watch_form_message: "Imaš neshranjene spremembe. Res želiš zapustiti to stran?"
   notifications:
     index:
       empty_notifications: Nimaš novih obvestil.
@@ -217,8 +214,6 @@ sl:
     twitter:
       sign_in: Vpiši se s Twitterjem
       sign_up: Vpiši se s Twitterjem
-    info_sign_in: "Vpiši se z:"
-    info_sign_up: "Registriraj se z:"
     or_fill: "Ali izpolni ta obrazec:"
   proposals:
     create:
@@ -440,7 +435,6 @@ sl:
     follow: "Sledi"
     following: "Sledim"
     follow_entity: "Sledi %{entity}"
-    hide: Skrij
     print:
       print_button: Natisni te informacije
     search: Išči

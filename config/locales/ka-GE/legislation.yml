@@ -1,0 +1,139 @@
+ka:
+  legislation:
+    annotations:
+      comments:
+        see_all: ყველას ნახვა
+        see_complete: ბოლომდე ნახვა
+        comments_count:
+          one: "%{count} კომენტარი"
+          other: "%{count} კომენტარი"
+        replies_count:
+          one: "%{count} პასუხი"
+          other: "%{count} პასუხი"
+        cancel: გაუქმება
+        publish_comment: კომენტარის გამოქვეყნება
+      form:
+        phase_not_open: ეს ფაზა არ არის ღია
+      index:
+        title: კომენტარები
+        comments_about: კომენტარები
+        see_in_context: კონტექსტის ნახვა
+        comments_count:
+          one: "%{count} კომენტარი"
+          other: "%{count} კომენტარი"
+      show:
+        title: კომენტარი
+      version_chooser:
+        seeing_version: კომენტარები ვერსიისათვის
+        see_text: მონახაზის ნახვა
+    draft_versions:
+      changes:
+        title: ცვლილებები
+        seeing_changelog_version: ცვლილებების ისტორია
+        see_text: მონახაზის ნახვა
+      show:
+        loading_comments: კომენტარები იტვირთება
+        seeing_version: თქვენ ხედავთ მონახაზს
+        select_draft_version: მონახაზის შერჩევა
+        select_version_submit: ნახვა
+        updated_at: განახლების თარიღი %{date}
+        see_changes: ცვლილებების ისტორია
+        see_comments: ყველა კომენტარის ნახვა
+        text_toc: სარჩევი
+        text_body: ტექსტი
+        text_comments: კომენტარები
+    processes:
+      header:
+        additional_info: დამატებითი ინფორმაცია
+        description: აღწერა
+        more_info: დამატებითი ინფორმაცია და კონტექსტი
+      proposals:
+        empty_proposals: ინიციატივა არ მოიძებნა
+        filters:
+          random: შემთხვევითი
+          winners: შერჩეული
+      debate:
+        empty_questions: შეკითხვები არ მოიძებნა
+        participate: დებატებში მონაწილეობა
+      index:
+        filter: ფილტრი
+        filters:
+          open: ღია პროცესები
+          past: განვლილი
+        no_open_processes: ღია პროცესები არ მოიძებნა
+        no_past_processes: განვლილი პროცესები არ მოიძებნა
+        section_header:
+          icon_alt: ერთობლივი სამოქალაქო ინიციატივის ნიშანი
+          title: ერთობლივი სამოქალაქო ინიციატივა
+          help: დახმარება ერთობლივი სამოქალაქო ინიციატივის შესახებ
+        section_footer:
+          title: ინფორმაცია ერთობლივი სამოქალაქო ინიციატივის შესახებ
+          description: ახალი რეგულაციების ან სტრატეგიების დამტკიცებამდე ჩაერთეთ დებატებსა და პროცესებში. თქვენს აზრს გაითვალისწინებენ.
+      phase_not_open:
+        not_open: ეს ფაზა არ არის ღია
+      phase_empty:
+        empty: ჯერ არაფერი გამოქვეყნებულა
+      process:
+        see_latest_comments: უახლესი კომენტარების ნახვა
+        see_latest_comments_title: ამ პროცესის ირგვლივ გაკეთებული კომენტარები
+      shared:
+        key_dates: მონაწილეობის ფაზები
+        homepage: მთვარი გვერდი
+        debate_dates: დებატები
+        draft_publication_date: პროექტის გამოქვეყნება
+        allegations_dates: კომენტარები
+        result_publication_date: საბოლოო შედეგების გამოქვეყნება
+        milestones_date: მომდევნო
+        proposals_dates: ინიციატივები
+    questions:
+      comments:
+        comment_button: პასუხის გამოქვეყნება
+        comments_title: ღია პასუხები
+        comments_closed: დახურული ფაზა
+        form:
+          leave_comment: დატოვეთ პასუხი
+      question:
+        comments:
+          zero: კომენტარები არ მოიძებნა
+          one: "%{count} კომენტარი"
+          other: "%{count} კომენტარი"
+        debate: დებატები
+      show:
+        answer_question: პასუხის გაგზავნა
+        next_question: შემდეგი შეკითხვა
+        first_question: პირველი შეკითხვა
+        share: გაზიარება
+        title: ერთობლივ სამოქალაქო ინიციატივაზე მუშაობის პროცესი
+      participation:
+        phase_not_open: ეს ფაზა არ არის ღია
+        organizations: ორგანიზაციებს ამ დებატში მონაწილეობა არ შეუძლია
+        unauthenticated: მონაწილეობის მისაღებად თქვენ უნდა გაიაროთ %{signin} ან %{signup}.
+        verified_only: მხოლოდ გადამოწმებული ანგარიშის მქონე მომხმარებლებს შეუძლიათ მონაწილეობა; %{verify_account}.
+        debate_phase_not_open: დებატების ფაზა დამთავრდა და პასუხები აღარ მიიღება
+    shared:
+      share: გაზიარება
+      share_comment: დატოვეთ კომენტარი %{version_name}-ზე საპროცესო პროექტიდან - %{process_name} 
+    proposals:
+      form:
+        tags_label: "კატეგორიები"
+      not_verified: "ინიციატივაზე ხმის მისაცემად %{verify_account}."
+      process_title: ერთობლივ სამოქალაქო ინიციატივაზე მუშაობის პროცესი
+    summary:
+      title: "შეჯამება"
+      votes:
+        zero: "%{count} ხმა"
+      debate_phase: "დებატების ფაზა"
+      proposals_phase: "ინიციატივების ფაზა"
+      allegations_phase: "კომენტირების ფაზა"
+      debates:
+        zero: "დებატები არ მოიძებნა"
+      proposals:
+        zero: "ინიციატივა არ მოიძებნა"
+      comments:
+        zero: "კომენტარები არ მოიძებნა"
+      download: "შეჯამების ჩამოტვირთვა"
+      top_comments:
+        zero: "კომენტარები არ მოიძებნა"
+      most_voted_comments: "ყველაზე მეტი ხმის მქონე კომენტარი"
+      no_allegation: "კომენტარები არ მოიძებნა"
+      process_empty: "აღნიშნული პროცესი არ მოიცავდა მონაწილეობის ფაზებს"

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe RemoteTranslations::Caller do
+describe RemoteTranslations::Caller, :remote_translations do
   before do
     RemoteTranslation.skip_callback(:create, :after, :enqueue_remote_translation)
   end

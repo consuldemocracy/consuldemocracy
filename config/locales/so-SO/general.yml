@@ -87,9 +87,6 @@ so:
       tags_placeholder: "Geli taagyada ad jeceshahay inaad isticmasho, kana kaxay qooyska(', ')"
     index:
       featured_debates: Soobandhigiid/ Muqaal
-      filter_topic:
-        one: " mawduuc%{topic}"
-        other: " mawduuc%{topic}"
       orders:
         confidence_score: ugu sareeya
         created_at: ugu cusub
@@ -207,7 +204,6 @@ so:
       help: Caawin
       my_account_link: Xisaabteyda
       my_activity_link: Hawlgalkayga
-      open: fur
       open_gov: Dawlad furan
       proposals: Sojeedino
       poll_questions: Codeynta
@@ -218,8 +214,6 @@ so:
           other: Waxaad heysataa%{count} ogeysiis cusub
         notifications: Ogaysiisyo
         no_notifications: "Ma haysatid wargelin cusub"
-    admin:
-      watch_form_message: "Waxaad leedahay isbedel aan la badbaadin. Ma xaqiijinaysaa inaad ka tagto bogga?"
   notifications:
     index:
       empty_notifications: Ma haysatid wargelin cusub,.
@@ -261,8 +255,6 @@ so:
       sign_in: Ku soo gal tuwiter
       sign_up: Iska diwangeli tuwitaar
       name: Tuwiitar
-    info_sign_in: "Ku saxiix:"
-    info_sign_up: "Isku qor:"
     or_fill: "Ama buuxi foomka soo socda:"
   proposals:
     create:
@@ -301,9 +293,6 @@ so:
       map_skip_checkbox: "Soo jeedintaas ma laha meel la taaban karo ama aanan ogeyn."
     index:
       featured_proposals: Soobandhigiid/ Muqaal
-      filter_topic:
-        one: " mawduuc '%{topic}"
-        other: " mawduuc '%{topic}"
       orders:
         confidence_score: ugu sareeya
         created_at: ugu cusub
@@ -506,7 +495,6 @@ so:
     follow: "Raac"
     following: "Kuxiga"
     follow_entity: "Raac%{entity}"
-    hide: Qarin
     print:
       print_button: Daabac xogtan
     search: Raadin

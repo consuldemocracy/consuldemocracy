@@ -5,7 +5,9 @@
     </button>
 
     <strong>
-      <%= pluralize resource.errors.count, t("form.error"), t("form.errors") %>
+      <% errors_count = resource.errors.messages.reject { |attribute| attribute == :base }.count %>
+
+      <%= pluralize errors_count, t("form.error"), t("form.errors") %>
 
       <% if local_assigns[:message].present? %>
         <%= message %>

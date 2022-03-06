@@ -308,7 +308,6 @@ so:
           attributes:
             document_number:
               not_in_census: "Dukumenti mahan tiro koob"
-              has_voted: "Isticmaalkii hore ayaa u codeeyay"
         legislation/process:
           attributes:
             end_date:

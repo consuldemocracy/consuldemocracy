@@ -55,7 +55,7 @@ sv:
         one: "Nyhetsbrev"
         other: "Nyhetsbrev"
       vote:
-        one: "Rösta"
+        one: "Röst"
         other: "Röster"
       organization:
         one: "Organisation"
@@ -117,12 +117,18 @@ sv:
       proposal_notification:
         one: "Avisering om förslag"
         other: "Aviseringar om förslag"
+      dashboard/action:
+        one: Åtgärd i förslagsdashboard
+        other: Åtgärder i förslagsdashboard
       dashboard/administrator_task:
         one: Åtgärd
         other: Åtgärder
       link:
         one: Länk
         other: Länk
+      local_census_record:
+        one: Lokalt adressregister
+        other: Lokala adressregister
     attributes:
       budget:
         name: "Namn"
@@ -166,6 +172,9 @@ sv:
         description: "Beskrivning"
       geozone:
         name: Namn
+        external_code: "Extern kod (valfri)"
+        census_code: "Områdeskod (valfri)"
+        html_map_coordinates: "HTML-<map>koordinater (valfri)"
       milestone:
         status_id: "Nuvarande status för budgetförslag (frivilligt fält)"
         title: "Titel"
@@ -188,6 +197,7 @@ sv:
       budget/group/translation:
         name: "Gruppnamn"
       budget/heading:
+        allow_custom_content: "Tillåt innehållsblock"
         latitude: "Latitud (frivilligt fält)"
         longitude: "Longitud (frivilligt fält)"
         name: "Område"
@@ -220,6 +230,7 @@ sv:
         question: "Fråga"
         description: "Beskrivning"
         responsible_name: "Förslagslämnarens fullständiga namn"
+        retired_reason: "Anledning att dra tillbaka förslaget"
         selected: "Markera som valda"
         terms_of_service: "Användarvillkor"
         video_url: "Extern video URL"
@@ -247,6 +258,7 @@ sv:
         public_activity: "Visa min lista över aktiviteter offentligt"
         public_interests: "Visa etiketterna för de ämnen jag följer offentligt"
         recommended_debates: "Visa rekommenderade debatter"
+        recommended_proposals: "Visa rekommenderade förslag"
         redeemable_code: "Mottagen bekräftelsekod"
       direct_message:
         title: "Titel"
@@ -281,12 +293,14 @@ sv:
       poll/ballot_sheet:
         data: CSV data
         poll_id: Omröstning
+        officer_assignment_id: Tilldela funktionär
       poll/shift:
         task: "Åtgärd"
       proposal_notification:
         body: "Meddelande"
         title: "Titel"
       signature_sheet:
+        title: "Titel"
         signable_type: "Typ av underskrifter"
         signable_id: "Förslagets ID"
         document_numbers: "Dokumentnummer"
@@ -428,9 +442,15 @@ sv:
         short_description: Kort beskrivning
         description: Beskrivning
         link: Extern länk
+        request_to_administrators: Ta med en knapp i resursen för att begära resursen från administratörerna
+        day_offset: Aktivera förslaget efter hur många dagar efter att det skapats?
+        required_supports: Hur mycket stöd måste förslaget ha för att aktiveras?
+        order: Du kan ange den plats där åtgärden ska visas för användaren i listan över åtgärder
         active: Aktiv
         action_type: Typ
+        action_type_proposed_action: "Föreslagen åtgärd"
         action_type_resource: "Resurs"
+        published_proposal: "För publicerade förslag?"
       dashboard/administrator_task:
         source: Källa
         user: Genomfört av
@@ -440,6 +460,8 @@ sv:
       valuator:
         description: Beskrivning
         valuator_group_id: Bedömningsgrupp
+        can_comment: Kan skapa kommentarer
+        can_edit_dossier: Kan redigera rapporter
       valuator_group:
         name: "Gruppnamn"
       local_census_record:
@@ -482,7 +504,6 @@ sv:
           attributes:
             document_number:
               not_in_census: "Finns inte i adressregistret"
-              has_voted: "Användaren har redan röstat"
         legislation/process:
           attributes:
             end_date:
@@ -493,6 +514,10 @@ sv:
               invalid_date_range: måste vara på eller efter startdatum för utkastet
             allegations_end_date:
               invalid_date_range: måste vara på eller efter startdatum för fasen för att kommentera utkast
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: finns inte med i listan, tillåtna värden är 1 för legitimation, 2 för pass och 3 för övrig identitetshandling.
         proposal:
           attributes:
             tag_list:
@@ -523,8 +548,14 @@ sv:
           attributes:
             valuation:
               cannot_comment_valuation: "Du kan inte kommentera en kostnadsberäkning"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Redan översatt resurs
       messages:
+        translations_too_short: Det krävs minst en översättning
         record_invalid: "Felmeddelanden: %{errors}"
+        another_poll_active: Det pågår en annan omröstning under perioden
         restrict_dependent_destroy:
           has_one: "Inlägget kan inte raderas eftersom det hänger ihop med inlägget %{record}"
           has_many: "Inlägget kan inte raderas eftersom det hänger ihop med inlägget %{record}"

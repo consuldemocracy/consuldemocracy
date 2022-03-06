@@ -91,10 +91,6 @@ bs:
       tags_placeholder: "Unesite tagove koje želite koristiti, razdvojene zarezima (,)"
     index:
       featured_debates: Glavne debate
-      filter_topic:
-        one: " sa temom %{topic}"
-        few: " sa temom %{topic}"
-        other: " sa temom %{topic}"
       orders:
         confidence_score: sa najvišim ocjenama
         created_at: najnovije
@@ -230,7 +226,6 @@ bs:
       help: Pomoć
       my_account_link: Moj nalog
       my_activity_link: Moje aktivnosti
-      open: otvoreno
       open_gov: Otvorena vlada
       proposals: Prijedlozi
       poll_questions: Glasanje
@@ -242,8 +237,6 @@ bs:
           other: Imate %{count} nove/novih obavijesti
         notifications: Obavijesti
         no_notifications: "Nemate novih obavijesti"
-    admin:
-      watch_form_message: "Niste spasili izmjene. Ipak napuštate stranicu?"
   notifications:
     index:
       empty_notifications: Nemate novih obavijesti.
@@ -288,8 +281,6 @@ bs:
       sign_in: Prijava preko Twittera
       sign_up: Otvori nalog preko Twittera
       name: Twitter
-    info_sign_in: "Prijavi se preko:"
-    info_sign_up: "Otvori nalog preko:"
     or_fill: "Ili ispuni ovaj formular:"
   proposals:
     create:
@@ -336,10 +327,6 @@ bs:
       map_skip_checkbox: "Prijedlog nema konkretnu lokaciju, ili je ja ne vidim."
     index:
       featured_proposals: Glavni prijedlozi
-      filter_topic:
-        one: " sa temom %{topic}"
-        few: " sa temom %{topic}"
-        other: " sa temom %{topic}"
       orders:
         confidence_score: sa najvišim ocjenama
         created_at: najnovije
@@ -685,7 +672,6 @@ bs:
     follow: "Prati"
     following: "Praćenje"
     follow_entity: "Prati %{entity}"
-    hide: Sakrij
     print:
       print_button: Printaj
     search: Traži

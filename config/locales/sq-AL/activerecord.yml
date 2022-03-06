@@ -326,7 +326,6 @@ sq:
           attributes:
             document_number:
               not_in_census: "Dokumenti nuk është në regjistrim"
-              has_voted: "Përdoruesi ka votuar tashmë"
         legislation/process:
           attributes:
             end_date:

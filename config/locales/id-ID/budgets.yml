@@ -3,8 +3,6 @@ id:
     ballots:
       show:
         title: Suara anda
-        amount_spent: Jumlah dihabiskan
-        remaining: "Anda masih memiliki <span>%{amount}</span> untuk berinvestasi."
         no_balloted_group_yet: "Anda belum memilih pada kelompok ini belum, buka suara!"
         remove: Menghapus suara
         voted_info_2: "Tapi kamu dapat mengubah pilihanmu setiap waktu sampai poling di tutup."
@@ -75,8 +73,6 @@ id:
           title: Cari
         sidebar:
           my_ballot: Suara saya
-          voted_info: Anda dapat %{link} di setiap waktu sampai penutupan tahap ini. Tidak perlu menghabiskan semua uang yang tersedia.
-          voted_info_link: mengubah suara anda
           change_ballot: "Jika anda mengubah pikiran anda, anda dapat menghapus suara di %{check_ballot} dan mulai lagi."
           check_ballot_link: "periksa suara saya"
           zero: Anda belum memilih setiap proyek investasi dalam kelompok ini.

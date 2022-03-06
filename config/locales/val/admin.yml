@@ -977,15 +977,6 @@ val:
           without_confirmed_hide: Pendents
         title: Propostes ocultes
         no_hidden_proposals: No hi ha propostes ocultes.
-    proposal_notifications:
-      index:
-        filter: Filtre
-        filters:
-          all: Totes
-          with_confirmed_hide: Confirmats
-          without_confirmed_hide: Pendents
-        title: Notificacions ocultes
-        no_hidden_proposals: No hi ha notificacions ocultes.
     settings:
       flash:
         updated: Valor actualitzat

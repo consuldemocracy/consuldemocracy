@@ -10,6 +10,7 @@ ca:
         replies_count:
           one: "%{count} resposta"
           other: "%{count} respostes"
+        cancel: Cancel · lar
         publish_comment: publicar Comentari
       form:
         phase_not_open: Aquesta fase no està oberta
@@ -43,10 +44,13 @@ ca:
         text_comments: Comentarios
     processes:
       header:
+        additional_info: Informació addicional
         description: Descripció detallada
         more_info: Més informació i context
       proposals:
+        empty_proposals: No hi ha propostes
         filters:
+          random: L’atzar
           winners: seleccionada
       debate:
         empty_questions: No hi ha preguntes
@@ -59,7 +63,12 @@ ca:
         no_open_processes: No hi ha processos actius
         no_past_processes: No hi ha processos acabats
         section_header:
+          icon_alt: Icona de legislació col·laborativa
           title: processos legislatius
+          help: Ajuda sobre legislació col·laborativa
+        section_footer:
+          title: Ajuda sobre legislació col·laborativa
+          description: Participa en els debats i processos previs a l’aprovació de noves normatives o estratègies. Es considerarà la vostra opinió.
       phase_not_open:
         not_open: Aquesta fase del procés encara no està oberta
       phase_empty:
@@ -68,10 +77,13 @@ ca:
         see_latest_comments: Veure últimes aportacions
         see_latest_comments_title: Aportar a aquest procés
       shared:
+        key_dates: Fases de participació
+        homepage: Pàgina inicial
         debate_dates: debat previ
         draft_publication_date: publicació esborrany
         allegations_dates: Comentarios
         result_publication_date: publicació resultats
+        milestones_date: A continuació
         proposals_dates: Propostes ciutadanes
     questions:
       comments:
@@ -82,6 +94,7 @@ ca:
           leave_comment: Deixa la teva resposta
       question:
         comments:
+          zero: Sense comentaris
           one: "%{count} comentari"
           other: "%{count} comentaris"
         debate: debat previ
@@ -100,3 +113,8 @@ ca:
     shared:
       share: compartir
       share_comment: Comentari sobre la %{version_name} de l'esborrany del procés %{process_name}
+    proposals:
+      form:
+        tags_label: "Categories"
+      not_verified: "Per a propostes de vot %{verify_account}."
+      process_title: Procés de legislació col·laborativa

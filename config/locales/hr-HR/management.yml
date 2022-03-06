@@ -2,55 +2,56 @@ hr:
   management:
     account:
       menu:
-        reset_password_email: Obnovi zaporku putem emaila
-        reset_password_manually: Obnovi zaporku ručno
+        reset_password_email: Obnovi lozinku putem e-maila
+        reset_password_manually: Obnovi lozinku ručno
       alert:
-        unverified_user: Nema ulogiranih verificiranih korisnika
+        unverified_user: Nema prijavljenih verificiranih korisnika
       show:
         title: Korisnički račun
       edit:
-        title: "Uredi korisnički račun: Obnovi zaporku"
+        title: "Uredi korisnički račun: Obnovi lozinku"
         back: Nazad
         password:
-          password: Zaporka
-          send_email: Pošalji obnovljenu zaporku emal-om
-          reset_email_send: Email poslan točno.
-          reseted: Zaporka je uspješno obnovljena
-          random: Stvori nasumičnu zaporku
-          save: Spremi zaporku
-          print: Printaj zaporku
-          print_help: Moći ćete printati zaporku kada ju spremite.
+          password: Lozinka
+          send_email: Pošalji e-mail za obnovu lozinke
+          reset_email_send: E-mail poslan ispravno.
+          reseted: Lozinka je uspješno obnovljena
+          random: Stvori nasumičnu lozinku
+          save: Spremi lozinku
+          print: Ispiši zaporku
+          print_help: Moći ćete ispisati zaporku kada ju spremite.
     account_info:
-      change_user: Promjeni korisnika
+      change_user: Promijeni korisnika
       document_number_label: "Broj dokumenta:"
       document_type_label: "Tip dokumenta:"
-      email_label: "Email:"
+      email_label: "E-mail:"
       identified_label: "Identificiraj kao:"
       username_label: "Korisničko ime:"
     check: Provjeri dokument
     dashboard:
       index:
         title: Menadžment
-        info: Ovdje možete upravljati korisnicima putem svih akcija koje su navedene u lijevom meniju.
+        info: Ovdje možete upravljati korisnicima putem svih akcija koje su navedene u lijevom izborniku.
     document_verifications:
       already_verified: Ovaj korisnički račun je već potvrđen.
+      has_no_account: Da biste otvorili račun, idite na %{link} i kliknite na <b>"Registracija"</b> u gornjem lijevom uglu ekrana.
       link: CONSUL
-      in_census_has_following_permissions: "Korisnik može sudjelovati u stranici sa sljedećim dozvolama:"
+      in_census_has_following_permissions: "Korisnik može sudjelovati na web sjedištu sa sljedećim dozvolama:"
       not_in_census: Dokument nije registriran.
-      not_in_census_info: "Građani koji nisu u Cenzusu mogu sudjelovati na stranicu sa sljedećim dozvolama:"
+      not_in_census_info: "Građani koji nisu u Cenzusu mogu sudjelovati na web sjedištu sa sljedećim dozvolama:"
       please_check_account_data: Molimo vas da provjerite točnost osobnih podataka.
       title: Korisnički menadžment
       under_age: "Nemate dovoljno godina kako biste potvrdili svoj račun."
       verify: Potvrdi
-    email_label: Email
+    email_label: E-mail
     date_of_birth: Datum rođenja
     email_verifications:
       already_verified: Ovaj korisnički račun je već potvrđen.
-      choose_options: "Molimo vas da odaberete sljedeće opcije:"
-      document_found_in_census: Ovaj dokument je nađen u cenzusu, ali nema korisnika koji su povezani s njime.
-      document_mismatch: "Ovaj email pripada korisniku koji je već povezan s id-om: %{document_number}(%{document_type})"
-      email_placeholder: Napiši email koji ovaj korisnik koristi za njegov ili njezin račun
-      email_sent_instructions: Kako biste dovršili verifikaciju ovog korisnika potrebno je potvrditi poveznicu koja je došla na email. Ovaj korak je potrebna kako bi potvrdili da adresa pripada njemu.
+      choose_options: "Molimo vas da odaberete jednu od sljedećih opcija:"
+      document_found_in_census: Ovaj dokument je pronađen u cenzusu, ali nema korisnika koji su povezani s njime.
+      document_mismatch: "Ovaj e-mail pripada korisniku koji već ima povezan id: %{document_number}(%{document_type})"
+      email_placeholder: Napiši e-mail koji ovaj korisnik koristi za njegov ili njezin račun
+      email_sent_instructions: Kako biste dovršili verifikaciju ovog korisnika potrebno je kliknuti na poveznicu pristiglu na navedeni e-mail. Ovaj korak je potreban kako biste potvrdili da adresa pripada njemu.
       if_existing_account: Ako je osoba već napravila korisnički račun na stranici,
       if_no_existing_account: Ako ova osoba nije još stvorila račun
       introduce_email: "Molimo vas da upišete email korišten za ovaj račun:"
@@ -95,6 +96,7 @@ hr:
       alert:
         unverified_user: Korisnik nije verificiran
       create: Stvori investicijski budžet
+      edit: Uredite investicijski budžet
       filters:
         heading: Koncept
         unfeasible: Neizvediva investicija
@@ -106,12 +108,14 @@ hr:
         other: " sadrži termine '%{search_term}'"
     sessions:
       signed_out: Uspješna odjava.
-      signed_out_managed_user: Krisnička sesija je uspješno odjavljena.
+      signed_out_managed_user: Korisnička sjednica je uspješno odjavljena.
     username_label: Korisničko ime
     users:
       create_user: Stvori novi račun
       create_user_info: Mi ćemo stvoriti račun sa sljedećim podacima
       create_user_submit: Stvori korisnika
+      create_user_success: Poslali smo e-mail poruku na adresu <b>%{email}</b> kako bismo provjerili da pripada ovom korisniku. U njoj se nalazi poveznica na koju moraju kliknuti. Nakon toga će morati postaviti ulaznu zaporku prije nego se prijave na web-stranicu
+      autogenerated_password: "Zadana zaporka je <b>%{password}</b>, možete ju promijeniti u dijelu 'Moj račun' na stranici"
       email_optional_label: Email (neobavezno)
       erased_notice: Korisnički račun obrisan.
       erased_by_manager: "Obrisan od strane administratora: %{manager}"
@@ -126,4 +130,5 @@ hr:
         submit: Pošalji pozivnice
         title: Pošalji pozivnice
       create:
+        success: <strong>%{count} pozivnice</strong> su poslane.
         title: Pošalji pozivnice

@@ -87,9 +87,6 @@ sq:
       tags_placeholder: "Futni etiketimet që dëshironi të përdorni, të ndara me presje (',')"
     index:
       featured_debates: Karakteristika
-      filter_topic:
-        one: " me tema '%{topic}'"
-        other: " me tema '%{topic}'"
       orders:
         confidence_score: më të vlerësuarat
         created_at: më të rejat
@@ -207,7 +204,6 @@ sq:
       help: Ndihmë
       my_account_link: Llogaria ime
       my_activity_link: Aktivitetet e mia
-      open: hapur
       open_gov: Qeveri e hapur
       proposals: Propozime
       poll_questions: Votim
@@ -218,8 +214,6 @@ sq:
           other: Ju keni %{count} njoftim të reja
         notifications: Njoftimet
         no_notifications: "Ju nuk keni njoftime të reja"
-    admin:
-      watch_form_message: "Ju keni ndryshime të paruajtura. A konfirmoni të dilni nga faqja?"
   notifications:
     index:
       empty_notifications: Ju nuk keni njoftime të reja
@@ -261,8 +255,6 @@ sq:
       sign_in: Identifikohu me Twitter
       sign_up: Regjistrohuni me Twitter
       name: Twitter
-    info_sign_in: "Identifikohu me:"
-    info_sign_up: "Regjistrohuni me:"
     or_fill: "Ose plotësoni formularin e mëposhtëm:"
   proposals:
     create:
@@ -301,9 +293,6 @@ sq:
       map_skip_checkbox: "Ky propozim nuk ka një vend konkret ose nuk jam i vetëdijshëm për të."
     index:
       featured_proposals: Karakteristika
-      filter_topic:
-        one: " me tema '%{topic}'"
-        other: " me tema '%{topic}'"
       orders:
         confidence_score: më të vlerësuarat
         created_at: më të rejat
@@ -506,7 +495,6 @@ sq:
     follow: "Ndiq"
     following: "Duke ndjekur"
     follow_entity: "Ndiq %{entity}"
-    hide: Fsheh
     print:
       print_button: Printoni këtë informacion
     search: Kërko

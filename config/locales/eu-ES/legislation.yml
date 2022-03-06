@@ -1,11 +1,114 @@
 eu:
   legislation:
     annotations:
+      comments:
+        see_all: Guztiak ikusi
+        see_complete: Osoa ikusi
+        comments_count:
+          one: "Iruzkin %{count}"
+          other: "%{count} Iruzkin"
+        replies_count:
+          one: "Erantzun %{count}"
+          other: "%{count} erantzun"
+        cancel: Ezeztatu
+        publish_comment: Iruzkina argitaratu
+      form:
+        phase_not_open: Prosezuaren fase hau ez dago irekita
+      index:
+        title: Iruzkinak
+        comments_about: '-ri buruz iruzkinak'
+        see_in_context: Testuinguruan ikusi
+        comments_count:
+          one: "Iruzkin %{count}"
+          other: "%{count} Iruzkin"
       show:
         title: Iruzkin
+      version_chooser:
+        seeing_version: Bertsioarako iruzkinak
+        see_text: Testu zirriborroa ikusi
+    draft_versions:
+      changes:
+        title: Aldaketak
+        seeing_changelog_version: Berrikusketan izandako aldaketen laburpena
+        see_text: Testu zirriborroa ikusi
+      show:
+        loading_comments: Iruzkinak kargatzen
+        seeing_version: Berrikusketa ikusten zabiltza
+        select_draft_version: Zirriborroa aukeratu
+        select_version_submit: ikusi
+        updated_at: '%{date}-an eguneratuta'
+        see_changes: Aldaketen laburpena ikusi
+        see_comments: Iruzkin guztiak ikusi
+        text_toc: Aurkibidea
+        text_body: Testua
+        text_comments: Iruzkinak
     processes:
+      header:
+        additional_info: Gehigarrizko informazioa
+        description: Zertan datza
+        more_info: Informazio gehiago eta testuingurua
+      proposals:
+        empty_proposals: Ez daude proposamenik
+      debate:
+        empty_questions: Ez dago galderarik
+        participate: Hurrengo gaietan parte hartuz aurretiko eztabaidetan ekarpenak egin ditzazu.
+      index:
+        filter: Iragazkia
+        filters:
+          open: Prosezu aktiboak
+          past: Amaitutakoak
+        no_open_processes: Ez da prosezu aktiborik
+        no_past_processes: Ez da amaitutako prosezurik
+        section_header:
+          icon_alt: Legegintza prosezuaren ikonoa
+          title: Legegintza prosezuak
+          help: Legegintza prosezuei buruz laguntza
+        section_footer:
+          title: Legegintza prosezuei buruz laguntza
+          description: Norma baten onartze edo udal jarduketa baten eztabaidetan eta aurretiko prosezuetan parte hartu ezazu. Udaletxeak zure iritzia kontutan izango du.
+      phase_not_open:
+        not_open: Prosezuaren fase hau ez dago irekita oraindik
+      phase_empty:
+        empty: Ez da ezer argitaratu oraindik
+      process:
+        see_latest_comments: Azken ekarpenak ikusi
+        see_latest_comments_title: Prosezu honetan ekarpenak egin
       shared:
+        key_dates: Gako datak
         debate_dates: Eztabaida
+        draft_publication_date: Zirriborroa argitaratu
+        allegations_dates: Alegazioak
+        result_publication_date: Emaitz argitaraketa
+        proposals_dates: Proposamenak
     questions:
+      comments:
+        comment_button: Erantzuna argitaratu
+        comments_title: Erantzun irekiak
+        comments_closed: Itxitako fasea
+        form:
+          leave_comment: Zure erantzuna utzi
       question:
+        comments:
+          zero: Iruzkinik gabe
+          one: "Iruzkin %{count}"
+          other: "%{count} Iruzkin"
         debate: Eztabaida
+      show:
+        answer_question: Erantzuna bidali
+        next_question: Hurrengo galdera
+        first_question: Lehenengo galdera
+        share: Partekatu
+        title: Elkarlan legedi prosezua
+      participation:
+        phase_not_open: Fasea hau ez dago irekita
+        organizations: Erakundeek ezin dute eztabaidan parte hartu
+        unauthenticated: '%{signin} behar zara edo %{signup} behar duzu eztabaidan parte hartzeko.'
+        verified_only: Egiaztatutako erabiltzaileek soilik hartu dezakete parte eztabaidan, %{verify_account}.
+        debate_phase_not_open: Aurretizko eztabaida fasea amaitu da, beraz jada ez dira erantzunik onartzen
+    shared:
+      share: Partekatu
+      share_comment: '%{process_name} prosesu eta %{version_name} bertsioari buruzko iruzkin zirriborroa'
+    proposals:
+      form:
+        tags_label: "Mailak"
+      not_verified: "%{verify_account} proposamenak bozkatzeko."

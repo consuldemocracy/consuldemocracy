@@ -1,0 +1,133 @@
+oc:
+  management:
+    account:
+      menu:
+        reset_password_email: Restablir la contrasenya per corrièr electronic
+        reset_password_manually: Restablir la contrasenya manualment
+      alert:
+        unverified_user: Se pòdon solament editar de comptes d'usatgièrs verificats
+      show:
+        title: Compte d'usatgièr
+      edit:
+        title: "Edita lo compte d'usatgièr: restablís la contrasenya"
+        back: Tornar
+        password:
+          password: Clau
+          send_email: Enviar reénvia un corrièr electronic amb la contrasenya
+          reset_email_send: S'es enviat un corrièr electronic corrèctament.
+          reseted: Contrasenya restablerta amb succès
+          random: Generar una contrasenya aleatòria
+          save: Plega la contrasenya
+          print: Estampa la contrasenya
+          print_help: Poiretz estampar la contrasenya quand la plegatz.
+    account_info:
+      change_user: cambiar usatgièr
+      document_number_label: "Nombre de document:"
+      document_type_label: "Tipe de document:"
+      email_label: "E-mail:"
+      identified_label: "Identificat cossí:"
+      username_label: "Usatgièr:"
+    check: Consultatz lo document
+    dashboard:
+      index:
+        title: gestion
+        info: Dempuèi pòdes aicí gerir d'usatgièrs a travèrs de las accions listadas al menu de l'esquèrra.
+    document_verifications:
+      already_verified: Aquel compte d'usatgièr es ja verificat.
+      has_no_account: Per crear un compte, anatz a %{link} e faguèt clic a In <b>"S'enregistrar"</b> a la part superiora esquèrra de la pantalha.
+      link: CONSUL
+      in_census_has_following_permissions: "Aquel usatgièr pòt participar dins lo Portal de Govèrn Dobèrt amb las seguentas possibilitats:"
+      not_in_census: Aquel document es pas enregistrat.
+      not_in_census_info: "Las personas pas empadronades pòdon participar dins lo Portal de Govèrn Dobèrt amb las seguentas possibilitats:"
+      please_check_account_data: Verificatz que las donadas anterioras son corrèctas per procedir a verificar lo compte entièrament.
+      title: Gestion d'usatgièrs
+      under_age: "As pas edat sufisenta per verificar lo tieu compte."
+      verify: verificar usatgièr
+    email_label: Lo tieu corrièr electronic
+    date_of_birth: Data de naissença
+    email_verifications:
+      already_verified: Aquel compte d'usatgièr es ja verificat.
+      choose_options: "Escuelh una de las opcions seguentas:"
+      document_found_in_census: Aquel document es en lo registre del padró municipal, mas a pas encara un compte d'usatgièr associat.
+      document_mismatch: "Aquel email correspond a un usatgièr qu'a ja associat lo document %{document_number} (%{document_type})"
+      email_placeholder: Introdusís lo corrièr electronic de registre
+      email_sent_instructions: Per acabar de verificar aquel compte cal que faguèt clic al ligam que li avèm enviat a l'adreça de corrièr que figura naut. Aquel passatge es necessari per confirmar qu'aquel compte d'usatgièr es sieu.
+      if_existing_account: Se la persona a ja creat un compte d'usatgièr al web
+      if_no_existing_account: Se la persona a creat pas encara un compte d'usatgièr al web
+      introduce_email: "Introdusís lo corrièr electronic amb çò que creèt lo compte:"
+      send_email: Enviar corrièr electronic de verificacion
+    menu:
+      create_proposal: crear proposicion
+      print_proposals: Estampar de proposicions
+      support_proposals: Sosténer de proposicions
+      create_budget_investment: Crear de projèctes d'inversion
+      print_budget_investments: Estampa d'inversions budgetàrias
+      support_budget_investments: Supòrt a las inversions budgetàrias
+      users: Gestion d’usatgièrs
+      user_invites: Enviatz d'invitacions
+      select_user: Seleccionar usatgièr
+    permissions:
+      create_proposals: Crear de nòvas proposicions
+      debates: Participar en debats
+      support_proposals: Sosténer de proposicions
+      vote_proposals: Participar a las votacions finalas
+    print:
+      proposals_info: Crèa la tiá proposicion a http://url.consul
+      proposals_title: "de proposicions:"
+      budget_investments_info: 'Participa a http: //url.consul'
+    print_info: Estampar aquela informacion
+    proposals:
+      alert:
+        unverified_user: Aquel usatgièr es pas verificat
+      create_proposal: crear proposicion
+      print:
+        print_button: Estampar
+      index:
+        title: Sosténer de proposicions
+    budgets:
+      create_new_investment: Crear de projèctes d'inversion
+      print_investments: Estampa d'inversions budgetàrias
+      support_investments: Supòrt a las inversions budgetàrias
+      table_name: Nome
+      table_phase: fasa
+      table_actions: d'Accions
+      no_budgets: I a pas budgèts participatius actius.
+    budget_investments:
+      alert:
+        unverified_user: Aquel usatgièr es pas verificat
+      create: Crear una inversion budgetària
+      edit: Edita l'inversion budgetària
+      filters:
+        heading: Concèpte
+        unfeasible: Projèctes pas factibles
+      print:
+        print_button: Estampar
+      search_results:
+        one: " que contenon '%{search_term}'"
+        other: " que contenon '%{search_term}'"
+    sessions:
+      signed_out: As barrat la session corrèctament.
+      signed_out_managed_user: S'es barrat corrèctament la session de l'usatgièr.
+    username_label: Nom d'usatgièr
+    users:
+      create_user: Nom de usatgièr
+      create_user_info: Crearem un compte amb las donadas seguentas
+      create_user_submit: crear usatgièr
+      create_user_success: Avèm enviat un corrièr electronic a l’adreça de corrièr electronic <b>%{email}</b> per'mor de verificar qu'aperten a aquel usatgièr. Conten un ligam que lor cal a el far clic. Auràn après d’establir la siá contrasenya d’accès abans de poder iniciar la session al luòc web
+      autogenerated_password: "La contrasenya autogenerada és <b>%{password}</b>, lo podètz cambiar a la seccion \"Lo mieu compte\" del web"
+      email_optional_label: Corrièr electronic (opcional)
+      erased_notice: Compte d'usatgièr esborrat.
+      erased_by_manager: "S'es eliminat pel manager: %{manager}"
+      erase_account_link: esborrar compte
+      erase_account_confirm: Segur que vòles eliminar a aquel usatgièr? Aquela accion se pòt pas desfar
+      erase_warning: Aquela accion se pòt pas desfar. Se vos plai asseguratz-vos que vòl eliminar aquel compte.
+      erase_submit: esborrar compte
+    user_invites:
+      new:
+        label: emails
+        info: "Introdusís los emails separats per ','"
+        submit: Enviatz d'invitacions
+        title: Envieu invitacions
+      create:
+        success: <strong>%{count} d'invitacions</strong> son estats enviats.
+        title: Enviatz d'invitacions

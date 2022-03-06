@@ -19,22 +19,19 @@
 <div class="row ballot">
   <% ballot_groups = @ballot.groups.sort_by_name %>
   <% ballot_groups.each do |group| %>
+    <% heading = @ballot.heading_for_group(group) %>
     <div id="<%= dom_id(group) %>" class="small-12 medium-6 column end">
       <div class="margin-top ballot-content">
         <div class="subtitle">
           <h3>
-            <%= group.name %> - <%= @ballot.heading_for_group(group).name %>
+            <%= group.name %> - <%= heading.name %>
           </h3>
-          <%= link_to sanitize(t("budgets.ballots.show.remaining",
-                      amount: @ballot.formatted_amount_available(@ballot.heading_for_group(group)))),
+          <%= link_to sanitize(@ballot.amount_available_info(heading)),
                       budget_group_path(@budget, group) %>
         </div>
         <% if @ballot.has_lines_in_group?(group) %>
           <h4 class="amount-spent text-right">
-            <%= t("budgets.ballots.show.amount_spent") %>
-            <span>
-              <%= @ballot.formatted_amount_spent(@ballot.heading_for_group(group)) %>
-            </span>
+            <%= sanitize(@ballot.amount_spent_info(heading)) %>
           </h4>
         <% else %>
           <p>

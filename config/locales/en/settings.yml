@@ -79,7 +79,7 @@ en:
       poster_description_description: Detailed description of the poster feature
     analytics_url: "Analytics URL"
     proposal_notification_minimum_interval_in_days: "Minimum interval (in days) for authors of proposals to send new proposal notifications"
-    proposal_notification_minimum_interval_in_days_description: "The number of days user can send a notification for all supporters of their proposal"
+    proposal_notification_minimum_interval_in_days_description: "The number of days user can send a notification for all followers of their proposal"
     direct_message_max_per_day: "Direct Message max number per day"
     direct_message_max_per_day_description: "Number max of direct messages one user can send per day"
     feature:

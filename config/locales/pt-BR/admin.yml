@@ -133,6 +133,7 @@ pt-BR:
       form:
         create: "Criar novo grupo"
         edit: "Editar grupo"
+        max_votable_headings_info: "Aplica-se apenas à fase de seleção de projetos. Durante a fase de votação de projetos, os usuários podem apenas votar em um cabeçalho por grupo."
         submit: "Salvar grupo"
       index:
         back: "Voltar aos orçamentos"
@@ -149,9 +150,15 @@ pt-BR:
         success_notice: "Título excluído com sucesso"
         unable_notice: "Não é possível excluir um título com investimentos associados"
       form:
+        max_ballot_lines_info: 'Número máximo de projetos em que um usuário pode votar neste título durante a fase de "Votação de projetos". Apenas para orçamentos com votação aprovada.'
         population_info: "O campo \"população\" do Título do Orçamento é usado para fins Estatísticos ao final do Orçamento, para mostrar a porcentagem votante da população da área de cada Título. O campo é opcional, então você pode deixá-lo vazio se não se aplicar."
         coordinates_info: "Se houver dados de latitude e longitude, aparecerá um mapa na página de investimentos deste título, cujo centro estará ajustado a essas coordenadas."
+        content_blocks_info: "Se a opção de \"bloquear conteúdo\" estiver marcada, haverá a possibilidade de criar conteúdo personalizado na seção Configurações > Personalizar blocos de conteúdo. Esse conteúdo aparecerá na página de projetos dessa rubrica."
+        create: "Criar novo título"
+        edit: "Editar Títulos"
         submit: "Salvar título"
+      index:
+        back: "Voltar a grupos"
     budget_phases:
       edit:
         summary_help_text: Este texto irá informar o usuário sobre a fase. Para mostrá-lo mesmo se a fase não está ativa, selecione a caixa de seleção abaixo
@@ -177,7 +184,10 @@ pt-BR:
           undecided: Não decidido
           unfeasible: Inviável
           min_total_supports: Adesão mínima
+          max_total_supports: Adesão máxima
           winners: Vencedores
+          one_filter: "Filtros aplicados no momento: <b><em>%{filter}</em></b>"
+          two_filters: "Filtros aplicados no momento: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filtro
         download_current_selection: "Baixar seleção atual"
@@ -211,6 +221,7 @@ pt-BR:
           author: Autor
         cannot_calculate_winners: O orçamento tem que ficar na fase "Projetos de votação", "Revendo votos" ou "Orçamento concluído" em ordem para calcular os projetos vencedores
         see_results: "Exibir resultados"
+        milestone_tags_filter_all: "Todos os status de andamento"
       show:
         assigned_admin: Administrador designado
         assigned_valuators: Avaliadores designados
@@ -299,6 +310,7 @@ pt-BR:
       delete:
         notice: Status de investimento excluído com sucesso
     progress_bars:
+      manage: "Gerenciar barras de progresso"
       index:
         title: "Barras de progresso"
         no_progress_bars: "Não existem barras de progresso"
@@ -310,6 +322,16 @@ pt-BR:
         table_percentage: "Posição atual"
       new:
         creating: "Criar barra de progresso"
+      edit:
+        title:
+          primary: "Editar barra de progresso principal"
+          secondary: "Editar barra de progresso %{title}"
+      create:
+        notice: "Barra de progresso criada com sucesso!"
+      update:
+        notice: "Barra de progresso alterada com sucesso"
+      delete:
+        notice: "Barra de progresso excluída com sucesso"
     comments:
       index:
         id: "ID"
@@ -337,26 +359,42 @@ pt-BR:
         description: Bem-vindo ao painel de administração %{org}.
       actions:
         index:
+          description: "Quando os usuários criam propostas, eles podem acessar um painel com o progresso da sua proposta, no qual é possível propor-lhes recursos y recomendações para conseguir apoios para as suas ideias."
+          create: Criar recurso ou ação
           edit: Editar
           delete: Excluir
           active: 'Sim'
           inactive: 'Não'
+          title: Recursos e ações
           action_title: Título
           action_type: Tipo
+          required_supports: Apoios necessários
+          day_offset: Dias necessários
           action_active: Ativo
           order: Ordem
+          published_proposal: Proposta publicada
           default:
             email: Email
             polls: Votações
             poster: Pôster
+        new:
+          creating: Nova ação para o quadro de propostas
+          back: Voltar à lista
         create:
           notice: Ação criada com sucesso
+        edit:
+          editing: Editar ação do quadro de propostas
+          back: Voltar à lista
         delete:
           success: Ação excluída com sucesso
         form:
           submit_button: Salvar
+          help_text: Digite 0 para que este valor não seja considerado
+          published_proposal_help_text: Marcar esta opção para criar a ação apenas para propostas publicadas
       administrator_tasks:
         index:
+          description: "Os recursos publicados no painel de progresso das propostas podem incluir um botão para serem solicitados aos administradores. A seguir, serão mostradas as solicitações dos usuários."
+          title: Recursos solicitados
           solve: Resolver
           no_records: Não há recursos solicitados
           source: Fonte
@@ -365,10 +403,15 @@ pt-BR:
           filters:
             pending: Pendente
             done: Resolvidos
+        edit:
+          back: Voltar à lista de tarefas pendentes
+          solving: Resolver tarefa pendente
         form:
           solve: Marcar como resolvido
           proposal: Proposta
           request: Recurso solicitado
+        update:
+          success: A tarefa foi marcada como resolvida.
     debates:
       index:
         id: ID
@@ -442,6 +485,7 @@ pt-BR:
           process: Processo
           debate_phase: Fase de debate
           draft_phase: Fase de rascunho
+          draft_phase_description: Si esta fase estiver ativa, o processo não aparecerá na página de processos. Permite pré-visualizar o processo y criar conteúdo antes do início.
           allegations_phase: Fase de comentários
           proposals_phase: Fase de propostas
           use_markdown: Usar Remarcação para formatar o texto
@@ -449,6 +493,8 @@ pt-BR:
           summary_placeholder: Breve resumo da descrição
           description_placeholder: Adicione uma descrição do processo
           additional_info_placeholder: Adicione informação adicional que você considera útil
+          homepage_description: Aqui você pode explicar o conteúdo do processo
+          banner_title: Cores do cabeçalho
         index:
           create: Novo processo
           delete: Apagar
@@ -482,6 +528,9 @@ pt-BR:
           questions: Debater
           proposals: Propostas
           milestones: Seguindo
+      homepage:
+        edit:
+          title: Configurar a página do processo
       proposals:
         index:
           title: Título
@@ -505,7 +554,9 @@ pt-BR:
           back: Voltar
           submit_button: Salvar alterações
           warning: Você editou o texto. Não esqueça de clicar em Salvar para salvar permanentemente as mudanças.
+          markdown_changes_message: "Você editou o texto sem salvá-lo. Deseja mesmo sair da página?"
         form:
+          title: 'Editando <span class="strong">%{draft_version_title}</span> do processo <span class="strong">%{process_title}</span>'
           launch_text_editor: Iniciar o editor de texto
           close_text_editor: Fechar o editor de texto
           use_markdown: Usar Remarcação para formatar o texto
@@ -614,12 +665,14 @@ pt-BR:
       stats: Estatísticas
       signature_sheets: Folhas de assinatura
       site_customization:
+        documents: Personalizar documentos
         homepage: Página inicial
         pages: Páginas personalizadas
         images: Imagens personalizadas
         content_blocks: Blocos de conteúdo personalizados
         information_texts: Textos de informações personalizadas
         information_texts_menu:
+          basic: "Personalização básica"
           debates: "Debates"
           community: "Comunidade"
           proposals: "Propostas"
@@ -630,6 +683,8 @@ pt-BR:
           welcome: "Bem-vindo"
         buttons:
           save: "Salvar"
+          content_block:
+            update: "Alterar bloco"
       title_moderated_content: Conteúdo moderado
       title_profiles: Perfis
       title_settings: Configurações
@@ -637,8 +692,12 @@ pt-BR:
       title_booths: Cabines de votação
       legislation: Legislação colaborativa
       users: Usuários
+      dashboard: Painel de progresso de propostas
+      administrator_tasks: Recursos solicitados
+      dashboard_actions: Recursos e ações
       debates: "Debates"
       comments: "Comentários"
+      local_census_records: Gerenciar censo local
     administrators:
       index:
         title: Administradores
@@ -670,6 +729,7 @@ pt-BR:
     segment_recipient:
       all_users: Todos os usuários
       administrators: Administradores
+      all_proposal_authors: Autores de propostas (inclusive arquivadas e vencidas)
       proposal_authors: Autores da proposta
       investment_authors: Autores do investimento no orçamento corrente
       feasible_and_undecided_investment_authors: "Autores de algum investimento no orçamento atual que não esteja de acordo com: [valuation finished unfesasible]"
@@ -696,6 +756,7 @@ pt-BR:
         empty_newsletters: Não há nenhum boletins informativos para mostrar
       new:
         title: Novo boletim informativo
+        header_footer_help_text: "O cabeçalho e o rodapé são os mesmos em todos os emails. Você pode modificá-los em <code>app/views/layouts/mailer_header</code> e <code>app/views/layouts/mailer_footer</code>.<br>É possível substituir a imagem do cabeçalho em %{link}."
         image_link: "imagens personalizadas"
       edit:
         title: Editar boletim informativo
@@ -762,11 +823,47 @@ pt-BR:
         title: "Resumo danotificação da proposta"
         description: "Juntar todas as notificações de proposta para um usuário em uma mensagem para evitar muitos e-mails."
         preview_detail: "Usuários apenas vão receber notificações das rpopostas que eles estão seguindo"
+      budget_investment_created:
+        title: "Investimento orçamentário criado"
+        description: "Enviado quando um usuário cria um projeto de orçamento participativo."
+      budget_investment_selected:
+        title: "Investimento orçamentário selecionado"
+        description: "Enviado ao autor de um projeto de orçamento participativo que foi selecionado."
+      budget_investment_unfeasible:
+        title: "Investimento orçamentário inviável"
+        description: "Enviado ao autor de um projeto de orçamento participativo que foi marcado como inviável."
+      budget_investment_unselected:
+        title: "Investimento orçamentário não selecionado"
+        description: "Enviado ao autor de um projeto de orçamento participativo que não foi selecionado para a fase de votação."
       comment:
         title: "Comentário"
+        description: "Enviado ao autor quando é feito um comentário."
       reply:
         title: "Responder"
+        description: "Enviado ao autor do comentário ao receber uma resposta."
+      direct_message_for_receiver:
+        title: "Destinatário da mensagem particular"
+        description: "Enviar ao destinatário da mensagem particular."
+      direct_message_for_sender:
+        title: "Remetente da mensagem particular"
+        description: "Enviar ao remetente da mensagem particular."
+      email_verification:
+        title: "Verificação por email"
+        description: "Enviado ao novo usuário registrado para verificar a sua conta."
+      user_invite:
+        title: "Convite de usuários"
+        description: "Enviado à persona que foi convidada a registrar uma conta."
+      evaluation_comment:
+        title: "Novo comentário de avaliação"
+        description: "Enviado a administradores e avaliadores do orçamento"
+      edit_info: "Você pode editar este email em"
       message_title: "Título da mensagem"
+      message_body: "Este é um exemplo de conteúdo de uma mensagem."
+      alert:
+        no_investments: "Não foi criado nenhum projeto de investimento orçamentário. É necessário algum exemplo para poder pré-visualizar o email."
+        no_comments: "Não foi criado nenhum comentário. É necessário algum exemplo para poder pré-visualizar o email."
+        no_replies: "Não foi criada nenhuma resposta. É necessário algum exemplo para poder pré-visualizar o email."
+        no_evaluation_comments: "Não foi criado nenhum comentário de avaliação. É necessário algum exemplo para poder pré-visualizar o email."
     emails_download:
       index:
         title: Download de emails
@@ -786,6 +883,7 @@ pt-BR:
         no_group: "Sem grupo"
         abilities: "Habilidades"
         can_comment: "Pode comentar"
+        can_edit_dossier: "Pode editar relatório"
       valuator:
         add: Adicionar aos avaliadores
         delete: Apagar
@@ -828,6 +926,7 @@ pt-BR:
         email_placeholder: Pesquisar usuário pelo email
         search: Buscar
         user_not_found: Usuário não encontrado
+        help: "Para adicionar ou remover Presidentes de mesa, utilize o navegador a seguir."
     poll_officer_assignments:
       index:
         officers_title: "Lista de presidentes"
@@ -862,6 +961,7 @@ pt-BR:
       flash:
         create: "Turno adicionado"
         destroy: "Turno removido"
+        unable_to_destroy: "Não é possível excluir turnos que têm resultados ou recontagens associados"
         date_missing: "Uma data deve ser selecionada"
       vote_collection: Coletar votos
       recount_scrutiny: Recontagem e Escrutínio
@@ -896,6 +996,12 @@ pt-BR:
         no_booths: "Não há urnas atribuídas a esta votação."
         table_name: "Nome"
         table_location: "Localização"
+    active_polls:
+      edit:
+        title: "Descrição das enquetes"
+      form:
+        description:
+          help_text: "Este texto aparecerá no cabeçalho da página de votações. Você pode usá-lo para adicionar um contexto às votações abertas."
     polls:
       index:
         title: "Lista de votações"
@@ -926,6 +1032,10 @@ pt-BR:
       flash:
         question_added: "Perguntas adicionadas a essa votação"
         error_on_question_added: "Pergunta não pode ser atribuída a essa votação"
+      destroy:
+        alert: "Esta ação excluirá a votação e todas as perguntas associadas a ela."
+        success_notice: "Votação excluída com sucesso"
+        unable_notice: "Não é possível excluir votações com votos"
     questions:
       index:
         title: "Perguntas"
@@ -939,6 +1049,7 @@ pt-BR:
         table_proposal: "Proposta"
         table_question: "Questão"
         table_poll: "Votação"
+        poll_not_assigned: "Votação sem atribuições"
       edit:
         title: "Editar pergunta"
       new:
@@ -992,6 +1103,7 @@ pt-BR:
       index:
         title: "Recontagens"
         no_recounts: "Não há nada para ser recontado"
+        all_booths_total: "Acumulado de todas as urnas:"
         total_final: "Recontagens finais"
         total_system: "Votos (automático)"
         table_booth_name: "Urna"
@@ -1040,6 +1152,7 @@ pt-BR:
         official_updated: Detalhes do cargo público salvos
       index:
         title: Cargos públicos
+        help: As contas de usuários marcadas como cargos públicos terão ressaltadas as suas intervenções na plataforma. É possível definir a nível que aparece ao lado dos nomes de usuários dessas contas, do maior (nível 1) ao menor (nível 5).
         no_officials: Não há cargos públicos.
         name: Nome
         official_position: Cargo público
@@ -1063,6 +1176,9 @@ pt-BR:
           pending: Pendente
           rejected: Rejeitado
           verified: Verificado
+        hidden_count:
+          one: Há também <strong>uma organização</strong> sem usuários ou com um usuário oculto.
+          other: Há <strong>%{count} organizações</strong> sem usuários ou com um usuário oculto.
         name: Nome
         email: Email
         phone_number: Telefone
@@ -1089,6 +1205,8 @@ pt-BR:
         selected: Selecionado
         milestones: Marcos
         no_proposals: Não existem propostas.
+      show:
+        create_question: Adicionar esta proposta a uma votação a ser votada
       form:
         update: Atualizar proposta
       update:
@@ -1102,21 +1220,24 @@ pt-BR:
           without_confirmed_hide: Pendente
         title: Propostas ocultas
         no_hidden_proposals: Não há propostas ocultas.
-    proposal_notifications:
+    hidden_proposal_notifications:
       index:
         filter: Filtro
         filters:
-          all: Tudo
-          with_confirmed_hide: Confirmado
-          without_confirmed_hide: Pendente
-        title: Notificações escondidas
-        no_hidden_proposals: Não há notificações escondidas.
+          all: Todos
+          with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendentes
+        title: Notificações ocultas
+        no_hidden_proposals: Não há notificações ocultas.
     settings:
       flash:
         updated: Valor atualizado
       index:
         title: Definições de configuração
+        general: Definições de configuração
         update_setting: Atualizar
+        participation_processes: "Processos de participação"
+        images_and_documents: "Imagens e documentos"
         feature_flags: Atributos
         features:
           enabled: "Atributo habilitado"
@@ -1130,6 +1251,15 @@ pt-BR:
             update: Configuração do mapa atualizada com sucesso.
           form:
             submit: Atualizar
+          how_to_enable: 'Para mostrar o mapa aos usuários, é preciso ativar "Geolocalização de propostas y projetos de gasto" na aba "Funcionalidades".'
+        dashboard:
+          title: Painel de progresso de propostas
+        remote_census:
+          title: Configuração do Censo Remoto
+          how_to_enable: 'Para configurar a conexão com o Censo Remoto (SOAP) é preciso ativar "Configurar a conexão ao censo remoto (SOAP)" na aba "Funcionalidades".'
+      remote_census_general_name: Informações gerais
+      remote_census_request_name: Solicitação - Dados
+      remote_census_response_name: Respostas - Dados
       setting: Caracteristica
       setting_actions: Ações
       setting_name: Configuração
@@ -1153,6 +1283,7 @@ pt-BR:
         placeholder: Buscar propostas por título, código, descrição ou pergunta
       debate_search:
         button: Pesquisar
+        placeholder: Buscar debates por título ou descrição
       user_search:
         button: Buscar
         placeholder: Pesquisar usuário por nome ou pelo email
@@ -1183,7 +1314,9 @@ pt-BR:
         name: Nome
         external_code: Código externo
         census_code: Código do censo
+        code_help: Código de resposta para esta zona na API do censo
         coordinates: Coordenadas
+        coordinates_help: Coordenadas que vão gerar uma zona clicável num mapa de imagem HTML
       edit:
         form:
           submit_button: Salvar alterações
@@ -1208,7 +1341,10 @@ pt-BR:
         document_numbers_note: "Escreva os números separados por vírgulas ()"
         submit: Criar folha de assinatura
         text_help:
+          required_fields_note: "Para verificar um usuário, sua aplicação precisa de: Número de documento"
+          date_of_birth_note: ", Dia de nascimento (dd/mm/aaaa)"
           postal_code_note: " e CEP"
+          required_fields_structure_note: "Os campos necessários para cada usuário devem estar separados por vírgulas, e cada usuário debe estar separado por ponto e vírgula."
           example_text: "Exemplo: "
       show:
         created_at: Criado em
@@ -1225,7 +1361,7 @@ pt-BR:
         voted:
           zero: "Não há votos associados às assinaturas verificadas."
           one: "Há %{count} voto associado à assinatura verificada."
-          other: "Há %{count} votso associados à assinatura verificada."
+          other: "Há %{count} votos associados à assinatura verificada."
         loading: "Existem ainda as assinaturas que estão sendo verificadas pelo censo, por favor, atualize a página em alguns momentos"
     stats:
       show:
@@ -1305,6 +1441,8 @@ pt-BR:
         help: "Quando um usuário criar uma proposta, os tópicos a seguir são sugeridos como etiquetas padrão."
     users:
       columns:
+        id: ID
+        erase_reason: Apagar razão
         name: Nome
         email: Email
         document_number: Número do documento
@@ -1313,6 +1451,10 @@ pt-BR:
       index:
         title: Usuário
         no_users: Não há usuários.
+        filter: Filtro
+        filters:
+          active: Ativos
+          erased: Apagados
       search:
         placeholder: Buscar usuário por e-mail, nome ou número do documento
         search: Buscar
@@ -1325,6 +1467,7 @@ pt-BR:
       content_blocks:
         information: Informações sobre blocos de conteúdo
         about: "Voce pode criar blocos de conteúdo de HTML para serem inseridos no cabeçalho dou rodapé do seu CONSUL."
+        html_format: "Um bloco de conteúdos é um grupo de links e deve de ter o seguente formato:"
         no_blocks: "Não há blocos de conteúdo."
         create:
           notice: Bloco de conteúdo criado com sucesso
@@ -1382,6 +1525,7 @@ pt-BR:
           see_page: Exibir página
         new:
           title: Criar nova página personalizada
+          slug_help: "Texto que identifica esta página no URL, por exemplo <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: Criado em
           status: Status
@@ -1398,6 +1542,7 @@ pt-BR:
           description: Descrição
           link_text: Texto do link
           link_url: Link da URL
+          columns_help: "Largura do cartão em número de colunas. Em telas móveis é sempre de 100%."
           create:
             notice: "Cartão criado com sucesso!"
           update:
@@ -1433,6 +1578,7 @@ pt-BR:
         card_title: Editar cartão
         submit_card: Salvar cartão
     audits:
+      title: "Histórico de alterações"
       changes: "Lista de alterações"
       id: "ID"
       field: "Campo"
@@ -1441,8 +1587,12 @@ pt-BR:
       edited_at: "Editado em"
       edited_by: "Editado por"
       actions: "Ações"
+      empty: "Não foram registradas alterações"
     local_census_records:
       index:
+        title: Gerenciar censo local
+        create: Criar novo registro de censo local
+        no_local_census_records: Não há registros de censo local.
         document_type: Tipo do documento
         document_number: Número do documento
         date_of_birth: Data de nascimento
@@ -1455,3 +1605,23 @@ pt-BR:
         creating: Criando novo registro de censo local
       create:
         notice: Novo registro de censo local criado com sucesso!
+      edit:
+        editing: Editando registro do censo local
+      update:
+        notice: Registro do censo local alterado com sucesso!
+      destroy:
+        notice: Registro do censo local excluído com sucesso!
+      imports:
+        new:
+          title: Registros do censo local
+          subtitle: Importar arquivo CSV
+        create:
+          notice: Processo de importação de registros do censo local executado com sucesso!
+        show:
+          title: Gerenciar censo local
+          subtitle: Resultados del processo de importação
+          import: Importar outro arquivo
+          errored: Linhas erradas
+          created: Registros criados
+        local_census_records:
+          no_records_found: Nenhum registro encontrado.

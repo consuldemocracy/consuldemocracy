@@ -1,0 +1,561 @@
+oc:
+  attributes:
+    geozone_id: "Domeni de foncionament"
+    results_enabled: "Mòstra los resultats"
+    stats_enabled: "Mòstra las estatisticas"
+    advanced_stats_enabled: "Mòstra estatistica avançada"
+  activerecord:
+    models:
+      activity:
+        one: "activitat"
+        other: "d'activitats"
+      budget:
+        one: "Budgèt participatiu"
+        other: "de Budgèts"
+      budget/investment:
+        one: "la proposicion d'inversion"
+        other: "de Proposicions d'inversion"
+      milestone:
+        one: "hita"
+        other: "de hitas"
+      milestone/status:
+        one: "Estada hita"
+        other: "Estatales de hita"
+      progress_bar:
+        one: "Barra de progrès"
+        other: "de Barras de progrès"
+      comment:
+        one: "Comentar"
+        other: "Comentarios"
+      debate:
+        one: "debat prealable"
+        other: "de Debats"
+      tag:
+        one: "Eriqueta"
+        other: "d'Etiquetas"
+      user:
+        one: "d'usatgièrs bloquejats"
+        other: "d'usatgièrs"
+      moderator:
+        one: "Moderador"
+        other: "de Moderadors"
+      administrator:
+        one: "Administrador"
+        other: "d'Administradors"
+      valuator:
+        one: "avaluador"
+        other: "Avaluadors"
+      valuator_group:
+        one: "Grop avaluador"
+        other: "Grop de avaluadors"
+      manager:
+        one: "Gestor"
+        other: "de Gestors"
+      newsletter:
+        one: "Newsletter"
+        other: "Enviament de newsletters"
+      vote:
+        one: "Apondre"
+        other: "de vòts"
+      organization:
+        one: "Organizacion"
+        other: "d'Organizacions"
+      poll/booth:
+        one: "urna"
+        other: "d'urnas"
+      poll/officer:
+        one: "president de taula"
+        other: "de presidents de taula"
+      poll/ballot_sheet:
+        one: Butlleta de vòt
+        other: de Bilhetas
+      proposal:
+        one: "Proposicion ciutadana"
+        other: "de Proposicions ciutadanas"
+      site_customization/page:
+        one: pagina
+        other: de paginas
+      site_customization/image:
+        one: image
+        other: Personalizar d'images
+      site_customization/content_block:
+        one: blòc
+        other: Personalizar de blòcs
+      document:
+        one: Document
+        other: de Documents
+      legislation/process:
+        one: "procès"
+        other: "de procèsses"
+      legislation/proposal:
+        one: "la proposicion"
+        other: "de Proposicions ciutadanas"
+      legislation/draft_versions:
+        one: "version borrolhon"
+        other: "de Versions del borrolhon"
+      legislation/questions:
+        one: "question"
+        other: "Demandas de ciutadanas"
+      legislation/question_options:
+        one: "Opcion de responsa barrada"
+        other: "d'Opcions de responsa"
+      legislation/answers:
+        one: "Responsa"
+        other: "de responsas"
+      documents:
+        one: "Document"
+        other: "de Documents"
+      images:
+        one: "Image"
+        other: "d'Images"
+      topic:
+        one: "Tèma"
+        other: "de Tèmas"
+      poll:
+        one: "votacion"
+        other: "de votacions"
+      proposal_notification:
+        one: "Notificacion de la proposicion"
+        other: "de Notificacions de proposicions"
+      dashboard/action:
+        one: Proposicion d’accion en lo tauler de comandament
+        other: de Proposicions del quadre de comandament
+      dashboard/administrator_task:
+        one: Prètzfach
+        other: de Prètzfaches
+      link:
+        one: Ligam
+        other: de Ligams
+      local_census_record:
+        one: Registre local del cens
+        other: de Registres locales de cens
+    attributes:
+      budget:
+        name: "Nome"
+        description_accepting: "Descripcion pendent la fasa de aceptació"
+        description_reviewing: "Descripcion pendent la fasa de revision"
+        description_selecting: "Descripcion pendent la fasa de seleccion"
+        description_valuating: "Descripcion pendent la fasa de evaluació"
+        description_balloting: "Descripcion pendent la fasa de votacion"
+        description_reviewing_ballots: "Descripcion pendent la fasa de revision de vòts"
+        description_finished: "Descripcion quand lo budgèt a finalizat"
+        phase: "fasa"
+        currency_symbol: "Devisa"
+      budget/translation:
+        name: "Nom"
+      budget/investment:
+        heading_id: "Partida"
+        title: "Títol"
+        description: "Descripcion detalhada"
+        external_url: "Enlace a documentación adicional"
+        administrator_id: "Administrador"
+        location: "Informacion addicionala sus ubicacion"
+        organization_name: "Se vos prepausam en nom d’una collectiva / organizacion o en nom de mai gents, escrivètz lo sieu nom"
+        image: "Proposicion d’image descriptiva"
+        image_title: "Títol de l'image"
+        duration: "Portada de temps"
+        feasibility_feasible: "Viable"
+        feasibility_undecided: "Indefinit"
+        feasibility_unfeasible: "Impossible"
+        incompatible: "Marca coma incompatible"
+        milestone_tag_list: "d'Etiquetas de hita"
+        price_explanation: "Explicacion del prètz"
+        selected: "Marca coma seleccionat"
+        selected_true: "Seleccionat"
+        selected_false: "Pas seleccionat"
+        unfeasibility_explanation: "Explicacion de viabilitat"
+        valuation_finished: "S'es acabat l'avaloracion"
+        valuator_ids: "de Grops"
+        valuation_tag_list: "d'Etiquetas"
+      budget/investment/translation:
+        title: "Títol"
+        description: "Descripcion"
+      geozone:
+        name: Nom
+        external_code: "Còdi extèrne (opcional)"
+        census_code: "Còdi del cens (opcional)"
+        html_map_coordinates: "Coordenades <map> HTML (opcional)"
+      milestone:
+        status_id: "Estat actual (opcional)"
+        title: "Títol"
+        description: "Descripcion (opcional s'i a assignat un estat)"
+        publication_date: "Data"
+      milestone/translation:
+        description: "Descripcion"
+      milestone/status:
+        name: "Nome"
+        description: "Descripcion (opcional)"
+      progress_bar:
+        kind: "tipe"
+        title: "Títol"
+        percentage: "d'Avançadas actualas"
+      progress_bar/kind:
+        primary: "Primària"
+        secondary: "Segondària"
+      budget/group:
+        max_votable_headings: "Nombre maximal d’encapçalaments qu'un usatgièr pòt votar"
+      budget/group/translation:
+        name: "Nom del grop"
+      budget/heading:
+        allow_custom_content: "Permet lo blòc de contengut"
+        latitude: "Latitud (opcional)"
+        longitude: "Longitud (opcional)"
+        name: "Nom de la partida"
+        price: "Còst"
+        population: "Populacion (opcional)"
+      budget/heading/translation:
+        name: "Nom de l'entèsta"
+      budget/phase:
+        enabled: "Fasa abilitada"
+        ends_at: "Data de finalizacion"
+        starts_at: "Data d'inici"
+      budget/phase/translation:
+        description: "Descripcion"
+        summary: "Resumit"
+      comment:
+        body: "Comentar"
+        user: "d'usatgièrs bloquejats"
+      debate:
+        author: "Autor"
+        description: "Opinion"
+        tag_list: "de Tèmas"
+        terms_of_service: "de Tèrmes de servici"
+        title: "Títol"
+      debate/translation:
+        title: "Títol del debat"
+        description: "Tèxt de debat inicial"
+      proposal:
+        author: "Autor"
+        title: "Títol"
+        question: "question"
+        description: "Descripcion detalhada"
+        responsible_name: "Nom complet de la persona que presenta la proposicion"
+        retired_reason: "Motiu per retirar la proposicion"
+        selected: "Marca coma seleccionat"
+        terms_of_service: "de Tèrmes de servici"
+        video_url: "URL de vidèo extèrne"
+      proposal/translation:
+        title: "Títol de la proposicion"
+        description: "Tèxt de la proposicion"
+        summary: "Resumit de la proposicion"
+        retired_explanation: "Explanation"
+      user:
+        login: "E-mail o nom d'usatgièr"
+        email: "Lo tieu corrièr electronic"
+        username: "Nom d'usatgièr"
+        password_confirmation: "Confirmacion de contrasenya"
+        password: "Clau"
+        current_password: "contrasenya actual"
+        email_digest: "Recep un resumit de las notificacions de las proposicions"
+        email_on_comment: "Notificatz-me per corrièr electronic quand quauquarrés comentarà las miás proposicions o de debats"
+        email_on_comment_reply: "Notificatz-me per corrièr electronic quand quauquarrés respondrà als mieus comentaris"
+        email_on_direct_message: "Recep de messatges de corrièr electronic sus messatges dirèctes"
+        newsletter: "Recebre per corrièr electronic informacion considerabla"
+        official_position: "Carga publica"
+        official_position_badge: "Mòstra la insígnia de posicion oficiala"
+        official_level: "Nivèl de la carga"
+        phone_number: "telefòn"
+        public_activity: "Mantenètz publica la miá lista d’activitats"
+        public_interests: "Gardatz las etiquetas dels elements que seguissi de publics"
+        recommended_debates: "Mòstra de recomandacions de debats"
+        recommended_proposals: "Mòstra de recomandacions de proposicions"
+        redeemable_code: "Còdi de verificacion per carta (opcional)"
+      direct_message:
+        title: "Títol"
+        body: "Messatge"
+      organization:
+        name: "Nom de l'organizacion"
+        responsible_name: "Persona responsabla de l'associacion"
+      poll:
+        name: "Nome"
+        starts_at: "Fecha de apertura"
+        ends_at: "Fecha de cierre"
+        geozone_restricted: "Restringida paur zonas"
+        summary: "Resumen"
+        description: "Descripcion detalhada"
+      active_poll/translation:
+        description: "Descripcion"
+      poll/booth:
+        name: "Nom"
+        location: "Ubicacion"
+      poll/translation:
+        name: "Nome"
+        summary: "Resumen"
+        description: "Descripcion detalhada"
+      poll/question:
+        poll_id: "Enquèsta"
+        title: "question"
+        summary: "Resumen"
+        description: "Descripcion detalhada"
+        external_url: "Enlace a documentación adicional"
+      poll/question/translation:
+        title: "question"
+      poll/ballot_sheet:
+        data: de Donadas CSV
+        poll_id: Enquèsta
+        officer_assignment_id: Cession d’oficiala
+      poll/shift:
+        task: "Prètzfach"
+      proposal_notification:
+        body: "Messatge"
+        title: "Títol"
+      signature_sheet:
+        title: "Títol"
+        signable_type: "Tipe de fuèlha de signaturas"
+        signable_id: "ID Proposicion ciutadana/Prepausada inversion"
+        document_numbers: "de Nombres de documents"
+      site_customization/page:
+        content: contengut
+        created_at: creat
+        subtitle: Sostítol
+        slug: URL
+        status: Estat
+        status_draft: "Borrolhon"
+        status_published: "Publicat"
+        title: Títol
+        updated_at: Darrièra actualizacion
+        more_info_flag: Mòstra a la pagina d’ajuda
+        print_content_flag: Boton d'estampar contengut
+        locale: Lenga
+      site_customization/page/translation:
+        title: Títol
+        subtitle: Sostítol
+        content: contengut
+      site_customization/image:
+        name: Nome
+        image: image
+      site_customization/content_block:
+        name: Nome
+        locale: idiòma
+        body: Contengut
+      tag:
+        name: "Escrivètz lo nom del tèma"
+      topic:
+        title: "Títol"
+        description: "Tèxt inicial"
+      banner:
+        background_color: Color de fons
+        font_color: Color de la letra
+        post_ended_at: "La publicacion a finalizat a"
+        post_started_at: "Comencèt la publicacion a"
+        target_url: "Ligam"
+      banner/translation:
+        title: "Títol"
+        description: "Descripcion"
+      legislation/process:
+        title: Títol del procès
+        summary: Resumen
+        description: Descripcion detalhada
+        additional_info: informacion addicionala
+        start_date: Data d'inici del procès
+        end_date: Data de fin del procès
+        debate_start_date: Data d'inici del debat
+        debate_end_date: Data de fin del debat
+        draft_start_date: Començar
+        draft_end_date: Final
+        draft_publication_date: Data de publicacion del borrolhon
+        allegations_start_date: Data d'inici d'allegacions
+        allegations_end_date: Data de fin d'allegacions
+        proposals_phase_start_date: Començar
+        proposals_phase_end_date: Final
+        result_publication_date: Data de publicacion del resultat final
+        background_color: Color de fons
+        font_color: Color de la letra
+        homepage_enabled: "La pagina d'inici es activada"
+      legislation/process/translation:
+        title: Títol del procès
+        summary: Resumen
+        description: Descripcion detalhada
+        additional_info: informacion addicionala
+        homepage: "Descripcion"
+        milestones_summary: Resumen
+      legislation/proposal:
+        description: "Tèxt de la proposicion"
+        summary: "Resumit de la proposicion"
+        title: "Títol de la proposicion"
+        video_url: "Ligam a vidèo extèrne"
+      legislation/draft_version:
+        title: Títol de la version
+        body: tèxt
+        changelog: de cambiaments
+        status: Estat
+        status_draft: "Borrolhon"
+        status_published: "Publicat"
+        final_version: version finala
+      legislation/draft_version/translation:
+        title: Títol de la version
+        body: tèxt
+        changelog: de cambiaments
+      legislation/question:
+        title: Títol
+        question_options: d'Opcions
+      legislation/question/translation:
+        title: Question
+      legislation/question_option:
+        value: valor
+      legislation/annotation:
+        text: Comentar
+      document:
+        title: Títol
+        attachment: "Escuelh lo document"
+      image:
+        title: Títol
+        attachment: "Escuelh l'image"
+      poll/question/answer:
+        title: Responsa
+        description: Descripcion detalhada
+      poll/question/answer/translation:
+        title: Responsa
+        description: Descripcion detalhada
+      poll/question/answer/video:
+        title: Títol
+        url: Vidèo extèrne
+      newsletter:
+        segment_recipient: Destinataris
+        subject: Matèria
+        from: "Dempuèi"
+        body: Contengut per corrièr electronic
+      admin_notification:
+        segment_recipient: Destinataris
+        title: Títol
+        link: ligam
+        body: tèxt
+      admin_notification/translation:
+        title: Títol
+        body: tèxt
+      widget/card:
+        label: Etiqueta (opcional)
+        title: Títol
+        description: Descripcion detalhada
+        link_text: Enllaça lo tèxt
+        link_url: URL de ligam
+        columns: Nombre de colomnas
+      widget/card/translation:
+        label: Etiqueta (opcional)
+        title: Títol
+        description: Descripcion detalhada
+        link_text: Enllaça lo tèxt
+      widget/feed:
+        limit: Nombre d’elements
+      dashboard/action:
+        title: Títol
+        short_description: Descripcion brèu
+        description: Descripcion
+        link: Ligam extèrne
+        request_to_administrators: Comprene al recors un boton per sollicitar lo recors als administradors
+        day_offset: de Quantes jorns après la creacion de la proposicion volètz que s’active?
+        required_supports: Quant de supòrts a d’obténer la proposicion per poder èsser activada?
+        order: Podètz introdusir la posicion que se mostrarà aquela accion a l'usatgièr a la lista d'accions
+        active: Actiu
+        action_type: Tipe
+        action_type_proposed_action: "Accion prepausada"
+        action_type_resource: "Recors"
+        published_proposal: "Per proposicions publicadas?"
+      dashboard/administrator_task:
+        source: Font
+        user: Executat per
+      link:
+        label: Títol
+        url: Ligam
+      valuator:
+        description: Descripcion
+        valuator_group_id: Grop de taxadors
+        can_comment: Pòt crear de comentaris
+        can_edit_dossier: Se pòdon editar de dossièrs
+      valuator_group:
+        name: "Nom del grop"
+      local_census_record:
+        document_type: Tipe de document
+        document_number: Numèro de Document
+        date_of_birth: Data de naissença
+        postal_code: Còdi Postal
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Aquel usatgièr a ja una clau associada"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "los tèmas lor cal èsser mendre o aital coma %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "ès arribat al nombre maximal de messatges privats per jorn"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "L'amplada de l'image li cal èsser almens %{required_min_width}px"
+              min_image_height: "L’nautor de l'image li cal èsser almens %{required_min_height}px"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Lo segment de destinataris d’usatgièrs es pas valids"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Lo segment de destinataris d’usatgièrs es pas valids"
+        map_location:
+          attributes:
+            map:
+              invalid: L'ubicacion de la mapa pòt pas èsser en blanc. Plaça un mercador o selecciona lo caleishon de seleccion s'es pas necessària la geolocalització
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Aquel documenti pas aparece en lo censo"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: li cal èsser parièr o posterior a la data d'inici
+            debate_end_date:
+              invalid_date_range: li cal èsser parièr o posterior a la data d'inici del debat
+            draft_end_date:
+              invalid_date_range: li cal èsser parièr o posterior a la data d'inici del debatha d’estar al dia posterior o posterior a la data d’inici del projecte
+            allegations_end_date:
+              invalid_date_range: li cal èsser parièr o posterior a la data d'inici de las allegacions
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: es pas comprés a la lista, las valors permesas son 1 per DNI, 2 per passapòrt e 3 per carta de residéncia.
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "los tèmas lor cal èsser mendre o aital coma %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "los tèmas lor cal èsser mendre o aital coma %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "te cal esperar un minim de %{interval} de jorns entre notificacions"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: "Pas verificat per Padró"
+              already_voted: "A ja votat aquela proposicion"
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "li cal èsser de letras, numèros, _ e -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "li cal aver %{required_width}px d'ample"
+              image_height: "li cal aver %{required_height}px de naut"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: "Se pòt pas far cap de avaloracion"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Recors tradusit ja
+      messages:
+        translations_too_short: Es obligatòri porgir una traduccion almens
+        record_invalid: "La validacion a mancat: %{errors}"
+        another_poll_active: I a un autre sondatge actiu pel periòde determinat
+        restrict_dependent_destroy:
+          has_one: "Se pòt pas suprimir lo registre perque es un depenent %{record} existís"
+          has_many: "Se pòt pas eliminar lo registre perque depend %{record} existís"

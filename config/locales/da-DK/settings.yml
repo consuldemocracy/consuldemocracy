@@ -89,6 +89,8 @@ da:
       facebook_login_description: "Tillad brugere at registrere sig med Facebook"
       google_login: "Google login"
       google_login_description: "Tillad brugere at registrere sig med Google"
+      wordpress_login: "Wordpress log ind"
+      wordpress_login_description: "Tillad brugere at registrere sig med Wordpress"
       featured_proposals: "Udvalgte forslag"
       featured_proposals_description: "Viser udvalgte forslag på indeks"
       signature_sheets: "Signaturark"
@@ -116,6 +118,9 @@ da:
       public_stats_description: "Viser offentlig statistik i Administrationspanelet"
       help_page: "Hjælp"
       help_page_description: 'Viser en Hjælpeside, der indeholder en informationssektion omkring enhver aktiveret funktion. Derudover kan brugerdefinerede sider og sektioner oprettes under "Brugerdefinerede sider" og "Brugerdefinerede indholdsblokke"'
+      remote_translations: "Fjern oversættelse"
+      remote_translations_description: "Vis en knap der tillader brugere at anmode om en oversættelse når deres indhold ikke er tilgængeligt i deres sprog."
+      translation_interface: "Oversættelses interface"
       valuation_comment_notification: "Notifikation"
       valuation_comment_notification_description: "Send en e-mail til alle brugere (med undtagelse af evaluatorerne) når en ny vurdering af foretaget"
     map:

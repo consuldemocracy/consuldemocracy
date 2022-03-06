@@ -1,5 +1,7 @@
-require "database_cleaner"
-DatabaseCleaner.clean_with :truncation
+unless Rails.env.test?
+  require "database_cleaner"
+  DatabaseCleaner.clean_with :truncation
+end
 @logger = Logger.new(STDOUT)
 @logger.formatter = proc do |_severity, _datetime, _progname, msg|
                       msg unless @avoid_log

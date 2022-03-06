@@ -3,8 +3,6 @@ sv:
     ballots:
       show:
         title: Dina röster
-        amount_spent: Spenderat belopp
-        remaining: "Du har fortfarande <span>%{amount}</span> att spendera."
         no_balloted_group_yet: "Du har inte röstat i den här delen av budgeten än, rösta nu!"
         remove: Dra tillbaka din röst
         voted:
@@ -84,11 +82,6 @@ sv:
           other: " som innehåller <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Mina röster
-          voted:
-            one: "<strong>Du har röstat på ett förslag som kostar %{amount_spent}</strong>"
-            other: "<strong>Du har röstat på %{count} förslag som kostar %{amount_spent}</strong>"
-          voted_info: Du kan %{link} när som helst under den här fasen. Du behöver inte spendera hela din budget.
-          voted_info_link: ändra din röst
           different_heading_assigned: "Du röstar redan inom ett annat område: %{heading_link}"
           change_ballot: "Om du ändrar dig kan du ta bort dina röster i %{check_ballot} och börja om."
           check_ballot_link: "kontrollera min omröstning"
@@ -127,7 +120,7 @@ sv:
         see_price_explanation: Kostnadsförklaring
       wrong_price_format: Endast heltal
       investment:
-        add: Röst
+        add: Rösta
         already_added: Du har redan skapat det här investeringsprojektet
         already_supported: Du stöder redan det här budgetförslaget. Dela det!
         support_title: Stöd projektet

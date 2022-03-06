@@ -96,7 +96,7 @@ class UsersController < ApplicationController
       disabled_commentables << "Debate" unless Setting["process.debates"]
       disabled_commentables << "Budget::Investment" unless Setting["process.budgets"]
       if disabled_commentables.present?
-        all_user_comments.where("commentable_type NOT IN (?)", disabled_commentables)
+        all_user_comments.where.not(commentable_type: disabled_commentables)
       else
         all_user_comments
       end

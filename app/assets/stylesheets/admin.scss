@@ -22,6 +22,7 @@ $sidebar-hover:  #25597c;
 $sidebar-active: #f4fcd0;
 
 .admin {
+  @include admin-layout;
 
   h2 {
     font-weight: 100;
@@ -61,10 +62,6 @@ $sidebar-active: #f4fcd0;
     border-bottom: 1px solid #eee;
     color: #000;
     height: auto;
-
-    @include breakpoint(medium) {
-      box-shadow: 0 2px 2px #eee;
-    }
 
     @include breakpoint(small only) {
 
@@ -291,10 +288,6 @@ $sidebar-active: #f4fcd0;
     margin-right: rem-calc(12);
   }
 
-  .side-menu-and-admin-content {
-    @include side-menu-and-content;
-  }
-
   .admin-content {
     .proposal-form {
       padding-top: 0;
@@ -371,26 +364,25 @@ $sidebar-active: #f4fcd0;
 }
 
 .icon-sortable {
-  font-family: "icons";
+  font-family: "Font Awesome 5 Free";
   font-size: $small-font-size;
-  padding-right: $line-height / 2;
   position: relative;
 
   &::before,
   &::after {
     left: 6px;
-    opacity: 0.25;
+    opacity: 0.5;
     position: absolute;
   }
 
   &::before {
-    content: "\57";
-    top: -2px;
+    content: "\f0d8";
+    bottom: 0;
   }
 
   &::after {
-    content: "\52";
-    bottom: -10px;
+    content: "\f0d7";
+    top: 0;
   }
 
   &.asc {
@@ -438,11 +430,11 @@ code {
     [class^="icon-"] {
       color: #fff;
       display: inline-block;
-      font-size: rem-calc(24);
+      font-size: rem-calc(20);
       line-height: $line-height;
-      padding: $line-height / 2 $line-height / 4;
-      padding-left: 0;
+      text-align: center;
       vertical-align: middle;
+      width: $line-height * 1.5;
     }
   }
 
@@ -461,13 +453,20 @@ code {
       border-left: 2px solid $sidebar-active;
       font-weight: bold;
     }
+
+    &[aria-expanded="true"] {
+
+      > a::after {
+        transform: rotate(180deg);
+      }
+    }
   }
 
   li a {
     color: #fff;
     display: block;
-    line-height: rem-calc(48);
-    padding-left: rem-calc(12);
+    line-height: $line-height * 2;
+    padding-left: $line-height / 4;
     vertical-align: top;
 
     &:hover {
@@ -481,12 +480,13 @@ code {
 
     > a::after {
       border: 0;
-      content: "\61" !important;
-      font-family: "icons" !important;
+      content: "\f078";
+      font-family: "Font Awesome 5 Free";
+      font-weight: bold;
       height: auto;
-      position: absolute !important;
-      right: 30px;
-      top: 6px !important;
+      position: absolute;
+      right: 24px;
+      transition: 0.25s;
     }
   }
 
@@ -652,7 +652,7 @@ code {
   border-radius: rem-calc(3);
   font-size: rem-calc(16);
   font-weight: normal;
-  margin: $line-height;
+  margin-bottom: $line-height;
   padding: $line-height / 2;
 
   strong {

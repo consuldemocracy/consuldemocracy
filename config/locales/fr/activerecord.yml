@@ -121,6 +121,8 @@ fr:
         description_finished: "Description quand le budget est finalisé"
         phase: "Phases"
         currency_symbol: "Devise"
+      budget/translation:
+        name: "Nom"
       budget/investment:
         heading_id: "Titre"
         title: "Titre"
@@ -131,6 +133,10 @@ fr:
         organization_name: "Si votre proposition se fait au nom d'un collectif ou d'une organisation, renseignez leur nom"
         image: "Image descriptive de la proposition"
         image_title: "Titre de l'image"
+        feasibility_feasible: "Possible"
+        feasibility_unfeasible: "Impossible"
+        selected_true: "Sélecté"
+        selected_false: "Pas sélecté"
       budget/investment/translation:
         title: "Titre"
       geozone:
@@ -153,16 +159,22 @@ fr:
       progress_bar/kind:
         primary: "Primaire"
         secondary: "Secondaire"
+      budget/group/translation:
+        name: "Nom de groupe"
       budget/heading:
         name: "Nom du titre"
         price: "Coût"
         population: "Population"
+      budget/phase:
+        ends_at: "Date de fin"
+        starts_at: "Date de commencement"
       comment:
         body: "Commentaire"
         user: "Utilisateurs masqués"
       debate:
         author: "Auteur"
         description: "Avis"
+        tag_list: "Sujets"
         terms_of_service: "Conditions d'utilisation"
         title: "Titre"
       proposal:
@@ -173,6 +185,7 @@ fr:
         terms_of_service: "Conditions d'utilisation"
       proposal/translation:
         title: "Titre de la proposition"
+        retired_explanation: "Explication"
       user:
         login: "Email ou nom d’utilisateur"
         email: "Email"
@@ -184,6 +197,9 @@ fr:
         official_level: "Niveau officiel"
         phone_number: "Numéro de téléphone"
         redeemable_code: "Vérification du code reçu par courriel"
+      direct_message:
+        title: "Titre"
+        body: "Message"
       organization:
         name: "Nom de l'organisation"
         responsible_name: "Personne responsable pour le groupe"
@@ -194,6 +210,8 @@ fr:
         geozone_restricted: "Restreint selon la zone géographique"
         summary: "Résumé"
         description: "Description"
+      poll/booth:
+        name: "Nom"
       poll/translation:
         name: "Nom"
         summary: "Résumé"
@@ -209,7 +227,13 @@ fr:
         data: Données CSV
         poll_id: Sondage
         officer_assignment_id: Affectation de l’agent
+      poll/shift:
+        task: "Tâche"
+      proposal_notification:
+        body: "Message"
+        title: "Titre"
       signature_sheet:
+        title: "Titre"
         signable_type: "Type de signature"
         signable_id: "Identifiant de la signature"
         document_numbers: "Nombre de documents"
@@ -238,6 +262,10 @@ fr:
       banner:
         background_color: Couleur de l'arrière-plan
         font_color: Couleur de la police
+        post_ended_at: "Poste a fini à"
+        post_started_at: "Post a commencé à"
+      banner/translation:
+        title: "Titre"
       legislation/process:
         title: Titre du processus
         summary: Résumé
@@ -276,6 +304,8 @@ fr:
       legislation/question:
         title: Titre
         question_options: Options
+      legislation/question/translation:
+        title: Question
       legislation/question_option:
         value: Valeur
       legislation/annotation:
@@ -339,6 +369,8 @@ fr:
       link:
         label: Titre
         url: Lien
+      local_census_record:
+        date_of_birth: Date de naissance
     errors:
       models:
         user:
@@ -374,7 +406,6 @@ fr:
           attributes:
             document_number:
               not_in_census: "Ce document n'est pas dans le recensement"
-              has_voted: "L'utilisateur a déjà voté"
         legislation/process:
           attributes:
             end_date:
@@ -416,6 +447,7 @@ fr:
             valuation:
               cannot_comment_valuation: "Vous ne pouvez pas commenter une évaluation"
       messages:
+        translations_too_short: Être obligatoire de fournir au moins un translation
         record_invalid: "La validation omise : %{errors}"
         another_poll_active: Il y a un autre sondage actif sur la période donnée
         restrict_dependent_destroy:

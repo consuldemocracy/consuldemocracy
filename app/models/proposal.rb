@@ -232,7 +232,7 @@ class Proposal < ApplicationRecord
   end
 
   def users_to_notify
-    (voters + followers).uniq - [author]
+    followers - [author]
   end
 
   def self.proposals_orders(user)

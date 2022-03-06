@@ -1,8 +1,8 @@
 hr:
   milestones:
     index:
-      no_milestones: Nemate definirane ključne ciljeve
+      no_milestones: Nemate definirane miljokaze
       progress: Napredak
     show:
       publication_date: "Objavljeno %{publication_date}"
-      status_changed: Status se promjenio na
+      status_changed: Status promijenjen na

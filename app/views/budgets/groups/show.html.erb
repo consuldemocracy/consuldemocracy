@@ -36,7 +36,7 @@
               <%= link_to heading.name,
                           budget_investments_path(heading_id: heading.id,
                                                   filter: @current_filter),
-                          data: { no_turbolink: true } %><br>
+                          data: { turbolinks: false } %><br>
             </span>
           <% end %>
         </div>

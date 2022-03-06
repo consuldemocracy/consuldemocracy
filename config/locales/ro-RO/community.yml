@@ -1,1 +1,54 @@
 ro:
+  community:
+    sidebar:
+      title: Comunitate
+      description:
+        proposal: Participați la comunitatea utilizatorilor acestei propuneri.
+        investment: Participați la comunitatea utilizatorilor acestei investiții.
+      button_to_access: Accesează comunitatea
+    show:
+      title:
+        proposal: Comunitatea propunerii
+        investment: Comunitate Buget de Investiții
+      description:
+        proposal: Participați la comunitatea acestei propuneri. O comunitate activă poate contribui la îmbunătățirea conținutului propunerii și poate stimula diseminarea acesteia pentru a obține mai mult sprijin.
+        investment: Participați la comunitatea acestui investiții bugetare. O comunitate activă poate contribui la îmbunătățirea conținutului investiții bugetare și poate stimula diseminarea acesteia pentru a obține mai mult sprijin.
+      create_first_community_topic:
+        first_theme_not_logged_in: Nu există nicio problemă disponibilă, participați la crearea primei.
+        first_theme: Creați primul subiect al comunității
+        sub_first_theme: "Pentru a crea o temă trebuie să %{sign_in} sau să %{sign_up}."
+      tab:
+        participants: Participanți
+      sidebar:
+        participate: Participă
+        new_topic: Crează subiect
+      topic:
+        edit: Editează subiect
+        destroy: Șterge subiect
+        comments:
+          zero: Nu există comentarii
+          one: 1 comentariu
+          few: "%{count} comentarii"
+          other: "%{count} comentarii"
+      author: Autor
+      back: Înapoi la %{community}%{proposal}
+    topic:
+      create: Crează un subiect
+      edit: Editează subiect
+      form:
+        new:
+          submit_button: Crează subiect
+        edit:
+          submit_button: Editează subiect
+        create:
+          submit_button: Crează subiect
+        update:
+          submit_button: Actualizează subiect
+      show:
+        tab:
+          comments_tab: Comentarii
+      sidebar:
+        recommendations_title: Recomandări pentru crearea unui subiect
+        recommendation_one: Nu scrieți titlul subiectului sau propozițiile întregi cu majuscule. Pe internet acest lucru este considerat strigat. Și nimănui nu îi place să i se țipe în față.
+        recommendation_two: Orice subiect sau comentariu care implică o acțiune ilegală vor fi eliminate, de asemenea, cele care intenționează să saboteze spațiile subiectului, orice altceva este permis.
+        recommendation_three: Bucurați-vă de acest spațiu, de vocile care îl umplu, este și al vostru.

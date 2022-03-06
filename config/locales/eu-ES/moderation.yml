@@ -2,9 +2,95 @@ eu:
   moderation:
     comments:
       index:
+        block_authors: Egileak blokeatu
+        confirm: Ziur zaude?
+        filter: Iragazkia
+        filters:
+          all: Guztiak
+          pending_flag_review: Egiteke
+          with_ignored_flag: Berrikusitako marka du
         headers:
           comment: Iruzkin
+          moderate: Moderatu
+        hide_comments: Iruzkinak ezkutatu
+        ignore_flags: Berrikusitzat markatu
+        order: Ordena
+        orders:
+          flags: Salatuenak
+          newest: Berrienak
+        title: Iruzkinak
+    dashboard:
+      index:
+        title: Moderatu
     debates:
       index:
+        block_authors: Egileak blokeatu
+        confirm: Ziur zaude?
+        filter: Iragazi
+        filters:
+          all: Guztiak
+          pending_flag_review: Egiteke
+          with_ignored_flag: Berrikusitako marka du
         headers:
           debate: Eztabaida
+          moderate: Moderatu
+        hide_debates: Eztabaidak ezkutatu
+        ignore_flags: Berrikusitzat markatu
+        order: Ordena
+        orders:
+          created_at: Berrienak
+          flags: Salatuenak
+        title: Eztabaidak
+    header:
+      title: Moderazioa
+    menu:
+      flagged_comments: Iruzkinak
+      flagged_debates: Eztabaidak
+      proposals: Proposamenak
+      proposal_notifications: Proposamen jakinarazpenak
+      users: Erabiltzaileak blokeatu
+    proposals:
+      index:
+        block_authors: Egileak blokeatu
+        confirm: Ziur zaude?
+        filter: Iragazkia
+        filters:
+          all: Guztiak
+          pending_flag_review: Berriz aztertzeke
+          with_ignored_flag: Berrikusitzat markatuta
+        headers:
+          moderate: Moderatu
+          proposal: Proposamena
+        hide_proposals: Proposamenak Ezkutatu
+        ignore_flags: Berrikusitzat markatu
+        order: Honen arabera ordenatu
+        orders:
+          created_at: Berrienak
+          flags: Salatuenak
+        title: Proposamenak
+    proposal_notifications:
+      index:
+        block_authors: Sortzaileak blokeatu
+        confirm: Ziur zaude?
+        filter: Iragazkia
+        filters:
+          all: Guztiak
+          pending_review: Berrikusteke
+          ignored: Ikusitzat markatuta
+        headers:
+          moderate: Moderatu
+          proposal_notification: Proposamen jakinarazpena
+        hide_proposal_notifications: Jakinarazpenal ezkutatu
+        ignore_flags: Berrikusitzat markatu
+        order: Ordena
+        orders:
+          created_at: Berrienak
+          moderated: Moderatutakoak
+        title: Proposamen jakinarazpenak
+    users:
+      index:
+        hidden: Blokeatuta
+        hide: Blokeatu
+        search: Bilatu
+        search_placeholder: erabiltzailea edo emaila
+        title: Erabiltzaileak blokeatu

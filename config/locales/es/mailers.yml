@@ -28,6 +28,7 @@ es:
       comment: Comentar propuesta
       unsubscribe: "Si no quieres recibir notificaciones de propuestas, puedes entrar en %{account} y desmarcar la opción 'Recibir resumen de notificaciones sobre propuestas'."
       unsubscribe_account: Mi cuenta
+      unfollow: "Si no quieres recibir más notificaciones, visita esta propuesta y deja de seguirla."
     direct_message_for_receiver:
       subject: "Has recibido un nuevo mensaje privado"
       reply: Responder a %{sender}

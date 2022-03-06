@@ -27,7 +27,7 @@ pt-BR:
     months_to_archive_proposals: "Meses para arquivar Propostas"
     months_to_archive_proposals_description: "Depois desse número de meses as propostas serão arquivadas e não vão mais receber suportes"
     email_domain_for_officials: "Dominio de email para cargos públicos"
-    email_domain_for_officials_description: "Todos os usuários registrados nesse domínio vão ter seuas contas verificasda no registro"
+    email_domain_for_officials_description: "Todos os usuários registrados nesse domínio vão ter suas contas verificadas no registro"
     twitter_handle: "Usuário do Twitter"
     twitter_handle_description: "Se preenchido vai aparecer no rodapé"
     twitter_hashtag: "Hashtag para Twitter"
@@ -70,7 +70,7 @@ pt-BR:
       poll_link: Links de informações adicionais
       poll_link_description: Inclua um link de informações adicionais à funcionalidade de enquetes do painel de control
       email_short_title: Email
-      email_short_title_description: 'Breve descrição da funcionalidade de email. Permite que os usuáios enviem um email para promover a sua proposta. Você pode encontrar todo o conteúdo desse mail em "/app/views/dashboard/mailer/forward.html.erb"'
+      email_short_title_description: 'Breve descrição da funcionalidade de email. Permite que os usuários enviem um email para promover a sua proposta. Você pode encontrar todo o conteúdo desse mail em "/app/views/dashboard/mailer/forward.html.erb"'
       email_description: Descrição do email
       email_description_description: Descrição detalhada da funcionalidade de email
       poster_short_title: Pôster
@@ -89,6 +89,8 @@ pt-BR:
       facebook_login_description: "Permitir usuários de inscrever-se com sua conta do Facebook"
       google_login: "Login do Google"
       google_login_description: "Permitir usuários de inscrever-se com sua conta do Google"
+      wordpress_login: "Login via Wordpress"
+      wordpress_login_description: "Permitir que usuários se registrem com sua conta do Wordpress"
       featured_proposals: "Propostas destacadas"
       featured_proposals_description: "Exibe propostas em destaque na página principal de propostas"
       signature_sheets: "Folhas de assinatura"
@@ -121,10 +123,13 @@ pt-BR:
       translation_interface: "Interface de tradução"
       translation_interface_description: "Exibe a interface de tradução manual permitindo que os usuários informem seus conteúdos em todos os idiomas disponíveis da aplicação, se desejarem. Esta opção afeta apenas as telas dos usuários da aplicação, porém no painel de administração estará sempre ativa."
       remote_census: "Configurar conexão ao censo remoto (SOAP)"
-      remote_census_description: "Permite configurar a conexão ao censo remoto de cada institução"
-      valuation_comment_notification: "Notificação de comentários de avaliación"
+      remote_census_description: "Permite configurar a conexão ao censo remoto de cada instituição"
+      valuation_comment_notification: "Notificação de comentários de avaliação"
       valuation_comment_notification_description: "Envia um email a todos os usuários, exceto a quem tiver comentários associados a um orçamento participativo quando se crie um novo comentário de avaliação"
       graphql_api: "API GraphQL"
+      dashboard:
+        notification_emails: "Emails de notificações do painel de progresso"
+        notification_emails_description: "Ativar o envio de emails de notificações aos autores das propostas na seção do painel de progresso"
     remote_census:
       general:
         endpoint: "Endpoint"
@@ -133,7 +138,7 @@ pt-BR:
         method_name: "Nome do método da Solicitação"
         method_name_description: "Nome do método aceito pelo WebService do Censo Municipal."
         structure: "Estrutura da Solicitação"
-        structure_description: 'Estrutura de Solicitações que recebe o WebService do Censo Municipal. Os valores "fixos" desta solicitação devem ser informados. Os valores relacionados com Tipo de Documento, Número de Documento, Data de Nascimento e CEP devem ficar com valor null. Exemplo de formato válido: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": 1, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
+        structure_description: 'Estrutura de Solicitações que recebe o WebService do Censo municipal. Os valores "fixos" desta solicitação devem ser informados. Os valores relacionados com Tipo de Documento, Número de Documento, Data de Nascimento e CEP devem ficar com valor null. Exemplo de formato válido: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": 1, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
         document_type: "Caminho para o Tipo do Documento"
         document_type_description: "Caminho na estrutura de solicitações que envia o Tipo de Documento. NÃO PREENCHER se o WebService não exigir o Tipo de Documento para verificar o usuário."
         document_number: "Caminho para o Número do Documento"
@@ -156,7 +161,7 @@ pt-BR:
         surname: "Caminho para o Sobrenome"
         surname_description: "Em que caminho da resposta está o Sobrenome do usuário?"
         valid: "Condição para detectar uma resposta válida"
-        valid_description: "Que caminho de resposta deve vir informado para que a resposta seja válida?"
+        valid_description: "Que caminho de resposta deve vir informado para que a resposta seja válida"
     map:
       latitude: "Latitude"
       latitude_description: "Latitude para mostrar a posição no mapa"
@@ -177,9 +182,9 @@ pt-BR:
       legislation_description: "Nos processos participativos é oferecido aos cidadãos a oportunidade de participar da elaboração e modificação das regulações que afetam a cidade e também dar suas opiniões em certas ações que são planejadas para serem tomadas"
     html:
       per_page_code_head: "Código a incluir em cada página (<head>)"
-      per_page_code_head_description: "Este código vai aparecer no <head>. Útil para colocar informações personalizadas."
+      per_page_code_head_description: "Este código vai aparecer no <head>. Útil para colocar informações personalizadas..."
       per_page_code_body: "Código a incluir em cada página (<body>)"
-      per_page_code_body_description: "Este código vai aparecer no <body>. Útil para colocar informações personalizadas."
+      per_page_code_body_description: "Este código vai aparecer no <body>. Útil para colocar informações personalizadas..."
     uploads:
       images:
         min_width: "Largura mínima da imagem"
@@ -197,7 +202,7 @@ pt-BR:
           max_length_description: "Título dado pelo usuário ao carregar uma imagem (usado como atributo HTML alt)"
       documents:
         max_amount: "Número máximo de documentos"
-        max_amount_description: "Número máximo de documentos a anexar em uma proposta, um projecto de gasto..."
+        max_amount_description: "Número máximo de documentos a anexar em uma proposta, um projeto de gasto..."
         max_size: "Tamanho máximo do documento"
         max_size_description: "Tamanho máximo permitido ao carregar um documento (em Megabytes/MB)"
         content_types: "Tipos de conteúdos permitidos para o documento"

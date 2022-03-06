@@ -79,9 +79,6 @@ ast:
       tags_placeholder: "Escribe les etiquetes que deseyes separaes por una coma (',')"
     index:
       featured_debates: Destacadas
-      filter_topic:
-        one: " con el tema '%{topic}'"
-        other: " con el tema '%{topic}'"
       orders:
         confidence_score: meyor valoraes
         created_at: Nuevas
@@ -174,7 +171,6 @@ ast:
       help: Ayuda
       my_account_link: La mio cuenta
       my_activity_link: Mi actividad
-      open: abierto
       open_gov: Gobierno abiertu
       proposals: Propuestes
       poll_questions: Votaciones
@@ -185,8 +181,6 @@ ast:
           other: Tienes %{count} notificaciones nuevas
         notifications: Notificaciones
         no_notifications: "No tienes notificaciones nuevas"
-    admin:
-      watch_form_message: "Has realizado cambios que no han sido guardados. ¿Seguro que quieres abandonar la página?"
   notifications:
     index:
       empty_notifications: No tienes notificaciones nuevas.
@@ -223,8 +217,6 @@ ast:
       sign_in: Entra con Twitter
       sign_up: Regístrate con Twitter
       name: Twitter
-    info_sign_in: "Entra con:"
-    info_sign_up: "Regístrate con:"
     or_fill: "O rellena el siguiente formulario:"
   proposals:
     create:
@@ -257,9 +249,6 @@ ast:
       tags_placeholder: "Escribe les etiquetes que deseyes separaes por una coma (',')"
     index:
       featured_proposals: Destacadas
-      filter_topic:
-        one: " con el tema '%{topic}'"
-        other: " con el tema '%{topic}'"
       orders:
         confidence_score: meyor valoraes
         created_at: Nuevas
@@ -412,7 +401,6 @@ ast:
     check_none: Ninguno
     collective: Colectivo
     flag: Denunciar como inapropiado
-    hide: Despintar
     print:
       print_button: Imprimir esta información
     search: Atopar

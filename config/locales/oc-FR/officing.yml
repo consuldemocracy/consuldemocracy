@@ -1,0 +1,90 @@
+oc:
+  officing:
+    header:
+      title: de votacions
+    dashboard:
+      index:
+        title: Presidir taula de votacions
+        info: Pòdes aicí validar de documents de ciutadans e gardar los resultats de las urnas
+        no_shifts: Avètz pas de torns oficiales uèi.
+    menu:
+      voters: validar document
+      total_recounts: de Totales recomptes e de resultats
+    polls:
+      final:
+        title: Listat de votacions finalizadas
+        no_polls: Pas tibat permís per recompte final a cap de votacion recenta
+        select_poll: Selecciona votacion
+        add_results: Apondre de resultats
+    poll_budgets:
+      see_ballot_sheets: Vejatz la lista de las bilhetas
+      index:
+        title: "%{poll_budget} - Lista de bilhetas"
+        ballot_sheet: "Butlleta de vòt %{id}"
+        ballot_sheet_name: Nom
+        ballot_sheet_author: Autor
+        ballot_sheet_creation_date: Data de creacion
+        empty_results: I a pas encara butlletes de vòt per aquela enquèsta
+      new:
+        title: "%{poll_budget} - Nòva urna"
+        booth: Cabina
+        select_booth: Seleccionar estand
+        csv_data: de Donadas CSV
+        submit: Plega
+      show:
+        created_at: Data de creacion
+        author: Autor
+        data: de Donadas CSV
+    booth:
+      new:
+        title: "Escuelhètz lo vòstre estand"
+    results:
+      flash:
+        create: "de donadas gardadas"
+        error_create: "Resultats PAS aponduts. Error en las donadas"
+        error_wrong_booth: "Urna incorrècta. Resultats PAS gardats."
+      new:
+        title: "%{poll} - Apondre de resultats"
+        not_allowed: "Avètz pas permís d’apondre de resultats per aquel sondatge"
+        booth: "urna"
+        date: "data"
+        select_booth: "Escuelh urna"
+        ballots_white: "de Bilhetas totalament en blanc"
+        ballots_null: "de bilhetas nullas"
+        ballots_total: "de Bilhetas validas"
+        submit: "Plegar"
+        results_list: "Los tieus resultats"
+        see_results: "veire de resultats"
+      index:
+        no_results: "I a pas resultats"
+        results: de resultats
+        table_answer: Responsa
+        table_votes: de Votacions
+        table_whites: "de Bilhetas totalament en blanc"
+        table_nulls: "de bilhetas nullas"
+        table_total: "de Bilhetas validas"
+    residence:
+      flash:
+        create: "Document verificat amb lo Padró"
+        not_allowed: "Uèi pas tibat torn de president de taula"
+      new:
+        title: validar document
+        document_number: "Numèro de document (en i comprenent de letras)"
+        submit: validar document
+        error_verifying_census: "Lo Padró poguèt pas verificar aquel document."
+        form_errors: evitèron verificar aquel document
+    voters:
+      new:
+        title: de votacions
+        table_poll: votacion
+        table_status: Estat de las votacions
+        table_actions: d'Accions
+        not_to_vote: La persona a pas decidit votar en aquel moment
+      show:
+        can_vote: pòt votar
+        cannot_vote: La persona pòt pas votar perque es pas enregistrada al districte ont se fa la votacion.
+        error_already_voted: A ja participat a aquela votacion.
+        submit: Confirma vòt
+        success: "Vòt introdusit!"
+      can_vote:
+        submit_disable_with: "Esperatz, confirmatz lo vòt ..."

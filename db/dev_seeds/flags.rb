@@ -19,7 +19,7 @@ section "Flagging Debates & Comments" do
 end
 
 section "Ignoring flags in Debates, comments & proposals" do
-  Debate.flagged.reorder("RANDOM()").limit(10).each(&:ignore_flag)
-  Comment.flagged.reorder("RANDOM()").limit(30).each(&:ignore_flag)
-  Proposal.flagged.reorder("RANDOM()").limit(10).each(&:ignore_flag)
+  Debate.flagged.sample(10).each(&:ignore_flag)
+  Comment.flagged.sample(30).each(&:ignore_flag)
+  Proposal.flagged.sample(10).each(&:ignore_flag)
 end

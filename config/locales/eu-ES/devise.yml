@@ -1,1 +1,66 @@
+#Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 eu:
+  devise:
+    password_expired:
+      expire_password: "Iraungitako pasahitza"
+      change_required: "Zure pasahitza iraungi da"
+      change_password: "Zure pasahitza aldatu"
+      new_password: "Pasahitz berria"
+      updated: "Pasahitza ondo aldatu da"
+    confirmations:
+      confirmed: "Zure kontua baieztatu da. Mesedez, zure sare sozial edo reabiltzaile eta pasahitzarekin autentikatu zaitez"
+      send_instructions: "Pasahitza berriz ezartzeko argibideak email bidez jasoko dituzu."
+      send_paranoid_instructions: "Zure posta elektroniko helbidea gure datu basean badago, pasahitza berriz ezartzeko argibideak email bidez jasoko dituzu."
+    failure:
+      already_authenticated: "Saioa hasi duzu."
+      inactive: "Zure kontua oraindik ez da aktibatu."
+      invalid: "%{authentication_keys} edo pasahitz okerra."
+      locked: "Zure kontua blokeatu egin da."
+      last_attempt: "Azken aukera duzu kontua blokeatu baino lehen."
+      not_found_in_database: "%{authentication_keys} edo pasahitz okerra."
+      timeout: "saioa iraungi da, Jrraitu ahal izateko saioa berriz hasi behar duzu."
+      unauthenticated: "Jarraitzeko saioa hasi edo Erregistratu behar zara."
+      unconfirmed: "Jarraitzeko, zure emailera bialdu dugun lotura sakatu behar duzu."
+    mailer:
+      confirmation_instructions:
+        subject: "Baieztapenerako jarraibideak"
+      reset_password_instructions:
+        subject: "Pasahitza berreskuratzeko jarraibideak"
+      unlock_instructions:
+        subject: "Desblokeatzeko jarraibideak"
+    omniauth_callbacks:
+      failure: "Hurrengo arrazoia dela eta, ezin izan da %{kind} bidez identifikatu: \"%{reason}\"."
+      success: "%{kind} bidez ondo identifikatuta."
+    passwords:
+      no_token: "Orri honetara, pasahitza berreskuratzeko, lotura bidez solik sartu daiteke. Pasahitza berreskuratzeko loturatik sartu bazara, URL osoa idatzi duzula ziurtatu zaitez."
+      send_instructions: "Minutu gutxi barru pasahitza berrezkuratzeko jarraibideak email bidez jasoko dituzu."
+      send_paranoid_instructions: "Zure posta elektroniko helbidea gure datu basean badago, minutu gutxi barru pasahitza berrezkuratzeko jarraibideak email bidez jasoko dituzu."
+      updated: "Zure pasahitza zuzenki aldatu da. Zuzenki identifikatua izan zara."
+      updated_not_active: "Zure pasahitza zuzenki aldatu da."
+    registrations:
+      destroyed: "Agur! Zure kontua kantzelatu egin da. Laster elkar ikustea espero dugu. Zuk eskatutako moduan, Web orriaren erabiltzaile moduan gordeta ditugun datu pertsonalak, Datu Pertsonalak Babesteari buruzko 15/1999 Lege Organikoak 16. artikuluan eta Garapeneko Araudiaren 31. artikulua (1720/2007 Errege Dekretua)-k dioten bezala, kantzelatuta izan dira."
+      signed_up: "Ondo etorri! Identifikatua izan zara."
+      signed_up_but_inactive: "Ondo erregistratu zara, Baina ezin izan duzu saioa hasi zure kontua aktibatu gabe dagoelako."
+      signed_up_but_locked: "Ondo erregistratu zara, Baina ezin izan duzu saioa hasi zure kontua blokeatuta dagoelako."
+      signed_up_but_unconfirmed: "Mezu bat bidali zaizu konfirmazio lotura batekin. Mesedez, lotura bisitatu kontua aktibatzeko."
+      update_needs_confirmation: "Zure kontua ondo eguneratu duzu, baina zure helbide elektroniko berria egiaztatu behar dugu oraindik. Mesedez, Emaila begiratu eta lotura bisitatu helbide elektroniko berria baieztatu ahal izateko."
+      updated: "Zure kontua ondo eguneratu duzu."
+    sessions:
+      signed_in: "Saioa ondo hasi duzu."
+      signed_out: "Saioa ondo itxi duzu."
+      already_signed_out: "Saioa ondo itxi duzu."
+    unlocks:
+      send_instructions: "Minutu gutxi barru kontua desblokeatzeko jarraibideak email bidez jasoko dituzu."
+      send_paranoid_instructions: "Zure kontua existidu ezkero, minutu gutxi barru kontua desblokeatzeko jarraibideak email bidez jasoko dituzu."
+      unlocked: "Zure kontua desbloketau egin da. Jarraitu ahal izateko saioa hasi."
+  errors:
+    messages:
+      already_confirmed: "Baieztatua izan zara. Mesedez, saioa hasten saiatu."
+      confirmation_period_expired: "%{period} -(e)n baieztatu behar zara. Mesedez, berriz eskatu ezazu."
+      expired: "iraungi da. Mesedez, berriz eskatu ezazu."
+      not_found: "ez da bilatu."
+      not_locked: "ez zegoen blokeatuta."
+      not_saved:
+        one: "Errore batek %{resource} hau gordetzea eragotzi du. Mesedez, markatutako eremuak berriz begiratu nola konpondu jakiteko:"
+        other: "%{count} errorek %{resource} hau gordetzea eragotzi du. Mesedez, markatutako eremuak berriz begiratu nola konpondu jakiteko:"
+      equal_to_current_password: "Orain duzun pasahitzaren ezberdina izan behar du"

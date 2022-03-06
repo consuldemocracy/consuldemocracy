@@ -3,8 +3,6 @@ so:
     ballots:
       show:
         title: Warqadda codbixintaada
-        amount_spent: Qadarka la kharashadka
-        remaining: "Weli waad heysataa <span>%{amount}</span> si aad u maal gasho."
         no_balloted_group_yet: "Uma adan codeynin kooxdan wali, cod bixin!"
         remove: Kassar codka
         zero: Uma codeynin wax mashruuc maalgashi.
@@ -73,8 +71,6 @@ so:
           title: Raadin
         sidebar:
           my_ballot: Codkayga
-          voted_info: Waxaad%{link} gaari kartaa ilaa wakhti xaddidan. Looma baahna inaad isticmaasho dhammaan lacagaha la heli karo.
-          voted_info_link: bedelka codadkaga
           change_ballot: "Haddii aad bedesho maskaxda waxaad ka saari kartaa codadkaaga%{check_ballot} oo mar kale bilow."
           check_ballot_link: "huubi codkayga"
           zero: Uma adan codayn wax msharuuc malgashi ah o koox ah.

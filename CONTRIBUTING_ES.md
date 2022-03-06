@@ -43,7 +43,6 @@ Cuando revisemos tu código y te pidamos que cambies alguna cosa, si tienes expe
 
 ## Miembros del equipo principal
 
-* [Alberto García](https://github.com/decabeza)
 * [Javi Martín](https://github.com/javierm)
 * [Julián Herrero](https://github.com/microweb10)
 * [Raimond García](https://github.com/voodoorai2000)
@@ -54,4 +53,4 @@ Además del equipo principal, hay [más de cien contribuidores](https://github.c
 
 Finalmente, un agradecimiento especial a los antiguos miembros del equipo principal. Conocidos con cariño como El Alumni:
 
-[Juanjo Bazán](https://github.com/xuanxu), [Enrique García Cota](https://github.com/kikito), [Alberto Calderón](https://github.com/bertocq), [María Checa](https://github.com/mariacheca)
+[Juanjo Bazán](https://github.com/xuanxu), [Enrique García Cota](https://github.com/kikito), [Alberto Calderón](https://github.com/bertocq), [María Checa](https://github.com/mariacheca), [Alberto García](https://github.com/decabeza)
