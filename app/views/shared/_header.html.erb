@@ -1,6 +1,6 @@
 <% if header.present? %>
   <% if header.image.present? && header.background_image? %>
-    <div id="header_background_image" class="header-card jumbo highlight header-card-full"
+    <div id="header_background_image" class="jumbo highlight"
          style="background-image: url(<%= image_path_for(header.image_url(:original)) %>)">
 
       <%= render "shared/header_content", header: header %>
