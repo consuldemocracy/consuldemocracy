@@ -214,10 +214,10 @@ ActiveRecord::Schema.define(version: 20200908084257) do
     t.boolean "allow_custom_content", default: false
     t.text "latitude"
     t.text "longitude"
+    t.integer "max_ballot_lines", default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "geozone_id"
-    t.integer "max_ballot_lines", default: 1
     t.index ["geozone_id"], name: "index_budget_headings_on_geozone_id"
     t.index ["group_id"], name: "index_budget_headings_on_group_id"
   end
@@ -1484,9 +1484,9 @@ ActiveRecord::Schema.define(version: 20200908084257) do
     t.text "former_users_data_log", default: ""
     t.integer "balloted_heading_id"
     t.boolean "public_interests", default: false
+    t.string "postal_code", limit: 10
     t.boolean "recommended_debates", default: true
     t.boolean "recommended_proposals", default: true
-    t.string "postal_code", limit: 10
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["geozone_id"], name: "index_users_on_geozone_id"

@@ -16,7 +16,7 @@ set :server_name, deploysecret(:server_name)
 set :db_server, deploysecret(:db_server)
 set :ssh_options, port: deploysecret(:ssh_port)
 
-set :repo_url, "https://github.com/consul/consul.git"
+set :repo_url, "https://github.com/DipVa/consul.git"
 
 set :revision, `git rev-parse --short #{fetch(:branch)}`.strip
 
@@ -24,7 +24,7 @@ set :log_level, :info
 set :pty, true
 set :use_sudo, false
 
-set :linked_files, %w[config/database.yml config/secrets.yml]
+set :linked_files, %w[config/database.yml config/secrets.yml config/census_geozones.csv config/entidades_censo.csv config/entities_geozones_dict.json config/geozones_mapping.json config/padrones.csv]
 set :linked_dirs, %w[log tmp public/system public/assets public/ckeditor_assets]
 
 set :keep_releases, 5
