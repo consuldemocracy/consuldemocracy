@@ -737,11 +737,6 @@ body > header,
       min-height: $line-height * 20;
     }
 
-    &.header-card-full {
-      margin-right: calc(#{$global-width / 2} - 50vw);
-      overflow-x: hidden;
-    }
-
     h1 {
       font-size: rem-calc(48);
 
