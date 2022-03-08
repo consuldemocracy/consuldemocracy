@@ -13,7 +13,7 @@ da:
         budgets: "Deltagerbudgetter"
         polls: "Afstemninger"
         other: "Andre oplysninger af interesse"
-        processes: "Processer"
+        processes: "Borgerdialog"
       debates:
         title: "Debatforum"
         description: "I sektionen %{link} kan du præsentere og dele din mening vedrørende emner relateret til din by. Det er også stedet, hvor idéer genereres og gennem de øvrige sektioner %{org} kan lede til konkrete handlinger fra kommunens side."
@@ -41,9 +41,11 @@ da:
         feature_1: "For at deltage i afstemningen skal du gå til %{link} og bekræfte din konto."
         feature_1_link: "registrer med %{org_name}"
       processes:
-        title: "Processer"
-        description: "I sektionen %{link} deltager borgerne i udarbejdelsen og ændringer af bestemmelser, der har indflydelse på byen, og de kan tilkendegive deres mening vedrørende kommunalpolitik, der tidligere har været til debat."
-        link: "processer"
+        title: "Borgerdialog"
+        description: "I %{link} deltager borgerne i udarbejdelsen af kommunale politikker eller handlingsplaner. Det kan være igennem debat, udvikling af forslag eller kommentering af udkast til tekster."
+        link: "Borgerdialoger"
+        feature: "For at deltage skal du gå til %{link} og bekræfte din konto."
+        feature_link: "registrer med %{org_name}"
       faq:
         title: "Tekniske problemer?"
         description: "Læs de ofte stillede spørgsmål og find svar på dine egne."
@@ -102,7 +104,7 @@ da:
               page_column: Deltagerbudgetter
             - 
               key_column: 5
-              page_column: Lovgivningsprocesser
+              page_column: Borgerdialger
         browser_table:
           description: "Afhængig af styresystem og den anvendte browser vil tastkombinationen se ud som følgende:"
           caption: Tastkombinationen afhængig af styresystem og browser

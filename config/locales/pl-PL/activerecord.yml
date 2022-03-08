@@ -1,4 +1,9 @@
 pl:
+  attributes:
+    geozone_id: "Zakres działania"
+    results_enabled: "Pokaż wyniki"
+    stats_enabled: "Pokaż statystyki"
+    advanced_stats_enabled: "Pokaż zaawansowane statystyki"
   activerecord:
     models:
       activity:
@@ -178,6 +183,8 @@ pl:
         description_finished: "Opis po zakończeniu budżetu"
         phase: "Etap"
         currency_symbol: "Waluta"
+      budget/translation:
+        name: "Nazwisko"
       budget/investment:
         heading_id: "Nagłówek"
         title: "Tytuł"
@@ -188,6 +195,8 @@ pl:
         organization_name: "Jeśli wnioskujesz w imieniu zespołu/organizacji, lub w imieniu większej liczby osób, wpisz ich nazwę"
         image: "Opisowy obraz wniosku"
         image_title: "Tytuł obrazu"
+        duration: "Zakres czasu"
+        feasibility_feasible: "Wykonalne"
       geozone:
         name: Nazwa
         external_code: "Zewnętrzny kod (opcjonalnie)"
@@ -406,7 +415,6 @@ pl:
           attributes:
             document_number:
               not_in_census: "Brak dokumentu w spisie"
-              has_voted: "Użytkownik już zagłosował"
         legislation/process:
           attributes:
             end_date:

@@ -81,6 +81,9 @@ ca:
       x_months:
         one: 1 mes
         other: "%{count} mesos"
+      x_years:
+        one: 1 any
+        other: "%{count} anys"
       x_seconds:
         one: 1 segon
         other: "%{count} segons"
@@ -92,9 +95,12 @@ ca:
       second: segon
       year: any
   errors:
+    format: "%{attribute} %{message}"
     messages:
       accepted: ha de ser acceptat
       blank: no pot estar en blanc
+      present: ha d’estar en blanc
+      confirmation: no coincideix %{attribute}
       empty: no pot estar buit
       equal_to: ha de ser igual a %{count}
       even: ha de ser parell
@@ -105,10 +111,22 @@ ca:
       invalid: no és vàlid
       less_than: ha de ser menor que %{count}
       less_than_or_equal_to: ha de ser menor o igual a %{count}
+      model_invalid: "Validació fallada: %{errors}"
       not_a_number: no és un número
       not_an_integer: ha de ser un enter
       odd: ha de ser senar
+      required: ha d’existir
       taken: ja està en us
+      too_long:
+        one: és massa llarg (el màxim és d'un caràcter)
+        other: és massa llarg (màxim és %{count} personatges)
+      too_short:
+        one: és massa curt (el mínim és un caràcter)
+        other: és massa curt (mínim és %{count} personatges)
+      wrong_length:
+        one: és la longitud incorrecta (hauria de tenir un caràcter)
+        other: és la longitud incorrecta (hauria de tenir %{count} caràcters)
+      other_than: ha de ser diferent %{count}
     template:
       body: "Hi ha hagut problemes amb els següents camps:"
       header:
@@ -126,6 +144,7 @@ ca:
       format:
         delimiter: "."
         format: "%n %u"
+        precision: 2
         separator: ","
         significant: false
         strip_insignificant_zeros: false
@@ -138,6 +157,7 @@ ca:
       strip_insignificant_zeros: false
     human:
       decimal_units:
+        format: "%n %u"
         units:
           billion: mil milions
           million: milió
@@ -148,12 +168,30 @@ ca:
         precision: 1
         significant: true
         strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
   support:
     array:
       last_word_connector: ", i "
       two_words_connector: " i "
+      words_connector: ", "
   time:
+    am: am
     formats:
+      datetime: "%Y-%m-%d %H:%M:%S"
       default: "%A, %d de %B de %Y %H:%M:%S %z"
       long: "%d de %B de %Y %H:%M"
       short: "%d de %b %H:%M"
+      api: "%Y-%m-%d %H"
+    pm: pm

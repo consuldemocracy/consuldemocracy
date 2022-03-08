@@ -86,9 +86,6 @@ es-PE:
       tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
     index:
       featured_debates: Destacar
-      filter_topic:
-        one: " com tópico '%{topic}'"
-        other: " com tópico '%{topic}'"
       orders:
         confidence_score: Mejor valoradas
         created_at: mais recente
@@ -193,7 +190,6 @@ es-PE:
       help: Ayuda
       my_account_link: Mi cuenta
       my_activity_link: Minha atividade
-      open: aberto
       open_gov: Governo aberto
       proposals: Propuestas
       poll_questions: Votaciones
@@ -204,8 +200,6 @@ es-PE:
           other: Tienes %{count} notificaciones nuevas
         notifications: Notificaciones
         no_notifications: "No tienes notificaciones nuevas"
-    admin:
-      watch_form_message: "Has realizado cambios que no han sido guardados. ¿Seguro que quieres abandonar la página?"
   notifications:
     index:
       empty_notifications: Você não possui novas notificações
@@ -240,8 +234,6 @@ es-PE:
     twitter:
       sign_in: Iniciar sessão com o Twitter
       sign_up: Inscrever-se com o Twitter
-    info_sign_in: "Entra con:"
-    info_sign_up: "Regístrate con:"
     or_fill: "O rellena el siguiente formulario:"
   proposals:
     create:
@@ -278,9 +270,6 @@ es-PE:
       map_skip_checkbox: "Esta propuesta no tiene una ubicación concreta o no la conozco."
     index:
       featured_proposals: Destacar
-      filter_topic:
-        one: " con el tema '%{topic}'"
-        other: " con el tema '%{topic}'"
       orders:
         confidence_score: Mejor valorados
         created_at: Nuevos
@@ -468,7 +457,6 @@ es-PE:
     follow: "Seguir"
     following: "Siguiendo"
     follow_entity: "Seguir %{entity}"
-    hide: Ocultar
     print:
       print_button: Imprimir esta información
     search: Buscar

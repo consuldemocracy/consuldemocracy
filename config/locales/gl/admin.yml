@@ -1021,15 +1021,6 @@ gl:
           without_confirmed_hide: Pendentes
         title: Propostas agochadas
         no_hidden_proposals: Non hai propostas agochadas.
-    proposal_notifications:
-      index:
-        filter: Filtro
-        filters:
-          all: Todo
-          with_confirmed_hide: Confirmadas
-          without_confirmed_hide: Pendentes
-        title: Notificacións agochadas
-        no_hidden_proposals: Non hai notificacións agochadas.
     settings:
       flash:
         updated: Valor actualizado

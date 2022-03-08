@@ -1,5 +1,6 @@
 el:
   attributes:
+    geozone_id: "Πεδίο Δράσεως"
     results_enabled: "Εμφάνιση αποτελεσμάτων"
     stats_enabled: "Εμφάνιση στατιστικών στοιχείων"
     advanced_stats_enabled: "Εμφάνιση σύνθετων στατιστικών στοιχείων"
@@ -37,16 +38,16 @@ el:
         other: "Χρήστης"
       moderator:
         one: "Συντονιστής"
-        other: "Συντονιστής"
+        other: "Συντονιστές"
       administrator:
         one: "Διαχειριστής"
-        other: "Διαχειριστής"
+        other: "Διαχειριστές"
       valuator:
         one: "Αξιολογητής"
         other: "Αξιολογητής"
       valuator_group:
         one: "Ομάδα αξιολόγησης"
-        other: "Ομάδα αξιολόγησης"
+        other: "Ομάδες αξιολόγησης"
       manager:
         one: "Υπεύθυνος"
         other: "Υπεύθυνος"
@@ -67,10 +68,10 @@ el:
         other: "Λειτουργός"
       poll/ballot_sheet:
         one: Φύλλο ψηφοφορίας
-        other: Φύλλο ψηφοφορίας
+        other: Φύλλα ψηφοφορίας
       proposal:
         one: "Πρόταση πολίτη"
-        other: "Πρόταση πολίτη"
+        other: "Προτάσεις πολιτών"
       site_customization/page:
         one: Προσαρμοσμένη σελίδα
         other: Προσαρμοσμένες σελίδες
@@ -140,6 +141,8 @@ el:
         description_finished: "Περιγραφή με την ολοκληρωση του προϋπολογισμού"
         phase: "Φάση"
         currency_symbol: "Συνάλλαγμα"
+      budget/translation:
+        name: "Όνομα"
       budget/investment:
         heading_id: "Επικεφαλίδα"
         title: "Τίτλος"
@@ -150,7 +153,22 @@ el:
         organization_name: "Εάν υποβάλετε πρόταση εκ μέρους ομάδας, οργανισμού ή άλλων προσώπων, παρακαλείσθε όπως αναφέρετε την ονομάσία τους"
         image: "Εικόνα πρότασης"
         image_title: "Τίτλος εικόνας"
+        duration: "Χρονικό πλαίσιο"
+        feasibility_feasible: "Εφικτό"
+        feasibility_undecided: "Απροσδιόριστο"
+        feasibility_unfeasible: "Ανέφικτο"
+        incompatible: "Σημειώστε ως μη συμβατό"
+        milestone_tag_list: "Ετικέτες οροσήμου"
+        price_explanation: "Επεξήγηση τιμής"
+        selected: "Σημείωστε ως επιλεγμένο"
+        selected_true: "Επιλεγμένο"
+        selected_false: "Δεν επιλέχθηκε"
+        unfeasibility_explanation: "Εξήγηση της σκοπιμότητας"
+        valuation_finished: "Η αξιολόγηση ολοκληρώθηκε"
+        valuator_ids: "Ομάδες"
+        valuation_tag_list: "Ετικέτες"
       budget/investment/translation:
+        title: "Τίτλος"
         description: "Περιγραφή"
       geozone:
         name: Όνομα
@@ -162,6 +180,8 @@ el:
         title: "Τίτλος"
         description: "Περιγραφή (προαιρετικό έαν έχει ανατεθεί μια κατάσταση)"
         publication_date: "Ημερομηνία δημοσίευσης"
+      milestone/translation:
+        description: "Περιγραφή"
       milestone/status:
         name: "Όνομα"
         description: "Περιγραφή (προαιρετικό)"
@@ -172,16 +192,33 @@ el:
       progress_bar/kind:
         primary: "Στοιχειώδης"
         secondary: "Δευτερεύων"
+      budget/group:
+        max_votable_headings: "Μέγιστος αριθμός επικεφαλίδων στις οποίες μπορεί να ψηφίσει ένας χρήστης"
+      budget/group/translation:
+        name: "Όνομα ομάδας"
       budget/heading:
+        allow_custom_content: "Επιτρέψτε αποκλεισμό περιεχομένου"
+        latitude: "Γεωγραφικό πλάτος (προαιρετικό)"
+        longitude: "Γεωγραφικό μήκος (προαιρετικό)"
         name: "Όνομα επικεφαλίδας"
         price: "Τιμή"
         population: "Πληθυσμός"
+      budget/heading/translation:
+        name: "Όνομα επικεφαλίδας"
+      budget/phase:
+        enabled: "Ενεργοποιημένη Φάση"
+        ends_at: "Ημερομηνία ολοκλήρωσης"
+        starts_at: "Ημερομηνία έναρξης"
+      budget/phase/translation:
+        description: "Περιγραφή"
+        summary: "Περίληψη"
       comment:
         body: "Σχόλιο"
         user: "Χρήστης"
       debate:
         author: "Δημιουργός"
         description: "Γνώμη"
+        tag_list: "Θέματα"
         terms_of_service: "Όροι υπηρεσίας"
         title: "Τίτλος"
       debate/translation:
@@ -192,8 +229,11 @@ el:
         title: "Τίτλος"
         question: "Ερώτηση"
         description: "Περιγραφή"
+        responsible_name: "Πλήρες όνομα του ατόμου που υποβάλλει την πρόταση"
+        retired_reason: "Λόγος για να αποσυρθεί η πρόταση"
         selected: "Σημείωστε ως επιλεγμένο"
         terms_of_service: "Όροι υπηρεσίας"
+        video_url: "Εξωτερικό βίντεο URL"
       proposal/translation:
         title: "Τίτλος πρότασης"
         description: "Κείμενο πρότασης"
@@ -206,10 +246,23 @@ el:
         password_confirmation: "Επιβεβαίωση κωδικού πρόσβασης"
         password: "Κωδικός πρόσβασης"
         current_password: "Υφιστάμενος κωδικός πρόσβασης"
+        email_digest: "Αποστολή περίληψης των ειδοποιήσεων σχετικά με την πρόταση"
+        email_on_comment: "Ειδοποιείστε με μέσω email όταν κάποιος σχολιάζει τις προτάσεις ή τις συζητήσεις μου"
+        email_on_comment_reply: "Ειδοποιείστε με μέσω email όταν κάποιος απαντά σε σχόλιά μου"
+        email_on_direct_message: "Λήψη E-mail για τα άμεσα μηνύματα"
+        newsletter: "Λήψη μέσω E-mail των σχετικών με το website πληροφοριών"
         official_position: "Επίσημη θέση"
+        official_position_badge: "Εμφάνιση του συμβόλου της επίσημης θέσης"
         official_level: "Επίσημο επίπεδο"
         phone_number: "Αριθμός τηλεφώνου"
+        public_activity: "Κρατήστε δημόσια τη λίστα των δραστηριοτήτων μου"
+        public_interests: "Κρατήστε τις ετικέτες των στοιχείων που ακολουθώ δημόσια"
+        recommended_debates: "Εμφάνιση προτάσεων για δημόσιες συζητήσεις"
+        recommended_proposals: "Εμφάνιση συστάσεων για προτάσεις"
         redeemable_code: "Κωδικός επαλήθευσης που λάβατε μέσω email"
+      direct_message:
+        title: "Τίτλος"
+        body: "Μήνυμα"
       organization:
         name: "Επωνυμία οργανισμού"
         responsible_name: "Υπεύθυνος ομάδας"
@@ -220,11 +273,17 @@ el:
         geozone_restricted: "Περιορίζεται από το geozone"
         summary: "Περίληψη"
         description: "Περιγραφή"
+      active_poll/translation:
+        description: "Περιγραφή"
+      poll/booth:
+        name: "Όνομα"
+        location: "Τοποθεσία"
       poll/translation:
         name: "Όνομα"
         summary: "Περίληψη"
         description: "Περιγραφή"
       poll/question:
+        poll_id: "Ψηφοφορία"
         title: "Ερώτηση"
         summary: "Περίληψη"
         description: "Περιγραφή"
@@ -235,7 +294,10 @@ el:
         data: Στοιχεία CSV
         poll_id: Ψηφοφορία
         officer_assignment_id: Εργασία Λειτουργού
+      poll/shift:
+        task: "Εργασία"
       signature_sheet:
+        title: "Τίτλος"
         signable_type: "Τύπος με δυνατότητα υπογραφής"
         signable_id: "ID με δυνατότητα υπογραφής "
         document_numbers: "Αριθμοί εγγράφων"
@@ -410,7 +472,6 @@ el:
           attributes:
             document_number:
               not_in_census: "Έγγραφο το οποίο δεν υπάρχει στην απογραφή"
-              has_voted: "Ο χρήστης έχει ήδη ψηφίσει"
         legislation/process:
           attributes:
             end_date:

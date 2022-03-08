@@ -3,8 +3,6 @@ tr:
     ballots:
       show:
         title: Oyunuz
-        amount_spent: Harcanan miktar
-        remaining: "Şu an itibariyle yatırım yapabileceğiniz miktar <span>%{amount}</span>."
         no_balloted_group_yet: "Henüz bu gruba oy vermediniz, oy verin!"
         remove: Oyu geri çek
         voted:
@@ -84,8 +82,6 @@ tr:
           other: " <strong> '%{search_term}' </strong> terimini içeren"
         sidebar:
           my_ballot: Oyum
-          voted_info: Bu aşama tamamlanana kadar istediğiniz zaman %{link} yapabilirsiniz. Mevcut tüm parayı harcamanız gerekmiyor.
-          voted_info_link: oyunuzu değiştirin
           change_ballot: "Eğer fikrinizi değiştirirseniz, oyunuzu %{check_ballot}'dan geri çekebilirsiniz ve tekrar oy verebilirsiniz."
           check_ballot_link: "oyumu kontrol et"
           zero: Bu kategoride herhangi bir yatırım projesine oy vermediniz.

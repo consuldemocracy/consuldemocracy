@@ -18,8 +18,9 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
             next
           else
             text = I18nContent.find_or_create_by!(key: content[:id])
-            Globalize.locale = locale
-            text.update!(value: value)
+            Globalize.with_locale(locale) do
+              text.update!(value: value)
+            end
           end
         end
       end

@@ -1,1 +1,8 @@
 ro:
+  milestones:
+    index:
+      no_milestones: Nu aveți repere definite
+      progress: Progres
+    show:
+      publication_date: "Publicat %{publication_date}"
+      status_changed: Status schimbat la

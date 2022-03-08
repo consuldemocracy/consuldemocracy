@@ -1,37 +1,44 @@
 hr:
   mailers:
+    title: "Otvorena uprava"
     no_reply: "Ova poruka se šalje s email adrese koja ne prima odgovore."
     comment:
       hi: Pozdrav
-      subject: Netko je komentirao vašu%{commentable}
+      new_comment_by: Stigao je novi komentar od <strong>%{commenter}</strong>
+      subject: Netko je komentirao vašu %{commentable}
       title: Novi komentar
     config:
-      manage_email_subscriptions: Ako ne želite više primati ove email-ove promijenite svoje postavke
+      manage_email_subscriptions: Ako ne želite više primati ove e-mail poruke, promijenite svoje postavke u
     email_verification:
       click_here_to_verify: ova poveznica
-      subject: Potvrditie svoj email
+      instructions_2: Ova će e-poruka potvrditi vaš račun s<b>%{document_type} %{document_number}</b>. Ako ovo ne pripada vama, ne otvarajte prethodnu poveznicu i zanemarite ovu e-poruku.
+      instructions: Za potvrdu svojeg korisničkog računa, kliknite %{verification_link}.
+      subject: Potvrdite svoj e-mail
       thanks: Hvala vam puno.
       title: Potvrdite Vaš račun koristeći sljedeću poveznicu
     reply:
       hi: Pozdrav
-      subject: Netko je odgovorio na Vaš komentar
+      new_reply_by: Stigao je novi odgovor od <strong>%{commenter}</strong> na vaš komentar o temi
+      subject: Netko je odgovorio na vaš komentar
       title: Novi odgovor na vaš komentar
     proposal_notification_digest:
       info: "Evo novih obavijesti koje su objavili autori prijedloga koje ste podržali u %{org_name}."
       title: "Obavijesti prijedloga u %{org_name}"
-      share: Podjeli prijedlog
+      share: Podijeli prijedlog
       comment: Komentiraj prijedlog
       unsubscribe: "Ukoliko ne želite primati obavijest o prijedlogu, posjetite %{account} i odznačite \"Primi sažetak obavijesti o prijedlozima\"."
       unsubscribe_account: Moj račun
+      unfollow: "Pogledajte prijedlog i prestanite ga pratiti ukoliko ne želite primati obavijesti."
     direct_message_for_receiver:
-      subject: "Primili ste privatnu poruku"
+      subject: "Primili ste novu privatnu poruku"
       reply: Odgovori %{sender}
       unsubscribe: "Ukoliko ne želite primati direktne poruke, posjetite %{account} i odznačite \"Primajte e-poštu o izravnim porukama\"."
       unsubscribe_account: Moj račun
     direct_message_for_sender:
       subject: "Vi ste poslali novu privatnu poruku"
+      title: "Poslali ste novu privatnu poruku primatelju <strong>%{receiver}</strong> sljedećeg sadržaja:"
     user_invite:
-      ignore: "Ukoliko niste zatražili ovu pozivnicu ne brinite, možete ignorirati ovaj email."
+      ignore: "Ukoliko niste zatražili ovu pozivnicu ne brinite, možete ignorirati ovaj e-mail."
       text: "Hvala vam na prijavi %{org}! U nekoliko sekundi možete započeti sudjelovanje, samo popunite obrazac dolje:"
       thanks: "Hvala vam puno."
       title: "Dobrodošli %{org}"
@@ -40,11 +47,15 @@ hr:
     budget_investment_created:
       subject: "Hvala Vam što ste stvorili investiciju!"
       title: "Hvala Vam što ste stvorili investiciju!"
-      follow_link: "Participativni Budžet"
+      intro: "Pozdrav <strong>%{author}</strong>,"
+      text: "Hvala vam što ste pokrenuli ulaganje <strong>%{investment}</strong> za Sudioničke proračune <strong>%{budget}</strong>."
+      follow: "Obavijestit ćemo vas o tijeku postupka, koji i sami možete pratiti na <strong>%{link}</strong>."
+      follow_link: "Participativni proračun"
       sincerely: "Iskreno,"
-      share: "Podjelite svoj projekt"
+      share: "Podijelite svoj projekt"
     budget_investment_unfeasible:
       hi: "Dragi korisniče,"
+      new: "Za sve ovo, pozivamo vas da razradite <strong>novo ulaganje</strong> koje je u skladu s uvjetima ovog postupka. Možete to učiniti na sljedećoj poveznici: %{url}."
       new_href: "novi investicijski projekt"
       sincerely: "Iskreno"
       sorry: "Ispričavamo se zbog neugodnosti i ponovno vam zahvaljujemo na sudjelovanju."
@@ -61,6 +72,12 @@ hr:
       hi: "Dragi korisniče,"
       thanks: "Hvala vam na sudjelovanju."
       sincerely: "Iskreno"
+    evaluation_comment:
+      subject: "Novi komentar procjene"
+      title: Novi komentar procjene za %{investment}
+      hi: Pozdrav
+      new_comment_by: Stigao je novi komentar procjene od <strong>%{commenter}</strong> u proračunsko ulaganje %{investment}
+      commenter_info: "%{commenter}, %{time}:"
     new_actions_notification_rake_created:
       subject: "Više vijesti o vašem građanskom prijeldogu"
       hi: "Pozdrav %{name},"

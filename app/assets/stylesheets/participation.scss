@@ -612,6 +612,45 @@
   }
 }
 
+%panel {
+  background: #fff;
+  border: 1px solid;
+  border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+  border-radius: 0;
+  box-shadow: 0 1px 3px 0 $border;
+  margin-bottom: rem-calc(12);
+  min-height: rem-calc(192);
+  padding: rem-calc(12) rem-calc(12) 0;
+
+  @include breakpoint(medium) {
+    margin-bottom: rem-calc(-1);
+    padding-bottom: rem-calc(12);
+  }
+
+  @include breakpoint(medium) {
+    .divider {
+      display: inline-block;
+    }
+  }
+
+  h3 {
+    font-weight: bold;
+    margin-top: $line-height / 2;
+
+    a {
+      color: $text;
+    }
+  }
+
+  &.past-budgets {
+    min-height: 0;
+
+    .button ~ .button {
+      margin-left: $line-height / 2;
+    }
+  }
+}
+
 .debate,
 .proposal,
 .investment-project,
@@ -621,42 +660,7 @@
   margin: $line-height / 4 0;
 
   .panel {
-    background: #fff;
-    border: 1px solid;
-    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
-    border-radius: 0;
-    box-shadow: 0 1px 3px 0 $border;
-    margin-bottom: rem-calc(12);
-    min-height: rem-calc(192);
-    padding: rem-calc(12) rem-calc(12) 0;
-
-    @include breakpoint(medium) {
-      margin-bottom: rem-calc(-1);
-      padding-bottom: rem-calc(12);
-    }
-
-    @include breakpoint(medium) {
-      .divider {
-        display: inline-block;
-      }
-    }
-
-    h3 {
-      font-weight: bold;
-      margin-top: $line-height / 2;
-
-      a {
-        color: $text;
-      }
-    }
-
-    &.past-budgets {
-      min-height: 0;
-
-      .button ~ .button {
-        margin-left: $line-height / 2;
-      }
-    }
+    @extend %panel;
   }
 
   .debate-content,
@@ -909,6 +913,8 @@
 .help-header {
   background: #fafafa;
   border-bottom: 1px solid #eee;
+  margin-top: -$line-height;
+  margin-bottom: $line-height;
   padding-bottom: $line-height / 2;
   padding-top: $line-height;
 
@@ -1121,8 +1127,7 @@
   .share-supported {
 
     .ssb-twitter,
-    .ssb-facebook,
-    [class^="ssb-icon ssb-google"] {
+    .ssb-facebook {
       background: none;
       color: $text;
       height: rem-calc(33) !important;
@@ -1143,6 +1148,7 @@
 
   &.budget {
     background: $budget;
+    margin-top: -$line-height;
 
     h1,
     h2,
@@ -1244,10 +1250,6 @@
       color: #354f88;
     }
 
-    &[class^="social-share-button-google"] {
-      color: #ce3e26;
-    }
-
     &.social-share-button-telegram:hover {
       color: #ce3e26;
     }
@@ -1290,6 +1292,7 @@
   .progress {
     background: #212033;
     clear: both;
+    margin-bottom: 0;
   }
 
   .progress-meter {
@@ -1298,29 +1301,20 @@
     transition: width 2s;
   }
 
-  .spent-amount-progress,
-  .spent-amount-meter {
-    background: none !important;
-  }
-
   .spent-amount-text {
-    color: #fff;
-    font-size: $base-font-size;
-    font-weight: normal;
-    position: absolute;
-    right: 0;
+    margin-bottom: 0;
+    position: relative;
     text-align: right;
-    top: 16px;
-    width: 100%;
+    white-space: nowrap;
 
     &::before {
       color: #a5a1ff;
       content: "\57";
       font-family: "icons";
       font-size: $small-font-size;
+      line-height: 0;
       position: absolute;
-      right: -6px;
-      top: -17px;
+      right: -0.5em;
     }
   }
 
@@ -1333,7 +1327,6 @@
 
   .amount-available {
     display: block;
-    text-align: right;
 
     span {
       font-size: rem-calc(24);
@@ -1491,6 +1484,7 @@
       height: auto;
       left: 0;
       padding: $line-height;
+      padding-bottom: $line-height / 2;
       position: fixed;
       top: 0;
       width: 100%;
@@ -1782,6 +1776,7 @@
 
 .orbit-slide {
   max-height: none !important;
+  position: relative;
 }
 
 .orbit-caption {

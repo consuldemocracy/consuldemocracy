@@ -472,7 +472,6 @@ he:
           attributes:
             document_number:
               not_in_census: "המסמך לא במפקד האוכלוסין"
-              has_voted: "המשתמש כבר הצביע"
         legislation/process:
           attributes:
             end_date:

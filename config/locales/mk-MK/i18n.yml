@@ -1,1 +1,4 @@
 mk:
+  i18n:
+    language:
+      name: "Англиски"

@@ -38,7 +38,6 @@ class Setting < ApplicationRecord
       setting = find_by(key: key) || new(key: key)
       setting.value = value.presence
       setting.save!
-      value
     end
 
     def rename_key(from:, to:)

@@ -1,35 +1,214 @@
 ro:
   date:
+    abbr_day_names:
+      - Dum
+      - Luni
+      - Mar
+      - Mie
+      - Joi
+      - Vin
+      - Sâm
     abbr_month_names:
       - 
-      - Jan
+      - Ian
       - Feb
       - Mar
       - Apr
-      - May
-      - Jun
-      - Jul
+      - Mai
+      - Iun
+      - Iul
       - Aug
-      - Sep
+      - Sept
       - Oct
       - Nov
       - Dec
+    day_names:
+      - Duminică
+      - Luni
+      - Marți
+      - Miercuri
+      - Joi
+      - Vineri
+      - Sâmbătă
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
     month_names:
       - 
-      - January
-      - February
-      - March
-      - April
-      - May
-      - June
-      - July
+      - Ianuarie
+      - Februarie
+      - Martie
+      - Aprilie
+      - Mai
+      - Iunie
+      - Iulie
       - August
-      - September
-      - October
-      - November
-      - December
+      - Septembrie
+      - Octombrie
+      - Noiembrie
+      - Decembrie
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: aproximativ 1 oră
+        few: aproximativ %{count} ore
+        other: aproximativ %{count} ore
+      about_x_months:
+        one: aproximativ 1 lună
+        few: aproximativ %{count} luni
+        other: aproximativ %{count} luni
+      about_x_years:
+        one: aproximativ 1 an
+        few: aproximativ %{count} ani
+        other: aproximativ %{count} ani
+      almost_x_years:
+        one: aproape 1 an
+        few: aproape %{count} ani
+        other: aproape %{count} ani
+      half_a_minute: jumătate de minut
+      less_than_x_minutes:
+        one: mai puțin de 1 minut
+        few: mai puțin de %{count} minute
+        other: mai puțin de %{count} minute
+      less_than_x_seconds:
+        one: mai puțin de 1 secundă
+        few: mai puțin de %{count} secunde
+        other: mai puțin de %{count} secunde
+      over_x_years:
+        one: peste 1 an
+        few: peste %{count} ani
+        other: peste %{count} ani
+      x_days:
+        one: 1 zi
+        few: "%{count} zile"
+        other: "%{count} zile"
+      x_minutes:
+        one: 1 minut
+        few: "%{count} minute"
+        other: "%{count} minute"
+      x_months:
+        one: 1 luna
+        few: "%{count} luni"
+        other: "%{count} luni"
+      x_years:
+        one: 1 an
+        few: "%{count} ani"
+        other: "%{count} ani"
+      x_seconds:
+        one: 1 secundă
+        few: "%{count} secunde"
+        other: "%{count} secunde"
+    prompts:
+      day: Zi
+      hour: Oră
+      minute: Minut
+      month: Lună
+      second: Secunde
+      year: An
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: trebuie acceptată
+      blank: nu poate fi gol
+      present: trebuie să fie gol
+      confirmation: nu se potrivește cu%{attribute}
+      empty: nu poate fi gol
+      equal_to: trebuie să fie egal %{count}
+      even: trebuie să fie egal
+      exclusion: este rezervat
+      greater_than: trebuie să fie mai mare decât %{count}
+      greater_than_or_equal_to: trebuie să fie mai mare sau egal cu %{count}
+      inclusion: nu este inclus în listă
+      invalid: nu este valid
+      less_than: trebuie să fie mai mic decât %{count}
+      less_than_or_equal_to: trebuie să fie mai mic sau egal cu %{count}
+      model_invalid: "Validarea a eșuat: %{errors}"
+      not_a_number: nu este un număr
+      not_an_integer: trebuie să fie un număr întreg
+      odd: trebuie să fie impar
+      required: trebuie să existe
+      taken: a fost deja luat
+      too_long:
+        one: este prea lung (maxim 1 caracter)
+        few: este prea lung (maxim %{count} caractere)
+        other: este prea lung (maxim %{count} caractere)
+      too_short:
+        one: este prea scurt (minimul este de 1 caracter)
+        few: este prea scurt (minimul este de %{count} caractere)
+        other: este prea scurt (minimul este de %{count} caractere)
+      wrong_length:
+        one: este dimensiunea greșită (ar trebui să fie de 1 caracter)
+        few: este dimensiunea greșită (ar trebui să fie de %{count} caractere)
+        other: este dimensiunea greșită (ar trebui să fie de %{count} caractere)
+      other_than: trebuie să fie altul decât%{count}
+    template:
+      body: "Au fost probleme cu următoarele câmpuri:"
+      header:
+        one: 1 eroare a interzis acestui %{model} să fie salvat
+        few: "%{count} eroari a interzis acestui %{model} să fie salvat"
+        other: "%{count} eroari a interzis acestui %{model} să fie salvat"
+  helpers:
+    select:
+      prompt: Vă rugăm selectați
+    submit:
+      create: Crează %{model}
+      submit: Salvează %{model}
+      update: Actualizează %{model}
   number:
-    human:
+    currency:
       format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n%u"
+        units:
+          billion: Miliard
+          million: Milion
+          quadrillion: Catralion
+          thousand: Mii
+          trillion: Trilion
+      format:
+        precision: 3
         significant: true
         strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Bit
+            few: Biți
+            other: Biți
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  support:
+    array:
+      last_word_connector: ", și "
+      two_words_connector: " și "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      datetime: "%Y-%m-%d %H:%M:%S"
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+      api: "%Y-%m-%d %H"
+    pm: pm

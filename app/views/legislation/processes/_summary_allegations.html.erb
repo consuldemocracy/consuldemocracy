@@ -1,0 +1,32 @@
+<section class="comments-phase">
+  <header>
+    <h3><%= t("legislation.summary.allegations_phase") %></h3>
+    <h3><%= t("legislation.summary.top_comments", count: comments.count) %></h3>
+  </header>
+
+  <% if comments.any? %>
+    <div>
+      <% comments.group_by(&:commentable).each do |annotation, annotation_comments| %>
+        <div class="annotation-summary">
+          <span><%= t("legislation.annotations.index.comments_about") %></span>
+          <div class="annotation-title">
+            <div class="annotation-quote">
+              <%= annotation.quote %>
+            </div>
+
+            <span class="comments-count">
+              <%= link_to t("legislation.summary.comments", count: annotation.comments.count),
+                          polymorphic_path(annotation, anchor: "comments") %>
+            </span>
+          </div>
+
+          <%= render "summary_comments", comments: annotation_comments %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="callout primary">
+      <p><%= t("legislation.summary.no_allegation") %></p>
+    </div>
+  <% end %>
+</section>

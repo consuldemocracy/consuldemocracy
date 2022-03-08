@@ -292,7 +292,6 @@ zh-CN:
           attributes:
             document_number:
               not_in_census: "不在人口普查中的文档"
-              has_voted: "用户已经投票"
         legislation/process:
           attributes:
             end_date:

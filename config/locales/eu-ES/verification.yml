@@ -1,4 +1,99 @@
 eu:
   verification:
+    alert:
+      lock: Saiakera gehiengora heldu zara. Mesedez, saia zaitez beranduago.
+    back: Nire kontura itzuli
+    email:
+      create:
+        alert:
+          failure: Arazo bat izan dugu emaila zure kontura bialtzerakoan
+        flash:
+          success: "%{email} kontura email bat bidali dizugu"
+      show:
+        alert:
+          failure: Egiaztapen kode okerra
+        flash:
+          success: Egiaztatutako erabiltzaile bat zara
+    letter:
+      alert:
+        unconfirmed_code: Oraindik ez duzu baieztapen koderik sartu
+      edit:
+        see_all: Proposamenak ikusi
+        title: Eskatutako eskutitza
+      errors:
+        incorrect_code: Egiaztatze kode okerra
+      new:
+        explanation: "Azken bozkaketetan parte hartzeko hurrengo egin dezakezu:"
+        go_to_index: Proposamenak ikusi
+        office: '%{office}-tan presentzialki egiaztatzea.'
+        send_letter: Posta zerbitzu eskutitza eskatu
+        title: Zorionak!
+        user_permission_info: Zure kontuagaz jada egin dezakezu...
+      update:
+        flash:
+          success: Zure kontua egiaztatua dago jada
+    redirect_notices:
+      already_verified: Zure kontua egiaztatua dago
+      email_already_sent: Baeztapen lotura zuen email bat bidali genizun, ez baduzu topatzen berriz bialtzea eskatu dezakezu hemen.
+    residence:
+      alert:
+        unconfirmed_residency: Oraindik ez duzu zure bizilekua egiaztatu
+      create:
+        flash:
+          success: Bizitokia egiaztatuta
+      new:
+        accept_terms_text: Errolda %{terms_url}-ak onartzen ditut
+        accept_terms_text_title: Errolda baldintzak onartzen ditut
+        document_number: NAN/Pasaportea/Egoitza txartela
+        document_number_help_title: Laguntza
+        document_type:
+          passport: Pasaportea
+          residence_card: Egoitza txartela
+          spanish_id: NAN
+        error_not_allowed_age: Ez duzu parte hartu ahal izateko gutxieneko adina
+        error_not_allowed_postal_code: Egiaztatzeko erroldatuta egon behar zara.
+        error_verifying_census: Erroldak ezin izan du zure infmormazioa baieztatu. Mesedez, udaletxera joan edo %{offices} bat bisitatu zure errolda datuak ondo dagozala egiaztatzeko.
+        form_errors: zure bizilekua egiaztatzea saihestu dute
+        postal_code_note: Zure kontua egiaztatu ahal izateko erroldatuta egon behar zara
+        terms: Sarbide baldedintzak
+        title: Egoitza egiaztatu
+        verify_residence: Egoitza egiaztatu
+    sms:
+      create:
+        flash:
+          success: SMS bidez bidali dizugun baieztapen kodea sartu ezazu
+      edit:
+        resend_sms_link: Kode berria eskatu
+        resend_sms_text: Baieztapen kodea zuen SMSrik jaso duzu?
+        submit_button: Bidali
+        title: Baieztapen SMS-a
+      new:
+        phone: Mugikor zenbakia sartu ezazu kodea jaso ahal izateko
+        phone_note: Zure telefono zenbakia kodea bialtzeko soilik erabiliko duguS, ez gara harremanetan jarriko inoiz.
+        phone_placeholder: "Ejemplo: 612345678 edo +34612345678"
+        submit_button: Bidali
+        title: Baieztapen SMS-a
+      update:
+        error: Okerreko baieztapen kodea
+        flash:
+          level_three:
+            success: Kodea zuzena da. Zure kontua egiaztatua izan da.
+          level_two:
+            success: Kodea zuzena da
     step_1: Bizilekua
     step_2: Konfirmazio kodea
+    step_3: Azken egiaztapena
+    user_permission_debates: Eztabaidetan parte hartu
+    user_permission_info: Kontua egiaztatzerakoan egin ahal izango duzu...
+    user_permission_proposal: Proposamen berriak sortu
+    user_permission_support_proposal: Proposamenak babestu
+    user_permission_votes: Azken bozkaketetan parte hartu*
+    verified_user:
+      form:
+        submit_button: Kodea bidali
+      show:
+        email_title: Emailak
+        explanation: Gaur egun honako datuak ditugo erroldan, egiaztapen kodea nora bidaltzea nahi duzun aukeratu ezazu.
+        phone_title: Telefonoak
+        title: Eskuragarri dagoen informazioa
+        use_another_phone: Beste telefono bat erabili

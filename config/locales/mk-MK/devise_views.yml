@@ -1,1 +1,109 @@
 mk:
+  devise_views:
+    confirmations:
+      new:
+        email_label: Е-пошта
+        submit: Повторно испрати инструкции
+        title: Повторно испрати инструкции за потврда
+      show:
+        instructions: Потврди го профилот со електронска адреса %{email}
+        new_password_confirmation_label: Повтори лозинка
+        new_password_label: Нова лозинка
+        please_set_password: Ве молам изберете нова лозинка (ќе ви дозволи да се логирате со електронската адреса погоре)
+        submit: Потврди
+        title: Потврди го мојот профил
+    mailer:
+      confirmation_instructions:
+        confirm_link: Потврди го мојот профил
+        text: "Можете да ја потврдите вашата мејл адреса на следниот линк:"
+        title: Добредојдовте
+        welcome: Добредојдовте
+      reset_password_instructions:
+        change_link: Промени ја лозинката
+        hello: Здраво
+        ignore_text: Ако не побаравте промена на лозинката, можете да го игнорирате овој мејл.
+        info_text: Вашата лозинка нема да биде променета освен ако влезете на линкот и ја промените.
+        text: "Добивме барање за промена на вашата лозинка. Можете да го направите тоа на следниот линк:"
+        title: Промени ја лозинката
+      unlock_instructions:
+        hello: Здраво
+        info_text: Вашиот профил е блокиран поради преголем број на неуспешни обиди за логирање.
+        instructions_text: "Ве молиме кликнете на овој линк за да го отклучите вашиот профил:"
+        title: Вашиот профил е заклучен
+        unlock_link: Отклучи го мојот профил
+    menu:
+      login_items:
+        login: Логирај се
+        logout: Одлогирај се
+        signup: Регистрирај се
+    organizations:
+      registrations:
+        new:
+          email_label: Електронска адреса
+          organization_name_label: Име на организацијата
+          password_confirmation_label: Потврди лозинка
+          password_label: Лозинка
+          phone_number_label: Телефонски број
+          responsible_name_label: Цело име на личноста одговорна за колективот
+          responsible_name_note: Ова е личноста која ја претставува асоцијацијата/колективот во чие име предлозите се презентирани
+          submit: Регистрирај се
+          title: Регистрирај се како организација или колектив
+        success:
+          back_to_index: Разбирам; врати се на главната страница
+          instructions_1: "<strong>Ќе ве контактираме наскоро</strong> да потврдиме дека навистина го претставувате овој колектив."
+          instructions_2: Додека вашата <strong>електронска адреса се разгледува</strong>, ви праќаме <strong>линк за потврда на вашиот профил</strong>.
+          instructions_3: Штом ќе биде потврдено, можете да почнете да учествувате како неверификуван колектив.
+          thank_you: Ви благодариме за регистрацијата на вашиот колектив на оваа страница. Во моментов <strong>се подготвува верификација</strong>.
+          title: Регистрација на организација / колектив
+    passwords:
+      edit:
+        change_submit: Промени ја мојата лозинка
+        password_confirmation_label: Потврди ја новата лозинка
+        password_label: Нова лозинка
+        title: Промени ја лозинката
+      new:
+        email_label: Електронска адреса
+        send_submit: Испрати инструкции
+        title: Заборавена лозинка?
+    sessions:
+      new:
+        login_label: Електронска адреса или корисничко име
+        password_label: Лозинка
+        remember_me: Запамти ме
+        submit: Влез
+        title: Логирај се
+    shared:
+      links:
+        login: Влез
+        new_confirmation: Не добивте инструкции за активација на вашиот профил?
+        new_password: Ја заборавивте лозинката?
+        new_unlock: Не добивте инструкции за отклучување?
+        signin_with_provider: Логирај се со %{provider}
+        signup: Немате профил? %{signup_link}
+        signup_link: Логирај се
+    unlocks:
+      new:
+        email_label: Електронска адреса
+        submit: Повторно испрати инструкции за отклучување
+        title: Повторно испрати инструкции за отклучување
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Причина
+          info: Оваа акција не може да се врати назад. Ве молиме бидете сигурни дека сакате ова да го направите.
+          info_reason: Ако сакате, оставете ни причина (опционално)
+          submit: Избриши го мојот профил
+          title: Избриши профил
+        edit:
+          current_password_label: Сегашна лозинка
+          edit: Измени
+          email_label: Електронска адреса
+          leave_blank: Остави празно ако не сакаш да го модификуваш
+          need_current: Потребна ни е вашата сегашна лозинка за да ги потврдиме промените
+          password_confirmation_label: Потврди ја новата лозинка
+          password_label: Нова лозинка
+          update_submit: Ажурирање
+          waiting_for: "Во очекување на потврда на:"
+        new:
+          cancel: Откажи логирање
+          email_label: Електронска адреса

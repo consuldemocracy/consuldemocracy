@@ -1,0 +1,135 @@
+oc:
+  mailers:
+    title: "Govèrn Dubèrt"
+    no_reply: "Aquel messatge s'es enviat dempuèi una adreça de corrièr electronic qu'admet pas responsas."
+    comment:
+      hi: Adieu
+      new_comment_by: I a un nòu comentari de <strong>%{commenter}</strong> en
+      subject: Quauquarrés a comentat en lo tieu %{commentable}
+      title: Nòu comentari
+    config:
+      manage_email_subscriptions: Pòdes quitar de recebre aqueles emails en cambiant la tiá configuracion en
+    email_verification:
+      click_here_to_verify: en aquel ligam
+      instructions_2: Aquel corrièr electronic verificarà lo vòstre compte <b>%{document_type} %{document_number}</b>. S'aqueles vos apertenon pas, faguèt pas clic a l’ligam anterior e ignoratz aquel corrièr electronic.
+      instructions: Per completar la verificacion de l'atencion d’usatgièr, vos cal far clic %{verification_link}.
+      subject: Verifica lo tieu email
+      thanks: Fòrça gràcias.
+      title: Verifica lo tieu compte amb lo seguent ligam
+    reply:
+      hi: Adieu
+      new_reply_by: I a una nòva responsa de <strong>%{commenter}</strong> a lo tieu comentari en
+      subject: Quauquarrés a respondut a lo tieu comentari
+      title: Nòva responsa a lo tieu comentari
+    proposal_notification_digest:
+      info: "Te mostram de contunh las nòvas notificacions qu'an publicat los autors de las proposicions qu'avalas en %{org_name}."
+      title: "Notificacions de proposicions en %{org_name}"
+      share: Partejar proposicion
+      comment: Comentar proposicion
+      unsubscribe: "se Volètz pas recebre cap de notificacion de proposicion, visitatz %{account} e desmarcatz \"Recep un resumit de las notificacions de las proposicions\"."
+      unsubscribe_account: Lo mieu compte
+      unfollow: "Visita aquela proposicion e daissa-la sens quitar de recebre de notificacions."
+    direct_message_for_receiver:
+      subject: "As recebut un nòu messatge privat"
+      reply: Respondre a %{sender}
+      unsubscribe: "se Volètz pas recebre de messatges dirèctes, visitatz %{account} e desmarcatz \"Recep de messatges de corrièr electronic sus messatges dirèctes\"."
+      unsubscribe_account: Lo mieu compte
+    direct_message_for_sender:
+      subject: "Avètz enviat un messatge privat nòu"
+      title: "Avètz enviat un messatge privat nòu a <strong>%{receiver}</strong> amb lo contengut:"
+    user_invite:
+      ignore: "s'As pas sollicitat aquela invitacion te preocupas pas, pòdes ignorar aquel corrièr."
+      text: "Gràcias per sollicitar l'inscripcion %{org}! En segon pòdes començar a participar, as solament d’emplir lo formulari seguent:"
+      thanks: "Fòrça gràcias."
+      title: "Benvengut a %{org}"
+      button: Completar registre
+      subject: "Invitacion a %{org_name}"
+    budget_investment_created:
+      subject: "Gràcias per crear una proposicion d'inversion!"
+      title: "Gràcias per crear una proposicion d'inversion!"
+      intro: "Adieu <strong>%{author}</strong>,"
+      text: "Gràcias per crear la vòstra inversion <strong>%{investment}</strong> dels budgèts participatius <strong>%{budget}</strong>."
+      follow: "T’informarem sus cossí avança lo procès, que pòdes tanben seguir <strong>%{link}</strong>."
+      follow_link: "De budgèts participatius"
+      sincerely: "Atentament,"
+      share: "Parteja lo tieu projècte"
+    budget_investment_unfeasible:
+      hi: "Benvolut usatgièr,"
+      new: "Per totes aqueles, vos convidam a elaborar un <strong>nòva inversion</strong> que s’ajusta a las condicions d’aquel procès. Podètz o far en seguint aquel ligam: %{url}."
+      new_href: "nòva proposicion d'inversion"
+      sincerely: "Atentament"
+      sorry: "Sentèm las molèstias ocasionadas e tornam te donar las gràcias per la tiá inestimabla participacion."
+      subject: "La tiá proposicion d'inversion '%{code}' es estat marcada coma inviable"
+    budget_investment_selected:
+      subject: "La tiá proposicion d'inversion '%{code}' es estat seleccionada"
+      hi: "Benvolut usatgièr,"
+      share: "Comença ja a aténher de vòts, parteja lo tieu projècte de despensa en rets socialas. La difusion es fondamentala per aténher que se faga realitat."
+      share_button: "Parteja lo tieu projècte"
+      thanks: "de Gràcias de nòu per la tiá participacion."
+      sincerely: "atentament"
+    budget_investment_unselected:
+      subject: "La tiá proposicion d'inversion '%{code}' es pas estat seleccionada"
+      hi: "Benvolut usatgièr,"
+      thanks: "De gràcias de nòu per la tiá participacion."
+      sincerely: "atentament"
+    evaluation_comment:
+      subject: "Nòu comentari d’avaloracion"
+      title: Nòu comentari d'avaloracion per %{investment}
+      hi: Adieu
+      new_comment_by: I a un nòu comentari d'avaloracion de <strong>%{commenter}</strong> a l'inversion budgetària %{investment}
+      commenter_info: "%{commenter}, %{time}:"
+    new_actions_notification_rake_created:
+      subject: "Mai de notícias sus la vòstra proposicion ciutadana"
+      hi: "Adieu %{name},"
+      new_resource: "NÒU RECORS SENS BLÒC"
+      introduction: "Cossí sabètz ja, a la web %{created_at_day} jorn de detla %{created_at_month} avètz creat la proposicion en faiçon de borrolhon %{title}."
+      text_1: "Cada còp que volgatz, podètz publicar en aquel ligam: %{link_to_published}. Se sètz pas encara segur ..."
+      text_2: "Aprofechatz aquel moment! Aprenètz, apondètz d'autras personas amb los meteisses interèsses e preparatz la difusion qu'auretz de besonh quand publicatz definitivament la vòstra proposicion."
+      text_3: "E per vos acompanhar en aquel rèpte, avètz aicí las novetats ..."
+      text_4: "Donatz un còp d'uèlh a aquela NÒVA ACCION recomandada:"
+      text_5: "La seguenta accion que recomandam es:"
+      footer_text: "Cossí totjorn, dintra al panèl de proposicions e t’explicarem amb detalh coma utilizar aqueles recorses e coma traire’n lo maximal partit.."
+      dashboard_button: "Endavant, descobrís-los!"
+    new_actions_notification_rake_published:
+      subject: "Mai de notícias sus la vòstra proposicion ciutadana"
+      hi: "Adieu %{name},"
+      new_resource: "NÒU RECORS SENS BLÒC"
+      introduction: "Cossí sabètz ja, a la web %{published_at_day} jorn de detla %{published_at_month} publiquès la proposicion %{title}."
+      text_1: "Plan, tibat %{votes_count} supòrt fins ara Felicitat!"
+      text_2: "Aital doncas, avètz disponible un nòu recors que vos ajudarà a seguir endavant."
+      text_3: "Te tròbas de manca %{days_count} de jorns abans de la proposicion %{max_votes_count} apieja e va a referendum. S'animar e seguir en estendent. Te mancan d'idèas?"
+      text_4: "NÒVA ACCION DE DIFUSION RECOMANDADA"
+      text_5: "Encara n’i a mai, consultatz l’accion seguenta:"
+      footer_text: "Cossí totjorn, dintra al panèl de proposicions e t’explicarem amb detalh coma utilizar aqueles recorses e coma traire’n lo maximal partit.."
+      dashboard_button: "Endavant, descobrís-los!"
+    new_actions_notification_on_create:
+      subject: "La proposicion de ciutadan del projècte se crèa"
+      hi: "Adieu %{name}!"
+      introduction: "La siá %{title} la proposicion s'es creada corrèctament."
+      text_1: "Aprofechatz que la vòstra proposicion es pas encara publica e preparatz-vos per contactar amb fòrça gents."
+      text_2: "Quand seràs escarrabilhat, publique la tiá proposicion ciutadana a partir d’aquela <a href='%{link}'>link</a>."
+      text_3: "Sabèm que crear una proposicion amb ganxo e obténer lo supòrt necessari nos pòt semblar complicat. Mas vos preocupatz pas perque vos ajudarem!"
+      text_4: "Avètz un esturment que serà lo vòstre nòu melhor aliat: lo panèl de proposicions ciutadanas."
+      list_1: "Introdusissètz cada jorn al panèl de la vòstra proposicion per utilizar los conselhs e de recorses que partejarem amb vosautres."
+      list_2: "Aqueles conselhs, accions e recorses vos donaràn d'idèas e tanben de solucions practicas per obténer mai supòrt e una comunitat mai ampla. Los desbrembatz pas!"
+      list_3: "A mesura que ganhe mai assisténcia, desblocaretz recorses nòus e melhors. Per ara, avètz un patron de corrièr electronic per enviar massivament a totes los vòstres contactes, un aficha per estampar, entre autras foncions e beneficis que descobriretz. Daissatz pas d’apondre supòrt e quitarem de pas recompensar-vos e vos ajudar!"
+      list_4: "Tu tibat %{max_month} de meses dempuèi que publicatz la proposicion per l'obténer %{max_votes} lo supòrt e la vòstra proposicion pòdon venir una realitat. Mas los primièrs jorns son los mai importants. Es un rèpte. Preparatz-vos!"
+      text_5: "E perque començatz amb tota la motivacion,"
+      text_6: "avètz aicí de divèrses recorses e tota una lista de conselhs que vos vendràn cada jorn per preparar l’emission!"
+      dashboard_button: "Endavant, descobrís-los!"
+    new_actions_notification_on_published:
+      subject: "La vòstra proposicion ciutadana es ja publicada. Daissatz pas d’vos escampar!"
+      hi: "Felicitats %{name}! La siá proposicion %{title} s'es creat corrèctament."
+      text_1: "E ara, anatz cercar los vòstres primièrs 100 supòrts."
+      text_2: "Perqué 100?"
+      text_3: "La nòstra experiéncia nos explica que lo primièr jorn es fondamental. Perque en mai d'aver l’energia per lançar quicòm nòva, en èsser una proposicion recentament publicada, auretz l’importanta visibilitat d’èsser entre las nòvas proposicions destacadas."
+      text_4: "Obtenètz 100 assisténcias lo primièr jorn e auretz una primièra comunitat que te sostendrà."
+      text_5: "Per aquò, vos provocacion a l'obténer, mas pas sens fòrça ajuda!"
+      text_6: "Remembratz qu'a lo vòstre Panèl de Proposicions avètz a la vòstra disposicion nòva recorses e recomandacions per accions de difusion."
+      list_1: "Dintra cada jorn per veire lo tieu progrès e utiliza los conselhs e de recorses que partejarem amb tu. Son d'idèas e tanben de solucions practicas per obténer lo supòrt qu'avètz de besonh."
+      list_2: "A mesura qu'obtengas mai supòrt, desblocaretz recorses nòus e melhors. Daissatz pas d’apondre supòrt e quitarem de pas recompensar-vos e vos ajudar!"
+      text_7: "E perque començatz a tota velocitat ..."
+      text_8: "Avètz aicí un grand recors a la vòstra disposicion."
+      text_9: "Trobaretz tanben aquela nòva accion de difusion recomandada ..."
+      text_10: "Segur qu'avètz mai de recorses per utilizar!"
+      dashboard_button: "Endavant, descobrís-los!"

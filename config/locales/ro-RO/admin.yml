@@ -1,1 +1,1636 @@
 ro:
+  admin:
+    header:
+      title: Administrare
+    actions:
+      actions: Acțiuni
+      confirm: Sunteți sigur?
+      confirm_hide: Confirmați modificarea
+      hide: Ascunde
+      hide_author: Ascunde autor
+      restore: Restabilire
+      mark_featured: Recomandată
+      unmark_featured: Recomandare nemarcată
+      edit: Editează
+      configure: Configurează
+      delete: Șterge
+    officing_booth:
+      title: "Oficiați cabina situată la%{booth}. Dacă acest lucru nu este corect, nu continuați și apelați numărul de telefon de ajutor. Mulțumesc."
+    banners:
+      index:
+        title: Bannere
+        create: Crează banner
+        edit: Editează banner
+        delete: Șterge banner
+        filters:
+          all: Toate
+          with_active: Activ
+          with_inactive: Inactiv
+        preview: Previzualizare
+      banner:
+        sections_label: Secțiuni unde va apărea
+        sections:
+          homepage: Pagina principală
+          debates: Dezbateri
+          proposals: Propuneri
+          budgets: Bugetare participativă
+          help_page: Pagina de ajutor
+      edit:
+        editing: Editează banner
+        form:
+          submit_button: Salvează modificările
+      new:
+        creating: Creați banner
+    activity:
+      show:
+        action: Acțiuni
+        actions:
+          block: Blocat
+          hide: Ascuns
+          restore: Restaurat
+        by: Moderat de
+        content: Conținut
+        filter: Afișează
+        filters:
+          all: Tot
+          on_comments: Comentarii
+          on_debates: Dezbateri
+          on_proposals: Propuneri
+          on_users: Utilizatori
+          on_system_emails: Emailuri de sistem
+        title: Activitatea moderatorului
+        type: Tip
+        no_activity: Nu există activitate efectuată de moderatori.
+    budgets:
+      index:
+        title: Bugetele participative
+        new_link: Crează buget nou
+        filter: Filtru
+        filters:
+          open: Deschide
+          finished: Terminat
+        budget_investments: Administrează proiecte
+        table_name: Nume
+        table_phase: Etapă
+        table_investments: Investiții
+        table_edit_groups: Grupuri de rubrici
+        table_edit_budget: Editează
+        table_admin_ballots: Buletine de vot
+        edit_groups: Editați grupurile de rubrici
+        edit_budget: Editează buget
+        admin_ballots: Gestionați buletinele de vot
+        no_budgets: "Nu există bugete."
+      create:
+        notice: Buget participativ creat cu succes!
+      update:
+        notice: Bugetul Participativ a fost actualizat cu succes
+      edit:
+        title: Editează Buget participativ
+        delete: Șterge buget
+        phase: Etapă
+        dates: Date
+        enabled: Activat
+        actions: Acțiuni
+        edit_phase: Editează etapă
+        active: Activ
+        blank_dates: Datele nu sunt completate
+        administrators:
+          zero: "Selectează administratori"
+          one: "1 administrator selectat"
+          few: "%{count} administratori selectați"
+          other: "%{count} administratori selectați"
+        valuators:
+          zero: "Selectează evaluatori"
+          one: "1 evaluator selectat"
+          few: "%{count} evaluatori selectați"
+          other: "%{count} evaluatori selectați"
+        empty_administrators: "Nu există administratori"
+        empty_valuators: "Nu există evaluatori"
+      destroy:
+        success_notice: Buget șters cu succes
+        unable_notice: Nu puteți șterge un buget care are investiții asociate
+        unable_notice_polls: Nu puteți șterge un buget care are un sondaj asociat
+      new:
+        title: Buget participativ nou
+      winners:
+        calculate: Calculați Investițiile Câștigătoare
+        calculated: Se calculează câștigătorii, poate dura un minut.
+        recalculate: Recalculați Investițiile Câștigătoare
+    budget_groups:
+      name: "Nume"
+      headings_name: "Rubrici"
+      headings_edit: "Editează Rubrici"
+      headings_manage: "Administrează rubrici"
+      no_groups: "Nu există grupuri."
+      amount:
+        one: "Există un grup"
+        few: "Exista %{count} grupuri"
+        other: "Exista %{count} grupuri"
+      create:
+        notice: "Grup creat cu succes!"
+      update:
+        notice: "Grup actualizat cu succes"
+      destroy:
+        success_notice: "Grup șters cu succes"
+        unable_notice: "Nu puteți șterge un grup care are rubrici asociate"
+      form:
+        create: "Crează grup nou"
+        edit: "Editează grup"
+        max_votable_headings_info: "Se aplică numai fazei de selectare a proiectelor. În timpul fazei de votare a proiectelor, utilizatorii pot vota doar într-o singură rubrică per grup."
+        submit: "Salvează grup"
+      index:
+        back: "Mergi înapoi la bugete"
+    budget_headings:
+      no_headings: "Nu există rubrici."
+      amount:
+        one: "Există 1 rubrică"
+        few: "Exista %{count} rubrici"
+        other: "Exista %{count} rubrici"
+      create:
+        notice: "Rubrică creată cu succes!"
+      update:
+        notice: "Rubrică actualizată cu succes"
+      destroy:
+        success_notice: "Rubrică ștearsă cu succes"
+        unable_notice: "Nu puteți șterge o Rubrică care are investiții asociate"
+      form:
+        max_ballot_lines_info: 'Numărul maxim de proiecte pe care un utilizator le poate vota din această rubrică în timpul fazei „Votarea proiectelor”. Numai pentru bugetele care utilizează votul de aprobare.'
+        population_info: "Rubrica de buget al populației este utilizată în scopuri statistice la sfârșitul bugetului pentru a arăta pentru fiecare rubrică care reprezintă o zonă cu populație ce procent votat. Acest câmp este opțional, așa că îl puteți lăsa gol dacă nu se aplică."
+        coordinates_info: "Dacă latitudinea și longitudinea sunt precizate, pagina de investiții pentru această rubrică va include o hartă. Această hartă va fi centrată folosind acele coordonate."
+        content_blocks_info: "Dacă este selectată opțiunea permite blocarea conținutului, veți putea crea conținut personalizat aferent acestei rubrici din secțiunea Setări> Blocuri de conținut personalizat. Acest conținut va apărea în pagina de investiții pentru această rubrică."
+        create: "Crează rubrică nouă"
+        edit: "Editează rubrică"
+        submit: "Salvează rubrică"
+      index:
+        back: "Înapoi la grupuri"
+    budget_phases:
+      edit:
+        summary_help_text: Acest text va informa utilizatorul despre etapă. Pentru a-l afișa chiar dacă etapa nu este activă, bifați caseta de mai jos
+        description_help_text: Acest text va apărea în antet atunci când faza este activă
+        enabled_help_text: Această etapă va fi publică în calendarul etapelor bugetului, precum și activă pentru orice alt scop
+        save_changes: Salvează modificări
+    budget_investments:
+      index:
+        heading_filter_all: Toate rubricile
+        administrator_filter_all: Toți administratorii
+        valuator_filter_all: Toți evaluatorii
+        tags_filter_all: Toate etichetele
+        advanced_filters: Filtre avansate
+        placeholder: Caută proiecte
+        filters:
+          all: Toate
+          without_admin: Fără administrator atribuit
+          without_valuator: Fără evaluator atribuit
+          under_valuation: În curs de evaluare
+          valuation_finished: Evaluare terminată
+          feasible: Realizabil
+          selected: Selectat
+          undecided: Nehotărât
+          unfeasible: Nerealizabil
+          min_total_supports: Suporturi minime
+          max_total_supports: Suporturi maxime
+          winners: Câștigătorii
+          one_filter: "Filtre aplicate: <b><em>%{filter}</em></b>"
+          two_filters: "Filtre aplicate: <b><em>%{filter}, %{advanced_filters}</em></b>"
+        buttons:
+          filter: Filtru
+        download_current_selection: "Descarcă selecția curentă"
+        no_budget_investments: "Nu există proiecte de investiție."
+        title: Proiecte de investiție
+        columns: Coloane
+        assigned_admin: Administrator alocat
+        no_admin_assigned: Nici un administrator atribuit
+        no_valuators_assigned: Nici un evaluator atribuit
+        feasibility:
+          feasible: "Realizabil"
+          unfeasible: "Nerealizabil"
+          undecided: "Nehotărât"
+        selected: "Selectat"
+        select: "Selectează"
+        list:
+          id: ID
+          title: Titlu
+          supports: Susținători
+          admin: Administrator
+          valuator: Evaluator
+          valuation_group: Grup de evaluare
+          geozone: Scopul operațiunii
+          feasibility: Fezabilitate
+          valuation_finished: Evaluare terminată
+          selected: Selectat
+          visible_to_valuators: Afișează evaluatorilor
+          author_username: Numele de utilizator al autorului
+          incompatible: Incompatibil
+          price: Preț
+          author: Autor
+        cannot_calculate_winners: Bugetul trebuie să rămână pe etapa „Proiecte în curs de votare”, „Revizuirea buletinelor de vot” sau „Buget finalizat” pentru a calcula proiectele câștigătoare
+        see_results: "Vezi rezultatele"
+        milestone_tags_filter_all: "Toate etichetele de reper"
+      show:
+        assigned_admin: Administrator alocat
+        assigned_valuators: Evaluatori alocați
+        classification: Clasificare
+        info: "%{budget_name} - Grup: %{group_name} - Proiect de investiții %{id}"
+        edit: Editează
+        edit_classification: Editează clasificarea
+        by: De
+        sent: Trimis
+        group: Grup
+        heading: Rubrică
+        dossier: Dosar
+        edit_dossier: Editează dosar
+        tags: Etichete
+        undefined: Nedefinit
+        compatibility:
+          title: Compatibilitate
+          "true": Incompatibil
+          "false": Compatibil
+        selection:
+          title: Selecție
+        winner:
+          title: Câștigător
+          "true": "Da"
+          "false": "Nu"
+        valuator_groups: "Grupuri de evaluare"
+        preview: Previzualizare investiție
+      edit:
+        classification: Clasificare
+        compatibility: Compatibilitate
+        selection: Selecție
+        assigned_valuators: Evaluatori
+        select_heading: Selectează rubrică
+        submit_button: Actualizează
+        user_tags: Etichete atribuite utilizatorului
+        tags_placeholder: "Scrieți etichetele pe care le doriți separate prin virgule (,)"
+        undefined: Nedefinit
+      search_unfeasible: Căutarea este imposibilă
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "Titlu"
+        table_description: "Descriere"
+        table_publication_date: "Data publicării"
+        table_status: Status
+        table_actions: "Acțiuni"
+        delete: "Șterge reper"
+        no_milestones: "Nu aveți repere definite"
+        image: "Imagine"
+        show_image: "Arată imagine"
+        documents: "Documente"
+        milestone: Reper
+        new_milestone: Crează reper nou
+        milestone_tags: Etichete reper
+      form:
+        admin_statuses: Gestionează stările
+        no_statuses_defined: Nu există încă stări definite
+      new:
+        creating: Crează reper
+      edit:
+        title: Editează reper
+      create:
+        notice: Reper nou creat cu succes!
+      update:
+        notice: Reper actualizat cu succes
+      delete:
+        notice: Reper șters cu succes
+    statuses:
+      index:
+        title: Status repere
+        empty_statuses: Nu sunt create stări de reper
+        new_status: Crează un nou status de reper
+        table_name: Nume
+        table_description: Descriere
+        table_actions: Acțiune
+        delete: Șterge
+        edit: Edit
+      edit:
+        title: Editați statusul reperului
+      update:
+        notice: Status de reper actualizat cu succes
+      new:
+        title: Crează status de reper
+      create:
+        notice: Status de reper creat cu succes
+      delete:
+        notice: Status de reper șters cu succes
+    progress_bars:
+      manage: "Gestionați barele de progres"
+      index:
+        title: "Bare de progres"
+        no_progress_bars: "Nu există bare de progres"
+        new_progress_bar: "Creați o nouă bară de progres"
+        primary: "Bară de progres primară"
+        table_id: "ID"
+        table_kind: "Tip"
+        table_title: "Titlu"
+        table_percentage: "Progresul actual"
+      new:
+        creating: "Crează bară de progres"
+      edit:
+        title:
+          primary: "Editați bara de progres primară"
+          secondary: "Bară de progress %{title}"
+      create:
+        notice: "Bară de progres creată cu succes!"
+      update:
+        notice: "Bară de progres actualizată cu succes"
+      delete:
+        notice: "Bară de progres ștearsă cu succes"
+    comments:
+      index:
+        id: "ID"
+        content: "Conținut"
+        author: "Autor"
+        commentable_type: "Tip"
+        title: Comentarii
+        no_comments: Nu există comentarii.
+        table_link: "Link"
+    hidden_comments:
+      index:
+        filter: Filtru
+        filters:
+          all: Toate
+          with_confirmed_hide: Confirmat
+          without_confirmed_hide: În așteptare
+        hidden_debate: Dezbateri ascunse
+        hidden_proposal: Propuneri ascunse
+        title: Comentarii ascunse
+        no_hidden_comments: Nu există comentarii ascunse.
+    dashboard:
+      index:
+        back: Înapoi la %{org}
+        title: Administrare
+        description: Bine ați venit la %{org} panoul de administrare.
+      actions:
+        index:
+          description: "Când utilizatorii creează propuneri, pot accesa un tablou de bord al propunerii lor, unde se pot propune resurse și recomandări pentru a obține sprijin pentru ideea lor."
+          create: Crează resursă sau acțiune
+          edit: Editează
+          delete: Șterge
+          active: 'Da'
+          inactive: 'Nu'
+          title: Resurse și acțiuni
+          action_title: Titlu
+          action_type: Tip
+          required_supports: Suporturi necesare
+          day_offset: Zile necesare
+          action_active: Activ
+          order: Ordonează
+          published_proposal: Propuneri publicate
+          default:
+            email: Email
+            polls: Sondaje
+            poster: Afiș
+        new:
+          creating: Acțiune nouă pentru tabloul de bord al propunerilor
+          back: Înapoi la listă
+        create:
+          notice: Acțiune creată cu succes
+        edit:
+          editing: Editați acțiunea pentru tabloul de bord al propunerilor
+          back: Înapoi la listă
+        delete:
+          success: Acțiune ștearsă cu succes
+        form:
+          submit_button: Salvează
+          help_text: Introduceți 0 astfel încât această valoare să nu fie luată în considerare
+          published_proposal_help_text: Marcați această casetă pentru a crea acțiunea numai pentru propunerile publicate
+      administrator_tasks:
+        index:
+          description: "Resursele publicate în tabloul de bord al propunerilor pot include un buton care trebuie solicitat administratorilor. Cererile utilizatorului sunt prezentate mai jos."
+          title: Resurse solicitate
+          solve: Rezolvă
+          no_records: Nu există resurse solicitate
+          source: Sursă
+          resource: Resurse solicitate
+          filter: Filtru
+          filters:
+            pending: În așteptare
+            done: Rezolvat
+        edit:
+          back: Înapoi la lista de sarcini în așteptare
+          solving: Rezolvă sarcinile în așteptare
+        form:
+          solve: Marchează ca rezolvat
+          proposal: Propunere
+          request: Resurse solicitate
+        update:
+          success: Sarcina a fost marcată ca fiind rezolvată.
+    debates:
+      index:
+        id: ID
+        author: Autor
+        title: Dezbateri
+        no_debates: Nu există dezbateri.
+    hidden_debates:
+      index:
+        filter: Filtru
+        filters:
+          all: Toate
+          with_confirmed_hide: Confirmat
+          without_confirmed_hide: În așteptare
+        title: Dezbateri ascunse
+        no_hidden_debates: Nu există dezbateri ascunse.
+    documents:
+      new:
+        title: "Încarcă un document"
+        submit_button: "Încărcare"
+      index:
+        new_link: "Adaugă document nou"
+        no_documents: "Nu există documente."
+        title: "Documente"
+        format: "Format"
+        size: "Dimensiune"
+        url: "URL"
+      create:
+        success_notice: "Document încărcat cu succes"
+        unable_notice: "Document invalid"
+      destroy:
+        success_notice: "Document șters cu succes"
+    hidden_users:
+      index:
+        filter: Filtru
+        filters:
+          all: Tot
+          with_confirmed_hide: Confirmat
+          without_confirmed_hide: În așteptare
+        title: Utilizatori ascunși
+        user: Utilizator
+        no_hidden_users: Nu există utilizatori ascunși.
+      show:
+        email: "Email:"
+        hidden_at: "Ascuns la:"
+        registered_at: "Înregistrat la:"
+        title: Activitatea utilizatorului (%{user})
+    hidden_budget_investments:
+      index:
+        filter: Filtru
+        filters:
+          all: Tot
+          with_confirmed_hide: Confirmat
+          without_confirmed_hide: În așteptare
+        title: Bugete de investiții ascunse
+        no_hidden_budget_investments: Nu există bugete de investiții ascunse
+    legislation:
+      processes:
+        create:
+          notice: 'Proces creat cu succes. <a href="%{link}"> Faceți clic pentru a vizita </a>'
+          error: Procesul nu a putut fi creat
+        update:
+          notice: 'Proces actualizat cu succes. <a href="%{link}"> Faceți clic pentru a vizita </a>'
+          error: Procesul nu a putut fi actualizat
+        destroy:
+          notice: Proces șters cu succes
+        edit:
+          back: Înapoi
+          submit_button: Salvează modificări
+        form:
+          enabled: Activat
+          process: Proces
+          debate_phase: Etapa de dezbatere
+          draft_phase: Etapa de proiectare
+          draft_phase_description: Dacă această etapă este activă, procesul nu va fi listat în index. Permiteți previzualizarea procesului și crearea de conținut înainte de început.
+          allegations_phase: Etapa de comentarii
+          proposals_phase: Etapa de propuneri
+          use_markdown: Folosiți Markdown pentru a formata textul
+          title_placeholder: Titlul procesului
+          summary_placeholder: Scurt rezumat al descrierii
+          description_placeholder: Adaugă o descriere a procesului
+          additional_info_placeholder: Adăugați informații suplimentare pe care le considerați utile
+          homepage_description: Aici puteți explica conținutul procesului
+          banner_title: Culoarea antetului
+        index:
+          create: Proces nou
+          delete: Șterge
+          title: Legislație colaborativă
+          filters:
+            active: Activ
+            all: Toate
+        new:
+          back: Înapoi
+          title: Crează unui nou proces legislativ de colaborare
+          submit_button: Crează proces
+        proposals:
+          select_order: Sortează după
+          orders:
+            id: Id
+            title: Titlu
+            supports: Total susțineri
+        process:
+          title: Proces
+          comments: Comentarii
+          status: Status
+          start_date: Data de început
+          end_date: Data de sfârșit
+          status_open: Deschide
+          status_closed: Închis
+          status_planned: Planificat
+        subnav:
+          info: Informație
+          homepage: Pagina principală
+          draft_versions: Redactare
+          questions: Dezbate
+          proposals: Propuneri
+          milestones: Urmărirea
+      homepage:
+        edit:
+          title: Configurați pagina de pornire a procesului
+      proposals:
+        index:
+          title: Titlu
+          back: Înapoi
+          id: Id
+          supports: Total susțineri
+        form:
+          custom_categories: Categorii
+          custom_categories_description: Categorii pe care utilizatorii le pot selecta la crearea propunerii. Max 160 caractere.
+          custom_categories_placeholder: Introduceți etichetele pe care doriți să le utilizați, separate prin virgule (,) și între ghilimele (" ")
+      draft_versions:
+        create:
+          notice: 'Schiță creată cu succes.<a href="%{link}">Click pentru a vizita</a>'
+          error: Schița nu a putut fi creată
+        update:
+          notice: 'Schiță actualizată cu succes.<a href="%{link}">Click pentru a vizita</a>'
+          error: Schița nu a putut fi actualizată
+        destroy:
+          notice: Schița a fost ștearsă cu succes
+        edit:
+          back: Înapoi
+          submit_button: Salvează modificări
+          warning: Ați editat textul, nu uitați să faceți clic pe Salvați pentru a salva modificările.
+          markdown_changes_message: "Ați editat textul fără să îl salvați. Confirmați?"
+        form:
+          title: 'Editare <span class="strong">%{draft_version_title}</span> din procese <span class="strong">%{process_title}</span>'
+          launch_text_editor: Deschide editorul text
+          close_text_editor: Închide editorul text
+          use_markdown: Folosiți Markdown pentru a formata textul
+          hints:
+            final_version: Această versiune va fi publicată ca Rezultat Final pentru acest proces. Comentariile nu vor fi permise în această versiune.
+            status:
+              draft: Puteți pre-vizualiza ca administrator, nimeni altcineva nu poate vedea
+              published: Vizibil pentru toată lumea
+          title_placeholder: Scrieți titlul versiunii schiță
+          changelog_placeholder: Adăugați principalele modificări din versiunea anterioară
+          body_placeholder: Scrie textul pentru schiță
+        index:
+          title: Versiuni schiță
+          create: Crează versiune
+          delete: Șterge
+          preview: Previzualizare
+        new:
+          back: Înapoi
+          title: Crează versiune nouă
+          submit_button: Crează versiune
+        table:
+          title: Titlu
+          created_at: Creat la
+          comments: Comentarii
+          final_version: Versiune finală
+          status: Status
+      questions:
+        create:
+          notice: 'Întrebare creată cu succes. <a href="%{link}"> Faceți clic pentru a vizita </a>'
+          error: Întrebarea nu a putut fi creată
+        update:
+          notice: 'Întrebare actualizată cu succes. <a href="%{link}"> Faceți clic pentru a vizita </a>'
+          error: Întrebarea nu a putut fi actualizată
+        destroy:
+          notice: Întrebare ștearsă cu succes
+        edit:
+          back: Înapoi
+          title: "Editează “%{question_title}”"
+          submit_button: Salvează modificări
+        form:
+          add_option: Adaugă opțiune
+          title_placeholder: Adaugă întrebare
+          value_placeholder: Adaugă un răspuns închis
+          question_options: "Răspunsuri posibile (opțional, răspunsuri deschise implicit)"
+        index:
+          back: Înapoi
+          title: Întrebări asociate acestui proces
+          create: Crează întrebare
+          delete: Șterge
+        new:
+          back: Înapoi
+          title: Crează întrebare nouă
+          submit_button: Crează întrebare
+        table:
+          title: Titlu
+          question_options: Opțiuni de întrebări
+          answers_count: Numărul de răspunsuri
+          comments_count: Numărul de comentarii
+        question_option_fields:
+          remove_option: Înlătură opțiune
+      milestones:
+        index:
+          title: Urmărirea
+    managers:
+      index:
+        title: Administratori
+        name: Nume
+        email: Email
+        no_managers: Nu există administratori.
+      manager:
+        add: Adaugă
+        delete: Șterge
+      search:
+        title: "Manageri: Căutare utilizator"
+    menu:
+      activity: Activitatea moderatorului
+      admin: Meniul de administrare
+      banner: Gestionați bannere
+      proposals: Propuneri
+      proposals_topics: Subiecte de propuneri
+      budgets: Bugete participative
+      geozones: Administrează locații
+      hidden_comments: Comentarii ascunse
+      hidden_debates: Dezbateri ascunse
+      hidden_proposals: Propuneri ascunse
+      hidden_budget_investments: Bugete de investiții ascunse
+      hidden_proposal_notifications: Notificări ascunse
+      hidden_users: Utilizatori ascunși
+      administrators: Administratori
+      managers: Administratori
+      moderators: Moderatori
+      messaging_users: Mesaj către utilizatori
+      newsletters: Newsletters
+      admin_notifications: Notificări
+      system_emails: Emailuri de sistem
+      emails_download: Descarcă emailuri
+      valuators: Evaluatori
+      poll_officers: Ofițerii de votare
+      polls: Sondaje
+      poll_booths: Locația cabinelor
+      poll_booth_assignments: Repartizări pe cabine de vot
+      poll_shifts: Administrează ture
+      officials: Funcționari publici
+      organizations: Organizații
+      settings: Setări generale
+      stats: Statistici
+      signature_sheets: Foi cu semnături
+      site_customization:
+        documents: Documente personalizate
+        homepage: Pagina principală
+        pages: Pagini personalizate
+        images: Imagini personalizate
+        content_blocks: Conținut personalizat
+        information_texts: Texte informative personalizate
+        information_texts_menu:
+          basic: "Personalizare de bază"
+          debates: "Dezbateri"
+          community: "Comunitate"
+          proposals: "Propuneri"
+          polls: "Sondaje"
+          layouts: "Amplasări"
+          mailers: "Emailuri"
+          management: "Administrare"
+          welcome: "Bine ați venit"
+        buttons:
+          save: "Salvează"
+          content_block:
+            update: "Actualizează bloc"
+      title_moderated_content: Conținut modificat
+      title_profiles: Profile
+      title_settings: Setări
+      title_site_customization: Conținutul site-ul
+      title_booths: Cabine de votare
+      legislation: Legislație colaborativă
+      users: Utilizatori
+      dashboard: Tablou de bord propuneri
+      administrator_tasks: Resurse solicitate
+      dashboard_actions: Resurse și acțiuni
+      debates: "Dezbateri"
+      comments: "Comentarii"
+      local_census_records: Administrează datele locale
+    administrators:
+      index:
+        title: Administratori
+        name: Nume
+        email: Email
+        description: Descriere
+        id: ID-ul Administratorului
+        no_administrators: Nu există administratori.
+      administrator:
+        add: Adaugă
+        delete: Șterge
+        restricted_removal: "Ne pare rău, nu vă puteți scoate din lista de administratori"
+      search:
+        title: "Administratori: Căutare utilizator"
+      form:
+        edit_title: "Editează administratori"
+        updated: "Administrator actualizat cu succes"
+    moderators:
+      index:
+        title: Moderatori
+        name: Nume
+        email: Email
+        no_moderators: Nu există moderatori.
+      moderator:
+        add: Adaugă
+        delete: Șterge
+      search:
+        title: "Moderatori: Căutare utilizator"
+    segment_recipient:
+      all_users: Toți utilizatorii
+      administrators: Administratori
+      all_proposal_authors: Autori propuneri (inclusiv pentru propuneri activate sau retrase)
+      proposal_authors: Autorii propunerii
+      investment_authors: Operatorii de investiții în bugetul curent
+      feasible_and_undecided_investment_authors: "Autorii unor investiții în bugetul curent care nu respectă: [evaluarea terminată este imposibilă]"
+      selected_investment_authors: Autori ai investițiilor selectate în bugetul curent
+      winner_investment_authors: Autori ai investițiilor câștigătoare în bugetul curent
+      not_supported_on_current_budget: Utilizatorii care nu au sprijinit investiții pe bugetul actual
+      invalid_recipients_segment: "Segmentul de utilizatori destinatari este invalid"
+    newsletters:
+      create_success: Newsletter creat cu succes
+      update_success: Newsletter actualizat cu succes
+      send_success: Newsletter trimis cu succes
+      delete_success: Newsletter șters cu succes
+      index:
+        title: Newsletters
+        new_newsletter: Newsletter nou
+        subject: Subiect
+        segment_recipient: Destinatari
+        sent: Trimis
+        actions: Acțiuni
+        draft: Schiță
+        edit: Editează
+        delete: Șterge
+        preview: Previzualizare
+        empty_newsletters: Nu există newslettere
+      new:
+        title: Newsletter nou
+        header_footer_help_text: "Antetul și subsolul sunt aceleași pentru toate e-mailurile, le puteți modifica pe <code> app / views / layouts / mailer_header </code> și <code> app / views / layouts / mailer_footer </code>.<br> Puteți înlocui imaginea antetului pe%{link}."
+        image_link: "imagini personalizate"
+      edit:
+        title: Editează newsletter
+      show:
+        title: Previzualizare newsletter
+        send: Trimite
+        affected_users: (%{n} utilizatori afectați)
+        sent_emails:
+          one: 1 email trimis
+          few: "%{count} email-uri trimise"
+          other: "%{count} email-uri trimise"
+        sent_at: Trimis la
+        subject: Subiect
+        segment_recipient: Destinatari
+        from: Adresa de e-mail care va apărea ca expeditoare a newsletter-ului
+        body: Conținut e-mail
+        body_help_text: Așa vor vedea utilizatorii vedea e-mailul.
+        send_alert: Sunteți sigur că doriți să trimiteți acest newsletter către %{n} utilizatori?
+    admin_notifications:
+      create_success: Notificare creată cu succes
+      update_success: Notificare actualizată cu succes
+      send_success: Notificare trimisă cu succes
+      delete_success: Notificare ștearsă cu succes
+      index:
+        section_title: Notificări
+        new_notification: Notificări noi
+        title: Titlu
+        segment_recipient: Destinatari
+        sent: Trimis
+        actions: Acțiuni
+        draft: Schiță
+        edit: Editează
+        delete: Șterge
+        preview: Previzualizare
+        view: Vizualizare
+        empty_notifications: Nu există notificări
+      new:
+        section_title: Notificare nouă
+        submit_button: Crează notificare
+      edit:
+        section_title: Editează notificare
+        submit_button: Actualizează notificare
+      show:
+        section_title: Pre-vizualizează notificare
+        send: Trimite notificare
+        will_get_notified: (%{n} utilizatorii vor fi anunțați)
+        got_notified: (%{n} utilizatorii au fost anunțați)
+        sent_at: Trimis la
+        title: Titlu
+        body: Text
+        link: Link
+        segment_recipient: Destinatari
+        preview_guide: "Așa vor fi anunțați utilizatorii:"
+        sent_guide: "Așa văd utilizatorii notificările:"
+        send_alert: Sunteți sigur că doriți să trimiteți această notificare către %{n} utilizatori?
+    system_emails:
+      preview_pending:
+        action: Previzualizare în așteptare
+        preview_of: Previzualizare a %{name}
+        pending_to_be_sent: Acesta este conținutul în așteptare care va fi trimis
+        moderate_pending: Trimiterea moderată a notificării
+        send_pending: Trimitere în așteptare
+        send_pending_notification: Notificare trimisă cu succes
+      proposal_notification_digest:
+        title: "Notificări de propuneri"
+        description: "Adună toate notificările de propuneri pentru un utilizator într-un singur mesaj, pentru a evita prea multe e-mailuri."
+        preview_detail: "Utilizatorii vor primi notificări doar de la propunerile pe care le urmăresc"
+      budget_investment_created:
+        title: "Buget de investiții creat"
+        description: "Trimite când un utilizator creează o investiție bugetară."
+      budget_investment_selected:
+        title: "Buget de investiții selectat"
+        description: "Trimite autorului atunci când investiția sa bugetară a fost selectată."
+      budget_investment_unfeasible:
+        title: "Buget de investiții nerealizabil"
+        description: "Trimite autorului când investiția sa bugetară a fost marcată ca fiind nefezabilă."
+      budget_investment_unselected:
+        title: "Bugetul de investiții nu este selectat"
+        description: "Trimite autorului atunci când investiția sa bugetară nu a fost selectată pentru faza de vot."
+      comment:
+        title: "Comentariu"
+        description: "Trimite autorului când primește un comentariu."
+      reply:
+        title: "Răspunde"
+        description: "Trimiteți autorului comentariului când acesta primește un răspuns."
+      direct_message_for_receiver:
+        title: "Primitor al mesajului privat"
+        description: "Trimis la receptorul mesajului privat."
+      direct_message_for_sender:
+        title: "Primitor al mesajului privat"
+        description: "Trimis expeditorului mesajului privat."
+      email_verification:
+        title: "Verificarea emailului"
+        description: "Trimis unui utilizator nou pentru a își verifica contul."
+      user_invite:
+        title: "Invitație pentru utilizator"
+        description: "Trimis către persoana care a fost invitată să înregistreze un cont."
+      evaluation_comment:
+        title: "Nou comentariu de evaluare"
+        description: "Trimise administratorilor și evaluatorilor în legătură cu investițiile comentate"
+      edit_info: "Puteți edita acest email din"
+      message_title: "Titlul mesajului"
+      message_body: "Acesta este un exemplu de conținut al mesajului."
+      alert:
+        no_investments: "Nu s-au creat investiții bugetare. Sunt necesare câteva exemple de date pentru a pre-vizualiza e-mailul."
+        no_comments: "Nu s-au creat comentarii. Sunt necesare câteva exemple de date pentru a previzualiza e-mailul."
+        no_replies: "Nu s-au creat răspunsuri la comentarii. Sunt necesare câteva exemple de date pentru a previzualiza e-mailul."
+        no_evaluation_comments: "Nu s-au creat comentarii de evaluare. Sunt necesare câteva exemple de date pentru a previzualiza e-mailul."
+    emails_download:
+      index:
+        title: Descarcă emailuri
+        download_segment: Descărcați adrese de e-mail
+        download_segment_help_text: Descărcați în format CSV
+        download_emails_button: Descarcă listă de emailuri
+    valuators:
+      index:
+        title: Evaluatori
+        name: Nume
+        email: Email
+        description: Descriere
+        no_description: Fără descriere
+        no_valuators: Nu există evaluatori.
+        valuator_groups: "Grupuri de evaluare"
+        group: "Grup"
+        no_group: "Nu există grupuri"
+        abilities: "Abilități"
+        can_comment: "Poate comenta"
+        can_edit_dossier: "Puteți edita dosar"
+      valuator:
+        add: Adaugă la evaluatori
+        delete: Șterge
+      search:
+        title: "Moderatori: Căutare utilizator"
+      form:
+        edit_title: "Evaluatori: editați evaluatorul"
+        updated: "Evaluator actualizat cu succes"
+      show:
+        description: "Descriere"
+        email: "Email"
+        group: "Grup"
+        abilities: "Abilități"
+        no_description: "Fără descriere"
+        no_group: "Fără grup"
+        no_abilities: "Fără abilități"
+    valuator_groups:
+      index:
+        title: "Grupuri de evaluare"
+        new: "Crează grup de evaluatori"
+        name: "Nume"
+        members: "Membri"
+        no_groups: "Nu există grupuri evaluatori"
+      show:
+        title: "Grup de evaluatori: %{group}"
+        no_valuators: "Nu sunt evaluatori atribuiți acestui grup"
+      form:
+        new: "Crează grup de evaluatori"
+        edit: "Salvează grup de evaluatori"
+    poll_officers:
+      index:
+        title: Ofițerii de votare
+      officer:
+        add: Adaugă
+        delete: Șterge poziție
+        name: Nume
+        email: Email
+        entry_name: funcționar public
+      search:
+        email_placeholder: Caută utilizator după email
+        search: Caută
+        user_not_found: Utilizatorul nu a fost găsit
+        help: "Pentru a adăuga sau elimina ofițerii de sondaj utilizați formularul de căutare de mai jos."
+    poll_officer_assignments:
+      index:
+        officers_title: "Lista funcționarilor publici"
+        no_officers: "Nu sunt funcționari publici atribuiți acestui sondaj."
+        table_name: "Nume"
+        table_email: "Email"
+      by_officer:
+        date: "Dată"
+        booth: "Cabină vot"
+        assignments: "Funcționarea schimburilor în acest sondaj"
+        no_assignments: "Acest utilizator nu are schimbări oficiale în acest sondaj."
+    poll_shifts:
+      new:
+        add_shift: "Adăugați tura"
+        shift: "Misiune"
+        shifts: "Schimbări în acest stand"
+        date: "Dată"
+        edit_shifts: Editează schimburi
+        new_shift: "Shimb nou"
+        no_shifts: "Această cabină nu are schimburi"
+        officer: "Funcționar public"
+        remove_shift: "Înlătură"
+        search_officer_button: Caută
+        search_officer_placeholder: Caută funcționar public
+        search_officer_text: Căutați un ofițer care să atribuie un nou schimb
+        select_date: "Selectează ziua"
+        no_voting_days: "Perioada de votare s-a încheiat"
+        select_task: "Selectați sarcina"
+        table_shift: "Sarcină"
+        table_email: "Email"
+        table_name: "Nume"
+      flash:
+        create: "Sarcină adăugată"
+        destroy: "Sarcină eliminată"
+        unable_to_destroy: "Sarcinile asociate cu rezultate sau recuperări nu pot fi șterse"
+        date_missing: "Trebuie să selectați o dată"
+      vote_collection: Colectați voturi
+      recount_scrutiny: Renumărare & Analizare
+    booth_assignments:
+      manage_assignments: Gestionați misiunile
+      manage:
+        assignments_list: "Atribuții pentru sondajul „%{poll}”"
+        status:
+          assign_status: Misiune
+          assigned: Atribuit
+          unassigned: Neatribuit
+        actions:
+          assign: Atribuie ambele
+          unassign: Neatribuie ambele
+    poll_booth_assignments:
+      alert:
+        shifts: "Există schimburi asociate acestui stand. Dacă eliminați atribuirea standului, schimburile vor fi șterse. Continua?"
+      show:
+        location: "Locație"
+        officers: "Funcționari publici"
+        officers_list: "Lista de ofițeri pentru acest stand"
+        no_officers: "Nu există funcționari publici pentru această cabină de vot"
+        recounts: "Renumărare"
+        recounts_list: "Renumărare pentru acest stand"
+        results: "Rezultate"
+        date: "Date"
+        count_final: "Renumărarea finală (de ofițer)"
+        count_by_system: "Voturi (automatic)"
+        total_system: Total voturi (automat)
+      index:
+        booths_title: "Lista de sondaje"
+        no_booths: "Nu există cabine alocate acestui sondaj."
+        table_name: "Nume"
+        table_location: "Locație"
+    active_polls:
+      edit:
+        title: "Descrierea sondajelor"
+      form:
+        description:
+          help_text: "Acest text va apărea în antetul paginii de sondaje. Poate fi folosit pentru a adăuga un context la sondajele deschise."
+    polls:
+      index:
+        title: "Lista de sondaje"
+        no_polls: "Nu există sondaje."
+        create: "Crează sondaj"
+        name: "Nume"
+        dates: "Date"
+        start_date: "Data de început"
+        closing_date: "Data limită"
+        geozone_restricted: "Limitat la districte"
+      new:
+        title: "Sondaj nou"
+        submit_button: "Crează sondaj"
+      edit:
+        title: "Editează sondaj"
+        submit_button: "Actualizează sondaj"
+      show:
+        questions_tab: Întrebări
+        booths_tab: Cabine de vot
+        officers_tab: Funcționari publici
+        recounts_tab: Renumărare
+        results_tab: Rezultate
+        no_questions: "Nu sunt întrebări atribuite acestui sondaj."
+        questions_title: "Lista întrebărilor"
+        table_title: "Titlu"
+        edit_answers: Editează răspunsuri
+        see_proposal: "(Vezi propunere)"
+      flash:
+        question_added: "Întrebare adăugată la acest sondaj"
+        error_on_question_added: "Întrebarea nu a putut fi atribuită acestui sondaj"
+      destroy:
+        alert: "Această acțiune va elimina chestionarul și întrebările asociate acestuia."
+        success_notice: "Chestionar șters cu succes"
+        unable_notice: "Nu puteți șterge un chestionar care are voturi"
+    questions:
+      index:
+        title: "Întrebări"
+        create: "Crează întrebare"
+        no_questions: "Nu există întrebări."
+        filter_poll: Filtrează după Chestionar
+        select_poll: Selectează chestionar
+        questions_tab: "Întrebări"
+        successful_proposals_tab: "Propunere de succes"
+        create_question: "Crează întrebare"
+        table_proposal: "Propunere"
+        table_question: "Întrebare"
+        table_poll: "Sondaj"
+        poll_not_assigned: "Sondajul nu este atribuit"
+      edit:
+        title: "Editează Întrebare"
+      new:
+        title: "Creați întrebare pentru a sonda%{poll}"
+        title_proposal: "Crează întrebare"
+      answers:
+        images:
+          add_image: "Adaugă imagine"
+          save_image: "Salvează imagine"
+      show:
+        proposal: Propunere originală
+        author: Autor
+        question: Întrebare
+        edit_question: Editează întrebare
+        valid_answers: Întrebări valide
+        add_answer: Adaugă răspuns
+        video_url: Video extern
+        answers:
+          title: Răspuns
+          description: Descriere
+          videos: Videoclipuri
+          video_list: Listă videoclipuri
+          images: Imagini
+          images_list: Listă de imagini
+          documents: Documente
+          documents_list: Listă de documente
+          document_title: Titlu
+          document_actions: Acțiuni
+    answers:
+      new:
+        title: Răspuns nou
+      show:
+        title: Titlu
+        description: Descriere
+        images: Imagini
+        images_list: Listă de imagini
+        edit: Editează răspuns
+      edit:
+        title: Editează răspuns
+      videos:
+        index:
+          title: Videoclipuri
+          add_video: Adaugă videoclip
+          video_title: Titlu
+          video_url: Video extern
+        new:
+          title: Videoclip nou
+        edit:
+          title: Editează video
+    recounts:
+      index:
+        title: "Renumărare"
+        no_recounts: "Nu este nimic de renumărat"
+        all_booths_total: "Total cumulat din toate standurile:"
+        total_final: "Renumărare finală"
+        total_system: "Voturi (automatic)"
+        table_booth_name: "Cabină vot"
+        table_total_recount: "Renumărarea totală (de ofițer)"
+        table_system_count: "Voturi (automatic)"
+    results:
+      index:
+        title: "Rezultate"
+        no_results: "Nu există rezultate"
+      result:
+        table_whites: "Buletinele de vot total necompletate"
+        table_nulls: "Buletine de vot invalide"
+        table_total: "Buletine de vot valide"
+        table_answer: Răspuns
+        table_votes: Voturi
+      results_by_booth:
+        booth: Cabină vot
+        results: Rezultate
+        see_results: Vezi rezultatele
+        title: "Rezultate pe stand"
+    booths:
+      index:
+        title: "Lista cabinelor de vot active"
+        no_booths: "Nu există cabine active pentru sondajele viitoare."
+        add_booth: "Adaugă cabină de vot"
+        name: "Nume"
+        location: "Locație"
+        no_location: "Fără locație"
+      new:
+        title: "Cabină de vot nouă"
+        submit_button: "Crează cabină de vot"
+      edit:
+        title: "Editează cabină de vot"
+        submit_button: "Actualizează cabină de vot"
+      show:
+        location: "Locație"
+      booth:
+        shifts: "Administrează ture"
+        edit: "Editează cabină de vot"
+    officials:
+      edit:
+        destroy: Eliminați statutul „oficial”
+        title: "Funcționari publici: Editează utilizator"
+      flash:
+        official_destroyed: "Detalii salvate: utilizatorul nu mai este oficial"
+        official_updated: Detalii despre oficial salvat
+      index:
+        title: Funcționari publici
+        help: Conturile de utilizatori marcați ca oficiali vor avea evidențiate intervențiile lor pe platformă. Puteți defini eticheta care apare lângă numele de utilizator ale acestor conturi de la cele mai importante (nivel 1) la cele mai puțin importante (nivel 5).
+        no_officials: Nu există funcționari publici.
+        name: Nume
+        official_position: Poziție oficială
+        official_level: Nivel
+      level_0: Nu este funcționar
+      level_1: Nivel 1
+      level_2: Nivel 2
+      level_3: Nivel 3
+      level_4: Nivel 5
+      level_5: Nivel 5
+      search:
+        edit_official: Editează funcționar public
+        make_official: Crează funcționar public
+        title: "Poziții oficiale: Căutare utilizator"
+        no_results: Pozițiile oficiale nu au fost găsite.
+    organizations:
+      index:
+        filter: Filtru
+        filters:
+          all: Tot
+          pending: În așteptare
+          rejected: Respins
+          verified: Verificat
+        hidden_count:
+          one: Există, de asemenea, <strong> o organizație </strong> fără utilizatori sau cu un utilizator ascuns.
+          few: Există <strong>%{count} organizații </strong> fără utilizatori sau cu un utilizator ascuns.
+          other: Există <strong>%{count} organizații </strong> fără utilizatori sau cu un utilizator ascuns.
+        name: Nume
+        email: Email
+        phone_number: Telefon
+        responsible_name: Responsabil
+        status: Status
+        no_organizations: Nu există organizații.
+        reject: Respinge
+        rejected: Respins
+        search: Caută
+        search_placeholder: Nume, email sau număr de telefon
+        title: Organizații
+        verified: Verificat
+        verify: Verifică
+        pending: În așteptare
+      search:
+        title: Caută organizații
+        no_results: Nu a fost găsită nici o organizație.
+    proposals:
+      index:
+        title: Propuneri
+        id: ID
+        author: Autor
+        select: Selectează
+        selected: Selectat
+        milestones: Repere
+        no_proposals: Nu există propuneri.
+      show:
+        create_question: Adaugă această propunere într-un sondaj pentru a fi votată
+      form:
+        update: Actualizează propunere
+      update:
+        notice: Propunere actualizată cu succes
+    hidden_proposals:
+      index:
+        filter: Filtru
+        filters:
+          all: Tot
+          with_confirmed_hide: Confirmat
+          without_confirmed_hide: În așteptare
+        title: Propuneri ascunse
+        no_hidden_proposals: Nu există propuneri ascunse.
+    hidden_proposal_notifications:
+      index:
+        filter: Filtru
+        filters:
+          all: Toate
+          with_confirmed_hide: Confirmat
+          without_confirmed_hide: În așteptare
+        title: Notificări ascunse
+        no_hidden_proposals: Nu există notificări ascunse.
+    settings:
+      flash:
+        updated: Valoare actualizată
+      index:
+        title: Setări
+        general: Setări de configurare
+        update_setting: Actualizează
+        participation_processes: "Proces de participare"
+        images_and_documents: "Imagini și documente"
+        feature_flags: Caracteristici
+        features:
+          enabled: "Caracteristici activate"
+          disabled: "Caracteristici dezactivate"
+          enable: "Activează"
+          disable: "Dezactivează"
+        map:
+          title: Configurarea hărții
+          help: Aici puteți personaliza modul în care este afișată harta utilizatorilor. Trageți marcatorul de hartă sau faceți click oriunde peste hartă, setați zoom-ul dorit și faceți click pe butonul „Actualizare”.
+          flash:
+            update: Configurarea hărții actualizată cu succes.
+          form:
+            submit: Actualizează
+          how_to_enable: 'Pentru a afișa harta utilizatorilor, trebuie să activați „Localizarea propunerilor și investițiilor bugetare” din fila „Caracteristici”.'
+        dashboard:
+          title: Tablou de bord propuneri
+        remote_census:
+          title: Configurarea recensământului de la distanță
+          how_to_enable: 'Pentru a configura recensământul la distanță (SOAP), trebuie să activați „Configurarea conexiunii la recensământul la distanță (SOAP)” din fila „Caracteristici”.'
+      remote_census_general_name: Informații Generale
+      remote_census_request_name: Solicitare date
+      remote_census_response_name: Date de răspuns
+      setting: Caracteristică
+      setting_actions: Acțiuni
+      setting_name: Setări
+      setting_status: Status
+      setting_value: Valoare
+      no_description: "Nu există descriere"
+    shared:
+      true_value: "Da"
+      false_value: "Nu"
+      booths_search:
+        button: Caută
+        placeholder: Caută cabină de vot după nume sau locație
+      poll_officers_search:
+        button: Caută
+        placeholder: Caută funcționar public
+      poll_questions_search:
+        button: Caută
+        placeholder: Căutați întrebări la sondaj
+      proposal_search:
+        button: Caută
+        placeholder: Caută propunere după titlu, cod, descriere ori întrebare
+      debate_search:
+        button: Caută
+        placeholder: Căutați dezbateri după titlu sau descriere
+      user_search:
+        button: Caută
+        placeholder: Caută utilizator după nume sau email
+      search_results: "Caută rezultate"
+      no_search_results: "Nu a fost găsită niciun rezultat."
+      actions: Acțiuni
+      title: Titlu
+      description: Descriere
+      image: Imagine
+      show_image: Arată imagine
+      moderated_content: "Verificați conținutul moderat de moderatori și confirmați dacă moderația a fost făcută corect."
+      view: Vizualizare
+      proposal: Propunere
+      author: Autor
+      content: Conținut
+      created_at: Creat la
+      delete: Șterge
+      color_help: Format hexadecimal
+      show_results_and_stats: "Afișează rezultate și statistici"
+      results_and_stats_reminder: "Marcarea acestor căsuțe de selectare a rezultatelor și / sau statisticilor va fi disponibilă publicului și fiecare utilizator le va vedea."
+    geozones:
+      index:
+        title: Geozone
+        create: Crează geozonă
+        edit: Editează
+        delete: Șterge
+      geozone:
+        name: Nume
+        external_code: Cod extern
+        census_code: Cod recensământ
+        code_help: Cod de răspuns pentru această geozonă pe API-ul de recensământ
+        coordinates: Coordonate
+        coordinates_help: Coordonate care vor genera o zonă cu care se poate face clic pe o hartă a imaginii HTML
+      edit:
+        form:
+          submit_button: Salvează modificări
+        editing: Editați Geozonă
+        back: Mergi înapoi
+      new:
+        back: Mergi înapoi
+        creating: Crează district
+      delete:
+        success: Geozonă ștearsă cu succes
+        error: Această geozonă nu poate fi ștearsă, deoarece există elemente atașate la ea
+    signature_sheets:
+      author: Autor
+      created_at: Data creării
+      name: Nume
+      no_signature_sheets: "Nu există foi de semnături"
+      index:
+        title: Foi cu semnături
+        new: Foaie nouă de semnături
+      new:
+        title: Foaie nouă de semnături
+        document_numbers_note: "Scrieți numerele separate prin punct și virgulă (;)"
+        submit: Crează foaie cu semnături
+        text_help:
+          required_fields_note: "Pentru a verifica un utilizator, cererea dvs. are nevoie de: Numărul documentului"
+          date_of_birth_note: ", Ziua nașterii (dd / mm / aaaa)"
+          postal_code_note: " și cod poștal"
+          required_fields_structure_note: "Câmpurile obligatorii pentru fiecare utilizator trebuie separate prin virgule și fiecare utilizator trebuie separat prin punct și virgulă."
+          example_text: "Exemplu: "
+      show:
+        created_at: Creat
+        author: Autor
+        users: Utilizatori
+        signature_count: "Număr de semnături:"
+        verified:
+          one: "Există %{count} semnătură validă"
+          few: "Există %{count} semnături valide"
+          other: "Există %{count} semnături valide"
+        unverified:
+          one: "Există %{count} semnătură invalidă"
+          few: "Există %{count} semnături invalide"
+          other: "Există %{count} semnături invalide"
+        unverified_error: (Nu este verificat de Recensământ)
+        voted:
+          zero: "Nu există voturi create din semnăturile verificate."
+          one: "Există%{count} vot creat din semnăturile verificate."
+          few: "Există %{count} voturi create din semnăturile verificate."
+          other: "Există %{count} voturi create din semnăturile verificate."
+        loading: "Încă există semnături care sunt verificate de recensământ, vă rugăm să actualizați pagina în câteva momente"
+    stats:
+      show:
+        stats_title: Statistici
+        summary:
+          comment_votes: Comentează voturi
+          comments: Comentarii
+          debate_votes: Dezbate voturi
+          debates: Dezbateri
+          proposal_votes: Propunere voturi
+          proposals: Propuneri
+          budgets: Deschide bugete
+          budget_investments: Proiecte de investiție
+          unverified_users: Utilizatori neverificați
+          user_level_three: Utilizatori de nivelul trei
+          user_level_two: Utilizatori de nivelul doi
+          users: Total utilizatori
+          verified_users: Utilizatori verificați
+          verified_users_who_didnt_vote_proposals: Utilizatori verificați care nu au votat propuneri
+          visits: Vizite
+          votes: Voturi totale
+        budgets_title: Bugetare participativă
+        participatory_budgets: Bugete participative
+        direct_messages: Mesaje directe
+        proposal_notifications: Notificări propuneri
+        incomplete_verifications: Verificări incomplete
+        polls: Sondaje
+      graph:
+        debate_created: Dezbateri
+        visit: Vizite
+        level_2_user: Utilizatori de nivelul doi
+        proposal_created: Propunerile cetățeanului
+      budgets:
+        no_data_before_balloting_phase: "Nu există date care să fie afișate înainte de faza de votare."
+        title: "Bugete participativă - statistici de participare"
+        supporting_phase: Faza de suport
+        balloting_phase: Vot final
+      budget_balloting:
+        title: "Statistici vot final"
+        vote_count: Voturi
+        participant_count: Participanți
+        votes_per_heading: Voturi pe rubrică
+        participants_per_district: Participanți după district
+      budget_supporting:
+        title: "Statistici faza suport"
+        headings: Rubrici
+        users: Utilizatori
+        vote_count: Voturi
+        participant_count: Participanți
+      direct_messages:
+        title: Mesaje directe
+        total: Total
+        users_who_have_sent_message: Utilizatorii care au trimis un mesaj privat
+      proposal_notifications:
+        title: Notificări propuneri
+        total: Total
+        proposals_with_notifications: Propuneri cu notificări
+        not_available: "Propunere invalidă"
+      polls:
+        title: Status sondaj
+        all: Sondaje
+        web_participants: Participanți online
+        total_participants: Total participanți
+        poll_questions: "Întrebări din sondaj:%{poll}"
+        table:
+          poll_name: Sondaj
+          question_name: Întrebare
+          origin_web: Participanți online
+          origin_total: Total participanți
+    tags:
+      create: Crează subiect
+      destroy: Șterge subiect
+      index:
+        add_tag: Adaugă o nouă propunere de subiect
+        title: Subiecte de propunere
+        topic: Subiect
+        help: "Când un utilizator crează o propunere, următoarele subiecte sunt sugerate ca etichete implicite."
+    users:
+      columns:
+        id: ID
+        erase_reason: Șterge motiv
+        name: Nume
+        email: Email
+        document_number: Numărul documentului
+        roles: Roluri
+        verification_level: Nivel verificare
+      index:
+        title: Utilizator
+        no_users: Nu există utilizatori.
+        filter: Filtru
+        filters:
+          active: Activ
+          erased: Șters
+      search:
+        placeholder: Caută utilizator după email, nume sau numărul documentului
+        search: Caută
+    verifications:
+      index:
+        phone_not_given: Numărul de telefon nu a fost pus la dispoziție
+        sms_code_not_confirmed: Nu a confirmat codul sms
+        title: Verificări incomplete
+    site_customization:
+      content_blocks:
+        information: Informații despre blocurile de conținut
+        about: "Puteți crea blocuri de conținut HTML care pot fi inserate în diferite locuri ale site-ului dumneavoastră web."
+        html_format: "Un bloc de conținut este un grup de legături și trebuie să aibă următorul format:"
+        no_blocks: "Nu există blocuri de conținut."
+        create:
+          notice: Bloc de conținut creat cu succes
+          error: Blocul de conținut nu a putut fi creat
+        update:
+          notice: Bloc de conținut actualizat cu succes
+          error: Blocul de conținut nu a putut fi actualizat
+        destroy:
+          notice: Bloc de conținut șters cu succes
+        edit:
+          title: Editați conținutul blocului
+        index:
+          create: Creați un bloc de conținut nou
+          delete: Șterge bloc
+          title: Bloc de conținut
+        new:
+          title: Crează un nou bloc de conținut
+        content_block:
+          body: Corp
+          name: Nume
+          names:
+            top_links: Link-uri de top
+            footer: Subsol
+            subnavigation_left: Navigarea principală spre stânga
+            subnavigation_right: Navigarea principală spre dreapta
+      images:
+        index:
+          title: Imagini personalizate
+          update: Actualizează
+          delete: Șterge
+          image: Imagine
+        update:
+          notice: Imagine actualizată cu succes
+          error: Imaginea nu a putut fi actualizată
+        destroy:
+          notice: Imagine ștearsă cu succes
+          error: Imaginea nu a putut fi ștearsă
+      pages:
+        create:
+          notice: Pagina creată cu succes
+          error: Pagina nu a putut fi creată
+        update:
+          notice: Pagină actualizată cu succes
+          error: Pagina nu a putut fi actualizată
+        destroy:
+          notice: Pagină ștearsă cu succes
+        edit:
+          title: Se editează %{page_title}
+        form:
+          options: Opțiuni
+        index:
+          create: Crează o pagină nouă
+          delete: Șterge pagină
+          title: Pagini personalizate
+          see_page: Vezi pagina
+        new:
+          title: Creați o nouă pagină personalizată
+          slug_help: "Text pentru a identifica această pagină pe URL, de exemplu <code>https://consulproject.org/page-slug </code>"
+        page:
+          created_at: Creat la
+          status: Status
+          updated_at: Actualizat la
+          title: Titlu
+          slug: Slug
+          cards_title: Carduri
+          see_cards: Vedeți cărți
+        cards:
+          cards_title: carduri
+          create_card: Crează card
+          no_cards: Nu există carduri.
+          title: Titlu
+          description: Descriere
+          link_text: Link
+          link_url: URL-ul Link-ului
+          columns_help: "Lățimea cărții în număr de coloane. Pe ecranele mobile este întotdeauna o lățime de 100%."
+          create:
+            notice: "Card creat cu succes!"
+          update:
+            notice: "Card actualizat cu succes"
+          destroy:
+            notice: "Card șters cu succes"
+    homepage:
+      title: Pagina principală
+      description: Modulele active apar în pagina principală în aceeași ordine ca aici.
+      header_title: Antet
+      no_header: Nu există antete.
+      create_header: Creați antet
+      cards_title: Carduri
+      create_card: Crează card
+      no_cards: Nu există carduri.
+      cards:
+        title: Titlu
+        description: Descriere
+        link_text: Link text
+        link_url: Link URL
+      feeds:
+        proposals: Propuneri
+        debates: Dezbateri
+        processes: Procese
+      new:
+        header_title: Antet nou
+        submit_header: Creați antet
+        card_title: Card nou
+        submit_card: Crează card
+      edit:
+        header_title: Editați antet
+        submit_header: Salvați antet
+        card_title: Editează card
+        submit_card: Salvează card
+    audits:
+      title: "Log schimbări"
+      changes: "Lista modificărilor"
+      id: "ID"
+      field: "Câmp"
+      new_value: "Valoare nouă"
+      old_value: "Valoare veche"
+      edited_at: "Editat la"
+      edited_by: "Editat de"
+      actions: "Acțiuni"
+      empty: "Nu există modificări înregistrate"
+    local_census_records:
+      index:
+        title: Administrează datele locale
+        create: Crează o nouă înregistrare de date locale
+        no_local_census_records: Nu există înregistrări de date locale.
+        document_type: Tipul documentului
+        document_number: Numărul documentului
+        date_of_birth: Data nașterii
+        postal_code: Cod poștal
+        search:
+          placeholder: Caută după numărul documentului
+          search: Caută
+        import: Importă CSV
+      new:
+        creating: Crează o nouă înregistrare de date locale
+      create:
+        notice: Registru nou de recensământ local creat cu succes!
+      edit:
+        editing: Editează înregistrarea de date locale
+      update:
+        notice: Datele locale au fost actualizate cu succes!
+      destroy:
+        notice: Datele locale au fost eliminate cu succes!
+      imports:
+        new:
+          title: Date locale
+          subtitle: Importă fișierul CSV
+        create:
+          notice: Import de date executat cu succes!
+        show:
+          title: Administrează datele
+          subtitle: Importați rezultatele procesului
+          import: Importă din nou
+          errored: Rânduri eronate
+          created: Înregistrări create
+        local_census_records:
+          no_records_found: Nu a fost găsită nici o înregistrare.

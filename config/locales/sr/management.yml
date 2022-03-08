@@ -1,0 +1,134 @@
+sr:
+  management:
+    account:
+      menu:
+        reset_password_email: Измените лозинку путем електронске поште
+        reset_password_manually: Измените лозинку ручно
+      alert:
+        unverified_user: Нема верификованих корисника који су пријављени
+      show:
+        title: Кориснички налог
+      edit:
+        title: "Уредите кориснички налог: Измените лозинку"
+        back: Назад
+        password:
+          password: Лозинка
+          send_email: Пошаљите измењену лозинку електронском поштом
+          reset_email_send: Електронска пошта је успешно послата.
+          reseted: Лозинка успешно измењена
+          random: Генеришите насумичну лозинку
+          save: Сачувајте лозинку
+          print: Штампајте лозинку
+          print_help: Бићете у могућности да штампате лозинку када је сачувате.
+    account_info:
+      change_user: Промените корисника
+      document_number_label: "Број документа:"
+      document_type_label: "Тип документа:"
+      email_label: "Електронска пошта:"
+      identified_label: "Идентификован као:"
+      username_label: "Корисничко име:"
+    check: Проверите документ
+    dashboard:
+      index:
+        title: Управљање
+        info: Овде можете управљати корисницима преко свих радњи наведених у левом менију.
+    document_verifications:
+      already_verified: Овај кориснички налог је већ потврђен.
+      has_no_account: Да бисте креирали налог идите на %{link} и кликните на <b>"Register"</b> у горњем-левом делом екрана.
+      link: КОНЗУЛ
+      in_census_has_following_permissions: "Овај корисник може учествовати на веб страници са следећим одобрењима:"
+      not_in_census: Овај документ није регистрован.
+      not_in_census_info: "Грађани који нису покривени Пописом могу учествовати на веб страници са следећим одобрењима:"
+      please_check_account_data: Молимо проверите да ли су подаци налога горе тачни.
+      title: Корисничко управљање
+      under_age: "Немате одговарајуће године да потврдите свој налог."
+      verify: Потврдите
+    email_label: Електронска пошта
+    date_of_birth: Датум рођења
+    email_verifications:
+      already_verified: Овај кориснички налог је већ потврђен.
+      choose_options: "Молимо вас изаберите једну од следећих опција:"
+      document_found_in_census: Овај документ је нађен у избору, али нема кориснички налог са којим је повезан.
+      document_mismatch: "Ова адреса припада кориснику који већ има додељени ид: %{document_number}(%{document_type})"
+      email_placeholder: Напишите адресу електронске поште коју је ова особа користила да креира свој налог
+      email_sent_instructions: Да би се успешно завршила верификација, неопходно је да корисник кликне на линк који је послат на горе наведену адресу електронске поште. Овај корак је неопходан да би се потврдило да адреса припада кориснику.
+      if_existing_account: Ako korisnik već ima napravljen nalog,
+      if_no_existing_account: Ako korisnik još uvek nema napravljen nalog
+      introduce_email: "Molimo Vas da upišete adresu elektronske pošte za ovaj nalog:"
+      send_email: Пошаљите потврђујући емаил
+    menu:
+      create_proposal: Креирајте предлог
+      print_proposals: Штампајте предлог
+      support_proposals: Подржите предлог
+      create_budget_investment: Креирајте инвестициони буџет
+      print_budget_investments: Штампајте инвестициони буџет
+      support_budget_investments: Подржите инвестициони буџет
+      users: Корисничко управљање
+      user_invites: Пошаљите позивнице
+      select_user: Одредите корисника
+    permissions:
+      create_proposals: Креирајте предлог
+      debates: Укључите се у расправу
+      support_proposals: Подржите предлог
+      vote_proposals: Гласајте предлог
+    print:
+      proposals_info: Креирајте свој предлог на http://url.consul
+      proposals_title: "Предлози:"
+      budget_investments_info: Учествујте у http://url.consul
+    print_info: Штампајте ову информацију
+    proposals:
+      alert:
+        unverified_user: Корисник није потврђен
+      create_proposal: Креирајте предлог
+      print:
+        print_button: Штампајте
+      index:
+        title: Помоћни предлози
+    budgets:
+      create_new_investment: Креирајте инвестициони буџет
+      print_investments: Штампајте инвестициони буџет
+      support_investments: Подржите инвестициони буџет
+      table_name: Име
+      table_phase: Фаза
+      table_actions: Радње
+      no_budgets: Нема активних партиципативних буџета.
+    budget_investments:
+      alert:
+        unverified_user: Корисник није потврђен
+      create: Креирајте буџетску инвестицију
+      edit: Уредите буџетску инвестицију
+      filters:
+        heading: Концепт
+        unfeasible: Неизводљива улагања
+      print:
+        print_button: Штампајте
+      search_results:
+        one: " садржи термин%{search_term}"
+        few: " садржи термине%{search_term}"
+        other: " садржи термине%{search_term}"
+    sessions:
+      signed_out: Успешно сте се одјавили.
+      signed_out_managed_user: Успешно сте се одјавили са корисничке сесије.
+    username_label: Корисничко име
+    users:
+      create_user: Креирајте нови налог
+      create_user_info: Креираћемо налог са следећим подацима
+      create_user_submit: Креирајте корисника
+      create_user_success: Poslali smo poruku na adresu <b>%{email}</b> da bi potvrdili da pripada ovom korisniku. U poruci je link na koji korisnik treba da klikne. Zatim, korisnik treba da postavi lozinku pre nego što će moći da se prijavi na portal
+      autogenerated_password: "Automatski generisana lozinka je <b>%{password}</b>. Možete je promeniti u delu \"Moj Nalog\""
+      email_optional_label: Емиал (опционално)
+      erased_notice: Кориснички налог обрисан.
+      erased_by_manager: "Обрисано од стране управљача: %{manager}"
+      erase_account_link: Обришите корисника
+      erase_account_confirm: Да ли сте сигурни да желите да обришете налог? Ова радња се не може поништити
+      erase_warning: Ова радња се не може опозвати. Уверите се да је желите да обришете налог.
+      erase_submit: Обришите налог
+    user_invites:
+      new:
+        label: Емаил-ови
+        info: "Унесите емаилове одвојене зарезима (',')"
+        submit: Пошаљите позивнице
+        title: Пошаљите позивнице
+      create:
+        success: <strong>%{count} позива</strong> је послато.
+        title: Пошаљите позивнице

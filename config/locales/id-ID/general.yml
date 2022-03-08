@@ -82,8 +82,6 @@ id:
       tags_placeholder: "Masukkan tag anda ingin gunakan, dipisahkan dengan koma (',')"
     index:
       featured_debates: Fitur
-      filter_topic:
-        other: " dengan topik '%{topic}'"
       orders:
         confidence_score: nilai tertinggi
         created_at: terbaru
@@ -196,7 +194,6 @@ id:
       help: Bantuan
       my_account_link: Akun saya
       my_activity_link: Aktifitas saya
-      open: buka
       open_gov: Pemerintahan terbuka
       proposals: Proposal
       poll_questions: Suara
@@ -206,8 +203,6 @@ id:
           other: Anda memiliki %{count} pemberitahuan baru
         notifications: Pemberitahuan
         no_notifications: "Anda tidak memiliki pemberitahuan baru"
-    admin:
-      watch_form_message: "Anda memiliki perubahan yang belum disimpan. Apakah anda mengkonfirmasi untuk meninggalkan halaman?"
   notifications:
     index:
       empty_notifications: Anda tidak memiliki pemberitahuan baru.
@@ -242,8 +237,6 @@ id:
       sign_in: Login dengan Google
       sign_up: Login dengan Google
       name: Twitter
-    info_sign_in: "Masuk dengan:"
-    info_sign_up: "Mendaftar dengan:"
     or_fill: "Atau mengisi formulir berikut:"
   proposals:
     create:
@@ -280,8 +273,6 @@ id:
       map_skip_checkbox: "Proposal ini tidak memiliki beton lokasi atau aku tidak menyadari hal itu."
     index:
       featured_proposals: Unggulan
-      filter_topic:
-        other: " dengan topik '%{topic}'"
       orders:
         confidence_score: nilai tertinggi
         created_at: terbaru
@@ -470,7 +461,6 @@ id:
     follow: "Ikuti"
     following: "Berikut"
     follow_entity: "Ikuti %{entity}"
-    hide: Sembunyikan
     print:
       print_button: Cetak info ini
     search: Cari

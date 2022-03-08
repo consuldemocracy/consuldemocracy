@@ -4,5 +4,5 @@ da:
       no_milestones: Har ingen milepæle
       progress: Forløb
     show:
-      publication_date: "Publiceret %{publication_date}"
+      publication_date: "Milepæl %{publication_date}"
       status_changed: Status er ændret til

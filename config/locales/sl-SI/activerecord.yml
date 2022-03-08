@@ -153,7 +153,6 @@ sl:
           attributes:
             document_number:
               not_in_census: "Dokumenta ni v popisu"
-              has_voted: "Uporabnik je že glasoval"
         legislation/process:
           attributes:
             end_date:

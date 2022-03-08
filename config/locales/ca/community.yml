@@ -1,14 +1,53 @@
 ca:
   community:
+    sidebar:
+      title: Comunitat
+      description:
+        proposal: Participa a la comunitat d’usuaris d’aquesta proposta.
+        investment: Participa a la comunitat d’usuaris d’aquesta inversió.
+      button_to_access: Accediu a la comunitat
     show:
+      title:
+        proposal: Proposta comunitat
+        investment: Pressupost Comunitat d’inversions
+      description:
+        proposal: Participa a la comunitat d’aquesta proposta. Una comunitat activa pot ajudar a millorar el contingut de la proposta i potenciar la seva difusió per obtenir més suport.
+        investment: Participa a la comunitat d’aquesta inversió pressupostària. Una comunitat activa pot ajudar a millorar el contingut de la inversió pressupostària i impulsar-ne la difusió per obtenir més suport.
+      create_first_community_topic:
+        first_theme_not_logged_in: No hi ha cap problema disponible i participa en la creació del primer.
+        first_theme: Creeu el primer tema de la comunitat
+        sub_first_theme: "Per crear un tema heu de ser %{sign_in} o %{sign_up}."
+      tab:
+        participants: Participants
       sidebar:
         participate: Col·labora en l'elaboració de la normativa sobre
+        new_topic: Crea tema
       topic:
+        edit: Edita el tema
+        destroy: Suprimeix el tema
         comments:
+          zero: Sense comentaris
           one: 1 Comentari
           other: "%{count} comentaris"
       author: Autor
+      back: Tornar %{community} %{proposal}
     topic:
+      create: Crea un tema
+      edit: Edita el tema
+      form:
+        new:
+          submit_button: Crea tema
+        edit:
+          submit_button: Edita el tema
+        create:
+          submit_button: Crea tema
+        update:
+          submit_button: Actualitzar el tema
       show:
         tab:
           comments_tab: Comentarios
+      sidebar:
+        recommendations_title: Recomanacions per crear un tema
+        recommendation_one: No escriviu el títol del tema ni les frases completes en majúscules. A internet que es considera cridant. I a ningú li agrada que li cridin.
+        recommendation_two: S'eliminaran qualsevol tema o comentari que impliqui una acció il·legal, també aquells que pretenen sabotejar els espais del subjecte, tot el que sigui permès.
+        recommendation_three: Gaudeix d’aquest espai, de les veus que l’omplen, també és teu.

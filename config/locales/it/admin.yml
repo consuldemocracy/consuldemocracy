@@ -603,6 +603,7 @@ it:
       title_booths: Seggi
       legislation: Legislazione collaborativa
       users: Utenti
+      debates: "Dibattiti"
     administrators:
       index:
         title: Amministratori
@@ -865,6 +866,7 @@ it:
         no_questions: "Non ci sono quesiti assegnati a questa votazione."
         questions_title: "Elenco dei quesiti"
         table_title: "Titolo"
+        edit_answers: Risposte
       flash:
         question_added: "Domanda aggiunta a questo sondaggio"
         error_on_question_added: "La domanda non può essere assegnata a questo sondaggio"
@@ -1034,15 +1036,6 @@ it:
           without_confirmed_hide: In sospeso
         title: Proposte nascoste
         no_hidden_proposals: Non ci sono proposte nascoste.
-    proposal_notifications:
-      index:
-        filter: Filtra
-        filters:
-          all: Tutti
-          with_confirmed_hide: Confermato
-          without_confirmed_hide: In sospeso
-        title: Notififiche nascoste
-        no_hidden_proposals: Non ci sono notifiche nascoste.
     settings:
       flash:
         updated: Valore aggiornato
@@ -1083,6 +1076,8 @@ it:
       proposal_search:
         button: Ricercare
         placeholder: Ricercare le proposte per titolo, codice. descrizione o domanda
+      debate_search:
+        placeholder: Cerca dibattiti per titolo o descrizione
       user_search:
         button: Ricercare
         placeholder: Cerca utente in base al nome o all’email
@@ -1170,6 +1165,8 @@ it:
         proposal_notifications: Notifiche di proposta
         incomplete_verifications: Verifiche incomplete
         polls: Votazioni
+      graph:
+        debate_created: Dibattiti
       direct_messages:
         title: Messaggi diretti
         total: Totale

@@ -26,12 +26,13 @@ en:
       title: "Proposal notifications in %{org_name}"
       share: Share proposal
       comment: Comment proposal
-      unsubscribe: "If you don't want receive proposal's notification, visit %{account} and uncheck 'Receive a summary of proposal notifications'."
+      unsubscribe: "If you don't want to receive any proposal notifications, visit %{account} and uncheck 'Receive a summary of proposal notifications'."
       unsubscribe_account: My account
+      unfollow: "Visit this proposal and unfollow it to stop receiving notifications."
     direct_message_for_receiver:
       subject: "You have received a new private message"
       reply: Reply to %{sender}
-      unsubscribe: "If you don't want receive direct messages, visit %{account} and uncheck 'Receive emails about direct messages'."
+      unsubscribe: "If you don't want to receive direct messages, visit %{account} and uncheck 'Receive emails about direct messages'."
       unsubscribe_account: My account
     direct_message_for_sender:
       subject: "You have sent a new private message"
@@ -107,7 +108,7 @@ en:
       introduction: "Your %{title} proposal has been successfully created."
       text_1: "Take advantage that your proposal is not public yet and get ready to contact a lot of people."
       text_2: "When you are ready publish your citizen proposal from this <a href='%{link}'>link</a>."
-      text_3: "We know that creating a proposal with a hook and getting the necessary support can seem complicated. But dont worry because we are going to help you!"
+      text_3: "We know that creating a proposal with a hook and getting the necessary support can seem complicated. But don't worry because we are going to help you!"
       text_4: "You have a tool that will be your new best ally: The Citizen Proposals panel."
       list_1: "Enter every day in the panel of your proposal to use the tips and resources that we will share with you."
       list_2: "These tips, actions and resources will give you ideas and also practical solutions to get more support and a wider community. Dont forget them!"
@@ -117,7 +118,7 @@ en:
       text_6: "here you have several resources and a whole list of tips that will come to you every day to prepare the broadcast!"
       dashboard_button: "Go ahead, discover them!"
     new_actions_notification_on_published:
-      subject: "Your citizen proposal is already published Dont stop spreading!"
+      subject: "Your citizen proposal is already published. Don't stop spreading!"
       hi: "Congratulations %{name}! Your proposal %{title} has been created successfully."
       text_1: "And now, go for your first 100 supports!"
       text_2: "Why 100?"

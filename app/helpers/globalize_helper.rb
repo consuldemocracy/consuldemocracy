@@ -71,7 +71,7 @@ module GlobalizeHelper
 
     current_translation = resource.translation_for(selected_locale(resource))
     if current_translation.errors.added? :base, :translations_too_short
-      content_tag :div, class: "small error" do
+      tag.div class: "small error" do
         current_translation.errors[:base].join(", ")
       end
     end

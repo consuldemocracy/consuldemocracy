@@ -1,1 +1,66 @@
 bg:
+  valuation:
+    header:
+      title: Оценка
+    menu:
+      title: Оценка
+      budgets: Бюджети с участие
+    budgets:
+      index:
+        title: Бюджети с участие
+        filters:
+          current: Отворено
+          finished: Приключено
+        table_name: Име
+        table_phase: Фаза
+        table_assigned_investments_valuation_open: Инвестиционни проекти, възложени с отворена оценка
+        table_actions: Действия
+        evaluate: Оценете
+        no_budgets: "Няма бюджети"
+    budget_investments:
+      index:
+        headings_filter_all: Всички заглавия
+        filters:
+          valuation_open: Отворено
+          valuating: В процес на оценка
+          valuation_finished: Оценка приключена
+        assigned_to: "Възложено на %{valuator}"
+        title: Инвестиционни проекти
+        edit: Редактиране на досието
+        table_title: Заглавие
+        table_heading_name: Име на заглавието
+        table_actions: Действия
+        no_investments: "Няма инвестиционни проекти."
+      show:
+        back: Обратно
+        title: Инвестиционен проект
+        info: Информация за автора
+        by: Изпратено от
+        sent: Изпратено на
+        heading: Заглавие
+        dossier: Досие
+        edit_dossier: Редактиране на досието
+        price: Цена
+        price_first_year: Разходи през първата година
+        feasibility: Изпълнимост
+        feasible: Изпълним
+        unfeasible: Неизпълним
+        undefined: Неопределен
+        valuation_finished: Оценка приключила
+        duration: Времеви обхват
+        responsibles: Отговорници
+        assigned_admin: Назначен администратор
+        assigned_valuators: Назначени оценители
+        preview: Преглед на инвестицията
+      edit:
+        dossier: Досие
+        price: "Цена (%{currency})"
+        price_first_year: "Разходи през първата година (%{currency}) <small>(optional, data not public)</small>"
+        feasibility: Изпълнимост
+        valuation_finished_alert: "Сигурни ли сте, че искате да маркирате този отчет като завършен? Ако го направите, той вече не може да се променя."
+        not_feasible_alert: "Веднага ще бъде изпратен имейл до автора на проекта с доклад за неизпълнимост."
+        save: Запазете промените
+      notice:
+        valuate: "Досието е актуализирано"
+      valuation_comments: Коментари за оценка
+      not_in_valuating_phase: Инвестициите могат да бъдат оценявани само когато Бюджетът е във фаза на оценяване

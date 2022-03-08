@@ -95,9 +95,6 @@ tr:
       tags_placeholder: "Kullanmak istediğiniz etiketleri virgülle ayırarak yazın (',')"
     index:
       featured_debates: Öne Çıkan
-      filter_topic:
-        one: " başlık ile '%{topic}'"
-        other: " başlık ile '%{topic}'"
       orders:
         confidence_score: en yüksek puanlı
         created_at: en yeni
@@ -231,7 +228,6 @@ tr:
       help: Yardım
       my_account_link: Hesabım
       my_activity_link: Faaliyetim
-      open: açık
       open_gov: Açık yönetim
       proposals: Öneriler
       poll_questions: Oylama
@@ -242,8 +238,6 @@ tr:
           other: '%{count} yeni bildirimleriniz var'
         notifications: Bildirimler
         no_notifications: "Yeni bildiriminiz yok"
-    admin:
-      watch_form_message: "Değişiklikleri kaydetmediniz. Sayfadan ayrılmayı onaylıyor musunuz?"
   notifications:
     index:
       empty_notifications: Yeni bildiriminiz yok.
@@ -285,8 +279,6 @@ tr:
       sign_in: Twitter ile oturum aç
       sign_up: Twitter ile kaydol
       name: Twitter
-    info_sign_in: "Bununla oturum aç:"
-    info_sign_up: "Bununla kaydol:"
     or_fill: "Veya aşağıdaki formu doldur:"
   proposals:
     create:
@@ -333,9 +325,6 @@ tr:
       map_skip_checkbox: "Bu teklifin somut bir konumu yok veya ben farkında değilim."
     index:
       featured_proposals: Öne Çıkan
-      filter_topic:
-        one: " '%{topic}' başlıklı"
-        other: " başlık ile '%{topic}'"
       orders:
         confidence_score: en yüksek puanlı
         created_at: en yeni
@@ -687,7 +676,6 @@ tr:
     follow: "Takip et"
     following: "Takip ediliyor"
     follow_entity: "Takip et %{entity}"
-    hide: Gizle
     print:
       print_button: Bu bilgiyi yazdır
     search: Ara

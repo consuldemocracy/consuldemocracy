@@ -9,8 +9,8 @@ module Budgets
       before_action :load_investments
       before_action :load_ballot_referer
 
-      load_and_authorize_resource :budget
-      load_and_authorize_resource :ballot, class: "Budget::Ballot", through: :budget
+      authorize_resource :budget
+      authorize_resource :ballot
       load_and_authorize_resource :line, through: :ballot, find_by: :investment_id, class: "Budget::Ballot::Line"
 
       def create

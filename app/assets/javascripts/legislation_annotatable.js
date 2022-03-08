@@ -31,6 +31,13 @@
         return $(this).contents();
       });
     },
+    loadAnnotationComments: function(annotation_url, annotation_id) {
+      $.ajax({
+        method: "GET",
+        url: annotation_url + "/annotations/" + annotation_id + "/comments",
+        dataType: "script"
+      });
+    },
     renderAnnotationComments: function(event) {
       if (event.offset) {
         $("#comments-box").css({
@@ -40,11 +47,7 @@
       if (App.LegislationAnnotatable.isMobile()) {
         return;
       }
-      $.ajax({
-        method: "GET",
-        url: event.annotation_url + "/annotations/" + event.annotation_id + "/comments",
-        dataType: "script"
-      });
+      App.LegislationAnnotatable.loadAnnotationComments(event.annotation_url, event.annotation_id);
     },
     onClick: function(event) {
       var annotation_id, annotation_url, parents, parents_ids, target;
@@ -66,14 +69,14 @@
       $("#comments-box").html("");
       App.LegislationAllegations.show_comments();
       $("#comments-box").show();
-      $.event.trigger({
+      $("body").trigger({
         type: "renderLegislationAnnotation",
         annotation_id: target.data("annotation-id"),
         annotation_url: target.closest(".legislation-annotatable").data("legislation-annotatable-base-url"),
         offset: target.offset().top
       });
       parents_ids.each(function(i, pid) {
-        $.event.trigger({
+        $("body").trigger({
           type: "renderLegislationAnnotation",
           annotation_id: pid,
           annotation_url: target.closest(".legislation-annotatable").data("legislation-annotatable-base-url")
@@ -106,17 +109,13 @@
         });
         if ($("[data-legislation-open-phase]").data("legislation-open-phase") !== false) {
           App.LegislationAnnotatable.highlight("#7fff9a");
-          $("#comments-box textarea").focus();
+          $("#comments-box textarea").trigger("focus");
           $("#new_legislation_annotation").on("ajax:complete", function(e, data) {
-            App.LegislationAnnotatable.app.destroy();
             if (data.status === 200) {
               App.LegislationAnnotatable.remove_highlight();
+              App.LegislationAnnotatable.app.annotations.runHook("annotationCreated", [data.responseJSON]);
               $("#comments-box").html("").hide();
-              $.ajax({
-                method: "GET",
-                url: annotation_url + "/annotations/" + data.responseJSON.id + "/comments",
-                dataType: "script"
-              });
+              App.LegislationAnnotatable.loadAnnotationComments(annotation_url, data.responseJSON.id);
             } else {
               $(e.target).find("label").addClass("error");
               $("<small class='error'>" + data.responseJSON[0] + "</small>").insertAfter($(e.target).find("textarea"));
@@ -145,7 +144,7 @@
                 $("html,body").animate({
                   scrollTop: el.offset().top
                 });
-                $.event.trigger({
+                $("body").trigger({
                   type: "renderLegislationAnnotation",
                   annotation_id: ann_id,
                   annotation_url: el.closest(".legislation-annotatable").data("legislation-annotatable-base-url"),
@@ -187,11 +186,20 @@
         }
       };
     },
+    initCommentFormToggler: function() {
+      $("body").on("click", ".comment-box a.publish-comment", function(e) {
+        e.preventDefault();
+        var annotation_id = $(this).closest(".comment-box").data("id");
+        $("a.publish-comment").hide();
+        $("#js-comment-form-annotation-" + annotation_id).toggle();
+        $("#js-comment-form-annotation-" + annotation_id + " textarea").trigger("focus");
+      });
+    },
     initialize: function() {
       var current_user_id;
-      $(document).off("renderLegislationAnnotation").on("renderLegislationAnnotation", App.LegislationAnnotatable.renderAnnotationComments);
-      $(document).off("click", "[data-annotation-id]").on("click", "[data-annotation-id]", App.LegislationAnnotatable.onClick);
-      $(document).off("click", "[data-cancel-annotation]").on("click", "[data-cancel-annotation]", function(e) {
+      $("body").on("renderLegislationAnnotation", App.LegislationAnnotatable.renderAnnotationComments);
+      $("body").on("click", "[data-annotation-id]", App.LegislationAnnotatable.onClick);
+      $("body").on("click", "[data-cancel-annotation]", function(e) {
         e.preventDefault();
         $("#comments-box").html("");
         $("#comments-box").hide();
@@ -227,6 +235,13 @@
           });
         });
       });
+
+      App.LegislationAnnotatable.initCommentFormToggler();
+    },
+    destroy: function() {
+      if ($(".legislation-annotatable").length > 0) {
+        App.LegislationAnnotatable.app.destroy();
+      }
     }
   };
 }).call(this);

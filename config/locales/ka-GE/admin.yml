@@ -1,0 +1,1617 @@
+ka:
+  admin:
+    header:
+      title: ადმინისტრაცია
+    actions:
+      actions: მოქმედებები
+      confirm: დარწმუნებული ხართ?
+      confirm_hide: მოდერაციის დადასტურება
+      hide: დამალვა
+      hide_author: ავტორის დამალვა
+      restore: აღდგენა
+      mark_featured: გამორჩეული
+      unmark_featured: გამორჩეულებიდან წაშლა
+      edit: რედაქტირება
+      configure: კონფიგურაცია
+      delete: წაშლა
+    officing_booth:
+      title: "თქვენ ზედამხედველობას უწევთ ჯიხურს, რომელიც მდებარეობს %{booth}. თუ აღნიშნული ინფორმაცია მცდარია, არ გააგრძელოთ პროცესი და დაუკავშირდით მხარდაჭერის სამსახურს. გმადლობთ."
+    banners:
+      index:
+        title: ბანერები
+        create: ბანერის შექმნა
+        edit: ბანერის რედაქტირება
+        delete: ბანერის წაშლა
+        filters:
+          all: ყველა
+          with_active: აქტიური
+          with_inactive: არააქტიური
+        preview: ესკიზი
+      banner:
+        sections_label: ის სექციები, სადაც ბანერი გამოჩნდება
+        sections:
+          homepage: მთვარი გვერდი
+          debates: დებატები
+          proposals: ინიციატივები
+          budgets: მონაწილეობითი ბიუჯეტირება
+          help_page: დახმარების გვერდი
+      edit:
+        editing: ბანერის რედაქტირება
+        form:
+          submit_button: ცვლილებების შენახვა
+      new:
+        creating: ბანერის შექმნა
+    activity:
+      show:
+        action: მოქმედება
+        actions:
+          block: დაბლოკილი
+          hide: დამალული
+          restore: აღდგენილი
+        by: მოდერატორი
+        content: შინაარსი
+        filter: ჩვენება
+        filters:
+          all: ყველა
+          on_comments: კომენტარები
+          on_debates: დებატები
+          on_proposals: ინიციატივები
+          on_users: მომხმარებლები
+          on_system_emails: სისტემური შეტყობინებები
+        title: მოდერატორის აქტივობა
+        type: ტიპი
+        no_activity: მოდერატორების აქტივობა არ მოიძებნა.
+    budgets:
+      index:
+        title: მონაწილეობითი ბიუჯეტები
+        new_link: ახალი ბიუჯეტის შექმნა
+        filter: ფილტრი
+        filters:
+          open: მიმდინარე
+          finished: დასრულებული
+        budget_investments: პროექტების მართვა
+        table_name: სახელი
+        table_phase: ფაზა
+        table_investments: ინვესტიციები
+        table_edit_groups: სათაურების ჯგუფები
+        table_edit_budget: რედაქტირება
+        table_admin_ballots: ბიულეტენები
+        edit_groups: სათაურების ჯგუფების რედაქტირება
+        edit_budget: ბიუჯეტის რედაქტირება
+        admin_ballots: ადმინისტრაციული ბიულეტენები
+        no_budgets: "ბიუჯეტები არ მოიძებნა."
+      create:
+        notice: წარმატებით შეიქმნა ახალი მონაწილეობითი ბიუჯეტი!
+      update:
+        notice: მონაწილეობითი ბიუჯეტი წარმატებით განახლდა
+      edit:
+        title: მონაწილეობითი ბიუჯეტის რედაქტირება
+        delete: ბიუჯეტის წაშლა
+        phase: ფაზა
+        dates: თარიღები
+        enabled: აქტიურია
+        actions: მოქმედებები
+        edit_phase: ფაზის რედაქტირება
+        active: აქტიური
+        blank_dates: თარიღები არ არის შევსებული
+        administrators:
+          zero: "შეარჩიეთ ადმინისტრატორები"
+          one: "შერჩეულია 1 ადმინისტრატორი"
+          other: "შერჩეულია %{count} ადმინისტრატორი"
+        valuators:
+          zero: "შეარჩიეთ შემფასებლები"
+          one: "შერჩეულია 1 შემფასებელი"
+          other: "შერჩეულია %{count} შემფასებელი"
+        empty_administrators: "ადმინისტრატორები არ მოიძებნა"
+        empty_valuators: "შემფასებლები არ მოიძებნა"
+      destroy:
+        success_notice: ბიუჯეტი წარმატებით წაიშალა
+        unable_notice: ინვესტიციებთან დაკავშირებული ბიუჯეტის წაშლა შეუძლებელია
+        unable_notice_polls: ხმის მიცემასთან დაკავშირებული ბიუჯეტის წაშლა შეუძლებელია
+      new:
+        title: ახალი მონაწილეობითი ბიუჯეტი
+      winners:
+        calculate: გამარჯვებული ინვესტიციების გამოთვლა
+        calculated: მიმდინარეობს გამარჯვებული ინვესტიციების დათვლა, გთხოვთ, დაელოდოთ.
+        recalculate: გამარჯვებული ინვესტიციების ხელახლა გამოთვლა
+    budget_groups:
+      name: "სახელი"
+      headings_name: "რუბრიკები"
+      headings_edit: "რუბრიკების რედაქტირება"
+      headings_manage: "რუბრიკების მართვა"
+      no_groups: "ჯგუფები არ მოიძებნა."
+      amount:
+        one: "მოიძებნა 1 ჯგუფი"
+        other: "მოიძებნა %{count} ჯგუფი"
+      create:
+        notice: "ჯგუფი წარმატებით შეიქმნა!"
+      update:
+        notice: "ჯგუფი წარმატებით შეიცვალა"
+      destroy:
+        success_notice: "ჯგუფი წარმატებით წაიშალა"
+        unable_notice: "რუბრიკებთან დაკავშირებული ჯგუფის წაშლა შეუძლებელია"
+      form:
+        create: "ახალი ჯგუფის შექმნა"
+        edit: "ჯგუფის რედაქტირება"
+        max_votable_headings_info: "მიესადაგება მხოლოდ პროექტების შერჩევის ფაზას. ხმის მიცემის ფაზაში მომხმარებლებს ჯგუფიდან მხოლოდ ერთი რუბრიკისთვის შეუძლიათ ხმის მიცემა."
+        submit: "ჯგუფის შენახვა"
+      index:
+        back: "ბიუჯეტებში დაბრუნება"
+    budget_headings:
+      no_headings: "სათაურები არ მოიძებნა."
+      amount:
+        one: "მოიძებნა 1 სათაური"
+        other: "მოიძებნა %{count} სათაური"
+      create:
+        notice: "სათაური წარმატებით შეიქმნა!"
+      update:
+        notice: "სათაური წარმატებით შეიცვალა"
+      destroy:
+        success_notice: "სათაური წარმატებით წაიშალა"
+        unable_notice: "ინვესტიციებთან დაკავშირებული სათაურის წაშლა შეუძლებელია"
+      form:
+        max_ballot_lines_info: 'მაქსიმალური რაოდენობა რუბრიკაში წარმოდგნელი პროექტებისა, რომელზეც ხმის მიცემა შეუძლია მომხმარებელს. ვრცელდება მხოლოდ იმ საბიუჯეტო პროექტებზე, რომლებზე ხმის მიცემაც დამტკიცების წესით ხორციელდება.'
+        population_info: "ბიუჯეტის რუბრიკაში არსებული მოსახლეობის ველი გამოიყენება სტატისტიკური მიზნებისთვის და მიუთითებს იმაზე, თუ კონკრეტულ არეალზე მაცხოვრებელი მოსახლეობის რამდენმა პროცენტმა მისცა ხმა. ეს ველი არჩევითია და შესაბამისად, შეგიძლიათ დატოვოთ ცარიელი."
+        coordinates_info: "თუ გრძედი და განედი მითითებულია, ამ რუბრიკისთვის გამოყოფილ ინვესტიციების გვერდზე განთავსებული იქნება რუკა, რომლის ცენტრიც აღმიშნული კოორდინატებიდან აითვლება."
+        content_blocks_info: "თუ შინაარსის ბლოკი ჩართულია, თქვენ შეძლებთ შექმნათ ამ თემასთან დაკავშირებული პერსონალური ინფორმაცია შემდეგი მანიპულაციებით > პარამეტრები> პერსონალური შინაარსის ბლოკები. შექმნილი ინფორმაცია აღნიშნული რუბრიკის ინვესტიციების გვერდზე გამოჩნდება."
+        create: "ახალი რუბრიკის შექმნა"
+        edit: "რუბრიკის რედაქტირება"
+        submit: "რუბრიკის დამახსოვრება"
+      index:
+        back: "ჯგუფებში დაბრუნება"
+    budget_phases:
+      edit:
+        summary_help_text: ეს ტექსტი ინფორმაციას მიაწვდის მომხმარებელს კონკრეტული ფაზის შესახებ. თუ გსურთ, ინფორმაცია გამოჩნდეს მაშინაც, როცა მოცემული ფაზა არააქტიურია, აირჩიეთ ქვემოთ მდებარე მოსანიშნი
+        description_help_text: ეს ტექსტი გამოჩნდება სათაურის ველში, როდესაც ფაზა აქტიურია
+        enabled_help_text: ეს ფაზა საჯარო გახდება ბიუჯეტის ფაზების დროის გრაფიკზე, ამასთან, იგი აქტიური იქნება სხვა მიზნებისთვისაც
+        save_changes: ცვლილებების შენახვა
+    budget_investments:
+      index:
+        heading_filter_all: ყველა რუბრიკა
+        administrator_filter_all: ყველა ადმინისტრატორი
+        valuator_filter_all: ყველა შემფასებელი
+        tags_filter_all: ყველა ტეგი
+        advanced_filters: დამატებითი ფილტრები
+        placeholder: პროექტების ძებნა
+        filters:
+          all: ყველა
+          without_admin: ინდივიდუალური ადმინისტრატორის გარეშე
+          without_valuator: ინდივიდუალური შემფასებლის გარეშე
+          under_valuation: მიმდინარეობს შეფასება
+          valuation_finished: შეფასება დასრულებულია
+          feasible: განხორციელებადი
+          selected: შერჩეული
+          undecided: გადასაწყვეტია
+          unfeasible: შეუძლებელი
+          min_total_supports: მხარდამჭერთა მინიმალური რაოდენობა
+          max_total_supports: მხარდამჭერთა მაქსიმალური რაოდენობა
+          winners: გამარჯვებულები
+          one_filter: "აქტიური ფილტრები: <b><em>%{filter}</em></b>"
+          two_filters: "აქტიური ფილტრები: <b><em>%{filter}, %{advanced_filters}</em></b>"
+        buttons:
+          filter: ფილტრი
+        download_current_selection: "შერჩეულების ჩამოტვირთვა"
+        no_budget_investments: "საინვესტიციო პროექტები არ მოიძებნა."
+        title: საინვესტიციო პროექტები
+        columns: სვეტები
+        assigned_admin: გამოყოფილი ადმინისტრატორი
+        no_admin_assigned: ადმინისტრატორი შერჩეული არ არის
+        no_valuators_assigned: შემფასებელი შერჩეული არ არის
+        feasibility:
+          feasible: "განხორციელებადი"
+          unfeasible: "შეუძლებელი"
+          undecided: "გადასაწყვეტია"
+        selected: "შერჩეული"
+        select: "შერჩევა"
+        list:
+          id: ID
+          title: სათაური
+          supports: მხარდამჭერები
+          admin: ადმინისტრატორი
+          valuator: შემფასებელი
+          valuation_group: შემფასებელთა ჯგუფი
+          geozone: მოქმედების სფერო
+          feasibility: განხორციელებადობა
+          valuation_finished: შეფასება დასრულდა
+          selected: შერჩეული
+          visible_to_valuators: შემფასებლებისთვის ჩვენება
+          author_username: ავტორი მომხმარებლის სახელი
+          incompatible: შეუთავსებელია
+          price: ფასი
+          author: ავტორი
+        cannot_calculate_winners: გამარჯვებულთა პროექტების გამოსათვლელად ბიუჯეტი უნდა დარჩეს "კენჭისყრის პროექტები", "ბიულეტენების განხილვა" ან "დასრულებული ბიუჯეტის" ფაზაზე
+        see_results: "შედეგების ნახვა"
+        milestone_tags_filter_all: "ყველა ეტაპის აღმნიშვნელი ტეგები"
+      show:
+        assigned_admin: გამოყოფილი ადმინისტრატორი
+        assigned_valuators: გამოყოფილი შემფასებლები
+        classification: კლასიფიკაცია
+        info: "%{budget_name} - ჯგუფი: %{group_name} - საინვესტიციო პროექტი %{id}"
+        edit: რედაქტირება
+        edit_classification: კლასიფიკაციის რედაქტირება
+        by: ავტორი
+        sent: გაგზავნილი
+        group: ჯგუფი
+        heading: რუბრიკა
+        dossier: დოსიე
+        edit_dossier: დოსიეს რედაქტირება
+        tags: ტეგები
+        undefined: განუსაზღვრელი
+        compatibility:
+          title: თავსებადობა
+          "true": შეუთავსებელია
+          "false": თავსებადია
+        selection:
+          title: შერჩევა
+        winner:
+          title: გამარჯვებული
+          "true": "დიახ"
+          "false": "არა"
+        valuator_groups: "შემფასებელთა ჯგუფები"
+        preview: ინვესტიციის ესკიზი
+      edit:
+        classification: კლასიფიკაცია
+        compatibility: თავსებადობა
+        selection: შერჩევა
+        assigned_valuators: შემფასებლები
+        select_heading: რუბრიკის შერჩევა
+        submit_button: განახლება
+        user_tags: მომხმარებლის მიერ გამოყოფილი ტეგები
+        tags_placeholder: "ჩაწერეთ სასურველი ტეგები და გამოყავით ერთმანეთისგან მძიმით (,)"
+        undefined: განუსაზღვრელი
+      search_unfeasible: ძებნა შეუძლებელია
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "სათაური"
+        table_description: "აღწერა"
+        table_publication_date: "გამოქვეყნების თარიღი"
+        table_status: სტატუსი
+        table_actions: "მოქმედებები"
+        delete: "ეტაპის წაშლა"
+        no_milestones: "ეტაპები განსაზღვრული არ არის"
+        image: "ფოტოსურათი"
+        show_image: "ფოტოსურათის ჩვენება"
+        documents: "დოკუმენტები"
+        milestone: ეტაპი
+        new_milestone: ახალი ეტაპის შექმნა
+        milestone_tags: ეტაპის აღმნიშვნელი ტეგები
+      form:
+        admin_statuses: სტატუსების მართვა
+        no_statuses_defined: განსაზღვრული სტატუსები არ მოიძებნა
+      new:
+        creating: ახალი ეტაპის შექმნა
+      edit:
+        title: ეტაპის რედაქტირება
+      create:
+        notice: ახალი ეტაპი წარმატებით შეიქმნა!
+      update:
+        notice: ეტაპი წარმატებით შეიცვალა
+      delete:
+        notice: ეტაპი წარმატებით წაიშალა
+    statuses:
+      index:
+        title: ეტაპის სტატუსები
+        empty_statuses: ეტაპის სტატუსები არ მოიძებნა
+        new_status: ეტაპის ახალი სტატუსის შექმნა
+        table_name: სახელი
+        table_description: აღწერა
+        table_actions: მოქმედებები
+        delete: წაშლა
+        edit: რედაქტირება
+      edit:
+        title: ეტაპის სტატუსის რედაქტირება
+      update:
+        notice: ეტაპის სტატუსი წარმატებით შეიცვალა
+      new:
+        title: ეტაპის სტატუსის შექმნა
+      create:
+        notice: ეტაპის სტატუსი წარმატებით შეიქმნა
+      delete:
+        notice: ეტაპის სტატუსი წარმატებით წაიშალა
+    progress_bars:
+      manage: "მიმდინარეობის ინდიკატორების მართვა"
+      index:
+        title: "მიმდინარეობის ინდიკატორები"
+        no_progress_bars: "მიმდინარეობის ინდიკატორები არ მოიძებნა"
+        new_progress_bar: "მიმდინარეობის ახალი ინდიკატორის შექმნა"
+        primary: "მიმდინარეობის პირვანდელი ინდიკატორი"
+        table_id: "ID"
+        table_kind: "ტიპი"
+        table_title: "სათაური"
+        table_percentage: "მიმდინარე პროცესი"
+      new:
+        creating: "მიმდინარეობის ინდიკატორის შექმნა"
+      edit:
+        title:
+          primary: "მიმდინარეობის პირვანდელი ინდიკატორის რედაქტირება"
+          secondary: "მიდმინარეობის ინდიკატორი %{title}-ის რედაქტირება"
+      create:
+        notice: "მიმდინარეობის ინდიკატორი წარმატებით შეიქმნა!"
+      update:
+        notice: "მიმდინარეობის ინდიკატორი წარმატებით განახლდა"
+      delete:
+        notice: "მიმდინარეობის ინდიკატორი წარმატებით წაიშალა"
+    comments:
+      index:
+        id: "ID"
+        content: "შინაარსი"
+        author: "ავტორი"
+        commentable_type: "ტიპი"
+        title: კომენტარები
+        no_comments: კომენტარები არ მოიძებნა.
+        table_link: "ბმული"
+    hidden_comments:
+      index:
+        filter: ფილტრი
+        filters:
+          all: ყველა
+          with_confirmed_hide: დადასტურებულია
+          without_confirmed_hide: მოლოდინის რეჟიმშია
+        hidden_debate: დამალული დებატები
+        hidden_proposal: დამალული ინიციატივა
+        title: დამალული კომენტარები
+        no_hidden_comments: დამალული კომენტარები არ მოიძებნა.
+    dashboard:
+      index:
+        back: '%{org}-ზე დაბრუნება'
+        title: ადმინისტრირება
+        description: კეთილი იყოს თქვენი მობრძანება %{org} ადმინ პანელში.
+      actions:
+        index:
+          description: "ინიციატივის შექმნასთან ერთად, მომხმარებელს ენიჭება წვდომა ინიციატივების დაფაზე, სადაც მათ მიერ წამოჭრილი იდეების მხარდასაჭერად, თქვენ შეგეძლებათ შესთავაზოთ რესურსები და რეკომენდაციები."
+          create: შექმენით რესურსი ან მოქმედება
+          edit: რედაქტირება
+          delete: წაშლა
+          active: 'დიახ'
+          inactive: 'არა'
+          title: რესურსები და მოქმედებები
+          action_title: სათაური
+          action_type: ტიპი
+          required_supports: მხარდამჭერთა საჭირო რაოდენობა
+          day_offset: საჭირო დღეები
+          action_active: აქტიური
+          order: თანმიმდევრობა
+          published_proposal: გამოქვეყნებული ინიციატივა
+          default:
+            email: ელ.ფოსტა
+            polls: ხმის მიცემის პროცესები
+            poster: პოსტერი
+        new:
+          creating: ახალი მოქმედება ინიციატივათა მართვის დაფისთვის
+          back: ჩამონათვალში დაბრუნება
+        create:
+          notice: მოქმედება წარმატებით შეიქმნა
+        edit:
+          editing: მოქმედების რედაქტირება ინიციატივათა მართვის დაფისთვის
+          back: ჩამონათვალში დაბრუნება
+        delete:
+          success: მოქმედება წარმატებით წაიშალა
+        form:
+          submit_button: შენახვა
+          help_text: ამ ცვლადის უგელებელყოფისათვის შეიყვანეთ 0
+          published_proposal_help_text: მხოლოდ გამოქვეყნებული ინიციატივებისთვის მოქმედების შესაქმნელად მონიშნეთ უჯრედი
+      administrator_tasks:
+        index:
+          description: "ინიციატივათა სამართავ დაფაზე გამოქვეყნებულ რესურსებში შესაძლოა ჩასმული იყოს ადმინისტრაციასთან თხოვნის გასაგზავნი ღილაკი. მომხმარებელთა თხოვნები ნაჩვენებია ქვემოთ."
+          title: მოთხოვნილი რესურსები
+          solve: შესრულება
+          no_records: მოთხოვნილი რესურსები არ მოიძებნა
+          source: წყარო
+          resource: მოთხოვნილი რესურსი
+          filter: ფილტრი
+          filters:
+            pending: მოლოდინის რეჟიმშია
+            done: შესრულებულია
+        edit:
+          back: მოლოდინის რეჟიმში მყოფი დავალებების სიაში დაბრუნება
+          solving: მოლოდინის რეჟიმში მყოფი დავალების შესრულება
+        form:
+          solve: შესრულებულად მონიშვნა
+          proposal: ინიციატივა
+          request: მოთხოვნილი რესურსი
+        update:
+          success: დავალება აღინიშნა, როგორც შესრულებული.
+    debates:
+      index:
+        id: ID
+        author: ავტორი
+        title: დებატები
+        no_debates: დებატები არ მოიძებნა.
+    hidden_debates:
+      index:
+        filter: ფილტრი
+        filters:
+          all: ყველა
+          with_confirmed_hide: დადასტურებულია
+          without_confirmed_hide: მოლოდინის რეჟიმშია
+        title: დამალული დებატები
+        no_hidden_debates: დამალული დებატები არ მოიძებნა.
+    documents:
+      new:
+        title: "დოკუმენტის ატვირთვა"
+        submit_button: "ატვირთვა"
+      index:
+        new_link: "ახალი დოკუმენტის დამატება"
+        no_documents: "დოკუმენტები არ მოიძებნა."
+        title: "დოკუმენტები"
+        format: "ფორმატი"
+        size: "ზომა"
+        url: "ბმული (URL)"
+      create:
+        success_notice: "დოკუმენტი წარმატებით აიტვირთა"
+        unable_notice: "შეცდომა დოკუმენტის ატვირთვისას"
+      destroy:
+        success_notice: "დოკუმენტი წარმატებით წაიშალა"
+    hidden_users:
+      index:
+        filter: ფილტრი
+        filters:
+          all: ყველა
+          with_confirmed_hide: დადასტურებულია
+          without_confirmed_hide: მოლოდინის რეჟიმშია
+        title: დამალული მომხმარებლები
+        user: მომხმარებელი
+        no_hidden_users: დამალული მომხმარებლები არ მოიძებნა.
+      show:
+        email: "ელ.ფოსტა:"
+        hidden_at: "დამალვის თარიღი:"
+        registered_at: "რეგისტრაციის თარიღი:"
+        title: მომხმარებლის აქტივობა (%{user})
+    hidden_budget_investments:
+      index:
+        filter: ფილტრი
+        filters:
+          all: ყველა
+          with_confirmed_hide: დადასტურებულია
+          without_confirmed_hide: მოლოდინის რეჟიმშია
+        title: დამალული საბიუჯეტო ინვესტიციები
+        no_hidden_budget_investments: დამალული საბიუჯეტო ინვესტიციები არ მოიძებნა
+    legislation:
+      processes:
+        create:
+          notice: 'პროცესი წარმატებით შეიქმნა. <a href="%{link}">ნახვა</a>'
+          error: პროცესის შექმნა ვერ მოხერხდა
+        update:
+          notice: 'პროცესი წარმატებით განახლდა. <a href="%{link}">ნახვა</a>'
+          error: პროცესის განახლება ვერ მოხერხდა
+        destroy:
+          notice: პროცესი წარმატებით წაიშალა
+        edit:
+          back: უკან
+          submit_button: ცვლილებების შენახვა
+        form:
+          enabled: აქტიურია
+          process: პროცესი
+          debate_phase: დებატების ფაზა
+          draft_phase: პროექტის ფაზა
+          draft_phase_description: თუ ეს ფაზა აქტიურია, პროცესი არ გამოჩნდება პროცესების საძიებელში. გააქტიურეთ პროცესის წინასწარ გადახედვის ფუნქცია.
+          allegations_phase: კომენტარების ფაზა
+          proposals_phase: ინიციატივების ფაზა
+          use_markdown: ტექსტის ფორმატირებისთვის გამოიყენეთ შემცირების ღილაკი
+          title_placeholder: პროცესის დასახელება
+          summary_placeholder: აღწერის მოკლე შინაარსი
+          description_placeholder: პროცესის აღწერის დამატება
+          additional_info_placeholder: დაამატეთ დამატებითი მნიშვნელოვანი ინფორმაცია
+          homepage_description: განმარტეთ პროცესის შინაარსი
+          banner_title: სათაურის ფერები
+        index:
+          create: ახალი პროცესი
+          delete: წაშლა
+          title: საკანონმდებლო ინიციატივა
+          filters:
+            active: აქტიური
+            all: ყველა
+        new:
+          back: უკან
+          title: ახალი საკანონმდებლო ინიციატივის პროცესის შექმნა
+          submit_button: პროცესის შექმნა
+        proposals:
+          select_order: დალაგება
+          orders:
+            id: Id
+            title: სათაური
+            supports: მხარდამჭერთა საერთო რაოდენობა
+        process:
+          title: პროცესი
+          comments: კომენტარები
+          status: სტატუსი
+          start_date: დაწყების თარიღი
+          end_date: დასრულების თარიღი
+          status_open: მიმდინარე
+          status_closed: დახურული
+          status_planned: დაგეგმილი
+        subnav:
+          info: ინფორმაცია
+          homepage: მთავარი გვერდი
+          draft_versions: პროექტის შედგენა
+          questions: დებატები
+          proposals: ინიციატივები
+          milestones: მომდევნო
+      homepage:
+        edit:
+          title: საწყისი გვერდის კონფიგურაცია
+      proposals:
+        index:
+          title: სათაური
+          back: უკან
+          id: Id
+          supports: მხარდამჭერთა საერთო რაოდენობა
+        form:
+          custom_categories: კატეგორიები
+          custom_categories_description: კატეგორიები, რომელთა არჩევაც მომხმარებლებს ინიციატივის შექმნის პროცესში შეუძლიათ. მაქსიმუმ 160 სიმბოლო.
+          custom_categories_placeholder: შეიყვანეთ ის ტეგები, რომელთა გამოყენებაც გსურთ, გამოყავით ისინი მძიმით (,) და ჩასვით ბრჭყალებში ("")
+      draft_versions:
+        create:
+          notice: 'პროექტი წარმატებით შეიქმნა. <a href="%{link}">ნახვა</a>'
+          error: პროექტის შექმნა ვერ მოხერხდა
+        update:
+          notice: 'პროექტი წარმატებით განახლდა. <a href="%{link}">ნახვა</a>'
+          error: პროექტის განახლება ვერ მოხერხდა
+        destroy:
+          notice: პროექტი წარმატებით წაიშალა
+        edit:
+          back: უკან
+          submit_button: ცვლილებების შენახვა
+          warning: თქვენ წარმატებით დაარედაქტირეთ ტექსტი, არ დაგავიწყდეთ დამახსოვრების ღილაკზე დაჭერა.
+        form:
+          title: '<span class="strong">%{draft_version_title}</span>-ის დარედაქტირება პროცესიდან სახელად <span class="strong">%{process_title}</span>'
+          launch_text_editor: ტექსტის რედაქტორის გაშვება
+          close_text_editor: ტექსტის რედაქტორის დახურვა
+          use_markdown: ტექსტის ფორმატირებისთვის გამოიყენეთ შემცირების ღილაკი
+          hints:
+            final_version: ეს ვერსია გამოქვეყნდება, როგორც პროცესის საბოლოო შედეგი. კომენტარების გაკეთება ამ ვერსიისთვის შეუძლებელია.
+            status:
+              draft: შეგიძლიათ წინასწარ შეხედოთ, როგორც ადმინმა. ხელმისაწვდომი იქნება მხოლოდ თქვენთვის
+              published: ნახვა შეუძლია ყველას
+          title_placeholder: შეიყვანეთ პროექტის დასახელება
+          changelog_placeholder: დაამატეთ ძირითადი ცვლილებები წინა ვერსიიდან
+          body_placeholder: შეიყვანეთ ტექსტის მონახაზი
+        index:
+          title: კანონპროექტები
+          create: ვერსიის შექმნა
+          delete: წაშლა
+          preview: ესკიზი
+        new:
+          back: უკან
+          title: ახალი ვერსიის შექმნა
+          submit_button: ვერსიის შექმნა
+        table:
+          title: სათაური
+          created_at: შექმნის თარიღი
+          comments: კომენტარები
+          final_version: საბოლოო ვერსია
+          status: სტატუსი
+      questions:
+        create:
+          notice: 'კითხვა წარმატებით შეიქმნა. <a href="%{link}">ნახვა</a>'
+          error: კითხვის შექმნა ვერ მოხერხდა
+        update:
+          notice: 'კითხვა წარმატებით დარედაქტირდა. <a href="%{link}">ნახვა</a>'
+          error: შეკითხვის რედაქტირება ვერ მოხერხდა
+        destroy:
+          notice: შეკითხვა წარმატებით წაიშალა
+        edit:
+          back: უკან
+          title: "\"%{question_title}\"-ის რედაქტირება"
+          submit_button: ცვლილებების შენახვა
+        form:
+          add_option: შესაძლო ვარიანტის დამატება
+          title_placeholder: კითხვის დამატება
+          value_placeholder: დაამატეთ დახურული პასუხი
+          question_options: "შესაძლო პასუხები (სურვილისამებრ, ავტომატურად მონიშნულია ღია პასუხები)"
+        index:
+          back: უკან
+          title: ამ პროცესთან დაკავშირებული კითხვები
+          create: შეკითხვის შექმნა
+          delete: წაშლა
+        new:
+          back: უკან
+          title: ახალი შეკითხვის შექმნა
+          submit_button: შეკითხვის შექმნა
+        table:
+          title: სათაური
+          question_options: კითხვის ვარიანტები
+          answers_count: პასუხების დათვლა
+          comments_count: კომენტარების დათვლა
+        question_option_fields:
+          remove_option: შესაძლო ვარიანტის წაშლა
+      milestones:
+        index:
+          title: მომდევნო
+    managers:
+      index:
+        title: მენეჯერები
+        name: სახელი
+        email: ელ.ფოსტა
+        no_managers: მენეჯერები არ მოიძებნა.
+      manager:
+        add: დამატება
+        delete: წაშლა
+      search:
+        title: "მენეჯერები: მომხმარებლის ძებნა"
+    menu:
+      activity: მოდერატორის აქტივობა
+      admin: ადმინ მენიუ
+      banner: ბანერების მართვა
+      proposals: ინიციატივები
+      proposals_topics: ინიციატივასთან დაკავშირებული თემები
+      budgets: მონაწილეობითი ბიუჯეტები
+      geozones: გეოგრაფიული ზონების მართვა
+      hidden_comments: დამალული კომენტარები
+      hidden_debates: დამალული დებატები
+      hidden_proposals: დამალული ინიციატივები
+      hidden_budget_investments: დამალული საბიუჯეტო ინვესტიციები
+      hidden_proposal_notifications: დამალული შეტყობინებები ინიციატივის თაობაზე
+      hidden_users: დამალული მომხმარებლები
+      administrators: ადმინისტრატორები
+      managers: მენეჯერები
+      moderators: მოდერატორები
+      messaging_users: მომხმარებლებთან შეტყობინებების გაგზავნა
+      newsletters: საინფორმაციო ბიულეტენები
+      admin_notifications: შეტყობინებები
+      system_emails: სისტემური შეტყობინებები
+      emails_download: ელ. წერილების ჩამოტვირთვა
+      valuators: შემფასებლები
+      poll_officers: კენჭისყრის ადმინისტრატორები
+      polls: ხმის მიცემა
+      poll_booths: კენჭისყრის კაბინების მდებარეობა
+      poll_booth_assignments: კაბინების განაწილება
+      poll_shifts: ცვლის მართვა
+      officials: თანამდებობის პირები
+      organizations: ორგანიზაციები
+      settings: გლობალური პარამეტრები
+      stats: სტატისტიკა
+      signature_sheets: ხელმოწერის ფურცლები
+      site_customization:
+        documents: მომხმარებლის დოკუმენტები
+        homepage: მთავარი გვერდი
+        pages: პირადი გვერდები
+        images: პერსონალური სურათები
+        content_blocks: პერსონალური შინაარსის ბლოკები
+        information_texts: საინფორმაციო ტექსტების კონფიგურაცია
+        information_texts_menu:
+          basic: "ძირითადი კონფიგურაცია"
+          debates: "დებატები"
+          community: "საზოგადოება"
+          proposals: "ინიციატივები"
+          polls: "ხმის მიცემა"
+          layouts: "განლაგება"
+          mailers: "ელ.ფოსტები"
+          management: "მენეჯმენტი"
+          welcome: "მოგესალმებით"
+        buttons:
+          save: "დამახსოვრება"
+          content_block:
+            update: "ბლოკის განახლება"
+      title_moderated_content: შემოწმებული შინაარსი
+      title_profiles: პროფილები
+      title_settings: პარამეტრები
+      title_site_customization: საიტის შინაარსი
+      title_booths: ხმის მიცემის კაბინები
+      legislation: საკანონმდებლო ინიციატივა
+      users: მომხმარებლები
+      dashboard: ინიციატივათა მართვის დაფა
+      administrator_tasks: მოთხოვნილი რესურსები
+      dashboard_actions: რესურსები და მოქმედებები
+      debates: "დებატები"
+      comments: "კომენტარები"
+      local_census_records: ადგილობრივი მოსახლეობის აღწერის მართვა
+    administrators:
+      index:
+        title: ადმინისტრატორები
+        name: სახელი
+        email: ელ.ფოსტა
+        description: აღწერა
+        id: ადმინისტრატორის ID
+        no_administrators: ადმინისტრატორები არ მოიძებნა.
+      administrator:
+        add: დამატება
+        delete: წაშლა
+        restricted_removal: "სამწუხაროდ საკუთარ თავს ადმინისტრატორების სიიდან ვერ ამოშლით"
+      search:
+        title: "ადმინისტრატორები: მომხმარებლის ძებნა"
+      form:
+        edit_title: "ადმინისტრატორის რედაქტირება"
+        updated: "ადმინისტრატორი წარმატებით დარედაქტირდა"
+    moderators:
+      index:
+        title: მოდერატორები
+        name: სახელი
+        email: ელ.ფოსტა
+        no_moderators: მოდერატორები არ მოიძებნა.
+      moderator:
+        add: დამატება
+        delete: წაშლა
+      search:
+        title: "მოდერატორები: მომხმარებლის ძებნა"
+    segment_recipient:
+      all_users: ყველა მომხმარებელი
+      administrators: ადმინისტრატორები
+      all_proposal_authors: ინიციატივის ავტორები (მათ შორის დაარქივებული და წაშლილი)
+      proposal_authors: ინიციატივის ავტორები
+      investment_authors: მიმდინარე ბიუჯეტში შეტანილი ინვესტიციების ავტორები
+      feasible_and_undecided_investment_authors: "ზოგიერთ იმ ინვესტიციათა ავტორები, რომელთა ინვესტიციები შეტანილია მიმდინარე ბიუჯეტში და არ შეესაბამება: [შეფასების შედეგად მიჩნეულია არაგანხორციელებადად]"
+      selected_investment_authors: მიმდინარე ბიუჯეტში ჩათვლილი ინვესტიციების ავტორები
+      winner_investment_authors: მიმდინარე ბიუჯეტში ჩათვლილი გამარჯვებული ინვესტიციების ავტორები
+      not_supported_on_current_budget: ის მომხმარებლები, რომლებმაც მხარი არ დაუჭირეს მიმდინარე ბიუჯეტში შეტანილ ინვესტიციებს
+      invalid_recipients_segment: "მიმღებ მომხმარებელთა სეგმენტი არასწორია"
+    newsletters:
+      create_success: საინფორმაციო ბიულეტენი წარმატებით შეიქმნა
+      update_success: საინფორმაციო ბიულეტენი წარმატებით დარედაქტირდა
+      send_success: საინფორმაციო ბიულეტენი წარმატებით გაიგზავნა
+      delete_success: საინფორმაციო ბიულეტენი წარმატებით წაიშალა
+      index:
+        title: საინფორმაციო ბიულეტენები
+        new_newsletter: ახალი საინფორმაციო ბიულეტენი
+        subject: თემა
+        segment_recipient: მიმღებები
+        sent: გაგზავნილია
+        actions: მოქმედებები
+        draft: მონახაზი
+        edit: რედაქტირება
+        delete: წაშლა
+        preview: ესკიზი
+        empty_newsletters: საინფორმაციო ბიულეტენები არ მოიძებნა
+      new:
+        title: ახალი საინფორმაციო ბიულეტენი
+        header_footer_help_text: "თითოეული ელ. გზავნილის ზედა და ქვედა პანელები იდენტურია, მათი შეცვლა შეგიძლიათ <code>app/views/layouts/mailer_header</code> და <code>app/views/layouts/mailer_footer</code>-დან.<br>ზედა პანელში ჩასმული სურათის შეცვლა შესაძლებელია შემდეგ ბმულზე: %{link}."
+        image_link: "პერსონალური სურათები"
+      edit:
+        title: საინფორმაციო ბიულეტენის რედაქტირება
+      show:
+        title: საინფორმაციო ბიულეტენის ესკიზი
+        send: გაგზავნა
+        affected_users: (%{n} დაზარალებული მომხმარებელი)
+        sent_emails:
+          one: გაგზავნილია 1 ელ. წერილი
+          other: "გაგზავნილია %{count} ელ. წერილი"
+        sent_at: გაგზავნის თარიღი
+        subject: თემა
+        segment_recipient: მიმღებები
+        from: ელ.ფოსტის მისამართი, რომელიც გამოჩნდება საინფორმაციო ბიულეტენების გაგზავნის დროს
+        body: ელ.ფოსტის გზავნილის შინაარსი
+        body_help_text: მომხმარებლები თქვენს ელ. ფოსტას შემდეგნაირად დაინახავენ
+        send_alert: დარწმუნებული ხართ, რომ გსურთ ამ საინფორმაციო ბიულეტენის %{n} მომხმარებლებთან გაგზავნა?
+    admin_notifications:
+      create_success: შეტყობინება წარმატებით შეიქმნა
+      update_success: შეტყობინება წარმატებით განახლდა
+      send_success: შეტყობინება წარმატებით გაიგზავნა
+      delete_success: შეტყობინება წარმატებით წაიშალა
+      index:
+        section_title: შეტყობინებები
+        new_notification: ახალი შეტყობინება
+        title: სათაური
+        segment_recipient: მიმღებები
+        sent: გაიგზავნა
+        actions: მოქმედებები
+        draft: მონახაზი
+        edit: რედაქტირება
+        delete: წაშლა
+        preview: ესკიზი
+        view: ნახვა
+        empty_notifications: შეტყობინებები არ მოიძებნა
+      new:
+        section_title: ახალი შეტყობინება
+        submit_button: შეტყობინების შექმნა
+      edit:
+        section_title: შეტყობინების რედაქტირება
+        submit_button: შეტყობინების განახლება
+      show:
+        section_title: შეტყობინების ესკიზი
+        send: შეტყობინების გაგზავნა
+        will_get_notified: (შეტყობინება გაეგზავნება %{n} მომხმარებელს)
+        got_notified: (შეტყობინება გაეგზავნა %{n} მომხმარებელს)
+        sent_at: გაგზავნის თარიღი
+        title: სათაური
+        body: ტექსტი
+        link: ბმული
+        segment_recipient: მიმღებები
+        preview_guide: "მომხმარებლები თქვენს შეტყობინებას შემდეგნაირად დაინახავენ:"
+        sent_guide: "მომხმარებლები თქვენს შეტყობინებას შემდეგნაირად ხედავენ:"
+        send_alert: დარწმუნებული ხართ, რომ გსურთ ამ შეტყობინების %{n} მომხმარებლებთან გაგზავნა?
+    system_emails:
+      preview_pending:
+        action: ესკიზი მზადდება
+        preview_of: '%{name}-ის ესკიზი'
+        pending_to_be_sent: ნაჩვენებია გასაგზავნად მომზადებული შინაარსი
+        moderate_pending: მოდერაციასთან დაკავშირებული შეტყობინება გაიგზავნა
+        send_pending: მოლოდინის რეჟიმში მყოფის გაგზავნა
+        send_pending_notification: მოლოდინის რეჟიმში მყოფი შეტყობინებები წარმატებით გაიგზავნა
+      proposal_notification_digest:
+        title: "ინიციატივასთან დაკავშირებული შეტყობინებების მიმოხილვა"
+        description: "ერთ გზავნილში უყრის თავს მომხმარებლის ინიციატივასთან დაკავშირებულ ყველა შეტყობინებას, რაც გზავნილების ჭარბი რაოდენობის შემცირებას უწყობს ხელს."
+        preview_detail: "მომხმარებლები მხოლოდ იმ ინიციატივების შესახებ მიიღებენ შეტყობინებებს, რომლებსაც ისინი მიჰყვებიან"
+      budget_investment_created:
+        title: "საბიუჯეტო ინვესტიცია შეიქმნა"
+        description: "მომხმარებლის მიერ შექმნილი საბიუჯეტო ინვესტიციის დროს გაგზავნილი."
+      budget_investment_selected:
+        title: "საბიუჯეტო ინვესტიცია შერჩეულია"
+        description: "საბიუჯეტო ინვესტიციის შერჩევის დროს ამავე ინვესტიციის ავტორთან გაგზავნილი."
+      budget_investment_unfeasible:
+        title: "საბიუჯეტო ინვესტიცია არამიზანშეწონილია"
+        description: "ავტორს გადაეგზავნება, თუკი მისი საბიუჯეტო ინვესტიცია მიზანშეუწონლად დასახელდება."
+      budget_investment_unselected:
+        title: "საბიუჯეტო ინვესტიცია მოიხსნა შერჩეულთა სიიდან"
+        description: "ავტორს გადაეგზავნება, თუკი მისი საბიუჯეტო ინვესტიცია კენჭისყრის ფაზისთვის არ შეირჩევა."
+      comment:
+        title: "კომენტარი"
+        description: "ავტორს გადაეგზავნება, როდესაც ახალ კომენტარს მიიღებს."
+      reply:
+        title: "პასუხი"
+        description: "გაეგზავნოს კომენტარის ავტორს პასუხის მიღებისას."
+      direct_message_for_receiver:
+        title: "პირადი გზავნილის ადრესატი"
+        description: "პირადი გზავნილის მიმღებთან გაგზავნილი."
+      direct_message_for_sender:
+        title: "პირადი გზავნილის ადრესანტი"
+        description: "პირადი გზავნილის ადრესანტთან გაგზავნილი."
+      email_verification:
+        title: "ელ.ფოსტის დადასტურება"
+        description: "ახალ მომხმარებელთან ანგარიშის გადამოწმების მიზნით გაგზავნილი."
+      user_invite:
+        title: "მომხმარებლის მოწვევა"
+        description: "სარეგისტრაციოდ მოწვეულ მომხმარებელთან გაგზავნილი."
+      evaluation_comment:
+        title: "შეფასების ახალი კომენტარი"
+        description: "იმ ადმინისტრატორებთან და შემფასებლებთან გაგზავნილი, რომლებიც კავშირში არიან კომენტირებულ ინვესტიციასთან"
+      edit_info: "ამ ელ. წერილის რედაქტირება შეგიძლიათ"
+      message_title: "გზავნილის სათაური"
+      message_body: "ეს არის გზავნილის შინაარსის ნიმუში."
+      alert:
+        no_investments: "საბიუჯეტო ინვესტიციები არ მოიძებნა. ელ.ფოსტის გადახედვისთვის საჭიროა გარკვეული მონაცემების ნიმუშად გამოყენება."
+        no_comments: "კომენტარები არ მოიძებნა. ელ.ფოსტის გადახედვისთვის საჭიროა გარკვეული მონაცემების ნიმუშად გამოყენება."
+        no_replies: "პასუხები არ მოიძებნა. ელ.ფოსტის გადახედვისთვის საჭიროა გარკვეული მონაცემების ნიმუშად გამოყენება."
+        no_evaluation_comments: "შეფასების კომენტარები არ მოიძებნა. ელ.ფოსტის გადახედვისთვის საჭიროა გარკვეული მონაცემების ნიმუშად გამოყენება."
+    emails_download:
+      index:
+        title: ელ. წერილების ჩამოტვირთვა
+        download_segment: ელ. ფოსტის მისამართების ჩამოტვირთვა
+        download_segment_help_text: CSV ფორმატში ჩამოტვირთვა
+        download_emails_button: ელ.წერილების სიის ჩამოტვირთვა
+    valuators:
+      index:
+        title: შემფასებლები
+        name: სახელი
+        email: ელ.ფოსტა
+        description: აღწერა
+        no_description: აღწერა არ არის
+        no_valuators: შემფასებლები არ მოიძებნა.
+        valuator_groups: "შემფასებელთა ჯგუფები"
+        group: "ჯგუფი"
+        no_group: "ჯგუფი არ მოიძებნა"
+        abilities: "შესაძლებლობები"
+        can_comment: "შეუძლია კომენტარის გაკეთება"
+        can_edit_dossier: "შეუძლია დოსიეს რედაქტირება"
+      valuator:
+        add: შემფასებლებში დამატება
+        delete: წაშლა
+      search:
+        title: "შემფასებლები: მომხმარებლის ძებნა"
+      form:
+        edit_title: "შემფასებლები: შემფასებლის რედაქტირება"
+        updated: "შემფასებელი წარმატებით დარედაქტირდა"
+      show:
+        description: "აღწერა"
+        email: "ელ.ფოსტა"
+        group: "ჯგუფი"
+        abilities: "შესაძლებლობები"
+        no_description: "აღწერის გარეშე"
+        no_group: "ჯგუფის გარეშე"
+        no_abilities: "შესაძლებლობების გარეშე"
+    valuator_groups:
+      index:
+        title: "შემფასებელთა ჯგუფები"
+        new: "შემფასებელთა ჯგუფის შექმნა"
+        name: "სახელი"
+        members: "წევრები"
+        no_groups: "შემფასებელთა ჯგუფი არ მოიძებნა"
+      show:
+        title: "შემფასებელთა ჯგუფი: %{group}"
+        no_valuators: "ამ ჯგუფზე მიმაგრებული შემფასებელი არ მოიძებნა"
+      form:
+        new: "შემფასებელთა ჯგუფის შექმნა"
+        edit: "შემფასებელთა ჯგუფის შენახვა"
+    poll_officers:
+      index:
+        title: კენჭისყრის ადმინისტრატორები
+      officer:
+        add: დამატება
+        delete: პოზიციის წაშლა
+        name: სახელი
+        email: ელ.ფოსტა
+        entry_name: ადმინისტრატორი
+      search:
+        email_placeholder: მომხმარებლის ძებნა ელ.ფოსტის მეშვეობით
+        search: ძებნა
+        user_not_found: მომხმარებელი არ მოიძებნა
+        help: "კენჭისყრის ადმინისტრატორის დასამატებლად, ან წასაშლელად გამოიყენეთ ქვემოთ მოცემული ძებნის ფორმა."
+    poll_officer_assignments:
+      index:
+        officers_title: "ადმინისტრატორთა სია"
+        no_officers: "ამ კენჭისყრაზე მიმაგრებული ადმინისტრატორი არ მოიძებნა."
+        table_name: "სახელი"
+        table_email: "ელ.ფოსტა"
+      by_officer:
+        date: "თარიღი"
+        booth: "კენჭისყრის კაბინა"
+        assignments: "კენჭისყრის ადმინისტრატორთა ცვლა"
+        no_assignments: "მომხმარებელი არ მონაწილეობს აღნიშნული კენჭისყრის არცერთი ცვლაში."
+    poll_shifts:
+      new:
+        add_shift: "ცვლის დამატება"
+        shift: "განაწილება"
+        shifts: "კენჭისყრის კაბინაში არსებული ცვლები"
+        date: "თარიღი"
+        edit_shifts: ცვლების რედაქტირება
+        new_shift: "ახალი ცვლა"
+        no_shifts: "ამ კაბინისთვის გამოყოფილი ცვლა არ მოიძებნა"
+        officer: "კენჭისყრის ადმინისტრატორი"
+        remove_shift: "წაშლა"
+        search_officer_button: ძებნა
+        search_officer_placeholder: კენჭისყრის ადმინისტრატორის ძებნა
+        search_officer_text: ადმინისტრატორის მოძიება და მისი ახალ ცვლაზე გადაყვანა
+        select_date: "დღის შერჩევა"
+        no_voting_days: "ხმის მიცემის დღეები დასრულდა"
+        select_task: "შეარჩიეთ დავალება"
+        table_shift: "ცვლა"
+        table_email: "ელ.ფოსტა"
+        table_name: "სახელი"
+      flash:
+        create: "ცვლა დაემატა"
+        destroy: "ცვლა წაიშალა"
+        unable_to_destroy: "შედეგებთან ან გამოთვლებთან დაკავშირებული ცვლა ვერ წაიშლება"
+        date_missing: "შეარჩიეთ თარიღი"
+      vote_collection: ხმების შეგროვება
+      recount_scrutiny: გადათვლა და სიზუსტე
+    booth_assignments:
+      manage_assignments: განაწილების მართვა
+      manage:
+        assignments_list: "'%{poll}' - ხმის მიცემასთან დაკავშირებული დავალებები"
+        status:
+          assign_status: სტატუსის მინიჭება
+          assigned: მინიჭებულია
+          unassigned: სტატუსი მოხსნილია
+        actions:
+          assign: კაბინის გამოყოფა
+          unassign: კაბინის ჩახსნა
+    poll_booth_assignments:
+      alert:
+        shifts: "ამ კაბინასთან დაკავშირებულია ცვლები. მიმაგრებული კაბინის წაშლით ავტომატურად წაიშლება ადმინისტრატორთა ცვლებიც. გსურთ გაგრძელება?"
+      show:
+        location: "მდებარეობა"
+        officers: "ადმინისტრატორები"
+        officers_list: "ამ კაბინაზე მიმაგრებული ადმინისტრატორების სია"
+        no_officers: "ამ კაბინაზე მიმაგრებული ადმინისტრატორები არ მოიძებნა"
+        recounts: "გადათვლა"
+        recounts_list: "ამ კაბინაზე მიმაგრებულთა სიის გადათვლა"
+        results: "შედეგები"
+        date: "თარიღი"
+        count_final: "საბოლოო გადათვლა (ადმინისტრატორების მიხედვით)"
+        count_by_system: "ხმები (ავტომატური)"
+        total_system: ხმების საერთო რაოდენობა (ავტომატური)
+      index:
+        booths_title: "კაბინების ჩამონათვალი"
+        no_booths: "ამ კენჭისყრისთვის გამოყოფილი კაბინები არ მოიძებნა."
+        table_name: "სახელი"
+        table_location: "მდებარეობა"
+    active_polls:
+      edit:
+        title: "ხმის მიცემის აღწერა"
+      form:
+        description:
+          help_text: "ეს ტექსტი ხმის მიცემის გვერდზე სათაურის ველში გამოჩნდება. მისი დანიშნულება ხმის მიცემისთვის კონტექსტის დამატებაა. "
+    polls:
+      index:
+        title: "ხმის მიცემის ჩამონათვალი"
+        no_polls: "ხმის მიცემა არ მოიძებნა."
+        create: "ახალი კენჭისყრის შექმნა"
+        name: "სახელი"
+        dates: "თარიღები"
+        start_date: "დაწყების თარიღი"
+        closing_date: "დასრულების თარიღი"
+        geozone_restricted: "შეზღუდულია ოლქების მიხედვით"
+      new:
+        title: "ახალ საკითხზე ხმის მიცემა"
+        submit_button: "კენჭისყრის შექმნა"
+      edit:
+        title: "კენჭისყრის საკითხების რედაქტირება"
+        submit_button: "კენჭისყრის საკითხების განახლება"
+      show:
+        questions_tab: კითხვები
+        booths_tab: ხმის მიცემის კაბინები
+        officers_tab: კენჭისყრის ადმინისტრატორები
+        recounts_tab: გადათვლა
+        results_tab: შედეგები
+        no_questions: "ამ კენჭისყრასთან დაკავშირებული შეკითხვები არ მოიძებნა."
+        questions_title: "შეკითხვების ჩამონათვალი"
+        table_title: "სათაური"
+        edit_answers: პასუხების რედაქტირება
+        see_proposal: "(ინიციატივის ნახვა)"
+      flash:
+        question_added: "შეკითხვა დაემატა კენჭისყრას"
+        error_on_question_added: "შეკითხვის დამატება მოცემულ კენჭისყრაზე ვერ მოხერხდა"
+      destroy:
+        alert: "ამ მოქმედებით წაიშლება კენჭისყრა და მასთან დაკავშირებული შეკითხვები."
+        success_notice: "კენჭისყრა წარმატებით წაიშალა"
+        unable_notice: "შეუძლებელია იმ კენჭისყრის წაშლა, რომელზეც მიცემულია ხმა"
+    questions:
+      index:
+        title: "კითხვები"
+        create: "შეკითხვის შექმნა"
+        no_questions: "შეკითხვები არ მოიძებნა."
+        filter_poll: კენჭისყრის მიხედვით გაფილტვრა
+        select_poll: კენჭისყრის შერჩევა
+        questions_tab: "კითხვები"
+        successful_proposals_tab: "წარმატებული ინიციატივები"
+        create_question: "შეკითხვის შექმნა"
+        table_proposal: "ინიციატივა"
+        table_question: "კითხვა"
+        table_poll: "ხმის მიცემა"
+        poll_not_assigned: "ხმის მიცემა არ  დანიშნულა"
+      edit:
+        title: "შეკითხვის რედაქტირება"
+      new:
+        title: "შეკითხვის შექმნა ხმის მიცემისთვის %{poll}"
+        title_proposal: "შეკითხვის შექმნა"
+      answers:
+        images:
+          add_image: "ფოტოსურათის დამატება"
+          save_image: "ფოტოსურათის შენახვა"
+      show:
+        proposal: პირვანდელი ინიციატივა
+        author: ავტორი
+        question: კითხვა
+        edit_question: შეკითხვის რედაქტირება
+        valid_answers: სწორი პასუხები
+        add_answer: პასუხის დამატება
+        video_url: სხვა სერვერზე განთავსებული ვიდეო
+        answers:
+          title: პასუხი
+          description: აღწერა
+          videos: ვიდეოები
+          video_list: ვიდეოების სია
+          images: ფოტოსურათები
+          images_list: ფოტოსურათების სია
+          documents: დოკუმენტები
+          documents_list: დოკუმენტების სია
+          document_title: სათაური
+          document_actions: მოქმედებები
+    answers:
+      new:
+        title: ახალი პასუხი
+      show:
+        title: სათაური
+        description: აღწერა
+        images: ფოტოსურათები
+        images_list: ფოტოსურათების სია
+        edit: პასუხის რედაქტირება
+      edit:
+        title: პასუხის რედაქტირება
+      videos:
+        index:
+          title: ვიდეოები
+          add_video: ვიდეოს დამატება
+          video_title: სათაური
+          video_url: სხვა სერვერზე განთავსებული ვიდეო
+        new:
+          title: ახალი ვიდეო
+        edit:
+          title: ვიდეოს რედაქტირება
+    recounts:
+      index:
+        title: "გადათვლა"
+        no_recounts: "გადასათვლელი არაფერია"
+        all_booths_total: "ყველა კაბინიდან მიღებული კრებსითი:"
+        total_final: "საბოლოო გადათვლები"
+        total_system: "ხმები (ავტომატური)"
+        table_booth_name: "ხმის მიცემის კაბინა"
+        table_total_recount: "საბოლოო გადათვლა (დამკვირვებელთა მიხედვით)"
+        table_system_count: "ხმები (ავტომატური)"
+    results:
+      index:
+        title: "შედეგები"
+        no_results: "შედეგები არ მოიძებნა"
+      result:
+        table_whites: "სრულიად ცარიელი ბიულეტენები"
+        table_nulls: "ბათილი ბიულეტენები"
+        table_total: "მოქმედი ბიულეტენები"
+        table_answer: პასუხი
+        table_votes: ხმები
+      results_by_booth:
+        booth: ხმის მიცემის კაბინა
+        results: შედეგები
+        see_results: შედეგების ნახვა
+        title: "შედეგები კაბინების მიხედვით"
+    booths:
+      index:
+        title: "აქტიური კაბინების ჩამონათვალი"
+        no_booths: "უახლოესი კენჭისყრისთვის გამოყოფილი კაბინა არ მოიძებნა."
+        add_booth: "კაბინის დამატება"
+        name: "სახელი"
+        location: "მდებარეობა"
+        no_location: "მდებარეობა არ არის დაზუსტებული"
+      new:
+        title: "ახალი კაბინა"
+        submit_button: "კაბინის შექმნა"
+      edit:
+        title: "კაბინის რედაქტირება"
+        submit_button: "კაბინის რედაქტირება"
+      show:
+        location: "მდებარეობა"
+      booth:
+        shifts: "ცვლის მართვა"
+        edit: "კაბინის რედაქტირება"
+    officials:
+      edit:
+        destroy: '"ოფიციალური" სტატუსის მოხსნა'
+        title: "თანამდებობის პირები: მომხმარებლის რედაქტირება"
+      flash:
+        official_destroyed: "ინფორმაცია შენახულია: მომხმარებელი აღარ არის თანამდებობის პირი"
+        official_updated: ინფორმაცია თანამდებობის პირის შესახებ დამახსოვრებულია
+      index:
+        title: თანამდებობის პირები
+        help: იმ მომხმარებელთა ანგარიშებს, რომელთა სტატუსიც მონიშნულია, როგორც თანამდებობის პირი, წვდომა ექნებათ პლატფორმაზე და განახორციელებენ შესაბამის მოქმედებებს. თქვენ შეგიძლიათ განსაზღვროთ ის ტეგები, რომლებიც ამ მომხმარებელთა ანგარიშების გვერდით გამოჩნდება, ყველაზე მნიშვნელოვანიდან (1-ლი დონე) ყველაზე ნაკლებ მნიშვნელოვნამდე (მე-5 დონე).
+        no_officials: თანამდებობის პირის სტატუსის მქონე მომხმარებლები არ მოიძებნა.
+        name: სახელი
+        official_position: ოფიციალური თანამდებობა
+        official_level: დონე
+      level_0: არ არის თანამდებობის პირი
+      level_1: 1-ლი დონე
+      level_2: მე-2 დონე
+      level_3: მე-3 დონე
+      level_4: მე-4 დონე
+      level_5: მე-5 დონე
+      search:
+        edit_official: თანამდებობის პირის რედაქტირება
+        make_official: სტატუსის მინიჭება
+        title: "ოფიციალური თანამდებობა: მომხმარებლის ძებნა"
+        no_results: ოფიციალური თანამდებობები არ მოიძებნა.
+    organizations:
+      index:
+        filter: ფილტრი
+        filters:
+          all: ყველა
+          pending: მოლოდინის რეჟიმში
+          rejected: უარყოფილი
+          verified: გადამოწმებული
+        hidden_count:
+          one: აგრეთვე მოიძებნება <strong>ერთი ორგანიზაცია</strong>, რომელსაც ან არ ჰყავს მომხმარებლები, ან მისი მომხმარებლები დამალულია.
+          other: აგრეთვე მოიძებნება <strong>%{count} ორგანიზაცია</strong>, რომელსაც (რომლებსაც) ან არ ჰყავს მომხმარებლები, ან მისი მომხმარებლები დამალულია.
+        name: სახელი
+        email: ელ.ფოსტა
+        phone_number: ტელეფონი
+        responsible_name: პასუხისმგებელი
+        status: სტატუსი
+        no_organizations: ორგანიზაციები არ მოიძებნა.
+        reject: უარყოფა
+        rejected: უარყოფილი
+        search: ძებნა
+        search_placeholder: სახელი, ელ.ფოსტა ან ტელეფონის ნომერი
+        title: ორგანიზაციები
+        verified: გადამოწმებული
+        verify: გადამოწმება
+        pending: მოლოდინის რეჟიმშია
+      search:
+        title: ორგანიზაციების ძებნა
+        no_results: ორგანიზაციები არ მოიძებნა.
+    proposals:
+      index:
+        title: ინიციატივები
+        id: ID
+        author: ავტორი
+        select: შერჩევა
+        selected: შერჩეული
+        milestones: ეტაპები
+        no_proposals: ინიციატივა არ მოიძებნა.
+      show:
+        create_question: ხმის მისაცემად საჭიროა ამ ინიციატივის განსახილველად გამოტანა
+      form:
+        update: ინიციატივის განახლება
+      update:
+        notice: ინიციატივა წარმატებით განახლდა
+    hidden_proposals:
+      index:
+        filter: ფილტრი
+        filters:
+          all: ყველა
+          with_confirmed_hide: დადასტურებულია
+          without_confirmed_hide: მოლოდინის რეჟიმშია
+        title: დამალული ინიციატივები
+        no_hidden_proposals: დამალული ინიციატივები არ მოიძებნა.
+    settings:
+      flash:
+        updated: ღირებულება განახლდა
+      index:
+        title: პარამეტრები
+        general: კონფიგურაციის პარამეტრები
+        update_setting: განახლება
+        participation_processes: "მონაწილეობის პროცესები"
+        images_and_documents: "ფოტოსურათები და დოკუმენტები"
+        feature_flags: ფუნქციები
+        features:
+          enabled: "ფუნქცია გააქტიურებულია"
+          disabled: "ფუნქცია გამორთულია"
+          enable: "ჩართვა"
+          disable: "გამორთვა"
+        map:
+          title: რუკის კონფიგურაცია
+          help: აქედან შეგიძლიათ რუკის კონფიგურაცია მომხმარებლებისთვის. დასვით მარკერი სასურველ ადგილას ან დააჭირეთ რუკის ნებისმიერ წერტილს, შეარჩიეთ გადიდების დიაპაზონი და დააწექით ღილაკს "განახლება".
+          flash:
+            update: რუკის კონფიგურაცია წარმატებით განახლდა.
+          form:
+            submit: განახლება
+          how_to_enable: 'იმისათვის, რომ მომხმარებლებმა რუკის ნახვა შეძლონ, ჩართეთ "ინიციატივათა და საბიუჯეტო ინვესტიციების გეოლოკაცია" "ფუნქციების" განყოფილებიდან.'
+        dashboard:
+          title: ინიციატივათა მართვის დაფა
+        remote_census:
+          title: დისტანციური აღწერის კონფიგურაცია
+          how_to_enable: 'დისტანციური აღწერის (SOAP) კონფიგურირებისთვის ჩართული უნდა იყოს "დისტანციურ აღწერასთან (SOAP) კავშირის კონფიგურაცია" ფუნქციების განყოფილებიდან.'
+      remote_census_general_name: ზოგადი ინფორმაცია
+      remote_census_request_name: მონაცემთა მოთხოვნა
+      remote_census_response_name: პასუხად მიღებული მონაცემები
+      setting: ფუნქცია
+      setting_actions: მოქმედებები
+      setting_name: პარამეტრები
+      setting_status: სტატუსი
+      setting_value: ღირებულება
+      no_description: "აღწერა არ არის"
+    shared:
+      true_value: "დიახ"
+      false_value: "არა"
+      booths_search:
+        button: ძებნა
+        placeholder: კაბინის ძებნა დასახელებით, ან ლოკაციით
+      poll_officers_search:
+        button: ძებნა
+        placeholder: ადმინისტრატორების ძებნა
+      poll_questions_search:
+        button: ძებნა
+        placeholder: კენჭისყრის კითხვების ძიება
+      proposal_search:
+        button: ძებნა
+        placeholder: ინიციატივათა ძიება დასახელებით, კოდით, აღწერით ან შეკითხვით
+      debate_search:
+        button: ძებნა
+        placeholder: დებატების ძიება სათაურით ან აღწერით
+      user_search:
+        button: ძებნა
+        placeholder: მომხმარებლის ძებნა სახელით ან ელ.ფოსტის მეშვეობით
+      search_results: "ძებნის შედეგები"
+      no_search_results: "შედეგები არ მოიძებნა."
+      actions: მოქმედებები
+      title: სათაური
+      description: აღწერა
+      image: ფოტოსურათი
+      show_image: ფოტოსურათის ჩვენება
+      moderated_content: "მონიშნეთ მოდერატორის მიერ შემოწმებული ინფორმაცია და დაადასტურეთ, რომ მოდერაციის პროცესი სწორად წარიმართა."
+      view: ნახვა
+      proposal: ინიციატივა
+      author: ავტორი
+      content: შინაარსი
+      created_at: შექმნის თარიღი
+      delete: წაშლა
+      color_help: ჰექსადეციალური ფორმატი
+      show_results_and_stats: "შედეგებისა და სტატისტიკის ჩვენება"
+      results_and_stats_reminder: "ამ უჯრედების მონიშვნით შედეგები და/ან სტატისტიკა გახდება საჯარო და ყველას შეეძლება მათი ნახვა."
+    geozones:
+      index:
+        title: გეოგრაფიული ზონა
+        create: გეოგრაფიული ზონის შექმნა
+        edit: რედაქტირება
+        delete: წაშლა
+      geozone:
+        name: სახელი
+        external_code: გარეშე კოდი
+        census_code: აღწერის კოდი
+        code_help: აღწერის API-ში ინიცირებული გეოგრ. ზონის საიდენტიფიკაციო კოდი
+        coordinates: კოორდინატები
+        coordinates_help: კოორდინატები, რომელთა საშუალებითაც HTML რუკაზე გენერირდება ტერიტორია, რომელიც ირეაგირებს მაუსით დაწკაპებაზე
+      edit:
+        form:
+          submit_button: ცვლილებების შენახვა
+        editing: გეოგრაფიული ზონის რედაქტირება
+        back: უკან დაბრუნება
+      new:
+        back: უკან დაბრუნება
+        creating: ოლქის შექმნა
+      delete:
+        success: გეოგრაფიული ზონა წარმატებით წაიშალა
+        error: ეს გეოგრაფიული ზონა ვერ წაიშლება, რადგანაც მასზე მიმაგრებულია სხვა ელემენტები
+    signature_sheets:
+      author: ავტორი
+      created_at: შექმნის თარიღი
+      name: სახელი
+      no_signature_sheets: "ხელმოწერის ფურცლები არ მოიძებნა"
+      index:
+        title: ხელმოწერის ფურცლები
+        new: ახალი ხელმოწერის ფურცლები
+      new:
+        title: ახალი ხელმოწერის ფურცლები
+        document_numbers_note: "წერტილ-მძიმით (;) გამოყავით ციფრები ერთმანეთისგან"
+        submit: ხელმოწერის ფურცლის შექმნა
+        text_help:
+          required_fields_note: "მომხმარებლის გადასამოწმებლად საჭიროა: დოკუმენტის ნომერი"
+          date_of_birth_note: ", დაბადების თარიღი (dd/mm/yyyy)"
+          postal_code_note: " და საფოსტო ინდექსი"
+          required_fields_structure_note: "თითოეული მომხმარებლისთვის განკუთვნილი სავალდებულო ველები ერთმანეთისგან გამოყოფილი უნდა იყოს მძიმის საშუალებით, ამასთან, თითოეული მომხმარებელი ერთმანეთისგან გამოყოფილი უნდა იყოს წერტილ-მძიმით."
+          example_text: "მაგალითი: "
+      show:
+        created_at: შექმნის თარიღი
+        author: ავტორი
+        users: მომხმარებლები
+        signature_count: "ხელმოწერების რაოდენობა:"
+        verified:
+          one: "მოიძებნა %{count} მოქმედი ხელმოწერა"
+          other: "მოიძებნა %{count} მოქმედი ხელმოწერა"
+        unverified:
+          one: "მოიძებნა %{count} ბათილი ხელმოწერა"
+          other: "მოიძებნა %{count} ბათილი ხელმოწერა"
+        unverified_error: (არ არის დამოწმებული აღწერით)
+        voted:
+          zero: "გადამოწმებული ხელმოწერებით შექმნილი ხმები არ მოიძებნა."
+          one: "მოიძებნა გადამოწმებული ხელმოწერით შექმნილი %{count} ხმა."
+          other: "მოიძებნა გადამოწმებული ხელმოწერის მიერ შექმნილი %{count} ხმა."
+        loading: "ხელმოწერათა გარკვეული რაოდენობა კვლავ შემოწმების ფაზაშია. გთხოვთ, განაახლოთ გვერდი პერიოდულად"
+    stats:
+      show:
+        stats_title: სტატისტიკა
+        summary:
+          comment_votes: კომენტარებზე მიცემული ხმები
+          comments: კომენტარი
+          debate_votes: დებატებზე მიცემული ხმები
+          debates: დებატი
+          proposal_votes: ინიციატივებზე მიცემული ხმები
+          proposals: ინიციატივები
+          budgets: ღია ბიუჯეტები
+          budget_investments: საინვესტიციო პროექტები
+          unverified_users: გადაუმოწმებელი მომხმარებლები
+          user_level_three: მე-3 დონის მომხმარებლები
+          user_level_two: მე-2 დონის მომხმარებლები
+          users: მომხმარებელთა საერთო რაოდენობა
+          verified_users: გადამოწმებული მომხმარებლები
+          verified_users_who_didnt_vote_proposals: გადამოწმებული მომხმარებლები, რომლებმაც ხმა არ მისცეს ინიციატივებს
+          visits: ვიზიტები
+          votes: ხმების საერთო რაოდენობა
+        budgets_title: მონაწილეობითი ბიუჯეტირება
+        participatory_budgets: მონაწილეობითი ბიუჯეტები
+        direct_messages: პირდაპირი გზავნილები
+        proposal_notifications: შეტყობინებები ინიციატივის თაობაზე
+        incomplete_verifications: ნაწილობრივ გადამოწმებული
+        polls: ხმის მიცემის პროცესები
+      graph:
+        debate_created: დებატი
+        visit: ვიზიტები
+        level_2_user: მე-2 დონის მომხმარებლები
+        proposal_created: მოქალაქის წინადადება
+      budgets:
+        no_data_before_balloting_phase: "კენჭისყრის ფაზამდე საჩვენებელი მონაცემები არ მოიძებნა."
+        title: "მონაწილეობითი ბიუჯეტები - მონაწილეობის სტატისტიკა"
+        supporting_phase: მხარდაჭერის ფაზა
+        balloting_phase: დასკვნითი ხმის მიცემა
+      budget_balloting:
+        title: "ხმის მიცემის საბოლოო შედეგები"
+        vote_count: ხმები
+        participant_count: მონაწილეები
+        votes_per_heading: თითოეულ რუბრიკაზე მიღებული ხმა
+        participants_per_district: მონაწილეთა რაოდენობა თითოეულ ოლქზე
+      budget_supporting:
+        title: "მხარდაჭერის ფაზის სტატისტიკა"
+        headings: რუბრიკები
+        users: მომხმარებელი
+        vote_count: ხმები
+        participant_count: მონაწილეები
+      direct_messages:
+        title: პირდაპირი გზავნილები
+        total: სულ
+        users_who_have_sent_message: ის მომხმარებლები, რომლებმაც პირადი შეტყობინებები გააგზავნეს
+      proposal_notifications:
+        title: შეტყობინებები ინიციატივის თაობაზე
+        total: სულ
+        proposals_with_notifications: შეტყობინების მქონე ინიციატივები
+        not_available: "ინიციატივა ხელმისაწვდომი არ არის"
+      polls:
+        title: ხმის მიცემის სტატისტიკა
+        all: ხმის მიცემა
+        web_participants: ქსელის წევრები
+        total_participants: მონაწილეთა საერთო რაოდენობა
+        poll_questions: "ხმის მიცემის შეკითხვები: %{poll}"
+        table:
+          poll_name: ხმის მიცემა
+          question_name: კითხვა
+          origin_web: ქსელის წევრები
+          origin_total: მონაწილეთა საერთო რაოდენობა
+    tags:
+      create: თემის შექმნა
+      destroy: თემის წაშლა
+      index:
+        add_tag: ახალი საინიციატივო თემის დამატება
+        title: ინიციატივასთან დაკავშირებული თემები
+        topic: საკითხი
+        help: "როდესაც მომხმარებელი ქმნის ახალ ინიციატივას, აღნიშნული თემები გამოჩნდება, როგორც ძირითადი ტეგები."
+    users:
+      columns:
+        id: პირადობის მოწმობა
+        erase_reason: წაშლის მიზეზი
+        name: სახელი
+        email: ელ.ფოსტა
+        document_number: დოკუმენტის ნომერი
+        roles: როლები
+        verification_level: ვერიფიკაციის დონე
+      index:
+        title: მომხმარებელი
+        no_users: მომხმარებლები არ მოიძებნა.
+        filter: ფილტრი
+        filters:
+          active: მოქმედი
+          erased: წაშლილი
+      search:
+        placeholder: მომხმარებლის ძებნა ელ. ფოსტის, სახელის ან დოკუმენტის ნომრის მიხედვით
+        search: ძებნა
+    verifications:
+      index:
+        phone_not_given: ტელეფონი მითითებული არ არის
+        sms_code_not_confirmed: არ არის დადასტურებული სმს კოდით
+        title: ნაწილობრივ გადამოწმებული
+    site_customization:
+      content_blocks:
+        information: ინფორმაცია შინაარსის ბლოკებზე
+        about: "თქვენ შეგიძლიათ შექმნათ HTML შინაარსის ბლოკები და საიტის სხვადასხვა ნაწილში განათავსოთ სურვილისამებრ."
+        html_format: "შინაარსის ბლოკი შედგება ბმულების ჯგუფისგან, რომელიც უნდა შეესაბამებოდეს შემდეგ ფორმატს:"
+        no_blocks: "შინაარსის ბლოკები არ მოიძებნა."
+        create:
+          notice: შინაარსის ბლოკი წარმატებით შეიქმნა
+          error: შინაარსის ბლოკის შექმნა ვერ მოხერხდა
+        update:
+          notice: შინაარსის ბლოკი წარმატებით დარედაქტირდა
+          error: შინაარსის ბლოკის განახლება ვერ მოხერხდა
+        destroy:
+          notice: შინაარსის ბლოკი წარმატებით წაიშალა
+        edit:
+          title: შინაარსის ბლოკის რედაქტირება
+        index:
+          create: ახალი შინაარსის ბლოკის შექმნა
+          delete: შინაარსის ბლოკის წაშლა
+          title: შინაარსის ბლოკები
+        new:
+          title: ახალი შინაარსის ბლოკის შექმნა
+        content_block:
+          body: ტექსტის მთავარი ნაწილი
+          name: სახელი
+          names:
+            top_links: მოწინავე ბმულები
+            footer: ქვედა პანელი
+            subnavigation_left: ნავიგაცია მარცხენა მხარეს
+            subnavigation_right: ნავიგაცია მარჯვენა მხარეს
+      images:
+        index:
+          title: პერსონალური სურათები
+          update: განახლება
+          delete: წაშლა
+          image: ფოტოსურათი
+        update:
+          notice: ფოტოსურათი წარმატებით შეიცვალა
+          error: ფოტოსურათის განახლება ვერ მოხერხდა
+        destroy:
+          notice: ფოტოსურათი წარმატებით წაიშალა
+          error: ფოტოსურათის წაშლა ვერ მოხერხდა
+      pages:
+        create:
+          notice: გვერდი წარმატებით შეიქმნა
+          error: გვერდის შექმნა ვერ მოხერხდა
+        update:
+          notice: გვერდი წარმატებით დარედაქტირდა
+          error: გვერდის განახლება ვერ მოხერხდა
+        destroy:
+          notice: გვერდი წარმატებით წაიშალა
+        edit:
+          title: '%{page_title}-ის რედაქტირება'
+        form:
+          options: შესაძლო ვარიანტები
+        index:
+          create: ახალი გვერდის შექმნა
+          delete: გვერდის წაშლა
+          title: პირადი გვერდები
+          see_page: გვერდის ნახვა
+        new:
+          title: ახალი ინდივიდუალური გვერდის შექმნა
+          slug_help: "ტექსტი, რომელიც ამ გვერდის ბმულის (URL) იდენტიფიკაციისთვის გამოიყენება, მაგალითად <code>https://consulproject.org/page-slug</code>"
+        page:
+          created_at: შექმნის თარიღი
+          status: სტატუსი
+          updated_at: განახლების თარიღი
+          title: სათაური
+          slug: მოკლე დასახელება
+          cards_title: ბარათები
+          see_cards: ბარათების ნახვა
+        cards:
+          cards_title: ბარათები
+          create_card: ბარათის შექმნა
+          no_cards: ბარათები არ მოიძებნა.
+          title: სათაური
+          description: აღწერა
+          link_text: ბმულის დასახელება
+          link_url: ბმულის მისამართი (URL)
+          columns_help: "ბარათის სიგანე სვეტების რაოდენობის მიხედვით. მობილურ ვერსიაზე სიგანე ყოველთვის 100%-ია."
+          create:
+            notice: "ბარათი წარმატებით შეიქმნა!"
+          update:
+            notice: "ბარათი წარმატებით დარედაქტირდა"
+          destroy:
+            notice: "ბარათი წარმატებით წაიშალა"
+    homepage:
+      title: მთვარი გვერდი
+      description: აქტიური მოდულები მთავარ გვერდზე გამოჩნდება ანალოგიური თანამიმდევრობით, როგორც ეს აქ არის ნაჩვენები.
+      header_title: ზედა პანელი
+      no_header: ზედა პანელები არ მოიძებნა.
+      create_header: ზედა პანელის შექმნა
+      cards_title: ბარათები
+      create_card: ბარათის შექმნა
+      no_cards: ბარათები არ მოიძებნა.
+      cards:
+        title: სათაური
+        description: აღწერა
+        link_text: ბმულის დასახელება
+        link_url: ბმულის მისამართი (URL)
+      feeds:
+        proposals: ინიციატივები
+        debates: დებატები
+        processes: პროცესები
+      new:
+        header_title: ახალი ზედა პანელი
+        submit_header: ზედა პანელის შექმნა
+        card_title: ახალი ბარათი
+        submit_card: ბარათის შექმნა
+      edit:
+        header_title: პანელის რედაქტირება
+        submit_header: პანელის დამახსოვრება
+        card_title: ბარათის რედაქტირება
+        submit_card: ბარათის დამახსოვრება
+    audits:
+      title: "ცვლილებების ისტორია"
+      changes: "ცვლილებების სია"
+      id: "ID"
+      field: "ველი"
+      new_value: "ახალი ღირებულება"
+      old_value: "ძველი ღირებულება"
+      edited_at: "რედაქტირების თარიღი"
+      edited_by: "რედაქტორი"
+      actions: "მოქმედებები"
+      empty: "ცვლილებები არ მოიძებნა"
+    local_census_records:
+      index:
+        title: ადგილობრივი მოსახლეობის აღწერის მართვა
+        create: ახალი ადგილობრივი აღწერის ჩანაწერის შექმნა
+        no_local_census_records: ახალი ადგილობრივი აღწერის ჩანაწერი არ მოიძებნა.
+        document_type: დოკუმენტის ტიპი
+        document_number: დოკუმენტის ნომერი
+        date_of_birth: დაბადების თარიღი
+        postal_code: საფოსტო ინდექსი
+        search:
+          placeholder: ძებნა დოკუმენტის ნომრის მიხედვით
+          search: ძებნა
+        import: CSV-ის ატვირთვა
+      new:
+        creating: ახალი ადგილობრივი აღწერის ჩანაწერის შექმნა
+      create:
+        notice: ჩანაწერი წარმატებით შეიქმნა!
+      edit:
+        editing: ადგილობრივი აღწერის ჩანაწერის რედაქტირება
+      update:
+        notice: ჩანაწერი წარმატებით დარედაქტირდა!
+      destroy:
+        notice: ჩანაწერი წარმატებით წაიშალა!
+      imports:
+        new:
+          title: ადგილობრივი მოსახლეობის აღწერის ჩანაწერები
+          subtitle: CSV ფაილის ატვირთვა
+        create:
+          notice: ადგილობრივი მოსახლეობის აღწერის ჩანაწერები წარმატებით აიტვირთა!
+        show:
+          title: ადგილობრივი მოსახლეობის აღწერის მართვა
+          subtitle: შედეგების ატვირთვა
+          import: ხელახლა ატვირთვა
+          errored: შეცდომები
+          created: შექმნილი ჩანაწერები
+        local_census_records:
+          no_records_found: ჩანაწერები არ მოიძებნა.

@@ -1,35 +1,197 @@
 mk:
   date:
+    abbr_day_names:
+      - Нед
+      - Пон
+      - Вто
+      - Сре
+      - Чет
+      - Пет
+      - Саб
     abbr_month_names:
       - 
-      - Jan
-      - Feb
-      - Mar
-      - Apr
-      - May
-      - Jun
-      - Jul
-      - Aug
-      - Sep
-      - Oct
-      - Nov
-      - Dec
+      - Јан
+      - Феб
+      - Мар
+      - Апр
+      - Мај
+      - Јун
+      - Јул
+      - Авг
+      - Сеп
+      - Окт
+      - Ное
+      - Дек
+    day_names:
+      - Недела
+      - Понеделник
+      - Вторник
+      - Среда
+      - Четврток
+      - Петок
+      - Сабота
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
     month_names:
       - 
-      - January
-      - February
-      - March
-      - April
-      - May
-      - June
-      - July
-      - August
-      - September
-      - October
-      - November
-      - December
+      - Јануари
+      - Фебруари
+      - Март
+      - Април
+      - Мај
+      - Јуни
+      - Јули
+      - Август
+      - Септември
+      - Октомври
+      - Ноември
+      - Декември
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: околу 1 час
+        other: околу %{count} часа
+      about_x_months:
+        one: околу 1 месец
+        other: околу %{count} месеци
+      about_x_years:
+        one: околу 1 година
+        other: околу %{count} години
+      almost_x_years:
+        one: речиси 1 година
+        other: речиси %{count} години
+      half_a_minute: пола минута
+      less_than_x_minutes:
+        one: помалце од минута
+        other: помалце од %{count} минути
+      less_than_x_seconds:
+        one: помалце од 1 секунда
+        other: помалце од %{count} секунди
+      over_x_years:
+        one: над 1 година
+        other: над %{count} години
+      x_days:
+        one: 1 ден
+        other: "%{count} дена"
+      x_minutes:
+        one: 1 минута
+        other: "%{count} минути"
+      x_months:
+        one: 1 месец
+        other: "%{count} месеци"
+      x_years:
+        one: 1 година
+        other: "%{count} години"
+      x_seconds:
+        one: 1 секунда
+        other: "%{count} секунди"
+    prompts:
+      day: Ден
+      hour: Час
+      minute: Минута
+      month: Месец
+      second: Секунди
+      year: Година
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: мора да биде прифатено
+      blank: неможе да биде празно
+      present: мора да биде празно
+      confirmation: не се совпаѓа со %{attribute}
+      empty: неможе да биде празно
+      equal_to: мора да биде еднакво на %{count}
+      even: мора да биде парен
+      exclusion: е резервирано
+      greater_than: мора да биде поголемо од %{count}
+      greater_than_or_equal_to: мора да биде поголемо или еднакво на %{count}
+      inclusion: не е вклучено во листата
+      invalid: е невалидно
+      less_than: мора да е помалце од %{count}
+      less_than_or_equal_to: мора да биде помалце или еднакво на %{count}
+      model_invalid: "Неуспешна валидација: %{errors}"
+      not_a_number: не е број
+      not_an_integer: мора да биде цел број
+      odd: мора да биде непарен
+      required: мора да постои
+      taken: веќе е зафатен
+      too_long:
+        one: е предолго (максимумот е 1 знак)
+        other: е предолго (максимумот е %{count} знаци)
+      too_short:
+        one: е прекратко (минимумот е 1 знак)
+        other: е прекратко (минимумот е %{count} знаци)
+      wrong_length:
+        one: e со грешна должина (треба да е 1 знак)
+        other: е со грешна должина (треба да е %{count} знаци)
+      other_than: мора да биде различно од %{count}
+    template:
+      body: "Имаше проблеми со следниве полиња:"
+      header:
+        one: 1 грешка го превенира зачувувањето на %{model}
+        other: "%{count} грешки го превенираа зачувувањето на %{model}"
+  helpers:
+    select:
+      prompt: Изберете
+    submit:
+      create: Креирај %{model}
+      submit: Зачувај %{model}
+      update: Ажурирај %{model}
   number:
-    human:
+    currency:
       format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Билион
+          million: Милион
+          quadrillion: Квадрилион
+          thousand: Илјада
+          trillion: Трилион
+      format:
+        precision: 3
         significant: true
         strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Бајт
+            other: Бајти
+          gb: ГБ
+          kb: КБ
+          mb: МБ
+          tb: ТБ
+    percentage:
+      format:
+        format: "%n%"
+  support:
+    array:
+      last_word_connector: ", и "
+      two_words_connector: " и "
+      words_connector: ", "
+  time:
+    am: ам
+    formats:
+      datetime: "%Y-%m-%d %H:%M:%S"
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+      api: "%Y-%m-%d %H"
+    pm: пм

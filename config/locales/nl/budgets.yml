@@ -3,8 +3,6 @@ nl:
     ballots:
       show:
         title: Uw keuze
-        amount_spent: Uitgegeven
-        remaining: "U heeft nog <span>%{amount}</span> te spenderen."
         no_balloted_group_yet: "U hebt nog niet gestemd op deze groep, stem nu!"
         remove: Verwijder keuze
         voted_info_2: "Je kunt je stem altijd aanpassen tot deze fase wordt gesloten."
@@ -75,8 +73,6 @@ nl:
           title: Search
         sidebar:
           my_ballot: Mijn stemmen
-          voted_info: Tot het einde van deze fase kun je %{link}. Het is niet nodig om al het geld te besteden.
-          voted_info_link: uw stem wijzigen
           change_ballot: "Als u zich bedenkt kunt uw uw stemmen in %{check_ballot} verwijderen opnieuw beginnen."
           check_ballot_link: "check mijn stemming"
           zero: U hebt op geen enkel begrotingsvoorstel gestemd.

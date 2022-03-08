@@ -3,8 +3,6 @@ val:
     ballots:
       show:
         title: Els meus vots
-        amount_spent: Cost total
-        remaining: "Et queden <span>%{amount}</span> per a invertir."
         no_balloted_group_yet: "Encara no has votat projectes d'aquest grup, ¡vota!"
         remove: Llevar vot
         zero: Encara no has votat cap proposta d'inversió.
@@ -73,8 +71,6 @@ val:
           title: Cercar
         sidebar:
           my_ballot: Els meus vots
-          voted_info: Pots %{link} els teus vots en qualsevol moment fins al tancament d'aquesta fase. No fa falta que gastes tots els diners disponibles.
-          voted_info_link: canviar el teu vot
           change_ballot: "Si canvies d'opinió pots borrar els teus vots en %{check_ballot} i tornar a començar."
           check_ballot_link: "revisar els meus vots"
           zero: Encara no has votat cap proposta d'inversió en aquest àmbit del pressupost.

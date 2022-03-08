@@ -1216,15 +1216,6 @@ he:
           without_confirmed_hide: ממתין לאישור
         title: הצעות מוסתרות
         no_hidden_proposals: לא נמצאו הצעות מוסתרות.
-    proposal_notifications:
-      index:
-        filter: סינון
-        filters:
-          all: כולם
-          with_confirmed_hide: אושר
-          without_confirmed_hide: ממתין לאישור
-        title: התראות מוסתרות
-        no_hidden_proposals: אין התראות מוסתרות.
     settings:
       flash:
         updated: הערך מעודכן

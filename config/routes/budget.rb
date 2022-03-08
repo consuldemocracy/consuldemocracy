@@ -19,5 +19,9 @@ resources :budgets, only: [:show, :index] do
   resource :executions, only: :show, controller: "budgets/executions"
 end
 
+resolve "Budget::Investment" do |investment, options|
+  [investment.budget, :investment, options.merge(id: investment)]
+end
+
 get "investments/:id/json_data", action: :json_data, controller: "budgets/investments"
 get "/budgets/:budget_id/investments/:id/json_data", action: :json_data, controller: "budgets/investments"

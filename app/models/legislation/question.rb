@@ -44,4 +44,8 @@ class Legislation::Question < ApplicationRecord
   def comments_open?
     process.debate_phase.open?
   end
+
+  def best_comments
+    comments.sort_by_supports.limit(3)
+  end
 end

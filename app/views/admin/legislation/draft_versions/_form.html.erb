@@ -1,11 +1,18 @@
 <%= render "shared/globalize_locales", resource: @draft_version %>
 
-<%= translatable_form_for [:admin, @process, @draft_version], url: url, html: { data: { watch_changes: true }} do |f| %>
+<%= translatable_form_for [:admin, @process, @draft_version], url: url,
+  html: { data: { markdown_changes_message: I18n.t("admin.legislation.draft_versions.edit.markdown_changes_message") }} do |f| %>
 
   <%= render "shared/errors", resource: @draft_version %>
 
   <div class="row">
     <%= f.translatable_fields do |translations_form| %>
+      <div class="small-12 column">
+        <div class="callout warning" style="display: none;">
+          <%= t("admin.legislation.draft_versions.edit.warning") %>
+        </div>
+      </div>
+
       <div class="small-12 medium-9 column">
         <%= translations_form.text_field :title,
                                          placeholder: t("admin.legislation.draft_versions.form.title_placeholder") %>

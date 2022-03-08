@@ -38,18 +38,56 @@ describe SignatureSheet do
   end
 
   describe "#name" do
-    it "returns name for proposal signature sheets" do
-      proposal = create(:proposal)
-      signature_sheet.signable = proposal
+    context "when title is nil" do
+      it "returns name for proposal signature sheets" do
+        proposal = create(:proposal)
+        signature_sheet.signable = proposal
 
-      expect(signature_sheet.name).to eq("Citizen proposal #{proposal.id}")
+        expect(signature_sheet.name).to eq("Citizen proposal #{proposal.id}")
+      end
+
+      it "returns name for budget investment signature sheets" do
+        budget_investment = create(:budget_investment)
+        signature_sheet.signable = budget_investment
+
+        expect(signature_sheet.name).to eq("Investment #{budget_investment.id}")
+      end
     end
 
-    it "returns name for budget investment signature sheets" do
-      budget_investment = create(:budget_investment)
-      signature_sheet.signable = budget_investment
+    context "when title is not nil" do
+      let(:signature_sheet) { build(:signature_sheet, :with_title) }
 
-      expect(signature_sheet.name).to eq("Investment #{budget_investment.id}")
+      it "returns name for proposal signature sheets" do
+        proposal = create(:proposal)
+        signature_sheet.signable = proposal
+
+        expect(signature_sheet.name).to eq("Citizen proposal #{proposal.id}: #{signature_sheet.title}")
+      end
+
+      it "returns name for budget investment signature sheets" do
+        budget_investment = create(:budget_investment)
+        signature_sheet.signable = budget_investment
+
+        expect(signature_sheet.name).to eq("Investment #{budget_investment.id}: #{signature_sheet.title}")
+      end
+    end
+
+    context "when title is an empty string" do
+      let(:signature_sheet) { build(:signature_sheet, title: "") }
+
+      it "returns name for proposal signature sheets" do
+        proposal = create(:proposal)
+        signature_sheet.signable = proposal
+
+        expect(signature_sheet.name).to eq("Citizen proposal #{proposal.id}")
+      end
+
+      it "returns name for budget investment signature sheets" do
+        budget_investment = create(:budget_investment)
+        signature_sheet.signable = budget_investment
+
+        expect(signature_sheet.name).to eq("Investment #{budget_investment.id}")
+      end
     end
   end
 

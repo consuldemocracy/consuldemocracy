@@ -3,8 +3,6 @@ he:
     ballots:
       show:
         title: בחר/י אפשרות
-        amount_spent: סכום ההוצאה
-        remaining: "נותר לך סכום של <span>%{amount}</span> שניתן להשקיע."
         no_balloted_group_yet: "טרם הצבעת לקבוצה הזאת, גש להצביע!"
         remove: הסרת הצבעה
         voted_info_2: "אבל אתה יכול לשנות את ההצבעה שלך בכל עת עד שלב זה יסגר."
@@ -75,8 +73,6 @@ he:
           title: חיפוש
         sidebar:
           my_ballot: ההצבעה שלי
-          voted_info: ניתן לשנות את ההצבעה בכל זמן עד סגירת השלב %{link}.
-          voted_info_link: שנה את הצבעתך
           change_ballot: "אם שיניתם את דעתכם, באפשרותכם להסיר את ההצבעותכם ב- %{check_ballot} ולהתחיל שוב."
           check_ballot_link: "בדוק ואשר את ההצבעה שלי"
           zero: לא נעשתה הצבעה עבור פרויקט השקעה.

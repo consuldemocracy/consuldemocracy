@@ -1,0 +1,28 @@
+<section class="debate-phase">
+  <header>
+    <h3><%= t("legislation.summary.debate_phase") %></h3>
+    <h3><%= t("legislation.summary.debates", count: questions.count) %></h3>
+  </header>
+
+  <% if questions.any? %>
+    <div>
+      <% questions.each do |question| %>
+        <div class="debate-summary">
+          <div class="question-title">
+            <h4><%= link_to question.title, polymorphic_path(question) %></h4>
+            <span class="comments-count">
+              <%= link_to t("legislation.summary.comments", count: question.comments.count),
+                          polymorphic_path(question, anchor: "comments") %>
+            </span>
+          </div>
+
+          <%= render "summary_comments", comments: question.best_comments %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="callout primary">
+      <p><%= t("legislation.processes.debate.empty_questions") %></p>
+    </div>
+  <% end %>
+</section>

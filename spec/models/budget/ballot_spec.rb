@@ -65,6 +65,20 @@ describe Budget::Ballot do
       expect(ballot.amount_spent(heading1)).to eq 50000
       expect(ballot.amount_spent(heading2)).to eq 20000
     end
+
+    it "returns the votes cast on a specific heading for approval voting" do
+      budget = create(:budget, :approval)
+      heading1 = create(:budget_heading, budget: budget, max_ballot_lines: 2)
+      heading2 = create(:budget_heading, budget: budget, max_ballot_lines: 3)
+      ballot = create(:budget_ballot, budget: budget)
+
+      ballot.investments << create(:budget_investment, :selected, heading: heading1)
+      ballot.investments << create(:budget_investment, :selected, heading: heading1)
+      ballot.investments << create(:budget_investment, :selected, heading: heading2)
+
+      expect(ballot.amount_spent(heading1)).to eq 2
+      expect(ballot.amount_spent(heading2)).to eq 1
+    end
   end
 
   describe "#amount_available" do
@@ -90,6 +104,20 @@ describe Budget::Ballot do
       ballot.investments << inv3
 
       expect(ballot.amount_available(heading1)).to eq 500
+    end
+
+    it "returns the amount of votes left for approval voting" do
+      budget = create(:budget, :approval)
+      heading1 = create(:budget_heading, budget: budget, max_ballot_lines: 2)
+      heading2 = create(:budget_heading, budget: budget, max_ballot_lines: 3)
+      ballot = create(:budget_ballot, budget: budget)
+
+      ballot.investments << create(:budget_investment, :selected, heading: heading1)
+      ballot.investments << create(:budget_investment, :selected, heading: heading1)
+      ballot.investments << create(:budget_investment, :selected, heading: heading2)
+
+      expect(ballot.amount_available(heading1)).to eq 0
+      expect(ballot.amount_available(heading2)).to eq 2
     end
   end
 

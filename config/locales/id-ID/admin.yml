@@ -821,13 +821,6 @@ id:
           without_confirmed_hide: Tertunda
         title: Proposal tersembunyi
         no_hidden_proposals: Tidak ada tersembunyi proposal disana.
-    proposal_notifications:
-      index:
-        filter: Penyaring
-        filters:
-          all: Semua
-          with_confirmed_hide: Dikonfirmasi
-          without_confirmed_hide: Tertunda
     settings:
       flash:
         updated: Nilai diperbarui

@@ -1,6 +1,6 @@
 da:
   attributes:
-    geozone_id: "Projektets omfang"
+    geozone_id: "Område"
     results_enabled: "Vis resultater"
     stats_enabled: "Vis statistik"
     advanced_stats_enabled: "Vis avanceret statistik"
@@ -16,8 +16,8 @@ da:
         one: "Projekt"
         other: "Projekter"
       milestone:
-        one: "proces"
-        other: "processer"
+        one: "Milepæl"
+        other: "Milepæle"
       milestone/status:
         one: "Status for milepæl"
         other: "Status for milepæle"
@@ -126,6 +126,9 @@ da:
       link:
         one: Link
         other: Links
+      local_census_record:
+        one: Lokal census
+        other: Lokal census data
     attributes:
       budget:
         name: "Navn"
@@ -161,7 +164,11 @@ da:
         selected_true: "Valgt"
         selected_false: "Ikke valgt"
         unfeasibility_explanation: "Forklaring på om projektet kan gennemføres"
+        valuation_finished: "Vurderingen er færdig"
+        valuator_ids: "Grupper"
+        valuation_tag_list: "Hashtags"
       budget/investment/translation:
+        title: "Titel"
         description: "Beskrivelse"
       geozone:
         name: Navn
@@ -185,28 +192,51 @@ da:
       progress_bar/kind:
         primary: "Primære"
         secondary: "Sekundære"
+      budget/group:
+        max_votable_headings: "Maksimum antal områder en bruger kan stemme i"
+      budget/group/translation:
+        name: "Gruppenavn"
       budget/heading:
+        allow_custom_content: "Tillad indholdsblok"
+        latitude: "Breddegrad (valgfri)"
+        longitude: "Længdegrad (valgfri)"
         name: "Titelnavn"
         price: "Pris"
         population: "Population"
+      budget/heading/translation:
+        name: "Navn på område"
+      budget/phase:
+        enabled: "Fase aktiveret"
+        ends_at: "Slutdato"
+        starts_at: "Startdato"
       budget/phase/translation:
         description: "Beskrivelse"
+        summary: "Opsummering"
       comment:
         body: "Kommentar"
         user: "Bruger"
       debate:
         author: "Forfatter"
         description: "Mening"
+        tag_list: "Emner"
         terms_of_service: "Servicevilkår"
         title: "Titel"
+      debate/translation:
+        title: "Titel på debat"
+        description: "Indledende debattekst"
       proposal:
         author: "Forfatter"
         title: "Titel"
         question: "Spørgsmål"
         description: "Beskrivelse"
+        responsible_name: "Fulde navn på vedkommende, der fremsender forslaget"
+        retired_reason: "Begrundelse for at trække forslaget tilbage"
         selected: "Markeret som valgt"
         terms_of_service: "Servicevilkår"
+        video_url: "Ekstern video"
       proposal/translation:
+        title: "Forslagets titel"
+        description: "Beskrivelse"
         summary: "Resume af forslag"
         retired_explanation: "Forklaring"
       user:
@@ -216,10 +246,23 @@ da:
         password_confirmation: "Bekræftelse af adgangskode"
         password: "Adgangskode"
         current_password: "Nuværende adgangskode"
+        email_digest: "Modtag et resumé af forslagsnotifikationer"
+        email_on_comment: "Send mig en e-mail når nogen kommenterer mine forslag eller debatindlæg"
+        email_on_comment_reply: "Send mig en e-mail når nogen svarer på mine kommentarer"
+        email_on_direct_message: "Modtag e-mails vedrørende direkte beskeder"
+        newsletter: "Modtag relevant information via e-mail"
         official_position: "Embedsposition"
+        official_position_badge: "Vis officiel position/stilling"
         official_level: "Embedsniveau"
         phone_number: "Telefonnummer"
+        public_activity: "Lad min aktivitetsliste være offentlig"
+        public_interests: "Andre brugere kan se de tags, jeg følger"
+        recommended_debates: "Se anbefalede debatindlæg"
+        recommended_proposals: "Se anbefalede borgerforslag"
         redeemable_code: "Verifikationskode modtaget via e-mail"
+      direct_message:
+        title: "Titel"
+        body: "Besked"
       organization:
         name: "Navn på organisation"
         responsible_name: "Den ansvarlige for gruppen"
@@ -232,11 +275,15 @@ da:
         description: "Beskrivelse"
       active_poll/translation:
         description: "Beskrivelse"
+      poll/booth:
+        name: "Navn"
+        location: "Lokation"
       poll/translation:
         name: "Navn"
         summary: "Resumé"
         description: "Beskrivelse"
       poll/question:
+        poll_id: "Afstemning"
         title: "Spørgsmål"
         summary: "Resumé"
         description: "Beskrivelse"
@@ -247,7 +294,13 @@ da:
         data: CSV data
         poll_id: Afstemning
         officer_assignment_id: Tilknyttet medarbejder
+      poll/shift:
+        task: "Opgave"
+      proposal_notification:
+        body: "Besked"
+        title: "Titel"
       signature_sheet:
+        title: "Titel"
         signable_type: "Underskriftstype"
         signable_id: "ID"
         document_numbers: "Dokumentnummer"
@@ -257,6 +310,8 @@ da:
         subtitle: Undertitel
         slug: Signaturlinje
         status: Status
+        status_draft: "Udkast"
+        status_published: "Offentliggjort"
         title: Titel
         updated_at: Opdateret
         more_info_flag: Vis i "hjælp"
@@ -273,10 +328,19 @@ da:
         name: Navn
         locale: baggrund
         body: Indhold
+      tag:
+        name: "Skriv emnets navn"
+      topic:
+        title: "Titel"
+        description: "Indledende tekst"
       banner:
         background_color: Baggrundsfarve
         font_color: Skriftfarve
+        post_ended_at: "Slutdato"
+        post_started_at: "Startdato"
+        target_url: "Link"
       banner/translation:
+        title: "Titel"
         description: "Beskrivelse"
       legislation/process:
         title: Titel på proces
@@ -297,6 +361,7 @@ da:
         result_publication_date: Dato for publicering af det endelige resultat
         background_color: Baggrundsfarve
         font_color: Skriftfarve
+        homepage_enabled: "Startside aktiveret"
       legislation/process/translation:
         title: Titel på proces
         summary: Resumé
@@ -304,11 +369,18 @@ da:
         additional_info: Yderligere information
         homepage: "Beskrivelse"
         milestones_summary: Resumé
+      legislation/proposal:
+        description: "Beskrivelse"
+        summary: "Resume af forslag"
+        title: "Forslagets titel"
+        video_url: "Link til video"
       legislation/draft_version:
         title: Titel på version
         body: Tekst
         changelog: Ændringer
         status: Status
+        status_draft: "Udkast"
+        status_published: "Offentliggjort"
         final_version: Den endelige version
       legislation/draft_version/translation:
         title: Titel på version
@@ -317,6 +389,8 @@ da:
       legislation/question:
         title: Titel
         question_options: Indstillinger
+      legislation/question/translation:
+        title: Spørgsmål
       legislation/question_option:
         value: Værdi
       legislation/annotation:
@@ -374,6 +448,9 @@ da:
         order: Du kan angive den position, hvor denne handling vil blive vist til brugeren på listen over handlinger
         active: Aktiv
         action_type: Type
+        action_type_proposed_action: "Foreslået handling"
+        action_type_resource: "Funktion"
+        published_proposal: "For offentlige forslag?"
       dashboard/administrator_task:
         source: Kilde
         user: Udført af
@@ -385,6 +462,8 @@ da:
         valuator_group_id: Evaluatorer
         can_comment: Kan oprette kommentarer
         can_edit_dossier: Kan redigere projektinformation
+      valuator_group:
+        name: "Gruppenavn"
       local_census_record:
         document_type: Dokumenttype
         document_number: Dokument nummer
@@ -425,7 +504,6 @@ da:
           attributes:
             document_number:
               not_in_census: "Findes ikke i adresseregistret"
-              has_voted: "Brugeren har allerede stemt"
         legislation/process:
           attributes:
             end_date:
@@ -466,7 +544,12 @@ da:
           attributes:
             valuation:
               cannot_comment_valuation: "Du kan ikke kommentere en værdisættelse"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Allerede oversat
       messages:
+        translations_too_short: Det er obligatorisk at tilføje minimum en oversættelse
         record_invalid: "Valideringen mislykkedes: %{errors}"
         another_poll_active: Der er en anden afstemning aktiv i den angivet periode
         restrict_dependent_destroy:

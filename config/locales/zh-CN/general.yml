@@ -83,8 +83,6 @@ zh-CN:
       tags_placeholder: "请输入您希望使用的标签，用逗号(',') 分割"
     index:
       featured_debates: 特色
-      filter_topic:
-        other: " 主题'%{topic}'"
       orders:
         confidence_score: 最高评分
         created_at: 最新
@@ -201,7 +199,6 @@ zh-CN:
       help: 帮助
       my_account_link: 我的帐号
       my_activity_link: 我的活动
-      open: 打开
       open_gov: 开放政府
       proposals: 提议
       poll_questions: 投票
@@ -211,8 +208,6 @@ zh-CN:
           other: 您有%{count} 个新通知
         notifications: 通知
         no_notifications: "您没有新的通知"
-    admin:
-      watch_form_message: "您有未保存的更改。是否确认要离开此页面？"
   notifications:
     index:
       empty_notifications: 您没有新的通知。
@@ -251,8 +246,6 @@ zh-CN:
       sign_in: 用Twitter登录
       sign_up: 用Twitter注册
       name: Twitter
-    info_sign_in: "登录用："
-    info_sign_up: "注册用："
     or_fill: "或者填写以下表格："
   proposals:
     create:
@@ -291,8 +284,6 @@ zh-CN:
       map_skip_checkbox: "此提议没有具体的位置或者我没有留意到。"
     index:
       featured_proposals: 特色
-      filter_topic:
-        other: " 主题'%{topic}'"
       orders:
         confidence_score: 最高评分
         created_at: 最新
@@ -491,7 +482,6 @@ zh-CN:
     follow: "跟随"
     following: "跟随着"
     follow_entity: "跟随%{entity}"
-    hide: 隐藏
     print:
       print_button: 打印此信息
     search: 搜索

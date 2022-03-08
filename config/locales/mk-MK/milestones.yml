@@ -1,1 +1,8 @@
 mk:
+  milestones:
+    index:
+      no_milestones: Нема дефинирано цели
+      progress: Прогрес
+    show:
+      publication_date: "Објавено на %{publication_date}"
+      status_changed: Статусот е променет во

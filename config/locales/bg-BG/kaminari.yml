@@ -1,1 +1,21 @@
 bg:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Влизания
+        one: Влизане
+        other: Влизания
+      more_pages:
+        display_entries: Показани <strong>%{first}&nbsp;-&nbsp;%{last}</strong> от <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "%{entry_name} не може да бъде намерено"
+          one: Има <strong>1 %{entry_name}</strong>
+          other: Има <strong>%{count} %{entry_name}</strong>
+  views:
+    pagination:
+      current: Вие сте на страница
+      first: Първа
+      last: Последна
+      next: Следваща
+      previous: Предишна

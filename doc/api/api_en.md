@@ -119,8 +119,7 @@ Sure you can use any HTTP library available for most programming languages.
 
 `User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36`
 
-
-## Available information:
+## Available information
 
 The [config/api.yml](../../config/api.yml) file contains a complete list of all the models (and their attributes) which are currently being exposed in the API.
 
@@ -261,7 +260,7 @@ To retrieve the next page, you have to pass as a parameter the cursor received i
 
 ### Accessing several resources in a single request
 
-This query requests information about several models in a single request: `Proposal`,` User`, `Geozone` and` Comment`:
+This query requests information about several models in a single request: `Proposal`, `User`, `Geozone` and `Comment`:
 
 ```
 {
@@ -338,7 +337,7 @@ The response will look something like this:
 
 ### Example of too complex query
 
-The main risk factor is when multiple collections of resources are requested in the same query. The maximum number of collections that can appear in the same query is limited to 2. The following query requests information from the `users`,` debates` and `proposals` collections, so it will be rejected:
+The main risk factor is when multiple collections of resources are requested in the same query. The maximum number of collections that can appear in the same query is limited to 2. The following query requests information from the `users`, `debates` and `proposals` collections, so it will be rejected:
 
 ```
 {
@@ -383,7 +382,7 @@ The response will look something like this:
 }
 ```
 
-However, it is possible to request information belonging to more than two models in a single query, as long as you do not try to access the entire collection. For example, the following query that accesses the `User`,` Proposal` and `Geozone` models is valid:
+However, it is possible to request information belonging to more than two models in a single query, as long as you do not try to access the entire collection. For example, the following query that accesses the `User`, `Proposal` and `Geozone` models is valid:
 
 ```
 {

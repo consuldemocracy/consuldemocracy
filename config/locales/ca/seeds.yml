@@ -1,8 +1,54 @@
 ca:
   seeds:
+    settings:
+      official_level_1_name: Posició oficial 1
+      official_level_2_name: Posició oficial 2
+      official_level_3_name: Posició oficial 3
+      official_level_4_name: Posició oficial 4
+      official_level_5_name: Posició oficial 5
+    geozones:
+      north_district: Districte nord
+      west_district: Districte Oest
+      east_district: Districte Est
+      central_district: Districte Central
+    organizations:
+      human_rights: Drets humans
+      neighborhood_association: Associació de veïns
     categories:
+      associations: Associacions
+      culture: Cultura
+      sports: Esports
+      social_rights: Drets Socials
+      economy: Economia
+      employment: Ocupació
+      equity: Equitat
+      sustainability: Sostenibilitat
       participation: Participació
+      mobility: Mobilitat
+      media: Mitjans de comunicació
+      health: Salut
       transparency: Transparència
+      security_emergencies: Seguretat i Emergències
+      environment: Medi ambient
     budgets:
+      budget: Pressupost participatiu
+      currency: '€'
       groups:
+        all_city: Tota la ciutat
         districts: Districtes
+      valuator_groups:
+        culture_and_sports: Cultura & Esports
+        gender_and_diversity: Gènere & Polítiques de diversitat
+        urban_development: Desenvolupament Urbà Sostenible
+        equity_and_employment: Equitat & Employment
+      statuses:
+        studying_project: Estudiar el projecte
+        bidding: Licitació
+        executing_project: Executant el projecte
+        executed: Executat
+    polls:
+      current_poll: "Enquesta actual"
+      current_poll_geozone_restricted: "Enquesta actual restringida per geozona"
+      recounting_poll: "Conta enquesta"
+      expired_poll_without_stats: "Enquesta expirada sense estadístiques & Resultats"
+      expired_poll_with_stats: "Enquesta en vigor amb estadístiques & Resultats"

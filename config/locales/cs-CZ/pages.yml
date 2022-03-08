@@ -43,6 +43,7 @@ cs:
         title: "Procesy"
         description: "V části %{link} se občané podílejí na přípravě a úpravách předpisů, které mají vliv na město a mohou se vyjádřit např. k návrhům obecních vyhlášek v předchozích debatách."
         link: "procesy"
+        feature: "K účasti v hlasování využijte následující odkaz %{link} a ověřte svůj účet."
       faq:
         title: "Technické problémy?"
         description: "Přečtěte si časté otázky a řešit vaše dotazy."

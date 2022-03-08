@@ -10,7 +10,6 @@ module CommentableActions
     @resources = @current_order == "recommendations" && current_user.present? ? @resources.recommendations(current_user) : @resources.for_render
     @resources = @resources.search(@search_terms) if @search_terms.present?
     @resources = @advanced_search_terms.present? ? @resources.filter(@advanced_search_terms) : @resources
-    @resources = @resources.tagged_with(@tag_filter) if @tag_filter
 
     @resources = @resources.page(params[:page]).send("sort_by_#{@current_order}")
 
@@ -101,12 +100,6 @@ module CommentableActions
 
     def load_categories
       @categories = Tag.category.order(:name)
-    end
-
-    def parse_tag_filter
-      if params[:tag].present?
-        @tag_filter = params[:tag] if Tag.named(params[:tag]).exists?
-      end
     end
 
     def set_resource_votes(instance)

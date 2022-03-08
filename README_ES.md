@@ -36,7 +36,7 @@ Puedes acceder a la página principal del proyecto en [http://consulproject.org]
 
 **NOTA**: para unas instrucciones más detalladas consulta la [documentación](https://docs.consulproject.org)
 
-Prerequisitos: tener instalado git, Ruby 2.4.9, la gema `bundler`, Node.js y PostgreSQL (9.4 o superior).
+Prerequisitos: tener instalado git, Ruby 2.5.8, la gema `bundler`, Node.js y PostgreSQL (9.4 o superior).
 
 ```bash
 git clone https://github.com/consul/consul.git
@@ -55,8 +55,6 @@ Para ejecutar la aplicación en local:
 ```
 bin/rails s
 ```
-
-Prerequisitos para los tests: tener instalado ChromeDriver >= 2.33
 
 Para ejecutar los tests:
 
