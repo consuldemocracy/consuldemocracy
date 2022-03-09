@@ -18,30 +18,134 @@ describe Legislation::Process do
   end
 
   describe "dates validations" do
-    it "is invalid if debate_start_date is present but debate_end_date is not" do
-      process = build(:legislation_process, debate_start_date: Date.current, debate_end_date: "")
+    it "is invalid if draft is enabled but draft_start_date is not present" do
+      process = build(:legislation_process, draft_phase_enabled: true, draft_start_date: nil)
+
       expect(process).to be_invalid
-      expect(process.errors.messages[:debate_end_date]).to include("can't be blank")
+      expect(process.errors.messages[:draft_start_date]).to include("can't be blank")
     end
 
-    it "is invalid if debate_end_date is present but debate_start_date is not" do
-      process = build(:legislation_process, debate_start_date: nil, debate_end_date: Date.current)
+    it "is invalid if draft is enabled but draft_end_date is not present" do
+      process = build(:legislation_process, draft_phase_enabled: true, draft_end_date: "")
+
+      expect(process).to be_invalid
+      expect(process.errors.messages[:draft_end_date]).to include("can't be blank")
+    end
+
+    it "is invalid if debate phase is enabled but debate_start_date is not present" do
+      process = build(:legislation_process, debate_phase_enabled: true, debate_start_date: nil)
+
       expect(process).to be_invalid
       expect(process.errors.messages[:debate_start_date]).to include("can't be blank")
     end
 
-    it "is invalid if allegations_start_date is present but debate_end_date is not" do
-      process = build(:legislation_process, allegations_start_date: Date.current,
-                                            allegations_end_date: "")
+    it "is invalid if debate phase is enabled but debate_end_date is not present" do
+      process = build(:legislation_process, debate_phase_enabled: true, debate_end_date: "")
+
+      expect(process).to be_invalid
+      expect(process.errors.messages[:debate_end_date]).to include("can't be blank")
+    end
+
+    it "is invalid if proposals phase is enabled but proposals_phase_start_date is not present" do
+      process = build(:legislation_process, proposals_phase_enabled: true, proposals_phase_start_date: nil)
+
+      expect(process).to be_invalid
+      expect(process.errors.messages[:proposals_phase_start_date]).to include("can't be blank")
+    end
+
+    it "is invalid if proposals phase is enabled but proposals_phase_end_date is not present" do
+      process = build(:legislation_process, proposals_phase_enabled: true, proposals_phase_end_date: "")
+
+      expect(process).to be_invalid
+      expect(process.errors.messages[:proposals_phase_end_date]).to include("can't be blank")
+    end
+
+    it "is invalid if allegations phase is enabled but allegations_start_date is not present" do
+      process = build(:legislation_process, allegations_phase_enabled: true,
+                                            allegations_start_date: nil,)
+
+      expect(process).to be_invalid
+      expect(process.errors.messages[:allegations_start_date]).to include("can't be blank")
+    end
+
+    it "is invalid if allegations phase is enabled but allegations_end_date is not present" do
+      process = build(:legislation_process, allegations_phase_enabled: true, allegations_end_date: "")
+
       expect(process).to be_invalid
       expect(process.errors.messages[:allegations_end_date]).to include("can't be blank")
     end
 
-    it "is invalid if debate_end_date is present but allegations_start_date is not" do
-      process = build(:legislation_process, allegations_start_date: nil,
-                                            allegations_end_date: Date.current)
-      expect(process).to be_invalid
-      expect(process.errors.messages[:allegations_start_date]).to include("can't be blank")
+    it "is valid if start dates are missing and the phase is disabled" do
+      draft_disabled = build(:legislation_process,
+                             draft_phase_enabled: false,
+                             draft_start_date: nil)
+
+      debate_disabled = build(:legislation_process,
+                              debate_phase_enabled: false,
+                              debate_start_date: nil)
+
+      proposals_disabled = build(:legislation_process,
+                                 proposals_phase_enabled: false,
+                                 proposals_phase_start_date: nil)
+
+      allegations_disabled = build(:legislation_process,
+                                   allegations_phase_enabled: false,
+                                   allegations_start_date: nil)
+
+      expect(draft_disabled).to be_valid
+      expect(debate_disabled).to be_valid
+      expect(proposals_disabled).to be_valid
+      expect(allegations_disabled).to be_valid
+    end
+
+    it "is valid if end dates are missing and the phase is disabled" do
+      draft_disabled = build(:legislation_process,
+                             draft_phase_enabled: false,
+                             draft_end_date: nil)
+
+      debate_disabled = build(:legislation_process,
+                              debate_phase_enabled: false,
+                              debate_end_date: nil)
+
+      proposals_disabled = build(:legislation_process,
+                                 proposals_phase_enabled: false,
+                                 proposals_phase_end_date: nil)
+
+      allegations_disabled = build(:legislation_process,
+                                   allegations_phase_enabled: false,
+                                   allegations_end_date: nil)
+
+      expect(draft_disabled).to be_valid
+      expect(debate_disabled).to be_valid
+      expect(proposals_disabled).to be_valid
+      expect(allegations_disabled).to be_valid
+    end
+
+    it "is valid if start and end dates are missing and the phase is disabled" do
+      draft_disabled = build(:legislation_process,
+                             draft_phase_enabled: false,
+                             draft_start_date: nil,
+                             draft_end_date: nil)
+
+      debate_disabled = build(:legislation_process,
+                              debate_phase_enabled: false,
+                              debate_start_date: nil,
+                              debate_end_date: nil)
+
+      proposals_disabled = build(:legislation_process,
+                                 proposals_phase_enabled: false,
+                                 proposals_phase_start_date: nil,
+                                 proposals_phase_end_date: nil)
+
+      allegations_disabled = build(:legislation_process,
+                                   allegations_phase_enabled: false,
+                                   allegations_start_date: nil,
+                                   allegations_end_date: nil)
+
+      expect(draft_disabled).to be_valid
+      expect(debate_disabled).to be_valid
+      expect(proposals_disabled).to be_valid
+      expect(allegations_disabled).to be_valid
     end
   end
 
@@ -227,6 +331,37 @@ describe Legislation::Process do
       it "has milestone_tags" do
         expect(process.reload.milestone_tag_list.count).to eq(1)
       end
+    end
+  end
+
+  describe ".search" do
+    let!(:traffic) do
+      create(:legislation_process,
+             title: "Traffic regulation",
+             summary: "Lane structure",
+             description: "From top to bottom")
+    end
+
+    let!(:animal_farm) do
+      create(:legislation_process,
+             title: "Hierarchy structure",
+             summary: "Pigs at the top",
+             description: "Napoleon in charge of the traffic")
+    end
+
+    it "returns only matching polls" do
+      expect(Legislation::Process.search("lane")).to eq [traffic]
+      expect(Legislation::Process.search("pigs")).to eq [animal_farm]
+      expect(Legislation::Process.search("nothing here")).to be_empty
+    end
+
+    it "gives more weight to name" do
+      expect(Legislation::Process.search("traffic")).to eq [traffic, animal_farm]
+      expect(Legislation::Process.search("structure")).to eq [animal_farm, traffic]
+    end
+
+    it "gives more weight to summary than description" do
+      expect(Legislation::Process.search("top")).to eq [animal_farm, traffic]
     end
   end
 end

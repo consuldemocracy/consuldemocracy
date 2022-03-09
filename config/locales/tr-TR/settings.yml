@@ -68,11 +68,15 @@ tr:
       poll_description: Anketlerin tanımlaması
       poll_description_description: Anket özelliğinin ayrıntılı açıklaması
       poll_link: Ek bilgi bağlantısı
+      poll_link_description: Anket özelliğine ek bilgi bağlantısı ekleyin
       email_short_title: E-posta
       email_short_title_description: 'E-posta özelliğinin kısa açıklaması. Kullanıcıların önerilerini tanıtmak için bir e-posta göndermelerine izin verir. Bu e-postanın tüm içeriğini "/uyg/görünümler/göstergepanosu/postacı/ilet.html.erb" adresinde bulabilirsiniz'
       email_description: E-posta tanımlaması
       email_description_description: E-posta özelliğinin ayrıntılı açıklaması
       poster_short_title: Görsel
+      poster_short_title_description: 'Görsel özelliğinin kısa açıklaması. Kullanıcılara, önerilerinin tanıtımını yapmaları için PDF biçiminde bir görsel indirmelerine izin verir. Bu görselin tüm içeriğini "/uygulama/görünümler/gösterge panosu/görsel/dizin.pdf.erb" adresinde bulabilirsiniz'
+      poster_description: Poster açıklaması
+      poster_description_description: Poster özelliğinin detaylı açıklaması
     analytics_url: "Analitikler URL'si"
     proposal_notification_minimum_interval_in_days: "Öneri yazarlarının yeni öneri bildirimleri göndermesi için minimum aralık (gün olarak)"
     proposal_notification_minimum_interval_in_days_description: "Kullanıcı önerisinin tüm destekçileri için bir bildirim gönderebileceği gün sayısı"
@@ -85,6 +89,8 @@ tr:
       facebook_login_description: "Kullanıcıların Facebook hesapları ile kayıt olmalarına izin ver"
       google_login: "Google girişi"
       google_login_description: "Kullanıcıların Google Hesapları ile kayıt olmalarına izin ver"
+      wordpress_login: "Wordpress ile oturum açma"
+      wordpress_login_description: "Kullanıcıların Wordpress Hesapları ile kayıt olmalarına izin ver"
       featured_proposals: "Öne Çıkan öneriler"
       featured_proposals_description: "Dizin önerileri sayfasında öne çıkan önerileri gösterir"
       signature_sheets: "İmza sayfaları"
@@ -116,8 +122,48 @@ tr:
       remote_translations_description: "Kullanıcıların, dillerinde içerik olmadığında çeviri isteğinde bulunmalarını sağlayan bir düğme görüntüler."
       translation_interface: "Çeviri arayüzü"
       translation_interface_description: "Kullanıcıların, mevcut tüm uygulama dillerinde içeriklerini girmelerine izin veren manuel çeviri arayüzünü görüntüler. Bu seçenek yalnızca kullanıcı başvuru formlarını etkiler ve bağımsız olarak yönetim panelinde her zaman aktif olacaktır."
+      remote_census: "Uzaktan nüfus sayımı bağlantısını yapılandırın (SOAP)"
+      remote_census_description: "Her kurumun uzaktan nüfus sayımına bağlantısını yapılandırmasına izin verir"
       valuation_comment_notification: "Değerlendirme yorumu bildirimi"
       valuation_comment_notification_description: "Yeni bir değerlendirme yorumu oluşturulduğunda, bütçe yatırımı değerlendirme yorumlayıcısı hariç tüm ilişkili kullanıcılara bir e-posta gönderin"
+      graphql_api: "GraphQL API"
+      dashboard:
+        notification_emails: "Gösterge paneli bildirim iletileri"
+        notification_emails_description: "Gösterge paneli bildirim e-postalarının teklif yazarlarına gönderilmesini etkinleştir"
+      sdg: SKH
+      sdg_description: Yönetim menüsünde ve genel ayarlarda Sürdürülebilir Kalkınma Hedefleri bölümlerini etkinleştirin.
+    remote_census:
+      general:
+        endpoint: "Bitiş Noktası"
+        endpoint_description: "Nüfus sayım servisinin mevcut olduğu ana bilgisayarın adı (wsdl)"
+      request:
+        method_name: "Yöntem adını talep et"
+        method_name_description: "İstek metodunun adı Şehrin Nüfus Sayımı Web Servisi tarafından kabul edildi."
+        structure: "Talep Yapısı"
+        structure_description: 'Belediye il meclisinin nüfus sayımı Web servisine göndereceği talebin yapısı. Bu talebin "sabit" değerleri doldurulmalıdır. Belge Türü, Belge Numarası, Doğum Tarihi ve Posta Kodu ile ilgili değerler boş bırakılmalıdır. Geçerli bir format örneği: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": 1, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
+        document_type: "Belge türüne giden yol"
+        document_type_description: "Belge türünü gönderen talep yapısındaki yol. Web Servisi bir kullanıcıyı doğrulamak için belge türüne ihtiyaç duymuyorsa DOLDURMAYIN."
+        document_number: "Belge numarasına giden yol"
+        document_number_description: "Belge numarasını gönderen talep yapısındaki yol. Web Servisi bir kullanıcıyı doğrulamak için belge numarasına ihtiyaç duymuyorsa DOLDURMAYIN."
+        date_of_birth: "Doğum tarihine giden yol"
+        date_of_birth_description: "Doğum tarihini gönderen talep yapısındaki yol. Web Servisi bir kullanıcıyı doğrulamak için doğum tarihine ihtiyaç duymuyorsa DOLDURMAYIN."
+        postal_code: "Posta koduna giden yol"
+        postal_code_description: "Posta Kodunu gönderen talep yapısındaki yol. Web Servisi bir kullanıcıyı doğrulamak için Posta Koduna ihtiyaç duymuyorsa DOLDURMAYIN."
+      response:
+        date_of_birth: "Doğum tarihine giden yol"
+        date_of_birth_description: "Kullanıcının doğum tarihi yanıtın hangi yolundadır?"
+        postal_code: "Posta koduna giden yol"
+        postal_code_description: "Kullanıcının posta kodu yanıtın hangi yolundadır?"
+        district: "İlçeye giden yol"
+        district_description: "Kullanıcının ilçesi yanıtın hangi yolundadır?"
+        gender: "Cinsiyete giden yol"
+        gender_description: "Kullanıcının cinsiyeti yanıtın hangi yolundadır?"
+        name: "Ada giden yol"
+        name_description: "Kullanıcının adı yanıtın hangi yolundadır?"
+        surname: "Soyada giden yol"
+        surname_description: "Kullanıcının soyadı yanıtın hangi yolundadır?"
+        valid: "Geçerli bir yanıtı saptama koşulu"
+        valid_description: "Geçerli bir yanıt kabul edilmesi ve kullanıcının doğrulanması için hangi yanıt yolunun bilgilendirilmesi gerekir"
     map:
       latitude: "Enlem"
       latitude_description: "Harita konumunu göstermek için enlem"
@@ -127,6 +173,7 @@ tr:
       zoom_description: "Harita konumunu göstermek için yakınlaştırma"
     process:
       debates: "Tartışmalar"
+      debates_description: "Vatandaşların tartışma alanı, onları ilgilendiren konuları sunabilen ve görüşlerini başkalarıyla paylaşmak isteyen herkesi hedeflemektedir"
       proposals: "Öneriler"
       proposals_description: "Vatandaşların' önerileri, komşuların ve toplulukların çevrelerinin nasıl olmasını istediklerine doğrudan karar vermeleri için yeterli destek almalarını ve vatandaşların oylarına sunmalarını sağlayan bir fırsattır"
       polls: "Anketler"
@@ -162,3 +209,15 @@ tr:
         max_size_description: "Yüklenen bir belge için izin verilen maksimum boyut (Megabayt/MB cinsinden)"
         content_types: "Dokümanlar için kabul edilen içerik türleri"
         content_types_description: "Yüklenen belgeler için izin verilen tüm içerik türlerini seçin"
+    sdg:
+      process:
+        debates: Tartışmalardaki ilgili SKH'ler
+        debates_description: Tartışmaların Sürdürülebilir Kalkınma Hedefleri ile ilişkilendirilmesine izin ver
+        proposals: Tekliflerdeki ilgili SKH'ler
+        proposals_description: Tekliflerin Sürdürülebilir Kalkınma Hedefleri ile ilişkilendirilmesine izin ver
+        polls: Anketlerdeki ilgili SKH
+        polls_description: Anketlerin Sürdürülebilir Kalkınma Hedefleri ile ilişkilendirilmesine izin ver
+        budgets: Katılımcı bütçelerdeki ilgili SKH
+        budgets_description: Katılımcı bütçelerin Sürdürülebilir Kalkınma Hedefleri ile ilişkilendirilmesine izin ver
+        legislation: İşbirliğine dayalı mevzuattaki ilgili SKH
+        legislation_description: İşbirliğine dayalı mevzuatın Sürdürülebilir Kalkınma Hedefleri ile ilişkilendirilmesine izin ver

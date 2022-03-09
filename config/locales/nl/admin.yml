@@ -72,10 +72,6 @@ nl:
         budget_investments: Zie begrotingsvoorstellen
         table_name: Name
         table_phase: Phase
-        table_investments: Investments
-        table_edit_groups: Headings groups
-        table_edit_budget: Edit
-        table_admin_ballots: Stembiljetten
         edit_groups: Edit headings groups
         edit_budget: Edit budget
         admin_ballots: Stembiljetten
@@ -88,7 +84,6 @@ nl:
         title: Edit Participatory budget
         delete: Verwijder begroting
         phase: Phase
-        dates: Datums
         enabled: Actief
         actions: Activiteiten
         edit_phase: Bewerk fase
@@ -106,7 +101,6 @@ nl:
     budget_groups:
       name: "Name"
       headings_name: "Rubrieken"
-      headings_edit: "Rubrieken bewerken"
       headings_manage: "Rubrieken beheren"
       no_groups: "Er zijn geen groepen."
       amount:
@@ -148,7 +142,6 @@ nl:
         back: "Terug naar groepen"
     budget_phases:
       edit:
-        summary_help_text: Deze tekst informeert de deelnemer over de fase. Om het te laten zien zelfs als de fase niet actief is, vinkt u het vakje aan
         description_help_text: Deze tekst verschijnt in de kop wanneer de fase actief is
         enabled_help_text: Deze fase is openbaar in de tijdlijn van de budgetfasen, maar ook actief voor andere doeleinden
         save_changes: Bewaar wijzigingen
@@ -274,8 +267,6 @@ nl:
         table_name: Name
         table_description: Beschrijving
         table_actions: Activiteiten
-        delete: Delete
-        edit: Edit
       edit:
         title: Bewerk investeringsstatus
       update:
@@ -365,7 +356,6 @@ nl:
           banner_title: Rubriekkleuren
         index:
           create: Nieuw plan
-          delete: Delete
           title: Plannen
           filters:
             active: Actief
@@ -489,12 +479,9 @@ nl:
     managers:
       index:
         title: Managers
-        name: Name
-        email: E-mail
         no_managers: Er zijn geen managers.
       manager:
         add: Add
-        delete: Delete
       search:
         title: "Managers: zoek deelnemers"
     menu:
@@ -559,25 +546,19 @@ nl:
     administrators:
       index:
         title: Admins
-        name: Name
-        email: E-mail
         id: Beheerder ID
         no_administrators: Er zijn geen beheerders.
       administrator:
         add: Voeg toe
-        delete: Delete
         restricted_removal: "Sorry, u kunt uzelf niet uit de beheerders verwijderen"
       search:
         title: "Beheerders: zoek deelnemers"
     moderators:
       index:
         title: Moderators
-        name: Name
-        email: E-mail
         no_moderators: Er zijn geen moderators.
       moderator:
         add: Voeg toe
-        delete: Delete
       search:
         title: "Moderators: zoek deelnemers"
     segment_recipient:
@@ -603,8 +584,6 @@ nl:
         sent: Verzonden
         actions: Activiteiten
         draft: Concept
-        edit: Edit
-        delete: Delete
         preview: Preview
         empty_newsletters: Er zijn geen nieuwsbrieven om te tonen
       new:
@@ -638,8 +617,6 @@ nl:
         sent: Verzonden
         actions: Activiteiten
         draft: Concept
-        edit: Edit
-        delete: Delete
         preview: Preview
         view: Weergave
         empty_notifications: Er zijn geen meldingen te tonen
@@ -730,7 +707,6 @@ nl:
         no_group: "Geen groep"
       valuator:
         add: Add to valuators
-        delete: Delete
       search:
         title: "Beoordelaars: zoek deelnemers"
       form:
@@ -766,7 +742,6 @@ nl:
         entry_name: Lid
       search:
         email_placeholder: Search user by email
-        search: Search
         user_not_found: Gebruiker niet gevonden
     poll_officer_assignments:
       index:
@@ -1021,8 +996,6 @@ nl:
         no_organizations: Er zijn geen organisaties.
         reject: Reject
         rejected: Afgewezen
-        search: Search
-        search_placeholder: Name, email or phone number
         title: Organisations
         verified: Geverifierd
         verify: Verify
@@ -1078,21 +1051,14 @@ nl:
     shared:
       true_value: "Ja"
       false_value: "Nee"
-      booths_search:
-        button: Search
-        placeholder: Search booth by name
-      poll_officers_search:
-        button: Search
-        placeholder: Search poll officers
-      poll_questions_search:
-        button: Search
-        placeholder: Search poll questions
-      proposal_search:
-        button: Search
-        placeholder: Zoek voorstellen op titel, code, omschrijving of vraag
-      user_search:
-        button: Search
-        placeholder: Search user by name or email'
+      search:
+        label:
+          booths: "Search booth by name"
+          organizations: "Name, email or phone number"
+          poll_officers: "Search poll officers"
+          poll_questions: "Search poll questions"
+          proposals: "Zoek voorstellen op titel, code, omschrijving of vraag"
+          users: "Search user by name or email'"
       search_results: "Zoekresultaten"
       no_search_results: "No results found."
       actions: Activiteiten
@@ -1106,14 +1072,11 @@ nl:
       author: Author
       content: Content
       created_at: Created at
-      delete: Delete
       color_help: Hexadecimale notatie
     geozones:
       index:
         title: Geozone
         create: Create geozone
-        edit: Edit
-        delete: Delete
       geozone:
         name: Name
         external_code: External code
@@ -1220,7 +1183,6 @@ nl:
         no_users: Er zijn geen deelnemers.
       search:
         placeholder: Zoek deelnemer per e-mail, naam of documentnummer
-        search: Search
     verifications:
       index:
         phone_not_given: Phone not given
@@ -1294,16 +1256,11 @@ nl:
           updated_at: Updated at
           title: Title
           slug: Bullet
-          cards_title: Tegels
           see_cards: Tegels bekijken
         cards:
           cards_title: tegels
           create_card: Kaart aanmaken
           no_cards: Er zijn geen tegels.
-          title: Title
-          description: Beschrijving
-          link_text: Tekst link
-          link_url: URL link
           columns_help: "Breedte van de tegel in aantal kolommen. Op mobiele schermen worden tegels altijd op 100% breedte getoond."
           create:
             notice: "Tegel aangemaakt"
@@ -1320,11 +1277,6 @@ nl:
       cards_title: Tegels
       create_card: Kaart aanmaken
       no_cards: Er zijn geen tegels.
-      cards:
-        title: Title
-        description: Beschrijving
-        link_text: Tekst link
-        link_url: URL link
       feeds:
         proposals: Proposals
         debates: Discussie

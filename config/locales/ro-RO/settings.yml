@@ -45,7 +45,7 @@ ro:
     org_name: "Numele site-ului"
     org_name_description: "Acest nume va apărea pe subiectul mailers în paginile de ajutor..."
     related_content_score_threshold: "Prag de scor pentru conținut"
-    related_content_score_threshold_description: "În funcție de ratingul voturilor într-un conținut asociat, se ascunde conținutul pe care utilizatorii îl marchează fără legătură"
+    related_content_score_threshold_description: "În funcție de clasificarea voturilor într-un conținut asemănător, se ascunde conținutul pe care utilizatorii îl marchează ca fiind irelevant"
     hot_score_period_in_days: "Perioada (zile) folosită de filtrul „cel mai activ”"
     hot_score_period_in_days_description: "Filtrul „cel mai activ” utilizat în mai multe secțiuni va fi bazat pe voturi în ultimele X zile"
     mailer_from_name: "Adresa de e-mail a expeditorului"
@@ -77,11 +77,11 @@ ro:
       poster_short_title_description: 'Scurta descriere a funcției de afiș. Permite utilizatorilor să descarce un afiș în format PDF pentru a-și promova propunerea. Puteți găsi întregul conținut al acestui afiș în „/app/views/dashboard/poster/index.pdf.erb”'
       poster_description: Descrierea afișului
       poster_description_description: Descrierea detaliată a funcției de afiș
-    analytics_url: "Informatii statistice"
-    proposal_notification_minimum_interval_in_days: "Intervalul minim (de zile) pentru ca autorii sa trimita notificari noi"
-    proposal_notification_minimum_interval_in_days_description: "Numarul de zile in care utilizatorul poate trimite notificari pentru cei care urmaresc propunerea"
-    direct_message_max_per_day: "Numarul maxim de mesaje directe pe zi"
-    direct_message_max_per_day_description: "Numarul maxim de mesaje pe care un utilizator le poate trimite intr-o zi"
+    analytics_url: "Statistici URL"
+    proposal_notification_minimum_interval_in_days: "Intervalul minim (de zile) pentru ca autorii să trimită notificări pentru o nouă propunere"
+    proposal_notification_minimum_interval_in_days_description: "Numărul de zile în care utilizatorul poate trimite notificări către urmăritorii propunerii sale"
+    direct_message_max_per_day: "Numărul maxim de mesaje directe pe zi"
+    direct_message_max_per_day_description: "Numărul maxim de mesaje pe care un utilizator le poate trimite într-o zi"
     feature:
       twitter_login: "Autentificare pe Twitter"
       twitter_login_description: "Permiteți utilizatorilor să se înscrie cu contul Twitter"
@@ -93,11 +93,11 @@ ro:
       wordpress_login_description: "Permiteți utilizatorilor să se înscrie cu contul Wordpress"
       featured_proposals: "Propuneri recomandate"
       featured_proposals_description: "Arata propunerile recomandate pe pagina de propuneri"
-      signature_sheets: "Foi cu semnaturi"
-      signature_sheets_description: "Permite adaugarea din pagina de administrare informatii despre semnaturile stranse fizic de la cetateni pentru Propuneri si/sau proiecte de investii din cadrul Bugetarii Participative"
+      signature_sheets: "Foi cu semnături"
+      signature_sheets_description: "Permite adăugarea din pagina de administrare informații despre semnăturile strânse fizic de la cetățeni pentru Propuneri și/sau proiecte de invesții din cadrul Bugetării Participative"
       user:
         recommendations: "Recomandări"
-        recommendations_description: "Arata recomandarile utilizatorilor pe prima pagina, pe baza etichetelor urmatoarele articole"
+        recommendations_description: "Arată recomandările utilizatorilor pe prima pagină, pe baza etichetelor următoarele articole"
         skip_verification: "Sari peste verificarea utilizatorului"
         skip_verification_description: "Elimina verificarea utilizatorilor (in functie de adresa) astfel incat toti utilizatorii vor putea participa la toate procesele"
         recommendations_on_debates: "Recomandari de dezbateri"
@@ -130,6 +130,8 @@ ro:
       dashboard:
         notification_emails: "Panoul cu privire la notificarile trimise prin email"
         notification_emails_description: "Permite trimitea de notificari pe email catre autorii propunerilor"
+      sdg: Obiective de dezvoltare durabilă
+      sdg_description: Activați secțiunea Obiective de dezvoltare durabilă din meniu de administrare și din Setările Globale.
     remote_census:
       general:
         endpoint: "Punct final"
@@ -207,3 +209,15 @@ ro:
         max_size_description: "Dimensiunea maximă admisă pentru un document încărcat (în Megabytes / MB)"
         content_types: "Tipuri de conținut acceptate pentru documente"
         content_types_description: "Selectează toate tipurile de conținut acceptat pentru documentele încărcate"
+    sdg:
+      process:
+        debates: Dezbateri privind ODD
+        debates_description: Permiteți ca dezbaterile să fie legate de Obiective de Dezvoltare Durabilă
+        proposals: Propuneri privind ODD
+        proposals_description: Permiteți ca propunerile să fie legate de Obiective de Dezvoltare Durabilă
+        polls: Chestionare privind ODD
+        polls_description: Permiteți ca chestionarele să fie legate de Obiective de Dezvoltare Durabilă
+        budgets: Legat de ODD în bugetele participative
+        budgets_description: Permiteți ca bugetele participative să fie legate de Obiective de Dezvoltare Durabilă
+        legislation: Legat de ODD în legislația colaborativă
+        legislation_description: Permiteți ca legislația colaborativă să fie legată de Obiective de Dezvoltare Durabilă

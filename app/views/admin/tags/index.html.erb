@@ -10,7 +10,7 @@
 <% end %>
 
 <hr>
-<h3 class="margin"><%= t("admin.tags.index.title") %>: <%= page_entries_info @tags %></h3>
+<h3><%= t("admin.tags.index.title") %>: <%= page_entries_info @tags %></h3>
 
 <table>
   <thead>
@@ -30,7 +30,7 @@
         <% end %>
       </td>
       <td id="tag_<%= tag.id %>">
-        <%= link_to t("admin.tags.destroy"), admin_tag_path(tag), method: :delete, class: "button hollow alert" %>
+        <%= render Admin::TableActionsComponent.new(tag, actions: [:destroy], destroy_text: t("admin.tags.destroy")) %>
       </td>
     </tr>
   <% end %>

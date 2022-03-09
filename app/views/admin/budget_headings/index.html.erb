@@ -1,10 +1,11 @@
 <%= back_link_to admin_budget_groups_path(@budget), t("admin.budget_headings.index.back") %>
 
-<div class="clear"></div>
-<h2 class="inline-block"><%= "#{@budget.name} / #{@group.name}" %></h2>
-<%= link_to t("admin.budget_headings.form.create"),
-            new_admin_budget_group_heading_path,
-            class: "button float-right" %>
+<header>
+  <h2><%= "#{@budget.name} / #{@group.name}" %></h2>
+  <%= link_to t("admin.budget_headings.form.create"), new_admin_budget_group_heading_path %>
+</header>
+
+<%= render Admin::Budgets::HelpComponent.new("budget_headings") %>
 
 <% if @headings.any? %>
   <h3><%= t("admin.budget_headings.amount", count: @headings.count) %></h3>
@@ -24,7 +25,7 @@
     <tbody>
       <% @headings.each do |heading| %>
         <tr id="<%= dom_id(heading) %>" class="heading">
-          <td><%= link_to heading.name, edit_admin_budget_group_heading_path(@budget, @group, heading) %></td>
+          <td><%= heading.name %></td>
           <td><%= @budget.formatted_heading_price(heading) %></td>
           <% if @budget.approval_voting? %>
             <td><%= heading.max_ballot_lines %></td>
@@ -34,13 +35,7 @@
             <%= heading.allow_custom_content ? t("admin.shared.true_value") : t("admin.shared.false_value") %>
           </td>
           <td>
-            <%= link_to t("admin.actions.edit"),
-                        edit_admin_budget_group_heading_path(@budget, @group, heading),
-                        class: "button hollow" %>
-            <%= link_to t("admin.actions.delete"),
-                        admin_budget_group_heading_path(@budget, @group, heading),
-                        method: :delete,
-                        class: "button hollow alert" %>
+            <%= render Admin::TableActionsComponent.new(heading) %>
           </td>
         </tr>
       <% end %>

@@ -1,12 +1,6 @@
 class Widget::Card < ApplicationRecord
   include Imageable
-  belongs_to :page,
-    class_name:  "SiteCustomization::Page",
-    foreign_key: "site_customization_page_id",
-    inverse_of:  :cards
-
-  # table_name must be set before calls to 'translates'
-  self.table_name = "widget_cards"
+  belongs_to :cardable, polymorphic: true
 
   translates :label,       touch: true
   translates :title,       touch: true
@@ -14,11 +8,13 @@ class Widget::Card < ApplicationRecord
   translates :link_text,   touch: true
   include Globalizable
 
+  validates_translation :title, presence: true
+
   def self.header
     where(header: true)
   end
 
   def self.body
-    where(header: false, site_customization_page_id: nil).order(:created_at)
+    where(header: false, cardable_id: nil).order(:created_at)
   end
 end

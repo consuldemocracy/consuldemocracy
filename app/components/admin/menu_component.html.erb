@@ -1,0 +1,129 @@
+<ul id="admin_menu" data-accordion-menu data-multi-open="true">
+  <% if feature?(:proposals) %>
+    <li class="<%= "is-active" if controller_name == "proposals" %>">
+      <%= link_to t("admin.menu.proposals"), admin_proposals_path, class: "proposals-link" %>
+    </li>
+  <% end %>
+
+  <% if feature?(:debates) %>
+    <li class="<%= "is-active" if controller_name == "debates" %>">
+      <%= link_to t("admin.menu.debates"), admin_debates_path, class: "debates-link" %>
+    </li>
+  <% end %>
+
+  <li class="<%= "is-active" if controller_name == "comments" %>">
+    <%= link_to t("admin.menu.comments"), admin_comments_path, class: "comments-link" %>
+  </li>
+
+  <% if feature?(:polls) %>
+    <li class="<%= "is-active" if polls? %>">
+      <%= link_to t("admin.menu.polls"), admin_polls_path, class: "polls-link" %>
+    </li>
+  <% end %>
+
+  <% if feature?(:legislation) %>
+    <li class="<%= "is-active" if controller.class.parent == Admin::Legislation %>">
+      <%= link_to t("admin.menu.legislation"), admin_legislation_processes_path, class: "legislation-link" %>
+    </li>
+  <% end %>
+
+  <% if feature?(:budgets) %>
+    <li class="<%= "is-active" if budgets? %>">
+      <%= link_to t("admin.menu.budgets"), admin_budgets_path, class: "budgets-link" %>
+    </li>
+  <% end %>
+
+  <li>
+    <a href="#" class="booths-link"><%= t("admin.menu.title_booths") %></a>
+    <%= link_list(
+      officers_link,
+      booths_link,
+      booth_assignments_link,
+      shifts_link,
+      id: "booths_menu", class: ("is-active" if booths?)
+    ) %>
+  </li>
+
+  <% if feature?(:signature_sheets) %>
+    <li class="<%= "is-active" if controller_name == "signature_sheets" %>">
+      <%= link_to t("admin.menu.signature_sheets"), admin_signature_sheets_path, class: "signature-sheets-link" %>
+    </li>
+  <% end %>
+
+  <li>
+    <a href="#" class="messages-link"><%= t("admin.menu.messaging_users") %></a>
+    <%= link_list(
+      newsletters_link,
+      admin_notifications_link,
+      system_emails_link,
+      emails_download_link,
+      id: "messaging_users_menu", class: ("is-active" if messages_menu_active?)
+    ) %>
+  </li>
+
+  <li>
+    <a href="#" class="site-customization-link"><%= t("admin.menu.title_site_customization") %></a>
+    <%= link_list(
+      homepage_link,
+      pages_link,
+      banners_link,
+      information_texts_link,
+      documents_link,
+      class: ("is-active" if customization? && controller.class.parent != Admin::Poll::Questions::Answers)
+    ) %>
+  </li>
+
+  <li>
+    <a href="#" class="moderated-content-link"><%= t("admin.menu.title_moderated_content") %></a>
+    <%= link_list(
+      (hidden_proposals_link if feature?(:proposals)),
+      (hidden_debates_link if feature?(:debates)),
+      (hidden_budget_investments_link if feature?(:budgets)),
+      hidden_comments_link,
+      hidden_proposal_notifications_link,
+      hidden_users_link,
+      activity_link,
+      class: ("is-active" if moderated_content?)
+    ) %>
+  </li>
+
+  <li>
+    <a href="#" class="profiles-link"><%= t("admin.menu.title_profiles") %></a>
+    <%= link_list(
+      administrators_link,
+      organizations_link,
+      officials_link,
+      moderators_link,
+      valuators_link,
+      managers_link,
+      (sdg_managers_link if feature?(:sdg)),
+      users_link,
+      class: ("is-active" if profiles?)
+    ) %>
+  </li>
+
+  <li class="<%= "is-active" if controller_name == "stats" %>">
+    <%= link_to t("admin.menu.stats"), admin_stats_path, class: "stats-link" %>
+  </li>
+
+  <li>
+    <a href="#" class="settings-link"><%= t("admin.menu.title_settings") %></a>
+    <%= link_list(
+      settings_link,
+      tags_link,
+      geozones_link,
+      images_link,
+      content_blocks_link,
+      local_census_records_link,
+      class: ("is-active" if settings?)
+    ) %>
+  </li>
+  <li>
+    <a href="#" class="dashboard-link"><%= t("admin.menu.dashboard") %></a>
+    <%= link_list(
+      dashboard_actions_link,
+      administrator_tasks_link,
+      class: ("is-active" if dashboard?)
+    ) %>
+  </li>
+</ul>

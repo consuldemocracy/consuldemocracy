@@ -68,12 +68,8 @@ sr:
         icon_alt: Партиципативни буџети икона
         title: Партиципативни буџети
         help: Помоћ са партиципативним буџетима
-        all_phases: Види све фазе
       all_phases: Инвестицијске фазе буџета
       map: Предлози инвестирања буџета према географској локацији
-      investment_proyects: Листа свих инвестицијских пројеката
-      unfeasible_investment_proyects: Листа свих неизводивих инвестицијских пројеката
-      not_selected_investment_proyects: Листа свих инвестицијских пројеката који нису одабрани за гласање
       finished_budgets: Завршени партиципативни буџети
       see_results: Види резултате
       section_footer:
@@ -125,9 +121,6 @@ sr:
           verified_only: "Како бисте креирали нови буџет инвестиције %{verify}."
           create: "Кренирајте буџетску инвестицију"
           not_logged_in: "Како бисте креирали нову буџетску инвестицију морате %{sign_in} или %{sign_up}."
-          by_feasibility: По изводљивости
-          feasible: Изводљиви пројекти
-          unfeasible: Неизводљиви пројекти
         orders:
           random: насумично
           confidence_score: највише котирани
@@ -171,26 +164,12 @@ sr:
           other: "%{count} подршки"
         give_support: Подршка
       header:
-        check_ballot: Провери и потврди моје гласање
+        check_ballot: "Провери и потврди моје гласање"
         different_heading_assigned: "Имате активна гласања у другом наслову: %{heading_link}"
         change_ballot: "Уколико промените Ваше мишљење можете променити свој глас у %{check_ballot} и започети поново."
         check_ballot_link: "провери и потврди моје гласање"
         price: "Овај наслов поседује буџет од"
-    progress_bar:
-      assigned: "Одредили сте: "
-      available: "Расположиви буџети: "
-      votes:
-        zero: "Одабрали сте <strong>0</strong> пројеката од <strong>%{limit}</strong>"
-        one: "Одабрали сте <strong>1</strong> пројекат од <strong>%{limit}</strong>"
-        few: "Одабрали сте <strong>%{count}</strong> пројекта од <strong>%{limit}</strong>"
-        other: "Одабрали сте <strong>%{count}</strong> пројеката од <strong>%{limit}</strong>"
     show:
-      group: Група
-      phase: Актуелна фаза
-      unfeasible_title: Неизводљиве инвестиције
-      unfeasible: Погледајте неизводљиве инвестиције
-      unselected_title: Инвестиције нису одабране за гласачку фазу
-      unselected: Прегледајте инвестиције које нису одабране за гласачку фазу
       see_results: Види резултате
     results:
       link: Резултати

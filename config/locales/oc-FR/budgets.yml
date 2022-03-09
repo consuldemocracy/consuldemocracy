@@ -46,12 +46,8 @@ oc:
         icon_alt: Icòna dels budgèts participatius
         title: de Budgèts participatius
         help: Ajuda amb budgèts participatius
-        all_phases: Veire totas las fasas
       all_phases: de Fasas de l'inversion budgetària
       map: de Proposicions d’inversions budgetàrias situadas geogràficament
-      investment_proyects: Lista de totes los projèctes d’inversion
-      unfeasible_investment_proyects: Lista de totes los projèctes d'inversion inviable
-      not_selected_investment_proyects: Lista de totes los projèctes d'inversion pas seleccionada per las votacions
       finished_budgets: Budgèts participatius finalizats
       see_results: veire de resultats
       section_footer:
@@ -89,9 +85,6 @@ oc:
           verified_only: "Per crear una nòva proposicion d'inversion %{verify}."
           create: "Crear una inversion budgetària"
           not_logged_in: "Per crear una nòva proposicion d'inversion te cal %{sign_in} o %{sign_up}."
-          by_feasibility: Per viabilitat
-          feasible: Veire las proposicions d'inversion viabla
-          unfeasible: Veire las proposicions d'inversion inviable
         orders:
           random: Aleatòries
           confidence_score: Mai avaladas
@@ -133,21 +126,12 @@ oc:
           other: "%{count} d'avals"
         give_support: Avalar
       header:
-        check_ballot: Revisar los mieus vòts
+        check_ballot: "Revisar los mieus vòts"
         different_heading_assigned: "Avètz de vòts actius en un autre títol: %{heading_link}"
         change_ballot: "Se càmbias d'opinion pòdes esborrar los tieus vòts en %{check_ballot} e tornar a començar."
         check_ballot_link: "revisar los mieus vòts"
         price: "Aquela partida a un budgèt de"
-    progress_bar:
-      assigned: "Avètz assignat: "
-      available: "Budgèt disponible: "
     show:
-      group: Nom d'usatgièr
-      phase: Fasa actuala
-      unfeasible_title: de Proposicions inviables
-      unfeasible: Veire las proposicions inviables
-      unselected_title: Proposicions pas seleccionadas per la votacion finala
-      unselected: Veire las proposicions pas seleccionadas per la votacion finala
       see_results: veire de resultats
     results:
       link: de resultats

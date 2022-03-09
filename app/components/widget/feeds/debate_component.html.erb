@@ -1,0 +1,4 @@
+<div class="debate">
+  <strong><%= link_to debate.title, url_for(debate) %></strong>
+  <%= render SDG::TagListComponent.new(debate, limit: 5) %>
+</div>

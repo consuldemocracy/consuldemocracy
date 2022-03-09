@@ -19,10 +19,4 @@ section "Creating banners" do
   end
 end
 
-section "Creating web sections" do
-  WebSection.create!(name: "homepage")
-  WebSection.create!(name: "debates")
-  WebSection.create!(name: "proposals")
-  WebSection.create!(name: "budgets")
-  WebSection.create!(name: "help_page")
-end
+load Rails.root.join("db", "web_sections.rb")

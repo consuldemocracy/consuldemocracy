@@ -1,6 +1,5 @@
 shared_examples "acts as imageable" do |imageable_factory|
-  let!(:image)                  { build(:image, imageable_factory.to_sym) }
-  let!(:imageable)              { image.imageable }
+  let!(:image) { build(:image, imageable_factory.to_sym) }
 
   it "is valid" do
     expect(image).to be_valid

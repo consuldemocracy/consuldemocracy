@@ -1,0 +1,20 @@
+.feed-proposals .proposal {
+  @include grid-row-nest;
+  clear: both;
+
+  .feed-image {
+    display: inline-block;
+    height: rem-calc(120);
+    overflow: hidden;
+    width: 100%;
+
+    @include breakpoint(medium) {
+      height: rem-calc(96);
+    }
+
+    img {
+      max-width: none;
+      width: 100%;
+    }
+  }
+}

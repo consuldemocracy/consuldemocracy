@@ -1,11 +1,6 @@
 require "rails_helper"
 
-describe "Admin proposal notifications" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
+describe "Admin proposal notifications", :admin do
   scenario "List shows all relevant info" do
     proposal_notification = create(:proposal_notification, :hidden)
     visit admin_hidden_proposal_notifications_path
@@ -18,13 +13,15 @@ describe "Admin proposal notifications" do
     proposal_notification = create(:proposal_notification, :hidden, created_at: Date.current - 5.days)
     visit admin_hidden_proposal_notifications_path
 
-    click_link "Restore"
+    accept_confirm { click_link "Restore" }
 
     expect(page).not_to have_content(proposal_notification.title)
 
-    expect(proposal_notification.reload).not_to be_hidden
-    expect(proposal_notification).to be_ignored
-    expect(proposal_notification).not_to be_moderated
+    logout
+    login_as(proposal_notification.author)
+    visit proposal_notification_path(proposal_notification)
+
+    expect(page).to have_content(proposal_notification.title)
   end
 
   scenario "Confirm hide" do
@@ -36,8 +33,6 @@ describe "Admin proposal notifications" do
     expect(page).not_to have_content(proposal_notification.title)
     click_link("Confirmed")
     expect(page).to have_content(proposal_notification.title)
-
-    expect(proposal_notification.reload).to be_confirmed_hide
   end
 
   scenario "Current filter is properly highlighted" do
@@ -85,9 +80,9 @@ describe "Admin proposal notifications" do
 
     visit admin_hidden_proposal_notifications_path(filter: "with_confirmed_hide", page: 2)
 
-    click_on("Restore", match: :first, exact: true)
+    accept_confirm { click_link "Restore", match: :first, exact: true }
 
-    expect(current_url).to include("filter=with_confirmed_hide")
-    expect(current_url).to include("page=2")
+    expect(page).to have_current_path(/filter=with_confirmed_hide/)
+    expect(page).to have_current_path(/page=2/)
   end
 end

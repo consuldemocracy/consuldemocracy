@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Moderate legislation proposals" do
-  scenario "Hide", :js do
+  scenario "Hide" do
     citizen               = create(:user)
     legislation_process   = create(:legislation_process)
     legislation_proposal  = create(:legislation_proposal, legislation_process_id: legislation_process.id)

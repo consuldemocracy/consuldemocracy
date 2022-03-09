@@ -6,8 +6,6 @@ class ApplicationController < ActionController::Base
   include HasOrders
   include AccessDeniedHandler
 
-  protect_from_forgery with: :exception
-
   default_form_builder ConsulFormBuilder
 
   before_action :authenticate_http_basic, if: :http_basic_auth_site?
@@ -120,14 +118,6 @@ class ApplicationController < ActionController::Base
     def set_return_url
       if request.get? && !devise_controller? && is_navigational_format?
         store_location_for(:user, request.fullpath)
-      end
-    end
-
-    def set_default_budget_filter
-      if @budget&.balloting? || @budget&.publishing_prices?
-        params[:filter] ||= "selected"
-      elsif @budget&.finished?
-        params[:filter] ||= "winners"
       end
     end
 

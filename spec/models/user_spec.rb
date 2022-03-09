@@ -189,6 +189,18 @@ describe User do
     end
   end
 
+  describe "sdg_manager?" do
+    it "is false when the user is not a sdg manager" do
+      expect(subject.sdg_manager?).to be false
+    end
+
+    it "is true when the user is a sdg manager" do
+      subject.save!
+      create(:sdg_manager, user: subject)
+      expect(subject.sdg_manager?).to be true
+    end
+  end
+
   describe "poll_officer?" do
     it "is false when the user is not a poll officer" do
       expect(subject.poll_officer?).to be false
@@ -401,23 +413,61 @@ describe User do
         expect(User.erased).not_to include(user3)
       end
     end
+
+    describe ".by_username_email_or_document_number" do
+      let!(:larry) do
+        create(:user, email: "larry@consul.dev", username: "Larry Bird", document_number: "12345678Z")
+      end
+
+      before { create(:user, email: "robert@consul.dev", username: "Robert Parish") }
+
+      it "finds users by email" do
+        expect(User.by_username_email_or_document_number("larry@consul.dev")).to eq [larry]
+      end
+
+      it "finds users by email with whitespaces" do
+        expect(User.by_username_email_or_document_number(" larry@consul.dev ")).to eq [larry]
+      end
+
+      it "finds users by name" do
+        expect(User.by_username_email_or_document_number("larry")).to eq [larry]
+      end
+
+      it "finds users by name with whitespaces" do
+        expect(User.by_username_email_or_document_number(" larry ")).to eq [larry]
+      end
+
+      it "finds users by document_number" do
+        expect(User.by_username_email_or_document_number("12345678Z")).to eq [larry]
+      end
+
+      it "finds users by document_number with whitespaces" do
+        expect(User.by_username_email_or_document_number(" 12345678Z ")).to eq [larry]
+      end
+    end
   end
 
   describe "self.search" do
-    it "find users by email" do
-      user1 = create(:user, email: "larry@consul.dev")
-      create(:user, email: "bird@consul.dev")
-      search = User.search("larry@consul.dev")
+    describe "find users" do
+      let!(:larry) { create(:user, email: "larry@consul.dev", username: "Larry Bird") }
 
-      expect(search).to eq [user1]
-    end
+      before { create(:user, email: "robert@consul.dev", username: "Robert Parish") }
 
-    it "find users by name" do
-      user1 = create(:user, username: "Larry Bird")
-      create(:user, username: "Robert Parish")
-      search = User.search("larry")
+      it "by email" do
+        expect(User.search("larry@consul.dev")).to eq [larry]
+      end
 
-      expect(search).to eq [user1]
+      it "by email with whitespaces" do
+        expect(User.search(" larry@consul.dev ")).to eq [larry]
+      end
+
+      it "by name" do
+        expect(User.search("larry")).to eq [larry]
+      end
+
+      it "by name with whitespaces" do
+        expect(User.search(" larry ")).to eq [larry]
+      end
     end
 
     it "returns no results if no search term provided" do
@@ -707,6 +757,51 @@ describe User do
       10.times { create(:user) }
       user = User.last
       expect(User.find_by_manager_login("admin_user_#{user.id}")).to eq user
+    end
+  end
+
+  describe "#full_restore" do
+    it "restore all previous hidden user content" do
+      user = create(:user, :hidden)
+      other_user = create(:user, :hidden)
+
+      comment = create(:comment, :hidden, author: user)
+      debate = create(:debate, :hidden, author: user)
+      investment = create(:budget_investment, :hidden, author: user)
+      proposal = create(:proposal, :hidden, author: user)
+      proposal_notification = create(:proposal_notification, :hidden, proposal: proposal)
+
+      old_hidden_comment = create(:comment, hidden_at: 3.days.ago, author: user)
+      old_hidden_debate = create(:debate, hidden_at: 3.days.ago, author: user)
+      old_hidden_investment = create(:budget_investment, hidden_at: 3.days.ago, author: user)
+      old_hidden_proposal = create(:proposal, hidden_at: 3.days.ago, author: user)
+      old_hidden_proposal_notification = create(:proposal_notification, hidden_at: 3.days.ago, proposal: proposal)
+
+      other_user_comment = create(:comment, :hidden, author: other_user)
+      other_user_debate = create(:debate, :hidden, author: other_user)
+      other_user_proposal = create(:proposal, :hidden, author: other_user)
+      other_user_investment = create(:budget_investment, :hidden, author: other_user)
+      other_user_proposal_notification = create(:proposal_notification, :hidden, proposal: other_user_proposal)
+
+      user.full_restore
+
+      expect(debate.reload).not_to be_hidden
+      expect(comment.reload).not_to be_hidden
+      expect(investment.reload).not_to be_hidden
+      expect(proposal.reload).not_to be_hidden
+      expect(proposal_notification.reload).not_to be_hidden
+
+      expect(old_hidden_comment.reload).to be_hidden
+      expect(old_hidden_debate.reload).to be_hidden
+      expect(old_hidden_investment.reload).to be_hidden
+      expect(old_hidden_proposal.reload).to be_hidden
+      expect(old_hidden_proposal_notification.reload).to be_hidden
+
+      expect(other_user_comment.reload).to be_hidden
+      expect(other_user_debate.reload).to be_hidden
+      expect(other_user_investment.reload).to be_hidden
+      expect(other_user_proposal.reload).to be_hidden
+      expect(other_user_proposal_notification.reload).to be_hidden
     end
   end
 end

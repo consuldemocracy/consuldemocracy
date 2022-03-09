@@ -233,7 +233,6 @@ ca:
       collaborative_legislation: processos legislatius
       debates: Debats
       locale: "Idioma:"
-      logo: Logotip de CONSUL
       management: gestió
       moderation: Moderación
       valuation: Evaluación
@@ -247,10 +246,10 @@ ca:
       budgets: Pressupostos ciutadans
       notification_item:
         new_notifications:
+          zero: "No tens notificacions noves"
           one: Tens una nova notificació
           other: Tens %{count} notificacions noves
         notifications: Notificacions
-        no_notifications: "No tens notificacions noves"
   notifications:
     index:
       empty_notifications: No tens notificacions noves.
@@ -778,7 +777,6 @@ ca:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: Whatsapp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
@@ -873,9 +871,10 @@ ca:
         debates: "Debats més actius"
         proposals: "Propostes més actives"
         processes: "processos actius"
-      see_all_debates: Veure tots els debats
-      see_all_proposals: Veure totes les propostes
-      see_all_processes: Veure tots els processos
+      see_all:
+        debates: Veure tots els debats
+        proposals: Veure totes les propostes
+        processes: Veure tots els processos
       process_label: procés
       see_process: Veure procés
     cards:

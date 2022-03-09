@@ -36,4 +36,4 @@
   <% end %>
 </table>
 
-<%= paginate [@debates, @comments].sort_by { |x| x.size }.last %>
+<%= paginate [@debates, @comments].sort_by(&:size).last %>

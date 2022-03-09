@@ -7,9 +7,9 @@ describe Moderation::UsersController do
     it "keeps query parameters while using protected redirects" do
       user = create(:user, email: "user@consul.dev")
 
-      get :hide_in_moderation_screen, params: { id: user, name_or_email: "user@consul.dev", host: "evil.dev" }
+      get :hide_in_moderation_screen, params: { id: user, search: "user@consul.dev", host: "evil.dev" }
 
-      expect(response).to redirect_to "/moderation/users?name_or_email=user%40consul.dev"
+      expect(response).to redirect_to "/moderation/users?search=user%40consul.dev"
     end
   end
 end

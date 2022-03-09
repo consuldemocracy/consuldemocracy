@@ -1,4 +1,4 @@
-<table class="fixed">
+<table>
   <thead>
     <tr>
       <th class="small-9"><%= t("admin.questions.index.table_proposal") %></th>
@@ -9,15 +9,18 @@
     <% @proposals.each do |proposal| %>
       <tr id="<%= dom_id(proposal) %>">
         <td>
-          <%= link_to proposal.title, proposal_path(proposal) %>
+          <%= proposal.title %>
           <p>
             <%= proposal.summary %><br>
           </p>
         </td>
         <td>
-          <%= link_to t("admin.questions.index.create_question"),
-                new_admin_question_path(proposal_id: proposal.id),
-                class: "button hollow" %>
+          <%= render Admin::TableActionsComponent.new(actions: []) do |actions| %>
+            <%= actions.link_to t("admin.shared.view"), proposal_path(proposal), class: "show-link" %>
+            <%= actions.link_to t("admin.questions.index.create_question"),
+                  new_admin_question_path(proposal_id: proposal.id),
+                  class: "new-link" %>
+          <% end %>
         </td>
       </tr>
     <% end %>

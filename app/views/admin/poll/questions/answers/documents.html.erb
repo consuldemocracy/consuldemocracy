@@ -27,7 +27,7 @@
     <table>
       <tr>
         <th scope="col"><%= t("admin.questions.show.answers.document_title") %></th>
-        <th scope="col" class="text-right"><%= t("admin.questions.show.answers.document_actions") %></th>
+        <th scope="col"><%= t("admin.questions.show.answers.document_actions") %></th>
       </tr>
 
       <% @answer.documents.each do |document| %>
@@ -35,18 +35,18 @@
           <td>
             <%= link_to document.title, document.attachment.url %>
           </td>
-          <td class="text-right">
-            <%= link_to t("documents.buttons.download_document"),
-                        document.attachment.url,
-                        target: "_blank",
-                        rel: "nofollow",
-                        class: "button hollow" %>
+          <td>
+            <%= render Admin::TableActionsComponent.new(document,
+              actions: [:destroy],
+              destroy_path: document_path(document)
+            ) do |actions| %>
+              <%= actions.link_to t("documents.buttons.download_document"),
+                                  document.attachment.url,
+                                  target: "_blank",
+                                  rel: "nofollow",
+                                  class: "download-link" %>
 
-            <%= link_to t("admin.shared.delete"),
-                          document_path(document),
-                          method: :delete,
-                          class: "button hollow alert",
-                          data: { confirm: t("admin.actions.confirm") } %>
+            <% end %>
           </td>
         </tr>
       <% end %>

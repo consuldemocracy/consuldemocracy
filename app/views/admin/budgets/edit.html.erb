@@ -1,9 +1,8 @@
 <%= back_link_to admin_budgets_path %>
 
-<div class="row">
-  <div class="small-12 column">
-    <h2><%= t("admin.budgets.edit.title") %></h2>
-  </div>
-</div>
+<header>
+  <h2><%= t("admin.budgets.edit.title") %></h2>
+  <%= render Admin::Budgets::DraftingComponent.new(@budget) %>
+</header>
 
 <%= render "/admin/budgets/form" %>

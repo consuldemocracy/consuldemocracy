@@ -8,19 +8,17 @@
     <%= t("admin.polls.show.no_questions") %>
   </div>
 <% else %>
-  <table class="fixed margin">
+  <table class="margin">
     <thead>
       <tr>
         <th><%= t("admin.polls.show.table_title") %></th>
-        <th class="small-6"><%= t("admin.actions.actions") %></th>
+        <th><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
     <% @poll.questions.each do |question| %>
       <tr id="<%= dom_id(question) %>">
         <td>
-          <strong>
-            <%= link_to question.title, admin_question_path(question) %>
-          </strong>
+          <strong><%= question.title %></strong>
           <% if question.proposal.present? %>
             <small>
               <%= link_to t("admin.polls.show.see_proposal"),
@@ -30,19 +28,10 @@
           <% end %>
         </td>
         <td>
-          <div class="small-4 column">
-            <%= link_to t("admin.polls.show.edit_answers"), admin_question_path(question),
-                                                            class: "button hollow expanded" %>
-          </div>
-          <div class="small-4 column">
-            <%= link_to t("shared.edit"), edit_admin_question_path(question),
-                                          class: "button hollow expanded" %>
-          </div>
-          <div class="small-4 column">
-            <%= link_to t("shared.delete"), admin_question_path(question),
-                                            class: "button hollow alert expanded",
-                                            method: :delete %>
-          </div>
+          <%= render Admin::TableActionsComponent.new(question) do |actions| %>
+            <%= actions.link_to t("admin.polls.show.edit_answers"), admin_question_path(question),
+                                                                    class: "answers-link" %>
+          <% end %>
         </td>
       </tr>
     <% end %>

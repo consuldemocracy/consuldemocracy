@@ -1,22 +1,21 @@
 require "rails_helper"
 
-describe "Admin managers" do
+describe "Admin managers", :admin do
   let!(:user) { create(:user) }
   let!(:manager) { create(:manager) }
 
-  before do
-    login_as(create(:administrator).user)
-    visit admin_managers_path
-  end
-
   scenario "Index" do
+    visit admin_managers_path
+
     expect(page).to have_content manager.name
     expect(page).to have_content manager.email
     expect(page).not_to have_content user.name
   end
 
-  scenario "Create Manager", :js do
-    fill_in "name_or_email", with: user.email
+  scenario "Create Manager" do
+    visit admin_managers_path
+
+    fill_in "search", with: user.email
     click_button "Search"
 
     expect(page).to have_content user.name
@@ -27,7 +26,9 @@ describe "Admin managers" do
   end
 
   scenario "Delete Manager" do
-    click_link "Delete"
+    visit admin_managers_path
+
+    accept_confirm { click_link "Delete" }
 
     within("#managers") do
       expect(page).not_to have_content manager.name
@@ -48,7 +49,7 @@ describe "Admin managers" do
       expect(page).to have_content(manager1.name)
       expect(page).to have_content(manager2.name)
 
-      fill_in "name_or_email", with: " "
+      fill_in "search", with: " "
       click_button "Search"
 
       expect(page).to have_content("Managers: User search")
@@ -61,10 +62,11 @@ describe "Admin managers" do
       expect(page).to have_content(manager1.name)
       expect(page).to have_content(manager2.name)
 
-      fill_in "name_or_email", with: "Taylor"
+      fill_in "search", with: "Taylor"
       click_button "Search"
 
       expect(page).to have_content("Managers: User search")
+      expect(page).to have_field "search", with: "Taylor"
       expect(page).to have_content(manager1.name)
       expect(page).not_to have_content(manager2.name)
     end
@@ -73,10 +75,11 @@ describe "Admin managers" do
       expect(page).to have_content(manager1.email)
       expect(page).to have_content(manager2.email)
 
-      fill_in "name_or_email", with: manager2.email
+      fill_in "search", with: manager2.email
       click_button "Search"
 
       expect(page).to have_content("Managers: User search")
+      expect(page).to have_field "search", with: manager2.email
       expect(page).to have_content(manager2.email)
       expect(page).not_to have_content(manager1.email)
     end
@@ -85,7 +88,7 @@ describe "Admin managers" do
       fill_in "Search user by name or email", with: manager2.email
       click_button "Search"
 
-      click_link "Delete"
+      accept_confirm { click_link "Delete" }
 
       expect(page).to have_content(manager1.email)
       expect(page).not_to have_content(manager2.email)

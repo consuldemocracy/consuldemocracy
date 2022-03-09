@@ -28,18 +28,7 @@ describe Verification::Management::Document do
       expect(verification_document).to be_valid
     end
 
-    describe "custom validations with RemoteCensus enabled" do
-      before do
-        Setting["feature.remote_census"] = true
-        Setting["remote_census.request.date_of_birth"] = "some.value"
-        Setting["remote_census.request.postal_code"] = "some.value"
-        access_user_data = "get_habita_datos_response.get_habita_datos_return.datos_habitante.item"
-        access_residence_data = "get_habita_datos_response.get_habita_datos_return.datos_vivienda.item"
-        Setting["remote_census.response.date_of_birth"] = "#{access_user_data}.fecha_nacimiento_string"
-        Setting["remote_census.response.postal_code"] = "#{access_residence_data}.codigo_postal"
-        Setting["remote_census.response.valid"] = access_user_data
-      end
-
+    describe "custom validations with RemoteCensus enabled", :remote_census do
       it "is valid" do
         expect(verification_document).to be_valid
       end

@@ -4,6 +4,10 @@ bg:
     results_enabled: "Показване на резултати"
     stats_enabled: "Показване на статистики"
     advanced_stats_enabled: "Показване на разширени статистики"
+    name: Име
+    email: Електронна поща
+    description: Описание
+    related_sdg_list: Цели и задачи
   activerecord:
     models:
       activity:
@@ -28,8 +32,8 @@ bg:
         one: "Коментар"
         other: "Коментари"
       debate:
-        one: "Дебат"
-        other: "Дебати"
+        one: "Дискусия"
+        other: "Дискусии"
       tag:
         one: "Таг"
         other: "Тагове"
@@ -72,6 +76,18 @@ bg:
       proposal:
         one: "Гражданско предложение"
         other: "Граждански предложения"
+      sdg/goal:
+        one: "цел"
+        other: "цели"
+      sdg/local_target:
+        one: "локална цел"
+        other: "локални цели"
+      sdg/manager:
+        one: "Мениджър Цели на устойчивото развитие (ЦУР)"
+        other: "Мениджъри Цели на устойчивото развитие (ЦУР)"
+      sdg/target:
+        one: "цел"
+        other: "цели"
       site_customization/page:
         one: Персонализирана страница
         other: Персонализирани страници
@@ -214,6 +230,7 @@ bg:
         ends_at: "Крайна дата"
         starts_at: "Начална дата"
       budget/phase/translation:
+        name: "Име"
         description: "Описание"
         summary: "Резюме"
       comment:
@@ -226,8 +243,8 @@ bg:
         terms_of_service: "Условия за ползване"
         title: "Заглавие"
       debate/translation:
-        title: "Заглавие на дебата"
-        description: "Начален текст на дебата"
+        title: "Заглавие на дискусията"
+        description: "Начален текст на дискусията"
       proposal:
         author: "Автор"
         title: "Заглавие"
@@ -251,7 +268,7 @@ bg:
         password: "Парола"
         current_password: "Текуща парола"
         email_digest: "Получаване на обобщение на известията за предложения"
-        email_on_comment: "Известявайте ме по имейл, когато някой коментира моите предложения или дебати"
+        email_on_comment: "Известявайте ме по електронна поща, когато някой коментира моите предложения или дискусии"
         email_on_comment_reply: "Известявайте ме по имейл, когато някой отговори на моите коментари"
         email_on_direct_message: "Получаване на имейли за директни съобщения"
         newsletter: "Получаване по имейл на подходяща информация за уеб сайта"
@@ -261,7 +278,7 @@ bg:
         phone_number: "Телефонен номер"
         public_activity: "Запазване списъка ми с дейности публично"
         public_interests: "Запазване етикетите на елементите, които следя публично"
-        recommended_debates: "Показване на препоръки за дебати"
+        recommended_debates: "Показване на препоръки за дискусии"
         recommended_proposals: "Показване на препоръки за предложения"
         redeemable_code: "Код за потвърждение, получен по имейл"
       direct_message:
@@ -272,6 +289,7 @@ bg:
         responsible_name: "Лице, отговорно за групата"
       poll:
         name: "Име"
+        title: "Име"
         starts_at: "Дата на започване"
         ends_at: "Дата на закриване"
         geozone_restricted: "Ограничено от геозона"
@@ -308,6 +326,24 @@ bg:
         signable_type: "Тип подписване"
         signable_id: "Подписващ идентификационен номер"
         document_numbers: "Номера на документи"
+      sdg/goal:
+        code: "Код"
+        title: "Заглавие"
+        description: "Описание"
+      sdg/local_target:
+        code: "Код"
+        target_id: "Цел"
+        title: "Заглавие"
+      sdg/local_target/translation:
+        title: "Заглавие"
+        description: "Описание"
+      sdg/phase/kind:
+        sensitization: "Сенсибилизация"
+        planning: "Планиране"
+        monitoring: "Мониторинг"
+      sdg/target:
+        code: "Код"
+        title: "Заглавие"
       site_customization/page:
         content: Съдържание
         created_at: Създадено в
@@ -515,7 +551,7 @@ bg:
             end_date:
               invalid_date_range: трябва да бъде на или след началната дата
             debate_end_date:
-              invalid_date_range: трябва да бъде на или след началната дата на дебата
+              invalid_date_range: трябва да бъде на или след началната дата на дискусията
             draft_end_date:
               invalid_date_range: трябва да бъде на или след началната дата на първоначалния проект
             allegations_end_date:
@@ -558,6 +594,10 @@ bg:
           attributes:
             locale:
               already_translated: Вече преведен ресурс
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "трябва да започва със същия код като целта, последван от точка и да завършва с число"
       messages:
         translations_too_short: Задължително е да предоставите поне един превод
         record_invalid: "Валидирането е неуспешно: %{errors}"

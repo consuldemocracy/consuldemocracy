@@ -13,42 +13,33 @@
       <tr>
         <th><%= t("admin.site_customization.pages.page.title") %></th>
         <th><%= t("admin.site_customization.pages.page.slug") %></th>
-        <th><%= t("admin.site_customization.pages.page.cards_title") %></th>
         <th><%= t("admin.site_customization.pages.page.created_at") %></th>
         <th><%= t("admin.site_customization.pages.page.updated_at") %></th>
         <th><%= t("admin.site_customization.pages.page.status") %></th>
-        <th class="small-4"><%= t("admin.actions.actions") %></th>
+        <th><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
     <tbody>
     <% @pages.each do |page| %>
       <tr id="<%= dom_id(page) %>">
-        <td>
-          <%= link_to page.title, edit_admin_site_customization_page_path(page) %>
-        </td>
+        <td><%= page.title %></td>
         <td><%= page.slug %></td>
-        <td>
-          <%= link_to t("admin.site_customization.pages.page.see_cards"), admin_site_customization_page_cards_path(page),
-                                      class: "button hollow expanded" %>
-        </td>
         <td><%= I18n.l page.created_at, format: :short %></td>
         <td><%= I18n.l page.created_at, format: :short %></td>
         <td><%= t("admin.site_customization.pages.page.status_#{page.status}") %></td>
         <td>
-          <div class="small-6 column">
+          <%= render Admin::TableActionsComponent.new(page) do |actions| %>
+            <%= actions.link_to t("admin.site_customization.pages.page.see_cards"),
+                                admin_site_customization_page_widget_cards_path(page),
+                                class: "cards-link" %>
+
             <% if page.status == "published" %>
-              <%= link_to t("admin.site_customization.pages.index.see_page"),
-                          page.url,
-                          target: "_blank",
-                          class: "button hollow expanded" %>
+              <%= actions.link_to t("admin.site_customization.pages.index.see_page"),
+                                  page.url,
+                                  target: "_blank",
+                                  class: "show-link" %>
             <% end %>
-          </div>
-          <div class="small-6 column end">
-            <%= link_to t("admin.site_customization.pages.index.delete"),
-                        admin_site_customization_page_path(page),
-                        method: :delete,
-                        class: "button hollow alert expanded" %>
-          </div>
+          <% end %>
         </td>
       </tr>
     <% end %>

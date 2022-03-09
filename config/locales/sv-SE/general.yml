@@ -29,6 +29,9 @@ sv:
     close: Stäng
     menu: Meny
   comments:
+    actions:
+      confirm_delete: "Är du säker? Med den här åtgärden raderas den här kommentaren. Du kan inte ångra den här åtgärden."
+      delete: "Radera kommentar"
     comments_closed: Kommentarer är avstängda
     verified_only: För att delta %{verify_account}
     comment:
@@ -105,10 +108,10 @@ sv:
       recommendations:
         without_results: Det finns inga debatter som rör dina intressen
         without_interests: Följ förslag så vi kan ge dig rekommendationer
-        disable: "Rekommenderade debatter kommer sluta visas om du avaktiverar dem. Du kan aktivera funktionen igen under \"Mitt konto\""
+        disable: "Debattrekommendationer visas inte längre om du avaktiverar dem. Du kan aktivera funktionen igen under \"Mitt konto\""
         actions:
-          success: "Rekommenderade debatter har inaktiverats för kontot"
-          error: "Ett fel har uppstått. Var vänlig och gå till \"Mitt konto\" för att manuellt inaktivera rekommenderade debatter"
+          success: "Debattrekommendationer har nu inaktiverats för det här kontot"
+          error: "Ett fel har uppstått. Var vänlig och gå till \"Mitt konto\" för att manuellt inaktivera debattrekommendationer"
       search_form:
         button: Sök
         placeholder: Sök debatter...
@@ -186,10 +189,11 @@ sv:
     document: Dokument
     topic: Ämne
     image: Bild
-    local_census_record: Lokalt adressregister
-    local_census_records/import: Importera lokala adressregister
+    local_census_record: Post i lokalt adressregister
+    local_census_records/import: Import av poster i lokalt adressregister
     site_customization/content_block: innehållsblock
     site_customization/page: sida
+    sdg/local_target: lokalt delmål
   geozones:
     none: Hela staden
   layouts:
@@ -233,7 +237,6 @@ sv:
       collaborative_legislation: Dialoger
       debates: Debatter
       locale: "Språk:"
-      logo: CONSULs logotyp
       management: Användarhantering
       moderation: Moderering
       valuation: Kostnadsberäkning
@@ -247,10 +250,11 @@ sv:
       budgets: Medborgarbudget
       notification_item:
         new_notifications:
+          zero: "Du har inga nya aviseringar"
           one: Du har en ny avisering
           other: Du har %{count} nya aviseringar
         notifications: Aviseringar
-        no_notifications: "Du har inga nya aviseringar"
+      sdg: "Globala målen"
   notifications:
     index:
       empty_notifications: Du har inga nya aviseringar.
@@ -296,6 +300,9 @@ sv:
       sign_in: Logga in med Twitter
       sign_up: Registrera dig med Twitter
       name: Twitter
+    info:
+      sign_in: "Logga in med:"
+      sign_up: "Registrera dig genom:"
     or_fill: "Eller fyll i följande formulär:"
   proposals:
     create:
@@ -689,7 +696,11 @@ sv:
       from: "Från"
       general: "Med texten"
       general_placeholder: "Fyll i texten"
+      goal: "Per globalt mål"
+      goal_blank: "Välj ett mål"
       search: "Filtrera"
+      target: "Per delmål"
+      target_blank: "Välj ett mål"
       title: "Avancerad sökning"
       to: "Till"
     author_info:
@@ -775,7 +786,6 @@ sv:
     facebook: "%{org} på Facebook"
     twitter: "%{org} på Twitter"
     youtube: "%{org} på YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} på Telegram"
     instagram: "%{org} på Instagram"
   stats:
@@ -859,10 +869,10 @@ sv:
       not_logged_in: Du behöver %{signin} eller %{signup} för att fortsätta.
       not_verified: Endast verifierade användare kan rösta på budgetförslag; %{verify_account}.
       organization: Organisationer kan inte rösta
-      unfeasible: Det går inte att stödja budgetförslag som inte godkänts
+      unfeasible: Det går inte att stödja budgetförslag som inte är genomförbara
       not_voting_allowed: Omröstningsfasen är avslutad
       different_heading_assigned:
-        one: "Du kan bara stödja budgetförslag i %{count} stadsdel. Du stödjer redan budgetförslag i %{supported_headings}."
+        one: "Du kan bara stödja budgetförslag i %{count} distrikt. Du stödjer redan budgetförslag i %{supported_headings}."
         other: "Du kan bara stödja budgetförslag i %{count} stadsdelar. Du stödjer redan budgetförslag i %{supported_headings}."
   welcome:
     feed:
@@ -870,9 +880,14 @@ sv:
         debates: "Mest aktiva debatter"
         proposals: "Mest aktiva förslag"
         processes: "Pågående processer"
-      see_all_debates: Visa alla debatter
-      see_all_proposals: Visa alla förslag
-      see_all_processes: Visa alla processer
+      see_all:
+        debates: Visa alla debatter
+        proposals: Visa alla förslag
+        processes: Visa alla processer
+      no_items:
+        debates: Det finns inga debatter just nu
+        proposals: Det finns inga förslag just nu
+        processes: Det finns inga öppna processer just nu
       process_label: Process
       see_process: Visa process
     cards:
@@ -896,7 +911,7 @@ sv:
       title: Kontoverifiering
     welcome:
       go_to_index: Visa förslag och debatter
-      start_using_consul: Gå till hemsidan
+      start_using_consul: Gå till indexsidan
       title: Delta
       user_permission_debates: Delta i debatter
       user_permission_info: Med ditt konto kan du...
@@ -959,3 +974,8 @@ sv:
     create:
       enqueue_remote_translation: Översättningar har begärts.
     button: Översätta sida
+  tags:
+    filter:
+      more:
+        one: "En tagg till"
+        other: "%{count} taggar till"

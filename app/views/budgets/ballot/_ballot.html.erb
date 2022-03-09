@@ -1,6 +1,6 @@
-<div class="expanded budget no-margin-top padding">
+<div class="budget-header">
   <div class="row">
-    <%= back_link_to @ballot_referer %>
+    <%= back_link_to session[:ballot_referer] %>
 
     <h1 class="text-center"><%= t("budgets.ballots.show.title") %></h1>
 
@@ -40,8 +40,9 @@
         <% end %>
 
         <ul class="ballot-list">
-          <%= render partial: "budgets/ballot/investment",
-                     collection: @ballot.investments.by_group(group.id) %>
+          <%= render Budgets::Ballot::InvestmentComponent.with_collection(
+            @ballot.investments.by_group(group.id)
+          ) %>
         </ul>
       </div>
     </div>

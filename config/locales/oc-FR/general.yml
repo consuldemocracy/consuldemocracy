@@ -233,7 +233,6 @@ oc:
       collaborative_legislation: de procèsses legislatius
       debates: De debats
       locale: "Idiòma:"
-      logo: Logotip de CONSUL
       management: gestion
       moderation: moderacion
       valuation: avaloracion
@@ -247,10 +246,10 @@ oc:
       budgets: dDe budgèts ciutadans
       notification_item:
         new_notifications:
+          zero: "As pas de notificacions nòvas"
           one: As una nòva notificacion
           other: As %{count} notificacions nòvas
         notifications: De notificacions
-        no_notifications: "As pas de notificacions nòvas"
   notifications:
     index:
       empty_notifications: As pas de notificacions nòvas.
@@ -775,7 +774,6 @@ oc:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: Whatsapp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
@@ -870,9 +868,10 @@ oc:
         debates: "Debates mai actius"
         proposals: "Proposicions mai activas"
         processes: "de procèsses actius"
-      see_all_debates: Veire totes los debats
-      see_all_proposals: Veire totas las proposicions
-      see_all_processes: Veire totes los procèsses
+      see_all:
+        debates: Veire totes los debats
+        proposals: Veire totas las proposicions
+        processes: Veire totes los procèsses
       process_label: procès
       see_process: Veire procès
     cards:

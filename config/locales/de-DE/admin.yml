@@ -35,12 +35,17 @@ de:
           proposals: Vorschläge
           budgets: Bürgerhaushalt
           help_page: Hilfeseite
+          sdg: SDG
+      create:
+        notice: "Banner erfolgreich erstellt"
       edit:
         editing: Banner bearbeiten
         form:
           submit_button: Änderungen speichern
       new:
         creating: Banner erstellen
+      update:
+        notice: "Banner erfolgreich aktualisiert"
     activity:
       show:
         action: Aktion
@@ -62,20 +67,23 @@ de:
         type: Typ
         no_activity: Hier sind keine Moderator*innen aktiv.
     budgets:
+      actions:
+        preview: "Ansicht Budget"
       index:
         title: Bürgerhaushalte
         new_link: Neuen Bürgerhaushalt erstellen
         filter: Filter
         filters:
+          all: Alle
           open: Offen
           finished: Abgeschlossen
+        help: "Bürgerhaushalte ermöglichen es den Bürger: innen, Vorschläge einzubringen und zu entscheiden, wie ein Teil des Haushalts ausgegeben werden soll, wobei die Vorschläge von der Verwaltung kontrolliert und bewertet werden."
         budget_investments: Ausgabenprojekte verwalten
+        table_completed: Abgeschlossen
+        table_duration: "Laufzeit"
         table_name: Name
         table_phase: Phase
-        table_investments: Ausgabenvorschläge
-        table_edit_groups: Gruppierungen von Rubriken
-        table_edit_budget: Bearbeiten
-        table_admin_ballots: Stimmzettel
+        table_phase_progress: "(%{current_phase_number}/%{total_phases})"
         edit_groups: Gruppierungen von Rubriken bearbeiten
         edit_budget: Bürgerhaushalt bearbeiten
         admin_ballots: Admin Stimmzettel
@@ -84,11 +92,16 @@ de:
         notice: Neuer Bürgerhaushalt erfolgreich erstellt!
       update:
         notice: Bürgerhaushalt erfolgreich aktualisiert
+      publish:
+        notice: "Bürgerhaushalt erfolgreich veröffentlicht"
       edit:
         title: Bürgerhaushalt bearbeiten
+        drafting: "Dieser Bürgerhaushalt ist im Entwurfsmodus, nur Administrator:innen können ihn auf der öffentlichen Seite sehen. Sobald er veröffentlicht ist, kann er nicht mehr in den Entwurfsmodus geändert werden."
+        publish: "Budget veröffentlichen"
         delete: Bürgerhaushalt löschen
         phase: Phase
-        dates: Datum
+        phases_caption: "Phasen"
+        duration: "Laufzeit"
         enabled: Aktiviert
         actions: Aktionen
         edit_phase: Phase bearbeiten
@@ -104,6 +117,11 @@ de:
           other: "%{count} Begutachter ausgewählt"
         empty_administrators: "Keine Administrator*innen vorhanden"
         empty_valuators: "Keine Begutachter*innen vorhanden"
+        name_description: "Dies ist der Name des Bürgerhaushalts, der in der Kopfzeile und auf den Kacheln verwendet wird, wenn er aktiv ist"
+        info:
+          budget_settings: "Allgemeine Einstellungen Bürgerhaushalt"
+          phases_settings: "Einstellungen Phasen"
+          staff_settings: "Administratoren und Bewerter, die dem Bürgerhaushalt zugeordnet sind"
       destroy:
         success_notice: Bürgerhaushalt erfolgreich gelöscht
         unable_notice: Ein Bürgerhaushalt mit zugehörigen Ausgabenvorschlägen kann nicht gelöscht werden
@@ -117,7 +135,6 @@ de:
     budget_groups:
       name: "Name"
       headings_name: "Rubriken"
-      headings_edit: "Rubriken bearbeiten"
       headings_manage: "Rubriken verwalten"
       no_groups: "Keine Gruppen vorhanden."
       amount:
@@ -133,9 +150,11 @@ de:
       form:
         create: "Neue Gruppe erstellen"
         edit: "Gruppe bearbeiten"
+        max_votable_headings_info: "Gilt nur für die Phase der Projektauswahl. Während der Phase \"Projekte wählen\" können Benutzer nur in einer Rubrik pro Gruppe abstimmen."
         submit: "Gruppe speichern"
       index:
         back: "Zurück zu Bürgerhaushalten"
+        help: "Gruppen sind dazu gedacht, Rubriken zu organisieren. Nachdem eine Gruppe erstellt wurde und sie Rubriken enthält, kann festgelegt werden, in wie vielen Rubriken ein Benutzer pro Gruppe abstimmen kann."
     budget_headings:
       no_headings: "Keine Rubriken vorhanden."
       amount:
@@ -149,6 +168,7 @@ de:
         success_notice: "Rubrik erfolgreich gelöscht"
         unable_notice: "Eine Rubrik mit zugehörigen Ausgabenvorschlägen kann nicht gelöscht werden"
       form:
+        max_ballot_lines_info: 'Maximale Anzahl der Projekte die von User*innen in dieser Rubrik während der "Abstimnungsphase" ausgewählt werden können. Nur für Budgets, die zur Abstimmung zugelassen wurden.'
         population_info: "Das Feld 'Bevölkerung' in den Rubriken wird nur für statistische Zwecke verwendet, mit dem Ziel, den Prozentsatz der Stimmen in jeder Rubrik anzuzeigen, die ein Bevölkerungsgebiet darstellt. Dieses Feld ist optional; Sie können es daher leer lassen, wenn es nicht zutrifft."
         coordinates_info: "Wenn Längen- und Breitengrad angegeben sind, enthält die Seite des Ausgabenvorschlags für diese Rubrik eine Karte. Diese Karte wird mit diesen Koordinaten berechnet."
         content_blocks_info: "Wenn Inhaltsblock zulassen aktiviert ist, können Sie benutzerdefinierte Inhalte, die sich auf diese Rubrik beziehen, im Abschnitt Einstellungen> Benutzerdefinierte Inhaltsblöcke erstellen. Dieser Inhalt wird auf der Ausgabenvorschlagsseite für diese Rubrik angezeigt."
@@ -159,10 +179,14 @@ de:
         back: "Zurück zu Gruppen"
     budget_phases:
       edit:
-        summary_help_text: Dieser Text informiert die Benutzer*innen über die jeweilige Phase. Um den Text anzuzeigen, auch wenn die Phase nicht aktiv ist, klicken sie das untenstehende Kästchen an
         description_help_text: Dieser Text erscheint in der Kopfzeile, wenn die Phase aktiv ist
+        duration: "Laufzeit dieser Phase"
+        duration_description: "Der Zeitraum, in dem diese Phase aktiv sein wird."
         enabled_help_text: Diese Phase wird öffentlich in der Zeitleiste der Phasen des Bürgerhaushalts angezeigt und ist auch für andere Zwecke aktiv
+        name_help_text: "Dies ist der Titel der Phase, den die Benutzer in der Kopfzeile lesen, wenn diese Phase aktiv ist."
         save_changes: Änderungen speichern
+      index:
+        help: "Bürgerhaushalte haben verschiedene Phasen. Hier können Sie Phasen aktivieren oder deaktivieren und auch jede einzelne Phase individuell anpassen."
     budget_investments:
       index:
         heading_filter_all: Alle Überschriften
@@ -295,8 +319,6 @@ de:
         table_name: Name
         table_description: Beschreibung
         table_actions: Aktionen
-        delete: Löschen
-        edit: Bearbeiten
       edit:
         title: Status für Ausgabenvorschlag bearbeiten
       update:
@@ -359,8 +381,6 @@ de:
         index:
           description: "Wenn Benutzer Vorschläge erstellen, können sie auf ein Dashboard ihres Vorschlags zugreifen, in dem Sie Ressourcen und Empfehlungen vorschlagen können, um Unterstützung für ihre Idee zu erhalten."
           create: Ressource oder Aktion erstellen
-          edit: Bearbeiten
-          delete: Löschen
           active: 'Ja'
           inactive: 'Nein'
           title: Ressourcen und Aktionen
@@ -495,7 +515,6 @@ de:
           banner_title: Farben Header
         index:
           create: Neues Beteiligungsverfahren
-          delete: Löschen
           title: Gesetzgebungsverfahren
           filters:
             active: Aktiv
@@ -552,6 +571,7 @@ de:
           back: Zurück
           submit_button: Änderungen speichern
           warning: Sie haben den Text bearbeitet. Bitte klicken Sie nun auf speichern, um die Änderungen dauerhaft zu sichern.
+          markdown_changes_message: "Sie haben den Text bearbeitet, ohne diesen zu speichern. Wollen Sie die Seite dennoch verlassen?"
         form:
           title: 'Bearbeiten des <span class="strong">-%{draft_version_title}-</span> Beteiligungsverfahrens <span class="strong">%{process_title}</span>'
           launch_text_editor: Textbearbeitung öffnen
@@ -620,14 +640,17 @@ de:
     managers:
       index:
         title: Manager*innen
-        name: Name
-        email: E-Mail
         no_managers: Keine Manager*innen vorhanden.
       manager:
         add: Hinzufügen
-        delete: Löschen
       search:
         title: "Manager*innen: Benutzer*innensuche"
+    sdg_managers:
+      index:
+        no_sdg_managers: Keine Benutzer*innen vorhanden.
+    sdg/managers:
+      sdg/manager:
+        add: Hinzufügen
     menu:
       activity: Aktivität der Moderator*innen
       admin: Admin-Menü
@@ -644,6 +667,7 @@ de:
       hidden_users: Verborgene Benutzer*innen
       administrators: Administrator*innen
       managers: Manager*innen
+      sdg_managers: SDG Managers
       moderators: Moderator*innen
       messaging_users: Nachrichten an Benutzer*innen
       newsletters: Newsletter
@@ -698,14 +722,10 @@ de:
     administrators:
       index:
         title: Administrator*innen
-        name: Name
-        email: E-Mail
-        description: Beschreibung
         id: Administrator ID
         no_administrators: Keine Administrator*innen vorhanden.
       administrator:
         add: Hinzufügen
-        delete: Löschen
         restricted_removal: "Entschuldigung, Sie können sich nicht von der Liste entfernen"
       search:
         title: "Administrator*innen: Benutzer*innensuche"
@@ -715,12 +735,9 @@ de:
     moderators:
       index:
         title: Moderator*innen
-        name: Name
-        email: E-Mail
         no_moderators: Keine Moderator*innen vorhanden.
       moderator:
         add: Hinzufügen
-        delete: Löschen
       search:
         title: "Moderator*innen: Benutzer*innensuche"
     segment_recipient:
@@ -747,8 +764,6 @@ de:
         sent: Gesendet
         actions: Aktionen
         draft: Entwurf
-        edit: Bearbeiten
-        delete: Löschen
         preview: Vorschau
         empty_newsletters: Keine Newsletter zum Anzeigen vorhanden
       new:
@@ -784,8 +799,6 @@ de:
         sent: Gesendet
         actions: Aktionen
         draft: Entwurf
-        edit: Bearbeiten
-        delete: Löschen
         preview: Vorschau
         view: Anzeigen
         empty_notifications: Keine Benachrichtigungen vorhanden
@@ -883,7 +896,6 @@ de:
         can_edit_dossier: "Kann Dossier bearbeiten"
       valuator:
         add: Als Begutachter*in hinzufügen
-        delete: Löschen
       search:
         title: "Begutachter*innen: Benutzer*innensuche"
       form:
@@ -921,7 +933,6 @@ de:
         entry_name: Wahlvorsteher*in
       search:
         email_placeholder: Benutzer*in via E-Mail suchen
-        search: Suche
         user_not_found: Benutzer wurde nicht gefunden
         help: "Um Umfragebeauftragte hinzuzufügen oder zu entfernen, verwenden Sie das untenstehende Suchformular."
     poll_officer_assignments:
@@ -1050,6 +1061,7 @@ de:
       edit:
         title: "Frage bearbeiten"
       new:
+        title: "Frage zur Umfrage erstellen %{poll}"
         title_proposal: "Frage erstellen"
       answers:
         images:
@@ -1183,8 +1195,6 @@ de:
         no_organizations: Keine Organisationen vorhanden.
         reject: Ablehnen
         rejected: Abgelehnt
-        search: Suche
-        search_placeholder: Name, E-Mail oder Telefonnummer
         title: Organisationen
         verified: Überprüft
         verify: Überprüfen
@@ -1216,6 +1226,15 @@ de:
           without_confirmed_hide: Ausstehend
         title: Verborgene Vorschläge
         no_hidden_proposals: Keine verborgenen Vorschläge vorhanden.
+    hidden_proposal_notifications:
+      index:
+        filter: Filter
+        filters:
+          all: Alle
+          with_confirmed_hide: Bestätigt
+          without_confirmed_hide: Ausstehend
+        title: Verborgene Benachrichtigungen
+        no_hidden_proposals: Keine verborgenen Benachrichtigungen vorhanden.
     settings:
       flash:
         updated: Wert aktualisiert
@@ -1244,6 +1263,9 @@ de:
         remote_census:
           title: Register Konfiguration entfernen
           how_to_enable: 'Um die Fernzählung (SOAP) zu konfigurieren, müssen Sie "Verbindung zur Fernzählung (SOAP) konfigurieren" auf der Registerkarte "Funktionen" aktivieren.'
+        sdg:
+          title: SDG Konfiguration
+          how_to_enable: 'Um die Konfigurationsoptionen von Sustainable Development Goals anzuzeigen, müssen Sie "SDG" auf der Registerkarte "Features" aktivieren.'
       remote_census_general_name: Allgemeine Informationen
       remote_census_request_name: Anfrage Daten
       remote_census_response_name: Antwort Daten
@@ -1256,24 +1278,28 @@ de:
     shared:
       true_value: "Ja"
       false_value: "Nein"
-      booths_search:
-        button: Suche
-        placeholder: Suche Wahlkabine nach Name
-      poll_officers_search:
-        button: Suche
-        placeholder: Suche Beamte/innen
-      poll_questions_search:
-        button: Suche
-        placeholder: Suche Fragen
-      proposal_search:
-        button: Suche
-        placeholder: Suche Vorschläge nach Titel, Code, Beschreibung oder Frage
-      debate_search:
-        button: Suche
-        placeholder: Suche Debatten per Titel oder Beschreibung
-      user_search:
-        button: Suche
-        placeholder: Suche Benutzer*in nach Name oder E-Mail
+      search:
+        advanced_filters:
+          sdg_goals:
+            all: "Alle Ziele"
+            label: "Nach Ziel"
+          sdg_targets:
+            all: "Alle Zielvorgaben"
+            label: "Nach Zielvorgaben"
+        label:
+          booths: "Suche Wahlkabine nach Name"
+          budget_investments: "Investitionen nach Titel, Beschreibung oder Überschrift suchen"
+          debates: "Suche Debatten per Titel oder Beschreibung"
+          legislation_processes: "Suche Prozesse nach Titel oder Beschreibung"
+          legislation_proposals: "Suche Vorschläge nach Titel oder Beschreibung"
+          local_census_records: "Suche per Dokumentennummer"
+          organizations: "Name, E-Mail oder Telefonnummer"
+          poll_officers: "Suche Beamte/innen"
+          poll_questions: "Suche Fragen"
+          polls: "Suche Umfragen nach Titel oder Beschreibung"
+          proposals: "Suche Vorschläge nach Titel, Code, Beschreibung oder Frage"
+          users: "Suche Benutzer*in nach Name oder E-Mail"
+        search: "Suche"
       search_results: "Ergebnisse anzeigen"
       no_search_results: "Keine Ergebnisse gefunden."
       actions: Aktionen
@@ -1287,7 +1313,6 @@ de:
       author: Autor
       content: Inhalt
       created_at: Erstellt am
-      delete: Löschen
       color_help: Hexadezimales Format
       show_results_and_stats: "Ergebnisse und Statistiken anzeigen"
       results_and_stats_reminder: "Durch das Markieren dieses Kontrollkästchens werden die Resultate und/oder Statistiken dieser Abstimmung öffentlich abrufbar und für alle Benutzer*innen sichtbar."
@@ -1295,8 +1320,6 @@ de:
       index:
         title: Bezirke
         create: Bezirk erstellen
-        edit: Bearbeiten
-        delete: Löschen
       geozone:
         name: Name
         external_code: Externer Code
@@ -1376,6 +1399,7 @@ de:
         proposal_notifications: Benachrichtigungen zu einem Vorschlag
         incomplete_verifications: Unvollständige Verifizierungen
         polls: Umfragen
+        sdg: SDG
       graph:
         debate_created: Debatten
         visit: Besuche
@@ -1418,6 +1442,15 @@ de:
           question_name: Frage
           origin_web: Online-Teilnehmer*innen
           origin_total: Gesamtanzahl Teilnehmer*innen
+      sdg:
+        budget_investments:
+          amount: "Freigegebener Betrag"
+          winners: "Gewinner Investitionsprojekt"
+          sent: "Investitionsprojekte eingereicht"
+        debates: "Diskussionen"
+        polls: "Umfragen"
+        proposals: "Vorschläge"
+        title: "Ziele für nachhaltige Entwicklung - Statistiken"
     tags:
       create: Thema erstellen
       destroy: Thema löschen
@@ -1428,6 +1461,8 @@ de:
         help: "Wenn ein*e Benutzer*in einen Vorschlag erstellt, werden die folgenden Themen als Standard-Tags vorgeschlagen."
     users:
       columns:
+        id: ID
+        erase_reason: Lösche Begründung
         name: Name
         email: E-Mail
         document_number: Dokumentennummern
@@ -1436,9 +1471,12 @@ de:
       index:
         title: Benutzer*in
         no_users: Keine Benutzer*innen vorhanden.
+        filter: Filter
+        filters:
+          active: Aktiv
+          erased: Gelöscht
       search:
         placeholder: Suche Benutzer*in nach E-Mail, Name oder Ausweis
-        search: Suche
     verifications:
       index:
         phone_not_given: Telefon nicht angegeben
@@ -1513,16 +1551,11 @@ de:
           updated_at: Aktualisiert am
           title: Titel
           slug: URL
-          cards_title: Karten
           see_cards: Karten anzeigen
         cards:
           cards_title: Karten
           create_card: Karte erstellen
           no_cards: Keine Karten vorhanden.
-          title: Titel
-          description: Beschreibung
-          link_text: Linktext
-          link_url: URL des Links
           columns_help: "Breite der Karte in Spaltenanzahl. Auf mobilen Bildschirmen beträgt die Breit immer 100%."
           create:
             notice: "Erfolg"
@@ -1539,11 +1572,6 @@ de:
       cards_title: Karten
       create_card: Karte erstellen
       no_cards: Keine Karten vorhanden.
-      cards:
-        title: Titel
-        description: Beschreibung
-        link_text: Linktext
-        link_url: URL des Links
       feeds:
         proposals: Vorschläge
         debates: Diskussionen
@@ -1578,9 +1606,6 @@ de:
         document_number: Dokumentennummer
         date_of_birth: Geburtsdatum
         postal_code: Postleitzahl
-        search:
-          placeholder: Suche per Dokumentennummer
-          search: Suche
         import: Import CSV
       new:
         creating: Neues lokales Register anlegen

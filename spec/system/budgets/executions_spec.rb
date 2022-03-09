@@ -60,7 +60,7 @@ describe "Executions" do
     expect(page).not_to have_content(empty_heading.name)
   end
 
-  scenario "Show message when there are no winning investments with the selected status", :js do
+  scenario "Show message when there are no winning investments with the selected status" do
     create(:milestone_status, name: I18n.t("seeds.budgets.statuses.executed"))
 
     visit budget_path(budget)
@@ -152,7 +152,7 @@ describe "Executions" do
       expect(page).to have_content("#{status2.name} (1)")
     end
 
-    scenario "by milestone status", :js do
+    scenario "by milestone status" do
       create(:milestone, milestoneable: investment1, status: status1)
       create(:milestone, milestoneable: investment2, status: status2)
       create(:milestone_status, name: I18n.t("seeds.budgets.statuses.executing_project"))
@@ -181,7 +181,7 @@ describe "Executions" do
       expect(page).not_to have_content(investment2.title)
     end
 
-    scenario "are based on latest milestone status", :js do
+    scenario "are based on latest milestone status" do
       create(:milestone, milestoneable: investment1,
                          publication_date: 1.month.ago,
                          status: status1)
@@ -201,7 +201,7 @@ describe "Executions" do
       expect(page).to have_content(investment1.title)
     end
 
-    scenario "milestones with future dates are not shown", :js do
+    scenario "milestones with future dates are not shown" do
       create(:milestone, milestoneable: investment1,
                          publication_date: Date.yesterday,
                          status: status1)
@@ -221,7 +221,7 @@ describe "Executions" do
       expect(page).not_to have_content(investment1.title)
     end
 
-    scenario "by milestone tag, only display tags for winner investments", :js do
+    scenario "by milestone tag, only display tags for winner investments" do
       create(:milestone, milestoneable: investment1, status: status1)
       create(:milestone, milestoneable: investment2, status: status2)
       create(:milestone, milestoneable: investment3, status: status2)

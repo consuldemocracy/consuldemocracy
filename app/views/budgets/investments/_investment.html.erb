@@ -21,30 +21,8 @@
           <% cache [locale_and_user_status(investment), "index", investment, investment.author] do %>
             <h3><%= link_to investment.title, namespaced_budget_investment_path(investment) %></h3>
 
-            <p class="investment-project-info">
-              <%= l investment.created_at.to_date %>
+            <%= render Budgets::Investments::InfoComponent.new(investment) %>
 
-              <% if investment.author.hidden? || investment.author.erased? %>
-                <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                <span class="author">
-                  <%= t("budgets.investments.show.author_deleted") %>
-                </span>
-              <% else %>
-                <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                <span class="author">
-                  <%= investment.author.name %>
-                </span>
-                <% if investment.author.official? %>
-                  <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                  <span class="label round level-<%= investment.author.official_level %>">
-                    <%= investment.author.official_position %>
-                  </span>
-                <% end %>
-              <% end %>
-
-              <span class="bullet">&nbsp;&bull;&nbsp;</span>
-              <%= investment.heading.name %>
-            </p>
             <div class="investment-project-description">
               <%= wysiwyg(investment.description) %>
               <div class="truncate"></div>
@@ -63,8 +41,7 @@
                <%= render "/budgets/investments/votes",
                  investment: investment,
                  investment_votes: investment_votes,
-                 vote_url: namespaced_budget_investment_vote_path(investment, value: "yes")
-               %>
+                 vote_url: namespaced_budget_investment_vote_path(investment, value: "yes") %>
           </div>
         <% elsif investment.should_show_vote_count? %>
           <div id="<%= dom_id(investment) %>_votes"
@@ -84,8 +61,7 @@
                 <%= render "/budgets/investments/ballot",
                   investment: investment,
                   investment_ids: investment_ids,
-                  ballot: ballot
-                %>
+                  ballot: ballot %>
           </div>
         <% elsif investment.should_show_price? %>
           <div id="<%= dom_id(investment) %>_price"

@@ -10,10 +10,10 @@ describe "Stats" do
 
       visit stats_path
 
-      expect(page).to have_content "Debates 1"
-      expect(page).to have_content "Proposals 2"
-      expect(page).to have_content "Comments 3"
-      expect(page).to have_content "Visits 4"
+      expect(page).to have_content "DEBATES\n1"
+      expect(page).to have_content "PROPOSALS\n2"
+      expect(page).to have_content "COMMENTS\n3"
+      expect(page).to have_content "VISITS\n4"
     end
 
     scenario "Votes" do
@@ -23,10 +23,10 @@ describe "Stats" do
 
       visit stats_path
 
-      expect(page).to have_content "Votes on debates 1"
-      expect(page).to have_content "Votes on proposals 2"
-      expect(page).to have_content "Votes on comments 3"
-      expect(page).to have_content "Total votes 6"
+      expect(page).to have_content "VOTES ON DEBATES\n1"
+      expect(page).to have_content "VOTES ON PROPOSALS\n2"
+      expect(page).to have_content "VOTES ON COMMENTS\n3"
+      expect(page).to have_content "TOTAL VOTES\n6"
     end
 
     scenario "Users" do
@@ -36,8 +36,8 @@ describe "Stats" do
 
       visit stats_path
 
-      expect(page).to have_content "Verified users 3"
-      expect(page).to have_content "Unverified users 2"
+      expect(page).to have_content "VERIFIED USERS\n3"
+      expect(page).to have_content "UNVERIFIED USERS\n2"
     end
   end
 end

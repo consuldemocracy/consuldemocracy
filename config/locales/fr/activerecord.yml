@@ -1,4 +1,12 @@
 fr:
+  attributes:
+    geozone_id: "Périmètre de l'opération"
+    results_enabled: "Afficher les résultats"
+    stats_enabled: "Afficher les statistiques"
+    advanced_stats_enabled: "Afficher les statistiques avancées"
+    name: Nom
+    email: Email
+    description: Description
   activerecord:
     models:
       activity:
@@ -133,10 +141,17 @@ fr:
         organization_name: "Si votre proposition se fait au nom d'un collectif ou d'une organisation, renseignez leur nom"
         image: "Image descriptive de la proposition"
         image_title: "Titre de l'image"
+        duration: "Durée"
         feasibility_feasible: "Possible"
+        feasibility_undecided: "Indéterminé"
         feasibility_unfeasible: "Impossible"
+        incompatible: "Marquer comme incompatible"
+        milestone_tag_list: "Jalons"
+        price_explanation: "Voir les informations détaillés du prix"
+        selected: "Marquer comme sélectionnés"
         selected_true: "Sélecté"
         selected_false: "Pas sélecté"
+        unfeasibility_explanation: "Informations sur la viabilité"
       budget/investment/translation:
         title: "Titre"
       geozone:

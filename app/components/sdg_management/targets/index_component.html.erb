@@ -1,0 +1,33 @@
+<%= header %>
+
+<%= render SDGManagement::SubnavigationComponent.new(current: :targets) do %>
+  <table>
+    <thead>
+      <tr>
+        <td></td>
+        <th id="target-title" scope="col"><%= attribute_name(:title) %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% targets.group_by(&:goal).map do |goal, targets| %>
+        <tr class="goal-header">
+          <th id="<%= header_id(goal) %>" colspan="2" scope="colgroup">
+            <%= goal.code_and_title %>
+          </th>
+        </tr>
+
+        <% targets.each do |target| %>
+          <tr id="<%= dom_id(target) %>" class="target">
+            <th headers="<%= header_id(goal) %>" id="<%= header_id(target) %>">
+              <%= target.code %>
+            </th>
+            <td headers="<%= header_id(goal) %> <%= header_id(target) %> target-title">
+              <%= target.title %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

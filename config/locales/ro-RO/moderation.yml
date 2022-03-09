@@ -6,14 +6,14 @@ ro:
         confirm: Ești sigur?
         filter: Filtru
         filters:
-          all: Tot
+          all: Toate
           pending_flag_review: În așteptare
-          with_ignored_flag: Marcată ca vizualizată
+          with_ignored_flag: Marcate ca vizualizate
         headers:
           comment: Comentariu
           moderate: Moderează
         hide_comments: Ascunde comentarii
-        ignore_flags: Marchează ca vizualizată
+        ignore_flags: Marchează ca vizualizat
         order: Ordonează
         orders:
           flags: Cele mai marcate
@@ -28,9 +28,9 @@ ro:
         confirm: Ești sigur?
         filter: Filtru
         filters:
-          all: Tot
+          all: Toate
           pending_flag_review: În așteptare
-          with_ignored_flag: Marcată ca vizualizată
+          with_ignored_flag: Marcate ca vizualizate
         headers:
           debate: Dezbatere
           moderate: Moderează
@@ -56,14 +56,14 @@ ro:
         confirm: Sunteți sigur?
         filter: Filtru
         filters:
-          all: Tot
-          pending_flag_review: Revizuire în așteptare
-          with_ignored_flag: Marchează ca vizualizat
+          all: Toate
+          pending_flag_review: În așteptare
+          with_ignored_flag: Marcate ca vizualizate
         headers:
           moderate: Moderează
           proposal: Propunere
         hide_proposals: Ascunde propuneri
-        ignore_flags: Marchează ca vizualizat
+        ignore_flags: Marchează ca vizualizată
         order: Ordonează după
         orders:
           created_at: Cel mai recent
@@ -75,9 +75,9 @@ ro:
         confirm: Sunteți sigur?
         filter: Filtru
         filters:
-          all: Tot
+          all: Toate
           pending_flag_review: În așteptare
-          with_ignored_flag: Marcat ca vizualizat
+          with_ignored_flag: Marcate ca vizualizate
         headers:
           moderate: Moderează
           budget_investment: Buget de investiție
@@ -94,14 +94,14 @@ ro:
         confirm: Sunteți sigur?
         filter: Filtru
         filters:
-          all: Tot
-          pending_review: Revizuire în așteptare
-          ignored: Marchează ca vizualizat
+          all: Toate
+          pending_review: În așteptare
+          ignored: Marcate ca vizualizate
         headers:
           moderate: Moderează
           proposal_notification: Notificări propunere
         hide_proposal_notifications: Ascunde propuneri
-        ignore_flags: Marchează ca vizualizat
+        ignore_flags: Marchează ca vizualizată
         order: Ordonează după
         orders:
           created_at: Cel mai recent
@@ -111,7 +111,6 @@ ro:
       index:
         hidden: Blocat
         hide: Blochează
-        search: Căutare
         search_placeholder: email sau numele utilizatorului
         title: Blochează utilizatorii
       notice_hide: Utilizator blocat. Toate dezbaterile și comentariile utilizatorului sunt ascunse.

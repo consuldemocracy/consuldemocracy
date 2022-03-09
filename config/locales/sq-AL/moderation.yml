@@ -111,7 +111,6 @@ sq:
       index:
         hidden: Bllokuar
         hide: Blloko
-        search: Kërko
         search_placeholder: email ose emrin e përdoruesit
         title: Përdoruesit e bllokuar
       notice_hide: Përdoruesi është bllokuar. Të gjitha debatet dhe komentet e këtij përdoruesi janë fshehur.

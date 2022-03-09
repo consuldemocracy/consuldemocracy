@@ -12,7 +12,7 @@
       <div class="auth-image small-12 medium-3 column">
         <h1 class="logo margin">
           <%= link_to root_path do %>
-            <%= image_tag(image_path_for("logo_header.png"), class: "float-left", alt: t("layouts.header.logo")) %>
+            <%= image_tag(image_path_for("logo_header.png"), class: "float-left", alt: setting["org_name"]) %>
           <% end %>
         </h1>
       </div>
@@ -28,8 +28,6 @@
           </div>
         </div>
       </div>
-
-      <div class="push"></div>
     </div>
 
     <div class="footer">

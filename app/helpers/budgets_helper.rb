@@ -1,18 +1,7 @@
 module BudgetsHelper
-  def show_links_to_budget_investments(budget)
-    ["balloting", "reviewing_ballots", "finished"].include? budget.phase
-  end
-
   def budget_voting_styles_select_options
     Budget::VOTING_STYLES.map do |style|
       [Budget.human_attribute_name("voting_style_#{style}"), style]
-    end
-  end
-
-  def heading_name_and_price_html(heading, budget)
-    tag.div do
-      concat(heading.name + " ")
-      concat(tag.span(budget.formatted_heading_price(heading)))
     end
   end
 
@@ -64,19 +53,7 @@ module BudgetsHelper
   end
 
   def budget_published?(budget)
-    !budget.drafting? || current_user&.administrator?
-  end
-
-  def current_budget_map_locations
-    return unless current_budget.present?
-
-    if current_budget.publishing_prices_or_later? && current_budget.investments.selected.any?
-      investments = current_budget.investments.selected
-    else
-      investments = current_budget.investments
-    end
-
-    MapLocation.where(investment_id: investments).map(&:json_data)
+    budget.published? || current_user&.administrator?
   end
 
   def display_calculate_winners_button?(budget)
@@ -95,18 +72,6 @@ module BudgetsHelper
     current_user &&
     !current_user.voted_in_group?(investment.group) &&
     investment.group.headings.count > 1
-  end
-
-  def link_to_create_budget_poll(budget)
-    balloting_phase = budget.phases.find_by(kind: "balloting")
-
-    link_to t("admin.budgets.index.admin_ballots"),
-            admin_polls_path(poll: {
-                              name:      budget.name,
-                              budget_id: budget.id,
-                              starts_at: balloting_phase.starts_at,
-                              ends_at:   balloting_phase.ends_at }),
-            method: :post
   end
 
   def budget_subnav_items_for(budget)

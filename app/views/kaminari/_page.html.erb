@@ -5,6 +5,6 @@
   </li>
 <% else %>
   <li>
-    <%= link_to page, url, { :remote => remote, :rel => page.next? ? "next" : page.prev? ? "prev" : nil } %>
+    <%= link_to page, url, { remote: remote, rel: page.next? ? "next" : page.prev? ? "prev" : nil } %>
   </li>
 <% end %>

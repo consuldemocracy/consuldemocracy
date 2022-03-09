@@ -6,7 +6,7 @@ describe "Topics" do
   end
 
   context "New" do
-    scenario "Create new topic link should redirect to sign up for anonymous users", :js do
+    scenario "Create new topic link should redirect to sign up for anonymous users" do
       proposal = create(:proposal)
       community = proposal.community
 
@@ -18,7 +18,7 @@ describe "Topics" do
       expect(page).to have_current_path(new_user_session_path)
     end
 
-    scenario "Can access to new topic page with user logged", :js do
+    scenario "Can access to new topic page with user logged" do
       proposal = create(:proposal)
       community = proposal.community
       user = create(:user)
@@ -30,7 +30,7 @@ describe "Topics" do
       expect(page).to have_content "Create a topic"
     end
 
-    scenario "Should have content on new topic page", :js do
+    scenario "Should have content on new topic page" do
       proposal = create(:proposal)
       community = proposal.community
       user = create(:user)
@@ -50,7 +50,7 @@ describe "Topics" do
   end
 
   context "Create" do
-    scenario "Can create a new topic", :js do
+    scenario "Can create a new topic" do
       proposal = create(:proposal)
       community = proposal.community
       user = create(:user)
@@ -65,7 +65,7 @@ describe "Topics" do
       expect(page).to have_current_path(community_path(community))
     end
 
-    scenario "Can not create a new topic when user not logged", :js do
+    scenario "Can not create a new topic when user not logged" do
       proposal = create(:proposal)
       community = proposal.community
 

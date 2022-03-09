@@ -4,6 +4,8 @@ class Legislation::Process < ApplicationRecord
   include Milestoneable
   include Imageable
   include Documentable
+  include SDG::Relatable
+  include Searchable
 
   acts_as_paranoid column: :hidden_at
   acts_as_taggable_on :customs
@@ -44,13 +46,14 @@ class Legislation::Process < ApplicationRecord
   validates_translation :title, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true
-  validates :debate_start_date, presence: true, if: :debate_end_date?
-  validates :debate_end_date, presence: true, if: :debate_start_date?
-  validates :draft_start_date, presence: true, if: :draft_end_date?
-  validates :draft_end_date, presence: true, if: :draft_start_date?
-  validates :allegations_start_date, presence: true, if: :allegations_end_date?
-  validates :allegations_end_date, presence: true, if: :allegations_start_date?
-  validates :proposals_phase_end_date, presence: true, if: :proposals_phase_start_date?
+
+  %i[draft debate proposals_phase allegations].each do |phase_name|
+    enabled_attribute = :"#{phase_name.to_s.gsub("_phase", "")}_phase_enabled?"
+
+    validates :"#{phase_name}_start_date", presence: true, if: enabled_attribute
+    validates :"#{phase_name}_end_date", presence: true, if: enabled_attribute
+  end
+
   validate :valid_date_ranges
   validates :background_color, format: { allow_blank: true, with: CSS_HEX_COLOR }
   validates :font_color, format: { allow_blank: true, with: CSS_HEX_COLOR }
@@ -120,6 +123,22 @@ class Legislation::Process < ApplicationRecord
     else
       :open
     end
+  end
+
+  def searchable_translations_definitions
+    {
+      title       => "A",
+      summary     => "C",
+      description => "D"
+    }
+  end
+
+  def searchable_values
+    searchable_globalized_values
+  end
+
+  def self.search(terms)
+    pg_search(terms)
   end
 
   private

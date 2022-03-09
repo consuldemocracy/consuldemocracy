@@ -4,6 +4,10 @@ da:
     results_enabled: "Vis resultater"
     stats_enabled: "Vis statistik"
     advanced_stats_enabled: "Vis avanceret statistik"
+    name: Navn
+    email: Email
+    description: Beskrivelse
+    related_sdg_list: Mål og delmål
   activerecord:
     models:
       activity:
@@ -72,6 +76,18 @@ da:
       proposal:
         one: "Borgerforslag"
         other: "Borgerforslag"
+      sdg/goal:
+        one: "mål"
+        other: "mål"
+      sdg/local_target:
+        one: "lokale delmål"
+        other: "lokale delmål"
+      sdg/manager:
+        one: "Verdensmåls konsulent"
+        other: "Verdensmåls konsulenter"
+      sdg/target:
+        one: "delmål"
+        other: "delmål"
       site_customization/page:
         one: Brugerdefineret side
         other: Brugerdefinerede sider
@@ -132,15 +148,18 @@ da:
     attributes:
       budget:
         name: "Navn"
-        description_accepting: "Synlig beskrivelse under accept fasen"
+        description_accepting: "Synlig beskrivelse under modtagelsesfasen"
         description_reviewing: "Synlig beskrivelse under gennemgangsfasen"
-        description_selecting: "Synlig beskrivelse under udvælgelsesfasen"
-        description_valuating: "Synlig beskrivelse under vurderingsfasen"
+        description_selecting: "Synlig beskrivelse under støttefasen"
+        description_valuating: "Synlig beskrivelse under evalueringsfasen"
         description_balloting: "Synlig beskrivelse under afstemningsfasen"
         description_reviewing_ballots: "Beskrivelse under fasen Gennemgang af Stemmesedler"
         description_finished: "Synlig beskrivelse, når budgettet er færdiggjort"
         phase: "Fase"
         currency_symbol: "Valuta"
+        voting_style: "Afstemningstype"
+        voting_style_knapsack: "Knapsack"
+        voting_style_approval: "Approval"
       budget/translation:
         name: "Navn"
       budget/investment:

@@ -7,12 +7,7 @@ if Administrator.count == 0 && !Rails.env.test?
 end
 
 Setting.reset_defaults
-
-WebSection.where(name: "homepage").first_or_create!
-WebSection.where(name: "debates").first_or_create!
-WebSection.where(name: "proposals").first_or_create!
-WebSection.where(name: "budgets").first_or_create!
-WebSection.where(name: "help_page").first_or_create!
+load Rails.root.join("db", "web_sections.rb")
 
 # Max votes where a debate is still editable
 Setting["max_votes_for_debate_edit"] = 1000
@@ -126,3 +121,6 @@ WebSection.create(name: 'help_page')
 
 # Default custom pages
 load Rails.root.join("db", "pages.rb")
+
+# Sustainable Development Goals
+load Rails.root.join("db", "sdg.rb")

@@ -5,7 +5,7 @@
 <h2><%= t("admin.proposals.index.title") %></h2>
 
 <% if @proposals.any? %>
-  <%= render "/admin/shared/proposal_search", url: admin_proposals_path %>
+  <%= render Admin::SearchComponent.new(label: t("admin.shared.search.label.proposals")) %>
 
   <h3><%= page_entries_info @proposals %></h3>
 

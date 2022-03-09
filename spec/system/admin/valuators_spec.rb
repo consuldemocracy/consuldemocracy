@@ -1,14 +1,8 @@
 require "rails_helper"
 
-describe "Admin valuators" do
-  let(:admin) { create(:administrator) }
+describe "Admin valuators", :admin do
   let!(:user) { create(:user, username: "Jose Luis Balbin") }
   let!(:valuator) { create(:valuator, description: "Very reliable") }
-
-  before do
-    login_as(admin.user)
-    visit admin_valuators_path
-  end
 
   scenario "Show" do
     visit admin_valuator_path(valuator)
@@ -20,13 +14,17 @@ describe "Admin valuators" do
   end
 
   scenario "Index" do
+    visit admin_valuators_path
+
     expect(page).to have_content(valuator.name)
     expect(page).to have_content(valuator.email)
     expect(page).not_to have_content(user.name)
   end
 
-  scenario "Create", :js do
-    fill_in "name_or_email", with: user.email
+  scenario "Create" do
+    visit admin_valuators_path
+
+    fill_in "search", with: user.email
     click_button "Search"
 
     expect(page).to have_content(user.name)
@@ -55,7 +53,9 @@ describe "Admin valuators" do
   end
 
   scenario "Destroy" do
-    click_link "Delete"
+    visit admin_valuators_path
+
+    accept_confirm { click_link "Delete" }
 
     within("#valuators") do
       expect(page).not_to have_content(valuator.name)
@@ -76,7 +76,7 @@ describe "Admin valuators" do
       expect(page).to have_content(valuator1.name)
       expect(page).to have_content(valuator2.name)
 
-      fill_in "name_or_email", with: " "
+      fill_in "search", with: " "
       click_button "Search"
 
       expect(page).to have_content("Valuators: User search")
@@ -89,10 +89,11 @@ describe "Admin valuators" do
       expect(page).to have_content(valuator1.name)
       expect(page).to have_content(valuator2.name)
 
-      fill_in "name_or_email", with: "Foster"
+      fill_in "search", with: "Foster"
       click_button "Search"
 
       expect(page).to have_content("Valuators: User search")
+      expect(page).to have_field "search", with: "Foster"
       expect(page).to have_content(valuator1.name)
       expect(page).not_to have_content(valuator2.name)
     end
@@ -101,10 +102,11 @@ describe "Admin valuators" do
       expect(page).to have_content(valuator1.email)
       expect(page).to have_content(valuator2.email)
 
-      fill_in "name_or_email", with: valuator2.email
+      fill_in "search", with: valuator2.email
       click_button "Search"
 
       expect(page).to have_content("Valuators: User search")
+      expect(page).to have_field "search", with: valuator2.email
       expect(page).to have_content(valuator2.email)
       expect(page).not_to have_content(valuator1.email)
     end

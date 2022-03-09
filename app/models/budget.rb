@@ -34,16 +34,17 @@ class Budget < ApplicationRecord
   has_many :headings, through: :groups
   has_many :lines, through: :ballots, class_name: "Budget::Ballot::Line"
   has_many :phases, class_name: "Budget::Phase"
-  has_many :budget_administrators
+  has_many :budget_administrators, dependent: :destroy
   has_many :administrators, through: :budget_administrators
-  has_many :budget_valuators
+  has_many :budget_valuators, dependent: :destroy
   has_many :valuators, through: :budget_valuators
 
   has_one :poll
 
   after_create :generate_phases
 
-  scope :drafting, -> { where(phase: "drafting") }
+  scope :published, -> { where(published: true) }
+  scope :drafting,  -> { where.not(id: published) }
   scope :informing, -> { where(phase: "informing") }
   scope :accepting, -> { where(phase: "accepting") }
   scope :reviewing, -> { where(phase: "reviewing") }
@@ -59,7 +60,7 @@ class Budget < ApplicationRecord
   scope :open, -> { where.not(phase: "finished") }
 
   def self.current
-    where.not(phase: "drafting").order(:created_at).last
+    published.order(:created_at).last
   end
 
   def current_phase
@@ -68,6 +69,14 @@ class Budget < ApplicationRecord
 
   def published_phases
     phases.published.order(:id)
+  end
+
+  def starts_at
+    phases.published.first&.starts_at
+  end
+
+  def ends_at
+    phases.published.last&.ends_at
   end
 
   def description
@@ -86,8 +95,12 @@ class Budget < ApplicationRecord
     80
   end
 
+  def publish!
+    update!(published: true)
+  end
+
   def drafting?
-    phase == "drafting"
+    !published?
   end
 
   def informing?
@@ -150,10 +163,6 @@ class Budget < ApplicationRecord
     heading_ids.include?(heading.id) ? heading.price : -1
   end
 
-  def translated_phase
-    I18n.t "budgets.phase.#{phase}"
-  end
-
   def formatted_amount(amount)
     ActionController::Base.helpers.number_to_currency(amount,
                                                       precision: 0,
@@ -209,6 +218,7 @@ class Budget < ApplicationRecord
         Budget::Phase.create(
           budget: self,
           kind: phase,
+          name: I18n.t("budgets.phase.#{phase}"),
           prev_phase: phases&.last,
           starts_at: phases&.last&.ends_at || Date.current,
           ends_at: (phases&.last&.ends_at || Date.current) + 1.month

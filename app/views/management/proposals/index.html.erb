@@ -1,7 +1,7 @@
 <main>
   <h2><%= t("management.proposals.index.title") %></h2>
 
-  <%= render "admin/shared/proposal_search", url: management_proposals_path %>
+  <%= render Admin::SearchComponent.new(label: t("admin.shared.search.label.proposals")) %>
 
   <div class="management-list">
     <div class="proposals-list">

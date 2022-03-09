@@ -1,0 +1,27 @@
+.budget-phases-table {
+
+  .budget-phase-enabled {
+    @include has-fa-icon(check, solid);
+    color: $check;
+  }
+
+  .budget-phase-disabled {
+    @include has-fa-icon(times, solid);
+    color: $black;
+  }
+
+  .budget-phase-enabled,
+  .budget-phase-disabled {
+    display: block;
+    font-size: 1px;
+    left: $off-screen-left;
+    line-height: 1;
+    position: relative;
+
+    &::before {
+      font-size: $base-font-size;
+      left: -1 * $off-screen-left;
+      position: relative;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+%font-icon {
+  @extend %fa-icon;
+  font-family: "Font Awesome 5 Free";
+  margin-right: rem-calc(4);
+  vertical-align: middle;
+}
+
+%svg-icon {
+  background: currentcolor;
+  content: "";
+  height: 1em;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  width: 1em;
+}
+
+%admin-menu-icon {
+  font-size: rem-calc(20);
+  margin-left: rem-calc(8);
+  margin-right: rem-calc(10);
+}
+
+@mixin has-fa-icon($icon, $style, $position: "before") {
+
+  &::#{$position} {
+    @extend %font-icon;
+    @extend .fa-#{$icon}:before;
+
+    @if $style == "solid" {
+      font-weight: bold;
+    } @else {
+      font-weight: normal;
+    }
+
+    @if $style == "brands" {
+      font-family: "Font Awesome 5 Brands";
+    }
+  }
+
+  @supports (mask-image: url()) {
+
+    &::#{$position} {
+      @extend %svg-icon;
+      mask-image: image-url("fontawesome/#{$style}/#{$icon}.svg");
+    }
+  }
+}

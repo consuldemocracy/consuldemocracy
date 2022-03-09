@@ -106,6 +106,7 @@ sv:
         one: " som innehåller '%{search_term}'"
         other: " som innehåller '%{search_term}'"
     sessions:
+      need_managed_user: För att utföra den här åtgärden måste du välja en användare
       signed_out: Du har loggat ut.
       signed_out_managed_user: Användaren är utloggad.
     username_label: Användarnamn

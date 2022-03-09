@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Poll Results" do
-  scenario "List each Poll question", :js do
+  scenario "List each Poll question" do
     user1 = create(:user, :level_two)
     user2 = create(:user, :level_two)
     user3 = create(:user, :level_two)

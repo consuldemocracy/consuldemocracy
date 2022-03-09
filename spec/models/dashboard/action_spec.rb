@@ -67,7 +67,7 @@ describe Dashboard::Action do
     expect(action).not_to be_valid
   end
 
-  context "#active_for?" do
+  describe "#active_for?" do
     it "is active when required supports is 0 and day_offset is 0" do
       action = build(:dashboard_action, required_supports: 0, day_offset: 0)
       proposal = build(:proposal)
@@ -104,7 +104,7 @@ describe Dashboard::Action do
     end
   end
 
-  context "#requested_for?" do
+  describe "#requested_for?" do
     it "is not requested when no administrator task" do
       proposal = create(:proposal)
       action = create(:dashboard_action, :active, :admin_request, :resource)
@@ -122,7 +122,7 @@ describe Dashboard::Action do
     end
   end
 
-  context "#executed_for?" do
+  describe "#executed_for?" do
     it "is not executed when no administrator task" do
       proposal = create(:proposal)
       action = create(:dashboard_action, :active, :admin_request, :resource)
@@ -149,7 +149,7 @@ describe Dashboard::Action do
     end
   end
 
-  context "#active_for" do
+  describe ".active_for" do
     let!(:active_action) { create :dashboard_action, :active, day_offset: 0, required_supports: 0 }
     let!(:inactive_action) { create :dashboard_action, :inactive }
     let!(:not_enough_supports_action) do
@@ -212,7 +212,7 @@ describe Dashboard::Action do
     end
   end
 
-  context "#course_for" do
+  describe ".course_for" do
     let!(:proposed_action) { create :dashboard_action, :active, required_supports: 0 }
     let!(:inactive_resource) do
       create :dashboard_action, :inactive, :resource, required_supports: 0
@@ -238,7 +238,7 @@ describe Dashboard::Action do
     end
   end
 
-  context "#detect_new_actions_since" do
+  describe ".detect_new_actions_since" do
     describe "No detect new actions" do
       let!(:action)   { create(:dashboard_action, :proposed_action, :active, day_offset: 1) }
       let!(:resource) { create(:dashboard_action, :resource, :active, day_offset: 1) }

@@ -2,21 +2,6 @@ require "rails_helper"
 
 describe "Custom Pages" do
   context "New custom page" do
-    context "Draft" do
-      scenario "See page" do
-        custom_page = create(:site_customization_page,
-          slug: "other-slug",
-          title_en: "Custom page",
-          content_en: "Text for new custom page",
-          print_content_flag: false
-        )
-
-        visit custom_page.url
-
-        expect(page.status_code).to eq(404)
-      end
-    end
-
     context "Published" do
       scenario "See page" do
         custom_page = create(:site_customization_page, :published,
@@ -104,11 +89,11 @@ describe "Custom Pages" do
 
       scenario "Show widget cards for that page" do
         custom_page = create(:site_customization_page, :published)
-        create(:widget_card, page: custom_page, title: "Card Highlights")
+        create(:widget_card, cardable: custom_page, title: "Card Highlights")
 
         visit custom_page.url
 
-        expect(page).to have_content "Card Highlights"
+        expect(page).to have_content "CARD HIGHLIGHTS"
       end
     end
   end

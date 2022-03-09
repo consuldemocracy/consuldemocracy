@@ -1,0 +1,68 @@
+uk-UA:
+  valuation:
+    header:
+      title: Оцінка
+    menu:
+      title: Оцінка
+      budgets: Бюджети участі
+    budgets:
+      index:
+        title: Бюджети участі
+        filters:
+          current: Відкриті
+          finished: Завершені
+        table_name: Назва
+        table_phase: Етап
+        table_assigned_investments_valuation_open: Інвестиційні проєкти з відкритою оцінкою
+        table_actions: Дії
+        evaluate: Оцінити
+        no_budgets: "Бюджети відсутні"
+    budget_investments:
+      index:
+        headings_filter_all: Всі розділи
+        filters:
+          valuation_open: Відкрити
+          valuating: В процесі оцінювання
+          valuation_finished: Оцінювання завершено
+        assigned_to: "Доручено %{valuator}"
+        title: Інвестиційні проєкти
+        edit: Редагувати досьє
+        table_id: ID
+        table_title: Назва
+        table_heading_name: Назва розділу
+        table_actions: Дії
+        no_investments: "Інвестиційні проєкти відсутні."
+      show:
+        back: Назад
+        title: Інвестиційний проєкт
+        info: Інформація про автора
+        by: Відправлено через
+        sent: Відправлено в
+        heading: Розділ
+        dossier: Досьє
+        edit_dossier: Редагувати досьє
+        price: Ціна
+        price_first_year: Вартість впродовж першого року
+        currency: "€"
+        feasibility: Доцільність
+        feasible: Доцільно
+        unfeasible: Недоцільно
+        undefined: Не визначено
+        valuation_finished: Оцінку завершено
+        duration: Часовий діапазон
+        responsibles: Відповідальні
+        assigned_admin: Призначений адміністратор
+        assigned_valuators: Призначені оцінювачі
+        preview: Попередній перегляд інвестиції
+      edit:
+        dossier: Досьє
+        price: "Вартість (%{currency})"
+        price_first_year: "Вартість впродовж першого року (%{currency}) <small>(за бажанням, дані не є загальнодоступними)</small>"
+        feasibility: Доцільність
+        valuation_finished_alert: "Ви впевнені, що хочете позначити цей звіт як завершений? Якщо ви зробите це, його неможливо буде змінити."
+        not_feasible_alert: "Автору проекту буде негайно надіслане повідомлення про недоцільність його виконання."
+        save: Зберегти зміни
+      notice:
+        valuate: "Досьє оновлено"
+      valuation_comments: Коментарі до оцінки
+      not_in_valuating_phase: Інвестиції можна оцінювати тільки на етапі оцінки бюджету

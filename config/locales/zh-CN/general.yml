@@ -191,7 +191,6 @@ zh-CN:
       collaborative_legislation: 立法进程
       debates: 辩论
       locale: "语言："
-      logo: CONSUL logo（商标）
       management: 管理
       moderation: 审核
       valuation: 评估
@@ -205,9 +204,9 @@ zh-CN:
       budgets: 参与性预算编制
       notification_item:
         new_notifications:
+          zero: "您没有新的通知"
           other: 您有%{count} 个新通知
         notifications: 通知
-        no_notifications: "您没有新的通知"
   notifications:
     index:
       empty_notifications: 您没有新的通知。
@@ -530,7 +529,6 @@ zh-CN:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram（电报群）"
     instagram: "%{org} Instagram"
   stats:
@@ -607,9 +605,10 @@ zh-CN:
         debates: "最活跃的辩论"
         proposals: "最活跃的提议"
         processes: "开启进程"
-      see_all_debates: 查看所有辩论
-      see_all_proposals: 查看所有提议
-      see_all_processes: 查看所有进程
+      see_all:
+        debates: 查看所有辩论
+        proposals: 查看所有提议
+        processes: 查看所有进程
       process_label: 进程
       see_process: 查看进程
     cards:

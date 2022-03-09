@@ -14,7 +14,8 @@ class Officing::Residence
   # validates :postal_code, presence: true, if: -> { Setting.force_presence_postal_code? }
   # validates :year_of_birth, presence: true, unless: -> { Setting.force_presence_date_of_birth? }
 
-  validate :residence_in_madrid
+  validate :allowed_age
+  validate :local_residence
 
   def initialize(attrs = {})
     self.date_of_birth = parse_date("date_of_birth", attrs)
@@ -69,12 +70,12 @@ class Officing::Residence
     User.find_by(document_number: document_number, document_type: document_type)
   end
 
-  def residence_in_madrid
+  def local_residence
     return if errors.any?
 
     unless residency_valid?
       store_failed_census_call
-      errors.add(:residence_in_madrid, false)
+      errors.add(:local_residence, false)
     end
   end
 

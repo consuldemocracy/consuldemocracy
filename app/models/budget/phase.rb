@@ -1,11 +1,11 @@
 class Budget
   class Phase < ApplicationRecord
-    PHASE_KINDS = %w[drafting informing accepting reviewing selecting valuating publishing_prices balloting
+    PHASE_KINDS = %w[informing accepting reviewing selecting valuating publishing_prices balloting
                 reviewing_ballots finished].freeze
     PUBLISHED_PRICES_PHASES = %w[publishing_prices balloting reviewing_ballots finished].freeze
-    SUMMARY_MAX_LENGTH = 1000
     DESCRIPTION_MAX_LENGTH = 2000
 
+    translates :name, touch: true
     translates :summary, touch: true
     translates :description, touch: true
     include Globalizable
@@ -15,10 +15,10 @@ class Budget
     belongs_to :next_phase, class_name: self.name, inverse_of: :prev_phase
     has_one :prev_phase, class_name: self.name, foreign_key: :next_phase_id, inverse_of: :next_phase
 
-    validates_translation :summary, length: { maximum: SUMMARY_MAX_LENGTH }
+    validates_translation :name, presence: true
     validates_translation :description, length: { maximum: DESCRIPTION_MAX_LENGTH }
     validates :budget, presence: true
-    validates :kind, presence: true, uniqueness: { scope: :budget }, inclusion: { in: PHASE_KINDS }
+    validates :kind, presence: true, uniqueness: { scope: :budget }, inclusion: { in: ->(*) { PHASE_KINDS }}
     validate :invalid_dates_range?
     validate :prev_phase_dates_valid?
     validate :next_phase_dates_valid?
@@ -62,6 +62,10 @@ class Budget
       in_phase_or_later?("balloting")
     end
 
+    def current?
+      budget.current_phase == self
+    end
+
     private
 
       def adjust_date_ranges
@@ -77,7 +81,7 @@ class Budget
         if enabled? && starts_at.present? && prev_enabled_phase.present?
           prev_enabled_phase.assign_attributes(ends_at: starts_at)
           if prev_enabled_phase.invalid_dates_range?
-            phase_name = I18n.t("budgets.phase.#{prev_enabled_phase.kind}")
+            phase_name = prev_enabled_phase.name
             error = I18n.t("budgets.phases.errors.prev_phase_dates_invalid", phase_name: phase_name)
             errors.add(:starts_at, error)
           end
@@ -88,7 +92,7 @@ class Budget
         if enabled? && ends_at.present? && next_enabled_phase.present?
           next_enabled_phase.assign_attributes(starts_at: ends_at)
           if next_enabled_phase.invalid_dates_range?
-            phase_name = I18n.t("budgets.phase.#{next_enabled_phase.kind}")
+            phase_name = next_enabled_phase.name
             error = I18n.t("budgets.phases.errors.next_phase_dates_invalid", phase_name: phase_name)
             errors.add(:ends_at, error)
           end
