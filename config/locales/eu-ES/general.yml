@@ -196,7 +196,6 @@ eu:
       collaborative_legislation: Legegintza prosezuak
       debates: Eztabaidak
       locale: "Hizkuntza:"
-      logo: CONSUL logoa
       management: Kudeaketa
       moderation: Moderatu
       valuation: Ebaluaketa
@@ -210,10 +209,10 @@ eu:
       budgets: Partaidetzazko aurrekontuak
       notification_item:
         new_notifications:
+          zero: "Ez duzu jakinarazpen berririk"
           one: Jakinarazpen bat duzu
           other: '%{count} jakinarazpen berri dituzu'
         notifications: Jakinarazpenak
-        no_notifications: "Ez duzu jakinarazpen berririk"
   notifications:
     index:
       empty_notifications: Ez duzu jakinarazpen berririk.
@@ -540,7 +539,6 @@ eu:
     facebook: "%{org} Facebooka"
     twitter: "%{org} Twitterra"
     youtube: "%{org} YouTubea"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegrama"
     instagram: "%{org} Instagrama"
   stats:
@@ -625,9 +623,10 @@ eu:
         debates: "Eztabaida aktiboenak"
         proposals: "Proposamen aktiboenak"
         processes: "Irekitako prosezuak"
-      see_all_debates: Eztabaida guztiak ikusi
-      see_all_proposals: Proposamen guztiak ikusi
-      see_all_processes: Prosezu guztiak ikusi
+      see_all:
+        debates: Eztabaida guztiak ikusi
+        proposals: Proposamen guztiak ikusi
+        processes: Prosezu guztiak ikusi
       process_label: Prosezua
       see_process: Prosezua ikusi
     cards:

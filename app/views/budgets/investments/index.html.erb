@@ -42,9 +42,9 @@
 
       <% if @current_filter == "unfeasible" %>
         <div class="small-12 margin-bottom">
-          <h2><%= t("budgets.investments.index.unfeasible") %>: <%= @heading.name %></h2>
+          <h2><%= t("budgets.investments.index.unfeasible") %></h2>
           <div class="callout primary margin">
-              <%= t("budgets.investments.index.unfeasible_text") %>
+            <%= t("budgets.investments.index.unfeasible_text") %>
           </div>
         </div>
       <% elsif @heading.present? %>
@@ -55,7 +55,7 @@
         </div>
       <% end %>
 
-      <%= render("shared/advanced_search", search_path: budget_investments_path(@budget)) %>
+      <%= render Shared::AdvancedSearchComponent.new %>
 
       <% if unfeasible_or_unselected_filter %>
         <ul class="no-bullet submenu">
@@ -69,6 +69,8 @@
       <% else %>
         <%= render("shared/order_links", i18n_namespace: "budgets.investments.index") %>
       <% end %>
+
+      <%= render Shared::FilterSelectorComponent.new(i18n_namespace: "budgets.investments.index") %>
 
       <% if investments_default_view? %>
 
@@ -92,7 +94,7 @@
 
     <div class="small-12 medium-3 column">
       <aside class="margin-bottom">
-        <div id="sidebar">
+        <div id="sidebar" class="budget-investments-sidebar">
           <%= render "/budgets/investments/sidebar" %>
         </div>
       </aside>

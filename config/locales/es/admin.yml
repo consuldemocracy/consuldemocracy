@@ -35,12 +35,17 @@ es:
           proposals: Propuestas
           budgets: Presupuestos participativos
           help_page: Página de ayuda
+          sdg: ODS
+      create:
+        notice: "Banner creado correctamente"
       edit:
         editing: Editar el banner
         form:
           submit_button: Guardar cambios
       new:
         creating: Crear banner
+      update:
+        notice: "Banner actualizado correctamente"
     activity:
       show:
         action: Acción
@@ -62,20 +67,24 @@ es:
         type: Tipo
         no_activity: No hay actividad de moderadores.
     budgets:
+      actions:
+        preview: "Previsualizar presupuesto"
       index:
         title: Presupuestos participativos
         new_link: Crear nuevo presupuesto
         filter: Filtro
         filters:
+          all: Todos
           open: Abiertos
           finished: Terminados
+        help: "Los presupuestos participativos permiten que los ciudadanos propongan y decidan de manera directa cómo gastar parte del presupuesto, con un seguimiento y evaluación riguroso de las propuestas por parte de la institución."
         budget_investments: Gestionar proyectos de gasto
+        table_completed: Completado
+        table_draft: "Borrador"
+        table_duration: "Duración"
         table_name: Nombre
         table_phase: Fase
-        table_investments: Proyectos de gasto
-        table_edit_groups: Grupos de partidas
-        table_edit_budget: Editar
-        table_admin_ballots: Urnas
+        table_phase_progress: "(%{current_phase_number}/%{total_phases})"
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
         admin_ballots: Gestionar urnas
@@ -84,11 +93,16 @@ es:
         notice: '¡Presupuestos participativos creados con éxito!'
       update:
         notice: Presupuestos participativos actualizados
+      publish:
+        notice: "Presupuestos participativos actualizados"
       edit:
         title: Editar presupuestos participativos
+        drafting: "Este presupuesto participativo está en modo borrador, solo los administradores pueden verlo desde la parte pública de la página. Una vez se haya publicado, no se podrá volver a poner en modo borrador otra vez."
+        publish: "Publicar presupuesto"
         delete: Eliminar presupuesto
         phase: Fase
-        dates: Fechas
+        phases_caption: "Fases"
+        duration: "Duración"
         enabled: Habilitada
         actions: Acciones
         edit_phase: Editar fase
@@ -104,6 +118,11 @@ es:
           other: "%{count} evaluadores seleccionados"
         empty_administrators: "No hay administradores"
         empty_valuators: "No hay evaluadores"
+        name_description: "Este es el nombre del presupuesto participativo usado en la cabecera y tarjetas cuando éste está activo"
+        info:
+          budget_settings: "Configuración genérica del presupuesto participativo"
+          phases_settings: "Configuración de las fases"
+          staff_settings: "Administradores y Evaluadores asigandos al presupuesto"
       destroy:
         success_notice: Presupuesto eliminado correctamente
         unable_notice: No se puede eliminar un presupuesto con proyectos asociados
@@ -117,7 +136,6 @@ es:
     budget_groups:
       name: "Nombre"
       headings_name: "Partidas"
-      headings_edit: "Editar Partidas"
       headings_manage: "Gestionar partidas"
       no_groups: "No hay grupos."
       amount:
@@ -137,6 +155,7 @@ es:
         submit: "Guardar grupo"
       index:
         back: "Volver a presupuestos"
+        help: "Los grupos sirven para organizar las partidas del presupuesto. Después de que un grupo sea creado y éste contenga partidas, es posible determinar el número de partidas a las que un usuario puede votar por grupo."
     budget_headings:
       no_headings: "No hay partidas."
       amount:
@@ -159,12 +178,17 @@ es:
         submit: "Guardar partida"
       index:
         back: "Volver a grupos"
+        help: "Las partidas sirven para dividir el dinero del presupuesto participativo. Aquí puedes ir añadiendo partidas para cada grupo y establecer la cantidad de dinero que se gastará en cada partida."
     budget_phases:
       edit:
-        summary_help_text: Este texto informará al usuario sobre la fase. Para mostrarlo aunque la fase no esté activa, marca la opción de más abajo.
         description_help_text: Este texto aparecerá en la cabecera cuando la fase esté activa
+        duration: "Duración de la fase"
+        duration_description: "El período de tiempo que esta fase estará activa."
         enabled_help_text: Esta fase será pública en el calendario de fases del presupuesto y estará activa para otros propósitos
+        name_help_text: "Este es el título de la fase que los usuarios leerán en el encabezado cuando la fase esté activa."
         save_changes: Guardar cambios
+      index:
+        help: "Los presupuestos participativos tienen distintas fases. Aquí puedes habilitar o deshabilitar fases y también personalizar cada una de las fases."
     budget_investments:
       index:
         heading_filter_all: Todas las partidas
@@ -297,8 +321,6 @@ es:
         table_name: Nombre
         table_description: Descripción
         table_actions: Acciones
-        delete: Borrar
-        edit: Editar
       edit:
         title: Editar estado de seguimiento
       update:
@@ -361,8 +383,6 @@ es:
         index:
           description: "Cuando los usuarios crean propuestas pueden acceder a un panel de progreso de su propuesta, donde se le puede proponer recursos y recomendaciones para conseguir apoyos a su idea."
           create: Crear recurso o acción
-          edit: Editar
-          delete: Borrar
           active: 'Si'
           inactive: 'No'
           title: Recursos y acciones
@@ -497,7 +517,6 @@ es:
           banner_title: Colores del encabezado
         index:
           create: Nuevo proceso
-          delete: Borrar
           title: Procesos de legislación colaborativa
           filters:
             active: Activos
@@ -623,14 +642,17 @@ es:
     managers:
       index:
         title: Gestores
-        name: Nombre
-        email: Email
         no_managers: No hay gestores.
       manager:
         add: Añadir como gestor
-        delete: Borrar
       search:
         title: "Gestores: Búsqueda de usuarios"
+    sdg_managers:
+      index:
+        no_sdg_managers: No hay usuarios.
+    sdg/managers:
+      sdg/manager:
+        add: Añadir como gestor ODS
     menu:
       activity: Actividad de moderadores
       admin: Menú de administración
@@ -647,6 +669,7 @@ es:
       hidden_users: Usuarios bloqueados
       administrators: Administradores
       managers: Gestores
+      sdg_managers: Gestores ODS
       moderators: Moderadores
       messaging_users: Mensajes a usuarios
       newsletters: Newsletters
@@ -701,14 +724,10 @@ es:
     administrators:
       index:
         title: Administradores
-        name: Nombre
-        email: Email
-        description: Descripción
         id: ID de Administrador
         no_administrators: No hay administradores.
       administrator:
         add: Añadir como Administrador
-        delete: Borrar
         restricted_removal: "Lo sentimos, no puedes eliminarte a ti mismo de la lista"
       search:
         title: "Administradores: Búsqueda de usuarios"
@@ -718,12 +737,9 @@ es:
     moderators:
       index:
         title: Moderadores
-        name: Nombre
-        email: Email
         no_moderators: No hay moderadores.
       moderator:
         add: Añadir como Moderador
-        delete: Borrar
       search:
         title: "Moderadores: Búsqueda de usuarios"
     segment_recipient:
@@ -750,8 +766,6 @@ es:
         sent: Enviado
         actions: Acciones
         draft: Borrador
-        edit: Editar
-        delete: Borrar
         preview: Previsualizar
         empty_newsletters: No hay newsletters para mostrar
       new:
@@ -787,8 +801,6 @@ es:
         sent: Enviado
         actions: Acciones
         draft: Borrador
-        edit: Editar
-        delete: Borrar
         preview: Previsualizar
         view: Visualizar
         empty_notifications: No hay notificaciones para mostrar
@@ -886,7 +898,6 @@ es:
         can_edit_dossier: "Puede editar informes"
       valuator:
         add: Añadir como evaluador
-        delete: Borrar
       search:
         title: "Evaluadores: Búsqueda de usuarios"
       form:
@@ -924,7 +935,6 @@ es:
         entry_name: presidente de mesa
       search:
         email_placeholder: Buscar usuario por email
-        search: Buscar
         user_not_found: Usuario no encontrado
         help: "Para añadir o eliminar Presidentes de mesa utiliza el buscador a continuación."
     poll_officer_assignments:
@@ -1187,8 +1197,6 @@ es:
         no_organizations: No hay organizaciones.
         reject: Rechazar
         rejected: Rechazada
-        search: Buscar
-        search_placeholder: Nombre, email o teléfono
         title: Organizaciones
         verified: Verificada
         verify: Verificar
@@ -1257,6 +1265,9 @@ es:
         remote_census:
           title: Configuración del Censo Remoto
           how_to_enable: 'Para configurar la conexión con el Censo Remoto (SOAP) se debe activar "Configurar la conexión al censo remoto (SOAP)" en la pestaña "Funcionalidades".'
+        sdg:
+          title: Configuración ODS
+          how_to_enable: 'Para mostrar las opciones de configuración de los Objetivos de Desarrollo Sostenible se debe activar "ODS" en la pestaña "Funcionalidades".'
       remote_census_general_name: Datos Generales
       remote_census_request_name: Datos Petición
       remote_census_response_name: Datos Respuesta
@@ -1269,24 +1280,28 @@ es:
     shared:
       true_value: "Sí"
       false_value: "No"
-      booths_search:
-        button: Buscar
-        placeholder: Buscar urna por nombre
-      poll_officers_search:
-        button: Buscar
-        placeholder: Buscar presidentes de mesa
-      poll_questions_search:
-        button: Buscar
-        placeholder: Buscar preguntas
-      proposal_search:
-        button: Buscar
-        placeholder: Buscar propuestas por título, código, descripción o pregunta
-      debate_search:
-        button: Buscar
-        placeholder: Buscar debates por título o descripción
-      user_search:
-        button: Buscar
-        placeholder: Buscar usuario por nombre o email
+      search:
+        advanced_filters:
+          sdg_goals:
+            all: "Todos los objetivos"
+            label: "Por objetivo"
+          sdg_targets:
+            all: "Todas las metas"
+            label: "Por meta"
+        label:
+          booths: "Buscar urna por nombre"
+          budget_investments: "Buscar proyectos por título, descripción o partida"
+          debates: "Buscar debates por título o descripción"
+          legislation_processes: "Buscar procesos por título o descripción"
+          legislation_proposals: "Buscar propuestas por título o descripción"
+          local_census_records: "Búsqueda por número de documento"
+          organizations: "Nombre, email o teléfono"
+          poll_officers: "Buscar presidentes de mesa"
+          poll_questions: "Buscar preguntas"
+          polls: "Buscar votaciones por nombre o descripción"
+          proposals: "Buscar propuestas por título, código, descripción o pregunta"
+          users: "Buscar usuario por nombre o email"
+        search: "Buscar"
       search_results: "Resultados de la búsqueda"
       no_search_results: "No se han encontrado resultados."
       actions: Acciones
@@ -1300,7 +1315,6 @@ es:
       author: Autor
       content: Contenido
       created_at: Fecha de creación
-      delete: Eliminar
       color_help: Formato hexadecimal
       show_results_and_stats: "Mostrar resultados y estadísticas"
       results_and_stats_reminder: "Si marcas estas casillas los resultados y/o estadísticas serán públicos y podrán verlos todos los usuarios."
@@ -1308,8 +1322,6 @@ es:
       index:
         title: Zonas
         create: Crear una zona
-        edit: Editar
-        delete: Borrar
       geozone:
         name: Nombre
         external_code: Código externo
@@ -1389,6 +1401,7 @@ es:
         proposal_notifications: Notificaciones de propuestas
         incomplete_verifications: Verificaciones incompletas
         polls: Votaciones
+        sdg: ODS
       graph:
         debate_created: Debates
         visit: Visitas
@@ -1431,6 +1444,15 @@ es:
           question_name: Pregunta
           origin_web: Participantes en Web
           origin_total: Participantes Totales
+      sdg:
+        budget_investments:
+          amount: "Presupuesto aprobado"
+          winners: "Proyectos de inversión ganadores"
+          sent: "Proyectos de inversión enviados"
+        debates: "Debates"
+        polls: "Votaciones"
+        proposals: "Propuestas"
+        title: "Objetivos de Desarrollo Sostenible - Estadísticas"
     tags:
       create: Crear tema
       destroy: Eliminar tema
@@ -1457,7 +1479,6 @@ es:
           erased: Borrados
       search:
         placeholder: Buscar usuario por email, nombre o DNI
-        search: Buscar
     verifications:
       index:
         phone_not_given: No ha dado su teléfono
@@ -1532,16 +1553,11 @@ es:
           updated_at: Última actualización
           title: Título
           slug: Slug
-          cards_title: Tarjetas
           see_cards: Ver tarjetas
         cards:
           cards_title: tarjetas
           create_card: Crear tarjeta
           no_cards: No hay tarjetas.
-          title: Título
-          description: Descripción
-          link_text: Texto del enlace
-          link_url: URL del enlace
           columns_help: "Ancho de la tarjeta en número de columnas. En pantallas móviles siempre es un ancho del 100%."
           create:
             notice: "¡Tarjeta creada con éxito!"
@@ -1558,11 +1574,6 @@ es:
       cards_title: Tarjetas
       create_card: Crear tarjeta
       no_cards: No hay tarjetas.
-      cards:
-        title: Título
-        description: Descripción
-        link_text: Texto del enlace
-        link_url: URL del enlace
       feeds:
         proposals: Propuestas
         debates: Debates
@@ -1597,9 +1608,6 @@ es:
         document_number: Número de documento
         date_of_birth: Fecha de nacimiento
         postal_code: Código postal
-        search:
-          placeholder: Búsqueda por número de documento
-          search: Buscar
         import: Importar CSV
       new:
         creating: Creando nuevo registro de censo local

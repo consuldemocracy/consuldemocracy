@@ -329,7 +329,6 @@
 .debate-show,
 .proposal-show,
 .poll-question-show,
-.investment-project-show,
 .budget-investment-show,
 .polls-show,
 .debate-quiz,
@@ -353,18 +352,6 @@
 
   .social-share-full .social-share-button {
     display: inline;
-  }
-
-  .whatsapp::before {
-    background-color: #43d854;
-    color: #fff;
-    display: inline-block;
-    font-size: rem-calc(30);
-    height: rem-calc(48);
-    padding-top: rem-calc(9);
-    text-align: center;
-    vertical-align: top;
-    width: rem-calc(48);
   }
 
   .debate-info,
@@ -408,10 +395,10 @@
     }
   }
 
-  .tags,
   .geozone {
 
     li {
+      display: inline-block;
       margin-bottom: 0;
     }
   }
@@ -487,8 +474,11 @@
   }
 
   .tags {
-    display: block;
-    margin-bottom: 0;
+    @extend %tags;
+  }
+
+  .tags,
+  .sdg-target-tag-list {
 
     a {
       margin-right: rem-calc(6);
@@ -500,13 +490,11 @@
   color: $text;
 }
 
-.investment-project-show p,
 .budget-investment-show p {
   word-break: break-word;
 }
 
 .proposal-show,
-.investment-project-show,
 .budget-investment-show {
 
   .supports {
@@ -603,12 +591,6 @@
     img {
       max-width: 12rem;
     }
-
-    .budget-investment-content {
-      ul {
-        margin-bottom: 0;
-      }
-    }
   }
 }
 
@@ -643,17 +625,22 @@
   }
 
   &.past-budgets {
+    display: flex;
+    flex-wrap: wrap;
     min-height: 0;
 
-    .button ~ .button {
-      margin-left: $line-height / 2;
+    > :not(:first-child) {
+      margin-left: auto;
+    }
+
+    .button {
+      margin-left: $line-height;
     }
   }
 }
 
 .debate,
 .proposal,
-.investment-project,
 .budget-investment,
 .legislation,
 .communities-show {
@@ -673,9 +660,11 @@
   }
 
   .tags {
-    display: block;
-    margin-bottom: 0;
+    @extend %tags;
+  }
 
+  .tags,
+  .sdg-target-tag-list {
     a {
       font-size: $tiny-font-size;
     }
@@ -806,8 +795,6 @@
   }
 }
 
-.investment-project,
-.investment-project-show,
 .budget-investment,
 .budget-investment-show {
 
@@ -825,6 +812,8 @@
     .button-support {
       background: $budget;
       color: #fff;
+      font-size: $base-font-size;
+      font-weight: bold;
 
       &:hover {
         background: $budget-hover;
@@ -865,7 +854,6 @@
   }
 }
 
-.investment-project-show .supports,
 .budget-investment-show .supports {
   border: 0;
 }
@@ -877,8 +865,6 @@
   }
 }
 
-.investment-project .no-button,
-.investment-project-show .no-button,
 .budget-investment .no-button,
 .budget-investment-show .no-button {
   display: block;
@@ -910,7 +896,8 @@
   }
 }
 
-.help-header {
+.help-header,
+.section-header {
   background: #fafafa;
   border-bottom: 1px solid #eee;
   margin-top: -$line-height;
@@ -997,7 +984,7 @@
   }
 
   .is-active {
-    color: $brand;
+    @include brand-text;
 
     &::after {
       content: "\6c";
@@ -1126,12 +1113,10 @@
 
   .share-supported {
 
-    .ssb-twitter,
-    .ssb-facebook {
+    .social-share-button .ssb-icon {
       background: none;
       color: $text;
-      height: rem-calc(33) !important;
-
+      height: rem-calc(33);
 
       &::before {
         font-size: rem-calc(18);
@@ -1144,74 +1129,72 @@
 // 06. Budgets
 // -----------
 
-.expanded {
+.budget-header {
+  @extend %brand-background;
+  margin-top: -$line-height;
+  padding-bottom: $line-height;
+  padding-top: $line-height;
 
-  &.budget {
-    background: $budget;
-    margin-top: -$line-height;
+  h1,
+  h2,
+  p,
+  a,
+  .back,
+  .icon-angle-left,
+  .description {
+    color: #fff;
+  }
 
-    h1,
-    h2,
-    p,
-    a,
-    .back,
-    .icon-angle-left,
-    .description {
-      color: #fff;
-    }
+  a {
+    text-decoration: underline;
+  }
 
-    a {
-      text-decoration: underline;
-    }
+  .confirmed {
+    font-size: rem-calc(24);
+    font-weight: bold;
+  }
 
-    .callout {
+  .info {
+    background: #6a2a72;
 
-      &.primary a {
-        color: $link;
-      }
-    }
-
-    .button {
-      background: #fff;
-      color: $budget;
-      text-decoration: none;
-    }
-
-    .confirmed {
-      font-size: rem-calc(24);
-      font-weight: bold;
-    }
-
-    .info {
-      background: #6a2a72;
-
-      p {
-        margin-bottom: 0;
-        text-transform: uppercase;
-      }
+    p {
+      margin-bottom: 0;
+      text-transform: uppercase;
     }
   }
 }
 
 .jumbo-budget {
-  background: $budget;
-  border-bottom: 1px solid $budget;
+  background: $white;
+  border-bottom: 2px solid $border;
 
   &.budget-heading {
     min-height: $line-height * 10;
+
+    .check-ballot {
+      @include has-fa-icon(chevron-right, solid, after);
+      float: right;
+      min-width: rem-calc(240);
+
+      &::after {
+        margin-left: $line-height / 4;
+        margin-right: 0;
+      }
+    }
   }
 
   h2 {
     margin-bottom: 0;
   }
 
+  h1,
   h2,
   h3,
   .back,
   .icon-angle-left,
   p,
   a {
-    color: #fff;
+    color: $text;
   }
 
   .tagline {
@@ -1233,104 +1216,77 @@
   }
 
   .button {
-    background: #fff;
-    color: $brand;
+    @extend %brand-background;
     margin-bottom: rem-calc(3);
     text-decoration: none;
   }
-
-  .social-share-button a {
-    color: #fff;
-
-    &.social-share-button-twitter:hover {
-      color: #40a2d1;
-    }
-
-    &.social-share-button-facebook:hover {
-      color: #354f88;
-    }
-
-    &.social-share-button-telegram:hover {
-      color: #ce3e26;
-    }
-  }
 }
 
-.groups-and-headings {
-
-  .heading {
-    border: 1px solid $border;
-    border-radius: rem-calc(3);
-    display: inline-block;
-    margin-bottom: $line-height / 2;
-
-    a {
-      display: block;
-      padding: $line-height / 2;
-
-      &:hover {
-        background: $highlight;
-        text-decoration: none;
-      }
-    }
-
-    .heading-name {
-      padding: $line-height / 2;
-    }
-
-    span {
-      color: $text;
-      display: block;
-      font-size: $small-font-size;
-    }
-  }
+.current-phase {
+  @include brand-text;
 }
 
 .progress-votes {
   position: relative;
 
   .progress {
-    background: #212033;
+    background: #bbcdd9;
+    border-radius: rem-calc(12);
     clear: both;
     margin-bottom: 0;
+    overflow: hidden;
   }
 
   .progress-meter {
-    background: #fdcb10;
-    border-radius: 0;
+    background: $brand;
+    border-radius: rem-calc(12);
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
     transition: width 2s;
   }
 
-  .spent-amount-text {
+  .total-amount,
+  .amount-available {
+    font-weight: bold;
     margin-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  .total-amount {
+    font-size: $tiny-font-size;
+
+    @include breakpoint(medium) {
+      text-align: right;
+    }
+
+    span {
+      @include brand-text;
+      font-size: $base-font-size;
+    }
+  }
+
+  .amount-available {
+    display: block;
+    font-size: $small-font-size;
+    margin-top: $line-height / 8;
     position: relative;
     text-align: right;
     white-space: nowrap;
 
     &::before {
-      color: #a5a1ff;
+      color: $brand;
       content: "\57";
       font-family: "icons";
       font-size: $small-font-size;
       line-height: 0;
       position: absolute;
       right: -0.5em;
+      top: -$line-height / 8;
     }
-  }
-
-  .total-amount {
-    color: #fff;
-    font-size: rem-calc(18);
-    font-weight: bold;
-    float: right;
-  }
-
-  .amount-available {
-    display: block;
 
     span {
+      @include brand-text;
       font-size: rem-calc(24);
-      font-weight: bold;
     }
   }
 }
@@ -1365,7 +1321,7 @@
   }
 
   .subtitle {
-    border-left: 2px solid $budget;
+    border-left: 2px solid $brand;
     margin: $line-height / 2 0;
     padding-left: $line-height / 2;
   }
@@ -1385,58 +1341,6 @@
 .ballot-list {
   list-style: none;
   margin-left: 0;
-
-  li {
-    background: #f9f9f9;
-    line-height: $line-height;
-    margin-bottom: $line-height / 4;
-    padding: $line-height $line-height / 2;
-    position: relative;
-
-    a {
-      color: $text;
-    }
-
-    span {
-      display: block;
-      font-style: italic;
-    }
-
-    .remove-investment-project {
-      display: block;
-      height: 0;
-
-      .icon-x {
-        color: #9f9f9f;
-        font-size: rem-calc(24);
-        line-height: $line-height / 2;
-        position: absolute;
-        right: 6px;
-        text-decoration: none;
-        top: 6px;
-
-        @include breakpoint(medium) {
-          font-size: $base-font-size;
-        }
-      }
-    }
-
-    &:hover {
-      background: $budget;
-      color: #fff;
-
-      a,
-      span {
-        color: #fff;
-        outline: 0;
-        text-decoration: none;
-      }
-
-      .remove-investment-project .icon-x {
-        color: #fff;
-      }
-    }
-  }
 }
 
 .select-district a {
@@ -1472,15 +1376,11 @@
   z-index: 3;
 
   @include breakpoint(medium) {
-    background-color: $budget;
     transition: height 0.3s;
 
-    h2 {
-      margin-bottom: $line-height / 2;
-      transition: font-size 0.3s;
-    }
-
     &.is-fixed {
+      background: $white;
+      border-bottom: 2px solid $border;
       height: auto;
       left: 0;
       padding: $line-height;
@@ -1495,61 +1395,12 @@
       }
     }
   }
-}
 
-.budget-timeline {
-  border-left: 3px solid $budget;
-  margin-left: $line-height / 2;
-  padding: $line-height $line-height / 2;
+  h2 {
+    transition: font-size 0.3s;
 
-  h3,
-  span,
-  p {
-    padding: 0 $line-height / 4;
-  }
-
-  h3 {
-    margin-bottom: 0;
-  }
-
-  span {
-    color: $text-medium;
-    display: block;
-    font-size: $small-font-size;
-    margin-bottom: $line-height / 2;
-  }
-
-  .phase {
-    position: relative;
-
-    &:not(:first-child) {
-      margin-top: $line-height * 1.5;
-    }
-
-    &::before {
-      background-color: #fff;
-      border: 4px solid $budget;
-      border-radius: 100%;
-      content: "";
-      height: 16px;
-      left: -22px;
-      position: absolute;
-      top: 6px;
-      width: 16px;
-      z-index: 99;
-    }
-
-    &.is-active {
-
-      h3 {
-        background: $budget;
-        color: #fff;
-        display: inline-block;
-      }
-
-      &::before {
-        background-color: $budget;
-      }
+    @include breakpoint(small only) {
+      margin: $line-height 0;
     }
   }
 }
@@ -1728,6 +1579,15 @@
 .poll-more-info,
 .poll-more-info-answers {
   border-top: 1px solid #eee;
+
+  .read-more {
+    margin-bottom: $line-height;
+    margin-top: $line-height;
+
+    button {
+      @include link;
+    }
+  }
 }
 
 .poll-more-info-answers {
@@ -1804,6 +1664,7 @@
   top: 24px;
   width: rem-calc(48);
   z-index: 9;
+  cursor: pointer;
 
   &:hover {
     background: $dark;
@@ -1826,7 +1687,7 @@
       padding: 0 $line-height / 2 0 0;
     }
 
-    img {
+    .image-container img {
       height: 100%;
       max-width: none;
       position: absolute;

@@ -14,7 +14,7 @@ he:
           moderate: מנחה
         hide_comments: הסתר הערות
         ignore_flags: סימון כמסמך שנצפה
-        order: הזמן
+        order: סדר
         orders:
           flags: הנצפה ביותר
           newest: החדש ביותר
@@ -28,7 +28,7 @@ he:
         confirm: האם את/ה בטוח/ה?
         filter: סינון
         filters:
-          all: כולם
+          all: הכל
           pending_flag_review: ממתין לאישור
           with_ignored_flag: סומנו שנראו
         headers:
@@ -56,7 +56,7 @@ he:
         confirm: האם את/ה בטוח/ה?
         filter: סינון
         filters:
-          all: כולם
+          all: הכל
           pending_flag_review: בהמתנה לבדיקה
           with_ignored_flag: סימון כמסמך שנצפה
         headers:
@@ -75,7 +75,7 @@ he:
         confirm: האם את/ה בטוח/ה?
         filter: סינון
         filters:
-          all: כולם
+          all: הכל
           pending_flag_review: ממתין
           with_ignored_flag: סומנו שנראו
         headers:
@@ -111,7 +111,6 @@ he:
       index:
         hidden: מוסתרים
         hide: הסתרה
-        search: חיפוש
         search_placeholder: דוא"ל או שם משתמש
         title: חסימת משתמשים
       notice_hide: המשתמש/ת נחסם/ה. כל הדיונים וההערות של המשתמש/ת הוסתרו.

@@ -6,6 +6,7 @@ tr:
         submit: Açıklamaları tekrar gönder
         title: Onay açıklamalarını tekrar gönder
       show:
+        instructions: '%{email} adresli hesap doğrulanıyor'
         new_password_confirmation_label: Erişim şifresini tekrarla
         new_password_label: Yeni erişim şifresi
         please_set_password: Lütfen yeni şifrenizi seçin (yukarıdaki e-posta ile giriş yapmanızı sağlar)
@@ -49,6 +50,10 @@ tr:
           title: Bir kurum veya topluluk olarak kaydol
         success:
           back_to_index: Anladım; ana sayfaya geri dön
+          instructions_1: "Bu topluluğu temsil ettiğinizi doğrulamak için <strong>Yakında sizinle iletişime geçeceğiz</strong>."
+          instructions_2: <strong>E-postanız incelenirken</strong>,<strong>hesabınızı doğrulamanız için size bir bağlantı</strong> gönderdik.
+          instructions_3: Onaylandıktan sonra, doğrulanmamış grup olarak katılım sağlayabilirsiniz.
+          thank_you: Topluluğunuzu web sitesine kaydettiğiniz için teşekkür ederiz. <strong>Doğrulama bekleniyor</strong>.
           title: Kurumun / topluluğun kaydı
     passwords:
       edit:
@@ -118,4 +123,7 @@ tr:
           username_note: Gönderilerinizin yanında görünen isim
         success:
           back_to_index: Anladım; ana sayfaya geri dön
+          instructions_1: Lütfen <b>e-posta adresinizi kontrol edin</b> - <b>hesabınızı doğrulamak için bir bağlantı</b> gönderdik.
+          instructions_2: Onaylandıktan sonra, katılım sağlayabilirsiniz.
+          thank_you: Web sitesine kayıt olduğunuz için teşekkür ederiz. Şimdi <b>e-posta adresinizi doğrulamalısınız</b>.
           title: E-posta adresini onayla

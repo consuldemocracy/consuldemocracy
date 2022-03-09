@@ -218,7 +218,6 @@ bs:
       collaborative_legislation: Legislativna saradnja
       debates: Debate
       locale: "Jezik:"
-      logo: CONSUL logotip
       management: Menadžment
       moderation: Moderiranje
       valuation: Procjena
@@ -232,11 +231,11 @@ bs:
       budgets: Participativno budžetiranje
       notification_item:
         new_notifications:
+          zero: "Nemate novih obavijesti"
           one: Imate jednu novu obavijest
           few: Imate %{count} nove/novih obavijesti
           other: Imate %{count} nove/novih obavijesti
         notifications: Obavijesti
-        no_notifications: "Nemate novih obavijesti"
   notifications:
     index:
       empty_notifications: Nemate novih obavijesti.
@@ -726,7 +725,6 @@ bs:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
@@ -822,9 +820,10 @@ bs:
         debates: "Najaktivnije debate"
         proposals: "Najaktivniji prijedlozi"
         processes: "Otvoreni procesi"
-      see_all_debates: Vidi sve debate
-      see_all_proposals: Vidi sve prijedloge
-      see_all_processes: Vidi sve procese
+      see_all:
+        debates: Vidi sve debate
+        proposals: Vidi sve prijedloge
+        processes: Vidi sve procese
       process_label: Proces
       see_process: Vidi proces
     cards:

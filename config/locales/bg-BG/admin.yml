@@ -31,10 +31,11 @@ bg:
         sections_label: Раздели, където ще се показва
         sections:
           homepage: Начална страница
-          debates: Дебати
+          debates: Дискусии
           proposals: Предложения
           budgets: Бюджетиране чрез участие на гражданите
           help_page: Помощна страница
+          sdg: Цели за устойчиво развитие (ЦУР)
       edit:
         editing: Редактиране на банер
         form:
@@ -54,7 +55,7 @@ bg:
         filters:
           all: Всички
           on_comments: Коментари
-          on_debates: Дебати
+          on_debates: Дискусии
           on_proposals: Предложения
           on_users: Потребители
           on_system_emails: Системни имейли
@@ -62,20 +63,23 @@ bg:
         type: Тип
         no_activity: Няма активност на модераторите.
     budgets:
+      actions:
+        preview: "Изглед на бюджета"
       index:
         title: Бюджетиране чрез участие на гражданите
         new_link: Създайте нов бюджет
         filter: Филтър
         filters:
+          all: Всички
           open: Отворен
           finished: Завършен
+        help: "Бюджетите с участие позволяват на гражданите да предлагат и решават директно как да изразходват част от бюджета, с мониторинг и стриктна оценка на предложенията от институцията."
         budget_investments: Управление на проекти
+        table_completed: Приключил
+        table_duration: "Продължителност"
         table_name: Име
         table_phase: Фаза
-        table_investments: Инвестиции
-        table_edit_groups: Групи заглавия
-        table_edit_budget: Редактиране
-        table_admin_ballots: Бюлетини
+        table_phase_progress: "(%{current_phase_number}/%{total_phases})"
         edit_groups: Редактиране на групи заглавия
         edit_budget: Редактиране на бюджета
         admin_ballots: Административни бюлетини
@@ -84,11 +88,16 @@ bg:
         notice: Нов бюджет с участие на гражданите е създаден успешно!
       update:
         notice: Бюджет с участие на гражданите е актуализиран успешно
+      publish:
+        notice: "Бюджет с участие на гражданите е актуализиран успешно"
       edit:
         title: Редактиране на бюджет с участие на гражданите
+        drafting: "Този бюджет с участие е в режим на чернова, само администраторите могат да го виждат в публичния сайт. След като бъде публикуван, той не може да бъде променен отново в режим на чернова."
+        publish: "Публикуване на бюджет"
         delete: Изтриване на бюджет
         phase: Фаза
-        dates: Дати
+        phases_caption: "Фази"
+        duration: "Продължителност"
         enabled: Активиран
         actions: Действия
         edit_phase: Редактиране на фаза
@@ -104,6 +113,11 @@ bg:
           other: "%{count} избрани оценители"
         empty_administrators: "Няма администратори"
         empty_valuators: "Няма оценители"
+        name_description: "Това е името на бюджета с участие, използван в заглавката и картите, когато е активен"
+        info:
+          budget_settings: "Общи настройки на бюджета с участие"
+          phases_settings: "Настройки на фазите"
+          staff_settings: "Администратори и оценители, на които е възложен бюджета"
       destroy:
         success_notice: Бюджетът е изтрит успешно
         unable_notice: Не можете да изтриете бюджет, който има свързани инвестиции
@@ -117,7 +131,6 @@ bg:
     budget_groups:
       name: "Име"
       headings_name: "Заглавия"
-      headings_edit: "Редактиране на заглавия"
       headings_manage: "Управление на заглавия"
       no_groups: "Няма групи."
       amount:
@@ -137,6 +150,7 @@ bg:
         submit: "Запазване на група"
       index:
         back: "Върнете се към бюджетите"
+        help: "Групите са предназначени да организират заглавия. След като се създаде група и тя съдържа заглавия, е възможно да се определи в колко заглавия потребителят може да гласува за група."
     budget_headings:
       no_headings: "Няма заглавия."
       amount:
@@ -159,12 +173,17 @@ bg:
         submit: "Запазване на заглавието"
       index:
         back: "Върнете се към групите"
+        help: "Заглавията имат за цел да разделят парите от бюджета с участие. Тук можете да добавите заглавия за тази група и да определите сумата пари, която ще бъде използвана за всяко заглавие."
     budget_phases:
       edit:
-        summary_help_text: Този текст ще информира потребителя за фазата. За да го покажете, дори ако фазата не е активна, поставете отметка в квадратчето по-долу
         description_help_text: Този текст ще се появи в заглавката, когато фазата е активна
+        duration: "Продължителност на фазата"
+        duration_description: "Периодът от време, в който тази фаза ще бъде активна."
         enabled_help_text: Този етап ще бъде публичен в графика на бюджетните фази, както и активен за всяка друга цел
+        name_help_text: "Периодът от време, в който тази фаза ще бъде активна."
         save_changes: Запазване на промените
+      index:
+        help: "Бюджетите с участие имат различни фази. Тук можете да активирате или деактивирате фази и също така да персонализирате всяка отделна фаза."
     budget_investments:
       index:
         heading_filter_all: Всички заглавия
@@ -204,6 +223,7 @@ bg:
         selected: "Избрано"
         select: "Избиране"
         list:
+          id: Идентификация
           title: Заглавие
           supports: Подкрепа
           admin: Администратор
@@ -261,6 +281,7 @@ bg:
       search_unfeasible: Търсене не е възможно
     milestones:
       index:
+        table_id: "Идентификация"
         table_title: "Заглавие"
         table_description: "Описание"
         table_publication_date: "Дата на публикуване"
@@ -295,8 +316,6 @@ bg:
         table_name: Име
         table_description: Описание
         table_actions: Действия
-        delete: Изтриване
-        edit: Редактиране
       edit:
         title: Редактиране на състоянието на основен етап
       update:
@@ -314,6 +333,7 @@ bg:
         no_progress_bars: "Няма ленти за напредък"
         new_progress_bar: "Създаване на нова лента за напредък"
         primary: "Основна лента за напредък"
+        table_id: "Идентификация"
         table_kind: "Вид"
         table_title: "Заглавие"
         table_percentage: "Текущ напредък"
@@ -331,6 +351,7 @@ bg:
         notice: "Лентата на напредъка е изтрита успешно"
     comments:
       index:
+        id: "Идентификация"
         content: "Съдържание"
         author: "Автор"
         commentable_type: "Вид"
@@ -357,8 +378,6 @@ bg:
         index:
           description: "Когато потребителите създават предложения, те могат да получат достъп до табло на своето предложение, където можете да предлагате ресурси и препоръки, за да получите подкрепа за тяхната идея."
           create: Създаване на ресурс или действие
-          edit: Редактиране
-          delete: Изтриване
           active: 'Да'
           inactive: 'Не'
           title: Ресурси и действия
@@ -410,9 +429,10 @@ bg:
           success: Задачата е маркирана като решена.
     debates:
       index:
+        id: Идентификация
         author: Автор
-        title: Дебати
-        no_debates: Няма дебати.
+        title: Дискусии
+        no_debates: Няма дискусии.
     hidden_debates:
       index:
         filter: Филтър
@@ -420,8 +440,8 @@ bg:
           all: Всички
           with_confirmed_hide: Потвърдено
           without_confirmed_hide: Изчакване
-        title: Скрити дебати
-        no_hidden_debates: Няма скрити дебати.
+        title: Скрити дискусии
+        no_hidden_debates: Няма скрити дискусии.
     documents:
       new:
         title: "Качване на документ"
@@ -492,7 +512,6 @@ bg:
           banner_title: Цветове на хедъра
         index:
           create: Нов процес
-          delete: Изтриване
           title: Съвместно законодателство
           filters:
             active: Активен
@@ -504,6 +523,7 @@ bg:
         proposals:
           select_order: Сортиране по
           orders:
+            id: Идентификация
             title: Заглавие
             supports: Общо подкрепени
         process:
@@ -529,6 +549,7 @@ bg:
         index:
           title: Заглавие
           back: Назад
+          id: Идентификация
           supports: Общо подкрепени
         form:
           custom_categories: Категории
@@ -616,14 +637,17 @@ bg:
     managers:
       index:
         title: Мениджъри
-        name: Име
-        email: Имейл
         no_managers: Няма мениджъри.
       manager:
         add: Добавяне
-        delete: Изтриване
       search:
         title: "Мениджъри: Търсене на потребители"
+    sdg_managers:
+      index:
+        no_sdg_managers: Няма потребители.
+    sdg/managers:
+      sdg/manager:
+        add: Добавяне
     menu:
       activity: Дейност на модератора
       admin: Административно меню
@@ -633,13 +657,14 @@ bg:
       budgets: Бюджети за участие
       geozones: Управление на геозоните
       hidden_comments: Скрити коментари
-      hidden_debates: Скрити дебати
+      hidden_debates: Скрити дискусии
       hidden_proposals: Скрити предложения
       hidden_budget_investments: Скрити бюджетни инвестиции
       hidden_proposal_notifications: Скрити известия за предложения
       hidden_users: Скрити потребители
       administrators: Администратори
       managers: Мениджъри
+      sdg_managers: Мениджъри Цели за устойчиво развитие (ЦУР)
       moderators: Модератори
       messaging_users: Съобщения до потребителите
       newsletters: Бюлетини
@@ -666,7 +691,7 @@ bg:
         information_texts: Персонализирани информационни текстове
         information_texts_menu:
           basic: "Основна персонализация"
-          debates: "Дебати"
+          debates: "Дискусии"
           community: "Общност"
           proposals: "Предложения"
           polls: "Анкети"
@@ -688,20 +713,16 @@ bg:
       dashboard: Табло за управление на предложенията
       administrator_tasks: Искани ресурси
       dashboard_actions: Ресурси и действия
-      debates: "Дебати"
+      debates: "Дискусии"
       comments: "Коментари"
       local_census_records: Администриране на местния регистър
     administrators:
       index:
         title: Администратори
-        name: Име
-        email: Имейл
-        description: Описание
         id: ID на администратор
         no_administrators: Няма администратори.
       administrator:
         add: Добавяне
-        delete: Изтриване
         restricted_removal: "За съжаление не можете да се премахнете от администраторите"
       search:
         title: "Администратори: Търсене на потребители"
@@ -711,12 +732,9 @@ bg:
     moderators:
       index:
         title: Модератори
-        name: Име
-        email: Имейл
         no_moderators: Няма модератори.
       moderator:
         add: Добавяне
-        delete: Изтриване
       search:
         title: "Модератори: Търсене на потребители"
     segment_recipient:
@@ -743,8 +761,6 @@ bg:
         sent: Изпратено
         actions: Действия
         draft: Чернова
-        edit: Редактиране
-        delete: Изтриване
         preview: Визуализация
         empty_newsletters: Няма бюлетини за показване
       new:
@@ -780,8 +796,6 @@ bg:
         sent: Изпратено
         actions: Действия
         draft: Чернова
-        edit: Редактиране
-        delete: Изтриване
         preview: Визуализация
         view: Преглед
         empty_notifications: Няма известия за показване
@@ -842,10 +856,10 @@ bg:
         description: "Изпратено до подателя на личното съобщение."
       email_verification:
         title: "Потвърждение на имейла"
-        description: "Изпратен на нов потребител, за да потвърди акаунта му."
+        description: "Изпратен на нов потребител, за да потвърди профила му."
       user_invite:
         title: "Потребителска покана"
-        description: "Изпратено на лицето, което е поканено да регистрира акаунт."
+        description: "Изпратено на лицето, което е поканено да регистрира профил."
       evaluation_comment:
         title: "Нов коментар за оценка"
         description: "Изпратено на администратори и оценители, свързани с коментирани инвестиции"
@@ -879,7 +893,6 @@ bg:
         can_edit_dossier: "Може да редактирате досието"
       valuator:
         add: Добавете към оценители
-        delete: Изтрийте
       search:
         title: "Оценители: Потребителско търсене"
       form:
@@ -917,7 +930,6 @@ bg:
         entry_name: служител
       search:
         email_placeholder: Търсене на потребител по имейл
-        search: Търсене
         user_not_found: Потребителят не е намерен
         help: "За добавяне или премахване на анкетни служители използвайте формата за търсене по-долу."
     poll_officer_assignments:
@@ -1145,7 +1157,7 @@ bg:
         official_updated: Подробности за длъжностни лица запазени
       index:
         title: Длъжностни лица
-        help: Потребителските акаунти, маркирани като длъжностни лица, ще имат обозначена своята намеса в платформата. Можете да определите етикета, който се появява до потребителските имена на тези акаунти, от най-важното (ниво 1) до най-маловажно (ниво 5).
+        help: Потребителските профили, маркирани като длъжностни лица, ще имат обозначена своята намеса в платформата. Можете да определите етикета, който се появява до потребителските имена на тези профили, от най-важното (ниво 1) до най-маловажно (ниво 5).
         no_officials: Няма длъжностни лица.
         name: Име
         official_position: Официална позиция
@@ -1180,8 +1192,6 @@ bg:
         no_organizations: Няма организации.
         reject: Отхвърлете
         rejected: Отхвърлено
-        search: Търсете
-        search_placeholder: Име, имейл или телефонен номер
         title: Организации
         verified: Потвърдено
         verify: Потвърдете
@@ -1192,6 +1202,7 @@ bg:
     proposals:
       index:
         title: Предложения
+        id: Идентификация
         author: Автор
         select: Изберете
         selected: Избрано
@@ -1249,6 +1260,9 @@ bg:
         remote_census:
           title: Конфигурация на дистанционното преброяване
           how_to_enable: 'За да конфигурирате отдалечено преброяване (SOAP), трябва да активирате "Конфигуриране на връзка с отдалечено преброяване (SOAP)" в раздел "Характеристики".'
+        sdg:
+          title: Цели за устойчиво развитие (ЦУР) конфигурация
+          how_to_enable: 'За да покажете опциите за конфигуриране от Целите за устойчиво развитие, трябва да активирате "ЦУР" в раздела "Функции".'
       remote_census_general_name: Обща информация
       remote_census_request_name: Заявете данни
       remote_census_response_name: Данни за отговор
@@ -1261,24 +1275,28 @@ bg:
     shared:
       true_value: "Да"
       false_value: "Не"
-      booths_search:
-        button: Търсене
-        placeholder: Търсете кабинка по име или местоположение
-      poll_officers_search:
-        button: Търсене
-        placeholder: Търсете служители за анкета
-      poll_questions_search:
-        button: Търсене
-        placeholder: Търсете въпроси за анкета
-      proposal_search:
-        button: Търсене
-        placeholder: Търсете предложения по заглавие, код, описание или въпрос
-      debate_search:
-        button: Търсене
-        placeholder: Търсете дебати по заглавие или описание
-      user_search:
-        button: Търсене
-        placeholder: Търсете потребител по име или имейл
+      search:
+        advanced_filters:
+          sdg_goals:
+            all: "Всички цели"
+            label: "По цел"
+          sdg_targets:
+            all: "Всички цели"
+            label: "По цел"
+        label:
+          booths: "Търсете кабинка по име или местоположение"
+          budget_investments: "Търсете инвестиции по заглавие, описание или заглавие"
+          debates: "Търсете дискусии по заглавие или описание"
+          legislation_processes: "Търсете процеси по заглавие или описание"
+          legislation_proposals: "Търсете предложения по заглавие или описание"
+          local_census_records: "Търсене по номер на документ"
+          organizations: "Име, имейл или телефонен номер"
+          poll_officers: "Търсете служители за анкета"
+          poll_questions: "Търсете въпроси за анкета"
+          polls: "Търсете анкети по заглавие или описание"
+          proposals: "Търсете предложения по заглавие, код, описание или въпрос"
+          users: "Търсете потребител по име или имейл"
+        search: "Търсене"
       search_results: "Резултати от търсенето"
       no_search_results: "Няма намерени резултати."
       actions: Действия
@@ -1292,7 +1310,6 @@ bg:
       author: Автор
       content: Съдържание
       created_at: Създадено в
-      delete: Изтриване
       color_help: Шестнадесетичен формат
       show_results_and_stats: "Показване на резултати и статистика"
       results_and_stats_reminder: "Ако маркирате тези квадратчета, резултатите и/или статистиката ще бъдат публично достъпни и всеки потребител ще ги вижда."
@@ -1300,8 +1317,6 @@ bg:
       index:
         title: Геозона
         create: Създайте геозона
-        edit: Редактирайте
-        delete: Изтрийте
       geozone:
         name: Име
         external_code: Външен код
@@ -1362,7 +1377,7 @@ bg:
           comment_votes: Коментирайте гласове
           comments: Коментари
           debate_votes: Гласове за дебат
-          debates: Дебати
+          debates: Дискусии
           proposal_votes: Гласове за предложение
           proposals: Предложения
           budgets: Отворени бюджети
@@ -1381,8 +1396,9 @@ bg:
         proposal_notifications: Известия за предложения
         incomplete_verifications: Непълни проверки
         polls: Анкети
+        sdg: Цели за устойчиво развитие (ЦУР)
       graph:
-        debate_created: Дебати
+        debate_created: Дискусии
         visit: Посещения
         level_2_user: Потребители от ниво 2
         proposal_created: Граждански предложения
@@ -1423,6 +1439,15 @@ bg:
           question_name: Въпрос
           origin_web: Уеб участници
           origin_total: Общо участници
+      sdg:
+        budget_investments:
+          amount: "Одобрена сума"
+          winners: "Инвестиционен проект победител"
+          sent: "Инвестиционен проект изпратен"
+        debates: "Дискусии"
+        polls: "Анкети"
+        proposals: "Предложения"
+        title: "Цели за устойчиво развитие (ЦУР) - статистика"
     tags:
       create: Създайте тема
       destroy: Изтрийте тема
@@ -1433,6 +1458,7 @@ bg:
         help: "Когато потребителят създава предложение, следните теми се предлагат като тагове по подразбиране."
     users:
       columns:
+        id: Идентификация
         erase_reason: Причина за изтриване
         name: Име
         email: Имейл
@@ -1448,7 +1474,6 @@ bg:
           erased: Изтрит
       search:
         placeholder: Търсене на потребител по имейл, име или номер на документ
-        search: Търсене
     verifications:
       index:
         phone_not_given: Телефон не е даден
@@ -1523,16 +1548,11 @@ bg:
           updated_at: Актуализирано в
           title: Заглавие
           slug: Линотипен ред
-          cards_title: Карти
           see_cards: Вижте карти
         cards:
           cards_title: карти
           create_card: Създайте карта
           no_cards: Няма карти.
-          title: Заглавие
-          description: Описание
-          link_text: Текст на връзката
-          link_url: Връзка URL
           columns_help: "Ширина на картата в брой колони. На мобилните екрани винаги е ширина 100%."
           create:
             notice: "Картата е създадена успешно!"
@@ -1549,14 +1569,9 @@ bg:
       cards_title: Карти
       create_card: Създайте карта
       no_cards: Няма карти.
-      cards:
-        title: Заглавие
-        description: Описание
-        link_text: Текст на връзката
-        link_url: Връзка URL
       feeds:
         proposals: Предложения
-        debates: Дебати
+        debates: Дискусии
         processes: Процеси
       new:
         header_title: Нова заглавка
@@ -1571,6 +1586,7 @@ bg:
     audits:
       title: "Дневник на промените"
       changes: "Списък на промени"
+      id: "Идентификация"
       field: "Поле"
       new_value: "Нова стойност"
       old_value: "Стара стойност"
@@ -1587,9 +1603,6 @@ bg:
         document_number: Номер на документа
         date_of_birth: Дата на раждане
         postal_code: Пощенски код
-        search:
-          placeholder: Търсене по номер на документ
-          search: Търсене
         import: Импортиране на CSV
       new:
         creating: Създаване на нов местен регистър

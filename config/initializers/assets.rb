@@ -14,5 +14,7 @@ Rails.application.config.assets.precompile += %w[stat_graphs.js]
 Rails.application.config.assets.precompile += %w[dashboard_graphs.js]
 Rails.application.config.assets.precompile += %w[print.css]
 Rails.application.config.assets.precompile += %w[pdf_fonts.css]
+Rails.application.config.assets.precompile += %w[sdg/*.png]
+Rails.application.config.assets.precompile += %w[sdg/**/*.png]
 
 # Loads custom images and custom fonts before app/assets/images and app/assets/fonts

@@ -191,7 +191,6 @@ cs:
       collaborative_legislation: Legislativní procesy
       debates: Debaty
       locale: "Jazyk:"
-      logo: CONSUL logo
       management: Správa
       moderation: Moderování
       valuation: Naceňování
@@ -204,8 +203,9 @@ cs:
       poll_questions: Průzkumy
       budgets: Participativní rozpočet
       notification_item:
+        new_notifications:
+          zero: "Nemáte žádná nová upozornění"
         notifications: Upozornění
-        no_notifications: "Nemáte žádná nová upozornění"
   notifications:
     index:
       empty_notifications: Nemáte nová upozornění.
@@ -563,7 +563,6 @@ cs:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
@@ -583,6 +582,9 @@ cs:
     manage:
       all: "Nemáte oprávnění k provedení akce \"%{action}\" subjektu %{subject}."
   users:
+    signin: "přihlásit se"
+    signup: "odhlásit se"
+    verify_account: "ověřit váš účet"
     direct_messages:
       new:
         direct_messages_bloqued: "Uživatel se rozhodl nepřijámat soukromé zprávy"
@@ -597,6 +599,7 @@ cs:
       deleted_proposal: Tento návrh byl odstraněn
       deleted_budget_investment: Tento investiční projekt byl smazán
       proposals: Návrhy
+      proposals_status: Stav
       debates: Debaty
       budget_investments: Rozpočtové investice
       comments: Komentáře
@@ -608,6 +611,8 @@ cs:
       delete_alert: "Opravdu chcete smazat svůj investiční projekt? Tuto akci nelze vrátit zpět"
     proposals:
       retired: "Pozastavené návrhy"
+      draft: Návrh
+      published: Publikováno
       see: "Zobrazit návrh"
   votes:
     agree: Souhlasím
@@ -629,9 +634,10 @@ cs:
         debates: "Nejaktivnější debaty"
         proposals: "Nejaktivnější návrhy"
         processes: "Otevřené procesy"
-      see_all_debates: Zobrazit všechny debaty
-      see_all_proposals: Zobrazit všechny návrhy
-      see_all_processes: Zobrazit všechny procesy
+      see_all:
+        debates: Zobrazit všechny debaty
+        proposals: Zobrazit všechny návrhy
+        processes: Zobrazit všechny procesy
       process_label: Proces
       see_process: Zobrazit proces
     cards:

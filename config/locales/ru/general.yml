@@ -231,7 +231,6 @@ ru:
       collaborative_legislation: Процесс законотворчества
       debates: Обсуждения проблем
       locale: "Язык:"
-      logo: CONSUL логотип
       management: Управление
       moderation: Модерирование
       valuation: Оценка
@@ -245,12 +244,12 @@ ru:
       budgets: Партисипаторное бюджетирование
       notification_item:
         new_notifications:
+          zero: "У вас нет новых уведомлений"
           one: У вас есть новое уведомление
           few: У вас есть %{count} новых уведомлений
           many: У вас есть %{count} новых уведомлений
           other: У вас есть %{count} новых уведомлений
         notifications: Уведомления
-        no_notifications: "У вас нет новых уведомлений"
   notifications:
     index:
       empty_notifications: У вас нет новых уведомлений.
@@ -774,7 +773,6 @@ ru:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
@@ -876,9 +874,10 @@ ru:
         debates: "Самые активные дебаты"
         proposals: "Самые активные предложения"
         processes: "Открытые процессы"
-      see_all_debates: Просмотреть все дебаты
-      see_all_proposals: Просмотреть все предложения
-      see_all_processes: Просмотреть все процессы
+      see_all:
+        debates: Просмотреть все дебаты
+        proposals: Просмотреть все предложения
+        processes: Просмотреть все процессы
       process_label: Процесс
       see_process: Просмотреть процесс
     cards:

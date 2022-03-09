@@ -4,7 +4,7 @@ class Admin::GeozonesController < Admin::BaseController
   load_and_authorize_resource
 
   def index
-    @geozones = Geozone.all.order("LOWER(name)")
+    @geozones = Geozone.all.order(Arel.sql("LOWER(name)"))
   end
 
   def new

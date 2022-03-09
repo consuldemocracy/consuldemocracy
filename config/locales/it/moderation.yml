@@ -111,7 +111,6 @@ it:
       index:
         hidden: Bloccato
         hide: Blocco
-        search: Ricercare
         search_placeholder: e-mail o nome utente
         title: Blocca gli utenti
       notice_hide: Utente bloccato. Tutti i dibattiti e commenti di questo utente sono state nascostie.

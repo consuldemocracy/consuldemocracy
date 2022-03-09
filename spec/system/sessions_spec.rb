@@ -14,6 +14,8 @@ describe "Sessions" do
     expect(page).to have_content("You have been signed in successfully")
     expect(page).to have_current_path(debate_path(debate))
 
+    within("#notice") { click_button "Close" }
+
     click_link "Sign out"
 
     expect(page).to have_content("You have been signed out successfully")

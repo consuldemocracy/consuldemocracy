@@ -1,0 +1,38 @@
+<%= header %>
+
+<%= render "admin/shared/user_search", url: admin_sdg_managers_path %>
+
+<div id="sdg_managers">
+  <% if users.any? %>
+    <h3 class="margin"><%= page_entries_info users %></h3>
+
+    <table>
+      <thead>
+        <th scope="col"><%= SDG::Manager.human_attribute_name(:name) %></th>
+        <th scope="col"><%= SDG::Manager.human_attribute_name(:email) %></th>
+        <th scope="col"><%= t("admin.shared.actions") %></th>
+      </thead>
+      <tbody>
+        <% users.each do |user| %>
+          <tr>
+            <td>
+              <%= user.name %>
+            </td>
+            <td>
+              <%= user.email %>
+            </td>
+            <td>
+              <%= render Admin::Roles::TableActionsComponent.new(user.sdg_manager || user.build_sdg_manager) %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= paginate users %>
+  <% else %>
+    <div class="callout primary">
+      <%= t("admin.sdg_managers.index.no_sdg_managers") %>
+    </div>
+  <% end %>
+</div>

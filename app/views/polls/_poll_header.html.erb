@@ -12,12 +12,13 @@
       <%= auto_link_already_sanitized_html simple_format(@poll.summary) %>
 
       <% if @poll.geozones.any? %>
-        <ul class="no-bullet margin-top tags">
+        <ul class="margin-top tags">
           <% @poll.geozones.each do |g| %>
-            <li class="inline-block"><span><%= g.name %></span></li>
+            <li><span><%= g.name %></span></li>
           <% end %>
         </ul>
       <% end %>
+      <%= render SDG::TagListComponent.new(@poll, linkable: false) %>
     </div>
 
     <aside class="small-12 medium-3 column margin-top">
@@ -26,8 +27,7 @@
         title: @poll.name,
         url: poll_url(@poll),
         description: @poll.name,
-        mobile: @poll.name
-      %>
+        mobile: @poll.name %>
     </aside>
   </div>
 </div>

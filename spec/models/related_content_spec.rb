@@ -57,5 +57,15 @@ describe RelatedContent do
     it "returns not hidden by reports related contents" do
       expect(parent_relationable.relationed_contents).to eq [child_relationable]
     end
+
+    it "returns related contents without retired proposals" do
+      create(
+        :related_content,
+        parent_relationable: parent_relationable,
+        child_relationable: create(:proposal, :retired),
+        author: build(:user)
+      )
+      expect(parent_relationable.relationed_contents).to eq [child_relationable]
+    end
   end
 end

@@ -103,7 +103,7 @@ hr:
       footer_text: "Kao i uvijek, uđite u Panel za Prijedloge te ćemo Vam detaljno objasniti kako koristiti te resurse i kako iz njih izvući maksimum."
       dashboard_button: "Samo naprijed, otkrijte ih!"
     new_actions_notification_on_create:
-      subject: "Vaš draft građanskog prijedloga je stvoren"
+      subject: "Vaš je nacrt građanskog prijedloga izrađen"
       hi: "Pozdrav %{name}!"
       introduction: "Vaš %{title} prijedlog je uspješno stvoren."
       text_1: "Iskoristite mogućnost dok vaš prijedlog još nije javan i pripremite se za kontakt s ostalim građanima."

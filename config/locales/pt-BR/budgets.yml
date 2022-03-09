@@ -64,12 +64,8 @@ pt-BR:
         icon_alt: Ícone dos orçamentos participativos
         title: Orçamentos participativos
         help: Ajuda com orçamentos participativos
-        all_phases: Ver todas as fases
       all_phases: Fases do investimento orçamental
       map: Propostas de investimentos orçamentários localizadas geograficamente
-      investment_proyects: Lista de todos os projetos de investimento
-      unfeasible_investment_proyects: Lista de todos os projetos de investimento inviáveis
-      not_selected_investment_proyects: Lista de todos os projetos de investimento não selecionados para votação
       finished_budgets: Orçamentos participativos concluídos
       see_results: Exibir resultados
       section_footer:
@@ -118,9 +114,6 @@ pt-BR:
           verified_only: "Para criar um novo investimento orçamentário %{verify}."
           create: "Criar um investimento orçamentário"
           not_logged_in: "Para criar um novo investimento orçamentário, você deve %{sign_in} ou %{sign_up}."
-          by_feasibility: Por viabilidade
-          feasible: Projetos viáveis
-          unfeasible: Projetos inviáveis
         orders:
           random: aleatório
           confidence_score: melhor avaliado
@@ -162,25 +155,12 @@ pt-BR:
           other: "%{count} apoios"
         give_support: Apoiar
       header:
-        check_ballot: Verificar minha cédula
+        check_ballot: "Verificar minha cédula"
         different_heading_assigned: "Você tem votos ativos num título diferente: %{heading_link}"
         change_ballot: "Se você mudar de ideia, poderá remover seus votos em %{check_ballot} e começar de novo."
         check_ballot_link: "verificar minha cédula"
         price: "Este título tem um orçamento de"
-    progress_bar:
-      assigned: "Você atribuiu: "
-      available: "Orçamento disponível: "
-      votes:
-        zero: "Você selecionou <strong>0</strong> projetos de um total de <strong>%{limit}</strong>"
-        one: "Você selecionou <strong>1</strong> projeto de um total de <strong>%{limit}</strong>"
-        other: "Você selecionou <strong>%{count}</strong> projetos de um total de <strong>%{limit}</strong>"
     show:
-      group: Grupo
-      phase: Fase atual
-      unfeasible_title: Investimentos inviáveis
-      unfeasible: Ver investimentos inviáveis
-      unselected_title: Investimentos não selecionados para a fase de votação
-      unselected: Ver investimentos não selecionados para a fase de votação
       see_results: Exibir resultados
     results:
       link: Resultados

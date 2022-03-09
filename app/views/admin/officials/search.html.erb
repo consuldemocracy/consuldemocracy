@@ -32,15 +32,11 @@
             <%= t("admin.officials.level_#{user.official_level}") %>
           </td>
           <td>
-            <% if user.official? %>
-              <%= link_to  t("admin.officials.search.edit_official"),
-                           edit_admin_official_path(user),
-                           class: "button hollow expanded" %>
-            <% else %>
-              <%= link_to t("admin.officials.search.make_official"),
-                          edit_admin_official_path(user),
-                          class: "button expanded" %>
-            <% end %>
+            <%= render Admin::TableActionsComponent.new(
+              actions: [:edit],
+              edit_path: edit_admin_official_path(user),
+              edit_text: user.official? ? t("admin.officials.search.edit_official") : t("admin.officials.search.make_official")
+              ) %>
           </td>
         </tr>
       <% end %>

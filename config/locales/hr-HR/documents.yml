@@ -9,7 +9,7 @@ hr:
       delete_button: Ukloni dokument
       cancel_button: Otkaži
       note: "Možete učitati maksimalno %{max_documents_allowed} dokumenata sljdećih tipova sadržaja:%{accepted_content_types}, do veličine %{max_file_size} MB po datoteci."
-      add_new_document: Dodaj novi dokument
+      add_new_document: Dodajte novi dokument
     actions:
       destroy:
         notice: Dokument je uspješno obrisan.

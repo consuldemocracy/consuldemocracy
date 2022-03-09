@@ -40,12 +40,8 @@ id:
         icon_alt: Ikon anggaran partisipatif
         title: Anggaran partisipasif
         help: Membantu dengan anggaran partisipatif
-        all_phases: Lihat semua fase
       all_phases: Anggaran fase investasi
       map: Anggaran investasi' proposal yang terletak secara geografis
-      investment_proyects: Daftar semua proyek-proyek investasi
-      unfeasible_investment_proyects: Daftar semua proyek-proyek investasi tidak layak
-      not_selected_investment_proyects: Daftar semua proyek-proyek investasi tidak dipilih untuk pemungutan suara
       finished_budgets: Selesai partisipatif anggaran
       see_results: Lihat hasil
       section_footer:
@@ -79,9 +75,6 @@ id:
           verified_only: "Untuk membuat anggaran baru investasi %{verify}."
           create: "Buat investasi anggaran"
           not_logged_in: "Untuk membuat sebuah anggaran investasi baru anda harus %{sign_in} atau %{sign_up}."
-          by_feasibility: Oleh kelayakan
-          feasible: Proyek yang layak
-          unfeasible: Proyek tidak layak
         orders:
           random: acak
           confidence_score: nilai tertinggi
@@ -115,20 +108,11 @@ id:
           other: "1 detik\n\n%{count} detik"
         give_support: Mendukung
       header:
-        check_ballot: Periksa suara saya
+        check_ballot: "Periksa suara saya"
         change_ballot: "Jika anda mengubah pikiran anda, anda dapat menghapus suara dalam %{check_ballot} dan mulai lagi."
         check_ballot_link: "periksa suara saya"
         price: "Judul ini memiliki anggaran sebesar"
-    progress_bar:
-      assigned: "Anda telah ditugaskan: "
-      available: "Anggaran tersedia: "
     show:
-      group: Kelompok
-      phase: Tahap sebenarnya
-      unfeasible_title: Investasi tidak layak
-      unfeasible: Lihat investasi tidak layak
-      unselected_title: Investasi tidak dipilih untuk pemungutan suara tahap
-      unselected: Melihat investasi yang tidak dipilih untuk pemungutan suara tahap
       see_results: Lihat hasil
     results:
       link: Hasil

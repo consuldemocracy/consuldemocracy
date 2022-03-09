@@ -70,9 +70,6 @@ gl:
         budget_investments: Xestionar proxectos
         table_name: Nome
         table_phase: Fase
-        table_investments: Investimentos
-        table_edit_groups: Grupo de partidas
-        table_edit_budget: Editar proposta
         edit_groups: Editar grupos de partidas
         edit_budget: Editar orzamento
         no_budgets: "Non hai orzamentos."
@@ -84,7 +81,6 @@ gl:
         title: Editar campaña de orzamentos participativos
         delete: Eliminar orzamento
         phase: Fase
-        dates: Datas
         enabled: Habilitado
         actions: Accións
         edit_phase: Editar fase
@@ -102,7 +98,6 @@ gl:
     budget_groups:
       name: "Nome"
       headings_name: "Partidas"
-      headings_edit: "Editar Partidas"
       headings_manage: "Xestionar Partidas"
       no_groups: "Non hai grupos creados aínda. Cada usuario poderá votar nunha soa partida de cada grupo."
       amount:
@@ -144,7 +139,6 @@ gl:
         back: "Volver aos grupos"
     budget_phases:
       edit:
-        summary_help_text: Este texto informará ao usuario sobre a fase. Para amosalo aínda que a fase non estea activa, marca a opción inferior
         description_help_text: Este texto aparecerá na cabeceira cando a fase estiver activa
         enabled_help_text: Esta fase será pública no calendario de fases do orzamento e estará activa para outros propósitos
         save_changes: Gardar so cambios
@@ -270,8 +264,6 @@ gl:
         table_name: Nome
         table_description: Descrición
         table_actions: Accións
-        delete: Borrar
-        edit: Editar proposta
       edit:
         title: Editar estados de investimento
       update:
@@ -369,7 +361,6 @@ gl:
           banner_title: Cores da cabeceira
         index:
           create: Novo proceso
-          delete: Borrar
           title: Procesos lexislativos
           filters:
             active: Activo
@@ -493,12 +484,9 @@ gl:
     managers:
       index:
         title: Xestores
-        name: Nome
-        email: O teu correo electrónico
         no_managers: Non hai xestores.
       manager:
         add: Engadir
-        delete: Borrar
       search:
         title: "Xestores: busca de usuarios"
     menu:
@@ -563,25 +551,19 @@ gl:
     administrators:
       index:
         title: Administradores
-        name: Nome
-        email: O teu correo electrónico
         id: ID do administrador
         no_administrators: Non hai ningún administrador.
       administrator:
         add: Engadir
-        delete: Borrar
         restricted_removal: "Sentímolo mais non podes borrarte a ti mesmo da relación"
       search:
         title: "Administración: busca de usuarios"
     moderators:
       index:
         title: Moderadores
-        name: Nome
-        email: O teu correo electrónico
         no_moderators: Non hai ningún moderador/a.
       moderator:
         add: Engadir
-        delete: Borrar
       search:
         title: "Moderadores: busca de usuarios"
     segment_recipient:
@@ -607,8 +589,6 @@ gl:
         sent: Data
         actions: Accións
         draft: Bosquexo
-        edit: Editar proposta
-        delete: Borrar
         preview: Vista previa
         empty_newsletters: Non hai notificacións para amosar
       new:
@@ -642,8 +622,6 @@ gl:
         sent: Data
         actions: Accións
         draft: Bosquexo
-        edit: Editar proposta
-        delete: Borrar
         preview: Vista previa
         view: Ver
         empty_notifications: Non hai notificacións para amosar
@@ -712,7 +690,6 @@ gl:
         no_group: "Sen grupo"
       valuator:
         add: Engadir como avaliador
-        delete: Borrar
       search:
         title: "Avaliadores: busca de usuarios"
       form:
@@ -748,7 +725,6 @@ gl:
         entry_name: presidente de mesa
       search:
         email_placeholder: Buscar usuario por correo electrónico
-        search: Procurar
         user_not_found: Non se atopou o usuario
     poll_officer_assignments:
       index:
@@ -996,8 +972,6 @@ gl:
         no_organizations: Non hai organizacións.
         reject: Rexeitar
         rejected: Rexeitada
-        search: Procurar
-        search_placeholder: Nome, correo electrónico ou teléfono
         title: Organizacións
         verified: Verificada
         verify: Verificar
@@ -1049,21 +1023,14 @@ gl:
     shared:
       true_value: "Si"
       false_value: "Non"
-      booths_search:
-        button: Procurar
-        placeholder: Buscar urna por nome
-      poll_officers_search:
-        button: Procurar
-        placeholder: Buscar presidentes da mesa
-      poll_questions_search:
-        button: Procurar
-        placeholder: Buscar preguntas
-      proposal_search:
-        button: Procurar
-        placeholder: Buscar propostas por título, código, descrición ou pregunta
-      user_search:
-        button: Procurar
-        placeholder: Buscar usuario por nome ou correo electrónico
+      search:
+        label:
+          booths: "Buscar urna por nome"
+          organizations: "Nome, correo electrónico ou teléfono"
+          poll_officers: "Buscar presidentes da mesa"
+          poll_questions: "Buscar preguntas"
+          proposals: "Buscar propostas por título, código, descrición ou pregunta"
+          users: "Buscar usuario por nome ou correo electrónico"
       search_results: "Resultados da procura"
       no_search_results: "Non se atoparon resultados."
       actions: Accións
@@ -1077,13 +1044,10 @@ gl:
       author: Autoría
       content: Contido
       created_at: Creada
-      delete: Borrar
     geozones:
       index:
         title: Zonas
         create: Crear unha zona
-        edit: Editar proposta
-        delete: Borrar
       geozone:
         name: Nome
         external_code: Código externo
@@ -1188,7 +1152,6 @@ gl:
         no_users: Non hai usuarios.
       search:
         placeholder: Buscar usuarios por correo electrónico, nome ou DNI
-        search: Procurar
     verifications:
       index:
         phone_not_given: Non deu o seu teléfono
@@ -1262,16 +1225,11 @@ gl:
           updated_at: Última actualización
           title: Título
           slug: URL
-          cards_title: Tarxetas
           see_cards: Ver tarxetas
         cards:
           cards_title: tarxetas
           create_card: Crear tarxeta
           no_cards: Non hai tarxetas.
-          title: Título
-          description: Descrición
-          link_text: Texto da ligazón
-          link_url: URL da ligazón
           columns_help: "Largura da tarxeta en número de columnas. En pantallas móbiles sempre ten unha largura do 100%."
           create:
             notice: "Tarxeta creada correctamente!"
@@ -1288,11 +1246,6 @@ gl:
       cards_title: Tarxetas
       create_card: Crear tarxeta
       no_cards: Non hai tarxetas.
-      cards:
-        title: Título
-        description: Descrición
-        link_text: Texto da ligazón
-        link_url: URL da ligazón
       feeds:
         proposals: Propostas cidadás
         debates: Debates

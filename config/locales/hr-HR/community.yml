@@ -16,7 +16,7 @@ hr:
       create_first_community_topic:
         first_theme_not_logged_in: Nema dostupnog izdanja, sudjelujte u stvaranju prvog izdanja.
         first_theme: Stvorite prvu temu u vašoj zajednici
-        sub_first_theme: "Kako biste stvorili temu morate %{sign_in} ili %{sign_up}."
+        sub_first_theme: "%{sign_in} ili %{sign_up} da bi otvorili temu."
       tab:
         participants: Sudionici
       sidebar:

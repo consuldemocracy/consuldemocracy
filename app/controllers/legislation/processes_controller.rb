@@ -112,7 +112,7 @@ class Legislation::ProcessesController < Legislation::BaseController
     set_process
     @phase = :proposals_phase
 
-    @proposals = ::Legislation::Proposal.where(process: @process)
+    @proposals = ::Legislation::Proposal.where(process: @process).filter_by(params[:advanced_search])
     @proposals = @proposals.search(params[:search]) if params[:search].present?
 
     @current_filter = "winners" if params[:filter].blank? && @proposals.winners.any?

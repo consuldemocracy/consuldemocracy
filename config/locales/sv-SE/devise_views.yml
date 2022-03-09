@@ -22,7 +22,7 @@ sv:
         change_link: Ändra mitt lösenord
         hello: Hej
         ignore_text: Ignorera det här meddelandet om du inte begärt ett nytt lösenord.
-        info_text: Du behöver använda länken för att ändra ditt lösenord.
+        info_text: Du måste använda länken för att kunna ändra ditt lösenord.
         text: "Vi har mottagit en begäran om att ändra ditt lösenord. Du kan göra det med följande länk:"
         title: Ändra ditt lösenord
       unlock_instructions:
@@ -125,5 +125,5 @@ sv:
           back_to_index: Jag förstår; gå tillbaka till startsidan
           instructions_1: <b>Kontrollera din e-postadress</b> - vi har skickat en <b>länk för att bekräfta ditt konto</b>.
           instructions_2: När ditt konto är bekräftat kan du börja delta.
-          thank_you: Tack för att du har registrerat dig. Nu behöver du <b>bekräfta din e-postadress</b>.
+          thank_you: Tack för att du har registrerat dig för webbplatsen! Nu måste du <b>bekräfta din e-postadress</b>.
           title: Bekräfta din e-postadress

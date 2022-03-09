@@ -8,7 +8,7 @@ describe "Public area translatable records" do
     login_as(user)
   end
 
-  context "New records", :js do
+  context "New records" do
     scenario "Add only single translation at once" do
       visit new_debate_path
 
@@ -108,7 +108,7 @@ describe "Public area translatable records" do
     end
   end
 
-  context "Globalize javascript interface", :js do
+  context "Globalize javascript interface" do
     scenario "Highlight current locale" do
       visit new_debate_path
 
@@ -181,7 +181,7 @@ describe "Public area translatable records" do
     end
   end
 
-  context "Existing records", :js do
+  context "Existing records" do
     before { translatable.update(attributes.merge(author: user)) }
 
     let(:attributes) do

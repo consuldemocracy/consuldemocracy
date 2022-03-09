@@ -46,12 +46,12 @@ sv:
       header:
         additional_info: Ytterligare information
         description: Beskrivning
-        more_info: Mer information
+        more_info: Mer information och sammanhang
       proposals:
         empty_proposals: Det finns inga förslag
         filters:
-          random: Slumpmässig
-          winners: Vald
+          random: Slumpmässigt
+          winners: Valt
       debate:
         empty_questions: Det finns inga frågor
         participate: Delta i diskussionen
@@ -68,7 +68,7 @@ sv:
           help: Hjälp med dialoger
         section_footer:
           title: Hjälp med dialoger
-          description: "Delta i diskussioner och processer inför beslut i staden. Dina åsikter kommer att tas i beaktande av kommunen.\n\nI dialoger får medborgarna möjlighet att diskutera och ge förslag inför olika typer av kommunala beslut.\n\nAlla som är skrivna i staden kan komma med synpunkter på nya regelverk, beslut och planer för staden. Dina kommentarer analyseras och tas i beaktande i besluten."
+          description: Delta i debatter och processer inför godkännande av nya bestämmelser eller strategier. Dina åsikter tas i beaktande.
       phase_not_open:
         not_open: Fasen är inte öppen ännu
       phase_empty:
@@ -77,13 +77,13 @@ sv:
         see_latest_comments: Visa de senaste kommentarerna
         see_latest_comments_title: Kommentera till den här processen
       shared:
-        key_dates: Viktiga datum
+        key_dates: Deltagandefaser
         homepage: Startsida
         debate_dates: Debattera
         draft_publication_date: Utkastet publiceras
         allegations_dates: Kommentarer
         result_publication_date: Resultatet publiceras
-        milestones_date: Följer
+        milestones_date: Förlopp
         proposals_dates: Förslag
     questions:
       comments:
@@ -97,7 +97,7 @@ sv:
           zero: Inga kommentarer
           one: "%{count} kommentar"
           other: "%{count} kommentarer"
-        debate: Debattera
+        debate: Debatt
       show:
         answer_question: Skicka svar
         next_question: Nästa fråga
@@ -112,9 +112,38 @@ sv:
         debate_phase_not_open: Diskussionsfasen har avslutats, och svar kan inte längre tas emot
     shared:
       share: Dela
-      share_comment: Kommentera %{version_name} från processen %{process_name}
+      share_comment: Kommentera %{version_name} från processutkastet %{process_name}
     proposals:
       form:
         tags_label: "Kategorier"
-      not_verified: "Rösta på förslag %{verify_account}."
+      not_verified: "%{verify_account} för att rösta på förslag."
       process_title: Medborgardialoger
+    summary:
+      title: "Sammanfattning"
+      votes:
+        zero: "%{count} röster"
+        one: "%{count} röst"
+        other: "%{count} röster"
+      debate_phase: "Debattfas"
+      proposals_phase: "Förslagsfas"
+      allegations_phase: "Kommentarsfas"
+      debates:
+        zero: "Inga debatter"
+        one: "%{count} debatt"
+        other: "%{count} debatter"
+      proposals:
+        zero: "Inga förslag"
+        one: "%{count} förslag"
+        other: "%{count} förslag"
+      comments:
+        zero: "Inga kommentarer"
+        one: "%{count} kommentar"
+        other: "%{count} kommentarer"
+      download: "Hämta sammanfattning"
+      top_comments:
+        zero: "Inga kommentarer"
+        one: "%{count} kommentar"
+        other: "Toppkommentarerna"
+      most_voted_comments: "Mest omröstade kommentarer"
+      no_allegation: "Det finns inga kommentarer"
+      process_empty: "Den här processen hade inte några deltagandefaser"

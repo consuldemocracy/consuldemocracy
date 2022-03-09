@@ -5,21 +5,21 @@
     <thead>
       <th class="medium-6"><%= t("admin.polls.index.name") %></th>
       <th><%= t("admin.polls.index.dates") %></th>
-      <th class="text-right"><%= t("admin.actions.actions") %></th>
+      <th><%= t("admin.actions.actions") %></th>
     </thead>
     <tbody>
       <% @polls.each do |poll| %>
         <tr id="<%= dom_id(poll) %>" class="poll">
-          <td>
-            <%= link_to poll.name, manage_admin_poll_booth_assignments_path(poll) %>
-          </td>
+          <td><%= poll.name %></td>
           <td>
             <%= l poll.starts_at.to_date %> - <%= l poll.ends_at.to_date %>
           </td>
-          <td class="text-right">
-            <%= link_to t("admin.booth_assignments.manage_assignments"),
-                        manage_admin_poll_booth_assignments_path(poll),
-                        class: "button hollow" %>
+          <td>
+            <%= render Admin::TableActionsComponent.new(actions: []) do |actions| %>
+              <%= actions.link_to t("admin.booth_assignments.manage_assignments"),
+                                  manage_admin_poll_booth_assignments_path(poll),
+                                  class: "manage-link" %>
+            <% end %>
           </td>
         </tr>
       <% end %>

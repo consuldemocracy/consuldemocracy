@@ -111,7 +111,6 @@ val:
       index:
         hidden: Bloquejat
         hide: Bloquejar
-        search: Cercar
         search_placeholder: email o nom d'usuari
         title: Bloquejar usuaris
       notice_hide: Usuari bloquejat. S'han ocultat tots els seus debats i comentaris.

@@ -18,6 +18,7 @@ tr:
         title: "Tartışmalar"
         description: "%{link} bölümünde, şehirle alakalı sizi ilgilendiren konularla ilgili görüşlerinizi sunabilir ve başkalarıyla paylaşabilirsiniz. Aynı zamanda, %{org}'un diğer bölümleri aracılığıyla Belediye Meclisi tarafından somut eylemlere katkı koyacak fikirlerinizi paylaşabilirsiniz."
         link: "vatandaş tartışmaları"
+        feature: "Tartışmalar başlatabilir, mevcut tartışmaları <strong>Katılıyorum</strong> ya da <strong>Katılmıyorum</strong> butonları ile yorumlayabilir ve değerlendirebilirsiniz. İlerlemek için buraya tıklayın: %{link}."
         feature_link: "%{org}'ya kaydol"
         image_alt: "Tartışmaları değerlendirme butonları"
         figcaption: 'Tartışmaları değerlendirmek için "katılıyorum" ve "katılmıyorum" butonları.'
@@ -26,11 +27,13 @@ tr:
         description: "%{link} bölümünde, Pusula tarafından gerçekleştirilmesi için önerilerde bulunabilirsiniz. Öneriler destek gerektirir ve eğer yeterli desteğe ulaşırlarsa, halk oylamasına sunulur. Vatandaşlar tarafından en fazla oy alan öneri gerçekleştirilecektir."
         link: "vatandaş önerileri"
         image_alt: "Öneriyi destekleme butonu"
+        figcaption: 'Tasarıyı "Destekleme" butonu.'
       budgets:
         title: "Katılımcı Bütçeleme"
         description: "%{link} bölümü, insanların belediye bütçesinin nereye harcandığı konusunda doğrudan karar vermelerine yardımcı olur."
         link: "katılımcı bütçeler"
         image_alt: "Katılımcı bütçelerin farklı aşamaları"
+        figcaption: 'Katılımcı bütçelerin "Destek" ve "Oylama" aşamaları.'
       polls:
         title: "Anketler"
         description: "%{link} bölümü, bir teklif 1% desteğe ulaştığında ve oylamaya gittiğinde veya Pusula'nın vatadaşlar tarafından karar verilmesi için bir konuda öneride bulunduğunda etkinleşir."
@@ -41,6 +44,8 @@ tr:
         title: "Süreçler"
         description: "%{link} bölümünde, vatandaşlar ülkeyi etkileyen düzenlemelerin hazırlanmasına ve değiştirilmesine katılarak, önceki tartışmalar hakkında fikirlerini paylaşabilir."
         link: "süreçler"
+        feature: "Sürece dahil olmak için aşağıdaki linke tıklamanız ve hesabınızı doğrulamanız gerekmektedir: %{link}."
+        feature_link: "%{org_name} ya kayıt ol"
       faq:
         title: "Teknik sorunlar?"
         description: "Sıkça Sorulan Sorular bölümünde sorularınıza yanıt bulabilirsiniz."
@@ -51,6 +56,7 @@ tr:
       other:
         title: "İlgili diğer bilgi"
         how_to_use: "%{org_name}'yı ülkeniz için kullanın"
+        sdg: "Sürdürülebilir Kalkınma Hedefleri yardım"
       how_to_use:
         text: |-
           Bunu yerel idarenizde kullanın ya da geliştirmemize yardım edin, bu özgür bir yazılımdır.
@@ -154,6 +160,7 @@ tr:
               description_column: Metin boyutunu küçültür
       compatibility:
         title: Standartlara ve görsel tasarıma uygunluk
+        description: 'Bu web sitesinin tüm sayfaları, W3C''nin Genel Erişilebilir Tasarım İlkeleri veya <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> Çalışma Grubu tarafından kurulan <strong>Erişilebilirlik Yönergeleri</strong> ile uyumludur.'
     titles:
       help: "%{org} nedir? - Vatandaş katılımı"
     verify:

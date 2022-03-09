@@ -29,6 +29,9 @@ ro:
     close: Închis
     menu: Meniu
   comments:
+    actions:
+      confirm_delete: "Sunteți sigur? Această acțiune va șterge acest comentariu. Această acțiune nu poate fi revocată."
+      delete: "Șterge comentariu"
     comments_closed: Comentariile sunt închise
     verified_only: Pentru a participa %{verify_account}
     comment:
@@ -102,10 +105,10 @@ ro:
     index:
       featured_debates: Recomandări
       orders:
-        confidence_score: cel mai bine cotată
+        confidence_score: cea mai votată
         created_at: cea mai nouă
         hot_score: cea mai activă
-        most_commented: cel mai comentat
+        most_commented: cea mai comentată
         relevance: relevanță
         recommendations: recomandări
       recommendations:
@@ -198,6 +201,7 @@ ro:
     local_census_records/import: Import de date
     site_customization/content_block: bloc de conținut
     site_customization/page: pagină
+    sdg/local_target: țintă locală
   geozones:
     none: Tot orașul
   layouts:
@@ -232,7 +236,7 @@ ro:
       description: Acest portal folosește %{consul} care este %{open_source}.
       open_source: software open-source
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
-      participation_text: Decide cum să modelezi orașul în care vrei să trăiești.
+      participation_text: Decide cum vrei să arate orașul în care locuiești.
       participation_title: Participare
       privacy: Politica de Confidențialitate
     header:
@@ -242,7 +246,6 @@ ro:
       collaborative_legislation: Legislație colaborativă
       debates: Dezbateri
       locale: "Limbă:"
-      logo: Logo CONSUL
       management: Administrare
       moderation: Moderare
       valuation: Evaluare
@@ -250,17 +253,18 @@ ro:
       help: Ajutor
       my_account_link: Contul meu
       my_activity_link: Conținutul meu
-      open_gov: Deschideți guvern
+      open_gov: Transparență
       proposals: Propuneri
       poll_questions: Votare
       budgets: Bugetare participativă
       notification_item:
         new_notifications:
+          zero: "Nu aveți notificări noi"
           one: Aveți o notificare nouă
           few: Aveți %{count} notificări noi
           other: Aveți %{count} notificări noi
         notifications: Notificări
-        no_notifications: "Nu aveți notificări noi"
+      sdg: "ODD"
   notifications:
     index:
       empty_notifications: Nu aveți notificări noi.
@@ -714,7 +718,11 @@ ro:
       from: "De la"
       general: "Cu textul"
       general_placeholder: "Scrie textul"
+      goal: "După ODD"
+      goal_blank: "Alege un obiectiv"
       search: "Filtru"
+      target: "După obiectiv"
+      target_blank: "Alege un obiectiv"
       title: "Căutare avansată"
       to: "La"
     author_info:
@@ -741,7 +749,7 @@ ro:
         destroy:
           notice: "Nu mai urmăriți propunerea acestui cetățean! <br> Nu veți mai primi notificări legate de această propunere."
     print:
-      print_button: Printează această informație
+      print_button: Imprimare această informație
     search: Caută
     show: Afișează
     suggest:
@@ -804,7 +812,6 @@ ro:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
@@ -905,9 +912,14 @@ ro:
         debates: "Dezbaterile cele mai active"
         proposals: "Propunerile cele mai active"
         processes: "Procese deschise"
-      see_all_debates: Vezi toate dezbaterile
-      see_all_proposals: Vezi propuneri
-      see_all_processes: Vezi toate procesele
+      see_all:
+        debates: Vezi toate dezbaterile
+        proposals: Vezi toate propunerile
+        processes: Vezi toate procesele
+      no_items:
+        debates: Nu sunt dezbateri în acest moment
+        proposals: Nu sunt propuneri în acest moment
+        processes: Nu sunt procese deschise în acest moment
       process_label: Proces
       see_process: Vezi proces
     cards:
@@ -994,3 +1006,9 @@ ro:
     create:
       enqueue_remote_translation: Traducerea a fost solicitată corect.
     button: Tradu pagina
+  tags:
+    filter:
+      more:
+        one: "Încă o etichetă"
+        few: "Încă %{count} etichete"
+        other: "Încă %{count} etichete"

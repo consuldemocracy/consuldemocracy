@@ -39,16 +39,25 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
   def update
     authorize! :admin_update, @investment
-    if @investment.update(budget_investment_params)
-      redirect_to admin_budget_budget_investment_path(@budget,
-                                                      @investment,
-                                                      Budget::Investment.filter_params(params).to_h),
-                  notice: t("flash.actions.update.budget_investment")
-    else
-      load_staff
-      load_valuator_groups
-      load_tags
-      render :edit
+
+    respond_to do |format|
+      format.html do
+        if @investment.update(budget_investment_params)
+          redirect_to admin_budget_budget_investment_path(@budget,
+                                                          @investment,
+                                                          Budget::Investment.filter_params(params).to_h),
+                      notice: t("flash.actions.update.budget_investment")
+        else
+          load_staff
+          load_valuator_groups
+          load_tags
+          render :edit
+        end
+      end
+
+      format.json do
+        @investment.update!(budget_investment_params)
+      end
     end
   end
 

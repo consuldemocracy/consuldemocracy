@@ -1,0 +1,9 @@
+<% if feature?(:sdg) %>
+  <h2><%= t("admin.settings.index.sdg.title") %></h2>
+
+  <%= render "featured_settings_table", features: @sdg_settings, tab: "#tab-sdg-configuration" %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.settings.index.sdg.how_to_enable") %>
+  </div>
+<% end %>

@@ -38,12 +38,8 @@ zh-TW:
         icon_alt: 參與性預算的圖標
         title: 參與性預算
         help: 參與性預算的説明
-        all_phases: 查看所有階段
       all_phases: 預算投資階段
       map: 預算投資之建議的地理位置
-      investment_proyects: 所有投資項目清單
-      unfeasible_investment_proyects: 所有不可行的投資項目清單
-      not_selected_investment_proyects: 未被選入投票階段的所有投資項目清單
       finished_budgets: 已完成的參與性預算
       see_results: 查看結果
       section_footer:
@@ -77,9 +73,6 @@ zh-TW:
           verified_only: "創建新的預算投資 %{verify}。"
           create: "創建預算投資"
           not_logged_in: "要創建新的預算投資, 您必須 %{sign_in} 或 %{sign_up}。"
-          by_feasibility: 通過可行性
-          feasible: 可行項目
-          unfeasible: 不可行項目
         orders:
           random: 隨機
           confidence_score: 最高評分
@@ -110,20 +103,11 @@ zh-TW:
           other: "%{count} 個支持"
         give_support: 支持
       header:
-        check_ballot: 查看我的選票
+        check_ballot: "查看我的選票"
         change_ballot: "如果您改變了主意, 您可以在 %{check_ballot} 中刪除您的投票，然後重新開始。"
         check_ballot_link: "查看我的選票"
         price: "此標題有一個預算"
-    progress_bar:
-      assigned: "您已分配： "
-      available: "可用預算： "
     show:
-      group: 組
-      phase: 實際階段
-      unfeasible_title: 不可行的投資
-      unfeasible: 查看不可行的投資
-      unselected_title: 未被選入投票階段的投資
-      unselected: 查看未被選入投票階段的投資
       see_results: 查看結果
     results:
       link: 結果

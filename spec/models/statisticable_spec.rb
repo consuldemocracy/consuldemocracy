@@ -1,12 +1,16 @@
 require "rails_helper"
 
 describe Statisticable do
-  class DummyStats
-    include Statisticable
+  before do
+    dummy_stats = Class.new do
+      include Statisticable
 
-    def participants
-      User.all
+      def participants
+        User.all
+      end
     end
+
+    stub_const("DummyStats", dummy_stats)
   end
 
   let(:stats) { DummyStats.new(nil) }

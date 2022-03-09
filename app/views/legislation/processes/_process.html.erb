@@ -1,9 +1,7 @@
 <div id="<%= dom_id(process) %>" class="legislation clear">
   <div class="column row legislation-text">
     <div class="small-12 medium-8 column">
-      <div class="legislation-text">
-        <h3><%= link_to process.title, process %></h3>
-      </div>
+      <h3><%= link_to process.title, process %></h3>
     </div>
 
     <div class="small-12 medium-4 column">
@@ -15,7 +13,11 @@
     </div>
 
     <div class="small-12 medium-11 column end">
-      <%= markdown(process.summary.present? ? process.summary : first_paragraph(process.description)) %>
+      <%= markdown(process.summary.presence || first_paragraph(process.description)) %>
+    </div>
+
+    <div class="small-12 medium-11 column end">
+      <%= render SDG::TagListComponent.new(process, limit: 5, linkable: false) %>
     </div>
   </div>
 

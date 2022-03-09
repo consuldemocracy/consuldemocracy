@@ -62,23 +62,23 @@ hr:
       comment_as_moderator: Komentiraj kako moderator
       leave_comment: Ostavi svoj komentar
     orders:
-      most_voted: Najviše izlasano
-      newest: Prvo najnoviji
+      most_voted: Najviše izglasano
+      newest: Najnoviji prvo
       oldest: Najstariji prvo
       most_commented: Najviše komentirani
     select_order: Sortiraj po
     show:
       return_to_commentable: "Vrati se na "
   comments_helper:
-    comment_button: Objavi komentar
+    comment_button: Objavite komentar
     comment_link: Komentar
     comments_title: Komentari
-    reply_button: Objavi odgovor
+    reply_button: Objavite odgovor
     reply_link: Odgovori
   debates:
     create:
       form:
-        submit_button: Započni raspravu
+        submit_button: Započnite raspravu
     debate:
       comments:
         zero: Nema komentara
@@ -98,7 +98,7 @@ hr:
     form:
       debate_title: Naslov rasprave
       tags_instructions: Označi ovu raspravu.
-      tags_placeholder: "Unesi oznake koje želite koristite, odvojene zarezima (',')"
+      tags_placeholder: "Unesite oznake koje želite koristite, odvojene zarezima (',')"
     index:
       featured_debates: Istaknuto
       orders:
@@ -124,7 +124,7 @@ hr:
         few: " sadrži termine <strong>%{search_term}</strong>"
         other: " sadrži termine <strong>%{search_term}</strong>"
       select_order: Naruči po
-      start_debate: Započni raspravu
+      start_debate: Započnite raspravu
       title: Rasprave
       section_header:
         icon_alt: Ikona rasprave
@@ -132,21 +132,21 @@ hr:
         help: Pomoć oko rasprava
       section_footer:
         title: Pomoć oko rasprava
-        description: Započnite raspravu kako biste s drugima podijelili mišljenja o temama za koje mislite da su važne.
+        description: Započnite raspravu da biste s drugima podijelili mišljenja o temama za koje mislite da su važne.
         help_text_1: "Prostor za građanske rasprave usmjeren je na svakoga tko može otkriti pitanja koja ih zanimaju i one koji žele podijeliti mišljenja s drugim ljudima."
-        help_text_2: 'Kako bi otvorili raspravu morate se pijraviti na %{org}. Korisnici također komentiraju otvorene rasprave i ocijenjuju ih s "Slažem se" ili "Ne slažem se" gumbima koji se nalaze na svakoj od njih.'
+        help_text_2: 'Morate se registrirati na %{org} da biste otvorili raspravu. Registrirani korisnici također mogu komentirati otvorene rasprave i ocjenjivati ih s gumbima "Slažem se" ili "Ne slažem se" koji se nalaze u svakoj od njih.'
     new:
       form:
-        submit_button: Započni raspravu
+        submit_button: Započnite raspravu
       info: Ako želite napraviti prijedlog, onda je ova pogrešna sekcija, slijedite %{info_link}.
-      info_link: izradi novi prijedlog
+      info_link: izradite novi prijedlog
       more_info: Više informacija
-      recommendation_four: Uživajte na ovom mjestu vaš glas će se također popuniti.
-      recommendation_one: Ne koristite velika početna slova za naslove rasprave ili cijele rečenice. Na internetu ovo se može procijeniti kao vikanje, a nitko ne želi da se na njega viče.
-      recommendation_three: Iskreni kriticizam je dobrodošao. Ovo je mjesto za dobivanje povratnih informacija. Mi predlažemo da se stavljate drugima komentare kakve smatrate da ih želite primiti (na inteligentan i elegentan način).
-      recommendation_two: Bilo koja rasprava ili komentar koji sugeriraju na ilegalne aktivnosti biti će obrisani, kao i oni koji sabotiraju prostor za rasprave. Sve ostalo je dozvoljeno.
+      recommendation_four: Uživajte na ovom mjestu, nek se i vaš glas čuje.
+      recommendation_one: Ne koristite velika početna slova za naslove rasprave niti cijele rečenice. Na internetu se takav način može shvatiti kao vikanje, a nitko ne želi da se na njega viče.
+      recommendation_three: Nemilosrdna i iskrena kritika je dobrodošla. Ovo je mjesto za refleksiju i skupljanje povratnih informacija. Ipak, predlažemo da se sastavljate komentare drugima kakve bi ste ih i sami željeli primiti, na inteligentan i profinjen način.
+      recommendation_two: Bilo koja rasprava ili komentar koji sugeriraju ilegalne aktivnosti bit će obrisani, kao i oni koji ometaju prostor rasprave. Sve je ostalo dozvoljeno.
       recommendations_title: Preporuke za stvaranje rasprave
-      start_new: Započni raspravu
+      start_new: Započnite raspravu
     show:
       author_deleted: Korisnik obrisan
       comments:
@@ -157,7 +157,7 @@ hr:
       comments_title: Kometari
       edit_debate_link: Uredi
       flag: Rasprava je označena kao neprimjerena od strane više korisnika.
-      share: Dijeli
+      share: Podijeli
       author: Autor
     update:
       form:
@@ -183,7 +183,7 @@ hr:
     budget/group: Grupa za budžet
     budget/heading: Naslov Budžeta
     geozone: geozona
-    legislation/draft_version: skica
+    legislation/draft_version: nacrt
     legislation/process: proces
     legislation/question: pitanje
     poll/shift: Izmjeni
@@ -199,7 +199,7 @@ hr:
     site_customization/content_block: blokiranje sadržaja
     site_customization/page: stranica
   geozones:
-    none: Svi gradovi
+    none: Cijeli grad
   layouts:
     application:
       chrome: Google Chrome
@@ -209,7 +209,7 @@ hr:
     dashboard:
       proposal_header:
         published: Objavljeno
-        draft: Draft
+        draft: Nacrt
         retired: Povućeno
       proposal_totals:
         active_resources: Aktivni resursi
@@ -242,7 +242,6 @@ hr:
       collaborative_legislation: Javno savjetovanje
       debates: Rasprave
       locale: "Jezik:"
-      logo: CONSUL logo
       management: Menadžment
       moderation: Uređivanje
       valuation: Procjena
@@ -252,15 +251,15 @@ hr:
       my_activity_link: Moje aktivnosti
       open_gov: Otvorena vlada
       proposals: Prijedlozi
-      poll_questions: Glasovanje
+      poll_questions: Glasanje
       budgets: Participativno budžetiranje
       notification_item:
         new_notifications:
+          zero: "Nemate novu obavijest"
           one: Imate novu obavijest
           few: Vi imate %{count} nove obavijesti
           other: Vi imate %{count} nove obavijesti
         notifications: Obavijesti
-        no_notifications: "Nemate novu obavijest"
   notifications:
     index:
       empty_notifications: Nemate nove obavijesti.
@@ -291,38 +290,38 @@ hr:
     start_proposal: Stvori prijedlog
   omniauth:
     facebook:
-      sign_in: Prijavi se Facebookom
-      sign_up: Prijavi se s Facebookom
+      sign_in: Prijavite se putem Facebooka
+      sign_up: Registrirajte se putem Facebooka
       name: Facebook
     finish_signup:
       title: "Dodatni detalji"
       username_warning: "Zbog promjene načina na koji radimo s društvenim mrežama, moguće je da se vaše korisničko ime sada prikazuje kao \"već se koristi\". Ako je to vaš slučaj, odaberite drugo korisničko ime."
     google_oauth2:
-      sign_in: Prijavi se Googleom
-      sign_up: Prijavi se s Googlom
+      sign_in: Prijavite se putem Googlea
+      sign_up: Registrirajte se putem Googlea
       name: Google
     wordpress_oauth2:
-      sign_in: Prijavi se putem Wordpressa
-      sign_up: Upiši se putem Wordpressa
+      sign_in: Prijavite se putem Wordpressa
+      sign_up: Registrirajte se putem Wordpressa
       name: Wordpress
     twitter:
-      sign_in: Prijavi se Twitterom
-      sign_up: Prijavi se s Twitterom
+      sign_in: Prijavite se putem Twittera
+      sign_up: Registrirajte se putem Twittera
       name: Twitter
     info:
-      sign_in: "Prijavi se s:"
-      sign_up: "Registriraj se s:"
+      sign_in: "Prijavite se putem:"
+      sign_up: "Registrirajte se putem:"
     or_fill: "Ili ispunite sljedeći obrazac:"
   proposals:
     create:
       form:
-        submit_button: Stvorite prijedlog
+        submit_button: Izradite prijedlog
     created:
       title: Čestitamo! Napravili ste prvi korak.
       motivation: "Važno je spremiti početak kampanje za vaš prijedlog kako bi bio uspješan. Prvih par dana su odlučujuča."
-      motivation_2: "<strong>Ako želite preporuke za pripremu objave, ostavite svoj prijedlog kao skicu i mi ćemo vas voditi.</strong>"
-      publish: Ne, ja želim objaviti svoj prijedlog
-      dashboard: Da, želim pomoć i objaviti ću kasnije
+      motivation_2: "<strong>Ako želite preporuke za pripremu objave, ostavite svoj prijedlog kao nacrt i mi ćemo vas voditi.</strong>"
+      publish: Ne, želim objaviti svoj prijedlog
+      dashboard: Da, želim pomoć i objaviti ću ga kasnije
       preview_title: Ovako će izgledati vaš prijedlog kada ga objavite
     share:
       improve_it: Poboljšajte svoju kampanju i dobijte više potpore.
@@ -352,7 +351,7 @@ hr:
       tag_category_label: "Kategorije"
       tags_instructions: "Označi ovaj prijedlog. Možete odabrati od predloženih kategorija ili dodati svoju"
       tags_label: Oznake
-      tags_placeholder: "Unesite svoje oznake koje želite koristiti, odvojenu s navodnim znakovima (\",\")"
+      tags_placeholder: "Unesite oznake koje želite koristiti, odvojene zarezima (\",\")"
       map_location: "Lokacija na mapi"
       map_location_instructions: "Pronađi lokaciju na mapi i stavi marker."
       map_remove_marker: "Ukloni marker na mapi"
@@ -410,13 +409,13 @@ hr:
         description: Prijedlozi građana prilika su da susjedstva i kolektivi izravno odluče kako žele da njihov grad izgleda, nakon dobivanja dovoljne potpore i podnošenja glasova građana.
     new:
       form:
-        submit_button: Stvorite prijedlog
+        submit_button: Izradite prijedlog
       more_info: Kako prijedlozi građana funkcioniraju?
-      recommendation_one: Ne koristite velika početna slova za naslove prijedloge ili cijele rečenice. Na internetu ovo se može procijeniti kao vikanje, a nitko ne želi da se na njega viče.
-      recommendation_three: Uživajte na ovom mjestu vaš glas će se također popuniti.
-      recommendation_two: Bilo koja rasprava ili komentar koji sugeriraju na ilegalne aktivnosti biti će obrisani, kao i oni koji sabotiraju prostor za prijedloge. Sve ostalo je dozvoljeno.
+      recommendation_one: Ne koristite velika početna slova za naslove prijedloga niti cijele rečenice. Na internetu se takav način može shvatiti kao vikanje, a nitko ne želi da se na njega viče.
+      recommendation_three: Uživajte na ovom mjestu, nek se i vaš glas čuje.
+      recommendation_two: Bilo koji prijedlog ili komentar koji sugerira ilegalne aktivnosti bit će obrisan, kao i onaj koji ometa prostor rasprave. Sve je ostalo dozvoljeno.
       recommendations_title: Preporuke za stvaranje rasprave
-      start_new: Stvori novi prijedlog
+      start_new: Izradite novi prijedlog
     notice:
       retired: Prijedlog je povučen
       published: Prijedlog je objavljen
@@ -470,7 +469,7 @@ hr:
       embed_video_title: "Video je na %{proposal}"
       title_video_url: "Vanjski video"
       author: Autor
-      draft: Prijedlog je u draft verziji. Nemožete više dobiti potporu, niti se pojavljuje u listi prijedloga.
+      draft: Prijedlog je u nacrtnoj verziji. Još ne možete dobiti potporu za njega, niti se pojavljuje u popisu prijedloga.
     update:
       form:
         submit_button: Spremi promjene
@@ -480,7 +479,7 @@ hr:
       progress: Napredak
       resources: Resursi
       community: Zajednica
-      polls: Glasovi
+      polls: Ankete
       mailing: Email
       poster: Poster
       recommended_actions: Preporučeno djelovanje
@@ -503,7 +502,7 @@ hr:
     index:
       title: Izdanje
       edit_proposal_link: Uredi prijedlog
-      publish: Objavi prijedlog
+      publish: Objavite prijedlog
       retire: Povuci prijedlog
     new_request:
       links: Poveznice
@@ -605,7 +604,7 @@ hr:
       index:
         title: Pregled emaila
       new:
-        title: Email model dijeljenja
+        title: E-mail model dijeljenja
       mailing_options:
         send: Pošalji prema %{address}
         preview: Pregled
@@ -629,29 +628,29 @@ hr:
       filters:
         current: "Otvoreno"
         expired: "Isteklo"
-      title: "Glasovanje"
+      title: "Ankete"
       participate_button: "Sudjelujte u ovoj anketi"
       participate_button_expired: "Anketa završena"
-      no_geozone_restricted: "Svi gradovi"
+      no_geozone_restricted: "Cijeli grad"
       geozone_restricted: "Distrikti"
       geozone_info: "Mogu sudjelovati građani u Cenzusu od: "
       already_answer: "Vi ste već sudjelovali u ovom glasanju"
-      not_logged_in: "Morate biti prijavljeni ili registrirani da bi sudjelovali"
+      not_logged_in: "Morate biti prijavljeni ili registrirani da biste sudjelovali"
       unverified: "Morate potvrditi svoj račun da sudjelujete"
       cant_answer: "Ova anketa nije dostupna za vašu geozonu"
       section_header:
         icon_alt: Ikona glasanja
-        title: Glasovanje
+        title: Glasanje
         help: Pomoć oko glasanja
       section_footer:
         title: Pomoć oko glasanja
-        description: Građanske ankete su participativni mehanizmi pomoću kojih građani s glasačkim pravima mogu provoditi direktne odluke
-      no_polls: "Ne postoji otvoreno izglasavanje."
+        description: Građansko glasanje predstavlja participativan mehanizam pomoću kojeg građani s glasačkim pravima mogu neposredno odlučivati
+      no_polls: "Ne postoji otvoreno glasanje."
     show:
       already_voted_in_booth: "Već ste fizički sudjelovali u glasanju. Više ne možete glasati."
       already_voted_in_web: "Već ste sudjelovali u ovoj anketi. Ako glasate ponovno, vaš glas će biti prepisan."
-      back: Nazad na glasovanje
-      cant_answer_not_logged_in: "Morate se %{signin} ili %{signup} da biste sudjelovali."
+      back: Nazad na glasanje
+      cant_answer_not_logged_in: "%{signin} ili %{signup} da biste sudjelovali."
       comments_tab: Komentari
       cant_answer_verify: "Morate %{verify_link} da biste odgovorili."
       verify_link: "potvrdi svoj račun"
@@ -720,7 +719,7 @@ hr:
     author_info:
       author_deleted: Korisnik obrisan
       email_deleted: E-mail poruka izbrisana
-    back: Idi nazad
+    back: Vrati se
     check: Odaberi
     check_all: Svi
     check_none: Niti jedan
@@ -741,7 +740,7 @@ hr:
         destroy:
           notice: "Prestali ste pratiti ovaj građanski prijedlog! <br> Više neće primati obavijesti vezane za taj prijedlog."
     print:
-      print_button: Printaj ove informacije
+      print_button: Ispiši ove informacije
     search: Pretraga
     show: Prikaži
     suggest:
@@ -778,7 +777,7 @@ hr:
     outline:
       searcher: Pretraživač
     go_to_page: "Idi na stranicu od "
-    share: Dijeli
+    share: Podijeli
     orbit:
       previous_slide: Prošla Stranica
       next_slide: Sljedeća Stranica
@@ -804,7 +803,6 @@ hr:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
@@ -824,10 +822,10 @@ hr:
     manage:
       all: "Nemate pristup za ovo djelovanje %{action} za %{subject}."
   users:
-    login_to_comment: "Morate %{signin} ili %{signup} da biste ostavili komentar."
-    login_to_continue: "Morate %{signin} ili %{signup} da biste nastavili."
+    login_to_comment: "%{signin} ili %{signup} da biste ostavili komentar."
+    login_to_continue: "%{signin} ili %{signup} da biste nastavili."
     signin: "prijavite se"
-    signup: "upišite se"
+    signup: "registrirajte se"
     verify_account: "potvrdite svoj račun"
     direct_messages:
       new:
@@ -876,7 +874,7 @@ hr:
       delete_alert: "Jeste li sigurni da želite obrisati svoj investicijski projekt? Ova akcija se ne može poništiti"
     proposals:
       retired: "Povučeni prijedlog"
-      draft: Draft
+      draft: Nacrt
       published: Objavljeno
       see: "Vidi prijedlog"
       actions: Djelovanja
@@ -884,19 +882,19 @@ hr:
   votes:
     agree: Slažem se
     anonymous: Previše anonimnih glasova kako bi se prihvatio glas %{verify_account}.
-    comment_unauthenticated: Vi morate %{signin} ili %{signup} kako bi glasali.
+    comment_unauthenticated: '%{signin} ili %{signup} da biste glasali.'
     disagree: Ne slažem se
-    organizations: Organizacijama nije dopušteno glasovanje
+    organizations: Organizacijama nije dopušteno glasanje
     supports: Potpore
-    verified_only: Samo potvrđenim korisnicima dozvoljeno je glasovanje za prijedloge; %{verify_account}.
+    verified_only: Samo potvrđenim korisnicima je dozvoljeno glasanje za prijedloge; %{verify_account}.
     budget_investments:
-      not_logged_in: Morate %{signin} ili %{signup} da biste nastavili.
+      not_logged_in: '%{signin} ili %{signup} da biste nastavili.'
       not_verified: Samo potvrđeni korisnici mogu glasati za investicijske projekte, %{verify_account}.
-      organization: Organizacijama nije dopušteno glasovanje
+      organization: Organizacijama nije dopušteno glasanje
       unfeasible: Projekti koji nisu izvedivi ne mogu dobiti podršku
       not_voting_allowed: Faza glasanja je zatvorena
       different_heading_assigned:
-        one: "Možete samo podupreti investicijske projekte u %{count} distriktu. Ukoliko ste već poduprli investicije u %{supported_headings}."
+        one: "Možete samo podržati ulagačke projekte u %{count} okrugu. Već ste podržali ulaganja u %{supported_headings}."
         few: "Možete samo podupreti investicijske projekte u %{count} distriktu. Ukoliko ste već poduprli investicije u %{supported_headings}."
         other: "Možete samo podupreti investicijske projekte u %{count} distriktu. Ukoliko ste već poduprli investicije u %{supported_headings}."
   welcome:
@@ -905,9 +903,10 @@ hr:
         debates: "Najaktivnije rasprave"
         proposals: "Najaktivniji prijedlozi"
         processes: "Otvoreni procesi"
-      see_all_debates: Vidi sve rasprave
-      see_all_proposals: Vidi sve prijedloge
-      see_all_processes: Vidi sve procese
+      see_all:
+        debates: Vidi sve rasprave
+        proposals: Vidi sve prijedloge
+        processes: Vidi sve procese
       process_label: Procesi
       see_process: Vidi procese
     cards:
@@ -933,14 +932,14 @@ hr:
       go_to_index: Ne sada, idite na indeksnu stranicu
       start_using_consul: Idi na indeksnu stranicu
       title: Sudjelovati
-      user_permission_debates: Sudjeluj u raspravi
+      user_permission_debates: Sudjelovati u raspravama
       user_permission_info: Sa svojim računom možete...
-      user_permission_proposal: Kreiraj novi prijedlog
-      user_permission_support_proposal: Potpora prijedloga*
+      user_permission_proposal: Izrađivati nove prijedloge
+      user_permission_support_proposal: Podupirati prijedloge*
       user_permission_verify: "Kako biste izveli sljedeće radnje potvrdite svoj račun."
       user_permission_verify_info: "*Samo za korisnike Cenzusa."
       user_permission_verify_my_account: Potvrdi moj račun
-      user_permission_votes: Sudjelujte u finalnom glasanju
+      user_permission_votes: Sudjelovati u završnom glasanju
   invisible_captcha:
     sentence_for_humans: "Ako ste fizička osoba, ignorirajte ovo polje"
     timestamp_error_message: "Žao nam je, ovo je bilo prebrzo! Molimo vas ponovno podnesite."
@@ -967,7 +966,7 @@ hr:
   annotator:
     help:
       alt: Odaberi tekst koji želiš komentirati i pritisni gumb s olovkom.
-      text: Da biste komentirali ovaj dokument morate %{sign_in} ili %{sign_up}. Kako bi odabrali tekst koji želite komentirati pritisnite gumb s olovkom.
+      text: '%{sign_in} ili %{sign_up} da bi ste komentirali ovaj dokument. Tada odaberite tekst koji želite komentirati i pritisnite gumb s olovkom.'
       title: Kako mogu komentirati ovaj dokument?
   links:
     form:
@@ -983,7 +982,7 @@ hr:
   communities:
     show:
       surveys: Ankete
-      complete_survey: Dovrši aneketu
+      complete_survey: Dovrši anketu
     subnav:
       surveys: Ankete
     poll:

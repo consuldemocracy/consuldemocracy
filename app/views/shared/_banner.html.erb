@@ -1,6 +1,0 @@
-<% if has_banners? || controller.class == Admin::BannersController %>
-  <% banner ||= @banners.sample %>
-  <div class="banner" style="background-color:<%= banner.background_color %>;">
-    <%= sanitize banner_target_link(banner), attributes: %w[href style] %>
-  </div>
-<% end %>

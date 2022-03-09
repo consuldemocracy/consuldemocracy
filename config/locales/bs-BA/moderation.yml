@@ -111,7 +111,6 @@ bs:
       index:
         hidden: Blokirani
         hide: Blokiraj
-        search: Traži
         search_placeholder: email ili ime korisnika
         title: Blokiraj korisnike
       notice_hide: Korisnik blokiran. Sve debate i komentari korisnika su sakriveni.

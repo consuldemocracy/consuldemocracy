@@ -106,4 +106,12 @@ describe Abilities::Administrator do
   it { should be_able_to(:manage, LocalCensusRecord) }
   it { should be_able_to(:create, LocalCensusRecords::Import) }
   it { should be_able_to(:show, LocalCensusRecords::Import) }
+
+  it { should be_able_to(:read, SDG::Target) }
+
+  it { should be_able_to(:read, SDG::Manager) }
+  it { should be_able_to(:create, SDG::Manager) }
+  it { should be_able_to(:destroy, SDG::Manager) }
+
+  it { should be_able_to(:manage, Widget::Card) }
 end

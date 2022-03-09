@@ -56,6 +56,7 @@ da:
       other:
         title: "Andre oplysninger af interesse"
         how_to_use: "Anvend %{org_name} i din by"
+        sdg: "Verdensmål hjælp"
       how_to_use:
         text: |-
           Anvend portalen i din kommune eller hjælp os med at forbedre den. Det er en gratis software.

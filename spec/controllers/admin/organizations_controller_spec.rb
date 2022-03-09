@@ -1,8 +1,6 @@
 require "rails_helper"
 
-describe Admin::OrganizationsController do
-  before { sign_in create(:administrator).user }
-
+describe Admin::OrganizationsController, :admin do
   describe "PUT verify" do
     it "keeps query parameters while using protected redirects" do
       organization = create(:organization)

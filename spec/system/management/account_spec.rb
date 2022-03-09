@@ -1,40 +1,21 @@
 require "rails_helper"
 
 describe "Account" do
-  before do
-    login_as_manager
-  end
-
   scenario "Should not allow unverified users to edit their account" do
     user = create(:user)
     login_managed_user(user)
 
-    visit management_root_path
-
+    login_as_manager
     click_link "Reset password via email"
 
     expect(page).to have_content "No verified user logged in yet"
   end
 
-  scenario "Delete a user account", :js do
-    user = create(:user, :level_two)
-    login_managed_user(user)
-
-    visit management_account_path
-
-    click_link "Delete user"
-    accept_confirm { click_link "Delete account" }
-
-    expect(page).to have_content "User account deleted."
-
-    expect(user.reload.erase_reason).to eq "Deleted by manager: manager_user_#{Manager.last.user_id}"
-  end
-
   scenario "Send reset password email to currently managed user session" do
     user = create(:user, :level_three)
     login_managed_user(user)
-    visit management_root_path
 
+    login_as_manager
     click_link "Reset password via email"
 
     click_link "Send reset password email"
@@ -49,8 +30,8 @@ describe "Account" do
   scenario "Manager changes the password by hand (writen by them)" do
     user = create(:user, :level_three)
     login_managed_user(user)
-    visit management_root_path
 
+    login_as_manager
     click_link "Reset password manually"
 
     find(:css, "input[id$='user_password']").set("new_password")
@@ -66,11 +47,11 @@ describe "Account" do
     expect(page).to have_content "You have been signed in successfully."
   end
 
-  scenario "Manager generates random password", :js do
+  scenario "Manager generates random password" do
     user = create(:user, :level_three)
     login_managed_user(user)
-    visit management_root_path
 
+    login_as_manager
     click_link "Reset password manually"
     click_link "Generate random password"
 
@@ -87,11 +68,11 @@ describe "Account" do
     expect(page).to have_content "You have been signed in successfully."
   end
 
-  scenario "The password is printed", :js do
+  scenario "The password is printed" do
     user = create(:user, :level_three)
     login_managed_user(user)
-    visit management_root_path
 
+    login_as_manager
     click_link "Reset password manually"
 
     find(:css, "input[id$='user_password']").set("another_new_password")
@@ -100,6 +81,30 @@ describe "Account" do
 
     expect(page).to have_content "Password reseted successfully"
     expect(page).to have_css("a[href='javascript:window.print();']", text: "Print password")
-    expect(page).to have_css("div.for-print-only", text: "another_new_password", visible: false)
+    expect(page).to have_css("div.for-print-only", text: "another_new_password", visible: :hidden)
+  end
+
+  describe "When a user has not been selected" do
+    before do
+      Setting["feature.user.skip_verification"] = "true"
+    end
+
+    scenario "we can't reset password via email" do
+      login_as_manager
+
+      click_link "Reset password via email"
+
+      expect(page).to have_content "To perform this action you must select a user"
+      expect(page).to have_current_path management_document_verifications_path
+    end
+
+    scenario "we can't reset password manually" do
+      login_as_manager
+
+      click_link "Reset password manually"
+
+      expect(page).to have_content "To perform this action you must select a user"
+      expect(page).to have_current_path management_document_verifications_path
+    end
   end
 end

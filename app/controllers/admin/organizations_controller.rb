@@ -12,7 +12,7 @@ class Admin::OrganizationsController < Admin::BaseController
 
   def search
     @organizations = Organization.includes(:user)
-                                 .search(params[:term])
+                                 .search(params[:search])
                                  .order("users.created_at", :name, "users.email")
                                  .page(params[:page])
   end

@@ -2,7 +2,7 @@
 <div class="js-participation supports ballot">
   <% if ballot.has_investment?(investment) %>
 
-    <div class="remove supported inline-block">
+    <div class="remove supported">
       <span class="icon-check-circle"
             title="<%= t("budgets.investments.investment.already_added") %>">
       </span>
@@ -14,7 +14,7 @@
                     budget_ballot_line_path(id: investment.id,
                                             budget_id: investment.budget_id,
                                             investments_ids: investment_ids),
-                    class: "delete small expanded",
+                    class: "button button-remove-support expanded",
                     method: :delete,
                     remote: true %>
       <% end %>
@@ -31,7 +31,7 @@
                     budget_ballot_lines_path(investment_id: investment.id,
                                              budget_id: investment.budget_id,
                                              investments_ids: investment_ids),
-                    class: "button button-support small expanded",
+                    class: "button button-support expanded",
                     title: t("budgets.investments.investment.support_title"),
                     method: :post,
                     remote: true %>

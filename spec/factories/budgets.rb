@@ -2,6 +2,7 @@ FactoryBot.define do
   factory :budget do
     sequence(:name) { |n| "#{Faker::Lorem.word} #{n}" }
     currency_symbol { "€" }
+    published { true }
     phase { "accepting" }
     description_drafting  { "This budget is drafting" }
     description_informing { "This budget is informing" }
@@ -15,7 +16,7 @@ FactoryBot.define do
     description_finished { "This budget is finished" }
 
     trait :drafting do
-      phase { "drafting" }
+      published { false }
     end
 
     trait :informing do
@@ -263,7 +264,7 @@ FactoryBot.define do
     reason { "unfeasible" }
   end
 
-  factory :valuator_group, class: ValuatorGroup do
+  factory :valuator_group, class: "ValuatorGroup" do
     sequence(:name) { |n| "Valuator Group #{n}" }
   end
 

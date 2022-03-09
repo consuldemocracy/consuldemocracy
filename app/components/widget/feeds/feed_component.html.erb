@@ -1,0 +1,17 @@
+<section id="feed_<%= kind %>" class="widget-feed feed-<%= kind %>">
+  <header>
+    <h2 class="title"><%= t("welcome.feed.most_active.#{kind}") %></h2>
+  </header>
+
+  <% if feed.items.any? %>
+    <div class="feed-content">
+      <% feed.items.each do |item| %>
+        <%= render item_component_class.new(item) %>
+      <% end %>
+    </div>
+
+    <%= link_to t("welcome.feed.see_all.#{kind}"), see_all_path, class: "see-all" %>
+  <% else %>
+    <div class="no-items callout primary"><%= t("welcome.feed.no_items.#{kind}") %></div>
+  <% end %>
+</section>

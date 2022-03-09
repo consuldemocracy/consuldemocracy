@@ -1,24 +1,7 @@
 require "rails_helper"
 
-describe "Admin budget groups" do
+describe "Admin budget groups", :admin do
   let(:budget) { create(:budget, :drafting) }
-
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
-  context "Feature flag" do
-    before do
-      Setting["process.budgets"] = nil
-    end
-
-    scenario "Disabled with a feature flag" do
-      expect do
-        visit admin_budget_groups_path(budget)
-      end.to raise_exception(FeatureFlags::FeatureDisabled)
-    end
-  end
 
   context "Load" do
     let!(:budget) { create(:budget, slug: "budget_slug") }
@@ -28,30 +11,6 @@ describe "Admin budget groups" do
       visit edit_admin_budget_group_path("budget_slug", "group_slug")
       expect(page).to have_content(budget.name)
       expect(page).to have_field "Group name", with: group.name
-    end
-
-    scenario "raises an error if budget slug is not found" do
-      expect do
-        visit edit_admin_budget_group_path("wrong_budget", group)
-      end.to raise_error ActiveRecord::RecordNotFound
-    end
-
-    scenario "raises an error if budget id is not found" do
-      expect do
-        visit edit_admin_budget_group_path(0, group)
-      end.to raise_error ActiveRecord::RecordNotFound
-    end
-
-    scenario "raises an error if group slug is not found" do
-      expect do
-        visit edit_admin_budget_group_path(budget, "wrong_group")
-      end.to raise_error ActiveRecord::RecordNotFound
-    end
-
-    scenario "raises an error if group id is not found" do
-      expect do
-        visit edit_admin_budget_group_path(budget, 0)
-      end.to raise_error ActiveRecord::RecordNotFound
     end
   end
 
@@ -100,7 +59,7 @@ describe "Admin budget groups" do
       group = create(:budget_group, budget: budget)
 
       visit admin_budget_groups_path(budget)
-      within("#budget_group_#{group.id}") { click_link "Delete" }
+      within("#budget_group_#{group.id}") { accept_confirm { click_link "Delete" } }
 
       expect(page).to have_content "Group deleted successfully"
       expect(page).not_to have_selector "#budget_group_#{group.id}"
@@ -111,7 +70,7 @@ describe "Admin budget groups" do
       create(:budget_heading, group: group)
 
       visit admin_budget_groups_path(budget)
-      within("#budget_group_#{group.id}") { click_link "Delete" }
+      within("#budget_group_#{group.id}") { accept_confirm { click_link "Delete" } }
 
       expect(page).to have_content "You cannot delete a Group that has associated headings"
       expect(page).to have_selector "#budget_group_#{group.id}"
@@ -128,7 +87,7 @@ describe "Admin budget groups" do
       click_button "Create new group"
 
       expect(page).to have_content "Group created successfully!"
-      expect(page).to have_link "All City"
+      expect(page).to have_content "All City"
     end
 
     scenario "Maximum number of headings in which a user can vote is set to 1 by default" do
@@ -138,7 +97,14 @@ describe "Admin budget groups" do
       click_button "Create new group"
 
       expect(page).to have_content "Group created successfully!"
-      expect(Budget::Group.first.max_votable_headings).to be 1
+
+      within all("thead th")[1] do
+        expect(page).to have_content("Maximum number of headings in which a user can select projects")
+      end
+
+      within "tbody tr" do
+        within all("td")[1] { expect(page.text).to eq "1" }
+      end
     end
 
     scenario "Group name is mandatory" do
@@ -163,9 +129,8 @@ describe "Admin budget groups" do
       expect(page).to have_field "Maximum number of headings in which a user can select projects", with: "2"
     end
 
-    scenario "Changing name for current locale will update the slug if budget is in draft phase", :js do
-      group = create(:budget_group, budget: budget)
-      old_slug = group.slug
+    scenario "Changing name for current locale will update the slug if budget is in draft phase" do
+      group = create(:budget_group, budget: budget, name: "Old English Name")
 
       visit edit_admin_budget_group_path(budget, group)
 
@@ -174,7 +139,10 @@ describe "Admin budget groups" do
       click_button "Save group"
 
       expect(page).to have_content "Group updated successfully"
-      expect(group.reload.slug).to eq old_slug
+
+      visit budget_group_path(budget, id: "old-english-name")
+
+      expect(page).to have_content "Select an option"
 
       visit edit_admin_budget_group_path(budget, group)
 
@@ -183,8 +151,10 @@ describe "Admin budget groups" do
       click_button "Save group"
 
       expect(page).to have_content "Group updated successfully"
-      expect(group.reload.slug).not_to eq old_slug
-      expect(group.slug).to eq "new-english-name"
+
+      visit budget_group_path(budget, id: "new-english-name")
+
+      expect(page).to have_content "Select an option"
     end
   end
 

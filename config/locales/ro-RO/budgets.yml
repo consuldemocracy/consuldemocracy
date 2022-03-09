@@ -3,10 +3,21 @@ ro:
     ballots:
       show:
         title: Votul tău
+        amount_progress: "%{amount_spent} / %{amount_limit}"
         amount_available:
           knapsack: "Mai aveți <span>%{count}</span> de investit."
+          approval:
+            zero: "Încă puteți exprima <span>%{count}</span> voturi."
+            one: "Încă puteți exprima <span>%{count}</span> vot."
+            few: "Încă puteți exprima <span>%{count}</span> voturi."
+            other: "Încă puteți exprima <span>%{count}</span> voturi."
         amount_spent:
           knapsack: "Sumă cheltuită <span>%{count}</span>"
+          approval:
+            zero: "Voturi exprimate: <span>%{count}</span>"
+            one: "Voturi exprimate: <span>%{count}</span>"
+            few: "Voturi exprimate: <span>%{count}</span>"
+            other: "Voturi exprimate: <span>%{count}</span>"
         amount_limit:
           knapsack: "%{count}"
           approval:
@@ -32,7 +43,7 @@ ro:
         different_heading_assigned: "Ați votat deja o altă rubrică: %{heading_link}"
         not_enough_available_votes: "Ați atins numărul maxim de voturi permise pe zi"
         change_ballot: schimbă-ți voturile
-        casted_offline: Ați participat deja offline
+        casted_offline: Ați participat deja off line
     groups:
       show:
         title: Selectați o opțiune
@@ -58,12 +69,11 @@ ro:
         icon_alt: Pictograma bugetelor participative
         title: Bugete participative
         help: Ajutor cu procesele de bugetare participativă
-        all_phases: Vezi toate etapele
       all_phases: Etapele bugetului de investiții
+      next_phase: Etapa următoare
+      prev_phase: Etapa anterioară
+      current_phase: Etapa curentă
       map: Propunerile investițiilor bugetare situate geografic
-      investment_proyects: Lista tuturor proiectelor de investiții
-      unfeasible_investment_proyects: Lista tuturor proiectelor de investiții imposibile
-      not_selected_investment_proyects: Lista tuturor proiectelor de investiții care nu sunt selectate pentru votare
       finished_budgets: Bugete participative terminate
       see_results: Vezi rezultatele
       section_footer:
@@ -115,9 +125,13 @@ ro:
           verified_only: "Pentru a crea o nouă investiție bugetară %{verify}."
           create: "Crează un buget de investiții"
           not_logged_in: "Pentru a crea un nou buget de investiții trebuie să %{sign_in} sau %{sign_up}."
-          by_feasibility: După fezabilitate
-          feasible: Proiecte posibile
-          unfeasible: Proiecte imposibile
+        filter: "Filtrează proiectele după"
+        filters:
+          not_unfeasible: "Realizabil"
+          selected: "Selectat"
+          unfeasible: "Nerealizabil"
+          unselected: "Neselectat"
+          winners: "Câștigător"
         orders:
           random: aleatoriu
           confidence_score: cel mai bine cotat
@@ -161,26 +175,12 @@ ro:
           other: "%{count} persoane susțin"
         give_support: Sprijină
       header:
-        check_ballot: Verifică și confirmă votul
+        check_ballot: "Verifică și confirmă votul"
         different_heading_assigned: "Aveți voturi active în altă rubrică: %{heading_link}"
         change_ballot: "Dacă vă răzgândiți, puteți elimina voturile din %{check_ballot} și puteți începe din nou."
         check_ballot_link: "verifică și confirmă votul"
         price: "Această rubrică are un buget de"
-    progress_bar:
-      assigned: "Ați atribuit: "
-      available: "Buget disponibil: "
-      votes:
-        zero: "Ați selectat <strong>0</strong> proiecte din <strong>%{limit}</strong>"
-        one: "Ați selectat <strong>1</strong> proiect din <strong>%{limit}</strong>"
-        few: "Ați selectat <strong>%{count}</strong> proiecte din <strong>%{limit}</strong>"
-        other: "Ați selectat <strong>%{count}</strong> proiecte din <strong>%{limit}</strong>"
     show:
-      group: Grup
-      phase: Etapa actuală
-      unfeasible_title: Investiții imposibile
-      unfeasible: Vezi investițiile nerealizabile
-      unselected_title: Investiții neselectate pentru etapa de votare
-      unselected: Vezi investițiile neselectate pentru etapa de votare
       see_results: Vezi rezultatele
     results:
       link: Rezultate
@@ -207,7 +207,7 @@ ro:
       no_winner_investments: "Nu există investiții câștigătoare în această stare"
       filters:
         status:
-          label: "Statusul proiectului"
+          label: "Statusul curent al proiectului"
           all: "Toate (%{count})"
         milestone_tag:
           label: "Etichete reper"

@@ -111,7 +111,6 @@ id:
       index:
         hidden: Diblokir
         hide: Blokir
-        search: Cari
         search_placeholder: surel atau nama pengguna
         title: Blokir pengguna
       notice_hide: Pengguna yang diblokir. Semua ini pengguna perdebatan dan komentar yang telah disembunyikan.

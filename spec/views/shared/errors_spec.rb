@@ -1,13 +1,17 @@
 require "rails_helper"
 
 describe "shared errors" do
-  class DummyModel
-    include ActiveModel::Model
-    attr_accessor :title, :description, :days
+  before do
+    dummy_model = Class.new do
+      include ActiveModel::Model
+      attr_accessor :title, :description, :days
 
-    validates :title, presence: true
-    validates :description, presence: true, length: { in: 10..100 }
-    validates :days, numericality: { greater_than: 10 }
+      validates :title, presence: true
+      validates :description, presence: true, length: { in: 10..100 }
+      validates :days, numericality: { greater_than: 10 }
+    end
+
+    stub_const("DummyModel", dummy_model)
   end
 
   it "counts the number of fields with errors" do

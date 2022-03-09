@@ -8,14 +8,11 @@
 
   <div class="float-right">
     <%= link_to t("admin.site_customization.pages.cards.create_card"),
-        new_admin_widget_card_path(page_id: params[:page_id]), class: "button" %>
+                new_admin_site_customization_page_widget_card_path(@page), class: "button" %>
   </div>
 
-  <% if @cards.present? %>
-    <%= render "cards", cards: @cards %>
-  <% else %>
-    <div class="callout primary clear">
-      <%= t("admin.site_customization.pages.cards.no_cards") %>
-    </div>
-  <% end %>
+  <%= render Admin::Widget::Cards::TableComponent.new(
+    @cards,
+    no_cards_message: t("admin.site_customization.pages.cards.no_cards")
+  ) %>
 </div>

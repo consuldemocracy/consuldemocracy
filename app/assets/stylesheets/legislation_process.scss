@@ -16,21 +16,6 @@
 
 .legislation-hero {
 
-  ul {
-    list-style: none;
-    margin-left: 0;
-
-    li {
-
-      &::before {
-        color: #8aa8be;
-        content: "■";
-        padding-right: $line-height / 4;
-        vertical-align: text-bottom;
-      }
-    }
-  }
-
   .title {
     font-weight: bold;
     text-transform: uppercase;
@@ -159,8 +144,8 @@
     margin-bottom: rem-calc(40);
 
     .debate-type {
+      @include brand-text;
       text-transform: uppercase;
-      color: $brand;
       font-weight: 700;
       font-size: $small-font-size;
 
@@ -170,7 +155,7 @@
     }
 
     .debate-title a {
-      color: $brand;
+      @include brand-text;
     }
   }
 
@@ -223,7 +208,7 @@
     }
 
     h4 a {
-      color: $brand;
+      @include brand-text;
 
       &:hover {
         text-decoration: none;
@@ -240,8 +225,8 @@
     }
 
     .quiz-next {
+      @include brand-text;
       background: #ccdbe5;
-      color: $brand;
       font-size: $small-font-size;
       font-weight: bold;
       text-align: right;
@@ -254,8 +239,7 @@
 
       &:hover,
       &:active {
-        background: $brand;
-        color: #fff;
+        @extend %brand-background;
         text-decoration: none;
       }
     }
@@ -380,39 +364,34 @@
 
     @include breakpoint(medium) {
       display: flex;
-      padding-left: rem-calc(15);
-      padding-right: rem-calc(15);
-    }
 
-    .calc-index {
-      .draft-panel {
-        cursor: pointer;
-      }
-
-      .draft-index-rotated {
-        display: none;
-      }
-    }
-
-    @media screen and (min-width: 40em) {
       .calc-index {
-        width: calc(35% - 25px);
+        max-width: calc(35% - 25px);
+
+        .draft-index {
+          @supports (position: sticky) {
+            max-height: 100vh;
+            overflow-y: auto;
+            position: sticky;
+            top: $line-height;
+          }
+        }
+
+        > * {
+          padding-right: rem-calc(20);
+        }
       }
 
       .calc-text {
-        width: calc(65% - 25px);
+        flex: 1;
       }
 
       .calc-comments {
-        cursor: pointer;
-        background: #f2f2f2;
-        width: rem-calc(50);
+        min-width: 15rem;
+        width: calc(35% - 25px);
 
-        .draft-panel {
-
-          .panel-title {
-            display: none;
-          }
+        > * {
+          padding-left: rem-calc(20);
         }
       }
     }
@@ -445,7 +424,6 @@
         line-height: 0;
         color: $text-medium;
         vertical-align: sub;
-        margin-right: rem-calc(4);
       }
     }
 
@@ -491,6 +469,8 @@
       padding: rem-calc(16);
 
       @include breakpoint(medium) {
+        margin: 0 auto;
+        max-width: 3 * $grid-row-width / 4;
         padding: rem-calc(32) rem-calc(32) rem-calc(32) rem-calc(48);
       }
 
@@ -538,60 +518,54 @@
 
     .calc-comments {
       position: relative;
+    }
 
-      .comment-box {
+    summary {
+      cursor: pointer;
+      list-style: none;
+
+      &::-webkit-details-marker {
         display: none;
-      }
-
-      .draft-comments-rotated {
-        @include breakpoint(medium) {
-          font-size: $small-font-size;
-          text-transform: uppercase;
-          font-weight: 700;
-          color: #696969;
-          margin-top: rem-calc(64);
-          transform: rotate(-90deg);
-          filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-        }
       }
     }
-  }
 
-  .comments-on {
-    .calc-index {
-      width: rem-calc(50);
+    details:not([open]) {
       background: #f2f2f2;
-      cursor: pointer;
 
-      .panel-title {
-        display: none;
+      @include breakpoint(small only) {
+        border-bottom: 1px solid #d4d4d4;
       }
 
-      .draft-index {
-        display: none;
-      }
+      @include breakpoint(medium) {
+        min-width: auto;
+        width: rem-calc(50);
 
-      .draft-index-rotated {
-        @include breakpoint(medium) {
+        .draft-panel {
           line-height: 1;
           display: block;
           font-size: $small-font-size;
           text-transform: uppercase;
           font-weight: 700;
           color: #696969;
-          margin-top: $line-height;
-          transform: rotate(-90deg);
-          filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+          padding: 0;
+          text-align: center;
+
+          .icon-banner::before,
+          .icon-comments::before {
+            display: block;
+            margin: rem-calc(24) auto rem-calc(36);
+          }
 
           .panel-title {
             display: block;
+            transform: rotate(-90deg);
+            filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
           }
         }
       }
     }
 
     .calc-text {
-      width: calc(65% - 25px);
       border-right: 0;
 
       .show-comments {
@@ -611,23 +585,23 @@
     .calc-comments {
       background: #fff;
       cursor: auto;
-      width: calc(35% - 25px);
 
-      .draft-panel {
-        cursor: pointer;
+      @include breakpoint(small only) {
+        summary {
+          display: none;
+        }
       }
 
-      .draft-comments-rotated {
-        display: none;
+      &:not([open]) {
+        border-left: 1px solid #d4d4d4;
       }
 
       .comments-box-container {
-        position: absolute;
-        top: rem-calc(230);
+        position: relative;
+        top: rem-calc(180);
       }
 
       .comment-box {
-        width: rem-calc(375);
         padding: rem-calc(4);
         background: #f9f9f9;
         border: 1px solid $border;
@@ -801,15 +775,6 @@
               }
             }
           }
-        }
-      }
-
-      .draft-panel {
-        background: #e5e5e5;
-        border-left: 1px solid #d4d4d4;
-
-        .panel-title {
-          display: inline-block;
         }
       }
     }
@@ -1015,12 +980,6 @@
     @include grid-row;
     margin-top: $line-height * 1.5;
     padding: 0 rem-calc(16);
-
-    > header {
-      background: none;
-      border: 0;
-      margin: 0;
-    }
   }
 
   h4,
@@ -1060,7 +1019,7 @@
   }
 
   .comments-count {
-    @include has-fa-icon(comments, r);
+    @include has-fa-icon(comments, regular);
   }
 
   .question-title:not(:only-child) {

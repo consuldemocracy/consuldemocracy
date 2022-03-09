@@ -1,20 +1,15 @@
 require "rails_helper"
 
-describe "Signature sheets" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
+describe "Signature sheets", :admin do
   context "Index" do
     scenario "Lists all signature_sheets" do
-      3.times { create(:signature_sheet) }
+      signature_sheets = 3.times.map { create(:signature_sheet) }
 
       visit admin_signature_sheets_path
 
       expect(page).to have_css(".signature_sheet", count: 3)
 
-      SignatureSheet.find_each do |signature_sheet|
+      signature_sheets.each do |signature_sheet|
         expect(page).to have_content signature_sheet.name
       end
     end
@@ -76,16 +71,10 @@ describe "Signature sheets" do
     end
   end
 
-  context "Create throught all required_fields_to_verify of custom census api" do
+  context "Create throught all required_fields_to_verify of custom census api", :remote_census do
     before do
-      Setting["feature.remote_census"] = true
-      Setting["remote_census.request.date_of_birth"] = "some.value"
-      Setting["remote_census.request.postal_code"] = "some.value"
-      access_user_data = "get_habita_datos_response.get_habita_datos_return.datos_habitante.item"
-      access_residence_data = "get_habita_datos_response.get_habita_datos_return.datos_vivienda.item"
-      Setting["remote_census.response.date_of_birth"] = "#{access_user_data}.fecha_nacimiento_string"
-      Setting["remote_census.response.postal_code"] = "#{access_residence_data}.codigo_postal"
-      Setting["remote_census.response.valid"] = access_user_data
+      mock_valid_remote_census_response
+      mock_invalid_signature_sheet_remote_census_response
     end
 
     scenario "Proposal" do

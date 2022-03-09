@@ -12,7 +12,6 @@ module Abilities
       can :read, Comment
 
       can :hide, Comment, hidden_at: nil
-      cannot :hide, Comment, user_id: user.id
 
       can :ignore_flag, Comment, ignored_flag_at: nil, hidden_at: nil
       cannot :ignore_flag, Comment, user_id: user.id

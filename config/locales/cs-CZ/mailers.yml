@@ -75,8 +75,13 @@ cs:
       hi: Dobrý den
       commenter_info: "%{commenter}, %{time}:"
     new_actions_notification_rake_created:
+      subject: "Další novinky o vašem občanském návrhu"
       hi: "Dobrý den %{name},"
+      text_5: "Další akce, kterou doporučujeme, je:"
+      footer_text: "Jako vždy vstupte do panelu Návrhy a my vám podrobně řekneme, jak tyto zdroje používat a jak z nich co nejlépe vytěžit."
+      dashboard_button: "Jen do toho, objevte je!"
     new_actions_notification_rake_published:
+      subject: "Další novinky o vašem občanském návrhu"
       hi: "Dobrý den %{name},"
     new_actions_notification_on_create:
       hi: "Ahoj %{name}!"
