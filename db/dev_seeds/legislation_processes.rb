@@ -1,6 +1,6 @@
 section "Creating collaborative legislation" do
   9.times do |i|
-    Legislation::Process.create!(title: Faker::Lorem.sentence(3).truncate(60),
+    Legislation::Process.create!(title: Faker::Lorem.sentence(word_count: 3).truncate(60),
                                  description: Faker::Lorem.paragraphs.join("\n\n"),
                                  summary: Faker::Lorem.paragraph,
                                  additional_info: Faker::Lorem.paragraphs.join("\n\n"),

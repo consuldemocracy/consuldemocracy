@@ -75,7 +75,6 @@ tr:
         phone: Kodu almak için cep telefonu numaranızı yazın
         phone_format: "<strong><em>(Örnek: 612345678 veya +34612345678)</em></strong>"
         phone_note: Telefonunuzu yalnızca size bir kod göndermek için kullanıyoruz, asla sizinle bağlantı kurmak için kullanmıyoruz.
-        phone_placeholder: "Örnek: 612345678 veya +34612345678"
         submit_button: Gönder
         title: Onay kodunu gönder
       update:

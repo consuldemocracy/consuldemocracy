@@ -52,6 +52,8 @@ class I18nContent < ApplicationRecord
   def self.translations_for(tab)
     if tab.to_s == "basic"
       basic_translations
+    elsif tab.to_s == "machine_learning"
+      machine_learning_translations
     else
       flat_hash(translations_hash_for(tab)).keys
     end
@@ -95,11 +97,56 @@ class I18nContent < ApplicationRecord
     ]
   end
 
+  def self.machine_learning_translations
+    %w[
+      admin.machine_learning.title
+      machine_learning.comments_summary
+      machine_learning.info_text
+      admin.machine_learning.comments_summary
+      admin.machine_learning.comments_summary_description
+      admin.machine_learning.related_content
+      admin.machine_learning.related_content_description
+      admin.machine_learning.tags
+      admin.machine_learning.tags_description
+    ]
+  end
+
   def self.translations_hash(locale)
     Rails.cache.fetch(translation_class.where(locale: locale)) do
       all.map do |content|
         [content.key, translation_class.find_by(i18n_content_id: content, locale: locale)&.value]
       end.to_h
+    end
+  end
+
+  def self.update(contents, enabled_translations = I18n.available_locales)
+    contents.each do |content|
+      values = content[:values].slice(*translation_params(enabled_translations))
+
+      unless values.empty?
+        values.each do |key, value|
+          locale = key.split("_").last
+
+          if value.match(/translation missing/)
+            next
+          elsif value == I18n.t(content[:id], locale: locale)
+            Globalize.with_locale(locale) do
+              I18nContent.find_by(key: content[:id])&.update!(value: value)
+            end
+          else
+            text = I18nContent.find_or_create_by!(key: content[:id])
+            Globalize.with_locale(locale) do
+              text.update!(value: value)
+            end
+          end
+        end
+      end
+    end
+  end
+
+  def self.translation_params(enabled_translations)
+    translated_attribute_names.product(enabled_translations).map do |attr_name, loc|
+      localized_attr_name_for(attr_name, loc)
     end
   end
 end

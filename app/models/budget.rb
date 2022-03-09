@@ -3,8 +3,9 @@ class Budget < ApplicationRecord
   include Sluggable
   include StatsVersionable
   include Reportable
+  include Imageable
 
-  translates :name, touch: true
+  translates :name, :main_link_text, :main_link_url, touch: true
   include Globalizable
 
   class Translation
@@ -23,6 +24,7 @@ class Budget < ApplicationRecord
   VOTING_STYLES = %w[knapsack approval].freeze
 
   validates_translation :name, presence: true
+  validates_translation :main_link_url, presence: true, unless: -> { main_link_text.blank? }
   validates :phase, inclusion: { in: Budget::Phase::PHASE_KINDS }
   validates :currency_symbol, presence: true
   validates :slug, presence: true, format: /\A[a-z0-9\-_]+\z/
@@ -42,6 +44,7 @@ class Budget < ApplicationRecord
   has_one :poll
 
   after_create :generate_phases
+  accepts_nested_attributes_for :phases
 
   scope :published, -> { where(published: true) }
   scope :drafting,  -> { where.not(id: published) }
@@ -151,12 +154,20 @@ class Budget < ApplicationRecord
     current_phase&.publishing_prices_or_later?
   end
 
-  def balloting_process?
-    balloting? || reviewing_ballots?
-  end
-
   def balloting_or_later?
     current_phase&.balloting_or_later?
+  end
+
+  def balloting_finished?
+    balloting_or_later? && !balloting?
+  end
+
+  def single_group?
+    groups.one?
+  end
+
+  def single_heading?
+    single_group? && headings.one?
   end
 
   def heading_price(heading)
@@ -176,15 +187,23 @@ class Budget < ApplicationRecord
 
   def investments_orders
     case phase
-    when "accepting", "reviewing"
+    when "accepting", "reviewing", "finished"
       %w[random]
     when "publishing_prices", "balloting", "reviewing_ballots"
       %w[random price]
-    when "finished"
-      %w[random]
     else
       %w[random confidence_score]
     end
+  end
+
+  def investments_filters
+    [
+      ("winners" if finished?),
+      ("selected" if publishing_prices_or_later? && !finished?),
+      ("unselected" if publishing_prices_or_later?),
+      ("not_unfeasible" if valuating?),
+      ("unfeasible" if valuating_or_later?)
+    ].compact
   end
 
   def email_selected

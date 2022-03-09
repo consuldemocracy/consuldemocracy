@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe SDGManagement::SubnavigationComponent, type: :component do
+describe SDGManagement::SubnavigationComponent do
   let(:component) do
     SDGManagement::SubnavigationComponent.new(current: :goals) do
       "Tab content"

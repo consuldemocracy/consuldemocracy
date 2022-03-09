@@ -21,13 +21,13 @@
           <div class="small-12 medium-10">
             <% if @account.organization? %>
               <%= f.fields_for :organization do |fo| %>
-                <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length, placeholder: t("account.show.organization_name_label") %>
-                <%= fo.text_field :responsible_name, autofocus: true, maxlength: Organization.responsible_name_max_length, placeholder: t("account.show.organization_responsible_name_placeholder") %>
+                <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length %>
+                <%= fo.text_field :responsible_name, autofocus: true, maxlength: Organization.responsible_name_max_length %>
               <% end %>
-              <%= f.text_field :phone_number, placeholder: t("account.show.phone_number_label") %>
+              <%= f.text_field :phone_number %>
 
             <% else %>
-              <%= f.text_field :username, maxlength: User.username_max_length, placeholder: t("account.show.username_label") %>
+              <%= f.text_field :username, maxlength: User.username_max_length %>
             <% end %>
           </div>
 

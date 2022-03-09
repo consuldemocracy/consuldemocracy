@@ -1,8 +1,12 @@
 gl:
   attributes:
+    geozone_id: "Ámbitos de actuación"
     results_enabled: "Amosar resultados"
     stats_enabled: "Amosar estatísticas"
     advanced_stats_enabled: "Amosar estatísticas avanzadas"
+    name: Nome
+    email: O teu correo electrónico
+    description: Descrición
   activerecord:
     models:
       activity:
@@ -140,6 +144,8 @@ gl:
         description_finished: "Descrición cando o orzamento está rematado"
         phase: "Fase"
         currency_symbol: "Moeda"
+      budget/translation:
+        name: "Nome"
       budget/investment:
         heading_id: "Partida"
         title: "Título"
@@ -150,6 +156,20 @@ gl:
         organization_name: "Se estás a propor no nome dunha organización, dun colectivo ou de mais xente, escribe o seu nome"
         image: "Imaxe descritiva da proposta"
         image_title: "Título da imaxe"
+        duration: "Prazo de execución <small>(opcional, dato non público)</small>"
+        feasibility_feasible: "Viable"
+        feasibility_undecided: "Sen definir"
+        feasibility_unfeasible: "Non viables"
+        incompatible: "Marcar como incompatible"
+        milestone_tag_list: "Etiquetas do investimento"
+        price_explanation: "Informe de custo"
+        selected: "Marcar como seleccionado"
+        selected_true: "Seleccionadas"
+        selected_false: "Non seleccionado"
+        unfeasibility_explanation: "Informe de inviabilidade"
+        valuation_finished: "Avaliación rematada"
+        valuator_ids: "Grupos"
+        valuation_tag_list: "Etiquetas"
       budget/investment/translation:
         title: "Título"
         description: "Descrición"
@@ -163,6 +183,8 @@ gl:
         title: "Título"
         description: "Descrición (opcional se hai unha condición asignada)"
         publication_date: "Data de publicación"
+      milestone/translation:
+        description: "Descrición"
       milestone/status:
         name: "Nome"
         description: "Descrición (opcional)"
@@ -173,16 +195,32 @@ gl:
       progress_bar/kind:
         primary: "Principal"
         secondary: "Secundaria"
+      budget/group/translation:
+        name: "Nome do grupo"
       budget/heading:
+        allow_custom_content: "Permite bloque de contido"
+        latitude: "Latitude"
+        longitude: "Lonxitude"
         name: "Nome da partida"
         price: "Custo"
         population: "Poboación"
+      budget/heading/translation:
+        name: "Nome da partida"
+      budget/phase:
+        enabled: "Fase habilitada"
+        ends_at: "Data de peche"
+        starts_at: "Data de apertura"
+      budget/phase/translation:
+        name: "Nome"
+        description: "Descrición"
+        summary: "Resumo"
       comment:
         body: "Comentar"
         user: "Usuario/a"
       debate:
         author: "Autoría"
         description: "Opinión"
+        tag_list: "Temas"
         terms_of_service: "Termos de servizo"
         title: "Título"
       debate/translation:
@@ -193,6 +231,8 @@ gl:
         title: "Título"
         question: "Pregunta"
         description: "Descrición"
+        responsible_name: "Nome e apelidos da persoa que fai esta proposta"
+        retired_reason: "Razón pola que se elimina a proposta"
         selected: "Marcar como seleccionado"
         terms_of_service: "Termos de servizo"
       proposal/translation:
@@ -207,25 +247,44 @@ gl:
         password_confirmation: "Confirmación de contrasinal"
         password: "Contrasinal que empregarás para acceder a este sitio web"
         current_password: "Contrasinal actual"
+        email_digest: "Recibir un resumo de notificacións sobre as propostas"
+        email_on_comment: "Recibir unha mensaxe de correo cando alguén comenta nas miñas propostas ou debates"
+        email_on_comment_reply: "Recibir unha mensaxe de correo cando alguén contesta aos meus comentarios"
+        email_on_direct_message: "Recibir correos con mensaxes privadas"
+        newsletter: "Recibir mensaxes de correo con información interesante sobre a web"
         official_position: "Cargo público"
+        official_position_badge: "Amosar etiqueta do tipo de usuario"
         official_level: "Nivel do cargo"
         phone_number: "Teléfono"
+        public_activity: "Amosar publicamente a miña lista de actividades"
+        recommended_debates: "Amosar recomendacións de debates"
+        recommended_proposals: "Amosar recomendacións de propostas"
         redeemable_code: "Código de verificación por carta (opcional)"
+      direct_message:
+        title: "Título"
+        body: "Mensaxe"
       organization:
         name: "Nome de organización"
         responsible_name: "Persoa responsable do colectivo"
       poll:
         name: "Nome"
+        title: "Nome"
         starts_at: "Data de apertura"
         ends_at: "Data de peche"
         geozone_restricted: "Restrinxida por zonas"
         summary: "Resumo"
         description: "Descrición"
+      active_poll/translation:
+        description: "Descrición"
+      poll/booth:
+        name: "Nome"
+        location: "Localización"
       poll/translation:
         name: "Nome"
         summary: "Resumo"
         description: "Descrición"
       poll/question:
+        poll_id: "Votación"
         title: "Pregunta"
         summary: "Resumo"
         description: "Descrición"
@@ -235,16 +294,34 @@ gl:
       poll/ballot_sheet:
         data: Datos CSV
         poll_id: Votación
+      poll/shift:
+        task: "Tarefa"
+      proposal_notification:
+        body: "Mensaxe"
+        title: "Título"
       signature_sheet:
+        title: "Título"
         signable_type: "Tipo de sinaturas"
         signable_id: "ID de proposta cidadá/proposta de investimento"
         document_numbers: "Números de documentos"
+      sdg/goal:
+        title: "Título"
+        description: "Descrición"
+      sdg/local_target:
+        title: "Título"
+      sdg/local_target/translation:
+        title: "Título"
+        description: "Descrición"
+      sdg/target:
+        title: "Título"
       site_customization/page:
         content: Contido
         created_at: Creada
         subtitle: Subtítulo
         slug: URL
         status: Estado
+        status_draft: "Bosquexo"
+        status_published: "Publicada"
         title: Título
         updated_at: Última actualización
         more_info_flag: Amosar na páxina de axuda
@@ -261,9 +338,20 @@ gl:
         name: Nome
         locale: idioma
         body: Contido
+      tag:
+        name: "Escribe o nome do tema"
+      topic:
+        title: "Título"
+        description: "Texto de inicio"
       banner:
         background_color: Cor de fondo
         font_color: Cor da letra
+        post_ended_at: "Fin de publicación"
+        post_started_at: "Inicio de publicación"
+        target_url: "Ligazón"
+      banner/translation:
+        title: "Título"
+        description: "Descrición"
       legislation/process:
         title: Título do proceso
         summary: Resumo
@@ -283,17 +371,26 @@ gl:
         result_publication_date: Data de publicación do resultado final
         background_color: Cor de fondo
         font_color: Cor da letra
+        homepage_enabled: "Páxina principal habilitada"
       legislation/process/translation:
         title: Título do proceso
         summary: Resumo
         description: Descrición
         additional_info: Información adicional
+        homepage: "Descrición"
         milestones_summary: Resumo
+      legislation/proposal:
+        description: "Descrición ampliada da proposta"
+        summary: "Resumo da proposta"
+        title: "Título da proposta"
+        video_url: "Ligazón a vídeo externo"
       legislation/draft_version:
         title: Título da versión
         body: Texto
         changelog: Cambios
         status: Estado
+        status_draft: "Bosquexo"
+        status_published: "Publicada"
         final_version: Versión final
       legislation/draft_version/translation:
         title: Título da versión
@@ -302,6 +399,8 @@ gl:
       legislation/question:
         title: Título
         question_options: Opcións
+      legislation/question/translation:
+        title: Pregunta
       legislation/question_option:
         value: Valor
       legislation/annotation:
@@ -370,6 +469,8 @@ gl:
         valuator_group_id: Grupo de avaliadores
         can_comment: Pode crear comentarios
         can_edit_dossier: Pode editar informes
+      valuator_group:
+        name: "Nome do grupo"
       local_census_record:
         document_type: Tipo de documento
         document_number: Número de documento
@@ -402,14 +503,12 @@ gl:
           attributes:
             segment_recipient:
               invalid: "O segmento de destinatarios é inválido"
-        map_location:
-          attributes:
-            map:
-              invalid: A localización no mapa non pode estar en branco. Podes engadir un punto ao mapa ou marcar a cela se non é necesario o mapa
         poll/voter:
           attributes:
             document_number:
               not_in_census: "Este documento non está no censo"
+            user_id:
+              has_voted: "Este usuario xa votou"
         legislation/process:
           attributes:
             end_date:

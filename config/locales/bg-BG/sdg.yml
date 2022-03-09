@@ -1,1 +1,7 @@
 bg:
+  sdg:
+    goals:
+      help:
+        title: "Цели за устойчиво развитие - помощ"
+    related_list_selector:
+      remove_tag: "Премахване"

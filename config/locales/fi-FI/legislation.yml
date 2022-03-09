@@ -61,3 +61,13 @@ fi:
     proposals:
       form:
         tags_label: "Kategoriat"
+    summary:
+      title: "Yhteenveto"
+      votes:
+        zero: "%{count} ääntä"
+      comments:
+        zero: "Ei kommentteja"
+        one: "%{count} kommentti"
+        other: "%{count} kommenttia"
+      top_comments:
+        zero: "Ei kommentteja"

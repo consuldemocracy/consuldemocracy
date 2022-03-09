@@ -42,7 +42,7 @@ describe "Votes" do
         visit budget_investments_path(budget, heading_id: heading.id)
 
         within(".supports") do
-          find(".in-favor a").click
+          click_button "Support"
 
           expect(page).to have_content "1 support"
           expect(page).to have_content "You have already supported this investment project. "\
@@ -63,10 +63,10 @@ describe "Votes" do
         visit budget_investment_path(budget, investment)
 
         within(".supports") do
-          find(".in-favor a").click
-          expect(page).to have_content "1 support"
+          click_button "Support"
 
-          expect(page).not_to have_selector ".in-favor a"
+          expect(page).not_to have_button "Support", disabled: :all
+          expect(page).to have_content "1 support"
         end
       end
 
@@ -74,7 +74,7 @@ describe "Votes" do
         visit budget_investment_path(budget, investment)
 
         within(".supports") do
-          find(".in-favor a").click
+          click_button "Support"
 
           expect(page).to have_content "1 support"
           expect(page).to have_content "You have already supported this investment project. "\
@@ -120,17 +120,19 @@ describe "Votes" do
         visit budget_investments_path(budget, heading_id: new_york.id)
 
         within("#budget_investment_#{new_york_investment.id}") do
-          accept_confirm { find(".in-favor a").click }
+          accept_confirm { click_button "Support" }
 
           expect(page).to have_content "1 support"
           expect(page).to have_content "You have already supported this investment project. "\
                                        "Share it!"
         end
 
+        expect(page).to have_content "Investment supported successfully"
+
         visit budget_investments_path(budget, heading_id: san_francisco.id)
 
         within("#budget_investment_#{san_francisco_investment.id}") do
-          find(".in-favor a").click
+          click_button "Support"
 
           expect(page).to have_content "1 support"
           expect(page).to have_content "You have already supported this investment project. "\
@@ -140,7 +142,7 @@ describe "Votes" do
         visit budget_investments_path(budget, heading_id: third_heading.id)
 
         within("#budget_investment_#{third_heading_investment.id}") do
-          find(".in-favor a").click
+          click_button "Support"
 
           expect(page).to have_content "You can only support investment projects in 2 districts. "\
                                        "You have already supported investments in"
@@ -160,19 +162,22 @@ describe "Votes" do
       scenario "From show" do
         visit budget_investment_path(budget, new_york_investment)
 
-        accept_confirm { find(".in-favor a").click }
+        accept_confirm { click_button "Support" }
+
         expect(page).to have_content "1 support"
         expect(page).to have_content "You have already supported this investment project. Share it!"
 
         visit budget_investment_path(budget, san_francisco_investment)
 
-        find(".in-favor a").click
+        click_button "Support"
+
         expect(page).to have_content "1 support"
         expect(page).to have_content "You have already supported this investment project. Share it!"
 
         visit budget_investment_path(budget, third_heading_investment)
 
-        find(".in-favor a").click
+        click_button "Support"
+
         expect(page).to have_content "You can only support investment projects in 2 districts. "\
                                      "You have already supported investments in"
 
@@ -189,9 +194,19 @@ describe "Votes" do
 
       scenario "Confirm message shows the right text" do
         visit budget_investments_path(budget, heading_id: new_york.id)
-        find(".in-favor a").click
+        click_button "Support"
 
         expect(page.driver.send(:find_modal).text).to match "You can only support investments in 2 districts."
+      end
+
+      scenario "Do not show confirm message if user can vote in all headings" do
+        group.update!(max_votable_headings: group.headings.count)
+
+        visit budget_investments_path(budget, heading_id: new_york.id)
+        click_button "Support"
+
+        expect(page).to have_content "1 support"
+        expect(page).to have_content "You have already supported this investment project. Share it!"
       end
     end
   end

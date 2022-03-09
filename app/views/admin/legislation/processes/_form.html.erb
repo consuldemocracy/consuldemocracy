@@ -110,7 +110,7 @@
 
   <div class="row">
     <div class="documents small-12 column">
-      <%= render "documents/nested_documents", documentable: @process, f: f %>
+      <%= render "documents/nested_documents", f: f %>
     </div>
 
     <div class="small-12 column">
@@ -118,7 +118,7 @@
     </div>
 
     <div class="images small-12 column">
-      <%= render "images/nested_image", imageable: @process, f: f %>
+      <%= render "images/nested_image", f: f %>
     </div>
 
     <div class="small-12 column">
@@ -163,35 +163,33 @@
   <div class="row">
     <%= f.translatable_fields do |translations_form| %>
       <div class="small-12 medium-9 column">
-        <%= translations_form.text_field :title,
-                                         placeholder: t("admin.legislation.processes.form.title_placeholder") %>
+        <%= translations_form.text_field :title %>
       </div>
 
       <div class="small-12 medium-9 column">
         <%= translations_form.text_area :summary,
                                         rows: 2,
-                                        placeholder: t("admin.legislation.processes.form.summary_placeholder"),
                                         hint: t("admin.legislation.processes.form.use_markdown") %>
       </div>
 
       <div class="small-12 medium-9 column">
         <%= translations_form.text_area :description,
                                         rows: 5,
-                                        placeholder: t("admin.legislation.processes.form.description_placeholder"),
                                         hint: t("admin.legislation.processes.form.use_markdown") %>
       </div>
 
       <div class="small-12 medium-9 column end">
         <%= translations_form.text_area :additional_info,
                                         rows: 10,
-                                        placeholder: t("admin.legislation.processes.form.additional_info_placeholder"),
                                         hint: t("admin.legislation.processes.form.use_markdown") %>
       </div>
     <% end %>
   </div>
 
   <div class="row">
-    <%= render SDG::RelatedListSelectorComponent.new(f) %>
+    <div class="small-12 column">
+      <%= render SDG::RelatedListSelectorComponent.new(f) %>
+    </div>
   </div>
 
   <div class="row">

@@ -30,8 +30,8 @@ class Budget
       all.sort_by(&:name)
     end
 
-    def single_heading_group?
-      headings.count == 1
+    def multiple_headings?
+      headings.size > 1
     end
 
     private

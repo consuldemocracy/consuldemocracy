@@ -74,6 +74,7 @@ class User < ApplicationRecord
     class_name:  "Poll::Recount",
     foreign_key: :author_id,
     inverse_of:  :author
+  has_many :related_contents, foreign_key: :author_id, inverse_of: :author, dependent: nil
   has_many :topics, foreign_key: :author_id, inverse_of: :author
   belongs_to :geozone
 
@@ -161,11 +162,6 @@ class User < ApplicationRecord
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
   end
 
-  def budget_investment_votes(budget_investments)
-    voted = votes.for_budget_investments(budget_investments)
-    voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
-  end
-
   def comment_flags(comments)
     comment_flags = flags.for_comments(comments)
     comment_flags.each_with_object({}) { |f, h| h[f.flaggable_id] = true }
@@ -247,7 +243,7 @@ class User < ApplicationRecord
     Comment.hide_all comment_ids
     Proposal.hide_all proposal_ids
     Budget::Investment.hide_all budget_investment_ids
-    ProposalNotification.hide_all ProposalNotification.where(author_id: id).pluck(:id)
+    ProposalNotification.hide_all ProposalNotification.where(author_id: id).ids
   end
 
   def full_restore
@@ -352,7 +348,7 @@ class User < ApplicationRecord
   end
 
   def send_oauth_confirmation_instructions
-    if oauth_email != email
+    if oauth_email != email || confirmed_at.nil?
       update(confirmed_at: nil)
       send_confirmation_instructions
     end

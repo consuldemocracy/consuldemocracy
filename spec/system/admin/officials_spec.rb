@@ -15,7 +15,7 @@ describe "Admin officials", :admin do
 
   scenario "Edit an official" do
     visit admin_officials_path
-    click_link "Edit official"
+    click_link "Edit"
 
     expect(page).to have_current_path(edit_admin_official_path(official))
 

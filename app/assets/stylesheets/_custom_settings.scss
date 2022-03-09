@@ -1,22 +1,20 @@
-// Overrides and adds customized foundation settings in this file
-// Read more on documentation:
-// * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
-// * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
+// To override existing variables, use the file named
+// `_consul_custom_overrides.scss` instead
 //
 
-$brand: #97BF0D;
-$brand-original: #004a83;
-$brand-dark: #78980a;
-$brand-very-dark: #42663A;
-$brand-light: #b6d255;
-$very-light: #caffbe;
+$brand:           #97bf0d;
+$brand-original:  #004a83;
+$brand-dark:      #78980a;
+$brand-very-dark: #42663a;
+$brand-light:     #b6d255;
+$very-light:      #caffbe;
 
 $foundation-palette: (
-  primary: $brand,
+  primary:   $brand,
   secondary: #767676,
-  success: $brand,
-  warning: #ffae00,
-  alert: #cc4b37,
+  success:   $brand,
+  warning:   #ffae00,
+  alert:     #cc4b37,
 );
 
 $budget: $brand;

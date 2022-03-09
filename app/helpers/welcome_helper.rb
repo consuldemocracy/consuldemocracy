@@ -34,7 +34,7 @@ module WelcomeHelper
   def calculate_carousel_size(debates, proposals, apply_offset)
     offset = calculate_offset(debates, proposals, apply_offset)
     centered = calculate_centered(debates, proposals)
-    "#{offset if offset} #{centered if centered}"
+    "#{offset} #{centered}"
   end
 
   def calculate_centered(debates, proposals)

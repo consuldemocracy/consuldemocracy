@@ -11,7 +11,7 @@ describe "Budget Investments" do
                   "user",
                   "budget_investment",
                   "new_management_budget_investment_path",
-                  { "budget_id": "budget_id" },
+                  { budget_id: "budget_id" },
                   "documentable_fill_new_valid_budget_investment",
                   "Create Investment",
                   "Investment created successfully.",
@@ -20,7 +20,7 @@ describe "Budget Investments" do
   it_behaves_like "nested imageable",
                   "budget_investment",
                   "new_management_budget_investment_path",
-                  { "budget_id": "budget_id" },
+                  { budget_id: "budget_id" },
                   "imageable_fill_new_valid_budget_investment",
                   "Create Investment",
                   "Investment created successfully.",
@@ -32,7 +32,7 @@ describe "Budget Investments" do
                   "new_management_budget_investment_path",
                   "",
                   "management_budget_investment_path",
-                  { "budget_id": "budget_id" },
+                  { budget_id: "budget_id" },
                   management: true
 
   context "Load" do
@@ -65,8 +65,7 @@ describe "Budget Investments" do
         expect(page).to have_content user.document_number
       end
 
-      select "Health", from: "budget_investment_heading_id"
-      fill_in "Title", with: "Build a park in my neighborhood"
+      fill_in_new_investment_title with: "Build a park in my neighborhood"
       fill_in_ckeditor "Description", with: "There is no parks here..."
       fill_in "budget_investment_location", with: "City center"
       fill_in "budget_investment_organization_name", with: "T.I.A."
@@ -278,16 +277,16 @@ describe "Budget Investments" do
       expect(page).to have_content(budget_investment.title)
 
       within("#budget-investments") do
-        find(".js-in-favor a").click
+        click_button "Support"
 
         expect(page).to have_content "1 support"
         expect(page).to have_content "You have already supported this investment project. Share it!"
       end
     end
 
-    # This test passes ok locally but fails on the last two lines in Travis
-    xscenario "Supporting budget investments on behalf of someone in show view" do
+    scenario "Supporting budget investments on behalf of someone in show view" do
       budget_investment = create(:budget_investment, budget: budget)
+      manager.user.update!(level_two_verified_at: Time.current)
 
       login_managed_user(user)
       login_as_manager(manager)
@@ -301,9 +300,89 @@ describe "Budget Investments" do
         click_link budget_investment.title
       end
 
-      find(".js-in-favor a").click
+      expect(page).to have_css "h1", exact_text: budget_investment.title
+
+      click_button "Support"
+
       expect(page).to have_content "1 support"
-      expect(page).to have_content "You have already supported this. Share it!"
+      expect(page).to have_content "You have already supported this investment project. Share it!"
+
+      refresh
+
+      expect(page).to have_content "1 support"
+      expect(page).to have_content "You have already supported this investment project. Share it!"
+    end
+
+    scenario "Support investments on behalf of someone else when there are more headings" do
+      create(:budget_investment, heading: heading, title: "Default heading investment")
+      create(:budget_investment, heading: create(:budget_heading, group: group))
+
+      login_managed_user(user)
+      login_as_manager(manager)
+
+      visit management_budget_investments_path(budget)
+      click_link "Default heading investment"
+
+      expect(page).to have_css "h1", exact_text: "Default heading investment"
+
+      accept_confirm { click_button "Support" }
+
+      expect(page).to have_content "1 support"
+      expect(page).to have_content "You have already supported this investment project. Share it!"
+      expect(page).to have_content "Investment supported successfully"
+      expect(page).to have_content "CONSUL\nMANAGEMENT"
+    end
+
+    scenario "Remove support on behalf of someone else in index view" do
+      Setting["feature.remove_investments_supports"] = true
+      create(:budget_investment, heading: heading)
+
+      login_managed_user(user)
+      login_as_manager(manager)
+
+      visit management_budget_investments_path(budget)
+      click_button "Support"
+
+      expect(page).to have_content "1 support"
+      expect(page).to have_content "You have already supported this investment project. Share it!"
+      expect(page).not_to have_button "Support"
+
+      click_button "Remove your support"
+
+      expect(page).to have_content "No supports"
+      expect(page).to have_button "Support"
+      expect(page).not_to have_button "Remove your support"
+    end
+
+    scenario "Remove support on behalf of someone else in show view" do
+      Setting["feature.remove_investments_supports"] = true
+      create(:budget_investment, heading: heading, title: "Don't support me!")
+
+      login_managed_user(user)
+      login_as_manager(manager)
+
+      visit management_budget_investments_path(budget)
+      click_link "Don't support me!"
+
+      expect(page).to have_css "h1", exact_text: "Don't support me!"
+
+      click_button "Support"
+
+      expect(page).to have_content "1 support"
+      expect(page).to have_content "You have already supported this investment project. Share it!"
+      expect(page).not_to have_button "Support"
+
+      click_button "Remove your support"
+
+      expect(page).to have_content "No supports"
+      expect(page).to have_button "Support"
+      expect(page).not_to have_button "Remove your support"
+
+      refresh
+
+      expect(page).to have_content "No supports"
+      expect(page).to have_button "Support"
+      expect(page).not_to have_button "Remove your support"
     end
 
     scenario "Should not allow unverified users to vote proposals" do
@@ -397,7 +476,7 @@ describe "Budget Investments" do
         expect(page).to have_content(low_investment.title)
       end
 
-      select "Whole city: District Nine", from: "heading_id"
+      select "District Nine", from: "heading_id"
       click_button("Search")
 
       within "#budget-investments" do

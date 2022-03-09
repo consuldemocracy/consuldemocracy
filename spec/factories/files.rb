@@ -55,4 +55,10 @@ FactoryBot.define do
     end
     initialize_with { new(attributes) }
   end
+
+  factory :active_storage_blob, class: "ActiveStorage::Blob" do
+    filename { "sample.pdf" }
+    byte_size { 3000 }
+    checksum { SecureRandom.hex(32) }
+  end
 end

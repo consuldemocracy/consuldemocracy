@@ -16,10 +16,4 @@
   <%= m_l_fields.hidden_field :zoom,
                               value: map_location.zoom,
                               id: map_location_input_id(parent_class, "zoom") %>
-
-  <div>
-    <%= form.check_box :skip_map,
-                       label: t("#{i18n_namespace}.form.map_skip_checkbox"),
-                       class: "js-toggle-map" %>
-  </div>
 <% end %>

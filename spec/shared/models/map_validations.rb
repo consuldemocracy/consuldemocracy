@@ -8,13 +8,11 @@ shared_examples "map validations" do
 
     it "is valid with a map location" do
       mappable.map_location = build(:map_location)
-      mappable.skip_map = nil
 
       expect(mappable).to be_valid
     end
 
-    it "is valid accepting that the mappable has no map" do
-      mappable.skip_map = "1"
+    it "is valid without a location" do
       mappable.map_location = nil
 
       expect(mappable).to be_valid
@@ -24,22 +22,8 @@ shared_examples "map validations" do
       Setting["feature.map"] = nil
 
       mappable.map_location = nil
-      mappable.skip_map = nil
 
       expect(mappable).to be_valid
-    end
-
-    it "is not valid without a map location" do
-      mappable.map_location = nil
-      mappable.skip_map = nil
-
-      expect(mappable).not_to be_valid
-    end
-
-    it "is not valid without accepting that the mappable has no map" do
-      mappable.skip_map = nil
-
-      expect(mappable).not_to be_valid
     end
   end
 
@@ -50,7 +34,7 @@ shared_examples "map validations" do
       mappable.save!
 
       expect { map_location.update(latitude: 12.34) }
-        .to change { mappable.reload.updated_at }
+        .to change { mappable.reload.cache_version }
     end
   end
 end

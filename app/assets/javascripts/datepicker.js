@@ -17,7 +17,7 @@
   App.Datepicker = {
     initialize: function() {
       var locale;
-      locale = $("#js-locale").data("current-locale");
+      locale = document.documentElement.lang;
       $(".js-calendar").datepicker({
         maxDate: "+0d"
       });

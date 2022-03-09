@@ -24,21 +24,51 @@ describe SDG::Target do
     expect(target.errors.full_messages).to include "Code has already been taken"
   end
 
-  it "translates title" do
-    target = SDG::Target["1.1"]
+  describe "#long_title" do
+    it "returns the official title in the desired language" do
+      target = SDG::Target["1.1"]
 
-    expect(target.title).to start_with "By 2030, eradicate extreme poverty"
+      expect(target.long_title).to start_with "By 2030, eradicate extreme poverty"
 
-    I18n.with_locale(:es) do
-      expect(target.title).to start_with "Para 2030, erradicar la pobreza extrema"
+      I18n.with_locale(:es) do
+        expect(target.long_title).to start_with "Para 2030, erradicar la pobreza extrema"
+      end
+
+      target = SDG::Target["17.11"]
+
+      expect(target.long_title).to start_with "Significantly increase the exports of developing countries"
+
+      I18n.with_locale(:es) do
+        expect(target.long_title).to start_with "Aumentar significativamente las exportaciones de los países"
+      end
+    end
+  end
+
+  describe "#title" do
+    let(:target) { SDG::Target["1.1"] }
+
+    it "returns the abbreviated title" do
+      expect(target.title).to eq "Eradicate Extreme Poverty"
     end
 
-    target = SDG::Target["17.11"]
+    context "translation unavailable" do
+      after { I18n.backend.reload! }
 
-    expect(target.title).to start_with "Significantly increase the exports of developing countries"
+      it "returns the official title when the abbreviated title isn't available" do
+        keys = { goals: { goal_1: { targets: { target_1_1: { short_title: nil }}}}}
 
-    I18n.with_locale(:es) do
-      expect(target.title).to start_with "Aumentar significativamente las exportaciones de los países"
+        I18n.backend.store_translations(:en, { sdg: keys })
+
+        expect(target.title).to start_with "By 2030, eradicate extreme poverty"
+      end
+    end
+  end
+
+  describe "#code_and_title" do
+    it "returns the code and the abbreviated title" do
+      target = SDG::Target["8.A"]
+
+      expect(target.code_and_title).to eq "8.A. Increase Aid for Trade Support"
     end
   end
 

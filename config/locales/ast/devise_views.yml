@@ -2,10 +2,10 @@ ast:
   devise_views:
     confirmations:
       new:
-        email_label: Corréu electrónicu
         submit: Reenviar instrucciones
         title: Reenviar instrucciones de confirmación
       show:
+        instructions: Vamos proceder a confirmar la cuenta col email <b>%{email}</b>
         new_password_confirmation_label: Repite la contraseña otra vegada
         new_password_label: Nueva contraseña d'accesu
         please_set_password: Po favor introduz la to contraseña pa la to cuenta (permitirate facer login col email d'enriba)
@@ -38,17 +38,13 @@ ast:
     organizations:
       registrations:
         new:
-          email_label: Corréu electrónicu
-          organization_name_label: Nome d'organización
           password_confirmation_label: Repite la contraseña anterior
-          password_label: Contraseña que utilizarás para acceder a este sitio web
-          phone_number_label: Númberu de teléfonu
-          responsible_name_label: Nome y apellíos de la persona responsable del coleutivu
           responsible_name_note: Será la persona representante de la asociación/coleutivu nel nome del que se presenten les propuestes
           submit: Rexistrase
           title: Rexistrase como organización o coleutivu
         success:
           back_to_index: Entendío; volver a la páxina principal
+          instructions_3: Una vez confirmao, pues entamar a participar como coleutivu no verificáu.
           title: Rexistru de organización o coleutivu
     passwords:
       edit:
@@ -57,13 +53,10 @@ ast:
         password_label: Nueva clave
         title: Camuda la to clave
       new:
-        email_label: Corréu electrónicu
         send_submit: Enviar instrucciones
         title: '¿Escaeciste la contraseña?'
     sessions:
       new:
-        login_label: Corréu electrónicu o nome d'usuariu
-        password_label: Contraseña que utilizarás para acceder a este sitio web
         remember_me: Recordarme
         submit: Entrar
         title: Entamar sesión
@@ -101,12 +94,9 @@ ast:
           waiting_for: "Esperando confirmación de:"
         new:
           cancel: Cancelar login
-          email_label: Corréu electrónicu
           organization_signup: '¿Representas a una organización / colectivo? %{signup_link}'
           organization_signup_link: Regístrate aquí
           password_confirmation_label: Repite la contraseña anterior
-          password_label: Contraseña que utilizarás para acceder a este sitio web
-          redeemable_code: Tu código de verificación (si has recibido una carta con él)
           submit: Rexistrase
           terms: Al registrarte aceptas las %{terms}
           terms_link: condiciones de uso
@@ -114,7 +104,9 @@ ast:
           title: Rexistrase
           username_is_available: Nombre de usuario disponible
           username_is_not_available: Nombre de usuario ya existente
-          username_label: Nome d'usuariu
           username_note: Nombre público que aparecerá en tus publicaciones
         success:
           back_to_index: Entendío; volver a la páxina principal
+          instructions_1: Por favor <b>revisa tu correo electrónico</b> - te hemos enviado un <b>enlace para confirmar tu cuenta</b>.
+          instructions_2: Una vez confirmado, podrás empezar a participar.
+          thank_you: Gracias por registrarte en la web. Ahora debes <b>confirmar tu correo</b>.

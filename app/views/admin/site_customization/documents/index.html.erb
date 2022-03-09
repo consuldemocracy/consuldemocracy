@@ -27,6 +27,7 @@
           <td>
             <div class="small-12 medium-6 column">
               <%= render Admin::TableActionsComponent.new(
+                document,
                 actions: [:destroy],
                 destroy_path: admin_site_customization_document_path(document)
               ) %>

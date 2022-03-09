@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<%= I18n.locale %>">
+<html <%= "dir=rtl" if rtl? %> lang="<%= I18n.locale %>">
 
   <head>
     <%= render "layouts/common_head", default_title: "Admin" %>

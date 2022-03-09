@@ -9,7 +9,7 @@ describe "Admin activity" do
 
   context "Proposals" do
     scenario "Shows moderation activity on proposals" do
-      proposal = create(:proposal)
+      proposal = create(:proposal, description: "<p>Description with html tag</p>")
 
       visit proposal_path(proposal)
 
@@ -24,6 +24,7 @@ describe "Admin activity" do
         expect(page).to have_content(proposal.title)
         expect(page).to have_content("Hidden")
         expect(page).to have_content(admin.user.username)
+        expect(page).to have_css("p", exact_text: "Description with html tag")
       end
     end
 
@@ -59,7 +60,7 @@ describe "Admin activity" do
       visit admin_hidden_proposals_path
 
       within("#proposal_#{proposal.id}") do
-        accept_confirm { click_link "Restore" }
+        accept_confirm { click_button "Restore" }
       end
 
       expect(page).to have_content "There are no hidden proposals"
@@ -126,7 +127,7 @@ describe "Admin activity" do
       visit admin_hidden_debates_path
 
       within("#debate_#{debate.id}") do
-        accept_confirm { click_link "Restore" }
+        accept_confirm { click_button "Restore" }
       end
 
       expect(page).to have_content "There are no hidden debates"
@@ -194,7 +195,7 @@ describe "Admin activity" do
       visit admin_hidden_comments_path
 
       within("#comment_#{comment.id}") do
-        accept_confirm { click_link "Restore" }
+        accept_confirm { click_button "Restore" }
       end
 
       expect(page).to have_content "There are no hidden comments"
@@ -340,7 +341,7 @@ describe "Admin activity" do
       visit admin_hidden_users_path
 
       within("#user_#{user.id}") do
-        accept_confirm { click_link "Restore" }
+        accept_confirm { click_button "Restore" }
       end
 
       expect(page).to have_content "There are no hidden users"

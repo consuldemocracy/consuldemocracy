@@ -155,7 +155,7 @@ describe "Legislation" do
 
         phases.each do |phase|
           within(".legislation-process-list") do
-            find("li", text: "#{phase}").click_link
+            find("li", text: phase).click_link
           end
 
           expect(page).to have_content(document.title)

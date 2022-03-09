@@ -106,6 +106,8 @@ es:
         recommendations_on_proposals_description: "Muestra a los usuarios recomendaciones en la página de propuestas basado en las etiquetas de los elementos que sigue"
       community: "Comunidad en propuestas y proyectos de gasto"
       community_description: "Activa la sección de comunidad en las propuestas y en los proyectos de gasto de los Presupuestos participativos"
+      machine_learning: "IA / Machine learning"
+      machine_learning_description: "Habilita la sección de IA / Machine Learning para ejecutar scripts de python y enriquecer el contenido automáticamente."
       map: "Geolocalización de propuestas y proyectos de gasto"
       map_description: "Activa la geolocalización de propuestas y proyectos de gasto"
       allow_images: "Permitir subir y mostrar imágenes"
@@ -130,6 +132,8 @@ es:
       dashboard:
         notification_emails: "Emails del panel de progreso"
         notification_emails_description: "Activar el envío de emails de notificaciones a los autores de las propuestas en la sección de panel de progreso"
+      remove_investments_supports: "Permitir retirar los apoyos en los proyectos de gasto"
+      remove_investments_supports_description: "Permite que los usuarios retiren su apoyo en los proyectos de gasto de los presupuestos participativos durante la fase de apoyos."
       sdg: ODS
       sdg_description: Habilitar secciones relacionadas con Objetivos de Desarrollo Sostenible en el menú de administración y en la sección de Configuración Global.
     remote_census:

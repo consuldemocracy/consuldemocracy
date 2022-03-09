@@ -32,10 +32,6 @@ hr:
     groups:
       show:
         title: Odaberite opciju
-        unfeasible_title: Neizvedive investicije
-        unfeasible: Pregledajte neizvedive investicije
-        unselected_title: Investicije nisu odabrane za glasačku fazu
-        unselected: Pregledajte investicije koje nisu odabrane za fazu glasanja
     phase:
       drafting: Nacrt (Nije vidljiv javnosti)
       informing: Informacija
@@ -64,6 +60,7 @@ hr:
       milestones: Ključni ciljevi
     investments:
       form:
+        title: "Stvori investicijski budžet"
         tag_category_label: "Kategorije"
         tags_instructions: "Označi ovaj prijedlog. Možeš birati iz predloženih kategorija ili dodati svoju"
         tags_label: Oznake
@@ -71,7 +68,6 @@ hr:
         map_location: "Lokacija na mapi"
         map_location_instructions: "Pronađi lokaciju na mapi i stavi marker."
         map_remove_marker: "Ukloni marker na mapi"
-        map_skip_checkbox: "Ova investicija nema konkretnu lokaciju ili ja nisam toga svijestan."
       index:
         title: Participativno budžetiranje
         unfeasible: Neizvedive investicije za projekte
@@ -87,6 +83,11 @@ hr:
           other: " sadrži termine <strong>%{search_term}</strong>"
         sidebar:
           my_ballot: Moj glas
+          voted_info:
+            knapsack:
+              one: "<strong>Glasovali ste za prijedlog s iznosom %{amount_spent}</strong>"
+              few: "<strong>Vi ste glasali %{count} za prijedloga s iznosom od %{amount_spent}</strong>"
+              other: "<strong>Vi ste glasali %{count} za prijedloga s iznosom od %{amount_spent}</strong>"
           change_vote_info:
             knapsack: "Možete %{link} u bilo koje vrijeme do zatvaranja ove faze. Nema potrebe utrošiti sav dostupan novac."
           change_vote_link: "izmijeni svoj glas"
@@ -97,6 +98,10 @@ hr:
           verified_only: "Kako bi se stvorio nova investcijski budžet %{verify}."
           create: "Stvori investicijski budžet"
           not_logged_in: "%{sign_in} ili %{sign_up} da biste izradili novo proračunsko ulaganje."
+        filters:
+          selected: "Odabrano"
+          unfeasible: "Nevažeč"
+          winners: "Pobjednici"
         orders:
           random: nasumično
           confidence_score: najbolje ocijenjeni
@@ -127,24 +132,29 @@ hr:
       investment:
         add: Glas
         already_added: Vi ste već dodali ovo investicijskom projektu
-        already_supported: Vi ste već poduprli ovaj investicijksi projekt. Podijelite ga!
         support_title: Poduprite ovaj projekt
-        confirm_group:
-          one: "Možete samo poduprijeti investicije u %{count} distriktu. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
-          few: "Možete samo poduprijeti investicije u %{count} distriktu. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
-          other: "Možete samo poduprijeti investicije u %{count} distriktu. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
         supports:
           zero: Nema potpore
           one: 1 potpora
           few: "%{count} potpore"
           other: "%{count} potpora"
-        give_support: Potpora
       header:
         check_ballot: "Provjeri i potvrdi moj glas"
         different_heading_assigned: "Imate aktivne glasove u drugoj temi: %{heading_link}"
         change_ballot: "Ako izmijenite mišljenje možete ukloniti svoj glas u %{check_ballot} i započeti ponovno."
         check_ballot_link: "provjeri i potvrdi moj glas"
         price: "Ova tema ima budžet od"
+      votes:
+        already_supported: "Vi ste već poduprli ovaj investicijksi projekt. Podijelite ga!"
+        confirm_group:
+          one: "Možete samo poduprijeti investicije u %{count} distriktu. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
+          few: "Možete samo poduprijeti investicije u %{count} distriktu. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
+          other: "Možete samo poduprijeti investicije u %{count} distriktu. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
+        support: "Potpora"
+    investments_list:
+      investment:
+        price: "Cijena"
+        supports: "Potpore"
     show:
       see_results: Pogledaj rezultate
     results:

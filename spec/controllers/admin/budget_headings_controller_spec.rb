@@ -7,7 +7,7 @@ describe Admin::BudgetHeadingsController, :admin do
       group = create(:budget_group)
 
       expect do
-        get :index, params: { budget_id: group.budget.id, group_id: group.id }
+        get :new, params: { budget_id: group.budget.id, group_id: group.id }
       end.to raise_exception(FeatureFlags::FeatureDisabled)
     end
   end

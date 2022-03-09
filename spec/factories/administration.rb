@@ -57,6 +57,11 @@ FactoryBot.define do
     body { "Some top links content" }
   end
 
+  factory :site_customization_image, class: "SiteCustomization::Image" do
+    image { File.new("spec/fixtures/files/logo_header.png") }
+    name { "logo_header" }
+  end
+
   factory :map_location do
     latitude { 51.48 }
     longitude { 0.0 }
@@ -86,8 +91,7 @@ FactoryBot.define do
     end
   end
 
-  factory :widget_feed, class: "Widget::Feed" do
-  end
+  factory :widget_feed, class: "Widget::Feed"
 
   factory :i18n_content, class: "I18nContent" do
     key { "debates.index.section_footer.description" }

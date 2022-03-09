@@ -155,12 +155,14 @@ es:
         description_balloting: "Descripción durante la fase de votación"
         description_reviewing_ballots: "Descripción durante la fase de revisión de votos"
         description_finished: "Descripción cuando el presupuesto ha finalizado / Resultados"
-        phase: "Fase"
+        phase: "Fase activa"
         currency_symbol: "Divisa"
         voting_style: "Estilo de la votación final"
         voting_style_knapsack: Bolsa de dinero
         voting_style_approval: Por aprobación
       budget/translation:
+        main_link_text: "Texto del enlace"
+        main_link_url: "El enlace te lleva a (añade un enlace)"
         name: "Nombre"
       budget/investment:
         heading_id: "Partida presupuestaria"
@@ -220,7 +222,7 @@ es:
         latitude: "Latitud (opcional)"
         longitude: "Longitud (opcional)"
         name: "Nombre de la partida"
-        price: "Cantidad"
+        price: "Cantidad de dinero"
         population: "Población (opcional)"
         max_ballot_lines: "Votos permitidos"
       budget/heading/translation:
@@ -233,6 +235,8 @@ es:
         name: "Nombre"
         description: "Descripción"
         summary: "Resumen"
+        main_link_text: "Texto del enlace"
+        main_link_url: "El enlace te lleva a (añade un enlace)"
       comment:
         body: "Comentario"
         user: "Usuario"
@@ -277,7 +281,7 @@ es:
         official_level: "Nivel del cargo"
         phone_number: "Teléfono"
         public_activity: "Mostrar públicamente mi lista de actividades"
-        public_interests: "Mostrar públicamente las etiquetas de los elementos que sigo"
+        public_interests: "Mostrar públicamente los elementos que sigo"
         recommended_debates: "Mostrar recomendaciones en el listado de debates"
         recommended_proposals: "Mostrar recomendaciones en el listado de propuestas"
         redeemable_code: "Código de verificación por carta (opcional)"
@@ -496,7 +500,7 @@ es:
         user: Ejecutado por
       link:
         label: Título
-        url: Enlace
+        url: URL
       valuator:
         description: Descripción
         valuator_group_id: Grupo de evaluación
@@ -536,10 +540,6 @@ es:
           attributes:
             segment_recipient:
               invalid: "El usuario del destinatario es inválido"
-        map_location:
-          attributes:
-            map:
-              invalid: El mapa no puede estar en blanco. Añade un punto al mapa o marca la casilla si no hace falta un mapa.
         poll/voter:
           attributes:
             document_number:

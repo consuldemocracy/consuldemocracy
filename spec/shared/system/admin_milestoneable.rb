@@ -108,12 +108,12 @@ shared_examples "admin_milestoneable" do |factory_name, path_name|
     end
 
     context "Delete" do
-      scenario "Remove milestone", :no_js do
+      scenario "Remove milestone" do
         create(:milestone, milestoneable: milestoneable, title: "Title will it remove")
 
         visit path
 
-        click_link "Delete milestone"
+        accept_confirm { click_button "Delete" }
 
         expect(page).not_to have_content "Title will it remove"
       end

@@ -10,6 +10,8 @@ val:
       manage_email_subscriptions: Pots deixar de rebre estos emails canviant la teua configuració en
     email_verification:
       click_here_to_verify: en aquest enllaç
+      instructions_2: Aquest email es per verificar el teu compte amb <b>%{document_type} %{document_number}</b>. Si estes no son les teues dades, si us plau no pulses l'enllaç anterior i ignora aquest email.
+      instructions: Per acabar de verificar el teu compte d'usuari has de polsar %{verification_link}.
       subject: Verifica el teu email
       thanks: Moltes gràcies.
       title: Verifica el teu compte amb el següent enllaç
@@ -32,6 +34,7 @@ val:
       unsubscribe_account: El meu compte
     direct_message_for_sender:
       subject: "Has enviat un nou missatge privat"
+      title: "Has enviat un nou missatge privat a <strong>%{receiver}</strong> amb el contingut:"
     user_invite:
       ignore: "Si no has sol·licitat esta invitació no et preocupes, pots ignorar este correu."
       text: "Gracies per sol·licitar unirte a %{org}! En uns segons podras començar a participar, sols tens que omplir el següent formulari:"
@@ -42,11 +45,15 @@ val:
     budget_investment_created:
       subject: "Gràcies per crear un projecte!"
       title: "Gràcies per crear un projecte!"
+      intro: "Hola <strong>%{author}</strong>"
+      text: "Moltes gràcies per crear el teu projecte <strong>%{investment}</strong> per als Pressupostos Participatius <strong>%{budget}</strong>."
+      follow: "T'informarem de com avança el procés, que també pots seguir en la pàgina de <strong>%{link}</strong>."
       follow_link: "Pressupostos participatius"
       sincerely: "Atentament,"
       share: "Comparteix el teu projecte"
     budget_investment_unfeasible:
       hi: "Estimat usuari,"
+      new: "Per tot això, t'invitema que elabores un <strong>nou projecte d'inversió</strong> que s'ajuste a les condicions d'aquest procés. Això ho pots fer en aquest enllaç: %{url}."
       new_href: "nova proposta d'inversió"
       sincerely: "Atentament"
       sorry: "Sentim les molesties ocasionades i tornem a donarte les gràcies per la teua inestimable participació."
@@ -63,3 +70,5 @@ val:
       hi: "Estimat usuari,"
       thanks: "Gràcies de nou per la teua participació."
       sincerely: "Atentament"
+    evaluation_comment:
+      hi: Hola

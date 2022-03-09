@@ -12,9 +12,8 @@ hr:
         headers:
           comment: Komentar
           moderate: Uredi
-        hide_comments: Sakrij komentare
+        hide: Sakrij komentare
         ignore_flags: Označi kao pogledano
-        order: Poredak
         orders:
           flags: Najviše označeno
           newest: Najnovije
@@ -34,9 +33,8 @@ hr:
         headers:
           debate: Rasprava
           moderate: Uredi
-        hide_debates: Sakrij rasprave
+        hide: Sakrij rasprave
         ignore_flags: Označi kao pogledano
-        order: Poredak
         orders:
           created_at: Najnovije
           flags: Najviše označeno
@@ -62,9 +60,8 @@ hr:
         headers:
           moderate: Uređivanje
           proposal: Prijedlog
-        hide_proposals: Sakrij prijedloge
+        hide: Sakrij prijedloge
         ignore_flags: Označi kao pogledano
-        order: Poredaj po
         orders:
           created_at: Posljednje
           flags: Najviše označeno
@@ -81,9 +78,8 @@ hr:
         headers:
           moderate: Uredite
           budget_investment: Budžet investicija
-        hide_budget_investments: Sakrij budžet investicije
+        hide: Sakrij budžet investicije
         ignore_flags: Označi kao pogledano
-        order: Poredaj po
         orders:
           created_at: Posljednje
           flags: Najviše označeno
@@ -100,9 +96,8 @@ hr:
         headers:
           moderate: Uredi
           proposal_notification: Obavijest o prijedlogu
-        hide_proposal_notifications: Sakrij prijedloge
+        hide: Sakrij prijedloge
         ignore_flags: Označi kao pogledano
-        order: Poredaj po
         orders:
           created_at: Posljednje
           moderated: Uređeno

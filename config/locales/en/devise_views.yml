@@ -2,7 +2,6 @@ en:
   devise_views:
     confirmations:
       new:
-        email_label: Email
         submit: Re-send instructions
         title: Re-send confirmation instructions
       show:
@@ -39,12 +38,7 @@ en:
     organizations:
       registrations:
         new:
-          email_label: Email
-          organization_name_label: Name of organisation
           password_confirmation_label: Confirm password
-          password_label: Password
-          phone_number_label: Phone number
-          responsible_name_label: Full name of the person responsible for the collective
           responsible_name_note: This would be the person representing the association/collective in whose name the proposals are presented
           submit: Register
           title: Register as an organisation or collective
@@ -62,13 +56,10 @@ en:
         password_label: New password
         title: Change your password
       new:
-        email_label: Email
         send_submit: Send instructions
         title: Forgotten password?
     sessions:
       new:
-        login_label: Email or username
-        password_label: Password
         remember_me: Remember me
         submit: Enter
         title: Sign in
@@ -106,12 +97,9 @@ en:
           waiting_for: "Awaiting confirmation of:"
         new:
           cancel: Cancel login
-          email_label: Email
           organization_signup: Do you represent an organisation or collective? %{signup_link}
           organization_signup_link: Sign up here
           password_confirmation_label: Confirm password
-          password_label: Password
-          redeemable_code: Verification code received via email (optional)
           submit: Register
           terms: By registering you accept the %{terms}
           terms_link: terms and conditions of use
@@ -119,7 +107,6 @@ en:
           title: Register
           username_is_available: Username available
           username_is_not_available: Username already in use
-          username_label: Username
           username_note: Name that appears next to your posts
         success:
           back_to_index: I understand; go back to main page

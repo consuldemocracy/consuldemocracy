@@ -5,10 +5,7 @@ eu:
       erase_account_link: Baja eman
       finish_verification: Egiaztapena amaitu
       notifications: Jakinarazpenak
-      organization_name_label: Erakundearen izena
-      organization_responsible_name_placeholder: Elkarte ordezkaria
       personal: Datu pertsonalak
-      phone_number_label: Telefonoa
       public_interests_my_title_list: Jarraitzen dituzun elementuen etiketak
       public_interests_user_title_list: Erabiltzaile honek jarraitzen dituen elementuen etiketak
       save_changes_submit: Aldaketak gorde
@@ -22,7 +19,6 @@ eu:
       user_permission_verify: Akzio guztiak egin ahal izateko zure kontua egiazta ezazu.
       user_permission_verify_info: "* Erroldatutako erabiltzaileak soilik."
       user_permission_votes: Azken bozkaketetan parte hartu*
-      username_label: Erabiltzaile izena
       verified_account: Egiaztatutako kontua
       verify_my_account: Nire kontua egiaztatu
   application:
@@ -40,6 +36,10 @@ eu:
         zero: Erantzun gabe
         one: erantzun 1
         other: "%{count} erantzun"
+      responses_show:
+        zero: Erantzun gabe
+      responses_collapse:
+        zero: Erantzun gabe
       user_deleted: Erabiltzailea ezabatuta
       votes:
         zero: Bozka gabe
@@ -54,7 +54,6 @@ eu:
       newest: Berrienak lehenengo
       oldest: Zaharrenak lehenengo
       most_commented: Iruzkinduenak
-    select_order: Honen arabera ordenatu
     show:
       return_to_commentable: "Itzuli iruzkinera: "
   comments_helper:
@@ -82,7 +81,6 @@ eu:
         submit_button: Aldaketak gorde
       show_link: Eztabaida ikusi
     form:
-      debate_title: Eztabaidaren izenburua
       tags_instructions: Eztabaida honen etiketa.
       tags_placeholder: "Nahi dituzun etiketak koma artean idatzi behar dituzu (',')"
     index:
@@ -105,7 +103,6 @@ eu:
         button: Bilatu
         placeholder: Eztabaidak bilatu...
         title: Bilatu
-      select_order: Honen arabera ordenatu
       start_debate: Eztabaida bat hasi
       title: Eztabaidak
       section_header:
@@ -120,8 +117,6 @@ eu:
     new:
       form:
         submit_button: Eztabaida bat hasi
-      info: Proposamen bat egin nahi baduzu, atal okerrean zaude, %{info_link} linka sakatu.
-      info_link: Proposamen berria sortu
       more_info: Informazio gehiago
       recommendation_four: Espazio honetaz gozatu, betetzen duten ahotsetaz, zurea ere bada.
       recommendation_one: Ez idatzi maiuskuletan esaldi osoak edo eztabaidaren izenburua. Internetan txilioka ari zarela ematen du. Eta inori ez zaio gustatzen ohiu egin diezaioten.
@@ -176,6 +171,12 @@ eu:
       firefox: Firefox
       ie: Internet Explorer erabiltzen ari zarela ohartu gara. %{firefox} edo %{chrome} erabiltzea gomendatzen dizugu.
       ie_title: Web orri hau ez da zure nabigatzailearentzat sortu. Baliteke behar bezala ez ikustea.
+    dashboard:
+      proposal_header:
+        draft: Zirriborroa
+      proposal_totals:
+        supports:
+          zero: Babes gabe
     footer:
       accessibility: Eskuragarritasuna
       conditions: Erabilera baldintzak
@@ -192,7 +193,6 @@ eu:
     header:
       administration_menu: Admin
       administration: Administrazioa
-      available_locales: 'Hizkuntzak:'
       collaborative_legislation: Legegintza prosezuak
       debates: Eztabaidak
       locale: "Hizkuntza:"
@@ -254,6 +254,9 @@ eu:
       sign_in: Twitter erabiliz sartu
       sign_up: Twitter erabiliz erregistratu
       name: Twitter
+    info:
+      sign_in: "Hauetakoren bat erabiliz sartu:"
+      sign_up: "Hauetakoren bat erabiliz erregistratu:"
     or_fill: "Edo hurrengo formularioa bete:"
   proposals:
     create:
@@ -287,7 +290,6 @@ eu:
       map_location: "Kokapena mapan"
       map_location_instructions: "Mapatik ibili kokalekura heldu arte eta markagailua jarri."
       map_remove_marker: "Markagailua ezabatu"
-      map_skip_checkbox: "Proposamen honek ez du kokaleku zehatzik edo ez dut ezagutzen."
     index:
       featured_proposals: Nabarmenduak
       orders:
@@ -318,7 +320,6 @@ eu:
         button: Bilatu
         placeholder: Proposamenak bilatu...
         title: Bilatu
-      select_order: Honen arabera ordenatu
       select_order_long: "Proposamenak ikusten zabiltza"
       start_proposal: Proposamen bat sortu
       title: Proposamenak
@@ -377,6 +378,7 @@ eu:
       comments_tab: Iruzkinak
       flag: Eztabaida hau desegoki moduan markatu da zenbait erabiltzaileengaitik.
       notifications_tab: Jakinarazpenak
+      milestones_tab: Jarraipena
       retired_warning: "Proposamen honen sortzaileak ez dituela babes gehiago behar erabaki du."
       retired_warning_link_to_explanation: Azalpena berriz aztertu babestu aurretik.
       retired: Proposamena sortzailearengaitik baztertuta
@@ -388,6 +390,47 @@ eu:
     update:
       form:
         submit_button: Aldaketak gorde
+  dashboard:
+    menu:
+      community: Erkidegoa
+      polls: Bozkaketak
+      related_content: Erlazionatutako edukia
+    progress:
+      supports: Babesak
+    index:
+      edit_proposal_link: Proposamena editatu
+      retire: Proposamena baztertu
+    recommended_actions:
+      pending_title: Egiteke
+      done_title: Eginda
+    community:
+      access_community: Erkidegoan sartu
+      participants: Partehartzaileak
+      debates: Eztabaidak
+      comments: Iruzkinak
+    polls:
+      index:
+        title: Bozkaketak
+        create: Bozkaketa sortu
+        additiontal_information: Gehigarrizko informazioa
+      new:
+        title: Bozkaketa berria
+        submit: Bozkaketa sortu
+      edit:
+        submit: Bozkaketa eguneratu
+      form:
+        add_question: Galderaren izenburua idatz ezazu
+      question_fields:
+        add_answer: Erantzuna gehitu
+    poster:
+      options:
+        preview: Aurreikuspena
+    mailing:
+      mailing_options:
+        preview: Aurreikuspena
+    mailer:
+      forward:
+        support_button: Proposamen hau babestu
   polls:
     all: "Guztiak"
     no_dates: "data jarri gabe"
@@ -455,14 +498,13 @@ eu:
       back: "Nire aktibitatera itzuli"
   shared:
     edit: "Editatu"
+    filter: "Iragazkia"
     save: "Gorde"
     delete: "Ezabatu"
     "yes": "Bai"
     "no": "Ez"
     search_results: "Bilaketaren emaitzak"
     advanced_search:
-      author_type: "Sortzaile kategoriagaitik"
-      author_type_blank: "Kategoria bat aukeratu"
       date: "Dataren arabera"
       date_placeholder: "AAAA/MM/DD"
       date_range_blank: "Data bat aukeratu"
@@ -473,7 +515,6 @@ eu:
       date_5: "Pertsonalizatuta"
       from: "-tik"
       general: "Testu hau daukala"
-      general_placeholder: "Testua idatzi"
       search: "Iragazi"
       title: "Bilaketa aurreratua"
       to: "-arte"
@@ -558,6 +599,8 @@ eu:
     manage:
       all: "Ez duzu baimenik %{subject} gain '%{action}' akzioa egiteko."
   users:
+    login_to_continue: "Jarraitu ahal izateko %{signin} edo %{signup} egin behar zara."
+    verify_account: "zure kontua egiaztatu"
     direct_messages:
       new:
         direct_messages_bloqued: "Erabiltzaile honek mezu pribaturik ez jasotzea erabaki du"
@@ -572,6 +615,7 @@ eu:
       deleted_proposal: Proposamen hau ezabatuta izan da
       deleted_budget_investment: Gastu proiektu hau ezabatuta izan da
       proposals: Proposamenak
+      proposals_status: Egoera
       debates: Eztabaidak
       budget_investments: Partaidetzazko aurrekontu proiektuak
       comments: Iruzkinak
@@ -599,7 +643,9 @@ eu:
       delete_alert: "Ziur zaude zure gastu proiektua ezabatu nahi duzula? Ekintza hau ezin da atzera bota"
     proposals:
       retired: "Proposamena baztertuta"
+      draft: Zirriborroa
       see: "Proposamena ikusi"
+      actions: Ekintzak
   votes:
     agree: Ados nago
     anonymous: Bozka anonimo larregi, %{verify_account} bozkatu ahal izateko.
@@ -687,3 +733,7 @@ eu:
       alt: Iruzkindu nahi duzun testua aukeratu eta arkatza duen botoia sakatu ezazu.
       text: Agiri hau iruzkindu ahal izateko %{sign_in} edo %{sign_up} egin behar duzu. Gero, iruzkindu nahi duzun testua aukeratu eta arkatza duen botoia sakatu ezazu.
       title: Zelan iruzkindu dezaket agiri hau?
+  links:
+    form:
+      delete_button: Ezabatu
+      cancel_button: Ezeztatu

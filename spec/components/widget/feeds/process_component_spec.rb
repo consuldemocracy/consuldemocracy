@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Widget::Feeds::ProcessComponent, type: :component do
+describe Widget::Feeds::ProcessComponent do
   let(:process) { create(:legislation_process, sdg_goals: [SDG::Goal[1]]) }
   let(:component) { Widget::Feeds::ProcessComponent.new(process) }
 

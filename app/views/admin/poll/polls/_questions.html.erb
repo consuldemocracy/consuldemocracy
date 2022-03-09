@@ -15,7 +15,7 @@
         <th><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
-    <% @poll.questions.each do |question| %>
+    <% @poll.questions.sort_for_list.each do |question| %>
       <tr id="<%= dom_id(question) %>">
         <td>
           <strong><%= question.title %></strong>
@@ -29,8 +29,7 @@
         </td>
         <td>
           <%= render Admin::TableActionsComponent.new(question) do |actions| %>
-            <%= actions.link_to t("admin.polls.show.edit_answers"), admin_question_path(question),
-                                                                    class: "answers-link" %>
+            <%= actions.action(:answers, text: t("admin.polls.show.edit_answers")) %>
           <% end %>
         </td>
       </tr>

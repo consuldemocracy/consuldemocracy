@@ -55,6 +55,8 @@ bs:
         assigned_valuators: Dodijeljeni procjenitelji
       edit:
         dossier: Spis
+        price: "Cijena (moneta) %{currency}"
+        price_first_year: "Troškovi tokom prve godine (moneta) %{currency} <small> (nije obavezno navesti, nije javni podatak) </small>"
         feasibility: Izvodivost
         valuation_finished_alert: "Jeste sigurni da želite označiti izvještaj kao kompletiran? Više nećete moći unositi izmjene."
         not_feasible_alert: "Email sa izvještajem o izvodivosti će odmah biti upućen autoru projekta."

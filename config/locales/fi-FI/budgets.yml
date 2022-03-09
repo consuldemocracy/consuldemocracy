@@ -16,6 +16,10 @@ fi:
         search_form:
           button: Etsi
           title: Etsi
+        filters:
+          selected: "Valittu"
+          unfeasible: "Toteuttamiskelvoton"
+          winners: "Voittajat"
         orders:
           random: satunnainen
           confidence_score: korkeimmin arvioitu
@@ -34,7 +38,11 @@ fi:
           zero: Ei tukijoita
           one: 1 tukija
           other: "%{count} tukijaa"
-        give_support: Tue
+      votes:
+        support: "Tue"
+    investments_list:
+      investment:
+        price: "Hinta"
     show:
       see_results: Näytä tulokset
     results:
@@ -46,4 +54,6 @@ fi:
       page_title: "%{budget} - Tavoitteet"
       filters:
         status:
+          all: "Kaikki (%{count})"
+        milestone_tag:
           all: "Kaikki (%{count})"

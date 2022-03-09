@@ -5,6 +5,9 @@ nl:
         title: Uw keuze
         no_balloted_group_yet: "U hebt nog niet gestemd op deze groep, stem nu!"
         remove: Verwijder keuze
+        voted:
+          one: "U heeft op <span>één</span> voorstel gestemd."
+          other: "U heeft op <span>%{count}</span> voorstellen gestemd."
         voted_info_2: "Je kunt je stem altijd aanpassen tot deze fase wordt gesloten."
         zero: U heeft op geen enkel voorstel gestemd.
       reasons_for_not_balloting:
@@ -12,16 +15,14 @@ nl:
         not_verified: Alleen geverrifieerde deelnemers kunnen op voorstellen stemmen; %{verify_account}.
         organization: Organisaties mogen niet stemmen
         not_selected: Niet-geselecteerde voorstellen kunnen niet worden gesteund
+        not_enough_money: "Je hebt al het beschikbare budget toegewezen.<br><small>Je kunt op elk gewenst moment %{change_ballot}</small>"
         no_ballots_allowed: De selectiefase is voorbij
+        different_heading_assigned: "Je hebt al gestemd in een andere rubriek: %{heading_link}"
         change_ballot: wijzig uw stem
         casted_offline: Je hebt al offline deelgenomen
     groups:
       show:
         title: Kies een mogelijkheid
-        unfeasible_title: Onhaalbare voorstellen
-        unfeasible: Bekijk onhaalbare voorstellen
-        unselected_title: Voorstellen niet geselecteerd voor de stemfase
-        unselected: Zie voorstellen niet geselecteerd voor de stemfase
     phase:
       drafting: Concept (niet publiekelijk zichtbaar)
       informing: Informatie
@@ -50,6 +51,7 @@ nl:
       milestones: Mijlpalen
     investments:
       form:
+        title: "Nieuw begrotingsvoorstel maken"
         tag_category_label: "Categorieen"
         tags_instructions: "Voeg termen toe aan dit voorstel. Je kunt kiezen uit voorgestelde termen of je eigen term kiezen"
         tags_label: Tags
@@ -57,7 +59,6 @@ nl:
         map_location: "Locatie"
         map_location_instructions: "Beweeg de kaart en wijs de locatie aan"
         map_remove_marker: "Locatie verwijderen"
-        map_skip_checkbox: "Deze investering heeft geen concrete locatie of ik ben er niet van op de hoogte."
       index:
         title: Burgerbegrotingen
         unfeasible: Unfeasible investment projects
@@ -67,14 +68,27 @@ nl:
           button: Search
           placeholder: Zoek begrotingsvoorstellen...
           title: Search
+        search_results:
+          one: " bevat de term <strong>'%{search_term}'</strong>"
+          other: " bevat de term <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Mijn stemmen
+          voted_info:
+            knapsack:
+              one: "<strong>Je hebt gestemd op een voorstel dat %{amount_spent} kost</strong>"
+              other: "<strong>Je hebt gestemd  op %{count} voorstellen die %{amount_spent}</strong> kosten"
+          change_vote_link: "je stem wijzigen"
+          different_heading_assigned: "Je steunt al in een ander onderdeel van het voorstel: %{heading_link}"
           change_ballot: "Als u zich bedenkt kunt uw uw stemmen in %{check_ballot} verwijderen opnieuw beginnen."
           check_ballot_link: "check mijn stemming"
           zero: U hebt op geen enkel begrotingsvoorstel gestemd.
           verified_only: "%{verify} je account om een nieuw begrotingsvoorstel te doen."
           create: "Nieuw begrotingsvoorstel maken"
           not_logged_in: "Om een nieuw begrotingsvoorstel te doen moet je %{sign_in} of %{sign_up}."
+        filters:
+          selected: "Geselecteerd"
+          unfeasible: "Unfeasible"
+          winners: "Winnaars"
         orders:
           random: willekeurig
           confidence_score: best gescored
@@ -85,6 +99,9 @@ nl:
         author_deleted: Gebruiker verwijderd
         price_explanation: Price explanation
         unfeasibility_explanation: Uitleg haalbaarheid
+        code: "Begrotingsvoorstel code: <strong>%{code}</strong>"
+        location: "Locatie: <strong>%{location}</strong>"
+        organization_name: "Voorgesteld namens: <strong>%{name}</strong>"
         share: Deel
         title: Investment project
         supports: Steunt
@@ -93,27 +110,36 @@ nl:
         comments_tab: Comments
         milestones_tab: Mijlpalen
         author: Author
+        project_unfeasible: "Dit investeringsproject <strong> is gemarkeerd als niet haalbaar </ strong> en gaat niet naar de beslissingsfase."
+        project_selected: "Dit investeringsproject <strong> is geselecteerd </strong> voor beslissingsfase."
         project_winner: "Winnend investeringsproject"
+        project_not_selected: "Dit investeringsproject <strong> is niet geselecteerd </strong> voor beslissingsfase."
         see_price_explanation: Toelichting op de kosten
       wrong_price_format: Alleen hele cijfers
       investment:
         add: Voeg toe
         already_added: U heeft dit voorstel al toegevoegd
-        already_supported: Je hebt dit begrotingsvoorstel al gesteund. Deel het!
         support_title: Steun dit voorstel
-        confirm_group:
-          one: "Je kunt maar in %{count} wijk voorstellen steunen. Als je verder gaat is dat definitief. Weet je het zeker?"
-          other: "Je kunt maar in %{count} wijk voorstellen steunen. Als je verder gaat is dat definitief. Weet je het zeker?"
         supports:
           zero: Geen steunbetuigingen
           one: 1 steunbetuiging
           other: "%{count} steunbetuigingen"
-        give_support: Support
       header:
         check_ballot: "Check mijn stemmen"
+        different_heading_assigned: "Je steunt al in een ander onderdeel van het voorstel: %{heading_link}"
         change_ballot: "ALs je je bedenkt kun je je stemmen in %{check_ballot} verwijderen en opnieuw beginnen."
         check_ballot_link: "bekijk mijn stemmen"
         price: "Deze rubriek heeft een budget van"
+      votes:
+        already_supported: "Je hebt dit begrotingsvoorstel al gesteund. Deel het!"
+        confirm_group:
+          one: "Je kunt maar in %{count} wijk voorstellen steunen. Als je verder gaat is dat definitief. Weet je het zeker?"
+          other: "Je kunt maar in %{count} wijk voorstellen steunen. Als je verder gaat is dat definitief. Weet je het zeker?"
+        support: "Support"
+    investments_list:
+      investment:
+        price: "Prijs"
+        supports: "Steunt"
     show:
       see_results: Bekijk resultaten
     results:
@@ -141,6 +167,8 @@ nl:
       filters:
         status:
           label: "Status van het project"
+          all: "Alle (%{count})"
+        milestone_tag:
           all: "Alle (%{count})"
     phases:
       errors:

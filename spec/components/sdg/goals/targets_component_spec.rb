@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe SDG::Goals::TargetsComponent, type: :component do
+describe SDG::Goals::TargetsComponent do
   let(:goal) { SDG::Goal[1] }
   let(:component) { SDG::Goals::TargetsComponent.new(goal) }
 
@@ -13,9 +13,7 @@ describe SDG::Goals::TargetsComponent, type: :component do
 
     render_inline component
 
-    expect(page).not_to have_css ".targets"
-    expect(page).not_to have_css "#target_tabs"
-    expect(page).not_to have_css ".tabs-content"
+    expect(page).not_to be_rendered
   end
 
   it "renders tabs panel" do

@@ -1,6 +1,6 @@
 .admin .budget-phases-form {
 
-  fieldset {
+  > fieldset {
     margin-top: $line-height;
 
     > * {
@@ -20,6 +20,16 @@
       &:last-child {
         float: left;
       }
+    }
+  }
+
+  .images {
+    @include direct-uploads;
+  }
+
+  .button {
+    &.upload-image {
+      margin-bottom: $line-height / 2;
     }
   }
 }

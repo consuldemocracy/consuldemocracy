@@ -129,8 +129,7 @@ describe "Polls" do
       Setting["feature.sdg"] = true
       Setting["sdg.process.polls"] = true
 
-      create(:poll, sdg_goals: [SDG::Goal[1]],
-                    sdg_targets: [SDG::Target["1.1"]])
+      create(:poll, sdg_goals: [SDG::Goal[1]], sdg_targets: [SDG::Target["1.1"]])
 
       visit polls_path
 
@@ -172,6 +171,24 @@ describe "Polls" do
 
       expect(page).to have_content(normal_question.title)
       expect(page).to have_content(proposal_question.title)
+    end
+
+    scenario "Questions appear by created at order" do
+      question = create(:poll_question, poll: poll, title: "First question")
+      create(:poll_question, poll: poll, title: "Second question")
+      create(:poll_question, poll: poll, title: "Third question")
+
+      question.update!(title: "First question edited")
+
+      visit polls_path
+
+      expect("First question edited").to appear_before("Second question")
+      expect("Second question").to appear_before("Third question")
+
+      visit poll_path(poll)
+
+      expect("First question edited").to appear_before("Second question")
+      expect("Second question").to appear_before("Third question")
     end
 
     scenario "Question answers appear in the given order" do
@@ -414,13 +431,24 @@ describe "Polls" do
       Setting["feature.sdg"] = true
       Setting["sdg.process.polls"] = true
 
-      poll = create(:poll, sdg_goals: [SDG::Goal[1]],
-                           sdg_targets: [SDG::Target["1.1"]])
+      poll = create(:poll, sdg_goals: [SDG::Goal[1]], sdg_targets: [SDG::Target["1.1"]])
 
       visit poll_path(poll)
 
       expect(page).to have_selector "img[alt='1. No Poverty']"
       expect(page).to have_content "target 1.1"
+    end
+
+    scenario "Polls with users same-geozone listed first" do
+      create(:poll, geozone_restricted: true, name: "A Poll")
+      create(:poll, name: "Not restricted")
+      create(:poll, geozone_restricted: true, geozones: [geozone], name: "Geozone Poll")
+
+      login_as(create(:user, :level_two, geozone: geozone))
+      visit polls_path(poll)
+
+      expect("Not restricted").to appear_before("Geozone Poll")
+      expect("Geozone Poll").to appear_before("A Poll")
     end
   end
 
@@ -499,10 +527,10 @@ describe "Polls" do
       expect(page).not_to have_content("Participation statistics")
 
       visit results_poll_path(poll)
-      expect(page).to have_content("You do not have permission to carry out the action 'results' on poll.")
+      expect(page).to have_content("You do not have permission to carry out the action 'results' on Poll.")
 
       visit stats_poll_path(poll)
-      expect(page).to have_content("You do not have permission to carry out the action 'stats' on poll.")
+      expect(page).to have_content("You do not have permission to carry out the action 'stats' on Poll.")
     end
 
     scenario "Do not show poll results or stats to admins if disabled", :admin do
@@ -525,10 +553,10 @@ describe "Polls" do
       expect(page).not_to have_content("Participation statistics")
 
       visit results_poll_path(poll)
-      expect(page).to have_content("You do not have permission to carry out the action 'results' on poll.")
+      expect(page).to have_content("You do not have permission to carry out the action 'results' on Poll.")
 
       visit stats_poll_path(poll)
-      expect(page).to have_content("You do not have permission to carry out the action 'stats' on poll.")
+      expect(page).to have_content("You do not have permission to carry out the action 'stats' on Poll.")
     end
 
     scenario "Generates navigation links for polls without a slug" do

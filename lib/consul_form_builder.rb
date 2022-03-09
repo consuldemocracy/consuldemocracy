@@ -20,12 +20,12 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
   end
 
   def check_box(attribute, options = {})
-    if options[:label] != false
+    if options[:label] == false
+      super
+    else
       label = tag.span sanitize(label_text(attribute, options[:label])), class: "checkbox"
 
       super(attribute, options.merge(label: label, label_options: label_options_for(options)))
-    else
-      super
     end
   end
 

@@ -6,7 +6,6 @@ FactoryBot.define do
     video_url            { "https://youtu.be/nhuNb0XtRhQ" }
     responsible_name     { "John Snow" }
     terms_of_service     { "1" }
-    skip_map             { "1" }
     published_at         { Time.current }
 
     association :author, factory: :user
@@ -87,8 +86,6 @@ FactoryBot.define do
       evaluator.voters.each { |voter| create(:vote, votable: proposal, voter: voter) }
       evaluator.followers.each { |follower| create(:follow, followable: proposal, user: follower) }
     end
-
-    factory :retired_proposal, traits: [:retired]
   end
 
   factory :proposal_notification do
@@ -138,7 +135,6 @@ FactoryBot.define do
   factory :dashboard_action, class: "Dashboard::Action" do
     title { Faker::Lorem.sentence[0..79].strip }
     description { Faker::Lorem.sentence }
-    link { nil }
     request_to_administrators { true }
     day_offset { 0 }
     required_supports { 0 }
@@ -149,10 +145,6 @@ FactoryBot.define do
 
     trait :admin_request do
       request_to_administrators { true }
-    end
-
-    trait :external_link do
-      link { Faker::Internet.url }
     end
 
     trait :inactive do

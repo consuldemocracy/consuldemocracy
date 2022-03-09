@@ -16,6 +16,7 @@ fr:
         table_assigned_investments_valuation_open: Propositions d'investissement assignées avec une évaluation ouverte
         table_actions: Actions
         evaluate: Évaluer
+        no_budgets: "Il n'y a pas de budgets"
     budget_investments:
       index:
         headings_filter_all: Tous les titres
@@ -52,8 +53,11 @@ fr:
         responsibles: Responsables
         assigned_admin: Administrateur assigné
         assigned_valuators: Évaluateurs assignés
+        preview: Aperçu de l'investissement
       edit:
         dossier: Rapport
+        price: "Coût (%{currency})"
+        price_first_year: "Coût durant la première année (%{currency}) <small>(optionnel, données non publiques)</small>"
         feasibility: Faisabilité
         valuation_finished_alert: "Êtes-vous sûr de vouloir marquer ce rapport comme étant achevé ? Si vous le faites, il nne pourra plus être modifié."
         not_feasible_alert: "Un courriel sera envoyé immédiatement à l’auteur du projet avec le rapport de non-faisabilité."

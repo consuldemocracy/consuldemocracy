@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe SDG::Goals::TagListComponent, type: :component do
+describe SDG::Goals::TagListComponent do
   let(:debate) { create(:debate, sdg_goals: [SDG::Goal[1], SDG::Goal[3]]) }
   let(:component) { SDG::Goals::TagListComponent.new(debate) }
 
@@ -14,7 +14,7 @@ describe SDG::Goals::TagListComponent, type: :component do
 
     render_inline component
 
-    expect(page).not_to have_css "li"
+    expect(page).not_to be_rendered
   end
 
   it "does not render when the SDG process feature is disabled" do
@@ -22,7 +22,7 @@ describe SDG::Goals::TagListComponent, type: :component do
 
     render_inline component
 
-    expect(page).not_to have_css "li"
+    expect(page).not_to be_rendered
   end
 
   it "renders a list of goals" do

@@ -119,7 +119,7 @@ describe "Admin polls", :admin do
       visit admin_polls_path
 
       within("#poll_#{poll.id}") do
-        accept_confirm { click_link "Delete" }
+        accept_confirm { click_button "Delete" }
       end
 
       expect(page).to have_content("Poll deleted successfully")
@@ -133,7 +133,7 @@ describe "Admin polls", :admin do
       visit admin_polls_path
 
       within(".poll", text: "Do you support CONSUL?") do
-        accept_confirm { click_link "Delete" }
+        accept_confirm { click_button "Delete" }
       end
 
       expect(page).to     have_content("Poll deleted successfully")
@@ -150,7 +150,7 @@ describe "Admin polls", :admin do
       visit admin_polls_path
 
       within(".poll", text: "Do you support CONSUL?") do
-        accept_confirm { click_link "Delete" }
+        accept_confirm { click_button "Delete" }
       end
 
       expect(page).to have_content "Poll deleted successfully"
@@ -164,7 +164,7 @@ describe "Admin polls", :admin do
       visit admin_polls_path
 
       within("#poll_#{poll.id}") do
-        accept_confirm { click_link "Delete" }
+        accept_confirm { click_button "Delete" }
       end
 
       expect(page).to have_content("You cannot delete a poll that has votes")
@@ -293,7 +293,7 @@ describe "Admin polls", :admin do
 
         within("#totals") do
           within("#total_final") do
-            expect(page).to have_content("#{55555 + 63}")
+            expect(page).to have_content(55555 + 63)
           end
 
           within("#total_system") do
@@ -524,6 +524,22 @@ describe "Admin polls", :admin do
     before do
       Setting["feature.sdg"] = true
       Setting["sdg.process.polls"] = true
+    end
+
+    scenario "do not show SDG columns if disabled" do
+      poll = create(:poll, name: "Poll with SDG related content")
+      poll.sdg_goals = [SDG::Goal[1], SDG::Goal[17]]
+
+      Setting["feature.sdg"] = false
+
+      visit admin_polls_path
+
+      expect(page).not_to have_content "Goals"
+      expect(page).not_to have_content "Targets"
+
+      within "tr", text: "Poll with SDG related content" do
+        expect(page).not_to have_content "1, 17"
+      end
     end
 
     scenario "create poll with sdg related list" do

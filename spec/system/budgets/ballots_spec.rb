@@ -344,15 +344,6 @@ describe "Ballots" do
         expect(page).to have_content "Still available to you €35"
       end
     end
-
-    scenario "Display links to vote on groups with no investments voted yet" do
-      group = create(:budget_group, budget: budget)
-
-      login_as(user)
-      visit budget_ballot_path(budget)
-
-      expect(page).to have_link "You have not voted on this group yet, go vote!", href: budget_group_path(budget, group)
-    end
   end
 
   scenario "Removing investments from ballot" do
@@ -637,7 +628,7 @@ describe "Ballots" do
       in_browser(:admin) do
         login_as admin_user
         visit edit_admin_budget_group_heading_path(budget, states, new_york)
-        fill_in "Amount", with: 10
+        fill_in "Money amount", with: 10
         click_button "Save heading"
 
         expect(page).to have_content "Heading updated successfully"

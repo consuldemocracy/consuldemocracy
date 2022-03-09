@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Pages::Help::SectionComponent, type: :component do
+describe Pages::Help::SectionComponent do
   describe "#image_path" do
     it "returns the image for the first fallback language with an image" do
       allow(I18n).to receive(:fallbacks).and_return({ en: [:es, :de] })

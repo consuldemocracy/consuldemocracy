@@ -3,6 +3,7 @@ de:
     ballots:
       show:
         title: Ihre Abstimmung
+        amount_progress: "%{amount_spent} / %{amount_limit}"
         amount_available:
           knapsack: "Sie können noch <span>%{count}</span> ausgeben"
           approval:
@@ -42,10 +43,6 @@ de:
     groups:
       show:
         title: Wählen Sie eine Option
-        unfeasible_title: Nicht durchführbare Ausgabenvorschläge
-        unfeasible: Nicht durchführbare Investitionen anzeigen
-        unselected_title: Ausgabenvorschläge, die nicht für die Abstimmungsphase ausgewählt wurden
-        unselected: Ausgabenvorschläge, die nicht für die Abstimmungsphase ausgewählt wurden, anzeigen
     phase:
       drafting: Entwurf (nicht für die Öffentlichkeit sichtbar)
       informing: Information
@@ -77,6 +74,8 @@ de:
       milestones: Meilensteine
     investments:
       form:
+        title: "Eine Budgetinvestitionen erstellen"
+        subtitle: "%{heading} (%{price})"
         tag_category_label: "Kategorien"
         tags_instructions: "Markieren Sie den Vorschlag. Sie können einen Tag auswählen oder selbst erstellen"
         tags_label: Tags
@@ -84,7 +83,6 @@ de:
         map_location: "Kartenposition"
         map_location_instructions: "Navigieren Sie auf der Karte zum Standort und setzen Sie die Markierung."
         map_remove_marker: "Entfernen Sie die Kartenmarkierung"
-        map_skip_checkbox: "Dieser Ausgabenvorschlag hat keinen konkreten Standort oder ich kenne ihn nicht."
       index:
         title: Bürgerhaushalte
         unfeasible: Undurchführbare Investitionsvorschläge
@@ -117,6 +115,13 @@ de:
           verified_only: "Um ein neuen Ausgabenvorschlag zu erstellen %{verify}."
           create: "Eine Budgetinvestitionen erstellen"
           not_logged_in: "Um einen neuen Ausgabenvorschlag erstellen zu können, müssen Sie %{sign_in} oder %{sign_up}."
+        filter: "Projekte filtern nach"
+        filters:
+          not_unfeasible: "Durchführbar"
+          selected: "Ausgewählt"
+          unfeasible: "Undurchführbar"
+          unselected: "Nicht ausgewählt"
+          winners: "Bestbewertete Vorschläge"
         orders:
           random: zufällig
           confidence_score: am besten bewertet
@@ -147,24 +152,39 @@ de:
       investment:
         add: Stimme
         already_added: Sie haben diesen Ausgabenvorschlag bereits hinzugefügt
-        already_supported: Sie haben diesen Ausgabenvorschlag bereits unterstützt. Jetzt teilen!
         support_title: Unterstützen Sie dieses Projekt
-        confirm_group:
-          one: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn Sie fortfahren, können Sie ihren Wahlbezirk nicht ändern. Sind Sie sicher?"
-          other: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn sie fortfahren, können sie ihren Wahlbezirk nicht ändern. Sind sie sicher?"
         supports:
           zero: Keine Unterstützung
           one: 1 Unterstützer*in
           other: "%{count} Unterstützer*innen"
-        give_support: Unterstützung
       header:
         check_ballot: "Meine Abstimmung überprüfen"
         different_heading_assigned: "Sie haben bereits in einer anderen Rubrik: %{heading_link} abgestimmt"
         change_ballot: "Wenn Sie Ihre Meinung ändern, können Sie Ihre Stimme in %{check_ballot} zurückziehen und von vorne beginnen."
         check_ballot_link: "Meine Abstimmungen überprüfen"
         price: "Dieser Bereich verfügt über einen Haushalt von"
+      votes:
+        already_supported: "Sie haben diesen Ausgabenvorschlag bereits unterstützt. Jetzt teilen!"
+        confirm_group:
+          one: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn Sie fortfahren, können Sie ihren Wahlbezirk nicht ändern. Sind Sie sicher?"
+          other: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn sie fortfahren, können sie ihren Wahlbezirk nicht ändern. Sind sie sicher?"
+        remove_support: "Unterstützung zurückziehen"
+        remove_support_label: "Unterstützung für %{investment} zurückziehen"
+        support: "Unterstützung"
+        support_label: "%{investment} unterstützen"
+    investments_list:
+      investment:
+        price: "Preis"
+        read_more: "Weiterlesen"
+        supports: "Unterstützung"
+      see_all: "Alle Budgetinvestitionen anzeigen"
+      title: "Liste der Budgetinvestitionen"
     show:
       see_results: Ergebnisse anzeigen
+    supports_info:
+      supported:
+        one: "Sie haben bisher <strong>1 Projekt</strong> unterstützt."
+        other: "Sie haben bisher <strong>%{count} Projekte</strong> unterstützt."
     results:
       link: Ergebnisse
       page_title: "%{budget} - Ergebnisse"

@@ -1,0 +1,6 @@
+<%= render Attachable::FieldsComponent.new(
+  f,
+  resource_type: imageable.class.name,
+  resource_id: imageable.id,
+  relation_name: "image"
+) %>

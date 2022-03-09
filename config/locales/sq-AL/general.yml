@@ -5,10 +5,7 @@ sq:
       erase_account_link: Fshi llogarinë time
       finish_verification: Verifikime të plota
       notifications: Njoftime
-      organization_name_label: Emri i organizatës
-      organization_responsible_name_placeholder: Përfaqësuesi i organizatës / kolektive
       personal: Detaje personale
-      phone_number_label: Numri i telefonit
       public_interests_my_title_list: Etiketo elementet që ti ndjek
       public_interests_user_title_list: Etiketo elementet që përdoruesi ndjek
       save_changes_submit: Ruaj ndryshimet
@@ -22,7 +19,6 @@ sq:
       user_permission_verify: Për të kryer të gjitha veprimet verifikoni llogarinë tuaj.
       user_permission_verify_info: "* Vetëm për përdoruesit e regjistruar."
       user_permission_votes: Merrni pjesë në votimin përfundimtar
-      username_label: Emer përdoruesi
       verified_account: Llogaria është verifikuar
       verify_my_account: Verifikoni llogarinë time
   application:
@@ -40,6 +36,10 @@ sq:
         zero: Nuk ka përgjigje
         one: 1 përgjigje
         other: "%{count} përgjigje"
+      responses_show:
+        zero: Nuk ka përgjigje
+      responses_collapse:
+        zero: Nuk ka përgjigje
       user_deleted: Përdoruesi u fshi
       votes:
         zero: Asnjë votë
@@ -54,7 +54,6 @@ sq:
       newest: Më e reja në fillim
       oldest: Më i vjetri në fillim
       most_commented: Më të komentuarit
-    select_order: Ndaj sipas
     show:
       return_to_commentable: "Shko prapa ne "
   comments_helper:
@@ -82,7 +81,6 @@ sq:
         submit_button: Ruaj ndryshimet
       show_link: Shiko debatin
     form:
-      debate_title: Titulli i Debatit
       tags_instructions: Etiketoni këtë debat.
       tags_placeholder: "Futni etiketimet që dëshironi të përdorni, të ndara me presje (',')"
     index:
@@ -105,7 +103,9 @@ sq:
         button: Kërko
         placeholder: Kërko debate...
         title: Kërko
-      select_order: Renditur nga
+      search_results:
+        one: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
+        other: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
       start_debate: Filloni një debat
       title: Debate
       section_header:
@@ -120,8 +120,6 @@ sq:
     new:
       form:
         submit_button: Filloni një debat
-      info: Nëse doni të bëni një propozim, kjo është seksioni i gabuar, hyni %{info_link}.
-      info_link: krijoni propozim të ri
       more_info: Më shumë informacion
       recommendation_four: Gëzoni këtë hapësirë dhe zërat që e mbushin atë. Ajo ju takon edhe juve.
       recommendation_one: Mos përdorni shkronja kapitale për titullin e debatit ose për dënime të plota. Në internet, kjo konsiderohet ofenduese. Dhe askush nuk i pëlqen të ofendoj.
@@ -155,6 +153,7 @@ sq:
     direct_message: mesazh privat
     error: gabim
     errors: gabime
+    not_saved: "e penguan këtë%{resource} nga të ruajturit.<br>Ju lutemi kontrolloni fushat e shënuara për të ditur se si t'i korrigjoni ato:"
     policy: Politika e privatësisë
     proposal: Propozime
     proposal_notification: "Njoftimet"
@@ -176,6 +175,13 @@ sq:
       firefox: Firefox
       ie: Ne kemi zbuluar se po shfletoni me Internet Explorer. Për një eksperiencë të zgjeruar, ne rekomandojmë përdorimin %{firefox} ose %{chrome}.
       ie_title: Kjo faqe interneti nuk është optimizuar për shfletuesin tuaj
+    dashboard:
+      proposal_header:
+        published: Publikuar
+        draft: Drafti
+      proposal_totals:
+        supports:
+          zero: Asnjë mbështetje
     footer:
       accessibility: Dispnueshmësia
       conditions: Termat dhe kushtet e përdorimit
@@ -192,7 +198,6 @@ sq:
     header:
       administration_menu: Admin
       administration: Administrim
-      available_locales: Gjuhët në dispozicion
       collaborative_legislation: "\nProceset e legjislacionit"
       debates: Debate
       locale: "Gjuha:"
@@ -254,12 +259,16 @@ sq:
       sign_in: Identifikohu me Twitter
       sign_up: Regjistrohuni me Twitter
       name: Twitter
+    info:
+      sign_in: "Identifikohu me:"
+      sign_up: "Regjistrohuni me:"
     or_fill: "Ose plotësoni formularin e mëposhtëm:"
   proposals:
     create:
       form:
         submit_button: Krijo propozim
     share:
+      dashboard: Shiko më shumë informacion
       message: "Kam përkrahur propozimin %{title} në%{handle}. Nëse jeni të interesuar, përkrahu gjithashtu!"
     edit:
       editing: Ndrysho propozimin
@@ -289,7 +298,6 @@ sq:
       map_location: "Vendndodhja në hartë"
       map_location_instructions: "Lundroni në hartë në vendndodhje dhe vendosni shënuesin."
       map_remove_marker: "Hiq shënuesin e hartës"
-      map_skip_checkbox: "Ky propozim nuk ka një vend konkret ose nuk jam i vetëdijshëm për të."
     index:
       featured_proposals: Karakteristika
       orders:
@@ -320,7 +328,9 @@ sq:
         button: Kërko
         placeholder: Kërko propozimet...
         title: Kërko
-      select_order: Renditur nga
+      search_results:
+        one: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
+        other: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
       select_order_long: "Ju shikoni propozime sipas:"
       start_proposal: Krijo propozim
       title: Propozime
@@ -391,6 +401,47 @@ sq:
     update:
       form:
         submit_button: Ruaj ndryshimet
+  dashboard:
+    menu:
+      community: Komunitet
+      polls: Sondazhet
+      related_content: Përmbajtja e ngjashme
+    progress:
+      supports: Suporti
+    index:
+      edit_proposal_link: Ndrysho propozimin
+      retire: Heq dorë nga propozimi
+    recommended_actions:
+      pending_title: Në pritje
+      done_title: E bërë
+    community:
+      access_community: Hyni në komunitet
+      participants: Pjesëmarrësit
+      debates: Debate
+      comments: Komentet
+    polls:
+      index:
+        title: Sondazhet
+        create: Krijo sondazhin
+        additiontal_information: "\nInformacion shtese"
+      new:
+        title: Sondazhi i ri
+        submit: Krijo sondazhin
+      edit:
+        submit: Përditëso sondazhin
+      form:
+        add_question: Shto pyetjet
+      question_fields:
+        add_answer: Shto përgjigje
+    poster:
+      options:
+        preview: Parapamje
+    mailing:
+      mailing_options:
+        preview: Parapamje
+    mailer:
+      forward:
+        support_button: Mbështetni këtë projekt
   polls:
     all: "Të gjithë"
     no_dates: "Asnjë datë e caktuar"
@@ -424,6 +475,7 @@ sq:
       back: Kthehu tek votimi
       cant_answer_not_logged_in: "Ju duhet %{signin} ose %{signup} për të marë pjesë ."
       comments_tab: Komentet
+      cant_answer_verify: "Ju duhet të %{verify_link}për t'u përgjigjur."
       verify_link: "verifikoni llogarinë tuaj"
       cant_answer_expired: "Ky sondazh ka përfunduar."
       cant_answer_wrong_geozone: "Kjo pyetje nuk është e disponueshme në gjeozonën tuaj"
@@ -461,14 +513,13 @@ sq:
       back: "Kthehu te aktiviteti im"
   shared:
     edit: "Ndrysho"
+    filter: "Filtër"
     save: "Ruaj"
     delete: "Fshi"
     "yes": "Po"
     "no": "Jo"
     search_results: "Kërko rezultatet"
     advanced_search:
-      author_type: "Nga kategoria e autorit"
-      author_type_blank: "Zgjidh nje kategori"
       date: "Nga data"
       date_placeholder: "DD/MM/YYYY"
       date_range_blank: "Zgjidhni një datë"
@@ -479,7 +530,6 @@ sq:
       date_5: "E personalizuar"
       from: "Nga"
       general: "Me tekstin"
-      general_placeholder: "Shkruani tekstin"
       search: "Filtër"
       title: "Kërkim i avancuar"
       to: "Në"
@@ -522,6 +572,7 @@ sq:
       districts: "Zonë"
       districts_list: "Lista zonave"
       categories: "Kategoritë"
+    target_blank: "(lidhja hapet në dritare të re)"
     you_are_in: "Ju jeni kycur"
     unflag: I pa shënjuar
     unfollow_entity: "Mos Ndiq %{entity}"
@@ -541,6 +592,9 @@ sq:
       title: Rekomandimet
       see_more: Shiko më shumë rekomandime
       hide: Fshih rekomandimet
+    translations:
+      remove_language: Hiq gjuhën
+      add_language: Shto gjuhën
   social:
     facebook: "Facebook %{org}"
     twitter: "Twitter %{org}"
@@ -564,6 +618,11 @@ sq:
     manage:
       all: "Ju nuk keni leje për të kryer veprimin '%{action}' në %{subject} . "
   users:
+    login_to_comment: "Ju duhet %{signin} ose %{signup} për të lënë koment."
+    login_to_continue: "Ju duhet %{signin} ose %{signup} për të vazhduar."
+    signin: "Kycu"
+    signup: "Rregjistrohu"
+    verify_account: "verifikoni llogarinë tuaj"
     direct_messages:
       new:
         direct_messages_bloqued: "Ky përdorues ka vendosur të mos marrë mesazhe të drejtpërdrejta"
@@ -578,6 +637,7 @@ sq:
       deleted_proposal: Ky propozim është fshirë
       deleted_budget_investment: Ky projekt investimesh është fshirë
       proposals: Propozime
+      proposals_status: Statusi
       debates: Debate
       budget_investments: Investime buxhetor
       comments: Komentet
@@ -605,7 +665,10 @@ sq:
       delete_alert: "Jeni i sigurt që doni të fshini projektin tuaj të investimeve? Ky veprim nuk mund të zhbëhet"
     proposals:
       retired: "Propozimet e vecuara"
+      draft: Drafti
+      published: Publikuar
       see: "Shiko propozimin"
+      actions: Veprimet
   votes:
     agree: Jam dakort
     anonymous: Shumë vota anonime për të lejuar votën %{verify_account}.
@@ -690,3 +753,7 @@ sq:
       alt: Zgjidhni tekstin që dëshironi të komentoni dhe shtypni butonin me laps.
       text: Për të komentuar këtë dokument duhet të %{sign_in} ose %{sign_up}. Pastaj zgjidhni tekstin që dëshironi të komentoni dhe shtypni butonin me laps.
       title: Si mund ta komentoj këtë dokument?
+  links:
+    form:
+      delete_button: Fshi
+      cancel_button: Anullo

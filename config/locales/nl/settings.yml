@@ -60,6 +60,10 @@ nl:
     meta_keywords_description: 'Sleutelwoorden <meta name = "keywords">, gebruikt om SEO te verbeteren'
     min_age_to_participate: Minimum age needed to participate
     min_age_to_participate_description: "Gebruikers van deze leeftijd kunnen deelnemen aan alle processen"
+    proposals:
+      poll_short_title: Polls
+      poll_description: Omschrijving van de peiling
+      email_short_title: E-mail
     analytics_url: "Analytics-URL"
     proposal_notification_minimum_interval_in_days: "Het minimum aantal dagen dat dient te worden gewacht voordat notificaties van voorstellen kunnen worden verstuurd"
     proposal_notification_minimum_interval_in_days_description: "Het minimum aantal dagen dat dient te worden gewacht voordat notificaties van voorstellen kunnen worden verstuurd"

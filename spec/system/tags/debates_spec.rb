@@ -65,7 +65,7 @@ describe "Tags" do
     login_as(user)
 
     visit new_debate_path
-    fill_in "Debate title", with: "Title"
+    fill_in_new_debate_title with: "Title"
     fill_in_ckeditor "Initial debate text", with: "Description"
     check "debate_terms_of_service"
 
@@ -84,7 +84,7 @@ describe "Tags" do
     login_as(user)
 
     visit new_debate_path
-    fill_in "Debate title", with: "Title"
+    fill_in_new_debate_title with: "Title"
     fill_in_ckeditor "Initial debate text", with: "Description"
     check "debate_terms_of_service"
 
@@ -102,7 +102,7 @@ describe "Tags" do
 
     visit new_debate_path
 
-    fill_in "Debate title", with: "A test of dangerous strings"
+    fill_in_new_debate_title with: "A test of dangerous strings"
     fill_in_ckeditor "Initial debate text", with: "A description suitable for this test"
     check "debate_terms_of_service"
 

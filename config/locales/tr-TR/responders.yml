@@ -14,6 +14,7 @@ tr:
         proposal_notification: "Mesajınız başarıyla gönderildi."
         budget_investment: "Bütçe Yatırımı başarıyla oluşturuldu."
         signature_sheet: "İmza sayfası başarıyla oluşturuldu"
+        support: "Yatırım başarıyla desteklendi"
         topic: "Konu başarıyla oluşturuldu."
         valuator_group: "Bilirkişi grubu başarıyla oluşturuldu"
       save_changes:

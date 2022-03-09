@@ -1,0 +1,72 @@
+.admin .groups-and-headings {
+  $gap: rem-calc(map-get($grid-column-gutter, medium));
+  @include admin-action-icons;
+
+  > section + section {
+    margin-top: $line-height * 1.5;
+  }
+
+  dt,
+  dd {
+    display: inline;
+  }
+
+  dt {
+    font-weight: normal;
+  }
+
+  dd {
+    font-weight: bold;
+  }
+
+  th:last-child {
+    text-align: $global-right;
+  }
+
+  .table-actions {
+    justify-content: flex-end;
+  }
+
+  .groups-actions {
+    @include flex-with-gap($gap);
+    align-items: flex-start;
+
+    + * {
+      margin-top: $line-height / 2;
+    }
+
+    .edit-link,
+    .destroy-link {
+      @include icon-on-top;
+    }
+
+    .new-link {
+      @include hollow-button;
+      flex-shrink: 0;
+    }
+
+    > :nth-last-child(2) {
+      margin-#{$global-right}: $gap;
+    }
+
+    > :last-child {
+      margin-#{$global-left}: auto;
+    }
+
+    button {
+      cursor: pointer;
+    }
+  }
+
+  .new-link {
+    @include has-fa-icon(plus-square, solid);
+
+    &::before {
+      margin-#{$global-right}: $font-icon-margin;
+    }
+  }
+
+  > .new-link {
+    @include regular-button;
+  }
+}

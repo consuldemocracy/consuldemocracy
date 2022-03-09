@@ -9,10 +9,10 @@ sv:
     show:
       title:
         proposal: Gemenskap kring förslaget
-        investment: Gemenskap kring budgetförslaget
+        investment: Gemenskap för budgetinvesteringen
       description:
         proposal: Delta i gemenskapen för att utveckla förslaget. En aktiv diskussion kan leda till förbättringar av förslaget, ge det större spridning och ökat stöd.
-        investment: Delta i gemenskapen för att utveckla budgetförslaget. En aktiv diskussion kan leda till förbättringar av förslaget, ge det större spridning och ökat stöd.
+        investment: Delta i gemenskapen för den här budgetinvesteringen. En aktiv diskussion kan leda till förbättringar av budgetinvesteringen, ge det större spridning och ökat stöd.
       create_first_community_topic:
         first_theme_not_logged_in: Inga inlägg finns tillgängliga, skapa det första.
         first_theme: Skapa det första inlägget i gemenskapen
@@ -50,4 +50,4 @@ sv:
         recommendations_title: Rekommendationer för att skapa ämne
         recommendation_one: Använd inte versaler i ämnets titel eller i hela meningar i beskrivningen. På internet tolkas det som att du skriker, och ingen gillar när folk skriker på dem.
         recommendation_two: Inlägg eller kommentarer som förespråkar olagliga handlingar eller försöker sabotera diskussionen kommer att raderas. Allt annat är tillåtet.
-        recommendation_three: Det här är din plats, du ska kunna trivas och göra din röst hörd här.
+        recommendation_three: 'Det här är din plats också: Du ska kunna trivas och göra din röst hörd här.'

@@ -10,11 +10,15 @@ class LocalCensusRecord < ApplicationRecord
 
   scope :search, ->(terms) { where("document_number ILIKE ?", "%#{terms}%") }
 
+  def title
+    "#{ApplicationController.helpers.humanize_document_type(document_type)} #{document_number}"
+  end
+
   private
 
     def sanitize
-      self.document_type   = self.document_type&.strip
-      self.document_number = self.document_number&.strip
-      self.postal_code     = self.postal_code&.strip
+      self.document_type   = document_type&.strip
+      self.document_number = document_number&.strip
+      self.postal_code     = postal_code&.strip
     end
 end

@@ -22,23 +22,6 @@ describe "Budgets" do
       let!(:heading1) { create(:budget_heading, group: group1) }
       let!(:heading2) { create(:budget_heading, group: group2) }
 
-      scenario "Show normal index with links in informing phase" do
-        budget.update!(phase: "informing")
-
-        visit budgets_path
-
-        within(".budget-header") do
-          expect(page).to have_content(budget.name)
-          expect(page).to have_content(budget.description)
-          expect(page).to have_link("Help with participatory budgets")
-        end
-
-        within(".budget-subheader") do
-          expect(page).to have_content "CURRENT PHASE"
-          expect(page).to have_content "Information"
-        end
-      end
-
       scenario "Show normal index with links publishing prices" do
         budget.update!(phase: "publishing_prices")
 
@@ -144,13 +127,34 @@ describe "Budgets" do
       expect(page).to have_content "There are no budgets"
     end
 
-    scenario "Accepting" do
-      budget.update!(phase: "accepting")
-      login_as(create(:user, :level_two))
+    scenario "Show heading for budget with single heading" do
+      group = create(:budget_group, budget: budget, name: "Single group")
+      create(:budget_heading, group: group, name: "New heading", price: 10_000)
 
       visit budgets_path
 
-      expect(page).to have_link "Create a budget investment"
+      expect(page).not_to have_content "Single group"
+
+      within ".single-heading" do
+        expect(page).to have_content "New heading"
+        expect(page).to have_content "€10,000"
+      end
+    end
+
+    scenario "Show group and headings for budget with multiple headings" do
+      group = create(:budget_group, budget: budget, name: "New group")
+      create(:budget_heading, group: group, name: "New heading", price: 10_000)
+      create(:budget_heading, group: group, name: "Other new heading", price: 30_000)
+
+      visit budgets_path
+
+      within("#groups_and_headings") do
+        expect(page).to have_content "New group"
+        expect(page).to have_content "New heading"
+        expect(page).to have_content "€10,000"
+        expect(page).to have_content "Other new heading"
+        expect(page).to have_content "€30,000"
+      end
     end
   end
 
@@ -322,43 +326,6 @@ describe "Budgets" do
 
   context "Show" do
     let!(:budget) { create(:budget, :selecting) }
-    let!(:group)  { create(:budget_group, budget: budget) }
-
-    describe "Links to unfeasible and selected" do
-      scenario "are not seen before balloting" do
-        visit budget_group_path(budget, group)
-
-        expect(page).not_to have_link "See unfeasible investments"
-        expect(page).not_to have_link "See investments not selected for balloting phase"
-      end
-
-      scenario "are not seen publishing prices" do
-        budget.update!(phase: :publishing_prices)
-
-        visit budget_group_path(budget, group)
-
-        expect(page).not_to have_link "See unfeasible investments"
-        expect(page).not_to have_link "See investments not selected for balloting phase"
-      end
-
-      scenario "are seen balloting" do
-        budget.update!(phase: :balloting)
-
-        visit budget_group_path(budget, group)
-
-        expect(page).to have_link "See unfeasible investments"
-        expect(page).to have_link "See investments not selected for balloting phase"
-      end
-
-      scenario "are seen on finished budgets" do
-        budget.update!(phase: :finished)
-
-        visit budget_group_path(budget, group)
-
-        expect(page).to have_link "See unfeasible investments"
-        expect(page).to have_link "See investments not selected for balloting phase"
-      end
-    end
 
     scenario "Take into account headings with the same name from a different budget" do
       group1 = create(:budget_group, budget: budget, name: "New York")
@@ -379,36 +346,97 @@ describe "Budgets" do
       expect(page).not_to have_css("#budget_heading_#{heading4.id}")
     end
 
-    scenario "See results button is showed if the budget has finished for all users" do
+    scenario "See results button is showed if the budget has finished" do
       user = create(:user)
-      admin = create(:administrator)
       budget = create(:budget, :finished)
 
       login_as(user)
       visit budget_path(budget)
-      expect(page).to have_link "See results"
 
-      logout
-
-      login_as(admin.user)
-      visit budget_path(budget)
       expect(page).to have_link "See results"
     end
 
-    scenario "See results button isn't showed if the budget hasn't finished for all users" do
-      user = create(:user)
-      admin = create(:administrator)
-      budget = create(:budget, :balloting)
+    scenario "Show investments list" do
+      budget = create(:budget, phase: "balloting")
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
 
-      login_as(user)
+      create_list(:budget_investment, 3, :selected, heading: heading, price: 999)
+
       visit budget_path(budget)
-      expect(page).not_to have_link "See results"
 
-      logout
+      within(".investments-list") do
+        expect(page).to have_content "List of investments"
+        expect(page).to have_content "PRICE", count: 3
+      end
 
-      login_as(admin.user)
+      expect(page).to have_link "See all investments",
+                                href: budget_investments_path(budget)
+    end
+
+    scenario "Show investments list when budget has multiple headings" do
+      budget = create(:budget, phase: "accepting")
+      group = create(:budget_group, budget: budget)
+      heading_1 = create(:budget_heading, group: group)
+      create(:budget_heading, group: group)
+
+      create_list(:budget_investment, 3, :selected, heading: heading_1, price: 999)
+
       visit budget_path(budget)
-      expect(page).not_to have_link "See results"
+
+      expect(page).to have_css ".investments-list"
+    end
+
+    scenario "Show supports info on selecting phase" do
+      budget = create(:budget, :selecting)
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+      voter = create(:user, :level_two)
+
+      create_list(:budget_investment, 3, :selected, heading: heading, voters: [voter])
+
+      login_as(voter)
+      visit budget_path(budget)
+
+      expect(page).to have_content "It's time to support projects!"
+      expect(page).to have_content "So far you've supported 3 projects."
+    end
+
+    scenario "Show supports only if the support has not been removed" do
+      Setting["feature.remove_investments_supports"] = true
+      voter = create(:user, :level_two)
+      budget = create(:budget, phase: "selecting")
+      investment = create(:budget_investment, :selected, budget: budget)
+
+      login_as(voter)
+
+      visit budget_path(budget)
+
+      expect(page).to have_content "So far you've supported 0 projects."
+
+      visit budget_investment_path(budget, investment)
+
+      within("#budget_investment_#{investment.id}_votes") do
+        click_button "Support"
+
+        expect(page).to have_content "You have already supported this investment project."
+      end
+
+      visit budget_path(budget)
+
+      expect(page).to have_content "So far you've supported 1 project."
+
+      visit budget_investment_path(budget, investment)
+
+      within("#budget_investment_#{investment.id}_votes") do
+        click_button "Remove your support"
+
+        expect(page).to have_content "No supports"
+      end
+
+      visit budget_path(budget)
+
+      expect(page).to have_content "So far you've supported 0 projects."
     end
   end
 
@@ -423,36 +451,6 @@ describe "Budgets" do
         visit budgets_path
 
         expect(page).not_to have_content(budget.name)
-      end
-    end
-  end
-
-  context "Accepting" do
-    before do
-      budget.update(phase: "accepting")
-    end
-
-    context "Permissions" do
-      scenario "Verified user" do
-        login_as(level_two_user)
-
-        visit budget_path(budget)
-        expect(page).to have_link "Create a budget investment"
-      end
-
-      scenario "Unverified user" do
-        user = create(:user)
-        login_as(user)
-
-        visit budget_path(budget)
-
-        expect(page).to have_content "To create a new budget investment verify your account."
-      end
-
-      scenario "user not logged in" do
-        visit budget_path(budget)
-
-        expect(page).to have_content "To create a new budget investment you must sign in or sign up"
       end
     end
   end

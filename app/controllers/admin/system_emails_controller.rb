@@ -43,6 +43,7 @@ class Admin::SystemEmailsController < Admin::BaseController
     case @system_email
     when "proposal_notification_digest"
       @previews = ProposalNotification.where(id: unsent_proposal_notifications_ids)
+                                      .order(:id)
                                       .page(params[:page])
     end
   end

@@ -54,6 +54,8 @@ zh-CN:
         assigned_valuators: 指定的评估员
       edit:
         dossier: 档案
+        price: "价格 (%{currency})"
+        price_first_year: "第一年的成本 (%{currency}) <small>(可选, 数据不公开)</small>"
         feasibility: 可行性
         valuation_finished_alert: "您确定要把此报告标记为已完成吗？如果您这样做了，将无法再修改。"
         not_feasible_alert: "立即发送电子邮件给项目的作者，并附有不可行的报告。"

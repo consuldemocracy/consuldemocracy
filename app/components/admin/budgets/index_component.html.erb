@@ -1,7 +1,8 @@
 <%= header do %>
-  <%= link_to t("admin.budgets.index.new_link"), new_admin_budget_path %>
+  <button data-open="heading_mode"><%= t("admin.budgets.index.new_link") %></button>
 <% end %>
 
+<%= render Admin::Budgets::HeadingModeComponent.new %>
 <%= render Admin::Budgets::HelpComponent.new("budgets") %>
 <%= render "shared/filter_subnav", i18n_namespace: "admin.budgets.index" %>
 
@@ -13,6 +14,7 @@
       <tr>
         <th><%= t("admin.budgets.index.table_name") %></th>
         <th><%= t("admin.budgets.index.table_phase") %></th>
+        <th><%= t("admin.budgets.index.table_budget_type") %></th>
         <th><%= t("admin.budgets.index.table_duration") %></th>
         <th><%= t("admin.actions.actions") %></th>
       </tr>
@@ -28,6 +30,7 @@
             <%= budget.current_phase.name %>
             <small><%= phase_progress_text(budget) %></small>
           </td>
+          <td><%= type(budget) %></td>
           <td>
             <%= dates(budget) %>
             <%= duration(budget) %>

@@ -5,4 +5,8 @@ class Admin::Budgets::DraftingComponent < ApplicationComponent
   def initialize(budget)
     @budget = budget
   end
+
+  def render?
+    can?(:publish, budget)
+  end
 end

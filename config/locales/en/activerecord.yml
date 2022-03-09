@@ -155,12 +155,14 @@ en:
         description_balloting: "Description during Balloting phase"
         description_reviewing_ballots: "Description during Reviewing Ballots phase"
         description_finished: "Description when the budget is finished"
-        phase: "Phase"
+        phase: "Active phase"
         currency_symbol: "Currency"
         voting_style: "Final voting style"
         voting_style_knapsack: "Knapsack"
         voting_style_approval: "Approval"
       budget/translation:
+        main_link_text: "Text on the link"
+        main_link_url: "The link takes you to (add a link)"
         name: "Name"
       budget/investment:
         heading_id: "Heading"
@@ -220,7 +222,7 @@ en:
         latitude: "Latitude (optional)"
         longitude: "Longitude (optional)"
         name: "Heading name"
-        price: "Amount"
+        price: "Money amount"
         population: "Population (optional)"
         max_ballot_lines: "Votes allowed"
       budget/heading/translation:
@@ -233,6 +235,8 @@ en:
         name: "Name"
         description: "Description"
         summary: "Summary"
+        main_link_text: "Text on the link"
+        main_link_url: "The link takes you to (add a link)"
       comment:
         body: "Comment"
         user: "User"
@@ -277,7 +281,7 @@ en:
         official_level: "Official level"
         phone_number: "Phone number"
         public_activity: "Keep my list of activities public"
-        public_interests: "Keep the labels of the elements I follow public"
+        public_interests: "Keep the elements I follow public"
         recommended_debates: "Show debates recommendations"
         recommended_proposals: "Show proposals recommendations"
         redeemable_code: "Verification code received via email"
@@ -496,7 +500,7 @@ en:
         user: Executed by
       link:
         label: Title
-        url: Link
+        url: URL
       valuator:
         description: Description
         valuator_group_id: Valuator group
@@ -536,10 +540,6 @@ en:
           attributes:
             segment_recipient:
               invalid: "The user recipients segment is invalid"
-        map_location:
-          attributes:
-            map:
-              invalid: Map location can't be blank. Place a marker or select the checkbox if geolocalization is not needed
         poll/voter:
           attributes:
             document_number:

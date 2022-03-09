@@ -69,7 +69,6 @@ he:
         not_allowed: "אין לך משמרות היום"
       new:
         title: אמת את המסמך
-        document_number: "מספר מסמך (כולל אותיות)"
         submit: אמת את המסמך
         error_verifying_census: "מפקד האוכלוסין לא הצליח לאמת את המסמך הזה."
         form_errors: מונע את אימות המסמך הזה

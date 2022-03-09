@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe SDG::Goals::HelpPageComponent, type: :component do
+describe SDG::Goals::HelpPageComponent do
   let(:goals) { SDG::Goal.all }
   let(:component) { SDG::Goals::HelpPageComponent.new(goals) }
 
@@ -13,7 +13,7 @@ describe SDG::Goals::HelpPageComponent, type: :component do
 
     render_inline component
 
-    expect(page).not_to have_css ".sdg-help-content"
+    expect(page).not_to be_rendered
   end
 
   it "renders content when the feature is enabled" do

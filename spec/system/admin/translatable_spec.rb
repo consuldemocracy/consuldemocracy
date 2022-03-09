@@ -2,6 +2,7 @@ require "rails_helper"
 
 describe "Admin edit translatable records", :admin do
   before do
+    translatable.main_link_url = "https://consulproject.org" if translatable.is_a?(Budget::Phase)
     translatable.update!(attributes)
   end
 
@@ -111,7 +112,7 @@ describe "Admin edit translatable records", :admin do
         click_button "Save changes"
 
         visit path
-        select "Português brasileiro", from: "locale-switcher"
+        select "Português brasileiro", from: "Language:"
 
         expect(page).to have_field "Questão", with: "Português"
       end
@@ -122,7 +123,7 @@ describe "Admin edit translatable records", :admin do
     let(:translatable) { create(:budget_investment) }
 
     context "Input field" do
-      let(:translatable) { create(:budget) }
+      let(:translatable) { create(:budget, main_link_url: "https://consulproject.org") }
 
       scenario "Shows validation erros" do
         visit edit_admin_budget_path(translatable)
@@ -204,7 +205,7 @@ describe "Admin edit translatable records", :admin do
 
         expect(page).to have_field "Title", with: "Title in English"
 
-        select("Español", from: "locale-switcher")
+        select "Español", from: "Language:"
 
         expect(page).to have_field "Título", with: "Título corregido"
         expect(page).to have_field "Descripción", with: "Descripción corregida"
@@ -233,7 +234,7 @@ describe "Admin edit translatable records", :admin do
 
         expect(page).to have_field "Answer", with: "Answer in English"
 
-        select("Español", from: "locale-switcher")
+        select "Español", from: "Language:"
 
         expect(page).to have_field "Respuesta", with: "Respuesta corregida"
         expect(page).to have_ckeditor "Descripción", with: "Descripción corregida"
@@ -354,7 +355,9 @@ describe "Admin edit translatable records", :admin do
   context "Remove all translations" do
     let(:translatable) { create(:milestone) }
 
-    scenario "Shows an error message" do
+    scenario "Shows an error message when there's a mandatory translatable field" do
+      translatable.update!(status: nil)
+
       visit admin_polymorphic_path(translatable, action: :edit)
 
       click_link "Remove language"
@@ -363,6 +366,19 @@ describe "Admin edit translatable records", :admin do
       click_button "Update milestone"
 
       expect(page).to have_content "Is mandatory to provide one translation at least"
+    end
+
+    scenario "Is successful when there isn't a mandatory translatable field" do
+      translatable.update!(status: Milestone::Status.first)
+
+      visit admin_polymorphic_path(translatable, action: :edit)
+
+      click_link "Remove language"
+      click_link "Remove language"
+
+      click_button "Update milestone"
+
+      expect(page).to have_content "Milestone updated successfully"
     end
   end
 
@@ -465,7 +481,7 @@ describe "Admin edit translatable records", :admin do
 
       expect_to_have_language_selected "English"
 
-      select("Español", from: "locale-switcher")
+      select "Español", from: "Language:"
 
       expect_to_have_language_selected "Español"
     end

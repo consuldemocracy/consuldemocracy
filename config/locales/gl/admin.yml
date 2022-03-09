@@ -6,6 +6,7 @@ gl:
       actions: Accións
       confirm: Estás seguro?
       confirm_hide: Confirmar moderación
+      delete: "Borrar"
       hide: Agochar
       hide_author: Bloquear o autor
       restore: Volver mostrar
@@ -13,13 +14,10 @@ gl:
       unmark_featured: Quitar destacado
       edit: Editar proposta
       configure: Configurar
-      delete: Borrar
     banners:
       index:
         title: Bánners
         create: Crear anuncio
-        edit: Editar anuncio
-        delete: Borrar anuncio
         filters:
           all: Todo
           with_active: Activa
@@ -60,18 +58,22 @@ gl:
         type: Tipo
         no_activity: Non hai actividade dos moderadores.
     budgets:
+      actions:
+        edit: "Editar orzamento"
+        preview: "Vista previa"
       index:
         title: Orzamentos participativos
         new_link: Crear un novo orzamento
         filter: Filtro
         filters:
+          all: Todo
           open: Abertas
           finished: Finalizadas
         budget_investments: Xestionar proxectos
+        table_budget_type: "Tipo"
+        table_draft: "Bosquexo"
         table_name: Nome
         table_phase: Fase
-        edit_groups: Editar grupos de partidas
-        edit_budget: Editar orzamento
         no_budgets: "Non hai orzamentos."
       create:
         notice: Nova campaña de orzamentos participativos creada con éxito!
@@ -83,14 +85,13 @@ gl:
         phase: Fase
         enabled: Habilitado
         actions: Accións
-        edit_phase: Editar fase
         active: Activos
         blank_dates: Sen datas
       destroy:
         success_notice: Orzamento eliminado correctamente
         unable_notice: Non se pode eliminiar un orzamento con proxectos asociados
-      new:
-        title: Novo orzamento cidadán
+      show:
+        add_heading: "Engadir partida"
       winners:
         calculate: Calcular propostas gañadoras
         calculated: Calculando gañadoras, pode tardar un minuto.
@@ -115,12 +116,9 @@ gl:
         edit: "Editar grupo"
         submit: "Gardar grupo"
       index:
-        back: "Volver aos orzamentos"
+        new_button: "Engadir un grupo novo"
     budget_headings:
       no_headings: "Aínda non hai partidas creadas. Cada usuario poderá votar nunha soa partida de cada grupo."
-      amount:
-        one: "Hai 1 partida"
-        other: "Hai %{count} partidas"
       create:
         notice: "Partida creada correctamente!"
       update:
@@ -139,6 +137,7 @@ gl:
         back: "Volver aos grupos"
     budget_phases:
       edit:
+        title: "Editar fase"
         description_help_text: Este texto aparecerá na cabeceira cando a fase estiver activa
         enabled_help_text: Esta fase será pública no calendario de fases do orzamento e estará activa para outros propósitos
         save_changes: Gardar so cambios
@@ -162,6 +161,8 @@ gl:
           unfeasible: Non viables
           min_total_supports: Soportes mínimos
           winners: Gañadores
+          one_filter: "Filtros aplicados actualmente: <b><em>%{filter}</em></b>"
+          two_filters: "Filtros de uso aplicados actualmente: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filtro
         download_current_selection: "Descargar a selección actual"
@@ -190,6 +191,8 @@ gl:
           visible_to_valuators: Amosar aos avaliadores
           author_username: Nome de usuario do autor
           incompatible: Incompatible
+          price: Custo
+          author: Autoría
         cannot_calculate_winners: O orzamento debe manterse na fase «Proxecto en votación», «Revisión de votacións» ou «Orzamento rematado» para poder calcular os proxectos gañadores
         see_results: "Ver resultados"
       show:
@@ -218,6 +221,7 @@ gl:
           "true": "Si"
           "false": "Non"
         valuator_groups: "Grupos de avaliadores"
+        preview: Vista previa de investimento
       edit:
         classification: Clasificación
         compatibility: Compatibilidade
@@ -229,14 +233,19 @@ gl:
         tags_placeholder: "Escribe as etiquetas que desexes separadas por comas (,)"
         undefined: Sen definir
       search_unfeasible: Buscar inviables
+    budgets_wizard:
+      creation_timeline:
+        budget: Orzamento participativo
+        groups: Grupos
+        headings: Partidas
     milestones:
       index:
+        table_id: "ID"
         table_title: "Título"
         table_description: "Descrición"
         table_publication_date: "Data de publicación"
         table_status: Estado
         table_actions: "Accións"
-        delete: "Eliminar fito"
         no_milestones: "Non hai datos definidos"
         image: "Imaxe"
         show_image: "Amosar imaxe"
@@ -281,6 +290,7 @@ gl:
         no_progress_bars: "Non hai barras de progreso"
         new_progress_bar: "Crear nova barra de progreso"
         primary: "Barra de progreso principal"
+        table_id: "ID"
         table_kind: "Tipo"
         table_title: "Título"
         table_percentage: "Progreso"
@@ -298,15 +308,66 @@ gl:
         notice: "A barra de progreso foi eliminada correctamente"
     comments:
       index:
+        id: "ID"
+        content: "Contido"
+        author: "Autoría"
+        commentable_type: "Tipo"
         title: Comentarios ocultos
+        table_link: "Ligazón"
+    hidden_comments:
+      index:
+        filter: Filtro
+        filters:
+          all: Todo
+          with_confirmed_hide: Confirmadas
+          without_confirmed_hide: Pendentes
+        hidden_debate: Debate agochado
+        hidden_proposal: Proposta agochada
+        title: Comentarios agochados
     dashboard:
       index:
         back: Volver a %{org}
         title: Administración
         description: Benvido ao panel de administración de %{org}.
+      actions:
+        index:
+          active: 'Si'
+          inactive: 'Non'
+          action_title: Título
+          action_type: Tipo
+          action_active: Activos
+          order: Orde
+          default:
+            email: O teu correo electrónico
+            polls: Votacións
+            poster: Cartel
+        form:
+          submit_button: Gardar
+      administrator_tasks:
+        index:
+          source: Orixe
+          filter: Filtro
+          filters:
+            pending: Pendentes
+        form:
+          proposal: a proposta
     debates:
       index:
+        id: ID
+        author: Autoría
         title: Debates ocultos
+    hidden_debates:
+      index:
+        filter: Filtro
+        filters:
+          all: Todo
+          with_confirmed_hide: Confirmadas
+          without_confirmed_hide: Pendentes
+        title: Debates agochados
+    documents:
+      index:
+        new_link: "Engadir novo documento"
+        title: "Documentos"
     hidden_users:
       index:
         filter: Filtro
@@ -353,10 +414,6 @@ gl:
           allegations_phase: Fase de alegaciones
           proposals_phase: Fase de propostas
           use_markdown: Usar Markdown para formatear o texto
-          title_placeholder: Escribe o título do proceso
-          summary_placeholder: Resumo corto da descrición
-          description_placeholder: Engade unha descrición do proceso
-          additional_info_placeholder: Engade unha información adicional que pode ser de interese
           homepage_description: Aquí podes explicar o contido do proceso
           banner_title: Cores da cabeceira
         index:
@@ -370,11 +427,10 @@ gl:
           title: Crear un novo proceso de lexislación colaborativa
           submit_button: Crear proceso
         proposals:
-          select_order: Ordenar por
           orders:
-            id: Id
-            title: Título
-            supports: Apoios
+            id: "Id"
+            title: "Título"
+            supports: "Apoios"
         process:
           title: Proceso
           comments: Comentarios
@@ -418,6 +474,7 @@ gl:
           submit_button: Gardar so cambios
           warning: Xa editaches o texto, mais lembra premeres o botón Gardar para conservar permanentemente os cambios.
         form:
+          title: 'Editar <span class="strong">%{draft_version_title}</span> do proceso <span class="strong">%{process_title}</span>'
           launch_text_editor: Abrir editor de texto
           close_text_editor: Pechar editor de texto
           use_markdown: Usar Markdown para darlle formato ao texto
@@ -426,9 +483,7 @@ gl:
             status:
               draft: Poderás previsualizalo en modo admin, ninguén máis o poderá ver
               published: Visible para todo o mundo
-          title_placeholder: Escrite o título desta versión do borrador
           changelog_placeholder: Describe calquera cambio relevante coa versión anterior
-          body_placeholder: Escribe o texto do borrador
         index:
           title: Versións borrador
           create: Crear versión
@@ -459,7 +514,6 @@ gl:
           submit_button: Gardar so cambios
         form:
           add_option: Engadir unha opción
-          title_placeholder: Engadir pregunta
           value_placeholder: Engadir unha resposta pechada
           question_options: "Posibles respostas (opcional, respostas abertas por defecto)"
         index:
@@ -489,6 +543,12 @@ gl:
         add: Engadir
       search:
         title: "Xestores: busca de usuarios"
+    sdg_managers:
+      index:
+        no_sdg_managers: Non hai usuarios.
+    sdg/managers:
+      sdg/manager:
+        add: Engadir
     menu:
       activity: Actividade de moderador
       admin: Menú de administración
@@ -548,6 +608,8 @@ gl:
       title_booths: Urnas de votación
       legislation: Lexislación colaborativa
       users: Usuarios/as
+      debates: "Debates"
+      comments: "Comentarios"
     administrators:
       index:
         title: Administradores
@@ -671,6 +733,8 @@ gl:
         description: "Enviar ao novo usuario para comprobar a súa conta."
       user_invite:
         title: "Convite de usuario"
+      evaluation_comment:
+        title: "Nova avaliación de comentario"
     emails_download:
       index:
         title: Descarga de enderezos de correo
@@ -847,6 +911,7 @@ gl:
         title: "Editar pregunta cidadá"
       new:
         title: "Crear pregunta para a enquisa %{poll}"
+        title_proposal: "Crear pregunta"
       answers:
         images:
           add_image: "Engadir unha imaxe"
@@ -895,6 +960,7 @@ gl:
       index:
         title: "Recontos"
         no_recounts: "Non hai nada para o que facer o reconto"
+        total_system: "Votos (automático)"
         table_booth_name: "Urna"
         table_total_recount: "Escrutinio total (presidencia de mesa)"
         table_system_count: "Votos (automático)"
@@ -931,7 +997,6 @@ gl:
         location: "Localización"
       booth:
         shifts: "Asignar quendas"
-        edit: "Editar urna"
     officials:
       edit:
         destroy: Eliminar condición de 'Cargo público'
@@ -952,7 +1017,6 @@ gl:
       level_4: Nivel 4
       level_5: Nivel 5
       search:
-        edit_official: Editar cargo público
         make_official: Converter en cargo público
         title: "Cargos públicos: busca de usuarios"
         no_results: Non se atopou ningún cargo público.
@@ -964,6 +1028,9 @@ gl:
           pending: Pendentes
           rejected: Rexeitada
           verified: Verificada
+        hidden_count:
+          one: Hai ademais <strong>unha organización</strong> sen usuario ou co usuario bloqueado.
+          other: Hai ademais <strong>%{count} organizacións</strong> sen usuario ou co usuario bloqueado.
         name: Nome
         email: O teu correo electrónico
         phone_number: Teléfono
@@ -984,6 +1051,8 @@ gl:
         title: Propostas cidadás
         id: ID
         author: Autoría
+        select: Seleccionar
+        selected: Seleccionadas
         milestones: Seguimento
         no_proposals: Non hai ningunha proposta.
     hidden_proposals:
@@ -995,18 +1064,25 @@ gl:
           without_confirmed_hide: Pendentes
         title: Propostas agochadas
         no_hidden_proposals: Non hai propostas agochadas.
+    hidden_proposal_notifications:
+      index:
+        filter: Filtro
+        filters:
+          all: Todo
+          with_confirmed_hide: Confirmadas
+          without_confirmed_hide: Pendentes
+        title: Notificacións agochadas
+        no_hidden_proposals: Non hai notificacións agochadas.
     settings:
       flash:
         updated: Valor actualizado
       index:
         title: Configuración global
+        general: Configuración global
         update_setting: Actualizar
         feature_flags: Funcionalidades
         features:
           enabled: "Funcionalidade activada"
-          disabled: "Funcionalidade desactivada"
-          enable: "Activar"
-          disable: "Desactivar"
         map:
           title: Configuración do mapa
           help: Aquí podes personalizar o xeito en que os e as usuarias ven o mapa. Arrastra o marcador ou preme en calquera parte do mapa, axusta o zoom e preme o botón 'Actualizar'.
@@ -1015,14 +1091,10 @@ gl:
           form:
             submit: Actualizar
       setting: Característica
-      setting_actions: Accións
       setting_name: Axuste
-      setting_status: Estado
       setting_value: Valor
       no_description: "Sen descrición"
     shared:
-      true_value: "Si"
-      false_value: "Non"
       search:
         label:
           booths: "Buscar urna por nome"
@@ -1031,6 +1103,7 @@ gl:
           poll_questions: "Buscar preguntas"
           proposals: "Buscar propostas por título, código, descrición ou pregunta"
           users: "Buscar usuario por nome ou correo electrónico"
+        search: "Procurar"
       search_results: "Resultados da procura"
       no_search_results: "Non se atoparon resultados."
       actions: Accións
@@ -1044,6 +1117,8 @@ gl:
       author: Autoría
       content: Contido
       created_at: Creada
+      color_help: Formato hexadecimal
+      show_results_and_stats: "Amosar os resultados e as estatísticas"
     geozones:
       index:
         title: Zonas
@@ -1079,6 +1154,7 @@ gl:
       show:
         created_at: Creado
         author: Autoría
+        users: Usuarios/as
         verified:
           one: "Hai %{count} sinatura válida"
           other: "Hai %{count} sinaturas válidas"
@@ -1108,10 +1184,23 @@ gl:
           visits: Visitas
           votes: Votos totais
         budgets_title: Orzamentos participativos
+        participatory_budgets: Orzamentos participativos
         direct_messages: Mensaxes directas
         proposal_notifications: Notificacións de propostas
         incomplete_verifications: Verificacións incompletas
         polls: Votacións
+      graph:
+        debate_created: Debates
+        visit: Visitas
+        proposal_created: Propostas cidadás
+      budget_balloting:
+        vote_count: Votos
+        participant_count: Participantes
+      budget_supporting:
+        headings: Partidas
+        users: Usuarios/as
+        vote_count: Votos
+        participant_count: Participantes
       direct_messages:
         title: Mensaxes directas
         total: Total
@@ -1132,9 +1221,12 @@ gl:
           question_name: Pregunta
           origin_web: Participantes na web
           origin_total: Participantes totais
+      sdg:
+        debates: "Debates"
+        polls: "Votacións"
+        proposals: "Propostas cidadás"
     tags:
       create: Crea un tema
-      destroy: Borrar tema
       index:
         add_tag: Engade un novo tema de debate
         title: Temas de debate
@@ -1142,6 +1234,7 @@ gl:
         help: "Cando un usuario crea unha proposta, amosanse os seguintes temas como etiquetas predeterminadas."
     users:
       columns:
+        id: ID
         name: Nome
         email: O teu correo electrónico
         document_number: Número de documento
@@ -1150,6 +1243,9 @@ gl:
       index:
         title: Usuario/a
         no_users: Non hai usuarios.
+        filter: Filtro
+        filters:
+          active: Activos
       search:
         placeholder: Buscar usuarios por correo electrónico, nome ou DNI
     verifications:
@@ -1260,3 +1356,19 @@ gl:
         submit_header: Gardar cabeceira
         card_title: Editar tarxeta
         submit_card: Gardar tarxeta
+    audits:
+      id: "ID"
+      actions: "Accións"
+    local_census_records:
+      index:
+        document_type: Tipo documento
+        document_number: Número de documento
+        date_of_birth: Data de nacemento
+        postal_code: Código postal
+      imports:
+        new:
+          title: Rexistros do censo local
+    machine_learning:
+      related_content: "Contido relacionado"
+      tab_help: "Axuda"
+      tags: "Etiquetas"

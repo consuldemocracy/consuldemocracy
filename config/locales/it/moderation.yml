@@ -12,9 +12,8 @@ it:
         headers:
           comment: Commentare
           moderate: Moderare
-        hide_comments: Nascondere i commenti
+        hide: Nascondere i commenti
         ignore_flags: Contrassegna come già visto
-        order: Ordine
         orders:
           flags: I più segnalati
           newest: Più recente
@@ -34,9 +33,8 @@ it:
         headers:
           debate: Dibattito
           moderate: Modera
-        hide_debates: Nascondi i dibattiti
+        hide: Nascondi i dibattiti
         ignore_flags: Contrassegna come già visto
-        order: Ordina
         orders:
           created_at: Più recenti
           flags: Più segnalati
@@ -62,9 +60,8 @@ it:
         headers:
           moderate: Modera
           proposal: Proposta
-        hide_proposals: Nascondi le proposte
+        hide: Nascondi le proposte
         ignore_flags: Contrassegna come già visto
-        order: Ordinare per
         orders:
           created_at: Più recente
           flags: Più segnalati
@@ -81,9 +78,8 @@ it:
         headers:
           moderate: Modera
           budget_investment: Investimento di bilancio
-        hide_budget_investments: Nascondi investimenti di bilancio
+        hide: Nascondi investimenti di bilancio
         ignore_flags: Contrassegna come già visto
-        order: Ordinare per
         orders:
           created_at: Più recente
           flags: Più segnalati
@@ -100,9 +96,8 @@ it:
         headers:
           moderate: Modera
           proposal_notification: Notifica di proposta
-        hide_proposal_notifications: Nascondi le proposte
+        hide: Nascondi le proposte
         ignore_flags: Contrassegna come già visto
-        order: Ordinare per
         orders:
           created_at: Più recente
           moderated: Oggetto di moderazione

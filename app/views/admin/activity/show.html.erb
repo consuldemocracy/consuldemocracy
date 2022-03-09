@@ -42,7 +42,7 @@
             <% else %>
               <strong><%= activity.actionable.title %></strong>
               <br>
-              <%= activity.actionable.description %>
+              <%= sanitize(activity.actionable.description) %>
             <% end %>
           <td class="align-top">
             <%= activity.user.name %> (<%= activity.user.email %>)

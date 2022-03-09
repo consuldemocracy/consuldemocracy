@@ -54,6 +54,8 @@ id:
         assigned_valuators: Ditugaskan penilai
       edit:
         dossier: Berkas
+        price: "Harga (%{currency})"
+        price_first_year: "Biaya selama tahun pertama (%{currency}) <small>(opsional, data yang tidak umum)</small>"
         feasibility: Kelayakan
         valuation_finished_alert: "Apakah anda yakin anda ingin menandai laporan ini selesai? Jika anda melakukannya, itu tidak bisa lagi diubah."
         not_feasible_alert: "Are you sure you want to mark this report finished? If you do, it can no longer be changed."

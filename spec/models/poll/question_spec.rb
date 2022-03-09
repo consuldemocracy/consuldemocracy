@@ -33,10 +33,11 @@ RSpec.describe Poll::Question, type: :model do
     end
 
     context "locale with non-underscored name" do
-      before { I18n.locale = :"pt-BR" }
-
       it "correctly creates a translation" do
-        poll_question.copy_attributes_from_proposal(proposal)
+        I18n.with_locale(:"pt-BR") do
+          poll_question.copy_attributes_from_proposal(proposal)
+        end
+
         translation = poll_question.translations.first
 
         expect(poll_question.title).to eq(proposal.title)

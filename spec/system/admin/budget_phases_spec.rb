@@ -13,7 +13,7 @@ describe "Admin budget phases" do
       uncheck "budget_phase_enabled"
       click_button "Save changes"
 
-      expect(page).to have_current_path(edit_admin_budget_path(budget))
+      expect(page).to have_current_path(admin_budget_path(budget))
       expect(page).to have_content "Changes saved"
 
       expect(budget.current_phase.starts_at.to_date).to eq((Date.current + 1.day).to_date)
@@ -23,16 +23,16 @@ describe "Admin budget phases" do
     end
 
     scenario "Show default phase name or custom if present" do
-      visit edit_admin_budget_path(budget)
+      visit admin_budget_path(budget)
 
       within_table "Phases" do
         expect(page).to have_content "Accepting projects"
         expect(page).not_to have_content "My phase custom name"
 
-        within("tr", text: "Accepting projects") { click_link "Edit phase" }
+        within("tr", text: "Accepting projects") { click_link "Edit" }
       end
 
-      expect(page).to have_css "h2", exact_text: "Edit Participatory budget - Accepting projects"
+      expect(page).to have_css "h2", exact_text: "Edit phase - Accepting projects"
 
       fill_in "Name", with: "My phase custom name"
       click_button "Save changes"
@@ -41,6 +41,32 @@ describe "Admin budget phases" do
         expect(page).to have_content "My phase custom name"
         expect(page).not_to have_content "Accepting projects"
       end
+    end
+
+    scenario "shows successful notice when updating the phase with a valid image" do
+      visit edit_admin_budget_budget_phase_path(budget, budget.current_phase)
+
+      imageable_attach_new_file(Rails.root.join("spec/fixtures/files/clippy.jpg"))
+
+      click_on "Save changes"
+
+      expect(page).to have_content "Changes saved"
+    end
+
+    scenario "shows CTA link in public site if added" do
+      visit edit_admin_budget_budget_phase_path(budget, budget.current_phase)
+
+      expect(page).to have_content "Main call to action (optional)"
+
+      fill_in "Text on the link", with: "Link on the phase"
+      fill_in "The link takes you to (add a link)", with: "https://consulproject.org"
+      click_button "Save changes"
+
+      expect(page).to have_content("Changes saved")
+
+      visit budgets_path
+
+      expect(page).to have_link("Link on the phase", href: "https://consulproject.org")
     end
   end
 end

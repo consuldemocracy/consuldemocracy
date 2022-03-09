@@ -2,16 +2,24 @@
   background: $sidebar;
   background: linear-gradient(to bottom, #245b80 0%, #488fb5 100%);
   border-right: 1px solid $border;
+  color: $white;
 
   ul {
     list-style-type: none;
     margin-bottom: 0;
-    margin-left: 0;
+    margin-#{$global-left}: 0;
     padding: 0;
   }
 
   > ul > li a {
+    display: flex;
     font-weight: bold;
+
+    &::before,
+    &::after {
+      flex: 1em 0 0;
+      margin-top: 0.1em;
+    }
 
     @mixin icon($name, $style) {
       @include has-fa-icon($name, $style);
@@ -19,16 +27,6 @@
       &::before {
         @extend %admin-menu-icon;
       }
-    }
-
-    [class^="icon-"] {
-      color: #fff;
-      display: inline-block;
-      font-size: rem-calc(20);
-      line-height: $line-height;
-      text-align: center;
-      vertical-align: middle;
-      width: $line-height * 1.5;
     }
 
     &.booths-link {
@@ -108,6 +106,10 @@
     &.users-link {
       @include icon(user, solid);
     }
+
+    &.ml-link {
+      @include icon(brain, solid);
+    }
   }
 
   li {
@@ -136,30 +138,27 @@
   }
 
   li a {
-    color: #fff;
+    color: inherit;
     display: block;
-    line-height: $line-height * 2;
-    padding-left: $line-height / 4;
+    padding: $line-height / 2;
     vertical-align: top;
 
     &:hover {
       background: $sidebar-hover;
-      color: #fff;
+      color: inherit;
       text-decoration: none;
     }
   }
 
   .is-accordion-submenu-parent {
 
-    > a::after {
-      border: 0;
-      content: "\f078";
-      font-family: "Font Awesome 5 Free";
-      font-weight: bold;
-      height: auto;
-      position: absolute;
-      right: 24px;
-      transition: 0.25s;
+    > a {
+      @include has-fa-icon(chevron-down, solid, after);
+
+      &::after {
+        margin-#{$global-left}: auto;
+        transition: 0.25s;
+      }
     }
   }
 
@@ -177,6 +176,7 @@
 
     a {
       font-weight: normal;
+      margin-#{$global-right}: 0;
     }
 
     .is-active {

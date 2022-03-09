@@ -32,8 +32,8 @@
   </div>
 
   <div class="row">
-    <div class="small-12 column">
-      <%= render "images/admin_image", imageable: @poll, f: f %>
+    <div class="images small-12 column">
+      <%= render "images/nested_image", f: f %>
     </div>
 
     <div class="clear">
@@ -56,7 +56,9 @@
   </div>
 
   <div class="row">
-    <%= render SDG::RelatedListSelectorComponent.new(f) %>
+    <div class="small-12 column">
+      <%= render SDG::RelatedListSelectorComponent.new(f) %>
+    </div>
   </div>
 
   <div class="row">

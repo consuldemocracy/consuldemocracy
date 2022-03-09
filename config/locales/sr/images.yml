@@ -7,8 +7,6 @@ sr:
       delete_button: Уклоните слику
       note: "Можете ажурирати једну слику из следећих типова садржаја: %{accepted_content_types}, до %{max_file_size} MB."
       add_new_image: Додајте слику
-      admin_title: "Слика"
-      admin_alt_text: "Алтернативни текст за слику"
     actions:
       destroy:
         notice: Слика је успешно обрисана.

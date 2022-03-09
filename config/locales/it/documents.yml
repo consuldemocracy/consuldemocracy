@@ -1,6 +1,8 @@
 it:
   documents:
     title: Documenti
+    max_documents_allowed_reached: Hai raggiunto il numero massimo di documenti consentiti! <strong>Devi eliminarne uno prima di poterne caricare un altro.</strong>
+    additional: Documentazione aggiuntiva
     form:
       title: Documenti
       title_placeholder: Aggiungi un titolo descrittivo per il documento

@@ -1,5 +1,4 @@
 .sdg-related-list-selector {
-  @include grid-column-gutter;
   clear: both;
 
   > legend {
@@ -74,10 +73,6 @@
 
   .remove-tag {
     color: $white;
-
-    &:focus {
-      outline: $outline-focus;
-    }
   }
 
   h3 {

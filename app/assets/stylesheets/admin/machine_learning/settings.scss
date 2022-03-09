@@ -1,0 +1,21 @@
+.admin .machine-learning-settings {
+
+  .settings-management {
+    @include flex-with-gap;
+    flex-wrap: wrap;
+
+    > * {
+      flex-basis: calc((#{rem-calc(720)} - 100%) * 999);
+      flex-grow: 1;
+    }
+
+    .card-section {
+      display: flex;
+      flex-direction: column;
+
+      > :last-child {
+        margin-top: auto;
+      }
+    }
+  }
+}

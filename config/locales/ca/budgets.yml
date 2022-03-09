@@ -42,10 +42,6 @@ ca:
     groups:
       show:
         title: Selecciona una opció
-        unfeasible_title: Propostes inviables
-        unfeasible: Veure les propostes inviables
-        unselected_title: Propostes no seleccionades per a la votació final
-        unselected: Veure les propostes no seleccionades per a la votació final
     phase:
       drafting: Esborrany (No visible per al públic)
       informing: informació
@@ -74,6 +70,7 @@ ca:
       milestones: Fites
     investments:
       form:
+        title: "Crear una inversió pressupostària"
         tag_category_label: "Categories"
         tags_instructions: "Etiqueta aquesta proposta. Pots triar entre les categories proposades o introduir les que desitges"
         tags_label: Etiquetes
@@ -81,7 +78,6 @@ ca:
         map_location: "Ubicació del mapa"
         map_location_instructions: "Desplaceu-vos al mapa fins a la ubicació i poseu-hi el marcador."
         map_remove_marker: "Elimina el marcador de mapa"
-        map_skip_checkbox: "Aquesta inversió no té una ubicació concreta o no en sé."
       index:
         title: Pressupostos ciutadans
         unfeasible: Propostes d'inversió no viables
@@ -114,6 +110,10 @@ ca:
           verified_only: "Per a crear una nova proposta d'inversió %{verify}."
           create: "Crear una inversió pressupostària"
           not_logged_in: "Per a crear una nova proposta d'inversió has de %{sign_in} o %{sign_up}."
+        filters:
+          selected: "seleccionada"
+          unfeasible: "No viables"
+          winners: "Guanyadors"
         orders:
           random: Aleatòries
           confidence_score: Més avalades
@@ -144,22 +144,27 @@ ca:
       investment:
         add: Votació
         already_added: Ja has afegit aquesta proposta d'inversió
-        already_supported: Ja heu donat suport a aquest projecte d'inversió. Comparteix-ho!
         support_title: Avalar aquesta proposta d'inversió
-        confirm_group:
-          one: "Només podeu suportar inversions a %{count} districte. Si continueu, no podeu canviar l’elecció del vostre districte. Estàs segur?"
-          other: "Només podeu suportar inversions a %{count} districtes. Si continueu, no podeu canviar l’elecció del vostre districte. Estàs segur?"
         supports:
           zero: Sense suports
           one: 1 aval
           other: "%{count} avals"
-        give_support: Avalar
       header:
         check_ballot: "Revisar els meus vots"
         different_heading_assigned: "Teniu vots actius en un altre títol: %{heading_link}"
         change_ballot: "Si canvies d'opinió pots esborrar els teus vots en %{check_ballot} i tornar a començar."
         check_ballot_link: "revisar els meus vots"
         price: "Aquesta partida té un pressupost de"
+      votes:
+        already_supported: "Ja heu donat suport a aquest projecte d'inversió. Comparteix-ho!"
+        confirm_group:
+          one: "Només podeu suportar inversions a %{count} districte. Si continueu, no podeu canviar l’elecció del vostre districte. Estàs segur?"
+          other: "Només podeu suportar inversions a %{count} districtes. Si continueu, no podeu canviar l’elecció del vostre districte. Estàs segur?"
+        support: "Avalar"
+    investments_list:
+      investment:
+        price: "Cost"
+        supports: "Avals"
     show:
       see_results: veure resultats
     results:

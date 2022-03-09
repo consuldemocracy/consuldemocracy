@@ -14,7 +14,9 @@
           <span class="not-print"><%= t("proposals.index.select_order_long") %></span>
           <span class="for-print-only"><%= t("management.print.proposals_title") %></span>
         </h2>
-        <%= render "shared/order_selector", i18n_namespace: "proposals.index" %>
+        <div class="not-print">
+          <%= render "shared/order_links", i18n_namespace: "proposals.index" %>
+        </div>
       </div>
 
       <%= render @proposals %>

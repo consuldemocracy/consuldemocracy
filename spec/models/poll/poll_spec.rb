@@ -36,8 +36,7 @@ describe Poll do
       expect(poll).not_to be_valid
     end
 
-    it "no overlapping polls for proposal polls are allowed" do
-    end
+    pending "no overlapping polls for proposal polls are allowed"
   end
 
   describe "proposal polls specific validations" do
@@ -195,8 +194,7 @@ describe Poll do
       end
 
       it "returns restricted & unrestricted polls for level 2 users of the correct geozone" do
-        list = Poll.answerable_by(level2_from_geozone)
-                              .order(:geozone_restricted)
+        list = Poll.answerable_by(level2_from_geozone).order(:geozone_restricted)
         expect(list.to_a).to eq([current_poll, current_restricted_poll])
       end
     end
@@ -370,6 +368,19 @@ describe Poll do
       poll2 = create(:poll, geozone_restricted: true, starts_at: starts_at, name: "Aaaaaah!")
 
       expect(Poll.sort_for_list).to eq [poll1, poll2]
+    end
+
+    it "returns polls for the user's geozone first" do
+      geozone = create(:geozone)
+      poll1 = create(:poll, geozone_restricted: true)
+      poll2 = create(:poll, geozone_restricted: true)
+      poll3 = create(:poll)
+      poll_geozone_1 = create(:poll, geozone_restricted: true, geozones: [geozone])
+      poll_geozone_2 = create(:poll, geozone_restricted: true, geozones: [geozone])
+      geozone_user = create(:user, :level_two, geozone: geozone)
+
+      expect(Poll.sort_for_list).to eq [poll3, poll1, poll2, poll_geozone_1, poll_geozone_2]
+      expect(Poll.sort_for_list(geozone_user)).to eq [poll3, poll_geozone_1, poll_geozone_2, poll1, poll2]
     end
 
     it "returns polls earlier to start first" do

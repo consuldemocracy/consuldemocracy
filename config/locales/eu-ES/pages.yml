@@ -1,5 +1,7 @@
 eu:
   pages:
+    conditions:
+      title: Erabilera baldintzak
     help:
       title: "%{org} herri partaidetzarako plataforma bat da"
       guide: "Gida honek %{org}-k dituen atalak zeratarako diren eta nola funtzionatzen duten azaltzen du."
@@ -37,6 +39,7 @@ eu:
         title: "Legegintza prosezuak"
         description: "%{link} atalean herritarrek herritarrengan eragina dituzten araudien lantze eta aldatze prosezuan parte hartzen dute. Herritarrek beraien iritzia ezagutarazi dezkakete aurretiko eztabaidetan."
         link: "legegile prosezuak"
+        feature_link: "%{org_name}-(e)n erregistratu"
       faq:
         title: "Arazo teknikoak?"
         description: "Ohiko zalantzak irakurri eta zure zalantzak argitu."
@@ -56,6 +59,40 @@ eu:
           Programatzailea bazara, kodea begiratu dezakezu eta hobetzen lagundu [CONSUL aplikazioa](https://github.com/consul/consul 'github consul') -(e)n.
       titles:
         how_to_use: Zure Udalerrian erabili
+    privacy:
+      title: Pribatutasun politika
+    accessibility:
+      title: Eskuragarritasuna
+      keyboard_shortcuts:
+        navigation_table:
+          rows:
+            - 
+            - 
+              page_column: Eztabaidak
+            - 
+              page_column: Proposamenak
+            - 
+              page_column: Bozkak
+            - 
+              page_column: Partaidetzazko aurrekontuak
+            - 
+        browser_table:
+          rows:
+            - 
+            - 
+              browser_column: Firefox
+            - 
+            - 
+            - 
+      textsize:
+        browser_settings_table:
+          rows:
+            - 
+            - 
+              browser_column: Firefox
+            - 
+            - 
+            - 
     titles:
       help: "%{org} zer da? - Herri partaidetza"
     verify:

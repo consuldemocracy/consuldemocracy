@@ -48,7 +48,7 @@ class Budget
     end
 
     def name_scoped_by_group
-      group.single_heading_group? ? name : "#{group.name}: #{name}"
+      budget.single_group? ? name : "#{group.name}: #{name}"
     end
 
     def can_be_deleted?

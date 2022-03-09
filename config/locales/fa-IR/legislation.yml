@@ -115,3 +115,16 @@ fa:
       form:
         tags_label: "دسته بندی ها\n"
       not_verified: "برای  رای به پیشنهادات%{verify_account}"
+      process_title: روند قانونی همکاری
+    summary:
+      title: "خلاصه"
+      votes:
+        zero: "%{count} رای"
+      debate_phase: "فاز بحث"
+      proposals_phase: " فاز طرحها"
+      comments:
+        zero: "بدون نظر"
+        one: "%{count} نظر"
+        other: "%{count} نظرات"
+      top_comments:
+        zero: "بدون نظر"

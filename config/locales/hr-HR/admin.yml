@@ -6,6 +6,7 @@ hr:
       actions: Akcije
       confirm: Jeste li sigurni?
       confirm_hide: Potvrdi izmjene
+      delete: "Obriši"
       hide: Sakrij
       hide_author: Sakrij autora
       restore: Vrati
@@ -13,15 +14,12 @@ hr:
       unmark_featured: Odznači istaknuto
       edit: Uredi
       configure: Podesi
-      delete: Obriši
     officing_booth:
       title: "Nadzirete glasačko mjesto koje se nalazi u/na %{booth}. Ako ovo nije točno, molimo vas da ne nastavljate dalje i nazovete telefonski broj za pomoć. Hvala vam."
     banners:
       index:
         title: Transparenti
         create: Stvori zastave
-        edit: Uredi transparent
-        delete: Obriši transparent
         filters:
           all: Svi
           with_active: Aktivirati
@@ -62,18 +60,22 @@ hr:
         type: Vrsta
         no_activity: Ne postoje aktivnosti moderatora.
     budgets:
+      actions:
+        edit: "Uredi budžet"
+        preview: "Pregled"
       index:
         title: Participativni proračuni
         new_link: Stvori novi proračun
         filter: Filter
         filters:
+          all: Svi
           open: Otvoreno
           finished: Dovršeno
         budget_investments: Upravljaj projektima
+        table_budget_type: "Vrsta"
+        table_draft: "Draft"
         table_name: Ime
         table_phase: Faza
-        edit_groups: Uredi naslov grupa
-        edit_budget: Uredi budžet
         admin_ballots: Glasovi admina
         no_budgets: "Ne postoje budžeti."
       create:
@@ -86,7 +88,6 @@ hr:
         phase: Faza
         enabled: Omogućeno
         actions: Akcije
-        edit_phase: Uredi fazu
         active: Aktivirati
         blank_dates: Datumi su prazni
         administrators:
@@ -105,8 +106,6 @@ hr:
         success_notice: Budžet je uspješno obrisan
         unable_notice: Ne možete obrisati budžet koji ima povezane investicije
         unable_notice_polls: Nemožete obrisati budžet koji ima povezane glasove
-      new:
-        title: Novi participativni budžet
       winners:
         calculate: Izračunaj Pobjedničke Investicije
         calculated: Pobjednici se izračunavaju, potrebna je minuta.
@@ -132,14 +131,8 @@ hr:
         edit: "Uredi grupu"
         max_votable_headings_info: "Odnosi se samo na fazu odabira projekata. Tijekom faze glasanja o projektima korisnici će moći glasati samo za jedan naslov po skupini."
         submit: "Spremi grupu"
-      index:
-        back: "Vrati se na proračune"
     budget_headings:
       no_headings: "Ne postoje naslovi."
-      amount:
-        one: "Postoji 1 naslov"
-        few: "Postoje %{count} naslova"
-        other: "Postoje %{count} naslova"
       create:
         notice: "Naslov je uspješno stvoren!"
       update:
@@ -159,6 +152,7 @@ hr:
         back: "Vrati se na grupe"
     budget_phases:
       edit:
+        title: "Uredi fazu"
         description_help_text: Ovaj tekst će se pojavljiti u naslovu kada je ova faza aktivna
         enabled_help_text: Ova faza će biti javna u fazama budžetiranja, a tako i aktivna za ostale svrhe
         save_changes: Spremi promjene
@@ -257,6 +251,11 @@ hr:
         tags_placeholder: "Dopiši oznake koje želiš odjeliti zarezom (,)"
         undefined: Nedefinirano
       search_unfeasible: Pretraga neizvediva
+    budgets_wizard:
+      creation_timeline:
+        budget: Budžet
+        groups: Grupe
+        headings: Naslovi
     milestones:
       index:
         table_id: "Identifikacijski broj"
@@ -265,7 +264,6 @@ hr:
         table_publication_date: "Datum objave"
         table_status: Stanje
         table_actions: "Akcije"
-        delete: "Obriši miljokaz"
         no_milestones: "Nemate definirane miljokaze"
         image: "Slika"
         show_image: "Pogledaj sliku"
@@ -482,10 +480,6 @@ hr:
           allegations_phase: Faza komentara
           proposals_phase: Faza prijedloga
           use_markdown: Koristi Smanjenje kako bi formatirali tekst
-          title_placeholder: Naziv procesa
-          summary_placeholder: Kratki sažetak opisa
-          description_placeholder: Dodaj opis procesa
-          additional_info_placeholder: Dodaj dodatne informacije koje smatraš korisnima
           homepage_description: Ovdje možeš objasniti sadržaj procesa
           banner_title: Boje naslova
         index:
@@ -499,11 +493,10 @@ hr:
           title: Izradi novi poziv za javno savjetovanje
           submit_button: Stvori proces
         proposals:
-          select_order: Sortiraj po
           orders:
-            id: Id
-            title: Naziv
-            supports: Ukupne potpore
+            id: "Id"
+            title: "Naziv"
+            supports: "Ukupne potpore"
         process:
           title: Proces
           comments: Komentari
@@ -557,9 +550,7 @@ hr:
             status:
               draft: Ovo možete pregledati kao admin, nitko drugi nema uvid
               published: Vidljivo svima
-          title_placeholder: Napiši naziv nacrtne verzije
           changelog_placeholder: Dodaj glavne promejene od prošle verzije
-          body_placeholder: Zapišite tekst nacrta
         index:
           title: Verzije nacrta
           create: Stvori verziju
@@ -590,7 +581,6 @@ hr:
           submit_button: Spremi promjene
         form:
           add_option: Dodaj opciju
-          title_placeholder: Dodaj pitanje
           value_placeholder: Dodaj zatvreni odgovor
           question_options: "Mogući odgovori (opcije, zadani otvoreni odgovori)"
         index:
@@ -620,6 +610,12 @@ hr:
         add: Dodaj
       search:
         title: "Upravitelji: Pretraga korisnika"
+    sdg_managers:
+      index:
+        no_sdg_managers: Ne postoje korisnici.
+    sdg/managers:
+      sdg/manager:
+        add: Dodaj
     menu:
       activity: Aktivnosti moderatora
       admin: Meni admina
@@ -1119,7 +1115,6 @@ hr:
         location: "Lokacija"
       booth:
         shifts: "Upravljaj smjenama"
-        edit: "Uredi glasačko mjesto"
     officials:
       edit:
         destroy: Ukloni "Službeni" status
@@ -1141,7 +1136,6 @@ hr:
       level_4: Razina 4
       level_5: Razina 5
       search:
-        edit_official: Uredi službenika
         make_official: Napravi službeno
         title: "Službene pozicije: Pretraga korisnika"
         no_results: Službena pozicija nije pronađena.
@@ -1217,9 +1211,6 @@ hr:
         feature_flags: Značajke
         features:
           enabled: "Značajke omogućene"
-          disabled: "Značajke isključene"
-          enable: "Omogućiti"
-          disable: "Isključi"
         map:
           title: Mapa konfiguracije
           help: Ovdje možete prilagoditi način prikaza karte korisnicima. Povucite oznaku karte ili kliknite bilo gdje na karti, postavite željeno zumiranje i kliknite gumb "Ažuriraj".
@@ -1237,14 +1228,10 @@ hr:
       remote_census_request_name: Zatraži podatke
       remote_census_response_name: Podaci o odazivu
       setting: Značajka
-      setting_actions: Djelovanja
       setting_name: Postavka
-      setting_status: Status
       setting_value: Vrijednost
       no_description: "Nema opisa"
     shared:
-      true_value: "Da"
-      false_value: "Ne"
       search:
         label:
           booths: "Pretraži glasačko mjesto po imenu"
@@ -1255,6 +1242,7 @@ hr:
           poll_questions: "Pretraga pitanja glasanja"
           proposals: "Pretraga prijedloga po naslovu, kodu, opisu ili pitanju"
           users: "Pretraži korisnika po imenu ili emailu"
+        search: "Pretraga"
       search_results: "Pretraži rezultate"
       no_search_results: "Rezultati nisu pronađeni."
       actions: Djelovanja
@@ -1399,9 +1387,12 @@ hr:
           question_name: Pitanje
           origin_web: Web sudionici
           origin_total: Ukupno sudionika
+      sdg:
+        debates: "Rasprave"
+        polls: "Ankete"
+        proposals: "Prijedlozi"
     tags:
       create: Stvori temu
-      destroy: Izbriši temu
       index:
         add_tag: Dodaj novu temu prijedloga
         title: Teme prijedloga
@@ -1579,3 +1570,7 @@ hr:
           created: Stvoreni zapisi
         local_census_records:
           no_records_found: Zapisi nisu pronađeni.
+    machine_learning:
+      related_content: "Povezani sadržaj"
+      tab_help: "Pomoć"
+      tags: "Oznake"

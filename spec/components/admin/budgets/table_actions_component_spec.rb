@@ -1,35 +1,16 @@
 require "rails_helper"
 
-describe Admin::Budgets::TableActionsComponent, type: :component do
+describe Admin::Budgets::TableActionsComponent, controller: Admin::BaseController do
   let(:budget) { create(:budget) }
   let(:component) { Admin::Budgets::TableActionsComponent.new(budget) }
 
-  before do
-    allow(ViewComponent::Base).to receive(:test_controller).and_return("Admin::BaseController")
-  end
-
-  it "renders links to edit budget, manage investments and edit groups and manage ballots" do
+  it "renders actions to edit budget and manage investments" do
     render_inline component
 
-    expect(page).to have_css "a", count: 5
-    expect(page).to have_link "Manage projects", href: /investments/
-    expect(page).to have_link "Edit headings groups", href: /groups/
-    expect(page).to have_link "Edit budget", href: /edit/
-    expect(page).to have_link "Admin ballots"
-    expect(page).to have_link "Preview budget", href: /budgets/
-  end
+    expect(page).to have_link count: 2
+    expect(page).to have_link "Investment projects", href: /investments/
+    expect(page).to have_link "Edit", href: /#{budget.id}\Z/
 
-  it "renders link to create new poll for budgets without polls" do
-    render_inline component
-
-    expect(page).to have_css "a[href*='polls'][data-method='post']", text: "Admin ballots"
-  end
-
-  it "renders link to manage ballots for budgets with polls" do
-    budget.poll = create(:poll, budget: budget)
-
-    render_inline component
-
-    expect(page).to have_link "Admin ballots", href: /booth_assignments/
+    expect(page).not_to have_button
   end
 end

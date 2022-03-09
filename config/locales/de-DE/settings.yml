@@ -89,6 +89,8 @@ de:
       facebook_login_description: "Anmeldung mit Facebook-Account erlauben"
       google_login: "Google login"
       google_login_description: "Anmeldung mit Google-Account erlauben"
+      wordpress_login: "Wordpress-Login"
+      wordpress_login_description: "Anmeldung mit Wordpress-Account erlauben"
       featured_proposals: "Veröffentlichte Vorschläge"
       featured_proposals_description: "Zeigt veröffentlichte Vorschläge auf der Index Vorschlags-Seite"
       signature_sheets: "Unterschriftenbögen"
@@ -125,6 +127,7 @@ de:
       valuation_comment_notification: "Bewertung Kommentar Benachrichtigung"
       valuation_comment_notification_description: "Senden Sie eine E-Mail an alle verbundenen Benutzer*innen, wenn ein neuer Bewertungskommentar erstellt wird - mit Ausnahme des Bewertungskommentars für Budgetinvestitionen"
       graphql_api: "GraphQL API"
+      sdg: SDG
     remote_census:
       general:
         endpoint: "Endpunkt"

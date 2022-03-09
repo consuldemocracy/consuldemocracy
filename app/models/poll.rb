@@ -45,23 +45,15 @@ class Poll < ApplicationRecord
   scope :current,  -> { where("starts_at <= ? and ? <= ends_at", Date.current.beginning_of_day, Date.current.beginning_of_day) }
   scope :expired,  -> { where("ends_at < ?", Date.current.beginning_of_day) }
   scope :recounting, -> { where(ends_at: (Date.current.beginning_of_day - RECOUNT_DURATION)..Date.current.beginning_of_day) }
-  scope :published, -> { where("published = ?", true) }
+  scope :published, -> { where(published: true) }
   scope :by_geozone_id, ->(geozone_id) { where(geozones: { id: geozone_id }.joins(:geozones)) }
   scope :public_for_api, -> { all }
   scope :not_budget, -> { where(budget_id: nil) }
   scope :created_by_admin, -> { where(related_type: nil) }
 
-  def self.sort_for_list
+  def self.sort_for_list(user = nil)
     all.sort do |poll, another_poll|
-      if poll.geozone_restricted? == another_poll.geozone_restricted?
-        [poll.starts_at, poll.name] <=> [another_poll.starts_at, another_poll.name]
-      else
-        if poll.geozone_restricted?
-          1
-        else
-          -1
-        end
-      end
+      [poll.weight(user), poll.starts_at, poll.name] <=> [another_poll.weight(user), another_poll.starts_at, another_poll.name]
     end
   end
 
@@ -106,15 +98,13 @@ class Poll < ApplicationRecord
   end
 
   def self.votable_by(user)
-    answerable_by(user).
-    not_voted_by(user)
+    answerable_by(user).not_voted_by(user)
   end
 
   def votable_by?(user)
     return false if user_has_an_online_ballot?(user)
 
-    answerable_by?(user) &&
-    not_voted_by?(user)
+    answerable_by?(user) && not_voted_by?(user)
   end
 
   def user_has_an_online_ballot?(user)
@@ -122,7 +112,7 @@ class Poll < ApplicationRecord
   end
 
   def self.not_voted_by(user)
-    where("polls.id not in (?)", poll_ids_voted_by(user))
+    where.not(id: poll_ids_voted_by(user))
   end
 
   def self.poll_ids_voted_by(user)
@@ -191,5 +181,17 @@ class Poll < ApplicationRecord
 
   def self.search(terms)
     pg_search(terms)
+  end
+
+  def weight(user)
+    if geozone_restricted?
+      if answerable_by?(user)
+        50
+      else
+        100
+      end
+    else
+      0
+    end
   end
 end

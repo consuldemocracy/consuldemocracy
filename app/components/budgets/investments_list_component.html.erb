@@ -1,0 +1,21 @@
+<% if investments.any? %>
+  <section id="investments_list" class="investments-list">
+    <header>
+      <h2><%= t("budgets.investments_list.title") %></h2>
+    </header>
+
+    <% investments.each do |investment| %>
+      <%= render Budgets::InvestmentComponent.new(investment) %>
+    <% end %>
+  </section>
+<% end %>
+
+<% if budget.single_heading? && !budget.informing? || investments.any? %>
+  <div class="row margin-top">
+    <div class="small-12 medium-6 large-4 small-centered column margin-top">
+      <%= link_to t("budgets.investments_list.see_all"),
+                  see_all_path,
+                  class: "button expanded" %>
+    </div>
+  </div>
+<% end %>

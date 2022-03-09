@@ -5,7 +5,9 @@ ro:
     actions:
       actions: Acțiuni
       confirm: Sunteți sigur?
+      confirm_delete: "Sunteți sigur? Această acțiune va șterge \"%{name}\" și nu se poate reveni."
       confirm_hide: Confirmați modificarea
+      delete: "Șterge"
       hide: Ascunde
       hide_author: Ascunde autor
       restore: Restabilire
@@ -13,15 +15,12 @@ ro:
       unmark_featured: Recomandare nemarcată
       edit: Editează
       configure: Configurează
-      delete: Șterge
     officing_booth:
       title: "Oficiați cabina situată la%{booth}. Dacă acest lucru nu este corect, nu continuați și apelați numărul de telefon de ajutor. Mulțumesc."
     banners:
       index:
         title: Bannere
         create: Crează banner
-        edit: Editează banner
-        delete: Șterge banner
         filters:
           all: Toate
           with_active: Activ
@@ -68,6 +67,7 @@ ro:
         no_activity: Nu există activitate efectuată de moderatori.
     budgets:
       actions:
+        edit: "Editează buget"
         preview: "Previzualizați bugetul"
       index:
         title: Bugetele participative
@@ -77,16 +77,16 @@ ro:
           all: Tot
           open: Deschide
           finished: Terminat
-        help: "Bugetele participative permit cetățenilor să propună și să decidă direct cum să cheltuiască o parte din buget, cu monitorizare și evaluare riguroasă a propunerilor de către instituție."
         budget_investments: Administrează proiecte
+        table_budget_type: "Tip"
         table_completed: Completat
         table_draft: "Schiță"
         table_duration: "Durata"
         table_name: Nume
         table_phase: Etapă
         table_phase_progress: "(%{current_phase_number}/%{total_phases})"
-        edit_groups: Editați grupurile de rubrici
-        edit_budget: Editează buget
+        type_multiple: "Rubrici multiple"
+        type_pending: "În așteptare: nici o rubrică"
         admin_ballots: Gestionați buletinele de vot
         no_budgets: "Nu există bugete."
       create:
@@ -105,7 +105,7 @@ ro:
         duration: "Durata"
         enabled: Activat
         actions: Acțiuni
-        edit_phase: Editează etapă
+        enable_phase: "Activați etapa %{phase}"
         active: Activ
         blank_dates: Datele nu sunt completate
         administrators:
@@ -121,16 +121,27 @@ ro:
         empty_administrators: "Nu există administratori"
         empty_valuators: "Nu există evaluatori"
         name_description: "Acesta este numele bugetului participativ utilizat pe antet și carduri ori de câte ori este activ"
+        image_description: "Dacă o imagine este încărcată, aceasta va fi folosită ca banner în partea de sus a acestui buget participativ, în caz contrar va fi utilizată culoarea implicită pentru bugete."
+        main_call_to_action_description: "Acest link va apărea pe bannerul principal al acestui buget participativ și va încuraja utilizatorul să efectueze o acțiune specifică, cum ar fi crearea unei propuneri, votarea celor existente sau să afle mai multe despre proces."
         info:
           budget_settings: "Setări generale ale bugetului participativ"
-          phases_settings: "Setările fazelor"
           staff_settings: "Administratori și evaluatori repartizați la buget"
       destroy:
         success_notice: Buget șters cu succes
         unable_notice: Nu puteți șterge un buget care are investiții asociate
         unable_notice_polls: Nu puteți șterge un buget care are un sondaj asociat
       new:
-        title: Buget participativ nou
+        title_multiple: Buget nou pentru mai multe rubrici
+        title_single: Buget nou pentru o singură rubrică
+      help:
+        budgets: "Bugetele participative permit cetățenilor să propună și să decidă direct cum să cheltuiască o parte din buget, cu monitorizare și evaluare riguroasă a propunerilor de către instituție."
+        groups:
+          multiple: "Grupurile sunt menite să organizeze titluri. După ce un grup este creat și conține titluri, se poate stabili în câte titluri poate vota un utilizator pe grup."
+          single: "Grupurile sunt făcute pentru a organiza rubricile, deoarece acest buget va conține doar o singură rubrică, același nume poate fi utilizat deoarece nu va apărea nicăieri. Puteți continua cu pasul următor."
+        headings:
+          multiple: "Rubricile sunt făcute să împartă banii din bugetul participativ. Aici puteți adăuga rubrici pentru acest grup și puteți atribui suma de bani care va fi folosită pentru fiecare rubrică."
+          single: "Rubricile sunt făcute să împartă banii din bugetul participativ. Deoarece acest buget va conține doar o singură rubrică, aici puteți stabili banii care vor fi cheltuiți în acest buget participativ."
+        phases: "Bugetele participative au faze diferite. Aici puteți activa sau dezactiva fazele și, de asemenea, puteți personaliza fiecare fază individual."
       winners:
         calculate: Calculați Investițiile Câștigătoare
         calculated: Se calculează câștigătorii, poate dura un minut.
@@ -157,14 +168,9 @@ ro:
         max_votable_headings_info: "Se aplică numai fazei de selectare a proiectelor. În timpul fazei de votare a proiectelor, utilizatorii pot vota doar într-o singură rubrică per grup."
         submit: "Salvează grup"
       index:
-        back: "Mergi înapoi la bugete"
-        help: "Grupurile sunt menite să organizeze titluri. După ce un grup este creat și conține titluri, se poate stabili în câte titluri poate vota un utilizator pe grup."
+        new_button: "Adaugă un grup nou"
     budget_headings:
       no_headings: "Nu există rubrici."
-      amount:
-        one: "Există 1 rubrică"
-        few: "Exista %{count} rubrici"
-        other: "Exista %{count} rubrici"
       create:
         notice: "Rubrică creată cu succes!"
       update:
@@ -182,17 +188,21 @@ ro:
         submit: "Salvează rubrică"
       index:
         back: "Înapoi la grupuri"
-        help: "Rubricile sunt menite să împartă banii din bugetul participativ. Aici puteți adăuga titluri pentru acest grup și puteți atribui suma de bani care va fi utilizată pentru fiecare titlu."
+        new_button: "Adaugă rubrică nouă"
+        title: "%{budget} / %{group} rubrici"
     budget_phases:
       edit:
+        title: "Editează etapă"
         description_help_text: Acest text va apărea în antet atunci când faza este activă
         duration: "Durata etapei"
         duration_description: "Perioada de timp în care va fi activă această etapă."
         enabled_help_text: Această etapă va fi publică în calendarul etapelor bugetului, precum și activă pentru orice alt scop
+        image_description: "Dacă o imagine este încărcată, ea va fi afișată lângă descrierea acestei etape."
+        main_call_to_action_description: "Acest link va apărea pe bannerul principal al acestui buget participativ când această etapă este activă și va încuraja utilizatorul să efectueze o acțiune specifică cum ar fi crearea unei propuneri, votarea celor existente sau să afle mai multe despre proces."
         name_help_text: "Acesta este titlul pe care utilizatorii îl vor citi în antet de fiecare când etapa va fi activă."
         save_changes: Salvează modificări
       index:
-        help: "Bugetele participative au faze diferite. Aici puteți activa sau dezactiva fazele și, de asemenea, personaliza fiecare fază individuală."
+        title: "%{budget} etape"
     budget_investments:
       index:
         heading_filter_all: Toate rubricile
@@ -288,6 +298,27 @@ ro:
         tags_placeholder: "Scrieți etichetele pe care le doriți separate prin virgule (,)"
         undefined: Nedefinit
       search_unfeasible: Căutarea este imposibilă
+    budgets_wizard:
+      creation_timeline:
+        budget: Buget
+        groups: Grupuri
+        headings: Rubrici
+        phases: Etape
+      budgets:
+        continue: "Continuă către grupuri"
+      groups:
+        back: "Mergi înapoi la editare bugete"
+        continue: "Continuă către etape"
+      headings:
+        continue: "Continuă către etape"
+        single:
+          back: "Înapoi la editare grup"
+      phases:
+        continue: "Terminat"
+        multiple:
+          back: "Mergi înapoi la rubrici"
+        single:
+          back: "Mergi înapoi la editare rubrică"
     milestones:
       index:
         table_id: "ID"
@@ -296,7 +327,6 @@ ro:
         table_publication_date: "Data publicării"
         table_status: Status
         table_actions: "Acțiuni"
-        delete: "Șterge reper"
         no_milestones: "Nu aveți repere definite"
         image: "Imagine"
         show_image: "Arată imagine"
@@ -513,10 +543,6 @@ ro:
           allegations_phase: Etapa de comentarii
           proposals_phase: Etapa de propuneri
           use_markdown: Folosiți Markdown pentru a formata textul
-          title_placeholder: Titlul procesului
-          summary_placeholder: Scurt rezumat al descrierii
-          description_placeholder: Adaugă o descriere a procesului
-          additional_info_placeholder: Adăugați informații suplimentare pe care le considerați utile
           homepage_description: Aici puteți explica conținutul procesului
           banner_title: Culoarea antetului
         index:
@@ -530,11 +556,10 @@ ro:
           title: Crează unui nou proces legislativ de colaborare
           submit_button: Crează proces
         proposals:
-          select_order: Sortează după
           orders:
-            id: Id
-            title: Titlu
-            supports: Total susțineri
+            id: "Id"
+            title: "Titlu"
+            supports: "Total susțineri"
         process:
           title: Proces
           comments: Comentarii
@@ -588,9 +613,7 @@ ro:
             status:
               draft: Puteți pre-vizualiza ca administrator, nimeni altcineva nu poate vedea
               published: Vizibil pentru toată lumea
-          title_placeholder: Scrieți titlul versiunii schiță
           changelog_placeholder: Adăugați principalele modificări din versiunea anterioară
-          body_placeholder: Scrie textul pentru schiță
         index:
           title: Versiuni schiță
           create: Crează versiune
@@ -621,7 +644,6 @@ ro:
           submit_button: Salvează modificări
         form:
           add_option: Adaugă opțiune
-          title_placeholder: Adaugă întrebare
           value_placeholder: Adaugă un răspuns închis
           question_options: "Răspunsuri posibile (opțional, răspunsuri deschise implicit)"
         index:
@@ -1157,7 +1179,6 @@ ro:
         location: "Locație"
       booth:
         shifts: "Administrează ture"
-        edit: "Editează cabină de vot"
     officials:
       edit:
         destroy: Eliminați statutul „oficial”
@@ -1179,7 +1200,6 @@ ro:
       level_4: Nivel 5
       level_5: Nivel 5
       search:
-        edit_official: Editează funcționar public
         make_official: Crează funcționar public
         title: "Poziții oficiale: Căutare utilizator"
         no_results: Pozițiile oficiale nu au fost găsite.
@@ -1255,9 +1275,6 @@ ro:
         feature_flags: Caracteristici
         features:
           enabled: "Caracteristici activate"
-          disabled: "Caracteristici dezactivate"
-          enable: "Activează"
-          disable: "Dezactivează"
         map:
           title: Configurarea hărții
           help: Aici puteți personaliza modul în care este afișată harta utilizatorilor. Trageți marcatorul de hartă sau faceți click oriunde peste hartă, setați zoom-ul dorit și faceți click pe butonul „Actualizare”.
@@ -1278,14 +1295,10 @@ ro:
       remote_census_request_name: Solicitare date
       remote_census_response_name: Date de răspuns
       setting: Caracteristică
-      setting_actions: Acțiuni
       setting_name: Setări
-      setting_status: Status
       setting_value: Valoare
       no_description: "Nu există descriere"
     shared:
-      true_value: "Da"
-      false_value: "Nu"
       search:
         advanced_filters:
           sdg_goals:
@@ -1324,6 +1337,7 @@ ro:
       color_help: Format hexadecimal
       show_results_and_stats: "Afișează rezultate și statistici"
       results_and_stats_reminder: "Marcarea acestor căsuțe de selectare a rezultatelor și / sau statisticilor va fi disponibilă publicului și fiecare utilizator le va vedea."
+      example_url: "https://consulproject.org"
     geozones:
       index:
         title: Geozonă
@@ -1464,7 +1478,6 @@ ro:
         title: "Obiective de dezvoltare durabilă - Statistici"
     tags:
       create: Crează subiect
-      destroy: Șterge subiect
       index:
         add_tag: Adaugă o nouă propunere de subiect
         title: Subiecte de propunere
@@ -1642,3 +1655,7 @@ ro:
           created: Înregistrări create
         local_census_records:
           no_records_found: Nu a fost găsită nici o înregistrare.
+    machine_learning:
+      related_content: "Conținut asemănător"
+      tab_help: "Ajutor"
+      tags: "Etichete"

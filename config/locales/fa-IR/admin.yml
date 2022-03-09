@@ -5,6 +5,7 @@ fa:
     actions:
       actions: اقدامات
       confirm: آیا مطمئن هستید؟
+      delete: "حذف"
       hide: پنهان کردن
       hide_author: پنهان کردن نویسنده
       restore: بازیابی
@@ -12,13 +13,10 @@ fa:
       unmark_featured: برداشتن علامتگذاری برجسته
       edit: ویرایش
       configure: پیکربندی
-      delete: حذف
     banners:
       index:
         title: آگهی ها
         create: ایجاد أگهی
-        edit: ویرایش  أگهی
-        delete: حذف  أگهی
         filters:
           all: همه
           with_active: فعال
@@ -55,17 +53,22 @@ fa:
         title: فعالیت مدیر
         type: نوع
     budgets:
+      actions:
+        edit: "ویرایش بودجه"
+        preview: "پیش نمایش"
       index:
         title: بودجه مشارکتی
         new_link: ایجاد بودجه جدید
         filter: فیلتر
         filters:
+          all: همه
           open: بازکردن
           finished: به پایان رسید
+        budget_investments: پروژه سرمایه گذاری
+        table_budget_type: "نوع"
+        table_draft: " پیش نویس"
         table_name: نام
         table_phase: فاز
-        edit_groups: ویرایش سرفصلهای گروه
-        edit_budget: ویرایش بودجه
         no_budgets: "هیچ بودجه ای وجود ندارد."
       create:
         notice: بودجه مشارکتی جدید با موفقیت ایجاد شده!
@@ -77,14 +80,13 @@ fa:
         phase: فاز
         enabled: فعال
         actions: اقدامات
-        edit_phase: ویرایش فاز
         active: فعال
         blank_dates: تاریخ خالی است.
       destroy:
         success_notice: بودجه با موفقیت حذف شد.
         unable_notice: شما نمی توانید یک بودجه را اختصاص داده شده را از بین ببرید.
-      new:
-        title: بودجه مشارکت جدید
+      show:
+        add_heading: "اضافه کردن سرفصل"
       winners:
         calculate: محاسبه سرمایه گذاری های برنده
         calculated: برندگان در حال محاسبه می باشند، ممکن است یک دقیقه طول بکشد.
@@ -94,12 +96,15 @@ fa:
       form:
         edit: "ویرایش گروه"
         submit: "ذخیره گروه"
+      index:
+        new_button: "افزودن گروه جدید"
     budget_headings:
       form:
         population_info: "فیلد جمع آوری بودجه برای اهداف آماری در انتهای بودجه برای نشان دادن  هر بخش که نشان دهنده منطقه با جمعیتی است که رای داده است. فیلد اختیاری است، بنابراین اگر آن را خالی بگذارید اعمال نخواهد شد."
         submit: "ذخیره سرفصل"
     budget_phases:
       edit:
+        title: "ویرایش فاز"
         description_help_text: هنگامی که فاز فعال است، این متن در هدر ظاهر می شود
         enabled_help_text: این مرحله در زمانبندی فازهای بودجه عمومی و همچنین برای هر هدف دیگر فعال خواهد بود
         save_changes: ذخیره تغییرات
@@ -122,6 +127,8 @@ fa:
           undecided: بلاتکلیف
           unfeasible: غیر قابل پیش بینی
           winners: برندگان
+          one_filter: "فیلترهای فعلی موجود:<b><em>%{filter}</em></b>"
+          two_filters: "فیلترهای فعلی موجود:<b><em>%{filter}%{advanced_filters}</em></b>"
         buttons:
           filter: فیلتر
         download_current_selection: "انتخاب کنونی را دانلود کنید"
@@ -149,6 +156,8 @@ fa:
           selected: انتخاب شده
           visible_to_valuators: نشان دادن به ارزیاب ها
           incompatible: ناسازگار
+          price: قیمت
+          author: نویسنده
         cannot_calculate_winners: بودجه باید در مرحله "رای گیری پروژه ها"، "بررسی رای گیری" یا " پایان بودجه" برای محاسبه پروژه های برنده باقی بماند
         see_results: "مشاهده نتایج"
       show:
@@ -188,6 +197,10 @@ fa:
         tags_placeholder: "برچسبهایی را که میخواهید با کاما (،) جدا کنید"
         undefined: تعریف نشده
       search_unfeasible: جستجو غیر قابل انجام است
+    budgets_wizard:
+      creation_timeline:
+        budget: بودجه
+        groups: گروه ها
     milestones:
       index:
         table_id: "شناسه"
@@ -196,7 +209,6 @@ fa:
         table_publication_date: "تاریخ انتشار"
         table_status: وضعیت ها
         table_actions: "اقدامات"
-        delete: "حذف نقطه عطف"
         no_milestones: "نقاط قوت را مشخص نکرده اید"
         image: "تصویر"
         show_image: "نمایش تصویر"
@@ -225,15 +237,64 @@ fa:
         table_title: "عنوان"
     comments:
       index:
+        id: "شناسه"
+        content: "محتوا"
+        author: "نویسنده"
+        commentable_type: "نوع"
+        title: نظرات مخفی
+        table_link: "لینک"
+    hidden_comments:
+      index:
+        filter: فیلتر
+        filters:
+          all: همه
+          with_confirmed_hide: تایید
+          without_confirmed_hide: انتظار
+        hidden_debate: بحث های پنهان
+        hidden_proposal: پیشنهاد های پنهان
         title: نظرات مخفی
     dashboard:
       index:
         back: بازگشت به %{org}
         title: مدیر
         description: خوش آمدید به پنل مدیریت %{org}.
+      actions:
+        index:
+          active: 'بله'
+          inactive: 'نه'
+          action_title: عنوان
+          action_type: نوع
+          action_active: فعال
+          order: سفارش
+          default:
+            email: پست الکترونیکی
+            polls: نظر سنجی ها
+        form:
+          submit_button: ذخیره کردن
+      administrator_tasks:
+        index:
+          filter: فیلتر
+          filters:
+            pending: انتظار
+        form:
+          proposal: طرح های پیشنهادی
     debates:
       index:
+        id: شناسه
+        author: نویسنده
         title: بحث های پنهان
+    hidden_debates:
+      index:
+        filter: فیلتر
+        filters:
+          all: همه
+          with_confirmed_hide: تایید
+          without_confirmed_hide: انتظار
+        title: بحث های پنهان
+    documents:
+      index:
+        new_link: "افزودن  سند  جدید"
+        title: "اسناد"
     hidden_users:
       index:
         filter: فیلتر
@@ -275,28 +336,26 @@ fa:
           debate_phase: فاز بحث
           proposals_phase: ' فاز طرحها'
           use_markdown: برای قالب کردن متن از Markdown استفاده کنید
-          title_placeholder: عنوان فرایند
-          summary_placeholder: خلاصه توضیحات
-          description_placeholder: اضافه کردن شرح فرآیند
-          additional_info_placeholder: افزودن اطلاعات اضافی که در نظر شما مفید است
         index:
           create: فرآیند جدید
           title: فرآیندهای قانونی
           filters:
+            active: فعال
             all: همه
         new:
           back: برگشت
           title: ایجاد یک پروسه جدید قانون مشارکتی 
           submit_button: فرآیند را ایجاد کنید
         proposals:
-          select_order: مرتب سازی بر اساس
           orders:
-            title: عنوان
-            supports: پشتیبانی ها
+            title: "عنوان"
+            supports: "پشتیبانی ها"
         process:
           title: "روند\n"
           comments: توضیحات
           status: وضعیت ها
+          start_date: "تاریخ شروع\n"
+          end_date: تاریخ پایان
           status_open: بازکردن
           status_closed: بسته
           status_planned: برنامه ریزی شده
@@ -327,6 +386,7 @@ fa:
           submit_button: ذخیره تغییرات
           warning: شما متن را ویرایش کرده اید، فراموش نکنید که برای ذخیره دائمی تغییرات، روی ذخیره کلیک کنید.
         form:
+          title: 'در حال ویرایش<span class="strong">%{draft_version_title}</span>  از روند<span class="strong">%{process_title}</span>'
           launch_text_editor: راه اندازی ویرایشگر متن
           close_text_editor: ویرایشگر متن را ببند
           use_markdown: برای قالب کردن متن از Markdown استفاده کنید
@@ -335,9 +395,7 @@ fa:
             status:
               draft: شما می توانید به عنوان مدیر پیش نمایش را ببینید، کس دیگری نمیتواند آن را ببیند
               published: برای همه قابل مشاهده است
-          title_placeholder: عنوان پیش نویس را بنویسید
           changelog_placeholder: تغییرات اصلی را از نسخه قبلی اضافه کنید
-          body_placeholder: نوشتن پیش نویس متن
         index:
           title: نسخه های پیش نویس
           create: ایجاد نسخه
@@ -393,6 +451,12 @@ fa:
         add: اضافه کردن
       search:
         title: "مدیران: جستجوی کاربر"
+    sdg_managers:
+      index:
+        no_sdg_managers: هیچ کاربری وجود ندارد.
+    sdg/managers:
+      sdg/manager:
+        add: اضافه کردن
     menu:
       activity: فعالیت مدیر
       admin: منوی ادمین
@@ -438,8 +502,11 @@ fa:
           save: "ذخیره کردن"
       title_moderated_content: کنترل محتویات
       title_profiles: پروفایل
+      title_settings: تنظیمات پیکربندی
       legislation: قانون همکاری
       users: کاربران
+      debates: "مباحثه"
+      comments: "توضیحات"
     administrators:
       index:
         title: مدیران
@@ -493,6 +560,7 @@ fa:
         sent_at: ارسال شده توسط
         subject: "موضوع\n"
         segment_recipient: گیرندگان
+        from: "از \n"
         body: محتوای ایمیل
         body_help_text: چگونگی دیدن ایمیل توسط کاربران
         send_alert: آیا مطمئن هستید که میخواهید این خبرنامه را به%{n} کاربران ارسال کنید؟
@@ -512,6 +580,11 @@ fa:
         body: متن
         link: لینک
         segment_recipient: گیرندگان
+    system_emails:
+      comment:
+        title: "توضیح"
+      reply:
+        title: "پاسخ"
     emails_download:
       index:
         title: دانلود ایمیل
@@ -637,6 +710,7 @@ fa:
     polls:
       index:
         title: "فهرست غرفه"
+        no_polls: "هیچ غرفه ای وجود ندارد."
         create: "ایجاد نظرسنجی"
         name: "نام"
         dates: "تاریخ"
@@ -676,6 +750,8 @@ fa:
         table_poll: "نظرسنجی"
       edit:
         title: "ویرایش پرسش"
+      new:
+        title_proposal: "ایجاد سوال"
       answers:
         images:
           add_image: "اضافه کردن تصویر"
@@ -724,6 +800,7 @@ fa:
       index:
         title: "شمارش مجدد"
         no_recounts: "هیچ چیز به حساب نمی آید"
+        total_system: "رای (اتوماتیک)"
         table_booth_name: "غرفه"
         table_total_recount: "کل خواهان (توسط افسر)"
         table_system_count: "رای (اتوماتیک)"
@@ -758,7 +835,6 @@ fa:
         location: "محل"
       booth:
         shifts: "مدیریت تغییرات"
-        edit: "ویرایش غرفه"
     officials:
       edit:
         destroy: حذف وضعیت 'رسمی'
@@ -779,7 +855,6 @@ fa:
       level_4: سطح 4
       level_5: سطح 5
       search:
-        edit_official: ویرایش رسمی
         make_official: رسمی
         title: "موقعیت های رسمی: جستجوی کاربر"
         no_results: موقعیت های رسمی یافت نشد
@@ -791,6 +866,9 @@ fa:
           pending: انتظار
           rejected: رد شده
           verified: تایید
+        hidden_count:
+          one: همچنین <strong> یک سازمان </ strong>بدون کاربر یا با یک کاربر پنهان وجود دارد.
+          other: همچنین <strong>%{count} یک سازمان </ strong>بدون کاربر یا با یک کاربر پنهان وجود دارد.
         name: نام
         email: پست الکترونیکی
         phone_number: تلفن
@@ -811,6 +889,8 @@ fa:
         title: طرح های پیشنهادی
         id: شناسه
         author: نویسنده
+        select: انتخاب
+        selected: انتخاب شده
         milestones: نقطه عطف
     hidden_proposals:
       index:
@@ -821,18 +901,23 @@ fa:
           without_confirmed_hide: انتظار
         title: طرح های پنهان
         no_hidden_proposals: پیشنهادات مخفی وجود ندارد.
+    hidden_proposal_notifications:
+      index:
+        filter: فیلتر
+        filters:
+          all: همه
+          with_confirmed_hide: تایید
+          without_confirmed_hide: انتظار
     settings:
       flash:
         updated: ارزش به روز شد
       index:
         title: تنظیمات پیکربندی
+        general: تنظیمات پیکربندی
         update_setting: به روز رسانی
         feature_flags: ویژگی ها
         features:
           enabled: "ویژگی فعال شده"
-          disabled: "ویژگی غیرفعال شده "
-          enable: "فعال کردن"
-          disable: "غیر فعال کردن"
         map:
           title: پیکربندی نقشه
           help: در اینجا شما می توانید نحوه نمایش نقشه به کاربران را سفارشی کنید. نشانگر نقشه را بکشید یا روی هر نقشه روی نقشه کلیک کنید، زوم مورد نظر را تنظیم کنید و دکمه "بروزرسانی" را کلیک کنید.
@@ -840,13 +925,9 @@ fa:
             update: پیکربندی نقشه با موفقیت به روز شد
           form:
             submit: به روز رسانی
-      setting_actions: اقدامات
-      setting_status: وضعیت ها
       setting_value: "ارزش\n"
       no_description: "بدون توضیح\n"
     shared:
-      true_value: "بله"
-      false_value: "نه"
       search:
         label:
           booths: "جستجوی غرفه با نام"
@@ -855,6 +936,7 @@ fa:
           poll_questions: "جستجو پرسش های نظرسنجی"
           proposals: "پیشنهادات را با عنوان، کد، توضیحات یا سوال جستجو کنید"
           users: "جستجوی کاربر توسط ایمیل"
+        search: "جستجو"
       search_results: "جستجو نتایج "
       no_search_results: "نتیجه ای پیدا نشد.\n"
       actions: اقدامات
@@ -866,6 +948,7 @@ fa:
       author: نویسنده
       content: محتوا
       created_at: "ایجاد شده در\n"
+      show_results_and_stats: "نتایج و آمار نشان می دهد"
     geozones:
       index:
         title: Geozone
@@ -901,6 +984,7 @@ fa:
       show:
         created_at: ایجاد شده
         author: نویسنده
+        users: کاربران
         verified:
           one: "%{count} امضا معتبر است"
           other: "%{count} امضا معتبر است"
@@ -930,10 +1014,22 @@ fa:
           visits: بازديد
           votes: کل رای
         budgets_title: بودجه مشارکتی
+        participatory_budgets: بودجه مشارکتی
         direct_messages: پیام های مستقیم
         proposal_notifications: اطلاعیه های پیشنهاد
         incomplete_verifications: تأیید ناقص
         polls: نظر سنجی ها
+      graph:
+        debate_created: مباحثه
+        visit: بازديد
+        proposal_created: پیشنهادات شهروند
+      budget_balloting:
+        vote_count: آرا
+        participant_count: شرکت کنندگان
+      budget_supporting:
+        users: کاربران
+        vote_count: آرا
+        participant_count: شرکت کنندگان
       direct_messages:
         title: پیام های مستقیم
         total: "جمع\n"
@@ -953,15 +1049,19 @@ fa:
           question_name: سوال
           origin_web: وب سایت شرکت کنندگان
           origin_total: کل شرکت کنندگان
+      sdg:
+        debates: "مباحثه"
+        polls: "نظر سنجی ها"
+        proposals: "طرح های پیشنهادی"
     tags:
       create: ایجاد موضوع
-      destroy: از بین بردن موضوع
       index:
         add_tag: اضافه کردن یک  پیشنهاد جدید
         title: موضوعات پیشنهادی
         topic: موضوع
     users:
       columns:
+        id: شناسه
         name: نام
         email: پست الکترونیکی
         document_number: شماره سند
@@ -970,6 +1070,9 @@ fa:
       index:
         title: کاربر
         no_users: هیچ کاربری وجود ندارد.
+        filter: فیلتر
+        filters:
+          active: فعال
       search:
         placeholder: جستجوی کاربر توسط ایمیل و نام یا شماره سند 
     verifications:
@@ -1039,6 +1142,7 @@ fa:
           slug: slug
         cards:
           create_card: ایجاد کارت
+          no_cards: بدون کارت
     homepage:
       title: صفحه اصلی
       description: ماژول های فعال در صفحه اصلی به ترتیب در اینجا نمایش داده می شوند.
@@ -1062,3 +1166,15 @@ fa:
         submit_header: ذخیره سرفصل
         card_title: ویرایش کارت
         submit_card: ذخیره کارت
+    audits:
+      id: "شناسه"
+      actions: "اقدامات"
+    local_census_records:
+      index:
+        document_type: نوع سند
+        document_number: شماره سند
+        date_of_birth: تاریخ تولد
+    machine_learning:
+      related_content: "مطالب مرتبط"
+      tab_help: "کمک"
+      tags: "برچسب ها"

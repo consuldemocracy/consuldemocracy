@@ -6,5 +6,9 @@
     color: $brand-secondary;
     font-weight: bold;
     margin-top: $line-height;
+
+    &::before {
+      margin-right: $font-icon-margin;
+    }
   }
 }

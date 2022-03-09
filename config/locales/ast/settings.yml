@@ -22,8 +22,20 @@ ast:
     meta_description: "Descripción del sitio (SEO)"
     meta_keywords: "Palabras clave (SEO)"
     min_age_to_participate: Edad mínima para participar
+    proposals:
+      poll_short_title: Votaciones
+      email_short_title: Corréu electrónicu
     feature:
       twitter_login: "Registro con Twitter"
       facebook_login: "Registro con Facebook"
       google_login: "Registro con Google"
       signature_sheets: "Hojas de firmas"
+    process:
+      debates: "Alderique"
+      proposals: "Propuestes"
+      polls: "Votaciones"
+      budgets: "Presupuestos participativos"
+      legislation: "Lexislación collaborativa"
+    html:
+      per_page_code_head: "Código a incluir en cada página (<head>)"
+      per_page_code_body: "Código a incluir en cada página (<body>)"

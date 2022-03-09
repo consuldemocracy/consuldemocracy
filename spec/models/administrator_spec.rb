@@ -27,9 +27,7 @@ describe Administrator do
     let!(:user) { create(:user, username: "Billy Wilder", email: "test@test.com") }
 
     it "returns description and email if decription present" do
-      administrator = create(:administrator,
-                              description: "John Doe",
-                              user: user)
+      administrator = create(:administrator, description: "John Doe", user: user)
 
       expect(administrator.description_or_name_and_email).to eq("John Doe (test@test.com)")
     end

@@ -60,6 +60,9 @@ zh-CN:
     meta_keywords_description: '关键词<meta name="keywords">，用于改善SEO'
     min_age_to_participate: 参与需要的最低年龄
     min_age_to_participate_description: "超过此年龄的用户可以参与所有进程"
+    proposals:
+      poll_short_title: 投票
+      email_short_title: 电子邮件地址
     analytics_url: "分析URL"
     feature:
       twitter_login: "Twitter登录"
@@ -95,3 +98,23 @@ zh-CN:
       public_stats_description: "在管理面板中显示公众统计数据"
       help_page: "帮助页面"
       help_page_description: '显示帮助菜单，其中包含一个页面，它含有每个已启用功能的资讯'
+    map:
+      latitude: "纬度"
+      latitude_description: "显示地图位置的纬度"
+      longitude: "经度"
+      longitude_description: "显示地图位置的经度"
+      zoom: "缩放"
+      zoom_description: "缩放来显示地图位置"
+    process:
+      debates: "辩论"
+      debates_description: "公民辩论空间的对象是任何能够提出与他们有关的问题的人，他们希望与他人分享自己对这些问题的看法"
+      proposals: "提议"
+      polls: "投票"
+      polls_description: "公民投票是一种参与机制，有投票权的公民可以通过这种机制来做出直接决定"
+      budgets: "参与性预算"
+      legislation: "合作立法"
+    html:
+      per_page_code_head: "每页都包含的代码(<head>)"
+      per_page_code_head_description: "此代码将显示在<head>标签中。用于输入定制脚本，分析..."
+      per_page_code_body: "每页都包含的代码(<body>)"
+      per_page_code_body_description: "此代码将显示在<body>标签中。用于输入定制脚本，分析..."

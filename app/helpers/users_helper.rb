@@ -62,7 +62,7 @@ module UsersHelper
   def show_admin_menu?(user = nil)
     unless namespace == "officing"
       current_administrator? || current_moderator? || current_valuator? || current_manager? ||
-        (user&.administrator?) || current_poll_officer? || current_sdg_manager?
+        user&.administrator? || current_poll_officer? || current_sdg_manager?
     end
   end
 

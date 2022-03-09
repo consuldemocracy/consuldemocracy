@@ -15,7 +15,7 @@
     <%= render "shared/errors", resource: @answer %>
 
     <div class="documents">
-      <%= render "documents/nested_documents", documentable: @answer, f: f %>
+      <%= render "documents/nested_documents", f: f %>
     </div>
 
     <div class="small-12 medium-6 large-2">
@@ -40,11 +40,11 @@
               actions: [:destroy],
               destroy_path: document_path(document)
             ) do |actions| %>
-              <%= actions.link_to t("documents.buttons.download_document"),
-                                  document.attachment.url,
-                                  target: "_blank",
-                                  rel: "nofollow",
-                                  class: "download-link" %>
+              <%= actions.action(:download,
+                                 text: t("documents.buttons.download_document"),
+                                 path: document.attachment.url,
+                                 target: "_blank",
+                                 rel: "nofollow") %>
 
             <% end %>
           </td>

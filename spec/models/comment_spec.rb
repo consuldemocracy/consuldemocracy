@@ -85,34 +85,32 @@ describe Comment do
     let(:comment) { create(:comment) }
 
     it "expires cache when it has a new vote" do
-      expect { create(:vote, votable: comment) }
-      .to change { comment.updated_at }
+      expect { create(:vote, votable: comment) }.to change { comment.cache_version }
     end
 
     it "expires cache when hidden" do
-      expect { comment.hide }
-      .to change { comment.updated_at }
+      expect { comment.hide }.to change { comment.cache_version }
     end
 
     it "expires cache when the author is hidden" do
       expect { comment.user.hide }
-      .to change { [comment.reload.updated_at, comment.author.updated_at] }
+      .to change { [comment.reload.cache_version, comment.author.cache_version] }
     end
 
     it "expires cache when the author is erased" do
       expect { comment.user.erase }
-      .to change { [comment.reload.updated_at, comment.author.updated_at] }
+      .to change { [comment.reload.cache_version, comment.author.cache_version] }
     end
 
     it "expires cache when the author changes" do
       expect { comment.user.update(username: "Isabel") }
-      .to change { [comment.reload.updated_at, comment.author.updated_at] }
+      .to change { [comment.reload.cache_version, comment.author.cache_version] }
     end
 
     it "expires cache when the author's organization get verified" do
       create(:organization, user: comment.user)
       expect { comment.user.organization.verify }
-      .to change { [comment.reload.updated_at, comment.author.updated_at] }
+      .to change { [comment.reload.cache_version, comment.author.cache_version] }
     end
   end
 

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe SDG::Goals::ShowComponent, type: :component do
+describe SDG::Goals::ShowComponent do
   let!(:goal_1) { SDG::Goal[1] }
 
   before do

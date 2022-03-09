@@ -14,6 +14,7 @@ ro:
         proposal_notification: "Mesajul dvs. a fost trimis corect."
         budget_investment: "Buget de Investiție creat cu succes."
         signature_sheet: "Câmpul de semnătură a fost creat cu succes"
+        support: "Investiție votată cu succes"
         topic: "Topic creat cu succes."
         valuator_group: "Grup de evaluare creat cu succes"
       save_changes:

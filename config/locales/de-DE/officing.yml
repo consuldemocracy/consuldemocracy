@@ -69,7 +69,6 @@ de:
         not_allowed: "Sie haben heute keine Amtswechsel"
       new:
         title: Dokument überprüfen
-        document_number: "Dokumentennummer (einschließlich Buchstaben)"
         submit: Dokument überprüfen
         error_verifying_census: "Die Volkszählung konnte dieses Dokument nicht bestätigen."
         form_errors: verhinderte die Bestätigung dieses Dokumentes

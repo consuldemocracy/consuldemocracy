@@ -24,10 +24,6 @@ oc:
     groups:
       show:
         title: Selecciona una opcion
-        unfeasible_title: de Proposicions inviables
-        unfeasible: Veire las proposicions inviables
-        unselected_title: Proposicions pas seleccionadas per la votacion finala
-        unselected: Veire las proposicions pas seleccionadas per la votacion finala
     phase:
       drafting: Borrolhon (Pas visible pel public)
       informing: informacion
@@ -56,6 +52,7 @@ oc:
       milestones: de Hitas
     investments:
       form:
+        title: "Crear una inversion budgetària"
         tag_category_label: "de Categorias"
         tags_instructions: "Etiqueta aquela proposicion. Pòdes escuélher entre las categorias prepausadas o introdusir las que desiras"
         tags_label: d'Etiquetas
@@ -63,7 +60,6 @@ oc:
         map_location: "Ubicacion de la mapa"
         map_location_instructions: "Desplaçatz-vos a la mapa fins a l'ubicacion e metètz-i lo mercado."
         map_remove_marker: "Elimina lo mercador de mapa"
-        map_skip_checkbox: "Aquela inversion a pas una ubicacion concrèta o ne sabi pas."
       index:
         title: de Budgèts ciutadans
         unfeasible: de Proposicions d'inversion pas viabla
@@ -78,6 +74,11 @@ oc:
           other: " que conten lo tèrme <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Los mieus vòts
+          voted_info:
+            knapsack:
+              one: "<strong>Avètz votat una proposicion amb un còst de %{amount_spent}</strong>"
+              other: "<strong>As votat %{count} de proposicions amb un còst de %{amount_spent}</strong>"
+          change_vote_link: "cambiar los tieus vòts"
           different_heading_assigned: "Avètz de vòts actius en un autre títol: %{heading_link}"
           change_ballot: "Se càmbias d'opinion pòdes esborrar los tieus vòts en %{check_ballot} e tornar a començar."
           check_ballot_link: "revisar los mieus vòts"
@@ -85,6 +86,10 @@ oc:
           verified_only: "Per crear una nòva proposicion d'inversion %{verify}."
           create: "Crear una inversion budgetària"
           not_logged_in: "Per crear una nòva proposicion d'inversion te cal %{sign_in} o %{sign_up}."
+        filters:
+          selected: "seleccionada"
+          unfeasible: "Pas viables"
+          winners: "Ganhants"
         orders:
           random: Aleatòries
           confidence_score: Mai avaladas
@@ -115,22 +120,27 @@ oc:
       investment:
         add: Votacion
         already_added: As ja apondut aquela proposicion d'inversion
-        already_supported: Avètz ja sostengut a aquel projècte d'inversion. Parteja-o!
         support_title: Avalar aquela proposicion d'inversion
-        confirm_group:
-          one: "Podètz solament suportar d'inversions a %{count} districte. Se contunhatz, podètz pas cambiar l’eleccion de lo vòstre districte. Ès segur?"
-          other: "Podètz solament suportar d'inversions a %{count} de districtes. Se contunhatz, podètz pas cambiar l’eleccion de lo vòstre districte. Ès segur?"
         supports:
           zero: Sens supòrts
           one: 1 aval
           other: "%{count} d'avals"
-        give_support: Avalar
       header:
         check_ballot: "Revisar los mieus vòts"
         different_heading_assigned: "Avètz de vòts actius en un autre títol: %{heading_link}"
         change_ballot: "Se càmbias d'opinion pòdes esborrar los tieus vòts en %{check_ballot} e tornar a començar."
         check_ballot_link: "revisar los mieus vòts"
         price: "Aquela partida a un budgèt de"
+      votes:
+        already_supported: "Avètz ja sostengut a aquel projècte d'inversion. Parteja-o!"
+        confirm_group:
+          one: "Podètz solament suportar d'inversions a %{count} districte. Se contunhatz, podètz pas cambiar l’eleccion de lo vòstre districte. Ès segur?"
+          other: "Podètz solament suportar d'inversions a %{count} de districtes. Se contunhatz, podètz pas cambiar l’eleccion de lo vòstre districte. Ès segur?"
+        support: "Avalar"
+    investments_list:
+      investment:
+        price: "Còst"
+        supports: "d'Avals"
     show:
       see_results: veire de resultats
     results:

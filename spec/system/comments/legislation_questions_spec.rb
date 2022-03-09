@@ -110,13 +110,17 @@ describe "Commenting legislation questions" do
     expect(c1.body).to appear_before(c2.body)
     expect(c2.body).to appear_before(c3.body)
 
-    visit legislation_process_question_path(legislation_question.process, legislation_question, order: :newest)
+    click_link "Newest first"
 
+    expect(page).to have_link "Newest first", class: "is-active"
+    expect(page).to have_current_path(/#comments/, url: true)
     expect(c3.body).to appear_before(c2.body)
     expect(c2.body).to appear_before(c1.body)
 
-    visit legislation_process_question_path(legislation_question.process, legislation_question, order: :oldest)
+    click_link "Oldest first"
 
+    expect(page).to have_link "Oldest first", class: "is-active"
+    expect(page).to have_current_path(/#comments/, url: true)
     expect(c1.body).to appear_before(c2.body)
     expect(c2.body).to appear_before(c3.body)
   end
@@ -184,6 +188,7 @@ describe "Commenting legislation questions" do
     end
 
     expect(page).to have_css(".comment", count: 2)
+    expect(page).to have_current_path(/#comments/, url: true)
   end
 
   describe "Not logged user" do

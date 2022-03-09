@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock "~> 3.14.1"
+lock "~> 3.16.0"
 
 def deploysecret(key)
   @deploy_secrets_yml ||= YAML.load_file("config/deploy-secrets.yml")[fetch(:stage).to_s]
@@ -22,7 +22,7 @@ set :pty, true
 set :use_sudo, false
 
 set :linked_files, %w[config/database.yml config/secrets.yml config/census_geozones.csv config/entidades_censo.csv config/entities_geozones_dict.json config/geozones_mapping.json config/padrones.csv]
-set :linked_dirs, %w[.bundle log tmp public/system public/assets public/ckeditor_assets]
+set :linked_dirs, %w[.bundle log tmp public/system public/assets public/ckeditor_assets public/machine_learning/data storage]
 
 set :keep_releases, 5
 

@@ -1,1 +1,11 @@
 nl:
+  stats:
+    title: "Data over deelname"
+    total_participants: "deelnemers"
+    total: "Totaal"
+    budgets:
+      link: "Statistieken"
+      total_unfeasible_investments: "Onhaalbare voorstellen"
+      total: "Totaal"
+      heading: "Partida"
+      participants_every_phase: "Aantal deelnemers"

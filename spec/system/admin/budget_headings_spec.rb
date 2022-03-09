@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Admin budget headings", :admin do
   let(:budget) { create(:budget, :drafting) }
-  let(:group) { create(:budget_group, budget: budget) }
+  let!(:group) { create(:budget_group, budget: budget) }
 
   context "Load" do
     let!(:budget)  { create(:budget, slug: "budget_slug") }
@@ -17,65 +17,52 @@ describe "Admin budget headings", :admin do
     end
   end
 
-  context "Index" do
+  context "List of headings in the budget page" do
     scenario "Displaying no headings for group" do
-      visit admin_budget_group_headings_path(budget, group)
+      group.update!(name: "Universities")
 
-      expect(page).to have_content "There are no headings."
+      visit admin_budget_path(budget)
+
+      within "section", text: "Heading groups" do
+        expect(page).to have_content "There are no headings in the Universities group."
+      end
     end
 
     scenario "Displaying headings" do
-      heading1 = create(:budget_heading, group: group, price: 1000, allow_custom_content: true)
-      heading2 = create(:budget_heading, group: group, price: 2000, population: 10000)
-      heading3 = create(:budget_heading, group: group, price: 3000, population: 10000)
+      create(:budget_heading, name: "Laptops", group: group, price: 1000)
+      create(:budget_heading, name: "Tablets", group: group, price: 2000)
+      create(:budget_heading, name: "Phones", group: group, price: 3000)
 
-      visit admin_budget_group_headings_path(budget, group)
-      expect(page).to have_content "There are 3 headings"
+      visit admin_budget_path(budget)
 
-      within "#budget_heading_#{heading1.id}" do
-        expect(page).to have_content(heading1.name)
-        expect(page).to have_content "€1,000"
-        expect(page).not_to have_content "10000"
-        expect(page).to have_content "Yes"
-        expect(page).to have_link "Edit"
-        expect(page).to have_link "Delete"
-      end
+      within "section", text: "Heading groups" do
+        within "tbody" do
+          expect(page).to have_selector "tr", count: 3
 
-      within "#budget_heading_#{heading2.id}" do
-        expect(page).to have_content(heading2.name)
-        expect(page).to have_content "€2,000"
-        expect(page).to have_content "10000"
-        expect(page).to have_content "No"
-        expect(page).to have_link "Edit"
-        expect(page).to have_link "Delete"
-      end
-
-      within "#budget_heading_#{heading3.id}" do
-        expect(page).to have_content(heading3.name)
-        expect(page).to have_content "€3,000"
-        expect(page).to have_content "10000"
-        expect(page).to have_content "No"
-        expect(page).to have_link "Edit"
-        expect(page).to have_link "Delete"
+          within("tr", text: "Laptops") { expect(page).to have_content "€1,000" }
+          within("tr", text: "Tablets") { expect(page).to have_content "€2,000" }
+          within("tr", text: "Phones") { expect(page).to have_content "€3,000" }
+        end
       end
     end
 
     scenario "Delete a heading without investments" do
-      heading = create(:budget_heading, group: group)
+      create(:budget_heading, group: group, name: "Lemuria")
 
-      visit admin_budget_group_headings_path(budget, group)
-      within("#budget_heading_#{heading.id}") { accept_confirm { click_link "Delete" } }
+      visit admin_budget_path(budget)
+
+      within("tr", text: "Lemuria") { accept_confirm { click_button "Delete" } }
 
       expect(page).to have_content "Heading deleted successfully"
-      expect(page).not_to have_selector "#budget_heading_#{heading.id}"
+      expect(page).not_to have_content "Lemuria"
     end
 
     scenario "Try to delete a heading with investments" do
       heading = create(:budget_heading, group: group, name: "Atlantis")
       create(:budget_investment, heading: heading)
 
-      visit admin_budget_group_headings_path(budget, group)
-      within(".heading", text: "Atlantis") { accept_confirm { click_link "Delete" } }
+      visit admin_budget_path(budget)
+      within(".heading", text: "Atlantis") { accept_confirm { click_button "Delete" } }
 
       expect(page).to have_content "You cannot delete a Heading that has associated investments"
       expect(page).to have_content "Atlantis"
@@ -84,21 +71,29 @@ describe "Admin budget headings", :admin do
 
   context "New" do
     scenario "Create heading" do
-      visit admin_budget_group_headings_path(budget, group)
-      click_link "Create new heading"
+      visit admin_budget_path(budget)
+
+      within "section", text: "Heading groups" do
+        within("section", text: group.name) { click_link "Add heading" }
+      end
 
       fill_in "Heading name", with: "All City"
-      fill_in "Amount", with: "1000"
+      fill_in "Money amount", with: "1000"
       fill_in "Population (optional)", with: "10000"
       check "Allow content block"
 
       click_button "Create new heading"
 
       expect(page).to have_content "Heading created successfully!"
-      expect(page).to have_content "All City"
-      expect(page).to have_content "€1,000"
-      expect(page).to have_content "10000"
-      expect(page).to have_content "Yes"
+
+      within "tr", text: "All City" do
+        expect(page).to have_content "€1,000"
+
+        click_link "Edit"
+      end
+
+      expect(page).to have_field "Population (optional)", with: "10000"
+      expect(page).to have_field "Allow content block", checked: true
     end
 
     scenario "Heading name is mandatory" do
@@ -115,7 +110,7 @@ describe "Admin budget headings", :admin do
       click_button "Create new heading"
 
       expect(page).not_to have_content "Heading created successfully!"
-      expect(page).to have_css(".is-invalid-label", text: "Amount")
+      expect(page).to have_css(".is-invalid-label", text: "Money amount")
       expect(page).to have_content "can't be blank"
     end
 
@@ -134,7 +129,7 @@ describe "Admin budget headings", :admin do
         expect(page).to have_field "Votes allowed", with: 1
 
         fill_in "Heading name", with: "All City"
-        fill_in "Amount", with: "1000"
+        fill_in "Money amount", with: "1000"
         fill_in "Votes allowed", with: 14
         click_button "Create new heading"
 
@@ -148,11 +143,11 @@ describe "Admin budget headings", :admin do
     scenario "Show heading information" do
       heading = create(:budget_heading, group: group)
 
-      visit admin_budget_group_headings_path(budget, group)
+      visit admin_budget_path(budget)
       within("#budget_heading_#{heading.id}") { click_link "Edit" }
 
       expect(page).to have_field "Heading name", with: heading.name
-      expect(page).to have_field "Amount", with: heading.price
+      expect(page).to have_field "Money amount", with: heading.price
       expect(page).to have_field "Population (optional)", with: heading.population
       expect(page).to have_field "Longitude (optional)", with: heading.longitude
       expect(page).to have_field "Latitude (optional)", with: heading.latitude
@@ -204,14 +199,14 @@ describe "Admin budget headings", :admin do
       visit edit_admin_budget_group_heading_path(budget, group, heading)
 
       expect(page).to have_field "Heading name", with: "All City"
-      expect(page).to have_field "Amount", with: 1000
+      expect(page).to have_field "Money amount", with: 1000
       expect(page).to have_field "Population (optional)", with: 10000
       expect(page).to have_field "Longitude (optional)", with: 20.50
       expect(page).to have_field "Latitude (optional)", with: -10.50
       expect(find_field("Allow content block")).to be_checked
 
       fill_in "Heading name", with: "Districts"
-      fill_in "Amount", with: "2000"
+      fill_in "Money amount", with: "2000"
       fill_in "Population (optional)", with: "20000"
       fill_in "Longitude (optional)", with: "-40.47"
       fill_in "Latitude (optional)", with: "25.25"
@@ -222,7 +217,7 @@ describe "Admin budget headings", :admin do
 
       visit edit_admin_budget_group_heading_path(budget, group, heading)
       expect(page).to have_field "Heading name", with: "Districts"
-      expect(page).to have_field "Amount", with: 2000
+      expect(page).to have_field "Money amount", with: 2000
       expect(page).to have_field "Population (optional)", with: 20000
       expect(page).to have_field "Longitude (optional)", with: -40.47
       expect(page).to have_field "Latitude (optional)", with: 25.25

@@ -24,7 +24,7 @@ class Admin::StatsController < Admin::BaseController
                                                        .count(:voter_id)
 
     @user_ids_who_didnt_vote_proposals = @verified_users - @user_ids_who_voted_proposals
-    budgets_ids = Budget.where.not(phase: "finished").pluck(:id)
+    budgets_ids = Budget.where.not(phase: "finished").ids
     @budgets = budgets_ids.size
     @investments = Budget::Investment.where(budget_id: budgets_ids).count
   end

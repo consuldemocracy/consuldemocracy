@@ -7,24 +7,7 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
   end
 
   def update
-    content_params.each do |content|
-      values = content[:values].slice(*translation_params)
-
-      unless values.empty?
-        values.each do |key, value|
-          locale = key.split("_").last
-
-          if value == t(content[:id], locale: locale) || value.match(/translation missing/)
-            next
-          else
-            text = I18nContent.find_or_create_by!(key: content[:id])
-            Globalize.with_locale(locale) do
-              text.update!(value: value)
-            end
-          end
-        end
-      end
-    end
+    I18nContent.update(content_params, enabled_translations)
 
     redirect_to admin_site_customization_information_texts_path,
                 notice: t("flash.actions.update.translation")
@@ -41,23 +24,14 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
     end
 
     def delete_translations
-      languages_to_delete = params[:enabled_translations].select { |_, v| v == "0" }
-                                                         .keys
+      languages_to_delete = params[:enabled_translations].select { |_, v| v == "0" }.keys
 
       languages_to_delete.each do |locale|
         I18nContentTranslation.where(locale: locale).destroy_all
       end
     end
 
-    def translation_params
-      I18nContent.translated_attribute_names.product(enabled_translations).map do |attr_name, loc|
-        I18nContent.localized_attr_name_for(attr_name, loc)
-      end
-    end
-
     def enabled_translations
-      params.fetch(:enabled_translations, {})
-            .select { |_, v| v == "1" }
-            .keys
+      params.fetch(:enabled_translations, {}).select { |_, v| v == "1" }.keys
     end
 end

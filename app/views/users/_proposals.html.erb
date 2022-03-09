@@ -7,10 +7,10 @@
     </tr>
   </thead>
   <tbody>
-    <% @proposals.each do |proposal| %>
+    <% proposals.each do |proposal| %>
       <%= render "proposal", proposal: proposal %>
     <% end %>
   </tbody>
 </table>
 
-<%= paginate @proposals %>
+<%= paginate proposals %>

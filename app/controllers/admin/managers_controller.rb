@@ -6,9 +6,7 @@ class Admin::ManagersController < Admin::BaseController
   end
 
   def search
-    @users = User.search(params[:search])
-                 .includes(:manager)
-                 .page(params[:page])
+    @users = User.search(params[:search]).includes(:manager).page(params[:page])
   end
 
   def create

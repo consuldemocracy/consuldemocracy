@@ -1,0 +1,4 @@
+var replacement = $("<%= j render Admin::BudgetPhases::ToggleEnabledComponent.new(@phase) %>");
+var form = $("#" + replacement.find("[type='submit']").attr("id")).closest("form");
+
+form.html(replacement.html()).find("[type='submit']").focus();

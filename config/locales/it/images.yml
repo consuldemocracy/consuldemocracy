@@ -7,8 +7,6 @@ it:
       delete_button: Rimuovere immagine
       note: "È possibile caricare una singola immagine delle seguenti tipologie: %{accepted_content_types}, fino a %{max_file_size} MB."
       add_new_image: Aggiungi immagine
-      admin_title: "Immagine"
-      admin_alt_text: "Testo alternativo per l'immagine"
     actions:
       destroy:
         notice: Immagine cancellata con successo.

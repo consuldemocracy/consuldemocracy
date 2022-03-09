@@ -4,6 +4,9 @@ pl:
     results_enabled: "Pokaż wyniki"
     stats_enabled: "Pokaż statystyki"
     advanced_stats_enabled: "Pokaż zaawansowane statystyki"
+    name: Nazwa
+    email: E-mail
+    description: Opis
   activerecord:
     models:
       activity:
@@ -31,6 +34,11 @@ pl:
         few: "Etapy inwestycji"
         many: "Etapów inwestycji"
         other: "Etapów inwestycji"
+      progress_bar:
+        one: "Pasek postępu"
+        few: "Pasek postępu"
+        many: "Paski postępu"
+        other: "Pasek postępu"
       comment:
         one: "Komentarz"
         few: "Komentarze"
@@ -116,6 +124,11 @@ pl:
         few: Niestandardowe bloki zawartości
         many: Niestandardowe bloki zawartości
         other: Niestandardowe bloki zawartości
+      document:
+        one: Dokument
+        few: Dokumenty
+        many: Dokumenty
+        other: Dokumenty
       legislation/process:
         one: "Proces"
         few: "Procesy"
@@ -197,6 +210,20 @@ pl:
         image_title: "Tytuł obrazu"
         duration: "Zakres czasu"
         feasibility_feasible: "Wykonalne"
+        feasibility_undecided: "Niezdefiniowany"
+        feasibility_unfeasible: "Niewykonalne"
+        incompatible: "Oznacz jako niezgodne"
+        price_explanation: "Wyjaśnienie ceny"
+        selected: "Oznacz jako wybrane"
+        selected_true: "Wybrany"
+        selected_false: "Nie zaznaczone"
+        unfeasibility_explanation: "Wyjaśnienie wykonalności"
+        valuation_finished: "Wycena zakończona"
+        valuator_ids: "Grupy"
+        valuation_tag_list: "Tagi"
+      budget/investment/translation:
+        title: "Tytuł"
+        description: "Opis"
       geozone:
         name: Nazwa
         external_code: "Zewnętrzny kod (opcjonalnie)"
@@ -207,6 +234,8 @@ pl:
         title: "Tytuł"
         description: "Opis (opcjonalnie, jeśli istnieje przydzielony stan)"
         publication_date: "Data publikacji"
+      milestone/translation:
+        description: "Opis"
       milestone/status:
         name: "Nazwa"
         description: "Opis (opcjonalnie)"
@@ -217,24 +246,51 @@ pl:
       progress_bar/kind:
         primary: "Główny"
         secondary: "Dodatkowy"
+      budget/group/translation:
+        name: "Nazwa grupy"
       budget/heading:
+        allow_custom_content: "Pozwól na załączenie treści"
+        latitude: "Szerokość geograficzna (opcjonalnie)"
+        longitude: "Długość geograficzna (opcjonalnie)"
         name: "Nazwa nagłówka"
         price: "Koszt"
         population: "Populacja"
+      budget/heading/translation:
+        name: "Nazwa nagłówka"
+      budget/phase:
+        enabled: "Włączona faza"
+        ends_at: "Data zakończenia"
+        starts_at: "Data rozpoczęcia"
+      budget/phase/translation:
+        name: "Nazwa"
+        description: "Opis"
+        summary: "Podsumowanie"
       comment:
         body: "Komentarz"
         user: "Użytkownik"
       debate:
         author: "Autor"
         description: "Opinia"
+        tag_list: "Tematy"
         terms_of_service: "Warunki użytkowania"
         title: "Tytuł"
+      debate/translation:
+        title: "Tytuł debaty"
+        description: "Początkowy tekst debaty"
       proposal:
         author: "Autor"
         title: "Tytuł"
         question: "Pytanie"
         description: "Opis"
+        responsible_name: "Pełne nazwisko osoby składającej wniosek"
+        retired_reason: "Powód do wycofania wniosku"
+        selected: "Oznacz jako wybrane"
         terms_of_service: "Regulamin"
+      proposal/translation:
+        title: "Tytuł wniosku"
+        description: "Tekst wniosku"
+        summary: "Podsumowanie wniosku"
+        retired_explanation: "Wyjaśnienie"
       user:
         login: "E-mail lub nazwa użytkownika"
         email: "E-mail"
@@ -242,41 +298,80 @@ pl:
         password_confirmation: "Potwierdzenie hasła"
         password: "Hasło"
         current_password: "Stare hasło"
+        email_digest: "o podsumowaniu powiadomień dotyczących pomysłów"
+        email_on_comment: "gdy ktoś skomentuje moje pomysły"
+        email_on_comment_reply: "gdy ktoś odpowie na mój komentarz"
+        email_on_direct_message: "gdy ktoś wyśle mi wiadomość bezpośrednią"
+        newsletter: "o innych, ważnych informacjach dotyczących portalu"
         official_position: "Oficjalne stanowisko"
+        official_position_badge: "Pokaż odznakę oficjalnej pozycji"
         official_level: "Oficjalny poziom"
         phone_number: "Numer telefonu"
+        public_activity: "Pokazuj publicznie moją listę aktywności"
+        recommended_debates: "Pokaż zalecenia debat"
+        recommended_proposals: "Pokaż wnioski rekomendacji"
         redeemable_code: "Kod weryfikacyjny otrzymany za pośrednictwem poczty e-mail"
+      direct_message:
+        title: "Tytuł"
+        body: "Wiadomość"
       organization:
         name: "Nazwa organizacji"
         responsible_name: "Osoba odpowiedzialna za grupę"
       poll:
         name: "Nazwa"
+        title: "Nazwa"
         starts_at: "Data Rozpoczęcia"
         ends_at: "Data Zakończenia"
         geozone_restricted: "Ograniczone przez geozone"
         summary: "Podsumowanie"
         description: "Opis"
+      active_poll/translation:
+        description: "Opis"
+      poll/booth:
+        name: "Nazwa"
+        location: "Lokalizacja"
       poll/translation:
         name: "Nazwa"
         summary: "Podsumowanie"
         description: "Opis"
       poll/question:
+        poll_id: "Sondaż"
         title: "Pytanie"
         summary: "Podsumowanie"
         description: "Opis"
         external_url: "Link do dodatkowej dokumentacji"
       poll/question/translation:
         title: "Pytanie"
+      poll/ballot_sheet:
+        poll_id: Sondaż
+      poll/shift:
+        task: "Zadanie"
+      proposal_notification:
+        body: "Wiadomość"
+        title: "Tytuł"
       signature_sheet:
+        title: "Tytuł"
         signable_type: "Rodzaj podpisywalny"
         signable_id: "Podpisywalny identyfikator"
         document_numbers: "Numery dokumentów"
+      sdg/goal:
+        title: "Tytuł"
+        description: "Opis"
+      sdg/local_target:
+        title: "Tytuł"
+      sdg/local_target/translation:
+        title: "Tytuł"
+        description: "Opis"
+      sdg/target:
+        title: "Tytuł"
       site_customization/page:
         content: Zawartość
         created_at: Utworzony w
         subtitle: Napis
         slug: Ścieżka
         status: Status
+        status_draft: "Projekt"
+        status_published: "Opublikowany"
         title: Tytuł
         updated_at: Aktualizacja w
         more_info_flag: Pokaż na stronie pomocy
@@ -293,9 +388,20 @@ pl:
         name: Nazwa
         locale: ustawienia regionalne
         body: Zawartość
+      tag:
+        name: "Wpisz nazwę tematu"
+      topic:
+        title: "Tytuł"
+        description: "Tekst początkowy"
       banner:
         background_color: Kolor tła
         font_color: Kolor czcionki
+        post_ended_at: "Post zakończył się o"
+        post_started_at: "Post zaczął się o"
+        target_url: "Link"
+      banner/translation:
+        title: "Tytuł"
+        description: "Opis"
       legislation/process:
         title: Tytuł procesu
         summary: Podsumowanie
@@ -315,17 +421,26 @@ pl:
         result_publication_date: Data publikacji wyniku końcowego
         background_color: Kolor tła
         font_color: Kolor czcionki
+        homepage_enabled: "Strona domowa włączona"
       legislation/process/translation:
         title: Tytuł procesu
         summary: Podsumowanie
         description: Opis
         additional_info: Informacje dodatkowe
+        homepage: "Opis"
         milestones_summary: Podsumowanie
+      legislation/proposal:
+        description: "Tekst wniosku"
+        summary: "Podsumowanie wniosku"
+        title: "Tytuł wniosku"
+        video_url: "Link do zewnętrznego wideo"
       legislation/draft_version:
         title: Tytuł w wersji
         body: Tekst
         changelog: Zmiany
         status: Status
+        status_draft: "Projekt"
+        status_published: "Opublikowany"
         final_version: Wersja ostateczna
       legislation/draft_version/translation:
         title: Tytuł w wersji
@@ -334,6 +449,8 @@ pl:
       legislation/question:
         title: Tytuł
         question_options: Opcje
+      legislation/question/translation:
+        title: Pytanie
       legislation/question_option:
         value: Wartość
       legislation/annotation:
@@ -380,6 +497,22 @@ pl:
         link_text: Tekst łącza
       widget/feed:
         limit: Liczba elementów
+      dashboard/action:
+        title: Tytuł
+        description: Opis
+        active: Aktywny
+        action_type: Typ
+      link:
+        label: Tytuł
+      valuator:
+        description: Opis
+        valuator_group_id: Grupa weryfikująca
+      valuator_group:
+        name: "Nazwa grupy"
+      local_census_record:
+        document_type: Rodzaj dokumentu
+        document_number: Numer dokumentu
+        date_of_birth: Data urodzenia
     errors:
       models:
         user:
@@ -407,14 +540,12 @@ pl:
           attributes:
             segment_recipient:
               invalid: "Segment odbiorców użytkownika jest nieprawidłowy"
-        map_location:
-          attributes:
-            map:
-              invalid: Lokalizacja na mapie nie może być pusta. Umieść znacznik lub zaznacz pole wyboru, jeśli geolokalizacja jest niepotrzebna
         poll/voter:
           attributes:
             document_number:
               not_in_census: "Brak dokumentu w spisie"
+            user_id:
+              has_voted: "Użytkownik już zagłosował"
         legislation/process:
           attributes:
             end_date:

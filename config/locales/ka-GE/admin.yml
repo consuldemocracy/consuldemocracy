@@ -6,6 +6,7 @@ ka:
       actions: მოქმედებები
       confirm: დარწმუნებული ხართ?
       confirm_hide: მოდერაციის დადასტურება
+      delete: "წაშლა"
       hide: დამალვა
       hide_author: ავტორის დამალვა
       restore: აღდგენა
@@ -13,15 +14,12 @@ ka:
       unmark_featured: გამორჩეულებიდან წაშლა
       edit: რედაქტირება
       configure: კონფიგურაცია
-      delete: წაშლა
     officing_booth:
       title: "თქვენ ზედამხედველობას უწევთ ჯიხურს, რომელიც მდებარეობს %{booth}. თუ აღნიშნული ინფორმაცია მცდარია, არ გააგრძელოთ პროცესი და დაუკავშირდით მხარდაჭერის სამსახურს. გმადლობთ."
     banners:
       index:
         title: ბანერები
         create: ბანერის შექმნა
-        edit: ბანერის რედაქტირება
-        delete: ბანერის წაშლა
         filters:
           all: ყველა
           with_active: აქტიური
@@ -62,18 +60,22 @@ ka:
         type: ტიპი
         no_activity: მოდერატორების აქტივობა არ მოიძებნა.
     budgets:
+      actions:
+        edit: "ბიუჯეტის რედაქტირება"
+        preview: "ესკიზი"
       index:
         title: მონაწილეობითი ბიუჯეტები
         new_link: ახალი ბიუჯეტის შექმნა
         filter: ფილტრი
         filters:
+          all: ყველა
           open: მიმდინარე
           finished: დასრულებული
         budget_investments: პროექტების მართვა
+        table_budget_type: "ტიპი"
+        table_draft: "მონახაზი"
         table_name: სახელი
         table_phase: ფაზა
-        edit_groups: სათაურების ჯგუფების რედაქტირება
-        edit_budget: ბიუჯეტის რედაქტირება
         admin_ballots: ადმინისტრაციული ბიულეტენები
         no_budgets: "ბიუჯეტები არ მოიძებნა."
       create:
@@ -86,7 +88,6 @@ ka:
         phase: ფაზა
         enabled: აქტიურია
         actions: მოქმედებები
-        edit_phase: ფაზის რედაქტირება
         active: აქტიური
         blank_dates: თარიღები არ არის შევსებული
         administrators:
@@ -103,8 +104,6 @@ ka:
         success_notice: ბიუჯეტი წარმატებით წაიშალა
         unable_notice: ინვესტიციებთან დაკავშირებული ბიუჯეტის წაშლა შეუძლებელია
         unable_notice_polls: ხმის მიცემასთან დაკავშირებული ბიუჯეტის წაშლა შეუძლებელია
-      new:
-        title: ახალი მონაწილეობითი ბიუჯეტი
       winners:
         calculate: გამარჯვებული ინვესტიციების გამოთვლა
         calculated: მიმდინარეობს გამარჯვებული ინვესტიციების დათვლა, გთხოვთ, დაელოდოთ.
@@ -129,13 +128,8 @@ ka:
         edit: "ჯგუფის რედაქტირება"
         max_votable_headings_info: "მიესადაგება მხოლოდ პროექტების შერჩევის ფაზას. ხმის მიცემის ფაზაში მომხმარებლებს ჯგუფიდან მხოლოდ ერთი რუბრიკისთვის შეუძლიათ ხმის მიცემა."
         submit: "ჯგუფის შენახვა"
-      index:
-        back: "ბიუჯეტებში დაბრუნება"
     budget_headings:
       no_headings: "სათაურები არ მოიძებნა."
-      amount:
-        one: "მოიძებნა 1 სათაური"
-        other: "მოიძებნა %{count} სათაური"
       create:
         notice: "სათაური წარმატებით შეიქმნა!"
       update:
@@ -155,6 +149,7 @@ ka:
         back: "ჯგუფებში დაბრუნება"
     budget_phases:
       edit:
+        title: "ფაზის რედაქტირება"
         description_help_text: ეს ტექსტი გამოჩნდება სათაურის ველში, როდესაც ფაზა აქტიურია
         enabled_help_text: ეს ფაზა საჯარო გახდება ბიუჯეტის ფაზების დროის გრაფიკზე, ამასთან, იგი აქტიური იქნება სხვა მიზნებისთვისაც
         save_changes: ცვლილებების შენახვა
@@ -253,6 +248,11 @@ ka:
         tags_placeholder: "ჩაწერეთ სასურველი ტეგები და გამოყავით ერთმანეთისგან მძიმით (,)"
         undefined: განუსაზღვრელი
       search_unfeasible: ძებნა შეუძლებელია
+    budgets_wizard:
+      creation_timeline:
+        budget: ბიუჯეტი
+        groups: ჯგუფები
+        headings: რუბრიკები
     milestones:
       index:
         table_id: "ID"
@@ -261,7 +261,6 @@ ka:
         table_publication_date: "გამოქვეყნების თარიღი"
         table_status: სტატუსი
         table_actions: "მოქმედებები"
-        delete: "ეტაპის წაშლა"
         no_milestones: "ეტაპები განსაზღვრული არ არის"
         image: "ფოტოსურათი"
         show_image: "ფოტოსურათის ჩვენება"
@@ -478,10 +477,6 @@ ka:
           allegations_phase: კომენტარების ფაზა
           proposals_phase: ინიციატივების ფაზა
           use_markdown: ტექსტის ფორმატირებისთვის გამოიყენეთ შემცირების ღილაკი
-          title_placeholder: პროცესის დასახელება
-          summary_placeholder: აღწერის მოკლე შინაარსი
-          description_placeholder: პროცესის აღწერის დამატება
-          additional_info_placeholder: დაამატეთ დამატებითი მნიშვნელოვანი ინფორმაცია
           homepage_description: განმარტეთ პროცესის შინაარსი
           banner_title: სათაურის ფერები
         index:
@@ -495,11 +490,10 @@ ka:
           title: ახალი საკანონმდებლო ინიციატივის პროცესის შექმნა
           submit_button: პროცესის შექმნა
         proposals:
-          select_order: დალაგება
           orders:
-            id: Id
-            title: სათაური
-            supports: მხარდამჭერთა საერთო რაოდენობა
+            id: "Id"
+            title: "სათაური"
+            supports: "მხარდამჭერთა საერთო რაოდენობა"
         process:
           title: პროცესი
           comments: კომენტარები
@@ -552,9 +546,7 @@ ka:
             status:
               draft: შეგიძლიათ წინასწარ შეხედოთ, როგორც ადმინმა. ხელმისაწვდომი იქნება მხოლოდ თქვენთვის
               published: ნახვა შეუძლია ყველას
-          title_placeholder: შეიყვანეთ პროექტის დასახელება
           changelog_placeholder: დაამატეთ ძირითადი ცვლილებები წინა ვერსიიდან
-          body_placeholder: შეიყვანეთ ტექსტის მონახაზი
         index:
           title: კანონპროექტები
           create: ვერსიის შექმნა
@@ -585,7 +577,6 @@ ka:
           submit_button: ცვლილებების შენახვა
         form:
           add_option: შესაძლო ვარიანტის დამატება
-          title_placeholder: კითხვის დამატება
           value_placeholder: დაამატეთ დახურული პასუხი
           question_options: "შესაძლო პასუხები (სურვილისამებრ, ავტომატურად მონიშნულია ღია პასუხები)"
         index:
@@ -615,6 +606,12 @@ ka:
         add: დამატება
       search:
         title: "მენეჯერები: მომხმარებლის ძებნა"
+    sdg_managers:
+      index:
+        no_sdg_managers: მომხმარებლები არ მოიძებნა.
+    sdg/managers:
+      sdg/manager:
+        add: დამატება
     menu:
       activity: მოდერატორის აქტივობა
       admin: ადმინ მენიუ
@@ -1113,7 +1110,6 @@ ka:
         location: "მდებარეობა"
       booth:
         shifts: "ცვლის მართვა"
-        edit: "კაბინის რედაქტირება"
     officials:
       edit:
         destroy: '"ოფიციალური" სტატუსის მოხსნა'
@@ -1135,7 +1131,6 @@ ka:
       level_4: მე-4 დონე
       level_5: მე-5 დონე
       search:
-        edit_official: თანამდებობის პირის რედაქტირება
         make_official: სტატუსის მინიჭება
         title: "ოფიციალური თანამდებობა: მომხმარებლის ძებნა"
         no_results: ოფიციალური თანამდებობები არ მოიძებნა.
@@ -1191,6 +1186,12 @@ ka:
         no_hidden_proposals: დამალული ინიციატივები არ მოიძებნა.
     hidden_proposal_notifications:
       index:
+        filter: ფილტრი
+        filters:
+          all: ყველა
+          with_confirmed_hide: დადასტურებულია
+          without_confirmed_hide: მოლოდინის რეჟიმში
+        title: დამალული შეტყობინებები
         no_hidden_proposals: დამალული შეტყობინებები არ მოიძებნა.
     settings:
       flash:
@@ -1204,9 +1205,6 @@ ka:
         feature_flags: ფუნქციები
         features:
           enabled: "ფუნქცია გააქტიურებულია"
-          disabled: "ფუნქცია გამორთულია"
-          enable: "ჩართვა"
-          disable: "გამორთვა"
         map:
           title: რუკის კონფიგურაცია
           help: აქედან შეგიძლიათ რუკის კონფიგურაცია მომხმარებლებისთვის. დასვით მარკერი სასურველ ადგილას ან დააჭირეთ რუკის ნებისმიერ წერტილს, შეარჩიეთ გადიდების დიაპაზონი და დააწექით ღილაკს "განახლება".
@@ -1224,14 +1222,10 @@ ka:
       remote_census_request_name: მონაცემთა მოთხოვნა
       remote_census_response_name: პასუხად მიღებული მონაცემები
       setting: ფუნქცია
-      setting_actions: მოქმედებები
       setting_name: პარამეტრები
-      setting_status: სტატუსი
       setting_value: ღირებულება
       no_description: "აღწერა არ არის"
     shared:
-      true_value: "დიახ"
-      false_value: "არა"
       search:
         label:
           booths: "კაბინის ძებნა დასახელებით, ან ლოკაციით"
@@ -1242,6 +1236,7 @@ ka:
           poll_questions: "კენჭისყრის კითხვების ძიება"
           proposals: "ინიციატივათა ძიება დასახელებით, კოდით, აღწერით ან შეკითხვით"
           users: "მომხმარებლის ძებნა სახელით ან ელ.ფოსტის მეშვეობით"
+        search: "ძებნა"
       search_results: "ძებნის შედეგები"
       no_search_results: "შედეგები არ მოიძებნა."
       actions: მოქმედებები
@@ -1383,9 +1378,12 @@ ka:
           question_name: კითხვა
           origin_web: ქსელის წევრები
           origin_total: მონაწილეთა საერთო რაოდენობა
+      sdg:
+        debates: "დებატები"
+        polls: "ხმის მიცემა"
+        proposals: "ინიციატივები"
     tags:
       create: თემის შექმნა
-      destroy: თემის წაშლა
       index:
         add_tag: ახალი საინიციატივო თემის დამატება
         title: ინიციატივასთან დაკავშირებული თემები
@@ -1563,3 +1561,7 @@ ka:
           created: შექმნილი ჩანაწერები
         local_census_records:
           no_records_found: ჩანაწერები არ მოიძებნა.
+    machine_learning:
+      related_content: "მსგავსი ინფორმაცია"
+      tab_help: "დახმარება"
+      tags: "ტეგები"

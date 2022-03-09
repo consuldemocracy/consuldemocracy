@@ -1,0 +1,6 @@
+.admin .featured-settings-form {
+
+  [aria-pressed] {
+    @include switch;
+  }
+}
