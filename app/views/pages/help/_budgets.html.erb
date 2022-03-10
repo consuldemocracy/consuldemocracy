@@ -3,4 +3,11 @@
     <%= sanitize(t("pages.help.budgets.description",
          link: link_to(t("pages.help.budgets.link"), budgets_path))) %>
   </p>
+
+  <ul class="features">
+    <li><%= t("pages.help.budgets.feature") %></li>
+    <li><%= sanitize(t("pages.help.budgets.phase_1", org: setting["org_name"])) %></li>
+    <li><%= sanitize(t("pages.help.budgets.phase_2")) %></li>
+    <li><%= sanitize(t("pages.help.budgets.phase_3")) %></li>
+  </ul>
 <% end %>

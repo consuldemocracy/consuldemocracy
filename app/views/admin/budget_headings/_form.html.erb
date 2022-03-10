@@ -14,6 +14,8 @@
   <div class="small-12 medium-6">
     <%= f.text_field :price, maxlength: 8 %>
 
+    <%= f.select :geozone_id, options_from_collection_for_select(@geozones, :id, :name, heading.geozone_id), { include_blank: true } %>
+
     <% if heading.budget.approval_voting? %>
       <%= f.number_field :max_ballot_lines,
                            hint: t("admin.budget_headings.form.max_ballot_lines_info") %>

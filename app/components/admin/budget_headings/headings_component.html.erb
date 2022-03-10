@@ -5,6 +5,9 @@
       <tr>
         <th><%= Budget::Heading.human_attribute_name(:name) %></th>
         <th><%= Budget::Heading.human_attribute_name(:price) %></th>
+        <th><%= Budget::Heading.human_attribute_name(:geozone_id) %></th>
+        <th><%= Budget::Heading.human_attribute_name(:population) %></th>
+        <th><%= Budget::Heading.human_attribute_name(:allow_custom_content) %></th>
         <% if budget.approval_voting? %>
           <th><%= Budget::Heading.human_attribute_name(:max_ballot_lines) %></th>
         <% end %>
@@ -16,6 +19,11 @@
         <tr id="<%= dom_id(heading) %>" class="heading">
           <td><%= heading.name %></td>
           <td><%= budget.formatted_heading_price(heading) %></td>
+          <td><%= heading.geozone&.name %></td>
+          <td><%= heading.population %></td>
+          <td>
+            <%= heading.allow_custom_content ? t("admin.shared.true_value") : t("admin.shared.false_value") %>
+          </td>
           <% if budget.approval_voting? %>
             <td><%= heading.max_ballot_lines %></td>
           <% end %>

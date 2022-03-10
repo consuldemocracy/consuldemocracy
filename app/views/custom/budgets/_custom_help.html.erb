@@ -1,0 +1,194 @@
+<style>
+	.ocultar{
+		display:none;
+	}
+	.click .lead:hover{
+		cursor:pointer;
+	}
+	.click .lead{
+		transition: all 0.5s;
+		-moz-transition: all 0.5s;
+		-o-transition: all 0.5s;
+		-webkit-transition: all 0.5s;
+		background-color: #78980a;
+		color:white;		
+		box-shadow: black 0px 3px 5px 0px;
+		-moz-box-shadow: black 0px 3px 5px 0px;
+		-o-box-shadow: black 0px 3px 5px 0px;
+		-webkit-box-shadow: black 0px 3px 5px 0px;
+		padding-left:5px;
+	}
+	.click:hover .lead{
+		box-shadow: black 0px 0px 20px 0px;
+		-moz-box-shadow: black 0px 20px 0px 0px;
+		-o-box-shadow: black 0px 0px 20px 0px;
+		-webkit-box-shadow: black 0px 0px 20px 0px;
+	}
+</style>
+<div class="row">
+  <div class="small-12 column">
+	<div id="section_help" class="margin" data-magellan-target="section_help">
+		<div class="click">
+			<p class="lead">
+				<strong><%= t("budgets.index.section_footer.title") %> <span class="fa fa-plus"></span></strong>
+			</p>
+			<div class="ocultar">
+			  <p><%= t("budgets.index.section_footer.description") %></p>
+			</div>
+		</div>
+		<div class="click">		
+		  <p class="lead">
+			<strong><%= t("budgets.index.section_footer.help_text_titulo1") %> <span class="fa fa-plus"></span></strong>
+		  </p>
+		  <div class="ocultar">
+			<p><%= t("budgets.index.section_footer.help_text_1") %></p>
+		  </div>
+		</div>
+		<div class="click">	
+		  <p class="lead">
+			<strong><%= t("budgets.index.section_footer.help_text_titulo2") %> <span class="fa fa-plus"></span></strong>
+		  </p>
+		  <div class="ocultar">
+			  <p><%= t("budgets.index.section_footer.help_text_2") %></p>
+			  <p><%= t("budgets.index.section_footer.help_text_3") %></p>
+			  <p><%= t("budgets.index.section_footer.help_text_4") %></p>
+		  </div>
+		</div>
+		<div class="click">	
+		  <p class="lead">
+			<strong><%= t("budgets.index.section_footer.help_text_titulo3") %> <span class="fa fa-plus"></span></strong>
+		  </p>
+		  <div class="ocultar">
+			  <p><%= t("budgets.index.section_footer.help_text_3_1") %></p>
+			  <p> <%= t("budgets.index.section_footer.help_text_3_2") %></p>
+			  <p><%= t("budgets.index.section_footer.help_text_3_3") %></p>
+			  <p><%= t("budgets.index.section_footer.help_text_3_4") %></p>
+		  </div>
+		</div>
+		<div class="click">
+			  <p class="lead">
+				<strong><%= t("budgets.index.section_footer.help_text_titulo4") %> <span class="fa fa-plus"></span></strong>
+			  </p>
+			  <div class="ocultar">
+				  <p><%= t("budgets.index.section_footer.help_text_4_1") %></p>
+				  <p><%= t("budgets.index.section_footer.help_text_4_2") %></p>
+          <ul>
+			      <li><%= t("budgets.index.section_footer.help_text_4_2_1") %></li>
+            <li><%= t("budgets.index.section_footer.help_text_4_2_2") %></li>
+            <li><%= t("budgets.index.section_footer.help_text_4_2_3") %></li>
+            <li><%= t("budgets.index.section_footer.help_text_4_2_4") %></li>
+				  </ul>          
+			   </div>
+		</div>
+		<div class="click">
+		  <p class="lead">
+			<strong><%= t("budgets.index.section_footer.help_text_4_3") %> <span class="fa fa-plus"></span></strong>
+		  </p>
+		  <div class="ocultar">
+			  <p><%= t("budgets.index.section_footer.help_text_4_3_1") %></p>
+			  <ul>
+				<li><%= t("budgets.index.section_footer.help_text_4_3_2") %></li>
+				<li><%= t("budgets.index.section_footer.help_text_4_3_3") %></li>
+			  </ul>
+		  </div>
+		</div>
+		<div class="click">
+			  <p class="lead">
+				<strong><%= t("budgets.index.section_footer.help_text_4_4") %> <span class="fa fa-plus"></span></strong>
+			  </p>
+			  <div class="ocultar">
+				  <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_4_0") %></p>
+           <ul>
+			      <li><%= t("budgets.index.section_footer.help_text_4_4_1") %></li>
+            <li><%= t("budgets.index.section_footer.help_text_4_4_2") %></li>
+            <li><%= t("budgets.index.section_footer.help_text_4_4_3") %></li>
+            <li><%= t("budgets.index.section_footer.help_text_4_4_4") %></li>
+            <li><%= t("budgets.index.section_footer.help_text_4_4_5") %></li>
+            <li><%= t("budgets.index.section_footer.help_text_4_4_6") %></li>
+            <li><%= t("budgets.index.section_footer.help_text_4_4_7") %></li>
+            <li><%= t("budgets.index.section_footer.help_text_4_4_8") %></li>
+           </ul>
+				   <p>&nbsp;&nbsp;&nbsp;<a href="https://participa.diputaciondevalladolid.es/baremo" >Puedes consultar aquí</a> cómo funciona exactamente el baremo y cómo se otorgan los puntos a las propuestas.</p>
+			  </div>
+		</div>
+		<div class="click">
+		   <p class="lead">
+			<strong><%= t("budgets.index.section_footer.help_text_4_5") %> <span class="fa fa-plus"></span></strong>
+		  </p>
+		  <div class="ocultar">
+			  <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_5_0") %></p>
+         <ul>
+			     <li><%= t("budgets.index.section_footer.help_text_4_5_1") %></li>
+           <li><%= t("budgets.index.section_footer.help_text_4_5_2") %></li>
+           <li><%= t("budgets.index.section_footer.help_text_4_5_3") %></li>
+           <li><%= t("budgets.index.section_footer.help_text_4_5_4") %></li>
+           <li><%= t("budgets.index.section_footer.help_text_4_5_5") %></li>
+           <li><%= t("budgets.index.section_footer.help_text_4_5_6") %></li>
+           <li><%= t("budgets.index.section_footer.help_text_4_5_7") %></li>
+           <li><%= t("budgets.index.section_footer.help_text_4_5_8") %></li>
+           <li><%= t("budgets.index.section_footer.help_text_4_5_9") %></li>
+           <li><%= t("budgets.index.section_footer.help_text_4_5_10") %></li>
+           <li><%= t("budgets.index.section_footer.help_text_4_5_11") %></li>
+           <li><%= t("budgets.index.section_footer.help_text_4_5_12") %></li>
+           <li><%= t("budgets.index.section_footer.help_text_4_5_13") %></li>
+           <li><%= t("budgets.index.section_footer.help_text_4_5_14") %></li>
+           <li><%= t("budgets.index.section_footer.help_text_4_5_15") %></li>
+           <li><%= t("budgets.index.section_footer.help_text_4_5_16") %></li>
+         </ul>
+			  <p></p>
+		 </div>
+	  </div>
+	  <div class="click">
+		  <p class="lead">
+			<strong><%= t("budgets.index.section_footer.help_text_5") %> <span class="fa fa-plus"></span></strong>
+		  </p>
+		  <div class="ocultar">
+			  <p><%= t("budgets.index.section_footer.help_text_5_1") %></p>
+        <ul>
+			     <li><%= t("budgets.index.section_footer.help_text_5_2") %></li>
+           <li><%= t("budgets.index.section_footer.help_text_5_3") %></li>
+           <li><%= t("budgets.index.section_footer.help_text_5_4") %></li>
+           <li><%= t("budgets.index.section_footer.help_text_5_5") %></li>
+        </ul>
+		   </div>
+	  </div>
+	  <div class="click">	  
+		  <p class="lead">
+			<strong><%= t("budgets.index.section_footer.help_text_titulo6") %> <span class="fa fa-plus"></span></strong>
+		  </p>
+		  <div class="ocultar">
+			<p>Puedes hacer un máximo de tres propuestas. <a href='https://participa.diputaciondevalladolid.es/users/sign_up'>Date de alta en esta plataforma</a> y cumplimenta el formulario [enlace a la propuesta]. Procura elegir un título que defina bien la idea y sea llamativo y detalla lo máximo posible la propuesta.</p>
+		 </div>
+	  </div>	
+		 <!--<p> <%= t("budgets.index.section_footer.help_text_6_1") %></p>
+		  <p><%= t("budgets.index.section_footer.help_text_6_2") %></p>
+		  <ul>
+			<li><%= t("budgets.index.section_footer.help_text_6_2_1") %></li>
+			<li><%= t("budgets.index.section_footer.help_text_6_2_2") %></li>
+		  </ul>
+		  <p><%= t("budgets.index.section_footer.help_text_6_2_3") %></p>
+		  <ul>
+			<li><%= t("budgets.index.section_footer.help_text_6_2_2_1") %></li>
+			<li><%= t("budgets.index.section_footer.help_text_6_2_2_2") %></li>
+			<li><%= t("budgets.index.section_footer.help_text_6_2_2_3") %></li>
+		  </ul>
+		  -->
+
+    </div>
+  </div>
+</div>
+<script>
+	$( ".lead").click(function() {
+		  
+		  if($(this).parent().find(".fa-plus").length){
+			$(this).parent().find(".ocultar").slideDown();
+			$(this).parent().find(".fa-plus").removeClass("fa-plus");
+			$(this).parent().find(".fa").addClass("fa-minus");
+		  }else{			
+			$(this).parent().find(".ocultar").slideUp();
+			$(this).parent().find(".fa-minus").removeClass("fa-minus");
+			$(this).parent().find(".fa").addClass("fa-plus");
+		  }
+		 
+		});
+</script>

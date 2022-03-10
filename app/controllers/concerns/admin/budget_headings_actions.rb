@@ -9,6 +9,7 @@ module Admin::BudgetHeadingsActions
     before_action :load_budget
     before_action :load_group
     before_action :load_heading, only: [:edit, :update, :destroy]
+    before_action :load_geozones, only: [:new, :create, :edit, :update]
   end
 
   def edit
@@ -42,6 +43,10 @@ module Admin::BudgetHeadingsActions
 
   private
 
+    def load_geozones
+      @geozones = Geozone.all.order(:name)
+    end
+
     def load_budget
       @budget = Budget.find_by_slug_or_id! params[:budget_id]
     end
@@ -55,7 +60,8 @@ module Admin::BudgetHeadingsActions
     end
 
     def budget_heading_params
-      valid_attributes = [:price, :population, :allow_custom_content, :latitude, :longitude, :max_ballot_lines]
+      valid_attributes = [:price, :population, :allow_custom_content, :geozone_id,
+                          :latitude, :longitude, :max_ballot_lines]
       params.require(:budget_heading).permit(*valid_attributes, translation_params(Budget::Heading))
     end
 end

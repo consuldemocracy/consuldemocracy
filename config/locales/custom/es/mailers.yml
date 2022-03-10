@@ -1,9 +1,5 @@
 es:
   mailers:
-    unfeasible_spending_proposal:
-      new_html: 'Te invitamos a que participes en las votaciones, que se celebrarán durante todo el mes de noviembre, y decidas con tu voto qué proyectos se harán realidad en 2019.'
-      reconsider_html: "Te invitamos a que participes en las votaciones, que se celebrarán durante todo el mes de noviembre, y decidas con tu voto qué proyectos se harán realidad en 2019. Si consideras que la propuesta rechazada cumple los requisitos para mantenerla como propuesta de inversión, podrás comunicarlo, en el plazo de 48 horas, al correo participa@dipvalladolid.es, indicando necesariamente para su tramitación el código %{code} como asunto del correo, correspondiente a tu propuesta."
-      unfeasible_html: "Desde la Diputación queremos agradecer tu participación en los <strong>Presupuestos Participativos</strong>. Lamentamos informarte de que tu propuesta <strong>'%{title}'</strong> quedará excluida de este proceso participativo por el siguiente motivo:"
     budget_investment_unfeasible:
       reconsider_html: "Te invitamos a que participes en las votaciones, que se celebrarán durante todo el mes de noviembre, y decidas con tu voto qué proyectos se harán realidad en 2019. Si consideras que el proyecto rechazado cumple los requisitos para mantenerlo como proyecto de gasto, por favor, escribe lo antes posible a participa@dipvalladolid.es para que la Mesa Técnica pueda valorarlo. Indica claramente el título de tu propuesta y el código correspondiente a tu proyecto: %{code} como asunto del correo."
       signatory: "DIPUTACIÓN DE VALLADOLID"

@@ -51,6 +51,3 @@ module Consul
     end
   end
 end
-
-def skip_html(&block)
-end

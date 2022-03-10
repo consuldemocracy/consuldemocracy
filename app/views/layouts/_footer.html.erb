@@ -10,6 +10,7 @@
           open_source: link_to(t("layouts.footer.open_source"), t("layouts.footer.open_source_url"), target: "blank", rel: "nofollow"),
           consul:  link_to(t("layouts.footer.consul"), t("layouts.footer.consul_url"), target: "blank", rel: "nofollow"))) %>
         <%= t("layouts.footer.contact_us") %>
+        <%= link_to t("layouts.footer.faq"), faq_path %>
       </p>
     </div>
 
@@ -22,13 +23,18 @@
   </div>
 
   <div class="subfooter row">
-    <div class="small-12 medium-8 column">
+    <div class="small-12 medium-5 column">
       <%= t("layouts.footer.copyright", year: Time.current.year) %>&nbsp;|
       <ul class="no-bullet inline-block">
         <li class="inline-block"><%= link_to t("layouts.footer.privacy"), page_path("privacy") %>&nbsp;|</li>
         <li class="inline-block"><%= link_to t("layouts.footer.conditions"), page_path("conditions") %>&nbsp;|</li>
         <li class="inline-block"><%= link_to t("layouts.footer.accessibility"), page_path("accessibility") %></li>
       </ul>
+    </div>
+
+    <div class="hide-for-small-only medium-4 column custom-footer-logos">
+      <%= image_tag(image_path_for("logo_comrural.png"), alt: t("layouts.comrural.logo")) %>
+      <%= image_tag(image_path_for("logo_esport.png"), alt: t("layouts.esport.logo")) %>
     </div>
 
     <%= render Layout::SocialComponent.new %>
