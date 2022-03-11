@@ -3,6 +3,8 @@ require "csv"
 class CustomCensusApi
 
   def call(document_type, document_number, postal_code)
+    return Response.new(nil, nil) unless Rails.env.production? || Rails.env.staging?
+
     response = Response.new(nil, nil)
     entities = census_entities_codes(postal_code)
 
@@ -47,6 +49,8 @@ class CustomCensusApi
     )
 
     def initialize(body, request_nonce)
+      return unless Rails.env.production? || Rails.env.staging?
+
       return unless body.present? && request_nonce.present?
 
       self.request_nonce = request_nonce
@@ -63,6 +67,8 @@ class CustomCensusApi
     end
 
     def valid?
+      return true unless Rails.env.production? || Rails.env.staging?
+
       return false unless sml_message.present?
 
       unless successful_request?

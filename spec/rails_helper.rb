@@ -62,5 +62,6 @@ end
 Capybara.exact = true
 Capybara.enable_aria_label = true
 Capybara.disable_animation = true
+Capybara.default_max_wait_time = 5
 
 OmniAuth.config.test_mode = true

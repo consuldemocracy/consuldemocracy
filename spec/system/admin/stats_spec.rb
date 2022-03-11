@@ -74,6 +74,7 @@ describe "Stats", :admin do
     end
 
     scenario "Level 2 user Graph" do
+      skip "Disabled by the client"
       create(:geozone)
       visit account_path
       click_link "Verify my account"

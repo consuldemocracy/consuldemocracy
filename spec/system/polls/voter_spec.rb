@@ -47,6 +47,7 @@ describe "Voter" do
     end
 
     scenario "Voting in booth" do
+      skip "Disabled by the client"
       login_through_form_as_officer(officer.user)
 
       visit new_officing_residence_path
@@ -78,7 +79,10 @@ describe "Voter" do
     end
 
     context "The person has decided not to vote at this time" do
-      before { create(:user, :in_census) }
+      before do
+        skip "Disabled by the client"
+        create(:user, :in_census)
+      end
 
       scenario "Show not to vote at this time button" do
         login_through_form_as_officer(officer.user)
@@ -117,6 +121,7 @@ describe "Voter" do
       let!(:user) { create(:user, :in_census) }
 
       scenario "Trying to vote in web and then in booth" do
+        skip "Disabled by the client"
         login_as user
         vote_for_poll_via_web(poll, question, answer_yes.title)
         expect(Poll::Voter.count).to eq(1)
@@ -134,6 +139,7 @@ describe "Voter" do
       end
 
       scenario "Trying to vote in booth and then in web" do
+        skip "Disabled by the client"
         login_through_form_as_officer(officer.user)
 
         vote_for_poll_via_booth
@@ -191,6 +197,7 @@ describe "Voter" do
     end
 
     scenario "Voting in poll and then verifiying account" do
+      skip "Disabled by the client"
       user = create(:user)
 
       login_through_form_as_officer(officer.user)
@@ -230,6 +237,8 @@ describe "Voter" do
     end
 
     context "Side menu" do
+      before { skip "Disabled by the client" }
+
       scenario "'Validate document' menu item with votable polls" do
         login_through_form_as_officer(officer.user)
 

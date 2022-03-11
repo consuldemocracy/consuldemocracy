@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Level two verification" do
-  scenario "Verification with residency and sms" do
+  scenario "Verification with residency" do
     create(:geozone)
     user = create(:user)
     login_as(user)
@@ -10,17 +10,6 @@ describe "Level two verification" do
     click_link "Verify my account"
 
     verify_residence
-
-    fill_in "sms_phone", with: "611111111"
-    click_button "Send"
-
-    expect(page).to have_content "Security code confirmation"
-
-    user = user.reload
-    fill_in "sms_confirmation_code", with: user.sms_confirmation_code
-    click_button "Send"
-
-    expect(page).to have_content "Code correct"
   end
 
   context "In Spanish, with no fallbacks" do
@@ -34,7 +23,17 @@ describe "Level two verification" do
       login_as(user)
 
       visit verification_path(locale: :es)
-      verify_residence
+
+      select "DNI", from: "residence_document_type"
+      fill_in "residence_document_number", with: "12345678Z"
+      select_date "31-#{I18n.l(Date.current.at_end_of_year, format: "%B")}-1980",
+                  from: "residence_date_of_birth"
+
+      fill_in "residence_postal_code", with: "28013"
+      check "residence_terms_of_service"
+
+      click_button "new_residence_submit"
+      expect(page).to have_content "Tu cuenta ya está verificada"
     end
   end
 end

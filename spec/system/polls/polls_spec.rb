@@ -458,6 +458,7 @@ describe "Polls" do
     let(:officer) { create(:poll_officer) }
 
     scenario "Already voted on booth cannot vote on website" do
+      skip "Disabled by the client"
       create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
       create(:poll_officer_assignment, officer: officer, poll: poll, booth: booth, date: Date.current)
       question = create(:poll_question, :yes_no, poll: poll)

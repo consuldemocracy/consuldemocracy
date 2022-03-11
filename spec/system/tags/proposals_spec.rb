@@ -1,6 +1,9 @@
 require "rails_helper"
 
 describe "Tags" do
+  let(:geozone) { create(:geozone, name: "District A") }
+  let(:author) { create(:user, :level_two, geozone: geozone) }
+
   scenario "Index" do
     earth = create(:proposal, tag_list: "Medio Ambiente")
     money = create(:proposal, tag_list: "Economía")
@@ -60,14 +63,13 @@ describe "Tags" do
   end
 
   scenario "Create with custom tags" do
-    user = create(:user)
-    login_as(user)
+    login_as(author)
 
     visit new_proposal_path
     fill_in_new_proposal_title with: "Help refugees"
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in_ckeditor "Proposal text", with: "This is very important because..."
-    fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
+    select "District A", from: "Scope of operation"
     fill_in "Tags", with: "Economía, Hacienda"
     check "I agree to the Privacy Policy and the Terms and conditions of use"
 
@@ -85,14 +87,14 @@ describe "Tags" do
     create(:tag, :category, name: "Education")
     create(:tag, :category, name: "Health")
 
-    login_as(create(:user))
+    login_as(author)
     visit new_proposal_path
 
     fill_in_new_proposal_title with: "Help refugees"
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in_ckeditor "Proposal text", with: "A description with enough characters"
     fill_in "External video URL", with: "https://www.youtube.com/watch?v=Ae6gQmhaMn4"
-    fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
+    select "District A", from: "Scope of operation"
     check "I agree to the Privacy Policy and the Terms and conditions of use"
 
     find(".js-add-tag-link", text: "Education").click
@@ -111,12 +113,12 @@ describe "Tags" do
   end
 
   scenario "Create with too many tags" do
-    user = create(:user)
-    login_as(user)
+    login_as(author)
 
     visit new_proposal_path
     fill_in_new_proposal_title with: "Title"
     fill_in_ckeditor "Proposal text", with: "Description"
+    select "District A", from: "Scope of operation"
     check "I agree to the Privacy Policy and the Terms and conditions of use"
 
     fill_in "Tags", with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
@@ -128,7 +130,6 @@ describe "Tags" do
   end
 
   scenario "Create with dangerous strings" do
-    author = create(:user)
     login_as(author)
 
     visit new_proposal_path
@@ -136,7 +137,7 @@ describe "Tags" do
     fill_in_new_proposal_title with: "A test of dangerous strings"
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in_ckeditor "Proposal text", with: "A description suitable for this test"
-    fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
+    select "District A", from: "Scope of operation"
     check "I agree to the Privacy Policy and the Terms and conditions of use"
 
     fill_in "Tags", with: "user_id=1, &a=3, <script>alert('hey');</script>"

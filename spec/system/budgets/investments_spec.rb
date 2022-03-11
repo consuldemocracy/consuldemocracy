@@ -11,7 +11,8 @@ describe "Budget Investments" do
   it_behaves_like "milestoneable", :budget_investment
 
   context "Concerns" do
-    it_behaves_like "notifiable in-app", :budget_investment
+    # Do not send notification if commentable is a budget investment
+    # it_behaves_like "notifiable in-app", :budget_investment
     it_behaves_like "relationable", Budget::Investment
     it_behaves_like "remotely_translatable",
                     :budget_investment,

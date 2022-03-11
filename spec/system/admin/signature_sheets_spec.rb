@@ -27,6 +27,8 @@ describe "Signature sheets", :admin do
   end
 
   context "Create" do
+    before { skip "Disabled for development and test" }
+
     scenario "Proposal" do
       proposal = create(:proposal)
       visit new_admin_signature_sheet_path
@@ -73,6 +75,7 @@ describe "Signature sheets", :admin do
 
   context "Create throught all required_fields_to_verify of custom census api", :remote_census do
     before do
+      skip "Disabled for development and test"
       mock_valid_remote_census_response
       mock_invalid_signature_sheet_remote_census_response
     end
@@ -122,6 +125,7 @@ describe "Signature sheets", :admin do
   end
 
   scenario "Show" do
+    skip "Disabled for development and test"
     proposal = create(:proposal)
     user = Administrator.first.user
     signature_sheet = create(:signature_sheet,

@@ -98,6 +98,7 @@ describe "Emails" do
     let(:investment) { create(:budget_investment, author: user, budget: create(:budget)) }
 
     scenario "Send email on budget investment comment" do
+      skip "Do not send email if commentable is a budget investment"
       comment_on(investment)
 
       email = open_last_email

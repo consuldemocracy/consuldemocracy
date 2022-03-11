@@ -1,5 +1,6 @@
 shared_examples "mappable" do |mappable_factory_name, mappable_association_name, mappable_new_path, mappable_edit_path, mappable_show_path, mappable_path_arguments, management: false|
-  let!(:user)         { create(:user, :level_two) }
+  let!(:geozone)      { create(:geozone) }
+  let!(:user)         { create(:user, :level_two, geozone: geozone) }
   let!(:arguments)    { {} }
   let!(:mappable)     { create(mappable_factory_name.to_s.to_sym) }
   let!(:map_location) { create(:map_location, "#{mappable_factory_name}_map_location".to_sym, "#{mappable_association_name}": mappable) }
@@ -300,6 +301,7 @@ end
 def fill_in_proposal_form
   fill_in_new_proposal_title with: "Help refugees"
   fill_in "Proposal summary", with: "In summary, what we want is..."
+  select user.geozone.name, from: "Scope of operation"
 end
 
 def submit_proposal_form

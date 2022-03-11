@@ -18,16 +18,6 @@ class ApplicationController < ActionController::Base
   check_authorization unless: :devise_controller?
   self.responder = ApplicationResponder
 
-  rescue_from CanCan::AccessDenied do |exception|
-    respond_to do |format|
-      format.html { redirect_to main_app.root_url, alert: exception.message }
-      format.json { render json: {error: exception.message}, status: :forbidden }
-    end
-  end
-  rescue_from FeatureFlags::FeatureDisabled do
-    raise ActiveRecord::RecordNotFound, "This feature is disabled"
-  end
-
   layout :set_layout
   respond_to :html
   helper_method :current_budget

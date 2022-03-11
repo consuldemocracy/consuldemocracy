@@ -23,7 +23,7 @@
 <%= render Budgets::SubheaderComponent.new(budget) %>
 <%= render Budgets::PhasesComponent.new(budget) %>
 
-<%= render "custom_search" %>
+<%= render "budgets/custom_search" %>
 
 <div id="budget_info" class="budget-info">
   <div class="row margin-top">
@@ -48,6 +48,6 @@
 
 <%= render Budgets::InvestmentsListComponent.new(budget) %>
 
-<%= render "custom_help" %>
+<%= render "budgets/custom_help" %>
 
-<%= render "custom_districts_map" %>
+<%= render "budgets/custom_districts_map" %>

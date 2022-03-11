@@ -15,6 +15,8 @@ describe "BudgetPolls", :with_frozen_time do
   end
 
   context "Offline" do
+    before { skip "Disabled by the client" }
+
     scenario "A citizen can cast a paper vote" do
       login_through_form_as_officer(officer.user)
 
@@ -119,6 +121,7 @@ describe "BudgetPolls", :with_frozen_time do
     end
 
     scenario "A citizen cannot vote offline after voting online" do
+      skip "Disabled by the client"
       login_as(user)
       visit budget_investment_path(budget, investment)
 

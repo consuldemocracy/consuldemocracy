@@ -29,6 +29,8 @@ describe Verification::Management::Document do
     end
 
     describe "custom validations with RemoteCensus enabled", :remote_census do
+      before { skip "Disabled by the client" }
+
       it "is valid" do
         expect(verification_document).to be_valid
       end

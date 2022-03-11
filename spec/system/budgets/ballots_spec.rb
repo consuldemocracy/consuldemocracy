@@ -81,21 +81,27 @@ describe "Ballots" do
         end
 
         visit budget_path(budget)
-        click_link "Above the city"
+        within "#groups_and_headings" do
+          click_link "Above the city"
+        end
 
         expect(page).to have_css(".budget-investment", count: 2)
         expect(page).to have_content "Solar panels"
         expect(page).to have_content "Observatory"
 
         visit budget_path(budget)
-        click_link "District 1"
+        within "#groups_and_headings" do
+          click_link "District 1"
+        end
 
         expect(page).to have_css(".budget-investment", count: 2)
         expect(page).to have_content "New park"
         expect(page).to have_content "Zero-emission zone"
 
         visit budget_path(budget)
-        click_link "District 2"
+        within "#groups_and_headings" do
+          click_link "District 2"
+        end
 
         expect(page).to have_css(".budget-investment", count: 1)
         expect(page).to have_content "Climbing wall"

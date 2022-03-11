@@ -81,6 +81,8 @@ class Verification::Residence
     end
 
     def valid_age?
+      return unless Rails.env.production? || Rails.env.staging?
+
       return if errors.any?
 
       unless @census_api_response.census_age >= 16
@@ -91,7 +93,9 @@ class Verification::Residence
     def call_census_api
       @census_api_response = CustomCensusApi.new.call(document_type, document_number, postal_code)
 
-      if Rails.env.production? && !user_is_citizen?
+      return unless Rails.env.production? || Rails.env.staging?
+
+      unless user_is_citizen?
         store_failed_attempt
         Lock.increase_tries(user)
       end
@@ -107,6 +111,8 @@ class Verification::Residence
     end
 
     def user_is_citizen?
+      return true unless Rails.env.production? || Rails.env.staging?
+
       return if errors.any?
 
       unless @census_api_response.is_citizen?
@@ -115,6 +121,8 @@ class Verification::Residence
     end
 
     def same_date_of_birth?
+      return unless Rails.env.production? || Rails.env.staging?
+
       return if errors.any?
 
       unless date_of_birth == @census_api_response.census_date_of_birth

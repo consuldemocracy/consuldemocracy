@@ -27,15 +27,6 @@ describe "Tracking" do
       click_link "Verify my account"
 
       verify_residence
-
-      fill_in "sms_phone", with: "611111111"
-      click_button "Send"
-
-      user = user.reload
-      fill_in "sms_confirmation_code", with: user.sms_confirmation_code
-      click_button "Send"
-
-      expect(page.html).to include "level_2_user"
     end
   end
 
@@ -52,6 +43,7 @@ describe "Tracking" do
     end
 
     scenario "Verification: success census & start sms" do
+      skip "SMS verification disabled"
       create(:geozone)
       user = create(:user)
       login_as(user)
@@ -69,6 +61,7 @@ describe "Tracking" do
     end
 
     scenario "Verification: success sms" do
+      skip "SMS verification disabled"
       create(:geozone)
       user = create(:user)
       login_as(user)
@@ -90,6 +83,7 @@ describe "Tracking" do
     end
 
     scenario "Verification: letter" do
+      skip "Letter verification disabled"
       create(:geozone)
       user = create(:user)
       login_as(user)

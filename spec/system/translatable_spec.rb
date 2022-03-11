@@ -1,11 +1,12 @@
 require "rails_helper"
 
 describe "Public area translatable records" do
-  let(:user) { create(:user, :in_census) }
+  let(:geozone) { create(:geozone, name: "District A") }
+  let(:author) { create(:user, :level_two, geozone: geozone) }
 
   before do
     Setting["feature.translation_interface"] = true
-    login_as(user)
+    login_as(author)
   end
 
   context "New records" do
@@ -26,6 +27,7 @@ describe "Public area translatable records" do
       fill_in_new_proposal_title with: "Olympic Games in Melbourne"
       fill_in "Proposal summary", with: "Full proposal for our candidature"
       fill_in_ckeditor "Proposal text", with: "2032 will make Australia famous again"
+      select "District A", from: "Scope of operation"
       check "proposal_terms_of_service"
       click_button "Create proposal"
 
@@ -60,6 +62,7 @@ describe "Public area translatable records" do
 
       fill_in_new_proposal_title with: "Titre en Français"
       fill_in "Proposal summary", with: "Résumé en Français"
+      select "District A", from: "Scope of operation"
       check "proposal_terms_of_service"
       click_button "Create proposal"
 
@@ -179,7 +182,7 @@ describe "Public area translatable records" do
   end
 
   context "Existing records" do
-    before { translatable.update(attributes.merge(author: user)) }
+    before { translatable.update(attributes.merge(author: author)) }
 
     let(:attributes) do
       translatable.translated_attribute_names.product(%i[en es]).map do |field, locale|

@@ -2,6 +2,7 @@ class Admin::BudgetsWizard::HeadingsController < Admin::BudgetsWizard::BaseContr
   include Admin::BudgetHeadingsActions
 
   before_action :load_headings, only: [:index, :create]
+  before_action :load_geozones, only: [:index, :create, :new, :edit, :update]
 
   def index
     if single_heading?
@@ -23,6 +24,10 @@ class Admin::BudgetsWizard::HeadingsController < Admin::BudgetsWizard::BaseContr
 
     def load_headings
       @headings = @group.headings.order(:id)
+    end
+
+    def load_geozones
+      @geozones = Geozone.all.order(:name)
     end
 
     def new_action

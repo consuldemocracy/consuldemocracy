@@ -2,7 +2,8 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
                                           documentable_path_arguments, fill_resource_method_name,
                                           submit_button, documentable_success_notice, management: false|
   let!(:administrator)          { create(:user) }
-  let!(:user)                   { create(:user, :level_two) }
+  let!(:geozone)                { create(:geozone) }
+  let!(:user)                   { create(:user, :level_two, geozone: geozone) }
   let!(:arguments)              { {} }
   if documentable_factory_name == "dashboard_action"
     let!(:documentable)           { create(documentable_factory_name) }
@@ -159,6 +160,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       do_login_for user_to_login
       visit send(path, arguments)
 
+      send(fill_resource_method_name) if fill_resource_method_name == "documentable_fill_new_valid_proposal"
       click_link "Add new document"
       click_on submit_button
 
@@ -341,6 +343,7 @@ end
 def documentable_fill_new_valid_proposal
   fill_in_new_proposal_title with: "Proposal title #{rand(9999)}"
   fill_in "Proposal summary", with: "Proposal summary"
+  select user.geozone.name, from: "Scope of operation"
   check :proposal_terms_of_service
 end
 

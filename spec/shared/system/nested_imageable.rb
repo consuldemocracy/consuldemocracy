@@ -1,7 +1,8 @@
 shared_examples "nested imageable" do |imageable_factory_name, path, imageable_path_arguments,
                                        fill_resource_method_name, submit_button, imageable_success_notice,
                                        has_many_images = false, management: false|
-  let!(:user)                { create(:user, :level_two) }
+  let!(:geozone)             { create(:geozone) }
+  let!(:user)                { create(:user, :level_two, geozone: geozone) }
   let!(:arguments)           { {} }
   let!(:imageable)           { create(imageable_factory_name) }
   let(:management)           { management }
@@ -108,6 +109,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       do_login_for user
       visit send(path, arguments)
 
+      send(fill_resource_method_name) if fill_resource_method_name == "imageable_fill_new_valid_proposal"
       click_link "Add image"
       click_on submit_button
 
@@ -247,6 +249,7 @@ end
 def imageable_fill_new_valid_proposal
   fill_in_new_proposal_title with: "Proposal title"
   fill_in "Proposal summary", with: "Proposal summary"
+  select user.geozone.name, from: "Scope of operation"
   check :proposal_terms_of_service
 end
 

@@ -165,6 +165,7 @@ describe "Poll Officing" do
   end
 
   scenario "Officing dashboard available for multiple sessions", :with_frozen_time do
+    skip "Disabled by the client"
     poll = create(:poll)
     booth = create(:poll_booth)
     booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)

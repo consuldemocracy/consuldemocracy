@@ -4,6 +4,8 @@ describe Officing::Residence do
   let!(:geozone)  { create(:geozone, census_code: "01") }
   let(:residence) { build(:officing_residence, document_number: "12345678Z") }
 
+  before { skip "Disabled by the client" }
+
   describe "validations" do
     it "is valid" do
       expect(residence).to be_valid

@@ -49,6 +49,7 @@ describe "Managed User" do
     end
 
     scenario "User becomes verified as level two (pending email confirmation for level three)" do
+      skip "Disabled for development and test"
       user = create(:user)
 
       login_as_manager
@@ -81,6 +82,7 @@ describe "Managed User" do
     end
 
     scenario "User is created with email as level three from scratch" do
+      skip "Disabled for development and test"
       login_as_manager
 
       visit management_document_verifications_path
@@ -108,6 +110,7 @@ describe "Managed User" do
     end
 
     scenario "User is created without email as level three from scratch" do
+      skip "Disabled for development and test"
       login_as_manager
 
       visit management_document_verifications_path

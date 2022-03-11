@@ -17,7 +17,7 @@ module Verifications
     check "residence_terms_of_service"
 
     click_button "new_residence_submit"
-    expect(page).to have_content I18n.t("verification.residence.create.flash.success")
+    expect(page).to have_content "Your account is already verified"
   end
 
   def officing_verify_residence

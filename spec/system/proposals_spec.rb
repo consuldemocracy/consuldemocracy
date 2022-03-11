@@ -1,13 +1,16 @@
 require "rails_helper"
 
 describe "Proposals" do
+  let(:geozone) { create(:geozone, name: "District A") }
+  let(:author) { create(:user, :level_two, geozone: geozone) }
+
   it_behaves_like "milestoneable", :proposal
 
   context "Concerns" do
     it_behaves_like "notifiable in-app", :proposal
     it_behaves_like "relationable", Proposal
-    it_behaves_like "remotely_translatable", :proposal, "proposals_path", {}
-    it_behaves_like "remotely_translatable", :proposal, "proposal_path", { id: "id" }
+    #it_behaves_like "remotely_translatable", :proposal, "proposals_path", {}
+    #it_behaves_like "remotely_translatable", :proposal, "proposal_path", { id: "id" }
     it_behaves_like "flaggable", :proposal
   end
 
@@ -330,7 +333,6 @@ describe "Proposals" do
   end
 
   scenario "Create and publish", :with_frozen_time do
-    author = create(:user)
     login_as(author)
 
     visit new_proposal_path
@@ -339,7 +341,7 @@ describe "Proposals" do
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in_ckeditor "Proposal text", with: "This is very important because..."
     fill_in "External video URL", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
-    fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
+    select "District A", from: "Scope of operation"
     fill_in "Tags", with: "Refugees, Solidarity"
     check "I agree to the Privacy Policy and the Terms and conditions of use"
 
@@ -365,7 +367,6 @@ describe "Proposals" do
   end
 
   scenario "Create with invisible_captcha honeypot field", :no_js do
-    author = create(:user)
     login_as(author)
 
     visit new_proposal_path
@@ -373,7 +374,6 @@ describe "Proposals" do
     fill_in "If you are human, ignore this field", with: "This is the honeypot field"
     fill_in "Proposal summary", with: "This is the summary"
     fill_in "Proposal text", with: "This is the description"
-    fill_in "Full name of the person submitting the proposal", with: "Some other robot"
     check "I agree to the Privacy Policy and the Terms and conditions of use"
 
     click_button "Create proposal"
@@ -386,14 +386,12 @@ describe "Proposals" do
   scenario "Create proposal too fast" do
     allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(Float::INFINITY)
 
-    author = create(:user)
     login_as(author)
 
     visit new_proposal_path
     fill_in_new_proposal_title with: "I am a bot"
     fill_in "Proposal summary", with: "This is the summary"
     fill_in_ckeditor "Proposal text", with: "This is the description"
-    fill_in "Full name of the person submitting the proposal", with: "Some other robot"
     check "I agree to the Privacy Policy and the Terms and conditions of use"
 
     click_button "Create proposal"
@@ -403,33 +401,7 @@ describe "Proposals" do
     expect(page).to have_current_path(new_proposal_path)
   end
 
-  scenario "Responsible name is stored for anonymous users" do
-    author = create(:user)
-    login_as(author)
-
-    visit new_proposal_path
-    fill_in_new_proposal_title with: "Help refugees"
-    fill_in "Proposal summary", with: "In summary, what we want is..."
-    fill_in_ckeditor "Proposal text", with: "This is very important because..."
-    fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
-    check "I agree to the Privacy Policy and the Terms and conditions of use"
-
-    click_button "Create proposal"
-
-    expect(page).to have_content "Proposal created successfully."
-    click_link "No, I want to publish the proposal"
-    click_link "Not now, go to my proposal"
-
-    click_link "Dashboard"
-    click_link "Edit my proposal"
-
-    within_window(window_opened_by { click_link "Edit proposal" }) do
-      expect(page).to have_field "Full name of the person submitting the proposal", with: "Isabel Garcia"
-    end
-  end
-
   scenario "Responsible name field is not shown for verified users" do
-    author = create(:user, :level_two)
     login_as(author)
 
     visit new_proposal_path
@@ -439,6 +411,7 @@ describe "Proposals" do
     fill_in_new_proposal_title with: "Help refugees"
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in_ckeditor "Proposal text", with: "This is very important because..."
+    select "District A", from: "Scope of operation"
     check "I agree to the Privacy Policy and the Terms and conditions of use"
 
     click_button "Create proposal"
@@ -450,24 +423,25 @@ describe "Proposals" do
   end
 
   scenario "Errors on create" do
-    author = create(:user)
     login_as(author)
 
     visit new_proposal_path
+    fill_in_proposal
+
+    fill_in "Proposal title", with: ""
     click_button "Create proposal"
 
     expect(page).to have_content error_message
   end
 
   scenario "JS injection is prevented but safe html is respected", :no_js do
-    author = create(:user)
     login_as(author)
 
     visit new_proposal_path
     fill_in "Proposal title", with: "Testing an attack"
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in "Proposal text", with: "<p>This is <script>alert('an attack');</script></p>"
-    fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
+    select "District A", from: "Scope of operation"
     check "I agree to the Privacy Policy and the Terms and conditions of use"
 
     click_button "Create proposal"
@@ -483,14 +457,13 @@ describe "Proposals" do
   end
 
   scenario "Autolinking is applied to description" do
-    author = create(:user)
     login_as(author)
 
     visit new_proposal_path
     fill_in_new_proposal_title with: "Testing auto link"
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in_ckeditor "Proposal text", with: "This is a link www.example.org"
-    fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
+    select "District A", from: "Scope of operation"
     check "I agree to the Privacy Policy and the Terms and conditions of use"
 
     click_button "Create proposal"
@@ -504,7 +477,6 @@ describe "Proposals" do
   end
 
   scenario "JS injection is prevented but autolinking is respected", :no_js do
-    author = create(:user)
     js_injection_string = "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
     login_as(author)
 
@@ -512,7 +484,7 @@ describe "Proposals" do
     fill_in "Proposal title", with: "Testing auto link"
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in "Proposal text", with: js_injection_string
-    fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
+    select "District A", from: "Scope of operation"
     check "I agree to the Privacy Policy and the Terms and conditions of use"
 
     click_button "Create proposal"
@@ -540,28 +512,21 @@ describe "Proposals" do
   end
 
   context "Geozones" do
-    scenario "Default whole city" do
-      author = create(:user)
+    scenario "Default whole city is not possible" do
       login_as(author)
 
       visit new_proposal_path
       fill_in_proposal
+      select "All city", from: "Scope of operation"
 
       click_button "Create proposal"
 
-      expect(page).to have_content "Proposal created successfully."
-      click_link "No, I want to publish the proposal"
-      click_link "Not now, go to my proposal"
-
-      within "#geozone" do
-        expect(page).to have_content "All city"
-      end
+      expect(page).to have_content "You do not have permission to carry out the action 'create' on Citizen proposal"
     end
 
     scenario "Specific geozone" do
       create(:geozone, name: "California")
-      create(:geozone, name: "New York")
-      login_as(create(:user))
+      login_as(author)
 
       visit new_proposal_path
 
@@ -569,10 +534,9 @@ describe "Proposals" do
       fill_in "Proposal summary", with: "In summary, what we want is..."
       fill_in_ckeditor "Proposal text", with: "This is very important because..."
       fill_in "External video URL", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
-      fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
+      select "District A", from: "Scope of operation"
       check "I agree to the Privacy Policy and the Terms and conditions of use"
 
-      select("California", from: "proposal_geozone_id")
       click_button "Create proposal"
 
       expect(page).to have_content "Proposal created successfully."
@@ -580,7 +544,8 @@ describe "Proposals" do
       click_link "Not now, go to my proposal"
 
       within "#geozone" do
-        expect(page).to have_content "California"
+        expect(page).to have_content "District A"
+        expect(page).not_to have_content "California"
       end
     end
   end
@@ -735,7 +700,6 @@ describe "Proposals" do
     fill_in "Proposal title", with: "End child poverty"
     fill_in "Proposal summary", with: "Basically..."
     fill_in_ckeditor "Proposal text", with: "Let's do something to end child poverty"
-    fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
 
     click_button "Save changes"
 
@@ -866,15 +830,15 @@ describe "Proposals" do
 
         click_link "recommendations"
 
+        expect(page).to have_current_path(/order=recommendations/)
+        expect(page).to have_current_path(/page=1/)
+
         expect(page).to have_selector("a.is-active", text: "recommendations")
 
         within "#proposals-list" do
           expect(best_proposal.title).to appear_before(medium_proposal.title)
           expect(medium_proposal.title).to appear_before(worst_proposal.title)
         end
-
-        expect(page).to have_current_path(/order=recommendations/)
-        expect(page).to have_current_path(/page=1/)
       end
 
       scenario "are not shown if account setting is disabled" do
@@ -1396,7 +1360,7 @@ describe "Proposals" do
       create(:proposal, title: "Sixth proposal, has search term")
       create(:proposal, title: "Seventh proposal, has search term")
 
-      login_as(create(:user))
+      login_as(author)
       visit new_proposal_path
       fill_in "Proposal title", with: "search"
       check "I agree to the Privacy Policy and the Terms and conditions of use"
@@ -1410,7 +1374,7 @@ describe "Proposals" do
       create(:proposal, title: "First proposal").update_column(:confidence_score, 10)
       create(:proposal, title: "Second proposal").update_column(:confidence_score, 8)
 
-      login_as(create(:user))
+      login_as(author)
       visit new_proposal_path
       fill_in "Proposal title", with: "debate"
       check "I agree to the Privacy Policy and the Terms and conditions of use"
@@ -1584,37 +1548,24 @@ describe "Successful proposals" do
   end
 
   context "Skip user verification" do
+    let(:author) { create(:user) }
+
     before do
       Setting["feature.user.skip_verification"] = "true"
     end
 
-    scenario "Create" do
-      author = create(:user)
+    scenario "Is not possible" do
       login_as(author)
 
-      visit proposals_path
+      visit new_proposal_path
 
-      within("aside") do
-        click_link "Create a proposal"
-      end
-
-      expect(page).to have_current_path(new_proposal_path)
-
-      fill_in_new_proposal_title with: "Help refugees"
-      fill_in "Proposal summary", with: "In summary what we want is..."
-      fill_in_ckeditor "Proposal text", with: "This is very important because..."
-      fill_in "External video URL", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
-      fill_in "Tags", with: "Refugees, Solidarity"
-      check "I agree to the Privacy Policy and the Terms and conditions of use"
-
-      click_button "Create proposal"
-
-      expect(page).to have_content "Proposal created successfully."
+      expect(page).to have_content "You do not have permission to carry out the action 'new' on Citizen proposal"
     end
   end
 
   describe "SDG related list" do
-    let(:user) { create(:user) }
+    let(:geozone) { create(:geozone, name: "District A") }
+    let(:author) { create(:user, :level_two, geozone: geozone) }
 
     before do
       Setting["feature.sdg"] = true
@@ -1622,11 +1573,11 @@ describe "Successful proposals" do
     end
 
     scenario "create proposal with sdg related list" do
-      login_as(user)
+      login_as(author)
       visit new_proposal_path
       fill_in_new_proposal_title with: "A title for a proposal related with SDG related content"
       fill_in "Proposal summary", with: "In summary, what we want is..."
-      fill_in "Full name of the person submitting the proposal", with: "Isabel Garcia"
+      select "District A", from: "Scope of operation"
       click_sdg_goal(1)
       check "I agree to the Privacy Policy and the Terms and conditions of use"
 
@@ -1636,9 +1587,9 @@ describe "Successful proposals" do
     end
 
     scenario "edit proposal with sdg related list" do
-      proposal = create(:proposal, author: user)
+      proposal = create(:proposal, author: author)
       proposal.sdg_goals = [SDG::Goal[1], SDG::Goal[2]]
-      login_as(user)
+      login_as(author)
       visit edit_proposal_path(proposal)
 
       remove_sdg_goal_or_target_tag(1)

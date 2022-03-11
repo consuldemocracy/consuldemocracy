@@ -21,6 +21,7 @@ describe "Residence", :with_frozen_time do
 
   describe "Assigned officers" do
     before do
+      skip "Disabled for development and test"
       create(:poll_officer_assignment, officer: officer)
       login_through_form_as_officer(officer.user)
       visit officing_root_path
@@ -90,6 +91,7 @@ describe "Residence", :with_frozen_time do
   end
 
   scenario "Verify booth" do
+    skip "Disabled for development and test"
     booth = create(:poll_booth)
     poll = create(:poll)
 
@@ -113,6 +115,7 @@ describe "Residence", :with_frozen_time do
 
   context "With remote census configuration", :remote_census do
     before do
+      skip "Disabled by the client"
       create(:poll_officer_assignment, officer: officer)
     end
 

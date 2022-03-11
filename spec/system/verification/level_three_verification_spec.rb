@@ -1,6 +1,8 @@
 require "rails_helper"
 
 describe "Level three verification" do
+  before { skip "Disabled by the client" }
+
   scenario "Verification with residency and verified sms" do
     create(:geozone)
     user = create(:user)

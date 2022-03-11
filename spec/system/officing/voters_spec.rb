@@ -6,6 +6,7 @@ describe "Voters" do
   let(:officer) { create(:poll_officer) }
 
   before do
+    skip "Disabled by the client"
     create(:geozone, :in_census)
     create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
     create(:poll_officer_assignment, officer: officer, poll: poll, booth: booth)

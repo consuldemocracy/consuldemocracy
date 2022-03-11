@@ -34,7 +34,7 @@ shared_examples "milestoneable" do |factory_name|
         expect(page).to have_content(first_milestone.status.name)
       end
 
-      select "Español", from: "Language:"
+      visit path + "?locale=es"
 
       find("#tab-milestones-label").click
 
