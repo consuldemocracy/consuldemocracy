@@ -117,6 +117,72 @@ describe "Admin budgets", :admin do
 
       expect(page).to have_current_path budget_path(budget)
     end
+
+    scenario "Hide money active" do
+      budget_hide_money = create(:budget, :approval, :hide_money)
+      group = create(:budget_group, budget: budget_hide_money)
+      heading = create(:budget_heading, group: group)
+      heading_2 = create(:budget_heading, group: group)
+
+      visit admin_budget_path(budget_hide_money)
+
+      within("#budget_group_#{group.id}") do
+        expect(page).to have_content heading.name
+        expect(page).to have_content heading_2.name
+        expect(page).not_to have_content "Money amount"
+      end
+
+      visit edit_admin_budget_path(budget_hide_money)
+
+      expect(find("#hide_money_checkbox")).to be_checked
+      expect(budget_hide_money.voting_style).to eq "approval"
+    end
+
+    scenario "Change voting style uncheck hide money" do
+      budget_hide_money = create(:budget, :approval, :hide_money)
+      hide_money_help_text = "If this option is checked, all fields showing the amount of money "\
+                             "will be hidden throughout the process."
+
+      visit edit_admin_budget_path(budget_hide_money)
+      expect(find("#hide_money_checkbox")).to be_checked
+      expect(page).to have_content hide_money_help_text
+
+      select "Knapsack", from: "Final voting style"
+      expect(page).not_to have_selector("#hide_money_checkbox")
+      expect(page).not_to have_content hide_money_help_text
+
+      select "Approval", from: "Final voting style"
+      expect(find("#hide_money_checkbox")).not_to be_checked
+      expect(page).to have_content hide_money_help_text
+    end
+
+    scenario "Edit knapsack budget do not show hide money info" do
+      budget = create(:budget, :knapsack)
+      hide_money_help_text = "If this option is checked, all fields showing the amount of money "\
+                             "will be hidden throughout the process."
+
+      visit edit_admin_budget_path(budget)
+      expect(page).not_to have_selector("#hide_money_checkbox")
+      expect(page).not_to have_content hide_money_help_text
+
+      select "Approval", from: "Final voting style"
+      expect(find("#hide_money_checkbox")).not_to be_checked
+      expect(page).to have_content hide_money_help_text
+    end
+
+    scenario "Edit approval budget show hide money info" do
+      budget = create(:budget, :approval)
+      hide_money_help_text = "If this option is checked, all fields showing the amount of money "\
+                             "will be hidden throughout the process."
+
+      visit edit_admin_budget_path(budget)
+      expect(find("#hide_money_checkbox")).not_to be_checked
+      expect(page).to have_content hide_money_help_text
+
+      select "Knapsack", from: "Final voting style"
+      expect(page).not_to have_selector("#hide_money_checkbox")
+      expect(page).not_to have_content hide_money_help_text
+    end
   end
 
   context "Destroy" do
