@@ -128,8 +128,6 @@ ignore_missing:
   - "account.show.organization_responsible_name_placeholder"
   - "account.show.phone_number_label"
   - "account.show.username_label"
-  - "admin.shared.false_value"
-  - "admin.shared.true_value"
   - "budgets.index.section_footer.help_text_1"
   - "budgets.index.section_footer.help_text_10"
   - "budgets.index.section_footer.help_text_11"

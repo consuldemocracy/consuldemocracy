@@ -1370,6 +1370,8 @@ en:
       results_and_stats_reminder: "Marking these checkboxes the results and/or stats will be publicly available and every user will see them."
       close_modal: Close modal
       example_url: "For example, https://consulproject.org or /help"
+      true_value: "Yes"
+      false_value: "No"
     geozones:
       index:
         title: Geozone
