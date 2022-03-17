@@ -28,6 +28,13 @@ describe ConsulFormBuilder do
       expect(page).to have_css "input[aria-describedby='dummy_title-help-text']"
     end
 
+    it "does not generate empty hints" do
+      render builder.text_field(:title, hint: "")
+
+      expect(page).not_to have_css ".help-text"
+      expect(page).not_to have_css "input[aria-describedby]"
+    end
+
     it "does not generate a hint attribute" do
       render builder.text_field(:title)
 
