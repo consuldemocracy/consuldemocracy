@@ -106,6 +106,7 @@ describe "Budgets" do
     end
 
     scenario "Show finished index without heading links" do
+      Setting["feature.map"] = true
       budget.update!(phase: "finished")
       heading = create(:budget_heading, budget: budget)
 
@@ -253,6 +254,14 @@ describe "Budgets" do
       within ".map_location" do
         expect(page).to have_css(".map-icon", count: 3, visible: :all)
       end
+
+      Setting["feature.map"] = false
+
+      visit budgets_path
+
+      expect(page).not_to have_css ".map"
+      expect(page).not_to have_css ".map_location"
+      expect(page).not_to have_css ".map-icon"
     end
 
     scenario "Display all investment's map location if there are no selected" do
