@@ -1,27 +1,7 @@
 // Custom variables
 //
 
-$brand:           #97bf0d;
-$brand-original:  #004a83;
-$brand-dark:      #78980a;
-$brand-very-dark: #42663a;
-$brand-light:     #b6d255;
-$very-light:      #caffbe;
-$budget:          $brand;
-$budget-hover:    #7571bf;
-$proposals:       $brand;
-$link:            $brand;
-$link-hover:      $brand-light;
-$info-bg:         $very-light;
-$info-border:     #afff9d;
-$color-info:      $brand-very-dark;
-$highlight:       $very-light;
-$highlight-soft:  $very-light;
+$brand:           #b44691;
+$brand-secondary: darken($brand, 20%);
 
-$foundation-palette: (
-  primary:   $brand,
-  secondary: #767676,
-  success:   $brand,
-  warning:   #ffae00,
-  alert:     #cc4b37,
-);
+$light-gray:      #ecd1e3;

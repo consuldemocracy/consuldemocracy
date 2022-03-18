@@ -1,2 +1,214 @@
 // Override and add customized styles in this file.
 //
+// Custom styles
+// 1. General styles
+// 2. Homepage and pages
+// 3. Navigation and footer
+// 4. Budgets
+//
+
+// 1. General styles
+// ========================
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-button {
+  color: $text;
+  margin-left: $line-height / 2;
+}
+
+.wrapper > header {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.top-links {
+  padding-left: $line-height / 2;
+  padding-right: $line-height / 2;
+}
+
+.search-form-header .button {
+  background: $brand !important;
+  color: #fff !important;
+}
+
+.jumbo {
+
+  &.highlight {
+    background: $light-gray;
+  }
+}
+
+.banner > a {
+  padding: $line-height / 2;
+}
+
+.additional-content .filter-subnav {
+  background: $light;
+}
+
+.social {
+
+  @include breakpoint(medium) {
+    width: 25%;
+  }
+}
+
+.button {
+  font-weight: bold !important;
+}
+
+.tags a ,
+.tag-cloud a,
+.categories a,
+.geozone a,
+.sidebar-links a,
+.tags span {
+  background: $brand;
+  color: #fff;
+
+  &:hover,
+  &.is-active {
+    background: $brand-secondary;
+    color: #fff;
+  }
+}
+
+// 2. Homepage and pages
+// ========================
+
+.home-page .background-header {
+  background: $light-gray;
+  clip-path: none;
+}
+
+.homepage-actions {
+
+  img {
+    max-width: 150px;
+  }
+}
+
+.custom-page {
+
+  .button {
+
+    &.warning {
+      background: $brand;
+      color: #fff;
+    }
+  }
+}
+
+.more-info-content h3 {
+  color: $text;
+}
+
+// 3. Navigation and footer
+// ========================
+
+.top-bar {
+  background: #fff !important;
+
+  @include breakpoint(small only) {
+
+    .small-responsive-menu {
+      flex-basis: 100%;
+    }
+  }
+
+  &::before {
+    content: none !important;
+  }
+
+  .top-bar-title {
+    margin-right: $line-height / 2;
+  }
+
+  .menu,
+  .subnavigation {
+    padding-left: $line-height / 2;
+    padding-right: $line-height / 2;
+  }
+
+  .has-submenu .menu {
+    margin-bottom: $line-height;
+    padding-left: 0;
+  }
+
+  .menu {
+    margin-bottom: 0;
+
+    > li a {
+      color: $text;
+
+      @include breakpoint(medium) {
+        margin-left: $line-height / 4;
+      }
+
+      @include breakpoint(small only) {
+        padding-left: $line-height / 4;
+      }
+
+      &.button {
+        background: $brand;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.subnavigation {
+  background: $brand;
+
+  @include breakpoint(medium) {
+    background: transparent;
+  }
+
+  ul li {
+    margin-right: rem-calc(20);
+  }
+}
+
+.dropdown.menu > li {
+
+  &.is-active > a {
+    color: $text;
+  }
+}
+
+.custom-footer-logos img {
+  max-height: 80px;
+}
+
+// 4. Budgets
+// ========================
+
+.budget-phases {
+
+  header {
+    padding-top: $line-height;
+  }
+}
+
+.budget-groups-index {
+  margin-top: -$line-height;
+
+  > header {
+    padding-top: $line-height;
+  }
+}
+
+.public .groups-and-headings .heading {
+  background: $brand;
+  border: 2px solid $brand;
+  color: #fff;
+
+  a {
+    color: #fff;
+  }
+}

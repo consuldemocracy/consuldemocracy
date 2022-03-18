@@ -1,32 +1,37 @@
 <style>
-	.ocultar{
+	.ocultar {
 		display:none;
 	}
-	.click .lead:hover{
+	.click {
+		position: relative;
+	}
+	.click .lead:hover {
 		cursor:pointer;
 	}
-	.click .lead{
+	.click .lead {
+		color: #b44691;
+		font-size: 20px;
+		padding-left: 24px;
+		position: relative;
 		transition: all 0.5s;
-		-moz-transition: all 0.5s;
-		-o-transition: all 0.5s;
-		-webkit-transition: all 0.5s;
-		background-color: #78980a;
-		color:white;		
-		box-shadow: black 0px 3px 5px 0px;
-		-moz-box-shadow: black 0px 3px 5px 0px;
-		-o-box-shadow: black 0px 3px 5px 0px;
-		-webkit-box-shadow: black 0px 3px 5px 0px;
-		padding-left:5px;
 	}
-	.click:hover .lead{
-		box-shadow: black 0px 0px 20px 0px;
-		-moz-box-shadow: black 0px 20px 0px 0px;
-		-o-box-shadow: black 0px 0px 20px 0px;
-		-webkit-box-shadow: black 0px 0px 20px 0px;
+	.click::before {
+		color: #b44691;
+		content: "+";
+		font-size: 20px;
+		font-weight: bold;
+		position: absolute;
+	}
+	.click:hover::before {
+		color: #6b2956;
+	}
+	.click:hover .lead {
+		color: #6b2956;
 	}
 </style>
 <div class="row">
   <div class="small-12 column">
+		<h2>Preguntas frecuentes sobre los Presupuestos participativos</h2>
 	<div id="section_help" class="margin" data-magellan-target="section_help">
 		<div class="click">
 			<p class="lead">
