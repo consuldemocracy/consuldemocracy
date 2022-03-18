@@ -34,7 +34,10 @@ class Admin::LocalCensusRecordsController < Admin::BaseController
   private
 
     def local_census_record_params
-      attributes = [:document_type, :document_number, :date_of_birth, :postal_code]
-      params.require(:local_census_record).permit(*attributes)
+      params.require(:local_census_record).permit(allowed_params)
+    end
+
+    def allowed_params
+      [:document_type, :document_number, :date_of_birth, :postal_code]
     end
 end

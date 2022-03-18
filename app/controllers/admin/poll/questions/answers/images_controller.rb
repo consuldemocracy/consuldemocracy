@@ -32,8 +32,11 @@ class Admin::Poll::Questions::Answers::ImagesController < Admin::Poll::BaseContr
   private
 
     def images_params
-      params.require(:poll_question_answer).permit(:answer_id,
-        images_attributes: image_attributes)
+      params.require(:poll_question_answer).permit(allowed_params)
+    end
+
+    def allowed_params
+      [:answer_id, images_attributes: image_attributes]
     end
 
     def load_answer

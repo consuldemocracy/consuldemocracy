@@ -27,7 +27,11 @@ class DirectMessagesController < ApplicationController
   private
 
     def direct_message_params
-      params.require(:direct_message).permit(:title, :body)
+      params.require(:direct_message).permit(allowed_params)
+    end
+
+    def allowed_params
+      [:title, :body]
     end
 
     def parsed_params

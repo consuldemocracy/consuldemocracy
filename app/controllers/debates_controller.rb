@@ -53,8 +53,11 @@ class DebatesController < ApplicationController
   private
 
     def debate_params
-      attributes = [:tag_list, :terms_of_service, :related_sdg_list]
-      params.require(:debate).permit(attributes, translation_params(Debate))
+      params.require(:debate).permit(allowed_params)
+    end
+
+    def allowed_params
+      [:tag_list, :terms_of_service, :related_sdg_list, translation_params(Debate)]
     end
 
     def resource_model

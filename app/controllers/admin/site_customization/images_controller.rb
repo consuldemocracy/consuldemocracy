@@ -38,6 +38,10 @@ class Admin::SiteCustomization::ImagesController < Admin::SiteCustomization::Bas
   private
 
     def image_params
-      params.require(:site_customization_image).permit(:image)
+      params.require(:site_customization_image).permit(allowed_params)
+    end
+
+    def allowed_params
+      [:image]
     end
 end

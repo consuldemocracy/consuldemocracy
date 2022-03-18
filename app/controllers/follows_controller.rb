@@ -17,7 +17,11 @@ class FollowsController < ApplicationController
   private
 
     def follow_params
-      params.permit(:followable_type, :followable_id)
+      params.permit(allowed_params)
+    end
+
+    def allowed_params
+      [:followable_type, :followable_id]
     end
 
     def followable_translation_key(followable)

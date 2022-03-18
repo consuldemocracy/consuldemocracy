@@ -114,7 +114,11 @@ class Admin::SiteCustomization::ContentBlocksController < Admin::SiteCustomizati
   private
 
     def content_block_params
-      params.require(:site_customization_content_block).permit(:name, :locale, :body)
+      params.require(:site_customization_content_block).permit(allowed_params)
+    end
+
+    def allowed_params
+      [:name, :locale, :body]
     end
 
     def is_heading_content_block?(name)
