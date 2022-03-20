@@ -21,6 +21,7 @@ module Budgets
     before_action :load_ballot, only: [:index, :show]
     before_action :load_heading, only: [:index, :show]
     before_action :load_assigned_heading, only: [:show]
+    before_action :load_map, only: [:index, :show]
     before_action :set_random_seed, only: :index
     before_action :load_categories, only: :index
     before_action :set_default_investment_filter, only: :index
@@ -135,10 +136,8 @@ module Budgets
         if params[:heading_id].present?
           @heading = @budget.headings.find_by_slug_or_id! params[:heading_id]
           @assigned_heading = @ballot&.heading_for_group(@heading.group)
-          load_map
         elsif @budget.single_heading?
           @heading = @budget.headings.first
-          load_map
         end
       end
 
@@ -185,7 +184,7 @@ module Budgets
       end
 
       def load_map
-        @map_location = MapLocation.load_from_heading(@heading)
+        @map_location = MapLocation.load_from_heading(@heading) if @heading.present?
       end
   end
 end
