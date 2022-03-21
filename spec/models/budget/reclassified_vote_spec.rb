@@ -34,5 +34,15 @@ describe Budget::ReclassifiedVote do
       reclassified_vote.reason = "unfeasible"
       expect(reclassified_vote).to be_valid
     end
+
+    it "dynamically validates the reasons" do
+      stub_const("#{Budget::ReclassifiedVote}::REASONS", %w[custom])
+
+      reclassified_vote.reason = "custom"
+      expect(reclassified_vote).to be_valid
+
+      reclassified_vote.reason = "unfeasible"
+      expect(reclassified_vote).not_to be_valid
+    end
   end
 end

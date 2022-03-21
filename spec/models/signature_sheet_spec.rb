@@ -26,6 +26,16 @@ describe SignatureSheet do
       expect(signature_sheet).not_to be_valid
     end
 
+    it "dynamically validates the valid signables" do
+      stub_const("#{SignatureSheet}::VALID_SIGNABLES", %w[Comment])
+
+      signature_sheet.signable = create(:comment)
+      expect(signature_sheet).to be_valid
+
+      signature_sheet.signable = create(:proposal)
+      expect(signature_sheet).not_to be_valid
+    end
+
     it "is not valid without document numbers" do
       signature_sheet.required_fields_to_verify = nil
       expect(signature_sheet).not_to be_valid

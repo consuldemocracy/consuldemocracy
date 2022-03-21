@@ -7,7 +7,7 @@ class SignatureSheet < ApplicationRecord
   has_many :signatures
 
   validates :author, presence: true
-  validates :signable_type, inclusion: { in: VALID_SIGNABLES }
+  validates :signable_type, inclusion: { in: ->(*) { VALID_SIGNABLES }}
   validates :required_fields_to_verify, presence: true
   validates :signable, presence: true
   validate  :signable_found

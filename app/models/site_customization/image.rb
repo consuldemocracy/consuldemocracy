@@ -13,7 +13,7 @@ class SiteCustomization::Image < ApplicationRecord
 
   has_attachment :image
 
-  validates :name, presence: true, uniqueness: true, inclusion: { in: VALID_IMAGES.keys }
+  validates :name, presence: true, uniqueness: true, inclusion: { in: ->(*) { VALID_IMAGES.keys }}
   validates :image, file_content_type: { allow: ["image/png", "image/jpeg"], if: -> { image.attached? }}
   validate :check_image
 

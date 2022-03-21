@@ -4,7 +4,7 @@ class Activity < ApplicationRecord
 
   VALID_ACTIONS = %w[hide block restore valuate email].freeze
 
-  validates :action, inclusion: { in: VALID_ACTIONS }
+  validates :action, inclusion: { in: ->(*) { VALID_ACTIONS }}
 
   scope :on_proposals, -> { where(actionable_type: "Proposal") }
   scope :on_debates, -> { where(actionable_type: "Debate") }
