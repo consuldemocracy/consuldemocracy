@@ -160,13 +160,15 @@ module Budgets
         @view = (params[:view] == "minimal") ? "minimal" : "default"
       end
 
+      def investments_with_filters
+        @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
+      end
+
       def investments
         if @current_order == "random"
-          @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
-                             .sort_by_random(session[:random_seed])
+          investments_with_filters.sort_by_random(session[:random_seed])
         else
-          @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
-                             .send("sort_by_#{@current_order}")
+          investments_with_filters.send("sort_by_#{@current_order}")
         end
       end
 
