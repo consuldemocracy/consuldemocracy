@@ -12,7 +12,9 @@ describe "files tasks" do
       document = build(:document)
 
       image.attachment.blob.save!
+      image.attachment_changes["attachment"].upload
       document.attachment.blob.save!
+      document.attachment_changes["attachment"].upload
 
       travel_to(2.days.from_now) { run_rake_task }
 
@@ -25,7 +27,9 @@ describe "files tasks" do
       document = build(:document)
 
       image.attachment.blob.save!
+      image.attachment_changes["attachment"].upload
       document.attachment.blob.save!
+      document.attachment_changes["attachment"].upload
 
       travel_to(2.minutes.from_now) { run_rake_task }
 

@@ -61,7 +61,10 @@ class Image < ApplicationRecord
       if accepted_content_types.include?(attachment_content_type)
         return true if imageable_class == Widget::Card
 
-        attachment.analyze unless attachment.analyzed?
+        unless attachment.analyzed?
+          attachment_changes["attachment"].upload
+          attachment.analyze
+        end
 
         width = attachment.metadata[:width]
         height = attachment.metadata[:height]
