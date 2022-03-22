@@ -18,7 +18,6 @@ es:
       edit: Editar
       configure: Configurar
       delete: Borrar
-      confirm_delete: "¿Estás seguro? Esta acción borrará %{resource_name} '%{name}' y no se puede deshacer."
     officing_booth:
       title: "Estás ahora mismo en la mesa ubicada en %{booth}. Si esto no es correcto no sigas adelante y llama al teléfono de incidencias. Gracias."
     banners:
