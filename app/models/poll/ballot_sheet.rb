@@ -7,6 +7,8 @@ class Poll::BallotSheet < ApplicationRecord
   validates :poll_id, presence: true
   validates :officer_assignment_id, presence: true
 
+  after_create :verify_ballots
+
   def author
     officer_assignment.officer.name
   end
