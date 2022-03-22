@@ -10,6 +10,13 @@ describe Legislation::Process do
     expect(process).to be_valid
   end
 
+  it "dynamically validates the color format" do
+    stub_const("#{Legislation::Process}::CSS_HEX_COLOR", /[G-H]{2}/)
+
+    expect(build(:legislation_process, font_color: "GG", background_color: "GH")).to be_valid
+    expect(build(:legislation_process, font_color: "#ff0", background_color: "#00f")).not_to be_valid
+  end
+
   it "assigns default values to new processes" do
     process = Legislation::Process.new
 

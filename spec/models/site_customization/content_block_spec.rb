@@ -17,4 +17,14 @@ RSpec.describe SiteCustomization::ContentBlock, type: :model do
     valid_block = build(:site_customization_content_block, name: "top_links", locale: "es")
     expect(valid_block).to be_valid
   end
+
+  it "dynamically validates the valid blocks" do
+    stub_const("#{SiteCustomization::ContentBlock}::VALID_BLOCKS", %w[custom])
+
+    block.name = "custom"
+    expect(block).to be_valid
+
+    block.name = "top_links"
+    expect(block).not_to be_valid
+  end
 end

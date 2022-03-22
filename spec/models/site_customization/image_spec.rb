@@ -33,5 +33,15 @@ describe SiteCustomization::Image do
 
       expect(image).not_to be_valid
     end
+
+    it "dynamically validates the valid images" do
+      stub_const("#{SiteCustomization::Image}::VALID_IMAGES", { "custom" => [223, 80] })
+
+      custom = build(:site_customization_image, name: "custom", image: fixture_file_upload("logo_header.png"))
+      expect(custom).to be_valid
+
+      map = build(:site_customization_image, name: "map", image: fixture_file_upload("custom_map.jpg"))
+      expect(map).not_to be_valid
+    end
   end
 end

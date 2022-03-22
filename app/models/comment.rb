@@ -21,7 +21,7 @@ class Comment < ApplicationRecord
   validates_translation :body, presence: true
   validates :user, presence: true
 
-  validates :commentable_type, inclusion: { in: COMMENTABLE_TYPES }
+  validates :commentable_type, inclusion: { in: ->(*) { COMMENTABLE_TYPES }}
 
   validate :validate_body_length
   validate :comment_valuation, if: -> { valuation }

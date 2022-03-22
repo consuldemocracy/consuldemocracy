@@ -64,6 +64,18 @@ describe ProgressBar do
     expect(progress_bar).to be_valid
   end
 
+  it "dynamically validates the percentage range" do
+    stub_const("#{ProgressBar}::RANGE", (-99..99))
+
+    progress_bar.percentage = -99
+
+    expect(progress_bar).to be_valid
+
+    progress_bar.percentage = 100
+
+    expect(progress_bar).not_to be_valid
+  end
+
   it "is not valid without a progressable" do
     progress_bar.progressable = nil
 
