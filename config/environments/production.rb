@@ -68,18 +68,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_url_options = { host: Rails.application.secrets.server_name }
   config.action_mailer.asset_host = "https://#{Rails.application.secrets.server_name}"
-  config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.smtp_settings = {
-                 address: Rails.application.secrets.smtp_address,
-                    port: Rails.application.secrets.smtp_port,
-                  domain: Rails.application.secrets.smtp_domain,
-               user_name: Rails.application.secrets.smtp_user_name,
-                password: Rails.application.secrets.smtp_password,
-          authentication: 'login',
-    enable_starttls_auto: true,
-                     ssl: false
-  }
 
   # Configure your SMTP service credentials in secrets.yml
   if Rails.application.secrets.smtp_settings

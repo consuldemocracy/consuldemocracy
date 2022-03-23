@@ -68,12 +68,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: Rails.application.secrets.server_name }
   config.action_mailer.asset_host = "https://#{Rails.application.secrets.server_name}"
   config.action_mailer.delivery_method = :letter_opener_web
-
-  # Configure your SMTP service credentials in secrets.yml
-  if Rails.application.secrets.smtp_settings
-    config.action_mailer.delivery_method = Rails.application.secrets.mailer_delivery_method || :smtp
-    config.action_mailer.smtp_settings = Rails.application.secrets.smtp_settings
-  end
+  config.action_mailer.perform_caching = false
 
   # Disable locale fallbacks for I18n
   # (prevents using fallback locales set in application.rb).
