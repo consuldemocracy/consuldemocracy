@@ -12,7 +12,7 @@ nl:
       edit: "Bewerk"
       configure: "Configureren"
       delete: "Verwijder"
-      confirm_delete: "Weet je zeker dat je %{resource_name} '%{name}' wilt verwijderen? Dit kan niet ongedaan worden gemaakt."
+      confirm_delete: "Weet je zeker dat je \"%{name}\" wilt verwijderen? Dit kan niet ongedaan worden gemaakt."
       confirm_hide_content: "Weet je dit zeker? Deze actie verbergt deze content. Je kunt deze actie niet ongedaan maken."
       confirm_hide_author: "Weet je dit zeker? Deze actie verbergt alle content van deze auteur. Ook zal de auteur geblokkeerd worden en niet meer kunnen inloggen. Je kan deze actie niet ongedaan maken."
       confirm_mark_featured: "Weet je dit zeker? Deze actie markeert deze discussie als uitgelicht. Hierdoor wordt het vastgepind aan de bovenkant van de discussie-pagina."
