@@ -14,7 +14,8 @@
       </div>
 
       <div class="column">
-        <%= translations_form.text_area :description, rows: 5 %>
+        <% css_class = "html-area admin" if card.header? %>
+        <%= translations_form.text_area :description, rows: 5, class: css_class %>
       </div>
 
       <div class="small-12 medium-6 column end">

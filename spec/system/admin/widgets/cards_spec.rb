@@ -123,7 +123,7 @@ describe "Cards", :admin do
 
       fill_in "Label (optional)", with: "Header label"
       fill_in "Title", with: "Header text"
-      fill_in "Description", with: "Header description"
+      fill_in_ckeditor "Description", with: "Header description"
       fill_in "Link text", with: "Link text"
       fill_in "widget_card_link_url", with: "consul.dev"
       click_button "Create header"
