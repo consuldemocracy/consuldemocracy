@@ -9,6 +9,10 @@ module Globalize
         end
       end
     end
+
+    class Translation
+      include SkipValidation
+    end
   end
 end
 
