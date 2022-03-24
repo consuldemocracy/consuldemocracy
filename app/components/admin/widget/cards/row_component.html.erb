@@ -3,7 +3,7 @@
     <%= card.label %><br>
     <%= card.title %>
   </td>
-  <td><%= card.description %></td>
+  <td><%= strip_tags(card.description) %></td>
   <td>
     <%= card.link_text %><br>
     <%= card.link_url %>

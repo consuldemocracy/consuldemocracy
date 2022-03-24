@@ -2,7 +2,7 @@
   <span><%= header.label %></span>
   <h1><%= header.title %></h1>
 
-  <p class="lead"><%= header.description %></p>
+  <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(header.description) %>
 
   <% if header.link_text.present? && header.link_url.present? %>
     <div class="small-12 medium-6">

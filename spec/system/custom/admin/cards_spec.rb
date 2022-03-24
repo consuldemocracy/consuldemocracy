@@ -6,7 +6,7 @@ describe "Cards", :admin do
     click_link "Create header"
 
     fill_in "Title", with: "Welcome"
-    fill_in "Description", with: "Header description"
+    fill_in_ckeditor "Description", with: "Header description"
     attach_image_to_card
     click_button "Create header"
 
@@ -23,7 +23,7 @@ describe "Cards", :admin do
     click_link "Create header"
 
     fill_in "Title", with: "Welcome"
-    fill_in "Description", with: "Header description"
+    fill_in_ckeditor "Description", with: "Header description"
     attach_image_to_card
     check "Use image as background"
     click_button "Create header"
@@ -41,7 +41,7 @@ describe "Cards", :admin do
     click_link "Create header"
 
     fill_in "Title", with: "Welcome"
-    fill_in "Description", with: "Header description"
+    fill_in_ckeditor "Description", with: "Header description"
     click_button "Create header"
 
     expect(page).to have_content "Card created successfully!"
