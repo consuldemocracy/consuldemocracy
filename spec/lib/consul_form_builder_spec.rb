@@ -40,6 +40,18 @@ describe ConsulFormBuilder do
 
       expect(page).not_to have_css "input[hint]"
     end
+
+    describe "attributes requiring interpolation parameters" do
+      before { I18n.backend.store_translations(:en, { attributes: { title: "Title %{info}" }}) }
+      after { I18n.backend.reload! }
+
+      it "generates a hint" do
+        render builder.text_field(:title, label: "Title whatever", hint: "Make it quick")
+
+        expect(page).to have_css ".help-text", text: "Make it quick"
+        expect(page).to have_css "input[aria-describedby='dummy_title-help-text']"
+      end
+    end
   end
 
   describe "#select" do
