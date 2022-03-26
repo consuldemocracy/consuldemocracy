@@ -49,19 +49,21 @@ describe SkipValidation do
 
   describe ".skip_translation_validation" do
     before do
-      dummy_banner = Class.new(Banner) do
-        def self.translation_class
-          @translation_class ||= Class.new(Banner::Translation) { clear_validators! }
+      dummy_banner = Class.new(ApplicationRecord) do
+        def self.name
+          "DummyBanner"
         end
-        reflect_on_association(:translations).options[:class_name] = "DummyBanner::Translation"
+        self.table_name = "banners"
 
-        clear_validators!
+        translates :title, touch: true
+        translates :description, touch: true
+        include Globalizable
+
         validates_translation :title, presence: true
         validates_translation :description, presence: true
       end
 
       stub_const("DummyBanner", dummy_banner)
-      stub_const("DummyBanner::Translation", dummy_banner.translation_class)
     end
 
     it "removes the validation from the translatable attribute" do
