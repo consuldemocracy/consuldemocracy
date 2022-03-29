@@ -6,7 +6,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
 
     if !resource.confirmation_required?
       redirect_to new_user_confirmation_path,
-                  notice: WYSIWYGSanitizer.new.sanitize(t("devise.confirmations.user.already_confirmed"))
+                  notice: t("devise.confirmations.user.already_confirmed")
     elsif successfully_sent?(resource)
       respond_with({}, location: after_resending_confirmation_instructions_path_for(resource_name))
     else
