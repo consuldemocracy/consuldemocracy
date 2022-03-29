@@ -6,10 +6,10 @@
   <div class="row stats-numbers">
     <div class="small-12 medium-3 column">
       <p class="featured">
-        <%= t("admin.stats.budget_balloting.vote_count") %>
+        <%= t("admin.stats.budget_balloting.vote_total_physical_count") %>
         <br>
         <span id="total_votes_count" class="number">
-          <%= @vote_count %>
+          <%= @vote_count %> / <%= @phisical_votes_count %>
         </span>
       </p>
     </div>
@@ -27,16 +27,19 @@
 </div>
 
 <table class="investment-projects-summary">
-  <th colspan="3"><%= t("admin.stats.budget_balloting.votes_per_heading") %></th>
+  <th colspan="4"><%= t("admin.stats.budget_balloting.votes_per_heading") %></th>
   <tr>
     <td>
       <u>Zona</u>
     </td>
     <td>
-      <u>Votos</u>
+      <u>Votos online</u>
     </td>
     <td>
       <u>Votos presenciales</u>
+    </td>
+    <td>
+      <u>Votos totales</u>
     </td>
   </tr>
   <% @vote_count_by_heading.each do |heading_name, vals| %>
@@ -45,10 +48,13 @@
         <%= heading_name %>
       </td>
       <td class="name">
-        <%= number_with_delimiter vals[0] %>
+        <%= number_with_delimiter (vals[0] - vals[1]) %>
       </td>
       <td class="name">
         <%= number_with_delimiter vals[1] %>
+      </td>
+      <td class="name">
+        <%= number_with_delimiter vals[0] %>
       </td>
     </tr>
   <% end %>
