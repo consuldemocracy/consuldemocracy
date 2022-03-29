@@ -4,7 +4,7 @@ describe "Admin custom images", :admin do
   scenario "List of customizable images" do
     valid_images = SiteCustomization::Image::VALID_IMAGES
     %w[logo_header social_media_icon social_media_icon_twitter apple-touch-icon-200 budget_execution_no_image
-       budget_no_image budget_investment_no_image map logo_email welcome_process
+       budget_no_image budget_investment_no_image map logo_email welcome_process favicon
        welcome/step_1 welcome/step_2 welcome/step_3 auth_bg bg_footer logo_footer].each do |image_name|
       expect(valid_images.keys).to include(image_name)
     end
