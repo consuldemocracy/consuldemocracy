@@ -210,6 +210,8 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       documentable_attach_new_file(file_fixture("empty.pdf"))
       click_on submit_button
 
+      expect(page).to have_content documentable_success_notice
+
       documentable_redirected_to_resource_show_or_navigate_to
 
       expect(page).to have_content "Documents"
@@ -232,6 +234,9 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       end
 
       click_on submit_button
+
+      expect(page).to have_content documentable_success_notice
+
       documentable_redirected_to_resource_show_or_navigate_to
 
       expect(page).to have_content "Documents (#{documentable.class.max_documents_allowed})"

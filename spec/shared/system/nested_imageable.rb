@@ -184,6 +184,9 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       expect(page).to have_selector ".loading-bar.complete"
 
       click_on submit_button
+
+      expect(page).to have_content imageable_success_notice
+
       imageable_redirected_to_resource_show_or_navigate_to(imageable)
 
       expect(page).to have_selector "figure img"
