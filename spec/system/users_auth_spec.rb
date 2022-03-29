@@ -594,9 +594,8 @@ describe "Users" do
     fill_in "Email", with: "manuela@consul.dev"
     click_button "Re-send instructions"
 
-    expect(page).to have_content "If your email address is in our database, in a few minutes you "\
-                                 "will receive an email containing instructions on how to reset "\
-                                 "your password."
+    expect(page).to have_content "If your email address exists in our database, in a few minutes you will "\
+                                 "receive an email with instructions on how to confirm your email address."
   end
 
   scenario "Re-send confirmation instructions with unexisting email" do
@@ -607,9 +606,8 @@ describe "Users" do
     fill_in "Email", with: "fake@mail.dev"
     click_button "Re-send instructions"
 
-    expect(page).to have_content "If your email address is in our database, in a few minutes you "\
-                                 "will receive an email containing instructions on how to reset "\
-                                 "your password."
+    expect(page).to have_content "If your email address exists in our database, in a few minutes you will "\
+                                 "receive an email with instructions on how to confirm your email address."
   end
 
   scenario "Sign in, admin with password expired" do
