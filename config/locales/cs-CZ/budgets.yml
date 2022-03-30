@@ -83,6 +83,7 @@ cs:
       form:
         title: "Přidat investiční projekt"
         subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
         tag_category_label: "Kategorie"
         tags_instructions: "Štítek tohoto návrhu. Můžete si vybrat z kategorií nebo přidat vlastní"
         tags_label: Štítky
