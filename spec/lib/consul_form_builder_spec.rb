@@ -4,7 +4,7 @@ describe ConsulFormBuilder do
   before do
     dummy_model = Class.new do
       include ActiveModel::Model
-      attr_accessor :title, :quality
+      attr_accessor :title, :quality, :published
     end
 
     stub_const("DummyModel", dummy_model)
@@ -72,6 +72,15 @@ describe ConsulFormBuilder do
 
       expect(page).to have_css ".help-text", text: "Ugly is neither good nor bad"
       expect(page).to have_css "select[aria-describedby='dummy_quality-help-text']"
+    end
+  end
+
+  describe "#check_box" do
+    it "adds a checkbox-label class to the label by default" do
+      render builder.check_box(:published)
+
+      expect(page).to have_css "label", count: 1
+      expect(page).to have_css ".checkbox-label"
     end
   end
 
