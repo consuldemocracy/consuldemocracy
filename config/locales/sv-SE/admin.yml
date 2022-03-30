@@ -136,6 +136,8 @@ sv:
         info:
           budget_settings: "Allmänna medborgarbudgetinställningar"
           staff_settings: "Administratörer och bedömare som tilldelats budgeten"
+        hide_money: "Dölj belopp"
+        hide_money_help_text: "Om detta alternativ har markerats kommer alla fält som visar beloppet att döljas under hela processen."
       destroy:
         success_notice: Budgeten raderades
         unable_notice: Du kan inte radera en budget som har budgetinvesteringar kopplade till sig
