@@ -140,6 +140,8 @@ cs:
         info:
           budget_settings: "Obecné nastavení participativního rozpočtu"
           staff_settings: "Správci a hodnotitelé přiřazení k rozpočtu"
+        hide_money: "Skrýt částku"
+        hide_money_help_text: "Pokud je tato možnost zaškrtnuta, všechna pole zobrazující částku budou v průběhu procesu skryta."
       destroy:
         success_notice: Rozpočet byl smazán
         unable_notice: Nemůžete odstranit rozpočet, který je propojený s investicemi
