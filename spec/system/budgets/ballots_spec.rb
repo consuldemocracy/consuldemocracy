@@ -659,4 +659,33 @@ describe "Ballots" do
       end
     end
   end
+
+  context "Hide money" do
+    scenario "Do not show prices on sidebar or ballot show" do
+      budget_hide_money = create(:budget, :balloting, :approval, :hide_money)
+      group_no_price = create(:budget_group, budget: budget_hide_money)
+      heading_no_price = create(:budget_heading, group: group_no_price, max_ballot_lines: 2)
+      investment_1 = create(:budget_investment, :selected, heading: heading_no_price, price: 3000)
+      investment_2 = create(:budget_investment, :selected, heading: heading_no_price, price: 4000)
+      user = create(:user, :level_two, ballot_lines: [investment_1, investment_2])
+
+      login_as(user)
+      visit budget_investments_path(budget_hide_money, heading_id: heading_no_price.id)
+
+      within("#sidebar") do
+        expect(page).to have_content investment_1.title
+        expect(page).to have_content investment_2.title
+        expect(page).not_to have_content investment_1.price
+        expect(page).not_to have_content investment_2.price
+        expect(page).not_to have_content "€"
+        click_link "Submit my ballot"
+      end
+
+      expect(page).to have_content investment_1.title
+      expect(page).to have_content investment_2.title
+      expect(page).not_to have_content investment_1.price
+      expect(page).not_to have_content investment_2.price
+      expect(page).not_to have_content "€"
+    end
+  end
 end

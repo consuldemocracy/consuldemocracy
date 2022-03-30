@@ -59,6 +59,7 @@ class Admin::BudgetsController < Admin::BaseController
       valid_attributes = [:phase,
                           :currency_symbol,
                           :voting_style,
+                          :hide_money,
                           administrator_ids: [],
                           valuator_ids: [],
                           image_attributes: image_attributes

@@ -287,6 +287,16 @@ describe Budget do
       expect(budget.investments_orders).to eq(["random", "price"])
     end
 
+    it "is random when ballotting and reviewing ballots if hide money" do
+      budget.update!(voting_style: "approval", hide_money: true)
+      budget.phase = "publishing_prices"
+      expect(budget.investments_orders).to eq(["random"])
+      budget.phase = "balloting"
+      expect(budget.investments_orders).to eq(["random"])
+      budget.phase = "reviewing_ballots"
+      expect(budget.investments_orders).to eq(["random"])
+    end
+
     it "is random and confidence_score in all other cases" do
       budget.phase = "selecting"
       expect(budget.investments_orders).to eq(["random", "confidence_score"])

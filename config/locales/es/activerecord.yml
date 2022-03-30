@@ -160,6 +160,7 @@ es:
         voting_style: "Estilo de la votación final"
         voting_style_knapsack: Bolsa de dinero
         voting_style_approval: Por aprobación
+        hide_money: "Ocultar la cantidad de dinero para este presupuesto"
       budget/translation:
         main_link_text: "Texto del enlace"
         main_link_url: "El enlace te lleva a (añade un enlace)"

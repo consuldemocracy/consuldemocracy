@@ -119,6 +119,34 @@ describe "Budgets" do
       end
     end
 
+    scenario "Hide money on single heading budget" do
+      budget = create(:budget, :finished, :hide_money)
+      heading = create(:budget_heading, budget: budget)
+
+      visit budgets_path
+
+      within("#budget_info") do
+        expect(page).to have_content heading.name
+        expect(page).not_to have_content "€"
+      end
+    end
+
+    scenario "Hide money on multiple headings budget" do
+      budget = create(:budget, :finished, :hide_money)
+      heading1 = create(:budget_heading, budget: budget)
+      heading2 = create(:budget_heading, budget: budget)
+      heading3 = create(:budget_heading, budget: budget)
+
+      visit budgets_path
+
+      within("#budget_info") do
+        expect(page).to have_content heading1.name
+        expect(page).to have_content heading2.name
+        expect(page).to have_content heading3.name
+        expect(page).not_to have_content "€"
+      end
+    end
+
     scenario "No budgets" do
       Budget.destroy_all
 

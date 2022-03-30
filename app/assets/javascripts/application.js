@@ -109,6 +109,7 @@
 //= require cookies
 //= require columns_selector
 //= require budget_edit_associations
+//= require budget_hide_money
 //= require datepicker
 //= require_tree ./admin
 //= require_tree ./sdg
@@ -167,6 +168,7 @@ var initialize_modules = function() {
   App.AdminBudgetsWizardCreationStep.initialize();
   App.AdminMachineLearningScripts.initialize();
   App.BudgetEditAssociations.initialize();
+  App.BudgetHideMoney.initialize();
   App.Datepicker.initialize();
   App.SDGRelatedListSelector.initialize();
   App.SDGManagementRelationSearch.initialize();
