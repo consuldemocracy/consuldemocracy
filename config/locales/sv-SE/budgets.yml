@@ -75,6 +75,7 @@ sv:
       form:
         title: "Skapa en budgetinvestering"
         subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
         tag_category_label: "Kategorier"
         tags_instructions: "Tagga förslaget. Du kan välja från de föreslagna kategorier eller lägga till egna"
         tags_label: Taggar
