@@ -6,6 +6,7 @@ module CommonActions
   include Debates
   include Documents
   include Emails
+  include Images
   include Maps
   include Notifications
   include Polls
