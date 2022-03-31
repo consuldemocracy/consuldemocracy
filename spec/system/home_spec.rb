@@ -204,4 +204,20 @@ describe "Home" do
       within(".header-card") { expect(page).not_to have_link }
     end
   end
+
+  scenario "Favicon custom" do
+    visit root_path
+
+    expect(page).to have_css("link[rel=\"shortcut icon\"]", visible: :hidden)
+    expect(page).to have_xpath("//link[contains(@href, \"favicon-\")]", visible: :hidden)
+
+    create(:site_customization_image, name: "favicon",
+            image: File.new("spec/fixtures/files/favicon_custom.ico"))
+
+    visit root_path
+
+    expect(page).to have_css("link[rel=\"shortcut icon\"]", visible: :hidden)
+    expect(page).not_to have_xpath("//link[contains(@href, \"favicon-\")]", visible: :hidden)
+    expect(page).to have_xpath("//link[contains(@href, \"favicon_custom\")]", visible: :hidden)
+  end
 end

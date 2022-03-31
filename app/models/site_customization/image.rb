@@ -17,13 +17,21 @@ class SiteCustomization::Image < ApplicationRecord
     "welcome_process" => [370, 185],
     "auth_bg" => [934, 1398],
     "bg_footer" => [1200, 300],
-    "logo_footer" => [260, 80]
+    "logo_footer" => [260, 80],
+    "favicon" => [16, 16]
   }.freeze
+
+  VALID_MIME_TYPES = %w[
+    image/png
+    image/jpeg
+    image/x-icon
+    image/vnd.microsoft.icon
+  ].freeze
 
   has_attachment :image
 
   validates :name, presence: true, uniqueness: true, inclusion: { in: VALID_IMAGES.keys }
-  validates_attachment_content_type :image, content_type: ["image/png", "image/jpeg"]
+  validates_attachment_content_type :image, content_type: VALID_MIME_TYPES
   validate :check_image
 
   def self.all_images
