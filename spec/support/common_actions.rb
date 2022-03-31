@@ -5,6 +5,7 @@ module CommonActions
   include Comments
   include Debates
   include Emails
+  include Maps
   include Notifications
   include Polls
   include Proposals
