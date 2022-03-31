@@ -4,6 +4,7 @@ module CommonActions
   include Budgets
   include Comments
   include Debates
+  include Documents
   include Emails
   include Maps
   include Notifications
