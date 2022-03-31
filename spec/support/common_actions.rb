@@ -1,4 +1,5 @@
 Dir["./spec/support/common_actions/*.rb"].each { |f| require f }
+Dir["./spec/support/common_actions/custom/*.rb"].each { |f| require f }
 
 module CommonActions
   include Budgets
