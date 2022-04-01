@@ -26,7 +26,7 @@ en:
       errors:
         incorrect_code: Verification code incorrect
       new:
-        explanation: "For participate on final voting you can:"
+        explanation: "In order to participate in final voting you can:"
         go_to_index: See proposals
         office: Verify in any Citizen Support Offices
         send_letter: Send me a letter with the code
@@ -87,11 +87,11 @@ en:
     step_1: Residence
     step_2: Confirmation code
     step_3: Final verification
-    user_permission_debates: Participate on debates
+    user_permission_debates: Participate in debates
     user_permission_info: Verifying your information you'll be able to...
     user_permission_proposal: Create new proposals
     user_permission_support_proposal: Support proposals*
-    user_permission_votes: Participate on final voting*
+    user_permission_votes: Participate in final voting*
     verified_user:
       form:
         submit_button: Send code
