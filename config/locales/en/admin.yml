@@ -807,7 +807,7 @@ en:
     segment_recipient:
       all_users: All users
       administrators: Administrators
-      all_proposal_authors: Proposal authors (including archived and retired)
+      all_proposal_authors: Proposal authors (including archived and withdrawn)
       proposal_authors: Proposal authors
       investment_authors: Investment authors in the current budget
       feasible_and_undecided_investment_authors: "Authors of some investment in the current budget that does not comply with: [valuation finished unfesasible]"

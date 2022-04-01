@@ -585,8 +585,8 @@ describe "Proposals" do
     end
   end
 
-  context "Retired proposals" do
-    scenario "Retire" do
+  context "Withdrawn proposals" do
+    scenario "Withdraw" do
       proposal = create(:proposal)
       login_as(proposal.author)
 
@@ -599,20 +599,20 @@ describe "Proposals" do
         click_link "Edit my proposal"
       end
 
-      within_window(window_opened_by { click_link "Retire proposal" }) do
+      within_window(window_opened_by { click_link "Withdraw proposal" }) do
         expect(page).to have_current_path(retire_form_proposal_path(proposal))
 
         select "Duplicated", from: "proposal_retired_reason"
         fill_in "Explanation", with: "There are three other better proposals with the same subject"
-        click_button "Retire proposal"
+        click_button "Withdraw proposal"
 
-        expect(page).to have_content "Proposal retired"
+        expect(page).to have_content "The proposal has been withdrawn"
       end
 
       visit proposal_path(proposal)
 
       expect(page).to have_content proposal.title
-      expect(page).to have_content "Proposal retired by the author"
+      expect(page).to have_content "Proposal withdrawn by the author"
       expect(page).to have_content "Duplicated"
       expect(page).to have_content "There are three other better proposals with the same subject"
     end
@@ -623,13 +623,13 @@ describe "Proposals" do
 
       visit retire_form_proposal_path(proposal)
 
-      click_button "Retire proposal"
+      click_button "Withdraw proposal"
 
-      expect(page).not_to have_content "Proposal retired"
+      expect(page).not_to have_content "The proposal has been withdrawn"
       expect(page).to have_content "can't be blank", count: 2
     end
 
-    scenario "Index do not list retired proposals by default" do
+    scenario "Index does not list withdrawn proposals by default" do
       Setting["feature.featured_proposals"] = true
       create_featured_proposals
       not_retired = create(:proposal)
@@ -644,20 +644,20 @@ describe "Proposals" do
       end
     end
 
-    scenario "Index has a link to retired proposals list" do
+    scenario "Index has a link to the list of withdrawn proposals" do
       not_retired = create(:proposal)
       retired = create(:proposal, :retired)
 
       visit proposals_path
 
       expect(page).not_to have_content retired.title
-      click_link "Proposals retired by the author"
+      click_link "Proposals withdrawn by the author"
 
       expect(page).to have_content retired.title
       expect(page).not_to have_content not_retired.title
     end
 
-    scenario "Retired proposals index interface elements" do
+    scenario "Withdrawn proposals index interface elements" do
       visit proposals_path(retired: "all")
 
       expect(page).not_to have_content "Advanced search"
@@ -665,7 +665,7 @@ describe "Proposals" do
       expect(page).not_to have_content "Districts"
     end
 
-    scenario "Retired proposals index has links to filter by retired_reason" do
+    scenario "Withdrawn proposals index has links to filter by retired_reason" do
       unfeasible = create(:proposal, :retired, retired_reason: "unfeasible")
       duplicated = create(:proposal, :retired, retired_reason: "duplicated")
 

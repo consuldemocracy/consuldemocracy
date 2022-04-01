@@ -9,7 +9,7 @@ describe "Proposal's dashboard" do
 
     expect(page).to have_link("Edit my proposal")
     expect(page).to have_link("Edit proposal")
-    expect(page).to have_link("Retire proposal")
+    expect(page).to have_link("Withdraw proposal")
     expect(page).to have_link("Publish proposal")
     expect(page).to have_link("Polls")
     expect(page).to have_link("E-mail")

@@ -310,7 +310,7 @@ describe "Proposal Notifications" do
       expect(page).to have_content "This resource is not available anymore"
     end
 
-    scenario "Proposal retired by author" do
+    scenario "Proposal withdrawn by its author" do
       author = create(:user)
       user = create(:user)
       proposal = create(:proposal, :retired, author: author, followers: [user])

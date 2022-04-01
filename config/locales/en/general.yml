@@ -195,7 +195,7 @@ en:
       proposal_header:
         published: Published
         draft: Draft
-        retired: Retired
+        retired: Withdrawn
       proposal_totals:
         active_resources: Active resources
         community: Participants in your community
@@ -312,11 +312,11 @@ en:
         submit_button: Save changes
       show_link: View proposal
     retire_form:
-      title: Retire proposal
-      warning: "If you retire the proposal it would still accept supports, but will be removed from the main list and a message will be visible to all users stating that the author considers the proposal should not be supported anymore"
+      title: Withdraw proposal
+      warning: "If you withdraw the proposal it will still accept supports, but will be removed from the main list and a message will be visible to all users stating that the author considers the proposal should not be supported anymore"
       retired_reason_blank: Choose an option
       retired_explanation_placeholder: Explain shortly why you think this proposal should not receive more supports
-      submit_button: Retire proposal
+      submit_button: Withdraw proposal
     retire_options:
       duplicated: Duplicated
       started: Already underway
@@ -351,8 +351,8 @@ en:
         actions:
           success: "Recommendations for proposals are now disabled for this account"
           error: "An error has occured. Please go to 'My account' page to manually disable recommendations for proposals"
-      retired_proposals: Retired proposals
-      retired_proposals_link: "Proposals retired by the author"
+      retired_proposals: Withdrawn proposals
+      retired_proposals_link: "Proposals withdrawn by the author"
       selected_proposals: Selected proposals
       selected_proposals_link: View selected proposals
       archived_proposals: Archived proposals
@@ -392,7 +392,7 @@ en:
       recommendations_title: Recommendations for creating a proposal
       start_new: Create new proposal
     notice:
-      retired: Proposal retired
+      retired: The proposal has been withdrawn
       published: The proposal has been published
     proposal:
       created: "You've created a proposal!"
@@ -436,7 +436,7 @@ en:
       milestones_tab: Milestones
       retired_warning: "The author considers this proposal should not receive more supports."
       retired_warning_link_to_explanation: Read the explanation before voting for it.
-      retired: Proposal retired by the author
+      retired: Proposal withdrawn by the author
       share: Share
       no_notifications: "This proposal has no notifications."
       embed_video_title: "Video on %{proposal}"
@@ -476,7 +476,7 @@ en:
       title: Edition
       edit_proposal_link: Edit proposal
       publish: Publish proposal
-      retire: Retire proposal
+      retire: Withdraw proposal
     new_request:
       links: Links
     resources:
@@ -837,12 +837,12 @@ en:
       send_private_message: "Send private message"
       delete_alert: "Are you sure you want to delete your investment project? This action can't be undone"
     proposals:
-      retired: "Retired proposal"
+      retired: "Withdrawn proposal"
       draft: Draft
       published: Published
       see: "See proposal"
       actions: Actions
-      retired_help_text: Dashboard not available for retired proposals
+      retired_help_text: Dashboard not available for withdrawn proposals
   votes:
     agree: I agree
     agree_label: "I agree with %{title}"

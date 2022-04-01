@@ -256,7 +256,7 @@ en:
         question: "Question"
         description: "Description"
         responsible_name: "Full name of the person submitting the proposal"
-        retired_reason: "Reason to retire the proposal"
+        retired_reason: "Reason to withdraw the proposal"
         selected: "Mark as selected"
         terms_of_service: "Terms of service"
         video_url: "External video URL"
