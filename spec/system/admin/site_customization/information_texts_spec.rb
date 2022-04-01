@@ -5,10 +5,10 @@ describe "Admin custom information texts", :admin do
     visit admin_site_customization_information_texts_path
 
     click_link "Basic customization"
-    expect(page).to have_content "Help about debates"
-    expect(page).to have_content "Help about proposals"
-    expect(page).to have_content "Help about voting"
-    expect(page).to have_content "Help about collaborative legislation"
+    expect(page).to have_content "Help with debates"
+    expect(page).to have_content "Help with proposals"
+    expect(page).to have_content "Help with voting"
+    expect(page).to have_content "Help with collaborative legislation"
     expect(page).to have_content "Help with participatory budgets"
 
     within("#information-texts-tabs") { click_link "Debates" }

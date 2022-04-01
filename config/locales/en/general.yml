@@ -115,9 +115,9 @@ en:
       section_header:
         icon_alt: Debates icon
         title: Debates
-        help: Help about debates
+        help: Help with debates
       section_footer:
-        title: Help about debates
+        title: Help with debates
         description: Start a debate to share opinions with others about the topics you are concerned about.
         help_text_1: "The space for citizen debates is aimed at anyone who can expose issues of their concern and those who want to share opinions with other people."
         help_text_2: 'To open a debate you need to sign up on %{org}. Users can also comment on open debates and rate them with the "I agree" or "I disagree" buttons found in each of them.'
@@ -378,9 +378,9 @@ en:
       section_header:
         icon_alt: Proposals icon
         title: Proposals
-        help: Help about proposals
+        help: Help with proposals
       section_footer:
-        title: Help about proposals
+        title: Help with proposals
         description: Citizens' proposals are an opportunity for neighbours and collectives to decide directly how they want their city to be, after getting sufficient support and submitting to a citizens' vote.
     new:
       form:
@@ -610,9 +610,9 @@ en:
       section_header:
         icon_alt: Voting icon
         title: Voting
-        help: Help about voting
+        help: Help with voting
       section_footer:
-        title: Help about voting
+        title: Help with voting
         description: Citizens' polls are a participatory mechanism by which citizens with voting rights can make direct decisions
       no_polls: "There are no open votings."
     show:
