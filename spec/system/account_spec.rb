@@ -199,31 +199,27 @@ describe "Account" do
     scenario "are enabled by default" do
       visit account_path
 
-      expect(page).to have_content("Recommendations")
-      expect(page).to have_content("Show debates recommendations")
-      expect(page).to have_content("Show proposals recommendations")
-      expect(find("#account_recommended_debates")).to be_checked
-      expect(find("#account_recommended_proposals")).to be_checked
+      expect(page).to have_content "Recommendations"
+      expect(page).to have_field "Recommend debates to me", checked: true
+      expect(page).to have_field "Recommend proposals to me", checked: true
     end
 
     scenario "can be disabled through 'My account' page" do
       visit account_path
 
-      expect(page).to have_content("Recommendations")
-      expect(page).to have_content("Show debates recommendations")
-      expect(page).to have_content("Show proposals recommendations")
-      expect(find("#account_recommended_debates")).to be_checked
-      expect(find("#account_recommended_proposals")).to be_checked
+      expect(page).to have_content "Recommendations"
+      expect(page).to have_field "Recommend debates to me", checked: true
+      expect(page).to have_field "Recommend proposals to me", checked: true
 
-      uncheck "account_recommended_debates"
-      uncheck "account_recommended_proposals"
+      uncheck "Recommend debates to me"
+      uncheck "Recommend proposals to me"
 
       click_button "Save changes"
 
       expect(page).to have_content "Changes saved"
 
-      expect(find("#account_recommended_debates")).not_to be_checked
-      expect(find("#account_recommended_proposals")).not_to be_checked
+      expect(page).to have_field "Recommend debates to me", checked: false
+      expect(page).to have_field "Recommend proposals to me", checked: false
 
       visit debates_path
 

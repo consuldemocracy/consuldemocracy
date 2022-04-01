@@ -283,8 +283,8 @@ en:
         phone_number: "Phone number"
         public_activity: "Keep my list of activities public"
         public_interests: "Keep the elements I follow public"
-        recommended_debates: "Show debates recommendations"
-        recommended_proposals: "Show proposals recommendations"
+        recommended_debates: "Recommend debates to me"
+        recommended_proposals: "Recommend proposals to me"
         redeemable_code: "Verification code received via email"
       direct_message:
         title: "Title"

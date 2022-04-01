@@ -102,7 +102,7 @@ en:
       recommendations:
         without_results: There are no debates related to your interests
         without_interests: Follow proposals so we can give you recommendations
-        disable: "Debates recommendations will stop showing if you dismiss them. You can enable them again in 'My account' page"
+        disable: "Recommendations for debates will stop showing if you dismiss them. You can enable them again in 'My account' page"
         actions:
           success: "Recommendations for debates are now disabled for this account"
           error: "An error has occured. Please go to 'My account' page to manually disable recommendations for debates"
@@ -347,7 +347,7 @@ en:
       recommendations:
         without_results: There are not proposals related to your interests
         without_interests: Follow proposals so we can give you recommendations
-        disable: "Proposals recommendations will stop showing if you dismiss them. You can enable them again in 'My account' page"
+        disable: "Recommendations for proposals will stop showing if you dismiss them. You can enable them again in 'My account' page"
         actions:
           success: "Recommendations for proposals are now disabled for this account"
           error: "An error has occured. Please go to 'My account' page to manually disable recommendations for proposals"
