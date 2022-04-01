@@ -6,7 +6,7 @@ section "Creating DEMO homepage widgets" do
                               updated_at: 1.week.ago,
                               columns: 4,
                               label: "",
-                              title: "Vote the participatory budgeting!",
+                              title: "Vote on the participatory budget!",
                               description: "You have 100 million euros to imagine a new city",
                               link_text: "Vote")
 
@@ -23,7 +23,7 @@ section "Creating DEMO homepage widgets" do
                               label: "",
                               title: "Comment the Animal protection ordinance",
                               description: "Give your opinion about the new Regulatory Ordinance of the tenancy and protection of the animals.",
-                              link_text: "Comment the text")
+                              link_text: "Comment on the text")
 
   card.image = Image.create!(imageable: card,
                              title: card.title,
@@ -38,7 +38,7 @@ section "Creating DEMO homepage widgets" do
                               label: "",
                               title: "Decide which should be the new square",
                               description: "This is one of the 10 squares that have been selected for a possible remodeling to improve its use for the population.",
-                              link_text: "Decide the new square")
+                              link_text: "Decide on the new square")
 
   card.image = Image.create!(imageable: card,
                              title: card.title,
