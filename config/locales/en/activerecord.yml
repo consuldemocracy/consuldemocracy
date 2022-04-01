@@ -276,7 +276,7 @@ en:
         email_on_comment: "Notify me by email when someone comments on my contents"
         email_on_comment_reply: "Notify me by email when someone replies to my comments"
         email_on_direct_message: "Receive emails about direct messages"
-        newsletter: "Receive by email website relevant information"
+        newsletter: "Receive relevant information by email"
         official_position: "Official position"
         official_position_badge: "Show official position badge"
         official_level: "Official level"

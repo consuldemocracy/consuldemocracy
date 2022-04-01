@@ -497,7 +497,7 @@ describe "Emails" do
       expect(email).to have_body_text("To unsubscribe from these emails, visit")
       expect(email).to have_body_text(
                         edit_subscriptions_path(token: user_with_newsletter_in_segment_2.subscriptions_token))
-      expect(email).to have_body_text('and uncheck "Receive by email website relevant information"')
+      expect(email).to have_body_text('and uncheck "Receive relevant information by email"')
     end
   end
 

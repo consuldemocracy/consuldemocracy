@@ -10,7 +10,7 @@ describe Subscriptions::EditComponent do
     expect(page).to have_content "Notifications"
     expect(page).to have_field "Notify me by email when someone comments on my contents", type: :checkbox
     expect(page).to have_field "Notify me by email when someone replies to my comments", type: :checkbox
-    expect(page).to have_field "Receive by email website relevant information", type: :checkbox
+    expect(page).to have_field "Receive relevant information by email", type: :checkbox
     expect(page).to have_field "Receive a summary of proposal notifications", type: :checkbox
     expect(page).to have_field "Receive emails about direct messages", type: :checkbox
     expect(page).to have_button "Save changes"
