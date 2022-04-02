@@ -105,6 +105,28 @@ describe "Admin polls", :admin do
     expect(page).to have_current_path(edit_admin_poll_path(poll))
   end
 
+  scenario "Show no edit message" do
+    poll = create(:poll)
+    poll.update_columns starts_at: 1.day.ago
+
+    message_no_edit = "Once the poll has started it will not be possible to edit the start "\
+                      "date. Neither will it be possible to change the closing date to "\
+                      "a non-future date."
+
+    visit admin_polls_path
+    click_link "Create poll"
+
+    within(".callout.warning") do
+      expect(page).to have_content message_no_edit
+    end
+
+    visit edit_admin_poll_path(poll)
+
+    within(".callout.warning") do
+      expect(page).to have_content message_no_edit
+    end
+  end
+
   context "Destroy" do
     scenario "Can destroy poll without questions" do
       poll = create(:poll)

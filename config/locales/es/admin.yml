@@ -1109,6 +1109,7 @@ es:
         alert: "Esta acción eliminará la votación y todas sus preguntas asociadas."
         success_notice: "Votación eliminada correctamente"
         unable_notice: "No se pueden eliminar votaciones con votos"
+      no_edit: "Una vez comenzada la votación no será posible editar la fecha de apertura. Tampoco será posible cambiar la fecha de cierre a una fecha no futura."
     questions:
       index:
         title: "Preguntas de votaciones"
@@ -1152,6 +1153,7 @@ es:
           documents_list: Lista de documentos
           document_title: Título
           document_actions: Acciones
+      no_edit: "Una vez comenzada la votación no será posible crear, editar o eliminar preguntas, respuestas o cualquier contenido asociado a la votación."
     answers:
       new:
         title: Nueva respuesta

@@ -51,6 +51,12 @@ describe "Admin poll questions", :admin do
     question = create(:poll_question, poll: poll)
 
     visit admin_poll_path(poll)
+
+    within(".callout.warning") do
+      expect(page).to have_content "Once poll has started it will not be possible to create, edit or "\
+                                   "delete questions, answers or any content associated with the poll."
+    end
+
     click_link "Edit answers"
 
     expect(page).to have_content(question.title)

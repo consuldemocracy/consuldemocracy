@@ -1110,6 +1110,7 @@ en:
         alert: "This action will remove the poll and all its associated questions."
         success_notice: "Poll deleted successfully"
         unable_notice: "You cannot delete a poll that has votes"
+      no_edit: "Once the poll has started it will not be possible to edit the start date. Neither will it be possible to change the closing date to a non-future date."
     questions:
       index:
         title: "Questions"
@@ -1153,6 +1154,7 @@ en:
           documents_list: Documents list
           document_title: Title
           document_actions: Actions
+      no_edit: "Once poll has started it will not be possible to create, edit or delete questions, answers or any content associated with the poll."
     answers:
       new:
         title: New answer

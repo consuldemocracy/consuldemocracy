@@ -4,6 +4,12 @@
   <%= render "shared/errors", resource: @poll %>
 
   <div class="row">
+    <div class="small-12 column margin-top">
+      <div class="callout warning">
+        <strong><%= t("admin.polls.no_edit") %></strong>
+      </div>
+    </div>
+
     <div class="clear">
       <div class="small-12 medium-6 column">
         <%= f.date_field :starts_at %>
