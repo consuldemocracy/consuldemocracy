@@ -18,6 +18,9 @@ module Mutations
         attributes_hash = attributes.to_hash
         attributes_hash[:translations_attributes].each { |translation| translation[:locale] = user.locale }
 
+        # For some reason old translations aren't deleted
+        debate.translations.where(locale: user.locale).delete_all
+
         debate.update_attributes!(attributes_hash)
         debate
       rescue ActiveRecord::RecordInvalid, ActiveRecord::RecordNotFound => e
