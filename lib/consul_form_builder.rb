@@ -25,7 +25,10 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
     else
       label = tag.span sanitize(label_text(attribute, options[:label])), class: "checkbox"
 
-      super(attribute, options.merge(label: label, label_options: label_options_for(options)))
+      super(attribute, options.merge(
+        label: label,
+        label_options: { class: "checkbox-label" }.merge(label_options_for(options))
+      ))
     end
   end
 
