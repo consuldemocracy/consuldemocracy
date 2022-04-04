@@ -119,12 +119,8 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       click_link "Add image"
       click_on submit_button
 
-      if has_many_images
-        # Pending. Review soon and test
-      else
-        within "#nested-image .image" do
-          expect(page).to have_content("can't be blank", count: 2)
-        end
+      within "#nested-image .image" do
+        expect(page).to have_content("can't be blank", count: 2)
       end
     end
 
