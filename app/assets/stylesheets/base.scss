@@ -695,9 +695,12 @@ body > header,
   }
 }
 
-.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
-  border-top-color: transparent;
-  margin-top: -8px;
+.dropdown.menu > li {
+
+  &.is-dropdown-submenu-parent > a::after {
+    border-top-color: transparent;
+    margin-top: -8px;
+  }
 }
 
 .top-bar {
@@ -1270,7 +1273,7 @@ footer {
       }
 
       &:hover {
-       color: $white;
+        color: $white;
 
         &::after {
           border-left-color: $dark;
@@ -3230,7 +3233,6 @@ footer {
 
       &.current-phase {
         background: $brand-secondary;
-        background: red;
         color: #fff;
 
         &::after {
