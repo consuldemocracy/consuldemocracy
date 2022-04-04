@@ -49,6 +49,10 @@ Rails.application.routes.draw do
   get "help/how-to-use",  to: "pages#show", id: "help/how_to_use/index",  as: "how_to_use"
   get "help/faq",         to: "pages#show", id: "faq",                    as: "faq"
 
+  # Custom pages
+  get "preguntas-frecuentes", to: "pages#show", id: "preguntas_frecuentes", as: "preguntas_frecuentes"
+  get "zonas", to: "pages#show", id: "zonas", as: "zonas"
+
   # Static pages
   resources :pages, path: "/", only: [:show]
 end

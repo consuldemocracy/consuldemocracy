@@ -245,6 +245,8 @@ es:
           zero: "No tienes notificaciones nuevas"
         notifications: Notificaciones
       sdg: "ODS"
+      budgets_faq: "Preguntas frecuentes"
+      zones: "Qué zona me corresponde"
   notifications:
     index:
       empty_notifications: No tienes notificaciones nuevas.
