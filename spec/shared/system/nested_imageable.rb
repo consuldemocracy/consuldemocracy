@@ -186,12 +186,8 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       click_on submit_button
       imageable_redirected_to_resource_show_or_navigate_to(imageable)
 
-      if has_many_images
-        # Pending. Review soon and test
-      else
-        expect(page).to have_selector "figure img"
-        expect(page).to have_selector "figure figcaption" if show_caption_for?(imageable_factory_name)
-      end
+      expect(page).to have_selector "figure img"
+      expect(page).to have_selector "figure figcaption" if show_caption_for?(imageable_factory_name)
     end
 
     scenario "Different URLs for different images" do
