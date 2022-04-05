@@ -13,18 +13,6 @@ ActsAsVotable::Vote.class_eval do
           Comment.public_for_api.pluck(:id))
   end
 
-  def self.for_debates(debates)
-    where(votable_type: "Debate", votable_id: debates)
-  end
-
-  def self.for_proposals(proposals)
-    where(votable_type: "Proposal", votable_id: proposals)
-  end
-
-  def self.for_legislation_proposals(proposals)
-    where(votable_type: "Legislation::Proposal", votable_id: proposals)
-  end
-
   def self.for_budget_investments(budget_investments = Budget::Investment.all)
     where(votable_type: "Budget::Investment", votable_id: budget_investments)
   end
