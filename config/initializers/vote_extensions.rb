@@ -13,10 +13,6 @@ ActsAsVotable::Vote.class_eval do
           Comment.public_for_api.pluck(:id))
   end
 
-  def self.for_budget_investments(budget_investments = Budget::Investment.all)
-    where(votable_type: "Budget::Investment", votable_id: budget_investments)
-  end
-
   def value
     vote_flag
   end
