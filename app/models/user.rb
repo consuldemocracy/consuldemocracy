@@ -368,15 +368,15 @@ class User < ApplicationRecord
   delegate :can?, :cannot?, to: :ability
 
   def public_proposals
-    public_activity? ? proposals : User.none
+    public_activity? ? proposals : proposals.none
   end
 
   def public_debates
-    public_activity? ? debates : User.none
+    public_activity? ? debates : debates.none
   end
 
   def public_comments
-    public_activity? ? comments : User.none
+    public_activity? ? comments : comments.none
   end
 
   # overwritting of Devise method to allow login using email OR username
