@@ -1,8 +1,4 @@
 module Documents
-  def do_login_for(user)
-    common_do_login_for(user, management: management)
-  end
-
   def documentable_redirected_to_resource_show_or_navigate_to
     find("a", text: "Not now, go to my proposal")
     click_on "Not now, go to my proposal"

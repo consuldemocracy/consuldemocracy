@@ -1,8 +1,4 @@
 module Maps
-  def do_login_for(user)
-    common_do_login_for(user, management: management)
-  end
-
   def fill_in_proposal_form
     fill_in_new_proposal_title with: "Help refugees"
     fill_in "Proposal summary", with: "In summary, what we want is..."

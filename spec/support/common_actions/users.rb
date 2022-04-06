@@ -82,6 +82,10 @@ module Users
     expect(find(".top-bar-right")).not_to have_content "My account"
   end
 
+  def do_login_for(user)
+    common_do_login_for(user, management: management)
+  end
+
   def common_do_login_for(user, management:)
     if management
       login_managed_user(user)

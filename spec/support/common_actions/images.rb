@@ -1,8 +1,4 @@
 module Images
-  def do_login_for(user)
-    common_do_login_for(user, management: management)
-  end
-
   def imageable_redirected_to_resource_show_or_navigate_to
     case imageable.class.to_s
     when "Budget"
