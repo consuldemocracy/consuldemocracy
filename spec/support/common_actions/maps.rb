@@ -13,7 +13,7 @@ module Maps
     end
   end
 
-  def validate_latitude_longitude(mappable_factory_name)
+  def validate_latitude_longitude(mappable, mappable_factory_name)
     latitude_attribute = "##{mappable_factory_name}_map_location_attributes_latitude"
     longitude_attribute = "##{mappable_factory_name}_map_location_attributes_longitude"
     expect(find(latitude_attribute, visible: false).value).to eq "51.48"

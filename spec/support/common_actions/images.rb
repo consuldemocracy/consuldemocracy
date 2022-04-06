@@ -1,5 +1,5 @@
 module Images
-  def imageable_redirected_to_resource_show_or_navigate_to
+  def imageable_redirected_to_resource_show_or_navigate_to(imageable)
     case imageable.class.to_s
     when "Budget"
       visit edit_admin_budget_path(Budget.last)

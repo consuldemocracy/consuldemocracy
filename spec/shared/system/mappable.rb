@@ -13,7 +13,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
     before { set_arguments(arguments, mappable, mappable_path_arguments) }
 
     scenario "Should not show marker by default on create #{mappable_factory_name}" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(mappable_new_path, arguments)
 
       send("fill_in_#{mappable_factory_name}_form")
@@ -24,7 +24,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
     end
 
     scenario "Should show marker on create #{mappable_factory_name} when click on map" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(mappable_new_path, arguments)
 
       send("fill_in_#{mappable_factory_name}_form")
@@ -36,7 +36,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
     end
 
     scenario "Should create #{mappable_factory_name} with map" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(mappable_new_path, arguments)
 
       send("fill_in_#{mappable_factory_name}_form")
@@ -49,7 +49,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
     end
 
     scenario "Can not display map on #{mappable_factory_name} when not fill marker on map" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(mappable_new_path, arguments)
 
       send("fill_in_#{mappable_factory_name}_form")
@@ -61,7 +61,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
     scenario "Can not display map on #{mappable_factory_name} when feature.map is disabled" do
       Setting["feature.map"] = false
-      do_login_for user
+      do_login_for user, management: management
       visit send(mappable_new_path, arguments)
 
       send("fill_in_#{mappable_factory_name}_form")
@@ -75,7 +75,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       before { Setting["org_name"] = "CONSUL" }
 
       scenario "map should not be duplicated" do
-        do_login_for user
+        do_login_for user, management: management
         visit send(mappable_new_path, arguments)
 
         if management
@@ -96,7 +96,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       end
 
       scenario "keeps marker and zoom defined by the user" do
-        do_login_for user
+        do_login_for user, management: management
         visit send(mappable_new_path, arguments)
 
         within ".map_location" do
@@ -130,7 +130,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       end
 
       scenario "shows marker at map center" do
-        do_login_for user
+        do_login_for user, management: management
         visit send(mappable_new_path, arguments)
 
         within ".map_location" do
@@ -163,7 +163,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
     end
 
     scenario "Skip map" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(mappable_new_path, arguments)
 
       send("fill_in_#{mappable_factory_name}_form")
@@ -177,16 +177,16 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
     before { skip } if mappable_edit_path.blank?
 
     scenario "Should edit map on #{mappable_factory_name} and contain default values" do
-      do_login_for mappable.author
+      do_login_for mappable.author, management: management
 
       visit send(mappable_edit_path, id: mappable.id)
 
       expect(page).to have_content "Navigate the map to the location and place the marker."
-      validate_latitude_longitude(mappable_factory_name)
+      validate_latitude_longitude(mappable, mappable_factory_name)
     end
 
     scenario "Should edit default values from map on #{mappable_factory_name} edit page" do
-      do_login_for mappable.author
+      do_login_for mappable.author, management: management
 
       visit send(mappable_edit_path, id: mappable.id)
       find(".map_location").click
@@ -199,7 +199,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
     end
 
     scenario "Should edit mappable on #{mappable_factory_name} without change map" do
-      do_login_for mappable.author
+      do_login_for mappable.author, management: management
 
       visit send(mappable_edit_path, id: mappable.id)
       fill_in "#{mappable_factory_name.camelize} title", with: "New title"
@@ -212,7 +212,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
     end
 
     scenario "Can not display map on #{mappable_factory_name} edit when remove map marker" do
-      do_login_for mappable.author
+      do_login_for mappable.author, management: management
 
       visit send(mappable_edit_path, id: mappable.id)
       click_link "Remove map marker"
@@ -223,7 +223,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
     scenario "Can not display map on #{mappable_factory_name} edit when feature.map is disabled" do
       Setting["feature.map"] = false
-      do_login_for mappable.author
+      do_login_for mappable.author, management: management
 
       visit send(mappable_edit_path, id: mappable.id)
       fill_in "#{mappable_factory_name.camelize} title", with: "New title"
@@ -234,7 +234,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
     scenario "No errors on update" do
       skip ""
-      do_login_for mappable.author
+      do_login_for mappable.author, management: management
 
       visit send(mappable_edit_path, id: mappable.id)
       click_link "Remove map marker"
@@ -244,7 +244,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
     end
 
     scenario "No need to skip map on update" do
-      do_login_for mappable.author
+      do_login_for mappable.author, management: management
 
       visit send(mappable_edit_path, id: mappable.id)
       click_link "Remove map marker"
@@ -262,7 +262,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
     scenario "Should display map and marker on #{mappable_factory_name} show page" do
       arguments[:id] = mappable.id
 
-      do_login_for(user) if management
+      do_login_for user, management: management if management
       visit send(mappable_show_path, arguments)
 
       within ".map_location" do
@@ -275,7 +275,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       set_arguments(arguments, mappable_without_map, mappable_path_arguments)
       arguments[:id] = mappable_without_map.id
 
-      do_login_for(user) if management
+      do_login_for user, management: management if management
       visit send(mappable_show_path, arguments)
 
       expect(page).not_to have_css(".map_location")
@@ -285,7 +285,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       Setting["feature.map"] = false
       arguments[:id] = mappable.id
 
-      do_login_for(user) if management
+      do_login_for user, management: management if management
       visit send(mappable_show_path, arguments)
 
       expect(page).not_to have_css(".map_location")

@@ -18,14 +18,14 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
   describe "at #{path}" do
     scenario "Should show new image link when imageable has not an associated image defined" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
 
       expect(page).to have_selector "#new_image_link"
     end
 
     scenario "Should hide new image link after adding one image" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
 
       click_on "Add image"
@@ -34,7 +34,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
     end
 
     scenario "Should update nested image file name after choosing any file" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
 
       click_link "Add image"
@@ -44,7 +44,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
     end
 
     scenario "Should update nested image file title with file name after choosing a file when no title defined" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
 
       imageable_attach_new_file(file_fixture("clippy.jpg"))
@@ -53,7 +53,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
     end
 
     scenario "Should not update nested image file title with file name after choosing a file when title already defined" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
 
       click_link "Add image"
@@ -69,7 +69,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
     end
 
     scenario "Should update loading bar style after valid file upload" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
 
       imageable_attach_new_file(file_fixture("clippy.jpg"))
@@ -78,7 +78,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
     end
 
     scenario "Should update loading bar style after invalid file upload" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
 
       imageable_attach_new_file(file_fixture("logo_header.png"), false)
@@ -87,7 +87,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
     end
 
     scenario "Should update image cached_attachment field after valid file upload" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
 
       click_link "Add image"
@@ -102,7 +102,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
     end
 
     scenario "Should not update image cached_attachment field after invalid file upload" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
 
       imageable_attach_new_file(file_fixture("logo_header.png"), false)
@@ -113,7 +113,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
     end
 
     scenario "Should show nested image errors after invalid form submit" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
 
       click_link "Add image"
@@ -130,7 +130,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
     scenario "Render image preview after sending the form with validation errors" do
       skip "Question answers behave differently" if imageable.is_a?(Poll::Question::Answer)
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
 
       imageable_attach_new_file(file_fixture("clippy.jpg"))
@@ -142,7 +142,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
     end
 
     scenario "Should remove nested image after valid file upload and click on remove button" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
 
       imageable_attach_new_file(file_fixture("clippy.jpg"))
@@ -158,7 +158,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       if has_many_images
         skip "no need to test, there are no attributes for the parent resource"
       else
-        do_login_for user
+        do_login_for user, management: management
         visit send(path, arguments)
 
         send(fill_resource_method_name) if fill_resource_method_name
@@ -168,7 +168,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
     end
 
     scenario "Should show successful notice when resource filled correctly and after valid file uploads" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
       send(fill_resource_method_name) if fill_resource_method_name
 
@@ -182,7 +182,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
     end
 
     scenario "Should show new image after successful creation with one uploaded file" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
       send(fill_resource_method_name) if fill_resource_method_name
 
@@ -191,7 +191,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       expect(page).to have_selector ".loading-bar.complete"
 
       click_on submit_button
-      imageable_redirected_to_resource_show_or_navigate_to
+      imageable_redirected_to_resource_show_or_navigate_to(imageable)
 
       if has_many_images
         # Pending. Review soon and test
@@ -202,7 +202,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
     end
 
     scenario "Different URLs for different images" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
 
       imageable_attach_new_file(file_fixture("clippy.jpg"))
@@ -220,7 +220,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
     if path.include? "edit"
       scenario "show persisted image" do
         create(:image, imageable: imageable)
-        do_login_for user
+        do_login_for user, management: management
 
         visit send(path, arguments)
 
@@ -230,7 +230,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
       scenario "remove nested field after removing the image" do
         create(:image, imageable: imageable)
-        do_login_for user
+        do_login_for user, management: management
 
         visit send(path, arguments)
         click_link "Remove image"
@@ -241,7 +241,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
       scenario "don't duplicate fields after removing and adding an image" do
         create(:image, imageable: imageable)
-        do_login_for user
+        do_login_for user, management: management
 
         visit send(path, arguments)
         click_link "Remove image"
