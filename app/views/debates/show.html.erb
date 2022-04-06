@@ -26,7 +26,7 @@
           <%= link_to t("debates.show.comments", count: @debate.comments_count), "#comments" %>
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <span class="js-flag-actions">
-            <%= render "debates/flag_actions", debate: @debate %>
+            <%= render "shared/flag_actions", flaggable: @debate %>
           </span>
         </div>
 
@@ -61,8 +61,7 @@
           title: @debate.title,
           url: debate_url(@debate),
           description: @debate.title,
-          mobile: @debate.title
-        %>
+          mobile: @debate.title %>
       </aside>
     </div>
   </div>

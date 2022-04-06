@@ -5,10 +5,7 @@ es:
       erase_account_link: Darme de baja
       finish_verification: Finalizar verificación
       notifications: Notificaciones
-      organization_name_label: Nombre de la organización
-      organization_responsible_name_placeholder: Representante de la asociación/colectivo
       personal: Datos personales
-      phone_number_label: Teléfono
       public_interests_my_title_list: Etiquetas de los elementos que sigues
       public_interests_user_title_list: Etiquetas de los elementos que sigue este usuario
       save_changes_submit: Guardar cambios
@@ -19,16 +16,18 @@ es:
       user_permission_proposal: Crear nuevas propuestas
       user_permission_support_proposal: Apoyar propuestas*
       user_permission_title: Participación
-      user_permission_verify: Para poder realizar todas las acciones, verifica tu cuenta.
+      user_permission_verify: Para poder realizar todas las acciones, verifica tu cuenta. Si no te permite verificar la cuenta y consideras que esto es un error, escribe a transparenciayparticipacion@dipvalladolid.es 
       user_permission_verify_info: "* Sólo usuarios empadronados."
       user_permission_votes: Participar en las votaciones finales*
-      username_label: Nombre de usuario
       verified_account: Cuenta verificada
       verify_my_account: Verificar mi cuenta
   application:
     close: Cerrar
     menu: Menú
   comments:
+    actions:
+      confirm_delete: "¿Estás seguro/a? Esta acción borrará este comentario. No puedes deshacer esta acción."
+      delete: "Borrar comentario"
     comments_closed: Los comentarios están cerrados
     verified_only: Para participar %{verify_account}
     comment:
@@ -62,7 +61,6 @@ es:
       newest: Más nuevos primero
       oldest: Más antiguos primero
       most_commented: Más comentados
-    select_order: Ordenar por
     show:
       return_to_commentable: "Volver a "
   comments_helper:
@@ -90,7 +88,6 @@ es:
         submit_button: Guardar cambios
       show_link: Ver debate
     form:
-      debate_title: Título del debate
       tags_instructions: Etiqueta este debate.
       tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
     index:
@@ -116,7 +113,6 @@ es:
       search_results:
         one: " que contiene <strong>'%{search_term}'</strong>"
         other: " que contienen <strong>'%{search_term}'</strong>"
-      select_order: Ordenar por
       start_debate: Empieza un debate
       title: Debates
       section_header:
@@ -131,9 +127,7 @@ es:
     new:
       form:
         submit_button: Empieza un debate
-      info: Si lo que quieres es hacer una propuesta, esta es la sección incorrecta, entra en %{info_link}.
-      info_link: crear nueva propuesta
-      more_info: Más información
+      more_info: "¿Cómo funcionan los debates?"
       recommendation_four: Disfruta de este espacio, de las voces que lo llenan, también es tuyo.
       recommendation_one: No escribas el título del debate o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
       recommendation_three: Las críticas despiadadas son muy bienvenidas. Este es un espacio de pensamiento. Pero te recomendamos conservar la elegancia y la inteligencia. El mundo es mejor con ellas presentes.
@@ -190,6 +184,7 @@ es:
     local_census_records/import: la importación de registros del censo local
     site_customization/content_block: el bloque
     site_customization/page: la página
+    sdg/local_target: la meta localizada
   geozones:
     none: Toda la ciudad
   layouts:
@@ -229,11 +224,9 @@ es:
     header:
       administration_menu: Menú
       administration: Administración
-      available_locales: Idiomas disponibles
       collaborative_legislation: Legislación colaborativa
       debates: Debates
       locale: "Idioma:"
-      logo: Logo de CONSUL
       management: Gestión
       moderation: Moderar
       valuation: Evaluación
@@ -241,8 +234,7 @@ es:
       help: Ayuda
       my_account_link: Mi cuenta
       my_activity_link: Mi contenido
-      open: abierto
-      open_gov: Gobierno %{open}
+      open_gov: Gobierno abierto
       proposals: Propuestas
       poll_questions: Votaciones
       budgets: Presupuestos participativos
@@ -250,10 +242,11 @@ es:
         new_notifications:
           one: Tienes una nueva notificación
           other: Tienes %{count} notificaciones nuevas
+          zero: "No tienes notificaciones nuevas"
         notifications: Notificaciones
-        no_notifications: "No tienes notificaciones nuevas"
-    admin:
-      watch_form_message: "Has realizado cambios que no han sido guardados. ¿Seguro que quieres abandonar la página?"
+      sdg: "ODS"
+      budgets_faq: "Preguntas frecuentes"
+      zones: "Qué zona me corresponde"
   notifications:
     index:
       empty_notifications: No tienes notificaciones nuevas.
@@ -299,8 +292,9 @@ es:
       sign_in: Entra con Twitter
       sign_up: Regístrate con Twitter
       name: Twitter
-    info_sign_in: "Entra con:"
-    info_sign_up: "Regístrate con:"
+    info:
+      sign_in: "Entra con:"
+      sign_up: "Regístrate con:"
     or_fill: "O rellena el siguiente formulario:"
   proposals:
     create:
@@ -345,7 +339,6 @@ es:
       map_location: "Ubicación en el mapa"
       map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
       map_remove_marker: "Eliminar el marcador"
-      map_skip_checkbox: "Esta propuesta no tiene una ubicación concreta o no la conozco."
     index:
       featured_proposals: Destacadas
       orders:
@@ -383,7 +376,6 @@ es:
       search_results:
         one: " que contiene <strong>'%{search_term}'</strong>"
         other: " que contienen <strong>'%{search_term}'</strong>"
-      select_order: Ordenar por
       select_order_long: "Estas viendo las propuestas"
       start_proposal: Crea una propuesta
       title: Propuestas ciudadanas
@@ -533,7 +525,7 @@ es:
       comments: Comentarios
       latest_comments: Últimos mensajes
     messages:
-      send_notification: Enviar mensaje a los que siguen la propuesta
+      send_notification: Enviar notificación a los que siguen la propuesta
       previous_notifications: Ver notificaciones anteriores
     polls:
       index:
@@ -668,22 +660,21 @@ es:
       voted: "Has votado %{answer}"
   proposal_notifications:
     new:
-      title: "Enviar mensaje"
-      submit_button: "Enviar mensaje"
-      info_about_receivers: "Este mensaje se enviará a <strong>%{count} usuarios</strong> y se publicará en %{proposal_page}.<br> El mensaje no se enviará inmediatamente, los usuarios recibirán periódicamente un email con todas las notificaciones de propuestas."
+      title: "Enviar notificación"
+      submit_button: "Enviar notificación"
+      info_about_receivers: "Esta notificación se enviará a <strong>%{count} usuarios</strong> y se publicará en %{proposal_page}.<br> Las notificaciones no se enviarán inmediatamente, los usuarios recibirán periódicamente un email con todas las notificaciones de propuestas."
       proposal_page: "la página de la propuesta"
     show:
       back: "Volver a mi contenido"
   shared:
     edit: "Editar"
+    filter: "Filtrar"
     save: "Guardar"
     delete: "Borrar"
-    "yes": "Si"
+    "yes": "Sí"
     "no": "No"
     search_results: "Resultados de la búsqueda"
     advanced_search:
-      author_type: "Por categoría de autor"
-      author_type_blank: "Elige una categoría"
       date: "Por fecha"
       date_placeholder: "DD/MM/AAAA"
       date_range_blank: "Elige una fecha"
@@ -694,8 +685,11 @@ es:
       date_5: "Personalizada"
       from: "Desde"
       general: "Con el texto"
-      general_placeholder: "Escribe el texto"
+      goal: "Por ODS"
+      goal_blank: "Elige un objetivo"
       search: "Filtrar"
+      target: "Por meta"
+      target_blank: "Elige una meta"
       title: "Búsqueda avanzada"
       to: "Hasta"
     author_info:
@@ -777,11 +771,12 @@ es:
         zero: "0 idiomas en uso"
         one: "1 idioma en uso"
         other: "%{count} idiomas en uso"
+    optional: "Campos opcionales"
+    required: "Campos obligatorios"
   social:
     facebook: "Facebook de %{org}"
     twitter: "Twitter de %{org}"
     youtube: "YouTube de %{org}"
-    whatsapp: WhatsApp
     telegram: "Telegram de %{org}"
     instagram: "Instagram de %{org}"
   stats:
@@ -876,9 +871,14 @@ es:
         debates: "Debates más activos"
         proposals: "Propuestas más activas"
         processes: "Procesos abiertos"
-      see_all_debates: Ver todos los debates
-      see_all_proposals: Ver todas las propuestas
-      see_all_processes: Ver todos los procesos
+      see_all:
+        debates: Ver todos los debates
+        proposals: Ver todas las propuestas
+        processes: Ver todos los procesos
+      no_items:
+        debates: Ahora mismo no hay debates
+        proposals: Ahora mismo no hay propuestas
+        processes: Ahora mismo no hay procesos abiertos
       process_label: Proceso
       see_process: Ver proceso
     cards:
@@ -908,7 +908,7 @@ es:
       user_permission_info: Con tu cuenta ya puedes...
       user_permission_proposal: Crear nuevas propuestas
       user_permission_support_proposal: Apoyar propuestas*
-      user_permission_verify: "Para poder realizar las siguientes acciones, verifica tu cuenta."
+      user_permission_verify: "Para poder realizar las siguientes acciones, verifica tu cuenta. Si no te permite verificar la cuenta y consideras que esto es un error, escribe a transparenciayparticipacion@dipvalladolid.es"
       user_permission_verify_info: "* Sólo usuarios empadronados."
       user_permission_verify_my_account: Verificar mi cuenta
       user_permission_votes: Participar en las votaciones finales*
@@ -923,6 +923,7 @@ es:
     help: "Puedes introducir cualquier enlace de %{models} que esté dentro de %{org}."
     submit: "Añadir"
     error: "Enlace no válido. Recuerda que debe empezar por %{url}."
+    error_duplicate: "El contenido relacionado que estás añadiendo ya existe."
     error_itself: "Enlace no válido. No se puede relacionar un contenido consigo mismo."
     success: "Has añadido un nuevo contenido relacionado"
     is_related: "¿Es contenido relacionado?"
@@ -948,9 +949,6 @@ es:
       title: Enlaces
       note: Añade los enlaces que sean de interés.
       add_new_link: Añadir nuevo enlace
-    link_fields:
-      label_placeholder: Título del enlace
-      url_placeholder: Dirección del enlace
   communities:
     show:
       surveys: Encuestas
@@ -965,3 +963,12 @@ es:
     create:
       enqueue_remote_translation: Se han solicitado correctamente las traducciones.
     button: Traducir página
+  tags:
+    list:
+      filter:
+        more:
+          one: "Una etiqueta más"
+          other: "%{count} etiquetas más"
+  machine_learning:
+    comments_summary: "Resumen de comentarios"
+    info_text: "Contenido generado mediante IA / Machine Learning"

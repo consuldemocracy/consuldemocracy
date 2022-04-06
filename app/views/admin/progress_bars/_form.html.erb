@@ -1,6 +1,6 @@
 <%= render "shared/globalize_locales", resource: @progress_bar %>
 
-<%= translatable_form_for [:admin, *resource_hierarchy_for(@progress_bar)] do |f| %>
+<%= translatable_form_for @progress_bar, url: admin_polymorphic_path(@progress_bar) do |f| %>
 
   <div class="row">
     <div class="small-12 medium-6 column">

@@ -10,7 +10,7 @@
 
 Aplicación de Participación Ciudadana y Gobierno Abierto
 
-[![Build Status](https://travis-ci.org/consul/consul.svg?branch=master)](https://travis-ci.org/consul/consul)
+![Estado de los tests](https://github.com/consul/consul/workflows/tests/badge.svg)
 [![Code Climate](https://codeclimate.com/github/consul/consul/badges/gpa.svg)](https://codeclimate.com/github/consul/consul)
 [![Coverage Status](https://coveralls.io/repos/github/consul/consul/badge.svg?branch=master)](https://coveralls.io/github/consul/consul?branch=master)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/consul/localized.svg)](https://crowdin.com/project/consul)
@@ -20,7 +20,7 @@ Aplicación de Participación Ciudadana y Gobierno Abierto
 [![A11y issues checked with Rocket Validator](https://rocketvalidator.com/badges/checked_with_rocket_validator.svg?url=https://rocketvalidator.com)](https://rocketvalidator.com/opensource)
 
 [![Join the chat at https://gitter.im/consul/consul](https://badges.gitter.im/consul/consul.svg)](https://gitter.im/consul/consul?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Help wanted](https://img.shields.io/badge/help-wanted-brightgreen.svg?style=flat-square)](https://github.com/consul/consul/issues?q=is%3Aissue+is%3Aopen+label%3A"help+wanted")
+[![Help wanted](https://img.shields.io/badge/help-wanted-brightgreen.svg?style=flat-square)](https://github.com/consul/consul/issues?q=is%3Aopen+label%3A"help+wanted")
 
 Este es el repositorio de código abierto de la Aplicación de Participación Ciudadana CONSUL, creada originariamente por el Ayuntamiento de Madrid.
 
@@ -36,7 +36,7 @@ Puedes acceder a la página principal del proyecto en [http://consulproject.org]
 
 **NOTA**: para unas instrucciones más detalladas consulta la [documentación](https://docs.consulproject.org)
 
-Prerequisitos: tener instalado git, Ruby 2.4.9, la gema `bundler`, Node.js y PostgreSQL (9.4 o superior).
+Prerequisitos: tener instalado git, Ruby 2.7.4, CMake, pkg-config, shared-mime-info, Node.js y PostgreSQL (9.5 o superior).
 
 ```bash
 git clone https://github.com/consul/consul.git
@@ -55,8 +55,6 @@ Para ejecutar la aplicación en local:
 ```
 bin/rails s
 ```
-
-Prerequisitos para los tests: tener instalado ChromeDriver >= 2.33
 
 Para ejecutar los tests:
 

@@ -1,0 +1,17 @@
+oc:
+  sdg_management:
+    homepage:
+      header:
+        create: "Crèa entèsta"
+        title: "Entèsta"
+    menu:
+      budget_investments: "de Budgèts participatius"
+      debates: "Debats"
+      polls: "votacions"
+      proposals: "De proposicions ciutadanas"
+    relations:
+      index:
+        filter: "Filtrar"
+        filters:
+          all: "totes"
+          pending_sdg_review: "Sens decidir"

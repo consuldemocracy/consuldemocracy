@@ -1,0 +1,51 @@
+<%= header do %>
+  <button data-open="heading_mode"><%= t("admin.budgets.index.new_link") %></button>
+<% end %>
+
+<%= render Admin::Budgets::HeadingModeComponent.new %>
+<%= render Admin::Budgets::HelpComponent.new("budgets") %>
+<%= render "shared/filter_subnav", i18n_namespace: "admin.budgets.index" %>
+
+<% if budgets.any? %>
+  <h3><%= page_entries_info budgets %></h3>
+
+  <table class="budgets-table">
+    <thead>
+      <tr>
+        <th><%= t("admin.budgets.index.table_name") %></th>
+        <th><%= t("admin.budgets.index.table_phase") %></th>
+        <th><%= t("admin.budgets.index.table_budget_type") %></th>
+        <th><%= t("admin.budgets.index.table_duration") %></th>
+        <th><%= t("admin.actions.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% budgets.each do |budget| %>
+        <tr id="<%= dom_id(budget) %>" class="budget">
+          <td class="<%= status_html_class(budget) %>">
+            <%= status_text(budget) %>
+            <strong><%= budget.name %></strong>
+          </td>
+          <td>
+            <%= budget.current_phase.name %>
+            <small><%= phase_progress_text(budget) %></small>
+          </td>
+          <td><%= type(budget) %></td>
+          <td>
+            <%= dates(budget) %>
+            <%= duration(budget) %>
+          </td>
+          <td>
+            <%= render Admin::Budgets::TableActionsComponent.new(budget) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate budgets %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.budgets.index.no_budgets") %>
+  </div>
+<% end %>

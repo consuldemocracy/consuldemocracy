@@ -2,7 +2,6 @@ pt-BR:
   devise_views:
     confirmations:
       new:
-        email_label: Email
         submit: Reenviar instruções
         title: Reenviar instruções de confirmação
       show:
@@ -39,12 +38,7 @@ pt-BR:
     organizations:
       registrations:
         new:
-          email_label: Email
-          organization_name_label: Nome da organização
           password_confirmation_label: Confirmar senha
-          password_label: Senha
-          phone_number_label: Números de telefone
-          responsible_name_label: Nome completo da pessoa responsável pelo coletivo
           responsible_name_note: Esta seria a pessoa que representa a associação/coletivo em nome de quem as propostas são apresentadas
           submit: Registre-se
           title: Registar-se como uma organização ou coletivo
@@ -62,13 +56,10 @@ pt-BR:
         password_label: Nova senha
         title: Altere sua senha
       new:
-        email_label: Email
         send_submit: Enviar instruções
         title: Senha esquecida?
     sessions:
       new:
-        login_label: E-mail ou nome de usuário
-        password_label: Senha
         remember_me: Lembre-se de mim
         submit: Entrar
         title: Iniciar sessão
@@ -106,12 +97,9 @@ pt-BR:
           waiting_for: "Aguardando confirmação de:"
         new:
           cancel: Cancelar o login
-          email_label: Email
           organization_signup: Você representa uma organização ou coletivo? %{signup_link}
           organization_signup_link: Inscreva-se aqui
           password_confirmation_label: Confirmar senha
-          password_label: Senha
-          redeemable_code: Código de verificação recebido via e-mail (opcional)
           submit: Registre-se
           terms: Ao registrar-se você aceita os%{terms}
           terms_link: termos e condições de uso
@@ -119,7 +107,6 @@ pt-BR:
           title: Registre-se
           username_is_available: Nome de usuário disponível
           username_is_not_available: Nome de usuário já está em uso
-          username_label: Nome de usuário
           username_note: Nome que aparece junto a seus posts
         success:
           back_to_index: Eu entendo; voltar à página principal

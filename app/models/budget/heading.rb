@@ -22,6 +22,7 @@ class Budget
     end
 
     belongs_to :group
+    belongs_to :geozone
 
     has_many :investments
     has_many :content_blocks
@@ -35,6 +36,7 @@ class Budget
               format: /\A(-|\+)?([1-8]?\d(?:\.\d{1,})?|90(?:\.0{1,6})?)\z/
     validates :longitude, length: { maximum: 22 }, allow_blank: true, \
               format: /\A(-|\+)?((?:1[0-7]|[1-9])?\d(?:\.\d{1,})?|180(?:\.0{1,})?)\z/
+    validates :max_ballot_lines, numericality: { greater_than_or_equal_to: 1 }
 
     delegate :budget, :budget_id, to: :group, allow_nil: true
 
@@ -47,7 +49,7 @@ class Budget
     end
 
     def name_scoped_by_group
-      group.single_heading_group? ? name : "#{group.name}: #{name}"
+      budget.single_group? ? name : "#{group.name}: #{name}"
     end
 
     def can_be_deleted?

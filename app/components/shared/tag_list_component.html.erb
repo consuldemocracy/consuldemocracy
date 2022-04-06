@@ -1,0 +1,5 @@
+<% if machine_learning? %>
+  <%= render MachineLearning::InfoComponent.new %>
+<% end %>
+
+<%= link_list(*links, class: "tags", id: "tags_#{dom_id(taggable)}") %>

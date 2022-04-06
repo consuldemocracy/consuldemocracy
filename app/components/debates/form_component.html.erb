@@ -1,0 +1,55 @@
+<%= translatable_form_for(debate, html: { class: "debate-form" }) do |f| %>
+  <%= render "shared/errors", resource: debate %>
+
+  <fieldset class="required-fields">
+    <legend><%= t("shared.required") %></legend>
+
+    <%= render "shared/globalize_locales", resource: debate %>
+
+    <%= f.translatable_fields do |translations_form| %>
+      <div>
+        <%= translations_form.text_field :title,
+              maxlength: Debate.title_max_length,
+              data: suggest_data(debate) %>
+      </div>
+      <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
+
+      <div>
+        <%= translations_form.text_area :description,
+              maxlength: Debate.description_max_length,
+              class: "html-area" %>
+      </div>
+    <% end %>
+  </fieldset>
+
+  <%= f.invisible_captcha :subtitle %>
+
+  <fieldset>
+    <legend><%= t("shared.optional") %></legend>
+
+    <div>
+      <%= f.text_field :tag_list, value: debate.tag_list.to_s,
+                        hint: t("debates.form.tags_instructions"),
+                        placeholder: t("debates.form.tags_placeholder"),
+                        data: { js_url: suggest_tags_path },
+                        class: "tag-autocomplete" %>
+    </div>
+
+    <%= render SDG::RelatedListSelectorComponent.new(f) %>
+  </fieldset>
+
+  <div class="actions">
+    <% if debate.new_record? %>
+      <div>
+        <%= f.check_box :terms_of_service,
+          title: t("form.accept_terms_title"),
+          label: t("form.accept_terms",
+                   policy: link_to(t("form.policy"), "/privacy", target: "blank"),
+                   conditions: link_to(t("form.conditions"), "/conditions", target: "blank")
+                  ) %>
+      </div>
+    <% end %>
+
+    <%= f.submit(class: "button", value: t("debates.#{action_name}.form.submit_button")) %>
+  </div>
+<% end %>

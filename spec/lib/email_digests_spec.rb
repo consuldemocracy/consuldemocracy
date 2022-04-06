@@ -56,6 +56,7 @@ describe EmailDigest do
     let(:user) { create(:user) }
 
     it "delivers email if notifications pending" do
+      Setting["org_name"] = "CONSUL"
       create(:notification, :for_proposal_notification, user: user)
 
       reset_mailer

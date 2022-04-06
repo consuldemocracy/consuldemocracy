@@ -1,0 +1,10 @@
+<% if already_has_role? %>
+  <%= render Admin::TableActionsComponent.new(record,
+    actions: actions,
+    destroy_options: { class: "destroy-role-link" }
+  ) %>
+<% else %>
+  <%= render Admin::TableActionsComponent.new(record, actions: []) do |actions| %>
+    <%= actions.action(:create_role, text: add_user_text, path: add_user_path, method: :post) %>
+  <% end %>
+<% end %>

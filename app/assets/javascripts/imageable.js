@@ -17,11 +17,11 @@
         input = $(nested_image).find(".js-image-attachment");
         App.Imageable.initializeDirectUploadInput(input);
       });
+      App.Imageable.initializeRemoveCachedImageLinks();
     },
     initializeDirectUploadInput: function(input) {
       var inputData;
       inputData = this.buildData([], input);
-      this.initializeRemoveCachedImageLink(input, inputData);
       $(input).fileupload({
         paramName: "attachment",
         formData: null,
@@ -46,7 +46,6 @@
           App.Imageable.clearPreview(data);
           $(data.destroyAttachmentLinkContainer).find("a.delete:not(.remove-nested)").remove();
           $(data.addAttachmentLabel).addClass("error");
-          $(data.addAttachmentLabel).show();
         },
         done: function(e, data) {
           var destroyAttachmentLink;
@@ -55,17 +54,9 @@
           App.Imageable.setProgressBar(data, "complete");
           App.Imageable.setFilename(data, data.result.filename);
           App.Imageable.clearInputErrors(data);
-          $(data.addAttachmentLabel).hide();
-          $(data.wrapper).find(".attachment-actions").removeClass("small-12").addClass("small-6 float-right");
-          $(data.wrapper).find(".attachment-actions .action-remove").removeClass("small-3").addClass("small-12");
           App.Imageable.setPreview(data);
           destroyAttachmentLink = $(data.result.destroy_link);
           $(data.destroyAttachmentLinkContainer).html(destroyAttachmentLink);
-          $(destroyAttachmentLink).on("click", function(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            App.Imageable.doDeleteCachedAttachmentRequest(this.href, data);
-          });
         },
         progress: function(e, data) {
           var progress;
@@ -77,7 +68,6 @@
     buildData: function(data, input) {
       var wrapper;
       wrapper = $(input).closest(".direct-upload");
-      data.input = input;
       data.wrapper = wrapper;
       data.progressBar = $(wrapper).find(".progress-bar-placeholder");
       data.preview = $(wrapper).find(".image-preview");
@@ -92,7 +82,6 @@
     },
     clearFilename: function(data) {
       $(data.fileNameContainer).text("");
-      $(data.fileNameContainer).hide();
     },
     clearInputErrors: function(data) {
       $(data.errorContainer).find("small.error").remove();
@@ -105,7 +94,6 @@
     },
     setFilename: function(data, file_name) {
       $(data.fileNameContainer).text(file_name);
-      $(data.fileNameContainer).show();
     },
     setProgressBar: function(data, klass) {
       $(data.progressBar).find(".loading-bar").addClass(klass);
@@ -130,40 +118,11 @@
         data.preview = $(data.wrapper).find(".image-preview");
       }
     },
-    doDeleteCachedAttachmentRequest: function(url, data) {
-      $.ajax({
-        type: "POST",
-        url: url,
-        dataType: "json",
-        data: {
-          "_method": "delete"
-        },
-        complete: function() {
-          $(data.cachedAttachmentField).val("");
-          $(data.addAttachmentLabel).show();
-          App.Imageable.clearFilename(data);
-          App.Imageable.clearInputErrors(data);
-          App.Imageable.clearProgressBar(data);
-          App.Imageable.clearPreview(data);
-          $("#new_image_link").removeClass("hide");
-          $(data.wrapper).find(".attachment-actions").addClass("small-12").removeClass("small-6 float-right");
-          $(data.wrapper).find(".attachment-actions .action-remove").addClass("small-3").removeClass("small-12");
-          if ($(data.input).data("nested-image") === true) {
-            $(data.wrapper).remove();
-          } else {
-            $(data.wrapper).find("a.remove-cached-attachment").remove();
-          }
-        }
-      });
-    },
-    initializeRemoveCachedImageLink: function(input, data) {
-      var remove_image_link, wrapper;
-      wrapper = $(input).closest(".direct-upload");
-      remove_image_link = $(wrapper).find("a.remove-cached-attachment");
-      $(remove_image_link).on("click", function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        App.Imageable.doDeleteCachedAttachmentRequest(this.href, data);
+    initializeRemoveCachedImageLinks: function() {
+      $("#nested-image").on("click", "a.remove-cached-attachment", function(event) {
+        event.preventDefault();
+        $("#new_image_link").removeClass("hide");
+        $(this).closest(".direct-upload").remove();
       });
     },
     removeImage: function(id) {

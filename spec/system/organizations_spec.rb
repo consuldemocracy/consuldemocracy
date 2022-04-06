@@ -2,8 +2,7 @@ require "rails_helper"
 
 describe "Organizations" do
   scenario "Organizations can be created" do
-    user = User.organizations.find_by(email: "green@peace.com")
-    expect(user).not_to be
+    admin = create(:administrator).user
 
     visit new_organization_registration_path
 
@@ -16,13 +15,18 @@ describe "Organizations" do
 
     click_button "Register"
 
-    user = User.organizations.find_by(email: "green@peace.com")
-    expect(user).to be
-    expect(user).to be_organization
-    expect(user.organization).not_to be_verified
+    expect(page).to have_content "You have been sent a message containing a verification link"
+
+    login_as admin
+    visit admin_users_path
+
+    within "tr", text: "Greenpeace" do
+      expect(page).to have_text "organization"
+      expect(page).to have_text "level_1_user"
+    end
   end
 
-  scenario "Create with invisible_captcha honeypot field" do
+  scenario "Create with invisible_captcha honeypot field", :no_js do
     visit new_organization_registration_path
 
     fill_in "user_organization_attributes_name",  with: "robot"

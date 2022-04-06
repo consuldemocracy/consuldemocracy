@@ -1,0 +1,13 @@
+<%= render Admin::TableActionsComponent.new(organization, actions: []) do |actions| %>
+  <% if can_verify? %>
+    <%= actions.action(:verify,
+                       text: t("admin.organizations.index.verify"),
+                       method: :put) %>
+  <% end %>
+
+  <% if can_reject? %>
+    <%= actions.action(:reject,
+                       text: t("admin.organizations.index.reject"),
+                       method: :put) %>
+  <% end %>
+<% end %>

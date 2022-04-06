@@ -1,0 +1,17 @@
+sr:
+  sdg_management:
+    homepage:
+      header:
+        create: "Креирајте наслов"
+        title: "Заглавље"
+    menu:
+      budget_investments: "Партиципативни буџет"
+      debates: "Расправе"
+      polls: "Гласање"
+      proposals: "Предлози"
+    relations:
+      index:
+        filter: "Филтер"
+        filters:
+          all: "Све"
+          pending_sdg_review: "У процесу"

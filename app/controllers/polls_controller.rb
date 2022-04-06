@@ -1,5 +1,8 @@
 class PollsController < ApplicationController
+  include FeatureFlags
   include PollsHelper
+
+  feature_flag :polls
 
   before_action :load_poll, except: [:index]
   before_action :load_active_poll, only: :index
@@ -9,11 +12,9 @@ class PollsController < ApplicationController
   has_filters %w[current expired]
   has_orders %w[most_voted newest oldest], only: :show
 
-  ::Poll::Answer # trigger autoload
-
   def index
     @polls = Kaminari.paginate_array(
-      @polls.created_by_admin.not_budget.send(@current_filter).includes(:geozones).sort_for_list
+      @polls.created_by_admin.not_budget.send(@current_filter).includes(:geozones).sort_for_list(current_user)
     ).page(params[:page])
   end
 
@@ -21,7 +22,7 @@ class PollsController < ApplicationController
     @questions = @poll.questions.for_render.sort_for_list
     @token = poll_voter_token(@poll, current_user)
     @poll_questions_answers = Poll::Question::Answer.where(question: @poll.questions)
-                                                    .where.not(description: "").order(:given_order)
+                                                    .with_content.order(:given_order)
 
     @answers_by_question_id = {}
     poll_answers = ::Poll::Answer.by_question(@poll.question_ids).by_author(current_user&.id)

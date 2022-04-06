@@ -1,0 +1,475 @@
+ro:
+  sdg:
+    goals:
+      goal_1:
+        title: "Fără Sărăcie"
+        title_in_two_lines: "Fără\nsărăcie"
+        description: "Eradicarea sărăciei în toate formele sale și în orice context."
+        long_description: '<p> La nivel global, numărul persoanelor care trăiesc în sărăcie extremă a scăzut de la 36 la sută în 1990 la 10 la sută în 2015. Dar ritmul schimbării descrește și criza COVID-19 <a href="https://www.un.org/sites/un2.un.org/files/sg_report_socio-economic_impact_of_covid19.pdf">riscă să inverseze decenii de progrese </a> în lupta împotriva sărăciei. <a href="https://www.wider.unu.edu/node/237051"> Noi cercetări </a> publicate de Institutul Mondial pentru Cercetări de Dezvoltare a Economiei al UNU avertizează că consecințele economice de la <a href="https://www.wider.unu.edu/publication/estimates-impact-covid-19-global-poverty"> pandemia globală ar putea crește sărăcia mondială cu până la jumătate de miliard de persoane </a>, sau 8% din populația umană totală. Aceasta ar fi prima dată când sărăcia crește la nivel global în treizeci de ani, începând cu 1990. </p> <p> Mai mult de <a href="http://www.worldbank.org/en/news/press-release/2018/09/19/decline-of-global-extreme-poverty-continues-but-has-slowed-world-bank"> 700 de milioane de persoane </a>, sau 10% din populația lumii, trăiesc încă în situații extreme sărăcia de astăzi, luptându-se să îndeplinească cele mai elementare nevoi precum sănătatea, educația și accesul la apă și canalizare. Majoritatea oamenilor care trăiesc cu mai puțin de 1,90 USD pe zi trăiesc în Africa sub-sahariană. La nivel mondial, <a href="https://unstats.un.org/sdgs/report/2019/goal-01/"> rata sărăciei în zonele rurale este de 17,2% </a> - de peste trei ori mai mare decât în zonele urbane. &nbsp; </p> <p> Pentru cei care lucrează, a avea un loc de muncă nu garantează un trai decent. De fapt, <a href="https://unstats.un.org/sdgs/report/2019/goal-01/"> 8% </a> dintre lucrătorii angajați și familiile lor din întreaga lume au trăit în sărăcie extremă în 2018. Unul din cinci copii trăiește în sărăcie extremă. Asigurarea protecției sociale pentru toți copiii și alte grupuri vulnerabile este esențială pentru reducerea sărăciei. </p>'
+        targets:
+          target_1_1:
+            long_title: "Până în 2030, eradicarea sărăciei extreme pentru toți oamenii de pretutindeni, măsurată în prezent ca număr de oameni care trăiesc cu mai puțin de $1,25 pe zi"
+          target_1_2:
+            long_title: "Până în 2030, reducerea cel puțin cu jumătate a numărului de bărbați, femei și copii de toate vârstele care trăiesc în sărăcie în toate formele sale, conform definițiilor naționale"
+          target_1_3:
+            long_title: "Implementarea unor sisteme de protecție socială adecvate la nivel național, iar până în 2030 să se realizeze o acoperire substanțială a celor săraci și vulnerabili"
+          target_1_4:
+            long_title: "Până în 2030, asigurarea că toți bărbații și toate femeile, în special cei săraci și vulnerabili, au drepturi egale la resurse economice, precum și acces la servicii de bază și control asupra pământului și a altor forme de proprietate, moștenire, resurse naturale, noi tehnologii adecvate și servicii financiare, inclusiv microfinanțare"
+          target_1_5:
+            long_title: "Până în 2030, creșterea rezistenței celor săraci și a celor aflați în situații vulnerabile și reducerea vulnerabilității și expunerii acestora la evenimente extreme legate de climă și la alte șocuri și dezastre economice, sociale și de mediu"
+          target_1_A:
+            long_title: "Asigurați o mobilizare semnificativă a resurselor dintr-o varietate de surse, inclusiv printr-o cooperare consolidată pentru dezvoltare, pentru a oferi mijloacelor adecvate și previzibile țărilor în curs de dezvoltare, în special țărilor cel mai puțin dezvoltate, pentru a pune în aplicare programe și politici de combatere a sărăciei în toate dimensiunile sale"
+          target_1_B:
+            long_title: "Crearea de cadre politice solide la nivel național, regional și internațional, bazate pe strategii de dezvoltare pro-săraci și sensibile la gen, pentru a sprijini investițiile accelerate în acțiuni de eradicare a sărăciei"
+      goal_2:
+        title: "Foamete \"Zero\""
+        title_in_two_lines: "Foamete\n\"Zero\""
+        description: "Foamete \"Zero\"."
+        long_description: '<p> După decenii de declin constant, numărul persoanelor care suferă de foame - măsurat de prevalența subnutriției - a început să crească încet din nou în 2015. Estimările actuale arată că <a href="http://www.fao.org/publications/sofi/2020/en/">aproape 690 de milioane de oameni sunt flămânzi, adică 8,9% din populația lumii </a> - în creștere cu 10 milioane de oameni într-un an și cu aproape 60 de milioane în cinci ani. </p> <p> Lumea nu este pe drumul cel bun pentru a atinge foamea zero până în 2030. Dacă tendințele recente vor continua, numărul persoanelor afectate de foamete ar depăși 840 de milioane până în 2030. </p> <p> Conform World Food Program, <a href="https://www.wfp.org/publications/2020-global-report-food-crises"> 135 de milioane suferă de foame acută </a> în mare parte din cauza conflictelor provocate de om, a schimbărilor climatice și recesiunile economice. Pandemia COVID-19 ar putea acum să dubleze acest număr, punând încă 130 de milioane de oameni în pericol de a suferi de foame acută până la sfârșitul anului 2020. </p> <p> Cu mai mult de <a href="https://insight.wfp.org/covid-19-will-almost-double-people-in-acute-hunger-by-end-of-2020-59df0c4a8072">un sfert de miliard de oameni potențial în pragul foametei </a>, trebuie luate măsuri rapide pentru a oferi ajutor alimentar și umanitar regiunilor cu cel mai mare risc. </p> <p> În același timp, &nbsp; este necesară o schimbare profundă a sistemului alimentar și agricol global, dacă dorim să hrănim cei peste 690 de milioane de oameni care sunt flămânzi astăzi - și &nbsp; <a href="https://www.un.org/development/desa/en/news/population/world-population-prospects-2019.html"> încă 2 miliarde de oameni </a> &nbsp; lumea va avea până în 2050. Creșterea productivității agricole și a producției durabile de alimente sunt cruciale pentru a ajuta la atenuarea pericolelor foametei. </p>'
+        targets:
+          target_2_1:
+            long_title: "Până în 2030, eradicarea foametei și asigurarea accesului tuturor oamenilor, în special a celor săraci și a persoanelor aflate în situații vulnerabile, inclusiv a sugarilor, la alimente sigure, hrănitoare și suficiente pe tot parcursul anului."
+          target_2_2:
+            long_title: "Până în 2030, eradicarea tuturor formelor de subnutriție, inclusiv atingerea până în 2025 a țintelor convenite la nivel internațional cu privire la greutatea și pierderea la copiii sub vârsta de 5 ani, și abordarea necesităților nutriționale ale adolescentelor, femeilor însărcinate și celor care alăptează, cât și a persoanelor în vârstă."
+          target_2_3:
+            long_title: "Până în 2030, dublarea productivității agricole și veniturilor micilor producători de alimente, în special la femei, la popoarele indigene, la fermierii de familie, la păstori și pescari, prin acces sigur și egal la pământ, la alte resurse de producție, cunoștințe, servicii financiare, piețe și oportunități pentru crearea valorii adăugate și angajarea în activități non-agricole."
+          target_2_4:
+            long_title: "Până în 2030, asigurarea sistemelor durabile de producție alimentară și implementarea practicilor agricole rezistente care cresc productivitatea și producția, ajută la menținerea ecosistemelor, consolidează capacitatea de adaptare la schimbările climatice, condiții meteorologice extreme, secetă, inundații și alte dezastre și cele care îmbunătățesc progresiv calitatea solului."
+          target_2_5:
+            long_title: "Până în 2020, menținerea diversității genetice a semințelor, plantelor cultivate și animalelor de crescătorie și domesticite și a speciilor sălbatice înrudite, inclusiv prin bănci de semințe și plante gestionate corect și diversificate la nivel național, regional și internațional și promovarea accesului și un schimb corect și echitabil al beneficiilor care rezultă din utilizarea resurselor genetice și cunoștințelor tradiționale asociate, conform acordurilor internaționale."
+          target_2_A:
+            long_title: "Creșterea investițiilor, inclusiv printr-o cooperare internațională consolidată, în infrastructura rurală, cercetare agricolă și servicii de extindere, dezvoltare tehnologică și bănci genetice pentru plante și animale, pentru a spori capacitatea productivă agricolă în țările în curs de dezvoltare, în special în țările cel mai puțin dezvoltate."
+          target_2_B:
+            long_title: "Corectarea și prevenirea restricțiilor comerciale și denaturărilor pe piețele agricole mondiale, inclusiv prin eliminarea paralelă a tuturor formelor de subvenții la exportul agricol și a tuturor măsurilor de export cu efect echivalent, în conformitate cu mandatul Rundei de dezvoltare de la Doha."
+          target_2_C:
+            long_title: "Adoptarea măsurilor pentru a asigurarea bunei funcționări a piețelor produselor alimentare și a instrumentelor derivate ale acestora și pentru a facilita accesul în timp util la informațiile de piață, inclusiv cu privire la rezervele de alimente, pentru a contribui la limitarea volatilității extreme a prețului alimentelor."
+      goal_3:
+        title: "Sănătate și Bunăstare"
+        title_in_two_lines: "Sănătate\nși Bunăstare"
+        description: "Asigurarea vieților sănătoase şi promovarea bunăstării tuturor, la orice vârstă."
+        long_description: "<p> Asigurarea unei vieți sănătoase și promovarea bunăstării la toate vârstele este esențială pentru dezvoltarea durabilă. În prezent, lumea se confruntă cu o <a href=\"https://www.un.org/coronavirus\"> criză globală de sănătate </a>, cum nu a mai fost până acum - COVID-19 răspândește suferința umană, destabilizând economia globală și ridicându-se viața a miliarde de oameni din întreaga lume. &nbsp; </p> <p> Înainte de pandemie, s-au înregistrat progrese majore în <a href=\"https://unstats.un.org/sdgs/report/2019/goal-03/\">îmbunătățirea sănătății a milioane de oameni </a>. S-au făcut pași semnificativi în creșterea speranței de viață și reducerea unora dintre ucigașii obișnuiți asociați cu mortalitatea infantilă și maternă. Dar sunt necesare mai multe eforturi pentru a eradica pe deplin o gamă largă de boli și pentru a aborda numeroase probleme de sănătate persistente și emergente. Concentrându-ne pe asigurarea unei finanțări mai eficiente a sistemelor de sănătate, o igienă îmbunătățită și un acces sporit la medici, se pot realiza progrese semnificative în ceea ce privește salvarea vieții a milioane de persoane. </p> <p> Urgențe de sănătate, cum ar fi COVID-19 prezintă un risc global și au demonstrat nevoia critică de pregătire. Programul Națiunilor Unite pentru Dezvoltare a evidențiat disparități uriașe în <a href=\"https://www.undp.org/content/undp/en/home/news-centre/news/2020/COVID19_UNDP_data_dashboards_reveal_disparities_among_countries_to_cope_and_recover.html\">abilitățile țărilor de a face față\n și de a se recupera după criza COVID-19 </a>. Pandemia oferă un moment important pentru pregătirea în caz de urgență medicală și pentru investiții în servicii publice critice din secolul XXI. &nbsp; </p>"
+        targets:
+          target_3_1:
+            long_title: "Până în 2030, reducerea ratei globale a mortalității materne la mai puțin de 70 de cazuri la 100.000 de născuți-vii."
+          target_3_2:
+            long_title: "Până în 2030, eliminarea deceselor care pot fi prevenite în rândul nou-născuților și copiilor până la 5 ani, toate țările având scopul de a reduce mortalitatea neonatală la cel mult 12 decese la 1.000 născuți-vii și mortalitatea copiilor până la 5 ani la cel mult 25 decese la 1000 născuți-vii."
+          target_3_3:
+            long_title: "Până în 2030, eliminarea epidemiilor de SIDA, tuberculoză, malarie și boli tropicale neglijate, precum și combaterea hepatitei, bolilor condiționate de apă și a altor boli transmisibile."
+          target_3_4:
+            long_title: "Până în 2030, reducerea cu o treime a mortalității premature cauzate de boli netransmisibile prin prevenire, tratare și promovarea sănătății mintale și a bunăstării."
+          target_3_5:
+            long_title: "Consolidarea prevenirii și tratamentul abuzului de substanțe, inclusiv a abuzul de droguri și substanțe narcotice și a consumului excesiv de alcool."
+          target_3_6:
+            long_title: "Până în 2020, înjumătățirea numărul global de decese și răniri cauzate de accidente rutiere."
+          target_3_7:
+            long_title: "Până în 2030, asigurarea accesului universal la serviciile de sănătate sexuală și reproductivă, inclusiv pentru planificarea familiei, informare și educație, precum și integrarea reproducerii sănătoase în strategiile și programele naționale."
+          target_3_8:
+            long_title: "Realizarea asigurării de sănătate, inclusiv protecția riscurilor financiare, accesul la servicii de sănătate esențiale și calitative și accesul la medicamente de bază sigure, eficiente, calitative și la prețuri accesibile și vaccinuri."
+          target_3_9:
+            long_title: "Până în 2030, reducerea substanțială a numărului deceselor și bolilor provocate de produsele chimice periculoase, de poluare și de contaminarea aerului, apei și a solului."
+          target_3_A:
+            long_title: "Consolidarea punerii în aplicare a Convenției-cadru a Organizației Mondiale a Sănătății privind controlul tutunului în toate țările, după caz."
+          target_3_B:
+            long_title: "Sprijinirea cercetării și dezvoltării vaccinurilor și medicamentelor pentru bolile transmisibile și netransmisibile care afectează în principal țările în curs de dezvoltare, asigurarea accesului la medicamente și vaccinuri esențiale la prețuri accesibile, în conformitate cu Declarația de la Doha privind Acordul TRIPS și sănătatea publică, care afirmă dreptul de dezvoltare țările să utilizeze la maximum dispozițiile din Acordul privind aspectele legate de comerț ale drepturilor de proprietate intelectuală cu privire la flexibilitatea de protejare a sănătății publice și, în special, să asigure accesul la medicamente pentru toți."
+          target_3_C:
+            long_title: "Creșterea substanțială a finanțării în domeniul sănătății și recrutarea, dezvoltarea, instruirea și păstrarea forței de muncă în domeniul sănătății în țările în curs de dezvoltare, în special în țările cel mai puțin dezvoltate și în micile state insulare în curs de dezvoltare."
+          target_3_D:
+            long_title: "Consolidarea capacității tuturor țărilor, în special a țărilor în curs de dezvoltare, de avertizare timpurie, reducere a riscurilor și gestionarea riscurilor naționale și globale pentru sănătate."
+      goal_4:
+        title: "Educație de Calitate"
+        title_in_two_lines: "Educație \nde Calitate"
+        description: "Educație de Calitate."
+        long_description: '<p> Educația permite o mobilitate socioeconomică ascendentă și este o cheie pentru a scăpa de sărăcie. În ultimul deceniu, s-au înregistrat progrese majore în direcția creșterii accesului la educație și la ratele de înscriere la școală la toate nivelurile, în special pentru fete. Cu toate acestea, <a href="http://uis.unesco.org/en/topic/out-school-children-and-youth"> aproximativ 260 de milioane de copii erau încă în afara școlii </a> în 2018 - aproape o cincime din populația globală din acea grupă de vârstă. Și mai mult de jumătate din copiii și adolescenții din întreaga lume <a href="https://unstats.un.org/sdgs/report/2019/goal-04/"> nu îndeplinesc standardele minime de competență </a> în lectură și matematică. &nbsp; </p> <p> În 2020, pe măsură ce pandemia COVID-19 s-a răspândit pe tot globul, majoritatea țărilor au anunțat închiderea temporară a școlilor, afectând peste 91% din elevii din întreaga lume. Până în aprilie 2020, aproape  <a href="https://en.unesco.org/covid19/educationresponse"> 1,6 miliarde de copii și tineri nu erau școlari </a>. Și aproape <a href="https://www.un.org/sites/un2.un.org/files/policy_brief_on_covid_impact_on_children_16_april_2020.pdf"> 369 de milioane de copii care se bazează pe mesele școlare </a> au trebuit să caute alte surse pentru hrana zilnică. &nbsp; </p> <p>Nu au ieșit niciodată atât de mulți copii din școală în același timp, perturbând învățarea și avansarea viața, în special cei mai vulnerabili și marginalizați. Pandemia globală are consecințe de anvergură care pot pune în pericol câștigurile obținute cu greu în îmbunătățirea educației globale. </p>'
+        targets:
+          target_4_1:
+            long_title: "Până în 2030, asigurarea absolvirii unui învățământ primar și secundar gratuit, echitabil și de calitate de către toate fetele și toți băieții, ceea ce duce la rezultate de învățare relevante și eficiente pentru acest obiectiv."
+          target_4_2:
+            long_title: "Până în 2030, asigurarea faptului că toate fetele și toți băieții au acces la dezvoltarea timpurie de calitate, îngrijire și educație preșcolară, astfel încât să fie pregătiți pentru învățământul primar."
+          target_4_3:
+            long_title: "Până în 2030, asigurarea accesului egal pentru toate femeile și toți bărbații la educație tehnică, vocațională și terțiară, inclusiv universitară, accesibilă și calitativă."
+          target_4_4:
+            long_title: "Până în 2030, creșterea substanțială a numărului de tineri și adulți care dețin competențe relevante, inclusiv competențe tehnice și vocaționale, pentru ocuparea forței de muncă, locuri de muncă decente și antreprenoriat."
+          target_4_5:
+            long_title: "Până în 2030, eliminarea diferențelor între sexe în educație și asigurarea accesului egal la toate nivelurile de învățământ și formare profesională a persoanelor vulnerabile, inclusiv a persoanelor cu dizabilități, a populațiilor indigene și a copiilor aflați în situații vulnerabile."
+          target_4_6:
+            long_title: "Până în 2030, asigurarea faptului ca toți tinerii și o proporție substanțială a adulților, atât bărbați, cât și femei, dispun de competențe elementare, precum literatura și aritmetica elementară."
+          target_4_7:
+            long_title: "Până în 2030, asigurarea faptului că toți elevii dobândesc cunoștințele și competențele necesare pentru promovarea dezvoltării durabile, inclusiv, printre altele, prin educația pentru dezvoltare durabilă și stiluri de viață durabile, drepturile omului, egalitatea între sexe, promovarea unei culturi a păcii și non-violenței, cetățenia globală și aprecierea diversității culturale și a contribuției culturii la dezvoltarea durabilă."
+          target_4_A:
+            long_title: "Construirea și actualizarea de facilități de educație adaptate în funcție de nevoile fiecărui copil și să ofere medii de învățare sigure, nonviolente, incluzive și eficiente pentru toți."
+          target_4_B:
+            long_title: "Până în 2020, extinderea în mod substanțial la nivel global numărul de burse disponibile țărilor în curs de dezvoltare, în special țărilor cel mai puțin dezvoltate, micilor state insulare în curs de dezvoltare și țărilor africane, pentru înscrierea în învățământul superior, inclusiv formare profesională și tehnologia informației și comunicațiilor, programe tehnice, de inginerie și științifice, în țările dezvoltate și alte țări în curs de dezvoltare."
+          target_4_C:
+            long_title: "Până în 2030, creșterea substanțială a ofertei de profesori calificați, inclusiv prin cooperarea internațională pentru formarea profesorilor în țările în curs de dezvoltare, în special în țările cel mai puțin dezvoltate și în statele insulare în curs de dezvoltare."
+      goal_5:
+        title: "Egalitate între sexe"
+        title_in_two_lines: "Egalitate \nîntre Sexe"
+        description: "Realizați egalitatea între sexe și abilitarea tuturor femeilor și fetelor."
+        long_description: '<p> Egalitatea de gen nu este doar un drept fundamental al omului, ci o bază necesară pentru o lume pașnică, prosperă și durabilă. &nbsp; </p> <p> Au existat <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/gender-equality-womens-rights-in-review-key-facts-and-figures-en.pdf?la=en&amp;vs=935">Progres </a> în ultimele decenii: mai multe fete merg la școală, mai puține fete sunt obligate să se căsătorească timpuriu, mai multe femei lucrează în parlament și funcții de conducere, iar legile sunt reformate pentru a promova egalitatea de gen. &nbsp; </p> <p> În ciuda acestor câștiguri, multe <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/gender-equality-womens-rights-in-review-key-facts-and-figures-en.pdf?la=en&amp;vs=935">provocări </a> rămân: legile discriminatorii și normele sociale rămân omniprezente, femeile continuă să fie subreprezentate la toate nivelurile conducere politică și 1 din 5 femei și fete între vârstele de 15 și 49 de ani raportează că au suferit violențe fizice sau sexuale de către un partener intim într-o perioadă de 12 luni. </p> <p> Efectele <a href="https://www.un.org/sites/un2.un.org/files/policy_brief_on_covid_impact_on_women_9_apr_2020_updated.pdf"> pandemiei COVID-19 ar putea inversa progresul limitat </a> care a fost realizat în ceea ce privește egalitatea de gen și drepturile femeilor. &nbsp; Focarul de coronavirus <a href="https://www.unfpa.org/sites/default/files/resource-pdf/COVID-19_A_Gender_Lens_Guidance_Note.pdf"> accentuează inegalitățile existente </a> pentru femei și fete din toate sferele - de la sănătate și economie, la securitate și protecție socială. &nbsp; </p> <p> Femeile joacă un rol disproporționat în reacția la virus, inclusiv în calitate de lucrători de îngrijire medicală și îngrijitori la domiciliu. Munca de îngrijire neremunerată a femeilor a crescut semnificativ ca urmare a închiderii școlilor și a nevoilor crescute ale persoanelor în vârstă. Femeile sunt, de asemenea, mai afectate de impactul economic al COVID-19, deoarece lucrează disproporționat pe piețele muncii nesigure. Aproape 60% din femei lucrează în economia informală, ceea ce le supune asupra unui risc mai mare de a cădea în sărăcie. &nbsp; </p> <p> De asemenea, pandemia a dus la o creștere accentuată a <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/issue-brief-covid-19-and-ending-violence-against-women-and-girls-en.pdf?la=en&amp;vs=5006">violenței împotriva femeilor și fetelor </a>. Cu măsurile de blocare în vigoare, multe femei sunt prinse acasă cu agresorii lor, luptându-se să acceseze servicii care suferă de tăieri și restricții. Datele emergente arată că, de la izbucnirea pandemiei, violența împotriva femeilor și fetelor - și în special a violenței domestice - s-a intensificat. </p>'
+        targets:
+          target_5_1:
+            long_title: "Eradicarea tuturor formelor de discriminare împotriva tuturor femeilor și fetelor de pretutindeni."
+          target_5_2:
+            long_title: "Eliminarea tuturor formele de violență împotriva tuturor femeilor și fetelor, în sferele publice și private, inclusiv a traficului, exploatării sexuale și a altor tipuri de exploatare."
+          target_5_3:
+            long_title: "Eradicarea tuturor practicilor dăunătoare, cum ar fi căsătoria timpurie și forțată în rândul copiilor și mutilarea genitală feminină."
+          target_5_4:
+            long_title: "Recunoașterea și aprecierea îngrijirii neremunerate și a muncii casnice prin furnizarea de servicii publice, infrastructură și politici de protecție socială și promovarea responsabilității partajate în gospodărie și familie, după caz la nivel național."
+          target_5_5:
+            long_title: "Asigurarea participării depline și eficiente a femeilor și a egalității de șanse la ocuparea de posturi de conducere la toate nivelurile de luare a deciziilor în viața politică, economică și publică."
+          target_5_6:
+            long_title: "Asigurarea accesului universal la sănătatea sexuală și reproductivă și la drepturile reproductive, astfel cum s-a convenit în conformitate cu Programul de Acțiune al Conferinței Internaționale pentru Populație și Dezvoltare și cu Platforma de Acțiune de la Beijing și cu documentele rezultate ale conferințelor lor de revizuire."
+          target_5_A:
+            long_title: "Întreprinderea reformelor pentru a oferi femeilor drepturi egale la resursele economice, precum și accesul la proprietate și control asupra pământului și a altor forme de proprietate, servicii financiare, moștenire și resurse naturale, în conformitate cu legislația națională."
+          target_5_B:
+            long_title: "Îmbunătățirea utilizării tehnologiei de abilitare, în special a tehnologiei informației și comunicațiilor, pentru a promova abilitarea femeilor."
+          target_5_C:
+            long_title: "Adoptarea și consolidarea politicilor solide și legislației aplicabile pentru promovarea egalității între sexe și pentru abilitarea tuturor femeilor și fetelor la toate nivelurile."
+      goal_6:
+        title: "Apă potabilă și Canalizare"
+        title_in_two_lines: "Apă potabilă\nși Canalizare"
+        description: "Asigurarea accesului la apă și canalizare pentru toți."
+        long_description: '<p> Deși s-au înregistrat progrese substanțiale în ceea ce privește creșterea accesului la apă potabilă curată și canalizare, miliarde de oameni - în special în zonele rurale - încă nu au aceste servicii de bază. La nivel mondial, <a href="https://www.who.int/news-room/detail/18-06-2019-1-in-3-people-globally-do-not-have-access-to-safe-drinking-water-unicef-who">una din trei persoane nu au acces la apă potabilă sigură </a>, <a href="https://www.unwater.org/water-facts/water-sanitation-and-hygiene/">două din cinci persoane nu au o instalație de spălare a mâinilor de bază </a> cu apă și săpun și mai mult de <a href="https://news.un.org/en/story/2019/11/1051561"> 673 de milioane de oameni practică în continuare defecarea în aer liber</a>. </p> <p> Pandemia COVID-19 a demonstrat importanța crucială a salubrității, igienei și accesului adecvat la apă curată pentru prevenirea și limitarea bolilor. <a href="https://www.unwater.org/water-facts/handhygiene/"> Igiena mâinilor salvează vieți </a>. Potrivit Organizației Mondiale a Sănătății, <a href="https://www.who.int/news-room/events/detail/2020/05/05/default-calendar/hand-hygiene-day">spălarea mâinilor este una dintre cele mai eficiente acțiuni pe care le puteți întreprinde </a> pentru a reduce răspândirea agenților patogeni și pentru a preveni infecțiile, inclusiv virusul COVID-19. Cu toate acestea, miliarde de oameni încă nu dispun de apă igienică sigură, iar finanțarea este inadecvată. </p>'
+        targets:
+          target_6_1:
+            long_title: "Până în 2030, realizarea accesului universal și echitabil la apă potabilă sigură și la prețuri accesibile pentru toți."
+          target_6_2:
+            long_title: "Până în 2030, realizarea accesului la condiții sanitare și de igienă adecvate și echitabile pentru toți și eliminarea defecării în aer liber, acordând o atenție specială nevoilor femeilor și fetelor și celor în situații vulnerabile."
+          target_6_3:
+            long_title: "Până în 2030, îmbunătățirea calității apei prin reducerea poluării, eliminarea depozitării deșeurilor și reducerea la minimum a produselor chimice și materialelor periculoase, înjumătățind proporția apelor uzate netratate și sporind substanțial reciclarea și reutilizarea sigură la nivel global."
+          target_6_4:
+            long_title: "Până în 2030, creșterea substanțială a eficienței de utilizare a apei în toate sectoarele și asigurarea unui proces durabil de captare și furnizare a apei potabile, pentru a face față deficitului de apă și pentru a reduce substanțial numărul de persoane care suferă de deficit de apă."
+          target_6_5:
+            long_title: "Până în 2030, implementarea managementului integrat al resurselor de apă la toate nivelurile, inclusiv, dacă este cazul, prin cooperarea transfrontalieră."
+          target_6_6:
+            long_title: "Până în 2020, protejarea și restabilirea ecosistemelor legate de apă, inclusiv munți, păduri, zone umede, râuri, rezervoare acvifere și lacuri."
+          target_6_A:
+            long_title: "Până în 2030, extinderea cooperării internaționale și sprijinului pentru consolidarea capacității țărilor în curs de dezvoltare în activități și programe legate de apă și salubritate, inclusiv recoltarea apei, desalinizarea, eficiența apei, tratarea apelor uzate, reciclarea și tehnologiile de reutilizare."
+          target_6_B:
+            long_title: "Promovați și creșteți nivelul de participare a comunităților locale la îmbunătățirea gestionării apei și a canalizării."
+      goal_7:
+        title: "Energie verde la prețuri accesibile"
+        title_in_two_lines: "Energie verde\nla prețuri accesibile"
+        description: "Asigurați accesul la energie accesibilă, fiabilă, durabilă și modernă."
+        long_description: '<p> Lumea face progrese <a href="https://unstats.un.org/sdgs/report/2019/goal-07/"> către Obiectivul 7 </a>, cu semne încurajatoare că energia devine mai durabilă și disponibilă pe scară largă. Accesul la electricitate în țările mai sărace a început să se accelereze, eficiența energetică continuă să se îmbunătățească și energia regenerabilă face câștiguri impresionante în sectorul energiei electrice.&nbsp;</p><p>Cu toate acestea, este necesară o atenție mai mare pentru a se putea îmbunătăți accesul la combustibili și tehnologii de gătit curate și sigure pentru 3 miliarde de oameni, pentru a extinde utilizarea energiei regenerabile dincolo de sectorul electric și pentru a crește electrificarea în Africa sub-sahariană.</p> <p> The <a href="https://trackingsdg7.esmap.org/">Energy Progress Report </a> oferă tabloul de bord global pentru a înregistra progresele în ceea ce privește accesul la energie, eficiența energetică și energia regenerabilă. Evaluează progresele realizate de fiecare țară în ceea ce privește acești trei piloni și oferă o imagine a cât de departe suntem de atingerea obiectivelor Obiectivelor de dezvoltare durabilă pentru 2030. </p>'
+        targets:
+          target_7_1:
+            long_title: "Până în 2030, asigurarea accesului universal la servicii energetice accesibile, fiabile și moderne."
+          target_7_2:
+            long_title: "Până în 2030, creșterea substanțială a ponderei energiei regenerabile în mixul energetic global."
+          target_7_3:
+            long_title: "Până în 2030, dublarea ratei globale de îmbunătățire a eficienței energetice."
+          target_7_A:
+            long_title: "Până în 2030, consolidarea cooperării internaționale pentru a facilita accesul la cercetarea și tehnologia energiei curate, inclusiv energia regenerabilă, eficiența energetică și tehnologia avansată și a combustibililor fosili mai curați și promovarea investițiilor în infrastructura energetică și tehnologia energiei curate."
+          target_7_B:
+            long_title: "Până în 2030, extinderea infrastructurii și actualizarea tehnologiei pentru furnizarea de servicii energetice moderne și durabile pentru toate țările în curs de dezvoltare, în special țările cel mai puțin dezvoltate, statele insulare mici în curs de dezvoltare și țările în curs de dezvoltare fără litoral, în conformitate cu programele lor respective de sprijin."
+      goal_8:
+        title: "Muncă decentă și creștere economică"
+        title_in_two_lines: "Muncă decentă \nși creștere economică"
+        description: "Promovarea creșterii economice incluzive și durabile, a ocupării forței de muncă și asigurarea de locuri de muncă decente pentru toţi."
+        long_description: '<p> O creștere economică stabilă poate conduce la progres, poate crea locuri de muncă decente pentru toți și poate îmbunătăți standardele de viață. &nbsp; </p> <p> COVID-19 <a href="https://www.un.org/sites/un2.un.org/files/sg_report_socio-economic_impact_of_covid19.pdf"> a perturbat miliarde de vieți </a> și a pus în pericol economia globală. Fondul Monetar Internațional (FMI) așteaptă o<a href="https://blogs.imf.org/2020/04/14/the-great-lockdown-worst-economic-downturn-since-the-great-depression/"> Recesiunea globală </a> la fel de rea sau mai rea decât în ​​2009. Pe măsură ce pierderile de locuri de muncă cresc, Organizația Internațională a Muncii estimează că <a href="https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_743036/lang--en/index.htm"> Aproape jumătate din forța de muncă globală riscă </a> să își piardă mijloacele de trai. </p> <p> <a href="https://developmentfinance.un.org/press-release-financing-sustainable-development-report-2020"> Chiar înainte de izbucnirea COVID-19 </a>, în una din cinci țări - acasă a miliarde de oameni care trăiesc în sărăcie - era probabil ca veniturile pe cap de locuitor să stagneze sau să scadă în 2020. Acum, <a href="https://developmentfinance.un.org/press-release-financing-sustainable-development-report-2020"> șocuri economice și financiare </a> asociat cu COVID-19 - cum ar fi întreruperile producției industriale, scăderea prețului mărfurilor, volatilitatea pieței financiare și insecuritatea în creștere - descurajează creșterea economică deja tepidă și aduc riscuri sporite din partea altor factori.&nbsp;&nbsp;</p>'
+        targets:
+          target_8_1:
+            long_title: "Susținerea creșterii economice pe cap de locuitor în conformitate cu situația națională și, în special, creșterea Produsului Intern Brut cu cel puțin 7 la sută pe an în țările cel mai puțin dezvoltate."
+          target_8_2:
+            long_title: "Atingerea unor niveluri mai ridicate ale productivității prin diversificare, modernizarea tehnologică și inovație, inclusiv prin accent pe sectoarele cu valoare adăugată sporită și utilizarea intesivă a forței de muncă."
+          target_8_3:
+            long_title: "Promovarea politicilor orientate spre dezvoltare care să susțină activități productive, crearea de locuri de muncă decente, antreprenoriatul, creativitatea și inovarea și să încurajeze formalizarea și creșterea întreprinderilor micro, mici și mijlocii, inclusiv prin accesul la servicii financiare."
+          target_8_4:
+            long_title: "Îmbunătățirea progresivă, până în 2030, a eficienței globale a resurselor în consum și producție și depunerea de eforturi pentru a decupla creșterea economică de degradarea mediului, în conformitate cu cadrul de 10 ani al programelor privind consumul și producția durabile, cu țările dezvoltate la conducere."
+          target_8_5:
+            long_title: "Până în 2030, obținerea unui loc de muncă deplin și productiv și o muncă decentă pentru toate femeile și bărbații, inclusiv pentru tinerii și persoanele cu dizabilități și o remunerare egală pentru munca de valoare egală."
+          target_8_6:
+            long_title: "Până în 2020, reducerea în mod substanțial a proporției de tineri care nu sunt încadrați în câmpul forței muncă, educație sau formare."
+          target_8_7:
+            long_title: "Luarea de măsuri imediate și eficiente pentru a eradica munca forțată, a pune capăt sclaviei moderne și a traficului de persoane și a asigura interzicerea și eliminarea celor mai grave forme de muncă a copiilor, inclusiv recrutarea și utilizarea copiilor ca soldați, și până în 2025 încetarea muncii copiilor în toate formele sale."
+          target_8_8:
+            long_title: "Protejați drepturile muncii și promovați medii de lucru sigure pentru toți lucrătorii, inclusiv pentru lucrătorii migranți, în special pentru femeile migrante și pentru cei aflați în contracte de muncă precare."
+          target_8_9:
+            long_title: "Până în 2030, concepeți și implementați politici pentru promovarea turismului durabil care creează locuri de muncă și promovează cultura și produsele locale"
+          target_8_10:
+            long_title: "Consolidarea capacității instituțiilor financiare naționale de a încuraja și extinde accesul la servicii bancare, de asigurări și financiare pentru toți."
+          target_8_A:
+            long_title: "Sporirea ajutorului pentru comerț pentru țările în curs de dezvoltare, în special țările cel mai puțin dezvoltate, inclusiv prin Cadrul Integrat Îmbunătățit pentru Asistență Tehnică Legată de Comerț către Țările Cel Mai Puțin Dezvoltate."
+          target_8_B:
+            long_title: "Până în 2020, dezvoltați și operaționalizați o strategie globală pentru ocuparea forței de muncă în rândul tinerilor și implementați Pactul global pentru ocuparea forței de muncă al Organizației Internaționale a Muncii."
+      goal_9:
+        title: "Industrie, Inovație și Infrastructură"
+        title_in_two_lines: "Industrie, Inovație\nși Infrastructură"
+        description: "Construirea unei infrastructuri rezistente, promovarea industrializării durabile și promovarea inovației."
+        long_description: '<p> Industrializarea incluzivă și durabilă, împreună cu <a href="https://unstats.un.org/sdgs/report/2019/goal-09/"> inovație și infrastructură </a>, pot dezlănțui forțe economice dinamice și competitive care generează locuri de muncă și venituri. Acestea joacă un rol cheie în introducerea și promovarea noilor tehnologii, facilitarea comerțului internațional și permiterea utilizării eficiente a resurselor. &nbsp; </p> <p> Cu toate acestea, lumea are încă un drum lung de parcurs pentru a valorifica pe deplin acest potențial. Țările cel mai puțin dezvoltate, în special, trebuie să accelereze dezvoltarea sectorului lor de producție pentru a atinge obiectivul pentru 2030 și să mărească investițiile în cercetare științifică și inovare. &nbsp;</p> <p> Creșterea globală a producției a fost constant în scădere, chiar înainte de izbucnirea pandemiei COVID-19. Pandemia <a href="https://unctad.org/en/pages/newsdetails.aspx?OriginalVersionID=2297"> lovește puternic industriile producătoare </a> și provoacă perturbări în lanțurile valorice globale și furnizarea de produse. &nbsp;</p> <p> Inovarea și progresul tehnologic sunt esențiale pentru găsirea unor soluții durabile atât la provocările economice, cât și la cele de mediu, cum ar fi creșterea resurselor și eficiența energetică. La nivel global, <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf"> investiții în cercetare și dezvoltare </a> (R&amp;D) ca proporție din PIB a crescut de la 1,5% în 2000 până la 1,7% în 2015 și a rămas aproape neschimbată în 2017, dar a fost doar sub 1% &nbsp; în regiunile în curs de dezvoltare. </p> <p> În ceea ce privește infrastructura de comunicații, mai mult de jumătate din populația lumii este acum online și aproape întreaga populație mondială locuiește într-o zonă acoperită de o rețea mobilă. Se estimează că, în 2019, <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf"> 96,5% au fost acoperite de cel puțin o rețea 2G </a>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p> <p> Pandemia de coronavirus a dezvăluit <a href="https://www.unescap.org/blog/covid-19-reveals-urgent-need-resilient-infrastructure"> nevoia urgentă de infrastructură rezistentă </a>. Banca Asiatică de Dezvoltare constată că infrastructura critică din regiune rămâne departe de a fi adecvată în multe țări, în ciuda creșterii economice rapide și a dezvoltării pe care a avut-o regiunea în ultimul deceniu. <a href="https://www.unescap.org/publications/economic-and-social-survey-asia-and-pacific-2019-ambitions-beyond-growth"> Un sondaj economic și social din Asia și Pacific </a> subliniază că pentru a face infrastructura rezistentă la dezastre și la schimbările climatice va fi necesară o investiție suplimentară de 434 miliarde USD pe an. Este posibil ca această sumă să fie și mai mare în unele subregiuni, cum ar fi statele insulare mici din Pacific în curs de dezvoltare. &nbsp;&nbsp;&nbsp;</p>'
+        targets:
+          target_9_1:
+            long_title: "Dezvoltarea unei infrastructuri de calitate, fiabile, durabile și rezistente, inclusiv infrastructuri regionale și transfrontaliere, pentru a sprijini dezvoltarea economică și bunăstarea umană, cu accent pe acces accesibil și echitabil pentru toți."
+          target_9_2:
+            long_title: "Promovarea industrializării incluzive și durabile și, până în 2030, creșterea semnificativă a cotei de ocupare a forței de muncă și a produsului intern brut, în conformitate cu circumstanțele naționale, și dublarea ponderii acesteia în țările cel mai puțin dezvoltate."
+          target_9_3:
+            long_title: "Creșterea accesului întreprinderilor mici și industriale și a altor întreprinderi, în special în țările în curs de dezvoltare, la servicii financiare, inclusiv credite la prețuri accesibile, precum și integrarea acestora în lanțurile valorice și pe piețe."
+          target_9_4:
+            long_title: "Până în 2030, actualizați infrastructura și modernizați industriile pentru a le face durabile, cu o eficiență sporită a utilizării resurselor și adoptarea mai mare a tehnologiilor și proceselor industriale ecologice și ecologice, toate țările luând măsuri în conformitate cu capacitățile lor respective."
+          target_9_5:
+            long_title: "Consolidarea cercetării științifice, modernizarea capacităților tehnologice ale sectoarelor industriale din toate țările, în special țările în curs de dezvoltare, inclusiv, până în 2030, încurajarea inovării și creșterea substanțială a numărului de lucrători în cercetare și dezvoltare la 1 milion de persoane și cheltuielile publice și private de cercetare și dezvoltare."
+          target_9_A:
+            long_title: "Facilitarea dezvoltării infrastructurii durabile și rezistente în țările în curs de dezvoltare prin sprijin financiar, tehnologic și tehnic sporit acordat țărilor africane, țărilor cel mai puțin dezvoltate, țărilor în curs de dezvoltare fără ieșire la mare și micilor state insulare în curs de dezvoltare 18."
+          target_9_B:
+            long_title: "Sprijinirea dezvoltării tehnologice interne, cercetării și inovării în țările în curs de dezvoltare, inclusiv prin asigurarea unui mediu politic favorabil, printre altele, pentru diversificarea industrială și adăugarea valorii la mărfuri."
+          target_9_C:
+            long_title: "Creșterea semnificativă a accesului la tehnologia informației și comunicațiilor și depunerea de eforturi pentru a oferi acces universal și accesibil la internet în țările cel mai puțin dezvoltate până în 2020."
+      goal_10:
+        title: "Inegalități reduse"
+        title_in_two_lines: "Inegalități\nreduse"
+        description: "Reducerea inegalității în și între țări."
+        long_description: '<p> Reducerea inegalităților și asigurarea faptului că nimeni nu este lăsat în urmă sunt esențiale pentru realizarea obiectivelor de dezvoltare durabilă. &nbsp; </p> <p> Inegalitatea dintre țări și între țări este un motiv de îngrijorare persistent. În ciuda unor semne pozitive către reducerea inegalității în anumite dimensiuni, cum ar fi reducerea inegalității relative a veniturilor în unele țări și statutul preferențial al comerțului în beneficiul țărilor cu venituri mai mici, <a href="https://unstats.un.org/sdgs/report/2019/goal-10/">inegalitatea persistă</a>. </p> <p><a href="https://www.un.org/sustainabledevelopment/goal-of-the-month-may-2020"> COVID-19 a aprofundat inegalitățile existente </a>, lovind cel mai greu comunitățile cel mai sărace și cel mai vulnerabile. A pus accentul pe inegalitățile economice și pe plasele fragile de siguranță socială care lasă comunitățile vulnerabile să suporte greul crizei. &nbsp; În același timp, inegalitățile sociale, politice și economice au amplificat impactul pandemiei. </p> <p> Pe plan economic, pandemia COVID-19 a crescut semnificativ la nivel global <a href="https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_743036/lang--en/index.htm">șomaj </a> și a redus dramatic veniturile lucrătorilor. </p> <p> COVID- 19 pune, de asemenea, în pericol progresul limitat care a fost făcut în <a href="https://data.unwomen.org/resources/covid-19-emerging-gender-data-and-why-it-matters">egalitatea între sexe </a> și drepturile femeilor în ultimele decenii. În fiecare sferă, de la sănătate la economie, securitate la protecție socială, impactul COVID-19 este exacerbat pentru femei și fete pur și simplu în virtutea sexului lor. </p> <p> Inegalitățile se adâncesc și pentru <a href="https://www.un.org/sites/un2.un.org/files/un_policy_brief_on_human_rights_and_covid_23_april_2020.pdf"> populațiile vulnerabile </a> în țările cu sisteme de sănătate mai slabe și cele care se confruntă cu crize umanitare existente. Refugiații și migranții, precum și popoarele indigene, persoanele în vârstă, persoanele cu dizabilități și copiii sunt în mod special expuse riscului de a fi lăsați în urmă. Și <a href="https://www.un.org/en/coronavirus/covid-19-un-counters-pandemic-related-hate-and-xenophobia"> nivelul de ură </a> care vizează grupurile vulnerabile este în creștere. </p>'
+        targets:
+          target_10_1:
+            long_title: "Până în 2030, realizarea și susținerea unei creșteri progresive a veniturilor a peste 40% din populație cu o rată mai mare decât media națională."
+          target_10_2:
+            long_title: "Până în 2030, abilitarea și promovarea incluziunii sociale, economice și politice a tuturor, indiferent de vârstă, sex, dizabilități, rasă, etnie, origine, religie sau statut economic sau de altă natură."
+          target_10_3:
+            long_title: "Asigurarea de oportunități egale și reducerea inegalităților de venit, inclusiv prin eliminarea legilor, politicilor și practicilor discriminatorii și promovarea legislației, politicilor și acțiunilor adecvate în această privință."
+          target_10_4:
+            long_title: "Adoptarea politicilor, în special de natură fiscală, salariale și de protecție socială, și realizarea progresivă a egalității."
+          target_10_5:
+            long_title: "Îmbunătățirea reglementării și monitorizării piețelor și instituțiilor financiare globale și consolidarea punerii în aplicare a acestor reglementări."
+          target_10_6:
+            long_title: "Asigurarea unei imagini și a unei voci sporite pentru țările în curs de dezvoltare în procesul de luare a deciziilor în instituțiile economice și financiare internaționale globale, pentru a oferi instituții mai eficiente, credibile, responsabile și legitime."
+          target_10_7:
+            long_title: "Facilitarea migrării și mobilității ordonate, în siguranță, regulate și responsabile a persoanelor, inclusiv implementarea politicilor de migrare planificate și bine gestionate."
+          target_10_A:
+            long_title: "Implementarea principiului tratamentului special și diferențiat pentru țările în curs de dezvoltare, în special țările cel mai puțin dezvoltate, în conformitate cu acordurile Organizației Mondiale a Comerțului."
+          target_10_B:
+            long_title: "Încurajarea oficială a dezvoltării asistenței și fluxurilor financiare, inclusiv investițiilor străine directe, către Statele unde nevoia este cea mai mare, în special în țările mai puțin dezvoltate, țările africane, micile statele insulare în curs de dezvoltare și țările cel mai puțin dezvoltate fără ieșire la mare, în conformitate cu planurile și programele lor naționale."
+          target_10_C:
+            long_title: "Până în 2030, reducerea costurilor de tranzacție a reminențelor migranților la mai puțin de 3% și eliminarea coridoarelor de reminențe cu costuri mai mari de 5%."
+      goal_11:
+        title: "Orașe și Comunități Durabile"
+        title_in_two_lines: "Orașe și \nComunități Durabile"
+        description: "Dezvoltarea oraşelor pentru ca ele să fie deschise tuturor, sigure, reziliente şi durabile."
+        long_description: "<p> Lumea devine din ce în ce mai urbanizată. Din 2007, <a href=\"https://unstats.un.org/sdgs/report/2019/goal-11/\"> mai mult de jumătate din populația lumii locuiește în orașe </a> și această pondere se estimează că va crește până la 60% până în 2030. &nbsp; </p> <p> Orașele și zonele metropolitane sunt puteri de creștere economică - contribuind cu aproximativ 60% din PIB-ul global. Cu toate acestea, ele reprezintă, de asemenea, aproximativ 70% din emisiile globale de carbon și peste 60% din utilizarea resurselor.&nbsp;</p><p>Urbanizarea rapidă are ca rezultat un număr tot mai mare de locuitori ai mahalalelor, infrastructură și servicii inadecvate și supraîncărcate (cum ar fi colectarea deșeurilor și sistemele de apă și canalizare, drumuri și transporturi), agravarea poluării aerului și extinderea urbană neplanificată. &nbsp; </p> <p> <a href=\"https://unhabitat.org/coronavirus-will-travel-incredibly-fast-in-africas-slums-un-habitat-chief-warns\">Impactul COVID-19</a> va fi cel mai devastator în zonele urbane sărace și dens populate, în special pentru cei un miliard de oameni care trăiesc în așezările informale și în mahalalele din întreaga lume, unde supraaglomerarea face dificilă urmarea măsurilor recomandate, cum ar fi distanțarea socială și autoizolarea.&nbsp;</p><p> Agenția ONU pentru alimentație, FAO, a avertizat că foamea și decesele ar putea crește semnificativ în zonele urbane, fără măsuri pentru a se asigura că rezidenții săraci și vulnerabili au\n<a href=\"https://news.un.org/en/story/2020/05/1063622\">acces la alimente </a>.&nbsp;</p>"
+        targets:
+          target_11_1:
+            long_title: "Până în 2030, asigurarea accesului la locuințe adecvate, sigure la prețuri accesibile și servicii de bază și modernizarea cartierelor sărace."
+          target_11_2:
+            long_title: "Până în 2030, asigurarea accesului la sisteme de transport sigure, accesibile, durabile și la prețuri accesibile, prin îmbunătățirea siguranței rutiere, în special prin extinderea transportului public, cu o atenție specială asupra nevoilor celor aflați în situații vulnerabile, femeilor, copiilor, persoanelor cu dizabilități și persoanelor în vârstă."
+          target_11_3:
+            long_title: "Până în 2030, îmbunătățirea urbanizării inclusivă și durabilă și capacității de planificare și gestionare a așezărilor umane participative, integrate și durabile în toate țările."
+          target_11_4:
+            long_title: "Consolidarea eforturilor pentru a proteja patrimoniul cultural și natural mondial."
+          target_11_5:
+            long_title: "Până în 2030, reducerea semnificativă a numărului de decese și a numărului de persoane afectate și scăderea substanțială a pierderilor economice directe în raport cu Produsul Intern Brut la nivel global, cauzate de dezastre, inclusiv dezastrele legate de apă, cu un accent pe protecția celor săraci și a persoanelor aflate în situații vulnerabile."
+          target_11_6:
+            long_title: "Până în 2030, reducerea pe cap de locuitor a impactului negativ asupra mediului în orașe, inclusiv prin acordarea unei atenții deosebite calității aerului și gestionării deșeurilor municipale și de alt tip."
+          target_11_7:
+            long_title: "Până în 2030, asigurarea accesului universal la spații verzi și publice sigure, incluzive și accesibile, în special pentru femei și copii, persoane în etate și cele cu dizabilități."
+          target_11_A:
+            long_title: "Sprijinirea legăturilor economice, sociale și de mediu pozitive între zonele urbane, peri-urbane și rurale prin consolidarea planificării dezvoltării naționale și regionale."
+          target_11_B:
+            long_title: "Până în 2020, creșterea în mod substanțial a numărului de orașe și așezări umane care adoptă și implementează politici și planuri integrate de incluziune, eficiență a resurselor, atenuare și adaptare la schimbările climatice, reziliență la dezastre și dezvoltă și implementează, în conformitate cu cadrul Sendai pentru Reducerea Riscului de Dezastru 2015-2030, management holistic al riscurilor de dezastre la toate nivelurile."
+          target_11_C:
+            long_title: "Susținerea țărilor mai puțin dezvoltate, inclusiv prin asistare financiară și technică, în construirea de clădiri durabile utilizând materiale locale."
+      goal_12:
+        title: "Consum și Producție Responsabile"
+        title_in_two_lines: "Consum\nși Producție Responsabile"
+        description: "Asigurarea de modele durabile de consum și producție."
+        long_description: '<p> Consumul și producția mondială - o forță motrice a economiei globale - se bazează pe utilizarea mediului natural și a resurselor într-un mod care continuă să aibă efecte distructive asupra planetei.&nbsp;</p> <p> Progresul economic și social din ultimul secol a fost însoțit de degradarea mediului care pune în pericol chiar sistemele de care depinde dezvoltarea noastră în viitor - atât cât și însăși supraviețuirea noastră.&nbsp;</p> <p> Câteva<a href="https://www.unenvironment.org/explore-topics/sustainable-development-goals/why-do-sustainable-development-goals-matter/goal-12">fapte și cifre</a></p><ul><li style="font-weight: 400">În fiecare an, aproximativ o treime din totalul alimentelor produse - echivalentul a 1,3 miliarde de tone în valoare de aproximativ 1 trilion de dolari - ajunge să se putrezească în coșurile consumatorilor și comercianților cu amănuntul sau se strică din cauza modalităților de transport și recoltare învechite. <li style="font-weight: 400"> Dacă oamenii din întreaga lume ar trece la becuri eficiente din punct de vedere energetic, lumea ar economisi $120 de miliarde de dolari anual. <li style="font-weight: 400"> În cazul în care populația globală va ajunge la 9,6 miliarde până în 2050, ar putea fi necesar echivalentul a aproape trei planete pentru a furniza resursele naturale necesare pentru a susține stilul de viață actual. </li> </ul> <p> Pandemia COVID-19 oferă țărilor posibilitatea de a construi planuri de redresare care să inverseze tendințele actuale și să schimbe modelele noastre de consum și producție către un viitor mai durabil. </p><p><a href="https://www.unenvironment.org/explore-topics/resource-efficiency/what-we-do/sustainable-consumption-and-production-policies"> Consumul și producția durabile </a> sunt despre a face mai mult și mai bine cu mai puțin. De asemenea, este vorba despre decuplarea creșterii economice de degradarea mediului, creșterea eficienței resurselor și promovarea stilurilor de viață durabile. </p> <p> Consumul și producția durabilă pot contribui, de asemenea, în mod substanțial la reducerea sărăciei și la tranziția către economii cu emisii reduse de carbon și ecologice. </p>'
+        targets:
+          target_12_1:
+            long_title: "Implementarea cadrului de 10 ani al programelor privind consumul și producția durabile, toate țările luând măsuri, țările dezvoltate preluând conducerea ținând seama de dezvoltarea și capacitățile țărilor în curs de dezvoltare."
+          target_12_2:
+            long_title: "Până în 2030, realizarea unui management durabil și eficient a utilizării resurselor naturale."
+          target_12_3:
+            long_title: "Până în 2030, înjumătățirea pe cap de locuitor a risipei mondiale de alimente la nivel de vânzător cât și la nivel de cumpărător și reducerea pierderilor de alimente de-a lungul lanțurilor de producție și de aprovizionare, inclusiv a pierderilor post-recoltare."
+          target_12_4:
+            long_title: "Până în 2020, realizarea managementului ecologic al substanțelor chimice și a tuturor deșeurilor pe parcursul ciclului de viață al acestora, în conformitate cu cadrele convenite la nivel internațional, și reducerea semnificativă a emisiilor acestora în aer, apă și sol, în scopul de a reduce la minimum efectele adverse ale acestora asupra sănătății umane și a mediului."
+          target_12_5:
+            long_title: "Până în 2030, reducerea semnificativă a generării de deșeuri prin prevenire, reducere, reciclare și reutilizare."
+          target_12_6:
+            long_title: "Încurajarea companiilor, în special a companiilor mari și trans-naționale, să adopte practici durabile și să integreze informațiile privind durabilitatea în ciclul lor de raportare."
+          target_12_7:
+            long_title: "Promovarea practicilor durabile de achiziții publice, în conformitate cu politicile și prioritățile naționale."
+          target_12_8:
+            long_title: "Până în 2030, informarea și sensibilizarea oamenilor de pretutindeni cu informații relevante pe tema dezvoltării durabile și unui stil de viață în armonie cu natura."
+          target_12_A:
+            long_title: "Susținerea dezvoltării țărilor pentru consolidarea capacității științifice și tehnologice spre modele durabile de consum și producție."
+          target_12_B:
+            long_title: "Dezvoltarea și implemenarea unor ustensile de monitorizare a impactului dezvoltării durabile pentru un turism durabil care creează locuri de muncă și care promovează cultura și produsele locale."
+          target_12_C:
+            long_title: "Raționalizarea subvențiilor ineficiente pentru combustibilii fosili care încurajează consumul risipitor prin eliminarea distorsiunilor pieței, în conformitate cu circumstanțele naționale, inclusiv prin restructurarea impozitelor și eliminarea treptată a acestor subvenții nocive, acolo unde există, pentru a reflecta impactul lor asupra mediului, ținând seama pe deplin de nevoile specifice și condițiile țărilor în curs de dezvoltare și reducerea la minimum a posibilelor efecte negative asupra dezvoltării acestora într-un mod care să protejeze săracii și comunitățile afectate."
+      goal_13:
+        title: "Acțiune Climatică"
+        title_in_two_lines: "Acțiune\nClimatică"
+        description: "Luați măsuri urgente pentru a combate schimbările climatice și impactul acestora."
+        long_description: '<p> 2019 a fost <a href="https://news.un.org/en/story/2020/03/1059061"> al doilea cel mai cald an înregistrat </a> și sfârșitul celui mai cald deceniu (2010 - 2019) înregistrate vreodată.&nbsp;&nbsp;</p> <p> Nivelurile de dioxid de carbon (CO2) și alte<a href="https://news.un.org/en/story/2020/04/1062332">gazele cu efect de seră din atmosferă </a> au ajuns la noi recorduri în 2019. &nbsp;</p> <p> Schimbările climatice afectează fiecare țară de pe fiecare continent. Aceasta perturbă economiile naționale și afectează viețile. Modelele meteo se schimbă, nivelul mării crește și evenimentele meteo devin din ce în ce mai extreme. </p> <p> Deși se estimează că emisiile de gaze cu efect de seră vor scădea cu aproximativ 6% în 2020 din cauza interdicțiilor de călătorie și a încetinirilor economice rezultate din pandemia de COVID -19, această îmbunătățire este doar temporară. <a href="https://news.un.org/en/story/2020/04/1062332"> Schimbările climatice nu sunt în pauză </a>. Odată ce economia globală începe să se recupereze după pandemie, se așteaptă ca emisiile să revină la niveluri mai ridicate. </p> <p> Salvarea vieților și mijloacelor de trai necesită acțiuni urgente pentru a aborda atât pandemia, cât și situația de urgență climatică. </p> <p><a href="https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement">Acordul de la Paris </a>, adoptat în 2015, are ca scop consolidarea nivelului global răspuns la amenințarea schimbărilor climatice, menținând o creștere a temperaturii globale în acest secol, cu mult sub 2 grade Celsius peste nivelurile preindustriale. Acordul urmărește, de asemenea, să consolideze capacitatea țărilor de a face față impactului schimbărilor climatice, prin fluxuri financiare adecvate, un nou cadru tehnologic și un cadru îmbunătățit de consolidare a capacităților de construire. </p>'
+        targets:
+          target_13_1:
+            long_title: "Consolidarea rezistenței și a capacității de adaptare la pericolele legate de climă și dezastrele naturale din toate țările."
+          target_13_2:
+            long_title: "Integrarea măsurilor pentru schimbările climatice în politici, strategii și planificări naționale."
+          target_13_3:
+            long_title: "Îmbunătățirea educației, a sensibilizării și a capacității umane și instituționale pentru atenuarea, adaptarea, reducerea impactului și atenționarea timpurie în ceea ce privește schimbările climatice."
+          target_13_A:
+            long_title: "Punerea în aplicare a angajamentului asumat de țările dezvoltate participante la Convenția-cadru a Organizației Națiunilor Unite privind schimbările climatice în vederea mobilizării în comun a 100 miliarde de dolari anual până în 2020 din toate sursele pentru a răspunde nevoilor țărilor în curs de dezvoltare în contextul unor acțiuni semnificative de atenuare și transparență în implementare și să operaționalizeze pe deplin Fondul Verde pentru Climă prin valorificarea acestuia cât mai curând posibil."
+          target_13_B:
+            long_title: "Promovarea mecanismelor de creștere a capacității de planificare și gestionare eficientă a schimbărilor climatice în țările cel mai puțin dezvoltate și statele mici insulare în curs de dezvoltare, inclusiv concentrarea asupra femeilor, tinerilor și comunităților locale și marginalizate."
+      goal_14:
+        title: "Viața Acvatică"
+        title_in_two_lines: "Viața\nAcvatică"
+        description: "Conservarea şi utilizarea durabilă a oceanelor, mărilor şi a resurselor marine."
+        long_description: '<p> Oceanul conduce sisteme globale care fac Pământul locuibil pentru omenire. Apa de ploaie, apa potabilă, vremea, clima, litoralul, o mare parte din hrana noastră și chiar oxigenul din aerul pe care îl respirăm sunt furnizate și reglementate în cele din urmă de mare.&nbsp; </p> <p> Gestionarea atentă a acestei<a href="https://www.unenvironment.org/explore-topics/oceans-seas/why-do-oceans-and-seas-matter"> resurse globală și esențială </a> este o caracteristică cheie a unui mediu durabil pe viitor. Cu toate acestea, în prezent, există o deteriorare continuă a apelor de coastă din cauza poluării, iar acidificarea oceanelor are un efect advers asupra funcționării ecosistemelor și a biodiversității. Acest lucru are, de asemenea, un impact negativ asupra pescuitului la scară mică. &nbsp; </p> <p> Salvarea oceanului nostru trebuie să rămână o prioritate. Biodiversitatea marină este esențială pentru sănătatea oamenilor și a planetei noastre. Zonele marine protejate trebuie să fie gestionate în mod eficient și să aibă resurse adecvate, iar reglementările trebuie puse în aplicare pentru a reduce supra-pescuitul, poluarea marină și acidificarea oceanelor. </p>'
+        targets:
+          target_14_1:
+            long_title: "Până în 2025, prevenirea și reducerea semnificativă a poluării marine de toate tipurile, în special de la activitățile terestre, inclusiv poluarea cu deșeuri marine și poluarea cu nutrienți."
+          target_14_2:
+            long_title: "Până în 2020, gestionarea și protecția durabilă a ecosistemelor marine și costale, pentru a evita impactele negative semnificative, inclusiv prin consolidarea rezistenței acestora, și luarea de măsuri pentru restaurarea acestora, pentru a avea oceane sănătoase și productive."
+          target_14_3:
+            long_title: "Minimizarea și gestionarea impactului acidificării oceanelor, inclusiv prin cooperare științifică sporită la toate nivelurile."
+          target_14_4:
+            long_title: "Până în 2020, reglementarea eficientă a pescuitului și eliminarea pescuitului excesiv, ilegal, nedeclarat și nereglementat și a practicilor de pescuit distructive și implementarea planurilor de management bazate pe știință, pentru a restabili stocurile de pește în cel mai scurt timp posibil, cel puțin la nivelurile care ar asigura un randament maxim durabil, după cum este determinat de caracteristicile biologice ale acestora."
+          target_14_5:
+            long_title: "Până în 2020, conservarea a cel puțin 10 la sută din zonele costale și marine, în conformitate cu legislația națională și internațională și în baza celor mai bune evidențe științifice disponibile."
+          target_14_6:
+            long_title: "Până în 2020, interzicerea formelor de subvenționare a pescuitului care contribuie la capacitatea excedentară și pescuitul excesiv, eliminarea subvențiilor care contribuie la pescuitul ilegal, nedeclarat și nereglementat și abținerea de la introducerea unor subvenții noi de acest tip, recunoscând că tratamentul adecvat și eficient, special și diferențiat pentru țările cel mai puțin dezvoltate ar trebui să fie o parte integrantă a negocierii subvențiilor pentru pescuit în cadrul Organizației Mondiale a Comerțului."
+          target_14_7:
+            long_title: "Până în 2030, creșterea beneficiilor economice pentru statele insulare mici și țările cel mai puțin dezvoltate, din utilizarea durabilă a resurselor marine, inclusiv prin gestionarea durabilă a pescuitului, acvaculturii și turismului."
+          target_14_A:
+            long_title: "Creșterea cunoștințelor științifice, dezvoltarea capacității de cercetare și transferul tehnologiei marine, ținând seama de criteriile și orientările Comisiei interguvernamentale oceanografice pentru transferul tehnologiei marine, pentru a îmbunătăți sănătatea oceanelor și pentru a spori contribuția biodiversității marine la dezvoltarea țărilor în curs de dezvoltare, în special statele insulare mici în curs de dezvoltare și țările cel mai puțin dezvoltate."
+          target_14_B:
+            long_title: "Oferirea accesului pescarilor artizanali la scară mică la resursele și piețele marine."
+          target_14_C:
+            long_title: "Îmbunătățirea conservării și utilizării durabile a oceanelor și a resurselor acestora prin punerea în aplicare a dreptului internațional, astfel cum se reflectă în UNCLOS, care oferă cadrul legal pentru conservarea și utilizarea durabilă a oceanelor și a resurselor acestora, după cum amintim în paragraful 158 din Viitorul pe care îl dorim."
+      goal_15:
+        title: "Viața Terestră"
+        title_in_two_lines: "Viața\nTerestră"
+        description: "Gestionarea durabilă a pădurilor, combaterea deșertificării, stoparea și inversarea degradării terenurilor, stoparea pierderii biodiversității."
+        long_description: '<p> Natura este esențială pentru supraviețuirea noastră: natura ne furnizează oxigenul, ne reglează modelele meteorologice, ne polenizează culturile, ne produce hrana, furajele și fibrele. Dar este sub un stres crescut. <a href="https://news.un.org/en/story/2020/04/1061082"> Activitatea umană a modificat aproape 75% din suprafața pământului </a>, strângând viața sălbatică și natura într-un -un colț mai mic al planetei. </p> <p> În jur de <a href="https://ipbes.net/sites/default/files/2020-02/ipbes_global_assessment_report_summary_for_policymakers_en.pdf"> 1 milion de specii de animale și plante sunt amenințate cu dispariția </a> - majoritatea, în decenii - în conformitate cu Raportul global de evaluare 2019 privind biodiversitatea și serviciul ecosistemelor. Raportul a solicitat schimbări transformative pentru a restabili și a proteja natura. A constatat că sănătatea ecosistemelor de care depindem noi și toate celelalte specii se deteriorează mai repede ca niciodată, afectând&nbsp; fundamentele economiilor noastre, mijloacele de trai, securitatea alimentară, sănătatea și calitatea vieții la nivel mondial. &nbsp; </p> <p> Defrișările și deșertificarea - cauzate de activitățile umane și de schimbările climatice - reprezintă provocări majore pentru dezvoltarea durabilă și au afectat vieți și mijloace de trai de milioane de oameni. <a href="https://news.un.org/en/story/2019/05/1038291"> Pădurile sunt extrem de importante </a> pentru susținerea vieții pe Pământ și joacă un rol major în lupta împotriva schimbării climei. Și investițiile în <a href="https://news.un.org/en/story/2019/09/1045802"> restaurarea terenurilor </a> sunt esențiale pentru îmbunătățirea mijloacelor de trai, reducerea vulnerabilităților și reducerea riscurilor pentru economie. </p> <p> Sănătatea planetei noastre joacă, de asemenea, un rol important în <a href="https://www.unenvironment.org/resources/emerging-zoonotic-diseases-and-links-ecosystem-health-unep-frontiers-2016-chapter">apariția bolilor zoonotice </a>, adică a bolilor care sunt transmisibile între animale și oameni. Pe măsură ce continuăm să intrăm în ecosisteme fragile, aducem oamenii în contact din ce în ce mai mare cu viața sălbatică, permițând agenților patogeni din viața sălbatică să se răspândească asupra animalelor și oamenilor, crescând riscul apariției și amplificării bolilor. </p>'
+        targets:
+          target_15_1:
+            long_title: "Până în 2020, asigurarea conservării, restabilirii și utilizării durabile a ecosistemelor de apă dulce terestre și interioare și a serviciilor acestora, în special păduri, zone umede, munți și terenuri aride, în conformitate cu obligațiile prevăzute de acordurile internaționale."
+          target_15_2:
+            long_title: "Până în 2020, promovarea implementării managementului durabil pentru toate tipurile de păduri, stoparea defrișării, restabilirea pădurilor degradate și creșterea substațială a împaduririi și reîmpaduririi la nivel global."
+          target_15_3:
+            long_title: "Până în 2030, combaterea deșertificării, restaurarea terenurilor și solurilor degradate, inclusiv a terenurilor afectate de deșertificare, secetă și inundații și depunerea de eforturi pentru stoparea degradării solului."
+          target_15_4:
+            long_title: "Până în 2030, asigurarea conservării ecosistemelor montane, inclusiv a biodiversității acestora, în scopul de a spori capacitatea acestora de a oferi beneficii esențiale pentru dezvoltare durabilă."
+          target_15_5:
+            long_title: "Luarea unor măsuri urgente, semnificative pentru a reduce degradarea habitatelor naturale și pentru a stopa pierderea biodiversității și, până în 2020, pentru a proteja și preveni extincția speciilor pe cale de dispariție."
+          target_15_6:
+            long_title: "Promovarea distribuirii corecte și echitabile a beneficiilor care rezultă din utilizarea resurselor genetice și promovarea accesului corespunzător la aceste resurse, după cum este convenit la nivel internațional."
+          target_15_7:
+            long_title: "Luarea unor măsuri urgente pentru a opri braconajul și traficul de specii protejate de floră și faună și abordarea cererii și ofertei de produse ilegale de specii sălbatice."
+          target_15_8:
+            long_title: "Până în 2020, introducerea măsurilor de prevenție și reducere semnificativă a impactului speciilor invazive asupra ecosistemelor terestre și acvatice și controlul sau eradicarea speciilor prioritare."
+          target_15_9:
+            long_title: "Până în 2020, integrarea valorilor ecosistemelor și biodiversității în planificare națională și locală, proceselor de dezvoltare, strategiilor și planurilor de reducere a sărăciei."
+          target_15_A:
+            long_title: "Mobilizarea și creșterea semnificativă a resurselor financiare din toate sursele pentru a conserva și utiliza pe termen cât mai lung biodiversitatea și ecosistemele."
+          target_15_B:
+            long_title: "Mobilizarea resurselor din toate sursele și la toate nivelele pentru a finanța managementul durabil al pădurilor și pentru a oferi stimulente adecvate țărilor în curs de dezvoltare pentru a avansa o astfel de gestionare, inclusiv pentru conservare și reîmpădurire."
+          target_15_C:
+            long_title: "Sporirea sprijinului global pentru eforturile de combatere a braconajului și a traficului de specii protejate, inclusiv prin creșterea capacității comunităților locale de a căuta oportunități de trai durabile."
+      goal_16:
+        title: "Pace, Justiție și Instituții Eficiente"
+        title_in_two_lines: "Pace, Justiție\nși Instituții Eficiente"
+        description: "Promovarea unor societăți pașnice, drepte și incluzive."
+        long_description: '<p> Conflictele, nesiguranța, instituțiile slabe și accesul limitat la justiție rămân o mare amenințare la adresa dezvoltării durabile. &nbsp; </p> <p> Numărul de<a href="https://www.unhcr.org/en-us/news/press/2019/6/5d03b22b4/worldwide-displacement-tops-70-million-un-refugee-chief-urges-greater-solidarity.html">oamenii care fug de război, persecuție și conflict au depășit 70 de milioane </a> în 2018, cel mai înalt nivel înregistrat de agenția ONU pentru refugiați (UNHCR) în aproape 70 de ani.&nbsp;</p> <p> În 2019, Națiunile Unite au urmărit <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">357 de crime și 30 de dispariții forțate </a> ale apărătorilor drepturilor omului, jurnaliștilor și sindicaliștilor din 47 de țări. </p> <p> Și nașterile a aproximativ<a href="https://data.unicef.org/topic/child-protection/birth-registration/">unul din patru copii </a> cu vârsta sub 5 ani din întreaga lume nu sunt niciodată înregistrați oficial, lipsindu-i de o dovadă a identității juridice crucială pentru protejare drepturile lor și pentru accesul la justiție și la serviciile sociale. </p>'
+        targets:
+          target_16_1:
+            long_title: "Reducerea semnificativă a tuturor formelor de violență și ratelor de deces conexe, pretutindeni."
+          target_16_2:
+            long_title: "Stoparea abuzului, exploatării, traficului și a tuturor formelor de violență și torturii copiilor."
+          target_16_3:
+            long_title: "Promovarea statului de drept la nivel național și internațional și asigurarea accesul egal la justiție pentru toți."
+          target_16_4:
+            long_title: "Până în 2030, reducerea semnificativă a fluxurilor ilicite financiare și de armament, creșterea ratei de recuperare și returnare bunurilor furate și combaterea tuturor formelor de crimă organizată."
+          target_16_5:
+            long_title: "Reducerea semnificativă a corupției și dării de mită în toate formele sale."
+          target_16_6:
+            long_title: "Dezvoltarea instituțiilor eficiente, responsabile și transparente la toate nivelurile."
+          target_16_7:
+            long_title: "Asigurarea procesului decizional receptiv, incluziv, participativ și reprezentativ la toate nivelurile."
+          target_16_8:
+            long_title: "Extinderea și consolidarea participării țărilor în curs de dezvoltare în instituțiile de guvernare globală."
+          target_16_9:
+            long_title: "Până în 2030, asigurarea identității legale tuturor, inclusiv înregistrarea nașterii."
+          target_16_10:
+            long_title: "Asigurarea accesului public la informații și protejarea libertăților fundamentale, în conformitate cu legislația națională și acordurile internaționale."
+          target_16_A:
+            long_title: "Consolidarea instituțiilor naționale relevante, inclusiv prin cooperare internațională, pentru consolidarea capacității la toate nivelurile, în special în țările în curs de dezvoltare, pentru a preveni violența și a combate terorismul și criminalitatea."
+          target_16_B:
+            long_title: "Promovarea și aplicarea legilor și politicilor nediscriminatorii pentru dezvoltare durabilă."
+      goal_17:
+        title: "Parteneriate Pentru Obiective"
+        title_in_two_lines: "Parteneriate\nPentru Obiective"
+        description: "Revitalizarea parteneriatului global pentru Dezvoltare Durabilă."
+        long_description: '<p> ODD-urile pot fi realizate numai cu parteneriate și cooperare globale puternice. </p> <p> O agendă de dezvoltare de succes necesită parteneriate incluzive - la nivel global, regional, național și local - construite pe principii și valori și pe o viziune comună și obiective comune care plasează oamenii și planeta în centru. </p> <p> Multe țări necesită asistență oficială pentru dezvoltare pentru a încuraja creșterea și comerțul. Cu toate acestea, <a href="https://www.un.org/press/en/2019/ga12191.doc.htm"> nivelurile de ajutor scad </a> și țările donatoare nu și-au respectat angajamentul de a crește finanțarea dezvoltării. </p> <p> Datorită pandemiei COVID-19, <a href="https://www.imf.org/en/Publications/WEO/Issues/2020/04/14/weo-april-2020">economia globală </a> se preconizează că se va contracta brusc, cu 3%, în 2020, cunoscând cea mai gravă recesiune de la Marea Depresiune. </p> <p> Cooperarea internațională puternică este necesară acum mai mult decât să ne asigurăm vreodată că țările au mijloacele necesare pentru a se recupera de la pandemie, pentru a reconstrui mai bine și pentru a atinge obiectivele de dezvoltare durabilă. </p>'
+        targets:
+          target_17_1:
+            long_title: "Consolidarea mobilizării resurselor interne, inclusiv prin sprijin internațional pentru țările în curs de dezvoltare, pentru a îmbunătăți capacitatea internă de colectare a impozitelor și a altor venituri."
+          target_17_2:
+            long_title: "Țările dezvoltate să-și pună în aplicare pe deplin angajamentele oficiale de asistență pentru dezvoltare, inclusiv angajamentul multor țări dezvoltate de a atinge obiectivul de 0,7 la sută din AOD(Asistență Oficială pentru Dezvoltare)/VNB(Venit Național Brut) către țările în curs de dezvoltare și de 0,15 până la 0,20 la sută din AOD/VNB către țările cel mai puțin dezvoltate Furnizorii de AOD sunt încurajat să ia în considerare stabilirea unui obiectiv care să asigure cel puțin 0,20 la sută din AOD/VNB țărilor cel mai puțin dezvoltate."
+          target_17_3:
+            long_title: "Mobilizarea resurselor financiare adiționale pentru țările în curs de dezvoltare de la surse multiple."
+          target_17_4:
+            long_title: "Asistența țărilor în curs de dezvoltare în realizarea sustenabilității pe termen lung a datoriilor prin politici coordonate menite să încurajeze finanțarea datoriilor, reducerea datoriilor și restructurarea datoriilor, după caz, și abordarea datoriilor externe ale țărilor sărace foarte îndatorate pentru a reduce dificultatea datoriilor."
+          target_17_5:
+            long_title: "Adoptarea și implementarea de regimuri de promovare a investițiilor pentru țările cel mai puțin dezvoltate."
+          target_17_6:
+            long_title: "Consolidarea cooperării regionale și internaționale nord-sud, sud-sud și accesul la știință, tehnologie și inovație și îmbunătățirea schimbului de cunoștințe în condiții convenite de comun acord, inclusiv printr-o coordonare îmbunătățită între mecanismele existente, în special la nivelul Organizației Națiunilor Unite și prin un mecanism global de facilitare a tehnologiei."
+          target_17_7:
+            long_title: "Promovarea dezvoltării, transferului, diseminării și difuzării de tehnologii ecologice către țările în curs de dezvoltare în condiții favorabile, inclusiv în condiții concesionale și preferențiale, după cum s-a convenit de comun acord."
+          target_17_8:
+            long_title: "Operaționalizarea completă a băncii tehnologice și a mecanismului de consolidare a capacității științei, tehnologiei și inovării pentru țările cel mai puțin dezvoltate până în 2017 și îmbunătățirea utilizării tehnologiei permise, în special a tehnologiei informației și comunicațiilor."
+          target_17_9:
+            long_title: "Sporirea sprijinului internațional pentru punerea în aplicare a unei capacități eficiente și direcționate în dezvoltarea țărilor în curs de dezvoltare pentru a sprijini planurile naționale de punere în aplicare a tuturor obiectivelor de dezvoltare durabilă, inclusiv prin cooperare nord-sud, sud-sud și triunghiulară."
+          target_17_10:
+            long_title: "Promovarea unui sistem comercial multilateral universal, bazat pe reguli, deschis, nediscriminatoriu și echitabil în cadrul Organizației Mondiale a Comerțului, inclusiv prin încheierea negocierilor în cadrul Agendei sale de dezvoltare de la Doha."
+          target_17_11:
+            long_title: "Creșterea semnificativă a exporturilor țărilor în curs de dezvoltare, în special în vederea dublării ponderii țărilor cel mai puțin dezvoltate privind exporturile globale până în 2020."
+          target_17_12:
+            long_title: "Realizați punerea în aplicare în timp util a accesului pe piață fără taxe vamale pe o bază durabilă pentru toate țările mai puțin dezvoltate, în conformitate cu deciziile Organizației Mondiale a Comerțului, inclusiv prin asigurarea faptului că regulile preferențiale de origine aplicabile importurilor din țările cel mai puțin dezvoltate sunt transparente și simple, și să contribuie la facilitarea accesului pe piață."
+          target_17_13:
+            long_title: "Consolidarea stabilității macroeconomice globale, inclusiv prin coordonarea și coerența politicilor."
+          target_17_14:
+            long_title: "Consolidarea coerenței politicilor pentru dezvoltarea durabilă."
+          target_17_15:
+            long_title: "Respectați spațiul politic și conducerea fiecărei țări pentru a stabili și implementa politici de eradicare a sărăciei și dezvoltare durabilă."
+          target_17_16:
+            long_title: "Consolidarea parteneriatului global pentru dezvoltare durabilă, completată de parteneriate cu mai multe părți interesate care mobilizează și împărtășesc cunoștințe, expertiză, tehnologie și resurse financiare, pentru a sprijini realizarea obiectivelor de dezvoltare durabilă în toate țările, în special în țările în curs de dezvoltare."
+          target_17_17:
+            long_title: "Încurajarea și promovarea parteneriatelor eficiente public, public-privat și ale societății civile, pe baza experienței și strategiilor de resurse ale parteneriatelor."
+          target_17_18:
+            long_title: "Până în 2020, sporiți sprijinul pentru consolidarea capacităților țărilor în curs de dezvoltare, inclusiv pentru țările cel mai puțin dezvoltate și micile state insulare în curs de dezvoltare, pentru a crește în mod semnificativ disponibilitatea datelor de înaltă calitate, în timp util și fiabil, indiferent de venituri, sex, vârstă, rasă, etnie, dizabilități, localizarea geografică și alte caracteristici relevante în contextele naționale."
+          target_17_19:
+            long_title: "Până în 2030, construiți pe inițiativele existente pentru a dezvolta măsurători ale progresului în dezvoltarea durabilă care să completeze produsul intern brut și să sprijine consolidarea capacității statistice în țările în curs de dezvoltare."
+      help:
+        title: "Ajutor în Obiectivele de Dezvoltare Durabilă"
+        description: "Vă puteți alinia contribuțiile la comunitate (dezbateri, propuneri ale cetățenilor și proiecte de investiții) cu Agenda pentru Obiectivele de Dezvoltare Durabilă 2030, acest lucru ne va permite să avem o imagine de ansamblu a contribuției noastre la fiecare Obiectiv de Dezvoltare Durabilă. Mai jos puteți afla despre toate obiectivele și țintele acestora."
+      show:
+        read_more: "Citiți mai multe despre %{goal}"
+        read_less: "Citiți mai puține despre %{goal}"
+        targets:
+          no_local_targets: Acest obiectiv nu are ținte locale
+      title: "Obiective de Dezvoltare Durabilă"
+      filter:
+        heading: "Filtre ale ODD"
+        link: "Vezi toate %{resources} legate de obiectivul %{code}"
+        more:
+          one: "Încă o țintă"
+          few: "Încă %{count} ținte"
+          other: "Încă %{count} ținte"
+    related_list_selector:
+      goal_identifier: "ODD%{code}"
+      goal_list: "Puteți alege unul sau mai multe ODD aliniate cu %{record} dvs."
+      help:
+        title: "Ce ODD și ținte sunt aliniate cu %{record}?"
+        text: "Pagina de ajutor pentru ODD"
+      hint: Puteți introduce codul unui anumit obiectiv/țintă sau un text pentru căutare. Pentru mai multe informații, accesați %{link}.
+      remove_tag: "Înlătură"
+      title: "Obiective de dezvoltare durabilă și Ținte"
+    targets:
+      filter:
+        link: "Vedeți toate %{resources} legate de %{code} vizat"
+        more:
+          one: "Încă un obiectiv"
+          few: "Încă %{count} obiective"
+          other: "Încă %{count} obiective"

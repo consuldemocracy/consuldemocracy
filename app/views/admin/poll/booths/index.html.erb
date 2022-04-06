@@ -4,7 +4,7 @@
   <%= link_to t("admin.booths.index.add_booth"), new_admin_booth_path, class: "button float-right" %>
 <% end %>
 
-<%= render "/admin/shared/booth_search", url: admin_booths_path %>
+<%= render Admin::SearchComponent.new(label: t("admin.shared.search.label.booths")) %>
 
 <% if @booths.empty? %>
   <div class="callout primary">
@@ -18,7 +18,7 @@
     <thead>
       <th><%= t("admin.booths.index.name") %></th>
       <th><%= t("admin.booths.index.location") %></th>
-      <th class="text-right"><%= t("admin.actions.actions") %></th>
+      <th><%= t("admin.actions.actions") %></th>
     </thead>
     <tbody>
     <% @booths.each do |booth| %>

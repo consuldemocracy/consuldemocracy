@@ -6,21 +6,23 @@ INVESTMENT_IMAGE_FILES = %w[
   olesya-grichina-218176-unsplash_713x475.jpg
   sole-d-alessandro-340443-unsplash_713x475.jpg
 ].map do |filename|
-  File.new(Rails.root.join("db",
-                           "dev_seeds",
-                           "images",
-                           "budget",
-                           "investments", filename))
+  Rails.root.join("db",
+                  "dev_seeds",
+                  "images",
+                  "budget",
+                  "investments", filename)
 end
 
 def add_image_to(imageable)
   # imageable should respond to #title & #author
-  imageable.image = Image.create!({
-    imageable: imageable,
-    title: imageable.title,
-    attachment: INVESTMENT_IMAGE_FILES.sample,
-    user: imageable.author
-  })
+  File.open(INVESTMENT_IMAGE_FILES.sample) do |file|
+    imageable.image = Image.create!({
+      imageable: imageable,
+      title: imageable.title,
+      attachment: file,
+      user: imageable.author
+    })
+  end
   imageable.save!
 end
 
@@ -29,20 +31,23 @@ section "Creating Budgets" do
     name_en: "#{I18n.t("seeds.budgets.budget", locale: :en)} #{Date.current.year - 1}",
     name_es: "#{I18n.t("seeds.budgets.budget", locale: :es)} #{Date.current.year - 1}",
     currency_symbol: I18n.t("seeds.budgets.currency"),
-    phase: "finished"
+    phase: "finished",
+    published: true
   )
 
   Budget.create!(
     name_en: "#{I18n.t("seeds.budgets.budget", locale: :en)} #{Date.current.year}",
     name_es: "#{I18n.t("seeds.budgets.budget", locale: :es)} #{Date.current.year}",
     currency_symbol: I18n.t("seeds.budgets.currency"),
-    phase: "accepting"
+    phase: "accepting",
+    published: true
   )
 
   Budget.find_each do |budget|
     budget.phases.each do |phase|
       random_locales.map do |locale|
         Globalize.with_locale(locale) do
+          phase.name = "Name for locale #{locale}"
           phase.description = "Description for locale #{locale}"
           phase.summary = "Summary for locale #{locale}"
           phase.save!
@@ -117,7 +122,7 @@ section "Creating Budgets" do
 end
 
 section "Creating Investments" do
-  tags = Faker::Lorem.words(10)
+  tags = Faker::Lorem.words(number: 10)
   100.times do
     heading = Budget::Heading.all.sample
 
@@ -137,7 +142,6 @@ section "Creating Investments" do
       valuation_finished: [false, true].sample,
       tag_list: tags.sample(3).join(","),
       price: rand(1..100) * 100000,
-      skip_map: "1",
       terms_of_service: "1"
     }.merge(translation_attributes))
 
@@ -147,7 +151,7 @@ end
 
 section "Marking investments as visible to valuators" do
   (1..50).to_a.sample.times do
-    Budget::Investment.reorder("RANDOM()").first.update(visible_to_valuators: true)
+    Budget::Investment.sample.update(visible_to_valuators: true)
   end
 end
 
@@ -177,14 +181,13 @@ section "Winner Investments" do
       heading: heading,
       group: heading.group,
       budget: heading.group.budget,
-      title: Faker::Lorem.sentence(3).truncate(60),
+      title: Faker::Lorem.sentence(word_count: 3).truncate(60),
       description: "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>",
       created_at: rand((Time.current - 1.week)..Time.current),
       feasibility: "feasible",
       valuation_finished: true,
       selected: true,
       price: rand(10000..heading.price),
-      skip_map: "1",
       terms_of_service: "1"
     )
     add_image_to(investment) if Random.rand > 0.3

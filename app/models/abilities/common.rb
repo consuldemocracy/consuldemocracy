@@ -4,6 +4,7 @@ module Abilities
 
     def initialize(user)
       merge Abilities::Everyone.new(user)
+      merge Abilities::CustomVerified.new(user)
 
       can [:read, :update], User, id: user.id
 
@@ -46,8 +47,9 @@ module Abilities
 
       can :create, Comment
       can :create, Debate
-      can [:create, :created], Proposal
       can :create, Legislation::Proposal
+
+      can :hide, Comment, user_id: user.id
 
       can :suggest, Debate
       can :suggest, Proposal
@@ -69,7 +71,7 @@ module Abilities
       can [:flag, :unflag], Budget::Investment
       cannot [:flag, :unflag], Budget::Investment, author_id: user.id
 
-      can [:create, :destroy], Follow
+      can [:create, :destroy], Follow, user_id: user.id
 
       can [:destroy], Document do |document|
         document.documentable&.author_id == user.id
@@ -97,7 +99,10 @@ module Abilities
         can :update, Budget::Investment,               budget: { phase: "accepting" }, author_id: user.id
         can :suggest, Budget::Investment,              budget: { phase: "accepting" }
         can :destroy, Budget::Investment,              budget: { phase: ["accepting", "reviewing"] }, author_id: user.id
-        can :vote, Budget::Investment,                 budget: { phase: "selecting" }
+        can [:create, :destroy], ActsAsVotable::Vote,
+          voter_id: user.id,
+          votable_type: "Budget::Investment",
+          votable: { budget: { phase: "selecting" }}
 
         can [:show, :create], Budget::Ballot,          budget: { phase: "balloting" }
         can [:create, :destroy], Budget::Ballot::Line, budget: { phase: "balloting" }

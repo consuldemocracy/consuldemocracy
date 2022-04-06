@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   include AccessDeniedHandler
 
   default_form_builder ConsulFormBuilder
-  protect_from_forgery with: :exception
 
   before_action :authenticate_http_basic, if: :http_basic_auth_site?
 
@@ -42,20 +41,23 @@ class ApplicationController < ActionController::Base
     end
 
     def set_locale
-      if params[:locale] && I18n.available_locales.include?(params[:locale].to_sym)
-        session[:locale] = params[:locale]
+      I18n.locale = current_locale
+
+      if current_user && current_user.locale != I18n.locale.to_s
+        current_user.update(locale: I18n.locale)
       end
 
-      session[:locale] ||= I18n.default_locale
+      session[:locale] = I18n.locale
+    end
 
-      locale = session[:locale]
-
-      if current_user && current_user.locale != locale.to_s
-        current_user.update(locale: locale)
+    def current_locale
+      if I18n.available_locales.include?(params[:locale]&.to_sym)
+        params[:locale]
+      elsif I18n.available_locales.include?(session[:locale]&.to_sym)
+        session[:locale]
+      else
+        I18n.default_locale
       end
-
-      I18n.locale = locale
-      Globalize.locale = I18n.locale
     end
 
     def set_layout
@@ -104,16 +106,8 @@ class ApplicationController < ActionController::Base
     end
 
     def set_return_url
-      if !devise_controller? && controller_name != "welcome" && is_navigational_format?
-        store_location_for(:user, request.path)
-      end
-    end
-
-    def set_default_budget_filter
-      if @budget&.balloting? || @budget&.publishing_prices?
-        params[:filter] ||= "selected"
-      elsif @budget&.finished?
-        params[:filter] ||= "winners"
+      if request.get? && !devise_controller? && is_navigational_format?
+        store_location_for(:user, request.fullpath)
       end
     end
 

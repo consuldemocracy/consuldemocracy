@@ -1,0 +1,49 @@
+xlsx_package.workbook.add_worksheet(name: "Summary") do |sheet|
+  styles = xlsx_package.workbook.styles
+  title = styles.add_style(b: true)
+  link = styles.add_style(fg_color: "0000FF", u: true)
+
+  if @process.debate_phase.enabled? && @process.questions.any?
+    sheet.add_row [t("legislation.summary.debate_phase"), t("legislation.summary.debates", count: @process.questions.count)], style: title
+    @process.questions.each do |question|
+      sheet.add_row [question.title, t("legislation.summary.comments", count: question.comments.count)], style: link
+      sheet.add_hyperlink location: legislation_process_question_url(question.process, question), ref: sheet.rows.last.cells.first
+      sheet.add_hyperlink location: polymorphic_url(question, anchor: "comments"), ref: sheet.rows.last.cells.last
+      sheet.add_row [t("legislation.summary.most_voted_comments")] if question.best_comments.any?
+      question.best_comments.each do |comment|
+        sheet.add_row [comment.body, t("legislation.summary.votes", count: comment.votes_score)]
+        sheet.add_hyperlink location: comment_url(comment), ref: sheet.rows.last.cells.first
+        sheet.rows.last.cells.first.style = link
+      end
+      sheet.add_row ["", ""]
+    end
+  end
+
+  if @process.proposals_phase.enabled? && @proposals.any?
+    sheet.add_row [t("legislation.summary.proposals_phase"), t("legislation.summary.proposals", count: @proposals.count)], style: title
+    @proposals.sort_by_supports.each do |proposal|
+      sheet.add_row [proposal.title, t("legislation.summary.votes", count: proposal.votes_score)]
+      sheet.add_hyperlink location: legislation_process_proposal_url(proposal.legislation_process_id, proposal), ref: sheet.rows.last.cells.first
+      sheet.rows.last.cells.first.style = link
+    end
+    sheet.add_row ["", ""]
+  end
+
+  if @process.allegations_phase.enabled? && @comments.any?
+    sheet.add_row [t("legislation.summary.allegations_phase"),
+                   t("legislation.summary.top_comments", count: @comments.count)], style: title
+    @comments.group_by(&:commentable).each do |annotation, annotation_comments|
+      sheet.add_row [t("legislation.annotations.index.comments_about")]
+      sheet.add_row [annotation.quote, t("legislation.summary.comments", count: annotation.comments.count)]
+      sheet.add_hyperlink location: polymorphic_url(annotation, anchor: "comments"), ref: sheet.rows.last.cells.last
+      sheet.rows.last.cells.last.style = link
+
+      annotation_comments.each do |comment|
+        sheet.add_row [comment.body, t("legislation.summary.votes", count: comment.votes_score)]
+        sheet.add_hyperlink location: comment_url(comment), ref: sheet.rows.last.cells.first
+        sheet.rows.last.cells.first.style = link
+      end
+      sheet.add_row ["", ""]
+    end
+  end
+end

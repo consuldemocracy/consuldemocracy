@@ -1,0 +1,18 @@
+ru:
+  sdg_management:
+    homepage:
+      header:
+        create: "Создать заголовок"
+        title: "Заголовок"
+    menu:
+      budget_investments: "Партисипаторные бюджеты"
+      debates: "Обсуждения проблем"
+      legislation_processes: "Процесс законотворчества"
+      polls: "Опросы"
+      proposals: "Заявки"
+    relations:
+      index:
+        filter: "Фильтр"
+        filters:
+          all: "Все"
+          pending_sdg_review: "Ожидающие"

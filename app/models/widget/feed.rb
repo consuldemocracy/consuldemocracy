@@ -1,6 +1,4 @@
 class Widget::Feed < ApplicationRecord
-  self.table_name = "widget_feeds"
-
   KINDS = %w[proposals debates processes].freeze
 
   def active?
@@ -23,7 +21,7 @@ class Widget::Feed < ApplicationRecord
   end
 
   def proposals
-    Proposal.sort_by_hot_score.limit(limit)
+    Proposal.published.sort_by_hot_score.limit(limit)
   end
 
   def debates

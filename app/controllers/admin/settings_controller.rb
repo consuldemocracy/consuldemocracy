@@ -10,12 +10,17 @@ class Admin::SettingsController < Admin::BaseController
     @remote_census_request_settings = all_settings["remote_census.request"]
     @remote_census_response_settings = all_settings["remote_census.response"]
     @uploads_settings = all_settings["uploads"]
+    @sdg_settings = all_settings["sdg"]
   end
 
   def update
     @setting = Setting.find(params[:id])
     @setting.update!(settings_params)
-    redirect_to request_referer, notice: t("admin.settings.flash.updated")
+
+    respond_to do |format|
+      format.html { redirect_to request_referer, notice: t("admin.settings.flash.updated") }
+      format.js
+    end
   end
 
   def update_map

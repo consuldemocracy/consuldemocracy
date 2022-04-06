@@ -1,15 +1,11 @@
 require "rails_helper"
 
-describe "Admin booths" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
+describe "Admin booths", :admin do
   scenario "Index empty" do
     visit admin_root_path
 
     within("#side_menu") do
+      click_link "Voting booths"
       click_link "Booths location"
     end
 
@@ -22,6 +18,7 @@ describe "Admin booths" do
     visit admin_root_path
 
     within("#side_menu") do
+      click_link "Voting booths"
       click_link "Booths location"
     end
 
@@ -42,6 +39,7 @@ describe "Admin booths" do
     visit admin_root_path
 
     within("#side_menu") do
+      click_link "Voting booths"
       click_link "Manage shifts"
     end
 
@@ -49,7 +47,7 @@ describe "Admin booths" do
 
     expect(page).to have_content booth_for_current_poll.name
     expect(page).not_to have_content booth_for_expired_poll.name
-    expect(page).not_to have_link "Edit booth"
+    expect(page).not_to have_link "Edit"
   end
 
   scenario "Show" do
@@ -84,7 +82,7 @@ describe "Admin booths" do
 
     within("#booth_#{booth.id}") do
       expect(page).not_to have_link "Manage shifts"
-      click_link "Edit booth"
+      click_link "Edit"
     end
 
     fill_in "poll_booth_name", with: "Next booth"

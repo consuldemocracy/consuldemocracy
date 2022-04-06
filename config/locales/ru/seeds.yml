@@ -32,6 +32,7 @@ ru:
       environment: Окружающая среда
     budgets:
       budget: Совместный бюджет
+      currency: '€'
       groups:
         all_city: Весь город
         districts: Районы

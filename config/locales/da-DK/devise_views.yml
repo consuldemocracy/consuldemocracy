@@ -2,7 +2,6 @@ da:
   devise_views:
     confirmations:
       new:
-        email_label: E-mail
         submit: Send instruktioner igen
         title: Send bekræftelsesinstruktioner igen
       show:
@@ -39,18 +38,16 @@ da:
     organizations:
       registrations:
         new:
-          email_label: E-mail
-          organization_name_label: Navn på organisation
           password_confirmation_label: Bekræft adgangskode
-          password_label: Adgangskode
-          phone_number_label: Telefonnummer
-          responsible_name_label: Fulde navn på den ansvarlige for gruppen
           responsible_name_note: Dette vil være personen, der repræsenterer foreningen/gruppen
           submit: Tilmeld
           title: Tilmeld som organisation eller gruppe
         success:
           back_to_index: Jeg har forstået det; gå tilbage til min forside
           instructions_1: "<strong>Vi vil kontakte dig snarrest</strong> for at verificere, at du reelt repræsenterer denne gruppe."
+          instructions_2: Imens din <strong>e-mail kontrolleres</strong>, har vi sendt dig et <strong>link, hvor du kan bekræfte din konto</strong>.
+          instructions_3: Når du er bekræftet, kan du begynde at deltage som en ikke-verificeret gruppe.
+          thank_you: Tak fordi du registrerede dig som en gruppe på websitet. Registreringen er nu <strong>under behandling</strong>.
           title: Registrering af organisation/gruppe
     passwords:
       edit:
@@ -59,13 +56,10 @@ da:
         password_label: Ny adgangskode
         title: Skift din adgangskode
       new:
-        email_label: E-mail
         send_submit: Send instruktioner
         title: Glemt adgangskode?
     sessions:
       new:
-        login_label: E-mail eller brugernavn
-        password_label: Adgangskode
         remember_me: Husk mig
         submit: Log ind
         title: Log ind
@@ -103,12 +97,9 @@ da:
           waiting_for: "Venter på bekræftelse af:"
         new:
           cancel: Annuller login
-          email_label: E-mail
           organization_signup: Repræsenterer du en organisation eller en gruppe? %{signup_link}
           organization_signup_link: Tilmeld dig her
           password_confirmation_label: Bekræft adgangskode
-          password_label: Adgangskode
-          redeemable_code: Verifikationskode modtaget via e-mail (valgfrit)
           submit: Tilmeld
           terms: Når du tilmelder dig, accepterer du %{terms}
           terms_link: brugervilkår og betingelser
@@ -116,8 +107,10 @@ da:
           title: Tilmeld
           username_is_available: Brugernavnet er tilgængeligt
           username_is_not_available: Brugernavnet er allerede taget af en anden bruger
-          username_label: Brugernavn
           username_note: Det navn, der vises i forbindelse med dine indlæg
         success:
           back_to_index: Jeg har forstået det; gå tilbage til min startside
+          instructions_1: Vær venlig <b>at tjekke din e-mail</b> - vi har sendt dig et <b>link, så du kan bekræfte din konto</b>.
+          instructions_2: Når du har bekræftet din konto, kan du begynde at deltage.
+          thank_you: Tak din tilmelding. Du skal nu <b>bekræfte din e-mail adresse</b>.
           title: Bekræft din e-mail adresse

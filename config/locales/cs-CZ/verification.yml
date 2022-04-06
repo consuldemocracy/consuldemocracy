@@ -17,6 +17,9 @@ cs:
     letter:
       alert:
         unconfirmed_code: Doposud jste nezadali žádný potvrzovací kód
+      create:
+        flash:
+          success: Děkujeme, že jste si vyžádali <b>maximální bezpečnostní kód (nutný pouze pro závěrečné hlasování)</b>. Během několika dní vám jej zašleme na adresu uvedenou v údajích, které máme v souboru. Nezapomeňte prosím, že pokud si přejete, můžete si kód vyzvednout na kterémkoli úřadě pro podporu občanů.
       edit:
         see_all: Zobrazit návrhy
         title: Dopis požadován
@@ -25,6 +28,7 @@ cs:
       new:
         explanation: "Pro účast na finálním hlasování může:"
         go_to_index: Zobrazit návrhy
+        office: Ověřte na všech úřadech pro podporu občanů
         send_letter: Pošlete mi dopis s kódem
         title: Blahopřejeme!
         user_permission_info: S vaším účtem můžete...
@@ -45,12 +49,14 @@ cs:
         accept_terms_text_title: Přijímám podmínky přístupu k základním registrům
         document_number: Číslo dokladu
         document_number_help_title: Nápověda
+        document_number_help_text: "<strong>Číslo občanského průkazu</strong>: AJ12345678<br> <strong>Pas</strong>: AAA000001<br> <strong>řidičský průkaz</strong>: X1234567P"
         document_type:
           passport: Cestovní pas
           residence_card: Občanský průkaz
           spanish_id: Číslo OP
         error_not_allowed_age: Nemáte požadovaný věk pro účast
         error_not_allowed_postal_code: Abyste mohli být ověřeni, musíte se zaregistrovat.
+        error_verifying_census: Nepodařilo se ověřit vaše údaje. Ověřte si prosím správnost svých údajů telefonicky na městském úřadě, nebo navštivte jednu z kanceláří pro podporu občanů.
         form_errors: zabránil ověření vašeho bydliště
         postal_code_note: Chcete-li ověřit svůj účet, že musíte se registrovat
         terms: podmínky přístupu
@@ -67,8 +73,8 @@ cs:
         title: Bezpečnostní kód potvrzení
       new:
         phone: Zadejte číslo svého mobilního telefonu pro získání kódu
+        phone_format: "<strong><em>(příklad: 712345678 nebo +42012345678)</em></strong>"
         phone_note: Váš telefon používáme pouze k zaslání kódu, nikdy vás nebudeme kontaktovat.
-        phone_placeholder: "Příklad: 612345678 nebo +42012345678"
         submit_button: Odeslat
         title: Poslat potvrzovací kód
       update:

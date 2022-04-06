@@ -1,0 +1,642 @@
+sv:
+  sdg:
+    goals:
+      goal_1:
+        title: "Avskaffa fattigdom"
+        title_in_two_lines: "Avskaffa\nfattigdom"
+        description: "Eliminera alla former av fattigdom, i hela världen."
+        long_description: '<p>Globalt har antalet människor som lever i extrem fattigdom minskat, från 36 procent 1990 till 10 procent 2015. Men förbättringstakten är i avtagande och covid-19-krisen <a href="https://www.un.org/sites/un2.un.org/files/sg_report_socio-economic_impact_of_covid19.pdf">riskerar att vända årtionden av framsteg</a> i kampen mot fattigdom. <a href="https://www.wider.unu.edu/node/237051">Ny forskning</a> som publicerats av UNU World Institute for Development Economics Research varnar om att det ekonomiska utfallet av <a href="https://www.wider.unu.edu/publication/estimates-impact-covid-19-global-poverty">den globala pandemin skulle kunna bli upp till ytterligare en halv miljard människor</a>, eller 8 % av Jordens hela befolkning, försatt i fattigdom. Detta skulle bli första gången på trettio år som fattigdomen har ökat globalt, sedan 1990.</p> <p>Mer än <a href="http://www.worldbank.org/en/news/press-release/2018/09/19/decline-of-global-extreme-poverty-continues-but-has-slowed-world-bank">700 miljoner människor</a>, eller 10 procent av världens befolkning, lever fortfarande i extrem fattigdom idag och kämpar för att uppfylla sina mest grundläggande behov, såsom hälsa, utbildning och tillgång till vatten och sanitet, för att bara nämna några. Majoriteten av alla som lever på mindre än 1,90 dollar per dag finns i Afrika söder om Sahara. Världens <a href="https://unstats.un.org/sdgs/report/2019/goal-01/">fattigdomsnivå på landsbygden är 17,2 procent</a> – mer än tre gånger högre än i städerna.&nbsp;</p> <p>För de som arbetar garanterar anställningen inte ett anständigt liv. Faktiskt levde <a href="https://unstats.un.org/sdgs/report/2019/goal-01/">8 procent</a> av världens anställda arbetare och deras familjer i extrem fattigdom 2018. Ett av fem barn lever i extrem fattigdom. Att garantera socialt skydd för alla barn och andra utsatta grupper är avgörande för att minska fattigdomen.</p>'
+        targets:
+          target_1_1:
+            long_title: "Senast 2030 avskaffa den extrema fattigdomen, som 2015 avsåg människor som lever på under 1,25 USA-dollar per dag (sedan dess justerat till 1,90 USD), för alla människor överallt"
+            short_title: "Avskaffa extrem fattigdom"
+          target_1_2:
+            long_title: "Till 2030 minst halvera den andel män, kvinnor och barn i alla åldrar som lever i någon form av fattigdom enligt nationella definitioner"
+            short_title: "Minska fattigdomen med minst 50 %"
+          target_1_3:
+            long_title: "Införa nationellt lämpliga system och åtgärder för socialt skydd för alla, inklusive grundskydd, och senast 2030 säkerställa att de omfattar en väsentlig andel av de fattiga och de utsatta"
+            short_title: "Införa system för socialt skydd"
+          target_1_4:
+            long_title: "Senast 2030 säkerställa att alla män och kvinnor, i synnerhet de fattiga och de utsatta, har lika rätt till ekonomiska resurser, tillgång till grundläggande tjänster, möjlighet att äga och kontrollera mark och andra former av egendom samt tillgång till arv, naturresurser, lämplig ny teknik och finansiella tjänster, inklusive mikrokrediter"
+            short_title: "Lika rätt till ägande, grundläggande tjänster, teknik och ekonomiska resurser"
+          target_1_5:
+            long_title: "Till 2030 bygga upp motståndskraften hos de fattiga och människor i utsatta situationer och minska deras utsatthet och sårbarhet för extrema klimatrelaterade händelser och andra ekonomiska, sociala och miljömässiga chocker och katastrofer"
+            short_title: "Bygga upp motståndskraft mot miljömässiga, ekonomiska och sociala katastrofer"
+          target_1_A:
+            long_title: "Säkerställa betydande resursmobilisering från en rad olika källor, bland annat genom stärkt utvecklingssamarbete, för att förse utvecklingsländerna, i synnerhet de minst utvecklade, med tillräckliga och förutsägbara medel för att genomföra program och riktlinjer för att eliminera all slags fattigdom"
+            short_title: "Mobilisera resurser för att genomföra riktlinjer som eliminerar fattigdom"
+          target_1_B:
+            long_title: "Skapa solida politiska ramar på nationell, regional och internationell nivå, baserat på fattighetsbekämpande och könsrelaterade utvecklingsstrategier, för att stödja påskyndad investering i åtgärder för att eliminera fattigdom"
+            short_title: "Skapa fattighetsbekämpande och könsrelaterade politiska ramar"
+      goal_2:
+        title: "Avskaffa hunger"
+        title_in_two_lines: "Avskaffa\nhunger"
+        description: "Avskaffa hunger."
+        long_description: '<p>Efter årtionden av stadig nedgång började antalet människor som lider av hunger – mätt genom förekomsten av undernäring – sakta öka igen 2015. De senaste uppskattningarna visar att <a href="http://www.fao.org/publications/sofi/2020/en/">nästan 690 miljoner människor går hungriga, eller 8,9 procent av världens befolkning</a> – 10 miljoner fler på ett år och nästan 60 miljoner fler över fem år.</p> <p>Världen är inte på väg att uppnå Zero Hunger-målet innan 2030. Om de senaste trenderna fortsätter skulle antalet människor som är drabbade av hunger överstiga 840 miljoner innan 2030.</p> <p>Enligt Världslivsmedelsprogrammet <a href="https://www.wfp.org/publications/2020-global-report-food-crises">lider 135 miljoner av akut hunger</a> till stor del på grund av konstgjorda konflikter, klimatförändringar och ekonomiska nedgångar. Covid-19-pandemin skulle nu kunna fördubbla det antalet och ytterligare 130 miljoner människor riskera att drabbas av akut hunger inom 2020.</p> <p>Med över <a href="https://insight.wfp.org/covid-19-will-almost-double-people-in-acute-hunger-by-end-of-2020-59df0c4a8072">en fjärdedels miljard människor potentiellt på svältgränsen</a> måste åtgärder vidtas snabbt för att förse de mest utsatta regionerna med livsmedel och humanitär hjälp.</p> <p>Samtidigt&nbsp;behövs det en djupgående förändring av det globala livsmedels- och jordbrukssystemet om det ska finnas näring för de över 690 miljoner människor som är hungriga idag – och&nbsp;<a href="https://www.un.org/development/desa/en/news/population/world-population-prospects-2019.html">de ytterligare 2 miljarder människor</a>&nbsp;som kommer att finnas i världen år 2050. Att öka jordbruksproduktiviteten och den hållbara livsmedelsproduktionen är avgörande för att lindra hungern.</p>'
+        targets:
+          target_2_1:
+            long_title: "Senast 2030 avskaffa hunger och garantera alla människor, i synnerhet de fattiga och människor i utsatta situationer, bland annat små barn, tillgång till tillräckligt med säker och näringsrik mat året om."
+            short_title: "Allmän tillgång till säker och näringsrik mat"
+          target_2_2:
+            long_title: "Senast 2030 avskaffa alla former av undernäring, bland annat genom att senast 2025 nå de internationellt överenskomna målen i fråga om tillväxthämning och undervikt bland barn under fem år, samt tillgodose tonårsflickors, gravida och ammande kvinnors samt äldre personers näringsbehov."
+            short_title: "Avskaffa alla former av undernäring"
+          target_2_3:
+            long_title: "Till 2030 fördubbla jordbrukets produktivitet och inkomster för småskaliga livsmedelsproducenter, i synnerhet kvinnor, ursprungsfolk, familjejordbrukare, boskapsskötande nomader samt fiskare, bland annat genom säker och lika tillgång till mark, andra produktionsresurser och insatsvaror, kunskap, finansiella tjänster och marknader samt möjligheter till förädling och sysselsättning utanför jordbruket."
+            short_title: "Fördubbla produktivitet och inkomster för småskaliga livsmedelsproducenter"
+          target_2_4:
+            long_title: "Senast 2030 uppnå hållbara system för livsmedelsproduktion samt införa motståndskraftiga jordbruksmetoder som ökar produktiviteten och produktionen, som bidrar till att upprätthålla ekosystemen, som stärker förmågan till anpassning till klimatförändringar, extrema väderförhållanden, torka, översvämning och andra katastrofer och som successivt förbättrar mark och jordkvaliteten."
+            short_title: "Metoder för hållbar livsmedelsproduktion och motståndskraftigt jordbruk"
+          target_2_5:
+            long_title: "Senast 2020 skydda den genetiska mångfalden av fröer, odlade växter, produktionsdjur och tamdjur samt deras besläktade vilda arter, bland annat med hjälp av välskötta och diversifierade frö- och växtbanker på nationell, regional och internationell nivå. Främja tillträde till, samt rimlig och rättvis fördelning av, de fördelar som uppstår vid användning av genetiska resurser och därmed förknippad traditionell kunskap, i enlighet med internationella avtal."
+            short_title: "Skydda den genetiska mångfalden i livsmedelsproduktion"
+          target_2_A:
+            long_title: "Öka investeringarna, bland annat genom stärkt internationellt samarbete, i infrastruktur på landsbygden, forsknings- och rådgivningstjänster för jordbruket, teknikutveckling samt genbanker för växter och husdjur i syfte att öka jordbrukets produktionskapacitet i utvecklingsländerna, i synnerhet de minst utvecklade länderna."
+            short_title: "Investera i infrastruktur på landsbygden, forskning för jordbruket, teknik, samt genbanker"
+          target_2_B:
+            long_title: "Korrigera och förhindra handelsbegränsningar och snedvridningar på världsmarknaderna för jordbruksprodukter, bland annat genom att parallellt avskaffa alla former av exportsubventioner inom jordbruket liksom alla exportåtgärder med motsvarande verkan, i enlighet med mandatet för Doharundan."
+            short_title: "Förhindra handelsbegränsningar, snedvridningar på marknaderna och exportsubventioner för jordbruket"
+          target_2_C:
+            long_title: "Vidta åtgärder för att säkerställa väl fungerande marknader och derivatmarknader för jordbruksråvaror. Underlätta tillgången till aktuell marknadsinformation, inklusive om livsmedelsreserver, i syfte att bidra till att begränsa extrema svängningar i livsmedelspriser."
+            short_title: "Säkerställa stabila marknader för jordbruksråvaror och tillgång till aktuell information"
+      goal_3:
+        title: "God hälsa och välbefinnande"
+        title_in_two_lines: "God hälsa och\nvälbefinnande"
+        description: "Säkerställa hälsosamma liv och främja välbefinnande för alla i alla åldrar."
+        long_description: '<p>Att säkerställa hälsosamma liv och främja välbefinnande för alla i alla åldrar är avgörande för hållbar utveckling. För närvarande står världen inför en <a href="https://www.un.org/coronavirus">global hälsokris</a> utan like — covid-19 sprider mänskligt lidande, destabiliserar den globala ekonomin och omstörtar livet för miljarder människor runt om i världen.&nbsp;</p> <p>Före pandemin gjordes stora framsteg för att <a href="https://unstats.un.org/sdgs/report/2019/goal-03/">förbättra miljontals människors hälsa</a>. Betydande steg togs för att öka förväntad livslängd och minska några av de vanliga dödsfaktorerna som hör samman med barn- och mödradödligheten. Men det krävs mer arbete för att fullständigt utrota ett brett spektrum av sjukdomar och ta itu med många olika ihållande och framväxande hälsoproblem. Genom att fokusera på effektivare finansiering av hälsosystem, förbättrad sanitet och hygien och ökad tillgång till läkare kan avsevärda framsteg göras för att rädda miljontals liv.</p> <p>Hälsokriser som covid-19 utgör en global risk och visar på ett kritiskt behov av beredskap. FN:s utvecklingsprogram lyfte fram stora skillnader i <a href="https://www.undp.org/content/undp/en/home/news-centre/news/2020/COVID19_UNDP_data_dashboards_reveal_disparities_among_countries_to_cope_and_recover.html">ländernas förmåga att hantera och återhämta sig efter COVID-19-krisen</a>. Pandemin är en vattendelare för beredskap inom hälsovården och för investeringar i kritiska samhällstjänster det här århundradet.&nbsp;</p>'
+        targets:
+          target_3_1:
+            long_title: "Till 2030 minska mödradödligheten i världen till mindre än 70 dödsfall per 100 000 förlossningar med levande barn."
+            short_title: "Minska mödradödligheten"
+          target_3_2:
+            long_title: "Senast 2030 säkerställa att inga spädbarn eller barn under fem år dör av orsaker som hade kunnat förebyggas. Alla länder bör sträva efter att minska den neonatala dödligheten till högst tolv dödsfall per 1 000 levande födda och dödligheten bland barn under fem år till högst 25 dödsfall per 1 000 levande födda."
+            short_title: "Säkerställa att ingen under fem års ålder dör av orsaker som hade kunnat förebyggas"
+          target_3_3:
+            long_title: "Senast 2030 utrota epidemierna av aids, tuberkulos, malaria och försummade tropiska sjukdomar samt bekämpa hepatit, vattenburna sjukdomar och andra smittsamma sjukdomar."
+            short_title: "Bekämpa smittsamma sjukdomar"
+          target_3_4:
+            long_title: "Till 2030 genom förebyggande insatser och behandling minska det antal människor som dör i förtid av icke-smittsamma sjukdomar med en tredjedel samt främja psykisk hälsa och välbefinnande."
+            short_title: "Minska det antal människor som dör i förtid av icke-smittsamma sjukdomar med en tredjedel, samt främja psykisk hälsa"
+          target_3_5:
+            long_title: "Stärka insatserna för att förebygga och behandla drogmissbruk, inklusive narkotikamissbruk och skadligt alkoholbruk."
+            short_title: "Förebygga och behandla drogmissbruk"
+          target_3_6:
+            long_title: "Till 2020 halvera antalet dödsfall och skador i trafikolyckor i världen."
+            short_title: "Reducera skador och dödsfall i trafikolyckor"
+          target_3_7:
+            long_title: "Senast 2030 säkerställa att alla har tillgång till sexuell och reproduktiv hälsovård, inklusive familjeplanering, information och utbildning, och att reproduktiv hälsa integreras i nationella strategier och program."
+            short_title: "Tillgång för alla till sexuell och reproduktiv vård, familjeplanering och utbildning"
+          target_3_8:
+            long_title: "Åstadkomma allmän hälso- och sjukvård för alla, som även skyddar mot ekonomisk risk, tillgång till grundläggande hälso- och sjukvård av god kvalitet liksom tillgång till säkra, effektiva och ekonomiskt överkomliga grundläggande läkemedel och vaccin av god kvalitet."
+            short_title: "Åstadkomma allmän hälso- och sjukvård"
+          target_3_9:
+            long_title: "Till 2030 väsentligt minska antalet döds- och sjukdomsfall till följd av skadliga kemikalier samt föroreningar och kontaminering av luft, vatten och mark."
+            short_title: "Minska sjukdoms- och dödsfall till följd av skadliga kemikalier och föroreningar"
+          target_3_A:
+            long_title: "Stärka genomförandet av Världshälsoorganisationens ramkonvention om tobakskontroll i alla länder, när så är lämpligt."
+            short_title: "Genomföra Världshälsoorganisationens ramkonvention om tobakskontroll"
+          target_3_B:
+            long_title: "Stödja forskning om och utveckling av vaccin och läkemedel mot de smittsamma och icke-smittsamma sjukdomar som i första hand drabbar utvecklingsländer. Sörja för tillgång till ekonomiskt överkomliga grundläggande läkemedel och vaccin, i enlighet med Doha-deklarationen om TRIPS-avtalet och folkhälsa, i vilken det bekräftas att utvecklingsländerna har rätt att fullt ut utnyttja den flexibilitet som avtalet om handelsrelaterade aspekter av immaterialrätter erbjuder för att skydda folkhälsan och, framför allt, säkerställa att alla har tillgång till läkemedel."
+            short_title: "Stödja forskning om, utveckling av och allmän tillgång till överkomliga vaccin och läkemedel"
+          target_3_C:
+            long_title: "Väsentligt stärka finansieringen av hälso- och sjukvården liksom insatserna för att rekrytera, utveckla, utbilda och behålla hälso- och sjukvårdspersonal i utvecklingsländerna, särskilt i de minst utvecklade länderna och små önationer under utveckling."
+            short_title: "Stärka finansieringen av hälso- och sjukvården och stöd hälso- och sjukvårdspersonalen i utvecklingsländerna"
+          target_3_D:
+            long_title: "Stärka alla länders, i synnerhet utvecklingsländernas, kapacitet när det gäller tidig varning, riskreducering och hantering av nationella och globala hälsorisker."
+            short_title: "Förbättra system för tidig varning om globala hälsorisker"
+      goal_4:
+        title: "God utbildning"
+        title_in_two_lines: "God\nutbildning"
+        description: "God utbildning."
+        long_description: '<p>Utbildning möjliggör socioekonomisk rörlighet uppåt och är en avgörande väg ut ur fattigdom. Under det senaste årtiondet har stora framsteg gjorts för att öka tillgången till utbildning och skoldeltagande på alla nivåer, särskilt för flickor. Ändå <a href="http://uis.unesco.org/en/topic/out-school-children-and-youth">gick cirka 260 miljoner barn fortfarande inte i skolan</a> 2018 – nästan en femtedel av den globala befolkningen i den åldersgruppen. Och mer än hälften av alla barn och ungdomar världen över <a href="https://unstats.un.org/sdgs/report/2019/goal-04/">uppfyller inte miniminivåerna</a> vad beträffar läsnings- och matematikkunskaperna.&nbsp;</p> <p>När covid-19-pandemin spred sig över jordklotet 2020 beslutade de flesta länderna att tillfälligt stänga skolor och drabbade mer än 91 procent av eleverna över hela världen. I april 2020 <a href="https://en.unesco.org/covid19/educationresponse">var nära 1,6 miljarder barn och ungdomar inte i skolan</a>. Nästan <a href="https://www.un.org/sites/un2.un.org/files/policy_brief_on_covid_impact_on_children_16_april_2020.pdf">369 miljoner barn som förlitade sig på skolmåltiderna</a> tvingades också söka andra källor för sin dagliga näring.&nbsp;</p> <p>Aldrig tidigare har så många barn varit frånvarande från skolan samtidigt, vilket stör inlärningen och omstörtar liv, särskilt för de mest utsatta och marginaliserade. Den globala pandemin har långtgående konsekvenser som kan äventyra svårt vunnen terräng för förbättrad global utbildning.</p>'
+        targets:
+          target_4_1:
+            long_title: "Senast 2030 säkerställa att alla flickor och pojkar fullbordar avgiftsfri och likvärdig grundskole- och gymnasieutbildning av god kvalitet som leder till relevanta och ändamålsenliga kunskaper."
+            short_title: "Avgiftsfri grundskole- och gymnasieutbildning"
+          target_4_2:
+            long_title: "Senast 2030 säkerställa att alla flickor och pojkar har tillgång till förskola av god kvalitet som ger omvårdnad och förbereder dem för att börja grundskolan."
+            short_title: "Lika tillgång till förskola av god kvalitet"
+          target_4_3:
+            long_title: "Senast 2030 säkerställa att alla kvinnor och män har lika tillgång till yrkesutbildning och eftergymnasial utbildning, inklusive högskoleutbildning, av god kvalitet till en överkomlig kostnad."
+            short_title: "Lika tillgång till överkomlig yrkesutbildning, eftergymnasial och högskoleutbildning"
+          target_4_4:
+            long_title: "Till 2030 väsentligen öka det antal ungdomar och vuxna som har relevanta färdigheter, däribland tekniska färdigheter och yrkeskunnande, för sysselsättning, anständigt arbete och entreprenörskap."
+            short_title: "Öka antalet personer med relevanta färdigheter för ekonomisk framgång"
+          target_4_5:
+            long_title: "Senast 2030 avskaffa skillnaderna mellan könen inom utbildningsområdet och säkerställa lika tillgång till utbildning och yrkesutbildning på alla nivåer för utsatta personer, inklusive personer med funktionsnedsättning, ursprungsfolk och barn som lever under utsatta förhållanden."
+            short_title: "Eliminera all diskriminering inom utbildning"
+          target_4_6:
+            long_title: "Senast 2030 säkerställa att alla ungdomar och en väsentlig andel av alla vuxna – både män och kvinnor – lär sig läsa, skriva och räkna."
+            short_title: "Allmän läs- och skrivkunnighet"
+          target_4_7:
+            long_title: "Senast 2030 säkerställa att alla studerande får de kunskaper och färdigheter som behövs för att främja en hållbar utveckling, bland annat genom utbildning för hållbar utveckling och hållbara livsstilar, mänskliga rättigheter, jämställdhet, främjande av en kultur av fred, icke-våld och globalt medborgarskap samt värdesättande av kulturell mångfald och kulturens bidrag till hållbar utveckling."
+            short_title: "Utbildning för hållbar utveckling och globalt medborgarskap"
+          target_4_A:
+            long_title: "Bygga och förbättra utbildningsmiljöer som är anpassade för barn och personer med funktionsnedsättning, samt tar hänsyn till jämställdhetsaspekter och därmed erbjuder en trygg, fredlig, allomfattande och ändamålsenlig lärandemiljö för alla."
+            short_title: "Bygga och förbättra allomfattande och säkra skolor"
+          target_4_B:
+            long_title: "Till 2020 väsentligen öka antalet stipendier i världen som kan sökas av personer från utvecklingsländer, i synnerhet de minst utvecklade länderna, små önationer under utveckling och afrikanska länder, för studier inom högre utbildning, inklusive yrkesutbildning samt informations- och kommunikationstekniska, tekniska, ingenjörsvetenskapliga och naturvetenskapliga program, i utvecklade länder och andra utvecklingsländer."
+            short_title: "Öka antalet stipendier för studier inom högre utbildning i utvecklingsländer"
+          target_4_C:
+            long_title: "Till 2030 väsentligen öka tillgången på utbildade lärare, bland annat genom internationellt samarbete kring lärarutbildning i utvecklingsländerna, särskilt de minst utvecklade länderna och små önationer under utveckling."
+            short_title: "Öka tillgången på utbildade lärare i utvecklingsländer"
+      goal_5:
+        title: "Jämställdhet"
+        title_in_two_lines: "Jäm-\nställdhet"
+        description: "Uppnå jämställdhet och alla kvinnors och flickors egenmakt."
+        long_description: '<p>Jämställdhet är inte bara en grundläggande mänsklig rättighet utan en nödvändig grund för en fredlig, välmående och hållbar värld.&nbsp;</p> <p>Det har gjorts <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/gender-equality-womens-rights-in-review-key-facts-and-figures-en.pdf?la=en&amp;vs=935">framsteg</a> under de senaste årtiondena: Fler flickor går i skolan, färre flickor tvingas till tidigt äktenskap, fler kvinnor innehar folkvalda och andra ledarpositioner och lagar reformeras för att främja jämställdhet.&nbsp;</p> <p>Trots detta återstår det många <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/gender-equality-womens-rights-in-review-key-facts-and-figures-en.pdf?la=en&amp;vs=935">utmaningar</a>: diskriminerande lagar och sociala normer finns genomgående kvar, kvinnor är fortsatt underrepresenterade på alla nivåer av politiskt ledarskap, och 1 av 5 kvinnor och flickor mellan 15 och 49 år rapporterar att de under de senaste 12 månaderna har utsatts för fysiskt eller sexuellt våld av deras intima partner.</p> <p>Effekterna av <a href="https://www.un.org/sites/un2.un.org/files/policy_brief_on_covid_impact_on_women_9_apr_2020_updated.pdf">covid-19-pandemin skulle kunna kasta om de begränsade framsteg</a> som har gjorts inom jämställdhet och kvinnors rättigheter.&nbsp; Coronavirusutbrottet <a href="https://www.unfpa.org/sites/default/files/resource-pdf/COVID-19_A_Gender_Lens_Guidance_Note.pdf">förvärrar de befintliga ojämlikheterna</a> för kvinnor och flickor på alla områden – från hälsa och ekonomi till säkerhet och socialt skydd.&nbsp;</p> <p>Kvinnor spelar en oproportionerlig stor roll när det gäller att reagera på viruset, bland annat som vårdpersonal och vårdgivare hemma. Kvinnors obetalda vårdarbete har ökat betydligt till följd av skolstängningar och de äldres ökade behov. Kvinnor drabbas också hårdare av de ekonomiska effekterna av covid-19, eftersom de oproportionerligt arbetar på osäkra arbetsmarknader. Nästan 60 procent av kvinnorna arbetar i den informella ekonomin, och därmed är risken för att de hamnar i fattigdom större.&nbsp;</p> <p>Pandemin har också lett till en kraftig ökning av <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/issue-brief-covid-19-and-ending-violence-against-women-and-girls-en.pdf?la=en&amp;vs=5006">våld mot kvinnor och flickor</a>. I nedstängningarna fastnar många kvinnor hemma med sina misshandlare, med begränsad tillgång till tjänster som drabbats av nedskärningar och restriktioner. Nya data visar att våldet mot kvinnor och flickor – särskilt våld i hemmet – har intensifierats sedan pandemin bröt ut.</p>'
+        targets:
+          target_5_1:
+            long_title: "Avskaffa alla former av diskriminering av alla kvinnor och flickor överallt."
+            short_title: "Avskaffa diskriminering av kvinnor och flickor"
+          target_5_2:
+            long_title: "Avskaffa alla former av våld mot alla kvinnor och flickor i det offentliga och privata rummet, inklusive människohandel, sexuellt utnyttjande och andra typer av exploatering."
+            short_title: "Avskaffa allt våld mot, och exploatering av, och kvinnor och flickor"
+          target_5_3:
+            long_title: "Avskaffa alla skadliga sedvänjor, såsom barnäktenskap, tidiga äktenskap och tvångsäktenskap samt kvinnlig könsstympning."
+            short_title: "Avskaffa tvångsäktenskap och könsstympning"
+          target_5_4:
+            long_title: "Erkänna och värdesätta obetalt omsorgs- och hushållsarbete genom att tillhandahålla offentliga tjänster, infrastruktur och socialt skydd samt genom att främja delat ansvar inom hushållet och familjen, i enlighet med vad som är nationellt lämpligt."
+            short_title: "Värdesätta obetald vård och främja delat ansvar inom hushållet"
+          target_5_5:
+            long_title: "Tillförsäkra kvinnor fullt och faktiskt deltagande och lika möjligheter till ledarskap på alla beslutsnivåer i det politiska, ekonomiska och offentliga livet."
+            short_title: "Tillförsäkra fullt deltagande i ledarskap och beslutsfattande"
+          target_5_6:
+            long_title: "Säkerställa allmän tillgång till sexuell och reproduktiv hälsa och reproduktiva rättigheter i enlighet med överenskommelserna i handlingsprogrammet från den internationella konferensen om befolkning och utveckling, Pekingplattformen samt slutdokumenten från respektive översynskonferenser."
+            short_title: "Allmän tillgång till reproduktiv(a) hälsa och rättigheter"
+          target_5_A:
+            long_title: "Genomföra reformer för att ge kvinnor lika rätt till ekonomiska resurser, möjlighet att äga och kontrollera mark och andra former av egendom samt tillgång till finansiella tjänster, arv och naturresurser, i enlighet med nationell lagstiftning."
+            short_title: "Lika rätt till ekonomiska resurser, ägande av egendom, samt tillgång till finansiella tjänster"
+          target_5_B:
+            long_title: "Öka användningen av möjliggörande teknik, i synnerhet informations- och kommunikationsteknik, för att främja kvinnors egenmakt."
+            short_title: "Främja kvinnors egenmakt genom teknik"
+          target_5_C:
+            long_title: "Anta och stärka välgrundad politik och genomförbar lagstiftning för att främja jämställdhet och öka alla kvinnors och flickors egenmakt på alla nivåer."
+            short_title: "Anta och stärka politik och genomförbar lagstiftning för jämställdhet"
+      goal_6:
+        title: "Rent vatten och sanitet"
+        title_in_two_lines: "Rent vatten\noch sanitet"
+        description: "Säkerställa tillgången till vatten och sanitet för alla."
+        long_description: '<p>Även om betydande framsteg har gjorts när det gäller att öka tillgången till rent dricksvatten och sanitet, saknar miljarder människor – för det mesta på landsbygden – fortfarande dessa grundläggande tjänster. Över hela världen <a href="https://www.who.int/news-room/detail/18-06-2019-1-in-3-people-globally-do-not-have-access-to-safe-drinking-water-unicef-who">så har en av tre inte tillgång till säkert dricksvatten</a>, <a href="https://www.unwater.org/water-facts/water-sanitation-and-hygiene/">två av fem har inte en grundläggande handtvättanläggning</a> med tvål och vatten, och över <a href="https://news.un.org/en/story/2019/11/1051561">673 miljoner personer defekerar fortfarande utomhus</a>.</p> <p>Covid-19-pandemin har demonstrerat den kritiska betydelsen av sanitet, hygien och adekvat tillgång till rent vatten för att förebygga och tygla sjukdomar. <a href="https://www.unwater.org/water-facts/handhygiene/">Handhygien räddar liv</a>. Enligt Världshälsoorganisationen <a href="https://www.who.int/news-room/events/detail/2020/05/05/default-calendar/hand-hygiene-day">är handtvätt en av de mest effektiva åtgärderna som kan vidtas</a> för att minska spridningen av patogener och förhindra infektioner, t.o.m. covid-19-viruset. Ändå saknar miljarder människor fortfarande säkert vatten och sanitet och finansieringen är otillräcklig.</p>'
+        targets:
+          target_6_1:
+            long_title: "Senast 2030 uppnå allmän och rättvis tillgång till säkert och ekonomiskt överkomligt dricksvatten för alla."
+            short_title: "Säkert och ekonomiskt överkomligt dricksvatten"
+          target_6_2:
+            long_title: "Senast 2030 säkerställa att alla har tillgång till fullgod och rättvis sanitet och hygien och att ingen behöver uträtta sina behov utomhus. Särskild uppmärksamhet bör ägnas åt behoven hos kvinnor och flickor samt människor i utsatta situationer."
+            short_title: "Avskaffa defekering utomhus och tillhandahålla tillgång till sanitet och hygien"
+          target_6_3:
+            long_title: "Till 2030 förbättra vattenkvaliteten genom att minska föroreningar, stoppa dumpning och minimera utsläpp av farliga kemikalier och material, halvera andelen obehandlat avloppsvatten och väsentligt öka återvinningen och en säker återanvändning globalt."
+            short_title: "Förbättra vattenkvalitet, behandling av avloppsvatten och säker återanvändning"
+          target_6_4:
+            long_title: "Till 2030 väsentligt effektivisera vattenanvändningen inom alla sektorer samt säkerställa hållbara uttag och en hållbar försörjning med sötvatten för att angripa vattenbristen och väsentligt minska det antal människor som lider av vattenbrist."
+            short_title: "Effektivisera vattenanvändningen och säkerställa försörjning med sötvatten"
+          target_6_5:
+            long_title: "Senast 2030 genomföra en integrerad förvaltning av vattenresurser på alla nivåer, när så är lämpligt genom gränsöverskridande samarbete."
+            short_title: "Genomföra integrerad förvaltning av vattenresurser"
+          target_6_6:
+            long_title: "Senast 2020 skydda och återställa de vattenrelaterade ekosystemen, däribland berg, skogar, våtmarker, floder, akviferer och sjöar."
+            short_title: "Skydda och återställa vattenrelaterade ekosystem"
+          target_6_A:
+            long_title: "Till 2030 utöka det internationella samarbetet och stödet för kapacitetsuppbyggnad till utvecklingsländerna inom vatten- och sanitetsrelaterade verksamheter och program, bland annat genom teknik för vatteninsamling, avsaltning, vatteneffektivitet, rening av avloppsvatten, återvinning och återanvändning."
+            short_title: "Utöka stödet för vatten och sanitet till utvecklingsländerna"
+          target_6_B:
+            long_title: "Stödja och stärka lokalsamhällenas deltagande i arbetet med att förbättra vatten- och sanitetshanteringen."
+            short_title: "Stödja lokalt engagemang i vatten- och sanitetshantering"
+      goal_7:
+        title: "Överkomlig och ren energi"
+        title_in_two_lines: "Överkomlig och\nren energi"
+        description: "Säkerställa tillgång till ekonomiskt överkomlig, tillförlitlig, hållbar och modern energi."
+        long_description: '<p>Världen gör <a href="https://unstats.un.org/sdgs/report/2019/goal-07/">framsteg vad beträffar mål 7</a>, med uppmuntrande tecken på att energi blir mer hållbar och allmänt tillgänglig. Tillgången till el i fattigare länder har börjat öka snabbare, energieffektiviteten fortsätter att förbättras och andelen förnybar energi ökar imponerande inom elsektorn.&nbsp;</p> <p>Ändå behövs mer fokuserad uppmärksamhet för att förbättra tillgången till rena och säkra matlagningsbränslen och teknik för 3 miljarder människor, för att utöka användningen av förnybar energi bortom elsektorn och för att öka elektrifieringen i Afrika söder om Sahara.</p> <p>I <a href="https://trackingsdg7.esmap.org/">Lägesrapporten om energi</a> har vi en global instrumentpanel för att registrera framsteg när det gäller tillgång till energi, energieffektivitet och förnybar energi. Den utvärderar de framsteg som varje land har gjort inom dessa tre områden och ger en ögonblicksbild av hur långt vi är från att uppnå delmålen för Globala målen för hållbar utveckling 2030.</p>'
+        targets:
+          target_7_1:
+            long_title: "Senast 2030 säkerställa allmän tillgång till ekonomiskt överkomliga, tillförlitliga och moderna energitjänster."
+            short_title: "Allmän tillgång till modern energi"
+          target_7_2:
+            long_title: "Till 2030 väsentligen öka andelen förnybar energi i den globala energimixen."
+            short_title: "Öka den globala procentandelen förnybar energi"
+          target_7_3:
+            long_title: "Till 2030 fördubbla den globala förbättringstakten vad gäller energieffektivitet."
+            short_title: "Fördubbla förbättringen av energieffektivitet"
+          target_7_A:
+            long_title: "Till 2030 stärka det internationella samarbetet för att underlätta tillgång till forskning och teknik inom ren energi, inklusive förnybar energi, energieffektivitet samt avancerad och renare fossilbränslebaserad teknik, samt främja investeringar i energiinfrastruktur och ren energiteknik."
+            short_title: "Främja tillgång till forskning, teknik och investeringar inom ren energi "
+          target_7_B:
+            long_title: "Till 2030 bygga ut infrastrukturen och uppgradera tekniken för att leverera moderna och hållbara energitjänster till alla i utvecklingsländerna, i synnerhet de minst utvecklade länderna, små önationer under utveckling och kustlösa utvecklingsländer, i enlighet med deras respektive stödprogram."
+            short_title: "Bygga ut och uppgradera energitjänster för utvecklingsländer"
+      goal_8:
+        title: "Anständiga arbetsvillkor och ekonomisk tillväxt"
+        title_in_two_lines: "Anständiga arbetsvillkor och\nekonomisk tillväxt"
+        description: "Verka för allomfattande och hållbar ekonomisk tillväxt, och sysselsättning med anständiga arbetsvillkor för alla."
+        long_description: '<p>Hållbar och allomfattande ekonomisk tillväxt kan driva framsteg, skapa anständiga jobb för alla och förbättra levnadsstandarder.&nbsp;</p> <p>Covid-19 har <a href="https://www.un.org/sites/un2.un.org/files/sg_report_socio-economic_impact_of_covid19.pdf">brutit upp miljardtals människoliv</a> och hotat den globala ekonomin. Internationella valutafonden (IMF) förväntar sig en <a href="https://blogs.imf.org/2020/04/14/the-great-lockdown-worst-economic-downturn-since-the-great-depression/">global recession</a> lika illa som, eller värre än, 2009. I takt med att uppsägningarna ökar uppskattar Internationella arbetsorganisationen att <a href="https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_743036/lang--en/index.htm">nästan hälften av världens arbetskraft riskerar</a> att förlora sin försörjningsmöjlighet.</p> <p><a href="https://developmentfinance.un.org/press-release-financing-sustainable-development-report-2020">Redan före utbrottet av covid-19</a> förutspådde ett av fem länder – hem åt miljarder människor som lever i fattigdom – stagnerade eller minskade inkomster per capita 2020. Nu försvårar<a href="https://developmentfinance.un.org/press-release-financing-sustainable-development-report-2020"> de ekonomiska och finansiella chockerna</a> som följer på covid-19 – såsom störningar i industriell produktion, sjunkande råvarupriser, volatilitet på finansmarknaden och ökad osäkerhet – den redan beskedna ekonomiska tillväxten och ökar riskerna från andra faktorer.&nbsp;&nbsp;</p>'
+        targets:
+          target_8_1:
+            long_title: "Upprätthålla ekonomisk tillväxt per capita i enlighet med nationella förhållanden och i synnerhet en BNP-tillväxt på minst 7 procent per år i de minst utvecklade länderna."
+            short_title: "Hållbar ekonomisk tillväxt"
+          target_8_2:
+            long_title: "Uppnå högre ekonomisk produktivitet genom diversifiering, teknisk uppgradering och innovation, bland annat genom att fokusera på sektorer med högt förädlingsvärde och hög arbetsintensitet."
+            short_title: "Diversifiera, innovera och uppgradera för ekonomisk produktivitet"
+          target_8_3:
+            long_title: "Främja utvecklingsinriktad politik som stödjer produktiv verksamhet, skapande av anständiga arbetstillfällen, företagande, kreativitet och innovation samt uppmuntra att mikroföretag liksom små och medelstora företag växer och blir en del av den formella ekonomin, bland annat genom tillgång till finansiella tjänster."
+            short_title: "Främja politik som stödjer skapande av arbetstillfällen och växande företag"
+          target_8_4:
+            long_title: "Fram till 2030 successivt förbättra den globala resurseffektiviteten i konsumtionen och produktionen samt sträva efter att bryta sambandet mellan ekonomisk tillväxt och miljöförstöring, i enlighet med det tioåriga ramverket för hållbar konsumtion och produktion, med de utvecklade länderna i täten."
+            short_title: "Förbättra resurseffektiviteten i konsumtion och produktion"
+          target_8_5:
+            long_title: "Senast 2030 uppnå full och produktiv sysselsättning med anständiga arbetsvillkor för alla kvinnor och män, inklusive ungdomar och personer med funktionsnedsättning, samt lika lön för likvärdigt arbete."
+            short_title: "Full sysselsättning och anständiga arbetsvillkor, med lika lön"
+          target_8_6:
+            long_title: "Till 2020 väsentligt minska den andel ungdomar som varken arbetar, studerar eller praktiserar."
+            short_title: "Främja arbete, studier och praktik för ungdomar"
+          target_8_7:
+            long_title: "Vidta omedelbara och effektiva åtgärder för att avskaffa tvångsarbete, modernt slaveri och människohandel och säkerställa att de värsta formerna av barnarbete, även rekrytering och användning av barnsoldater, förbjuds och upphör. Avskaffa alla former av barnarbete senast 2025."
+            short_title: "Avskaffa modernt slaveri, människohandel och barnarbete"
+          target_8_8:
+            long_title: "Skydda arbetstagarnas rättigheter och främja en trygg och säker arbetsmiljö för alla arbetstagare, även arbetskraftsinvandrare, i synnerhet kvinnliga migranter, och människor i otrygga anställningar."
+            short_title: "Skydda arbetstagarnas rättigheter och främja en trygg arbetsmiljö"
+          target_8_9:
+            long_title: "Senast 2030 utarbeta och genomföra politik för hållbar turism som skapar arbetstillfällen och främjar lokal kultur och lokala produkter"
+            short_title: "Främja nyttig och hållbar turism"
+          target_8_10:
+            long_title: "Stärka de inhemska finansinstitutens kapacitet att främja och utöka tillgången till bank- och försäkringstjänster samt finansiella tjänster för alla."
+            short_title: "Allmän tillgång till bank- och försäkringstjänster samt finansiella tjänster"
+          target_8_A:
+            long_title: "Öka det handelsrelaterade stödet (Aid for Trade) till utvecklingsländerna, i synnerhet de minst utvecklade länderna, bland annat genom det förstärkta integrerade ramverket för handelsrelaterat tekniskt bistånd till de minst utvecklade länderna (Enhanced Integrated Framework for Trade-Related Technical Assistance to Least Developed Countries)."
+            short_title: "Öka det handelsrelaterade stödet (Aid for Trade)"
+          target_8_B:
+            long_title: "Senast 2020 utarbeta och börja tillämpa en global strategi för ungdomssysselsättning samt verkställa Internationella arbetsorganisationens globala sysselsättningspakt."
+            short_title: "Utarbeta en global strategi för ungdomssysselsättning"
+      goal_9:
+        title: "Hållbar industri, innovationer och infrastruktur"
+        title_in_two_lines: "Hållbar industri, innovationer\noch infrastruktur"
+        description: "Bygga motståndskraftig infrastruktur, verka för en hållbar industrialisering samt främja innovation."
+        long_description: '<p>Allomfattande och hållbar industrialisering, jämte <a href="https://unstats.un.org/sdgs/report/2019/goal-09/">innovation och infrastruktur</a>, kan utlösa dynamiska och konkurrenskraftiga ekonomiska krafter som genererar sysselsättning och inkomst. De spelar en nyckelroll när det gäller att introducera och främja ny teknik, underlätta internationell handel och möjliggöra effektiv resursanvändning.&nbsp;</p> <p>Men världen har fortfarande en lång väg att gå för att fullt ut utnyttja denna potential. I synnerhet de minst utvecklade länderna måste påskynda utvecklingen av sin tillverkningssektor om de ska uppfylla målet innan 2030 och öka investeringarna i vetenskaplig forskning och innovation.&nbsp;</p> <p>Den globala tillverkningstillväxten har minskat stadigt, även innan covid-19-pandemin bröt ut. Pandemin <a href="https://unctad.org/en/pages/newsdetails.aspx?OriginalVersionID=2297">slår hårt emot tillverkningsindustrin</a> och orsakar störningar i globala värdekedjor och produktleveranser.&nbsp;</p> <p>Genom innovation och teknisk utveckling hittas varaktiga lösningar på både ekonomiska och miljömässiga utmaningar, såsom högre resurs- och energieffektivitet. Globalt ökade <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">investeringarna i forskning och utveckling</a> (FoU) som andel av BNP från 1,5 procent under 2000 till 1,7 procent under 2015 och förblev nästan oförändrad 2017, men var under 1 procent&nbsp; i utvecklingsregioner.</p> <p>Vad beträffar kommunikationsinfrastruktur använder nu mer än hälften av världens befolkning internet och nästan hela världens befolkning bor i ett område som täcks av ett mobilnät. Det beräknas att under 2019 <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">täcktes 96,5 procent av minst ett 2G-nätverk</a>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p> <p>Coronaviruspandemin har avslöjat det brådskande <a href="https://www.unescap.org/blog/covid-19-reveals-urgent-need-resilient-infrastructure">behovet av motståndskraftig infrastruktur</a>. Asiatiska utvecklingsbanken noterar att kritisk infrastruktur i regionen fortfarande är långt ifrån tillräcklig i många länder, trots den snabba ekonomiska tillväxten och utvecklingen som regionen har upplevt under det senaste årtiondet. <a href="https://www.unescap.org/publications/economic-and-social-survey-asia-and-pacific-2019-ambitions-beyond-growth">Economic and Social Survey of Asia and the Pacific</a> (omfattande årlig översyn av den ekonomiska och sociala utvecklingen i Asien och Stillahavsområdet) betonar att det krävs ytterligare investeringar på 434 miljarder USD per år för att göra infrastruktur motståndskraftig mot katastrofer och klimatförändringar. Detta belopp kan behöva ökas i vissa regioner, som till exempel små önationer under utveckling i Stillahavsområdet.&nbsp; &nbsp; &nbsp; </p>'
+        targets:
+          target_9_1:
+            long_title: "Bygga ut tillförlitlig, hållbar och motståndskraftig infrastruktur av hög kvalitet, bland annat regional och gränsöverskridande infrastruktur, för att stödja ekonomisk utveckling och människors välbefinnande, med fokus på ekonomiskt överkomlig och rättvis tillgång för alla."
+            short_title: "Bygga ut hållbar, motståndskraftig och allomfattande infrastruktur"
+          target_9_2:
+            long_title: "Verka för en inkluderande och hållbar industrialisering. Till 2030 avsevärt öka industrins andel av sysselsättning och BNP, i enlighet med nationella förhållanden, och fördubbla denna andel i de minst utvecklade länderna."
+            short_title: "Verka för en inkluderande och hållbar industrialisering"
+          target_9_3:
+            long_title: "Öka tillgången för småskaliga industriföretag och andra företag, i synnerhet i utvecklingsländerna, till finansiella tjänster, bland annat överkomliga krediter, samt deras integrering i värdekedjor och marknader."
+            short_title: "Öka tillgången till finansiella tjänster och marknader"
+          target_9_4:
+            long_title: "Till 2030 rusta upp infrastrukturen och anpassa industrin för att göra dem hållbara, med effektivare resursanvändning och fler rena och miljövänliga tekniker och industriprocesser. Alla länder vidtar åtgärder i enlighet med sina respektive förutsättningar."
+            short_title: "Rusta upp alla industrier och infrastrukturer för hållbarhet"
+          target_9_5:
+            long_title: "Förbättra den vetenskapliga forskningen och industrisektorernas tekniska kapacitet i alla länder, i synnerhet utvecklingsländerna, bland annat genom att till 2030 uppmuntra innovation och väsentligt öka det antal personer som arbetar med forskning och utveckling per 1 miljon människor liksom de offentliga och privata utgifterna för forskning och utveckling."
+            short_title: "Förbättra forskningen och uppgradera industriell teknik "
+          target_9_A:
+            long_title: "Främja utbyggnad av hållbar och motståndskraftig infrastruktur i utvecklingsländerna genom ökat finansiellt, teknologiskt och tekniskt stöd till afrikanska länder, de minst utvecklade länderna, kustlösa utvecklingsländer och små önationer under utveckling."
+            short_title: "Främja hållbar utveckling av infrastruktur för utvecklingsländer"
+          target_9_B:
+            long_title: "Stödja inhemsk teknikutveckling, forskning och innovation i utvecklingsländerna, bland annat genom att säkerställa en gynnsam policymiljö för exempelvis industriell diversifiering och förädling av råvaror."
+            short_title: "Stödja inhemsk teknikutveckling och industriell diversifiering"
+          target_9_C:
+            long_title: "Väsentligt öka tillgången till informations- och kommunikationsteknik samt eftersträva allmän och ekonomiskt överkomlig tillgång till internet i de minst utvecklade länderna senast 2020."
+            short_title: "Allmän tillgång till informations- och kommunikationsteknik"
+      goal_10:
+        title: "Minska ojämlikheter"
+        title_in_two_lines: "Minska\nojämlikheter"
+        description: "Minska ojämlikheter inom och mellan länder."
+        long_description: '<p>Att minska ojämlikheten och se till att ingen glöms bort är en mycket viktig del av att uppnå målen för hållbar utveckling.&nbsp;</p> <p>Ojämlikhet i och mellan länder är en ihållande anledning till oro. Trots några positiva tecken på minskad ojämlikhet i vissa aspekter, till exempel minskade relativa inkomstskillnader i vissa länder och förmånlig handelsstatus som gynnar länder med lägre inkomst, kvarstår <a href="https://unstats.un.org/sdgs/report/2019/goal-10/">ojämlikheten</a>.</p> <p><a href="https://www.un.org/sustainabledevelopment/goal-of-the-month-may-2020">Covid-19 har fördjupat befintlig ojämlikhet</a>, eftersom de fattigaste och mest utsatta samhällena har drabbats hårdast. Detta har satt fokus på ekonomiska ojämlikheter och sköra sociala skyddsnät som låter utsatta samhällen bära det mesta av krisen.&nbsp; Samtidigt har sociala, politiska och ekonomiska ojämlikheter förstärkt pandemins effekter.</p> <p>På den ekonomiska fronten har covid-19-pandemin ökat den globala <a href="https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_743036/lang--en/index.htm">arbetslösheten</a> betydligt och dramatiskt sänkt arbetarnas inkomster.</p> <p>Covid-19 riskerar också de begränsade framsteg som gjorts för <a href="https://data.unwomen.org/resources/covid-19-emerging-gender-data-and-why-it-matters">jämställdhet mellan könen</a> och kvinnors rättigheter under de senaste årtiondena. På alla områden, från hälsa till ekonomi, säkerhet till socialt skydd, förvärras effekterna av covid-19 för kvinnor och flickor på grund av något så enkelt som deras kön.</p> <p>Ojämlikheten fördjupas också för <a href="https://www.un.org/sites/un2.un.org/files/un_policy_brief_on_human_rights_and_covid_23_april_2020.pdf">utsatta befolkningar</a> i länder med svagare hälso- och sjukvårdssystem och de som står inför befintliga humanitära kriser. Flyktingar och migranter, samt ursprungsbefolkningar, äldre personer, personer med funktionsnedsättning och barn riskerar särskilt att överges. Och <a href="https://www.un.org/en/coronavirus/covid-19-un-counters-pandemic-related-hate-and-xenophobia">hetsen</a> mot utsatta grupper ökar.</p>'
+        targets:
+          target_10_1:
+            long_title: "Till 2030 successivt uppnå och upprätthålla en inkomsttillväxt högre än det nationella genomsnittet för de 40 procent av befolkningen som har lägst inkomst."
+            short_title: "Minska inkomstojämlikhet"
+          target_10_2:
+            long_title: "Till 2030 möjliggöra och verka för att alla människor, oavsett ålder, kön, funktionsnedsättning, ras, etnicitet, ursprung, religion eller ekonomisk eller annan ställning, omfattas i det sociala, ekonomiska och politiska livet."
+            short_title: "Verka för att alla omfattas socialt, ekonomiskt och politiskt"
+          target_10_3:
+            long_title: "Säkerställa lika möjligheter och minska förekomsten av ojämlika utfall, bland annat genom att avskaffa diskriminerande lagstiftning, politik och praxis och främja lagstiftning, politik och åtgärder av lämpligt slag i detta hänseende."
+            short_title: "Säkerställa lika möjligheter och avskaffa diskrimination"
+          target_10_4:
+            long_title: "Besluta om politik, särskilt finans-, löne- och socialskyddspolitik, och successivt uppnå ökad jämlikhet."
+            short_title: "Besluta om finans- och socialskyddspolitik som främjar jämlikhet"
+          target_10_5:
+            long_title: "Förbättra regleringen och övervakningen av globala finansmarknader och finansinstitut samt stärka genomförandet av sådana regleringar."
+            short_title: "Förbättrad reglering av globala finansmarknader och finansinstitut"
+          target_10_6:
+            long_title: "Säkra stärkt representation och röst till utvecklingsländer vid beslutsfattande i globala internationella ekonomiska och finansiella institutioner i syfte att göra dessa mer effektiva, trovärdiga, ansvariga och legitima."
+            short_title: "Stärkt representation för utvecklingsländer i finansiella institutioner"
+          target_10_7:
+            long_title: "Underlätta en ordnad, säker, reglerad och ansvarsfull migration och rörlighet för personer, bland annat genom planerad och väl fungerande migrationspolitik."
+            short_title: "Ansvarsfull och väl fungerande migrationspolitik"
+          target_10_A:
+            long_title: "Genomföra principen om särskild och differentierad behandling för utvecklingsländerna, i synnerhet de minst utvecklade länderna, i enlighet med Världshandelsorganisationens avtal."
+            short_title: "Särskild och differentierad behandling för utvecklingsländer"
+          target_10_B:
+            long_title: "Uppmuntra offentligt utvecklingsbistånd och finansiella flöden, inklusive utländska direktinvesteringar, till de stater där behovet är som störst, i synnerhet de minst utvecklade länderna, afrikanska länder, små önationer under utveckling samt kustlösa utvecklingsländer, i enlighet med deras nationella planer och program."
+            short_title: "Uppmuntra utvecklingsbistånd och investeringar i de minst utvecklade länderna"
+          target_10_C:
+            long_title: "Senast 2030 minska transaktionskostnaderna för migranters remitteringar till mindre än 3 procent samt avskaffa remitteringskorridorer där kostnaderna överstiger 5 procent."
+            short_title: "Minska transaktionskostnader för migranters remitteringar"
+      goal_11:
+        title: "Hållbara städer och samhällen"
+        title_in_two_lines: "Hållbara städer\noch samhällen"
+        description: "Göra städer allomfattande, säkra, motståndskraftiga och hållbara."
+        long_description: '<p>Världen blir alltmer urbaniserad. Sedan 2007 <a href="https://unstats.un.org/sdgs/report/2019/goal-11/">har mer än halva världens befolkning bott i städer</a>, och den andelen förväntas stiga till 60 procent till 2030.&nbsp;</p> <p>Städer och storstadsområden är kraftpaket för ekonomisk tillväxt – de bidrar med cirka 60 procent av global BNP. Men de står också för cirka 70 procent av globala koldioxidutsläpp och för över 60 procent av resursanvändningen.&nbsp;</p> <p>Snabb urbanisering resulterar i ett växande antal sluminvånare, infrastruktur och tjänster (såsom sophämtning och vatten- och sanitetssystem, vägar och transporter) som är otillräckliga och överbelastade, ökad luftförorening och otyglad stadsutbredning.&nbsp;</p> <p><a href="https://unhabitat.org/coronavirus-will-travel-incredibly-fast-in-africas-slums-un-habitat-chief-warns">Inverkan av covid-19</a> kommer att bli som mest förödande i fattiga och tätbefolkade stadsområden, särskilt för den miljard människor som bor i informella bosättningar och slumområden runt om i världen, där överbefolkningen också gör det svårt att följa rekommenderade åtgärder som social distansering och självisolering.&nbsp;</p> <p>FN:s livsmedels- och jordbruksorganisation, FAO, varnade för att hunger och dödsfall kan öka betydligt i stadsområden om det inte vidtas åtgärder för att säkerställa att fattiga och utsatta invånare har <a href="https://news.un.org/en/story/2020/05/1063622">tillgång till mat</a>.&nbsp;</p>'
+        targets:
+          target_11_1:
+            long_title: "Senast 2030 säkerställa tillgång för alla till fullgoda, säkra och ekonomiskt överkomliga bostäder och grundläggande tjänster samt rusta upp slumområden."
+            short_title: "Säkra och ekonomiskt överkomliga bostäder"
+          target_11_2:
+            long_title: "Senast 2030 tillhandahålla tillgång till säkra, ekonomiskt överkomliga, tillgängliga och hållbara transportsystem för alla. Förbättra trafiksäkerheten, särskilt genom att bygga ut kollektivtrafiken, med särskild uppmärksamhet på behoven hos människor i utsatta situationer, kvinnor, barn, personer med funktionsnedsättning samt äldre personer."
+            short_title: "Ekonomiskt överkomliga och hållbara transportsystem"
+          target_11_3:
+            long_title: "Till 2030 verka för en allomfattande och hållbar urbanisering samt förbättra kapaciteten för deltagandebaserad, integrerad och hållbar planering och förvaltning av bosättningar i alla länder."
+            short_title: "Allomfattande och hållbar urbanisering"
+          target_11_4:
+            long_title: "Stärka insatserna för att skydda och trygga världens kultur- och naturarv."
+            short_title: "Skydda världens kultur- och naturarv"
+          target_11_5:
+            long_title: "Till 2030 väsentligt minska antalet dödsfall och antalet människor som drabbas av katastrofer, bland annat vattenrelaterade katastrofer. Även tillse att de direkta ekonomiska förlusterna till följd av sådana katastrofer, i form av lägre global BNP, minskar väsentligt. Särskilt fokus bör ligga på att skydda de fattiga och människor i utsatta situationer."
+            short_title: "Minska negativa effekter till följd av naturkatastrofer"
+          target_11_6:
+            long_title: "Till 2030 minska städernas negativa miljöpåverkan per person, bland annat genom att ägna särskild uppmärksamhet åt luftkvalitet samt hantering av kommunalt och annat avfall."
+            short_title: "Minska städernas miljöpåverkan"
+          target_11_7:
+            long_title: "Senast 2030 tillhandahålla universell tillgång till säkra, allomfattande och tillgängliga grönområden och offentliga platser, i synnerhet för kvinnor och barn, äldre personer och personer med funktionsnedsättning."
+            short_title: "Ge tillgång till säkra och allomfattande grönområden och offentliga platser"
+          target_11_A:
+            long_title: "Främja positiva ekonomiska, sociala och miljömässiga kopplingar mellan stadsområden, stadsnära områden och landsbygdsområden genom att stärka den nationella och regionala utvecklingsplaneringen."
+            short_title: "Stark nationell och regional utvecklingsplanering"
+          target_11_B:
+            long_title: "Till 2020 väsentligen öka det antal städer och samhällen som antar och genomför integrerade strategier och planer för delaktighet, resurseffektivitet, begränsning av och anpassning till klimatförändringarna och motståndskraft mot katastrofer samt utveckla och genomföra, i linje med Sendai-ramverket för katastrofriskreducering 2015–2030, en samlad katastrofriskhantering på alla nivåer."
+            short_title: "Genomföra politik för delaktighet, resurseffektivitet och katastrofriskreducering"
+          target_11_C:
+            long_title: "Stödja de minst utvecklade länderna, bland annat genom finansiellt och tekniskt bistånd, att bygga hållbara och motståndskraftiga byggnader av lokala material."
+            short_title: "Stödja de minst utvecklade länderna att bygga hållbart och motståndskraftigt"
+      goal_12:
+        title: "Hållbar konsumtion och produktion"
+        title_in_two_lines: "Hållbar konsumtion\noch produktion"
+        description: "Säkerställa hållbara konsumtions- och produktionsmönster."
+        long_description: '<p>Världsomspännande konsumtion och produktion – den globala ekonomins drivkraft – grundas på att naturen och resurserna används på ett sätt som fortsätter att ha destruktiva effekter på planeten.&nbsp;</p> <p>Ekonomiska och sociala framsteg under det senaste århundradet har åtföljts av miljöförstöring som äventyrar de system som vår framtida utveckling – själva överlevnaden – är beroende av.&nbsp;</p> <p>Ett par <a href="https://www.unenvironment.org/explore-topics/sustainable-development-goals/why-do-sustainable-development-goals-matter/goal-12">fakta och tal</a>:</p> <ul> <li style="font-weight: 400">Varje år hamnar uppskattningsvis en tredjedel av all producerad mat – motsvarande 1,3 miljarder ton, till ett värde av 1 biljon dollar – i soptunnorna hos konsumenter och återförsäljare och ruttnar där, eller förstörs på grund av dåliga metoder för transport och skörd.</li> <li style="font-weight: 400">Om människor över hela världen bytte till energieffektiva lampor skulle världen spara 120 miljarder US-dollar årligen.</li> <li style="font-weight: 400">Om den globala befolkningen når 9,6 miljarder år 2050 skulle det krävas motsvarande nästan tre planeter för att tillhandahålla de naturresurser som behövs för att upprätthålla den nuvarande livsstilen.</li> </ul> <p>Covid-19-pandemin ger länder en möjlighet att bygga återhämtningsplaner som vänder nuvarande trender och förändrar våra konsumtions- och produktionsmönster mot en mer hållbar framtid.</p> <p><a href="https://www.unenvironment.org/explore-topics/resource-efficiency/what-we-do/sustainable-consumption-and-production-policies">Hållbar konsumtion och produktion</a> handlar om att göra mer, och bättre, med mindre resurser. Det handlar också om att separera ekonomisk tillväxt från miljöförstöring, öka resurseffektiviteten och främja hållbara livsstilar.</p> <p>Hållbar konsumtion och produktion kan också bidra väsentligt till fattigdomsbekämpning och övergången till koldioxidsnål och grön ekonomi.</p>'
+        targets:
+          target_12_1:
+            long_title: "Genomföra det tioåriga ramverket för hållbara konsumtions- och produktionsmönster. Alla länder vidtar åtgärder, med de utvecklade länderna i täten och med hänsyn tagen till utvecklingsländernas utveckling och förutsättningar."
+            short_title: "Genomföra det tioåriga ramverket för hållbar konsumtion och produktion"
+          target_12_2:
+            long_title: "Senast 2030 uppnå en hållbar förvaltning och ett effektivt nyttjande av naturresurser."
+            short_title: "Hållbar förvaltning och effektivt nyttjande av naturresurser"
+          target_12_3:
+            long_title: "Till 2030, halvera det globala matsvinnet per person i butik- och konsumentledet, och minska matsvinnet längs hela livsmedelskedjan, även förlusterna efter skörd."
+            short_title: "Halvera det globala matsvinnet per person"
+          target_12_4:
+            long_title: "Senast 2020 uppnå miljövänlig hantering av kemikalier och alla typer av avfall under hela deras livscykel, i enlighet med överenskomna internationella ramverk, samt avsevärt minska utsläppen av dem i luft, vatten och mark i syfte att minimera deras negativa konsekvenser för människors hälsa och miljön."
+            short_title: "Ansvarsfull hantering av kemikalier och avfall"
+          target_12_5:
+            long_title: "Till 2030 väsentligt minska mängden avfall genom åtgärder för att förebygga, minska, återanvända och återvinna avfall."
+            short_title: "Väsentligt minska mängden avfall"
+          target_12_6:
+            long_title: "Uppmuntra företag, särskilt stora och multinationella företag, att införa hållbara metoder och att integrera hållbarhetsinformation i sin rapporteringscykel."
+            short_title: "Uppmuntra företag att införa hållbara metoder och hållbarhetsrapportering"
+          target_12_7:
+            long_title: "Främja hållbara offentliga upphandlingsmetoder, i enlighet med respektive lands politik och prioriteringar."
+            short_title: "Främja hållbara offentliga upphandlingsmetoder "
+          target_12_8:
+            long_title: "Senast 2030 säkerställa att människor överallt har den information och medvetenhet som behövs för en hållbar utveckling och livsstilar i harmoni med naturen."
+            short_title: "Främja universell förståelse av hållbara livsstilar"
+          target_12_A:
+            long_title: "Stödja utvecklingsländerna att stärka sin vetenskapliga och tekniska kapacitet att utvecklas i riktning mot mer hållbara konsumtions- och produktionsmönster."
+            short_title: "Stödja utvecklingsländernas vetenskapliga och tekniska kapacitet för hållbar konsumtion och produktion"
+          target_12_B:
+            long_title: "Utveckla och implementera verktyg för att övervaka hur en hållbar utveckling påverkar en hållbar turism på ett sätt som skapar arbetstillfällen och främjar lokal kultur och lokala produkter."
+            short_title: "Utveckla och implementera verktyg för att övervaka hållbar turism"
+          target_12_C:
+            long_title: "Rationalisera ineffektiva subventioner av fossila bränslen som uppmuntrar till slösaktig konsumtion genom att undanröja snedvridningar på marknaden, i enlighet med nationella förhållanden. Detta kan till exempel omfatta att omstrukturera beskattningen och avveckla eventuella skadliga subventioner för att avspegla deras effekter på miljön. En sådan politik måste ta full hänsyn till utvecklingsländernas särskilda behov och förhållanden och minimera eventuella negativa effekter på deras utveckling på ett sätt som skyddar de fattiga och de berörda samhällena."
+            short_title: "Undanröj snedvridningar på marknaden som uppmuntrar till slösaktig konsumtion"
+      goal_13:
+        title: "Bekämpa klimatförändringar"
+        title_in_two_lines: "Bekämpa\nklimatförändringar"
+        description: "Vidta omedelbara åtgärder för att bekämpa klimatförändringarna och dess konsekvenser."
+        long_description: '<p>2019 var <a href="https://news.un.org/en/story/2020/03/1059061">historiens näst varmaste år</a> och utgjorde slutet på det varmaste årtiondet (2010–2019) som någonsin registrerats.&nbsp;&nbsp;</p> <p>Koldioxid (CO2) och andra <a href="https://news.un.org/en/story/2020/04/1062332">växthusgaser i atmosfären</a> steg till nya rekordnivåer 2019.&nbsp;</p> <p>Klimatförändringarna påverkar alla länder på alla kontinenter. De stör nationella ekonomier och påverkar människors liv. Vädermönster förändras, havsnivåer stiger och väderhändelser blir mer extrema.</p> <p>Även om utsläppen av växthusgaser beräknas sjunka cirka 6 procent under 2020, på grund av reseförbud och ekonomiska avmattningar till följd av covid-19-pandemin, är denna förbättring bara tillfällig. <a href="https://news.un.org/en/story/2020/04/1062332">Klimatförändringarna tog inte ledigt</a>. När den globala ekonomin börjar återhämta sig efter pandemin förväntas utsläppen återgå till högre nivåer.</p> <p>Att rädda liv och uppehällen kräver brådskande åtgärder för att tackla både pandemin och klimatkrisen.</p> <p><a href="https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement">Parisavtalet</a>, som antogs 2015, syftar till att stärka den globala responsen på de hotande klimatförändringarna genom att hålla en global temperaturhöjning detta århundrade långt under 2 grader Celsius över de förindustriella nivåerna. Avtalet syftar också till att stärka ländernas förmåga att hantera klimatförändringarnas effekter genom lämpliga finansflöden, ett nytt ramverk för teknik och ett förbättrat ramverk för kapacitetsuppbyggnad.</p>'
+        targets:
+          target_13_1:
+            long_title: "Stärka motståndskraften mot, och förmågan till anpassning till, klimatrelaterade faror och naturkatastrofer i alla länder."
+            short_title: "Stärka motståndskraften mot, och förmågan till anpassning till, klimatrelaterade katastrofer"
+          target_13_2:
+            long_title: "Integrera klimatåtgärder i politik, strategier och planering på nationell nivå."
+            short_title: "Integrera klimatåtgärder i politik och planering"
+          target_13_3:
+            long_title: "Förbättra utbildningen, medvetenheten och den mänskliga och institutionella kapaciteten vad gäller begränsning av klimatförändringarna, klimatanpassning, begränsning av klimatförändringarnas konsekvenser samt tidig varning."
+            short_title: "Bygga kunskap och kapacitet för att tackla klimatförändringarna"
+          target_13_A:
+            long_title: "Fullfölja det åtagande som de utvecklade länder som är parter i Förenta Nationernas ramkonvention om klimatförändringar gjort gällande, en målsättning att till 2020 gemensamt mobilisera 100 miljarder USA-dollar årligen från alla typer av källor för att tillgodose utvecklingsländernas behov vad gäller meningsfulla begränsningsåtgärder och insyn i genomförandet samt så snart som möjligt finansiera och operationalisera den gröna klimatfonden fullt ut."
+            short_title: "Genomföra Förenta Nationernas ramkonvention om klimatförändringar"
+          target_13_B:
+            long_title: "Främja mekanismer för att höja förmågan till effektiv klimatrelaterad planering och förvaltning i de minst utvecklade länderna, med särskilt fokus på kvinnor, ungdomar samt lokala och marginaliserade samhällen."
+            short_title: "Främja mekanismer för att höja förmågan till planering och förvaltning"
+      goal_14:
+        title: "Hav och marina resurser"
+        title_in_two_lines: "Hav och\nmarina resurser"
+        description: "Bevara och nyttja haven och de marina resurserna på ett hållbart sätt."
+        long_description: '<p>Världens hav driver globala system som gör jorden beboelig för mänskligheten. Vårt regnvatten, dricksvatten, väder, klimat, våra kustlinjer, mycket av vår mat och till och med syret i luften vi andas, tillhandahålls och regleras slutligen av havet.&nbsp;</p> <p>Omsorgsfull förvaltning av denna <a href="https://www.unenvironment.org/explore-topics/oceans-seas/why-do-oceans-and-seas-matter">essentiella globala resurs</a> är en avgörande beståndsdel av en hållbar framtid. För närvarande försämras kustvatten emellertid kontinuerligt på grund av föroreningar, och försurningen av havet inverkar menligt på hur ekosystem och biologisk mångfald fungerar. Detta påverkar också småskaligt fiske negativt.&nbsp;</p> <p>Att rädda vårt hav måste förbli en prioritet. Marin biologisk mångfald är avgörande för människors hälsa och vår planet. Marina skyddsområden måste förvaltas och finansieras verkningsfullt, och regler införas för att minska överfiske, föroreningar och försurning i haven.</p>'
+        targets:
+          target_14_1:
+            long_title: "Till 2025 förebygga och avsevärt minska alla slags föroreningar i havet, i synnerhet från landbaserad verksamhet, inklusive marint skräp och tillförsel av näringsämnen."
+            short_title: "Minska föroreningarna i havet"
+          target_14_2:
+            long_title: "Senast 2020 förvalta och skydda marina och kustnära ekosystem på ett hållbart sätt för att undvika betydande negativa konsekvenser, bland annat genom att stärka deras motståndskraft, samt vidta åtgärder för att återställa dem i syfte att uppnå friska och produktiva hav."
+            short_title: "Skydda och återställa ekosystem"
+          target_14_3:
+            long_title: "Minimera och åtgärda havsförsurningens konsekvenser, bland annat genom ökat vetenskapligt samarbete på alla nivåer."
+            short_title: "Reducera havsförsurningen"
+          target_14_4:
+            long_title: "Senast 2020 införa en effektiv fångstreglering och stoppa överfiske, olagligt, orapporterat och oreglerat fiske liksom destruktiva fiskemetoder samt genomföra vetenskapligt baserade förvaltningsplaner i syfte att återställa fiskbestånden så snabbt som möjligt, åtminstone till de nivåer som kan producera maximalt hållbart uttag, fastställt utifrån deras biologiska egenskaper."
+            short_title: "Hållbart fiske"
+          target_14_5:
+            long_title: "Senast 2020 skydda minst 10 procent av kust- och havsområdena, i överensstämmelse med nationell och internationell rätt och på grundval av bästa tillgängliga vetenskapliga rön."
+            short_title: "Skydda kust- och havsområden"
+          target_14_6:
+            long_title: "Senast 2020 förbjuda vissa former av fiskesubventioner som bidrar till överkapacitet och överfiske, avskaffa subventioner som bidrar till olagligt, orapporterat och oreglerat fiske och avstå från att införa nya sådana subventioner, med erkännande av att en ändamålsenlig och effektiv särskild och differentierad behandling av utvecklingsländerna och de minst utvecklade länderna bör vara en integrerad del av förhandlingarna om fiskesubventioner i Världshandelsorganisationen."
+            short_title: "Avskaffa subventioner som bidrar till överfiske"
+          target_14_7:
+            long_title: "Till 2030 öka den ekonomiska nyttan för små önationer under utveckling och de minst utvecklade länderna av ett hållbart nyttjande av marina resurser, bland annat genom en hållbar förvaltning av fiske, vattenbruk och turism."
+            short_title: "Öka den ekonomiska nyttan av hållbar användning av marina resurser"
+          target_14_A:
+            long_title: "Öka den vetenskapliga kunskapen, utveckla forskningskapaciteten och överföra havsteknik, med hänsyn tagen till den mellanstatliga oceanografiska kommissionens kriterier och riktlinjer för överföring av havsteknik (Criteria and Guidelines on the Transfer of Marine Technology), i syfte att skapa friskare hav och öka den marina biologiska mångfaldens bidrag till utvecklingen i utvecklingsländerna, i synnerhet i små önationer under utveckling och de minst utvecklade länderna."
+            short_title: "Öka vetenskaplig kunskap, forskning och teknik för friska hav"
+          target_14_B:
+            long_title: "Säkerställa tillträde till marina resurser och marknader för småskaliga icke-industriella fiskare."
+            short_title: "Stödja småskaliga fiskare"
+          target_14_C:
+            long_title: "Stärka bevarandet och hållbart nyttjande av haven och havsresurserna genom att genomföra internationell rätt, såsom den kommer till uttryck i Förenta Nationernas havsrättskonvention (UNCLOS), som utgör den rättsliga ramen för bevarande och hållbart nyttjande av hav och havsresurser, vilket erinras om i punkt 158 i slutdokumentet The Future We Want från Förenta Nationernas konferens om hållbar utveckling (Rio+20)."
+            short_title: "Genomföra och verkställa internationell havsrätt"
+      goal_15:
+        title: "Ekosystem på land"
+        title_in_two_lines: "Ekosystem\npå land"
+        description: "Hantera skogen hållbart, bekämpa ökenspridning, stoppa och återställa landdegradering och stoppa förlusten av biologisk mångfald."
+        long_description: '<p>Naturen är avgörande för vår överlevnad: naturen ger oss vårt syre, reglerar våra vädermönster, pollinerar våra grödor, producerar vår mat, vårt foder och våra fiber. Men den står under allt högre tryck. <a href="https://news.un.org/en/story/2020/04/1061082">Mänsklig aktivitet har förändrat nästan 75 procent av jordens yta</a>, och klämt in vilda djur och natur i ett allt mindre hörn av planeten.</p> <p>Omkring <a href="https://ipbes.net/sites/default/files/2020-02/ipbes_global_assessment_report_summary_for_policymakers_en.pdf">1 miljoner djur- och växtarter är utrotningshotade</a> – många blev det på ett par årtionden – enligt 2019 års globala bedömningsrapport om biologisk mångfald och ekosystemtjänster. Rapporten uppmanade om transformativa förändringar för att återställa och skydda naturen. Den fann att hälsan hos ekosystem som vi och alla andra arter är beroende av försämras snabbare än någonsin och påverkar&nbsp; själva grunden för våra ekonomier, vår försörjning, livsmedelssäkerhet, hälsa och livskvalitet över hela världen.&nbsp;</p> <p>Avskogning och ökenspridning – som orsakas av mänsklig aktivitet och klimatförändringar – utgör stora utmaningar för hållbar utveckling och har påverkat miljontals människors liv och försörjning. <a href="https://news.un.org/en/story/2019/05/1038291">Skogar är mycket viktiga </a>för att upprätthålla livet på jorden och spela en viktig roll i kampen mot klimatförändringar. Och investeringar i <a href="https://news.un.org/en/story/2019/09/1045802">markåterställning</a> är avgörande för att förbättra försörjningsmöjligheterna, minska sårbarheter och minska riskerna för ekonomin.</p> <p>Vår planets hälsa spelar också en viktig roll i <a href="https://www.unenvironment.org/resources/emerging-zoonotic-diseases-and-links-ecosystem-health-unep-frontiers-2016-chapter">uppkomsten av zoonotiska sjukdomar</a>, d.v.s. sjukdomar som är överförbara mellan djur och människor. När vi fortsatt inkräktar på ömtåliga ekosystem får människor i allt större grad kontakt med vilda djur, vilket gör det möjligt för naturens patogener att sprida sig till boskap och människor, vilket ökar risken för sjukdomsutveckling och -förstärkning.</p>'
+        targets:
+          target_15_1:
+            long_title: "Till 2020 bevara, återställa och hållbart använda ekosystem på land och i sötvatten och deras ekosystemtjänster, särskilt skogar, våtmarker, berg och torra områden, i enlighet med de skyldigheter som anges i internationella överenskommelser."
+            short_title: "Bevara och återställa ekosystem på land och i sötvatten"
+          target_15_2:
+            long_title: "Till 2020 främja genomförandet av hållbart brukande av alla typer av skogar, stoppa avskogningen, återställa utarmade skogar och kraftigt öka nybeskogningen och återbeskogningen i hela världen."
+            short_title: "Stoppa avskogningen och återställa utarmade skogar"
+          target_15_3:
+            long_title: "Till 2030 bekämpa ökenspridning, återställa förstörd mark och jord, inklusive mark som drabbats av ökenspridning, torka och översvämningar, samt sträva efter att uppnå en värld utan nettoförstöring av mark."
+            short_title: "Avskaffa ökenspridning och återställa förstörd mark"
+          target_15_4:
+            long_title: "Senast 2030 säkerställa att bevara bergsekosystemen, inklusive deras biologiska mångfald, i syfte att öka deras förmåga att producera nytta som behövs för en hållbar utveckling."
+            short_title: "Säkerställa bevarande av bergens ekosystem"
+          target_15_5:
+            long_title: "Vidta omedelbara och betydande åtgärder för att minska förstörelsen av naturliga livsmiljöer, hejda förlusten av biologisk mångfald och senast 2020 skydda och förebygga utrotning av hotade arter."
+            short_title: "Skydda biologisk mångfald och naturliga livsmiljöer"
+          target_15_6:
+            long_title: "Främja en rimlig och rättvis fördelning av den nytta som uppstår vid användning av genetiska resurser samt lämpligt tillträde till sådana resurser, i enlighet med internationella avtal."
+            short_title: "Främja tillträde till genetiska resurser och rättvis fördelning av nyttan med dem"
+          target_15_7:
+            long_title: "Vidta omedelbara åtgärder för att stoppa tjuvjakt på och handel med skyddade djur- och växtarter och inrikta åtgärderna på både utbudet av och efterfrågan på olagliga produkter från vilda djur och växter."
+            short_title: "Eliminera tjuvjakt på och handel med skyddade arter"
+          target_15_8:
+            long_title: "Senast 2020 införa åtgärder för att förhindra införseln av invasiva främmande arter och avsevärt minska deras påverkan på land- och vattenekosystem samt kontrollera eller utrota prioriterade arter."
+            short_title: "Förhindra invasiva främmande arter på land och i vattenekosystem"
+          target_15_9:
+            long_title: "Senast 2020 integrera ekosystemens och den biologiska mångfaldens värden i nationella och lokala planerings- och utvecklingsprocesser, strategier för fattigdomsminskning samt räkenskaper."
+            short_title: "Integrera ekosystem och biologisk mångfald i statlig planering"
+          target_15_A:
+            long_title: "Mobilisera och väsentligt öka de finansiella resurserna från alla källor för att bevara och hållbart nyttja den biologiska mångfalden och ekosystemen."
+            short_title: "Öka de finansiella resurserna för att bevara och hållbart nyttja ekosystemen och den biologiska mångfalden"
+          target_15_B:
+            long_title: "Mobilisera betydande resurser från alla källor och på alla nivåer för att finansiera hållbart brukande av skogar och ge utvecklingsländerna lämpliga incitament att utveckla sådant brukande, för bland annat bevarande och återbeskogning."
+            short_title: "Finansiera och ge lämpliga incitament för hållbart skogsbruk"
+          target_15_C:
+            long_title: "Öka det globala stödet till insatser för att bekämpa tjuvjakt på och illegal handel med skyddade arter, bland annat genom att öka möjligheterna till en hållbar försörjning i lokalsamhällena."
+            short_title: "Bekämpa tjuvjakt och smuggling globalt"
+      goal_16:
+        title: "Fred, rättvisa och starka institutioner"
+        title_in_two_lines: "Fred, rättvisa och\nstarka institutioner"
+        description: "Främja rättvisa, fredliga och inkluderande samhällen."
+        long_description: '<p>Konflikt, osäkerhet, svaga institutioner och begränsad tillgång till rättssystem är fortfarande ett stort hot mot hållbar utveckling.&nbsp;</p> <p>Antalet <a href="https://www.unhcr.org/en-us/news/press/2019/6/5d03b22b4/worldwide-displacement-tops-70-million-un-refugee-chief-urges-greater-solidarity.html">människor på flykt från krig, förföljelse och konflikt översteg 70 miljoner</a> 2018, den högsta nivån som registrerats av FN:s flyktingkommissariat (UNHCR) på nästan 70 år.&nbsp;</p> <p>2019 konstaterade Förenta nationerna <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">357 mord och 30 påtvingade försvinnanden</a> av människorättsförsvarare, journalister och fackföreningsmedlemmar i 47 länder.</p> <p>Det underlåts också att registrera att runt <a href="https://data.unicef.org/topic/child-protection/birth-registration/">ett av fyra barn</a> under 5 års ålder i hela världen har fötts, vilket berövar dem de bevis på juridisk identitet som är avgörande för att skydda deras rättigheter och ge tillgång till rättssystem och sociala tjänster.</p>'
+        targets:
+          target_16_1:
+            long_title: "Avsevärt minska alla former av våld och dödligt våld överallt."
+            short_title: "Minska våld överallt"
+          target_16_2:
+            long_title: "Eliminera övergrepp, utnyttjande, människohandel och alla former av våld eller tortyr mot barn."
+            short_title: "Skydda barn mot övergrepp, utnyttjande, människohandel och våld"
+          target_16_3:
+            long_title: "Främja rättssäkerheten på nationell och internationell nivå samt säkerställa lika tillgång till rättvisa för alla."
+            short_title: "Främja rättssäkerheten samt säkerställa lika tillgång till rättvisa"
+          target_16_4:
+            long_title: "Till 2030 avsevärt minska de olagliga finansiella flödena och vapenflödena, öka möjligheterna att återvinna och återfå stulna tillgångar samt bekämpa alla former av organiserad brottslighet."
+            short_title: "Bekämpa organiserad brottslighet och olagliga finansiella flöden och vapenflöden"
+          target_16_5:
+            long_title: "Väsentligt minska alla former av korruption och mutor."
+            short_title: "Väsentligt minska korruption och mutor"
+          target_16_6:
+            long_title: "Bygga upp effektiva och transparenta institutioner med ansvarsutkrävande på alla nivåer."
+            short_title: "Bygga upp effektiva och transparenta institutioner"
+          target_16_7:
+            long_title: "Säkerställa ett lyhört, allomfattande, delaktigt och representativt beslutsfattande på alla nivåer."
+            short_title: "Säkerställa lyhört, allomfattande och representativt beslutsfattande"
+          target_16_8:
+            long_title: "Utvidga och stärka utvecklingsländernas deltagande i institutionerna för global styrning."
+            short_title: "Stärka deltagandet i global styrning"
+          target_16_9:
+            long_title: "Senast 2030 tillhandahålla juridisk identitet för alla, inklusive födelseregistrering."
+            short_title: "Tillhandahålla juridisk identitet för alla"
+          target_16_10:
+            long_title: "Säkerställa allmän tillgång till information och skydda grundläggande friheter, i enlighet med nationell lagstiftning och internationella avtal."
+            short_title: "Säkerställa allmän tillgång till information och skydda grundläggande friheter"
+          target_16_A:
+            long_title: "Stärka berörda nationella institutioner, bland annat genom internationellt samarbete, i syfte att bygga upp kapacitet på alla nivåer, i synnerhet i utvecklingsländerna, för att förebygga våld och bekämpa terrorism och brottslighet."
+            short_title: "Stärka nationella institutioner för att förebygga våld och bekämpa terrorism och brottslighet"
+          target_16_B:
+            long_title: "Verka för och genomdriva icke-diskriminerande lagstiftning och politik för en hållbar utveckling."
+            short_title: "Verka för och genomdriva icke-diskriminerande lagstiftning och politik"
+      goal_17:
+        title: "Partnerskap för målen"
+        title_in_two_lines: "Partnerskap\nför målen"
+        description: "Återvitalisera det globala partnerskapet för hållbar utveckling."
+        long_description: '<p>Globala målen kan bara förverkligas genom starka globala partnerskap och samarbete.</p> <p>En framgångsrik utvecklingsagenda kräver allomfattande partnerskap — på global, regional, nationell och lokal nivå — som bygger på principer och värderingar, och en delad vision och gemensamma mål som placerar människor och planeten i centrum.</p> <p>Många länder behöver officiellt utvecklingsbistånd för att uppmuntra tillväxt och handel. Men <a href="https://www.un.org/press/en/2019/ga12191.doc.htm">stödnivåerna sjunker</a> och givarländerna har inte levt upp till sitt åtagande att öka utvecklingsfinansieringen.</p> <p>På grund av covid-19-pandemin beräknas <a href="https://www.imf.org/en/Publications/WEO/Issues/2020/04/14/weo-april-2020">den globala ekonomin</a> krympa kraftigt med 3 procent under 2020 och genomgå sin värsta lågkonjunktur sedan den stora depressionen.</p> <p>Starkt internationellt samarbete behövs nu mer än någonsin för att säkerställa att länderna har möjlighet att återhämta sig från pandemin, bygga en värld som är bättre än den var och uppnå Globala målen för hållbar utveckling.</p>'
+        targets:
+          target_17_1:
+            long_title: "Stärka den inhemska resursmobiliseringen, bland annat genom internationellt stöd till utvecklingsländerna, för att förbättra respektive lands förmåga att ta upp skatter och andra intäkter."
+            short_title: "Mobilisera resurser för att förbättra indrivningen av skatter etc. inom länderna "
+          target_17_2:
+            long_title: "De utvecklade länderna ska fullt ut fullfölja sina åtaganden i fråga om offentligt utvecklingsbistånd, inklusive många utvecklade länders åtagande att nå målet att ge 0,7 procent av BNI till utvecklingsländer och 0,15–0,20 procent av BNI till de minst utvecklade länderna. De länder som ger offentligt utvecklingsbistånd uppmanas att överväga att fastställa ett mål om att ge minst 0,20 procent av BNI till de minst utvecklade länderna."
+            short_title: "Fullfölja alla åtaganden i fråga om utvecklingsbistånd"
+          target_17_3:
+            long_title: "Mobilisera ytterligare finansiella resurser till utvecklingsländerna från många olika källor."
+            short_title: "Mobilisera finansiella resurser till utvecklingsländerna"
+          target_17_4:
+            long_title: "Bistå utvecklingsländerna att uppnå en långsiktigt hållbar skuldsättning genom en samordnad politik som syftar till att, när så är lämpligt, främja skuldfinansiering, skuldlättnad och skuldomstrukturering samt åtgärda kraftigt skuldtyngda fattiga länders utlandsskuld för att minska skuldbördan."
+            short_title: "Bistå utvecklingsländerna i att uppnå hållbar skuldsättning"
+          target_17_5:
+            long_title: "Anta och genomföra investeringsfrämjande regleringar för de minst utvecklade länderna."
+            short_title: "Investera i de minst utvecklade länderna"
+          target_17_6:
+            long_title: "Stärka nord–syd-samarbetet, syd–syd-samarbetet och det regionala och internationella trepartssamarbetet kring och tillgången till vetenskap, teknik och innovation samt öka kunskapsutbytet på gemensamt överenskomna villkor, inklusive genom förbättrad samordning mellan befintliga mekanismer, i synnerhet på FN-nivå, och genom en global mekanism för teknikfrämjande."
+            short_title: "Kunskapsutbyte och samordning för tillgång till vetenskap, teknik och innovation"
+          target_17_7:
+            long_title: "Främja utveckling, överföring och spridning av miljövänlig teknik till utvecklingsländerna på gynnsamma villkor, inklusive koncessions- och förmånsvillkor, på villkor som överenskommits mellan parterna."
+            short_title: "Främja miljövänlig teknik i utvecklingsländerna"
+          target_17_8:
+            long_title: "Senast 2017 fullt ut operationalisera teknikbanken och mekanismen för kapacitetsuppbyggnad inom vetenskap, teknik och innovation för de minst utvecklade länderna samt öka användningen av möjliggörande teknik, i synnerhet informations- och kommunikationsteknik."
+            short_title: "Stärka kapaciteten för vetenskap, teknik och innovation för de minst utvecklade länderna"
+          target_17_9:
+            long_title: "Öka det internationella stödet för genomförande av effektiv och riktad kapacitetsuppbyggnad i utvecklingsländerna till stöd för nationella planer för att genomföra alla Globala mål för hållbar utveckling, bland annat genom samarbete nord–syd och syd–syd samt trepartssamarbete."
+            short_title: "Öka kapaciteten för Globala mål för hållbar utveckling i utvecklingsländerna "
+          target_17_10:
+            long_title: "Främja ett universellt, regelbaserat, öppet, icke-diskriminerande och rättvist multilateralt handelssystem inom ramen för Världshandelsorganisationen, bland annat genom att slutföra förhandlingarna enligt organisationens utvecklingsagenda från Doha."
+            short_title: "Främja ett universellt handelssystem inom ramen för Världshandelsorganisationen"
+          target_17_11:
+            long_title: "Avsevärt öka utvecklingsländernas export, i synnerhet i syfte att fördubbla de minst utvecklade ländernas andel av den globala exporten till 2020."
+            short_title: "Öka utvecklingsländernas export"
+          target_17_12:
+            long_title: "Tidigt genomförande av tull- och kvotfritt marknadstillträde på varaktig grund för alla de minst utvecklade länderna, i överensstämmelse med beslut från Världshandelsorganisationen, bland annat genom att säkerställa att förmånliga ursprungsregler som gäller för import från de minst utvecklade länderna är transparenta och enkla, och bidrar till att underlätta marknadstillträde."
+            short_title: "Avskaffa handelshinder för de minst utvecklade länderna"
+          target_17_13:
+            long_title: "Öka den makroekonomiska stabiliteten i världen, bland annat genom politisk samordning och samstämmig politik."
+            short_title: "Öka den makroekonomiska stabiliteten i världen"
+          target_17_14:
+            long_title: "Föra en mer samstämmig politik för hållbar utveckling."
+            short_title: "Föra en mer samstämmig politik för hållbar utveckling"
+          target_17_15:
+            long_title: "Respektera varje lands politiska handlingsutrymme och ledarskap att fastställa och genomföra politik för fattigdomsutrotning och hållbar utveckling."
+            short_title: "Respektera nationellt ledarskap inom genomförandet av politik för målen för hållbar utveckling"
+          target_17_16:
+            long_title: "Stärka det globala partnerskapet för hållbar utveckling och komplettera det med partnerskap mellan flera parter som mobiliserar och utbyter kunskap, expertis, teknik och finansiella resurser, för att bidra till att målen för hållbar utveckling nås i alla länder, i synnerhet utvecklingsländer."
+            short_title: "Stärka det globala partnerskapet för hållbar utveckling"
+          target_17_17:
+            long_title: "Uppmuntra och främja effektiva offentliga och offentlig-privata partnerskap samt partnerskap inom det civila samhället som bygger på erfarenheterna från andra partnerskap och deras finansieringsstrategier."
+            short_title: "Uppmuntra effektiva partnerskap"
+          target_17_18:
+            long_title: "Till 2020 öka stödet för kapacitetsuppbyggnad till utvecklingsländerna, inklusive de minst utvecklade länderna och små önationer under utveckling, för att avsevärt öka tillgången till aktuella och tillförlitliga uppgifter av hög kvalitet, uppdelade efter inkomst, kön, ålder, ras, etnicitet, migrationsstatus, funktionsnedsättning, geografisk plats och andra nationellt relevanta aspekter."
+            short_title: "Öka tillgången till tillförlitliga uppgifter"
+          target_17_19:
+            long_title: "Till 2030 bygga vidare på befintliga initiativ för att utveckla mått på framsteg som görs mot hållbar utveckling som kompletterar BNP samt stödja uppbyggnad av statistisk kapacitet i utvecklingsländerna."
+            short_title: "Vidareutveckla mått på framsteg"
+      help:
+        title: "Globala målen för hållbar utveckling, hjälp"
+        description: "Du kan anpassa dina bidrag till gemenskapen (debatter, medborgarförslag och budgetförslag) runt den hållbara 2030-agendan med hållbar utveckling som mål, så att vi får överblick över vårt bidrag till varje mål för hållbar utveckling. Nedan hittar du mer information om alla mål, deras delmål och lokala delmål."
+      show:
+        read_more: "Läs mer om %{goal}"
+        read_less: "Läs mindre om %{goal}"
+        targets:
+          no_local_targets: Detta mål har inga lokala delmål
+      title: "Globala målen för hållbar utveckling"
+      filter:
+        heading: "Filter för Globala målen"
+        link: "Se alla %{resources} kopplade till målet %{code}"
+        more:
+          one: "Ett mål till"
+          other: "%{count} mål till"
+    related_list_selector:
+      goal_identifier: "SDG%{code}"
+      goal_list: "Du kan välja ett eller flera Globala mål som är i linje med din/ditt %{record}"
+      help:
+        title: "Vilka globala mål och delmål är i linje med min/mitt %{record}?"
+        text: "SDG-hjälpsida"
+      hint: Du kan ange koden för ett visst mål/delmål eller en text för att hitta ett. Mer information finns på %{link}.
+      remove_tag: "Ta bort"
+      title: "Globala mål och delmål för hållbar utveckling"
+    targets:
+      filter:
+        link: "Se alla %{resources} kopplade till delmålet %{code}"
+        more:
+          one: "Ett delmål till"
+          other: "%{count} delmål till"

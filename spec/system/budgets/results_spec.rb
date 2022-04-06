@@ -36,7 +36,7 @@ describe "Results" do
     visit budget_path(budget)
     click_link "See results"
 
-    expect(page).to have_selector("a.is-active", text: budget.headings.first.name)
+    expect(page).to have_selector("a.is-active", text: heading.name)
 
     within("#budget-investments-compatible") do
       expect(page).to have_content investment1.title
@@ -48,7 +48,7 @@ describe "Results" do
     end
   end
 
-  scenario "Show non winner & incomaptible investments", :js do
+  scenario "Show non winner & incomaptible investments" do
     visit budget_path(budget)
     click_link "See results"
     click_link "Show all"
@@ -108,11 +108,12 @@ describe "Results" do
     visit budget_path(budget)
     expect(page).not_to have_link "See results"
 
-    visit budget_results_path(budget, heading_id: budget.headings.first)
+    visit budget_results_path(budget, heading_id: heading)
+
     expect(page).to have_content "You do not have permission to carry out the action"
   end
 
-  scenario "No incompatible investments", :js do
+  scenario "No incompatible investments" do
     investment3.incompatible = false
     investment3.save!
 

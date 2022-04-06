@@ -1,1 +1,158 @@
 ro:
+  legislation:
+    annotations:
+      comments:
+        see_all: Vezi tot
+        see_complete: Vizualizare completă
+        comments_count:
+          one: "%{count} comentariu"
+          few: "%{count} comentarii"
+          other: "%{count} comentarii"
+        replies_count:
+          one: "%{count} răspuns"
+          few: "%{count} răspunsuri"
+          other: "%{count} răspunsuri"
+        cancel: Anulare
+        publish_comment: Publică comentariu
+      form:
+        phase_not_open: Această etapă nu este deschisă
+      index:
+        title: Comentarii
+        comments_about: Comentarii despre
+        see_in_context: Vezi în context
+        comments_count:
+          one: "%{count} comentariu"
+          few: "%{count} comentarii"
+          other: "%{count} comentarii"
+      show:
+        title: Comentariu
+      version_chooser:
+        seeing_version: Comentarii despre versiune
+        see_text: Vezi schița text
+    draft_versions:
+      changes:
+        title: Modificări
+        seeing_changelog_version: Rezumatul modificărilor revizuirii
+        see_text: Vezi schița text
+      show:
+        loading_comments: Se încarcă comentariile
+        seeing_version: Vedeți versiunea schiță
+        select_draft_version: Selectează schița
+        select_version_submit: vezi
+        updated_at: actualizat la %{date}
+        see_changes: vezi sumarul schimbărilor
+        see_comments: Vezi toate comentariile
+        text_toc: Cuprins
+        text_body: Text
+        text_comments: Comentarii
+    processes:
+      header:
+        additional_info: Informații suplimentare
+        description: Descriere
+        more_info: Mai multe informații și context
+      proposals:
+        empty_proposals: Nu există propuneri
+        filters:
+          random: Aleatoriu
+          winners: Selectat
+      debate:
+        empty_questions: Nu sunt întrebări
+        participate: Participați la dezbateri
+      index:
+        filter: Filtru
+        filters:
+          open: Procese deschise
+          past: Anterior
+        no_open_processes: Nu sunt procese deschise
+        no_past_processes: Nu există procese anterioare
+        section_header:
+          icon_alt: Pictograma legislației colaborative
+          title: Legislație colaborativă
+          help: Ajutor despre legislația de colaborare
+        section_footer:
+          title: Ajutor despre legislația de colaborare
+          description: Participați la dezbateri și procese înainte de aprobarea noilor reglementări sau strategii. Opinia dvs. va fi luată în considerare.
+      phase_not_open:
+        not_open: Această etapă nu este deschisă încă
+      phase_empty:
+        empty: Nimic publicat încă
+      process:
+        see_latest_comments: Vezi ultimele comentarii
+        see_latest_comments_title: Comentați la acest proces
+      shared:
+        key_dates: Etape de participare
+        homepage: Pagina principală
+        debate_dates: Dezbatere
+        draft_publication_date: Publicarea schiței
+        allegations_dates: Comentarii
+        result_publication_date: Publicarea rezultatului final
+        milestones_date: Următorul
+        proposals_dates: Propuneri
+    questions:
+      comments:
+        comment_button: Publicați răspunsul
+        comments_title: Deschide răspunsuri
+        comments_closed: Etapa aleasă
+        form:
+          leave_comment: Lasă-ți răspunsul
+      question:
+        comments:
+          zero: Nu există comentarii
+          one: "%{count} comentariu"
+          few: "%{count} comentarii"
+          other: "%{count} comentarii"
+        debate: Dezbate
+      show:
+        answer_question: Publicați răspunsul
+        next_question: Întrebarea următoare
+        first_question: Prima întrebare
+        share: Distribuie
+        title: Procesul legislației colaborative
+      participation:
+        phase_not_open: Această etapă nu este deschisă
+        organizations: Organizațiile nu au voie să participe la dezbatere
+        unauthenticated: Trebuie %{signin} sau %{signup} pentru a participa.
+        verified_only: Doar utilizatorii verificați pot participa, %{verify_account}.
+        debate_phase_not_open: Etapa de dezbateri s-a încheiat iar răspunsurile nu mai sunt acceptate
+    shared:
+      share: Distribuie
+      share_comment: Comentează la %{version_name} din schița procesului %{process_name}
+    proposals:
+      form:
+        tags_label: "Categorii"
+      not_verified: "Pentru a vota propunerile %{verify_account}."
+      process_title: Procesul legislației colaborative
+    summary:
+      title: "Sumar"
+      votes:
+        zero: "%{count} voturi"
+        one: "%{count} vot"
+        few: "%{count} voturi"
+        other: "%{count} voturi"
+      debate_phase: "Etapa de dezbatere"
+      proposals_phase: "Etapa de propuneri"
+      allegations_phase: "Etapa de comentarii"
+      debates:
+        zero: "Nu există dezbateri"
+        one: "%{count} dezbatere"
+        few: "%{count} dezbateri"
+        other: "%{count} dezbateri"
+      proposals:
+        zero: "Nu există propuneri"
+        one: "%{count} propunere"
+        few: "%{count} propuneri"
+        other: "%{count} propuneri"
+      comments:
+        zero: "Nu există comentarii"
+        one: "%{count} comentariu"
+        few: "%{count} comentarii"
+        other: "%{count} comentarii"
+      download: "Descarcă sumar"
+      top_comments:
+        zero: "Nu există comentarii"
+        one: "%{count} comentariu"
+        few: "Top comentarii"
+        other: "Top comentarii"
+      most_voted_comments: "Cele mai votate comentarii"
+      no_allegation: "Nu există comentarii"
+      process_empty: "Acest proces nu are nici o etapă de participare"

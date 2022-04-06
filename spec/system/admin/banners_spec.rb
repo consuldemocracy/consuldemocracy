@@ -1,49 +1,45 @@
 require "rails_helper"
 
-describe "Admin banners magement" do
-  before do
-    login_as(create(:administrator).user)
-  end
-
+describe "Admin banners magement", :admin do
   context "Index" do
     before do
       create(:banner, title: "Banner number one",
              description:  "This is the text of banner number one and is not active yet",
              target_url:  "http://www.url.com",
-             post_started_at: (Time.current + 4.days),
-             post_ended_at:   (Time.current + 10.days),
+             post_started_at: (Date.current + 4.days),
+             post_ended_at:   (Date.current + 10.days),
              background_color: "#FF0000",
              font_color: "#FFFFFF")
 
       create(:banner, title: "Banner number two",
              description:  "This is the text of banner number two and is not longer active",
              target_url:  "http://www.url.com",
-             post_started_at: (Time.current - 10.days),
-             post_ended_at:   (Time.current - 3.days),
+             post_started_at: (Date.current - 10.days),
+             post_ended_at:   (Date.current - 3.days),
              background_color: "#00FF00",
              font_color: "#FFFFFF")
 
       create(:banner, title: "Banner number three",
              description:  "This is the text of banner number three",
              target_url:  "http://www.url.com",
-             post_started_at: (Time.current - 1.day),
-             post_ended_at:   (Time.current + 10.days),
+             post_started_at: (Date.current - 1.day),
+             post_ended_at:   (Date.current + 10.days),
              background_color: "#0000FF",
              font_color: "#FFFFFF")
 
       create(:banner, title: "Banner number four",
              description:  "This is the text of banner number four",
              target_url:  "http://www.url.com",
-             post_started_at: (DateTime.current - 10.days),
-             post_ended_at:   (DateTime.current + 10.days),
+             post_started_at: (Date.current - 10.days),
+             post_ended_at:   (Date.current + 10.days),
              background_color: "#FFF000",
              font_color: "#FFFFFF")
 
       create(:banner, title: "Banner number five",
              description:  "This is the text of banner number five",
              target_url:  "http://www.url.com",
-             post_started_at: (DateTime.current - 10.days),
-             post_ended_at:   (DateTime.current + 10.days),
+             post_started_at: (Date.current - 10.days),
+             post_ended_at:   (Date.current + 10.days),
              background_color: "#FFFF00",
              font_color: "#FFFFFF")
     end
@@ -64,20 +60,11 @@ describe "Admin banners magement" do
     end
   end
 
-  scenario "Banners publication is listed on admin menu" do
-    visit admin_root_path
-
-    within("#side_menu") do
-      expect(page).to have_link "Manage banners"
-    end
-  end
-
   scenario "Publish a banner" do
-    section = create(:web_section, name: "proposals")
-
     visit admin_root_path
 
     within("#side_menu") do
+      click_link "Site content"
       click_link "Manage banners"
     end
 
@@ -85,18 +72,16 @@ describe "Admin banners magement" do
 
     fill_in "Title", with: "Such banner"
     fill_in "Description", with: "many text wow link"
-    fill_in "banner_target_url", with: "https://www.url.com"
-    last_week = Time.current - 7.days
-    next_week = Time.current + 7.days
-    fill_in "post_started_at", with: last_week.strftime("%d/%m/%Y")
-    fill_in "post_ended_at", with: next_week.strftime("%d/%m/%Y")
-    fill_in "banner_background_color", with: "#850000"
-    fill_in "banner_font_color", with: "#ffb2b2"
-    check "banner_web_section_ids_#{section.id}"
+    fill_in "Link", with: "https://www.url.com"
+    fill_in "Post started at", with: Date.current - 7.days
+    fill_in "Post ended at", with: Date.current + 7.days
+    fill_in "Background color", with: "#850000"
+    fill_in "Font color", with: "#ffb2b2"
+    within_fieldset("Sections where it will appear") { check "Proposals" }
 
     click_button "Save changes"
 
-    expect(page).to have_content "Such banner"
+    expect(page).to have_content "Banner created successfully"
 
     visit proposals_path
 
@@ -104,7 +89,7 @@ describe "Admin banners magement" do
     expect(page).to have_link "Such banner many text wow link", href: "https://www.url.com"
   end
 
-  scenario "Publish a banner with a translation different than the current locale", :js do
+  scenario "Publish a banner with a translation different than the current locale" do
     visit new_admin_banner_path
 
     expect_to_have_language_selected "English"
@@ -114,23 +99,18 @@ describe "Admin banners magement" do
 
     fill_in "Title", with: "En Français"
     fill_in "Description", with: "Link en Français"
-
     fill_in "Link", with: "https://www.url.com"
-
-    last_week = Time.current - 1.week
-    next_week = Time.current + 1.week
-
-    fill_in "Post started at", with: last_week.strftime("%d/%m/%Y")
-    fill_in "Post ended at", with: next_week.strftime("%d/%m/%Y")
+    fill_in "Post started at", with: Date.current - 1.week
+    fill_in "Post ended at", with: Date.current + 1.week
 
     click_button "Save changes"
-    click_link "Edit banner"
+    click_link "Edit"
 
     expect_to_have_language_selected "Français"
     expect(page).to have_field "Title", with: "En Français"
   end
 
-  scenario "Update banner color when changing from color picker or text_field", :js do
+  scenario "Update banner color when changing from color picker or text_field" do
     visit new_admin_banner_path
 
     fill_in "background_color_input", with: "#850000"
@@ -141,12 +121,12 @@ describe "Admin banners magement" do
     expect(find("#font_color_input").value).to eq("#ffb2b2")
   end
 
-  scenario "Edit banner with live refresh", :js do
+  scenario "Edit banner with live refresh" do
     create(:banner, title: "Hello",
                     description: "Wrong text",
                     target_url:  "http://www.url.com",
-                    post_started_at: (Time.current + 4.days),
-                    post_ended_at:   (Time.current + 10.days),
+                    post_started_at: (Date.current + 4.days),
+                    post_ended_at:   (Date.current + 10.days),
                     background_color: "#FF0000",
                     font_color: "#FFFFFF")
 
@@ -157,7 +137,7 @@ describe "Admin banners magement" do
       click_link "Manage banners"
     end
 
-    click_link "Edit banner"
+    click_link "Edit"
 
     fill_in "Title", with: "Modified title"
     fill_in "Description", with: "Edited text"
@@ -171,7 +151,8 @@ describe "Admin banners magement" do
 
     click_button "Save changes"
 
-    visit admin_banners_path
+    expect(page).to have_content "Banner updated successfully"
+
     expect(page).to have_content "Modified title"
     expect(page).to have_content "Edited text"
 
@@ -179,35 +160,20 @@ describe "Admin banners magement" do
     expect(page).not_to have_content "Wrong text"
   end
 
-  scenario "when change date field on edit banner page display expected format", :js do
-    banner = create(:banner)
-    visit edit_admin_banner_path(banner)
-
-    fill_in "Post started at", with: "20/02/2002"
-    find_field("Post started at").click
-    within(".ui-datepicker") { click_link "22" }
-
-    expect(page).to have_field "Post started at", with: "22/02/2002"
-  end
-
   scenario "Delete a banner" do
     create(:banner, title: "Ugly banner",
                     description: "Bad text",
                     target_url:  "http://www.url.com",
-                    post_started_at: (Time.current + 4.days),
-                    post_ended_at:   (Time.current + 10.days),
+                    post_started_at: (Date.current + 4.days),
+                    post_ended_at:   (Date.current + 10.days),
                     background_color: "#FF0000",
                     font_color: "#FFFFFF")
 
-    visit admin_root_path
-
-    within("#side_menu") do
-      click_link "Manage banners"
-    end
+    visit admin_banners_path
 
     expect(page).to have_content "Ugly banner"
 
-    click_link "Delete banner"
+    accept_confirm { click_button "Delete" }
 
     visit admin_root_path
     expect(page).not_to have_content "Ugly banner"

@@ -1,0 +1,11 @@
+da:
+  sdg:
+    goals:
+      goal_1:
+        title: "Afskaf fattigdom"
+        title_in_two_lines: "Afskaf \nFattigdom"
+        description: "Afskaffelsen af alle former for fattigdom er fortsat en af de største udfordringer for menneskeheden."
+      help:
+        title: "Verdensmål hjælp"
+    related_list_selector:
+      remove_tag: "Fjern"

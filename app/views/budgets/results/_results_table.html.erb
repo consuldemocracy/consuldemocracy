@@ -1,5 +1,5 @@
 <div class="<%= results_type == :compatible ? "success" : "js-discarded" %>"
-     style="<%= results_type != :compatible ? "display: none" : "" %>"
+     style="<%= results_type == :compatible ? "" : "display: none" %>"
      id="<%= results_type %>-container">
 
   <h4><%= title %></h4>

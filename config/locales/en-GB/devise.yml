@@ -1,1 +1,12 @@
+#Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 en-GB:
+  devise:
+    password_expired:
+      change_password: "Змініть пароль"
+      new_password: "Новий пароль"
+    failure:
+      invalid: "Недійсний %{authentication_keys} або пароль."
+      not_found_in_database: "Недійсний %{authentication_keys} або пароль."
+    sessions:
+      signed_out: "Ви успішно вийшли з системи."
+      already_signed_out: "Ви успішно вийшли з системи."

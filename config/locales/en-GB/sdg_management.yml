@@ -1,0 +1,17 @@
+en-GB:
+  sdg_management:
+    homepage:
+      header:
+        create: "Створити заголовок"
+        title: "Заголовок"
+    menu:
+      budget_investments: "Бюджети участі"
+      debates: "Обговорення"
+      polls: "Голосування"
+      proposals: "Пропозиції"
+    relations:
+      index:
+        filter: "Фільтр"
+        filters:
+          all: "Усі"
+          pending_sdg_review: "В очікуванні"

@@ -6,7 +6,6 @@ class PagesController < ApplicationController
 
   def show
     @custom_page = SiteCustomization::Page.published.find_by(slug: params[:id])
-    @banners = Banner.in_section("help_page").with_active
 
     if @custom_page.present?
       @cards = @custom_page.cards
@@ -15,6 +14,6 @@ class PagesController < ApplicationController
       render action: params[:id]
     end
   rescue ActionView::MissingTemplate
-    head 404, content_type: "text/html"
+    head :not_found, content_type: "text/html"
   end
 end

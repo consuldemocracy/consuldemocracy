@@ -1,43 +1,40 @@
 <% if managed_user.document_number.present? %>
-  <section class="small-12 medium-9 column">
-    <div class="account-info">
+  <section class="account-info">
+    <%= link_to(t("management.account_info.change_user"),
+                  logout_management_users_path,
+                  method: :delete,
+                  class: "float-right btchange-user button hollow") %>
 
-      <%= link_to(t("management.account_info.change_user"),
-                    logout_management_users_path,
-                    method: :delete,
-                    class: "float-right btchange-user button hollow") %>
-
-      <% if managed_user.level_two_or_three_verified? %>
-        <p>
-          <strong>
-            <%= t("management.account_info.identified_label") %>
-          </strong>
-        </p>
-      <% end %>
-
-      <% if managed_user.username.present? %>
-        <p>
-          <%= t("management.account_info.username_label") %>
-          <strong><%= managed_user.username %></strong>
-        </p>
-      <% end %>
-
-      <% if managed_user.email.present? %>
-        <p>
-          <%= t("management.account_info.email_label") %>
-          <strong><%= managed_user.email %></strong>
-        </p>
-      <% end %>
-
+    <% if managed_user.level_two_or_three_verified? %>
       <p>
-        <%= t("management.account_info.document_type_label") %>
-        <strong><%= humanize_document_type(managed_user.document_type) %></strong>
+        <strong>
+          <%= t("management.account_info.identified_label") %>
+        </strong>
       </p>
+    <% end %>
 
+    <% if managed_user.username.present? %>
       <p>
-        <%= t("management.account_info.document_number_label") %>
-        <strong><%= managed_user.document_number %></strong>
+        <%= t("management.account_info.username_label") %>
+        <strong><%= managed_user.username %></strong>
       </p>
-    </div>
+    <% end %>
+
+    <% if managed_user.email.present? %>
+      <p>
+        <%= t("management.account_info.email_label") %>
+        <strong><%= managed_user.email %></strong>
+      </p>
+    <% end %>
+
+    <p>
+      <%= t("management.account_info.document_type_label") %>
+      <strong><%= humanize_document_type(managed_user.document_type) %></strong>
+    </p>
+
+    <p>
+      <%= t("management.account_info.document_number_label") %>
+      <strong><%= managed_user.document_number %></strong>
+    </p>
   </section>
 <% end %>

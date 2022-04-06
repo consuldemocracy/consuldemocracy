@@ -4,28 +4,30 @@ IMAGE_FILES = %w[
   steve-harvey-597760-unsplash_713x475.jpg
   tim-mossholder-302931-unsplash_713x475.jpg
 ].map do |filename|
-  File.new(Rails.root.join("db",
-                           "dev_seeds",
-                           "images",
-                           "proposals", filename))
+  Rails.root.join("db",
+                  "dev_seeds",
+                  "images",
+                  "proposals", filename)
 end
 
 def add_image_to(imageable)
   # imageable should respond to #title & #author
-  imageable.image = Image.create!({
-    imageable: imageable,
-    title: imageable.title,
-    attachment: IMAGE_FILES.sample,
-    user: imageable.author
-  })
+  File.open(IMAGE_FILES.sample) do |file|
+    imageable.image = Image.create!({
+      imageable: imageable,
+      title: imageable.title,
+      attachment: file,
+      user: imageable.author
+    })
+  end
   imageable.save!
 end
 
 section "Creating Proposals" do
-  tags = Faker::Lorem.words(25)
+  tags = Faker::Lorem.words(number: 25)
   30.times do
-    title = Faker::Lorem.sentence(3).truncate(60)
-    summary = Faker::Lorem.sentence(3)
+    title = Faker::Lorem.sentence(word_count: 3).truncate(60)
+    summary = Faker::Lorem.sentence(word_count: 3)
     author = User.all.sample
     description = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"
 
@@ -37,7 +39,6 @@ section "Creating Proposals" do
                                 created_at: rand((Time.current - 1.week)..Time.current),
                                 tag_list: tags.sample(3).join(","),
                                 geozone: Geozone.all.sample,
-                                skip_map: "1",
                                 terms_of_service: "1",
                                 published_at: Time.current)
     random_locales.map do |locale|
@@ -53,19 +54,18 @@ section "Creating Proposals" do
 end
 
 section "Creating Archived Proposals" do
-  tags = Faker::Lorem.words(25)
+  tags = Faker::Lorem.words(number: 25)
   5.times do
     author = User.all.sample
     description = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"
     months_to_archive_proposals = Setting["months_to_archive_proposals"]
     proposal = Proposal.create!(author: author,
-                                title: Faker::Lorem.sentence(3).truncate(60),
-                                summary: Faker::Lorem.sentence(3),
+                                title: Faker::Lorem.sentence(word_count: 3).truncate(60),
+                                summary: Faker::Lorem.sentence(word_count: 3),
                                 responsible_name: Faker::Name.name,
                                 description: description,
                                 tag_list: tags.sample(3).join(","),
                                 geozone: Geozone.all.sample,
-                                skip_map: "1",
                                 terms_of_service: "1",
                                 created_at: months_to_archive_proposals.to_i.months.ago,
                                 published_at: months_to_archive_proposals.to_i.months.ago)
@@ -82,19 +82,18 @@ section "Creating Archived Proposals" do
 end
 
 section "Creating Successful Proposals" do
-  tags = Faker::Lorem.words(25)
+  tags = Faker::Lorem.words(number: 25)
   10.times do
     author = User.all.sample
     description = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"
     proposal = Proposal.create!(author: author,
-                                title: Faker::Lorem.sentence(3).truncate(60),
-                                summary: Faker::Lorem.sentence(3),
+                                title: Faker::Lorem.sentence(word_count: 3).truncate(60),
+                                summary: Faker::Lorem.sentence(word_count: 3),
                                 responsible_name: Faker::Name.name,
                                 description: description,
                                 created_at: rand((Time.current - 1.week)..Time.current),
                                 tag_list: tags.sample(3).join(","),
                                 geozone: Geozone.all.sample,
-                                skip_map: "1",
                                 terms_of_service: "1",
                                 cached_votes_up: Setting["votes_for_proposal_success"],
                                 published_at: Time.current)
@@ -114,14 +113,13 @@ section "Creating Successful Proposals" do
     author = User.all.sample
     description = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"
     proposal = Proposal.create!(author: author,
-                                title: Faker::Lorem.sentence(4).truncate(60),
-                                summary: Faker::Lorem.sentence(3),
+                                title: Faker::Lorem.sentence(word_count: 4).truncate(60),
+                                summary: Faker::Lorem.sentence(word_count: 3),
                                 responsible_name: Faker::Name.name,
                                 description: description,
                                 created_at: rand((Time.current - 1.week)..Time.current),
                                 tag_list: tags.sample(3).join(","),
                                 geozone: Geozone.all.sample,
-                                skip_map: "1",
                                 terms_of_service: "1",
                                 published_at: Time.current)
     random_locales.map do |locale|

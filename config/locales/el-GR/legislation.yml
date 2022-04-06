@@ -118,3 +118,24 @@ el:
         tags_label: "Κατηγορίες"
       not_verified: "Για να ψηφίσετε %{verify_account}."
       process_title: Διαδικασία συνεργατικής νομοθεσίας
+    summary:
+      title: "Περίληψη"
+      votes:
+        zero: "%{count} ψήφοι"
+      debate_phase: "Φάση συζήτησης"
+      proposals_phase: "Φάση προτάσεων"
+      allegations_phase: "Φάση σχολίων"
+      debates:
+        zero: "Δεν υπάρχουν συζητήσεις"
+        one: "%{count} συζήτηση"
+        other: "%{count} συζητήσεις"
+      proposals:
+        zero: "Δεν υπάρχουν προτάσεις"
+        one: "%{count} πρόταση"
+        other: "%{count} πρότάσεις"
+      comments:
+        zero: "Δεν υπάρχουν σχόλια"
+        one: "%{count} σχόλιο"
+        other: "%{count} σχόλια"
+      top_comments:
+        zero: "Δεν υπάρχουν σχόλια"

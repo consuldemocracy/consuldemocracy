@@ -1,1 +1,6 @@
 en-US:
+  settings:
+    proposals:
+      email_short_title: Email
+    process:
+      debates: "Debatten"

@@ -1,9 +1,9 @@
 require "rails_helper"
 
-describe "Admin edit translatable records" do
+describe "Admin edit translatable records", :admin do
   before do
+    translatable.main_link_url = "https://consulproject.org" if translatable.is_a?(Budget::Phase)
     translatable.update!(attributes)
-    login_as(create(:administrator).user)
   end
 
   let(:fields) { translatable.translated_attribute_names }
@@ -14,10 +14,10 @@ describe "Admin edit translatable records" do
     end.to_h
   end
 
-  context "Add a translation", :js do
+  context "Add a translation" do
     context "Input fields" do
       let(:translatable) { create(:budget_heading) }
-      let(:path) { edit_admin_budget_group_heading_path(*resource_hierarchy_for(translatable)) }
+      let(:path) { admin_polymorphic_path(translatable, action: :edit) }
 
       scenario "Maintains existing translations" do
         visit path
@@ -100,7 +100,7 @@ describe "Admin edit translatable records" do
       end
     end
 
-    context "Locale with non-underscored name", :js do
+    context "Locale with non-underscored name" do
       let(:translatable) { create(:legislation_question) }
       let(:path) { edit_admin_legislation_process_question_path(translatable.process, translatable) }
 
@@ -112,18 +112,18 @@ describe "Admin edit translatable records" do
         click_button "Save changes"
 
         visit path
-        select "Português brasileiro", from: "locale-switcher"
+        select "Português brasileiro", from: "Language:"
 
         expect(page).to have_field "Questão", with: "Português"
       end
     end
   end
 
-  context "Add an invalid translation", :js do
+  context "Add an invalid translation" do
     let(:translatable) { create(:budget_investment) }
 
     context "Input field" do
-      let(:translatable) { create(:budget) }
+      let(:translatable) { create(:budget, main_link_url: "https://consulproject.org") }
 
       scenario "Shows validation erros" do
         visit edit_admin_budget_path(translatable)
@@ -155,7 +155,7 @@ describe "Admin edit translatable records" do
 
         select "Français", from: :select_language
 
-        expect(page). to have_ckeditor "Description", with: ""
+        expect(page).to have_ckeditor "Description", with: ""
       end
     end
 
@@ -182,7 +182,7 @@ describe "Admin edit translatable records" do
     end
   end
 
-  context "Update a translation", :js do
+  context "Update a translation" do
     context "Input fields" do
       let(:translatable) { create(:widget_card) }
       let(:path) { edit_admin_widget_card_path(translatable) }
@@ -205,7 +205,7 @@ describe "Admin edit translatable records" do
 
         expect(page).to have_field "Title", with: "Title in English"
 
-        select("Español", from: "locale-switcher")
+        select "Español", from: "Language:"
 
         expect(page).to have_field "Título", with: "Título corregido"
         expect(page).to have_field "Descripción", with: "Descripción corregida"
@@ -234,14 +234,14 @@ describe "Admin edit translatable records" do
 
         expect(page).to have_field "Answer", with: "Answer in English"
 
-        select("Español", from: "locale-switcher")
+        select "Español", from: "Language:"
 
         expect(page).to have_field "Respuesta", with: "Respuesta corregida"
         expect(page).to have_ckeditor "Descripción", with: "Descripción corregida"
       end
     end
 
-    context "Change value of a translated field to blank", :js do
+    context "Change value of a translated field to blank" do
       let(:translatable) { create(:poll) }
       let(:path) { edit_admin_poll_path(translatable) }
 
@@ -260,7 +260,7 @@ describe "Admin edit translatable records" do
     end
   end
 
-  context "Update a translation with invalid data", :js do
+  context "Update a translation with invalid data" do
     context "Input fields" do
       let(:translatable) { create(:banner) }
 
@@ -306,7 +306,7 @@ describe "Admin edit translatable records" do
     end
   end
 
-  context "Update a translation not having the current locale", :js do
+  context "Update a translation not having the current locale" do
     let(:translatable) { create(:legislation_process) }
 
     before do
@@ -322,16 +322,16 @@ describe "Admin edit translatable records" do
 
       click_button "Save changes"
 
-      expect(page).not_to have_css "#error_explanation"
+      expect(page).to have_content "Process updated successfully"
 
-      visit edit_admin_legislation_process_path(translatable.reload)
+      visit edit_admin_legislation_process_path(translatable)
 
       expect_to_have_language_selected "Français"
       expect_not_to_have_language "English"
     end
   end
 
-  context "Remove a translation", :js do
+  context "Remove a translation" do
     let(:translatable) { create(:budget_group) }
     let(:path) { edit_admin_budget_group_path(translatable.budget, translatable) }
 
@@ -352,11 +352,13 @@ describe "Admin edit translatable records" do
     end
   end
 
-  context "Remove all translations", :js do
+  context "Remove all translations" do
     let(:translatable) { create(:milestone) }
 
-    scenario "Shows an error message" do
-      visit edit_admin_budget_budget_investment_milestone_path(*resource_hierarchy_for(translatable))
+    scenario "Shows an error message when there's a mandatory translatable field" do
+      translatable.update!(status: nil)
+
+      visit admin_polymorphic_path(translatable, action: :edit)
 
       click_link "Remove language"
       click_link "Remove language"
@@ -365,9 +367,22 @@ describe "Admin edit translatable records" do
 
       expect(page).to have_content "Is mandatory to provide one translation at least"
     end
+
+    scenario "Is successful when there isn't a mandatory translatable field" do
+      translatable.update!(status: Milestone::Status.first)
+
+      visit admin_polymorphic_path(translatable, action: :edit)
+
+      click_link "Remove language"
+      click_link "Remove language"
+
+      click_button "Update milestone"
+
+      expect(page).to have_content "Milestone updated successfully"
+    end
   end
 
-  context "Remove a translation with invalid data", :js do
+  context "Remove a translation with invalid data" do
     let(:translatable) { create(:poll_question) }
     let(:path) { edit_admin_question_path(translatable) }
 
@@ -393,7 +408,7 @@ describe "Admin edit translatable records" do
     end
   end
 
-  context "Current locale translation does not exist", :js do
+  context "Current locale translation does not exist" do
     context "For all translatable except ActivePoll and Budget::Phase" do
       let(:translatable) { create(:admin_notification, segment_recipient: "all_users") }
 
@@ -417,7 +432,7 @@ describe "Admin edit translatable records" do
       let(:translatable) { create(:budget).phases.last }
 
       scenario "Shows first available fallback" do
-        translatable.update!({ description_fr: "Phase en Français", summary_fr: "Phase résumé" })
+        translatable.update!({ name_fr: "Name en Français", description_fr: "Phase en Français" })
 
         visit edit_admin_budget_budget_phase_path(translatable.budget, translatable)
 
@@ -429,8 +444,9 @@ describe "Admin edit translatable records" do
         click_button "Save changes"
 
         visit budgets_path
+        click_link "Name en Français"
 
-        expect(page).to have_content "Phase résumé"
+        expect(page).to have_content "Phase en Français"
       end
     end
 
@@ -455,7 +471,7 @@ describe "Admin edit translatable records" do
     end
   end
 
-  context "Globalize javascript interface", :js do
+  context "Globalize javascript interface" do
     let(:translatable) { create(:i18n_content) }
     let(:content) { translatable }
     let(:path) { admin_site_customization_information_texts_path }
@@ -465,7 +481,7 @@ describe "Admin edit translatable records" do
 
       expect_to_have_language_selected "English"
 
-      select("Español", from: "locale-switcher")
+      select "Español", from: "Language:"
 
       expect_to_have_language_selected "Español"
     end
@@ -493,6 +509,7 @@ describe "Admin edit translatable records" do
       select "Français", from: :add_language
 
       expect_to_have_language_selected "Français"
+      expect(page).to have_select :add_language, selected: "Add language"
       expect(page).to have_field "contents_content_#{content.key}values_value_fr"
     end
 

@@ -7,7 +7,7 @@ section "Creating Admin Notifications & Templates" do
              "people will discuss & support it.",
     body_es: "Recuerda que puedes crear propuestas y los ciudadanos las debatirán y apoyarán.",
 
-    link: Setting["url"] + "/proposals",
+    link: "#{Setting["url"]}/proposals",
     segment_recipient: "administrators"
   ).deliver
 

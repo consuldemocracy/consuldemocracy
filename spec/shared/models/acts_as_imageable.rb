@@ -1,6 +1,5 @@
 shared_examples "acts as imageable" do |imageable_factory|
-  let!(:image)                  { build(:image, imageable_factory.to_sym) }
-  let!(:imageable)              { image.imageable }
+  let!(:image) { build(:image, imageable_factory.to_sym) }
 
   it "is valid" do
     expect(image).to be_valid
@@ -58,13 +57,5 @@ shared_examples "acts as imageable" do |imageable_factory|
 
       expect(image).not_to be_valid
     end
-  end
-
-  it "image destroy should remove image from file storage" do
-    image.save!
-    image_url = image.attachment.url
-    new_url = "/attachments/original/missing.png"
-
-    expect { image.attachment.destroy }.to change { image.attachment.url }.from(image_url).to(new_url)
   end
 end

@@ -7,8 +7,6 @@ pt-BR:
       delete_button: Remover imagem
       note: "Você pode carregar uma imagem dos seguintes tipos de conteúdo: %{accepted_content_types}, até %{max_file_size} MB."
       add_new_image: Adicionar imagem
-      admin_title: "Imagem"
-      admin_alt_text: "Texto alternativo para a imagem"
     actions:
       destroy:
         notice: Imagem excluída com sucesso.

@@ -16,6 +16,7 @@ id:
         title: "Perdebatan"
         description: "Di bagian %{link} anda dapat hadir dan berbagi pendapat dengan orang lain mengenai masalah yang menjadi perhatiananda terkait dengan kota. Ini juga merupakan tempat untuk menghasilkan gagasan bahwa melalui bagian lain dari %{org} mengarah pada tindakan nyata oleh Dewan Kota."
         link: "perdebatan warga"
+        feature: "Anda bisa membuka perdebatan, berkomentar dan menilainya dengan <strong>saya setuju</strong> atau <strong> Saya tidak setuju </strong>. Untuk itu anda harus %{link}."
         feature_link: "mendaftar masuk %{org}"
         image_alt: "Tombol untuk menilai perdebatan"
         figcaption: '"Saya setuju" dan "Saya tidak setuju" untuk menilai debat.'
@@ -29,6 +30,7 @@ id:
         description: "Bagian %{link} membantu orang membuat keputusan langsung mengenai bagian anggaran kota mana yang dibelanjakan."
         link: "anggaran partisipatif"
         image_alt: "Fase yang berbeda dari anggaran partisipatif"
+        figcaption: 'Tahap "Dukungan" dan "Pemungutan suara" dari anggaran partisipatif.'
       polls:
         title: "Jajak pendapat"
         description: "Bagian %{link} diaktifkan setiap kali sebuah proposal mencapai 1% dukungan dan pergi ke pemungutan suara atau saat Dewan Kota mengajukan sebuah masalah kepada masyarakat untuk diputuskan."
@@ -37,6 +39,7 @@ id:
         feature_1_link: "mendaftar masuk %{org_name}"
       processes:
         title: "Proses"
+        feature_link: "mendaftar masuk %{org_name}"
       faq:
         title: "Masalah teknis?"
         description: "Baca Tanya Jawab dan selesaikan pertanyaan anda."

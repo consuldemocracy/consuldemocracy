@@ -1,0 +1,26 @@
+.social {
+  @include grid-column;
+  text-align: right;
+
+  @include breakpoint(medium) {
+    width: 1 * 100% / 3;
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    font-size: rem-calc(24);
+    margin: 0 $line-height / 2;
+    text-decoration: none;
+
+    &:hover {
+      @include brand-text;
+    }
+  }
+}

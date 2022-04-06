@@ -104,3 +104,12 @@ ast:
     proposals:
       form:
         tags_label: "Categoríes"
+      process_title: Proceso de legislación colaborativa
+    summary:
+      title: "Resume"
+      votes:
+        zero: "%{count} votos"
+      debate_phase: "Fase previa"
+      comments:
+        one: "%{count} comentario"
+        other: "%{count} comentarios"

@@ -69,7 +69,6 @@ tr:
         not_allowed: "Bugün memur vardiyanız yok"
       new:
         title: Belgeyi doğrula
-        document_number: "Belge numarası (harfler de dahil)"
         submit: Belgeyi doğrula
         error_verifying_census: "Census bu belgeyi doğrulayamadı."
         form_errors: bu belgenin doğrulanmasını engelledi

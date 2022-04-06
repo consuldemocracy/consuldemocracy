@@ -1,0 +1,14 @@
+<%= render Admin::TableActionsComponent.new(record, actions: []) do |actions| %>
+  <%= actions.action(:restore,
+                     text: restore_text,
+                     path: restore_path,
+                     method: :put,
+                     confirm: true) %>
+
+  <% unless record.confirmed_hide? %>
+    <%= actions.action(:confirm_hide,
+                       text: confirm_hide_text,
+                       path: confirm_hide_path,
+                       method: :put) %>
+  <% end %>
+<% end %>

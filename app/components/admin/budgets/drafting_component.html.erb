@@ -1,0 +1,11 @@
+<div class="drafting">
+  <div class="callout warning">
+    <strong><%= t("admin.budgets.edit.drafting") %></strong>
+  </div>
+
+  <%= render Admin::ActionComponent.new(
+    :publish,
+    budget,
+    text: t("admin.budgets.edit.publish"), method: :patch, confirm: true
+  ) %>
+</div>

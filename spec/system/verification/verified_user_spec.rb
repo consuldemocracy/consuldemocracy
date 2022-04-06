@@ -2,21 +2,11 @@ require "rails_helper"
 
 describe "Verified users" do
   scenario "Verified emails" do
-    user = create(:user,
-                  residence_verified_at: Time.current,
-                  document_number:       "12345678Z")
+    user = create(:user, residence_verified_at: Time.current, document_number: "12345678Z")
 
-    create(:verified_user,
-           document_number: "12345678Z",
-           email:           "rock@example.com")
-
-    create(:verified_user,
-            document_number: "12345678Z",
-            email:           "roll@example.com")
-
-    create(:verified_user,
-            document_number: "99999999R",
-            email:           "another@example.com")
+    create(:verified_user, document_number: "12345678Z", email: "rock@example.com")
+    create(:verified_user, document_number: "12345678Z", email: "roll@example.com")
+    create(:verified_user, document_number: "99999999R", email: "another@example.com")
 
     login_as(user)
     visit verified_user_path
@@ -27,21 +17,11 @@ describe "Verified users" do
   end
 
   scenario "Verified phones" do
-    user = create(:user,
-                  residence_verified_at: Time.current,
-                  document_number:       "12345678Z")
+    user = create(:user, residence_verified_at: Time.current, document_number: "12345678Z")
 
-    create(:verified_user,
-           document_number: "12345678Z",
-           phone:           "611111111")
-
-    create(:verified_user,
-            document_number: "12345678Z",
-            phone:           "622222222")
-
-    create(:verified_user,
-            document_number: "99999999R",
-            phone:           "633333333")
+    create(:verified_user, document_number: "12345678Z", phone: "611111111")
+    create(:verified_user, document_number: "12345678Z", phone: "622222222")
+    create(:verified_user, document_number: "99999999R", phone: "633333333")
 
     login_as(user)
     visit verified_user_path
@@ -52,15 +32,10 @@ describe "Verified users" do
   end
 
   scenario "No emails or phones" do
-    user = create(:user,
-                  residence_verified_at: Time.current,
-                  document_number:       "12345678Z")
+    user = create(:user, residence_verified_at: Time.current, document_number: "12345678Z")
 
-    create(:verified_user,
-           document_number: "12345678Z")
-
-    create(:verified_user,
-            document_number: "12345678Z")
+    create(:verified_user, document_number: "12345678Z")
+    create(:verified_user, document_number: "12345678Z")
 
     login_as(user)
     visit verified_user_path
@@ -69,13 +44,8 @@ describe "Verified users" do
   end
 
   scenario "Select a verified email" do
-    user = create(:user,
-              residence_verified_at: Time.current,
-              document_number:       "12345678Z")
-
-    verified_user = create(:verified_user,
-                           document_number: "12345678Z",
-                           email:           "rock@example.com")
+    user = create(:user, residence_verified_at: Time.current, document_number: "12345678Z")
+    verified_user = create(:verified_user, document_number: "12345678Z", email: "rock@example.com")
 
     login_as(user)
     visit verified_user_path
@@ -89,13 +59,8 @@ describe "Verified users" do
   end
 
   scenario "Select a verified phone" do
-    user = create(:user,
-                  residence_verified_at: Time.current,
-                  document_number:       "12345678Z")
-
-    verified_user = create(:verified_user,
-                           document_number: "12345678Z",
-                           phone:           "611111111")
+    user = create(:user, residence_verified_at: Time.current, document_number: "12345678Z")
+    verified_user = create(:verified_user, document_number: "12345678Z", phone: "611111111")
 
     login_as(user)
     visit verified_user_path
@@ -108,13 +73,9 @@ describe "Verified users" do
   end
 
   scenario "Continue without selecting any verified information" do
-    user = create(:user,
-                  residence_verified_at: Time.current,
-                  document_number:       "12345678Z")
+    user = create(:user, residence_verified_at: Time.current, document_number: "12345678Z")
 
-    create(:verified_user,
-           document_number: "12345678Z",
-           phone:           "611111111")
+    create(:verified_user, document_number: "12345678Z", phone: "611111111")
 
     login_as(user)
     visit verified_user_path

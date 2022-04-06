@@ -1,0 +1,8 @@
+<dl class="budgets-actions">
+  <% actions.each do |action_name, button| %>
+    <div>
+      <dt><%= button[:html] %></dt>
+      <dd id="<%= descriptor_id(action_name) %>"><%= sanitize(button[:hint]) %></dd>
+    </div>
+  <% end %>
+</dl>

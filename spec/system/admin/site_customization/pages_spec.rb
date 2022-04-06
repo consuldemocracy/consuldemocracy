@@ -1,11 +1,6 @@
 require "rails_helper"
 
-describe "Admin custom pages" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
+describe "Admin custom pages", :admin do
   context "Index" do
     scenario "lists all created custom pages" do
       custom_page = create(:site_customization_page)
@@ -19,12 +14,12 @@ describe "Admin custom pages" do
       slugs = %w[accessibility conditions faq privacy welcome_not_verified
                  welcome_level_two_verified welcome_level_three_verified]
 
-      visit admin_site_customization_pages_path
-
       expect(SiteCustomization::Page.count).to be 7
       slugs.each do |slug|
         expect(SiteCustomization::Page.find_by(slug: slug).status).to eq "published"
       end
+
+      visit admin_site_customization_pages_path
 
       expect(all("[id^='site_customization_page_']").count).to be 7
       slugs.each do |slug|
@@ -38,6 +33,7 @@ describe "Admin custom pages" do
       visit admin_root_path
 
       within("#side_menu") do
+        click_link "Site content"
         click_link "Custom pages"
       end
 
@@ -49,7 +45,7 @@ describe "Admin custom pages" do
       fill_in "Title", with: "An example custom page"
       fill_in "Subtitle", with: "Page subtitle"
       fill_in "site_customization_page_slug", with: "example-page"
-      fill_in "Content", with: "This page is about..."
+      fill_in_ckeditor "Content", with: "This page is about..."
 
       click_button "Create Custom page"
 
@@ -67,10 +63,11 @@ describe "Admin custom pages" do
       visit admin_root_path
 
       within("#side_menu") do
+        click_link "Site content"
         click_link "Custom pages"
       end
 
-      click_link "An example custom page"
+      within("tr", text: "An example custom page") { click_link "Edit" }
 
       expect(page).to have_selector("h2", text: "An example custom page")
       expect(page).to have_selector("input[value='custom-example-page']")
@@ -84,7 +81,7 @@ describe "Admin custom pages" do
       expect(page).to have_content "another-custom-example-page"
     end
 
-    scenario "Allows images in CKEditor", :js do
+    scenario "Allows images in CKEditor" do
       visit edit_admin_site_customization_page_path(custom_page)
       fill_in_ckeditor "Content", with: "Will add an image"
 

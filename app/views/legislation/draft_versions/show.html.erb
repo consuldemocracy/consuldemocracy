@@ -10,23 +10,30 @@
   <div class="draft-panels small-12 column row">
     <div class="row draft-chooser">
       <div class="small-12 medium-9 column">
-        <h3><%= t(".seeing_version") %></h3>
+        <h3><%= t("legislation.draft_versions.show.seeing_version") %></h3>
         <div class="select-box">
           <%= form_tag go_to_version_legislation_process_draft_versions_path(@process), method: :get, id: "draft_version_go_to_version" do %>
-            <%= select_tag "draft_version_id", options_from_collection_for_select(@draft_versions_list, "id", "display_title", @draft_version.id), "aria-label": t(".select_draft_version") %>
-            <%= submit_tag t(".select_version_submit"), class: "button" %>
+            <%= select_tag "draft_version_id", options_from_collection_for_select(@draft_versions_list, "id", "display_title", @draft_version.id), "aria-label": t("legislation.draft_versions.show.select_draft_version") %>
+            <%= submit_tag t("legislation.draft_versions.show.select_version_submit"), class: "button" %>
           <% end %>
           <% if @draft_version.changelog.present? %>
-            <span><%= link_to t(".see_changes"), legislation_process_draft_version_changes_path(@process, @draft_version), class: "see-changes" %></span>
+            <span>
+              <%= link_to t("legislation.draft_versions.show.see_changes"),
+                          legislation_process_draft_version_changes_path(@process, @draft_version),
+                          class: "see-changes" %>
+            </span>
           <% end %>
         </div>
-        <span><%= t(".updated_at", date: format_date(@draft_version.updated_at)) %></span>
+        <span><%= t("legislation.draft_versions.show.updated_at",
+                     date: format_date(@draft_version.updated_at)) %></span>
       </div>
 
       <% unless @draft_version.final_version? %>
         <div class="small-12 medium-3 column">
-          <%= link_to legislation_process_draft_version_annotations_path(@process, @draft_version), title: t(".see_comments"), class: "button expanded" do %>
-            <strong><%= t(".see_comments") %></strong>
+          <%= link_to legislation_process_draft_version_annotations_path(@process, @draft_version),
+                      title: t("legislation.draft_versions.show.see_comments"),
+                      class: "button expanded" do %>
+            <strong><%= t("legislation.draft_versions.show.see_comments") %></strong>
           <% end %>
         </div>
       <% end %>
@@ -35,27 +42,20 @@
 
     <%= render "legislation/processes/help_gif" %>
 
-    <div class="row draft-allegation medium-collapse comments-on">
-      <div class="small-12 calc-index column <%= "js-toggle-allegations" unless @draft_version.final_version? %>">
-        <div class="draft-panel">
-          <div>
-            <span class="icon-banner" aria-hidden="true"></span> <span class="panel-title"><%= t(".text_toc") %></span>
-          </div>
-        </div>
+    <div class="draft-allegation">
+      <details class="calc-index">
+        <summary class="draft-panel">
+          <span class="icon-banner" aria-hidden="true"></span>
+          <span class="panel-title"><%= t("legislation.draft_versions.show.text_toc") %></span>
+        </summary>
 
-        <div class="draft-index-rotated text-center">
-          <span class="panel-title"><%= t(".text_toc") %></span>
+        <div class="draft-index" data-tree-navigator>
+          <%= AdminLegislationSanitizer.new.sanitize(@draft_version.toc_html) %>
         </div>
-
-        <div data-sticky-container>
-          <div data-sticky data-anchor="sticky-panel" class="draft-index sticky" data-tree-navigator>
-            <%= sanitize(@draft_version.toc_html) %>
-          </div>
-        </div>
-      </div>
-      <div class="small-12 calc-text column border-right border-left">
+      </details>
+      <div class="calc-text border-right border-left">
         <div class="draft-panel">
-          <div><span class="panel-title"><%= t(".text_body") %></span></div>
+          <div><span class="panel-title"><%= t("legislation.draft_versions.show.text_body") %></span></div>
         </div>
         <div id="sticky-panel" class="draft-text">
           <% if @draft_version.final_version? %>
@@ -66,13 +66,13 @@
                    data-legislation-annotatable-base-url="<%= legislation_process_draft_version_path(@process, @draft_version) %>"
                    data-legislation-open-phase="<%= @process.allegations_phase.open? %>">
           <% end %>
-            <%= sanitize(@draft_version.body_html, { attributes: ["id"] }) %>
+            <%= AdminLegislationSanitizer.new.sanitize(@draft_version.body_html) %>
           </section>
         </div>
       </div>
 
       <% if @draft_version.final_version? %>
-        <div class="small-12 calc-comments end column"></div>
+        <div class="calc-comments"></div>
       <% else %>
         <%= render "comments_panel", draft_version: @draft_version %>
       <% end %>

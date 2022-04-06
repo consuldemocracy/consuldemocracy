@@ -25,7 +25,6 @@ class DebatesController < ApplicationController
 
   def show
     super
-    @related_contents = Kaminari.paginate_array(@debate.relationed_contents).page(params[:page]).per(5)
     redirect_to debate_path(@debate), status: :moved_permanently if request.path != debate_path(@debate)
   end
 
@@ -55,7 +54,7 @@ class DebatesController < ApplicationController
   private
 
     def debate_params
-      attributes = [:tag_list, :terms_of_service]
+      attributes = [:tag_list, :terms_of_service, :related_sdg_list]
       params.require(:debate).permit(attributes, translation_params(Debate))
     end
 

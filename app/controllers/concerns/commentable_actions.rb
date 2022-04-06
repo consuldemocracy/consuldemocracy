@@ -9,14 +9,13 @@ module CommentableActions
 
     @resources = @current_order == "recommendations" && current_user.present? ? @resources.recommendations(current_user) : @resources.for_render
     @resources = @resources.search(@search_terms) if @search_terms.present?
-    @resources = @advanced_search_terms.present? ? @resources.filter(@advanced_search_terms) : @resources
+    @resources = @resources.filter_by(@advanced_search_terms)
 
     @resources = @resources.page(params[:page]).send("sort_by_#{@current_order}")
 
     index_customization
 
     @tag_cloud = tag_cloud
-    @banners = Banner.in_section(section(resource_model.name)).with_active
 
     set_resource_votes(@resources)
 
@@ -53,7 +52,6 @@ module CommentableActions
       redirect_path = url_for(controller: controller_name, action: :show, id: @resource.id)
       redirect_to redirect_path, notice: t("flash.actions.create.#{resource_name.underscore}")
     else
-      load_categories
       load_geozones
       set_resource_instance
       render :new
@@ -67,7 +65,6 @@ module CommentableActions
     if resource.update(strong_params)
       redirect_to resource, notice: t("flash.actions.update.#{resource_name.underscore}")
     else
-      load_categories
       load_geozones
       set_resource_instance
       render :edit
@@ -108,15 +105,6 @@ module CommentableActions
 
     def index_customization
       nil
-    end
-
-    def section(resource_name)
-      case resource_name
-      when "Proposal"
-        "proposals"
-      when "Debate"
-        "debates"
-      end
     end
 
     def featured_proposals

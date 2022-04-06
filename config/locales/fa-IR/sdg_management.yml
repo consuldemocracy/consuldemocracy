@@ -1,0 +1,18 @@
+fa:
+  sdg_management:
+    homepage:
+      header:
+        create: "ایجاد سربرگ"
+        title: "سربرگ"
+    menu:
+      budget_investments: "بودجه مشارکتی"
+      debates: "مباحثه"
+      legislation_processes: "فرآیندهای قانونی"
+      polls: "نظر سنجی ها"
+      proposals: "طرح های پیشنهادی"
+    relations:
+      index:
+        filter: "فیلتر"
+        filters:
+          all: "همه"
+          pending_sdg_review: "انتظار"

@@ -1,0 +1,18 @@
+sl:
+  sdg_management:
+    homepage:
+      header:
+        create: "Ustvari glavo"
+        title: "Glava"
+    menu:
+      budget_investments: "Participatorni proračuni"
+      debates: "Razprave"
+      legislation_processes: "Zakonodajni procesi"
+      polls: "Glasovanja"
+      proposals: "Predlogi"
+    relations:
+      index:
+        filter: "Filtriraj"
+        filters:
+          all: "Vsi"
+          pending_sdg_review: "V teku"

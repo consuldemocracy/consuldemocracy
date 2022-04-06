@@ -1,11 +1,6 @@
 require "rails_helper"
 
-describe "Admin custom information texts" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
+describe "Admin custom information texts", :admin do
   scenario "page is correctly loaded" do
     visit admin_site_customization_information_texts_path
 
@@ -17,7 +12,8 @@ describe "Admin custom information texts" do
     expect(page).to have_content "Help with participatory budgets"
 
     within("#information-texts-tabs") { click_link "Debates" }
-    expect(page).to have_content "Help about debates"
+
+    expect(page).to have_content "Edit debate"
 
     within("#information-texts-tabs") { click_link "Community" }
     expect(page).to have_content "Access the community"
@@ -56,7 +52,7 @@ describe "Admin custom information texts" do
   end
 
   context "Globalization" do
-    scenario "Add a translation", :js do
+    scenario "Add a translation" do
       key = "debates.index.section_footer.title"
 
       visit admin_site_customization_information_texts_path
@@ -75,7 +71,7 @@ describe "Admin custom information texts" do
       expect(page).not_to have_content "Aide sur les débats"
     end
 
-    scenario "Update a translation", :js do
+    scenario "Update a translation" do
       key = "proposals.show.share"
       create(:i18n_content, key: key, value_fr: "Partager la proposition")
 
@@ -94,14 +90,12 @@ describe "Admin custom information texts" do
       expect(page).not_to have_content "Partager la proposition"
     end
 
-    scenario "Remove a translation", :js do
-      first_key = "debates.form.debate_title"
-      debate_title = create(:i18n_content, key: first_key,
-                                           value_en: "Custom debate title",
-                                           value_es: "Título personalizado de debate")
+    scenario "Remove a translation" do
+      featured = create(:i18n_content, key: "debates.index.featured_debates",
+                                       value_en: "Custom featured",
+                                       value_es: "Destacar personalizado")
 
-      second_key = "debates.new.start_new"
-      page_title = create(:i18n_content, key: second_key,
+      page_title = create(:i18n_content, key: "debates.new.start_new",
                                           value_en: "Start a new debate",
                                           value_es: "Empezar un debate")
 
@@ -117,15 +111,15 @@ describe "Admin custom information texts" do
       select "English", from: :select_language
 
       expect(page).to have_content "Start a new debate"
-      expect(page).to have_content "Custom debate title"
+      expect(page).to have_content "Custom featured"
 
-      debate_title.reload
+      featured.reload
       page_title.reload
 
-      expect(page_title.value_es).to be(nil)
-      expect(debate_title.value_es).to be(nil)
-      expect(page_title.value_en).to eq("Start a new debate")
-      expect(debate_title.value_en).to eq("Custom debate title")
+      expect(page_title.value_es).to be nil
+      expect(featured.value_es).to be nil
+      expect(page_title.value_en).to eq "Start a new debate"
+      expect(featured.value_en).to eq "Custom featured"
     end
   end
 end

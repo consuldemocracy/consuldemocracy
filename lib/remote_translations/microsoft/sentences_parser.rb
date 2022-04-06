@@ -18,6 +18,6 @@ module RemoteTranslations::Microsoft::SentencesParser
   end
 
   def characters_count(texts)
-    texts.map(&:size).reduce(:+)
+    texts.sum(&:size)
   end
 end

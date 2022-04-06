@@ -3,7 +3,7 @@ shared_examples "admin_milestoneable" do |factory_name, path_name|
 
   describe "Admin milestones" do
     let!(:milestoneable) { create(factory_name) }
-    let(:path) { send(path_name, *resource_hierarchy_for(milestoneable)) }
+    let(:path) { send(path_name, milestoneable) }
 
     context "Index" do
       scenario "Displaying milestones" do
@@ -90,7 +90,7 @@ shared_examples "admin_milestoneable" do |factory_name, path_name|
         visit path
         expect(page).to have_link document.title
 
-        click_link milestone.title
+        within("tr", text: milestone.title) { click_link "Edit" }
 
         expect(page).to have_css("img[alt='#{milestone.image.title}']")
 
@@ -113,7 +113,7 @@ shared_examples "admin_milestoneable" do |factory_name, path_name|
 
         visit path
 
-        click_link "Delete milestone"
+        accept_confirm { click_button "Delete" }
 
         expect(page).not_to have_content "Title will it remove"
       end

@@ -5,19 +5,11 @@
   <%= render "shared/errors", resource: @banner %>
 
   <div class="row">
-    <% date_started_at = @banner.post_started_at.present? ? I18n.localize(@banner.post_started_at) : "" %>
     <div class="small-12 medium-3 column">
-      <%= f.text_field :post_started_at,
-                        value: date_started_at,
-                        class: "js-calendar-full",
-                        id: "post_started_at" %>
+      <%= f.date_field :post_started_at, id: "post_started_at" %>
     </div>
-    <% date_ended_at = @banner.post_ended_at.present? ? I18n.localize(@banner.post_ended_at) : "" %>
     <div class="small-12 medium-3 column end">
-      <%= f.text_field  :post_ended_at,
-                        value: date_ended_at,
-                        class: "js-calendar-full",
-                        id: "post_ended_at" %>
+      <%= f.date_field :post_ended_at, id: "post_ended_at" %>
     </div>
   </div>
 
@@ -42,12 +34,14 @@
   </div>
 
   <div class="row">
-    <div class="small-12 column">
-      <%= f.label :sections, t("admin.banners.banner.sections_label") %>
+    <fieldset class="small-12 column">
+      <legend><%= t("admin.banners.banner.sections_label") %></legend>
       <%= f.collection_check_boxes(:web_section_ids, @banner_sections, :id, :name) do |b| %>
-        <%= b.check_box %> <%= t("admin.banners.banner.sections.#{b.text}") %><br>
+        <%= b.label do %>
+          <%= b.check_box + t("admin.banners.banner.sections.#{b.text}") %>
+        <% end %>
       <% end %>
-    </div>
+    </fieldset>
   </div>
 
   <div class="row">
@@ -56,8 +50,7 @@
       <p class="help-text"><%= t("admin.shared.color_help") %></p>
       <div class="row collapse">
         <div class="small-12 medium-6 column">
-          <%= f.text_field :background_color, label: false, type: :color,
-                                              value: banner_bg_color_or_default %>
+          <%= f.text_field :background_color, label: false, type: :color %>
         </div>
         <div class="small-12 medium-6 column">
           <%= f.text_field :background_color, label: false, id: "background_color_input" %>
@@ -70,8 +63,7 @@
       <p class="help-text"><%= t("admin.shared.color_help") %></p>
       <div class="row collapse">
         <div class="small-12 medium-6 column">
-          <%= f.text_field :font_color, label: false, type: :color,
-                                        value: banner_font_color_or_default %>
+          <%= f.text_field :font_color, label: false, type: :color %>
         </div>
         <div class="small-12 medium-6 column">
           <%= f.text_field :font_color, label: false, id: "font_color_input" %>
@@ -87,6 +79,6 @@
   </div>
 
   <div class="row">
-    <%= render "shared/banner", banner: @banner %>
+    <%= render Shared::BannerComponent.new(@banner) %>
   </div>
 <% end %>

@@ -1,18 +1,19 @@
 require "rails_helper"
 
 describe "Public area translatable records" do
-  let(:user) { create(:user, :in_census) }
+  let(:geozone) { create(:geozone, name: "District A") }
+  let(:author) { create(:user, :level_two, geozone: geozone) }
 
   before do
     Setting["feature.translation_interface"] = true
-    login_as(user)
+    login_as(author)
   end
 
-  context "New records", :js do
+  context "New records" do
     scenario "Add only single translation at once" do
       visit new_debate_path
 
-      fill_in "Debate title", with: "Who won the debate?"
+      fill_in_new_debate_title with: "Who won the debate?"
       fill_in_ckeditor "Initial debate text", with: "And who will win this debate?"
       check "debate_terms_of_service"
       click_button "Start a debate"
@@ -23,9 +24,10 @@ describe "Public area translatable records" do
     scenario "Add single translation maintains introduced field values" do
       visit new_proposal_path
 
-      fill_in "Proposal title", with: "Olympic Games in Melbourne"
+      fill_in_new_proposal_title with: "Olympic Games in Melbourne"
       fill_in "Proposal summary", with: "Full proposal for our candidature"
       fill_in_ckeditor "Proposal text", with: "2032 will make Australia famous again"
+      select "District A", from: "Scope of operation"
       check "proposal_terms_of_service"
       click_button "Create proposal"
 
@@ -40,14 +42,13 @@ describe "Public area translatable records" do
 
       visit new_budget_investment_path(budget)
 
-      fill_in "Title", with: "My awesome project"
+      fill_in_new_investment_title with: "My awesome project"
       fill_in_ckeditor "Description", with: "Everything is awesome!"
 
       select "Français", from: :add_language
-      fill_in "Title", with: "Titre en Français"
+      fill_in_new_investment_title with: "Titre en Français"
       fill_in_ckeditor "Description", with: "Contenu en Français"
 
-      select "Everywhere", from: "budget_investment_heading_id"
       check "budget_investment_terms_of_service"
       click_button "Create Investment"
 
@@ -59,8 +60,9 @@ describe "Public area translatable records" do
       click_link "Remove language"
       select "Français", from: :add_language
 
-      fill_in "Proposal title", with: "Titre en Français"
+      fill_in_new_proposal_title with: "Titre en Français"
       fill_in "Proposal summary", with: "Résumé en Français"
+      select "District A", from: "Scope of operation"
       check "proposal_terms_of_service"
       click_button "Create proposal"
 
@@ -73,10 +75,9 @@ describe "Public area translatable records" do
       visit new_budget_investment_path(budget)
       click_link "Remove language"
       select "Português brasileiro", from: :add_language
-      fill_in "Title", with: "Titre en Français"
+      fill_in_new_investment_title with: "Titre en Français"
       fill_in_ckeditor "Description", with: "Contenu en Français"
 
-      select "Everywhere", from: "budget_investment_heading_id"
       check "budget_investment_terms_of_service"
       click_button "Create Investment"
 
@@ -99,7 +100,6 @@ describe "Public area translatable records" do
       visit new_budget_investment_path(budget)
       click_link "Remove language"
 
-      select "Everywhere", from: "budget_investment_heading_id"
       check "budget_investment_terms_of_service"
       click_button "Create Investment"
 
@@ -108,7 +108,7 @@ describe "Public area translatable records" do
     end
   end
 
-  context "Globalize javascript interface", :js do
+  context "Globalize javascript interface" do
     scenario "Highlight current locale" do
       visit new_debate_path
 
@@ -118,7 +118,7 @@ describe "Public area translatable records" do
     scenario "Highlight new locale added" do
       visit new_proposal_path
 
-      select "Español", from: "locale-switcher"
+      select "Español", from: "Language:"
 
       expect_to_have_language_selected "Español"
     end
@@ -181,8 +181,8 @@ describe "Public area translatable records" do
     end
   end
 
-  context "Existing records", :js do
-    before { translatable.update(attributes.merge(author: user)) }
+  context "Existing records" do
+    before { translatable.update(attributes.merge(author: author)) }
 
     let(:attributes) do
       translatable.translated_attribute_names.product(%i[en es]).map do |field, locale|
@@ -209,7 +209,7 @@ describe "Public area translatable records" do
 
           expect(page).to have_field "Debate title", with: "Title in English"
 
-          select "Español", from: "locale-switcher"
+          select "Español", from: "Language:"
 
           expect(page).to have_field "Título del debate", with: "Título corregido"
           expect(page).to have_ckeditor "Texto inicial del debate", with: "Texto corregido"

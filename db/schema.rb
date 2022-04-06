@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191108173350) do
+ActiveRecord::Schema.define(version: 2021_11_03_112944) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "pg_trgm"
   enable_extension "plpgsql"
   enable_extension "unaccent"
-  enable_extension "pg_trgm"
 
   create_table "active_poll_translations", id: :serial, force: :cascade do |t|
     t.integer "active_poll_id", null: false
@@ -30,6 +30,27 @@ ActiveRecord::Schema.define(version: 20191108173350) do
   create_table "active_polls", id: :serial, force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
   create_table "activities", id: :serial, force: :cascade do |t|
@@ -155,6 +176,9 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.integer "heading_id"
     t.index ["ballot_id", "investment_id"], name: "index_budget_ballot_lines_on_ballot_id_and_investment_id", unique: true
     t.index ["ballot_id"], name: "index_budget_ballot_lines_on_ballot_id"
+    t.index ["budget_id"], name: "index_budget_ballot_lines_on_budget_id"
+    t.index ["group_id"], name: "index_budget_ballot_lines_on_group_id"
+    t.index ["heading_id"], name: "index_budget_ballot_lines_on_heading_id"
     t.index ["investment_id"], name: "index_budget_ballot_lines_on_investment_id"
   end
 
@@ -214,8 +238,11 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.boolean "allow_custom_content", default: false
     t.text "latitude"
     t.text "longitude"
+    t.integer "max_ballot_lines", default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer "geozone_id"
+    t.index ["geozone_id"], name: "index_budget_headings_on_geozone_id"
     t.index ["group_id"], name: "index_budget_headings_on_group_id"
   end
 
@@ -235,8 +262,6 @@ ActiveRecord::Schema.define(version: 20191108173350) do
   create_table "budget_investments", id: :serial, force: :cascade do |t|
     t.integer "author_id"
     t.integer "administrator_id"
-    t.string "deprecated_title"
-    t.text "deprecated_description"
     t.string "external_url"
     t.bigint "price"
     t.string "feasibility", limit: 15, default: "undecided"
@@ -275,8 +300,12 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.integer "original_heading_id"
     t.index ["administrator_id"], name: "index_budget_investments_on_administrator_id"
     t.index ["author_id"], name: "index_budget_investments_on_author_id"
+    t.index ["budget_id"], name: "index_budget_investments_on_budget_id"
     t.index ["community_id"], name: "index_budget_investments_on_community_id"
+    t.index ["group_id"], name: "index_budget_investments_on_group_id"
     t.index ["heading_id"], name: "index_budget_investments_on_heading_id"
+    t.index ["incompatible"], name: "index_budget_investments_on_incompatible"
+    t.index ["selected"], name: "index_budget_investments_on_selected"
     t.index ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
   end
 
@@ -287,6 +316,9 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.datetime "updated_at", null: false
     t.text "description"
     t.text "summary"
+    t.string "name"
+    t.string "main_link_text"
+    t.string "main_link_url"
     t.index ["budget_phase_id"], name: "index_budget_phase_translations_on_budget_phase_id"
     t.index ["locale"], name: "index_budget_phase_translations_on_locale"
   end
@@ -318,6 +350,8 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.string "main_link_text"
+    t.string "main_link_url"
     t.index ["budget_id"], name: "index_budget_translations_on_budget_id"
     t.index ["locale"], name: "index_budget_translations_on_locale"
   end
@@ -360,6 +394,8 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.text "description_drafting"
     t.text "description_publishing_prices"
     t.text "description_informing"
+    t.string "voting_style", default: "knapsack"
+    t.boolean "published"
   end
 
   create_table "campaigns", id: :serial, force: :cascade do |t|
@@ -397,7 +433,6 @@ ActiveRecord::Schema.define(version: 20191108173350) do
   create_table "comments", id: :serial, force: :cascade do |t|
     t.integer "commentable_id"
     t.string "commentable_type"
-    t.text "deprecated_body"
     t.string "subject"
     t.integer "user_id", null: false
     t.datetime "created_at"
@@ -419,6 +454,7 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.index ["cached_votes_total"], name: "index_comments_on_cached_votes_total"
     t.index ["cached_votes_up"], name: "index_comments_on_cached_votes_up"
     t.index ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type"
+    t.index ["confidence_score"], name: "index_comments_on_confidence_score"
     t.index ["hidden_at"], name: "index_comments_on_hidden_at"
     t.index ["user_id"], name: "index_comments_on_user_id"
     t.index ["valuation"], name: "index_comments_on_valuation"
@@ -432,7 +468,6 @@ ActiveRecord::Schema.define(version: 20191108173350) do
   create_table "dashboard_actions", id: :serial, force: :cascade do |t|
     t.string "title", limit: 80
     t.text "description"
-    t.string "link"
     t.boolean "request_to_administrators", default: false
     t.integer "day_offset", default: 0
     t.integer "required_supports", default: 0
@@ -481,8 +516,6 @@ ActiveRecord::Schema.define(version: 20191108173350) do
   end
 
   create_table "debates", id: :serial, force: :cascade do |t|
-    t.string "deprecated_title", limit: 80
-    t.text "deprecated_description"
     t.integer "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -543,7 +576,7 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.string "title"
     t.string "attachment_file_name"
     t.string "attachment_content_type"
-    t.integer "attachment_file_size"
+    t.bigint "attachment_file_size"
     t.datetime "attachment_updated_at"
     t.integer "user_id"
     t.string "documentable_type"
@@ -567,6 +600,7 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.string "district_code"
     t.integer "poll_officer_id"
     t.integer "year_of_birth"
+    t.index ["poll_officer_id"], name: "index_failed_census_calls_on_poll_officer_id"
     t.index ["user_id"], name: "index_failed_census_calls_on_user_id"
   end
 
@@ -639,7 +673,7 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.datetime "updated_at", null: false
     t.string "attachment_file_name"
     t.string "attachment_content_type"
-    t.integer "attachment_file_size"
+    t.bigint "attachment_file_size"
     t.datetime "attachment_updated_at"
     t.integer "user_id"
     t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id"
@@ -750,6 +784,7 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.boolean "homepage_enabled", default: false
     t.text "background_color"
     t.text "font_color"
+    t.tsvector "tsv"
     t.index ["allegations_end_date"], name: "index_legislation_processes_on_allegations_end_date"
     t.index ["allegations_start_date"], name: "index_legislation_processes_on_allegations_start_date"
     t.index ["debate_end_date"], name: "index_legislation_processes_on_debate_end_date"
@@ -871,6 +906,26 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.index ["user_id"], name: "index_locks_on_user_id"
   end
 
+  create_table "machine_learning_infos", force: :cascade do |t|
+    t.string "kind"
+    t.datetime "generated_at"
+    t.string "script"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "machine_learning_jobs", force: :cascade do |t|
+    t.datetime "started_at"
+    t.datetime "finished_at"
+    t.string "script"
+    t.integer "pid"
+    t.string "error"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_machine_learning_jobs_on_user_id"
+  end
+
   create_table "managers", id: :serial, force: :cascade do |t|
     t.integer "user_id"
     t.index ["user_id"], name: "index_managers_on_user_id"
@@ -914,6 +969,14 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["status_id"], name: "index_milestones_on_status_id"
+  end
+
+  create_table "ml_summary_comments", force: :cascade do |t|
+    t.integer "commentable_id"
+    t.string "commentable_type"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "moderators", id: :serial, force: :cascade do |t|
@@ -1169,7 +1232,9 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.integer "budget_id"
     t.string "related_type"
     t.integer "related_id"
+    t.tsvector "tsv"
     t.index ["budget_id"], name: "index_polls_on_budget_id", unique: true
+    t.index ["geozone_restricted"], name: "index_polls_on_geozone_restricted"
     t.index ["related_type", "related_id"], name: "index_polls_on_related_type_and_related_id"
     t.index ["starts_at", "ends_at"], name: "index_polls_on_starts_at_and_ends_at"
   end
@@ -1222,8 +1287,6 @@ ActiveRecord::Schema.define(version: 20191108173350) do
   end
 
   create_table "proposals", id: :serial, force: :cascade do |t|
-    t.string "deprecated_title", limit: 80
-    t.text "deprecated_description"
     t.integer "author_id"
     t.datetime "hidden_at"
     t.integer "flags_count", default: 0
@@ -1236,13 +1299,11 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "responsible_name", limit: 60
-    t.text "deprecated_summary"
     t.string "video_url"
     t.tsvector "tsv"
     t.integer "geozone_id"
     t.datetime "retired_at"
     t.string "retired_reason"
-    t.text "deprecated_retired_explanation"
     t.integer "community_id"
     t.datetime "published_at"
     t.boolean "selected", default: false
@@ -1254,6 +1315,7 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.index ["geozone_id"], name: "index_proposals_on_geozone_id"
     t.index ["hidden_at"], name: "index_proposals_on_hidden_at"
     t.index ["hot_score"], name: "index_proposals_on_hot_score"
+    t.index ["selected"], name: "index_proposals_on_selected"
     t.index ["tsv"], name: "index_proposals_on_tsv", using: :gin
   end
 
@@ -1277,6 +1339,8 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.datetime "hidden_at"
     t.integer "related_content_scores_count", default: 0
     t.integer "author_id"
+    t.boolean "machine_learning", default: false
+    t.integer "machine_learning_score", default: 0
     t.index ["child_relationable_type", "child_relationable_id"], name: "index_related_contents_on_child_relationable"
     t.index ["hidden_at"], name: "index_related_contents_on_hidden_at"
     t.index ["parent_relationable_id", "parent_relationable_type", "child_relationable_id", "child_relationable_type"], name: "unique_parent_child_related_content", unique: true
@@ -1302,6 +1366,78 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.datetime "updated_at", null: false
     t.boolean "advanced_stats"
     t.index ["process_type", "process_id"], name: "index_reports_on_process_type_and_process_id"
+  end
+
+  create_table "sdg_goals", force: :cascade do |t|
+    t.integer "code", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_sdg_goals_on_code", unique: true
+  end
+
+  create_table "sdg_local_target_translations", force: :cascade do |t|
+    t.bigint "sdg_local_target_id", null: false
+    t.string "locale", null: false
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["locale"], name: "index_sdg_local_target_translations_on_locale"
+    t.index ["sdg_local_target_id"], name: "index_sdg_local_target_translations_on_sdg_local_target_id"
+  end
+
+  create_table "sdg_local_targets", force: :cascade do |t|
+    t.bigint "target_id"
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "goal_id"
+    t.index ["code"], name: "index_sdg_local_targets_on_code", unique: true
+    t.index ["goal_id"], name: "index_sdg_local_targets_on_goal_id"
+    t.index ["target_id"], name: "index_sdg_local_targets_on_target_id"
+  end
+
+  create_table "sdg_managers", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sdg_managers_on_user_id", unique: true
+  end
+
+  create_table "sdg_phases", force: :cascade do |t|
+    t.integer "kind", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["kind"], name: "index_sdg_phases_on_kind", unique: true
+  end
+
+  create_table "sdg_relations", force: :cascade do |t|
+    t.string "related_sdg_type"
+    t.bigint "related_sdg_id"
+    t.string "relatable_type"
+    t.bigint "relatable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["relatable_type", "relatable_id"], name: "index_sdg_relations_on_relatable_type_and_relatable_id"
+    t.index ["related_sdg_id", "related_sdg_type", "relatable_id", "relatable_type"], name: "sdg_relations_unique", unique: true
+    t.index ["related_sdg_type", "related_sdg_id"], name: "index_sdg_relations_on_related_sdg_type_and_related_sdg_id"
+  end
+
+  create_table "sdg_reviews", force: :cascade do |t|
+    t.string "relatable_type"
+    t.bigint "relatable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["relatable_type", "relatable_id"], name: "index_sdg_reviews_on_relatable_type_and_relatable_id", unique: true
+  end
+
+  create_table "sdg_targets", force: :cascade do |t|
+    t.bigint "goal_id"
+    t.string "code", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_sdg_targets_on_code", unique: true
+    t.index ["goal_id"], name: "index_sdg_targets_on_goal_id"
   end
 
   create_table "settings", id: :serial, force: :cascade do |t|
@@ -1345,7 +1481,7 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.string "name", null: false
     t.string "image_file_name"
     t.string "image_content_type"
-    t.integer "image_file_size"
+    t.bigint "image_file_size"
     t.datetime "image_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -1407,12 +1543,12 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.integer "debates_count", default: 0
     t.integer "proposals_count", default: 0
     t.string "kind"
-    t.integer "budget/investments_count", default: 0
-    t.integer "legislation/proposals_count", default: 0
-    t.integer "legislation/processes_count", default: 0
+    t.integer "budget_investments_count", default: 0
+    t.integer "legislation_proposals_count", default: 0
+    t.integer "legislation_processes_count", default: 0
     t.index ["debates_count"], name: "index_tags_on_debates_count"
-    t.index ["legislation/processes_count"], name: "index_tags_on_legislation/processes_count"
-    t.index ["legislation/proposals_count"], name: "index_tags_on_legislation/proposals_count"
+    t.index ["legislation_processes_count"], name: "index_tags_on_legislation_processes_count"
+    t.index ["legislation_proposals_count"], name: "index_tags_on_legislation_proposals_count"
     t.index ["name"], name: "index_tags_on_name", unique: true
     t.index ["proposals_count"], name: "index_tags_on_proposals_count"
   end
@@ -1489,10 +1625,13 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.text "former_users_data_log", default: ""
     t.integer "balloted_heading_id"
     t.boolean "public_interests", default: false
+    t.string "postal_code", limit: 10
     t.boolean "recommended_debates", default: true
     t.boolean "recommended_proposals", default: true
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.index ["date_of_birth"], name: "index_users_on_date_of_birth"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["gender"], name: "index_users_on_gender"
     t.index ["geozone_id"], name: "index_users_on_geozone_id"
     t.index ["hidden_at"], name: "index_users_on_hidden_at"
     t.index ["password_changed_at"], name: "index_users_on_password_changed_at"
@@ -1597,9 +1736,10 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.boolean "header", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "site_customization_page_id"
+    t.integer "cardable_id"
     t.integer "columns", default: 4
-    t.index ["site_customization_page_id"], name: "index_widget_cards_on_site_customization_page_id"
+    t.string "cardable_type", default: "SiteCustomization::Page"
+    t.index ["cardable_id"], name: "index_widget_cards_on_cardable_id"
   end
 
   create_table "widget_feeds", id: :serial, force: :cascade do |t|
@@ -1609,9 +1749,11 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "administrators", "users"
   add_foreign_key "budget_administrators", "administrators"
   add_foreign_key "budget_administrators", "budgets"
+  add_foreign_key "budget_headings", "geozones"
   add_foreign_key "budget_investments", "communities"
   add_foreign_key "budget_valuators", "budgets"
   add_foreign_key "budget_valuators", "valuators"
@@ -1630,6 +1772,7 @@ ActiveRecord::Schema.define(version: 20191108173350) do
   add_foreign_key "legislation_draft_versions", "legislation_processes"
   add_foreign_key "legislation_proposals", "legislation_processes"
   add_foreign_key "locks", "users"
+  add_foreign_key "machine_learning_jobs", "users"
   add_foreign_key "managers", "users"
   add_foreign_key "moderators", "users"
   add_foreign_key "notifications", "users"
@@ -1653,6 +1796,7 @@ ActiveRecord::Schema.define(version: 20191108173350) do
   add_foreign_key "proposals", "communities"
   add_foreign_key "related_content_scores", "related_contents"
   add_foreign_key "related_content_scores", "users"
+  add_foreign_key "sdg_managers", "users"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
 end

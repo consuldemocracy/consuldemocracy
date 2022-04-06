@@ -1,0 +1,18 @@
+val:
+  sdg_management:
+    homepage:
+      header:
+        create: "Crear capçalera"
+        title: "Capçalera"
+    menu:
+      budget_investments: "Pressupostos participatius"
+      debates: "Debats"
+      legislation_processes: "Processos legislatius"
+      polls: "Votacions"
+      proposals: "Propostes"
+    relations:
+      index:
+        filter: "Filtre"
+        filters:
+          all: "Totes"
+          pending_sdg_review: "Pendents"

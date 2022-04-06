@@ -1,6 +1,8 @@
 require "rails_helper"
 
 describe "EmailVerifications" do
+  before { skip "Disabled for development and test" }
+
   scenario "Verifying a level 1 user via email" do
     login_as_manager
 

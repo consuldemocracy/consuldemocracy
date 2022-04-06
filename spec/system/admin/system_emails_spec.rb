@@ -36,8 +36,10 @@ describe "System Emails" do
           within("##{email_id}") do
             expect(page).to have_link("Preview Pending",
                                       href: admin_system_email_preview_pending_path(email_id))
-            expect(page).to have_link("Send pending",
-                                      href: admin_system_email_send_pending_path(email_id))
+
+            within "form[action='#{admin_system_email_send_pending_path(email_id)}']" do
+              expect(page).to have_button "Send pending"
+            end
 
             expect(page).not_to have_content "You can edit this email in"
             expect(page).not_to have_content "app/views/mailer/#{email_id}.html.erb"
@@ -57,7 +59,7 @@ describe "System Emails" do
             expect(page).to have_content "app/views/mailer/#{email_id}.html.erb"
 
             expect(page).not_to have_link "Preview Pending"
-            expect(page).not_to have_link "Send pending"
+            expect(page).not_to have_button "Send pending"
           end
         end
       end
@@ -84,10 +86,10 @@ describe "System Emails" do
       visit admin_system_email_view_path("proposal_notification_digest")
 
       expect(page).to have_content("Proposal notifications in")
-      expect(page).to have_link("Proposal A Title", href: proposal_url(proposal_a,
-                                                    anchor: "tab-notifications"))
-      expect(page).to have_link("Proposal B Title", href: proposal_url(proposal_b,
-                                                    anchor: "tab-notifications"))
+      expect(page).to have_link("Proposal A Title",
+                                href: proposal_url(proposal_a, anchor: "tab-notifications", host: app_host))
+      expect(page).to have_link("Proposal B Title",
+                                href: proposal_url(proposal_b, anchor: "tab-notifications", host: app_host))
       expect(page).to have_content("Proposal A Notification Body")
       expect(page).to have_content("Proposal B Notification Body")
     end
@@ -102,9 +104,9 @@ describe "System Emails" do
       expect(page).to have_content "Cleaner city"
       expect(page).to have_content "Budget for 2019"
 
-      expect(page).to have_link "Participatory Budgets", href: budgets_url
+      expect(page).to have_link "Participatory Budgets", href: budgets_url(host: app_host)
 
-      share_url = budget_investment_url(budget, investment, anchor: "social-share")
+      share_url = budget_investment_url(budget, investment, anchor: "social-share", host: app_host)
       expect(page).to have_link "Share your project", href: share_url
     end
 
@@ -116,7 +118,7 @@ describe "System Emails" do
       expect(page).to have_content "Your investment project '#{investment.code}' has been selected"
       expect(page).to have_content "Start to get votes, share your investment project"
 
-      share_url = budget_investment_url(budget, investment, anchor: "social-share")
+      share_url = budget_investment_url(budget, investment, anchor: "social-share", host: app_host)
       expect(page).to have_link "Share your investment project", href: share_url
     end
 
@@ -152,7 +154,7 @@ describe "System Emails" do
       expect(page).to have_content "There is a new comment from #{commenter.name}"
       expect(page).to have_content comment.body
 
-      expect(page).to have_link "Let's do...", href: debate_url(debate)
+      expect(page).to have_link "Let's do...", href: debate_url(debate, host: app_host)
     end
 
     scenario "#reply" do
@@ -169,7 +171,7 @@ describe "System Emails" do
       expect(page).to have_content "There is a new response from #{replier.name}"
       expect(page).to have_content reply.body
 
-      expect(page).to have_link "Let's do...", href: comment_url(reply)
+      expect(page).to have_link "Let's do...", href: comment_url(reply, host: app_host)
     end
 
     scenario "#direct_message_for_receiver" do
@@ -179,7 +181,7 @@ describe "System Emails" do
       expect(page).to have_content "Message's Title"
       expect(page).to have_content "This is a sample of message's content."
 
-      expect(page).to have_link "Reply to #{admin.user.name}", href: user_url(admin.user)
+      expect(page).to have_link "Reply to #{admin.user.name}", href: user_url(admin.user, host: app_host)
     end
 
     scenario "#direct_message_for_sender" do
@@ -197,10 +199,11 @@ describe "System Emails" do
 
       expect(page).to have_content "Confirm your account using the following link"
 
-      expect(page).to have_link "this link", href: email_url(email_verification_token: "abc")
+      expect(page).to have_link "this link", href: email_url(email_verification_token: "abc", host: app_host)
     end
 
     scenario "#user_invite" do
+      Setting["org_name"] = "CONSUL"
       visit admin_system_email_view_path("user_invite")
 
       expect(page).to have_content "Invitation to CONSUL"
@@ -256,7 +259,7 @@ describe "System Emails" do
       expect(page).to have_content comment.body
 
       expect(page).to have_link "Cleaner city",
-        href: admin_budget_budget_investment_url(investment.budget, investment, anchor: "comments")
+        href: admin_budget_budget_investment_url(investment.budget, investment, anchor: "comments", host: app_host)
     end
   end
 
@@ -276,12 +279,12 @@ describe "System Emails" do
       visit admin_system_email_preview_pending_path("proposal_notification_digest")
 
       expect(page).to have_content("This is the content pending to be sent")
-      expect(page).to have_link("Proposal A", href: proposal_url(proposal_a))
-      expect(page).to have_link("Proposal B", href: proposal_url(proposal_b))
-      expect(page).to have_link("Proposal A Title", href: proposal_url(proposal_a,
-                                                    anchor: "tab-notifications"))
-      expect(page).to have_link("Proposal B Title", href: proposal_url(proposal_b,
-                                                    anchor: "tab-notifications"))
+      expect(page).to have_link("Proposal A", href: proposal_url(proposal_a, host: app_host))
+      expect(page).to have_link("Proposal B", href: proposal_url(proposal_b, host: app_host))
+      expect(page).to have_link("Proposal A Title",
+                                href: proposal_url(proposal_a, anchor: "tab-notifications", host: app_host))
+      expect(page).to have_link("Proposal B Title",
+                                href: proposal_url(proposal_b, anchor: "tab-notifications", host: app_host))
     end
 
     scenario "#moderate_pending" do
@@ -300,11 +303,20 @@ describe "System Emails" do
         click_on "Moderate notification send"
       end
 
+      expect(page).not_to have_content("Proposal A Title")
+
       visit admin_system_email_preview_pending_path("proposal_notification_digest")
 
-      expect(Notification.count).to equal(1)
-      expect(Activity.last.actionable_type).to eq("ProposalNotification")
+      expect(page).to have_content("Proposal B")
       expect(page).not_to have_content("Proposal A Title")
+
+      visit admin_activity_path
+
+      within first("tbody tr") do
+        expect(page).to have_content "Proposal notification"
+        expect(page).to have_content "Proposal A Title"
+        expect(page).to have_content admin.user.username
+      end
     end
 
     scenario "#send_pending" do
@@ -317,7 +329,7 @@ describe "System Emails" do
 
       visit admin_system_emails_path
 
-      click_on "Send pending"
+      click_button "Send pending"
 
       email = open_last_email
       expect(email).to deliver_to(voter)

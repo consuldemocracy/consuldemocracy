@@ -3,9 +3,7 @@
   <%= render "shared/canonical", href: help_url %>
 <% end %>
 
-<% if has_banners? %>
-  <%= render "shared/banner" %>
-<% end %>
+<%= render Shared::BannerComponent.new("help_page") %>
 
 <div class="jumbo light">
   <div class="row">

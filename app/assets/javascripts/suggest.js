@@ -6,6 +6,14 @@
         var $this, callback, timer;
         $this = $(this);
         callback = function() {
+          var js_suggest_selector, locale;
+          js_suggest_selector = $this.data("js-suggest");
+
+          if (js_suggest_selector.startsWith(".")) {
+            locale = $this.closest(".translatable-fields").data("locale");
+            js_suggest_selector += "[data-locale=" + locale + "]";
+          }
+
           $.ajax({
             url: $this.data("js-url"),
             data: {
@@ -13,15 +21,12 @@
             },
             type: "GET",
             dataType: "html",
+            beforeSend: function() {
+              $(js_suggest_selector).removeClass("suggest-success").addClass("suggest-loading");
+            },
             success: function(stHtml) {
-              var js_suggest_selector, locale;
-              js_suggest_selector = $this.data("js-suggest");
-
-              if (js_suggest_selector.startsWith(".")) {
-                locale = $this.closest(".translatable-fields").data("locale");
-                js_suggest_selector += "[data-locale=" + locale + "]";
-              }
               $(js_suggest_selector).html(stHtml);
+              $(js_suggest_selector).removeClass("suggest-loading").addClass("suggest-success");
             }
           });
         };

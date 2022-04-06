@@ -1,6 +1,7 @@
 el:
   documents:
     title: Έγγραφα
+    max_documents_allowed_reached: Έχετε φτάσει το μέγιστο αριθμό των εγγράφων που επιτρέπονται! <strong>Πρέπει να διαγράψετε ένα πριν μπορέσετε να ανεβάσετε ένα άλλο.</strong>
     additional: Πρόσθετη τεκμηρίωση
     form:
       title: Έγγραφα

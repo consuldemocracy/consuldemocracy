@@ -122,10 +122,6 @@
   content: "\f39e";
 }
 
-.icon-google-plus::before {
-  content: "\f0d5";
-}
-
 .icon-search::before {
   content: "\f002";
 }
@@ -145,10 +141,6 @@
 
 .icon-print::before {
   content: "\f02f";
-}
-
-.icon-blog::before {
-  content: "\f19a";
 }
 
 .icon-box::before {
@@ -188,10 +180,6 @@
 .icon-no-notification::before {
   content: "\f0f3";
   font-weight: normal;
-}
-
-.icon-whatsapp::before {
-  content: "\f232";
 }
 
 .icon-zip::before {
@@ -284,13 +272,10 @@
   content: "\f0c9";
 }
 
-.icon-blog,
 .icon-facebook,
-.icon-google-plus,
 .icon-instagram,
 .icon-telegram,
 .icon-twitter,
-.icon-whatsapp,
 .icon-youtube {
 
   &::before {

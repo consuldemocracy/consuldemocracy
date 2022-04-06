@@ -1,0 +1,206 @@
+.budget-phases {
+  @include grid-column-gutter;
+  @include full-width-background;
+  @include full-width-border(top, 2px solid $border);
+  background: $light;
+  padding-bottom: $line-height * 2;
+
+  h2 {
+    font-size: $base-font-size;
+    text-align: center;
+  }
+
+  .phases-list {
+    counter-reset: phases;
+    display: flex;
+    flex-wrap: wrap;
+
+    .phase-name::before {
+      content: counter(phases);
+      counter-increment: phases;
+      display: block;
+      font-size: rem-calc(36);
+      font-weight: bold;
+      margin-bottom: $line-height / 2;
+    }
+  }
+
+  .phase-title {
+    @include tabs-title;
+    margin: $line-height / 6;
+    margin-left: 0;
+    position: relative;
+    text-align: center;
+
+    @supports(clip-path: polygon(0 0, 50% 50%, 0% 100%)) {
+      $triangle-width: 1em;
+      $item-margin: rem-calc(3);
+
+      margin-left: calc(-1 * (#{$triangle-width} - #{$item-margin}));
+      margin-right: 0;
+      transform: translateX(calc(#{$triangle-width} - #{$item-margin}));
+
+      &,
+      a {
+        clip-path: polygon(calc(100% - #{$triangle-width}) 0, 100% 50%, calc(100% - #{$triangle-width}) 100%, 0 100%, #{$triangle-width} 50%, 0 0);
+      }
+
+      &:first-child {
+        &,
+        a {
+          clip-path: polygon(calc(100% - #{$triangle-width}) 0, 100% 50%, calc(100% - #{$triangle-width}) 100%, 0 100%, 0 0);
+        }
+
+        a {
+          border-bottom-left-radius: rem-calc(6);
+          border-top-left-radius: rem-calc(6);
+        }
+      }
+
+      &:last-child {
+        &,
+        a {
+          clip-path: polygon(100% 0, 100% 100%, 0 100%, #{$triangle-width} 50%, 0 0);
+        }
+
+        a {
+          border-bottom-right-radius: rem-calc(6);
+          border-top-right-radius: rem-calc(6);
+        }
+      }
+    }
+
+    a {
+      background: $body-background;
+      color: inherit;
+      height: 100%;
+      padding: $line-height $line-height * 1.5;
+
+      &:hover {
+        background: #e6e6e6;
+        color: inherit;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &[aria-selected="true"],
+      &.is-active {
+        background: $dark;
+        color: $white;
+        font-weight: normal;
+      }
+
+      &[aria-selected="true"]::after,
+      &.is-active::after {
+        content: none;
+      }
+    }
+
+    &.current-phase-tab a {
+      background: $brand-secondary;
+      color: $white;
+      padding-top: $line-height / 2;
+
+      &:hover {
+        background: $dark;
+      }
+    }
+  }
+
+  .current-phase-timeline {
+    display: block;
+    font-size: $small-font-size;
+    font-weight: bold;
+    margin-bottom: $line-height / 2;
+    text-transform: uppercase;
+  }
+
+  .tabs,
+  .tabs-content {
+    background: none;
+    border: 0;
+  }
+
+  .tabs-panel {
+    padding: 0;
+
+    h3 {
+      font-size: rem-calc(36);
+    }
+  }
+
+  .tabs-controls {
+    display: flex;
+
+    .budget-prev-phase,
+    .budget-next-phase,
+    .budget-prev-phase-disabled,
+    .budget-next-phase-disabled {
+      @extend %brand-background;
+      border-radius: rem-calc(3);
+      display: flex;
+      font-size: rem-calc(36);
+      height: 1em * 4 / 3;
+      width: 1em * 4 / 3;
+
+      &::before {
+        margin: auto;
+      }
+
+      span {
+        @include element-invisible;
+      }
+    }
+
+    > :first-child {
+      margin-right: 0.2em;
+    }
+
+    .budget-prev-phase-disabled,
+    .budget-next-phase-disabled {
+      background: none;
+      color: #acb6b6;
+    }
+
+    .budget-prev-phase,
+    .budget-prev-phase-disabled {
+      @include has-fa-icon(angle-left, solid);
+    }
+
+    .budget-next-phase,
+    .budget-next-phase-disabled {
+      @include has-fa-icon(angle-right, solid);
+    }
+  }
+
+  .budget-phase {
+    margin-top: $line-height;
+
+    @include breakpoint(medium) {
+      @include flex-with-gap;
+
+      > * {
+        width: 50%;
+      }
+
+      .budget-phase-image {
+        text-align: center;
+      }
+    }
+
+    .main-link {
+      @include has-fa-icon(chevron-right, solid, "after");
+      @include regular-button;
+      font-size: map-get($button-sizes, large);
+      margin-top: $line-height;
+      padding-right: 0.5em;
+
+      &::after {
+        font-weight: bold;
+        margin-left: 0.5em;
+      }
+    }
+  }
+}

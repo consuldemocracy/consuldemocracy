@@ -1,6 +1,9 @@
 require "rails_helper"
 
 describe "Tags" do
+  let(:geozone) { create(:geozone, name: "District A") }
+  let(:author) { create(:user, :level_two, geozone: geozone) }
+
   scenario "Index" do
     earth = create(:proposal, tag_list: "Medio Ambiente")
     money = create(:proposal, tag_list: "Economía")
@@ -60,16 +63,15 @@ describe "Tags" do
   end
 
   scenario "Create with custom tags" do
-    user = create(:user)
-    login_as(user)
+    login_as(author)
 
     visit new_proposal_path
-    fill_in "Proposal title", with: "Help refugees"
+    fill_in_new_proposal_title with: "Help refugees"
     fill_in "Proposal summary", with: "In summary, what we want is..."
-    fill_in "Proposal text", with: "This is very important because..."
-    fill_in "proposal_responsible_name", with: "Isabel Garcia"
-    fill_in "proposal_tag_list", with: "Economía, Hacienda"
-    check "proposal_terms_of_service"
+    fill_in_ckeditor "Proposal text", with: "This is very important because..."
+    select "District A", from: "Scope of operation"
+    fill_in "Tags", with: "Economía, Hacienda"
+    check "I agree to the Privacy Policy and the Terms and conditions of use"
 
     click_button "Create proposal"
 
@@ -81,19 +83,19 @@ describe "Tags" do
     expect(page).to have_content "Hacienda"
   end
 
-  scenario "Category with category tags", :js do
+  scenario "Category with category tags" do
     create(:tag, :category, name: "Education")
     create(:tag, :category, name: "Health")
 
-    login_as(create(:user))
+    login_as(author)
     visit new_proposal_path
 
-    fill_in "Proposal title", with: "Help refugees"
+    fill_in_new_proposal_title with: "Help refugees"
     fill_in "Proposal summary", with: "In summary, what we want is..."
     fill_in_ckeditor "Proposal text", with: "A description with enough characters"
-    fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=Ae6gQmhaMn4"
-    fill_in "proposal_responsible_name", with: "Isabel Garcia"
-    check "proposal_terms_of_service"
+    fill_in "External video URL", with: "https://www.youtube.com/watch?v=Ae6gQmhaMn4"
+    select "District A", from: "Scope of operation"
+    check "I agree to the Privacy Policy and the Terms and conditions of use"
 
     find(".js-add-tag-link", text: "Education").click
     click_button "Create proposal"
@@ -102,22 +104,24 @@ describe "Tags" do
     click_link "No, I want to publish the proposal"
     click_link "Not now, go to my proposal"
 
-    within "#tags_proposal_#{Proposal.last.id}" do
+    expect(page).to have_css "h1", exact_text: "Help refugees"
+
+    within ".tags" do
       expect(page).to have_content "Education"
       expect(page).not_to have_content "Health"
     end
   end
 
   scenario "Create with too many tags" do
-    user = create(:user)
-    login_as(user)
+    login_as(author)
 
     visit new_proposal_path
-    fill_in "Proposal title", with: "Title"
-    fill_in "Proposal text", with: "Description"
-    check "proposal_terms_of_service"
+    fill_in_new_proposal_title with: "Title"
+    fill_in_ckeditor "Proposal text", with: "Description"
+    select "District A", from: "Scope of operation"
+    check "I agree to the Privacy Policy and the Terms and conditions of use"
 
-    fill_in "proposal_tag_list", with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
+    fill_in "Tags", with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
 
     click_button "Create proposal"
 
@@ -126,18 +130,17 @@ describe "Tags" do
   end
 
   scenario "Create with dangerous strings" do
-    author = create(:user)
     login_as(author)
 
     visit new_proposal_path
 
-    fill_in "Proposal title", with: "A test of dangerous strings"
+    fill_in_new_proposal_title with: "A test of dangerous strings"
     fill_in "Proposal summary", with: "In summary, what we want is..."
-    fill_in "Proposal text", with: "A description suitable for this test"
-    fill_in "proposal_responsible_name", with: "Isabel Garcia"
-    check "proposal_terms_of_service"
+    fill_in_ckeditor "Proposal text", with: "A description suitable for this test"
+    select "District A", from: "Scope of operation"
+    check "I agree to the Privacy Policy and the Terms and conditions of use"
 
-    fill_in "proposal_tag_list", with: "user_id=1, &a=3, <script>alert('hey');</script>"
+    fill_in "Tags", with: "user_id=1, &a=3, <script>alert('hey');</script>"
 
     click_button "Create proposal"
 
@@ -159,7 +162,7 @@ describe "Tags" do
 
     expect(page).to have_selector("input[value='Economía']")
 
-    fill_in "proposal_tag_list", with: "Economía, Hacienda"
+    fill_in "Tags", with: "Economía, Hacienda"
     click_button "Save changes"
 
     expect(page).to have_content "Proposal updated successfully."
@@ -175,7 +178,7 @@ describe "Tags" do
     login_as(proposal.author)
     visit edit_proposal_path(proposal)
 
-    fill_in "proposal_tag_list", with: ""
+    fill_in "Tags", with: ""
     click_button "Save changes"
 
     expect(page).to have_content "Proposal updated successfully."

@@ -1,0 +1,32 @@
+<% if valid_access? %>
+  <% if valid_filters.any? %>
+    <ul class="menu simple margin-top">
+      <% valid_filters.each do |filter| %>
+        <% if current_filter == filter %>
+          <li class="is-active">
+            <h2><%= t("users.show.filters.#{filter}", count: count(filter)) %></h2>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to t("users.show.filters.#{filter}", count: count(filter)),
+                        current_path_with_query_params(filter: filter, page: 1) %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+
+    <% if current_filter == "follows" %>
+      <%= render "users/following", user: user, follows: follows.group_by(&:followable_type) %>
+    <% else %>
+      <%= render_user_partial current_filter %>
+    <% end %>
+  <% else %>
+    <div class="callout primary">
+      <%= t("users.show.no_activity") %>
+    </div>
+  <% end %>
+<% else %>
+  <div class="callout warning margin">
+    <%= t("users.show.private_activity") %>
+  </div>
+<% end %>

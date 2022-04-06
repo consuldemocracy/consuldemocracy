@@ -1,6 +1,8 @@
 es-PE:
   documents:
     title: Documentos
+    max_documents_allowed_reached: '¡Has alcanzado el número máximo de documentos permitidos! <strong>Tienes que eliminar uno antes de poder subir otro.</strong>'
+    additional: Documentación adicional
     form:
       title: Documentos
       title_placeholder: Añade un título descriptivo para el documento

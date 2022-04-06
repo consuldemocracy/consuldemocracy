@@ -1,0 +1,116 @@
+sr:
+  devise_views:
+    confirmations:
+      new:
+        submit: Поново пошаљите упутство
+        title: Поново пошаљите упутство за потврђивање
+      show:
+        instructions: Потврђивање налога путем емаила%{email}
+        new_password_confirmation_label: Поновите приступну лозинку
+        new_password_label: Нова лозинка за приступ
+        please_set_password: Одаберите нову лозинку (с којом се можете пријавити путем емаила горе)
+        submit: Потврди
+        title: Потврди мој налог
+    mailer:
+      confirmation_instructions:
+        confirm_link: Потврди мој налог
+        text: "Можете потврдити своју емаил адресу на овом линку:"
+        title: Добродошли
+        welcome: Добродошли
+      reset_password_instructions:
+        change_link: Промени моју лозинку
+        hello: Поздрав
+        ignore_text: Ако нисте тражили промену лозинке, не обраћајте пажњу на овај емаил.
+        info_text: Лозинка се неће променити ако не одете на линк и промените је.
+        text: "Добили смо захтев да променимо вашу лозинку. То се може урадити на следећем линку:"
+        title: Промените своју лозинку
+      unlock_instructions:
+        hello: Поздрав
+        info_text: Ваш налог је блокиран због превеликог броја неуспешних покушаја пријаве.
+        instructions_text: "Кликните на овај линк како би се откључао налог:"
+        title: Ваш налог је закључан
+        unlock_link: Откључај мој налог
+    menu:
+      login_items:
+        login: Пријавите се
+        logout: Одјавите се
+        signup: Региструјте се
+    organizations:
+      registrations:
+        new:
+          password_confirmation_label: Потврдите лозинку
+          responsible_name_note: Ово је особа која представља удружење/заједницу у чије се име подносе предлози
+          submit: Региструјте се
+          title: Региструјте се као организација или заједница
+        success:
+          back_to_index: Схватам; иди назад на почетну страницу
+          instructions_1: "<strong>Контактираћемо вас ускоро</strong>да потврдимо да ви заправо представљате овај колектив."
+          instructions_2: Док ви <strong>емаил је прегледан</strong>, ми смо вам послали <strong>линк за потврду вашег налога</strong>.
+          instructions_3: Једном одобрени, можете почети да учествујте као непотврђени колектив.
+          thank_you: Хвала вам на регистрацији вашег колектива на веб страни. Сада је <strong> потврђивање у току</strong>.
+          title: Регистрација организације / заједнице
+    passwords:
+      edit:
+        change_submit: Промени моју лозинку
+        password_confirmation_label: Потврдите нову лозинку
+        password_label: Нова лозинка
+        title: Промените своју лозинку
+      new:
+        send_submit: Пошаљите упутства
+        title: Заборавили сте лозинку?
+    sessions:
+      new:
+        remember_me: Сећаш ли ме се
+        submit: Унеси
+        title: Упиши се
+    shared:
+      links:
+        login: Унеси
+        new_confirmation: Нисте добили инструкције за активацију вашег налога?
+        new_password: Заборавили сте лозинку?
+        new_unlock: Нисте добили инструкције за закључавање?
+        signin_with_provider: Упиши се са %{provider}
+        signup: Немаш налог? %{signup_link}
+        signup_link: Упиши се
+    unlocks:
+      new:
+        email_label: Емаил
+        submit: Поново шаљи инструкције за откључавање
+        title: Поновна послата упутства за закључавање
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Разлог
+          info: Ова радња се не може опозвати. Уверите се да је то оно што желите.
+          info_reason: Ако желите, оставите нам разлог (опционално)
+          submit: Избриши мој налог
+          title: Обриши налог
+        edit:
+          current_password_label: Тренутна лозинка
+          edit: Уреди
+          email_label: Емаил
+          leave_blank: Оставите празно ако не желите да измените
+          need_current: Потребна нам је ваша тренутна лозинка да бисте потврдили промене
+          password_confirmation_label: Потврдите нову лозинку
+          password_label: Нова лозинка
+          update_submit: Ажурирање
+          waiting_for: "Чека се потврда:"
+        new:
+          cancel: Откажи пријаву
+          organization_signup: Да ли представљате организацију или колектив? %{signup_link}
+          organization_signup_link: Упишите се овде
+          password_confirmation_label: Потврдите лозинку
+          submit: Регистрација
+          terms: Регистрацијом прихватате %{terms}
+          terms_link: услови коришћења
+          terms_title: Регистровањем прихватате услове коришћења
+          title: Регистрација
+          username_is_available: Корисничко име доступно
+          username_is_not_available: Корисничко име је већ у употреби
+          username_note: Име које се појављује поред ваших објава
+        success:
+          back_to_index: Разумем; вратите се на почетну страну
+          instructions_1: Молимо <b> проверите ваш емаил</b>- послали смо вам <b>линк за потврду вашег налога</b>.
+          instructions_2: Једном одобрени, можете почети да учествујете.
+          thank_you: Хвала вам на регистровању на вебстраници. Сада морате да <b> потврдите вашу емаил адресу</b>.
+          title: Потврдите вашу емаил адресу

@@ -17,19 +17,14 @@ describe "Residence" do
     check "residence_terms_of_service"
     click_button "Verify residence"
 
-    expect(page).to have_content "Residence verified"
+    expect(page).to have_content "Your account is already verified"
   end
 
-  scenario "Verify resident throught RemoteCensusApi" do
-    Setting["feature.remote_census"] = true
-
-    access_user_data = "get_habita_datos_response.get_habita_datos_return.datos_habitante.item"
-    access_residence_data = "get_habita_datos_response.get_habita_datos_return.datos_vivienda.item"
-    Setting["remote_census.response.date_of_birth"] = "#{access_user_data}.fecha_nacimiento_string"
-    Setting["remote_census.response.postal_code"] = "#{access_residence_data}.codigo_postal"
-    Setting["remote_census.response.valid"] = access_user_data
+  scenario "Verify resident throught RemoteCensusApi", :remote_census do
+    skip "Disabled for development and test"
     user = create(:user)
     login_as(user)
+    mock_valid_remote_census_response
 
     visit account_path
     click_link "Verify my account"
@@ -42,7 +37,6 @@ describe "Residence" do
     click_button "Verify residence"
 
     expect(page).to have_content "Residence verified"
-    Setting["feature.remote_census"] = nil
   end
 
   scenario "Residence form use min age to participate" do
@@ -61,6 +55,7 @@ describe "Residence" do
   end
 
   scenario "When trying to verify a deregistered account old votes are reassigned" do
+    skip "Has been changed and it is no longer possible"
     erased_user = create(:user, document_number: "12345678Z", document_type: "1", erased_at: Time.current)
     vote = create(:vote, voter: erased_user)
     new_user = create(:user)
@@ -78,7 +73,7 @@ describe "Residence" do
 
     click_button "Verify residence"
 
-    expect(page).to have_content "Residence verified"
+    expect(page).to have_content "Your account is already verified"
 
     expect(vote.reload.voter).to eq(new_user)
     expect(erased_user.reload.document_number).to be_blank
@@ -98,6 +93,7 @@ describe "Residence" do
   end
 
   scenario "Error on postal code not in census" do
+    skip "Disabled for development and test"
     user = create(:user)
     login_as(user)
 
@@ -118,6 +114,7 @@ describe "Residence" do
   end
 
   scenario "Error on census" do
+    skip "Disabled for development and test"
     user = create(:user)
     login_as(user)
 
@@ -138,6 +135,7 @@ describe "Residence" do
   end
 
   scenario "5 tries allowed" do
+    skip "Disabled for development and test"
     user = create(:user)
     login_as(user)
 

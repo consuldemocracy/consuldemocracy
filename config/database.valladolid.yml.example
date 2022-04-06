@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  pool: 5
+  username: consul-valladolid
+  password: consul-valladolid
+
+development:
+  <<: *default
+  database: consul-valladolid_development
+
+test:
+  <<: *default
+  database: consul-valladolid_test

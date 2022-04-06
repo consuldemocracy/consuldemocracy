@@ -117,3 +117,17 @@ nl:
       form:
         tags_label: "Categorieen"
       not_verified: "Om op voorstellen te stemmen %{verify_account}."
+      process_title: Samenwerken in plannen
+    summary:
+      title: "Samenvatting"
+      votes:
+        zero: "%{count} stemmen"
+      debate_phase: "Debatfase"
+      proposals_phase: "Voorstelfase"
+      allegations_phase: "Opmerkingenfase"
+      comments:
+        zero: "Geen reacties"
+        one: "%{count} reactie"
+        other: "%{count} opmerkingen"
+      top_comments:
+        zero: "Geen reacties"

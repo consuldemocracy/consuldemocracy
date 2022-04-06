@@ -12,9 +12,8 @@ he:
         headers:
           comment: הערות
           moderate: מנחה
-        hide_comments: הסתר הערות
+        hide: הסתר הערות
         ignore_flags: סימון כמסמך שנצפה
-        order: הזמן
         orders:
           flags: הנצפה ביותר
           newest: החדש ביותר
@@ -28,15 +27,14 @@ he:
         confirm: האם את/ה בטוח/ה?
         filter: סינון
         filters:
-          all: כולם
+          all: הכל
           pending_flag_review: ממתין לאישור
           with_ignored_flag: סומנו שנראו
         headers:
           debate: דיון
           moderate: מנחה
-        hide_debates: הסתירו את הדיון
+        hide: הסתירו את הדיון
         ignore_flags: סימון כמסמך שנצפה
-        order: הזמן
         orders:
           created_at: החדש ביותר
           flags: הנצפה ביותר
@@ -56,15 +54,14 @@ he:
         confirm: האם את/ה בטוח/ה?
         filter: סינון
         filters:
-          all: כולם
+          all: הכל
           pending_flag_review: בהמתנה לבדיקה
           with_ignored_flag: סימון כמסמך שנצפה
         headers:
           moderate: מנחה
           proposal: הצעה
-        hide_proposals: הסתרת הצעות
+        hide: הסתרת הצעות
         ignore_flags: סימון כמסמך שנצפה
-        order: הזמנה באמצעות
         orders:
           created_at: האחרון
           flags: הנצפה ביותר
@@ -75,15 +72,14 @@ he:
         confirm: האם את/ה בטוח/ה?
         filter: סינון
         filters:
-          all: כולם
+          all: הכל
           pending_flag_review: ממתין
           with_ignored_flag: סומנו שנראו
         headers:
           moderate: מנחה
           budget_investment: השקעות בתקציב
-        hide_budget_investments: הסתר השקעות תקציביות
+        hide: הסתר השקעות תקציביות
         ignore_flags: סימון כמסמך שנצפה
-        order: הזמנה באמצעות
         orders:
           created_at: האחרון
           flags: הנצפה ביותר
@@ -100,9 +96,8 @@ he:
         headers:
           moderate: מנחה
           proposal_notification: התראות להצעות
-        hide_proposal_notifications: הסתרת הצעות
+        hide: הסתרת הצעות
         ignore_flags: סימון כמסמך שנצפה
-        order: הזמנה באמצעות
         orders:
           created_at: האחרון
           moderated: מונחה
@@ -111,7 +106,6 @@ he:
       index:
         hidden: מוסתרים
         hide: הסתרה
-        search: חיפוש
         search_placeholder: דוא"ל או שם משתמש
         title: חסימת משתמשים
       notice_hide: המשתמש/ת נחסם/ה. כל הדיונים וההערות של המשתמש/ת הוסתרו.

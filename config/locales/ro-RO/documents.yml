@@ -1,1 +1,24 @@
 ro:
+  documents:
+    title: Documente
+    max_documents_allowed_reached: Ați atins numărul maxim de documente permise! <strong>Trebuie să ștergeți unul înainte să puteți adăuga altul.</strong>
+    additional: Documente adiționale
+    form:
+      title: Documente
+      title_placeholder: Adăugați un titlu descriptiv pentru document
+      delete_button: Înlătură document
+      cancel_button: Anulare
+      note: "Puteți încărca până la un maxim de %{max_documents_allowed} documente pentru următoarele tipuri de conținut: %{accepted_content_types}, până la %{max_file_size} MB per fișier."
+      add_new_document: Adaugă document nou
+    actions:
+      destroy:
+        notice: Documentul a fost șters cu succes.
+        alert: Documentul nu poate fi șters.
+        confirm: Sigur doriți să ștergeți documentul? Această acțiune nu poate fi anulată!
+    buttons:
+      download_document: Descărcare fișier
+      destroy_document: Șterge document
+    errors:
+      messages:
+        in_between: trebuie să fie între %{min} și %{max}
+        wrong_content_type: tipul de conținut %{content_type} nu se potrivește cu niciunul dintre tipurile de conținut acceptate %{accepted_content_types}

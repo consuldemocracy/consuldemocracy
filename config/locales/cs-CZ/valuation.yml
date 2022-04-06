@@ -53,8 +53,11 @@ cs:
         responsibles: Odpovědnost
         assigned_admin: Přiřazeno administrátorovi
         assigned_valuators: Přiřazeno hodnotiteli
+        preview: Investiční přehled
       edit:
         dossier: Dokumentace
+        price: "Cena (%{currency})"
+        price_first_year: "Náklady během prvního roku (%{currency}) <small>(nepovinné, údaje nejsou veřejné)</small>"
         feasibility: Proveditelnost
         valuation_finished_alert: "Opravdu chcete tuto zprávu označit za dokončenou? Pokud to uděláte, nemůže již změnit."
         not_feasible_alert: "Autorovi projektu bude okamžitě zaslán email s informací o nerealizovatelnosti projektu."

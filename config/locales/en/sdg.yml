@@ -1,0 +1,642 @@
+en:
+  sdg:
+    goals:
+      goal_1:
+        title: "No Poverty"
+        title_in_two_lines: "No\nPoverty"
+        description: "End poverty in all its forms, everywhere."
+        long_description: '<p>Globally, the number of people living in extreme poverty declined from 36 per cent in 1990 to 10 per cent in 2015. But the pace of change is decelerating and the COVID-19 crisis <a href="https://www.un.org/sites/un2.un.org/files/sg_report_socio-economic_impact_of_covid19.pdf">risks reversing decades of progress</a> in the fight against poverty. <a href="https://www.wider.unu.edu/node/237051">New research</a> published by the UNU World Institute for Development Economics Research warns that the economic fallout from <a href="https://www.wider.unu.edu/publication/estimates-impact-covid-19-global-poverty">the global pandemic could increase global poverty by as much as half a billion people</a>, or 8% of the total human population. This would be the first time that poverty has increased globally in thirty years, since 1990.</p> <p>More than <a href="http://www.worldbank.org/en/news/press-release/2018/09/19/decline-of-global-extreme-poverty-continues-but-has-slowed-world-bank">700 million people</a>, or 10 per cent of the world population, still live in extreme poverty today, struggling to fulfil the most basic needs like health, education, and access to water and sanitation, to name a few. The majority of people living on less than $1.90 a day live in sub-Saharan Africa. Worldwide, the <a href="https://unstats.un.org/sdgs/report/2019/goal-01/">poverty rate in rural areas is 17.2 per cent</a>—more than three times higher than in urban areas.&nbsp;</p> <p>For those who work, having a job does not guarantee a decent living. In fact, <a href="https://unstats.un.org/sdgs/report/2019/goal-01/">8 per cent</a> of employed workers and their families worldwide lived in extreme poverty in 2018. One out of five children live in extreme poverty. Ensuring social protection for all children and other vulnerable groups is critical to reduce poverty.</p>'
+        targets:
+          target_1_1:
+            long_title: "By 2030, eradicate extreme poverty for all people everywhere, currently measured as people living on less than $1.25 a day"
+            short_title: "Eradicate Extreme Poverty"
+          target_1_2:
+            long_title: "By 2030, reduce at least by half the proportion of men, women and children of all ages living in poverty in all its dimensions according to national definitions"
+            short_title: "Reduce Poverty by at Least 50%"
+          target_1_3:
+            long_title: "Implement nationally appropriate social protection systems and measures for all, including floors, and by 2030 achieve substantial coverage of the poor and the vulnerable"
+            short_title: "Implement Social Protection Systems"
+          target_1_4:
+            long_title: "By 2030, ensure that all men and women, in particular the poor and the vulnerable, have equal rights to economic resources, as well as access to basic services, ownership and control over land and other forms of property, inheritance, natural resources, appropriate new technology and financial services, including microfinance"
+            short_title: "Equal Rights to Ownership, Basic Services, Technology and Economic Resources"
+          target_1_5:
+            long_title: "By 2030, build the resilience of the poor and those in vulnerable situations and reduce their exposure and vulnerability to climate-related extreme events and other economic, social and environmental shocks and disasters"
+            short_title: "Build Resilience to Environmental, Economic and Social Disasters"
+          target_1_A:
+            long_title: "Ensure significant mobilization of resources from a variety of sources, including through enhanced development cooperation, in order to provide adequate and predictable means for developing countries, in particular least developed countries, to implement programmes and policies to end poverty in all its dimensions"
+            short_title: "Mobilize Resources to Implement Policies to End Poverty"
+          target_1_B:
+            long_title: "Create sound policy frameworks at the national, regional and international levels, based on pro-poor and gender-sensitive development strategies, to support accelerated investment in poverty eradication actions"
+            short_title: "Create pro-poor and gender-sensitive policy frameworks"
+      goal_2:
+        title: "Zero Hunger"
+        title_in_two_lines: "Zero\nHunger"
+        description: "Zero Hunger."
+        long_description: '<p>After decades of steady decline, the number of people who suffer from hunger – as measured by the prevalence of undernourishment – began to slowly increase again in 2015. Current estimates show that <a href="http://www.fao.org/publications/sofi/2020/en/">nearly 690 million people are hungry, or 8.9 percent of the world population</a> – up by 10 million people in one year and by nearly 60 million in five years.</p> <p>The world is not on track to achieve Zero Hunger by 2030. If recent trends continue, the number of people affected by hunger would surpass 840 million by 2030.</p> <p>According to the World Food Programme, <a href="https://www.wfp.org/publications/2020-global-report-food-crises">135 million suffer from acute hunger</a> largely due to man-made conflicts, climate change and economic downturns. The COVID-19 pandemic could now double that number, putting an additional 130 million people at risk of suffering acute hunger by the end of 2020.</p> <p>With more than <a href="https://insight.wfp.org/covid-19-will-almost-double-people-in-acute-hunger-by-end-of-2020-59df0c4a8072">a quarter of a billion people potentially at the brink of starvation</a>, swift action needs to be taken to provide food and humanitarian relief to the most at-risk regions.</p> <p>At the same time,&nbsp;a profound change of the global food and agriculture system is needed if we are to nourish the more than 690 million people who are hungry today – and the&nbsp;<a href="https://www.un.org/development/desa/en/news/population/world-population-prospects-2019.html">additional 2 billion people</a>&nbsp;the world will have by 2050. Increasing agricultural productivity and sustainable food production are crucial to help alleviate the perils of hunger.</p>'
+        targets:
+          target_2_1:
+            long_title: "By 2030, end hunger and ensure access by all people, in particular the poor and people in vulnerable situations, including infants, to safe, nutritious and sufficient food all year round."
+            short_title: "Universal Access to Safe and Nutritious Food"
+          target_2_2:
+            long_title: "By 2030, end all forms of malnutrition, including achieving, by 2025, the internationally agreed targets on stunting and wasting in children under 5 years of age, and address the nutritional needs of adolescent girls, pregnant and lactating women and older persons."
+            short_title: "End All Forms of Malnutrition"
+          target_2_3:
+            long_title: "By 2030, double the agricultural productivity and incomes of small-scale food producers, in particular women, indigenous peoples, family farmers, pastoralists and fishers, including through secure and equal access to land, other productive resources and inputs, knowledge, financial services, markets and opportunities for value addition and non-farm employment."
+            short_title: "Double the Productivity and Incomes of Small-Scale Food Producers"
+          target_2_4:
+            long_title: "By 2030, ensure sustainable food production systems and implement resilient agricultural practices that increase productivity and production, that help maintain ecosystems, that strengthen capacity for adaptation to climate change, extreme weather, drought, flooding and other disasters and that progressively improve land and soil quality."
+            short_title: "Sustainable Food Production and Resilient Agricultural Practices"
+          target_2_5:
+            long_title: "By 2020, maintain the genetic diversity of seeds, cultivated plants and farmed and domesticated animals and their related wild species, including through soundly managed and diversified seed and plant banks at the national, regional and international levels, and promote access to and fair and equitable sharing of benefits arising from the utilization of genetic resources and associated traditional knowledge, as internationally agreed."
+            short_title: "Maintain the Genetic Diversity in Food Production"
+          target_2_A:
+            long_title: "Increase investment, including through enhanced international cooperation, in rural infrastructure, agricultural research and extension services, technology development and plant and livestock gene banks in order to enhance agricultural productive capacity in developing countries, in particular least developed countries."
+            short_title: "Invest in Rural Infrastructure, Agricultural Research, Technology and Gene Banks"
+          target_2_B:
+            long_title: "Correct and prevent trade restrictions and distortions in world agricultural markets, including through the parallel elimination of all forms of agricultural export subsidies and all export measures with equivalent effect, in accordance with the mandate of the Doha Development Round."
+            short_title: "Prevent Agricultural Trade Restrictions, Market Distortions and Export Subsidies"
+          target_2_C:
+            long_title: "Adopt measures to ensure the proper functioning of food commodity markets and their derivatives and facilitate timely access to market information, including on food reserves, in order to help limit extreme food price volatility."
+            short_title: "Ensure Stable Food Commodity Markets and Timely Access to Information"
+      goal_3:
+        title: "Good Health and Well-Being"
+        title_in_two_lines: "Good Health\nand Well-Being"
+        description: "Ensure healthy lives and promote well-being for all at all ages."
+        long_description: '<p>Ensuring healthy lives and promoting well-being at all ages is essential to sustainable development. Currently, the world is facing a <a href="https://www.un.org/coronavirus">global health crisis</a> unlike any other — COVID-19 is spreading human suffering, destabilizing the global economy and upending the lives of billions of people around the globe.&nbsp;</p> <p>Before the pandemic, major progress was made in <a href="https://unstats.un.org/sdgs/report/2019/goal-03/">improving the health of millions of people</a>. Significant strides were made in increasing life expectancy and reducing some of the common killers associated with child and maternal mortality. But more efforts are needed to fully eradicate a wide range of diseases and address many different persistent and emerging health issues. By focusing on providing more efficient funding of health systems, improved sanitation and hygiene, and increased access to physicians, significant progress can be made in helping to save the lives of millions.</p> <p>Health emergencies such as COVID-19 pose a global risk and have shown the critical need for preparedness. The United Nations Development Programme highlighted huge disparities in <a href="https://www.undp.org/content/undp/en/home/news-centre/news/2020/COVID19_UNDP_data_dashboards_reveal_disparities_among_countries_to_cope_and_recover.html">countries’ abilities to cope with and recover from the COVID-19 crisis</a>. The pandemic provides a watershed moment for health emergency preparedness and for investment in critical 21st century public services.&nbsp;</p>'
+        targets:
+          target_3_1:
+            long_title: "By 2030, reduce the global maternal mortality ratio to less than 70 per 100,000 live births."
+            short_title: "Reduce Maternal Mortality"
+          target_3_2:
+            long_title: "By 2030, end preventable deaths of newborns and children under 5 years of age, with all countries aiming to reduce neonatal mortality to at least as low as 12 per 1,000 live births and under-5 mortality to at least as low as 25 per 1,000 live births."
+            short_title: "End All Preventable Deaths Under 5 Years of Age"
+          target_3_3:
+            long_title: "By 2030, end the epidemics of AIDS, tuberculosis, malaria and neglected tropical diseases and combat hepatitis, water-borne diseases and other communicable diseases."
+            short_title: "Fight Communicable Diseases"
+          target_3_4:
+            long_title: "By 2030, reduce by one third premature mortality from non-communicable diseases through prevention and treatment and promote mental health and well-being."
+            short_title: "Reduce Mortality from Non-Communicable Diseases and Promote Mental Health"
+          target_3_5:
+            long_title: "Strengthen the prevention and treatment of substance abuse, including narcotic drug abuse and harmful use of alcohol."
+            short_title: "Prevent and Treat Substance Abuse"
+          target_3_6:
+            long_title: "By 2020, halve the number of global deaths and injuries from road traffic accidents."
+            short_title: "Reduce Road Injuries and Deaths"
+          target_3_7:
+            long_title: "By 2030, ensure universal access to sexual and reproductive health-care services, including for family planning, information and education, and the integration of reproductive health into national strategies and programmes."
+            short_title: "Universal Access to Sexual and Reproductive Care, Family Planning and Education"
+          target_3_8:
+            long_title: "Achieve universal health coverage, including financial risk protection, access to quality essential health-care services and access to safe, effective, quality and affordable essential medicines and vaccines for all."
+            short_title: "Achieve Universal Health Coverage"
+          target_3_9:
+            long_title: "By 2030, substantially reduce the number of deaths and illnesses from hazardous chemicals and air, water and soil pollution and contamination."
+            short_title: "Reduce Illnesses and Death from Hazardous Chemicals and Pollution"
+          target_3_A:
+            long_title: "Strengthen the implementation of the World Health Organization Framework Convention on Tobacco Control in all countries, as appropriate."
+            short_title: "Implement the WHO Framework Convention on Tobacco Control"
+          target_3_B:
+            long_title: "Support the research and development of vaccines and medicines for the communicable and noncommunicable diseases that primarily affect developing countries, provide access to affordable essential medicines and vaccines, in accordance with the Doha Declaration on the TRIPS Agreement and Public Health, which affirms the right of developing countries to use to the full the provisions in the Agreement on Trade Related Aspects of Intellectual Property Rights regarding flexibilities to protect public health, and, in particular, provide access to medicines for all."
+            short_title: "Support Research, Development and Universal Access to Affordable Vaccines and Medicines"
+          target_3_C:
+            long_title: "Substantially increase health financing and the recruitment, development, training and retention of the health workforce in developing countries, especially in least developed countries and small island developing States."
+            short_title: "Increase Health Financing and Support Health Workforce in Developing Countries"
+          target_3_D:
+            long_title: "Strengthen the capacity of all countries, in particular developing countries, for early warning, risk reduction and management of national and global health risks."
+            short_title: "Improve Early Warning Systems for Global Health Risks"
+      goal_4:
+        title: "Quality Education"
+        title_in_two_lines: "Quality\nEducation"
+        description: "Quality Education."
+        long_description: '<p>Education enables upward socioeconomic mobility and is a key to escaping poverty. Over the past decade, major progress was made towards increasing access to education and school enrollment rates at all levels, particularly for girls. Nevertheless, <a href="http://uis.unesco.org/en/topic/out-school-children-and-youth">about 260 million children were still out of school</a> in 2018 — nearly one fifth of the global population in that age group. And more than half of all children and adolescents worldwide are <a href="https://unstats.un.org/sdgs/report/2019/goal-04/">not meeting minimum proficiency standards</a> in reading and mathematics.&nbsp;</p> <p>In 2020, as the COVID-19 pandemic spread across the globe, a majority of countries announced the temporary closure of schools, impacting more than 91 per cent of students worldwide. By April 2020, close to <a href="https://en.unesco.org/covid19/educationresponse">1.6 billion children and youth were out of school</a>. And nearly <a href="https://www.un.org/sites/un2.un.org/files/policy_brief_on_covid_impact_on_children_16_april_2020.pdf">369 million children who rely on school meals</a> needed to look to other sources for daily nutrition.&nbsp;</p> <p>Never before have so many children been out of school at the same time, disrupting learning and upending lives, especially the most vulnerable and marginalised. The global pandemic has far-reaching consequences that may jeopardize hard won gains made in improving global education.</p>'
+        targets:
+          target_4_1:
+            long_title: "By 2030, ensure that all girls and boys complete free, equitable and quality primary and secondary education leading to relevant and Goal-4 effective learning outcomes."
+            short_title: "Free Primary and Secondary Education"
+          target_4_2:
+            long_title: "By 2030, ensure that all girls and boys have access to quality early childhood development, care and preprimary education so that they are ready for primary education."
+            short_title: "Equal Access to Quality Pre-Primary Education"
+          target_4_3:
+            long_title: "By 2030, ensure equal access for all women and men to affordable and quality technical, vocational and tertiary education, including university."
+            short_title: "Equal Access to Affordable Technical, Vocational and Higher Education"
+          target_4_4:
+            long_title: "By 2030, substantially increase the number of youth and adults who have relevant skills, including technical and vocational skills, for employment, decent jobs and entrepreneurship."
+            short_title: "Increase the Number of People with Relevant Skills for Financial Success"
+          target_4_5:
+            long_title: "By 2030, eliminate gender disparities in education and ensure equal access to all levels of education and vocational training for the vulnerable, including persons with disabilities, indigenous peoples and children in vulnerable situations."
+            short_title: "Eliminate All Discrimination in Education"
+          target_4_6:
+            long_title: "By 2030, ensure that all youth and a substantial proportion of adults, both men and women, achieve literacy and numeracy."
+            short_title: "Universal Literacy and Numeracy"
+          target_4_7:
+            long_title: "By 2030, ensure that all learners acquire the knowledge and skills needed to promote sustainable development, including, among others, through education for sustainable development and sustainable lifestyles, human rights, gender equality, promotion of a culture of peace and non-violence, global citizenship and appreciation of cultural diversity and of culture’s contribution to sustainable development."
+            short_title: "Education for Sustainable Development and Global Citizenship"
+          target_4_A:
+            long_title: "Build and upgrade education facilities that are child, disability and gender sensitive and provide safe, nonviolent, inclusive and effective learning environments for all."
+            short_title: "Build and Upgrade Inclusive and Safe Schools"
+          target_4_B:
+            long_title: "By 2020, substantially expand globally the number of scholarships available to developing countries, in particular least developed countries, small island developing States and African countries, for enrolment in higher education, including vocational training and information and communications technology, technical, engineering and scientific programmes, in developed countries and other developing countries."
+            short_title: "Expand Higher Education Scholarships for Developing Countries"
+          target_4_C:
+            long_title: "By 2030, substantially increase the supply of qualified teachers, including through international cooperation for teacher training in developing countries, especially least developed countries and small island developing states."
+            short_title: "Increase the supply of qualified teachers In Developing Countries"
+      goal_5:
+        title: "Gender Equality"
+        title_in_two_lines: "Gender\nEquality"
+        description: "Achieve gender equality and empower all women and girls."
+        long_description: '<p>Gender equality is not only a fundamental human right, but a necessary foundation for a peaceful, prosperous and sustainable world.&nbsp;</p> <p>There has been <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/gender-equality-womens-rights-in-review-key-facts-and-figures-en.pdf?la=en&amp;vs=935">progress</a> over the last decades: More girls are going to school, fewer girls are forced into early marriage, more women are serving in parliament and positions of leadership, and laws are being reformed to advance gender equality.&nbsp;</p> <p>Despite these gains, many <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/gender-equality-womens-rights-in-review-key-facts-and-figures-en.pdf?la=en&amp;vs=935">challenges</a> remain: discriminatory laws and social norms remain pervasive, women continue to be underrepresented at all levels of political leadership, and 1 in 5 women and girls between the ages of 15 and 49 report experiencing physical or sexual violence by an intimate partner within a 12-month period.</p> <p>The effects of <a href="https://www.un.org/sites/un2.un.org/files/policy_brief_on_covid_impact_on_women_9_apr_2020_updated.pdf">the COVID-19 pandemic could reverse the limited progress</a> that has been made on gender equality and women’s rights.&nbsp; The coronavirus outbreak <a href="https://www.unfpa.org/sites/default/files/resource-pdf/COVID-19_A_Gender_Lens_Guidance_Note.pdf">exacerbates existing inequalities</a> for women and girls across every sphere – from health and the economy, to security and social protection.&nbsp;</p> <p>Women play a disproportionate role in responding to the virus, including as frontline healthcare workers and carers at home. Women’s unpaid care work has increased significantly as a result of school closures and the increased needs of older people. Women are also harder hit by the economic impacts of COVID-19, as they disproportionately work in insecure labour markets. Nearly 60 per cent of women work in the informal economy, which puts them at greater risk of falling into poverty.&nbsp;</p> <p>The pandemic has also led to a steep increase in <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/issue-brief-covid-19-and-ending-violence-against-women-and-girls-en.pdf?la=en&amp;vs=5006">violence against women and girls</a>. With lockdown measures in place, many women are trapped at home with their abusers, struggling to access services that are suffering from cuts and restrictions. Emerging data shows that, since the outbreak of the pandemic, violence against women and girls – and particularly domestic violence – has intensified.</p>'
+        targets:
+          target_5_1:
+            long_title: "End all forms of discrimination against all women and girls everywhere."
+            short_title: "End Discrimination Against Women and Girls"
+          target_5_2:
+            long_title: "Eliminate all forms of violence against all women and girls in the public and private spheres, including trafficking and sexual and other types of exploitation."
+            short_title: "End All Violence Against and Exploitation of Women and Girls"
+          target_5_3:
+            long_title: "Eliminate all harmful practices, such as child, early and forced marriage and female genital mutilation."
+            short_title: "Eliminate Forced Marriages and Genital Mutilation"
+          target_5_4:
+            long_title: "Recognize and value unpaid care and domestic work through the provision of public services, infrastructure and social protection policies and the promotion of shared responsibility within the household and the family as nationally appropriate."
+            short_title: "Value Unpaid Care and Promote Shared Domestic Responsibilities"
+          target_5_5:
+            long_title: "Ensure women’s full and effective participation and equal opportunities for leadership at all levels of decisionmaking in political, economic and public life."
+            short_title: "Ensure Full Participation in Leadership and Decision-Making"
+          target_5_6:
+            long_title: "Ensure universal access to sexual and reproductive health and reproductive rights as agreed in accordance with the Programme of Action of the International Conference on Population and Development and the Beijing Platform for Action and the outcome documents of their review conferences."
+            short_title: "Universal Access to Reproductive Health and Rights"
+          target_5_A:
+            long_title: "Undertake reforms to give women equal rights to economic resources, as well as access to ownership and control over land and other forms of property, financial services, inheritance and natural resources, in accordance with national laws."
+            short_title: "Equal Rights to Economic Resources, Property Ownership and Financial Services"
+          target_5_B:
+            long_title: "Enhance the use of enabling technology, in particular information and communications technology, to promote the empowerment of women."
+            short_title: "Promote Empowerment of Women through Technology"
+          target_5_C:
+            long_title: "Adopt and strengthen sound policies and enforceable legislation for the promotion of gender equality and the empowerment of all women and girls at all levels."
+            short_title: "Adopt and Strengthen Policies and Enforceable Legislation for Gender Equality"
+      goal_6:
+        title: "Clean Water and Sanitation"
+        title_in_two_lines: "Clean Water\nand Sanitation"
+        description: "Ensure access to water and sanitation for all."
+        long_description: '<p>While substantial progress has been made in increasing access to clean drinking water and sanitation, billions of people—mostly in rural areas—still lack these basic services. Worldwide, <a href="https://www.who.int/news-room/detail/18-06-2019-1-in-3-people-globally-do-not-have-access-to-safe-drinking-water-unicef-who">one in three people do not have access to safe drinking water</a>, <a href="https://www.unwater.org/water-facts/water-sanitation-and-hygiene/">two out of five people do not have a basic hand-washing facility</a> with soap and water, and more than <a href="https://news.un.org/en/story/2019/11/1051561">673 million people still practice open defecation</a>.</p> <p>The COVID-19 pandemic has demonstrated the critical importance of sanitation, hygiene and adequate access to clean water for preventing and containing diseases. <a href="https://www.unwater.org/water-facts/handhygiene/">Hand hygiene saves lives</a>. According to the World Health Organization, <a href="https://www.who.int/news-room/events/detail/2020/05/05/default-calendar/hand-hygiene-day">handwashing is one of the most effective actions you can take</a> to reduce the spread of pathogens and prevent infections, including the COVID-19 virus. Yet billions of people still lack safe water sanitation, and funding is inadequate.</p>'
+        targets:
+          target_6_1:
+            long_title: "By 2030, achieve universal and equitable access to safe and affordable drinking water for all."
+            short_title: "Safe and Affordable Drinking Water"
+          target_6_2:
+            long_title: "By 2030, achieve access to adequate and equitable sanitation and hygiene for all and end open defecation, paying special attention to the needs of women and girls and those in vulnerable situations."
+            short_title: "End Open Defecation and Provide Access to Sanitation and Hygiene"
+          target_6_3:
+            long_title: "By 2030, improve water quality by reducing pollution, eliminating dumping and minimizing release of hazardous chemicals and materials, halving the proportion of untreated wastewater and substantially increasing recycling and safe reuse globally."
+            short_title: "Improve Water Quality, Wastewater Treatment and Safe Reuse"
+          target_6_4:
+            long_title: "By 2030, substantially increase water-use efficiency across all sectors and ensure sustainable withdrawals and supply of freshwater to address water scarcity and substantially reduce the number of people suffering from water scarcity."
+            short_title: "Increase Water-Use Efficiency and Ensure Freshwater Supplies"
+          target_6_5:
+            long_title: "By 2030, implement integrated water resources management at all levels, including through transboundary cooperation as appropriate."
+            short_title: "Implement Integrated Water Resources Management"
+          target_6_6:
+            long_title: "By 2020, protect and restore water-related ecosystems, including mountains, forests, wetlands, rivers, aquifers and lakes."
+            short_title: "Protect and Restore Water-Related Ecosystems"
+          target_6_A:
+            long_title: "By 2030, expand international cooperation and capacity-building support to developing countries in water- and sanitation-related activities and programmes, including water harvesting, desalination, water efficiency, wastewater treatment, recycling and reuse technologies."
+            short_title: "Expand Water and Sanitation Support to Developing Countries"
+          target_6_B:
+            long_title: "Support and strengthen the participation of local communities in improving water and sanitation management."
+            short_title: "Support Local Engagement in Water and Sanitation Management"
+      goal_7:
+        title: "Affordable and Clean Energy"
+        title_in_two_lines: "Affordable and\nClean Energy"
+        description: "Ensure access to affordable, reliable, sustainable and modern energy."
+        long_description: '<p>The world is making <a href="https://unstats.un.org/sdgs/report/2019/goal-07/">progress towards Goal 7</a>, with encouraging signs that energy is becoming more sustainable and widely available. Access to electricity in poorer countries has begun to accelerate, energy efficiency continues to improve, and renewable energy is making impressive gains in the electricity sector.&nbsp;</p> <p>Nevertheless, more focused attention is needed to improve access to clean and safe cooking fuels and technologies for 3 billion people, to expand the use of renewable energy beyond the electricity sector, and to increase electrification in sub-Saharan Africa.</p> <p>The <a href="https://trackingsdg7.esmap.org/">Energy Progress Report</a> provides global dashboard to register progress on energy access, energy efficiency and renewable energy. It assesses the progress made by each country on these three pillars and provides a snapshot of how far we are from achieving the 2030 Sustainable Development Goals targets.</p>'
+        targets:
+          target_7_1:
+            long_title: "By 2030, ensure universal access to affordable, reliable and modern energy services."
+            short_title: "Universal Access to Modern Energy"
+          target_7_2:
+            long_title: "By 2030, increase substantially the share of renewable energy in the global energy mix."
+            short_title: "Increase Global Percentage of Renewable Energy"
+          target_7_3:
+            long_title: "By 2030, double the global rate of improvement in energy efficiency."
+            short_title: "Double the Improvement in Energy Efficiency"
+          target_7_A:
+            long_title: "By 2030, enhance international cooperation to facilitate access to clean energy research and technology, including renewable energy, energy efficiency and advanced and cleaner fossil-fuel technology, and promote investment in energy infrastructure and clean energy technology."
+            short_title: "Promote Access to Research, Technology and Investments in Clean Energy "
+          target_7_B:
+            long_title: "By 2030, expand infrastructure and upgrade technology for supplying modern and sustainable energy services for all in developing countries, in particular least developed countries, small island developing States, and land-locked developing countries, in accordance with their respective programmes of support."
+            short_title: "Expand and Upgrade Energy Services for Developing Countries"
+      goal_8:
+        title: "Decent Work and Economic Growth"
+        title_in_two_lines: "Decent Work and\nEconomic Growth"
+        description: "Promote inclusive and sustainable economic growth, employment and decent work for all."
+        long_description: '<p>Sustained and inclusive economic growth can drive progress, create decent jobs for all and improve living standards.&nbsp;</p> <p>COVID-19 has <a href="https://www.un.org/sites/un2.un.org/files/sg_report_socio-economic_impact_of_covid19.pdf">disrupted billions of lives</a> and endangered the global economy. The International Monetary Fund (IMF) expects a <a href="https://blogs.imf.org/2020/04/14/the-great-lockdown-worst-economic-downturn-since-the-great-depression/">global recession</a> as bad as or worse than in 2009. As job losses escalate, the International Labor Organization estimates that <a href="https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_743036/lang--en/index.htm">nearly half of the global workforce is at risk</a> of losing their livelihoods.</p> <p><a href="https://developmentfinance.un.org/press-release-financing-sustainable-development-report-2020">Even before the outbreak of COVID-19</a>, one in five countries – home to billions of people living in poverty – were likely to see per capita incomes stagnate or decline in 2020. Now, the<a href="https://developmentfinance.un.org/press-release-financing-sustainable-development-report-2020"> economic and financial shocks</a> associated with COVID-19—such as disruptions to industrial production, falling commodity prices, financial market volatility, and rising insecurity—are derailing the already tepid economic growth and compounding heightened risks from other factors.&nbsp;&nbsp;</p>'
+        targets:
+          target_8_1:
+            long_title: "Sustain per capita economic growth in accordance with national circumstances and, in particular, at least 7 per cent gross domestic product growth per annum in the least developed countries."
+            short_title: "Sustainable Economic Growth"
+          target_8_2:
+            long_title: "Achieve higher levels of economic productivity through diversification, technological upgrading and innovation, including through a focus on high-value added and labour-intensive sectors."
+            short_title: "Diversify, Innovate and Upgrade for Economic Productivity"
+          target_8_3:
+            long_title: "Promote development-oriented policies that support productive activities, decent job creation, entrepreneurship, creativity and innovation, and encourage the formalization and growth of micro-, small- and medium-sized enterprises, including through access to financial services."
+            short_title: "Promote Policies to Support Job Creation and Growing Enterprises"
+          target_8_4:
+            long_title: "Improve progressively, through 2030, global resource efficiency in consumption and production and endeavour to decouple economic growth from environmental degradation, in accordance with the 10-year framework of programmes on sustainable consumption and production, with developed countries taking the lead."
+            short_title: "Improve Resource Efficiency in Consumption and Production"
+          target_8_5:
+            long_title: "By 2030, achieve full and productive employment and decent work for all women and men, including for young people and persons with disabilities, and equal pay for work of equal value."
+            short_title: "Full Employment and Decent Work with Equal Pay"
+          target_8_6:
+            long_title: "By 2020, substantially reduce the proportion of youth not in employment, education or training."
+            short_title: "Promote Youth Employment, Education and Training"
+          target_8_7:
+            long_title: "Take immediate and effective measures to eradicate forced labour, end modern slavery and human trafficking and secure the prohibition and elimination of the worst forms of child labour, including recruitment and use of child soldiers, and by 2025 end child labour in all its forms."
+            short_title: "End Modern Slavery, Trafficking and Child Labour"
+          target_8_8:
+            long_title: "Protect labour rights and promote safe and secure working environments for all workers, including migrant workers, in particular women migrants, and those in precarious employment."
+            short_title: "Protect Labour Rights and Promote Safe Working Environments"
+          target_8_9:
+            long_title: "By 2030, devise and implement policies to promote sustainable tourism that creates jobs and promotes local culture and products"
+            short_title: "Promote Beneficial and Sustainable Tourism"
+          target_8_10:
+            long_title: "Strengthen the capacity of domestic financial institutions to encourage and expand access to banking, insurance and financial services for all."
+            short_title: "Universal Access to Banking, Insurance and Financial Services"
+          target_8_A:
+            long_title: "Increase Aid for Trade support for developing countries, in particular least developed countries, including through the Enhanced Integrated Framework for Trade-Related Technical Assistance to Least Developed Countries."
+            short_title: "Increase Aid for Trade Support"
+          target_8_B:
+            long_title: "By 2020, develop and operationalize a global strategy for youth employment and implement the Global Jobs Pact of the International Labour Organization."
+            short_title: "Develop a Global Youth Employment Strategy"
+      goal_9:
+        title: "Industry, Innovation and Infrastructure"
+        title_in_two_lines: "Industry, Innovation\nand Infrastructure"
+        description: "Build resilient infrastructure, promote sustainable industrialization and foster innovation."
+        long_description: '<p>Inclusive and sustainable industrialization, together with <a href="https://unstats.un.org/sdgs/report/2019/goal-09/">innovation and infrastructure</a>, can unleash dynamic and competitive economic forces that generate employment and income. They play a key role in introducing and promoting new technologies, facilitating international trade and enabling the efficient use of resources.&nbsp;</p> <p>However, the world still has a long way to go to fully tap this potential. Least developed countries, in particular, need to accelerate the development of their manufacturing sector if they are to meet the 2030 target, and scale up investment in scientific research and innovation.&nbsp;</p> <p>Global manufacturing growth has been steadily declining, even before the outbreak of the COVID-19 pandemic. The pandemic is <a href="https://unctad.org/en/pages/newsdetails.aspx?OriginalVersionID=2297">hitting manufacturing industries</a> hard and causing disruptions in global value chains and the supply of products.&nbsp;</p> <p>Innovation and technological progress are key to finding lasting solutions to both economic and environmental challenges, such as increased resource and energy-efficiency. Globally, <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">investment in research and development</a> (R&amp;D) as a proportion of GDP increased from 1.5 per cent in 2000 to 1.7 per cent in 2015 and remained almost unchanged in 2017, but was only less than 1 per cent&nbsp; in developing regions.</p> <p>In terms of communications infrastructure, more than half of the world’s population is now online and almost the entire world population lives in an area covered by a mobile network. It is estimated that in 2019, <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">96.5 per cent were covered by at least a 2G network</a>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p> <p>The coronavirus pandemic has revealed the urgent <a href="https://www.unescap.org/blog/covid-19-reveals-urgent-need-resilient-infrastructure">need for resilient infrastructure</a>. The Asian Development Bank notes that critical infrastructure in the region remains far from adequate in many countries, despite the rapid economic growth and development the region has experienced over the past decade. The <a href="https://www.unescap.org/publications/economic-and-social-survey-asia-and-pacific-2019-ambitions-beyond-growth">Economic and Social Survey of Asia and the Pacific</a> highlights that making infrastructure resilient to disasters and climate change will require an additional investment of $434 billion per year. This sum may need to be even greater in some subregions, such as the Pacific small island developing states.&nbsp; &nbsp; &nbsp; </p>'
+        targets:
+          target_9_1:
+            long_title: "Develop quality, reliable, sustainable and resilient infrastructure, including regional and transborder infrastructure, to support economic development and human well-being, with a focus on affordable and equitable access for all."
+            short_title: "Develop Sustainable, Resilient and Inclusive Infrastructures"
+          target_9_2:
+            long_title: "Promote inclusive and sustainable industrialization and, by 2030, significantly raise industry’s share of employment and gross domestic product, in line with national circumstances, and double its share in least developed countries."
+            short_title: "Promote Inclusive and Sustainable Industrialization"
+          target_9_3:
+            long_title: "Increase the access of small-scale industrial and other enterprises, in particular in developing countries, to financial services, including affordable credit, and their integration into value chains and markets."
+            short_title: "Increase Access to Financial Services and Markets"
+          target_9_4:
+            long_title: "By 2030, upgrade infrastructure and retrofit industries to make them sustainable, with increased resource-use efficiency and greater adoption of clean and environmentally sound technologies and industrial processes, with all countries taking action in accordance with their respective capabilities."
+            short_title: "Upgrade All Industries and Infrastructures for Sustainability"
+          target_9_5:
+            long_title: "Enhance scientific research, upgrade the technological capabilities of industrial sectors in all countries, in particular developing countries, including, by 2030, encouraging innovation and substantially increasing the number of research and development workers per 1 million people and public and private research and development spending."
+            short_title: "Enhance Research and Upgrade Industrial Technologies "
+          target_9_A:
+            long_title: "Facilitate sustainable and resilient infrastructure development in developing countries through enhanced financial, technological and technical support to African countries, least developed countries, landlocked developing countries and small island developing States 18."
+            short_title: "Facilitate Sustainable Infrastructure Development for Developing Countries"
+          target_9_B:
+            long_title: "Support domestic technology development, research and innovation in developing countries, including by ensuring a conducive policy environment for, inter alia, industrial diversification and value addition to commodities."
+            short_title: "Support Domestic Technology Development and Industrial Diversification"
+          target_9_C:
+            long_title: "Significantly increase access to information and communications technology and strive to provide universal and affordable access to the Internet in least developed countries by 2020."
+            short_title: "Universal Access to Information and Communications Technology"
+      goal_10:
+        title: "Reduced Inequalities"
+        title_in_two_lines: "Reduced\nInequalities"
+        description: "Reduce inequality within and among countries."
+        long_description: '<p>Reducing inequalities and ensuring no one is left behind are integral to achieving the Sustainable Development Goals.&nbsp;</p> <p>Inequality within and among countries is a persistent cause for concern. Despite some positive signs toward reducing inequality in some dimensions, such as reducing relative income inequality in some countries and preferential trade status benefiting lower-income countries, <a href="https://unstats.un.org/sdgs/report/2019/goal-10/">inequality still persists</a>.</p> <p><a href="https://www.un.org/sustainabledevelopment/goal-of-the-month-may-2020">COVID-19 has deepened existing inequalities</a>, hitting the poorest and most vulnerable communities the hardest. It has put a spotlight on economic inequalities and fragile social safety nets that leave vulnerable communities to bear the brunt of the crisis.&nbsp; At the same time, social, political and economic inequalities have amplified the impacts of the pandemic.</p> <p>On the economic front, the COVID-19 pandemic has significantly increased global <a href="https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_743036/lang--en/index.htm">unemployment</a> and dramatically slashed workers’ incomes.</p> <p>COVID-19 also puts at risk the limited progress that has been made on <a href="https://data.unwomen.org/resources/covid-19-emerging-gender-data-and-why-it-matters">gender equality</a> and women’s rights over the past decades. Across every sphere, from health to the economy, security to social protection, the impacts of COVID-19 are exacerbated for women and girls simply by virtue of their sex.</p> <p>Inequalities are also deepening for <a href="https://www.un.org/sites/un2.un.org/files/un_policy_brief_on_human_rights_and_covid_23_april_2020.pdf">vulnerable populations</a> in countries with weaker health systems and those facing existing humanitarian crises. Refugees and migrants, as well as indigenous peoples, older persons, people with disabilities and children are particularly at risk of being left behind. And <a href="https://www.un.org/en/coronavirus/covid-19-un-counters-pandemic-related-hate-and-xenophobia">hate speech</a> targeting vulnerable groups is rising.</p>'
+        targets:
+          target_10_1:
+            long_title: "By 2030, progressively achieve and sustain income growth of the bottom 40 per cent of the population at a rate higher than the national average."
+            short_title: "Reduce Income Inequalities"
+          target_10_2:
+            long_title: "By 2030, empower and promote the social, economic and political inclusion of all, irrespective of age, sex, disability, race, ethnicity, origin, religion or economic or other status."
+            short_title: "Promote Universal Social, Economic and Political Inclusion"
+          target_10_3:
+            long_title: "Ensure equal opportunity and reduce inequalities of outcome, including by eliminating discriminatory laws, policies and practices and promoting appropriate legislation, policies and action in this regard."
+            short_title: "Ensure Equal Opportunities and End Discrimination"
+          target_10_4:
+            long_title: "Adopt policies, especially fiscal, wage and social protection policies, and progressively achieve greater equality."
+            short_title: "Adopt Fiscal and Social Policies that Promote Equality"
+          target_10_5:
+            long_title: "Improve the regulation and monitoring of global financial markets and institutions and strengthen the implementation of such regulations."
+            short_title: "Improved Regulation of Global Financial Markets and Institutions"
+          target_10_6:
+            long_title: "Ensure enhanced representation and voice for developing countries in decision-making in global international economic and financial institutions in order to deliver more effective, credible, accountable and legitimate institutions."
+            short_title: "Enhanced Representation for Developing Countries in Financial Institutions"
+          target_10_7:
+            long_title: "Facilitate orderly, safe, regular and responsible migration and mobility of people, including through the implementation of planned and well-managed migration policies."
+            short_title: "Responsible and Well-Managed Migration Policies"
+          target_10_A:
+            long_title: "Implement the principle of special and differential treatment for developing countries, in particular least developed countries, in accordance with World Trade Organization agreements."
+            short_title: "Special and Differential Treatment for Developing Countries"
+          target_10_B:
+            long_title: "Encourage official development assistance and financial flows, including foreign direct investment, to States where the need is greatest, in particular least developed countries, African countries, small island developing States and landlocked developing countries, in accordance with their national plans and programmes."
+            short_title: "Encourage Development Assistance and Investment in Least Developed Countries"
+          target_10_C:
+            long_title: "By 2030, reduce to less than 3 per cent the transaction costs of migrant remittances and eliminate remittance corridors with costs higher than 5 per cent."
+            short_title: "Reduce Transaction Costs for Migrant Remittances"
+      goal_11:
+        title: "Sustainable Cities and Communities"
+        title_in_two_lines: "Sustainable Cities\nand Communities"
+        description: "Make cities inclusive, safe, resilient and sustainable."
+        long_description: '<p>The world is becoming increasingly urbanized. Since 2007, <a href="https://unstats.un.org/sdgs/report/2019/goal-11/">more than half the world’s population has been living in cities</a>, and that share is projected to rise to 60 per cent by 2030.&nbsp;</p> <p>Cities and metropolitan areas are powerhouses of economic growth—contributing about 60 per cent of global GDP. However, they also account for about 70 per cent of global carbon emissions and over 60 per cent of resource use.&nbsp;</p> <p>Rapid urbanization is resulting in a growing number of slum dwellers, inadequate and overburdened infrastructure and services (such as waste collection and water and sanitation systems, roads and transport), worsening air pollution and unplanned urban sprawl.&nbsp;</p> <p><a href="https://unhabitat.org/coronavirus-will-travel-incredibly-fast-in-africas-slums-un-habitat-chief-warns">The impact of COVID-19</a> will be most devastating in poor and densely populated urban areas, especially for the one billion people living in informal settlements and slums worldwide, where overcrowding also makes it difficult to follow recommended measures such as social distancing and self-isolation.&nbsp;</p> <p>The UN food agency, FAO, warned that hunger and fatalities could rise significantly in urban areas, without measures to ensure that poor and vulnerable residents have <a href="https://news.un.org/en/story/2020/05/1063622">access to food</a>.&nbsp;</p>'
+        targets:
+          target_11_1:
+            long_title: "By 2030, ensure access for all to adequate, safe and affordable housing and basic services and upgrade slums."
+            short_title: "Safe and Affordable Housing"
+          target_11_2:
+            long_title: "By 2030, provide access to safe, affordable, accessible and sustainable transport systems for all, improving road safety, notably by expanding public transport, with special attention to the needs of those in vulnerable situations, women, children, persons with disabilities and older persons."
+            short_title: "Affordable and Sustainable Transport Systems"
+          target_11_3:
+            long_title: "By 2030, enhance inclusive and sustainable urbanization and capacity for participatory, integrated and sustainable human settlement planning and management in all countries."
+            short_title: "Inclusive and Sustainable Urbanization"
+          target_11_4:
+            long_title: "Strengthen efforts to protect and safeguard the world’s cultural and natural heritage."
+            short_title: "Protect the World’s Cultural and Natural Heritage"
+          target_11_5:
+            long_title: "By 2030, significantly reduce the number of deaths and the number of people affected and substantially decrease the direct economic losses relative to global gross domestic product caused by disasters, including water-related disasters, with a focus on protecting the poor and people in vulnerable situations."
+            short_title: "Reduce the Adverse Effects of Natural Disasters"
+          target_11_6:
+            long_title: "By 2030, reduce the adverse per capita environmental impact of cities, including by paying special attention to air quality and municipal and other waste management."
+            short_title: "Reduce the Environmental Impact of Cities"
+          target_11_7:
+            long_title: "By 2030, provide universal access to safe, inclusive and accessible, green and public spaces, in particular for women and children, older persons and persons with disabilities."
+            short_title: "Provide Access to Safe and Inclusive Green and Public Spaces"
+          target_11_A:
+            long_title: "Support positive economic, social and environmental links between urban, peri-urban and rural areas by strengthening national and regional development planning."
+            short_title: "Strong National and Regional Development Planning"
+          target_11_B:
+            long_title: "By 2020, substantially increase the number of cities and human settlements adopting and implementing integrated policies and plans towards inclusion, resource efficiency, mitigation and adaptation to climate change, resilience to disasters, and develop and implement, in line with the Sendai Framework for Disaster Risk Reduction 2015-2030, holistic disaster risk management at all levels."
+            short_title: "Implement Policies for Inclusion, Resource Efficiency and Disaster Risk Reduction"
+          target_11_C:
+            long_title: "Support least developed countries, including through financial and technical assistance, in building sustainable and resilient buildings utilizing local materials."
+            short_title: "Support Least Developed Countries in Sustainable and Resilient Building"
+      goal_12:
+        title: "Responsible Consumption and Production"
+        title_in_two_lines: "Responsible Consumption\nand Production"
+        description: "Ensure sustainable consumption and production patterns."
+        long_description: '<p>Worldwide consumption and production — a driving force of the global economy — rest on the use of the natural environment and resources in a way that continues to have destructive impacts on the planet.&nbsp;</p> <p>Economic and social progress over the last century has been accompanied by environmental degradation that is endangering the very systems on which our future development — indeed, our very survival — depends.&nbsp;</p> <p>A few <a href="https://www.unenvironment.org/explore-topics/sustainable-development-goals/why-do-sustainable-development-goals-matter/goal-12">facts and figures</a>:</p> <ul> <li style="font-weight: 400">Each year, an estimated one third of all food produced – equivalent to 1.3 billion tonnes worth around $1 trillion – ends up rotting in the bins of consumers and retailers, or spoiling due to poor transportation and harvesting practices.</li> <li style="font-weight: 400">If people worldwide switched to energy efficient light bulbs the world would save US$120 billion annually.</li> <li style="font-weight: 400">Should the global population reach 9.6 billion by 2050, the equivalent of almost three planets could be required to provide the natural resources needed to sustain current lifestyles.</li> </ul> <p>The COVID-19 pandemic offers countries an opportunity to build recovery plans that will reverse current trends and change our consumption and production patterns towards a more sustainable future.</p> <p><a href="https://www.unenvironment.org/explore-topics/resource-efficiency/what-we-do/sustainable-consumption-and-production-policies">Sustainable consumption and production</a> is about doing more and better with less. It is also about decoupling economic growth from environmental degradation, increasing resource efficiency and promoting sustainable lifestyles.</p> <p>Sustainable consumption and production can also contribute substantially to poverty alleviation and the transition towards low-carbon and green economies.</p>'
+        targets:
+          target_12_1:
+            long_title: "Implement the 10-year framework of programmes on sustainable consumption and production, all countries taking action, with developed countries taking the lead, taking into account the development and capabilities of developing countries."
+            short_title: "Implement the 10-Year Sustainable Consumption and Production Framework"
+          target_12_2:
+            long_title: "By 2030, achieve the sustainable management and efficient use of natural resources."
+            short_title: "Sustainable Management and Use of Natural Resources"
+          target_12_3:
+            long_title: "By 2030, halve per capita global food waste at the retail and consumer levels and reduce food losses along production and supply chains, including post-harvest losses."
+            short_title: "Halve Global Per Capita Food Waste"
+          target_12_4:
+            long_title: "By 2020, achieve the environmentally sound management of chemicals and all wastes throughout their life cycle, in accordance with agreed international frameworks, and significantly reduce their release to air, water and soil in order to minimize their adverse impacts on human health and the environment."
+            short_title: "Responsible Management of Chemicals and Waste"
+          target_12_5:
+            long_title: "By 2030, substantially reduce waste generation through prevention, reduction, recycling and reuse."
+            short_title: "Substantially Reduce Waste Generation"
+          target_12_6:
+            long_title: "Encourage companies, especially large and transnational companies, to adopt sustainable practices and to integrate sustainability information into their reporting cycle."
+            short_title: "Encourage Companies to Adopt Sustainable Practices and Sustainability Reporting"
+          target_12_7:
+            long_title: "Promote public procurement practices that are sustainable, in accordance with national policies and priorities."
+            short_title: "Promote Sustainable Public Procurement Practices "
+          target_12_8:
+            long_title: "By 2030, ensure that people everywhere have the relevant information and awareness for sustainable development and lifestyles in harmony with nature."
+            short_title: "Promote Universal Understanding of Sustainable Lifestyles"
+          target_12_A:
+            long_title: "Support developing countries to strengthen their scientific and technological capacity to move towards more sustainable patterns of consumption and production."
+            short_title: "Support Developing Countries' Scientific and Technological Capacity for Sustainable Consumption and Production"
+          target_12_B:
+            long_title: "Develop and implement tools to monitor sustainable development impacts for sustainable tourism that creates jobs and promotes local culture and products."
+            short_title: "Develop and Implement Tools to Monitor Sustainable Tourism"
+          target_12_C:
+            long_title: "Rationalize inefficient fossil-fuel subsidies that encourage wasteful consumption by removing market distortions, in accordance with national circumstances, including by restructuring taxation and phasing out those harmful subsidies, where they exist, to reflect their environmental impacts, taking fully into account the specific needs and conditions of developing countries and minimizing the possible adverse impacts on their development in a manner that protects the poor and the affected communities."
+            short_title: "Remove Market Distortions that Encourage Wasteful Consumption"
+      goal_13:
+        title: "Climate Action"
+        title_in_two_lines: "Climate\nAction"
+        description: "Take urgent action to combat climate change and its impacts."
+        long_description: '<p>2019 was the <a href="https://news.un.org/en/story/2020/03/1059061">second warmest year on record</a> and the end of the warmest decade (2010- 2019) ever recorded.&nbsp;&nbsp;</p> <p>Carbon dioxide (CO2) levels and other <a href="https://news.un.org/en/story/2020/04/1062332">greenhouse gases in the atmosphere</a> rose to new records in 2019.&nbsp;</p> <p>Climate change is affecting every country on every continent. It is disrupting national economies and affecting lives. Weather patterns are changing, sea levels are rising, and weather events are becoming more extreme.</p> <p>Although greenhouse gas emissions are projected to drop about 6 per cent in 2020 due to travel bans and economic slowdowns resulting from the COVID-19 pandemic, this improvement is only temporary. <a href="https://news.un.org/en/story/2020/04/1062332">Climate change is not on pause</a>. Once the global economy begins to recover from the pandemic, emissions are expected to return to higher levels.</p> <p>Saving lives and livelihoods requires urgent action to address both the pandemic and the climate emergency.</p> <p>The <a href="https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement">Paris Agreement</a>, adopted in 2015, aims to strengthen the global response to the threat of climate change by keeping a global temperature rise this century well below 2 degrees Celsius above pre-industrial levels. The agreement also aims to strengthen the ability of countries to deal with the impacts of climate change, through appropriate financial flows, a new technology framework and an enhanced capacity building framework.</p>'
+        targets:
+          target_13_1:
+            long_title: "Strengthen resilience and adaptive capacity to climate-related hazards and natural disasters in all countries."
+            short_title: "Strengthen resilience and Adaptive Capacity to Climate Related Disasters"
+          target_13_2:
+            long_title: "Integrate climate change measures into national policies, strategies and planning."
+            short_title: "Integrate Climate Change Measures into Policies and Planning"
+          target_13_3:
+            long_title: "Improve education, awareness-raising and human and institutional capacity on climate change mitigation, adaptation, impact reduction and early warning."
+            short_title: "Build Knowledge and Capacity to Meet Climate Change"
+          target_13_A:
+            long_title: "Implement the commitment undertaken by developed-country parties to the United Nations Framework Convention on Climate Change to a goal of mobilizing jointly $100 billion annually by 2020 from all sources to address the needs of developing countries in the context of meaningful mitigation actions and transparency on implementation and fully operationalize the Green Climate Fund through its capitalization as soon as possible."
+            short_title: "Implement the UN Framework Convention on Climate Change"
+          target_13_B:
+            long_title: "Promote mechanisms for raising capacity for effective climate change-related planning and management in least developed countries and small island developing States, including focusing on women, youth and local and marginalized communities."
+            short_title: "Promote Mechanisms to Raise Capacity for Planning and Management"
+      goal_14:
+        title: "Life Below Water"
+        title_in_two_lines: "Life Below\nWater"
+        description: "Conserve and sustainably use the oceans, seas and marine resources."
+        long_description: '<p>The ocean drives global systems that make the Earth habitable for humankind. Our rainwater, drinking water, weather, climate, coastlines, much of our food, and even the oxygen in the air we breathe, are all ultimately provided and regulated by the sea.&nbsp;</p> <p>Careful management of this <a href="https://www.unenvironment.org/explore-topics/oceans-seas/why-do-oceans-and-seas-matter">essential global resource</a> is a key feature of a sustainable future. However, at the current time, there is a continuous deterioration of coastal waters owing to pollution, and ocean acidification is having an adversarial effect on the functioning of ecosystems and biodiversity. This is also negatively impacting small scale fisheries.&nbsp;</p> <p>Saving our ocean must remain a priority. Marine biodiversity is critical to the health of people and our planet. Marine protected areas need to be effectively managed and well-resourced and regulations need to be put in place to reduce overfishing, marine pollution and ocean acidification.</p>'
+        targets:
+          target_14_1:
+            long_title: "By 2025, prevent and significantly reduce marine pollution of all kinds, in particular from land-based activities, including marine debris and nutrient pollution."
+            short_title: "Reduce Marine Pollution"
+          target_14_2:
+            long_title: "By 2020, sustainably manage and protect marine and coastal ecosystems to avoid significant adverse impacts, including by strengthening their resilience, and take action for their restoration in order to achieve healthy and productive oceans."
+            short_title: "Protect and Restore Ecosystems"
+          target_14_3:
+            long_title: "Minimize and address the impacts of ocean acidification, including through enhanced scientific cooperation at all levels."
+            short_title: "Reduce Ocean Acidification"
+          target_14_4:
+            long_title: "By 2020, effectively regulate harvesting and end overfishing, illegal, unreported and unregulated fishing and destructive fishing practices and implement science-based management plans, in order to restore fish stocks in the shortest time feasible, at least to levels that can produce maximum sustainable yield as determined by their biological characteristics."
+            short_title: "Sustainable Fishing"
+          target_14_5:
+            long_title: "By 2020, conserve at least 10 per cent of coastal and marine areas, consistent with national and international law and based on the best available scientific information."
+            short_title: "Conserve Coastal and Marine Areas"
+          target_14_6:
+            long_title: "By 2020, prohibit certain forms of fisheries subsidies which contribute to overcapacity and overfishing, eliminate subsidies that contribute to illegal, unreported and unregulated fishing and refrain from introducing new such subsidies, recognizing that appropriate and effective special and differential treatment for developing and least developed countries should be an integral part of the World Trade Organization fisheries subsidies negotiation."
+            short_title: "End Subsidies Contributing to Overfishing"
+          target_14_7:
+            long_title: "By 2030, increase the economic benefits to Small Island developing States and least developed countries from the sustainable use of marine resources, including through sustainable management of fisheries, aquaculture and tourism."
+            short_title: "Increase the Economic Benefits from Sustainable Use of Marine Resources"
+          target_14_A:
+            long_title: "Increase scientific knowledge, develop research capacity and transfer marine technology, taking into account the Intergovernmental Oceanographic Commission Criteria and Guidelines on the Transfer of Marine Technology, in order to improve ocean health and to enhance the contribution of marine biodiversity to the development of developing countries, in particular small island developing States and least developed countries."
+            short_title: "Increase Scientific Knowledge, Research and Technology for Ocean Health"
+          target_14_B:
+            long_title: "Provide access for small-scale artisanal fishers to marine resources and markets."
+            short_title: "Support Small Scale Fishers"
+          target_14_C:
+            long_title: "Enhance the conservation and sustainable use of oceans and their resources by implementing international law as reflected in UNCLOS, which provides the legal framework for the conservation and sustainable use of oceans and their resources, as recalled in paragraph 158 of The Future We Want."
+            short_title: "Implement and Enforce International Sea Law"
+      goal_15:
+        title: "Life on Land"
+        title_in_two_lines: "Life on\nLand"
+        description: "Sustainably manage forests, combat desertification, halt and reverse land degradation, halt biodiversity loss."
+        long_description: '<p>Nature is critical to our survival: nature provides us with our oxygen, regulates our weather patterns, pollinates our crops, produces our food, feed and fibre. But it is under increasing stress. <a href="https://news.un.org/en/story/2020/04/1061082">Human activity has altered almost 75 per cent of the earth’s surface</a>, squeezing wildlife and nature into an ever-smaller corner of the planet.</p> <p>Around <a href="https://ipbes.net/sites/default/files/2020-02/ipbes_global_assessment_report_summary_for_policymakers_en.pdf">1 million animal and plant species are threatened with extinction</a> – many within decades – according to the 2019 Global Assessment Report on Biodiversity and Ecosystem Service. The report called for transformative changes to restore and protect nature. It found that the health of ecosystems on which we and all other species depend is deteriorating more rapidly than ever, affecting&nbsp; the very foundations of our economies, livelihoods, food security, health and quality of life worldwide.&nbsp;</p> <p>Deforestation and desertification – caused by human activities and climate change – pose major challenges to sustainable development and have affected the lives and livelihoods of millions of people. <a href="https://news.un.org/en/story/2019/05/1038291">Forests are vitally important </a>for sustaining life on Earth, and play a major role in the fight against climate change. And investing in <a href="https://news.un.org/en/story/2019/09/1045802">land restoration</a> is critical for improving livelihoods, reducing vulnerabilities, and reducing risks for the economy.</p> <p>The health of our planet also plays an important role in <a href="https://www.unenvironment.org/resources/emerging-zoonotic-diseases-and-links-ecosystem-health-unep-frontiers-2016-chapter">the emergence of zoonotic diseases</a>, i.e. diseases that are transmissible between animals and humans. As we continue to encroach on fragile ecosystems, we bring humans into ever-greater contact with wildlife, enabling pathogens in wildlife to spill over to livestock and humans, increasing the risk of disease emergence and amplification.</p>'
+        targets:
+          target_15_1:
+            long_title: "By 2020, ensure the conservation, restoration and sustainable use of terrestrial and inland freshwater ecosystems and their services, in particular forests, wetlands, mountains and drylands, in line with obligations under international agreements."
+            short_title: "Conserve and Restore Terrestrial and Freshwater Ecosystems"
+          target_15_2:
+            long_title: "By 2020, promote the implementation of sustainable management of all types of forests, halt deforestation, restore degraded forests and substantially increase afforestation and reforestation globally."
+            short_title: "End Deforestation and Restore Degraded Forests"
+          target_15_3:
+            long_title: "By 2030, combat desertification, restore degraded land and soil, including land affected by desertification, drought and floods, and strive to achieve a land degradation-neutral world."
+            short_title: "End Desertification and Restore Degraded Land"
+          target_15_4:
+            long_title: "By 2030, ensure the conservation of mountain ecosystems, including their biodiversity, in order to enhance their capacity to provide benefits that are essential for sustainable development."
+            short_title: "Ensure Conservation of Mountain Ecosystems"
+          target_15_5:
+            long_title: "Take urgent and significant action to reduce the degradation of natural habitats, halt the loss of biodiversity and, by 2020, protect and prevent the extinction of threatened species."
+            short_title: "Protect Biodiversity and Natural Habitats"
+          target_15_6:
+            long_title: "Promote fair and equitable sharing of the benefits arising from the utilization of genetic resources and promote appropriate access to such resources, as internationally agreed."
+            short_title: "Promote Access to Genetic Resources and Fair Sharing of the Benefits"
+          target_15_7:
+            long_title: "Take urgent action to end poaching and trafficking of protected species of flora and fauna and address both demand and supply of illegal wildlife products."
+            short_title: "Eliminate Poaching and Trafficking of Protected Species"
+          target_15_8:
+            long_title: "By 2020, introduce measures to prevent the introduction and significantly reduce the impact of invasive alien species on land and water ecosystems and control or eradicate the priority species."
+            short_title: "Prevent Invasive Alien Species on Land and in Water Ecosystems"
+          target_15_9:
+            long_title: "By 2020, integrate ecosystem and biodiversity values into national and local planning, development processes, poverty reduction strategies and accounts."
+            short_title: "Integrate Ecosystem and Biodiversity in Governmental Planning"
+          target_15_A:
+            long_title: "Mobilize and significantly increase financial resources from all sources to conserve and sustainably use biodiversity and ecosystems."
+            short_title: "Increase Financial Resources to Conserve and Sustainably Use Ecosystem and Biodiversity"
+          target_15_B:
+            long_title: "Mobilize significant resources from all sources and at all levels to finance sustainable forest management and provide adequate incentives to developing countries to advance such management, including for conservation and reforestation."
+            short_title: "Finance and Incentivize Sustainable Forest Management"
+          target_15_C:
+            long_title: "Enhance global support for efforts to combat poaching and trafficking of protected species, including by increasing the capacity of local communities to pursue sustainable livelihood opportunities."
+            short_title: "Combat Global Poaching and Trafficking"
+      goal_16:
+        title: "Peace, Justice and Strong Institutions"
+        title_in_two_lines: "Peace, Justice and\nStrong Institutions"
+        description: "Promote just, peaceful and inclusive societies."
+        long_description: '<p>Conflict, insecurity, weak institutions and limited access to justice remain a great threat to sustainable development.&nbsp;</p> <p>The number of <a href="https://www.unhcr.org/en-us/news/press/2019/6/5d03b22b4/worldwide-displacement-tops-70-million-un-refugee-chief-urges-greater-solidarity.html">people fleeing war, persecution and conflict exceeded 70 million</a> in 2018, the highest level recorded by the UN refugee agency (UNHCR) in almost 70 years.&nbsp;</p> <p>In 2019, the United Nations tracked <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">357 killings and 30 enforced disappearances</a> of human rights defenders, journalists and trade unionists in 47 countries.</p> <p>And the births of around <a href="https://data.unicef.org/topic/child-protection/birth-registration/">one in four children</a> under age 5 worldwide are never officially recorded, depriving them of a proof of legal identity crucial for the protection of their rights and for access to justice and social services.</p>'
+        targets:
+          target_16_1:
+            long_title: "Significantly reduce all forms of violence and related death rates everywhere."
+            short_title: "Reduce Violence Everywhere"
+          target_16_2:
+            long_title: "End abuse, exploitation, trafficking and all forms of violence against and torture of children."
+            short_title: "Protect Children from Abuse, Exploitation, Trafficking and Violence"
+          target_16_3:
+            long_title: "Promote the rule of law at the national and international levels and ensure equal access to justice for all."
+            short_title: "Promote the Rule of Law And Ensure Equal Access to Justice"
+          target_16_4:
+            long_title: "By 2030, significantly reduce illicit financial and arms flows, strengthen the recovery and return of stolen assets and combat all forms of organized crime."
+            short_title: "Combat Organized Crime and Illicit Financial and Arms Flows"
+          target_16_5:
+            long_title: "Substantially reduce corruption and bribery in all their forms."
+            short_title: "Substantially Reduce Corruption and Bribery"
+          target_16_6:
+            long_title: "Develop effective, accountable and transparent institutions at all levels."
+            short_title: "Develop Effective, Accountable and Transparent Institutions"
+          target_16_7:
+            long_title: "Ensure responsive, inclusive, participatory and representative decision-making at all levels."
+            short_title: "Ensure Responsive, Inclusive and Representative Decision-Making"
+          target_16_8:
+            long_title: "Broaden and strengthen the participation of developing countries in the institutions of global governance."
+            short_title: "Strengthen the Participation in Global Governance"
+          target_16_9:
+            long_title: "By 2030, provide legal identity for all, including birth registration."
+            short_title: "Provide Universal Legal Identity"
+          target_16_10:
+            long_title: "Ensure public access to information and protect fundamental freedoms, in accordance with national legislation and international agreements."
+            short_title: "Ensure Public Access to Information and Protect Fundamental Freedoms"
+          target_16_A:
+            long_title: "Strengthen relevant national institutions, including through international cooperation, for building capacity at all levels, in particular in developing countries, to prevent violence and combat terrorism and crime."
+            short_title: "Strengthen National Institutions to Prevent Violence and Combat Terrorism and Crime"
+          target_16_B:
+            long_title: "Promote and enforce non-discriminatory laws and policies for sustainable development."
+            short_title: "Promote and Enforce Non-Discriminatory Laws and Policies"
+      goal_17:
+        title: "Partnerships For the Goals"
+        title_in_two_lines: "Partnerships\nFor the Goals"
+        description: "Revitalize the global partnership for Sustainable Development."
+        long_description: '<p>The SDGs can only be realized with strong global partnerships and cooperation.</p> <p>A successful development agenda requires inclusive partnerships — at the global, regional, national and local levels — built upon principles and values, and upon a shared vision and shared goals placing people and the planet at the centre.</p> <p>Many countries require Official Development Assistance to encourage growth and trade. Yet, <a href="https://www.un.org/press/en/2019/ga12191.doc.htm">aid levels are falling</a> and donor countries have not lived up to their pledge to ramp up development finance.</p> <p>Due to the COVID-19 pandemic, the <a href="https://www.imf.org/en/Publications/WEO/Issues/2020/04/14/weo-april-2020">global economy</a> is projected to contract sharply, by 3 per cent, in 2020, experiencing its worst recession since the Great Depression.</p> <p>Strong international cooperation is needed now more than ever to ensure that countries have the means to recover from the pandemic, build back better and achieve the Sustainable Development Goals.</p>'
+        targets:
+          target_17_1:
+            long_title: "Strengthen domestic resource mobilization, including through international support to developing countries, to improve domestic capacity for tax and other revenue collection."
+            short_title: "Mobilize Resources to Improve Domestic Revenue Collection "
+          target_17_2:
+            long_title: "Developed countries to implement fully their official development assistance commitments, including the commitment by many developed countries to achieve the target of 0.7 per cent of ODA/GNI to developing countries and 0.15 to 0.20 per cent of ODA/GNI to least developed countries ODA providers are encouraged to consider setting a target to provide at least 0.20 per cent of ODA/GNI to least developed countries."
+            short_title: "Implement All Development Assistance Commitments"
+          target_17_3:
+            long_title: "Mobilize additional financial resources for developing countries from multiple sources."
+            short_title: "Mobilize Financial Resources for Developing Countries"
+          target_17_4:
+            long_title: "Assist developing countries in attaining long-term debt sustainability through coordinated policies aimed at fostering debt financing, debt relief and debt restructuring, as appropriate, and address the external debt of highly indebted poor countries to reduce debt distress."
+            short_title: "Assist Developing Countries in Attaining Debt Sustainability"
+          target_17_5:
+            long_title: "Adopt and implement investment promotion regimes for least developed countries."
+            short_title: "Invest in Least Developed Countries"
+          target_17_6:
+            long_title: "Enhance North-South, South-South and triangular regional and international cooperation on and access to science, technology and innovation and enhance knowledge sharing on mutually agreed terms, including through improved coordination among existing mechanisms, in particular at the United Nations level, and through a global technology facilitation mechanism."
+            short_title: "Knowledge Sharing and Cooperation for Access to Science, Technology and Innovation"
+          target_17_7:
+            long_title: "Promote the development, transfer, dissemination and diffusion of environmentally sound technologies to developing countries on favourable terms, including on concessional and preferential terms, as mutually agreed."
+            short_title: "Promote Sustainable Technologies to Developing Countries"
+          target_17_8:
+            long_title: "Fully operationalize the technology bank and science, technology and innovation capacity-building mechanism for least developed countries by 2017 and enhance the use of enabling technology, in particular information and communications technology."
+            short_title: "Strengthen the Science, Technology and Innovation Capacity for Least Developed Countries"
+          target_17_9:
+            long_title: "Enhance international support for implementing effective and targeted capacity-building in developing countries to support national plans to implement all the sustainable development goals, including through North-South, South-South and triangular cooperation."
+            short_title: "Enhance SDG Capacity in Developing Countries "
+          target_17_10:
+            long_title: "Promote a universal, rules-based, open, non-discriminatory and equitable multilateral trading system under the World Trade Organization, including through the conclusion of negotiations under its Doha Development Agenda."
+            short_title: "Promote a Universal Trading System under the WTO"
+          target_17_11:
+            long_title: "Significantly increase the exports of developing countries, in particular with a view to doubling the least developed countries’ share of global exports by 2020."
+            short_title: "Increase the Exports of Developing Countries"
+          target_17_12:
+            long_title: "Realize timely implementation of duty-free and quota-free market access on a lasting basis for all least developed countries, consistent with World Trade Organization decisions, including by ensuring that preferential rules of origin applicable to imports from least developed countries are transparent and simple, and contribute to facilitating market access."
+            short_title: "Remove Trade Barriers for Least Developed Countries"
+          target_17_13:
+            long_title: "Enhance global macroeconomic stability, including through policy coordination and policy coherence."
+            short_title: "Enhance Global Macroeconomic Stability"
+          target_17_14:
+            long_title: "Enhance policy coherence for sustainable development."
+            short_title: "Enhance Policy Coherence for Sustainable Development"
+          target_17_15:
+            long_title: "Respect each country’s policy space and leadership to establish and implement policies for poverty eradication and sustainable development."
+            short_title: "Respect National Leadership to Implement Policies for the Sustainable Development Goals"
+          target_17_16:
+            long_title: "Enhance the global partnership for sustainable development, complemented by multi-stakeholder partnerships that mobilize and share knowledge, expertise, technology and financial resources, to support the achievement of the sustainable development goals in all countries, in particular developing countries."
+            short_title: "Enhance the Global Partnership for Sustainable Development"
+          target_17_17:
+            long_title: "Encourage and promote effective public, public-private and civil society partnerships, building on the experience and resourcing strategies of partnerships."
+            short_title: "Encourage Effective Partnerships"
+          target_17_18:
+            long_title: "By 2020, enhance capacity-building support to developing countries, including for least developed countries and small island developing States, to increase significantly the availability of high-quality, timely and reliable data disaggregated by income, gender, age, race, ethnicity, migratory status, disability, geographic location and other characteristics relevant in national contexts."
+            short_title: "Enhance Availability of Reliable Data"
+          target_17_19:
+            long_title: "By 2030, build on existing initiatives to develop measurements of progress on sustainable development that complement gross domestic product, and support statistical capacity-building in developing countries."
+            short_title: "Further Develop Measurements of Progress"
+      help:
+        title: "Sustainable Development Goals help"
+        description: "You can align your contributions to the community (debates, citizen proposals and investment projects) with the Sustaniable Development Goals 2030 Agenda, this will allow us to have an overview of our contribution to each of the Sustainable Development Goals. Below you can find out about all the goals, their targets and localized targets."
+      show:
+        read_more: "Read more about %{goal}"
+        read_less: "Read less about %{goal}"
+        targets:
+          no_local_targets: This goal has no local targets
+      title: "Sustainable Development Goals"
+      filter:
+        heading: "Filters by SDG"
+        link: "See all %{resources} related to goal %{code}"
+        more:
+          one: "One more goal"
+          other: "%{count} more goals"
+    related_list_selector:
+      goal_identifier: "SDG%{code}"
+      goal_list: "You can choose one or several SDGs aligned with your %{record}"
+      help:
+        title: "Which SDGs and targets are aligned with my %{record}?"
+        text: "SDG help page"
+      hint: You can introduce the code of a specific goal/target or a text to find one. For more information visit the %{link}.
+      remove_tag: "Remove"
+      title: "Sustainable Development Goals and Targets"
+    targets:
+      filter:
+        link: "See all %{resources} related to target %{code}"
+        more:
+          one: "One more target"
+          other: "%{count} more targets"

@@ -5,10 +5,7 @@ de:
       erase_account_link: Mein Konto löschen
       finish_verification: Verifizierung abschließen
       notifications: Benachrichtigungen
-      organization_name_label: Name der Organisation
-      organization_responsible_name_placeholder: Vertreter der Organisation/des Kollektivs
       personal: Persönliche Daten
-      phone_number_label: Telefonnummer
       public_interests_my_title_list: Tags der Themen, denen Sie folgen
       public_interests_user_title_list: Kennzeichnungen der Elemente denen dieser Benutzer folgt
       save_changes_submit: Änderungen speichern
@@ -22,13 +19,15 @@ de:
       user_permission_verify: Damit Sie alle Funktionen nutzen können, müssen Sie ihr Konto verifizieren.
       user_permission_verify_info: "* Nur für in der Volkszählung registrierte Nutzer."
       user_permission_votes: An finaler Abstimmung teilnehmen
-      username_label: Benutzer*innenname
       verified_account: Konto verifiziert
       verify_my_account: Mein Konto verifizieren
   application:
     close: Schließen
     menu: Menü
   comments:
+    actions:
+      confirm_delete: "Sind Sie sicher? Diese Aktion wird den Kommentar löschen. Das Löschen kann nicht rückgängig gemacht werden."
+      delete: "Kommentar löschen"
     comments_closed: Kommentare sind geschlossen
     verified_only: Zur Teilnahme %{verify_account}
     comment:
@@ -62,7 +61,6 @@ de:
       newest: Neueste zuerst
       oldest: Älteste zuerst
       most_commented: meist kommentiert
-    select_order: Sortieren nach
     show:
       return_to_commentable: "Zurück zu"
   comments_helper:
@@ -90,14 +88,10 @@ de:
         submit_button: Änderungen speichern
       show_link: Diskussion anzeigen
     form:
-      debate_title: Titel der Diskussion
       tags_instructions: Diskussion markieren.
       tags_placeholder: "Trennen Sie die Tags mit einem Komma (',')"
     index:
       featured_debates: Hervorgehoben
-      filter_topic:
-        one: " mit Thema '%{topic} '"
-        other: " mit Thema '%{topic} '"
       orders:
         confidence_score: am besten bewertet
         created_at: neuste
@@ -119,7 +113,6 @@ de:
       search_results:
         one: " enthält den Begriff <strong>'%{search_term}'</strong>"
         other: " enthält den Begriff <strong>'%{search_term}'</strong>"
-      select_order: Sortieren nach
       start_debate: Starten Sie eine Diskussion
       title: Diskussionen
       section_header:
@@ -134,11 +127,9 @@ de:
     new:
       form:
         submit_button: Eine Diskussion starten
-      info: Wenn Sie einen Vorschlag veröffentlichen möchten, sind Sie hier falsch, gehen Sie zu %{info_link}.
-      info_link: Neuen Vorschlag erstellen
       more_info: Weitere Informationen
       recommendation_four: Genießen Sie diesen Ort und die Stimmen, die ihn füllen. Er gehört auch Ihnen.
-      recommendation_one: Verwenden Sie bitte nicht ausschließlich Großbuchstaben für die Überschrift oder für komplette Sätze. Im Internet gilt das als schreien. Und niemand mächte angeschrien werden.
+      recommendation_one: Verwenden Sie bitte nicht ausschließlich Großbuchstaben für die Überschrift oder für komplette Sätze. Im Internet gilt das als schreien. Und niemand möchte gerne angeschrien werden.
       recommendation_three: Kritik ist sehr willkommen. Denn dies ist ein Raum für unterschiedliche Betrachtungen. Aber wir empfehlen Ihnen, sich an sprachlicher Eleganz und Intelligenz zu halten. Die Welt ist ein besserer Ort mit diesen Tugenden.
       recommendation_two: Diskussionen oder Kommentare, die illegale Handlungen beinhalten, werden gelöscht sowie diejenigen, die die Diskussionen absichtlich sabotieren. Alles andere ist erlaubt.
       recommendations_title: Empfehlungen für die Erstellung einer Diskussion
@@ -193,6 +184,7 @@ de:
     local_census_records/import: Import von Datensätzen aus dem lokalen Register
     site_customization/content_block: Inhaltsblöcke
     site_customization/page: Seite
+    sdg/local_target: lokales Ziel
   geozones:
     none: Ganze Stadt
   layouts:
@@ -232,11 +224,9 @@ de:
     header:
       administration_menu: Admin
       administration: Administration
-      available_locales: Verfügbare Sprachen
       collaborative_legislation: Gesetzgebungsverfahren
       debates: Diskussionen
       locale: "Sprache:"
-      logo: Consul-Logo
       management: Verwaltung
       moderation: Moderation
       valuation: Bewertung
@@ -244,19 +234,17 @@ de:
       help: Hilfe
       my_account_link: Mein Konto
       my_activity_link: Meine Aktivität
-      open: offen
       open_gov: Open Government
       proposals: Vorschläge
       poll_questions: Abstimmung
       budgets: Bürgerhaushalte
       notification_item:
         new_notifications:
+          zero: "Sie haben keine neuen Benachrichtigungen"
           one: Sie haben eine neue Benachrichtigung
           other: Sie haben %{count} neue Benachrichtigungen
         notifications: Benachrichtigungen
-        no_notifications: "Sie haben keine neuen Benachrichtigungen"
-    admin:
-      watch_form_message: "Sie haben die Änderungen nicht gespeichert. Möchten Sie die Seite dennoch verlassen?"
+      sdg: "SDG"
   notifications:
     index:
       empty_notifications: Sie haben keine neuen Benachrichtigungen.
@@ -294,12 +282,17 @@ de:
       sign_in: Anmelden mit Google
       sign_up: Registrierung mit Google
       name: Google
+    wordpress_oauth2:
+      sign_in: Anmelden mit Wordpress
+      sign_up: Abmelden mit Wordpress
+      name: Wordpress
     twitter:
       sign_in: Anmelden mit Twitter
       sign_up: Registrierung mit Twitter
       name: Twitter
-    info_sign_in: "Anmelden mit:"
-    info_sign_up: "Registrieren mit:"
+    info:
+      sign_in: "Anmelden mit:"
+      sign_up: "Abmelden mit:"
     or_fill: "Oder folgendes Formular ausfüllen:"
   proposals:
     create:
@@ -344,12 +337,8 @@ de:
       map_location: "Kartenposition"
       map_location_instructions: "Navigieren Sie auf der Karte zum Standort und setzen Sie die Markierung."
       map_remove_marker: "Entfernen Sie die Kartenmarkierung"
-      map_skip_checkbox: "Dieser Vorschlag hat keinen konkreten Ort oder ich kenne ihn nicht."
     index:
       featured_proposals: Hervorgehoben
-      filter_topic:
-        one: " mit Thema '%{topic} '"
-        other: " mit Thema '%{topic} '"
       orders:
         confidence_score: am besten bewertet
         created_at: neuste
@@ -385,7 +374,6 @@ de:
       search_results:
         one: " enthält den Begriff <strong>'%{search_term}'</strong>"
         other: " enthält den Begriff <strong>'%{search_term}'</strong>"
-      select_order: Sortieren nach
       select_order_long: "Sie sehen Vorschläge nach:"
       start_proposal: Vorschlag erstellen
       title: Vorschläge
@@ -677,14 +665,13 @@ de:
       back: "Zurück zu meiner Aktivität"
   shared:
     edit: "Bearbeiten"
+    filter: "Filter"
     save: "Speichern"
     delete: "Löschen"
     "yes": "Ja"
     "no": "Nein"
     search_results: "Suchergebnisse"
     advanced_search:
-      author_type: "Nach Kategorie Verfasser*in"
-      author_type_blank: "Kategorie auswählen"
       date: "Nach Datum"
       date_placeholder: "TT/MM/JJJJ"
       date_range_blank: "Wählen Sie ein Datum"
@@ -695,8 +682,11 @@ de:
       date_5: "Angepasst"
       from: "Von"
       general: "Mit dem Text"
-      general_placeholder: "Text verfassen"
+      goal: "Nach SDG"
+      goal_blank: "Ziel wählen"
       search: "Filter"
+      target: "Nach Ziel"
+      target_blank: "Ziel auswählen"
       title: "Erweiterte Suche"
       to: "An"
     author_info:
@@ -722,7 +712,6 @@ de:
           notice: "Jetzt folgen Sie diesem Bürgervorschlag! <br> Wir werden Sie über Änderungen benachrichtigen sobald diese erscheinen, sodass Sie auf dem neusten Stand sind."
         destroy:
           notice: "Sie haben aufgehört diesem Bürgervorschlag zu folgen! <br> Sie werden nicht länger Benachrichtigungen zu diesem Vorschlag erhalten."
-    hide: Verbergen
     print:
       print_button: Diese Info drucken
     search: Suche
@@ -783,7 +772,6 @@ de:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
-    whatsapp: WhatsApp
     telegram: "%{org} Telegramm"
     instagram: "%{org} Instagram"
   stats:
@@ -869,15 +857,23 @@ de:
       organization: Organisationen ist es nicht erlaubt abzustimmen
       unfeasible: Undurchführbare Investitionsprojekte können nicht unterstützt werden
       not_voting_allowed: Die Abstimmungsphase ist beendet
+      different_heading_assigned:
+        one: "Sie können nur Investitionsprojekte in %{count} Bezirk unterstützen. Sie haben bereits Projekte in %{supported_headings} unterstützt."
+        other: "Sie können nur Investitionsprojekte in %{count} Bezirken unterstützen. Sie haben bereits Projekte in %{supported_headings} unterstützt."
   welcome:
     feed:
       most_active:
         debates: "Aktivste Debatten"
         proposals: "Aktivste Vorschläge"
         processes: "Laufende Verfahren"
-      see_all_debates: Alle Debatten anzeigen
-      see_all_proposals: Alle Vorschläge anzeigen
-      see_all_processes: Alle Beteiligungsverfahren anzeigen
+      see_all:
+        debates: Alle Debatten anzeigen
+        proposals: Alle Vorschläge anzeigen
+        processes: Alle Beteiligungsverfahren anzeigen
+      no_items:
+        debates: Aktuell gibt es keine Diskussionen
+        proposals: Aktuell gibt es keine Vorschläge
+        processes: Aktuell gibt es keine laufende Prozesse
       process_label: Beteiligungsverfahren
       see_process: Beteiligungsverfahren anzeigen
     cards:
@@ -947,9 +943,6 @@ de:
       title: Links
       note: Fügen Sie Links hinzu, die von Interesse sind
       add_new_link: Neuen Link hinzufügen
-    link_fields:
-      label_placeholder: Titel Link
-      url_placeholder: Link Adresse
   communities:
     show:
       surveys: Umfragen
@@ -964,3 +957,9 @@ de:
     create:
       enqueue_remote_translation: Übersetzungen wurden korrekt angefordert.
     button: Seite übersetzen
+  tags:
+    list:
+      filter:
+        more:
+          one: "Einen Tag mehr"
+          other: "%{count} mehr Tags"

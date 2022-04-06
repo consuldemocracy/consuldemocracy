@@ -1,11 +1,6 @@
 require "rails_helper"
 
-describe "Admin hidden users" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
+describe "Admin hidden users", :admin do
   scenario "Show user activity" do
     user = create(:user, :hidden)
 
@@ -26,24 +21,24 @@ describe "Admin hidden users" do
     user = create(:user, :hidden)
     visit admin_hidden_users_path
 
-    click_link "Restore"
+    accept_confirm { click_button "Restore" }
 
     expect(page).not_to have_content(user.username)
 
-    expect(user.reload).not_to be_hidden
+    visit user_path(user)
+
+    expect(page).to have_content(user.username)
   end
 
   scenario "Confirm hide" do
     user = create(:user, :hidden)
     visit admin_hidden_users_path
 
-    click_link "Confirm moderation"
+    click_button "Confirm moderation"
 
     expect(page).not_to have_content(user.username)
     click_link("Confirmed")
     expect(page).to have_content(user.username)
-
-    expect(user.reload).to be_confirmed_hide
   end
 
   scenario "Current filter is properly highlighted" do
@@ -87,9 +82,9 @@ describe "Admin hidden users" do
 
     visit admin_hidden_users_path(filter: "with_confirmed_hide", page: 2)
 
-    click_on("Restore", match: :first, exact: true)
+    accept_confirm { click_button "Restore", match: :first, exact: true }
 
-    expect(current_url).to include("filter=with_confirmed_hide")
-    expect(current_url).to include("page=2")
+    expect(page).to have_current_path(/filter=with_confirmed_hide/)
+    expect(page).to have_current_path(/page=2/)
   end
 end

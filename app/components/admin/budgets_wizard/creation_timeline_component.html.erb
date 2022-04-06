@@ -1,0 +1,7 @@
+<ol class="creation-timeline">
+  <% steps.each do |step| %>
+    <li <%= "aria-current='step'" if step == current_step %>>
+      <%= t("admin.budgets_wizard.creation_timeline.#{step}") %>
+    </li>
+  <% end %>
+</ol>

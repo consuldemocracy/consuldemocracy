@@ -2,6 +2,7 @@ FactoryBot.define do
   factory :budget do
     sequence(:name) { |n| "#{Faker::Lorem.word} #{n}" }
     currency_symbol { "€" }
+    published { true }
     phase { "accepting" }
     description_drafting  { "This budget is drafting" }
     description_informing { "This budget is informing" }
@@ -15,7 +16,7 @@ FactoryBot.define do
     description_finished { "This budget is finished" }
 
     trait :drafting do
-      phase { "drafting" }
+      published { false }
     end
 
     trait :informing do
@@ -54,6 +55,18 @@ FactoryBot.define do
       phase { "finished" }
       results_enabled { true }
       stats_enabled { true }
+    end
+
+    trait :knapsack do
+      voting_style { "knapsack" }
+    end
+
+    trait :approval do
+      voting_style { "approval" }
+    end
+
+    trait :with_winner do
+      after(:create) { |budget| create(:budget_investment, :winner, budget: budget) }
     end
   end
 
@@ -96,7 +109,6 @@ FactoryBot.define do
     description          { "Spend money on this" }
     price                { 10 }
     unfeasibility_explanation { "" }
-    skip_map             { "1" }
     terms_of_service     { "1" }
     incompatible         { false }
 
@@ -219,8 +231,8 @@ FactoryBot.define do
   factory :budget_phase, class: "Budget::Phase" do
     budget
     kind        { :balloting }
-    summary     { Faker::Lorem.sentence(3) }
-    description { Faker::Lorem.sentence(10) }
+    summary     { Faker::Lorem.sentence(word_count: 3) }
+    description { Faker::Lorem.sentence(word_count: 10) }
     starts_at   { Date.yesterday }
     ends_at     { Date.tomorrow }
     enabled     { true }
@@ -255,7 +267,7 @@ FactoryBot.define do
     reason { "unfeasible" }
   end
 
-  factory :valuator_group, class: ValuatorGroup do
+  factory :valuator_group, class: "ValuatorGroup" do
     sequence(:name) { |n| "Valuator Group #{n}" }
   end
 

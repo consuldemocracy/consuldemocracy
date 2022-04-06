@@ -5,7 +5,7 @@ class Verification::Management::Document
   attr_accessor :document_type, :document_number, :date_of_birth, :postal_code
 
   validates :document_type, :document_number, presence: true
-  validates :date_of_birth, presence: true, if: -> { Setting.force_presence_date_of_birth? }
+  #validates :date_of_birth, presence: true, if: -> { Setting.force_presence_date_of_birth? }
   validates :postal_code, presence: true, if: -> { Setting.force_presence_postal_code? }
 
   delegate :username, :email, to: :user, allow_nil: true
@@ -25,7 +25,7 @@ class Verification::Management::Document
   end
 
   def in_census?
-    response = CensusCaller.new.call(document_type, document_number, date_of_birth, postal_code)
+    response = CensusCaller.new.call(document_type, document_number, postal_code)
     response.valid? && valid_age?(response)
   end
 

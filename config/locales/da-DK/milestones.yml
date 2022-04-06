@@ -1,8 +1,8 @@
 da:
   milestones:
     index:
-      no_milestones: Har ingen milepæle
+      no_milestones: Ingen defineret proces
       progress: Forløb
     show:
-      publication_date: "Publiceret %{publication_date}"
+      publication_date: "Milepæl %{publication_date}"
       status_changed: Status er ændret til

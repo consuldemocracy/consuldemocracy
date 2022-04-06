@@ -12,9 +12,8 @@ ca:
         headers:
           comment: Comentar
           moderate: Moderar
-        hide_comments: Ocultar comentaris
+        hide: Ocultar comentaris
         ignore_flags: Marcar como revisades
-        order: Ordre
         orders:
           flags: Més denunciades
           newest: Més nous
@@ -34,9 +33,8 @@ ca:
         headers:
           debate: debat previ
           moderate: Moderar
-        hide_debates: Ocultar debats
+        hide: Ocultar debats
         ignore_flags: Marcar como revisades
-        order: Ordre
         orders:
           created_at: Més nous
           flags: Més denunciades
@@ -46,7 +44,9 @@ ca:
     menu:
       flagged_comments: Comentarios
       flagged_debates: Debats
+      flagged_investments: Inversions pressupostàries
       proposals: Propostes ciutadanes
+      proposal_notifications: Propostes de notificacions
       users: Bloquejar usuaris
     proposals:
       index:
@@ -60,9 +60,8 @@ ca:
         headers:
           moderate: Moderar
           proposal: la proposta
-        hide_proposals: Ocultar Propostes
+        hide: Ocultar Propostes
         ignore_flags: Marcar como revisades
-        order: Ordenar per
         orders:
           created_at: Més recents
           flags: Més denunciades
@@ -78,11 +77,13 @@ ca:
           with_ignored_flag: Marcats com revisats
         headers:
           moderate: Moderar
+          budget_investment: Inversió pressupostària
+        hide: Amagueu les inversions pressupostàries
         ignore_flags: Marcar como revisades
-        order: Ordenar per
         orders:
           created_at: Més recents
           flags: Més denunciades
+        title: Inversions pressupostàries
     proposal_notifications:
       index:
         block_authors: Bloquejar autors
@@ -94,17 +95,17 @@ ca:
           ignored: Marcar como revisades
         headers:
           moderate: Moderar
-        hide_proposal_notifications: Ocultar Propostes
+          proposal_notification: Notificació de la proposta
+        hide: Ocultar Propostes
         ignore_flags: Marcar como revisades
-        order: Ordenar per
         orders:
           created_at: Més recents
+          moderated: Moderada
         title: Notificacions de propostes
     users:
       index:
         hidden: Bloquejat
         hide: Bloquejar
-        search: Buscar
         search_placeholder: email o nom d'usuari
         title: Bloquejar usuaris
       notice_hide: Usuari bloquejat. S'han ocultat tots els seus debats i comentaris.

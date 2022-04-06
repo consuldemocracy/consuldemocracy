@@ -6,10 +6,10 @@
     </tr>
   </thead>
   <tbody>
-    <% @budget_investments.each do |budget_investment| %>
+    <% budget_investments.each do |budget_investment| %>
       <%= render "budget_investment", budget_investment: budget_investment %>
     <% end %>
   </tbody>
 </table>
 
-<%= paginate @budget_investments %>
+<%= paginate budget_investments %>

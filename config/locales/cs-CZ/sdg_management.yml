@@ -1,0 +1,50 @@
+cs:
+  sdg_management:
+    actions:
+      edit: "Správa cílů a záměrů"
+    header:
+      title: "Obsah SDG"
+    homepage:
+      title: "Konfigurace úvodní stránky"
+      header:
+        create: "Vytvořit záhlaví"
+        no_cards: "Nemáte žádná záhlaví"
+        title: "Záhlaví"
+      create_card: "Vytvořit kartu %{phase}"
+      no_cards: "Pro tuto fázi nejsou k dispozici žádné karty"
+    menu:
+      budget_investments: "Participativní rozpočty"
+      debates: "Debaty"
+      legislation_processes: "Legislativní procesy"
+      legislation_proposals: "Legislativní návrhy"
+      polls: "Průzkumy"
+      proposals: "Návrhy"
+      sdg_content: "Cíle a záměry"
+      sdg_homepage: "Domácí strana SDG"
+    local_targets:
+      create:
+        notice: "Místní záměr byl úspěšně vytvořen"
+      destroy:
+        notice: "Místní záměr byl úspěšně smazán"
+      edit:
+        title: "Upravit místní záměr"
+      form:
+        code: "Kód musí začínat vybraným kódem záměru, za nímž následuje tečka"
+        description: "Tento popis se uživatelům zobrazí jako nápověda."
+      index:
+        new: "Vytvořit místní záměr"
+      new:
+        title: "Nový místní záměr"
+      update:
+        notice: "Místní záměr byl úspěšně aktualizován"
+    relations:
+      index:
+        filter: "Filtr"
+        filters:
+          all: "Vše"
+          pending_sdg_review: "Nevyřízeno"
+          sdg_reviewed: "Označeno jako zkontrolované"
+      update:
+        notice: "%{relatable} úspěšně aktualizováno"
+      update_and_review:
+        notice: "%{relatable} úspěšně aktualizováno a označeno jako zkontrolované"

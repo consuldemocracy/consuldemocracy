@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => "/ckeditor"
+
+  if Rails.env.development? || Rails.env.staging?
+    get "/sandbox" => "sandbox#index"
+    get "/sandbox/*template" => "sandbox#show"
+  end
+
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
   draw :account
@@ -21,6 +27,8 @@ Rails.application.routes.draw do
   draw :poll
   draw :proposal
   draw :related_content
+  draw :sdg
+  draw :sdg_management
   draw :tag
   draw :user
   draw :valuation
@@ -40,6 +48,10 @@ Rails.application.routes.draw do
   get "help",             to: "pages#show", id: "help/index",             as: "help"
   get "help/how-to-use",  to: "pages#show", id: "help/how_to_use/index",  as: "how_to_use"
   get "help/faq",         to: "pages#show", id: "faq",                    as: "faq"
+
+  # Custom pages
+  get "preguntas-frecuentes", to: "pages#show", id: "preguntas_frecuentes", as: "preguntas_frecuentes"
+  get "zonas", to: "pages#show", id: "zonas", as: "zonas"
 
   # Static pages
   resources :pages, path: "/", only: [:show]

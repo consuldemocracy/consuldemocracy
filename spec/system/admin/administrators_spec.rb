@@ -5,12 +5,11 @@ describe "Admin administrators" do
   let!(:user) { create(:user, username: "Jose Luis Balbin") }
   let!(:user_administrator) { create(:administrator, description: "admin_alias") }
 
-  before do
-    login_as(admin.user)
-    visit admin_administrators_path
-  end
+  before { login_as(admin.user) }
 
   scenario "Index" do
+    visit admin_administrators_path
+
     expect(page).to have_content user_administrator.id
     expect(page).to have_content user_administrator.name
     expect(page).to have_content user_administrator.email
@@ -18,20 +17,26 @@ describe "Admin administrators" do
     expect(page).not_to have_content user.name
   end
 
-  scenario "Create Administrator", :js do
-    fill_in "name_or_email", with: user.email
+  scenario "Create Administrator" do
+    visit admin_administrators_path
+
+    fill_in "search", with: user.email
     click_button "Search"
 
     expect(page).to have_content user.name
-    click_link "Add"
+
+    click_button "Add"
+
     within("#administrators") do
       expect(page).to have_content user.name
     end
   end
 
   scenario "Delete Administrator" do
+    visit admin_administrators_path
+
     within "#administrator_#{user_administrator.id}" do
-      click_on "Delete"
+      accept_confirm { click_button "Delete" }
     end
 
     within("#administrators") do
@@ -40,8 +45,10 @@ describe "Admin administrators" do
   end
 
   scenario "Delete Administrator when its the current user" do
+    visit admin_administrators_path
+
     within "#administrator_#{admin.id}" do
-      click_on "Delete"
+      accept_confirm { click_button "Delete" }
     end
 
     within("#error") do
@@ -66,7 +73,7 @@ describe "Admin administrators" do
       expect(page).to have_content(administrator1.name)
       expect(page).to have_content(administrator2.name)
 
-      fill_in "name_or_email", with: " "
+      fill_in "search", with: " "
       click_button "Search"
 
       expect(page).to have_content("Administrators: User search")
@@ -79,10 +86,11 @@ describe "Admin administrators" do
       expect(page).to have_content(administrator1.name)
       expect(page).to have_content(administrator2.name)
 
-      fill_in "name_or_email", with: "Sumn"
+      fill_in "search", with: "Sumn"
       click_button "Search"
 
       expect(page).to have_content("Administrators: User search")
+      expect(page).to have_field "search", with: "Sumn"
       expect(page).to have_content(administrator1.name)
       expect(page).not_to have_content(administrator2.name)
     end
@@ -91,12 +99,23 @@ describe "Admin administrators" do
       expect(page).to have_content(administrator1.email)
       expect(page).to have_content(administrator2.email)
 
-      fill_in "name_or_email", with: administrator2.email
+      fill_in "search", with: administrator2.email
       click_button "Search"
 
       expect(page).to have_content("Administrators: User search")
+      expect(page).to have_field "search", with: administrator2.email
       expect(page).to have_content(administrator2.email)
       expect(page).not_to have_content(administrator1.email)
+    end
+
+    scenario "Delete after searching" do
+      fill_in "Search user by name or email", with: administrator2.email
+      click_button "Search"
+
+      accept_confirm { click_button "Delete" }
+
+      expect(page).to have_content(administrator1.email)
+      expect(page).not_to have_content(administrator2.email)
     end
   end
 

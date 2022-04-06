@@ -10,7 +10,7 @@ describe "Communities" do
 
       visit community_path(community)
 
-      expect(page).to have_content "Proposal community"
+      expect(page).to have_content "PROPOSAL COMMUNITY"
       expect(page).to have_content proposal.title
       expect(page).to have_content "Participate in the community of this proposal"
       expect(page).to have_link("Create topic", href: new_community_topic_path(community))
@@ -26,7 +26,7 @@ describe "Communities" do
       expect(page).to have_content "Participants (1)"
     end
 
-    scenario "Should display order selector and topic content when there are topics" do
+    scenario "Should display order links and topic content when there are topics" do
       proposal = create(:proposal)
       community = proposal.community
       topic = create(:topic, community: community)
@@ -34,7 +34,10 @@ describe "Communities" do
 
       visit community_path(community)
 
-      expect(page).to have_selector ".wide-order-selector"
+      expect(page).to have_link "Newest first", class: "is-active"
+      expect(page).to have_link "Most commented"
+      expect(page).to have_link "Oldest first"
+
       within "#topic_#{topic.id}" do
         expect(page).to have_content topic.title
         expect(page).to have_content "#{topic.comments_count} comment"
@@ -134,15 +137,6 @@ describe "Communities" do
       visit community_path(community)
 
       expect(page).to have_current_path(root_path)
-    end
-
-    scenario "Accesing a community without associated communitable" do
-      proposal = create(:proposal)
-      community = proposal.community
-      proposal.really_destroy!
-      community.reload
-
-      expect { visit community_path(community) }.to raise_error(ActionController::RoutingError)
     end
   end
 end

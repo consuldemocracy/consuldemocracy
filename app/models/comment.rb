@@ -32,10 +32,8 @@ class Comment < ApplicationRecord
   before_save :calculate_confidence_score
 
   scope :for_render, -> { with_hidden.includes(user: :organization) }
-  scope :with_visible_author, -> { joins(:user).where("users.hidden_at IS NULL") }
-  scope :not_as_admin_or_moderator, -> do
-    where("administrator_id IS NULL").where("moderator_id IS NULL")
-  end
+  scope :with_visible_author, -> { joins(:user).where(users: { hidden_at: nil }) }
+  scope :not_as_admin_or_moderator, -> { where(administrator_id: nil).where(moderator_id: nil) }
   scope :sort_by_flags, -> { order(flags_count: :desc, updated_at: :desc) }
   scope :public_for_api, -> do
     not_valuations
@@ -49,6 +47,7 @@ class Comment < ApplicationRecord
 
   scope :sort_by_most_voted, -> { order(confidence_score: :desc, created_at: :desc) }
   scope :sort_descendants_by_most_voted, -> { order(confidence_score: :desc, created_at: :asc) }
+  scope :sort_by_supports, -> { order(Arel.sql("cached_votes_up - cached_votes_down DESC")) }
 
   scope :sort_by_newest, -> { order(created_at: :desc) }
   scope :sort_descendants_by_newest, -> { order(created_at: :desc) }
@@ -127,6 +126,10 @@ class Comment < ApplicationRecord
   def calculate_confidence_score
     self.confidence_score = ScoreCalculator.confidence_score(cached_votes_total,
                                                              cached_votes_up)
+  end
+
+  def votes_score
+    cached_votes_up - cached_votes_down
   end
 
   private

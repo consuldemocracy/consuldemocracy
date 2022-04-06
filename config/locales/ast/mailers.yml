@@ -10,6 +10,7 @@ ast:
       manage_email_subscriptions: Puedes dejar de recibir estos emails cambiando tu configuración en
     email_verification:
       click_here_to_verify: en este enlace
+      instructions_2: Este email es para verificar tu cuenta con <b>%{document_type} %{document_number}</b>. Si esos no son tus datos, por favor no pulses el enlace anterior e ignora este email.
       subject: Verifica tu email
       thanks: Muchas gracias.
       title: Verifica tu cuenta con el siguiente enlace
@@ -37,6 +38,9 @@ ast:
     budget_investment_created:
       subject: "¡Gracias por crear un proyecto!"
       title: "¡Gracias por crear un proyecto!"
+      intro: "Hola <strong>%{author}</strong>,"
+      text: "Muchas gracias por crear tu proyecto <strong>%{investment}</strong> para los Presupuestos Participativos <strong>%{budget}</strong>."
+      follow: "Te informaremos de cómo avanza el proceso, que también puedes seguir en la página de <strong>%{link}</strong>."
       follow_link: "Presupuestos participativos"
       sincerely: "Atentamente,"
     budget_investment_unfeasible:
@@ -57,3 +61,5 @@ ast:
       hi: "Estimado/a usuario/a"
       thanks: "Gracias de nuevo por tu participación."
       sincerely: "Atentamente"
+    evaluation_comment:
+      hi: Hola

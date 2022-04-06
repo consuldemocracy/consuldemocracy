@@ -49,12 +49,14 @@ describe Signature do
     end
 
     it "is not valid without a date of birth" do
+      skip "Disabled for development and test"
       signature.date_of_birth = nil
 
       expect(signature).not_to be_valid
     end
 
     it "is not valid without a postal_code" do
+      skip "Disabled for development and test"
       signature.postal_code = nil
 
       expect(signature).not_to be_valid
@@ -162,6 +164,7 @@ describe Signature do
       end
 
       it "marks the vote as coming from a signature" do
+        skip "Disabled for development and test"
         signature = create(:signature, document_number: "12345678Z")
 
         signature.verify
@@ -171,6 +174,8 @@ describe Signature do
     end
 
     describe "inexistent user" do
+      before { skip "Disabled for development and test" }
+
       it "creates a user with that document number" do
         create(:geozone, census_code: "01")
         signature = create(:signature, document_number: "12345678Z")
@@ -207,6 +212,8 @@ describe Signature do
     end
 
     describe "document in census" do
+      before { skip "Disabled for development and test" }
+
       it "calls assign_vote_to_user" do
         signature = create(:signature, document_number: "12345678Z")
 
@@ -225,21 +232,13 @@ describe Signature do
     end
 
     describe "document in census throught CustomCensusApi" do
-      before do
-        Setting["feature.remote_census"] = true
-        Setting["remote_census.request.date_of_birth"] = "some.value"
-        Setting["remote_census.request.postal_code"] = "some.value"
-        access_user_data = "get_habita_datos_response.get_habita_datos_return.datos_habitante.item"
-        access_residence_data = "get_habita_datos_response.get_habita_datos_return.datos_vivienda.item"
-        Setting["remote_census.response.date_of_birth"] = "#{access_user_data}.fecha_nacimiento_string"
-        Setting["remote_census.response.postal_code"] = "#{access_residence_data}.codigo_postal"
-        Setting["remote_census.response.valid"] = access_user_data
-      end
-
-      it "calls assign_vote_to_user" do
+      it "calls assign_vote_to_user", :remote_census do
+        skip "Disabled for development and test"
         signature = create(:signature, document_number: "12345678Z",
                                        date_of_birth: "31/12/1980",
                                        postal_code: "28013")
+
+        mock_valid_remote_census_response
 
         expect_any_instance_of(Signature).to receive(:assign_vote_to_user).exactly(1).times
 
@@ -248,6 +247,8 @@ describe Signature do
     end
 
     describe "document not in census" do
+      before { skip "Disabled for development and test" }
+
       it "does not call assign_vote_to_user" do
         signature = create(:signature, document_number: "123A")
 

@@ -7,7 +7,7 @@ Rollbar.configure do |config|
 
   # Here we'll disable all environments except 'staging', 'preproduction' and 'production':
   if Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?
-    config.enabled = true
+    config.enabled = Rails.application.secrets.rollbar_server_token.present?
   else
     config.enabled = false
   end
@@ -30,7 +30,11 @@ Rollbar.configure do |config|
   # via the rollbar interface.
   # Valid levels: 'critical', 'error', 'warning', 'info', 'debug', 'ignore'
   # 'ignore' will cause the exception to not be reported at all.
-  # config.exception_level_filters.merge!('MyCriticalException' => 'critical')
+  config.exception_level_filters.merge!(
+    "ActionController::InvalidCrossOriginRequest" => "ignore",
+    "ActionController::RoutingError" => "ignore",
+    "ActionController::UnknownFormat" => "ignore"
+  )
   #
   # You can also specify a callable, which will be called with the exception instance.
   # config.exception_level_filters.merge!('MyCriticalException' => lambda { |e| 'critical' })

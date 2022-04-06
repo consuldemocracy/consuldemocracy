@@ -18,8 +18,8 @@ FactoryBot.define do
     sequence(:title) { |n| "Banner title #{n}" }
     sequence(:description) { |n| "This is the text of Banner #{n}" }
     target_url { ["/proposals", "/debates"].sample }
-    post_started_at { Time.current - 7.days }
-    post_ended_at { Time.current + 7.days }
+    post_started_at { Date.current - 7.days }
+    post_ended_at { Date.current + 7.days }
     background_color { "#FF0000" }
     font_color { "#FFFFFF" }
   end
@@ -57,6 +57,11 @@ FactoryBot.define do
     body { "Some top links content" }
   end
 
+  factory :site_customization_image, class: "SiteCustomization::Image" do
+    image { File.new("spec/fixtures/files/logo_header.png") }
+    name { "logo_header" }
+  end
+
   factory :map_location do
     latitude { 51.48 }
     longitude { 0.0 }
@@ -79,9 +84,6 @@ FactoryBot.define do
 
     trait :header do
       header { true }
-      sequence(:button_text)   { |n| "Button text #{n}" }
-      sequence(:button_url)    { |n| "Button url #{n}" }
-      alignment { "background" }
     end
 
     after :create do |widget_card|
@@ -89,8 +91,7 @@ FactoryBot.define do
     end
   end
 
-  factory :widget_feed, class: "Widget::Feed" do
-  end
+  factory :widget_feed, class: "Widget::Feed"
 
   factory :i18n_content, class: "I18nContent" do
     key { "debates.index.section_footer.description" }

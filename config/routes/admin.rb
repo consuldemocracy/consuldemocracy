@@ -44,20 +44,21 @@ namespace :admin do
     end
   end
 
-  resources :proposal_notifications, only: :index do
+  resources :hidden_proposal_notifications, only: :index do
     member do
       put :restore
       put :confirm_hide
     end
   end
 
-  resources :budgets do
+  resources :budgets, except: [:create, :new] do
     member do
+      patch :publish
       put :calculate_winners
     end
 
-    resources :groups, except: [:show], controller: "budget_groups" do
-      resources :headings, except: [:show], controller: "budget_headings"
+    resources :groups, except: [:index, :show], controller: "budget_groups" do
+      resources :headings, except: [:index, :show], controller: "budget_headings"
     end
 
     resources :budget_investments, only: [:index, :show, :edit, :update] do
@@ -68,7 +69,21 @@ namespace :admin do
       resources :progress_bars, except: :show, controller: "budget_investment_progress_bars"
     end
 
-    resources :budget_phases, only: [:edit, :update]
+    resources :budget_phases, only: [:edit, :update] do
+      member { patch :toggle_enabled }
+    end
+  end
+
+  namespace :budgets_wizard do
+    resources :budgets, only: [:create, :new, :edit, :update] do
+      resources :groups, only: [:index, :create, :edit, :update, :destroy] do
+        resources :headings, only: [:index, :create, :edit, :update, :destroy]
+      end
+
+      resources :phases, as: "budget_phases", only: [:index, :edit, :update] do
+        member { patch :toggle_enabled }
+      end
+    end
   end
 
   resources :milestone_statuses, only: [:index, :new, :create, :update, :edit, :destroy]
@@ -111,6 +126,10 @@ namespace :admin do
 
   resources :managers, only: [:index, :create, :destroy] do
     get :search, on: :collection
+  end
+
+  namespace :sdg do
+    resources :managers, only: [:index, :create, :destroy]
   end
 
   resources :administrators, only: [:index, :create, :destroy, :edit, :update] do
@@ -200,6 +219,7 @@ namespace :admin do
     get :proposal_notifications, on: :collection
     get :direct_messages, on: :collection
     get :polls, on: :collection
+    get :sdg, on: :collection
   end
 
   namespace :legislation do
@@ -223,7 +243,7 @@ namespace :admin do
 
   namespace :site_customization do
     resources :pages, except: [:show] do
-      resources :cards, only: [:index]
+      resources :cards, except: [:show], as: :widget_cards
     end
     resources :images, only: [:index, :update, :destroy]
     resources :content_blocks, except: [:show]
@@ -252,4 +272,57 @@ namespace :admin do
   namespace :local_census_records do
     resources :imports, only: [:new, :create, :show]
   end
+
+  resource :machine_learning, controller: :machine_learning, only: [:show] do
+    post :execute, on: :collection
+    delete :cancel, on: :collection
+  end
+end
+
+resolve "Milestone" do |milestone|
+  [*resource_hierarchy_for(milestone.milestoneable), milestone]
+end
+
+resolve "ProgressBar" do |progress_bar|
+  [*resource_hierarchy_for(progress_bar.progressable), progress_bar]
+end
+
+resolve "Audit" do |audit|
+  [*resource_hierarchy_for(audit.associated || audit.auditable), audit]
+end
+
+resolve "Widget::Card" do |card, options|
+  [*resource_hierarchy_for(card.cardable), card]
+end
+
+resolve "Budget::Group" do |group, options|
+  [group.budget, :group, options.merge(id: group)]
+end
+
+resolve "Budget::Heading" do |heading, options|
+  [heading.budget, :group, :heading, options.merge(group_id: heading.group, id: heading)]
+end
+
+resolve "Budget::Phase" do |phase, options|
+  [phase.budget, :phase, options.merge(id: phase)]
+end
+
+resolve "Poll::Booth" do |booth, options|
+  [:booth, options.merge(id: booth)]
+end
+
+resolve "Poll::BoothAssignment" do |assignment, options|
+  [assignment.poll, :booth_assignment, options.merge(id: assignment)]
+end
+
+resolve "Poll::Shift" do |shift, options|
+  [:booth, :shift, options.merge(booth_id: shift.booth, id: shift)]
+end
+
+resolve "Poll::Officer" do |officer, options|
+  [:officer, options.merge(id: officer)]
+end
+
+resolve "Poll::Question::Answer::Video" do |video, options|
+  [:video, options.merge(id: video)]
 end

@@ -1,0 +1,18 @@
+ar:
+  sdg_management:
+    homepage:
+      header:
+        create: "إنشاء رأس الصفحة"
+        title: "رأس الصفحة"
+    menu:
+      budget_investments: "الميزانيات المشاركة"
+      debates: "النقاشات"
+      legislation_processes: "العمليات التشريعية"
+      polls: "استطلاعات"
+      proposals: "إقتراحات"
+    relations:
+      index:
+        filter: "ترشيح"
+        filters:
+          all: "الكل"
+          pending_sdg_review: "معلق"

@@ -15,8 +15,7 @@ describe LocalesHelper do
     end
 
     it "returns the language name in i18n.language.name translation" do
-      keys = { language: {
-                 name: "World Language" }}
+      keys = { language: { name: "World Language" }}
 
       I18n.backend.store_translations(:wl, { i18n: keys })
 

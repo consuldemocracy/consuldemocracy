@@ -11,6 +11,8 @@ describe Dashboard::Mailer do
 
   before do
     Setting["feature.dashboard.notification_emails"] = true
+    Setting["mailer_from_name"] = "CONSUL"
+    Setting["mailer_from_address"] = "noreply@consul.dev"
   end
 
   describe "#forward" do
@@ -88,10 +90,10 @@ describe Dashboard::Mailer do
         expect(email).to have_body_text("And to accompany you in this challenge, "\
                                         "here are the news...")
         expect(email).to have_body_text("NEW UNLOCKED RESOURCE")
-        expect(email).to have_body_text("#{resource.title}")
+        expect(email).to have_body_text(resource.title)
         expect(email).to have_body_text("Take a look at this NEW recommended ACTION:")
-        expect(email).to have_body_text("#{action.title}")
-        expect(email).to have_body_text("#{action.description}")
+        expect(email).to have_body_text(action.title)
+        expect(email).to have_body_text(action.description)
         expect(email).to have_body_text("As always, enter the Proposals Panel and we will tell "\
                                         "you in detail how to use these resources and how to get "\
                                         "the most out of it.")
@@ -126,7 +128,7 @@ describe Dashboard::Mailer do
         expect(email).to have_body_text("And so, you have a new resource available to help "\
                                         "you keep moving forward.")
         expect(email).to have_body_text("NEW UNLOCKED RESOURCE")
-        expect(email).to have_body_text("#{resource.title}")
+        expect(email).to have_body_text(resource.title)
 
         months_to_archive_proposals = Setting["months_to_archive_proposals"].to_i.months
         limit_to_archive_proposal = proposal.created_at.to_date + months_to_archive_proposals
@@ -137,8 +139,8 @@ describe Dashboard::Mailer do
                                         "supports and goes to referendum. Cheer up and keep "\
                                         "spreading. Are you short of ideas?")
         expect(email).to have_body_text("NEW RECOMMENDED DIFFUSION ACTION")
-        expect(email).to have_body_text("#{action.title}")
-        expect(email).to have_body_text("#{action.description}")
+        expect(email).to have_body_text(action.title)
+        expect(email).to have_body_text(action.description)
         expect(email).to have_body_text("As always, enter the Proposals Panel and we will tell "\
                                         "you in detail how to use these resources and how to get "\
                                         "the most out of it.")
@@ -165,6 +167,7 @@ describe Dashboard::Mailer do
     end
 
     it "sends emails if new actions detected when creating a proposal" do
+      Setting["org_name"] = "CONSUL"
       action.update!(published_proposal: false)
       resource.update!(published_proposal: false)
       proposal.save!

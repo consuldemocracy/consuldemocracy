@@ -4,6 +4,13 @@ FactoryBot.define do
     user
     sequence(:body) { |n| "Comment body #{n}" }
 
+    %i[budget_investment debate legislation_annotation legislation_question legislation_proposal
+       poll proposal topic_with_community].each do |model|
+      factory :"#{model}_comment" do
+        association :commentable, factory: model
+      end
+    end
+
     trait :hidden do
       hidden_at { Time.current }
     end

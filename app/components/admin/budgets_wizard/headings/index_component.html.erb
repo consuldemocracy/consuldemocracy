@@ -1,0 +1,14 @@
+<main class="admin-budgets-wizard-headings-index">
+  <%= back_link_to admin_budgets_wizard_budget_groups_path(budget, url_params), back_link_text %>
+
+  <%= header %>
+
+  <%= render Admin::Budgets::HelpComponent.new("headings") %>
+  <%= render Admin::BudgetsWizard::CreationTimelineComponent.new("headings") %>
+
+  <% unless single_heading? %>
+    <%= render Admin::BudgetsWizard::Headings::GroupSwitcherComponent.new(group) %>
+    <%= render Admin::BudgetHeadings::HeadingsComponent.new(headings) %>
+  <% end %>
+  <%= render Admin::BudgetsWizard::Headings::CreationStepComponent.new(new_heading) %>
+</main>

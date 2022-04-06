@@ -66,9 +66,8 @@ describe "Tags" do
 
     visit new_budget_investment_path(budget_id: budget.id)
 
-    select  heading.name, from: "budget_investment_heading_id"
-    fill_in "Title", with: "Build a skyscraper"
-    fill_in "Description", with: "I want to live in a high tower over the clouds"
+    fill_in_new_investment_title with: "Build a skyscraper"
+    fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
     check   "budget_investment_terms_of_service"
 
     fill_in "budget_investment_tag_list", with: "#{tag_medio_ambiente.name}, #{tag_economia.name}"
@@ -80,13 +79,12 @@ describe "Tags" do
     expect(page).to have_content tag_medio_ambiente.name
   end
 
-  scenario "Category with category tags", :js do
+  scenario "Category with category tags" do
     login_as(author)
 
     visit new_budget_investment_path(budget_id: budget.id)
 
-    select  heading.name, from: "budget_investment_heading_id"
-    fill_in "Title", with: "Build a skyscraper"
+    fill_in_new_investment_title with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
     check "budget_investment_terms_of_service"
 
@@ -94,14 +92,15 @@ describe "Tags" do
     click_button "Create Investment"
 
     expect(page).to have_content "Investment created successfully."
+    expect(page).to have_content "Build a skyscraper"
 
-    within "#tags_budget_investment_#{Budget::Investment.last.id}" do
+    within ".tags" do
       expect(page).to have_content tag_economia.name
       expect(page).not_to have_content tag_medio_ambiente.name
     end
   end
 
-  scenario "Turbolinks sanity check from budget's show", :js do
+  scenario "Turbolinks sanity check from budget's show" do
     create(:tag, name: "Education", kind: "category")
     create(:tag, name: "Health",    kind: "category")
 
@@ -109,8 +108,7 @@ describe "Tags" do
     visit budget_path(budget)
     click_link "Create a budget investment"
 
-    select  heading.name, from: "budget_investment_heading_id"
-    fill_in "Title", with: "Build a skyscraper"
+    fill_in_new_investment_title with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
     check "budget_investment_terms_of_service"
 
@@ -118,14 +116,15 @@ describe "Tags" do
     click_button "Create Investment"
 
     expect(page).to have_content "Investment created successfully."
+    expect(page).to have_content "Build a skyscraper"
 
-    within "#tags_budget_investment_#{Budget::Investment.last.id}" do
+    within ".tags" do
       expect(page).to have_content "Education"
       expect(page).not_to have_content "Health"
     end
   end
 
-  scenario "Turbolinks sanity check from budget heading's show", :js do
+  scenario "Turbolinks sanity check from budget heading's show" do
     create(:tag, name: "Education", kind: "category")
     create(:tag, name: "Health",    kind: "category")
 
@@ -133,8 +132,7 @@ describe "Tags" do
     visit budget_investments_path(budget, heading_id: heading.id)
     click_link "Create a budget investment"
 
-    select  heading.name, from: "budget_investment_heading_id"
-    fill_in "Title", with: "Build a skyscraper"
+    fill_in_new_investment_title with: "Build a skyscraper"
     fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
     check "budget_investment_terms_of_service"
 
@@ -142,8 +140,9 @@ describe "Tags" do
     click_button "Create Investment"
 
     expect(page).to have_content "Investment created successfully."
+    expect(page).to have_content "Build a skyscraper"
 
-    within "#tags_budget_investment_#{Budget::Investment.last.id}" do
+    within ".tags" do
       expect(page).to have_content "Education"
       expect(page).not_to have_content "Health"
     end
@@ -154,9 +153,8 @@ describe "Tags" do
 
     visit new_budget_investment_path(budget_id: budget.id)
 
-    select  heading.name, from: "budget_investment_heading_id"
-    fill_in "Title", with: "Build a skyscraper"
-    fill_in "Description", with: "I want to live in a high tower over the clouds"
+    fill_in_new_investment_title with: "Build a skyscraper"
+    fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
     check   "budget_investment_terms_of_service"
 
     fill_in "budget_investment_tag_list", with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
@@ -172,9 +170,8 @@ describe "Tags" do
 
     visit new_budget_investment_path(budget_id: budget.id)
 
-    select  heading.name, from: "budget_investment_heading_id"
-    fill_in "Title", with: "Build a skyscraper"
-    fill_in "Description", with: "I want to live in a high tower over the clouds"
+    fill_in_new_investment_title with: "Build a skyscraper"
+    fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
     check   "budget_investment_terms_of_service"
 
     fill_in "budget_investment_tag_list", with: "user_id=1, &a=3, <script>alert('hey');</script>"
@@ -226,48 +223,42 @@ describe "Tags" do
     let!(:investment1) { create(:budget_investment, heading: heading, tag_list: new_tag) }
     let!(:investment2) { create(:budget_investment, heading: heading, tag_list: new_tag) }
     let!(:investment3) { create(:budget_investment, heading: heading, tag_list: newer_tag) }
+    let(:phase) { Budget::Phase::PHASE_KINDS.sample }
 
     scenario "Display user tags" do
-      Budget::Phase::PHASE_KINDS.each do |phase|
-        budget.update!(phase: phase)
+      budget.update!(phase: phase)
 
-        login_as(admin) if budget.drafting?
-        visit budget_investments_path(budget, heading_id: heading.id)
+      visit budget_investments_path(budget, heading_id: heading.id)
 
-        within "#tag-cloud" do
-          expect(page).to have_content(new_tag)
-          expect(page).to have_content(newer_tag)
-        end
+      within "#tag-cloud" do
+        expect(page).to have_content(new_tag)
+        expect(page).to have_content(newer_tag)
       end
     end
 
     scenario "Filter by user tags" do
-      Budget::Phase::PHASE_KINDS.each do |phase|
-        budget.update!(phase: phase)
+      budget.update!(phase: phase)
 
-        [investment1, investment2, investment3].each do |investment|
-          investment.update(selected: true, feasibility: "feasible")
-        end
-
-        if budget.finished?
-          [investment1, investment2, investment3].each do |investment|
-            investment.update(selected: true, feasibility: "feasible", winner: true)
-          end
-        end
-
-        login_as(admin) if budget.drafting?
-        visit budget_path(budget)
-        click_link group.name
-
-        within "#tag-cloud" do
-          click_link new_tag
-        end
-
-        expect(page).to have_css ".budget-investment", count: 2
-        expect(page).to have_content investment1.title
-        expect(page).to have_content investment2.title
-        expect(page).not_to have_content investment3.title
+      [investment1, investment2, investment3].each do |investment|
+        investment.update(selected: true, feasibility: "feasible")
       end
+
+      if budget.finished?
+        [investment1, investment2, investment3].each do |investment|
+          investment.update(selected: true, feasibility: "feasible", winner: true)
+        end
+      end
+
+      visit budget_investments_path(budget, heading: heading.id)
+
+      within "#tag-cloud" do
+        click_link new_tag
+      end
+
+      expect(page).to have_css ".budget-investment", count: 2
+      expect(page).to have_content investment1.title
+      expect(page).to have_content investment2.title
+      expect(page).not_to have_content investment3.title
     end
   end
 
@@ -275,48 +266,42 @@ describe "Tags" do
     let!(:investment1) { create(:budget_investment, heading: heading, tag_list: tag_medio_ambiente.name) }
     let!(:investment2) { create(:budget_investment, heading: heading, tag_list: tag_medio_ambiente.name) }
     let!(:investment3) { create(:budget_investment, heading: heading, tag_list: tag_economia.name) }
+    let(:phase) { Budget::Phase::PHASE_KINDS.sample }
 
     scenario "Display category tags" do
-      Budget::Phase::PHASE_KINDS.each do |phase|
-        budget.update!(phase: phase)
+      budget.update!(phase: phase)
 
-        login_as(admin) if budget.drafting?
-        visit budget_investments_path(budget, heading_id: heading.id)
+      visit budget_investments_path(budget, heading_id: heading.id)
 
-        within "#categories" do
-          expect(page).to have_content(tag_medio_ambiente.name)
-          expect(page).to have_content(tag_economia.name)
-        end
+      within "#categories" do
+        expect(page).to have_content(tag_medio_ambiente.name)
+        expect(page).to have_content(tag_economia.name)
       end
     end
 
     scenario "Filter by category tags" do
-      Budget::Phase::PHASE_KINDS.each do |phase|
-        budget.update!(phase: phase)
+      budget.update!(phase: phase)
 
-        [investment1, investment2, investment3].each do |investment|
-          investment.update(selected: true, feasibility: "feasible")
-        end
-
-        if budget.finished?
-          [investment1, investment2, investment3].each do |investment|
-            investment.update(selected: true, feasibility: "feasible", winner: true)
-          end
-        end
-
-        login_as(admin) if budget.drafting?
-        visit budget_path(budget)
-        click_link group.name
-
-        within "#categories" do
-          click_link tag_medio_ambiente.name
-        end
-
-        expect(page).to have_css ".budget-investment", count: 2
-        expect(page).to have_content investment1.title
-        expect(page).to have_content investment2.title
-        expect(page).not_to have_content investment3.title
+      [investment1, investment2, investment3].each do |investment|
+        investment.update(selected: true, feasibility: "feasible")
       end
+
+      if budget.finished?
+        [investment1, investment2, investment3].each do |investment|
+          investment.update(selected: true, feasibility: "feasible", winner: true)
+        end
+      end
+
+      visit budget_investments_path(budget, heading: heading.id)
+
+      within "#categories" do
+        click_link tag_medio_ambiente.name
+      end
+
+      expect(page).to have_css ".budget-investment", count: 2
+      expect(page).to have_content investment1.title
+      expect(page).to have_content investment2.title
+      expect(page).not_to have_content investment3.title
     end
   end
 
@@ -332,12 +317,10 @@ describe "Tags" do
       expect(page).not_to have_content "Education"
     end
 
-    scenario "Valuators do not see user tags" do
+    scenario "Valuators do not see user tags", :admin do
       investment = create(:budget_investment, heading: heading, tag_list: "Park")
       investment.set_tag_list_on(:valuation_tags, "Education")
       investment.save!
-
-      login_as(admin)
 
       visit admin_budget_budget_investment_path(budget, investment)
       click_link "Edit classification"

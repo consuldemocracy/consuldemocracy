@@ -44,6 +44,8 @@ en:
         title: "Processes"
         description: "In the %{link} section, citizens participate in the drafting and modification of regulations affecting the city and can give their opinion on municipal policies in previous debates."
         link: "processes"
+        feature: "To participate in the processes you have to %{link} and verify your account."
+        feature_link: "register in %{org_name}"
       faq:
         title: "Technical problems?"
         description: "Read the FAQs and solve your questions."
@@ -54,6 +56,7 @@ en:
       other:
         title: "Other information of interest"
         how_to_use: "Use %{org_name} in your city"
+        sdg: "Sustainable Development Goals help"
       how_to_use:
         text: |-
           Use it in your local government or help us to improve it, it is free software.

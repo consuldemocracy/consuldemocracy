@@ -1,14 +1,13 @@
 <%= render "shared/globalize_locales", resource: @question %>
 
-<%= translatable_form_for [:admin, @process, @question], url: url, html: { data: { watch_changes: true } } do |f| %>
+<%= translatable_form_for [:admin, @process, @question], url: url do |f| %>
 
   <%= render "shared/errors", resource: @question %>
 
   <div class="row">
     <%= f.translatable_fields do |translations_form| %>
       <div class="small-12 medium-9 column end">
-        <%= translations_form.text_area :title, rows: 5,
-          placeholder:  t("admin.legislation.questions.form.title_placeholder") %>
+        <%= translations_form.text_area :title, rows: 5 %>
       </div>
     <% end %>
   </div>

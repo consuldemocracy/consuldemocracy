@@ -1,0 +1,231 @@
+uk-UA:
+  date:
+    abbr_day_names:
+      - Нд
+      - Пн
+      - Вт
+      - Ср
+      - Чт
+      - Пт
+      - Сб
+    abbr_month_names:
+      - 
+      - Січ.
+      - Лют.
+      - Бер.
+      - Квіт.
+      - Трав.
+      - Черв.
+      - Лип.
+      - Серп.
+      - Вер.
+      - Жовт.
+      - Лист.
+      - Груд.
+    day_names:
+      - Неділя
+      - Понеділок
+      - Вівторок
+      - Середа
+      - Четвер
+      - П'ятниця
+      - Субота
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names:
+      - 
+      - Січень
+      - Лютий
+      - Березень
+      - Квітень
+      - Травень
+      - Червень
+      - Липень
+      - Серпень
+      - Вересень
+      - Жовтень
+      - Листопад
+      - Грудень
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: близько 1 години
+        few: близько %{count} годин
+        many: близько %{count} годин
+        other: близько %{count} годин
+      about_x_months:
+        one: близько 1 місяця
+        few: близько %{count} місяців
+        many: близько %{count} місяців
+        other: близько %{count} місяців
+      about_x_years:
+        one: близько 1 року
+        few: близько %{count} років
+        many: близько %{count} років
+        other: близько %{count} років
+      almost_x_years:
+        one: майже 1 рік
+        few: майже %{count} років
+        many: майже %{count} років
+        other: майже %{count} років
+      half_a_minute: півхвилини
+      less_than_x_minutes:
+        one: менше хвилини
+        few: менше %{count} хвилин
+        many: менше %{count} хвилин
+        other: менше %{count} хвилин
+      less_than_x_seconds:
+        one: менше 1 секунди
+        few: менше %{count} секунд
+        many: менше %{count} секунд
+        other: менше %{count} секунд
+      over_x_years:
+        one: понад 1 рік
+        few: понад %{count} років
+        many: понад %{count} років
+        other: понад %{count} років
+      x_days:
+        one: 1 день
+        few: "%{count} днів"
+        many: "%{count} днів"
+        other: "%{count} днів"
+      x_minutes:
+        one: 1 хвилина
+        few: "%{count} хвилин"
+        many: "%{count} хвилин"
+        other: "%{count} хвилин"
+      x_months:
+        one: 1 місяць
+        few: "%{count} місяців"
+        many: "%{count} місяців"
+        other: "%{count} місяців"
+      x_years:
+        one: 1 рік
+        few: "%{count} років"
+        many: "%{count} років"
+        other: "%{count} років"
+      x_seconds:
+        one: 1 секунда
+        few: "%{count} секунд"
+        many: "%{count} секунд"
+        other: "%{count} секунд"
+    prompts:
+      day: День
+      hour: Година
+      minute: Хвилина
+      month: Місяць
+      second: Секунди
+      year: Рік
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: повинно бути прийнято
+      blank: не має бути порожнім
+      present: має бути порожнім
+      confirmation: не співпадає з %{attribute}
+      empty: не може бути порожнім
+      equal_to: має становити %{count}
+      even: має дорівнювати
+      exclusion: зарезервовано
+      greater_than: має бути більше %{count}
+      greater_than_or_equal_to: має бути більше або дорівнювати %{count}
+      inclusion: не входить до списку
+      invalid: недійсний
+      less_than: має бути менше %{count}
+      less_than_or_equal_to: має бути менше або дорівнювати %{count}
+      model_invalid: "Помилка перевірки: %{errors}"
+      not_a_number: не є числом
+      not_an_integer: має бути цілим числом
+      odd: має бути непарним
+      required: має існувати
+      taken: вже взято
+      too_long:
+        one: занадто довгий (максимум - 1 символ)
+        few: занадто довгий (максимум %{count} символів)
+        many: занадто довгий (максимум %{count} символів)
+        other: занадто довгий (максимум %{count} символів)
+      too_short:
+        one: занадто короткий (мінімум - 1 символ)
+        few: занадто короткий (мінімум %{count} символів)
+        many: занадто короткий (мінімум %{count} символів)
+        other: занадто короткий (мінімум %{count} символів)
+      wrong_length:
+        one: неправильна довжина (має бути 1 символ)
+        few: неправильна довжина (має складати %{count} символів)
+        many: неправильна довжина (має складати %{count} символів)
+        other: неправильна довжина (має складати %{count} символів)
+      other_than: має бути іншим, ніж %{count}
+    template:
+      body: "Виникли проблеми з такими полями:"
+      header:
+        one: Помилка 1 не дає змоги зберегти цю %{model}
+        few: "%{count} помилок не дають змоги зберегти цю %{model}"
+        many: "%{count} помилки не дають змоги зберегти цю %{model}"
+        other: "%{count} помилок не дають змоги зберегти цю %{model}"
+  helpers:
+    select:
+      prompt: Будь ласка, оберіть
+    submit:
+      create: Створити %{model}
+      submit: Зберегти %{model}
+      update: Оновити %{model}
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Мільярд
+          million: Мільйон
+          quadrillion: Квадрильйон
+          thousand: Тисяча
+          trillion: Трильйон
+      format:
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Байт
+            few: Байтів
+            many: Байтів
+            other: Байтів
+          gb: Гігабайт
+          kb: Кілобайт
+          mb: Мегабайт
+          tb: Терабайт
+    percentage:
+      format:
+        format: "%n%"
+  support:
+    array:
+      last_word_connector: ", і "
+      two_words_connector: " і "
+      words_connector: ", "
+  time:
+    am: ранку
+    formats:
+      datetime: "%Y-%m-%d %H:%M:%S"
+      default: "%a,%d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+      api: "%Y-%m-%d %H"
+    pm: пополудні

@@ -21,6 +21,11 @@
 /config/secrets.yml
 /config/deploy-secrets.yml
 /config/maintenance.yml
+/config/entidades_censo.csv
+/config/census_geozones.csv
+/config/entities_geozones_dict.json
+/config/geozones_mapping.json
+/config/padrones.csv
 
 /coverage
 
@@ -36,5 +41,8 @@
 .ruby-gemset
 
 public/sitemap.xml
+public/assets/
+public/machine_learning/data/
 public/system/
 /public/ckeditor_assets/
+storage/

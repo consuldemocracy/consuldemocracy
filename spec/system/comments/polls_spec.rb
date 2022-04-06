@@ -6,12 +6,12 @@ describe "Commenting polls" do
 
   scenario "Index" do
     3.times { create(:comment, commentable: poll) }
+    comment = Comment.includes(:user).last
 
     visit poll_path(poll)
 
     expect(page).to have_css(".comment", count: 3)
 
-    comment = Comment.last
     within first(".comment") do
       expect(page).to have_content comment.user.name
       expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
@@ -54,7 +54,7 @@ describe "Commenting polls" do
     expect(page).to have_current_path(comment_path(comment))
   end
 
-  scenario "Collapsable comments", :js do
+  scenario "Collapsable comments" do
     parent_comment = create(:comment, body: "Main comment", commentable: poll)
     child_comment  = create(:comment, body: "First subcomment", commentable: poll, parent: parent_comment)
     grandchild_comment = create(:comment, body: "Last subcomment", commentable: poll, parent: child_comment)
@@ -104,13 +104,17 @@ describe "Commenting polls" do
     expect(c1.body).to appear_before(c2.body)
     expect(c2.body).to appear_before(c3.body)
 
-    visit poll_path(poll, order: :newest)
+    click_link "Newest first"
 
+    expect(page).to have_link "Newest first", class: "is-active"
+    expect(page).to have_current_path(/#comments/, url: true)
     expect(c3.body).to appear_before(c2.body)
     expect(c2.body).to appear_before(c1.body)
 
-    visit poll_path(poll, order: :oldest)
+    click_link "Oldest first"
 
+    expect(page).to have_link "Oldest first", class: "is-active"
+    expect(page).to have_current_path(/#comments/, url: true)
     expect(c1.body).to appear_before(c2.body)
     expect(c2.body).to appear_before(c3.body)
   end
@@ -178,6 +182,7 @@ describe "Commenting polls" do
     end
 
     expect(page).to have_css(".comment", count: 2)
+    expect(page).to have_current_path(/#comments/, url: true)
   end
 
   describe "Not logged user" do
@@ -193,7 +198,7 @@ describe "Commenting polls" do
     end
   end
 
-  scenario "Create", :js do
+  scenario "Create" do
     login_as(user)
     visit poll_path(poll)
 
@@ -209,7 +214,7 @@ describe "Commenting polls" do
     end
   end
 
-  scenario "Errors on create", :js do
+  scenario "Errors on create" do
     login_as(user)
     visit poll_path(poll)
 
@@ -218,7 +223,7 @@ describe "Commenting polls" do
     expect(page).to have_content "Can't be blank"
   end
 
-  scenario "Reply", :js do
+  scenario "Reply" do
     citizen = create(:user, username: "Ana")
     manuela = create(:user, username: "Manuela")
     comment = create(:comment, commentable: poll, user: citizen)
@@ -237,10 +242,42 @@ describe "Commenting polls" do
       expect(page).to have_content "It will be done next week."
     end
 
-    expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+    expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
   end
 
-  scenario "Errors on reply", :js do
+  scenario "Reply update parent comment responses count" do
+    comment = create(:comment, commentable: poll)
+
+    login_as(create(:user))
+    visit poll_path(poll)
+
+    within ".comment", text: comment.body do
+      click_link "Reply"
+      fill_in "Leave your comment", with: "It will be done next week."
+      click_button "Publish reply"
+
+      expect(page).to have_content("1 response (collapse)")
+    end
+  end
+
+  scenario "Reply show parent comments responses when hidden" do
+    comment = create(:comment, commentable: poll)
+    create(:comment, commentable: poll, parent: comment)
+
+    login_as(create(:user))
+    visit poll_path(poll)
+
+    within ".comment", text: comment.body do
+      click_link text: "1 response (collapse)"
+      click_link "Reply"
+      fill_in "Leave your comment", with: "It will be done next week."
+      click_button "Publish reply"
+
+      expect(page).to have_content("It will be done next week.")
+    end
+  end
+
+  scenario "Errors on reply" do
     comment = create(:comment, commentable: poll, user: user)
 
     login_as(user)
@@ -254,7 +291,7 @@ describe "Commenting polls" do
     end
   end
 
-  scenario "N replies", :js do
+  scenario "N replies" do
     parent = create(:comment, commentable: poll)
 
     7.times do
@@ -264,59 +301,6 @@ describe "Commenting polls" do
 
     visit poll_path(poll)
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
-  end
-
-  scenario "Flagging as inappropriate", :js do
-    skip "Feature not implemented yet, review soon"
-
-    comment = create(:comment, commentable: poll)
-
-    login_as(user)
-    visit poll_path(poll)
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      page.find("#flag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#unflag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).to be
-  end
-
-  scenario "Undoing flagging as inappropriate", :js do
-    skip "Feature not implemented yet, review soon"
-
-    comment = create(:comment, commentable: poll)
-    Flag.flag(user, comment)
-
-    login_as(user)
-    visit poll_path(poll)
-
-    within "#comment_#{comment.id}" do
-      page.find("#unflag-expand-comment-#{comment.id}").click
-      page.find("#unflag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#flag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).not_to be
-  end
-
-  scenario "Flagging turbolinks sanity check", :js do
-    skip "Feature not implemented yet, review soon"
-
-    poll = create(:poll, title: "Should we change the world?")
-    comment = create(:comment, commentable: poll)
-
-    login_as(user)
-    visit polls_path
-    click_link "Should we change the world?"
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      expect(page).to have_selector("#flag-comment-#{comment.id}")
-    end
   end
 
   scenario "Erasing a comment's author" do
@@ -332,7 +316,7 @@ describe "Commenting polls" do
   end
 
   describe "Moderators" do
-    scenario "can create comment as a moderator", :js do
+    scenario "can create comment as a moderator" do
       skip "Feature not implemented yet, review soon"
 
       moderator = create(:moderator)
@@ -352,7 +336,7 @@ describe "Commenting polls" do
       end
     end
 
-    scenario "can create reply as a moderator", :js do
+    scenario "can create reply as a moderator" do
       skip "Feature not implemented yet, review soon"
 
       citizen = create(:user, username: "Ana")
@@ -378,7 +362,7 @@ describe "Commenting polls" do
         expect(page).to have_css "img.moderator-avatar"
       end
 
-      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
     end
 
     scenario "can not comment as an administrator" do
@@ -394,7 +378,7 @@ describe "Commenting polls" do
   end
 
   describe "Administrators" do
-    scenario "can create comment as an administrator", :js do
+    scenario "can create comment as an administrator" do
       skip "Feature not implemented yet, review soon"
 
       admin = create(:administrator)
@@ -414,7 +398,7 @@ describe "Commenting polls" do
       end
     end
 
-    scenario "can create reply as an administrator", :js do
+    scenario "can create reply as an administrator" do
       skip "Feature not implemented yet, review soon"
 
       citizen = create(:user, username: "Ana")
@@ -440,15 +424,12 @@ describe "Commenting polls" do
         expect(page).to have_css "img.admin-avatar"
       end
 
-      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}")
     end
 
-    scenario "can not comment as a moderator" do
+    scenario "can not comment as a moderator", :admin do
       skip "Feature not implemented yet, review soon"
 
-      admin = create(:administrator)
-
-      login_as(admin.user)
       visit poll_path(poll)
 
       expect(page).not_to have_content "Comment as moderator"
@@ -484,7 +465,7 @@ describe "Commenting polls" do
       end
     end
 
-    scenario "Create", :js do
+    scenario "Create" do
       visit poll_path(poll)
 
       within("#comment_#{comment.id}_votes") do
@@ -502,7 +483,7 @@ describe "Commenting polls" do
       end
     end
 
-    scenario "Update", :js do
+    scenario "Update" do
       visit poll_path(poll)
 
       within("#comment_#{comment.id}_votes") do
@@ -526,7 +507,7 @@ describe "Commenting polls" do
       end
     end
 
-    scenario "Trying to vote multiple times", :js do
+    scenario "Trying to vote multiple times" do
       visit poll_path(poll)
 
       within("#comment_#{comment.id}_votes") do

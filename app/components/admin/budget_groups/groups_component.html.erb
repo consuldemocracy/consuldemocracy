@@ -1,0 +1,33 @@
+<% if groups.any? %>
+  <h3><%= t("admin.budget_groups.amount", count: groups.count) %></h3>
+  <table>
+    <thead>
+      <tr id="<%= dom_id(budget) %>">
+        <th><%= t("admin.budget_groups.name") %></th>
+        <th><%= Budget::Group.human_attribute_name(:max_votable_headings) %></th>
+        <th><%= t("admin.budget_groups.headings_name") %></th>
+        <th><%= t("admin.actions.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% groups.each do |group| %>
+        <tr id="<%= dom_id(group) %>">
+          <td><%= group.name %></td>
+          <td><%= group.max_votable_headings %></td>
+          <td><%= group.headings.count %></td>
+          <td>
+            <%= render Admin::TableActionsComponent.new(group) do |actions| %>
+              <%= actions.action(:headings,
+                                 text: t("admin.budget_groups.headings_manage"),
+                                 path: headings_path(group)) %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="callout primary clear">
+    <%= t("admin.budget_groups.no_groups") %>
+  </div>
+<% end %>

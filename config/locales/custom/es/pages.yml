@@ -1,0 +1,14 @@
+es:
+  pages:
+    help:
+      title: ¿Qué es la Plataforma de Participación Ciudadana de la Diputación de Valladolid?
+      budgets:
+        feature: "En este proceso cada año la gente plantea, apoya y vota proyectos. Los más votados pasan a financiarse con el presupuesto municipal."
+        phase_1: "Entre enero y principios de marzo, las personas registradas en %{org} pueden <strong>presentar proyectos</strong>."
+        phase_2: "En marzo, los proponentes tienen que recabar apoyos, a modo de <strong>fase de preselección</strong>."
+        phase_3: "Entre abril y comienzos de mayo los técnicos de la Diputación tasan <strong>los proyectos</strong> por orden de más a menos apoyados y comprueban que son viables."
+      polls:
+        help_text_1: Pueden votar todas las personas empadronadas en la ciudad mayores de 16 años.
+        help_text_2: Los resultados de todas las votaciones son vinculantes para el gobierno municipal.
+      processes:
+        feature: "Para participar en un proceso hay que %{link} y verificar tu cuenta. Consulta la página de Procesos periódicamente para saber qué normativas y políticas se están debatiendo y consultando."

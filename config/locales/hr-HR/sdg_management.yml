@@ -1,0 +1,17 @@
+hr:
+  sdg_management:
+    homepage:
+      header:
+        create: "Stvori naslov"
+        title: "Naslov"
+    menu:
+      budget_investments: "Participativni proračun"
+      debates: "Rasprave"
+      polls: "Ankete"
+      proposals: "Prijedlozi"
+    relations:
+      index:
+        filter: "Filter"
+        filters:
+          all: "Svi"
+          pending_sdg_review: "U tijeku"

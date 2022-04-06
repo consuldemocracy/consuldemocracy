@@ -8,7 +8,7 @@ class Setting < ApplicationRecord
   end
 
   def type
-    if %w[feature process proposals map html homepage uploads].include? prefix
+    if %w[feature process proposals map html homepage uploads sdg].include? prefix
       prefix
     elsif %w[remote_census].include? prefix
       key.rpartition(".").first
@@ -38,7 +38,6 @@ class Setting < ApplicationRecord
       setting = find_by(key: key) || new(key: key)
       setting.value = value.presence
       setting.save!
-      value
     end
 
     def rename_key(from:, to:)
@@ -101,6 +100,9 @@ class Setting < ApplicationRecord
         "feature.remote_census": nil,
         "feature.valuation_comment_notification": true,
         "feature.graphql_api": true,
+        "feature.sdg": true,
+        "feature.machine_learning": false,
+        "feature.remove_investments_supports": false,
         "homepage.widgets.feeds.debates": true,
         "homepage.widgets.feeds.processes": true,
         "homepage.widgets.feeds.proposals": true,
@@ -172,6 +174,9 @@ class Setting < ApplicationRecord
         "related_content_score_threshold": -0.3,
         "featured_proposals_number": 3,
         "feature.dashboard.notification_emails": nil,
+        "machine_learning.comments_summary": false,
+        "machine_learning.related_content": false,
+        "machine_learning.tags": false,
         "remote_census.general.endpoint": "",
         "remote_census.request.method_name": "",
         "remote_census.request.structure": "",
@@ -185,7 +190,12 @@ class Setting < ApplicationRecord
         "remote_census.response.gender": "",
         "remote_census.response.name": "",
         "remote_census.response.surname": "",
-        "remote_census.response.valid": ""
+        "remote_census.response.valid": "",
+        "sdg.process.debates": true,
+        "sdg.process.proposals": true,
+        "sdg.process.polls": true,
+        "sdg.process.budgets": true,
+        "sdg.process.legislation": true
       }
     end
 

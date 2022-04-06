@@ -4,10 +4,12 @@ describe Verification::Residence do
   let!(:geozone) { create(:geozone, census_code: "01") }
   let(:residence) { build(:verification_residence, document_number: "12345678Z") }
 
+  it "is valid" do
+    expect(residence).to be_valid
+  end
+
   describe "validations" do
-    it "is valid" do
-      expect(residence).to be_valid
-    end
+    before { skip "Disabled for development and test" }
 
     describe "dates" do
       it "is valid with a valid date of birth" do
@@ -62,6 +64,7 @@ describe Verification::Residence do
 
   describe "save" do
     it "stores document number, document type, geozone, date of birth and gender" do
+      skip "Disabled for development and test"
       user = create(:user)
       residence.user = user
       residence.save!
@@ -79,6 +82,7 @@ describe Verification::Residence do
 
   describe "tries" do
     it "increases tries after a call to the Census" do
+      skip "Disabled for development and test"
       residence.postal_code = "28011"
       residence.valid?
       expect(residence.user.lock.tries).to eq(1)
@@ -93,6 +97,7 @@ describe Verification::Residence do
 
   describe "Failed census call" do
     it "stores failed census API calls" do
+      skip "Disabled for development and test"
       residence = build(:verification_residence, :invalid, document_number: "12345678Z")
       residence.save
 

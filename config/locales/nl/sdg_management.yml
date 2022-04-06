@@ -1,0 +1,18 @@
+nl:
+  sdg_management:
+    homepage:
+      header:
+        create: "Koptekst maken"
+        title: "Koptekst"
+    menu:
+      budget_investments: "Participatory budgets"
+      debates: "Discussie"
+      legislation_processes: "Plannen"
+      polls: "Polls"
+      proposals: "Proposals"
+    relations:
+      index:
+        filter: "Filter"
+        filters:
+          all: "All"
+          pending_sdg_review: "In afwachting"

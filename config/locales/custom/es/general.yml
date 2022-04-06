@@ -1,0 +1,92 @@
+es:
+  account:
+    show:
+      user_permission_proposal: Crear nuevas propuestas*
+  debates:
+    index:
+      section_header:
+        help: ¿Cómo funcionan los debates?
+      section_footer:
+        title: ¿Cómo funcionan los debates?
+        help_text_2: |
+          <p>Para abrir un debate es necesario registrarse en la Plataforma de
+          Participación de la Diputación de Valladolid. Los usuarios ya
+          registrados también pueden comentar los debates abiertos y valorarlos
+          con los botones de "Estoy de acuerdo" o "No estoy de acuerdo" que se
+          encuentran en cada uno de ellos.</p>
+
+          <p>Ten en cuenta que un debate no activa ningún mecanismo de actuación
+          concreto. Si quieres hacer una propuesta para la provincia a través
+          de los <a href="/budgets">presupuestos participativos</a> cuando se abra la convocatoria, ve a la sección
+          correspondiente.</p>
+  geozones:
+    none: Toda la provincia
+  layouts:
+    footer:
+      participation_text: Decide cómo debe ser la provincia que quieres.
+      transparency_text: Obtén cualquier información sobre la provincia.
+      transparency_title: Transparencia
+      faq: Asistencia técnica
+    header:
+      collaborative_legislation: Legislación colaborativa
+      notifications: Notificaciones
+      new_notifications:
+        one: Tienes una nueva notificación
+        other: Tienes %{count} notificaciones nuevas
+      no_notifications: "No tienes notificaciones nuevas"
+      open_city_slogan_html: Regístrate y debate sobre los que temas que te preocupan, propón ideas para mejorar tu pueblo y tu comarca y decidamos colectivamente cómo llevarlas a cabo.
+      open_city_title: Decide cómo quieres que sea tu provincia
+      presupuestos_provinciales_title: Presupuestos Provinciales 2019
+      presupuestos_provinciales_description: La Diputación de Valladolid destinará 1,2 millones de euros a Presupuestos Participativos para el ejercicio de 2019. ¡Anímate y participa! Eleva propuestas y selecciona entre ellas las que considera prioritarias.
+      poll_questions: Encuestas
+  notifications:
+    index:
+      comments_on:
+        one: Hay un nuevo comentario en
+        other: Hay %{count} comentarios nuevos en
+      notifiable_hidden: Este elemento ya no está disponible.
+      proposal_notification:
+        one: Hay una nueva notificación en
+        other: Hay %{count} nuevas notificaciones en
+      replies_to:
+        one: Hay una respuesta nueva a tu comentario en
+        other: Hay %{count} nuevas respuestas a tu comentario en
+  map:
+    title: "Comarcas"
+    proposal_for_district: "Crea una propuesta para tu comarca"
+  proposals:
+    index:
+      title: Propuestas ciudadanas
+      section_footer:
+        description: Haz una propuesta ciudadana. Si obtiene los apoyos suficientes y pasa a votación, puedes conseguir que todos los habitantes decidan cómo quieren que sea nuestra provincia.
+        help_text_1: "Las propuestas ciudadanas son una oportunidad para que los vecinos y colectivos decidan directamente cómo quieren que sea su provincia. Cualquier persona puede hacer una propuesta sobre un tema que le interese o preocupe para que el ayuntamiento la lleve a cabo, después de conseguir los apoyos suficientes y de someterse a votación ciudadana."
+  polls:
+    index:
+      no_geozone_restricted: "Toda la provincia"
+      geozone_restricted: "Comarcas"
+      section_footer:
+        help_text_1: "Las votaciones se convocan cuando una propuesta ciudadana alcanza el 1% de apoyos del censo con derecho a voto. En las votaciones también se pueden incluir cuestiones que el Ayuntamiento somete a decisión directa de la ciudadanía."
+        help_text_2: "Para participar en la próxima votación tienes que registrarte en %{org} y verificar tu cuenta. Pueden votar todas las personas empadronadas en la provincia mayores de 16 años. Los resultados de todas las votaciones serán vinculantes para el gobierno."
+  shared:
+    tags_cloud:
+      districts: "Comarcas"
+      districts_list: "Listado de comarcas"
+  votes:
+    budget_investments:
+      different_heading_assigned: Sólo puedes apoyar proyectos de gasto de una partida
+  welcome:
+    debates:
+      title: Debates
+      description: Comparte y debate lo que te parezca importante para nuestra provincia.
+    decide:
+      title: Decides
+      description: Todos los habitantes de la provincia podremos decidir si las propuestas realizadas se llevan a cabo.
+    do:
+      title: Se hace
+      description: Si la propuesta es aceptada mayoritariamente, tu Ayuntamiento o la Diputación la llevarán a cabo.
+    proposal:
+      title: Propones
+      description: Realiza propuestas concretas para mejorar el lugar donde vives.
+  related_content:
+    content_title:
+      budget_investment: "Proyecto de gasto"

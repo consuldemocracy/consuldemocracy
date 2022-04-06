@@ -4,7 +4,7 @@
 <%= render "shared/filter_subnav", i18n_namespace: "admin.hidden_users.index" %>
 
 <% if @users.any? %>
-  <h3 class="margin"><%= page_entries_info @users %></h3>
+  <h3><%= page_entries_info @users %></h3>
 
   <table>
     <thead>
@@ -19,17 +19,7 @@
         </td>
 
         <td>
-          <%= link_to t("admin.actions.restore"),
-                restore_admin_hidden_user_path(user, request.query_parameters),
-                method: :put,
-                data: { confirm: t("admin.actions.confirm") },
-                class: "button hollow warning" %>
-          <% unless user.confirmed_hide? %>
-            <%= link_to t("admin.actions.confirm_hide"),
-                confirm_hide_admin_hidden_user_path(user, request.query_parameters),
-                method: :put,
-                class: "button" %>
-          <% end %>
+          <%= render Admin::HiddenTableActionsComponent.new(user) %>
         </td>
       </tr>
     <% end %>

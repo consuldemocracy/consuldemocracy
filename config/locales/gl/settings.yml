@@ -60,6 +60,11 @@ gl:
     meta_keywords_description: 'Palabras clave <meta name="keywords">, usado para mellorar o SEO'
     min_age_to_participate: Idade mínima para participar
     min_age_to_participate_description: "Os usuarios maiores desta idade poden participar en todos os procesos"
+    proposals:
+      poll_short_title: Votacións
+      poll_description: Descrición de votacións
+      email_short_title: O teu correo electrónico
+      poster_short_title: Cartel
     analytics_url: "URL de analytics"
     feature:
       twitter_login: "Rexistro con Twitter"
@@ -95,3 +100,23 @@ gl:
       public_stats_description: "Amosa as estatísticas públicas no panel de administración"
       help_page: "Páxina de axuda"
       help_page_description: 'Amosa un menú de axuda que contén unha páxina con información sobre cada unha das características habilitadas'
+    map:
+      latitude: "Latitude"
+      latitude_description: "Latitude para amosar a posición do mapa"
+      longitude: "Lonxitude"
+      longitude_description: "Lonxitude para amosar a posición do mapa"
+      zoom: "Zoom"
+      zoom_description: "Zoom para amosar a posición do mapa"
+    process:
+      debates: "Debates"
+      debates_description: "O espazo de debate da cidadanía está dirixido a calquera que poida presentar problemas que lles afecten e sobre os que queren compartir as súas opinións con outros"
+      proposals: "Propostas cidadás"
+      polls: "Votacións"
+      polls_description: "As votacións da cidadanía son un proceso participativo polo cal os veciños con dereito a voto poden tomar decisións dun modo directo"
+      budgets: "Orzamentos participativos"
+      legislation: "Lexislación colaborativa"
+    html:
+      per_page_code_head: "Código para incluír en cada páxina (<head>)"
+      per_page_code_head_description: "Este código aparecerá dentro da etiqueta <head>. Pode usarse para inserir scripts personalizados, analíticas,..."
+      per_page_code_body: "Código para incluír en cada páxina (<body>)"
+      per_page_code_body_description: "Este código aparecerá dentro da etiqueta <body>. Pode usarse para inserir scripts personalizados, analíticas..."

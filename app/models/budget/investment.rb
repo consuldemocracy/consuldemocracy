@@ -13,6 +13,7 @@ class Budget
     include Imageable
     include Mappable
     include Documentable
+    include SDG::Relatable
 
     acts_as_taggable_on :valuation_tags
     acts_as_votable
@@ -49,6 +50,7 @@ class Budget
     has_many :valuator_groups, through: :valuator_group_assignments
 
     has_many :comments, -> { where(valuation: false) }, as: :commentable, inverse_of: :commentable
+    has_one :summary_comment, as: :commentable, class_name: "MlSummaryComment", dependent: :destroy
     has_many :valuations, -> { where(valuation: true) },
       as:         :commentable,
       inverse_of: :commentable,
@@ -103,19 +105,19 @@ class Budget
     scope :for_render, -> { includes(:heading) }
 
     def self.by_valuator(valuator_id)
-      where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments)
+      where(budget_valuator_assignments: { valuator_id: valuator_id }).joins(:valuator_assignments)
     end
 
     def self.by_valuator_group(valuator_group_id)
       joins(:valuator_group_assignments).
-        where("budget_valuator_group_assignments.valuator_group_id = ?", valuator_group_id)
+        where(budget_valuator_group_assignments: { valuator_group_id: valuator_group_id })
     end
 
-    before_create :set_original_heading_id
-    before_save :calculate_confidence_score
-    after_save :recalculate_heading_winners
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
+    before_save :calculate_confidence_score
+    before_create :set_original_heading_id
+    after_save :recalculate_heading_winners
 
     def comments_count
       comments.count
@@ -163,11 +165,11 @@ class Budget
       results = results.winners            if params[:advanced_filters].include?("winners")
 
       ids = []
-      ids += results.valuation_finished_feasible.pluck(:id) if params[:advanced_filters].include?("feasible")
-      ids += results.where(selected: true).pluck(:id)       if params[:advanced_filters].include?("selected")
-      ids += results.undecided.pluck(:id)                   if params[:advanced_filters].include?("undecided")
-      ids += results.unfeasible.pluck(:id)                  if params[:advanced_filters].include?("unfeasible")
-      results = results.where("budget_investments.id IN (?)", ids) if ids.any?
+      ids += results.valuation_finished_feasible.ids if params[:advanced_filters].include?("feasible")
+      ids += results.where(selected: true).ids       if params[:advanced_filters].include?("selected")
+      ids += results.undecided.ids                   if params[:advanced_filters].include?("undecided")
+      ids += results.unfeasible.ids                  if params[:advanced_filters].include?("unfeasible")
+      results = results.where(id: ids) if ids.any?
       results
     end
 
@@ -190,11 +192,11 @@ class Budget
       return results if max_per_heading <= 0
 
       ids = []
-      budget.headings.pluck(:id).each do |hid|
-        ids += Investment.where(heading_id: hid).order(confidence_score: :desc).limit(max_per_heading).pluck(:id)
+      budget.headings.ids.each do |hid|
+        ids += Investment.where(heading_id: hid).order(confidence_score: :desc).limit(max_per_heading).ids
       end
 
-      results.where("budget_investments.id IN (?)", ids)
+      results.where(id: ids)
     end
 
     def self.search_by_title_or_id(title_or_id)
@@ -267,15 +269,21 @@ class Budget
       return permission_problem(user)    if permission_problem?(user)
       return :not_selected               unless selected?
       return :no_ballots_allowed         unless budget.balloting?
+      return :invalid_geozone            unless ballotable_by_geozone?(user)
       return :different_heading_assigned unless ballot.valid_heading?(heading)
-      return :not_enough_money           if ballot.present? && !enough_money?(ballot)
       return :casted_offline             if ballot.casted_offline?
+
+      ballot.reason_for_not_being_ballotable(self)
+    end
+
+    def ballotable_by_geozone?(user)
+      heading.geozone.blank? || heading.geozone == user.geozone
     end
 
     def permission_problem(user)
       return :not_logged_in unless user
       return :organization  if user.organization?
-      return :not_verified  unless user.can?(:vote, Budget::Investment)
+      return :not_verified  unless user.can?(:create, ActsAsVotable::Vote)
 
       nil
     end
@@ -289,8 +297,7 @@ class Budget
     end
 
     def valid_heading?(user)
-      voted_in?(heading, user) ||
-      can_vote_in_another_heading?(user)
+      voted_in?(heading, user) || can_vote_in_another_heading?(user)
     end
 
     def can_vote_in_another_heading?(user)
@@ -299,15 +306,6 @@ class Budget
 
     def voted_in?(heading, user)
       user.headings_voted_within_group(group).where(id: heading.id).exists?
-    end
-
-    def ballotable_by?(user)
-      reason_for_not_being_ballotable_by(user).blank?
-    end
-
-    def enough_money?(ballot)
-      available_money = ballot.amount_available(heading)
-      price.to_i <= available_money
     end
 
     def register_selection(user)
@@ -365,16 +363,16 @@ class Budget
       investments = investments.send(current_filter)             if current_filter.present?
       investments = investments.by_heading(params[:heading_id])  if params[:heading_id].present?
       investments = investments.search(params[:search])          if params[:search].present?
-      investments = investments.filter(params[:advanced_search]) if params[:advanced_search].present?
+      investments = investments.filter_by(params[:advanced_search])
       investments
     end
 
     def assigned_valuators
-      self.valuators.map(&:description_or_name).compact.join(", ").presence
+      valuators.map(&:description_or_name).compact.join(", ").presence
     end
 
     def assigned_valuation_groups
-      self.valuator_groups.map(&:name).compact.join(", ").presence
+      valuator_groups.map(&:name).compact.join(", ").presence
     end
 
     def self.with_milestone_status_id(status_id)

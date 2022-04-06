@@ -5,23 +5,24 @@ es:
     actions:
       actions: Acciones
       confirm: '¿Estás seguro?'
+      confirm_action: "¿Estás seguro? %{action} \"%{name}\""
+      confirm_delete: "¿Estás seguro? Esta acción borrará \"%{name}\" y no se puede deshacer."
       confirm_hide: Confirmar moderación
+      delete: Borrar
       hide: Ocultar
       hide_author: Bloquear al autor
+      label: "%{action} %{name}"
       restore: Volver a mostrar
       mark_featured: Destacar
       unmark_featured: Quitar destacado
       edit: Editar
       configure: Configurar
-      delete: Borrar
     officing_booth:
       title: "Estás ahora mismo en la mesa ubicada en %{booth}. Si esto no es correcto no sigas adelante y llama al teléfono de incidencias. Gracias."
     banners:
       index:
         title: Banners
         create: Crear un banner
-        edit: Editar banner
-        delete: Eliminar banner
         filters:
           all: Todos
           with_active: Activos
@@ -35,12 +36,17 @@ es:
           proposals: Propuestas
           budgets: Presupuestos participativos
           help_page: Página de ayuda
+          sdg: ODS
+      create:
+        notice: "Banner creado correctamente"
       edit:
         editing: Editar el banner
         form:
           submit_button: Guardar cambios
       new:
         creating: Crear banner
+      update:
+        notice: "Banner actualizado correctamente"
     activity:
       show:
         action: Acción
@@ -62,36 +68,56 @@ es:
         type: Tipo
         no_activity: No hay actividad de moderadores.
     budgets:
+      actions:
+        ballots: "Crear urnas"
+        confirm:
+          ballots: "¿Seguro? Esta acción solo es necesaria si vas a utilizar urnas físicas durante la votación final. Los ciudadanos podrán votar mediante la web con o sin urnas físicas."
+          destroy: "¿Seguro? Esta acción borrará el presupuesto y todos sus grupos y partidas. Esta acción no se puede deshacer."
+        descriptions:
+          ballots: "Esta acción te permitirá gestionar las urnas de votación. Usa esta opción solamente si vas a utilizar urnas físicas para recoger votos durante la votación final."
+          calculate_winners: 'Tras calcular los resultados, solamente los administradores tendrán acceso a los mismos. Se harán públicos cuando el presupuesto llegue a la fase "%{phase}" <strong>si se habilita la opción "Mostrar resultados"</strong> al editar el presupuesto.'
+          destroy: "Esta acción borrará el presupuesto y todos sus grupos y partidas. Esta acción no se puede deshacer."
+        edit: "Editar presupuesto"
+        preview: "Previsualizar"
+        preview_results: "Previsualizar resultados"
       index:
         title: Presupuestos participativos
         new_link: Crear nuevo presupuesto
         filter: Filtro
         filters:
+          all: Todos
           open: Abiertos
           finished: Terminados
-        budget_investments: Gestionar proyectos de gasto
+        budget_investments: Proyectos de gasto
+        table_budget_type: "Tipo"
+        table_completed: Completado
+        table_draft: "Borrador"
+        table_duration: "Duración"
         table_name: Nombre
         table_phase: Fase
-        table_investments: Proyectos de gasto
-        table_edit_groups: Grupos de partidas
-        table_edit_budget: Editar
-        table_admin_ballots: Urnas
-        edit_groups: Editar grupos de partidas
-        edit_budget: Editar presupuesto
-        admin_ballots: Gestionar urnas
+        table_phase_progress: "(%{current_phase_number}/%{total_phases})"
+        type_multiple: "Múltiples partidas"
+        type_pending: "Pendiente: Aún no hay partidas"
+        type_single: "Partida única"
+        admin_ballots: Urnas
         no_budgets: "No hay presupuestos participativos."
       create:
         notice: '¡Presupuestos participativos creados con éxito!'
       update:
         notice: Presupuestos participativos actualizados
+      publish:
+        notice: "Presupuestos participativos actualizados"
       edit:
         title: Editar presupuestos participativos
+        drafting: "Este presupuesto participativo está en modo borrador, solo los administradores pueden verlo desde la parte pública de la página. Una vez se haya publicado, no se podrá volver a poner en modo borrador otra vez."
+        publish: "Publicar presupuesto"
         delete: Eliminar presupuesto
         phase: Fase
-        dates: Fechas
+        phases_caption: "Fases"
+        duration: "Duración"
         enabled: Habilitada
         actions: Acciones
-        edit_phase: Editar fase
+        enable_phase: "Habilitar fase de %{phase}"
         active: Activa
         blank_dates: Sin fechas
         administrators:
@@ -104,12 +130,34 @@ es:
           other: "%{count} evaluadores seleccionados"
         empty_administrators: "No hay administradores"
         empty_valuators: "No hay evaluadores"
+        name_description: "Este es el nombre del presupuesto participativo usado en la cabecera y tarjetas cuando éste está activo"
+        image_description: "Si se proporciona una imagen será usada como fondo del presupuesto, si no el fondo será del color por defecto para los presupuestos."
+        main_call_to_action: "Enlace de acción principal (opcional)"
+        main_call_to_action_description: "Este enlace aparecerá en la cabecera de este presupuesto participativo y permite al usuario ejecutar una acción específica como crear una nueva propuesta, votar las existentes, o leer más sobre el funcionamiento de los presupuestos participativos."
+        info:
+          budget_settings: "Configuración genérica del presupuesto participativo"
+          staff_settings: "Administradores y Evaluadores asigandos al presupuesto"
       destroy:
         success_notice: Presupuesto eliminado correctamente
         unable_notice: No se puede eliminar un presupuesto con proyectos asociados
         unable_notice_polls: No se puede eliminar un presupuesto con una votación asociada
       new:
-        title: Nuevo presupuesto ciudadano
+        title_multiple: Nuevo presupuesto de múltiples partidas
+        title_single: Nuevo presupuesto de partida única
+      help:
+        budgets: "Los presupuestos participativos permiten que los ciudadanos propongan y decidan de manera directa cómo gastar parte del presupuesto, con un seguimiento y evaluación riguroso de las propuestas por parte de la institución."
+        groups:
+          multiple: "Los grupos sirven para organizar las partidas del presupuesto. Después de que un grupo sea creado y éste contenga partidas, es posible determinar el número de partidas a las que un usuario puede votar por grupo."
+          single: "Los grupos sirven para organizar las partidas del presupuesto, como este presupuesto sólo contendrá una partida, se puede usar el mismo nombre y éste no aparecerá en ninguna parte. Puedes continuar con el siguiente paso."
+        headings:
+          multiple: "Las partidas sirven para dividir el dinero del presupuesto participativo. Aquí puedes ir añadiendo partidas para cada grupo y establecer la cantidad de dinero que se gastará en cada partida."
+          single: "Las partidas sirven para dividir el dinero del presupuesto participativo. Como este presupuesto solo tendrá una partida aquí podrás establecer la cantidad de dinero que se gastará en este presupuesto participativo."
+        phases: "Los presupuestos participativos tienen distintas fases. Aquí puedes habilitar o deshabilitar fases y también personalizar cada una de las fases."
+      show:
+        add_group: "Añadir grupo"
+        add_heading: "Añadir partida"
+        groups_and_headings: "Grupos de partidas"
+        headings_caption: "Partidas del grupo %{group}"
       winners:
         calculate: Calcular proyectos ganadores
         calculated: Calculando ganadores, puede tardar un minuto.
@@ -117,8 +165,7 @@ es:
     budget_groups:
       name: "Nombre"
       headings_name: "Partidas"
-      headings_edit: "Editar Partidas"
-      headings_manage: "Gestionar partidas"
+      headings_manage: "Partidas"
       no_groups: "No hay grupos."
       amount:
         one: "Hay 1 grupo de partidas presupuestarias"
@@ -133,14 +180,12 @@ es:
       form:
         create: "Crear nuevo grupo"
         edit: "Editar grupo"
+        max_votable_headings_info: "Solo se aplica en la fase de apoyos. Durante la votación final un usuario solo puede votar en una partida por grupo."
         submit: "Guardar grupo"
       index:
-        back: "Volver a presupuestos"
+        new_button: "Añadir un grupo nuevo"
     budget_headings:
-      no_headings: "No hay partidas."
-      amount:
-        one: "Hay 1 partida presupuestarias"
-        other: "Hay %{count} partidas presupuestarias"
+      no_headings: "El grupo <strong>%{group}</strong> no tiene ninguna partida."
       create:
         notice: "¡Partida presupuestaria creada con éxito!"
       update:
@@ -149,20 +194,35 @@ es:
         success_notice: "Partida presupuestaria eliminada correctamente"
         unable_notice: "No se puede eliminar una partida presupuestaria con proyectos asociados"
       form:
+        max_ballot_lines_info: 'Máximo número de proyectos que un usuario puede votar en esta partida durante la fase "Votación final". Solamente se aplica a presupuestos con votación por aprobación.'
         population_info: "El campo población de las partidas presupuestarias se usa con fines estadísticos únicamente, con el objetivo de mostrar el porcentaje de votos habidos en cada partida que represente un área con población. Es un campo opcional, así que puedes dejarlo en blanco si no aplica."
         coordinates_info: "Si se añaden los campos latitud y longitud, en la página de proyectos de esta partida aparecerá un mapa, que estará centrado en esas coordenadas."
         content_blocks_info: "Si se permite el bloque de contenidos, se tendrá la oportunidad de crear bloques de contenido relativos a esta partida desde la sección Configuración > Personalizar bloques. Este contenido aparecerá en la página de proyectos de esta partida."
         create: "Crear nueva partida"
         edit: "Editar partida"
         submit: "Guardar partida"
+      group_switcher:
+        currently_showing: "Mostrando las partidas del grupo <strong>%{group}</strong>."
+        different_group: "Ir a partidas de otro grupo"
+        the_other_group: "Ir a partidas del grupo %{group}."
       index:
         back: "Volver a grupos"
+        new_button: "Añadir una partida nueva"
+        title: "Partidas de %{budget} / %{group}"
     budget_phases:
       edit:
-        summary_help_text: Este texto informará al usuario sobre la fase. Para mostrarlo aunque la fase no esté activa, marca la opción de más abajo.
         description_help_text: Este texto aparecerá en la cabecera cuando la fase esté activa
+        duration: "Duración de la fase"
+        duration_description: "El período de tiempo que esta fase estará activa."
         enabled_help_text: Esta fase será pública en el calendario de fases del presupuesto y estará activa para otros propósitos
+        image_description: "Si se proporciona una imagen se mostrará junto a la descripción de esta fase."
+        main_call_to_action: "Enlace de acción principal (opcional)"
+        main_call_to_action_description: "Este enlace aparecerá en la cabecera de este presupuesto participativo cuando esta fase esté activa y permite al usuario ejecutar una acción específica como crear una nueva propuesta, votar las existentes, o leer más sobre el funcionamiento de los presupuestos participativos."
+        name_help_text: "Este es el título de la fase que los usuarios leerán en el encabezado cuando la fase esté activa."
         save_changes: Guardar cambios
+        title: "Editar fase"
+      index:
+        title: "Fases de %{budget}"
     budget_investments:
       index:
         heading_filter_all: Todas las partidas
@@ -217,7 +277,7 @@ es:
           incompatible: Incompatible
           price: Precio
           author: Autor
-        cannot_calculate_winners: El presupuesto debe estar en las fases "Votación final", "Votación finalizada" o "Resultados" para poder calcular las propuestas ganadoras
+        cannot_calculate_winners: El presupuesto debe estar en la fase "%{phase}" para poder calcular las propuestas ganadoras
         see_results: "Ver resultados"
         milestone_tags_filter_all: "Todas las etiquetas de seguimiento"
       show:
@@ -243,7 +303,7 @@ es:
           title: Selección
         winner:
           title: Ganador
-          "true": "Si"
+          "true": "Sí"
           "false": "No"
         valuator_groups: "Grupos de evaluadores"
         preview: Vista previa
@@ -258,6 +318,37 @@ es:
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
       search_unfeasible: Buscar inviables
+    budgets_wizard:
+      creation_timeline:
+        budget: Presupuesto
+        groups: Grupos
+        headings: Partidas
+        phases: Fases
+      budgets:
+        continue: "Continuar a grupos"
+      groups:
+        back: "Volver a editar presupuesto"
+        continue: "Continuar a partidas"
+      headings:
+        continue: "Continuar a fases"
+        single:
+          back: "Volver a editar grupo"
+      heading_mode:
+        multiple:
+          description: "Crea un proceso con múltiples grupos, distritos o temas. Tienes algo como varias bolsas de dinero. Por ejemplo, 25.000€ para \"Distrito norte\", 30.000€ para \"Distrito centro\", 28.000€ para \"Distrito sur\" y toda la ciudad. O para varios temas como deporte, cultura o salud."
+          link: "Crear presupuesto de múltiples partidas"
+          title: "Presupuesto de <strong>múltiples partidas</strong>"
+        single:
+          description: "Crea un proceso con un grupo, distrito o tema. Tienes algo como una bolsa de dinero. Por ejemplo, 25.000€ para un distrito, o 10.000€ para cultura."
+          link: "Crear presupuesto de partida única"
+          title: "Presupuesto de <strong>partida única</strong>"
+        title: Tipo de presupuesto participativo
+      phases:
+        continue: "Finalizar"
+        multiple:
+          back: "Volver a partidas"
+        single:
+          back: "Volver a editar partida"
     milestones:
       index:
         table_id: "ID"
@@ -266,7 +357,6 @@ es:
         table_publication_date: "Fecha de publicación"
         table_status: Estado
         table_actions: "Acciones"
-        delete: "Eliminar hito"
         no_milestones: "No hay hitos definidos"
         image: "Imagen"
         show_image: "Mostrar imagen"
@@ -295,8 +385,6 @@ es:
         table_name: Nombre
         table_description: Descripción
         table_actions: Acciones
-        delete: Borrar
-        edit: Editar
       edit:
         title: Editar estado de seguimiento
       update:
@@ -359,8 +447,6 @@ es:
         index:
           description: "Cuando los usuarios crean propuestas pueden acceder a un panel de progreso de su propuesta, donde se le puede proponer recursos y recomendaciones para conseguir apoyos a su idea."
           create: Crear recurso o acción
-          edit: Editar
-          delete: Borrar
           active: 'Si'
           inactive: 'No'
           title: Recursos y acciones
@@ -487,15 +573,10 @@ es:
           allegations_phase: Fase de comentarios
           proposals_phase: Fase de propuestas
           use_markdown: Usa Markdown para formatear el texto
-          title_placeholder: Escribe el título del proceso
-          summary_placeholder: Resumen corto de la descripción
-          description_placeholder: Añade una descripción del proceso
-          additional_info_placeholder: Añade cualquier información adicional que pueda ser de interés
           homepage_description: Aquí puedes explicar el contenido del proceso
           banner_title: Colores del encabezado
         index:
           create: Nuevo proceso
-          delete: Borrar
           title: Procesos de legislación colaborativa
           filters:
             active: Activos
@@ -505,11 +586,10 @@ es:
           title: Crear nuevo proceso de legislación colaborativa
           submit_button: Crear proceso
         proposals:
-          select_order: Ordenar por
           orders:
-            id: Id
-            title: Título
-            supports: Apoyos totales
+            id: "Ordenar por ID"
+            title: "Ordenar por título"
+            supports: "Ordenar por apoyos totales"
         process:
           title: Proceso
           comments: Comentarios
@@ -552,6 +632,7 @@ es:
           back: Volver
           submit_button: Guardar cambios
           warning: Ojo, has editado el texto. Para conservar de forma permanente los cambios, no te olvides de hacer click en Guardar.
+          markdown_changes_message: "Ojo, has editado el texto; perderás los cambios si abandonas la página. ¿Seguro que quieres continuar?"
         form:
           title: 'Editando <span class="strong">%{draft_version_title}</span> del proceso <span class="strong">%{process_title}</span>'
           launch_text_editor: Lanzar editor de texto
@@ -562,9 +643,7 @@ es:
             status:
               draft: Podrás previsualizarlo como logueado, nadie más lo podrá ver
               published: Será visible para todo el mundo
-          title_placeholder: Escribe el título de esta versión del borrador
           changelog_placeholder: Describe cualquier cambio relevante con la versión anterior
-          body_placeholder: Escribe el texto del borrador
         index:
           title: Versiones del borrador
           create: Crear versión
@@ -595,7 +674,6 @@ es:
           submit_button: Guardar cambios
         form:
           add_option: Añadir respuesta cerrada
-          title_placeholder: Escribe un título a la pregunta
           value_placeholder: Escribe una respuesta cerrada
           question_options: "Posibles respuestas (opcional, por defecto respuestas abiertas)"
         index:
@@ -620,14 +698,17 @@ es:
     managers:
       index:
         title: Gestores
-        name: Nombre
-        email: Email
         no_managers: No hay gestores.
       manager:
         add: Añadir como gestor
-        delete: Borrar
       search:
         title: "Gestores: Búsqueda de usuarios"
+    sdg_managers:
+      index:
+        no_sdg_managers: No hay usuarios.
+    sdg/managers:
+      sdg/manager:
+        add: Añadir como gestor ODS
     menu:
       activity: Actividad de moderadores
       admin: Menú de administración
@@ -644,6 +725,7 @@ es:
       hidden_users: Usuarios bloqueados
       administrators: Administradores
       managers: Gestores
+      sdg_managers: Gestores ODS
       moderators: Moderadores
       messaging_users: Mensajes a usuarios
       newsletters: Newsletters
@@ -675,6 +757,7 @@ es:
           proposals: "Propuestas"
           polls: "Votaciones"
           layouts: "Plantillas"
+          machine_learning: "IA / Machine Learning"
           mailers: "Correos"
           management: "Gestión"
           welcome: "Bienvenido/a"
@@ -695,17 +778,14 @@ es:
       debates: "Debates"
       comments: "Comentarios"
       local_census_records: Gestionar censo local
+      machine_learning: "IA / Machine learning"
     administrators:
       index:
         title: Administradores
-        name: Nombre
-        email: Email
-        description: Descripción
         id: ID de Administrador
         no_administrators: No hay administradores.
       administrator:
         add: Añadir como Administrador
-        delete: Borrar
         restricted_removal: "Lo sentimos, no puedes eliminarte a ti mismo de la lista"
       search:
         title: "Administradores: Búsqueda de usuarios"
@@ -715,12 +795,9 @@ es:
     moderators:
       index:
         title: Moderadores
-        name: Nombre
-        email: Email
         no_moderators: No hay moderadores.
       moderator:
         add: Añadir como Moderador
-        delete: Borrar
       search:
         title: "Moderadores: Búsqueda de usuarios"
     segment_recipient:
@@ -747,8 +824,6 @@ es:
         sent: Enviado
         actions: Acciones
         draft: Borrador
-        edit: Editar
-        delete: Borrar
         preview: Previsualizar
         empty_newsletters: No hay newsletters para mostrar
       new:
@@ -784,8 +859,6 @@ es:
         sent: Enviado
         actions: Acciones
         draft: Borrador
-        edit: Editar
-        delete: Borrar
         preview: Previsualizar
         view: Visualizar
         empty_notifications: No hay notificaciones para mostrar
@@ -883,7 +956,6 @@ es:
         can_edit_dossier: "Puede editar informes"
       valuator:
         add: Añadir como evaluador
-        delete: Borrar
       search:
         title: "Evaluadores: Búsqueda de usuarios"
       form:
@@ -921,7 +993,6 @@ es:
         entry_name: presidente de mesa
       search:
         email_placeholder: Buscar usuario por email
-        search: Buscar
         user_not_found: Usuario no encontrado
         help: "Para añadir o eliminar Presidentes de mesa utiliza el buscador a continuación."
     poll_officer_assignments:
@@ -1139,7 +1210,6 @@ es:
         location: "Ubicación"
       booth:
         shifts: "Asignar turnos"
-        edit: "Editar urna"
     officials:
       edit:
         destroy: Eliminar condición de 'Cargo Público'
@@ -1161,7 +1231,6 @@ es:
       level_4: Nivel 4
       level_5: Nivel 5
       search:
-        edit_official: Editar cargo público
         make_official: Convertir en cargo público
         title: "Cargos Públicos: Búsqueda de usuarios"
         no_results: No se han encontrado cargos públicos.
@@ -1184,8 +1253,6 @@ es:
         no_organizations: No hay organizaciones.
         reject: Rechazar
         rejected: Rechazada
-        search: Buscar
-        search_placeholder: Nombre, email o teléfono
         title: Organizaciones
         verified: Verificada
         verify: Verificar
@@ -1217,7 +1284,7 @@ es:
           without_confirmed_hide: Pendientes
         title: Propuestas ocultas
         no_hidden_proposals: No hay propuestas ocultas.
-    proposal_notifications:
+    hidden_proposal_notifications:
       index:
         filter: Filtro
         filters:
@@ -1237,10 +1304,7 @@ es:
         images_and_documents: "Imágenes y documentos"
         feature_flags: Funcionalidades
         features:
-          enabled: "Funcionalidad activada"
-          disabled: "Funcionalidad desactivada"
-          enable: "Activar"
-          disable: "Desactivar"
+          enabled: "Activada"
         map:
           title: Configuración del mapa
           help: Aquí puedes personalizar la manera en la que se muestra el mapa a los usuarios. Arrastra el marcador o pulsa sobre cualquier parte del mapa, ajusta el zoom y pulsa el botón 'Actualizar'.
@@ -1254,36 +1318,39 @@ es:
         remote_census:
           title: Configuración del Censo Remoto
           how_to_enable: 'Para configurar la conexión con el Censo Remoto (SOAP) se debe activar "Configurar la conexión al censo remoto (SOAP)" en la pestaña "Funcionalidades".'
+        sdg:
+          title: Configuración ODS
+          how_to_enable: 'Para mostrar las opciones de configuración de los Objetivos de Desarrollo Sostenible se debe activar "ODS" en la pestaña "Funcionalidades".'
       remote_census_general_name: Datos Generales
       remote_census_request_name: Datos Petición
       remote_census_response_name: Datos Respuesta
       setting: Funcionalidad
-      setting_actions: Acciones
       setting_name: Configuración
-      setting_status: Estado
       setting_value: Valor
       no_description: "Sin descripción"
     shared:
-      true_value: "Sí"
-      false_value: "No"
-      booths_search:
-        button: Buscar
-        placeholder: Buscar urna por nombre
-      poll_officers_search:
-        button: Buscar
-        placeholder: Buscar presidentes de mesa
-      poll_questions_search:
-        button: Buscar
-        placeholder: Buscar preguntas
-      proposal_search:
-        button: Buscar
-        placeholder: Buscar propuestas por título, código, descripción o pregunta
-      debate_search:
-        button: Buscar
-        placeholder: Buscar debates por título o descripción
-      user_search:
-        button: Buscar
-        placeholder: Buscar usuario por nombre o email
+      search:
+        advanced_filters:
+          sdg_goals:
+            all: "Todos los objetivos"
+            label: "Por objetivo"
+          sdg_targets:
+            all: "Todas las metas"
+            label: "Por meta"
+        label:
+          booths: "Buscar urna por nombre"
+          budget_investments: "Buscar proyectos por título, descripción o partida"
+          debates: "Buscar debates por título o descripción"
+          legislation_processes: "Buscar procesos por título o descripción"
+          legislation_proposals: "Buscar propuestas por título o descripción"
+          local_census_records: "Búsqueda por número de documento"
+          organizations: "Nombre, email o teléfono"
+          poll_officers: "Buscar presidentes de mesa"
+          poll_questions: "Buscar preguntas"
+          polls: "Buscar votaciones por nombre o descripción"
+          proposals: "Buscar propuestas por título, código, descripción o pregunta"
+          users: "Buscar usuario por nombre o email"
+        search: "Buscar"
       search_results: "Resultados de la búsqueda"
       no_search_results: "No se han encontrado resultados."
       actions: Acciones
@@ -1297,16 +1364,17 @@ es:
       author: Autor
       content: Contenido
       created_at: Fecha de creación
-      delete: Eliminar
       color_help: Formato hexadecimal
       show_results_and_stats: "Mostrar resultados y estadísticas"
       results_and_stats_reminder: "Si marcas estas casillas los resultados y/o estadísticas serán públicos y podrán verlos todos los usuarios."
+      close_modal: Cerrar ventana emergente
+      example_url: "Por ejemplo, https://consulproject.org o /help"
+      true_value: "Sí"
+      false_value: "No"
     geozones:
       index:
         title: Zonas
         create: Crear una zona
-        edit: Editar
-        delete: Borrar
       geozone:
         name: Nombre
         external_code: Código externo
@@ -1386,6 +1454,7 @@ es:
         proposal_notifications: Notificaciones de propuestas
         incomplete_verifications: Verificaciones incompletas
         polls: Votaciones
+        sdg: ODS
       graph:
         debate_created: Debates
         visit: Visitas
@@ -1428,9 +1497,17 @@ es:
           question_name: Pregunta
           origin_web: Participantes en Web
           origin_total: Participantes Totales
+      sdg:
+        budget_investments:
+          amount: "Presupuesto aprobado"
+          winners: "Proyectos de inversión ganadores"
+          sent: "Proyectos de inversión enviados"
+        debates: "Debates"
+        polls: "Votaciones"
+        proposals: "Propuestas"
+        title: "Objetivos de Desarrollo Sostenible - Estadísticas"
     tags:
       create: Crear tema
-      destroy: Eliminar tema
       index:
         add_tag: Añade un nuevo tema de propuesta
         title: Temas de propuesta
@@ -1438,6 +1515,8 @@ es:
         help: "Cuando un usuario crea una propuesta se le sugieren como etiquetas por defecto los siguientes temas."
     users:
       columns:
+        id: ID
+        erase_reason: Razón de la baja
         name: Nombre
         email: Email
         document_number: Número de documento
@@ -1446,9 +1525,12 @@ es:
       index:
         title: Usuarios
         no_users: No hay usuarios.
+        filter: Filtro
+        filters:
+          active: Activos
+          erased: Borrados
       search:
         placeholder: Buscar usuario por email, nombre o DNI
-        search: Buscar
     verifications:
       index:
         phone_not_given: No ha dado su teléfono
@@ -1513,7 +1595,7 @@ es:
           create: Crear nueva página
           delete: Borrar página
           title: Páginas
-          see_page: Ver página
+          see_page: Ver
         new:
           title: Página nueva
           slug_help: "Texto que identifica esta página en la URL, por ejemplo <code>https://consulproject.org/slug-de-pagina</code>"
@@ -1523,16 +1605,11 @@ es:
           updated_at: Última actualización
           title: Título
           slug: Slug
-          cards_title: Tarjetas
-          see_cards: Ver tarjetas
+          see_cards: Tarjetas
         cards:
           cards_title: tarjetas
           create_card: Crear tarjeta
           no_cards: No hay tarjetas.
-          title: Título
-          description: Descripción
-          link_text: Texto del enlace
-          link_url: URL del enlace
           columns_help: "Ancho de la tarjeta en número de columnas. En pantallas móviles siempre es un ancho del 100%."
           create:
             notice: "¡Tarjeta creada con éxito!"
@@ -1549,11 +1626,6 @@ es:
       cards_title: Tarjetas
       create_card: Crear tarjeta
       no_cards: No hay tarjetas.
-      cards:
-        title: Título
-        description: Descripción
-        link_text: Texto del enlace
-        link_url: URL del enlace
       feeds:
         proposals: Propuestas
         debates: Debates
@@ -1588,9 +1660,6 @@ es:
         document_number: Número de documento
         date_of_birth: Fecha de nacimiento
         postal_code: Código postal
-        search:
-          placeholder: Búsqueda por número de documento
-          search: Buscar
         import: Importar CSV
       new:
         creating: Creando nuevo registro de censo local
@@ -1616,3 +1685,53 @@ es:
           created: Registros creados
         local_census_records:
           no_records_found: No se han encontrado registros.
+    machine_learning:
+      cancel: "Cancelar operación"
+      cancel_alert: "Esta acción cancelará el script actual y será necesario ejecutar el script de nuevo."
+      comments_summary: "Resumen de comentarios"
+      comments_summary_description: "Muestra un resumen de comentarios generado automáticamente en todos los elementos que pueden ser comentados."
+      data_folder_content: "Contenido carpeta data"
+      error: "Error:"
+      execute_script: "Ejecutar script"
+      executed_by: "Ejecutado por:"
+      executed_script: "Script ejecutado:"
+      feature_disabled: "Esta funcionalidad está deshabilitada. Para utilizar Machine Learning puedes habilitarla desde la %{link}."
+      feature_disabled_link: "página de configuración"
+      help:
+        title_1: "¿Qué es IA / Machine Learning?"
+        description_1: "Tradicionalmente, los programas informáticos se diseñan estableciendo reglas precisas sobre lo que debe hacer el programa en cada situación, y cómo procesar en cada momento la información disponible. Lo que se conoce comúnmente como IA / Machine Learning es un tipo de programas para los cuales lo que se establece de manera precisa es cuál es la tarea a realizar y cómo se valora el que la tarea esté mejor o peor realizada. Pero a diferencia de los otros, el sistema descubre o aprende cuál sería el método más adecuado para realizar dicha tarea."
+        title_2: "¿Qué hace el módulo de IA / Machine Learning en CONSUL?"
+        description_2: "Este módulo permite implementar en CONSUL cualquier tipo de programas de IA / Machine Learning. Los programas pueden procesar la información disponible en CONSUL y producir resultados que ayuden tanto a los usuarios como a los administradores a llevar a cabo una participación ciudadana más eficaz e inteligente. El módulo se ha desarrollado para que sea sencillo implementar y ejecutar nuevos programas, manteniendo por separado el código general de CONSUL y el código de estos nuevos programas."
+        title_3: "Cómo usar el módulo"
+        description_3: "Para usarlo por primera vez es necesario seguir las instrucciones disponibles en la documentación de CONSUL para activar correctamente este módulo. Una vez el módulo esté correctamente activado, los programas se ejecutan desde la pestaña \"Ejecutar scripts\". Antes de ejecutarlo podemos ver en esa misma pestaña una estimación del tiempo de ejecución y otras informaciones relevantes. Al terminar la ejecución podemos activar el contenido que se mostrará en CONSUL desde la pestaña de \"Configuración\", así como descargar otros archivos generados que nos puedan resultar útiles."
+        title_4: "Cómo implementar nuevos scripts de IA / Machine Learning."
+        description_4: "Utiliza los scripts existentes como ejemplo."
+        description_4b: "Los nuevos scripts deben estar ubicados en la carpeta <code>public/machine_learning/scripts</code>"
+        description_4c: "Los datos de entrada que utilizará el script se crearán como archivos JSON en la carpeta <code>../data</code>"
+        description_4d: "Cualquier salida generada debe crearse en la carpeta <code>../data</code>"
+        description_4e: "Se recomienda crear un archivo de texto <code>.ini</code> independiente con los parámetros de configuración del script, con el mismo nombre del script y legible mediante configparser. Este archivo facilitará cambios de configuración por parte de los administradores."
+        description_4f: "Se recomienda incluir como primera línea del script una cadena inicial de comillas triples con información breve sobre el mismo y enlaces a cualquier información relevante. Esta cadena se mostrará automáticamente en la interfaz de administración."
+        description_4g: "Se recomienda crear un log con la información relevante del script en un archivo de texto <code>.log</code>, con el mismo nombre del script."
+        title_5: "Para utilizar los scripts de IA / Machine Learning necesitas tener Python instalado en tu servidor"
+        description_5: "Aquí puedes ver las instrucciones de ejemplo para un servidor Ubuntu 18.04:"
+      help_text: "Esta funcionalidad es experimental."
+      last_execution: "Última ejecución"
+      no_content: "Todavía no se ha generado contenido."
+      notice:
+        success: "El último script se ha ejecutado correctamente."
+        error: "Se ha producido un error. Más información sobre el error a continuación."
+        working: "El script se está ejecutando. El administrador que lo ejecutó recibirá un email cuando termine."
+        delete_generated_content: "El contenido generado se ha borrado correctamente."
+      output_files: "Ficheros de salida:"
+      related_content: "Contenido relacionado"
+      related_content_description: "Añade contenido relacionado generado automáticamente a las propuestas y proyectos de presupuestos participativos."
+      script_info: "Recibirás un email en %{email} cuando el script termine de ejecutarse."
+      script_name: "Nombre del script:"
+      select_script: "Seleccione el script pyhton a ejecutar"
+      started_at: "Empezado a las:"
+      tab_help: "Ayuda"
+      tab_settings: "Configuración / Contenido generado"
+      tab_scripts: "Ejecutar script"
+      tags: "Etiquetas"
+      tags_description: "Genera etiquetas automáticas para todos los elementos que pueden ser etiquetados."
+      title: "IA / Machine learning"

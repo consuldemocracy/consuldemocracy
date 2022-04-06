@@ -112,3 +112,17 @@ zh-TW:
       form:
         tags_label: "類別"
       not_verified: "為投票建議%{verify_account}。"
+      process_title: 合作立法進程
+    summary:
+      title: "總結"
+      votes:
+        zero: "%{count} 個投票"
+        other: "%{count} 個投票"
+      debate_phase: "辯論階段"
+      proposals_phase: "建議階段"
+      allegations_phase: "評論階段"
+      comments:
+        zero: "沒有評論"
+        other: "%{count} 個評論"
+      top_comments:
+        zero: "沒有評論"

@@ -1,10 +1,8 @@
 shared_examples "imageable" do |imageable_factory_name, imageable_path, imageable_path_arguments|
-  let!(:administrator)          { create(:user) }
-  let!(:user)                   { create(:user) }
-  let!(:imageable_arguments)    { {} }
-  let!(:imageables_arguments)   { {} }
-  let!(:imageable)              { create(imageable_factory_name, author: user) }
-  let!(:imageable_dom_name)     { imageable_factory_name.parameterize }
+  let!(:administrator)       { create(:user) }
+  let!(:user)                { create(:user) }
+  let!(:imageable_arguments) { {} }
+  let!(:imageable)           { create(imageable_factory_name, author: user) }
 
   before do
     create(:administrator, user: administrator)
@@ -15,7 +13,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
   end
 
   context "Show" do
-    scenario "Show descriptive image when exists", :js do
+    scenario "Show descriptive image when exists" do
       image = create(:image, imageable: imageable)
 
       visit send(imageable_path, imageable_arguments)
@@ -30,16 +28,5 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
 
       expect(page).to have_content image.title
     end
-  end
-end
-
-def attach_image(path, success = true)
-  image = find(".image")
-  image_input = image.find("input[type=file]", visible: false)
-  attach_file image_input[:id], path, make_visible: true
-  if success
-    expect(page).to have_css ".loading-bar.complete"
-  else
-    expect(page).to have_css ".loading-bar.errors"
   end
 end

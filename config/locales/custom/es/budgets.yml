@@ -1,0 +1,97 @@
+es:
+  budgets:
+    ballots:
+      reasons_for_not_balloting:
+        different_heading_assigned: Ya votaste en una sección distinta del presupuesto.
+        invalid_geozone: Solo puedes votar proyectos de tu zona.
+    phase:
+      accepting: Presentación de propuestas
+      publishing_prices: Propuestas viables a votación
+    index:
+      section_header:
+        help: ¿Qué son los presupuestos participativos?
+      section_footer:
+        title: ¿Qué son los presupuestos participativos?
+        description: Los Presupuestos Participativos son un mecanismo por el que la ciudadanía decide el destino de una parte de los recursos provinciales elevando propuestas y seleccionando entre ellas las que considera prioritarias.
+        help_text_titulo1: "¿Qué cantidad destina la Diputación de Valladolid a los Presupuestos Participativos?"
+        help_text_1: "La Diputación de Valladolid destinará 1,2 millones de euros a Presupuestos Participativos, repartidos entre las tres zonas geográficas en que se ha dividido la provincia, de acuerdo con el número de municipios y de habitantes que las integran."
+        help_text_titulo2: "¿Quién puede participar?"
+        help_text_2: "Podrán tomar parte en este proceso las personas mayores de 16 años empadronadas en cualquiera de los municipios de la provincia de Valladolid menores de 20.000 habitantes (todos menos Valladolid, Arroyo de la Encomienda, Laguna de Duero y Medina del Campo)."
+        help_text_3: ""
+        help_text_4: ""
+        help_text_titulo3: "¿Cuáles son las fases del proceso?"
+        help_text_3_1: "Campaña informativa: Durante los meses de marzo y abril la Diputación difundirá información sobre las normas básicas del proceso a través de los medios de comunicación, web, redes sociales y mediante el contacto directo con ayuntamientos y organizaciones sociales de toda la provincia."
+        help_text_3_2: "Recogida de propuestas: Durante el mes de mayo podrás presentar propuestas sobre cómo invertir los 1.200.000 euros que la Diputación ha destinado a los presupuestos participativos. Cada persona puede presentar un máximo de tres propuestas."
+        help_text_3_3: "Evaluación: Durante los meses de junio y julio, el personal técnico provincial valorará económica y técnicamente las propuestas remitidas, para comprobar que son competencia de la Diputación y que son viables. Aplicará un baremo para dar prioridad a las propuestas que mejor cumplan con los criterios marcados por el reglamento, que serán las que pasen a la fase de votación."
+        help_text_3_4: "Votación: Durante el mes de septiembre se desarrollará la fase de votación final en la que tú decides cómo distribuir el presupuesto asignado a  tu zona. Las propuestas más votadas en cada zona se incorporarán al proyecto del Presupuesto de la Diputación de Valladolid."
+        help_text_titulo4: "¿Qué puedo proponer?"
+        help_text_4_1: "Podrás hacer propuestas de inversión o de gasto corriente que puedan ser ejecutadas por la Diputación en la zona a la que pertenezca tu municipio."
+        help_text_4_2: "Para que la propuesta sea válida, tiene que ajustarse a los siguientes criterios:"
+        help_text_4_2_1: "Ser una inversión o gasto corriente."
+        help_text_4_2_2: "Ser de competencia provincial."
+        help_text_4_2_3: "Ser viable técnicamente."
+        help_text_4_2_4: "Que el coste no supere el importe máximo destinado a cada zona."
+        help_text_4_3: "¿Qué son propuesta de inversión y de gasto corriente?"
+        help_text_4_3_1: "Las propuestas deben ser de inversión o gasto corriente y ajustarse al presupuesto disponible:"
+        help_text_4_3_2: "Una propuesta de inversión es aquélla que supone un gasto en creación de nuevos equipamientos o infraestructuras, arreglo/modificación/mejora de las ya existentes y adquisición de bienes inventariables. Es decir, se trata de algo tangible que será beneficioso en el futuro."
+        help_text_4_3_3: "Una propuesta de gasto corriente es aquella destinada a contratar personal o comprar recursos, bienes y servicios para el desarrollo de programas o actuaciones de la Diputación en la provincia."
+        help_text_4_4: "¿Qué criterios deben cumplir las propuestas para pasar a la fase de votación?"
+        help_text_4_4_0: "A cada propuesta se le aplica un baremo que le otorga puntos si cumple una serie de criterios, que son los siguientes:"
+        help_text_4_4_1: "Que atiendan a necesidades básicas de la población destinadas a resolver carencias o equipamientos básicos."
+        help_text_4_4_2: "Que beneficien al conjunto de una zona o comarca, sin limitarse a un único municipio."
+        help_text_4_4_3: "Que se trate de proyectos novedosos."
+        help_text_4_4_4: "Que promuevan el equilibrio territorial, especialmente en la corrección de déficits, entre unas zonas y otras de la provincia y en la intervención en zonas desfavorecidas."
+        help_text_4_4_5: "Que contribuyan a fijar población en el medio rural."
+        help_text_4_4_6: "Que tengan un contenido de mejora medioambiental."
+        help_text_4_4_7: "Que favorezcan la creación de un tejido social en la provincia."
+        help_text_4_4_8: "Que faciliten, promuevan o impulsen la participación de mujeres y jóvenes en la sociedad."
+        help_text_4_4_9: ""
+        help_text_4_5: "¿Sobre qué temáticas puedes presentar propuestas?"
+        help_text_4_5_0: "La Diputación ejerce sus funciones en múltiples ámbitos, ya sea de forma exclusiva o compartiendo competencias con otras administraciones:"
+        help_text_4_5_1: "Archivo"
+        help_text_4_5_2: "Carreteras"
+        help_text_4_5_3: "Consumo"
+        help_text_4_5_4: "Cooperación a Municipios"
+        help_text_4_5_5: "Cultura"
+        help_text_4_5_6: "Deportes"
+        help_text_4_5_7: "Empleo"
+        help_text_4_5_8: "Igualdad"
+        help_text_4_5_9: "Incendios y Protección Civil"
+        help_text_4_5_10: "Juventud"
+        help_text_4_5_11: "Medio Ambiente"
+        help_text_4_5_12: "Recogida Selectiva"
+        help_text_4_5_13: "Servicios Sociales"
+        help_text_4_5_14: "Transparencia"
+        help_text_4_5_15: "Transporte"
+        help_text_4_5_16: "Vivienda"
+        help_text_5: "¿Qué propuestas serán rechazadas?"
+        help_text_5_1: "No podrán ser tenidas en cuenta aquellas que:"
+        help_text_5_2: "No sean competencia directa de la Diputación, sino de otras Administraciones."
+        help_text_5_3: "Supongan un coste mayor al presupuesto destinado a dicha zona, de acuerdo con la evaluación económica del personal técnico provincial. "
+        help_text_5_4: "No sean viables técnicamente tras la revisión del personal técnico provincial (es decir, no haya posibilidad técnica de ejecución)."
+        help_text_5_5: "No cumplan con la legislación y la normativa vigente, tras la revisión del personal técnico provincial."
+        help_text_titulo6: "¿Cómo hago mi propuesta?"
+        help_text_6_1 : ""
+        help_text_6_2 : ""
+        help_text_6_2_1 :
+        help_text_6_2_2 :
+        help_text_6_2_3 :
+        help_text_6_2_2_1 :
+        help_text_6_2_2_2 :
+        help_text_6_2_2_3 :
+        help_text_6: "¿Qué zona me corresponde?"
+        help_text_7: "La provincia se divide en tres zonas:"
+        help_text_8: "•	Norte: municipios al norte del Duero y al oeste del Pisuerga"
+        help_text_9: "¿Ya lo tienes claro? ¡Regístrate!"
+        help_text_10: "•	Sur: municipios al sur del Duero y al oeste de la Autovía de Pinares (A-601)"
+        help_text_11: "•	Este: municipios al este del Pisuerga y al este de la Autovía de Pinares (A-601)"
+        help_text_12: "Encuentra tu localidad en el mapa y podrás identificar a qué zona perteneces."
+        sign_up2: "registrarte"
+    investments:
+      index:
+        unfeasible_text: "Las propuestas presentadas deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto) para ser declaradas viables y llegar hasta la fase de votación final. Todas las propuestas que no cumplen estos criterios son marcadas como inviables y publicadas en la siguiente lista, junto con su informe de inviabilidad."
+        unfeasible_text_definitions: ver definiciones aquí
+        sidebar:
+          create: "Realizar propuesta de gasto"
+      investment:
+        confirm_group: "Sólo puedes apoyar proyectos de una partida. Si sigues adelante no podrás cambiar esta decisión. ¿Estás seguro?"

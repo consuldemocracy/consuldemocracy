@@ -1,11 +1,6 @@
 require "rails_helper"
 
-describe "Admin collaborative legislation" do
-  before do
-    admin = create(:administrator)
-    login_as(admin.user)
-  end
-
+describe "Admin collaborative legislation", :admin do
   context "Index" do
     scenario "Displaying legislation proposals" do
       proposal = create(:legislation_proposal, cached_votes_score: 10)
@@ -20,7 +15,7 @@ describe "Admin collaborative legislation" do
       end
     end
 
-    scenario "Selecting legislation proposals", :js do
+    scenario "Selecting legislation proposals" do
       proposal = create(:legislation_proposal, cached_votes_score: 10)
 
       visit admin_legislation_process_proposals_path(proposal.legislation_process_id)
@@ -31,14 +26,14 @@ describe "Admin collaborative legislation" do
       end
     end
 
-    scenario "Sorting legislation proposals by title", js: true do
+    scenario "Sorting legislation proposals by title" do
       process = create(:legislation_process)
       create(:legislation_proposal, title: "bbbb", legislation_process_id: process.id)
       create(:legislation_proposal, title: "aaaa", legislation_process_id: process.id)
       create(:legislation_proposal, title: "cccc", legislation_process_id: process.id)
 
       visit admin_legislation_process_proposals_path(process.id)
-      select "Title", from: "order-selector-participation"
+      click_link "Sort by title"
 
       within("#legislation_proposals_list") do
         within all(".legislation_proposal")[0] { expect(page).to have_content("aaaa") }
@@ -47,14 +42,14 @@ describe "Admin collaborative legislation" do
       end
     end
 
-    scenario "Sorting legislation proposals by supports", js: true do
+    scenario "Sorting legislation proposals by supports" do
       process = create(:legislation_process)
       create(:legislation_proposal, cached_votes_score: 10, legislation_process_id: process.id)
       create(:legislation_proposal, cached_votes_score: 30, legislation_process_id: process.id)
       create(:legislation_proposal, cached_votes_score: 20, legislation_process_id: process.id)
 
       visit admin_legislation_process_proposals_path(process.id)
-      select "Total supports", from: "order-selector-participation"
+      click_link "Sort by total supports"
 
       within("#legislation_proposals_list") do
         within all(".legislation_proposal")[0] { expect(page).to have_content("30") }
@@ -63,14 +58,14 @@ describe "Admin collaborative legislation" do
       end
     end
 
-    scenario "Sorting legislation proposals by Id", js: true do
+    scenario "Sorting legislation proposals by Id" do
       process = create(:legislation_process)
       proposal1 = create(:legislation_proposal, title: "bbbb", legislation_process_id: process.id)
       proposal2 = create(:legislation_proposal, title: "aaaa", legislation_process_id: process.id)
       proposal3 = create(:legislation_proposal, title: "cccc", legislation_process_id: process.id)
 
       visit admin_legislation_process_proposals_path(process.id, order: :title)
-      select "Id", from: "order-selector-participation"
+      click_link "Sort by ID"
 
       within("#legislation_proposals_list") do
         within all(".legislation_proposal")[0] { expect(page).to have_content(proposal1.id) }

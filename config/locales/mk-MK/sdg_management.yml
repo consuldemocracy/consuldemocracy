@@ -1,0 +1,13 @@
+mk:
+  sdg_management:
+    menu:
+      budget_investments: "Партиципативни буџети"
+      debates: "Дебати"
+      polls: "Анкети"
+      proposals: "Предлози"
+    relations:
+      index:
+        filter: "Филтрирај"
+        filters:
+          all: "Сите"
+          pending_sdg_review: "Во исчекување"

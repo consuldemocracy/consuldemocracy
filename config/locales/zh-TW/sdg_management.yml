@@ -1,0 +1,18 @@
+zh-TW:
+  sdg_management:
+    homepage:
+      header:
+        create: "創建頁首"
+        title: "標題"
+    menu:
+      budget_investments: "參與性預算"
+      debates: "辯論"
+      legislation_processes: "立法進程"
+      polls: "投票"
+      proposals: "建議"
+    relations:
+      index:
+        filter: "篩選器"
+        filters:
+          all: "所有"
+          pending_sdg_review: "有待"

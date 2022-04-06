@@ -17,6 +17,9 @@ ar:
     letter:
       alert:
         unconfirmed_code: لم تقم بادخال رمز التحقق
+      create:
+        flash:
+          success: شكرًا لك على طلب <b>رمز الحماية الأقصى (مطلوب فقط للأصوات النهائية)</b>. في غضون أيام قليلة، سوف نرسلها إلى العنوان الذي يظهر في البيانات الموجودة لدينا في الملف. يرجى تذكر أنه، إذا كنت تفضل ذلك، يمكنك أخذ الشفرة الخاصة بك من أي مكتب لدعم المواطنين.
       edit:
         see_all: انظر جميع المقترحات
         title: أحرف مطلوبة
@@ -45,6 +48,7 @@ ar:
         accept_terms_text_title: أوافق على أحكام وشروط النّفاذ إلى التعداد
         document_number: رقم الوثيقة
         document_number_help_title: المساعدة
+        document_number_help_text: "<strong>DNI</strong>: 12345678A<br> <strong>جواز السّفر</strong>: AAA000001<br> <strong>بطاقة الإقامة</strong>: X1234567P"
         document_type:
           passport: جواز السفر
           residence_card: بطاقة الإقامة
@@ -68,8 +72,8 @@ ar:
         title: رمز التأكيد
       new:
         phone: ادخل رقم الموبايل ليصلك الرمز
+        phone_format: "<strong><em>(مثال: 0958044933 أو +963934543234)</em></strong>"
         phone_note: سوف نستخدم رقم الموبايل لإرسال الرمز فقط ، لن يتم الاتصال بك مطلقاً.
-        phone_placeholder: "على سبيل المثال: 612345678 أو +34612345678"
         submit_button: ارسال
         title: إرسال رمز التأكيد
       update:

@@ -1,0 +1,18 @@
+zh-CN:
+  sdg_management:
+    homepage:
+      header:
+        create: "创建页眉"
+        title: "页眉"
+    menu:
+      budget_investments: "参与性预算"
+      debates: "辩论"
+      legislation_processes: "立法进程"
+      polls: "投票"
+      proposals: "提议"
+    relations:
+      index:
+        filter: "过滤器"
+        filters:
+          all: "所有"
+          pending_sdg_review: "有待"

@@ -15,7 +15,7 @@
           params[:retired].present?,
           params[:selected].present?
         ].any? %>
-    <div class="highlight no-margin-top padding margin-bottom">
+    <div class="search-results-summary">
       <div class="row">
         <div class="small-12 column">
           <% if @search_terms || @advanced_search_terms %>
@@ -49,9 +49,7 @@
   <div class="row">
     <div id="proposals" class="proposals-list small-12 medium-9 column">
 
-      <% if has_banners? %>
-        <%= render "shared/banner" %>
-      <% end %>
+      <%= render Shared::BannerComponent.new("proposals") %>
 
       <% if show_featured_proposals? %>
         <div id="featured-proposals" class="row featured-proposals">
@@ -75,15 +73,14 @@
       <% end %>
 
       <% unless params[:retired].present? || params[:selected].present? %>
-        <%= render "shared/advanced_search",
-                   search_path: proposals_path(page: 1) %>
+        <%= render Shared::AdvancedSearchComponent.new %>
       <% end %>
 
       <% unless params[:selected].present? %>
         <%= render "shared/order_links", i18n_namespace: "proposals.index" %>
       <% end %>
 
-      <% if @proposals.any? %>
+      <% if @proposals.any? && can?(:create, Proposal) %>
         <div class="show-for-small-only">
           <%= link_to t("proposals.index.start_proposal"),
                       new_proposal_path,
@@ -118,10 +115,11 @@
 
     <div class="small-12 medium-3 column">
       <aside class="margin-bottom">
-        <%= link_to t("proposals.index.start_proposal"),
-                    new_proposal_path,
-                    class: "button expanded" %>
-
+        <% if can? :create, Proposal %>
+          <%= link_to t("proposals.index.start_proposal"),
+                      new_proposal_path,
+                      class: "button expanded" %>
+        <% end %>
         <div class="sidebar-divider"></div>
         <h2 class="sidebar-title"><%= t("proposals.index.selected_proposals") %></h2>
         <br>
@@ -131,7 +129,7 @@
 
         <% if params[:retired].blank? %>
           <%= render "categories" %>
-          <%= render "shared/tag_cloud", taggable: "proposal" %>
+          <%= render "shared/tag_cloud", taggable: "Proposal" %>
           <%= render "geozones" %>
         <% end %>
         <%= render "retired" %>

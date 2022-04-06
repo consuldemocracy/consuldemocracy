@@ -7,10 +7,9 @@ module Budgets
       before_action :load_tag_cloud
       before_action :load_categories
       before_action :load_investments
-      before_action :load_ballot_referer
 
-      load_and_authorize_resource :budget
-      load_and_authorize_resource :ballot, class: "Budget::Ballot", through: :budget
+      authorize_resource :budget
+      authorize_resource :ballot
       load_and_authorize_resource :line, through: :ballot, find_by: :investment_id, class: "Budget::Ballot::Line"
 
       def create
@@ -65,10 +64,6 @@ module Budgets
 
         def load_categories
           @categories = Tag.category.order(:name)
-        end
-
-        def load_ballot_referer
-          @ballot_referer = session[:ballot_referer]
         end
 
         def load_map

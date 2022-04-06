@@ -1,0 +1,28 @@
+.admin .budgets-form {
+  @include full-width-form;
+  @include direct-uploads;
+
+  .button {
+    &.upload-image {
+      margin-bottom: $line-height / 2;
+    }
+  }
+
+  > fieldset {
+    border-top: 4px solid $admin-border-color;
+    clear: both;
+    margin-top: $line-height * 1.5;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    legend {
+      color: $admin-text;
+      font-size: $small-font-size;
+      font-weight: bold;
+      padding-right: $line-height / 2;
+      text-transform: uppercase;
+    }
+  }
+}

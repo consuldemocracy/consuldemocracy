@@ -95,7 +95,7 @@
 
           <ul>
             <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_debates") %></li>
-            <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_proposal") %></li>
+            <li><span class="<%= can?(:create, Proposal) ? "icon-check" : "icon-x" %>"></span>&nbsp;<%= t("account.show.user_permission_proposal") %></li>
             <li>
               <% if current_user.level_two_or_three_verified? %>
                 <span class="icon-check"></span>

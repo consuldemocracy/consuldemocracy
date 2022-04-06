@@ -18,6 +18,7 @@ sq:
         title: "Debate"
         description: "Në seksionin %{link} ju mund të paraqisni dhe të ndani mendimin tuaj me njerëzit e tjerë për çështjet që kanë lidhje me ju në lidhje me qytetin. Është gjithashtu një vend për të krijuar ide që përmes seksioneve të tjera të %{org} të çojnë në veprime konkrete nga Këshilli i Qytetit."
         link: "debate qytetare"
+        feature: "Ju mund të hapni debate, komentoni dhe vlerësoni ato me<strong>Pranoj</strong>ose<strong>Nuk pranoj</strong>.Për këtë ju duhet të %{link}"
         feature_link: "regjistrohuni në %{org}"
         image_alt: "Butonat për të vlerësuar debatet"
         figcaption: 'Butonat "Unë pajtohem" dhe "Unë nuk pajtohem"  për të vlerësuar debatet.'
@@ -26,11 +27,13 @@ sq:
         description: "Në seksionin %{link} ju mund të bëni propozime për Këshillin Bashkiak për t'i kryer ato. Propozimet kërkojnë mbështetje, dhe nëse arrijnë mbështetje të mjaftueshme, ato bëhen në një votim publik. Propozimet e miratuara në votat e këtyre qytetarëve pranohen nga Këshilli i Qytetit dhe kryhen."
         link: "propozimet e qytetarëve"
         image_alt: "Butoni për të mbështetur një propozim"
+        figcaption: 'Butoni për të mbështetur një propozim'
       budgets:
         title: "Buxheti  pjesëmarrës"
         description: "Seksioni %{link} ndihmon njerëzit të marrin një vendim të drejtpërdrejtë mbi atë pjesë të buxhetit komunal ku shpenzohen."
         link: "buxhetet pjesëmarrëse"
         image_alt: "Faza të ndryshme të një buxheti pjesëmarrjës"
+        figcaption: '"Mbështet" dhe "Voto" fazat e buxheteve pjesëmarrëse.'
       polls:
         title: "Sondazhet"
         description: "Seksioni %{link} aktivizohet çdo herë që një propozim arrin 1% mbështetje dhe shkon në votim ose kur Këshilli i Qytetit propozon një çështje për njerëzit që të vendosin."
@@ -41,6 +44,7 @@ sq:
         title: "Proçes"
         description: "Në seksionin %{link}, qytetarët marrin pjesë në hartimin dhe modifikimin e rregulloreve që ndikojnë në qytet dhe mund të japin mendimin e tyre mbi politikat komunale në debatet e mëparshme."
         link: "Proçese"
+        feature_link: "regjistrohuni në  %{org_name}"
       faq:
         title: "Probleme teknike?"
         description: "Lexoni FAQ dhe zgjidhni pyetjet tuaja."
@@ -149,6 +153,7 @@ sq:
               description_column: Zvogëlo madhësinë e tekstit
       compatibility:
         title: Pajtueshmëria me standardet dhe dizajni vizual
+        description: 'Të gjitha faqet nê këtë website përputhen me <strong>Udhëzimet e aksesueshmërisë</strong>ose Parimet e Përgjithshme të Dizajnit të Aksesueshëm të krijuara nga Grupi i Punës <abbr title = "Iniciativa e Web Accessibility" lang = "en"> WAI </ abbr> W3C.'
     titles:
       help: "Çfarë është %{org} ? - Pjesëmarrja e qytetarëve"
     verify:

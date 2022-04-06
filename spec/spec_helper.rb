@@ -10,15 +10,19 @@ Dir["./spec/shared/**/*.rb"].sort.each  { |f| require f }
 RSpec.configure do |config|
   config.use_transactional_fixtures = true
 
-  config.filter_run :focus
-  config.run_all_when_everything_filtered = true
+  config.filter_run_when_matching :focus
   config.include RequestSpecHelper, type: :request
   config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
   config.include FactoryBot::Syntax::Methods
   config.include(EmailSpec::Helpers)
   config.include(EmailSpec::Matchers)
   config.include(CommonActions)
   config.include(ActiveSupport::Testing::TimeHelpers)
+
+  config.define_derived_metadata(file_path: Regexp.new("/spec/components/")) do |metadata|
+    metadata[:type] = :component
+  end
 
   config.before(:suite) do
     Rails.application.load_seed
@@ -26,9 +30,17 @@ RSpec.configure do |config|
 
   config.before do |example|
     I18n.locale = :en
-    Globalize.locale = nil
     Globalize.set_fallbacks_to_all_available_locales
     Setting["feature.user.skip_verification"] = nil
+  end
+
+  config.around(:each, :race_condition) do |example|
+    self.use_transactional_tests = false
+    example.run
+    self.use_transactional_tests = true
+
+    DatabaseCleaner.clean_with(:truncation)
+    Rails.application.load_seed
   end
 
   config.before(:each, type: :system) do
@@ -44,11 +56,13 @@ RSpec.configure do |config|
   end
 
   config.before(:each, type: :system) do |example|
-    driven_by :rack_test
+    driven_by :headless_chrome
+    Capybara.default_set_options = { clear: :backspace }
   end
 
-  config.before(:each, type: :system, js: true) do
-    driven_by :headless_chrome
+  config.before(:each, type: :system, no_js: true) do
+    driven_by :rack_test
+    Capybara.default_set_options = {}
   end
 
   config.before(:each, type: :system) do
@@ -61,6 +75,34 @@ RSpec.configure do |config|
     Bullet.end_request
   end
 
+  config.before(:each, :admin, type: :system) do
+    login_as(create(:administrator).user)
+  end
+
+  config.before(:each, :admin, type: :controller) do
+    sign_in(create(:administrator).user)
+  end
+
+  config.before(:each, type: :component) do
+    sign_in(nil)
+  end
+
+  config.around(:each, :controller, type: :component) do |example|
+    with_controller_class(example.metadata[:controller]) { example.run }
+  end
+
+  config.before(:each, :show_exceptions) do
+    config = Rails.application.env_config
+
+    allow(Rails.application).to receive(:env_config) do
+      config.merge(
+        "action_dispatch.show_exceptions" => true,
+        "action_dispatch.show_detailed_exceptions" => false,
+        "consider_all_requests_local" => false
+      )
+    end
+  end
+
   config.before(:each, :delay_jobs) do
     Delayed::Worker.delay_jobs = true
   end
@@ -69,17 +111,22 @@ RSpec.configure do |config|
     Delayed::Worker.delay_jobs = false
   end
 
+  config.before(:each, :small_window) do
+    @window_size = Capybara.current_window.size
+    Capybara.current_window.resize_to(639, 479)
+  end
+
+  config.after(:each, :small_window) do
+    Capybara.current_window.resize_to(*@window_size)
+  end
+
   config.before(:each, :remote_translations) do
     allow(RemoteTranslations::Microsoft::AvailableLocales)
       .to receive(:available_locales).and_return(I18n.available_locales.map(&:to_s))
   end
 
-  config.before(:each, :with_frozen_time) do
-    travel_to Time.current # TODO: use `freeze_time` after migrating to Rails 5.2.
-  end
-
-  config.after(:each, :with_frozen_time) do
-    travel_back
+  config.around(:each, :with_frozen_time) do |example|
+    freeze_time { example.run }
   end
 
   config.before(:each, :application_zone_west_of_system_zone) do
@@ -100,8 +147,36 @@ RSpec.configure do |config|
     allow(Time).to receive(:zone).and_return(application_zone)
   end
 
-  config.before(:each, :spanish_search) do |example|
-    allow(SearchDictionarySelector).to receive(:call).and_return("spanish")
+  config.before(:each, :remote_census) do |example|
+    allow_any_instance_of(RemoteCensusApi).to receive(:end_point_defined?).and_return(true)
+    Setting["feature.remote_census"] = true
+    Setting["remote_census.request.method_name"] = "verify_residence"
+    Setting["remote_census.request.structure"] = '{ "request":
+      {
+        "document_type": "null",
+        "document_number": "nil",
+        "date_of_birth": "null",
+        "postal_code": "nil"
+      }
+    }'
+
+    Setting["remote_census.request.document_type"] = "request.document_type"
+    Setting["remote_census.request.document_number"] = "request.document_number"
+    Setting["remote_census.request.date_of_birth"] = "request.date_of_birth"
+    Setting["remote_census.request.postal_code"] = "request.postal_code"
+    Setting["remote_census.response.date_of_birth"] = "response.data.date_of_birth"
+    Setting["remote_census.response.postal_code"] = "response.data.postal_code"
+    Setting["remote_census.response.district"] = "response.data.district_code"
+    Setting["remote_census.response.gender"] = "response.data.gender"
+    Setting["remote_census.response.name"] = "response.data.name"
+    Setting["remote_census.response.surname"] = "response.data.surname"
+    Setting["remote_census.response.valid"] = "response.data.document_number"
+
+    savon.mock!
+  end
+
+  config.after(:each, :remote_census) do
+    savon.unmock!
   end
 
   # Allows RSpec to persist some state between runs in order to support
@@ -138,5 +213,5 @@ RSpec.configure do |config|
   config.expect_with(:rspec) { |c| c.syntax = :expect }
 end
 
-# Parallel build helper configuration for travis
+# Parallel build helper configuration for CI
 KnapsackPro::Adapters::RSpecAdapter.bind

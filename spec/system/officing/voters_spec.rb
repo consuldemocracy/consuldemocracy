@@ -6,6 +6,7 @@ describe "Voters" do
   let(:officer) { create(:poll_officer) }
 
   before do
+    skip "Disabled by the client"
     create(:geozone, :in_census)
     create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
     create(:poll_officer_assignment, officer: officer, poll: poll, booth: booth)
@@ -13,7 +14,7 @@ describe "Voters" do
     set_officing_booth(booth)
   end
 
-  scenario "Can vote", :js do
+  scenario "Can vote" do
     create(:poll_officer_assignment, officer: officer)
 
     visit new_officing_residence_path
@@ -67,7 +68,7 @@ describe "Voters" do
     end
   end
 
-  scenario "Had already verified his residence, but is not level 2 yet", :js do
+  scenario "Had already verified his residence, but is not level 2 yet" do
     user = create(:user, residence_verified_at: Time.current, document_type: "1", document_number: "12345678Z")
     expect(user).not_to be_level_two_verified
 
@@ -159,8 +160,8 @@ describe "Voters" do
     end
   end
 
-  scenario "Store officer and booth information", :js do
-    create(:user, :in_census, id: rand(9999999))
+  scenario "Store officer and booth information" do
+    create(:user, :in_census)
     poll1 = create(:poll, name: "¿Quieres que XYZ sea aprobado?")
     poll2 = create(:poll, name: "Pregunta de votación de prueba")
 

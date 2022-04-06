@@ -72,7 +72,7 @@ en:
       phase_not_open:
         not_open: This phase is not open yet
       phase_empty:
-          empty: Nothing published yet
+        empty: Nothing published yet
       process:
         see_latest_comments: See latest comments
         see_latest_comments_title: Comment on this process
@@ -118,3 +118,32 @@ en:
         tags_label: "Categories"
       not_verified: "For vote proposals %{verify_account}."
       process_title: Collaborative legislation process
+    summary:
+      title: "Summary"
+      votes:
+        zero: "%{count} votes"
+        one: "%{count} vote"
+        other: "%{count} votes"
+      debate_phase: "Debate phase"
+      proposals_phase: "Proposals phase"
+      allegations_phase: "Comments phase"
+      debates:
+        zero: "No debates"
+        one: "%{count} debate"
+        other: "%{count} debates"
+      proposals:
+        zero: "No proposals"
+        one: "%{count} proposal"
+        other: "%{count} proposals"
+      comments:
+        zero: "No comments"
+        one: "%{count} comment"
+        other: "%{count} comments"
+      download: "Download summary"
+      top_comments:
+        zero: "No comments"
+        one: "%{count} comment"
+        other: "Top comments"
+      most_voted_comments: "Most voted comments"
+      no_allegation: "There are no comments"
+      process_empty: "This process didn't have any participation phases"

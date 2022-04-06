@@ -2,21 +2,17 @@
   "use strict";
   App.LegislationAdmin = {
     initialize: function() {
-      $("input[type='checkbox'][data-disable-date]").on({
+      $(".legislation-process-form").find("[name$='enabled]'],[name$='[published]']").on({
         change: function() {
-          var checkbox, date_selector, parent;
+          var checkbox;
           checkbox = $(this);
-          parent = $(this).parents(".row:eq(0)");
-          date_selector = $(this).data("disable-date");
-          parent.find("input[type='text'][id^='" + date_selector + "']").each(function() {
-            if (checkbox.is(":checked")) {
-              $(this).removeAttr("disabled");
-            } else {
-              $(this).val("");
-            }
+
+          checkbox.closest("fieldset").find("input[type='date']").each(function() {
+            $(this).prop("disabled", !checkbox.is(":checked"));
           });
         }
-      });
+      }).trigger("change");
+
       $("#nested_question_options").on("cocoon:after-insert", function() {
         App.Globalize.refresh_visible_translations();
       });

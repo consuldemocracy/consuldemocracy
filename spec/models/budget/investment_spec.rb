@@ -408,10 +408,9 @@ describe Budget::Investment do
     end
   end
 
-  describe "scoped_filter" do
-    let!(:budget)     { create(:budget, slug: "budget_slug") }
-    let!(:heading)    { create(:budget_heading, budget: budget) }
-    let!(:investment) { create(:budget_investment, :feasible, heading: heading) }
+  describe ".scoped_filter" do
+    let(:budget)     { create(:budget, :balloting, slug: "budget_slug") }
+    let(:investment) { create(:budget_investment, budget: budget) }
 
     it "finds budget by id or slug" do
       results = Budget::Investment.scoped_filter({ budget_id: budget.id }, nil)
@@ -426,6 +425,62 @@ describe Budget::Investment do
     it "does not raise error if budget is not found" do
       result = Budget::Investment.scoped_filter({ budget_id: "wrong_budget" }, nil)
       expect(result).to be_empty
+    end
+
+    describe "with without_admin filter" do
+      let(:params) { { advanced_filters: ["without_admin"], budget_id: budget.id } }
+      it "returns only investment without admin" do
+        create(:budget_investment, :with_administrator, budget: budget)
+        investment2 = create(:budget_investment, budget: budget)
+
+        expect(Budget::Investment.scoped_filter(params, "all")).to eq([investment2])
+      end
+    end
+
+    describe "with without_valuator filter" do
+      let(:params) { { advanced_filters: ["without_valuator"], budget_id: budget.id } }
+      it "returns only investment without valuator" do
+        create(:budget_investment, :with_valuator, budget: budget)
+        investment2 = create(:budget_investment, :with_administrator, budget: budget)
+        investment3 = create(:budget_investment, budget: budget)
+
+        expect(Budget::Investment.scoped_filter(params, "all"))
+          .to contain_exactly(investment2, investment3)
+      end
+    end
+
+    describe "with under_valuation filter" do
+      let(:params) { { advanced_filters: ["under_valuation"], budget_id: budget.id } }
+      it "returns only investment under valuation" do
+        investment1 = create(:budget_investment, :with_administrator, :open, :with_valuator,
+                             budget: budget)
+        create(:budget_investment, :with_administrator, budget: budget)
+        create(:budget_investment, budget: budget)
+
+        expect(Budget::Investment.scoped_filter(params, "all")).to eq([investment1])
+      end
+    end
+
+    describe "with valuation_finished filter" do
+      let(:params) { { advanced_filters: ["valuation_finished"], budget_id: budget.id } }
+      it "returns only investment with valuation finished" do
+        investment1 = create(:budget_investment, :selected, budget: budget)
+        create(:budget_investment, :with_administrator, budget: budget)
+        create(:budget_investment, budget: budget)
+
+        expect(Budget::Investment.scoped_filter(params, "all")).to eq([investment1])
+      end
+    end
+
+    describe "with winners filter" do
+      let(:params) { { advanced_filters: ["winners"], budget_id: budget.id } }
+      it "returns only investment winners" do
+        investment1 = create(:budget_investment, :winner, :finished, budget: budget)
+        create(:budget_investment, :with_administrator, budget: budget)
+        create(:budget_investment, budget: budget)
+
+        expect(Budget::Investment.scoped_filter(params, "all")).to eq([investment1])
+      end
     end
   end
 
@@ -1086,6 +1141,31 @@ describe Budget::Investment do
 
           expect(inv2.reason_for_not_being_ballotable_by(user, ballot)).to eq(:not_enough_money)
         end
+
+        context "Approval voting" do
+          before { budget.update!(phase: "balloting", voting_style: "approval") }
+          let(:group) { create(:budget_group, budget: budget) }
+
+          it "does not reject investments based on available money" do
+            heading = create(:budget_heading, group: group, max_ballot_lines: 2)
+            inv1 = create(:budget_investment, :selected, heading: heading, price: heading.price)
+            inv2 = create(:budget_investment, :selected, heading: heading, price: heading.price)
+            ballot = create(:budget_ballot, user: user, budget: budget, investments: [inv1])
+
+            expect(inv2.reason_for_not_being_ballotable_by(user, ballot)).to be nil
+          end
+
+          it "rejects if not enough available votes" do
+            heading = create(:budget_heading, group: group, max_ballot_lines: 1)
+            inv1 = create(:budget_investment, :selected, heading: heading)
+            inv2 = create(:budget_investment, :selected, heading: heading)
+            ballot = create(:budget_ballot, user: user, budget: budget, investments: [inv1])
+
+            reason = inv2.reason_for_not_being_ballotable_by(user, ballot)
+
+            expect(reason).to eq(:not_enough_available_votes)
+          end
+        end
       end
     end
   end
@@ -1203,79 +1283,6 @@ describe Budget::Investment do
 
         expect(investment.ballot_lines_count).to eq(3)
         expect(Budget::ReclassifiedVote.count).to eq(0)
-      end
-    end
-  end
-
-  describe "scoped_filter" do
-    let(:budget)     { create(:budget, :balloting) }
-    let(:investment) { create(:budget_investment, budget: budget) }
-
-    describe "with without_admin filter" do
-      let(:params) { { advanced_filters: ["without_admin"], budget_id: budget.id } }
-      it "returns only investment without admin" do
-        create(:budget_investment,
-          :with_administrator,
-          budget: budget)
-        investment2 = create(:budget_investment, budget: budget)
-
-        expect(Budget::Investment.scoped_filter(params, "all")).to eq([investment2])
-      end
-    end
-
-    describe "with without_valuator filter" do
-      let(:params) { { advanced_filters: ["without_valuator"], budget_id: budget.id } }
-      it "returns only investment without valuator" do
-        create(:budget_investment,
-          :with_valuator,
-          budget: budget)
-        investment2 = create(:budget_investment,
-          :with_administrator,
-          budget: budget)
-        investment3 = create(:budget_investment,
-          budget: budget)
-
-        expect(Budget::Investment.scoped_filter(params, "all"))
-          .to contain_exactly(investment2, investment3)
-      end
-    end
-
-    describe "with under_valuation filter" do
-      let(:params) { { advanced_filters: ["under_valuation"], budget_id: budget.id } }
-      it "returns only investment under valuation" do
-        investment1 = create(:budget_investment, :with_administrator, :open, :with_valuator,
-                             budget: budget)
-        create(:budget_investment, :with_administrator, budget: budget)
-        create(:budget_investment, budget: budget)
-
-        expect(Budget::Investment.scoped_filter(params, "all")).to eq([investment1])
-      end
-    end
-
-    describe "with valuation_finished filter" do
-      let(:params) { { advanced_filters: ["valuation_finished"], budget_id: budget.id } }
-      it "returns only investment with valuation finished" do
-        investment1 = create(:budget_investment,
-          :selected,
-          budget: budget)
-        create(:budget_investment,
-          :with_administrator,
-          budget: budget)
-        create(:budget_investment,
-          budget: budget)
-
-        expect(Budget::Investment.scoped_filter(params, "all")).to eq([investment1])
-      end
-    end
-
-    describe "with winners filter" do
-      let(:params) { { advanced_filters: ["winners"], budget_id: budget.id } }
-      it "returns only investment winners" do
-        investment1 = create(:budget_investment, :winner, :finished, budget: budget)
-        create(:budget_investment, :with_administrator, budget: budget)
-        create(:budget_investment, budget: budget)
-
-        expect(Budget::Investment.scoped_filter(params, "all")).to eq([investment1])
       end
     end
   end

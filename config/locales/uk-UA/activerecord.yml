@@ -1,0 +1,660 @@
+uk-UA:
+  attributes:
+    geozone_id: "Сфера діяльності"
+    results_enabled: "Показати результати"
+    stats_enabled: "Показати статистику"
+    advanced_stats_enabled: "Показати розширену статистику"
+    name: Назва
+    email: Електронна адреса
+    description: Опис
+  activerecord:
+    models:
+      activity:
+        one: "дія"
+        few: "дії"
+        many: "дії"
+        other: "дії"
+      budget:
+        one: "Бюджет"
+        few: "Бюджети"
+        many: "Бюджети"
+        other: "Бюджети"
+      budget/investment:
+        one: "Інвестиція"
+        few: "Інвестиції"
+        many: "Інвестиції"
+        other: "Інвестиції"
+      milestone:
+        one: "основний етап"
+        few: "основні етапи"
+        many: "основні етапи"
+        other: "основні етапи"
+      milestone/status:
+        one: "Статус основних етапів"
+        few: "Статуси основних етапів"
+        many: "Статуси основних етапів"
+        other: "Статуси основних етапів"
+      progress_bar:
+        one: "Індикатор виконання"
+        few: "Індикатори виконання"
+        many: "Індикатори виконання"
+        other: "Індикатори виконання"
+      comment:
+        one: "Коментар"
+        few: "Коментарі"
+        many: "Коментарі"
+        other: "Коментарі"
+      debate:
+        one: "Обговорення"
+        few: "Обговорення"
+        many: "Обговорення"
+        other: "Обговорення"
+      tag:
+        one: "Тег"
+        few: "Теги"
+        many: "Теги"
+        other: "Теги"
+      user:
+        one: "Користувач"
+        few: "Користувачі"
+        many: "Теги"
+        other: "Теги"
+      moderator:
+        one: "Модератор"
+        few: "Модератори"
+        many: "Модератори"
+        other: "Модератори"
+      administrator:
+        one: "Адміністратор"
+        few: "Адміністратори"
+        many: "Адміністратори"
+        other: "Адміністратори"
+      valuator:
+        one: "Оцінювач"
+        few: "Оцінювачі"
+        many: "Оцінювачі"
+        other: "Оцінювачі"
+      valuator_group:
+        one: "Група оцінювачів"
+        few: "Групи оцінювачів"
+        many: "Групи оцінювачів"
+        other: "Групи оцінювачів"
+      manager:
+        one: "Менеджер"
+        few: "Менеджери"
+        many: "Менеджери"
+        other: "Менеджери"
+      newsletter:
+        one: "Інформаційна розсилка"
+        few: "Інформаційні розсилки"
+        many: "Інформаційні розсилки"
+        other: "Інформаційні розсилки"
+      vote:
+        one: "Голос"
+        few: "Голоси"
+        many: "Голоси"
+        other: "Голоси"
+      organization:
+        one: "Організація"
+        few: "Організації"
+        many: "Організації"
+        other: "Організації"
+      poll/booth:
+        one: "кабінка"
+        few: "кабінки"
+        many: "кабінки"
+        other: "кабінки"
+      poll/officer:
+        one: "інспектор"
+        few: "інспектори"
+        many: "інспектори"
+        other: "інспектори"
+      poll/ballot_sheet:
+        one: Бюлетень
+        few: Бюлетені
+        many: Бюлетені
+        other: Бюлетені
+      proposal:
+        one: "Пропозиція громадянина"
+        few: "Пропозиції громадян"
+        many: "Пропозиції громадян"
+        other: "Пропозиції громадян"
+      site_customization/page:
+        one: Сторінка користувача
+        few: Сторінки користувачів
+        many: Сторінки користувачів
+        other: Сторінки користувачів
+      site_customization/image:
+        one: Зображення користувача
+        few: Зображення користувача
+        many: Зображення користувача
+        other: Зображення користувача
+      site_customization/content_block:
+        one: Блок контенту користувача
+        few: Блоки контенту користувача
+        many: Блоки контенту користувача
+        other: Блоки контенту користувача
+      document:
+        one: Документ
+        few: Документи
+        many: Документи
+        other: Документи
+      legislation/process:
+        one: "Процес"
+        few: "Процеси"
+        many: "Процеси"
+        other: "Процеси"
+      legislation/proposal:
+        one: "Пропозиція"
+        few: "Пропозиції"
+        many: "Пропозиції"
+        other: "Пропозиції"
+      legislation/draft_versions:
+        one: "Чорнова версія"
+        few: "Чорнові версії"
+        many: "Чорнові версії"
+        other: "Чорнові версії"
+      legislation/questions:
+        one: "Запитання"
+        few: "Запитання"
+        many: "Запитання"
+        other: "Запитання"
+      legislation/question_options:
+        one: "Варіант запитання"
+        few: "Варіанти запитань"
+        many: "Варіанти запитань"
+        other: "Варіанти запитань"
+      legislation/answers:
+        one: "Відповідь"
+        few: "Відповіді"
+        many: "Відповіді"
+        other: "Відповіді"
+      documents:
+        one: "Документ"
+        few: "Документи"
+        many: "Документи"
+        other: "Документи"
+      images:
+        one: "Зображення"
+        few: "Зображення"
+        many: "Зображення"
+        other: "Зображення"
+      topic:
+        one: "Тема"
+        few: "Теми"
+        many: "Теми"
+        other: "Теми"
+      poll:
+        one: "Голосування"
+        few: "Голосування"
+        many: "Голосування"
+        other: "Голосування"
+      proposal_notification:
+        one: "Сповіщення щодо пропозицій"
+        few: "Сповіщення щодо пропозицій"
+        many: "Сповіщення щодо пропозицій"
+        other: "Сповіщення щодо пропозицій"
+      dashboard/action:
+        one: Дія панелі управління пропозиціями
+        few: Дії панелі управління пропозиціями
+        many: Дії панелі управління пропозиціями
+        other: Дії панелі управління пропозиціями
+      dashboard/administrator_task:
+        one: Завдання
+        few: Завдання
+        many: Завдання
+        other: Завдання
+      link:
+        one: Посилання
+        few: Посилання
+        many: Посилання
+        other: Посилання
+      local_census_record:
+        one: Місцеві дані Цензусу
+        few: Місцеві дані Цензусу
+        many: Місцеві дані Цензусу
+        other: Місцеві дані Цензусу
+    attributes:
+      budget:
+        name: "Назва"
+        description_accepting: "Опис на етапі прийняття"
+        description_reviewing: "Опис на етапі перегляду"
+        description_selecting: "Опис на етапі відбору"
+        description_valuating: "Опис на етапі оцінки"
+        description_balloting: "Опис на етапі голосування"
+        description_reviewing_ballots: "Опис на етапі перевірки бюлетенів"
+        description_finished: "Опис після виконання бюджету"
+        phase: "Етап"
+        currency_symbol: "Валюта"
+        voting_style: "Вид остаточного голосування"
+        voting_style_knapsack: "Оптимальне співвідношення"
+        voting_style_approval: "Затвердження"
+      budget/translation:
+        name: "Назва"
+      budget/investment:
+        heading_id: "Розділ"
+        title: "Заголовок"
+        description: "Опис"
+        external_url: "Посилання на додаткову документацію"
+        administrator_id: "Адміністратор"
+        location: "Розміщення додаткової інформації"
+        organization_name: "Якщо ви подаєте пропозицію від імені колективу/організації або від імені ширшого кола людей, зазначте назву/імена"
+        image: "Зображення для опису пропозиції"
+        image_title: "Назва зображення"
+        duration: "Часовий діапазон"
+        feasibility_feasible: "Реалізація доцільна"
+        feasibility_undecided: "Не визначено"
+        feasibility_unfeasible: "Реалізація недоцільна"
+        incompatible: "Позначити як несумісний"
+        milestone_tag_list: "Теги етапу"
+        price_explanation: "Обґрунтування вартості"
+        selected: "Позначити як вибране"
+        selected_true: "Вибране"
+        selected_false: "Не вибране"
+        unfeasibility_explanation: "Обґрунтування доцільності реалізації"
+        valuation_finished: "Оцінювання завершено"
+        valuator_ids: "Групи"
+        valuation_tag_list: "Теги"
+      budget/investment/translation:
+        title: "Заголовок"
+        description: "Опис"
+      geozone:
+        name: Назва
+        external_code: "Зовнішній код (за бажанням)"
+        census_code: "Код Census (за бажанням)"
+        html_map_coordinates: "Координати HTML <map> (за бажанням)"
+      milestone:
+        status_id: "Поточний статус (за бажанням)"
+        title: "Назва"
+        description: "Опис (за бажанням, якщо присвоєно статус)"
+        publication_date: "Дата"
+      milestone/translation:
+        description: "Опис"
+      milestone/status:
+        name: "Назва"
+        description: "Опис (за бажанням)"
+      progress_bar:
+        kind: "Тип"
+        title: "Заголовок"
+        percentage: "Поточний прогрес"
+      progress_bar/kind:
+        primary: "Першочерговий"
+        secondary: "Другорядний"
+      budget/group:
+        max_votable_headings: "Максимальна кількість рубрик, за якими користувач може обирати проєкти"
+      budget/group/translation:
+        name: "Назва групи"
+      budget/heading:
+        allow_custom_content: "Дозволити блокування контенту"
+        latitude: "Широта (за бажанням)"
+        longitude: "Довгота (за бажанням)"
+        name: "Назва рубрики"
+        price: "Кількість"
+        population: "Населення (за бажанням)"
+        max_ballot_lines: "Дозволене голосування"
+      budget/heading/translation:
+        name: "Назва рубрики"
+      budget/phase:
+        enabled: "Доступний етап"
+        ends_at: "Дата закінчення"
+        starts_at: "Дата початку"
+      budget/phase/translation:
+        name: "Назва"
+        description: "Опис"
+        summary: "Підсумок"
+      comment:
+        body: "Коментар"
+        user: "Користувач"
+      debate:
+        author: "Автор"
+        description: "Думка"
+        tag_list: "Теми"
+        terms_of_service: "Умови користування"
+        title: "Заголовок"
+      debate/translation:
+        title: "Назва обговорення"
+        description: "Початковий текст обговорення"
+      proposal:
+        author: "Автор"
+        title: "Назва"
+        question: "Запитання"
+        description: "Опис"
+        responsible_name: "Повне ім'я особи, яка подає пропозицію"
+        retired_reason: "Причина вилучення пропозиції"
+        selected: "Позначити як вибране"
+        terms_of_service: "Умови користування"
+        video_url: "URL-посилання на зовнішнє відео"
+      proposal/translation:
+        title: "Назва пропозиції"
+        description: "Текст пропозиції"
+        summary: "Короткий виклад пропозиції"
+        retired_explanation: "Пояснення"
+      user:
+        login: "Електронна адреса або ім'я користувача"
+        email: "Електронна адреса"
+        username: "Ім'я користувача"
+        password_confirmation: "Підтвердження пароля"
+        password: "Пароль"
+        current_password: "Поточний пароль"
+        email_digest: "Отримувати коротку інформацію про сповіщення щодо пропозицій"
+        email_on_comment: "Отримувати на електронну пошту сповіщення про коментарі до моїх пропозицій та обговорень"
+        email_on_comment_reply: "Отримувати на електронну пошту сповіщення про відповіді на мої коментарі"
+        email_on_direct_message: "Отримувати на електронну пошту сповіщення про вхідні повідомлення"
+        newsletter: "Отримувати на електронну пошту актуальну інформацію про вебсайт"
+        official_position: "Офіційна посада"
+        official_position_badge: "Показати посвідчення про офіційну посаду"
+        official_level: "Офіційний рівень"
+        phone_number: "Номер телефону"
+        public_activity: "Зробити список моїх дій загальнодоступним"
+        public_interests: "Забезпечити вільний доступ до міток елементів, за якими я слідкую"
+        recommended_debates: "Показувати рекомендовані обговорення"
+        recommended_proposals: "Показувати рекомендовані пропозиції"
+        redeemable_code: "Код підтвердження надіслано на електронну адресу"
+      direct_message:
+        title: "Назва"
+        body: "Повідомлення"
+      organization:
+        name: "Назва організації"
+        responsible_name: "Особа, відповідальна за групу"
+      poll:
+        name: "Ім'я"
+        title: "Назва"
+        starts_at: "Дата початку"
+        ends_at: "Дата завершення"
+        geozone_restricted: "Обмеження за геозоною"
+        summary: "Підсумок"
+        description: "Опис"
+      active_poll/translation:
+        description: "Опис"
+      poll/booth:
+        name: "Назва"
+        location: "Розташування"
+      poll/translation:
+        name: "Назва"
+        summary: "Підсумок"
+        description: "Опис"
+      poll/question:
+        poll_id: "Опитування"
+        title: "Запитання"
+        summary: "Підсумок"
+        description: "Опис"
+        external_url: "Посилання на додаткову документацію"
+      poll/question/translation:
+        title: "Запитання"
+      poll/ballot_sheet:
+        data: Дані CSV
+        poll_id: Голосування
+        officer_assignment_id: Завдання інспектора
+      poll/shift:
+        task: "Завдання"
+      proposal_notification:
+        body: "Повідомлення"
+        title: "Заголовок"
+      signature_sheet:
+        title: "Заголовок"
+        signable_type: "Тип, що підписується"
+        signable_id: "ID, що підписується"
+        document_numbers: "Номери документів"
+      sdg/goal:
+        title: "Заголовок"
+        description: "Опис"
+      sdg/local_target:
+        title: "Заголовок"
+      sdg/local_target/translation:
+        title: "Заголовок"
+        description: "Опис"
+      sdg/target:
+        title: "Заголовок"
+      site_customization/page:
+        content: Вміст
+        created_at: Створено о
+        subtitle: Підзаголовок
+        slug: Блок
+        status: Статус
+        status_draft: "Чернетка"
+        status_published: "Опубліковано"
+        title: Заголовок
+        updated_at: Оновлено о
+        more_info_flag: Показати на сторінці довідки
+        print_content_flag: Кнопка друкування вмісту
+        locale: Мова
+      site_customization/page/translation:
+        title: Заголовок
+        subtitle: Підзаголовок
+        content: Вміст
+      site_customization/image:
+        name: Назва
+        image: Зображення
+      site_customization/content_block:
+        name: Назва
+        locale: локалізація
+        body: Орган
+      tag:
+        name: "Введіть назву теми"
+      topic:
+        title: "Заголовок"
+        description: "Початковий текст"
+      banner:
+        background_color: Колір фону
+        font_color: Колір шрифту
+        post_ended_at: "Пост закінчено о"
+        post_started_at: "Пост розпочато о"
+        target_url: "Посилання"
+      banner/translation:
+        title: "Заголовок"
+        description: "Опис"
+      legislation/process:
+        title: Назва процесу
+        summary: Підсумок
+        description: Опис
+        additional_info: Додаткова інформація
+        start_date: Початок
+        end_date: Закінчення
+        debate_start_date: Початок
+        debate_end_date: Закінчення
+        draft_start_date: Початок
+        draft_end_date: Закінчення
+        draft_publication_date: Дата публікування чорнової версії
+        allegations_start_date: Початок
+        allegations_end_date: Закінчення
+        proposals_phase_start_date: Початок
+        proposals_phase_end_date: Закінчення
+        result_publication_date: Дата публікування остаточного результату
+        background_color: Колір фону
+        font_color: Колір шрифту
+        homepage_enabled: "Домашня сторінка доступна"
+      legislation/process/translation:
+        title: Назва процесу
+        summary: Підсумок
+        description: Опис
+        additional_info: Додаткова інформація
+        homepage: "Опис"
+        milestones_summary: Підсумок
+      legislation/proposal:
+        description: "Текст пропозиції"
+        summary: "Короткий виклад пропозиції"
+        title: "Назва пропозиції"
+        video_url: "Посилання на зовнішнє відео"
+      legislation/draft_version:
+        title: Назва версії
+        body: Текст
+        changelog: Зміни
+        status: Статус
+        status_draft: "Чернетка"
+        status_published: "Опубліковано"
+        final_version: Остаточна версія
+      legislation/draft_version/translation:
+        title: Назва версії
+        body: Текст
+        changelog: Зміни
+      legislation/question:
+        title: Заголовок
+        question_options: Опції
+      legislation/question/translation:
+        title: Запитання
+      legislation/question_option:
+        value: Важливість
+      legislation/annotation:
+        text: Коментар
+      document:
+        title: Заголовок
+        attachment: "Обрати документ"
+      image:
+        title: Заголовок
+        attachment: "Обрати зображення"
+      poll/question/answer:
+        title: Відповідь
+        description: Опис
+      poll/question/answer/translation:
+        title: Відповідь
+        description: Опис
+      poll/question/answer/video:
+        title: Заголовок
+        url: Зовнішнє відео
+      newsletter:
+        segment_recipient: Отримувачі
+        subject: Предмет
+        from: "Електронна адреса, що відображатиметься як відправник інформаційного бюлетеня"
+        body: Вміст листа
+      admin_notification:
+        segment_recipient: Отримувачі
+        title: Заголовок
+        link: Посилання
+        body: Текст
+      admin_notification/translation:
+        title: Заголовок
+        body: Текст
+      widget/card:
+        label: Мітка (за бажанням)
+        title: Заголовок
+        description: Опис
+        link_text: Текст посилання
+        link_url: URL-адреса посилання
+        columns: Кількість колонок
+      widget/card/translation:
+        label: Мітка (за бажанням)
+        title: Заголовок
+        description: Опис
+        link_text: Текст посилання
+      widget/feed:
+        limit: Кількість пунктів
+      dashboard/action:
+        title: Заголовок
+        short_description: Короткий опис
+        description: Опис
+        link: Зовнішнє посилання
+        request_to_administrators: Додати до ресурсу кнопку для запиту ресурсу в адміністраторів
+        day_offset: Впродовж скількох днів після подачі пропозиції ви хочете, щоб вона була активована?
+        required_supports: Скільки голосів на підтримку має отримати пропозиція, щоб бути активованою?
+        order: Ви можете ввести позицію, за якою ця дія буде показана користувачу в переліку дій
+        active: Активні
+        action_type: Тип
+        action_type_proposed_action: "Пропонована дія"
+        action_type_resource: "Ресурс"
+        published_proposal: "Для опублікованих пропозицій?"
+      dashboard/administrator_task:
+        source: Джерело
+        user: Виконавець
+      link:
+        label: Заголовок
+        url: Посилання
+      valuator:
+        description: Опис
+        valuator_group_id: Група оцінювачів
+        can_comment: Може коментувати
+        can_edit_dossier: Може редагувати досьє
+      valuator_group:
+        name: "Назва групи"
+      local_census_record:
+        document_type: Тип документа
+        document_number: Номер документа
+        date_of_birth: Дата народження
+        postal_code: Поштовий індекс
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Цей користувач вже має пароль"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "кількість тегів має бути меншою або дорівнювати %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Ви досягли максимально дозволеної кількості особистих повідомлень на день"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Ширина зображення повинна становити принаймні %{required_min_width}пікселів"
+              min_image_height: "Висота зображення повинна становити принаймні %{required_min_height}пікселів"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Недійсний сегмент одержувачів"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Недійсний сегмент одержувачів"
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Документ відсутній у переписі"
+            user_id:
+              has_voted: "Користувач вже проголосував"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: на дату початку або після неї
+            debate_end_date:
+              invalid_date_range: на дату початку обговорення або після неї
+            draft_end_date:
+              invalid_date_range: на дату створення чернетки або після неї
+            allegations_end_date:
+              invalid_date_range: на дату початку коментування або після неї
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: не включено в перелік, дозволені значення - 1 для DNI, 2 для паспорту та 3 для посвідчення про місце проживання.
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "кількість тегів має бути меншою або дорівнювати %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "кількість тегів має бути меншою або дорівнювати %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Ви маєте зачекати принаймні %{interval} днів між сповіщеннями"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: "Не перевірено Цензусом"
+              already_voted: "За цю пропозицію вже віддано голос"
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "мають бути літери, цифри, _ та -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Ширина має становити %{required_width}пікселів"
+              image_height: "Висота має становити %{required_height}пікселів"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: "Ви не можете коментувати оцінювання"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Уже перекладений ресурс
+      messages:
+        translations_too_short: Необхідно зробити принаймні один переклад
+        record_invalid: "Помилка перевірки: %{errors}"
+        another_poll_active: Є інше активне опитування, яке охоплює цей проміжок часу
+        restrict_dependent_destroy:
+          has_one: "Неможливо видалити запис, оскільки існує залежний %{record}"
+          has_many: "Неможливо видалити запис, оскільки існує залежний %{record}"

@@ -10,6 +10,8 @@ nl:
       manage_email_subscriptions: To stop receiving these emails change your settings in
     email_verification:
       click_here_to_verify: this link
+      instructions_2: Deze e-mail verifieert uw account met %{document_type} %{document_number}. Als deze email niet voor u bestemd is, klik dan niet op de link en negeer deze e-mail.
+      instructions: Om de verificatie van uw account te voltooien klikt u %{verification_link}.
       subject: Confirm your email
       thanks: Thank you very much.
       title: Confirm your account using the following link
@@ -32,6 +34,7 @@ nl:
       unsubscribe_account: My account
     direct_message_for_sender:
       subject: "U heeft een nieuw prive bericht verstuurd"
+      title: "Je hebt een nieuw privébericht gestuurd naar <strong>%{receiver}</strong> met de inhoud:"
     user_invite:
       ignore: "If you have not requested this invitation don't worry, you can ignore this email."
       text: "Dank u voor uw interesse om toe te treden tot %{org}! In een paar seconden kunt u deelnemen, vul het onderstaande formulier in:"
@@ -42,11 +45,15 @@ nl:
     budget_investment_created:
       subject: "Thank you for creating an investment!"
       title: "Dank u voor het maken van een investering!"
+      intro: "Hallo <strong>%{author}</strong>,"
+      text: "Dank u voor het maken van uw investering <strong>%{investment}</strong> voor participatieve budgetten <strong>%{budget}</strong>."
+      follow: "Wij zullen u informeren over hoe het proces vordert, dit kun je ook volgen op <strong>%{link}<div class=\"notranslate\"> 2 volgen kun</div>."
       follow_link: "Participatory Budgets"
       sincerely: "Sincerely,"
       share: "Comparte tu proyecto"
     budget_investment_unfeasible:
       hi: "Beste deelnemer,"
+      new: "Voor al deze vragen nodigen we u uit een <strong>nieuw voorstel</ strong> uit te werken dat zich aanpast aan de voorwaarden van dit proces. U kunt dit doen door deze link te volgen: %{url}."
       new_href: "nieuw investeringsproject"
       sincerely: "Oprecht"
       sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
@@ -63,3 +70,5 @@ nl:
       hi: "Beste deelnemer,"
       thanks: "Dank u nogmaals voor uw deelname."
       sincerely: "Hoogachtend"
+    evaluation_comment:
+      hi: Hoi

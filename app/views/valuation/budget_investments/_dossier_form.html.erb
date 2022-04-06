@@ -47,7 +47,7 @@
 
       <div class="small-12 medium-6 column end">
         <%= f.number_field :price_first_year,
-          label: t("valuation.budget_investments.edit.price_first_year", currency:  budget.currency_symbol),
+          label: t("valuation.budget_investments.edit.price_first_year", currency: budget.currency_symbol),
           max: 1000000000000000 %>
       </div>
     </div>
@@ -66,6 +66,7 @@
 
   </div>
 
+  
   <div class="row">
     <div class="small-12 medium-8 column">
       <%= f.check_box :valuation_finished,
@@ -74,6 +75,7 @@
           "data-not-feasible-alert": t("valuation.budget_investments.edit.not_feasible_alert") %>
     </div>
   </div>
+ 
 
   <div class="row">
     <div class="actions small-12 medium-4 column">

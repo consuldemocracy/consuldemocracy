@@ -1,0 +1,17 @@
+bs:
+  sdg_management:
+    homepage:
+      header:
+        create: "Napravi zaglavlje"
+        title: "Zaglavlje"
+    menu:
+      budget_investments: "Participativni budžeti"
+      debates: "Debate"
+      polls: "Glasačke ankete"
+      proposals: "Prijedlozi"
+    relations:
+      index:
+        filter: "Filter (suzi pretragu)"
+        filters:
+          all: "Sve"
+          pending_sdg_review: "U toku"

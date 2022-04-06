@@ -1,0 +1,473 @@
+tr:
+  sdg:
+    goals:
+      goal_1:
+        title: "Yoksulluğa Son"
+        title_in_two_lines: "Yoksulluğa Son"
+        description: "Her yerde, her şekliyle yoksulluğa son ver."
+        long_description: '<p> Küresel olarak, aşırı yoksulluk içinde yaşayan insan sayısı 1990 yılında yüzde 36 iken, 2015’e gelindiğinde %10''a kadar düştü. Ancak değişim hızı yavaşlıyor ve yoksulluğa karşı verilen mücadelede, COVID-19 krizi <a href="https://www.un.org/sites/un2.un.org/files/sg_report_socio-economic_impact_of_covid19.pdf"> on yıllar süren ilerlemeyi tersine çevirme riskini taşıyor.</a> Birleşmiş Milletler Üniversitesi, Dünya Kalkınma Ekonomisi Araştırma Enstitüsü tarafından yayınlanan <a href="https://www.wider.unu.edu/node/237051">yeni araştırma</a> <a href="https://www.wider.unu.edu/publication/estimates-impact-covid-19-global-poverty">küresel salgın kaynaklı ekonomik yansımaların küresel yoksulluğu yarım milyar insan</a>, veya toplam nüfusun % 8''i, kadar artırabileceği konusunda uyarıyor. Bu 1990’dan bu yana 30 yıl içinde, küresel anlamda büyüyen ilk kriz.</p> <p><a href="http://www.worldbank.org/en/news/press-release/2018/09/19/decline-of-global-extreme-poverty-continues-but-has-slowed-world-bank">700 milyondan fazla insan</a>, veya dünya nüfusunun yüzde 10''u, bugün hala aşırı yoksulluk içinde yaşıyor; birkaçını saymak gerekirse, sağlık, eğitim, su ve sıhhi tesisata erişim gibi en temel ihtiyaçları karşılamak için mücadele ediyor. Günde 1,90 doların altında bir gelirle yaşayan insanların çoğu Sahra altı Afrika''da yaşıyor. Dünya çapında, <a href="https://unstats.un.org/sdgs/report/2019/goal-01/">kırsal alanlardaki yoksulluk oranı yüzde 17,2</a> – bu, kentsel alanların üç katından daha fazla.&nbsp;</p> <p>Çalışanlar için bir işe sahip olmak insana yakışır bir yaşamın teminatı da değil. Öyle ki, 2018 yılında dünya genelinde istihdam edilenlerin ve ailelerinin <a href="https://unstats.un.org/sdgs/report/2019/goal-01/">yüzde 8''i</a> aşırı yoksulluk içinde yaşadı. Her beş çocuktan biri ise aşırı yoksulluk içinde yaşam sürüyor. Tüm çocuklar ve diğer savunmasız gruplar için sosyal korumanın sağlanması, yoksulluğu azaltmak açısından kritik bir öneme sahiptir.</p>'
+        targets:
+          target_1_1:
+            long_title: "2030'a kadar, Günde 1,25 dolardan daha az gelirle geçinen insanların sayısı üzerinden ölçülen aşırı yoksulluğun her yerde herkes için ortadan kaldırılması"
+          target_1_2:
+            long_title: "2030’a kadar, ulusal tanımlara göre tüm boyutlarıyla yoksulluk içinde yaşayan her yaştan erkek, kadın ve çocuk oranının en az yarıya indirilmesi"
+          target_1_3:
+            long_title: "Temel mal ve hizmetler de dahil olmak üzere herkes için ulusal açıdan uygun sosyal koruma sistemleri ve önlemlerinin hayata geçirilmesi ve 2030’a kadar yoksul ve savunmasız durumdaki kişiler için önemli ölçüde korunma sağlanması"
+          target_1_4:
+            long_title: "2030’a kadar, özellikle yoksullar ve savunmasız durumdaki insanlar olmak üzere, bütün erkek ve kadınların ekonomik kaynaklara ulaşma, temel hizmetlere erişim, toprak ve diğer mülkiyet biçimlerine sahip olma ve üzerinde kontrol kurabilme, miras, doğal kaynaklar, uygun yeni teknolojiler ve mikro finansı da kapsayan finansal hizmetler gibi konularda eşit haklara sahip olmalarının güvence altına alınması"
+          target_1_5:
+            long_title: "2030’a kadar, yoksulların ve savunmasız durumda olan kişilerin dayanıklılık kazanmalarının sağlanması ve aşırı hava olayları ve diğer ekonomik, sosyal ve çevresel şoklar ve afetlere karşı kırılganlıklarının azaltılması"
+          target_1_A:
+            long_title: "Özellikle en az gelişmiş ülkeler olmak üzere, gelişmekte olan ülkelerin yoksulluğu bütün boyutlarıyla sona erdirmek adına programlar ve politikalar uygulayabilmeleri için onlara yeterli ve öngörülebilir araçlar sunmak amacıyla, gelişmiş kalkınma işbirliği aracılığıyla olanlar dahil, çeşitli kaynaklardan kaynakların önemli ölçüde seferber edilmesinin sağlanması"
+          target_1_B:
+            long_title: "Yoksulluğun ortadan kaldırılmasına yönelik eylemlere yapılan hızlandırılmış yatırımları desteklemek için ulusal, bölgesel ve uluslararası düzeylerde, yoksulların lehine ve toplumsal cinsiyet eşitliğine duyarlı kalkınma stratejilerine dayalı sağlam politika altyapılarının oluşturulması"
+      goal_2:
+        title: "Açlığa Son"
+        title_in_two_lines: "Açlığa Son"
+        description: "Açlığa Son."
+        long_description: '<p>Yıllardır devam eden istikrarlı düşüşün ardından, açlıktan muzdarip insan sayısı – yetersiz beslenmenin yaygınlığı ile ölçülen- 2015 yılında tekrar yavaş biçimde artmaya başladı. Mevcut tahminler <a href="http://www.fao.org/publications/sofi/2020/en/">dünya nüfusunun 690 milyonunun veya diğer bir deyişle yüzde 8.9’unun aç olduğunu</a> ve bir yıl içerisinde 10 milyona kadar, beş yıl içindeyse 60 milyona kadar yükseleceğini göstermektedir.</p> <p>Dünya 2030’a kadar açlığı sona erdirme başarısı göstereceği bir yolda değil. Eğilimler bu şekilde devam ederse, 2030 yılına kadar açlıktan etkilenen insan sayısı 840 milyonu aşabilir.</p> <p>Dünya Gıda Programı''na göre, büyük oranda ekonomik gerilemeler, iklim değişikliği ve beşeri çekişmeler sebebiyle <a href="https://www.wfp.org/publications/2020-global-report-food-crises">135 milyon insan akut açlık sıkıntısı çekiyor</a>. Covid-19 salgını ise bugün bu sayıyı ikiye katladı, 2020 yılı sonuna kadar 130 milyon insan daha akut açlık çekme riski altında.</p> <p><a href="https://insight.wfp.org/covid-19-will-almost-double-people-in-acute-hunger-by-end-of-2020-59df0c4a8072">Açlık sınırı eşiğinde olan çeyrek milyondan fazla insan sebebiyle</a>, en çok risk altında olan bölgelere insani yardım ve yiyecek sağlanması için hızlı bir aksiyon alınması gerekiyor.</p> <p>Aynı zamanda,&nbsp; bugün açlıkla karşı karşıya olan 690 milyondan fazla insana – 2050 yılına kadar bu sayı &nbsp;<a href="https://www.un.org/development/desa/en/news/population/world-population-prospects-2019.html">2 milyar daha artacak</a>&nbsp; gıda desteği sağlamak istiyorsak küresel bir gıda ve tarım sisteminde köklü değişikliklere yapmamız gerekiyor. Sürdürülebilir gıda üretimi ve tarımsal verimliliğin artırılması açlık tehlikesini hafifletmek adına kritik bir önem arz ediyor.</p>'
+        targets:
+          target_2_1:
+            long_title: "2030’a kadar, açlığın sona erdirilmesi ve özellikle bebekler dahil olmak üzere, yoksul ve savunmasız durumda olan herkesin bütün yıl boyunca güvenli, besleyici ve yeterli miktarda besine erişiminin güvence altına alınması."
+          target_2_2:
+            long_title: "2025’e kadar, 5 yaş altı çocukların büyümelerini engelleyen unsurlar konusunda üzerinde anlaşmaya varılan uluslararası hedeflerin gerçekleştirilmesi de dahil olmak üzere 2030’a kadar, kötü ve yetersiz beslenmenin tüm biçimlerinin ortadan kaldırılması; genç kızlar, hamile ve emziren kadınlar ile yaşlı insanların beslenmeyle ilgili ihtiyaçlarının ele alınması."
+          target_2_3:
+            long_title: "2030’a kadar, tarımsal verimliliğin ve özellikle kadınlar, yerli halklar, çiftçi aileler, çobanlar ve balıkçılar olmak üzere küçük ölçekli gıda üreticilerinin toprağa, diğer verimli kaynaklara ve girdilere, bilgiye, finansal hizmetlere, piyasalara ve değer temini ve tarım dışı istihdam olanaklarına güvenli ve eşit erişiminin sağlanması aracılığıyla gelirlerinin iki katına çıkarılması."
+          target_2_4:
+            long_title: "2030’a kadar, sürdürülebilir gıda üretimi sistemlerinin güvence altına alınması ve üretimi ve üretkenliği artıran, ekosistemlerin sürdürülmesine yardımcı olan, iklim değişikliğine, aşırı hava koşullarına, kuraklığa, sele ve diğer felaketlere uyum sağlama kapasitesini güçlendiren ve toprak kalitesini devamlı olarak iyileştiren dayanıklı tarım uygulamalarının hayata geçirilmesi."
+          target_2_5:
+            long_title: "2020’ye kadar, tohumların, kültür bitkilerinin, çiftlik hayvanlarının ve evcilleştirilmiş hayvanların ve onlara bağlı vahşi türlerin ulusal, bölgesel ve uluslararası düzeylerde etkin bir biçimde yönetilen ve çeşitlendirilmiş tohum ve bitki bankaları aracılığıyla genetik çeşitliliğinin sürdürülmesi ve uluslararası kabul gören biçimde genetik kaynakların ve ilgili geleneksel bilginin kullanımından elde edilen kazanımlara erişimin ve bu kazanımların adil ve eşitlikçi biçimde paylaştırılmasının desteklenmesi."
+          target_2_A:
+            long_title: "Gelişmekte olan ülkelerde, özellikle de en az gelişmiş ülkelerde tarımsal üretim kapasitesini artırmak için kırsal altyapı, tarımsal araştırma ve yayım hizmetleri, teknoloji geliştirme ve bitki ve hayvancılık gen bankalarında gelişmiş uluslararası işbirliği yoluyla yatırımları artırmak."
+          target_2_B:
+            long_title: "Tarımsal ihracat sübvansiyonlarının her türünün ve eş etkili mali yüklerle birlikte bütün ihracat önlemlerinin paralel olarak ortadan kaldırılması yoluyla, Doha Kalkınma Turuna uygun olarak, dünya tarım piyasalarındaki ticari kısıtlamalar ve aksaklıkların düzeltilmesi ve önlenmesi."
+          target_2_C:
+            long_title: "Gıda mamulleri piyasalarının ve türevlerinin uygun biçimde işleyişini sağlamak için önlemler alınması ve gıda fiyatlarındaki aşırı değişkenliği sınırlandırmaya yardımcı olmak için gıda rezervleri de dahil olmak üzere piyasa bilgilerine zamanında erişimin kolaylaştırılması."
+      goal_3:
+        title: "Sağlık ve Kaliteli Yaşam"
+        title_in_two_lines: "Sağlık ve Kaliteli Yaşam"
+        description: "Sağlıklı yaşamların güvence altına alınması ve her yaştan herkes için kaliteli yaşamın teşvik edilmesi."
+        long_description: '<p>Sağlıklı yaşamların sağlanması ve her yaşta refahın desteklenmesi sürdürülebilir kalkınma için gereklidir. Mevcut durumda, dünya diğerlerinden farklı bir <a href="https://www.un.org/coronavirus">küresel sağlık kriziyle</a> karşı karşıya kalmış durumda – COVID-19 insanlara acı yaymakta, küresel ekonomiyi istikrarsızlaştırmakta ve dünya çapında milyarlarca insanın hayatını altüst etmektedir.&nbsp;</p> <p>Salgın öncesinde, <a href="https://unstats.un.org/sdgs/report/2019/goal-03/">milyonlarca insanın sağlığıyla ilgili önemli gelişmeler kaydedilmiştir.</a> Ortalama yaşam süresi artırılması ve çocuk ve anne ölüm oranında yaygın ölüm nedenlerinden bazılarının azaltılmasına ilişkin önemli adımlar atılmıştır. Ancak, yakın zamanda ortaya çıkmış ve kalıcı olan birçok farklı sağlık sorununun ele alınması ve çok geniş bir yelpazedeki hastalıkların tamamen ortadan kaldırılması için daha fazla çaba sarf edilmesi gerekmektedir. Sıhhi tesisat ve hijyen koşullarının iyileştirmesi ve doktorlara erişim imkanının artırılması ve sağlık sistemlerinin daha etkin finanse edilmesine odaklanarak milyonlarca insanın hayatının kurtarılmasında önemli ilerlemeler kaydedilebilir.</p> <p> COVID-19 gibi olağanüstü sağlık durumları küresel bir risk teşkil etmekte ve hazırlıklı olmaya duyulan kritik ihtiyacı göstermektedir. Birleşmiş Milletler Kalkınma Programı, <a href="https://www.undp.org/content/undp/en/home/news-centre/news/2020/COVID19_UNDP_data_dashboards_reveal_disparities_among_countries_to_cope_and_recover.html">ülkelerin COVID-19 kriziyle başa çıkma ve krizi atlatmasındaki yeterliliklerinde</a> büyük eşitsizler olduğunu vurgulamıştır. Salgın, sağlık acil durum hazırlığı ve 21. yüzyılın en önemli kamu hizmetlerine yatırım için bir dönüm noktası sağlamaktadır.&nbsp;</p>'
+        targets:
+          target_3_1:
+            long_title: "2030'a kadar, dünya genelinde anne ölüm oranının 100.000 canlı doğumda 70'in altına düşürülmesi."
+          target_3_2:
+            long_title: "2030'a kadar, yenidoğan ölüm oranının her 1000 canlı doğumda en az 12’ye ve 5 yaş altı çocuk ölüm oranının da her 1000 canlı doğumda en az 25’e düşmesinin hedeflenmesiyle, yenidoğan ve 5 yaş altı çocukların önlenebilir ölümlerinin sona erdirilmesi."
+          target_3_3:
+            long_title: "2030’a kadar, AIDS, tüberküloz, sıtma ve göz ardı edilen tropikal hastalık gibi salgınların sona erdirilmesi ve hepatit, su yoluyla bulaşan hastalıklar ve diğer bulaşıcı hastalıklarla mücadele edilmesi."
+          target_3_4:
+            long_title: "2030’a kadar, bulaşıcı olmayan hastalıklardan kaynaklanan prematüre bebek ölümlerinin, bu hastalıkların önlenmesi ve tedavisi yoluyla üçte bir oranında azaltılması ve zihinsel sağlığın ve refahın geliştirilmesi."
+          target_3_5:
+            long_title: "Uyuşturucu madde kullanımı ve alkol bağımlılığı dahil olmak üzere madde bağımlılığının önlenmesi ve tedavisinin güçlendirilmesi."
+          target_3_6:
+            long_title: "2020'ye kadar, trafik kazalarından kaynaklanan toplam yaralanma ve ölüm sayısının yarıya indirilmesi."
+          target_3_7:
+            long_title: "2030'a kadar, aile planlaması, bilgilendirme ve eğitim dahil olmak üzere cinsel sağlık ve üreme sağlığı hizmetlerine evrensel erişimin sağlanması ve üreme sağlığının ulusal strateji ve programlara entegre edilmesi."
+          target_3_8:
+            long_title: "Finansal risk korumasını, kaliteli temel sağlık hizmetlerine erişimi ve herkesin güvenli, etkili, kaliteli ve makul fiyatlı zaruri ilaçlara ve aşılara erişimini de kapsayan evrensel bir sağlık güvencesi sisteminin sağlanması."
+          target_3_9:
+            long_title: "2030’a kadar, zararlı kimyasallardan ve hava, su ve toprak kirliliğinden kaynaklanan hastalıkların ve ölümlerin sayısının büyük ölçüde azaltılması."
+          target_3_A:
+            long_title: "Dünya Sağlık Örgütü Tütün Kontrolü Çerçeve Sözleşmesinin bütün ülkelerde, uygun şekilde uygulanmasının güçlendirilmesi."
+          target_3_B:
+            long_title: "Öncelikli olarak, gelişmekte olan ülkeleri etkileyen bulaşıcı olan ve bulaşıcı olmayan hastalıklar için aşı ve ilaçların geliştirilmesinin desteklenmesi, gelişmekte olan ülkelerin kamu sağlığının korunmasına yönelik esnekliklere ilişkin Fikri Mülkiyet Haklarının Ticari Niteliklerine İlişkin Anlaşma hükümlerini tamamıyla uygulayabilme hakkını onaylayan TRIPS Anlaşması ve Doha Bildirgesi gereğince, uygun fiyatlı temel ilaçlara ve aşılara erişimin sağlanması ve özellikle her kesimden bireylerin ilaçlara erişiminin sağlanması."
+          target_3_C:
+            long_title: "Az gelişmiş ülkeler ve gelişmekte olan küçük ada devletleri başta olmak üzere gelişmekte olan ülkelerde sağlık hizmeti finansmanının ve sağlık iş gücü istihdamının, geliştirilmesinin, eğitilmesinin ve devamlılığının önemli ölçüde artırılması."
+          target_3_D:
+            long_title: "Erken uyarı, risk azaltma ve ulusal ve küresel sağlık risklerinin yönetimi için başta gelişmekte olan ülkeler olmak üzere tüm ülkelerin kapasitesinin güçlendirilmesi."
+      goal_4:
+        title: "Nitelikli Eğitim"
+        title_in_two_lines: "Nitelikli Eğitim"
+        description: "Nitelikli Eğitim."
+        long_description: '<p>Eğitim yukarı yönlü sosyoekonomik hareketliliği destekler ve yoksulluktan kurtulmak için kilit rol oynar. Son on yılda, başta kız çocukları olmak üzere eğitime erişim ve okula kaydolma oranlarının artırılmasına yönelik büyük ilerleme sağlandı. Bununla birlikte, 2018''de <a href="http://uis.unesco.org/en/topic/out-school-children-and-youth">yaklaşık 260 milyon çocuk hala okula gitmiyordu</a> - bu yaş grubundaki küresel nüfusun yaklaşık beşte biri. Dünya çapındaki çocuk ve ergenlerin yarısından fazlası halen matematik ve okur yazarlıkta <a href="https://unstats.un.org/sdgs/report/2019/goal-04/">asgari yeterliliği sağlayamıyor</a>.&nbsp;</p> <p>2020’de, COVID-19 salgınının dünyaya yayılmasıyla birlikte, dünya çapındaki öğrencilerin yüzde 91’inden fazlasını etkileyecek şekilde ülkelerin çoğunluğu okulların geçici süreyle kapanacağını duyurdular. 2020 Nisan ayına geldiğimizde, <a href="https://en.unesco.org/covid19/educationresponse">1.6 milyara yakın çocuk ve genç okula gitmiyordu</a>. Bununla beraber <a href="https://www.un.org/sites/un2.un.org/files/policy_brief_on_covid_impact_on_children_16_april_2020.pdf">okuldaki yemekler sayesinde beslenebilen yaklaşık 369 milyon çocuk</a>, besin ihtiyaçlarını karşılamak için farklı kaynak arayışına girdi.&nbsp;</p> <p>Daha önce hiçbir zaman bu kadar çocuk, özellikle en savunmasız olanlar ve ötekileştirilenler, öğrenimi ve gelişen hayatlarını etkileyecek şekilde aynı zamanda okul sisteminin dışında kalmamıştı. Küresel pandeminin geniş kapsamlı sonuçları, küresel eğitimin iyileştirilmesinde elde edilen zor kazanımları tehlikeye atmış olabilir.</p>'
+        targets:
+          target_4_1:
+            long_title: "2030'a kadar, bütün kız ve erkek çocuklarının ücretsiz, eşitlikçi ve kaliteli ilk ve orta öğretimi tamamlamalarının ve böylece Hedef-4'teki ilgili etkili öğrenme çıktılarının elde edilmesinin sağlanması."
+          target_4_2:
+            long_title: "2030'a kadar, tüm kız ve erkek çocuklarının kaliteli erken çocukluk gelişimi, bakımı ve okul öncesi eğitimine erişebilmelerinin ve böylece ilköğretime hazır olmalarının sağlanması."
+          target_4_3:
+            long_title: "2030’a kadar bütün kadın ve erkeklerin erişilebilir ve kaliteli teknik eğitim, mesleki eğitim ve üniversiteyi de kapsayan yüksek öğretime eşit biçimde erişimlerinin sağlanması."
+          target_4_4:
+            long_title: "2030’a kadar, istihdam, insana yakışır işlerde çalışma ve girişimcilik hakkında teknik ve mesleki beceriler de dahil olmak üzere ilgili becerilere sahip gençlerin ve yetişkinlerin sayısının önemli ölçüde artırılması."
+          target_4_5:
+            long_title: "2030'a kadar, eğitimdeki cinsiyet eşitsizliklerini ortadan kaldırmak ve engelli kişiler, yerli halklar ve savunmasız durumdaki çocuklar da dahil olmak üzere savunmasız kişiler için tüm eğitim ve mesleki eğitime eşit erişim sağlamak."
+          target_4_6:
+            long_title: "2030’a kadar bütün gençlerin ve hem erkek hem de kadın yetişkinlerin büyük bir kısmının okuryazar olması ve matematiksel beceriler kazanmasının garanti edilmesi."
+          target_4_7:
+            long_title: "2030’a kadar, diğerleri arasında sürdürülebilir kalkınma ve sürdürülebilir yaşam tarzları için eğitim, insan hakları, toplumsal cinsiyet eşitliği, barış ve şiddetsizlik kültürünün teşviki, dünya vatandaşlığı ve kültürel çeşitliliğin ve kültürün sürdürülebilir kalkınmaya katkısının takdiri de dahil olmak üzere bütün öğrenciler tarafından sürdürülebilir kalkınmanın ilerletilmesi için gereken bilgi ve beceri edinmesinin sağlanması."
+          target_4_A:
+            long_title: "Çocuklara, engellilere ve cinsiyete duyarlı ve herkes için güvenli, şiddet içermeyen, kapsayıcı ve etkili öğrenme ortamları sağlayan eğitim tesisleri inşa edin ve geliştirin."
+          target_4_B:
+            long_title: "2020 yılına kadar, gelişmekte olan ülkeler, özellikle en az gelişmiş ülkeler, gelişmekte olan küçük ada Devletleri ve Afrika ülkeleri için mesleki eğitim ve bilgi ve iletişim teknolojisi, teknik, mühendislik ve bilimsel programlar da dahil olmak üzere gelişmiş ülkelerde ve diğer gelişmekte olan ülkelerde yüksek öğrenimdeki mevcut bursların sayısını küresel olarak önemli ölçüde artırmak."
+          target_4_C:
+            long_title: "2030'a kadar, özellikle en az gelişmiş ülkelerde ve gelişmekte olan küçük ada devletlerinde, gelişmekte olan ülkelerde öğretmen eğitimi için uluslararası işbirliği yoluyla da dahil olmak üzere nitelikli öğretmen arzını önemli ölçüde artırmak."
+      goal_5:
+        title: "Cinsiyet Eşitliği"
+        title_in_two_lines: "Toplumsal Cinsiyet Eşitliği"
+        description: "Tüm kadın ve kız çocuklarını güçlendirin ve toplumsal cinsiyet eşitliğini sağlayın."
+        long_description: '<p>Cinsiyet eşitliği yalnızca temel bir insan hakkı değil, aynı zamanda barışçıl, müreffeh ve sürdürülebilir bir dünya için gerekli bir temeldir.&nbsp;<p>Son on yılda bu konuda <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/gender-equality-womens-rights-in-review-key-facts-and-figures-en.pdf?la=en&amp;vs=935"> gelişme </a> kaydedildi. Daha fazla kız okula gidiyor, daha az kız çocuğu erken yaşta evlendirilmeye zorlanıyor, daha fazla kadın mecliste ve liderlik pozisyonlarında görev yapıyor ve cinsiyet eşitliğini ilerletmek için yasalar yeniden düzenleniyor. &nbsp;</p><p>Bu kazanımlara rağmen, <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/gender-equality-womens-rights-in-review-key-facts-and-figures-en.pdf?la=en&amp;vs=935"> zorluklar </a>. varlığını sürdürüyor. Ayrımcı yasa ve sosyal normlar varlığını sürdürmeye devam ediyor, kadınlar siyasi liderliğin tüm seviyelerinde yeterince temsil edilmemeye devam ediyor ve 15 ile 49 yaş arasındaki 5 kadın ve kızdan 1''i, 12 aylık bir süre içinde yakını bir kişi tarafından fiziksel veya cinsel şiddete maruz kaldığını bildirdi.</p> COVID-19 panedemisinin <p> <a href="https://www.un.org/sites/un2.un.org/files/policy_brief_on_covid_impact_on_women_9_apr_2020_updated.pdf">etkileri</a> cinsiyet eşitliği ve kadın hakları konusunda kaydedilen sınırlı ilerlemeyi tersine çevirebilir. Koronavirüs salgını her alanda kadın ve kız çocukları için <a href="https://www.unfpa.org/sites/default/files/resource-pdf/COVID-19_A_Gender_Lens_Guidance_Note.pdf"> sağlıktan ekonomiye, güvenlikten sosyal korumaya kadar geniş bir perspektifte mevcut eşitsizlikleri arttırıyor. </a> Kadınlar, evdeki sağlık çalışanları ve bakıcılar da dahil olmak üzere, virüse yanıt vermede önemli bir rol oynamaktadır. Kadınların ücretsiz bakım işleri, okulların kapanması ve yaşlıların artan ihtiyaçlarının bir sonucu olarak önemli ölçüde artmıştır. Güvensiz işgücü piyasalarında orantısız bir şekilde çalıştıkları için kadınlar COVID-19''un ekonomik etkilerinden daha fazla etkileniyorlar. Kadınların yaklaşık yüzde 60''ı kayıt dışı ekonomide çalışıyor ve bu da yoksulluğa düşme riskini artırıyor. &nbsp;</p><p> Pandemi ayrıca <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/issue-brief-covid-19-and-ending-violence-against-women-and-girls-en.pdf?la=en&amp;vs=5006">kadınlara ve kızlara yönelik şiddet </a> konusunda önemli bir artışa ön ayak olmuştur. Eve kapanma tedbirleri uygulandığında, birçok kadın tacizcileriyle birlikte evde mahsur kalıyor, kesinti ve kısıtlamalardan muzdarip olup, hizmetlere erişmekte zorlanıyor. Ortaya çıkan veriler, salgının ortaya çıkmasından bu yana kadınlara ve kız çocuklarına yönelik şiddetin ve özellikle de aile içi şiddetin yoğunlaştığını gösteriyor. </p>'
+        targets:
+          target_5_1:
+            long_title: "Kadınlara ve kız çocuklarına karşı her yerde, her türlü ayrımcılığı ortadan kaldırın."
+          target_5_2:
+            long_title: "İnsan ticareti, cinsel ve diğer sömürü türleri dahil olmak üzere, kamusal ve özel alanlarda tüm kadınlara ve kızlara yönelik her türlü şiddetin ortadan kaldırılması."
+          target_5_3:
+            long_title: "Çocuk evliliği, erken yaşta ve zorla evlendirilme ve kadın sünneti gibi tüm zararlı uygulamaların ortadan kaldırılması."
+          target_5_4:
+            long_title: "Ücretsiz bakımı ve ev işlerini kamu hizmetleri, altyapı ve sosyal koruma politikalarının sağlanması ve hane ve aile içinde uygun şekilde paylaşılan sorumluluğun ulusal düzeyde teşvik edilmesi yoluyla tanımak ve bunlara değer vermek."
+          target_5_5:
+            long_title: "Kadınların siyasi, ekonomik ve sosyal yaşamın her seviyesinde karar alma süreçlerine tam ve etkin biçimde katılımının ve liderlik etmeleri için eşit fırsatlar tanınmasının garanti altına alınması."
+          target_5_6:
+            long_title: "Uluslararası Nüfus ve Kalkınma Konferansı Eylem Programı ve Pekin Eylem Platformu ve bunların gözden geçirme konferanslarının sonuç belgelerine uygun olarak üzerinde mutabık kalınan cinsel sağlık, üreme sağlığı ve üreme haklarına evrensel erişimin sağlanması."
+          target_5_A:
+            long_title: "Ulusal yasalara uygun olarak, kadınlara ekonomik kaynaklara eşit ulaşım, toprak, mali hizmetler, miras ve doğal kaynaklar üzerinde mülkiyet ve kontrole erişim hakkı verecek reformları gerçekleştirmek."
+          target_5_B:
+            long_title: "Kadınların güçlendirilmesini teşvik etmek için özellikle bilgi ve iletişim teknolojisi olmak üzere etkinleştirme teknolojisinin kullanımının geliştirilmesi."
+          target_5_C:
+            long_title: "Toplumsal cinsiyet eşitliğinin geliştirilmesi ve tüm kadın ve kız çocuklarının her düzeyde güçlendirilmesi için sağlam politikalar ve uygulanabilir mevzuatın kabul edilmesi ve güçlendirilmesi."
+      goal_6:
+        title: "Temiz Su ve Hijyen Önlemleri"
+        title_in_two_lines: "Temiz Su ve Sanitasyon"
+        description: "Herkes için su ve sıhhi tesisata erişimin sağlanması."
+        long_description: '<p>Temiz içme suyuna ve hijyene ulaşım konusunda büyük bir ilerleme kaydedilse bile, milyarlarca insan, özellikle kırsal kesimdekiler, temel hizmetlere ulaşma konusunda hala sıkıntı yaşıyor. Dünya çapında, <a href="https://www.who.int/news-room/detail/18-06-2019-1-in-3-people-globally-do-not-have-access-to-safe-drinking-water-unicef-who">üç kişiden biri güvenli içme suyuna erişemiyor</a>, <a href="https://www.unwater.org/water-facts/water-sanitation-and-hygiene/">beş kişiden ikisi su ve sabunla el yıkayamıyor</a> ve <a href="https://news.un.org/en/story/2019/11/1051561">673 milyondan fazlası tuvalet ihtiyacını açık alanlarda gideriyor</a>.</p> <p>COVID-19 salgını, hastalıkların önlenmesi ve kontrol altında tutulması için sıhhi tesisatın, hijyenin ve temiz suya yeterli erişimin ne kadar büyük bir önem arz ettiğini göstermiş oldu. <a href="https://www.unwater.org/water-facts/handhygiene/">El temizliği hayat kurtarır</a>. Dünya Sağlık Örgütü’ne göre, patojenlerin yayılmasını azaltmak ve enfeksiyonları engellemek için, COVID-19 dahil, <a href="https://www.who.int/news-room/events/detail/2020/05/05/default-calendar/hand-hygiene-day">en etkili yöntemlerden biri el yıkamaktır</a>. Buna rağmen milyarlarca insan hala güvenli su sanitasyonunda problem yaşıyor ve konu için ayrılan finansman yetersiz kalıyor.</p>'
+        targets:
+          target_6_1:
+            long_title: "2030’a kadar, herkesin güvenilir ve uygun fiyatlı içme suyuna evrensel ve eşit erişiminin sağlanması."
+          target_6_2:
+            long_title: "2030’a kadar, herkesin elverişli hijyen ve sıhhi koşullara eşit biçimde erişiminin sağlanması ve kadınların, kız çocuklarının ve savunmasız durumda olanların ihtiyaçlarına özel önem göstererek kamuya açık alanlarda dışkılamanın sona erdirilmesi."
+          target_6_3:
+            long_title: "2030'a kadar, kirliliği azaltarak, atıkların doğaya bırakılmasını ortadan kaldırarak ve tehlikeli kimyasalların ve malzemelerin salınımını en aza indirerek, arıtılmamış atık su oranını yarıya indirerek ve küresel olarak geri dönüşümü ve güvenli yeniden kullanımı önemli ölçüde artırarak su kalitesini iyileştirmek."
+          target_6_4:
+            long_title: "2030’a kadar, tüm sektörlerde su kullanım verimliliğinin büyük ölçüde artırılması, su kıtlığı sorununun çözülmesi için sürdürülebilir tatlı su tedarikinin ve su çekilmesinin sağlanması ile su kıtlığından muzdarip insan sayısının önemli ölçüde azaltılması."
+          target_6_5:
+            long_title: "2030'a kadar, uygun görüldüğü hallerde sınır ötesi işbirliği de dahil olmak üzere her düzeyde entegre su kaynakları yönetimi uygulanması."
+          target_6_6:
+            long_title: "2020'ye kadar, dağlar, ormanlar, sulak alanlar, nehirler, akiferler ve göller dahil olmak üzere su ekosistemlerinin korunması ve eski haline getirilmesi."
+          target_6_A:
+            long_title: "2030’a kadar, gelişmekte olan ülkelere su hasadı, tuzdan arındırma, su verimliliği, atık su arıtma, geri dönüşüm ve tekrar kullanım teknolojileri dahil olmak üzere suyla ve sıhhi koşullarla ilgili faaliyet ve programlarda kapasite geliştirme desteğinin ve uluslararası işbirliğinin genişletilmesi."
+          target_6_B:
+            long_title: "Yerel toplulukların su ve sıhhi koşullar yönetiminin geliştirilmesine katılımlarının desteklenmesi ve güçlendirilmesi."
+      goal_7:
+        title: "Erişilebilir ve Temiz Enerji"
+        title_in_two_lines: "Erişilebilir ve Temiz Enerji"
+        description: "Uygun fiyatlı, güvenilir, sürdürülebilir ve modern enerjiye erişiminin garanti altına alınması."
+        long_description: '<p>Dünya, enerjinin daha sürdürülebilir ve yaygın olarak kullanılabilir hale geldiğine dair umut verici işaretlerle <a href="https://unstats.un.org/sdgs/report/2019/goal-07/">Hedef 7’ye doğru ilerleme</a> kaydetmektedir. Yoksul ülkelerdeki elektriğe ulaşım hız kazanmaya başlamakta, enerji verimliliği iyileşmeye devam etmekte ve yenilenebilir enerji, elektrik üretim sektöründe etkileyici kazanımlar elde etmektedir.&nbsp;</p> <p>Buna rağmen, 3 milyar insan için temiz ve güvenli yemek pişirme yakıtlarına ve teknolojilerine ulaşımı iyileştirmek, yenilenebilir enerji kullanımını elektrik üretim sektörü dışına genişletmek ve Sahara altı Afrika bölgesinde elektriğe ulaşımı artırmak adına odağımızı kuvvetlendirmemiz gerekmektedir.</p> <p><a href="https://trackingsdg7.esmap.org/">Enerji İlerleme Raporu</a>, enerjiye ulaşımdaki, enerji verimliliğindeki ve yenilenebilir enerjideki ilerlemenin kaydedilebileceği küresel bir gösterge paneli sağlamaktadır. Her bir ülke tarafından bu üç maddede katedilen ilerlemenin değerlendirmesi yapılmakta ve 2030 Sürdürülebilir Kalkınma Hedeflerine ulaşmak için daha ne kadar mesafemiz olduğunun anlık görüntüsü sağlanmaktadır.</p>'
+        targets:
+          target_7_1:
+            long_title: "2030’a kadar, uygun fiyatlı, güvenilir ve modern enerji hizmetlerine evrensel erişimin garanti altına alınması."
+          target_7_2:
+            long_title: "2030’a kadar, küresel enerji kaynakları çeşitliliği içerisinde yenilenebilir enerjinin payının büyük ölçüde artırılması."
+          target_7_3:
+            long_title: "2030’a kadar küresel enerji verimliliğini iyileştirme oranının iki katına çıkarılması."
+          target_7_A:
+            long_title: "2030’a kadar, yenilenebilir enerji, enerji verimliliği ve gelişmiş ve daha temiz fosil yakıt teknolojisi dahil olmak üzere, temiz enerji araştırma ve teknolojisine erişimi kolaylaştırmak için uluslararası işbirliğinin geliştirilmesi ve enerji altyapısı ve temiz enerji teknolojisine yatırımın teşvik edilmesi."
+          target_7_B:
+            long_title: "2030’a kadar, özellikle en az gelişmiş ülkeler, gelişmekte olan küçük ada devletleri ve denize kıyısı olmayan gelişmekte olan ülkeler olmak üzere gelişmekte olan ülkelerde, destek programları gereğince herkese modern ve sürdürülebilir enerji hizmetleri sağlamak için altyapının genişletilmesi ve teknolojinin geliştirilmesi."
+      goal_8:
+        title: "İnsana Yakışır İş ve Ekonomik Büyüme"
+        title_in_two_lines: "İnsana Yakışır İş ve Ekonomik Büyüme"
+        description: "Herkes için kapsayıcı ve sürdürülebilir ekonomik büyümenin, istihdamın ve insana yakışır işin desteklenmesi."
+        long_description: '<p>Sürekli ve kapsayıcı ekonomik büyüme ilerlemeyi, herkes için iyi iş olanakları yaratılmasını ve hayat standartlarının iyileştirilmesini sağlayabilir.&nbsp;</p> <p>COVID-19 <a href="https://www.un.org/sites/un2.un.org/files/sg_report_socio-economic_impact_of_covid19.pdf">milyarlarca hayatı alt üst etti</a> ve küresel ekonomiyi tehlikeye attı. Uluslararası Para Fonu(IMF) 2009 yılındaki kadar veya daha kötü bir <a href="https://blogs.imf.org/2020/04/14/the-great-lockdown-worst-economic-downturn-since-the-great-depression/">küresel durgunluk</a> beklentisi içerisinde. İş kayıpları arttıkça, Uluslararası Çalışma Örgütü’ne göre <a href="https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_743036/lang--en/index.htm">küresel işgücünün neredeyse yarısı geçimini sağlayamama riskiyle karşı karşıya kalabilir</a>.</p> <p><a href="https://developmentfinance.un.org/press-release-financing-sustainable-development-report-2020">COVID-19 öncesinde bile</a>, 2020 yılı içerisinde beş ülkeden birinin - yoksul yaşayan milyarlarca insana ev sahipliği yapan - kişi başına düşen gelirinin durgunlaşması veya azalması muhtemeldi. Şimdiyse, <a href="https://developmentfinance.un.org/press-release-financing-sustainable-development-report-2020">COVID-19 ile ilişkili ekonomik ve finansal şoklar</a> - sanayi üretimindeki bozulmalar, ürün fiyatlarındaki düşüş, finansal piyasalardaki istikrarsızlık ve artan güvensizlik örnek gösterilebilir - zaten durgun olan ekonomik büyümeyi raydan çıkarıyor ve diğer faktörlerden kaynaklanan yüksek riskleri artırıyor.&nbsp;&nbsp; </p>'
+        targets:
+          target_8_1:
+            long_title: "Ulusal koşullara uygun olarak kişi başına düşen gelir artışının ve özellikle en az gelişmiş ülkelerde gayri safi yurt içi hasılanın yılda en az yüzde 7 oranında büyümesinin sürdürülmesi."
+          target_8_2:
+            long_title: "Yüksek katma değerli ve emek yoğun sektörler üzerine odaklanıp çeşitlendirme, teknolojik gelişim ve yenilikçilik aracılığıyla daha yüksek seviyelerde ekonomik verimlilik sağlanması."
+          target_8_3:
+            long_title: "Üretim faaliyetleri, insana yakışır istihdam yaratma, girişimcilik, yaratıcılık ve yenilikçilik gibi desteklenen kalkınma odaklı politikaların teşvik edilmesi ve finansal hizmetlere erişim aracılığıyla mikro, küçük ve orta büyüklükteki işletmelerin resmiyet kazanmalarının ve büyümelerinin teşvik edilmesi."
+          target_8_4:
+            long_title: "2030 yılı sonuna kadar, üretim ve tüketimde küresel kaynak yeterliliğinin devamlı biçimde artırılması ve gelişmiş ülkelerin liderlik ettiği sürdürülebilir üretim ve tüketim için 10 yıllık çerçeve programına uygun olarak ekonomik büyümenin çevre kirliliğine neden olmasının engellenmesi için çaba gösterilmesi."
+          target_8_5:
+            long_title: "2030’a kadar, gençler ve engelli bireyler de dahil olmak üzere bütün kadın ve erkekler için tam, üretken istihdam ve insana yakışır işlerin kazanımının sağlanması ve eşit işe eşit ücret ilkesinin gerçekleştirilmesi."
+          target_8_6:
+            long_title: "2020 yılına kadar, istihdam edilmeyen, eğitim veya öğretim görmeyen gençlerin oranının önemli ölçüde azaltılması."
+          target_8_7:
+            long_title: "Zorla çalıştırmayı ortadan kaldırmak, modern köleliği ve insan ticaretini kökünden halletmek ve çocukların askere alınması ve asker olarak kullanılması da dahil çocuk işçiliğinin en kötü türlerinin yasaklanmasını ve ortadan kaldırılmasını güvence altına almak için acil ve etkili önlemler alınması ve 2025’e kadar çocuk işçiliğinin her türünün sona erdirilmesi."
+          target_8_8:
+            long_title: "Göçmen işçiler, özellikle göçmen kadınlar ve tehlikeli işlerde çalışanlar dahil olmak üzere tüm çalışanların işçi haklarının korunması ve güvenli çalışma ortamlarının teşvik edilmesi."
+          target_8_9:
+            long_title: "2030’a kadar, istihdam alanı yaratan ve yerel kültür ve ürünlerini teşvik eden sürdürülebilir turizmin desteklenmesi adına politikalar düzenlenmesi ve uygulanması"
+          target_8_10:
+            long_title: "Herkesin bankacılık, sigorta ve finansal hizmetlere erişiminin genişletilmesi ve bu hizmetlerin teşvik edilmesi için yurt için finansal kurumların kapasitesinin güçlendirilmesi."
+          target_8_A:
+            long_title: "Özellikle en az gelişmiş ülkeler dahil olmak üzere gelişmekte olan ülkeler için, En Az Gelişmiş Ülkelere Ticaretle Bağlantılı Teknik Destek İçin Entegre Edilmiş Çerçeve Dayanışma Fonu aracılığıyla ticaret yardımının artırılması."
+          target_8_B:
+            long_title: "2020'ye kadar, Uluslararası Çalışma Örgütü'nün Küresel İş Paktı'nın uygulanması ve genç istihdamı için küresel bir strateji yürütülmesi ve geliştirilmesi."
+      goal_9:
+        title: "Sanayi, Yenilikçilik ve Altyapı"
+        title_in_two_lines: "Sanayi, Yenilikçilik ve Altyapı"
+        description: "Dayanıklı altyapı inşa edilmesi, yenilikçiliğin büyütülmesi ve sürdürülebilir sanayileşmenin teşvik edilmesi."
+        long_description: '<p> <a href="https://unstats.un.org/sdgs/report/2019/goal-09/">Yenilik ve altyapıyla birlikte</a> kapsayıcı ve sürdürülebilir sanayileşme, gelir ve istihdam yaratacak dinamik ve rekabetçi ekonomik güçleri tetikleyebilir. Yeni teknolojilerin tanıtılmasında ve teşvik edilmesinde, uluslararası ticareti kolaylaştırmada ve kaynakların verimli kullanılmasında kilit bir rol oynarlar.&nbsp;</p> <p>Yine de, dünyanın tam potansiyeline ulaşması için uzun bir yolu var. Özellikle en az gelişmiş ülkeler, eğer 2030 hedeflerine ulaşmak istiyorlarsa üretim sektörlerinin gelişme hızını artırmalı ve bilimsel araştırma ve yeniliklerdeki yatırımlarını çoğaltmalıdır.&nbsp;</p> <p>COVID-19 küresel salgınından önce bile, küresel üretimdeki büyüme istikrarlı şekilde düşmekteydi. Küresel salgın <a href="https://unctad.org/en/pages/newsdetails.aspx?OriginalVersionID=2297">üretim sektörüne sert darbe indirerek</a>, küresel değer zincirinde ve ürünlerin arzında aksaklıklara sebep olmaktadır.&nbsp;</p> <p>Yenilik ve teknolojik ilerleme, örnek olarak artan kaynaklar ve enerji verimliliği, hem ekonomik hem çevresel zorluklara kalıcı çözüm bulunması noktasında kilit rol oynamaktadır. Küresel bağlamda, kişi başına düşen milli gelirdeki <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">araştırma ve geliştirme yatırılımları</a> (AR&amp;GE) oranı 2000 yılında yüzde 1.5 iken, 2015’de yüzde 1.7’ye yükselmiş ve 2017’de ise neredeyse aynı kalmış, gelişmekte olan bölgelerde ise bu oran sadece yüzde 1’den&nbsp; düşük kalmıştır.</p> <p>İletişim altyapısı açısından baktığımızda dünya nüfusunun yarısından fazlası internet üzerinde ve neredeyse dünya nüfusunun tamamı mobil ağların çevrelediği bölgelerde yaşamaktadır. 2019 yılında <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">yüzde 96.5’lık kısmın en azından 2G ağı ile kapsama alanında</a> olduğu tahmin edilmektedir.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p> <p>Korona virüs salgını, <a href="https://www.unescap.org/blog/covid-19-reveals-urgent-need-resilient-infrastructure">dayanıklı altyapıya olan ihtiyacın aciliyetini</a> ortaya çıkarmıştır. Asya Kalkınma Bankası, bölgenin son on yılda yaşadığı hızlı ekonomik büyüme ve kalkınmaya rağmen, kritik altyapının bir çok ülkede yeterli olmaktan uzak olduğuna dikkat çekmektedir. <a href="https://www.unescap.org/publications/economic-and-social-survey-asia-and-pacific-2019-ambitions-beyond-growth">Asya ve Pasifik Ekonomik ve Sosyal Araştırması</a> felaketlere ve iklim değişikliğine dayanıklı altyapı kurmanın ek olarak yıllık 434 milyar dolarlık yatırım gerektirdiğinin altını çizmektedir. Bu toplamın Pasifik’teki gelişmekte olan küçük ada devletleri gibi bazı alt bölgelerde çok daha büyük olması gerekebilir.&nbsp; &nbsp; &nbsp; </p>'
+        targets:
+          target_9_1:
+            long_title: "Bölgesel ve sınır ötesi altyapısı dahil olmak üzere herkes için uygun fiyatlı ve adil bir erişime odaklanarak ekonomik kalkınmanın ve birey refahının desteklenmesi için kaliteli, güvenilir, sürdürülebilir ve dayanıklı altyapının geliştirilmesi."
+          target_9_2:
+            long_title: "Kapsayıcı ve sürdürülebilir sanayileşmenin teşvik edilmesi ve 2030'a kadar, endüstrinin istihdam ve gayri safi yurt içi hasıla payının ulusal koşullara paralel olarak önemli ölçüde artırılması ve en az gelişmiş ülkelerdeki payının iki katına çıkarılması."
+          target_9_3:
+            long_title: "Özellikle gelişmekte olan ülkelerde küçük ölçekli sanayi işletmelerinin ve diğer işletmelerin uygun fiyatlı kredi dahilinde finansal hizmetlere erişimlerinin ve değer zincirlerine ve pazarlara entegrasyonlarının artırılması."
+          target_9_4:
+            long_title: "2030’a kadar her ülkenin ayrı ayrı kendi kapasitesine uygun olarak harekete geçmesi, etkin kaynak kullanımının artırılması ve temiz ve çevreye uyumlu teknolojilerin ve sanayi süreçlerinin büyük ölçüde benimsenmesi ile altyapının ve güçlendirme sanayilerinin sürdürülebilir hale getirilerek geliştirilmesi."
+          target_9_5:
+            long_title: "Özellikle gelişmekte olan ülkeler olmak üzere bütün ülkelerde, 2030’a kadar, yenilikçiliğin teşvik edilmesi ve 1 milyonda insanda, araştırma-geliştirme alanında çalışan kişi sayısının, kamusal ve özel araştırmaların ve kalkınma harcamalarının önemli ölçüde artırılması; bilimsel araştırmanın iyileştirilmesi ve sanayi sektörlerinin teknolojik yeterliliklerinin geliştirilmesi."
+          target_9_A:
+            long_title: "Afrika ülkelerine, az gelişmiş ülkelere, denize kıyısı olmayan gelişmekte olan ülkelere ve gelişmekte olan küçük ada devletlerine gelişmiş finansal, teknolojik ve teknik desteğin sağlanması aracılığıyla, gelişmekte olan ülkelerde sürdürülebilir ve dayanıklı altyapı geliştirmenin kolaylaştırılması."
+          target_9_B:
+            long_title: "Sanayi çeşitliliği ve sanayi ürünlerinde değer artırımının yanı sıra, elverişli bir politika ortamı sağlamak için, gelişmekte olan ülkelerde yurt içi teknoloji gelişiminin, araştırma ve yenilikçiliğin desteklenmesi."
+          target_9_C:
+            long_title: "Bilgi ve iletişim teknolojisine erişimin önemli ölçüde artırılması ve en az gelişmiş ülkelerde 2020'ye kadar evrensel ve ekonomik internet hizmetlerine erişimin sağlanması için çaba gösterilmesi."
+      goal_10:
+        title: "Eşitsizliklerin Azaltılması"
+        title_in_two_lines: "Eşitsizliklerin Azaltılması"
+        description: "Ülkelerin kendi içinde ve arasında eşitsizliği azaltmak."
+        long_description: '<p>Eşitsizlikleri azaltmak ve kimsenin geride bırakılmadığından emin olmak Sürdürülebilir Kalkınma Hedeflerine ulaşmak için tamamlayıcıdır.&nbsp;</p> <p>Ülkeleri iç ve ülkeler arası eşitsizlik kalıcı bir endişe kaynağıdır. Göreceli gelir eşitsizliğinin azalması veya düşük gelirli ülkelere yarar sağlayan tercihli ticaret statüsü gibi eşitsizliğin bazı durumlarda azaldığına dair olumlu göstergeler olmasına rağmen, <a href="https://unstats.un.org/sdgs/report/2019/goal-10/">eşitsizlik hala devamlılık göstermektedir</a>.</p> <p>En yoksul ve en savunmasız topluluklara en sert darbeyi vuran <a href="https://www.un.org/sustainabledevelopment/goal-of-the-month-may-2020">COVID-19 mevcut eşitsizliği daha da derinleştirmiştir</a>. Savunmasız toplulukların krizlerin yükünü taşımaya mecbur bırakan ekonomik eşitsizlikler ve kırılgan sosyal ağlar üzerinde dikkatleri toplamaktadır.&nbsp; Aynı zamanda sosyal, politik ve ekonomik eşitsizlikler salgının etkilerinin çok daha ağır hissedilmesine sebep olmuştur.</p> <p>Ekonomik düzlemde, COVID-19 salgını küresel <a href="https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_743036/lang--en/index.htm">işsizliğin</a> oldukça artmasına ve işçi gelirlerinin çarpıcı şekilde aşağı çekilmesine neden olmuştur.</p> <p>Aynı zamanda, son yıllarda <a href="https://data.unwomen.org/resources/covid-19-emerging-gender-data-and-why-it-matters">toplumsal cinsiyet eşitsizliği</a> ve kadın hakları üzerinde katedilen sınırlı ilerleme COVID-19 tarafından riske atılmıştır. Neredeyse her alanda, sağlıktan ekonomiye, güvenlikten sosyal korumaya, COVID-19’un etkileri sadece cinsiyetleri gereği kadın ve kız çocukları için çok daha kötü hissedilmiştir.</p> <p>Eşitsizlikler, zayıf sağlık sistemlerine sahip ve mevcut insanlık krizleri yaşayan ülkelerdeki <a href="https://www.un.org/sites/un2.un.org/files/un_policy_brief_on_human_rights_and_covid_23_april_2020.pdf">savunmasız nüfuslar</a> için giderek derinleşmektedir. Özellikle mülteciler ve göçmenler, aynı zamanda yerli halk, yaşlılar, engelli insanlar ve çocuklar geride bırakılma riskiyle karşı karşıya kalmıştır. Ek olarak, savunmasız grupları hedef alan <a href="https://www.un.org/en/coronavirus/covid-19-un-counters-pandemic-related-hate-and-xenophobia">nefret söylemi</a> yükselmektedir.</p>'
+        targets:
+          target_10_1:
+            long_title: "2030’a kadar nüfusun en altındaki yüzde 40'lık kesiminin gelirinin ulusal ortalamadan daha yüksek bir oranda, aşamalı olarak artışının ve sürdürülmesinin sağlanması."
+          target_10_2:
+            long_title: "2030'a kadar, yaşa, cinsiyete, engelliliğe, ırka, etnik kökene, soya, dine veya ekonomik ya da diğer rollere bakılmaksızın herkesin sosyal, ekonomik ve politik katılımının güçlendirilmesi ve teşvik edilmesi."
+          target_10_3:
+            long_title: "Ayrımcı yasaların, politikaların ve uygulamaların sona erdirilmesi ve bu bağlamda uygun mevzuat, politikalar ve eylemlerin teşvik edilmesi ile sonuç eşitsizliklerinin azaltılması ve fırsat eşitliğinin garanti altına alınması."
+          target_10_4:
+            long_title: "Özellikle mali, ücret ve sosyal koruma politikaları olmak üzere politikaların benimsenmesi ve eşitliğin giderek daha fazla sağlanması."
+          target_10_5:
+            long_title: "Küresel finans piyasalarının ve kurumların düzenlenmesi ve denetlenmesinin geliştirilmesi ve bu tür düzenlemelerin uygulanmasının güçlendirilmesi."
+          target_10_6:
+            long_title: "Daha etkili, güvenilir, hesap verebilir ve meşru kurumların oluşturulması için küresel uluslararası ekonomik ve finans kurumlarının karar verme aşamalarında gelişmekte olan ülkelerin seslerinin duyurulması ve temsiliyetlerinin garanti edilmesi."
+          target_10_7:
+            long_title: "Planlı ve iyi yönetilen göç politikalarının uygulanması aracılığıyla, insanların sistemli, güvenli, düzenli ve sorumlu bir biçimde göç etmelerinin ve hareketliliğinin kolaylaştırılması."
+          target_10_A:
+            long_title: "Dünya Ticaret Örgütü anlaşmalarına uygun olarak gelişmekte olan ülkeler, özellikle en az gelişmiş ülkeler için özel ve farklı muamele ilkesini uygulamak."
+          target_10_B:
+            long_title: "Ulusal plan ve programlarına uygun olarak, özellikle en az gelişmiş ülkelere, Afrika ülkelerine, gelişmekte olan küçük ada Devletlerine ve karayla çevrili gelişmekte olan ülkelere, doğrudan yabancı yatırım da dahil olmak üzere, resmi kalkınma yardımı ve finansal akışları teşvik etmek."
+          target_10_C:
+            long_title: "2030'a kadar, maliyetleri yüzde 5'ten daha yüksek olan havale koridorlarının ortadan kaldırılması ve göçmen havalelerindeki işlem maliyetlerinin yüzde 3'ün altına düşürülmesi."
+      goal_11:
+        title: "Sürdürülebilir Şehirler ve Topluluklar"
+        title_in_two_lines: "Sürdürülebilir Şehirler ve Topluluklar"
+        description: "Şehirleri her kesimi kapsayan, güvenli, değişen koşullara uyumlu ve sürdürülebilir hale getirin."
+        long_description: '<p>Dünya giderek şehirleşiyor. 2007’den beri, <a href="https://unstats.un.org/sdgs/report/2019/goal-11/">dünya nüfusunun yarısından fazlası şehirlerde yaşamakta</a>, ve bu payın 2030 itibariyle yüzde 60’a yükselmesi tahmin edilmektedir.&nbsp;</p> <p>Şehirler ve metropol alanları ekonomik büyümenin santralleridir, küresel kişi başına düşen gelirin yüzde 60’ına katkı sağlamaktadır. Yine de, küresel karbon salınımının yaklaşık yüzde 70’inden ve kaynak kullanımının yüzde 60’ının fazlasından sorumlular.&nbsp;</p> <p>Hızlı şehirleşmenin sonucu olarak artan sayılarda gecekondu sakinleri, yetersiz ve aşırı yüklenmiş altyapılar ve servisler(atık toplama ve su ve sanitasyon sistemleri, yollar ve ulaşım gibi), kötüleşen hava kirliliği ve plansız ve kötü kentleşme görülmektedir.&nbsp;</p> <p><a href="https://unhabitat.org/coronavirus-will-travel-incredibly-fast-in-africas-slums-un-habitat-chief-warns">COVID-19’un etkisi</a>, aşırı kalabalıklar sebebiyle sosyal mesafe veya kişisel izolasyon gibi önerilen önlemlere uymanın zor olduğu yoksul ve yoğun nüfuslu kentsel alanlarda, özellikle gayri resmi yerleşim ve gecekondu mahallelerinde yaşayan dünya çapındaki bir milyar insan için, en yıkıcı şekilde görülecektir.&nbsp;</p> <p>BM Gıda ve Tarım Örgütü, FAO, kentsel alanlarda açlık ve ölümlerin, yoksul ve savunmasız sakinlerin <a href="https://news.un.org/en/story/2020/05/1063622">gıdaya erişiminin</a> garanti edileceği önlemler alınmadığı sürece ciddi şekilde yükselebileceği yönünde uyarmaktadır.&nbsp;</p>'
+        targets:
+          target_11_1:
+            long_title: "2030'a kadar herkesin yeterli, güvenli ve uygun fiyatlı konutlara ve temel hizmetlere erişimini sağlamak ve gecekondu mahallelerini iyileştirmek."
+          target_11_2:
+            long_title: "2030’a kadar, özellikle korunmasız durumda olan insanların, kadınların, çocukların, engellilerin ve yaşlıların ihtiyaçlarına özel özen gösterilerek başta toplu taşıma ağının genişletilmesi olmak üzere yol güvenliğinin sağlanması; herkesin güvenli, uygun fiyatlı, erişilebilir ve sürdürülebilir ulaşım sistemlerine erişiminin sağlanması."
+          target_11_3:
+            long_title: "2030'a kadar kapsayıcı ve sürdürülebilir kentleşmeyi ve tüm ülkelerde katılımcı, entegre ve sürdürülebilir insan yerleşimi planlama ve yönetimi için kapasiteyi geliştirmek."
+          target_11_4:
+            long_title: "Dünyanın kültürel ve doğal mirasını koruma ve koruma çabalarını güçlendirmek."
+          target_11_5:
+            long_title: "2030’a kadar, yoksulların ve korunmasız durumda olan insanların korunmasına odaklanılarak suyla ilgili afetler de dahil, afet sebebiyle küresel gayri safi yurt içi hasılaya bağlı olarak gerçekleşen doğrudan ekonomik kayıpların önemli ölçüde düşürülmesi; ölümlerin ve etkilenen insan sayısının önemli ölçüde azaltılması."
+          target_11_6:
+            long_title: "2030’a kadar, hava kalitesine ve belediye ve diğer atık yönetimlerine özel önem gösterilerek şehirlerin kişi başına düşen olumsuz çevresel etkilerinin azaltılması."
+          target_11_7:
+            long_title: "2030'a kadar, özellikle kadınlar ve çocuklar, yaşlılar ve engelli bireylerin güvenli, her kesimi kapsayan ve ulaşılabilir, yeşil ve açık alanlara evrensel erişimlerinin sağlanması."
+          target_11_A:
+            long_title: "Ulusal ve bölgesel kalkınma planının güçlendirilmesi aracılığıyla kentsel, kent çevresi ve kırsal alanlar arasındaki pozitif ekonomik, sosyal ve çevresel bağlantıların desteklenmesi."
+          target_11_B:
+            long_title: "2020'ye kadar, afetlere dayanıklılığına, iklim değişikliğine uyum ve etkilerinin hafifletilmesine, kaynak verimliliğini de kapsamaya yönelik entegrasyon politikalarını ve planlarını benimseyen ve uygulayan insan yerleşimlerinin ve şehirlerin sayısının önemli ölçüde artırılması; Sendai Afet Riskini Azaltma Çerçevesi doğrultusunda, 2015-2030 yılları arasında her seviyede bütüncül afet risk yönetiminin geliştirilmesi ve uygulanması."
+          target_11_C:
+            long_title: "Yerel malzemelerden faydalanılarak sürdürülebilir ve dayanıklı binalar inşa etmede finansal ve teknik yardım aracılığıyla en az gelişmiş ülkelerin desteklenmesi."
+      goal_12:
+        title: "Sorumlu Tüketim ve Üretim"
+        title_in_two_lines: "Sorumlu Tüketim ve Üretim"
+        description: "Sürdürülebilir tüketim ve üretim modellerinin sağlanması."
+        long_description: '<p>Dünya çapındaki tüketim ve üretim, küresel ekonominin itici gücü, gezegende yıkıcı etkiler bırakacak şekilde doğal çevrenin ve kaynakların kullanımına dayanmaktadır.&nbsp;</p> <p>Son yüzyıldaki ekonomik ve sosyal ilerleme, çevresel bozulmanın da eşlik etmesiyle birlikte geleceğimizi dayandırdığımız salt sistemleri – doğrusu, hayatta kalmamız - tehlikeye atmaktadır.&nbsp;</p> <p>Birkaç <a href="https://www.unenvironment.org/explore-topics/sustainable-development-goals/why-do-sustainable-development-goals-matter/goal-12">vaka ve rakamsal veri</a>:</p><ul><li style="font-weight: 400">Her yıl, üretilen tüm yiyeceklerin üçte birinin – 1 trilyon dolar civarındaki 1.3 milyar tonun eşdeğeri – tüketicilerinin çöplerinde çürüdüğü veya başarısız taşımacılık ve tarım faaliyetleri sebebiyle bozulduğu tahmin edilmektedir.</li><li style="font-weight: 400">Dünya çapındaki insanlar eğer enerji verimliliği yüksek ampulleri kullanmaya başlarlarsa yıllık 120 milyar dolar tasarruf edilebilir.</li> <li style="font-weight: 400">2050 sonuna dek dünya nüfusu 9.6 milyara ulaşırsa, mevcut yaşam tarzını sürdürmek için ancak 3 gezegenin sağlayabileceği doğal kaynak miktarları gerekmektedir.</li> </ul> <p>COVID-19 salgını, ülkelerin mevcut trendleri geri çevirmesi ve, üretim ve tüketim alışkanlıklarını daha sürdürülebilir geleceğe yöneltebilmesi için iyileşme planları oluşturabilmesi için fırsat sağlamıştır.</p> <p><a href="https://www.unenvironment.org/explore-topics/resource-efficiency/what-we-do/sustainable-consumption-and-production-policies">Sürdürülebilir tüketim ve üretim</a>, daha fazla ve daha iyiye az ile ulaşmakla ilgilidir. Aynı zamanda, ekonomik büyümeyi çevresel bozulmadan ayrıştırarak kaynak verimliliğini artırmak ve sürdürülebilir yaşamı desteklemektir.</p> <p>Sürdürülebilir tüketim ve üretim, yoksulluğun azaltılmasına ve, düşük karbonlu ve yeşil ekonomilere geçişe de oldukça katkı sağlayabilir.</p>'
+        targets:
+          target_12_1:
+            long_title: "Gelişmiş ülkelerin öncülük etmesiyle birlikte bütün ülkeleri harekete geçmesi akabinde, gelişmekte olan ülkelerin kalkınma ve yetkinliklerini göz önünde bulundurarak sürdürülebilir tüketim ve üretim için 10 yıllık çerçeve programının uygulanması."
+          target_12_2:
+            long_title: "2030'a kadar, doğal kaynakların etkin kullanımını ve sürdürülebilir yönetimi sağlamak."
+          target_12_3:
+            long_title: "2030’a kadar, perakende ve tüketici düzeylerinde kişi başına düşen küresel gıda atığının yarıya indirilmesi ve hasat sonrası kayıplar dahil üretim ve tedarik zincirlerinde, gıda kayıplarının azaltılması."
+          target_12_4:
+            long_title: "2020’ye kadar, üzerinde anlaşmaya varılan uluslararası çerçevelere uygun olarak, kimyasalların ve tüm atıkların yaşam döngüleri boyunca çevreye duyarlı yönetiminin sağlanması ve bu kimyasalların ve atıkların insan sağlığına ve çevreye olan olumsuz etkilerini en aza indirmek için havaya, suya ve toprağa karışmalarının önemli ölçüde azaltılması."
+          target_12_5:
+            long_title: "2030'a kadar, önleme, azaltma, geri dönüşüm ve yeniden kullanım yoluyla atık oluşumunun önemli ölçüde azaltılması."
+          target_12_6:
+            long_title: "Özellikle büyük ve ulus-ötesi şirketler başta olmak üzere, şirketlerin sürdürülebilir uygulamaları benimsemelerinin ve sürdürülebilirlik bilgilerini raporlama döngülerine entegre etmelerinin teşvik edilmesi."
+          target_12_7:
+            long_title: "Ulusal politikalar ve öncelikler gereğince sürdürülebilir kamu ihalesi uygulamalarının desteklenmesi."
+          target_12_8:
+            long_title: "2030'a kadar, dünyanın her yerindeki insanların doğa ile uyumlu, sürdürülebilir kalkınma ve yaşam tarzları için ilgili bilgilere ve farkındalığa sahip olmalarını sağlamak."
+          target_12_A:
+            long_title: "Gelişmekte olan ülkelerin daha sürdürülebilir tüketim ve üretim modellerine doğru ilerlemeleri için bilimsel ve teknolojik kapasitelerini güçlendirme konusunda desteklenmesi."
+          target_12_B:
+            long_title: "Yerel kültür ve ürünlerin tanıtımını yapan ve istihdam yaratan sürdürülebilir turizm için sürdürülebilir kalkınmanın etkilerini gözleyebilecekleri araçlar geliştirilmesi ve uygulanması."
+          target_12_C:
+            long_title: "Piyasa aksaklıklarının ortadan kaldırılmasıyla ulusal koşullara uygun biçimde, gelişmekte olan ülkelerin özel ihtiyaç ve durumlarını göz önünde bulundurarak ve etkilenmiş toplulukları koruyacak biçimde kalkınmaları üzerindeki olası olumsuz etkileri en aza indirgeyerek çevresel etkilere sahip zararlı teşviklerin aşamalı olarak ortadan kaldırılması ve vergilendirmenin yeniden yapılandırılması da dahil olmak üzere savurgan tüketime özendiren verimsiz fosil yakıtlara yönelik teşviklerin verimli hale getirilmesi."
+      goal_13:
+        title: "İklim Eylemi"
+        title_in_two_lines: "İklim Eylemi"
+        description: "İklim değişikliği ve etkileri ile mücadele konusunda acil eyleme geçilmesi."
+        long_description: '<p>2019, <a href="https://news.un.org/en/story/2020/03/1059061">kayıtlara geçmiş en sıcak ikinci yıl</a> ve kaydedilmiş en sıcak on yılın(2010-2019) son yılıydı.&nbsp;&nbsp;</p> <p>Atmosferdeki karbondioksit(CO2) seviyeleri ve diğer <a href="https://news.un.org/en/story/2020/04/1062332">sera gazları</a> 2019 yılında yeni rekorlar kırdı.&nbsp;</p> <p>İklim değişikliği her kıtada, tüm ülkeleri etkiliyor. Ulusal ekonomileri ve hayatları bozuyor. Hava koşulları değişiyor, deniz seviyeleri yükseliyor ve hava olayları gittikçe daha aşırı hale geliyor.</p> <p>Sera gazı salınımlarında COVID-19 salgını kaynaklı seyahat kısıtlamaları ve ekonomik yavaşlamalar sebebiyle 2020’de yüzde 6 düşüş beklense de, bu yalnızca geçici bir iyileşme.<a href="https://news.un.org/en/story/2020/04/1062332"> İklim değişikliği duraksamadı</a>. Küresel ekonomi salgından iyileşmeye başlar başlamaz, salınımların yüksek seviyelere geri dönmesi bekleniyor.</p> <p> Yaşamları ve geçim kaynaklarını kurtarmak, hem salgını ve hem de iklim tehlikesini hedefleyecek acil eylem gerektirmektedir.</p> <p>2015’de kabul edilen <a href="https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement">Paris Anlaşması</a>, bu yüzyılda sanayileşme öncesi döneme kıyasla küresel sıcaklık artışını 2 derecenin olabildiğince altında tutarak iklim değişikliği tehdidine karşı küresel tepkiyi güçlendirmeyi amaçlamaktadır. Anlaşma aynı zamanda, uygun finansal akışların, yeni bir teknoloji çerçevesinin ve geliştirilmiş bir kapasite geliştirme çerçevesi aracılığıyla ülkelerin iklim değişikliği sonuçlarıyla mücadele yeteneklerinin geliştirilmesini amaçlamaktadır.</p>'
+        targets:
+          target_13_1:
+            long_title: "Tüm ülkelerde, doğal afetlere ve iklimle ilgili tehlikelere karşı dayanıklılığın ve uyum kapasitesinin güçlendirilmesi."
+          target_13_2:
+            long_title: "İklim değişikliği hakkında önlemlerin ulusal politika, strateji ve planlamaya entegre edilmesi."
+          target_13_3:
+            long_title: "İklim değişikliklerinin hafifletilmesi, adaptasyonu, etkilerinin azaltılması ve erken uyarı hakkında eğitimin, farkındalık yaratmanın ve insani ve kurumsal kapasitenin geliştirilmesi."
+          target_13_A:
+            long_title: "Gelişmiş ülke taraflarının Birleşmiş Milletler İklim Değişikliği Çerçeve Sözleşmesi doğrultusunda üstlendikleri, anlamlı azaltım eylemleri ve şeffaflık bağlamında, gelişmekte olan ülkelerin ihtiyaçlarını ele alarak tüm kaynaklardan, 2020 yılına kadar yıllık 100 milyar dolar seferber edilmesi hakkındaki vaatlerinin uygulatılması ve Yeşil İklim Fonu'nu mümkün olan en kısa sürede sermayelendirme yoluyla tam olarak faaliyete geçirilmesi."
+          target_13_B:
+            long_title: "Kadınlara, gençlere, yerel ve ötekileştirilen topluluklara odaklanmak da dahil olmak üzere, en az gelişmiş ülkelerde ve gelişmekte olan küçük ada devletlerinde iklim değişikliği ile ilgili etkin planlama ve yönetim adına kapasiteyi artıracak mekanizmaların desteklenmesi."
+      goal_14:
+        title: "Sudaki Yaşam"
+        title_in_two_lines: "Sudaki Yaşam"
+        description: "Okyanuslar, denizler ve deniz kaynaklarının sürdürülebilir kullanımı ve korunması."
+        long_description: '<p>Okyanus, dünyayı insan nesli için yaşanılabilir kılan küresel sistemleri harekete geçirmektedir. Yağmur suyumuz, içme suyumuz, havamız, iklimimiz, kıyı şeritlerimiz, besinlerimizin bir çoğu ve hatta soluduğumuz oksijenimiz, en nihayetinde deniz tarafından sağlanmakta ve düzenlenmektedir.&nbsp;</p> <p>Bu <a href="https://www.unenvironment.org/explore-topics/oceans-seas/why-do-oceans-and-seas-matter">temel küresel kaynağın</a> dikkatli yönetimi, sürdürülebilir bir gelecek için kilit rol oynamaktadır. Ancak, kıyı sularımızın kirlenmeye ve okyanus asitlenmesine bağlı olarak mevcutta devam eden durumdan kötüye gitmesi, ekosistemin ve biyoçeşitliliğin çalışmasına ters yönde yansımaktadır. Bu, aynı zamanda küçük ölçekli balıkçılığı da olumsuz etkilemektedir.&nbsp;</p> <p>Okyanusumuzu kurtarmak birincil önceliğimiz olarak kalmaya devam etmelidir. Deniz biyoçeşitliliği, insanların ve gezegenimizin sağlığında ciddi etkiye sahiptir. Deniz koruma alanları etkili bir şekilde yönetilmeli, kaynakları iyi karşılanmalı ve aşırı avlanmanın, kirlenmenin ve asitlenmenin önüne geçecek yasal düzenlemeler devreye alınmalıdır.</p>'
+        targets:
+          target_14_1:
+            long_title: "2025 yılına kadar, deniz artıkları ve besin kirliliği de dahil olmak üzere, özellikle kara kaynaklı faaliyetlerden kaynaklanan her türlü deniz kirliliğini önlemek ve önemli ölçüde azaltmak."
+          target_14_2:
+            long_title: "2020'ye kadar, önemli olumsuz etkilerinden kaçılması da dahil olmak üzere deniz ve kıyı ekosistemlerinin sürdürülebilir bir biçimde yönetilmesi ve korunması adına dayanıklılığının artırılması; sağlıklı ve üretken okyanuslar elde edilmesi için okyanusların eski haline döndürülmesi adına harekete geçilmesi."
+          target_14_3:
+            long_title: "Her seviyede gelişmiş bilimsel işbirliği yoluyla, okyanus asitlenmesinin etkilerinin ele alınması en aza indirilmesi."
+          target_14_4:
+            long_title: "2020’ye kadar, balık stoklarını mümkün olan en kısa zamanda eski haline getirmek ya da en azından biyolojik karakteristiklerine göre maksimum sürdürülebilir verimi üretebileceği seviyelere ulaştırmak için balık hasadının etkin bir biçimde düzenlenmesi, aşırı avlanma, yasa dışı, rapor edilmeyen ve kaçak balıkçılığın ve yıkıcı etkileri olan balıkçılık uygulamalarının sona erdirilmesi ve bilime dayalı yönetim planlarının uygulanması."
+          target_14_5:
+            long_title: "2020'ye kadar, kıyı ve deniz alanlarının, ulusal ve uluslararası hukuka uygun biçimde mevcut en iyi bilimsel bilgilere dayanarak, en az %10'unun korunması."
+          target_14_6:
+            long_title: "2020 yılına kadar, aşırı kapasite ve aşırı avlanmaya katkıda bulunan belirli türdeki balıkçılık sübvansiyonlarının yasaklanması, yasadışı, rapor edilmemiş ve düzenlenmemiş balıkçılığa katkıda bulunan sübvansiyonların ortadan kaldırılması ve bu tür yeni sübvansiyonların uygulanmasından kaçınılması, gelişmekte olan ve en az gelişmiş ülkeler için uygun ve etkili özel ve farklı muamelenin kabul edilmesi Dünya Ticaret Örgütü balıkçılık sübvansiyonları müzakerelerinin ayrılmaz bir parçası olmalıdır."
+          target_14_7:
+            long_title: "2030'a kadar, balıkçılık, su ürünleri yetiştiriciliği ve turizmin sürdürülebilir yönetimi dahil olmak üzere, deniz kaynaklarının sürdürülebilir kullanımından Küçük Ada Gelişmekte Olan Devletlere ve en az gelişmiş ülkelere ekonomik faydaların artırılması."
+          target_14_A:
+            long_title: "Okyanus sağlığını iyileştirmek ve deniz biyoçeşitliliğinin gelişmekte olan ülkelerin kalkınmasına katkısını artırmak için, Hükümetlerarası Oşinografi Komisyonu Kriterleri ve Deniz Teknolojisinin Transferine İlişkin Kılavuzları dikkate alarak özellikle gelişmekte olan küçük ada devletleri ve en az gelişmiş ülkelerde bilimsel bilgiyi artırmak, araştırma kapasitesini geliştirmek ve deniz teknolojisini transfer etmek."
+          target_14_B:
+            long_title: "Küçük ölçekli zanaatkar balıkçıların deniz kaynaklarına ve pazarlara erişiminin sağlanması."
+          target_14_C:
+            long_title: "İstediğimiz Gelecek'in 158. paragrafında hatırlatıldığı üzere, okyanusların ve kaynaklarının korunması ve sürdürülebilir kullanımı için yasal çerçeve sağlayan UNCLOS'ta tanımlanan uluslararası hukuku uygulayarak okyanusların ve kaynaklarının korunmasını ve sürdürülebilir kullanımını geliştirmek."
+      goal_15:
+        title: "Karasal Yaşam"
+        title_in_two_lines: "Karasal Yaşam"
+        description: "Biyoçeşitlilik kaybının durdurulmasının, toprak bozulumunun durdurulmasının ve tahribatın tersine çevrilmesinin, çölleşmeyle mücadele edilmesinin, ormanlaştırmanın sürdürülebilir bir biçimde yönetilmesi."
+        long_description: '<p>Doğa, hayatta kalmamız için çok önemli bir yere sahip; oksijenimizi sağlayan, iklim döngümüzü kontrol eden, tarım alanlarını besleyen, gıdalarımızı sağlayan doğadan başkası değildir. Ancak doğa gittikçe artan bir stres altında. <a href="https://news.un.org/en/story/2020/04/1061082"> İnsan davranışları, neredeyse dünya yüzeyinin %75’inin değişmesine</a>, vahşi yaşamın ve doğanın bugüne kadarki en dar alanlara sıkışmasına sebep oluyor.</p> <p>2019 Biyoçeşitlilik ve Ekosistem Hizmetleri Küresel Değerlendirme Raporu''na göre, -birçoğu on yıllar içerisinde-<a href="https://ipbes.net/sites/default/files/2020-02/ipbes_global_assessment_report_summary_for_policymakers_en.pdf"> yaklaşık 1 milyon hayvan ve bitki soyları tükenme tehdidi altında</a>.Rapor doğanın onarılması ve korunması için etkili değişim çağrısında bulunuyor. Rapora göre insanların ve tüm diğer canlıların yaşamlarını dayandırdığı ekosistemler her zamankinden daha hızlı şekilde yıkıma uğruyor; ki etkilenenler&nbsp; ekonomimizin, geçimimizin, besin güvenliğimizin, sağlığımızın ve yaşam kalitemizin temel taşlarından başkaları değil. &nbsp;</p> <p> Ormansızlaşma ve çölleşme – insan davranışları ve iklim değişikliğinin sebep olduğu – sürdürülebilir gelişimin önünde ciddi engeller oluştururken, milyonlarca insanın da yaşamını ve geçimini etkiliyor. <a href="https://news.un.org/en/story/2019/05/1038291"> Ormanlar yaşamsal bir öneme sahip,</a>dünyada bir yaşam sürdürmek ve iklim değişikliğine karşı koymakta büyük rol oynamaktadırlar. Ve geçim kaynaklarını iyileştirmek, kırılganlıkları azaltmak ve ekonomi için riskleri azaltmak adına <a href="https://news.un.org/en/story/2019/09/1045802">arazi restorasyonuna</a> yatırım yapmak kritik öneme sahiptir. </p> <p>Gezegenimizin sıhhati aynı zamanda <a href="https://www.unenvironment.org/resources/emerging-zoonotic-diseases-and-links-ecosystem-health-unep-frontiers-2016-chapter"> hayvanlardan insanlara bulaşabilen hastalıkların</a>, ortaya çıkmasında da etkili bir rol oynuyor. Kırılgan ekosistemlere saldırmaya devam ettiğimiz sürece, insanları vahşi doğa ile her zamankinden daha etkileşimli hale getirerek vahşi yaşamda bulunan patojenlerin çiftlik hayvanlarına ve insanlara taşınmasına sebep oluyoruz; bu da hastalıkların ortaya çıkma ve yayılma riskini artırıyor.</p>'
+        targets:
+          target_15_1:
+            long_title: "2020'ye kadar, karasal ve iç tatlı su ekosistemlerinin ve hizmetlerinin, özellikle ormanların, sulak alanların, dağların ve kurak alanların uluslararası anlaşmalardaki yükümlülükler doğrultusunda korunması, restorasyonu ve sürdürülebilir kullanımının sağlanması."
+          target_15_2:
+            long_title: "2020’ye kadar, her tür ormanın sürdürülebilir yönetiminin sağlanmasının desteklenmesi, ormansızlaşmanın durdurulması, tahrip edilmiş ormanların eski haline döndürülmesi ve küresel olarak ağaçlandırma ve yeniden ormanlaştırmanın önemli ölçüde artırılması."
+          target_15_3:
+            long_title: "2030'a kadar, çölleşmeyle mücadele edilmesi, çölleşme, kuraklık ve sellerden etkilenen alanlar dahil tahrip edilmiş toprakların eski haline getirilmesi ve daha verimli arazilerin elde edilmesi."
+          target_15_4:
+            long_title: "2030 yılına kadar, sürdürülebilir kalkınma için gerekli olan faydaları sağlama kapasitelerini artırmak için biyolojik çeşitlilikleri de dahil olmak üzere dağ ekosistemlerinin korunmasının sağlanması."
+          target_15_5:
+            long_title: "Doğal yaşam alanlarının bozulmasını azaltmak için acil ve önemli adımlar atılması, biyoçeşitlilik kaybının durdurulması ve 2020’ye kadar yok olma tehlikesi altında olan türlerin korunması ve nesillerinin tükenmesinin engellenmesi."
+          target_15_6:
+            long_title: "Genetik kaynakların kullanımından kaynaklanan yararların adil ve eşitlikçi biçimde paylaşımının desteklenmesi ve bu tür kaynaklara uluslararası kabul görülen şekilde erişiminin teşvik edilmesi."
+          target_15_7:
+            long_title: "Koruma altındaki bitki ve hayvan türlerinin kaçakçılığı ve yasa dışı avlanmasını sona erdirmek için acil eyleme geçilmesi ve yasa dışı vahşi yaşam ürünlerinin arz ve talebinin ele alınması."
+          target_15_8:
+            long_title: "2020 yılına kadar, istilacı türlerin kara ve su ekosistemlerine girişinin önlenmesi ve ekosistemler üzerindeki etkisinin önemli ölçüde azaltılması, istilacı türlerin öncelikli olanlarının kontrolünün sağlanması veya yok edilmesi için önlemlerin alınması."
+          target_15_9:
+            long_title: "2020'ye kadar, ekosistem ve biyoçeşitlilik değerlerinin ulusal ve yerel planlama, geliştirme süreçleri, yoksulluğu azaltma stratejileri ve hesaplarına entegre edilmesi."
+          target_15_A:
+            long_title: "Biyoçeşitliliği ve ekosistemleri korumak ve sürdürülebilir bir biçimde kullanmak için tüm kaynaklardan elde edilen finansal kaynakların seferber edilmesi ve önemli ölçüde artırılması."
+          target_15_B:
+            long_title: "Sürdürülebilir orman yönetimini her düzeyde finanse etmek ve tüm kaynaklardan elde edilen önemli kaynakların seferber edilmesi, gelişmekte olan ülkelere koruma ve yeniden ağaçlandırma da dahil olmak üzere bu tür bir yönetim geliştirilmeleri için yeterli teşvik sağlanması."
+          target_15_C:
+            long_title: "Yerel toplulukların sürdürülebilir geçim kaynaklarına sahip olma kapasitelerinin artırılması da dahil olmak üzere korunan türlerin yasa dışı avlanması ve kaçakçılığının yapılmasıyla mücadele etme çabalarına yönelik küresel desteğin artırılması."
+      goal_16:
+        title: "Barış, Adalet ve Güçlü Kurumlar"
+        title_in_two_lines: "Barış, Adalet ve Güçlü Kurumlar"
+        description: "Adil, barışçıl ve kapsayıcı toplumları destekleyin."
+        long_description: '<p>Çatışma, güvensizlik, zayıf kurumlar ve adalete sınırlı erişim sürdürülebilir kalkınma için büyük bir tehdit oluşturmaktadır.&nbsp;</p> <p>2018 yılında <a href="https://www.unhcr.org/en-us/news/press/2019/6/5d03b22b4/worldwide-displacement-tops-70-million-un-refugee-chief-urges-greater-solidarity.html">savaştan, zulümden ve çatışmalardan kaçan insanların sayısı 70 milyon sınırını aşarak</a> BM Mülteci Kurumu(BMMYK) tarafından neredeyse 70 yıldır kaydedilen en yüksek sayı olmuştur.&nbsp;</p> <p>2019 yılında Birleşmiş Milletler, 47 ülkede <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">357 öldürülen ve 30 zorla ortadan kaybolan</a> insan hakları savunucusu, gazeteci ve sendikacıların izini sürmektedir.</p> <p>Ve dünya çapında 5 yaş altında yaklaşık <a href="https://data.unicef.org/topic/child-protection/birth-registration/">dört çocuktan birinin</a> doğumu resmi olarak hiçbir zaman kayıt altına alınmaz, bu durum onları, haklarının korunması ve adalet ve sosyal hizmetlere erişim için çok önemli olan yasal kimlik belgesinden mahrum etmektedir.</p>'
+        targets:
+          target_16_1:
+            long_title: "Şiddetin tüm biçimlerinin ve şiddete bağlı ölüm oranlarının her yerde büyük ölçüde azaltılması."
+          target_16_2:
+            long_title: "Çocuk istismarı, sömürüsü, ticareti ve çocuklara karşı şiddet ve işkencenin her türünün sona erdirilmesi."
+          target_16_3:
+            long_title: "Hukuk üstünlüğünün ulusal ve uluslararası düzeyde teşvik edilmesi ve herkes için adalete eşit biçimde erişimin garanti edilmesi."
+          target_16_4:
+            long_title: "2030'a kadar, yasadışı para ve silah akışlarının önemli derece azaltılması, çalınan varlıkların kurtarılması ve iade edilmesinin sağlanması ve her türlü organize suçla mücadele edilmesi."
+          target_16_5:
+            long_title: "Her türlü yolsuzluk ve rüşvetin önemli ölçüde azaltılması."
+          target_16_6:
+            long_title: "Her düzeyde etkili, hesap verebilir ve şeffaf kurumların büyütülmesi."
+          target_16_7:
+            long_title: "Her düzeyde duyarlı, her kesimi kapsayan, katılımcı ve temsili karar almayı sağlamak."
+          target_16_8:
+            long_title: "Gelişmekte olan ülkelerin küresel yönetişim kurumlarına katılımını genişletmek ve güçlendirmek."
+          target_16_9:
+            long_title: "2030'a kadar, doğum kaydı dahil herkes için yasal kimlik sağlamak."
+          target_16_10:
+            long_title: "Ulusal mevzuata ve uluslararası anlaşmalara uygun olarak halkın bilgiye erişiminin sağlanması ve temel özgürlüklerin korunması."
+          target_16_A:
+            long_title: "Başta gelişmekte olan ülkeler olmak üzere şiddeti önlemek, terör ve suçla mücadele etmek için her düzeyde kapasitenin oluşturulması adına uluslararası işbirliği aracılığıyla ilgili ulusal kurumların güçlendirilmesi."
+          target_16_B:
+            long_title: "Sürdürülebilir kalkınma için ayrımcılık gözetmeyen yasaların ve politikaların uygulatılması ve teşvik edilmesi."
+      goal_17:
+        title: "Amaçlar İçin Ortaklıklar"
+        title_in_two_lines: "Amaçlar İçin Ortaklıklar"
+        description: "Sürdürülebilir Kalkınma için global ortaklığın yeniden oluşturulması."
+        long_description: '<p>Sürdürülebilir Kalkınma Hedefleri ancak güçlü küresel ortaklıklar ve işbirliği ile gerçekleştirilebilir.</p> <p>Başarılı bir kalkınma gündemi -küresel, bölgesel, ulusal ve yerel düzeylerde- ilkeler ve değerlere dayalı, ve insanları ve gezegeni merkeze yerleştiren ortak bir vizyon ve paylaşılan hedefler üzerine inşa edilmiş kapsayıcı ortaklıklar gerektirmektedir.</p> <p>Birçok ülke ticaret ve büyümeyi teşvik etmek için Resmi Kalkınma Yardımlarına ihtiyaç duymaktadır. Ancak, <a href="https://www.un.org/press/en/2019/ga12191.doc.htm">yardım düzeyleri azalmaktadır</a> ve bağışçı ülkeler, kalkınma finansını arttırmak için sözlerini yerine getirmemiştir.</p> <p>COVID-19 salgını sebebiyle, <a href="https://www.imf.org/en/Publications/WEO/Issues/2020/04/14/weo-april-2020">küresel ekonominin</a> Büyük Buhran''dan bu yana en kötü durgunluğu yaşayarak 2020 yılında keskin bir biçimde %3 kadar küçülmesi öngörülüyor.</p> <p>Güçlü uluslararası bir işbirliğine, ülkelerin salgından kurtulmak, daha iyi bir destek oluşturmak ve Sürdürülebilir Kalkınma Hedeflerini sağlamak için araçlara sahip olmasını sağlamak amacıyla hiç olmadığı kadar ihtiyaç duyulur.</p>'
+        targets:
+          target_17_1:
+            long_title: "Vergi ve diğer gelir tahsilleri için yurt içi kapasiteyi artırmak için gelişmekte olan ülkelere uluslararası destek sağlanması yoluyla yurt içi kaynak seferberliğinin güçlendirilmesi."
+          target_17_2:
+            long_title: "Gelişmiş ülkeler, gelişmekte olan ülkelere yönelik ODA / GSMG'nin yüzde 0,7'si ve en az gelişmiş ülkelere ODA / GSMG'nin yüzde 0,15 ila 0,20'si hedefine ulaşma taahhüdü de dahil olmak üzere, resmi kalkınma yardımı taahhütlerini tam olarak uygulamak için RKY sağlayıcılarıdır. ODA / GSMG'nin en az yüzde 0,20'sini en az gelişmiş ülkelere sağlamak için bir hedef belirlemeyi düşünmeye teşvik edilmelidir."
+          target_17_3:
+            long_title: "Gelişmekte olan ülkeler için çok sayıda kaynaktan sağlanan ek mali kaynakların seferber edilmesi."
+          target_17_4:
+            long_title: "Gelişmekte olan ülkelerin borç finansmanı, borç hafifletme ve borç yeniden yapılandırmayı güçlendirmeyi hedefleyen birbiriyle uyumlu politikalar aracılığıyla uzun vadeli borç sürdürülebilirliğini sağlamalarına yardım edilmesi ve uygun görüldüğünde borç sıkıntısını azaltmak için ağır borç yükü altındaki yoksul ülkelerin dış borç sorunlarının ele alınması."
+          target_17_5:
+            long_title: "En az gelişmiş ülkeler için yatırım teşvik rejimlerinin kabul edilmesi ve uygulanması."
+          target_17_6:
+            long_title: "Bilim, teknoloji ve yenilikçilik alanlarında Kuzey-Güney, Güney-Güney ve üçlü bölgesel ve uluslararası işbirliğinin ve bu gelişmelere erişiminin ilerletilmesi ve özellikle Birleşmiş Milletler düzeyinde mevcut mekanizmalar arasında geliştirilmiş işbirliği ve küresel bir teknoloji kolaylaştırma mekanizması aracılığıyla üzerinde anlaşmaya varılan hükümler konusunda bilgi paylaşımının çoğaltılması."
+          target_17_7:
+            long_title: "Çevreye duyarlı teknolojilerin gelişmekte olan ülkelerde, karşılıklı olarak anlaşma sağlandığı üzere, ayrıcalıklı ve öncelikli koşullar da dahil olmak üzere uygun koşullarda gelişiminin, transferinin ve yayılmasının teşvik edilmesi."
+          target_17_8:
+            long_title: "2017 yılına kadar, en az gelişmiş ülkeler için teknoloji bankasının ve bilim, teknoloji ve yenilikçi kapasite geliştirme sisteminin tümden faaliyete geçirilmesi ve özellikle bilgi ve iletişim teknolojileri olmak üzere etkinleştirme teknolojileri kullanımının artırılması."
+          target_17_9:
+            long_title: "Kuzey-Güney, Güney-Güney ve üçlü işbirliği dahil olmak üzere tüm Sürdürülebilir Kalkınma Hedeflerinin uygulanabilmesi adına ulusal planları desteklemek amacıyla gelişmekte olan ülkelerdeki etkili ve hedeflenen kapasite geliştirme uygulamaları için uluslararası destek sağlanması."
+          target_17_10:
+            long_title: "Doha Kalkınma Gündemi çerçevesinde yürütülen müzakerelerin sonuçlandırılması da dahil olmak üzere, Dünya Ticaret Örgütü bünyesinde evrensel, kurallara dayanan, açık, ayrımcı olmayan ve eşitlikçi, çok taraflı bir ticaret sisteminin desteklenmesi."
+          target_17_11:
+            long_title: "Gelişmekte olan ülkelerin ihracatlarının, özellikle en az gelişmiş ülkelerin küresel ihracat payının, 2020’ye kadar iki katına çıkarılması amacıyla önemli ölçüde artırılması."
+          target_17_12:
+            long_title: "Dünya Ticaret Örgütü kararlarına uygun olarak, en az gelişmiş ülkelerden yapılan ithalata uygulanan tercihli menşe kurallarının şeffaf ve basit olmasını sağlamak da dahil olmak üzere, tüm en az gelişmiş ülkeler için kalıcı bir temelde gümrüksüz ve kotasız pazar erişiminin zamanında uygulanmasını gerçekleştirmek, ve pazara erişimin kolaylaştırılmasına katkıda bulunmak."
+          target_17_13:
+            long_title: "Politika koordinasyonu ve tutarlılığına dayanan küresel makroekonomik istikrarın geliştirilmesi."
+          target_17_14:
+            long_title: "Sürdürülebilir kalkınma için politik tutarlılığın arttırılması."
+          target_17_15:
+            long_title: "Yoksulluğun ortadan kaldırılması ve sürdürülebilir kalkınma için politikalar oluşturulması ve uygulanması amacıyla her bir ülkenin politik alanına ve liderliğine saygı duyulması."
+          target_17_16:
+            long_title: "Gelişmekte olan ülkeler başta olmak üzere, tüm ülkelerde Sürdürülebilir Kalkınma Hedeflerine ulaşılmasının desteklenmesi için bilgi, uzmanlık, teknoloji ve finansal kaynakları seferber eden ve paylaşan çok paydaşlı ortaklıklar ile tamamlanan sürdürülebilir kalkınma için küresel ortaklıkların iyileştirilmesi."
+          target_17_17:
+            long_title: "Ortaklıkların deneyim ve kaynak sağlama stratejilerine dayanan kamu, kamu-özel ve sivil toplum ortaklıklarının teşvik edilmesi ve desteklenmesi."
+          target_17_18:
+            long_title: "2020’ye kadar, gelir, cinsiyet, yaş, ırk, etnik köken, göçmen statüsü, engellilik, coğrafi konum ve ulusal bağlamlardaki ilgili diğer niteliklere göre ayrılan kaliteli, güncel ve güvenilir verilerin elde edilebilirliğini büyük ölçüde artırmak için en az gelişmiş ülkeleri ve gelişmekte olan küçük ada devletleri de dahil olmak üzere gelişmekte olan ülkelere verilen kapasite geliştirme desteğinin artırılması."
+          target_17_19:
+            long_title: "2030’a kadar, gayri safi yurt içi hasılayı tamamlayan sürdürülebilir kalkınmanın ilerletilmesine yönelik ölçümleri geliştirmek için mevcut girişimlerin yapılandırılması ve gelişmekte olan ülkelerde istatistiksel kapasite geliştirmenin desteklenmesi."
+      help:
+        title: "Sürdürülebilir Kalkınma Amaçları yardım"
+        description: "Topluma olan katkılarınızı (tartışmalar, vatandaş önerileri ve yatırım projeleri) Sürdürülebilir Kalkınma Hedefleri 2030 Ajandası ile uyumlu hale getirebilirsiniz, bu, Sürdürülebilir Kalkınma Hedeflerinin her birine olan katkımızın genel bakışına sahip olmamızı sağlayacaktır. Aşağıda tüm amaçlar, hedefler ve yerelleştirilmiş hedefler hakkında bilgi bulabilirsiniz."
+      show:
+        read_more: "%{goal} hakkında daha fazla oku"
+        read_less: "%{goal} hakkında daha az oku"
+        targets:
+          no_local_targets: Bu amaç yerel hedefler dahilinde değildir
+      title: "Sürdürülebilir Kalkınma Hedefleri"
+      filter:
+        heading: "SKH'ye göre filtreler"
+        link: "Hedefle bağlantılı tüm %{resources} görüntüle %{code}"
+        more:
+          one: "Bir hedef daha"
+          other: "%{count} daha fazla hedef"
+    related_list_selector:
+      goal_identifier: "SKH%{code}"
+      goal_list: "Size ait olan %{record} ile uyumlu bir veya birden fazla SKH seçebilirsiniz"
+      help:
+        title: "Hangi SKH'ler %{record} ile uyumlu?"
+        text: "SKA yardım sayfası"
+      hint: Bulmak istediğiniz özel bir amacın/hedefin kodunu okutabilir veya metni girerek aratabilirsiniz. Daha fazla bilgi almak için %{link} adresini ziyaret edebilirsiniz.
+      remove_tag: "Kaldır"
+      title: "Sürdürülebilir Kalkınma Amaçları ve Hedefleri"
+    targets:
+      filter:
+        link: "Hedefle bağlantılı tüm %{resources} görüntüle %{code}"
+        more:
+          one: "Bir hedef daha"
+          other: "%{count} daha fazla hedef"

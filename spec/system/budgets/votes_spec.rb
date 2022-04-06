@@ -1,9 +1,10 @@
 require "rails_helper"
 
 describe "Votes" do
-  describe "Investments" do
-    let(:manuela) { create(:user, verified_at: Time.current) }
-    let(:budget)  { create(:budget, :selecting) }
+  let(:manuela) { create(:user, verified_at: Time.current) }
+
+  context "Investments - Knapsack" do
+    let(:budget)  { create(:budget, phase: "selecting") }
     let(:group)   { create(:budget_group, budget: budget) }
     let(:heading) { create(:budget_heading, group: group) }
 
@@ -35,13 +36,13 @@ describe "Votes" do
         end
       end
 
-      scenario "Create from investments' index", :js do
+      scenario "Create from investments' index" do
         create(:budget_investment, heading: heading)
 
         visit budget_investments_path(budget, heading_id: heading.id)
 
         within(".supports") do
-          find(".in-favor a").click
+          click_button "Support"
 
           expect(page).to have_content "1 support"
           expect(page).to have_content "You have already supported this investment project. "\
@@ -58,22 +59,22 @@ describe "Votes" do
         expect(page).to have_content "No supports"
       end
 
-      scenario "Trying to vote multiple times", :js do
+      scenario "Trying to vote multiple times" do
         visit budget_investment_path(budget, investment)
 
         within(".supports") do
-          find(".in-favor a").click
-          expect(page).to have_content "1 support"
+          click_button "Support"
 
-          expect(page).not_to have_selector ".in-favor a"
+          expect(page).not_to have_button "Support", disabled: :all
+          expect(page).to have_content "1 support"
         end
       end
 
-      scenario "Create from investment show", :js do
+      scenario "Create from investment show" do
         visit budget_investment_path(budget, investment)
 
         within(".supports") do
-          find(".in-favor a").click
+          click_button "Support"
 
           expect(page).to have_content "1 support"
           expect(page).to have_content "You have already supported this investment project. "\
@@ -82,7 +83,7 @@ describe "Votes" do
       end
     end
 
-    scenario "Disable voting on investments", :js do
+    scenario "Disable voting on investments" do
       budget.update!(phase: "reviewing")
       investment = create(:budget_investment, heading: heading)
 
@@ -115,21 +116,23 @@ describe "Votes" do
         group.update(max_votable_headings: 2)
       end
 
-      scenario "From Index", :js do
+      scenario "From Index" do
         visit budget_investments_path(budget, heading_id: new_york.id)
 
         within("#budget_investment_#{new_york_investment.id}") do
-          accept_confirm { find(".in-favor a").click }
+          accept_confirm { click_button "Support" }
 
           expect(page).to have_content "1 support"
           expect(page).to have_content "You have already supported this investment project. "\
                                        "Share it!"
         end
 
+        expect(page).to have_content "Investment supported successfully"
+
         visit budget_investments_path(budget, heading_id: san_francisco.id)
 
         within("#budget_investment_#{san_francisco_investment.id}") do
-          find(".in-favor a").click
+          click_button "Support"
 
           expect(page).to have_content "1 support"
           expect(page).to have_content "You have already supported this investment project. "\
@@ -139,7 +142,7 @@ describe "Votes" do
         visit budget_investments_path(budget, heading_id: third_heading.id)
 
         within("#budget_investment_#{third_heading_investment.id}") do
-          find(".in-favor a").click
+          click_button "Support"
 
           expect(page).to have_content "You can only support investment projects in 2 districts. "\
                                        "You have already supported investments in"
@@ -156,22 +159,25 @@ describe "Votes" do
         end
       end
 
-      scenario "From show", :js do
+      scenario "From show" do
         visit budget_investment_path(budget, new_york_investment)
 
-        accept_confirm { find(".in-favor a").click }
+        accept_confirm { click_button "Support" }
+
         expect(page).to have_content "1 support"
         expect(page).to have_content "You have already supported this investment project. Share it!"
 
         visit budget_investment_path(budget, san_francisco_investment)
 
-        find(".in-favor a").click
+        click_button "Support"
+
         expect(page).to have_content "1 support"
         expect(page).to have_content "You have already supported this investment project. Share it!"
 
         visit budget_investment_path(budget, third_heading_investment)
 
-        find(".in-favor a").click
+        click_button "Support"
+
         expect(page).to have_content "You can only support investment projects in 2 districts. "\
                                      "You have already supported investments in"
 
@@ -186,12 +192,51 @@ describe "Votes" do
                                          "Share it!"
       end
 
-      scenario "Confirm message shows the right text", :js do
+      scenario "Confirm message shows the right text" do
         visit budget_investments_path(budget, heading_id: new_york.id)
-        find(".in-favor a").click
+        click_button "Support"
 
         expect(page.driver.send(:find_modal).text).to match "You can only support investments in 2 districts."
       end
+
+      scenario "Do not show confirm message if user can vote in all headings" do
+        group.update!(max_votable_headings: group.headings.count)
+
+        visit budget_investments_path(budget, heading_id: new_york.id)
+        click_button "Support"
+
+        expect(page).to have_content "1 support"
+        expect(page).to have_content "You have already supported this investment project. Share it!"
+      end
+    end
+  end
+
+  context "Investments - Approval" do
+    let(:budget) { create(:budget, :balloting, :approval) }
+    before { login_as(manuela) }
+
+    scenario "Budget limit is ignored" do
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group, max_ballot_lines: 2)
+      investment1 = create(:budget_investment, :selected, heading: heading, price: heading.price)
+      investment2 = create(:budget_investment, :selected, heading: heading, price: heading.price)
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      add_to_ballot(investment1.title)
+
+      expect(page).to have_content("Remove vote")
+      expect(page).to have_content("YOU CAN STILL CAST 1 VOTE")
+
+      within(".budget-investment", text: investment2.title) do
+        find("div.ballot").hover
+
+        expect(page).not_to have_content("You have already assigned the available budget")
+      end
+
+      visit budget_ballot_path(budget)
+
+      expect(page).to have_content("you can change your vote at any time until this phase is closed")
     end
   end
 end

@@ -45,7 +45,9 @@
 
           <% if current_user %>
             <span class="bullet">&nbsp;&bull;&nbsp;</span>
-            <%= render "proposals/flag_actions", proposal: @proposal %>
+            <span class="js-flag-actions">
+              <%= render "shared/flag_actions", flaggable: @proposal %>
+            </span>
           <% end %>
 
         </div>
@@ -108,8 +110,7 @@
           title: @proposal.title,
           url: legislation_process_proposal_url(process_id: @process),
           description: @proposal.summary,
-          mobile: @proposal.title
-        %>
+          mobile: @proposal.title %>
       </aside>
     </div>
   </div>

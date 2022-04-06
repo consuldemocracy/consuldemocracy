@@ -1,8 +1,6 @@
 module TranslatableFormHelper
-  def translatable_form_for(record, options = {})
-    form_for(record, options.merge(builder: TranslatableFormBuilder)) do |f|
-      yield(f)
-    end
+  def translatable_form_for(record, options = {}, &block)
+    form_for(record, options.merge(builder: TranslatableFormBuilder), &block)
   end
 
   def translations_interface_enabled?
@@ -10,7 +8,7 @@ module TranslatableFormHelper
   end
 
   def backend_translations_enabled?
-    (controller.class.parents & [Admin, Management, Valuation]).any?
+    (controller.class.parents & [Admin, Management, Valuation, SDGManagement]).any?
   end
 
   def highlight_translation_html_class
@@ -48,10 +46,8 @@ module TranslatableFormHelper
         end
       end
 
-      def fields_for_translation(translation)
-        fields_for(:translations, translation, builder: TranslationsFieldsBuilder) do |f|
-          yield f
-        end
+      def fields_for_translation(translation, &block)
+        fields_for(:translations, translation, builder: TranslationsFieldsBuilder, &block)
       end
 
       def translation_for(locale)

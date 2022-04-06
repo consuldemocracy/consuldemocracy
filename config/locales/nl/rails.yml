@@ -121,7 +121,7 @@ nl:
         one: is te lang (maximaal %{count} teken)
         other: is te lang (maximaal %{count} tekens)
       too_short:
-        one: is te kort (minimaal %{count} teken)
+        one: is te kort (minimaal 1 teken)
         other: is te kort (minimaal %{count} tekens)
       wrong_length:
         one: heeft onjuiste lengte (moet 1 teken lang zijn)

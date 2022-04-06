@@ -1,0 +1,67 @@
+.admin .budgets-actions {
+  > * {
+    $gap: $line-height;
+    $vertical-gap: $line-height / 2;
+    @include flex-with-gap($gap);
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: -$vertical-gap;
+
+    > * {
+      margin-top: $vertical-gap;
+    }
+
+    dt {
+      flex-basis: 12em;
+    }
+
+    &:only-child dt {
+      flex-basis: auto;
+    }
+
+    dd {
+      flex-basis: 20em;
+      flex-grow: 1;
+      max-width: $global-width * 3 / 4;
+    }
+
+    + * {
+      border-top: $admin-border;
+      clip-path: inset(0 0 0 $gap);
+      margin-top: $line-height * 1.5;
+      padding-top: $line-height * 1.5;
+    }
+  }
+
+  button {
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .calculate-winners-link {
+    @include hollow-button;
+  }
+
+  .ballots-link {
+    @include regular-button;
+  }
+
+  .destroy-link {
+    @include regular-button($alert-color);
+
+    &:hover,
+    &:focus {
+      background-color: $color-alert;
+    }
+
+    &[disabled] {
+      opacity: 0.4;
+    }
+  }
+
+  .calculate-winners-link,
+  .ballots-link,
+  .destroy-link {
+    margin-bottom: 0;
+  }
+}

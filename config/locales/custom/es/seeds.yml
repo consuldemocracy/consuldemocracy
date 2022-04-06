@@ -1,0 +1,13 @@
+es:
+  seeds:
+    geozones:
+      north_district: Comarca Norte
+      west_district: Comarca Oeste
+      east_district: Comarca Este
+      central_district: Comarca Central
+    organizations:
+      human_rights: Derechos Humanos
+    budgets:
+      groups:
+        all_city: Toda la Provincia
+        districts: Comarcas

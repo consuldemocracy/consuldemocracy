@@ -1,6 +1,6 @@
 class Admin::StatsController < Admin::BaseController
   def show
-    @event_types = Ahoy::Event.pluck(:name).uniq.sort
+    @event_types = Ahoy::Event.distinct.order(:name).pluck(:name)
 
     @visits    = Visit.count
     @debates   = Debate.with_hidden.count
@@ -24,7 +24,7 @@ class Admin::StatsController < Admin::BaseController
                                                        .count(:voter_id)
 
     @user_ids_who_didnt_vote_proposals = @verified_users - @user_ids_who_voted_proposals
-    budgets_ids = Budget.where.not(phase: "finished").pluck(:id)
+    budgets_ids = Budget.where.not(phase: "finished").ids
     @budgets = budgets_ids.size
     @investments = Budget::Investment.where(budget_id: budgets_ids).count
   end
@@ -88,6 +88,10 @@ class Admin::StatsController < Admin::BaseController
   def polls
     @polls = ::Poll.current
     @participants = ::Poll::Voter.where(poll: @polls)
+  end
+
+  def sdg
+    @goals = SDG::Goal.order(:code)
   end
 
   private

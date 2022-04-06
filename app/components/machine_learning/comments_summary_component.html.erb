@@ -1,0 +1,8 @@
+<div class="machine-learning-comments-summary">
+  <p>
+    <%= render MachineLearning::InfoComponent.new %>
+    <strong><%= t("machine_learning.comments_summary") %></strong>
+  </p>
+
+  <p><%= simple_format(body) %></p>
+</div>

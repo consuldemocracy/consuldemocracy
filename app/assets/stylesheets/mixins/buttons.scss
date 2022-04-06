@@ -1,0 +1,82 @@
+@import "mixins/colors";
+
+@mixin base-button {
+  font-size: $base-font-size;
+
+  &:focus,
+  &:hover {
+    text-decoration: none !important;
+  }
+
+  &[disabled] {
+    @include button-disabled;
+  }
+}
+
+%button {
+  @include base-button;
+}
+
+@mixin regular-button($color: $brand) {
+  @include button($background: $color);
+  @include inverted-selection;
+  @include base-button;
+}
+
+@mixin hollow-button($color: $link) {
+  @include button($style: hollow, $background: $color);
+  @include normal-selection;
+  @include base-button;
+  margin-bottom: 0;
+}
+
+@mixin link {
+  color: $link;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    color: $link-hover;
+    text-decoration: underline;
+  }
+}
+
+@mixin switch {
+  @include regular-button;
+  border-radius: $line-height;
+  font-weight: bold;
+  min-width: rem-calc(100);
+  position: relative;
+
+  &::after {
+    background: $white;
+    border-radius: 100%;
+    content: "";
+    display: block;
+    height: 1.75em;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    width: 1.75em;
+  }
+
+  &[aria-pressed=true] {
+    background: $primary-color;
+    padding-right: 2.5em;
+    text-align: left;
+
+    &::after {
+      right: 0.5em;
+    }
+  }
+
+  &[aria-pressed=false] {
+    background: $dark-gray;
+    padding-left: 2.5em;
+    text-align: right;
+
+    &::after {
+      left: 0.5em;
+    }
+  }
+}

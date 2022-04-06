@@ -1,10 +1,7 @@
 shared_examples "document validations" do |documentable_factory|
-  include DocumentablesHelper
-
   let!(:document)               { build(:document, documentable_factory.to_sym) }
-  let!(:documentable)           { document.documentable }
-  let!(:maxfilesize)            { max_file_size(document.documentable.class) }
-  let!(:acceptedcontenttypes)   { accepted_content_types(document.documentable.class) }
+  let!(:maxfilesize)            { document.max_file_size }
+  let!(:acceptedcontenttypes)   { document.accepted_content_types }
 
   it "is valid" do
     expect(document).to be_valid

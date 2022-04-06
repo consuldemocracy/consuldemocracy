@@ -14,6 +14,7 @@ cs:
         proposal_notification: "Vaše zpráva byla odeslána správně."
         budget_investment: "Rozpočtová investice byla úspěšně vytvořena."
         signature_sheet: "Podpisový list byl úspěšně vytvořen"
+        support: "Úspěšně podpořená investice"
         topic: "Téma bylo úspěšně vytvořeno."
         valuator_group: "Skupina hodnotitelů byla úspěšně vytvořena"
       save_changes:

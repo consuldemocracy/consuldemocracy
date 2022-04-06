@@ -1,0 +1,95 @@
+pt-BR:
+  sdg:
+    goals:
+      goal_1:
+        title: "Nenhuma pobreza"
+        title_in_two_lines: "Nenhuma pobreza"
+        description: "Acabem com a pobreza em todas as suas formas, em todos os lugares."
+        targets:
+          target_1_1:
+            long_title: "Até 2030, erradicar a pobreza extrema de todas as pessoas em todos os lugares, medida atualmente em pessoas vivendo com menos de US$ 1,25 por dia"
+          target_1_2:
+            long_title: "Até 2030, reduzir em pelo menos a metade de homens, mulheres e crianças de todas as idades vivendo em pobreza em todas as suas dimensões de acordo com as determinações nacionais"
+          target_1_3:
+            long_title: "Implementar sistemas de proteção social apropriado em âmbito nacional para todos, incluindo os mais básicos, e até 2030 atingir cobertura substancial para os pobres e vulneráveis"
+          target_1_4:
+            long_title: "Até 2030, assegurara que todos os homens e mulheres, em particular os pobres e vulneráveis, tenham direitos iguais a recursos econômicos, bem como acesso a serviços básicos, propriedade e controle sobre terras e outras formas de imóveis, herança, recursos naturais, novas tecnologias e serviços financeiros apropriados, incluindo microcrédito"
+          target_1_5:
+            long_title: "Até 2030, construir a resiliência dos pobres e daqueles em situações vulneráveis, e reduzir a exposição e a vulnerabilidade deles a eventos extremos relacionados ao clima e outros desastres e incidentes sociais e ambientais"
+          target_1_A:
+            long_title: "Assegurar significante mobilização de recursos a partir de uma variedade de fontes, inclusive através de cooperação de desenvolvimento avançada, a fim de oferecer meios adequados e previsíveis para países em desenvolvimento, em particular aqueles menos desenvolvidos, para implementar programas e políticas para acabar com a pobreza em todas as suas dimensões"
+          target_1_B:
+            long_title: "Criar estruturas de políticas seguras nos âmbitos nacional, regional e internacional, baseadas em estratégias de desenvolvimento a favor dos pobres e sensíveis às questões de gênero, para apoiar investimento acelerado em ações de erradicação da pobreza"
+      goal_2:
+        title: "Fome zero"
+        title_in_two_lines: "Fome zero"
+        description: "Fome zero."
+        targets:
+          target_2_1:
+            long_title: "Até 2030, acabar com a fome e assegurar o acesso de todas as pessoas, em particular os pobres e aqueles em situações vulneráveis, incluindo crianças pequenas, a comida saudável, nutritiva e suficiente o ano todo."
+          target_2_2:
+            long_title: "Até 2030, acabar com todas as formas de subnutrição, incluindo atingir, até 2025, as metas acordadas internacionalmente sobre baixa estatura e baixo peso em crianças abaixo de 5 anos de idade, e tratar das necessidades nutricionais de garotas adolescentes, grávidas e mulheres lactantes e idosos."
+          target_2_3:
+            long_title: "Até 2030, duplicar a produtividade de agricultura e receitas de pequenos produtores de comida, em particular mulheres, povos indígenas, \n famílias fazendeiras, pastores e pescadores, incluindo acesso seguro e igualitário à terra, outros recursos e meios produtivos, conhecimento, serviços financeiros, mercados e oportunidades para mais valia e emprego fora das fazendas."
+      goal_3:
+        title: "Boa saúde e bem-estar"
+        title_in_two_lines: "Boa saúde e bem-estar"
+        description: "Garantir vidas saudáveis e promover o bem-estar para todos em todas as idades."
+      goal_4:
+        title: "Educação de qualidade"
+        title_in_two_lines: "Educação de qualidade"
+        description: "Educação de qualidade."
+      goal_5:
+        title: "Igualdade de gênero"
+        title_in_two_lines: "Igualdade de gênero"
+        description: "Atingir igualdade de gênero e empoderar todas as mulheres e garotas."
+        targets:
+          target_5_1:
+            long_title: "Acabar com todas as formas de discriminação contra todas as mulheres e garotas em todos os lugares."
+      goal_6:
+        title: "Água tratada e saneamento"
+        title_in_two_lines: "Água tratada e saneamento"
+        description: "Garantir acesso a água e saneamento para todos."
+      goal_7:
+        title: "Energia limpa e acessível"
+        description: "Garantir acesso a energia barata, confiável, sustentável e moderna."
+      goal_8:
+        title: "Trabalho decente e crescimento econômico"
+        description: "Promover crescimento econômico e sustentável, emprego e trabalho decente para todos."
+      goal_9:
+        title: "Indústria, inovação e infraestrutura"
+        description: "Construir infraestrutura resiliente, promover industrialização sustentável e fomentar inovação."
+      goal_10:
+        title: "Desigualdades reduzidas"
+        description: "Reduzir a desigualdade entre os países e dentro deles."
+      goal_11:
+        title: "Cidades sustentáveis e comunidades"
+        description: "Tornar as cidades inclusivas, seguras, resilientes e sustentáveis."
+      goal_12:
+        title: "Consumo e produção responsáveis"
+        description: "Garantir consumo sustentável e padrões de produção."
+      goal_13:
+        title: "Ações pelo clima"
+        description: "Tomar ações urgentes para combater as mudanças climáticas e seus impactos."
+      goal_14:
+        title: "Vida aquática"
+        description: "Conservar e usar de forma sustentável os oceanos, mares e recursos marinhos."
+      goal_15:
+        title: "Vida terrestre"
+        description: "Administrar sustentavelmente florestas, combater a desertificação, parar e reverter a degradação da terra, parar a perda da biodiversidade."
+      goal_16:
+        title: "Paz, justiça e instituições fortes"
+        description: "Promover sociedades justas, pacíficas e inclusivas."
+      goal_17:
+        title: "Parecerias para os objetivos"
+        description: "Revitalizar a parceria mundial para o desenvolvimento sustentável."
+      help:
+        title: "Objetivos de Desenvolvimento Sustentável - Ajuda"
+      show:
+        targets:
+          no_local_targets: Este objetivo não tem metas locais
+    related_list_selector:
+      help:
+        text: "Página de ajuda ODS (SDG)"
+      remove_tag: "Remover"
+      title: "Objetivos e Metas de Desenvolvimento Sustentável"

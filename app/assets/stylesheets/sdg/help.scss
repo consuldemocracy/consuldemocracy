@@ -1,0 +1,14 @@
+.sdg-help-content {
+  @include grid-column-gutter;
+
+  > .tabs {
+    @extend %sdg-goal-list-expanded;
+
+    li {
+
+      &:focus {
+        outline: $outline-focus;
+      }
+    }
+  }
+}

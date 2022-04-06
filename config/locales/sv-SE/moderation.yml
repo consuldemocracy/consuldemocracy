@@ -12,9 +12,8 @@ sv:
         headers:
           comment: Kommentar
           moderate: Moderera
-        hide_comments: Dölj kommentarer
+        hide: Dölj kommentarer
         ignore_flags: Markera som läst
-        order: Sortera efter
         orders:
           flags: Mest flaggade
           newest: Senaste
@@ -24,7 +23,7 @@ sv:
         title: Moderering
     debates:
       index:
-        block_authors: Blockera användare
+        block_authors: Blockera förslagslämnare
         confirm: Är du säker?
         filter: Filtrera
         filters:
@@ -34,9 +33,8 @@ sv:
         headers:
           debate: Debattera
           moderate: Moderera
-        hide_debates: Dölj debatter
+        hide: Dölj debatter
         ignore_flags: Markera som läst
-        order: Sortera efter
         orders:
           created_at: Senaste
           flags: Mest flaggade
@@ -52,7 +50,7 @@ sv:
       users: Blockera användare
     proposals:
       index:
-        block_authors: Blockera användare
+        block_authors: Blockera förslagslämnare
         confirm: Är du säker?
         filter: Filtrera
         filters:
@@ -62,9 +60,8 @@ sv:
         headers:
           moderate: Moderera
           proposal: Förslag
-        hide_proposals: Dölj förslag
+        hide: Dölj förslag
         ignore_flags: Markera som läst
-        order: Sortera efter
         orders:
           created_at: Senaste
           flags: Mest flaggade
@@ -81,9 +78,8 @@ sv:
         headers:
           moderate: Moderera
           budget_investment: Budgetförslag
-        hide_budget_investments: Dölj budgetförslag
+        hide: Dölj budgetförslag
         ignore_flags: Markera som läst
-        order: Sortera efter
         orders:
           created_at: Senaste
           flags: Mest flaggade
@@ -100,9 +96,8 @@ sv:
         headers:
           moderate: Moderera
           proposal_notification: Förslagsavisering
-        hide_proposal_notifications: Dölj förslag
+        hide: Dölj förslag
         ignore_flags: Markera som läst
-        order: Sortera efter
         orders:
           created_at: Senaste
           moderated: Modererad
@@ -111,7 +106,6 @@ sv:
       index:
         hidden: Blockerad
         hide: Blockera
-        search: Sök
-        search_placeholder: e-postadress eller namn på användare
+        search_placeholder: användares e-postadress eller namn
         title: Blockera användare
-      notice_hide: Användaren blockerades. Alla användarens inlägg och kommentarer har dolts.
+      notice_hide: Användaren blockerades. Användarens alla inlägg och kommentarer har dolts.

@@ -1,0 +1,45 @@
+.admin .budgets-table {
+
+  .budget-completed,
+  .budget-draft {
+    padding-left: calc(1em + #{rem-calc(10)});
+    position: relative;
+
+    &::before {
+      color: $admin-border-color;
+      left: rem-calc(4);
+      position: absolute;
+      transform: translateY(50%);
+    }
+
+    span {
+      color: $admin-text;
+      display: block;
+      font-size: $tiny-font-size;
+      font-weight: bold;
+      line-height: rem-calc(12);
+    }
+  }
+
+  .budget-completed {
+    @include has-fa-icon(lock, solid);
+
+    span {
+      text-transform: uppercase;
+    }
+  }
+
+  .budget-draft {
+    @include has-fa-icon(pencil-alt, solid);
+
+    span {
+      font-style: italic;
+    }
+  }
+
+  td time:last-of-type::after,
+  td small::before {
+    content: "";
+    display: block;
+  }
+}

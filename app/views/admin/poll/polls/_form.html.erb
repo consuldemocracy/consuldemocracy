@@ -6,15 +6,11 @@
   <div class="row">
     <div class="clear">
       <div class="small-12 medium-6 column">
-        <%= f.text_field :starts_at,
-                          value: @poll.starts_at.present? ? l(@poll.starts_at.to_date) : nil,
-                          class: "js-calendar-full" %>
+        <%= f.date_field :starts_at %>
       </div>
 
       <div class="small-12 medium-6 column">
-        <%= f.text_field :ends_at,
-                          value: @poll.ends_at.present? ? l(@poll.ends_at.to_date) : nil,
-                          class: "js-calendar-full" %>
+        <%= f.date_field :ends_at %>
       </div>
     </div>
   </div>
@@ -36,8 +32,8 @@
   </div>
 
   <div class="row">
-    <div class="small-12 column">
-      <%= render "images/admin_image", imageable: @poll, f: f %>
+    <div class="images small-12 column">
+      <%= render "images/nested_image", f: f %>
     </div>
 
     <div class="clear">
@@ -56,6 +52,12 @@
           <% end %>
         </div>
       <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 column">
+      <%= render SDG::RelatedListSelectorComponent.new(f) %>
     </div>
   </div>
 

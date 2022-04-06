@@ -27,24 +27,18 @@
       </map>
     </div>
 
-    <h2><%= t("map.proposal_for_district") %></h2>
-
-    <%= form_for(@resource, url: new_url_path, method: :get) do |f| %>
-      <div class="small-12 medium-4">
-        <%= f.select :geozone_id, geozone_select_options, include_blank: t("geozones.none") %>
-      </div>
-
-      <div class="actions small-12">
-        <%= f.submit(class: "button radius", value: t("map.start_proposal")) %>
-      </div>
+    <% if can? :create, Proposal %>
+      <h2><%= t("map.proposal_for_district") %></h2>
     <% end %>
   </div>
 
-  <div class="small-12 medium-3 column">
-    <aside class="sidebar">
-      <%= link_to t("map.start_proposal"),
-                  new_proposal_path, class: "button radius expand" %>
-      <%= render "shared/tag_cloud", taggable: "proposal" %>
-    </aside>
-  </div>
+  <% if can? :create, Proposal %>
+    <div class="small-12 medium-3 column">
+      <aside class="sidebar">
+        <%= link_to t("map.start_proposal"),
+                    new_proposal_path, class: "button radius expand" %>
+        <%= render "shared/tag_cloud", taggable: "proposal" %>
+      </aside>
+    </div>
+  <% end %>
 </div>

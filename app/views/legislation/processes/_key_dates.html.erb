@@ -52,6 +52,15 @@
             <% end %>
           </li>
         <% end %>
+
+        <% if can?(:summary, process) %>
+          <li <%= "class=is-active" if phase == :summary %>>
+            <%= link_to summary_legislation_process_path(process) do %>
+              <h4><%= t("legislation.summary.title") %></h4>
+              <span><%= format_date(process.result_publication_date) %></span>
+            <% end %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>

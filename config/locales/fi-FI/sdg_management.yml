@@ -1,0 +1,11 @@
+fi:
+  sdg_management:
+    menu:
+      polls: "Kyselyt"
+      proposals: "Ehdotukset"
+    relations:
+      index:
+        filter: "Suodatin"
+        filters:
+          all: "Kaikki"
+          pending_sdg_review: "Vireillä"

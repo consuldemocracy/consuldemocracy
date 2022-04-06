@@ -1,8 +1,6 @@
 fi:
   devise_views:
     confirmations:
-      new:
-        email_label: Sähköposti
       show:
         submit: Vahvista
         title: Vahvista tilini
@@ -26,11 +24,7 @@ fi:
     organizations:
       registrations:
         new:
-          email_label: Sähköposti
-          organization_name_label: Organisaation nimi
           password_confirmation_label: Vahvista salasana
-          password_label: Salasana
-          phone_number_label: Puhelinnumero
           submit: Rekisteröidy
         success:
           back_to_index: Ymmärrän; Mene takaisin pääsivulle
@@ -41,13 +35,10 @@ fi:
         password_label: Uusi salasana
         title: Vaihda salasanasi
       new:
-        email_label: Sähköposti
         send_submit: Lähetä ohjeet
         title: Salasana unohtunut?
     sessions:
       new:
-        login_label: Sähköposti tai käyttäjänimi
-        password_label: Salasana
         remember_me: Muista minut
         title: Kirjaudu sisään
     shared:
@@ -75,11 +66,9 @@ fi:
           update_submit: Päivitä
         new:
           cancel: Peruuta kirjautuminen
-          email_label: Sähköposti
           organization_signup: Edustatko organisaatiota tai yhteisöä? %{signup_link}
           organization_signup_link: Rekisteröidy täällä
           password_confirmation_label: Vahvista salasana
-          password_label: Salasana
           submit: Rekisteröidy
           terms: Rekisteröitymällä hyväksyt %{terms}
           terms_link: ehdot ja käyttöehdot
@@ -87,7 +76,6 @@ fi:
           title: Rekisteröidy
           username_is_available: Käyttäjätunnus käytettävissä
           username_is_not_available: Käyttäjätunnus on jo käytössä
-          username_label: Käyttäjätunnus
           username_note: Nimi, joka näytetään viestiesi vieressä
         success:
           back_to_index: Ymmärrän; Mene takaisin pääsivulle

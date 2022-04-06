@@ -1,0 +1,14 @@
+es-PE:
+  sdg_management:
+    menu:
+      budget_investments: "Presupuestos participativos"
+      debates: "Discusiones"
+      legislation_processes: "Procesos legislativos"
+      polls: "Votaciones"
+      proposals: "Propuestas"
+    relations:
+      index:
+        filter: "Filtrar"
+        filters:
+          all: "Todas"
+          pending_sdg_review: "Sin decidir"

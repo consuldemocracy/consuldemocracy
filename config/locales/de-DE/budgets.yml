@@ -3,8 +3,24 @@ de:
     ballots:
       show:
         title: Ihre Abstimmung
-        amount_spent: Gesamtausgaben
-        remaining: "Sie können noch <span>%{amount}</span> ausgeben."
+        amount_progress: "%{amount_spent} / %{amount_limit}"
+        amount_available:
+          knapsack: "Sie können noch <span>%{count}</span> ausgeben"
+          approval:
+            zero: "Sie können noch <span>%{count}</span> Stimmen abgeben."
+            one: "Sie können noch <span>%{count}</span> Stimmen abgeben."
+            other: "Sie können noch <span>%{count}</span> Stimmen abgeben."
+        amount_spent:
+          knapsack: "Ausgegebener Betrag <span>%{count}</span>"
+          approval:
+            zero: "Abgegebene Stimmen: <span>%{count}</span>"
+            one: "Abgegebene Stimmen: <span>%{count}</span>"
+            other: "Abgegebene Stimmen: <span>%{count}</span>"
+        amount_limit:
+          knapsack: "%{count}"
+          approval:
+            one: "Sie können <span>1</span> Projekt wählen"
+            other: "Sie können bis zu <span>%{count}</span> Projekte wählen"
         no_balloted_group_yet: "Sie haben in dieser Gruppe noch nicht abgestimmt. Stimmen Sie jetzt ab!"
         remove: Stimme entfernen
         voted:
@@ -21,15 +37,12 @@ de:
         not_enough_money: "Sie haben bereits das gesamte verfügbare Budget zugewiesen.<br><small>Bitte denken Sie daran, dass Sie dies %{change_ballot} jederzeit</small>ändern können"
         no_ballots_allowed: Die Auswahlphase ist abgeschlossen
         different_heading_assigned: "Sie haben bereits für eine andere Rubrik gestimmt: %{heading_link}"
+        not_enough_available_votes: "Sie haben die maximale Anzahl an abgegebenen Stimmen erreicht"
         change_ballot: Ändern Sie Ihre Wahl
         casted_offline: Sie haben schon offline abgestimmt
     groups:
       show:
         title: Wählen Sie eine Option
-        unfeasible_title: Nicht durchführbare Ausgabenvorschläge
-        unfeasible: Nicht durchführbare Investitionen anzeigen
-        unselected_title: Ausgabenvorschläge, die nicht für die Abstimmungsphase ausgewählt wurden
-        unselected: Ausgabenvorschläge, die nicht für die Abstimmungsphase ausgewählt wurden, anzeigen
     phase:
       drafting: Entwurf (nicht für die Öffentlichkeit sichtbar)
       informing: Information
@@ -48,12 +61,11 @@ de:
         icon_alt: Symbol für Bürgerhaushalte
         title: Bürgerhaushalte
         help: Hilfe zu Bürgerhaushalten
-        all_phases: Alle Phasen anzeigen
       all_phases: Phasen des Bürgerhaushalts
+      next_phase: Nächste Phase
+      prev_phase: Vorherige Phase
+      current_phase: Aktuelle Phase
       map: Ausgabenvorschläge geografisch geordnet
-      investment_proyects: Liste aller Ausgabenvorschläge
-      unfeasible_investment_proyects: Liste aller nicht durchführbaren Ausgabenvorschläge
-      not_selected_investment_proyects: Liste aller Ausgabenvorschläge, die nicht für die Abstimmung ausgewählt wurden
       finished_budgets: Abgeschlossene Bürgerhaushalte
       see_results: Ergebnisse anzeigen
       section_footer:
@@ -62,6 +74,8 @@ de:
       milestones: Meilensteine
     investments:
       form:
+        title: "Eine Budgetinvestitionen erstellen"
+        subtitle: "%{heading} (%{price})"
         tag_category_label: "Kategorien"
         tags_instructions: "Markieren Sie den Vorschlag. Sie können einen Tag auswählen oder selbst erstellen"
         tags_label: Tags
@@ -69,7 +83,6 @@ de:
         map_location: "Kartenposition"
         map_location_instructions: "Navigieren Sie auf der Karte zum Standort und setzen Sie die Markierung."
         map_remove_marker: "Entfernen Sie die Kartenmarkierung"
-        map_skip_checkbox: "Dieser Ausgabenvorschlag hat keinen konkreten Standort oder ich kenne ihn nicht."
       index:
         title: Bürgerhaushalte
         unfeasible: Undurchführbare Investitionsvorschläge
@@ -84,11 +97,17 @@ de:
           other: " enthält den Begriff <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Meine Stimmen
-          voted:
-            one: "<strong>Sie haben für einen Vorschlag mit Kosten von %{amount_spent}-</strong> gestimmt"
-            other: "<strong>Sie haben für Vorschläge mit Kosten von %{amount_spent}</strong> gestimmt %{count}"
-          voted_info: Sie können bis zur Schließung der Phase jederzeit %{link}. Es gibt keinen Grund sämtliches verfügbares Geld auszugeben.
-          voted_info_link: Ihre Wahl ändern
+          voted_info:
+            knapsack:
+              one: "<strong>Sie haben für einen Vorschlag mit Kosten von %{amount_spent}-</strong> gestimmt"
+              other: "<strong>Sie haben für Vorschläge mit Kosten von %{amount_spent}</strong> gestimmt %{count}"
+            approval:
+              one: "<strong>Sie haben für einen Vorschlag gestimmt</strong>"
+              other: "<strong>Sie haben für %{count} Vorschläge gestimmt</strong>"
+          change_vote_info:
+            knapsack: "Sie können bis zur Schließung der Phase jederzeit %{link}. Es gibt keinen Grund sämtliches verfügbares Geld auszugeben."
+            approval: "Sie können jederzeit %{link} bis zum Ende dieser Phase."
+          change_vote_link: "ihre Wahl ändern"
           different_heading_assigned: "Sie haben bereits in einer anderen Rubrik: %{heading_link} abgestimmt"
           change_ballot: "Wenn Sie Ihre Meinung ändern, können Sie Ihre Stimme unter %{check_ballot} entfernen und von vorne beginnen."
           check_ballot_link: "Überprüfung meiner Abstimmung"
@@ -96,9 +115,13 @@ de:
           verified_only: "Um ein neuen Ausgabenvorschlag zu erstellen %{verify}."
           create: "Eine Budgetinvestitionen erstellen"
           not_logged_in: "Um einen neuen Ausgabenvorschlag erstellen zu können, müssen Sie %{sign_in} oder %{sign_up}."
-          by_feasibility: Nach Durchführbarkeit
-          feasible: Durchführbare Projekte
-          unfeasible: Nicht durchführbare Projekte
+        filter: "Projekte filtern nach"
+        filters:
+          not_unfeasible: "Durchführbar"
+          selected: "Ausgewählt"
+          unfeasible: "Undurchführbar"
+          unselected: "Nicht ausgewählt"
+          winners: "Bestbewertete Vorschläge"
         orders:
           random: zufällig
           confidence_score: am besten bewertet
@@ -129,33 +152,39 @@ de:
       investment:
         add: Stimme
         already_added: Sie haben diesen Ausgabenvorschlag bereits hinzugefügt
-        already_supported: Sie haben diesen Ausgabenvorschlag bereits unterstützt. Jetzt teilen!
         support_title: Unterstützen Sie dieses Projekt
-        confirm_group:
-          one: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn Sie fortfahren, können Sie ihren Wahlbezirk nicht ändern. Sind Sie sicher?"
-          other: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn sie fortfahren, können sie ihren Wahlbezirk nicht ändern. Sind sie sicher?"
         supports:
           zero: Keine Unterstützung
           one: 1 Unterstützer*in
           other: "%{count} Unterstützer*innen"
-        give_support: Unterstützung
       header:
-        check_ballot: Meine Abstimmung überprüfen
+        check_ballot: "Meine Abstimmung überprüfen"
         different_heading_assigned: "Sie haben bereits in einer anderen Rubrik: %{heading_link} abgestimmt"
         change_ballot: "Wenn Sie Ihre Meinung ändern, können Sie Ihre Stimme in %{check_ballot} zurückziehen und von vorne beginnen."
         check_ballot_link: "Meine Abstimmungen überprüfen"
         price: "Dieser Bereich verfügt über einen Haushalt von"
-    progress_bar:
-      assigned: "Sie haben zugeordnet: "
-      available: "Verfügbare Haushaltsmittel: "
+      votes:
+        already_supported: "Sie haben diesen Ausgabenvorschlag bereits unterstützt. Jetzt teilen!"
+        confirm_group:
+          one: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn Sie fortfahren, können Sie ihren Wahlbezirk nicht ändern. Sind Sie sicher?"
+          other: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn sie fortfahren, können sie ihren Wahlbezirk nicht ändern. Sind sie sicher?"
+        remove_support: "Unterstützung zurückziehen"
+        remove_support_label: "Unterstützung für %{investment} zurückziehen"
+        support: "Unterstützung"
+        support_label: "%{investment} unterstützen"
+    investments_list:
+      investment:
+        price: "Preis"
+        read_more: "Weiterlesen"
+        supports: "Unterstützung"
+      see_all: "Alle Budgetinvestitionen anzeigen"
+      title: "Liste der Budgetinvestitionen"
     show:
-      group: Gruppe
-      phase: Aktuelle Phase
-      unfeasible_title: Nicht durchführbare Ausgabenvorschläge
-      unfeasible: Nicht durchführbare Ausgabenvorschläge anzeigen
-      unselected_title: Ausgabenvorschläge, die es nicht in die Abstimmungsphase geschafft haben
-      unselected: Ausgabenvorschläge, die es nicht in die Abstimmungsphase geschafft haben, anzeigen
       see_results: Ergebnisse anzeigen
+    supports_info:
+      supported:
+        one: "Sie haben bisher <strong>1 Projekt</strong> unterstützt."
+        other: "Sie haben bisher <strong>%{count} Projekte</strong> unterstützt."
     results:
       link: Ergebnisse
       page_title: "%{budget} - Ergebnisse"

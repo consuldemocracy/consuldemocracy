@@ -3,7 +3,7 @@
            display_style: lambda { |locale| enable_translation_style(@process, locale) },
            manage_languages: false %>
 
-<%= translatable_form_for [:admin, @process], url: url, html: { data: { watch_changes: true } } do |f| %>
+<%= translatable_form_for [:admin, @process], url: url do |f| %>
 
   <%= render "shared/errors", resource: @process %>
   <div class="row">

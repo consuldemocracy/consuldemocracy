@@ -1,9 +1,5 @@
 class Admin::Poll::BaseController < Admin::BaseController
-  helper_method :namespace
+  include FeatureFlags
 
-  private
-
-    def namespace
-      "admin"
-    end
+  feature_flag :polls
 end

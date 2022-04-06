@@ -1,12 +1,12 @@
-shared_examples "milestoneable" do |factory_name, path_name|
-  it_behaves_like "progressable", factory_name, path_name
+shared_examples "milestoneable" do |factory_name|
+  it_behaves_like "progressable", factory_name
 
   let!(:milestoneable) { create(factory_name) }
 
   describe "Show milestones" do
-    let(:path) { send(path_name, *resource_hierarchy_for(milestoneable)) }
+    let(:path) { polymorphic_path(milestoneable) }
 
-    scenario "Show milestones", :js do
+    scenario "Show milestones" do
       create(:milestone, milestoneable: milestoneable,
                          description_en: "Last milestone with a link to https://consul.dev",
                          description_es: "Último hito con el link https://consul.dev",
@@ -34,7 +34,7 @@ shared_examples "milestoneable" do |factory_name, path_name|
         expect(page).to have_content(first_milestone.status.name)
       end
 
-      select("Español", from: "locale-switcher")
+      visit path + "?locale=es"
 
       find("#tab-milestones-label").click
 
@@ -44,7 +44,7 @@ shared_examples "milestoneable" do |factory_name, path_name|
       end
     end
 
-    scenario "Show no_milestones text", :js do
+    scenario "Show no_milestones text" do
       login_as(create(:user))
 
       visit path

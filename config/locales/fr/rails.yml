@@ -75,6 +75,9 @@ fr:
       x_days:
         one: 1 jour
         other: "%{count} jours"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
       x_months:
         one: 1 mois
         other: "%{count} mois"
@@ -92,6 +95,7 @@ fr:
       second: Secondes
       year: Année
   errors:
+    format: "%{attribute} %{message}"
     messages:
       accepted: doit être accepté
       blank: ne peut pas être vide
@@ -118,10 +122,10 @@ fr:
         other: est trop long (maximum est %{count} caractères)
       too_short:
         one: est trop court (1 caractère au minimum)
-        other: est trop long (maximum est %{count} caractères)
+        other: est trop court (%{count} caractères au minimum)
       wrong_length:
-        one: est la mauvaise longueur (soit 1 caractère)
-        other: est la longueur incorrecte (devrait être %{count} caractères)
+        one: a la mauvaise longueur (soit 1 caractère)
+        other: a la mauvaise longueur (devrait être %{count} caractères)
       other_than: doit être différent de %{count}
     template:
       body: "Des problèmes ont été trouvés avec les champs suivants :"
@@ -181,11 +185,14 @@ fr:
     array:
       last_word_connector: " et "
       two_words_connector: " et "
+      words_connector: ", "
   time:
     am: du matin
     formats:
       datetime: "%d/%m/%Y %H:%M:%S"
       default: "%A, %d %B %Y %H:%M:%S %z"
       long: "%d %B %Y %H:%M"
+      short: "%d %b %H:%M"
+      short_datetime: "%Y-%m-%d %H:%M"
       api: "%H %d/%m/%Y"
     pm: de l'après-midi

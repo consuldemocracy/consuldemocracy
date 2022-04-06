@@ -1,0 +1,39 @@
+.related-content-list {
+  list-style-type: none;
+  margin-left: 0;
+
+  li {
+    border-bottom: 1px solid $border;
+    margin-bottom: 0 !important;
+    padding: $line-height / 2;
+
+    @include breakpoint(medium) {
+      display: flex;
+      justify-content: space-between;
+
+      > :first-child {
+        flex: 1;
+        margin-right: 1em;
+      }
+    }
+
+    &:first-child {
+      border-top: 1px solid $border;
+    }
+  }
+
+  h3 {
+    font-size: $base-font-size;
+    font-weight: normal;
+  }
+
+  .related-content-title {
+    color: #4f4f4f;
+    font-size: rem-calc(12);
+    text-transform: uppercase;
+  }
+
+  .flag {
+    margin-top: $line-height / 2;
+  }
+}

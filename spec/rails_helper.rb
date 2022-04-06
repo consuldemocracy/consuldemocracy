@@ -1,5 +1,5 @@
 ENV["RAILS_ENV"] ||= "test"
-if ENV["TRAVIS"]
+if ENV["COVERALLS_REPO_TOKEN"]
   require "coveralls"
   Coveralls.wear!("rails")
 end
@@ -11,6 +11,23 @@ require "spec_helper"
 require "capybara/rails"
 require "capybara/rspec"
 require "selenium/webdriver"
+require "view_component/test_helpers"
+
+module ViewComponent
+  module TestHelpers
+    def sign_in(user)
+      allow(controller).to receive(:current_user).and_return(user)
+    end
+
+    def within(...)
+      raise "`within` doesn't work in component tests. Use `page.find` instead."
+    end
+  end
+end
+
+RSpec.configure do |config|
+  config.include ViewComponent::TestHelpers, type: :component
+end
 
 Rails.application.load_tasks if Rake::Task.tasks.empty?
 
@@ -19,18 +36,6 @@ Warden.test_mode!
 
 ActiveRecord::Migration.maintain_test_schema!
 
-# Monkey patch from https://github.com/rails/rails/pull/32293
-# Remove when we upgrade to Rails 5.2
-require "action_dispatch/system_testing/test_helpers/setup_and_teardown"
-module ActionDispatch::SystemTesting::TestHelpers::SetupAndTeardown
-  def after_teardown
-    take_failed_screenshot
-    Capybara.reset_sessions!
-  ensure
-    super
-  end
-end
-
 RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.after do
@@ -38,10 +43,12 @@ RSpec.configure do |config|
   end
 end
 
+FactoryBot.use_parent_strategy = false
+
 Capybara.register_driver :headless_chrome do |app|
   capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
     "goog:chromeOptions" => {
-      args: %W[headless no-sandbox window-size=1200,600 proxy-server=127.0.0.1:#{Capybara::Webmock.port_number}]
+      args: %W[headless no-sandbox window-size=1200,800 proxy-server=#{Capybara.app_host}:#{Capybara::Webmock.port_number}]
     }
   )
 
@@ -53,5 +60,8 @@ Capybara.register_driver :headless_chrome do |app|
 end
 
 Capybara.exact = true
+Capybara.enable_aria_label = true
+Capybara.disable_animation = true
+Capybara.default_max_wait_time = 5
 
 OmniAuth.config.test_mode = true
