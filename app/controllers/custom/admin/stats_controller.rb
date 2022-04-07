@@ -14,6 +14,7 @@ class Admin::StatsController < Admin::BaseController
     @comment_votes  = Vote.where(votable_type: "Comment").count
 
     @votes = Vote.count
+    @physical_votes = PhysicalFinalVote.sum(:total_votes)
 
     @user_level_two   = User.active.level_two_verified.count
     @user_level_three = User.active.level_three_verified.count
@@ -33,6 +34,9 @@ class Admin::StatsController < Admin::BaseController
     # Número de votos del último presupuesto participativo
     last_budget = Budget.order(:created_at).last
     @last_budget_votes = last_budget.investments.map(&:ballot_lines_count).sum
+
+    @phisical_votes_count = last_budget.investments.includes(:physical_final_votes).sum("physical_final_votes.total_votes")
+    @vote_count = last_budget.lines.count + @phisical_votes_count                                                                                                
 
     # Número de votantes del último presupuesto participativo
     @last_budget_voters = Budget::Ballot::Line.where(budget: last_budget).to_a.uniq { |line| line.ballot.user_id }.count

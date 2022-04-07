@@ -78,11 +78,18 @@ class Admin::StatsController < Admin::BaseController
 
     @user_count = @budget.ballots.select { |ballot| ballot.lines.any? }.count
 
-    @vote_count = @budget.lines.count
+    
+    #Budget::Heading.find(k).name
+    @vote_count_by_heading = @budget.lines.group(:heading_id).count.map {|k, v1| [Budget::Heading.find(k).name, v1]}.sort
+    @phisical_votes = @budget.investments.includes(:physical_final_votes).group(:heading_id).sum("physical_final_votes.total_votes").map {|k, v1| [Budget::Heading.find(k).name, v1]}.sort
 
-    @vote_count_by_heading = @budget.lines.group(:heading_id).count.map { |k, v| [Budget::Heading.find(k).name, v] }.sort
-
+    @vote_count_by_heading = @vote_count_by_heading.to_h.merge(@phisical_votes.to_h) {|k, v1, v2| [v1, v2]}
+    #@phisical_votes = PhysicalFinalVote.by_budget(@budget).group(:signable.heading.id).map { |k, v, x| [Budget::Heading.find(k).name, v, v] }.sort
     @user_count_by_district = User.where.not(balloted_heading_id: nil).group(:balloted_heading_id).count.map { |k, v| [Budget::Heading.find(k).name, v] }.sort
+    @phisical_votes_count = @budget.investments.includes(:physical_final_votes).sum("physical_final_votes.total_votes")
+    @vote_count = @budget.lines.count + @phisical_votes_count
+    #@vote_count_by_heading_count = @vote_count_by_heading.lines.count
+    
   end
 
   def polls
