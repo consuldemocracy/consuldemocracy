@@ -119,17 +119,13 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       click_link "Add image"
       click_on submit_button
 
-      if has_many_images
-        # Pending. Review soon and test
-      else
-        within "#nested-image .image" do
-          expect(page).to have_content("can't be blank", count: 2)
-        end
+      within "#nested-image .image" do
+        expect(page).to have_content("can't be blank", count: 2)
       end
     end
 
-    scenario "Render image preview after sending the form with validation errors" do
-      skip "Question answers behave differently" if imageable.is_a?(Poll::Question::Answer)
+    scenario "Render image preview after sending the form with validation errors",
+             unless: imageable_factory_name == "poll_question_answer" do
       do_login_for user, management: management
       visit send(path, arguments)
 
@@ -154,17 +150,14 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       expect(page).not_to have_selector("#nested-image .image")
     end
 
-    scenario "Should show successful notice when resource filled correctly without any nested images" do
-      if has_many_images
-        skip "no need to test, there are no attributes for the parent resource"
-      else
-        do_login_for user, management: management
-        visit send(path, arguments)
+    scenario "Should show successful notice when resource filled correctly without any nested images",
+             unless: has_many_images do
+      do_login_for user, management: management
+      visit send(path, arguments)
 
-        send(fill_resource_method_name) if fill_resource_method_name
-        click_on submit_button
-        expect(page).to have_content imageable_success_notice
-      end
+      send(fill_resource_method_name) if fill_resource_method_name
+      click_on submit_button
+      expect(page).to have_content imageable_success_notice
     end
 
     scenario "Should show successful notice when resource filled correctly and after valid file uploads" do
@@ -193,12 +186,8 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       click_on submit_button
       imageable_redirected_to_resource_show_or_navigate_to(imageable)
 
-      if has_many_images
-        # Pending. Review soon and test
-      else
-        expect(page).to have_selector "figure img"
-        expect(page).to have_selector "figure figcaption" if show_caption_for?(imageable_factory_name)
-      end
+      expect(page).to have_selector "figure img"
+      expect(page).to have_selector "figure figcaption" if show_caption_for?(imageable_factory_name)
     end
 
     scenario "Different URLs for different images" do

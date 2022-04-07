@@ -173,9 +173,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
     end
   end
 
-  describe "At #{mappable_edit_path}" do
-    before { skip } if mappable_edit_path.blank?
-
+  describe "At #{mappable_edit_path}", if: mappable_edit_path.present? do
     scenario "Should edit map on #{mappable_factory_name} and contain default values" do
       do_login_for mappable.author, management: management
 
@@ -230,17 +228,6 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       click_on("Save changes")
 
       expect(page).not_to have_css(".map_location")
-    end
-
-    scenario "No errors on update" do
-      skip ""
-      do_login_for mappable.author, management: management
-
-      visit send(mappable_edit_path, id: mappable.id)
-      click_link "Remove map marker"
-      click_on "Save changes"
-
-      expect(page).not_to have_content "Map location can't be blank"
     end
 
     scenario "No need to skip map on update" do

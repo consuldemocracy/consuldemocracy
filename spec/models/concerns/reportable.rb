@@ -57,14 +57,6 @@ shared_examples "reportable" do
       expect(saved_reportable.results_enabled?).to be false
       expect(saved_reportable.results_enabled).to be false
     end
-
-    it "uses the `has_one` relation instead of the original column" do
-      skip "there's no original column" unless reportable.has_attribute?(:results_enabled)
-
-      reportable.update!(results_enabled: true)
-
-      expect(reportable.read_attribute(:results_enabled)).to be false
-    end
   end
 
   describe "#stats_enabled" do
@@ -92,14 +84,6 @@ shared_examples "reportable" do
 
       expect(saved_reportable.stats_enabled?).to be false
       expect(saved_reportable.stats_enabled).to be false
-    end
-
-    it "uses the `has_one` relation instead of the original column" do
-      skip "there's no original column" unless reportable.has_attribute?(:stats_enabled)
-
-      reportable.update!(stats_enabled: true)
-
-      expect(reportable.read_attribute(:stats_enabled)).to be false
     end
   end
 end

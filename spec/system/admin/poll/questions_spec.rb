@@ -151,8 +151,6 @@ describe "Admin poll questions", :admin do
     expect(page).to have_content(question2.title)
   end
 
-  pending "Mark all city by default when creating a poll question from a successful proposal"
-
   context "Poll select box" do
     scenario "translates the poll name in options" do
       poll = create(:poll, name_en: "Name in English", name_es: "Nombre en Español")
@@ -169,11 +167,8 @@ describe "Admin poll questions", :admin do
                                   options: ["Seleccionar votación", poll.name_es])
     end
 
-    scenario "uses fallback if name is not translated to current locale" do
-      unless globalize_french_fallbacks.first == :es
-        skip("Spec only useful when French falls back to Spanish")
-      end
-
+    scenario "uses fallback if name is not translated to current locale",
+             if: Globalize.fallbacks(:fr).reject { |locale| locale.match(/fr/) }.first == :es do
       poll = create(:poll, name_en: "Name in English", name_es: "Nombre en Español")
       proposal = create(:proposal)
 
@@ -187,9 +182,5 @@ describe "Admin poll questions", :admin do
       expect(page).to have_select("poll_question_poll_id",
                                   options: ["Sélectionner un vote", poll.name_es])
     end
-  end
-
-  def globalize_french_fallbacks
-    Globalize.fallbacks(:fr).reject { |locale| locale.match(/fr/) }
   end
 end

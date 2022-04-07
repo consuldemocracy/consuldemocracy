@@ -38,8 +38,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
       expect(page).not_to have_button("Traducir página")
     end
 
-    scenario "should not be present when there are no resources to translate" do
-      skip("only index_path") if show_path?(path_name)
+    scenario "should not be present when there are no resources to translate", if: index_path?(path_name) do
       resource.destroy!
       visit path
 
@@ -60,13 +59,8 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
       end
     end
 
-    describe "should ignore missing translations on resource comments" do
-      before do
-        if show_path?(path_name) || !commentable?(resource)
-          skip("only index_path")
-        end
-      end
-
+    describe "should ignore missing translations on resource comments",
+             if: index_path?(path_name) && commentable?(factory_name) do
       scenario "is not present when a resource translation exists but its comment has not tanslations" do
         add_translations(resource, :es)
         create(:comment, commentable: resource)
@@ -79,13 +73,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
       end
     end
 
-    describe "should evaluate missing translations on resource comments" do
-      before do
-        if index_path?(path_name)
-          skip("only show_path")
-        end
-      end
-
+    describe "should evaluate missing translations on resource comments", if: show_path?(path_name) do
       scenario "display when exists resource translations but the comment does not have a translation" do
         add_translations(resource, :es)
         create(:comment, commentable: resource)
@@ -109,9 +97,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
       end
     end
 
-    describe "should evaluate missing translations on featured_debates" do
-      before { skip("only debates index path") if path_name != "debates_path" }
-
+    describe "should evaluate missing translations on featured_debates", if: path_name == "debates_path" do
       scenario "display when exists featured_debates without tanslations" do
         add_translations(resource, :es)
         create_featured_debates
@@ -124,9 +110,8 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
       end
     end
 
-    describe "should evaluate missing translations on featured_proposals" do
-      before { skip("only proposals index path") if path_name != "proposals_path" }
-
+    describe "should evaluate missing translations on featured_proposals",
+             if: path_name == "proposals_path" do
       scenario "display when exists featured_proposals without tanslations" do
         add_translations(resource, :es)
         create_featured_proposals
@@ -230,8 +215,8 @@ def show_path?(path)
   !index_path?(path)
 end
 
-def commentable?(resource)
-  Comment::COMMENTABLE_TYPES.include?(resource.class.to_s)
+def commentable?(factory_name)
+  Comment::COMMENTABLE_TYPES.include?(FactoryBot.factories[factory_name].build_class.to_s)
 end
 
 def generate_response(resource)
