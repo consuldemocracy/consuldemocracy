@@ -26,7 +26,7 @@ module Mutations
         # This would require to have a QueryType where the Translations
         # are returned, which is not yet implemented. We could think
         # about that, when we decide that we need to update Proposals
-        proposal.translations.find { |translation| translation.locale == user.locale.to_sym}.delete
+        proposal.translations.where(locale: user.locale).delete_all
         proposal.update_attributes!(attributes_hash)
         proposal
       rescue ActiveRecord::RecordInvalid, ActiveRecord::RecordNotFound => e
