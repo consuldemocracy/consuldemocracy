@@ -175,6 +175,8 @@ describe "Budget Investments" do
         click_button "Search"
       end
 
+      expect(page).to have_content "containing the term 'Schwifty'"
+
       within("#budget-investments") do
         expect(page).to have_css(".budget-investment", count: 2)
 
@@ -199,9 +201,10 @@ describe "Budget Investments" do
       select "Last 24 hours", from: "By date"
       click_button "Filter"
 
-      expect(page).to have_content "There is 1 investment containing the term 'environment'"
+      expect(page).to have_content "There is 1 investment"
       expect(page).to have_css ".budget-investment", count: 1
       expect(page).to have_content "Feasible environment"
+      expect(page).not_to have_content "containing the term"
       expect(page).not_to have_content "Feasible health"
       expect(page).not_to have_content "Unfeasible environment"
       expect(page).not_to have_content "Unfeasible health"
@@ -209,9 +212,10 @@ describe "Budget Investments" do
       click_link "Unfeasible"
 
       expect(page).not_to have_content "Feasible environment"
-      expect(page).to have_content "There is 1 investment containing the term 'environment'"
+      expect(page).to have_content "There is 1 investment"
       expect(page).to have_css ".budget-investment", count: 1
       expect(page).to have_content "Unfeasible environment"
+      expect(page).not_to have_content "containing the term"
       expect(page).not_to have_content "Feasible health"
       expect(page).not_to have_content "Unfeasible health"
     end

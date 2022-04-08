@@ -28,9 +28,11 @@
           <h2><%= t("shared.search_results") %></h2>
           <p>
             <%= page_entries_info @investments %>
-            <%= sanitize(t("budgets.investments.index.search_results",
-                   count: @investments.size,
-                   search_term: params[:search])) %>
+            <% if params[:advanced_search].blank? %>
+              <%= sanitize(t("budgets.investments.index.search_results",
+                     count: @investments.size,
+                     search_term: params[:search])) %>
+             <% end %>
           </p>
         </div>
       </div>
