@@ -21,8 +21,36 @@ module Types
     field :video_url, String, null: true
     field :votes_for, Types::VoteType.connection_type, null: true
 
+    field :published, Boolean, null: true
+
+    field :map_location, Types::MapLocationType, null: true
+
     # Requires authentication
     field :current_user_has_voted, Boolean, null: true
+
+    # TODO: Refactor?
+    field :image_url_small, String, null: true
+    field :image_url_medium, String, null: true
+    field :image_url_large, String, null: true
+    field :image_url_thumb, String, null: true
+
+    field :documents, [Types::DocumentType], null: true
+
+    def image_url_small
+      object.image_url(:small)
+    end
+
+    def image_url_medium
+      object.image_url(:small)
+    end
+
+    def image_url_large
+      object.image_url(:small)
+    end
+
+    def image_url_thumb
+      object.image_url(:small)
+    end
 
     def tags
       object.tags.public_for_api
@@ -30,6 +58,10 @@ module Types
 
     def geozone
       Geozone.public_for_api.find_by(id: object.geozone)
+    end
+
+    def published
+      object.published?
     end
 
     def current_user_has_voted
