@@ -14,6 +14,13 @@ module Types
     # Requires authentication
     field :token, String, null: true
 
+    field :description, String, null: true
+    field :summary, String, null: true
+
+    field :created_at, GraphQL::Types::ISO8601DateTime, null: true
+    field :starts_at, GraphQL::Types::ISO8601DateTime, null: true
+    field :ends_at, GraphQL::Types::ISO8601DateTime, null: true
+
     def token
       unless user = context[:current_resource]
         raise GraphQL::ExecutionError, "token requires authentication"
