@@ -235,6 +235,36 @@ describe "Account" do
     expect(page).to have_content "Invalid Email or username or password"
   end
 
+  scenario "Erasing an account remove all roles" do
+    create(:administrator, user: user)
+    create(:valuator, user: user)
+    create(:moderator, user: user)
+    create(:manager, user: user)
+    create(:sdg_manager, user: user)
+
+    visit account_path
+
+    expect(Administrator.count).to eq 1
+    expect(Valuator.count).to eq 1
+    expect(Manager.count).to eq 1
+    expect(SDG::Manager.count).to eq 1
+    expect(Moderator.count).to eq 1
+
+    click_link "Erase my account"
+
+    fill_in "user_erase_reason", with: "I don't want admin or valuate anymore!"
+
+    click_button "Erase my account"
+
+    expect(page).to have_content "Goodbye! Your account has been cancelled. We hope to see you again soon."
+
+    expect(Administrator.count).to eq 0
+    expect(Valuator.count).to eq 0
+    expect(Manager.count).to eq 0
+    expect(SDG::Manager.count).to eq 0
+    expect(Moderator.count).to eq 0
+  end
+
   context "Recommendations" do
     scenario "are enabled by default" do
       visit account_path

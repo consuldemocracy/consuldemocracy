@@ -72,4 +72,48 @@ describe "Moderate users" do
       expect(page).to have_content "Blocked"
     end
   end
+
+  scenario "Hiding a user removes all roles" do
+    moderator = create(:moderator)
+    admin = create(:administrator)
+    valuator = create(:valuator)
+    manager = create(:manager)
+    sdg_manager = create(:sdg_manager)
+    all_roles = create(:user)
+    create(:administrator, user: all_roles)
+    create(:valuator, user: all_roles)
+    create(:moderator, user: all_roles)
+    create(:manager, user: all_roles)
+    create(:sdg_manager, user: all_roles)
+
+    debate1 = create(:debate, author: admin.user)
+    debate2 = create(:debate, author: valuator.user)
+    debate3 = create(:debate, author: manager.user)
+    debate4 = create(:debate, author: sdg_manager.user)
+    debate5 = create(:debate, author: all_roles)
+
+    expect(Administrator.count).to eq 2
+    expect(Valuator.count).to eq 2
+    expect(Manager.count).to eq 2
+    expect(SDG::Manager.count).to eq 2
+    expect(Moderator.count).to eq 2
+
+    login_as(moderator.user)
+
+    [debate1, debate2, debate3, debate4, debate5].each do |debate|
+      visit debate_path(debate)
+
+      within("#debate_#{debate.id}") do
+        accept_confirm { click_link "Hide author" }
+      end
+
+      expect(page).to have_current_path(debates_path)
+    end
+
+    expect(Administrator.count).to eq 0
+    expect(Valuator.count).to eq 0
+    expect(Manager.count).to eq 0
+    expect(SDG::Manager.count).to eq 0
+    expect(Moderator.count).to eq 1
+  end
 end
