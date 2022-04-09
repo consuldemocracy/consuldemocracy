@@ -92,9 +92,6 @@ es:
           button: Buscar
           placeholder: Buscar proyectos de gasto...
           title: Buscar
-        search_results:
-          one: " que contiene <strong>'%{search_term}'</strong>"
-          other: " que contienen <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Mis votos
           voted_info:

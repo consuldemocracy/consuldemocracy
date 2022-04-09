@@ -110,9 +110,6 @@ es:
         button: Buscar
         placeholder: Buscar debates...
         title: Buscar
-      search_results:
-        one: " que contiene <strong>'%{search_term}'</strong>"
-        other: " que contienen <strong>'%{search_term}'</strong>"
       start_debate: Empieza un debate
       title: Debates
       section_header:

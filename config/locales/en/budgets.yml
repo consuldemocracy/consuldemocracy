@@ -92,9 +92,6 @@ en:
           button: Search
           placeholder: Search investment projects...
           title: Search
-        search_results:
-          one: " containing the term <strong>'%{search_term}'</strong>"
-          other: " containing the term <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: My ballot
           voted_info:

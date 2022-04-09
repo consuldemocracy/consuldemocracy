@@ -22,21 +22,11 @@
   <% end %>
 
   <% if params[:search].present? || params[:advanced_search].present? %>
-    <div class="search-results-summary">
-      <div class="row">
-        <div class="small-12 column">
-          <h2><%= t("shared.search_results") %></h2>
-          <p>
-            <%= page_entries_info @investments %>
-            <% if params[:advanced_search].blank? %>
-              <%= sanitize(t("budgets.investments.index.search_results",
-                     count: @investments.size,
-                     search_term: params[:search])) %>
-             <% end %>
-          </p>
-        </div>
-      </div>
-    </div>
+    <%= render Shared::SearchResultsSummaryComponent.new(
+      results: @investments,
+      search_terms: params[:search],
+      advanced_search_terms: params[:advanced_search]
+    ) %>
   <% end %>
 
   <div class="row">
