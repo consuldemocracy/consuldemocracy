@@ -1,17 +1,13 @@
 <div class="search-results-summary">
-  <div class="row">
-    <div class="small-12 column">
-      <% if search_terms || advanced_search_terms %>
-        <h2><%= t("shared.search_results") %></h2>
-        <p>
-          <%= page_entries_info results %>
-          <% if advanced_search_terms.blank? %>
-            <%= summary %>
-          <% end %>
-        </p>
-      <% else %>
-        <%= content %>
+  <% if search_terms || advanced_search_terms %>
+    <h2><%= t("shared.search_results") %></h2>
+    <p>
+      <%= page_entries_info results %>
+      <% if advanced_search_terms.blank? %>
+        <%= summary %>
       <% end %>
-    </div>
-  </div>
+    </p>
+  <% else %>
+    <%= content %>
+  <% end %>
 </div>
