@@ -10,6 +10,10 @@ class Shared::SearchResultsSummaryComponent < ApplicationComponent
   private
 
     def summary
-      sanitize(t("proposals.index.search_results", count: results.size, search_term: search_terms))
+      sanitize(t(
+        "proposals.index.search_results",
+        count: results.size,
+        search_term: strip_tags(search_terms)
+      ))
     end
 end
