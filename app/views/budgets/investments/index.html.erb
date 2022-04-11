@@ -16,17 +16,14 @@
 <% end %>
 
 <main id="budget-investments-main">
-
-  <% unless params[:search].present? %>
-    <%= render "/budgets/investments/header" %>
-  <% end %>
-
-  <% if params[:search].present? || params[:advanced_search].present? %>
+  <% if @search_terms || @advanced_search_terms %>
     <%= render Shared::SearchResultsSummaryComponent.new(
       results: @investments,
-      search_terms: params[:search],
-      advanced_search_terms: params[:advanced_search]
+      search_terms: @search_terms,
+      advanced_search_terms: @advanced_search_terms
     ) %>
+  <% else %>
+    <%= render "/budgets/investments/header" %>
   <% end %>
 
   <div class="row">
