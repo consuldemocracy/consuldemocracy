@@ -34,6 +34,12 @@ RUN chmod 0440 /etc/sudoers.d/secure_path
 # Define where our application will live inside the image
 ENV RAILS_ROOT /var/www/consul
 
+# Define environment as production
+ENV RAILS_ENV production
+
+# Enable log to stdout
+ENV RAILS_LOG_TO_STDOUT enabled
+
 # Create application home. App server will need the pids dir so just create everything in one shot
 RUN mkdir -p $RAILS_ROOT/tmp/pids
 
@@ -50,8 +56,6 @@ COPY . .
 
 RUN cp config/database.yml.fake config/database.yml
 RUN cp config/secrets.yml.fake config/secrets.yml
-ENV RAILS_ENV production
-ENV RAILS_LOG_TO_STDOUT enabled
 RUN bundle exec rake assets:precompile
 
 # ENTRYPOINT ["./docker-entrypoint.sh"]

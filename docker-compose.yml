@@ -7,7 +7,7 @@ services:
     # see https://hub.docker.com/_/postgres/
     image: postgres:9.6.21
     environment:
-      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+      POSTGRES_PASSWORD: postgres
     # persist the database between containers by storing it in a volume
     volumes:
       - db_data:/var/lib/postgresql/data
@@ -36,10 +36,10 @@ services:
       - .:/var/www/consul
       - bundle:/usr/local/bundle
     environment:
-      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
-      - RAILS_ENV=development
-      # - RAILS_LOG_TO_STDOUT=enabled
-      # - RAILS_SERVE_STATIC_FILES=enabled
+      POSTGRES_PASSWORD: postgres
+      RAILS_ENV: development
+      # RAILS_LOG_TO_STDOUT: enabled
+      # RAILS_SERVE_STATIC_FILES: enabled
 volumes:
   db_data: {}
   bundle: {}
