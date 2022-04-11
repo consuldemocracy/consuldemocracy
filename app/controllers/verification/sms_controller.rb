@@ -44,7 +44,11 @@ class Verification::SmsController < ApplicationController
   private
 
     def sms_params
-      params.require(:sms).permit(:phone, :confirmation_code)
+      params.require(:sms).permit(allowed_params)
+    end
+
+    def allowed_params
+      [:phone, :confirmation_code]
     end
 
     def set_phone

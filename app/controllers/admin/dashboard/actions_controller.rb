@@ -54,14 +54,16 @@ class Admin::Dashboard::ActionsController < Admin::Dashboard::BaseController
     end
 
     def dashboard_action_params
-      params
-        .require(:dashboard_action)
-        .permit(
-          :title, :description, :short_description, :request_to_administrators, :day_offset,
-          :required_supports, :order, :active, :action_type, :published_proposal,
-          documents_attributes: document_attributes,
-          links_attributes: [:id, :label, :url, :_destroy]
-        )
+      params.require(:dashboard_action).permit(allowed_params)
+    end
+
+    def allowed_params
+      [
+        :title, :description, :short_description, :request_to_administrators, :day_offset,
+        :required_supports, :order, :active, :action_type, :published_proposal,
+        documents_attributes: document_attributes,
+        links_attributes: [:id, :label, :url, :_destroy]
+      ]
     end
 
     def dashboard_action

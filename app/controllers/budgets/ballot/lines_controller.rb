@@ -32,7 +32,11 @@ module Budgets
       private
 
         def line_params
-          params.permit(:investment_id, :budget_id)
+          params.permit(allowed_params)
+        end
+
+        def allowed_params
+          [:investment_id, :budget_id]
         end
 
         def load_budget

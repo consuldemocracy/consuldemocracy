@@ -40,11 +40,15 @@ module Admin::Widget::CardsActions
   private
 
     def card_params
-      params.require(:widget_card).permit(
+      params.require(:widget_card).permit(allowed_params)
+    end
+
+    def allowed_params
+      [
         :link_url, :button_text, :button_url, :alignment, :header, :columns,
         translation_params(Widget::Card),
         image_attributes: image_attributes
-      )
+      ]
     end
 
     def header_card?

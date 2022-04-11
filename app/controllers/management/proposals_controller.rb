@@ -50,10 +50,15 @@ class Management::ProposalsController < Management::BaseController
     end
 
     def proposal_params
+      params.require(:proposal).permit(allowed_params)
+    end
+
+    def allowed_params
       attributes = [:video_url, :responsible_name, :tag_list,
                     :terms_of_service, :geozone_id,
                     map_location_attributes: map_location_attributes]
-      params.require(:proposal).permit(attributes, translation_params(Proposal))
+
+      [*attributes, translation_params(Proposal)]
     end
 
     def resource_model

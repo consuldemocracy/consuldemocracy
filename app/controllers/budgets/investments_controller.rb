@@ -118,12 +118,17 @@ module Budgets
       end
 
       def investment_params
+        params.require(:budget_investment).permit(allowed_params)
+      end
+
+      def allowed_params
         attributes = [:heading_id, :tag_list, :organization_name, :location,
                       :terms_of_service, :related_sdg_list,
                       image_attributes: image_attributes,
                       documents_attributes: document_attributes,
                       map_location_attributes: map_location_attributes]
-        params.require(:budget_investment).permit(attributes, translation_params(Budget::Investment))
+
+        [*attributes, translation_params(Budget::Investment)]
       end
 
       def load_ballot

@@ -44,7 +44,11 @@ class Admin::Poll::Questions::Answers::VideosController < Admin::Poll::BaseContr
   private
 
     def video_params
-      params.require(:poll_question_answer_video).permit(:title, :url, :answer_id)
+      params.require(:poll_question_answer_video).permit(allowed_params)
+    end
+
+    def allowed_params
+      [:title, :url, :answer_id]
     end
 
     def load_answer

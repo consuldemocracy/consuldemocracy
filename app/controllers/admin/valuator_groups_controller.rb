@@ -45,6 +45,10 @@ class Admin::ValuatorGroupsController < Admin::BaseController
   private
 
     def group_params
-      params.require(:valuator_group).permit(:name)
+      params.require(:valuator_group).permit(allowed_params)
+    end
+
+    def allowed_params
+      [:name]
     end
 end

@@ -42,6 +42,10 @@ class Admin::MilestoneStatusesController < Admin::BaseController
     end
 
     def status_params
-      params.require(:milestone_status).permit([:name, :description])
+      params.require(:milestone_status).permit(allowed_params)
+    end
+
+    def allowed_params
+      [:name, :description]
     end
 end

@@ -92,19 +92,26 @@ class ProposalsController < ApplicationController
   private
 
     def proposal_params
+      params.require(:proposal).permit(allowed_params)
+    end
+
+    def allowed_params
       attributes = [:video_url, :responsible_name, :tag_list, :terms_of_service,
                     :geozone_id, :related_sdg_list,
                     image_attributes: image_attributes,
                     documents_attributes: document_attributes,
                     map_location_attributes: map_location_attributes]
       translations_attributes = translation_params(Proposal, except: :retired_explanation)
-      params.require(:proposal).permit(attributes, translations_attributes)
+
+      [*attributes, translations_attributes]
     end
 
     def retired_params
-      attributes = [:retired_reason]
-      translations_attributes = translation_params(Proposal, only: :retired_explanation)
-      params.require(:proposal).permit(attributes, translations_attributes)
+      params.require(:proposal).permit(allowed_retired_params)
+    end
+
+    def allowed_retired_params
+      [:retired_reason, translation_params(Proposal, only: :retired_explanation)]
     end
 
     def resource_model

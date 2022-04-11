@@ -37,7 +37,12 @@ class SDGManagement::LocalTargetsController < SDGManagement::BaseController
   private
 
     def local_target_params
+      params.require(:sdg_local_target).permit(allowed_params)
+    end
+
+    def allowed_params
       translations_attributes = translation_params(::SDG::LocalTarget)
-      params.require(:sdg_local_target).permit(:code, :target_id, translations_attributes)
+
+      [:code, :target_id, translations_attributes]
     end
 end
