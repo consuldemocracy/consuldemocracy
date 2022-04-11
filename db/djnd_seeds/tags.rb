@@ -1,0 +1,21 @@
+section "Creating Tags Categories" do
+    ActsAsTaggableOn::Tag.category.create!(name: "Društva")
+    ActsAsTaggableOn::Tag.category.create!(name: "Ekonomija")
+    ActsAsTaggableOn::Tag.category.create!(name: "Kultura")
+    ActsAsTaggableOn::Tag.category.create!(name: "Mediji")
+    ActsAsTaggableOn::Tag.category.create!(name: "Mladi")
+    ActsAsTaggableOn::Tag.category.create!(name: "Mobilnost")
+    ActsAsTaggableOn::Tag.category.create!(name: "Narava")
+    ActsAsTaggableOn::Tag.category.create!(name: "Okolje")
+    ActsAsTaggableOn::Tag.category.create!(name: "Politična participacija")
+    ActsAsTaggableOn::Tag.category.create!(name: "Pravičnost")
+    ActsAsTaggableOn::Tag.category.create!(name: "Prosti čas")
+    ActsAsTaggableOn::Tag.category.create!(name: "Socialne pravice")
+    ActsAsTaggableOn::Tag.category.create!(name: "Šport")
+    ActsAsTaggableOn::Tag.category.create!(name: "Trajnostni razvoj")
+    ActsAsTaggableOn::Tag.category.create!(name: "Transparentnost")
+    ActsAsTaggableOn::Tag.category.create!(name: "Varnost in izredne razmere")
+    ActsAsTaggableOn::Tag.category.create!(name: "Zaposlitev")
+    ActsAsTaggableOn::Tag.category.create!(name: "Zdravje")
+  end
+  
