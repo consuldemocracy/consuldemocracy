@@ -1,0 +1,198 @@
+sl-SI:
+  routes:
+    budgets: pp
+    investments: predlogi
+    account: racun
+    help: pomoc
+    sign_in: vpis
+    organizations: organizacije
+    users: uporabniki
+    sign_up: registracija
+    confirmation: potrditev
+    new: se-enkrat
+    password: geslo
+    edit: uredi
+  custom:
+    meta:
+      pp_name: Sodeluj in glasuj
+      place_name: Občina Medvode
+      guiding_questions: '<p><em>Zakaj ta predlog? Katero temo, težavo oz. izziv projektni predlog naslavlja?</em></p><p>&nbsp;</p><p><em>Kaj konkretno predlagate? Kaj je bistvo vašega predloga? Kaj se bo zgodilo?</em></p><p>&nbsp;</p><p><em>Kako naj bi se projekt izvedel? Katere aktivnosti bi bilo treba izpeljati?</em></p><p>&nbsp;</p><p><em>Kje konkretno naj bi se projekt izvajal?</em></p><p>&nbsp;</p><p><em>Časovni okvir: kdaj naj bi se projekt izvedel?</em></p><p>&nbsp;</p><p><em>Kaj bi se po izvedbi projekta spremenilo, izboljšalo?</em></p><p>&nbsp;</p><p><em>Kakšna je pričakovana vrednost (cena) predlaganega projekta?</em></p>'
+      tos: "pogoji-uporabe"
+    switcher:
+      select: "Izberi proračun"
+    social:
+      fb_desc: Sodeluj in glasuj - Participativni proračun občine Medvode
+      tw_desc: "Sodeluj in glasuj - Participativni proračun občine Medvode: "
+      email_desc: Oglej si predlog proračunske naložbe v projektu Sodeluj in glasuj - Participativni proračun občine Medvode
+    headings:
+      drafting: Osnutek (skrito javnosti)
+      informing: Informiranje
+      accepting: Predlagaj
+      reviewing: Pregled projektov
+      selecting: Izbor
+      valuating: Vrednotenje projektov
+      publishing_prices: Objavljeni so predlogi, ki so uvrščeni na glasovanje
+      balloting: Glasuj
+      reviewing_ballots: Pregled glasovanj
+      finished: Spremljaj
+      headings: Območja
+      headings_sidebar: "<li><h4>Polhograjci 1 (35.000 EUR)</h4>Topol pri Medvodah, Belo, Brezovica pri Medvodah, Tehovec, Trnovec, Setnica – del</li><li><h4>KS Medvode - center (37.000 EUR)</h4></li><li><h4>KS Pirniče (51.000 EUR)</h4>Verje, Zgornje Pirniče, Spodnje Pirniče, Vikrče, Zavrh pod Šmarno goro</li><li><h4>Preska (20.000 EUR)</h4></li><li><h4>KS Senica (17.000 EUR)</h4>Spodnja Senica, Zgornja Senica, Ladja</li><li><h4>KS Seničica – Golo Brdo (20.000 EUR)</h4>Seničica, Golo Brdo</li><li><h4>KS Smlednik (46.000 EUR)</h4>Smlednik, Valburga, Hraše, Dragočajna, Moše</li><li><h4>KS Sora (26.000 EUR)</h4>Sora, Rakovnik, Dol, Osolnik</li><li><h4>KS Vaše – Goričane (16.000 EUR)</h4>Vaše, Goričane</li><li><h4>KS Zbilje (11.000 EUR)</h4><li><h4>Polhograjci 2 (21.000 EUR)</h4>Studenčice, Žlebe</li>"
+      select_heading: Izberi območje
+      select_heading_to_vote: Da lahko glasuješ za projekte, moraš izbrati območje.
+      instructions: "Projektni predlog je upravičen za uvrstitev na glasovanje, če izpolnjuje naslednje kriterije:"
+      instructions_description: "<li>je skladen z zakonodajo in veljavnimi občinskimi akti,</li><li>je takšen, da je izvedba v pristojnosti Občine Medvode,</li><li>je namenjen splošni javni uporabi,</li><li>ni že uvrščen v proračun Občine Medvode oz. načrt razvojnih programov,</li><li>v zadnjih 5 letih ni bil sofinanciran s strani Občine Medvode na javnih razpisih,</li><li>je finančno ovrednoten med 3.000 in 20.000 EUR z vključenim DDV. V primeru, da je za posamezno območje na voljo manj kot 20.000 EUR, vrednost projekta na tem območju ne sme presegati dodeljenih sredstev za to območje.</li><li>je načrtovan v enem od 11 območij občine, opredeljenih za participativni proračun,</li><li>je načrtovan na zemljišču v javni lasti oz. na zasebnem zemljišču s soglasjem lastnika,</li><li>je izvedljiv v proračunskem obdobju 2021 ali 2022,</li><li>je oddan na predvidenem in v celoti izpolnjenem obrazcu (elektronsko ali fizično).</li>"
+      back_to_all_proposals: "Nazaj na seznam predlogov"
+    titles:
+      edit: Uredi predlog
+      investment_updated: Predlog uspešno posodobljen
+      added_proposals: Oddani predlogi
+      voted_proposals: Predlogi, uvrščeni na glasovanje
+      selected_proposals: Izbrani predlogi
+      finished_proposals: Izglasovani predlogi
+      denied_proposals: Neizbrani predlogi
+      register_with: Za registracijo izpolni ta obrazec
+      sign_in_with: Za vpis izpolni ta obrazec
+      about: O participativnem proračunu
+      anonymous_proposal: Anonimno oddan predlog
+    messages:
+      finished_accepting: Projektov ni več mogoče oddajati. Zdaj so v fazi pregleda.
+      finished_voting: Glasovanje je zaprto. Izglasovani projekti so trenutno v pregledu.
+      no_investments: Tukaj ni še nobenega predloga.
+      add_first_investment: Spiši prvega!
+      loser: Ta projekt ni bil izglasovan.
+    form:
+      submit_anonymously: Oddaj anonimno
+      submit_anonymously_explanation: S potrditvijo te zahteve se tvoje ime in priimek ne bosta izpisala ob predlogu, ki bo objavljen na spletni strani.
+      phone: Telefonska številka
+      address: Naslov stalnega prebivališča
+      name_and_last_name: Ime in priimek (uporabniško ime)
+      accept_terms: Strinjam se s %{conditions}
+      table_content: Vsebina
+      table_price: Znesek z DDV
+      table_total: Skupaj
+    presentation:
+      accepting:
+        title_1: Kakšen je proračun?
+        title_2: Kakšen naj bo predlog?
+        title_3: In če vse štima?
+      balloting:
+        title_1: Kaj?
+        title_2: Kdo?
+        title_3: Kako?
+      finished:
+        title_1: Kaj potem?
+        title_2: In moja vloga?
+        title_3: In nato?
+    about:
+      intro: "Participativni proračun je sistem razporejanja dela proračunskega denarja tako, da o njegovi porabi soodločajo občanke in občani. Sami predlagajo projekte in določijo, kateri so najnujnejši in bi največ prispevali k izboljšanju kakovosti bivanja v skupnosti."
+      main_title: Kako deluje?
+      heading_1: Zbiranje predlogov
+      description_1: "Občanke in občani predloge projektov oddajo med 22. 6. in 13. 7. 2020. Posamezni predlog projekta mora biti v skladu s predpisanimi pogoji, njegova vrednost pa ne sme biti nižja od 5.000 in višja od 20.000 €. Predlog projekta lahko oddajo prek spleta, elektronske pošte ali na obrazcu v vložišču MOK ali na sedežih krajevnih skupnosti."
+      date_1: 22. 6. - 13. 7. 2020
+      heading_2: Pregled predlogov
+      description_2: "Vse oddane predloge projektov pregleda komisija, jih finančno ovrednoti in preveri, ali so izvedljivi, skladni z zakonodajo, znotraj geografskega območja in časovnice izvajanja participativnega proračuna ter v skladu s pravili o vrednosti predlogov in drugimi predpisanimi pogoji. Komisija lahko podobne predloge združi."
+      date_2: 14. 7. - 20. 8. 2020
+      heading_3: Glasovanje
+      description_3: "Glasovanje bo potekalo med 14. in 21. 9. 2020 prek spleta ali v prostorih občine Medvode in na sedežih krajevnih skupnosti. Sodeluje lahko vsaka občanka ali občan s stalnim bivališčem v Mestni občini Medvode, ki je dopolnil/-a 15 let. Glasuje se tako, da občan/-ka v izbranem območju razdeli predvidenih 160.000 € sredstev, namenjenih območju, med projekte, za katere si želi, da bi bili izvedeni."
+      date_3: 14. 9. - 21. 9. 2020
+      heading_4: Razglasitev rezultatov
+      description_4: "Po končanem glasovanju bo občina preverila rezultate in razglasila izglasovane projekte. Izglasovane projekte bo župan vključil v predlog proračuna občine Medvode za leti 2021 in 2020."
+      date_4: 25. 9. 2020
+      heading_5: Spremljanje izvedbe
+      description_5: " Vsi izglasovani projekti bodo izvedeni v letih 2021 in 2022. V tej fazi participativnega proračuna bomo skrbeli za ažurno obveščanje o napredovanju izvedbe projektov in sprotno posodabljanje njihovega statusa."
+    help:
+      main_title: "Pogosta vprašanja"
+      heading_1: "Potrebujem telefonsko številko in dostop do interneta, da lahko sodelujem?"
+      description_1: "Za kreiranje uporabniškega računa na spletnem orodju potrebuješ telefonsko številko, e-naslov in internetno povezavo, vse funkcionalnosti lahko opraviš tudi na občini in sedežih krajevnih skupnosti."
+      heading_2: "Kako ustvarim in potrdim svoj račun?"
+      description_2: "Račun ustvariš tako, da v nogi spletnega mesta klikneš na gumb Registracija, klik na kateri koli gumb za akcijo te prav tako pripelje do istega spletnega obrazca. Za kreiranje uporabniškega računa moraš vpisati uporabniško ime, e-naslov, naslov stalnega prebivališča, telefonsko, EMŠO in geslo. Po kreiranju računa ga moraš potrditi s klikom na povezavo v e-pošti, ki jo bomo poslali na tvoj e-naslov."
+      heading_3: "Kako lahko ustvarim nov predlog?"
+      description_3: "Predlog projekta ustvariš v okviru spletnega orodja, oddaš ga lahko tudi na fizičnem obrazcu osebno v vložišču občine Medvode ali sedežih krajevnih skupnosti v času uradnih ur ali izpolnjenega pošlješ na elektronski naslov obcina@Medvode.si."
+      heading_4: "Pozabil/-a sem svoje geslo. Kaj lahko storim?"
+      description_4: "Klikni na gumb Prijava, nato izberi povezavo Pozabljeno geslo. Na svoj elektronski naslov boš prejel/-a navodila, kako ustvariti novo geslo."
+      heading_5: "Kako lahko spremenim svoj e-naslov, uporabniško ime in / ali geslo?"
+      description_5: "V nogi spletnega mesta klikni na gumb Moj račun, kjer lahko spremeniš vse svoje podatke."
+      help_title: "Potrebuješ pomoč?"
+      technical_issues: "Imaš tehnične težave?"
+      technical_contact: 'Kontaktiraj upravljalca aplikacije na <a href="mailto:consul@djnd.si">consul@djnd.si</a>.'
+      other_questions: "Imaš kakršno koli drugo vprašanje?"
+      other_contact: 'Kontaktiraj predstavnike občine Medvode na <a href="mailto:predlagam-odlocam@Medvode.si">predlagam-odlocam@Medvode.si</a>.'
+    terms:
+      main_title: "Pogoji uporabe"
+      active_use: "Aktivna uporaba spletnega orodja se ureja s spodnjimi pogoji za uporabo, zato se morajo vsi, ki želijo aktivno sodelovati, registrirati, za kar se bo zahtevalo sprejetje teh pogojev uporabe."
+      changes: "si pridržuje pravico, da te pogoje uporabe spremeni, najnovejša različica pa bo objavljena na tej spletni strani."
+      about_title: "O orodju"
+      about_intro: "Spletno orodje vzpodbuja državljansko participacijo in omogoča odprto, transparentno ter demokratično vodenje na občinski in državni ravni. Aplikacija gradi na osnovi odprtokodne platforme Consul, ki je nastala pod okriljem občine Madrid, za potrebe slovenskih občin pa so jo prilagodili na inštitutu Danes je nov dan."
+      registration_title: "Registracija"
+      registration_intro_first: "Le registrirani uporabniki lahko oddajo predloge projektov, komentirajo in glasujejo za oddane projekte."
+      registration_intro_second: "Neregistrirani uporabniki lahko prosto spremljajo objavljene vsebine, ne morejo pa oddajati predlogov projektov, o njih glasovati ali sodelovati v debatah."
+      registration_requirements: "Uporabnik/-ca mora ob registraciji navesti:"
+      email: "elektronski naslov"
+      username: "uporabniško ime"
+      emso: "EMŠO"
+      registration_activation: "Ob potrditvi aktivacijskega elektronskega sporočila, ki ga uporabnik prejme na svoj elektronski naslov, se aktivira uporabniški račun. Kreiranje več uporabniških računov s strani enega uporabnika je prepovedano."
+      registration_failure: "Če uporabnik/-ca katerega izmed navedenih podatkov ne posreduje, mu je onemogočeno uspešno dokončanje registracije in posledično ne more uporabljati spletne platforme."
+      registration_cancel: 'Uporabnik/-ca lahko kadarkoli prekliče svojo registracijo tako, da moderatorju orodja na e-poštni naslov consul@djnd.si pošlje zahtevo za izbris profila iz evidence uporabnikov. Po potrditvi preklica registracije bo upravljalec orodja Danes je nov dan iz evidence uporabnikov izbrisal vse osebne podatke. Kljub izbrisu osebnih podatkov uporabnika se predlogi, komentarji in podatki o glasovanjih hranijo, a so pripisani "izbrisanemu uporabniku".'
+      rules_title: "Sprejem pravil"
+      rules_intro: "Ob registraciji mora uporabnik/-ca sprejeti pravila sodelovanja in uporabe spletnega orodja."
+      rules_promise: "S sprejemom pravil se uporabnik/-ca najprej zaveže, da bo ob podajanju in komentiranju predlogov spoštoval ustavo in zakone Republike Slovenije, kar zlasti pomeni, da:"
+      rules_promise_first: "ne bo objavljal vsebin, ki bi spodbujale k spolni, rasni, narodnostni ali verski nestrpnosti ali h kakršnikoli obliki diskriminacije na podlagi osebnih okoliščin posameznikov;"
+      rules_promise_second: "ne bo objavljal vsebin, ki bi kršile ali posegale v osebnostne pravice tretjih oseb;"
+      rules_promise_third: "ne bo objavljal slik ali fotografij, ki so v lasti tretjih oseb ali uporabljajo podatke tretjih oseb, ne da bi pri tem dobil ustrezno soglasje lastnikov in tretjih oseb;"
+      rules_promise_fourth: "ne bo objavljal groženj, ne bo se izražal slabšalno, prostaško, poniževalno ali žaljivo;"
+      rules_promise_fifth: "ne bo objavljal avtorskih del, za katere nima avtorskih pravic, in orodja ne bo uporabil za distribuiranje avtorsko zaščitenih vsebin ali vsebin, ki so v lasti druge pravne ali fizične osebe."
+      punishment: "Kršitev zgoraj omenjenih pravil se kaznuje z začasno omejitvijo delovanja uporabnika/-ce, prekinitvijo uporabniškega računa in / ali izbrisom vsebine."
+      use_title: "Raba portala"
+      use_intro: "Aplikacija omogoča direktno soodločanje o delu občinskega proračuna. Uporabniki in uporabnice lahko oddajajo, podpirajo in glasujejo o predlogih za projekte, jih komentirajo in spremljajo njihov razvoj. Sodeluje lahko vsak prebivalec ali prebivalka občine, ki je star/-a vsaj 14 let in se je registriral/-a na spletnem orodju, za aktivnosti mladoletnikov so odgovorni starši ali skrbniki. Ni omejitev glede števila oddanih predlogov ali komentarjev, število glasov pa je omejeno z višino participativnega proračuna."
+      use_list: "Uporabniku/-ci portal omogoča:"
+      use_list_first: "Oddajo predlogov"
+      use_submit: "Za oddajo predloga mora uporabnik/-ca obvezno določiti naslov predloga projekta, opis, doda pa lahko še sliko predloga, lokacijo predloga, dokumente. Po oddaji predloga je ta avtomatsko sprejet in se prikaže na portalu. Uporabnik/-ca lahko predlog deli z drugimi na socialnih omrežjih, preko emaila ali s skrajšano povezavo."
+      voting_title: "Glasovanje za predloge"
+      voting_intro: "Uporabnik/-ca lahko glasuje za predloge drugih uporabnikov. Za en predlog lahko glasuje le enkrat. Za glasovanje ima na voljo celoten participativni proračun, z vsakim glasom pa se znesek manjša. Uporabnik/-ca lahko posameznemu predlogu v fazi zbiranja glasov tudi odvzame glas."
+      commenting_title: "Komentiranje predlogov"
+      commenting_intro: "Vsak predlog je lahko komentiran s strani registriranih uporabnikov."
+      following_title: "Spremljanje izbranih predlogov"
+      following_intro: "V zadnji fazi orodje omogoča spremljanje rezultatov izvedbe."
+      data_protection_title: "Varstvo osebnih podatkov"
+      data_protection_intro: "Vaš elektronski naslov in EMšO uporabljamo le za potrebe izvedbe participativnega proračuna v občini "
+      data_protection_second: 'Osebnih podatkov, pridobljenih preko registracijskega formularja na spletni platformi URL bomo uporabljali izključno v namene izvedbe participativnega proračuna v naši občini in ga ne bomo posredovali v uporabo tretjim osebam, razen če bi od nas to zahteval zakon. Pri upravljanju spletnega orodja sodelujemo z  </span><a href="https://danesjenovdan.si/">Danes je nov dan, Inštitutom za druga vprašanja</a>, ki nastopa v vlogi t. i. »pogodbenega obdelovalca« oziroma »obdelovalca« teh podatkov. Pogodbeno je zavezan, da vaše osebne podatke uporablja izključno v imenu občine, ter da zagotavlja njegovo varstvo v skladu z vsakokratnimi veljavnimi predpisi in našimi navodili.'
+      data_protection_edit: "Svoje podatke, vnesene ob registraciji, lahko preverite, spreminjate oziroma dopolnite v svojem profilu, v katerega lahko vstopite po uspešno izvedeni prijavi. V svojem profilu lahko tudi izberete, ali želite na svoj elektronski naslov prejemati različna obvestila."
+      cookies_title: "Piškotki"
+      cookies_intro: "Uporabljamo samo piškotke, ki so nujni za delovanje spletnega mesta."
+      ip_title: "Intelektualna lastnina"
+      ip_intro: 'Vsa koda potrebna za delovanje spletne strani je odprta in dostopna vsakomur. Kodo lahko vsakdo uporablja brezplačno pod pogoji licence <a href="https://github.com/danesjenovdan/consul/blob/master/LICENSE-AGPLv3.txt">AGPLv3</a>.'
+      responsibilities_title: "Omejitev odgovornosti"
+      responsibilities_intro: "Uporabniki/-ce spletnega orodja uporabljajo spletno orodje, njene dele in vsebine izključno na lastno odgovornost."
+      responsibilities_long: " ne prevzema odgovornosti za kakršnokoli direktno ali indirektno vrsto polemike, spora in / ali pravdnega postopka, ki bi lahko nastal zaradi objave ali razširjanja vsebine, za katero ni bilo pridobljeno dovoljenje s strani zakonitih lastnikov. Prav tako ne odgovarja za škodo, ki bi nastala zaradi uporabe spletnega orodja, kot tudi ne jamči za uspešnost uporabe spletnega orodja. V nobenem primeru ne odgovarja za kakršnokoli škodo, ki bi izvirala iz uporabe oziroma nezmožnosti uporabe spletnega orodja, vključno s škodo zaradi izgubljenega prihodka ali pričakovanega dobička, izgube ali okrnitve dobrega imena, izgube poslov ali izgube podatkov."
+      responsibilities_short: "Vsaka kršitev pravic intelektualne ali industrijske lastnine je odgovornost osebe, ki je zagotovila vsebino."
+      responsibilities_also: " prav tako ni odgovorna za vsebine:"
+      responsibilities_also_first: "ki spodbujajo k spolni, rasni, narodnostni ali verski nestrpnosti ali h kakršnikoli obliki diskriminacije na podlagi osebnih okoliščin posameznikov;"
+      responsibilities_also_second: "ki kršijo ali posegajo v osebnostne pravice tretjih oseb, so v lasti tretjih oseb ali uporabljajo podatke tretjih oseb, ne da bi pri tem obstajalo ustrezno soglasje lastnikov in tretjih oseb;"
+      responsibilities_also_third: "ki so grožnje, slabšalne, prostaške, poniževalne ali žaljive;"
+      responsibilities_also_fourth: "ki so avtorska dela, za katere uporabnik/-ca nima avtorskih pravic. Vsaka kršitev pravic intelektualne ali industrijske lastnine je odgovornost osebe, ki zagotavlja vsebino."
+      trying: " se bo trudila, da bi tovrstne vsebine kar najhitreje umaknila s spletnega orodja in proti uporabnikom uvedla ustrezne sankcije."
+      in_case_first: "V primeru kakršnega koli spora med uporabniki spletnega orodja in / ali tretjo osebo je "
+      in_case_second: " izvzeta iz kakršnekoli odgovornosti za pravdne zahtevke, zahtevke za odškodnine ali odškodnine kakršne koli narave, povezane z vsebinami na spletnem orodju in / ali nastalimi v sodnem postopku."
+      terms_first_checkbox: "obdeluje moje osebne podatke (ime in priimek, naslov stalnega prebivališča, e-naslov, telefonska številka) za namen izvedbe projekta Predlagam - odločam v dokumentarni zbirki MOK,"
+      terms_second_checkbox: "Do morebitnega preklica izrecno, prostovoljno, brezpogojno in jasno dovoljujem, da Občina Medvode obdeluje moje osebne podatke za namen izvedbe projekta Sodeluj in glasuj."
+      terms_checkboxes_text: "Do morebitnega preklica izrecno, prostovoljno, brezpogojno in jasno dovoljujem, da Mestna občina Medvode:"
+    classes:
+      footer_logo: Medvode
+    statuses:
+      title: 'Izberi status predloga'
+      waiting: 'Čaka na izvedbo'
+      doing: 'Se izvaja'
+      done: 'Izveden'
+      nil: 'Ni statusa'
+    errors:
+      data_consent: "Za nadaljevanje se moraš strinjati z obdelavo podatkov."
+      price: "Polje vrednost projekta ne sme biti prazen."
+  activerecord:
+    attributes:
+      budget/investment:
+        q1: "Zakaj ta predlog? Katero temo, težavo oz. izziv projektni predlog naslavlja?"
+        q2: "Kaj konkretno predlagate? Kaj je bistvo vašega predloga? Kaj se bo zgodilo?"
+        q3: "Kako naj bi se projekt izvedel? Katere aktivnosti bi bilo treba izpeljati?"
+        q4: "Naselje izvajanja projekta. Kje konkretno naj bi se projekt izvajal? Navedite parcelne številke. Če gre za parcele v zasebni lasti, priložite soglasje lastnika."
+        q5: "Časovni okvir: kdaj naj bi se projekt izvedel? Navedite v primeru, da je iz objektivnih razlogov ta podatek pomemben, sicer se bo projekt izvedel enkrat v časovnem obdobju med 1. 7. 2021 in 31. 12. 2022."
+        q6: "Ali ste pridobili tudi dodatne vire financiranja projekta (npr. krajevna ali vaška skupnost, sponzorstva, ipd.), od koga in koliko? V primeru, da predlagatelj pridobi zunanje vire financiranja, skupna vrednost projekta lahko presega finančne omejitve. Prosimo, da v prilogo priložite izjave sofinancerjev. Opišite tudi morebitna dela, ki ste jih vi ali kdo drug v sklopu tega projekta pripravljeni izvesti brezplačno."

@@ -1,0 +1,19 @@
+<% if user_signed_in? %>
+  <li class="inline-block">
+    <%= layout_menu_link_to t("layouts.header.my_account_link"),
+                            account_path,
+                            controller_name == 'account',
+                            rel: "nofollow",
+                            title: t("shared.go_to_page") +
+                              t("layouts.header.my_account_link") %>
+  </li>
+  <li class="inline-block">
+    <%= link_to t("devise_views.menu.login_items.logout"),
+                destroy_user_session_path, rel: "nofollow", method: :delete, class: "action-button" %>
+  </li>
+<% else %>
+  <li class="inline-block">
+    <%= link_to t("devise_views.menu.login_items.login"),
+                new_user_session_path, rel: "nofollow", class: "action-button" %>
+  </li>
+<% end %>

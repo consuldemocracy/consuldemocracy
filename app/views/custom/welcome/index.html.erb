@@ -1,0 +1,59 @@
+<% content_for :body_class, "home-page" %>
+
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: root_url %>
+<% end %>
+
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags", social_url: root_url %>
+<% end %>
+
+<main>
+  <article class="welcome-columns">
+    <% if current_budget.present? %>
+      <% current_budget.custom_phases(current_user, create_url = method(:budget_investments_url)).each do |_, phase| %>
+        <% if phase.enabled %>
+          <section class="welcome-column <%= phase.kind %> <% if phase.url %> hoverlinkable <% end %> ">
+            <% if phase.url %>
+              <a class="linkable" href="<%= phase.url %>">
+            <% end %>
+            <div class="phase-enrichment-holder">
+              <div class="phase-enrichment <%= phase.kind %>"></div>
+            </div>
+            <div class="column-content">
+              <h1><%= t("custom.headings.#{phase.kind}") %></h1>
+              <h2><%= strip_tags(phase.summary) %></h2>
+              <% unless phase.url %>
+                <div class="abtom4">
+                 <div class="large-description"><%= sanitize_and_auto_link phase.description %></div>
+                  <div class="large-description"><%= sanitize_and_auto_link phase.summary %></div>
+                  <% if phase.description %>
+                    <div class="large-description"><%= sanitize_and_auto_link phase.description %></div>
+                  <% else %>
+                    <p class="large-description">&nbsp;</p>
+                  <% end %>
+                </div>
+              <% end %>
+              <% if phase.url %>
+                <div class="abtom4">
+                <span class="action-button large">
+                  <%= t("devise_views.sessions.new.submit") %>&nbsp;<i class="custom-icon arrow-small-right"></i>
+                </span>
+                </div>
+              <% end %>
+            </div>
+            <% if phase.url %>
+              </a>
+            <% end %>
+          </section>
+        <% end %>
+      <% end %>
+    <% else %>
+      <section class="welcome-column">
+        <div class="no-budget">
+          <%= image_tag(image_path_for("vote.png")) %>
+        </div>
+      </section>
+    <% end %>
+  </article>
+</main>

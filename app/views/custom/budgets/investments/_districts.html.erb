@@ -1,0 +1,42 @@
+<div class="districts-container">
+  <select onchange="if (this.value) location = this.value;" class="on-view">
+    <option value="<%= budget_investments_url(@budget, request.query_parameters.except(:heading_id)) %>"><%= t("custom.headings.select_heading").mb_chars.upcase %></option>
+    <% @budget.headings.order('id ASC').each do |heading| %>
+    <%= selected = ' selected' if params[:heading_id] == heading.to_param %>
+    <option value="<%= budget_investments_url(@budget, { heading_id: heading.to_param }) %>" <%= selected %>><%= heading.name %></option>
+    <% end %>
+  </select>
+  <div class="districts-info">
+    <ul>
+      <%= t('custom.headings.headings_sidebar').html_safe %>
+    </ul>
+  </div>
+</div>
+
+<style>
+.districts-container {
+  position: relative;
+  display: inline-block;
+}
+.districts-info {
+  z-index: 1;
+  display: block;
+  position: absolute;
+  background: #ffffff;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.21);
+  margin: 10px;
+  top: 40px;
+  left: -9px;
+  width: 300px;
+  display: none;
+}
+.districts-container:hover .districts-info {
+  display: block;
+}
+@media (max-width: 757px) {
+  .districts-info {
+    left: 0;
+  }
+}
+</style>

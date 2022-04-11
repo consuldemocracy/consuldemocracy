@@ -1,0 +1,117 @@
+<div class="main-indented-content">
+  <div class="expanded">
+
+    <% if current_budget.phase == 'reviewing' %>
+      <div class="row">
+        <div class="callout warning">
+          <%= t("custom.messages.finished_accepting") %>
+        </div>
+      </div>
+    <% elsif current_budget.phase == 'reviewing_ballots' %>
+      <div class="row">
+        <div class="callout warning">
+          <%= t("custom.messages.finished_voting") %>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="row phase-description qs">
+      <div class="medium-6 column">
+        <h1>
+          <%= t("custom.headings.#{current_budget.phase}") %>
+        </h1>
+        <h2>
+          <% if current_budget.current_phase.summary %>
+            <%= strip_tags(current_budget.current_phase.summary.html_safe) %>
+          <% end %>
+        </h2>
+        <p class="large-description">
+          <% if current_budget.current_phase.summary %>
+            <%= current_budget.current_phase.description.html_safe %>
+          <% end %>
+        </p>
+        <% if current_budget.phase == 'accepting' %>
+          <% if current_user %>
+            <% if current_user&.level_two_or_three_verified? %>
+              <%= link_to new_budget_investment_path(budget_id: @budget.id), class: 'action-button large w485' do %>
+                <%= t("budgets.investments.index.sidebar.create") %>&nbsp;<i class="custom-icon arrow-small-right"></i>
+              <% end %>
+            <% else %>
+              <div class="callout warning">
+                <%= link_to verification_path, class: 'action-button large w485' do %>
+                  <%= t("budgets.investments.index.sidebar.create") %>&nbsp;<i class="custom-icon arrow-small-right"></i>
+                <% end %>
+              </div>
+            <% end %>
+          <% else %>
+            <%= link_to new_budget_investment_path(budget_id: @budget.id), class: 'action-button large w485' do %>
+              <%= t("budgets.investments.index.sidebar.create") %>&nbsp;<i class="custom-icon arrow-small-right"></i>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="medium-6 column">
+        <div class="phase-enrichment-holder">
+          <div class="phase-enrichment <%= current_budget.phase %>"></div>
+        </div>
+      </div>
+    </div>
+
+    <% unless can? :show, @ballot %>
+      <div class="horizontal-line"></div>
+    <% end %>
+  </div>
+</div>
+
+<% if @heading && current_budget.phase == 'balloting' %>
+  <div class="bgfaf" id="bgfaf">
+    <div class="main-indented-content">
+      <section class="no-margin-top margin-bottom">
+        <div class="expanded budget-heading padding">
+
+          <div class="row progress-votes">
+            <div class="row">
+              <div class="small-12 column">
+                <% if @ballot.valid_heading?(@heading) %>
+                  <div class="progress-bar-nav" data-fixed-bar>
+                    <% if @budget.headings.count > 1 %>
+                      <h2>
+                        <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
+                      </h2>
+                    <% elsif @budget.headings.count == 1 %>
+                      <h2>
+                        <%= t("budgets.investments.index.by_heading_single") %>
+                      </h2>
+                    <% end %>
+                    <div id="progress_bar" class="no-margin-top clearfix">
+                      <%= render 'budgets/ballot/progress_bar' %>
+                    </div>
+                  </div>
+                <% else %>
+                  <% if @budget.headings.count > 1 %>
+                    <h2>
+                      <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
+                    </h2>
+                  <% elsif @budget.headings.count == 1 %>
+                    <h2>
+                      <%= t("budgets.investments.index.by_heading_single") %>
+                    </h2>
+                  <% end %>
+                  <div class="small-12 medium-9">
+                    <div class="callout warning margin-top">
+                      <%= sanitize(t("budgets.investments.header.different_heading_assigned", heading_link: heading_link(@assigned_heading, @budget))) %>
+                      <br>
+                      <small>
+                        <%= t("budgets.investments.header.change_ballot", heading_link: heading_link(@assigned_heading, @budget)).html_safe %>
+                      </small>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+<% end %>

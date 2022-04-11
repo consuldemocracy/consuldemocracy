@@ -1,0 +1,25 @@
+<div class="budget-investment-new row">
+  <div class="small-12 medium-7 medium-centered">
+    <div class="row">
+      <div class="small-12 medium-7 column form">
+        <%= link_to budget_investments_path(@budget), class: "back" do %>
+          <i class="custom-icon arrow-small-left"></i>&nbsp;<span class="text"><%= t("shared.back") %></span>
+        <% end %>
+
+        <h2><%= t("management.budget_investments.create") %></h2>
+
+        <%= render "/budgets/investments/form", form_url: budget_investments_path(@budget) %>
+      </div>
+      <div class="small-12 medium-5 column sidebar">
+        <h3><%= t("custom.headings.instructions") %></h3>
+        <ul class="custom-list recommendations">
+          <%= raw t("custom.headings.instructions_description") %>
+        </ul>
+        <h3><%= t("custom.headings.headings") %></h3>
+        <ul class="custom-list recommendations">
+          <%= raw t("custom.headings.headings_sidebar") %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

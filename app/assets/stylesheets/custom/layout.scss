@@ -1,0 +1,400 @@
+// Table of Contents
+//
+// 01. Global styles
+// 02. Header
+// 03. Footer
+
+// 01. Global styles
+// -----------------
+
+::selection {
+  color: #fff;
+  background-color: $brand;
+}
+
+:focus {
+  outline: 0;
+}
+
+html {
+  height: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-size: $base-font-size;
+  position: relative;
+}
+
+@media screen and (max-width: 800px) {
+  // TODO: double check
+  body {
+    font-size: 12px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both;
+  font-weight: 700;
+}
+
+h1 {
+  line-height: 1em;
+}
+
+h2 {
+  font-weight: 600;
+}
+
+h3 {
+  line-height: rem-calc(24);
+}
+
+p {
+  font-size: $small-font-size;
+  font-weight: 400;
+  line-height: $line-height;
+}
+
+a {
+  color: $link;
+
+  &:hover,
+  &:active {
+    color: $link-hover;
+  }
+
+  &:focus {
+    color: $link-hover;
+  }
+}
+
+
+
+.main-indented-content {
+  margin: rem-calc(20) auto;
+  padding: 0 0.625rem;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .main-indented-content {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-indented-content {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .main-indented-content {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-indented-content {
+    max-width: 1140px;
+  }
+}
+
+
+.row {
+  max-width: 100%;
+}
+
+.button {
+  background: $brand;
+  font-size: $base-font-size;
+
+  &:hover {
+    text-decoration: none !important;
+  }
+
+  &.warning,
+  &.warning:hover {
+    color: #000;
+  }
+
+  &.medium {
+    font-size: $small-font-size;
+  }
+}
+
+.button.hollow {
+  border: 1px solid $link;
+  color: $link;
+}
+
+.button.hollow.error {
+  border-color: $alert-border;
+  color: $color-alert;
+}
+
+.postfix.button {
+  padding: 0;
+}
+
+.action-button {
+  //background-color: $mandys-pink;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: rem-calc(22);
+  font-weight: 700;
+
+  &:hover {
+    //background-color: $mandys-pink-hover;
+  }
+
+  &.transparent {
+    //background-color: transparent;
+    border: 1px solid $mandys-pink;
+
+    &:hover {
+      //background-color: $mandys-pink-hover;
+    }
+  }
+
+  &.small {
+    padding: rem-calc(5) rem-calc(16);
+  }
+
+  &.large {
+    padding: rem-calc(11) rem-calc(16);
+  }
+
+  &.huge {
+    font-size: rem-calc(24);
+    font-weight: 700;
+    padding: rem-calc(15) rem-calc(20);
+  }
+
+  &.circled {
+    height: rem-calc(24);
+    width: rem-calc(24);
+  }
+}
+
+.large-description,
+.large-description p {
+  font-size: $large-font-size;
+}
+
+.ordering {
+  clear: both;
+  margin-bottom: $line-height / 2;
+
+  li {
+    margin-right: rem-calc(20);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    color: $black;
+    display: inline-block;
+    font-size: $base-font-size;
+    font-weight: 600;
+    position: relative;
+    text-align: left;
+    text-transform: uppercase;
+
+    span {
+      color: $black;
+    }
+  }
+
+  .is-active {
+    .triangle-down {
+      border-top: 11px solid $mandys-pink;
+    }
+  }
+}
+
+// ---------
+
+.clear {
+  clear: both;
+}
+
+.inline {
+  display: inline !important;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.aling-middle {
+  vertical-align: middle;
+}
+
+.float-right-medium {
+
+  @include breakpoint(medium) {
+    float: right !important;
+  }
+}
+
+
+.wrapper {
+  // height: 100%;
+  header {
+    padding-bottom: 1.5rem;
+    margin-bottom: 0;
+  }
+}
+
+.push {
+  clear: both;
+}
+
+.footer {
+  bottom: 0;
+  left: 0;
+  position: relative;
+  right: 0;
+  width: 100%;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+// 02. Header
+// ----------
+
+header {
+  background: $white;
+}
+
+.top-bar {
+  background: $mandys-pink !important;
+  color: $rhino;
+  padding: rem-calc(4.5) 20px;
+}
+
+
+
+// 03. Footer
+// ----------
+
+
+footer {
+  background-color: $input-gray;
+  color: $black;
+  font-size: $tiny-font-size;
+  height: rem-calc(100);
+
+  .logo-holder {
+    padding-left: rem-calc(80px);
+  }
+
+  .links-holder {
+    padding-right: rem-calc(20);
+    text-align: right;
+  }
+
+  .logo-right {
+    text-align: right;
+    background-position: right center;
+  }
+
+  .logo {
+    background: image-url("municipalities/default.png") no-repeat;
+    background-size: 119px 61px;
+    display: block;
+    height: rem-calc(61);
+    margin-top: rem-calc(22);
+    width: 119px;
+
+    &.default {
+      background: image-url("municipalities/default.png") no-repeat;
+      background-size: 119px 61px;
+    }
+  }
+
+  .logo-djnd {
+    background: image-url("djnd.png") no-repeat;
+    background-size: 119px 61px;
+    background-position: right;
+    display: block;
+    height: rem-calc(61);
+
+    &.default {
+      background: image-url("djnd.png") no-repeat;
+      background-size: 119px 61px;
+    }
+  }
+
+  .footer-links {
+    margin-top: rem-calc(40);
+  }
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (min--moz-device-pixel-ratio: 1.5),
+  only screen and (min-resolution: 240dpi) {
+    .logo {
+      background: image-url("municipalities/default@2x.png") no-repeat;
+      background-size: 119px 61px;
+
+      &.default {
+        background: image-url("municipalities/default@2x.png") no-repeat;
+        background-size: 119px 61px;
+      }
+    }
+
+    .logo-djnd {
+      background: image-url("djnd.png") no-repeat;
+      background-size: 119px 61px;
+
+      &.default {
+        background: image-url("djnd.png") no-repeat;
+        background-size: 119px 61px;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .logo-djnd {
+      background-position: center;
+    }
+  }
+
+  a,
+  a:active,
+  a:focus {
+    color: $text;
+
+    &:hover {
+      color: $link-hover;
+    }
+  }
+}
+
+a {
+  text-decoration: none !important;
+}
+.home-page footer {
+  background-color: $white;
+}
+
+body > header, .wrapper > header {
+  padding-left: 0;
+  padding-right: 0;
+}

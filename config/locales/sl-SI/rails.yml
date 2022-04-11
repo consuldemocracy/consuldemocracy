@@ -1,4 +1,4 @@
-sl:
+sl-SI:
   date:
     abbr_day_names:
       - Ned
@@ -23,27 +23,36 @@ sl:
       - Nov
       - Dec
     day_names:
-      - Nedelja
-      - Ponedeljek
-      - Torek
-      - Sreda
-      - Četrtek
-      - Petek
-      - Sobota
+    - Nedelja
+    - Ponedeljek
+    - Torek
+    - Sreda
+    - Četrtek
+    - Petek
+    - Sobota
+    formats:
+      default: "%d. %m. %Y"
+      long: "%B %d, %Y"
+      short: "%b %d"
+      shortish: "%d. %B"
     month_names:
-      - 
-      - Januar
-      - Februar
-      - Marec
-      - April
-      - Maj
-      - Junij
-      - Julij
-      - Avgust
-      - September
-      - Oktober
-      - November
-      - December
+    -
+    - januar
+    - februar
+    - marec
+    - april
+    - maj
+    - junij
+    - julij
+    - avgust
+    - september
+    - oktober
+    - november
+    - december
+    order:
+    - :leto
+    - :mesec
+    - :dan
   datetime:
     distance_in_words:
       half_a_minute: pol minute
@@ -56,8 +65,8 @@ sl:
       year: Leto
   errors:
     messages:
-      accepted: mora biti sprejet
-      blank: ne sme biti prazen
+      accepted: Za nadaljevanje moraš sprejeti politiko zasebnosti in pogoje uporabe.
+      blank: To polje ne sme biti prazno.
       present: mora biti prazen
       confirmation: ne ustreza %{attribute}
       empty: ne more biti prazen
@@ -75,7 +84,26 @@ sl:
       not_an_integer: mora biti celo število
       odd: mora biti liho
       required: mora obstajati
-      taken: je že zasedeno
+      taken: Ni na voljo.
+      too_long:
+        one: je predolg (največ 1 znak)
+        two: je predolg (največ 2 znaka)
+        three: je predolg (največ 3 znaki)
+        four: je predolg (največ 4 znaki)
+        other: je predolg (največ %{count} znakov)
+      too_short:
+        one: je prekratek (mora vsebovati vsaj 1 znak)
+        two: je prekratek (mora vsebovati vsaj 2 znaka)
+        three: je prekratek (mora vsebovati vsaj 3 znake)
+        four: je prekratek (mora vsebovati vsaj 4 znake)
+        other: je prekratek (dolgo mora biti vsaj %{count} znakov)
+        few: premalo
+      wrong_length:
+        one: je napačne dolžine (moral bi biti 1 znak)
+        two: je napačne dolžine (moral bi biti 2 znaka)
+        three: je napačne dolžine (moral bi biti 3 znake)
+        four: je napačne dolžine (moral bi biti 4 znake)
+        other: je napačne dolžine (moral bi biti %{count} znakov)
       other_than: mora biti drugačen kot %{count}
     template:
       body: "V naslednjih poljih so težave:"
@@ -102,3 +130,14 @@ sl:
     array:
       last_word_connector: " in "
       two_words_connector: " in "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      datetime: "%d.%m.%Y %H:%M:%S"
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+      short_datetime: "%d %b %H:%M"
+      api: "%Y-%m-%d %H"
+    pm: pm
