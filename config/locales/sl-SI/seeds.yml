@@ -1,4 +1,4 @@
-sl:
+sl-SI:
   seeds:
     settings:
       official_level_1_name: Javni delavci
@@ -35,6 +35,7 @@ sl:
       groups:
         all_city: Celo mesto
         districts: Področja
+      currency: €
     polls:
       current_poll: "Trenutno glasovanje"
       current_poll_geozone_restricted: "Trenutno glasovanje zaprto glede na geografska področja"

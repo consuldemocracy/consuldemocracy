@@ -1,4 +1,4 @@
-sl:
+sl-SI:
   documents:
     title: Dokumenti
     max_documents_allowed_reached: Dosegel si največje dovoljeno število dokumentov! <strong>Preden lahko naložiš novega, moraš vsaj enega izbrisati.</strong>

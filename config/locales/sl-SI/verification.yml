@@ -1,4 +1,4 @@
-sl:
+sl-SI:
   verification:
     alert:
       lock: Dosegel/-la si največje število poskusov. Poskusi znova kasneje.

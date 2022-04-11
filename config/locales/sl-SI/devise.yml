@@ -1,5 +1,5 @@
 #Additional translations at https://github.com/plataformatec/devise/wiki/I18n
-sl:
+sl-SI:
   devise:
     password_expired:
       expire_password: "Geslo je poteklo"

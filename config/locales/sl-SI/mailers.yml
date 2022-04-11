@@ -1,4 +1,4 @@
-sl:
+sl-SI:
   mailers:
     no_reply: "To sporočilo je bilo poslano z e-naslova, ki ne sprejema odgovorov."
     comment:
