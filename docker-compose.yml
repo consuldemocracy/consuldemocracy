@@ -11,6 +11,8 @@ services:
     # persist the database between containers by storing it in a volume
     volumes:
       - db_data:/var/lib/postgresql/data
+    # ports:
+    #   - 5432:5432
 
   # service configuration for our dockerized Rails app
   app:
@@ -35,6 +37,9 @@ services:
       - bundle:/usr/local/bundle
     environment:
       - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+      - RAILS_ENV=development
+      # - RAILS_LOG_TO_STDOUT=enabled
+      # - RAILS_SERVE_STATIC_FILES=enabled
 volumes:
   db_data: {}
   bundle: {}

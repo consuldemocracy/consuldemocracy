@@ -48,7 +48,13 @@ RUN bundle install
 # Copy the Rails application into place
 COPY . .
 
-ENTRYPOINT ["./docker-entrypoint.sh"]
+RUN cp config/database.yml.fake config/database.yml
+RUN cp config/secrets.yml.fake config/secrets.yml
+ENV RAILS_ENV production
+ENV RAILS_LOG_TO_STDOUT enabled
+RUN bundle exec rake assets:precompile
+
+# ENTRYPOINT ["./docker-entrypoint.sh"]
 # Define the script we want run once the container boots
 # Use the "exec" form of CMD so our script shuts down gracefully on SIGTERM (i.e. `docker stop`)
 # CMD [ "config/containers/app_cmd.sh" ]
