@@ -1,0 +1,165 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: consul
+  labels:
+    app: consul
+spec:
+  serviceName: consul
+  replicas: 1
+  selector:
+    matchLabels:
+      app: consul
+  template:
+    metadata:
+      labels:
+        app: consul
+    spec:
+      initContainers:
+        - name: migrate
+          image: consul
+          command:
+            - bundle
+            - exec
+            - rake
+            - db:migrate
+          ports:
+            - containerPort: 3000
+          env:
+            - name: RAILS_ENV
+              value: production
+          envFrom:
+            - secretRef:
+                name: consul-credentials
+          #
+          # TODO RESOURCES TEMPORARILY REMOVED
+          #
+          # resources:
+          #   requests:
+          #     memory: 2Gi
+          #     cpu: 500m
+          #   limits:
+          #     memory: 2Gi
+          #     cpu: 500m
+          volumeMounts:
+            - name: db-conf
+              mountPath: /var/www/consul/config/database.yml
+              subPath: database.yml
+            - name: db-conf
+              mountPath: /var/www/consul/config/secrets.yml
+              subPath: secrets.yml
+        # - name: precompile-assets
+        #   image: consul
+        #   command:
+        #     - bundle
+        #     - exec
+        #     - rake
+        #     - assets:precompile
+        #   ports:
+        #     - containerPort: 3000
+        #   env:
+        #     - name: RAILS_ENV
+        #       value: production
+        #   envFrom:
+        #     - secretRef:
+        #         name: consul-credentials
+        #   # resources:
+        #   #   requests:
+        #   #     memory: 2Gi
+        #   #     cpu: 500m
+        #   #   limits:
+        #   #     memory: 2Gi
+        #   #     cpu: 500m
+        #   volumeMounts:
+        #     - name: db-conf
+        #       mountPath: /var/www/consul/config/database.yml
+        #       subPath: database.yml
+        #     - name: db-conf
+        #       mountPath: /var/www/consul/config/secrets.yml
+        #       subPath: secrets.yml
+        #     - name: consul-persistent-storage
+        #       mountPath: /pvc
+      containers:
+        - name: consul
+          image: consul
+          # lifecycle:
+          #   postStart:
+          #     exec:
+          #       - cp
+          #       - -r
+          #       - /pvc
+          #       - /var/www/consul/public
+          command:
+            - bundle
+            - exec
+            - rails
+            - s
+            - -p
+            - "3000"
+            - -b
+            - "0.0.0.0"
+          ports:
+            - containerPort: 3000
+          env:
+            - name: RAILS_ENV
+              value: production
+            - name: RAILS_SERVE_STATIC_FILES
+              value: "enabled"
+          envFrom:
+            - secretRef:
+                name: consul-credentials
+          #
+          # TODO RESOURCES TEMPORARILY REMOVED
+          #
+          # resources:
+          #   requests:
+          #     memory: 2Gi
+          #     cpu: 500m
+          #   limits:
+          #     memory: 2Gi
+          #     cpu: 500m
+          volumeMounts:
+            - name: db-conf
+              mountPath: /var/www/consul/config/database.yml
+              subPath: database.yml
+            - name: db-conf
+              mountPath: /var/www/consul/config/secrets.yml
+              subPath: secrets.yml
+            - name: consul-persistent-storage
+              mountPath: /pvc
+        #
+        # TODO NGINX TEMPORARILY REMOVED
+        #
+        # - name: consul-nginx
+        #   ports:
+        #     - name: http
+        #       containerPort: 80
+        #       protocol: TCP
+        #   image: nginx:alpine
+        #   volumeMounts:
+        #     - name: consul-persistent-storage
+        #       mountPath: /usr/share/nginx/html/pvc
+        #
+        # TODO RESOURCES TEMPORARILY REMOVED
+        #
+        # resources:
+        #   requests:
+        #     memory: 100Mi
+        #     cpu: 50m
+        #   limits:
+        #     memory: 100Mi
+        #     cpu: 50m
+      volumes:
+        - name: db-conf
+          configMap:
+            name: db-conf
+  volumeClaimTemplates:
+    - metadata:
+        name: consul-persistent-storage
+      spec:
+        storageClassName: 'scw-bssd-retain'
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 2Gi

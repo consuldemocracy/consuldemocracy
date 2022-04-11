@@ -1,0 +1,60 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-conf
+data:
+  database.yml: |
+    production:
+      adapter: postgresql
+      encoding: unicode
+      host: postgresql.shared
+      port: 5432
+      username: <%= ENV['POSTGRES_USERNAME'] %>
+      password: <%= ENV['POSTGRES_PASSWORD'] %>
+      database: consul_staging
+  secrets.yml: |
+    http_basic_auth: &http_basic_auth
+      http_basic_auth: true
+
+    maps: &maps
+      map_tiles_provider: "//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      map_tiles_provider_attribution: "&copy; <a href=\"http://osm.org/copyright\">OpenStreetMap</a> contributors"
+
+    apis: &apis
+      microsoft_api_key: ""
+      census_api_end_point: ""
+      census_api_institution_code: ""
+      census_api_portal_name: ""
+      census_api_user_code: ""
+      sms_end_point:  ""
+      sms_username: ""
+      sms_password: ""
+
+    production:
+      secret_key_base: "this-should-be-secret"
+      server_name: ""
+      mailer_delivery_method: :smtp
+      smtp_settings:
+        :address: " smtp.flowmailer.net"
+        :port: 25
+        :domain: "posta.danesjenovdan.si"
+        :user_name: "<%= ENV['SMTP_USERNAME'] %>"
+        :password: "<%= ENV['SMTP_PASSWORD'] %>"
+      force_ssl: false
+      delay_jobs: true
+      rollbar_server_token: ""
+      http_basic_username: ""
+      http_basic_password: ""
+      managers_url: ""
+      managers_application_key: ""
+      twitter_key: ""
+      twitter_secret: ""
+      facebook_key: ""
+      facebook_secret: ""
+      google_oauth2_key: ""
+      google_oauth2_secret: ""
+      wordpress_oauth2_key: ""
+      wordpress_oauth2_secret: ""
+      wordpress_oauth2_site: ""
+      <<: *maps
+      <<: *apis
