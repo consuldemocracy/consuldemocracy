@@ -356,8 +356,8 @@ ActiveRecord::Schema.define(version: 2022_04_11_123757) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "main_link_text"
-    t.string "main_link_url"
     t.text "questions", default: [], array: true
+    t.string "main_link_url"
     t.index ["budget_id"], name: "index_budget_translations_on_budget_id"
     t.index ["locale"], name: "index_budget_translations_on_locale"
   end

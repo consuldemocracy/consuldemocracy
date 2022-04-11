@@ -1,4 +1,4 @@
-class AddPresentationSummaryToBudgetPhases < ActiveRecord::Migration[4.2]
+class DjndAddPresentationSummaryToBudgetPhases < ActiveRecord::Migration[4.2]
   def change
     add_column :budget_phases, :presentation_summary_accepting, :text
     add_column :budget_phases, :presentation_summary_balloting, :text
