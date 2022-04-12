@@ -94,8 +94,6 @@ id:
         button: Cari
         placeholder: Cari perdebatan...
         title: Cari
-      search_results:
-        other: " berisi istilah <strong>%{search_term}</strong>"
       start_debate: Memulai debat
       title: Perdebatan
       section_header:
