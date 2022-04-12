@@ -37,7 +37,7 @@ describe "Admin budget phases" do
         within("tr", text: "Accepting projects") { click_link "Edit" }
       end
 
-      expect(page).to have_css "h2", exact_text: "Edit phase - Accepting projects"
+      expect(page).to have_css "h3", exact_text: "Edit phase - Accepting projects"
 
       fill_in "Name", with: "My phase custom name"
       click_button "Save changes"
