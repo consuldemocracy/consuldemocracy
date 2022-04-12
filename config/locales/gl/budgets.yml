@@ -68,9 +68,6 @@ gl:
           button: Procurar
           placeholder: Buscar propostas de investimento...
           title: Procurar
-        search_results:
-          one: " contén o termo <strong>'%{search_term}'</strong>"
-          other: " contén o termo <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Os meus votos
           voted_info:
