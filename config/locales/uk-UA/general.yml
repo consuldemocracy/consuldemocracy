@@ -119,11 +119,6 @@ uk-UA:
         button: Пошук
         placeholder: Пошук обговорень...
         title: Пошук
-      search_results:
-        one: " містить термін <strong>'%{search_term}'</strong>"
-        few: " містить терміни <strong>'%{search_term}'</strong>"
-        many: " містить терміни <strong>'%{search_term}'</strong>"
-        other: " містить терміни <strong>'%{search_term}'</strong>"
       start_debate: Розпочати обговорення
       title: Обговорення
       section_header:
