@@ -113,6 +113,7 @@ en:
         delete: Delete budget
         phase: Phase
         phases_caption: "Phases"
+        phases_table_help_text: "The configuration of these phases is used for information purposes only. Its function is to define the phases information displayed on the public page of the participatory budget."
         duration: "Duration"
         enabled: Enabled
         actions: Actions
@@ -153,7 +154,7 @@ en:
         headings:
           multiple: "Headings are meant to divide the money of the participatory budget. Here you can add headings for this group and assign the amount of money that will be used for each heading."
           single: "Headings are meant to divide the money of the participatory budget. Since this budget will only contain one heading, this is the place where you stablish the money that will be spent in this participaroty budget."
-        phases: "Participatory budgets have different phases. Here you can enable or disable phases and also customize each individual phase."
+        phases: "Participatory budgets have different phases. Here you can enable or disable phases and also customize each individual phase. The configuration of these phases is used for information purposes only and will be displayed on the public page of the participatory budget."
       show:
         add_group: "Add group"
         add_heading: "Add heading"

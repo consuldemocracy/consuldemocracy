@@ -113,6 +113,7 @@ es:
         delete: Eliminar presupuesto
         phase: Fase
         phases_caption: "Fases"
+        phases_table_help_text: "La configuración de estas fases se utiliza únicamente con fines informativos. Su función es definir la información de las fases que se muestra en la página pública del presupuesto participativo."
         duration: "Duración"
         enabled: Habilitada
         actions: Acciones
@@ -153,7 +154,7 @@ es:
         headings:
           multiple: "Las partidas sirven para dividir el dinero del presupuesto participativo. Aquí puedes ir añadiendo partidas para cada grupo y establecer la cantidad de dinero que se gastará en cada partida."
           single: "Las partidas sirven para dividir el dinero del presupuesto participativo. Como este presupuesto solo tendrá una partida aquí podrás establecer la cantidad de dinero que se gastará en este presupuesto participativo."
-        phases: "Los presupuestos participativos tienen distintas fases. Aquí puedes habilitar o deshabilitar fases y también personalizar cada una de las fases."
+        phases: "Los presupuestos participativos tienen distintas fases. Aquí puedes habilitar o deshabilitar fases y también personalizar cada una de las fases. La configuración de estas fases se utiliza únicamente con fines informativos y se mostrará en la página pública del presupuesto participativo."
       show:
         add_group: "Añadir grupo"
         add_heading: "Añadir partida"
