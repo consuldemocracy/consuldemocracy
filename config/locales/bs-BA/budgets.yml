@@ -25,10 +25,6 @@ bs:
         search_form:
           button: Traži
           title: Traži
-        search_results:
-          one: " sadrži pojam <strong>'%{search_term}'</strong>"
-          few: " sadrži pojam <strong>'%{search_term}'</strong>"
-          other: " sadrži pojam <strong>'%{search_term}'</strong>"
         sidebar:
           create: "Formuliši budžetsku investiciju"
         filters:
