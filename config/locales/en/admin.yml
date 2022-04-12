@@ -213,6 +213,7 @@ en:
     budget_phases:
       edit:
         title: "Edit phase"
+        dates_help_text: "For information purposes only"
         description_help_text: This text will appear in the header when the phase is active
         duration: "Phase's duration"
         duration_description: "These fields are used for information purposes only and <strong>do not trigger an automatic update of the active phase.</strong> In order to update it, edit the budget and select the active phase."

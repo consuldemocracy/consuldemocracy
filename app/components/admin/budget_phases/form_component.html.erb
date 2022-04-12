@@ -16,11 +16,11 @@
     </p>
 
     <div class="date-field">
-      <%= f.date_field :starts_at, id: "start_date" %>
+      <%= f.date_field :starts_at, id: "start_date", hint: t("admin.budget_phases.edit.dates_help_text") %>
     </div>
 
     <div class="date-field">
-      <%= f.date_field :ends_at, id: "end_date" %>
+      <%= f.date_field :ends_at, id: "end_date", hint: t("admin.budget_phases.edit.dates_help_text") %>
     </div>
   </fieldset>
 

@@ -10,6 +10,7 @@ describe "Admin budget phases" do
       expect(page).to have_content "These fields are used for information purposes only and do not trigger "\
                                    "an automatic update of the active phase. In order to update it, edit "\
                                    "the budget and select the active phase."
+      expect(page).to have_content "For information purposes only"
 
       fill_in "start_date", with: Date.current + 1.day
       fill_in "end_date", with: Date.current + 12.days

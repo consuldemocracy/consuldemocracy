@@ -212,6 +212,7 @@ es:
         title: "Partidas de %{budget} / %{group}"
     budget_phases:
       edit:
+        dates_help_text: "Solo con fines informativos"
         description_help_text: Este texto aparecerá en la cabecera cuando la fase esté activa
         duration: "Duración de la fase"
         duration_description: "Estos campos se utilizan únicamente con fines informativos y <strong>no provocan una actualización automática de la fase activa.</strong> Para actualizarla, edita el presupuesto y selecciona la fase activa."
