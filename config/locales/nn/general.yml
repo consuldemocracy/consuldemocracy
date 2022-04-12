@@ -113,10 +113,6 @@ nn:
         button: Søk
         placeholder: Søk debatter...
         title: Søk
-      search_results:
-        zero: " som inneholder <strong>'%{search_term}'</strong>"
-        one: " som inneholder <strong>'%{search_term}'</strong>"
-        other: " som inneholder <strong>'%{search_term}'</strong>"
       start_debate: Start en debatt
       title: Debatter
       section_header:
