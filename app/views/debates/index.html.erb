@@ -10,23 +10,11 @@
 
 <main>
   <% if @search_terms || @advanced_search_terms %>
-    <div class="search-results-summary">
-      <div class="row">
-        <div class="small-12 column">
-          <% if @search_terms || @advanced_search_terms %>
-            <h2><%= t("shared.search_results") %></h2>
-            <p>
-              <%= page_entries_info @debates %>
-              <% if !@advanced_search_terms %>
-                <%= sanitize(
-                  t("debates.index.search_results", count: @debates.size, search_term: @search_terms)
-                ) %>
-              <% end %>
-            </p>
-          <% end %>
-        </div>
-      </div>
-    </div>
+    <%= render Shared::SearchResultsSummaryComponent.new(
+      results: @debates,
+      search_terms: @search_terms,
+      advanced_search_terms: @advanced_search_terms
+    ) %>
   <% else %>
     <%= render "shared/section_header", i18n_namespace: "debates.index.section_header", image: "debates" %>
   <% end %>

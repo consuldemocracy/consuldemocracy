@@ -1,0 +1,9 @@
+.search-results-summary {
+  @include grid-column-gutter;
+  @include full-width-background;
+  background: $highlight;
+  margin-bottom: $line-height;
+  margin-top: -$line-height;
+  padding-bottom: $line-height;
+  padding-top: $line-height;
+}
