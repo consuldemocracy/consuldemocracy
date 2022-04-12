@@ -68,9 +68,6 @@ en-GB:
       search_form:
         button: Пошук
         title: Пошук
-      search_results:
-        one: " що містить термін <strong>'%{search_term}'</strong>"
-        other: " що містить термін <strong>'%{search_term}'</strong>"
       start_debate: Розпочати обговорення
       title: Обговорення
       section_header:
