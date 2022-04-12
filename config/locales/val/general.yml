@@ -103,9 +103,6 @@ val:
         button: Cercar
         placeholder: Cercar debats...
         title: Cercar
-      search_results:
-        one: " que conté <strong>'%{search_term}'</strong>"
-        other: " que conté <strong>'%{search_term}'</strong>"
       start_debate: Iniciar un debat
       title: Debats
       section_header:
