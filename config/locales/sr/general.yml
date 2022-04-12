@@ -113,10 +113,6 @@ sr:
         button: Тражите
         placeholder: Тражите расправе...
         title: Тражите
-      search_results:
-        one: " која садржи појам<strong>%{search_term}</strong>"
-        few: " који садрже појам <strong>%{search_term}</strong>"
-        other: " који садржи појам <strong>%{search_term}</strong>"
       start_debate: Започните расправу
       title: Расправе
       section_header:
