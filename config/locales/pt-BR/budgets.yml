@@ -85,9 +85,6 @@ pt-BR:
           button: Buscar
           placeholder: Buscar projetos de investimento...
           title: Buscar
-        search_results:
-          one: " contendo o termo <strong>'%{search_term}'</strong>"
-          other: " contendo o termo <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Minha cédula
           voted_info:
