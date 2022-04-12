@@ -107,9 +107,6 @@ da:
         button: Søg
         placeholder: Søg debatindlæg...
         title: Søg
-      search_results:
-        one: " som indeholder <strong>'%{search_term}'</strong>"
-        other: " som indeholder <strong>'%{search_term}'</strong>"
       start_debate: Start en debat
       title: Debatforum
       section_header:
