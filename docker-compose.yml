@@ -10,16 +10,13 @@ services:
       - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
     # persist the database between containers by storing it in a volume
     volumes:
-      - docker-example-postgres:/var/lib/postgresql/data
+      - db_data:/var/lib/postgresql/data
 
   # service configuration for our dockerized Rails app
   app:
 
     # use the Dockerfile next to this file
     build: .
-    entrypoint: /usr/local/bin/entrypoint.sh
-    command: bundle exec rails s -p 3000 -b "0.0.0.0"
-    working_dir: /var/www/consul
 
     # rely on the RAILS_ENV value of the host machine
     # environment:
@@ -34,12 +31,10 @@ services:
       - "3000:3000"
     # map our application source code, in full, to the application root of our container
     volumes:
-      - .:/var/www/consul:delegated
-      - bundle:/usr/local/bundle:delegated
-      - "$SSH_AUTH_SOCK:/tmp/agent.sock"
+      - .:/var/www/consul
+      - bundle:/usr/local/bundle
     environment:
       - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
-      - SSH_AUTH_SOCK=/tmp/agent.sock
 volumes:
-  docker-example-postgres: {}
+  db_data: {}
   bundle: {}
