@@ -107,9 +107,6 @@ pt-BR:
         button: Buscar
         placeholder: Buscar debates...
         title: Buscar
-      search_results:
-        one: " contendo o termo <strong>'%{search_term}'</strong>"
-        other: " contendo o termo <strong>'%{search_term}'</strong>"
       start_debate: Iniciar um debate
       title: Debates
       section_header:
