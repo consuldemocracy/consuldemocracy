@@ -65,8 +65,6 @@ id:
           button: Cari
           placeholder: Cari proyek investasi...
           title: Cari
-        search_results:
-          other: " berisi istilah <strong>%{search_term}</strong>"
         sidebar:
           my_ballot: Suara saya
           voted_info:
