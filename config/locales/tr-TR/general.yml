@@ -110,9 +110,6 @@ tr:
         button: Ara
         placeholder: Tartışmalarda ara...
         title: Ara
-      search_results:
-        one: " <strong>'%{search_term}'</strong>terimini içeren"
-        other: " <strong>'%{search_term}'</strong>terimini içeren"
       start_debate: Bir tartışma başlat
       title: Tartışmalar
       section_header:
