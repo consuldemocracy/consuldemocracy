@@ -91,9 +91,6 @@ it:
           button: Ricercare
           placeholder: Ricercare progetti di investimento...
           title: Ricercare
-        search_results:
-          one: " contenente il termine <strong>'%{search_term}'</strong>"
-          other: " contenente il termine <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: I miei voti
           voted_info:
