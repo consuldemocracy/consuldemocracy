@@ -103,9 +103,6 @@ sq:
         button: Kërko
         placeholder: Kërko debate...
         title: Kërko
-      search_results:
-        one: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
-        other: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
       start_debate: Filloni një debat
       title: Debate
       section_header:
