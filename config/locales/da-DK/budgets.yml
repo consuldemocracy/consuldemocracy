@@ -90,9 +90,6 @@ da:
           button: Søg
           placeholder: Søg efter projekter...
           title: Søg
-        search_results:
-          one: " som indeholder <strong>'%{search_term}'</strong>"
-          other: " som indeholder <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Min stemme
           voted_info:
