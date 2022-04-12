@@ -7,7 +7,7 @@ class Budgets::MapComponent < ApplicationComponent
   end
 
   def render?
-    !budget.informing?
+    feature?(:map) && !budget.informing?
   end
 
   private
