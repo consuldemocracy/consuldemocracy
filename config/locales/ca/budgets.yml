@@ -85,9 +85,6 @@ ca:
           button: Buscar
           placeholder: Cercar propostes d'inversió...
           title: Buscar
-        search_results:
-          one: " que conté el terme <strong>'%{search_term}'</strong>"
-          other: " que conté el terme <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Els meus vots
           voted_info:
