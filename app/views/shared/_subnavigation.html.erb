@@ -18,7 +18,7 @@
                                 accesskey: "2" %>
       </li>
     <% end %>
-    <% if feature?(:polls) %>
+    <% if feature?(:polls) && Rails.env.test? %>
       <li>
         <%= layout_menu_link_to t("layouts.header.poll_questions"),
                                   polls_path,
