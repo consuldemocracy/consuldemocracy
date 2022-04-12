@@ -63,8 +63,6 @@ zh-CN:
           button: 搜索
           placeholder: 搜索投资项目...
           title: 搜索
-        search_results:
-          other: " 包含术语<strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: 我的选票
           voted_info:
