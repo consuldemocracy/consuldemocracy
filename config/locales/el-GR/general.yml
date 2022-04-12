@@ -107,9 +107,6 @@ el:
         button: Αναζήτηση
         placeholder: Αναζήτηση συζητήσεων...
         title: Αναζήτηση
-      search_results:
-        one: " που εμπεριέχει τον όρο <strong>'%{search_term}'</strong>"
-        other: " που εμπεριέχει τον όρο <strong>'%{search_term}'</strong>"
       start_debate: Ξεκινήστε μια συζήτηση
       title: Συζητήσεις
       section_header:
