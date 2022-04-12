@@ -116,10 +116,6 @@ ro:
         button: Caută
         placeholder: Caută dezbateri...
         title: Caută
-      search_results:
-        one: " conține termenul <strong>'%{search_term}'</strong>"
-        few: " conține termenul <strong>'%{search_term}'</strong>"
-        other: " conține termenul <strong>'%{search_term}'</strong>"
       start_debate: Începe o dezbatere
       title: Dezbateri
       section_header:
