@@ -113,6 +113,7 @@ sv:
         delete: Radera budget
         phase: Fas
         phases_caption: "Faser"
+        phases_table_help_text: "Dessa fasers konfigurering används endast i informationssyfte. Dess funktion är att definiera fasinformationen som visas på medborgarbudgetens offentliga sida."
         duration: "Varaktighet"
         enabled: Aktiverad
         actions: Åtgärder
@@ -213,6 +214,7 @@ sv:
     budget_phases:
       edit:
         title: "Redigera fas"
+        dates_help_text: "Endast i informationssyfte"
         description_help_text: Den här texten visas i sidhuvudet när fasen är aktiv
         duration: "Fasens varaktighet"
         duration_description: "Den tidsperiod som den här fasen blir aktiv."
