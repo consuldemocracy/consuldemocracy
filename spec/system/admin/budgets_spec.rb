@@ -235,6 +235,9 @@ describe "Admin budgets", :admin do
 
         visit admin_budget_path(budget)
 
+        expect(page).to have_content "The configuration of these phases is used for information purposes "\
+                                     "only. Its function is to define the phases information displayed "\
+                                     "on the public page of the participatory budget."
         expect(page).to have_table "Phases", with_cols: [
           [
             "Information",

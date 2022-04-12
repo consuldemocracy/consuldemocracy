@@ -12,15 +12,15 @@
     </legend>
 
     <p class="help-text" id="phase_duration_description">
-      <%= t("admin.budget_phases.edit.duration_description") %>
+      <%= sanitize(t("admin.budget_phases.edit.duration_description")) %>
     </p>
 
     <div class="date-field">
-      <%= f.date_field :starts_at, id: "start_date" %>
+      <%= f.date_field :starts_at, id: "start_date", hint: t("admin.budget_phases.edit.dates_help_text") %>
     </div>
 
     <div class="date-field">
-      <%= f.date_field :ends_at, id: "end_date" %>
+      <%= f.date_field :ends_at, id: "end_date", hint: t("admin.budget_phases.edit.dates_help_text") %>
     </div>
   </fieldset>
 

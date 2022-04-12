@@ -11,8 +11,9 @@
     <%= render Admin::Budgets::GroupsAndHeadingsComponent.new(budget) %>
   </section>
 
-  <section aria-labelledby="phases_header">
+  <section class="phases" aria-labelledby="phases_header">
     <h3 id="phases_header"><%= t("admin.budgets.edit.phases_caption") %></h3>
+    <span class="help-text"><%= t("admin.budgets.edit.phases_table_help_text") %></span>
     <%= render Admin::BudgetPhases::PhasesComponent.new(budget) %>
   </section>
 
