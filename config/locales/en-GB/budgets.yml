@@ -37,9 +37,6 @@ en-GB:
         search_form:
           button: Пошук
           title: Пошук
-        search_results:
-          one: " містить термін <strong>'%{search_term}'</strong>"
-          other: " містить термін <strong>'%{search_term}'</strong>"
         sidebar:
           different_heading_assigned: "У вас є активні голоси в іншому заголовку: %{heading_link}"
           create: "Створити бюджетну інвестицію"
