@@ -94,10 +94,6 @@ ro:
           button: Caută
           placeholder: Căutați proiecte de investiții...
           title: Caută
-        search_results:
-          one: " conține termenul <strong>'%{search_term}'</strong>"
-          few: " conține termenii <strong>'%{search_term}'</strong>"
-          other: " conține termenii <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Votul meu
           voted_info:
