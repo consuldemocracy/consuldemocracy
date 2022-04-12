@@ -100,11 +100,6 @@ cs:
           button: Vyhledat
           placeholder: Vyhledat investiční projekty...
           title: Vyhledat
-        search_results:
-          one: " obsahující výraz <strong> '%{search_term}' </strong>"
-          few: " obsahující výraz <strong> '%{search_term}' </strong>"
-          many: " obsahující výraz <strong> '%{search_term}' </strong>"
-          other: " obsahující výraz <strong> '%{search_term}' </strong>"
         sidebar:
           my_ballot: Moje hlasování
           voted_info:
