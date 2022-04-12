@@ -110,9 +110,6 @@ de:
         button: Suche
         placeholder: Suche Diskussionen...
         title: Suche
-      search_results:
-        one: " enthält den Begriff <strong>'%{search_term}'</strong>"
-        other: " enthält den Begriff <strong>'%{search_term}'</strong>"
       start_debate: Starten Sie eine Diskussion
       title: Diskussionen
       section_header:
