@@ -25,10 +25,6 @@ nn:
         search_form:
           button: Søk
           title: Søk
-        search_results:
-          zero: " som inneholder <strong>'%{search_term}'</strong>"
-          one: " som inneholder <strong>'%{search_term}'</strong>"
-          other: " som inneholder <strong>'%{search_term}'</strong>"
         filters:
           unfeasible: "Ikke gjennomførbart"
         orders:
