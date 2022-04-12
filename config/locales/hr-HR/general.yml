@@ -113,10 +113,6 @@ hr:
         button: Pretraga
         placeholder: Pretraži rasprave...
         title: Pretraga
-      search_results:
-        one: " sadrži termin <strong>%{search_term}</strong>"
-        few: " sadrži termine <strong>%{search_term}</strong>"
-        other: " sadrži termine <strong>%{search_term}</strong>"
       start_debate: Započnite raspravu
       title: Rasprave
       section_header:
