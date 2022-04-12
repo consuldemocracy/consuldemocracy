@@ -83,9 +83,6 @@ ast:
         button: Atopar
         placeholder: Buscar debates...
         title: Atopar
-      search_results:
-        one: " que contien <strong>'%{search_term}'</strong>"
-        other: " que contien <strong>'%{search_term}'</strong>"
       start_debate: Empezar un debate
       title: Alderique
       section_header:
