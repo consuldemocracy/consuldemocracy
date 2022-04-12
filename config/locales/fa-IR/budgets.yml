@@ -61,9 +61,6 @@ fa:
           button: جستجو
           placeholder: جستجو پروژه های سرمایه گذاری ...
           title: جستجو
-        search_results:
-          one: "حاوی اصطلاح<strong>%{search_term}</strong>"
-          other: "حاوی اصطلاح<strong>%{search_term}</strong>"
         sidebar:
           my_ballot: رای من
           voted_info:
