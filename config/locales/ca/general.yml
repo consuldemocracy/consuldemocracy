@@ -107,9 +107,6 @@ ca:
         button: Buscar
         placeholder: Cercar debats...
         title: Buscar
-      search_results:
-        one: " que conté el terme <strong>'%{search_term}'</strong>"
-        other: " que conté el terme <strong>'%{search_term}'</strong>"
       start_debate: Comença un nou debat
       title: Debats
       section_header:
