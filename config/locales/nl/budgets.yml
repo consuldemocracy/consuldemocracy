@@ -90,9 +90,6 @@ nl:
           button: Search
           placeholder: Zoek begrotingsvoorstellen...
           title: Search
-        search_results:
-          one: " bevat de term <strong>'%{search_term}'</strong>"
-          other: " bevat de term <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Mijn stemmen
           voted_info:
