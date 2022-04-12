@@ -103,9 +103,6 @@ nl:
         button: Search
         placeholder: Debatten zoeken...
         title: Search
-      search_results:
-        one: " bevat de term <strong>'%{search_term}'</strong>"
-        other: " bevat de term <strong>'%{search_term}'</strong>"
       start_debate: Debat starten
       title: Debatten
       section_header:
