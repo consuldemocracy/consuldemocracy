@@ -110,9 +110,6 @@ bg:
         button: Търсете
         placeholder: Търсете дискусии...
         title: Търсете
-      search_results:
-        one: " съдържащи термина <strong>'%{search_term}'</strong>"
-        other: " съдържащи термина <strong>'%{search_term}'</strong>"
       start_debate: Започнете дебат
       title: Дискусии
       section_header:
