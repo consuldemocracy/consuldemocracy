@@ -111,11 +111,6 @@ pl:
         button: Szukaj
         placeholder: Szukaj debat...
         title: Szukaj
-      search_results:
-        one: " zawierające termin <strong>%{search_term}</strong>"
-        few: " zawierające termin <strong>%{search_term}</strong>"
-        many: " zawierające termin <strong>%{search_term}</strong>"
-        other: " zawierające termin <strong>%{search_term}</strong>"
       start_debate: Rozpocznij debatę
       title: Debaty
       section_header:
