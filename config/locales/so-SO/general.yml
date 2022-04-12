@@ -103,9 +103,6 @@ so:
         button: Raadin
         placeholder: Doodaha raadinta...
         title: Raadin
-      search_results:
-        one: " an ku jirin ereyga<strong>%{search_term}</strong>"
-        other: " an ku jirin ereyga<strong>%{search_term}</strong>"
       start_debate: Biloow dooda
       title: Doodo
       section_header:
