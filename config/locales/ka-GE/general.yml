@@ -107,9 +107,6 @@ ka:
         button: ძებნა
         placeholder: დებატების ძებნა...
         title: ძებნა
-      search_results:
-        one: " შეიცავდეს საძიებო სიტყვას <strong>%{search_term}</strong>"
-        other: " შეიცავდეს საძიებო სიტყვას <strong>%{search_term}</strong>"
       start_debate: დებატის დაწყება
       title: დებატები
       section_header:
