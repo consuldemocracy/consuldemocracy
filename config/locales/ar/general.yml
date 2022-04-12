@@ -131,13 +131,6 @@ ar:
         button: بحث
         placeholder: البحث عن مناقشات...
         title: بحث
-      search_results:
-        zero: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
-        one: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
-        two: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
-        few: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
-        many: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
-        other: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
       start_debate: بدء مناقشة
       title: النقاشات
       section_header:
