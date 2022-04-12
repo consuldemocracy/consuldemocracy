@@ -107,9 +107,6 @@ gl:
         button: Buscar
         placeholder: Buscar debates...
         title: Procurar
-      search_results:
-        one: " contén o termo <strong>'%{search_term}'</strong>"
-        other: " contén o termo <strong>'%{search_term}'</strong>"
       start_debate: Comezar un debate
       title: Debates
       section_header:
