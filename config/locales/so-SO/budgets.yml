@@ -64,9 +64,6 @@ so:
           button: Raadin
           placeholder: Raadi mashriicda malgelinta...
           title: Raadin
-        search_results:
-          one: " an ku jirin ereyga<strong>%{search_term}</strong>"
-          other: " an ku jirin ereyga<strong>%{search_term}</strong>"
         sidebar:
           my_ballot: Codkayga
           voted_info:
