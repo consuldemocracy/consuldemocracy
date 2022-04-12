@@ -113,6 +113,7 @@ cs:
         delete: Odstranit rozpočet
         phase: Fáze
         phases_caption: "Fáze"
+        phases_table_help_text: "Konfigurace těchto fází slouží pouze pro informační účely. Její funkcí je definovat informace o fázích zobrazené na veřejné stránce participativního rozpočtu."
         duration: "Trvání"
         enabled: Povolit
         actions: Akce
@@ -219,6 +220,7 @@ cs:
     budget_phases:
       edit:
         title: "Upravit fázi"
+        dates_help_text: "Pouze pro informační účely"
         description_help_text: Tento text bude zobrazen v záhlaví, když je fáze aktivní
         duration: "Trvání fáze"
         duration_description: "Doba, po kterou bude tato fáze aktivní."
