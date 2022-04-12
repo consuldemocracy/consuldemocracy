@@ -89,10 +89,6 @@ sr:
           button: Претрага
           placeholder: Претражи инвестиционе пројекте...
           title: Претрага
-        search_results:
-          one: " садржи термин <strong>'%{search_term}'</strong>"
-          few: " садржи термине <strong>'%{search_term}'</strong>"
-          other: " садржи термине <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Моје гласање
           voted_info:
