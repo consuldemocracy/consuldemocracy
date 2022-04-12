@@ -67,9 +67,6 @@ el:
           button: Αναζήτηση
           placeholder: Αναζήτηση επενδυτικών σχεδίων...
           title: Αναζήτηση
-        search_results:
-          one: " που εμπεριέχει τον όρο <strong>'%{search_term}'</strong>"
-          other: " που εμπεριέχει τον όρο <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Η ψηφοφορία μου
           voted_info:
