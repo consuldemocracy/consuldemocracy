@@ -99,8 +99,6 @@ zh-TW:
         button: 搜尋
         placeholder: 搜尋辯論...
         title: 搜尋
-      search_results:
-        other: " 包含術語 <strong>'%{search_term}'</strong>"
       start_debate: 開始一個辯論
       title: 辯論
       section_header:
