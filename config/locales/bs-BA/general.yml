@@ -107,10 +107,6 @@ bs:
         button: Traži
         placeholder: Pretraga po debatama...
         title: Traži
-      search_results:
-        one: " sadrži pojam <strong>'%{search_term}'</strong>"
-        few: " sadrži pojam <strong>'%{search_term}'</strong>"
-        other: " sadrži pojam <strong>'%{search_term}'</strong>"
       start_debate: Pokreni debatu
       title: Debate
       section_header:
