@@ -122,11 +122,6 @@ cs:
         button: Vyhledat
         placeholder: Prohledat debaty...
         title: Vyhledat
-      search_results:
-        one: " obsahující výraz <strong>'%{search_term}'</strong>"
-        few: " obsahující výraz <strong>'%{search_term}'</strong>"
-        many: " obsahující výraz <strong>'%{search_term}'</strong>"
-        other: " obsahující výraz <strong>'%{search_term}'</strong>"
       start_debate: Zahájit debatu
       title: Debaty
       section_header:
