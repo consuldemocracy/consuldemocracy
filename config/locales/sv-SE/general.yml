@@ -110,9 +110,6 @@ sv:
         button: Sök
         placeholder: Sök debatter...
         title: Sök
-      search_results:
-        one: " som innehåller <strong>'%{search_term}'</strong>"
-        other: " som innehåller <strong>'%{search_term}'</strong>"
       start_debate: Starta en debatt
       title: Debatter
       section_header:
