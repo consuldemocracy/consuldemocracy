@@ -93,11 +93,6 @@ uk-UA:
           button: Пошук
           placeholder: Шукати інвестиційні проєкти...
           title: Пошук
-        search_results:
-          one: " містить термін<strong>'%{search_term}'</strong>"
-          few: " містять термін<strong>'%{search_term}'</strong>"
-          many: " містять термін<strong>'%{search_term}'</strong>"
-          other: " містять термін<strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Моє голосування
           voted_info:
