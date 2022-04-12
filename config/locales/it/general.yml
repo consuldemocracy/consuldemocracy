@@ -110,9 +110,6 @@ it:
         button: Ricercare
         placeholder: Ricerca dibattiti...
         title: Ricercare
-      search_results:
-        one: " contenente il termine <strong>'%{search_term}'</strong>"
-        other: " contenente il termine <strong>'%{search_term}'</strong>"
       start_debate: Avvia un dibattito
       title: Dibattiti
       section_header:
