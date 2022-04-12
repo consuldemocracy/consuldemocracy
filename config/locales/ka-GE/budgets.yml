@@ -82,9 +82,6 @@ ka:
           button: ძებნა
           placeholder: საინვესტიციო პროექტების ძიება...
           title: ძებნა
-        search_results:
-          one: " შეიცავდეს საძიებო სიტყვას <strong>%{search_term}</strong>"
-          other: " შეიცავდეს საძიებო სიტყვას <strong>%{search_term}</strong>"
         sidebar:
           my_ballot: ჩემი ბიულეტენი
           voted_info:
