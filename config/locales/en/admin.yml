@@ -215,8 +215,8 @@ en:
         title: "Edit phase"
         description_help_text: This text will appear in the header when the phase is active
         duration: "Phase's duration"
-        duration_description: "The period of time this phase will be active."
-        enabled_help_text: This phase will be public in the budget's phases timeline, as well as active for any other purpose
+        duration_description: "These fields are used for information purposes only and <strong>do not trigger an automatic update of the active phase.</strong> In order to update it, edit the budget and select the active phase."
+        enabled_help_text: This phase will be public in the budget's phases timeline.
         image_description: "If an image is uploaded it will be displayed next to the description of this phase."
         main_call_to_action: "Main call to action (optional)"
         main_call_to_action_description: "This link will appear on main banner of this participatory budget when this phase is enabled and encourages your user to perform a specific action like creating a proposal, voting for existing ones, or learn more about the process."
