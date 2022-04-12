@@ -98,9 +98,6 @@ es-PE:
         button: Buscar
         placeholder: Buscar debates...
         title: Buscar
-      search_results:
-        one: " que contienen <strong>'%{search_term}'</strong>"
-        other: " que contienen <strong>'%{search_term}'</strong>"
       start_debate: Empieza un debate
       title: Discusiones
       section_header:
