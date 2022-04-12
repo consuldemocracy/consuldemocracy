@@ -119,11 +119,6 @@ he:
         button: חיפוש
         placeholder: חיפוש דיונים...
         title: חיפוש
-      search_results:
-        one: " המכיל את המונחים <strong>'%{search_term}'</strong>"
-        two: " המכיל את המונחים <strong>'%{search_term}'</strong>"
-        many: " המכיל את המונחים <strong>'%{search_term}'</strong>"
-        other: " המכיל את המונחים <strong>'%{search_term}'</strong>"
       start_debate: פתח דיון
       title: דיונים
       section_header:
