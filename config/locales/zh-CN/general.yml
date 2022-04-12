@@ -99,8 +99,6 @@ zh-CN:
         button: 搜索
         placeholder: 搜索辩论...
         title: 搜索
-      search_results:
-        other: " 包含术语<strong>'%{search_term}'</strong>"
       start_debate: 开始辩论
       title: 辩论
       section_header:
