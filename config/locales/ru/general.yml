@@ -111,11 +111,6 @@ ru:
         button: Поиск
         placeholder: Искать дебаты...
         title: Поиск
-      search_results:
-        one: " содержащие термин <strong>'%{search_term}'</strong>"
-        few: " содержащие термин <strong>'%{search_term}'</strong>"
-        many: " содержащие термин <strong>'%{search_term}'</strong>"
-        other: " содержащие термин <strong>'%{search_term}'</strong>"
       start_debate: Начать дебаты
       title: Обсуждения проблем
       section_header:
