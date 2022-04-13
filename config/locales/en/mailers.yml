@@ -2,6 +2,10 @@ en:
   mailers:
     title: "Open Government"
     no_reply: "This message was sent from an email address that does not accept replies."
+    already_confirmed:
+      info: "We've received a request to send you instructions to confirm your account. However, your account is already confirmed, so there's no need to do so again."
+      new_password: "If you've forgotten your password, you can reset it at the following link:"
+      subject: Your account is already confirmed
     comment:
       hi: Hi
       new_comment_by: There is a new comment from <strong>%{commenter}</strong>
