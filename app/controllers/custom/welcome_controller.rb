@@ -10,5 +10,4 @@ class WelcomeController < ApplicationController
   def load_budgets
     @budgets = Budget.where("id > -1");
   end
-
 end

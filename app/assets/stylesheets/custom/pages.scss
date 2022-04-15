@@ -79,7 +79,7 @@ only screen and (min-resolution: 240dpi) {
         font-size: 36px;
         line-height: 42px;
       }
-      
+
       p {
         font-size: 24px;
         line-height: 32px;
@@ -98,7 +98,7 @@ only screen and (min-resolution: 240dpi) {
       font-size: 36px;
       line-height: 54px;
       font-weight: 700;
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid $black;
       padding-bottom: 5px;
       margin-bottom: 0;
     }
@@ -107,11 +107,11 @@ only screen and (min-resolution: 240dpi) {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid $black;
       padding: 30px 0;
-      
+
       &:hover {
-        color: black;
+        color: $black;
         background-color: #f2f2f2;
       }
 
@@ -150,26 +150,24 @@ only screen and (min-resolution: 240dpi) {
         h3 {
           font-size: 24px;
         }
-  
+
         p {
           font-size: 16px;
         }
 
-        .more {
-          span {
-            display: none;
-          }
+        .more span {
+          display: none;
+        }
 
-          .custom-icon.arrow-small-right {
-            margin-left: 20px;
-          }
+        .more .custom-icon.arrow-small-right {
+          margin-left: 20px;
         }
       }
     }
   }
 
   hr {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $black;
     max-width: none;
   }
 }
@@ -257,14 +255,14 @@ footer {
 
       li {
         display: inline-block;
+      }
 
-        a {
-          color: white;
-          font-size: 14px;
-          font-weight: 400;
-          margin-left: 5px;
-          margin-right: 5px;
-        }
+      a {
+        color: $white;
+        font-size: 14px;
+        font-weight: 400;
+        margin-left: 5px;
+        margin-right: 5px;
       }
     }
 
@@ -273,15 +271,16 @@ footer {
 
       .footer-links {
         text-align: center;
-
-        li {
-          display: block;
-
-          span {
-            display: none;
-          }
-        }
       }
+
+      li {
+        display: block;
+      }
+
+      li span {
+        display: none;
+      }
+
     }
   }
 
@@ -313,7 +312,7 @@ footer {
 }
 
 .bgblack {
-  background-color: black;
+  background-color: $black;
 }
 /* hover style just for information */
 span:hover::before {
