@@ -1,58 +1,17 @@
 .header-logo {
-    height: 100px;
-    width: 350px;
-    max-width: 100%;
-    background-image: image-url("logo.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: block;
-  
-    @media (max-width: 767px) {
-      margin-top: 5px;
-      margin-bottom: 5px;
-    }
+  height: 100%;
+  display: block;
+}
+
+.top-bar {
+  background: #fff !important;
+
+  .site-title-holder {
+    display: none !important;
   }
-  
-  .welcome-column {
-    background-image: none !important;
-  
-    &.accepting {
-      background-color: $accepting !important;
-    }
-  
-    &.balloting {
-      background-color: $balloting !important;
-    }
-  
-    &.finished {
-      background-color: $finnished !important;
-    }
-  
-    .linkable {
-      background-image: none !important;
-    }
-  
-    .linkable {
-      background-image: none !important;
-    }
-  
-    .action-button.large {
-      background-color: #00aeef !important;
-      background-image: none !important;
-      color: #fff !important;
-      text-transform: uppercase !important;
-    }
+
+  .language-picker li a {
+    line-height: 100px;
   }
-  
-  .top-bar {
-    background: #fff !important;
-  
-    .site-title-holder {
-      display: none !important;
-    }
-  
-    .language-picker li a {
-      line-height: 100px;
-    }
-  }
+}
   

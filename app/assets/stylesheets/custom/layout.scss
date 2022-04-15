@@ -82,7 +82,7 @@ a {
 
 
 .main-indented-content {
-  margin: rem-calc(20) auto;
+  margin: 0 auto;
   padding: 0 0.625rem;
   width: 100%;
 }
@@ -111,6 +111,11 @@ a {
   }
 }
 
+@media screen and (min-width: 1400px) {
+  .main-indented-content {
+    max-width: 1320px;
+  }
+}
 
 .row {
   max-width: 100%;
@@ -148,33 +153,57 @@ a {
   padding: 0;
 }
 
+.login-button {
+  background-color: black;
+  color: white;
+  border-radius: 30px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 16px;
+  margin-left: 10px;
+  &:hover {
+    background-color: #04aeef;
+    color: white;
+  }
+}
+
 .action-button {
-  //background-color: $mandys-pink;
-  border-radius: 20px;
+  background-color: #04aeef;
+  color: white;
+  border-radius: 50px;
+  font-size: 24px;
   cursor: pointer;
   display: inline-block;
-  font-size: rem-calc(22);
   font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  margin-top: 30px;
 
-  &:hover {
-    //background-color: $mandys-pink-hover;
+  .custom-icon.arrow-small-right,
+  .custom-icon.arrow-large-right {
+    background-image: image-url("arrow-white.svg");
+    margin-left: 5px;
+    background-size: 38px 35px;
   }
 
-  &.transparent {
-    //background-color: transparent;
-    border: 1px solid $mandys-pink;
-
-    &:hover {
-      //background-color: $mandys-pink-hover;
-    }
+  &:hover {
+    background-color: #04aeef;
+    color: white;
   }
 
   &.small {
-    padding: rem-calc(5) rem-calc(16);
+    background: $mandys-pink;
+    background-image: none !important;
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
   }
 
   &.large {
-    padding: rem-calc(11) rem-calc(16);
+    padding: 8px;
+    width: 350px;
   }
 
   &.huge {
@@ -256,7 +285,7 @@ a {
 .wrapper {
   // height: 100%;
   header {
-    padding-bottom: 1.5rem;
+    // padding-bottom: 1.5rem;
     margin-bottom: 0;
   }
 }
@@ -284,9 +313,19 @@ header {
 }
 
 .top-bar {
-  background: $mandys-pink !important;
-  color: $rhino;
-  padding: rem-calc(4.5) 20px;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+    .header-links {
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+  }
 }
 
 
@@ -296,23 +335,32 @@ header {
 
 
 footer {
-  background-color: $input-gray;
+  background-color: white;
   color: $black;
   font-size: $tiny-font-size;
   height: rem-calc(100);
+
+  .footer-logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+  }
 
   .logo-holder {
     padding-left: rem-calc(80px);
   }
 
-  .links-holder {
-    padding-right: rem-calc(20);
-    text-align: right;
-  }
-
   .logo-right {
-    text-align: right;
-    background-position: right center;
+    display: flex;
+    flex-direction: column;
+    span {
+      font-size: 14px;
+      line-height: 28px;
+    }
+    img {
+      width: 120px;
+    }
   }
 
   .logo {
@@ -329,21 +377,9 @@ footer {
     }
   }
 
-  .logo-djnd {
-    background: image-url("djnd.png") no-repeat;
-    background-size: 119px 61px;
-    background-position: right;
-    display: block;
-    height: rem-calc(61);
-
-    &.default {
-      background: image-url("djnd.png") no-repeat;
-      background-size: 119px 61px;
-    }
-  }
-
   .footer-links {
     margin-top: rem-calc(40);
+    color: white;
   }
 
   @media only screen and (-webkit-min-device-pixel-ratio: 1.5),

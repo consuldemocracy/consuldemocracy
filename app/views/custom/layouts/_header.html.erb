@@ -1,26 +1,12 @@
 <header>
-  <div class="row">
+  <div class="main-indented-content">
     <div class="top-bar">
-      <a href="/" class="header-logo"></a>
-      <div class="site-title-holder">
-        <%= link_to root_path, accesskey: "0", class: "site-title" do %>
-          <span class="site-name"><%= t("custom.meta.pp_name") %></span>&nbsp;/&nbsp;<span class="place-name"><%= t("custom.meta.place_name") %></span>
-        <% end %>
-      </div>
-
-      <!-- REMOVE LANGUAGE PICKER
-      <div class="language-picker">
-        <%= render "shared/locale_switcher" %>
-      </div>
-      -->
-      <div>
-        <li class="inline-block"><%= link_to t("custom.titles.about"), page_path("o-participativnem-proracunu") %></li>
-          <% if @budgets %>
-            <div class="language-picker">
-                <%= render "shared/year_switcher", href: root_url, budgets: @budgets %>
-            </div>
-          <% end %>
-      </div>
+      <a href="/" class="header-logo">
+        <%= image_tag(image_path_for("logo-header.png")) %>
+      </a>
+      <ul class="no-bullet inline-block header-links">
+        <%= render "devise/menu/login_items" %>
+      </ul>
     </div>
   </div>
 </header>

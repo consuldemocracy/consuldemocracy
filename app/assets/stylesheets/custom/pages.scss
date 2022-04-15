@@ -1,3 +1,4 @@
+// **************** LANDING ********************
 
 .phase-enrichment {
   background: image-url("custom_phases.png") no-repeat;
@@ -49,7 +50,129 @@ only screen and (min-resolution: 240dpi) {
   }
 }
 
-// Landing page
+.landing {
+  .introduction-text {
+    max-width: 60%;
+    padding-top: 80px;
+    padding-bottom: 60px;
+
+    h1 {
+      font-size: 44px;
+      line-height: 54px;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 30px;
+      line-height: 40px;
+      font-weight: 500;
+    }
+
+    .action-button {
+      width: 390px;
+    }
+
+    @media (max-width: 992px) {
+      max-width: 100%;
+
+      h1 {
+        font-size: 36px;
+        line-height: 42px;
+      }
+      
+      p {
+        font-size: 24px;
+        line-height: 32px;
+      }
+
+      .action-button {
+        width: 100%;
+      }
+    }
+  }
+
+  .list {
+    margin: 100px 0;
+
+    h2 {
+      font-size: 36px;
+      line-height: 54px;
+      font-weight: 700;
+      border-bottom: 1px solid black;
+      padding-bottom: 5px;
+      margin-bottom: 0;
+    }
+
+    .list-element {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid black;
+      padding: 30px 0;
+      
+      &:hover {
+        color: black;
+        background-color: #f2f2f2;
+      }
+
+      h3 {
+        font-size: 30px;
+        font-weight: 700;
+      }
+
+      p {
+        font-size: 24px;
+        margin-bottom: 0;
+      }
+
+      .more {
+        font-size: 24px;
+      }
+
+      .custom-icon.arrow-small-right {
+        background-image: image-url("arrow-black.svg");
+        width: 24px;
+        height: 24px;
+        margin-left: 5px;
+        background-size: 29px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      margin: 50px 0;
+
+      h2 {
+        font-size: 28px;
+        line-height: 36px;
+      }
+
+      .list-element {
+        h3 {
+          font-size: 24px;
+        }
+  
+        p {
+          font-size: 16px;
+        }
+
+        .more {
+          span {
+            display: none;
+          }
+
+          .custom-icon.arrow-small-right {
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  hr {
+    border-bottom: 1px solid black;
+    max-width: none;
+  }
+}
 
 .welcome-columns {
   display: flex;
@@ -63,30 +186,31 @@ only screen and (min-resolution: 240dpi) {
     margin: 0;
     position: relative;
 
-    a {
-      color: $black;
-
-      &:hover {
-        color: $black;
-        text-decoration: none !important;
-      }
-    }
-
     .column-content {
-      padding: rem-calc(50) rem-calc(50) rem-calc(90);
+      padding: 50px 40px;
 
-      h1 {
-        letter-spacing: 2px;
-        margin-bottom: rem-calc(30);
-        text-align: center;
+      @media screen and (max-width: 992px) {
+        padding: 50px 0;
       }
 
       h2 {
-        margin-bottom: rem-calc(30);
+        font-size: 36px;
+        line-height: 54px;
+        font-weight: 700;
+      }
+
+      h4 {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 30px;
+      }
+
+      .large-description {
+        font-size: 20px;
       }
 
       .action-button {
-        margin-top: rem-calc(20);
+        width: 100%;
       }
     }
 
@@ -105,150 +229,60 @@ only screen and (min-resolution: 240dpi) {
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 992px) {
   .welcome-columns .welcome-column {
     flex-grow: 0;
     flex-basis: 100%;
   }
 }
 
-.action-button.large,
-.action-button.huge {
-  text-align: center;
-  color: #272266 !important;
-  border-radius: 36px;
-  box-shadow: 0 0 16px rgba(50, 54, 106, 0.25);
-
-  font-size: rem-calc(30);
-  font-weight: 700;
-  line-height: rem-calc(30);
-  padding: rem-calc(20) rem-calc(25);
-
-  .custom-icon.arrow-small-right,
-  .custom-icon.arrow-large-right {
-    color: #272266;
-    margin-left: 10px;
-  }
-}
-
-.action-button.small {
-  background: $mandys-pink;
-  background-image: none !important;
-  color: #000;
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.action-button.large.w485 {
-  min-width: 100%;
-}
-
-@media (min-width: 576px) {
-  .action-button.large.w485 {
-    width: 485px;
-    max-width: 100%;
-  }
-}
-
-.welcome-columns {
-  .action-button.large {
-    min-width: 100%;
-    box-shadow: 0 0 15px #32366a;
-  }
-
-  .welcome-column .column-content h1 {
-    font-size: 60px;
-    font-weight: 800;
-    letter-spacing: 2.4px;
-    line-height: 66px;
-    margin-bottom: 47px;
-  }
-
-  .welcome-column .column-content h2 {
-    font-weight: 600;
-    line-height: 35px;
-  }
-}
-
-.home-page footer {
-  background: #e1e1e1;
-}
-
 .callout {
   z-index: 1000;
 }
 
-footer .loginlinks a {
-  border: none !important;
-  background-size: 300% 100%;
-
-  moz-transition: all .4s ease-in-out;
-  -o-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
-
-  //background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673)!important;
-  background-image: linear-gradient(to right, $mandys-pink, #f2d6d0, #fcede9, $mandys-pink) !important;
-
-  &:hover {
-    background-position: 100% 0;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-  }
-
-  &.transparent {
-    background-size: 300% 100%;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-
-    &:hover {
-      background-position: 100% 0;
-      moz-transition: all .4s ease-in-out;
-      -o-transition: all .4s ease-in-out;
-      -webkit-transition: all .4s ease-in-out;
-      transition: all .4s ease-in-out;
-    }
-  }
-}
-
-
 footer {
   height: max-content;
-  border-top: 3px solid #e1e1e1;
 
   .logo-holder {
     padding-left: 0;
   }
 
-  .loginlinks {
+  .footer-links-wrapper {
     display: flex;
-    flex-direction: row;
-    a {
-      color: #272266;
-      font-size: 14px;
-      font-weight: 700;
+    justify-content: end;
 
-      padding: 7px 17px;
-      margin: 0 10px 0 0;
+    .footer-links {
+      padding: 30px 0;
+      margin: 0;
 
-      box-shadow: 0 0 8px rgba(50, 54, 106, 0.25);
-      border-radius: 20px;
-      background-image: linear-gradient(80deg, $mandys-pink 0%, $mandys-pink 51%, #f2d6d0 100%);
+      li {
+        display: inline-block;
+
+        a {
+          color: white;
+          font-size: 14px;
+          font-weight: 400;
+          margin-left: 5px;
+          margin-right: 5px;
+        }
+      }
     }
-  }
 
-  .links-holder {
-    text-align: center;
-  }
+    @media screen and (max-width: 768px) {
+      justify-content: center;
 
-  .footer-links {
-    padding: 20px 0;
-    margin: 0;
-    text-align: center;
+      .footer-links {
+        text-align: center;
+
+        li {
+          display: block;
+
+          span {
+            display: none;
+          }
+        }
+      }
+    }
   }
 
   .logo {
@@ -266,10 +300,6 @@ footer {
       text-align: initial;
     }
 
-    .links-holder {
-      text-align: right;
-    }
-
     .footer-links {
       text-align: right;
     }
@@ -282,41 +312,12 @@ footer {
   }
 }
 
-.bgblue {
-  background-color: #32366a;
+.bgblack {
+  background-color: black;
 }
 /* hover style just for information */
 span:hover::before {
   border: 2px solid #3c3583 !important;
-}
-
-.welcome-columns {
-  .welcome-column {
-    background-image: linear-gradient(to top, #32366a 0%, #40358f 100%);
-
-    &.hoverlinkable {
-      box-shadow: 0 0 31px 3px rgba(0, 0, 0, 0.21);
-      z-index: 1;
-      border-right: 0;
-    }
-  }
-
-  .welcome-column:first-of-type {
-    border: 0;
-  }
-
-  .welcome-column:last-of-type {
-    border: 0;
-  }
-
-  .custom-icon.arrow-small-right,
-  .custom-icon.arrow-large-right {
-    background-image: image-url("arrow-white.svg");
-    background-position: center;
-    background-size: 45px 42px;
-    width: 33px;
-    height: 29px;
-  }
 }
 
 .custom-icon.arrow-small-right,
@@ -328,14 +329,10 @@ span:hover::before {
   height: 29px;
 }
 
-.action-button {
-  box-shadow: 0 0 8px rgba(50, 54, 106, 0.25);
-  border-radius: 18px;
-  color: #272266;
-}
-
 .home-page {
-  background: #32366a;
+  main {
+    background-color: #f2f2f2;
+  }
 }
 
 .arrow-down {

@@ -1,38 +1,31 @@
 <footer>
-  <div class="bgblue">
-    <div class="row loginlinks ">
-      <div class="main-indented-content clearfix">
-      <div class="small-12 large-6 column">
+<!-- main-indented-content ??? -->
+  <div class="bgblack">
+    <div class="main-indented-content">
+      <div class="footer-links-wrapper">
         <ul class="no-bullet inline-block footer-links">
-          <%= render "devise/menu/login_items" %>
+          <li><%= link_to t("custom.titles.about"), page_path("o-participativnem-proracunu") %><span>|<span></li>
+          <li><%= link_to t("layouts.footer.conditions"), page_path(t("custom.meta.tos")) %><span>|</span></li>
+          <li>
+            <%= layout_menu_link_to t("layouts.header.help"),
+                                    help_path,
+                                    current_page?(help_path),
+                                    accesskey: "6",
+                                    title: t("shared.go_to_page") + t("layouts.header.help") %>
+          </li>
         </ul>
       </div>
-      </div>
     </div>
   </div>
-  <div class="row">
-    <div class="main-indented-content clearfix">
-    <div class="small-12 large-4 column ">
-      <h1 class="logo <%= t("custom.classes.footer_logo") %>"></h1>
-    </div>
-
-    <div class="small-12 large-4 column links-holder">
-      <ul class="no-bullet inline-block footer-links">
-        <li class="inline-block"><%= link_to t("custom.titles.about"), page_path("o-participativnem-proracunu") %>&nbsp;&nbsp;|&nbsp;</li>
-        <li class="inline-block"><%= link_to t("layouts.footer.conditions"), page_path(t("custom.meta.tos")) %>&nbsp;|&nbsp;</li>
-        <li class="inline-block">
-          <%= layout_menu_link_to t("layouts.header.help"),
-                                  help_path,
-                                  current_page?(help_path),
-                                  accesskey: "6",
-                                  title: t("shared.go_to_page") + t("layouts.header.help") %>
-        </li>
-      </ul>
-    </div>
-      <div class="small-12 large-4 column logo-right">
-          <h1 class="logo-djnd <%= t("custom.classes.footer_logo") %>"></h1>
+  <div class="main-indented-content">
+    <div class="footer-logos">
+      <%= image_tag(image_path_for("municipalities/default.png")) %>
+      <div class="logo-right">
+        <span>Za platformo skrbi</span>
+        <%= image_tag(image_path_for("logo-djnd.png")) %>
+        <!--<h1 class="logo-djnd <%= t("custom.classes.footer_logo") %>">logo djnd</h1>-->
       </div>
-  </div>
+    </div>
   </div>
   <!-- analytics -->
   <!-- TODO -->
