@@ -79,7 +79,8 @@ describe Verification::Residence do
 
   describe "tries" do
     it "increases tries after a call to the Census" do
-      residence.postal_code = "28011"
+      residence.document_number = "12345677Z"
+      residence.postal_code = "38400"
       residence.valid?
       expect(residence.user.lock.tries).to eq(1)
     end
@@ -93,16 +94,16 @@ describe Verification::Residence do
 
   describe "Failed census call" do
     it "stores failed census API calls" do
-      residence = build(:verification_residence, :invalid, document_number: "12345678Z")
+      residence = build(:verification_residence, :invalid, document_number: "12345677Z")
       residence.save
 
       expect(FailedCensusCall.count).to eq(1)
       expect(FailedCensusCall.first).to have_attributes(
         user_id:         residence.user.id,
-        document_number: "12345678Z",
+        document_number: "12345677Z",
         document_type:   "1",
         date_of_birth:   Date.new(1980, 12, 31),
-        postal_code:     "28001"
+        postal_code:     "38400"
       )
     end
   end

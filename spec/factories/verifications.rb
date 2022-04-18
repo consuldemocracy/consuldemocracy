@@ -3,7 +3,7 @@ FactoryBot.define do
     sequence(:document_number) { |n| "DOC_NUMBER#{n}" }
     document_type { 1 }
     date_of_birth { Date.new(1970, 1, 31) }
-    postal_code { "28002" }
+    postal_code { "38400" }
   end
   factory :local_census_records_import, class: "LocalCensusRecords::Import" do
     file do
@@ -19,11 +19,11 @@ FactoryBot.define do
     document_number
     document_type    { "1" }
     date_of_birth    { Time.zone.local(1980, 12, 31).to_date }
-    postal_code      { "28013" }
+    postal_code      { "38400" }
     terms_of_service { "1" }
 
     trait :invalid do
-      postal_code { "28001" }
+      postal_code { "38400" }
     end
   end
 
@@ -32,7 +32,7 @@ FactoryBot.define do
     document_number
     document_type { 1 }
     date_of_birth { Date.new(1900, 1, 1) }
-    postal_code { "28000" }
+    postal_code { "38400" }
   end
 
   factory :verification_sms, class: "Verification::Sms" do
@@ -61,6 +61,6 @@ FactoryBot.define do
     document_number
     document_type { "1" }
     date_of_birth { Date.new(1980, 12, 31) }
-    postal_code { "28013" }
+    postal_code { "38400" }
   end
 end
