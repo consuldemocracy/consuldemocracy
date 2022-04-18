@@ -8,6 +8,7 @@ sl:
       new_password: "Novo geslo"
       updated: "Geslo uspešno posodobljeno"
     confirmations:
+      already_confirmed: "Tvoj račun je že potrjen, vpiši se."
       confirmed: "Tvoj račun je potrjen."
       send_instructions: "V nekaj minutah dobiš e-pošto z navodili, kako ponastaviti svoje geslo."
       send_paranoid_instructions: "Če imamo tvoj e-naslov v bazi, v nekaj minutah dobiš e-pošto z navodili, kako ponastaviti svoje geslo."
@@ -55,7 +56,6 @@ sl:
       unlocked: "Tvoj račun je odklenjen. Prosimo, vpiši se za nadaljevanje."
   errors:
     messages:
-      already_confirmed: "Tvoj račun je že potrjen, vpiši se."
       confirmation_period_expired: "Račun moraš potrditi v %{period}; prosimo ponovi zahtevo."
       expired: "je potekla; prosimo ponovi zahtevo."
       not_found: "ni mogoče najti."

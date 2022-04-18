@@ -8,6 +8,7 @@ so:
       new_password: "Fure cusub"
       updated: "Furahaga sirta ah si guul ah ayaa lo cusboneysiyey"
     confirmations:
+      already_confirmed: "Horeyba waa laguu xaqiijiyey; fadlan iskuday inaad saxiixdo."
       confirmed: "Your account has been confirmed."
       send_instructions: "Dhowr daqiiqadood waxaad heli doontaa email ah oo leh tilmaamo ku saabsan sida dib loogu bilaabo eraygaaga sirta ah."
       send_paranoid_instructions: "Haddii cinwaanka emailkaaga uu ku jiro xogtanada, dhowr daqiiqo waxaad heli doontaa email ah oo leh tilmaamo ku saabsan sida dib loogu bilaabo eraygaaga sirta ah."
@@ -55,7 +56,6 @@ so:
       unlocked: "Koontadaada ayaa la furay. Fadlan gal si aad u sii wadato."
   errors:
     messages:
-      already_confirmed: "Horeyba waa laguu xaqiijiyey; fadlan iskuday inaad saxiixdo."
       confirmation_period_expired: "Waxaad ubaahan tahay in lagu xaqiijiyo gudaha boqolkiiba %{period} fadlan samee codsi ku celin."
       expired: "wuu dhacay; fadlan samee codsi ku celin."
       not_found: "lama helin."

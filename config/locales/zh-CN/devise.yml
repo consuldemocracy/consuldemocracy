@@ -8,6 +8,7 @@ zh-CN:
       new_password: "新密码"
       updated: "密码已成功更新"
     confirmations:
+      already_confirmed: "您已被核实；请尝试登录。"
       confirmed: "您的账号已确认。"
       send_instructions: "几分钟后，您将收到一封电子邮件，其中包含如何重设密码的说明。"
       send_paranoid_instructions: "如果您的电子邮件地址在我们的数据库中，几分钟后，您将收到一封电子邮件，其中包含如何重设密码的说明。"
@@ -55,7 +56,6 @@ zh-CN:
       unlocked: "您的账号已解锁。请登录以继续。"
   errors:
     messages:
-      already_confirmed: "您已被核实；请尝试登录。"
       confirmation_period_expired: "您需要在%{period} 内被核实；请发出重复请求。"
       expired: "已过期；请发出重复请求。"
       not_found: "未找到。"

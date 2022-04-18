@@ -8,6 +8,7 @@ id:
       new_password: "Kata sandi baru"
       updated: "Kata sandi berhasil diperbarui"
     confirmations:
+      already_confirmed: "Anda sudah diverifikasi; Silakan untuk mencoba masuk."
       confirmed: "Akun anda telah dikonfirmasi."
       send_instructions: "Dalam beberapa menit anda akan menerima email berisi petunjuk tentang cara mereset kata sandi anda."
       send_paranoid_instructions: "Jika alamat email anda ada di database kami, dalam beberapa menit anda akan menerima email berisi petunjuk tentang cara mereset kata sandi anda."
@@ -55,7 +56,6 @@ id:
       unlocked: "Akun anda telah dibuka. Silakan masuk untuk melanjutkan."
   errors:
     messages:
-      already_confirmed: "Anda sudah diverifikasi; Silakan untuk mencoba masuk."
       confirmation_period_expired: "Anda perlu untuk diverifikasi dalam %{period}; silahkan buat sebuah permintaan berulang."
       expired: "sudah kadaluarsa, silakan membuat ulangi permintaan."
       not_found: "tidak ditemukan."

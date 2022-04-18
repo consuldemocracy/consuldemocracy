@@ -8,6 +8,7 @@ ast:
       new_password: "Nueva clave"
       updated: "Clave actualizá con ésitu"
     confirmations:
+      already_confirmed: "ya has sido confirmado, por favor intenta iniciar sesión."
       confirmed: "La to cuenta foi confirmada. Por favor amuesa que yes tu, cola to rede social o'l to usuariu y clave."
       send_instructions: "Vas Recibir un corréu electrónicu nunos minutos con instrucciones sobro cómo restablecer la to clave."
       send_paranoid_instructions: "Si'l to corréu electrónicu esiste na nuesa base de datos vas recibir un corréu electrónicu n'unos minutos con instrucciones sobro cómo restablecer la to clave."
@@ -54,7 +55,6 @@ ast:
       unlocked: "Tu cuenta ha sido desbloqueada. Por favor inicia sesión para continuar."
   errors:
     messages:
-      already_confirmed: "ya has sido confirmado, por favor intenta iniciar sesión."
       confirmation_period_expired: "necesitas ser confirmado en %{period}, por favor vuelve a solicitarla."
       expired: "ha expirado, por favor vuelve a solicitarla."
       not_found: "no se ha encontrado."

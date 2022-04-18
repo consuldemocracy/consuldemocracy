@@ -8,6 +8,7 @@ ca:
       new_password: "Nova contrasenya"
       updated: "Contrasenya actualitzada amb èxit"
     confirmations:
+      already_confirmed: "Ja heu estat verificats; intenteu iniciar la sessió."
       confirmed: "El teu compte ha sigut confirmat. Per favor autentica't amb el teu usuari i contrasenya"
       send_instructions: "Rebràs un correu electrònic en uns minuts amb instruccions sobre com restablir la teua contrasenya."
       send_paranoid_instructions: "Si el teu correu electrònic existeix en la nostra base de dades rebràs un correu electrònic en uns minuts amb instruccions sobre com restablir la teua contrasenya."
@@ -55,7 +56,6 @@ ca:
       unlocked: "El teu compte ha sigut desbloquejat. Per favor inicia sessió per a continuar."
   errors:
     messages:
-      already_confirmed: "Ja heu estat verificats; intenteu iniciar la sessió."
       confirmation_period_expired: "Heu de ser verificat dins %{period}; feu una sol·licitud de repetició."
       expired: "ha expirat; feu una sol·licitud de repetició."
       not_found: "no trobat."

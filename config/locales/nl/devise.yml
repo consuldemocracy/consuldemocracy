@@ -8,6 +8,7 @@ nl:
       new_password: "Nieuw wachtwoord"
       updated: "Wachtwoord is aangepast"
     confirmations:
+      already_confirmed: "is reeds bevestigd"
       confirmed: "Uw account is bevestigd."
       send_instructions: "U ontvangt via e-mail instructies om uw account te bevestigen."
       send_paranoid_instructions: "Als uw e-mailadres bestaat in de database, ontvangt u via e-mail instructies hoe u uw account kunt bevestigen."
@@ -55,7 +56,6 @@ nl:
       unlocked: "uw account is ontgrendeld. U kunt nu weer inloggen."
   errors:
     messages:
-      already_confirmed: "is reeds bevestigd"
       confirmation_period_expired: "moet worden bevestigd binnen %{period}, probeer het a.u.b. nog een keer"
       expired: "is verlopen, vraag een nieuwe aan\""
       not_found: "niet gevonden"

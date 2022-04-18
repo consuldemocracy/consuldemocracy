@@ -8,6 +8,7 @@ ro:
       new_password: "Parola nouă"
       updated: "Parolă actualizată cu succes"
     confirmations:
+      already_confirmed: "Ați fost deja verificat; vă rugăm încercați să vă conectați."
       confirmed: "Contul dumneavoastră a fost confirmat."
       send_instructions: "În câteva minute veți primi un email care conține instrucțiuni despre cum vă puteți reseta parola."
       send_paranoid_instructions: "Dacă adresa dumneavoastră de email se află în baza noastră de date, în câteva minute veți primi un email care conține instrucțiuni despre cum vă puteți reseta parola."
@@ -55,7 +56,6 @@ ro:
       unlocked: "Contul dvs. a fost deblocat. Vă rugăm să vă conectați pentru a continua."
   errors:
     messages:
-      already_confirmed: "Ați fost deja verificat; vă rugăm încercați să vă conectați."
       confirmation_period_expired: "Trebuie să fiți verificat în %{period}; vă rugăm să faceți o solicitare repetată."
       expired: "a expirat; vă rugăm să faceți o solicitare repetată."
       not_found: "nu a fost găsit."

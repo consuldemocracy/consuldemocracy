@@ -8,6 +8,7 @@ sq:
       new_password: "Fjalëkalim i ri"
       updated: "Fjalëkalimi u përditësua"
     confirmations:
+      already_confirmed: "Ju tashmë jeni verifikuar; lutemi të përpiqeni të identifikohesh."
       confirmed: "Llogaria jote është konfirmuar."
       send_instructions: "Në pak minuta do të merrni një email që përmban udhëzime se si të rivendosni fjalëkalimin tuaj."
       send_paranoid_instructions: "Nëse adresa juaj e e-mail është në bazën tonë të të dhënave, brenda pak minutash do të merrni një email që përmban udhëzime se si të rivendosni fjalëkalimin tuaj."
@@ -55,7 +56,6 @@ sq:
       unlocked: "Llogaria juaj është hapur. Identifikohu për të vazhduar."
   errors:
     messages:
-      already_confirmed: "Ju tashmë jeni verifikuar; lutemi të përpiqeni të identifikohesh."
       confirmation_period_expired: "Duhet të verifikohesh brenda %{period}; ju lutemi bëni një kërkesë të përsëritur."
       expired: "ka skaduar; ju lutemi bëni një kërkesë të përsëritur."
       not_found: "nuk u gjet."

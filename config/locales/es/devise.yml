@@ -8,6 +8,7 @@ es:
       new_password: "Nueva contraseña"
       updated: "Contraseña actualizada con éxito"
     confirmations:
+      already_confirmed: "ya has sido confirmado, por favor intenta iniciar sesión."
       confirmed: "Tu cuenta ha sido confirmada. Por favor autentifícate con tu red social o tu usuario y contraseña"
       send_instructions: "Recibirás un correo electrónico en unos minutos con instrucciones sobre cómo restablecer tu contraseña."
       send_paranoid_instructions: "Si tu correo electrónico existe en nuestra base de datos recibirás un correo electrónico en unos minutos con instrucciones sobre cómo restablecer tu contraseña."
@@ -55,7 +56,6 @@ es:
       unlocked: "Tu cuenta ha sido desbloqueada. Por favor inicia sesión para continuar."
   errors:
     messages:
-      already_confirmed: "ya has sido confirmado, por favor intenta iniciar sesión."
       confirmation_period_expired: "necesitas ser confirmado en %{period}, por favor vuelve a solicitarla."
       expired: "ha expirado, por favor vuelve a solicitarla."
       not_found: "no se ha encontrado."

@@ -8,6 +8,7 @@ sv:
       new_password: "Nytt lösenord"
       updated: "Lösenordet har uppdaterats"
     confirmations:
+      already_confirmed: "Du har redan verifierats. Försök logga in."
       confirmed: "Ditt konto har verifierats."
       send_instructions: "Du kommer strax att få ett e-postmeddelande med instruktioner för att återställa ditt lösenord."
       send_paranoid_instructions: "Om din e-postadress finns i vår databas kommer du strax att få ett e-postmeddelande med instruktioner för att återställa ditt lösenord."
@@ -55,7 +56,6 @@ sv:
       unlocked: "Ditt konto har låsts upp. Logga in för att fortsätta."
   errors:
     messages:
-      already_confirmed: "Du har redan verifierats. Försök logga in."
       confirmation_period_expired: "Du behöver verifiera ditt konto inom %{period}. Vi ber dig skicka en ny förfrågan."
       expired: "är inte längre giltig. Vi ber dig göra en ny förfrågan."
       not_found: "hittades inte."
