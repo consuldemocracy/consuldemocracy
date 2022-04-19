@@ -318,7 +318,6 @@ describe "Legislation" do
         end
 
         expect(page).to     have_content("This is the process homepage")
-        expect(page).not_to have_content("Participate in the debate")
       end
 
       scenario "disabled", :with_frozen_time do
@@ -345,7 +344,6 @@ describe "Legislation" do
         visit legislation_process_path(process)
 
         expect(page).to     have_content("This phase is not open yet")
-        expect(page).not_to have_content("Participate in the debate")
       end
 
       scenario "open without questions" do
@@ -353,7 +351,6 @@ describe "Legislation" do
 
         visit legislation_process_path(process)
 
-        expect(page).not_to have_content("Participate in the debate")
         expect(page).not_to have_content("This phase is not open yet")
       end
 
@@ -366,7 +363,6 @@ describe "Legislation" do
 
         expect(page).to     have_content("Question 1")
         expect(page).to     have_content("Question 2")
-        expect(page).to     have_content("Participate in the debate")
         expect(page).not_to have_content("This phase is not open yet")
       end
 
