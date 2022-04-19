@@ -9,51 +9,82 @@
 <% end %>
 
 <main>
-  <article class="welcome-columns">
-    <% if current_budget.present? %>
-      <% current_budget.custom_phases(current_user, create_url = method(:budget_investments_url)).each do |_, phase| %>
-        <% if phase.enabled %>
-          <section class="welcome-column <%= phase.kind %> <% if phase.url %> hoverlinkable <% end %> ">
-            <% if phase.url %>
-              <a class="linkable" href="<%= phase.url %>">
-            <% end %>
-            <div class="phase-enrichment-holder">
-              <div class="phase-enrichment <%= phase.kind %>"></div>
-            </div>
-            <div class="column-content">
-              <h1><%= t("custom.headings.#{phase.kind}") %></h1>
-              <h2><%= strip_tags(phase.summary) %></h2>
-              <% unless phase.url %>
-                <div class="abtom4">
-                 <div class="large-description"><%= sanitize_and_auto_link phase.description %></div>
-                  <div class="large-description"><%= sanitize_and_auto_link phase.summary %></div>
-                  <% if phase.description %>
-                    <div class="large-description"><%= sanitize_and_auto_link phase.description %></div>
-                  <% else %>
-                    <p class="large-description">&nbsp;</p>
-                  <% end %>
-                </div>
-              <% end %>
+  <article class="main-indented-content">
+    <div class="landing">
+      <div class="introduction-text">
+        <h1><%= t("custom.landing.title") %></h1>
+        <p><%= t("custom.landing.introduction_text") %></p>
+        <!-- TODO: can we get current budget - current phase url directly? -->
+        <% if current_budget.present? %>
+          <% current_budget.custom_phases(current_user, create_url = method(:budget_investments_url)).each do |_, phase| %>
+            <% if phase.enabled %>
               <% if phase.url %>
-                <div class="abtom4">
-                <span class="action-button large">
+                <a class="action-button large" href="<%= phase.url %>">
                   <%= t("devise_views.sessions.new.submit") %>&nbsp;<i class="custom-icon arrow-small-right"></i>
-                </span>
-                </div>
+                </a>
               <% end %>
-            </div>
-            <% if phase.url %>
-              </a>
             <% end %>
-          </section>
+          <% end %>
         <% end %>
+      </div>
+      <hr />
+      <div class="welcome-columns">
+      <% if current_budget.present? %>
+        <% current_budget.custom_phases(current_user, create_url = method(:budget_investments_url)).each do |_, phase| %>
+          <% if phase.enabled %>
+            <section class="welcome-column">
+              <div class="phase-enrichment-holder">
+                <div class="phase-enrichment <%= phase.kind %>"></div>
+              </div>
+              <div class="column-content">
+                <h2><%= t("custom.headings.#{phase.kind}") %></h2>
+                <h4><%= strip_tags(phase.summary) %></h4>
+                <% unless phase.url %>
+                  <div>
+                    <div class="large-description"><%= sanitize_and_auto_link phase.description %></div>
+                    <div class="large-description"><%= sanitize_and_auto_link phase.summary %></div>
+                    <% if phase.description %>
+                      <div class="large-description"><%= sanitize_and_auto_link phase.description %></div>
+                    <% end %>
+                  </div>
+                <% end %>
+                <% if phase.url %>
+                  <a class="action-button large" href="<%= phase.url %>">
+                    <%= t("devise_views.sessions.new.submit") %>&nbsp;<i class="custom-icon arrow-small-right"></i>
+                  </a>
+                <% end %>
+              </div>
+            </section>
+          <% end %>
+        <% end %>
+      <% else %>
+        <section class="welcome-column">
+          <div class="no-budget">
+            <%= image_tag(image_path_for("vote.png")) %>
+          </div>
+        </section>
       <% end %>
-    <% else %>
-      <section class="welcome-column">
-        <div class="no-budget">
-          <%= image_tag(image_path_for("vote.png")) %>
-        </div>
-      </section>
-    <% end %>
+      </div>
+    </div>
   </article>
 </main>
+<% if @budgets %>
+<div class="main-indented-content">
+  <div class="landing">
+    <div class="list">
+      <h2><%= t("custom.landing.title_past") %></h2>
+      <% @budgets.each do |budget| %>
+        <a class="list-element" href="budgets/<%= budget.id %>/investments">
+          <div>
+            <h3><%= budget.name %></h3>
+            <p>Preveri izbrane projekte in spremljaj izvedbo!</p>
+          </div>
+          <div class="more">
+            <span>Več</span> <i class="custom-icon arrow-small-right"></i>
+          </div>
+        </a>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% end %>
