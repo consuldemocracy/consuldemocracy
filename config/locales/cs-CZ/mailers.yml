@@ -2,6 +2,10 @@ cs:
   mailers:
     title: "Otevřený úřad"
     no_reply: "Tato zpráva byla odeslána z e-mailové adresy, která nepřijímá odpovědi."
+    already_confirmed:
+      info: "Obdrželi jsme žádost o zaslání pokynů k potvrzení vašeho účtu. Váš účet je však již potvrzen, takže to není třeba dělat znovu."
+      new_password: "Pokud jste zapomněli své heslo, můžete ho obnovit na následujícím odkazu:"
+      subject: Váš účet je již potvrzen
     comment:
       hi: Dobrý den
       new_comment_by: K dispozici je nový komentář od <strong>%{commenter}</strong>
