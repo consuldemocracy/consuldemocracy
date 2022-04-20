@@ -1,39 +1,29 @@
 // **************** LANDING ********************
 
 .phase-enrichment {
-  background: image-url("custom_phases.png") no-repeat;
-  background-size: 960px 270px;
+  height: 260px;
+  width: 300px;
 
   &.accepting {
-    background-position: -319px -10px;
-    height: 260px;
-    width: 295px;
+    background: image-url("predlagaj-MB.svg") no-repeat;
   }
 
   &.selecting {
-    background-position: -319px -10px;
     height: 260px;
     width: 295px;
   }
 
   &.balloting {
-    background-position: -3px -7px;
-    height: 260px;
-    width: 282px;
+    background: image-url("glasuj-MB.svg") no-repeat;
   }
 
   &.finished {
-    background-position: -659px -9px;
-    height: 260px;
-    width: 296px;
+    background: image-url("izvedi-MB.svg") no-repeat;
   }
 
   &.reviewing,
   &.valuating {
     background: image-url("phases/kajpazdaj.png") center no-repeat;
-    background-size: 100%;
-    height: 260px;
-    width: 296px;
 
     @include breakpoint(medium up) {
       background-size: 127%;
