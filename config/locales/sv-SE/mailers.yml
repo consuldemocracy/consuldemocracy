@@ -2,6 +2,10 @@ sv:
   mailers:
     title: "Open Government"
     no_reply: "Det går inte att svara till den här e-postadressen."
+    already_confirmed:
+      info: "Vi har fått en begäran om att skicka instruktioner för att bekräfta ditt konto. Men ditt konto har redan bekräftats, så det behöver du inte göra igen."
+      new_password: "Om du har glömt ditt lösenord kan du återställa det på följande länk:"
+      subject: Ditt konto har redan bekräftats
     comment:
       hi: Hej
       new_comment_by: Det finns en ny kommentar från <strong>%{commenter}</strong>
