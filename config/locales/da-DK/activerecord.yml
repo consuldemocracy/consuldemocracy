@@ -404,7 +404,7 @@ da:
         result_publication_date: Dato for publicering af det endelige resultat
         background_color: Baggrundsfarve
         font_color: Skriftfarve
-        homepage_enabled: "Startside aktiveret"
+        homepage_enabled: "Opsummering aktiveret"
       legislation/process/translation:
         title: Titel på proces
         summary: Resumé
