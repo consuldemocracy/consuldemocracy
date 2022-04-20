@@ -144,6 +144,15 @@ class Mailer < ApplicationMailer
     mail(to: @email_to, subject: t("mailers.machine_learning_success.subject"))
   end
 
+  def already_confirmed(user)
+    @email_to = user.email
+    @user = user
+
+    with_user(@user) do
+      mail(to: @email_to, subject: t("mailers.already_confirmed.subject"))
+    end
+  end
+
   private
 
     def with_user(user, &block)
