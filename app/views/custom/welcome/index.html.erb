@@ -68,12 +68,12 @@
     </div>
   </article>
 </main>
-<% if @budgets %>
+<% if @past_budgets.present? %>
 <div class="main-indented-content">
   <div class="landing">
     <div class="list">
       <h2><%= t("custom.landing.title_past") %></h2>
-      <% @budgets.each do |budget| %>
+      <% @past_budgets.each do |budget| %>
         <a class="list-element" href="budgets/<%= budget.id %>/investments">
           <div>
             <h3><%= budget.name %></h3>
