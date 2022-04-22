@@ -27,6 +27,7 @@
         <th><%= t("valuation.budget_investments.index.table_id") %></th>
         <th><%= t("valuation.budget_investments.index.table_title") %></th>
         <th><%= t("valuation.budget_investments.index.table_heading_name") %></th>
+        <th><%= t("valuation.budget_investments.index.table_feasibility") %></th>
         <th><%= t("valuation.budget_investments.index.table_actions") %></th>
       </tr>
     </thead>
@@ -41,6 +42,9 @@
           </td>
           <td class="small">
             <%= investment.heading.name %>
+          </td>
+          <td>
+            <%= t("valuation.budget_investments.index.feasibility.#{investment.feasibility}") %>
           </td>
           <td class="small">
             <%= link_to t("valuation.budget_investments.index.edit"),
