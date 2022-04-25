@@ -25,5 +25,10 @@ module Types
         define_method(field_name) { object.send(field_name).public_for_api }
       end
     end
+
+    def absolute_url(path)
+      request = context[:controller].request
+      URI.join("#{request.protocol}#{request.host_with_port}", path)
+    end
   end
 end

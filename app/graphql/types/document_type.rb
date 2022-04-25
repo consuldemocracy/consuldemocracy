@@ -4,7 +4,7 @@ module Types
     field :url, String, null: true
 
     def url
-      object.attachment.url
+      absolute_url(object.attachment.url)
     end
   end
 end
