@@ -27,6 +27,8 @@ module Types
     end
 
     def absolute_url(path)
+      return "" if path.blank?
+
       request = context[:controller].request
       URI.join("#{request.protocol}#{request.host_with_port}", path)
     end
