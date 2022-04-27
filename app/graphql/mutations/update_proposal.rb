@@ -17,7 +17,10 @@ module Mutations
         attributes_hash = attributes.to_hash
         attributes_hash[:translations_attributes].each { |translation| translation[:locale] = user.locale }
         attributes_hash[:image_attributes][:user_id] = user.id if attributes_hash.key? :image_attributes
-        attributes_hash[:documents_attributes].each { |document| document[:user_id] = user.id }
+
+        if attributes_hash[:documents_attributes].is_a?(Enumerable)
+          attributes_hash[:documents_attributes].each { |document| document[:user_id] = user.id }
+        end
 
         # TODO: This right here is a hotfix.
         # What we really want to do is get the right IDs and pass them
