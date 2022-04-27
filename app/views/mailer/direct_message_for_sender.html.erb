@@ -1,15 +1,15 @@
 <td style="padding-bottom: 20px; padding-left: 10px;">
 
-  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif; font-size: 20px;">
+  <p style="<%= css_for_mailer_text %>">
     <%= sanitize(t("mailers.direct_message_for_sender.title",
         receiver: @direct_message.receiver.name)) %>
   </p>
 
-  <h2 style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif; font-size: 18px;">
+  <p style="<%= css_for_mailer_text %>">
     <%= @direct_message.title %>
-  </h2>
+  </p>
 
-  <div style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+  <div style="<%= css_for_mailer_text %>">
     <%= simple_format sanitize_and_auto_link(@direct_message.body), {}, sanitize: false %>
   </div>
 </td>
