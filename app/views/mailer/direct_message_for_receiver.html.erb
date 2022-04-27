@@ -12,7 +12,6 @@
       <tr>
         <td style="padding-bottom: 12px; padding-top: 24px; text-align: center;">
           <%= link_to user_url(@direct_message.sender), style: css_for_mailer_button, target: "_blank" do %>
-            <%= image_tag("icon_mailer_reply.png", style: "border: 0; display: inline-block; width: 100%; max-width: 12px; vertical-align: sub;", alt: "") %>
             <%= t("mailers.direct_message_for_receiver.reply",
                 sender: @direct_message.sender.name) %>
           <% end %>
