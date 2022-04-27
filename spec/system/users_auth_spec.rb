@@ -609,7 +609,8 @@ describe "Users" do
   end
 
   scenario "Re-send confirmation instructions" do
-    create(:user, email: "manuela@consul.dev")
+    create(:user, email: "manuela@consul.dev", confirmed_at: nil)
+    ActionMailer::Base.deliveries.clear
 
     visit "/"
     click_link "Sign in"
@@ -618,12 +619,15 @@ describe "Users" do
     fill_in "Email", with: "manuela@consul.dev"
     click_button "Re-send instructions"
 
-    expect(page).to have_content "If your email address is in our database, in a few minutes you "\
-                                 "will receive an email containing instructions on how to reset "\
-                                 "your password."
+    expect(page).to have_content "If your email address exists in our database, in a few minutes you will "\
+                                 "receive an email with instructions on how to confirm your email address."
+    expect(ActionMailer::Base.deliveries.count).to eq(1)
+    expect(ActionMailer::Base.deliveries.first.to).to eq(["manuela@consul.dev"])
+    expect(ActionMailer::Base.deliveries.first.subject).to eq("Confirmation instructions")
   end
 
   scenario "Re-send confirmation instructions with unexisting email" do
+    ActionMailer::Base.deliveries.clear
     visit "/"
     click_link "Sign in"
     click_link "Haven't received instructions to activate your account?"
@@ -631,9 +635,27 @@ describe "Users" do
     fill_in "Email", with: "fake@mail.dev"
     click_button "Re-send instructions"
 
-    expect(page).to have_content "If your email address is in our database, in a few minutes you "\
-                                 "will receive an email containing instructions on how to reset "\
-                                 "your password."
+    expect(page).to have_content "If your email address exists in our database, in a few minutes you will "\
+                                 "receive an email with instructions on how to confirm your email address."
+    expect(ActionMailer::Base.deliveries.count).to eq(0)
+  end
+
+  scenario "Re-send confirmation instructions with already verified email" do
+    ActionMailer::Base.deliveries.clear
+
+    create(:user, email: "manuela@consul.dev")
+
+    visit new_user_session_path
+    click_link "Haven't received instructions to activate your account?"
+
+    fill_in "user_email", with: "manuela@consul.dev"
+    click_button "Re-send instructions"
+
+    expect(page).to have_content "If your email address exists in our database, in a few minutes you will "\
+                                 "receive an email with instructions on how to confirm your email address."
+    expect(ActionMailer::Base.deliveries.count).to eq(1)
+    expect(ActionMailer::Base.deliveries.first.to).to eq(["manuela@consul.dev"])
+    expect(ActionMailer::Base.deliveries.first.subject).to eq("Your account is already confirmed")
   end
 
   scenario "Sign in, admin with password expired" do
