@@ -26,7 +26,6 @@
       <tr>
         <td style="padding-bottom: 12px; text-align: center;">
           <%= link_to budget_investment_url(@investment.budget, @investment, anchor: "social-share"), style: css_for_mailer_button do %>
-            <%= image_tag("icon_mailer_share.png", style: "border: 0; display: inline-block; width: 100%; max-width: 16px", alt: "") %>
             <%= t("mailers.budget_investment_created.share") %>
           <% end %>
         </td>
