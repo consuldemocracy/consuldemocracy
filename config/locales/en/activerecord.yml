@@ -300,6 +300,7 @@ en:
         geozone_restricted: "Restricted by geozone"
         summary: "Summary"
         description: "Description"
+        published: "Publish poll"
       active_poll/translation:
         description: "Description"
       poll/booth:
