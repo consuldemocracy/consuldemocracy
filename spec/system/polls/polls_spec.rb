@@ -136,6 +136,16 @@ describe "Polls" do
       expect(page).to have_selector "img[alt='1. No Poverty']"
       expect(page).to have_content "target 1.1"
     end
+
+    scenario "Shows only polls with the published attribute set to true" do
+      create(:poll, :published)
+      create(:poll, :published)
+      create(:poll)
+
+      visit polls_path
+
+      expect(page).to have_css ".poll", count: 2
+    end
   end
 
   context "Show" do

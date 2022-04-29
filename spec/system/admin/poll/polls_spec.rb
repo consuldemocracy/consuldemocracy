@@ -33,6 +33,21 @@ describe "Admin polls", :admin do
     expect(page).not_to have_content "There are no polls"
   end
 
+  scenario "Can see all polls despite it is with the published attribute set to true or not" do
+    create(:poll)
+    create(:poll, :published)
+    create(:poll)
+
+    visit admin_root_path
+
+    click_link "Polls"
+
+    expect(page).to have_content "List of polls"
+    expect(page).to have_css ".poll", count: 3
+
+    expect(page).not_to have_content "There are no polls"
+  end
+
   scenario "Index do not show polls created by users from proposals dashboard" do
     create(:poll, name: "Poll created by admin")
     create(:poll, name: "Poll from user's proposal", related_type: "Proposal")
