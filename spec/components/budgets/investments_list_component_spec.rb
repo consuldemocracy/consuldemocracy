@@ -129,14 +129,12 @@ describe Budgets::InvestmentsListComponent do
   describe "link to see all investments" do
     before { create_list(:budget_investment, 3, :selected, heading: heading, price: 999) }
 
-    it "is not shown in the informing or finished phases" do
-      %w[informing finished].each do |phase_name|
-        budget.phase = phase_name
+    it "is not shown in the informing phase" do
+      budget.phase = "informing"
 
-        render_inline Budgets::InvestmentsListComponent.new(budget)
+      render_inline Budgets::InvestmentsListComponent.new(budget)
 
-        expect(page).not_to have_link "See all investments"
-      end
+      expect(page).not_to have_link "See all investments"
     end
 
     it "is shown in all other phases" do
