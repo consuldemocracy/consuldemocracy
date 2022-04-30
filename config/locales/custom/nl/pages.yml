@@ -5,7 +5,7 @@ nl:
       menu:
         debates: "Discussies"
         proposals: "Initiatieven"
-        budgets: "Burgerbegroting"
+        budgets: "Ideeën"
         polls: "Peilingen"
         processes: "Open plannen"
       debates:
@@ -23,7 +23,7 @@ nl:
         figcaption: "Knop waarmee je een initiatief kan steunen."
       budgets:
         description: "In het onderdeel %{link} krijgen inwoners zeggenschap over de besteding van gemeentebudgetten."
-        link: "burgerbegroting"
+        link: "ideeën"
         image_alt: "De fases 'steunen' en 'stemmen'"
         figcaption: "De fases 'steunen' en 'stemmen'"
       polls:

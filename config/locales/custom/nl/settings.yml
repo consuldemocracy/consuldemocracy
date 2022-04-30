@@ -59,7 +59,7 @@ nl:
       wordpress_login_description: "Sta gebruikers toe om in te loggen met een Wordpress account"
       featured_proposals: "Uitgelichte initiatieven"
       featured_proposals_description: "Toon uitgelichte initiatieven op de initiatieven-pagina"
-      signature_sheets_description: "Hiermee kunnen handtekeningen voor initiatieven of burgerbegrotingen ter plaatse worden verzameld en worden ingevoerd"
+      signature_sheets_description: "Hiermee kunnen handtekeningen worden verzameld en worden ingevoerd"
       user:
         recommendations_description: "Toont gebruikers aanbevelingen op de homepage op basis van gevolgde initiatieven"
         recommendations_on_debates: "Aanbevelingen voor discussies"
@@ -88,8 +88,8 @@ nl:
       proposals: "Initiatieven"
       proposals_description: "Initiatieven bieden mensen de kans om mee te beslissen. Nadat een initiatief voldoende steun heeft ontvangen, kan hierop gestemd worden"
       polls_description:  "Met een peiling kan achterhaald worden wat de mening is van de bevolking over bepaalde beleidskwesties"
-      budgets: "Burgerbegroting"
-      budgets_description: "Met de burgerbegroting module kunnen mensen helpen bepalen welke ideeën tot uitvoering worden gebracht"
+      budgets: "Ideeën"
+      budgets_description: "Met deze module kunnen mensen helpen bepalen welke ideeën tot uitvoering worden gebracht"
       legislation: "Plannen"
       legislation_description: "In de wetgeving module biedt de mogelijkheid om deel te nemen aan het opstellen en wijzigen van formele stukken en een mening te geven over geplande activiteiten"
     uploads:
