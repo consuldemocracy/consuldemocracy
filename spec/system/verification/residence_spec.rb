@@ -159,4 +159,13 @@ describe "Residence" do
     expect(page).to have_content "You have reached the maximum number of attempts. Please try again later."
     expect(page).to have_current_path(account_path)
   end
+
+  scenario "Terms and conditions link" do
+    login_as(create(:user))
+
+    visit new_residence_path
+    click_link "the terms and conditions of access"
+
+    expect(page).to have_content "Terms and conditions of access of the Census"
+  end
 end
