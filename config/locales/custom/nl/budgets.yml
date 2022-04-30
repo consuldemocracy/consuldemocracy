@@ -9,7 +9,7 @@ nl:
           other: "Je hebt op <span>%{count}</span> ideeën gestemd"
         voted_info: "Je stem is bevestigd"
         voted_info_2: "Je kunt je stem altijd aanpassen tot deze fase wordt gesloten"
-        back: "Ga terug de Burgerbegroting"
+        back: "Ga terug naar ideeën"
         amount_spent: "Uitgegeven"
         amount_spent:
           knapsack: "Uitgegeven <span>%{count}</span>"
@@ -191,7 +191,7 @@ nl:
       unselected: "Bekijk de ideeën die niet geselecteerd zijn voor de stemronde"
       unselected_title: "Ideeën die niet geselecteerd zijn voor de stemronde"
     executions:
-      heading: "Mijlpalen burgerbegroting"
+      heading: "Mijlpalen ideeën"
       heading_selection_title: "Per gebied"
       no_winner_investments: "Er zijn geen geaccepteerde ideeën"
       filters:
