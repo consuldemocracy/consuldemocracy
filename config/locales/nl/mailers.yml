@@ -14,7 +14,8 @@ nl:
       instructions: Om de verificatie van uw account te voltooien klikt u %{verification_link}.
       subject: Confirm your email
       thanks: Thank you very much.
-      title: Confirm your account using the following link
+      title: "Confirm your email"
+      text: "Confirm your account using the following link."
     reply:
       hi: Hoi
       new_reply_by: There is a new response from <strong>%{commenter}</strong> to your comment on
@@ -34,7 +35,8 @@ nl:
       unsubscribe_account: My account
     direct_message_for_sender:
       subject: "U heeft een nieuw prive bericht verstuurd"
-      title: "Je hebt een nieuw privébericht gestuurd naar <strong>%{receiver}</strong> met de inhoud:"
+      title: "U heeft een nieuw prive bericht verstuurd"
+      text: "Je hebt een nieuw privébericht gestuurd naar <strong>%{receiver}</strong> met de inhoud:"
     user_invite:
       ignore: "If you have not requested this invitation don't worry, you can ignore this email."
       text: "Dank u voor uw interesse om toe te treden tot %{org}! In een paar seconden kunt u deelnemen, vul het onderstaande formulier in:"
@@ -52,6 +54,7 @@ nl:
       sincerely: "Sincerely,"
       share: "Comparte tu proyecto"
     budget_investment_unfeasible:
+      title: "Uw investeringsproject is als onhaalbaar gemarkeerd"
       hi: "Beste deelnemer,"
       new: "Voor al deze vragen nodigen we u uit een <strong>nieuw voorstel</ strong> uit te werken dat zich aanpast aan de voorwaarden van dit proces. U kunt dit doen door deze link te volgen: %{url}."
       new_href: "nieuw investeringsproject"
@@ -60,6 +63,7 @@ nl:
       subject: "Uw investeringsproject '%{code}' is als onhaalbaar gemarkeerd"
     budget_investment_selected:
       subject: "Uw budget voorstel '%{code}' is geselecteerd"
+      title: "Uw budget voorstel is geselecteerd"
       hi: "Beste deelnemer,"
       share: "Begin met het verwerven van stemmen; deel uw project op sociale netwerken, bijvoorbeeld. Delen en communicatie is essentieel om het verder te brengen."
       share_button: "Deel uw project"
@@ -67,6 +71,7 @@ nl:
       sincerely: "Sincererly"
     budget_investment_unselected:
       subject: "Uw project '%{code}' is niet geselecteerd"
+      title: "Uw project is niet geselecteerd"
       hi: "Beste deelnemer,"
       thanks: "Dank u nogmaals voor uw deelname."
       sincerely: "Hoogachtend"

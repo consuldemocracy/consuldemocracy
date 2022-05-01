@@ -48,7 +48,8 @@ nl:
       unsubscribe: "Als je geen directe boodschappen wilt ontvangen, kijk dan eens bij %{account en haal het vinkje weg bij 'ontvangen e-mails over directe berichten'."
     direct_message_for_sender:
       subject: "Je hebt een privébericht gestuurd"
-      title_html: "Je hebt het volgende privébericht gestuurd naar <strong>%{receiver}</strong>:"
+      title: "Je hebt een privébericht gestuurd"
+      text: "Je hebt het volgende privébericht gestuurd naar <strong>%{receiver}</strong>:"
     user_invite:
       subject: "Welkom op de %{org_name}"
       title: "Welkom op de %{org}"
@@ -58,7 +59,8 @@ nl:
       thanks: "Bedankt!"
     email_verification:
       subject: "Bevestig je e-mailadres"
-      title: "Bevestig je account door de volgende link te gebruiken"
+      title: "Bevestig je e-mailadres"
+      text: "Bevestig je account door de volgende link te gebruiken."
       thanks: "Bedankt!"
       click_here_to_verify: "deze link"
     no_reply: "Deze mail is verstuurd vanaf een emailadres waar niet op gereageerd kan worden."

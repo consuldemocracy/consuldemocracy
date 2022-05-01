@@ -15,7 +15,8 @@ en:
       instructions: To complete the verification of your user account you must click %{verification_link}.
       subject: Confirm your email
       thanks: Thank you very much.
-      title: Confirm your account using the following link
+      title: "Confirm your email"
+      text: "Confirm your account using the following link."
     reply:
       hi: Hi
       new_reply_by: There is a new response from <strong>%{commenter}</strong> to your comment on
@@ -36,7 +37,8 @@ en:
       unsubscribe_account: My account
     direct_message_for_sender:
       subject: "You have sent a new private message"
-      title: "You have sent a new private message to <strong>%{receiver}</strong> with the content:"
+      title: "You have sent a new private message"
+      text: "You have sent a new private message to <strong>%{receiver}</strong> with the content:"
     user_invite:
       ignore: "If you have not requested this invitation don't worry, you can ignore this email."
       text: "Thank you for applying to join %{org}! In seconds you can start to participate, just fill the form below:"
@@ -54,6 +56,7 @@ en:
       sincerely: "Sincerely,"
       share: "Share your project"
     budget_investment_unfeasible:
+      title: "Your investment project has been marked as unfeasible"
       hi: "Dear user,"
       new: "For all these, we invite you to elaborate a <strong>new investment</strong> that adjusts to the conditions of this process. You can do it following this link: %{url}."
       new_href: "new investment project"
@@ -62,6 +65,7 @@ en:
       subject: "Your investment project '%{code}' has been marked as unfeasible"
     budget_investment_selected:
       subject: "Your investment project '%{code}' has been selected"
+      title: "Your investment project has been selected"
       hi: "Dear user,"
       share: "Start to get votes, share your investment project on social networks. Share is essential to make it a reality."
       share_button: "Share your investment project"
@@ -69,6 +73,7 @@ en:
       sincerely: "Sincererly"
     budget_investment_unselected:
       subject: "Your investment project '%{code}' has not been selected"
+      title: "Your investment project has not been selected"
       hi: "Dear user,"
       thanks: "Thank you again for participating."
       sincerely: "Sincererly"

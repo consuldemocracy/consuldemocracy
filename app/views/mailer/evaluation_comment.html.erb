@@ -1,14 +1,14 @@
 <td style="padding-bottom: 20px; padding-left: 10px;">
 
-  <h1 style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;">
+  <h1 style="<%= css_for_mailer_heading %>">
     <%= t("mailers.evaluation_comment.title", investment: @email.commentable.title) %>
   </h1>
 
-  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+  <p style="<%= css_for_mailer_text %>">
     <%= t("mailers.evaluation_comment.hi") %> <strong><%= @email_to.name %></strong>,
   </p>
 
-  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+  <p style="<%= css_for_mailer_text %>">
     <%= sanitize(t(
       "mailers.evaluation_comment.new_comment_by",
       commenter: @email.comment.author.name,
@@ -17,7 +17,7 @@
   </p>
 
   <%= t("mailers.evaluation_comment.commenter_info", commenter: @email.comment.author.name, time: l(@email.comment.created_at)) %>
-  <div style="border-left: 2px solid #DEE0E3;font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-style: italic;font-weight: normal;line-height: 24px;margin-left: 20px;padding: 10px;">
+  <div style="<%= css_for_mailer_text + css_for_mailer_quote %>">
     <%= simple_format sanitize_and_auto_link(@email.comment.body), {}, sanitize: false %>
   </div>
 </td>
