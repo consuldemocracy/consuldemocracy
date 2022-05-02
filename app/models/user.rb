@@ -153,7 +153,7 @@ class User < ApplicationRecord
   end
 
   def voted_in_group?(group)
-    votes.for_budget_investments(Budget::Investment.where(group: group)).exists?
+    votes.where(votable: Budget::Investment.where(group: group)).exists?
   end
 
   def headings_voted_within_group(group)
@@ -161,7 +161,7 @@ class User < ApplicationRecord
   end
 
   def voted_investments
-    Budget::Investment.where(id: votes.for_budget_investments.pluck(:votable_id))
+    Budget::Investment.where(id: votes.where(votable: Budget::Investment.all).pluck(:votable_id))
   end
 
   def administrator?
@@ -368,15 +368,15 @@ class User < ApplicationRecord
   delegate :can?, :cannot?, to: :ability
 
   def public_proposals
-    public_activity? ? proposals : User.none
+    public_activity? ? proposals : proposals.none
   end
 
   def public_debates
-    public_activity? ? debates : User.none
+    public_activity? ? debates : debates.none
   end
 
   def public_comments
-    public_activity? ? comments : User.none
+    public_activity? ? comments : comments.none
   end
 
   # overwritting of Devise method to allow login using email OR username
