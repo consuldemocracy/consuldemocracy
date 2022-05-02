@@ -16,7 +16,6 @@
 // 15. Comments
 // 16. Flags
 // 17. Activity
-// 18. Banners
 // 19. Recommendations
 // 20. Documents
 // 21. Related content
@@ -2226,33 +2225,6 @@ table {
       border-left: 1px solid #ececec;
       padding-left: $line-height;
     }
-  }
-}
-
-// 18. Banners
-// -----------
-
-.banner {
-  @include full-width-background;
-
-  .debates-list &::before,
-  .proposals-list &::before,
-  .admin &::before {
-    content: none;
-  }
-
-  a > * {
-    padding: 0 rem-calc(16);
-
-    &:empty {
-      display: none;
-    }
-  }
-
-  + .budget-header,
-  + .budgets-index > .budget-header,
-  + .jumbo {
-    margin-top: 0;
   }
 }
 
