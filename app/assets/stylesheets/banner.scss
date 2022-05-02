@@ -7,11 +7,15 @@
     content: none;
   }
 
-  a > * {
-    padding: 0 rem-calc(16);
+  a {
+    display: block;
 
-    &:empty {
-      display: none;
+    > * {
+      padding: 0 rem-calc(16);
+
+      &:empty {
+        display: none;
+      }
     }
   }
 
