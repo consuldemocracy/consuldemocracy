@@ -100,8 +100,6 @@ describe "Budgets" do
         expect(page).not_to have_link("List of all investment projects")
         expect(page).not_to have_link("List of all unfeasible investment projects")
         expect(page).not_to have_link("List of all investment projects not selected for balloting")
-
-        expect(page).not_to have_css("div.map")
       end
     end
 
@@ -114,8 +112,6 @@ describe "Budgets" do
       within("#budget_info") do
         expect(page).not_to have_link heading.name
         expect(page).to have_content "#{heading.name}\n€1,000,000"
-
-        expect(page).to have_css("div.map")
       end
     end
 
@@ -342,7 +338,7 @@ describe "Budgets" do
         }
       end
 
-      allow_any_instance_of(Budgets::BudgetComponent).to receive(:coordinates).and_return(coordinates)
+      allow_any_instance_of(Budgets::MapComponent).to receive(:coordinates).and_return(coordinates)
 
       visit budgets_path
 
