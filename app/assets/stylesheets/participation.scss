@@ -989,12 +989,12 @@
   min-height: $line-height * 25;
   padding-bottom: $line-height;
   padding-top: $line-height * 4;
-  z-index: -5;
 
   &.with-background-image {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: 0;
   }
 
   h1 {

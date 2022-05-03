@@ -458,6 +458,15 @@ describe "Budgets" do
 
       expect(page).to have_content "So far you've supported 0 projects."
     end
+
+    scenario "Main link takes you to the defined URL" do
+      budget.update!(main_link_text: "See other budgets!", main_link_url: budgets_path)
+
+      visit budget_path(budget)
+      click_link "See other budgets!"
+
+      expect(page).to have_current_path budgets_path
+    end
   end
 
   context "In Drafting phase" do
