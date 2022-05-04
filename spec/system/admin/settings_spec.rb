@@ -346,4 +346,26 @@ describe "Admin settings", :admin do
       expect(page).to have_css "h2", exact_text: "SDG configuration"
     end
   end
+
+  describe "Machine learning settings" do
+    scenario "show the machine learning feature but not its settings" do
+      Setting["feature.machine_learning"] = true
+
+      visit admin_settings_path
+
+      expect(page).not_to have_content "Machine Learning"
+      expect(page).not_to have_content "Comments Summary"
+      expect(page).not_to have_content "Related Content"
+      expect(page).not_to have_content "Tags"
+      expect(page).not_to have_css ".translation_missing"
+
+      click_link "Features"
+
+      expect(page).to have_content "Machine Learning"
+      expect(page).not_to have_content "Comments Summary"
+      expect(page).not_to have_content "Related Content"
+      expect(page).not_to have_content "Tags"
+      expect(page).not_to have_css ".translation_missing"
+    end
+  end
 end
