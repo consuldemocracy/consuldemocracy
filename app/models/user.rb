@@ -230,6 +230,7 @@ class User < ApplicationRecord
     Proposal.hide_all proposal_ids
     Budget::Investment.hide_all budget_investment_ids
     ProposalNotification.hide_all ProposalNotification.where(author_id: id).ids
+    remove_roles
   end
 
   def full_restore
@@ -263,10 +264,19 @@ class User < ApplicationRecord
       unconfirmed_phone: nil
     )
     identities.destroy_all
+    remove_roles
   end
 
   def erased?
     erased_at.present?
+  end
+
+  def remove_roles
+    administrator&.destroy!
+    valuator&.destroy!
+    moderator&.destroy!
+    manager&.destroy!
+    sdg_manager&.destroy!
   end
 
   def take_votes_if_erased_document(document_number, document_type)
