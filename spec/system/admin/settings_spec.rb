@@ -264,7 +264,6 @@ describe "Admin settings", :admin do
     scenario "On #tab-sdg-configuration" do
       Setting["feature.sdg"] = true
       Setting.create!(key: "sdg.whatever")
-      login_as(create(:administrator).user)
 
       visit admin_settings_path
       click_link "SDG configuration"
@@ -311,7 +310,6 @@ describe "Admin settings", :admin do
   describe "SDG configuration tab" do
     scenario "is enabled when the sdg feature is enabled" do
       Setting["feature.sdg"] = true
-      login_as(create(:administrator).user)
 
       visit admin_settings_path
       click_link "SDG configuration"
@@ -321,7 +319,6 @@ describe "Admin settings", :admin do
 
     scenario "is disabled when the sdg feature is disabled" do
       Setting["feature.sdg"] = false
-      login_as(create(:administrator).user)
 
       visit admin_settings_path
       click_link "SDG configuration"
@@ -333,7 +330,6 @@ describe "Admin settings", :admin do
 
     scenario "is enabled right after enabling the feature" do
       Setting["feature.sdg"] = false
-      login_as(create(:administrator).user)
 
       visit admin_settings_path
 
