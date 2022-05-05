@@ -90,3 +90,8 @@ es:
   related_content:
     content_title:
       budget_investment: "Proyecto de gasto"
+  verification:
+    residence:
+      new:
+        info_message: "Si al verificar la cuenta aparece un error, comprueba que los datos introducidos son correctos e inténtalo de nuevo.<br>Si no te permite verificar la cuenta y consideras que esto es un error, escribe a %{email}."
+        email: "transparenciayparticipacion@dipvalladolid.es"
