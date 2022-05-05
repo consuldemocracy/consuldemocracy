@@ -26,7 +26,7 @@ es:
       errors:
         incorrect_code: Código de verificación incorrecto
       new:
-        explanation: "Para participar en las votaciones finales puedes:"
+        explanation: "Para votar proyectos en los presupuestos participativos puedes:"
         go_to_index: Ver propuestas
         office: Verificarte presencialmente en cualquier Oficina de Atención al Ciudadano
         send_letter: Solicitar una carta por correo postal
@@ -91,7 +91,7 @@ es:
     user_permission_info: Al verificar tus datos podrás...
     user_permission_proposal: Crear nuevas propuestas
     user_permission_support_proposal: Apoyar propuestas
-    user_permission_votes: Participar en las votaciones finales
+    user_permission_votes: Votar proyectos en los presupuestos participativos
     verified_user:
       form:
         submit_button: Enviar código

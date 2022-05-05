@@ -26,7 +26,7 @@ en:
       errors:
         incorrect_code: Verification code incorrect
       new:
-        explanation: "In order to participate in final voting you can:"
+        explanation: "In order to vote for budget projects you can:"
         go_to_index: See proposals
         office: Verify in any Citizen Support Offices
         send_letter: Send me a letter with the code
@@ -91,7 +91,7 @@ en:
     user_permission_info: Verifying your information you'll be able to...
     user_permission_proposal: Create new proposals
     user_permission_support_proposal: Support proposals
-    user_permission_votes: Participate in final voting
+    user_permission_votes: Vote for budget projects
     verified_user:
       form:
         submit_button: Send code
