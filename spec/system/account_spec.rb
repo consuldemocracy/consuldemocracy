@@ -53,7 +53,7 @@ describe "Account" do
   scenario "Edit email address" do
     visit account_path
 
-    click_link "Change my credentials"
+    click_link "Change my login details"
     fill_in "user_email", with: "new_user_email@example.com"
     fill_in "user_password", with: "new_password"
     fill_in "user_password_confirmation", with: "new_password"
@@ -80,7 +80,7 @@ describe "Account" do
     expect(page).to have_content "You have been signed in successfully."
 
     visit account_path
-    click_link "Change my credentials"
+    click_link "Change my login details"
     expect(page).to have_selector("input[value='new_user_email@example.com']")
   end
 
@@ -150,8 +150,7 @@ describe "Account" do
 
     expect(page).to have_current_path(account_path, ignore_query: true)
 
-    expect(page).to have_link("Change my credentials")
-    click_link "Change my credentials"
+    click_link "Change my login details"
     click_button "Update"
 
     expect(page).to have_content error_message

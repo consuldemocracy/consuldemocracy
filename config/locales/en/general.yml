@@ -1,7 +1,7 @@
 en:
   account:
     show:
-      change_credentials_link: Change my credentials
+      change_credentials_link: Change my login details
       erase_account_link: Erase my account
       finish_verification: Complete verification
       notifications: Notifications
