@@ -14,11 +14,10 @@ es:
       user_permission_debates: Participar en debates
       user_permission_info: Con tu cuenta ya puedes...
       user_permission_proposal: Crear nuevas propuestas
-      user_permission_support_proposal: Apoyar propuestas*
+      user_permission_support_proposal: Apoyar propuestas
       user_permission_title: Participación
       user_permission_verify: Para poder realizar todas las acciones, verifica tu cuenta.
-      user_permission_verify_info: "* Sólo usuarios empadronados."
-      user_permission_votes: Participar en las votaciones finales*
+      user_permission_votes: Participar en las votaciones finales
       verified_account: Cuenta verificada
       verify_my_account: Verificar mi cuenta
   application:
@@ -896,11 +895,10 @@ es:
       user_permission_debates: Participar en debates
       user_permission_info: Con tu cuenta ya puedes...
       user_permission_proposal: Crear nuevas propuestas
-      user_permission_support_proposal: Apoyar propuestas*
+      user_permission_support_proposal: Apoyar propuestas
       user_permission_verify: "Para poder realizar las siguientes acciones, verifica tu cuenta."
-      user_permission_verify_info: "* Sólo usuarios empadronados."
       user_permission_verify_my_account: Verificar mi cuenta
-      user_permission_votes: Participar en las votaciones finales*
+      user_permission_votes: Participar en las votaciones finales
   invisible_captcha:
     sentence_for_humans: "Si eres humano, por favor ignora este campo"
     timestamp_error_message: "Eso ha sido demasiado rápido. Por favor, reenvía el formulario."

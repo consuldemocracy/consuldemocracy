@@ -90,8 +90,8 @@ en:
     user_permission_debates: Participate in debates
     user_permission_info: Verifying your information you'll be able to...
     user_permission_proposal: Create new proposals
-    user_permission_support_proposal: Support proposals*
-    user_permission_votes: Participate in final voting*
+    user_permission_support_proposal: Support proposals
+    user_permission_votes: Participate in final voting
     verified_user:
       form:
         submit_button: Send code
