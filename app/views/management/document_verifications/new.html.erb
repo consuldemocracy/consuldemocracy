@@ -4,7 +4,7 @@
 
 <%= render "management/user_permissions",
       message: t("management.document_verifications.in_census_has_following_permissions"),
-      permissions: [:debates, :create_proposals, :support_proposals] %>
+      permissions: [:debates, :proposal, :support_proposal] %>
 
 <%= form_for @document_verification,
     as: :document_verification,

@@ -11,13 +11,9 @@ en:
       save_changes_submit: Save changes
       recommendations: Recommendations
       title: My account
-      user_permission_debates: Participate in debates
       user_permission_info: With your account you can...
-      user_permission_proposal: Create new proposals
-      user_permission_support_proposal: Support proposals
       user_permission_title: Participation
       user_permission_verify: To perform all the actions verify your account.
-      user_permission_votes: Participate in final voting
       verified_account: Account verified
       verify_my_account: Verify my account
   application:
@@ -892,13 +888,9 @@ en:
       go_to_index: Not now, go to index page
       start_using_consul: Go to index page
       title: Participate
-      user_permission_debates: Participate in debates
       user_permission_info: With your account you can...
-      user_permission_proposal: Create new proposals
-      user_permission_support_proposal: Support proposals
       user_permission_verify: "To perform the following actions verify your account."
       user_permission_verify_my_account: Verify my account
-      user_permission_votes: Participate in final voting
   invisible_captcha:
     sentence_for_humans: "If you are human, ignore this field"
     timestamp_error_message: "Sorry, that was too quick! Please resubmit."

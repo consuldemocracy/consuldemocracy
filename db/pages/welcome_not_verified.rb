@@ -3,14 +3,14 @@ def generate_content(page)
 
   page.content = "<p>#{I18n.t("welcome.welcome.user_permission_info")}</p>
                   <ul>
-                    <li>#{I18n.t("welcome.welcome.user_permission_debates")}</li>
-                    <li>#{I18n.t("welcome.welcome.user_permission_proposal")}</li>
+                    <li>#{I18n.t("verification.user_permission_debates")}</li>
+                    <li>#{I18n.t("verification.user_permission_proposal")}</li>
                   </ul>
 
                   <p>#{I18n.t("welcome.welcome.user_permission_verify")}</p>
                   <ul>
-                    <li>#{I18n.t("welcome.welcome.user_permission_support_proposal")}</li>
-                    <li>#{I18n.t("welcome.welcome.user_permission_votes")}</li>
+                    <li>#{I18n.t("verification.user_permission_support_proposal")}</li>
+                    <li>#{I18n.t("verification.user_permission_votes")}</li>
                   </ul>
 
                   <a href='/verification' class='button success radius expand'>
