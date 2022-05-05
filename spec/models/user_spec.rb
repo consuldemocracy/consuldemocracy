@@ -538,6 +538,19 @@ describe User do
 
       expect(Identity.exists?(identity.id)).not_to be
     end
+
+    it "removes all user roles" do
+      user = create(:user)
+      [:administrator, :moderator, :manager, :sdg_manager, :valuator].each do |role|
+        create(role, user: user)
+      end
+
+      expect { user.erase }.to change { Administrator.count }.by(-1)
+                           .and change { Moderator.count }.by(-1)
+                           .and change { Manager.count }.by(-1)
+                           .and change { SDG::Manager.count }.by(-1)
+                           .and change { Valuator.count }.by(-1)
+    end
   end
 
   describe "#take_votes_from" do
@@ -748,6 +761,19 @@ describe User do
 
       expect(Legislation::Proposal.all).to eq [other_proposal]
       expect(Legislation::Proposal.with_hidden).to match_array [proposal, other_proposal]
+    end
+
+    it "removes all user roles" do
+      user = create(:user)
+      [:administrator, :moderator, :manager, :sdg_manager, :valuator].each do |role|
+        create(role, user: user)
+      end
+
+      expect { user.block }.to change { Administrator.count }.by(-1)
+                           .and change { Moderator.count }.by(-1)
+                           .and change { Manager.count }.by(-1)
+                           .and change { SDG::Manager.count }.by(-1)
+                           .and change { Valuator.count }.by(-1)
     end
   end
 

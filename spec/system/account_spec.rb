@@ -173,6 +173,28 @@ describe "Account" do
     expect(page).to have_content "Invalid Email or username or password"
   end
 
+  scenario "Erasing an account removes all related roles" do
+    user.update!(username: "Admin")
+    administrators = [create(:administrator, user: user),
+                      create(:administrator, user: create(:user, username: "Other admin"))]
+    budget = create(:budget, administrators: administrators)
+    visit admin_budget_budget_investments_path(budget)
+
+    expect(page).to have_select options: ["All administrators", "Admin", "Other admin"]
+
+    visit account_path
+    click_link "Erase my account"
+    fill_in "user_erase_reason", with: "I don't want my roles anymore!"
+    click_button "Erase my account"
+
+    expect(page).to have_content "Goodbye! Your account has been cancelled. We hope to see you again soon."
+
+    login_as(administrators.last.user)
+    visit admin_budget_budget_investments_path(budget)
+
+    expect(page).to have_select options: ["All administrators", "Other admin"]
+  end
+
   context "Recommendations" do
     scenario "are enabled by default" do
       visit account_path
