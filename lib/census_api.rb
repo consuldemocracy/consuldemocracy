@@ -110,7 +110,7 @@ class CensusApi
             },
             datos_vivienda: {
               item: {
-                codigo_postal: "28013",
+                codigo_postal: "38400",
                 codigo_distrito: "01"
               }
             }
