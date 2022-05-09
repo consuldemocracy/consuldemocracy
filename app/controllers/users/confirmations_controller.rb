@@ -49,15 +49,12 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
     elsif resource.errors.empty?
       set_official_position if resource.has_official_email?
 
-      if !resource.confirmed_at || resource.unconfirmed_email
-        resource.confirm # Last change: confirm happens here for people with passwords instead of af the top of the show action
-        message = :confirmed
+      if resource.confirm
+        set_flash_message(:notice, :confirmed) if is_flashing_format?
+        respond_with_navigational(resource) { redirect_to after_confirmation_path_for(resource_name, resource) }
       else
-        message = :already_confirmed
+        respond_with_navigational(resource.errors, status: :unprocessable_entity) { render :new, status: :unprocessable_entity }
       end
-
-      set_flash_message(:notice, message) if is_flashing_format?
-      respond_with_navigational(resource) { redirect_to after_confirmation_path_for(resource_name, resource) }
     else
       respond_with_navigational(resource.errors, status: :unprocessable_entity) { render :new }
     end
