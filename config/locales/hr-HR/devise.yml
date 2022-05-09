@@ -8,7 +8,6 @@ hr:
       new_password: "Nova zaporka"
       updated: "Zaporka je uspješno ažurirana"
     confirmations:
-      already_confirmed: "Vaš je račun već potvrđen; molimo vas da se pokušate prijaviti."
       confirmed: "Vaš račun je potvrđen."
       send_instructions: "U nekoliko minuta primit ćete e-mail koji sadrži upute za ponovno postavljanje zaporke."
       send_paranoid_instructions: "Ako je vaša e-mail adresa u našoj bazi podataka u nekoliko minuta ćete zaprimiti e-mail koji sadrži upute za ponovno postavljanje lozinke."
@@ -56,6 +55,7 @@ hr:
       unlocked: "Vaš je račun otključan. Ponovno se prijavite da biste nastavili."
   errors:
     messages:
+      already_confirmed: "Vaš je račun već potvrđen; molimo vas da se pokušate prijaviti."
       confirmation_period_expired: "Potrebno je potvrditi Vaš račun s %{period}; molimo vas da ponovite zahtjev za prijavu."
       expired: "je istekao; molimo vas da ponovno pošaljete zahtjev."
       not_found: "nije pronađeno."

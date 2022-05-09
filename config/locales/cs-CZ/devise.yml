@@ -8,7 +8,6 @@ cs:
       new_password: "Nové heslo"
       updated: "Heslo bylo úspěšně aktualizováno"
     confirmations:
-      already_confirmed: "Byl jste již ověřen; prosím, pokuste se přihlásit."
       confirmed: "Váš účet byl potvrzen."
       send_instructions: "Během pár minut obdržíte e-mail s pokyny k obnovení hesla."
       send_paranoid_instructions: "Je-li vaše e-mailová adresa v naší databázi, během pár minut obdržíte e-mail s pokyny k obnovení hesla."
@@ -56,6 +55,7 @@ cs:
       unlocked: "Váš účet byl odemčen. Chcete-li pokračovat, přihlaste se."
   errors:
     messages:
+      already_confirmed: "Byl jste již ověřen; prosím, pokuste se přihlásit."
       confirmation_period_expired: "Musíte být ověřeni během %{period}; prosím, opakujte žádost."
       expired: "vypršela platnost; prosím, opakujte žádost."
       not_found: "nebylo nalezeno."

@@ -8,7 +8,6 @@ it:
       new_password: "Nuova password"
       updated: "Password aggiornata correttamente"
     confirmations:
-      already_confirmed: "Hai già eseguito questa verifica; per favore, prova ad eseguire il log in."
       confirmed: "Il tuo account è stato confermato."
       send_instructions: "Tra pochi minuti riceverai un'e-mail contenente le istruzioni su come reimpostare la password."
       send_paranoid_instructions: "Se il tuo indirizzo email è nel nostro archivio, in pochi minuti riceverai un'e-mail contenente le istruzioni su come reimpostare la password."
@@ -56,6 +55,7 @@ it:
       unlocked: "Il tuo account è stato sbloccato. Per favore, accedi per continuare."
   errors:
     messages:
+      already_confirmed: "Hai già eseguito questa verifica; per favore, prova ad eseguire il log in."
       confirmation_period_expired: "È necessario provvedere alla verifica entro %{period}; per favore, esegui nuovamente la richiesta."
       expired: "è scaduto; per cortesia, ripeti la richiesta."
       not_found: "non reperibile."

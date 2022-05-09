@@ -8,7 +8,6 @@ fr:
       new_password: "Nouveau mot de passe"
       updated: "Mot de passe mis-à-jour avec succès"
     confirmations:
-      already_confirmed: "Votre compte a déjà été vérifié; veuillez essayer de vous connecter."
       confirmed: "Votre compte a été confirmé."
       send_instructions: "Dans quelques minutes, vous recevrez un courriel contenant les instructions pour réinitialiser votre mot de passe."
       send_paranoid_instructions: "Si votre adresse est dans notre base de données, vous recevrez dans quelques minutes un courriel contenant les instructions pour réinitialiser votre mot de passe."
@@ -56,6 +55,7 @@ fr:
       unlocked: "Votre compte a été débloqué. Veuillez vous connecter pour continuer."
   errors:
     messages:
+      already_confirmed: "Votre compte a déjà été vérifié; veuillez essayer de vous connecter."
       confirmation_period_expired: "Votre compte doit être vérifié en %{period}; veuillez refaire une demande."
       expired: "a expiré; veuillez refaire une demande."
       not_found: "non trouvé."

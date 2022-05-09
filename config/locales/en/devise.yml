@@ -8,7 +8,6 @@ en:
       new_password: "New password"
       updated: "Password successfully updated"
     confirmations:
-      already_confirmed: "You have already been verified; please attempt to sign in."
       confirmed: "Your account has been confirmed."
       send_instructions: "In a few minutes you will receive an email containing instructions on how to confirm your email address."
       send_paranoid_instructions: "If your email address exists in our database, in a few minutes you will receive an email with instructions on how to confirm your email address."
@@ -56,6 +55,7 @@ en:
       unlocked: "Your account has been unlocked. Please sign in to continue."
   errors:
     messages:
+      already_confirmed: "You have already been verified; please attempt to sign in."
       confirmation_period_expired: "You need to be verified within %{period}; please make a repeat request."
       expired: "has expired; please make a repeat request."
       not_found: "not found."

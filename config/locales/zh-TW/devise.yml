@@ -8,7 +8,6 @@ zh-TW:
       new_password: "新密碼"
       updated: "密碼已成功更新"
     confirmations:
-      already_confirmed: "你已經被核實了；請嘗試登錄。"
       confirmed: "您的帳戶已被確認。"
       send_instructions: "幾分鐘後，您將收到一封電郵，內中包含如何重置密碼的說明。"
       send_paranoid_instructions: "如果您的電郵地址已在我們的數據庫中，您將在幾分鐘內收到一封電郵，內中包含如何重置密碼的說明。"
@@ -56,6 +55,7 @@ zh-TW:
       unlocked: "您的帳戶已解鎖。 請登錄以繼續。"
   errors:
     messages:
+      already_confirmed: "你已經被核實了；請嘗試登錄。"
       confirmation_period_expired: "您要在%{period} 內被核實；請提出重複請求。"
       expired: "已過期；請提出重複請求。"
       not_found: "未找到。"

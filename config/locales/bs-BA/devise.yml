@@ -8,7 +8,6 @@ bs:
       new_password: "Nova lozinka"
       updated: "Lozinka uspješno ažurirana"
     confirmations:
-      already_confirmed: "Već je izvršena potvrda. Pokušajte se prijaviti."
       confirmed: "Vaš nalog je potvrđen."
       send_instructions: "Za nekoliko minuta ćete dobiti email sa instrukcijama kako da promijenite svoju lozinku."
       send_paranoid_instructions: "Ako je vaša email adresa u našoj bazi podataka, za nekoliko minuta ćete dobiti email sa instrukcijama kako da promijenite svoju lozinku."
@@ -56,6 +55,7 @@ bs:
       unlocked: "Vaš nalog je otključan. Prijavite se da nastavite."
   errors:
     messages:
+      already_confirmed: "Već je izvršena potvrda. Pokušajte se prijaviti."
       confirmation_period_expired: "Morate dobiti potvrdu u roku od %{period}. Ponovite zahtjev."
       expired: "isteklo; ponovite zahtjev."
       not_found: "nije pronađeno."

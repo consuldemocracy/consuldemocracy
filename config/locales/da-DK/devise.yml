@@ -8,7 +8,6 @@ da:
       new_password: "Ny adgangskode"
       updated: "Din adgangskode blev opdateret"
     confirmations:
-      already_confirmed: "Du er allerede blevet verificeret; gå til log ind."
       confirmed: "Din brugerkonto er blevet bekræftet."
       send_instructions: "Om få minutter vil du modtage en e-mail, der instruerer dig i, hvordan du nulstiller din adgangskode."
       send_paranoid_instructions: "Hvis din e-mail findes i vores database, vil du om få minutter modtage en e-mail, der instruerer dig i, hvordan du nulstiller din adgangskode."
@@ -56,6 +55,7 @@ da:
       unlocked: "Din konto er blevet genåbnet. Log ind for at fortsætte."
   errors:
     messages:
+      already_confirmed: "Du er allerede blevet verificeret; gå til log ind."
       confirmation_period_expired: "Du skal verificeres inden for denne %{period}; vær venlig at gentage anmodningen."
       expired: "er udløbet; vær venlig at gentage anmodningen."
       not_found: "ikke fundet."

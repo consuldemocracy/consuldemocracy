@@ -8,7 +8,6 @@ tr:
       new_password: "Yeni şifre"
       updated: "Şifre başarıyla güncellendi"
     confirmations:
-      already_confirmed: "Hesabınız daha önce doğrulandı; lütfen giriş yapmayı deneyin."
       confirmed: "Hesabınız onaylanmıştır."
       send_instructions: "Birkaç dakika içinde şifrenizi tekrar oluşturmanız için gerekli olan açıklamaları içeren bir e-posta alacaksınız."
       send_paranoid_instructions: "E-posta adresiniz sistemimizde bulunuyorsa, birkaç dakika içinde şifrenizi tekrar oluşturmanız için bir bağlantı göndereceğiz."
@@ -56,6 +55,7 @@ tr:
       unlocked: "Hesabınızın kilidi açıldı. Devam etmek için lütfen giriş yapın."
   errors:
     messages:
+      already_confirmed: "Hesabınız daha önce doğrulandı; lütfen giriş yapmayı deneyin."
       confirmation_period_expired: "Hesabınızın %{period} doğrulanmış olması gerekiyor; lütfen tekrar talep edin."
       expired: "süresi doldu; lütfen tekrar talep edin."
       not_found: "bulunamadı."

@@ -8,7 +8,6 @@ pt-BR:
       new_password: "Nova senha"
       updated: "Senha atualizada com sucesso"
     confirmations:
-      already_confirmed: "Você já foi verificado; por favor tente conectar-se a sua conta."
       confirmed: "Sua conta foi confirmada."
       send_instructions: "Em alguns minutos, você receberá um e-mail contendo instruções sobre como redefinir sua senha."
       send_paranoid_instructions: "Se o seu endereço de e-mail estiver em nosso banco de dados, em poucos minutos você receberá um e-mail com instruções sobre como redefinir sua senha."
@@ -56,6 +55,7 @@ pt-BR:
       unlocked: "Sua conta foi desbloqueada. Por favor, conecte-se a sua conta para continuar."
   errors:
     messages:
+      already_confirmed: "Você já foi verificado; por favor tente conectar-se a sua conta."
       confirmation_period_expired: "Você precisa ser verificado dentro de %{period}; por favor, faça um pedido de repetição."
       expired: "expirou; por favor, faça um pedido de repetição."
       not_found: "não encontrado."

@@ -8,7 +8,6 @@ pl:
       new_password: "Nowe hasło"
       updated: "Hasło pomyślnie zaktualizowane"
     confirmations:
-      already_confirmed: "Zostałeś/łaś już zweryfikowany/a; spróbuj się zalogować."
       confirmed: "Twoje konto zostało potwierdzone."
       send_instructions: "W ciągu kilku minut otrzymasz e-mail zawierający instrukcje dotyczące resetowania hasła."
       send_paranoid_instructions: "Jeśli Twój adres e-mail znajduje się w naszej bazie danych, w ciągu kilku minut otrzymasz e-mail zawierający instrukcje dotyczące resetowania hasła."
@@ -56,6 +55,7 @@ pl:
       unlocked: "Twoje konto zostało odblokowane. Zaloguj się, by kontynuować."
   errors:
     messages:
+      already_confirmed: "Zostałeś/łaś już zweryfikowany/a; spróbuj się zalogować."
       confirmation_period_expired: "Musisz zostać zweryfikowany/a w ciągu %{period}; proszę wysłać ponowny wniosek."
       expired: "utracił/a ważność; proszę wysłać ponowny wniosek."
       not_found: "nie znaleziono."

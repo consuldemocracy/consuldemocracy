@@ -8,7 +8,6 @@ oc:
       new_password: "Nòva contrasenya"
       updated: "Contrasenya actualizada amb succès"
     confirmations:
-      already_confirmed: "Sètz ja estats verificats; ensajatz iniciar la session."
       confirmed: "Lo tieu compte es estat confirmat. Per favor autentica't amb lo tieu usatgièr e contrasenya"
       send_instructions: "Recebràs un corrièr electronic en unas minutas amb instruccions sus coma restablir la tiá contrasenya."
       send_paranoid_instructions: "Se lo tieu corrièr electronic existís en la nòstra basa de donadas recebràs un corrièr electronic en unas minutas amb instruccions sus coma restablir la tiá contrasenya."
@@ -56,6 +55,7 @@ oc:
       unlocked: "Lo tieu compte es estat desblocat. Per favor inícia session per contunhar."
   errors:
     messages:
+      already_confirmed: "Sètz ja estats verificats; ensajatz iniciar la session."
       confirmation_period_expired: "vos cal èsser verificat dins %{period}; fasètz una sollicitud de repeticion."
       expired: "A expirat; fasètz una sollicitud de repeticion."
       not_found: "pas trobat."

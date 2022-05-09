@@ -8,7 +8,6 @@ gl:
       new_password: "Contrasinal novo"
       updated: "O contrasinal actualizouse con éxito"
     confirmations:
-      already_confirmed: "xa fuches confirmado, por favor intenta iniciar sesión."
       confirmed: "A túa conta foi confirmada. Por favor, autentifícate coa túa rede social ou o teu usuario e contrasinal"
       send_instructions: "Recibirás un correo electrónico nuns minutos con instrucións sobre como restablecer o teu contrasinal."
       send_paranoid_instructions: "Se o teu correo electrónico existe na nosa base de datos recibirás un correo nuns minutos con instrucións sobre como restablecer o teu contrasinal."
@@ -56,6 +55,7 @@ gl:
       unlocked: "A túa conta foi desbloqueada. Por favor, inicia sesión para continuar."
   errors:
     messages:
+      already_confirmed: "xa fuches confirmado, por favor intenta iniciar sesión."
       confirmation_period_expired: "necesitas ser confirmado en %{period}, por favor vólvea solicitar."
       expired: "expirou, por favor vólvea solicitar."
       not_found: "non se encontrou."
