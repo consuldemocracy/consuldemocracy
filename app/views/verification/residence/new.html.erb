@@ -20,6 +20,14 @@
       <%= render "errors" %>
 
       <div class="row">
+        <div class="small-12 medium-9 column">
+          <div class="callout primary">
+            <%= sanitize(t("verification.residence.new.info_message",
+                           email: link_to(t("verification.residence.new.email"),
+                                          "mailto:transparenciayparticipacion@dipvalladolid.es"))) %>
+          </div>
+        </div>
+
         <div class="small-12 medium-8">
           <div class="small-12 medium-3 column">
           <%= f.select :document_type, document_types, prompt: "" %>

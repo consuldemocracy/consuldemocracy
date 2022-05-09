@@ -229,6 +229,8 @@ ignore_missing:
   - "welcome.do.title"
   - "welcome.proposal.description"
   - "welcome.proposal.title"
+  - "verification.residence.new.info_message"
+  - "verification.residence.new.email"
 
 ## Consider these keys used:
 ignore_unused:
