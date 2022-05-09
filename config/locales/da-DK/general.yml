@@ -25,6 +25,9 @@ da:
     close: Luk
     menu: Menu
   comments:
+    actions:
+      confirm_delete: "Er du sikker? Denne handling vil slette din kommentar."
+      delete: "Slet kommentar"
     comments_closed: Lukket for kommentarer
     verified_only: For at deltage %{verify_account}
     comment:
@@ -144,6 +147,7 @@ da:
         submit_button: Gem ændringer
   errors:
     messages:
+      allowed_file_content_types: "indholdstype skal være af %{types}"
       user_not_found: Brugeren blev ikke fundet
       invalid_date_range: "Ugyldigt datointerval"
   form:
@@ -402,6 +406,7 @@ da:
         one: 1 kommentar
         other: "%{count} kommentarer"
       support: Støt
+      support_label: "Støt %{proposal}"
       support_title: Støt dette forslag
       supports:
         zero: Ingen støtte
@@ -674,7 +679,11 @@ da:
       date_5: "Brugertilpasset"
       from: "Fra"
       general: "Med teksten"
+      goal: "Efter Verdensmål"
+      goal_blank: "Vælg et mål"
       search: "Filtre"
+      target: "Efter mål"
+      target_blank: "Vælg et mål"
       title: "Avanceret søgning"
       to: "Til"
     author_info:
@@ -756,6 +765,8 @@ da:
         zero: "0 sprog i brug"
         one: "1 sprog i brug"
         other: "%{count} sprog i brug"
+    optional: "Valgfrit"
+    required: "Påkrævet"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -833,8 +844,10 @@ da:
       retired_help_text: Dashboardet er ikke tilgængeligt for forslag, der er trukket tilbage
   votes:
     agree: Jeg er enig
+    agree_label: "Jeg er enig med %{title}"
     anonymous: For mange anonyme stemmer til at godkende stemme %{verify_account}.
     disagree: Jeg er uenig
+    disagree_label: "Jeg er ikke enig med %{title}"
     organizations: Det er ikke tilladt for organisationer at stemme
     supports: Støtte
     verified_only: Kun verificerede brugere kan stemme på forslag; %{verify_account}.
@@ -944,3 +957,6 @@ da:
         more:
           one: "Et tag mere"
           other: "%{count} flere tags"
+  machine_learning:
+    comments_summary: "Kommentar resume"
+    info_text: "Indhold generet af AI"
