@@ -23,6 +23,7 @@ da:
             other: "Du kan stemme på op til <span>%{count}</span> projekter"
         no_balloted_group_yet: "Du har ikke stemt på denne gruppe endnu, så stem stem stem!"
         remove: Fjern din stemme
+        remove_label: "Fjern din støtte til %{investment}"
         voted:
           one: "Du har stemt på <span>et</span> projektidé."
           other: "Du har stemt på <span>%{count}</span> projektidéer."
@@ -74,6 +75,7 @@ da:
       form:
         title: "Opret din projektidé"
         subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
         tag_category_label: "Kategorier"
         tags_instructions: "Tilføj tags. Du kan vælge mellem de allerede viste kategorier eller tilføje dine egne"
         tags_label: Tags
@@ -146,6 +148,7 @@ da:
       wrong_price_format: Kun hele tal
       investment:
         add: Stem
+        add_label: "Stem %{investment}"
         already_added: Du har allerede tilføjet projektet
         support_title: Støt forslaget
         supports:
