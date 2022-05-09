@@ -17,16 +17,10 @@
       </div>
     </div>
   </div>
-  <div class="main-indented-content">
-    <div class="footer-logos">
-      <%= image_tag(image_path_for("municipalities/default.png")) %>
-      <div class="logo-right">
-        <span>Za platformo skrbi</span>
-        <%= image_tag(image_path_for("logo-djnd.png")) %>
-        <!--<h1 class="logo-djnd <%= t("custom.classes.footer_logo") %>">logo djnd</h1>-->
-      </div>
-    </div>
-  </div>
+  <!-- financer logo -->
+  <%= render "layouts/footer_financer_banner" %>
+  <!-- logos -->
+  <%= render "layouts/footer_logos_banner" %>
   <!-- analytics -->
   <!-- TODO -->
   <!-- end of analytics -->

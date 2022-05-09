@@ -345,7 +345,27 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 30px 0;
+
+    &>div {
+      display: flex;
+
+      img {
+        height: 50px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .footer-financer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 15px 0;
+
+    img {
+      max-height: 110px;
+    }
   }
 
   .logo-holder {
@@ -362,8 +382,15 @@ footer {
     }
 
     img {
-      width: 120px;
+      width: 130px;
     }
+  }
+
+  p {
+    margin-bottom: 0;
+    font-size: 12px;
+    line-height: 16px;
+    color: #1A365D;
   }
 
   .logo {
@@ -378,6 +405,10 @@ footer {
       background: image-url("municipalities/default.png") no-repeat;
       background-size: 119px 61px;
     }
+  }
+
+  hr {
+    margin: 0 auto;
   }
 
   .footer-links {
@@ -422,6 +453,40 @@ footer {
 
     &:hover {
       color: $link-hover;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .footer-logos {
+      flex-direction: column;
+    }
+
+    .logo-right {
+      margin-top: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footer-financer-logo {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .footer-logos {
+      &>div {
+        flex-direction: column;
+
+        a {
+          text-align: center;
+        }
+
+        img {
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
+      }
     }
   }
 }
