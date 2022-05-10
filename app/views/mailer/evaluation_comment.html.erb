@@ -16,8 +16,10 @@
     )) %>
   </p>
 
-  <%= t("mailers.evaluation_comment.commenter_info", commenter: @email.comment.author.name, time: l(@email.comment.created_at)) %>
-  <div style="border-left: 2px solid #DEE0E3;font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-style: italic;font-weight: normal;line-height: 24px;margin-left: 20px;padding: 10px;">
+  <p>
+    <%= t("mailers.evaluation_comment.commenter_info", commenter: @email.comment.author.name, time: l(@email.comment.created_at)) %>
+  </p>
+  <div style="border-left: 2px solid #DEE0E3;font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-style: italic;font-weight: normal;line-height: 24px;margin-left: 20px;padding: 0px 10px;">
     <%= simple_format sanitize_and_auto_link(@email.comment.body), {}, sanitize: false %>
   </div>
 </td>

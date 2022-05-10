@@ -13,9 +13,9 @@
     <%= link_to @commentable.title, commentable_url(@commentable), style: "color: #2895F1; text-decoration:none;" %>
   </p>
 
-  <p style="border-left: 2px solid #DEE0E3;font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-style: italic;font-weight: normal;line-height: 24px;margin-left: 20px;padding: 10px;">
-    <%= sanitize_and_auto_link @comment.body %>
-  </p>
+  <div style="border-left: 2px solid #DEE0E3;font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-style: italic;font-weight: normal;line-height: 24px;margin-left: 20px;padding: 0px 10px;">
+    <%= simple_format sanitize_and_auto_link(@comment.body), {}, sanitize: false %>
+  </div>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 12px;font-weight: normal;line-height: 20px;">
     <%= sanitize(t("mailers.config.unsubscribe_text",
