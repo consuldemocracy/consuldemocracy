@@ -1,20 +1,14 @@
-<td>
-  <table style="width: 100%;">
-    <tbody>
-      <tr>
-        <td style="padding-left: 10px;">
-          <h1 style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif; margin-bottom: 0;">
-            <%= t("mailers.proposal_notification_digest.title",
-                  org_name: Setting["org_name"]) %>
-          </h1>
-          <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-            <%= t("mailers.proposal_notification_digest.info",
-                  org_name: Setting["org_name"]) %>
-          </p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<td style="padding-bottom: 20px; padding-left: 10px;">
+
+  <h1 style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;">
+    <%= t("mailers.proposal_notification_digest.title",
+          org_name: Setting["org_name"]) %>
+  </h1>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    <%= t("mailers.proposal_notification_digest.info",
+          org_name: Setting["org_name"]) %>
+  </p>
 
   <% @notifications.each do |notification| %>
     <table style="width: 100%; border-top: 1px solid #DEE0E3; padding-top: 12px;">
