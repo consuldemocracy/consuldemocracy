@@ -83,12 +83,13 @@ a {
 
 .main-indented-content {
   margin: 0 auto;
-  padding: 0 0.625rem;
+  padding: 0 1.5rem;
   width: 100%;
 }
 
 @media (min-width: 576px) {
   .main-indented-content {
+    padding: 0 0.625rem;
     max-width: 540px;
   }
 }
