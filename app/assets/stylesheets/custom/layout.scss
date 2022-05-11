@@ -153,19 +153,20 @@ a {
   padding: 0;
 }
 
-.login-button {
+.default-button {
   background-color: $black;
   color: $white;
   border-radius: 30px;
+  border: 3px solid $black;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
   font-size: 16px;
   font-weight: 600;
-  padding: 8px 16px;
+  padding: 4px 16px 6px;
   margin-left: 10px;
 
   &:hover {
-    background-color: #04aeef;
-    color: $white;
+    background-color: transparent;
+    color: $black;
   }
 }
 
@@ -173,8 +174,8 @@ a {
   background-color: #04aeef;
   color: $white;
   border-radius: 50px;
+  border: 3px solid #04aeef;
   font-size: 24px;
-  cursor: pointer;
   display: inline-block;
   font-weight: 700;
   text-transform: uppercase;
@@ -190,8 +191,14 @@ a {
   }
 
   &:hover {
-    background-color: #04aeef;
-    color: $white;
+    border-color: $black;
+    background-color: transparent;
+    color: $black;
+
+    .custom-icon.arrow-small-right,
+    .custom-icon.arrow-large-right {
+      background-image: image-url("arrow-black.svg");
+    }
   }
 
   &.small {

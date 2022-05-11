@@ -6,15 +6,15 @@
                             rel: "nofollow",
                             title: t("shared.go_to_page") +
                               t("layouts.header.my_account_link"),
-                            class: "login-button" %>
+                            class: "default-button" %>
   </div>
   <div class="inline-block">
     <%= link_to t("devise_views.menu.login_items.logout"),
-                destroy_user_session_path, rel: "nofollow", method: :delete, class: "login-button" %>
+                destroy_user_session_path, rel: "nofollow", method: :delete, class: "default-button" %>
   </div>
 <% else %>
   <div class="inline-block">
     <%= link_to t("devise_views.menu.login_items.login"),
-                new_user_session_path, rel: "nofollow", class: "login-button" %>
+                new_user_session_path, rel: "nofollow", class: "default-button" %>
   </div>
 <% end %>
