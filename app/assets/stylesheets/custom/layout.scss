@@ -351,8 +351,22 @@ footer {
       display: flex;
 
       img {
-        height: 50px;
+        max-height: 50px;
         margin-right: 10px;
+      }
+
+      &.logo-right {
+        display: flex;
+        flex-direction: column;
+    
+        span {
+          font-size: 14px;
+          line-height: 28px;
+        }
+    
+        img {
+          margin-right: 0;
+        }
       }
     }
   }
@@ -370,20 +384,6 @@ footer {
 
   .logo-holder {
     padding-left: rem-calc(80px);
-  }
-
-  .logo-right {
-    display: flex;
-    flex-direction: column;
-
-    span {
-      font-size: 14px;
-      line-height: 28px;
-    }
-
-    img {
-      width: 130px;
-    }
   }
 
   p {
