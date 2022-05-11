@@ -31,6 +31,7 @@
           <div class="main-indented-content">
             <% if @investments.count > 0 || @heading.present? %>
               <div class="row budget-investments">
+                <%= render "budgets/investments/map" %>
                 <h2 class="phase-title">
                   <% if phase.kind == :finished %>
                     <%= t("custom.titles.finished_proposals") %> (<%= @investments_count %>)
