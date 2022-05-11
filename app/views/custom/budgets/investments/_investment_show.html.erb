@@ -81,7 +81,7 @@
             <h4><%= question.text %></h4>
             <p>
               <% investment.answers.where(budget_question_id: question.id).each do |answer| %>
-                <%= answer.text %>
+                <%= auto_link_already_sanitized_html wysiwyg(answer.text) %>
               <% end %>
             </p>
           <% end %>

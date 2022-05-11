@@ -4,7 +4,7 @@ class AddInvestmentAnswer < ActiveRecord::Migration[5.2]
       t.references :budget
       t.references :investment
       t.references :budget_question
-      t.string :text, null: false, index: true
+      t.string :text, null: false
     end
   end
 end

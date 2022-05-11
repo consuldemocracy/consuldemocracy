@@ -11,7 +11,7 @@ data:
       port: 5432
       username: <%= ENV['POSTGRES_USERNAME'] %>
       password: <%= ENV['POSTGRES_PASSWORD'] %>
-      database: consul_staging
+      database: <%= ENV['CONSUL_DATABASE_NAME'] %>
   secrets.yml: |
     http_basic_auth: &http_basic_auth
       http_basic_auth: true

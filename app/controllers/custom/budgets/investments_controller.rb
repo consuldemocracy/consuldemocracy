@@ -11,31 +11,37 @@ module Budgets
     #   @budgets = Budget.where("id > -1");
     # end
 
-    # def index
+    def index
+      @investments = investments.page(params[:page]).per(PER_PAGE).for_render
+
+      @investment_ids = @investments.ids
+      @investments_map_coordinates = MapLocation.where(investment: investments).map(&:json_data)
+
+      @tag_cloud = tag_cloud
+      @remote_translations = detect_remote_translations(@investments)
     #   @investments_count = investments.count
     #   @investments = investments.page(params[:page]).per(12).for_render
     #   @investment_ids = @investments.pluck(:id)
 
-    #   # left over from long ago
-    #   #@denied_investments = Budget::Investment.where(selected: false).page(params[:page]).per(21).for_render
-    #   if @budget.phase == "finished"
-    #     if @heading
-    #       denied_investments = Budget::Investment.where("winner = false AND budget_id = ?",
-    #         @budget.id).where("heading_id = ?", @heading.id)
-    #     else
-    #       denied_investments = Budget::Investment.where("winner = false AND budget_id = ?", @budget.id)
-    #     end
-    #   else
-    #     if @heading
-    #       denied_investments = Budget::Investment.where("selected = false OR feasibility = ?", "unfeasible")
-    #       .where("budget_id = ?", @budget.id).where("heading_id = ?", @heading.id)
-    #     else
-    #       denied_investments = Budget::Investment.where("selected = false OR feasibility = ?", "unfeasible")
-    #       .where("budget_id = ?", @budget.id)
-    #     end
-    #   end
-    #   @denied_investments_count = denied_investments.count
-    #   @denied_investments = denied_investments.page(params[:page]).per(400).for_render
+      #@denied_investments = Budget::Investment.where(selected: false).page(params[:page]).per(21).for_render
+      if @budget.phase == "finished"
+        if @heading
+          denied_investments = Budget::Investment.where("winner = false AND budget_id = ?",
+            @budget.id).where("heading_id = ?", @heading.id)
+        else
+          denied_investments = Budget::Investment.where("winner = false AND budget_id = ?", @budget.id)
+        end
+      else
+        if @heading
+          denied_investments = Budget::Investment.where("selected = false OR feasibility = ?", "unfeasible")
+          .where("budget_id = ?", @budget.id).where("heading_id = ?", @heading.id)
+        else
+          denied_investments = Budget::Investment.where("selected = false OR feasibility = ?", "unfeasible")
+          .where("budget_id = ?", @budget.id)
+        end
+      end
+      @denied_investments_count = denied_investments.count
+      @denied_investments = denied_investments.page(params[:page]).per(400).for_render
 
     #   # unfeasible_investments = Budget::Investment.where("feasibility = ?", "unfeasible")
     #   # @unfeasible_investments_count = unfeasible_investments.count
@@ -44,8 +50,7 @@ module Budgets
     #   @all_investments_count = all_investments.count
     #   @all_investments = all_investments.page(params[:page]).per(400).for_render
     #   @all_investment_ids = @investments.pluck(:id)
-    #   @tag_cloud = tag_cloud
-    # end
+    end
 
     # def edit
     #   @investment.author = current_user
