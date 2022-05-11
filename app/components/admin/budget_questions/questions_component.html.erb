@@ -1,0 +1,36 @@
+<div class="questions-actions">
+  <%# action(:new,
+            budget,
+            text: t("admin.budgets.show.add_heading"),
+            path: new_admin_question_path(budget),
+            "aria-label": true) #%>
+</div>
+<% if budget.questions.any? %>
+  <h3><%= t("admin.budget_questions.amount", count: budget.questions.count) %></h3>
+  <table>
+    <thead>
+      <tr id="<%= dom_id(budget) %>">
+        <th><%= t("admin.budget_questions.text") %></th>
+        <th><%= t("admin.actions.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% budget.questions.each do |question| %>
+        <tr id="<%= dom_id(question) %>">
+          <td><%= question.text %></td>
+          <td>
+            <%# render Admin::TableActionsComponent.new(question) do |actions| #%>
+              <%# actions.action(:headings,
+                                 text: t("admin.budget_questions.headings_manage"),
+                                 path: question_path(question)) #%>
+            <%# end #%>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="callout primary clear">
+    <%= t("admin.budget_questions.no_questions") %>
+  </div>
+<% end %>

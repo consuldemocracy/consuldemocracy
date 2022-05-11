@@ -1,12 +1,12 @@
 require_dependency Rails.root.join("app", "models", "budget").to_s
 
 class Budget < ApplicationRecord
+  has_many :questions, class_name: "Budget::Question"
+
   CUSTOM_PHASE_ACCEPTING = :accepting
   CUSTOM_PHASE_SELECTING = :selecting
   CUSTOM_PHASE_BALLOTING = :balloting
   CUSTOM_PHASE_FINISHED = :finished
-
-  translates :name, :main_link_text, :questions, :questionsString, :questions, touch: true
 
   CustomPhase = Struct.new(
     :kind,

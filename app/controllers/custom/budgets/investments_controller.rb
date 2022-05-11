@@ -71,17 +71,24 @@ module Budgets
     #   end
     # end
 
-    # private
+    # this is so we get fields for questions on the new investment form
+    def new
+      @investment.budget.questions.order(:id).each do |question|
+        answer = @investment.answers.build({budget_id: @investment.budget.id, budget_question_id: question.id})
+      end
+    end
 
-    #   def investment_params
-    #     params.require(:budget_investment)
-    #           .permit(:title, :heading_id, :tag_list, :price,
-    #                   :organization_name, :location, :terms_of_service, :skip_map,
-    #                   answers: [],
-    #                   image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
-    #                   documents_attributes: [:id, :title, :attachment,
-    #                     :cached_attachment, :user_id, :_destroy],
-    #                   map_location_attributes: [:latitude, :longitude, :zoom])
-    #   end
+    private
+
+      def investment_params
+        attributes = [:heading_id, :tag_list, :organization_name, :location,
+                      :terms_of_service, :related_sdg_list,
+                      answers_attributes: [:text, :budget_id, :investment_id, :budget_question_id],
+                      image_attributes: image_attributes,
+                      documents_attributes: document_attributes,
+                      map_location_attributes: map_location_attributes]
+        params.require(:budget_investment).permit(attributes, translation_params(Budget::Investment))
+      end
+
   end
 end

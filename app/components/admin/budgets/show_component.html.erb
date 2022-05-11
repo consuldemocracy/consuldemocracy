@@ -20,4 +20,9 @@
     <h3 id="actions_header"><%= t("admin.budgets.edit.actions") %></h3>
     <%= render Admin::Budgets::ActionsComponent.new(budget) %>
   </section>
+
+  <section aria-labelledby="questions_header">
+    <h3 id="questions_header"><%= t("admin.budgets.edit.questions") %></h3>
+    <%= render Admin::BudgetQuestions::QuestionsComponent.new(budget) %>
+  </section>
 </main>

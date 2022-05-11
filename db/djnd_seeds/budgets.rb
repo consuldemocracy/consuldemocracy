@@ -1,3 +1,5 @@
+# coding: utf-8
+
 INVESTMENT_IMAGE_FILES = %w[
   brennan-ehrhardt-25066-unsplash_713x513.jpg
   carl-nenzen-loven-381554-unsplash_713x475.jpg
@@ -12,6 +14,14 @@ INVESTMENT_IMAGE_FILES = %w[
                            "budget",
                            "investments", filename))
 end
+
+QUESTIONS = [
+  'Zakaj ta predlog? Katero temo, težavo oz. izziv projektni predlog naslavlja?',
+  'Kaj konkretno predlagate? Kaj je bistvo vašega predloga? Kaj se bo zgodilo?',
+  'Kako naj bi se projekt izvedel? Katere aktivnosti bi bilo treba izpeljati?',
+  'Kje konkretno naj bi se projekt izvajal?',
+  'Kaj bi se po izvedbi projekta spremenilo, izboljšalo?',
+]
 
 PHASES_TO_DISABLE = %w[selecting valuating publishing_prices].freeze
 
@@ -70,6 +80,13 @@ section "Creating Budgets" do
       phase.update!(enabled: enabled, summary: summary, presentation_summary_accepting: presentation_summary_accepting,
       presentation_summary_balloting: presentation_summary_balloting, presentation_summary_finished: presentation_summary_finished,
         description: description)
+    end
+  end
+
+  # add questions
+  Budget.all.each do |budget|
+    QUESTIONS.each do |question|
+      budget.questions.create!(text: question, enabled: true)
     end
   end
 end

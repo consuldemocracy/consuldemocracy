@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_11_123757) do
+ActiveRecord::Schema.define(version: 2022_05_10_123526) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -244,6 +244,25 @@ ActiveRecord::Schema.define(version: 2022_04_11_123757) do
     t.index ["group_id"], name: "index_budget_headings_on_group_id"
   end
 
+  create_table "budget_investment_answer_translations", force: :cascade do |t|
+    t.integer "budget_investment_answer_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "text"
+  end
+
+  create_table "budget_investment_answers", force: :cascade do |t|
+    t.bigint "budget_id"
+    t.bigint "investment_id"
+    t.bigint "budget_question_id"
+    t.string "text", null: false
+    t.index ["budget_id"], name: "index_budget_investment_answers_on_budget_id"
+    t.index ["budget_question_id"], name: "index_budget_investment_answers_on_budget_question_id"
+    t.index ["investment_id"], name: "index_budget_investment_answers_on_investment_id"
+    t.index ["text"], name: "index_budget_investment_answers_on_text"
+  end
+
   create_table "budget_investment_translations", id: :serial, force: :cascade do |t|
     t.integer "budget_investment_id", null: false
     t.string "locale", null: false
@@ -339,6 +358,20 @@ ActiveRecord::Schema.define(version: 2022_04_11_123757) do
     t.index ["kind"], name: "index_budget_phases_on_kind"
     t.index ["next_phase_id"], name: "index_budget_phases_on_next_phase_id"
     t.index ["starts_at"], name: "index_budget_phases_on_starts_at"
+  end
+
+  create_table "budget_question_translations", force: :cascade do |t|
+    t.integer "budget_question_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "text"
+  end
+
+  create_table "budget_questions", force: :cascade do |t|
+    t.bigint "budget_id"
+    t.boolean "enabled", default: true
+    t.index ["budget_id"], name: "index_budget_questions_on_budget_id"
   end
 
   create_table "budget_reclassified_votes", id: :serial, force: :cascade do |t|
