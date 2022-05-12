@@ -524,3 +524,10 @@ body > header, .wrapper > header {
   background-color: #f2f2f2;
   padding: 1.5rem;
 }
+
+.horizontal-line {
+  height: 1px;
+  background-color: $black;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}

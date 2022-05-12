@@ -27,64 +27,73 @@
     <% if phase.enabled %>
       <div class="tabs-panel <%= "is-active" if phase.url %>" id="tab-<%= phase.kind %>">
         <% if phase.url %>
-            <%= render "/budgets/investments/header" %>
+          <%= render "/budgets/investments/header" %>
           <div class="main-indented-content">
             <% if @investments.count > 0 || @heading.present? %>
               <div class="row budget-investments">
-                <%= render "budgets/investments/map" %>
-                <h2 class="phase-title">
-                  <% if phase.kind == :finished %>
-                    <%= t("custom.titles.finished_proposals") %> (<%= @investments_count %>)
-                  <% elsif phase.kind == :balloting %>
-                    <%= t("custom.titles.selected_proposals") %> (<%= @investments_count %>)
-                  <% elsif @budget.phase == "valuating" %>
-                    <%= t("custom.titles.added_proposals") %> (<%= @all_investments_count %>)
-                  <% elsif @budget.phase == "publishing_prices" %>
-                    <%= t("custom.titles.voted_proposals") %> (<%= @investments_count %>)
+                <div class="column">
+                  <%= render "budgets/investments/map" %>
+                  <h2 class="phase-title">
+                    <% if phase.kind == :finished %>
+                      <%= t("custom.titles.finished_proposals") %> (<%= @investments_count %>)
+                    <% elsif phase.kind == :balloting %>
+                      <%= t("custom.titles.selected_proposals") %> (<%= @investments_count %>)
+                    <% elsif @budget.phase == "valuating" %>
+                      <%= t("custom.titles.added_proposals") %> (<%= @all_investments_count %>)
+                    <% elsif @budget.phase == "publishing_prices" %>
+                      <%= t("custom.titles.voted_proposals") %> (<%= @investments_count %>)
+                    <% else %>
+                      <%= t("custom.titles.added_proposals") %> (<%= @investments_count %>)
+                    <% end %>
+                  </h2>
+                  <div class="filters">
+                  <%# TODO: uredit selecte, if-e nad njimi itd. %>
+                    <% if @budget.headings.count > 1 && @investments.count > 0%>
+                      <%= render "budgets/investments/districts" %>
+                    <% end %>
+                    <% if @budget.headings.count > 1 && @investments.count > 0%>
+                      <%= render "budgets/investments/districts" %>
+                    <% end %>
+                    <% if @budget.headings.count > 1 && @investments.count > 0%>
+                      <%= render "budgets/investments/districts" %>
+                    <% end %>
+                  </div>
+                  <% if @budget.phase == "valuating" %>
+                    <div class="row small-up-1 medium-up-1 large-up-3">
+                      <% @all_investments.each_with_index do |investment, index| %>
+                        <% investment_class = "column column-block budget-investment-holder" %>
+                        <% investment_class = investment_class + " last-in-row" if (index != 0 && (index + 1) % 4 == 0) %>
+                        <div class="<%= investment_class %>">
+                          <%= render partial: "/budgets/investments/investment",
+                                    locals: {
+                                      investment: investment,
+                                      investment_ids: @all_investment_ids,
+                                      ballot: @ballot
+                                    } %>
+                        </div>
+                      <% end %>
+                    </div>
                   <% else %>
-                    <%= t("custom.titles.added_proposals") %> (<%= @investments_count %>)
-                  <% end %>
-                </h2>
-                <div style="position: relative;">
-                  <% if @budget.headings.count > 1 && @investments.count > 0%>
-                    <%= render "budgets/investments/districts" %>
-                  <% end %>
-                </div>
-                <% if @budget.phase == "valuating" %>
-                  <div class="row small-up-1 medium-up-1 large-up-3">
-                  <% @all_investments.each_with_index do |investment, index| %>
-                    <% investment_class = "column column-block budget-investment-holder" %>
-                    <% investment_class = investment_class + " last-in-row" if (index != 0 && (index + 1) % 4 == 0) %>
-                    <div class="<%= investment_class %>">
-                      <%= render partial: "/budgets/investments/investment",
-                                locals: {
-                                  investment: investment,
-                                  investment_ids: @all_investment_ids,
-                                  ballot: @ballot
-                                } %>
+                    <div class="row small-up-1 medium-up-1 large-up-3">
+                      <% @investments.each_with_index do |investment, index| %>
+                        <% investment_class = "column column-block budget-investment-holder" %>
+                        <% investment_class = investment_class + " last-in-row" if (index != 0 && (index + 1) % 4 == 0) %>
+                        <div class="<%= investment_class %>">
+                          <%= render partial: "/budgets/investments/investment",
+                                    locals: {
+                                      investment: investment,
+                                      investment_ids: @investment_ids,
+                                      investment_votes: @investment_votes,
+                                      ballot: @ballot
+                                    } %>
+                        </div>
+                      <% end %>
+                    </div>
+                    <div class="row">
+                      <%= paginate @investments %>
                     </div>
                   <% end %>
                 </div>
-                <% else %>
-                  <div class="row small-up-1 medium-up-1 large-up-3">
-                    <% @investments.each_with_index do |investment, index| %>
-                      <% investment_class = "column column-block budget-investment-holder" %>
-                      <% investment_class = investment_class + " last-in-row" if (index != 0 && (index + 1) % 4 == 0) %>
-                      <div class="<%= investment_class %>">
-                        <%= render partial: "/budgets/investments/investment",
-                                  locals: {
-                                    investment: investment,
-                                    investment_ids: @investment_ids,
-                                    investment_votes: @investment_votes,
-                                    ballot: @ballot
-                                  } %>
-                      </div>
-                    <% end %>
-                  </div>
-                  <div class="row">
-                    <%= paginate @investments %>
-                  </div>
-                <% end %>
               </div>
               <%
                 if (

@@ -1,5 +1,3 @@
-// **************** LANDING ********************
-
 .phase-enrichment {
   height: 260px;
   width: 300px;
@@ -39,6 +37,8 @@ only screen and (min-resolution: 240dpi) {
     background-size: 960px 270px;
   }
 }
+
+// **************** LANDING ********************
 
 .landing {
   .introduction-text {
@@ -396,7 +396,7 @@ span:hover::before {
   .custom-phases-nav .tabs .active-phase a h3 i {
     background: url(/assets/custom/check.svg) left no-repeat;
     width: 30px;
-}
+  }
 
   .main-indented-content {
     margin: 0 auto;
@@ -510,6 +510,26 @@ span:hover::before {
       margin-bottom: initial;
     }
   }
+}
+
+.tabs-panel {
+  .expanded {
+    margin: 1rem 0;
+    .phase-description {
+      h1, h2 {
+        margin-bottom: 1rem;
+        line-height: 1.25;
+      }
+      .phase-enrichment {
+        height: 300px;
+        width: 350px;
+        margin-top: 3rem;
+        margin-right: 2rem;
+        margin-left: auto;
+      }
+    }
+  }
+  
 }
 
 .budget-investments {

@@ -1,6 +1,6 @@
 sl-SI:
   attributes:
-    geozone_id: "Področje uporabe"
+    geozone_id: "Območje"
     results_enabled: "Pokaži rezultate"
     stats_enabled: "Pokaži statistike"
     name: Ime
@@ -93,7 +93,7 @@ sl-SI:
       budget/translation:
         name: "Ime"
       budget/investment:
-        heading_id: "Glava"
+        heading_id: "Območje"
         title: "Naslov"
         description: "Opis"
         external_url: "Povezava do dodatne dokumentacije"

@@ -6,7 +6,7 @@
 
     <% unless budget.single_heading? %>
       <div>
-        <%= f.select :heading_id, budget_heading_select_options(budget), { include_blank: true, label: "Področje" } %>
+        <%= f.select :heading_id, budget_heading_select_options(budget), { include_blank: true } %>
       </div>
     <% end %>
 

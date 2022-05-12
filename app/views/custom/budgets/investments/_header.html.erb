@@ -58,7 +58,9 @@
     </div>
 
     <% unless can? :show, @ballot %>
-      <div class="horizontal-line"></div>
+      <div class="column">
+        <div class="horizontal-line"></div>
+      </div>
     <% end %>
   </div>
 </div>
