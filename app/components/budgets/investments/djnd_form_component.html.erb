@@ -6,7 +6,7 @@
 
     <% unless budget.single_heading? %>
       <div>
-        <%= f.select :heading_id, budget_heading_select_options(budget), { include_blank: true } %>
+        <%= f.select :heading_id, budget_heading_select_options(budget), { include_blank: true, label: "Področje" } %>
       </div>
     <% end %>
 
@@ -37,7 +37,7 @@
 
     <%= f.fields_for :answers do |builder| %>
       <p>
-        <%= builder.text_area :text, label: budget.questions.order(:id)[builder.index].text %>
+        <%= builder.text_area :text, label: budget.questions.order(:id)[builder.index].text, rows: 5 %>
         <%= builder.hidden_field :budget_id %>
         <%= builder.hidden_field :budget_question_id %>
       </p>
@@ -51,7 +51,7 @@
 
     <% if feature?(:allow_attached_documents) %>
       <div class="documents">
-        <%= render "documents/nested_documents", f: f %>
+        <%= render "documents/nested_documents", f: f, class: "default-button" %>
       </div>
     <% end %>
 
@@ -69,19 +69,10 @@
     <% end %>
 
     <div>
-      <%= f.text_field :location %>
-    </div>
-
-    <div>
-      <%= f.text_field :organization_name %>
-    </div>
-
-    <div>
       <%= f.label :tag_list, t("budgets.investments.form.tags_label") %>
       <p class="help-text" id="tags-list-help-text"><%= t("budgets.investments.form.tags_instructions") %></p>
 
       <div id="category_tags" class="tags">
-        <%= f.label :category_tag_list, t("budgets.investments.form.tag_category_label") %>
         <% categories.each do |tag| %>
           <a class="js-add-tag-link"><%= tag.name %></a>
         <% end %>
@@ -96,13 +87,13 @@
                         data: { js_url: suggest_tags_path } %>
     </div>
 
-    <%= render SDG::RelatedListSelectorComponent.new(f) %>
   </fieldset>
 
-  <div class="actions">
+  <div class="text-center">
     <% unless current_user.manager? || investment.persisted? %>
-      <div>
+      <div class="hide-field">
         <%= f.check_box :terms_of_service,
+          checked: true,
           title: t("form.accept_terms_title"),
           label: t("form.accept_terms",
                    policy: link_to(t("form.policy"), "/privacy", target: "blank"),
@@ -111,6 +102,6 @@
       </div>
     <% end %>
 
-    <%= f.submit %>
+    <%= f.submit class: "action-button", value: "Oddaj predlog" %>
   </div>
 <% end %>

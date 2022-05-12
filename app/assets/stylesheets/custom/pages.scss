@@ -309,15 +309,6 @@ span:hover::before {
   border: 2px solid #3c3583 !important;
 }
 
-.custom-icon.arrow-small-right,
-.custom-icon.arrow-large-right {
-  background-image: image-url("arrow.svg");
-  background-position: center;
-  background-size: 45px 42px;
-  width: 33px;
-  height: 29px;
-}
-
 .home-page {
   main {
     background-color: #f2f2f2;

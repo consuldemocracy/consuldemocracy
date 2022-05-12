@@ -14,3 +14,22 @@ only screen and (min-resolution: 240dpi) {
     background-size: 36px 323px;
   }
 }
+
+.custom-icon.arrow-small-right,
+.custom-icon.arrow-large-right {
+  background-image: image-url("arrow.svg");
+  background-position: center;
+  background-size: 45px 42px;
+  width: 33px;
+  height: 29px;
+}
+
+.custom-icon.arrow-small-left {
+  background-image: image-url("arrow-black.svg");
+  background-position: center;
+  background-size: 18px 18px;
+  width: 16px;
+  height: 16px;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}

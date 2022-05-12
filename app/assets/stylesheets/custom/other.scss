@@ -14,4 +14,16 @@
     line-height: 100px;
   }
 }
-  
+
+// use this class to hide fields, which should be hidden fields, but they have to be submitted in a form
+.hide-field {
+  display: none;
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+  font-weight: 600;
+}

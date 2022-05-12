@@ -154,7 +154,9 @@ a {
   padding: 0;
 }
 
-.default-button {
+.default-button,
+.upload-image,
+.upload-document {
   background-color: $black;
   color: $white;
   border-radius: 30px;
@@ -171,7 +173,8 @@ a {
   }
 }
 
-.action-button {
+.action-button,
+input[type="submit"].action-button {
   background-color: #04aeef;
   color: $white;
   border-radius: 50px;
@@ -509,4 +512,15 @@ a {
 body > header, .wrapper > header {
   padding-left: 0;
   padding-right: 0;
+}
+
+// submit predlog
+.budget-investment-new {
+  border-top: 2px solid #f2f2f2;
+  padding-top: 2rem;
+}
+
+.sidebar {
+  background-color: #f2f2f2;
+  padding: 1.5rem;
 }

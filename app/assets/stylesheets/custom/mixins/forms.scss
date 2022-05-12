@@ -1,0 +1,34 @@
+.budget-investment-form {
+  padding-bottom: 2rem;
+  
+  label {
+    margin-bottom: 0.125rem;
+  }
+
+  input[type="text"] {
+    background-color: $white;
+    height: unset;
+  }
+
+  input[type="submit"] {
+    padding: 12px 24px 14px;
+  }
+
+  select {
+    min-height: unset;
+    width: 100%;
+  }
+
+  .required-fields {
+    background: none;
+    margin-bottom: 0;
+  }
+
+  .button.upload-image, .button.upload-document {
+    margin-bottom: 1rem;
+  }
+  
+  .location-map-remove-marker {
+    color: $black;
+  }
+}
