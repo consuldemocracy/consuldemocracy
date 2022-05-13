@@ -348,6 +348,7 @@ span:hover::before {
   width: 100%;
   box-shadow: 0 4px 43px -10px rgba(0, 0, 0, 0.21);
   border: 0;
+  margin-top: 1rem;
 
   ul {
     display: flex;
@@ -364,7 +365,7 @@ span:hover::before {
     .active-phase {
       // TODO: make it shiny
       > a {
-        color: $minsk !important;
+        color: $black;
       }
     }
 
@@ -372,7 +373,8 @@ span:hover::before {
       outline: none;
     }
     .tabs-title {
-      margin-right: 0 !important;
+      padding: 10px 0;
+      margin-right: 0;
     }
 
     .tabs-title > a {
@@ -409,7 +411,7 @@ span:hover::before {
 
   .tabs h2,
   .tabs h3 {
-    color: #32366a;
+    // color: $white;
     font-size: 16px;
     line-height: 20px;
     font-weight: 600;
@@ -418,7 +420,7 @@ span:hover::before {
   }
 
   .tabs span {
-    color: #32366a;
+    color: $black;
     font-size: 16px;
     font-weight: 300;
     line-height: 17px;
@@ -434,13 +436,10 @@ span:hover::before {
   }
 
   .tabs .active-phase a h3 {
-    font-size: 16px;
     font-weight: 700;
-    line-height: 17px;
     text-transform: uppercase;
-
     display: inline-block;
-    padding: 7px 15px 7px 10px;
+    padding: 7px 15px;
   }
 
   .active-phase a h3 i {
@@ -448,18 +447,10 @@ span:hover::before {
     width: 30px;
   }
 
-  .tabs .is-active a h3 {
-    color: #fff;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 17px;
-    text-transform: uppercase;
-
-    display: inline-block;
-    padding: 7px 15px;
-
-    border-radius: 20px;
-    background-image: linear-gradient(to right, $mandys-pink 0%, #272266 100%);
+  .tabs .active-phase a h3:hover {
+    i {
+      background: image-url("check-black.svg") left no-repeat;
+    }
   }
 
   .tabs .is-active a span {
@@ -496,7 +487,7 @@ span:hover::before {
 @media (min-width: 576px) {
   .custom-phases-nav .tabs {
     width: 100%;
-    border-left: 2px solid $mandys-pink;
+    border-left: 1px solid $black;
 
     ul {
       display: flex;
@@ -504,7 +495,7 @@ span:hover::before {
     }
 
     li {
-      border-right: 2px solid $mandys-pink;
+      border-right: 1px solid $black;
       border-bottom: 0;
       padding-bottom: initial;
       margin-bottom: initial;
