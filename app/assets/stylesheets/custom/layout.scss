@@ -516,8 +516,14 @@ body > header, .wrapper > header {
 
 // submit predlog
 .budget-investment-new {
-  border-top: 2px solid #f2f2f2;
   padding-top: 2rem;
+
+  h1 {
+    margin-bottom: 1rem;
+    &::after {
+      display: none;
+    }
+  }
 }
 
 .sidebar {

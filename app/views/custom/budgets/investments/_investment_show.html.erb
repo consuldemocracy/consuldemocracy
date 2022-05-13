@@ -13,70 +13,79 @@
           Flag.flagged?(current_user, investment),
           @investment_votes] do %>
 
-  <section class="budget-investment-show" id="<%= dom_id(investment) %>">
-
-    <div class="row">
-      <div class="small-12 medium-7 medium-centered">
-
-        <% if current_budget.phase == "accepting" %>
-        <% elsif current_budget.phase == "reviewing" %>
-          <div class="callout warning">
-            <%= t("custom.messages.finished_accepting") %>
-          </div>
-        <% elsif current_budget.phase == "reviewing_ballots" %>
-          <div class="callout warning">
-            <%= t("custom.messages.finished_voting") %>
-          </div>
-        <% elsif investment.unfeasible? %>
-          <div class="callout warning">
-            <%= t("budgets.investments.show.project_unfeasible_html") %>
-          </div>
-          <% if investment.should_show_unfeasibility_explanation? %>
-            <div class="row">
-              <div class="small-12 medium-9 medium-centered bggray">
-                <p>
-                  <%= investment.unfeasibility_explanation %>
-                </p>
-              </div>
+<div class="row">
+  <div class="column">
+    <section class="budget-investment-show" id="<%= dom_id(investment) %>">
+      <div>
+        <%= link_to budget_investments_path(@budget), class: "back" do %>
+          <i class="custom-icon arrow-small-left"></i>
+          <span class="text"><%= t("custom.headings.back_to_all_proposals") %></span>
+        <% end %>
+      </div>
+      <% if current_budget.phase == "accepting" %>
+      <% elsif current_budget.phase == "reviewing" %>
+        <div class="callout warning">
+          <%= t("custom.messages.finished_accepting") %>
+        </div>
+      <% elsif current_budget.phase == "reviewing_ballots" %>
+        <div class="callout warning">
+          <%= t("custom.messages.finished_voting") %>
+        </div>
+      <% elsif investment.unfeasible? %>
+        <div class="callout warning">
+          <%= t("budgets.investments.show.project_unfeasible_html") %>
+        </div>
+        <% if investment.should_show_unfeasibility_explanation? %>
+          <div class="row">
+            <div class="bggray">
+              <p>
+                <%= investment.unfeasibility_explanation %>
+              </p>
             </div>
-          <% end %>
-        <% elsif investment.winner? %>
-          <!-- <div class="callout success">
-            <strong><%= t("budgets.investments.show.project_winner") %></strong>
-          </div> -->
-        <% elsif @budget.finished? and not investment.winner? %>
-          <div class="callout warning">
-            <%= t("custom.messages.loser") %>
-          </div>
-        <% elsif investment.selected? %>
-          <!-- <div class="callout success">
-            <%= t("budgets.investments.show.project_selected_html") %>
-          </div> -->
-        <% elsif @budget.balloting_or_later? %>
-          <div class="callout warning">
-            <%= t("budgets.investments.show.project_not_selected_html") %>
           </div>
         <% end %>
+      <% elsif investment.winner? %>
+        <!-- <div class="callout success">
+          <strong><%= t("budgets.investments.show.project_winner") %></strong>
+        </div> -->
+      <% elsif @budget.finished? and not investment.winner? %>
+        <div class="callout warning">
+          <%= t("custom.messages.loser") %>
+        </div>
+      <% elsif investment.selected? %>
+        <!-- <div class="callout success">
+          <%= t("budgets.investments.show.project_selected_html") %>
+        </div> -->
+      <% elsif @budget.balloting_or_later? %>
+        <div class="callout warning">
+          <%= t("budgets.investments.show.project_not_selected_html") %>
+        </div>
+      <% end %>
 
-        <h1><%= investment.title %></h1>
-        <div class="budget-investment-info">
-          <%= render "/shared/author_info", resource: investment %>
-          <span class="bullet">&nbsp;&ndash;&nbsp;</span>
-          <%= l investment.created_at.to_date %>
-          <span class="bullet">&nbsp;&ndash;&nbsp;</span>
-          <%= investment.heading.name %>
+      <h1><%= investment.title %></h1>
+      <div class="budget-investment-info">
+        <div class="info">
+          <div>
+            <%= render "/shared/author_info", resource: investment %>
+            <span class="bullet">&nbsp;&ndash;&nbsp;</span>
+            <%= investment.created_at.to_date %>
+            <span class="bullet">&nbsp;&ndash;&nbsp;</span>
+            <%= investment.heading.name %>
+          </div>
           <%= render "shared/tags", taggable: investment %>
-
-          <% if current_budget.phase == "accepting" %>
-            <% if current_user == investment.author %>
-              <%= link_to t("custom.titles.edit"), budget_investments_path(@budget) + "/" + @investment.id.to_s + "/edit" %>
-            <% end %>
-          <% end %>
         </div>
 
-        <%= render_image(investment.image, :large, true) if investment.image.present? %>
+        <% if current_budget.phase == "accepting" %>
+          <% if current_user == investment.author %>
+            <%= link_to t("custom.titles.edit"), budget_investments_path(@budget) + "/" + @investment.id.to_s + "/edit", class: "default-button" %>
+          <% end %>
+        <% end %>
+      </div>
 
-        <div class="small-12 medium-9 medium-centered bggray">
+      <%= render_image(investment.image, :large, true, ) if investment.image.present? %>
+
+      <div class="bggray">
+        <div class="small-12 medium-10 medium-centered">
           <% @budget.questions.each do |question|%>
             <h4><%= question.text %></h4>
             <p>
@@ -86,125 +95,125 @@
             </p>
           <% end %>
         </div>
+      </div>
 
-        <% if feature?(:map) && map_location_available?(@investment.map_location) %>
-          <div class="margin">
-            <%= render_map(@investment.map_location, "budget_investment", false, nil) %>
-          </div>
-        <% end %>
-
-        <% if investment.location.present? %>
-          <p>
-            <%= t("budgets.investments.show.location_html", location: investment.location) %>
-          </p>
-        <% end %>
-
-        <% if investment.organization_name.present? %>
-          <p>
-            <%= t("budgets.investments.show.organization_name_html", name: investment.organization_name) %>
-          </p>
-        <% end %>
-
-        <% if feature?(:allow_attached_documents) and investment.documents.count > 0 %>
-          <%= render "documents/documents",
-                     documents: investment.documents,
-                     max_documents_allowed: Budget::Investment.max_documents_allowed %>
-        <% end %>
-
-        <% if investment.external_url.present? %>
-          <div class="document-link">
-            <%= sanitize_and_auto_link investment.external_url %>
-          </div>
-        <% end %>
-
-        <% if investment.should_show_price? %>
-          <h2><%= t("budgets.investments.show.price") %></h2>
-          <div class="no-overflow supports text-center">
-            <p class="investment-project-amount">
-              <%= investment.price %> €
-              <!-- <%= investment.formatted_price %> -->
-            </p>
-            <% if investment.should_show_price_explanation? %>
-              <p class="investment-price-explanation"><%= investment.price_explanation %></p>
-            <% end %>
-          </div>
-        <% end %>
-        <% if investment.should_show_aside? %>
-          <% if investment.should_show_votes? %>
-            <div class="sidebar-divider"></div>
-            <h2><%= t("budgets.investments.show.supports") %></h2>
-            <div class="text-center">
-              <div id="<%= dom_id(investment) %>_votes">
-                <%= render partial: "/budgets/investments/votes", locals: {
-                  investment: investment,
-                  investment_votes: investment_votes,
-                  vote_url: vote_budget_investment_path(investment.budget, investment, value: "yes")
-                } %>
-              </div>
-            </div>
-          <% elsif investment.should_show_vote_count? %>
-            <div class="sidebar-divider"></div>
-            <h2><%= t("budgets.investments.show.supports") %></h2>
-            <div class="text-center">
-              <span class="total-supports">
-                <strong>
-                  <%= t("budgets.investments.investment.supports",
-                        count: investment.total_votes) %>
-                </strong>
-              </span>
-            </div>
-          <% elsif investment.should_show_ballots? %>
-            <!-- <div class="sidebar-divider"></div> -->
-            <h2>
-              <!--
-                <%= t("budgets.investments.show.votes") %>
-              -->
-            </h2>
-            <div class="text-center">
-              <div id="<%= dom_id(investment) %>_ballot">
-                <%= render partial: "ballot", locals: {
-                  investment: investment,
-                  investment_ids: investment_ids,
-                  ballot: ballot
-                } %>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-        <div class="custombackbutton">
-          <i class="custom-icon arrow-large-left"></i>
-          <%= link_to t("custom.headings.back_to_all_proposals"), budget_investments_path(@budget) %>
+      <% if feature?(:map) && map_location_available?(@investment.map_location) %>
+        <div class="margin">
+          <%= render_map(@investment.map_location, "budget_investment", false, nil) %>
         </div>
+      <% end %>
 
-        <div class="horizontal-line"></div>
+      <% if investment.location.present? %>
+        <p>
+          <%= t("budgets.investments.show.location_html", location: investment.location) %>
+        </p>
+      <% end %>
 
-        <div class="row social-box" data-equalizer>
-          <div class="small-12 column medium-centered text-center">
-            <h4><%= t("budgets.investments.show.share_title") %></h4>
-            <div data-equalizer-watch class="column-content qs">
-              <%= render "shared/social_share",
-                         share_title: t("budgets.investments.show.share"),
-                         title: investment.title,
-                         image_url: image_absolute_url(investment.image, :thumb),
-                         url: budget_investment_url(investment.budget, investment),
-                         description: t("budgets.investments.share.message",
-                                        title: investment.title,
-                                        org: setting["org_name"],
-                                        handle: setting["twitter_handle"]),
-                         mobile: t("budgets.investments.share.message_mobile",
-                                   title: investment.title,
-                                   handle: setting["twitter_handle"]) %>
+      <% if investment.organization_name.present? %>
+        <p>
+          <%= t("budgets.investments.show.organization_name_html", name: investment.organization_name) %>
+        </p>
+      <% end %>
 
-              <span class="copylink"><%= t("budgets.investments.show.copy") %></span>
+      <% if feature?(:allow_attached_documents) and investment.documents.count > 0 %>
+        <%= render "documents/documents",
+                  documents: investment.documents,
+                  max_documents_allowed: Budget::Investment.max_documents_allowed %>
+      <% end %>
+
+      <% if investment.external_url.present? %>
+        <div class="document-link">
+          <%= sanitize_and_auto_link investment.external_url %>
+        </div>
+      <% end %>
+
+      <% if investment.should_show_price? %>
+        <h2><%= t("budgets.investments.show.price") %></h2>
+        <div class="no-overflow supports text-center">
+          <p class="investment-project-amount">
+            <%= investment.price %> €
+            <!-- <%= investment.formatted_price %> -->
+          </p>
+          <% if investment.should_show_price_explanation? %>
+            <p class="investment-price-explanation"><%= investment.price_explanation %></p>
+          <% end %>
+        </div>
+      <% end %>
+      <% if investment.should_show_aside? %>
+        <% if investment.should_show_votes? %>
+          <div class="sidebar-divider"></div>
+          <h2><%= t("budgets.investments.show.supports") %></h2>
+          <div class="text-center">
+            <div id="<%= dom_id(investment) %>_votes">
+              <%= render partial: "/budgets/investments/votes", locals: {
+                investment: investment,
+                investment_votes: investment_votes,
+                vote_url: vote_budget_investment_path(investment.budget, investment, value: "yes")
+              } %>
+            </div>
+          </div>
+        <% elsif investment.should_show_vote_count? %>
+          <div class="sidebar-divider"></div>
+          <h2><%= t("budgets.investments.show.supports") %></h2>
+          <div class="text-center">
+            <span class="total-supports">
+              <strong>
+                <%= t("budgets.investments.investment.supports",
+                      count: investment.total_votes) %>
+              </strong>
+            </span>
+          </div>
+        <% elsif investment.should_show_ballots? %>
+          <!-- <div class="sidebar-divider"></div> -->
+          <h2>
+            <!--
+              <%= t("budgets.investments.show.votes") %>
+            -->
+          </h2>
+          <div class="text-center">
+            <div id="<%= dom_id(investment) %>_ballot">
+              <%= render partial: "ballot", locals: {
+                investment: investment,
+                investment_ids: investment_ids,
+                ballot: ballot
+              } %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+
+      <div class="row social-box" data-equalizer>
+        <div class="small-12 column medium-centered text-center">
+          <h2><%= t("budgets.investments.show.share_title") %></h2>
+
+          <div style="display: flex; align-items: center; justify-content: center;">
+
+            <div style="display: flex; align-items: center;">
+              <h5><%= t("budgets.investments.show.share") %></h5>
+              <div data-equalizer-watch class="qs">
+                <%= render "shared/social_share",
+                          title: investment.title,
+                          image_url: image_absolute_url(investment.image, :thumb),
+                          url: budget_investment_url(investment.budget, investment),
+                          description: t("budgets.investments.share.message",
+                                          title: investment.title,
+                                          org: setting["org_name"],
+                                          handle: setting["twitter_handle"]),
+                          mobile: t("budgets.investments.share.message_mobile",
+                                    title: investment.title,
+                                    handle: setting["twitter_handle"]) %>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: center;">
+              <h5 class="copylink"><%= t("budgets.investments.show.copy") %></h5>
               <input type="text" class="shortner">
             </div>
           </div>
         </div>
-        <div class="small-12 column" style="width: 100%; height: 180px"></div>
-        <!-- remove line because of removed comments
-        <div class="horizontal-line"></div>
-        end remove line -->
       </div>
-    </div>
-  </section>
+      <div class="horizontal-line"></div>
+    </section>
+  </div>
+</div>
 <% end %>

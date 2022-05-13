@@ -200,3 +200,9 @@ sl-SI:
         q4: "Naselje izvajanja projekta. Kje konkretno naj bi se projekt izvajal? Navedite parcelne številke. Če gre za parcele v zasebni lasti, priložite soglasje lastnika."
         q5: "Časovni okvir: kdaj naj bi se projekt izvedel? Navedite v primeru, da je iz objektivnih razlogov ta podatek pomemben, sicer se bo projekt izvedel enkrat v časovnem obdobju med 1. 7. 2021 in 31. 12. 2022."
         q6: "Ali ste pridobili tudi dodatne vire financiranja projekta (npr. krajevna ali vaška skupnost, sponzorstva, ipd.), od koga in koliko? V primeru, da predlagatelj pridobi zunanje vire financiranja, skupna vrednost projekta lahko presega finančne omejitve. Prosimo, da v prilogo priložite izjave sofinancerjev. Opišite tudi morebitna dela, ki ste jih vi ali kdo drug v sklopu tega projekta pripravljeni izvesti brezplačno."
+  budgets:
+      investments:
+        show:
+          share_title: "Povej naprej!"
+          share: "Deli!"
+          copy: "Skopiraj povezavo!"
