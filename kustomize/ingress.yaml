@@ -10,6 +10,8 @@ spec:
   tls:
     - hosts:
         - 2022.mariborsodeluj.si
+        - mariborsodeluj.si
+        - www.mariborsodeluj.si
       secretName: consul-maribor-tls
   rules:
     - host: 2022.mariborsodeluj.si
@@ -22,32 +24,23 @@ spec:
                 name: consul
                 port:
                   number: 3000
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: consul-nginx
-  annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-production"
-    nginx.ingress.kubernetes.io/enable-cors: "true"
-    nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS"
-    nginx.ingress.kubernetes.io/cors-allow-origin: "*" # TODO
-    nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
-    nginx.ingress.kubernetes.io/proxy-body-size: 10m
-spec:
-  ingressClassName: nginx
-  tls:
-    - hosts:
-        - files.consul-maribor.lb.djnd.si
-      secretName: consul-maribor-nginx-tls
-  rules:
-    - host: files.consul-maribor.lb.djnd.si
+    - host: mariborsodeluj.si
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: consul-nginx
+                name: consul
                 port:
-                  number: 80
+                  number: 3000
+    - host: www.mariborsodeluj.si
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: consul
+                port:
+                  number: 3000

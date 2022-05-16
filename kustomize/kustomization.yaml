@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: consul
 resources:
   - database.yaml
-  - statefulset.yaml
+  - deployment.yaml
   - service.yaml
   - ingress.yaml
 images:
