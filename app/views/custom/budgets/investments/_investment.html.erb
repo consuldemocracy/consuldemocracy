@@ -6,7 +6,6 @@
       <div class="small-12 medium-12 large-12">
         <div class="image-holder">
           <%= link_to namespaced_budget_investment_path(investment), class: "investment-title" do %>
-              <%= render_image(investment.image, :large, true, ) if investment.image.present? %>
             <% if investment.image.present? %>
               <%= image_tag investment.image.variant(:large), alt: investment.image.title.unicode_normalize %>
             <% else %>
