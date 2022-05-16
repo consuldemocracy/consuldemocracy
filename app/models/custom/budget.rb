@@ -62,4 +62,8 @@ class Budget < ApplicationRecord
     end
     custom_phases
   end
+
+  def categories
+    Tag.category.order(:name)
+  end
 end

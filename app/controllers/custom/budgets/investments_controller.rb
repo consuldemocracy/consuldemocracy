@@ -12,7 +12,16 @@ module Budgets
     # end
 
     def index
-      @investments = investments.page(params[:page]).per(PER_PAGE).for_render
+      
+      # filter by tag name
+      if params[:tag_name]
+        puts params[:tag_name]
+        filtered_investments = investments.tagged_with(params[:tag_name])
+      else
+        filtered_investments = investments
+      end
+
+      @investments = filtered_investments.page(params[:page]).per(PER_PAGE).for_render
 
       @investment_ids = @investments.ids
       @investments_map_coordinates = MapLocation.where(investment: investments).map(&:json_data)
