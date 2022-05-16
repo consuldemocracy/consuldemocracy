@@ -340,6 +340,13 @@ span:hover::before {
 
 
 // **************** PREDLOGI ********************
+.tabs {
+  .tabs-title {
+    &.is-active a {
+      color: $black;
+    }
+  }
+}
 
 .custom-phases-nav {
   left: 0;
@@ -350,13 +357,15 @@ span:hover::before {
   border: 0;
   margin-top: 1rem;
 
-  ul {
-    display: flex;
-    align-content: space-around;
-  }
+  @include breakpoint(large up) {
+    ul {
+      display: flex;
+      align-content: space-around;
+    }
 
-  li {
-    flex: auto;
+    li {
+      flex: auto;
+    }
   }
 
   .tabs {
@@ -375,6 +384,7 @@ span:hover::before {
     .tabs-title {
       padding: 10px 0;
       margin-right: 0;
+      float: none;
     }
 
     .tabs-title > a {
@@ -504,6 +514,7 @@ span:hover::before {
 }
 
 .tabs-panel {
+  padding: 0;
   .expanded {
     margin: 1rem 0;
     .phase-description {
@@ -511,12 +522,15 @@ span:hover::before {
         margin-bottom: 1rem;
         line-height: 1.25;
       }
-      .phase-enrichment {
-        height: 300px;
-        width: 350px;
+      .phase-enrichment.accepting {
         margin-top: 3rem;
-        margin-right: 2rem;
-        margin-left: auto;
+
+        @media (min-width: 768px) {
+          height: 300px;
+          width: 350px;
+          margin-right: 2rem;
+          margin-left: auto;
+        }
       }
     }
   }
@@ -561,6 +575,7 @@ span:hover::before {
   }
 
   .budget-investment-content {
+    min-height: unset;
     padding: rem-calc(15);
 
     a {
@@ -586,8 +601,8 @@ span:hover::before {
     }
 
     .investment-project-description {
-      line-height: rem-calc(24);
-      height: rem-calc(72);
+      line-height: 1.25;
+      height: unset;
       margin-bottom: rem-calc(10);
     }
 
@@ -642,108 +657,145 @@ span:hover::before {
   font-size: rem-calc(20);
 }
 
-.budget-investment-show .social-box {
-  // background: #fff !important;
-  padding: 2rem 0;
+.budget-investment-show {
+  .bggray {
+    padding: 1rem;
 
-  h2 {
-    margin-bottom: 1.5rem;
-    font-weight: 700;
-  }
-
-  h5 {
-    font-weight: 500;
-    color: $black;
-    margin-right: 20px;
-    margin-bottom: 0.5rem;
-  }
-
-  .social-share-full {
-    margin: 0 60px 0 0;
-
-    a {
-      margin: 0 10px 0 0;
+    @media (min-width: 768px) {
+      padding: 3rem 0;
     }
   }
 
-  .copylink {
-    cursor: pointer;
-    white-space: nowrap;
-  }
+  .social-box {
+    // background: #fff !important;
+    padding: 2rem 0;
 
-  .shortner {
-    width: 187px;
-    border-radius: 4px;
-    border: 2px solid #e1e1e1;
-    background-color: $white;
-    margin-bottom: 0;
+    h2 {
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
 
-    color: $black;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 40px;
-    text-align: center;
-  }
-
-  .social-share-button .ssb-icon {
-    background-color: $black;
-    color: $white;
-    position: relative;
-    transition: all 0.4s ease-in-out;
-    border: 2px solid $black;
-    border-radius: 76px;
-    padding: 38px;
-
-    &:hover {
-      background-color: transparent;
+    h5 {
+      font-weight: 500;
       color: $black;
+      margin-right: 20px;
+      margin-bottom: 0.5rem;
+    }
+
+    .social-share-full {
+      margin: 0;
+
+      a {
+        margin: 0 10px 0 0;
+      }
+    }
+
+    .social-box-row {
+      &>div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .social-share-full {
+        margin: 0 60px 0 0;
+      }
+
+      .social-box-row {
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+
+        &>div {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        }
+      }
+    }
+
+    .copylink {
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .shortner {
+      // width: 187px;
+      border-radius: 4px;
+      border: 2px solid #e1e1e1;
+      background-color: $white;
+      margin-bottom: 0;
+
+      color: $black;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 40px;
+      text-align: center;
+    }
+
+    .social-share-button .ssb-icon {
+      background-color: $black;
+      color: $white;
+      position: relative;
       transition: all 0.4s ease-in-out;
+      border: 2px solid $black;
+      border-radius: 76px;
+      padding: 38px;
+
+      &:hover {
+        background-color: transparent;
+        color: $black;
+        transition: all 0.4s ease-in-out;
+      }
+    }
+
+    .social-share-button {
+      .ssb-icon::before {
+        font-size: 2.5rem;
+        left: 40%;
+        top: 14px;
+        margin-left: rem-calc(-11);
+        position: absolute;
+      }
+    }
+
+    .social-share-button .ssb-twitter::before {
+      background-image: image-url("twitter.svg");
+      left: 30px;
+      top: 18px;
+      content: " ";
+      background-size: 38px 38px;
+      width: 40px;
+      height: 40px;
+      background-repeat: no-repeat;
+    }
+
+    .social-share-button .ssb-facebook::before {
+      background-image: image-url("facebook.svg");
+      left: 30px;
+      top: 18px;
+      content: " ";
+      background-size: 38px 38px;
+      width: 40px;
+      height: 40px;
+      background-repeat: no-repeat;
+    }
+
+    .social-share-button .ssb-email::before {
+      background-image: image-url("envelope.svg");
+      left: 30px;
+      top: 18px;
+      content: " ";
+      background-size: 38px 38px;
+      width: 40px;
+      height: 40px;
+      background-repeat: no-repeat;
     }
   }
-
-  .social-share-button {
-    .ssb-icon::before {
-      font-size: 2.5rem;
-      left: 40%;
-      top: 14px;
-      margin-left: rem-calc(-11);
-      position: absolute;
-    }
-  }
-
-  .social-share-button .ssb-twitter::before {
-    background-image: image-url("twitter.svg");
-    left: 30px;
-    top: 18px;
-    content: " ";
-    background-size: 38px 38px;
-    width: 40px;
-    height: 40px;
-    background-repeat: no-repeat;
-  }
-
-  .social-share-button .ssb-facebook::before {
-    background-image: image-url("facebook.svg");
-    left: 30px;
-    top: 18px;
-    content: " ";
-    background-size: 38px 38px;
-    width: 40px;
-    height: 40px;
-    background-repeat: no-repeat;
-  }
-
-  .social-share-button .ssb-email::before {
-    background-image: image-url("envelope.svg");
-    left: 30px;
-    top: 18px;
-    content: " ";
-    background-size: 38px 38px;
-    width: 40px;
-    height: 40px;
-    background-repeat: no-repeat;
-  }
-
 }
 
 .custombackbutton {
@@ -806,17 +858,35 @@ span:hover::before {
 
   .budget-investment-info {
     margin: 1.5rem 0;
-    display: flex;
-    justify-content: space-between;
 
-    .info {
-      display: flex;
-      align-items: center;
-
+    .info-row {
+      margin-bottom: 2rem;
+      .info {
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+      }
       .tags {
-        margin-left: 1.5rem;
+        margin-left: 0;
         a {
           margin-bottom: 0;
+        }
+      }
+    }
+
+    @media (min-width: 576px) {
+      display: flex;
+      justify-content: space-between;
+
+      .info-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+        .info {
+          margin-bottom: 0;
+        }
+        .tags {
+          margin-left: 1.5rem;
         }
       }
     }

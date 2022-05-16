@@ -156,7 +156,8 @@ a {
 
 .default-button,
 .upload-image,
-.upload-document {
+.upload-document,
+.new_comment input[type="submit"] {
   background-color: $black;
   color: $white;
   border-radius: 30px;
@@ -165,7 +166,7 @@ a {
   font-size: 16px;
   font-weight: 600;
   padding: 4px 16px 6px;
-  margin-left: 10px;
+  // margin-left: 10px;
 
   &:hover {
     background-color: transparent;
@@ -215,7 +216,9 @@ input[type="submit"].action-button {
 
   &.large {
     padding: 8px;
-    width: 350px;
+    @media screen and (min-width: 768px) {
+      width: 350px;
+    }
   }
 
   &.huge {
@@ -327,6 +330,10 @@ header {
 .top-bar {
   display: flex;
   justify-content: space-between;
+
+  .header-links .default-button {
+    margin-left: 10px;
+  }
 
   @media (max-width: 767px) {
     flex-direction: column;
@@ -529,6 +536,7 @@ body > header, .wrapper > header {
 .sidebar {
   background-color: #f2f2f2;
   padding: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .horizontal-line {
@@ -536,4 +544,18 @@ body > header, .wrapper > header {
   background-color: $black;
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+// Share buttons
+.budget-investment-show .social-box .social-share-button .ssb-icon {
+  &.ssb-telegram,
+  &.ssb-whatsapp_app {
+    display: none;
+  }
+}
+
+.submenu {
+  .is-active {
+    color: $black;
+  }
 }

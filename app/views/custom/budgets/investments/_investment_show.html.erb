@@ -64,8 +64,8 @@
 
       <h1><%= investment.title %></h1>
       <div class="budget-investment-info">
-        <div class="info">
-          <div>
+        <div class="info-row">
+          <div class="info">
             <%= render "/shared/author_info", resource: investment %>
             <span class="bullet">&nbsp;&ndash;&nbsp;</span>
             <%= investment.created_at.to_date %>
@@ -185,10 +185,8 @@
       <div class="row social-box" data-equalizer>
         <div class="small-12 column medium-centered text-center">
           <h2><%= t("budgets.investments.show.share_title") %></h2>
-
-          <div style="display: flex; align-items: center; justify-content: center;">
-
-            <div style="display: flex; align-items: center;">
+          <div class="social-box-row">
+            <div>
               <h5><%= t("budgets.investments.show.share") %></h5>
               <div data-equalizer-watch class="qs">
                 <%= render "shared/social_share",
@@ -204,8 +202,7 @@
                                     handle: setting["twitter_handle"]) %>
               </div>
             </div>
-
-            <div style="display: flex; align-items: center;">
+            <div>
               <h5 class="copylink"><%= t("budgets.investments.show.copy") %></h5>
               <input type="text" class="shortner">
             </div>
