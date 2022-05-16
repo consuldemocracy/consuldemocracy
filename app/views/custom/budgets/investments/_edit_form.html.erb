@@ -10,10 +10,12 @@
 
     <%= f.invisible_captcha :subtitle %>
 
-    <% @budget.questions.each_with_index do |key, index|%>
-    <div class="ckeditor small-12 column">
-      <%= f.text_area :answers, value: @investment.answers[index], multiple: true, maxlength: Budget::Investment.description_max_length, rows: 5, label: key %>
-    </div>
+    <% if @budget.questions.any? %>
+      <% @budget.questions.each_with_index do |key, index|%>
+      <div class="ckeditor small-12 column">
+        <%= f.text_area :answers, value: @investment.answers[index], multiple: true, maxlength: Budget::Investment.description_max_length, rows: 5, label: key %>
+      </div>
+      <% end %>
     <% end %>
 
       <script>

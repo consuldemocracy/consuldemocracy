@@ -22,10 +22,26 @@
         </div>
       <% end %>
 
-  <% @budget.questions.each_with_index do |key, index|%>
-    <div class="ckeditor small-12 column">
-      <%= f.text_area :answers, value: @investment.answers[index], multiple: true, maxlength: Budget::Investment.description_max_length, rows: 5, label: key %>
+    <div class="row expanded">
+      <div class="small-12 column">
+        <div class="images">
+          <%= render "images/nested_image", f: f %>
+        </div>
+      </div>
     </div>
+
+    <% if @budget.questions.any? && @investment.answers.any? %>
+      <%= f.fields_for :answers do |builder| %>
+        <div class="row expanded">
+          <div class="small-12 column">
+            <p>
+              <%= builder.text_area :text, label: @budget.questions.order(:id)[builder.index].text, rows: 5 %>
+              <%= builder.hidden_field :budget_id %>
+              <%= builder.hidden_field :budget_question_id %>
+            </p>
+          </div>
+        </div>
+      <% end %>
     <% end %>
 
       <div class="small-12 column">
