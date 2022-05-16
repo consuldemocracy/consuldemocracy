@@ -6,12 +6,13 @@ metadata:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
     nginx.ingress.kubernetes.io/proxy-body-size: 10m
 spec:
+  ingressClassName: nginx
   tls:
     - hosts:
-        - consul.lb.djnd.si
-      secretName: consul-tls
+        - 2022.mariborsodeluj.si
+      secretName: consul-maribor-tls
   rules:
-    - host: consul.lb.djnd.si
+    - host: 2022.mariborsodeluj.si
       http:
         paths:
           - path: /
@@ -34,12 +35,13 @@ metadata:
     nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
     nginx.ingress.kubernetes.io/proxy-body-size: 10m
 spec:
+  ingressClassName: nginx
   tls:
     - hosts:
-        - files.consul.lb.djnd.si
-      secretName: consul-nginx-tls
+        - files.consul-maribor.lb.djnd.si
+      secretName: consul-maribor-nginx-tls
   rules:
-    - host: files.consul.lb.djnd.si
+    - host: files.consul-maribor.lb.djnd.si
       http:
         paths:
           - path: /
