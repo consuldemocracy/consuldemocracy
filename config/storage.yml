@@ -6,12 +6,13 @@ test:
   service: Disk
   root: <%= Rails.root.join("tmp/storage") %>
 
-# s3:
-#   service: S3
-#   access_key_id: <%= Rails.application.secrets.dig(:s3, :access_key_id) %>
-#   secret_access_key: <%= Rails.application.secrets.dig(:s3, :secret_access_key) %>
-#   region: <%= Rails.application.secrets.dig(:s3, :region) %>
-#   bucket: <%= Rails.application.secrets.dig(:s3, :bucket) %>
+s3:
+  service: S3
+  access_key_id: <%= ENV['CONSUL_AWS_ACCESS_KEY_ID'] %>
+  secret_access_key: <%= ENV['CONSUL_AWS_SECRET_ACCESS_KEY'] %>
+  region: fr-par
+  bucket: <%= ENV['CONSUL_AWS_S3_BUCKET_NAME'] %>
+  endpoint: https://s3.fr-par.scw.cloud
 
 # Remember not to checkin your GCS keyfile to a repository
 # gcs:

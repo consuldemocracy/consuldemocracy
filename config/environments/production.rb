@@ -98,4 +98,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # store files on s3
+  config.active_storage.service = :s3
 end
