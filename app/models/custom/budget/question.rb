@@ -4,6 +4,7 @@ class Budget
       include Globalizable
   
       belongs_to :budget, touch: true
+      has_many :answers, class_name: "Investment::Answer"
 
       validates_translation :text, presence: true
     

@@ -30,14 +30,12 @@
       </div>
     </div>
 
-    <% if @budget.questions.any? && @investment.answers.any? %>
+    <% if @budget.questions.any? %>
       <%= f.fields_for :answers do |builder| %>
         <div class="row expanded">
           <div class="small-12 column">
             <p>
               <%= builder.text_area :text, label: @budget.questions.order(:id)[builder.index].text, rows: 5 %>
-              <%= builder.hidden_field :budget_id %>
-              <%= builder.hidden_field :budget_question_id %>
             </p>
           </div>
         </div>

@@ -11,10 +11,14 @@
     <%= f.invisible_captcha :subtitle %>
 
     <% if @budget.questions.any? %>
-      <% @budget.questions.each_with_index do |key, index|%>
-      <div class="ckeditor small-12 column">
-        <%= f.text_area :answers, value: @investment.answers[index], multiple: true, maxlength: Budget::Investment.description_max_length, rows: 5, label: key %>
-      </div>
+      <%= f.fields_for :answers do |builder| %>
+        <div class="row expanded">
+          <div class="small-12 column">
+            <p>
+              <%= builder.text_area :text, label: @budget.questions.order(:id)[builder.index].text, rows: 5 %>
+            </p>
+          </div>
+        </div>
       <% end %>
     <% end %>
 
