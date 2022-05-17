@@ -466,6 +466,13 @@ body > header,
   background: #fff !important;
   justify-content: space-between;
 
+  @include breakpoint(small only) {
+
+    .menu {
+      margin-bottom: 0;
+    }
+  }
+
   .menu > li {
 
     a {
@@ -586,7 +593,10 @@ body > header,
 
 .subnavigation {
   background: $light;
-  padding: $line-height / 2 0;
+
+  @include breakpoint(medium) {
+    padding: $line-height / 2 0;
+  }
 }
 
 .subnavigation a {
@@ -639,9 +649,20 @@ body > header,
 
     &.opens-left > .is-dropdown-submenu {
       background: #fff;
+
+      @include breakpoint(small only) {
+        width: 100%;
+      }
     }
 
     &.is-dropdown-submenu-parent {
+
+      > a {
+
+        @include breakpoint(small only) {
+          display: inline;
+        }
+      }
 
       > a::before {
         border: inset 6px;
@@ -651,14 +672,13 @@ body > header,
         content: "";
         display: block;
         position: absolute;
-        right: -7px;
-        top: 22px;
-      }
+        right: -8px;
+        top: 20px;
 
-      > a::after {
-        border: 0;
-        margin-top: -6px;
-        top: auto;
+        @include breakpoint(small only) {
+          right: -10px;
+          top: 8px;
+        }
       }
     }
 
@@ -673,8 +693,15 @@ body > header,
 
     a {
       font-size: 16px;
-      padding-left: $line-height / 4;
-      padding-right: $line-height / 4;
+      padding-right: $line-height / 2;
+
+      @include breakpoint(small only) {
+        line-height: $line-height * 2;
+      }
+
+      @include breakpoint(medium) {
+        padding-left: $line-height / 2;
+      }
     }
   }
 
@@ -724,6 +751,13 @@ body > header,
 
 .public > .wrapper > header::after {
   border-bottom: 0;
+}
+
+.locale .locale-form {
+
+  @include breakpoint(small-only) {
+    padding-left: $line-height / 4;
+  }
 }
 
 // 2. Homepage and custom pages
