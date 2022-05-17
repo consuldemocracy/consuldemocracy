@@ -26,4 +26,7 @@
   margin-bottom: 0.5rem;
   font-size: 14px;
   font-weight: 600;
+  &:hover {
+    color: $black;
+  }
 }

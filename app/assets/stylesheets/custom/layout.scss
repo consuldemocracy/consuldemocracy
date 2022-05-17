@@ -206,6 +206,19 @@ input[type="submit"].action-button {
     }
   }
 
+  &:focus {
+    color: $white;
+    outline: 3px solid #ffbf47;
+  }
+
+  &:active {
+    color: $white;
+  }
+  
+  &:focus:hover {
+    color: $black;
+  }  
+
   &.small {
     background: $mandys-pink;
     background-image: none !important;

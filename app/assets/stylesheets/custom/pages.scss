@@ -714,12 +714,17 @@ span:hover::before {
           display: flex;
           flex-direction: row;
           align-items: center;
+          &:last-child {
+            flex-direction: column;
+            input {
+              width: 400px;
+            }
+          }
         }
       }
     }
 
     .copylink {
-      cursor: pointer;
       white-space: nowrap;
     }
 
@@ -729,12 +734,16 @@ span:hover::before {
       border: 2px solid #e1e1e1;
       background-color: $white;
       margin-bottom: 0;
-
+      cursor: pointer;
       color: $black;
       font-size: 18px;
       font-weight: 400;
       line-height: 40px;
       text-align: center;
+
+      &:hover {
+        border-color: $black;
+      }
     }
 
     .social-share-button .ssb-icon {

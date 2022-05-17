@@ -204,7 +204,7 @@
             </div>
             <div>
               <h5 class="copylink"><%= t("budgets.investments.show.copy") %></h5>
-              <input type="text" class="shortner">
+              <input type="text" class="shortner" id="shareLink" onclick="copyShareLink()">
             </div>
           </div>
         </div>
@@ -214,3 +214,21 @@
   </div>
 </div>
 <% end %>
+
+<script>
+function copyShareLink() {
+  /* Get the text field */
+  var copyText = document.getElementById("shareLink");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+   /* Copy the text inside the text field */
+  navigator.clipboard.writeText(copyText.value);
+}
+
+$( document ).ready(function() {
+  document.getElementById("shareLink").value = window.location.href;
+});
+</script>
