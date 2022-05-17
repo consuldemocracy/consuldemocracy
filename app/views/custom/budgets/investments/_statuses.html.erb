@@ -1,0 +1,21 @@
+<div class="districts-container">
+  <select onchange="if (this.value) location = this.value;" class="on-view">
+    <option value="<%= budget_investments_url(@budget, request.query_parameters.except(:status_id)) %>">
+      <%= t("custom.headings.select_status").mb_chars.upcase %>
+    </option>
+    <% @statuses.order('id ASC').each do |status| %>
+      <%= selected = ' selected' if params[:status_id].to_i == status.id %>
+      <option value="<%= budget_investments_url(@budget, { status_id: status.id }) %>" <%= selected %>>
+        <%= status.name %>
+      </option>
+    <% end %>
+  </select>
+</div>
+
+<style>
+.districts-container {
+  position: relative;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+</style>

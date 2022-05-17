@@ -12,16 +12,21 @@ module Budgets
     # end
 
     def index
-      
+      filtered_investments = investments
+
       # filter by tag name
       if params[:tag_name]
         puts params[:tag_name]
         filtered_investments = investments.tagged_with(params[:tag_name])
-      else
-        filtered_investments = investments
+      end
+      if params[:status_id]
+        puts params[:status_id]
+        investment_ids = Milestone.where("milestoneable_type = 'Budget::Investment' AND status_id = ?", params[:status_id]).pluck('id')
+        filtered_investments = investments.where(id: investment_ids)
       end
 
       @investments = filtered_investments.page(params[:page]).per(PER_PAGE).for_render
+      @statuses = Milestone::Status.all
 
       @investment_ids = @investments.ids
       @investments_map_coordinates = MapLocation.where(investment: investments).map(&:json_data)
