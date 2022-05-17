@@ -333,6 +333,26 @@ input[type="submit"].action-button {
   padding-top: 0;
 }
 
+// pagination
+.pagination {
+  margin-bottom: 3rem;
+}
+
+.pagination .current,
+.pagination li.current:last-child, .pagination li.current:first-child {
+  background-color: $black;
+  color: $white;
+  border-radius: 15px;
+  font-weight: 600;
+  padding: 0 0 2px 0;
+  height: 30px;
+  width: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 // 02. Header
 // ----------
 

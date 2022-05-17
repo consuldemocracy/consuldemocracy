@@ -9,7 +9,7 @@ module Budgets
     include MapLocationAttributes
     include Translatable
 
-    PER_PAGE = 10
+    PER_PAGE = 12
 
     before_action :authenticate_user!, except: [:index, :show, :json_data]
     before_action :load_budget, except: :json_data
