@@ -54,6 +54,7 @@ sl-SI:
         map_location: "Lokacija na zemljevidu"
         map_location_instructions: "Na zemljevidu poišči lokacijo in jo označi."
         map_remove_marker: "Odstrani označeno lokacijo"
+        submit: "Oddaj predlog"
       index:
         title: Participatorni proračun
         unfeasible: Neizvedljivi naložbeni projekti
