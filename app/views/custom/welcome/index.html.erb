@@ -30,7 +30,7 @@
       <hr />
       <div class="welcome-columns">
       <% if current_budget.present? %>
-        <% current_budget.custom_phases(current_user, create_url = method(:budget_investments_url)).each do |_, phase| %>
+        <% current_budget.custom_phases(current_user, create_url = method(:budget_investments_url)).each do |phase_name, phase| %>
           <% if phase.enabled %>
             <section class="welcome-column">
               <div class="phase-enrichment-holder">
@@ -41,11 +41,11 @@
                 <h4><%= strip_tags(phase.summary) %></h4>
                 <% unless phase.url %>
                   <div>
-                    <div class="large-description"><%= sanitize_and_auto_link phase.description %></div>
-                    <div class="large-description"><%= sanitize_and_auto_link phase.summary %></div>
+                    <div class="large-description"><%= sanitize_and_auto_link phase["presentation_summary_#{phase_name}"] %></div>
+                    <!-- <div class="large-description"><%= sanitize_and_auto_link phase.summary %></div>
                     <% if phase.description %>
                       <div class="large-description"><%= sanitize_and_auto_link phase.description %></div>
-                    <% end %>
+                    <% end %> -->
                   </div>
                 <% end %>
                 <% if phase.url %>
