@@ -2,6 +2,7 @@ require_dependency Rails.root.join("app", "controllers", "budgets", "investments
 
 module Budgets
   class InvestmentsController < ApplicationController
+    PER_PAGE = 12
     # before_action :load_categories, only: [:index, :new, :create, :edit, :update]
     # before_action :load_budgets,  only: [:index, :new, :create, :edit, :update]
 
