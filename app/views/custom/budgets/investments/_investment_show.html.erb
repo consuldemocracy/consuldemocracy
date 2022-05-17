@@ -68,7 +68,7 @@
           <div class="info">
             <%= render "/shared/author_info", resource: investment %>
             <span class="bullet">&nbsp;&ndash;&nbsp;</span>
-            <%= investment.created_at.to_date %>
+            <%= l investment.created_at.to_date %>
             <span class="bullet">&nbsp;&ndash;&nbsp;</span>
             <%= investment.heading.name %>
           </div>
