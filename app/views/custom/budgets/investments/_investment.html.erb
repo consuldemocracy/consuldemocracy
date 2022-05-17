@@ -27,7 +27,7 @@
               <%= investment.heading.name %>
             </p>
             <div class="investment-project-description">
-              <%= investment.answers.first().text.truncate(220, omission: '...') %>
+              <%= raw investment.answers.first().text.truncate(220, omission: '...') %>
               <%# strip_tags((investment&.q1.to_s + investment&.q2.to_s)&.gsub("><", "> <"))&.truncate(90, separator: " ", omission: "...") #%>
             </div>
             <% if investment.should_show_price? %>
