@@ -35,11 +35,12 @@ data:
       server_name: ""
       mailer_delivery_method: :smtp
       smtp_settings:
-        :address: " smtp.flowmailer.net"
-        :port: 25
+        :address: "smtp.flowmailer.net"
+        :port: 465
         :domain: "posta.danesjenovdan.si"
         :user_name: "<%= ENV['SMTP_USERNAME'] %>"
         :password: "<%= ENV['SMTP_PASSWORD'] %>"
+        :ssl: true
       force_ssl: false
       delay_jobs: true
       rollbar_server_token: ""

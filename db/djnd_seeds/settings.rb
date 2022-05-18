@@ -5,7 +5,7 @@ section "Creating Settings" do
       "facebook_handle": "danesjenovdan",
       "feature.featured_proposals": "true",
       "instagram_handle": "danesjenovdan",
-      "mailer_from_address": "postar@mail.consul.djnd.si",
+      "mailer_from_address": "postar@posta.danesjenovdan.si",
       "mailer_from_name": "CONSUL",
       "proposal_code_prefix": "MAD",
       "proposal_notification_minimum_interval_in_days": 0,
