@@ -1,12 +1,16 @@
 <header>
   <div class="main-indented-content">
-    <div class="top-bar">
-      <a href="/" class="header-logo">
-        <%= image_tag(image_path_for("logo-header.png")) %>
-      </a>
-      <ul class="no-bullet inline-block header-links">
-        <%= render "devise/menu/login_items" %>
-      </ul>
+    <div class="row">
+      <div class="column">
+        <div class="top-bar">
+          <a href="/" class="header-logo">
+            <%= image_tag(image_path_for("logo-header.png")) %>
+          </a>
+          <ul class="no-bullet inline-block header-links">
+            <%= render "devise/menu/login_items" %>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </header>

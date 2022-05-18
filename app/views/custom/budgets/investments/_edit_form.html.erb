@@ -1,20 +1,24 @@
 <%= form_for(@investment, url: form_url, method: :put, html: { multipart: true, class: "budget-investment-form" }) do |f| %>
   <%= render "shared/errors", resource: @investment %>
 
-  <% if @budget.headings.count > 1 %>
+  <fieldset class="required-fields">
+
+    <% if @budget.headings.count > 1 %>
+      <div>
+        <%= f.select :heading_id, budget_heading_select_options(@budget), { include_blank: true }, class: "on-form" %>
+      </div>
+    <% elsif @budget.headings.count == 1 %>
+      <div class="small-12 medium-8 column hide">
+        <%= f.text_field :heading_id, value: @budget.headings.first.id %>
+      </div>
+    <% end %>
+    
     <div>
-      <%= f.select :heading_id, budget_heading_select_options(@budget), { include_blank: true }, class: "on-form" %>
+      <%= f.text_field :title, maxlength: Budget::Investment.title_max_length %>
     </div>
-  <% elsif @budget.headings.count == 1 %>
-    <div class="small-12 medium-8 column hide">
-      <%= f.text_field :heading_id, value: @budget.headings.first.id %>
-    </div>
-  <% end %>
-  
-  <div>
-    <%= f.text_field :title, maxlength: Budget::Investment.title_max_length %>
-  </div>
-  <div id="js-suggest"></div>
+    <div class="js-suggest"></div>
+
+  </fieldset>
 
   <%= f.invisible_captcha :subtitle %>
 

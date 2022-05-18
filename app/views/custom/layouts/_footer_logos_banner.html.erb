@@ -1,19 +1,23 @@
 <div class="main-indented-content">
-  <div class="footer-logos">
-    <div>
-      <div>
-        <%= image_tag(image_path_for("municipalities/mom.png")) %>
+  <div class="row">
+    <div class="column">
+      <div class="footer-logos">
+        <div>
+          <div>
+            <%= image_tag(image_path_for("municipalities/mom.png")) %>
+          </div>
+          <div>
+            <%= image_tag(image_path_for("municipalities/prizma.png")) %>
+          </div>
+        </div>
+        <div class="logo-right">
+          <span>Za platformo skrbi</span>
+          <a href="https://danesjenovdan.si/" target="_blank">
+            <%= image_tag(image_path_for("logo-djnd.png")) %>
+          </a>
+          <!--<h1 class="logo-djnd <%= t("custom.classes.footer_logo") %>">logo djnd</h1>-->
+        </div>
       </div>
-      <div>
-        <%= image_tag(image_path_for("municipalities/prizma.png")) %>
-      </div>
-    </div>
-    <div class="logo-right">
-      <span>Za platformo skrbi</span>
-      <a href="https://danesjenovdan.si/" target="_blank">
-        <%= image_tag(image_path_for("logo-djnd.png")) %>
-      </a>
-      <!--<h1 class="logo-djnd <%= t("custom.classes.footer_logo") %>">logo djnd</h1>-->
     </div>
   </div>
 </div>

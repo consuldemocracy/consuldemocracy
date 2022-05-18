@@ -2,18 +2,22 @@
 <!-- main-indented-content ??? -->
   <div class="bgblack">
     <div class="main-indented-content">
-      <div class="footer-links-wrapper">
-        <ul class="no-bullet inline-block footer-links">
-          <li><%= link_to t("custom.titles.about"), page_path("o-participativnem-proracunu") %><span>|<span></li>
-          <li><%= link_to t("layouts.footer.conditions"), page_path(t("custom.meta.tos")) %><span>|</span></li>
-          <li>
-            <%= layout_menu_link_to t("layouts.header.help"),
-                                    help_path,
-                                    current_page?(help_path),
-                                    accesskey: "6",
-                                    title: t("shared.go_to_page") + t("layouts.header.help") %>
-          </li>
-        </ul>
+      <div class="row">
+        <div class="column">
+          <div class="footer-links-wrapper">
+            <ul class="no-bullet inline-block footer-links">
+              <li><%= link_to t("custom.titles.about"), page_path("o-participativnem-proracunu") %><span>|<span></li>
+              <li><%= link_to t("layouts.footer.conditions"), page_path(t("custom.meta.tos")) %><span>|</span></li>
+              <li>
+                <%= layout_menu_link_to t("layouts.header.help"),
+                                        help_path,
+                                        current_page?(help_path),
+                                        accesskey: "6",
+                                        title: t("shared.go_to_page") + t("layouts.header.help") %>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
