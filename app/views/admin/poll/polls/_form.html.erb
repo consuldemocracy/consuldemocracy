@@ -22,7 +22,7 @@
       </div>
 
       <div class="small-12 column">
-        <%= translations_form.text_area :summary, rows: 4 %>
+        <%= translations_form.text_field :summary, rows: 4 %>
       </div>
 
       <div class="small-12 column">
@@ -64,7 +64,7 @@
   <div class="row">
     <div class="clear">
       <div class="margin-top small-6 medium-6 column">
-        <%= f.check_box :published %>
+        <%= f.check_box :published, :disabled => polls_has_votes(@poll) %>
       </div>
     </div>
   </div>

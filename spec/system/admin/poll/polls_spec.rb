@@ -48,6 +48,39 @@ describe "Admin polls", :admin do
     expect(page).not_to have_content "There are no polls"
   end
 
+  scenario "Checkbox is disabled when a poll receive votes" do
+    poll = create(:poll, :published)
+    create(:poll_question, poll: poll)
+    create(:poll_voter, :from_booth, :valid_document, poll: poll)
+
+    visit admin_poll_path(poll)
+    click_link "Edit poll"
+
+    expect(page).to have_css "#poll_published[disabled='disabled']"
+  end
+
+  scenario "System won't allow to update a poll if someone inspect elements and enable the 'published' button" do
+    poll = create(:poll, :published)
+    create(:poll_question, poll: poll)
+    create(:poll_voter, :from_booth, :valid_document, poll: poll)
+
+    visit admin_poll_path(poll)
+    click_link "Edit poll"
+
+    expect(page).to have_css "#poll_published[disabled='disabled']"
+
+    # enable inputs
+    page.execute_script("document.querySelectorAll(\"label[for='poll_published'] input\")[0].disabled=false")
+    page.execute_script("document.querySelectorAll(\"label[for='poll_published'] input\")[1].disabled=false")
+
+    # click to uncheck checkbox
+    find("#poll_published").click
+
+    click_button "Update poll"
+
+    expect(page).to have_content "You cannot unpublish a poll that has votes"
+  end
+
   scenario "Index do not show polls created by users from proposals dashboard" do
     create(:poll, name: "Poll created by admin")
     create(:poll, name: "Poll from user's proposal", related_type: "Proposal")

@@ -30,6 +30,7 @@ en:
         topic: "Topic updated successfully."
         valuator_group: "Valuator group updated successfully"
         translation: "Translation updated successfully"
+        unable_to_unpublish: "You cannot unpublish a poll that has votes"
       destroy:
         budget_investment: "Investment project deleted succesfully."
         error: "Could not delete"

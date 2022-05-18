@@ -37,6 +37,7 @@ class Poll < ApplicationRecord
 
   validates_translation :name, presence: true
   validate :date_range
+  validate :published_checkbox
   validate :only_one_active, unless: :public?
 
   accepts_nested_attributes_for :questions, reject_if: :all_blank, allow_destroy: true
@@ -143,6 +144,12 @@ class Poll < ApplicationRecord
     end
   end
 
+  def published_checkbox
+    if !published && polls_has_votes?(self)
+      errors.add(:published, I18n.t("errors.messages.invalid_published_value"))
+    end
+  end
+
   def generate_slug?
     slug.nil?
   end
@@ -193,5 +200,9 @@ class Poll < ApplicationRecord
     else
       0
     end
+  end
+
+  def polls_has_votes?(poll)
+    Poll::Voter.where(poll: poll).any?
   end
 end

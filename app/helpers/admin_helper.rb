@@ -44,4 +44,8 @@ module AdminHelper
   def namespace
     controller.class.name.split("::").first.underscore
   end
+
+  def polls_has_votes(poll)
+    ::Poll::Voter.where(poll: poll).any?
+  end
 end
