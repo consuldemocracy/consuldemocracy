@@ -219,3 +219,5 @@ sl-SI:
           share_title: "Povej naprej!"
           share: "Deli!"
           copy: "Skopiraj povezavo!"
+        edit:
+          submit: "Shrani spremembe"
