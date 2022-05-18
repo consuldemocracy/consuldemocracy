@@ -1081,3 +1081,38 @@ span:hover::before {
 .budget-investment-holder .budget-investment .budget-investment-content .investment-title h3 {
   height: auto;
 }
+
+// my account page
+.account {
+  background-color: #f2f2f2;
+  padding: 3rem 0;
+
+  h1 {
+    font-size: 44px;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-size: 36px;
+    font-weight: 700;
+  }
+
+  label {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  hr {
+    border-bottom: 1px solid $black;
+  }
+
+  .already-verified {
+    font-size: 18px;
+    font-weight: 700;
+    color: $black;
+  }
+
+  .icon-check {
+    color: #46db91;
+  }
+}
