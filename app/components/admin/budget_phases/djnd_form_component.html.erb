@@ -38,7 +38,16 @@
     </div>
 
     <div class="small-12 column">
-      <%= translations_form.hidden_field :description,
+      <%= translations_form.label :summary, t("custom.admin.budget_phases.edit.summary_help_text") %>
+      <%= translations_form.cktext_area :summary,
+                                       maxlength: Budget::Phase::DESCRIPTION_MAX_LENGTH,
+                                       class: "html-area",
+                                       hint: t("admin.budget_phases.edit.summary_help_text") %>
+    </div>
+
+    <div class="small-12 column">
+      <%= translations_form.label :summary, t("custom.admin.budget_phases.edit.description_help_text") %>
+      <%= translations_form.cktext_area :description,
                                        maxlength: Budget::Phase::DESCRIPTION_MAX_LENGTH,
                                        class: "html-area",
                                        hint: t("admin.budget_phases.edit.description_help_text") %>

@@ -16,6 +16,8 @@ sl-SI:
     admin:
       budget_phases:
         edit:
+          summary_help_text: Podnaslov
+          description_help_text: Opisni odstavek
           presentation_summary_accepting: Stolpec PREDLAGAJ
           presentation_summary_balloting: Stolpec GLASUJ
           presentation_summary_finished: Stolpec SPREMLJAJ
