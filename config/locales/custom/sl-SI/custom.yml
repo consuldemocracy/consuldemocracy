@@ -25,16 +25,16 @@ sl-SI:
           presentation_summary_balloting_help_text: Tekst za drugi odstavek, ko ta faza ni aktivna
           presentation_summary_finished_help_text: Tekst za tretji odstavek, ko ta faza ni aktivna
     meta:
-      pp_name: Sodeluj in glasuj
-      place_name: Občina Medvode
+      pp_name: Maribor sodeluj
+      place_name: Mestna Občina Maribor
       guiding_questions: '<p><em>Zakaj ta predlog? Katero temo, težavo oz. izziv projektni predlog naslavlja?</em></p><p>&nbsp;</p><p><em>Kaj konkretno predlagate? Kaj je bistvo vašega predloga? Kaj se bo zgodilo?</em></p><p>&nbsp;</p><p><em>Kako naj bi se projekt izvedel? Katere aktivnosti bi bilo treba izpeljati?</em></p><p>&nbsp;</p><p><em>Kje konkretno naj bi se projekt izvajal?</em></p><p>&nbsp;</p><p><em>Časovni okvir: kdaj naj bi se projekt izvedel?</em></p><p>&nbsp;</p><p><em>Kaj bi se po izvedbi projekta spremenilo, izboljšalo?</em></p><p>&nbsp;</p><p><em>Kakšna je pričakovana vrednost (cena) predlaganega projekta?</em></p>'
       tos: "pogoji-uporabe"
     switcher:
       select: "Izberi proračun"
     social:
-      fb_desc: Sodeluj in glasuj - Participativni proračun občine Medvode
-      tw_desc: "Sodeluj in glasuj - Participativni proračun občine Medvode: "
-      email_desc: Oglej si predlog proračunske naložbe v projektu Sodeluj in glasuj - Participativni proračun občine Medvode
+      fb_desc: Maribor sodeluj - Participativni proračun Mestne občine Maribor
+      tw_desc: "Maribor sodeluj - Participativni proračun Mestne občine Maribor: "
+      email_desc: Oglej si predlog proračunske naložbe v projektu Maribor sodeluj - Participativni proračun Mestne občine Maribor
     headings:
       drafting: Osnutek (skrito javnosti)
       informing: Informiranje
@@ -103,17 +103,17 @@ sl-SI:
     about:
       intro: "Participativni proračun je sistem razporejanja dela proračunskega denarja tako, da o njegovi porabi soodločajo občanke in občani. Sami predlagajo projekte in določijo, kateri so najnujnejši in bi največ prispevali k izboljšanju kakovosti bivanja v skupnosti."
       main_title: Kako deluje?
-      heading_1: Zbiranje predlogovasdf
+      heading_1: Zbiranje predlogov
       description_1: "Občanke in občani predloge projektov oddajo med 19. 5. in 27. 6. 2022. Posamezni predlog projekta mora biti v skladu s predpisanimi pogoji, njegova vrednost pa ne sme biti nižja od 5.000 in višja od 20.000 €. Predlog projekta lahko oddajo prek spleta, elektronske pošte ali na obrazcu v vložišču MOK ali na sedežih krajevnih skupnosti."
       date_1: 19. 5. - 27. 6. 2022
       heading_2: Pregled predlogov
       description_2: "Vse oddane predloge projektov pregleda komisija, jih finančno ovrednoti in preveri, ali so izvedljivi, skladni z zakonodajo, znotraj geografskega območja in časovnice izvajanja participativnega proračuna ter v skladu s pravili o vrednosti predlogov in drugimi predpisanimi pogoji. Komisija lahko podobne predloge združi."
       date_2: 28. 6. - 30. 9. 2022
       heading_3: Glasovanje
-      description_3: "Glasovanje bo potekalo med 1. in 16. 10. 2022 prek spleta ali v prostorih občine Medvode in na sedežih krajevnih skupnosti. Sodeluje lahko vsaka občanka ali občan s stalnim bivališčem v Mestni občini Medvode, ki je dopolnil/-a 15 let. Glasuje se tako, da občan/-ka v izbranem območju razdeli predvidenih 160.000 € sredstev, namenjenih območju, med projekte, za katere si želi, da bi bili izvedeni."
+      description_3: "Glasovanje bo potekalo med 1. in 16. 10. 2022 prek spleta ali v prostorih Mestne občine Maribor in na sedežih krajevnih skupnosti. Sodeluje lahko vsaka občanka ali občan s stalnim bivališčem v Mestni občini Maribor, ki je dopolnil/-a 15 let. Glasuje se tako, da občan/-ka v izbranem območju razdeli predvidenih 160.000 € sredstev, namenjenih območju, med projekte, za katere si želi, da bi bili izvedeni."
       date_3: 1. 10. - 16. 10. 2022
       heading_4: Razglasitev rezultatov
-      description_4: "Po končanem glasovanju bo občina preverila rezultate in razglasila izglasovane projekte. Izglasovane projekte bo župan vključil v predlog proračuna občine Medvode za leti 2021 in 2020."
+      description_4: "Po končanem glasovanju bo občina preverila rezultate in razglasila izglasovane projekte. Izglasovane projekte bo župan vključil v predlog proračuna Mestne občine Maribor za leti 2021 in 2020."
       date_4: 1. 1. 2023
       heading_5: Spremljanje izvedbe
       description_5: " Vsi izglasovani projekti bodo izvedeni v letih 2023 in 2024. V tej fazi participativnega proračuna bomo skrbeli za ažurno obveščanje o napredovanju izvedbe projektov in sprotno posodabljanje njihovega statusa."
@@ -124,7 +124,7 @@ sl-SI:
       heading_2: "Kako ustvarim in potrdim svoj račun?"
       description_2: "Račun ustvariš tako, da v nogi spletnega mesta klikneš na gumb Registracija, klik na kateri koli gumb za akcijo te prav tako pripelje do istega spletnega obrazca. Za kreiranje uporabniškega računa moraš vpisati uporabniško ime, e-naslov, naslov stalnega prebivališča, telefonsko, EMŠO in geslo. Po kreiranju računa ga moraš potrditi s klikom na povezavo v e-pošti, ki jo bomo poslali na tvoj e-naslov."
       heading_3: "Kako lahko ustvarim nov predlog?"
-      description_3: "Predlog projekta ustvariš v okviru spletnega orodja, oddaš ga lahko tudi na fizičnem obrazcu osebno v vložišču občine Medvode ali sedežih krajevnih skupnosti v času uradnih ur ali izpolnjenega pošlješ na elektronski naslov obcina@Medvode.si."
+      description_3: "Predlog projekta ustvariš v okviru spletnega orodja, oddaš ga lahko tudi na fizičnem obrazcu osebno v vložišču Mestne občine Maribor ali sedežih krajevnih skupnosti v času uradnih ur ali izpolnjenega pošlješ na elektronski naslov obcina@maribor.si."
       heading_4: "Pozabil/-a sem svoje geslo. Kaj lahko storim?"
       description_4: "Klikni na gumb Prijava, nato izberi povezavo Pozabljeno geslo. Na svoj elektronski naslov boš prejel/-a navodila, kako ustvariti novo geslo."
       heading_5: "Kako lahko spremenim svoj e-naslov, uporabniško ime in / ali geslo?"
@@ -133,7 +133,7 @@ sl-SI:
       technical_issues: "Imaš tehnične težave?"
       technical_contact: 'Kontaktiraj upravljalca aplikacije na <a href="mailto:consul@djnd.si">consul@djnd.si</a>.'
       other_questions: "Imaš kakršno koli drugo vprašanje?"
-      other_contact: 'Kontaktiraj predstavnike občine Medvode na <a href="mailto:predlagam-odlocam@Medvode.si">predlagam-odlocam@Medvode.si</a>.'
+      other_contact: 'Kontaktiraj predstavnike Mestne občine Mariborde na <a href="mailto:obcina@maribor.si">obcina@maribor.si</a>.'
     terms:
       main_title: "Pogoji uporabe"
       active_use: "Aktivna uporaba spletnega orodja se ureja s spodnjimi pogoji za uporabo, zato se morajo vsi, ki želijo aktivno sodelovati, registrirati, za kar se bo zahtevalo sprejetje teh pogojev uporabe."
@@ -165,7 +165,7 @@ sl-SI:
       use_list_first: "Oddajo predlogov"
       use_submit: "Za oddajo predloga mora uporabnik/-ca obvezno določiti naslov predloga projekta, opis, doda pa lahko še sliko predloga, lokacijo predloga, dokumente. Po oddaji predloga je ta avtomatsko sprejet in se prikaže na portalu. Uporabnik/-ca lahko predlog deli z drugimi na socialnih omrežjih, preko emaila ali s skrajšano povezavo."
       voting_title: "Glasovanje za predloge"
-      voting_intro: "Uporabnik/-ca lahko glasuje za predloge drugih uporabnikov. Za en predlog lahko glasuje le enkrat. Za glasovanje ima na voljo celoten participativni proračun, z vsakim glasom pa se znesek manjša. Uporabnik/-ca lahko posameznemu predlogu v fazi zbiranja glasov tudi odvzame glas."
+      voting_intro: "Uporabnik/-ca lahko glasuje za predloge projektov drugih uporabnikov. Za en predlog lahko glasuje le enkrat. Za glasovanje ima na voljo 40.000 eurov za območje, za katero glasuje, z vsakim glasom pa se znesek manjša. Na vsakem območju bodo izvedeni izglasovani projekti v skupni višini 120.000 eurov. Uporabnik/-ca lahko posameznemu predlogu v fazi zbiranja glasov tudi odvzame glas."
       commenting_title: "Komentiranje predlogov"
       commenting_intro: "Vsak predlog je lahko komentiran s strani registriranih uporabnikov."
       following_title: "Spremljanje izbranih predlogov"
@@ -190,9 +190,9 @@ sl-SI:
       trying: " se bo trudila, da bi tovrstne vsebine kar najhitreje umaknila s spletnega orodja in proti uporabnikom uvedla ustrezne sankcije."
       in_case_first: "V primeru kakršnega koli spora med uporabniki spletnega orodja in / ali tretjo osebo je "
       in_case_second: " izvzeta iz kakršnekoli odgovornosti za pravdne zahtevke, zahtevke za odškodnine ali odškodnine kakršne koli narave, povezane z vsebinami na spletnem orodju in / ali nastalimi v sodnem postopku."
-      terms_first_checkbox: "obdeluje moje osebne podatke (ime in priimek, naslov stalnega prebivališča, e-naslov, telefonska številka) za namen izvedbe projekta Predlagam - odločam v dokumentarni zbirki MOK,"
-      terms_second_checkbox: "Do morebitnega preklica izrecno, prostovoljno, brezpogojno in jasno dovoljujem, da Občina Medvode obdeluje moje osebne podatke za namen izvedbe projekta Sodeluj in glasuj."
-      terms_checkboxes_text: "Do morebitnega preklica izrecno, prostovoljno, brezpogojno in jasno dovoljujem, da Mestna občina Medvode:"
+      terms_first_checkbox: "Za potrebe izvedbe participativnega proračuna v Mestni občini Maribor dovoljujem, da Mestna občina Maribor, Fundacija Prizma in Zavod PIP obdelujejo moje osebne podatke."
+      terms_second_checkbox: "objavi osebne podatke (ime in priimek) na spletni strani MOK z namenom javne objave pobud Predlagam - Odločam. (Opomba: če tega polja ne odkljuš, bo tvoj predlog anonimen. To pomeni, da se tvoje ime in priimek ne bosta izpisala ob predlogu, ki bo objavljen na spletni strani občine)."
+      terms_checkboxes_text: "Do morebitnega preklica izrecno, prostovoljno, brezpogojno in jasno dovoljujem, da Mestna občina Maribor:"
     classes:
       footer_logo: Medvode
     statuses:
