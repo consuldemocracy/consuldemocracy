@@ -1,0 +1,19 @@
+on:
+  push:
+    branches:
+      - djnd-consul
+
+jobs:
+  pull-requests:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        uses: actions/checkout@v2
+
+      -
+        name: pull-request-k3s
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: "maribor-k8s"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_title: "Pulling ${{ github.ref }} into maribor-k8s"
