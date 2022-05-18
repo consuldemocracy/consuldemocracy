@@ -400,10 +400,11 @@ footer {
 
     &>div {
       display: flex;
+      text-align: center;
 
       img {
-        max-height: 50px;
-        margin-right: 10px;
+        height: 50px;
+        margin-right: 20px;
       }
 
       &.logo-right {
