@@ -49,15 +49,15 @@ class Budget < ApplicationRecord
       end
       custom_phases[phase] = CustomPhase.new(
         phase,
-        current_phase&.summary,
-        current_phase&.description,
-        current_phase&.starts_at,
-        current_phase&.ends_at,
+        self.phases.where(kind: phase).first&.summary,
+        self.phases.where(kind: phase).first&.description,
+        self.phases.where(kind: phase).first&.starts_at,
+        self.phases.where(kind: phase).first&.ends_at,
         url,
         enabled,
-        current_phase&.presentation_summary_accepting,
-        current_phase&.presentation_summary_balloting,
-        current_phase&.presentation_summary_finished
+        self.phases.where(kind: phase).first&.presentation_summary_accepting,
+        self.phases.where(kind: phase).first&.presentation_summary_balloting,
+        self.phases.where(kind: phase).first&.presentation_summary_finished
       )
     end
     custom_phases

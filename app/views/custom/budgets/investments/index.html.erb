@@ -166,6 +166,7 @@
             </div>
             <% else %>
 
+            <!-- TABS -->
             <% if phase.kind == :accepting %>
   
               <div class="landings">
@@ -186,7 +187,7 @@
                       <div class="small-12 medium-6 column ">
                         <div class="medium-8 medium-centered js-padt">
                           <h2><%= t("custom.presentation.accepting.title_1") %></h2>
-                          <p><%= raw(phase.presentation_summary_accepting) %></p>
+                          <p><%= raw(phase.summary) %></p>
                         </div>
                       </div>
                       <div class="small-12 medium-6 column">
@@ -298,7 +299,7 @@
                       <div class="small-12 medium-6 column ">
                         <div class="medium-8 medium-centered js-padt">
                           <h2><%= t("custom.presentation.balloting.title_3") %></h2>
-                          <p><%= raw(phase.presentation_summary_finished) %></p>
+                          <p><%= raw(phase.summary) %></p>
                         </div>
                       </div>
                       <div class="small-12 medium-6 column ">

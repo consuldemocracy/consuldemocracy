@@ -18,12 +18,12 @@ sl-SI:
         edit:
           summary_help_text: Podnaslov
           description_help_text: Opisni odstavek
-          presentation_summary_accepting: Stolpec PREDLAGAJ
-          presentation_summary_balloting: Stolpec GLASUJ
-          presentation_summary_finished: Stolpec SPREMLJAJ
-          presentation_summary_accepting_help_text: Tekst za v prvi stolpec, ko je ta faza aktivna
-          presentation_summary_balloting_help_text: Tekst za v drugi stolpec, ko je ta faza aktivna
-          presentation_summary_finished_help_text: Tekst za v tretjiz stolpec, ko je ta faza aktivna
+          presentation_summary_accepting: Prvi odstavek, ko faza ni aktivna
+          presentation_summary_balloting: Drugi odstavek, ko faza ni aktivna
+          presentation_summary_finished: Tretji odstavek, ko faza ni aktivna
+          presentation_summary_accepting_help_text: Tekst za prvi odstavek, ko ta faza ni aktivna
+          presentation_summary_balloting_help_text: Tekst za drugi odstavek, ko ta faza ni aktivna
+          presentation_summary_finished_help_text: Tekst za tretji odstavek, ko ta faza ni aktivna
     meta:
       pp_name: Sodeluj in glasuj
       place_name: Občina Medvode
