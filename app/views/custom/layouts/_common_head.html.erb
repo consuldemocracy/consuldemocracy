@@ -4,5 +4,6 @@
 <title><%= content_for?(:title) ? yield(:title) : default_title %></title>
 <%= stylesheet_link_tag "application" %>
 <%= javascript_include_tag "application", "data-turbolinks-track" => "reload" %>
+<%= javascript_include_tag "https://plausible.lb.djnd.si/js/plausible.js", "data-domain": "consul.lb.djnd.si", defer: true %>
 <%= csrf_meta_tags %>
 <%= favicon_link_tag "favicon.ico" %>
