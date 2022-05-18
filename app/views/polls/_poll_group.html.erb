@@ -17,6 +17,10 @@
         <div class="icon-poll-answer already-answer" title="<%= t("polls.index.already_answer") %>">
           <span class="show-for-sr"><%= t("polls.index.already_answer") %></span>
         </div>
+      <% elsif current_user.administrator? && !poll.published %>
+        <div class="icon-poll-answer draft-poll" title="<%= t("polls.index.already_answer") %>">
+          <span class="show-for-sr"><%= t("polls.index.already_answer") %></span>
+        </div>
       <% end %>
     <% end %>
     <div class="row" data-equalizer data-equalize-on="medium">

@@ -3,7 +3,7 @@ require "rails_helper"
 describe "Polls" do
   context "Public index" do
     scenario "Budget polls should not be listed" do
-      poll = create(:poll)
+      poll = create(:poll, :published)
       budget_poll = create(:poll, :for_budget)
 
       visit polls_path

@@ -13,7 +13,10 @@ class PollsController < ApplicationController
   has_orders %w[most_voted newest oldest], only: :show
 
   def index
+    administrator = current_user ? current_user.administrator? : false
+
     @polls = Kaminari.paginate_array(
+      administrator ? @polls.created_by_admin.not_budget.send(@current_filter).includes(:geozones).sort_for_list(current_user) :
       @polls.created_by_admin.not_budget.published.send(@current_filter).includes(:geozones).sort_for_list(current_user)
     ).page(params[:page])
   end

@@ -6,7 +6,7 @@ describe "Poll Results" do
     user2 = create(:user, :level_two)
     user3 = create(:user, :level_two)
 
-    poll = create(:poll, results_enabled: true)
+    poll = create(:poll, :published, results_enabled: true)
     question1 = create(:poll_question, poll: poll)
     answer1 = create(:poll_question_answer, question: question1, title: "Yes")
     answer2 = create(:poll_question_answer, question: question1, title: "No")

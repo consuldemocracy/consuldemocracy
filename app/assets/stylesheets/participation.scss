@@ -1540,7 +1540,8 @@
     &.cant-answer::after,
     &.not-logged-in::after,
     &.already-answer::after,
-    &.unverified::after {
+    &.unverified::after,
+    &.draft-poll::after {
       font-family: "icons" !important;
       left: 34px;
       position: absolute;
@@ -1589,6 +1590,15 @@
       &::after {
         color: $color-success;
         content: "\59";
+      }
+    }
+
+    &.draft-poll {
+      border-right: 60px solid $border;
+
+      &::after {
+        color: $text-medium;
+        content: "\70";
       }
     }
   }
