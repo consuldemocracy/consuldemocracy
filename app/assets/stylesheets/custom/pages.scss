@@ -1116,3 +1116,73 @@ span:hover::before {
     color: #46db91;
   }
 }
+
+// about page 
+.about {
+  padding-bottom: 3rem;
+
+  .intro {
+    color: $black;
+    font-size: 1.5625rem;
+    line-height: 2.1875rem;
+    font-weight: 500;
+    padding-top: 15px;
+  }
+
+  h1 {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    color: #04aeef;
+    font-size: 1.875rem;
+    font-weight: 800;
+    margin-bottom: 0.9375rem;
+    letter-spacing: 0.375rem;
+    display: flex;
+    align-items: center;
+
+    .datum {
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 30px;
+      background-color: $black;
+      display: inline-block;
+      padding: 4px 16px 6px;
+      letter-spacing: initial;
+      margin-left: 2rem;
+    }
+  }
+
+  p {
+    font-size: 1.25rem;
+    line-height: 1.5625rem;
+    font-weight: 500;
+  }
+
+  .nbr5 {
+    color: #f2f2f2;
+    font-size: 14rem;
+    font-weight: 900;
+    line-height: 10rem;
+  }
+
+  
+  
+  
+  .padded {
+    padding: 0;
+  }
+  @media (min-width: 768px) {
+    .padded {
+        padding: 1.25rem 0;
+    }
+  }
+  @media (min-width: 992px) {
+    .padded {
+        padding: 2.8125rem 0;
+    }
+  }
+}
