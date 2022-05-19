@@ -1,0 +1,64 @@
+
+// STATUSES OLD CODE
+// TODO CLEANUP
+.btop {
+    margin-top: 15px;
+    padding: 15px 0 5px 0;
+    border-top: 2px solid #3c3583;
+  }
+  
+  .finvestment {
+    float: right;
+    color: #3b3583;
+    font-size: 14px;
+    font-weight: bold;
+  
+    i {
+      display: inline-block;
+      width: 21px;
+      height: 21px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      border-radius: 20px;
+      top: 5px;
+      position: relative;
+      margin-right: 10px;
+    }
+  
+    &.investment-undecided {
+      i {
+        background-color: #3c3683;
+      }
+    }
+  
+    &.investment-feasible {
+      i {
+        background-color: #5dcf4b;
+      }
+    }
+  
+    &.investment-unfeasible {
+      i {
+        background-color: #f5b5f4;
+      }
+    }
+  
+    &.investment-waiting {
+      i {
+        background-color: #3c3683;
+      }
+    }
+  
+    &.investment-done {
+      i {
+        background-color: #5dcf4b;
+      }
+    }
+  
+    &.investment-doing {
+      i {
+        background-color: #f5b5f4;
+      }
+    }
+  }
+  

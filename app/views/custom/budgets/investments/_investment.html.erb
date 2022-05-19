@@ -40,6 +40,14 @@
                 </span>
               </div>
             <% end %>
+
+            <% if investment.budget.phase == 'finished' && investment.status && investment.winner %>
+              <div class="clearfix btop">
+                <div class="finvestment investment-<%=investment.status %> ">
+                  <i></i><% if investment.status != '' %><%= t("custom.statuses.#{investment.status}") %><% end %>
+                </div>
+              </div>
+            <% end %>
           <% end %>
         </div>
       </div>
