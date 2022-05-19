@@ -9,7 +9,8 @@
   <body class="auth-page">
     <%= raw setting["html.per_page_code_body"] %>
     <div class="wrapper">
-      <div class="auth-image small-12 medium-3 column">
+      <div class="auth-image small-12 medium-3 column"
+           style="background-image: url(<%= asset_url(image_path_for("auth_bg.jpg")) %>)">
         <h1 class="logo margin">
           <%= link_to root_path do %>
             <%= image_tag(image_path_for("logo_header.png"), class: "float-left", alt: setting["org_name"]) %>
