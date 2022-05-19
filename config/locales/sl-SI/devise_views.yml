@@ -108,6 +108,7 @@ sl-SI:
           username_is_available: Uporabniško ime na voljo
           username_is_not_available: Uporabniško ime že zasedeno
           username_note: Ime, ki ga prikazujemo ob tvojih objavah
+          document_number: 1234567890987
         success:
           back_to_index: Razumem; vrni se na glavno stran
           instructions_1: Prosimo, <b>preveri svojo e-pošto</b> - poslali smo ti <b>povezavo za potrditev tvojega računa</b>.

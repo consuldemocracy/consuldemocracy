@@ -20,7 +20,7 @@
                                    hint: t("devise_views.users.registrations.new.username_note") %>
 
       <%= f.hidden_field :document_type, value: "1" %>
-      <%= f.text_field :document_number, placeholder: t("devise_views.users.registrations.new.document_number") %>
+      <%= f.text_field :document_number, label: t("custom.terms.emso"), placeholder: t("devise_views.users.registrations.new.document_number") %>
 
       <%= f.invisible_captcha :address %>
 
