@@ -1,0 +1,4 @@
+check process <%= fetch(:application) %>_puma with pidfile <%= shared_path %>/tmp/pids/puma.pid
+  start program = "/etc/init.d/puma start" as uid deploy
+  stop program = "/etc/init.d/puma stop" as uid deploy
+  if 5 restarts within 5 cycles then timeout
