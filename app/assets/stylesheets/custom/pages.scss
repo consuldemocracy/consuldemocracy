@@ -1167,33 +1167,86 @@ span:hover::before {
     font-weight: 900;
     line-height: 10rem;
   }
+}
 
+// help page
+.help {
   .padded {
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
-  @media (min-width: 768px) {
-    .padded {
-      padding-top: 1.25rem;
-      padding-bottom: 1.25rem;
-    }
+  h1 {
+    margin-bottom: 3rem;
+  }
 
-    h3 {
-      display: flex;
-      align-items: center; 
+  .brderundr {
+    border-bottom: 1px solid #04aeef;
+    padding: 0 15px 0 0;
+    margin: 0 0 0 0;
+    position: relative;
 
-      .datum {
-        margin-left: 2rem;
-        margin-top: 0;
+    .title {
+      color: #000000;
+      font-size: 24px;
+      font-weight: 500;
+      cursor: pointer;
+      border-bottom: none;
+      margin: 1rem 0;
+
+      .custom-icon.arrow-small-right {
+        width: 39px;
+        height: 33px;
+        float: right;
+        position: absolute;
+        right: 20px;
+        transform: rotate(-90deg);
+        // display: none;
       }
     }
+
+    &.accordion-collapsed {
+      p {
+        display: none;
+      }
+
+      .title .custom-icon.arrow-small-right {
+        transform: rotate(0);
+        // display: inline-block;
+      }
+    }
+
+    p {
+      font-size: 1.125rem;
+      font-weight: 400;
+      line-height: 1.5;
+    }
   }
 
-  @media (min-width: 992px) {
-    .padded {
-      padding-top: 2.8125rem;
-      padding-bottom: 2.8125rem;
+  .technical-issues {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid #04aeef;
+    display: flex;
+    flex-direction: column;
+    min-height: 10rem;
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1.125rem;
+      font-weight: 400;
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+
+    a {
+      display: inline;
+      padding: 0;
+      font-weight: 500;
+      text-decoration: underline;
     }
   }
 }

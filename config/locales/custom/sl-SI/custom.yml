@@ -131,9 +131,9 @@ sl-SI:
       description_5: "V nogi spletnega mesta klikni na gumb Moj račun, kjer lahko spremeniš vse svoje podatke."
       help_title: "Potrebuješ pomoč?"
       technical_issues: "Imaš tehnične težave?"
-      technical_contact: 'Kontaktiraj upravljalca aplikacije na <a href="mailto:consul@djnd.si">consul@djnd.si</a>.'
+      technical_contact: 'Kontaktiraj upravljalca aplikacije na <a href="mailto:consul@djnd.si" target="_blank">consul@djnd.si</a>.'
       other_questions: "Imaš kakršno koli drugo vprašanje?"
-      other_contact: 'Kontaktiraj predstavnike Mestne občine Mariboe na <a href="mailto:sodeluj@maribor.si">sodeluj@maribor.si</a>.'
+      other_contact: 'Kontaktiraj predstavnike Mestne občine Maribor na <a href="mailto:sodeluj@maribor.si" target="_blank">sodeluj@maribor.si</a>.'
     terms:
       main_title: "Pogoji uporabe"
       active_use: "Aktivna uporaba spletnega orodja se ureja s spodnjimi pogoji za uporabo, zato se morajo vsi, ki želijo aktivno sodelovati, registrirati, za kar se bo zahtevalo sprejetje teh pogojev uporabe."

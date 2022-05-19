@@ -4,95 +4,102 @@
       <%= render "shared/canonical", href: help_url %>
     <% end %>
     
-    <div class="row help">
-    
+    <div class="help">
       <div class="bggray">
         <div class="main-indented-content ">
           <div class="text-center">
-            <h2><%= t("custom.help.main_title") %></h2>
+            <h1><%= t("custom.help.main_title") %></h1>
           </div>
           <div class="akkordion row">
             <div class="small-12 medium-10 column medium-centered pad-tb-45">
     
               <div class="row">
-                <div class="medium-12 brderundr">
-                  <div class="title">
-                    <%= t("custom.help.heading_1") %>
-                    <i class="custom-icon arrow-small-right">
-                    </i>
+                <div class="column medium-12">
+                  <div class="brderundr accordion-collapsed">
+                    <div class="title" onclick="toggleAkkordion(this)">
+                      <%= t("custom.help.heading_1") %>
+                      <i class="custom-icon arrow-small-right">
+                      </i>
+                    </div>
+                    <p>
+                      <%= t("custom.help.description_1") %>
+                    </p>
                   </div>
-                  <p>
-                    <%= t("custom.help.description_1") %>
-                  </p>
                 </div>
               </div>
     
               <div class="row">
-                <div class="medium-12 brderundr">
-                  <div class="title">
-                    <%= t("custom.help.heading_2") %>
-                    <i class="custom-icon arrow-small-right">
-                    </i>
+                <div class="column medium-12">
+                  <div class="brderundr accordion-collapsed">
+                    <div class="title" onclick="toggleAkkordion(this)">
+                      <%= t("custom.help.heading_2") %>
+                      <i class="custom-icon arrow-small-right">
+                      </i>
+                    </div>
+                    <p>
+                      <%= t("custom.help.description_2") %>
+                    </p>
                   </div>
-                  <p>
-                    <%= t("custom.help.description_2") %>
-                  </p>
                 </div>
               </div>
     
               <div class="row">
-                <div class="medium-12 brderundr">
-                  <div class="title">
-                    <%= t("custom.help.heading_3") %>
-                    <i class="custom-icon arrow-small-right">
-                    </i>
+                <div class="column medium-12">
+                  <div class="brderundr accordion-collapsed">
+                    <div class="title" onclick="toggleAkkordion(this)">
+                      <%= t("custom.help.heading_3") %>
+                      <i class="custom-icon arrow-small-right">
+                      </i>
+                    </div>
+                    <p>
+                      <%= t("custom.help.description_3") %>
+                    </p>
                   </div>
-                  <p>
-                    <%= t("custom.help.description_3") %>
-                  </p>
                 </div>
               </div>
     
               <div class="row">
-                <div class="medium-12 brderundr">
-                  <div class="title">
-                    <%= t("custom.help.heading_4") %>
-                    <i class="custom-icon arrow-small-right">
-                    </i>
+                <div class="column medium-12">
+                  <div class="brderundr accordion-collapsed">
+                    <div class="title" onclick="toggleAkkordion(this)">
+                      <%= t("custom.help.heading_4") %>
+                      <i class="custom-icon arrow-small-right">
+                      </i>
+                    </div>
+                    <p>
+                      <%= t("custom.help.description_4") %>
+                    </p>
                   </div>
-                  <p>
-                    <%= t("custom.help.description_4") %>
-                  </p>
                 </div>
               </div>
     
               <div class="row">
-                <div class="medium-12 brderundr">
-                  <div class="title">
-                    <%= t("custom.help.heading_5") %>
-                    <i class="custom-icon arrow-small-right">
-                    </i>
+                <div class="column medium-12">
+                  <div class="brderundr accordion-collapsed">
+                    <div class="title" onclick="toggleAkkordion(this)">
+                      <%= t("custom.help.heading_5") %>
+                      <i class="custom-icon arrow-small-right">
+                      </i>
+                    </div>
+                    <p>
+                      <%= t("custom.help.description_5") %>
+                    </p>
                   </div>
-                  <p>
-                    <%= t("custom.help.description_5") %>
-                  </p>
                 </div>
               </div>
-    
-    
             </div>
           </div>
         </div>
       </div>
     
-      <div class="pad-2rem">
-        <div class="main-indented-content pad-tb-45">
+      <div class="padded">
+        <div class="main-indented-content">
           <div class="text-center">
-            <h2><%= t("custom.help.help_title") %></h2>
+            <h1><%= t("custom.help.help_title") %></h1>
           </div>
           <div class="row">
-            <div class="small-12 medium-10 column medium-centered pad-tb-45">
-              <div class="row qs">
+            <div class="small-12 medium-10 column medium-centered">
+              <div class="row boxes">
     
                 <div class="medium-6 column">
                   <div class="technical-issues">
@@ -117,7 +124,11 @@
           </div>
         </div>
       </div>
-    
-    
     </div>
-    
+
+<script>
+
+function toggleAkkordion(el) {
+  el.parentNode.classList.toggle("accordion-collapsed");
+}
+</script>

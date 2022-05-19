@@ -118,6 +118,35 @@ a {
   }
 }
 
+.padded {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .padded {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  h3 {
+    display: flex;
+    align-items: center; 
+
+    .datum {
+      margin-left: 2rem;
+      margin-top: 0;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .padded {
+    padding-top: 2.8125rem;
+    padding-bottom: 2.8125rem;
+  }
+}
+
 .row {
   max-width: 100%;
 }
