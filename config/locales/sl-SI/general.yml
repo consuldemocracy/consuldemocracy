@@ -133,8 +133,8 @@ sl-SI:
     debate: Razprava
     direct_message: Zasebno sporočilo
     error: Napaka
-    errors: Napake
-    not_saved: "preprečil ta %{resource}, da bi se shranil. <br>Prosimo, preveri označena polja:"
+    errors: Napaki/e
+    not_saved: "preprečila/i/e, da bi shranili %{resource}. <br>Prosimo, poskrbi, da si odgovoril_a na vseh pet vsebinskih vprašanj:"
     policy: Politiko zasebnosti
     proposal: Predlog
     proposal_notification: "Obvestilo"

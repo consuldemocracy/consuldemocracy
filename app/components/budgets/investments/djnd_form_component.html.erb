@@ -37,6 +37,9 @@
 
     <%= f.fields_for :answers do |builder| %>
       <p>
+        <% if investment.errors[:answers].count > 0 && params[:budget_investment][:answers_attributes][builder.index.to_s][:text].strip == "" %>
+          <span style="margin-bottom: 0" class="form-error is-visible">Prosim izpolni vprašanje.</span>
+        <% end %>
         <%= builder.text_area :text, label: budget.questions.order(:id)[builder.index].text, rows: 5 %>
         <%= builder.hidden_field :budget_id %>
         <%= builder.hidden_field :budget_question_id %>
