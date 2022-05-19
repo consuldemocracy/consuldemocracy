@@ -342,6 +342,10 @@ span:hover::before {
 // **************** PREDLOGI ********************
 .tabs {
   .tabs-title {
+    h3 {
+      display: block;
+    }
+
     &.is-active a {
       color: $black;
     }

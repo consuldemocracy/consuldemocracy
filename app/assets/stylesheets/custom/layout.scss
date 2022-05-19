@@ -393,8 +393,23 @@ header {
   display: flex;
   justify-content: space-between;
 
-  .header-links .default-button {
-    margin-left: 10px;
+  .header-links {
+    margin-bottom: 0;
+
+    .default-button {
+      margin-left: 10px;
+    }
+
+    .is-active {
+      color: #222;
+      background-color: transparent;
+      border-radius: 30px;
+      border: 3px solid #222;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+      font-size: 16px;
+      font-weight: 600;
+      padding: 4px 16px 6px;
+    }
   }
 
   @media (max-width: 767px) {
