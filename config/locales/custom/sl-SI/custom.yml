@@ -124,7 +124,7 @@ sl-SI:
       heading_2: "Kako ustvarim in potrdim svoj račun?"
       description_2: "Račun ustvariš tako, da v nogi spletnega mesta klikneš na gumb Registracija, klik na kateri koli gumb za akcijo te prav tako pripelje do istega spletnega obrazca. Za kreiranje uporabniškega računa moraš vpisati uporabniško ime, e-naslov, naslov stalnega prebivališča, telefonsko, EMŠO in geslo. Po kreiranju računa ga moraš potrditi s klikom na povezavo v e-pošti, ki jo bomo poslali na tvoj e-naslov."
       heading_3: "Kako lahko ustvarim nov predlog?"
-      description_3: "Predlog projekta ustvariš v okviru spletnega orodja, oddaš ga lahko tudi na fizičnem obrazcu osebno v vložišču Mestne občine Maribor ali sedežih krajevnih skupnosti v času uradnih ur ali izpolnjenega pošlješ na elektronski naslov obcina@maribor.si."
+      description_3: "Poleg spletnega je mogoče predlog oddati tudi v fizični obliki, in sicer: po pošti, na naslov Mestna občina Maribor, Ulica heroja Staneta 1, 2000 Maribor,  osebno na navedem naslovu, v sprejemni pisarni št. 14 (do 13. ure), ali v kateri koli mestni četrti/krajevni skupnosti v času uradnih ur (tam bodo na voljo tudi tiskani obrazci). Za pomoč pri pripravi predlogov projektov se lahko udeležiš interaktivne in praktičnih delavnic, ki bodo vsak četrtek, ob 18. uri od 19. maja do 23. junija."
       heading_4: "Pozabil/-a sem svoje geslo. Kaj lahko storim?"
       description_4: "Klikni na gumb Prijava, nato izberi povezavo Pozabljeno geslo. Na svoj elektronski naslov boš prejel/-a navodila, kako ustvariti novo geslo."
       heading_5: "Kako lahko spremenim svoj e-naslov, uporabniško ime in / ali geslo?"
@@ -133,7 +133,7 @@ sl-SI:
       technical_issues: "Imaš tehnične težave?"
       technical_contact: 'Kontaktiraj upravljalca aplikacije na <a href="mailto:consul@djnd.si">consul@djnd.si</a>.'
       other_questions: "Imaš kakršno koli drugo vprašanje?"
-      other_contact: 'Kontaktiraj predstavnike Mestne občine Mariborde na <a href="mailto:obcina@maribor.si">obcina@maribor.si</a>.'
+      other_contact: 'Kontaktiraj predstavnike Mestne občine Mariboe na <a href="mailto:sodeluj@maribor.si">sodeluj@maribor.si</a>.'
     terms:
       main_title: "Pogoji uporabe"
       active_use: "Aktivna uporaba spletnega orodja se ureja s spodnjimi pogoji za uporabo, zato se morajo vsi, ki želijo aktivno sodelovati, registrirati, za kar se bo zahtevalo sprejetje teh pogojev uporabe."
