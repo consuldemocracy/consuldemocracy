@@ -32,7 +32,7 @@ data:
 
     production:
       secret_key_base: "this-should-be-secret"
-      server_name: ""
+      server_name: "<%= ENV['SERVER_NAME'] %>"
       mailer_delivery_method: :smtp
       smtp_settings:
         :address: "smtp.flowmailer.net"
