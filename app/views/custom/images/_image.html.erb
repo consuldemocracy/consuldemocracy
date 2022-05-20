@@ -1,14 +1,18 @@
 <div id="image" class="text-center image-preview">
   <figure>
-    <%= image_tag image.variant(version),
-                  class: image_class(image),
-                  alt: image.title.unicode_normalize,
-                  title: image.title.unicode_normalize %>
+    <%= link_to image_absolute_url(image, version), target: "_blank" do %>
+      <%= image_tag image.variant(version),
+                    class: image_class(image),
+                    alt: image.title.unicode_normalize,
+                    title: image.title.unicode_normalize %>
+    <% end %>
     <% if show_caption %>
       <figcaption class="text-right">
         <em><%= image.title.unicode_normalize %></em>
       </figcaption>
     <% end %>
+    <div class="new-tab-icon-wrapper">
+      <span class="new-tab-icon"></span>
+    </div>
   </figure>
-
 </div>

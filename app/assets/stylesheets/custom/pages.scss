@@ -862,6 +862,17 @@ span:hover::before {
     float: none;
     margin-bottom: 1.5rem;
 
+    figure {
+      position: relative;
+      cursor: pointer;
+
+      &:hover {
+        .new-tab-icon-wrapper {
+          border-color: $black;
+        }
+      }
+    }
+
     img {
       height: rem-calc(385);
       width: 100%;
