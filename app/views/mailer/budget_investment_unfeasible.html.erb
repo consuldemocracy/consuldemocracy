@@ -5,8 +5,7 @@
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("mailers.budget_investment_unfeasible.unfeasible_html",
-        title: @investment.title) %>
+    <%= sanitize(t("mailers.budget_investment_unfeasible.unfeasible_html", title: @investment.title)) %>
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px; padding-left: 12px; border-left: 2px solid #ccc;">

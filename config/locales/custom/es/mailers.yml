@@ -1,13 +1,14 @@
 es:
   mailers:
     budget_investment_unfeasible:
-      reconsider_html: "Te invitamos a que participes en las votaciones, que se celebrarán durante todo el mes de noviembre, y decidas con tu voto qué proyectos se harán realidad en 2019. Si consideras que el proyecto rechazado cumple los requisitos para mantenerlo como proyecto de gasto, por favor, escribe lo antes posible a participa@dipvalladolid.es para que la Mesa Técnica pueda valorarlo. Indica claramente el título de tu propuesta y el código correspondiente a tu proyecto: %{code} como asunto del correo."
+      reconsider_html: "Lamentamos que tu propuesta no haya cumplido con los requisitos necesarios, pero te invitamos a que participes en las votaciones, que se celebrarán del 1 al 15 de septiembre, y decidas con tu voto qué proyectos se harán realidad el próximo año."
       signatory: "DIPUTACIÓN DE VALLADOLID"
-      unfeasible_html: "Desde la Diputación queremos agradecer tu participación en los <strong>Presupuestos Participativos</strong>. Tu propuesta <strong>'%{title}'</strong> ha sido evaluada por el personal técnico de la Diputación, que ha considerado que es inviable, o bien ha propuesto su reformulación para recoger tu idea. A continuación, puedes leer el informe de evaluación:"
+      unfeasible_html: "Desde la Diputación queremos agradecer tu participación en los <strong>Presupuestos Participativos</strong>. Tu propuesta <strong>'%{title}'</strong> ha sido evaluada por el personal técnico de la Diputación, que ha considerado que es inviable. A continuación, puedes leer el informe de evaluación en el que se motiva dicha decisión:"
     user_invite:
       ignore: "Si no has solicitado esta invitación no te preocupes, puedes ignorar este correo."
       text: "¡Gracias por solicitar unirte a %{org}! En unos segundos podrás empezar a decidir la provincia que quieres, sólo tienes que rellenar el siguiente formulario:"
     budget_investment_selected:
-      selected_html: "Desde la Diputación de Valladolid agradecemos que hayas participado con tu idea en los <strong>Presupuestos Participativos</strong>. Te informamos de que tu proyecto <strong>'%{title}'</strong> ha sido seleccionado y pasa a la fase de votación final que tiene lugar desde el <strong>15 de mayo hasta el 30 de junio de 2017</strong>."
+      share: "Tu proyecto ha sido seleccionado y pasará a la fase de votación. Para que puede hacerse realidad es necesario que sea uno de los más votados en septiembre. Empieza ya a conseguir votos, comparte tu proyecto de gasto por correo electrónico, por mensaje o en redes sociales. La difusión es fundamental para conseguir que se haga realidad."
     budget_investment_unselected:
-      unselected_html: "Desde la Diputación de Valladolid agradecemos que hayas participado con tu idea en los <strong>Presupuestos Participativos</strong>. Lamentamos informarte de que tu proyecto <strong>'%{title}'</strong> no ha sido seleccionado para la fase de votación final."
+      text_1: "A pesar de que tu proyecto <strong>'%{title}'</strong> fue considerado viable, tras aplicar el <a href=\"https://participa.diputaciondevalladolid.es/baremo\" target=\"_blank\">baremo técnico</a> ha obtenido menos puntuación que otros proyectos de la misma zona y, por tanto, no pasará a la fase de votación."
+      text_2: "A pesar de ello, te invitamos a que participes en las votaciones, que se celebrarán del 1 al 15 de septiembre y decidas con tu voto qué proyectos se harán realidad el próximo año."
