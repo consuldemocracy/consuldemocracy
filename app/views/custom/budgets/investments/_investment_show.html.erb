@@ -82,7 +82,7 @@
         <% end %>
       </div>
 
-      <%= render_image(investment.image, :large, true, ) if investment.image.present? %>
+      <%= new_tab_render_image(investment.image, :large, true, true ) if investment.image.present? %>
 
       <div class="bggray">
         <div class="small-12 medium-10 medium-centered">
