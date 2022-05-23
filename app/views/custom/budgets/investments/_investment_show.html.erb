@@ -82,8 +82,7 @@
         <% end %>
       </div>
 
-      <%# TODO: napisi custom render image za odpiranje v novem tabu, in naredi custom image_helper - zdej je originalen prepisan direkt!!! %>
-      <%= render_image(investment.image, :large, true, true ) if investment.image.present? %>
+      <%= render_image(investment.image, :large, true, ) if investment.image.present? %>
 
       <div class="bggray">
         <div class="small-12 medium-10 medium-centered">
