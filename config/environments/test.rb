@@ -54,6 +54,12 @@ Rails.application.configure do
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
 
+  # Limit size of local logs
+  # TODO: replace with config.log_file_size after upgrading to Rails 7.1
+  logger = ActiveSupport::Logger.new(config.default_log_file, 1, 100.megabytes)
+  logger.formatter = config.log_formatter
+  config.logger = ActiveSupport::TaggedLogging.new(logger)
+
   config.after_initialize do
     Bullet.enable = true
     Bullet.bullet_logger = true
