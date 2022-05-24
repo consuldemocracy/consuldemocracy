@@ -87,7 +87,8 @@ describe "Legislation" do
         expect(page).not_to have_content("Yes")
         expect(page).not_to have_content("No")
       end
-      expect(page).not_to have_selector(:link_or_button, "Submit answer")
+
+      expect(page).to have_selector(:link_or_button, "Update answer")
 
       expect(question.reload.answers_count).to eq(1)
       expect(option.reload.answers_count).to eq(1)
@@ -110,6 +111,45 @@ describe "Legislation" do
       expect(page).to have_selector(:radio_button, "I don't know", disabled: true)
 
       expect(page).not_to have_selector(:link_or_button, "Submit answer")
+    end
+
+    scenario "change question answer", :no_js do
+      question = process.questions.first
+      option_yes = create(:legislation_question_option, question: question, value: "Yes")
+      option_no = create(:legislation_question_option, question: question, value: "No")
+      user = create(:user, :level_two)
+
+      login_as(user)
+
+      visit legislation_process_question_path(process, question)
+
+      expect(page).to have_selector(:radio_button, "Yes")
+      expect(page).to have_selector(:radio_button, "No")
+      expect(page).to have_selector(:link_or_button, "Submit answer")
+
+      choose("Yes")
+
+      click_button "Submit answer"
+
+      within(:css, "label.is-active") do
+        expect(page).to have_content("Yes")
+        expect(page).not_to have_content("No")
+      end
+
+      expect(page).to have_selector(:link_or_button, "Update answer")
+
+      choose("No")
+
+      click_button "Update answer"
+
+      within(:css, "label.is-active") do
+        expect(page).to have_content("No")
+        expect(page).not_to have_content("Yes")
+      end
+
+      expect(question.reload.answers_count).to eq(1)
+      expect(option_no.reload.answers_count).to eq(1)
+      expect(option_yes.reload.answers_count).to eq(0)
     end
   end
 end
