@@ -26,6 +26,23 @@ class Legislation::AnswersController < Legislation::BaseController
     end
   end
 
+  def update
+    if @process.debate_phase.open?
+      @answer.update(answer_params)
+      track_event
+      respond_to do |format|
+        format.js
+        format.html { redirect_to legislation_process_question_path(@process, @question) }
+      end
+    else
+      alert = t("legislation.questions.participation.phase_not_open")
+      respond_to do |format|
+        format.js { render json: {}, status: :not_found }
+        format.html { redirect_to legislation_process_question_path(@process, @question), alert: alert }
+      end
+    end
+  end
+
   private
 
     def answer_params
