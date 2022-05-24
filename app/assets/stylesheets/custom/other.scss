@@ -4,23 +4,6 @@
   padding: 10px 0;
 }
 
-.top-bar {
-  background: #fff !important;
-
-  .site-title-holder {
-    display: none !important;
-  }
-
-  .language-picker li a {
-    line-height: 100px;
-  }
-}
-
-// use this class to hide fields, which should be hidden fields, but they have to be submitted in a form
-.hide-field {
-  display: none;
-}
-
 .back {
   display: flex;
   align-items: center;

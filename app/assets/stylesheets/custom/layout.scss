@@ -31,12 +31,12 @@ body {
   position: relative;
 }
 
-@media screen and (max-width: 800px) {
-  // TODO: double check
-  body {
-    font-size: 12px;
-  }
-}
+// @media screen and (max-width: 800px) {
+//   // TODO: double check
+//   body {
+//     font-size: 12px;
+//   }
+// }
 
 h1,
 h2,
@@ -70,13 +70,14 @@ h3 {
 }
 
 p {
-  font-size: $small-font-size;
+  font-size: $base-font-size;
   font-weight: 400;
   line-height: $line-height;
 }
 
 a {
   color: $link;
+  text-decoration: none !important;
 
   &:hover,
   &:active {
@@ -87,8 +88,6 @@ a {
     color: $link-hover;
   }
 }
-
-
 
 .main-indented-content {
   margin: 0 auto;
@@ -166,6 +165,7 @@ a {
   max-width: 100%;
 }
 
+// todo: overwrite this once $brand color isn't used for .button anywhere anymore
 .button {
   background: $brand;
   font-size: $base-font-size;
@@ -194,10 +194,6 @@ a {
   color: $color-alert;
 }
 
-.postfix.button {
-  padding: 0;
-}
-
 .default-button,
 .upload-image,
 .upload-document,
@@ -220,10 +216,10 @@ a {
 
 .action-button,
 input[type="submit"].action-button {
-  background-color: #04aeef;
+  background-color: $theme-color;
   color: $white;
   border-radius: 50px;
-  border: 3px solid #04aeef;
+  border: 3px solid $theme-color;
   font-size: 24px;
   display: inline-block;
   font-weight: 700;
@@ -347,34 +343,20 @@ input[type="submit"].action-button {
 }
 
 .float-right-medium {
-
   @include breakpoint(medium) {
     float: right !important;
   }
 }
 
+// use this class to hide fields, which should be hidden fields, but they have to be submitted in a form
+.hide-field {
+  display: none;
+}
 
 .wrapper {
-  // height: 100%;
   header {
-    // padding-bottom: 1.5rem;
     margin-bottom: 0;
   }
-}
-
-.push {
-  clear: both;
-}
-
-.footer {
-  bottom: 0;
-  left: 0;
-  position: relative;
-  right: 0;
-  width: 100%;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-top: 0;
 }
 
 // pagination
@@ -407,6 +389,15 @@ header {
 .top-bar {
   display: flex;
   justify-content: space-between;
+  background-color: $white;
+
+  .site-title-holder {
+    display: none !important;
+  }
+
+  .language-picker li a {
+    line-height: 100px;
+  }
 
   .header-links {
     margin-bottom: 0;
@@ -444,12 +435,37 @@ header {
 // 03. Footer
 // ----------
 
-
-footer {
+.footer {
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
   background-color: $white;
   color: $black;
-  font-size: $tiny-font-size;
-  height: rem-calc(100);
+  font-size: $base-font-size;
+
+  .footer-links-wrapper {
+    display: flex;
+    justify-content: end;
+
+    .footer-links {
+      padding: 30px 0;
+      margin: 0;
+      color: $white;
+      text-align: center;
+
+      li {
+        display: inline-block;
+      }
+
+      a {
+        color: $white;
+        font-size: 14px;
+        font-weight: 400;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+    }
+  }
 
   .footer-logos {
     display: flex;
@@ -492,83 +508,22 @@ footer {
     img {
       max-height: 110px;
     }
-  }
 
-  .logo-holder {
-    padding-left: rem-calc(80px);
-  }
-
-  p {
-    margin-bottom: 0;
-    font-size: 12px;
-    line-height: 16px;
-    color: #1A365D;
-  }
-
-  .logo {
-    background: image-url("municipalities/default.png") no-repeat;
-    background-size: 119px 61px;
-    display: block;
-    height: rem-calc(61);
-    margin-top: rem-calc(22);
-    width: 119px;
-
-    &.default {
-      background: image-url("municipalities/default.png") no-repeat;
-      background-size: 119px 61px;
+    p {
+      margin-bottom: 0;
+      font-size: 12px;
+      line-height: 16px;
+      color: #1A365D;
     }
   }
 
   hr {
     margin: 0 auto;
   }
+}
 
-  .footer-links {
-    margin-top: rem-calc(40);
-    color: $white;
-  }
-
-  @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-  only screen and (min--moz-device-pixel-ratio: 1.5),
-  only screen and (min-resolution: 240dpi) {
-    .logo {
-      background: image-url("municipalities/default@2x.png") no-repeat;
-      background-size: 119px 61px;
-
-      &.default {
-        background: image-url("municipalities/default@2x.png") no-repeat;
-        background-size: 119px 61px;
-      }
-    }
-
-    .logo-djnd {
-      background: image-url("djnd.png") no-repeat;
-      background-size: 119px 61px;
-
-      &.default {
-        background: image-url("djnd.png") no-repeat;
-        background-size: 119px 61px;
-      }
-    }
-  }
-
-  @media (max-width: 767px) {
-    .logo-djnd {
-      background-position: center;
-    }
-  }
-
-  a,
-  a:active,
-  a:focus {
-    color: $text;
-
-    &:hover {
-      color: $link-hover;
-    }
-  }
-
-  @media (max-width: 992px) {
+@media (max-width: 992px) {
+  .footer {
     .footer-logos {
       flex-direction: column;
     }
@@ -577,15 +532,31 @@ footer {
       margin-top: 20px;
     }
   }
+}
 
-  @media (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  .footer {
+    .footer-links-wrapper {
+      justify-content: center;
+
+      li {
+        display: block;
+      }
+
+      li span {
+        display: none;
+      }
+    }
+
     .footer-financer-logo {
       flex-direction: column;
       text-align: center;
     }
   }
+}
 
-  @media (max-width: 576px) {
+@media (max-width: 576px) {
+  .footer {
     .footer-logos {
       &>div {
         flex-direction: column;
@@ -601,13 +572,6 @@ footer {
       }
     }
   }
-}
-
-a {
-  text-decoration: none !important;
-}
-.home-page footer {
-  background-color: $white;
 }
 
 body > header, .wrapper > header {
@@ -628,7 +592,7 @@ body > header, .wrapper > header {
 }
 
 .sidebar {
-  background-color: #f2f2f2;
+  background-color: $grey-background;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
 }

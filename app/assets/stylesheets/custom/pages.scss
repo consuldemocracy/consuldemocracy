@@ -228,79 +228,6 @@ only screen and (min-resolution: 240dpi) {
   z-index: 1000;
 }
 
-footer {
-  height: max-content;
-
-  .logo-holder {
-    padding-left: 0;
-  }
-
-  .footer-links-wrapper {
-    display: flex;
-    justify-content: end;
-
-    .footer-links {
-      padding: 30px 0;
-      margin: 0;
-
-      li {
-        display: inline-block;
-      }
-
-      a {
-        color: $white;
-        font-size: 14px;
-        font-weight: 400;
-        margin-left: 5px;
-        margin-right: 5px;
-      }
-    }
-
-    @media screen and (max-width: 768px) {
-      justify-content: center;
-
-      .footer-links {
-        text-align: center;
-      }
-
-      li {
-        display: block;
-      }
-
-      li span {
-        display: none;
-      }
-
-    }
-  }
-
-  .logo {
-    margin: 0.375rem auto 0;
-  }
-
-  .mobile-text-center {
-    text-align: center;
-  }
-}
-
-@media (min-width: 576px) {
-  footer {
-    .mobile-text-center {
-      text-align: initial;
-    }
-
-    .footer-links {
-      text-align: right;
-    }
-
-    .logo {
-      margin-top: 0.375rem;
-      margin-left: initial;
-      margin-right: initial;
-    }
-  }
-}
-
 .bgblack {
   background-color: $black;
 }
@@ -1150,7 +1077,7 @@ span:hover::before {
   }
 
   h3 {
-    color: #04aeef;
+    color: $theme-color;
     font-size: 1.875rem;
     font-weight: 800;
     margin-bottom: 0.9375rem;
@@ -1165,8 +1092,9 @@ span:hover::before {
       display: inline-block;
       padding: 4px 16px 6px;
       letter-spacing: initial;
-      border: 3px solid #222;
-      margin-top: 1rem;
+      background-color: #f2f2f2;
+      // border: 3px solid #222;
+      // margin-top: 1rem;
     }
   }
 
@@ -1196,7 +1124,7 @@ span:hover::before {
   }
 
   .brderundr {
-    border-bottom: 1px solid #04aeef;
+    border-bottom: 1px solid $theme-color;
     padding: 0 15px 0 0;
     margin: 0 0 0 0;
     position: relative;
@@ -1242,7 +1170,7 @@ span:hover::before {
   .technical-issues {
     padding: 1.5rem;
     margin-bottom: 2rem;
-    border: 1px solid #04aeef;
+    border: 1px solid $theme-color;
     display: flex;
     flex-direction: column;
     min-height: 10rem;
@@ -1264,5 +1192,15 @@ span:hover::before {
       font-weight: 500;
       text-decoration: underline;
     }
+  }
+}
+
+.privacy {
+  background-color: #f2f2f2;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  p {
+    font-size: 1rem;
   }
 }
