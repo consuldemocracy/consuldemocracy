@@ -1,19 +1,29 @@
 <% if question.question_options.any? %>
-  <% if process.debate_phase.open? && !answer.persisted? && can?(:create, Legislation::Answer) %>
-
-    <%= form_for answer, url: legislation_process_question_answers_path(process, question, answer), remote: true, html: { class: "controls-stacked" } do |f| %>
-      <% question.question_options.each do |question_option| %>
-        <label class="control radio <%= "is-active" if @answer.legislation_question_option_id == question_option.id %>">
-          <%= f.radio_button :legislation_question_option_id, question_option.id, label: false %>
-          <span class="control-indicator"></span>
-          <%= question_option.value %>
-        </label>
+  <% if user_signed_in? && process.debate_phase.open? %>
+    <% if !answer.persisted? && can?(:create, Legislation::Answer) %>
+      <%= form_for answer, url: legislation_process_question_answers_path(process, question, answer), html: { class: "controls-stacked" } do |f| %>
+        <% question.question_options.each do |question_option| %>
+          <label class="control radio <%= "is-active" if @answer.legislation_question_option_id == question_option.id %>">
+            <%= f.radio_button :legislation_question_option_id, question_option.id, label: false %>
+            <span class="control-indicator"></span>
+            <%= question_option.value %>
+          </label>
+        <% end %>
+        <%= f.submit t("legislation.questions.show.answer_question"), class: "button" %>
       <% end %>
-      <%= f.submit t("legislation.questions.show.answer_question"), class: "button" %>
+    <% else %>
+      <%= form_for answer, url: legislation_process_question_answer_path(process, question, answer), html: { class: "controls-stacked" } do |f| %>
+        <% question.question_options.each do |question_option| %>
+          <label class="control radio <%= "is-active" if @answer.legislation_question_option_id == question_option.id %>">
+            <%= f.radio_button :legislation_question_option_id, question_option.id, label: false %>
+            <span class="control-indicator"></span>
+            <%= question_option.value %>
+          </label>
+        <% end %>
+        <%= f.submit t("legislation.questions.show.change_answer"), class: "button" %>
+      <% end %>
     <% end %>
-
   <% else %>
-
     <form class="controls-stacked disabled">
       <% question.question_options.each do |question_option| %>
         <label class="control radio <%= "is-active" if answer.persisted? && (answer.legislation_question_option_id == question_option.id) %>">
@@ -24,7 +34,6 @@
       <% end %>
     </form>
 
+    <%= render "participation_not_allowed" %>
   <% end %>
-
-  <%= render "participation_not_allowed" %>
 <% end %>
