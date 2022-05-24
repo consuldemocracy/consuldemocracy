@@ -62,7 +62,7 @@ only screen and (min-resolution: 240dpi) {
       width: 390px;
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1200px) {
       max-width: 100%;
 
       h1 {
@@ -177,7 +177,7 @@ only screen and (min-resolution: 240dpi) {
     .column-content {
       padding: 50px 40px;
 
-      @media screen and (max-width: 992px) {
+      @media screen and (max-width: 1200px) {
         padding: 50px 0;
       }
 
@@ -217,7 +217,7 @@ only screen and (min-resolution: 240dpi) {
 }
 
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
   .welcome-columns .welcome-column {
     flex-grow: 0;
     flex-basis: 100%;
@@ -361,7 +361,7 @@ span:hover::before {
   border: 0;
   margin-top: 1rem;
 
-  @include breakpoint(large up) {
+  @media (min-width: 992px) {
     ul {
       display: flex;
       align-content: space-around;
@@ -1109,6 +1109,7 @@ span:hover::before {
   h2 {
     font-size: 36px;
     font-weight: 700;
+    margin-bottom: 1rem;
   }
 
   label {
@@ -1207,6 +1208,7 @@ span:hover::before {
       cursor: pointer;
       border-bottom: none;
       margin: 1rem 0;
+      padding-right: 50px;
 
       .custom-icon.arrow-small-right {
         width: 39px;

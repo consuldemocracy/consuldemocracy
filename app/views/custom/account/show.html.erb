@@ -8,11 +8,11 @@
           <%= render "shared/errors", resource: @account %>
 
           <div class="row">
-            <div class="small-12 medium-7 column">
+            <div class="small-12 large-7 column">
 
               <h2><%= t("account.show.personal") %></h2>
 
-              <div class="small-12 medium-10">
+              <div class="small-12 large-10">
                 <% if @account.organization? %>
                   <%= f.fields_for :organization do |fo| %>
                     <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length %>
@@ -88,7 +88,7 @@
               <%= f.submit t("account.show.save_changes_submit"), class: "button margin-top default-button" %>
             </div>
 
-            <div class="user-permissions small-12 medium-5 column">
+            <div class="user-permissions small-12 large-5 column">
               <h2><%= t("account.show.user_permission_title") %></h2>
 
               <p><%= t("account.show.user_permission_info") %></p>

@@ -49,7 +49,16 @@ h6 {
 }
 
 h1 {
-  line-height: 1em;
+  font-size: 44px;
+  line-height: 54px;
+  font-weight: 700;
+}
+
+@media (max-width: 1200px) {
+  h1 {
+    font-size: 36px;
+    line-height: 42px;
+  }
 }
 
 h2 {
@@ -102,17 +111,23 @@ a {
 
 @media (min-width: 992px) {
   .main-indented-content {
-    max-width: 960px;
+    max-width: 880px;
   }
 }
 
 @media (min-width: 1200px) {
   .main-indented-content {
-    max-width: 1140px;
+    max-width: 1040px;
   }
 }
 
 @media screen and (min-width: 1400px) {
+  .main-indented-content {
+    max-width: 1200px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
   .main-indented-content {
     max-width: 1320px;
   }
