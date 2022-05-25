@@ -21,6 +21,8 @@ module Types
     field :starts_at, GraphQL::Types::ISO8601DateTime, null: true
     field :ends_at, GraphQL::Types::ISO8601DateTime, null: true
 
+    field :results_ready_to_be_shown, Boolean, null: true
+
     def token
       unless user = context[:current_resource]
         raise GraphQL::ExecutionError, "token requires authentication"
@@ -34,6 +36,14 @@ module Types
         .includes(:question_answers)
         .includes(:answers)
         .includes(:comments)
+    end
+
+    def results_ready_to_be_shown
+      user = context[:current_resouce]
+
+      # Same logic as in Abilities::Common and Abilities::Everyone
+      (user.present? && poll.related&.author&.id == user.id) ||
+        ::Poll.expired.results_enabled.not_budget.ids.include?(object.id)
     end
   end
 end
