@@ -3,8 +3,8 @@
     <option value="<%= budget_investments_url(@budget, request.query_parameters.except(:status_id)) %>">
       <%= t("custom.headings.select_status").mb_chars.upcase %>
     </option>
-    <% @statuses.order('id ASC').each do |status| %>
-      <%= selected = ' selected' if params[:status_id].to_i == status.id %>
+    <% @statuses.order("id ASC").each do |status| %>
+      <%= selected = " selected" if params[:status_id].to_i == status.id %>
       <option value="<%= budget_investments_url(@budget, { status_id: status.id }) %>" <%= selected %>>
         <%= status.name %>
       </option>

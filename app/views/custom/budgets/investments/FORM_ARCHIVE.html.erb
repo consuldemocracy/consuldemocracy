@@ -1,26 +1,26 @@
 <%= form_for(@investment, url: form_url, method: :post, html: { multipart: true }) do |f| %>
     <%= render "shared/errors", resource: @investment %>
-  
+
     <div class="row">
-  
+
       <div class="small-12 column">
         <%= f.text_field :title, maxlength: Budget::Investment.title_max_length %>
       </div>
       <div id="js-suggest"></div>
-  
+
       <%= f.invisible_captcha :subtitle %>
-  
+
       <!--
       <div class="ckeditor small-12 column">
         <%= f.cktext_area :description, maxlength: Budget::Investment.description_max_length, ckeditor: { language: I18n.locale }, value: t("custom.meta.guiding_questions") %>
       </div>
       -->
-      <% @budget.questions.each_with_index do |key, index|%>
+      <% @budget.questions.each_with_index do |key, index| %>
       <div class="ckeditor small-12 column">
         <%= f.text_area :answers, value: @investment.answers[index], multiple: true, maxlength: Budget::Investment.description_max_length, rows: 5, label: key %>
       </div>
       <% end %>
-  
+
     <script>
     function setInputFilter(inputFilter) {
       ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function(event) {
@@ -48,25 +48,25 @@
       return /^\d*$/.test(value);
       })
     </script>
-  
+
   <div class="small-12 column">
     <%= f.label :price, t("budgets.investments.show.price") + "&nbsp;(€)" %>
     <p>Oceno stroškov najdete <a target="_blank" href="https://sodelujinglasuj.si/system/documents/attachments/000/000/005/original/875e010af22e23a1d8a10c4efd3a6fc6785a2c82.pdf">tukaj</a>.</p>
     <%= f.text_field :price, id: "price", label: false %>
   </div>
-  
+
       <% if feature?(:allow_images) %>
         <div class="images small-12 column">
           <%= render "images/nested_image", imageable: @investment, f: f %>
         </div>
       <% end %>
-  
+
       <% if feature?(:allow_attached_documents) %>
         <div class="documents small-12 column">
           <%= render "documents/nested_documents", documentable: @investment, f: f %>
         </div>
       <% end %>
-  
+
       <% if feature?(:map) %>
         <div class="small-12 column">
           <%= render "map_locations/form_fields",
@@ -79,16 +79,16 @@
                      i18n_namespace: "budgets.investments" %>
         </div>
       <% end %>
-  
+
       <div class="small-12 column hide">
         <%= f.label :location, t("budgets.investments.form.location") %>
         <%= f.text_field :location, label: false %>
       </div>
-  
+
       <div class="small-12 column hide">
         <%= f.text_field :organization_name %>
       </div>
-  
+
       <% if @budget.headings.count > 1 %>
         <div class="small-12 medium-8 column">
           <%= f.select :heading_id, budget_heading_select_options(@budget), { include_blank: true }, class: "on-form" %>
@@ -98,9 +98,9 @@
           <%= f.text_field :heading_id, value: @budget.headings.first.id %>
         </div>
       <% end %>
-  
+
       <% unless current_user.manager? %>
-  
+
         <div class="small-12 column hide">
           <%= f.label :terms_of_service do %>
             <%= f.check_box :terms_of_service, title: t("custom.form.accept_terms_title"), label: false, checked: true %>
@@ -110,15 +110,15 @@
             </span>
           <% end %>
         </div>
-  
+
       <% end %>
-  
+
       <div class="actions small-12 end column">
         <%= button_tag(type: "submit", class: "action-button large w485") do %>
           <%= t("management.budgets.create_new_investment") %>&nbsp;<i class="custom-icon arrow-small-right"></i>
         <% end %>
       </div>
-  
+
       <div class="small-12 column" style="width: 100%; height: 180px"></div>
     </div>
   <% end %>

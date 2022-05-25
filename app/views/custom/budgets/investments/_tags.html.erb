@@ -1,8 +1,8 @@
 <div class="districts-container">
   <select onchange="if (this.value) location = this.value;" class="on-view">
     <option value="<%= budget_investments_url(@budget, request.query_parameters.except(:tag_name)) %>"><%= t("custom.headings.select_tag").mb_chars.upcase %></option>
-    <% @budget.categories.order('id ASC').each do |tag| %>
-    <%= selected = ' selected' if params[:tag_name] == tag.name %>
+    <% @budget.categories.order("id ASC").each do |tag| %>
+    <%= selected = " selected" if params[:tag_name] == tag.name %>
     <option value="<%= budget_investments_url(@budget, { tag_name: tag.name }) %>" <%= selected %>><%= tag.name %></option>
     <% end %>
   </select>

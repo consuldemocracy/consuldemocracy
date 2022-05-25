@@ -1,6 +1,6 @@
 .budget-investment-form {
   padding-bottom: 2rem;
-  
+
   label {
     margin-bottom: 0.125rem;
   }
@@ -24,10 +24,11 @@
     margin-bottom: 0;
   }
 
-  .button.upload-image, .button.upload-document {
+  .button.upload-image,
+  .button.upload-document {
     margin-bottom: 1rem;
   }
-  
+
   .location-map-remove-marker,
   .delete {
     color: $black;
@@ -42,9 +43,6 @@
   margin-bottom: 12px;
   cursor: pointer;
   font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 
   input[type="checkbox"] {
@@ -83,25 +81,23 @@
   }
 
   // check mark
-  .checkbox:after {
+  .checkbox::after {
     content: "";
     position: absolute;
     display: none;
   }
 
-  input[type="checkbox"]:checked ~ .checkbox:after {
+  input[type="checkbox"]:checked ~ .checkbox::after {
     display: block;
   }
-  
-  .checkbox:after {
+
+  .checkbox::after {
     left: 10px;
     top: 10px;
     width: 5px;
     height: 10px;
     border: solid $white;
     border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
     transform: rotate(45deg);
   }
 }

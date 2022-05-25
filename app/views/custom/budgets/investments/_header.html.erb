@@ -33,18 +33,18 @@
         <% if current_budget.phase == 'accepting' %>
           <% if current_user %>
             <% if current_user&.level_two_or_three_verified? %>
-              <%= link_to new_budget_investment_path(budget_id: @budget.id), class: 'action-button large w485' do %>
+              <%= link_to new_budget_investment_path(budget_id: @budget.id), class: "action-button large w485" do %>
                 <%= t("budgets.investments.index.sidebar.create") %>&nbsp;<i class="custom-icon arrow-small-right"></i>
               <% end %>
             <% else %>
               <div class="callout warning">
-                <%= link_to verification_path, class: 'action-button large w485' do %>
+                <%= link_to verification_path, class: "action-button large w485" do %>
                   <%= t("budgets.investments.index.sidebar.create") %>&nbsp;<i class="custom-icon arrow-small-right"></i>
                 <% end %>
               </div>
             <% end %>
           <% else %>
-            <%= link_to new_budget_investment_path(budget_id: @budget.id), class: 'action-button large w485' do %>
+            <%= link_to new_budget_investment_path(budget_id: @budget.id), class: "action-button large w485" do %>
               <%= t("budgets.investments.index.sidebar.create") %>&nbsp;<i class="custom-icon arrow-small-right"></i>
             <% end %>
           <% end %>
@@ -86,7 +86,7 @@
                       </h2>
                     <% end %>
                     <div id="progress_bar" class="no-margin-top clearfix">
-                      <%= render 'budgets/ballot/progress_bar' %>
+                      <%= render "budgets/ballot/progress_bar" %>
                     </div>
                   </div>
                 <% else %>

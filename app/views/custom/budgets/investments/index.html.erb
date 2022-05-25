@@ -51,14 +51,13 @@
                     <% end %>
                   </h2>
                   <div class="filters">
-                  <%# TODO: uredit selecte, if-e nad njimi itd. %>
-                    <% if @budget.headings.count > 1 && @investments.count > 0%>
+                    <% if @budget.headings.count > 1 && @investments.count > 0 %>
                       <%= render "budgets/investments/districts" %>
                     <% end %>
-                    <% if @budget.categories.count > 1 && @investments.count > 0%>
+                    <% if @budget.categories.count > 1 && @investments.count > 0 %>
                       <%= render "budgets/investments/tags" %>
                     <% end %>
-                    <% if @budget.headings.count > 1 && @investments.count > 0%>
+                    <% if @budget.headings.count > 1 && @investments.count > 0 %>
                       <%= render "budgets/investments/statuses" %>
                     <% end %>
                   </div>
@@ -140,7 +139,7 @@
             <% else %>
               <div class="row budget-investments">
                 <div>
-                  <% if @budget.headings.count > 1 && @investments.count > 0%>
+                  <% if @budget.headings.count > 1 && @investments.count > 0 %>
                     <%= render "budgets/investments/districts" %>
                   <% end %>
                 </div>
@@ -168,7 +167,7 @@
 
             <!-- TABS -->
             <% if phase.kind == :accepting %>
-  
+
               <div class="landings">
                 <div class=" bggray">
                   <div class="main-indented-content">
@@ -180,7 +179,7 @@
                     </div>
                   </div>
                 </div>
-  
+
                 <div class="">
                   <div class="main-indented-content ">
                     <div class="row qs">
@@ -192,19 +191,19 @@
                       </div>
                       <div class="small-12 medium-6 column">
                         <div class="medium-centered">
-                          <%= image_tag(image_path_for('phases/proracun.png')) %>
+                          <%= image_tag(image_path_for("phases/proracun.png")) %>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-  
+
                 <div class=" bggray">
                   <div class="main-indented-content ">
                     <div class="row qs">
                       <div class="small-12 medium-6 column hide-for-small-only">
                         <div class=" medium-centered">
-                          <%= image_tag(image_path_for('phases/predlog.png')) %>
+                          <%= image_tag(image_path_for("phases/predlog.png")) %>
                         </div>
                       </div>
                       <div class="small-12 medium-6 column ">
@@ -216,7 +215,7 @@
                     </div>
                   </div>
                 </div>
-  
+
                 <div class="">
                   <div class="main-indented-content ">
                     <div class="row qs">
@@ -228,18 +227,18 @@
                       </div>
                       <div class="small-12 medium-6 column ">
                         <div class="medium-centered">
-                          <%= image_tag(image_path_for('phases/ilustracije-sprite-notranje-glasuj.png')) %>
+                          <%= image_tag(image_path_for("phases/ilustracije-sprite-notranje-glasuj.png")) %>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-  
+
             <% end %>
-  
+
             <% if phase.kind == :balloting %>
-  
+
               <div class="landings">
                 <div class=" bggray">
                   <div class="main-indented-content">
@@ -251,7 +250,7 @@
                     </div>
                   </div>
                 </div>
-  
+
                 <div class="">
                   <div class="main-indented-content ">
                     <div class="row qs">
@@ -263,19 +262,19 @@
                       </div>
                       <div class="small-12 medium-6 column">
                         <div class="medium-centered">
-                          <%= image_tag(image_path_for('phases/kaj.png')) %>
+                          <%= image_tag(image_path_for("phases/kaj.png")) %>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-  
+
                 <div class=" bggray">
                   <div class="main-indented-content ">
                     <div class="row qs">
                       <div class="small-12 medium-6 column hide-for-small-only">
                         <div class=" medium-centered">
-                          <%= image_tag(image_path_for('phases/kdo.png')) %>
+                          <%= image_tag(image_path_for("phases/kdo.png")) %>
                         </div>
                       </div>
                       <div class="small-12 medium-6 column ">
@@ -286,13 +285,13 @@
                       </div>
                       <div class="small-12 medium-6 column show-for-small-only">
                         <div class=" medium-centered">
-                          <%= image_tag(image_path_for('phases/kdo.png')) %>
+                          <%= image_tag(image_path_for("phases/kdo.png")) %>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-  
+
                 <div class="">
                   <div class="main-indented-content ">
                     <div class="row qs">
@@ -304,16 +303,16 @@
                       </div>
                       <div class="small-12 medium-6 column ">
                         <div class="medium-centered">
-                          <%= image_tag(image_path_for('phases/kako.png')) %>
+                          <%= image_tag(image_path_for("phases/kako.png")) %>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-  
+
             <% end %>
-  
+
             <% if phase.kind == :finished %>
               <div class="landings">
                 <div class=" bggray">
@@ -326,7 +325,7 @@
                     </div>
                   </div>
                 </div>
-  
+
                 <div class="">
                   <div class="main-indented-content ">
                     <div class="row qs">
@@ -338,19 +337,19 @@
                       </div>
                       <div class="small-12 medium-6 column ">
                         <div class="medium-centered">
-                          <%= image_tag(image_path_for('phases/kajpazdaj.png')) %>
+                          <%= image_tag(image_path_for("phases/kajpazdaj.png")) %>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-  
+
                 <div class=" bggray">
                   <div class="main-indented-content ">
                     <div class="row qs">
                       <div class="small-12 medium-6 column hide-for-small-only">
                         <div class=" medium-centered">
-                          <%= image_tag(image_path_for('phases/participacija.png')) %>
+                          <%= image_tag(image_path_for("phases/participacija.png")) %>
                         </div>
                       </div>
                       <div class="small-12 medium-6 column ">
@@ -361,13 +360,13 @@
                       </div>
                       <div class="small-12 show-for-small-only">
                         <div class="medium-centered">
-                          <%= image_tag(image_path_for('phases/participacija.png')) %>
+                          <%= image_tag(image_path_for("phases/participacija.png")) %>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-  
+
                 <div class="">
                   <div class="main-indented-content ">
                     <div class="row qs">
@@ -379,7 +378,7 @@
                       </div>
                       <div class="small-12 medium-6 column">
                         <div class="medium-centered">
-                          <%= image_tag(image_path_for('phases/potem.png')) %>
+                          <%= image_tag(image_path_for("phases/potem.png")) %>
                         </div>
                       </div>
                     </div>
@@ -387,7 +386,7 @@
                 </div>
               </div>
             <% end %>
-  
+
           <% end %>
         </div>
     <% end %>

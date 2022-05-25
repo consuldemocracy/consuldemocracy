@@ -312,6 +312,7 @@ span:hover::before {
     a:focus {
       outline: none;
     }
+
     .tabs-title {
       padding: 10px 0;
       margin-right: 0;
@@ -320,17 +321,18 @@ span:hover::before {
 
     .tabs-title > a {
       padding: 0;
+
       &:hover {
         @include brand-text;
         background: none;
         text-decoration: none;
       }
-  
+
       &[aria-selected="true"],
       &.is-active {
         @include brand-text;  
         &::after {
-          border-bottom: none;
+          border-bottom: 0;
         }
       }
     }
@@ -347,7 +349,7 @@ span:hover::before {
   }
 
   .tabs {
-    margin: 0 0 0;
+    margin: 0;
   }
 
   .tabs h2,
@@ -446,13 +448,18 @@ span:hover::before {
 
 .tabs-panel {
   padding: 0;
+
   .expanded {
     margin: 1rem 0;
+
     .phase-description {
-      h1, h2 {
+
+      h1,
+      h2 {
         margin-bottom: 1rem;
         line-height: 1.25;
       }
+
       .phase-enrichment.accepting {
         margin-top: 3rem;
 
@@ -465,7 +472,6 @@ span:hover::before {
       }
     }
   }
-  
 }
 
 .budget-investments {
@@ -622,7 +628,7 @@ span:hover::before {
     }
 
     .social-box-row {
-      &>div {
+      >div {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -637,14 +643,15 @@ span:hover::before {
       }
 
       .social-box-row {
-        display: flex; 
-        align-items: center; 
+        display: flex;
+        align-items: center;
         justify-content: center;
 
-        &>div {
+        >div {
           display: flex;
           flex-direction: row;
           align-items: center;
+
           &:last-child {
             flex-direction: column;
             input {
@@ -811,13 +818,16 @@ span:hover::before {
 
     .info-row {
       margin-bottom: 2rem;
+
       .info {
         margin-bottom: 1rem;
         display: flex;
         align-items: center;
       }
+
       .tags {
         margin-left: 0;
+
         a {
           margin-bottom: 0;
         }
@@ -1082,7 +1092,6 @@ span:hover::before {
     font-weight: 800;
     margin-bottom: 0.9375rem;
     letter-spacing: 0.375rem;
-    
 
     .datum {
       color: $black;
@@ -1126,15 +1135,15 @@ span:hover::before {
   .brderundr {
     border-bottom: 1px solid $theme-color;
     padding: 0 15px 0 0;
-    margin: 0 0 0 0;
+    margin: 0;
     position: relative;
 
     .title {
-      color: #000000;
+      color: $black;
       font-size: 24px;
       font-weight: 500;
       cursor: pointer;
-      border-bottom: none;
+      border-bottom: 0;
       margin: 1rem 0;
       padding-right: 50px;
 

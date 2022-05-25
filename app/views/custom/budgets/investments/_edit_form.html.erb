@@ -12,7 +12,7 @@
         <%= f.text_field :heading_id, value: @budget.headings.first.id %>
       </div>
     <% end %>
-    
+
     <div>
       <%= f.text_field :title, maxlength: Budget::Investment.title_max_length %>
     </div>
@@ -104,4 +104,3 @@
   <%= f.submit t("budgets.investments.edit.submit"), class: "action-button" %>
 
 <% end %>
-  

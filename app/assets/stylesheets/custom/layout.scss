@@ -145,7 +145,7 @@ a {
 
   h3 {
     display: flex;
-    align-items: center; 
+    align-items: center;
 
     .datum {
       margin-left: 2rem;
@@ -254,10 +254,10 @@ input[type="submit"].action-button {
   &:active {
     color: $white;
   }
-  
+
   &:focus:hover {
     color: $black;
-  }  
+  }
 
   &.small {
     background: $mandys-pink;
@@ -269,6 +269,7 @@ input[type="submit"].action-button {
 
   &.large {
     padding: 8px;
+
     @media screen and (min-width: 768px) {
       width: 350px;
     }
@@ -365,12 +366,13 @@ input[type="submit"].action-button {
 }
 
 .pagination .current,
-.pagination li.current:last-child, .pagination li.current:first-child {
+.pagination li.current:last-child,
+.pagination li.current:first-child {
   background-color: $black;
   color: $white;
   border-radius: 15px;
   font-weight: 600;
-  padding: 0 0 2px 0;
+  padding: 0 0 2px;
   height: 30px;
   width: 30px;
   display: inline-flex;
@@ -485,12 +487,12 @@ header {
       &.logo-right {
         display: flex;
         flex-direction: column;
-    
+
         span {
           font-size: 14px;
           line-height: 28px;
         }
-    
+
         img {
           margin-right: 0;
           height: 50px;
@@ -513,7 +515,7 @@ header {
       margin-bottom: 0;
       font-size: 12px;
       line-height: 16px;
-      color: #1A365D;
+      color: #1a365d;
     }
   }
 
@@ -558,7 +560,7 @@ header {
 @media (max-width: 576px) {
   .footer {
     .footer-logos {
-      &>div {
+      >div {
         flex-direction: column;
 
         a {
@@ -574,7 +576,8 @@ header {
   }
 }
 
-body > header, .wrapper > header {
+body > header,
+.wrapper > header {
   padding-left: 0;
   padding-right: 0;
 }
@@ -585,6 +588,7 @@ body > header, .wrapper > header {
 
   h1 {
     margin-bottom: 1rem;
+
     &::after {
       display: none;
     }

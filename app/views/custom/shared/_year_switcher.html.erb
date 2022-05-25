@@ -2,7 +2,7 @@
   <form class="locale-form">
     <select class="js-location-changer locale-switcher inline-block" name="locale-switcher" id="year-switcher">
       <optgroup label="Proračun za leto:">
-      <option value="<%= href %>"><%=t("custom.switcher.select")%></option>
+      <option value="<%= href %>"><%= t("custom.switcher.select") %></option>
       <% budgets.each do |budget| %>
         <option value="<%= href %>budgets/<%= budget.id %>/investments"><%= budget.name %></option>
       <% end %>
