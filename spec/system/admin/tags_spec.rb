@@ -105,4 +105,15 @@ describe "Admin tags", :admin do
 
     expect(page).to have_content "Soon a category"
   end
+
+  scenario "Create shows validation error when tag name is empty" do
+    visit admin_tags_path
+
+    within("form.new_tag") do
+      fill_in "tag_name", with: ""
+      click_button "Create topic"
+    end
+
+    expect(page).to have_content "can't be blank"
+  end
 end
