@@ -12,6 +12,7 @@ module Types
     field :geozone_id, Integer, null: true
     field :hot_score, Integer, null: true
     field :id, ID, null: false
+    field :image, Types::ImageType, null: true
     field :map_location, Types::MapLocationType, null: true
     field :proposal_notifications, Types::ProposalNotificationType.connection_type, null: true
     field :public_author, Types::UserType, null: true
@@ -28,12 +29,6 @@ module Types
 
     # Requires authentication
     field :current_user_has_voted, Boolean, null: true
-
-    IMAGE_SIZES.each do |size|
-      field_name = "image_url_#{size}".to_sym
-      field field_name, String, null: true
-      define_method(field_name) { absolute_url(object.image_url(size)) }
-    end
 
     def tags
       object.tags.public_for_api

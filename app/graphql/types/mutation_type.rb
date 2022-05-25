@@ -7,6 +7,8 @@ module Types
     field :cast_vote_on_comment, mutation: Mutations::CastVoteOnComment, authenticate: true
     field :cast_vote_on_debate, mutation: Mutations::CastVoteOnDebate, authenticate: true
     field :delete_comment, mutation: Mutations::DeleteComment, authenticate: true
+    field :delete_document, mutation: Mutations::DeleteDocument, authenticate: true
+    field :delete_image, mutation: Mutations::DeleteImage, authenticate: true
     field :provide_answer_to_poll_question, mutation: Mutations::ProvideAnswerToPollQuestion, authenticate: true
     field :publish_proposal, mutation: Mutations::PublishProposal, authenticate: true
     field :start_debate, mutation: Mutations::StartDebate, authenticate: true
