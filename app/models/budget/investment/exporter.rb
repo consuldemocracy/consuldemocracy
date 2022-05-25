@@ -41,7 +41,7 @@ class Budget::Investment::Exporter
       [
         investment.id.to_s,
         investment.title,
-        investment.description,
+        investment.description.squish,
         admin(investment),
         investment.assigned_valuators || "-",
         investment.assigned_valuation_groups || "-",
