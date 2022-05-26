@@ -46,6 +46,7 @@ only screen and (min-resolution: 240dpi) {
   border-radius: 20px;
   border: 2px solid $white;
   cursor: pointer;
+  pointer-events: none;
 }
 
 .new-tab-icon {

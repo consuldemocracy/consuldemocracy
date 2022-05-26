@@ -37,7 +37,7 @@
               <div class="row budget-investments">
                 <div class="column">
                   <%= render "budgets/investments/map" %>
-                  <h2 class="phase-title">
+                  <h2 class="phase-title bold">
                     <% if phase.kind == :finished %>
                       <%= t("custom.titles.finished_proposals") %> (<%= @investments_count %>)
                     <% elsif phase.kind == :balloting %>
@@ -65,7 +65,7 @@
                     <div class="row small-up-1 medium-up-1 large-up-3">
                       <% @all_investments.each_with_index do |investment, index| %>
                         <% investment_class = "column column-block budget-investment-holder" %>
-                        <% investment_class = investment_class + " last-in-row" if (index != 0 && (index + 1) % 4 == 0) %>
+                        <% investment_class = investment_class %>
                         <div class="<%= investment_class %>">
                           <%= render partial: "/budgets/investments/investment",
                                     locals: {
@@ -80,7 +80,7 @@
                     <div class="row small-up-1 medium-up-1 large-up-3">
                       <% @investments.each_with_index do |investment, index| %>
                         <% investment_class = "column column-block budget-investment-holder" %>
-                        <% investment_class = investment_class + " last-in-row" if (index != 0 && (index + 1) % 4 == 0) %>
+                        <% investment_class = investment_class %>
                         <div class="<%= investment_class %>">
                           <%= render partial: "/budgets/investments/investment",
                                     locals: {
@@ -116,7 +116,7 @@
                   <div class="row small-up-1 medium-up-1 large-up-3">
                     <% @denied_investments.each_with_index do |investment, index| %>
                       <% investment_class = "column column-block budget-investment-holder" %>
-                      <% investment_class = investment_class + " last-in-row" if (index != 0 && (index + 1) % 4 == 0) %>
+                      <% investment_class = investment_class %>
                       <div class="<%= investment_class %>">
                         <%= render partial: "/budgets/investments/investment",
                                   locals: {

@@ -27,16 +27,11 @@ body {
 }
 
 body {
-  font-size: $base-font-size;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.25rem;
   position: relative;
 }
-
-// @media screen and (max-width: 800px) {
-//   // TODO: double check
-//   body {
-//     font-size: 12px;
-//   }
-// }
 
 h1,
 h2,
@@ -46,33 +41,42 @@ h5,
 h6 {
   clear: both;
   font-weight: 700;
+  line-height: 1.25;
 }
 
 h1 {
   font-size: 44px;
-  line-height: 54px;
   font-weight: 700;
 }
 
 @media (max-width: 1200px) {
   h1 {
     font-size: 36px;
-    line-height: 42px;
   }
 }
 
 h2 {
-  font-weight: 600;
+  font-size: 30px;
+  font-weight: 500;
+
+  &.bold {
+    font-size: 36px;
+    font-weight: 700;
+  }
 }
 
 h3 {
   line-height: rem-calc(24);
 }
 
+.subtitle {
+  font-size: 24px;
+}
+
 p {
-  font-size: $base-font-size;
+  font-size: 0.9rem;
   font-weight: 400;
-  line-height: $line-height;
+  line-height: 1.25rem;
 }
 
 a {
@@ -142,16 +146,6 @@ a {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
   }
-
-  h3 {
-    display: flex;
-    align-items: center;
-
-    .datum {
-      margin-left: 2rem;
-      margin-top: 0;
-    }
-  }
 }
 
 @media (min-width: 992px) {
@@ -205,8 +199,11 @@ a {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
   font-size: 16px;
   font-weight: 600;
-  padding: 4px 16px 6px;
+  padding: 4px 16px;
   // margin-left: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     background-color: transparent;
@@ -221,7 +218,9 @@ input[type="submit"].action-button {
   border-radius: 50px;
   border: 3px solid $theme-color;
   font-size: 24px;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 700;
   text-transform: uppercase;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.25);
@@ -232,7 +231,9 @@ input[type="submit"].action-button {
   .custom-icon.arrow-large-right {
     background-image: image-url("arrow-white.svg");
     margin-left: 5px;
-    background-size: 38px 35px;
+    background-size: 36px 36px;
+    width: 28px;
+    height: 24px;
   }
 
   &:hover {
@@ -268,7 +269,7 @@ input[type="submit"].action-button {
   }
 
   &.large {
-    padding: 8px;
+    padding: 12px;
 
     @media screen and (min-width: 768px) {
       width: 350px;
@@ -289,7 +290,8 @@ input[type="submit"].action-button {
 
 .large-description,
 .large-description p {
-  font-size: $large-font-size;
+  font-size: 24px;
+  line-height: 1.25;
 }
 
 .ordering {
@@ -619,5 +621,195 @@ body > header,
 .submenu {
   .is-active {
     color: $black;
+  }
+}
+
+// Components styles
+
+.tabs {
+  .tabs-title {
+    h3 {
+      display: block;
+    }
+
+    &.is-active a {
+      color: $black;
+    }
+  }
+}
+
+.custom-phases-nav {
+  left: 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 4px 43px -10px rgba(0, 0, 0, 0.21);
+  border: 0;
+  // margin-top: 1rem;
+
+  .main-indented-content {
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  .tabs {
+    border: 0;
+    margin: 0;
+    width: 100%;
+
+    .active-phase {
+      > a {
+        color: $black;
+      }
+    }
+
+    a:focus {
+      outline: none;
+    }
+  }
+
+  .tabs li {
+    float: none;
+    margin-bottom: 5px;
+    margin-right: 0;
+    padding: 10px 0;
+    border-bottom: 0;
+    border-right: 0;
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
+
+    > a {
+      padding: 0;
+
+      &:hover {
+        @include brand-text;
+        background: none;
+        text-decoration: none;
+      }
+
+      &[aria-selected="true"],
+      &.is-active {
+        @include brand-text;  
+        &::after {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+  
+  .tabs h2,
+  .tabs h3 {
+    // color: $white;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 7px 10px;
+  }
+
+  .tabs span {
+    color: $black;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 17px;
+    padding-top: 3px;
+    display: block;
+  }
+
+  .tabs a h3 i {
+    height: 20px;
+    display: block;
+    line-height: 20px;
+    float: left;
+  }
+
+  .tabs .active-phase a h3 {
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 7px 15px;
+  }
+
+  .custom-phases-nav .tabs .active-phase a h3 i {
+    background: url(/assets/custom/check.svg) left no-repeat;
+    width: 30px;
+  }
+
+
+  .active-phase a h3 i {
+    background: image-url("check.svg") left no-repeat;
+    width: 30px;
+  }
+
+  .active-phase a h3:hover i {
+    background: image-url("check-black.svg") left no-repeat;
+  }
+
+  .tabs .is-active a span {
+    font-weight: 500;
+  }
+
+  .tabs .tabs-title > a:hover {
+    background: none;
+    border-bottom: 0;
+  }
+
+  @media (min-width: 576px) {
+    .tabs {
+      width: 100%;
+      border-left: 1px solid $black;
+      display: flex;
+      align-content: space-around;
+
+      li {
+        flex: auto;
+        border-right: 1px solid $black;
+        border-bottom: 0;
+        margin-bottom: initial;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.tabs-panel {
+  padding: 0;
+
+  .expanded {
+    margin: 40px 0 20px;
+
+    .phase-description {
+
+      h1,
+      h2 {
+        margin-bottom: 1rem;
+        line-height: 1.25;
+      }
+
+      .phase-enrichment-holder {
+        display: flex;
+        justify-content: center;
+
+        @media (min-width: 768px) {
+          justify-content: start;
+        }
+      }
+
+      .phase-enrichment.accepting {
+        margin-top: 3rem;
+
+        @media (min-width: 768px) {
+          height: 300px;
+          width: 350px;
+        }
+
+        @media (min-width: 992px) {
+          margin-right: 2rem;
+          margin-left: auto;
+        }
+      }
+    }
   }
 }

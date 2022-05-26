@@ -1,43 +1,26 @@
-.budget-investment-form {
-  padding-bottom: 2rem;
+// COMMON FORM STYLES
 
-  label {
-    margin-bottom: 0.125rem;
-  }
-
-  input[type="text"] {
-    background-color: $white;
-    height: unset;
-  }
-
-  input[type="submit"] {
-    padding: 12px 24px 14px;
+form {
+  .required-fields {
+    select,
+    input[type='text'] {
+      margin-bottom: 30px;
+    }
   }
 
   select {
-    min-height: unset;
-    width: 100%;
+    height: 3rem;
+    box-shadow: inset 0 1px 2px rgba(34, 34, 34, 0.1);
   }
 
-  .required-fields {
-    background: none;
-    margin-bottom: 0;
-  }
-
-  .button.upload-image,
-  .button.upload-document {
-    margin-bottom: 1rem;
-  }
-
-  .location-map-remove-marker,
-  .delete {
-    color: $black;
-    border-bottom: 1px solid $black;
+  textarea,
+  fieldset {
+    margin-bottom: 30px;
   }
 }
 
-.checkbox-label {
-  display: block;
+form .checkbox-label {
+  display: flex;
   position: relative;
   padding-left: 35px;
   margin-bottom: 12px;
@@ -57,7 +40,7 @@
   .checkbox::before {
     content: "";
     position: absolute;
-    top: 4px;
+    // top: 4px;
     left: 0;
     height: 25px;
     width: 25px;
@@ -93,11 +76,62 @@
 
   .checkbox::after {
     left: 10px;
-    top: 10px;
+    top: 6px;
     width: 5px;
     height: 10px;
     border: solid $white;
     border-width: 0 3px 3px 0;
     transform: rotate(45deg);
+  }
+}
+
+// form styles for specific pages
+
+.new_comment {
+  .checkbox-label {
+    font-size: 16px;
+  }
+}
+
+.budget-investment-form {
+  padding-bottom: 2rem;
+
+  label {
+    margin-bottom: 0.125rem;
+  }
+
+  input[type="text"] {
+    background-color: $white;
+  }
+
+  input[type="submit"] {
+    padding: 12px 24px 14px;
+  }
+
+  select {
+    min-height: unset;
+    width: 100%;
+  }
+
+  .required-fields {
+    background: none;
+    margin-bottom: 0;
+  }
+
+  .button.upload-image,
+  .button.upload-document {
+    margin-bottom: 1rem;
+  }
+
+  .location-map-remove-marker,
+  .delete {
+    color: $black;
+    border-bottom: 1px solid $black;
+  }
+}
+
+.filters {
+  select {
+    font-size: 0.75rem;
   }
 }

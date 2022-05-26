@@ -267,213 +267,6 @@ span:hover::before {
 
 
 // **************** PREDLOGI ********************
-.tabs {
-  .tabs-title {
-    h3 {
-      display: block;
-    }
-
-    &.is-active a {
-      color: $black;
-    }
-  }
-}
-
-.custom-phases-nav {
-  left: 0;
-  position: relative;
-  text-align: center;
-  width: 100%;
-  box-shadow: 0 4px 43px -10px rgba(0, 0, 0, 0.21);
-  border: 0;
-  margin-top: 1rem;
-
-  @media (min-width: 992px) {
-    ul {
-      display: flex;
-      align-content: space-around;
-    }
-
-    li {
-      flex: auto;
-    }
-  }
-
-  .tabs {
-    border: 0;
-
-    .active-phase {
-      // TODO: make it shiny
-      > a {
-        color: $black;
-      }
-    }
-
-    a:focus {
-      outline: none;
-    }
-
-    .tabs-title {
-      padding: 10px 0;
-      margin-right: 0;
-      float: none;
-    }
-
-    .tabs-title > a {
-      padding: 0;
-
-      &:hover {
-        @include brand-text;
-        background: none;
-        text-decoration: none;
-      }
-
-      &[aria-selected="true"],
-      &.is-active {
-        @include brand-text;  
-        &::after {
-          border-bottom: 0;
-        }
-      }
-    }
-  }
-
-  .custom-phases-nav .tabs .active-phase a h3 i {
-    background: url(/assets/custom/check.svg) left no-repeat;
-    width: 30px;
-  }
-
-  .main-indented-content {
-    margin: 0 auto;
-    padding: 10px;
-  }
-
-  .tabs {
-    margin: 0;
-  }
-
-  .tabs h2,
-  .tabs h3 {
-    // color: $white;
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 7px 10px;
-  }
-
-  .tabs span {
-    color: $black;
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 17px;
-    padding-top: 3px;
-    display: block;
-  }
-
-  .tabs a h3 i {
-    height: 20px;
-    display: block;
-    line-height: 20px;
-    float: left;
-  }
-
-  .tabs .active-phase a h3 {
-    font-weight: 700;
-    text-transform: uppercase;
-    display: inline-block;
-    padding: 7px 15px;
-  }
-
-  .active-phase a h3 i {
-    background: image-url("check.svg") left no-repeat;
-    width: 30px;
-  }
-
-  .tabs .active-phase a h3:hover {
-    i {
-      background: image-url("check-black.svg") left no-repeat;
-    }
-  }
-
-  .tabs .is-active a span {
-    font-weight: 500;
-  }
-
-  .tabs .tabs-title > a:hover {
-    background: none;
-    border-bottom: 0;
-  }
-
-  .tabs {
-    border-left: 0;
-    width: 100%;
-
-    ul {
-      display: flex;
-      align-content: space-between;
-    }
-
-    li {
-      border-right: 0;
-      padding-bottom: 10px;
-      margin-bottom: 5px;
-      border-bottom: 0;
-
-      &:last-of-type {
-        border-bottom: 0;
-      }
-    }
-  }
-}
-
-@media (min-width: 576px) {
-  .custom-phases-nav .tabs {
-    width: 100%;
-    border-left: 1px solid $black;
-
-    ul {
-      display: flex;
-      align-content: space-between;
-    }
-
-    li {
-      border-right: 1px solid $black;
-      border-bottom: 0;
-      padding-bottom: initial;
-      margin-bottom: initial;
-    }
-  }
-}
-
-.tabs-panel {
-  padding: 0;
-
-  .expanded {
-    margin: 1rem 0;
-
-    .phase-description {
-
-      h1,
-      h2 {
-        margin-bottom: 1rem;
-        line-height: 1.25;
-      }
-
-      .phase-enrichment.accepting {
-        margin-top: 3rem;
-
-        @media (min-width: 768px) {
-          height: 300px;
-          width: 350px;
-          margin-right: 2rem;
-          margin-left: auto;
-        }
-      }
-    }
-  }
-}
-
 .budget-investments {
   .phase-title {
     margin: rem-calc(30) 0 rem-calc(20);
@@ -481,17 +274,26 @@ span:hover::before {
 
   .budget-investment-holder {
     .budget-investment {
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.21);
-
       .panel {
         border-bottom: 0 !important;
-        min-height: rem-calc(192);
+        height: 25rem;
         padding: 0 rem-calc(10);
+
+        @media (min-width: 576px) {
+          height: 21rem;
+        }
+        @media (min-width: 992px) {
+          height: 26rem;
+        }
+        @media (min-width: 1200px) {
+          height: 24rem;
+        }
+        @media (min-width: 1600px) {
+          height: 22rem;
+        }
       }
     }
-  }
 
-  .budget-investment-holder {
     .image-holder {
       text-align: center;
 
@@ -777,7 +579,8 @@ span:hover::before {
   }
 
   p {
-    font-size: $large-font-size;
+    // font-size: $large-font-size;
+    margin-bottom: 30px;
   }
 
   figcaption {
@@ -1050,7 +853,8 @@ span:hover::before {
   }
 
   label {
-    font-size: 18px;
+    font-size: 0.9rem;
+    line-height: 1.25rem;
     margin-bottom: 6px;
   }
 
@@ -1092,6 +896,7 @@ span:hover::before {
     font-weight: 800;
     margin-bottom: 0.9375rem;
     letter-spacing: 0.375rem;
+    display: block;
 
     .datum {
       color: $black;
@@ -1099,11 +904,11 @@ span:hover::before {
       font-weight: 600;
       border-radius: 30px;
       display: inline-block;
-      padding: 4px 16px 6px;
+      padding: 2px 16px;
       letter-spacing: initial;
-      background-color: #f2f2f2;
-      // border: 3px solid #222;
-      // margin-top: 1rem;
+      white-space: nowrap;
+      border: 2px solid $black;
+      margin-top: 1rem;
     }
   }
 
@@ -1114,7 +919,8 @@ span:hover::before {
   }
 
   .nbr5 {
-    color: #f2f2f2;
+    color: $theme-color;
+    opacity: 0.2;
     font-size: 14rem;
     font-weight: 900;
     line-height: 10rem;
@@ -1168,12 +974,6 @@ span:hover::before {
         // display: inline-block;
       }
     }
-
-    p {
-      font-size: 1.125rem;
-      font-weight: 400;
-      line-height: 1.5;
-    }
   }
 
   .technical-issues {
@@ -1206,10 +1006,10 @@ span:hover::before {
 
 .privacy {
   background-color: #f2f2f2;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 80px;
+  padding-bottom: 80px;
 
-  p {
-    font-size: 1rem;
+  h3:not(:first-of-type) {
+    margin-top: 60px;
   }
 }
