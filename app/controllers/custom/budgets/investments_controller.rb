@@ -30,6 +30,7 @@ module Budgets
         filtered_investments = investments.where(id: investment_ids)
       end
 
+      @filtered_investments_count = filtered_investments.count
       @investments = filtered_investments.page(params[:page]).per(PER_PAGE).for_render
       @statuses = Milestone::Status.all
 
