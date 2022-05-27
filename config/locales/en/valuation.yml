@@ -30,8 +30,13 @@ en:
         table_id: ID
         table_title: Title
         table_heading_name: Heading name
+        table_feasibility: "Feasibility"
         table_actions: Actions
         no_investments: "There are no investment projects."
+        feasibility:
+          feasible: "Feasible"
+          unfeasible: "Unfeasible"
+          undecided: "Undecided"
       show:
         back: Back
         title: Investment project

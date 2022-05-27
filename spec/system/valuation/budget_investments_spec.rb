@@ -50,6 +50,27 @@ describe "Valuation budget investments" do
       expect(page).not_to have_content(investment2.title)
     end
 
+    scenario "Index show budget investment valuation status" do
+      investment1 = create(:budget_investment, :visible_to_valuators, :feasible,
+                            budget: budget, valuators: [valuator])
+      investment2 = create(:budget_investment, :visible_to_valuators, :unfeasible, :finished,
+                            budget: budget, valuators: [valuator])
+
+      visit valuation_budget_budget_investments_path(budget)
+
+      expect(page).to have_content("Feasibility")
+
+      within("#budget_investment_#{investment1.id}") do
+        expect(page).to have_content("Feasible")
+      end
+
+      click_link "Valuation finished"
+
+      within("#budget_investment_#{investment2.id}") do
+        expect(page).to have_content("Unfeasible")
+      end
+    end
+
     scenario "Index orders budget investments by votes" do
       investment10  = create(:budget_investment, :visible_to_valuators, budget: budget,
                                                                         valuators: [valuator],

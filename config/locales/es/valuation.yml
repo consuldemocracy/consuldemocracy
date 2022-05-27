@@ -30,8 +30,13 @@ es:
         table_id: ID
         table_title: Título
         table_heading_name: Nombre de la partida
+        table_feasibility: "Viabilidad"
         table_actions: Acciones
         no_investments: "No hay proyectos de gasto."
+        feasibility:
+          feasible: "Viable"
+          unfeasible: "Inviable"
+          undecided: "Sin decidir"
       show:
         back: Volver
         title: Proyecto de gasto
