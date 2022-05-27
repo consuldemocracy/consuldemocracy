@@ -17,6 +17,11 @@ sl-SI:
       signed_in: "Uspešno si se vpisal_a."
       signed_out: "Uspešno si se izpisal_a."
       already_signed_out: "Uspešno si se izpisal_a."
+  images:
+    form:
+      title: Slika
+  documents:
+      note: "Naložiš lahko največ %{max_documents_allowed} dokumente naslednjih vrst: %{accepted_content_types}, velikih največ %{max_file_size} MB na datoteko."
   custom:
     admin:
       budget_phases:
