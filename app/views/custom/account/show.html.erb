@@ -25,9 +25,9 @@
                     <%= f.text_field :username, maxlength: User.username_max_length %>
                   </div>
                   <%# TODO: add address to form %>
-                  <%# <div class="hide"> %>
-                    <%# <%= f.text_field :username, maxlength: User.username_max_length %>
-                  <%# </div> %>
+                  <div class="">
+                    <%= f.text_field :address, label: 'Naslov' %>
+                  </div>
                 <% end %>
               </div>
 
