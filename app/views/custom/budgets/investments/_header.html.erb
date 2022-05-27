@@ -1,13 +1,13 @@
 <div class="main-indented-content">
   <div class="expanded">
 
-    <% if current_budget.phase == 'reviewing' %>
+    <% if @budget.phase == 'reviewing' %>
       <div class="row">
         <div class="callout warning">
           <%= t("custom.messages.finished_accepting") %>
         </div>
       </div>
-    <% elsif current_budget.phase == 'reviewing_ballots' %>
+    <% elsif @budget.phase == 'reviewing_ballots' %>
       <div class="row">
         <div class="callout warning">
           <%= t("custom.messages.finished_voting") %>
@@ -18,19 +18,19 @@
     <div class="row phase-description">
       <div class="large-6 column">
         <h1>
-          <%= t("custom.headings.#{current_budget.phase}") %>
+          <%= t("custom.headings.#{@budget.phase}") %>
         </h1>
         <h2>
-          <% if current_budget.current_phase.summary %>
-            <%= strip_tags(current_budget.current_phase.summary.html_safe) %>
+          <% if @budget.current_phase.summary %>
+            <%= strip_tags(@budget.current_phase.summary.html_safe) %>
           <% end %>
         </h2>
         <p class="large-description">
-          <% if current_budget.current_phase.summary %>
-            <%= current_budget.current_phase.description.html_safe %>
+          <% if @budget.current_phase.summary %>
+            <%= @budget.current_phase.description.html_safe %>
           <% end %>
         </p>
-        <% if current_budget.phase == 'accepting' %>
+        <% if @budget.phase == 'accepting' %>
           <% if current_user %>
             <% if current_user&.level_two_or_three_verified? %>
               <%= link_to new_budget_investment_path(budget_id: @budget.id), class: "action-button large w485" do %>
@@ -52,7 +52,7 @@
       </div>
       <div class="large-6 column">
         <div class="phase-enrichment-holder">
-          <div class="phase-enrichment <%= current_budget.phase %>"></div>
+          <div class="phase-enrichment <%= @budget.phase %>"></div>
         </div>
       </div>
     </div>
@@ -65,7 +65,7 @@
   </div>
 </div>
 
-<% if @heading && current_budget.phase == 'balloting' %>
+<% if @heading && @budget.phase == 'balloting' %>
   <div class="bgfaf" id="bgfaf">
     <div class="main-indented-content">
       <section class="no-margin-top margin-bottom">

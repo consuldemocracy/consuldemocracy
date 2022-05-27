@@ -11,7 +11,7 @@
               data-deep-link-smudge="true"
               data-deep-link-smudge-delay="500"
               data-tabs>
-            <% current_budget.custom_phases(current_user, create_url = method(:budget_investments_url)).each do |_, phase| %>
+            <% @budget.custom_phases(current_user, create_url = method(:budget_investments_url)).each do |_, phase| %>
               <% if phase.enabled %>
                 <li class="tabs-title <%= "is-active active-phase" if phase.url %>">
                   <%= link_to "#tab-#{phase.kind}" do %>
@@ -27,7 +27,7 @@
     </div>
   </div>
 
-  <% current_budget.custom_phases(current_user, create_url = method(:budget_investments_url)).each do |_, phase| %>
+  <% @budget.custom_phases(current_user, create_url = method(:budget_investments_url)).each do |_, phase| %>
     <% if phase.enabled %>
       <div class="tabs-panel <%= "is-active" if phase.url %>" id="tab-<%= phase.kind %>">
         <% if phase.url %>
