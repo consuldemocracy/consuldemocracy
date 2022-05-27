@@ -382,6 +382,21 @@ input[type="submit"].action-button {
   justify-content: center;
 }
 
+.auth-form {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  a {
+    font-weight: 500;
+  }
+
+  input.action-button[type="submit"] {
+    padding: 10px 0;
+    margin: 15px 0;
+    width: 100%;
+  }
+}
+
 
 // 02. Header
 // ----------

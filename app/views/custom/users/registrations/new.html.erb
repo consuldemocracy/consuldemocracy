@@ -1,5 +1,5 @@
 <% provide :title do %><%= t("devise_views.users.registrations.new.title") %><% end %>
-<h2><%= t("devise_views.users.registrations.new.title") %></h2>
+<h1><%= t("devise_views.users.registrations.new.title") %></h1>
 
 <%= render "devise/omniauth_form", action: "sign_up" %>
 
@@ -19,6 +19,9 @@
 
       <%= f.invisible_captcha :address %>
 
+      <%# TODO: dodaj autocomplete polje za naslov %>
+      <%# <%= f.text_field :naslov %>
+
       <%= f.email_field :email %>
 
       <%= f.password_field :password, autocomplete: "off" %>
@@ -37,7 +40,7 @@
                 ) %>
 
       <div class="small-12 medium-6 small-centered">
-        <%= f.submit t("devise_views.users.registrations.new.submit"), class: "button expanded" %>
+        <%= f.submit t("devise_views.users.registrations.new.submit"), class: "action-button" %>
       </div>
     </div>
   </div>
