@@ -12,6 +12,11 @@ sl-SI:
     new: se-enkrat
     password: geslo
     edit: uredi
+  devise:
+    sessions:
+      signed_in: "Uspešno si se vpisal_a."
+      signed_out: "Uspešno si se izpisal_a."
+      already_signed_out: "Uspešno si se izpisal_a."
   custom:
     admin:
       budget_phases:
