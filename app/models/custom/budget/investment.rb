@@ -16,7 +16,7 @@ class Budget
 
     def has_all_answers?
       filtered_answers = answers.select { |answer| answer.text.strip != "" }
-      filtered_answers.length == 5
+      filtered_answers.length == self.budget.questions.count
     end
 
     # this is quite possibly useless and/or redundant
