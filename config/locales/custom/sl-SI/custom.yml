@@ -17,6 +17,15 @@ sl-SI:
       signed_in: "Uspešno si se vpisal_a."
       signed_out: "Uspešno si se izpisal_a."
       already_signed_out: "Uspešno si se izpisal_a."
+    failure:
+      already_authenticated: "Si že vpisan_a."
+      invalid: "Neveljavni %{authentication_keys} ali geslo."
+      not_found_in_database: "Neveljavni %{authentication_keys} ali geslo."
+  devise_views:
+    shared:
+      links:
+        new_confirmation: Nisi prejel_a navodil, kako aktivirati svoj račun?
+        new_unlock: Nisi prejel_a navodil, kako odkleniti svoj račun?
   images:
     form:
       title: Slika
