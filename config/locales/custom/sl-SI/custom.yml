@@ -227,6 +227,9 @@ sl-SI:
       price: "Polje vrednost projekta ne sme biti prazen."
   activerecord:
     attributes:
+      user:
+        login: "e-naslov ali uporabniško ime"
+        login_form: "E-naslov ali uporabniško ime"
       budget/investment:
         q1: "Zakaj ta predlog? Katero temo, težavo oz. izziv projektni predlog naslavlja?"
         q2: "Kaj konkretno predlagate? Kaj je bistvo vašega predloga? Kaj se bo zgodilo?"

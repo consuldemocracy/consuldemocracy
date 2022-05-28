@@ -112,28 +112,30 @@
                 )
               %>
                 <div class="row budget-investments">
-                  <h2 class="phase-title"><%= t("custom.titles.denied_proposals") %> (<%= @denied_investments_count %>)</h2>
-                  <div class="row small-up-1 medium-up-1 large-up-3 investments-list">
-                    <% @denied_investments.each_with_index do |investment, index| %>
-                      <% investment_class = "column column-block budget-investment-holder" %>
-                      <% investment_class = investment_class %>
-                      <div class="<%= investment_class %>">
-                        <%= render partial: "/budgets/investments/investment",
-                                  locals: {
-                                    investment: investment,
-                                    investment_ids: @investment_ids,
-                                    investment_votes: @investment_votes,
-                                    ballot: @ballot
-                                  } %>
-                      </div>
-                    <% end %>
+                  <div class="column">
+                    <h2 class="phase-title bold"><%= t("custom.titles.denied_proposals") %> (<%= @denied_investments_count %>)</h2>
+
+                    <div class="row small-up-1 medium-up-1 large-up-3 investments-list">
+                      <% @denied_investments.each_with_index do |investment, index| %>
+                        <% investment_class = "column column-block budget-investment-holder" %>
+                        <% investment_class = investment_class %>
+                        <div class="<%= investment_class %>">
+                          <%= render partial: "/budgets/investments/investment",
+                                    locals: {
+                                      investment: investment,
+                                      investment_ids: @investment_ids,
+                                      investment_votes: @investment_votes,
+                                      ballot: @ballot
+                                    } %>
+                        </div>
+                      <% end %>
+                    </div>
+                    <div class="row">
+                      <%= paginate @denied_investments %>
+                    </div>
                   </div>
-
                 </div>
-
-                <div class="row">
-                  <%= paginate @denied_investments %>
-                </div>
+                
               <% end %>
 
             <% else %>

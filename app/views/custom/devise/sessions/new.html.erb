@@ -11,7 +11,7 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="row">
     <div class="small-12 column">
-      <%= f.text_field :login, autofocus: true %>
+      <%= f.text_field :login, autofocus: true, label: t("activerecord.attributes.user.login_form") %>
     </div>
   </div>
 
