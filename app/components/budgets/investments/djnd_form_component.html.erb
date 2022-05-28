@@ -46,6 +46,8 @@
       </p>
     <% end %>
 
+    <%= f.number_field :price %>
+
     <% if feature?(:allow_images) %>
       <div class="images">
         <%= render "images/nested_image", f: f %>
