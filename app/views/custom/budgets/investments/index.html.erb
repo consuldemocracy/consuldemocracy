@@ -62,7 +62,7 @@
                     <% end %>
                   </div>
                   <% if @budget.phase == "valuating" %>
-                    <div class="row small-up-1 medium-up-1 large-up-3">
+                    <div class="row small-up-1 medium-up-1 large-up-3 investments-list">
                       <% @all_investments.each_with_index do |investment, index| %>
                         <% investment_class = "column column-block budget-investment-holder" %>
                         <% investment_class = investment_class %>
@@ -77,7 +77,7 @@
                       <% end %>
                     </div>
                   <% else %>
-                    <div class="row small-up-1 medium-up-1 large-up-3">
+                    <div class="row small-up-1 medium-up-1 large-up-3 investments-list">
                       <% @investments.each_with_index do |investment, index| %>
                         <% investment_class = "column column-block budget-investment-holder" %>
                         <% investment_class = investment_class %>
@@ -113,7 +113,7 @@
               %>
                 <div class="row budget-investments">
                   <h2 class="phase-title"><%= t("custom.titles.denied_proposals") %> (<%= @denied_investments_count %>)</h2>
-                  <div class="row small-up-1 medium-up-1 large-up-3">
+                  <div class="row small-up-1 medium-up-1 large-up-3 investments-list">
                     <% @denied_investments.each_with_index do |investment, index| %>
                       <% investment_class = "column column-block budget-investment-holder" %>
                       <% investment_class = investment_class %>

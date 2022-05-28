@@ -273,24 +273,14 @@ span:hover::before {
   }
 
   .budget-investment-holder {
-    .budget-investment {
-      .panel {
-        border-bottom: 0 !important;
-        height: 25rem;
-        padding: 0 rem-calc(10);
+    display: flex;
 
-        @media (min-width: 576px) {
-          height: 21rem;
-        }
-        @media (min-width: 992px) {
-          height: 26rem;
-        }
-        @media (min-width: 1200px) {
-          height: 24rem;
-        }
-        @media (min-width: 1600px) {
-          height: 22rem;
-        }
+    .budget-investment {
+      display: flex;
+      flex-grow: 1;
+
+      .panel {
+        width: 100%;
       }
     }
 
