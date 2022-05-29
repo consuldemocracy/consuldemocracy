@@ -134,7 +134,7 @@ sl-SI:
     direct_message: Zasebno sporočilo
     error: Napaka
     errors: Napaki/e
-    not_saved: "preprečila/i/e, da bi shranili %{resource}. <br>Prosimo, poskrbi, da si odgovoril_a na vseh pet vsebinskih vprašanj:"
+    not_saved: "preprečila/i/e, da bi shranili %{resource}."
     policy: Politiko zasebnosti
     proposal: Predlog
     proposal_notification: "Obvestilo"
