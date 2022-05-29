@@ -107,7 +107,7 @@ module Budgets
 
       def investment_params
         attributes = [:heading_id, :tag_list, :organization_name, :location,
-                      :terms_of_service, :related_sdg_list,
+                      :terms_of_service, :related_sdg_list, :price,
                       answers_attributes: [:id, :text, :budget_id, :investment_id, :budget_question_id],
                       image_attributes: image_attributes,
                       documents_attributes: document_attributes,
