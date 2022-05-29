@@ -80,6 +80,7 @@ sl-SI:
             - 
     titles:
       help: "Kaj je %{org}? - državljanska participacija"
+      conditions: Pogoji uporabe
     verify:
       info: "Za preverjanje svojega računa vnesi svoje podatke o dostopu:"
       info_code: "Zdaj vnesi kodo, ki si jo prejel/-a po e-pošti:"
