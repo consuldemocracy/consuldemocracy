@@ -1,0 +1,151 @@
+<style>
+.tab-milestones .progress-bars {
+  margin-bottom: 48px;
+  margin-top: 24px;
+}
+
+.tab-milestones .progress-bars h5 {
+  font-size: 24px;
+}
+
+.tab-milestones .progress-bars .progress {
+  background: #fef0e2;
+  border-radius: 24px;
+  position: relative;
+}
+
+.tab-milestones .progress-bars .progress-meter {
+  background: #fea230;
+  border-radius: 24px;
+}
+
+.tab-milestones .progress-bars .progress-meter-text {
+  color: #000;
+  right: 12px;
+  text-align: right;
+  transform: translate(0%, -50%);
+}
+
+.tab-milestones .progress-bars .milestone-progress .row {
+  margin-bottom: 12px;
+}
+
+.tab-milestones .timeline li {
+  margin-left: 1rem;
+  position: relative;
+}
+
+@media (min-width: 576px) {
+  .tab-milestones .timeline li {
+    margin: 0;
+  }
+}
+
+.tab-milestones .timeline li::before {
+  background: #000;
+  border-radius: 20px;
+  content: "";
+  height: 20px;
+  position: absolute;
+  top: 5px;
+  transform: translateX(-50%);
+  width: 20px;
+  z-index: 2;
+}
+
+.tab-milestones .timeline li::after {
+  background: #e6e6e6;
+  bottom: 100%;
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 5px;
+  width: 1px;
+  z-index: 1;
+}
+
+.tab-milestones .timeline li .milestone-content {
+  padding: 4px 12px;
+  position: relative;
+}
+
+.tab-milestones .timeline li .milestone-content h3 {
+  margin-bottom: 0;
+}
+
+.tab-milestones .timeline li .milestone-content .milestone-date {
+  color: #515151;
+  font-size: 80%;
+}
+
+.tab-milestones .timeline li:nth-child(odd) .milestone-content {
+  text-align: right;
+}
+
+.tab-milestones .timeline li:nth-child(even) .milestone-content {
+  left: 15px;
+}
+
+.milestone-status {
+  background: #000;
+  border-radius: 24px;
+  color: #fff;
+  display: inline-block;
+  margin-top: 4px;
+  padding: 6px 12px;
+}
+
+</style>
+
+<li>
+  <div class="milestone-content">
+
+    <% if milestone.publication_date.present? %>
+      <span class="milestone-date">
+        <strong>
+          <%= t("milestones.show.publication_date",
+                publication_date: l(milestone.publication_date.to_date)) %>
+        </strong>
+      </span>
+    <% end %>
+
+    <% if milestone.status.present? %>
+      <p>
+	<strong></strong>
+        <br>
+        <span class="milestone-status">
+          <%= milestone.status.name %>
+        </span>
+      </p>
+    <% end %>
+
+    <%= image_tag(image_absolute_url(milestone.image, :large), { id: "image_#{milestone.id}", alt: milestone.image.title, class: "margin" }) if milestone.image.present? %>
+
+    <p>
+      <%= sanitize_and_auto_link milestone.description %>
+    </p>
+
+    <% if milestone.documents.present? %>
+      <div class="documents">
+        <div class="document-link text-left small">
+          <p>
+            <strong><%= t("shared.documentation") %></strong>
+          </p>
+
+          <% milestone.documents.each do |document| %>
+              <%= link_to document.title,
+                      document.attachment.url,
+                      target: "_blank",
+                      rel: "nofollow" %><br>
+              <small>
+                <%= document.humanized_content_type %>&nbsp;|&nbsp;
+                <%= number_to_human_size(document.attachment_file_size, precision: 2) %>
+              </small>
+              <br>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</li>

@@ -245,3 +245,10 @@ sl-SI:
           copy: "Skopiraj povezavo!"
         edit:
           submit: "Shrani spremembe"
+  milestones:
+    index:
+      no_milestones: Nima definiranih mejnikov
+      progress: Napredek
+    show:
+      publication_date: "Datum objave %{publication_date}"
+      status_changed: Status spremenjen v
