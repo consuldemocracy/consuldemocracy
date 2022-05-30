@@ -243,6 +243,7 @@ sl-SI:
           share_title: "Povej naprej!"
           share: "Deli!"
           copy: "Skopiraj povezavo!"
+          price: "Vrednost projekta"
         edit:
           submit: "Shrani spremembe"
   milestones:
