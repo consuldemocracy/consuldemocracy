@@ -115,6 +115,8 @@ sl-SI:
       votes:
         already_supported: "Ta naložbeni projekt si že podprl. Deli ga z drugimi!"
         support: "Glasuj za predlog!"
+      share:
+        message: "Sodeluj in glasuj! Participativni proračun Občine Medvode: %{title}"
     investments_list:
       investment:
         price: "Cena"
