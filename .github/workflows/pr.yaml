@@ -17,3 +17,20 @@ jobs:
           destination_branch: "maribor-k8s"
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_title: "Pulling ${{ github.ref }} into maribor-k8s"
+
+      -
+        name: pull-request-k3s
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: "medvode-k8s"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_title: "Pulling ${{ github.ref }} into medvode-k8s"
+
+      -
+        name: pull-request-k3s
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: "koper-k8s"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_title: "Pulling ${{ github.ref }} into koper-k8s"
+
