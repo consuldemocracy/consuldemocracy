@@ -803,6 +803,10 @@ body > header,
         line-height: 1.25;
       }
 
+      span a {
+        text-decoration: underline !important;
+      }
+
       .phase-enrichment-holder {
         display: flex;
         justify-content: center;

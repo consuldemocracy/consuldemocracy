@@ -398,14 +398,15 @@ span:hover::before {
     }
   }
 
+  h2 {
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
   .social-box {
     // background: #fff !important;
     padding: 2rem 0;
-
-    h2 {
-      margin-bottom: 1.5rem;
-      font-weight: 700;
-    }
 
     h5 {
       font-weight: 500;
