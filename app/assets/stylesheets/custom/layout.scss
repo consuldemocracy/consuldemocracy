@@ -386,7 +386,11 @@ input[type="submit"].action-button {
   padding-top: 3rem;
   padding-bottom: 3rem;
 
-  a {
+  .default-button {
+    font-size: $base-font-size;
+  }
+
+  a:not(.default-button) {
     font-weight: 500;
   }
 

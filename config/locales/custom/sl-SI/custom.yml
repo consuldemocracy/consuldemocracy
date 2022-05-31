@@ -26,6 +26,14 @@ sl-SI:
       links:
         new_confirmation: Nisi prejel_a navodil, kako aktivirati svoj račun?
         new_unlock: Nisi prejel_a navodil, kako odkleniti svoj račun?
+    users:
+      registrations:
+        success:
+          back_to_index: Velja, vrni me na začetno stran
+          instructions_1: Prosimo, <b>preveri svojo e-pošto</b> – poslali smo ti <b>povezavo za potrditev tvojega računa</b>.
+          instructions_2: Ko potrdiš račun, lahko začneš sodelovati.
+          thank_you: Hvala za registracijo na spletnem portalu. Zdaj moraš <b>potrditi svoj e-naslov</b>.
+          title: Registracija
   images:
     form:
       title: Slika
@@ -237,6 +245,12 @@ sl-SI:
         q4: "Naselje izvajanja projekta. Kje konkretno naj bi se projekt izvajal? Navedite parcelne številke. Če gre za parcele v zasebni lasti, priložite soglasje lastnika."
         q5: "Časovni okvir: kdaj naj bi se projekt izvedel? Navedite v primeru, da je iz objektivnih razlogov ta podatek pomemben, sicer se bo projekt izvedel enkrat v časovnem obdobju med 1. 7. 2021 in 31. 12. 2022."
         q6: "Ali ste pridobili tudi dodatne vire financiranja projekta (npr. krajevna ali vaška skupnost, sponzorstva, ipd.), od koga in koliko? V primeru, da predlagatelj pridobi zunanje vire financiranja, skupna vrednost projekta lahko presega finančne omejitve. Prosimo, da v prilogo priložite izjave sofinancerjev. Opišite tudi morebitna dela, ki ste jih vi ali kdo drug v sklopu tega projekta pripravljeni izvesti brezplačno."
+    errors:
+      models:
+        user:
+          attributes:
+            document_number:
+              invalid: EMŠO ni pravilne oblike.
   budgets:
       investments:
         show:
