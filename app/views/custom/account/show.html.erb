@@ -42,11 +42,11 @@
               <% if @account.email.present? %>
                 <h2 class="margin-top"><%= t("account.show.notifications") %></h2>
 
-                <div>
+                <div class="hide">
                   <%= f.check_box :email_on_comment %>
                 </div>
 
-                <div>
+                <div class="hide">
                   <%= f.check_box :email_on_comment_reply %>
                 </div>
 
@@ -54,11 +54,11 @@
                   <%= f.check_box :newsletter %>
                 </div>
 
-                <div>
+                <div class="hide">
                   <%= f.check_box :email_digest %>
                 </div>
 
-                <div>
+                <div class="hide">
                   <%= f.check_box :email_on_direct_message %>
                 </div>
               <% end %>
@@ -94,9 +94,9 @@
               <p><%= t("account.show.user_permission_info") %></p>
 
               <ul>
-                <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_debates") %></li>
+                <li class="hide"><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_debates") %></li>
                 <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_proposal") %></li>
-                <li>
+                <li class="hide">
                   <% if current_user.level_two_or_three_verified? %>
                     <span class="icon-check"></span>
                   <% else %>
@@ -114,7 +114,7 @@
                 </li>
               </ul>
 
-              <p>
+              <p class="hide">
                 <span><%= t("account.show.user_permission_verify_info") %></span>
               </p>
               <p>
