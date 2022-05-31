@@ -12,6 +12,40 @@ sl-SI:
     new: se-enkrat
     password: geslo
     edit: uredi
+  account:
+    show:
+      change_credentials_link: Spremeni elektronski naslov ali geslo
+  activerecord:
+    attributes:
+      user:
+        login: "e-naslov ali uporabniško ime"
+        login_form: "E-naslov ali uporabniško ime"
+      budget/investment:
+        q1: "Zakaj ta predlog? Katero temo, težavo oz. izziv projektni predlog naslavlja?"
+        q2: "Kaj konkretno predlagate? Kaj je bistvo vašega predloga? Kaj se bo zgodilo?"
+        q3: "Kako naj bi se projekt izvedel? Katere aktivnosti bi bilo treba izpeljati?"
+        q4: "Naselje izvajanja projekta. Kje konkretno naj bi se projekt izvajal? Navedite parcelne številke. Če gre za parcele v zasebni lasti, priložite soglasje lastnika."
+        q5: "Časovni okvir: kdaj naj bi se projekt izvedel? Navedite v primeru, da je iz objektivnih razlogov ta podatek pomemben, sicer se bo projekt izvedel enkrat v časovnem obdobju med 1. 7. 2021 in 31. 12. 2022."
+        q6: "Ali ste pridobili tudi dodatne vire financiranja projekta (npr. krajevna ali vaška skupnost, sponzorstva, ipd.), od koga in koliko? V primeru, da predlagatelj pridobi zunanje vire financiranja, skupna vrednost projekta lahko presega finančne omejitve. Prosimo, da v prilogo priložite izjave sofinancerjev. Opišite tudi morebitna dela, ki ste jih vi ali kdo drug v sklopu tega projekta pripravljeni izvesti brezplačno."
+    errors:
+      models:
+        user:
+          attributes:
+            document_number:
+              invalid: EMŠO ni pravilne oblike.
+  budgets:
+    investments:
+      show:
+        share_title: "Povej naprej!"
+        share: "Deli!"
+        copy: "Skopiraj povezavo!"
+        price: "Vrednost projekta"
+      edit:
+        submit: "Shrani spremembe"
+  comments:
+    actions:
+      confirm_delete: Potrdi izbris
+      delete: Izbriši
   devise:
     sessions:
       signed_in: "Uspešno si se vpisal_a."
@@ -21,6 +55,8 @@ sl-SI:
       already_authenticated: "Si že vpisan_a."
       invalid: "Neveljavni %{authentication_keys} ali geslo."
       not_found_in_database: "Neveljavni %{authentication_keys} ali geslo."
+    registrations:
+      signed_up_but_unconfirmed: "Poslali smo ti e-pošto za potrditev registracije. Prosimo, klikni na povezavo v elektronskem sporočilu, da aktiviraš svoj račun."
   devise_views:
     shared:
       links:
@@ -34,11 +70,22 @@ sl-SI:
           instructions_2: Ko potrdiš račun, lahko začneš sodelovati.
           thank_you: Hvala za registracijo na spletnem portalu. Zdaj moraš <b>potrditi svoj e-naslov</b>.
           title: Registracija
+  documents:
+    max_documents_allowed_reached: Dosegel_a si največje dovoljeno število dokumentov! <strong>Preden lahko naložiš novega, moraš vsaj enega izbrisati.</strong>
+    buttons:
+      destroy_document: Odstrani dokument
+    form:
+      note: "Naložiš lahko največ %{max_documents_allowed} dokumente naslednjih vrst: %{accepted_content_types}, velikih največ %{max_file_size} MB na datoteko."
   images:
     form:
       title: Slika
-  documents:
-      note: "Naložiš lahko največ %{max_documents_allowed} dokumente naslednjih vrst: %{accepted_content_types}, velikih največ %{max_file_size} MB na datoteko."
+  milestones:
+    index:
+      no_milestones: Nima definiranih mejnikov
+      progress: Napredek
+    show:
+      publication_date: "Datum objave %{publication_date}"
+      status_changed: Status spremenjen v
   custom:
     admin:
       budget_phases:
@@ -233,37 +280,3 @@ sl-SI:
     errors:
       data_consent: "Za nadaljevanje se moraš strinjati z obdelavo podatkov."
       price: "Polje vrednost projekta ne sme biti prazen."
-  activerecord:
-    attributes:
-      user:
-        login: "e-naslov ali uporabniško ime"
-        login_form: "E-naslov ali uporabniško ime"
-      budget/investment:
-        q1: "Zakaj ta predlog? Katero temo, težavo oz. izziv projektni predlog naslavlja?"
-        q2: "Kaj konkretno predlagate? Kaj je bistvo vašega predloga? Kaj se bo zgodilo?"
-        q3: "Kako naj bi se projekt izvedel? Katere aktivnosti bi bilo treba izpeljati?"
-        q4: "Naselje izvajanja projekta. Kje konkretno naj bi se projekt izvajal? Navedite parcelne številke. Če gre za parcele v zasebni lasti, priložite soglasje lastnika."
-        q5: "Časovni okvir: kdaj naj bi se projekt izvedel? Navedite v primeru, da je iz objektivnih razlogov ta podatek pomemben, sicer se bo projekt izvedel enkrat v časovnem obdobju med 1. 7. 2021 in 31. 12. 2022."
-        q6: "Ali ste pridobili tudi dodatne vire financiranja projekta (npr. krajevna ali vaška skupnost, sponzorstva, ipd.), od koga in koliko? V primeru, da predlagatelj pridobi zunanje vire financiranja, skupna vrednost projekta lahko presega finančne omejitve. Prosimo, da v prilogo priložite izjave sofinancerjev. Opišite tudi morebitna dela, ki ste jih vi ali kdo drug v sklopu tega projekta pripravljeni izvesti brezplačno."
-    errors:
-      models:
-        user:
-          attributes:
-            document_number:
-              invalid: EMŠO ni pravilne oblike.
-  budgets:
-      investments:
-        show:
-          share_title: "Povej naprej!"
-          share: "Deli!"
-          copy: "Skopiraj povezavo!"
-          price: "Vrednost projekta"
-        edit:
-          submit: "Shrani spremembe"
-  milestones:
-    index:
-      no_milestones: Nima definiranih mejnikov
-      progress: Napredek
-    show:
-      publication_date: "Datum objave %{publication_date}"
-      status_changed: Status spremenjen v
