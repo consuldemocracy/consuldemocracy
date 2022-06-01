@@ -1,7 +1,7 @@
 it:
   account:
     show:
-      change_credentials_link: Modificare le mie credenziali
+      change_credentials_link: Modifica le mie credenziali
       erase_account_link: Cancella il mio account
       finish_verification: Completa la verifica
       notifications: Notifiche
@@ -11,14 +11,9 @@ it:
       save_changes_submit: Salvare le modifiche
       recommendations: Raccomandazioni
       title: Il mio account
-      user_permission_debates: Partecipare ai dibattiti
       user_permission_info: Con il tuo account puoi...
-      user_permission_proposal: Creare nuove proposte
-      user_permission_support_proposal: Appoggiare le proposte
       user_permission_title: Partecipazione
       user_permission_verify: Per eseguire poter eseguire tutte le azioni occorre verificare la tua utenza.
-      user_permission_verify_info: "* Solo per gli utenti in Anagrafe."
-      user_permission_votes: Partecipare al voto finale
       verified_account: Utenza verificata
       verify_my_account: Verificare la mia utenza
   application:
@@ -892,14 +887,9 @@ it:
       go_to_index: Vedi proposte e dibattiti
       start_using_consul: Vai alla pagina dell'indice
       title: Partecipa
-      user_permission_debates: Partecipare ai dibattiti
       user_permission_info: Con il tuo account puoi...
-      user_permission_proposal: Creare nuove proposte
-      user_permission_support_proposal: Appoggiare le proposte
       user_permission_verify: "Per eseguire poter eseguire tutte le azioni occorre verificare la tua utenza."
-      user_permission_verify_info: "* Solo per gli utenti in Anagrafe."
       user_permission_verify_my_account: Verifica il tuo account
-      user_permission_votes: Partecipare al voto finale
   invisible_captcha:
     sentence_for_humans: "Se sei una persona fisica, ignora questo campo"
     timestamp_error_message: "Siamo spiacenti, troppo veloce! Si prega di inviare nuovamente."
