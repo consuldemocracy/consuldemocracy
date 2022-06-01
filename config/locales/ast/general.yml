@@ -8,14 +8,9 @@ ast:
       personal: Datos personales
       save_changes_submit: Guardar Cambeos
       title: La mio cuenta
-      user_permission_debates: Participar n'alderiques
       user_permission_info: Cola to cuenta yá pues...
-      user_permission_proposal: Crear nueves propuestes
-      user_permission_support_proposal: Sofitar propuestes
       user_permission_title: Participación
       user_permission_verify: Pa poder realizar toles acciones, verifica la to cuenta.
-      user_permission_verify_info: "* Namás usuarios empadronaos."
-      user_permission_votes: Participar nes votaciones finales
       verified_account: Cuenta verificada
       verify_my_account: Verificar mi cuenta
   application:
@@ -554,14 +549,9 @@ ast:
     welcome:
       go_to_index: Ahora no, ver propuestas
       title: Colabora en la elaboración de la normativa sobre
-      user_permission_debates: Participar n'alderiques
       user_permission_info: Cola to cuenta yá pues...
-      user_permission_proposal: Crear nueves propuestes
-      user_permission_support_proposal: Apoyar propuestas
       user_permission_verify: "Pa poder realizar toles acciones, verifica la to cuenta."
-      user_permission_verify_info: "* Namás usuarios empadronaos."
       user_permission_verify_my_account: Verificar mi cuenta
-      user_permission_votes: Participar nes votaciones finales
   invisible_captcha:
     sentence_for_humans: "Si eres humano, por favor ignora este campo"
     timestamp_error_message: "Eso ha sido demasiado rápido. Por favor, reenvía el formulario."
