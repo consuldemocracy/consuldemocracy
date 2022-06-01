@@ -11,14 +11,9 @@ ka:
       save_changes_submit: ცვლილებების შენახვა
       recommendations: რეკომენდაციები
       title: ჩემი პროფილი
-      user_permission_debates: დებატებში მონაწილეობა
       user_permission_info: თქვენი ანგარიშით თქვენ შეგიძლიათ...
-      user_permission_proposal: ახალი ინიციატივის შექმნა
-      user_permission_support_proposal: ინიციატივებზე ხმის მიცემა
       user_permission_title: მონაწილეობა
       user_permission_verify: ყველა ფუნქციით სარგებლობისთვის, გაიარეთ ანგარიშის გადამოწმება.
-      user_permission_verify_info: "* მხოლოდ აღწერაში მონაწილე მომხმარებლებისთვის."
-      user_permission_votes: საბოლოო კენჭისყრაში მონაწილეობა
       verified_account: ანგარიში გადამოწმებულია
       verify_my_account: ჩემი ანგარიშის დადასტურება
   application:
@@ -873,14 +868,9 @@ ka:
       go_to_index: ახლა არა, გადადით მთავარ გვერდზე
       start_using_consul: მთავარ გვერდზე გადასვლა
       title: მონაწილეობა
-      user_permission_debates: დებატებში მონაწილეობა
       user_permission_info: თქვენი ანგარიშით თქვენ შეგიძლიათ...
-      user_permission_proposal: ახალი ინიციატივების შექმნა
-      user_permission_support_proposal: ინიციატივებზე ხმის მიცემა*
       user_permission_verify: "ამ ფუნქციებით სარგებლობისათვის, დაადასტურეთ თქვენი ანგარიში."
-      user_permission_verify_info: "* მხოლოდ აღწერაში მონაწილე მომხმარებლებისთვის."
       user_permission_verify_my_account: ჩემი ანგარიშის დადასტურება
-      user_permission_votes: საბოლოო კენჭისყრაში მონაწილეობა
   invisible_captcha:
     sentence_for_humans: "თუ რობოტი არ ხართ, არ მიაქციოთ ამ ველს ყურადღება"
     timestamp_error_message: "ძალიან იჩქარეთ, გთხოვთ სცადოთ ხელახლა."
