@@ -11,14 +11,9 @@ uk-UA:
       save_changes_submit: Зберегти зміни
       recommendations: Рекомендації
       title: Мій обліковий запис
-      user_permission_debates: Взяти участь в обговоренні
       user_permission_info: З вашим обліковим записом можна...
-      user_permission_proposal: Подати нові пропозиції
-      user_permission_support_proposal: Підтримати пропозиції
       user_permission_title: Участь
       user_permission_verify: Для виконання дій підтвердьте свій обліковий запис.
-      user_permission_verify_info: "* Лише для користувачів Цензусу."
-      user_permission_votes: Взяти участь у підсумковому голосуванні
       verified_account: Обліковий запис підтверджено
       verify_my_account: Підтвердити мій обліковий запис
   application:
@@ -935,14 +930,9 @@ uk-UA:
       go_to_index: Не зараз, перейти до сторінки індексу
       start_using_consul: Перейти до сторінки індексу
       title: Взяти участь
-      user_permission_debates: Взяти участь в обговоренні
       user_permission_info: З вашим обліковим записом ви маєте можливість...
-      user_permission_proposal: Подати нові пропозиції
-      user_permission_support_proposal: Підтримати пропозиції
       user_permission_verify: "Для виконання цих дій підтвердьте свій обліковий запис."
-      user_permission_verify_info: "* Лише для користувачів Census."
       user_permission_verify_my_account: Підтвердити мій обліковий запис
-      user_permission_votes: Взяти участь у підсумковому голосуванні
   invisible_captcha:
     sentence_for_humans: "Якщо ви людина, проігноруйте це поле"
     timestamp_error_message: "Вибачте, це було занадто швидко! Будь ласка, повторіть."
