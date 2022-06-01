@@ -11,14 +11,9 @@ gl:
       save_changes_submit: Gardar cambios
       recommendations: Recomendacións
       title: A miña conta
-      user_permission_debates: Participar en debates
       user_permission_info: Coa túa conta xa podes...
-      user_permission_proposal: Crear novas propostas
-      user_permission_support_proposal: Apoiar propostas*
       user_permission_title: Participación
       user_permission_verify: Para poder realizar todas as accións, verifica a túa conta.
-      user_permission_verify_info: "* Só para persoas empadroadas."
-      user_permission_votes: Participar nas votacións finais*
       verified_account: Conta verificada
       verify_my_account: Verificar a miña conta
   application:
@@ -805,14 +800,9 @@ gl:
     welcome:
       go_to_index: Agora non, ver propostas
       title: Comeza a participar
-      user_permission_debates: Participar en debates
       user_permission_info: Coa túa conta xa podes...
-      user_permission_proposal: Crear novas propostas
-      user_permission_support_proposal: Apoiar propostas*
       user_permission_verify: "Para poder realizar todas as accións, verifica a túa conta."
-      user_permission_verify_info: "* Só persoas usuarias empadroadas no municipio de Madrid."
       user_permission_verify_my_account: Verificar a miña conta
-      user_permission_votes: Participar nas votacións finais
   invisible_captcha:
     sentence_for_humans: "Se es humano, ignora este campo"
     timestamp_error_message: "Iso foi moi rápido. Reenvía o formulario."
