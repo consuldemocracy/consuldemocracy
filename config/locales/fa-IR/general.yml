@@ -9,14 +9,9 @@ fa:
       save_changes_submit: ذخیره تغییرات
       recommendations: توصیه ها
       title: حساب من
-      user_permission_debates: مشارکت در بحث
       user_permission_info: با حساب کاربریتان می توانید...
-      user_permission_proposal: ایجاد طرح های جدید
-      user_permission_support_proposal: پشتیبانی از طرح های پیشنهادی
       user_permission_title: "مشارکت\n"
       user_permission_verify: برای انجام تمام اقدامات حساب کاربری را تایید کنید.
-      user_permission_verify_info: "* تنها برای کاربران در سرشماری."
-      user_permission_votes: شرکت در رای گیری نهایی *
       verified_account: حساب تایید شده
       verify_my_account: تأیید حساب کاربری
   application:
@@ -436,14 +431,9 @@ fa:
     welcome:
       go_to_index: پیشنهادات و بحث ها را ببینید
       title: "مشارکت\n"
-      user_permission_debates: مشارکت در بحث
       user_permission_info: با حساب کاربریتان می توانید...
-      user_permission_proposal: ایجاد طرح های جدید
-      user_permission_support_proposal: '* پشتیبانی از طرح های پیشنهادی'
       user_permission_verify: "برای انجام همه اقدامات حساب خود را بررسی کنید."
-      user_permission_verify_info: "* تنها برای کاربران در سرشماری."
       user_permission_verify_my_account: تأیید حساب کاربری
-      user_permission_votes: شرکت در رای گیری نهایی *
   invisible_captcha:
     sentence_for_humans: "اگر شما انسان هستند، این زمینه را نادیده بگیرید"
     timestamp_error_message: "با عرض پوزش،خیلی سریع بود! لطفا دوباره بفرستید."
