@@ -11,14 +11,9 @@ bg:
       save_changes_submit: Запазване на промени
       recommendations: Препоръки
       title: Моят профил
-      user_permission_debates: Участвайте в дискусии
       user_permission_info: С Вашият профил можете да...
-      user_permission_proposal: Създавате нови предложения
-      user_permission_support_proposal: Подкрепяте предложения
       user_permission_title: Участие
       user_permission_verify: За да извършите всички действия, потвърдете профила си.
-      user_permission_verify_info: "* Само за потребители на преброяване."
-      user_permission_votes: Участвате в окончателното гласуване
       verified_account: Профилът е потвърден
       verify_my_account: Потвърдете профила ми
   application:
@@ -102,7 +97,7 @@ bg:
       recommendations:
         without_results: Няма дискусии, свързани с Вашите интереси
         without_interests: Следвайте предложенията, за да можем да ви дадем препоръки
-        disable: "Препоръките за дебати ще спрат да се показват, ако ги отхвърлите. Можете да ги активирате отново на страницата 'Моят акаунт'"
+        disable: "Препоръките за дебати ще спрат да се показват, ако ги отхвърлите. Можете да ги активирате отново на страницата 'Моят профил'"
         actions:
           success: "Препоръките за дискусии вече са деактивирани за този профил"
           error: "Появи се грешка. Моля, отидете на страницата 'Моят профил', за да деактивирате ръчно препоръките за дискусии"
@@ -888,14 +883,9 @@ bg:
       go_to_index: Не сега, отидете на страницата с индекси
       start_using_consul: Отидете на страницата с индекси
       title: Участвайте
-      user_permission_debates: Участвайте в дискусии
       user_permission_info: С профила си можете да...
-      user_permission_proposal: Създавате нови предложения
-      user_permission_support_proposal: Подкрепяте предложения*
       user_permission_verify: "За да извършите следните действия, потвърдете профила си."
-      user_permission_verify_info: "* Само за потребители на преброяване."
       user_permission_verify_my_account: Потвърдете профила ми
-      user_permission_votes: Участвайте в окончателното гласуване
   invisible_captcha:
     sentence_for_humans: "Ако сте човек, игнорирайте това поле"
     timestamp_error_message: "За съжаление, това беше твърде бързо! Моля, изпратете отново."
