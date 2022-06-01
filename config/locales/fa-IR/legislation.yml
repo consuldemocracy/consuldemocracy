@@ -53,7 +53,6 @@ fa:
           winners: انتخاب شده
       debate:
         empty_questions: هیچ سوالی وجود ندارد
-        participate: مشارکت در بحث
       index:
         filter: فیلتر
         filters:
