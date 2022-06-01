@@ -50,7 +50,6 @@ zh-TW:
           winners: 已選擇
       debate:
         empty_questions: 沒有任何問題
-        participate: 參與辯論
       index:
         filter: 篩選器
         filters:
