@@ -11,14 +11,9 @@ sl:
       save_changes_submit: Shrani spremembe
       recommendations: Priporočila
       title: Moj račun
-      user_permission_debates: Sodeluješ v debatah
       user_permission_info: S svojim računom lahko ...
-      user_permission_proposal: Ustvariš nove predloge
-      user_permission_support_proposal: Podpiraš predloge
       user_permission_title: Sodelovanje
       user_permission_verify: Za izvedbo vseh dejanj potrdi svoj račun.
-      user_permission_verify_info: "* Samo za uporabnike, ki so na popisu."
-      user_permission_votes: Sodeluješ v končnem glasovanju
       verified_account: Račun potrjen
       verify_my_account: Potrdi moj račun
   application:
@@ -607,14 +602,9 @@ sl:
     welcome:
       go_to_index: Oglej si predloge in razprave
       title: Sodeluj
-      user_permission_debates: Sodeluj v razpravah
       user_permission_info: S svojim računom lahko ...
-      user_permission_proposal: Ustvari nove predloge
-      user_permission_support_proposal: Podpri predloge*
       user_permission_verify: "Za izvedbo vseh dejanj verificiraj svoj račun."
-      user_permission_verify_info: "* Samo za uporabnike, ki so na popisu."
       user_permission_verify_my_account: Preveri moj račun
-      user_permission_votes: Sodeluj v končnem glasovanju
   invisible_captcha:
     sentence_for_humans: "Če si človek, ignoriraj to polje"
     timestamp_error_message: "Oprosti, to je bilo pa prehitro. Prosim, poskusi ponovno."
