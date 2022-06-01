@@ -10,14 +10,9 @@ id:
       public_interests_user_title_list: Tag dari unsur-unsur yang Anda mengikuti
       save_changes_submit: Simpan perubahan
       title: Akun saya
-      user_permission_debates: Berpartisipasi pada perdebatan
       user_permission_info: Dengan account anda anda dapat...
-      user_permission_proposal: Membuat proposal baru
-      user_permission_support_proposal: Dukung proposal
       user_permission_title: Partisipasi
       user_permission_verify: Untuk melakukan semua tindakan memverifikasi akun anda.
-      user_permission_verify_info: "* Hanya untuk pengguna di Sensus."
-      user_permission_votes: Berpartisipasi pada akhir suara
       verified_account: Account diverifikasi
       verify_my_account: Verifikasi akun saya
   application:
@@ -647,14 +642,9 @@ id:
     welcome:
       go_to_index: Melihat proposal dan perdebatan
       title: Ikut
-      user_permission_debates: Berpartisipasi pada perdebatan
       user_permission_info: Dengan akun Anda, Anda dapat...
-      user_permission_proposal: Membuat proposal baru
-      user_permission_support_proposal: Mendukung proposal*
       user_permission_verify: "Untuk melakukan semua tindakan memverifikasi rekening Anda."
-      user_permission_verify_info: "* Hanya untuk pengguna pada sensus."
       user_permission_verify_my_account: Memverifikasi account saya
-      user_permission_votes: Berpartisipasi pada pemungutan suara akhir
   invisible_captcha:
     sentence_for_humans: "Jika anda adalah manusia, mengabaikan bidang ini"
     timestamp_error_message: "Maaf, itu terlalu cepat! Silakan kirimkan kembali."
