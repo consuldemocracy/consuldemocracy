@@ -11,14 +11,9 @@ hr:
       save_changes_submit: Spremi promjene
       recommendations: Preporuke
       title: Moj račun
-      user_permission_debates: Sudjelovati u raspravama
       user_permission_info: Sa svojim računom možete...
-      user_permission_proposal: Izrađivati nove prijedloge
-      user_permission_support_proposal: Podupirati prijedloge
       user_permission_title: Sudjelovanje
       user_permission_verify: Kako biste izvodili ove aktivnosti, potvrdite svoj račun.
-      user_permission_verify_info: "* Samo za korisnike Cenzusa."
-      user_permission_votes: Sudjelovati u završnom glasanju
       verified_account: Račun provjeren
       verify_my_account: Potvrdi moj račun
   application:
@@ -904,14 +899,9 @@ hr:
       go_to_index: Ne sada, idite na indeksnu stranicu
       start_using_consul: Idi na indeksnu stranicu
       title: Sudjelovati
-      user_permission_debates: Sudjelovati u raspravama
       user_permission_info: Sa svojim računom možete...
-      user_permission_proposal: Izrađivati nove prijedloge
-      user_permission_support_proposal: Podupirati prijedloge*
       user_permission_verify: "Kako biste izveli sljedeće radnje potvrdite svoj račun."
-      user_permission_verify_info: "*Samo za korisnike Cenzusa."
       user_permission_verify_my_account: Potvrdi moj račun
-      user_permission_votes: Sudjelovati u završnom glasanju
   invisible_captcha:
     sentence_for_humans: "Ako ste fizička osoba, ignorirajte ovo polje"
     timestamp_error_message: "Žao nam je, ovo je bilo prebrzo! Molimo vas ponovno podnesite."
