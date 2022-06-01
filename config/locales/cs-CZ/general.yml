@@ -11,14 +11,9 @@ cs:
       save_changes_submit: Uložit změny
       recommendations: Doporučení
       title: Můj účet
-      user_permission_debates: Zapojit se do debat
       user_permission_info: S vaším účtem můžete...
-      user_permission_proposal: Vytvořit nové návrhy
-      user_permission_support_proposal: Podpora návrhů
       user_permission_title: Zapojte se
       user_permission_verify: Chcete-li provést všechny akce, ověřte svůj účet.
-      user_permission_verify_info: "* Pouze pro uživatele ověřené datovými registry."
-      user_permission_votes: Účastnit se konečného hlasování
       verified_account: Účet ověřen
       verify_my_account: Ověřit můj účet
   application:
@@ -929,14 +924,9 @@ cs:
       go_to_index: Zobrazit návrhy a debaty
       start_using_consul: Přejít na úvodní stránku
       title: Zapojit se
-      user_permission_debates: Zapojte se do debat
       user_permission_info: S vaším účtem můžete...
-      user_permission_proposal: Vytvořit nové návrhy
-      user_permission_support_proposal: Podpora návrhů *
       user_permission_verify: "Chcete-li provést všechny akce, ověřte svůj účet."
-      user_permission_verify_info: "* Pouze pro uživatele ověřené datovými registry."
       user_permission_verify_my_account: Ověřit můj účet
-      user_permission_votes: Zapojit se do konečného hlasování
   invisible_captcha:
     sentence_for_humans: "Pokud nejste stroj, ignorujte prosím toto pole"
     timestamp_error_message: "Promiňte, bylo to příliš rychlé! Znovu odešlete."
