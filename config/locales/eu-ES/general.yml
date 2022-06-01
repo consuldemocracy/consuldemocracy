@@ -11,14 +11,9 @@ eu:
       save_changes_submit: Aldaketak gorde
       recommendations: Gomendioak
       title: Nire kontua
-      user_permission_debates: Eztabaidetan parte hartu
       user_permission_info: Zure kontuarekin egin dezakezu...
-      user_permission_proposal: Proposamen berriak sortu
-      user_permission_support_proposal: Proposamenak babestu*
       user_permission_title: Partaidetza
       user_permission_verify: Akzio guztiak egin ahal izateko zure kontua egiazta ezazu.
-      user_permission_verify_info: "* Erroldatutako erabiltzaileak soilik."
-      user_permission_votes: Azken bozkaketetan parte hartu*
       verified_account: Egiaztatutako kontua
       verify_my_account: Nire kontua egiaztatu
   application:
@@ -683,14 +678,9 @@ eu:
     welcome:
       go_to_index: Orain ez, proposamenak ikusi
       title: Parte hartzen hasi zaitez
-      user_permission_debates: Eztabaidetan parte hartu
       user_permission_info: Zure kontuakin egin dezakezu...
-      user_permission_proposal: Proposamen berriak sortu
-      user_permission_support_proposal: Proposamenak babestu*
       user_permission_verify: "Zure kontua egiazta ezazu web orriko ekintza guztiak egin ahal izateko."
-      user_permission_verify_info: "*Erroldatutako erabiltzaileak soilik."
       user_permission_verify_my_account: Nire kontua egiaztatu
-      user_permission_votes: Azken bozkaketetan parte hartu*
   invisible_captcha:
     sentence_for_humans: "Gizakia baldin bazara, mesedez hurrengo eremua ez ikusiarena egin"
     timestamp_error_message: "Hau lar arin joan da. Mesedez, formularioa berbidali."
