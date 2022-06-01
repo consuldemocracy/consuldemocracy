@@ -20,6 +20,8 @@ sl-SI:
       user:
         login: "e-naslov ali uporabniško ime"
         login_form: "E-naslov ali uporabniško ime"
+      image:
+        attachment: "Slika"
       budget/investment:
         q1: "Zakaj ta predlog? Katero temo, težavo oz. izziv projektni predlog naslavlja?"
         q2: "Kaj konkretno predlagate? Kaj je bistvo vašega predloga? Kaj se bo zgodilo?"
@@ -29,6 +31,11 @@ sl-SI:
         q6: "Ali ste pridobili tudi dodatne vire financiranja projekta (npr. krajevna ali vaška skupnost, sponzorstva, ipd.), od koga in koliko? V primeru, da predlagatelj pridobi zunanje vire financiranja, skupna vrednost projekta lahko presega finančne omejitve. Prosimo, da v prilogo priložite izjave sofinancerjev. Opišite tudi morebitna dela, ki ste jih vi ali kdo drug v sklopu tega projekta pripravljeni izvesti brezplačno."
     errors:
       models:
+        image:
+          attributes:
+            attachment:
+              min_image_width: "mora biti široka vsaj %{required_min_width}px"
+              min_image_height: "mora biti visoka vsaj %{required_min_height}px"
         user:
           attributes:
             document_number:
@@ -280,3 +287,4 @@ sl-SI:
     errors:
       data_consent: "Za nadaljevanje se moraš strinjati z obdelavo podatkov."
       price: "Polje vrednost projekta ne sme biti prazen."
+      registration: "Zaradi napak obrazca nismo mogli shraniti."
