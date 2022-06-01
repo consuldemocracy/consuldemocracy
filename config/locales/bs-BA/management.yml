@@ -64,11 +64,6 @@ bs:
       users: Praćenje korisnika
       user_invites: Pošalji pozivnice
       select_user: Odaberi korisnika
-    permissions:
-      create_proposals: Formuliši prijedloge
-      debates: Učestvuj u debatama
-      support_proposals: Podrži prijedloge
-      vote_proposals: Glasaj za prijedloge
     print:
       proposals_info: Kreirajte vlastiti prijedlog na http://url.consul
       proposals_title: "Prijedlozi:"
