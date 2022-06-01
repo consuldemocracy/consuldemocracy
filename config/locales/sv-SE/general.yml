@@ -1,7 +1,7 @@
 sv:
   account:
     show:
-      change_credentials_link: Ändra mina uppgifter
+      change_credentials_link: Ändra mina inloggningsuppgifter
       erase_account_link: Radera mitt konto
       finish_verification: Slutför verifiering
       notifications: Aviseringar
@@ -11,14 +11,9 @@ sv:
       save_changes_submit: Spara ändringar
       recommendations: Rekommendationer
       title: Mitt konto
-      user_permission_debates: Delta i debatter
       user_permission_info: Med ditt konto kan du...
-      user_permission_proposal: Skapa nya förslag
-      user_permission_support_proposal: Stöd förslag
       user_permission_title: Deltagande
       user_permission_verify: Verifiera ditt konto för att få tillgång till alla funktioner.
-      user_permission_verify_info: "* Endast för användare skrivna i staden."
-      user_permission_votes: Delta i slutomröstningen
       verified_account: Kontot är verifierat
       verify_my_account: Verifiera mitt konto
   application:
@@ -892,14 +887,9 @@ sv:
       go_to_index: Inte nu, gå till indexsidan
       start_using_consul: Gå till indexsidan
       title: Delta
-      user_permission_debates: Delta i debatter
       user_permission_info: Med ditt konto kan du...
-      user_permission_proposal: Skapa nya förslag
-      user_permission_support_proposal: Stödja förslag
       user_permission_verify: "Verifiera ditt konto för att få tillgång till alla funktioner."
-      user_permission_verify_info: "* Endast för användare skrivna i staden."
       user_permission_verify_my_account: Verifiera mitt konto
-      user_permission_votes: Delta i slutomröstningar
   invisible_captcha:
     sentence_for_humans: "Ignorera det här fältet om du är en människa"
     timestamp_error_message: "Oj, där gick det lite för snabbt! Var vänlig skicka in igen."
