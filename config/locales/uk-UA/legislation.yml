@@ -60,7 +60,6 @@ uk-UA:
           winners: Вибране
       debate:
         empty_questions: Запитань немає
-        participate: Взяти участь в обговоренні
       index:
         filter: Фільтр
         filters:
