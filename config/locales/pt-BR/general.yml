@@ -11,14 +11,9 @@ pt-BR:
       save_changes_submit: Salvar alterações
       recommendations: Recomendações
       title: Minha conta
-      user_permission_debates: Participar nos debates
       user_permission_info: Com a sua conta você pode...
-      user_permission_proposal: Criar novas propostas
-      user_permission_support_proposal: Apoiar propostas
       user_permission_title: Participação
       user_permission_verify: Para realizar todas as ações verifique sua conta.
-      user_permission_verify_info: "* Somente para usuários no Censo. "
-      user_permission_votes: Participar na votação final
       verified_account: Conta verificada
       verify_my_account: Verificar minha conta
   application:
@@ -883,14 +878,9 @@ pt-BR:
       go_to_index: Veja propostas e debates
       start_using_consul: Ir para o índice
       title: Participar
-      user_permission_debates: Participar nos debates
       user_permission_info: Com sua conta, você pode...
-      user_permission_proposal: Criar novas propostas
-      user_permission_support_proposal: Apoiar propostas*
       user_permission_verify: "Para realizar todas as ações verifique sua conta."
-      user_permission_verify_info: "* Somente usuários no Censo de Madrid"
       user_permission_verify_my_account: Verificar minha conta
-      user_permission_votes: Participar na votação final
   invisible_captcha:
     sentence_for_humans: "Se você é humano, ignore este campo"
     timestamp_error_message: "Isto foi muito rápido. Por favor, reenvie o formulário."
