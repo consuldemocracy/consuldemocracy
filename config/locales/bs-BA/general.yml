@@ -11,14 +11,9 @@ bs:
       save_changes_submit: Spasi izmjene
       recommendations: Preporuke
       title: Moj nalog
-      user_permission_debates: Učestvuj u debatama
       user_permission_info: Sa svojim nalogom, možeš...
-      user_permission_proposal: Formulisati nove prijedloge
-      user_permission_support_proposal: Iskazati podršku za prijedloge
       user_permission_title: Učešće
       user_permission_verify: Potvrdi nalog za obavljanje svih radnji.
-      user_permission_verify_info: "* Samo za korisnike popisa."
-      user_permission_votes: Učestvujte u finalnom glasanju
       verified_account: Nalog potvrđen
       verify_my_account: Potvrdi moj nalog
   application:
@@ -850,14 +845,9 @@ bs:
       go_to_index: Ne sada, idi na indeksnu stranicu
       start_using_consul: Idi na indeksnu stranicu
       title: Učestvuj
-      user_permission_debates: Učestvuj u debatama
       user_permission_info: Sa svojim nalogom, možeš...
-      user_permission_proposal: Formulisati nove prijedloge
-      user_permission_support_proposal: Dati podršku prijedlozima*
       user_permission_verify: "Potvrdi nalog za obavljanje sljedećih radnji."
-      user_permission_verify_info: "* Samo za korisnike popisa."
       user_permission_verify_my_account: Potvrdi moj nalog
-      user_permission_votes: Učestvuj u finalnom glasanju
   invisible_captcha:
     sentence_for_humans: "Ako ste ljudsko biće, zanemarite ovo polje"
     timestamp_error_message: "To je bilo prebrzo! Podnesi ponovo."
