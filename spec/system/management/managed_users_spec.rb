@@ -34,7 +34,7 @@ describe "Managed User" do
       fill_in "document_verification_document_number", with: user.document_number
       click_button "Check document"
 
-      expect(page).to have_content "Vote proposals"
+      expect(page).to have_content "Vote for budget projects"
 
       click_button "Verify"
 

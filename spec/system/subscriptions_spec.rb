@@ -35,7 +35,7 @@ describe "Subscriptions" do
 
       check "Notify me by email when someone comments on my contents"
       uncheck "Notify me by email when someone replies to my comments"
-      uncheck "Receive by email website relevant information"
+      uncheck "Receive relevant information by email"
       check "Receive a summary of proposal notifications"
       uncheck "Receive emails about direct messages"
       click_button "Save changes"
@@ -43,7 +43,7 @@ describe "Subscriptions" do
       expect(page).to have_content "Changes saved"
       expect(page).to have_field "Notify me by email when someone comments on my contents", checked: true
       expect(page).to have_field "Notify me by email when someone replies to my comments", checked: false
-      expect(page).to have_field "Receive by email website relevant information", checked: false
+      expect(page).to have_field "Receive relevant information by email", checked: false
       expect(page).to have_field "Receive a summary of proposal notifications", checked: true
       expect(page).to have_field "Receive emails about direct messages", checked: false
     end

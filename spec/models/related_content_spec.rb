@@ -91,7 +91,7 @@ describe RelatedContent do
       expect(parent_relationable.relationed_contents).to eq [child_relationable]
     end
 
-    it "returns related contents without retired proposals" do
+    it "returns related contents without withdrawn proposals" do
       create(
         :related_content,
         parent_relationable: parent_relationable,
