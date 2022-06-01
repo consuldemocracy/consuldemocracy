@@ -11,14 +11,9 @@ oc:
       save_changes_submit: Gardar de cambiaments
       recommendations: Recomandacions
       title: Lo mieu compte
-      user_permission_debates: Participar a debats
       user_permission_info: Amb lo tieu compte pòdes ja...
-      user_permission_proposal: Crear de nòvas proposicions
-      user_permission_support_proposal: Sosténer de proposicions
       user_permission_title: Participacion
       user_permission_verify: Per poder realizar totas las accions, verifica lo tieu compte.
-      user_permission_verify_info: "* Solament d'usatgièrs empadronats."
-      user_permission_votes: Participar a las votacions finalas*
       verified_account: Compte verificat
       verify_my_account: Verificar lo mieu compte
   application:
@@ -873,14 +868,9 @@ oc:
       go_to_index: Ara pas, veire de proposicions
       start_using_consul: Vai a la pagina d’indèx
       title: Collabòra en l'elaboracion de la nòrma dessús
-      user_permission_debates: Participar a debats
       user_permission_info: Amb lo tieu compte pòdes ja...
-      user_permission_proposal: Crear de nòvas proposicions
-      user_permission_support_proposal: Avalar de proposicions
       user_permission_verify: "Per poder realizar totas las accions, verifica lo tieu compte."
-      user_permission_verify_info: "* Solament d'usatgièrs empadronats."
       user_permission_verify_my_account: Verificar lo mieu compte
-      user_permission_votes: Participar a las votacions finalas*
   invisible_captcha:
     sentence_for_humans: "S'èras uman, per favor ignòra aquel camp"
     timestamp_error_message: "Aquò es tròp estat rapid. Per favor, reénvia lo formulari."
