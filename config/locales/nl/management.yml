@@ -63,11 +63,6 @@ nl:
       users: Gebruikersbeheer
       user_invites: Verstuur uitnodigingen
       select_user: Selecteer gebruiker
-    permissions:
-      create_proposals: Create proposals
-      debates: Engage in debates
-      support_proposals: Support proposals
-      vote_proposals: Vote proposals
     print:
       proposals_info: Maak je eigen voorstel op http://url.consul
       proposals_title: "Proposals:"
