@@ -11,14 +11,9 @@ sr:
       save_changes_submit: Сачувајте измене
       recommendations: Препоруке
       title: Мој налог
-      user_permission_debates: Учествовање у расправама
       user_permission_info: Са својим налогом можете...
-      user_permission_proposal: Креирајте нове предлоге
-      user_permission_support_proposal: Подржите предлоге
       user_permission_title: Партиципација
       user_permission_verify: Како бисте извели све радње потврдите ваш налог.
-      user_permission_verify_info: "*Само за кориснике на Попису."
-      user_permission_votes: Учествујте у завршном гласању
       verified_account: Налог потврђен
       verify_my_account: Потврди мој налог
   application:
@@ -904,14 +899,9 @@ sr:
       go_to_index: Не сад, идите на индекс страну
       start_using_consul: Идите на индекс страну
       title: Учествујте
-      user_permission_debates: Учествујте у расправи
       user_permission_info: Са својим налогом можете...
-      user_permission_proposal: Креирајте нови предлог
-      user_permission_support_proposal: Подржите предлоге*
       user_permission_verify: "Како бисте извели све радње потврдите ваш налог."
-      user_permission_verify_info: "*Само за кориснике на Попису."
       user_permission_verify_my_account: Потврди мој налог
-      user_permission_votes: Учествујте у завршном гласању
   invisible_captcha:
     sentence_for_humans: "Ако сте човек, игноришите ово поље"
     timestamp_error_message: "Превише брзо! Молимо Вас да пошаљете поново."
