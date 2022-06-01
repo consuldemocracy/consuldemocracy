@@ -11,14 +11,9 @@ nl:
       save_changes_submit: Save changes
       recommendations: Aanbevelingen
       title: My account
-      user_permission_debates: Participate on debates
       user_permission_info: With your account you can...
-      user_permission_proposal: Nieuwe voorstellen indienen
-      user_permission_support_proposal: Voorstellen steunen
       user_permission_title: Participatie
       user_permission_verify: Verifieer uw account om alles te kunnen.
-      user_permission_verify_info: "* Alleen voor gebruikers in de regio."
-      user_permission_votes: Neem deel aan definitieve stemronde
       verified_account: Account geverifiëerd
       verify_my_account: Verifieer mijn account
   application:
@@ -759,14 +754,9 @@ nl:
       go_to_index: Ga naar voorstellen en debatten
       start_using_consul: Ga naar indexpagina
       title: Deelnemen
-      user_permission_debates: Neem deel aan discussies
       user_permission_info: Met je account kun je...
-      user_permission_proposal: Nieuwe voorstellen maken
-      user_permission_support_proposal: Voorstellen steunen*
       user_permission_verify: "Verifi"
-      user_permission_verify_info: "* Alleen voor locale deelnemers."
       user_permission_verify_my_account: Verifieer mijn account
-      user_permission_votes: Deelnemen aan laatste peilronde
   invisible_captcha:
     sentence_for_humans: "Negeer dit veld als u mens bent"
     timestamp_error_message: "Sorry, dat ging te snel! Probeer nog eens."
