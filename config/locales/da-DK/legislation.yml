@@ -54,7 +54,6 @@ da:
           winners: Valgt
       debate:
         empty_questions: Der er ingen spørgsmål
-        participate: Deltage i debatten
       index:
         filter: Filtrere
         filters:
