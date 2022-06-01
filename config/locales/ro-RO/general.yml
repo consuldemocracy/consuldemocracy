@@ -11,14 +11,9 @@ ro:
       save_changes_submit: Salvează modificări
       recommendations: Recomandări
       title: Contul meu
-      user_permission_debates: Participă la dezbateri
       user_permission_info: Cu contul dumneavoastră puteți...
-      user_permission_proposal: Crează noi propuneri
-      user_permission_support_proposal: Sprijină propuneri
       user_permission_title: Participare
       user_permission_verify: Pentru a efectua toate acțiunile, verificați contul.
-      user_permission_verify_info: "* Numai pentru utilizatorii aflați pe recensământ."
-      user_permission_votes: Participă la votarea finală
       verified_account: Cont verificat
       verify_my_account: Verifică-mi contul
   application:
@@ -917,14 +912,9 @@ ro:
       go_to_index: Nu acum, mergeți la pagina index
       start_using_consul: Mergeți la pagina index
       title: Participă
-      user_permission_debates: Participă la dezbateri
       user_permission_info: Cu contul dumneavoastră puteți...
-      user_permission_proposal: Crează noi propuneri
-      user_permission_support_proposal: Sprijină propunerile*
       user_permission_verify: "Pentru a efectua toate acțiunile, verificați-vă contul."
-      user_permission_verify_info: "* Numai pentru utilizatorii aflați pe recensământ."
       user_permission_verify_my_account: Verifică-mi contul
-      user_permission_votes: Participă la votarea finală
   invisible_captcha:
     sentence_for_humans: "Dacă sunteți om, ignorați acest câmp"
     timestamp_error_message: "Ne cerem scuze, a fost prea rapid! Vă rugăm să retrimiteți."
