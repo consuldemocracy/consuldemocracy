@@ -11,14 +11,9 @@ nn:
       save_changes_submit: Lagre endringer
       recommendations: Anbefalinger
       title: Min konto
-      user_permission_debates: Delta i debatter
       user_permission_info: Med din konto kan du...
-      user_permission_proposal: Lag nye forslag
-      user_permission_support_proposal: Støtt forslag
       user_permission_title: Deltakelse
       user_permission_verify: Verifiser din konto for å få tilgang til alle funksjoner.
-      user_permission_verify_info: "* Kun for brukere av Census."
-      user_permission_votes: Delta i endelig avstemning
       verified_account: Konto er verifisert
       verify_my_account: Verifiser min konto
   application:
@@ -868,14 +863,9 @@ nn:
       go_to_index: Vis forslag og debatter
       start_using_consul: Gå til indekssiden
       title: Delta
-      user_permission_debates: Delta i debatter
       user_permission_info: Med din konto kan du...
-      user_permission_proposal: Lag nye forslag
-      user_permission_support_proposal: Støtt forslag
       user_permission_verify: "Verifiser din konto for å utføre følgende handlinger."
-      user_permission_verify_info: "* Kun for brukere av Census."
       user_permission_verify_my_account: Verifiser min konto
-      user_permission_votes: Delta i endelig avstemning
   invisible_captcha:
     sentence_for_humans: "Hvis du er menneske, så kan du ignorere dette felt"
     timestamp_error_message: "Beklager, det gikk litt raskt! Vær vennlig å prøv på nytt."
