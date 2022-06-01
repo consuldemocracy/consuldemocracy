@@ -61,11 +61,6 @@ sl:
       support_budget_investments: Podpri proračunske naložbe
       users: Uporabniki
       user_invites: Uporabnikova povabila
-    permissions:
-      create_proposals: Ustvari predloge
-      debates: Sodeluj v razpravah
-      support_proposals: Podpri predloge
-      vote_proposals: Glasuj o predlogih
     print:
       proposals_info: Ustvari svoj predlog na http://url.consul
       proposals_title: "Predlogi:"
