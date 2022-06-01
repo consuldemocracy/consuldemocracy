@@ -11,14 +11,9 @@ ca:
       save_changes_submit: Guardar canvis
       recommendations: Recomanacions
       title: El meu compte
-      user_permission_debates: Participar en debats
       user_permission_info: Amb el teu compte ja pots...
-      user_permission_proposal: Crear noves propostes
-      user_permission_support_proposal: Donar suport propostes
       user_permission_title: Participació
       user_permission_verify: Per a poder realitzar totes les accions, verifica el teu compte.
-      user_permission_verify_info: "* Només usuaris empadronats."
-      user_permission_votes: Participar en les votacions finals*
       verified_account: Compte verificat
       verify_my_account: Verificar el meu compte
   application:
@@ -873,14 +868,9 @@ ca:
       go_to_index: Ara no, veure propostes
       start_using_consul: Vés a la pàgina d’índex
       title: Col·labora en l'elaboració de la normativa sobre
-      user_permission_debates: Participar en debats
       user_permission_info: Amb el teu compte ja pots...
-      user_permission_proposal: Crear noves propostes
-      user_permission_support_proposal: Avalar propostes
       user_permission_verify: "Per a poder realitzar totes les accions, verifica el teu compte."
-      user_permission_verify_info: "* Només usuaris empadronats."
       user_permission_verify_my_account: Verificar el meu compte
-      user_permission_votes: Participar en les votacions finals*
   invisible_captcha:
     sentence_for_humans: "Si eres humà, per favor ignora aquest camp"
     timestamp_error_message: "Açò ha sigut massa ràpid. Per favor, reenvía el formulari."
