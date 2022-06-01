@@ -11,14 +11,9 @@ so:
       save_changes_submit: Badbaadi beddelka
       recommendations: Talloyin
       title: Xisaabteyda
-      user_permission_debates: Kaqayb qadashada dooda
       user_permission_info: Akoonkaga waad karta...
-      user_permission_proposal: Samee soo jeedino cusub
-      user_permission_support_proposal: Tageer so jedinta
       user_permission_title: Kaqaybgalka
       user_permission_verify: Si aad u fuliso dhammaan ficilada hubi xisaabtaada.
-      user_permission_verify_info: "* Kaliya dadka isticmaala tirakoobka."
-      user_permission_votes: Kayb galka codaynta ugu danbaysa
       verified_account: Xisaabi la xaqiijiyay
       verify_my_account: Hubi xisaabtayda
   application:
@@ -704,14 +699,9 @@ so:
     welcome:
       go_to_index: Eeg soojeedinta iyo doodaha
       title: Kaqayb gal
-      user_permission_debates: Kaqayb qadashada dooda
       user_permission_info: Akoonkaga waad karta...
-      user_permission_proposal: Samee soo jeedino cusub
-      user_permission_support_proposal: Tageer so jedinada*
       user_permission_verify: "Si aad u fuliso dhammaan ficilada hubi xisaabtaada."
-      user_permission_verify_info: "* Kaliya dadka isticmaala tirakoobka."
       user_permission_verify_my_account: Hubi xisaabtayda
-      user_permission_votes: Kayb galka codaynta ugu danbaysa
   invisible_captcha:
     sentence_for_humans: "Haddii aad tahay aadane, iska indha tirtan arimahan"
     timestamp_error_message: "Waan ka xumahay, taas oo ahayd mid deg deg ah! Fadlan soo gudbi."
