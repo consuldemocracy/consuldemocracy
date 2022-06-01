@@ -54,7 +54,6 @@ mk:
           winners: Селектирано
       debate:
         empty_questions: Нема ниедно прашање
-        participate: Учествувај во дебата
       index:
         filter: Филтер
         filters:
