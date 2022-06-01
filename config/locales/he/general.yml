@@ -11,14 +11,9 @@ he:
       save_changes_submit: שמירת שינויים
       recommendations: המלצות
       title: החשבון שלי
-      user_permission_debates: להשתתף בדיונים
       user_permission_info: עם חשבונך תוכל/י ...
-      user_permission_proposal: ליצור הצעות חדשות
-      user_permission_support_proposal: לתמוך בהצעות
       user_permission_title: השתתפות
       user_permission_verify: כדי לבצע את כל הפעולות, עליך לאמת את חשבונך
-      user_permission_verify_info: "* רק עבור משתמשים/ות במפקד אוכלוסין."
-      user_permission_votes: השתתפות בהצבעה הסופית
       verified_account: החשבון אומת בהצלחה
       verify_my_account: אמת את החשבון שלי
   application:
@@ -317,7 +312,7 @@ he:
         submit_button: שמירת שינויים
       show_link: צפייה בהצעה
     retire_form:
-      title: הסרת הצעה
+      title: להסרת ההצעה
       warning: "“הסרת ההצעה שלך היא לא מחיקה. ההצעה עדיין תוכל לצבור תמיכה, אך היא תוסר מהרשימה הראשית ולכל המשתמשים שצופים בה תוצג ההודעה שלדעת מציע/ת ההצעה, לא כדאי לתמוך בהצעה הזו יותר.\""
       retired_reason_blank: בחר/י אפשרות
       retired_explanation_placeholder: הסבר/י בקיצור מדוע לדעתך לא כדאי לתמוך בהצעה זו כבר
@@ -901,14 +896,9 @@ he:
       go_to_index: לצפייה בהצעות ובדיונים
       start_using_consul: גש לדף הבית
       title: רוצה להשתתף בזה
-      user_permission_debates: להשתתף בדיונים
       user_permission_info: עם חשבונך תוכל/י ...
-      user_permission_proposal: ליצור הצעות חדשות
-      user_permission_support_proposal: לתמוך בהצעות*
       user_permission_verify: "כדי לבצע את כל הפעולות, עליך לאמת את חשבונך"
-      user_permission_verify_info: "* רק עבור משתמשים/ות במפקד אוכלוסין."
       user_permission_verify_my_account: אמת את החשבון שלי
-      user_permission_votes: השתתפות בהצבעה הסופית
   invisible_captcha:
     sentence_for_humans: "אם אינך רובוט, נא התעלם משדה זה"
     timestamp_error_message: "מצטערים, זה היה מהיר מדי, נא לשלוח שוב"
