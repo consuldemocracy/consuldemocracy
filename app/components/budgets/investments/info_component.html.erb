@@ -1,5 +1,10 @@
 <p class="investment-project-info">
   <%= l investment.created_at.to_date %>
+  <span class="bullet">&nbsp;&bull;&nbsp;</span>
+
+  <span class="icon-comments"></span>&nbsp;
+  <%= link_to t("shared.comments", count: investment.comments_count),
+              budget_investment_path(investment.budget, investment, anchor: "comments") %>
 
   <% if investment.author.hidden? || investment.author.erased? %>
     <span class="bullet">&nbsp;&bull;&nbsp;</span>

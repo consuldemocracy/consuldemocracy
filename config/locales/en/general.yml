@@ -763,6 +763,10 @@ en:
         other: "%{count} languages in use"
     optional: "Optional fields"
     required: "Required fields"
+    comments:
+      one: "1 comment"
+      other: "%{count} comments"
+      zero: "No comments"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
