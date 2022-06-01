@@ -1,7 +1,7 @@
 el:
   account:
     show:
-      change_credentials_link: Αλλαγή διαπιστευτηρίων μου
+      change_credentials_link: Αλλαγή κωδικών πρόσβασης
       erase_account_link: Διαγράψτε το λογαριασμό μου
       finish_verification: Ολοκλήρωση επαλήθευσης
       notifications: Ειδοποιήσεις
@@ -11,14 +11,9 @@ el:
       save_changes_submit: Αποθηκεύστε τις αλλαγές
       recommendations: Συστάσεις
       title: Ο λογαριασμός μου
-      user_permission_debates: Συμμετοχή στις συζητήσεις
       user_permission_info: Με το λογαριασμό σας, μπορείτε να...
-      user_permission_proposal: Δημιουργία νέων προτάσεων
-      user_permission_support_proposal: Υποστήριξη προτάσεων
       user_permission_title: Συμμετοχή
       user_permission_verify: Για να εκτελέσετε όλες τις ενέργειες, επαληθεύστε το λογαριασμό σας.
-      user_permission_verify_info: "* Μόνο για τους χρήστες που βρίσκονται στην απογραφή."
-      user_permission_votes: Συμμετοχή στην τελική ψηφοφορία
       verified_account: Ο λογαριασμός σας έχει επαληθευθεί
       verify_my_account: Επαλήθευση του λογαριασμού μου
   application:
@@ -843,14 +838,9 @@ el:
       go_to_index: Όχι τώρα, μετάβαση στη σελίδα ευρετηρίου
       start_using_consul: Μετάβαση στη σελίδα ευρετηρίου
       title: Συμμετοχή
-      user_permission_debates: Συμμετοχή στις συζητήσεις
       user_permission_info: Με το λογαριασμό σας, μπορείτε να...
-      user_permission_proposal: Δημιουργία νέων προτάσεων
-      user_permission_support_proposal: Υποστήριξη προτάσεων*
       user_permission_verify: "Για να εκτελέσετε τις ακόλουθες ενέργειες, επαληθεύστε το λογαριασμό σας."
-      user_permission_verify_info: "* Μόνο για τους χρήστες στην απογραφή."
       user_permission_verify_my_account: Επαλήθευση του λογαριασμού μου
-      user_permission_votes: Συμμετοχή στην τελική ψηφοφορία
   invisible_captcha:
     sentence_for_humans: "Εάν είστε άνθρωπος, αγνοήστε αυτό το πεδίο"
     timestamp_error_message: "Λυπούμαστε, αυτό ήταν πολύ γρήγορο! Υποβάλετε ξανά."
