@@ -44,11 +44,6 @@ es-PE:
       print_proposals: Imprimir propuestas
       support_proposals: Apoyar propuestas*
       create_budget_investment: Crear nuevo proyecto
-    permissions:
-      create_proposals: Crear nuevas propuestas
-      debates: Participar en debates
-      support_proposals: Apoyar propuestas*
-      vote_proposals: Participar en las votaciones finales
     print:
       proposals_info: Haz tu propuesta en http://url.consul
       proposals_title: "Propuestas:"
