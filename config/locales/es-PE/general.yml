@@ -10,14 +10,9 @@ es-PE:
       public_interests_user_title_list: Etiquetas de los elementos que sigue este usuario
       save_changes_submit: Guardar cambios
       title: Mi cuenta
-      user_permission_debates: Participar en debates
       user_permission_info: Con tu cuenta ya puedes...
-      user_permission_proposal: Crear nuevas propuestas
-      user_permission_support_proposal: Apoyar propuestas
       user_permission_title: Participação
       user_permission_verify: Para poder realizar todas las acciones verifica tu cuenta.
-      user_permission_verify_info: "* Sólo usuarios empadronados."
-      user_permission_votes: Participar na votação final
       verified_account: Conta verificada
       verify_my_account: Verificar mi cuenta
   application:
@@ -645,14 +640,9 @@ es-PE:
     welcome:
       go_to_index: Veja propostas e debates
       title: Colabora en la elaboración de la normativa sobre
-      user_permission_debates: Participar en debates
       user_permission_info: Con tu cuenta ya puedes...
-      user_permission_proposal: Crear nuevas propuestas
-      user_permission_support_proposal: Apoyar propuestas
       user_permission_verify: "Para poder realizar todas las acciones verifica tu cuenta."
-      user_permission_verify_info: "* Somente usuários no Censo de Madrid"
       user_permission_verify_my_account: Verificar mi cuenta
-      user_permission_votes: Participar en las votaciones finales*
   invisible_captcha:
     sentence_for_humans: "Si eres humano, por favor ignora este campo"
     timestamp_error_message: "Eso ha sido demasiado rápido. Por favor, reenvía el formulario."
