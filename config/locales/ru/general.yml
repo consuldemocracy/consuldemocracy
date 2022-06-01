@@ -11,14 +11,9 @@ ru:
       save_changes_submit: Сохранить изменения
       recommendations: Рекомендации
       title: Мой аккаунт
-      user_permission_debates: Участвовать в дебатах
       user_permission_info: При помощи вашего аккаунта вы можете...
-      user_permission_proposal: Создавать новый предложения
-      user_permission_support_proposal: Поддерживать предложения
       user_permission_title: Участие
       user_permission_verify: Чтобы выполнить все действия, верифицируйте ваш аккаунт.
-      user_permission_verify_info: "* Только для пользователей на Цензусе."
-      user_permission_votes: Участвовать в финальном голосовании
       verified_account: Аккаунт верифицирован
       verify_my_account: Верифицировать мой аккаунт
   application:
@@ -892,14 +887,9 @@ ru:
       go_to_index: Просмотреть предложения и дебаты
       start_using_consul: Перейти на страницу индекса
       title: Участвовать
-      user_permission_debates: Участвовать в дебатах
       user_permission_info: При помощи вашего аккаунта вы можете...
-      user_permission_proposal: Создавать новые предложения
-      user_permission_support_proposal: Поддерживать предложения*
       user_permission_verify: "Выполнять все действия верифицировать ваш аккаунт."
-      user_permission_verify_info: "* Только для пользователей на Цензусе."
       user_permission_verify_my_account: Верифицировать мой аккаунт
-      user_permission_votes: Участвовать в финальном голосовании
   invisible_captcha:
     sentence_for_humans: "Если вы человек, игнорируйте это поле"
     timestamp_error_message: "Извините, это было слишком быстро! Пожалуйста повторите отправку."
