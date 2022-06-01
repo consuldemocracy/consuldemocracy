@@ -11,14 +11,9 @@ sq:
       save_changes_submit: Ruaj ndryshimet
       recommendations: Rekomandimet
       title: Llogaria ime
-      user_permission_debates: Merrni pjesë në debate
       user_permission_info: Me llogarinë tuaj ju mund të...
-      user_permission_proposal: Krijo propozime të reja
-      user_permission_support_proposal: Përkrahni propozimet
       user_permission_title: Pjesëmarrje
       user_permission_verify: Për të kryer të gjitha veprimet verifikoni llogarinë tuaj.
-      user_permission_verify_info: "* Vetëm për përdoruesit e regjistruar."
-      user_permission_votes: Merrni pjesë në votimin përfundimtar
       verified_account: Llogaria është verifikuar
       verify_my_account: Verifikoni llogarinë time
   application:
@@ -704,14 +699,9 @@ sq:
     welcome:
       go_to_index: Shiko propozimet dhe debatet
       title: Mer pjesë
-      user_permission_debates: Merrni pjesë në debate
       user_permission_info: Me llogarinë tuaj ju mund të...
-      user_permission_proposal: Krijo propozime të reja
-      user_permission_support_proposal: Përkrahni propozimet
       user_permission_verify: "Për të kryer të gjitha veprimet verifikoni llogarinë tuaj."
-      user_permission_verify_info: "* Vetëm për përdoruesit e regjistrimit."
       user_permission_verify_my_account: Verifikoni llogarinë time
-      user_permission_votes: Merrni pjesë në votimin përfundimtar
   invisible_captcha:
     sentence_for_humans: "Nëse jeni njerëzor, injoroni këtë fushë"
     timestamp_error_message: "Na vjen keq, kjo ishte shumë e shpejtë! Ju lutemi ri-dërgoni."
