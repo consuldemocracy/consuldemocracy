@@ -1,7 +1,7 @@
 pl:
   account:
     show:
-      change_credentials_link: Zmień moje dane logowania
+      change_credentials_link: Zmień moje referencje
       erase_account_link: Usuń moje konto
       finish_verification: Zakończ weryfikację
       notifications: 'Informuj mnie drogą mailową:'
@@ -11,14 +11,9 @@ pl:
       save_changes_submit: Zapisz zmiany
       recommendations: Rekomendacje
       title: Moje konto
-      user_permission_debates: Uczestnicz w debatach
       user_permission_info: Z Twoim kontem możesz...
-      user_permission_proposal: Stwórz nowy pomysł
-      user_permission_support_proposal: Poprzyj wnioski
       user_permission_title: Partycypacja
       user_permission_verify: Aby wykonać wszystkie czynności, zweryfikuj swoje konto.
-      user_permission_verify_info: "* Tylko dla użytkowników Census."
-      user_permission_votes: Weź udział w głosowaniu ostatecznym
       verified_account: Konto zweryfikowane
       verify_my_account: Zweryfikuj moje konto
   application:
@@ -751,14 +746,9 @@ pl:
       go_to_index: Zobacz propozycje i debaty
       start_using_consul: Przejdź do strony indeksu
       title: Twoje konto zostało poprawnie zweryfikowane
-      user_permission_debates: ' '
       user_permission_info: Z Twoim kontem możesz...
-      user_permission_proposal: Twórz i dołączaj do pomysłów
-      user_permission_support_proposal: Popieraj propozycje*
       user_permission_verify: "Aby wykonać wszystkie czynności, zweryfikuj swoje konto."
-      user_permission_verify_info: "* Tylko dla użytkowników Census."
       user_permission_verify_my_account: Zweryfikuj swoje konto
-      user_permission_votes: ' '
   invisible_captcha:
     sentence_for_humans: "Jeśli jesteś człowiekiem, zignoruj to pole"
     timestamp_error_message: "Wybacz, to było zbyt szybkie! Prześlij ponownie."
