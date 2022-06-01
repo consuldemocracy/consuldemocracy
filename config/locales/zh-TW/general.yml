@@ -11,14 +11,9 @@ zh-TW:
       save_changes_submit: 儲存更改
       recommendations: 推薦
       title: 我的帳戶
-      user_permission_debates: 參與辯論
       user_permission_info: 您可以用您的帳戶來...
-      user_permission_proposal: 創建新建議
-      user_permission_support_proposal: 支持建議
       user_permission_title: 參與
       user_permission_verify: 要執行所有操作，請核實您的帳戶。
-      user_permission_verify_info: "* 僅適用於人口普查的用戶。"
-      user_permission_votes: 參與最終投票
       verified_account: 帳戶已被核實
       verify_my_account: 核實我的帳戶
   application:
@@ -688,14 +683,9 @@ zh-TW:
     welcome:
       go_to_index: 查看建議和辯論
       title: 參與
-      user_permission_debates: 參與辯論
       user_permission_info: 您可以用您的帳戶來......
-      user_permission_proposal: 創建新建議
-      user_permission_support_proposal: 支持建議*
       user_permission_verify: "要執行所有操作，請核實您的帳戶。"
-      user_permission_verify_info: "*僅適用於人口普查的用戶。"
       user_permission_verify_my_account: 核實我的帳戶
-      user_permission_votes: 參與最終投票
   invisible_captcha:
     sentence_for_humans: "如果您是人，請忽略此字段"
     timestamp_error_message: "對不起，太快了！ 請重新提交。"
