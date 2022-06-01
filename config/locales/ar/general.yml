@@ -11,14 +11,9 @@ ar:
       save_changes_submit: حفظ التغييرات
       recommendations: التوصيات
       title: حسابي
-      user_permission_debates: المشاركة بالحوارات
       user_permission_info: من خلال حسابك يمكنك...
-      user_permission_proposal: انشاء مقترحات جديدة
-      user_permission_support_proposal: دعم مقترحات
       user_permission_title: المشاركة
       user_permission_verify: لتنفيذ كافة الإجراءات يرجى التحقق من الحساب الخاص بك.
-      user_permission_verify_info: "* فقط للمستخدمين في التعداد."
-      user_permission_votes: المشاركة في التصويت النهائي
       verified_account: تم التحقق من الحساب
       verify_my_account: التحقق من حسابي
   application:
@@ -962,14 +957,9 @@ ar:
       go_to_index: ليس الآن، انتقل إلى صفحة الفهرس
       start_using_consul: انتقل إلى صفحة الفهرس
       title: المشاركة
-      user_permission_debates: المشاركة بالحوارات
       user_permission_info: من خلال حسابك يمكنك...
-      user_permission_proposal: انشاء مقترحات جديدة
-      user_permission_support_proposal: دعم مقترحات *
       user_permission_verify: "لتنفيذ كافة الإجراءات يرجى التحقق من الحساب الخاص بك."
-      user_permission_verify_info: "* فقط للمستخدمين في التعداد."
       user_permission_verify_my_account: التحقق من حسابي
-      user_permission_votes: المشاركة في التصويت النهائي
   invisible_captcha:
     sentence_for_humans: "إذا كنت إنسانا، فتجاهل هذا الحقل"
     timestamp_error_message: "آسف ، كان ذلك سريعًا جدًا! يرجى إعادة التقديم."
