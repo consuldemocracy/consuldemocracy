@@ -60,7 +60,6 @@ cs:
           winners: Vybrané
       debate:
         empty_questions: Nejsou k dispozici žádné otázky
-        participate: Účastnit se dabaty
       index:
         filter: Filtr
         filters:
