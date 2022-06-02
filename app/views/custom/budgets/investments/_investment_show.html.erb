@@ -103,6 +103,8 @@
         </div>
       <% end %>
 
+      <hr />
+
       <% if investment.location.present? %>
         <p>
           <%= t("budgets.investments.show.location_html", location: investment.location) %>
@@ -128,16 +130,13 @@
       <% end %>
 
       <% if investment.should_show_price? %>
-        <h2><%= t("budgets.investments.show.price") %></h2>
-        <div class="no-overflow supports text-center">
-          <p class="investment-project-amount">
-            <%= investment.price %> €
-            <!-- <%= investment.formatted_price %> -->
-          </p>
+        <div class="investment-price">
+          <h4><%= t("budgets.investments.show.price") %>: <span><%= investment.price %> €</span></h4>
           <% if investment.should_show_price_explanation? %>
             <p class="investment-price-explanation"><%= investment.price_explanation %></p>
           <% end %>
         </div>
+        <hr />
       <% end %>
       <% if investment.should_show_aside? %>
         <% if investment.should_show_votes? %>

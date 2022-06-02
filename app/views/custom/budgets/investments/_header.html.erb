@@ -25,11 +25,9 @@
             <%= strip_tags(@budget.current_phase.summary.html_safe) %>
           <% end %>
         </h2>
-        <p class="large-description">
-          <% if @budget.current_phase.summary %>
-            <%= @budget.current_phase.description.html_safe %>
-          <% end %>
-        </p>
+        <% if @budget.current_phase.summary %>
+          <%= @budget.current_phase.description.html_safe %>
+        <% end %>
         <% if @budget.phase == 'accepting' %>
           <% if current_user %>
             <% if current_user&.level_two_or_three_verified? %>

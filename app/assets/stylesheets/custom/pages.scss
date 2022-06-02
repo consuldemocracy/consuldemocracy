@@ -155,11 +155,6 @@ only screen and (min-resolution: 240dpi) {
       }
     }
   }
-
-  hr {
-    border-bottom: 1px solid $black;
-    max-width: none;
-  }
 }
 
 .welcome-columns {
@@ -417,12 +412,6 @@ span:hover::before {
     }
   }
 
-  h2 {
-    margin-bottom: 1.5rem;
-    font-weight: 700;
-    text-align: center;
-  }
-
   .social-box {
     // background: #fff !important;
     padding: 2rem 0;
@@ -560,6 +549,19 @@ span:hover::before {
   }
 }
 
+.investment-price {
+  padding: 1.5rem 0;
+
+  h4 span {
+    color: #222222;
+    font-weight: 600;
+  }
+
+  .investment-price-explanation {
+    margin-bottom: 0;
+  }
+}
+
 .custombackbutton {
   position: relative;
   margin: auto;
@@ -589,6 +591,12 @@ span:hover::before {
   h1 {
     margin-bottom: 1rem;
     line-height: 1.25;
+  }
+
+  h2 {
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    text-align: center;
   }
 
   p {
