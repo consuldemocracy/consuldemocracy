@@ -13,15 +13,6 @@ module Maps
     end
   end
 
-  def validate_latitude_longitude(mappable, mappable_factory_name)
-    latitude_attribute = "##{mappable_factory_name}_map_location_attributes_latitude"
-    longitude_attribute = "##{mappable_factory_name}_map_location_attributes_longitude"
-    expect(find(latitude_attribute, visible: false).value).to eq "51.48"
-    expect(find(longitude_attribute, visible: false).value).to eq "0.0"
-    expect(mappable.map_location.latitude).to eq 51.48
-    expect(mappable.map_location.longitude).to eq 0.0
-  end
-
   def fill_in_budget_investment_form
     fill_in_new_investment_title with: "Budget investment title"
     fill_in_ckeditor "Description", with: "Budget investment description"
