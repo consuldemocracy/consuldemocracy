@@ -71,7 +71,7 @@ Rails.application.configure do
   # Configure your SMTP service credentials in secrets.yml
   if Rails.application.secrets.smtp_settings
     config.action_mailer.delivery_method = Rails.application.secrets.mailer_delivery_method || :smtp
-    config.action_mailer.smtp_settings = Rails.application.secrets.smtp_settings
+    config.action_mailer.smtp_settings = Rails.application.secrets.smtp_settings.symbolize_keys
   end
 
   # Disable locale fallbacks for I18n
