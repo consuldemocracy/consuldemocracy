@@ -2,19 +2,19 @@ require "rails_helper"
 
 describe InstallationController, type: :request do
   describe "consul.json" do
-    let(:test_feature_settings) do
+    let(:test_process_settings) do
       {
-        "disabled_feature" => nil,
-        "enabled_feature" => "t"
+        "disabled_process" => nil,
+        "enabled_process" => "t"
       }
     end
 
-    let(:seeds_feature_settings) { Setting.where("key LIKE 'feature.%'") }
+    let(:seeds_process_settings) { Setting.where("key LIKE 'process.%'") }
 
     before do
-      seeds_feature_settings.destroy_all
-      test_feature_settings.each do |feature_name, feature_value|
-        Setting["feature.#{feature_name}"] = feature_value
+      seeds_process_settings.destroy_all
+      test_process_settings.each do |feature_name, feature_value|
+        Setting["process.#{feature_name}"] = feature_value
       end
     end
 
@@ -23,7 +23,7 @@ describe InstallationController, type: :request do
 
       expect(response).to have_http_status(:ok)
       expect(JSON.parse(response.body)["release"]).not_to be_empty
-      expect(JSON.parse(response.body)["features"]).to eq(test_feature_settings)
+      expect(JSON.parse(response.body)["features"]).to eq(test_process_settings)
     end
   end
 end
