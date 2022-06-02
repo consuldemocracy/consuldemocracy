@@ -21,13 +21,6 @@ describe "Admin polls", :admin do
     expect(page).to have_content "List of polls"
     expect(page).to have_css ".poll", count: 3
 
-    polls = Poll.all
-    polls.each do |poll|
-      within("#poll_#{poll.id}") do
-        expect(page).to have_content poll.name
-      end
-    end
-
     expect(poll_3.name).to appear_before(poll_1.name)
     expect(poll_1.name).to appear_before(poll_2.name)
     expect(page).not_to have_content "There are no polls"
