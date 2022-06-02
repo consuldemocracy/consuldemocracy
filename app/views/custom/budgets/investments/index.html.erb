@@ -170,24 +170,24 @@
             <!-- TABS -->
             <% if phase.kind == :accepting %>
               <div class="landings">
-                <div class=" bggray">
+                <div class="bggray">
                   <div class="main-indented-content">
                     <div class="row">
                       <div class="small-12 medium-9 medium-centered text-center">
                         <h1><%= t("custom.headings.#{phase.kind}") %>!</h1>
-                        <p><%= raw(phase.summary) %></p>
+                        <%= raw(phase.summary) %>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div class="">
+                <div>
                   <div class="main-indented-content ">
                     <div class="row qs">
                       <div class="small-12 medium-6 column ">
                         <div class="medium-8 medium-centered js-padt">
                           <h2><%= t("custom.presentation.accepting.title_1") %></h2>
-                          <p><%= raw(phase.presentation_summary_accepting) %></p>
+                          <%= raw(phase.presentation_summary_accepting) %>
                         </div>
                       </div>
                       <div class="small-12 medium-6 column">
@@ -199,7 +199,7 @@
                   </div>
                 </div>
 
-                <div class=" bggray">
+                <div class="bggray">
                   <div class="main-indented-content ">
                     <div class="row qs">
                       <div class="small-12 medium-6 column hide-for-small-only">
@@ -210,20 +210,20 @@
                       <div class="small-12 medium-6 column ">
                         <div class="medium-8 medium-centered js-padt">
                           <h2><%= t("custom.presentation.accepting.title_2") %></h2>
-                          <p><%= raw(phase.presentation_summary_balloting) %></p>
+                          <%= raw(phase.presentation_summary_balloting) %>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div class="">
+                <div>
                   <div class="main-indented-content ">
                     <div class="row qs">
                       <div class="small-12 medium-6 column ">
                         <div class="medium-8 medium-centered js-padt">
                           <h2><%= t("custom.presentation.accepting.title_3") %></h2>
-                          <p><%= raw(phase.presentation_summary_finished) %></p>
+                          <%= raw(phase.presentation_summary_finished) %>
                         </div>
                       </div>
                       <div class="small-12 medium-6 column ">
@@ -241,24 +241,24 @@
             <% if phase.kind == :balloting %>
 
               <div class="landings">
-                <div class=" bggray">
+                <div class="bggray">
                   <div class="main-indented-content">
                     <div class="row">
                       <div class="small-12 medium-9 medium-centered text-center">
                         <h1><%= t("custom.headings.#{phase.kind}") %>!</h1>
-                        <h2><%= raw(phase.summary) %></h2>
+                        <%= raw(phase.summary) %>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div class="">
+                <div>
                   <div class="main-indented-content ">
                     <div class="row qs">
                       <div class="small-12 medium-6 column ">
                         <div class="medium-8 medium-centered js-padt">
                           <h1><%= t("custom.presentation.balloting.title_1") %></h1>
-                          <h2><%= raw(phase.presentation_summary_accepting) %></h2>
+                          <%= raw(phase.presentation_summary_accepting) %>
                         </div>
                       </div>
                       <div class="small-12 medium-6 column">
@@ -270,7 +270,7 @@
                   </div>
                 </div>
 
-                <div class=" bggray">
+                <div class="bggray">
                   <div class="main-indented-content ">
                     <div class="row qs">
                       <div class="small-12 medium-6 column hide-for-small-only">
@@ -281,11 +281,11 @@
                       <div class="small-12 medium-6 column ">
                         <div class="medium-8 medium-centered js-padt">
                           <h1><%= t("custom.presentation.balloting.title_2") %></h1>
-                          <h2><%= raw(phase.presentation_summary_balloting) %></h2>
+                          <%= raw(phase.presentation_summary_balloting) %>
                         </div>
                       </div>
                       <div class="small-12 medium-6 column show-for-small-only">
-                        <div class=" medium-centered">
+                        <div class="medium-centered">
                           <%= image_tag(image_path_for("phases/kdo.png")) %>
                         </div>
                       </div>
@@ -293,13 +293,13 @@
                   </div>
                 </div>
 
-                <div class="">
+                <div>
                   <div class="main-indented-content ">
                     <div class="row qs">
                       <div class="small-12 medium-6 column ">
                         <div class="medium-8 medium-centered js-padt">
                           <h1><%= t("custom.presentation.balloting.title_3") %></h1>
-                          <h2><%= raw(phase.presentation_summary_finished) %></h2>
+                          <%= raw(phase.presentation_summary_finished) %>
                         </div>
                       </div>
                       <div class="small-12 medium-6 column ">
@@ -316,24 +316,24 @@
 
             <% if phase.kind == :finished %>
               <div class="landings">
-                <div class=" bggray">
+                <div class="bggray">
                   <div class="main-indented-content">
                     <div class="row">
                       <div class="small-12 medium-9 medium-centered text-center">
                         <h1><%= t("custom.headings.#{phase.kind}") %>!</h1>
-                        <h2><%= raw(phase.summary) %></h2>
+                        <%= raw(phase.summary) %>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div class="">
+                <div>
                   <div class="main-indented-content ">
                     <div class="row qs">
                       <div class="small-12 medium-6 column ">
                         <div class="medium-8 medium-centered js-padt">
                           <h1><%= t("custom.presentation.finished.title_1") %></h1>
-                          <h2><%= raw(phase.presentation_summary_accepting) %></h2>
+                          <%= raw(phase.presentation_summary_accepting) %>
                         </div>
                       </div>
                       <div class="small-12 medium-6 column ">
@@ -345,7 +345,7 @@
                   </div>
                 </div>
 
-                <div class=" bggray">
+                <div class="bggray">
                   <div class="main-indented-content ">
                     <div class="row qs">
                       <div class="small-12 medium-6 column hide-for-small-only">
@@ -356,7 +356,7 @@
                       <div class="small-12 medium-6 column ">
                         <div class="medium-8 medium-centered js-padt">
                           <h1><%= t("custom.presentation.finished.title_2") %></h1>
-                          <h2><%= raw(phase.presentation_summary_balloting) %></h2>
+                          <%= raw(phase.presentation_summary_balloting) %>
                         </div>
                       </div>
                       <div class="small-12 show-for-small-only">
@@ -368,13 +368,13 @@
                   </div>
                 </div>
 
-                <div class="">
+                <div>
                   <div class="main-indented-content ">
                     <div class="row qs">
                       <div class="small-12 medium-6 column ">
                         <div class="medium-8 medium-centered js-padt">
                           <h1><%= t("custom.presentation.finished.title_3") %></h1>
-                          <h2><%= raw(phase.presentation_summary_finished) %></h2>
+                          <%= raw(phase.presentation_summary_finished) %>
                         </div>
                       </div>
                       <div class="small-12 medium-6 column">
