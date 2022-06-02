@@ -32,7 +32,7 @@ class Admin::BannersController < Admin::BaseController
 
   def destroy
     @banner.destroy!
-    redirect_to admin_banners_path
+    redirect_to admin_banners_path, notice: t("admin.banners.destroy.notice")
   end
 
   private

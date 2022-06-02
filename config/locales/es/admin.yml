@@ -38,6 +38,8 @@ es:
           sdg: ODS
       create:
         notice: "Banner creado correctamente"
+      destroy:
+        notice: "Banner eliminado correctamente"
       edit:
         editing: Editar el banner
         form:

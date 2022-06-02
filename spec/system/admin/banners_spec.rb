@@ -177,6 +177,8 @@ describe "Admin banners magement", :admin do
       click_button "Delete"
     end
 
+    expect(page).to have_content "Banner deleted successfully"
+
     visit admin_root_path
     expect(page).not_to have_content "Ugly banner"
   end
