@@ -44,11 +44,14 @@
         <%= f.text_field :redeemable_code %>
       <% end %>
 
-      <%= f.check_box :terms_of_service,
-        title: t("devise_views.users.registrations.new.terms_title"),
-        label: t("devise_views.users.registrations.new.terms",
-                 terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/pogoji-uporabe", { target: "_blank" })
-                ) %>
+      <label class="checkbox-label" for="user_terms_of_service">
+        <span class="checkbox">
+          <%= t("devise_views.users.registrations.new.terms",
+            terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/pogoji-uporabe", { target: "_blank" })
+          ).html_safe %>
+        </span>
+        <%= f.check_box :terms_of_service, title: t("devise_views.users.registrations.new.terms_title"), label: false %>
+      </label>
 
       <div class="small-12 medium-6 small-centered">
         <%= f.submit t("devise_views.users.registrations.new.submit"), class: "action-button" %>
