@@ -13,7 +13,7 @@ describe "Admin booths", :admin do
   end
 
   scenario "Index" do
-    3.times { create(:poll_booth) }
+    booths = 3.times.map { create(:poll_booth) }
 
     visit admin_root_path
 
@@ -22,7 +22,6 @@ describe "Admin booths", :admin do
       click_link "Booths location"
     end
 
-    booths = Poll::Booth.all
     booths.each do |booth|
       within("#booth_#{booth.id}") do
         expect(page).to have_content booth.name

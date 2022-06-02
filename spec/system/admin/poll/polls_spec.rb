@@ -212,6 +212,7 @@ describe "Admin polls", :admin do
         booth.booth_assignments.each do |booth_assignment|
           3.times { create(:poll_officer_assignment, booth_assignment: booth_assignment) }
         end
+        officers = Poll::Officer.all
 
         visit admin_poll_path(poll)
 
@@ -219,7 +220,6 @@ describe "Admin polls", :admin do
 
         expect(page).to have_css ".officer", count: 3
 
-        officers = Poll::Officer.all
         officers.each do |officer|
           within("#officer_#{officer.id}") do
             expect(page).to have_content officer.name
