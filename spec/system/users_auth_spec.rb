@@ -30,6 +30,30 @@ describe "Users" do
 
         expect(page).to have_content error_message
       end
+
+      scenario "User already confirmed email with the token" do
+        message = "You have been sent a message containing a verification link. Please click on this link to activate your account."
+        visit "/"
+        click_link "Register"
+
+        fill_in "Username", with: "Manuela Carmena"
+        fill_in "Email", with: "manuela@consul.dev"
+        fill_in "Password", with: "judgementday"
+        fill_in "Confirm password", with: "judgementday"
+        check "user_terms_of_service"
+
+        click_button "Register"
+
+        expect(page).to have_content message
+
+        confirm_email
+        expect(page).to have_content "Your account has been confirmed."
+
+        sent_token = /.*confirmation_token=(.*)".*/.match(ActionMailer::Base.deliveries.last.body.to_s)[1]
+        visit user_confirmation_path(confirmation_token: sent_token)
+
+        expect(page).to have_content "You have already been verified; please attempt to sign in."
+      end
     end
 
     context "Sign in" do
