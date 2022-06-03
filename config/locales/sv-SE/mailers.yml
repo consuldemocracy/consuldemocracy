@@ -41,6 +41,7 @@ sv:
     direct_message_for_sender:
       subject: "Du har skickat ett nytt privat meddelande"
       title: "Du har skickat ett nytt privat meddelande till <strong>%{receiver}</strong> med innehållet:"
+      text: "Du har skickat ett nytt privat meddelande till <strong>%{receiver}</strong> med innehållet:"
     user_invite:
       ignore: "Om du inte har begärt denna inbjudan, behöver du inte bry dig om den."
       text: "Tack för att du registrerat dig på %{org}! Nu kan du snart vara med och delta, fyll bara i det här formuläret:"
@@ -58,6 +59,7 @@ sv:
       sincerely: "Vänliga hälsningar,"
       share: "Dela ditt projekt"
     budget_investment_unfeasible:
+      title: "Ditt budgetförslag har markerats som ej genomförbart"
       hi: "Kära användare,"
       new: "Med anledning av det ber vi dig att skapa ett <strong>nytt budgetförslag</strong> som uppfyller kraven för den här processen. Du kan göra det med följande länk: %{url}."
       new_href: "nytt budgetförslag"
@@ -66,6 +68,7 @@ sv:
       subject: "Ditt budgetförslag '%{code}' har markerats som ej genomförbart"
     budget_investment_selected:
       subject: "Ditt budgetförslag '%{code}' har valts"
+      title: "Ditt investeringsprojekt har valts"
       hi: "Kära användare,"
       share: "Börja samla röster och dela i sociala medier för att ditt investeringsprojekt ska kunna bli verklighet."
       share_button: "Dela ditt budgetförslag"
@@ -73,6 +76,7 @@ sv:
       sincerely: "Vänliga hälsningar"
     budget_investment_unselected:
       subject: "Ditt budgetförslag '%{code}' har inte valts"
+      title: "Ditt investeringsprojekt har inte valts"
       hi: "Kära användare,"
       thanks: "Tack återigen för att du deltar."
       sincerely: "Vänliga hälsningar"
