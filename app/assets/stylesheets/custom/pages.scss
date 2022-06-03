@@ -327,9 +327,22 @@ span:hover::before {
     }
   }
 
+  .investment-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
   .budget-investment-content {
     min-height: unset;
     padding: rem-calc(15);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    .investment-project-text {
+      flex-grow: 1;
+    }
 
     a {
       color: $rhino;
@@ -369,6 +382,7 @@ span:hover::before {
 
     .total-supports {
       margin-right: 40px;
+      color: $text;
     }
   }
 
@@ -408,6 +422,14 @@ span:hover::before {
   background-color: #f2f2f2;
   padding: 3rem 0;
   font-size: rem-calc(20);
+}
+
+.budget-investment .supports {
+  padding-top: 1.5rem;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .budget-investment-show {

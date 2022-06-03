@@ -3,7 +3,7 @@
 
     <div class="row" data-equalizer>
 
-      <div class="small-12 medium-12 large-12">
+      <div class="small-12 medium-12 large-12 investment-content-wrapper">
         <div class="image-holder">
           <%= link_to namespaced_budget_investment_path(investment), class: "investment-title" do %>
             <% if investment.image.present? %>
@@ -16,34 +16,32 @@
 
         <div class="budget-investment-content">
           <% cache [locale_and_user_status(investment), "index", investment, investment.author] do %>
-            <%= link_to namespaced_budget_investment_path(investment), class: "investment-title" do %>
-              <h3 title="<%= investment.title %>">
-                <%= strip_tags(investment&.title&.gsub("><", "> <"))&.truncate(50, separator: " ", omission: "...") %>
-              </h3>
-            <% end %>
-            <p class="investment-project-info">
-              <%= l investment.created_at.to_date %>
-              <span class="bullet">&nbsp;&bull;&nbsp;</span>
-              <%= investment.heading.name %>
-            </p>
-            <div class="investment-project-description">
-              <%= strip_tags(investment.answers.first().text.gsub("><", "> <"))&.truncate(220, separator: " ", omission: "...") %>
+            <div class="investment-project-text">
+              <%= link_to namespaced_budget_investment_path(investment), class: "investment-title" do %>
+                <h3 title="<%= investment.title %>">
+                  <%= strip_tags(investment&.title&.gsub("><", "> <"))&.truncate(50, separator: " ", omission: "...") %>
+                </h3>
+              <% end %>
+              <p class="investment-project-info">
+                <%= l investment.created_at.to_date %>
+                <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                <%= investment.heading.name %>
+              </p>
+              <div class="investment-project-description">
+                <%= strip_tags(investment.answers.first().text.gsub("><", "> <"))&.truncate(220, separator: " ", omission: "...") %>
+              </div>
             </div>
+
             <% if investment.should_show_price? %>
               <div id="<%= dom_id(investment) %>_price"
-                   class="supports inline-block"
-                   <%= "data-equalizer-watch" if feature?(:allow_images) && investment.image.present? %>>
+                  class="supports"
+                  <%= "data-equalizer-watch" if feature?(:allow_images) && investment.image.present? %>>
                 <span class="total-supports no-button">
                   <%= investment.price %> €
                   <!-- <%= investment.formatted_price %> -->
                 </span>
-              </div>
-            <% end %>
-
-            <% if investment.budget.phase == 'finished' && investment.status && investment.winner %>
-              <div class="clearfix btop">
                 <div class="finvestment investment-<%= investment.status %> ">
-                  <i></i><% if investment.status != '' %><%= t("custom.statuses.#{investment.status}") %><% end %>
+                  <% if investment.status != '' %><%= t("custom.statuses.#{investment.status}") %><% end %>
                 </div>
               </div>
             <% end %>
