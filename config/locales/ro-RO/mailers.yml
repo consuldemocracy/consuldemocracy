@@ -13,7 +13,7 @@ ro:
       instructions: Pentru a finaliza verificarea contului de utilizator trebuie să faceți clic pe %{verification_link}.
       subject: Confirmă adresa de email
       thanks: Vă mulțumim foarte mult.
-      title: Confirmați contul utilizând următorul link
+      title: "Confirmați contul utilizând următorul link"
     reply:
       hi: Bună
       new_reply_by: Acesta este un nou răspuns de la <strong>%{commenter}</strong> la comentariul dumneavoastră
