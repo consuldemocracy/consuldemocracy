@@ -240,6 +240,7 @@ only screen and (min-resolution: 240dpi) {
 
 .callout {
   z-index: 1000;
+  border-radius: 0;
 }
 
 .bgblack {
@@ -281,6 +282,12 @@ span:hover::before {
 
 
 // **************** PREDLOGI ********************
+#budget-investments-main {
+  .expanded {
+    margin: 40px 0 20px;
+  }
+}
+
 .budget-investments {
   .phase-title {
     margin: rem-calc(30) 0 rem-calc(20);

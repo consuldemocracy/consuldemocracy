@@ -1,0 +1,108 @@
+<% valuation = local_assigns.fetch(:valuation, false) %>
+<% cache [locale_and_user_status(comment), comment, commentable_cache_key(comment.commentable), comment.author] do %>
+  <div id="<%= dom_id(comment) %>" class="comment small-12">
+    <div class="comment-body">
+      <% if comment.hidden? %>
+        <% if comment.children.size > 0 %>
+          <div class="callout secondary">
+            <p><%= t("comments.comment.deleted") %></p>
+          </div>
+        <% end %>
+      <% else %>
+        <% if comment.as_administrator? %>
+          <%= image_tag("avatar_admin.png", size: 32, class: "admin-avatar float-left") %>
+        <% elsif comment.as_moderator? %>
+          <%= image_tag("avatar_moderator.png", size: 32, class: "moderator-avatar float-left") %>
+        <% else %>
+        <% if comment.user.hidden? || comment.user.erased? %>
+            <span class="icon-deleted user-deleted"></span>
+          <% elsif comment.user.organization? %>
+            <%= image_tag("avatar_collective.png", size: 32, class: "avatar float-left") %>
+          <% else %>
+            <%= avatar_image(comment.user, seed: comment.user_id, size: 32, class: "float-left") %>
+          <% end %>
+        <% end %>
+
+        <div class="comment-info">
+
+          <% if comment.as_administrator? %>
+            <span class="user-name">
+              <%= t("comments.comment.admin") %>
+              <% if valuation %>
+                <%= Administrator.find(comment.administrator_id).description_or_name %>
+              <% else %>
+                #<%= comment.administrator_id %>
+              <% end %>
+            </span>
+          <% elsif comment.as_moderator? %>
+            <span class="user-name"><%= t("comments.comment.moderator") %> #<%= comment.moderator_id %></span>
+          <% else %>
+
+            <% if comment.user.hidden? || comment.user.erased? %>
+              <span class="user-name"><%= t("comments.comment.user_deleted") %></span>
+            <% else %>
+              <span class="user-name"><%= link_to comment.user.name, user_path(comment.user) %></span>
+              <% if comment.user.display_official_position_badge? %>
+                &nbsp;&bull;&nbsp;
+                <span class="label round level-<%= comment.user.official_level %>">
+                  <%= comment.user.official_position %>
+                </span>
+              <% end %>
+            <% end %>
+            <% if comment.user.verified_organization? %>
+              &nbsp;&bull;&nbsp;
+              <span class="label round is-association">
+                <%= t("shared.collective") %>
+              </span>
+            <% end %>
+
+          <% end %>
+
+          &nbsp;&bull;&nbsp;
+          <span>
+            <%= link_to comment_path(comment) do %>
+              <%= l comment.created_at.to_datetime, format: :datetime %>
+            <% end %>
+          </span>
+        </div>
+
+        <div class="comment-user <%= user_level_class comment %>">
+          <%= simple_format sanitize_and_auto_link(comment.body), {}, sanitize: false %>
+        </div>
+
+        <div id="<%= dom_id(comment) %>_reply" class="reply">
+          <% unless valuation %>
+            <div id="<%= dom_id(comment) %>_votes" class="comment-votes float-right">
+              <%= render "comments/votes", comment: comment %>
+            </div>
+          <% end %>
+
+          <span class="responses-count">
+            <%= render "comments/responses_count", count: comment.children.size %>
+          </span>
+
+          <% if user_signed_in? && !comments_closed_for_commentable?(comment.commentable) && !require_verified_resident_for_commentable?(comment.commentable, current_user) %>
+            <span class="divider">&nbsp;|&nbsp;</span>
+            <%= link_to(comment_link_text(comment), "",
+                        class: "js-add-comment-link", data: { id: dom_id(comment) }) %>
+
+            <% unless valuation %>
+              <%= render "comments/actions", { comment: comment } %>
+            <% end %>
+
+            <% if !valuation || can?(:comment_valuation, comment.commentable) %>
+              <%= render "comments/form", { commentable: comment.commentable,
+                                           parent_id: comment.id,
+                                           valuation: valuation } %>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <% if child_comments_of(comment).count > 0 %>
+      <%= render "comments/comment_list", comments: child_comments_of(comment), valuation: valuation %>
+    <% end %>
+  </div>
+
+<% end %>

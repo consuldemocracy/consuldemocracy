@@ -395,6 +395,17 @@ input[type="submit"].action-button {
   }
 }
 
+.comments {
+  .callout a {
+    text-decoration: underline !important;
+    color: $text !important;
+  }
+
+  .comment-body .comment-user {
+    padding: 0.375rem;
+  }
+}
+
 hr {
   border-bottom: 1px solid $black;
   max-width: none;
@@ -796,7 +807,7 @@ body > header,
   padding: 0;
 
   .expanded {
-    margin: 40px 0 20px;
+    // margin: 40px 0 20px;
 
     .phase-description {
 
