@@ -13,7 +13,7 @@ gl:
       instructions: Para completar o proceso de verificación da túa conta, tes que premer en %{verification_link}
       subject: Verifica o teu correo electrónico
       thanks: Moitas grazas.
-      title: Verifica a túa conta co seguinte enlace
+      title: "Verifica a túa conta co seguinte enlace"
     reply:
       hi: Ola
       new_reply_by: Hai unha nova resposta de <strong>%{commenter}</strong> ao tu comentario en
