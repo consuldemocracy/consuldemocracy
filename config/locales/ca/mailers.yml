@@ -13,7 +13,7 @@ ca:
       instructions: Per completar la verificació del compte d’usuari, heu de fer clic %{verification_link}.
       subject: Verifica el teu email
       thanks: Moltes gràcies.
-      title: Verifica el teu compte amb el següent enllaç
+      title: "Verifica el teu compte amb el següent enllaç"
     reply:
       hi: Hola
       new_reply_by: Hi ha una nova resposta de <strong>%{commenter}</strong> al teu comentari en
