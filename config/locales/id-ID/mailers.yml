@@ -11,7 +11,7 @@ id:
       instructions_2: Email ini akan memverifikasi akun anda dengan <b>%{document_type} %{document_number}</b>. Jika ini bukan milik anda, mohon jangan klik tauntan sebelumnya dan abaikan email ini.
       subject: Konfirmasikan email anda
       thanks: Terima kasih banyak.
-      title: Konfirmasikan akun anda menggunakan tautan berikut
+      title: "Konfirmasikan akun anda menggunakan tautan berikut"
     reply:
       hi: Hai
       new_reply_by: Ada respon baru dari <strong>%{commenter}</strong> untuk komentar anda
