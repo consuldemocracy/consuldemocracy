@@ -13,7 +13,7 @@ pt-BR:
       instructions: Para completar a verificação da sua conta de usuário, você deve clicar em %{verification_link}.
       subject: Confirme seu email
       thanks: Muito Obrigado.
-      title: Confirme sua conta usando o seguinte link
+      title: "Confirme sua conta usando o seguinte link"
     reply:
       hi: Oi
       new_reply_by: Há uma nova resposta de <strong>%{commenter}</strong> ao seu comentário sobre
