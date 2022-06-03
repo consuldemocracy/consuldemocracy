@@ -12,7 +12,7 @@ zh-TW:
       instructions: 要完成您的用戶帳戶的核實，您必須單擊%{verification_link}。
       subject: 確認您的電郵
       thanks: 謝謝。
-      title: 使用以下鏈接確認您的帳戶
+      title: "使用以下鏈接確認您的帳戶"
     reply:
       hi: 您好
       new_reply_by: <strong>%{commenter}</strong>對您的評論有新的回覆
