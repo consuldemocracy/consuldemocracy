@@ -13,7 +13,7 @@ hr:
       instructions: Za potvrdu svojeg korisničkog računa, kliknite %{verification_link}.
       subject: Potvrdite svoj e-mail
       thanks: Hvala vam puno.
-      title: Potvrdite Vaš račun koristeći sljedeću poveznicu
+      title: "Potvrdite Vaš račun koristeći sljedeću poveznicu"
     reply:
       hi: Pozdrav
       new_reply_by: Stigao je novi odgovor od <strong>%{commenter}</strong> na vaš komentar o temi
