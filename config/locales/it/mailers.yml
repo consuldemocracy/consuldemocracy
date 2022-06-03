@@ -16,7 +16,7 @@ it:
       instructions: Per completare la verifica dell'account utente, è necessario cliccare su %{verification_link}.
       subject: Conferma il tuo indirizzo email
       thanks: Grazie.
-      title: Conferma il tuo account utilizzando il seguente link
+      title: "Conferma il tuo account utilizzando il seguente link"
     reply:
       hi: Ciao
       new_reply_by: C'è una nuova risposta da <strong>%{commenter}</strong> per il tuo commento su
