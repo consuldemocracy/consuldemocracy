@@ -7,7 +7,7 @@ fi:
       click_here_to_verify: tämä linkki
       subject: Vahvista sähköpostisi
       thanks: Kiitoksia paljon.
-      title: Vahvista tilisi käyttämällä seuraavaa linkkiä
+      title: "Vahvista tilisi käyttämällä seuraavaa linkkiä"
     reply:
       hi: Hei
       subject: Joku on vastannut kommenttiisi
