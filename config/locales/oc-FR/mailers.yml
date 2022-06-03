@@ -13,7 +13,7 @@ oc:
       instructions: Per completar la verificacion de l'atencion d’usatgièr, vos cal far clic %{verification_link}.
       subject: Verifica lo tieu email
       thanks: Fòrça gràcias.
-      title: Verifica lo tieu compte amb lo seguent ligam
+      title: "Verifica lo tieu compte amb lo seguent ligam"
     reply:
       hi: Adieu
       new_reply_by: I a una nòva responsa de <strong>%{commenter}</strong> a lo tieu comentari en
