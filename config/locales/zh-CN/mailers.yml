@@ -12,7 +12,7 @@ zh-CN:
       instructions: 要完成您的用户账户验证，您必须点击%{verification_link}。
       subject: 确认您的电子邮件
       thanks: 非常感谢。
-      title: 使用以下链接来确认您的账户
+      title: "使用以下链接来确认您的账户"
     reply:
       hi: 您好
       new_reply_by: <strong>%{commenter}</strong> 对您评论有新回复
