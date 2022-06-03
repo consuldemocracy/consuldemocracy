@@ -16,7 +16,7 @@ tr:
       instructions: Hesap doğrulama işlemini tamamlamak için linke tıklayın %{verification_link}.
       subject: E-postanızı onaylayın
       thanks: Çok teşekkür ederiz.
-      title: Aşağıdaki bağlantıyı kullanarak hesabınızı onaylayın
+      title: "Aşağıdaki bağlantıyı kullanarak hesabınızı onaylayın"
     reply:
       hi: Merhaba
       new_reply_by: Yorumunuza <strong>%{commenter}</strong> kullanıcısı tarafından yeni bir yanıt verildi
