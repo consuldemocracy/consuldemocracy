@@ -11,7 +11,7 @@ bs:
       instructions: Kako bi završili sa potvrdom vašeg korisničkog naloga, morate kliknuti na %{verification_link}.
       subject: Potvrdite vaš email
       thanks: Hvala puno.
-      title: Potvrdite nalog ovim linkom
+      title: "Potvrdite nalog ovim linkom"
     reply:
       hi: Pozdrav
       subject: Neko je odgovorio na vaš komentar
