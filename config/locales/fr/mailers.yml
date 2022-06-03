@@ -13,7 +13,7 @@ fr:
       instructions: Procéder à la vérification de votre compte utilisateur, vous devez cliquer sur %{verification_link}.
       subject: Confirmer votre courriel
       thanks: Merci beaucoup.
-      title: Confirmer votre compte en utilisant le lien suivant
+      title: "Confirmer votre compte en utilisant le lien suivant"
     reply:
       hi: Bonjour
       new_reply_by: Il y a une nouvelle réponse de <strong>%{commenter}</strong> à votre commentaire sur
