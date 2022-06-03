@@ -12,7 +12,7 @@ so:
       instructions: Si aad u buuxiso xaqiijinta koontadaada akoonkaaga waa inaad gujisaa%{verification_link}.
       subject: Xaqiiji emailka
       thanks: Ad baad u mahadsantahay.
-      title: Xaqiiji xisaabtaada adigoo isticmaalaya xiriirka soo socda
+      title: "Xaqiiji xisaabtaada adigoo isticmaalaya xiriirka soo socda"
     reply:
       hi: Haye
       new_reply_by: Waxaa jira jawaab cusub oo ka socota <strong>%{commenter}</strong> si aad faallo uga bixiso
