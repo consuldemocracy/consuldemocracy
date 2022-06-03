@@ -12,7 +12,7 @@ sq:
       instructions: Për të përfunduar verifikimin e llogarisë suaj të përdoruesit ju duhet të klikoni %{verification_link}
       subject: Konfirmo emailin tënd
       thanks: "Shumë Faleminderit \n"
-      title: Konfirmo llogarinë tënd duke përdorur lidhjen e mëposhtme
+      title: "Konfirmo llogarinë tënd duke përdorur lidhjen e mëposhtme"
     reply:
       hi: Hi
       new_reply_by: Ka një përgjigje të re nga <strong>%{commenter}</strong> në komentin tuaj
