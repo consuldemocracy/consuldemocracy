@@ -13,7 +13,7 @@ de:
       instructions: Um die Überprüfung Ihres Benutzerkontos abzuschließen, müssen Sie auf %{verification_link} klicken.
       subject: Bestätigen Sie Ihre E-Mail-Adresse
       thanks: Vielen Dank.
-      title: Bestätigen Sie Ihr Konto über den folgenden Link
+      title: "Bestätigen Sie Ihr Konto über den folgenden Link"
     reply:
       hi: Hallo
       new_reply_by: Es gibt eine neue Antwort von <strong>%{commenter}</strong> auf Ihren Kommentar
