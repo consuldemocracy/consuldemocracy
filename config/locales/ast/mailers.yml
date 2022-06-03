@@ -11,7 +11,7 @@ ast:
       instructions_2: Este email es para verificar tu cuenta con <b>%{document_type} %{document_number}</b>. Si esos no son tus datos, por favor no pulses el enlace anterior e ignora este email.
       subject: Verifica tu email
       thanks: Muchas gracias.
-      title: Verifica tu cuenta con el siguiente enlace
+      title: "Verifica tu cuenta con el siguiente enlace"
     reply:
       hi: Hola
       new_reply_by: Hay una nueva respuesta de <strong>%{commenter}</strong> a tu comentario en
