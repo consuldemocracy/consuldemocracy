@@ -12,7 +12,7 @@ he:
       instructions: כדי להשלים את אימות חשבון המשתמש שלך, עליך ללחוץ על %{verification_link}.
       subject: נא אשר את הדוא"ל שלך
       thanks: תודה מכל הלב.
-      title: אשר את חשבונך באמצעות הקישור הבא
+      title: "אשר את חשבונך באמצעות הקישור הבא"
     reply:
       hi: שלום
       new_reply_by: ישנה התייחסות חדשה מ <strong>%{commenter}</strong> לתגוב
