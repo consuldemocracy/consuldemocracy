@@ -12,7 +12,7 @@ val:
       instructions: Per acabar de verificar el teu compte d'usuari has de polsar %{verification_link}.
       subject: Verifica el teu email
       thanks: Moltes gràcies.
-      title: Verifica el teu compte amb el següent enllaç
+      title: "Verifica el teu compte amb el següent enllaç"
     reply:
       hi: Hola
       new_reply_by: Hi ha noves respostes de <strong>%{commenter}</strong> al teu comentari en
