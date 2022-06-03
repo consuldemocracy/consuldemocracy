@@ -16,7 +16,7 @@ nl:
       instructions: Om de verificatie van uw account te voltooien klikt u %{verification_link}.
       subject: Confirm your email
       thanks: Thank you very much.
-      title: Confirm your account using the following link
+      title: "Confirm your account using the following link"
     reply:
       hi: Hoi
       new_reply_by: There is a new response from <strong>%{commenter}</strong> to your comment on
