@@ -13,7 +13,7 @@ da:
       instructions: For at færdiggøre verifikationen af din brugerkonto klik på %{verification_link}.
       subject: Bekræft din e-mail
       thanks: Mange tak.
-      title: Bekræft din konto ved hjælp af følgende link
+      title: "Bekræft din konto ved hjælp af følgende link"
     reply:
       hi: Hej
       new_reply_by: Der er et nyt svar fra <strong>%{commenter}</strong> på din kommentar
