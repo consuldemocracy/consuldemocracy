@@ -13,7 +13,7 @@ es:
       instructions: Para terminar de verificar tu cuenta de usuario pulsa %{verification_link}.
       subject: Verifica tu email
       thanks: Muchas gracias.
-      title: Verifica tu cuenta con el siguiente enlace
+      title: "Verifica tu cuenta con el siguiente enlace"
     reply:
       hi: Hola
       new_reply_by: Hay una nueva respuesta de <strong>%{commenter}</strong> a tu comentario en
