@@ -21,6 +21,7 @@ sv:
       subject: Bekräfta din e-postadress
       thanks: Tack så mycket!
       title: "Bekräfta ditt konto via länken nedan"
+      text: "Bekräfta ditt konto via länken nedan."
     reply:
       hi: Hej
       new_reply_by: Det finns ett nytt svar från <strong>%{commenter}</strong> på din kommentar om
