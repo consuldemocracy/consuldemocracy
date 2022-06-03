@@ -20,7 +20,7 @@ cs:
       instructions: K dokončení ověření uživatelského účtu musíte kliknout na %{verification_link}.
       subject: Potvrďte svoji emailovou adresu
       thanks: Mockrát děkujeme.
-      title: Potvrďte svůj účet pomocí následujícího odkazu
+      title: "Potvrďte svůj účet pomocí následujícího odkazu"
     reply:
       hi: Dobrý den
       new_reply_by: Nová odpověď od <strong>%{commenter}</strong> na Váš komentář
