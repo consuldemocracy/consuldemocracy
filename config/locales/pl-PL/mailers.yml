@@ -12,7 +12,7 @@ pl:
       instructions: Aby zakończyć weryfikację Twojego konta użytkownika, musisz kliknąć %{verification_link}.
       subject: Potwierdź swój adres e-mail
       thanks: Dziękujemy bardzo.
-      title: Potwierdź swoje konto za pomocą następującego linku
+      title: "Potwierdź swoje konto za pomocą następującego linku"
     reply:
       hi: Cześć
       new_reply_by: Nowa odpowiedź od <strong>%{commenter}</strong> na Twój komentarz odnośnie
