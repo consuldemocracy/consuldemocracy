@@ -2,6 +2,10 @@ tr:
   mailers:
     title: "Açık Yönetim"
     no_reply: "Bu mesaj yanıtları kabul etmeyen bir e-posta adresinden gönderildi."
+    already_confirmed:
+      info: "Hesabınızı onaylamak için size talimatlar göndermemiz doğrultusunda bir istek aldık. Ancak, hesabınız zaten onaylanmıştır, dolayısıyla tekrar onaylanmasına gerek bulunmamaktadır."
+      new_password: "Parolanızı unuttuysanız, aşağıdaki bağlantıdan sıfırlayabilirsiniz:"
+      subject: Hesabınız onaylıdır
     comment:
       hi: Merhaba
       new_comment_by: <strong>%{commenter}</strong> adlı kullanıcıdan yeni yorum
@@ -17,6 +21,7 @@ tr:
       subject: E-postanızı onaylayın
       thanks: Çok teşekkür ederiz.
       title: "Aşağıdaki bağlantıyı kullanarak hesabınızı onaylayın"
+      text: "Aşağıdaki bağlantıyı kullanarak hesabınızı onaylayınız."
     reply:
       hi: Merhaba
       new_reply_by: Yorumunuza <strong>%{commenter}</strong> kullanıcısı tarafından yeni bir yanıt verildi
@@ -36,6 +41,7 @@ tr:
     direct_message_for_sender:
       subject: "Yeni bir özel mesaj gönderdiniz"
       title: "Bu içerikle <strong>%{receiver}</strong>'a bir yeni özel mesaj gönderdiniz:"
+      text: "Bu içerikle <strong>%{receiver}</strong> 'a bir yeni mesaj gönderdiniz:"
     user_invite:
       ignore: "Eğer bu daveti talep etmemişseniz endişelenmeyin, bu e-postayı görmezden gelebilirsiniz."
       text: "%{org}'a katılım başvurunuz için teşekkür ederiz! Saniyeler içinde katılmaya başlayabilirsiniz, aşağıdaki formu doldurmanız yeterlidir:"
@@ -53,6 +59,7 @@ tr:
       sincerely: "İçtenlikle,"
       share: "Projenizi paylaşın"
     budget_investment_unfeasible:
+      title: "Yatırım projeniz uygulanamaz olarak işaretlenmiştir"
       hi: "Değerli kullanıcı,"
       new: "Tüm bunlar için, sizi bu sürecin koşullarına uygun olan <strong>yeni bir yatırım</strong> hazırlamaya davet ediyoruz. Bunun için bağlantıyı takip ediniz: %{url}."
       new_href: "yeni yatırım projesi"
@@ -61,6 +68,7 @@ tr:
       subject: "Sizin yatırım projeniz '%{code}' uygulanamaz olarak işaretlendi"
     budget_investment_selected:
       subject: "Yatırım projeniz '%{code}' seçildi"
+      title: "Yatırım projeniz seçilmiştir"
       hi: "Değerli kullanıcı,"
       share: "Yatırım projenizi sosyal paylaşım sitelerinde paylaşarak, oyları almaya başlayın. Fikirlerinizi gerçeğe dönüştürmek için paylaşım çok önemli."
       share_button: "Yatırım projenizi paylaşın"
@@ -68,6 +76,7 @@ tr:
       sincerely: "İçtenlikle"
     budget_investment_unselected:
       subject: "Sizin yatırım projeniz '%{code}' seçilmedi"
+      title: "Yatırım projeniz seçilmemiştir"
       hi: "Sevgili kullanıcı,"
       thanks: "Katıldığınız için tekrar teşekkür ederiz."
       sincerely: "İçtenlikle"
