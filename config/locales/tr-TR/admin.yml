@@ -123,6 +123,8 @@ tr:
         info:
           budget_settings: "Genel katılımcı bütçe ayarları"
           staff_settings: "Bütçeye atanan yönetici ve bilirkişiler"
+        hide_money: "Tutarı gizle"
+        hide_money_help_text: "Bu seçeneğin işaretlenmesi halinde, süreç boyunca para tutarını gösteren tüm alanlar gizlenecektir."
       destroy:
         success_notice: Bütçe başarıyla silindi
         unable_notice: Yatırımlarla ilişkili olan bir Bütçeyi yok edemezsiniz
@@ -189,6 +191,7 @@ tr:
     budget_phases:
       edit:
         title: "Aşama düzenle"
+        dates_help_text: "Yalnızca bilgi amaçlıdır"
         description_help_text: Aşama etkinken bu metin başlıkta görünecektir
         duration: "Aşama süresi"
         duration_description: "Bu aşamanın aktif olacağı süre."
