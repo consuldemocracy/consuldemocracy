@@ -14,6 +14,6 @@ class InstallationController < ApplicationController
     end
 
     def settings_feature_flags
-      Setting.where("key LIKE 'feature.%'").each_with_object({}) { |x, n| n[x.key.remove("feature.")] = x.value }
+      Setting.where("key LIKE 'process.%'").each_with_object({}) { |x, n| n[x.key.remove("process.")] = x.value }
     end
 end
