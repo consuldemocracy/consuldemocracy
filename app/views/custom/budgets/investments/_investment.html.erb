@@ -9,7 +9,10 @@
             <% if investment.image.present? %>
               <%= image_tag investment.image.variant(:large), alt: investment.image.title.unicode_normalize %>
             <% else %>
-              <%= image_tag "default-investment@2x.png" %>
+              
+              <div class="investment-default-image">
+                <%= image_tag "default-investment.svg" %>
+              </div>
             <% end %>
           <% end %>
         </div>

@@ -318,6 +318,18 @@ span:hover::before {
         min-height: 180px;
         object-fit: cover;
       }
+
+      .investment-default-image {
+        background-color: $theme-color-opacity-90;
+
+        &:hover {
+          background-color: $theme-color-opacity-80;
+        }
+
+        img {
+          object-fit: none;
+        }
+      }
     }
 
     .callout {
