@@ -430,7 +430,7 @@ GEM
     parallel (1.20.1)
     paranoia (2.4.3)
       activerecord (>= 4.0, < 6.2)
-    parser (3.0.2.0)
+    parser (3.1.2.0)
       ast (~> 2.4.1)
     pg (1.2.3)
     pg_search (2.3.5)

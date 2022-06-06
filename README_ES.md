@@ -36,7 +36,7 @@ Puedes acceder a la página principal del proyecto en [http://consulproject.org]
 
 **NOTA**: para unas instrucciones más detalladas consulta la [documentación](https://docs.consulproject.org)
 
-Prerequisitos: tener instalado git, Ruby 2.7.4, CMake, pkg-config, shared-mime-info, Node.js y PostgreSQL (9.5 o superior).
+Prerequisitos: tener instalado git, Ruby 2.7.6, CMake, pkg-config, shared-mime-info, Node.js y PostgreSQL (9.5 o superior).
 
 ```bash
 git clone https://github.com/consul/consul.git
