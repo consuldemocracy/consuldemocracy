@@ -86,6 +86,38 @@ spec:
             - name: db-conf
               mountPath: /var/www/consul/config/secrets.yml
               subPath: secrets.yml
+        - name: delayed-job
+          image: consul
+          command:
+            - bundle
+            - exec
+            - bin/delayed_job
+            - run
+          env:
+            - name: RAILS_ENV
+              value: production
+            - name: RAILS_SERVE_STATIC_FILES
+              value: "enabled"
+          envFrom:
+            - secretRef:
+                name: consul-credentials
+          #
+          # TODO RESOURCES TEMPORARILY REMOVED
+          #
+          # resources:
+          #   requests:
+          #     memory: 2Gi
+          #     cpu: 500m
+          #   limits:
+          #     memory: 2Gi
+          #     cpu: 500m
+          volumeMounts:
+            - name: db-conf
+              mountPath: /var/www/consul/config/database.yml
+              subPath: database.yml
+            - name: db-conf
+              mountPath: /var/www/consul/config/secrets.yml
+              subPath: secrets.yml
         #
         # TODO NGINX TEMPORARILY REMOVED
         #
