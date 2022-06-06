@@ -51,13 +51,13 @@
                     <% end %>
                   </h2>
                   <div class="filters">
-                    <% if @budget.headings.count > 1 && @investments.count > 0 %>
+                    <% if @budget.headings.count > 1 %>
                       <%= render "budgets/investments/districts" %>
                     <% end %>
-                    <% if @budget.categories.count > 1 && @investments.count > 0 %>
+                    <% if @budget.categories.count > 1 %>
                       <%= render "budgets/investments/tags" %>
                     <% end %>
-                    <% if @budget.headings.count > 1 && @investments.count > 0 %>
+                    <% if @budget.headings.count > 1 %>
                       <%= render "budgets/investments/statuses" %>
                     <% end %>
                   </div>
