@@ -2,6 +2,10 @@
   height: 100%;
   display: block;
   padding: 10px 0;
+
+  img {
+    max-height: 160px;
+  }
 }
 
 .back {
