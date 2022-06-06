@@ -1,0 +1,47 @@
+.locale {
+  margin-left: 10px;
+
+  .locale-form {
+    &::after {
+      right: 8px;
+    }
+
+    select {
+      background-color: $black;
+      border: 3px solid $black;
+      border-radius: 30px;
+      color: $white;
+      height: unset;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 4px 28px 4px 16px;
+      margin-bottom: 0;
+      outline: none;
+      width: auto;
+      cursor: pointer;
+
+      &:focus {
+        border: 3px solid $black;
+        outline: $outline-focus;
+      }
+
+      option {
+        background: $body-background;
+        color: $text;
+        border: 0;
+        outline: none;
+      }
+    }
+
+    &:hover {
+      select {
+        background-color: $white;
+        color: $black;
+      }
+
+      &::after {
+        color: $black;
+      }
+    }
+  }
+}

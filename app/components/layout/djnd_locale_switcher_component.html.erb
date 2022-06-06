@@ -1,0 +1,7 @@
+<div class="locale inline-block">
+  <form class="locale-form">
+    <select class="js-location-changer locale-switcher inline-block" name="locale-switcher" id="locale-switcher">
+      <%= options_for_select(language_options, current_path_with_query_params(locale: I18n.locale)) %>
+    </select>
+  </form>
+</div>
