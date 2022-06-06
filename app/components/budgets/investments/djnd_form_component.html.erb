@@ -73,25 +73,27 @@
       </div>
     <% end %>
 
-    <div>
-      <%= f.label :tag_list, t("budgets.investments.form.tags_label") %>
-      <p class="help-text" id="tags-list-help-text"><%= t("budgets.investments.form.tags_instructions") %></p>
+    <% if categories.count > 0 %>
+      <div>
+        <%= f.label :tag_list, t("budgets.investments.form.tags_label") %>
+        <p class="help-text" id="tags-list-help-text"><%= t("budgets.investments.form.tags_instructions") %></p>
 
-      <div id="category_tags" class="tags">
-        <% categories.each do |tag| %>
-          <a class="js-add-tag-link"><%= tag.name %></a>
-        <% end %>
+        <div id="category_tags" class="tags">
+          <% categories.each do |tag| %>
+            <a class="js-add-tag-link"><%= tag.name %></a>
+          <% end %>
+        </div>
+
+        <br>
+        <%= f.text_field :tag_list, value: investment.tag_list.to_s,
+                          label: false,
+                          placeholder: t("budgets.investments.form.tags_placeholder"),
+                          aria: { describedby: "tags-list-help-text" },
+                          class: "js-tag-list tag-autocomplete",
+                          data: { js_url: suggest_tags_path },
+                          disabled: true %>
       </div>
-
-      <br>
-      <%= f.text_field :tag_list, value: investment.tag_list.to_s,
-                        label: false,
-                        placeholder: t("budgets.investments.form.tags_placeholder"),
-                        aria: { describedby: "tags-list-help-text" },
-                        class: "js-tag-list tag-autocomplete",
-                        data: { js_url: suggest_tags_path },
-                        disabled: true %>
-    </div>
+    <% end %>
 
   </fieldset>
 
