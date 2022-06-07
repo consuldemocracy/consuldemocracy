@@ -9,7 +9,7 @@
 
       <h1><%= @poll.name %></h1>
 
-      <%= auto_link_already_sanitized_html simple_format(@poll.summary) %>
+      <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(@poll.summary) %>
 
       <% if @poll.geozones.any? %>
         <ul class="margin-top tags">
@@ -22,7 +22,7 @@
       <% if @poll.description.present? %>
         <div id="poll_description_text" class="hide" data-toggler="hide">
           <h3><%= t("polls.show.more_info_title") %></h3>
-          <%= auto_link_already_sanitized_html simple_format(@poll.description) %>
+          <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(@poll.description) %>
         </div>
 
         <a id="poll_description_more_info" data-toggle="poll_description_text" class="button primary">
