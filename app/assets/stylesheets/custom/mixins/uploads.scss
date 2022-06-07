@@ -1,0 +1,12 @@
+.image,
+.document {
+  border-top: 1px solid $light-gray;
+
+  .title {
+    border-bottom: none;
+  }
+
+  hr {
+    display: none;
+  }
+}
