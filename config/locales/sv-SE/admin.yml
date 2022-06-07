@@ -38,6 +38,8 @@ sv:
           sdg: Globala målen
       create:
         notice: "Banner har skapats"
+      destroy:
+        notice: "Banner har tagits bort"
       edit:
         editing: Redigera banner
         form:
