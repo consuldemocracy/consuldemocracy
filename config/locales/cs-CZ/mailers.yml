@@ -39,7 +39,8 @@ cs:
       unsubscribe_text: "Pokud nechcete dostávat přímé zprávy, navštivte %{notifications} a zrušte zaškrtnutí políčka \"Dostávat e-maily o přímých zprávách\"."
     direct_message_for_sender:
       subject: "Odeslali jste novou soukromou zprávu"
-      title: "Do <strong>%{receiver} </strong> jste odeslali novou soukromou zprávu s obsahem:"
+      title: "Odeslali jste novou soukromou zprávu"
+      text: "Do <strong>%{receiver} </strong> jste odeslali novou soukromou zprávu s obsahem:"
     user_invite:
       ignore: "Pokud jste o tuto pozvánku nepožádali, nemusíte se obávat a můžete tento e-mail ignorovat."
       text: "Děkujeme za žádost o připojení k %{org}! Za pár vteřin se můžete zapojit, stačí vyplnit formulář níže:"
