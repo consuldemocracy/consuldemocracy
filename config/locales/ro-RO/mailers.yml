@@ -30,7 +30,8 @@ ro:
       reply: Răspunde-i lui %{sender}
     direct_message_for_sender:
       subject: "Ați trimis un nou mesaj privat"
-      title: "Ați trimis un mesaj privat către<strong>%{receiver}</strong> cu următorul conținut:"
+      title: "Ați trimis un nou mesaj privat"
+      text: "Ați trimis un mesaj privat către<strong>%{receiver}</strong> cu următorul conținut:"
     user_invite:
       ignore: "Dacă nu ați solicitat această invitație, nu vă faceți griji, puteți ignora acest email."
       text: "Vă mulțumim că ați solicitat să vă alăturați %{org}! În câteva secunde puteți începe să participați, trebuie doar să completați formularul de mai jos:"
