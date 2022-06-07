@@ -40,7 +40,7 @@ tr:
       unsubscribe_text: "Doğrudan mesaj almak istemiyorsanız %{notifications}'a gidin ve \"Doğrudan mesajlarla ilgili e-posta al\" seçeneğindeki onayı kaldırın."
     direct_message_for_sender:
       subject: "Yeni bir özel mesaj gönderdiniz"
-      title: "Bu içerikle <strong>%{receiver}</strong>'a bir yeni özel mesaj gönderdiniz:"
+      title: "Yeni bir özel mesaj gönderdiniz"
       text: "Bu içerikle <strong>%{receiver}</strong> 'a bir yeni mesaj gönderdiniz:"
     user_invite:
       ignore: "Eğer bu daveti talep etmemişseniz endişelenmeyin, bu e-postayı görmezden gelebilirsiniz."
