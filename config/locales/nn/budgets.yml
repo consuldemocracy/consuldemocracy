@@ -39,7 +39,6 @@ nn:
       investment:
         supports:
           zero: Ingen støtte
-          zero: "%{count} støtte"
           one: 1 støtte
           other: "%{count} støtte"
     investments_list:
