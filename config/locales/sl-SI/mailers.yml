@@ -28,7 +28,8 @@ sl:
       reply: Odgovori uporabniku/-ci %{sender}
     direct_message_for_sender:
       subject: "Imaš novo zasebno sporočilo"
-      title: "Poslal/-a si novo zasebno sporočilo uporabniku/-ci <strong>%{receiver}</strong>, in sicer s to vsebino:"
+      title: "Imaš novo zasebno sporočilo"
+      text: "Poslal/-a si novo zasebno sporočilo uporabniku/-ci <strong>%{receiver}</strong>, in sicer s to vsebino:"
     user_invite:
       ignore: "Če nisi zahteval/-a tega povabila, ne skrbi, preprosto ignoriraj to e-pošto."
       text: "Hvala, ker se želiš pridružiti %{org}! V trenutku se lahko začneš odločati o tem, v kateri občini želiš sodelovati, le izpolni spodnji obrazec:"
