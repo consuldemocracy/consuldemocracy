@@ -1,6 +1,6 @@
-<div id="image" class="text-center image-preview">
+<div id="image" class="text-center image-preview column">
   <figure>
-    <%= image_tag image.variant(version),
+    <%= image_tag image.variant(:large),
                   class: image_class(image),
                   alt: image.title.unicode_normalize,
                   title: image.title.unicode_normalize %>
