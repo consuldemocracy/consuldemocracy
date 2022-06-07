@@ -30,7 +30,8 @@ de:
       reply: Auf %{sender} antworten
     direct_message_for_sender:
       subject: "Sie haben eine neue persönliche Nachricht gesendet"
-      title: "Sie haben eine neue persönliche Nachricht versendet an <strong>%{receiver}</strong> mit dem Inhalt:"
+      title: "Sie haben eine neue persönliche Nachricht gesendet"
+      text: "Sie haben eine neue persönliche Nachricht versendet an <strong>%{receiver}</strong> mit dem Inhalt:"
     user_invite:
       ignore: "Wenn Sie diese Einladung nicht angefordert haben, können Sie diese E-Mail einfach ignorieren."
       text: "Danke für Ihre Anmeldung bei %{org}! In wenigen Sekunden können Sie beginnen Ihre Stadt mitzugestalten. Füllen Sie einfach vorher das untenstehende Formular aus:"
