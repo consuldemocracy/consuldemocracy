@@ -10,3 +10,14 @@
     display: none;
   }
 }
+
+.file-name,
+.delete {
+  font-size: 0.8125rem;
+  line-height: 1.75rem;
+}
+
+.delete {
+  margin-right: -0.9375rem;
+  white-space: nowrap;
+}
