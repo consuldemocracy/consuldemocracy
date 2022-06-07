@@ -30,7 +30,8 @@ ca:
       reply: Respondre a %{sender}
     direct_message_for_sender:
       subject: "Heu enviat un missatge privat nou"
-      title: "Heu enviat un missatge privat nou a <strong>%{receiver}</strong> amb el contingut:"
+      title: "Heu enviat un missatge privat nou"
+      text: "Heu enviat un missatge privat nou a <strong>%{receiver}</strong> amb el contingut:"
     user_invite:
       ignore: "Si no has sol·licitat aquesta invitació no et preocupes, pots ignorar aquest correu."
       text: "Gràcies per sol·licitar la inscripció %{org}! En segons pots començar a participar, només has d’omplir el formulari següent:"
