@@ -28,7 +28,8 @@ pl:
       reply: Odpowiedz %{sender}
     direct_message_for_sender:
       subject: "Wysłałeś nową wiadomość prywatną"
-      title: "Wysłałeś nową wiadomość prywatną do <strong>%{receiver}</strong> o następującej treści:"
+      title: "Wysłałeś nową wiadomość prywatną"
+      text: "Wysłałeś nową wiadomość prywatną do <strong>%{receiver}</strong> o następującej treści:"
     user_invite:
       ignore: "Jeżeli nie prosiłeś o to zaproszenie, nie martw się, możesz zignorować ten e-mail."
       text: "Dziękujemy za wniosek o dołączenie do %{org}! Już za kilka sekund możesz rozpocząć uczestnictwo, wypełnij tylko poniższy formularz:"
