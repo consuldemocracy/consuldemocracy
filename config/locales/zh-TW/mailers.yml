@@ -28,7 +28,8 @@ zh-TW:
       reply: 回覆%{sender}
     direct_message_for_sender:
       subject: "您發送了一條新的私人消息"
-      title: "您已使用以下內容向<strong>%{receiver}</strong>發送新的私人消息："
+      title: "您發送了一條新的私人消息"
+      text: "您已使用以下內容向<strong>%{receiver}</strong>發送新的私人消息："
     user_invite:
       ignore: "如果您還沒有請求此邀請，請不用擔心，您可以忽略此電郵。"
       text: "感謝您申請加入%{org}！ 在幾秒鐘後，您便可以開始參與，只需填寫下面的表格："
