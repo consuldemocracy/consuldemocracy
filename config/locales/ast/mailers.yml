@@ -25,6 +25,9 @@ ast:
     direct_message_for_receiver:
       subject: "Has recibido un nuevo mensaje privado"
       reply: Responder a %{sender}
+    direct_message_for_sender:
+      subject: "Has enviado un nuevo mensaje privado"
+      text: "Has enviado un nuevo mensaje privado a <strong>%{receiver}</strong> con el siguiente contenido:"
     user_invite:
       ignore: "Si no has solicitado esta invitación no te preocupes, puedes ignorar este correo."
       thanks: "Muchas gracias."
