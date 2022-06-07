@@ -26,7 +26,8 @@ bs:
       reply: Odgovori %{sender}
     direct_message_for_sender:
       subject: "Poslali ste novu privatnu poruku"
-      title: "Poslali ste novu privatnu poruku <strong>%{receiver}</strong> sljedećeg sadržaja:"
+      title: "Poslali ste novu privatnu poruku"
+      text: "Poslali ste novu privatnu poruku <strong>%{receiver}</strong> sljedećeg sadržaja:"
     user_invite:
       ignore: "Ako niste tražili ovaj poziv, ne brinite, možete zanemariti ovaj email."
       text: "Hvala što ste se prijavili da se pridružite %{org}! Začas ćete početi učestvovati, samo ispunite formular dole:"
