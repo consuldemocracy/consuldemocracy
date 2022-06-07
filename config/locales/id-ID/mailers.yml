@@ -27,7 +27,8 @@ id:
       reply: Membalas ke %{sender}
     direct_message_for_sender:
       subject: "Anda telah mengirim pesan pribadi baru"
-      title: "Anda telah mengirim pesan pribadi baru ke <strong>%{receiver}</strong> dengan konten:"
+      title: "Anda telah mengirim pesan pribadi baru"
+      text: "Anda telah mengirim pesan pribadi baru ke <strong>%{receiver}</strong> dengan konten:"
     user_invite:
       ignore: "Jika anda belum meminta undangan ini jangan khawatir, anda bisa mengabaikan email ini."
       thanks: "Terima kasih banyak."
