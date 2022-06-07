@@ -38,7 +38,9 @@ describe "Moderate users" do
 
     expect(page).not_to have_content(comment3.body)
 
-    click_link("Sign out")
+    click_link "Sign out"
+
+    expect(page).to have_content "You have been signed out successfully"
 
     visit root_path
 

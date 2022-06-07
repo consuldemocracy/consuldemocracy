@@ -175,12 +175,14 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
   describe "At #{mappable_edit_path}", if: mappable_edit_path.present? do
     scenario "Should edit map on #{mappable_factory_name} and contain default values" do
+      mappable.map_location.update!(latitude: 51.48, longitude: 0.0)
       do_login_for mappable.author, management: management
 
       visit send(mappable_edit_path, id: mappable.id)
 
       expect(page).to have_content "Navigate the map to the location and place the marker."
-      validate_latitude_longitude(mappable, mappable_factory_name)
+      expect(page).to have_field "#{mappable_factory_name}_map_location_attributes_latitude", type: :hidden, with: "51.48"
+      expect(page).to have_field "#{mappable_factory_name}_map_location_attributes_longitude", type: :hidden, with: "0.0"
     end
 
     scenario "Should edit default values from map on #{mappable_factory_name} edit page" do
