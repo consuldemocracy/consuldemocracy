@@ -29,7 +29,8 @@ gl:
       reply: Responder a %{sender}
     direct_message_for_sender:
       subject: "Acabas de enviar unha nova mensaxe privada"
-      title: "Acabas de enviar unha nova mensaxe privada a <strong>%{receiver}</strong> co seguinte contido:"
+      title: "Acabas de enviar unha nova mensaxe privada"
+      text: "Acabas de enviar unha nova mensaxe privada a <strong>%{receiver}</strong> co seguinte contido:"
     user_invite:
       ignore: "Se non solicitaches este convite non te preocupes, podes ignorar este correo."
       text: "Grazas por solicitar unirte a %{org}! Nuns segundos poderás empezar a decidir a cidade que queres, só tes que cubrir o seguinte formulario:"
