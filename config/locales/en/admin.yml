@@ -38,6 +38,8 @@ en:
           sdg: SDG
       create:
         notice: "Banner created successfully"
+      destroy:
+        notice: "Banner deleted successfully"
       edit:
         editing: Edit banner
         form:
