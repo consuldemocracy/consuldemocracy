@@ -84,7 +84,7 @@ bg:
       table_name: Име
       table_phase: Фаза
       table_actions: Действия
-      no_budgets: Няма активни бюджети с участие.
+      no_budgets: Няма активни граждански бюджети.
     budget_investments:
       alert:
         unverified_user: Потребителят не е потвърден
