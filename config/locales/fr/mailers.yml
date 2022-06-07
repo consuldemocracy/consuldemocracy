@@ -30,7 +30,8 @@ fr:
       reply: Répondre à %{sender}
     direct_message_for_sender:
       subject: "Vous avez envoyé un nouveau message privé"
-      title: "Vous avez envoyé un nouveau message privé à <strong>%{receiver}</strong> avec le contenu suivant :"
+      title: "Vous avez envoyé un nouveau message privé"
+      text: "Vous avez envoyé un nouveau message privé à <strong>%{receiver}</strong> avec le contenu suivant :"
     user_invite:
       ignore: "Si vous n'avez pas requis cette invitation, pas d'inquiétude, vous pouvez ignorer ce courriel."
       text: "Merci d'avoir demandé à rejoindre %{org}! Dans quelques secondes vous pourrez commencer à participer, remplissez simplement le formulaire ci-dessous :"
