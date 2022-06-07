@@ -28,7 +28,8 @@ val:
       reply: Respondre a %{sender}
     direct_message_for_sender:
       subject: "Has enviat un nou missatge privat"
-      title: "Has enviat un nou missatge privat a <strong>%{receiver}</strong> amb el contingut:"
+      title: "Has enviat un nou missatge privat"
+      text: "Has enviat un nou missatge privat a <strong>%{receiver}</strong> amb el contingut:"
     user_invite:
       ignore: "Si no has sol·licitat esta invitació no et preocupes, pots ignorar este correu."
       text: "Gracies per sol·licitar unirte a %{org}! En uns segons podras començar a participar, sols tens que omplir el següent formulari:"
