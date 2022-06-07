@@ -30,7 +30,8 @@ oc:
       reply: Respondre a %{sender}
     direct_message_for_sender:
       subject: "Avètz enviat un messatge privat nòu"
-      title: "Avètz enviat un messatge privat nòu a <strong>%{receiver}</strong> amb lo contengut:"
+      title: "Avètz enviat un messatge privat nòu"
+      text: "Avètz enviat un messatge privat nòu a <strong>%{receiver}</strong> amb lo contengut:"
     user_invite:
       ignore: "s'As pas sollicitat aquela invitacion te preocupas pas, pòdes ignorar aquel corrièr."
       text: "Gràcias per sollicitar l'inscripcion %{org}! En segon pòdes començar a participar, as solament d’emplir lo formulari seguent:"
