@@ -140,11 +140,6 @@
 
             <% else %>
               <div class="row budget-investments">
-                <div>
-                  <% if @budget.headings.count > 1 && @investments.count > 0 %>
-                    <%= render "budgets/investments/districts" %>
-                  <% end %>
-                </div>
                 <div class="row small-up-1 medium-up-1 large-up-3 no-budget-investment text-center medium-centered">
                   <p class="show-mobile">
                     <%= t("custom.messages.no_investments") %><br>
@@ -153,7 +148,7 @@
                     <% end %>
                   </p>
                   <div class="medium-centered">
-                    <%= image_tag(image_path_for("phases/empty_investments.png")) %>
+                    <%= image_tag(image_path_for("phases/ni-predlogov.png")) %>
                   </div>
                   <p class="show-pc">
                     <%= t("custom.messages.no_investments") %><br>
