@@ -667,6 +667,31 @@ body > header,
   }
 }
 
+// documents
+.documents {
+
+  h4 {
+    span {
+      color: #4f4f4f;
+      font-weight: normal;
+    }
+  }
+
+  .document-link {
+    background: unset;
+    border: none;
+    border-radius: 0;
+    display: block;
+    margin: $line-height / 2 0;
+    padding: $line-height / 2;
+    position: relative;
+
+    a {
+      margin-top: 1rem;
+    }
+  }
+}
+
 .custom-phases-nav {
   left: 0;
   position: relative;

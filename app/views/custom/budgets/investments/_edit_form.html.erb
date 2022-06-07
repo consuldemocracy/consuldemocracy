@@ -64,7 +64,7 @@
     <%= f.text_field :organization_name %>
   </div>
 
-  <% if categories.count > 0 %>
+  <% if @categories.count > 0 %>
     <div>
       <%= f.label :tag_list, t("budgets.investments.form.tags_label") %>
       <p class="help-text" id="tags-list-help-text"><%= t("budgets.investments.form.tags_instructions") %></p>
