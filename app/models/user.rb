@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   include Verification
+  attribute :registering_from_web, default: false
 
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable,
          :trackable, :validatable, :omniauthable, :password_expirable, :secure_validatable,
@@ -333,7 +334,7 @@ class User < ApplicationRecord
   end
 
   def email_required?
-    !erased? && unverified?
+    !erased? && (unverified? || registering_from_web)
   end
 
   def locale
