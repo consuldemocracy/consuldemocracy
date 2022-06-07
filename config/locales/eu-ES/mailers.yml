@@ -24,6 +24,7 @@ eu:
       reply: '%{sender} erantzun'
     direct_message_for_sender:
       subject: "Mezu pribatu berri bat bidali duzu"
+      title: "Mezu pribatu berri bat bidali duzu"
     user_invite:
       ignore: "Ez arduratu gonbidapen hau eskatu ez baduzu, email hau ez ikusiarena egin ahal duzu."
       text: "Eskerrik asko %{org}!-(e)ra batu nahi duzulako. Segundu batzu barru nahi duzu herria erabaki eta eraikitzen hasi zaitezke. Hurrengo formularioa bete baino ez daukazu:"
