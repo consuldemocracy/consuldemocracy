@@ -66,7 +66,7 @@ de:
     budgets:
       actions:
         edit: "Bürgerhaushalt bearbeiten"
-        preview: "Ansicht Budget"
+        preview: "Vorschau Bürgerhaushalt"
       index:
         title: Bürgerhaushalte
         new_link: Neuen Bürgerhaushalt erstellen
