@@ -30,7 +30,6 @@ da:
       reply: Svar %{sender}
     direct_message_for_sender:
       subject: "Du har sendt en ny privat besked"
-      title: "Du har sendt en ny privat besked til <strong>%{receiver}</strong>:"
     user_invite:
       ignore: "Hvis du ikke har anmodet om denne invitation, skal du ikke bekymre dig. Du kan ignorere denne e-mail."
       text: "Tak for din ansøgning til %{org}! Du kan påbegynde din deltagelse om få sekunder, du skal blot udfylde nedenstående formular:"
