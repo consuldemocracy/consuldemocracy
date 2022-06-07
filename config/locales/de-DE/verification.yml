@@ -19,7 +19,7 @@ de:
         unconfirmed_code: Sie haben den Bestätigungscode noch nicht eingegeben
       create:
         flash:
-          success: Danke, dass Sie Ihren <b>Hochsicherheitscode (nur für die finale Abstimmung erforderlich) </b> angefordert haben. Vor der Abstimmung erhalten Sie einen Brief mit der Anweisung, Ihr Konto zu bestätigen. Heben Sie den Brief gut auf, um sich persönlich in einem der Bürger Ämter verifizieren zu können.
+          success: Danke, dass Sie Ihren <b>Hochsicherheitscode (nur für die finale Abstimmung erforderlich) </b> angefordert haben. Vor der Abstimmung erhalten Sie einen Brief mit der Anweisung, Ihr Konto zu bestätigen. Heben Sie den Brief gut auf, um sich persönlich in einem Meldeamt verifizieren zu können.
       edit:
         see_all: Vorschläge anzeigen
         title: Brief angefordert
