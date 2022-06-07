@@ -28,7 +28,8 @@ sq:
       reply: Përgjigjuni te %{sender}
     direct_message_for_sender:
       subject: "Ju keni dërguar një mesazh të ri privat"
-      title: "Ju keni dërguar një mesazh të ri privat tek <strong>%{receiver}</strong> me përmbajtje:"
+      title: "Ju keni dërguar një mesazh të ri privat"
+      text: "Ju keni dërguar një mesazh të ri privat tek <strong>%{receiver}</strong> me përmbajtje:"
     user_invite:
       ignore: "Nëse nuk e keni kërkuar këtë ftesë, mos u shqetësoni, mund ta injoroni këtë email."
       text: "Faleminderit që po aplikon për t'u bashkuar me %{org}! Në pak sekonda ju mund të filloni të merrni pjesë, vetëm plotësoni formularin e mëposhtëm:"
