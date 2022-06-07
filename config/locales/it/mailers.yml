@@ -35,7 +35,7 @@ it:
       unsubscribe_text: "Se non desideri ricevere messaggi diretti, visita %{notifications} e rimuovi la spunta da 'Ricevi email sui messaggi diretti'."
     direct_message_for_sender:
       subject: "Hai inviato un nuovo messaggio privato"
-      title: "Hai inviato un nuovo messaggio privato a <strong>%{receiver}</strong> con il contenuto:"
+      title: "Hai inviato un nuovo messaggio privato"
     user_invite:
       ignore: "Se non hai richiesto questo invito non ti preoccupare, puoi ignorare questa email."
       text: "Grazie per aver chiesto di aderire a %{org}! Tra pochi secondi potrai iniziare a partecipare, basta solo compilare il modulo qui sotto:"
