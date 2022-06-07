@@ -28,7 +28,8 @@ so:
       reply: Jawaab u diir%{sender}
     direct_message_for_sender:
       subject: "Waxaad soo dirtay farriin cusub oo gaar ah"
-      title: "Waxaad fariin gaar ah u dirtay <strong>% %{receiver}</strong> oo leh mawduuc:"
+      title: "Waxaad soo dirtay farriin cusub oo gaar ah"
+      text: "Waxaad fariin gaar ah u dirtay <strong>%{receiver}</strong> oo leh mawduuc:"
     user_invite:
       ignore: "Haddii aadan codsanin martiqaadkan ha walwalin, waad iska indha tiri kartaa emailkan."
       text: "Waad ku mahadsantahay codsigaaga inaad ku biirto %{org}! marbaad waxaad bilaabi kartaa inaad kaqaybqaadato, kaliya buuxi foomka hoose:"
