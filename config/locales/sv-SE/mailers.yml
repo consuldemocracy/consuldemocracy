@@ -40,7 +40,7 @@ sv:
       unsubscribe_text: "Om du inte vill få direktmeddelanden, går du till %{notifications} och avmarkerar 'Få e-post om direktmeddelanden'."
     direct_message_for_sender:
       subject: "Du har skickat ett nytt privat meddelande"
-      title: "Du har skickat ett nytt privat meddelande till <strong>%{receiver}</strong> med innehållet:"
+      title: "Du har skickat ett nytt privat meddelande"
       text: "Du har skickat ett nytt privat meddelande till <strong>%{receiver}</strong> med innehållet:"
     user_invite:
       ignore: "Om du inte har begärt denna inbjudan, behöver du inte bry dig om den."
