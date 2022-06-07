@@ -36,6 +36,7 @@ it:
     direct_message_for_sender:
       subject: "Hai inviato un nuovo messaggio privato"
       title: "Hai inviato un nuovo messaggio privato"
+      text: "Hai inviato un nuovo messaggio privato a <strong>%{receiver}</strong> con il contenuto:"
     user_invite:
       ignore: "Se non hai richiesto questo invito non ti preoccupare, puoi ignorare questa email."
       text: "Grazie per aver chiesto di aderire a %{org}! Tra pochi secondi potrai iniziare a partecipare, basta solo compilare il modulo qui sotto:"
