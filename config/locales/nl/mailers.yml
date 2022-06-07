@@ -33,7 +33,8 @@ nl:
       reply: Reply to %{sender}
     direct_message_for_sender:
       subject: "U heeft een nieuw prive bericht verstuurd"
-      title: "Je hebt een nieuw privébericht gestuurd naar <strong>%{receiver}</strong> met de inhoud:"
+      title: "U heeft een nieuw prive bericht verstuurd"
+      text: "Je hebt een nieuw privébericht gestuurd naar <strong>%{receiver}</strong> met de inhoud:"
     user_invite:
       ignore: "If you have not requested this invitation don't worry, you can ignore this email."
       text: "Dank u voor uw interesse om toe te treden tot %{org}! In een paar seconden kunt u deelnemen, vul het onderstaande formulier in:"
