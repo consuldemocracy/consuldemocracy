@@ -181,6 +181,8 @@ sl-SI:
       title: Participativni proračun 2023-2024!
       introduction_text: Mestna občina Maribor za naslednje proračunsko obdobje - 2023-2024 - načrtuje 1 milijon evrov za participativni proračun. V njem lahko s podajanjem predlogov in glasovanjem sodeluje vsak občan oz. občanka, ki ima stalno prebivališče v Mestni občini Maribor in je star/a več kot 15 let. S tem soodloča o porabi teh sredstev. Radi bi slišali, kaj predlagate v Mestni občini Maribor. Tako aktivno prispevate k izboljšanju kakovosti življenja v mestu. Spodaj si lahko ogledate, katere projekte so Mariborčani in Mariborčanke izglasovali za izvedbo v letih 2021 in 2022 in kateri so že izvedeni. Vabljeni k oddaji projektnega predloga tudi letos, za projekte, ki jih bomo izvedli v letih 2023 in 2024. Skupaj bomo poskrbeli, da bo Maribor še boljši.
       title_past: Pretekli participativni proračuni
+      past_list_description: Preveri izbrane projekte in spremljaj izvedbo!
+      past_list_more: Več
     about:
       intro: "Participativni proračun je sistem razporejanja dela proračunskega denarja tako, da o njegovi porabi soodločajo občanke in občani. Sami predlagajo projekte in določijo, kateri so najnujnejši in bi največ prispevali k izboljšanju kakovosti bivanja v skupnosti."
       main_title: Kako deluje?
@@ -276,8 +278,6 @@ sl-SI:
       terms_first_checkbox: "Za potrebe izvedbe participativnega proračuna v Mestni občini Maribor dovoljujem, da Mestna občina Maribor, Fundacija Prizma in Zavod PIP obdelujejo moje osebne podatke."
       terms_second_checkbox: "objavi osebne podatke (ime in priimek) na spletni strani MOK z namenom javne objave pobud Predlagam - Odločam. (Opomba: če tega polja ne odkljuš, bo tvoj predlog anonimen. To pomeni, da se tvoje ime in priimek ne bosta izpisala ob predlogu, ki bo objavljen na spletni strani občine)."
       terms_checkboxes_text: "Do morebitnega preklica izrecno, prostovoljno, brezpogojno in jasno dovoljujem, da Mestna občina Maribor:"
-    classes:
-      footer_logo: Medvode
     statuses:
       title: 'Izberi status predloga'
       waiting: 'Čaka na izvedbo'
@@ -288,3 +288,5 @@ sl-SI:
       data_consent: "Za nadaljevanje se moraš strinjati z obdelavo podatkov."
       price: "Polje vrednost projekta ne sme biti prazen."
       registration: "Zaradi napak obrazca nismo mogli shraniti."
+    footer:
+      djnd: Za platformo skrbi
