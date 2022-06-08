@@ -839,7 +839,7 @@ sv:
       retired_help_text: Dashboard är inte tillgängligt för tillbakadragna förslag
   votes:
     agree: Jag håller med
-    agree_label: "Jag håller med %{title}"
+    agree_label: "Jag säger ja till %{title}"
     anonymous: För många anonyma röster för att godkänna omröstningen %{verify_account}.
     disagree: Jag håller inte med
     disagree_label: "Jag håller inte med %{title}"
