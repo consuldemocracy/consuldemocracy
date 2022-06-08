@@ -934,6 +934,12 @@ span:hover::before {
   .icon-check {
     color: #46db91;
   }
+
+  .delete {
+    margin-top: 0.5rem;
+    display: inline-block;
+    line-height: 1.5;
+  }
 }
 
 // about page 

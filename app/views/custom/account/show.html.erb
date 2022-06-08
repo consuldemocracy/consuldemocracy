@@ -85,7 +85,7 @@
                 <% end %>
               <% end %>
 
-              <%= f.submit t("account.show.save_changes_submit"), class: "button margin-top default-button" %>
+              <%= f.submit t("account.show.save_changes_submit"), class: "margin-top default-button" %>
             </div>
 
             <div class="user-permissions small-12 large-5 column">
@@ -145,7 +145,7 @@
           <div class="row">
             <div class="column">
               <div class="margin-top margin-bottom">
-                <%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: "button default-button" %>
+                <%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: "default-button" %>
                 <br>
                 <%= link_to t("account.show.erase_account_link"), users_registrations_delete_form_path, class: "delete" %>
               </div>

@@ -86,6 +86,10 @@ sl-SI:
   images:
     form:
       title: Slika
+  mailers:
+    budget_investment_created:
+      intro: "Hej, <strong>%{author}</strong>,"
+      share: Oglej si svoj projekt
   milestones:
     index:
       no_milestones: Nima definiranih mejnikov
