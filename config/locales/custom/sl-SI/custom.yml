@@ -77,6 +77,9 @@ sl-SI:
           instructions_2: Ko potrdiš račun, lahko začneš sodelovati.
           thank_you: Hvala za registracijo na spletnem portalu. Zdaj moraš <b>potrditi svoj e-naslov</b>.
           title: Registracija
+    mailer:
+      reset_password_instructions:
+        ignore_text: Če nisi zahteval_a spremembe gesla, lahko ignoriraš to e-sporočilo.
   documents:
     max_documents_allowed_reached: Dosegel_a si največje dovoljeno število dokumentov! <strong>Preden lahko naložiš novega, moraš vsaj enega izbrisati.</strong>
     buttons:
