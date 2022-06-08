@@ -23,13 +23,14 @@ class Budget::Investment::Exporter
       [
         I18n.t("admin.budget_investments.index.list.id"),
         I18n.t("admin.budget_investments.index.list.title"),
-        I18n.t("admin.budget_investments.index.list.supports"),
+        I18n.t("admin.budget_investments.index.list.description"),
         I18n.t("admin.budget_investments.index.list.admin"),
         I18n.t("admin.budget_investments.index.list.valuator"),
         I18n.t("admin.budget_investments.index.list.valuation_group"),
         I18n.t("admin.budget_investments.index.list.geozone"),
         I18n.t("admin.budget_investments.index.list.feasibility"),
         I18n.t("admin.budget_investments.index.list.valuation_finished"),
+        I18n.t("admin.budget_investments.index.list.unfeasibility_explanation"),
         I18n.t("admin.budget_investments.index.list.selected"),
         I18n.t("admin.budget_investments.index.list.visible_to_valuators"),
         I18n.t("admin.budget_investments.index.list.author_username")
@@ -40,13 +41,14 @@ class Budget::Investment::Exporter
       [
         investment.id.to_s,
         investment.title,
-        investment.total_votes.to_s,
+        investment.description.squish,
         admin(investment),
         investment.assigned_valuators || "-",
         investment.assigned_valuation_groups || "-",
         investment.heading.name,
         price(investment),
         investment.valuation_finished? ? I18n.t("shared.yes") : I18n.t("shared.no"),
+        unfeasibility_explanation(investment),
         investment.selected? ? I18n.t("shared.yes") : I18n.t("shared.no"),
         investment.visible_to_valuators? ? I18n.t("shared.yes") : I18n.t("shared.no"),
         investment.author.username
@@ -68,6 +70,10 @@ class Budget::Investment::Exporter
       else
         I18n.t(price_string)
       end
+    end
+
+    def unfeasibility_explanation(investment)
+      investment.unfeasibility_explanation.presence || "-"
     end
 
     def json_values(investment)
