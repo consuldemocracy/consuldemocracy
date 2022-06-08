@@ -97,6 +97,10 @@ sl-SI:
     show:
       publication_date: "Datum objave %{publication_date}"
       status_changed: Status spremenjen v
+  shared:
+    suggest:
+      budget_investment:
+        found: Našli smo podoben predlog.
   custom:
     admin:
       budget_phases:
