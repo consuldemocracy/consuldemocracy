@@ -24,9 +24,8 @@
                   <div>
                     <%= f.text_field :username, maxlength: User.username_max_length %>
                   </div>
-                  <%# TODO: add address to form %>
-                  <div class="">
-                    <%= f.text_field :address, label: 'Naslov' %>
+                  <div>
+                    <%= f.text_field :address, label: t("custom.form.address") %>
                   </div>
                 <% end %>
               </div>
