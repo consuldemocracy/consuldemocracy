@@ -210,6 +210,20 @@ a {
     background-color: transparent;
     color: $black;
   }
+
+  &:active {
+    color: $white;
+  }
+  
+  &:focus {
+    color: $white;
+    background-color: $black;
+    outline: 3px solid $outline-focus;
+  }
+  
+  &:focus:hover {
+    color: $white;
+  }
 }
 
 .action-button,

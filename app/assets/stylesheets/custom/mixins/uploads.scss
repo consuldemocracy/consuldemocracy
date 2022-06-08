@@ -21,16 +21,3 @@
   margin-right: -0.9375rem;
   white-space: nowrap;
 }
-
-.upload-document:active {
-  color: $white;
-}
-
-.upload-document:focus {
-  background-color: $black;
-  outline: 3px solid $outline-focus;
-}
-
-.upload-document:focus:hover {
-  color: $white;
-}
