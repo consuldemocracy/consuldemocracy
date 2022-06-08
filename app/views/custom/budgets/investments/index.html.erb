@@ -140,6 +140,19 @@
 
             <% else %>
               <div class="row budget-investments">
+                <div class="column">
+                  <div class="filters">
+                    <% if @budget.headings.count > 1 %>
+                      <%= render "budgets/investments/districts" %>
+                    <% end %>
+                    <% if @budget.categories.count > 1 %>
+                      <%= render "budgets/investments/tags" %>
+                    <% end %>
+                    <% if @budget.phase == 'finished' %>
+                      <%= render "budgets/investments/statuses" %>
+                    <% end %>
+                  </div>
+                </div>
                 <div class="row small-up-1 medium-up-1 large-up-3 no-budget-investment text-center medium-centered">
                   <p class="show-mobile">
                     <%= t("custom.messages.no_investments") %><br>
