@@ -842,7 +842,7 @@ sv:
     agree_label: "Jag säger ja till %{title}"
     anonymous: För många anonyma röster för att godkänna omröstningen %{verify_account}.
     disagree: Jag håller inte med
-    disagree_label: "Jag håller inte med %{title}"
+    disagree_label: "Jag säger nej till %{title}"
     organizations: Organisationer kan inte rösta
     supports: Stöd
     verified_only: Endast verifierade användare kan rösta på förslag; %{verify_account}.
