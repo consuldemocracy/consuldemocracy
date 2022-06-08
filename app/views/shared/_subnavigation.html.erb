@@ -62,6 +62,7 @@
                                 accesskey: "6" %>
       </li>
     <% end %>
+    <%= raw content_block("subnavigation_right") %>
     <% if feature?(:help_page) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.help"),
@@ -70,7 +71,5 @@
                                 accesskey: "7" %>
       </li>
     <% end %>
-
-    <%= raw content_block("subnavigation_right") %>
   </ul>
 </nav>
