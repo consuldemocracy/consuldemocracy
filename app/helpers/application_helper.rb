@@ -6,8 +6,8 @@ module ApplicationHelper
     url_for(request.query_parameters.merge(query_parameters).merge(only_path: true))
   end
 
-  def rtl?
-    %i[ar fa he].include?(I18n.locale)
+  def rtl?(locale = I18n.locale)
+    %i[ar fa he].include?(locale)
   end
 
   def markdown(text)
