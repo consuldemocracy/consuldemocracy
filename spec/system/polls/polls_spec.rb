@@ -231,8 +231,11 @@ describe "Polls" do
       expect(page).to have_content("Question 1 #{proposal_question.title}", normalize_ws: true)
       expect(page).to have_content("Question 2 #{normal_question.title}", normalize_ws: true)
 
-      find("#poll_description_more_info").click
+      find("#read_more").click
       expect(page).to have_content(poll.description)
+
+      find("#read_less").click
+      expect(page).not_to have_content(poll.description)
     end
 
     scenario "Do not show question number in polls with one question" do

@@ -486,6 +486,7 @@ nl:
       cant_answer_expired: "Deze stemronde is voorbij."
       cant_answer_wrong_geozone: "Deze vraag wordt niet behandeld in uw regio"
       more_info_title: "Meer informatie"
+      less_info_title: "Minder informatie"
       documents: Documenten
       zoom_plus: Afbeelding vergroten
       read_more: "Lees meer over %{answer}"

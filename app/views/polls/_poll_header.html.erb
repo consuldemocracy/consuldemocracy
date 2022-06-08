@@ -25,9 +25,15 @@
           <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(@poll.description) %>
         </div>
 
-        <a id="poll_description_more_info" data-toggle="poll_description_text" class="button primary">
+        <button type="button" id="read_more" class="button primary" data-toggler="hide"
+                data-toggle="poll_description_text read_more read_less">
           <%= t("polls.show.more_info_title") %>
-        </a>
+        </button>
+
+        <button type="button" id="read_less" class="button primary hide" data-toggler="hide"
+                data-toggle="poll_description_text read_more read_less">
+          <%= t("polls.show.less_info_title") %>
+        </button>
       <% end %>
 
       <%= render SDG::TagListComponent.new(@poll, linkable: false) %>
