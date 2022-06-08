@@ -269,6 +269,8 @@ Rails/HttpStatus:
 
 Rails/I18nLocaleAssignment:
   Enabled: true
+  Include:
+    - "**/*.rb"
 
 Rails/InverseOf:
   Enabled: true

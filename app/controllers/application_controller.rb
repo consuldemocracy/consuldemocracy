@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_http_basic, if: :http_basic_auth_site?
 
   before_action :ensure_signup_complete
-  before_action :set_locale
+  around_action :switch_locale
   before_action :track_email_campaign
   before_action :set_return_url
 
@@ -40,14 +40,15 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    def set_locale
-      I18n.locale = current_locale
+    def switch_locale(&action)
+      locale = current_locale
 
-      if current_user && current_user.locale != I18n.locale.to_s
-        current_user.update(locale: I18n.locale)
+      if current_user && current_user.locale != locale.to_s
+        current_user.update(locale: locale)
       end
 
-      session[:locale] = I18n.locale
+      session[:locale] = locale
+      I18n.with_locale(locale, &action)
     end
 
     def current_locale
