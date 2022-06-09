@@ -299,35 +299,56 @@ span:hover::before {
     .budget-investment {
       display: flex;
       flex-grow: 1;
+      border: 2px solid $grey-background;
+      border-bottom: 3px solid $grey-background;
+
+      a {
+        display: block;
+        height: 100%;
+      }
 
       .panel {
         width: 100%;
+        border: 0;
+
         >div {
           height: 100%;
         }
       }
-    }
 
-    .image-holder {
-      text-align: center;
-
-      img {
-        height: auto;
-        width: 100%;
-        max-height: 180px;
-        min-height: 180px;
-        object-fit: cover;
+      .image-holder {
+        text-align: center;
+  
+        img {
+          height: auto;
+          width: 100%;
+          max-height: 180px;
+          min-height: 180px;
+          object-fit: cover;
+          display: block;
+        }
+  
+        .investment-default-image {
+          background-color: $theme-color-opacity-90;
+  
+          img {
+            object-fit: none;
+          }
+        }
       }
 
-      .investment-default-image {
-        background-color: $theme-color-opacity-90;
-
-        &:hover {
-          background-color: $theme-color-opacity-80;
+      &:hover {
+        border: 2px solid $theme-color;
+        border-bottom: 3px solid $theme-color;
+        
+        a {
+          color: $black;
         }
 
-        img {
-          object-fit: none;
+        .image-holder {
+          .investment-default-image {
+            background-color: $theme-color-opacity-80;
+          }
         }
       }
     }

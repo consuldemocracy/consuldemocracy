@@ -85,11 +85,11 @@ a {
 
   &:hover,
   &:active {
-    color: $link-hover;
+    color: $hover-color;
   }
 
   &:focus {
-    color: $link-hover;
+    color: $hover-color;
   }
 }
 
