@@ -364,20 +364,32 @@ describe "Polls" do
 
     scenario "Read more button appears only in long answer descriptions" do
       question = create(:poll_question, poll: poll)
-      create(:poll_question_answer, title: "Long answer", question: question,
-             description: Faker::Lorem.characters(number: 700))
+      answer_long = create(:poll_question_answer, title: "Long answer", question: question,
+                           description: Faker::Lorem.characters(number: 700))
       create(:poll_question_answer, title: "Short answer", question: question,
              description: Faker::Lorem.characters(number: 100))
 
       visit poll_path(poll)
 
+      expect(page).to have_content "Long answer"
       expect(page).to have_content "Short answer"
-      expect(page).to have_content "Short answer"
+      expect(page).to have_css "#answer_description_#{answer_long.id}.answer-description.short"
 
       within "#poll_more_info_answers" do
         expect(page).to have_content "Read more about Long answer"
         expect(page).not_to have_content "Read more about Short answer"
       end
+
+      find("#read_more_#{answer_long.id}").click
+
+      expect(page).to have_content "Read less about Long answer"
+      expect(page).to have_css "#answer_description_#{answer_long.id}.answer-description"
+      expect(page).not_to have_css "#answer_description_#{answer_long.id}.answer-description.short"
+
+      find("#read_less_#{answer_long.id}").click
+
+      expect(page).to have_content "Read more about Long answer"
+      expect(page).to have_css "#answer_description_#{answer_long.id}.answer-description.short"
     end
 
     scenario "Show orbit bullets only when there is more than one image" do
