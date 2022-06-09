@@ -309,7 +309,9 @@ span:hover::before {
 
       .panel {
         width: 100%;
+        padding: 0;
         border: 0;
+        box-shadow: none;
 
         >div {
           height: 100%;
@@ -440,18 +442,18 @@ span:hover::before {
   }
 }
 
-@media (min-width: 576px) {
-  .budget-investments {
-    .budget-investment-holder {
-      .budget-investment {
-        .panel {
-          border-bottom: 0 !important;
-          padding: 0 rem-calc(15);
-        }
-      }
-    }
-  }
-}
+// @media (min-width: 576px) {
+//   .budget-investments {
+//     .budget-investment-holder {
+//       .budget-investment {
+//         .panel {
+//           border-bottom: 0 !important;
+//           padding: 0 rem-calc(15);
+//         }
+//       }
+//     }
+//   }
+// }
 
 // Background
 

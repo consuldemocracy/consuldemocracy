@@ -726,13 +726,16 @@ body > header,
 
   .main-indented-content {
     margin: 0 auto;
-    padding: 10px;
+    padding: 10px 0;
   }
 
   .tabs {
     border: 0;
     margin: 0;
     width: 100%;
+    display: flex;
+    align-content: space-around;
+    
 
     .active-phase {
       > a {
@@ -747,14 +750,23 @@ body > header,
 
   .tabs li {
     float: none;
-    margin-bottom: 5px;
+    flex: auto;
+    width: 100%;
+    // margin-bottom: 5px;
     margin-right: 0;
-    padding: 10px 0;
+    
+    border-right: 1px solid $black;
     border-bottom: 0;
-    border-right: 0;
+    padding: 0 5px;
+
+    &:first-of-type {
+      padding-left: 0;
+    }
 
     &:last-of-type {
       border-bottom: 0;
+      padding-right: 0;
+      border-right: 0;
     }
 
     > a {
@@ -779,18 +791,19 @@ body > header,
   .tabs h2,
   .tabs h3 {
     // color: $white;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 20px;
     font-weight: 600;
     text-transform: uppercase;
-    padding: 7px 10px;
+    padding: 7px 0;
+    white-space: nowrap;
   }
 
   .tabs span {
     color: $black;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 300;
-    line-height: 17px;
+    line-height: 14px;
     padding-top: 3px;
     display: block;
   }
@@ -806,18 +819,12 @@ body > header,
     font-weight: 700;
     text-transform: uppercase;
     display: inline-block;
-    padding: 7px 15px;
+    padding: 4px 8px;
   }
-
-  .custom-phases-nav .tabs .active-phase a h3 i {
-    background: url(/assets/custom/check.svg) left no-repeat;
-    width: 30px;
-  }
-
 
   .active-phase a h3 i {
     background: image-url("check.svg") left no-repeat;
-    width: 30px;
+    width: 24px;
   }
 
   .active-phase a h3:hover i {
@@ -833,20 +840,30 @@ body > header,
     border-bottom: 0;
   }
 
-  @media (min-width: 576px) {
-    .tabs {
-      width: 100%;
-      border-left: 1px solid $black;
-      display: flex;
-      align-content: space-around;
+  @media (min-width: 768px) {
+    .main-indented-content {
+      padding: 10px;
+    }
 
-      li {
-        flex: auto;
-        border-right: 1px solid $black;
-        border-bottom: 0;
-        margin-bottom: initial;
-        padding: 0;
+    .tabs {
+      border-left: 1px solid $black;
+
+      h2,
+      h3 {
+        font-size: 16px;
       }
+
+      span {
+        font-size: 16px;
+      }
+
+      li:last-of-type {
+        border-right: 1px solid $black;
+      }
+    }
+
+    .active-phase a h3 i {
+      width: 30px;
     }
   }
 }

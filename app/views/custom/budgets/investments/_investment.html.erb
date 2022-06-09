@@ -1,7 +1,7 @@
 <div id="<%= dom_id(investment) %>" class="budget-investment clear">
   <div class="panel <%= ("with-image" if feature?(:allow_images) && investment.image.present?) %>">
     <div class="row" data-equalizer>
-      <div class="small-12 medium-12 large-12 investment-content-wrapper">
+      <div class="column small-12 medium-12 large-12 investment-content-wrapper">
         <%= link_to namespaced_budget_investment_path(investment), class: "" do %>
           <div class="image-holder">
               <% if investment.image.present? %>

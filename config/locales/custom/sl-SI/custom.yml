@@ -49,6 +49,8 @@ sl-SI:
         price: "Vrednost projekta"
       edit:
         submit: "Shrani spremembe"
+      form:
+        tags_instructions: "Označi ta predlog. Izbiraš lahko med predlaganimi kategorijami."
   comments:
     actions:
       confirm_delete: Potrdi izbris
