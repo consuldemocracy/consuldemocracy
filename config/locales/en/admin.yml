@@ -1533,6 +1533,10 @@ en:
         document_number: Document number
         roles: Roles
         verification_level: Verification level
+        activation_status: Activation Status
+      account:
+        active_status: Account activated
+        inactive_status: Account not activated
       index:
         title: User
         no_users: There are no users.
