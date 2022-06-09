@@ -1,0 +1,17 @@
+<% if resource.errors.any? %>
+  <div id="error_explanation" data-alert class="callout alert" data-closable>
+    <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+    <strong>
+      <% if local_assigns[:message].present? %>
+        <%= message %>
+      <% else %>
+        <% errors_count = resource.errors.messages.reject { |attribute| attribute == :base }.count %>
+        <%= pluralize errors_count, t("form.error"), t("form.errors") %>
+        <%= sanitize(t("form.not_saved", resource: t("form.#{resource.class.to_s.underscore}"))) %>
+      <% end %>
+    </strong>
+  </div>
+<% end %>

@@ -4,18 +4,7 @@
 <%= render "devise/omniauth_form", action: "sign_up" %>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%# show custom error %>
-  <% if resource.errors.any? %>
-    <div id="error_explanation" data-alert class="callout alert" data-closable>
-      <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
-        <span aria-hidden="true">&times;</span>
-      </button>
-
-      <strong>
-        <%= t("custom.errors.registration") %>
-      </strong>
-    </div>
-  <% end %>
+  <%= render "shared/errors", resource: resource, message: t("custom.errors.registration") %>
 
   <div class="row">
     <div class="small-12 column">

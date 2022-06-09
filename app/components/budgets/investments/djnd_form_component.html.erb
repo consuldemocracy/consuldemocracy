@@ -1,6 +1,6 @@
 <%= translatable_form_for(investment, url: url, html: { class: "budget-investment-form" }) do |f| %>
 
-  <%= render "shared/errors", resource: investment %>
+  <%= render "shared/errors", resource: investment, message: t("custom.errors.submit_investment") %>
 
   <fieldset class="required-fields">
 
