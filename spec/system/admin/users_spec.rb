@@ -56,4 +56,23 @@ describe "Admin users" do
     expect(page).not_to have_content admin.name
     expect(page).not_to have_content admin.email
   end
+
+  describe "Show account activation status" do
+    scenario "when user account is confimed" do
+      visit admin_users_path
+
+      expect(page).to have_content "Activation Status"
+      expect(page).to have_content "Account activated"
+      expect(page).not_to have_content "Account not activated"
+    end
+
+    scenario "when user account is not confimed" do
+      user.update!(confirmed_at: nil)
+
+      visit admin_users_path
+
+      expect(page).to have_content "Activation Status"
+      expect(page).to have_content "Account not activated"
+    end
+  end
 end
