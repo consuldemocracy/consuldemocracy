@@ -33,7 +33,7 @@
         <% if phase.url %>
           <%= render "/budgets/investments/header" %>
           <div class="main-indented-content">
-            <% if @investments.count > 0 || @heading.present? %>
+            <% if @filtered_investments_count > 0 %> <%#  || @heading.present? %>
               <div class="row budget-investments">
                 <div class="column">
                   <%= render "budgets/investments/map" %>
@@ -141,6 +141,20 @@
             <% else %>
               <div class="row budget-investments">
                 <div class="column">
+                  <%= render "budgets/investments/map" %>
+                  <h2 class="phase-title bold">
+                    <% if phase.kind == :finished %>
+                      <%= t("custom.titles.finished_proposals") %> (<%= @filtered_investments_count %>)
+                    <% elsif phase.kind == :balloting %>
+                      <%= t("custom.titles.selected_proposals") %> (<%= @filtered_investments_count %>)
+                    <% elsif @budget.phase == "valuating" %>
+                      <%= t("custom.titles.added_proposals") %> (<%= @filtered_investments_count %>)
+                    <% elsif @budget.phase == "publishing_prices" %>
+                      <%= t("custom.titles.voted_proposals") %> (<%= @filtered_investments_count %>)
+                    <% else %>
+                      <%= t("custom.titles.added_proposals") %> (<%= @filtered_investments_count %>)
+                    <% end %>
+                  </h2>
                   <div class="filters">
                     <% if @budget.headings.count > 1 %>
                       <%= render "budgets/investments/districts" %>

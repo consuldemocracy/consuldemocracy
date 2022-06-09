@@ -420,8 +420,11 @@ span:hover::before {
   }
 
   .no-budget-investment {
-    margin-top: 2rem;
     margin-bottom: 3rem;
+
+    img {
+      margin-top: 2rem;  
+    }
 
     p {
       margin-top: rem-calc(30);
