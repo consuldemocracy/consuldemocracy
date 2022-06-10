@@ -51,6 +51,7 @@ sl-SI:
         submit: "Shrani spremembe"
       form:
         tags_instructions: "Označi ta predlog. Izbiraš lahko med predlaganimi kategorijami."
+        submit: "Oddaj predlog"
   comments:
     actions:
       confirm_delete: Potrdi izbris
@@ -298,5 +299,6 @@ sl-SI:
       price: "Polje vrednost projekta ne sme biti prazno."
       registration: "Zaradi napak obrazca nismo mogli shraniti."
       submit_investment: "Zaradi napak obrazca nismo mogli shraniti."
+      no_answer: "Prosim izpolni vprašanje."
     footer:
       djnd: Za platformo skrbi
