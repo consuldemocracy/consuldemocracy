@@ -4,6 +4,8 @@
   <%= render "shared/canonical", href: root_url %>
 <% end %>
 
+<% provide :title do %><%= t("budgets.investments.index.title") %><% end %>
+
 <% provide :social_media_meta_tags do %>
   <%= render "shared/social_media_meta_tags", social_url: root_url %>
 <% end %>
