@@ -52,6 +52,8 @@ sl-SI:
       form:
         tags_instructions: "Označi ta predlog. Izbiraš lahko med predlaganimi kategorijami."
         submit: "Oddaj predlog"
+      index:
+        title: Participativni proračun
   comments:
     actions:
       confirm_delete: Potrdi izbris

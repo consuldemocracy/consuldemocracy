@@ -303,8 +303,9 @@ span:hover::before {
       border-bottom: 3px solid $grey-background;
 
       a {
-        display: block;
+        display: flex;
         height: 100%;
+        flex-direction: column;
       }
 
       .panel {
