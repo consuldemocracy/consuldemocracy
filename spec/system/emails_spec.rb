@@ -258,7 +258,7 @@ describe "Emails" do
   end
 
   context "Proposal notification digest" do
-    scenario "notifications for proposals that I'm following" do
+    scenario "notifications for proposals that I'm following", :no_js do
       Setting["org_name"] = "CONSUL"
       user = create(:user, email_digest: true)
 
