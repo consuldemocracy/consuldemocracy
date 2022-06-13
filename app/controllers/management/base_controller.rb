@@ -4,7 +4,7 @@ class Management::BaseController < ActionController::Base
   default_form_builder ConsulFormBuilder
 
   before_action :verify_manager
-  before_action :set_locale
+  around_action :switch_locale
 
   helper_method :managed_user
   helper_method :current_user
@@ -38,14 +38,14 @@ class Management::BaseController < ActionController::Base
       redirect_to management_document_verifications_path, alert: message
     end
 
-    def set_locale
+    def switch_locale(&action)
       if params[:locale] && I18n.available_locales.include?(params[:locale].to_sym)
         session[:locale] = params[:locale]
       end
 
       session[:locale] ||= I18n.default_locale
 
-      I18n.locale = session[:locale]
+      I18n.with_locale(session[:locale], &action)
     end
 
     def current_budget
