@@ -7,6 +7,9 @@ on:
     branches-ignore:
       - i18n_master
 
+permissions:
+  contents: read
+
 jobs:
   tests:
     runs-on: ubuntu-18.04
@@ -60,6 +63,8 @@ jobs:
           name: screenshots
           path: tmp/screenshots
   coveralls:
+    permissions:
+      contents: none
     runs-on: ubuntu-18.04
     needs: tests
     env:
