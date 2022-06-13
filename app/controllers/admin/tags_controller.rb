@@ -26,6 +26,7 @@ class Admin::TagsController < Admin::BaseController
   end
 
   private
+
     def tags
       @tags ||= Tag.category.page(params[:page])
     end
