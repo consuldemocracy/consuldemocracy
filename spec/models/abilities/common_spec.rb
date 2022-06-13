@@ -289,7 +289,7 @@ describe Abilities::Common do
 
     before { user.update(verified_at: Time.current) }
 
-    it { should be_able_to(:vote, Proposal)          }
+    it { should be_able_to(:vote, Proposal) }
 
     it { should     be_able_to(:new, DirectMessage)            }
     it { should     be_able_to(:create, DirectMessage)         }

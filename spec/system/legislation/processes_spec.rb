@@ -254,7 +254,7 @@ describe "Legislation" do
           expect(page).to have_content("Homepage")
         end
 
-        expect(page).to     have_content("This is the process homepage")
+        expect(page).to have_content("This is the process homepage")
       end
 
       scenario "disabled", :with_frozen_time do
@@ -280,7 +280,7 @@ describe "Legislation" do
 
         visit legislation_process_path(process)
 
-        expect(page).to     have_content("This phase is not open yet")
+        expect(page).to have_content("This phase is not open yet")
       end
 
       scenario "open without questions" do
