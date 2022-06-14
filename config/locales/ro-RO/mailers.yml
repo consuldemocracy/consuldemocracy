@@ -7,15 +7,13 @@ ro:
       new_comment_by: Comentariu nou de la <strong>%{commenter}</strong>
       subject: Cineva a comentat la %{commentable} dumneavoastră
       title: Comentariu nou
-    config:
-      manage_email_subscriptions: Pentru a nu mai primi aceste e-mailuri, schimbați setările în
     email_verification:
       click_here_to_verify: acest link
       instructions_2: Acest e-mail vă va verifica contul cu <b>%{document_type}%{document_number}</b>. Dacă acestea nu vă aparțin, nu faceți clic pe linkul anterior și ignorați acest e-mail.
       instructions: Pentru a finaliza verificarea contului de utilizator trebuie să faceți clic pe %{verification_link}.
       subject: Confirmă adresa de email
       thanks: Vă mulțumim foarte mult.
-      title: Confirmați contul utilizând următorul link
+      title: "Confirmați contul utilizând următorul link"
     reply:
       hi: Bună
       new_reply_by: Acesta este un nou răspuns de la <strong>%{commenter}</strong> la comentariul dumneavoastră
@@ -26,17 +24,14 @@ ro:
       title: "Notificările propunerilor în %{org_name}"
       share: Partajează propunere
       comment: Comentează propunerea
-      unsubscribe: "Dacă nu doriți să primiți notificări la propunere, mergeți la %{account} și debifați „Primește un rezumat al notificărilor de propuneri”."
-      unsubscribe_account: Contul meu
       unfollow: "Mergeți la această propunere și nu o mai urmăriți pentru a nu mai primi notificări despre aceasta."
     direct_message_for_receiver:
       subject: "Ați primit un mesaj privat"
       reply: Răspunde-i lui %{sender}
-      unsubscribe: "Dacă nu doriți să primiți mesaje directe, accesați %{account} și debifați „Primește e-mailuri despre mesaje directe”."
-      unsubscribe_account: Contul meu
     direct_message_for_sender:
       subject: "Ați trimis un nou mesaj privat"
-      title: "Ați trimis un mesaj privat către<strong>%{receiver}</strong> cu următorul conținut:"
+      title: "Ați trimis un nou mesaj privat"
+      text: "Ați trimis un mesaj privat către<strong>%{receiver}</strong> cu următorul conținut:"
     user_invite:
       ignore: "Dacă nu ați solicitat această invitație, nu vă faceți griji, puteți ignora acest email."
       text: "Vă mulțumim că ați solicitat să vă alăturați %{org}! În câteva secunde puteți începe să participați, trebuie doar să completați formularul de mai jos:"

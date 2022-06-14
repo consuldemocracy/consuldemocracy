@@ -1,5 +1,18 @@
 tr:
   seeds:
+    admin_notifications:
+      budget:
+        title: "Katılımcı Bütçe'yi kapatıyoruz!"
+        body: "Acele edin ve birkaç gün içinde bitmeden önce bir teklif oluşturun!"
+      help:
+        title: "Consul'u tercüme etmemize yardımcı olun"
+        body: "Eğer bir dilde yetkinseniz, lütfen Consul'u tercüme etmemize yardımcı olun!"
+      map:
+        title: "Artık teklifleri ve yatırımları konumlandırabilirsiniz"
+        body: "Bir teklif veya yatırım oluşturduğunuzda harita üzerinde bir nokta belirtebilirsiniz."
+      proposal:
+        title: "Teklifiniz var mı?"
+        body: "Fikirlerinizle bir teklif oluşturabileceğinizi ve insanların bunu tartışıp destekleyeceğini hatırlayın."
     settings:
       official_level_1_name: Resmi pozisyon 1
       official_level_2_name: Resmi pozisyon 2
@@ -14,6 +27,27 @@ tr:
     organizations:
       human_rights: İnsan Hakları
       neighborhood_association: Mahalle Derneği
+    cards:
+      budget:
+        title: "Katılımcı bütçe nasıl çalışır?"
+        description: "Katılımcı bütçeler, vatandaşların bütçenin bir kısmının nasıl harcanacağına doğrudan karar vermelerini, kurumun vatandaş tekliflerini titiz bir şekilde izlemesi ve değerlendirmesi ile sağlar. Herkes için azami etki ve kontrol memnuniyeti."
+        link_text: "Katılımcı bütçeler hakkında daha fazlası"
+        label: "Katılımcı bütçeleri"
+      debate:
+        title: "Münazaralar nasıl gerçekleşir?"
+        description: "Herkes herhangi bir konuda başlık açarak insanların önerilen konuyu tartışabileceği ayrı alanlar yaratabilir. Tartışmalar, herkes için önem arz eden konulara değinmek için değerlidir."
+        link_text: "Münazaralar hakkında daha fazlası"
+        label: "Münazaralar"
+      header:
+        title: "CONSUL"
+        description: "Vatandaş katılımı için ücretsiz yazılım."
+        link_text: "Daha fazla bilgi"
+        label: "Hoş geldiniz"
+      proposal:
+        title: "Vatandaş önerileri nasıl gerçekleşir?"
+        description: "Herkesin, bir vatandaş teklifi oluşturması ve destek kazanması için bir platform. Yeterli desteğe ulaşan teklifler oylanacak ve böylece hepimiz için önem arz eden sorunlara birlikte karar vereceğiz."
+        link_text: "Öneriler hakkında daha fazlası"
+        label: "Vatandaş önerileri"
     categories:
       associations: Dernekler
       culture: Kültür
@@ -36,16 +70,18 @@ tr:
       groups:
         all_city: Tüm şehir
         districts: İlçeler
-      valuator_groups:
-        culture_and_sports: Kültür & Spor
-        gender_and_diversity: Cinsiyet & Çeşitlilik Politikaları
-        urban_development: Sürdürülebilir Kentsel Gelişim
-        equity_and_employment: Eşitlik & İstihdam
+      phases:
+        description: "%{language} açıklama"
+        summary: "%{language} özet"
       statuses:
         studying_project: Projenin incelenmesi
         bidding: Teklif verme
         executing_project: Projeyi yürütmek
         executed: Gerçekleştirilen
+    legislation:
+      draft_versions:
+        title: "Versiyon %{number}"
+        body: "%{language} versiyon taslağı"
     polls:
       current_poll: "Geçerli Anket"
       current_poll_geozone_restricted: "Geçerli Anket Geozone sınırlı"

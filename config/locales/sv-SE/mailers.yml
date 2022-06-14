@@ -2,20 +2,26 @@ sv:
   mailers:
     title: "Open Government"
     no_reply: "Det går inte att svara till den här e-postadressen."
+    already_confirmed:
+      info: "Vi har fått en begäran om att skicka instruktioner för att bekräfta ditt konto. Men ditt konto har redan bekräftats, så det behöver du inte göra igen."
+      new_password: "Om du har glömt ditt lösenord kan du återställa det på följande länk:"
+      subject: Ditt konto har redan bekräftats
     comment:
       hi: Hej
       new_comment_by: Det finns en ny kommentar från <strong>%{commenter}</strong>
       subject: Någon har kommenterat på ditt %{commentable}
       title: Ny kommentar
     config:
-      manage_email_subscriptions: För att sluta få denna e-post kan du ändra dina inställningar i
+      notifications_link: Aviseringar
+      unsubscribe_text: 'För att avsluta prenumerationen på dessa e-postmeddelanden går du till %{notifications} och avmarkera "%{notification}".'
     email_verification:
       click_here_to_verify: den här länken
       instructions_2: Det här e-postmeddelandet är för att verifiera ditt konto med <b>%{document_type} %{document_number}</b>. Klicka inte på länken ovan om de inte tillhör dig.
       instructions: Du måste klicka på %{verification_link} för att slutföra verifieringen av ditt användarkonto.
       subject: Bekräfta din e-postadress
       thanks: Tack så mycket!
-      title: Bekräfta ditt konto via länken nedan
+      title: "Bekräfta ditt konto via länken nedan"
+      text: "Bekräfta ditt konto via länken nedan."
     reply:
       hi: Hej
       new_reply_by: Det finns ett nytt svar från <strong>%{commenter}</strong> på din kommentar om
@@ -26,17 +32,16 @@ sv:
       title: "Aviseringar om förslag i %{org_name}"
       share: Dela förslaget
       comment: Kommentera förslaget
-      unsubscribe: "Gå till %{account} och avmarkera 'Få sammanfattningar av aviseringar om förslag', om du inte längre vill få aviseringar om förslag."
-      unsubscribe_account: Mitt konto
+      unsubscribe_text: "Om du inte vill få några förslagsaviseringar går du till %{notifications} och avmarkerar 'Få sammanfattningar av aviseringar om förslag'."
       unfollow: "Sluta att få aviseringar genom att besöka förslaget och sluta att följa."
     direct_message_for_receiver:
       subject: "Du har fått ett nytt privat meddelande"
       reply: Svara till %{sender}
-      unsubscribe: "Om du inte vill få direktmeddelanden, går du till %{account} och avmarkerar 'Få e-post om direktmeddelanden'."
-      unsubscribe_account: Mitt konto
+      unsubscribe_text: "Om du inte vill få direktmeddelanden, går du till %{notifications} och avmarkerar 'Få e-post om direktmeddelanden'."
     direct_message_for_sender:
       subject: "Du har skickat ett nytt privat meddelande"
-      title: "Du har skickat ett nytt privat meddelande till <strong>%{receiver}</strong> med innehållet:"
+      title: "Du har skickat ett nytt privat meddelande"
+      text: "Du har skickat ett nytt privat meddelande till <strong>%{receiver}</strong> med innehållet:"
     user_invite:
       ignore: "Om du inte har begärt denna inbjudan, behöver du inte bry dig om den."
       text: "Tack för att du registrerat dig på %{org}! Nu kan du snart vara med och delta, fyll bara i det här formuläret:"
@@ -54,6 +59,7 @@ sv:
       sincerely: "Vänliga hälsningar,"
       share: "Dela ditt projekt"
     budget_investment_unfeasible:
+      title: "Ditt budgetförslag har markerats som ej genomförbart"
       hi: "Kära användare,"
       new: "Med anledning av det ber vi dig att skapa ett <strong>nytt budgetförslag</strong> som uppfyller kraven för den här processen. Du kan göra det med följande länk: %{url}."
       new_href: "nytt budgetförslag"
@@ -62,6 +68,7 @@ sv:
       subject: "Ditt budgetförslag '%{code}' har markerats som ej genomförbart"
     budget_investment_selected:
       subject: "Ditt budgetförslag '%{code}' har valts"
+      title: "Ditt investeringsprojekt har valts"
       hi: "Kära användare,"
       share: "Börja samla röster och dela i sociala medier för att ditt investeringsprojekt ska kunna bli verklighet."
       share_button: "Dela ditt budgetförslag"
@@ -69,6 +76,7 @@ sv:
       sincerely: "Vänliga hälsningar"
     budget_investment_unselected:
       subject: "Ditt budgetförslag '%{code}' har inte valts"
+      title: "Ditt investeringsprojekt har inte valts"
       hi: "Kära användare,"
       thanks: "Tack återigen för att du deltar."
       sincerely: "Vänliga hälsningar"

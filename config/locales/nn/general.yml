@@ -11,14 +11,9 @@ nn:
       save_changes_submit: Lagre endringer
       recommendations: Anbefalinger
       title: Min konto
-      user_permission_debates: Delta i debatter
       user_permission_info: Med din konto kan du...
-      user_permission_proposal: Lag nye forslag
-      user_permission_support_proposal: Støtt forslag
       user_permission_title: Deltakelse
       user_permission_verify: Verifiser din konto for å få tilgang til alle funksjoner.
-      user_permission_verify_info: "* Kun for brukere av Census."
-      user_permission_votes: Delta i endelig avstemning
       verified_account: Konto er verifisert
       verify_my_account: Verifiser min konto
   application:
@@ -113,10 +108,6 @@ nn:
         button: Søk
         placeholder: Søk debatter...
         title: Søk
-      search_results:
-        zero: " som inneholder <strong>'%{search_term}'</strong>"
-        one: " som inneholder <strong>'%{search_term}'</strong>"
-        other: " som inneholder <strong>'%{search_term}'</strong>"
       start_debate: Start en debatt
       title: Debatter
       section_header:
@@ -209,7 +200,6 @@ nn:
       conditions: Brukervilkår
       consul: CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: For teknisk support gå til
       copyright: CONSUL, %{year}
       description: Denne portalen bruker %{consul} som er %{open_source}.
       open_source: open-source software
@@ -238,7 +228,7 @@ nn:
         new_notifications:
           zero: "Du har ingen nye varsler"
           zero: Du har %{count} nye varsler
-          one: Du har %{count} nye varsel
+          one: Du har 1 nye varsel
           other: Du har %{count} nye varsler
         notifications: Varsler
   notifications:
@@ -256,7 +246,7 @@ nn:
           other: Det er %{count} nye kommentarer på
         proposal_notification:
           zero: Du har %{count} nye varsler om
-          one: Du har %{count} ny varsel om
+          one: Du har 1 ny varsel om
           other: Du har %{count} nye varsler om
         replies_to:
           zero: Du har fått %{count} svar på din kommentar om
@@ -373,7 +363,6 @@ nn:
       select_order_long: "Du viser forslag i henhold til:"
       start_proposal: Opprett et forslag
       title: Forslag
-      top: Ukens mest populære forslag
       top_link_proposals: Mest populære forslag fra hver kategori
       section_header:
         icon_alt: Forslagsikon
@@ -832,15 +821,12 @@ nn:
   votes:
     agree: Jeg er enig
     anonymous: For mange anonyme stemmer til å godkjenne stemme %{verify_account}.
-    comment_unauthenticated: Du må %{signin} eller %{signup} for å stemme.
     disagree: Jeg er uenig
     organizations: Organisasjoner er ikke berettiget til å stemme
     supports: Støtte
     verified_only: Kun verifiserte brukere kan stemme på forslag; %{verify_account}.
     budget_investments:
-      not_logged_in: Du må %{signin} eller %{signup} for å fortsette.
       not_verified: Kun verifiserte brukere kan stemme på investeringsprosjekter; %{verify_account}.
-      organization: Organisasjoner er ikke berettiget til å stemme
       unfeasible: Du kan ikke gi støtte til investeringsprojekter, som ikke kan gennemføres
       not_voting_allowed: Avstemmingsfasen er avsluttet
       different_heading_assigned:
@@ -873,23 +859,13 @@ nn:
       budget_investments:
         title: Anbefalte investeringer
       slide: "Se %{title}"
-    verification:
-      i_dont_have_an_account: Jeg har ingen konto
-      i_have_an_account: Jeg har allerede en konto
-      question: Har du allerede en konto i %{org_name}?
-      title: Verifisering av konto
     welcome:
       go_to_index: Vis forslag og debatter
       start_using_consul: Gå til indekssiden
       title: Delta
-      user_permission_debates: Delta i debatter
       user_permission_info: Med din konto kan du...
-      user_permission_proposal: Lag nye forslag
-      user_permission_support_proposal: Støtt forslag
       user_permission_verify: "Verifiser din konto for å utføre følgende handlinger."
-      user_permission_verify_info: "* Kun for brukere av Census."
       user_permission_verify_my_account: Verifiser min konto
-      user_permission_votes: Delta i endelig avstemning
   invisible_captcha:
     sentence_for_humans: "Hvis du er menneske, så kan du ignorere dette felt"
     timestamp_error_message: "Beklager, det gikk litt raskt! Vær vennlig å prøv på nytt."

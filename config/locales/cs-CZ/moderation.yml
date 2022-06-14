@@ -1,9 +1,10 @@
 cs:
   moderation:
+    actions:
+      confirm_action: "Jste si jistý? %{action}"
     comments:
       index:
         block_authors: Blokovat autory
-        confirm: Jste si jisti?
         filter: Filtr
         filters:
           all: Vše
@@ -24,7 +25,6 @@ cs:
     debates:
       index:
         block_authors: Blokovat autory
-        confirm: Jste si jisti?
         filter: Filtr
         filters:
           all: Vše
@@ -51,7 +51,6 @@ cs:
     proposals:
       index:
         block_authors: Blokovat autory
-        confirm: Jste si jisti?
         filter: Filtr
         filters:
           all: Vše
@@ -69,7 +68,6 @@ cs:
     budget_investments:
       index:
         block_authors: Blokovat autory
-        confirm: Jste si jisti?
         filter: Filtr
         filters:
           all: Vše
@@ -87,7 +85,6 @@ cs:
     proposal_notifications:
       index:
         block_authors: Blokovat autory
-        confirm: Jste si jisti?
         filter: Filtr
         filters:
           all: Vše
@@ -104,8 +101,11 @@ cs:
         title: Upozornění k návrhům
     users:
       index:
-        hidden: Blokováno
+        block: Blokovat
+        confirm_block: "Jste si jistý? Tím se skryje uživatel \"%{name}\" a veškerý jeho obsah."
+        confirm_hide: "Jste si jistý? Tím se skryje uživatel \"%{name}\", aniž by se skryl jeho obsah."
         hide: Blokovat
         search_placeholder: email nebo jméno uživatele
         title: Blokovat uživatele
+      notice_block: Uživatel byl zablokován. Veškerý obsah, jehož je tento uživatel autorem, byl skryt.
       notice_hide: Uživatel byl zablokován. Všechny debaty a komentáře tohoto uživatele byly skryty.

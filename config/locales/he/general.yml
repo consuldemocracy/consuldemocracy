@@ -11,14 +11,9 @@ he:
       save_changes_submit: שמירת שינויים
       recommendations: המלצות
       title: החשבון שלי
-      user_permission_debates: להשתתף בדיונים
       user_permission_info: עם חשבונך תוכל/י ...
-      user_permission_proposal: ליצור הצעות חדשות
-      user_permission_support_proposal: לתמוך בהצעות
       user_permission_title: השתתפות
       user_permission_verify: כדי לבצע את כל הפעולות, עליך לאמת את חשבונך
-      user_permission_verify_info: "* רק עבור משתמשים/ות במפקד אוכלוסין."
-      user_permission_votes: השתתפות בהצבעה הסופית
       verified_account: החשבון אומת בהצלחה
       verify_my_account: אמת את החשבון שלי
   application:
@@ -119,11 +114,6 @@ he:
         button: חיפוש
         placeholder: חיפוש דיונים...
         title: חיפוש
-      search_results:
-        one: " המכיל את המונחים <strong>'%{search_term}'</strong>"
-        two: " המכיל את המונחים <strong>'%{search_term}'</strong>"
-        many: " המכיל את המונחים <strong>'%{search_term}'</strong>"
-        other: " המכיל את המונחים <strong>'%{search_term}'</strong>"
       start_debate: פתח דיון
       title: דיונים
       section_header:
@@ -218,7 +208,6 @@ he:
       conditions: כללים ותנאי שימוש
       consul: מערכת ההצבעות לשיתוף תושבים
       consul_url: https://github.com/consul/consul
-      contact_us: תמיכה טכנית באתר הפרויקט
       copyright: Consul, %{year}
       description: פורטל זה משתמש בפלטפורמת %{consul} שהיא %{open_source}.
       open_source: תוכנת קוד פתוח
@@ -323,7 +312,7 @@ he:
         submit_button: שמירת שינויים
       show_link: צפייה בהצעה
     retire_form:
-      title: הסרת הצעה
+      title: להסרת ההצעה
       warning: "“הסרת ההצעה שלך היא לא מחיקה. ההצעה עדיין תוכל לצבור תמיכה, אך היא תוסר מהרשימה הראשית ולכל המשתמשים שצופים בה תוצג ההודעה שלדעת מציע/ת ההצעה, לא כדאי לתמוך בהצעה הזו יותר.\""
       retired_reason_blank: בחר/י אפשרות
       retired_explanation_placeholder: הסבר/י בקיצור מדוע לדעתך לא כדאי לתמוך בהצעה זו כבר
@@ -387,7 +376,6 @@ he:
       select_order_long: "ההצעות מוצגות לך על-פי סדר:"
       start_proposal: העל/י הצעה חדשה
       title: הצעות
-      top: בראש סדר היום השבוע
       top_link_proposals: ההצעות שצברו הכי הרבה תמיכה, לפי נושא
       section_header:
         icon_alt: סמל הצעה
@@ -865,15 +853,12 @@ he:
   votes:
     agree: מסכים
     anonymous: יותר מדי קולות אנונימיים לאמת את ההצבעה %{verify_account}.
-    comment_unauthenticated: נדרשת %{signin} או %{signup} בכדי להצביע
     disagree: אני מסתייג
     organizations: ארגונים אינם רשאים להצביע
     supports: לחיצה לתמיכה
     verified_only: רק משתמשים מאומתים יכולים להצביע על הצעות; %{verify_account}.
     budget_investments:
-      not_logged_in: נדרשת %{signin} או %{signup} בכדי להמשיך
       not_verified: רק משתמשים שאומת חשבונם יכולים להצביע על ההצעות; %{verify_account}.
-      organization: ארגונים אינם רשאים להצביע
       unfeasible: לא ניתן לתמוך בפרויקטים שאינם ברי ביצוע
       not_voting_allowed: שלב ההצבעות נסגר
       different_heading_assigned:
@@ -907,23 +892,13 @@ he:
       budget_investments:
         title: השקעות מומלצות
       slide: "ראה %{title}"
-    verification:
-      i_dont_have_an_account: אין לי חשבון
-      i_have_an_account: כבר יש לי חשבון
-      question: האם כבר יש לך חשבון ב %{org_name}?
-      title: אימות החשבון
     welcome:
       go_to_index: לצפייה בהצעות ובדיונים
       start_using_consul: גש לדף הבית
       title: רוצה להשתתף בזה
-      user_permission_debates: להשתתף בדיונים
       user_permission_info: עם חשבונך תוכל/י ...
-      user_permission_proposal: ליצור הצעות חדשות
-      user_permission_support_proposal: לתמוך בהצעות*
       user_permission_verify: "כדי לבצע את כל הפעולות, עליך לאמת את חשבונך"
-      user_permission_verify_info: "* רק עבור משתמשים/ות במפקד אוכלוסין."
       user_permission_verify_my_account: אמת את החשבון שלי
-      user_permission_votes: השתתפות בהצבעה הסופית
   invisible_captcha:
     sentence_for_humans: "אם אינך רובוט, נא התעלם משדה זה"
     timestamp_error_message: "מצטערים, זה היה מהיר מדי, נא לשלוח שוב"

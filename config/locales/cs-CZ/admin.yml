@@ -4,13 +4,12 @@ cs:
       title: Administrace
     actions:
       actions: Akce
-      confirm: Jste si jisti?
+      block_author: "Blokovat autora"
       confirm_action: "Jste si jist? %{action} \"%{name}\""
       confirm_delete: "Jste si jistý? Tato akce odstraní \"%{name}\" a nelze ji vrátit zpět."
       confirm_hide: Potvrdit moderování
       delete: "Smazat"
       hide: Skrýt
-      hide_author: Skrýt autora
       label: "%{action} %{name}"
       restore: Obnovit
       mark_featured: Označené
@@ -114,6 +113,7 @@ cs:
         delete: Odstranit rozpočet
         phase: Fáze
         phases_caption: "Fáze"
+        phases_table_help_text: "Konfigurace těchto fází slouží pouze pro informační účely. Její funkcí je definovat informace o fázích zobrazené na veřejné stránce participativního rozpočtu."
         duration: "Trvání"
         enabled: Povolit
         actions: Akce
@@ -141,6 +141,8 @@ cs:
         info:
           budget_settings: "Obecné nastavení participativního rozpočtu"
           staff_settings: "Správci a hodnotitelé přiřazení k rozpočtu"
+        hide_money: "Skrýt částku"
+        hide_money_help_text: "Pokud je tato možnost zaškrtnuta, všechna pole zobrazující částku budou v průběhu procesu skryta."
       destroy:
         success_notice: Rozpočet byl smazán
         unable_notice: Nemůžete odstranit rozpočet, který je propojený s investicemi
@@ -171,6 +173,11 @@ cs:
       headings_name: "Kapitoly"
       headings_manage: "Spravovat kapitoly"
       no_groups: "Neexistují žádné skupiny."
+      amount:
+        one: "Je tu 1 skupina"
+        few: "Jsou tu %{count} skupiny"
+        many: "Je tu %{count} skupin"
+        other: "Je zde %{count} skupin"
       create:
         notice: "Skupina byla úspěšně vytvořena!"
       update:
@@ -186,7 +193,7 @@ cs:
       index:
         new_button: "Přidat novou skupinu"
     budget_headings:
-      no_headings: "Neexistují žádné kapitoly."
+      no_headings: "Ve skupině <strong>%{group}</strong> nejsou žádné nadpisy."
       create:
         notice: "Kapitola byla úspěšně vytvořena!"
       update:
@@ -213,13 +220,14 @@ cs:
     budget_phases:
       edit:
         title: "Upravit fázi"
+        dates_help_text: "Pouze pro informační účely"
         description_help_text: Tento text bude zobrazen v záhlaví, když je fáze aktivní
         duration: "Trvání fáze"
         duration_description: "Doba, po kterou bude tato fáze aktivní."
         enabled_help_text: Fáze bude zveřejněna v časovém rozvrhu participativního rozpočtu a bude aktivní pro jakýkoli jiný účel
         image_description: "Pokud je obrázek nahrán, zobrazí se vedle popisu této fáze."
         main_call_to_action: "Hlavní výzva k akci (nepovinné)"
-        main_call_to_action_description: "Tento odkaz se zobrazí na hlavním banneru tohoto participativního rozpočtu, pokud je tato fáze povolena, a vybízí uživatele k provedení konkrétní akce, jako je vytvoření návrhu, hlasování pro stávající návrhy nebo získání dalších informací o procesu."
+        main_call_to_action_description: "Tento odkaz se zobrazí na hlavním obrázku tohoto participativního rozpočtu, pokud je tato fáze povolena, a vybízí uživatele k provedení konkrétní akce, jako je vytvoření návrhu, hlasování pro stávající návrhy nebo získání dalších informací o procesu."
         name_help_text: "Toto je název fáze, který si uživatelé přečtou v záhlaví, kdykoli je tato fáze aktivní."
         save_changes: Uložit změny
       index:
@@ -278,7 +286,7 @@ cs:
           incompatible: Nekompatibilní
           price: Cena
           author: Autor
-        cannot_calculate_winners: Rozpočet musí zůstat na fázi "Hlasování o projektech", "Přezkoumání hlasování" nebo "Ukončený rozpočet" za účelem výpočtu vítězných projektů
+        cannot_calculate_winners: Rozpočet musí zůstat ve fázi "%{phase}", aby bylo možné vypočítat vítězné projekty
         see_results: "Zobrazit výsledky"
         milestone_tags_filter_all: "Všechny značky milníků"
       show:
@@ -837,6 +845,11 @@ cs:
         title: Náhled informačního bulletinu
         send: Odeslat
         affected_users: (%{n} postižených uživatelů)
+        sent_emails:
+          one: 1 odeslaný e-mail
+          few: "%{count} e-maily odeslány"
+          many: "%{count} e-mailů odesláno"
+          other: "Odesláno %{count} emailů"
         sent_at: Odesláno v čase
         subject: Subject
         segment_recipient: Recipients

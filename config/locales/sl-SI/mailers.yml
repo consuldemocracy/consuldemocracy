@@ -6,15 +6,13 @@ sl:
       new_comment_by: Imaš nov komentar uporabnika/-ce <strong>%{commenter}</strong>
       subject: Nekdo je komentiral na tvoj %{commentable}
       title: Nov komentar
-    config:
-      manage_email_subscriptions: Če ne želiš več prejemati teh e-sporočil, spremeni svoje nastavitve
     email_verification:
       click_here_to_verify: tukaj
       instructions_2: Ta e-pošta bo verificirala tvoj račun z <b>%{document_type} %{document_number}</b>. Če to ni prav, klikni na prejšnji link ali ignoriraj to sporočilo.
       instructions: Da zaključiš preverjanje svojega uporabniškega računa na portalu Open Government, klikni %{verification_link}.
       subject: Potrdi svoj e-naslov
       thanks: Najlepša hvala.
-      title: Potrdi svoj račun z uporabo naslednje povezave
+      title: "Potrdi svoj račun z uporabo naslednje povezave"
     reply:
       hi: Hej
       new_reply_by: Imaš nov odgovor uporabnika/-ce <strong>%{commenter}</strong> na tvoj komentar o
@@ -25,16 +23,13 @@ sl:
       title: "Obvestila predlogov v %{org_name}"
       share: Deli predlog
       comment: Komentiraj predlog
-      unsubscribe: "Če ne želiš več prejemati obvestil predloga, obišči %{account} in odznači ustrezno nastavitev."
-      unsubscribe_account: Moj račun
     direct_message_for_receiver:
       subject: "Prejel/-a si novo zasebno sporočilo"
       reply: Odgovori uporabniku/-ci %{sender}
-      unsubscribe: "Če ne želiš sprejemati direktnih sporočil, obišči %{account} in odznači ustrezno nastavitev."
-      unsubscribe_account: Moj račun
     direct_message_for_sender:
       subject: "Imaš novo zasebno sporočilo"
-      title: "Poslal/-a si novo zasebno sporočilo uporabniku/-ci <strong>%{receiver}</strong>, in sicer s to vsebino:"
+      title: "Imaš novo zasebno sporočilo"
+      text: "Poslal/-a si novo zasebno sporočilo uporabniku/-ci <strong>%{receiver}</strong>, in sicer s to vsebino:"
     user_invite:
       ignore: "Če nisi zahteval/-a tega povabila, ne skrbi, preprosto ignoriraj to e-pošto."
       text: "Hvala, ker se želiš pridružiti %{org}! V trenutku se lahko začneš odločati o tem, v kateri občini želiš sodelovati, le izpolni spodnji obrazec:"

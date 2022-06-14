@@ -7,9 +7,7 @@ sl:
         remove: Odstrani glas
         zero: Nisi glasoval za noben naložbeni projekt.
       reasons_for_not_balloting:
-        not_logged_in: Za nadaljevanje se moraš %{signin} ali %{signup}.
         not_verified: Le verificirani uporabniki lahko glasujejo o naložbah; %{verify_account}.
-        organization: Organizacijam ni dovoljeno glasovati
         not_selected: Neizbraneih investicij ni mogoče podpreti
         not_enough_money: "Ves razpoložljiv proračun si že porabil.<br><small>Lahko pa kadarkoli %{change_ballot}</small>"
         no_ballots_allowed: Faza izbiranja je končana

@@ -64,11 +64,6 @@ sr:
       users: Корисничко управљање
       user_invites: Пошаљите позивнице
       select_user: Одредите корисника
-    permissions:
-      create_proposals: Креирајте предлог
-      debates: Укључите се у расправу
-      support_proposals: Подржите предлог
-      vote_proposals: Гласајте предлог
     print:
       proposals_info: Креирајте свој предлог на http://url.consul
       proposals_title: "Предлози:"

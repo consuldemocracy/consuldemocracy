@@ -4,11 +4,9 @@ id:
       title: Administrasi
     actions:
       actions: Tindakan
-      confirm: Apakah kamu yakin?
       confirm_hide: Konfirmasi
       delete: "Hapus"
       hide: Sembunyikan
-      hide_author: Sembunyikan penulis
       restore: Mengembalikan
       mark_featured: Unggulan
       unmark_featured: Hapus tanda pada yang ditampilkan
@@ -121,7 +119,6 @@ id:
       index:
         new_button: "Tambahkan grup baru"
     budget_headings:
-      no_headings: "Tidak ada judul."
       create:
         notice: "Tajuk berhasil dibuat!"
       update:

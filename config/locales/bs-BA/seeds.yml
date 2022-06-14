@@ -36,11 +36,6 @@ bs:
       groups:
         all_city: Cijelo mjesto
         districts: Okruzi
-      valuator_groups:
-        culture_and_sports: Kultura i sport
-        gender_and_diversity: Politike rodne ravnopravnosti i raznolikosti
-        urban_development: Održivi urbani razvoj
-        equity_and_employment: Pravičnost i zapošljavanje
       statuses:
         studying_project: Proučavanje projekta
         bidding: Natječaj

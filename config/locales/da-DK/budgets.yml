@@ -23,6 +23,7 @@ da:
             other: "Du kan stemme på op til <span>%{count}</span> projekter"
         no_balloted_group_yet: "Du har ikke stemt på denne gruppe endnu, så stem stem stem!"
         remove: Fjern din stemme
+        remove_label: "Fjern din støtte til %{investment}"
         voted:
           one: "Du har stemt på <span>et</span> projektidé."
           other: "Du har stemt på <span>%{count}</span> projektidéer."
@@ -30,9 +31,7 @@ da:
         voted_info_2: "Men du kan ændre din stemme til enhver tid indtil denne fase er lukket."
         zero: Du har endnu ikke stemt.
       reasons_for_not_balloting:
-        not_logged_in: Du skal %{signin} eller %{signup} for at kunne fortsætte.
         not_verified: Kun verificerede brugere kan stemme på projekter; %{verify_account}.
-        organization: Det er ikke tilladt for organisationer at stemme
         not_selected: Du kan ikke støtte op om idéer, der ikke kan gennemføres
         not_enough_money: "Du har allerede fordelt det mulige budget.<br><small>Husk at du %{change_ballot} til enhver tid</small>"
         no_ballots_allowed: Støttefasen er slut
@@ -75,6 +74,8 @@ da:
     investments:
       form:
         title: "Opret din projektidé"
+        subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
         tag_category_label: "Kategorier"
         tags_instructions: "Tilføj tags. Du kan vælge mellem de allerede viste kategorier eller tilføje dine egne"
         tags_label: Tags
@@ -91,9 +92,6 @@ da:
           button: Søg
           placeholder: Søg efter projekter...
           title: Søg
-        search_results:
-          one: " som indeholder <strong>'%{search_term}'</strong>"
-          other: " som indeholder <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Min stemme
           voted_info:
@@ -150,6 +148,7 @@ da:
       wrong_price_format: Kun hele tal
       investment:
         add: Stem
+        add_label: "Stem %{investment}"
         already_added: Du har allerede tilføjet projektet
         support_title: Støt forslaget
         supports:
@@ -167,13 +166,30 @@ da:
         confirm_group:
           one: "Du kan kun støtte op om forslag i %{count} distrikt. Hvis du fortsætter, kan du ikke ændre valget af dit distrikt. Er du sikker?"
           other: "Du kan kun støtte op om projektidéer i %{count} distrikt. Hvis du fortsætter, kan du ikke ændre valget af dit distrikt. Er du sikker?"
+        remove_support: "Fjern din støtte"
+        remove_support_label: "Fjern din støtte til %{investment}"
         support: "Støt"
+        support_label: "Støt %{investment}"
     investments_list:
       investment:
         price: "Pris"
+        read_more: "Læs mere"
         supports: "Støtte"
+      see_all: "Se alle investeringer"
+      title: "Liste over forslag"
     show:
       see_results: Se resultat
+    supports_info:
+      different: "Du må støtte lige så mange forskellige projekter som du har lyst til."
+      next: "Støt de projekter du gerne vil have går videre til næste fase."
+      scrolling: "Fortsæt med at rulle ned for at se alle ideer"
+      share: "Del dine yndlingsprojekter igennem sociale medier for at give dem mere opmærksomhed"
+      supported:
+        one: "Du har støttet <strong> 1 projekt</strong>."
+        other: "Du har støttet <strong>%{count} projekter</strong>."
+      supported_not_logged_in: "Log ind for at <strong> støtte projekter</strong>."
+      time: "Indtil %{phase_end_date} kan du støtte projekter."
+      title: "Det er tid til <strong> at støtte </strong> projekter!"
     results:
       link: Resultater
       page_title: "%{budget} - Resultater"

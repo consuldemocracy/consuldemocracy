@@ -54,7 +54,6 @@ tr:
           winners: Seçilmiş
       debate:
         empty_questions: Herhangi bir soru bulunmamaktadır
-        participate: Tartışmaya katıl
       index:
         filter: Filtre
         filters:

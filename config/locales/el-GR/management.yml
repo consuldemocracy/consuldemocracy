@@ -64,11 +64,6 @@ el:
       users: Διαχείριση χρηστών
       user_invites: Αποστολή προσκλήσεων
       select_user: Επιλέξτε χρήστη
-    permissions:
-      create_proposals: Δημιουργήστε προτάσεις
-      debates: Συμμετάσχουν σε συζητήσεις
-      support_proposals: Υποστήριξη προτάσεων
-      vote_proposals: Ψήφισε προτάσεις
     print:
       proposals_info: Δημιουργήστε την πρότασή σας στο http://url.consul
       proposals_title: "Προτάσεις:"

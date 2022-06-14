@@ -1,5 +1,6 @@
 nl:
   mailers:
+    title: "Open overheid"
     no_reply: "This message was sent from an email address that does not accept replies."
     comment:
       hi: Hi
@@ -7,14 +8,15 @@ nl:
       subject: Someone has commented on your %{commentable}
       title: New comment
     config:
-      manage_email_subscriptions: To stop receiving these emails change your settings in
+      notifications_link: Notificaties
+      unsubscribe_text: 'Bezoek %{notifications} en vink "%{notification}" af om je af te melden voor deze e-mails.'
     email_verification:
       click_here_to_verify: this link
       instructions_2: Deze e-mail verifieert uw account met %{document_type} %{document_number}. Als deze email niet voor u bestemd is, klik dan niet op de link en negeer deze e-mail.
       instructions: Om de verificatie van uw account te voltooien klikt u %{verification_link}.
       subject: Confirm your email
       thanks: Thank you very much.
-      title: Confirm your account using the following link
+      title: "Confirm your account using the following link"
     reply:
       hi: Hoi
       new_reply_by: There is a new response from <strong>%{commenter}</strong> to your comment on
@@ -25,16 +27,14 @@ nl:
       title: "Notifications in %{org_name}"
       share: Voorstel delen
       comment: Reageren op het voorstel
-      unsubscribe: "Als je geen notificaties van voorstellen wilt ontvangen, ga je naar %{account} en verwijder je het vinkje bij 'Een samenvatting van notificaties ontvangen'."
-      unsubscribe_account: My account
+      unfollow: "Ga naar dit voorstel en stop met volgen om geen meldingen meer te ontvangen."
     direct_message_for_receiver:
       subject: "You have received a new private message"
       reply: Reply to %{sender}
-      unsubscribe: "Als u geen directe boodschappen wilt ontvangen, kijk dan eens bij %{account} en haal het vinkje weg bij 'ontvangen e-mails over directe berichten'."
-      unsubscribe_account: My account
     direct_message_for_sender:
       subject: "U heeft een nieuw prive bericht verstuurd"
-      title: "Je hebt een nieuw privébericht gestuurd naar <strong>%{receiver}</strong> met de inhoud:"
+      title: "U heeft een nieuw prive bericht verstuurd"
+      text: "Je hebt een nieuw privébericht gestuurd naar <strong>%{receiver}</strong> met de inhoud:"
     user_invite:
       ignore: "If you have not requested this invitation don't worry, you can ignore this email."
       text: "Dank u voor uw interesse om toe te treden tot %{org}! In een paar seconden kunt u deelnemen, vul het onderstaande formulier in:"
@@ -71,4 +71,25 @@ nl:
       thanks: "Dank u nogmaals voor uw deelname."
       sincerely: "Hoogachtend"
     evaluation_comment:
+      subject: "Nieuw evaluatiecommentaar"
+      title: Nieuw evaluatiecommentaar voor %{investment}
       hi: Hoi
+      new_comment_by: Er is nieuw evaluatiecommentaar van <strong>%{commenter}</strong> op investering %{investment}
+      commenter_info: "%{commenter},%{time}:"
+    machine_learning_error:
+      link: "Bekijk Machine Learning panel"
+      subject: "Machine Learning - Er is een fout opgetreden bij het uitvoeren van het script"
+      text: "Er is een fout opgetreden bij het uitvoeren van het Machine Learning script."
+      title: "Machine Learning script"
+    machine_learning_success:
+      link: "Bekijk Machine Learning panel"
+      subject: "Machine Learning - Content werd succesvol gegenereerd"
+      text: "Content werd succesvol gegenereerd."
+      title: "Machine Learning script"
+    new_actions_notification_rake_created:
+      subject: "Meer nieuws over je voorstel"
+      hi: "Hallo %{name},"
+      introduction: "Zoals je weet, heb je op %{created_at_day} van %{created_at_month} een conceptvoorstel %{title} gemaakt."
+      text_1: "Je kan hem publiceren wanneer je wilt door op deze link te klikken: %{link_to_published}. Als je het nog niet weet..."
+      text_2: "Gebruik dit moment! Leer van anderen door mensen met dezelfde interesses toe te voegen en bereid je samen voor op het launchen van je voorstel."
+      text_3: "Om je te ondersteunen bij deze uitdagingen, is hier het nieuws..."

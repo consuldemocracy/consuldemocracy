@@ -10,9 +10,6 @@ en-GB:
             zero: "Віддано голосів: <span>%{count}</span>"
             one: "Віддано голосів: <span>%{count}</span>"
             other: "Віддано голосів: <span>%{count}</span>"
-      reasons_for_not_balloting:
-        not_logged_in: Щоб продовжити, %{signin} або %{signup}.
-        organization: Організації не допускаються до голосування
     phase:
       informing: Інформація
     index:
@@ -40,9 +37,6 @@ en-GB:
         search_form:
           button: Пошук
           title: Пошук
-        search_results:
-          one: " містить термін <strong>'%{search_term}'</strong>"
-          other: " містить термін <strong>'%{search_term}'</strong>"
         sidebar:
           different_heading_assigned: "У вас є активні голоси в іншому заголовку: %{heading_link}"
           create: "Створити бюджетну інвестицію"

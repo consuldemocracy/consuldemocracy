@@ -36,11 +36,6 @@ val:
       groups:
         all_city: Tota la Ciutat
         districts: Districtes
-      valuator_groups:
-        culture_and_sports: Cultura & Esports
-        gender_and_diversity: Polítiques de Genere & Diversitat
-        urban_development: Desenvolupament Urbà Sostenible
-        equity_and_employment: Igualtat & Ocupació
       statuses:
         studying_project: Estudiant el projecte
         bidding: Ofertes

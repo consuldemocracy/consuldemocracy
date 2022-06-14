@@ -45,11 +45,6 @@ ast:
       print_proposals: Imprimir propuestas
       support_proposals: Sofitar propuestes
       create_budget_investment: Crear propuesta d'inversión
-    permissions:
-      create_proposals: Crear nuevas propuestas
-      debates: Participar en debates
-      support_proposals: Sofitar propuestes
-      vote_proposals: Participar en las votaciones finales
     print:
       proposals_title: "Propuestas:"
       budget_investments_info: Participa en http://url.consul

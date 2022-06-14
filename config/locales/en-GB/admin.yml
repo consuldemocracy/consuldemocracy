@@ -4,7 +4,6 @@ en-GB:
       title: Адміністрування
     actions:
       actions: Дії
-      confirm: Ви впевнені?
       delete: "Видалити"
       mark_featured: Рекомендовані
       edit: Редагувати

@@ -3,7 +3,6 @@ en-GB:
     comments:
       index:
         block_authors: Заблокувати авторів
-        confirm: Ви впевнені?
         filter: Фільтр
         filters:
           all: Усі
@@ -23,7 +22,6 @@ en-GB:
     debates:
       index:
         block_authors: Заблокувати авторів
-        confirm: Ви впевнені?
         filter: Фільтр
         filters:
           all: Усі
@@ -48,7 +46,6 @@ en-GB:
     proposals:
       index:
         block_authors: Заблокувати авторів
-        confirm: Ви впевнені?
         filter: Фільтр
         filters:
           all: Усі
@@ -65,7 +62,6 @@ en-GB:
     budget_investments:
       index:
         block_authors: Заблокувати авторів
-        confirm: Ви впевнені?
         filter: Фільтр
         filters:
           all: Усі
@@ -82,7 +78,6 @@ en-GB:
     proposal_notifications:
       index:
         block_authors: Заблокувати авторів
-        confirm: Ви впевнені?
         filter: Фільтр
         filters:
           all: Усі
@@ -97,5 +92,4 @@ en-GB:
         title: Сповіщення щодо пропозицій
     users:
       index:
-        hidden: Заблоковано
         title: Заблокувати користувачів

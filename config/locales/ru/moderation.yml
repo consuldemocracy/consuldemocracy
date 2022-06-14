@@ -3,7 +3,6 @@ ru:
     comments:
       index:
         block_authors: Заблокировать авторов
-        confirm: Вы уверены?
         filter: Фильтр
         filters:
           all: Все
@@ -24,7 +23,6 @@ ru:
     debates:
       index:
         block_authors: Заблокировать авторов
-        confirm: Вы уверены?
         filter: Фильтр
         filters:
           all: Все
@@ -51,7 +49,6 @@ ru:
     proposals:
       index:
         block_authors: Блокировать авторов
-        confirm: Вы уверены?
         filter: Фильтр
         filters:
           all: Все
@@ -69,7 +66,6 @@ ru:
     budget_investments:
       index:
         block_authors: Блокировать авторов
-        confirm: Вы уверены?
         filter: Фильтр
         filters:
           all: Все
@@ -87,7 +83,6 @@ ru:
     proposal_notifications:
       index:
         block_authors: Блокировать авторов
-        confirm: Вы уверены?
         filter: Фильтр
         filters:
           all: Все
@@ -104,7 +99,6 @@ ru:
         title: Уведомления о предложениях
     users:
       index:
-        hidden: Заблокирован
         hide: Блокировать
         search_placeholder: email или имя пользователя
         title: Блокировать пользователей

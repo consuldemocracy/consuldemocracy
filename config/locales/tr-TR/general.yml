@@ -1,7 +1,7 @@
 tr:
   account:
     show:
-      change_credentials_link: Kişisel bilgilerimi değiştir
+      change_credentials_link: Kimlik bilgilerimi değiştir
       erase_account_link: Hesabımı sil
       finish_verification: Doğrulamayı tamamla
       notifications: Bildirimler
@@ -11,14 +11,9 @@ tr:
       save_changes_submit: Değişiklikleri kaydet
       recommendations: Tavsiyeler
       title: Hesabım
-      user_permission_debates: Tartışmalara katıl
       user_permission_info: Hesabınızla şunları yapabilirsiniz...
-      user_permission_proposal: Yeni öneriler oluştur
-      user_permission_support_proposal: Önerileri destekle
       user_permission_title: Katılım
       user_permission_verify: Tüm eylemleri gerçekleştirmek için hesabınızı doğrulayın.
-      user_permission_verify_info: "* Sadece Pusula'daki kullanıcılar için."
-      user_permission_votes: Son oylamaya katıl
       verified_account: Hesap doğrulandı
       verify_my_account: Hesabımı doğrula
   application:
@@ -102,7 +97,7 @@ tr:
       recommendations:
         without_results: İlgi alanlarınıza göre tartışma bulunamadı
         without_interests: Önerileri takip ederseniz, size uygun tavsiyeler verebiliriz
-        disable: "Tartışma tavsiyelerini gizlerseniz, göremezsiniz. Onları 'Hesabım' sayfasından tekrar etkinleştirebilirsiniz"
+        disable: "Tartışma tavsiyeleri, görmezden gelirseniz gösterilmez. Onları 'Hesabım' sayfasında tekrar etkinleştirebilirsiniz"
         actions:
           success: "Tartışma önerileri bu hesap için etkisizleştirilmiştir"
           error: "Bir hata oluştu. Lütfen tartışma tavsiyelerini manuel olarak etkisizleştirmek için 'Hesabım' sayfasına gidin"
@@ -110,9 +105,6 @@ tr:
         button: Ara
         placeholder: Tartışmalarda ara...
         title: Ara
-      search_results:
-        one: " <strong>'%{search_term}'</strong>terimini içeren"
-        other: " <strong>'%{search_term}'</strong>terimini içeren"
       start_debate: Bir tartışma başlat
       title: Tartışmalar
       section_header:
@@ -213,7 +205,6 @@ tr:
       conditions: Kullanım şartları ve koşulları
       consul: CONSUL uygulaması
       consul_url: https://github.com/consul/consul
-      contact_us: Teknik yardım için ziyaret edin
       copyright: CONSUL, %{year}
       description: Bu portal %{open_source} olan %{consul}u kullanmaktadır.
       open_source: açık kaynak yazılım
@@ -315,11 +306,11 @@ tr:
         submit_button: Değişiklikleri kaydet
       show_link: Öneriyi göster
     retire_form:
-      title: Öneriyi geri çek
-      warning: "Öneriyi çekseniz bile yine de destek almaya devam edebilir, ancak bu öneri ana listeden kaldırılacak ve yazarın söz konusu önerinin artık desteklenmemesi gerektiğini düşündüğünü belirten bir mesaj tüm kullanıcılar tarafından görülebilecektir"
+      title: Öneriyi çek
+      warning: "Öneriyi çekseniz bile yine de destekleri kabul eder ancak ana listeden kaldırılır ve yazarın önerinin artık desteklenmemesi gerektiğini düşündüğünü belirten bir mesaj tüm kullanıcılar tarafından görülebilir"
       retired_reason_blank: Bir seçenek seçin
       retired_explanation_placeholder: Bu önerinin neden daha fazla desteklenmemesi gerektiğini kısaca açıklayın
-      submit_button: Öneriyi geri çek
+      submit_button: Öneriyi çek
     retire_options:
       duplicated: Kopyalanmış
       started: Zaten yapım aşamasında
@@ -350,12 +341,12 @@ tr:
       recommendations:
         without_results: İlgi alanlarınızla alakalı öneri bulunamadı
         without_interests: Önerileri takip edin böylece size tavsiyeler verebiliriz
-        disable: "Önerilerle ilgili tavsiyeler, görmezden gelirseniz gösterilmez. Onları 'Hesabım' sayfasında tekrar etkinleştirebilirsiniz"
+        disable: "Öneri tavsiyeleri, görmezden gelirseniz gösterilmez. Onları 'Hesabım' sayfasında tekrar etkinleştirebilirsiniz"
         actions:
           success: "Önerlerle ilgili tavsiyeler bu hesap için engellenmiştir"
           error: "Bir hata oluştu. Lütfen önerilerle ilgili tavsiyeleri manuel olarak devre dışı bırakmak için 'Hesabım' sayfasına gidin"
-      retired_proposals: Geri çekilen öneriler
-      retired_proposals_link: "Fikir yaratıcısı tarafından geri çekilen öneriler"
+      retired_proposals: Çekilen öneriler
+      retired_proposals_link: "Yazar tarafından çekilen öneriler"
       selected_proposals: Seçilen öneriler
       selected_proposals_link: Seçilen önerileri görüntüle
       archived_proposals: Arşivlenmiş öneriler
@@ -377,7 +368,6 @@ tr:
       select_order_long: "Şuna göre önerileri görüntülüyorsunuz:"
       start_proposal: Bir öneri oluştur
       title: Öneriler
-      top: Haftalık en iyi
       top_link_proposals: Kategoriye göre en çok desteklenen öneriler
       section_header:
         icon_alt: Öneriler simgesi
@@ -396,7 +386,7 @@ tr:
       recommendations_title: Öneri oluşturmakla ilgili tavsiyeler
       start_new: Yeni öneri oluştur
     notice:
-      retired: Öneri geri çekildi
+      retired: Öneri çekildi
       published: Öneri yayınlandı
     proposal:
       created: "Bir öneri oluşturdunuz!"
@@ -438,7 +428,7 @@ tr:
       milestones_tab: Kilometre taşları
       retired_warning: "Fikir yaratıcısı bu önerinin daha fazla destek almaması gerektiğini düşünmektedir."
       retired_warning_link_to_explanation: Bu öneri için oy vermeden önce açıklamayı okuyun.
-      retired: Öneri fikir sahibi tarafından geri çekildi
+      retired: Öneri yazar tarafından çekildi
       share: Paylaş
       no_notifications: "Bu öneriyle ilgili herhangi bir bildirim bulunmamaktadır."
       embed_video_title: "%{proposal} ile ilgili video"
@@ -848,15 +838,12 @@ tr:
   votes:
     agree: Katılıyorum
     anonymous: Oy kullanmak için çok fazla isimsiz oy kullanıldı %{verify_account}.
-    comment_unauthenticated: Oy kullanmak için %{signin} veya %{signup} yapmalısınız.
     disagree: Katılmıyorum
     organizations: Organizasyonların oy kullanmalarına izin verilmez
     supports: Destekler
     verified_only: Yalnızca doğrulanan kullanıcılar önerilere oy verebilir; %{verify_account}.
     budget_investments:
-      not_logged_in: Devam etmek için %{signin} veya %{signup} yapmalısınız.
       not_verified: Yalnızca doğrulanan kullanıcılar yatırım projelerine oy verebilir; %{verify_account}.
-      organization: Organizasyonların oy kullanmalarına izin verilmez
       unfeasible: Uygulanamaz yatırım projeleri desteklenemez
       not_voting_allowed: Oy kullanma aşaması kapanmıştır
       different_heading_assigned:
@@ -892,23 +879,13 @@ tr:
       budget_investments:
         title: Tavsiye edilen yatırımlar
       slide: "Bak %{title}"
-    verification:
-      i_dont_have_an_account: Benim bir hesabım yok
-      i_have_an_account: Benim zaten bir hesabım var
-      question: Sizin zaten %{org_name} 'de bir hesabınız mı var?
-      title: Hesap doğrulama
     welcome:
       go_to_index: Önerileri ve tartışmaları gör
       start_using_consul: Dizin sayfasına git
       title: Katıl
-      user_permission_debates: Tartışmalara katıl
       user_permission_info: Hesabınızla şunları yapabilirsiniz...
-      user_permission_proposal: Yeni öneriler oluştur
-      user_permission_support_proposal: Önerileri destekle*
       user_permission_verify: "Tüm eylemleri gerçekleştirmek için hesabınızı doğrulayın."
-      user_permission_verify_info: "* Sadece Census'taki kullanıcılar için."
       user_permission_verify_my_account: Hesabımı doğrula
-      user_permission_votes: Son oylamaya katıl
   invisible_captcha:
     sentence_for_humans: "Eğer insansanız, bu alanı görmezden gelin"
     timestamp_error_message: "Üzgünüm, bu çok hızlı oldu! Lütfen tekrar gönderin."

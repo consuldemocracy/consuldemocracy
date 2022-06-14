@@ -1,9 +1,5 @@
 bs:
   budgets:
-    ballots:
-      reasons_for_not_balloting:
-        not_logged_in: Morate se prijaviti %{signin} ili otvoriti nalog %{signup} kako bi nastavili.
-        organization: Organizacije ne mogu glasati
     phase:
       informing: Informacije
     index:
@@ -29,10 +25,6 @@ bs:
         search_form:
           button: Traži
           title: Traži
-        search_results:
-          one: " sadrži pojam <strong>'%{search_term}'</strong>"
-          few: " sadrži pojam <strong>'%{search_term}'</strong>"
-          other: " sadrži pojam <strong>'%{search_term}'</strong>"
         sidebar:
           create: "Formuliši budžetsku investiciju"
         filters:

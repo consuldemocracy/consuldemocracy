@@ -54,7 +54,6 @@ nl:
           winners: Geselecteerd
       debate:
         empty_questions: Er zijn geen vragen
-        participate: Neem deel aan debatten
       index:
         filter: Filter
         filters:

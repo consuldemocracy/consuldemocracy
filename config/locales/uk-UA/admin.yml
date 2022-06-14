@@ -4,11 +4,9 @@ uk-UA:
       title: Адміністрування
     actions:
       actions: Дії
-      confirm: Ви впевнені?
       confirm_hide: Підтвердити модерацію
       delete: "Видалити"
       hide: Приховати
-      hide_author: Приховати автора
       restore: Відновити
       mark_featured: Рекомендовані
       unmark_featured: Не показувати рекомендовані
@@ -135,7 +133,6 @@ uk-UA:
         max_votable_headings_info: "Стосується лише етапу відбору проєктів. На етапі голосування за проєкти користувачі можуть проголосувати лише за одну рубрику в групі."
         submit: "Зберегти групу"
     budget_headings:
-      no_headings: "Рубрики відсутні."
       create:
         notice: "Рубрику створено!"
       update:
@@ -213,7 +210,6 @@ uk-UA:
           incompatible: Несумісно
           price: Вартість
           author: Автор
-        cannot_calculate_winners: Щоб визначити переможні інвестиційні проєкти, бюджет має знаходитись на етапах "Голосування за проєкти" або "Виконаний бюджет"
         see_results: "Переглянути результати"
         milestone_tags_filter_all: "Теги всіх етапів"
       show:

@@ -4,11 +4,9 @@ ar:
       title: الإدارة
     actions:
       actions: الإجراءات
-      confirm: هل أنت متأكد؟
       confirm_hide: تأكيد
       delete: "حذف"
       hide: إخفاء
-      hide_author: إخفاء الكاتب
       restore: إسترجاع
       mark_featured: مميز
       unmark_featured: إلغاء تحديد مميز
@@ -142,7 +140,6 @@ ar:
         edit: "تعديل مجموعة"
         submit: "حفظ المجموعة"
     budget_headings:
-      no_headings: "لا توجد هناك عناوين."
       create:
         notice: "تم إنشاء العنوان بنجاح!"
       update:
@@ -218,7 +215,6 @@ ar:
           incompatible: غير متوافق
           price: السعر
           author: الكاتب
-        cannot_calculate_winners: على الميزانية أن تبقى في المرحلة "اقتراع المشاريع"، "استعراض بطاقات الاقتراع" أو "الميزانيات المنتهية" ليتم حساب المشاريع الفائزة
         see_results: "رؤية النتائج"
         milestone_tags_filter_all: "جميع علامات المَعلم"
       show:
@@ -748,7 +744,7 @@ ar:
         affected_users: (%{n} مستخدم متأثر)
         sent_emails:
           zero: "%{count} رسالة بريد إلكتروني مرسلة"
-          one: '%{count} رسالة بريد إلكتروني مرسلة'
+          one: 1 رسالة بريد إلكتروني مرسلة
           two: "%{count} رسائل بريد إلكتروني مرسلة"
           few: "%{count} رسائل بريد إلكتروني مرسلة"
           many: "%{count} رسالة بريد إلكتروني مرسلة"
@@ -1035,7 +1031,6 @@ ar:
       edit:
         title: "تحرير سؤال"
       new:
-        title: "إنشاء سؤال"
         title_proposal: "إنشاء سؤال"
       answers:
         images:

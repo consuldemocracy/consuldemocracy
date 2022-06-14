@@ -1,5 +1,6 @@
 it:
   mailers:
+    title: "Governo Aperto"
     no_reply: "Questo messaggio è stato inviato da un indirizzo di posta elettronica che non accetta risposte."
     comment:
       hi: Salve
@@ -7,14 +8,15 @@ it:
       subject: Qualcuno ha commentato sul tuo %{commentable}
       title: Nuovo commento
     config:
-      manage_email_subscriptions: Per non ricevere più queste email, modifica le impostazioni
+      notifications_link: Notifiche
+      unsubscribe_text: 'Per disiscriverti da queste email, visita %{notifications} e rimuovi la spunta da "%{notification}".'
     email_verification:
       click_here_to_verify: questo link
       instructions_2: Questa email consente di verificare il tuo account con <b>%{document_type} %{document_number}</b>. Se questi documenti non ti appartengono, non cliccare sul link precedente e ignorare questa email.
       instructions: Per completare la verifica dell'account utente, è necessario cliccare su %{verification_link}.
       subject: Conferma il tuo indirizzo email
       thanks: Grazie.
-      title: Conferma il tuo account utilizzando il seguente link
+      title: "Conferma il tuo account utilizzando il seguente link"
     reply:
       hi: Ciao
       new_reply_by: C'è una nuova risposta da <strong>%{commenter}</strong> per il tuo commento su
@@ -25,16 +27,16 @@ it:
       title: "Notifiche di proposte su %{org_name}"
       share: Condividi la proposta
       comment: Commenta la proposta
-      unsubscribe: "Se non si desidera ricevere notifiche relativamente alle proposte, visita %{account} e togli la spunta a 'Ricevi un riassunto delle notifiche relative alle proposte'."
-      unsubscribe_account: Il mio account
+      unsubscribe_text: "Se non vuoi ricevere alcuna notifica di proposte, visita %{notifications} e rimuovi la spunta da 'Ricevi notifiche del riepilogo delle proposte'."
+      unfollow: "Visita questa proposta e smetti di seguirla per smettere di ricevere notifiche."
     direct_message_for_receiver:
       subject: "Hai ricevuto un nuovo messaggio privato"
       reply: Rispondere a %{sender}
-      unsubscribe: "Se non si desidera ricevere messaggi diretti, visita %{account} e togli la spunta a 'Ricevi email sui messaggi diretti'."
-      unsubscribe_account: Il mio account
+      unsubscribe_text: "Se non desideri ricevere messaggi diretti, visita %{notifications} e rimuovi la spunta da 'Ricevi email sui messaggi diretti'."
     direct_message_for_sender:
       subject: "Hai inviato un nuovo messaggio privato"
-      title: "Hai inviato un nuovo messaggio privato a <strong>%{receiver}</strong> con il contenuto:"
+      title: "Hai inviato un nuovo messaggio privato"
+      text: "Hai inviato un nuovo messaggio privato a <strong>%{receiver}</strong> con il contenuto:"
     user_invite:
       ignore: "Se non hai richiesto questo invito non ti preoccupare, puoi ignorare questa email."
       text: "Grazie per aver chiesto di aderire a %{org}! Tra pochi secondi potrai iniziare a partecipare, basta solo compilare il modulo qui sotto:"
@@ -72,4 +74,72 @@ it:
       sincerely: "Cordiali saluti"
     evaluation_comment:
       subject: "Nuovo commento di valutazione"
+      title: Nuovo commento di valutazione per %{investment}
       hi: Ciao
+      new_comment_by: C'è un nuovo commento valutativo da <strong>%{commenter}</strong> all'investimento di budget %{investment}
+      commenter_info: "%{commenter}, %{time}:"
+    machine_learning_error:
+      link: "Visita il pannello d'Apprendimento Automatico"
+      subject: "Apprendimento Automatico - Si è verificato un errore eseguendo lo script"
+      text: "Si è verificato un errore eseguendo lo script d'Apprendimento Automatico."
+      title: "Script d'Apprendimento Automatico"
+    machine_learning_success:
+      link: "Visita il pannello d'Apprendimento Automatico"
+      subject: "Apprendimento Automatico - Contenuto generato correttamente"
+      text: "Il contenuto è stato generato correttamente."
+      title: "Script d'Apprendimento Automatico"
+    new_actions_notification_rake_created:
+      subject: "Altre notizie sulla tua proposta cittadina"
+      hi: "Ciao %{name},"
+      new_resource: "NUOVA RISORSA SBLOCCATA"
+      introduction: "Come sai, il giorno %{created_at_day} del %{created_at_month} creato la proposta in modalità bozza %{title}."
+      text_1: "Quando vuoi, puoi pubblicare a questo link: %{link_to_published}. Se non sei ancora sicuro..."
+      text_2: "Cogli l'attimo! Impara, aggiungi altre persone con gli stessi interessi e prepara la diffusione di cui avrai bisogno pubblicando definitivamente la tua proposta."
+      text_3: "E per accompagnarti in questa sfida, ecco le novità..."
+      text_4: "Dà un'occhiata a questa NUOVA AZIONE consigliata:"
+      text_5: "La prossima azione consigliata è:"
+      footer_text: "Come sempre, accedi al Pannello delle Proposte e ti diremo nel dettaglio come usare queste risorse e come ottenere il massimo da esse."
+      dashboard_button: "Va avanti, scoprile!"
+    new_actions_notification_rake_published:
+      subject: "Altre notizie sulla tua proposta cittadina"
+      hi: "Ciao %{name},"
+      new_resource: "NUOVA RISORSA SBLOCCATA"
+      introduction: "Come sai, il giorno %{published_at_day} del %{published_at_month} hai pubblicato la proposta in modalità bozza %{title}."
+      text_1: "Bene, hai il supporto di %{votes_count}, finora. Congratulazioni!"
+      text_2: "E quindi, hai una nuova risorsa disponibile per aiutarti ad andare avanti."
+      text_3: "Ti mancano %{days_count} giorni prima che la tua proposta ottenga %{max_votes_count} supporti e vada al referendum. Rallegrati e continua a diffonderla. Sei a corto d'idee?"
+      text_4: "NUOVA AZIONE DI DIFFUSIONE CONSIGLIATA"
+      text_5: "E c'è dell'altro, guarda l'azione seguente:"
+      footer_text: "Come sempre, accedi al Pannello delle Proposte e ti diremo nel dettaglio come usare queste risorse e come ottenere il massimo da esse."
+      dashboard_button: "Va avanti, scoprile!"
+    new_actions_notification_on_create:
+      subject: "La bozza della tua proposta cittadina è stata creata"
+      hi: "Salve %{name}!"
+      introduction: "La tua proposta %{title} è stata creata correttamente."
+      text_1: "Avvantaggiati del fatto che la tua proposta non sia ancora pubblica e preparati a contattare tante persone."
+      text_2: "Quando sei pronto pubblica la tua proposta cittadina da questo <a href='%{link}'>link</a>."
+      text_3: "Sappiamo che creare una proposta accattivante e ottenere il supporto necessario possa sembrare complicato. Ma non preoccuparti, perché ti aiuteremo!"
+      text_4: "Hai uno strumento che sarà il tuo miglior alleato: Il pannello delle Proposte Cittadine."
+      list_1: "Accedi ogni giorno al pannello della tua proposta per usare consigli e risorse che condivideremo con te."
+      list_2: "Questi consigli, azioni e risorse ti daranno idee e soluzioni pratiche per ricevere maggiore supporto e una community più ampia. Non dimenticarli!"
+      list_3: "Ottenendo maggiore supporto, sbloccherai nuove, migliori risorse. Al momento, hai un modello email da inviare enormemente a tutti i tuoi contatti, un poster da stampare, tra altre funzionalità e premi che scoprirai. Non smettere di aggiungere supporto e non smetteremo di ricompensarti e aiutarti!"
+      list_4: "Hai %{max_month} mesi dalla pubblicazione della proposta per ottenere un supporto di %{max_votes} persone e la tua proposta possa divenire una realtà. Ma i primi giorni sono i più importanti. È una sfida. Preparati!"
+      text_5: "E perché tu inizi con tutta la motivazione,"
+      text_6: "ecco diverse risorse e un intero elenco di consigli che ti arriveranno ogni giorno per preparare la trasmissione!"
+      dashboard_button: "Va avanti, scoprile!"
+    new_actions_notification_on_published:
+      subject: "La tua proposta cittadina è già pubblicata. Non smettere di diffonderla!"
+      hi: "Congratulazioni %{name}! La tua proposta %{title} è stata creata correttamente."
+      text_1: "E ora, vai per i tuoi primi 100 supporti!"
+      text_2: "Perché 100?"
+      text_3: "La nostra esperienza ci dice che il primo giorno è fondamentale. Perché oltre ad avere energia per lanciare qualcosa di nuovo, ossia una proposta appena pubblicata, avrai l'importante visibilità di esser tra le nuove proposte evidenziate."
+      text_4: "Ottieni 100 supporti il primo giorno e avrai una prima community a sostenerti."
+      text_5: "Ecco perché ti sfidiamo a ottenerli, ma non senza molto aiuto!"
+      text_6: "Ricorda che nel Pannello della tua Proposta, hai delle nuovi consigli e risorse disponibili per le azioni di disseminazione."
+      list_1: "Accedi ogni giorno per vedere il tuo progresso e usare suggerimenti e risorse che condivideremo con te. Sono idee e anche soluzioni pratice per ottenere il supporto necessario."
+      list_2: "Ottenendo più supporto, sbloccherai nuove, migliori risorse. Non smettere di aggiungere supporto e non smetteremo di ricompensarti e aiutarti!"
+      text_7: "E perché tu inizi a tutta velocità..."
+      text_8: "Ecco una grande risorsa a tua disposizione!"
+      text_9: "Troverai anche questa nuova azione di disseminazione consigliata..."
+      text_10: "Di sicuro hai più risorse da usare!"
+      dashboard_button: "Va avanti, scoprile!"

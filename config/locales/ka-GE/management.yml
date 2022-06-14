@@ -64,11 +64,6 @@ ka:
       users: მომხმარებელთა მართვა
       user_invites: მოწვევების დაგზავნა
       select_user: მომხმარებლის შერჩევა
-    permissions:
-      create_proposals: ინიციატივების შექმნა
-      debates: დებატებში ჩაბმა
-      support_proposals: ინიციატივების მხარდაჭერა
-      vote_proposals: ინიციატივებზე ხმის მიცემა
     print:
       proposals_info: შექმენით თქვენი ინიციატივა http://url.consul-ზე
       proposals_title: "ინიციატივები:"

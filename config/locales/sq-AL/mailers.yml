@@ -6,15 +6,13 @@ sq:
       new_comment_by: Ka një koment të ri nga<strong>%{commenter}</strong>
       subject: Dikush ka komentuar mbi %{commentable} tuaj
       title: Komenti i ri
-    config:
-      manage_email_subscriptions: Për të ndaluar marrjen e këtyre emaileve, ndryshoni opsionet tuaja në
     email_verification:
       click_here_to_verify: kjo lidhje
       instructions_2: Ky email do të verifikojë llogarinë tuaj me <b>%{document_type}%{document_number}. Nëse këto nuk ju përkasin juve, mos klikoni në lidhjen e mëparshme dhe injorojeni këtë email.
       instructions: Për të përfunduar verifikimin e llogarisë suaj të përdoruesit ju duhet të klikoni %{verification_link}
       subject: Konfirmo emailin tënd
       thanks: "Shumë Faleminderit \n"
-      title: Konfirmo llogarinë tënd duke përdorur lidhjen e mëposhtme
+      title: "Konfirmo llogarinë tënd duke përdorur lidhjen e mëposhtme"
     reply:
       hi: Hi
       new_reply_by: Ka një përgjigje të re nga <strong>%{commenter}</strong> në komentin tuaj
@@ -25,16 +23,13 @@ sq:
       title: "Njoftimet e propozimeve në %{org_name}"
       share: Ndani propozimin
       comment: Propozimi i komentit
-      unsubscribe: "Nëse nuk doni të merrni njoftimin e propozimit, vizitoni %{account} dhe hiqni 'Merr një përmbledhje të njoftimeve të propozimit'."
-      unsubscribe_account: Llogaria ime
     direct_message_for_receiver:
       subject: "Ju keni marrë një mesazh të ri privat"
       reply: Përgjigjuni te %{sender}
-      unsubscribe: "Nëse nuk doni të merrni mesazhe të drejtpërdrejta, vizitoni %{account} dhe hiqni 'Marrja e postës elektronike në lidhje me mesazhet direkte'."
-      unsubscribe_account: Llogaria ime
     direct_message_for_sender:
       subject: "Ju keni dërguar një mesazh të ri privat"
-      title: "Ju keni dërguar një mesazh të ri privat tek <strong>%{receiver}</strong> me përmbajtje:"
+      title: "Ju keni dërguar një mesazh të ri privat"
+      text: "Ju keni dërguar një mesazh të ri privat tek <strong>%{receiver}</strong> me përmbajtje:"
     user_invite:
       ignore: "Nëse nuk e keni kërkuar këtë ftesë, mos u shqetësoni, mund ta injoroni këtë email."
       text: "Faleminderit që po aplikon për t'u bashkuar me %{org}! Në pak sekonda ju mund të filloni të merrni pjesë, vetëm plotësoni formularin e mëposhtëm:"

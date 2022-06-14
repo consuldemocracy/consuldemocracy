@@ -13,9 +13,7 @@ pl:
         voted_info_2: "Ale możesz zmienić swój głos w dowolnym momencie, dopóki ta faza jest zamknięta."
         zero: Nie wybrałeś/aś jeszcze żadnego projektu.
       reasons_for_not_balloting:
-        not_logged_in: Aby kontynuować, musisz %{signin} lub %{signup}.
         not_verified: W głosowaniu mogą wziąć udział tylko zweryfikowani użytkownicy. %{verify_account}.
-        organization: Organizacje nie mogą głosować
         not_selected: Niewybrane projekty inwestycyjne nie mogą być wspierane
         not_enough_money: "Już przypisałeś/łaś dostępny budżet.<br><small>Pamiętaj, że możesz %{change_ballot} w każdej chwili</small>"
         no_ballots_allowed: Faza wybierania jest zamknięta
@@ -69,11 +67,6 @@ pl:
           button: Szukaj
           placeholder: Przeszukaj projekty inwestycyjne...
           title: Szukaj
-        search_results:
-          one: " zawierające termin <strong>%{search_term}</strong>"
-          few: " zawierające termin <strong>%{search_term}</strong>"
-          many: " zawierające termin <strong>%{search_term}</strong>"
-          other: " zawierające termin <strong>%{search_term}</strong>"
         sidebar:
           my_ballot: Moje głosowanie
           voted_info:

@@ -4,11 +4,9 @@ oc:
       title: Administrar
     actions:
       actions: d'Accions
-      confirm: '¿Estás segur?'
       confirm_hide: Confirmatz la moderacion
       delete: "Borrar"
       hide: Amagar
-      hide_author: Bloquejar l'autor
       restore: Tornar a mostrar
       mark_featured: Destacadas
       unmark_featured: traire destacat
@@ -128,7 +126,6 @@ oc:
         edit: "Edita lo grop"
         submit: "Plega lo grop"
     budget_headings:
-      no_headings: "I a pas cap de títol."
       create:
         notice: "Lo encapçalament creat corrèctament!"
       update:
@@ -205,7 +202,6 @@ oc:
           incompatible: Incompatible
           price: Prètz
           author: Autor
-        cannot_calculate_winners: Lo budgèt li cal demorar en fasa "de Projèctes de votacion", "Revisar las bilhetas" o "Budgèt acabat" per calcular los projèctes ganhants
         see_results: "veire de resultats"
         milestone_tags_filter_all: "Totas las etiquetas de hita"
       show:

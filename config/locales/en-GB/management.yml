@@ -24,8 +24,6 @@ en-GB:
       print_budget_investments: Роздрукувати бюджетні інвестиції
       support_budget_investments: Підтримати бюджетні інвестиції
       user_invites: Надіслати запрошення
-    permissions:
-      support_proposals: Підтримати пропозиції
     print_info: Роздрукувати цю інформацію
     proposals:
       alert:

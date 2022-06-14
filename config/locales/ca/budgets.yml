@@ -29,9 +29,7 @@ ca:
         voted_info_2: "Però podeu canviar el vostre vot en qualsevol moment fins que es tanqui aquesta fase."
         zero: Encara no has votat cap proposta d'inversió.
       reasons_for_not_balloting:
-        not_logged_in: Necessites %{signin} o %{signup}.
         not_verified: Les propostes d'inversió només poden ser avalades per usuaris verificats, %{verify_account}.
-        organization: Les associacions no poden avalar
         not_selected: No es poden votar propostes inviables.
         not_enough_money: "Ja heu assignat el pressupost disponible.<br><small>Recordeu que podeu %{change_ballot} a qualsevol hora</small>"
         no_ballots_allowed: El període de votació està tancat.
@@ -87,9 +85,6 @@ ca:
           button: Buscar
           placeholder: Cercar propostes d'inversió...
           title: Buscar
-        search_results:
-          one: " que conté el terme <strong>'%{search_term}'</strong>"
-          other: " que conté el terme <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Els meus vots
           voted_info:
@@ -100,8 +95,8 @@ ca:
               one: "<strong>Ha votat una proposta</strong>"
               other: "<strong>Ha votat %{count} propostes</strong>"
           change_vote_info:
-            knapsack: "Pot %{link} en qualsevol moment fins al tancament d’aquesta fase. No hi ha necessitat de gastar tot el diner disponible."
-            approval: "Pots %{link} en qualsevol moment fins al final d'aquesta fase."
+            knapsack: "Pot %{link} en qualsevol moment fins %{phase_end_date}. No hi ha necessitat de gastar tot el diner disponible."
+            approval: "Pots %{link} en qualsevol moment fins %{phase_end_date}."
           change_vote_link: "canvia el teu vot"
           different_heading_assigned: "Teniu vots actius en un altre títol: %{heading_link}"
           change_ballot: "Si canvies d'opinió pots esborrar els teus vots en %{check_ballot} i tornar a començar."

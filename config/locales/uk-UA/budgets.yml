@@ -37,9 +37,7 @@ uk-UA:
         voted_info_2: "Ви маєте можливість змінити свій вибір в будь-який час до завершення даного етапу."
         zero: Ви не проголосували за жоден інвестиційний проєкт.
       reasons_for_not_balloting:
-        not_logged_in: Щоб продовжити, необхідно %{signin} або %{signup}.
         not_verified: Тільки підтверджені користувачі можуть голосувати за інвестиції; %{verify_account}.
-        organization: Організації не допускаються до голосування
         not_selected: Ви не можете підтримати не вибрані інвестиційні проєкти
         not_enough_money: "Ви вже розподілили доступний бюджет.<br><small>Пам'ятайте, що ви можете %{change_ballot} у будь-який час</small>"
         no_ballots_allowed: Фаза відбору закрита
@@ -95,11 +93,6 @@ uk-UA:
           button: Пошук
           placeholder: Шукати інвестиційні проєкти...
           title: Пошук
-        search_results:
-          one: " містить термін<strong>'%{search_term}'</strong>"
-          few: " містять термін<strong>'%{search_term}'</strong>"
-          many: " містять термін<strong>'%{search_term}'</strong>"
-          other: " містять термін<strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Моє голосування
           voted_info:
@@ -113,9 +106,6 @@ uk-UA:
               few: "<strong>Ви проголосували за %{count} пропозиції</strong>"
               many: "<strong>Ви проголосували за %{count} пропозицій</strong>"
               other: "<strong>Ви проголосували за %{count} пропозицій</strong>"
-          change_vote_info:
-            knapsack: "Ви можете %{link} у будь-який час до завершення цього етапу. Немає потреби витрачати всі наявні кошти."
-            approval: "Ви можете %{link} у будь-який час до завершення цього етапу."
           change_vote_link: "змінити голос"
           different_heading_assigned: "У вас є активні голоси в іншому заголовку: %{heading_link}"
           change_ballot: "Якщо ви передумали, ви можете видалити свої голоси в %{check_ballot} і розпочати знову."

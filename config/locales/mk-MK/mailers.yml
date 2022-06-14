@@ -1,6 +1,1 @@
 mk:
-  mailers:
-    proposal_notification_digest:
-      unsubscribe_account: Мој профил
-    direct_message_for_receiver:
-      unsubscribe_account: Мој профил

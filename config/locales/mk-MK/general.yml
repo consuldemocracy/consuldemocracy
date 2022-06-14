@@ -11,14 +11,9 @@ mk:
       save_changes_submit: Зачувај промени
       recommendations: Препораки
       title: Мој профил
-      user_permission_debates: Учествувај во дебати
       user_permission_info: Со својот профил можеш...
-      user_permission_proposal: Направи нови предлози
-      user_permission_support_proposal: Поддржи предлози
       user_permission_title: Партиципација
       user_permission_verify: За да ги извршиш сите акции верифицирај го твојот профил.
-      user_permission_verify_info: "* Само за корисници на Цензус."
-      user_permission_votes: Учествувај во конечно гласање
       verified_account: Верификуван профил
       verify_my_account: Потврди го мојот профил
   application:
@@ -303,13 +298,8 @@ mk:
       process_label: Процес
     welcome:
       title: Учествувај
-      user_permission_debates: Учествувај во дебати
       user_permission_info: Со својот профил можеш...
-      user_permission_proposal: Направи нови предлози
-      user_permission_support_proposal: Поддржи предлози*
-      user_permission_verify_info: "* Само за корисници на Цензус."
       user_permission_verify_my_account: Потврди го мојот профил
-      user_permission_votes: Учествувај во конечно гласање
   related_content:
     content_title:
       proposal: "Предлог"

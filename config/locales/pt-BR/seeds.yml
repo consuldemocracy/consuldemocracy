@@ -36,11 +36,6 @@ pt-BR:
       groups:
         all_city: Toda a cidade
         districts: Distritos
-      valuator_groups:
-        culture_and_sports: Cultura & Esportes
-        gender_and_diversity: Gênero e Política de Diversidade
-        urban_development: Desenvolvimento Urbano Sustentável
-        equity_and_employment: Equidade & Emprego
       statuses:
         studying_project: Esudando o projeto
         bidding: Licitação

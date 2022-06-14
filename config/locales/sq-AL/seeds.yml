@@ -36,11 +36,6 @@ sq:
       groups:
         all_city: I gjithë qyteti
         districts: Zonë
-      valuator_groups:
-        culture_and_sports: Kulturë dhe sport
-        gender_and_diversity: Politikat gjinore dhe të diversitetit
-        urban_development: Zhvillimi i Qëndrueshëm Urban
-        equity_and_employment: Drejtësi dhe punësim
       statuses:
         studying_project: Studimi i projektit
         bidding: Ofertë

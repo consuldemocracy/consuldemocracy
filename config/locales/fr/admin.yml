@@ -4,13 +4,11 @@ fr:
       title: Administration
     actions:
       actions: Statut des votes
-      confirm: Êtes-vous sûr(e) ?
       confirm_action: "Êtes-vous sûr? %{action} \"%{name}\""
       confirm_delete: "Êtes-vous sûr? Cette action supprimera \"%{name}\" et ne peut pas être annulée."
       confirm_hide: Confirmer
       delete: "Supprimer"
       hide: Cacher
-      hide_author: Cacher l'auteur
       label: "%{action} %{name}"
       restore: Restaurer
       mark_featured: Mis en avant
@@ -173,7 +171,6 @@ fr:
       index:
         new_button: "Ajouter un nouveau groupe"
     budget_headings:
-      no_headings: "Il n'y a pas de titre."
       create:
         notice: "Rubrique créée avec succès !"
       update:
@@ -254,7 +251,6 @@ fr:
           incompatible: Incompatibles
           price: Prix
           author: Auteur
-        cannot_calculate_winners: Le budget doit rester sur la phase "Vote des projets", "Dépouillage du bulletin de vote" ou "Budget terminé" afin de calculer les projets gagnants
         see_results: "Voir les résultats"
       show:
         assigned_admin: Administrateur affecté

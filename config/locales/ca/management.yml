@@ -64,11 +64,6 @@ ca:
       users: Gestió d’usuaris
       user_invites: Envieu invitacions
       select_user: Seleccionar usuari
-    permissions:
-      create_proposals: Crear noves propostes
-      debates: Participar en debats
-      support_proposals: Donar suport propostes
-      vote_proposals: Participar en les votacions finals
     print:
       proposals_info: Crea la teva proposta a http://url.consul
       proposals_title: "propostes:"

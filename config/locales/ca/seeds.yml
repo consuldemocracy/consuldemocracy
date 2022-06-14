@@ -36,11 +36,6 @@ ca:
       groups:
         all_city: Tota la ciutat
         districts: Districtes
-      valuator_groups:
-        culture_and_sports: Cultura & Esports
-        gender_and_diversity: Gènere & Polítiques de diversitat
-        urban_development: Desenvolupament Urbà Sostenible
-        equity_and_employment: Equitat & Employment
       statuses:
         studying_project: Estudiar el projecte
         bidding: Licitació

@@ -36,11 +36,6 @@ ar:
       groups:
         all_city: جميع المدن
         districts: مقاطعات
-      valuator_groups:
-        culture_and_sports: الثقافة و الرياضة
-        gender_and_diversity: الجس و سياسات التنوع
-        urban_development: التنمية الحضرية المستدامة
-        equity_and_employment: المساوة و العمالة
       statuses:
         studying_project: دراسة المشروع
         bidding: تقديم العطاءات
