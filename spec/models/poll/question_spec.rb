@@ -46,4 +46,32 @@ RSpec.describe Poll::Question, type: :model do
       end
     end
   end
+
+  describe "#enum_type" do
+    it "returns nil if not has votation_type association" do
+      expect(poll_question.votation_type).to be_nil
+      expect(poll_question.enum_type).to be_nil
+    end
+
+    it "returns enum_type from votation_type association" do
+      question = create(:poll_question_unique)
+
+      expect(question.votation_type).not_to be_nil
+      expect(question.enum_type).to eq("unique")
+    end
+  end
+
+  describe "#max_votes" do
+    it "returns nil if not has votation_type association" do
+      expect(poll_question.votation_type).to be_nil
+      expect(poll_question.max_votes).to be_nil
+    end
+
+    it "returns max_votes from votation_type association" do
+      question = create(:poll_question_multiple)
+
+      expect(question.votation_type).not_to be_nil
+      expect(question.max_votes).to eq(3)
+    end
+  end
 end

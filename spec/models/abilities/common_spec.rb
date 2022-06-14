@@ -232,6 +232,18 @@ describe Abilities::Common do
       it { should_not be_able_to(:answer, expired_poll_question_from_all_geozones)  }
       it { should_not be_able_to(:answer, expired_poll_question_from_other_geozone) }
 
+      it { should     be_able_to(:prioritized_answers, poll_question_from_own_geozone)   }
+      it { should     be_able_to(:prioritized_answers, poll_question_from_all_geozones)  }
+      it { should_not be_able_to(:prioritized_answers, poll_question_from_other_geozone) }
+
+      it { should_not be_able_to(:prioritized_answers, expired_poll_question_from_own_geozone)   }
+      it { should_not be_able_to(:prioritized_answers, expired_poll_question_from_all_geozones)  }
+      it { should_not be_able_to(:prioritized_answers, expired_poll_question_from_other_geozone) }
+
+      context "Poll::Question" do
+        it { should be_able_to(:answer, Poll::Question) }
+      end
+
       context "without geozone" do
         before { user.geozone = nil }
 

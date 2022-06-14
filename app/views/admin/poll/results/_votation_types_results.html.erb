@@ -1,12 +1,7 @@
-<% provide :title do %><%= @poll.name %><% end %>
-
 <div class="polls-results-stats">
-  <%= render "poll_header" %>
 
-  <%= render "poll_subnav" %>
-
-  <div class="row margin" data-equalizer data-equalize-on="medium">
-    <div class="small-12 medium-3 column sidebar" data-equalizer-watch>
+  <div class="row margin">
+    <div class="small-12 medium-3 column">
       <p><strong><%= t("polls.show.results.title") %></strong></p>
       <ul class="menu vertical">
         <%- @poll.questions.each do |question| %>
@@ -15,7 +10,7 @@
       </ul>
     </div>
 
-    <div class="small-12 medium-9 column" data-equalizer-watch>
+    <div class="small-12 medium-9 column">
       <%- @poll.questions.each do |question| %>
         <h3 id="<%= question.title.parameterize %>"><%= question.title %></h3>
         <table id="question_<%= question.id %>_results_table">
@@ -23,7 +18,7 @@
           <%- question.question_answers.each do |answer| %>
             <tr scope="col" <%= answer.most_voted? ? "class=win" : "" %>>
               <td>
-                <% if answer.most_voted %>
+                <% if answer.most_voted? %>
                   <span class="show-for-sr"><%= t("polls.show.results.most_voted_answer") %></span>
                 <% end %>
                 <%= answer.title %>

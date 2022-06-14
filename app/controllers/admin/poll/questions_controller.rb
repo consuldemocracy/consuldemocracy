@@ -22,6 +22,7 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
 
   def create
     @question.author = @question.proposal&.author || current_user
+    @question.votation_type = VotationType.build_by_type(@question, params[:votation_type])
 
     if @question.save
       redirect_to admin_question_path(@question)
@@ -56,13 +57,8 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
   private
 
     def question_params
-      params.require(:poll_question).permit(allowed_params)
-    end
-
-    def allowed_params
-      attributes = [:poll_id, :question, :proposal_id]
-
-      [*attributes, translation_params(Poll::Question)]
+      attributes = [:poll_id, :question, :proposal_id, :votation_type, :max_votes]
+      params.require(:poll_question).permit(*attributes, translation_params(Poll::Question))
     end
 
     def search_params

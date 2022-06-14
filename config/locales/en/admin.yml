@@ -1111,6 +1111,16 @@ en:
         success_notice: "Poll deleted successfully"
         unable_notice: "You cannot delete a poll that has votes"
       no_edit: "Once the poll has started it will not be possible to edit the start date. Neither will it be possible to change the closing date to a non-future date."
+      votation_type:
+        title: "Votation type"
+        unique: "Unique answer"
+        unique_description: "It's only possible to answer one time to the question."
+        multiple: "Multiple answers"
+        multiple_description: "Allows to choose multiple answers. It's possible to set the maximum number of answers."
+        prioritized: "Multiple prioritized answer"
+        prioritized_description: "Allows to choose more than one answer and they will be prioritized. It's possible to set the maximum number of answers chosen."
+        uneditable: "The below configuration cannot be changed once the question has been created."
+      max_votes: "Maximum number of votes"
     questions:
       index:
         title: "Questions"

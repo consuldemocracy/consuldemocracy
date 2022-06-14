@@ -131,6 +131,10 @@ button,
   }
 }
 
+.hidden {
+  display: none;
+}
+
 .button {
   @extend %button;
   @include inverted-selection;

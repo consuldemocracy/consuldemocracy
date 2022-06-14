@@ -45,4 +45,8 @@ module PollsHelper
   def show_polls_description?
     @active_poll.present? && @current_filter == "current"
   end
+
+  def votation_types
+    VotationType.enum_types.map { |key, value| [t("admin.polls.votation_type.#{key}"), value] }
+  end
 end

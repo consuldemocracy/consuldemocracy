@@ -8,6 +8,15 @@ module Polls
     end
   end
 
+  def vote_for_poll_multiple_via_web(poll, question, answer)
+    visit poll_path(poll)
+
+    within("#poll_question_#{question.id}_answers") do
+      click_link answer.to_s
+      expect(page).to have_selector "a.button.answered.expand", text: answer.to_s
+    end
+  end
+
   def vote_for_poll_via_booth
     visit new_officing_residence_path
     officing_verify_residence

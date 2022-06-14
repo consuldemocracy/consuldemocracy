@@ -52,6 +52,16 @@ describe "Answers", :admin do
     expect("First").to appear_before("Second")
   end
 
+  scenario "Back link goes to poll show" do
+    question = create(:poll_question, poll: current_poll)
+
+    visit admin_question_path(question)
+
+    click_link "Go back"
+
+    expect(page).to have_current_path(admin_poll_path(question.poll))
+  end
+
   context "Update" do
     scenario "Is possible for a not started poll" do
       question = create(:poll_question, poll: future_poll)

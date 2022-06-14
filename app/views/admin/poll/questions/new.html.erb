@@ -1,4 +1,8 @@
-<%= back_link_to %>
+<% if @poll.present? %>
+  <%= back_link_to admin_poll_path(@poll) %>
+<% else %>
+  <%= back_link_to %>
+<% end %>
 
 <h2 class="margin-top">
   <% if @poll.present? %>

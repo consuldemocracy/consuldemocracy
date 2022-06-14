@@ -152,9 +152,10 @@ describe "Polls" do
     end
 
     scenario "Show answers with videos" do
-      create(:poll_answer_video, poll: poll, title: "Awesome video", url: "youtube.com/watch?v=123")
+      video = create(:poll_answer_video, poll: poll, title: "Awesome video", url: "youtube.com/watch?v=123")
 
       visit poll_path(poll)
+      find("#read_more_#{video.answer.id}").click
 
       expect(page).to have_link("Awesome video", href: "youtube.com/watch?v=123")
     end
@@ -225,10 +226,12 @@ describe "Polls" do
 
     scenario "Buttons to slide through images work back and forth" do
       question = create(:poll_question, :yes_no, poll: poll)
-      create(:image, imageable: question.question_answers.last, title: "The no movement")
-      create(:image, imageable: question.question_answers.last, title: "No movement planning")
+      answer = question.question_answers.last
+      create(:image, imageable: answer, title: "The no movement")
+      create(:image, imageable: answer, title: "No movement planning")
 
       visit poll_path(poll)
+      find("#read_more_#{answer.id}").click
 
       within(".orbit-bullets") do
         find("[data-slide='1']").click

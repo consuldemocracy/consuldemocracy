@@ -12,12 +12,20 @@ describe "Admin poll questions", :admin do
     question1 = create(:poll_question, poll: poll1)
     question2 = create(:poll_question, poll: poll2)
     question3 = create(:poll_question, poll: poll3, proposal: proposal)
+    question4 = create(:poll_question_unique, poll: poll1)
 
     visit admin_poll_path(poll1)
     expect(page).to have_content(poll1.name)
 
     within("#poll_question_#{question1.id}") do
       expect(page).to have_content(question1.title)
+      expect(page).to have_link "Edit answers"
+      expect(page).to have_link "Edit"
+      expect(page).to have_button "Delete"
+    end
+
+    within("#poll_question_#{question4.id}") do
+      expect(page).to have_content(question4.title)
       expect(page).to have_link "Edit answers"
       expect(page).to have_link "Edit"
       expect(page).to have_button "Delete"
@@ -45,22 +53,25 @@ describe "Admin poll questions", :admin do
     end
   end
 
-  scenario "Show" do
-    geozone = create(:geozone)
-    poll = create(:poll, geozone_restricted: true, geozone_ids: [geozone.id])
-    question = create(:poll_question, poll: poll)
+  context "Show" do
+    scenario "Without Votation type" do
+      geozone = create(:geozone)
+      poll = create(:poll, geozone_restricted: true, geozone_ids: [geozone.id])
+      question = create(:poll_question, poll: poll)
 
-    visit admin_poll_path(poll)
+      visit admin_poll_path(poll)
 
-    within(".callout.warning") do
-      expect(page).to have_content "Once poll has started it will not be possible to create, edit or "\
-                                   "delete questions, answers or any content associated with the poll."
+      within(".callout.warning") do
+        expect(page).to have_content "Once poll has started it will not be possible to create, edit or "\
+                                     "delete questions, answers or any content associated with the poll."
+      end
+
+      click_link "Edit answers"
+
+      expect(page).to have_content(question.title)
+      expect(page).to have_content(question.author.name)
+      expect(page).not_to have_content "Votation type"
     end
-
-    click_link "Edit answers"
-
-    expect(page).to have_content(question.title)
-    expect(page).to have_content(question.author.name)
   end
 
   context "Create" do
@@ -134,6 +145,44 @@ describe "Admin poll questions", :admin do
     visit admin_questions_path
 
     expect(page).to have_content(proposal.title)
+  end
+
+  context "Create with votation type" do
+    before do
+      poll = create(:poll)
+      visit admin_poll_path(poll)
+      click_link "Create question"
+    end
+
+    scenario "Unique" do
+      fill_in "Question", with: "Question with unique answer"
+      select "Unique answer", from: "votation_type_enum_type"
+
+      click_button "Save"
+
+      expect(page).to have_content "Question with unique answer"
+      expect(page).to have_content "Unique answer"
+    end
+
+    scenario "Multiple" do
+      fill_in "Question", with: "Question with multiple answers"
+      select "Multiple answers", from: "votation_type_enum_type"
+      fill_in "Maximum number of votes", with: 6
+      click_button "Save"
+
+      expect(page).to have_content "Question with multiple answers"
+      expect(page).to have_content "Multiple answers"
+    end
+
+    scenario "Prioritized" do
+      fill_in "Question", with: "Question with prioritized answers"
+      select "Multiple prioritized answer", from: "votation_type_enum_type"
+      fill_in "Maximum number of votes", with: 6
+      click_button "Save"
+
+      expect(page).to have_content "Question with prioritized answers"
+      expect(page).to have_content "Multiple prioritized answer"
+    end
   end
 
   context "Update" do

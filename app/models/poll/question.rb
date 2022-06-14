@@ -12,19 +12,26 @@ class Poll::Question < ApplicationRecord
   belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :poll_questions
 
   has_many :comments, as: :commentable, inverse_of: :commentable
-  has_many :answers, class_name: "Poll::Answer"
+  has_many :answers, class_name: "Poll::Answer", dependent: :destroy
   has_many :question_answers, -> { order "given_order asc" },
     class_name: "Poll::Question::Answer",
     inverse_of: :question,
     dependent:  :destroy
-  has_many :partial_results
+  has_many :partial_results, dependent: :destroy
+  has_one :votation_type, as: :questionable, dependent: :destroy
   belongs_to :proposal
+
+  attr_accessor :enum_type, :max_votes
 
   validates_translation :title, presence: true, length: { minimum: 4 }
   validates :author, presence: true
   validates :poll_id, presence: true, if: proc { |question| question.poll.nil? }
 
+  validates_associated :votation_type
   accepts_nested_attributes_for :question_answers, reject_if: :all_blank, allow_destroy: true
+
+  delegate :enum_type, :max_votes,
+    to: :votation_type, allow_nil: true
 
   scope :by_poll_id,    ->(poll_id) { where(poll_id: poll_id) }
 
@@ -72,5 +79,12 @@ class Poll::Question < ApplicationRecord
 
   def possible_answers
     question_answers.joins(:translations).pluck("poll_question_answer_translations.title")
+  end
+
+  def answers_with_read_more?
+    question_answers.any? do |answer|
+      answer.description.present? || answer.images.any? ||
+      answer.documents.present? || answer.videos.present?
+    end
   end
 end

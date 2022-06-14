@@ -23,4 +23,16 @@ describe "Poll Questions" do
       expect(page).to have_selector "img[alt='Trees on both sides of the road']"
     end
   end
+
+  scenario "Shows sanitized description" do
+    poll = create(:poll)
+    create(:poll_question_answer, poll: poll, description: "<p>Answer with <strong>HTML</strong> tags</p>")
+
+    visit poll_path(poll)
+
+    within "#poll_more_info_answers" do
+      expect(page).to have_content "Answer with HTML tags"
+      expect(page).not_to have_content "<p>Answer with <strong>HTML</strong> tags</p>"
+    end
+  end
 end

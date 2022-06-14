@@ -1,4 +1,4 @@
-<%= back_link_to %>
+<%= back_link_to admin_poll_path(@question.poll) %>
 
 <%= link_to t("admin.questions.show.edit_question"), edit_admin_question_path(@question),
             class: "button hollow float-right" %>
@@ -25,6 +25,21 @@
         <br>
         <%= link_to @question.proposal.title, proposal_path(@question.proposal) %>
       </p>
+    <% end %>
+
+    <% if @question.votation_type.present? %>
+      <p>
+        <strong><%= t("admin.polls.votation_type.title") %></strong>
+        <br>
+        <%= t("admin.polls.votation_type.#{@question.votation_type.enum_type}") %>
+      </p>
+      <% if @question.votation_type.max_votes.present? %>
+        <p>
+          <strong><%= t("admin.polls.max_votes") %></strong>
+          <br>
+          <%= @question.votation_type.max_votes %>
+        </p>
+      <% end %>
     <% end %>
   </div>
 </div>

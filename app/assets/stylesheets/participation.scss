@@ -1420,7 +1420,7 @@
   @include full-width-border(bottom, 1px solid #eee);
   background: #fafafa;
 
-  .column:nth-child(odd) {
+  .column:nth-of-type(odd) {
     border-right: 2px solid;
   }
 
@@ -1660,6 +1660,40 @@
         right: -6px;
         top: -6px;
       }
+    }
+  }
+
+  ol {
+    list-style: none;
+    margin-left: 0;
+
+    li {
+      padding-left: $line-height;
+      position: relative;
+
+      &::before {
+        content: counter(number)". ";
+        left: 6px;
+        position: absolute;
+        top: 12px;
+      }
+
+      &:not(.ui-sortable-placeholder) {
+        counter-increment: number;
+      }
+    }
+  }
+
+  .ui-sortable-handle {
+    @include has-fa-icon(grip-vertical, solid, after);
+    position: relative;
+
+    &::after {
+      color: $text-medium;
+      font-size: rem-calc(20);
+      position: absolute;
+      right: -24px;
+      top: 24px;
     }
   }
 }

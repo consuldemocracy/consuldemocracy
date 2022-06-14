@@ -1110,6 +1110,16 @@ es:
         success_notice: "Votación eliminada correctamente"
         unable_notice: "No se pueden eliminar votaciones con votos"
       no_edit: "Una vez comenzada la votación no será posible editar la fecha de apertura. Tampoco será posible cambiar la fecha de cierre a una fecha no futura."
+      votation_type:
+        title: "Tipo de votación"
+        unique: "Respuesta única"
+        unique_description: "Solo se puede responder a la pregunta con una única respuesta."
+        multiple: "Respuesta múltiple"
+        multiple_description: "Permite elegir más de una respuesta. Se puede elegir el número máximo de respuestas."
+        prioritized: "Respuesta múltiple priorizada"
+        prioritized_description: "Permite elegir más de una respuesta, que a su vez se podrán ordenar por prioridad. Se puede elegir el número máximo de respuestas."
+        uneditable: "La siguiente configuración no puede ser cambiada una vez creada la pregunta."
+      max_votes: "Número máximo de votos"
     questions:
       index:
         title: "Preguntas de votaciones"

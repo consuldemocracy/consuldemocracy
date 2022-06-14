@@ -47,7 +47,7 @@ end
 
 section "Creating Poll Questions & Answers" do
   Poll.find_each do |poll|
-    (1..4).to_a.sample.times do
+    (3..5).to_a.sample.times do
       question_title = Faker::Lorem.sentence(word_count: 3).truncate(60) + "?"
       question = Poll::Question.new(author: User.all.sample,
                                     title: question_title,
@@ -72,6 +72,27 @@ section "Creating Poll Questions & Answers" do
         end
         answer.save!
       end
+    end
+  end
+end
+
+section "Creating Poll Votation types" do
+  poll = Poll.first
+
+  Poll::Question.where(poll_id: poll.id).each do |question|
+    VotationType.create!(questionable_id: question.id,
+                         questionable_type: "Poll::Question",
+                         enum_type: rand(0..2),
+                         max_votes: 3,
+                         prioritized: false)
+  end
+
+  VotationType.find_each do |votation|
+    if votation.enum_type == "unique"
+      votation.update!(max_votes: nil)
+    end
+    if votation.enum_type == "prioritized"
+      votation.update!(prioritized: true)
     end
   end
 end

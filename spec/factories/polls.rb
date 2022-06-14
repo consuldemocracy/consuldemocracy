@@ -61,6 +61,27 @@ FactoryBot.define do
         create(:poll_question_answer, question: question, title: "No")
       end
     end
+
+    factory :poll_question_unique do
+      after(:create) do |question|
+        create(:votation_type_unique, questionable: question)
+        question.reload
+      end
+    end
+
+    factory :poll_question_multiple do
+      after(:create) do |question|
+        create(:votation_type_multiple, questionable: question)
+        question.reload
+      end
+    end
+
+    factory :poll_question_prioritized do
+      after(:create) do |question|
+        create(:votation_type_prioritized, questionable: question)
+        question.reload
+      end
+    end
   end
 
   factory :poll_question_answer, class: "Poll::Question::Answer" do

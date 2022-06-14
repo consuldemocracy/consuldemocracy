@@ -25,9 +25,8 @@ class PollsController < ApplicationController
                                                     .with_content.order(:given_order)
 
     @answers_by_question_id = {}
-    poll_answers = ::Poll::Answer.by_question(@poll.question_ids).by_author(current_user&.id)
-    poll_answers.each do |answer|
-      @answers_by_question_id[answer.question_id] = answer.answer
+    @questions.each do |question|
+      @answers_by_question_id[question.id] = question.answers.by_author(current_user).pluck(:answer)
     end
 
     @commentable = @poll

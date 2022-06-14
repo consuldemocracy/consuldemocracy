@@ -107,8 +107,12 @@ module Abilities
         can :answer, Poll do |poll|
           poll.answerable_by?(user)
         end
-        can :answer, Poll::Question do |question|
+        can [:answer, :prioritized_answers], Poll::Question do |question|
           question.answerable_by?(user)
+        end
+
+        can :delete, Poll::Answer do |answer|
+          answer.question.answerable_by?(user)
         end
       end
 

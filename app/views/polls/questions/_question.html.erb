@@ -3,7 +3,33 @@
     <%= question.title %>
   </h3>
 
+  <% unless question.votation_type.nil? %>
+    <strong>
+      <%= t("poll_questions.description.#{question.enum_type}", maximum: question.votation_type.max_votes) %>
+    </strong>
+  <% end %>
+
   <div id="<%= dom_id(question) %>_answers" class="padding">
-    <%= render "polls/questions/answers", question: question, token: token %>
+    <% answers = question.question_answers %>
+    <%= render "polls/questions/answers", question: question, token: token, answers: answers, page: 1 %>
   </div>
+
+  <% if question.answers_with_read_more? %>
+    <div class="poll_question_read_more">
+      <p><%= t("poll_questions.read_more_about") %></p>
+      <p>
+        <% first = true %>
+        <% question.question_answers.each do |answer| %>
+          <% if answer.description.present? || answer.images.any? ||
+            answer.documents.present? || answer.videos.present? %>
+            <% unless first %>
+              <span>,&nbsp;</span>
+            <% end %>
+            <% first = false if first %>
+            <%= link_to answer.title, "#answer_description_#{answer.id}" %>
+          <% end %>
+        <% end %>
+      </p>
+    </div>
+  <% end %>
 </div>

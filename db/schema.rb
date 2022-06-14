@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_03_112944) do
+ActiveRecord::Schema.define(version: 2022_03_23_234101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -1019,6 +1019,8 @@ ActiveRecord::Schema.define(version: 2021_11_03_112944) do
     t.string "answer"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer "value"
+    t.integer "order"
     t.index ["author_id"], name: "index_poll_answers_on_author_id"
     t.index ["question_id", "answer"], name: "index_poll_answers_on_question_id_and_answer"
     t.index ["question_id"], name: "index_poll_answers_on_question_id"
@@ -1693,6 +1695,16 @@ ActiveRecord::Schema.define(version: 2021_11_03_112944) do
     t.datetime "started_at"
     t.index ["started_at"], name: "index_visits_on_started_at"
     t.index ["user_id"], name: "index_visits_on_user_id"
+  end
+
+  create_table "votation_types", force: :cascade do |t|
+    t.integer "questionable_id"
+    t.string "questionable_type"
+    t.integer "enum_type"
+    t.boolean "prioritized"
+    t.integer "max_votes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "votes", id: :serial, force: :cascade do |t|

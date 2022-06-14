@@ -32,7 +32,48 @@
   </div>
 
   <div class="row">
-    <div class="small-12 medium-4 large-2 margin-top column">
+    <% unless @question.persisted? %>
+      <div class="small-12 column">
+        <div class="callout warning">
+          <strong><%= t("admin.polls.votation_type.uneditable") %></strong>
+        </div>
+      </div>
+
+      <%= fields_for :votation_type do |votation_f| %>
+        <div class="small-12 medium-6 column">
+          <%= votation_f.select :enum_type,
+                                options_for_select(votation_types, params.dig(:votation_type, :enum_type)),
+                                default: 0,
+                                label: t("admin.polls.votation_type.title") %>
+        </div>
+
+        <div class="small-12 column">
+          <div class="callout primary">
+            <span class="js-description-unique">
+              <%= t("admin.polls.votation_type.unique_description") %>
+            </span>
+            <span class="js-description-multiple hidden">
+              <%= t("admin.polls.votation_type.multiple_description") %>
+            </span>
+            <span class="js-description-prioritized hidden">
+              <%= t("admin.polls.votation_type.prioritized_description") %>
+            </span>
+          </div>
+        </div>
+
+        <div class="small-12 medium-6 column end">
+          <div class="js-max-votes hidden">
+            <%= votation_f.number_field :max_votes, min: 1, max: 999,
+                           value: params.dig(:votation_type, :max_votes),
+                           label: t("admin.polls.max_votes") %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-4 large-2 column">
       <%= f.submit(class: "button success expanded", value: t("shared.save")) %>
     </div>
   </div>

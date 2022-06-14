@@ -451,7 +451,7 @@ en:
         description: Description
       poll/question/answer/translation:
         title: Answer
-        description: Description
+        description: "Description (optional)"
       poll/question/answer/video:
         title: Title
         url: External video

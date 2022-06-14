@@ -114,6 +114,7 @@
 //= require_tree ./admin
 //= require_tree ./sdg
 //= require_tree ./sdg_management
+//= require votations
 //= require custom
 //= require_tree ./custom
 
@@ -172,6 +173,9 @@ var initialize_modules = function() {
   App.Datepicker.initialize();
   App.SDGRelatedListSelector.initialize();
   App.SDGManagementRelationSearch.initialize();
+  if ($("#votation_type_enum_type").length) {
+    App.Votations.initialize();
+  }
 };
 
 var destroy_non_idempotent_modules = function() {
