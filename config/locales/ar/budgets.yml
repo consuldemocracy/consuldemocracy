@@ -125,7 +125,6 @@ ar:
         support_title: ادعم هذا المشروع
         supports:
           zero: لا يوجد دعم
-          zero: "%{count} دعم"
           one: دعم واحد
           two: "%{count} دعم"
           few: "%{count} دعم"
