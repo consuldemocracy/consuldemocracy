@@ -73,7 +73,7 @@ class Budget::Investment::Exporter
     end
 
     def unfeasibility_explanation(investment)
-      investment.unfeasibility_explanation.presence || "-"
+      investment.unfeasibility_explanation&.squish.presence || "-"
     end
 
     def json_values(investment)
