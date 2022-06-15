@@ -22,23 +22,23 @@
           <span class="text"><%= t("custom.headings.back_to_all_proposals") %></span>
         <% end %>
       </div>
-      <% if current_budget.phase == "accepting" %>
-      <% elsif current_budget.phase == "reviewing" %>
+      <% if @budget.phase == "accepting" %>
+      <% elsif @budget.phase == "reviewing" %>
         <div class="callout warning">
           <%= t("custom.messages.finished_accepting") %>
         </div>
-      <% elsif current_budget.phase == "reviewing_ballots" %>
+      <% elsif @budget.phase == "reviewing_ballots" %>
         <div class="callout warning">
           <%= t("custom.messages.finished_voting") %>
         </div>
       <% elsif investment.unfeasible? %>
         <div class="callout warning">
-          <%= t("budgets.investments.show.project_unfeasible_html") %>
+          <%= t("budgets.investments.show.project_unfeasible").html_safe %>
         </div>
         <% if investment.should_show_unfeasibility_explanation? %>
-          <div class="row">
-            <div class="bggray">
-              <p>
+          <div class="bggray">
+            <div class="small-12 medium-10 medium-centered">
+              <p class="unfeasibility-explanation">
                 <%= investment.unfeasibility_explanation %>
               </p>
             </div>
@@ -75,7 +75,7 @@
           <%= render "shared/tags", taggable: investment %>
         </div>
 
-        <% if current_budget.phase == "accepting" %>
+        <% if @budget.phase == "accepting" %>
           <% if current_user == investment.author %>
             <%= link_to t("custom.titles.edit"), budget_investments_path(@budget) + "/" + @investment.id.to_s + "/edit", class: "default-button" %>
           <% end %>

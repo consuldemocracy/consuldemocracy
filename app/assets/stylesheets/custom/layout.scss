@@ -671,6 +671,14 @@ body > header,
   margin-bottom: 2rem;
 }
 
+// show investment styles for unfeasibility
+.budget-investment-show .callout.warning {
+  text-align: center;
+}
+.budget-investment-show p.unfeasibility-explanation {
+  padding-bottom: 0;
+}
+
 // Share buttons
 .budget-investment-show .social-box .social-share-button .ssb-icon {
   &.ssb-telegram,
