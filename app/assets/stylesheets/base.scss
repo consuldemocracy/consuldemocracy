@@ -271,6 +271,26 @@ aside {
   }
 }
 
+.draft-panels {
+
+  .draft-allegation .draft-text a {
+    color: $link;
+  }
+
+  .draft-allegation .draft-text h2 {
+    margin-bottom: $line-height / 3;
+    margin-top: 0;
+  }
+
+  ul,
+  ol {
+
+    li {
+      font-size: $base-font-size;
+    }
+  }
+}
+
 .back {
 
   .icon-angle-left {
@@ -2264,6 +2284,33 @@ footer {
   span {
     font-style: normal;
     text-transform: uppercase;
+  }
+}
+
+.legislation-draft-versions-form .markdown-preview {
+  font-family: "Montserrat", sans-serif !important;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Montserrat", sans-serif !important;
+    line-height: unset;
+  }
+
+  h1 {
+    font-size: rem-calc(44);
+  }
+
+  h2 {
+    font-size: rem-calc(34);
+  }
+
+  h3 {
+    font-size: rem-calc(24);
+    margin: 0;
   }
 }
 
