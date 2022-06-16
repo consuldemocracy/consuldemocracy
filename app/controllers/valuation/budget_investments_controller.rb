@@ -17,11 +17,9 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
   def index
     @heading_filters = heading_filters
     @investments = if current_user.valuator? && @budget.present?
-                     @budget.investments.visible_to_valuators.scoped_filter(params_for_current_valuator, @current_filter)
-                            .order(cached_votes_up: :desc)
-                            .page(params[:page])
+                      load_valuator_investments
                    else
-                     Budget::Investment.none.page(params[:page])
+                      Budget::Investment.none.page(params[:page])
                    end
   end
 
@@ -93,8 +91,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def params_for_current_valuator
-      Budget::Investment.filter_params(params).to_h.merge({ valuator_id: current_user.valuator.id,
-                                                            budget_id: @budget.id })
+      Budget::Investment.filter_params(params).to_h.merge({ budget_id: @budget.id })
     end
 
     def valuation_params
@@ -121,6 +118,14 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
                                                    valuator_id: current_user.valuator.id)
 
       raise ActionController::RoutingError, "Not Found"
+    end
+
+    def load_valuator_investments
+      current_user.valuator.investments
+        .visible_to_valuators
+        .scoped_filter(params_for_current_valuator, @current_filter)
+        .order(cached_votes_up: :desc)
+        .page(params[:page])
     end
 
     def valid_price_params?
