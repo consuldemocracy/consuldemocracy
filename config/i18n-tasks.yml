@@ -213,6 +213,8 @@ ignore_missing:
   - "mailers.budget_investment_unfeasible.reconsider_html"
   - "mailers.budget_investment_unfeasible.signatory"
   - "mailers.budget_investment_unfeasible.unfeasible_html"
+  - "mailers.budget_investment_unselected.text_1"
+  - "mailers.budget_investment_unselected.text_2"
   - "pages.help.budgets.feature"
   - "pages.help.budgets.phase_1"
   - "pages.help.budgets.phase_2"
