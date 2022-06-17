@@ -103,7 +103,7 @@ class CustomCensusApi
 
   def get_response_body(document_type, document_number, nonce, municipality_id)
     date = current_date
-    request_body = build_request_body(date, nonce, encoded_token(nonce, date), document_number, municipality_id)
+    request_body = build_request_body(date, nonce, encoded_token(nonce, date), document_type, document_number, municipality_id)
     make_request(request_body)
   end
 
@@ -115,7 +115,7 @@ class CustomCensusApi
     )
   end
 
-  def build_request_body(date, nonce, token, document_number, municipality_id)
+  def build_request_body(date, nonce, token, document_type, document_number, municipality_id)
     encoded_document_number = Base64.encode64(document_number).delete("\n")
 
     sml_message = Rack::Utils.escape_html(
@@ -124,7 +124,7 @@ class CustomCensusApi
       "<ORG>#{municipality_id}</ORG>\n\t\t"\
       "<ENT>#{municipality_id}</ENT>"\
       "\n\t\t<USU>" + census_user + "</USU>\n\t\t<PWD>" + encoded_census_password + "</PWD>\n\t\t<FECHA>" + date + "</FECHA>\n\t\t<NONCE>" + nonce + "</NONCE>"\
-      "\n\t\t<TOKEN>" + token + "</TOKEN>\n\t</SEC>\n\t<PAR>\n\t\t<nia></nia>\n\t\t<codigoTipoDocumento>1</codigoTipoDocumento>"\
+      "\n\t\t<TOKEN>" + token + "</TOKEN>\n\t</SEC>\n\t<PAR>\n\t\t<nia></nia>\n\t\t<codigoTipoDocumento>" + document_type.to_s + "</codigoTipoDocumento>"\
       "\n\t\t<documento>" + encoded_document_number + "</documento>\n\t\t<mostrarFechaNac>-1</mostrarFechaNac>\n\t</PAR>\n</E>"
     )
 
