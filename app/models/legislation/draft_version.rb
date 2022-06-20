@@ -24,7 +24,7 @@ class Legislation::DraftVersion < ApplicationRecord
   def body_html
     renderer = Redcarpet::Render::HTML.new(with_toc_data: true)
 
-    Redcarpet::Markdown.new(renderer).render(body)
+    Redcarpet::Markdown.new(renderer, tables: true).render(body)
   end
 
   def toc_html
