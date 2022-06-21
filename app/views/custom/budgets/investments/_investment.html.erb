@@ -37,9 +37,9 @@
                     <%= investment.price %> €
                     <!-- <%= investment.formatted_price %> -->
                   </span>
-                  <% if investment.budget.phase == 'finished' && investment.status && investment.winner %>
-                    <div class="finvestment investment-<%= investment.status %> ">
-                      <% if investment.status != '' %><%= t("custom.statuses.#{investment.status}") %><% end %>
+                  <% if investment.budget.phase == 'finished' && investment.winner %>
+                    <div class="finvestment">
+                      <% if investment.milestones.count > 0 %><%= investment.milestones.order_by_publication_date.last.status.name %><% end %>
                     </div>
                   <% end %>
                 </div>

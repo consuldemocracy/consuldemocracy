@@ -17,10 +17,17 @@ module Budgets
     end
 
     def index
-      # filter by tag name
+      # filters
       if params[:status_id]
         puts params[:status_id]
-        investment_ids = Milestone.where("milestoneable_type = 'Budget::Investment' AND status_id = ?", params[:status_id]).pluck('id')
+        investment_ids = []
+        Budget::Investment.all.order(:id).each do |investment|
+          if investment.milestones.count > 0
+            if investment.milestones.order_by_publication_date.last.status_id == params[:status_id].to_i
+              investment_ids.push(investment.id)
+            end
+          end
+        end
         filtered_investments = investments.where(id: investment_ids)
       else
         filtered_investments = investments
