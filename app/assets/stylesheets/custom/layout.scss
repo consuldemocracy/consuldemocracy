@@ -33,14 +33,14 @@ body {
   position: relative;
 }
 
-// body > .wrapper {
-//   display: flex;
-//   flex-direction: column;
-// }
+body > .wrapper {
+  display: flex;
+  flex-direction: column;
+}
 
-// main {
-//   flex-grow: 1;
-// }
+main {
+  flex-grow: 1;
+}
 
 h1,
 h2,

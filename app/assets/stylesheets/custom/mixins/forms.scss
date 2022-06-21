@@ -126,7 +126,8 @@ form .checkbox-label {
   .location-map-remove-marker,
   .delete {
     color: $black;
-    border-bottom: 1px solid $black;
+    border-bottom: 0;
+    // border-bottom: 1px solid $black;
   }
 }
 
@@ -134,4 +135,8 @@ form .checkbox-label {
   select {
     font-size: 0.75rem;
   }
+}
+
+.form-error {
+  margin-top: -24px;
 }
