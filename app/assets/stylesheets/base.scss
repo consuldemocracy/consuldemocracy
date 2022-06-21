@@ -682,6 +682,14 @@ body > header,
         @include breakpoint(small only) {
           display: inline;
         }
+
+        &.is-active::after {
+          border: 0;
+          height: 4px;
+          left: 0;
+          top: unset;
+          width: calc(100% + 8px);
+        }
       }
 
       > a::before {
