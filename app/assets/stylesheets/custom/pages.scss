@@ -220,6 +220,11 @@ only screen and (min-resolution: 240dpi) {
 }
 
 .landings {
+
+  >div {
+    padding: 3rem 0;
+  }
+
   h2 {
     font-size: 30px;
     font-weight: 500;
@@ -384,28 +389,13 @@ span:hover::before {
       color: $rhino;
     }
 
-    .investment-title {
-      color: $black;
-
-      h3 {
-        line-height: rem-calc(23);
-        height: rem-calc(72);
-      }
-
-      &:hover {
-        color: $rhino;
-      }
-    }
-
     .investment-project-info {
-      font-size: rem-calc($tiniest-font-size);
-      margin-bottom: 0;
+      font-size: $tiny-font-size;
+      margin-bottom: 4px;
     }
 
     .investment-project-description {
-      line-height: 1.25;
       height: unset;
-      margin-bottom: rem-calc(10);
     }
 
     .tags {
@@ -460,8 +450,6 @@ span:hover::before {
 
 .bggray {
   background-color: #f2f2f2;
-  padding: 3rem 0;
-  font-size: rem-calc(20);
 }
 
 .budget-investment .supports {
@@ -966,6 +954,14 @@ span:hover::before {
     margin-top: 0.5rem;
     display: inline-block;
     line-height: 1.5;
+  }
+
+  @media (max-width: 575.98px) {
+    .user-permissions {
+      h2 {
+        margin-top: 24px;
+      }
+    }
   }
 }
 

@@ -27,9 +27,9 @@ body {
 }
 
 body {
-  font-size: 0.9rem;
+  font-size: $base-font-size;
   font-weight: 400;
-  line-height: 1.25rem;
+  line-height: 1.25;
   position: relative;
 }
 
@@ -75,7 +75,8 @@ h2 {
 }
 
 h3 {
-  line-height: rem-calc(24);
+  font-size: $extra-large-font-size;
+  line-height: 1.25;
 }
 
 .subtitle {
@@ -83,9 +84,9 @@ h3 {
 }
 
 p {
-  font-size: 0.9rem;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 1.25rem;
+  line-height: 1.5;
 }
 
 a {
@@ -242,6 +243,7 @@ input[type="submit"].action-button {
   border-radius: 50px;
   border: 3px solid $theme-color;
   font-size: 24px;
+  line-height: 1.2;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -23,13 +23,16 @@
 // 1. CONSUL variables
 // --------------------
 
-$base-font-size: 16px;
 $base-line: rem-calc(26);
 $line-height: rem-calc(24);
-$large-font-size: rem-calc(20);
-$small-font-size: rem-calc(14);
-$tiny-font-size: rem-calc(12);
-$tiniest-font-size: rem-calc(10);
+
+$tiniest-font-size: 10px;
+$tiny-font-size: 12px;
+$small-font-size: 14px;
+$base-font-size: 16px;
+$medium-font-size: 18px;
+$large-font-size: 20px;
+$extra-large-font-size: 24px;
 
 $brand: #004a83;
 $dark: darken($brand, 10%);

@@ -20,7 +20,7 @@
                   <%= strip_tags(investment&.title&.gsub("><", "> <"))&.truncate(50, separator: " ", omission: "...") %>
                 </h3>
                 <p class="investment-project-info">
-                  <%= l investment.created_at.to_date %>
+                  <%= investment.created_at.to_date.strftime("%d.%m.%Y") %>
                   <span class="bullet">&nbsp;&bull;&nbsp;</span>
                   <%= investment.heading.name %>
                 </p>
