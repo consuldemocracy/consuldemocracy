@@ -304,3 +304,5 @@ sl-SI:
       no_answer: "Prosim izpolni vprašanje."
     footer:
       djnd: Za platformo skrbi
+    registration:
+      already_has_account: "Že imaš račun?"

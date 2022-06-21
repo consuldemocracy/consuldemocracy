@@ -3,6 +3,10 @@
 
 <%= render "devise/omniauth_form", action: "sign_up" %>
 
+<p>
+  <%= t("custom.registration.already_has_account") %> <%= link_to t("devise_views.shared.links.login"), new_session_path(resource_name) %>
+</p>
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "shared/errors", resource: resource, message: t("custom.errors.registration") %>
 

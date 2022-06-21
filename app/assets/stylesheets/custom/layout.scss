@@ -91,7 +91,7 @@ p {
 
 a {
   color: $link;
-  text-decoration: none !important;
+  text-decoration: underline;
 
   &:hover,
   &:active {
@@ -174,10 +174,6 @@ a {
   background: $brand;
   font-size: $base-font-size;
 
-  &:hover {
-    text-decoration: none !important;
-  }
-
   &.warning,
   &.warning:hover {
     color: #000;
@@ -210,15 +206,16 @@ a {
   font-size: 16px;
   font-weight: 600;
   padding: 4px 16px;
-  // margin-left: 10px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  text-decoration: none;
 
   &:hover {
     background-color: transparent;
     color: $black;
+    text-decoration: none;
   }
 
   &:active {
@@ -252,6 +249,7 @@ input[type="submit"].action-button {
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.25);
   text-align: center;
   margin-top: 30px;
+  text-decoration: none;
 
   .custom-icon.arrow-small-right,
   .custom-icon.arrow-large-right {
@@ -266,6 +264,7 @@ input[type="submit"].action-button {
     border-color: $black;
     background-color: transparent;
     color: $black;
+    text-decoration: none;
 
     .custom-icon.arrow-small-right,
     .custom-icon.arrow-large-right {
@@ -349,7 +348,6 @@ input[type="submit"].action-button {
 
 .help-text {
   a {
-    text-decoration: underline !important;
     font-weight: 500;
   }
 }
@@ -482,6 +480,7 @@ header {
       font-weight: 600;
       padding: 4px 16px;
       display: inline-block;
+      text-decoration: none;
     }
   }
 
@@ -530,6 +529,11 @@ header {
         font-weight: 400;
         margin-left: 5px;
         margin-right: 5px;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -699,6 +703,10 @@ body > header,
 
 .tabs {
   .tabs-title {
+    a {
+      text-decoration: none;
+    }
+
     h3 {
       display: block;
     }
