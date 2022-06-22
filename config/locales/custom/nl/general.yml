@@ -50,7 +50,7 @@ nl:
         title: "Hulp bij discussies"
         description: "Start een discussie om je mening met anderen te delen over onderwerpen die jij belangrijk vindt."
         help_text_1: "Deel je mening over allerlei onderwerpen, kansen of knelpunten die jij belangrijk vindt."
-        help_text_2: "Om een discussie te starten of om deel te nemen aan een discussie moet je je %{org}."
+        help_text_2: "Om een discussie te starten of om deel te nemen aan een discussie moet je je registreren op %{org}."
         help_text_link: "aanmelden"
       title: "Discussies"
       search_form:
