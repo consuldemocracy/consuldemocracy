@@ -97,10 +97,6 @@ sl-SI:
   images:
     form:
       title: Slika
-  kaminari:
-    views:
-      pagination:
-        truncate: "&hellip;"
   mailers:
     budget_investment_created:
       intro: "Hej, <strong>%{author}</strong>,"
@@ -116,6 +112,9 @@ sl-SI:
     suggest:
       budget_investment:
         found: Našli smo podoben predlog.
+  views:
+    pagination:
+      truncate: "&hellip;"
   custom:
     admin:
       budget_phases:
