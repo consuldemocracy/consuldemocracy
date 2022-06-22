@@ -694,9 +694,14 @@ span:hover::before {
     }
 
     img {
-      height: rem-calc(385);
       width: 100%;
-      object-fit: cover;
+      object-fit: contain;
+    }
+
+    @media (min-width: 576px) {
+      img {
+        height: 400px;
+      }
     }
   }
 
