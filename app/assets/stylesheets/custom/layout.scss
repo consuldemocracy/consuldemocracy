@@ -369,6 +369,10 @@ input[type="submit"].action-button {
 .pagination {
   margin-bottom: 3rem;
 
+  li.ellipsis::after {
+    display: none;
+  }
+
   a {
     text-decoration: none;
   }
