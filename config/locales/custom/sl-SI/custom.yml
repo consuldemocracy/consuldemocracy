@@ -97,6 +97,10 @@ sl-SI:
   images:
     form:
       title: Slika
+  kaminari:
+    views:
+      pagination:
+        truncate: "&hellip;"
   mailers:
     budget_investment_created:
       intro: "Hej, <strong>%{author}</strong>,"

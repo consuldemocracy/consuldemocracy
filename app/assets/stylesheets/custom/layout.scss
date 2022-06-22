@@ -367,6 +367,10 @@ input[type="submit"].action-button {
 // pagination
 .pagination {
   margin-bottom: 3rem;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .pagination .current,
