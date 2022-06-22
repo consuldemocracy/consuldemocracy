@@ -32,7 +32,7 @@
           <%= t("custom.messages.finished_voting") %>
         </div>
       <% elsif investment.unfeasible? %>
-        <div class="callout warning">
+        <div class="callout warning margin-top">
           <%= t("budgets.investments.show.project_unfeasible").html_safe %>
         </div>
         <% if investment.should_show_unfeasibility_explanation? %>
@@ -43,6 +43,7 @@
               </p>
             </div>
           </div>
+          <hr />
         <% end %>
       <% elsif investment.winner? %>
         <!-- <div class="callout success">
