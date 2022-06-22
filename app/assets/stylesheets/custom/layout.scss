@@ -172,7 +172,8 @@ a {
 .default-button,
 .upload-image,
 .upload-document,
-.new_comment input[type="submit"] {
+.new_comment input[type="submit"],
+.button.hollow {
   background-color: $black;
   color: $white;
   border-radius: 30px;
@@ -209,7 +210,7 @@ a {
   }
 }
 
-.button,
+.button:not(.upload-document, .upload-image, .hollow),
 .button.expanded,
 .action-button,
 input[type="submit"].action-button {
