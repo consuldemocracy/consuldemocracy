@@ -169,31 +169,6 @@ a {
   max-width: 100%;
 }
 
-// todo: overwrite this once $brand color isn't used for .button anywhere anymore
-.button {
-  background: $brand;
-  font-size: $base-font-size;
-
-  &.warning,
-  &.warning:hover {
-    color: #000;
-  }
-
-  &.medium {
-    font-size: $small-font-size;
-  }
-}
-
-.button.hollow {
-  border: 1px solid $link;
-  color: $link;
-}
-
-.button.hollow.error {
-  border-color: $alert-border;
-  color: $color-alert;
-}
-
 .default-button,
 .upload-image,
 .upload-document,
@@ -234,6 +209,8 @@ a {
   }
 }
 
+.button,
+.button.expanded,
 .action-button,
 input[type="submit"].action-button {
   background-color: $theme-color;
@@ -251,7 +228,7 @@ input[type="submit"].action-button {
   text-align: center;
   margin-top: 30px;
   text-decoration: none;
-  padding: 12px 0 14px;
+  padding: 12px 10px 14px;
 
   .custom-icon.arrow-small-right,
   .custom-icon.arrow-large-right {
@@ -410,6 +387,12 @@ input[type="submit"].action-button {
 .auth-form {
   padding-top: 3rem;
   padding-bottom: 3rem;
+
+  h2 {
+    font-size: 44px;
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
 
   .default-button {
     font-size: $base-font-size;
