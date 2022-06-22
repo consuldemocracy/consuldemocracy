@@ -62,7 +62,7 @@ only screen and (min-resolution: 240dpi) {
       width: 390px;
     }
 
-    @media (max-width: 1200px) {
+    @media screen and (max-width: 87.9375em) {
       max-width: 100%;
 
       h1 {
@@ -129,7 +129,7 @@ only screen and (min-resolution: 240dpi) {
       }
     }
 
-    @media (max-width: 992px) {
+    @media screen and (max-width: 63.9375em) {
       margin: 50px 0;
 
       h2 {
@@ -173,7 +173,7 @@ only screen and (min-resolution: 240dpi) {
     .column-content {
       padding: 50px 40px;
 
-      @media screen and (max-width: 1200px) {
+      @media screen and (max-width: 87.9375em) {
         padding: 50px 0;
       }
 
@@ -213,7 +213,7 @@ only screen and (min-resolution: 240dpi) {
 }
 
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 87.9375em) {
   .welcome-columns .welcome-column {
     flex-grow: 0;
     flex-basis: 100%;
@@ -435,19 +435,6 @@ span:hover::before {
   }
 }
 
-// @media (min-width: 576px) {
-//   .budget-investments {
-//     .budget-investment-holder {
-//       .budget-investment {
-//         .panel {
-//           border-bottom: 0 !important;
-//           padding: 0 rem-calc(15);
-//         }
-//       }
-//     }
-//   }
-// }
-
 // Background
 
 .bggray {
@@ -466,7 +453,7 @@ span:hover::before {
   .bggray {
     padding: 1rem;
 
-    @media (min-width: 768px) {
+    @media screen and (min-width: 52em) {
       padding: 3rem 0;
     }
   }
@@ -500,7 +487,7 @@ span:hover::before {
       }
     }
 
-    @media (min-width: 768px) {
+    @media screen and (min-width: 52em) {
       .social-share-full {
         margin: 0 60px 0 0;
       }
@@ -698,7 +685,7 @@ span:hover::before {
       object-fit: contain;
     }
 
-    @media (min-width: 576px) {
+    @media screen and (min-width: 40em) {
       img {
         height: 400px;
       }
@@ -726,7 +713,7 @@ span:hover::before {
       }
     }
 
-    @media (min-width: 576px) {
+    @media screen and (min-width: 40em) {
       display: flex;
       justify-content: space-between;
 
@@ -760,7 +747,7 @@ span:hover::before {
   display: block;
 }
 
-@media (min-width: 576px) {
+@media screen and (min-width: 40em) {
   .qs {
     display: flex;
     align-items: center;
