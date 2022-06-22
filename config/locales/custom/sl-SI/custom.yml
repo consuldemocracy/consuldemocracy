@@ -77,6 +77,8 @@ sl-SI:
         new_unlock: Nisi prejel_a navodil, kako odkleniti svoj račun?
     users:
       registrations:
+        new:
+          terms: Z registracijo sprejemaš %{terms}.
         success:
           back_to_index: Velja, vrni me na začetno stran
           instructions_1: Prosimo, <b>preveri svojo e-pošto</b> – poslali smo ti <b>povezavo za potrditev tvojega računa</b>.
