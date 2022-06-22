@@ -18,7 +18,9 @@
 
 <p class="progress-meter-text spent-amount-text" style="width: <%= ballot.percentage_spent(heading) %>%">
   <span id="amount_available" class="amount-available">
-    <small><%= t("budgets.progress_bar.available") %></small>
+    <% if @budget.show_money? %>
+      <small><%= t("budgets.progress_bar.available") %></small>
+    <% end %>
     <span><%= sanitize(ballot.amount_available_info(heading)) %></span>
   </span>
 </p>
