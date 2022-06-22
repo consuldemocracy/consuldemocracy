@@ -999,6 +999,7 @@ body > header,
 }
 
 .feeds-participation {
+  display: block;
 
   @include breakpoint(medium) {
 
