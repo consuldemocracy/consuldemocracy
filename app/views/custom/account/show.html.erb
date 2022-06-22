@@ -68,6 +68,8 @@
                 </div>
               <% end %>
 
+              <%# user recommendations are hidden, even if they are enabled %>
+              <div class="hide">
               <% if feature?("user.recommendations") %>
                 <h2><%= t("account.show.recommendations") %></h2>
 
@@ -83,6 +85,7 @@
                   </div>
                 <% end %>
               <% end %>
+              </div>
 
               <div class="margin-top">
                 <%= f.submit t("account.show.save_changes_submit"), class: "default-button" %>
