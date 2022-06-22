@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <div class="inline-block">
+  <div>
     <%= layout_menu_link_to t("layouts.header.my_account_link"),
                             account_path,
                             controller_name == "account",
@@ -8,12 +8,12 @@
                               t("layouts.header.my_account_link"),
                             class: "default-button" %>
   </div>
-  <div class="inline-block">
+  <div>
     <%= link_to t("devise_views.menu.login_items.logout"),
                 destroy_user_session_path, rel: "nofollow", method: :delete, class: "default-button" %>
   </div>
 <% else %>
-  <div class="inline-block">
+  <div>
     <%= link_to t("devise_views.menu.login_items.login"),
                 new_user_session_path, rel: "nofollow", class: "default-button" %>
   </div>

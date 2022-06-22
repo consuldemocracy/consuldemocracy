@@ -465,9 +465,15 @@ header {
 
   .header-links {
     margin-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    >div {
+      margin-bottom: 10px;
+    }
 
     .default-button {
-      margin-left: 10px;
+      margin-right: 10px;
     }
 
     .is-active {
@@ -837,7 +843,7 @@ body > header,
 
   .tabs a h3 i {
     height: 20px;
-    display: block;
+    display: none;
     line-height: 20px;
     float: left;
   }
@@ -865,6 +871,12 @@ body > header,
   .tabs .tabs-title > a:hover {
     background: none;
     border-bottom: 0;
+  }
+
+  @media (min-width: 576px) {
+    .tabs a h3 i {
+      display: block;
+    }
   }
 
   @media (min-width: 768px) {
