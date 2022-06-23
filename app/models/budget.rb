@@ -218,6 +218,12 @@ class Budget < ApplicationRecord
     end
   end
 
+  def email_unfeasible
+    investments.unfeasible.order(:id).each do |investment|
+      Mailer.budget_investment_unfeasible(investment).deliver_later
+    end
+  end
+
   def has_winning_investments?
     investments.winners.any?
   end

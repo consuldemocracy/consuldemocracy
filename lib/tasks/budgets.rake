@@ -9,5 +9,10 @@ namespace :budgets do
     task unselected: :environment do
       Budget.last.email_unselected
     end
+
+    desc "Sends emails to authors of unfeasible investments"
+    task unfeasible: :environment do
+      Budget.last.email_unfeasible
+    end
   end
 end

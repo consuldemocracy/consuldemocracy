@@ -236,10 +236,6 @@ class Budget
       feasible? && valuation_finished? && budget.show_money?
     end
 
-    def unfeasible_email_pending?
-      unfeasible_email_sent_at.blank? && unfeasible? && valuation_finished?
-    end
-
     def total_votes
       cached_votes_up + physical_votes
     end
