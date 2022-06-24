@@ -26,11 +26,9 @@
                 <h2>
                   <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
                 </h2>
-                <% if @budget.show_money? %>
-                  <div id="progress_bar">
-                    <%= render "budgets/ballot/progress_bar", ballot: @ballot, heading: @heading %>
-                  </div>
-                <% end %>
+                <div id="progress_bar">
+                  <%= render "budgets/ballot/progress_bar", ballot: @ballot, heading: @heading %>
+                </div>
               </div>
             <% else %>
               <h2>

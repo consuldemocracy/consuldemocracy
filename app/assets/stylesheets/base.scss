@@ -2029,6 +2029,17 @@ footer {
   }
 }
 
+.draft-panels .draft-allegation {
+
+  .draft-panel {
+    color: $text;
+  }
+
+  .calc-comments .comment-box {
+    overflow: auto;
+  }
+}
+
 .draft-panels .comments-on .calc-index .draft-index-rotated {
   margin-top: $line-height * 5;
 }
@@ -2347,10 +2358,6 @@ footer {
 .debate .votes,
 .debate-show .votes {
   border-left: 0;
-}
-
-.debate-show .votes {
-  text-align: left;
 }
 
 .debate,

@@ -1530,8 +1530,8 @@ describe "Budget Investments" do
       end
     end
 
-    scenario "Do not show progress bar with hidden money" do
-      budget_hide_money = create(:budget, :hide_money, phase: "balloting")
+    scenario "Do not show progress bar money with hidden money" do
+      budget_hide_money = create(:budget, :hide_money, phase: "balloting", voting_style: "approval")
       group = create(:budget_group, budget: budget_hide_money)
       heading = create(:budget_heading, name: "Heading without money", group: group)
       user = create(:user, :level_two)
@@ -1539,15 +1539,20 @@ describe "Budget Investments" do
       visit budget_investments_path(budget_hide_money, heading: heading)
 
       expect(page).not_to have_content budget.formatted_heading_price(heading).to_s
+      expect(page).not_to have_content "€"
       expect(page).not_to have_css(".tagline")
 
       login_as(user)
 
       visit budget_investments_path(budget_hide_money, heading: heading)
 
-      expect(page).not_to have_css("#progress_bar")
+      expect(page).to have_content "YOU CAN VOTE 1 PROJECT VOTES CAST: 0 / YOU CAN VOTE 1 PROJECT"
+      expect(page).to have_content "YOU CAN STILL CAST 1 VOTE."
+      expect(page).not_to have_content "Available budget"
+
+      expect(page).to have_css("#progress_bar")
+      expect(page).to have_css("#amount_available")
       expect(page).not_to have_css("#amount_spent")
-      expect(page).not_to have_css("#amount_available")
     end
 
     scenario "Highlight voted heading" do
