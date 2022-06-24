@@ -26,6 +26,20 @@ describe "System Emails" do
           end
         end
       end
+
+      scenario "have unsubscribe information" do
+        create(:comment, parent: create(:comment))
+        admin = create(:administrator)
+        create(:comment, :valuation, commentable: create(:budget_investment, administrator: admin))
+
+        system_emails.each do |email_id|
+          visit admin_system_email_view_path(email_id.to_s)
+
+          expect(page).to have_content "If you want to stop receiving these emails, you can change your "\
+                                       "preferences on the \"My Account\" page."
+          expect(page).to have_link "My account", href: account_path
+        end
+      end
     end
 
     context "System emails with preview" do
