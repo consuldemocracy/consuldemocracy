@@ -2,6 +2,8 @@ es:
   mailers:
     title: "Gobierno abierto"
     no_reply: "Este mensaje se ha enviado desde una dirección de correo electrónico que no admite respuestas."
+    unsubscribe: "Si quieres dejar de recibir estos emails, puedes cambiar tus preferencias en \"%{link}\"."
+    unsubscribe_link: "Mi cuenta"
     comment:
       hi: Hola
       new_comment_by: Hay un nuevo comentario de <strong>%{commenter}</strong> en

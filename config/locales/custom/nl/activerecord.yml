@@ -53,7 +53,7 @@ nl:
         email_on_comment: "Stuur mij een mail wanneer iemand reageert op mijn initiatieven of discussies"
         email_on_comment_reply: "Stuur mij een mail wanneer iemand op mijn reactie reageert"
         email_on_direct_message: "Ontvang emails over privéberichten"
-        newsletter: "Ontvang emails over website gerelateerde informatie"
+        newsletter: "Ontvang nieuwsbrieven van de website"
         public_activity: "Maak mijn activiteit openbaar"
         public_interests: "Maak de onderwerpen/labels die ik volg openbaar"
         recommended_debates: "Toon aanbevelingen voor discussie"

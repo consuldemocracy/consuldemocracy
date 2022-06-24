@@ -1,6 +1,8 @@
 nl:
   mailers:
     no_reply: "This message was sent from an email address that does not accept replies."
+    unsubscribe: "Wanneer je dit soort e-mails niet meer wilt ontvangen, verander dan de instellingen op de \"%{link}\" pagina."
+    unsubscribe_link: "Mijn Profiel"
     comment:
       hi: Hi
       new_comment_by: There is a new comment from <strong>%{commenter}</strong>
