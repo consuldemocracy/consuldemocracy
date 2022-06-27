@@ -7,7 +7,9 @@ services:
     # see https://hub.docker.com/_/postgres/
     image: postgres:9.6.21
     environment:
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: consul
     # persist the database between containers by storing it in a volume
     volumes:
       - db_data:/var/lib/postgresql/data
