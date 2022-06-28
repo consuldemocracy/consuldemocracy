@@ -38,8 +38,8 @@ describe "Welcome page" do
         expect(page).to have_content budget.formatted_total_headings_price
         expect(page).to have_content budget.current_phase.name
         expect(page).to have_content "#{budget.current_enabled_phase_number}/#{budget.enabled_phases_amount}"
-        expect(page).to have_content "#{budget.start_date.to_date}"
-        expect(page).to have_content "#{budget.end_date.to_date}"
+        expect(page).to have_content budget.current_phase.starts_at.to_date.to_s
+        expect(page).to have_content (budget.current_phase.ends_at.to_date - 1.day).to_s
         expect(page).to have_content budget.description
         expect(page).to have_content "See this budget", count: 3
         expect(page).to have_link href: budget_path(budget)
@@ -47,16 +47,16 @@ describe "Welcome page" do
         expect(page).to have_content finished.formatted_total_headings_price
         expect(page).to have_content "COMPLETED"
         expect(page).to have_content "€", count: 1
-        expect(page).to have_content "#{finished.start_date.to_date}"
-        expect(page).to have_content "#{finished.end_date.to_date}"
+        expect(page).to have_content finished.current_phase.starts_at.to_date.to_s
+        expect(page).to have_content (finished.current_phase.ends_at.to_date - 1.day).to_s
         expect(page).to have_content finished.description
         expect(page).to have_link href: budget_path(finished)
         expect(page).not_to have_content draft.name
         expect(page).not_to have_content draft.description
         expect(page).not_to have_link href: budget_path(draft)
         expect(page).to have_content hide_money.name
-        expect(page).to have_content "#{hide_money.start_date.to_date}"
-        expect(page).to have_content "#{hide_money.end_date.to_date}"
+        expect(page).to have_content hide_money.current_phase.starts_at.to_date.to_s
+        expect(page).to have_content (hide_money.current_phase.ends_at.to_date - 1.day).to_s
         expect(page).to have_content hide_money.description
         expect(page).to have_link href: budget_path(hide_money)
       end
