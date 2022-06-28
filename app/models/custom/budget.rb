@@ -3,10 +3,10 @@ require_dependency Rails.root.join("app", "models", "budget").to_s
 class Budget < ApplicationRecord
   has_many :questions, class_name: "Budget::Question"
 
-  CUSTOM_PHASE_ACCEPTING = :accepting
-  CUSTOM_PHASE_SELECTING = :selecting
-  CUSTOM_PHASE_BALLOTING = :balloting
-  CUSTOM_PHASE_FINISHED = :finished
+  CUSTOM_PHASE_ACCEPTING = ["accepting"]
+  CUSTOM_PHASE_SELECTING = ["selecting"]
+  CUSTOM_PHASE_BALLOTING = ["balloting", "valuating"]
+  CUSTOM_PHASE_FINISHED = ["finished"]
 
   CustomPhase = Struct.new(
     :kind,
@@ -16,6 +16,7 @@ class Budget < ApplicationRecord
     :ends_at,
     :url,
     :enabled,
+    :active,
     :presentation_summary_accepting,
     :presentation_summary_balloting,
     :presentation_summary_finished
@@ -33,19 +34,27 @@ class Budget < ApplicationRecord
       CUSTOM_PHASE_SELECTING => self.phases.selecting.enabled?,
       CUSTOM_PHASE_BALLOTING => true,
       CUSTOM_PHASE_FINISHED => true
-    }.each do |phase, enabled|
+    }.each do |phases, enabled|
       url = nil
-      if self.phase === phase.to_s
-        if self.phase === "balloting"
-          url = budget_investments_url.call(
-            self,
-            heading_id: current_user&.balloted_heading_id ?
-              current_user&.balloted_heading_id :
-              self&.headings&.first&.id
-          )
-        else
-          url = budget_investments_url.call(self)
-        end
+      active = phases.include? self.phase
+      phase = phases[0]
+      if self.phase === "balloting"
+        url = budget_investments_url.call(
+          self,
+          heading_id: current_user&.balloted_heading_id ?
+            current_user&.balloted_heading_id :
+            self&.headings&.first&.id
+        )
+      # elsif self.phase === "valuating"
+      #   puts "@@@@@@@@@@@@@@"
+      #   url = budget_investments_url.call(
+      #     self,
+      #     heading_id: current_user&.balloted_heading_id ?
+      #       current_user&.balloted_heading_id :
+      #       self&.headings&.first&.id
+      #   )
+      else
+        url = budget_investments_url.call(self)
       end
       custom_phases[phase] = CustomPhase.new(
         phase,
@@ -55,6 +64,7 @@ class Budget < ApplicationRecord
         self.phases.where(kind: phase).first&.ends_at,
         url,
         enabled,
+        active,
         self.phases.where(kind: phase).first&.presentation_summary_accepting,
         self.phases.where(kind: phase).first&.presentation_summary_balloting,
         self.phases.where(kind: phase).first&.presentation_summary_finished

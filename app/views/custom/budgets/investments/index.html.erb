@@ -13,9 +13,9 @@
               data-tabs>
             <% @budget.custom_phases(current_user, create_url = method(:budget_investments_url)).each do |_, phase| %>
               <% if phase.enabled %>
-                <li class="tabs-title <%= "is-active active-phase" if phase.url %>">
+                <li class="tabs-title <%= "is-active active-phase" if phase.active %>">
                   <%= link_to "#tab-#{phase.kind}" do %>
-                    <h3 class="<%= "default-button" if phase.url %>"><i></i><%= t("custom.headings.#{phase.kind}") %></h3>
+                    <h3 class="<%= "default-button" if phase.active %>"><i></i><%= t("custom.headings.#{phase.kind}") %></h3>
                     <span><%= phase.starts_at.to_date.strftime("%d.%m.%Y") %>–<%= phase.ends_at.to_date.strftime("%d.%m.%Y") %></span>
                   <% end %>
                 </li>
@@ -29,8 +29,8 @@
 
   <% @budget.custom_phases(current_user, create_url = method(:budget_investments_url)).each do |_, phase| %>
     <% if phase.enabled %>
-      <div class="tabs-panel <%= "is-active" if phase.url %>" id="tab-<%= phase.kind %>">
-        <% if phase.url %>
+      <div class="tabs-panel <%= "is-active" if phase.active %>" id="tab-<%= phase.kind %>">
+        <% if phase.active %>
           <%= render "/budgets/investments/header" %>
           <div class="main-indented-content">
             <% if @filtered_investments_count > 0 %> <%#  || @heading.present? %>
@@ -61,45 +61,28 @@
                       <%= render "budgets/investments/statuses" %>
                     <% end %>
                   </div>
-                  <% if @budget.phase == "valuating" %>
-                    <div class="row small-up-1 medium-up-1 large-up-3 investments-list">
-                      <% @all_investments.each_with_index do |investment, index| %>
-                        <% investment_class = "column column-block budget-investment-holder" %>
-                        <% investment_class = investment_class %>
-                        <div class="<%= investment_class %>">
-                          <%= render partial: "/budgets/investments/investment",
-                                    locals: {
-                                      investment: investment,
-                                      investment_ids: @all_investment_ids,
-                                      ballot: @ballot
-                                    } %>
-                        </div>
-                      <% end %>
-                    </div>
-                  <% else %>
-                    <div class="row small-up-1 medium-up-1 large-up-3 investments-list">
-                      <% @investments.each_with_index do |investment, index| %>
-                        <% investment_class = "column column-block budget-investment-holder" %>
-                        <% investment_class = investment_class %>
-                        <div class="<%= investment_class %>">
-                          <%= render partial: "/budgets/investments/investment",
-                                    locals: {
-                                      investment: investment,
-                                      investment_ids: @investment_ids,
-                                      investment_votes: @investment_votes,
-                                      ballot: @ballot
-                                    } %>
-                        </div>
-                      <% end %>
-                    </div>
-                    <div class="row">
-                      <%= paginate @investments %>
-                    </div>
-                  <% end %>
+                  <div class="row small-up-1 medium-up-1 large-up-3 investments-list">
+                    <% @investments.each_with_index do |investment, index| %>
+                      <% investment_class = "column column-block budget-investment-holder" %>
+                      <% investment_class = investment_class %>
+                      <div class="<%= investment_class %>">
+                        <%= render partial: "/budgets/investments/investment",
+                                  locals: {
+                                    investment: investment,
+                                    investment_ids: @investment_ids,
+                                    investment_votes: @investment_votes,
+                                    ballot: @ballot
+                                  } %>
+                      </div>
+                    <% end %>
+                  </div>
+                  <div class="row">
+                    <%= paginate @investments %>
+                  </div>
                 </div>
               </div>
               <%
-                if (
+                if false && ( # disabled by muki for maribor
                     (
                       phase.kind != :accepting
                     ) || (
@@ -190,7 +173,7 @@
             <% else %>
 
             <!-- TABS -->
-            <% if phase.kind == :accepting %>
+            <% if phase.kind == 'accepting' %>
               <div class="landings">
                 <div class="bggray">
                   <div class="main-indented-content">
@@ -260,7 +243,7 @@
 
             <% end %>
 
-            <% if phase.kind == :balloting %>
+            <% if phase.kind == 'balloting' %>
 
               <div class="landings">
                 <div class="bggray">
@@ -336,7 +319,7 @@
 
             <% end %>
 
-            <% if phase.kind == :finished %>
+            <% if phase.kind == 'finished' %>
               <div class="landings">
                 <div class="bggray">
                   <div class="main-indented-content">

@@ -20,13 +20,11 @@
             <p><%= t("custom.landing.introduction_text") %></p>
             <!-- TODO: can we get current budget - current phase url directly? -->
             <% if current_budget.present? %>
-              <% current_budget.custom_phases(current_user, create_url = method(:budget_investments_url)).each do |_, phase| %>
-                <% if phase.enabled %>
-                  <% if phase.url %>
-                    <a class="action-button large" href="<%= phase.url %>">
-                      <%= t("devise_views.sessions.new.submit") %>&nbsp;<i class="custom-icon arrow-small-right"></i>
-                    </a>
-                  <% end %>
+              <% current_budget.custom_phases(current_user, method(:budget_investments_url)).each do |_, phase| %>
+                <% if phase.enabled && phase.active %>
+                  <a class="action-button large" href="<%= phase.url %>">
+                    <%= t("devise_views.sessions.new.submit") %>&nbsp;<i class="custom-icon arrow-small-right"></i>
+                  </a>
                 <% end %>
               <% end %>
             <% end %>
@@ -43,7 +41,7 @@
                   <div class="column-content">
                     <h2><%= t("custom.headings.#{phase.kind}") %></h2>
                     <h4><%= strip_tags(phase.summary) %></h4>
-                    <% unless phase.url %>
+                    <% unless phase.active %>
                     <!-- <div>
                         TEGA JE DAL FILIP NOT IN POTEM UMAKNIL, KER JE MB TAKO HOTEL, NASLEDNJA DVA STA BILA ZAKOMENTIRANA<div class="large-description"><%= sanitize_and_auto_link phase["presentation_summary_#{phase_name}"] %></div>
                         <div class="large-description"><%= sanitize_and_auto_link phase.summary %></div>
@@ -52,7 +50,7 @@
                         <% end %>
                       </div> -->
                     <% end %>
-                    <% if phase.url %>
+                    <% if phase.active %>
                       <a class="action-button large" href="<%= phase.url %>">
                         <%= t("devise_views.sessions.new.submit") %>&nbsp;<i class="custom-icon arrow-small-right"></i>
                       </a>
@@ -69,14 +67,14 @@
               <div class="column-content">
                 <h2><%= t("custom.headings.#{phase.kind}") %></h2>
                 <h4><%= strip_tags(phase.summary) %></h4>
-                <% unless phase.url %>
+                <% unless phase.active %>
                   <div>
                     <% if phase.description %>
                       <div class="large-description"><%= sanitize_and_auto_link phase.description %></div>
                     <% end %>
                   </div>
                 <% end %>
-                <% if phase.url %>
+                <% if phase.active %>
                   <a class="action-button large" href="<%= phase.url %>">
                     <%= t("devise_views.sessions.new.submit") %>&nbsp;<i class="custom-icon arrow-small-right"></i>
                   </a>
