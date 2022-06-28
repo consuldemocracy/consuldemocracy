@@ -188,6 +188,8 @@ de:
         one: "Sie haben bisher <strong>1 Projekt</strong> unterstützt."
         other: "Sie haben bisher <strong>%{count} Projekte</strong> unterstützt."
       supported_not_logged_in: "Melde dich an und <strong>unterstütze Projekte</strong>."
+      time: "Es ist noch Zeit bis %{phase_end_date} um Projekte zu unterstützen."
+      title: "Es ist noch Zeit Projekte <strong>zu unterstützen</strong>!"
     results:
       link: Ergebnisse
       page_title: "%{budget} - Ergebnisse"
