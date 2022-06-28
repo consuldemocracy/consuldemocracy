@@ -23,6 +23,7 @@ de:
             other: "Sie können bis zu <span>%{count}</span> Projekte wählen"
         no_balloted_group_yet: "Sie haben in dieser Gruppe noch nicht abgestimmt. Stimmen Sie jetzt ab!"
         remove: Stimme entfernen
+        remove_label: "Stimme für %{investment} zurückziehen"
         voted:
           one: "Sie haben für <span>one</span> Bürgerhaushalt gestimmt."
           other: "Du hast für <span>%{count}</span> Bürgerhaushalt gestimmt."
@@ -74,6 +75,7 @@ de:
       form:
         title: "Eine Budgetinvestitionen erstellen"
         subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
         tag_category_label: "Kategorien"
         tags_instructions: "Markieren Sie den Vorschlag. Sie können einen Tag auswählen oder selbst erstellen"
         tags_label: Tags
