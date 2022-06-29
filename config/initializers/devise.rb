@@ -265,11 +265,12 @@ Devise.setup do |config|
                   strategy_class: OmniAuth::Strategies::Wordpress,
                   client_options: { site: Rails.application.secrets.wordpress_oauth2_site },
                   setup: OmniauthTenantSetup.wordpress_oauth2
-  config.omniauth :saml,
-                  sp_entity_id: Rails.application.secrets.saml_sp_entity_id,
-                  idp_cert: Rails.application.secrets.saml_idp_cert,
-                  idp_sso_service_url: Rails.application.secrets.saml_idp_sso_service_url,
-                  allowed_clock_drift: 1.minute
+  idp_metadata_parser = OneLogin::RubySaml::IdpMetadataParser.new
+  saml_settings = idp_metadata_parser.parse_remote_to_hash(Rails.application.secrets.saml_idp_metadata_url)
+  saml_settings[:idp_sso_service_url] = Rails.application.secrets.saml_idp_sso_service_url
+  saml_settings[:sp_entity_id] = Rails.application.secrets.saml_sp_entity_id
+  saml_settings[:allowed_clock_drift] = 1.minute
+  config.omniauth :saml, saml_settings
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
