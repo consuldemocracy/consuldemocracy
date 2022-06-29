@@ -268,7 +268,8 @@ Devise.setup do |config|
   config.omniauth :saml,
                   sp_entity_id: Rails.application.secrets.saml_sp_entity_id,
                   idp_cert: Rails.application.secrets.saml_idp_cert,
-                  idp_sso_service_url: Rails.application.secrets.saml_idp_sso_service_url
+                  idp_sso_service_url: Rails.application.secrets.saml_idp_sso_service_url,
+                  allowed_clock_drift: 1.minute
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
