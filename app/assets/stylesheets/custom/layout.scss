@@ -3,14 +3,31 @@
 // 01. Global styles
 // 02. Header
 // 03. Footer
+// 04. Tags
+// 05. Auth pages
+// 06. Forms
+// 07. Callout
+// 08. User account
+// 10. Official levels
+// 11. Tables
+// 12. Social
+// 13. Pages
+// 14. Verification
+// 15. Comments
+// 16. Flags
+// 17. Activity
+// 18. Banners
+// 19. Recommendations
+// 20. Documents
+// 21. Related content
+// 22. Images
+// 23. Maps
+// 24. Homepage
+// 25. LocalCensusRecords
+//
 
 // 01. Global styles
 // -----------------
-
-::selection {
-  color: #fff;
-  background-color: $brand;
-}
 
 :focus {
   outline: 0;
@@ -109,7 +126,7 @@ a {
   width: 100%;
 }
 
-// Result: 640px
+// 640px
 @media screen and (min-width: 40em) {
   .main-indented-content {
     padding: 0 0.625rem;
@@ -117,28 +134,28 @@ a {
   }
 }
 
-// Result: 832px
+// 832px
 @media screen and (min-width: 52em) {
   .main-indented-content {
     max-width: 720px;
   }
 }
 
-// Result: 1024px
+// 1024px
 @media screen and (min-width: 64em) {
   .main-indented-content {
     max-width: 880px;
   }
 }
 
-// Result: 1216px
+// 1216px
 @media screen and (min-width: 76em) {
   .main-indented-content {
     max-width: 1040px;
   }
 }
 
-// Result: 1408px
+// 1408px
 @media screen and (min-width: 88em) {
   .main-indented-content {
     max-width: 1200px;
@@ -172,6 +189,49 @@ a {
 
 .row {
   max-width: 100%;
+}
+
+.tabs {
+  .tabs-title {
+    a {
+      text-decoration: none;
+    }
+
+    h3 {
+      display: block;
+    }
+
+    &.is-active a {
+      color: $black;
+    }
+  }
+}
+
+.pagination {
+  margin-bottom: 3rem;
+
+  li.ellipsis::after {
+    display: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.pagination .current,
+.pagination li.current:last-child,
+.pagination li.current:first-child {
+  background-color: $black;
+  color: $white;
+  border-radius: 15px;
+  font-weight: 600;
+  padding: 0 0 2px;
+  height: 30px;
+  width: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .default-button,
@@ -336,30 +396,6 @@ input[type="submit"].action-button {
   }
 }
 
-// ---------
-
-.clear {
-  clear: both;
-}
-
-.inline {
-  display: inline !important;
-}
-
-.inline-block {
-  display: inline-block;
-}
-
-.aling-middle {
-  vertical-align: middle;
-}
-
-.float-right-medium {
-  @include breakpoint(medium) {
-    float: right !important;
-  }
-}
-
 // use this class to hide fields, which should be hidden fields, but they have to be submitted in a form
 .hide-field {
   display: none;
@@ -371,33 +407,7 @@ input[type="submit"].action-button {
   }
 }
 
-// pagination
-.pagination {
-  margin-bottom: 3rem;
 
-  li.ellipsis::after {
-    display: none;
-  }
-
-  a {
-    text-decoration: none;
-  }
-}
-
-.pagination .current,
-.pagination li.current:last-child,
-.pagination li.current:first-child {
-  background-color: $black;
-  color: $white;
-  border-radius: 15px;
-  font-weight: 600;
-  padding: 0 0 2px;
-  height: 30px;
-  width: 30px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .auth-form {
   padding-top: 3rem;
@@ -445,6 +455,12 @@ hr {
 
 header {
   background: $white;
+}
+
+body > header,
+.wrapper > header {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .top-bar {
@@ -500,8 +516,6 @@ header {
     }
   }
 }
-
-
 
 // 03. Footer
 // ----------
@@ -650,11 +664,7 @@ header {
   }
 }
 
-body > header,
-.wrapper > header {
-  padding-left: 0;
-  padding-right: 0;
-}
+
 
 // submit predlog
 .budget-investment-new {
@@ -707,21 +717,7 @@ body > header,
 
 // Components styles
 
-.tabs {
-  .tabs-title {
-    a {
-      text-decoration: none;
-    }
 
-    h3 {
-      display: block;
-    }
-
-    &.is-active a {
-      color: $black;
-    }
-  }
-}
 
 // documents
 .documents {
@@ -935,7 +931,7 @@ body > header,
         justify-content: center;
 
         @media screen and (min-width: 52em) {
-          justify-content: start;
+          // justify-content: start;
         }
       }
 
