@@ -248,14 +248,14 @@ describe "Admin edit translatable records", :admin do
       scenario "Updates the field to a blank value" do
         visit path
 
-        expect(page).to have_field "Summary", with: "Summary in English"
+        expect(page).to have_ckeditor "Summary", with: "Summary in English"
 
-        fill_in "Summary", with: ""
+        fill_in_ckeditor "Summary", with: " "
         click_button "Update poll"
 
         visit path
 
-        expect(page).to have_field "Summary", with: ""
+        expect(page).to have_ckeditor "Summary", with: ""
       end
     end
   end

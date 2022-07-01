@@ -65,18 +65,14 @@
                 <% if answer.description.length > 600 %>
                   <div class="read-more">
                     <button type="button" id="read_more_<%= answer.id %>"
-                            data-toggle="answer_description_<%= answer.id %>
-                                         read_more_<%= answer.id %>
-                                         read_less_<%= answer.id %>"
                             data-toggler="hide"
+                            data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
                             class="button primary">
                       <%= t("polls.show.read_more", answer: answer.title) %>
                     </button>
                     <button type="button" id="read_less_<%= answer.id %>"
-                            data-toggle="answer_description_<%= answer.id %>
-                                         read_more_<%= answer.id %>
-                                         read_less_<%= answer.id %>"
                             data-toggler="hide"
+                            data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
                             class="hide button primary">
                       <%= t("polls.show.read_less", answer: answer.title) %>
                     </button>
