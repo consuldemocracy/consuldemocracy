@@ -92,6 +92,22 @@ describe "Welcome page" do
     end
   end
 
+  scenario "Show footer logo image only if feature is enabled" do
+    Setting["feature.logo_image_footer"] = false
+
+    visit root_path
+
+    expect(page).not_to have_selector "#logo_footer"
+
+    Setting["feature.logo_image_footer"] = true
+
+    visit root_path
+
+    within "#logo_footer" do
+      expect(page).to have_css("img[alt=\"\"]")
+    end
+  end
+
   scenario "Show footer background image only if feature is enabled" do
     Setting["feature.background_image_footer"] = false
 

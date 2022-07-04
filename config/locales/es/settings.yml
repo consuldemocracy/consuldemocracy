@@ -140,6 +140,8 @@ es:
       sdg_description: Habilitar secciones relacionadas con Objetivos de Desarrollo Sostenible en el menú de administración y en la sección de Configuración Global.
       welcome_steps: "Sección pasos en página principal"
       welcome_steps_description: "Muestra una sección de tres pasos a modo de resumen en la página principal."
+      logo_image_footer: "Imagen de logotipo en el pie de página"
+      logo_image_footer_description: "Muestra una imagen de logotipo en el pie de página."
       background_image_footer: "Imagen de fondo en el pie de página"
       background_image_footer_description: "Muestra una imagen de fondo decorativa en el pie de página."
     remote_census:
