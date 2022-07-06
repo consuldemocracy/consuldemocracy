@@ -43,8 +43,8 @@ sl-SI:
       button: Zaključi registracijo
       subject: "Vabilo v %{org_name}"
     budget_investment_created:
-      subject: "Hvala, ker si ustvaril a projektni predlog!"
-      title: "Hvala, ker si ustvaril a projektni predlog!"
+      subject: "Hvala, ker si ustvaril_a projektni predlog!"
+      title: "Hvala, ker si ustvaril_a projektni predlog!"
       intro: "Hej, <strong>%{author}</strong>,"
       text: "zahvaljujemo se ti za ustvarjen predlog <strong>%{investment}</strong> za participatorni proračun <strong>%{budget}</strong>."
       follow: "O tem, kako proces napreduje, te bomo sproti obveščali."
