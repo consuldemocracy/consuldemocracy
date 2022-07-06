@@ -7,6 +7,7 @@ env:
 
 jobs:
   assign_one_project:
+    if: github.repository_owner == 'consul'
     runs-on: ubuntu-latest
     name: Assign new pull requests
     steps:
