@@ -140,6 +140,8 @@ en:
       sdg_description: Enable Sustainable Development Goals sections in the administration menu and in the Global Settings.
       welcome_steps: "Steps section on home page"
       welcome_steps_description: "Displays a three-step overview section on the home page."
+      logo_image_footer: "Logo image on the footer"
+      logo_image_footer_description: "Displays a logo image on the footer."
       background_image_footer: "Background image on the footer"
       background_image_footer_description: "Displays a decorative image as background on the footer."
     remote_census:

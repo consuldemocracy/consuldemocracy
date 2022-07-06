@@ -1,9 +1,11 @@
 <footer>
   <div class="row">
     <div class="small-12 medium-6 column">
-      <h1 class="logo">
-        <%= image_tag(image_path_for("logo_footer.png"), alt: "") %>
-      </h1>
+      <% if feature?(:logo_image_footer) %>
+        <h1 id="logo_footer" class="logo">
+          <%= image_tag(image_path_for("logo_footer.png"), alt: "") %>
+        </h1>
+      <% end %>
 
       <p class="info">
         <%= sanitize(content_block("footer", I18n.locale)) %>
