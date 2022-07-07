@@ -11,6 +11,7 @@ nn:
       topic:
         comments:
           zero: Ingen kommentarer
+          zero: "%{count} kommentarer"
           one: 1 kommentar
           other: "%{count} kommentarer"
       author: Forfatter
