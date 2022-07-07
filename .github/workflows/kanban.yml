@@ -1,4 +1,4 @@
-name: Assign new pull requests
+name: Kanban management
 on:
   pull_request_target:
     types: [opened, reopened]
@@ -7,9 +7,9 @@ env:
 
 jobs:
   assign_one_project:
+    name: Add new pull requests to the kanban
     if: github.repository_owner == 'consul'
     runs-on: ubuntu-latest
-    name: Assign new pull requests
     steps:
     - name: Assign new pull requests to the reviewing column
       uses: srggrs/assign-one-project-github-action@1.3.1
