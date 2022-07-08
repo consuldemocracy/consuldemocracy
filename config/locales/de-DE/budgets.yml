@@ -23,6 +23,7 @@ de:
             other: "Sie können bis zu <span>%{count}</span> Projekte wählen"
         no_balloted_group_yet: "Sie haben in dieser Gruppe noch nicht abgestimmt. Stimmen Sie jetzt ab!"
         remove: Stimme entfernen
+        remove_label: "Stimme für %{investment} zurückziehen"
         voted:
           one: "Sie haben für <span>one</span> Bürgerhaushalt gestimmt."
           other: "Du hast für <span>%{count}</span> Bürgerhaushalt gestimmt."
@@ -74,6 +75,7 @@ de:
       form:
         title: "Eine Budgetinvestitionen erstellen"
         subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
         tag_category_label: "Kategorien"
         tags_instructions: "Markieren Sie den Vorschlag. Sie können einen Tag auswählen oder selbst erstellen"
         tags_label: Tags
@@ -99,6 +101,9 @@ de:
             approval:
               one: "<strong>Sie haben für einen Vorschlag gestimmt</strong>"
               other: "<strong>Sie haben für %{count} Vorschläge gestimmt</strong>"
+          change_vote_info:
+            knapsack: "Sie können bis zur %{phase_end_date} jederzeit %{link}. Es ist nicht notwendig das gesamte verfügbare Geld auszugeben."
+            approval: "Sie können jederzeit %{link} bis zum %{phase_end_date}."
           change_vote_link: "ihre Wahl ändern"
           different_heading_assigned: "Sie haben bereits in einer anderen Rubrik: %{heading_link} abgestimmt"
           change_ballot: "Wenn Sie Ihre Meinung ändern, können Sie Ihre Stimme unter %{check_ballot} entfernen und von vorne beginnen."
@@ -143,6 +148,7 @@ de:
       wrong_price_format: Nur ganze Zahlen
       investment:
         add: Stimme
+        add_label: "Abstimmen %{investment} "
         already_added: Sie haben diesen Ausgabenvorschlag bereits hinzugefügt
         support_title: Unterstützen Sie dieses Projekt
         supports:
@@ -174,9 +180,16 @@ de:
     show:
       see_results: Ergebnisse anzeigen
     supports_info:
+      different: "Du kannst so viele verschiedene Projekte unterstützen, wie du möchtest.  "
+      next: "Unterstütze die Projekte, die du gerne in der nächsten Phase sehen willst. "
+      scrolling: "Scrolle weiter um alle Ideen zu sehen"
+      share: "Du kannst die Projekte, die du unterstützt, über Social Media teilen und ihnen mehr Aufmerksamkeit und Unterstützung sichern."
       supported:
         one: "Sie haben bisher <strong>1 Projekt</strong> unterstützt."
         other: "Sie haben bisher <strong>%{count} Projekte</strong> unterstützt."
+      supported_not_logged_in: "Melde dich an und <strong>unterstütze Projekte</strong>."
+      time: "Es ist noch Zeit bis %{phase_end_date} um Projekte zu unterstützen."
+      title: "Es ist noch Zeit Projekte <strong>zu unterstützen</strong>!"
     results:
       link: Ergebnisse
       page_title: "%{budget} - Ergebnisse"
