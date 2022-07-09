@@ -1,5 +1,5 @@
 module Types
-  class PollAttributes < Types::BaseInputObject
+  class PollAttributes < GraphQL::Schema::InputObject
     argument :name, String, required: true
     argument :starts_at, String, required: true
     argument :ends_at, String, required: true

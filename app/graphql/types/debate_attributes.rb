@@ -1,6 +1,6 @@
 module Types
-  class DebateAttributes < Types::BaseInputObject
-    class DebateTranslationAttributes < Types::BaseInputObject
+  class DebateAttributes < GraphQL::Schema::InputObject
+    class DebateTranslationAttributes < GraphQL::Schema::InputObject
       argument :title, String, required: true, validates: { allow_blank: false }
       argument :description, String, required: true, validates: { allow_blank: false }
     end
