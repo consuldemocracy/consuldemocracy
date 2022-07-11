@@ -10,7 +10,7 @@ class DirectUploadsController < ApplicationController
   def create
     @direct_upload = DirectUpload.new(direct_upload_params.merge(user: current_user, attachment: params[:attachment]))
 
-   if @direct_upload.valid?
+    if @direct_upload.valid?
       @direct_upload.save_attachment
       @direct_upload.relation.set_cached_attachment_from_attachment
 
