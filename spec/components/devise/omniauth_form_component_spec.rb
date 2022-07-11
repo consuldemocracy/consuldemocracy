@@ -9,6 +9,7 @@ describe Devise::OmniauthFormComponent do
       Setting["feature.twitter_login"] = false
       Setting["feature.google_login"] = false
       Setting["feature.wordpress_login"] = false
+      Setting["feature.saml_login"] = false
     end
 
     it "is not rendered when all authentications are disabled" do
@@ -50,6 +51,15 @@ describe Devise::OmniauthFormComponent do
       render_inline component
 
       expect(page).to have_button "Wordpress"
+      expect(page).to have_button count: 1
+    end
+
+    it "renders the SAML link when the feature is enabled" do
+      Setting["feature.saml_login"] = true
+
+      render_inline component
+
+      expect(page).to have_button "SAML"
       expect(page).to have_button count: 1
     end
   end

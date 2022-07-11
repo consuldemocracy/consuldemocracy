@@ -488,6 +488,121 @@ describe "Users" do
         expect(page).to have_field "Email", with: "manuela@consul.dev"
       end
     end
+
+    context "Saml" do
+      before { Setting["feature.saml_login"] = true }
+
+      let(:saml_hash_with_email) do
+        {
+          provider: "saml",
+          uid: "ext-tester",
+          info: {
+            name: "samltester",
+            email: "tester@consul.dev"
+          }
+        }
+      end
+
+      let(:saml_hash_with_verified_email) do
+        {
+          provider: "saml",
+          uid: "ext-tester",
+          info: {
+            name: "samltester",
+            email: "tester@consul.dev",
+            verified: "1"
+          }
+        }
+      end
+
+      scenario "Sign up with a confirmed email" do
+        OmniAuth.config.add_mock(:saml, saml_hash_with_verified_email)
+
+        visit new_user_registration_path
+        click_button "Sign up with SAML"
+
+        expect(page).to have_content "Successfully identified as Saml"
+        expect_to_be_signed_in
+
+        within("#notice") { click_button "Close" }
+        click_link "My account"
+
+        expect(page).to have_field "Username", with: "samltester"
+
+        click_link "Change my login details"
+
+        expect(page).to have_field "Email", with: "tester@consul.dev"
+      end
+
+      scenario "Sign up with an unconfirmed email" do
+        OmniAuth.config.add_mock(:saml, saml_hash_with_email)
+
+        visit new_user_registration_path
+        click_button "Sign up with SAML"
+
+        expect(page).to have_content "To continue, please click on the confirmation " \
+                                     "link that we have sent you via email"
+
+        confirm_email
+        expect(page).to have_content "Your account has been confirmed"
+        expect(page).to have_current_path new_user_session_path
+
+        click_button "Sign in with SAML"
+
+        expect(page).to have_content "Successfully identified as Saml"
+        expect_to_be_signed_in
+
+        within("#notice") { click_button "Close" }
+        click_link "My account"
+
+        expect(page).to have_field "Username", with: "samltester"
+
+        click_link "Change my login details"
+
+        expect(page).to have_field "Email", with: "tester@consul.dev"
+      end
+
+      scenario "Sign in with a user with a SAML identity" do
+        user = create(:user, username: "samltester", email: "tester@consul.dev", password: "My123456")
+        create(:identity, uid: "ext-tester", provider: "saml", user: user)
+        OmniAuth.config.add_mock(:saml, { provider: "saml", uid: "ext-tester" })
+
+        visit new_user_session_path
+        click_button "Sign in with SAML"
+
+        expect(page).to have_content "Successfully identified as Saml"
+        expect_to_be_signed_in
+
+        within("#notice") { click_button "Close" }
+        click_link "My account"
+
+        expect(page).to have_field "Username", with: "samltester"
+
+        click_link "Change my login details"
+
+        expect(page).to have_field "Email", with: "tester@consul.dev"
+      end
+
+      scenario "Sign in with a user without a SAML identity keeps the username" do
+        create(:user, username: "tester", email: "tester@consul.dev", password: "My123456")
+        OmniAuth.config.add_mock(:saml, saml_hash_with_verified_email)
+
+        visit new_user_session_path
+        click_button "Sign in with SAML"
+
+        expect(page).to have_content "Successfully identified as Saml"
+        expect_to_be_signed_in
+
+        within("#notice") { click_button "Close" }
+        click_link "My account"
+
+        expect(page).to have_field "Username", with: "tester"
+
+        click_link "Change my login details"
+
+        expect(page).to have_field "Email", with: "tester@consul.dev"
+      end
+    end
   end
 
   scenario "Sign out" do
