@@ -26,11 +26,10 @@ module Types
       end
     end
 
-    def absolute_url(path)
-      return "" if path.blank?
+    def attachment_url_for(model)
+      return "" if model.blank?
 
-      request = context[:controller].request
-      URI.join("#{request.protocol}#{request.host_with_port}", path)
+      context[:controller].url_for(model.attachment)
     end
   end
 end

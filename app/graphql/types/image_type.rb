@@ -6,14 +6,11 @@ module Types
     field :title, String, null: true
     field :url, String, null: true
 
-    IMAGE_SIZES.each do |size|
-      field_name = "image_url_#{size}".to_sym
-      field field_name, String, null: true
-      define_method(field_name) { absolute_url(object&.attachment&.url(size)) }
-    end
+    # DEPRECATED api field used by SmartVillage App
+    field :image_url_large, String, null: true, deprecation_reason: "Use 'url' field instead."
 
     def url
-      absolute_url(object.attachment.url)
+      attachment_url_for(object)
     end
   end
 end
