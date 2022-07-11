@@ -100,6 +100,7 @@ class Setting < ApplicationRecord
         "feature.remote_census": nil,
         "feature.valuation_comment_notification": true,
         "feature.graphql_api": true,
+        "feature.saml_login": false,
         "feature.sdg": true,
         "feature.machine_learning": false,
         "feature.remove_investments_supports": true,

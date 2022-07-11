@@ -281,6 +281,10 @@ en:
     info:
       sign_in: "Sign in with:"
       sign_up: "Sign up with:"
+    saml:
+      sign_in: Sign in with SAML
+      sign_up: Sign up with SAML
+      name: SAML
     or_fill: "Or fill the following form:"
   proposals:
     create:

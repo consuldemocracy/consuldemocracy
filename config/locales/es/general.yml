@@ -278,6 +278,10 @@ es:
       sign_in: Entra con Twitter
       sign_up: Regístrate con Twitter
       name: Twitter
+    saml:
+      sign_in: Entra con SAML
+      sign_up: Regístrate con SAML
+      name: SAML
     info:
       sign_in: "Entra con:"
       sign_up: "Regístrate con:"

@@ -265,6 +265,10 @@ Devise.setup do |config|
                   strategy_class: OmniAuth::Strategies::Wordpress,
                   client_options: { site: Rails.application.secrets.wordpress_oauth2_site },
                   setup: OmniauthTenantSetup.wordpress_oauth2
+  config.omniauth :saml,
+                  sp_entity_id: Rails.application.secrets.saml_sp_entity_id,
+                  idp_cert: Rails.application.secrets.saml_idp_cert,
+                  idp_sso_service_url: Rails.application.secrets.saml_idp_sso_service_url
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

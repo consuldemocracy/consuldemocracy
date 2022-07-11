@@ -1249,7 +1249,8 @@ table {
 .button.button-twitter,
 .button.button-facebook,
 .button.button-google,
-.button.button-wordpress {
+.button.button-wordpress,
+.button.button-saml {
   color: inherit;
   font-weight: bold;
 
@@ -1355,6 +1356,16 @@ table {
   &:hover,
   &:focus {
     color: #43d854;
+  }
+}
+
+.button.button-saml {
+  @include has-fa-icon(lock, solid);
+  background: #eafee9;
+  border-left: 3px solid #3b9857;
+
+  &::before {
+    color: #3b9857;
   }
 }
 
