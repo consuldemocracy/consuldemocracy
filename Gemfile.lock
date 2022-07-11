@@ -423,6 +423,9 @@ GEM
     omniauth-rails_csrf_protection (1.0.2)
       actionpack (>= 4.2)
       omniauth (~> 2.0)
+    omniauth-saml (2.1.0)
+      omniauth (~> 2.0)
+      ruby-saml (~> 1.12)
     omniauth-twitter (1.4.0)
       omniauth-oauth (~> 1.1)
       rack
@@ -583,6 +586,9 @@ GEM
       rubocop-rspec (~> 3, >= 3.0.1)
     ruby-progressbar (1.13.0)
     ruby-rc4 (0.1.5)
+    ruby-saml (1.15.0)
+      nokogiri (>= 1.13.10)
+      rexml
     ruby-vips (2.2.2)
       ffi (~> 1.12)
       logger
@@ -767,6 +773,7 @@ DEPENDENCIES
   omniauth-facebook (~> 10.0.0)
   omniauth-google-oauth2 (~> 1.2.0)
   omniauth-rails_csrf_protection (~> 1.0.2)
+  omniauth-saml
   omniauth-twitter (~> 1.4.0)
   paranoia (~> 3.0.0)
   pdf-reader (~> 2.14.1)

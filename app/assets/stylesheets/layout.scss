@@ -1370,7 +1370,8 @@ table {
 .button.button-twitter,
 .button.button-facebook,
 .button.button-google,
-.button.button-wordpress {
+.button.button-wordpress,
+.button.button-saml {
   color: inherit;
   font-weight: bold;
 
@@ -1417,6 +1418,52 @@ table {
 
   &::before {
     color: #2f2f33;
+  }
+}
+
+.ssb-telegram {
+  @include has-fa-icon(telegram-plane, brands);
+  background: #08c;
+
+  &:hover,
+  &:focus {
+    color: #40a2d1;
+  }
+}
+
+.ssb-whatsapp_app {
+  @include has-fa-icon(whatsapp, brands);
+  background: #43d854;
+
+  &:hover,
+  &:focus {
+    color: #43d854;
+  }
+}
+
+.button.button-saml {
+  @include has-fa-icon(lock, solid);
+  background: #eafee9;
+  border-left: 3px solid #3b9857;
+
+  &::before {
+    color: #3b9857;
+  }
+}
+
+@include breakpoint(medium) {
+
+  .ssb-telegram,
+  .ssb-whatsapp_app {
+    display: none !important;
+  }
+}
+
+.share-supported {
+  text-align: center;
+
+  .social-share-button {
+    display: inline-block;
   }
 }
 
