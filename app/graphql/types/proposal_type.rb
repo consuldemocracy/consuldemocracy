@@ -47,7 +47,7 @@ module Types
         raise GraphQL::ExecutionError, "currentUserHasVoted requires authentication"
       end
 
-      context[:current_resource].votes.for_proposals([object.id]).first.present?
+      context[:current_resource].votes.find_by(votable_type: "Proposal", votable_id: object.id).present?
     end
   end
 end
