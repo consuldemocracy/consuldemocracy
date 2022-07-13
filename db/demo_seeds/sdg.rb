@@ -21,7 +21,7 @@ section "Creating DEMO SDG homepage cards" do
 
   card.image = Image.create!(imageable: card,
                              title: card.title,
-                             attachment: File.new(Rails.root.join("db", "demo_seeds", "images", "widgets", "decide-which-should-be-the-new-square.jpg")),
+                             attachment: Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "images", "widgets", "decide-which-should-be-the-new-square.jpg")),
                              user_id: 1)
 
   card = Widget::Card.create!(cardable: SDG::Phase.second,
@@ -33,7 +33,7 @@ section "Creating DEMO SDG homepage cards" do
 
   card.image = Image.create!(imageable: card,
                              title: card.title,
-                             attachment: File.new(Rails.root.join("db", "demo_seeds", "images", "polls", "light-of-the-city-1.jpg")),
+                             attachment: Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "images", "polls", "light-of-the-city-1.jpg")),
                              user_id: 1)
 
   card = Widget::Card.create!(cardable: SDG::Phase.third,
@@ -44,7 +44,7 @@ section "Creating DEMO SDG homepage cards" do
 
   card.image = Image.create!(imageable: card,
                              title: card.title,
-                             attachment: File.new(Rails.root.join("db", "demo_seeds", "images", "proposals", "strategic-plan-for-a-100-green-city.jpg")),
+                             attachment: Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "images", "proposals", "strategic-plan-for-a-100-green-city.jpg")),
                              user_id: 1)
 
 end
