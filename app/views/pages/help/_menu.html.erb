@@ -29,11 +29,13 @@
           class: "button hollow expanded"
         ] if feature?(:polls)
       ),
-      [
-        t("pages.help.menu.processes"),
-        "#processes",
-        class: "button hollow expanded"
-      ],
+      (
+        [
+          t("pages.help.menu.processes"),
+          "#processes",
+          class: "button hollow expanded"
+        ] if feature?(:legislation)
+      ),
       [
         t("pages.help.menu.other"),
         "#other",
