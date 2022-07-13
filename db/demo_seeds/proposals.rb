@@ -30,7 +30,7 @@ Asking the City Council to commit to sign the manifesto \"SUSTAINABLE CITY\" and
                               terms_of_service: "1",
                               created_at: 1.day.ago,
                               published_at: 1.month.ago)
-  image = File.new(Rails.root.join("db", "demo_seeds", "images", "proposals", "strategic-plan-for-a-100-green-city.jpg"))
+  image = Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "images", "proposals", "strategic-plan-for-a-100-green-city.jpg"))
   add_image(image, proposal)
 
   supporters = users.sample(5)
@@ -102,7 +102,7 @@ Asking the City Council to commit to sign the manifesto \"SUSTAINABLE CITY\" and
                               terms_of_service: "1",
                               created_at: 1.week.ago,
                               published_at: 1.week.ago)
-  image = File.new(Rails.root.join("db", "demo_seeds", "images", "proposals", "the-right-to-play-for-a-more-child-friendly-city.jpg"))
+  image = Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "images", "proposals", "the-right-to-play-for-a-more-child-friendly-city.jpg"))
   add_image(image, proposal)
 
   supporters = users.sample(4)
@@ -157,7 +157,7 @@ Asking the City Council to commit to sign the manifesto \"SUSTAINABLE CITY\" and
                               terms_of_service: "1",
                               created_at: 1.month.ago,
                               published_at: 1.month.ago)
-  image = File.new(Rails.root.join("db", "demo_seeds", "images", "proposals", "change-the-city-s-public-transport-ticket-for-easier-transfers.jpg"))
+  image = Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "images", "proposals", "change-the-city-s-public-transport-ticket-for-easier-transfers.jpg"))
   add_image(image, proposal)
 
   supporters = users.sample(3)
