@@ -15,7 +15,7 @@ section "Creating DEMO polls" do
   Image.create!(
     imageable: poll,
     title: poll.name,
-    attachment: File.new(Rails.root.join("db", "demo_seeds", "images", "widgets", "decide-which-should-be-the-new-square.jpg")),
+    attachment: Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "images", "widgets", "decide-which-should-be-the-new-square.jpg")),
     user: User.first
   )
 
@@ -58,7 +58,7 @@ section "Creating DEMO polls" do
   answer = question.question_answers.create!(title: "Light of the City",
                                              description: "<p>'Light of the City' responds to the will of the citizens to create a centrality in the district, through a new public space: the civic square. The proposal must respond to very different situations from the most technical point of view: topography, roads, accessibility...even the most social. For this reason, 'Light of the City' is understood as an integrator, an element in which to converge. Urban integrator: the new square is the point of connection of the great green extension of the park with the most consolidated and dense part of the district. In addition to the opportunity to continue an important point of public transport connection. Social integrator: the identity of a neighborhood is nourished by the neighborhood association and the sense of belonging to a place. The social diversity present in the district needs a place like the new civic square to integrate all the neighbors, so that they recognize it and appropriate it in a natural and open way. The mixture will exponentially enrich the quality of the public space. Integrator of uses: due to the great dimension of the square, it is necessary a simple strategy that is able to give answer to the different uses required by the neighbors. For this reason, program bands are used that will allow easy understanding of the space for all users and is, in the same way, another gesture towards the integration of different situations in the same place.</p>\r\n",
                                              given_order: 1)
-  document = File.new(Rails.root.join("db", "demo_seeds", "documents", "polls", "light-of-the-city.pdf"))
+  document = Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "documents", "polls", "light-of-the-city.pdf"))
   answer.documents.create!(title: "Project report", attachment: document, user_id: 1)
   answer.videos.create!(title: answer.title, url: "https://www.youtube.com/watch?v=48SqdGXukbg")
   users.first(6).each do |user|
@@ -70,7 +70,7 @@ section "Creating DEMO polls" do
   3.times do |number|
     answer.images.create!(
       title: answer.title,
-      attachment: File.new(Rails.root.join("db", "demo_seeds", "images", "polls", "light-of-the-city-#{number + 1}.jpg")),
+      attachment: Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "images", "polls", "light-of-the-city-#{number + 1}.jpg")),
       user: User.first
     )
   end
@@ -78,13 +78,13 @@ section "Creating DEMO polls" do
   answer = question.question_answers.create!(title: "Square with History",
                                              description: "<p>The identification of an urban image in an area must be worked on, reading pre-existences and placing new elements that endow it with character. Citizens must identify these urban elements as their own in the civic square. The project tries to bring together the needs of a population and its relationship with the city. A social reference of appropriation of public space. An attempt is made to set up a meeting place and enjoy the district's own activities, increasing urban quality, especially the network of bordering spaces. The bases are raised to achieve over time a new area of centrality through the realization of a 'square equipped' that one of the most important milestones of use of the district. This is where the importance of degenerating activity in the square lies, taking advantage of the efficient value of the itineraries that run through it and activating it through the introduction of equipment needs in the neighbourhood. Facilities are established to make up the square. This enclosure is configured by means of the introduction of program in the square: Market, sport and therapeutic Swimming pools, polyvalent Rooms, Symphonic Room and classrooms of music and dance. The proposal tries to solve the problems of connection of the square and to give continuity to the accessible pedestrian itineraries necessary to be able to cover the square in all its fullness. This is achieved by modifying the natural height of the terrain taking as a premise that the accessible natural pass is the fastest route. Consideration will be given to aspects that consider the conservation of energy and natural resources, the reuse of those resources, the management of the life cycle of the materials and components used and considerations relating to the quality of the building.</p>\r\n",
                                            given_order: 2)
-  document = File.new(Rails.root.join("db", "demo_seeds", "documents", "polls", "square-with-history.pdf"))
+  document = Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "documents", "polls", "square-with-history.pdf"))
   answer.documents.create!(title: "Project report", attachment: document, user_id: 1)
 
   3.times do |number|
     answer.images.create!(
       title: answer.title,
-      attachment: File.new(Rails.root.join("db", "demo_seeds", "images", "polls", "square-with-history-#{number + 1}.jpg")),
+      attachment: Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "images", "polls", "square-with-history-#{number + 1}.jpg")),
       user: User.first
     )
   end
