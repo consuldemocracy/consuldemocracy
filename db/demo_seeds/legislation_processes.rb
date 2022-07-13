@@ -12,10 +12,10 @@ section "Creating DEMO collaborative legislation" do
                                          published: true,
                                          created_at: 1.week.ago)
 
-  document = File.new(Rails.root.join("db", "demo_seeds", "documents", "legislation", "processes", "air-quality-regulation.pdf"))
+  document = Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "documents", "legislation", "processes", "air-quality-regulation.pdf"))
   process.documents.create!(title: "Air quality regulation", attachment: document, user_id: 1)
 
-  document = File.new(Rails.root.join("db", "demo_seeds", "documents", "legislation", "processes", "pollution-information-report.pdf"))
+  document = Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "documents", "legislation", "processes", "pollution-information-report.pdf"))
   process.documents.create!(title: "Pollution information report", attachment: document, user_id: 1)
 
   question = process.questions.create!(title: "Do you think that restricting the access of private vehicles to certain areas of your district can improve pollution, noise levels and generally improve the quality of public space?\r\n",

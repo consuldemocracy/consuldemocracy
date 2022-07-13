@@ -12,7 +12,7 @@ section "Creating DEMO homepage widgets" do
 
   card.image = Image.create!(imageable: card,
                              title: card.title,
-                             attachment: File.new(Rails.root.join("db", "demo_seeds", "images", "widgets", "homepage-card.jpg")),
+                             attachment: Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "images", "widgets", "homepage-card.jpg")),
                              user_id: 1)
 
   card = Widget::Card.create!(link_url: "/legislation/processes/2/draft_versions/1",
@@ -27,7 +27,7 @@ section "Creating DEMO homepage widgets" do
 
   card.image = Image.create!(imageable: card,
                              title: card.title,
-                             attachment: File.new(Rails.root.join("db", "demo_seeds", "images", "widgets", "comment-the-animal-protection-ordinance.jpg")),
+                             attachment: Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "images", "widgets", "comment-the-animal-protection-ordinance.jpg")),
                              user_id: 1)
 
   card = Widget::Card.create!(link_url: "/polls/refurbishment-of-the-north-square",
@@ -42,7 +42,7 @@ section "Creating DEMO homepage widgets" do
 
   card.image = Image.create!(imageable: card,
                              title: card.title,
-                             attachment: File.new(Rails.root.join("db", "demo_seeds", "images", "widgets", "decide-which-should-be-the-new-square.jpg")),
+                             attachment: Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "images", "widgets", "decide-which-should-be-the-new-square.jpg")),
                              user_id: 1)
 
   Widget::Feed.create!(kind: "proposals",
