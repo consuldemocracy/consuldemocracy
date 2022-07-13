@@ -33,7 +33,7 @@ section "Creating DEMO Participatory Budgets" do
                               author: users.sample,
                               terms_of_service: "1")
 
-  image = File.new(Rails.root.join("db", "demo_seeds", "images", "investments", "canine-parks-in-each-district.jpg"))
+  image = Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "images", "investments", "canine-parks-in-each-district.jpg"))
   add_image(image, Budget::Investment.last)
 
   heading.investments.create!(title: "Financial aid to guarantee basic food supply",
@@ -80,7 +80,7 @@ section "Creating DEMO Participatory Budgets" do
                               author: users.sample,
                               terms_of_service: "1")
 
-  image = File.new(Rails.root.join("db", "demo_seeds", "images", "investments", "the-boulevard-of-art.jpg"))
+  image = Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "images", "investments", "the-boulevard-of-art.jpg"))
   add_image(image, Budget::Investment.last)
 
   heading.investments.create!(title: "Shade trees in squares",
@@ -136,7 +136,7 @@ section "Creating DEMO Participatory Budgets" do
                               author: users.sample,
                               terms_of_service: "1")
 
-  image = File.new(Rails.root.join("db", "demo_seeds", "images", "investments", "cinematheque-for-the-district.jpg"))
+  image = Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "images", "investments", "cinematheque-for-the-district.jpg"))
   add_image(image, Budget::Investment.last)
 
   heading.investments.create!(title: "Pedestrianization of streets with narrow and impracticable sidewalks",
@@ -171,7 +171,7 @@ section "Creating DEMO Participatory Budgets" do
                               author: users.sample,
                               terms_of_service: "1")
 
-  image = File.new(Rails.root.join("db", "demo_seeds", "images", "investments", "change-all-lighting-to-leds.jpg"))
+  image = Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "images", "investments", "change-all-lighting-to-leds.jpg"))
   add_image(image, Budget::Investment.last)
 
   heading.investments.create!(title: "Musical equipment for the District's public schools",
@@ -216,7 +216,7 @@ section "Creating DEMO Participatory Budgets" do
                               author: users.sample,
                               terms_of_service: "1")
 
-  image = File.new(Rails.root.join("db", "demo_seeds", "images", "investments", "district-international-blues-festival.jpg"))
+  image = Rack::Test::UploadedFile.new(Rails.root.join("db", "demo_seeds", "images", "investments", "district-international-blues-festival.jpg"))
   add_image(image, Budget::Investment.last)
 
   heading.investments.create!(title: "Outdoor Dancefloors",
