@@ -9,7 +9,9 @@
 
       <h1><%= @poll.name %></h1>
 
-      <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(@poll.summary) %>
+      <div class="margin-bottom">
+        <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize(@poll.summary) %>
+      </div>
 
       <% if @poll.geozones.any? %>
         <ul class="margin-top tags">
