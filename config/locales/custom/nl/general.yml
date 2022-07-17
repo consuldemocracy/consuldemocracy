@@ -15,7 +15,6 @@ nl:
       public_activity_label: "Mijn activiteit is publiek"
       user_permission_proposal: "Initiatieven indienen"
       user_permission_support_proposal: "Reageren op peilingen"
-      user_permission_verify_info: "* Alleen voor inwoners in het gebied."
       username_label: "Gebruikersnaam"
       organization_responsible_name_placeholder: "Vertegenwoordiger van de organisatie of groep"
   debates:

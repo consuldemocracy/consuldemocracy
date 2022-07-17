@@ -21,6 +21,6 @@ class Map < ApplicationRecord
   end
 
   def self.default
-    find_or_create_by(budget_id: 0)
+    find_or_create_by!(budget_id: 0)
   end
 end

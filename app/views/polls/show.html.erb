@@ -90,7 +90,7 @@
 
                 <% answer.documents.each do |document| %>
                     <%= link_to document.title,
-                                document.attachment.url,
+                                document.attachment,
                                 target: "_blank",
                                 rel: "nofollow" %><br>
                 <% end %>

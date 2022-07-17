@@ -6,13 +6,6 @@
           <%= image_tag(image_path_for("logo_footer.png"), alt: "") %>
         </h1>
       <% end %>
-
-      <p class="info">
-        <%= sanitize(content_block("footer", I18n.locale)) %>
-        <%= sanitize(t("layouts.footer.description",
-            open_source: link_to(t("layouts.footer.open_source"), t("layouts.footer.open_source_url"), target: "blank", rel: "nofollow"),
-            consul:  link_to(t("layouts.footer.consul"), t("layouts.footer.consul_url"), target: "blank", rel: "nofollow"))) %>
-      </p>
     </div>
   </div>
 
@@ -33,5 +26,15 @@
     </div>
 
     <%= render Layout::SocialComponent.new %>
+  </div>
+
+  <div class="row">
+    <div class="small-12 column">
+      <p class="info">
+        <%= sanitize(t("layouts.footer.description",
+            open_source: link_to(t("layouts.footer.open_source"), t("layouts.footer.open_source_url"), target: "blank", rel: "nofollow"),
+            consul:  link_to(t("layouts.footer.consul"), t("layouts.footer.consul_url"), target: "blank", rel: "nofollow"))) %>
+      </p>
+    </div>
   </div>
 </footer>
