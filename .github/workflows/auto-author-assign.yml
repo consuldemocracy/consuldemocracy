@@ -1,0 +1,16 @@
+name: Assignment management
+
+on:
+  pull_request_target:
+    types: [opened, reopened]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  assign-author:
+    name: Auto-assign pull request author
+    if: github.repository_owner == 'consul'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: toshimaru/auto-author-assign@v1.4.0

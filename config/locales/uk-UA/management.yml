@@ -64,11 +64,6 @@ uk-UA:
       users: Управління користувачами
       user_invites: Надіслати запрошення
       select_user: Обрати користувача
-    permissions:
-      create_proposals: Подати пропозиції
-      debates: Взяти участь в обговоренні
-      support_proposals: Підтримати пропозиції
-      vote_proposals: Проголосувати за пропозиції
     print:
       proposals_info: Створити пропозицію на http://url.consul
       proposals_title: "Пропозиції:"

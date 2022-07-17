@@ -40,8 +40,13 @@ module Admin::BudgetPhasesActions
     end
 
     def budget_phase_params
+      params.require(:budget_phase).permit(allowed_params)
+    end
+
+    def allowed_params
       valid_attributes = [:starts_at, :ends_at, :enabled,
                           image_attributes: image_attributes]
-      params.require(:budget_phase).permit(*valid_attributes, translation_params(Budget::Phase))
+
+      [*valid_attributes, translation_params(Budget::Phase)]
     end
 end

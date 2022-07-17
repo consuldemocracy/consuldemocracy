@@ -160,7 +160,7 @@ describe "Ballots" do
         end
 
         within("#budget_investment_#{investment.id}") do
-          find(".remove a").click
+          click_button "Remove vote"
         end
 
         expect(page).to have_css("#amount_spent", text: "€0")
@@ -192,7 +192,7 @@ describe "Ballots" do
         end
 
         within(".budget-investment", text: "More bridges") do
-          click_link "Remove vote"
+          click_button "Remove vote"
         end
 
         within("#sidebar") do
@@ -308,8 +308,8 @@ describe "Ballots" do
       visit budget_investments_path(budget, heading_id: california.id)
 
       within(".budget-investment", text: "Early ShakeAlert") do
-        find(".remove a").click
-        expect(page).to have_link "Vote"
+        click_button "Remove vote"
+        expect(page).to have_button "Vote"
       end
 
       visit budget_investments_path(budget, heading_id: new_york.id)
@@ -469,10 +469,10 @@ describe "Ballots" do
       visit budget_investments_path(budget, heading_id: new_york.id)
 
       within("#budget_investment_#{investment.id}") do
-        hover_over_ballot
+        click_button "Vote"
 
         expect(page).to have_content "You must sign in or sign up to continue."
-        expect(page).to have_selector(".in-favor a", obscured: true)
+        expect(page).not_to have_button "Vote", disabled: :all
       end
     end
 
@@ -484,10 +484,10 @@ describe "Ballots" do
       visit budget_investments_path(budget, heading_id: new_york.id)
 
       within("#budget_investment_#{investment.id}") do
-        hover_over_ballot
+        click_button "Vote"
 
         expect(page).to have_content "Only verified users can vote on investments"
-        expect(page).to have_selector(".in-favor a", obscured: true)
+        expect(page).not_to have_button "Vote", disabled: :all
       end
     end
 
@@ -499,9 +499,10 @@ describe "Ballots" do
       visit budget_investments_path(budget, heading_id: new_york.id)
 
       within("#budget_investment_#{investment.id}") do
-        hover_over_ballot
+        click_button "Vote"
 
-        expect_message_organizations_cannot_vote
+        expect(page).to have_content "Organization"
+        expect(page).not_to have_button "Vote", disabled: :all
       end
     end
 
@@ -535,10 +536,10 @@ describe "Ballots" do
       visit budget_investments_path(budget, heading: new_york)
 
       within("#budget_investment_#{bi2.id}") do
-        hover_over_ballot
+        click_button "Vote"
 
         expect(page).to have_content("already voted a different heading")
-        expect(page).to have_selector(".in-favor a", obscured: true)
+        expect(page).not_to have_button "Vote", disabled: :all
       end
     end
 
@@ -551,10 +552,10 @@ describe "Ballots" do
       visit budget_investments_path(budget, heading_id: california.id)
 
       within("#budget_investment_#{bi2.id}") do
-        hover_over_ballot
+        click_button "Vote"
 
         expect(page).to have_content("You have already assigned the available budget")
-        expect(page).to have_selector(".in-favor a", obscured: true)
+        expect(page).not_to have_button "Vote", disabled: :all
       end
     end
 
@@ -565,20 +566,13 @@ describe "Ballots" do
       login_as(user)
       visit budget_investments_path(budget, heading_id: california.id)
 
-      within(".budget-investment", text: "Build replicants") do
-        hover_over_ballot
-
-        expect(page).not_to have_content("You have already assigned the available budget")
-        expect(page).to have_selector(".in-favor a", obscured: false)
-      end
-
       add_to_ballot("Build replicants")
 
       within(".budget-investment", text: "Build terminators") do
-        hover_over_ballot
+        click_button "Vote"
 
         expect(page).to have_content("You have already assigned the available budget")
-        expect(page).to have_selector(".in-favor a", obscured: true)
+        expect(page).not_to have_button "Vote", disabled: :all
       end
     end
 
@@ -591,22 +585,23 @@ describe "Ballots" do
       visit budget_investments_path(budget, heading_id: california.id)
 
       within("#budget_investment_#{bi2.id}") do
-        hover_over_ballot
+        click_button "Vote"
 
         expect(page).to have_content("You have already assigned the available budget")
-        expect(page).to have_selector(".in-favor a", obscured: true)
+        expect(page).not_to have_button "Vote", disabled: :all
+        expect(page).not_to have_button "Remove vote"
       end
 
       within("#budget_investment_#{bi1.id}") do
-        find(".remove a").click
-        expect(page).to have_css ".add a"
+        click_button "Remove vote"
+        expect(page).to have_button "Vote"
       end
 
       within("#budget_investment_#{bi2.id}") do
-        hover_over_ballot
+        click_button "Vote"
 
         expect(page).not_to have_content("You have already assigned the available budget")
-        expect(page).to have_selector(".in-favor a", obscured: false)
+        expect(page).to have_button "Remove vote"
       end
     end
 
@@ -619,10 +614,10 @@ describe "Ballots" do
       visit budget_investments_path(budget, heading_id: california.id)
 
       within("#budget_investment_#{bi2.id}") do
-        hover_over_ballot
+        click_button "Vote"
 
         expect(page).to have_content("You have already assigned the available budget")
-        expect(page).to have_selector(".in-favor a", obscured: true)
+        expect(page).not_to have_button "Vote", disabled: :all
       end
 
       within("#budget_investment_#{bi1.id}_sidebar") do
@@ -632,10 +627,10 @@ describe "Ballots" do
       expect(page).not_to have_css "#budget_investment_#{bi1.id}_sidebar"
 
       within("#budget_investment_#{bi2.id}") do
-        hover_over_ballot
+        click_button "Vote"
 
         expect(page).not_to have_content("You have already assigned the available budget")
-        expect(page).to have_selector(".in-favor a", obscured: false)
+        expect(page).to have_button "Remove vote"
       end
     end
 
@@ -646,7 +641,7 @@ describe "Ballots" do
       login_as user
       visit budget_investments_path(budget, heading_id: new_york)
 
-      expect(page).to have_css(".in-favor a")
+      expect(page).to have_button "Vote"
 
       in_browser(:admin) do
         login_as admin_user
@@ -662,15 +657,15 @@ describe "Ballots" do
       end
 
       within("#budget_investment_#{investment1.id}") do
-        find(".in-favor a").click
+        click_button "Vote"
 
+        expect(page).to have_css ".participation-not-allowed", visible: :hidden
         expect(page).not_to have_content "Remove"
-        expect(page).not_to have_selector(".participation-not-allowed")
 
-        hover_over_ballot
+        click_button "Vote"
 
-        expect(page).to have_selector(".participation-not-allowed")
-        expect(page).to have_selector(".in-favor a", obscured: true)
+        expect(page).to have_css ".participation-not-allowed"
+        expect(page).not_to have_button "Vote", disabled: :all
       end
     end
 

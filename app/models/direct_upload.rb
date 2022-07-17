@@ -34,7 +34,7 @@ class DirectUpload
   end
 
   def save_attachment
-    @relation.attachment.save
+    @relation.attachment.blob.save!
   end
 
   def persisted?
@@ -53,7 +53,7 @@ class DirectUpload
 
     def relation_attributtes
       {
-        paperclip_attachment: @attachment,
+        attachment: @attachment,
         cached_attachment: @cached_attachment,
         user: @user
       }

@@ -170,6 +170,11 @@
     @include breakpoint(medium) {
       width: 75%;
     }
+
+    label {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }
 

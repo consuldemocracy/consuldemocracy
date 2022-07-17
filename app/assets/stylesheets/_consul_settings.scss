@@ -6,6 +6,7 @@
 //  1. Foundation settings overrides
 //  2. CONSUL variables
 //  3. Foundation overrides depending on CONSUL variables
+//  4. Foundation fixes
 
 // 1. Foundation settings overrides
 // ---------------------------------
@@ -158,3 +159,14 @@ $closebutton-color: $text !default;
 $has-tip-cursor: cursor;
 $has-tip-border-bottom: 0;
 $tooltip-background-color: $brand !default;
+
+// 4. Foundation fixes
+// -------------------
+
+$alert-color: null !default;
+$primary-color: null !default;
+$secondary-color: null !default;
+$success-color: null !default;
+$warning-color: null !default;
+$-zf-bp-value: null !default;
+$-zf-size: null !default;

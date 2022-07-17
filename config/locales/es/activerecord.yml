@@ -160,8 +160,6 @@ es:
         voting_style: "Estilo de la votación final"
         voting_style_knapsack: "Bolsa de dinero"
         voting_style_approval: "Por aprobación"
-        main_button_text: "Texto del botón"
-        main_button_url: "El botón te lleva a (añade un enlace)"
         hide_money: "Ocultar la cantidad de dinero para este presupuesto"
       budget/translation:
         main_link_text: "Texto del enlace"
@@ -278,7 +276,7 @@ es:
         password: "Contraseña"
         current_password: "Contraseña actual"
         email_digest: "Recibir resumen de notificaciones sobre propuestas"
-        email_on_comment: "Recibir un email cuando alguien comenta en mis propuestas o debates"
+        email_on_comment: "Recibir un email cuando alguien comenta en mis contenidos"
         email_on_comment_reply: "Recibir un email cuando alguien contesta a mis comentarios"
         email_on_direct_message: "Recibir emails con mensajes privados"
         newsletter: "Recibir emails con información interesante sobre la web"

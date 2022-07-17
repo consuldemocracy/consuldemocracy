@@ -1,7 +1,6 @@
 class Budgets::Investments::VotesComponent < ApplicationComponent
   attr_reader :investment
-  delegate :namespace, :current_user, :voted_for?, :image_absolute_url,
-    :link_to_verify_account, :link_to_signin, :link_to_signup, to: :helpers
+  delegate :namespace, :current_user, :image_absolute_url, :link_to_verify_account, to: :helpers
 
   def initialize(investment)
     @investment = investment
@@ -58,5 +57,14 @@ class Budgets::Investments::VotesComponent < ApplicationComponent
 
     def remove_support_aria_label
       t("budgets.investments.votes.remove_support_label", investment: investment.title)
+    end
+
+    def cannot_vote_text
+      if reason.present? && !user_voted_for?
+        t("votes.budget_investments.#{reason}",
+          count: investment.group.max_votable_headings,
+          verify_account: link_to_verify_account,
+          supported_headings: (current_user && current_user.headings_voted_within_group(investment.group).map(&:name).sort.to_sentence))
+      end
     end
 end

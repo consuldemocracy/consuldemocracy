@@ -29,6 +29,7 @@ cs:
             other: "Hlasovat můžete až pro <span>%{count}</span> projekty"
         no_balloted_group_yet: "Dosud jste o této skupině nehlasovali, hlasujte!"
         remove: Odstranit hlas
+        remove_label: "Odebrat svou podporu k %{investment}"
         voted:
           one: "Hlasovali jste pro <span>jednu</span> investici."
           few: "Hlasovali jste pro <span>%{count}</span>investic."
@@ -38,9 +39,7 @@ cs:
         voted_info_2: "Hlas však můžete kdykoli změnit, dokud nebude tato fáze uzavřena."
         zero: Nehlasoval jste pro žádný investiční projekt.
       reasons_for_not_balloting:
-        not_logged_in: Pro pokračování je nutné %{signin} nebo %{signup}.
         not_verified: O investicích mohou hlasovat pouze ověření uživatelé; %{verify_account}.
-        organization: Organizacím není dovoleno hlasovat
         not_selected: Nevybrané investiční projekty nelze podpořit
         not_enough_money: "Již jste rozdělili dostupný rozpočet. <br> <small>Pamatujte, že můžete kdykoli %{change_ballot}</small>"
         no_ballots_allowed: Fáze výběru byla ukončena
@@ -84,6 +83,7 @@ cs:
       form:
         title: "Přidat investiční projekt"
         subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
         tag_category_label: "Kategorie"
         tags_instructions: "Štítek tohoto návrhu. Můžete si vybrat z kategorií nebo přidat vlastní"
         tags_label: Štítky
@@ -100,11 +100,6 @@ cs:
           button: Vyhledat
           placeholder: Vyhledat investiční projekty...
           title: Vyhledat
-        search_results:
-          one: " obsahující výraz <strong> '%{search_term}' </strong>"
-          few: " obsahující výraz <strong> '%{search_term}' </strong>"
-          many: " obsahující výraz <strong> '%{search_term}' </strong>"
-          other: " obsahující výraz <strong> '%{search_term}' </strong>"
         sidebar:
           my_ballot: Moje hlasování
           voted_info:
@@ -129,7 +124,7 @@ cs:
           verified_only: "Pro vytvoření nové položky participativního rozpočtu %{verify}."
           create: "Přidat investiční projekt"
           not_logged_in: "Pro vytvoření nové položky participativního rozpočtu musíte %{sign_in} nebo%{sign_up}."
-        filter: "Filtrování pprojektů podle"
+        filter: "Filtrování projektů podle"
         filters:
           not_unfeasible: "Není neproveditelné"
           selected: "Vybrané"
@@ -165,6 +160,7 @@ cs:
       wrong_price_format: Pouze celá čísla
       investment:
         add: Hlasujte
+        add_label: "Hlasuji pro %{investment}"
         already_added: Tento investiční projekt jste již přidali
         support_title: Podpořit tento projekt
         supports:

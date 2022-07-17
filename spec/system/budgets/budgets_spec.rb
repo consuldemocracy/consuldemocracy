@@ -200,8 +200,10 @@ describe "Budgets" do
       visit budgets_path
 
       within("#budget_info") do
-        expect(page).not_to have_link "#{heading.name} €1,000,000", normalize_ws: true
-        expect(page).to have_content "#{heading.name} €1,000,000", normalize_ws: true
+        #expect(page).not_to have_link "#{heading.name} €1,000,000", normalize_ws: true
+        #expect(page).to have_content "#{heading.name} €1,000,000", normalize_ws: true
+        expect(page).not_to have_link heading.name
+        expect(page).to have_content "#{heading.name}\n€1,000,000"
 
         expect(page).not_to have_link("List of all investment projects")
         expect(page).not_to have_link("List of all unfeasible investment projects")
@@ -221,8 +223,6 @@ describe "Budgets" do
       within("#budget_info") do
         expect(page).not_to have_link heading.name
         expect(page).to have_content "#{heading.name}\n€1,000,000"
-
-        expect(page).to have_css("div.map")
       end
     end
 
@@ -472,7 +472,7 @@ describe "Budgets" do
         }
       end
 
-      allow_any_instance_of(Budgets::BudgetComponent).to receive(:coordinates).and_return(coordinates)
+      allow_any_instance_of(Budgets::MapComponent).to receive(:coordinates).and_return(coordinates)
 
       visit budgets_path
 
@@ -524,26 +524,6 @@ describe "Budgets" do
       expect(page).to have_link "See results"
     end
 
-    scenario "Show investments list" do
-      budget = create(:budget, phase: "balloting")
-      group = create(:budget_group, budget: budget)
-      heading = create(:budget_heading, group: group)
-
-      create_list(:budget_investment, 3, :selected, heading: heading, price: 999)
-
-      visit budget_path(budget)
-
-      within(".investments-list") do
-        expect(page).to have_content "List of investments"
-        expect(page).to have_content "PRICE", count: 3
-      end
-
-      expect(page).to have_link "See all investments",
-                                href: budget_investments_path(budget,
-                                                              heading_id: budget.headings.first.id,
-                                                              filter: "selected")
-    end
-
     scenario "Show investments list when budget has multiple headings" do
       budget = create(:budget, phase: "accepting")
       group = create(:budget_group, budget: budget)
@@ -582,33 +562,15 @@ describe "Budgets" do
       visit budget_path(budget)
       expect(page).not_to have_link "See all investments"
 
-      %w[accepting reviewing selecting valuating].each do |phase_name|
+      %w[accepting reviewing selecting valuating publishing_prices
+         balloting reviewing_ballots finished].each do |phase_name|
         budget.update!(phase: phase_name)
 
         visit budget_path(budget)
         expect(page).to have_link "See all investments",
                                   href: budget_investments_path(budget,
-                                                                heading_id: budget.headings.first.id,
-                                                                filter: "not_unfeasible")
+                                                                heading_id: budget.headings.first.id)
       end
-
-      %w[publishing_prices balloting reviewing_ballots].each do |phase_name|
-        budget.update!(phase: phase_name)
-
-        visit budget_path(budget)
-        expect(page).to have_link "See all investments",
-                                  href: budget_investments_path(budget,
-                                                                heading_id: budget.headings.first.id,
-                                                                filter: "selected")
-      end
-
-      budget.update!(phase: "finished")
-
-      visit budget_path(budget)
-      expect(page).to have_link "See all investments",
-                                  href: budget_investments_path(budget,
-                                                                heading_id: budget.headings.first.id,
-                                                                filter: "winners")
     end
 
     scenario "Show investments list" do
@@ -770,6 +732,15 @@ describe "Budgets" do
       visit budget_path(budget)
 
       expect(page).to have_content "So far you've supported 0 projects."
+    end
+
+    scenario "Main link takes you to the defined URL" do
+      budget.update!(main_link_text: "See other budgets!", main_link_url: budgets_path)
+
+      visit budget_path(budget)
+      click_link "See other budgets!"
+
+      expect(page).to have_current_path budgets_path
     end
   end
 

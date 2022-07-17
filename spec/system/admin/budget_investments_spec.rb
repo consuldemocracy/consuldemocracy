@@ -1275,19 +1275,17 @@ describe "Admin budget investments", :admin do
       expect(find("#js-investment-report-alert")).to be_checked
     end
 
-    # The feature tested in this scenario works as expected but some underlying reason
-    # we're not aware of makes it fail at random
-    xscenario "Shows alert with unfeasible status when 'Valuation finished' is checked" do
+    scenario "Shows alert with unfeasible status when 'Valuation finished' is checked" do
       budget_investment = create(:budget_investment, :unfeasible)
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
       click_link "Edit dossier"
 
-      expect(page).to have_content("Valuation finished")
-      valuation = find_field("budget_investment[valuation_finished]")
+      expect(page).to have_field "Valuation finished", checked: false
+
       accept_confirm { check("Valuation finished") }
 
-      expect(valuation).to be_checked
+      expect(page).to have_field "Valuation finished", checked: true
     end
 
     scenario "Undoes check in 'Valuation finished' if user clicks 'cancel' on alert" do

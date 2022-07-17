@@ -1,10 +1,10 @@
-<td style="padding-bottom: 20px; padding-left: 10px;">
+<td style="<%= css_for_mailer_content %>">
   <h1 style="<%= css_for_mailer_heading %>">
     <%= @direct_message.title %>
   </h1>
 
   <div style="<%= css_for_mailer_text %>">
-    <%= simple_format sanitize_and_auto_link(@direct_message.body), {}, sanitize: false %>
+    <%= mailer_simple_format(@direct_message.body) %>
   </div>
 
   <table style="width: 100%; border-top: 1px solid #DEE0E3; margin-top: 60px;">
@@ -20,17 +20,15 @@
     </tbody>
   </table>
 
-  <table style="width: 100%;">
-    <tbody>
-      <tr>
-        <td style="padding-left: 10px;">
-          <p style="<%= css_for_mailer_text %>">
-            <%= sanitize(t("mailers.direct_message_for_receiver.unsubscribe",
-                account: link_to(t("mailers.direct_message_for_receiver.unsubscribe_account"),
-                                account_url, style: css_for_mailer_link))) %>
-          </p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <p style="<%= css_for_mailer_text %>">
+    <%= sanitize(
+      t("mailers.direct_message_for_receiver.unsubscribe_text",
+        notifications: link_to(
+          t("mailers.config.notifications_link"),
+          edit_subscriptions_url(token: @token),
+          style: css_for_mailer_link)
+      ),
+      attributes: %w[href style]
+    ) %>
+  </p>
 </td>

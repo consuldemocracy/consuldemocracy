@@ -7,15 +7,13 @@ da:
       new_comment_by: Der er en ny kommentar fra <strong>%{commenter}</strong>
       subject: Nogen har kommenteret på din %{commentable}
       title: Ny kommentar
-    config:
-      manage_email_subscriptions: Afmeld e-mails ved at gå til dine indstillinger
     email_verification:
       click_here_to_verify: dette link
       instructions_2: Denne e-mail vil verificere din konto med <b>%{document_type} %{document_number}</b>. Hvis disse ikke tilhører dig, vær sød ikke at klikke på det tidligere link og ignorere denne e-mail.
       instructions: For at færdiggøre verifikationen af din brugerkonto klik på %{verification_link}.
       subject: Bekræft din e-mail
       thanks: Mange tak.
-      title: Bekræft din konto ved hjælp af følgende link
+      title: "Bekræft din konto ved hjælp af følgende link"
     reply:
       hi: Hej
       new_reply_by: Der er et nyt svar fra <strong>%{commenter}</strong> på din kommentar
@@ -26,17 +24,14 @@ da:
       title: "Notifikationer vedrørende forslag i %{org_name}"
       share: Del forslag
       comment: Skriv en kommentar til forslaget
-      unsubscribe: "Hvis du ikke ønsker at modtage notifikationer om forslag, gå til %{account} og fjern markeringen ved 'Modtag notifikationer'."
-      unsubscribe_account: Min konto
       unfollow: "Besøg dette forslag og stop med at følge det, hvis du ikke ønsker notifikationer."
     direct_message_for_receiver:
       subject: "Du har modtaget en ny privat besked"
       reply: Svar %{sender}
-      unsubscribe: "Hvis du ikke ønsker at modtage direkte beskeder, følg %{account} og fjern markeringen ved 'Modtag e-mails om direkte beskeder'."
-      unsubscribe_account: Min konto
     direct_message_for_sender:
       subject: "Du har sendt en ny privat besked"
-      title: "Du har sendt en ny privat besked til <strong>%{receiver}</strong>:"
+      title: "Du har sendt en ny privat besked"
+      text: "Du har sendt en ny privat besked til <strong>%{receiver}</strong>:"
     user_invite:
       ignore: "Hvis du ikke har anmodet om denne invitation, skal du ikke bekymre dig. Du kan ignorere denne e-mail."
       text: "Tak for din ansøgning til %{org}! Du kan påbegynde din deltagelse om få sekunder, du skal blot udfylde nedenstående formular:"

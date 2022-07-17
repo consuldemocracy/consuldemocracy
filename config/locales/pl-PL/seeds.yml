@@ -36,11 +36,6 @@ pl:
       groups:
         all_city: Całe miasto
         districts: Podział dzielnicy
-      valuator_groups:
-        culture_and_sports: Kultura i sport
-        gender_and_diversity: Polityki dotyczące Płci i Różnorodności
-        urban_development: Zrównoważony Rozwój Obszarów Miejskich
-        equity_and_employment: Sprawiedliwość i Zatrudnienie
       statuses:
         studying_project: Badanie projektu
         bidding: Licytacja

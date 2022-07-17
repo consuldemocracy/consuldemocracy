@@ -12,9 +12,7 @@ oc:
         voted_info_2: "Mas podètz cambiar lo vòstre vòt en quin moment que siá fins que se barre aquela fasa."
         zero: As votat pas encara cap de proposicion d'inversion.
       reasons_for_not_balloting:
-        not_logged_in: As de besonh %{signin} o %{signup}.
         not_verified: Las proposicions d'inversion pòdon solament èsser avaladas per usatgièrs verificats, %{verify_account}.
-        organization: Las associacions pòdon pas avalar
         not_selected: Se pòdon pas votar de proposicions inviables.
         not_enough_money: "Avètz ja assignat lo budgèt disponible.<br><small>Remembratz que podètz %{change_ballot} a quina ora que siá</small>"
         no_ballots_allowed: Lo periòde de votacion es barrat.
@@ -69,9 +67,6 @@ oc:
           button: Cercar
           placeholder: Cercar de proposicions d'inversion...
           title: Cercar
-        search_results:
-          one: " que conten lo tèrme <strong>'%{search_term}'</strong>"
-          other: " que conten lo tèrme <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Los mieus vòts
           voted_info:

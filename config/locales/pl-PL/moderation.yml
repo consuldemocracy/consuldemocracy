@@ -3,7 +3,6 @@ pl:
     comments:
       index:
         block_authors: Blokuj autorów
-        confirm: Jesteś pewny/a?
         filter: Filtruj
         filters:
           all: Wszystkie
@@ -24,7 +23,6 @@ pl:
     debates:
       index:
         block_authors: Blokuj autorów
-        confirm: Jesteś pewny/a?
         filter: Filtruj
         filters:
           all: Wszystkie
@@ -51,7 +49,6 @@ pl:
     proposals:
       index:
         block_authors: Blokuj autorów
-        confirm: Jesteś pewny/a?
         filter: Filtruj
         filters:
           all: Wszystkie
@@ -69,7 +66,6 @@ pl:
     budget_investments:
       index:
         block_authors: Blokuj autorów
-        confirm: Jesteś pewny/a?
         filter: Filtruj
         filters:
           all: Wszystkie
@@ -87,7 +83,6 @@ pl:
     proposal_notifications:
       index:
         block_authors: Blokuj autorów
-        confirm: Jesteś pewny/a?
         filter: Filtruj
         filters:
           all: Wszystkie
@@ -104,7 +99,6 @@ pl:
         title: Powiadomienie o wnioskach
     users:
       index:
-        hidden: Zablokowany
         hide: Blokuj
         search_placeholder: e-mail lub nazwa użytkownika
         title: Blokuj użytkowników

@@ -7,8 +7,6 @@ fi:
       recommendations: Suositukset
       title: Tilini
       user_permission_info: Tililläsi voit...
-      user_permission_proposal: Luo uusia ehdotuksia
-      user_permission_support_proposal: Tue ehdotuksia
       verified_account: Tili vahvistettu
       verify_my_account: Vahvista tilini
   application:
@@ -359,15 +357,9 @@ fi:
       see_process: Näytä prosessit
     recommended:
       slide: "Näytä %{title}"
-    verification:
-      i_dont_have_an_account: Minulla ei ole tunnusta
-      i_have_an_account: Minulla on jo tili
-      title: Tilin vahvistus
     welcome:
       title: Osallistu
       user_permission_info: Tililläsi voit...
-      user_permission_proposal: Luo uusia ehdotuksia
-      user_permission_support_proposal: Tue ehdotuksia*
       user_permission_verify_my_account: Vahvista tilini
   invisible_captcha:
     sentence_for_humans: "Jos olet ihminen, ohita tämä kenttä"

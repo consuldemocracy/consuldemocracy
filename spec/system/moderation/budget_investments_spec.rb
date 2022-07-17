@@ -10,7 +10,7 @@ describe "Moderate budget investments" do
     login_as(mod.user)
     visit budget_investment_path(budget, investment)
 
-    accept_confirm { click_link "Hide" }
+    accept_confirm("Are you sure? Hide \"#{investment.title}\"") { click_button "Hide" }
 
     expect(page).to have_css(".faded", count: 2)
 
@@ -23,12 +23,11 @@ describe "Moderate budget investments" do
     login_as(mod.user)
     visit budget_investment_path(budget, investment)
 
-    accept_confirm { click_link "Hide author" }
+    accept_confirm("Are you sure? This will hide the user \"#{investment.author.name}\" and all their contents.") do
+      click_button "Block author"
+    end
 
-    expect(page).to have_current_path(debates_path)
-
-    visit budget_investments_path(budget.id, heading_id: heading.id)
-
+    expect(page).to have_current_path(budget_investments_path(budget))
     expect(page).not_to have_content(investment.title)
   end
 
@@ -39,8 +38,8 @@ describe "Moderate budget investments" do
     visit budget_investment_path(budget, investment)
 
     within "#budget_investment_#{investment.id}" do
-      expect(page).not_to have_link("Hide")
-      expect(page).not_to have_link("Hide author")
+      expect(page).not_to have_button "Hide"
+      expect(page).not_to have_button "Block author"
     end
   end
 
@@ -64,7 +63,9 @@ describe "Moderate budget investments" do
         end
 
         scenario "Hide the investment" do
-          accept_confirm { click_button "Hide budget investments" }
+          accept_confirm("Are you sure? Hide budget investments") do
+            click_button "Hide budget investments"
+          end
 
           expect(page).not_to have_css("#investment_#{investment.id}")
 
@@ -73,12 +74,12 @@ describe "Moderate budget investments" do
           click_button "Search"
 
           within "tr", text: investment.author.name do
-            expect(page).to have_link "Block"
+            expect(page).to have_button "Block"
           end
         end
 
         scenario "Block the author" do
-          accept_confirm { click_button "Block authors" }
+          accept_confirm("Are you sure? Block authors") { click_button "Block authors" }
 
           expect(page).not_to have_css("#investment_#{investment.id}")
 
@@ -124,7 +125,7 @@ describe "Moderate budget investments" do
 
         visit moderation_budget_investments_path(filter: "all", page: "2", order: "created_at")
 
-        accept_confirm { click_button "Mark as viewed" }
+        accept_confirm("Are you sure? Mark as viewed") { click_button "Mark as viewed" }
 
         expect(page).to have_link "Most recent", class: "is-active"
         expect(page).to have_link "Most flagged"

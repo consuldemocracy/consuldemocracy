@@ -64,11 +64,6 @@ oc:
       users: Gestion d’usatgièrs
       user_invites: Enviatz d'invitacions
       select_user: Seleccionar usatgièr
-    permissions:
-      create_proposals: Crear de nòvas proposicions
-      debates: Participar en debats
-      support_proposals: Sosténer de proposicions
-      vote_proposals: Participar a las votacions finalas
     print:
       proposals_info: Crèa la tiá proposicion a http://url.consul
       proposals_title: "de proposicions:"

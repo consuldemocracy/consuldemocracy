@@ -11,14 +11,9 @@ so:
       save_changes_submit: Badbaadi beddelka
       recommendations: Talloyin
       title: Xisaabteyda
-      user_permission_debates: Kaqayb qadashada dooda
       user_permission_info: Akoonkaga waad karta...
-      user_permission_proposal: Samee soo jeedino cusub
-      user_permission_support_proposal: Tageer so jedinta
       user_permission_title: Kaqaybgalka
       user_permission_verify: Si aad u fuliso dhammaan ficilada hubi xisaabtaada.
-      user_permission_verify_info: "* Kaliya dadka isticmaala tirakoobka."
-      user_permission_votes: Kayb galka codaynta ugu danbaysa
       verified_account: Xisaabi la xaqiijiyay
       verify_my_account: Hubi xisaabtayda
   application:
@@ -103,9 +98,6 @@ so:
         button: Raadin
         placeholder: Doodaha raadinta...
         title: Raadin
-      search_results:
-        one: " an ku jirin ereyga<strong>%{search_term}</strong>"
-        other: " an ku jirin ereyga<strong>%{search_term}</strong>"
       start_debate: Biloow dooda
       title: Doodo
       section_header:
@@ -187,7 +179,6 @@ so:
       conditions: Shuruudaha iyo xaaladaha isticmaalka
       consul: Codsiga Qunsulka
       consul_url: https://github.com/consul/qonsul
-      contact_us: Booqashada gargaar farsamo
       copyright: Qonsul%{year}
       description: Qeybtaani waxay isticmaashaa%{consul} kaas oo ah%{open_source}.
       open_source: ilo Softiweer oo furan
@@ -334,7 +325,6 @@ so:
       select_order_long: "Waxaad daawaneysaa soo jeedinada sida:"
       start_proposal: Abuur soo jeedin
       title: Sojeedino
-      top: Usbuuca ugu sarreeya
       top_link_proposals: Soo jeedinta ugu taageerada badan ee qaybta
       section_header:
         icon_alt: Icon soo jedinada
@@ -672,15 +662,12 @@ so:
   votes:
     agree: Wan aqbalay
     anonymous: Codad qarsoodi ah oo badan si ay u qirto codka%{verify_account}.
-    comment_unauthenticated: Waa inaad%{signin} ama%{signup} codka.
     disagree: Ma aqbalin
     organizations: Ururada loma fasixin iney codeyaan
     supports: Tageerayaal
     verified_only: Kaliya dadka isticmaala xaqiijiyay ayaa ku codayn kara soo jeedimaha%{verify_account}.
     budget_investments:
-      not_logged_in: Waa inad igu %{signin} ama%{signup} si wada.
       not_verified: Kaliya dadka isticmaala hubinta ayaa codayn kara Mashariicdamaalgashiga; %{verify_account}.
-      organization: Ururada loma fasixin iney codeyaan
       unfeasible: Mashaariicda maal-gashiga aan macquul ahayn lama taageeri karo
       not_voting_allowed: Heerka codbixinta waa la xiray
   welcome:
@@ -709,22 +696,12 @@ so:
       budget_investments:
         title: Malgashiyada lugu taliyey
       slide: "Arag%{title}"
-    verification:
-      i_dont_have_an_account: Ma haysto xisaab
-      i_have_an_account: Hore ayaan haystay xisaab
-      question: Ma horey ayaad xisaab ugu leedahay%{org_name}?
-      title: Cadeynta xisaabta
     welcome:
       go_to_index: Eeg soojeedinta iyo doodaha
       title: Kaqayb gal
-      user_permission_debates: Kaqayb qadashada dooda
       user_permission_info: Akoonkaga waad karta...
-      user_permission_proposal: Samee soo jeedino cusub
-      user_permission_support_proposal: Tageer so jedinada*
       user_permission_verify: "Si aad u fuliso dhammaan ficilada hubi xisaabtaada."
-      user_permission_verify_info: "* Kaliya dadka isticmaala tirakoobka."
       user_permission_verify_my_account: Hubi xisaabtayda
-      user_permission_votes: Kayb galka codaynta ugu danbaysa
   invisible_captcha:
     sentence_for_humans: "Haddii aad tahay aadane, iska indha tirtan arimahan"
     timestamp_error_message: "Waan ka xumahay, taas oo ahayd mid deg deg ah! Fadlan soo gudbi."

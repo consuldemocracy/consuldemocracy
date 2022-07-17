@@ -27,7 +27,6 @@ ar:
         destroy: حذف الموضوع
         comments:
           zero: لا توجد تعليقات
-          zero: "%{count} تعليق"
           one: تعليق واحد
           two: "%{count} تعليق"
           few: "%{count} تعليق"

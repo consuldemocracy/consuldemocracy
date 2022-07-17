@@ -101,7 +101,7 @@ describe "Budgets wizard, first step", :admin do
       click_link "Create multiple headings budget"
 
       expect(page).to have_select("Final voting style", selected: "Knapsack")
-      expect(page).not_to have_selector("#hide_money_checkbox")
+      expect(page).not_to have_selector("#budget_hide_money")
 
       fill_in "Name", with: "Budget hide money"
       select "Approval", from: "Final voting style"

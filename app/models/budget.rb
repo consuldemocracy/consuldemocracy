@@ -26,10 +26,10 @@ class Budget < ApplicationRecord
 
   validates_translation :name, presence: true
   validates_translation :main_link_url, presence: true, unless: -> { main_link_text.blank? }
-  validates :phase, inclusion: { in: Budget::Phase::PHASE_KINDS }
+  validates :phase, inclusion: { in: ->(*) { Budget::Phase::PHASE_KINDS }}
   validates :currency_symbol, presence: true
   validates :slug, presence: true, format: /\A[a-z0-9\-_]+\z/
-  validates :voting_style, inclusion: { in: VOTING_STYLES }
+  validates :voting_style, inclusion: { in: ->(*) { VOTING_STYLES }}
 
   has_many :investments, dependent: :destroy
   has_many :ballots, dependent: :destroy
@@ -218,8 +218,6 @@ class Budget < ApplicationRecord
       %w[random]
     when "publishing_prices", "balloting", "reviewing_ballots"
       hide_money? ? %w[random] : %w[random price]
-    when "finished"
-      %w[random]
     else
       %w[random confidence_score]
     end

@@ -160,6 +160,7 @@ tr:
         voting_style: "Son oylama şekli"
         voting_style_knapsack: "Sırt çantası"
         voting_style_approval: "Onay"
+        hide_money: "Bu bütçe için tutarı gizle"
       budget/translation:
         main_link_text: "Bağlantıdaki metin"
         main_link_url: "Bağlantı sizi şuraya götürür: (link ekle)"

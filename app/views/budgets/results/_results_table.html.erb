@@ -17,6 +17,12 @@
           <th scope="col" class="text-center">
             <%= t("budgets.results.price") %>
           </th>
+          <% if results_type == :compatible %>
+            <th scope="col" class="text-right">
+              <small><%= t("budgets.results.amount_available") %></small><br>
+              <%= @budget.formatted_amount(heading_price) %><br>
+            </th>
+          <% end %>
         <% end %>
         <% if @budget.show_money? %>
           <% if results_type == :compatible %>
@@ -58,6 +64,13 @@
               <td class="text-center">
                 <%= @budget.formatted_amount(investment.price) %>
               </td>
+              <% if results_type == :compatible %>
+                <td class="small text-right"
+                    title="<%= @budget.formatted_amount(amount_available) %> - <%= @budget.formatted_amount(investment.price) %>">
+                    <%= @budget.formatted_amount(amount_available - investment.price) %>
+                    <% amount_available -= investment.price if investment.winner? %>
+                </td>
+              <% end %>
             <% end %>
             <% if @budget.show_money? %>
               <% if results_type == :compatible %>

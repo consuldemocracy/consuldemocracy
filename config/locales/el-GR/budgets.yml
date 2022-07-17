@@ -12,9 +12,7 @@ el:
         voted_info_2: "Μέχρις ότου κλείσει αυτή η φάση, έχετε την επιλογή να αλλάξετε την ψήφο σας όποτε το επιθυμείτε."
         zero: Δεν έχετε ψηφίσει κάποιο επενδυτικό σχέδιο.
       reasons_for_not_balloting:
-        not_logged_in: Για να συνεχίσετε %{signin} ή %{signup}. 
         not_verified: Μόνο επιβεβαιωμένοι χρήστες μπορούν να ψηφίσουν στις επενδύσεις; %{verify_account}.
-        organization: Οι οργανισμοί δεν επιτρέπεται να ψηφίσουν
         not_selected: Τα μη επιλεγμένα επενδυτικά σχέδια δεν μπορούν να υποστηριχθούν
         not_enough_money: "Έχετε ήδη αναθέσει το διαθέσιμο προϋπολογισμό.<br><small>Σας υπενθυμίζουμε ότι μπορείτε να %{change_ballot} οποιαδήποτε στιγμή το επιυθμείτε</small>"
         no_ballots_allowed: Η φάση επιλογής είναι κλειστή
@@ -69,9 +67,6 @@ el:
           button: Αναζήτηση
           placeholder: Αναζήτηση επενδυτικών σχεδίων...
           title: Αναζήτηση
-        search_results:
-          one: " που εμπεριέχει τον όρο <strong>'%{search_term}'</strong>"
-          other: " που εμπεριέχει τον όρο <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Η ψηφοφορία μου
           voted_info:

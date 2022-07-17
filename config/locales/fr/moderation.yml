@@ -3,7 +3,6 @@ fr:
     comments:
       index:
         block_authors: Bloquer un auteur
-        confirm: Êtes-vous sûr(e) ?
         filter: Filtre
         filters:
           all: Toutes
@@ -24,7 +23,6 @@ fr:
     debates:
       index:
         block_authors: Bloquer un auteur
-        confirm: Êtes-vous sûr(e) ?
         filter: Filtre
         filters:
           all: Toutes
@@ -51,7 +49,6 @@ fr:
     proposals:
       index:
         block_authors: Bloquer un auteur
-        confirm: Êtes-vous sûr(e) ?
         filter: Filtre
         filters:
           all: Toutes
@@ -69,7 +66,6 @@ fr:
     budget_investments:
       index:
         block_authors: Bloquer un auteur
-        confirm: Êtes-vous sûr(e) ?
         filter: Filtre
         filters:
           all: Toutes
@@ -87,7 +83,6 @@ fr:
     proposal_notifications:
       index:
         block_authors: Bloquer un auteur
-        confirm: Êtes-vous sûr(e) ?
         filter: Filtre
         filters:
           all: Toutes
@@ -104,7 +99,6 @@ fr:
         title: Notifications des propositions
     users:
       index:
-        hidden: Bloqué
         hide: Bloquer
         search_placeholder: courriel ou nom de l'utilisateur
         title: Bloquer les utilisateurs

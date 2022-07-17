@@ -178,7 +178,7 @@ describe "Admin collaborative legislation", :admin do
         fill_in "End", with: base_date + 5.days
       end
 
-      imageable_attach_new_file(Rails.root.join("spec/fixtures/files/clippy.jpg"))
+      imageable_attach_new_file(file_fixture("clippy.jpg"))
 
       click_button "Create process"
 

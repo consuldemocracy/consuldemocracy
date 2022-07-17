@@ -119,8 +119,6 @@ nl:
       tags_placeholder: "Voeg de gewenste termen toe, gescheiden door een komma (,)"
       proposal_responsible_name: "Volledige naam van persoon die het idee indient"
       proposal_text: "Uitgebreide omschrijving"
-    shared:
-      confirm_support: "Weet je zeker dat je het initiatief \"%{proposal}\" wilt steunen? Dit kan niet ongedaan worden gemaakt."
     index:
       featured_proposals: "Uitgelicht"
       start_proposal: "Nieuw initiatief indienen"

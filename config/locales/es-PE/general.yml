@@ -10,14 +10,9 @@ es-PE:
       public_interests_user_title_list: Etiquetas de los elementos que sigue este usuario
       save_changes_submit: Guardar cambios
       title: Mi cuenta
-      user_permission_debates: Participar en debates
       user_permission_info: Con tu cuenta ya puedes...
-      user_permission_proposal: Crear nuevas propuestas
-      user_permission_support_proposal: Apoyar propuestas
       user_permission_title: Participação
       user_permission_verify: Para poder realizar todas las acciones verifica tu cuenta.
-      user_permission_verify_info: "* Sólo usuarios empadronados."
-      user_permission_votes: Participar na votação final
       verified_account: Conta verificada
       verify_my_account: Verificar mi cuenta
   application:
@@ -98,9 +93,6 @@ es-PE:
         button: Buscar
         placeholder: Buscar debates...
         title: Buscar
-      search_results:
-        one: " que contienen <strong>'%{search_term}'</strong>"
-        other: " que contienen <strong>'%{search_term}'</strong>"
       start_debate: Empieza un debate
       title: Discusiones
       section_header:
@@ -180,7 +172,6 @@ es-PE:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
       consul: aplicación CONSUL
-      contact_us: Para asistencia técnica entra en
       description: Este portal usa o %{consul} que é %{open_source}. De Madrid para o mundo.
       open_source: programa de código aberto
       participation_text: Decida como adequar a Madrid que você deseja viver.
@@ -313,7 +304,6 @@ es-PE:
       select_order_long: "Você está vendo propostas de acordo para:"
       start_proposal: Crea una propuesta
       title: Propuestas
-      top: Top semanal
       top_link_proposals: Propuestas más apoyadas por categoría
       section_header:
         icon_alt: Icono de Propuestas
@@ -622,15 +612,12 @@ es-PE:
   votes:
     agree: Eu concordo
     anonymous: Excesso de votos anônimos para admitir voto %{verify_account}
-    comment_unauthenticated: Necesitas %{signin} o %{signup} para poder votar.
     disagree: Eu discordo
     organizations: Las organizaciones no pueden votar.
     supports: Apoyos
     verified_only: Somente usuários verificados podem votar em propostas;  %{verify_account}.
     budget_investments:
-      not_logged_in: Necesitas %{signin} o %{signup}.
       not_verified: Los proyectos de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
-      organization: Las organizaciones no pueden votar
       unfeasible: No se pueden votar propuestas inviables.
       not_voting_allowed: El periodo de votación está cerrado.
   welcome:
@@ -650,22 +637,12 @@ es-PE:
         btn_text_link: Todas las propuestas recomendadas
       budget_investments:
         title: Presupuestos recomendados
-    verification:
-      i_dont_have_an_account: No tengo cuenta, quiero crear una y verificarla
-      i_have_an_account: Ya tengo una cuenta que quiero verificar
-      question: '¿Tienes ya una cuenta en %{org_name}?'
-      title: Verificación de cuenta
     welcome:
       go_to_index: Veja propostas e debates
       title: Colabora en la elaboración de la normativa sobre
-      user_permission_debates: Participar en debates
       user_permission_info: Con tu cuenta ya puedes...
-      user_permission_proposal: Crear nuevas propuestas
-      user_permission_support_proposal: Apoyar propuestas
       user_permission_verify: "Para poder realizar todas las acciones verifica tu cuenta."
-      user_permission_verify_info: "* Somente usuários no Censo de Madrid"
       user_permission_verify_my_account: Verificar mi cuenta
-      user_permission_votes: Participar en las votaciones finales*
   invisible_captcha:
     sentence_for_humans: "Si eres humano, por favor ignora este campo"
     timestamp_error_message: "Eso ha sido demasiado rápido. Por favor, reenvía el formulario."

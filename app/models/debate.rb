@@ -1,7 +1,6 @@
 require "numeric"
 
 class Debate < ApplicationRecord
-  include Rails.application.routes.url_helpers
   include Flaggable
   include Taggable
   include Conflictable
@@ -52,10 +51,6 @@ class Debate < ApplicationRecord
   visitable class_name: "Visit"
 
   attr_accessor :link_required
-
-  def url
-    debate_path(self)
-  end
 
   def self.recommendations(user)
     tagged_with(user.interests, any: true).where.not(author_id: user.id)

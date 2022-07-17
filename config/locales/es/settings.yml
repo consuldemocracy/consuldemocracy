@@ -60,6 +60,8 @@ es:
     meta_keywords_description: 'Palabras clave <meta name="keywords">, utilizadas para mejorar el SEO'
     min_age_to_participate: Edad mínima para participar
     min_age_to_participate_description: "Los usuarios mayores de esta edad podrán participar en todos los procesos donde se necesite una cuenta verificada"
+    postal_codes: "Códigos Postales"
+    postal_codes_description: "Una lista de códigos postales válidos separados por comas; también puedes usar rangos utilizando \":\". Ejemplo: 00001:00010,00024,AB3 45FG,00031:00035 permitirá códigos postales entre 00001 y 00010, el 00024, el AB3 45FG, y códigos postales entre 00031 y 00035. Si dejas esta opción en blanco, cualquier código postal será válido."
     proposals:
       successful_proposal_id: Propuesta exitosa
       successful_proposal_id_description: Esta propuesta se utiliza como referencia de una propuesta exitosa en número de apoyos y se mostrará en el gráfico del panel de control

@@ -36,18 +36,18 @@ nl:
       already_verified: Dit gebruikersaccount is al geverifieerd.
       link: Consul
       in_census_has_following_permissions: "Deze gebruiker kan deelnemen aan de website met de volgende permissies:"
-      not_in_census: Dit document is niet geregistreerd.
+      not_in_census: This document is not registered.
       not_in_census_info: "Burgers niet in de volkstelling kunnen deelnemen aan de website met de volgende permissies:"
       please_check_account_data: Controleer alstublieft of de bovenstaande accountgegevens correct zijn.
       title: Gebruikersbeheer
-      under_age: "You don't have the required age to verify your account."
+      under_age: "Je hebt niet de vereiste leeftijd om je account te verifiëren."
       verify: Verifieer
     date_of_birth: Geboortedatum
     email_verifications:
       already_verified: Dit gebruikersaccount is al geverifieerd.
       choose_options: "Please choose one of the following options:"
-      document_found_in_census: This document was found in the census, but it has no user account associated to it.
-      document_mismatch: "This email belongs to a user which already has an associated id: %{document_number}(%{document_type})"
+      document_found_in_census: Dit document is gevonden in de telling, maar er is geen gebruikersaccount aan gekoppeld.
+      document_mismatch: "Dit e-mailadres hoort bij een gebruiker die al een bijbehorende id heeft: %{document_number}(%{document_type})"
       email_sent_instructions: In order to completely verify this user, it is necessary that the user clicks on a link which we have sent to the email address above. This step is needed in order to confirm that the address belongs to him.
       if_existing_account: If the person has already a user account created in the website,
       if_no_existing_account: If this person has not created an account yet
@@ -63,11 +63,6 @@ nl:
       users: Gebruikersbeheer
       user_invites: Verstuur uitnodigingen
       select_user: Selecteer gebruiker
-    permissions:
-      create_proposals: Create proposals
-      debates: Engage in debates
-      support_proposals: Support proposals
-      vote_proposals: Vote proposals
     print:
       proposals_info: Maak je eigen voorstel op http://url.consul
       proposals_title: "Proposals:"

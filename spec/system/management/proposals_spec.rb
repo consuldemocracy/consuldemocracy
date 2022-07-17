@@ -148,7 +148,7 @@ describe "Proposals" do
       click_link "Support proposals"
 
       within(".proposals-list") do
-        accept_confirm { click_link "Support" }
+        click_button "Support"
         expect(page).to have_content "1 support"
         expect(page).to have_content "You have already supported this proposal. Share it!"
       end
@@ -163,10 +163,7 @@ describe "Proposals" do
 
       within(".proposals-list") { click_link proposal.title }
       expect(page).to have_content proposal.code
-
-      within("#proposal_#{proposal.id}_votes") do
-        accept_confirm { click_link "Support" }
-      end
+      within("#proposal_#{proposal.id}_votes") { click_button "Support" }
 
       expect(page).to have_content "1 support"
       expect(page).to have_content "You have already supported this proposal. Share it!"
@@ -243,7 +240,7 @@ describe "Proposals" do
 
       click_link "Print proposals"
       within ".proposals-list" do
-        accept_confirm { click_link "Support" }
+        click_button "Support"
       end
 
       expect(page).to have_content "To perform this action you must select a user"

@@ -51,14 +51,14 @@ describe "Admin maps" do
         expect(page).to have_link("Delete")
       end
 
-      within("#map_1") do
+      within("#map_#{Map.default.id}") do
         expect(page).to have_content("Default map")
         expect(page).to have_link("Edit")
         expect(page).not_to have_link("Delete")
       end
     end
 
-    scenario "Delete map from index", :js do
+    scenario "Delete map from index" do
       budget_1 = create(:budget)
       budget_2 = create(:budget)
 

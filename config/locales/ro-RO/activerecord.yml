@@ -13,19 +13,19 @@ ro:
       activity:
         one: "activitate"
         few: "activități"
-        other: "%{count} activități"
+        other: "activități"
       budget:
         one: "Buget"
         few: "Bugete"
-        other: "%{count} Bugete"
+        other: "Bugete"
       budget/investment:
         one: "Investiție"
         few: "Investiții"
-        other: "%{count} Investiții"
+        other: "Investiții"
       milestone:
         one: "reper"
         few: "repere"
-        other: "%{count} repere"
+        other: "repere"
       milestone/status:
         one: "Status reper"
         few: "Stări reper"
@@ -45,7 +45,7 @@ ro:
       tag:
         one: "Etichetă"
         few: "Etichete"
-        other: "%{count} Etichete"
+        other: "Etichete"
       user:
         one: "Etichetă"
         few: "Etichete"
@@ -69,7 +69,7 @@ ro:
       manager:
         one: "Administrator"
         few: "Administratori"
-        other: "%{count} administratori"
+        other: "Administratori"
       newsletter:
         one: "Newsletter"
         few: "Newsletters"
@@ -77,7 +77,7 @@ ro:
       vote:
         one: "Vot"
         few: "Voturi"
-        other: "%{count} voturi"
+        other: "Voturi"
       organization:
         one: "Organizație"
         few: "Organizații"
@@ -129,7 +129,7 @@ ro:
       document:
         one: Document
         few: Documente
-        other: '%{count} documente'
+        other: Documente
       legislation/process:
         one: "Proces"
         few: "Procese"
@@ -137,7 +137,7 @@ ro:
       legislation/proposal:
         one: "Propunere"
         few: "Propuneri"
-        other: "%{count} propuneri"
+        other: "Propuneri"
       legislation/draft_versions:
         one: "Versiune schiță"
         few: "Versiuni schiță"
@@ -153,15 +153,15 @@ ro:
       legislation/answers:
         one: "Răspuns"
         few: "Răspunsuri"
-        other: "%{count} răspunsuri"
+        other: "Răspunsuri"
       documents:
         one: "Document"
         few: "Documente"
-        other: "%{count} documente"
+        other: "Documente"
       images:
         one: "Imagine"
         few: "Imagini"
-        other: "%{count} imagini"
+        other: "Imagini"
       topic:
         one: "Subiect"
         few: "Subiecte"

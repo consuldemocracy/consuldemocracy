@@ -20,7 +20,7 @@ class Budgets::Ballot::InvestmentComponent < ApplicationComponent
     end
 
     def investment_price
-      tag.span investment.formatted_price, class: "ballot-list-price"
+      tag.span investment.formatted_price, class: "ballot-list-price" if budget.show_money?
     end
 
     def delete_path

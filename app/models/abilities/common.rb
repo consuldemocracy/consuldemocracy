@@ -39,9 +39,6 @@ module Abilities
       can [:retire_form, :retire], Proposal, author_id: user.id
 
       can :read, Legislation::Proposal
-      cannot [:edit, :update], Legislation::Proposal do |proposal|
-        proposal.editable_by?(user)
-      end
       can [:retire_form, :retire], Legislation::Proposal, author_id: user.id
 
       can :create, Comment
@@ -88,14 +85,11 @@ module Abilities
 
       if user.level_two_or_three_verified?
         can :vote, Proposal, &:published?
-        can :vote_featured, Proposal
 
         can :vote, Legislation::Proposal
-        can :vote_featured, Legislation::Proposal
         can :create, Legislation::Answer
 
         can :create, Budget::Investment,               budget: { phase: "accepting" }
-        can :edit, Budget::Investment,                 budget: { phase: "accepting" }, author_id: user.id
         can :update, Budget::Investment,               budget: { phase: "accepting" }, author_id: user.id
         can :suggest, Budget::Investment,              budget: { phase: "accepting" }
         can :destroy, Budget::Investment,              budget: { phase: ["accepting", "reviewing"] }, author_id: user.id

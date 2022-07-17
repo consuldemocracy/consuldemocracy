@@ -4,7 +4,7 @@
     <figure class="figure-card">
       <div class="gradient"></div>
       <% if card.image.present? %>
-        <%= image_tag(card.image_url(:large), alt: card.image.title) %>
+        <%= image_tag(card.image.variant(:large), alt: card.image.title) %>
       <% end %>
       <figcaption>
         <% if card.label.present? %>

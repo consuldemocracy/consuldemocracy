@@ -3,7 +3,6 @@ he:
     comments:
       index:
         block_authors: חסימת כותבים
-        confirm: האם את/ה בטוח/ה?
         filter: סינון
         filters:
           all: הכל
@@ -24,7 +23,6 @@ he:
     debates:
       index:
         block_authors: חסימת הכותב/ת
-        confirm: האם את/ה בטוח/ה?
         filter: סינון
         filters:
           all: הכל
@@ -51,7 +49,6 @@ he:
     proposals:
       index:
         block_authors: חסימת הכותב/ת
-        confirm: האם את/ה בטוח/ה?
         filter: סינון
         filters:
           all: הכל
@@ -69,7 +66,6 @@ he:
     budget_investments:
       index:
         block_authors: חסימת הכותב/ת
-        confirm: האם את/ה בטוח/ה?
         filter: סינון
         filters:
           all: הכל
@@ -87,7 +83,6 @@ he:
     proposal_notifications:
       index:
         block_authors: חסימת הכותב/ת
-        confirm: האם את/ה בטוח/ה?
         filter: סינון
         filters:
           all: כולם
@@ -104,7 +99,6 @@ he:
         title: הצעת התראות
     users:
       index:
-        hidden: מוסתרים
         hide: הסתרה
         search_placeholder: דוא"ל או שם משתמש
         title: חסימת משתמשים

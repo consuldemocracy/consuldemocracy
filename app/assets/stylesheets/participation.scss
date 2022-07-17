@@ -14,120 +14,6 @@
 // 01. Votes and supports
 // ----------------------
 
-@mixin votes {
-  border-top: 1px solid $border;
-  margin-top: $line-height;
-  padding: $line-height / 2 0;
-  position: relative;
-
-  @include breakpoint(medium) {
-    border-left: 1px solid $border;
-    border-top: 0;
-    margin-top: 0;
-  }
-
-  .icon-like,
-  .icon-unlike {
-    background: #fff;
-    border: 2px solid;
-    border-radius: rem-calc(3);
-    color: $text-light;
-    display: inline-block;
-    font-size: rem-calc(30);
-    line-height: rem-calc(30);
-    padding: rem-calc(3) rem-calc(6);
-    position: relative;
-
-    &:hover,
-    &:active {
-      color: #fff;
-      cursor: pointer;
-      opacity: 1 !important;
-    }
-  }
-
-  .icon-like {
-
-    &:hover,
-    &:active {
-      background: $like;
-      border: 2px solid $like;
-    }
-  }
-
-  .icon-unlike {
-
-    &:hover,
-    &:active {
-      background: $unlike;
-      border: 2px solid $unlike;
-    }
-  }
-
-  .like,
-  .unlike {
-    line-height: rem-calc(48);
-    vertical-align: super;
-    text-decoration: none;
-
-    .percentage {
-      color: $text;
-      display: inline-block;
-      font-size: $small-font-size;
-      line-height: $line-height * 2;
-      padding-right: $line-height / 2;
-      vertical-align: top;
-
-      @include breakpoint(medium) {
-        display: block;
-        line-height: $line-height;
-        padding-right: 0;
-      }
-    }
-  }
-
-  .voted {
-
-    .icon-like,
-    .icon-unlike {
-      color: #fff;
-    }
-
-    .icon-like {
-      background: $like;
-      border: 2px solid $like;
-    }
-
-    .icon-unlike {
-      background: $unlike;
-      border: 2px solid $unlike;
-    }
-  }
-
-  .no-voted {
-
-    .icon-like,
-    .icon-unlike {
-      opacity: 0.3;
-    }
-  }
-
-  .total-votes {
-    font-weight: bold;
-    float: right;
-    line-height: $line-height * 2;
-
-    @include breakpoint(medium) {
-      display: block;
-      float: none;
-    }
-  }
-
-  .divider {
-    margin: 0 rem-calc(6);
-  }
-}
-
 @mixin supports {
   padding: $line-height 0;
   position: relative;
@@ -212,15 +98,16 @@
 .participation-not-allowed {
   background: $warning-bg;
   color: $color-warning;
-  left: 0;
+  display: none;
   line-height: $line-height;
-  min-height: 100%;
   padding: $line-height / 2;
-  position: absolute;
   text-align: center;
-  top: 0;
   width: 100%;
-  z-index: 2;
+
+  &,
+  p {
+    font-size: $small-font-size;
+  }
 
   p {
     color: inherit !important;
@@ -233,12 +120,6 @@
     font-weight: bold;
     text-decoration: underline;
   }
-}
-
-.reply .participation-not-allowed {
-  padding-right: $line-height / 2;
-  padding-top: $line-height / 6;
-  text-align: right;
 }
 
 // 02. New participation
@@ -439,6 +320,10 @@
       margin-right: rem-calc(6);
     }
   }
+}
+
+.debate-questions .debate-questions .participation-not-allowed {
+  display: block;
 }
 
 .bullet {
@@ -725,14 +610,27 @@
 .legislation-proposals {
 
   .votes {
-    @include votes;
+    border-top: 1px solid $border;
+    margin-top: $line-height;
+    padding: $line-height / 2 0;
+    position: relative;
 
     @include breakpoint(medium) {
+      border-left: 1px solid $border;
+      border-top: 0;
+      margin-top: 0;
       text-align: center;
     }
 
-    .against {
-      margin-left: $line-height / 4;
+    .total-votes {
+      font-weight: bold;
+      float: right;
+      line-height: $line-height * 2;
+
+      @include breakpoint(medium) {
+        display: block;
+        float: none;
+      }
     }
   }
 }
@@ -776,10 +674,6 @@
       color: #fff;
       font-size: $base-font-size;
       font-weight: bold;
-
-      &:disabled {
-        opacity: 1;
-      }
 
       &:hover {
         background: $budget-hover;
@@ -984,15 +878,6 @@
   }
 }
 
-.search-results-summary {
-  @include full-width-background;
-  background: $highlight;
-  margin-bottom: $line-height;
-  margin-top: -$line-height;
-  padding-bottom: $line-height;
-  padding-top: $line-height;
-}
-
 // 05. Featured
 // ------------
 
@@ -1050,6 +935,7 @@
       content: none;
     }
 
+    .progress,
     .total-supports {
       display: none;
     }
@@ -1067,7 +953,6 @@
 
     .participation-not-allowed {
       background: $featured;
-      font-size: $small-font-size;
       padding-top: 0;
 
       a {
@@ -1082,7 +967,11 @@
     }
 
     .supported {
+      background: none;
+      border: 0;
+      margin-bottom: 0;
       margin-top: 0;
+      padding: 0;
       font-size: $small-font-size;
     }
   }
@@ -1117,6 +1006,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: 0;
   }
 
   h1 {

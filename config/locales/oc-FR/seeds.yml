@@ -36,11 +36,6 @@ oc:
       groups:
         all_city: Tota la vila
         districts: de Districtes
-      valuator_groups:
-        culture_and_sports: Cultura & Esports
-        gender_and_diversity: Genre & de Politicas de diversitat
-        urban_development: Desvolopament Urban Sostenible
-        equity_and_employment: Equitat & Employment
       statuses:
         studying_project: Estudiar lo projècte
         bidding: Licitacion

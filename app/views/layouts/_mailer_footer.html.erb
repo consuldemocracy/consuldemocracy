@@ -6,12 +6,6 @@
         <%= setting["org_name"] %></p>
 
         <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif; margin: 0;padding: 0;line-height: 1.5em;color: #222; font-size: 10px; margin-top: 12px;">
-          <%= sanitize(t("mailers.unsubscribe",
-                          link: link_to(t("mailers.unsubscribe_link"), account_url, target: "_blank")),
-                          attributes: %w[href target]) %>
-        </p>
-
-        <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif; margin: 0;padding: 0;line-height: 1.5em;color: #222; font-size: 10px; margin-top: 12px;">
         <%= t("mailers.no_reply") %></p>
       </td>
     </tr>

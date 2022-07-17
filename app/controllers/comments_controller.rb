@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :hide]
+  before_action :authenticate_user!, only: [:create, :hide, :vote]
   before_action :load_commentable, only: :create
   before_action :verify_resident_for_commentable!, only: :create
   before_action :verify_comments_open!, only: [:create, :vote]
@@ -54,8 +54,14 @@ class CommentsController < ApplicationController
   private
 
     def comment_params
-      params.require(:comment).permit(:commentable_type, :commentable_id, :parent_id,
-                                      :body, :as_moderator, :as_administrator, :valuation)
+      params.require(:comment).permit(allowed_params)
+    end
+
+    def allowed_params
+      [
+        :commentable_type, :commentable_id, :parent_id,
+        :body, :as_moderator, :as_administrator, :valuation
+      ]
     end
 
     def build_comment

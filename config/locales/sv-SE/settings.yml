@@ -60,6 +60,8 @@ sv:
     meta_keywords_description: 'Nyckelord <meta name="keywords">, används för SEO'
     min_age_to_participate: Minimiålder för deltagande
     min_age_to_participate_description: "Användare av minst denna ålder kan delta i alla processer där en verifierat användarkonto behövs"
+    postal_codes: "Postnummer"
+    postal_codes_description: "En kommaseparerad lista över giltiga postnummer. Du kan också ange områden separerade med ett kolon. Till exempel tillåts med 00001:00010,00024,AB3 45FG,00031:00035 postnummer mellan 00001 och 00010, postnumret 00024, postnumret AB3 45FG och postnummer mellan 00031 och 00035. Om du lämnar detta tomt blir alla postnummer giltiga."
     proposals:
       successful_proposal_id: Framgångsrikt förslag
       successful_proposal_id_description: Detta förslag används som en riktlinje för ett lyckat förslag i antal stöd och visas i diagrammet i dashboard.

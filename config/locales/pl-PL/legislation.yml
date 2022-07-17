@@ -60,7 +60,6 @@ pl:
           winners: Wybrany
       debate:
         empty_questions: Brak pytań
-        participate: Uczestniczyć w debacie
       index:
         filter: Filtruj
         filters:

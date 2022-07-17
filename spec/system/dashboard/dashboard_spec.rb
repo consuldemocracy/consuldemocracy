@@ -9,7 +9,7 @@ describe "Proposal's dashboard" do
 
     expect(page).to have_link("Edit my proposal")
     expect(page).to have_link("Edit proposal")
-    expect(page).to have_link("Retire proposal")
+    expect(page).to have_link("Withdraw proposal")
     expect(page).to have_link("Publish proposal")
     expect(page).to have_link("Polls")
     expect(page).to have_link("E-mail")
@@ -401,11 +401,9 @@ describe "Proposal's dashboard" do
     within(".dashboard-related-content") do
       expect(page).to have_content("RELATED CONTENT (2)")
       expect(page).to have_selector(".related-content-title", text: "PROPOSAL")
-      expect(page).to have_content("#{related_proposal.title}")
-      expect(page).to have_css("a[href=\"#{related_proposal.url}\"")
+      expect(page).to have_link related_proposal.title
       expect(page).to have_selector(".related-content-title", text: "DEBATE")
-      expect(page).to have_content("#{related_debate.title}")
-      expect(page).to have_css("a[href=\"#{related_debate.url}\"")
+      expect(page).to have_link related_debate.title
     end
   end
 

@@ -1,5 +1,8 @@
 en:
   pages:
+    census_terms:
+      title: "Terms and conditions of access of the Census"
+      description: "Information page on the terms and conditions of access of the Census."
     conditions:
       title: Terms and conditions of use
       subtitle: LEGAL NOTICE ON THE CONDITIONS OF USE, PRIVACY AND PROTECTION OF PERSONAL DATA OF THE OPEN GOVERNMENT PORTAL

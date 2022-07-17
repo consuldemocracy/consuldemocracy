@@ -21,7 +21,7 @@ class Comment < ApplicationRecord
   validates_translation :body, presence: true
   validates :user, presence: true
 
-  validates :commentable_type, inclusion: { in: COMMENTABLE_TYPES }
+  validates :commentable_type, inclusion: { in: ->(*) { COMMENTABLE_TYPES }}
 
   validate :validate_body_length
   validate :comment_valuation, if: -> { valuation }
@@ -37,12 +37,7 @@ class Comment < ApplicationRecord
   scope :sort_by_flags, -> { order(flags_count: :desc, updated_at: :desc) }
   scope :public_for_api, -> do
     not_valuations
-      .where(%{(comments.commentable_type = 'Debate' and comments.commentable_id in (?)) or
-            (comments.commentable_type = 'Proposal' and comments.commentable_id in (?)) or
-            (comments.commentable_type = 'Poll' and comments.commentable_id in (?))},
-          Debate.public_for_api.pluck(:id),
-          Proposal.public_for_api.pluck(:id),
-          Poll.public_for_api.pluck(:id))
+      .where(commentable: [Debate.public_for_api, Proposal.public_for_api, Poll.public_for_api])
   end
 
   scope :sort_by_most_voted, -> { order(confidence_score: :desc, created_at: :desc) }
@@ -81,6 +76,10 @@ class Comment < ApplicationRecord
 
   def author=(author)
     self.user = author
+  end
+
+  def human_name
+    body.truncate(32)
   end
 
   def total_votes

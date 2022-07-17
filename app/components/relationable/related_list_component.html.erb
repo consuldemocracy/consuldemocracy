@@ -4,12 +4,10 @@
 
     <li id="related-content-<%= related_content.id %>">
       <div>
-        <%= link_to related.url, class: "related-content-link" do %>
-          <span class="related-content-title"><%= t("related_content.content_title.#{related.model_name.singular}") %></span><br>
-          <h3 class="inline-block">
-            <%= related.title %>
-          </h3>
-        <% end %>
+        <span class="related-content-title"><%= t("related_content.content_title.#{related.model_name.singular}") %></span><br>
+        <h3 class="inline-block">
+          <%= link_to related.title, polymorphic_path(related) %>
+        </h3>
       </div>
       <% if current_user && related_content.author != current_user && !related_content.scored_by_user?(current_user) %>
         <span id="<%= dom_id(related_content) %>" class="js-score-actions score-actions">

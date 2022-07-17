@@ -23,6 +23,7 @@ sv:
             other: "Du kan rösta i <span>%{count}</span> projekt"
         no_balloted_group_yet: "Du har inte röstat på den här gruppen än, rösta nu!"
         remove: Dra tillbaka din röst
+        remove_label: "Ta bort din röst för %{investment}"
         voted:
           one: "Du har röstat på <span>ett</span> budgetförslag."
           other: "Du har röstat på <span>%{count}</span> budgetförslag."
@@ -30,9 +31,7 @@ sv:
         voted_info_2: "Men du kan ändra din röst när som helst fram till att denna fas har stängts."
         zero: Du har inte röstat på några budgetförslag.
       reasons_for_not_balloting:
-        not_logged_in: Du måste %{signin} eller %{signup} för att fortsätta.
         not_verified: Endast verifierade användare kan rösta på budgetförslag; %{verify_account}.
-        organization: Organisationer kan inte rösta
         not_selected: Omarkerade budgetförslag kan inte stödjas
         not_enough_money: "Du har redan använt hela din budget.<br><small>Kom ihåg att du kan %{change_ballot} när som helst</small>"
         no_ballots_allowed: Urvalsfasen är stängd
@@ -76,6 +75,7 @@ sv:
       form:
         title: "Skapa en budgetinvestering"
         subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
         tag_category_label: "Kategorier"
         tags_instructions: "Tagga förslaget. Du kan välja från de föreslagna kategorier eller lägga till egna"
         tags_label: Taggar
@@ -92,9 +92,6 @@ sv:
           button: Sök
           placeholder: Sök budgetförslag...
           title: Sök
-        search_results:
-          one: " som innehåller <strong>'%{search_term}'</strong>"
-          other: " som innehåller <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Mina röster
           voted_info:
@@ -106,7 +103,7 @@ sv:
               other: "<strong>Du röstade för %{count} förslag</strong>"
           change_vote_info:
             knapsack: "Du kan %{link} när som helst fram till %{phase_end_date}. Du behöver inte spendera hela din budget."
-            approval: "Du kan %{link} när som helst fram till slutet av denna fas."
+            approval: "Du kan %{link} när som helst fram till %{phase_end_date}."
           change_vote_link: "ändra din röst"
           different_heading_assigned: "Du röstar redan inom ett annat område: %{heading_link}"
           change_ballot: "Om du ändrar dig kan du ta bort dina röster i %{check_ballot} och börja om."
@@ -151,6 +148,7 @@ sv:
       wrong_price_format: Endast heltal
       investment:
         add: Rösta
+        add_label: "Rösta för %{investment}"
         already_added: Du har redan skapat det här investeringsprojektet
         support_title: Stöd projektet
         supports:

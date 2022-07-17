@@ -11,20 +11,18 @@ bg:
       save_changes_submit: Запазване на промени
       recommendations: Препоръки
       title: Моят профил
-      user_permission_debates: Участвайте в дискусии
       user_permission_info: С Вашият профил можете да...
-      user_permission_proposal: Създавате нови предложения
-      user_permission_support_proposal: Подкрепяте предложения
       user_permission_title: Участие
       user_permission_verify: За да извършите всички действия, потвърдете профила си.
-      user_permission_verify_info: "* Само за потребители на преброяване."
-      user_permission_votes: Участвате в окончателното гласуване
       verified_account: Профилът е потвърден
       verify_my_account: Потвърдете профила ми
   application:
     close: Затваряне
     menu: Меню
   comments:
+    actions:
+      confirm_delete: "Сигурен ли сте? Това действие ще изтрие този коментар. Действието не може да бъде отменено."
+      delete: "Изтриване на коментара"
     comments_closed: Коментарите са затворени
     verified_only: За да участвате %{verify_account}
     comment:
@@ -99,7 +97,7 @@ bg:
       recommendations:
         without_results: Няма дискусии, свързани с Вашите интереси
         without_interests: Следвайте предложенията, за да можем да ви дадем препоръки
-        disable: "Препоръките за дебати ще спрат да се показват, ако ги отхвърлите. Можете да ги активирате отново на страницата 'Моят акаунт'"
+        disable: "Препоръките за дебати ще спрат да се показват, ако ги отхвърлите. Можете да ги активирате отново на страницата 'Моят профил'"
         actions:
           success: "Препоръките за дискусии вече са деактивирани за този профил"
           error: "Появи се грешка. Моля, отидете на страницата 'Моят профил', за да деактивирате ръчно препоръките за дискусии"
@@ -107,9 +105,6 @@ bg:
         button: Търсете
         placeholder: Търсете дискусии...
         title: Търсете
-      search_results:
-        one: " съдържащи термина <strong>'%{search_term}'</strong>"
-        other: " съдържащи термина <strong>'%{search_term}'</strong>"
       start_debate: Започнете дебат
       title: Дискусии
       section_header:
@@ -210,7 +205,6 @@ bg:
       conditions: Условия за ползване
       consul: приложението CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: За посещение на техническа помощ
       copyright: CONSUL, %{year}
       description: Този портал използва %{consul}, който е %{open_source}.
       open_source: софтуер с отворен код
@@ -234,14 +228,14 @@ bg:
       open_gov: Отворено управление
       proposals: Предложения
       poll_questions: Гласуване
-      budgets: Бюджетиране с участие
+      budgets: Граждански бюджет
       notification_item:
         new_notifications:
           zero: "Нямате нови известия"
           one: Имате ново известие
           other: Имате %{count} нови известия
         notifications: Известия
-      sdg: "Цели за устойчиво развитие (ЦУР)"
+      sdg: "Цели за устойчиво развитие"
   notifications:
     index:
       empty_notifications: Нямате нови известия.
@@ -374,7 +368,6 @@ bg:
       select_order_long: "Разглеждате предложения според:"
       start_proposal: Създайте предложение
       title: Предложения
-      top: Най-високо за седмицата
       top_link_proposals: Най-подкрепяните предложения по категории
       section_header:
         icon_alt: Икона за предложения
@@ -679,7 +672,7 @@ bg:
       date_5: "Персонализирано"
       from: "От"
       general: "С текста"
-      goal: "Според Целите за устойчиво развитие (ЦУР)"
+      goal: "Според Целите за устойчиво развитие"
       goal_blank: "Изберете цел"
       search: "Филтър"
       target: "По цел"
@@ -766,7 +759,7 @@ bg:
         one: "1 език в употреба"
         other: "%{count} езика в употреба"
     optional: "По избор"
-    required: "Задължително "
+    required: "Задължително поле"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -845,15 +838,12 @@ bg:
   votes:
     agree: Съгласен съм
     anonymous: Твърде много анонимни гласове за допускане на гласуване %{verify_account}.
-    comment_unauthenticated: Вие трябва да %{signin} или да %{signup}, за да гласувате.
     disagree: Не съм съгласен
     organizations: Организациите нямат право да гласуват
     supports: Гласове за подкрепа
     verified_only: Само проверени потребители могат да гласуват предложения; %{verify_account}.
     budget_investments:
-      not_logged_in: Вие трябва да %{signin} или да %{signup}, за да продължите.
       not_verified: Само проверени потребители могат да гласуват инвестиционни проекти; %{verify_account}.
-      organization: Организациите нямат право да гласуват
       unfeasible: Неизпълними инвестиционни проекти не могат да бъдат подкрепени
       not_voting_allowed: Фазата на гласуване е затворена
       different_heading_assigned:
@@ -871,7 +861,7 @@ bg:
         processes: Вижте всички процеси
       no_items:
         debates: Няма дискусии сега
-        proposals: Нама предложения сега
+        proposals: В момента няма предложения
         processes: Няма отворени процеси сега
       process_label: Процес
       see_process: Вижте процес
@@ -889,23 +879,13 @@ bg:
       budget_investments:
         title: Препоръчани инвестиции
       slide: "Вижте %{title}"
-    verification:
-      i_dont_have_an_account: Нямам профил
-      i_have_an_account: Вече имам профил
-      question: Имате ли вече профил в %{org_name}?
-      title: Потвърждаване на профила
     welcome:
       go_to_index: Не сега, отидете на страницата с индекси
       start_using_consul: Отидете на страницата с индекси
       title: Участвайте
-      user_permission_debates: Участвайте в дискусии
       user_permission_info: С профила си можете да...
-      user_permission_proposal: Създавате нови предложения
-      user_permission_support_proposal: Подкрепяте предложения*
       user_permission_verify: "За да извършите следните действия, потвърдете профила си."
-      user_permission_verify_info: "* Само за потребители на преброяване."
       user_permission_verify_my_account: Потвърдете профила ми
-      user_permission_votes: Участвайте в окончателното гласуване
   invisible_captcha:
     sentence_for_humans: "Ако сте човек, игнорирайте това поле"
     timestamp_error_message: "За съжаление, това беше твърде бързо! Моля, изпратете отново."
@@ -917,7 +897,7 @@ bg:
     help: "Можете да добавите връзки на %{models} в%{org}."
     submit: "Добавете"
     error: "Връзката не е валидна. Не забравяйте да започнете с %{url}."
-    error_duplicate: "Свързаното съдържание, което добавяте, вече съществува. "
+    error_duplicate: "Свързаното съдържание, което добавяте, вече съществува."
     error_itself: "Връзката не е валидна. Не можете да свържете съдържание."
     success: "Добавихте ново свързано съдържание"
     is_related: "Свързано ли е съдържание?"
@@ -963,3 +943,6 @@ bg:
         more:
           one: "Още един таг"
           other: "%{count} повече тагове"
+  machine_learning:
+    comments_summary: "Резюме на коментарите"
+    info_text: "Съдържание, генерирано от изкуствен интелект / машинно самообучение"

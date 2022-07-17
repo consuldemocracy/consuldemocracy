@@ -40,7 +40,11 @@ class Verification::LetterController < ApplicationController
   private
 
     def letter_params
-      params.require(:verification_letter).permit(:verification_code, :email, :password)
+      params.require(:verification_letter).permit(allowed_params)
+    end
+
+    def allowed_params
+      [:verification_code, :email, :password]
     end
 
     def verify_phone!

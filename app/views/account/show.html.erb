@@ -24,7 +24,7 @@
                 <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length %>
                 <%= fo.text_field :responsible_name, autofocus: true, maxlength: Organization.responsible_name_max_length %>
               <% end %>
-              <%= f.text_field :phone_number %>
+              <%= f.phone_field :phone_number %>
 
             <% else %>
               <%= f.text_field :username, maxlength: User.username_max_length %>
@@ -94,15 +94,15 @@
           <p><%= t("account.show.user_permission_info") %></p>
 
           <ul>
-            <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_debates") %></li>
-            <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_proposal") %></li>
+            <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_debates") %></li>
+            <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_proposal") %></li>
             <li>
               <% if current_user.level_two_or_three_verified? %>
                 <span class="icon-check"></span>
               <% else %>
                 <span class="icon-x"></span>
               <% end %>
-              <%= t("account.show.user_permission_support_proposal") %>
+              <%= t("verification.user_permission_support_proposal") %>
             </li>
             <li>
               <% if current_user.level_three_verified? %>
@@ -110,7 +110,7 @@
               <% else %>
                 <span class="icon-x"></span>
               <% end %>
-              <%= t("account.show.user_permission_votes") %>
+              <%= t("verification.user_permission_votes") %>
             </li>
           </ul>
 

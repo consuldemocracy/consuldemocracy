@@ -161,7 +161,6 @@ describe "Admin settings", :admin do
     scenario "On #tab-sdg-configuration" do
       Setting["feature.sdg"] = true
       Setting.create!(key: "sdg.whatever")
-      login_as(create(:administrator).user)
 
       visit admin_settings_path
       click_link "SDG configuration"
@@ -208,7 +207,6 @@ describe "Admin settings", :admin do
   describe "SDG configuration tab" do
     scenario "is enabled when the sdg feature is enabled" do
       Setting["feature.sdg"] = true
-      login_as(create(:administrator).user)
 
       visit admin_settings_path
       click_link "SDG configuration"
@@ -218,7 +216,6 @@ describe "Admin settings", :admin do
 
     scenario "is disabled when the sdg feature is disabled" do
       Setting["feature.sdg"] = false
-      login_as(create(:administrator).user)
 
       visit admin_settings_path
       click_link "SDG configuration"
@@ -230,7 +227,6 @@ describe "Admin settings", :admin do
 
     scenario "is enabled right after enabling the feature" do
       Setting["feature.sdg"] = false
-      login_as(create(:administrator).user)
 
       visit admin_settings_path
 
@@ -245,6 +241,28 @@ describe "Admin settings", :admin do
       click_link "SDG configuration"
 
       expect(page).to have_css "h2", exact_text: "SDG configuration"
+    end
+  end
+
+  describe "Machine learning settings" do
+    scenario "show the machine learning feature but not its settings" do
+      Setting["feature.machine_learning"] = true
+
+      visit admin_settings_path
+
+      expect(page).not_to have_content "Machine Learning"
+      expect(page).not_to have_content "Comments Summary"
+      expect(page).not_to have_content "Related Content"
+      expect(page).not_to have_content "Tags"
+      expect(page).not_to have_css ".translation_missing"
+
+      click_link "Features"
+
+      expect(page).to have_content "Machine Learning"
+      expect(page).not_to have_content "Comments Summary"
+      expect(page).not_to have_content "Related Content"
+      expect(page).not_to have_content "Tags"
+      expect(page).not_to have_css ".translation_missing"
     end
   end
 end

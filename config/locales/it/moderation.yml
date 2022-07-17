@@ -1,9 +1,10 @@
 it:
   moderation:
+    actions:
+      confirm_action: "Sei sicuro? %{action}"
     comments:
       index:
         block_authors: Blocca gli autori
-        confirm: Sei sicuro?
         filter: Filtra
         filters:
           all: Tutti
@@ -24,7 +25,6 @@ it:
     debates:
       index:
         block_authors: Blocca autori
-        confirm: Sei sicuro?
         filter: Filtra
         filters:
           all: Tutti
@@ -51,7 +51,6 @@ it:
     proposals:
       index:
         block_authors: Blocca autori
-        confirm: Sei sicuro?
         filter: Filtra
         filters:
           all: Tutti
@@ -69,7 +68,6 @@ it:
     budget_investments:
       index:
         block_authors: Blocca autori
-        confirm: Sei sicuro?
         filter: Filtra
         filters:
           all: Tutti
@@ -87,7 +85,6 @@ it:
     proposal_notifications:
       index:
         block_authors: Blocca autori
-        confirm: Sei sicuro?
         filter: Filtra
         filters:
           all: Tutti
@@ -104,8 +101,11 @@ it:
         title: Notifiche di proposta
     users:
       index:
-        hidden: Bloccato
+        block: Blocca
+        confirm_block: "Sei sicuro? Questo nasconderà l'utente \"%{name}\" e tutti i suoi contenuti."
+        confirm_hide: "Sei sicuro? Questo nasconderà l'utente \"%{name}\" senza nasconderne i contenuti."
         hide: Blocco
         search_placeholder: e-mail o nome utente
         title: Blocca gli utenti
+      notice_block: Questo utente è stato bloccato. Tutti i contenuti autorizzati da quest'utente sono stati nascosti.
       notice_hide: Utente bloccato. Tutti i dibattiti e commenti di questo utente sono state nascostie.

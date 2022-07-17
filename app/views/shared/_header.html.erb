@@ -1,7 +1,7 @@
 <% if header.present? %>
   <% if header.image.present? && header.background_image? %>
     <div id="header_background_image" class="jumbo highlight"
-         style="background-image: url(<%= image_path_for(header.image_url(:original)) %>)">
+         style="background-image: url(<%= header.image.variant(:original) %>)">
 
       <%= render "shared/header_content", header: header %>
     </div>
@@ -11,7 +11,9 @@
         <%= render "shared/header_content", header: header %>
 
         <div id="header_image" class="small-12 medium-6 column">
-          <%= image_tag(header.image_url(:large), class: "margin", alt: header.image.title) %>
+          <%= image_tag(header.image.variant(:large),
+                        class: "margin",
+                        alt: header.image.title) %>
         </div>
       </div>
     </div>

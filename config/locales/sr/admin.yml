@@ -4,11 +4,9 @@ sr:
       title: Администрација
     actions:
       actions: Радње
-      confirm: Да ли сте сигурни?
       confirm_hide: Потврдите умереност
       delete: "Избришите"
       hide: Сакрите
-      hide_author: Сакрите аутора
       restore: Вратите
       mark_featured: Истакнуте
       unmark_featured: Одзначите истакнуто
@@ -132,7 +130,6 @@ sr:
         max_votable_headings_info: "Примењиво само на фазу одабира пројеката. За време фазе гласања о пројектима, корисници могу да гласају у само једном заглављу по групи."
         submit: "Сачувајте групу"
     budget_headings:
-      no_headings: "Нема наслова."
       create:
         notice: "Наслов креиран успешно!"
       update:
@@ -210,7 +207,6 @@ sr:
           incompatible: Некомпатибилно
           price: Цена
           author: Аутор
-        cannot_calculate_winners: Буџет мора да остане на фази "пораст пројеката ", "Преглед гласачких листића " или "Завршени буџет " како би се израчунали победнички пројекти
         see_results: "Види резултате"
         milestone_tags_filter_all: "Све прекретнице"
       show:

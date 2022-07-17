@@ -24,7 +24,7 @@ module MapLocationsHelper
   end
 
   def render_map(map_location, parent_class, editable, remove_marker_label, investments_coordinates = nil)
-    map_location = MapLocation.new if map_location.nil?
+    map_location = MapLocation.new unless map_location.present?
     map = tag.div id: dom_id(map_location),
                   class: "map_location map",
                   data: prepare_map_settings(map_location, editable, parent_class, investments_coordinates)

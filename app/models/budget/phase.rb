@@ -19,7 +19,7 @@ class Budget
     has_one :prev_phase, class_name: name, foreign_key: :next_phase_id, inverse_of: :next_phase
 
     validates_translation :name, presence: true
-    validates_translation :description, length: { maximum: DESCRIPTION_MAX_LENGTH }
+    validates_translation :description, length: { maximum: ->(*) { DESCRIPTION_MAX_LENGTH }}
     validates_translation :main_link_url, presence: true, unless: -> { main_link_text.blank? }
     validates :budget, presence: true
     validates :kind, presence: true, uniqueness: { scope: :budget }, inclusion: { in: PHASE_KINDS }

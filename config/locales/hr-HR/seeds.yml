@@ -36,11 +36,6 @@ hr:
       groups:
         all_city: Cijeli Grad
         districts: Četvrti
-      valuator_groups:
-        culture_and_sports: Kultura i sport
-        gender_and_diversity: Politike ravnopravnosti spolova
-        urban_development: Održivi urbani razvoj
-        equity_and_employment: Jednakost i zapošljavanje
       statuses:
         studying_project: Proučavanje projekta
         bidding: Natječaj

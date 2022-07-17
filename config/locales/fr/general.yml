@@ -11,14 +11,9 @@ fr:
       save_changes_submit: Sauvegarder des changements
       recommendations: Recommandations
       title: Mon compte
-      user_permission_debates: Participez aux débats !
       user_permission_info: Avec votre compte, vous pouvez...
-      user_permission_proposal: Créer des propositions
-      user_permission_support_proposal: Soutenir des propositions
       user_permission_title: Participation
       user_permission_verify: Pour effectuer toutes les actions, vérifiez votre compte.
-      user_permission_verify_info: "* Uniquement pour les utilisateurs inscrits sur\nle recensement de Madrid"
-      user_permission_votes: Participer au vote final
       verified_account: Compte vérifié
       verify_my_account: Vérifier mon compte
   application:
@@ -108,9 +103,6 @@ fr:
         button: Chercher
         placeholder: Rechercher des débats...
         title: Chercher
-      search_results:
-        one: " contenant le terme <strong>'%{search_term}'</strong>"
-        other: " contenant le mot <strong>'%{search_term}'</strong>"
       start_debate: Commencer un débat
       title: Débats
       section_header:
@@ -211,7 +203,6 @@ fr:
       conditions: Conditions légales
       consul: Application Consul
       consul_url: https://github.com/consul/consul
-      contact_us: Pour l'assistance technique visitez la
       copyright: Consul, %{year}
       description: Ce portail utiliser %{consul} qui est %{open_source}. De Madrid ouvert sur le monde.
       open_source: logiciel libre
@@ -375,7 +366,6 @@ fr:
       select_order_long: "Vous êtes en train de voir les propositions en fonction de"
       start_proposal: Créer une proposition
       title: Propositions
-      top: Top de la semaine
       top_link_proposals: Les propositions les plus soutenues par catégorie
       section_header:
         icon_alt: Icône des propositions
@@ -784,15 +774,12 @@ fr:
   votes:
     agree: Je suis d'accord
     anonymous: Trop de votes anonymes pour accepter le vote %{verify_account}.
-    comment_unauthenticated: Il est nécessaire de %{signin} ou de %{signup} pour voter.
     disagree: Je ne suis pas d'accord
     organizations: Les organisations ne sont pas autorisées à voter
     supports: Soutiens
     verified_only: Seuls les utilisateurs vérifiés peuvent voter sur les propositions; %{verify_account}.
     budget_investments:
-      not_logged_in: Il est nécessaire de %{signin} ou de %{signup} pour continuer.
       not_verified: Seuls les utilisateurs vérifiés peuvent voter pour les propositions d'investissement, %{verify_account}.
-      organization: Les organisations ne sont pas autorisées à voter
       unfeasible: Les propositions d'investissement jugées irréalisables ne peuvent être soutenues
       not_voting_allowed: La phase de vote est terminée
   welcome:
@@ -821,22 +808,12 @@ fr:
       budget_investments:
         title: Investissements recommandés
       slide: "Voir %{title}"
-    verification:
-      i_dont_have_an_account: Je n'ai pas de compte
-      i_have_an_account: J'ai déjà un compte
-      question: Avez-vous déjà un compte à %{org_name} ?
-      title: Vérification du compte
     welcome:
       go_to_index: Voir les propositions et les débats
       title: Participer
-      user_permission_debates: Participez aux débats !
       user_permission_info: Avec votre compte, vous pouvez...
-      user_permission_proposal: Créer des propositions
-      user_permission_support_proposal: Soutenir des propositions
       user_permission_verify: "Pour effectuer toutes les actions, vérifiez votre compte."
-      user_permission_verify_info: "* Uniquement pour les utilisateurs inscrits sur\nle recensement de Madrid"
       user_permission_verify_my_account: Vérifier mon compte
-      user_permission_votes: Participer au vote final
   invisible_captcha:
     sentence_for_humans: "Si vous êtes un être humain, ignorez ce champ"
     timestamp_error_message: "Désolé, vous êtes allé trop vite ! Soumettez à nouveau."

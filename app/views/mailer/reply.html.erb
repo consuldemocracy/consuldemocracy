@@ -1,4 +1,4 @@
-<td style="padding-bottom: 20px; padding-left: 10px;">
+<td style="<%= css_for_mailer_content %>">
 
   <h1 style="<%= css_for_mailer_heading %>">
     <%= t("mailers.reply.title") %>
@@ -14,11 +14,20 @@
   </p>
 
   <div style="<%= css_for_mailer_text + css_for_mailer_quote %>">
-    <%= simple_format sanitize_and_auto_link(@email.reply.body), {}, sanitize: false %>
+    <%= mailer_simple_format(@email.reply.body) %>
   </div>
 
   <p style="<%= css_for_mailer_text %>">
-    <%= t("mailers.config.manage_email_subscriptions") %>
-    <%= link_to t("account.show.title"), account_url, style: css_for_mailer_link %>
+    <%= sanitize(
+      t("mailers.config.unsubscribe_text",
+        notifications: link_to(
+          t("mailers.config.notifications_link"),
+          edit_subscriptions_url(token: @token),
+          style: css_for_mailer_link
+        ),
+        notification: User.human_attribute_name(:email_on_comment_reply)
+      ),
+      attributes: %w[href style]
+    ) %>
   </p>
 </td>

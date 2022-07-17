@@ -43,11 +43,15 @@ class Admin::MilestonesController < Admin::BaseController
   private
 
     def milestone_params
-      attributes = [:publication_date, :status_id,
-                    translation_params(Milestone),
-                    image_attributes: image_attributes, documents_attributes: document_attributes]
+      params.require(:milestone).permit(allowed_params)
+    end
 
-      params.require(:milestone).permit(*attributes)
+    def allowed_params
+      [
+        :publication_date, :status_id,
+        translation_params(Milestone),
+        image_attributes: image_attributes, documents_attributes: document_attributes
+      ]
     end
 
     def load_milestoneable

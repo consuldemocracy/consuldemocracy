@@ -54,7 +54,6 @@ sv:
           winners: Valt
       debate:
         empty_questions: Det finns inga frågor
-        participate: Delta i diskussionen
       index:
         filter: Filtrera
         filters:

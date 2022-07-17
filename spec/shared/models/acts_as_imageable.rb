@@ -7,21 +7,21 @@ shared_examples "acts as imageable" do |imageable_factory|
 
   describe "file extension" do
     it "is not valid with '.png' extension" do
-      image.attachment = File.new("spec/fixtures/files/clippy.png")
+      image.attachment = fixture_file_upload("clippy.png")
 
       expect(image).not_to be_valid
       expect(image.errors[:attachment].size).to eq(1)
     end
 
     it "is not valid with '.gif' extension" do
-      image.attachment = File.new("spec/fixtures/files/clippy.gif")
+      image.attachment = fixture_file_upload("clippy.gif")
 
       expect(image).not_to be_valid
       expect(image.errors[:attachment].size).to eq(1)
     end
 
     it "is valid with '.jpg' extension" do
-      image.attachment = File.new("spec/fixtures/files/clippy.jpg")
+      image.attachment = fixture_file_upload("clippy.jpg")
 
       expect(image).to be_valid
     end
@@ -33,7 +33,7 @@ shared_examples "acts as imageable" do |imageable_factory|
     end
 
     it "is not valid when image dimmensions are smaller than 475X475" do
-      image.attachment = File.new("spec/fixtures/files/logo_header.jpg")
+      image.attachment = fixture_file_upload("logo_header.jpg")
 
       expect(image).not_to be_valid
     end

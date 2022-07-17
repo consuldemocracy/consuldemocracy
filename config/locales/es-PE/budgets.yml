@@ -10,9 +10,7 @@ es-PE:
           other: "Has votado <span>%{count}</span> propuestas."
         zero: Todavía no has votado ninguna propuesta de inversión.
       reasons_for_not_balloting:
-        not_logged_in: Necesitas %{signin} o %{signup}.
         not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
-        organization: Las organizaciones no pueden votar
         not_selected: No se pueden votar propuestas inviables.
         not_enough_money: "Ya has asignado el presupuesto disponible.<br><small>Recuerda que puedes %{change_ballot} en cualquier momento</small>"
         no_ballots_allowed: El periodo de votación está cerrado.
@@ -57,9 +55,6 @@ es-PE:
           button: Buscar
           placeholder: Buscar propuestas de inversión...
           title: Buscar
-        search_results:
-          one: " que contienen <strong>'%{search_term}'</strong>"
-          other: " que contienen <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Mis votos
           voted_info:

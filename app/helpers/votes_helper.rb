@@ -12,19 +12,4 @@ module VotesHelper
       "#{100 - debate_percentage_of_likes(debate)}%"
     end
   end
-
-  def css_classes_for_vote(votes, votable)
-    case votes[votable.id]
-    when true
-      { in_favor: "voted", against: "no-voted" }
-    when false
-      { in_favor: "no-voted", against: "voted" }
-    else
-      { in_favor: "", against: "" }
-    end
-  end
-
-  def voted_for?(votes, votable)
-    votes[votable.id]
-  end
 end

@@ -7,7 +7,7 @@
           if ($(this).val() === "approval") {
             $("#hide_money").removeClass("hide");
           } else {
-            $("#hide_money_checkbox").prop("checked", false);
+            $("#budget_hide_money").prop("checked", false);
             $("#hide_money").addClass("hide");
           }
         }

@@ -20,11 +20,10 @@ module Budgets
 
     before_action :load_ballot, only: [:index, :show]
     before_action :load_heading, only: [:index, :show]
-    before_action :load_assigned_heading, only: [:show]
+    before_action :load_map, only: [:index]
     before_action :set_random_seed, only: :index
     before_action :load_categories, only: :index
     before_action :set_default_investment_filter, only: :index
-    before_action :load_budget_map, only: [:new, :edit]
     before_action :set_view, only: :index
     before_action :load_content_blocks, only: :index
 
@@ -47,7 +46,6 @@ module Budgets
       @investment_ids = @investments.ids
       @investments_map_coordinates = MapLocation.where(investment: investments).map(&:json_data)
 
-      load_investment_votes(@investments)
       @tag_cloud = tag_cloud
       @remote_translations = detect_remote_translations(@investments)
     end
@@ -59,7 +57,6 @@ module Budgets
       @commentable = @investment
       @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
       set_comment_flags(@comment_tree.comments)
-      load_investment_votes(@investment)
       @investment_ids = [@investment.id]
       @remote_translations = detect_remote_translations([@investment], @comment_tree.comments)
     end
@@ -120,17 +117,18 @@ module Budgets
         "budget_investment"
       end
 
-      def load_investment_votes(investments)
-        @investment_votes = current_user ? current_user.budget_investment_votes(investments) : {}
+      def investment_params
+        params.require(:budget_investment).permit(allowed_params)
       end
 
-      def investment_params
+      def allowed_params
         attributes = [:heading_id, :tag_list, :organization_name, :location,
                       :terms_of_service, :related_sdg_list,
                       image_attributes: image_attributes,
                       documents_attributes: document_attributes,
                       map_location_attributes: map_location_attributes]
-        params.require(:budget_investment).permit(attributes, translation_params(Budget::Investment))
+
+        [*attributes, translation_params(Budget::Investment)]
       end
 
       def load_ballot
@@ -142,10 +140,8 @@ module Budgets
         if params[:heading_id].present?
           @heading = @budget.headings.find_by_slug_or_id! params[:heading_id]
           @assigned_heading = @ballot&.heading_for_group(@heading.group)
-          load_map
         elsif @budget.single_heading?
           @heading = @budget.headings.first
-          load_map
         end
       end
 
@@ -173,13 +169,15 @@ module Budgets
         @view = (params[:view] == "minimal") ? "minimal" : "default"
       end
 
+      def investments_with_filters
+        @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
+      end
+
       def investments
         if @current_order == "random"
-          @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
-                             .sort_by_random(session[:random_seed])
+          investments_with_filters.sort_by_random(session[:random_seed])
         else
-          @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
-                             .send("sort_by_#{@current_order}")
+          investments_with_filters.send("sort_by_#{@current_order}")
         end
       end
 
@@ -191,12 +189,8 @@ module Budgets
         end
       end
 
-      def load_budget_map
-        @budget_map = Map.find_by(budget: @budget)
-      end
-
       def load_map
-        @map_location = MapLocation.load_from_heading(@heading)
+        @map_location = MapLocation.load_from_heading(@heading) if @heading.present?
       end
   end
 end

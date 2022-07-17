@@ -1,0 +1,23 @@
+<div class="moderation-actions">
+  <% if can? :hide, record %>
+    <%= render Admin::ActionComponent.new(
+      :hide,
+      record,
+      path: hide_path,
+      method: :put,
+      remote: true,
+      confirm: true
+    ) %>
+  <% end %>
+
+  <% if can? :hide, author %>
+    <%= render Admin::ActionComponent.new(
+      :block_author,
+      author,
+      path: block_moderation_user_path(author),
+      id: dom_id(author, "#{dom_id(record)}_block_author"),
+      method: :put,
+      confirm: ->(name) { t("moderation.users.index.confirm_block", name: name) }
+    ) %>
+  <% end %>
+</div>

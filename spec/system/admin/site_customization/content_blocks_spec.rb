@@ -91,7 +91,9 @@ describe "Admin custom content blocks", :admin do
       expect(page).to have_content("#{block.name} (#{block.locale})")
       expect(page).to have_content(block.body)
 
-      accept_confirm { click_button "Delete" }
+      accept_confirm("Are you sure? This action will delete \"#{block.name}\" and can't be undone.") do
+        click_button "Delete"
+      end
 
       expect(page).not_to have_content("#{block.name} (#{block.locale})")
       expect(page).not_to have_content(block.body)

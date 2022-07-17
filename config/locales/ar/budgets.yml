@@ -15,9 +15,7 @@ ar:
         voted_info_2: "ولكن يمكنك تغيير تصويتك في أي وقت إلى أن يتم إغلاق هذه المرحلة."
         zero: أنت لم تصوت على أي مشروع استثماري.
       reasons_for_not_balloting:
-        not_logged_in: تحتاج الى %{signin} او %{signup} للمتابعة.
         not_verified: يمكن للمستخدمين الذين تم التحقق منهم فقط التصويت على الاستثمارات; %{verify_account}.
-        organization: المنظمات لا يسمح لها بالتصويت
         not_selected: لا يمكن دعم المشاريع الإستثمارية الغير محددة
         not_enough_money: "لقد قمت بالفعل بتعيين الميزانية المتاحة.<br><small>تذكر يمكنك%{change_ballot} في أي وقت</small>"
         no_ballots_allowed: مرحلة التحديد مغلقة
@@ -72,13 +70,6 @@ ar:
           button: بحث
           placeholder: البحث عن المشاريع الاستثمارية...
           title: بحث
-        search_results:
-          zero: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
-          one: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
-          two: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
-          few: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
-          many: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
-          other: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: قرعتي
           voted_info:
@@ -134,7 +125,6 @@ ar:
         support_title: ادعم هذا المشروع
         supports:
           zero: لا يوجد دعم
-          zero: "%{count} دعم"
           one: دعم واحد
           two: "%{count} دعم"
           few: "%{count} دعم"

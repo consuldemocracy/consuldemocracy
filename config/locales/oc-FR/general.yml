@@ -11,14 +11,9 @@ oc:
       save_changes_submit: Gardar de cambiaments
       recommendations: Recomandacions
       title: Lo mieu compte
-      user_permission_debates: Participar a debats
       user_permission_info: Amb lo tieu compte pòdes ja...
-      user_permission_proposal: Crear de nòvas proposicions
-      user_permission_support_proposal: Sosténer de proposicions
       user_permission_title: Participacion
       user_permission_verify: Per poder realizar totas las accions, verifica lo tieu compte.
-      user_permission_verify_info: "* Solament d'usatgièrs empadronats."
-      user_permission_votes: Participar a las votacions finalas*
       verified_account: Compte verificat
       verify_my_account: Verificar lo mieu compte
   application:
@@ -107,9 +102,6 @@ oc:
         button: Cercar
         placeholder: Cercar de debats...
         title: Cercar
-      search_results:
-        one: " que conten lo tèrme <strong>'%{search_term}'</strong>"
-        other: " que conten lo tèrme <strong>'%{search_term}'</strong>"
       start_debate: Comença un nòu debat
       title: Debats
       section_header:
@@ -209,7 +201,6 @@ oc:
       conditions: De condicions d'usatge
       consul: Sollicitud CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: Per assisténcia tecnica, visitatz
       copyright: CONSUL, %{year}
       description: Aquel portal es una adaptacion de la plataforma de %{open_source} %{consul} desvolopada per la Comuna de Madrid e adaptada per la Deputacion de Valéncia.
       open_source: logicial liure
@@ -372,7 +363,6 @@ oc:
       select_order_long: "veses las proposicions"
       start_proposal: Crèa una proposicion
       title: De proposicions ciutadanas
-      top: Top setmanièr
       top_link_proposals: Proposicions mai avaladas per categoria
       section_header:
         icon_alt: Icòna de proposicions
@@ -837,15 +827,12 @@ oc:
   votes:
     agree: Soi d'acòrdi
     anonymous: Tròp de vòts anonimes, per poder votar %{verify_account}.
-    comment_unauthenticated: As de besonh %{signin} o %{signup} per poder votar.
     disagree: Soi pas d'acòrdi
     organizations: Las associacions pòdon pas avalar
     supports: d'Avals
     verified_only: Las proposicions pòdon solament èsser votadas per usatgièrs verificats, %{verify_account}.
     budget_investments:
-      not_logged_in: As de besonh %{signin} o %{signup}.
       not_verified: Solament los usatgièrs verificats pòdon votar los projèctes d’inversion; %{verify_account}.
-      organization: Las associacions pòdon pas avalar
       unfeasible: Se pòdon pas avalar de proposicions inviables
       not_voting_allowed: Lo periòde de recuelhuda d'avals aquel barrat.
       different_heading_assigned:
@@ -877,23 +864,13 @@ oc:
       budget_investments:
         title: d'Inversions recomandadas
       slide: "Veire %{title}"
-    verification:
-      i_dont_have_an_account: Avètz pas compte, vòli crear un e o verificar
-      i_have_an_account: Ai ja un compte que vòli verificar
-      question: As ja un compte en %{org_name}?
-      title: Verificacion de compte
     welcome:
       go_to_index: Ara pas, veire de proposicions
       start_using_consul: Vai a la pagina d’indèx
       title: Collabòra en l'elaboracion de la nòrma dessús
-      user_permission_debates: Participar a debats
       user_permission_info: Amb lo tieu compte pòdes ja...
-      user_permission_proposal: Crear de nòvas proposicions
-      user_permission_support_proposal: Avalar de proposicions
       user_permission_verify: "Per poder realizar totas las accions, verifica lo tieu compte."
-      user_permission_verify_info: "* Solament d'usatgièrs empadronats."
       user_permission_verify_my_account: Verificar lo mieu compte
-      user_permission_votes: Participar a las votacions finalas*
   invisible_captcha:
     sentence_for_humans: "S'èras uman, per favor ignòra aquel camp"
     timestamp_error_message: "Aquò es tròp estat rapid. Per favor, reénvia lo formulari."

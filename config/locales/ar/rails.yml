@@ -261,5 +261,6 @@ ar:
       default: "%a, %d %b %Y %H:%M:%S %z"
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
+      short_datetime: "%Y-%m-%d %H:%M:%S"
       api: "%Y-%m-%d %H"
     pm: مساء

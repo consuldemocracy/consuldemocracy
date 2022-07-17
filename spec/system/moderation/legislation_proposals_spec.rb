@@ -11,7 +11,7 @@ describe "Moderate legislation proposals" do
     visit legislation_process_proposal_path(legislation_process, legislation_proposal)
 
     within("#legislation_proposal_#{legislation_proposal.id}") do
-      accept_confirm { click_link "Hide" }
+      accept_confirm("Are you sure? Hide \"#{legislation_proposal.title}\"") { click_button "Hide" }
     end
 
     expect(page).to have_css("#legislation_proposal_#{legislation_proposal.id}.faded")
@@ -21,6 +21,6 @@ describe "Moderate legislation proposals" do
     visit legislation_process_proposals_path(legislation_process)
 
     expect(page).to have_css(".proposal-content", count: 0)
-    expect(page).not_to have_link("Hide")
+    expect(page).not_to have_button "Hide"
   end
 end

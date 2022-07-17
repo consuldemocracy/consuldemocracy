@@ -54,7 +54,6 @@ pt-BR:
           winners: Selecionado
       debate:
         empty_questions: Não há perguntas
-        participate: Participar no debate
       index:
         filter: Filtro
         filters:

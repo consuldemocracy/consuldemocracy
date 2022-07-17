@@ -7,15 +7,13 @@ hr:
       new_comment_by: Stigao je novi komentar od <strong>%{commenter}</strong>
       subject: Netko je komentirao vašu %{commentable}
       title: Novi komentar
-    config:
-      manage_email_subscriptions: Ako ne želite više primati ove e-mail poruke, promijenite svoje postavke u
     email_verification:
       click_here_to_verify: ova poveznica
       instructions_2: Ova će e-poruka potvrditi vaš račun s<b>%{document_type} %{document_number}</b>. Ako ovo ne pripada vama, ne otvarajte prethodnu poveznicu i zanemarite ovu e-poruku.
       instructions: Za potvrdu svojeg korisničkog računa, kliknite %{verification_link}.
       subject: Potvrdite svoj e-mail
       thanks: Hvala vam puno.
-      title: Potvrdite Vaš račun koristeći sljedeću poveznicu
+      title: "Potvrdite Vaš račun koristeći sljedeću poveznicu"
     reply:
       hi: Pozdrav
       new_reply_by: Stigao je novi odgovor od <strong>%{commenter}</strong> na vaš komentar o temi
@@ -26,17 +24,14 @@ hr:
       title: "Obavijesti prijedloga u %{org_name}"
       share: Podijeli prijedlog
       comment: Komentiraj prijedlog
-      unsubscribe: "Ukoliko ne želite primati obavijest o prijedlogu, posjetite %{account} i odznačite \"Primi sažetak obavijesti o prijedlozima\"."
-      unsubscribe_account: Moj račun
       unfollow: "Pogledajte prijedlog i prestanite ga pratiti ukoliko ne želite primati obavijesti."
     direct_message_for_receiver:
       subject: "Primili ste novu privatnu poruku"
       reply: Odgovori %{sender}
-      unsubscribe: "Ukoliko ne želite primati direktne poruke, posjetite %{account} i odznačite \"Primajte e-poštu o izravnim porukama\"."
-      unsubscribe_account: Moj račun
     direct_message_for_sender:
       subject: "Vi ste poslali novu privatnu poruku"
-      title: "Poslali ste novu privatnu poruku primatelju <strong>%{receiver}</strong> sljedećeg sadržaja:"
+      title: "Vi ste poslali novu privatnu poruku"
+      text: "Vi ste poslali novu privatnu poruku <strong>%{receiver}</strong> sa sadržajem:"
     user_invite:
       ignore: "Ukoliko niste zatražili ovu pozivnicu ne brinite, možete ignorirati ovaj e-mail."
       text: "Hvala vam na prijavi %{org}! U nekoliko sekundi možete započeti sudjelovanje, samo popunite obrazac dolje:"

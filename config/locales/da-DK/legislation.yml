@@ -54,7 +54,6 @@ da:
           winners: Valgt
       debate:
         empty_questions: Der er ingen spørgsmål
-        participate: Deltage i debatten
       index:
         filter: Filtrere
         filters:
@@ -78,7 +77,7 @@ da:
         see_latest_comments_title: Kommenter processen
       shared:
         key_dates: Deltagelsesfaser
-        homepage: Startside
+        homepage: Opsummering
         debate_dates: Debat
         draft_publication_date: Udkast til publikation
         allegations_dates: Kommentarer

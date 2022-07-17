@@ -38,4 +38,13 @@ describe Administrator do
       expect(administrator.description_or_name_and_email).to eq("Billy Wilder (test@test.com)")
     end
   end
+
+  describe "#destroy" do
+    it "removes dependent budget administrator records" do
+      administrator = create(:administrator)
+      create_list(:budget, 2, administrators: [administrator])
+
+      expect { administrator.destroy }.to change { BudgetAdministrator.count }.by(-2)
+    end
+  end
 end

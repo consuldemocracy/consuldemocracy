@@ -5,7 +5,7 @@
       <tr>
         <th><%= Budget::Heading.human_attribute_name(:name) %></th>
         <% if budget.show_money? %>
-          <th><%= Budget::Heading.human_attribute_name(:price) %></th>
+          <th class="text-center"><%= Budget::Heading.human_attribute_name(:price) %></th>
         <% end %>
         <% if budget.approval_voting? %>
           <th><%= Budget::Heading.human_attribute_name(:max_ballot_lines) %></th>
@@ -20,9 +20,7 @@
         <tr id="<%= dom_id(heading) %>" class="heading">
           <td><%= heading.name %></td>
           <% if budget.show_money? %>
-            <td>
-              <%= budget.formatted_heading_price(heading) %>
-            </td>
+            <td><%= budget.formatted_heading_price(heading) %></td>
           <% end %>
           <% if budget.approval_voting? %>
             <td><%= heading.max_ballot_lines %></td>

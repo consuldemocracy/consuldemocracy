@@ -3,7 +3,6 @@ zh-CN:
     comments:
       index:
         block_authors: 封锁作者
-        confirm: 是否确定？
         filter: 过滤器
         filters:
           all: 所有
@@ -24,7 +23,6 @@ zh-CN:
     debates:
       index:
         block_authors: 封锁作者
-        confirm: 是否确定？
         filter: 过滤器
         filters:
           all: 所有
@@ -51,7 +49,6 @@ zh-CN:
     proposals:
       index:
         block_authors: 封锁作者
-        confirm: 是否确定？
         filter: 过滤器
         filters:
           all: 所有
@@ -69,7 +66,6 @@ zh-CN:
     budget_investments:
       index:
         block_authors: 封锁作者
-        confirm: 是否确定？
         filter: 过滤器
         filters:
           all: 所有
@@ -87,7 +83,6 @@ zh-CN:
     proposal_notifications:
       index:
         block_authors: 封锁作者
-        confirm: 是否确定？
         filter: 过滤器
         filters:
           all: 所有
@@ -104,7 +99,6 @@ zh-CN:
         title: 提议通知
     users:
       index:
-        hidden: 禁用
         hide: 封锁
         search_placeholder: 电子邮件或用户名
         title: 封锁用户

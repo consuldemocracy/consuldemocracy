@@ -5,15 +5,15 @@ module RemoteCensusMock
   include DocumentParser
 
   def mock_valid_remote_census_response
-    mock_remote_census_response(File.read("spec/fixtures/files/remote_census_api/valid.xml"))
+    mock_remote_census_response(File.read(file_fixture("remote_census_api/valid.xml")))
   end
 
   def mock_invalid_remote_census_response
-    mock_remote_census_response(File.read("spec/fixtures/files/remote_census_api/invalid.xml"))
+    mock_remote_census_response(File.read(file_fixture("remote_census_api/invalid.xml")))
   end
 
   def mock_invalid_signature_sheet_remote_census_response
-    xml = File.read("spec/fixtures/files/remote_census_api/invalid.xml")
+    xml = File.read(file_fixture("remote_census_api/invalid.xml"))
 
     Signature.new.document_types.each do |document_type|
       get_document_number_variants(document_type, "12345678Z").each do

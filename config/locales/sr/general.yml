@@ -11,14 +11,9 @@ sr:
       save_changes_submit: Сачувајте измене
       recommendations: Препоруке
       title: Мој налог
-      user_permission_debates: Учествовање у расправама
       user_permission_info: Са својим налогом можете...
-      user_permission_proposal: Креирајте нове предлоге
-      user_permission_support_proposal: Подржите предлоге
       user_permission_title: Партиципација
       user_permission_verify: Како бисте извели све радње потврдите ваш налог.
-      user_permission_verify_info: "*Само за кориснике на Попису."
-      user_permission_votes: Учествујте у завршном гласању
       verified_account: Налог потврђен
       verify_my_account: Потврди мој налог
   application:
@@ -113,10 +108,6 @@ sr:
         button: Тражите
         placeholder: Тражите расправе...
         title: Тражите
-      search_results:
-        one: " која садржи појам<strong>%{search_term}</strong>"
-        few: " који садрже појам <strong>%{search_term}</strong>"
-        other: " који садржи појам <strong>%{search_term}</strong>"
       start_debate: Започните расправу
       title: Расправе
       section_header:
@@ -218,7 +209,6 @@ sr:
       conditions: Услови коришћења
       consul: КОНСУЛ пријава
       consul_url: https://github.com/consul/consul
-      contact_us: За техничку помоћ посетите
       copyright: КОНСУЛ, %{year}
       description: Овај портал користи %{consul} који је %{open_source}.
       open_source: отворени-извор софтвер
@@ -386,7 +376,6 @@ sr:
       select_order_long: "Предлози су приказани на основу:"
       start_proposal: Креирајте предлог
       title: Предлози
-      top: Најпопуларнији у току недеље
       top_link_proposals: Предлози са највише подршке по категорији
       section_header:
         icon_alt: Икона предлога
@@ -838,7 +827,7 @@ sr:
           few: "%{count} коментара"
           other: "%{count} коментара"
         debates:
-          one: '%{count} Расправа'
+          one: 1 Расправа
           few: "%{count} Расправе"
           other: "%{count} Расправа"
         proposals:
@@ -868,15 +857,12 @@ sr:
   votes:
     agree: Слажем се
     anonymous: Превише анонимних гласова да призна гласање%{verify_account}.
-    comment_unauthenticated: Морате %{signin} или %{signup} да бисте гласали.
     disagree: Не слажем се
     organizations: Организацијама није дозвољено гласање
     supports: Подршке
     verified_only: Само потврђени корисници могу гласати за предлоге; %{verify_account}.
     budget_investments:
-      not_logged_in: Морате %{signin} или %{signup} да бисте наставили.
       not_verified: Само потврђени корисници могу гласати за инвестиционе пројекте; %{verify_account}.
-      organization: Организацијама није дозвољено гласање
       unfeasible: Неизводљиви инвестициони пројекти не могу бити подржани
       not_voting_allowed: Фаза гласања је затворена
       different_heading_assigned:
@@ -909,23 +895,13 @@ sr:
       budget_investments:
         title: Препоручене инвестиције
       slide: "Види %{title}"
-    verification:
-      i_dont_have_an_account: Немам налог
-      i_have_an_account: Већ имам налог
-      question: Да ли већ имате налог у %{org_name}?
-      title: Налог потврђен
     welcome:
       go_to_index: Не сад, идите на индекс страну
       start_using_consul: Идите на индекс страну
       title: Учествујте
-      user_permission_debates: Учествујте у расправи
       user_permission_info: Са својим налогом можете...
-      user_permission_proposal: Креирајте нови предлог
-      user_permission_support_proposal: Подржите предлоге*
       user_permission_verify: "Како бисте извели све радње потврдите ваш налог."
-      user_permission_verify_info: "*Само за кориснике на Попису."
       user_permission_verify_my_account: Потврди мој налог
-      user_permission_votes: Учествујте у завршном гласању
   invisible_captcha:
     sentence_for_humans: "Ако сте човек, игноришите ово поље"
     timestamp_error_message: "Превише брзо! Молимо Вас да пошаљете поново."
