@@ -6,6 +6,6 @@ class Account::VerifyAccountComponent < ApplicationComponent
   end
 
   def render?
-    !account.organization?
+    Setting["feature.user.skip_verification"].blank? && !account.organization?
   end
 end
