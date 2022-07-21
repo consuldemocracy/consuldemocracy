@@ -5,10 +5,12 @@ tr:
     actions:
       actions: Eylemler
       block_author: "Yazarı engelle"
+      confirm_action: "Emin misiniz? %{action} \"%{name}\""
       confirm_delete: "Emin misiniz? Bu işlem \"%{name}\" silecek ve geri alınamaz."
       confirm_hide: Moderasyonu onayla
       delete: "Sil"
       hide: Gizle
+      label: "%{action} %{name}"
       restore: Geri getir
       mark_featured: Öne Çıkan
       unmark_featured: Öne çıkan işaretini kaldır
@@ -36,6 +38,8 @@ tr:
           sdg: SKH
       create:
         notice: "Başlık başarıyla oluşturuldu"
+      destroy:
+        notice: "Afiş silindi"
       edit:
         editing: Banner düzenleme
         form:
@@ -66,8 +70,17 @@ tr:
         no_activity: Hiç moderatör faaliyeti yok.
     budgets:
       actions:
+        ballots: "Kabinler oluştur"
+        confirm:
+          ballots: "Emin misiniz? Bu işlem yalnızca son oylama aşamasında fiziksel kabinleri kullanacaksanız gereklidir. Vatandaşlar, fiziksel kabinlerden ya da web üzerinden oy kullanabilecek."
+          destroy: "Emin misiniz? Bu işlem, bütçeyi ve onunla ilişkili tüm grupları ve başlıkları silecek. Bu işlem geri alınamaz."
+        descriptions:
+          ballots: "Bu seçenek, fiziksel oy pusulalarını yönetmenizi sağlar. Bu seçeneği yalnızca son oylama aşamasında oy pusulalarını toplamak için fiziksel kabinler kullanacaksanız kullanın."
+          calculate_winners: 'Sonuçlar hesaplandıktan sonra yalnızca yöneticiler bunlara erişebilir. Bütçe düzenlenirken <strong>"Sonuçları göster" seçeneği etkinleştirilmişse</strong> proje "%{phase}" aşamasına ulaştığında sonuçlar herkese açık olur.'
+          destroy: "Bu işlem, bütçeyi ve onunla ilişkili tüm grupları ve başlıkları silecek. Bu işlem geri alınamaz."
         edit: "Bütçe düzenleme"
         preview: "Bütçeyi Görüntüle"
+        preview_results: "Sonuçları ön izlemesi"
       index:
         title: Katılımcı bütçe
         new_link: Yeni bütçe oluştur
@@ -102,9 +115,11 @@ tr:
         delete: Bütçeyi sil
         phase: Aşama
         phases_caption: "Aşamalar"
+        phases_table_help_text: "Bu aşamaların yapılandırması yalnızca bilgi verme amaçlıdır. Katılımcı bütçenin herkese açık sayfasında görüntülenecek aşama bilgilerini tanımlar."
         duration: "Süreç"
         enabled: Etkinleştirildi
         actions: Aksiyon
+        enable_phase: "%{phase} aşamasını etkinleştir"
         active: Aktif
         blank_dates: Tarihler boş
         administrators:
@@ -118,8 +133,9 @@ tr:
         empty_administrators: "Hiç yönetici yok"
         empty_valuators: "Hiç bilirkişi yok"
         name_description: "Bu, etkin olduğu zaman başlıkta ve kartlarda kullanılan katılımcı bütçenin adıdır"
+        image_description: "Bir görsel yüklenirse bu katılımcı bütçenin üstünde afiş olarak kullanılır. Yüklenmezse bütçelerin varsayılan rengi kullanılır."
         main_call_to_action: "Eylem için ana mesaj (isteğe bağlı)"
-        main_call_to_action_description: "Bu bağlantı, katılımcı bütçenin ana başlığında görünecek ve kullanıcınızı bir teklif oluşturma, mevcut tekliflere oy verme veya süreç hakkında daha fazla bilgi edinme gibi belirli bir eylemi gerçekleştirmeye teşvik edecektir."
+        main_call_to_action_description: "Bu bağlantı, katılımcı bütçenin ana afişinde görüntülenir ve kullanıcılarınızı bir öneri oluşturma, var olan önerileri oylama veya süreç hakkında ayrıntılı bilgi edinme gibi belirli bir eylemi gerçekleştirmeye teşvik eder."
         info:
           budget_settings: "Genel katılımcı bütçe ayarları"
           staff_settings: "Bütçeye atanan yönetici ve bilirkişiler"
@@ -136,9 +152,15 @@ tr:
         budgets: "Katılımcı bütçeler, vatandaşların teklif vermesine ve bütçenin bir kısmının nasıl harcanacağına doğrudan karar vermesine olanak tanımakla beraber, tekliflerin kurum tarafından izlenmesine ve titiz bir şekilde değerlendirilmesine de olanak tanır."
         groups:
           multiple: "Grupların başlıkları düzenlemesi hedeflenmiştir. Grup ve içerikleri oluşturulduktan sonra, bir kullanıcının grup başına kaç başlıkta oy verebileceğini belirlemek mümkündür."
+          single: "Gruplar başlıkları düzenlemek içindir. Bu bütçede yalnızca bir başlık bulunacağından ve hiçbir yerde görünmeyeceğinden aynı ad kullanılabilir. Bir sonraki adıma geçebilirsiniz."
         headings:
           multiple: "Başlıklar, katılımcı bütçedeki parayı ayırmak içindir. Burada, grup için başlıklar ekleyebilir ve her başlık için kullanılacak miktarı belirleyebilirsiniz."
         phases: "Katılımcı bütçelerin farklı aşamaları vardır. Burada, aşamaları etkinleştirip devre dışı bırakabilir ve her bir aşamayı özelleştirebilirsiniz."
+      show:
+        add_group: "Grup ekle"
+        add_heading: "Başlık ekle"
+        groups_and_headings: "Başlık grupları"
+        headings_caption: "%{group} grubundaki başlıklar"
       winners:
         calculate: Kazanan Yatırımları Hesapla
         calculated: Kazananlar hesaplanıyor, bu bir dakika sürebilir.
@@ -166,6 +188,7 @@ tr:
       index:
         new_button: "Yeni grup ekle"
     budget_headings:
+      no_headings: "<strong>%{group}</strong> grubunda herhangi bir başlık yok."
       create:
         notice: "Başlık başarıyla oluşturuldu!"
       update:
@@ -182,6 +205,7 @@ tr:
         edit: "Başlığı düzenle"
         submit: "Başlığı kaydet"
       group_switcher:
+        currently_showing: "<strong>%{group}</strong> grubundaki başlıklar görüntüleniyor."
         different_group: "Farklı bir gruptan başlıkları yönet"
         the_other_group: "%{group} grubundan başlıkları yönetin."
       index:
@@ -197,6 +221,7 @@ tr:
         duration_description: "Bu aşamanın aktif olacağı süre."
         enabled_help_text: Bu aşama, bütçe'nin aşamaları zaman çizelgesinde herkese açık olacak, başka herhangi bir amaç için aktif olduğu kadar aktif olacak
         main_call_to_action: "Eylem için ana mesaj (isteğe bağlı)"
+        main_call_to_action_description: "Bu bağlantı, bu aşama etkinleştirildiğinde katılımcı bütçenin ana afişinde görüntülenir ve kullanıcılarınızı bir öneri oluşturma, var olan önerileri oylama veya süreç hakkında ayrıntılı bilgi edinme gibi belirli bir eylemi gerçekleştirmeye teşvik eder."
         name_help_text: "Bu, bu aşama etkin olduğunda kullanıcıların başlıkta okuyacağı başlıktır."
         save_changes: Değişiklikleri kaydet
       index:
@@ -730,6 +755,7 @@ tr:
           proposals: "Öneriler"
           polls: "Anketler"
           layouts: "Düzenler"
+          machine_learning: "Yapay Zeka / Makine Öğrenmesi"
           mailers: "E-postalar"
           management: "Yönetim"
           welcome: "Hoş geldiniz"
@@ -750,6 +776,7 @@ tr:
       debates: "Tartışmalar"
       comments: "Yorumlar"
       local_census_records: Yerel nüfus sayımını yönet
+      machine_learning: "Yapay Zeka / Makine Öğrenmesi"
     administrators:
       index:
         title: Yöneticiler
@@ -1655,6 +1682,40 @@ tr:
         local_census_records:
           no_records_found: Kayıt bulunamadı.
     machine_learning:
+      cancel: "İşlemi iptal et"
+      comments_summary: "Yorumlar özeti"
+      data_folder_content: "Veri klasörü içeriği"
+      error: "Hata:"
+      execute_script: "Betiği yürüt"
+      executed_by: "Yürüten:"
+      executed_script: "Yürütülen betik:"
+      feature_disabled: "Bu özellik devre dışı. Makine Öğrenmesini %{link}ndan etkinleştirebilirsiniz."
+      feature_disabled_link: "ayarlar sayfası"
+      help:
+        title_1: "Yapay Zeka / Makine Öğrenmesi nedir?"
+        title_3: "Bu modül nasıl kullanılır"
+        description_4: "Lütfen örnek olarak önceki betikleri kullanın."
+        description_4b: "Yeni betik dosyaları <code>public/machine_learning/scripts</code> klasöründe bulunmalıdır"
+        title_5: "Yapay Zeka / Makine Öğrenmesi betik dosyalarını kullanmak için sunucunuzda Python kurulu olması gerekir"
+        description_5: "Bir Ubuntu 18.04 sunucusu için örnek yönergeleri şurada görebilirsiniz:"
+      help_text: "Bu deneysel bir özelliktir."
+      last_execution: "Son yürütülme"
+      no_content: "Henüz bir içerik üretilmemiş."
+      notice:
+        success: "Son betik başarılı şekilde yürütüldü."
+        error: "Bir sorun çıktı. Ayrıntıları aşağıda görebilirsiniz."
+        working: "Betik yürütülüyor. İşlem tamamlandığında betiği yürüten yöneticiye bir bildirim e-postası gönderilecek."
+        delete_generated_content: "Üretilen içerik silindi."
+      output_files: "Çıktı dosyaları:"
       related_content: "İlgili içerik"
+      related_content_description: "Önerilere ve katılımcı bütçe projelerine otomatik olarak üretilen ilgili içeriği ekler."
+      script_info: "Betiğin yürütülmesi tamamlandığında %{email} adresinize bir e-posta gönderilecek."
+      script_name: "Betik adı:"
+      select_script: "Yürütülecek Python betiğini seçin"
+      started_at: "Başlangıç:"
       tab_help: "Yardım"
+      tab_scripts: "Betiği yürüt"
+      tab_settings: "Ayarlar / Üretilmiş içerik"
       tags: "Etiketler"
+      tags_description: "Etiketlenebilecek tüm ögelere otomatik olarak etiketler üretir."
+      title: "Yapay Zeka / Makine Öğrenmesi"
