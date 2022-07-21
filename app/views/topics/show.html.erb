@@ -14,9 +14,10 @@
         <span class="bullet">&nbsp;&bull;&nbsp;</span>
         <%= l(@topic.created_at.to_date) %>
         <span class="bullet">&nbsp;&bull;&nbsp;</span>
-        <span class="icon-comments"></span>&nbsp;
-        <%= link_to t("community.show.topic.comments", count: @topic.comments_count),
-                    community_topic_path(@community, @topic, anchor: "comments") %>
+        <span class="comments-count">
+          <%= link_to t("community.show.topic.comments", count: @topic.comments_count),
+                      community_topic_path(@community, @topic, anchor: "comments") %>
+        </span>
       </div>
       <br>
       <p><%= @topic.description %></p>

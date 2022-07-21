@@ -17,8 +17,9 @@
     <span class="bullet">&nbsp;&bull;&nbsp;</span>
     <%= l @debate.created_at.to_date %>
     <span class="bullet">&nbsp;&bull;&nbsp;</span>
-    <span class="icon-comments"></span>&nbsp;
-    <%= link_to t("debates.show.comments", count: @debate.comments_count), debate_path(@debate, anchor: "comments") %>
+    <span class="comments-count">
+      <%= link_to t("debates.show.comments", count: @debate.comments_count), debate_path(@debate, anchor: "comments") %>
+    </span>
     <span class="bullet">&nbsp;&bull;&nbsp;</span>
     <span class="js-flag-actions">
       <%= render "shared/flag_actions", flaggable: @debate %>
