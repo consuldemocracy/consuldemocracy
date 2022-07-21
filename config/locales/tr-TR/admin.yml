@@ -155,6 +155,7 @@ tr:
           single: "Gruplar başlıkları düzenlemek içindir. Bu bütçede yalnızca bir başlık bulunacağından ve hiçbir yerde görünmeyeceğinden aynı ad kullanılabilir. Bir sonraki adıma geçebilirsiniz."
         headings:
           multiple: "Başlıklar, katılımcı bütçedeki parayı ayırmak içindir. Burada, grup için başlıklar ekleyebilir ve her başlık için kullanılacak miktarı belirleyebilirsiniz."
+          single: "Başlıklar, katılımcı bütçenin parasını bölmek içindir. Bu bütçede yalnızca bir başlık bulunacağından,, bu katılım bütçesine harcanacak parayı sabitleyeceğiniz yer burasıdır."
         phases: "Katılımcı bütçelerin farklı aşamaları vardır. Burada, aşamaları etkinleştirip devre dışı bırakabilir ve her bir aşamayı özelleştirebilirsiniz."
       show:
         add_group: "Grup ekle"
@@ -220,6 +221,7 @@ tr:
         duration: "Aşama süresi"
         duration_description: "Bu aşamanın aktif olacağı süre."
         enabled_help_text: Bu aşama, bütçe'nin aşamaları zaman çizelgesinde herkese açık olacak, başka herhangi bir amaç için aktif olduğu kadar aktif olacak
+        image_description: "Bir görsel yüklenirse, bu aşamanın açıklamasının yanında görüntülenir."
         main_call_to_action: "Eylem için ana mesaj (isteğe bağlı)"
         main_call_to_action_description: "Bu bağlantı, bu aşama etkinleştirildiğinde katılımcı bütçenin ana afişinde görüntülenir ve kullanıcılarınızı bir öneri oluşturma, var olan önerileri oylama veya süreç hakkında ayrıntılı bilgi edinme gibi belirli bir eylemi gerçekleştirmeye teşvik eder."
         name_help_text: "Bu, bu aşama etkin olduğunda kullanıcıların başlıkta okuyacağı başlıktır."
@@ -280,6 +282,7 @@ tr:
           incompatible: Uyumsuz
           price: Fiyat
           author: Yazar
+        cannot_calculate_winners: Kazanan projelerin hesaplanması için bütçe "%{phase}" aşamasında kalmalıdır
         see_results: "Sonuçları gör"
         milestone_tags_filter_all: "Tüm kilometre taşı etiketleri"
       show:
@@ -337,9 +340,13 @@ tr:
           back: "Grupları düzenlemeye geri dön"
       heading_mode:
         multiple:
+          description: "Birden çok grup, bölge veya konu içeren bir süreç oluşturun. Birkaç para çuvalı gibi bir şeyiniz var. Örneğin, \"Kuzey Bölgesi\" için 25.000 ₺, \"Merkez Bölge\" için 30.000 ₺, \"Güney Bölgesi\" ve tüm şehir için 28.000 ₺. Ya da spor, kültür veya sağlık gibi çeşitli temalar için."
           link: "Çoklu başlık bütçesi oluştur"
+          title: "<strong>Birden çok başlıklı</strong> bütçe"
         single:
+          description: "Bir grup, bölge veya konu ile bir süreç oluşturun. Para çuvalı gibi bir şeye sahipsiniz. Örneğin, bölge için 25.000 ₺ veya kültür için 10.000 ₺."
           link: "Tekli başlık bütçesi oluştur"
+          title: "<strong>Tek başlıklı</strong> bütçe"
         title: "Katılımcı bütçe türü"
       phases:
         continue: "Bitir"
@@ -1683,7 +1690,9 @@ tr:
           no_records_found: Kayıt bulunamadı.
     machine_learning:
       cancel: "İşlemi iptal et"
+      cancel_alert: "Bu işlem, var olan betik dosyasını iptal edecek ve betik dosyasının yeniden yürütülmesi gerekecektir."
       comments_summary: "Yorumlar özeti"
+      comments_summary_description: "Yorum yapılabilecek tüm ögeler için otomatik olarak oluşturulmuş bir yorum özeti görüntüler."
       data_folder_content: "Veri klasörü içeriği"
       error: "Hata:"
       execute_script: "Betiği yürüt"
@@ -1693,9 +1702,19 @@ tr:
       feature_disabled_link: "ayarlar sayfası"
       help:
         title_1: "Yapay Zeka / Makine Öğrenmesi nedir?"
+        description_1: "Geleneksel olarak bilgisayar programları, programın her durumda ne yapması gerektiği ve her an var olan bilgilerin nasıl işleneceği hakkında kesin kurallar belirlenerek tasarlanır. Yaygın olarak Yapay Zeka /Makine Öğrenmesi olarak bilinen şey, gerçekleştirilecek görevin tam olarak belirlendiği ve görevin nasıl daha iyi ya da daha kötü gerçekleştirildiğinin değerlendirildiği bir program türüdür. Ancak öncekinden farklı olarak sistem, görevi gerçekleştirmek için en uygun yöntemin ne olacağını keşfeder veya öğrenir."
+        title_2: "CONSUL üzerinde Yapay Zeka / Makine Öğrenmesi modülü ne yapar?"
+        description_2: "Bu modül, CONSUL üzerinde her türlü Yapay Zeka / Makine Öğrenmesi programının uygulanmasını sağlar. Programlar CONSUL üzerinde bulunan bilgileri işleyebilir ve hem kullanıcıların hem de yöneticilerin daha etkili ve akıllı vatandaş katılımı gerçekleştirmesine yardımcı olan sonuçlar üretebilir. Modül, genel CONSUL kodunu ve bu yeni programların kodunu birbirinden bağımsız tutarak, yeni programların uygulanmasını ve çalıştırılmasını kolaylaştırmak için geliştirilmiştir."
         title_3: "Bu modül nasıl kullanılır"
+        description_3: "İlk kez kullanırken, bu modülü uygun şekilde etkinleştirmek için CONSUL belgelerinde bulunan yönergelerin izlenmesi gerekir. Modül doğru şekilde etkinleştirildiğinde, programlar \"Betik dosyalarını çalıştır\" sekmesinden yürütülür. Yürütmeden önce, aynı sekmede yürütme süresi öngörüsünü ve diğer ilgili bilgileri görebiliriz. Yürütmenin sonunda, \"Ayarlar\" sekmesinden CONSUL üzerinde gösterilecek içeriği etkinleştirebilir ve bizim için yararlı olabilecek diğer üretilmiş dosyaları indirebiliriz."
+        title_4: "Yeni Yapay Zeka / Makine Öğrenmesi betik dosyaları nasıl uygulanır"
         description_4: "Lütfen örnek olarak önceki betikleri kullanın."
         description_4b: "Yeni betik dosyaları <code>public/machine_learning/scripts</code> klasöründe bulunmalıdır"
+        description_4c: "Betik dosyası tarafından kullanılacak giriş verileri, <code>../data</code> klasöründe JSON dosyaları biçiminde oluşturulur"
+        description_4d: "Üretilen herhangi bir çıktı <code>../data</code> klasöründe bulunmalıdır"
+        description_4e: "Betik dosyası ayarlarıyla, betik dosyasıyla aynı ada sahip ve configparser tarafından okunabilen bağımsız bir <code>.ini</code> metin dosyası oluşturmanız önerilir. Bu dosya, yöneticiler tarafından ayar değişikliği yapılmasını kolaylaştıracaktır."
+        description_4f: "Betik dosyasının ilk satırı olarak, kendisi hakkında kısa bilgiler ve ilgili tüm bilgilere bağlantılar içeren bir açılış üçlü alıntı dizgesi eklemeniz önerilir. Bu dizge, yönetim arayüzünde otomatik olarak gösterilir."
+        description_4g: "Betik dosyasıyla ilgili bilgileri, betik dosyasıyla aynı adla bir <code>.log</code> metin dosyasına kaydetmeniz önerilir."
         title_5: "Yapay Zeka / Makine Öğrenmesi betik dosyalarını kullanmak için sunucunuzda Python kurulu olması gerekir"
         description_5: "Bir Ubuntu 18.04 sunucusu için örnek yönergeleri şurada görebilirsiniz:"
       help_text: "Bu deneysel bir özelliktir."
