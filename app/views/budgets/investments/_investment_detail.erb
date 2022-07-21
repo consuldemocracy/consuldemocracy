@@ -5,8 +5,9 @@
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
   <%= l investment.created_at.to_date %>
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
-  <span class="icon-comments"></span>&nbsp;
-  <%= link_to t("shared.comments", count: investment.comments_count), "#comments" %>
+  <span class="comments-count">
+    <%= link_to t("shared.comments", count: investment.comments_count), "#comments" %>
+  </span>
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
   <%= investment.heading.name %>
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
