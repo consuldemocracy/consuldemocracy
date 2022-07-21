@@ -142,6 +142,7 @@ tr:
         submit_button: Değişiklikleri kaydet
   errors:
     messages:
+      allowed_file_content_types: "içerik türü %{types} seçeneklerinden biri olmalıdır"
       user_not_found: Kullanıcı bulunamadı
       invalid_date_range: "Geçersiz tarih aralığı"
   form:
@@ -400,6 +401,7 @@ tr:
         one: 1 yorum
         other: "%{count} yorumlar"
       support: Destek
+      support_label: "%{proposal} destekle"
       support_title: Bu öneriyi destekle
       supports:
         zero: Destek yok
@@ -837,8 +839,10 @@ tr:
       retired_help_text: Geri çekilen öneriler için gösterge panosu mevcut değil
   votes:
     agree: Katılıyorum
+    agree_label: "%{title} için düşüncem olumlu"
     anonymous: Oy kullanmak için çok fazla isimsiz oy kullanıldı %{verify_account}.
     disagree: Katılmıyorum
+    disagree_label: "%{title} için düşüncem olumsuz"
     organizations: Organizasyonların oy kullanmalarına izin verilmez
     supports: Destekler
     verified_only: Yalnızca doğrulanan kullanıcılar önerilere oy verebilir; %{verify_account}.
@@ -943,3 +947,6 @@ tr:
         more:
           one: "Bir etiket daha"
           other: "%{count} etiket daha"
+  machine_learning:
+    comments_summary: "Yorumlar özeti"
+    info_text: "İçerik Yapay Zeka / Makine Öğrenmesi tarafından oluşturulmuş"
