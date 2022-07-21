@@ -86,6 +86,16 @@ tr:
       hi: Merhaba
       new_comment_by: <strong>%{commenter}</strong> kullanıcısı, bütçe yatırımına dair %{investment} yeni bir değerlendirme yorumu paylaştı
       commenter_info: "%{commenter}, %{time}:"
+    machine_learning_error:
+      link: "Makine Öğrenmesi panosuna git"
+      subject: "Makine Öğrenmesi - Betik yürütülürken bir sorun çıktı"
+      text: "Makine Öğrenmesi betiği yürütülürken bir sorun çıktı."
+      title: "Makine Öğrenmesi betiği"
+    machine_learning_success:
+      link: "Makine Öğrenmesi panosuna git"
+      subject: "Makine Öğrenmesi - İçerik oluşturuldu"
+      text: "İçerik oluşturuldu."
+      title: "Makine Öğrenmesi betiği"
     new_actions_notification_rake_created:
       subject: "Vatandaş öneriniz ile ilgili daha fazla haberler"
       hi: "Merhaba %{name},"
