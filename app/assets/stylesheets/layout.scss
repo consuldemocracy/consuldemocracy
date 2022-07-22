@@ -73,7 +73,8 @@ main {
   &.sdg-goals-index,
   &.sdg-goal-show,
   &.topic-edit,
-  &.topic-new {
+  &.topic-new,
+  &.subscriptions-edit {
     @include grid-column-gutter;
   }
 }
@@ -183,10 +184,6 @@ button,
 
 .inline-block {
   display: inline-block;
-}
-
-.aling-middle {
-  vertical-align: middle;
 }
 
 .sidebar-divider {
@@ -485,6 +482,10 @@ button,
 .help-text {
   line-height: rem-calc(20);
   margin-top: 0;
+
+  strong {
+    font-style: normal;
+  }
 }
 
 .menu-and-content {
@@ -1101,6 +1102,10 @@ form {
     font-size: $base-font-size;
     font-weight: bold;
     line-height: $line-height;
+  }
+
+  .checkbox-label {
+    display: table;
   }
 
   fieldset legend {
@@ -1994,12 +1999,16 @@ table {
     padding: $line-height / 4;
     position: relative;
 
+    &:empty {
+      display: none;
+    }
+
     .divider {
       color: $text-light;
       display: inline-block;
     }
 
-    form {
+    .comment-form form {
       margin-top: $line-height / 2;
     }
   }
@@ -2116,21 +2125,32 @@ table {
 
 .comment-votes {
 
-  a {
+  button,
+  form {
     color: $text-light;
     display: inline-block;
-    vertical-align: top;
   }
 
-  a:hover {
-    color: $text-medium;
-    text-decoration: none;
+  button {
+    font-size: $base-font-size;
 
-    .icon-like {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .in-favor button {
+    @include has-fa-icon(thumbs-up, solid);
+
+    &:hover {
       color: $like;
     }
+  }
 
-    .icon-unlike {
+  .against button {
+    @include has-fa-icon(thumbs-down, solid);
+
+    &:hover {
       color: $unlike;
     }
   }

@@ -2,15 +2,18 @@ en:
   mailers:
     title: "Open Government"
     no_reply: "This message was sent from an email address that does not accept replies."
-    unsubscribe: "If you want to stop receiving these emails, you can change your preferences on the \"%{link}\" page."
-    unsubscribe_link: "My Account"
+    already_confirmed:
+      info: "We've received a request to send you instructions to confirm your account. However, your account is already confirmed, so there's no need to do so again."
+      new_password: "If you've forgotten your password, you can reset it at the following link:"
+      subject: Your account is already confirmed
     comment:
       hi: Hi
       new_comment_by: There is a new comment from <strong>%{commenter}</strong>
       subject: Someone has commented on your %{commentable}
       title: New comment
     config:
-      manage_email_subscriptions: To stop receiving these emails change your settings in
+      notifications_link: Notifications
+      unsubscribe_text: 'To unsubscribe from these emails, visit %{notifications} and uncheck "%{notification}".'
     email_verification:
       click_here_to_verify: this link
       instructions_2: This email will verify your account with <b>%{document_type} %{document_number}</b>. If these don't belong to you, please don't click on the previous link and ignore this email.
@@ -29,14 +32,12 @@ en:
       title: "Proposal notifications in %{org_name}"
       share: Share proposal
       comment: Comment proposal
-      unsubscribe: "If you don't want to receive any proposal notifications, visit %{account} and uncheck 'Receive a summary of proposal notifications'."
-      unsubscribe_account: My account
+      unsubscribe_text: "If you don't want to receive any proposal notifications, visit %{notifications} and uncheck 'Receive a summary of proposal notifications'."
       unfollow: "Visit this proposal and unfollow it to stop receiving notifications."
     direct_message_for_receiver:
       subject: "You have received a new private message"
       reply: Reply to %{sender}
-      unsubscribe: "If you don't want to receive direct messages, visit %{account} and uncheck 'Receive emails about direct messages'."
-      unsubscribe_account: My account
+      unsubscribe_text: "If you don't want to receive direct messages, visit %{notifications} and uncheck 'Receive emails about direct messages'."
     direct_message_for_sender:
       subject: "You have sent a new private message"
       title: "You have sent a new private message"

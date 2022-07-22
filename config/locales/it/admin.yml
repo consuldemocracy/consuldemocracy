@@ -4,13 +4,12 @@ it:
       title: Amministrazione
     actions:
       actions: Azioni
-      confirm: Sei sicuro?
+      block_author: "Blocca autore"
       confirm_action: "Sei sicuro? %{action} \"%{name}\""
       confirm_delete: "Sei sicuro? Quest'azione eliminerà \"%{name}\" e non è annullabile."
       confirm_hide: Confermare intervento di moderazione
       delete: "Eliminare"
       hide: Nascondi
-      hide_author: Nascondi l'autore
       label: "%{action} %{name}"
       restore: Ripristino
       mark_featured: In primo piano
@@ -69,8 +68,17 @@ it:
         no_activity: Non c’è alcuna attività dei moderatori.
     budgets:
       actions:
+        ballots: "Crea cabine"
+        confirm:
+          ballots: "Sei sicuro? Quest'azione è necessaria solo se userai delle cabine fisiche durante la fase di voto finale. I cittadini potranno ancora votare via web con o senza le cabine fisiche."
+          destroy: "Sei sicuro? Questo eliminerà il budget e tutte le sue voci e gruppi associati. Quest'azione non è annullabile."
+        descriptions:
+          ballots: "Questo ti consentirà di gestire i voti fisici. Usa quest'opzione solo se userai cabine fisiche per raccogliere i voti durante la fase finale di voto."
+          calculate_winners: 'Dopo il calcolo dei risultati, solo gli amministratori potranno accedervi. Saranno pubblici quando il progetto raggiunge la fase "%{phase}" <strong>se l''opzione "Mostra risultati" è abilitata</strong> modificando il budget.'
+          destroy: "Questo eliminerà il budget e tutte le sue voci e gruppi associati. Quest'azione non è annullabile."
         edit: "Modifica il budget"
         preview: "Anteprima"
+        preview_results: "Anteprima dei risultati"
       index:
         title: Bilanci partecipativi
         new_link: Creare un nuovo bilancio
@@ -121,12 +129,34 @@ it:
           other: "%{count} stimatori selezionati"
         empty_administrators: "Non ci sono amministratori"
         empty_valuators: "Non ci sono stimatori"
+        name_description: "Questo è il nome del budget partecipatorio usato sul titolo e le schede quando è attivo"
+        image_description: "Se un'immagine è caricata, sarà usata come banner in cima a questo budget partecipativo, altrimenti il colore predefinito per i budget sarà usato."
+        main_call_to_action: "Chiamata all'azione principale (facoltativo)"
+        main_call_to_action_description: "Questo link comparirà sul banner principale di questo budget partecipativo e incoraggerà il tuo utente a eseguire un'azione specifica come creare una proposta, votare quelle esistenti o scoprire di più sul processo."
+        info:
+          budget_settings: "Impostazioni generali del budget partecipativo"
+          staff_settings: "Amministratori e Valutatori assegnati al budget"
       destroy:
         success_notice: Bilancio cancellato con successo
         unable_notice: Non è consentito eliminare un Bilancio cui risultano associati degli investimenti
         unable_notice_polls: Non puoi eliminare un budget che non ha un sondaggio associato
+      new:
+        title_multiple: Nuovo budget di più titoli
+        title_single: Nuovo budget di un titolo
+      help:
+        budgets: "I budget partecipativi consentono ai cittadini di proporre e decidere direttamente come spendere parte del budget, monitorando e valutando rigorosamente le proposte dall'istituzione."
+        groups:
+          multiple: "I gruppi servono a organizzare i titoli. Dopo la creazione di un gruppo e che contiene i titoli, è possibile determinare quanti sono votabili da un utente per gruppo."
+          single: "I gruppi servono a organizzare i titoli, poiché questo budget conterrà solo un titolo, lo stesso nome è utilizzabile perché non comparirà da nessuna parte. Puoi semplicemente continuare alla fase successiva."
+        headings:
+          multiple: "I titoli servono a dividere il denaro del budget partecipativo. Qui puoi aggiungere i titoli per questo gruppo e assegnare l'importo di denaro che sarà usato per ognuno."
+          single: "I titoli servono a dividere il denaro del budget partecipativo. Poiché questo budget conterrà solo un titolo, questo è il luogo in cui stabilisci il denaro che sarà speso in questo budget partecipativo."
+        phases: "I budget partecipativi si compongono di diverse fasi. Qui puoi abilitare o disabilitare le fasi e personalizzarne ognuna."
       show:
+        add_group: "Aggiungi gruppo"
         add_heading: "Aggiungi voce di bilancio"
+        groups_and_headings: "Gruppi di titoli"
+        headings_caption: "Titoli in %{group}"
       winners:
         calculate: Calcolare gli investimenti del vincitore
         calculated: Stiamo calcolando i vincitori, ciò potrebbe richiedere alcuni minuti.
@@ -149,11 +179,12 @@ it:
       form:
         create: "Crea nuovo gruppo"
         edit: "Modifica gruppo"
+        max_votable_headings_info: "Si applica solo alla selezione della fase dei progetti. Durante la fase di votazione dei progetti, gli utenti possono votare solo in un titolo per gruppo."
         submit: "Salva gruppo"
       index:
         new_button: "Aggiungi nuovo gruppo"
     budget_headings:
-      no_headings: "Non ci sono voci."
+      no_headings: "Nessun'intestazione nel gruppo <strong>%{group}</strong>."
       create:
         notice: "Voce creata con successo!"
       update:
@@ -162,20 +193,35 @@ it:
         success_notice: "Voce eliminata con successo"
         unable_notice: "Non puoi eliminare una Voce che ha investimenti associati"
       form:
+        max_ballot_lines_info: 'Il numero massimo di progetti che un utente può votare durante la fase di "Voto dei progetti". Solo per budget che usano il voto d''approvazione.'
         population_info: "Il campo popolazione tra le Voci di Bilancio è utilizzato a scopo Statistico al termine del Bilancio per evidenziare la percentuale di votanti relativa a ciascuna Voce rappresentativa di un’area abitata. Il campo è facoltativo e perciò può essere lasciato vuoto se non pertinente."
         coordinates_info: "Se latitudine e longitudine sono fornite, la pagina di investimenti per questa voce includerà una mappa. Questa mappa sarà centrata usando quelle coordinate."
         content_blocks_info: "Se consenti blocco contenuto è spuntato, potrai creare contenuti personalizzati a questo gestore dalla sezione Impostazioni > Blocchi contenuto personalizzati. Questo contenuto comparirà sulla pagina di investimenti per questo gestore."
         create: "Crea nuova voce"
         edit: "Modifica voce"
         submit: "Salvare voce di bilancio"
+      group_switcher:
+        currently_showing: "Mostrare i titoli dal gruppo <strong>%{group}</strong>."
+        different_group: "Gestire i titoli da un gruppo diverso"
+        the_other_group: "Gestire i titoli dal gruppo %{group}."
       index:
         back: "Torna ai gruppi"
+        new_button: "Aggiungi nuovo titolo"
+        title: "%{budget} / titoli di %{group}"
     budget_phases:
       edit:
         title: "Modifica fase"
         description_help_text: Questo paragrafo apparirà nell’intestazione quando la fase risulterà attiva
+        duration: "Durata della fase"
+        duration_description: "Il periodo di tempo in cui questa fase sarà attiva."
         enabled_help_text: Questa fase sarà visibile a tutti nella sequenza temporale delle fasi del bilancio e risulterà attiva ad ogni altro fine
+        image_description: "Se un'immagine è caricata, sarà mostrata affianco alla descrizione di questa fase."
+        main_call_to_action: "Chiamata all'azione principale (facoltativo)"
+        main_call_to_action_description: "Questo link comparirà sul banner principale di questo budget partecipativo quando questa fase è abilitata e incoraggerà il tuo utente a eseguire un'azione specifica come creare una proposta, votare quelle esistenti o scoprire di più sul processo."
+        name_help_text: "Questo è il titolo della fase che gli utenti leggeranno sul titolo ogni volta che questa fase è attiva."
         save_changes: Salva modifiche
+      index:
+        title: "Fasi di %{budget}"
     budget_investments:
       index:
         heading_filter_all: Tutte le intestazioni
@@ -230,7 +276,7 @@ it:
           incompatible: Incompatibile
           price: Costo
           author: Autore
-        cannot_calculate_winners: Il bilancio deve rimanere nella fase “Progetti in votazione”, “Revisione Schede” o “Bilancio concluso” percalcolare i progetti vincitori
+        cannot_calculate_winners: Il budget deve rimanere alla fase "%{phase}" per calcolare i progetti vincitori
         see_results: "Vedi risultati"
         milestone_tags_filter_all: "Tutti i tag pietra miliare"
       show:
@@ -277,6 +323,31 @@ it:
         groups: Gruppi
         headings: Intestazione
         phases: Fasi
+      budgets:
+        continue: "Continua ai gruppi"
+      groups:
+        back: "Torna a modificare il budget"
+        continue: "Continua ai titoli"
+      headings:
+        continue: "Continua alle fasi"
+        single:
+          back: "Torna al gruppo di modifica"
+      heading_mode:
+        multiple:
+          description: "Crea un processo con più gruppi, distretti o argomenti. Hai molto denaro. Per esempio, €25.000 per il \"Distretto Nord\", €30.000 per il \"Distretto Centrale\", €28.000 per il \"Distretto Sud\" e l'intera città. O per diversi temi, come sport, cultura o salute."
+          link: "Crea budget di più titoli"
+          title: "Budget di <strong>più titoli</strong>"
+        single:
+          description: "Crea un processo con un gruppo, distretto o argomento. Hai molto denaro. Ad esempio, €25.000 per il distretto o €10.000 per la cultura."
+          link: "Crea budget di un titolo"
+          title: "Budget di <strong>un titolo</strong>"
+        title: "Tipo di budget partecipativo"
+      phases:
+        continue: "Termina"
+        multiple:
+          back: "Torna ai titoli"
+        single:
+          back: "Torna alla modifica del titolo"
     milestones:
       index:
         table_id: "ID"
@@ -384,18 +455,37 @@ it:
           day_offset: Giorni richiesti
           action_active: Attivo
           order: Ordina
+          published_proposal: Proposta pubblicata
           default:
             email: Email
             polls: Votazioni
+            poster: Poster
+        new:
+          creating: Nuova azione per il pannello di controllo delle proposte
+          back: Torna all'elenco
+        create:
+          notice: Azione creata correttamente
+        edit:
+          editing: Modifica l'azione per il pannello di controllo delle proposte
+          back: Torna all'elenco
+        delete:
+          success: Azione eliminata correttamente
         form:
           submit_button: Salva
+          help_text: Inserisci 0 così che questo valore non sia considerato
+          published_proposal_help_text: Segna questa casella di controllo per creare l'azione solo per le proposte pubblicate
       administrator_tasks:
         index:
+          description: "Le risorse pubblicate nel pannello di controllo delle proposte potrebbe includere un pulsante da richiedere agli amministratori. Le richieste dell'utente sono mostrate sotto."
+          title: Risorse necessarie
+          solve: Risolvi
+          no_records: Nessuna risorsa richiesta
           source: Risorsa
           resource: Risorse richieste
           filter: Filtra
           filters:
             pending: In sospeso
+            done: Risolta
         edit:
           back: Torna all'elenco mansioni in attesa
           solving: Risolvi mansioni in attesa
@@ -541,6 +631,7 @@ it:
           back: Indietro
           submit_button: Salva modifiche
           warning: Hai modificato il testo, non dimenticare di cliccare su Salva per salvare le modifiche in modo permanente.
+          markdown_changes_message: "Hai modificato il testo senza salvarlo. Confermi di voler abbandonare la pagina?"
         form:
           title: 'Stai modificando <span class="strong">%{draft_version_title}</span> del procedimento <span class="strong">%{process_title}</span>'
           launch_text_editor: Avviare l'editor di testo
@@ -633,6 +724,7 @@ it:
       hidden_users: Utenti bloccati
       administrators: Amministratori
       managers: Gestori
+      sdg_managers: Gestori SDG
       moderators: Moderatori
       messaging_users: Messaggi agli utenti
       newsletters: Newsletter
@@ -651,22 +743,27 @@ it:
       stats: Statistiche
       signature_sheets: Fogli firma
       site_customization:
+        documents: Documenti personalizzati
         homepage: Homepage
         pages: Pagine personalizzate
         images: Immagini personalizzate
         content_blocks: Blocchi di contenuto personalizzati
         information_texts: SMS informativi personalizzati
         information_texts_menu:
+          basic: "Personalizzazione di base"
           debates: "Dibattiti"
           community: "Community"
           proposals: "Proposte"
           polls: "Votazioni"
           layouts: "Impaginazione"
+          machine_learning: "IA / Apprendimento Automatico"
           mailers: "Email"
           management: "Gestione"
           welcome: "Benvenuto"
         buttons:
           save: "Salva"
+          content_block:
+            update: "Aggiorna Blocco"
       title_moderated_content: Contenuto moderato
       title_profiles: Profili
       title_settings: Impostazioni
@@ -674,18 +771,26 @@ it:
       title_booths: Seggi
       legislation: Legislazione collaborativa
       users: Utenti
+      dashboard: Pannello di controllo delle proposte
+      administrator_tasks: Risorse necessarie
       dashboard_actions: Risorse ed azioni
       debates: "Dibattiti"
       comments: "Commenti"
+      local_census_records: Gestisci il censimento locale
+      machine_learning: "IA / Apprendimento automatico"
     administrators:
       index:
         title: Amministratori
+        id: ID Amministratore
         no_administrators: Non ci sono amministratori.
       administrator:
         add: Aggiungi
         restricted_removal: "Non è possibile rimuovere se stessi dagli amministratori"
       search:
         title: "Amministratori: Ricerca utenti"
+      form:
+        edit_title: "Modifica l'amministratore"
+        updated: "Amministratore aggiornato correttamente"
     moderators:
       index:
         title: Moderatori
@@ -697,6 +802,7 @@ it:
     segment_recipient:
       all_users: Tutti gli utenti
       administrators: Amministratori
+      all_proposal_authors: Autori della proposta (incluse archiviate e ritirate)
       proposal_authors: Autori della proposta
       investment_authors: Autori degli investimenti nel bilancio corrente
       feasible_and_undecided_investment_authors: "Autori di qualche investimento nel bilancio corrente che risulta non conforme a: [stima conclusa irrealizzabile]"
@@ -792,6 +898,9 @@ it:
       budget_investment_selected:
         title: "Investimento di budget selezionato"
         description: "Inviato all'autore quando il suo investimento del saldo è stato selezionato."
+      budget_investment_unfeasible:
+        title: "Investimento del budget non fattibile"
+        description: "Inviato all'autore quando il suo investimento del budget è stato contrassegnato come non fattibile."
       budget_investment_unselected:
         title: "Investimento di budget deselezionato"
         description: "Inviato all'autore quando il suo investimento di budget non è stato selezionato per la fase di valutazione."
@@ -919,6 +1028,7 @@ it:
       flash:
         create: "Turno aggiunto"
         destroy: "Turno rimosso"
+        unable_to_destroy: "I cambiamenti di risultati o riconteggi associati non sono eliminabili"
         date_missing: "È necessario selezionare una data"
       vote_collection: Raccogli Voti
       recount_scrutiny: Riconteggio & Scrutinio
@@ -991,6 +1101,8 @@ it:
         error_on_question_added: "La domanda non può essere assegnata a questo sondaggio"
       destroy:
         alert: "Quest'azione rimuoverà il sondaggio e tutte le sue domande associate."
+        success_notice: "Sondaggio eliminato correttamente"
+        unable_notice: "Non puoi eliminare un sondaggio avente voti"
     questions:
       index:
         title: "Quesiti"
@@ -1004,6 +1116,7 @@ it:
         table_proposal: "Proposta"
         table_question: "Quesito"
         table_poll: "Sondaggio"
+        poll_not_assigned: "Sondaggio non assegnato"
       edit:
         title: "Modifica la domanda"
       new:
@@ -1057,6 +1170,7 @@ it:
       index:
         title: "Riconteggi"
         no_recounts: "Non c'è nulla da scrutinare"
+        all_booths_total: "Totale cumulativo da tutte le cabine:"
         total_final: "Scrutinii finali"
         total_system: "Voti (automatico)"
         table_booth_name: "Urna"
@@ -1104,6 +1218,7 @@ it:
         official_updated: Dettagli del pubblico ufficiale salvati
       index:
         title: Funzionari
+        help: I profili utente segnati come ufficiali avranno i propri interventi sulla piattaforma evidenziati. Puoi definire l'etichetta che appare affianco ai nomi utente di questi profili dal più (livello 1) al meno importante (livello 5).
         no_officials: Non ci sono funzionari.
         name: Nominativo
         official_position: Incarico ufficiale
@@ -1152,6 +1267,13 @@ it:
         select: Selezionare
         selected: Selezionato
         milestones: Traguardi
+        no_proposals: Nessuna proposta.
+      show:
+        create_question: Aggiungi questa proposta a un sondaggio per esser votata
+      form:
+        update: Aggiorna la proposta
+      update:
+        notice: Proposta aggiornata correttamente
     hidden_proposals:
       index:
         filter: Filtra
@@ -1177,6 +1299,8 @@ it:
         title: Impostazioni di configurazione
         general: Impostazioni di configurazione
         update_setting: Aggiorna
+        participation_processes: "Processi di partecipazione"
+        images_and_documents: "Immagini e documenti"
         feature_flags: Funzionalità
         features:
           enabled: "Funzionalità attivata"
@@ -1187,19 +1311,42 @@ it:
             update: Configurazione dela mappa aggiornata con successo.
           form:
             submit: Aggiorna
+          how_to_enable: 'Per mostrare la mappa agli utenti, devi abilitare "Proposte e geolocalizzazione degli investimenti di budget" sulla scheda delle "Funzionalità".'
+        dashboard:
+          title: Pannello di controllo delle proposte
+        remote_census:
+          title: Configurazione del Censimento Remoto
+          how_to_enable: 'Per configurare il censimento remoto (SOAP) devi abilitare "Configura la connessione al censimento remoto (SOAP)" sulla scheda "Funzionalità".'
+        sdg:
+          title: Configurazione SDG
+          how_to_enable: 'Per mostrare le opzioni della configurazione dagli Obiettivi di Sviluppo Sostenibile, devi abilitare "SDG" sulla scheda "Funzionalità".'
+      remote_census_general_name: Informazioni Generali
+      remote_census_request_name: Richiedi Dati
+      remote_census_response_name: Dati di Risposta
       setting: Funzionalità
       setting_name: Impostazione
       setting_value: Valore
       no_description: "Nessuna descrizione"
     shared:
       search:
+        advanced_filters:
+          sdg_goals:
+            all: "Tutti gli obiettivi"
+            label: "Per obiettivo"
+          sdg_targets:
+            all: "Tutti gli obiettivi"
+            label: "Per obiettivo"
         label:
           booths: "Ricercare seggio per nome"
+          budget_investments: "Cerca investimenti per titolo, descrizione o titolo"
           debates: "Cerca dibattiti per titolo o descrizione"
+          legislation_processes: "Cerca processi per titolo o descrizione"
+          legislation_proposals: "Cerca proposte per titolo o descrizione"
           local_census_records: "Cerca per numero del documento"
           organizations: "Nominativo, numero di telefono o e-mail"
           poll_officers: "Ricercare presidenti di seggio"
           poll_questions: "Cerca quesiti oggetto di votazione"
+          polls: "Cerca sondaggi per nome o descrizione"
           proposals: "Ricercare le proposte per titolo, codice. descrizione o domanda"
           users: "Cerca utente in base al nome o all’email"
         search: "Ricercare"
@@ -1218,6 +1365,9 @@ it:
       created_at: Creato al
       color_help: Formato esadecimale
       show_results_and_stats: "Visualizza risultati e statistiche"
+      results_and_stats_reminder: "Contrassegnando queste caselle di controllo, i risultati e/o le statistiche saranno pubblicamente disponibili e ogni utente potrà vederli."
+      close_modal: Chiudi modale
+      example_url: "Ad esempio, https://consulproject.org o /help"
     geozones:
       index:
         title: Geozona
@@ -1226,7 +1376,9 @@ it:
         name: Nominativo
         external_code: Codice esterno
         census_code: Codice anagrafico
+        code_help: Codice di risposta per questa zona geografica sull'API del censimento
         coordinates: Coordinate
+        coordinates_help: Coordinate che genereranno un'area cliccabile su una mappa dell'immagine HTML
       edit:
         form:
           submit_button: Salva modifiche
@@ -1250,10 +1402,17 @@ it:
         title: Nuovi fogli firma
         document_numbers_note: "Con i numeri separati da punto e virgola (;)"
         submit: Creare foglio di firma
+        text_help:
+          required_fields_note: "Per verificare un utente, la tua applicazione necessita di: Numero del documento"
+          date_of_birth_note: ", Data di nascita (gg/mm/aaaa)"
+          postal_code_note: " e Codice Postale"
+          required_fields_structure_note: "I campi richiesti per ogni utente devono esser separati da virgole e ogni utente dev'esser separato da punti e virgola."
+          example_text: "Esempio: "
       show:
         created_at: Creato
         author: Autore
         users: Utenti
+        signature_count: "Numero di firme:"
         verified:
           one: "C'è %{count} firme valide"
           other: "Ci sono %{count} firme valide"
@@ -1261,6 +1420,10 @@ it:
           one: "Ci sono %{count} firme non valide"
           other: "Ci sono %{count} firme non valide"
         unverified_error: (non verificato in anagrafe)
+        voted:
+          zero: "Nessun voto creato dalle firme verificate."
+          one: "%{count} voto creato dalle firme verificate."
+          other: "%{count} voti creato dalle firme verificate."
         loading: "Ci sono ancora le firme da verificare in anagrafe, attende e riaggiornare la pagina"
     stats:
       show:
@@ -1332,9 +1495,14 @@ it:
           origin_web: Partecipanti via web
           origin_total: Totale partecipanti
       sdg:
+        budget_investments:
+          amount: "Importo approvato"
+          winners: "Vincitori dei progetti d'investimento"
+          sent: "Progetti d'investimento inviati"
         debates: "Dibattiti"
         polls: "Votazioni"
         proposals: "Proposte"
+        title: "Obiettivi di Sviluppo Sostenibile - Statistiche"
     tags:
       create: Crea argomento
       index:
@@ -1345,6 +1513,7 @@ it:
     users:
       columns:
         id: ID
+        erase_reason: Cancella motivo
         name: Nominativo
         email: Email
         document_number: Numero del documento
@@ -1356,6 +1525,7 @@ it:
         filter: Filtra
         filters:
           active: Attivo
+          erased: Cancellato
       search:
         placeholder: Ricerca utente per e-mail, nome o documento
     verifications:
@@ -1391,6 +1561,8 @@ it:
           names:
             top_links: Collegamenti Migliori
             footer: Piè di Pagina
+            subnavigation_left: Navigazione Principale Sinistra
+            subnavigation_right: Navigazione Principale Destra
       images:
         index:
           title: Immagini personalizzate
@@ -1423,15 +1595,25 @@ it:
           see_page: Vedere la pagina
         new:
           title: Creare la nuova pagina personalizzata
+          slug_help: "Testo per identificare questa pagina sull'URL, ad esempio <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: Creato al
           status: Stato
           updated_at: Aggiornato al
           title: Titolo
           slug: Slug
+          see_cards: Gestisci le carte
         cards:
+          cards_title: carte
           create_card: Crea scheda
           no_cards: Non c’è alcuna scheda.
+          columns_help: "Larghezza della carta in numero di colonne. Sugli schermi mobile è sempre una larghezza del 100%."
+          create:
+            notice: "Carta creata correttamente!"
+          update:
+            notice: "Carta aggiornata correttamente"
+          destroy:
+            notice: "Carta rimossa correttamente"
     homepage:
       title: Homepage
       description: I moduli attivi vengono visualizzati nella homepage nello stesso ordine qui riportato.
@@ -1468,14 +1650,85 @@ it:
       empty: "Non ci sono modifiche registrate"
     local_census_records:
       index:
+        title: Gestisci il censimento locale
+        create: Crea nuovo registro del censimento locale
+        no_local_census_records: Nessun registro del censimento locale.
         document_type: Tipo di documento
         document_number: Numero del documento
         date_of_birth: Data di nascita
         postal_code: Codice Postale
+        import: Importa CSV
+      new:
+        creating: Creando nuovo registro del censimento locale
+      create:
+        notice: Nuovo registro del censimento locale creato correttamente!
+      edit:
+        editing: Modificando il registro del censimento locale
+      update:
+        notice: Registro del censimento locale aggiornato correttamente!
+      destroy:
+        notice: Registro del censimento locale rimosso correttamente!
       imports:
         new:
           title: Registri censo locale
+          subtitle: Importa file CSV
+        create:
+          notice: Processo d'importazione dei registri del censimento locale eseguiti correttamente!
+        show:
+          title: Gestisci il censimento locale
+          subtitle: Importa i risultati del processo
+          import: Importa di nuovo
+          errored: Righe errate
+          created: Registri creati
+        local_census_records:
+          no_records_found: Nessun registro trovato.
     machine_learning:
+      cancel: "Annulla l'operazione"
+      cancel_alert: "Quest'azione annullerà lo script corrente e sarà necessario eseguirlo nuovamente."
+      comments_summary: "Riepilogo dei commenti"
+      comments_summary_description: "Mostra un riepilogo dei commenti generato automaticamente su tutti gli elementi commentabili."
+      data_folder_content: "Contenuto della cartella di dati"
+      error: "Errore:"
+      execute_script: "Esegui script"
+      executed_by: "Eseguito da:"
+      executed_script: "Script eseguito:"
+      feature_disabled: "Questa funzionalità è disabilitata. Per usare l'Apprendimento Automatico puoi abilitarlo dal %{link}."
+      feature_disabled_link: "pagina delle impostazioni"
+      help:
+        title_1: "Cos'è l'IA/Apprendimento Automatico?"
+        description_1: "Tradizionalmente, i programmi informatici sono progettati stabilendo regole precise su cosa il programma dovrebbe fare in ogni situazione e come elaborare le informazioni disponibili in qualsiasi momento. Ciò che è comunemente noto come IA/Apprendimento Automatico è un tipo di programmi per cui ciò che è precisamente stabilito è quale attività eseguire e come valutare se questa sia eseguita meglio o peggio. Ma, a differenza di quanto detto sopra, il sistema scopre o impara quale sarebbe il metodo più adatto per eseguire l'attività."
+        title_2: "A cosa serve il modulo IA / Apprendimento Automatico su CONSUL?"
+        description_2: "Questo modulo consente a ogni tipo di programma di IA/Apprendimento Automatico di esser implementato su CONSUL. I programmi possono elaborare le informazioni disponibili su CONSUL e produrre risultati che aiutino sia gli utenti che gli amministratori a coinvolgere in modo più efficiente e intelligente la partecipazione cittadina. Il modulo è stato sviluppato per rendere facile l'implementazione ed esecuzione di nuovi programmi, mantenendo il codice generale di CONSUL e il codice di questi nuovi programmi indipendenti tra loro."
+        title_3: "Come usare questo modulo"
+        description_3: "Per usarlo per la prima volta, è necessario seguire le istruzioni disponibili nella documentazione di CONSUL per attivare propriamente questo modulo. Una volta attivato correttamente, i programmi sono eseguiti dalla scheda \"Esegui script\". Prima di eseguirli, possiamo vedere nella stessa scheda una stima del tempo d'esecuzione e altre informazioni rilevanti. Alla fine dell'esecuzione, possiamo attivare i contenuti che saranno mostrati su CONSUL dalla scheda delle \"Impostazioni\", nonché scaricare altri file generati che potrebbero esserci utili."
+        title_4: "Come implementare nuovi script di IA / Apprendimento Automatico"
+        description_4: "Sei pregato di usare gli script precedenti come esempi."
+        description_4b: "I nuovi script dovrebbero trovarsi nella cartella\n<code>public/machine_learning/scripts</code>"
+        description_4c: "I dati inseriri utilizzabili dallo script saranno creati come file JSON nella cartella <code>../data</code>"
+        description_4d: "Ogni output generato dovrebbe esser posto nella cartella <code>../data</code>"
+        description_4e: "Si consiglia di creare un file di testo <code>.ini</code> indipendente con le impostazioni dello script, con lo stesso nome dello script e leggibile da configparser. Questo file faciliterà la modifica delle impostazioni dagli amministratori."
+        description_4f: "Si consiglia di includere come prima riga dello script una stringa iniziale di triple virgolette con alcune brevi informazioni e collegamenti a ogni informazione rilevante. Questa stringa sarà mostrata automaticamente nell'interfaccia d'Amministrazione."
+        description_4g: "Si consiglia di registrare le informazioni rilevanti dello script in un file di testo <code>.log</code>, con lo stesso nome dello script."
+        title_5: "Per usare gli script di IA / Apprendimento Automatico devi aver installato Python sul tuo server"
+        description_5: "Qui puoi vedere le istruzioni d'esempio per un server di Ubuntu 18.04:"
+      help_text: "Questa funzionalità è sperimentale."
+      last_execution: "Ultima esecuzione"
+      no_content: "Ancora nessun contenuto generato."
+      notice:
+        success: "L'ultimo script è stato eseguito correttamente."
+        error: "Si è verificato un errore. Puoi vederne i dettagli di seguito."
+        working: "Lo script è in esecuzione. L'amministratore che lo ha eseguito, riceverà un'email al suo termine."
+        delete_generated_content: "Il contenuto generato è stato eliminato correttamente."
+      output_files: "File di output:"
       related_content: "Contenuti correlati"
+      related_content_description: "Aggiunge i contenuti correlati generati automaticamente alle proposte e ai progetti a budget partecipativo."
+      script_info: "Riceverai un'email a %{email}, al termine dell'esecuzione dello script."
+      script_name: "Nome dello script:"
+      select_script: "Seleziona lo script di Python da eseguire"
+      started_at: "Avviato alle:"
       tab_help: "Aiuto"
+      tab_scripts: "Esegui lo script"
+      tab_settings: "Impostazioni / Contenuto generato"
       tags: "Etichette"
+      tags_description: "Genera automaticamente i tag su tutti gli elementi etichettabili."
+      title: "IA / Apprendimento Automatico"

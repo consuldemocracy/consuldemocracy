@@ -34,12 +34,10 @@ class Management::Budgets::InvestmentsController < Management::BaseController
   end
 
   def show
-    load_investment_votes(@investment)
   end
 
   def vote
     @investment.register_selection(managed_user, vote_value)
-    load_investment_votes(@investment)
     respond_to do |format|
       format.html { redirect_to management_budget_investments_path(heading_id: @investment.heading.id) }
       format.js
@@ -52,16 +50,17 @@ class Management::Budgets::InvestmentsController < Management::BaseController
 
   private
 
-    def load_investment_votes(investments)
-      @investment_votes = managed_user ? managed_user.budget_investment_votes(investments) : {}
+    def investment_params
+      params.require(:budget_investment).permit(allowed_params)
     end
 
-    def investment_params
+    def allowed_params
       attributes = [:external_url, :heading_id, :tag_list, :organization_name, :location,
                     image_attributes: image_attributes,
                     documents_attributes: document_attributes,
                     map_location_attributes: map_location_attributes]
-      params.require(:budget_investment).permit(attributes, translation_params(Budget::Investment))
+
+      [*attributes, translation_params(Budget::Investment)]
     end
 
     def only_verified_users

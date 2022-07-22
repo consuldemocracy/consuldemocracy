@@ -21,6 +21,33 @@ describe Map do
     end
   end
 
+  describe "#set_default_map_location" do
+    it "sets the default coordinates for the default map" do
+      map = Map.default
+      map.map_location.destroy!
+
+      expect(map.reload.map_location).to be nil
+      expect(MapLocation.count).to be 0
+
+      map.set_default_map_location
+
+      expect(Map.count).to be 1
+      expect(MapLocation.count).to be 1
+
+      expect(map.map_location.latitude).to eq MapLocation.default_latitude
+      expect(map.map_location.longitude).to eq MapLocation.default_longitude
+      expect(map.map_location.zoom).to eq MapLocation.default_zoom
+    end
+
+    it "does not set the default coordinates for other maps" do
+      map = create(:map)
+      expect(map.map_location).to be nil
+
+      map.set_default_map_location
+      expect(map.map_location).to be nil
+    end
+  end
+
   describe ".default" do
     it "returns the default map if it is already created" do
       expect(Map.count).to be 1
@@ -38,26 +65,6 @@ describe Map do
       expect(MapLocation.count).to be 0
 
       expect(Map.default).to be_a(Map)
-
-      expect(Map.count).to be 1
-      expect(MapLocation.count).to be 1
-
-      expect(Map.first.budget_id).to be 0
-      expect(MapLocation.first.latitude).to eq MapLocation.default_latitude
-      expect(MapLocation.first.longitude).to eq MapLocation.default_longitude
-      expect(MapLocation.first.zoom).to eq MapLocation.default_zoom
-    end
-  end
-
-  describe ".create_default!" do
-    it "creates and returns the default map using the default coordinates" do
-      MapLocation.destroy_all
-      Map.destroy_all
-
-      expect(Map.count).to be 0
-      expect(MapLocation.count).to be 0
-
-      expect(Map.create_default!).to be_a(Map)
 
       expect(Map.count).to be 1
       expect(MapLocation.count).to be 1

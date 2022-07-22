@@ -53,7 +53,6 @@ eu:
           winners: Hautatutakoak
       debate:
         empty_questions: Ez dago galderarik
-        participate: Hurrengo gaietan parte hartuz aurretiko eztabaidetan ekarpenak egin ditzazu.
       index:
         filter: Iragazkia
         filters:

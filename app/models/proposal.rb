@@ -1,5 +1,4 @@
 class Proposal < ApplicationRecord
-  include Rails.application.routes.url_helpers
   include Flaggable
   include Taggable
   include Conflictable
@@ -52,7 +51,7 @@ class Proposal < ApplicationRecord
   validates :responsible_name, presence: true, unless: :skip_user_verification?
 
   validates :responsible_name, length: { in: 6..Proposal.responsible_name_max_length }, unless: :skip_user_verification?
-  validates :retired_reason, presence: true, inclusion: { in: RETIRE_OPTIONS }, unless: -> { retired_at.blank? }
+  validates :retired_reason, presence: true, inclusion: { in: ->(*) { RETIRE_OPTIONS }}, unless: -> { retired_at.blank? }
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
@@ -87,10 +86,6 @@ class Proposal < ApplicationRecord
   scope :published,                -> { where.not(published_at: nil) }
   scope :draft,                    -> { where(published_at: nil) }
   scope :created_by,               ->(author) { where(author: author) }
-
-  def url
-    proposal_path(self)
-  end
 
   def publish
     update!(published_at: Time.current)

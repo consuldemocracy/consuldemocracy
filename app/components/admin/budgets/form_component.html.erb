@@ -39,10 +39,12 @@
       </div>
     </div>
 
-    <div id="hide_money" class="small-12 column <%= "hide" if @budget.voting_style == "knapsack" %>">
-      <p class="form-label"><%= t("admin.budgets.edit.hide_money") %></p>
-      <p class="help-text"><%= t("admin.budgets.edit.hide_money_help_text") %></p>
-      <%= f.check_box :hide_money, id: "hide_money_checkbox" %>
+    <div id="hide_money" class="row expanded <%= hide_money_style %>">
+      <div class="small-12 column">
+        <p class="form-label"><%= t("admin.budgets.edit.hide_money") %></p>
+        <p class="help-text"><%= t("admin.budgets.edit.hide_money_help_text") %></p>
+        <%= f.check_box :hide_money %>
+      </div>
     </div>
 
     <% unless wizard? %>

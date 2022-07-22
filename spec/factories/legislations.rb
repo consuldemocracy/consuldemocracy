@@ -165,6 +165,10 @@ FactoryBot.define do
     process factory: :legislation_process
     author factory: :user
 
+    trait :hidden do
+      hidden_at { Time.current }
+    end
+
     trait :with_image do
       after(:create) { |legislation_proposal| create(:image, imageable: legislation_proposal) }
     end

@@ -64,11 +64,6 @@ ar:
       users: إدارة المستخدمين
       user_invites: إرسال الدعوات
       select_user: حدد المستخدم
-    permissions:
-      create_proposals: إنشاء مقترحات
-      debates: الانخراط في المناقشات
-      support_proposals: دعم مقترحات
-      vote_proposals: مقترحات التّصويت
     print:
       proposals_info: 'قم بإنشاء مقترحك على http: //url.consul'
       proposals_title: "المقترحات:"

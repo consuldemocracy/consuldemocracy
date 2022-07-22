@@ -11,6 +11,13 @@ describe Comment do
     expect(comment).to be_valid
   end
 
+  it "dynamically validates the commentable types" do
+    stub_const("#{Comment}::COMMENTABLE_TYPES", %w[Debate])
+
+    expect(build(:comment, commentable: create(:debate))).to be_valid
+    expect(build(:comment, commentable: create(:proposal))).not_to be_valid
+  end
+
   it "updates cache_counter in debate after hide and restore" do
     debate  = create(:debate)
     comment = create(:comment, commentable: debate)

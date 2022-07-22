@@ -2,15 +2,18 @@ es:
   mailers:
     title: "Gobierno abierto"
     no_reply: "Este mensaje se ha enviado desde una dirección de correo electrónico que no admite respuestas."
-    unsubscribe: "Si quieres dejar de recibir estos emails, puedes cambiar tus preferencias en \"%{link}\"."
-    unsubscribe_link: "Mi cuenta"
+    already_confirmed:
+      info: "Hemos recibido una solicitud para enviarte instrucciones para confirmar tu cuenta. Sin embargo, tu cuenta ya está confirmada, por lo que no es necesario volver a hacerlo."
+      new_password: "Si has olvidado tu contraseña, puedes restablecerla en el siguiente enlace:"
+      subject: Tu cuenta ya está confirmada
     comment:
       hi: Hola
       new_comment_by: Hay un nuevo comentario de <strong>%{commenter}</strong> en
       subject: Alguien ha comentado en tu %{commentable}
       title: Nuevo comentario
     config:
-      manage_email_subscriptions: Puedes dejar de recibir estos emails cambiando tu configuración en
+      notifications_link: Notificaciones
+      unsubscribe_text: 'Para darse de baja de estos emails, puedes entrar en %{notifications} y desmarcar la opción "%{notification}".'
     email_verification:
       click_here_to_verify: en este enlace
       instructions_2: Este email es para verificar tu cuenta con <b>%{document_type} %{document_number}</b>. Si esos no son tus datos, por favor no pulses el enlace anterior e ignora este email.
@@ -29,14 +32,12 @@ es:
       title: "Notificaciones de propuestas en %{org_name}"
       share: Compartir propuesta
       comment: Comentar propuesta
-      unsubscribe: "Si no quieres recibir notificaciones de propuestas, puedes entrar en %{account} y desmarcar la opción 'Recibir resumen de notificaciones sobre propuestas'."
-      unsubscribe_account: Mi cuenta
+      unsubscribe_text: "Si no quieres recibir notificaciones de propuestas, puedes entrar en %{notifications} y desmarcar la opción 'Recibir resumen de notificaciones sobre propuestas'."
       unfollow: "Si no quieres recibir más notificaciones, visita esta propuesta y deja de seguirla."
     direct_message_for_receiver:
       subject: "Has recibido un nuevo mensaje privado"
       reply: Responder a %{sender}
-      unsubscribe: "Si no quieres recibir mensajes privados, puedes entrar en %{account} y desmarcar la opción 'Recibir emails con mensajes privados'."
-      unsubscribe_account: Mi cuenta
+      unsubscribe_text: "Si no quieres recibir mensajes privados, puedes entrar en %{notifications} y desmarcar la opción 'Recibir emails con mensajes privados'."
     direct_message_for_sender:
       subject: "Has enviado un nuevo mensaje privado"
       title: "Has enviado un nuevo mensaje privado"

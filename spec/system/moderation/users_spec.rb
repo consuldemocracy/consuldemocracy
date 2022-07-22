@@ -24,7 +24,9 @@ describe "Moderate users" do
     visit debate_path(debate1)
 
     within("#debate_#{debate1.id}") do
-      accept_confirm { click_link "Hide author" }
+      accept_confirm("Are you sure? This will hide the user \"#{debate1.author.name}\" and all their contents.") do
+        click_button "Block author"
+      end
     end
 
     expect(page).to have_current_path(debates_path)
@@ -36,7 +38,9 @@ describe "Moderate users" do
 
     expect(page).not_to have_content(comment3.body)
 
-    click_link("Sign out")
+    click_link "Sign out"
+
+    expect(page).to have_content "You have been signed out successfully"
 
     visit root_path
 
@@ -64,7 +68,8 @@ describe "Moderate users" do
     within("#moderation_users") do
       expect(page).to have_content citizen.name
       expect(page).not_to have_content "Blocked"
-      click_link "Block"
+
+      accept_confirm { click_button "Block" }
     end
 
     within("#moderation_users") do
@@ -73,47 +78,44 @@ describe "Moderate users" do
     end
   end
 
-  scenario "Hiding a user removes all roles" do
-    moderator = create(:moderator)
-    admin = create(:administrator)
-    valuator = create(:valuator)
-    manager = create(:manager)
-    sdg_manager = create(:sdg_manager)
-    all_roles = create(:user)
-    create(:administrator, user: all_roles)
-    create(:valuator, user: all_roles)
-    create(:moderator, user: all_roles)
-    create(:manager, user: all_roles)
-    create(:sdg_manager, user: all_roles)
+  scenario "Hide users in the moderation section" do
+    create(:user, username: "Rick")
 
-    debate1 = create(:debate, author: admin.user)
-    debate2 = create(:debate, author: valuator.user)
-    debate3 = create(:debate, author: manager.user)
-    debate4 = create(:debate, author: sdg_manager.user)
-    debate5 = create(:debate, author: all_roles)
+    login_as(create(:moderator).user)
+    visit moderation_users_path(search: "Rick")
 
-    expect(Administrator.count).to eq 2
-    expect(Valuator.count).to eq 2
-    expect(Manager.count).to eq 2
-    expect(SDG::Manager.count).to eq 2
-    expect(Moderator.count).to eq 2
-
-    login_as(moderator.user)
-
-    [debate1, debate2, debate3, debate4, debate5].each do |debate|
-      visit debate_path(debate)
-
-      within("#debate_#{debate.id}") do
-        accept_confirm { click_link "Hide author" }
+    within("#moderation_users") do
+      accept_confirm('This will hide the user "Rick" without hiding their contents') do
+        click_button "Hide"
       end
-
-      expect(page).to have_current_path(debates_path)
     end
 
-    expect(Administrator.count).to eq 0
-    expect(Valuator.count).to eq 0
-    expect(Manager.count).to eq 0
-    expect(SDG::Manager.count).to eq 0
-    expect(Moderator.count).to eq 1
+    expect(page).to have_content "The user has been hidden"
+
+    within("#moderation_users") do
+      expect(page).to have_content "Hidden"
+    end
+  end
+
+  scenario "Block a user removes all their roles" do
+    admin = create(:administrator).user
+    user = create(:user, username: "Budget administrator")
+    budget = create(:budget, administrators: [create(:administrator, user: user)])
+    debate = create(:debate, author: user)
+    login_as(admin)
+    visit admin_budget_budget_investments_path(budget)
+
+    expect(page).to have_select options: ["All administrators", "Budget administrator"]
+
+    visit debate_path(debate)
+    within("#debate_#{debate.id}") do
+      accept_confirm { click_button "Block author" }
+    end
+
+    expect(page).to have_current_path(debates_path)
+
+    visit admin_budget_budget_investments_path(budget)
+
+    expect(page).to have_select options: ["All administrators"]
   end
 end

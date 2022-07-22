@@ -49,7 +49,6 @@ id:
           winners: Dipilih
       debate:
         empty_questions: Tidak ada pertanyaan
-        participate: Berpartisipasi dalam perdebatan
       index:
         filter: Penyaring
         filters:

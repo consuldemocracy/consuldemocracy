@@ -63,11 +63,6 @@ sq:
       users: Menaxhimi i përdoruesve
       user_invites: Dërgo ftesa
       select_user: Zgjidh përdoruesin
-    permissions:
-      create_proposals: Krijo propozimin
-      debates: Angazhohu në debate
-      support_proposals: Përkrahni propozimet
-      vote_proposals: Voto propozimet
     print:
       proposals_info: 'Krijo propozimin tuaj në http: //url.consul'
       proposals_title: "Propozime"

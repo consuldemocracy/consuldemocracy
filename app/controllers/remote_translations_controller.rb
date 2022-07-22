@@ -14,7 +14,11 @@ class RemoteTranslationsController < ApplicationController
   private
 
     def remote_translations_params
-      params.permit(:remote_translations)
+      params.permit(allowed_params)
+    end
+
+    def allowed_params
+      [:remote_translations]
     end
 
     def set_remote_translations

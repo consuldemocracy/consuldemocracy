@@ -14,15 +14,9 @@ describe "Admin activity" do
       visit proposal_path(proposal)
 
       within("#proposal_#{proposal.id}") do
-        click_link "Hide"
+        accept_confirm("Are you sure? Hide \"#{proposal.title}\"") { click_button "Hide" }
       end
 
-      page.driver.browser.switch_to.alert do
-        expect(page).to have_content "Are you sure? This action will hide this content. "\
-                                     "You can undo this action from the moderation panel."
-      end
-
-      accept_confirm
       expect(page).to have_css("#proposal_#{proposal.id}.faded")
 
       visit admin_activity_path
@@ -50,7 +44,7 @@ describe "Admin activity" do
         check "proposal_#{proposal3.id}_check"
       end
 
-      accept_confirm { click_button "Hide proposals" }
+      accept_confirm("Are you sure? Hide proposals") { click_button "Hide proposals" }
 
       expect(page).not_to have_content(proposal1.title)
 
@@ -67,7 +61,7 @@ describe "Admin activity" do
       visit admin_hidden_proposals_path
 
       within("#proposal_#{proposal.id}") do
-        accept_confirm { click_button "Restore" }
+        accept_confirm("Are you sure? Restore") { click_button "Restore" }
       end
 
       expect(page).to have_content "There are no hidden proposals"
@@ -89,15 +83,9 @@ describe "Admin activity" do
       visit debate_path(debate)
 
       within("#debate_#{debate.id}") do
-        click_link "Hide"
+        accept_confirm("Are you sure? Hide \"#{debate.title}\"") { click_button "Hide" }
       end
 
-      page.driver.browser.switch_to.alert do
-        expect(page).to have_content "Are you sure? This action will hide this content. "\
-                                     "You can undo this action from the moderation panel."
-      end
-
-      accept_confirm
       expect(page).to have_css("#debate_#{debate.id}.faded")
 
       visit admin_activity_path
@@ -124,7 +112,7 @@ describe "Admin activity" do
         check "debate_#{debate3.id}_check"
       end
 
-      accept_confirm { click_button "Hide debates" }
+      accept_confirm("Are you sure? Hide debates") { click_button "Hide debates" }
 
       expect(page).not_to have_content(debate1.title)
 
@@ -141,7 +129,7 @@ describe "Admin activity" do
       visit admin_hidden_debates_path
 
       within("#debate_#{debate.id}") do
-        accept_confirm { click_button "Restore" }
+        accept_confirm("Are you sure? Restore") { click_button "Restore" }
       end
 
       expect(page).to have_content "There are no hidden debates"
@@ -164,14 +152,7 @@ describe "Admin activity" do
       visit debate_path(debate)
 
       within("#comment_#{comment.id}") do
-        click_link "Hide"
-
-        page.driver.browser.switch_to.alert do
-          expect(page).to have_content "Are you sure? This action will hide this content. "\
-                                       "You can undo this action from the moderation panel."
-        end
-
-        accept_confirm
+        accept_confirm("Are you sure? Hide \"#{comment.body}\"") { click_button "Hide" }
         expect(page).to have_css(".faded")
       end
 
@@ -199,7 +180,7 @@ describe "Admin activity" do
         check "comment_#{comment3.id}_check"
       end
 
-      accept_confirm { click_button "Hide comments" }
+      accept_confirm("Are you sure? Hide comments") { click_button "Hide comments" }
 
       expect(page).not_to have_content(comment1.body)
 
@@ -216,7 +197,7 @@ describe "Admin activity" do
       visit admin_hidden_comments_path
 
       within("#comment_#{comment.id}") do
-        accept_confirm { click_button "Restore" }
+        accept_confirm("Are you sure? Restore") { click_button "Restore" }
       end
 
       expect(page).to have_content "There are no hidden comments"
@@ -238,17 +219,12 @@ describe "Admin activity" do
       visit proposal_path(proposal)
 
       within("#proposal_#{proposal.id}") do
-        click_link "Hide author"
-      end
+        accept_confirm("Are you sure? This will hide the user \"#{proposal.author.name}\" and all their contents.") do
+          click_button "Block author"
+        end
 
-      page.driver.browser.switch_to.alert do
-        expect(page).to have_content "Are you sure? This action will hide all content created by "\
-                                     "the author and the author will be blocked and not be able to "\
-                                     "sign in. You can undo this action from the moderation panel."
+        expect(page).to have_current_path(proposals_path)
       end
-
-      accept_confirm
-      expect(page).to have_current_path(debates_path)
 
       visit admin_activity_path
 
@@ -267,8 +243,10 @@ describe "Admin activity" do
       visit moderation_users_path(search: user.username)
 
       within("#moderation_users") do
-        click_link "Block"
+        accept_confirm { click_button "Block" }
       end
+
+      expect(page).to have_content "The user has been blocked"
 
       visit admin_activity_path
 
@@ -294,7 +272,7 @@ describe "Admin activity" do
         check "proposal_#{proposal3.id}_check"
       end
 
-      accept_confirm { click_button "Block authors" }
+      accept_confirm("Are you sure? Block authors") { click_button "Block authors" }
 
       expect(page).not_to have_content(proposal1.author.username)
 
@@ -322,7 +300,7 @@ describe "Admin activity" do
         check "debate_#{debate3.id}_check"
       end
 
-      accept_confirm { click_button "Block authors" }
+      accept_confirm("Are you sure? Block authors") { click_button "Block authors" }
 
       expect(page).not_to have_content(debate1.author.username)
 
@@ -350,7 +328,7 @@ describe "Admin activity" do
         check "comment_#{comment3.id}_check"
       end
 
-      accept_confirm { click_button "Block authors" }
+      accept_confirm("Are you sure? Block authors") { click_button "Block authors" }
 
       expect(page).not_to have_content comment1.author.username
 
@@ -369,7 +347,7 @@ describe "Admin activity" do
       visit admin_hidden_users_path
 
       within("#user_#{user.id}") do
-        accept_confirm { click_button "Restore" }
+        accept_confirm("Are you sure? Restore") { click_button "Restore" }
       end
 
       expect(page).to have_content "There are no hidden users"

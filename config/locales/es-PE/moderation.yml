@@ -3,7 +3,6 @@ es-PE:
     comments:
       index:
         block_authors: Bloquear autores
-        confirm: '¿Estás seguro?'
         filter: Filtrar
         filters:
           all: Todas
@@ -24,7 +23,6 @@ es-PE:
     debates:
       index:
         block_authors: Bloquear autores
-        confirm: '¿Estás seguro?'
         filter: Filtrar
         filters:
           all: Todas
@@ -50,7 +48,6 @@ es-PE:
     proposals:
       index:
         block_authors: Bloquear autores
-        confirm: '¿Estás seguro?'
         filter: Filtrar
         filters:
           all: Todas
@@ -68,7 +65,6 @@ es-PE:
     budget_investments:
       index:
         block_authors: Bloquear autores
-        confirm: '¿Estás seguro?'
         filter: Filtrar
         filters:
           all: Todas
@@ -85,7 +81,6 @@ es-PE:
     proposal_notifications:
       index:
         block_authors: Bloquear autores
-        confirm: '¿Estás seguro?'
         filter: Filtrar
         filters:
           all: Todas
@@ -100,7 +95,6 @@ es-PE:
         title: Notificaciones de propuestas
     users:
       index:
-        hidden: Bloqueado
         hide: Bloquear
         search_placeholder: email o nombre de usuario
         title: Bloquear usuarios

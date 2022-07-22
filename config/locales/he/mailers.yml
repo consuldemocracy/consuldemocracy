@@ -6,15 +6,13 @@ he:
       new_comment_by: ישנה הערה חדשה מ <strong>%{commenter}</strong>
       subject: ישנה הערה חדשה %{commentable}
       title: הערה חדשה
-    config:
-      manage_email_subscriptions: כדי להפסיק לקבל דואר דומה עליכם לשנות את הגדרות הדואר
     email_verification:
       click_here_to_verify: קישור זה
       instructions_2: האימייל זה יאמת את החשבון שלך עם <b>-%{document_type} - %{document_number}-</b>. אם אלו שלא שייכים לך, נא לא ללחוץ על הקישור הקודם, התעלם מדוא"ל זה.
       instructions: כדי להשלים את אימות חשבון המשתמש שלך, עליך ללחוץ על %{verification_link}.
       subject: נא אשר את הדוא"ל שלך
       thanks: תודה מכל הלב.
-      title: אשר את חשבונך באמצעות הקישור הבא
+      title: "אשר את חשבונך באמצעות הקישור הבא"
     reply:
       hi: שלום
       new_reply_by: ישנה התייחסות חדשה מ <strong>%{commenter}</strong> לתגוב
@@ -25,16 +23,13 @@ he:
       title: "התרעות הצעות ב-%{org_name}"
       share: שיתוף ההצעה
       comment: תגובה על ההצעה
-      unsubscribe: "אם אין ברצונך לקבל התרעות על ההצעה, גש/י אל %{account} והסר/י את הסימון במשבצת 'קבלת סיכום ההודעות על הצעות'."
-      unsubscribe_account: החשבון שלי
     direct_message_for_receiver:
       subject: "התקבלה הודעה פרטית חדשה"
       reply: השב ל %{sender}
-      unsubscribe: "אם אינך רוצה לקבל הודעות ישירות, גש/י אל %{account} והסר/י את הסימון במשבצת 'קבלת דואר אלקטרוני על הודעות ישירות'."
-      unsubscribe_account: החשבון שלי
     direct_message_for_sender:
       subject: "שלחת הודעה פרטית חדשה"
-      title: "שלחת הודעה פרטית אל <strong>%{receiver}</strong> שהתוכן בה:"
+      title: "שלחת הודעה פרטית חדשה"
+      text: "שלחת הודעה פרטית אל <strong>%{receiver}</strong> שהתוכן בה:"
     user_invite:
       ignore: "אם לא את/ה ביקשת את ההזמנה הזו, אין בעיה, תוכל/י פשוט להתעלם מהודעת הדואר האלקטרוני הזו."
       text: "תודה שביקשת להצטרף אל %{org}! בתוך כמה שניות גם את/ה יכול/ה להשתתף ולקבוע איך תתנהל העיר שלך. עליך רק למלא את הטופס הבא:"

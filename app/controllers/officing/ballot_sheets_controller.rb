@@ -57,6 +57,10 @@ class Officing::BallotSheetsController < Officing::BaseController
     end
 
     def ballot_sheet_params
-      params.permit(:data, :poll_id, :officer_assignment_id)
+      params.permit(allowed_params)
+    end
+
+    def allowed_params
+      [:data, :poll_id, :officer_assignment_id]
     end
 end

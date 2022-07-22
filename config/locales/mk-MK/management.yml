@@ -11,8 +11,6 @@ mk:
     menu:
       create_proposal: Направи предлог
       support_proposals: Поддржи предлози
-    permissions:
-      support_proposals: Поддржи предлози
     proposals:
       create_proposal: Направи предлог
       index:

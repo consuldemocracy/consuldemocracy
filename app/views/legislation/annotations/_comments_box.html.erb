@@ -16,12 +16,9 @@
     <% end %>
 
     <% if @process.allegations_phase.open? %>
-      <a class="button publish-comment" href="#"><strong><%= t("legislation.annotations.comments.publish_comment") %></strong></a>
-      &nbsp;
-    <% end %>
-
-    <% if @process.allegations_phase.open? %>
       <% if user_signed_in? %>
+        <a class="button publish-comment" href="#"><strong><%= t("legislation.annotations.comments.publish_comment") %></strong></a>
+        &nbsp;
         <% css_id = parent_or_commentable_dom_id(nil, annotation) %>
         <div id="js-comment-form-annotation-<%= annotation.id %>" style="display:none" class="comment-form js-comment-form-annotation">
           <%= form_for @comment, url: legislation_process_draft_version_annotation_new_comment_path(annotation.draft_version.process, annotation.draft_version, annotation), remote: true do |f| %>
@@ -37,14 +34,7 @@
           <% end %>
         </div>
       <% else %>
-
-      <div>
-        <div class="participation-not-allowed" style="display: none;" aria-hidden="false">
-          <%= sanitize(t("users.login_to_comment",
-              signin: link_to_signin, signup: link_to_signup)) %>
-        </div>
-      </div>
-
+        <%= render "shared/login_to_comment" %>
       <% end %>
     <% end %>
   </div>

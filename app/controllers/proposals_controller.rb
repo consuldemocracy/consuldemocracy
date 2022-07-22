@@ -58,7 +58,6 @@ class ProposalsController < ApplicationController
   def vote
     @follow = Follow.find_or_create_by!(user: current_user, followable: @proposal)
     @proposal.register_vote(current_user, "yes")
-    set_proposal_votes(@proposal)
   end
 
   def retire
@@ -70,12 +69,6 @@ class ProposalsController < ApplicationController
   end
 
   def retire_form
-  end
-
-  def vote_featured
-    @follow = Follow.find_or_create_by!(user: current_user, followable: @proposal)
-    @proposal.register_vote(current_user, "yes")
-    set_featured_proposal_votes(@proposal)
   end
 
   def summary
@@ -99,27 +92,30 @@ class ProposalsController < ApplicationController
   private
 
     def proposal_params
+      params.require(:proposal).permit(allowed_params)
+    end
+
+    def allowed_params
       attributes = [:video_url, :responsible_name, :tag_list, :terms_of_service,
                     :geozone_id, :related_sdg_list,
                     image_attributes: image_attributes,
                     documents_attributes: document_attributes,
                     map_location_attributes: map_location_attributes]
       translations_attributes = translation_params(Proposal, except: :retired_explanation)
-      params.require(:proposal).permit(attributes, translations_attributes)
+
+      [*attributes, translations_attributes]
     end
 
     def retired_params
-      attributes = [:retired_reason]
-      translations_attributes = translation_params(Proposal, only: :retired_explanation)
-      params.require(:proposal).permit(attributes, translations_attributes)
+      params.require(:proposal).permit(allowed_retired_params)
+    end
+
+    def allowed_retired_params
+      [:retired_reason, translation_params(Proposal, only: :retired_explanation)]
     end
 
     def resource_model
       Proposal
-    end
-
-    def set_featured_proposal_votes(proposals)
-      @featured_proposals_votes = current_user ? current_user.proposal_votes(proposals) : {}
     end
 
     def discard_draft
@@ -156,7 +152,6 @@ class ProposalsController < ApplicationController
         @featured_proposals = Proposal.not_archived.unsuccessful
                               .sort_by_confidence_score.limit(Setting["featured_proposals_number"])
         if @featured_proposals.present?
-          set_featured_proposal_votes(@featured_proposals)
           @resources = @resources.where.not(id: @featured_proposals)
         end
       end

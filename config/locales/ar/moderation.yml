@@ -3,7 +3,6 @@ ar:
     comments:
       index:
         block_authors: حظر المؤلفين\المشاركين
-        confirm: هل أنت متأكد؟
         filter: ترشيح
         filters:
           all: الكل
@@ -24,7 +23,6 @@ ar:
     debates:
       index:
         block_authors: حظر المؤلفين\المشاركين
-        confirm: هل أنت متأكد؟
         filter: ترشيح
         filters:
           all: الكل
@@ -51,7 +49,6 @@ ar:
     proposals:
       index:
         block_authors: حظر المؤلفين\المشاركين
-        confirm: هل أنت متأكد؟
         filter: ترشيح
         filters:
           all: الكل
@@ -69,7 +66,6 @@ ar:
     budget_investments:
       index:
         block_authors: حظر المؤلفين\المشاركين
-        confirm: هل أنت متأكد؟
         filter: ترشيح
         filters:
           all: الكل
@@ -87,7 +83,6 @@ ar:
     proposal_notifications:
       index:
         block_authors: حظر المؤلفين\المشاركين
-        confirm: هل أنت متأكد؟
         filter: ترشيح
         filters:
           all: الكل
@@ -104,7 +99,6 @@ ar:
         title: إشعارات المقترح
     users:
       index:
-        hidden: ممنوع
         hide: حظر
         search_placeholder: البريد الإلكتروني أو اسم المستخدم
         title: حظر المستخدمين

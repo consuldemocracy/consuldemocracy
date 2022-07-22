@@ -1,29 +1,23 @@
-<td>
-  <table style="width: 100%;">
-    <tbody>
-      <tr>
-        <td style="padding-left: 10px;">
-          <h1 style="<%= css_for_mailer_heading %>">
-            <%= t("mailers.proposal_notification_digest.title",
-                  org_name: Setting["org_name"]) %>
-          </h1>
-          <p style="<%= css_for_mailer_text %>">
-            <%= t("mailers.proposal_notification_digest.info",
-                  org_name: Setting["org_name"]) %>
-          </p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<td style="<%= css_for_mailer_content %>">
+
+  <h1 style="<%= css_for_mailer_heading %>">
+    <%= t("mailers.proposal_notification_digest.title",
+          org_name: Setting["org_name"]) %>
+  </h1>
+
+  <p style="<%= css_for_mailer_text %>">
+    <%= t("mailers.proposal_notification_digest.info",
+          org_name: Setting["org_name"]) %>
+  </p>
 
   <% @notifications.each do |notification| %>
     <table style="width: 100%; border-top: 1px solid #DEE0E3; padding-top: 12px;">
       <tbody>
         <tr>
           <td style="padding-bottom: 20px; padding-left: 10px;">
-            <p style="<%= css_for_mailer_text %>">
+            <h2 style="<%= css_for_mailer_subheading %>">
               <%= link_to notification.notifiable.title, proposal_url(notification.notifiable.proposal, anchor: "tab-notifications"), style: css_for_mailer_link %>
-            </p>
+            </h2>
             <p style="<%= css_for_mailer_text %>">
               <%= notification.notifiable.proposal.title %>&nbsp;&bull;&nbsp;
               <%= notification.notifiable.proposal.created_at.to_date %>&nbsp;&bull;&nbsp;
@@ -49,9 +43,14 @@
                 <tr>
                   <td>
                     <p style="<%= css_for_mailer_text %>">
-                      <%= sanitize(link_to(t("mailers.proposal_notification_digest.unfollow"),
+                      <%= sanitize(
+                        link_to(
+                          t("mailers.proposal_notification_digest.unfollow"),
                           proposal_url(notification.notifiable.proposal),
-                          style: css_for_mailer_link), attributes: %w[href style]) %>
+                          style: css_for_mailer_link
+                        ),
+                        attributes: %w[href style]
+                      ) %>
                     </p>
                   </td>
                 </tr>
@@ -63,18 +62,15 @@
     </table>
   <% end %>
 
-  <table style="width: 100%;">
-    <tbody>
-      <tr>
-        <td style="padding-left: 10px;">
-          <p style="<%= css_for_mailer_text %>">
-            <%= sanitize(t("mailers.proposal_notification_digest.unsubscribe",
-                account: link_to(t("mailers.proposal_notification_digest.unsubscribe_account"),
-                                account_url, style: css_for_mailer_link)),
-                                attributes: %w[href style]) %>
-          </p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <p style="<%= css_for_mailer_text %>">
+    <%= sanitize(
+      t("mailers.proposal_notification_digest.unsubscribe_text",
+        notifications: link_to(
+          t("mailers.config.notifications_link"),
+          edit_subscriptions_url(token: @token),
+          style: css_for_mailer_link)
+        ),
+      attributes: %w[href style]
+    ) %>
+  </p>
 </td>

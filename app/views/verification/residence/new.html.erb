@@ -1,5 +1,4 @@
 <div class="verification account row">
-  <% track_event(category: "verification", action: "start_census") %>
   <div class="small-12 column">
 
     <div class="text-center">
@@ -77,7 +76,7 @@
         <%= f.check_box :terms_of_service,
           title: t("verification.residence.new.accept_terms_text_title"),
           label: t("verification.residence.new.accept_terms_text",
-                   terms_url: link_to(t("verification.residence.new.terms"), "/census_terms",
+                   terms_url: link_to(t("verification.residence.new.terms"), page_path("census_terms"),
                                       title: t("shared.target_blank"),
                                       target: "_blank")
                   ) %>

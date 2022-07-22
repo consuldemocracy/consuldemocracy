@@ -22,14 +22,14 @@ shared_examples "document validations" do |documentable_factory|
   it "is valid for all accepted content types" do
     acceptedcontenttypes.each do |content_type|
       extension = content_type.split("/").last
-      document.attachment = File.new("spec/fixtures/files/empty.#{extension}")
+      document.attachment = fixture_file_upload("empty.#{extension}")
 
       expect(document).to be_valid
     end
   end
 
   it "is not valid for attachments larger than documentable max_file_size definition" do
-    allow(document).to receive(:attachment_file_size).and_return(maxfilesize.megabytes + 1.byte)
+    allow(document.attachment).to receive(:byte_size).and_return(maxfilesize.megabytes + 1.byte)
     max_size_error_message = "must be in between 0 Bytes and #{maxfilesize} MB"
 
     expect(document).not_to be_valid

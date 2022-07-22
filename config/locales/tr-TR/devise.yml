@@ -9,8 +9,8 @@ tr:
       updated: "Şifre başarıyla güncellendi"
     confirmations:
       confirmed: "Hesabınız onaylanmıştır."
-      send_instructions: "Birkaç dakika içinde şifrenizi tekrar oluşturmanız için gerekli olan açıklamaları içeren bir e-posta alacaksınız."
-      send_paranoid_instructions: "E-posta adresiniz sistemimizde bulunuyorsa, birkaç dakika içinde şifrenizi tekrar oluşturmanız için bir bağlantı göndereceğiz."
+      send_instructions: "Birkaç dakika içinde şifrenizi nasıl sıfırlayacağınıza dair talimatları içeren bir e-posta alacaksınız."
+      send_paranoid_instructions: "E-posta adresiniz veritabanımızda bulunuyorsa, birkaç dakika içinde şifrenizi nasıl sıfırlayacağınıza dair talimatları içeren bir e-posta alacaksınız."
     failure:
       already_authenticated: "Zaten oturum açtınız."
       inactive: "Hesabınız henüz aktif değil."

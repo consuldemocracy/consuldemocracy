@@ -4,10 +4,8 @@ fi:
       title: Järjestelmänvalvonta
     actions:
       actions: Toiminnot
-      confirm: Oletko varma?
       delete: "Poista"
       hide: Piilota
-      hide_author: Piilota tekijä
       restore: Palauta
       edit: Muokkaa
       configure: Määritä

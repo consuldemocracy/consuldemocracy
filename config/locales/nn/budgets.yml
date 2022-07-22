@@ -7,9 +7,6 @@ nn:
         remove: Fjern stemme
         voted_info: "Din stemme er bekreftet!"
         voted_info_2: "Men du kan endre stemmen din når som helst frem til denne fasen lukkes."
-      reasons_for_not_balloting:
-        not_logged_in: Du må %{signin} eller %{signup} for å fortsette.
-        organization: Organisasjoner er ikke berettiget til å stemme
     phase:
       informing: Informasjon
     index:
@@ -28,10 +25,6 @@ nn:
         search_form:
           button: Søk
           title: Søk
-        search_results:
-          zero: " som inneholder <strong>'%{search_term}'</strong>"
-          one: " som inneholder <strong>'%{search_term}'</strong>"
-          other: " som inneholder <strong>'%{search_term}'</strong>"
         filters:
           unfeasible: "Ikke gjennomførbart"
         orders:
@@ -46,7 +39,6 @@ nn:
       investment:
         supports:
           zero: Ingen støtte
-          zero: "%{count} støtte"
           one: 1 støtte
           other: "%{count} støtte"
     investments_list:

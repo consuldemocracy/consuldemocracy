@@ -1,9 +1,10 @@
 tr:
   moderation:
+    actions:
+      confirm_action: "\"%{action}\" yapmak istediğinizden emin misiniz"
     comments:
       index:
         block_authors: Yazarları engelle
-        confirm: Emin misiniz?
         filter: Filtre
         filters:
           all: Tüm
@@ -24,7 +25,6 @@ tr:
     debates:
       index:
         block_authors: Yazarları engelle
-        confirm: Emin misiniz?
         filter: Filtre
         filters:
           all: Tüm
@@ -51,7 +51,6 @@ tr:
     proposals:
       index:
         block_authors: Yazarları engelle
-        confirm: Emin misiniz?
         filter: Filtre
         filters:
           all: Tüm
@@ -69,7 +68,6 @@ tr:
     budget_investments:
       index:
         block_authors: Yazarları engelle
-        confirm: Emin misiniz?
         filter: Filtre
         filters:
           all: Tüm
@@ -87,7 +85,6 @@ tr:
     proposal_notifications:
       index:
         block_authors: Yazarları engelle
-        confirm: Emin misiniz?
         filter: Filtre
         filters:
           all: Tüm
@@ -104,8 +101,11 @@ tr:
         title: Öneri bildirimleri
     users:
       index:
-        hidden: Engellendi
+        block: Engelle
+        confirm_block: "Emin misiniz? Bu, \"%{name}\" kullanıcısını ve tüm içeriklerini gizleyecektir."
+        confirm_hide: "Emin misiniz? Bu, içeriklerini gizlemeden \"%{name}\" kullanıcısını gizleyecektir."
         hide: Engelle
         search_placeholder: e-posta veya kullanıcının adı
         title: Kullanıcıları engelle
+      notice_block: Kullanıcı engellenmiştir. Bu kullanıcı tarafından yazılan tüm içerikler gizlenmiştir.
       notice_hide: Kullanıcı engellendi. Bu kullanıcının tüm tartışmaları ve yorumları gizlendi.

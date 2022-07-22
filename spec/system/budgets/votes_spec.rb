@@ -272,9 +272,8 @@ describe "Votes" do
       expect(page).to have_content("YOU CAN STILL CAST 1 VOTE")
 
       within(".budget-investment", text: investment2.title) do
-        find("div.ballot").hover
-
-        expect(page).not_to have_content("You have already assigned the available budget")
+        expect(page).not_to have_css ".participation-not-allowed", visible: :all
+        expect(page).not_to have_content "You have already assigned the available budget"
       end
 
       visit budget_ballot_path(budget)

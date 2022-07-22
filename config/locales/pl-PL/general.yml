@@ -1,7 +1,7 @@
 pl:
   account:
     show:
-      change_credentials_link: Zmień moje dane logowania
+      change_credentials_link: Zmień moje referencje
       erase_account_link: Usuń moje konto
       finish_verification: Zakończ weryfikację
       notifications: 'Informuj mnie drogą mailową:'
@@ -11,14 +11,9 @@ pl:
       save_changes_submit: Zapisz zmiany
       recommendations: Rekomendacje
       title: Moje konto
-      user_permission_debates: Uczestnicz w debatach
       user_permission_info: Z Twoim kontem możesz...
-      user_permission_proposal: Stwórz nowy pomysł
-      user_permission_support_proposal: Poprzyj wnioski
       user_permission_title: Partycypacja
       user_permission_verify: Aby wykonać wszystkie czynności, zweryfikuj swoje konto.
-      user_permission_verify_info: "* Tylko dla użytkowników Census."
-      user_permission_votes: Weź udział w głosowaniu ostatecznym
       verified_account: Konto zweryfikowane
       verify_my_account: Zweryfikuj moje konto
   application:
@@ -111,11 +106,6 @@ pl:
         button: Szukaj
         placeholder: Szukaj debat...
         title: Szukaj
-      search_results:
-        one: " zawierające termin <strong>%{search_term}</strong>"
-        few: " zawierające termin <strong>%{search_term}</strong>"
-        many: " zawierające termin <strong>%{search_term}</strong>"
-        other: " zawierające termin <strong>%{search_term}</strong>"
       start_debate: Rozpocznij debatę
       title: Debaty
       section_header:
@@ -200,7 +190,6 @@ pl:
       conditions: Regulamin
       consul: Aplikacja CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: Do centrów pomocy technicznej
       copyright: CONSUL, %{year}
       description: Ten portal używa %{consul}, który jest %{open_source}.
       open_source: oprogramowanie open-source
@@ -357,7 +346,6 @@ pl:
       select_order_long: "Przeglądasz wnioski według:"
       start_proposal: Zaproponuj swój pomysł
       title: Zrealizowane projekty
-      top: TOP w tym tygodniu
       top_link_proposals: Najbardziej popularne propozycje według kategorii
       section_header:
         icon_alt: Ikona wniosków
@@ -720,15 +708,12 @@ pl:
   votes:
     agree: Zgadzam się
     anonymous: Zbyt wiele anonimowych głosów, by móc głosować %{verify_account}.
-    comment_unauthenticated: Aby zagłosować, musisz %{signin} lub %{signup}.
     disagree: Nie zgadzam się
     organizations: Organizacje nie mogą głosować
     supports: Wspiera
     verified_only: Tylko zweryfikowani użytkownicy mogą głosować na propozycje; %{verify_account}.
     budget_investments:
-      not_logged_in: Aby kontynuować, musisz %{signin} lub %{signup}.
       not_verified: Tylko zweryfikowani użytkownicy mogą głosować na projekty inwestycyjne; %{verify_account}.
-      organization: Organizacje nie mogą głosować
       unfeasible: Nie można zrealizować niemożliwych do zrealizowania projektów inwestycyjnych
       not_voting_allowed: Faza głosowania jest zamknięta
   welcome:
@@ -757,23 +742,13 @@ pl:
       budget_investments:
         title: Rekomendowane inwestycje
       slide: "Zobacz %{title}"
-    verification:
-      i_dont_have_an_account: Nie mam konta
-      i_have_an_account: Mam już konto
-      question: Czy masz już konto w %{org_name}?
-      title: Weryfikacja konta
     welcome:
       go_to_index: Zobacz propozycje i debaty
       start_using_consul: Przejdź do strony indeksu
       title: Twoje konto zostało poprawnie zweryfikowane
-      user_permission_debates: ' '
       user_permission_info: Z Twoim kontem możesz...
-      user_permission_proposal: Twórz i dołączaj do pomysłów
-      user_permission_support_proposal: Popieraj propozycje*
       user_permission_verify: "Aby wykonać wszystkie czynności, zweryfikuj swoje konto."
-      user_permission_verify_info: "* Tylko dla użytkowników Census."
       user_permission_verify_my_account: Zweryfikuj swoje konto
-      user_permission_votes: ' '
   invisible_captcha:
     sentence_for_humans: "Jeśli jesteś człowiekiem, zignoruj to pole"
     timestamp_error_message: "Wybacz, to było zbyt szybkie! Prześlij ponownie."

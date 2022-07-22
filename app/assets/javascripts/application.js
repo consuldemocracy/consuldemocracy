@@ -65,8 +65,7 @@
 //= require jquery.amsify.suggestags
 //= require tags
 //= require users
-//= require votes
-//= require allow_participation
+//= require participation_not_allowed
 //= require advanced_search
 //= require registration_form
 //= require suggest
@@ -93,7 +92,6 @@
 //= require documentable
 //= require imageable
 //= require tree_navigator
-//= require custom
 //= require tag_autocomplete
 //= require polls_admin
 //= require leaflet
@@ -116,6 +114,8 @@
 //= require_tree ./admin
 //= require_tree ./sdg
 //= require_tree ./sdg_management
+//= require custom
+//= require_tree ./custom
 
 var initialize_modules = function() {
   "use strict";
@@ -124,8 +124,7 @@ var initialize_modules = function() {
   App.Questions.initialize();
   App.Comments.initialize();
   App.Users.initialize();
-  App.Votes.initialize();
-  App.AllowParticipation.initialize();
+  App.ParticipationNotAllowed.initialize();
   App.Tags.initialize();
   App.FoundationExtras.initialize();
   App.LocationChanger.initialize();

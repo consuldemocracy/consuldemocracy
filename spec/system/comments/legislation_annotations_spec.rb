@@ -131,7 +131,7 @@ describe "Commenting legislation questions" do
     expect(c2.body).to appear_before(c3.body)
   end
 
-  xscenario "Creation date works differently in roots and in child comments, even when sorting by confidence_score" do
+  scenario "Creation date works differently in roots and in child comments, even when sorting by confidence_score" do
     old_root = create(:comment, commentable: legislation_annotation, created_at: Time.current - 10)
     new_root = create(:comment, commentable: legislation_annotation, created_at: Time.current)
     old_child = create(:comment, commentable: legislation_annotation, parent_id: new_root.id, created_at: Time.current - 10)
@@ -523,7 +523,7 @@ describe "Commenting legislation questions" do
                                                               annotation)
 
       within("#comment_#{comment.id}_votes") do
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
@@ -541,9 +541,9 @@ describe "Commenting legislation questions" do
                                                               annotation)
 
       within("#comment_#{comment.id}_votes") do
-        find(".in_favor a").click
+        click_button "I agree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
@@ -561,15 +561,15 @@ describe "Commenting legislation questions" do
                                                               annotation)
 
       within("#comment_#{comment.id}_votes") do
-        find(".in_favor a").click
+        click_button "I agree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
-        find(".against a").click
+        click_button "I disagree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "0"
         end
 
@@ -587,13 +587,13 @@ describe "Commenting legislation questions" do
                                                               annotation)
 
       within("#comment_#{comment.id}_votes") do
-        find(".in_favor a").click
-        within(".in_favor") do
+        click_button "I agree"
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
-        find(".in_favor a").click
-        within(".in_favor") do
+        click_button "I agree"
+        within(".in-favor") do
           expect(page).not_to have_content "2"
           expect(page).to have_content "1"
         end

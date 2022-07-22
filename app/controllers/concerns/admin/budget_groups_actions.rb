@@ -54,7 +54,12 @@ module Admin::BudgetGroupsActions
     end
 
     def budget_group_params
+      params.require(:budget_group).permit(allowed_params)
+    end
+
+    def allowed_params
       valid_attributes = [:max_votable_headings]
-      params.require(:budget_group).permit(*valid_attributes, translation_params(Budget::Group))
+
+      [*valid_attributes, translation_params(Budget::Group)]
     end
 end

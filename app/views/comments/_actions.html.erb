@@ -2,23 +2,14 @@
   <%= render "shared/flag_actions", flaggable: comment, divider: true %>
 </span>
 
-<span class="js-moderation-actions">
-  <% if can? :hide, comment %>
+<% if can?(:hide, comment) || can?(:hide, comment.user) %>
+  <% if comment.author == current_user %>
     <span class="divider">&nbsp;&bull;&nbsp;</span>
-    <% if is_author?(comment) %>
-      <%= link_to t("comments.actions.delete"),
-                  hide_comment_path(comment),
-                  method: :put, remote: true, class: "delete-comment",
-                  data: { confirm: t("comments.actions.confirm_delete") } %>
-    <% else %>
-      <%= link_to t("admin.actions.hide").capitalize, hide_moderation_comment_path(comment),
-                  method: :put, remote: true, data: { confirm: t("admin.actions.confirm") } %>
-    <% end %>
+    <%= link_to t("comments.actions.delete"),
+                hide_comment_path(comment),
+                method: :put, remote: true, class: "delete-comment",
+                data: { confirm: t("comments.actions.confirm_delete") } %>
+  <% else %>
+    <%= render Shared::ModerationActionsComponent.new(comment) %>
   <% end %>
-
-  <% if can? :hide, comment.user %>
-    <span class="divider">&nbsp;&bull;&nbsp;</span>
-    <%= link_to t("admin.actions.hide_author").capitalize, hide_moderation_user_path(comment.user_id),
-                method: :put, data: { confirm: t("admin.actions.confirm_hide_author") } %>
-  <% end %>
-</span>
+<% end %>

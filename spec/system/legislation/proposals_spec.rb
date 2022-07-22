@@ -146,7 +146,7 @@ describe "Legislation Proposals" do
 
     fill_in "Proposal title", with: "Legislation proposal with image"
     fill_in "Proposal summary", with: "Including an image on a legislation proposal"
-    imageable_attach_new_file(Rails.root.join("spec/fixtures/files/clippy.jpg"))
+    imageable_attach_new_file(file_fixture("clippy.jpg"))
     click_button "Create proposal"
 
     expect(page).to have_content "Legislation proposal with image"

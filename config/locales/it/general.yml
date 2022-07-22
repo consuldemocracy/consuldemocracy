@@ -1,7 +1,7 @@
 it:
   account:
     show:
-      change_credentials_link: Modificare le mie credenziali
+      change_credentials_link: Modifica le mie credenziali
       erase_account_link: Cancella il mio account
       finish_verification: Completa la verifica
       notifications: Notifiche
@@ -11,14 +11,9 @@ it:
       save_changes_submit: Salvare le modifiche
       recommendations: Raccomandazioni
       title: Il mio account
-      user_permission_debates: Partecipare ai dibattiti
       user_permission_info: Con il tuo account puoi...
-      user_permission_proposal: Creare nuove proposte
-      user_permission_support_proposal: Appoggiare le proposte
       user_permission_title: Partecipazione
       user_permission_verify: Per eseguire poter eseguire tutte le azioni occorre verificare la tua utenza.
-      user_permission_verify_info: "* Solo per gli utenti in Anagrafe."
-      user_permission_votes: Partecipare al voto finale
       verified_account: Utenza verificata
       verify_my_account: Verificare la mia utenza
   application:
@@ -110,9 +105,6 @@ it:
         button: Ricercare
         placeholder: Ricerca dibattiti...
         title: Ricercare
-      search_results:
-        one: " contenente il termine <strong>'%{search_term}'</strong>"
-        other: " contenente il termine <strong>'%{search_term}'</strong>"
       start_debate: Avvia un dibattito
       title: Dibattiti
       section_header:
@@ -150,6 +142,7 @@ it:
         submit_button: Salva modifiche
   errors:
     messages:
+      allowed_file_content_types: "il tipo di contenuto dev'essere uno di %{types}"
       user_not_found: Utente non trovato
       invalid_date_range: "Intervallo di date non valido"
   form:
@@ -213,7 +206,6 @@ it:
       conditions: Termini e condizioni d'uso
       consul: app CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: Per assistenza tecnica entra
       copyright: CONSOLE, %{year}
       description: Questo portale utilizza %{consul} che è %{open_source}.
       open_source: software open-source
@@ -377,7 +369,6 @@ it:
       select_order_long: "Stai visualizzando le proposte in base a:"
       start_proposal: Crea una proposta
       title: Proposte
-      top: Top settimanale
       top_link_proposals: Le proposte più sostenute per categoria
       section_header:
         icon_alt: Icona di proposte
@@ -410,6 +401,7 @@ it:
         one: 1 commento
         other: "%{count} commenti"
       support: Sostenere
+      support_label: "Supporta %{proposal}"
       support_title: Sostieni questa proposta
       supports:
         zero: Nessun sostegno
@@ -847,16 +839,15 @@ it:
       retired_help_text: Pannello di controllo non disponibile per le proposte ritirate
   votes:
     agree: Sono d'accordo
+    agree_label: "Acconsento con %{title}"
     anonymous: Troppi voti anonimi per ammettere il voto %{verify_account}.
-    comment_unauthenticated: È necessario %{signin} o %{signup} per votare.
     disagree: Non sono d'accordo
+    disagree_label: "Non acconsento con %{title}"
     organizations: Le organizzazioni non sono ammesse a votare
     supports: Supporti
     verified_only: Solo gli utenti verificati possono votare le proposte; %{verify_account}.
     budget_investments:
-      not_logged_in: È necessario %{signin} o %{signup} per continuare.
       not_verified: Solo gli utenti verificati possono votare i progetti di investimento; %{verify_account}.
-      organization: Alle organizzazioni non è permesso votare
       unfeasible: I progetti di investimento irrealizzabili non possono essere sostenuti
       not_voting_allowed: La fase di votazione è chiusa
       different_heading_assigned:
@@ -892,23 +883,13 @@ it:
       budget_investments:
         title: Investimenti consigliati
       slide: "Vedi %{title}"
-    verification:
-      i_dont_have_an_account: Non ho un account
-      i_have_an_account: Ho già un account
-      question: Hai già un account su %{org_name}?
-      title: Verifica dell'account
     welcome:
       go_to_index: Vedi proposte e dibattiti
       start_using_consul: Vai alla pagina dell'indice
       title: Partecipa
-      user_permission_debates: Partecipare ai dibattiti
       user_permission_info: Con il tuo account puoi...
-      user_permission_proposal: Creare nuove proposte
-      user_permission_support_proposal: Appoggiare le proposte
       user_permission_verify: "Per eseguire poter eseguire tutte le azioni occorre verificare la tua utenza."
-      user_permission_verify_info: "* Solo per gli utenti in Anagrafe."
       user_permission_verify_my_account: Verifica il tuo account
-      user_permission_votes: Partecipare al voto finale
   invisible_captcha:
     sentence_for_humans: "Se sei una persona fisica, ignora questo campo"
     timestamp_error_message: "Siamo spiacenti, troppo veloce! Si prega di inviare nuovamente."

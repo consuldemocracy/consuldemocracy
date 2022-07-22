@@ -13,9 +13,7 @@ ru:
         voted_info_2: "Но вы можете изменить свой голос в любое время до закрытия этой фазы."
         zero: Вы не проголосовали ни по одному инвестиционному проекту.
       reasons_for_not_balloting:
-        not_logged_in: Вы должны %{signin} или %{signup}, чтобы продолжить.
         not_verified: Только верифицированные пользователи могут голосовать за инвестиции; %{verify_account}.
-        organization: Организациям не разрешается голосовать
         not_selected: Невыбранные инвестиционные проекты не поддерживаются
         not_enough_money: "Вы уже присвоили доступный бюджет.<br><small>Помните, что вы можете %{change_ballot} в любое время</small>"
         no_ballots_allowed: Фаза выбора закрыта
@@ -70,11 +68,6 @@ ru:
           button: Поиск
           placeholder: Поиск инвестиционных проектов...
           title: Поиск
-        search_results:
-          one: " содержащие термин <strong>'%{search_term}'</strong>"
-          few: " содержащие термин <strong>'%{search_term}'</strong>"
-          many: " содержащие термин <strong>'%{search_term}'</strong>"
-          other: " содержащие термин <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Мой голос
           voted_info:

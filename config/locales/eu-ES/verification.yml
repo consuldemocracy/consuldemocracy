@@ -25,7 +25,6 @@ eu:
       new:
         explanation: "Azken bozkaketetan parte hartzeko hurrengo egin dezakezu:"
         go_to_index: Proposamenak ikusi
-        office: '%{office}-tan presentzialki egiaztatzea.'
         send_letter: Posta zerbitzu eskutitza eskatu
         title: Zorionak!
         user_permission_info: Zure kontuagaz jada egin dezakezu...
@@ -52,7 +51,6 @@ eu:
           spanish_id: NAN
         error_not_allowed_age: Ez duzu parte hartu ahal izateko gutxieneko adina
         error_not_allowed_postal_code: Egiaztatzeko erroldatuta egon behar zara.
-        error_verifying_census: Erroldak ezin izan du zure infmormazioa baieztatu. Mesedez, udaletxera joan edo %{offices} bat bisitatu zure errolda datuak ondo dagozala egiaztatzeko.
         form_errors: zure bizilekua egiaztatzea saihestu dute
         postal_code_note: Zure kontua egiaztatu ahal izateko erroldatuta egon behar zara
         terms: Sarbide baldedintzak

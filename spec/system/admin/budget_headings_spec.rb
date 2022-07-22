@@ -51,7 +51,11 @@ describe "Admin budget headings", :admin do
 
       visit admin_budget_path(budget)
 
-      within("tr", text: "Lemuria") { accept_confirm { click_button "Delete" } }
+      within("tr", text: "Lemuria") do
+        accept_confirm("Are you sure? This action will delete \"Lemuria\" and can't be undone.") do
+          click_button "Delete"
+        end
+      end
 
       expect(page).to have_content "Heading deleted successfully"
       expect(page).not_to have_content "Lemuria"
@@ -124,11 +128,12 @@ describe "Admin budget headings", :admin do
       group = create(:budget_group, budget: budget_hide_money)
 
       visit new_admin_budget_group_heading_path(budget_hide_money, group)
+
       fill_in "Heading name", with: "Heading without money"
       click_button "Create new heading"
 
       expect(page).to have_content "Heading created successfully!"
-      expect(Budget::Heading.last.price).to eq(0)
+      expect(page).not_to have_content "Money amount"
     end
 
     describe "Max votes is optional" do

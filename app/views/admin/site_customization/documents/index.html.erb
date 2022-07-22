@@ -22,8 +22,8 @@
         <tr id="<%= dom_id(document) %>" class="document">
           <td><%= document.title %></td>
           <td><%= document.attachment.content_type %></td>
-          <td><%= number_to_human_size(document.attachment.size) %></td>
-          <td><%= link_to document.title, document.attachment.url, target: :blank %></td>
+          <td><%= number_to_human_size(document.attachment.byte_size) %></td>
+          <td><%= link_to document.title, document.attachment, target: :blank %></td>
           <td>
             <div class="small-12 medium-6 column">
               <%= render Admin::TableActionsComponent.new(

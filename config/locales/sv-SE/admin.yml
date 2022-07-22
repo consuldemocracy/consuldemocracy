@@ -4,13 +4,12 @@ sv:
       title: Administration
     actions:
       actions: Åtgärder
-      confirm: Är du säker?
+      block_author: "Blockera förslagslämnare"
       confirm_action: "Är du säker? %{action} \"%{name}\""
       confirm_delete: "Är du säker? Den här åtgärden kommer att radera \"%{name}\" och kan inte ångras."
       confirm_hide: Bekräfta moderering
       delete: "Ta bort"
       hide: Dölj
-      hide_author: Dölj skribent
       label: "%{action} %{name}"
       restore: Återställ
       mark_featured: Utvalda
@@ -39,6 +38,8 @@ sv:
           sdg: Globala målen
       create:
         notice: "Banner har skapats"
+      destroy:
+        notice: "Banner har tagits bort"
       edit:
         editing: Redigera banner
         form:
@@ -114,6 +115,7 @@ sv:
         delete: Radera budget
         phase: Fas
         phases_caption: "Faser"
+        phases_table_help_text: "Dessa fasers konfigurering används endast i informationssyfte. Dess funktion är att definiera fasinformationen som visas på medborgarbudgetens offentliga sida."
         duration: "Varaktighet"
         enabled: Aktiverad
         actions: Åtgärder
@@ -137,6 +139,8 @@ sv:
         info:
           budget_settings: "Allmänna medborgarbudgetinställningar"
           staff_settings: "Administratörer och bedömare som tilldelats budgeten"
+        hide_money: "Dölj belopp"
+        hide_money_help_text: "Om detta alternativ har markerats kommer alla fält som visar beloppet att döljas under hela processen."
       destroy:
         success_notice: Budgeten raderades
         unable_notice: Du kan inte radera en budget som har budgetinvesteringar kopplade till sig
@@ -185,7 +189,7 @@ sv:
       index:
         new_button: "Lägg till ny grupp"
     budget_headings:
-      no_headings: "Det finns inga områden."
+      no_headings: "Det finns inga områden i gruppen <strong>%{group}</strong>."
       create:
         notice: "Området har skapats!"
       update:
@@ -212,6 +216,7 @@ sv:
     budget_phases:
       edit:
         title: "Redigera fas"
+        dates_help_text: "Endast i informationssyfte"
         description_help_text: Den här texten visas i sidhuvudet när fasen är aktiv
         duration: "Fasens varaktighet"
         duration_description: "Den tidsperiod som den här fasen blir aktiv."
@@ -277,7 +282,7 @@ sv:
           incompatible: Oförenlig
           price: Pris
           author: Förslagslämnare
-        cannot_calculate_winners: Budgeten måste vara i någon av faserna "Omröstning", "Granskning av röstning" eller "Avslutad budget" för att kunna räkna fram vinnande förslag
+        cannot_calculate_winners: Budgeten måste vara i fasen "%{phase}" för att kunna räkna fram vinnande förslag
         see_results: "Visa resultat"
         milestone_tags_filter_all: "Alla milstolpetaggar"
       show:

@@ -47,6 +47,7 @@ data:
     - config/locales/%{locale}/milestones.yml
     - config/locales/%{locale}/sdg.yml
     - config/locales/%{locale}/sdg_management.yml
+    - config/locales/%{locale}/seeds.yml
     - config/locales/%{locale}/stats.yml
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
@@ -79,6 +80,8 @@ search:
   paths:
    - app/
    - db/pages/
+   - db/dev_seeds/
+   - lib/
 
   ## Root directories for relative keys resolution.
   # relative_roots:
@@ -172,6 +175,7 @@ ignore_unused:
   - "admin.dashboard.administrator_tasks.index.filter*"
   - "admin.dashboard.actions.index.default.*"
   - "admin.users.index.filter*"
+  - "errors.messages.allowed_file_content_types"
   - "moderation.comments.index.filter*"
   - "moderation.comments.index.orders.*"
   - "moderation.debates.index.filter*"
@@ -220,7 +224,6 @@ ignore_unused:
   - admin.stats.polls.expired
   - "stats.polls.*_percentage"
   - landings.cambia_tu_ciudad.*
-  - "seeds.settings.*"
   - "dashboard.polls.*.submit"
   - "admin.budget_groups.*.index.help"
   - "admin.budget_headings.*.index.help"

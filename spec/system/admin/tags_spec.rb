@@ -39,7 +39,9 @@ describe "Admin tags", :admin do
     expect(page).to have_content "bad tag"
 
     within("#tag_#{tag2.id}") do
-      accept_confirm { click_button "Delete" }
+      accept_confirm("Are you sure? This action will delete \"Bad tag\" and can't be undone.") do
+        click_link_or_button "Delete"
+      end
     end
 
     expect(page).not_to have_content "bad tag"
@@ -57,7 +59,9 @@ describe "Admin tags", :admin do
     expect(page).to have_content "bad tag"
 
     within("#tag_#{tag2.id}") do
-      accept_confirm { click_button "Delete" }
+      accept_confirm("Are you sure? This action will delete \"Bad tag\" and can't be undone.") do
+        click_link_or_button "Delete"
+      end
     end
 
     expect(page).not_to have_content "bad tag"
@@ -100,5 +104,16 @@ describe "Admin tags", :admin do
     end
 
     expect(page).to have_content "Soon a category"
+  end
+
+  scenario "Create shows validation error when tag name is empty" do
+    visit admin_tags_path
+
+    within("form.new_tag") do
+      fill_in "tag_name", with: ""
+      click_button "Create topic"
+    end
+
+    expect(page).to have_content "can't be blank"
   end
 end

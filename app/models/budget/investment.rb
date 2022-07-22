@@ -2,7 +2,6 @@ class Budget
   class Investment < ApplicationRecord
     SORTING_OPTIONS = { id: "id", supports: "cached_votes_up" }.freeze
 
-    include Rails.application.routes.url_helpers
     include Measurable
     include Sanitizable
     include Taggable
@@ -122,10 +121,6 @@ class Budget
 
     def comments_count
       comments.count
-    end
-
-    def url
-      budget_investment_path(budget, self)
     end
 
     def self.sort_by_title

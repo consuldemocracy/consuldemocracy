@@ -3,7 +3,7 @@
     <figure class="figure-card">
       <div class="gradient"></div>
       <% if budget.image.present? %>
-        <%= image_tag budget.image_url(:medium), alt: budget.name %>
+        <%= image_tag budget.image.variant(:medium), alt: budget.name %>
       <% else %>
         <%= image_tag(image_path_for("budget_no_image.jpg"), alt: "") %>
       <% end %>

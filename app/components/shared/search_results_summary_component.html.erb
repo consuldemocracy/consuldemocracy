@@ -1,0 +1,13 @@
+<div class="search-results-summary">
+  <% if search_terms || advanced_search_terms %>
+    <h2><%= t("shared.search_results") %></h2>
+    <p>
+      <%= page_entries_info results %>
+      <% if advanced_search_terms.blank? %>
+        <%= summary %>
+      <% end %>
+    </p>
+  <% else %>
+    <%= content %>
+  <% end %>
+</div>

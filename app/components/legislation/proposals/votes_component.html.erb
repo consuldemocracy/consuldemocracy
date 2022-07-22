@@ -1,0 +1,21 @@
+<div class="votes">
+  <% if proposal.process.proposals_phase.open? %>
+    <%= render Shared::InFavorAgainstComponent.new(proposal) %>
+  <% end %>
+
+  <%= render Shared::ParticipationNotAllowedComponent.new(proposal, cannot_vote_text: cannot_vote_text) %>
+
+  <span class="total-votes">
+    <%= t("proposals.proposal.votes", count: proposal.votes_score) %>
+  </span>
+
+  <% if current_user&.voted_as_when_voted_for(proposal) && setting["twitter_handle"] %>
+    <div class="share-supported">
+      <%= render "shared/social_share",
+          title: proposal.title,
+          url: proposal_url(proposal),
+          description: proposal.summary,
+          mobile: proposal.title %>
+    </div>
+  <% end %>
+</div>

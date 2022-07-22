@@ -14,6 +14,7 @@ describe Abilities::Common do
   let(:own_debate)   { create(:debate,   author: user) }
   let(:own_comment)  { create(:comment,  author: user) }
   let(:own_proposal) { create(:proposal, author: user) }
+  let(:own_legislation_proposal) { create(:legislation_proposal, author: user) }
 
   let(:accepting_budget) { create(:budget, :accepting) }
   let(:reviewing_budget) { create(:budget, :reviewing) }
@@ -68,7 +69,6 @@ describe Abilities::Common do
   it { should     be_able_to(:index, Proposal) }
   it { should     be_able_to(:show, proposal) }
   it { should_not be_able_to(:vote, Proposal) }
-  it { should_not be_able_to(:vote_featured, Proposal) }
 
   it { should_not be_able_to(:comment_as_administrator, debate)   }
   it { should_not be_able_to(:comment_as_moderator, debate)       }
@@ -167,6 +167,9 @@ describe Abilities::Common do
     it { should_not be_able_to(:destroy, proposal_document)      }
   end
 
+  it { should_not be_able_to(:edit, own_legislation_proposal) }
+  it { should_not be_able_to(:update, own_legislation_proposal) }
+
   describe "proposals dashboard" do
     it { should be_able_to(:dashboard, own_proposal) }
     it { should_not be_able_to(:dashboard, proposal) }
@@ -208,7 +211,6 @@ describe Abilities::Common do
 
     describe "Proposal" do
       it { should be_able_to(:vote, Proposal) }
-      it { should be_able_to(:vote_featured, Proposal) }
     end
 
     describe "Direct Message" do
@@ -287,8 +289,7 @@ describe Abilities::Common do
 
     before { user.update(verified_at: Time.current) }
 
-    it { should be_able_to(:vote, Proposal)          }
-    it { should be_able_to(:vote_featured, Proposal) }
+    it { should be_able_to(:vote, Proposal) }
 
     it { should     be_able_to(:new, DirectMessage)            }
     it { should     be_able_to(:create, DirectMessage)         }

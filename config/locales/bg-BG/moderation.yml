@@ -1,9 +1,10 @@
 bg:
   moderation:
+    actions:
+      confirm_action: "Сигурни ли сте? %{action}"
     comments:
       index:
         block_authors: Блокиране на автори
-        confirm: Сигурни ли сте?
         filter: Филтър
         filters:
           all: Всички
@@ -24,7 +25,6 @@ bg:
     debates:
       index:
         block_authors: Блокиране на автори
-        confirm: Сигурни ли сте?
         filter: Филтър
         filters:
           all: Всички
@@ -51,7 +51,6 @@ bg:
     proposals:
       index:
         block_authors: Блокиране на автори
-        confirm: Сигурни ли сте?
         filter: Филтър
         filters:
           all: Всички
@@ -69,7 +68,6 @@ bg:
     budget_investments:
       index:
         block_authors: Блокиране на автори
-        confirm: Сигурни ли сте?
         filter: Филтър
         filters:
           all: Всички
@@ -87,7 +85,6 @@ bg:
     proposal_notifications:
       index:
         block_authors: Блокиране на автори
-        confirm: Сигурни ли сте?
         filter: Филтър
         filters:
           all: Всички
@@ -104,8 +101,11 @@ bg:
         title: Известия за предложения
     users:
       index:
-        hidden: Блокиран
-        hide: Блокиране
+        block: Блокиране
+        confirm_block: "Сигурни ли сте? Това ще скрие потребител \"%{name}\" и цялото негово съдържание."
+        confirm_hide: "Сигурни ли сте? Това ще скрие потребител \"%{name}\" без да скрива негово съдържание."
+        hide: Скриване
         search_placeholder: имейл или име на потребителя
         title: Блокиране на потребители
-      notice_hide: Потребителят е блокиран. Всички дискусии и коментари на този потребител са скрити.
+      notice_block: Потребителят е блокиран. Цялото съдържание, създадено от този потребител, е скрито.
+      notice_hide: Потребителят е скрит. Цялото съдържание, създадено от този потребител, е достъпно.

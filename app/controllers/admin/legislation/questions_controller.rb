@@ -45,11 +45,15 @@ class Admin::Legislation::QuestionsController < Admin::Legislation::BaseControll
     end
 
     def question_params
-      params.require(:legislation_question).permit(
+      params.require(:legislation_question).permit(allowed_params)
+    end
+
+    def allowed_params
+      [
         translation_params(::Legislation::Question),
         question_options_attributes: [:id, :_destroy,
                                       translation_params(::Legislation::QuestionOption)]
-      )
+      ]
     end
 
     def resource

@@ -171,6 +171,19 @@ describe Proposal do
       proposal.retired_reason = nil
       expect(proposal).not_to be_valid
     end
+
+    it "dynamically validates the retired reason" do
+      stub_const("#{Proposal}::RETIRE_OPTIONS", %w[custom])
+
+      proposal.retired_at = Time.current
+      proposal.retired_explanation = "My custom reason"
+
+      proposal.retired_reason = "custom"
+      expect(proposal).to be_valid
+
+      proposal.retired_reason = "duplicated"
+      expect(proposal).not_to be_valid
+    end
   end
 
   describe "#editable?" do

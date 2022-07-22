@@ -95,7 +95,11 @@ class Legislation::AnnotationsController < Legislation::BaseController
     def annotation_params
       params
         .require(:legislation_annotation)
-        .permit(:quote, :text, ranges: [:start, :startOffset, :end, :endOffset])
+        .permit(allowed_params)
+    end
+
+    def allowed_params
+      [:quote, :text, ranges: [:start, :startOffset, :end, :endOffset]]
     end
 
     def track_event

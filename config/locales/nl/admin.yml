@@ -4,11 +4,9 @@ nl:
       title: Administration
     actions:
       actions: Actions
-      confirm: Are you sure?
       confirm_hide: Bevestig
       delete: "Delete"
       hide: Hide
-      hide_author: Hide author
       restore: Restore
       mark_featured: Featured
       unmark_featured: Unmark featured
@@ -145,7 +143,6 @@ nl:
       index:
         new_button: "Nieuwe groep toevoegen"
     budget_headings:
-      no_headings: "Er zijn geen rubrieken."
       create:
         notice: "Rubriek aangemaakt"
       update:
@@ -170,7 +167,7 @@ nl:
         save_changes: Bewaar wijzigingen
     budget_investments:
       index:
-        heading_filter_all: All headings
+        heading_filter_all: Alle koppen
         administrator_filter_all: All administrators
         valuator_filter_all: All valuators
         tags_filter_all: All tags
@@ -221,7 +218,6 @@ nl:
           incompatible: Onverenigbaar
           price: Bedrag
           author: Author
-        cannot_calculate_winners: Het budget moet in fase blijven "Ballotage projecten", "Rekening houden met stemmingen" of "Voltooide begroting" om winnaarsprojecten te kunnen berekenen
         see_results: "Bekijk resultaten"
       show:
         assigned_admin: Toegewezen beheerder
@@ -254,7 +250,7 @@ nl:
         compatibility: Compatibiliteit
         selection: Selection
         assigned_valuators: Valuators
-        select_heading: Select heading
+        select_heading: Selecteer kop
         submit_button: Update
         user_tags: Door deelnemer toegewezen labels
         tags_placeholder: "Write the tags you want separated by commas (,)"
@@ -417,9 +413,21 @@ nl:
           without_confirmed_hide: In afwachting
         title: Verborgen debatten
     documents:
+      new:
+        title: "Bestand uploaden"
+        submit_button: "Uploaden"
       index:
         new_link: "Nieuw bestand toevoegen"
+        no_documents: "Er zijn geen bestanden."
         title: "Documenten"
+        format: "Type"
+        size: "Formaat"
+        url: "URL"
+      create:
+        success_notice: "Bestand is geupload"
+        unable_notice: "Ongeldig document"
+      destroy:
+        success_notice: "Bestand is verwijderd"
     hidden_users:
       index:
         filter: Filter
@@ -635,6 +643,7 @@ nl:
       stats: Statistics
       signature_sheets: Signature Sheets
       site_customization:
+        documents: Custom bestanden
         homepage: Homepage
         pages: Aangepaste pagina's
         images: Aangepaste afbeeldingen
@@ -1160,6 +1169,7 @@ nl:
         general: Configuration settings
         update_setting: Update
         participation_processes: "Deelnameprocessen"
+        images_and_documents: "Afbeeldingen en bestanden"
         feature_flags: Features
         features:
           enabled: "Feature enabled"
@@ -1232,7 +1242,7 @@ nl:
         new: New signature sheets
       new:
         title: Niewe handtekeninglijst
-        document_numbers_note: "Write the numbers separated by commas (,)"
+        document_numbers_note: "Voeg nummers toe, gescheiden door komma's (,)"
         submit: Create signature sheet
       show:
         created_at: Aangemaakt

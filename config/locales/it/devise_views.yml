@@ -44,10 +44,10 @@ it:
           title: Registrarsi come un'organizzazione o associazione
         success:
           back_to_index: 'Ho capito: torno alla pagina principale'
-          instructions_1: "<b>Ti contatteremo a breve</b> al fine di verificare che tu sia effettivamente il rappresentante di questo collettivo."
-          instructions_2: Mentre <b>verifichiamo la tua e-mail</b>, ti abbiamo inviato un <b>link per la verifica dell’account</b>.
+          instructions_1: "<strong>Ti contatteremo a breve</strong> al fine di verificare che tu sia effettivamente il rappresentante di questo collettivo."
+          instructions_2: Mentre <strong>verifichiamo la tua e-mail</strong>, ti abbiamo inviato un <strong>link per la verifica dell’account</strong>.
           instructions_3: Una volta confermato, si potrà iniziare a partecipare come collettivo non verificato.
-          thank_you: Grazie per aver registrato il tuo collettivo su questo sito. Ora è <b>in attesa di verifica</b>.
+          thank_you: Grazie per aver registrato il tuo collettivo su questo sito. Ora è <strong>in attesa di verifica</strong>.
           title: Registrazione dell'organizzazione / associazione
     passwords:
       edit:

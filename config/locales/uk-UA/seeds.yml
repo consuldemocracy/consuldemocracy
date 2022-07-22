@@ -36,11 +36,6 @@ uk-UA:
       groups:
         all_city: Все місто
         districts: Райони
-      valuator_groups:
-        culture_and_sports: Культура і спорт
-        gender_and_diversity: Гендерний баланс та різноманітність
-        urban_development: Сталий розвиток міста
-        equity_and_employment: Рівність та працевлаштування
       statuses:
         studying_project: Вивчення проекту
         bidding: Подання заявок

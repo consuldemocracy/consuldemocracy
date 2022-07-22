@@ -24,7 +24,7 @@ FactoryBot.define do
     sequence(:title)  { |n| "Admin Notification title #{n}" }
     sequence(:body)   { |n| "Admin Notification body #{n}" }
     link              { nil }
-    segment_recipient { UserSegments::SEGMENTS.sample }
+    segment_recipient { UserSegments.segments.sample }
     recipients_count  { nil }
     sent_at           { nil }
 

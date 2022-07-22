@@ -15,7 +15,6 @@ nl:
       public_activity_label: "Mijn activiteit is publiek"
       user_permission_proposal: "Initiatieven indienen"
       user_permission_support_proposal: "Reageren op peilingen"
-      user_permission_verify_info: "* Alleen voor inwoners in het gebied."
       username_label: "Gebruikersnaam"
       organization_responsible_name_placeholder: "Vertegenwoordiger van de organisatie of groep"
   debates:
@@ -119,8 +118,6 @@ nl:
       tags_placeholder: "Voeg de gewenste termen toe, gescheiden door een komma (,)"
       proposal_responsible_name: "Volledige naam van persoon die het idee indient"
       proposal_text: "Uitgebreide omschrijving"
-    shared:
-      confirm_support: "Weet je zeker dat je het initiatief \"%{proposal}\" wilt steunen? Dit kan niet ongedaan worden gemaakt."
     index:
       featured_proposals: "Uitgelicht"
       start_proposal: "Nieuw initiatief indienen"

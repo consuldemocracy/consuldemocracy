@@ -9,7 +9,7 @@
       <div class="row">
         <div class="small-12 medium-3 large-2 column text-center">
           <%= link_to namespaced_proposal_path(proposal), id: "image" do %>
-            <%= image_tag proposal.image_url(:medium),
+            <%= image_tag proposal.image.variant(:thumb),
                           alt: proposal.image.title.unicode_normalize %>
           <% end %>
         </div>
@@ -79,8 +79,7 @@
               <p><%= t("proposals.proposal.archived") %></p>
             </div>
           <% else %>
-            <%= render "votes",
-                      { proposal: proposal, vote_url: vote_proposal_path(proposal, value: "yes") } %>
+            <%= render "votes", proposal: proposal %>
           <% end %>
         </div>
       <% end %>

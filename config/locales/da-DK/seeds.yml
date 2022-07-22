@@ -36,11 +36,6 @@ da:
       groups:
         all_city: Hele byen
         districts: Distrikter
-      valuator_groups:
-        culture_and_sports: Kultur & Sport
-        gender_and_diversity: Køn & Mangfoldighed
-        urban_development: Bæredygtig Byudvikling
-        equity_and_employment: Egenkapital & Beskæftigelse
       statuses:
         studying_project: Studerer projektet
         bidding: Afgiver et bud

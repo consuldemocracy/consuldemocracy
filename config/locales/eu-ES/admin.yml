@@ -4,11 +4,9 @@ eu:
       title: Administrazioa
     actions:
       actions: Ekintzak
-      confirm: Ziur zaude?
       confirm_hide: Baieztatu moderaketa
       delete: "Ezabatu"
       hide: Ezkutatu
-      hide_author: Sortzailea blokeatu
       restore: Berriz erakutsi
       mark_featured: Nabarmendu
       unmark_featured: Nabarmendutakoa kendu
@@ -129,7 +127,7 @@ eu:
         no_admin_assigned: Administratzailea esleitu gabe
         no_valuators_assigned: Ebaluatzaile gabe
         feasibility:
-          feasible: "Bideragarria (%{price})"
+          feasible: "Bideragarria"
           unfeasible: "Bideraezina"
           undecided: "Erabaki gabe"
         selected: "Aukeratuta"
@@ -145,7 +143,6 @@ eu:
           incompatible: Bateraezina
           price: Kostua
           author: Sortzailea
-        cannot_calculate_winners: Irabazi duten aurrekontuak kalkulatzeko, aurrekontuak "Azken bozkaketa", Bozkaketa amaituta" ala "Emaitzak" fasean egon behar dira.
         see_results: "Emaitzak ikusi"
       show:
         assigned_admin: Administratzailea esleituta
@@ -749,7 +746,6 @@ eu:
       edit:
         title: "Herri galdera editatu"
       new:
-        title: "Herri galdera sortu"
         title_proposal: "Herri galdera sortu"
       answers:
         images:

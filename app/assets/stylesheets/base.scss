@@ -395,6 +395,11 @@ aside {
 
     > a {
 
+      &:focus,
+      &[aria-selected="true"] {
+        background: transparent;
+      }
+
       &[aria-selected="true"]::after,
       .is-active::after {
         border-bottom: 4px solid $brand;
@@ -1089,6 +1094,13 @@ footer {
       color: #fff;
     }
   }
+
+  p {
+
+    &.info {
+      font-size: $small-font-size;
+    }
+  }
 }
 
 .footer {
@@ -1129,7 +1141,7 @@ footer {
   border-top: 0;
   font-size: $small-font-size;
   margin-top: $line-height * 2;
-  padding: $line-height 0;
+  padding-top: $line-height;
 
   ul {
     padding-left: $line-height / 4;
@@ -1648,6 +1660,14 @@ footer {
   &::after {
     border-color: $brand-secondary;
     color: $brand-secondary;
+  }
+}
+
+.budget-ballot-show {
+  margin-top: rem-calc(-$line-height);
+
+  .back {
+    margin-top: $line-height;
   }
 }
 

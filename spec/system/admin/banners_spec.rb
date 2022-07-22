@@ -173,7 +173,11 @@ describe "Admin banners magement", :admin do
 
     expect(page).to have_content "Ugly banner"
 
-    accept_confirm { click_button "Delete" }
+    accept_confirm("Are you sure? This action will delete \"Ugly banner\" and can't be undone.") do
+      click_button "Delete"
+    end
+
+    expect(page).to have_content "Banner deleted successfully"
 
     visit admin_root_path
     expect(page).not_to have_content "Ugly banner"

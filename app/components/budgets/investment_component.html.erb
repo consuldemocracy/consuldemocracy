@@ -1,6 +1,6 @@
 <div id="<%= dom_id(investment) %>" class="investments-list-item">
   <% if investment.image.present? %>
-    <%= image_tag investment.image_url(:large), alt: investment.image.title.unicode_normalize %>
+    <%= image_tag investment.image.variant(:large), alt: investment.image.title.unicode_normalize %>
   <% else %>
     <%= image_tag(image_path_for("budget_investment_no_image.jpg"), alt: investment.title) %>
   <% end %>

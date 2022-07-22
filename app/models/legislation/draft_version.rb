@@ -17,7 +17,7 @@ class Legislation::DraftVersion < ApplicationRecord
 
   validates_translation :title, presence: true
   validates_translation :body, presence: true
-  validates :status, presence: true, inclusion: { in: VALID_STATUSES }
+  validates :status, presence: true, inclusion: { in: ->(*) { VALID_STATUSES }}
 
   scope :published, -> { where(status: "published").order("id DESC") }
 

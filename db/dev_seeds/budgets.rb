@@ -15,109 +15,86 @@ end
 
 def add_image_to(imageable)
   # imageable should respond to #title & #author
-  File.open(INVESTMENT_IMAGE_FILES.sample) do |file|
-    imageable.image = Image.create!({
-      imageable: imageable,
-      title: imageable.title,
-      attachment: file,
-      user: imageable.author
-    })
-  end
+  imageable.image = Image.create!({
+    imageable: imageable,
+    title: imageable.title,
+    attachment: Rack::Test::UploadedFile.new(INVESTMENT_IMAGE_FILES.sample),
+    user: imageable.author
+  })
   imageable.save!
 end
 
 section "Creating Budgets" do
   Budget.create!(
-    name_en: "#{I18n.t("seeds.budgets.budget", locale: :en)} #{Date.current.year - 1}",
-    name_es: "#{I18n.t("seeds.budgets.budget", locale: :es)} #{Date.current.year - 1}",
-    currency_symbol: I18n.t("seeds.budgets.currency"),
-    phase: "finished",
-    published: true
+    {
+      currency_symbol: I18n.t("seeds.budgets.currency"),
+      phase: "finished",
+      published: true
+    }.merge(
+      random_locales_attributes(name: -> { "#{I18n.t("seeds.budgets.budget")} #{Date.current.year - 1}" })
+    )
   )
 
   Budget.create!(
-    name_en: "#{I18n.t("seeds.budgets.budget", locale: :en)} #{Date.current.year}",
-    name_es: "#{I18n.t("seeds.budgets.budget", locale: :es)} #{Date.current.year}",
-    currency_symbol: I18n.t("seeds.budgets.currency"),
-    phase: "accepting",
-    published: true
+    {
+      currency_symbol: I18n.t("seeds.budgets.currency"),
+      phase: "accepting",
+      published: true
+    }.merge(
+      random_locales_attributes(name: -> { "#{I18n.t("seeds.budgets.budget")} #{Date.current.year}" })
+    )
   )
 
   Budget.find_each do |budget|
     budget.phases.each do |phase|
-      random_locales.map do |locale|
-        Globalize.with_locale(locale) do
-          phase.name = "Name for locale #{locale}"
-          phase.description = "Description for locale #{locale}"
-          phase.summary = "Summary for locale #{locale}"
-          phase.save!
-        end
-      end
+      phase.update!(random_locales_attributes(
+        name: -> { I18n.t("budgets.phase.#{phase.kind}") },
+        summary: -> { I18n.t("seeds.budgets.phases.summary", language: I18n.t("i18n.language.name")) },
+        description: -> { I18n.t("seeds.budgets.phases.description", language: I18n.t("i18n.language.name")) }
+      ))
     end
   end
 
   Budget.all.each do |budget|
-    city_group_params = {
-      name_en: I18n.t("seeds.budgets.groups.all_city", locale: :en),
-      name_es: I18n.t("seeds.budgets.groups.all_city", locale: :es)
-    }
-    city_group = budget.groups.create!(city_group_params)
+    city_group = budget.groups.create!(
+      random_locales_attributes(name: -> { I18n.t("seeds.budgets.groups.all_city") })
+    )
 
-    city_heading_params = {
-      name_en: I18n.t("seeds.budgets.groups.all_city", locale: :en),
-      name_es: I18n.t("seeds.budgets.groups.all_city", locale: :es),
-      price: 1000000,
-      population: 1000000,
-      latitude: "40.416775",
-      longitude: "-3.703790"
-    }
-    city_group.headings.create!(city_heading_params)
+    city_group.headings.create!(
+      {
+        price: 1000000,
+        population: 1000000,
+        latitude: "40.416775",
+        longitude: "-3.703790"
+      }.merge(
+        random_locales_attributes(name: -> { I18n.t("seeds.budgets.groups.all_city") })
+      )
+    )
 
-    districts_group_params = {
-      name_en: I18n.t("seeds.budgets.groups.districts", locale: :en),
-      name_es: I18n.t("seeds.budgets.groups.districts", locale: :es)
-    }
-    districts_group = budget.groups.create!(districts_group_params)
+    districts_group = budget.groups.create!(
+      random_locales_attributes(name: -> { I18n.t("seeds.budgets.groups.districts") })
+    )
 
-    north_heading_params = {
-      name_en: I18n.t("seeds.geozones.north_district", locale: :en),
-      name_es: I18n.t("seeds.geozones.north_district", locale: :es),
-      price: rand(5..10) * 100000,
-      population: 350000,
-      latitude: "40.416775",
-      longitude: "-3.703790"
-    }
-    districts_group.headings.create!(north_heading_params)
-
-    west_heading_params = {
-      name_en: I18n.t("seeds.geozones.west_district", locale: :en),
-      name_es: I18n.t("seeds.geozones.west_district", locale: :es),
-      price: rand(5..10) * 100000,
-      population: 300000,
-      latitude: "40.416775",
-      longitude: "-3.703790"
-    }
-    districts_group.headings.create!(west_heading_params)
-
-    east_heading_params = {
-      name_en: I18n.t("seeds.geozones.east_district", locale: :en),
-      name_es: I18n.t("seeds.geozones.east_district", locale: :es),
-      price: rand(5..10) * 100000,
-      population: 200000,
-      latitude: "40.416775",
-      longitude: "-3.703790"
-    }
-    districts_group.headings.create!(east_heading_params)
-
-    central_heading_params = {
-      name_en: I18n.t("seeds.geozones.central_district", locale: :en),
-      name_es: I18n.t("seeds.geozones.central_district", locale: :es),
-      price: rand(5..10) * 100000,
-      population: 150000,
-      latitude: "40.416775",
-      longitude: "-3.703790"
-    }
-    districts_group.headings.create!(central_heading_params)
+    [
+      random_locales_attributes(name: -> { I18n.t("seeds.geozones.north_district") }).merge(
+        population: 350000
+      ),
+      random_locales_attributes(name: -> { I18n.t("seeds.geozones.west_district") }).merge(
+        population: 300000
+      ),
+      random_locales_attributes(name: -> { I18n.t("seeds.geozones.east_district") }).merge(
+        population: 200000
+      ),
+      random_locales_attributes(name: -> { I18n.t("seeds.geozones.central_district") }).merge(
+        population: 150000
+      )
+    ].each do |heading_params|
+      districts_group.headings.create!(heading_params.merge(
+        price: rand(5..10) * 100000,
+        latitude: "40.416775",
+        longitude: "-3.703790"
+      ))
+    end
   end
 end
 

@@ -17,6 +17,9 @@ nl:
     letter:
       alert:
         unconfirmed_code: You have not yet entered the confirmation code
+      create:
+        flash:
+          success: Bedankt voor het aanvragen van je <b>veiligheidscode (deze is alleen nodig voor de definitieve stemming)</b>. Binnen een paar dagen sturen we deze code naar het adres wat bij ons bekend is. Onthoud, indien gewenst, kan de code ook afgehaald worden op een van de locaties opgehaald worden.
       edit:
         see_all: Voorstellen bekijken
         title: Letter requested
@@ -52,7 +55,7 @@ nl:
           residence_card: Residence card
           spanish_id: DNI
         error_not_allowed_age: You don't have the required age to participate
-        error_not_allowed_postal_code: In order to be verified, you must be registered.
+        error_not_allowed_postal_code: Inwoners met deze postcode kunnen niet participeren
         error_verifying_census: De telling was niet in staat om uw informatie te verifiëren. Gelieve te bevestigen dat uw volkstellingsgegevens correct zijn door te bellen naar de gemeenteraad of een bezoek te brengen aan een ondersteuningsbureau voor burgers.
         form_errors: prevented the verification of your residence
         postal_code_note: To verify your account you must be registered

@@ -3,7 +3,6 @@ sq:
     comments:
       index:
         block_authors: Blloko autorët
-        confirm: A je i sigurt?
         filter: Filtër
         filters:
           all: Të gjithë
@@ -24,7 +23,6 @@ sq:
     debates:
       index:
         block_authors: Autori i bllokut
-        confirm: A je i sigurt?
         filter: Filtër
         filters:
           all: Të gjithë
@@ -51,7 +49,6 @@ sq:
     proposals:
       index:
         block_authors: Autori i bllokut
-        confirm: A je i sigurt?
         filter: Filtër
         filters:
           all: Të gjithë
@@ -69,7 +66,6 @@ sq:
     budget_investments:
       index:
         block_authors: Autori i bllokut
-        confirm: A je i sigurt?
         filter: Filtër
         filters:
           all: Të gjithë
@@ -87,7 +83,6 @@ sq:
     proposal_notifications:
       index:
         block_authors: Autori i bllokut
-        confirm: A je i sigurt?
         filter: Filtër
         filters:
           all: Të gjithë
@@ -104,7 +99,6 @@ sq:
         title: Notifikimi i propozimeve
     users:
       index:
-        hidden: Bllokuar
         hide: Blloko
         search_placeholder: email ose emrin e përdoruesit
         title: Përdoruesit e bllokuar

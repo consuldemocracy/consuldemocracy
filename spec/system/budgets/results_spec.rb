@@ -102,31 +102,6 @@ describe "Results" do
     expect(page).not_to have_content "€"
   end
 
-  scenario "Show all button only if there are discarded investments" do
-    budget.update!(voting_style: "approval", hide_money: true)
-    investment1.update!(winner: true)
-    investment2.update!(winner: true)
-    investment4.update!(winner: true)
-
-    visit budget_path(budget)
-    click_link "See results"
-
-    expect(page).to have_content investment1.title
-    expect(page).to have_content investment2.title
-    expect(page).to have_content investment4.title
-    expect(page).not_to have_link "Show all"
-
-    investment4.update!(winner: false)
-
-    visit budget_path(budget)
-    click_link "See results"
-
-    expect(page).to have_content investment1.title
-    expect(page).to have_content investment2.title
-    expect(page).to have_link "Show all"
-    expect(page).not_to have_content investment4.title
-  end
-
   scenario "Does not raise error if budget (slug or id) is not found" do
     visit budget_results_path("wrong budget")
 

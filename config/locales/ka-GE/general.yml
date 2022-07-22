@@ -11,14 +11,9 @@ ka:
       save_changes_submit: ცვლილებების შენახვა
       recommendations: რეკომენდაციები
       title: ჩემი პროფილი
-      user_permission_debates: დებატებში მონაწილეობა
       user_permission_info: თქვენი ანგარიშით თქვენ შეგიძლიათ...
-      user_permission_proposal: ახალი ინიციატივის შექმნა
-      user_permission_support_proposal: ინიციატივებზე ხმის მიცემა
       user_permission_title: მონაწილეობა
       user_permission_verify: ყველა ფუნქციით სარგებლობისთვის, გაიარეთ ანგარიშის გადამოწმება.
-      user_permission_verify_info: "* მხოლოდ აღწერაში მონაწილე მომხმარებლებისთვის."
-      user_permission_votes: საბოლოო კენჭისყრაში მონაწილეობა
       verified_account: ანგარიში გადამოწმებულია
       verify_my_account: ჩემი ანგარიშის დადასტურება
   application:
@@ -107,9 +102,6 @@ ka:
         button: ძებნა
         placeholder: დებატების ძებნა...
         title: ძებნა
-      search_results:
-        one: " შეიცავდეს საძიებო სიტყვას <strong>%{search_term}</strong>"
-        other: " შეიცავდეს საძიებო სიტყვას <strong>%{search_term}</strong>"
       start_debate: დებატის დაწყება
       title: დებატები
       section_header:
@@ -209,7 +201,6 @@ ka:
       conditions: გამოყენების წესები და პირობები
       consul: CONSUL-ის აპლიკაცია
       consul_url: https://github.com/consul/consul
-      contact_us: ტექნიკური მხარდაჭერის მისაღებად ეწვიეთ
       copyright: CONSUL, %{year}
       description: აღნიშნული პორტალი იყენებს %{consul}, რომელიც არის %{open_source}.
       open_source: ღია წყაროების პროგრამული უზრუნველყოფა
@@ -372,7 +363,6 @@ ka:
       select_order_long: "ინიციატივები ნაჩვენებია:"
       start_proposal: ახალი ინიციატივის შექმნა
       title: ინიციატივები
-      top: კვირის მოწინავე
       top_link_proposals: კატეგორიის მიხედვით ყველაზე მეტი ხმის მქონე ინიციატივები
       section_header:
         icon_alt: ინიციატივების ნიშანი
@@ -820,7 +810,7 @@ ka:
           one: 1 ინვესტიცია
           other: "%{count} ინვესტიცია"
         follows:
-          one: '%{count} გამომწერი'
+          one: 1 გამომწერი
           other: "%{count} გამომწერი"
       no_activity: მომხმარებელს არ განუხორციელებია რაიმე სახის საჯარო აქტივობა
       no_private_messages: "ამ მომხმარებელს არ სურს პირადი შეტყობინებების მიღება."
@@ -837,15 +827,12 @@ ka:
   votes:
     agree: ვეთანხმები
     anonymous: ზედმეტად ბევრი ანონიმური ხმაა იმისათვის, რომ ეს ხმა ჩაითვალოს %{verify_account}.
-    comment_unauthenticated: ხმის მისაცემად გაიარეთ %{signin} ან %{signup}.
     disagree: არ ვეთანხმები
     organizations: ორგანიზაციებს ხმის მიცემა არ შეუძლიათ
     supports: მხარდამჭერები
     verified_only: მხოლოდ გადამოწმებული ანგარიშის მქონე მომხმარებლებს შეუძლიათ ინიციატივაზე ხმის მიცემა; %{verify_account}.
     budget_investments:
-      not_logged_in: გასაგრძელებლად თქვენ უნდა გაიაროთ %{signin} ან %{signup}.
       not_verified: მხოლოდ გადამოწმებული ანგარიშის მქონე მომხმარებლებს შეუძლიათ საინვესტიციო პროექტებზე ხმის მიცემა; %{verify_account}.
-      organization: ორგანიზაციებს ხმის მიცემა არ შეუძლიათ
       unfeasible: არაგანხორციელებად საინვესტიციო პროექტებზე ხმის მიცემა შეუძლებელია
       not_voting_allowed: ხმის მიცემის ფაზა დასრულებულია
       different_heading_assigned:
@@ -877,23 +864,13 @@ ka:
       budget_investments:
         title: რეკომენდირებული ინვესტიციები
       slide: "იხილეთ %{title}"
-    verification:
-      i_dont_have_an_account: არ მაქვს ანგარიში
-      i_have_an_account: უკვე მაქვს ანგარიში
-      question: უკვე გაქვთ ანგარი შექმნილი %{org_name}-ში?
-      title: ანგარიშის ვერიფიკაცია
     welcome:
       go_to_index: ახლა არა, გადადით მთავარ გვერდზე
       start_using_consul: მთავარ გვერდზე გადასვლა
       title: მონაწილეობა
-      user_permission_debates: დებატებში მონაწილეობა
       user_permission_info: თქვენი ანგარიშით თქვენ შეგიძლიათ...
-      user_permission_proposal: ახალი ინიციატივების შექმნა
-      user_permission_support_proposal: ინიციატივებზე ხმის მიცემა*
       user_permission_verify: "ამ ფუნქციებით სარგებლობისათვის, დაადასტურეთ თქვენი ანგარიში."
-      user_permission_verify_info: "* მხოლოდ აღწერაში მონაწილე მომხმარებლებისთვის."
       user_permission_verify_my_account: ჩემი ანგარიშის დადასტურება
-      user_permission_votes: საბოლოო კენჭისყრაში მონაწილეობა
   invisible_captcha:
     sentence_for_humans: "თუ რობოტი არ ხართ, არ მიაქციოთ ამ ველს ყურადღება"
     timestamp_error_message: "ძალიან იჩქარეთ, გთხოვთ სცადოთ ხელახლა."

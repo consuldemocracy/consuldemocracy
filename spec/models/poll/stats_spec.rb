@@ -56,10 +56,6 @@ describe Poll::Stats do
     end
   end
 
-  describe "#total_web_white" do
-    pending "Too complex to test"
-  end
-
   describe "#total_web_null" do
     it "returns 0" do
       expect(stats.total_web_null).to eq(0)

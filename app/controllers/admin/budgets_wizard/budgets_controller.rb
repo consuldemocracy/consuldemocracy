@@ -33,14 +33,14 @@ class Admin::BudgetsWizard::BudgetsController < Admin::BudgetsWizard::BaseContro
   private
 
     def budget_params
-      params.require(:budget).permit(*allowed_params)
+      params.require(:budget).permit(allowed_params)
     end
 
     def allowed_params
       valid_attributes = [:currency_symbol, :voting_style, :hide_money, administrator_ids: [],
                           valuator_ids: [], image_attributes: image_attributes]
 
-      valid_attributes + [translation_params(Budget)]
+      [*valid_attributes, translation_params(Budget)]
     end
 
     def groups_index

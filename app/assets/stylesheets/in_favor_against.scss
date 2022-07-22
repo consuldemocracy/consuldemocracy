@@ -1,0 +1,98 @@
+.in-favor-against {
+  @include flex-with-gap($line-height / 4);
+
+  @include breakpoint(medium) {
+    @include flex-with-gap($line-height * 3 / 4);
+  }
+
+  &,
+  .in-favor,
+  .against,
+  form {
+    display: inline-block;
+  }
+
+  button {
+    background: #fff;
+    border: 2px solid;
+    border-radius: rem-calc(3);
+    color: $text-light;
+    display: inline-block;
+    font-size: rem-calc(30);
+    line-height: rem-calc(30);
+    padding: rem-calc(3) rem-calc(6) rem-calc(6);
+    position: relative;
+
+    &:not([disabled]) {
+      &:hover,
+      &:active {
+        color: #fff;
+        cursor: pointer;
+        opacity: 1 !important;
+      }
+    }
+  }
+
+  .in-favor button {
+    @include has-fa-icon(thumbs-up, solid);
+
+    &:not([disabled]) {
+      &:hover,
+      &:active {
+        background: $like;
+        border: 2px solid $like;
+      }
+    }
+  }
+
+  .against button {
+    @include has-fa-icon(thumbs-down, solid);
+
+    &:not([disabled]) {
+      &:hover,
+      &:active {
+        background: $unlike;
+        border: 2px solid $unlike;
+      }
+    }
+  }
+
+  .like,
+  .unlike {
+    vertical-align: super;
+    text-decoration: none;
+  }
+
+  .percentage {
+    color: $text;
+    display: inline-block;
+    font-size: $small-font-size;
+    line-height: $line-height * 2;
+    padding-right: $line-height / 2;
+    vertical-align: top;
+
+    @include breakpoint(medium) {
+      display: block;
+      line-height: $line-height;
+      padding-right: 0;
+    }
+  }
+
+  .voted {
+    color: #fff;
+  }
+
+  .in-favor .voted {
+    background: $like;
+    border: 2px solid $like;
+  }
+
+  .against .voted {
+    background: $unlike;
+    border: 2px solid $unlike;
+  }
+
+  .no-voted {
+    opacity: 0.3;
+  }
+}

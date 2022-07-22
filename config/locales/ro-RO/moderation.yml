@@ -3,7 +3,6 @@ ro:
     comments:
       index:
         block_authors: Blochează autorii
-        confirm: Ești sigur?
         filter: Filtru
         filters:
           all: Toate
@@ -24,7 +23,6 @@ ro:
     debates:
       index:
         block_authors: Blochează autorii
-        confirm: Ești sigur?
         filter: Filtru
         filters:
           all: Toate
@@ -51,7 +49,6 @@ ro:
     proposals:
       index:
         block_authors: Blochează autorii
-        confirm: Sunteți sigur?
         filter: Filtru
         filters:
           all: Toate
@@ -69,7 +66,6 @@ ro:
     budget_investments:
       index:
         block_authors: Blochează autori
-        confirm: Sunteți sigur?
         filter: Filtru
         filters:
           all: Toate
@@ -87,7 +83,6 @@ ro:
     proposal_notifications:
       index:
         block_authors: Blochează autorii
-        confirm: Sunteți sigur?
         filter: Filtru
         filters:
           all: Toate
@@ -104,7 +99,6 @@ ro:
         title: Notificări propunere
     users:
       index:
-        hidden: Blocat
         hide: Blochează
         search_placeholder: email sau numele utilizatorului
         title: Blochează utilizatorii

@@ -64,11 +64,6 @@ cs:
       users: Správa uživatelů
       user_invites: Odeslat pozvánky
       select_user: Vybrat uživatele
-    permissions:
-      create_proposals: Vytvořit návrhy
-      debates: Zapojte se do debat
-      support_proposals: Podpora návrhů
-      vote_proposals: Hlasujte o návrzích
     print:
       proposals_info: Vytvořte svůj návrh na http://url.consul
       proposals_title: "Návrhy:"

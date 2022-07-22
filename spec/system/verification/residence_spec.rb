@@ -91,6 +91,7 @@ describe "Residence" do
   end
 
   scenario "Error on postal code not in census" do
+    Setting["postal_codes"] = "00001:99999"
     user = create(:user)
     login_as(user)
 
@@ -102,12 +103,12 @@ describe "Residence" do
     select "1997", from: "residence_date_of_birth_1i"
     select "January", from: "residence_date_of_birth_2i"
     select "1", from: "residence_date_of_birth_3i"
-    fill_in "residence_postal_code", with: "12345"
+    fill_in "residence_postal_code", with: "00000"
     check "residence_terms_of_service"
 
     click_button "Verify residence"
 
-    expect(page).to have_content "In order to be verified, you must be registered"
+    expect(page).to have_content "Citizens from this postal code cannot participate"
   end
 
   scenario "Error on census" do
@@ -157,5 +158,14 @@ describe "Residence" do
     visit new_residence_path
     expect(page).to have_content "You have reached the maximum number of attempts. Please try again later."
     expect(page).to have_current_path(account_path)
+  end
+
+  scenario "Terms and conditions link" do
+    login_as(create(:user))
+
+    visit new_residence_path
+    click_link "the terms and conditions of access"
+
+    expect(page).to have_content "Terms and conditions of access of the Census"
   end
 end

@@ -35,8 +35,11 @@ describe "Admin administrators" do
   scenario "Delete Administrator" do
     visit admin_administrators_path
 
+    confirmation = "Are you sure? This action will delete "\
+      "\"#{user_administrator.name}\" and can't be undone."
+
     within "#administrator_#{user_administrator.id}" do
-      accept_confirm { click_button "Delete" }
+      accept_confirm(confirmation) { click_button "Delete" }
     end
 
     within("#administrators") do
@@ -47,8 +50,9 @@ describe "Admin administrators" do
   scenario "Delete Administrator when its the current user" do
     visit admin_administrators_path
 
+    confirmation = "Are you sure? This action will delete \"#{admin.name}\" and can't be undone."
     within "#administrator_#{admin.id}" do
-      accept_confirm { click_button "Delete" }
+      accept_confirm(confirmation) { click_button "Delete" }
     end
 
     within("#error") do
@@ -126,7 +130,8 @@ describe "Admin administrators" do
       fill_in "Search user by name or email", with: administrator2.email
       click_button "Search"
 
-      accept_confirm { click_button "Delete" }
+      confirmation = "Are you sure? This action will delete \"#{administrator2.name}\" and can't be undone."
+      accept_confirm(confirmation) { click_button "Delete" }
 
       expect(page).to have_content(administrator1.email)
       expect(page).not_to have_content(administrator2.email)

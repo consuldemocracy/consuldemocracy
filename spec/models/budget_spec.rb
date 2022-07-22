@@ -148,6 +148,16 @@ describe Budget do
       expect(budget).not_to be_valid
     end
 
+    it "dynamically validates the phases" do
+      stub_const("#{Budget::Phase}::PHASE_KINDS", %w[accepting custom])
+
+      budget.phase = "custom"
+      expect(budget).to be_valid
+
+      budget.phase = "reviewing"
+      expect(budget).not_to be_valid
+    end
+
     it "produces auxiliary methods" do
       budget.phase = "accepting"
       expect(budget).to be_accepting
@@ -454,6 +464,13 @@ describe Budget do
       it { expect(build(:budget, :approval)).to be_valid }
       it { expect(build(:budget, :knapsack)).to be_valid }
       it { expect(build(:budget, voting_style: "Oups!")).not_to be_valid }
+
+      it "dynamically validates the voting styles" do
+        stub_const("#{Budget}::VOTING_STYLES", %w[custom])
+
+        expect(build(:budget, voting_style: "custom")).to be_valid
+        expect(build(:budget, voting_style: "knapsack")).not_to be_valid
+      end
     end
 
     context "Related supportive methods" do

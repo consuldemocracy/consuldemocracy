@@ -18,12 +18,12 @@ describe Budgets::Investments::VotesComponent do
         expect(page).to have_button "Support Renovate sidewalks in Main Street"
       end
 
-      it "disables the button to support the investment to unidentified users" do
-        skip "Add temporal custom button until version 1.5"
+      it "renders the support button and a reminder to sign in to unidentified users" do
         render_inline component
 
         expect(page).to have_button count: 1, disabled: :all
-        expect(page).to have_button "Support", disabled: true
+        expect(page).to have_button "Support"
+        expect(page).to have_content "You must sign in or sign up to continue."
       end
 
       describe "button to remove support" do

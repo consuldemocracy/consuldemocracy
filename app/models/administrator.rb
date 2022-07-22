@@ -1,6 +1,5 @@
 class Administrator < ApplicationRecord
   belongs_to :user, touch: true
-
   has_many :budget_administrators, dependent: :destroy
 
   delegate :name, :email, :name_and_email, to: :user
