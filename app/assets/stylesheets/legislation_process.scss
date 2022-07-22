@@ -966,10 +966,6 @@
     }
   }
 
-  .comments-count {
-    @include has-fa-icon(comments, regular);
-  }
-
   .question-title:not(:only-child) {
     margin-bottom: $line-height / 2;
   }
