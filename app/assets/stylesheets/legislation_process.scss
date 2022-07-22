@@ -806,13 +806,12 @@
   .comment {
     margin-bottom: rem-calc(48);
 
-    a {
+    .expand-context a {
       span {
         text-decoration: underline;
       }
 
-      .icon-expand,
-      .icon-comments {
+      .icon-expand {
         text-decoration: none;
         color: #999;
         line-height: 0;
@@ -820,10 +819,6 @@
 
       .icon-expand {
         margin-left: rem-calc(4);
-      }
-
-      .icon-comments {
-        margin-right: rem-calc(4);
       }
 
       &:active,

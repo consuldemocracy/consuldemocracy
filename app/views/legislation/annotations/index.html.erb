@@ -18,7 +18,7 @@
     <% @annotations.each do |annotation| %>
       <div class="comment">
         <strong><%= t("legislation.annotations.index.comments_about") %></strong>
-        <span class="float-right">
+        <span class="float-right expand-context">
           <%= link_to legislation_process_draft_version_path(@process, @draft_version, anchor: "annotation-id-#{annotation.id}") do %>
             <span><%= t("legislation.annotations.index.see_in_context") %></span>
             <span class="icon-expand" aria-hidden="true"></span>
@@ -27,12 +27,12 @@
         <div class="comment-section">
           <%= sanitize(annotation.context).presence || annotation.quote %>
         </div>
-        <%= link_to legislation_process_draft_version_annotation_path(@process, @draft_version, annotation) do %>
-          <span class="icon-comments" aria-hidden="true"></span>
-          <span>
-            <%= t("legislation.annotations.index.comments_count", count: annotation.comments_count) %>
-          </span>
-        <% end %>
+        <span class="comments-count">
+          <%= link_to t("legislation.annotations.index.comments_count", count: annotation.comments_count),
+                      legislation_process_draft_version_annotation_path(@process,
+                                                                        @draft_version,
+                                                                        annotation) %>
+        </span>
       </div>
     <% end %>
 

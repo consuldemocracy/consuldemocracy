@@ -2050,6 +2050,7 @@ table {
 .budget-investment-info,
 .debate-info,
 .investment-project-info,
+.legislation-comments,
 .proposal-info,
 .topic-info {
 
@@ -2058,6 +2059,20 @@ table {
 
     &::before {
       margin-right: 0.3rem;
+    }
+  }
+}
+
+.legislation-comments {
+
+  .comments-count {
+
+    a {
+      text-decoration: underline;
+    }
+
+    &::before {
+      color: #999;
     }
   }
 }
