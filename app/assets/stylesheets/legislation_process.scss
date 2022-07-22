@@ -603,19 +603,9 @@
         }
 
         .comment-header {
-          color: #838383;
           padding-bottom: rem-calc(8);
           margin-bottom: rem-calc(16);
           border-bottom: 1px solid $border;
-
-          .comment-number {
-            color: $text;
-            display: inline-block;
-          }
-
-          .icon-comment {
-            margin-right: rem-calc(8);
-          }
 
           a .icon-expand {
             color: #838383;
