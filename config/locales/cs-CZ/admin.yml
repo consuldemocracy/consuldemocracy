@@ -38,6 +38,8 @@ cs:
           sdg: SDG
       create:
         notice: "Reklamní proužek byl úspěšně vytvořen"
+      destroy:
+        notice: "Obrázek byl úspěšně smazán"
       edit:
         editing: Upravit banner
         form:
