@@ -285,12 +285,16 @@ tr:
             short_title: "Sürdürülebilirlik için Tüm Endüstrilerin ve Altyapıların Güncellenmesi"
           target_9_5:
             long_title: "Özellikle gelişmekte olan ülkeler olmak üzere bütün ülkelerde, 2030’a kadar, yenilikçiliğin teşvik edilmesi ve 1 milyonda insanda, araştırma-geliştirme alanında çalışan kişi sayısının, kamusal ve özel araştırmaların ve kalkınma harcamalarının önemli ölçüde artırılması; bilimsel araştırmanın iyileştirilmesi ve sanayi sektörlerinin teknolojik yeterliliklerinin geliştirilmesi."
+            short_title: "Araştırmaların Genişletilmesi ve Endüstriyel Teknolojilerin Güncellenmesi "
           target_9_A:
             long_title: "Afrika ülkelerine, az gelişmiş ülkelere, denize kıyısı olmayan gelişmekte olan ülkelere ve gelişmekte olan küçük ada devletlerine gelişmiş finansal, teknolojik ve teknik desteğin sağlanması aracılığıyla, gelişmekte olan ülkelerde sürdürülebilir ve dayanıklı altyapı geliştirmenin kolaylaştırılması."
+            short_title: "Gelişmekte Olan Ülkeler İçin Sürdürülebilir Altyapılar Geliştirmenin Kolaylaştırılması"
           target_9_B:
             long_title: "Sanayi çeşitliliği ve sanayi ürünlerinde değer artırımının yanı sıra, elverişli bir politika ortamı sağlamak için, gelişmekte olan ülkelerde yurt içi teknoloji gelişiminin, araştırma ve yenilikçiliğin desteklenmesi."
+            short_title: "Yerli Teknoloji Geliştirilmesi ve Endüstriyel Çeşitliliğin Desteklenmesi"
           target_9_C:
             long_title: "Bilgi ve iletişim teknolojisine erişimin önemli ölçüde artırılması ve en az gelişmiş ülkelerde 2020'ye kadar evrensel ve ekonomik internet hizmetlerine erişimin sağlanması için çaba gösterilmesi."
+            short_title: "Bilgi ve İletişim Teknolojisine Evrensel Erişimin Sağlanması"
       goal_10:
         title: "Eşitsizliklerin Azaltılması"
         title_in_two_lines: "Eşitsizliklerin Azaltılması"
@@ -299,10 +303,13 @@ tr:
         targets:
           target_10_1:
             long_title: "2030’a kadar nüfusun en altındaki yüzde 40'lık kesiminin gelirinin ulusal ortalamadan daha yüksek bir oranda, aşamalı olarak artışının ve sürdürülmesinin sağlanması."
+            short_title: "Gelir Eşitsizliklerinin Azaltılması"
           target_10_2:
             long_title: "2030'a kadar, yaşa, cinsiyete, engelliliğe, ırka, etnik kökene, soya, dine veya ekonomik ya da diğer rollere bakılmaksızın herkesin sosyal, ekonomik ve politik katılımının güçlendirilmesi ve teşvik edilmesi."
+            short_title: "Evrensel Sosyal, Ekonomik ve Politik Katılımın Teşvik Edilmesi"
           target_10_3:
             long_title: "Ayrımcı yasaların, politikaların ve uygulamaların sona erdirilmesi ve bu bağlamda uygun mevzuat, politikalar ve eylemlerin teşvik edilmesi ile sonuç eşitsizliklerinin azaltılması ve fırsat eşitliğinin garanti altına alınması."
+            short_title: "Fırsat Eşitliğinin Sağlanması ve Ayrımcılığın Sona Erdirilmesi"
           target_10_4:
             long_title: "Özellikle mali, ücret ve sosyal koruma politikaları olmak üzere politikaların benimsenmesi ve eşitliğin giderek daha fazla sağlanması."
           target_10_5:
