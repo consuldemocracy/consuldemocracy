@@ -1,5 +1,8 @@
 cs:
   pages:
+    census_terms:
+      title: "Podmínky přístupu k rejstříku osob"
+      description: "Informační stránka o podmínkách přístupu k rejstříku občanů."
     conditions:
       title: Podmínky používání
       subtitle: PRÁVNÍ OZNÁMENÍ O PODMÍNKÁCH POUŽITÍ, OCHRANY OSOBNÍCH ÚDAJŮ A OCHRANY OSOBNÍCH ÚDAJŮ PORTÁLU OTEVŘENÉ VLÁDY
