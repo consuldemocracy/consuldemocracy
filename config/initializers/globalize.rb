@@ -17,7 +17,7 @@ module Globalize
 end
 
 def Globalize.set_fallbacks_to_all_available_locales
-  Globalize.fallbacks = I18n.available_locales.each_with_object({}) do |locale, fallbacks|
-    fallbacks[locale] = (I18n.fallbacks[locale] + I18n.available_locales).uniq
+  Globalize.fallbacks = I18n.available_locales.index_with do |locale|
+    (I18n.fallbacks[locale] + I18n.available_locales).uniq
   end
 end
