@@ -31,7 +31,7 @@
     </div>
 
     <% if @budget.questions.any? %>
-      <%= f.fields_for :answers do |builder| %>
+      <%= f.fields_for :answers, f.object.answers.order(:id) do |builder| %>
         <div class="row expanded">
           <div class="small-12 column">
             <p>

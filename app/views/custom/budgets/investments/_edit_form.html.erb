@@ -36,7 +36,7 @@
   <fieldset>
 
     <% if @budget.questions.any? %>
-      <%= f.fields_for :answers do |builder| %>
+      <%= f.fields_for :answers, f.object.answers.order(:id) do |builder| %>
         <p>
           <%= builder.text_area :text, label: @budget.questions.order(:id)[builder.index].text, rows: 5 %>
         </p>
