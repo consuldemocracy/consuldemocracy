@@ -16,7 +16,7 @@ shared_examples_for "globalizable" do |factory_name|
     record.update!(attribute => "In English")
 
     I18n.with_locale(:es) do
-      record.update!(required_fields.map { |field| [field, "En español"] }.to_h)
+      record.update!(required_fields.index_with("En español"))
       record.update!(attribute => "En español")
     end
 
@@ -26,7 +26,7 @@ shared_examples_for "globalizable" do |factory_name|
   describe "Add a translation" do
     it "Maintains existing translations" do
       record.update!(translations_attributes: [
-        { locale: :fr }.merge(fields.map { |field| [field, "En Français"] }.to_h)
+        { locale: :fr }.merge(fields.index_with("En Français"))
       ])
       record.reload
 
@@ -37,7 +37,7 @@ shared_examples_for "globalizable" do |factory_name|
 
     it "Works with non-underscored locale name" do
       record.update!(translations_attributes: [
-        { locale: :"pt-BR" }.merge(fields.map { |field| [field, "Português"] }.to_h)
+        { locale: :"pt-BR" }.merge(fields.index_with("Português"))
       ])
       record.reload
 
@@ -63,7 +63,7 @@ shared_examples_for "globalizable" do |factory_name|
       record.reload
 
       record.update!(translations_attributes: [
-        { locale: :de }.merge(fields.map { |field| [field, "Deutsche Sprache"] }.to_h)
+        { locale: :de }.merge(fields.index_with("Deutsche Sprache"))
       ])
 
       record.reload
@@ -102,7 +102,7 @@ shared_examples_for "globalizable" do |factory_name|
       record.reload
 
       record.update!(translations_attributes: [
-        { id: record.translations.first.id }.merge(fields.map { |field| [field, "Actualizado"] }.to_h)
+        { id: record.translations.first.id }.merge(fields.index_with("Actualizado"))
       ])
 
       record.reload
@@ -155,7 +155,7 @@ shared_examples_for "globalizable" do |factory_name|
   describe "Fallbacks" do
     before do
       I18n.with_locale(:de) do
-        record.update!(required_fields.map { |field| [field, "Deutsche Sprache"] }.to_h)
+        record.update!(required_fields.index_with("Deutsche Sprache"))
         record.update!(attribute => "Deutsche Sprache")
       end
     end
