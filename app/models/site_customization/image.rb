@@ -13,8 +13,8 @@ class SiteCustomization::Image < ApplicationRecord
 
   has_attachment :image
 
-  validates :name, presence: true, uniqueness: true, inclusion: { in: VALID_IMAGES.keys }
-  validates_attachment_content_type :image, content_type: ["image/png", "image/jpeg"]
+  validates :name, presence: true, uniqueness: true, inclusion: { in: ->(*) { VALID_IMAGES.keys }}
+  validates :image, file_content_type: { allow: ["image/png", "image/jpeg"], if: -> { image.attached? }}
   validate :check_image
 
   def self.all_images
@@ -23,11 +23,10 @@ class SiteCustomization::Image < ApplicationRecord
     end
   end
 
-  def self.image_path_for(filename)
+  def self.image_for(filename)
     image_name = filename.split(".").first
 
-    imageable = find_by(name: image_name)
-    imageable.present? && imageable.image.exists? ? imageable.image.url : nil
+    find_by(name: image_name)&.persisted_image
   end
 
   def required_width
@@ -38,19 +37,29 @@ class SiteCustomization::Image < ApplicationRecord
     VALID_IMAGES[name]&.second
   end
 
+  def persisted_image
+    image if persisted_attachment?
+  end
+
+  def persisted_attachment?
+    image.attachment&.persisted?
+  end
+
   private
 
     def check_image
-      return unless image?
+      return unless image.attached?
 
-      dimensions = Paperclip::Geometry.from_file(image.queued_for_write[:original].path)
+      image.analyze unless image.analyzed?
+      width = image.metadata[:width]
+      height = image.metadata[:height]
 
       if name == "logo_header"
-        errors.add(:image, :image_width, required_width: required_width) unless dimensions.width <= required_width
+        errors.add(:image, :image_width, required_width: required_width) unless width <= required_width
       else
-        errors.add(:image, :image_width, required_width: required_width) unless dimensions.width == required_width
+        errors.add(:image, :image_width, required_width: required_width) unless width == required_width
       end
 
-      errors.add(:image, :image_height, required_height: required_height) unless dimensions.height == required_height
+      errors.add(:image, :image_height, required_height: required_height) unless height == required_height
     end
 end

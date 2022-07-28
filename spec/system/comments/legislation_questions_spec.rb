@@ -475,7 +475,7 @@ describe "Commenting legislation questions" do
       visit legislation_process_question_path(question.process, question)
 
       within("#comment_#{comment.id}_votes") do
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
@@ -491,9 +491,9 @@ describe "Commenting legislation questions" do
       visit legislation_process_question_path(question.process, question)
 
       within("#comment_#{comment.id}_votes") do
-        find(".in_favor a").click
+        click_button "I agree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
@@ -509,15 +509,15 @@ describe "Commenting legislation questions" do
       visit legislation_process_question_path(question.process, question)
 
       within("#comment_#{comment.id}_votes") do
-        find(".in_favor a").click
+        click_button "I agree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
-        find(".against a").click
+        click_button "I disagree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "0"
         end
 
@@ -533,13 +533,13 @@ describe "Commenting legislation questions" do
       visit legislation_process_question_path(question.process, question)
 
       within("#comment_#{comment.id}_votes") do
-        find(".in_favor a").click
-        within(".in_favor") do
+        click_button "I agree"
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
-        find(".in_favor a").click
-        within(".in_favor") do
+        click_button "I agree"
+        within(".in-favor") do
           expect(page).not_to have_content "2"
           expect(page).to have_content "1"
         end

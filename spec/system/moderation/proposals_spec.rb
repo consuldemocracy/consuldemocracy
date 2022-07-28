@@ -10,7 +10,7 @@ describe "Moderate proposals" do
     visit proposal_path(proposal)
 
     within("#proposal_#{proposal.id}") do
-      accept_confirm { click_link "Hide" }
+      accept_confirm("Are you sure? Hide") { click_button "Hide" }
     end
 
     expect(page).to have_css("#proposal_#{proposal.id}.faded")
@@ -29,8 +29,8 @@ describe "Moderate proposals" do
     visit proposal_path(proposal)
 
     within("#proposal_#{proposal.id}") do
-      expect(page).to have_link("Hide")
-      expect(page).not_to have_link("Block author")
+      expect(page).to have_button "Hide"
+      expect(page).not_to have_button "Block author"
     end
   end
 
@@ -56,7 +56,7 @@ describe "Moderate proposals" do
         end
 
         scenario "Hide the proposal" do
-          accept_confirm { click_button "Hide proposals" }
+          accept_confirm("Are you sure? Hide proposals") { click_button "Hide proposals" }
 
           expect(page).not_to have_css("#proposal_#{proposal.id}")
 
@@ -65,12 +65,12 @@ describe "Moderate proposals" do
           click_button "Search"
 
           within "tr", text: proposal.author.name do
-            expect(page).to have_link "Block"
+            expect(page).to have_button "Block"
           end
         end
 
         scenario "Block the author" do
-          accept_confirm { click_button "Block authors" }
+          accept_confirm("Are you sure? Block authors") { click_button "Block authors" }
 
           expect(page).not_to have_css("#proposal_#{proposal.id}")
 
@@ -114,7 +114,7 @@ describe "Moderate proposals" do
 
         visit moderation_proposals_path(filter: "all", page: "2", order: "created_at")
 
-        accept_confirm { click_button "Mark as viewed" }
+        accept_confirm("Are you sure? Mark as viewed") { click_button "Mark as viewed" }
 
         expect(page).to have_link "Most recent", class: "is-active"
         expect(page).to have_link "Most flagged"

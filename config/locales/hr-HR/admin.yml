@@ -4,11 +4,9 @@ hr:
       title: Administracija
     actions:
       actions: Akcije
-      confirm: Jeste li sigurni?
       confirm_hide: Potvrdi izmjene
       delete: "Obriši"
       hide: Sakrij
-      hide_author: Sakrij autora
       restore: Vrati
       mark_featured: Istaknuto
       unmark_featured: Odznači istaknuto
@@ -132,7 +130,6 @@ hr:
         max_votable_headings_info: "Odnosi se samo na fazu odabira projekata. Tijekom faze glasanja o projektima korisnici će moći glasati samo za jedan naslov po skupini."
         submit: "Spremi grupu"
     budget_headings:
-      no_headings: "Ne postoje naslovi."
       create:
         notice: "Naslov je uspješno stvoren!"
       update:
@@ -210,7 +207,6 @@ hr:
           incompatible: Nekompatabilnosti
           price: Cijena
           author: Autor
-        cannot_calculate_winners: Budžet mora ostati na fazi "Izglasavanje projekata", "Pregled Izglasavanja" ili "Dovršeni budžet" kako bi izračunali pobjednike projekata
         see_results: "Pogledaj rezultate"
         milestone_tags_filter_all: "Sve oznake miljokaza"
       show:

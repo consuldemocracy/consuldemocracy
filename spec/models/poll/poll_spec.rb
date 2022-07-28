@@ -35,8 +35,6 @@ describe Poll do
       poll.ends_at = 2.months.ago
       expect(poll).not_to be_valid
     end
-
-    pending "no overlapping polls for proposal polls are allowed"
   end
 
   describe "proposal polls specific validations" do

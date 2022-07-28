@@ -11,14 +11,9 @@ uk-UA:
       save_changes_submit: Зберегти зміни
       recommendations: Рекомендації
       title: Мій обліковий запис
-      user_permission_debates: Взяти участь в обговоренні
       user_permission_info: З вашим обліковим записом можна...
-      user_permission_proposal: Подати нові пропозиції
-      user_permission_support_proposal: Підтримати пропозиції
       user_permission_title: Участь
       user_permission_verify: Для виконання дій підтвердьте свій обліковий запис.
-      user_permission_verify_info: "* Лише для користувачів Цензусу."
-      user_permission_votes: Взяти участь у підсумковому голосуванні
       verified_account: Обліковий запис підтверджено
       verify_my_account: Підтвердити мій обліковий запис
   application:
@@ -119,11 +114,6 @@ uk-UA:
         button: Пошук
         placeholder: Пошук обговорень...
         title: Пошук
-      search_results:
-        one: " містить термін <strong>'%{search_term}'</strong>"
-        few: " містить терміни <strong>'%{search_term}'</strong>"
-        many: " містить терміни <strong>'%{search_term}'</strong>"
-        other: " містить терміни <strong>'%{search_term}'</strong>"
       start_debate: Розпочати обговорення
       title: Обговорення
       section_header:
@@ -227,7 +217,6 @@ uk-UA:
       conditions: Правила та умови користування
       consul: Додаток CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: Для технічної допомоги перейдіть
       copyright: CONSUL, %{year}
       description: Цей портал використовує %{consul} який знаходиться %{open_source}.
       open_source: відкрите програмне забезпечення
@@ -400,7 +389,6 @@ uk-UA:
       select_order_long: "Ви переглядаєте пропозиції згідно з:"
       start_proposal: Подати пропозицію
       title: Пропозиції
-      top: Топ за тиждень
       top_link_proposals: Найбільш підтримувані пропозиції за категоріями
       section_header:
         icon_alt: Значок пропозицій
@@ -899,15 +887,12 @@ uk-UA:
   votes:
     agree: Я погоджуюсь
     anonymous: Надто багато анонімних голосів, щоб визнати голос %{verify_account}.
-    comment_unauthenticated: Щоб проголосувати, необхідно %{signin} або %{signup}.
     disagree: Я не погоджуюсь
     organizations: Організації не допускаються до голосування
     supports: Підтримання
     verified_only: Тільки користувачі, які підтвердили свій обліковий запис, можуть віддавати голоси за пропозиції; %{verify_account}.
     budget_investments:
-      not_logged_in: Щоб продовжити, %{signin} або %{signup}.
       not_verified: Тільки підтверджені користувачі можуть віддавати голоси за інвестиційні проєкти; %{verify_account}.
-      organization: Організації не допускаються до голосування
       unfeasible: Не можна підтримати недоцільні інвестиційні проєкти
       not_voting_allowed: Етап голосування завершено
       different_heading_assigned:
@@ -941,23 +926,13 @@ uk-UA:
       budget_investments:
         title: Рекомендовані інвестиції
       slide: "Переглянути %{title}"
-    verification:
-      i_dont_have_an_account: У мене немає облікового запису
-      i_have_an_account: У мене є обліковий запис
-      question: Чи є у вас обліковий запис у %{org_name}?
-      title: Підтвердження облікового запису
     welcome:
       go_to_index: Не зараз, перейти до сторінки індексу
       start_using_consul: Перейти до сторінки індексу
       title: Взяти участь
-      user_permission_debates: Взяти участь в обговоренні
       user_permission_info: З вашим обліковим записом ви маєте можливість...
-      user_permission_proposal: Подати нові пропозиції
-      user_permission_support_proposal: Підтримати пропозиції
       user_permission_verify: "Для виконання цих дій підтвердьте свій обліковий запис."
-      user_permission_verify_info: "* Лише для користувачів Census."
       user_permission_verify_my_account: Підтвердити мій обліковий запис
-      user_permission_votes: Взяти участь у підсумковому голосуванні
   invisible_captcha:
     sentence_for_humans: "Якщо ви людина, проігноруйте це поле"
     timestamp_error_message: "Вибачте, це було занадто швидко! Будь ласка, повторіть."

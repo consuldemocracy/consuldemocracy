@@ -57,7 +57,6 @@ ro:
           winners: Selectat
       debate:
         empty_questions: Nu sunt întrebări
-        participate: Participați la dezbateri
       index:
         filter: Filtru
         filters:

@@ -1,4 +1,4 @@
-<div class="supports js-participation">
+<div class="supports">
 
   <span class="total-supports <%= "no-button" unless voting_allowed? || user_voted_for? %>">
     <%= t("budgets.investments.investment.supports", count: investment.total_votes) %>
@@ -28,29 +28,12 @@
             method: "post",
             remote: !display_support_alert?,
             data:   ({ confirm: confirm_vote_message } if display_support_alert?),
-            disabled: !current_user,
             "aria-label": support_aria_label %>
       <% end %>
     <% end %>
   </div>
 
-  <% if reason.present? && !user_voted_for? %>
-    <div tabindex="0">
-      <div class="js-participation-not-allowed participation-not-allowed" style="display:none" aria-hidden="false">
-        <p>
-          <small>
-            <%= sanitize(t("votes.budget_investments.#{reason}",
-                  count: investment.group.max_votable_headings,
-                  verify_account: link_to_verify_account,
-                  signin: link_to_signin,
-                  signup: link_to_signup,
-                  supported_headings: (current_user && current_user.headings_voted_within_group(investment.group).map(&:name).sort.to_sentence)
-                 )) %>
-          </small>
-        </p>
-      </div>
-    </div>
-  <% end %>
+  <%= render Shared::ParticipationNotAllowedComponent.new(investment, cannot_vote_text: cannot_vote_text) %>
 
   <% if user_voted_for? && setting["twitter_handle"] %>
     <div class="share-supported">

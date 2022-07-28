@@ -92,6 +92,7 @@ describe "System Emails" do
                                 href: proposal_url(proposal_b, anchor: "tab-notifications", host: app_host))
       expect(page).to have_content("Proposal A Notification Body")
       expect(page).to have_content("Proposal B Notification Body")
+      expect(page).to have_link "Notifications"
     end
 
     scenario "#budget_investment_created" do
@@ -155,6 +156,9 @@ describe "System Emails" do
       expect(page).to have_content comment.body
 
       expect(page).to have_link "Let's do...", href: debate_url(debate, host: app_host)
+      expect(page).to have_link("Notifications",
+                                href: edit_subscriptions_url(token: user.subscriptions_token,
+                                                             host: app_host))
     end
 
     scenario "#reply" do
@@ -172,6 +176,9 @@ describe "System Emails" do
       expect(page).to have_content reply.body
 
       expect(page).to have_link "Let's do...", href: comment_url(reply, host: app_host)
+      expect(page).to have_link("Notifications",
+                                href: edit_subscriptions_url(token: user.subscriptions_token,
+                                                             host: app_host))
     end
 
     scenario "#direct_message_for_receiver" do
@@ -182,6 +189,9 @@ describe "System Emails" do
       expect(page).to have_content "This is a sample of message's content."
 
       expect(page).to have_link "Reply to #{admin.user.name}", href: user_url(admin.user, host: app_host)
+      expect(page).to have_link("Notifications",
+                                href: edit_subscriptions_url(token: admin.user.subscriptions_token,
+                                                             host: app_host))
     end
 
     scenario "#direct_message_for_sender" do
@@ -241,25 +251,36 @@ describe "System Emails" do
       expect(page).to have_content "Some example data is needed in order to preview the email."
     end
 
-    scenario "#evaluation_comment" do
-      admin = create(:administrator, user: create(:user, username: "Baby Doe"))
-      investment = create(:budget_investment,
-        title: "Cleaner city",
-        heading: heading,
-        author: user,
-        administrator: admin)
-      comment = create(:comment, :valuation, commentable: investment)
+    describe "#evaluation_comment" do
+      scenario "render correctly evaluaton comment mailer with valuator as a sample user" do
+        admin = create(:administrator, user: create(:user, username: "Baby Doe"))
+        investment = create(:budget_investment,
+          title: "Cleaner city",
+          heading: heading,
+          author: user,
+          administrator: admin)
+        comment = create(:comment, :valuation, commentable: investment)
 
-      visit admin_system_email_view_path("evaluation_comment")
+        visit admin_system_email_view_path("evaluation_comment")
 
-      expect(page).to have_content "New evaluation comment for Cleaner city"
-      expect(page).to have_content "Hi #{admin.name}"
-      expect(page).to have_content "There is a new evaluation comment from #{comment.user.name} "\
-                                   "to the budget investment Cleaner city"
-      expect(page).to have_content comment.body
+        expect(page).to have_content "New evaluation comment for Cleaner city"
+        expect(page).to have_content "Hi #{admin.name}"
+        expect(page).to have_content "There is a new evaluation comment from #{comment.user.name} "\
+                                     "to the budget investment Cleaner city"
+        expect(page).to have_content comment.body
 
-      expect(page).to have_link "Cleaner city",
-        href: admin_budget_budget_investment_url(investment.budget, investment, anchor: "comments", host: app_host)
+        expect(page).to have_link "Cleaner city",
+          href: admin_budget_budget_investment_url(investment.budget, investment, anchor: "comments", host: app_host)
+      end
+
+      scenario "uses a current_user as a sample user for sample regular comments" do
+        create(:budget_investment_comment, body: "This is a sample comment")
+
+        visit admin_system_email_view_path("evaluation_comment")
+
+        expect(page).to have_content "This is a sample comment"
+        expect(page).to have_content admin.name
+      end
     end
   end
 

@@ -36,11 +36,6 @@ sr:
       groups:
         all_city: Цео Град
         districts: Дистрикти
-      valuator_groups:
-        culture_and_sports: Култура & Спортови
-        gender_and_diversity: Пол & Политика разлике
-        urban_development: Одрживи Урбани Развој
-        equity_and_employment: Једнакост & Запосленост
       statuses:
         studying_project: Проучавање пројекта
         bidding: Лицитирање

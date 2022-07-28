@@ -161,6 +161,8 @@ da:
         voting_style_knapsack: "Knapsack"
         voting_style_approval: "Approval"
       budget/translation:
+        main_link_text: "Link tekst"
+        main_link_url: "Linket tager dig til (tilføj et link)"
         name: "Navn"
       budget/investment:
         heading_id: "Overskrift"
@@ -222,6 +224,7 @@ da:
         name: "Titelnavn"
         price: "Pris"
         population: "Population"
+        max_ballot_lines: "Antal stemmer tilladt"
       budget/heading/translation:
         name: "Navn på område"
       budget/phase:
@@ -232,6 +235,8 @@ da:
         name: "Navn"
         description: "Beskrivelse"
         summary: "Opsummering"
+        main_link_text: "Link tekst"
+        main_link_url: "Linket tager dig til (tilføj et link)"
       comment:
         body: "Kommentar"
         user: "Bruger"
@@ -326,14 +331,21 @@ da:
         signable_id: "ID"
         document_numbers: "Dokumentnummer"
       sdg/goal:
+        code: "Kode"
         title: "Titel"
         description: "Beskrivelse"
       sdg/local_target:
+        code: "Kode"
+        target_id: "Mål"
         title: "Titel"
       sdg/local_target/translation:
         title: "Titel"
         description: "Beskrivelse"
+      sdg/phase/kind:
+        planning: "Planlægning"
+        monitoring: "Overvågning"
       sdg/target:
+        code: "Kode"
         title: "Titel"
       site_customization/page:
         content: Indhold
@@ -392,7 +404,7 @@ da:
         result_publication_date: Dato for publicering af det endelige resultat
         background_color: Baggrundsfarve
         font_color: Skriftfarve
-        homepage_enabled: "Startside aktiveret"
+        homepage_enabled: "Opsummering aktiveret"
       legislation/process/translation:
         title: Titel på proces
         summary: Resumé

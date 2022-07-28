@@ -11,14 +11,9 @@ nl:
       save_changes_submit: Save changes
       recommendations: Aanbevelingen
       title: My account
-      user_permission_debates: Participate on debates
       user_permission_info: With your account you can...
-      user_permission_proposal: Nieuwe voorstellen indienen
-      user_permission_support_proposal: Voorstellen steunen
       user_permission_title: Participatie
       user_permission_verify: Verifieer uw account om alles te kunnen.
-      user_permission_verify_info: "* Alleen voor gebruikers in de regio."
-      user_permission_votes: Neem deel aan definitieve stemronde
       verified_account: Account geverifiëerd
       verify_my_account: Verifieer mijn account
   application:
@@ -103,9 +98,6 @@ nl:
         button: Search
         placeholder: Debatten zoeken...
         title: Search
-      search_results:
-        one: " bevat de term <strong>'%{search_term}'</strong>"
-        other: " bevat de term <strong>'%{search_term}'</strong>"
       start_debate: Debat starten
       title: Debatten
       section_header:
@@ -155,11 +147,15 @@ nl:
     errors: fouten
     not_saved: "voorkwam dat %{resource} werd opgeslagen.<br>Controleer alsjeblieft de gemarkeerde velden om ze aan te passen:"
     policy: Privacy Verklaring
+    banner: banner
     proposal: Voorstel
     proposal_notification: "Melding"
     budget/investment: Investering
     budget/group: Budgetgroep
     budget/heading: Budget onderdeel
+    legislation/draft_version: concept
+    legislation/process: proces
+    legislation/question: vraag
     poll/shift: Dienst
     poll/question/answer: Antwoord
     user: Deelnemer
@@ -168,6 +164,7 @@ nl:
     document: Document
     topic: Onderwerp
     image: Afbeelding
+    site_customization/page: pagina
   geozones:
     none: Hele stad
   layouts:
@@ -184,12 +181,13 @@ nl:
       proposal_totals:
         supports:
           zero: Geen steunbetuigingen
+          one: 1 steunbetuiging
+          other: "Steunt"
     footer:
       accessibility: Toegankelijkheid
       conditions: Gebruiksvoorwaarden
       consul: Consul
       consul_url: https://github.com/consul/consul
-      contact_us: Voor tech support klik
       copyright: Consul, %{year}
       description: Deze site gebruikt %{consul}; een %{open_source} toepassing.
       open_source: open-source software
@@ -257,6 +255,10 @@ nl:
       sign_in: Log in via Google
       sign_up: Registreer via Google
       name: Google
+    wordpress_oauth2:
+      sign_in: Inloggen met Wordpress
+      sign_up: Registreren met Wordpress
+      name: Wordpress
     twitter:
       sign_in: Log in via Twitter
       sign_up: Registreer via Twitter
@@ -336,7 +338,6 @@ nl:
       select_order_long: "U ziet de voorstellen op:"
       start_proposal: Maak een nieuw voorstel
       title: Voorstellen
-      top: Wekelijkse top
       top_link_proposals: De meest gesteunde voorstellen per categorie
       section_header:
         icon_alt: Voorgestelde pictogrammen
@@ -389,6 +390,7 @@ nl:
         one: 1 opmerking
         other: "%{count} opmerkingen"
       comments_tab: Comments
+      dashboard_proposal_link: Dashboard
       flag: Dit voorstel is door verschillende deelnemers aangemerkt als ongepast.
       notifications_tab: Notificaties
       milestones_tab: Mijlpalen
@@ -408,8 +410,13 @@ nl:
       progress: Voortgang
       community: Community
       polls: Polls
+      mailing: E-mail
       related_content: Gerelateerde inhoud
+    form:
+      request: Verzoek
     progress:
+      group_by_month: Maandelijks
+      group_by_week: Wekelijks
       supports: Steunt
     index:
       edit_proposal_link: Wijzig voorstel
@@ -419,6 +426,10 @@ nl:
     recommended_actions:
       pending_title: In afwachting
       done_title: Is al gereed
+    goal:
+      days:
+        one: "%{count} dag"
+        other: "%{count} dagen"
     community:
       access_community: Naar de community
       participants: deelnemers
@@ -435,19 +446,44 @@ nl:
         submit: Nieuwe peiling
       edit:
         submit: Sla op
+      poll:
+        responses:
+          one: "%{count} reactie"
+          other: "%{count} reacties"
+        unable_notice: Je kan een vragenlijst met antwoorden niet verwijderen
       form:
+        name: Vragenlijsttitel
         add_question: titel
       question_fields:
+        remove_question: Vraag verwijderen
         add_answer: Voeg antwoord toe
+      question_answer_fields:
+        remove_answer: Antwoord verwijderen
     poster:
+      index:
+        title: Poster preview
+        poster_title: "Blijf niet kijken"
+        poster_subtitle: "maar steun me! ;)"
+        support: Steun mijn voorstel
+      new:
+        title: Poster van je voorstel
       options:
         preview: Preview
+        download: Download
     mailing:
+      index:
+        title: E-mail preview
+      new:
+        title: E-mail model om te delen
       mailing_options:
+        send: Stuur naar %{address}
         preview: Preview
+      create:
+        sent: De e-mail is verstuurd
     mailer:
       forward:
         support_button: Steun dit voorstel
+        hi: "Hallo!"
   polls:
     all: "All"
     no_dates: "geen datum toegewezen"
@@ -498,6 +534,7 @@ nl:
         total_votes: "Totaal aantal stemmen"
         votes: "stemmen"
         web: "web"
+        mail: "Per post"
         booth: "Stemlocatie"
         total: "Totaal"
         valid: "Geldig"
@@ -541,6 +578,7 @@ nl:
       to: "Aan"
     author_info:
       author_deleted: Gebruiker verwijderd
+      email_deleted: E-mail verwijderd
     back: Go back
     check: Select
     check_all: All
@@ -589,7 +627,7 @@ nl:
     orbit:
       previous_slide: Vorige slide
       next_slide: Volgende Slide
-    documentation: Aanvullende documentatie
+    documentation: Aanvullende informatie
     view_mode:
       title: Weergavemodus
       cards: Kaarten
@@ -678,15 +716,12 @@ nl:
   votes:
     agree: Ik ben het eens
     anonymous: Er zijn al te veel anonieme stemmen; %{verify_account}.
-    comment_unauthenticated: Je moet %{signin} of %{signup} om te stemmen.
     disagree: Ik ben het oneens
     organizations: Organisaties kunnen niet stemmen
     supports: Steunt
     verified_only: Alleen geverifieerde deelnemers kunnen stemmen op voorstellen; %{verify_account}.
     budget_investments:
-      not_logged_in: Je moet %{signin} of %{signup} om verder te gaan.
       not_verified: Alleen geverifieerde gebruikers mogen stemmen op begrotingsvoorstellen; %{verify_account}.
-      organization: Organisaties mogen niet stemmen
       unfeasible: Onhaalbare voorstellen kunnen niet gesteund worden.
       not_voting_allowed: Stemronde is gesloten.
   welcome:
@@ -715,23 +750,13 @@ nl:
       budget_investments:
         title: Aanbevolen investeringsprojecten
       slide: "Zie %{title}"
-    verification:
-      i_dont_have_an_account: Ik heb nog geen account
-      i_have_an_account: Ik heb al een account
-      question: Heeft u al een account bij %{org_name}?
-      title: Account verificatie
     welcome:
       go_to_index: Ga naar voorstellen en debatten
       start_using_consul: Ga naar indexpagina
       title: Deelnemen
-      user_permission_debates: Neem deel aan discussies
       user_permission_info: Met je account kun je...
-      user_permission_proposal: Nieuwe voorstellen maken
-      user_permission_support_proposal: Voorstellen steunen*
       user_permission_verify: "Verifi"
-      user_permission_verify_info: "* Alleen voor locale deelnemers."
       user_permission_verify_my_account: Verifieer mijn account
-      user_permission_votes: Deelnemen aan laatste peilronde
   invisible_captcha:
     sentence_for_humans: "Negeer dit veld als u mens bent"
     timestamp_error_message: "Sorry, dat ging te snel! Probeer nog eens."
@@ -766,3 +791,8 @@ nl:
       cancel_button: Cancel
     nested_links:
       title: Links
+  communities:
+    subnav:
+      surveys: Enquetes
+  remote_translations:
+    button: Vertaal pagina

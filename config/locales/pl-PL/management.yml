@@ -63,11 +63,6 @@ pl:
       users: Zarządzanie użytkownikami
       user_invites: Wyślij zaproszenia
       select_user: Wybierz użytkownika
-    permissions:
-      create_proposals: Stwórz wnioski
-      debates: Angażuj się w debaty
-      support_proposals: Popieraj propozycje
-      vote_proposals: Oceń wnioski
     print:
       proposals_info: Utwórz Twój wniosek na http://url.consul
       proposals_title: "Wnioski:"

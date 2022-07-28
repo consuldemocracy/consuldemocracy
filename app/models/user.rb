@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   include Verification
+  attribute :registering_from_web, default: false
 
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable,
          :trackable, :validatable, :omniauthable, :password_expirable, :secure_validatable,
@@ -147,28 +148,13 @@ class User < ApplicationRecord
     organization? ? organization.name : username
   end
 
-  def debate_votes(debates)
-    voted = votes.for_debates(Array(debates).map(&:id))
-    voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
-  end
-
-  def proposal_votes(proposals)
-    voted = votes.for_proposals(Array(proposals).map(&:id))
-    voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
-  end
-
-  def legislation_proposal_votes(proposals)
-    voted = votes.for_legislation_proposals(proposals)
-    voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
-  end
-
   def comment_flags(comments)
     comment_flags = flags.for_comments(comments)
     comment_flags.each_with_object({}) { |f, h| h[f.flaggable_id] = true }
   end
 
   def voted_in_group?(group)
-    votes.for_budget_investments(Budget::Investment.where(group: group)).exists?
+    votes.where(votable: Budget::Investment.where(group: group)).exists?
   end
 
   def headings_voted_within_group(group)
@@ -176,7 +162,7 @@ class User < ApplicationRecord
   end
 
   def voted_investments
-    Budget::Investment.where(id: votes.for_budget_investments.pluck(:votable_id))
+    Budget::Investment.where(id: votes.where(votable: Budget::Investment.all).pluck(:votable_id))
   end
 
   def administrator?
@@ -241,15 +227,18 @@ class User < ApplicationRecord
 
     Debate.hide_all debate_ids
     Comment.hide_all comment_ids
+    Legislation::Proposal.hide_all legislation_proposal_ids
     Proposal.hide_all proposal_ids
     Budget::Investment.hide_all budget_investment_ids
     ProposalNotification.hide_all ProposalNotification.where(author_id: id).ids
+    remove_roles
   end
 
   def full_restore
     ActiveRecord::Base.transaction do
       Debate.restore_all debates.where("hidden_at >= ?", hidden_at)
       Comment.restore_all comments.where("hidden_at >= ?", hidden_at)
+      Legislation::Proposal.restore_all legislation_proposals.only_hidden.where("hidden_at >= ?", hidden_at)
       Proposal.restore_all proposals.where("hidden_at >= ?", hidden_at)
       Budget::Investment.restore_all budget_investments.where("hidden_at >= ?", hidden_at)
       ProposalNotification.restore_all(
@@ -276,10 +265,19 @@ class User < ApplicationRecord
       unconfirmed_phone: nil
     )
     identities.destroy_all
+    remove_roles
   end
 
   def erased?
     erased_at.present?
+  end
+
+  def remove_roles
+    administrator&.destroy!
+    valuator&.destroy!
+    moderator&.destroy!
+    manager&.destroy!
+    sdg_manager&.destroy!
   end
 
   def take_votes_if_erased_document(document_number, document_type)
@@ -336,7 +334,7 @@ class User < ApplicationRecord
   end
 
   def email_required?
-    !erased? && unverified?
+    !erased? && (unverified? || registering_from_web)
   end
 
   def locale
@@ -381,15 +379,15 @@ class User < ApplicationRecord
   delegate :can?, :cannot?, to: :ability
 
   def public_proposals
-    public_activity? ? proposals : User.none
+    public_activity? ? proposals : proposals.none
   end
 
   def public_debates
-    public_activity? ? debates : User.none
+    public_activity? ? debates : debates.none
   end
 
   def public_comments
-    public_activity? ? comments : User.none
+    public_activity? ? comments : comments.none
   end
 
   # overwritting of Devise method to allow login using email OR username
@@ -411,6 +409,10 @@ class User < ApplicationRecord
 
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
+  end
+
+  def add_subscriptions_token
+    update!(subscriptions_token: SecureRandom.base58(32)) if subscriptions_token.blank?
   end
 
   private

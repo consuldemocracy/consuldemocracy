@@ -90,7 +90,7 @@ cs:
     user_permission_debates: Zapojte se do debat
     user_permission_info: Ověřením informací budete mít možnost...
     user_permission_proposal: Vytvořit nové návrhy
-    user_permission_support_proposal: Podpora návrhů *
+    user_permission_support_proposal: Podpořit návrhy *
     user_permission_votes: Účast na závěrečném hlasování *
     verified_user:
       form:

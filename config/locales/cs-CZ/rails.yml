@@ -106,6 +106,11 @@ cs:
         few: "%{count} roky"
         many: "%{count} let"
         other: "%{count} lety"
+      x_seconds:
+        one: 1 sekunda
+        few: "%{count} sekundy"
+        many: "%{count} sekund"
+        other: "%{count} sekundami"
     prompts:
       day: Den
       hour: Hodina
@@ -136,6 +141,21 @@ cs:
       odd: musí být liché
       required: musí existovat
       taken: již byla přijata
+      too_long:
+        one: je příliš dlouhé (maximum je 1 znak)
+        few: je příliš dlouhé (maximum jsou %{count} znaky)
+        many: je příliš dlouhé (maximum je %{count} znaků)
+        other: je příliš dlouhé (maximum je %{count} znaků)
+      too_short:
+        one: je příliš krátké (minimum je 1 znak)
+        few: je příliš krátké (minimum jsou %{count} znaky)
+        many: je příliš krátké (minimum je %{count} znaků)
+        other: je příliš krátké (minimum je %{count} znaků)
+      wrong_length:
+        one: má špatnou délku (měl by mít 1 znak)
+        few: má špatnou délku (měly by být %{count} znaky)
+        many: má špatnou délku (mělo by být %{count} znaků)
+        other: nemá správnou délku (měla by být %{count} znaků)
       other_than: musí být jiný než %{count}
     template:
       body: "Došlo k problémům s následujícími poli:"
@@ -178,6 +198,11 @@ cs:
       storage_units:
         format: "%n %u"
         units:
+          byte:
+            one: Bajt
+            few: Bajty
+            many: Bajtů
+            other: Bajtů
           gb: GB
           kb: KB
           mb: MB

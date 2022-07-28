@@ -17,6 +17,13 @@ describe Activity do
     expect(build(:activity, action: "dissapear")).not_to be_valid
   end
 
+  it "dynamically validates valid actions" do
+    stub_const("#{Activity}::VALID_ACTIONS", %w[custom])
+
+    expect(build(:activity, action: "custom")).to be_valid
+    expect(build(:activity, action: "hide")).not_to be_valid
+  end
+
   describe "log" do
     it "creates an activity entry" do
       user = create(:user)

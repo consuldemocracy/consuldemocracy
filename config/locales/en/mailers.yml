@@ -2,20 +2,26 @@ en:
   mailers:
     title: "Open Government"
     no_reply: "This message was sent from an email address that does not accept replies."
+    already_confirmed:
+      info: "We've received a request to send you instructions to confirm your account. However, your account is already confirmed, so there's no need to do so again."
+      new_password: "If you've forgotten your password, you can reset it at the following link:"
+      subject: Your account is already confirmed
     comment:
       hi: Hi
       new_comment_by: There is a new comment from <strong>%{commenter}</strong>
       subject: Someone has commented on your %{commentable}
       title: New comment
     config:
-      manage_email_subscriptions: To stop receiving these emails change your settings in
+      notifications_link: Notifications
+      unsubscribe_text: 'To unsubscribe from these emails, visit %{notifications} and uncheck "%{notification}".'
     email_verification:
       click_here_to_verify: this link
       instructions_2: This email will verify your account with <b>%{document_type} %{document_number}</b>. If these don't belong to you, please don't click on the previous link and ignore this email.
       instructions: To complete the verification of your user account you must click %{verification_link}.
       subject: Confirm your email
       thanks: Thank you very much.
-      title: Confirm your account using the following link
+      title: "Confirm your email"
+      text: "Confirm your account using the following link."
     reply:
       hi: Hi
       new_reply_by: There is a new response from <strong>%{commenter}</strong> to your comment on
@@ -26,17 +32,16 @@ en:
       title: "Proposal notifications in %{org_name}"
       share: Share proposal
       comment: Comment proposal
-      unsubscribe: "If you don't want to receive any proposal notifications, visit %{account} and uncheck 'Receive a summary of proposal notifications'."
-      unsubscribe_account: My account
+      unsubscribe_text: "If you don't want to receive any proposal notifications, visit %{notifications} and uncheck 'Receive a summary of proposal notifications'."
       unfollow: "Visit this proposal and unfollow it to stop receiving notifications."
     direct_message_for_receiver:
       subject: "You have received a new private message"
       reply: Reply to %{sender}
-      unsubscribe: "If you don't want to receive direct messages, visit %{account} and uncheck 'Receive emails about direct messages'."
-      unsubscribe_account: My account
+      unsubscribe_text: "If you don't want to receive direct messages, visit %{notifications} and uncheck 'Receive emails about direct messages'."
     direct_message_for_sender:
       subject: "You have sent a new private message"
-      title: "You have sent a new private message to <strong>%{receiver}</strong> with the content:"
+      title: "You have sent a new private message"
+      text: "You have sent a new private message to <strong>%{receiver}</strong> with the content:"
     user_invite:
       ignore: "If you have not requested this invitation don't worry, you can ignore this email."
       text: "Thank you for applying to join %{org}! In seconds you can start to participate, just fill the form below:"
@@ -54,6 +59,7 @@ en:
       sincerely: "Sincerely,"
       share: "Share your project"
     budget_investment_unfeasible:
+      title: "Your investment project has been marked as unfeasible"
       hi: "Dear user,"
       new: "For all these, we invite you to elaborate a <strong>new investment</strong> that adjusts to the conditions of this process. You can do it following this link: %{url}."
       new_href: "new investment project"
@@ -62,6 +68,7 @@ en:
       subject: "Your investment project '%{code}' has been marked as unfeasible"
     budget_investment_selected:
       subject: "Your investment project '%{code}' has been selected"
+      title: "Your investment project has been selected"
       hi: "Dear user,"
       share: "Start to get votes, share your investment project on social networks. Share is essential to make it a reality."
       share_button: "Share your investment project"
@@ -69,6 +76,7 @@ en:
       sincerely: "Sincererly"
     budget_investment_unselected:
       subject: "Your investment project '%{code}' has not been selected"
+      title: "Your investment project has not been selected"
       hi: "Dear user,"
       thanks: "Thank you again for participating."
       sincerely: "Sincererly"

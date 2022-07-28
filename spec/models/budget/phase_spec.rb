@@ -28,6 +28,16 @@ describe Budget::Phase do
       end
     end
 
+    describe "description validations" do
+      it "dynamically validates the maximum length" do
+        stub_const("#{Budget::Phase}::DESCRIPTION_MAX_LENGTH", 3)
+
+        informing_phase.description_en = "long"
+
+        expect(informing_phase).not_to be_valid
+      end
+    end
+
     describe "#dates_range_valid?" do
       it "is valid when start & end dates are different & consecutive" do
         informing_phase.assign_attributes(starts_at: Date.current, ends_at: Date.tomorrow)

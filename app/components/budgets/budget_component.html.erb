@@ -1,6 +1,6 @@
 <% if budget.image.present? %>
   <div class="budget-header with-background-image"
-       style="background-image: url(<%= asset_url budget.image.attachment.url(:large) %>);">
+       style="background-image: url(<%= polymorphic_path(budget.image.variant(:large)) %>);">
 <% else %>
   <div class="budget-header">
 <% end %>
@@ -33,15 +33,7 @@
       <% end %>
 
       <%= render Budgets::SupportsInfoComponent.new(budget) %>
-
-      <% unless budget.informing? %>
-        <% if Setting["feature.map"] %>
-          <div class="map inline">
-            <h2><%= t("budgets.index.map") %></h2>
-            <%= render_map(nil, "budgets", false, nil, coordinates) %>
-          </div>
-        <% end %>
-      <% end %>
+      <%= render Budgets::MapComponent.new(budget) %>
     </div>
   </div>
 </div>

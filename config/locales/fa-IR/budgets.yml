@@ -10,9 +10,7 @@ fa:
           other: "\nشما به <span> %{count} </ span> سرمایه گذاری هارای داده اید."
         zero: شما به پروژه سرمایه گذاری رای نداده اید
       reasons_for_not_balloting:
-        not_logged_in: شما باید %{signin} یا %{signup} کنید برای ادامه دادن.
         not_verified: فقط کاربران تأییدشده می توانند در مورد سرمایه گذاری رای دهند%{verify_account}
-        organization: سازمان ها مجاز به رای دادن نیستند
         not_selected: پروژه های سرمایه گذاری انتخاب نشده پشتیبانی نمی شود
         not_enough_money: "شما قبلا بودجه موجود را تعیین کرده اید. <br> <small> به یاد داشته باشید که می توانید هر%{change_ballot} را در هر زمان </small> تغییر دهید"
         no_ballots_allowed: فازانتخاب  بسته است

@@ -21,13 +21,13 @@
           <div class="small-12 medium-10">
             <% if @account.organization? %>
               <%= f.fields_for :organization do |fo| %>
-                <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length, placeholder: t("account.show.organization_name_label") %>
-                <%= fo.text_field :responsible_name, autofocus: true, maxlength: Organization.responsible_name_max_length, placeholder: t("account.show.organization_responsible_name_placeholder") %>
+                <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length %>
+                <%= fo.text_field :responsible_name, autofocus: true, maxlength: Organization.responsible_name_max_length %>
               <% end %>
-              <%= f.text_field :phone_number, placeholder: t("account.show.phone_number_label") %>
+              <%= f.phone_field :phone_number %>
 
             <% else %>
-              <%= f.text_field :username, maxlength: User.username_max_length, placeholder: t("account.show.username_label") %>
+              <%= f.text_field :username, maxlength: User.username_max_length %>
             <% end %>
           </div>
 
@@ -94,15 +94,15 @@
           <p><%= t("account.show.user_permission_info") %></p>
 
           <ul>
-            <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_debates") %></li>
-            <li><span class="<%= can?(:create, Proposal) ? "icon-check" : "icon-x" %>"></span>&nbsp;<%= t("account.show.user_permission_proposal") %></li>
+            <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_debates") %></li>
+            <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_proposal") %></li>
             <li>
               <% if current_user.level_two_or_three_verified? %>
                 <span class="icon-check"></span>
               <% else %>
                 <span class="icon-x"></span>
               <% end %>
-              <%= t("account.show.user_permission_support_proposal") %>
+              <%= t("verification.user_permission_support_proposal") %>
             </li>
             <li>
               <% if current_user.level_three_verified? %>
@@ -110,13 +110,10 @@
               <% else %>
                 <span class="icon-x"></span>
               <% end %>
-              <%= t("account.show.user_permission_votes") %>
+              <%= t("verification.user_permission_votes") %>
             </li>
           </ul>
 
-          <p>
-            <span><%= t("account.show.user_permission_verify_info") %></span>
-          </p>
           <p>
             <%= t("account.show.user_permission_verify") %>
           </p>

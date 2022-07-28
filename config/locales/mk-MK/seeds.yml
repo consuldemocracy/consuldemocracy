@@ -36,11 +36,6 @@ mk:
       groups:
         all_city: Сите Градови
         districts: Области
-      valuator_groups:
-        culture_and_sports: Култура и Спортови
-        gender_and_diversity: Политики за Пол и Диверзитет
-        urban_development: Урбан и Одржлив Развој
-        equity_and_employment: Правичност и Вработување
       statuses:
         studying_project: Учење на проект
         bidding: Наддавање

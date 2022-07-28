@@ -4,12 +4,11 @@ module ActsAsTaggableOn
     after_destroy :touch_taggable, :decrement_tag_custom_counter
 
     scope :public_for_api, -> do
-      where(%{taggings.tag_id in (?) and
-              (taggings.taggable_type = 'Debate' and taggings.taggable_id in (?)) or
-              (taggings.taggable_type = 'Proposal' and taggings.taggable_id in (?))},
-            Tag.where("kind IS NULL or kind = ?", "category").pluck(:id),
-            Debate.public_for_api.pluck(:id),
-            Proposal.public_for_api.pluck(:id))
+      where(
+        # TODO: remove default_scoped after upgrading to Rails 6.1
+        tag: Tag.default_scoped.where(kind: [nil, "category"]),
+        taggable: [Debate.public_for_api, Proposal.public_for_api]
+      )
     end
 
     def touch_taggable
@@ -35,9 +34,10 @@ module ActsAsTaggableOn
     include Graphqlable
 
     scope :public_for_api, -> do
-      where("(tags.kind IS NULL or tags.kind = ?) and tags.id in (?)",
-            "category",
-            Tagging.public_for_api.distinct.pluck("taggings.tag_id"))
+      where(
+        kind: [nil, "category"],
+        id: Tagging.public_for_api.distinct.pluck(:tag_id)
+      )
     end
 
     include PgSearch::Model
@@ -62,18 +62,6 @@ module ActsAsTaggableOn
 
     def self.category_names
       Tag.category.pluck(:name)
-    end
-
-    def self.graphql_field_name
-      :tag
-    end
-
-    def self.graphql_pluralized_field_name
-      :tags
-    end
-
-    def self.graphql_type_name
-      "Tag"
     end
 
     private

@@ -6,8 +6,8 @@ module ApplicationHelper
     url_for(request.query_parameters.merge(query_parameters).merge(only_path: true))
   end
 
-  def rtl?
-    %i[ar fa he].include?(I18n.locale)
+  def rtl?(locale = I18n.locale)
+    %i[ar fa he].include?(locale)
   end
 
   def markdown(text)
@@ -49,7 +49,13 @@ module ApplicationHelper
   end
 
   def image_path_for(filename)
-    SiteCustomization::Image.image_path_for(filename) || filename
+    image = SiteCustomization::Image.image_for(filename)
+
+    if image
+      polymorphic_path(image)
+    else
+      filename
+    end
   end
 
   def content_block(name, locale = I18n.locale)

@@ -269,8 +269,8 @@ Rails/HttpStatus:
 
 Rails/I18nLocaleAssignment:
   Enabled: true
-  Exclude:
-    - "spec/spec_helper.rb"
+  Include:
+    - "**/*.rb"
 
 Rails/InverseOf:
   Enabled: true

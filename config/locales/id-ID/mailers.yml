@@ -6,14 +6,12 @@ id:
       new_comment_by: Ada komentar baru dari <strong>%{commenter}</strong>
       subject: Seseorang telah berkomentar tentang anda %{commentable}
       title: Komentar baru
-    config:
-      manage_email_subscriptions: Untuk berhenti menerima email ini, ubah setelan anda
     email_verification:
       click_here_to_verify: tautan ini
       instructions_2: Email ini akan memverifikasi akun anda dengan <b>%{document_type} %{document_number}</b>. Jika ini bukan milik anda, mohon jangan klik tauntan sebelumnya dan abaikan email ini.
       subject: Konfirmasikan email anda
       thanks: Terima kasih banyak.
-      title: Konfirmasikan akun anda menggunakan tautan berikut
+      title: "Konfirmasikan akun anda menggunakan tautan berikut"
     reply:
       hi: Hai
       new_reply_by: Ada respon baru dari <strong>%{commenter}</strong> untuk komentar anda
@@ -24,16 +22,13 @@ id:
       title: "Notifikasi proposal di %{org_name}"
       share: Bagikan proposal
       comment: Proposal komentar
-      unsubscribe: "Jika anda tidak ingin menerima pemberitahuan proposal, kunjungi %{account} dan hapus centang 'Terima ringkasan notifikasi proposal'."
-      unsubscribe_account: Akun saya
     direct_message_for_receiver:
       subject: "Anda telah menerima pesan pribadi baru"
       reply: Membalas ke %{sender}
-      unsubscribe: "Jika anda tidak ingin menerima pesan langsung, kunjungi %{account} dan hapus centang 'Terima email tentang pesan langsung'."
-      unsubscribe_account: Akun saya
     direct_message_for_sender:
       subject: "Anda telah mengirim pesan pribadi baru"
-      title: "Anda telah mengirim pesan pribadi baru ke <strong>%{receiver}</strong> dengan konten:"
+      title: "Anda telah mengirim pesan pribadi baru"
+      text: "Anda telah mengirim pesan pribadi baru ke <strong>%{receiver}</strong> dengan konten:"
     user_invite:
       ignore: "Jika anda belum meminta undangan ini jangan khawatir, anda bisa mengabaikan email ini."
       thanks: "Terima kasih banyak."

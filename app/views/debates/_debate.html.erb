@@ -1,4 +1,4 @@
-<% cache [locale_and_user_status, debate, @debate_votes[debate.id]] do %>
+<% cache [locale_and_user_status, debate, current_user&.voted_as_when_voted_for(debate)] do %>
   <div id="<%= dom_id(debate) %>" class="debate clear" data-type="debate">
     <div class="panel">
       <div class="row">

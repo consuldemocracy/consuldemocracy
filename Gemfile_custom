@@ -1,7 +1,25 @@
-# Overrides and adds customized gems in this file
-# Read more on documentation:
-# * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#gemfile
-# * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#gemfile
+# Add custom gem dependencies in this file.
+
+###### Application monitoring services ######
 #
-gem "rest-client"
-gem "csv"
+# By default Consul supports the Errbit self-hosted error monitoring service,
+# through the Airbrake gem. That means Consul also supports using Airbrake as
+# an external service to monitor errors and application performance.
+#
+# Here are some other services which can be used to monitor application errors
+# and performance.
+
+# Newrelic is an external service which helps you monitor the application
+# performance
+# gem "newrelic_rpm", "insert_gem_version_here"
+
+# Sentry is an external or self-hosted service which helps you monitor the
+# application errors and performance
+# gem "sentry-ruby", "insert_gem_version_here"
+
+# Rollbar is an external service which helps you monitor the application errors
+# gem "rollbar", "insert_gem_version_here"
+
+###### Other gems ######
+#
+# Add your custom gem dependencies here

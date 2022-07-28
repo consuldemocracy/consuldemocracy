@@ -83,11 +83,12 @@ describe "BudgetPolls", :with_frozen_time do
       login_as(user)
 
       visit budget_investment_path(budget, investment)
-      find("div.ballot").hover
 
       within("#budget_investment_#{investment.id}") do
+        click_button "Vote"
+
         expect(page).to have_content "You have already participated offline"
-        expect(page).to have_css(".add a", obscured: true)
+        expect(page).not_to have_button "Vote", disabled: :all
       end
     end
   end
@@ -98,7 +99,7 @@ describe "BudgetPolls", :with_frozen_time do
       visit budget_investment_path(budget, investment)
 
       within("#budget_investment_#{investment.id}") do
-        find(".add a").click
+        click_button "Vote"
         expect(page).to have_content "Remove"
       end
     end
@@ -108,12 +109,11 @@ describe "BudgetPolls", :with_frozen_time do
       visit budget_investment_path(budget, investment)
 
       within("#budget_investment_#{investment.id}") do
-        find(".add a").click
+        click_button "Vote"
         expect(page).to have_content "Remove"
       end
 
       visit budget_investment_path(budget, investment)
-      find("div.ballot").hover
 
       within("#budget_investment_#{investment.id}") do
         expect(page).to have_content "Remove vote"
@@ -126,7 +126,7 @@ describe "BudgetPolls", :with_frozen_time do
       visit budget_investment_path(budget, investment)
 
       within("#budget_investment_#{investment.id}") do
-        find(".add a").click
+        click_button "Vote"
         expect(page).to have_content "Remove"
       end
 

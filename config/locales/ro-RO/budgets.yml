@@ -34,9 +34,7 @@ ro:
         voted_info_2: "Dar puteți modifica votul în orice moment până când această etapă se închide."
         zero: Nu ați votat niciun proiect de investiții.
       reasons_for_not_balloting:
-        not_logged_in: Trebuie %{signin} sau %{signup} pentru a continua.
         not_verified: Doar utilizatorii verificați pot vota investițiile; %{verify_account}.
-        organization: Organizațiile nu au voie să voteze
         not_selected: Proiectele de investiții neselectate nu pot fi susținute
         not_enough_money: "Ați alocat deja bugetul disponibil.<br><small>Amintiți-vă că puteți\n %{change_ballot} în orice moment</small>"
         no_ballots_allowed: Etapa de selectare este închisă
@@ -96,10 +94,6 @@ ro:
           button: Caută
           placeholder: Căutați proiecte de investiții...
           title: Caută
-        search_results:
-          one: " conține termenul <strong>'%{search_term}'</strong>"
-          few: " conține termenii <strong>'%{search_term}'</strong>"
-          other: " conține termenii <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Votul meu
           voted_info:
@@ -111,9 +105,6 @@ ro:
               one: "<strong>Ați votat o propunere</strong>"
               few: "<strong>Ați votat %{count} propuneri</strong>"
               other: "<strong>Ați votat %{count} propuneri</strong>"
-          change_vote_info:
-            knapsack: "Puteți %{link} oricând până la închiderea acestei etape. Nu trebuie să cheltuiți toți banii valabili."
-            approval: "Puteți %{link} oricând până când se închide această etapă."
           change_vote_link: "schimbă-ți votul"
           different_heading_assigned: "Aveți voturi active în altă rubrică: %{heading_link}"
           change_ballot: "Dacă vă răzgândiți, puteți elimina voturile din %{check_ballot} și puteți începe din nou."

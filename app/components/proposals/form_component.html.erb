@@ -1,4 +1,3 @@
-<% geozone_select_options = Geozone.where(id: current_user.geozone_id).map { |g| [g.name, g.id] } %>
 <%= translatable_form_for(proposal, url: url, html: { class: "proposal-form" }) do |f| %>
   <%= render "shared/errors", resource: proposal %>
 

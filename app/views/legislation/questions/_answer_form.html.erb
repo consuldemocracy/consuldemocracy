@@ -1,5 +1,5 @@
 <% if question.question_options.any? %>
-  <% if process.debate_phase.open? && !answer.persisted? %>
+  <% if process.debate_phase.open? && !answer.persisted? && can?(:create, Legislation::Answer) %>
 
     <%= form_for answer, url: legislation_process_question_answers_path(process, question, answer), remote: true, html: { class: "controls-stacked" } do |f| %>
       <% question.question_options.each do |question_option| %>
@@ -25,4 +25,6 @@
     </form>
 
   <% end %>
+
+  <%= render "participation_not_allowed" %>
 <% end %>

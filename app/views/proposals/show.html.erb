@@ -6,8 +6,8 @@
               social_url: proposal_url(@proposal),
               social_title: @proposal.title,
               social_description: @proposal.summary,
-              twitter_image_url: (@proposal.image.present? ? @proposal.image_url(:thumb) : nil),
-              og_image_url: (@proposal.image.present? ? @proposal.image_url(:thumb) : nil) %>
+              twitter_image_url: (@proposal.image.present? ? polymorphic_path(@proposal.image.variant(:thumb)) : nil),
+              og_image_url: (@proposal.image.present? ? polymorphic_path(@proposal.image.variant(:thumb)) : nil) %>
 <% end %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: proposal_url(@proposal) %>
@@ -18,7 +18,7 @@
           @proposal.author,
           Flag.flagged?(current_user, @proposal),
           @proposal.followed_by?(current_user),
-          @proposal_votes] do %>
+          current_user&.voted_for?(@proposal)] do %>
   <div class="proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">

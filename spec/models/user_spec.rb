@@ -33,28 +33,6 @@ describe User do
     end
   end
 
-  describe "#debate_votes" do
-    let(:user) { create(:user) }
-
-    it "returns {} if no debate" do
-      expect(user.debate_votes([])).to eq({})
-    end
-
-    it "returns a hash of debates ids and votes" do
-      debate1 = create(:debate)
-      debate2 = create(:debate)
-      debate3 = create(:debate)
-      create(:vote, voter: user, votable: debate1, vote_flag: true)
-      create(:vote, voter: user, votable: debate3, vote_flag: false)
-
-      voted = user.debate_votes([debate1, debate2, debate3])
-
-      expect(voted[debate1.id]).to eq(true)
-      expect(voted[debate2.id]).to eq(nil)
-      expect(voted[debate3.id]).to eq(false)
-    end
-  end
-
   describe "#comment_flags" do
     let(:user) { create(:user) }
 
@@ -560,6 +538,19 @@ describe User do
 
       expect(Identity.exists?(identity.id)).not_to be
     end
+
+    it "removes all user roles" do
+      user = create(:user)
+      [:administrator, :moderator, :manager, :sdg_manager, :valuator].each do |role|
+        create(role, user: user)
+      end
+
+      expect { user.erase }.to change { Administrator.count }.by(-1)
+                           .and change { Moderator.count }.by(-1)
+                           .and change { Manager.count }.by(-1)
+                           .and change { SDG::Manager.count }.by(-1)
+                           .and change { Valuator.count }.by(-1)
+    end
   end
 
   describe "#take_votes_from" do
@@ -758,6 +749,34 @@ describe User do
     end
   end
 
+  describe "#block" do
+    it "hides legislation proposals created by the user" do
+      user = create(:user)
+      other_user = create(:user)
+
+      proposal = create(:legislation_proposal, author: user)
+      other_proposal = create(:legislation_proposal, author: other_user)
+
+      user.block
+
+      expect(Legislation::Proposal.all).to eq [other_proposal]
+      expect(Legislation::Proposal.with_hidden).to match_array [proposal, other_proposal]
+    end
+
+    it "removes all user roles" do
+      user = create(:user)
+      [:administrator, :moderator, :manager, :sdg_manager, :valuator].each do |role|
+        create(role, user: user)
+      end
+
+      expect { user.block }.to change { Administrator.count }.by(-1)
+                           .and change { Moderator.count }.by(-1)
+                           .and change { Manager.count }.by(-1)
+                           .and change { SDG::Manager.count }.by(-1)
+                           .and change { Valuator.count }.by(-1)
+    end
+  end
+
   describe "#full_restore" do
     it "restore all previous hidden user content" do
       user = create(:user, :hidden)
@@ -768,18 +787,21 @@ describe User do
       investment = create(:budget_investment, :hidden, author: user)
       proposal = create(:proposal, :hidden, author: user)
       proposal_notification = create(:proposal_notification, :hidden, proposal: proposal)
+      legislation_proposal = create(:legislation_proposal, :hidden, author: user)
 
       old_hidden_comment = create(:comment, hidden_at: 3.days.ago, author: user)
       old_hidden_debate = create(:debate, hidden_at: 3.days.ago, author: user)
       old_hidden_investment = create(:budget_investment, hidden_at: 3.days.ago, author: user)
       old_hidden_proposal = create(:proposal, hidden_at: 3.days.ago, author: user)
       old_hidden_proposal_notification = create(:proposal_notification, hidden_at: 3.days.ago, proposal: proposal)
+      old_hidden_legislation_proposal = create(:legislation_proposal, hidden_at: 3.days.ago, author: user)
 
       other_user_comment = create(:comment, :hidden, author: other_user)
       other_user_debate = create(:debate, :hidden, author: other_user)
       other_user_proposal = create(:proposal, :hidden, author: other_user)
       other_user_investment = create(:budget_investment, :hidden, author: other_user)
       other_user_proposal_notification = create(:proposal_notification, :hidden, proposal: other_user_proposal)
+      other_user_legislation_proposal = create(:legislation_proposal, :hidden, author: other_user)
 
       user.full_restore
 
@@ -788,18 +810,39 @@ describe User do
       expect(investment.reload).not_to be_hidden
       expect(proposal.reload).not_to be_hidden
       expect(proposal_notification.reload).not_to be_hidden
+      expect(legislation_proposal.reload).not_to be_hidden
 
       expect(old_hidden_comment.reload).to be_hidden
       expect(old_hidden_debate.reload).to be_hidden
       expect(old_hidden_investment.reload).to be_hidden
       expect(old_hidden_proposal.reload).to be_hidden
       expect(old_hidden_proposal_notification.reload).to be_hidden
+      expect(old_hidden_legislation_proposal.reload).to be_hidden
 
       expect(other_user_comment.reload).to be_hidden
       expect(other_user_debate.reload).to be_hidden
       expect(other_user_investment.reload).to be_hidden
       expect(other_user_proposal.reload).to be_hidden
       expect(other_user_proposal_notification.reload).to be_hidden
+      expect(other_user_legislation_proposal.reload).to be_hidden
+    end
+  end
+
+  describe "#add_subscriptions_token" do
+    let(:user) { build(:user, subscriptions_token: nil) }
+
+    it "generates a subscriptions token when the user doesn't have one" do
+      user.add_subscriptions_token
+
+      expect(user.subscriptions_token).to be_present
+    end
+
+    it "keeps the existing subscriptions token when the user already has one" do
+      user.update!(subscriptions_token: "already_set")
+
+      user.add_subscriptions_token
+
+      expect(user.subscriptions_token).to eq "already_set"
     end
   end
 end

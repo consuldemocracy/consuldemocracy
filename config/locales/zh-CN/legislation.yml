@@ -51,7 +51,6 @@ zh-CN:
           winners: 已选
       debate:
         empty_questions: 没有问题
-        participate: 参与辩论
       index:
         filter: 过滤器
         filters:

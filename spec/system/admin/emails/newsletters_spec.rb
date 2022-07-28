@@ -16,7 +16,7 @@ describe "Admin newsletter emails", :admin do
 
       expect(page).to have_link "Go back", href: admin_newsletters_path
       expect(page).to have_content "This is a subject"
-      expect(page).to have_content I18n.t("admin.segment_recipient.#{newsletter.segment_recipient}")
+      expect(page).to have_content "All users"
       expect(page).to have_content "no-reply@consul.dev"
       expect(page).to have_content "This is a body"
     end
@@ -40,10 +40,9 @@ describe "Admin newsletter emails", :admin do
       expect(page).to have_css(".newsletter", count: 3)
 
       newsletters.each do |newsletter|
-        segment_recipient = I18n.t("admin.segment_recipient.#{newsletter.segment_recipient}")
         within("#newsletter_#{newsletter.id}") do
           expect(page).to have_content newsletter.subject
-          expect(page).to have_content segment_recipient
+          expect(page).to have_content UserSegments.segment_name(newsletter.segment_recipient)
         end
       end
     end
@@ -102,8 +101,10 @@ describe "Admin newsletter emails", :admin do
     newsletter = create(:newsletter)
 
     visit admin_newsletters_path
+
+    confirmation = "Are you sure? This action will delete \"#{newsletter.subject}\" and can't be undone."
     within("#newsletter_#{newsletter.id}") do
-      accept_confirm { click_button "Delete" }
+      accept_confirm(confirmation) { click_link_or_button "Delete" }
     end
 
     expect(page).to have_content "Newsletter deleted successfully"
@@ -161,14 +162,28 @@ describe "Admin newsletter emails", :admin do
     end
   end
 
-  scenario "Select list of users to send newsletter" do
-    UserSegments::SEGMENTS.each do |user_segment|
+  describe "Select list of users to send newsletter" do
+    scenario "Custom user segments" do
+      segment = UserSegments.segments.sample
+      segment_recipient = UserSegments.segment_name(segment)
+
       visit new_admin_newsletter_path
 
-      fill_in_newsletter_form(segment_recipient: I18n.t("admin.segment_recipient.#{user_segment}"))
+      fill_in_newsletter_form(segment_recipient: segment_recipient)
       click_button "Create Newsletter"
 
-      expect(page).to have_content(I18n.t("admin.segment_recipient.#{user_segment}"))
+      expect(page).to have_content segment_recipient
+    end
+
+    scenario "Geozone segments" do
+      create(:geozone, name: "Queens and Brooklyn")
+
+      visit new_admin_newsletter_path
+
+      fill_in_newsletter_form(segment_recipient: "Queens and Brooklyn")
+      click_button "Create Newsletter"
+
+      expect(page).to have_content "Queens and Brooklyn"
     end
   end
 end

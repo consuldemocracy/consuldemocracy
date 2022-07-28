@@ -12,6 +12,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     build_resource(sign_up_params)
+    resource.registering_from_web = true
+
     if resource.valid?
       super
     else
@@ -60,9 +62,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     def sign_up_params
       params[:user].delete(:redeemable_code) if params[:user].present? && params[:user][:redeemable_code].blank?
-      params.require(:user).permit(:username, :email, :password,
-                                   :password_confirmation, :terms_of_service, :locale,
-                                   :redeemable_code)
+      params.require(:user).permit(allowed_params)
+    end
+
+    def allowed_params
+      [
+        :username, :email, :password,
+        :password_confirmation, :terms_of_service, :locale,
+        :redeemable_code
+      ]
     end
 
     def configure_permitted_parameters

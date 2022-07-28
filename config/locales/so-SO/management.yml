@@ -63,11 +63,6 @@ so:
       users: Maaraynta isticmaalayasha
       user_invites: Soo dir casuumada
       select_user: Dooro isticmalaha
-    permissions:
-      create_proposals: Abuur soo jeedino
-      debates: Ka qaybqaado doodaha
-      support_proposals: Tageer so jedinta
-      vote_proposals: Soo jeedinada cod bixinta
     print:
       proposals_info: 'Abuuro codsigaaga http: //url.consul'
       proposals_title: "Sojeedino:"

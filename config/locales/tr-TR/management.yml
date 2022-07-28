@@ -64,11 +64,6 @@ tr:
       users: Kullanıcıların yönetimi
       user_invites: Davetiyeleri gönder
       select_user: Kullanıcı seç
-    permissions:
-      create_proposals: Öneri oluştur
-      debates: Tartışmalara katıl
-      support_proposals: Önerileri destekle
-      vote_proposals: Önerilere oy ver
     print:
       proposals_info: http://url.consul'da önerinizi oluşturun
       proposals_title: "Öneriler:"

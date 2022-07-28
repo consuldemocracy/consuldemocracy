@@ -33,7 +33,7 @@
       <% @answer.documents.each do |document| %>
         <tr>
           <td>
-            <%= link_to document.title, document.attachment.url %>
+            <%= link_to document.title, document.attachment %>
           </td>
           <td>
             <%= render Admin::TableActionsComponent.new(document,
@@ -42,7 +42,7 @@
             ) do |actions| %>
               <%= actions.action(:download,
                                  text: t("documents.buttons.download_document"),
-                                 path: document.attachment.url,
+                                 path: document.attachment,
                                  target: "_blank",
                                  rel: "nofollow") %>
 

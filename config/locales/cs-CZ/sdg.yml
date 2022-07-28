@@ -617,7 +617,7 @@ cs:
         read_more: "Číst více o %{goal}"
         read_less: "Číst méně o %{goal}"
         targets:
-          no_local_targets: Tento cíl nemá žádné místní cíle
+          no_local_targets: Tento cíl nemá žádné místní záměry
       title: "Cíle udržitelného rozvoje"
       filter:
         heading: "Filtry podle SDG"

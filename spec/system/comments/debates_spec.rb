@@ -331,7 +331,7 @@ describe "Commenting debates" do
       fill_in "Leave your comment", with: "Probably if government approves."
       click_button "Publish reply"
 
-      expect(page).not_to have_selector("form")
+      expect(page).not_to have_css ".comment-form"
 
       within ".comment" do
         expect(page).to have_content "Probably if government approves."
@@ -368,6 +368,16 @@ describe "Commenting debates" do
       click_button "Publish reply"
 
       expect(page).to have_content("It will be done next week.")
+    end
+  end
+
+  scenario "Show comment when the author is hidden" do
+    create(:comment, body: "This is pointless", commentable: debate, author: create(:user, :hidden))
+
+    visit debate_path(debate)
+
+    within ".comment", text: "This is pointless" do
+      expect(page).to have_content "User deleted"
     end
   end
 
@@ -548,7 +558,7 @@ describe "Commenting debates" do
       visit debate_path(debate)
 
       within("#comment_#{comment.id}_votes") do
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
@@ -564,9 +574,9 @@ describe "Commenting debates" do
       visit debate_path(debate)
 
       within("#comment_#{comment.id}_votes") do
-        find(".in_favor a").click
+        click_button "I agree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
@@ -582,15 +592,15 @@ describe "Commenting debates" do
       visit debate_path(debate)
 
       within("#comment_#{comment.id}_votes") do
-        find(".in_favor a").click
+        click_button "I agree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
-        find(".against a").click
+        click_button "I disagree"
 
-        within(".in_favor") do
+        within(".in-favor") do
           expect(page).to have_content "0"
         end
 
@@ -606,13 +616,13 @@ describe "Commenting debates" do
       visit debate_path(debate)
 
       within("#comment_#{comment.id}_votes") do
-        find(".in_favor a").click
-        within(".in_favor") do
+        click_button "I agree"
+        within(".in-favor") do
           expect(page).to have_content "1"
         end
 
-        find(".in_favor a").click
-        within(".in_favor") do
+        click_button "I agree"
+        within(".in-favor") do
           expect(page).not_to have_content "2"
           expect(page).to have_content "1"
         end

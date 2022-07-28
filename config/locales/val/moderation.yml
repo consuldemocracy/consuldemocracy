@@ -3,7 +3,6 @@ val:
     comments:
       index:
         block_authors: Bloquejar autors
-        confirm: Estas segur?
         filter: Filtre
         filters:
           all: Totes
@@ -24,7 +23,6 @@ val:
     debates:
       index:
         block_authors: Bloquejar autors
-        confirm: Estas segur?
         filter: Filtre
         filters:
           all: Totes
@@ -51,7 +49,6 @@ val:
     proposals:
       index:
         block_authors: Bloquejar autors
-        confirm: Estas segur?
         filter: Filtre
         filters:
           all: Totes
@@ -69,7 +66,6 @@ val:
     budget_investments:
       index:
         block_authors: Bloquejar autors
-        confirm: Estas segur?
         filter: Filtre
         filters:
           all: Totes
@@ -87,7 +83,6 @@ val:
     proposal_notifications:
       index:
         block_authors: Bloquejar autors
-        confirm: Estas segur?
         filter: Filtre
         filters:
           all: Totes
@@ -104,7 +99,6 @@ val:
         title: Notificacions de propostes
     users:
       index:
-        hidden: Bloquejat
         hide: Bloquejar
         search_placeholder: email o nom d'usuari
         title: Bloquejar usuaris

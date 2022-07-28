@@ -44,7 +44,10 @@ class Admin::ValuatorsController < Admin::BaseController
 
     def valuator_params
       params[:valuator][:description] = nil if params[:valuator][:description].blank?
-      params.require(:valuator).permit(:user_id, :description, :valuator_group_id,
-                                       :can_comment, :can_edit_dossier)
+      params.require(:valuator).permit(allowed_params)
+    end
+
+    def allowed_params
+      [:user_id, :description, :valuator_group_id, :can_comment, :can_edit_dossier]
     end
 end

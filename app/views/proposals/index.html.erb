@@ -15,27 +15,17 @@
           params[:retired].present?,
           params[:selected].present?
         ].any? %>
-    <div class="search-results-summary">
-      <div class="row">
-        <div class="small-12 column">
-          <% if @search_terms || @advanced_search_terms %>
-            <h2><%= t("shared.search_results") %></h2>
-            <p>
-              <%= page_entries_info @proposals %>
-              <% if !@advanced_search_terms %>
-                <%= sanitize(
-                  t("proposals.index.search_results", count: @proposals.size, search_term: @search_terms)
-                ) %>
-              <% end %>
-            <p>
-          <% elsif params[:retired].present? %>
-            <h2><%= t("proposals.index.retired_proposals") %></h2>
-          <% elsif params[:selected].present? %>
-            <h2><%= t("proposals.index.selected_proposals") %></h2>
-          <% end %>
-        </div>
-      </div>
-    </div>
+    <%= render Shared::SearchResultsSummaryComponent.new(
+      results: @proposals,
+      search_terms: @search_terms,
+      advanced_search_terms: @advanced_search_terms
+    ) do %>
+      <% if params[:retired].present? %>
+        <h2><%= t("proposals.index.retired_proposals") %></h2>
+      <% elsif params[:selected].present? %>
+        <h2><%= t("proposals.index.selected_proposals") %></h2>
+      <% end %>
+    <% end %>
   <% else %>
     <%= render "shared/section_header", i18n_namespace: "proposals.index.section_header", image: "proposals" %>
   <% end %>

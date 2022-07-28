@@ -1,10 +1,10 @@
 nl:
   documents:
-    title: Documenten
+    title: Bestanden
     max_documents_allowed_reached: Je hebt het maximum aantal bestanden bereikt! <strong>Je moet eerst een bestand verwijderen voordat je een andere kunt toevoegen.</strong>
-    additional: Aanvullende documentatie
+    additional: Aanvullende informatie
     form:
-      title: Documenten
+      title: Bestanden
       title_placeholder: Voeg een omschrijving toe voor het bestand
       delete_button: Verwijder bestand
       cancel_button: Cancel

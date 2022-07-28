@@ -63,11 +63,6 @@ ru:
       users: Управление пользователями
       user_invites: Отправить приглашения
       select_user: Выбрать пользователя
-    permissions:
-      create_proposals: Создавать предложения
-      debates: Включаться в дебаты
-      support_proposals: Поддерживать предложения
-      vote_proposals: Голосовать за предложения
     print:
       proposals_info: Создать ваше предложение на http://url.consul
       proposals_title: "Предложения:"

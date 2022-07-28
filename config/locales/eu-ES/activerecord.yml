@@ -429,8 +429,8 @@ eu:
         site_customization/image:
           attributes:
             image:
-              image_width: "Gutxienez %{required_min_width}px izan behar ditu zabaleran"
-              image_height: "Gutxienez %{required_min_width}px izan behar ditu altueran"
+              image_width: "Gutxienez %{required_width}px izan behar ditu zabaleran"
+              image_height: "Gutxienez %{required_height}px izan behar ditu altueran"
         comment:
           attributes:
             valuation:

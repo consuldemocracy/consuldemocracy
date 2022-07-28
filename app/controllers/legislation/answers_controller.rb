@@ -29,7 +29,11 @@ class Legislation::AnswersController < Legislation::BaseController
   private
 
     def answer_params
-      params.require(:legislation_answer).permit(:legislation_question_option_id)
+      params.require(:legislation_answer).permit(allowed_params)
+    end
+
+    def allowed_params
+      [:legislation_question_option_id]
     end
 
     def track_event

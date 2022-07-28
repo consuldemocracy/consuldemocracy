@@ -56,11 +56,6 @@ fa:
       print_proposals: چاپ طرح
       support_proposals: '* پشتیبانی از طرح های پیشنهادی'
       create_budget_investment: "ایجاد بودجه سرمایه گذاری \n"
-    permissions:
-      create_proposals: ایجاد طرح های جدید
-      debates: مشارکت در بحث
-      support_proposals: '* پشتیبانی از طرح های پیشنهادی'
-      vote_proposals: پیشنهادات رای دهی
     print:
       proposals_info: ایجاد پیشنهاد  در http://url.consul
       proposals_title: "طرح های پیشنهادی:"

@@ -4,11 +4,9 @@ sq:
       title: Administrim
     actions:
       actions: Veprimet
-      confirm: A je i sigurt?
       confirm_hide: Konfirmo moderimin
       delete: "Fshi"
       hide: Fshih
-      hide_author: Fshih autorin
       restore: Kthej
       mark_featured: Karakteristika
       unmark_featured: Çaktivizo karakteristikat
@@ -165,7 +163,6 @@ sq:
           incompatible: I papajtueshëm
           price: Çmim
           author: Autor
-        cannot_calculate_winners: Buxheti duhet të qëndrojë në fazën "Projektet e votimit", "Rishikimi i fletëve të votimit" ose "Buxheti i përfunduar" me qëllim të llogaritjes së projekteve të fituesve
         see_results: "Shiko rezultatet"
       show:
         assigned_admin: Administrator i caktuar

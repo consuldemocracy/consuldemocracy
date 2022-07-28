@@ -11,14 +11,9 @@ cs:
       save_changes_submit: Uložit změny
       recommendations: Doporučení
       title: Můj účet
-      user_permission_debates: Zapojit se do debat
       user_permission_info: S vaším účtem můžete...
-      user_permission_proposal: Vytvořit nové návrhy
-      user_permission_support_proposal: Podpora návrhů
       user_permission_title: Zapojte se
       user_permission_verify: Chcete-li provést všechny akce, ověřte svůj účet.
-      user_permission_verify_info: "* Pouze pro uživatele ověřené datovými registry."
-      user_permission_votes: Účastnit se konečného hlasování
       verified_account: Účet ověřen
       verify_my_account: Ověřit můj účet
   application:
@@ -37,6 +32,10 @@ cs:
       moderator: Moderátor
       responses:
         zero: Žádné odezvy
+        one: 1 reakce
+        few: "%{count} reakce"
+        many: "%{count} reakcí"
+        other: "%{count} reakcí"
       responses_show:
         zero: Žádné odezvy
         one: "1 odpověď (zobrazit)"
@@ -46,7 +45,7 @@ cs:
       responses_collapse:
         zero: Žádné odezvy
         one: "1 reakce (sbaleno)"
-        few: "%{count} reakce (sbaleno)"
+        few: "%{count} reakce (sbalit)"
         many: "%{count} reakcí (sbaleno)"
         other: "%{count} reakcí (sbaleno)"
       user_deleted: Uživatel smazán
@@ -118,11 +117,6 @@ cs:
         button: Vyhledat
         placeholder: Prohledat debaty...
         title: Vyhledat
-      search_results:
-        one: " obsahující výraz <strong>'%{search_term}'</strong>"
-        few: " obsahující výraz <strong>'%{search_term}'</strong>"
-        many: " obsahující výraz <strong>'%{search_term}'</strong>"
-        other: " obsahující výraz <strong>'%{search_term}'</strong>"
       start_debate: Zahájit debatu
       title: Debaty
       section_header:
@@ -162,6 +156,7 @@ cs:
         submit_button: Uložit změny
   errors:
     messages:
+      allowed_file_content_types: "typ obsahu musí být jeden z %{types}"
       user_not_found: Uživatel nenalezen
       invalid_date_range: "Neplatný rozsah dat"
   form:
@@ -227,7 +222,6 @@ cs:
       conditions: Podmínky používání
       consul: aplikace CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: Kontaktujte technickou podporu
       copyright: CONSUL, %{year}
       description: Tento portál software %{consul}, což je %{open_source}.
       open_source: open source software
@@ -255,6 +249,10 @@ cs:
       notification_item:
         new_notifications:
           zero: "Nemáte žádná nová upozornění"
+          one: Máte nové oznámení
+          few: Máte %{count} nová oznámení
+          many: Máte %{count} nových oznámení
+          other: Máte %{count} nových oznámení
         notifications: Upozornění
       sdg: "SDG"
   notifications:
@@ -265,6 +263,17 @@ cs:
       title: Upozornění
       unread: Nepřečtené
     notification:
+      action:
+        comments_on:
+          one: Někdo komentoval v
+          few: Jsou %{count} nové komentárře na
+          many: Je %{count} nových komentářů na
+          other: Celkem %{count} nových komentářů v
+        proposal_notification:
+          one: Máte jedno nové oznámení na
+          few: Jsou tu %{count} nová oznámení na
+          many: Je tu %{count} nových oznámení na
+          other: Je tu %{count} nových oznámení na
       mark_as_read: Označit za přečtené
       mark_as_unread: Označit za nepřečtené
       notifiable_hidden: Tento prostředek není k dispozici.
@@ -381,7 +390,6 @@ cs:
       select_order_long: "Zobrazit návrhy podle:"
       start_proposal: Vytvořit návrh
       title: Návrhy
-      top: Top týden
       top_link_proposals: Nejvíce podporované návrhy podle kategorií
       section_header:
         icon_alt: Ikona návrhů
@@ -416,6 +424,7 @@ cs:
         many: "%{count} komentářů"
         other: "%{count} komentářů"
       support: Podpořit
+      support_label: "Podpořit %{proposal}"
       support_title: Podpořit tento návrh
       supports:
         zero: Žádná podpora
@@ -499,7 +508,7 @@ cs:
       required_days: "%{days} požadovaných dnů"
       required_supports: "%{supports} podpor vyžadováno"
       and: a
-      view_resource: Viz porostředky
+      view_resource: Viz prostředky
       resource_requested: Prostředek byl již vyžádaný
       request_resource: Vyžádat prostředek
       resource_locked: Prostředek zablokován
@@ -772,6 +781,10 @@ cs:
       add_language: Přidat jazykovou sadu
       languages_in_use:
         zero: "0 používaných jazyků"
+        one: "1 používaný jazyk"
+        few: "%{count} používané jazyky"
+        many: "%{count} používaných jazyků"
+        other: "%{count} používaných jazyků"
     optional: "Volitelně"
     required: "Požadováno"
   social:
@@ -827,6 +840,26 @@ cs:
           few: "%{count} komentáře"
           many: "%{count} komentářů"
           other: "%{count} komentářů"
+        debates:
+          one: 1 Debata
+          few: "%{count} debaty"
+          many: "%{count} debat"
+          other: "%{count} debat"
+        proposals:
+          one: 1 Návrh
+          few: "%{count} Návrhy"
+          many: "%{count} Návrhů"
+          other: "%{count} návrhů"
+        budget_investments:
+          one: Investice
+          few: "%{count} Investice"
+          many: "%{count} Investic"
+          other: "%{count} investic"
+        follows:
+          one: 1 Sledující
+          few: "%{count} Sledující"
+          many: "%{count} Sledujících"
+          other: "%{count} sledovaných"
       no_activity: Uživatel nemá žádnou veřejnou aktivitu
       no_private_messages: "Tento uživatel nepřijímá soukromé zprávy."
       private_activity: Uživatel se rozhodl ponechat seznam svých aktivit soukromý.
@@ -841,16 +874,15 @@ cs:
       retired_help_text: Ovládací panel není k dispozici pro vyřazené návrhy
   votes:
     agree: Souhlasím
+    agree_label: "Souhlasím s %{title}"
     anonymous: Příliš mnoho anonymních hlasů k přijetí hlasování %{verify_account}.
-    comment_unauthenticated: Pro hlasování musíte být přihlášeni %{signin} nebo %{signup}.
     disagree: Nesouhlasím
+    disagree_label: "Nesouhlasím s %{title}"
     organizations: Organizacím není dovoleno hlasovat
     supports: Podporovatelé
     verified_only: O návrzích mohou hlasovat pouze ověření uživatelé; %{verify_account}.
     budget_investments:
-      not_logged_in: Pro pokračování je nutné %{signin} nebo %{signup}.
       not_verified: O investičních projektech mohou hlasovat pouze ověření uživatelé; %{verify_account}.
-      organization: Organizacím není dovoleno hlasovat
       unfeasible: Neuskutečnitelné investiční projekty nelze podpořit
       not_voting_allowed: Fáze hlasování byla ukončena.
       different_heading_assigned:
@@ -888,23 +920,13 @@ cs:
       budget_investments:
         title: Doporučené investice
       slide: "Zobrazit %{title}"
-    verification:
-      i_dont_have_an_account: Nemám ještě účet
-      i_have_an_account: Účet již mám
-      question: Máte již účet na portále %{org_name}?
-      title: Ověření účtu
     welcome:
       go_to_index: Zobrazit návrhy a debaty
       start_using_consul: Přejít na úvodní stránku
       title: Zapojit se
-      user_permission_debates: Zapojte se do debat
       user_permission_info: S vaším účtem můžete...
-      user_permission_proposal: Vytvořit nové návrhy
-      user_permission_support_proposal: Podpora návrhů *
       user_permission_verify: "Chcete-li provést všechny akce, ověřte svůj účet."
-      user_permission_verify_info: "* Pouze pro uživatele ověřené datovými registry."
       user_permission_verify_my_account: Ověřit můj účet
-      user_permission_votes: Zapojit se do konečného hlasování
   invisible_captcha:
     sentence_for_humans: "Pokud nejste stroj, ignorujte prosím toto pole"
     timestamp_error_message: "Promiňte, bylo to příliš rychlé! Znovu odešlete."

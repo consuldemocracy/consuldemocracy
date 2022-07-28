@@ -11,14 +11,9 @@ val:
       save_changes_submit: Guardar canvis
       recommendations: Recomanacions
       title: El meu compte
-      user_permission_debates: Participar en debats
       user_permission_info: Amb el teu compte ja pots...
-      user_permission_proposal: Crear noves propostes
-      user_permission_support_proposal: Avalar propostes
       user_permission_title: Participació
       user_permission_verify: Per a poder realitzar totes les accions verifica el teu compte.
-      user_permission_verify_info: "* Sols usuaris empadronats."
-      user_permission_votes: Participar en les votacions finals
       verified_account: Compte verificat
       verify_my_account: Verificar el meu compte
   application:
@@ -103,9 +98,6 @@ val:
         button: Cercar
         placeholder: Cercar debats...
         title: Cercar
-      search_results:
-        one: " que conté <strong>'%{search_term}'</strong>"
-        other: " que conté <strong>'%{search_term}'</strong>"
       start_debate: Iniciar un debat
       title: Debats
       section_header:
@@ -187,7 +179,6 @@ val:
       conditions: Termes i condicions d'us
       consul: Aplicació CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: Per a assistencia técnica entra en
       copyright: CONSUL, %{year}
       description: Este portal utilitza la %{consul} que es %{open_source}.
       open_source: software de codi obert
@@ -334,7 +325,6 @@ val:
       select_order_long: "Estas veient les propostes en funció de:"
       start_proposal: Crear una proposta
       title: Propostes
-      top: Top semanal
       top_link_proposals: Propostes més avalades per categoria
       section_header:
         icon_alt: Icona de Propostes
@@ -672,15 +662,12 @@ val:
   votes:
     agree: Estic d'acord
     anonymous: Massa vots anònims, per a poder votar %{verify_account}.
-    comment_unauthenticated: Necessites %{signin} o %{signup} per a votar.
     disagree: No estic d'acord
     organizations: Les organitzacions no poden votar
     supports: Avals
     verified_only: Les propostes d'inversió només poden ser votades per usuaris verificats, %{verify_account}.
     budget_investments:
-      not_logged_in: Necessites %{signin} o %{signup}.
       not_verified: El projectes d'inversió només poden ser avalades per usuaris verificats, %{verify_account}.
-      organization: Les organitzacions no poden votar
       unfeasible: No es poden votar propostes inviables
       not_voting_allowed: El període de votació està tancat
   welcome:
@@ -709,22 +696,12 @@ val:
       budget_investments:
         title: Pressupostos recomanats
       slide: "Veure %{title}"
-    verification:
-      i_dont_have_an_account: No tinc compte, vull crear-ne un i verificar-lo
-      i_have_an_account: Ja tinc un compte que vull verificar
-      question: Tens ja un compte en %{org_name}?
-      title: Verificació de compte
     welcome:
       go_to_index: Vore propostes i debats
       title: Participa
-      user_permission_debates: Participar en debats
       user_permission_info: Amb el teu compte ja pots...
-      user_permission_proposal: Crear noves propostes
-      user_permission_support_proposal: Avalar propostes
       user_permission_verify: "Per a poder realitzar totes les accions verifica el teu compte."
-      user_permission_verify_info: "* Sols usuaris empadronats."
       user_permission_verify_my_account: Verificar el meu compte
-      user_permission_votes: Participar en les votacions finals
   invisible_captcha:
     sentence_for_humans: "Si eres humà, si us plau ignora este camp"
     timestamp_error_message: "Açò ha sigut massa ràpid. Si us plau, reenvia el formulari."

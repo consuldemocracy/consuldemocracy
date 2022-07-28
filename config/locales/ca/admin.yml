@@ -4,11 +4,9 @@ ca:
       title: Administrar
     actions:
       actions: Accions
-      confirm: '¿Estás segur?'
       confirm_hide: Confirmeu la moderació
       delete: "Borrar"
       hide: Ocultar
-      hide_author: Bloquejar l'autor
       restore: Tornar a mostrar
       mark_featured: Destacades
       unmark_featured: treure destacat
@@ -132,7 +130,6 @@ ca:
       index:
         new_button: "Afegeix nou grup"
     budget_headings:
-      no_headings: "No hi ha cap títol."
       create:
         notice: "L'encapçalament creat correctament!"
       update:
@@ -210,7 +207,6 @@ ca:
           incompatible: Incompatible
           price: Preu
           author: Autor
-        cannot_calculate_winners: El pressupost ha de romandre en fase "Projectes de votació", "Revisar les paperetes" o "Pressupost acabat" per calcular els projectes guanyadors
         see_results: "veure resultats"
         milestone_tags_filter_all: "Totes les etiquetes de fita"
       show:

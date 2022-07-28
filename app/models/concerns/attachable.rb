@@ -3,20 +3,32 @@ module Attachable
   extend ActiveSupport::Concern
 
   included do
+    has_attachment :attachment
     attr_accessor :cached_attachment
 
-    # Disable paperclip security validation due to polymorphic configuration
-    # Paperclip do not allow to use Procs on valiations definition
-    do_not_validate_attachment_file_type :attachment
     validate :attachment_presence
-    validate :validate_attachment_content_type,         if: -> { attachment.present? }
-    validate :validate_attachment_size,                 if: -> { attachment.present? }
 
-    before_save :set_attachment_from_cached_attachment, if: -> { cached_attachment.present? }
+    validates :attachment,
+      file_content_type: {
+        allow: ->(record) { record.accepted_content_types },
+        if: -> { association_class && attachment.attached? },
+        message: ->(record, *) do
+          I18n.t("#{record.model_name.plural}.errors.messages.wrong_content_type",
+                 content_type: record.attachment_content_type,
+                 accepted_content_types: record.class.humanized_accepted_content_types)
+        end
+      },
+      file_size: {
+        less_than_or_equal_to: ->(record) { record.max_file_size.megabytes },
+        if: -> { association_class && attachment.attached? },
+        message: ->(record, *) do
+          I18n.t("#{record.model_name.plural}.errors.messages.in_between",
+                 min: "0 Bytes",
+                 max: "#{record.max_file_size} MB")
+        end
+      }
 
-    Paperclip.interpolates :prefix do |attachment, style|
-      attachment.instance.prefix(attachment, style)
-    end
+    before_validation :set_attachment_from_cached_attachment, if: -> { cached_attachment.present? }
   end
 
   def association_class
@@ -26,54 +38,37 @@ module Attachable
   end
 
   def set_cached_attachment_from_attachment
-    self.cached_attachment = if filesystem_storage?
-                               attachment.path
-                             else
-                               attachment.url
-                             end
+    self.cached_attachment = attachment.signed_id
   end
 
   def set_attachment_from_cached_attachment
-    if filesystem_storage?
-      File.open(cached_attachment) { |file| self.attachment = file }
+    self.attachment = cached_attachment
+  end
+
+  def attachment_file_name
+    attachment.filename.to_s if attachment.attached?
+  end
+
+  def attachment_content_type
+    attachment.blob.content_type if attachment.attached?
+  end
+
+  def attachment_file_size
+    if attachment.attached?
+      attachment.blob.byte_size
     else
-      self.attachment = URI.parse(cached_attachment).open
+      0
     end
   end
 
-  def prefix(attachment, _style)
-    if attachment.instance.persisted?
-      ":attachment/:id_partition"
-    else
-      "cached_attachments/user/#{attachment.instance.user_id}"
-    end
+  def file_path
+    ActiveStorage::Blob.service.path_for(attachment.blob.key)
   end
 
   private
 
-    def filesystem_storage?
-      Paperclip::Attachment.default_options[:storage] == :filesystem
-    end
-
-    def validate_attachment_size
-      if association_class && attachment_file_size > max_file_size.megabytes
-        errors.add(:attachment, I18n.t("#{model_name.plural}.errors.messages.in_between",
-                                       min: "0 Bytes",
-                                       max: "#{max_file_size} MB"))
-      end
-    end
-
-    def validate_attachment_content_type
-      if association_class && !accepted_content_types.include?(attachment_content_type)
-        message = I18n.t("#{model_name.plural}.errors.messages.wrong_content_type",
-                         content_type: attachment_content_type,
-                         accepted_content_types: self.class.humanized_accepted_content_types)
-        errors.add(:attachment, message)
-      end
-    end
-
     def attachment_presence
-      if attachment.blank? && cached_attachment.blank?
+      unless attachment.attached?
         errors.add(:attachment, I18n.t("errors.messages.blank"))
       end
     end

@@ -23,6 +23,7 @@ en:
             other: "You can vote up to <span>%{count}</span> projects"
         no_balloted_group_yet: "You have not voted on this group yet, go vote!"
         remove: Remove vote
+        remove_label: "Remove your vote for %{investment}"
         voted:
           one: "You have voted <span>one</span> investment."
           other: "You have voted <span>%{count}</span> investments."
@@ -30,9 +31,7 @@ en:
         voted_info_2: "But you can change your vote at any time until this phase is closed."
         zero: You have not voted any investment project.
       reasons_for_not_balloting:
-        not_logged_in: You must %{signin} or %{signup} to continue.
         not_verified: Only verified users can vote on investments; %{verify_account}.
-        organization: Organizations are not permitted to vote
         not_selected: Unselected investment projects can not be supported
         not_enough_money: "You have already assigned the available budget.<br><small>Remember you can %{change_ballot} at any time</small>"
         no_ballots_allowed: Selecting phase is closed
@@ -76,6 +75,7 @@ en:
       form:
         title: "Create a budget investment"
         subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
         tag_category_label: "Categories"
         tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
         tags_label: Tags
@@ -92,9 +92,6 @@ en:
           button: Search
           placeholder: Search investment projects...
           title: Search
-        search_results:
-          one: " containing the term <strong>'%{search_term}'</strong>"
-          other: " containing the term <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: My ballot
           voted_info:
@@ -151,6 +148,7 @@ en:
       wrong_price_format: Only integer numbers
       investment:
         add: Vote
+        add_label: "Vote %{investment}"
         already_added: You have already added this investment project
         support_title: Support this project
         supports:

@@ -6,10 +6,6 @@ en-GB:
       thanks: Дякуємо.
     reply:
       hi: Привіт,
-    proposal_notification_digest:
-      unsubscribe_account: Мій обліковий запис
-    direct_message_for_receiver:
-      unsubscribe_account: Мій обліковий запис
     user_invite:
       thanks: "Дякуємо."
     budget_investment_created:

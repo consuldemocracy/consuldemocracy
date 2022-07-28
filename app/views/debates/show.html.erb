@@ -3,7 +3,11 @@
   <%= render "shared/canonical", href: debate_url(@debate) %>
 <% end %>
 
-<% cache [locale_and_user_status(@debate), @debate, @debate.author, Flag.flagged?(current_user, @debate), @debate_votes] do %>
+<% cache [locale_and_user_status(@debate),
+          @debate,
+          @debate.author,
+          Flag.flagged?(current_user, @debate),
+          current_user&.voted_as_when_voted_for(@debate)] do %>
   <div class="debate-show">
     <div id="<%= dom_id(@debate) %>" class="row">
       <div class="small-12 medium-9 column">

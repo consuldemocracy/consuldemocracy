@@ -1,6 +1,15 @@
 require "rails_helper"
 
 describe Poll::Recount do
+  describe "validations" do
+    it "dynamically validates the valid origins" do
+      stub_const("#{Poll::Recount}::VALID_ORIGINS", %w[custom])
+
+      expect(build(:poll_recount, origin: "custom")).to be_valid
+      expect(build(:poll_recount, origin: "web")).not_to be_valid
+    end
+  end
+
   describe "logging changes" do
     let(:author) { create(:user) }
     let(:officer_assignment) { create(:poll_officer_assignment) }

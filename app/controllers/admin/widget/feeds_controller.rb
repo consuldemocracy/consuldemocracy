@@ -9,6 +9,10 @@ class Admin::Widget::FeedsController < Admin::BaseController
   private
 
     def feed_params
-      params.require(:widget_feed).permit(:limit)
+      params.require(:widget_feed).permit(allowed_params)
+    end
+
+    def allowed_params
+      [:limit]
     end
 end

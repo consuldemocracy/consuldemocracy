@@ -4,11 +4,9 @@ zh-CN:
       title: 管理
     actions:
       actions: 行动
-      confirm: 您确定吗？
       confirm_hide: 确认审核
       delete: "删除"
       hide: 隐藏
-      hide_author: 隐藏作者
       restore: 恢复
       mark_featured: 特色
       unmark_featured: 取消特色标记
@@ -165,7 +163,6 @@ zh-CN:
           incompatible: 不兼容
           price: 价格
           author: 作者
-        cannot_calculate_winners: 预算必须留在“投票项目”，“审查选票”或者“完成预算”阶段以便计算优胜者项目
         see_results: "查看结果"
       show:
         assigned_admin: 指定的管理员

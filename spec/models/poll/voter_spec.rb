@@ -117,6 +117,13 @@ describe Poll::Voter do
         voter.origin = "web"
         expect(voter).to be_valid
       end
+
+      it "dynamically validates the valid origins" do
+        stub_const("#{Poll::Voter}::VALID_ORIGINS", %w[custom])
+
+        expect(build(:poll_voter, origin: "custom")).to be_valid
+        expect(build(:poll_voter, origin: "web")).not_to be_valid
+      end
     end
 
     context "assignments" do

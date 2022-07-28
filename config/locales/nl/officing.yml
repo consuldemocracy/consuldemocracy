@@ -5,7 +5,7 @@ nl:
     dashboard:
       index:
         title: Poll officing
-        info: Here you can validate user documents and store voting results
+        info: Hier kun je documenten van gebruikers valideren en stemresultaten opslaan
         no_shifts: Je hebt geen beheerdienst vandaag.
     menu:
       voters: Valideer bestand
@@ -65,13 +65,13 @@ nl:
         table_total: "Totaal stemmen"
     residence:
       flash:
-        create: "Document verified with Census"
+        create: "Document geverifieerd door gemeente"
         not_allowed: "You don't have officing shifts today"
       new:
         title: Valideer bestand
         submit: Valideer bestand
-        error_verifying_census: "The Census was unable to verify this document."
-        form_errors: prevented the verification of this document
+        error_verifying_census: "De gemeente was niet in staat dit document te valideren."
+        form_errors: voorkwam de verificatie van dit document
     voters:
       new:
         title: Polls

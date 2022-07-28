@@ -63,11 +63,6 @@ gl:
       users: Xestión de usuarios
       user_invites: Enviar convites
       select_user: Seleccionar usuario
-    permissions:
-      create_proposals: Crear novas propostas
-      debates: Participar en debates
-      support_proposals: Apoiar propostas*
-      vote_proposals: Participar nas votacións finais
     print:
       proposals_info: Crea a túa proposta en http://url.consul
       proposals_title: "Propostas:"

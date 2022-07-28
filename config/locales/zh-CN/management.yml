@@ -63,11 +63,6 @@ zh-CN:
       users: 用户管理
       user_invites: 发送邀请
       select_user: 选择用户
-    permissions:
-      create_proposals: 创建提议
-      debates: 参与辩论
-      support_proposals: 支持提议
-      vote_proposals: 投票提议
     print:
       proposals_info: 在http://url.consul上创建您的提议
       proposals_title: "提议："

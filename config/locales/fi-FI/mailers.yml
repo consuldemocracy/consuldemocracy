@@ -7,7 +7,7 @@ fi:
       click_here_to_verify: tämä linkki
       subject: Vahvista sähköpostisi
       thanks: Kiitoksia paljon.
-      title: Vahvista tilisi käyttämällä seuraavaa linkkiä
+      title: "Vahvista tilisi käyttämällä seuraavaa linkkiä"
     reply:
       hi: Hei
       subject: Joku on vastannut kommenttiisi
@@ -15,9 +15,6 @@ fi:
     proposal_notification_digest:
       share: Jaa ehdotus
       comment: Kommentoi ehdotusta
-      unsubscribe_account: Tilini
-    direct_message_for_receiver:
-      unsubscribe_account: Tilini
     user_invite:
       thanks: "Kiitoksia paljon."
     budget_investment_created:

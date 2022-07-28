@@ -45,7 +45,7 @@
 
       <% if @process.image.present? %>
         <hr>
-        <%= image_tag(@process.image_url(:large), alt: @process.title, id: "image") %>
+        <%= image_tag(@process.image.variant(:large), alt: @process.title, id: "image") %>
       <% end %>
 
       <% if process.draft_publication.enabled? %>

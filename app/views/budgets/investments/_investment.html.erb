@@ -5,7 +5,7 @@
     <div class="row">
 
       <div class="small-12 medium-3 large-2 column text-center">
-        <%= image_tag investment.image_url(:thumb), alt: investment.image.title.unicode_normalize %>
+        <%= image_tag investment.image.variant(:thumb), alt: investment.image.title.unicode_normalize %>
       </div>
 
       <div class="small-12 medium-6 large-7 column">
@@ -39,7 +39,7 @@
         <% elsif investment.should_show_vote_count? %>
           <div id="<%= dom_id(investment) %>_votes"
                class="small-12 medium-3 column text-center">
-            <div class="supports js-participation">
+            <div class="supports">
               <span class="total-supports no-button">
                 <%= t("budgets.investments.investment.supports",
                     count: investment.total_votes) %>

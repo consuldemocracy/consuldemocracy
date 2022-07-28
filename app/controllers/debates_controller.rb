@@ -4,7 +4,7 @@ class DebatesController < ApplicationController
   include FlagActions
   include Translatable
 
-  before_action :authenticate_user!, except: [:index, :show, :map]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_view, only: :index
   before_action :debates_recommendations, only: :index, if: :current_user
 
@@ -30,7 +30,6 @@ class DebatesController < ApplicationController
 
   def vote
     @debate.register_vote(current_user, params[:value])
-    set_debate_votes(@debate)
   end
 
   def unmark_featured
@@ -54,8 +53,11 @@ class DebatesController < ApplicationController
   private
 
     def debate_params
-      attributes = [:tag_list, :terms_of_service, :related_sdg_list]
-      params.require(:debate).permit(attributes, translation_params(Debate))
+      params.require(:debate).permit(allowed_params)
+    end
+
+    def allowed_params
+      [:tag_list, :terms_of_service, :related_sdg_list, translation_params(Debate)]
     end
 
     def resource_model

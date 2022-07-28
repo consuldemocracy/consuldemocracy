@@ -11,20 +11,18 @@ da:
       save_changes_submit: Gem ændringer
       recommendations: Anbefalinger
       title: Min konto
-      user_permission_debates: Deltage i debat
       user_permission_info: Med din konto kan du...
-      user_permission_proposal: Oprette nye forslag
-      user_permission_support_proposal: Støtte op om forslag
       user_permission_title: Deltage
       user_permission_verify: For at kunne foretage handlingerne, skal din konto være verificeret.
-      user_permission_verify_info: "* Kun for brugere af Census."
-      user_permission_votes: Deltage i den endelige afstemning
       verified_account: Konto verificeret
       verify_my_account: Verificer min konto
   application:
     close: Luk
     menu: Menu
   comments:
+    actions:
+      confirm_delete: "Er du sikker? Denne handling vil slette din kommentar."
+      delete: "Slet kommentar"
     comments_closed: Lukket for kommentarer
     verified_only: For at deltage %{verify_account}
     comment:
@@ -107,9 +105,6 @@ da:
         button: Søg
         placeholder: Søg debatindlæg...
         title: Søg
-      search_results:
-        one: " som indeholder <strong>'%{search_term}'</strong>"
-        other: " som indeholder <strong>'%{search_term}'</strong>"
       start_debate: Start en debat
       title: Debatforum
       section_header:
@@ -147,6 +142,7 @@ da:
         submit_button: Gem ændringer
   errors:
     messages:
+      allowed_file_content_types: "indholdstype skal være af %{types}"
       user_not_found: Brugeren blev ikke fundet
       invalid_date_range: "Ugyldigt datointerval"
   form:
@@ -210,7 +206,6 @@ da:
       conditions: Brugervilkår og betingelser
       consul: Consul programmet
       consul_url: https://github.com/consul/consul
-      contact_us: For teknisk assistance besøg
       copyright: CONSUL, %{year}
       description: Denne portal anvender %{consul}, som er en %{open_source}.
       open_source: open-source software
@@ -374,7 +369,6 @@ da:
       select_order_long: "Forslag i henhold til:"
       start_proposal: Opret et borgerforslag
       title: Borgerforslag
-      top: Ugens mest populære forslag
       top_link_proposals: Mest populære forslag fra hver kategori
       section_header:
         icon_alt: Forslagsikon
@@ -407,6 +401,7 @@ da:
         one: 1 kommentar
         other: "%{count} kommentarer"
       support: Støt
+      support_label: "Støt %{proposal}"
       support_title: Støt dette forslag
       supports:
         zero: Ingen støtte
@@ -679,7 +674,11 @@ da:
       date_5: "Brugertilpasset"
       from: "Fra"
       general: "Med teksten"
+      goal: "Efter Verdensmål"
+      goal_blank: "Vælg et mål"
       search: "Filtre"
+      target: "Efter mål"
+      target_blank: "Vælg et mål"
       title: "Avanceret søgning"
       to: "Til"
     author_info:
@@ -761,6 +760,8 @@ da:
         zero: "0 sprog i brug"
         one: "1 sprog i brug"
         other: "%{count} sprog i brug"
+    optional: "Valgfrit"
+    required: "Påkrævet"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -838,16 +839,15 @@ da:
       retired_help_text: Dashboardet er ikke tilgængeligt for forslag, der er trukket tilbage
   votes:
     agree: Jeg er enig
+    agree_label: "Jeg er enig med %{title}"
     anonymous: For mange anonyme stemmer til at godkende stemme %{verify_account}.
-    comment_unauthenticated: Du skal %{signin} eller %{signup} for at stemme.
     disagree: Jeg er uenig
+    disagree_label: "Jeg er ikke enig med %{title}"
     organizations: Det er ikke tilladt for organisationer at stemme
     supports: Støtte
     verified_only: Kun verificerede brugere kan stemme på forslag; %{verify_account}.
     budget_investments:
-      not_logged_in: Du skal %{signin} eller %{signup} for at fortsætte.
       not_verified: Kun verificerede brugere kan stemme på projektidéer; %{verify_account}.
-      organization: Det er ikke tilladt for organisationer at stemme
       unfeasible: Du kan ikke støtte op om projekter, der ikke kan gennemføres
       not_voting_allowed: Afstemningsfasen er afsluttet
       different_heading_assigned:
@@ -883,23 +883,13 @@ da:
       budget_investments:
         title: Projekter, der kunne have din interesse
       slide: "Se %{title}"
-    verification:
-      i_dont_have_an_account: Jeg er ikke tilmeldt
-      i_have_an_account: Jeg er allerede tilmeldt
-      question: Har du allerede en konto i %{org_name}?
-      title: Kontoverificering
     welcome:
       go_to_index: Se borgerforslag og debatindlæg
       start_using_consul: Gå til indekssiden
       title: Deltag
-      user_permission_debates: Deltage i debatten
       user_permission_info: Med din konto kan du...
-      user_permission_proposal: Oprette nye borgerforslag
-      user_permission_support_proposal: Støtte op om borgerforslag*
       user_permission_verify: "For at kunne foretage handlingerne, skal din konto være verificeret."
-      user_permission_verify_info: "* Kun for byens beboere."
       user_permission_verify_my_account: Verificer min konto
-      user_permission_votes: Deltage i den endelige afstemning
   invisible_captcha:
     sentence_for_humans: "Hvis du er menneske, så kan du ignorere dette felt"
     timestamp_error_message: "Åh, det gik lidt for hurtigt! Prøv igen."
@@ -957,3 +947,6 @@ da:
         more:
           one: "Et tag mere"
           other: "%{count} flere tags"
+  machine_learning:
+    comments_summary: "Kommentar resume"
+    info_text: "Indhold generet af AI"

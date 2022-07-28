@@ -14,6 +14,13 @@ describe Poll::PartialResult do
 
       expect(build(:poll_partial_result, question: question, answer: "Four")).not_to be_valid
     end
+
+    it "dynamically validates the valid origins" do
+      stub_const("#{Poll::PartialResult}::VALID_ORIGINS", %w[custom])
+
+      expect(build(:poll_partial_result, origin: "custom")).to be_valid
+      expect(build(:poll_partial_result, origin: "web")).not_to be_valid
+    end
   end
 
   describe "logging changes" do

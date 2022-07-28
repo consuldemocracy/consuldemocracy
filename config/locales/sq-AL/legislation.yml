@@ -54,7 +54,6 @@ sq:
           winners: I zgjedhur
       debate:
         empty_questions: Nuk ka pyetje.
-        participate: Merrni pjesë në debat
       index:
         filter: Filtër
         filters:

@@ -10,9 +10,7 @@ fr:
           other: "Vous avez voté <span>%{count}</span> projets d'investissement."
         zero: Vous n'avez voté pour aucune des propositions d'investissement.
       reasons_for_not_balloting:
-        not_logged_in: Il est nécessaire de %{signin} ou de %{signup} pour continuer.
         not_verified: Seuls les utilisateurs vérifiés peuvent voter pour les propositions, %{verify_account}.
-        organization: Les organisations ne sont pas autorisées à voter
         not_selected: Les propositions d'investissement non-sélectionnées ne peuvent être soutenues.
         not_enough_money: "Vous avez déjà utilisé l'ensemble du budget disponible. <br><small>N’oubliez pas, vous pouvez %{change_ballot} à tout moment</small>"
         no_ballots_allowed: La phase de sélection est terminée.

@@ -54,7 +54,6 @@ oc:
           winners: seleccionada
       debate:
         empty_questions: E a passatge de questions
-        participate: de Fes las aportacions al debat prealable participant en los seguents tèmas.
       index:
         filter: Filtrar
         filters:

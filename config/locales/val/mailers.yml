@@ -6,15 +6,13 @@ val:
       new_comment_by: Hi ha un nou comentari de <strong>%{commenter}</strong> en
       subject: Algú ha comentat en el teu %{commentable}
       title: Nou comentari
-    config:
-      manage_email_subscriptions: Pots deixar de rebre estos emails canviant la teua configuració en
     email_verification:
       click_here_to_verify: en aquest enllaç
       instructions_2: Aquest email es per verificar el teu compte amb <b>%{document_type} %{document_number}</b>. Si estes no son les teues dades, si us plau no pulses l'enllaç anterior i ignora aquest email.
       instructions: Per acabar de verificar el teu compte d'usuari has de polsar %{verification_link}.
       subject: Verifica el teu email
       thanks: Moltes gràcies.
-      title: Verifica el teu compte amb el següent enllaç
+      title: "Verifica el teu compte amb el següent enllaç"
     reply:
       hi: Hola
       new_reply_by: Hi ha noves respostes de <strong>%{commenter}</strong> al teu comentari en
@@ -25,16 +23,13 @@ val:
       title: "Notificacions de propostes en %{org_name}"
       share: Compartir proposta
       comment: Comentar proposta
-      unsubscribe: "Si no vols rebre notificacions de propostes, pots entrar en %{account} i desmarcar l'opció de 'Rebre resum de notificacions sobre propostes'."
-      unsubscribe_account: El meu compte
     direct_message_for_receiver:
       subject: "Has rebut un missatge privat"
       reply: Respondre a %{sender}
-      unsubscribe: "Si no vols rebre missatges privats, pots entrar en %{account} i desmarcar l'opció 'Rebre correus electrònics amb missatges privats'."
-      unsubscribe_account: El meu compte
     direct_message_for_sender:
       subject: "Has enviat un nou missatge privat"
-      title: "Has enviat un nou missatge privat a <strong>%{receiver}</strong> amb el contingut:"
+      title: "Has enviat un nou missatge privat"
+      text: "Has enviat un nou missatge privat a <strong>%{receiver}</strong> amb el contingut:"
     user_invite:
       ignore: "Si no has sol·licitat esta invitació no et preocupes, pots ignorar este correu."
       text: "Gracies per sol·licitar unirte a %{org}! En uns segons podras començar a participar, sols tens que omplir el següent formulari:"

@@ -11,8 +11,6 @@ fi:
     menu:
       create_proposal: Luo ehdotus
       support_proposals: Tue ehdotuksia
-    permissions:
-      support_proposals: Tue ehdotuksia
     proposals:
       create_proposal: Luo ehdotus
       index:

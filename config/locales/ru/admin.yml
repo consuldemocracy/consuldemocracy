@@ -4,11 +4,9 @@ ru:
       title: Администрирование
     actions:
       actions: Действия
-      confirm: Вы уверены?
       confirm_hide: Подтвердить модерацию
       delete: "Удалить"
       hide: Скрыть
-      hide_author: Скрыть автора
       restore: Восстановить
       mark_featured: Особенное
       unmark_featured: Убрать из особенных
@@ -122,7 +120,6 @@ ru:
         edit: "Редактировать группу"
         submit: "Сохранить группу"
     budget_headings:
-      no_headings: "Заголовков нет."
       create:
         notice: "Заголовок успешно создан!"
       update:
@@ -198,7 +195,6 @@ ru:
           incompatible: Несовместимая
           price: Цена
           author: Автор
-        cannot_calculate_winners: Бюджет должен остаться в фазе "Проекты баллотирования", "Анализ бюллетеней" или "Оконченный бюджет", чтобы посчитать выигравшие проекты
         see_results: "Просмотр результатов"
       show:
         assigned_admin: Назначенный администратор

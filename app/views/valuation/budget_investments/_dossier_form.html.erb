@@ -38,25 +38,29 @@
 
   <div id="feasible_fields">
 
-    <div class="row">
-      <div class="small-12 medium-6 column">
-        <%= f.number_field :price,
-          label: t("valuation.budget_investments.edit.price", currency: budget.currency_symbol),
-          max: 1000000000000000 %>
+    <% if budget.show_money? %>
+      <div class="row">
+        <div class="small-12 medium-6 column">
+          <%= f.number_field :price,
+            label: t("valuation.budget_investments.edit.price", currency: budget.currency_symbol),
+            max: 1000000000000000 %>
+        </div>
+
+        <div class="small-12 medium-6 column end">
+          <%= f.number_field :price_first_year,
+            label: t("valuation.budget_investments.edit.price_first_year", currency: budget.currency_symbol),
+            max: 1000000000000000 %>
+        </div>
       </div>
 
-      <div class="small-12 medium-6 column end">
-        <%= f.number_field :price_first_year,
-          label: t("valuation.budget_investments.edit.price_first_year", currency: budget.currency_symbol),
-          max: 1000000000000000 %>
+      <div class="row">
+        <div class="small-12 column">
+          <%= f.text_area :price_explanation, rows: 3 %>
+        </div>
       </div>
-    </div>
-
-    <div class="row">
-      <div class="small-12 column">
-        <%= f.text_area :price_explanation, rows: 3 %>
-      </div>
-    </div>
+    <% else %>
+      <%= f.hidden_field :price, value: 0 %>
+    <% end %>
 
     <div class="row">
       <div class="small-12 medium-6 column">

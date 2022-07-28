@@ -10,14 +10,9 @@ id:
       public_interests_user_title_list: Tag dari unsur-unsur yang Anda mengikuti
       save_changes_submit: Simpan perubahan
       title: Akun saya
-      user_permission_debates: Berpartisipasi pada perdebatan
       user_permission_info: Dengan account anda anda dapat...
-      user_permission_proposal: Membuat proposal baru
-      user_permission_support_proposal: Dukung proposal
       user_permission_title: Partisipasi
       user_permission_verify: Untuk melakukan semua tindakan memverifikasi akun anda.
-      user_permission_verify_info: "* Hanya untuk pengguna di Sensus."
-      user_permission_votes: Berpartisipasi pada akhir suara
       verified_account: Account diverifikasi
       verify_my_account: Verifikasi akun saya
   application:
@@ -94,8 +89,6 @@ id:
         button: Cari
         placeholder: Cari perdebatan...
         title: Cari
-      search_results:
-        other: " berisi istilah <strong>%{search_term}</strong>"
       start_debate: Memulai debat
       title: Perdebatan
       section_header:
@@ -177,7 +170,6 @@ id:
       conditions: Syarat dan ketentuan penggunaan
       consul: Konsul aplikasi
       consul_url: https://github.com/consul/consul
-      contact_us: Untuk bantuan teknis memasuki
       copyright: KONSUL, %{year}
       description: Portal ini menggunakan %{consul} Itulah %{open_source}.
       open_source: perangkat lunak open-source
@@ -310,7 +302,6 @@ id:
       select_order_long: "Anda sedang melihat proposal sesuai untuk:"
       start_proposal: Buat proposal
       title: Proposal
-      top: Top mingguan
       top_link_proposals: Yang paling didukung proposal berdasarkan kategori
       section_header:
         icon_alt: Proposal ikon
@@ -623,15 +614,12 @@ id:
   votes:
     agree: Saya setuju
     anonymous: Terlalu banyak anonim suara untuk mengakui suara %{verify_account}.
-    comment_unauthenticated: Anda harus %{signin} atau %{signup} untuk memilih.
     disagree: Saya tidak setuju
     organizations: Organisasi tidak diizinkan untuk memilih
     supports: Mendukung
     verified_only: Hanya memverifikasi pengguna dapat memilih pada proposal; %{verify_account}.
     budget_investments:
-      not_logged_in: Anda harus %{signin} atau %{signup} untuk melanjutkan.
       not_verified: Hanya memverifikasi pengguna dapat memilih pada proyek-proyek investasi; %{verify_account}.
-      organization: Organisasi tidak diizinkan untuk memilih
       unfeasible: Tidak layak proyek-proyek investasi tidak dapat didukung
       not_voting_allowed: Tahap Voting ditutup
   welcome:
@@ -651,22 +639,12 @@ id:
         btn_text_link: Semua dianjurkan proposal
       budget_investments:
         title: Direkomendasikan investasi
-    verification:
-      i_dont_have_an_account: Saya tidak memiliki akun
-      i_have_an_account: Saya sudah memiliki akun
-      question: Apakah anda sudah memiliki akun di %{org_name}?
-      title: Verifikasi akun
     welcome:
       go_to_index: Melihat proposal dan perdebatan
       title: Ikut
-      user_permission_debates: Berpartisipasi pada perdebatan
       user_permission_info: Dengan akun Anda, Anda dapat...
-      user_permission_proposal: Membuat proposal baru
-      user_permission_support_proposal: Mendukung proposal*
       user_permission_verify: "Untuk melakukan semua tindakan memverifikasi rekening Anda."
-      user_permission_verify_info: "* Hanya untuk pengguna pada sensus."
       user_permission_verify_my_account: Memverifikasi account saya
-      user_permission_votes: Berpartisipasi pada pemungutan suara akhir
   invisible_captcha:
     sentence_for_humans: "Jika anda adalah manusia, mengabaikan bidang ini"
     timestamp_error_message: "Maaf, itu terlalu cepat! Silakan kirimkan kembali."
