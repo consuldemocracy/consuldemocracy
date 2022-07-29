@@ -117,7 +117,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       do_login_for user, management: management
       visit send(path, arguments)
 
-      send(fill_resource_method_name) if fill_resource_method_name == "imageable_fill_new_valid_proposal"
+      send(fill_resource_method_name, user) if fill_resource_method_name == "imageable_fill_new_valid_proposal"
       click_link "Add image"
       click_on submit_button
 
@@ -131,6 +131,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       do_login_for user, management: management
       visit send(path, arguments)
 
+      select user.geozone.name, from: "Scope of operation" rescue nil
       imageable_attach_new_file(file_fixture("clippy.jpg"))
       within_fieldset("Descriptive image") { fill_in "Title", with: "" }
       click_on submit_button
@@ -157,7 +158,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       do_login_for user, management: management
       visit send(path, arguments)
 
-      send(fill_resource_method_name) if fill_resource_method_name
+      send(fill_resource_method_name, user) if fill_resource_method_name
       click_on submit_button
       expect(page).to have_content imageable_success_notice
     end
@@ -165,7 +166,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
     scenario "Should show successful notice when resource filled correctly and after valid file uploads" do
       do_login_for user, management: management
       visit send(path, arguments)
-      send(fill_resource_method_name) if fill_resource_method_name
+      send(fill_resource_method_name, user) if fill_resource_method_name
 
       imageable_attach_new_file(file_fixture("clippy.jpg"))
 
@@ -179,7 +180,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
     scenario "Should show new image after successful creation with one uploaded file" do
       do_login_for user, management: management
       visit send(path, arguments)
-      send(fill_resource_method_name) if fill_resource_method_name
+      send(fill_resource_method_name, user) if fill_resource_method_name
 
       imageable_attach_new_file(file_fixture("clippy.jpg"))
 

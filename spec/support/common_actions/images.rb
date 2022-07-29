@@ -23,17 +23,18 @@ module Images
     end
   end
 
-  def imageable_fill_new_valid_proposal
+  def imageable_fill_new_valid_proposal(user = nil)
     fill_in_new_proposal_title with: "Proposal title"
     fill_in "Proposal summary", with: "Proposal summary"
+    select user.geozone.name, from: "Scope of operation" if user.present?
     check :proposal_terms_of_service
   end
 
-  def imageable_fill_new_valid_budget
+  def imageable_fill_new_valid_budget(user = nil)
     fill_in "Name", with: "Budget name"
   end
 
-  def imageable_fill_new_valid_budget_investment
+  def imageable_fill_new_valid_budget_investment(user = nil)
     fill_in_new_investment_title with: "Budget investment title"
     fill_in_ckeditor "Description", with: "Budget investment description"
     check :budget_investment_terms_of_service

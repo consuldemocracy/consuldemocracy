@@ -40,7 +40,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       do_login_for user, management: management
       visit send(mappable_new_path, arguments)
 
-      send("fill_in_#{mappable_factory_name}_form")
+      send("fill_in_#{mappable_factory_name}_form", user)
       find("#new_map_location").click
       send("submit_#{mappable_factory_name}_form")
 

@@ -402,6 +402,7 @@ describe "Proposals" do
   end
 
   scenario "Responsible name is stored for anonymous users" do
+    skip("Not possible to create proposals without being verified")
     author = create(:user, :level_two, geozone: geozone)
     login_as(author)
 
@@ -422,7 +423,6 @@ describe "Proposals" do
     click_link "Edit my proposal"
 
     within_window(window_opened_by { click_link "Edit proposal" }) do
-
       expect(page).to have_field "Full name of the person submitting the proposal", with: "Isabel Garcia"
     end
   end
@@ -1597,6 +1597,7 @@ describe "Successful proposals" do
       fill_in_ckeditor "Proposal text", with: "This is very important because..."
       fill_in "External video URL", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
       fill_in "Tags", with: "Refugees, Solidarity"
+      select "District A", from: "Scope of operation"
       check "I agree to the Privacy Policy and the Terms and conditions of use"
 
       click_button "Create proposal"

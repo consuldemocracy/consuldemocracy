@@ -161,7 +161,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       do_login_for user_to_login, management: management
       visit send(path, arguments)
 
-      send(fill_resource_method_name) if fill_resource_method_name == "documentable_fill_new_valid_proposal"
+      send(fill_resource_method_name, user) if fill_resource_method_name == "documentable_fill_new_valid_proposal"
       click_link "Add new document"
       click_on submit_button
 
@@ -185,7 +185,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       do_login_for user_to_login, management: management
       visit send(path, arguments)
 
-      send(fill_resource_method_name) if fill_resource_method_name
+      send(fill_resource_method_name, user) if fill_resource_method_name
       click_on submit_button
 
       expect(page).to have_content documentable_success_notice
@@ -195,7 +195,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
               resource filled correctly and after valid file uploads" do
       do_login_for user_to_login, management: management
       visit send(path, arguments)
-      send(fill_resource_method_name) if fill_resource_method_name
+      send(fill_resource_method_name, user) if fill_resource_method_name
 
       documentable_attach_new_file(file_fixture("empty.pdf"))
       click_on submit_button
@@ -207,7 +207,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
              unless: documentable_factory_name == "dashboard_action" do
       do_login_for user_to_login, management: management
       visit send(path, arguments)
-      send(fill_resource_method_name) if fill_resource_method_name
+      send(fill_resource_method_name, user) if fill_resource_method_name
 
       documentable_attach_new_file(file_fixture("empty.pdf"))
       click_on submit_button
@@ -229,7 +229,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       do_login_for user_to_login, management: management
       visit send(path, arguments)
 
-      send(fill_resource_method_name) if fill_resource_method_name
+      send(fill_resource_method_name, user) if fill_resource_method_name
 
       %w[clippy empty logo].take(documentable.class.max_documents_allowed).each do |filename|
         documentable_attach_new_file(file_fixture("#{filename}.pdf"))

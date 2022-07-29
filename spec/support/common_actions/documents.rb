@@ -29,18 +29,19 @@ module Documents
     end
   end
 
-  def documentable_fill_new_valid_proposal
+  def documentable_fill_new_valid_proposal(user = nil)
     fill_in_new_proposal_title with: "Proposal title #{rand(9999)}"
     fill_in "Proposal summary", with: "Proposal summary"
+    select user.geozone.name, from: "Scope of operation" if user.present?
     check :proposal_terms_of_service
   end
 
-  def documentable_fill_new_valid_dashboard_action
+  def documentable_fill_new_valid_dashboard_action(user = nil)
     fill_in :dashboard_action_title, with: "Dashboard title"
     fill_in_ckeditor "Description", with: "Dashboard description"
   end
 
-  def documentable_fill_new_valid_budget_investment
+  def documentable_fill_new_valid_budget_investment(user = nil)
     fill_in_new_investment_title with: "Budget investment title"
     fill_in_ckeditor "Description", with: "Budget investment description"
     check :budget_investment_terms_of_service

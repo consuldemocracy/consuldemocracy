@@ -1,7 +1,8 @@
 module Maps
-  def fill_in_proposal_form
+  def fill_in_proposal_form(user = nil)
     fill_in_new_proposal_title with: "Help refugees"
     fill_in "Proposal summary", with: "In summary, what we want is..."
+    select user.geozone.name, from: "Scope of operation" if user.present?
   end
 
   def submit_proposal_form
@@ -13,7 +14,7 @@ module Maps
     end
   end
 
-  def fill_in_budget_investment_form
+  def fill_in_budget_investment_form(user = nil)
     fill_in_new_investment_title with: "Budget investment title"
     fill_in_ckeditor "Description", with: "Budget investment description"
     check :budget_investment_terms_of_service
