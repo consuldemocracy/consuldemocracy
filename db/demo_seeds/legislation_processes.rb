@@ -129,10 +129,10 @@ section "Creating DEMO collaborative legislation" do
 
   annotation = draft.annotations.create!(quote: "lucrative purposes, sports and recreation",
                                          ranges: [{
-                                                    start: "/p[3]",
-                                                    startOffset: 155,
-                                                    end: "/p[3]",
-                                                    endOffset: 197
+                                                    "start" => "/p[3]",
+                                                    "startOffset" => 155,
+                                                    "end" => "/p[3]",
+                                                    "endOffset" => 197
                                                   }],
                                          text: "It is important to separate the reference to recreation in order to have a special impact on this part of the protection.",
                                          author_id: 3,
