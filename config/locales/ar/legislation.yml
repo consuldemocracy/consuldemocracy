@@ -106,6 +106,7 @@ ar:
       question:
         comments:
           zero: لا توجد تعليقات
+          zero: "%{count} تعليق"
           one: "تعليق %{count}"
           two: "%{count} تعليقات"
           few: "%{count} تعليقات"
@@ -141,6 +142,7 @@ ar:
       allegations_phase: "مرحلة التعليقات"
       debates:
         zero: "لا توجد مناقشات"
+        zero: "مناقشتان %{count}"
         one: "مناقشة %{count}"
         two: "مناقشتان %{count}"
         few: "مناقشتان %{count}"
@@ -148,6 +150,7 @@ ar:
         other: "مناقشتان %{count}"
       proposals:
         zero: "لا توجد مقترحات"
+        zero: "%{count} مقترحات"
         one: "مقترح %{count}"
         two: "%{count} مقترحات"
         few: "%{count} مقترحات"
@@ -155,6 +158,7 @@ ar:
         other: "%{count} مقترحات"
       comments:
         zero: "لا توجد تعليقات"
+        zero: "%{count} تعليقات"
         one: "تعليق %{count}"
         two: "%{count} تعليقات"
         few: "%{count} تعليقات"
