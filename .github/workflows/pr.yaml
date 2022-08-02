@@ -40,4 +40,4 @@ jobs:
         with:
           destination_branch: "staging-k8s"
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          pr_title: "Pulling ${{ github.ref }} into koper-k8s"
+          pr_title: "Pulling ${{ github.ref }} into staging-k8s"
