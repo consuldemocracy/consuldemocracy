@@ -44,4 +44,18 @@ describe SiteCustomization::Image do
       expect(map).not_to be_valid
     end
   end
+
+  it "dynamically validates the valid mime types" do
+    stub_const("#{SiteCustomization::Image}::VALID_MIME_TYPES", ["image/gif"])
+
+    gif = build(:site_customization_image,
+                name: "logo_header",
+                image: fixture_file_upload("logo_header.gif"))
+    expect(gif).to be_valid
+
+    png = build(:site_customization_image,
+                name: "logo_header",
+                image: fixture_file_upload("logo_header.png"))
+    expect(png).not_to be_valid
+  end
 end
