@@ -11,10 +11,12 @@ class SiteCustomization::Image < ApplicationRecord
     "logo_email" => [400, 80]
   }.freeze
 
+  VALID_MIME_TYPES = %w[image/jpeg image/png].freeze
+
   has_attachment :image
 
   validates :name, presence: true, uniqueness: true, inclusion: { in: ->(*) { VALID_IMAGES.keys }}
-  validates :image, file_content_type: { allow: ["image/png", "image/jpeg"], if: -> { image.attached? }}
+  validates :image, file_content_type: { allow: ->(*) { VALID_MIME_TYPES }, if: -> { image.attached? }}
   validate :check_image
 
   def self.all_images
