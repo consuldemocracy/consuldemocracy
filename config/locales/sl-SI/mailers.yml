@@ -71,4 +71,7 @@ sl-SI:
       thanks: "Še enkrat hvala za sodelovanje."
       sincerely: "Naslednjič bo bolje,"
     evaluation_comment:
-      hi: Hej
+      hi: Živjo,
+      new_comment_by: Nekdo (<strong>%{commenter}</strong>) je pustil nov komentar na predlogu %{investment}.
+      subject: Nov komentar na predlogu, ki ga ocenjuješ
+      title: Nov komentar na predlogu %{investment}
