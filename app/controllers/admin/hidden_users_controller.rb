@@ -1,10 +1,10 @@
 class Admin::HiddenUsersController < Admin::BaseController
-  has_filters %w[without_confirmed_hide all with_confirmed_hide], only: :index
+  include Admin::HiddenContent
 
   before_action :load_user, only: [:confirm_hide, :restore]
 
   def index
-    @users = User.only_hidden.send(@current_filter).order(hidden_at: :desc).page(params[:page])
+    @users = hidden_content(User.all)
   end
 
   def show
