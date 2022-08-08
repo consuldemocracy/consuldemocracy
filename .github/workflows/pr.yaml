@@ -35,6 +35,14 @@ jobs:
           pr_title: "Pulling ${{ github.ref }} into koper-k8s"
 
       -
+        name: pull-request-hrpelje-kozina
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: "hrpelje-kozina-k8s"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_title: "Pulling ${{ github.ref }} into hrpelje-kozina-k8s"
+
+      -
         name: pull-request-staging
         uses: repo-sync/pull-request@v2
         with:
