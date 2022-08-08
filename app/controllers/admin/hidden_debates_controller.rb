@@ -1,14 +1,13 @@
 class Admin::HiddenDebatesController < Admin::BaseController
   include FeatureFlags
+  include Admin::HiddenContent
 
   feature_flag :debates
-
-  has_filters %w[without_confirmed_hide all with_confirmed_hide], only: :index
 
   before_action :load_debate, only: [:confirm_hide, :restore]
 
   def index
-    @debates = Debate.only_hidden.send(@current_filter).order(hidden_at: :desc).page(params[:page])
+    @debates = hidden_content(Debate.all)
   end
 
   def confirm_hide

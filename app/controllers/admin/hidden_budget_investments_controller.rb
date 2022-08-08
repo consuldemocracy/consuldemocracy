@@ -1,16 +1,13 @@
 class Admin::HiddenBudgetInvestmentsController < Admin::BaseController
   include FeatureFlags
-
-  has_filters %w[without_confirmed_hide all with_confirmed_hide], only: :index
+  include Admin::HiddenContent
 
   feature_flag :budgets
 
   before_action :load_investment, only: [:confirm_hide, :restore]
 
   def index
-    @investments = Budget::Investment.only_hidden.send(@current_filter)
-                                                 .order(hidden_at: :desc)
-                                                 .page(params[:page])
+    @investments = hidden_content(Budget::Investment.all)
   end
 
   def confirm_hide
