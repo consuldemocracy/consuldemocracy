@@ -1,20 +1,13 @@
 <ul class="permissions-list">
-  <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_debates") %></li>
-  <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_proposal") %></li>
-  <li>
-    <% if user.level_two_or_three_verified? %>
-      <span class="icon-check"></span>
-    <% else %>
-      <span class="icon-x"></span>
-    <% end %>
-    <%= t("verification.user_permission_support_proposal") %>
-  </li>
-  <li>
-    <% if user.level_three_verified? %>
-      <span class="icon-check"></span>
-    <% else %>
-      <span class="icon-x"></span>
-    <% end %>
-    <%= t("verification.user_permission_votes") %>
-  </li>
+  <% permissions.each do |text, allowed| %>
+    <li>
+      <% if allowed %>
+        <span class="icon-check"></span>
+      <% else %>
+        <span class="icon-x"></span>
+      <% end %>
+
+      <%= text %>
+    </li>
+  <% end %>
 </ul>
