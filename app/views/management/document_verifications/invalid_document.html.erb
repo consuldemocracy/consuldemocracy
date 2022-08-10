@@ -8,7 +8,7 @@
 
 <%= render "management/user_permissions",
       message: t("management.document_verifications.not_in_census_info"),
-      permissions: [:debates, :proposal] %>
+      user: User.new %>
 
 <p>
   <%= sanitize(t("management.document_verifications.has_no_account",

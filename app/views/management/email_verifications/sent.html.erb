@@ -4,7 +4,7 @@
 
 <%= render "management/user_permissions",
       message: t("management.email_verifications.document_found_in_census"),
-      permissions: [:debates, :proposal, :support_proposal, :votes] %>
+      user: @email_verification.user %>
 
 <p>
   <a href="javascript:window.print();" class="button warning"><%= t("management.print_info") %></a>
