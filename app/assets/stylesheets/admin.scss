@@ -525,32 +525,6 @@ code {
 // 05. Management
 // --------------
 
-.user-permissions {
-
-  ul {
-    list-style-type: none;
-    margin-left: 0;
-  }
-
-  li {
-    font-size: rem-calc(14);
-    margin-bottom: rem-calc(12);
-
-    span {
-      color: $text-medium;
-      font-size: rem-calc(12);
-    }
-
-    .icon-check {
-      color: $check;
-    }
-
-    .icon-x {
-      color: $delete;
-    }
-  }
-}
-
 .account-info,
 .login-as {
   background-color: $highlight;

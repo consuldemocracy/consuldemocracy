@@ -1278,30 +1278,6 @@ form {
       font-size: rem-calc(12);
     }
   }
-
-  ul {
-    list-style-type: none;
-    margin-bottom: 0;
-    margin-left: 0;
-  }
-
-  li {
-    font-size: $small-font-size;
-    margin-bottom: $line-height / 2;
-
-    span {
-      color: $text-medium;
-      font-size: rem-calc(12);
-    }
-
-    .icon-check {
-      color: $check;
-    }
-
-    .icon-x {
-      color: $delete;
-    }
-  }
 }
 
 .notifications-list {
