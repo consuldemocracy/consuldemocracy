@@ -1574,7 +1574,7 @@ describe "Budget Investments" do
 
       visit budget_investments_path(budget_hide_money, heading: heading)
 
-      expect(page).to have_content "YOU CAN VOTE 1 PROJECT VOTES CAST: 0 / YOU CAN VOTE 1 PROJECT"
+      expect(page).to have_content "VOTES CAST: 0 / YOU CAN VOTE 1 PROJECT"
       expect(page).to have_content "YOU CAN STILL CAST 1 VOTE."
       expect(page).not_to have_content "Available budget"
 
