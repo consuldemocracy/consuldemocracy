@@ -1,6 +1,10 @@
 <ul class="permissions-list">
   <% permissions.each do |text, allowed| %>
     <li class="<%= allowed_class(allowed) %>">
+      <% unless allowed %>
+        <span class="show-for-sr"><%= t("verification.verification_needed") %></span>
+      <% end %>
+
       <%= text %>
     </li>
   <% end %>
