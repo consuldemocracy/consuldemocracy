@@ -1,0 +1,15 @@
+.verify-account {
+  padding-right: $line-height / 2;
+
+  .already-verified {
+    color: $check;
+    line-height: $line-height * 2;
+
+    .icon-check {
+      color: $text-medium;
+      font-size: rem-calc(24);
+      line-height: rem-calc(45);
+      vertical-align: middle;
+    }
+  }
+}

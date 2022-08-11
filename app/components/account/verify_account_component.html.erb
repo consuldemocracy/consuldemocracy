@@ -1,0 +1,22 @@
+<div class="verification-info">
+  <p>
+    <%= t("account.show.user_permission_verify") %>
+  </p>
+
+  <% unless account.organization? %>
+    <div>
+      <span class="verify-account">
+        <% if account.level_three_verified? %>
+          <p class="already-verified">
+            <span class="icon-check"></span>
+            <%= t("account.show.verified_account") %>
+          </p>
+        <% elsif account.level_two_verified? %>
+          <%= link_to t("account.show.finish_verification"), verification_path, class: "button success" %>
+        <% else %>
+          <%= link_to t("account.show.verify_my_account"), verification_path, class: "button success" %>
+        <% end %>
+      </span>
+    </div>
+  <% end %>
+</div>
