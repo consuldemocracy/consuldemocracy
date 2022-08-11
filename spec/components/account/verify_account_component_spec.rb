@@ -24,7 +24,7 @@ describe Account::VerifyAccountComponent do
 
     render_inline Account::VerifyAccountComponent.new(account)
 
-    expect(page).to have_content "To perform all the actions verify your account."
+    expect(page).not_to have_content "To perform all the actions verify your account."
     expect(page).to have_content "Account verified"
   end
 
@@ -33,9 +33,6 @@ describe Account::VerifyAccountComponent do
 
     render_inline Account::VerifyAccountComponent.new(account)
 
-    expect(page).to have_content "To perform all the actions verify your account."
-    expect(page).not_to have_link "Verify my account"
-    expect(page).not_to have_link "Complete verification"
-    expect(page).not_to have_content "Account verified"
+    expect(page).not_to be_rendered
   end
 end
