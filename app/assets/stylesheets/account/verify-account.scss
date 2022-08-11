@@ -4,7 +4,7 @@
   .already-verified {
     @include has-fa-icon(check, solid);
     color: $color-success;
-    line-height: $line-height * 2;
+    margin-top: $line-height;
 
     &::before {
       color: $check;
