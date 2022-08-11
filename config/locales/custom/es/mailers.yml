@@ -1,7 +1,7 @@
 es:
   mailers:
     budget_investment_unfeasible:
-      reconsider_html: "Lamentamos que tu propuesta no haya cumplido con los requisitos necesarios, pero te invitamos a que participes en las votaciones, que se celebrarán del 1 al 15 de septiembre, y decidas con tu voto qué proyectos se harán realidad el próximo año."
+      reconsider_html: "Lamentamos que tu propuesta no haya cumplido con los requisitos necesarios, pero te invitamos a que participes en las votaciones, que se celebrarán del 1 al 25 de septiembre, y decidas con tu voto qué proyectos se harán realidad el próximo año."
       signatory: "DIPUTACIÓN DE VALLADOLID"
       unfeasible_html: "Desde la Diputación queremos agradecer tu participación en los <strong>Presupuestos Participativos</strong>. Tu propuesta <strong>'%{title}'</strong> ha sido evaluada por el personal técnico de la Diputación, que ha considerado que es inviable. A continuación, puedes leer el informe de evaluación en el que se motiva dicha decisión:"
     user_invite:
@@ -10,5 +10,5 @@ es:
     budget_investment_selected:
       share: "Tu proyecto ha sido seleccionado y pasará a la fase de votación. Para que puede hacerse realidad es necesario que sea uno de los más votados en septiembre. Empieza ya a conseguir votos, comparte tu proyecto de gasto por correo electrónico, por mensaje o en redes sociales. La difusión es fundamental para conseguir que se haga realidad."
     budget_investment_unselected:
-      text_1: "A pesar de que tu proyecto <strong>'%{title}'</strong> fue considerado viable, tras aplicar el <a href=\"https://participa.diputaciondevalladolid.es/baremo\" target=\"_blank\">baremo técnico</a> ha obtenido menos puntuación que otros proyectos de la misma zona y, por tanto, no pasará a la fase de votación."
-      text_2: "A pesar de ello, te invitamos a que participes en las votaciones, que se celebrarán del 1 al 15 de septiembre y decidas con tu voto qué proyectos se harán realidad el próximo año."
+      text_1: "A pesar de que tu proyecto <strong>'%{title}'</strong> fue considerado viable, no está entre los que pasarán a la fase de votación. Si accedes al proyecto podrás ver la motivación que se ha dado para tomar esta decisión."
+      text_2: "A pesar de ello, te invitamos a que participes en las votaciones, que se celebrarán del 1 al 25 de septiembre y decidas con tu voto qué proyectos se harán realidad el próximo año."
