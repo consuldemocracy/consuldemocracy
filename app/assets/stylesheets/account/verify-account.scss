@@ -2,14 +2,13 @@
   padding-right: $line-height / 2;
 
   .already-verified {
+    @include has-fa-icon(check, solid);
     color: $check;
     line-height: $line-height * 2;
 
-    .icon-check {
+    &::before {
       color: $text-medium;
-      font-size: rem-calc(24);
-      line-height: rem-calc(45);
-      vertical-align: middle;
+      font-size: 1.4em;
     }
   }
 }
