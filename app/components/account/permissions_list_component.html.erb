@@ -1,12 +1,6 @@
 <ul class="permissions-list">
   <% permissions.each do |text, allowed| %>
-    <li>
-      <% if allowed %>
-        <span class="icon-check"></span>
-      <% else %>
-        <span class="icon-x"></span>
-      <% end %>
-
+    <li class="<%= allowed_class(allowed) %>">
       <%= text %>
     </li>
   <% end %>

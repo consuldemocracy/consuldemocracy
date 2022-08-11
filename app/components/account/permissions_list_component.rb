@@ -15,4 +15,12 @@ class Account::PermissionsListComponent < ApplicationComponent
         t("verification.user_permission_votes") => user.level_three_verified?
       }
     end
+
+    def allowed_class(allowed)
+      if allowed
+        "permission-allowed"
+      else
+        "permission-denied"
+      end
+    end
 end

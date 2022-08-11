@@ -7,17 +7,25 @@
     font-size: $small-font-size;
     margin-bottom: $line-height / 2;
 
-    span {
-      color: $text-medium;
-      font-size: rem-calc(12);
+    &::before {
+      font-size: 0.9em;
+      margin-#{$global-right}: 0.2em;
     }
 
-    .icon-check {
-      color: $check;
+    &.permission-allowed {
+      @include has-fa-icon(check, solid);
+
+      &::before {
+        color: $check;
+      }
     }
 
-    .icon-x {
-      color: $delete;
+    &.permission-denied {
+      @include has-fa-icon(times, solid);
+
+      &::before {
+        color: $delete;
+      }
     }
   }
 }
