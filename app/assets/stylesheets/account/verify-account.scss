@@ -3,11 +3,11 @@
 
   .already-verified {
     @include has-fa-icon(check, solid);
-    color: $check;
+    color: $color-success;
     line-height: $line-height * 2;
 
     &::before {
-      color: $text-medium;
+      color: $check;
       font-size: 1.4em;
     }
   }
