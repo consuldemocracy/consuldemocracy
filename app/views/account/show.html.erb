@@ -94,27 +94,7 @@
           <p><%= t("account.show.user_permission_info") %></p>
 
           <%= render Account::PermissionsListComponent.new(current_user) %>
-
-          <p>
-            <%= t("account.show.user_permission_verify") %>
-          </p>
-
-          <% unless @account.organization? %>
-            <div>
-              <span class="verify-account">
-                <% if current_user.level_three_verified? %>
-                  <p class="already-verified">
-                    <span class="icon-check"></span>
-                    <%= t("account.show.verified_account") %>
-                  </p>
-                <% elsif current_user.level_two_verified? %>
-                  <%= link_to t("account.show.finish_verification"), verification_path, class: "button success" %>
-                <% else %>
-                  <%= link_to t("account.show.verify_my_account"), verification_path, class: "button success" %>
-                <% end %>
-              </span>
-            </div>
-          <% end %>
+          <%= render Account::VerifyAccountComponent.new(@account) %>
         </div>
       </div>
     <% end %>
