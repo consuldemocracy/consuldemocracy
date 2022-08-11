@@ -4,4 +4,8 @@ class Account::VerifyAccountComponent < ApplicationComponent
   def initialize(account)
     @account = account
   end
+
+  def render?
+    !account.organization?
+  end
 end
