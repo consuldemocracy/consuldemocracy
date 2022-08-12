@@ -367,27 +367,6 @@ describe "Emails" do
       expect(email).to have_body_text(budget_path(budget))
     end
 
-    scenario "Unfeasible investment" do
-      budget.update!(phase: "valuating")
-      valuator = create(:valuator)
-      investment = create(:budget_investment, author: author, budget: budget, valuators: [valuator])
-
-      login_as(valuator.user)
-      visit edit_valuation_budget_budget_investment_path(budget, investment)
-
-      within_fieldset("Feasibility") { choose "Unfeasible" }
-      fill_in "Feasibility explanation", with: "This is not legal as stated in Article 34.9"
-      accept_confirm { check "Valuation finished" }
-      click_button "Save changes"
-
-      expect(page).to have_content "Dossier updated"
-
-      email = open_last_email
-      expect(email).to have_subject("Your investment project '#{investment.code}' has been marked as unfeasible")
-      expect(email).to deliver_to(investment.author.email)
-      expect(email).to have_body_text "This is not legal as stated in Article 34.9"
-    end
-
     scenario "Selected investment" do
       author1 = create(:user)
       author2 = create(:user)
@@ -429,6 +408,29 @@ describe "Emails" do
       email = open_last_email
       investment = investment2
       expect(email).to have_subject("Your investment project '#{investment.code}' has not been selected")
+      expect(email).to deliver_to(investment.author.email)
+    end
+
+    scenario "Unfeasible investment" do
+      author1 = create(:user)
+      author2 = create(:user)
+      author3 = create(:user)
+
+      investment1 = create(:budget_investment, :unfeasible, author: author1, budget: budget)
+      investment2 = create(:budget_investment, :unfeasible, author: author2, budget: budget)
+      investment3 = create(:budget_investment, :selected,   author: author3, budget: budget)
+
+      reset_mailer
+      budget.email_unfeasible
+
+      expect(find_email(investment1.author.email)).to be
+      expect(find_email(investment2.author.email)).to be
+      expect(find_email(investment3.author.email)).not_to be
+
+      email = open_last_email
+      investment = investment2
+      expect(email).to have_subject("Your investment project '#{investment.code}' has been "\
+                                    "marked as unfeasible")
       expect(email).to deliver_to(investment.author.email)
     end
   end

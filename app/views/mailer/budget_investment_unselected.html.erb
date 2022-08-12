@@ -5,7 +5,8 @@
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= sanitize(t("mailers.budget_investment_unselected.text_1", title: @investment.title),
+    <%= sanitize(t("mailers.budget_investment_unselected.text_1",
+                 title: link_to(@investment.title, @investment, target: "_blank")),
                  attributes: %w[href target]) %>
   </p>
 
