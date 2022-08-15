@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_06_170838) do
+ActiveRecord::Schema.define(version: 2022_08_15_095345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -1627,7 +1627,7 @@ ActiveRecord::Schema.define(version: 2022_01_06_170838) do
     t.boolean "recommended_debates", default: true
     t.boolean "recommended_proposals", default: true
     t.string "subscriptions_token"
-    t.json "tokens"
+    t.jsonb "tokens"
     t.string "provider", default: "email", null: false
     t.string "uid", default: "", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
