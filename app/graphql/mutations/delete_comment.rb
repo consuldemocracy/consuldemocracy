@@ -9,10 +9,7 @@ module Mutations
         user = context[:current_resource]
         comment = Comment.find id
 
-        unless comment.author == user
-          raise GraphQL::ExecutionError,
-            "User '#{user.username}' is not authorized to delete Comment with id '#{comment.id}'"
-        end
+        raise_error_unless_permitted! :destroy, comment
 
         comment.delete
         comment

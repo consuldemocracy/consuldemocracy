@@ -9,10 +9,7 @@ module Mutations
         user = context[:current_resource]
         document = Document.find id
 
-        unless document.documentable&.author&.id == user.id
-          raise GraphQL::ExecutionError,
-            "User '#{user.username}' is not authorized to delete Document with id '#{document.id}'"
-        end
+        raise_error_unless_permitted! :destroy, document
 
         document.delete
         document

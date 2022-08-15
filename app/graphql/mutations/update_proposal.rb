@@ -10,9 +10,7 @@ module Mutations
         user = context[:current_resource]
         proposal = Proposal.find(id)
 
-        unless proposal.author == user
-          raise GraphQL::ExecutionError, "User '#{user.username}' is not authorized to update Debate with id '#{debate.id}'"
-        end
+        raise_error_unless_permitted! :update, proposal
 
         attributes_hash = attributes.to_hash
         attributes_hash[:translations_attributes].each { |translation| translation[:locale] = user.locale }
