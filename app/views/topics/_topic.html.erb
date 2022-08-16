@@ -5,12 +5,12 @@
     <h3><%= link_to topic.title, community_topic_path(@community, topic) %></h3>
 
     <p class="topic-info">
+      <%= I18n.l topic.created_at.to_date %>
+      <span class="bullet">&nbsp;&bull;&nbsp;</span>
       <%= render Shared::CommentsCountComponent.new(
         topic.comments_count,
         url: community_topic_path(@community, topic, anchor: "comments")
       ) %>
-      <span class="bullet">&nbsp;&bull;&nbsp;</span>
-      <%= I18n.l topic.created_at.to_date %>
       <span class="bullet">&nbsp;&bull;&nbsp;</span>
       <%= topic.author.name %>
     </p>
