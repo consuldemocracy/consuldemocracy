@@ -27,12 +27,10 @@
         <div class="comment-section">
           <%= sanitize(annotation.context).presence || annotation.quote %>
         </div>
-        <span class="comments-count">
-          <%= link_to t("legislation.annotations.index.comments_count", count: annotation.comments_count),
-                      legislation_process_draft_version_annotation_path(@process,
-                                                                        @draft_version,
-                                                                        annotation) %>
-        </span>
+        <%= render Shared::CommentsCountComponent.new(
+          annotation.comments_count,
+          url: legislation_process_draft_version_annotation_path(@process, @draft_version, annotation)
+        ) %>
       </div>
     <% end %>
 

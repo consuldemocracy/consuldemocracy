@@ -5,10 +5,10 @@
     <h3><%= link_to topic.title, community_topic_path(@community, topic) %></h3>
 
     <p class="topic-info">
-      <span class="comments-count">
-        <%= link_to t("community.show.topic.comments", count: topic.comments_count),
-                    community_topic_path(@community, topic, anchor: "comments") %>
-      </span>
+      <%= render Shared::CommentsCountComponent.new(
+        topic.comments_count,
+        url: community_topic_path(@community, topic, anchor: "comments")
+      ) %>
       <span class="bullet">&nbsp;&bull;&nbsp;</span>
       <%= I18n.l topic.created_at.to_date %>
       <span class="bullet">&nbsp;&bull;&nbsp;</span>

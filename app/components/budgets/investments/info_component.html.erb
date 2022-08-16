@@ -2,10 +2,10 @@
   <%= l investment.created_at.to_date %>
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
 
-  <span class="comments-count">
-    <%= link_to t("shared.comments", count: investment.comments_count),
-                budget_investment_path(investment.budget, investment, anchor: "comments") %>
-  </span>
+  <%= render Shared::CommentsCountComponent.new(
+    investment.comments_count,
+    url: budget_investment_path(investment.budget, investment, anchor: "comments")
+  ) %>
 
   <% if investment.author.hidden? || investment.author.erased? %>
     <span class="bullet">&nbsp;&bull;&nbsp;</span>

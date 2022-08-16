@@ -1,0 +1,26 @@
+.comments-count {
+  @include has-fa-icon(comments, regular);
+
+  &::before {
+    margin-right: 0.3rem;
+  }
+
+  .legislation-comments & {
+
+    a {
+      text-decoration: underline;
+    }
+
+    &::before {
+      color: #999;
+    }
+  }
+
+  .comment-header & {
+    @include has-fa-icon(comment, solid);
+
+    &::before {
+      color: #838383;
+    }
+  }
+}

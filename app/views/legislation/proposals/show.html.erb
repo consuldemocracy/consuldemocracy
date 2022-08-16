@@ -44,9 +44,7 @@
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <%= l @proposal.created_at.to_date %>
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <span class="comments-count">
-            <%= link_to t("proposals.show.comments", count: @proposal.comments_count), "#comments" %>
-          </span>
+          <%= render Shared::CommentsCountComponent.new(@proposal.comments_count, url: "#comments") %>
 
           <% if current_user %>
             <span class="bullet">&nbsp;&bull;&nbsp;</span>

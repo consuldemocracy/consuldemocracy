@@ -6,9 +6,7 @@
 
   <% unless @proposal.selected? %>
     <span class="bullet">&nbsp;&bull;&nbsp;</span>
-    <span class="comments-count">
-      <%= link_to t("proposals.show.comments", count: @proposal.comments_count), "#comments" %>
-    </span>
+    <%= render Shared::CommentsCountComponent.new(@proposal.comments_count, url: "#comments") %>
   <% end %>
 
   <% if current_user %>
