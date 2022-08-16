@@ -390,7 +390,7 @@ describe "Polls" do
       expect(page).to have_css "#answer_description_#{answer_long.id}.answer-description.short"
     end
 
-    scenario "Show orbit bullets only when there is more than one image" do
+    scenario "Show orbit bullets and controls only when there is more than one image" do
       poll = create(:poll)
       question = create(:poll_question, poll: poll)
       answer1 = create(:poll_question_answer, title: "Answer with one image", question: question)
@@ -402,10 +402,12 @@ describe "Polls" do
       visit poll_path(poll)
 
       within("#answer_#{answer1.id}_gallery") do
+        expect(page).not_to have_css ".orbit-controls"
         expect(page).not_to have_css "nav.orbit-bullets"
       end
 
       within("#answer_#{answer2.id}_gallery") do
+        expect(page).to have_css ".orbit-controls"
         expect(page).to have_css "nav.orbit-bullets"
       end
     end
