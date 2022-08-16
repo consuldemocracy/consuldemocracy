@@ -21,12 +21,12 @@
           <% cache [locale_and_user_status(proposal), "index", proposal, proposal.author] do %>
             <h3><%= link_to proposal.title, namespaced_proposal_path(proposal) %></h3>
             <p class="proposal-info">
+              <%= l proposal.created_at.to_date %>
+              <span class="bullet">&nbsp;&bull;&nbsp;</span>
               <%= render Shared::CommentsCountComponent.new(
                 proposal.comments_count,
                 url: namespaced_proposal_path(proposal, anchor: "comments")
               ) %>
-              <span class="bullet">&nbsp;&bull;&nbsp;</span>
-              <%= l proposal.created_at.to_date %>
 
               <% if proposal.author.hidden? || proposal.author.erased? %>
                 <span class="bullet">&nbsp;&bull;&nbsp;</span>
