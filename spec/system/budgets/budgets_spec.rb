@@ -177,6 +177,34 @@ describe "Budgets" do
         expect(page).to have_content "€30,000"
       end
     end
+
+    scenario "Show custom map on publishing prices and balloting phases" do
+      iframe_src = "https://www.google.com/maps/d/embed?mid=1Z-mz5WgYFQS2yfpaQRZsybBEiRDFqu4&ehbc=2E312F"
+
+      budget.update!(phase: :publishing_prices)
+
+      visit budgets_path
+
+      within ".budget-phase" do
+        expect(page).to have_selector "iframe[src=\"#{iframe_src}\"]"
+      end
+
+      budget.update!(phase: :balloting)
+
+      visit budgets_path
+
+      within ".budget-phase" do
+        expect(page).to have_selector "iframe[src=\"#{iframe_src}\"]"
+      end
+
+      budget.update!(phase: :finished)
+
+      visit budgets_path
+
+      within ".budget-phase" do
+        expect(page).not_to have_selector "iframe[src=\"#{iframe_src}\"]"
+      end
+    end
   end
 
   scenario "Index shows only published phases" do
