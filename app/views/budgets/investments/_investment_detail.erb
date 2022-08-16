@@ -5,9 +5,7 @@
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
   <%= l investment.created_at.to_date %>
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
-  <span class="comments-count">
-    <%= link_to t("shared.comments", count: investment.comments_count), "#comments" %>
-  </span>
+  <%= render Shared::CommentsCountComponent.new(investment.comments_count, url: "#comments") %>
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
   <%= investment.heading.name %>
   <span class="bullet">&nbsp;&bull;&nbsp;</span>

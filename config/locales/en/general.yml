@@ -69,10 +69,6 @@ en:
       form:
         submit_button: Start a debate
     debate:
-      comments:
-        one: 1 comment
-        other: "%{count} comments"
-        zero: No comments
       votes:
         one: 1 vote
         other: "%{count} votes"
@@ -128,10 +124,6 @@ en:
       start_new: Start a debate
     show:
       author_deleted: User deleted
-      comments:
-        one: 1 comment
-        other: "%{count} comments"
-        zero: No comments
       comments_title: Comments
       edit_debate_link: Edit
       flag: This debate has been flagged as inappropriate by several users.
@@ -396,10 +388,6 @@ en:
         edit: "Before it gets shared you'll be able to change the text as you like."
         view_proposal: Not now, go to my proposal
       already_supported: You have already supported this proposal. Share it!
-      comments:
-        one: 1 comment
-        other: "%{count} comments"
-        zero: No comments
       support: Support
       support_label: "Support %{proposal}"
       support_title: Support this proposal
@@ -420,10 +408,6 @@ en:
     show:
       author_deleted: User deleted
       code: "Proposal code:"
-      comments:
-        one: 1 comment
-        other: "%{count} comments"
-        zero: No comments
       comments_tab: Comments
       dashboard_proposal_link: Dashboard
       flag: This proposal has been flagged as inappropriate by several users.
