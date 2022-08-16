@@ -8,7 +8,7 @@
   <div class="debate-meta">
     <%= render Shared::CommentsCountComponent.new(
       question.comments.count,
-      url: legislation_process_question_path(question.process, question)
+      url: legislation_process_question_path(question.process, question, anchor: "comments")
     ) %>
     · <span class="debate-date"><%= l question.created_at.to_date %></span>
   </div>
