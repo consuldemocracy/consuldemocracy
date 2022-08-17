@@ -6,15 +6,26 @@ class SiteCustomization::Image < ApplicationRecord
     "social_media_icon" => [470, 246],
     "social_media_icon_twitter" => [246, 246],
     "apple-touch-icon-200" => [200, 200],
+    "auth_bg" => [1280, 1500],
     "budget_execution_no_image" => [800, 600],
+    "budget_investment_no_image" => [800, 600],
+    "favicon" => [16, 16],
     "map" => [420, 500],
-    "logo_email" => [400, 80]
+    "logo_email" => [400, 80],
+    "welcome_process" => [370, 185]
   }.freeze
+
+  VALID_MIME_TYPES = %w[
+    image/jpeg
+    image/png
+    image/vnd.microsoft.icon
+    image/x-icon
+  ].freeze
 
   has_attachment :image
 
   validates :name, presence: true, uniqueness: true, inclusion: { in: ->(*) { VALID_IMAGES.keys }}
-  validates :image, file_content_type: { allow: ["image/png", "image/jpeg"], if: -> { image.attached? }}
+  validates :image, file_content_type: { allow: ->(*) { VALID_MIME_TYPES }, if: -> { image.attached? }}
   validate :check_image
 
   def self.all_images

@@ -1,7 +1,7 @@
 <div class="legislation-process card">
   <%= link_to url_for(process) do %>
     <figure class="figure-card">
-      <%= image_tag("welcome_process.png", alt: "") %>
+      <%= image_tag(image_path_for("welcome_process.png"), alt: "") %>
       <figcaption>
         <span><%= t("welcome.feed.process_label") %></span><br>
         <h3><%= process.title %></h3>
