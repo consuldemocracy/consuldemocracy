@@ -742,6 +742,7 @@ body > header,
     background: #fff;
     min-width: rem-calc(240);
     width: max-content;
+    z-index: 10;
 
     li {
       display: block;
