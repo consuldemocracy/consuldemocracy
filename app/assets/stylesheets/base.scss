@@ -387,6 +387,13 @@ aside {
   }
 }
 
+.document-link {
+
+  .button {
+    min-height: 0;
+  }
+}
+
 .tabs {
   border-bottom: 4px solid $light;
 
@@ -1579,6 +1586,8 @@ footer {
 }
 
 .supported .button.button-remove-support {
+  background: none;
+  border: 1px solid $brand;
   box-shadow: none;
   color: $brand-secondary;
 
@@ -1605,6 +1614,16 @@ footer {
   .budget-next-phase::before,
   .budget-next-phase-disabled::before {
     left: 52px;
+  }
+
+  .budget-phase {
+
+    @include breakpoint(medium) {
+
+      > * {
+        word-break: break-word;
+      }
+    }
   }
 }
 
@@ -2067,7 +2086,7 @@ footer {
 }
 
 .legislation-list .legislation p {
-  word-break: break-all;
+  word-break: break-word;
 }
 
 // 6. Comments
@@ -2208,7 +2227,7 @@ footer {
 
   .in-favor,
   .against {
-    background: $light;
+    background: none;
     display: inline-block;
     margin-left: $line-height / 4;
     text-align: center;
@@ -2585,6 +2604,10 @@ footer {
       }
     }
   }
+
+  .callout .small:not(.button)::after {
+    content: none;
+  }
 }
 
 .supports-container {
@@ -2923,6 +2946,17 @@ footer {
 
 .verification button {
   min-height: 0;
+}
+
+.subscriptions-edit {
+
+  form {
+    max-width: none;
+  }
+
+  h2 {
+    margin-bottom: $line-height;
+  }
 }
 
 // 13. Custom

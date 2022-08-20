@@ -1551,11 +1551,13 @@ describe "Budget Investments" do
       end
     end
 
-    scenario "Do not show progress bar money with hidden money" do
+    scenario "Do not show progress bar money or price with hidden money" do
       budget_hide_money = create(:budget, :hide_money, phase: "balloting", voting_style: "approval")
       group = create(:budget_group, budget: budget_hide_money)
       heading = create(:budget_heading, name: "Heading without money", group: group)
       user = create(:user, :level_two)
+      investment = create(:budget_investment, :feasible, :selected, budget: budget_hide_money,
+                                               heading: heading, price: 100)
 
       visit budget_investments_path(budget_hide_money, heading: heading)
 
@@ -1563,17 +1565,27 @@ describe "Budget Investments" do
       expect(page).not_to have_content "€"
       expect(page).not_to have_css(".tagline")
 
+      within "#budget_investment_#{investment.id}" do
+        expect(page).not_to have_content "100"
+        expect(page).not_to have_content "€"
+      end
+
       login_as(user)
 
       visit budget_investments_path(budget_hide_money, heading: heading)
 
-      expect(page).to have_content "YOU CAN VOTE 1 PROJECT VOTES CAST: 0 / YOU CAN VOTE 1 PROJECT"
+      expect(page).to have_content "VOTES CAST: 0 / YOU CAN VOTE 1 PROJECT"
       expect(page).to have_content "YOU CAN STILL CAST 1 VOTE."
       expect(page).not_to have_content "Available budget"
 
       expect(page).to have_css("#progress_bar")
       expect(page).to have_css("#amount_available")
       expect(page).not_to have_css("#amount_spent")
+
+      within "#budget_investment_#{investment.id}" do
+        expect(page).not_to have_content "100"
+        expect(page).not_to have_content "€"
+      end
     end
 
     scenario "Highlight voted heading" do
