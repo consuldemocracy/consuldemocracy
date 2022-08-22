@@ -341,7 +341,7 @@ fa:
             all: همه
         new:
           back: برگشت
-          title: ایجاد یک پروسه جدید قانون مشارکتی 
+          title: ایجاد یک پروسه جدید قانون مشارکتی
           submit_button: فرآیند را ایجاد کنید
         proposals:
           orders:
@@ -486,7 +486,7 @@ fa:
         homepage: صفحه اصلی
         pages: صفحه سفارشی
         images: صفحات سفارشی
-        content_blocks: محتوای بلوکهای سفارشی 
+        content_blocks: محتوای بلوکهای سفارشی
         information_texts_menu:
           debates: "مباحثه"
           community: "جامعه"
@@ -661,7 +661,7 @@ fa:
         remove_shift: "حذف"
         search_officer_button: جستجو
         search_officer_placeholder: جستجو افسر
-        search_officer_text: جستجو برای افسر برای اختصاص شیفت جدید 
+        search_officer_text: جستجو برای افسر برای اختصاص شیفت جدید
         select_date: "انتخاب روز"
         select_task: "وظیفه را انتخاب کنید"
         table_shift: "تغییر "
@@ -844,7 +844,7 @@ fa:
         no_officials: هیچ مقام رسمی وجود ندارد
         name: نام
         official_position: موضع رسمی
-        official_level: سطح 
+        official_level: سطح
       level_0: رسمی نیست
       level_1: سطح 1
       level_2: سطح 2
@@ -992,7 +992,7 @@ fa:
         loading: " امضاتوسط سرشماری تایید شده است، لطفا  این صفحه را رفرش کنید"
     stats:
       show:
-        stats_title: آمار 
+        stats_title: آمار
         summary:
           comment_votes: نظر رای
           comments: توضیحات
@@ -1036,7 +1036,7 @@ fa:
         total: "جمع\n"
         proposals_with_notifications: طرح با اعلان ها
       polls:
-        title: وضعیت نظرسنجی ها 
+        title: وضعیت نظرسنجی ها
         all: نظر سنجی ها
         web_participants: وب سایت شرکت کنندگان
         total_participants: کل شرکت کنندگان
@@ -1071,7 +1071,7 @@ fa:
         filters:
           active: فعال
       search:
-        placeholder: جستجوی کاربر توسط ایمیل و نام یا شماره سند 
+        placeholder: جستجوی کاربر توسط ایمیل و نام یا شماره سند
     verifications:
       index:
         phone_not_given: تلفن داده نشده
