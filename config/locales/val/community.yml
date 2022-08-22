@@ -25,10 +25,6 @@ val:
       topic:
         edit: Editar tema
         destroy: Eliminar tema
-        comments:
-          zero: Sense comentaris
-          one: 1 Comentari
-          other: "%{count} Comentaris"
       author: Autor
       back: Tornar a %{community} %{proposal}
     topic:
