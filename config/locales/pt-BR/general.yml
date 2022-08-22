@@ -739,6 +739,10 @@ pt-BR:
         zero: "0 idiomas em uso"
         one: "1 idioma em uso"
         other: "%{count} idiomas em uso"
+    comments:
+      zero: "Sem comentários"
+      one: "%{count} comentários"
+      other: "%{count} comentários"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
