@@ -3,7 +3,6 @@ ar:
     page_entries_info:
       entry:
         zero: السّجلات
-        zero: السّجلات
         one: السّجلّ
         two: السّجلات
         few: السّجلات
@@ -13,7 +12,6 @@ ar:
         display_entries: عرض <strong>%{first}&nbsp;-&nbsp;%{last}</strong> من <strong>%{total} %{entry_name}</strong>
       one_page:
         display_entries:
-          zero: "لا يمكن العثور على %{entry_name}"
           zero: يوجد <strong>%{count} %{entry_name}</strong>
           one: يوجد <strong>1 %{entry_name}</strong>
           two: يوجد <strong>%{count} %{entry_name}</strong>
