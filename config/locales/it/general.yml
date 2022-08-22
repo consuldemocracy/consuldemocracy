@@ -69,10 +69,6 @@ it:
       form:
         submit_button: Avviare un dibattito
     debate:
-      comments:
-        zero: Nessun commento
-        one: 1 commento
-        other: "%{count} commenti"
       votes:
         zero: Nessun voto
         one: 1 voto
@@ -128,10 +124,6 @@ it:
       start_new: Avvia un dibattito
     show:
       author_deleted: Utente cancellato
-      comments:
-        zero: Non ci sono commenti
-        one: 1 commento
-        other: "%{count} commenti"
       comments_title: Commenti
       edit_debate_link: Modificare
       flag: Questo dibattito è stato contrassegnato come inappropriato da diversi utenti.
@@ -396,10 +388,6 @@ it:
         edit: "Prima che venga condiviso, potrai modificare il testo come preferisci."
         view_proposal: Non ora, vai alla mia proposta
       already_supported: Hai già sostenuto questa proposta. Condividila!
-      comments:
-        zero: Non ci sono commenti
-        one: 1 commento
-        other: "%{count} commenti"
       support: Sostenere
       support_label: "Supporta %{proposal}"
       support_title: Sostieni questa proposta
@@ -419,10 +407,6 @@ it:
     show:
       author_deleted: Utente cancellato
       code: "Codice proposta:"
-      comments:
-        zero: Non ci sono commenti
-        one: 1 commento
-        other: "%{count} commenti"
       comments_tab: Commenti
       dashboard_proposal_link: Pannello di Controllo
       flag: Questa proposta è stata contrassegnata come inappropriata da diversi utenti.
