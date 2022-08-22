@@ -25,10 +25,6 @@ el:
       topic:
         edit: Επεξεργασία θέματος
         destroy: Διαγραφή θέματος
-        comments:
-          zero: Δεν υπάρχουν σχόλια
-          one: 1 σχόλιο
-          other: "%{count} σχόλια"
       author: Συγγραφέας
       back: Πίσω στην %{community} %{proposal}
     topic:
