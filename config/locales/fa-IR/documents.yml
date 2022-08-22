@@ -4,8 +4,8 @@ fa:
     max_documents_allowed_reached: شما به حداکثر تعداد اسناد مجاز دسترسی داشته اید! <strong> قبل از اینکه بتوانید  سند دیگری را بارگذاری کنید باید یک مورد را حذف کنید. </ strong>
     form:
       title: اسناد
-      title_placeholder: افزودن عنوان توصیفی برای سند 
-      delete_button: حذف سند 
+      title_placeholder: افزودن عنوان توصیفی برای سند
+      delete_button: حذف سند
       cancel_button: لغو
       note: "شما می توانید حداکثر   %{max_documents_allowed} اسناد از انواع مطالب و محتوا  آپلود کنید: %{accepted_content_types}تا %{max_file_size} مگابایت در هر فایل."
       add_new_document: افزودن  سند  جدید
