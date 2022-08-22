@@ -4,11 +4,6 @@ cs:
       comments:
         see_all: Zobrazit vše
         see_complete: Zobrazit vše
-        comments_count:
-          one: "%{count} komentář"
-          few: "%{count} komentářů"
-          many: "%{count} komentářů"
-          other: "%{count} komentářů"
         replies_count:
           one: "%{count} odpověď"
           few: "%{count} odpovědi"
@@ -22,11 +17,6 @@ cs:
         title: Komentáře
         comments_about: Komentáře k
         see_in_context: Zobrazit v textu
-        comments_count:
-          one: "%{count} komentář"
-          few: "%{count} komentářů"
-          many: "%{count} komentářů"
-          other: "%{count} komentářů"
       show:
         title: Komentář
       version_chooser:
@@ -98,12 +88,6 @@ cs:
         form:
           leave_comment: Napište odpověď
       question:
-        comments:
-          zero: Žádné komentáře
-          one: "%{count} komentář"
-          few: "%{count} komentářů"
-          many: "%{count} komentářů"
-          other: "%{count} komentářů"
         debate: Debata
       show:
         answer_question: Odeslat odpověď
@@ -148,12 +132,6 @@ cs:
         few: "%{count} návrhy"
         many: "%{count} návrhů"
         other: "%{count} návrhů"
-      comments:
-        zero: "Žádné komentáře"
-        one: "%{count} komentář"
-        few: "%{count} komentáře"
-        many: "%{count} komentářů"
-        other: "%{count} komentářů"
       download: "Stáhnout shrnutí"
       top_comments:
         zero: "Žádné komentáře"
