@@ -109,5 +109,15 @@ describe "Legislation" do
 
       expect(page).not_to have_selector(:link_or_button, "Submit answer")
     end
+
+    scenario "render link to questions comments with anchor" do
+      question = create(:legislation_question, process: process, title: "Question without comments")
+
+      visit legislation_process_path(process)
+
+      expect(page).to have_link "No comments", href: legislation_process_question_path(process,
+                                                                                       question,
+                                                                                       anchor: "comments")
+    end
   end
 end

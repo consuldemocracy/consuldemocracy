@@ -14,10 +14,10 @@
               <%= annotation.quote %>
             </div>
 
-            <span class="comments-count">
-              <%= link_to t("legislation.summary.comments", count: annotation.comments.count),
-                          polymorphic_path(annotation, anchor: "comments") %>
-            </span>
+            <%= render Shared::CommentsCountComponent.new(
+              annotation.comments_count,
+              url: polymorphic_path(annotation, anchor: "comments")
+            ) %>
           </div>
 
           <%= render "summary_comments", comments: annotation_comments %>

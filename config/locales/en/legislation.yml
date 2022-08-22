@@ -4,9 +4,6 @@ en:
       comments:
         see_all: See all
         see_complete: See complete
-        comments_count:
-          one: "%{count} comment"
-          other: "%{count} comments"
         replies_count:
           one: "%{count} reply"
           other: "%{count} replies"
@@ -18,9 +15,6 @@ en:
         title: Comments
         comments_about: Comments about
         see_in_context: See in context
-        comments_count:
-          one: "%{count} comment"
-          other: "%{count} comments"
       show:
         title: Comment
       version_chooser:
@@ -92,10 +86,6 @@ en:
         form:
           leave_comment: Leave your answer
       question:
-        comments:
-          zero: No comments
-          one: "%{count} comment"
-          other: "%{count} comments"
         debate: Debate
       show:
         answer_question: Submit answer
@@ -134,10 +124,6 @@ en:
         zero: "No proposals"
         one: "%{count} proposal"
         other: "%{count} proposals"
-      comments:
-        zero: "No comments"
-        one: "%{count} comment"
-        other: "%{count} comments"
       download: "Download summary"
       top_comments:
         zero: "No comments"

@@ -62,7 +62,11 @@ describe "Budget Investments" do
     investments.each do |investment|
       within("#budget-investments") do
         expect(page).to have_content investment.title
-        expect(page).to have_css("a[href='#{budget_investment_path(budget, id: investment.id)}']", text: investment.title)
+        expect(page).to have_content investment.comments_count
+        expect(page).to have_link "No comments", href: budget_investment_path(budget, id: investment.id,
+                                                                                      anchor: "comments")
+        expect(page).to have_link investment.title, href: budget_investment_path(budget, id: investment.id)
+
         expect(page).not_to have_content(unfeasible_investment.title)
       end
     end
@@ -849,6 +853,7 @@ describe "Budget Investments" do
     expect(page).to have_content(investment.title)
     expect(page).to have_content(investment.description)
     expect(page).to have_content(investment.author.name)
+    expect(page).to have_content(investment.comments_count)
     expect(page).to have_content(investment.heading.name)
     within("#investment_code") do
       expect(page).to have_content(investment.id)
