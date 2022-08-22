@@ -1,7 +1,5 @@
 class SDGManagement::Relations::IndexComponent < ApplicationComponent
   include Header
-  delegate :valid_filters, :current_filter, to: :helpers
-
   attr_reader :records
 
   def initialize(records)
