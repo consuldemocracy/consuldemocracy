@@ -25,11 +25,6 @@ sr:
       topic:
         edit: Уредите тему
         destroy: Обришите тему
-        comments:
-          zero: Нема коментара
-          one: 1 коментар
-          few: "%{count} коментара"
-          other: "%{count} коментара"
       author: Аутор
       back: Назад на %{community}%{proposal}
     topic:
