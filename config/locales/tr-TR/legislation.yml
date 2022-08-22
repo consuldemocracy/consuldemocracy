@@ -4,9 +4,6 @@ tr:
       comments:
         see_all: Hepsini gör
         see_complete: Tamamını gör
-        comments_count:
-          one: "%{count} yorum"
-          other: "%{count} yorumlar"
         replies_count:
           one: "%{count} yanıt"
           other: "%{count} yanıtlar"
@@ -18,9 +15,6 @@ tr:
         title: Yorumlar
         comments_about: Hakkında yorumlar
         see_in_context: Mevcut bağlam içinde gör
-        comments_count:
-          one: "%{count} yorum"
-          other: "%{count} yorumlar"
       show:
         title: Yorum
       version_chooser:
@@ -92,10 +86,6 @@ tr:
         form:
           leave_comment: Cevabınızı paylaşın
       question:
-        comments:
-          zero: Yorum yok
-          one: "%{count} yorum"
-          other: "%{count} yorumlar"
         debate: Tartışma
       show:
         answer_question: Cevabı gönder
@@ -134,10 +124,6 @@ tr:
         zero: "Öneri yok"
         one: "%{count} öneri"
         other: "%{count} öneri"
-      comments:
-        zero: "Yorum yok"
-        one: "%{count} yorum"
-        other: "%{count} yorum"
       download: "Özeti İndir"
       top_comments:
         zero: "Yorum yok"
