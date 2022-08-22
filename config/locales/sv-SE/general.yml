@@ -69,10 +69,6 @@ sv:
       form:
         submit_button: Starta en debatt
     debate:
-      comments:
-        zero: Inga kommentarer
-        one: 1 kommentar
-        other: "%{count} kommentarer"
       votes:
         zero: Inga röster
         one: 1 röst
@@ -128,10 +124,6 @@ sv:
       start_new: Starta en debatt
     show:
       author_deleted: Användaren är borttagen
-      comments:
-        zero: Inga kommentarer
-        one: 1 kommentar
-        other: "%{count} kommentarer"
       comments_title: Kommentarer
       edit_debate_link: Redigera
       flag: Denna debatt har flaggats som olämplig av flera användare.
@@ -396,10 +388,6 @@ sv:
         edit: "Du kan ändra texten fram tills att förslaget har delats."
         view_proposal: Inte nu, gå till mitt förslag
       already_supported: Du stöder redan det här förslaget. Dela det!
-      comments:
-        zero: Inga kommentarer
-        one: 1 kommentar
-        other: "%{count} kommentarer"
       support: Stöd
       support_label: "Stöd %{proposal}"
       support_title: Stöd förslaget
@@ -419,10 +407,6 @@ sv:
     show:
       author_deleted: Användaren är borttagen
       code: "Förslagskod:"
-      comments:
-        zero: Inga kommentarer
-        one: 1 kommentar
-        other: "%{count} kommentarer"
       comments_tab: Kommentarer
       dashboard_proposal_link: Dashboard
       flag: Förslaget har markerats som olämpligt av flera användare.
