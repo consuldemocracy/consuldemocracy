@@ -3,9 +3,11 @@ nl:
     geozone_id: "Betreffende regio"
     results_enabled: "Toon resultaten"
     stats_enabled: "Toon statistieken"
+    advanced_stats_enabled: "Toon geavanceerde statistieken"
     name: Name
     email: E-mail
     description: Beschrijving
+    related_sdg_list: Doelen en Doelstellingen
   activerecord:
     models:
       activity:
@@ -74,6 +76,18 @@ nl:
       proposal:
         one: "Voorstel"
         other: "Voorstellen"
+      sdg/goal:
+        one: "doel"
+        other: "doelen"
+      sdg/local_target:
+        one: "lokale doelstelling"
+        other: "lokale doelstellingen"
+      sdg/manager:
+        one: "SDG manager"
+        other: "SDG managers"
+      sdg/target:
+        one: "doelstelling"
+        other: "doelstellingen"
       site_customization/page:
         one: Aangepaste pagina
         other: Aangepaste pagina's
@@ -119,12 +133,18 @@ nl:
       proposal_notification:
         one: "Notificatie"
         other: "Voorstelnotificaties"
+      dashboard/action:
+        one: Voorsteldashboard actie
+        other: Voorsteldashboard acties
       dashboard/administrator_task:
         one: Taak
         other: Taken
       link:
         one: Link
         other: Links
+      local_census_record:
+        one: Lokaal volkstellingsregister
+        other: Lokale volkstellingsregisters
     attributes:
       budget:
         name: "Naam"
@@ -137,7 +157,10 @@ nl:
         description_finished: "Omschrijving wanneer het budget is afgerond"
         phase: "Fase"
         currency_symbol: "Valuta"
+        voting_style_approval: "Goedkeuring"
       budget/translation:
+        main_link_text: "Linktekst"
+        main_link_url: "De link verwijst naar (voeg een link toe)"
         name: "Name"
       budget/investment:
         heading_id: "Kop"
@@ -154,6 +177,7 @@ nl:
         feasibility_undecided: "Niet gedefinieerd"
         feasibility_unfeasible: "Unfeasible"
         incompatible: "Markeer als incompatibel"
+        milestone_tag_list: "Mijlpaaltags"
         price_explanation: "Price explanation"
         selected: "Markeer als geselecteerd"
         selected_true: "Geselecteerd"
@@ -191,11 +215,12 @@ nl:
         name: "Groepsnaam"
       budget/heading:
         allow_custom_content: "Inhoudsblok toestaan"
-        latitude: "Breedte"
-        longitude: "Lengte"
+        latitude: "Breedte (optioneel)"
+        longitude: "Lengte (optioneel)"
         name: "Naam"
         price: "Kosten"
         population: "Populatie"
+        max_ballot_lines: "Aantal stemmen"
       budget/heading/translation:
         name: "Kop naam"
       budget/phase:
@@ -206,6 +231,8 @@ nl:
         name: "Name"
         description: "Beschrijving"
         summary: "Samenvatting"
+        main_link_text: "Linktekst"
+        main_link_url: "De link verwijst naar (voeg een link toe)"
       comment:
         body: "Reactie"
         user: "Gebruiker"
@@ -227,6 +254,7 @@ nl:
         retired_reason: "Reden het voorstel terug te trekken"
         selected: "Markeer als geselecteerd"
         terms_of_service: "Gebruiksvoorwaarden"
+        video_url: "Externe video"
       proposal/translation:
         title: "Titel van het voorstel"
         description: "Beschrijving van het voorstel"
@@ -249,6 +277,7 @@ nl:
         official_level: "Niveau"
         phone_number: "Telefoonnummer"
         public_activity: "Anderen mogen mijn activiteit zien"
+        public_interests: "Wat ik volg is zichtbaar voor anderen"
         recommended_debates: "Aanbevolen debatten weergeven"
         recommended_proposals: "Laat aanbevolen voorstellen zien"
         redeemable_code: "Verificatiecode ontvangen via email"
@@ -298,14 +327,22 @@ nl:
         signable_id: "Geschikt voor identificatie"
         document_numbers: "Documentnummers"
       sdg/goal:
+        code: "Code"
         title: "Title"
         description: "Beschrijving"
       sdg/local_target:
+        code: "Code"
+        target_id: "Doelstelling"
         title: "Title"
       sdg/local_target/translation:
         title: "Title"
         description: "Beschrijving"
+      sdg/phase/kind:
+        sensitization: "Bewustmaking"
+        planning: "Planning"
+        monitoring: "Controle"
       sdg/target:
+        code: "Code"
         title: "Title"
       site_customization/page:
         content: Inhoud
@@ -442,7 +479,9 @@ nl:
         limit: Aantal items
       dashboard/action:
         title: Titel
+        short_description: Korte beschrijving
         description: Beschrijving
+        link: Externe link
         active: Actief
         action_type: Type
       dashboard/administrator_task:

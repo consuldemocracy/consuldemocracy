@@ -4,11 +4,9 @@ zh-TW:
       title: 管理
     actions:
       actions: 行動
-      confirm: 您確定？
       confirm_hide: 確認審核
       delete: "刪除"
       hide: 隱藏
-      hide_author: 隱藏作者
       restore: 恢復
       mark_featured: 特色
       unmark_featured: 解除標記為"特色"
@@ -165,7 +163,6 @@ zh-TW:
           incompatible: 不相容
           price: 價格
           author: 作者
-        cannot_calculate_winners: 預算必須留在 "投票項目", "審查選票" 或 "完成預算"的階段, 以便計算勝出者項目
         see_results: "查看結果"
       show:
         assigned_admin: 指定的管理員

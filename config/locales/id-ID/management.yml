@@ -46,11 +46,6 @@ id:
       print_proposals: Cetak proposal
       support_proposals: Dukung proposal
       create_budget_investment: Buat anggaran investasi
-    permissions:
-      create_proposals: Buat proposal
-      debates: Terlibat dalam perdebatan
-      support_proposals: Dukung proposal
-      vote_proposals: Pilih proposal
     print:
       proposals_info: 'Buat proposal anda di http: //url.consul'
       proposals_title: "Proposal:"

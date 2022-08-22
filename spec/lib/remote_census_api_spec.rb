@@ -26,7 +26,7 @@ describe RemoteCensusApi do
     end
 
     describe "request messages" do
-      let(:valid_response) { File.read("spec/fixtures/files/remote_census_api/valid.xml") }
+      let(:valid_response) { File.read(file_fixture("remote_census_api/valid.xml")) }
 
       def request_with(params)
         { "request" => params }

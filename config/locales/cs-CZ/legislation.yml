@@ -60,7 +60,6 @@ cs:
           winners: Vybrané
       debate:
         empty_questions: Nejsou k dispozici žádné otázky
-        participate: Účastnit se dabaty
       index:
         filter: Filtr
         filters:
@@ -130,11 +129,19 @@ cs:
       title: "Souhrn"
       votes:
         zero: "%{count} hlasů"
+        one: "%{count} hlas"
+        few: "%{count} hlasy"
+        many: "%{count} hlasů"
+        other: "%{count} hlasů"
       debate_phase: "Fáze debaty"
       proposals_phase: "Fáze návrhu"
       allegations_phase: "Fáze připomínkování"
       debates:
         zero: "Žádné debaty"
+        one: "%{count} debata"
+        few: "%{count} debaty"
+        many: "%{count} debat"
+        other: "%{count} debat"
       proposals:
         zero: "Žádné návrhy"
         one: "%{count} návrh"

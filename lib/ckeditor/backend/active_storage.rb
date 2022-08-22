@@ -14,9 +14,9 @@ module Ckeditor
       module ClassMethods
         def self.extended(base)
           base.class_eval do
-            before_save :apply_data
+            before_validation :apply_data
             validate do
-              if data.nil? || storage_file.nil?
+              if data.nil? || file.nil?
                 errors.add(:data, :not_data_present, message: "data must be present")
               end
             end
@@ -46,25 +46,19 @@ module Ckeditor
 
         protected
 
-          def storage_file
-            @storage_file ||= storage_data
+          def file
+            @file ||= storage_data
           end
 
           def blob
-            @blob ||= ::ActiveStorage::Blob.find(storage_file.attachment.blob_id)
+            @blob ||= ::ActiveStorage::Blob.find(file.attachment.blob_id)
           end
 
           def apply_data
-            non_paperclip_data = if data.is_a?(::Paperclip::Attachment)
-                                   file.instance_variable_get("@target")
-                                 else
-                                   data
-                                 end
-
-            if non_paperclip_data.is_a?(Ckeditor::Http::QqFile)
-              storage_data.attach(io: non_paperclip_data, filename: non_paperclip_data.original_filename)
+            if data.is_a?(Ckeditor::Http::QqFile)
+              storage_data.attach(io: data, filename: data.original_filename)
             else
-              storage_data.attach(non_paperclip_data)
+              storage_data.attach(data)
             end
 
             self.data_file_name = storage_data.blob.filename

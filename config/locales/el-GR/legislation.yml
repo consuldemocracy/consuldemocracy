@@ -54,7 +54,6 @@ el:
           winners: Επιλεγμένο
       debate:
         empty_questions: Δεν υπάρχουν ερωτήσεις
-        participate: Συμμετοχή στη συζήτηση
       index:
         filter: Φίλτρο
         filters:

@@ -1,12 +1,5 @@
 require "rails_helper"
 
-api_types  = GraphQL::ApiTypesCreator.create
-query_type = GraphQL::QueryTypeCreator.create(api_types)
-ConsulSchema = GraphQL::Schema.define do
-  query query_type
-  max_depth 12
-end
-
 def execute(query_string, context = {}, variables = {})
   ConsulSchema.execute(query_string, context: context, variables: variables)
 end
@@ -40,8 +33,8 @@ describe "Consul Schema" do
   let(:proposal) { create(:proposal, author: user) }
 
   it "returns fields of Int type" do
-    response = execute("{ proposal(id: #{proposal.id}) { id } }")
-    expect(dig(response, "data.proposal.id")).to eq(proposal.id)
+    response = execute("{ proposal(id: #{proposal.id}) { cached_votes_up } }")
+    expect(dig(response, "data.proposal.cached_votes_up")).to eq(proposal.cached_votes_up)
   end
 
   it "returns fields of String type" do
@@ -371,6 +364,17 @@ describe "Consul Schema" do
       received_comments = extract_fields(response, "comments", "body")
 
       expect(received_comments).not_to include(not_public_poll_comment.body)
+    end
+
+    it "only links public comments" do
+      user = create(:administrator).user
+      create(:comment, author: user, body: "Public")
+      create(:budget_investment_comment, author: user, valuation: true, body: "Valuation")
+
+      response = execute("{ user(id: #{user.id}) { public_comments { edges { node { body } } } } }")
+      received_comments = dig(response, "data.user.public_comments.edges")
+
+      expect(received_comments).to eq [{ "node" => { "body" => "Public" }}]
     end
 
     it "only returns date and hour for created_at" do

@@ -1,7 +1,7 @@
 el:
   account:
     show:
-      change_credentials_link: Αλλαγή διαπιστευτηρίων μου
+      change_credentials_link: Αλλαγή κωδικών πρόσβασης
       erase_account_link: Διαγράψτε το λογαριασμό μου
       finish_verification: Ολοκλήρωση επαλήθευσης
       notifications: Ειδοποιήσεις
@@ -11,14 +11,9 @@ el:
       save_changes_submit: Αποθηκεύστε τις αλλαγές
       recommendations: Συστάσεις
       title: Ο λογαριασμός μου
-      user_permission_debates: Συμμετοχή στις συζητήσεις
       user_permission_info: Με το λογαριασμό σας, μπορείτε να...
-      user_permission_proposal: Δημιουργία νέων προτάσεων
-      user_permission_support_proposal: Υποστήριξη προτάσεων
       user_permission_title: Συμμετοχή
       user_permission_verify: Για να εκτελέσετε όλες τις ενέργειες, επαληθεύστε το λογαριασμό σας.
-      user_permission_verify_info: "* Μόνο για τους χρήστες που βρίσκονται στην απογραφή."
-      user_permission_votes: Συμμετοχή στην τελική ψηφοφορία
       verified_account: Ο λογαριασμός σας έχει επαληθευθεί
       verify_my_account: Επαλήθευση του λογαριασμού μου
   application:
@@ -107,9 +102,6 @@ el:
         button: Αναζήτηση
         placeholder: Αναζήτηση συζητήσεων...
         title: Αναζήτηση
-      search_results:
-        one: " που εμπεριέχει τον όρο <strong>'%{search_term}'</strong>"
-        other: " που εμπεριέχει τον όρο <strong>'%{search_term}'</strong>"
       start_debate: Ξεκινήστε μια συζήτηση
       title: Συζητήσεις
       section_header:
@@ -201,7 +193,6 @@ el:
       conditions: Όροι και προϋποθέσεις χρήσης
       consul: Εφαρμογή CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: Για τεχνική υποστήριξη επισκεφτείτε
       copyright: CONSUL, %{year}
       description: Αυτή η πύλη χρησιμοποιεί το %{consul}, το οποίο είναι %{open_source}.
       open_source: λογισμικό ανοικτού κώδικα
@@ -361,7 +352,6 @@ el:
       select_order_long: "Βλέπετε τις προτάσεις σύμφωνα με:"
       start_proposal: Δημιουργία πρότασης
       title: Προτάσεις
-      top: Τα καλύτερα της εβδομάδας
       top_link_proposals: Προτάσεις με την υψηλότερη στήριξη ανά κατηγορία
       section_header:
         icon_alt: Εικονίδιο προτάσεων
@@ -807,15 +797,12 @@ el:
   votes:
     agree: Συμφωνώ
     anonymous: Υπάρχουν πολλές ανώνυμες ψήφοι γεγονός το οπόιο μας εμποδίζει από το να αποδεχτούμε τη ψήφο %{verify_account}.
-    comment_unauthenticated: Για να ψηφίσετε θα πρέπει να %{signin} ή %{signup}. 
     disagree: Διαφωνώ
     organizations: Οι οργανισμοί δεν επιτρέπεται να ψηφίσουν
     supports: Υποστηρίξεις
     verified_only: Μόνο επιβεβαιωμένοι χρήστες μπορούν να ψηφίσουν προτάσεις; %{verify_account}.
     budget_investments:
-      not_logged_in: Θα πρέπει να %{signin} ή %{signup} για να συνεχίσετε.
       not_verified: Μόνο επιβεβαιωμένοι χρήστες μπορούν να ψηφίσουν επενδυτικά έργα; %{verify_account}.
-      organization: Οι οργανισμοί δεν επιτρέπεται να ψηφίσουν
       unfeasible: Τα ανέφικτα επενδυτικά σχέδια δεν μπορούν να υποστηριχθούν
       not_voting_allowed: Η φάση της ψηφοφορίας είναι κλειστή
       different_heading_assigned:
@@ -847,23 +834,13 @@ el:
       budget_investments:
         title: Συνιστώμενες επενδύσεις
       slide: "Προβολή %{title}"
-    verification:
-      i_dont_have_an_account: Δεν έχω λογαριασμό
-      i_have_an_account: Έχω ήδη λογαριασμό
-      question: Έχετε ήδη λογαριασμό στο %{org_name};
-      title: Επιβεβαίωση λογαριασμού
     welcome:
       go_to_index: Όχι τώρα, μετάβαση στη σελίδα ευρετηρίου
       start_using_consul: Μετάβαση στη σελίδα ευρετηρίου
       title: Συμμετοχή
-      user_permission_debates: Συμμετοχή στις συζητήσεις
       user_permission_info: Με το λογαριασμό σας, μπορείτε να...
-      user_permission_proposal: Δημιουργία νέων προτάσεων
-      user_permission_support_proposal: Υποστήριξη προτάσεων*
       user_permission_verify: "Για να εκτελέσετε τις ακόλουθες ενέργειες, επαληθεύστε το λογαριασμό σας."
-      user_permission_verify_info: "* Μόνο για τους χρήστες στην απογραφή."
       user_permission_verify_my_account: Επαλήθευση του λογαριασμού μου
-      user_permission_votes: Συμμετοχή στην τελική ψηφοφορία
   invisible_captcha:
     sentence_for_humans: "Εάν είστε άνθρωπος, αγνοήστε αυτό το πεδίο"
     timestamp_error_message: "Λυπούμαστε, αυτό ήταν πολύ γρήγορο! Υποβάλετε ξανά."

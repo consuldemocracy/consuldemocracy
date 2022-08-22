@@ -4,7 +4,9 @@
     <thead>
       <tr>
         <th><%= Budget::Heading.human_attribute_name(:name) %></th>
-        <th><%= Budget::Heading.human_attribute_name(:price) %></th>
+        <% if budget.show_money? %>
+          <th class="text-center"><%= Budget::Heading.human_attribute_name(:price) %></th>
+        <% end %>
         <th><%= Budget::Heading.human_attribute_name(:geozone_id) %></th>
         <th><%= Budget::Heading.human_attribute_name(:population) %></th>
         <th><%= Budget::Heading.human_attribute_name(:allow_custom_content) %></th>
@@ -18,7 +20,9 @@
       <% headings.each do |heading| %>
         <tr id="<%= dom_id(heading) %>" class="heading">
           <td><%= heading.name %></td>
-          <td><%= budget.formatted_heading_price(heading) %></td>
+          <% if budget.show_money? %>
+            <td><%= budget.formatted_heading_price(heading) %></td>
+          <% end %>
           <td><%= heading.geozone&.name %></td>
           <td><%= heading.population %></td>
           <td>

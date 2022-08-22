@@ -4,13 +4,12 @@ es:
       title: Administración
     actions:
       actions: Acciones
-      confirm: '¿Estás seguro?'
+      block_author: "Bloquear al autor"
       confirm_action: "¿Estás seguro? %{action} \"%{name}\""
       confirm_delete: "¿Estás seguro? Esta acción borrará \"%{name}\" y no se puede deshacer."
       confirm_hide: Confirmar moderación
       delete: Borrar
       hide: Ocultar
-      hide_author: Bloquear al autor
       label: "%{action} %{name}"
       restore: Volver a mostrar
       mark_featured: Destacar
@@ -39,6 +38,8 @@ es:
           sdg: ODS
       create:
         notice: "Banner creado correctamente"
+      destroy:
+        notice: "Banner eliminado correctamente"
       edit:
         editing: Editar el banner
         form:
@@ -114,6 +115,7 @@ es:
         delete: Eliminar presupuesto
         phase: Fase
         phases_caption: "Fases"
+        phases_table_help_text: "La configuración de estas fases se utiliza únicamente con fines informativos. Su función es definir la información de las fases que se muestra en la página pública del presupuesto participativo."
         duration: "Duración"
         enabled: Habilitada
         actions: Acciones
@@ -137,6 +139,8 @@ es:
         info:
           budget_settings: "Configuración genérica del presupuesto participativo"
           staff_settings: "Administradores y Evaluadores asigandos al presupuesto"
+        hide_money: "Ocultar dinero"
+        hide_money_help_text: "Si esta opción está marcada, todos los campos que muestran la cantidad de dinero se ocultarán durante todo el proceso."
       destroy:
         success_notice: Presupuesto eliminado correctamente
         unable_notice: No se puede eliminar un presupuesto con proyectos asociados
@@ -152,7 +156,7 @@ es:
         headings:
           multiple: "Las partidas sirven para dividir el dinero del presupuesto participativo. Aquí puedes ir añadiendo partidas para cada grupo y establecer la cantidad de dinero que se gastará en cada partida."
           single: "Las partidas sirven para dividir el dinero del presupuesto participativo. Como este presupuesto solo tendrá una partida aquí podrás establecer la cantidad de dinero que se gastará en este presupuesto participativo."
-        phases: "Los presupuestos participativos tienen distintas fases. Aquí puedes habilitar o deshabilitar fases y también personalizar cada una de las fases."
+        phases: "Los presupuestos participativos tienen distintas fases. Aquí puedes habilitar o deshabilitar fases y también personalizar cada una de las fases. La configuración de estas fases se utiliza únicamente con fines informativos y se mostrará en la página pública del presupuesto participativo."
       show:
         add_group: "Añadir grupo"
         add_heading: "Añadir partida"
@@ -211,10 +215,11 @@ es:
         title: "Partidas de %{budget} / %{group}"
     budget_phases:
       edit:
+        dates_help_text: "Solo con fines informativos"
         description_help_text: Este texto aparecerá en la cabecera cuando la fase esté activa
         duration: "Duración de la fase"
-        duration_description: "El período de tiempo que esta fase estará activa."
-        enabled_help_text: Esta fase será pública en el calendario de fases del presupuesto y estará activa para otros propósitos
+        duration_description: "Estos campos se utilizan únicamente con fines informativos y <strong>no provocan una actualización automática de la fase activa.</strong> Para actualizarla, edita el presupuesto y selecciona la fase activa."
+        enabled_help_text: Esta fase será pública en el calendario de fases del presupuesto.
         image_description: "Si se proporciona una imagen se mostrará junto a la descripción de esta fase."
         main_call_to_action: "Enlace de acción principal (opcional)"
         main_call_to_action_description: "Este enlace aparecerá en la cabecera de este presupuesto participativo cuando esta fase esté activa y permite al usuario ejecutar una acción específica como crear una nueva propuesta, votar las existentes, o leer más sobre el funcionamiento de los presupuestos participativos."

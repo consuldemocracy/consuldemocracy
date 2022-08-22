@@ -148,6 +148,16 @@ describe Budget do
       expect(budget).not_to be_valid
     end
 
+    it "dynamically validates the phases" do
+      stub_const("#{Budget::Phase}::PHASE_KINDS", %w[accepting custom])
+
+      budget.phase = "custom"
+      expect(budget).to be_valid
+
+      budget.phase = "reviewing"
+      expect(budget).not_to be_valid
+    end
+
     it "produces auxiliary methods" do
       budget.phase = "accepting"
       expect(budget).to be_accepting
@@ -275,6 +285,16 @@ describe Budget do
       expect(budget.investments_orders).to eq(["random", "price"])
       budget.phase = "reviewing_ballots"
       expect(budget.investments_orders).to eq(["random", "price"])
+    end
+
+    it "is random when ballotting and reviewing ballots if hide money" do
+      budget.update!(voting_style: "approval", hide_money: true)
+      budget.phase = "publishing_prices"
+      expect(budget.investments_orders).to eq(["random"])
+      budget.phase = "balloting"
+      expect(budget.investments_orders).to eq(["random"])
+      budget.phase = "reviewing_ballots"
+      expect(budget.investments_orders).to eq(["random"])
     end
 
     it "is random and confidence_score in all other cases" do
@@ -444,6 +464,13 @@ describe Budget do
       it { expect(build(:budget, :approval)).to be_valid }
       it { expect(build(:budget, :knapsack)).to be_valid }
       it { expect(build(:budget, voting_style: "Oups!")).not_to be_valid }
+
+      it "dynamically validates the voting styles" do
+        stub_const("#{Budget}::VOTING_STYLES", %w[custom])
+
+        expect(build(:budget, voting_style: "custom")).to be_valid
+        expect(build(:budget, voting_style: "knapsack")).not_to be_valid
+      end
     end
 
     context "Related supportive methods" do

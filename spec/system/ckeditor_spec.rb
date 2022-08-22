@@ -33,7 +33,7 @@ describe "CKEditor" do
     click_link "Upload"
 
     within_frame(1) do
-      attach_file "Send it to the Server", Rails.root.join("spec/fixtures/files/clippy.jpg")
+      attach_file "Send it to the Server", file_fixture("clippy.jpg")
     end
 
     click_link "Send it to the Server"

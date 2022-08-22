@@ -117,8 +117,10 @@ describe "Admin Notifications", :admin do
       notification = create(:admin_notification)
 
       visit admin_admin_notifications_path
+
+      confirmation = "Are you sure? This action will delete \"#{notification.title}\" and can't be undone."
       within("#admin_notification_#{notification.id}") do
-        accept_confirm { click_button "Delete" }
+        accept_confirm(confirmation) { click_button "Delete" }
       end
 
       expect(page).to have_content "Notification deleted successfully"
@@ -215,15 +217,14 @@ describe "Admin Notifications", :admin do
   end
 
   scenario "Select list of users to send notification" do
-    UserSegments::SEGMENTS.each do |user_segment|
-      segment_recipient = I18n.t("admin.segment_recipient.#{user_segment}")
+    segment = UserSegments.segments.sample
+    segment_recipient = UserSegments.segment_name(segment)
 
-      visit new_admin_admin_notification_path
+    visit new_admin_admin_notification_path
 
-      fill_in_admin_notification_form(segment_recipient: segment_recipient)
-      click_button "Create notification"
+    fill_in_admin_notification_form(segment_recipient: segment_recipient)
+    click_button "Create notification"
 
-      expect(page).to have_content(I18n.t("admin.segment_recipient.#{user_segment}"))
-    end
+    expect(page).to have_content segment_recipient
   end
 end

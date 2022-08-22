@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <%= wicked_pdf_stylesheet_link_tag "application" -%>
+  <%= wicked_pdf_stylesheet_link_tag "dashboard_poster" -%>
   <%= wicked_pdf_stylesheet_link_tag "pdf_fonts" -%>
 </head>
 <body class="dashboard-poster-pdf">
@@ -23,7 +23,7 @@
     </p>
     <div class="proposal-image">
       <% if proposal.image.present? %>
-        <div class="overflow-image" style="background-image: url(<%= asset_url proposal.image.attachment.url(:large) %>);"></div>
+        <div class="overflow-image" style="background-image: url(<%= polymorphic_url(proposal.image.variant(:large)) %>);"></div>
       <% else %>
         <div class="overflow-image" style="background-image:url('<%= "file://#{Rails.root.join("app","assets","images","default_mailing.jpg")}" %>');"></div>
       <% end %>

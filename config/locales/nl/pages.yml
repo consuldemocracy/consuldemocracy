@@ -44,6 +44,7 @@ nl:
         title: "Proces"
         description: "In het %{link} onderdeel kun je deelnemen in het opstellen en aanpassen van formele stukken. Je kunt hier ook je mening geven over beleid en plannen ontstaan uit eerdere debatten."
         link: "plannen"
+        feature: "Om te participeren bij de processen moet je %{link} en je account verifiëren."
         feature_link: "registreren in %{org_name}"
       faq:
         title: "Technische problemen?"
@@ -55,6 +56,7 @@ nl:
       other:
         title: "Verdere informatie"
         how_to_use: "Gebruik %{org_name} in uw gemeente"
+        sdg: "hulp bij Sustainable Development Goals"
       how_to_use:
         text: |-
           Gebruik het in je gemeente of help ons het te verbeteren, het is open source software.

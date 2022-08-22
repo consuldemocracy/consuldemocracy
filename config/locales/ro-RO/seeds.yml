@@ -36,11 +36,6 @@ ro:
       groups:
         all_city: Tot orașul
         districts: Districte
-      valuator_groups:
-        culture_and_sports: Cultură & Sporturi
-        gender_and_diversity: Gen și Politici de diversitate
-        urban_development: Dezvoltare urbană durabilă
-        equity_and_employment: Echitate și ocuparea forței de muncă
       statuses:
         studying_project: Studierea proiectului
         bidding: Licitarea

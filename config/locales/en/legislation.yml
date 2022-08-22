@@ -54,7 +54,6 @@ en:
           winners: Selected
       debate:
         empty_questions: There aren't any questions
-        participate: Participate in the debate
       index:
         filter: Filter
         filters:
@@ -65,9 +64,9 @@ en:
         section_header:
           icon_alt: Collaborative legislation icon
           title: Collaborative legislation
-          help: Help about collaborative legislation
+          help: Help with collaborative legislation
         section_footer:
-          title: Help about collaborative legislation
+          title: Help with collaborative legislation
           description: Participate in the debates and processes prior to the approval of new regulations or strategies. Your opinion will be considered.
       phase_not_open:
         not_open: This phase is not open yet

@@ -1,22 +1,24 @@
-<td style="padding-bottom: 20px; padding-left: 10px;">
+<td style="<%= css_for_mailer_content %>">
 
-  <h1 style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;">
+  <h1 style="<%= css_for_mailer_heading %>">
     <%= t("devise_views.mailer.unlock_instructions.title") %>
   </h1>
 
-  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+  <p style="<%= css_for_mailer_text %>">
     <%= t("devise_views.mailer.unlock_instructions.hello") %> <strong><%= @resource.email %></strong>
   </p>
 
-  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+  <p style="<%= css_for_mailer_text %>">
     <%= t("devise_views.mailer.unlock_instructions.info_text") %>
   </p>
 
-  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+  <p style="<%= css_for_mailer_text %>">
     <%= t("devise_views.mailer.unlock_instructions.instructions_text") %>
   </p>
 
-  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= link_to t("devise_views.mailer.unlock_instructions.unlock_link"), unlock_url(@resource, unlock_token: @token), style: "color: #2895F1; text-decoration:none;" %>
+  <p style="<%= css_for_mailer_text %>">
+    <%= link_to t("devise_views.mailer.unlock_instructions.unlock_link"),
+                unlock_url(@resource, unlock_token: @token),
+                style: css_for_mailer_link %>
   </p>
 </td>

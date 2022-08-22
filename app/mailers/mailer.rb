@@ -9,6 +9,7 @@ class Mailer < ApplicationMailer
     @comment = comment
     @commentable = comment.commentable
     @email_to = @commentable.author.email
+    manage_subscriptions_token(@commentable.author)
 
     with_user(@commentable.author) do
       subject = t("mailers.comment.subject", commentable: t("activerecord.models.#{@commentable.class.name.underscore}", count: 1).downcase)
@@ -19,6 +20,7 @@ class Mailer < ApplicationMailer
   def reply(reply)
     @email = ReplyEmail.new(reply)
     @email_to = @email.to
+    manage_subscriptions_token(@email.recipient)
 
     with_user(@email.recipient) do
       mail(to: @email_to, subject: @email.subject) if @email.can_be_sent?
@@ -41,6 +43,7 @@ class Mailer < ApplicationMailer
     @direct_message = direct_message
     @receiver = @direct_message.receiver
     @email_to = @receiver.email
+    manage_subscriptions_token(@receiver)
 
     with_user(@receiver) do
       mail(to: @email_to, subject: t("mailers.direct_message_for_receiver.subject"))
@@ -60,6 +63,7 @@ class Mailer < ApplicationMailer
   def proposal_notification_digest(user, notifications)
     @notifications = notifications
     @email_to = user.email
+    manage_subscriptions_token(user)
 
     with_user(user) do
       mail(to: @email_to, subject: t("mailers.proposal_notification_digest.title", org_name: Setting["org_name"]))
@@ -116,6 +120,7 @@ class Mailer < ApplicationMailer
   def newsletter(newsletter, recipient_email)
     @newsletter = newsletter
     @email_to = recipient_email
+    manage_subscriptions_token(User.find_by(email: @email_to))
 
     mail(to: @email_to, from: @newsletter.from, subject: @newsletter.subject)
   end
@@ -139,6 +144,15 @@ class Mailer < ApplicationMailer
     mail(to: @email_to, subject: t("mailers.machine_learning_success.subject"))
   end
 
+  def already_confirmed(user)
+    @email_to = user.email
+    @user = user
+
+    with_user(@user) do
+      mail(to: @email_to, subject: t("mailers.already_confirmed.subject"))
+    end
+  end
+
   private
 
     def with_user(user, &block)
@@ -149,5 +163,10 @@ class Mailer < ApplicationMailer
       if @email_to.blank?
         mail.perform_deliveries = false
       end
+    end
+
+    def manage_subscriptions_token(user)
+      user.add_subscriptions_token
+      @token = user.subscriptions_token
     end
 end

@@ -9,9 +9,7 @@ zh-CN:
           other: "您已为<span>%{count}</span>个投资投票。"
         zero: 您没有对任何投资项目投票。
       reasons_for_not_balloting:
-        not_logged_in: 您必须%{signin} 或者%{signup} 才能继续。
         not_verified: 只有已验证用户可以对投资进行投票；%{verify_account}。
-        organization: 组织不得投票
         not_selected: 无法支持未选择的投资项目
         not_enough_money: "您已经分配了可用的预算。<br><small>请记住您可以随时%{change_ballot}</small>"
         no_ballots_allowed: 选择阶段已结束

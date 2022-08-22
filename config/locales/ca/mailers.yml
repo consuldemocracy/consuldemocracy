@@ -7,15 +7,13 @@ ca:
       new_comment_by: Hi ha un nou comentari de <strong>%{commenter}</strong> en
       subject: Algú ha comentat en el teu %{commentable}
       title: Nou comentari
-    config:
-      manage_email_subscriptions: Pots deixar de rebre aquests emails canviant la teua configuració en
     email_verification:
       click_here_to_verify: en aquest enllaç
       instructions_2: Aquest correu electrònic verificarà el vostre compte <b>%{document_type} %{document_number}</b>. Si aquests no us pertanyen, no feu clic a l’enllaç anterior i ignorau aquest correu electrònic.
       instructions: Per completar la verificació del compte d’usuari, heu de fer clic %{verification_link}.
       subject: Verifica el teu email
       thanks: Moltes gràcies.
-      title: Verifica el teu compte amb el següent enllaç
+      title: "Verifica el teu compte amb el següent enllaç"
     reply:
       hi: Hola
       new_reply_by: Hi ha una nova resposta de <strong>%{commenter}</strong> al teu comentari en
@@ -26,17 +24,14 @@ ca:
       title: "Notificacions de propostes en %{org_name}"
       share: Compartir proposta
       comment: Comentar proposta
-      unsubscribe: "Si no voleu rebre cap notificació de proposta, visit %{account} i desmarqueu \"Rep un resum de les notificacions de les propostes\"."
-      unsubscribe_account: El meu compte
       unfollow: "Visita aquesta proposta i deixa-la sense deixar de rebre notificacions."
     direct_message_for_receiver:
       subject: "Has rebut un nou missatge privat"
       reply: Respondre a %{sender}
-      unsubscribe: "Si no voleu rebre missatges directes, visiteu %{account} i desmarqueu \"Rep missatges de correu electrònic sobre missatges directes\"."
-      unsubscribe_account: El meu compte
     direct_message_for_sender:
       subject: "Heu enviat un missatge privat nou"
-      title: "Heu enviat un missatge privat nou a <strong>%{receiver}</strong> amb el contingut:"
+      title: "Heu enviat un missatge privat nou"
+      text: "Heu enviat un missatge privat nou a <strong>%{receiver}</strong> amb el contingut:"
     user_invite:
       ignore: "Si no has sol·licitat aquesta invitació no et preocupes, pots ignorar aquest correu."
       text: "Gràcies per sol·licitar la inscripció %{org}! En segons pots començar a participar, només has d’omplir el formulari següent:"

@@ -5,7 +5,7 @@ class Poll
 
     delegate :name, to: :booth
 
-    before_destroy :destroy_poll_shifts, only: :destroy
+    before_destroy :destroy_poll_shifts
 
     has_many :officer_assignments, dependent: :destroy
     has_many :officers, through: :officer_assignments

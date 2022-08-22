@@ -37,12 +37,10 @@ class Management::ProposalsController < Management::BaseController
   def vote
     @follow = Follow.find_or_create_by!(user: current_user, followable: @proposal)
     @proposal.register_vote(managed_user, "yes")
-    set_proposal_votes(@proposal)
   end
 
   def print
     @proposals = Proposal.send("sort_by_#{@current_order}").for_render.limit(5)
-    set_proposal_votes(@proposal)
   end
 
   private
@@ -52,10 +50,15 @@ class Management::ProposalsController < Management::BaseController
     end
 
     def proposal_params
+      params.require(:proposal).permit(allowed_params)
+    end
+
+    def allowed_params
       attributes = [:video_url, :responsible_name, :tag_list,
                     :terms_of_service, :geozone_id,
                     map_location_attributes: map_location_attributes]
-      params.require(:proposal).permit(attributes, translation_params(Proposal))
+
+      [*attributes, translation_params(Proposal)]
     end
 
     def resource_model
@@ -64,10 +67,6 @@ class Management::ProposalsController < Management::BaseController
 
     def only_verified_users
       check_verified_user t("management.proposals.alert.unverified_user")
-    end
-
-    def set_proposal_votes(proposals)
-      @proposal_votes = managed_user ? managed_user.proposal_votes(proposals) : {}
     end
 
     def set_comment_flags(comments)

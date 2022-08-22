@@ -68,6 +68,10 @@ FactoryBot.define do
     trait :with_winner do
       after(:create) { |budget| create(:budget_investment, :winner, budget: budget) }
     end
+
+    trait :hide_money do
+      hide_money { true }
+    end
   end
 
   factory :budget_group, class: "Budget::Group" do

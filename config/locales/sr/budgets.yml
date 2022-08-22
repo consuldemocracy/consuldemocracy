@@ -33,9 +33,7 @@ sr:
         voted_info_2: "Можете променити свој глас у било које време до завршетка фазе."
         zero: Нисте гласали ни за један пројекат.
       reasons_for_not_balloting:
-        not_logged_in: Морате %{signin} или %{signup} да бисте наставили.
         not_verified: Само потврђени корисници могу гласати за инвестиције; %{verify_account}.
-        organization: Организацијама није дозвољено гласање
         not_selected: Неизабрани инвестициони пројекти не могу бити подржани
         not_enough_money: "Већ сте доделили расположиви буџет.<br><small>Подсетите се да можете %{change_ballot} у сваком моменту</small>"
         no_ballots_allowed: Фаза одабира је затворена
@@ -91,10 +89,6 @@ sr:
           button: Претрага
           placeholder: Претражи инвестиционе пројекте...
           title: Претрага
-        search_results:
-          one: " садржи термин <strong>'%{search_term}'</strong>"
-          few: " садржи термине <strong>'%{search_term}'</strong>"
-          other: " садржи термине <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Моје гласање
           voted_info:
@@ -106,9 +100,6 @@ sr:
               one: "<strong>Гласали сте за један предлог</strong>"
               few: "<strong>Гласали сте за %{count} предлога</strong>"
               other: "<strong>Гласали сте за %{count} предлога</strong>"
-          change_vote_info:
-            knapsack: "Можете да %{link} било када све до затварања ове фазе. Није потребно да потрошите сав преостали новац."
-            approval: "Можете да %{link} било када све до затварања ове фазе."
           change_vote_link: "промените Ваш глас"
           different_heading_assigned: "Имате активна гласања у другом наслову: %{heading_link}"
           change_ballot: "Уколико промените Ваше мишљење можете променити свој глас у %{check_ballot} и започети поново."

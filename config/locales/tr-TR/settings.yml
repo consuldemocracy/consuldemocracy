@@ -60,6 +60,8 @@ tr:
     meta_keywords_description: 'Anahtar Kelimeler <meta name="keywords">, SEO’yu geliştirmek için kullanılır'
     min_age_to_participate: Katılmak için gereken minimum yaş
     min_age_to_participate_description: "Bu yaşın üzerindeki kullanıcılar, bir kullanıcı tarafından doğrulanmış bir hesabın gerekli olduğu tüm işlemlere katılabilir"
+    postal_codes: "Posta Kodları"
+    postal_codes_description: "Geçerli posta kodlarının virgülle ayrılmış listesidir. Ayrıca, iki nokta üst üste işareti ile ayrılmış aralıkları da kullanabilirsiniz. Örneğin: 00001:00010, 00024, AB3 45FG, 00031:00035, \n00001 ile 00010 arasındaki posta kodlarına, 00024 posta koduna, AB3 45FG posta koduna ve 00031 ile 00035 arasındaki posta kodlarına izin verir. Boş bırakmanız halinde, tüm posta kodları geçerli olacaktır."
     proposals:
       successful_proposal_id: Başarılı öneri
       successful_proposal_id_description: Bu öneri, destek numarasında başarılı bir teklif için referans olarak kullanıldı ve gösterge tablosunda gösterilecektir.

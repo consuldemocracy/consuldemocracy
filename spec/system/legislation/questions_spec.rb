@@ -17,8 +17,6 @@ describe "Legislation" do
     scenario "shows question list" do
       visit legislation_process_path(process)
 
-      expect(page).to have_content("Participate in the debate")
-
       expect(page).to have_content("Question 1")
       expect(page).to have_content("Question 2")
       expect(page).to have_content("Question 3")

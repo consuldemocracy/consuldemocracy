@@ -1,5 +1,5 @@
 class Layout::LocaleSwitcherComponent < ApplicationComponent
-  delegate :name_for_locale, :link_list, :current_path_with_query_params, to: :helpers
+  delegate :name_for_locale, :link_list, :current_path_with_query_params, :rtl?, to: :helpers
 
   def render?
     locales.size > 1
@@ -29,7 +29,8 @@ class Layout::LocaleSwitcherComponent < ApplicationComponent
           name_for_locale(locale),
           current_path_with_query_params(locale: locale),
           locale == I18n.locale,
-          lang: locale
+          lang: locale,
+          data: { turbolinks: rtl?(I18n.locale) == rtl?(locale) }
         ]
       end
     end

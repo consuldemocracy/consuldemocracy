@@ -17,14 +17,11 @@ module CommentableActions
 
     @tag_cloud = tag_cloud
 
-    set_resource_votes(@resources)
-
     set_resources_instance
     @remote_translations = detect_remote_translations(@resources, featured_proposals)
   end
 
   def show
-    set_resource_votes(resource)
     @commentable = resource
     @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
     set_comment_flags(@comment_tree.comments)
@@ -97,10 +94,6 @@ module CommentableActions
 
     def load_categories
       @categories = Tag.category.order(:name)
-    end
-
-    def set_resource_votes(instance)
-      send("set_#{resource_name}_votes", instance)
     end
 
     def index_customization

@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Imports", :admin do
-  let(:base_files_path) { %w[spec fixtures files local_census_records import] }
+  let(:base_files_path) { "local_census_records/import/" }
 
   describe "New" do
     scenario "Should show import form" do
@@ -17,7 +17,7 @@ describe "Imports", :admin do
     scenario "Should show success notice after successful import" do
       within "form#new_local_census_records_import" do
         path = base_files_path << "valid.csv"
-        file = File.join(Rails.root, *path)
+        file = file_fixture(path)
         attach_file("local_census_records_import_file", file)
         click_button "Save"
       end
@@ -35,8 +35,7 @@ describe "Imports", :admin do
 
     scenario "Should show alert when file is not supported" do
       within "form#new_local_census_records_import" do
-        path = ["spec", "fixtures", "files", "clippy.jpg"]
-        file = File.join(Rails.root, *path)
+        file = file_fixture("clippy.jpg")
         attach_file("local_census_records_import_file", file)
         click_button "Save"
       end
@@ -47,7 +46,7 @@ describe "Imports", :admin do
     scenario "Should show successfully created local census records at created group" do
       within "form#new_local_census_records_import" do
         path = base_files_path << "valid.csv"
-        file = File.join(Rails.root, *path)
+        file = file_fixture(path)
         attach_file("local_census_records_import_file", file)
         click_button "Save"
       end
@@ -59,7 +58,7 @@ describe "Imports", :admin do
     scenario "Should show invalid local census records at errored group" do
       within "form#new_local_census_records_import" do
         path = base_files_path << "invalid.csv"
-        file = File.join(Rails.root, *path)
+        file = file_fixture(path)
         attach_file("local_census_records_import_file", file)
         click_button "Save"
       end
@@ -71,7 +70,7 @@ describe "Imports", :admin do
     scenario "Should show error messages inside cells at errored group" do
       within "form#new_local_census_records_import" do
         path = base_files_path << "invalid.csv"
-        file = File.join(Rails.root, *path)
+        file = file_fixture(path)
         attach_file("local_census_records_import_file", file)
         click_button "Save"
       end

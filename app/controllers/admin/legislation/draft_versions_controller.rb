@@ -40,11 +40,11 @@ class Admin::Legislation::DraftVersionsController < Admin::Legislation::BaseCont
   private
 
     def draft_version_params
-      params.require(:legislation_draft_version).permit(
-        :status,
-        :final_version,
-        translation_params(Legislation::DraftVersion)
-      )
+      params.require(:legislation_draft_version).permit(allowed_params)
+    end
+
+    def allowed_params
+      [:status, :final_version, translation_params(Legislation::DraftVersion)]
     end
 
     def resource

@@ -10,7 +10,7 @@ fr:
     confirmations:
       confirmed: "Votre compte a été confirmé."
       send_instructions: "Dans quelques minutes, vous recevrez un courriel contenant les instructions pour réinitialiser votre mot de passe."
-      send_paranoid_instructions: "Si votre adresse est dans notre base de données, vous recevrez dans quelques minutes un courriel contenant les instructions pour réinitialiser votre mot de passe."
+      send_paranoid_instructions: "Si votre adresse email est dans notre base de données, vous recevrez dans quelques minutes un email contenant les instructions pour réinitialiser votre mot de passe."
     failure:
       already_authenticated: "Vous êtes déjà connecté."
       inactive: "Votre compte n'a pas encore été activé."

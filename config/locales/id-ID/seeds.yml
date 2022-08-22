@@ -36,11 +36,6 @@ id:
       groups:
         all_city: Seluruh kota
         districts: Kabupaten
-      valuator_groups:
-        culture_and_sports: Olahraga & budaya
-        gender_and_diversity: Jenis kelamin Dan keanekaragaman
-        urban_development: Pembangunan kota yang berkelanjutan
-        equity_and_employment: Ekuitas & pekerjaan
       statuses:
         studying_project: Mempelajari proyek
         bidding: Menawar

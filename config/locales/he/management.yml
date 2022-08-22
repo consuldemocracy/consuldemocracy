@@ -63,11 +63,6 @@ he:
       users: ניהול משתמשים
       user_invites: שליחת הזמנות
       select_user: בחר משתמש
-    permissions:
-      create_proposals: יצירת הצעות
-      debates: השתתפות בדיונים
-      support_proposals: תמיכה בהצעות
-      vote_proposals: הצבעה על הצעות
     print:
       proposals_info: יצירת http://url.consul אישי
       proposals_title: "הצעות:"

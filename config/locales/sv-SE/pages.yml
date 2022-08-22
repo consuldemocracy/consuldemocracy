@@ -1,5 +1,8 @@
 sv:
   pages:
+    census_terms:
+      title: "Villkor för tillgång till adressregistret"
+      description: "Informationssida om villkoren för tillgång till adressregistret."
     conditions:
       title: Användarvillkoren
       subtitle: RÄTTSLIGT MEDDELANDE OM ANVÄNDARVILLKOR, SÄKERHET OCH SKYDD AV PERSONUPPGIFTER I OPEN GOVERNMENT-PORTALEN

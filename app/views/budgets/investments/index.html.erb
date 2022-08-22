@@ -16,25 +16,14 @@
 <% end %>
 
 <main id="budget-investments-main">
-
-  <% unless params[:search].present? %>
+  <% if @search_terms || @advanced_search_terms %>
+    <%= render Shared::SearchResultsSummaryComponent.new(
+      results: @investments,
+      search_terms: @search_terms,
+      advanced_search_terms: @advanced_search_terms
+    ) %>
+  <% else %>
     <%= render "/budgets/investments/header" %>
-  <% end %>
-
-  <% if params[:search].present? || params[:advanced_search].present? %>
-    <div class="highlight no-margin-top padding margin-bottom">
-      <div class="row">
-        <div class="small-12 column">
-          <h2><%= t("shared.search_results") %></h2>
-          <p>
-            <%= page_entries_info @investments %>
-            <%= sanitize(t("budgets.investments.index.search_results",
-                   count: @investments.size,
-                   search_term: params[:search])) %>
-          </p>
-        </div>
-      </div>
-    </div>
   <% end %>
 
   <div class="row">

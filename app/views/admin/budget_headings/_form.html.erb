@@ -12,9 +12,11 @@
   <% end %>
 
   <div class="small-12 medium-6">
-    <%= f.text_field :price, maxlength: 8 %>
-
-    <%= f.select :geozone_id, options_from_collection_for_select(@geozones, :id, :name, heading.geozone_id), { include_blank: true } %>
+    <% if @budget.show_money? %>
+      <%= f.text_field :price, maxlength: 8 %>
+    <% else %>
+      <%= f.hidden_field :price, value: 0 %>
+    <% end %>
 
     <% if heading.budget.approval_voting? %>
       <%= f.number_field :max_ballot_lines,

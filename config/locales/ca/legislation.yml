@@ -54,7 +54,6 @@ ca:
           winners: seleccionada
       debate:
         empty_questions: No hi ha preguntes
-        participate: Fes les aportacions al debat previ participant en els següents temes.
       index:
         filter: Filtrar
         filters:

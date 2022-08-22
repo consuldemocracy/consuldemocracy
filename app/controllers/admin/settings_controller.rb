@@ -43,7 +43,11 @@ class Admin::SettingsController < Admin::BaseController
   private
 
     def settings_params
-      params.require(:setting).permit(:value)
+      params.require(:setting).permit(allowed_params)
+    end
+
+    def allowed_params
+      [:value]
     end
 
     def content_type_params

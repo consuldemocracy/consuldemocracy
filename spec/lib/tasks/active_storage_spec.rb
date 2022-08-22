@@ -1,88 +1,67 @@
 require "rails_helper"
 
 describe "active storage tasks" do
-  describe "migrate_from_paperclip" do
+  describe "remove_paperclip_compatibility_in_existing_attachments" do
     let(:run_rake_task) do
-      Rake::Task["active_storage:migrate_from_paperclip"].reenable
-      Rake.application.invoke_task("active_storage:migrate_from_paperclip")
+      Rake::Task["active_storage:remove_paperclip_compatibility_in_existing_attachments"].reenable
+      Rake.application.invoke_task("active_storage:remove_paperclip_compatibility_in_existing_attachments")
     end
 
-    let(:storage_root) { ActiveStorage::Blob.service.root }
-    before { FileUtils.rm_rf storage_root }
+    it "updates old regular attachments" do
+      document = create(:document)
+      image = create(:image)
+      site_customization_image = create(:site_customization_image)
 
-    it "migrates records and attachments" do
-      document = create(:document,
-                        attachment: nil,
-                        paperclip_attachment: File.new("spec/fixtures/files/clippy.pdf"))
+      document.attachment.attachment.update_column(:name, "storage_attachment")
+      image.attachment.attachment.update_column(:name, "storage_attachment")
+      site_customization_image.image.attachment.update_column(:name, "storage_image")
 
-      expect(ActiveStorage::Attachment.count).to eq 0
-      expect(ActiveStorage::Blob.count).to eq 0
-      expect(test_storage_file_paths.count).to eq 0
+      document.reload
+      image.reload
+      site_customization_image.reload
+
+      expect(document.attachment.attachment).to be nil
+      expect(image.attachment.attachment).to be nil
+      expect(site_customization_image.image.attachment).to be nil
 
       run_rake_task
       document.reload
+      image.reload
+      site_customization_image.reload
 
-      expect(ActiveStorage::Attachment.count).to eq 1
-      expect(ActiveStorage::Blob.count).to eq 1
-      expect(document.storage_attachment.filename).to eq "clippy.pdf"
-      expect(test_storage_file_paths.count).to eq 1
-      expect(storage_file_path(document)).to eq test_storage_file_paths.first
+      expect(document.attachment.attachment.name).to eq "attachment"
+      expect(image.attachment.attachment.name).to eq "attachment"
+      expect(site_customization_image.reload.image.attachment.name).to eq "image"
     end
 
-    it "migrates records with deleted files ignoring the files" do
-      document = create(:document,
-                        attachment: nil,
-                        paperclip_attachment: File.new("spec/fixtures/files/clippy.pdf"))
-      FileUtils.rm(document.attachment.path)
+    it "does not modify old ckeditor attachments" do
+      image = Ckeditor::Picture.create!(data: fixture_file_upload("clippy.png"))
+
+      expect(image.storage_data.attachment.name).to eq "storage_data"
+
+      run_rake_task
+      image.reload
+
+      expect(image.storage_data.attachment.name).to eq "storage_data"
+    end
+
+    it "does not modify new regular attachments" do
+      document = create(:document)
+      image = create(:image)
+      site_customization_image = create(:site_customization_image)
+
+      expect(document.attachment.attachment.name).to eq "attachment"
+      expect(image.attachment.attachment.name).to eq "attachment"
+      expect(site_customization_image.image.attachment.name).to eq "image"
 
       run_rake_task
       document.reload
+      image.reload
+      site_customization_image.reload
 
-      expect(ActiveStorage::Attachment.count).to eq 1
-      expect(ActiveStorage::Blob.count).to eq 1
-      expect(document.storage_attachment.filename).to eq "clippy.pdf"
-      expect(test_storage_file_paths.count).to eq 0
-    end
-
-    it "does not migrate already migrated records" do
-      document = create(:document, attachment: File.new("spec/fixtures/files/clippy.pdf"))
-
-      migrated_file = test_storage_file_paths.first
-      attachment_id = document.storage_attachment.attachment.id
-      blob_id = document.storage_attachment.blob.id
-
-      run_rake_task
-      document.reload
-
-      expect(ActiveStorage::Attachment.count).to eq 1
-      expect(ActiveStorage::Blob.count).to eq 1
-      expect(document.storage_attachment.attachment.id).to eq attachment_id
-      expect(document.storage_attachment.blob.id).to eq blob_id
-
-      expect(test_storage_file_paths.count).to eq 1
-      expect(storage_file_path(document)).to eq migrated_file
-      expect(test_storage_file_paths.first).to eq migrated_file
-    end
-
-    it "does not migrate files for deleted records" do
-      document = create(:document, attachment: File.new("spec/fixtures/files/clippy.pdf"))
-      FileUtils.rm storage_file_path(document)
-      Document.delete_all
-
-      run_rake_task
-
-      expect(ActiveStorage::Attachment.count).to eq 1
-      expect(ActiveStorage::Blob.count).to eq 1
-      expect(document.storage_attachment.filename).to eq "clippy.pdf"
-      expect(test_storage_file_paths.count).to eq 0
-    end
-
-    def test_storage_file_paths
-      Dir.glob("#{storage_root}/**/*").select { |file_or_folder| File.file?(file_or_folder) }
-    end
-
-    def storage_file_path(record)
-      ActiveStorage::Blob.service.path_for(record.storage_attachment.blob.key)
+      expect(document.attachment.attachment.name).to eq "attachment"
+      expect(image.attachment.attachment.name).to eq "attachment"
+      expect(site_customization_image.reload.image.attachment.name).to eq "image"
     end
   end
 end

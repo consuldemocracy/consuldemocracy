@@ -349,7 +349,7 @@ describe "Users" do
           expect(page).to have_content proposal.title
         end
 
-        scenario "Retired proposals do not have a link to the dashboard" do
+        scenario "Withdrawn proposals do not have a link to the dashboard" do
           proposal = create(:proposal, :retired, author: user)
           login_as user
 
@@ -357,7 +357,7 @@ describe "Users" do
 
           expect(page).to have_content proposal.title
           expect(page).not_to have_link "Dashboard"
-          expect(page).to have_content("Dashboard not available for retired proposals")
+          expect(page).to have_content "Dashboard not available for withdrawn proposals"
         end
 
         scenario "Published proposals have a link to the dashboard" do

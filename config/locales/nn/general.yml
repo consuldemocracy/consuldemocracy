@@ -11,14 +11,9 @@ nn:
       save_changes_submit: Lagre endringer
       recommendations: Anbefalinger
       title: Min konto
-      user_permission_debates: Delta i debatter
       user_permission_info: Med din konto kan du...
-      user_permission_proposal: Lag nye forslag
-      user_permission_support_proposal: Støtt forslag
       user_permission_title: Deltakelse
       user_permission_verify: Verifiser din konto for å få tilgang til alle funksjoner.
-      user_permission_verify_info: "* Kun for brukere av Census."
-      user_permission_votes: Delta i endelig avstemning
       verified_account: Konto er verifisert
       verify_my_account: Verifiser min konto
   application:
@@ -34,23 +29,19 @@ nn:
       moderator: Moderator
       responses:
         zero: Ingen svar
-        zero: "%{count} svar"
         one: 1 svar
         other: "%{count} svar"
       responses_show:
         zero: Ingen svar
-        zero: "%{count} svar (vis)"
         one: "1 svar (vis)"
         other: "%{count} svar (vis)"
       responses_collapse:
         zero: Ingen svar
-        zero: "%{count} svar (skjul)"
         one: "1 svar (skjul)"
         other: "%{count} svar (skjul)"
       user_deleted: Brukeren er slettet
       votes:
         zero: Ingen stemmer
-        zero: "%{count} stemmer"
         one: 1 stemme
         other: "%{count} stemmer"
     form:
@@ -77,12 +68,10 @@ nn:
     debate:
       comments:
         zero: Ingen kommentarer
-        zero: "%{count} kommentarer"
         one: 1 kommentar
         other: "%{count} kommentarer"
       votes:
         zero: Ingen stemmer
-        zero: "%{count} stemmer"
         one: 1 stemme
         other: "%{count} stemmer"
     edit:
@@ -113,10 +102,6 @@ nn:
         button: Søk
         placeholder: Søk debatter...
         title: Søk
-      search_results:
-        zero: " som inneholder <strong>'%{search_term}'</strong>"
-        one: " som inneholder <strong>'%{search_term}'</strong>"
-        other: " som inneholder <strong>'%{search_term}'</strong>"
       start_debate: Start en debatt
       title: Debatter
       section_header:
@@ -142,7 +127,6 @@ nn:
       author_deleted: Brukeren er slettet
       comments:
         zero: Ingen kommentarer
-        zero: "%{count} kommentarer"
         one: 1 kommentar
         other: "%{count} kommentarer"
       comments_title: Kommentarer
@@ -209,7 +193,6 @@ nn:
       conditions: Brukervilkår
       consul: CONSUL
       consul_url: https://github.com/consul/consul
-      contact_us: For teknisk support gå til
       copyright: CONSUL, %{year}
       description: Denne portalen bruker %{consul} som er %{open_source}.
       open_source: open-source software
@@ -237,8 +220,7 @@ nn:
       notification_item:
         new_notifications:
           zero: "Du har ingen nye varsler"
-          zero: Du har %{count} nye varsler
-          one: Du har %{count} nye varsel
+          one: Du har 1 nye varsel
           other: Du har %{count} nye varsler
         notifications: Varsler
   notifications:
@@ -256,7 +238,7 @@ nn:
           other: Det er %{count} nye kommentarer på
         proposal_notification:
           zero: Du har %{count} nye varsler om
-          one: Du har %{count} ny varsel om
+          one: Du har 1 ny varsel om
           other: Du har %{count} nye varsler om
         replies_to:
           zero: Du har fått %{count} svar på din kommentar om
@@ -373,7 +355,6 @@ nn:
       select_order_long: "Du viser forslag i henhold til:"
       start_proposal: Opprett et forslag
       title: Forslag
-      top: Ukens mest populære forslag
       top_link_proposals: Mest populære forslag fra hver kategori
       section_header:
         icon_alt: Forslagsikon
@@ -403,19 +384,16 @@ nn:
       already_supported: Du har allerede støttet dette forslaget. Del det!
       comments:
         zero: Ingen kommentarer
-        zero: "%{count} kommentarer"
         one: 1 kommentarer
         other: "%{count} kommentarer"
       support: Støtte
       support_title: Støtt dette forslaget
       supports:
         zero: Ingen støtte
-        zero: "%{count} støtte"
         one: 1 støtte
         other: "%{count} støtte"
       votes:
         zero: Ingen stemmer
-        zero: "%{count} stemmer"
         one: 1 stemme
         other: "%{count} stemmer"
       supports_necessary: "%{number} støtter trengs"
@@ -428,7 +406,6 @@ nn:
       code: "Forslagskode:"
       comments:
         zero: Ingen kommentarer
-        zero: "%{count} kommentarer"
         one: 1 kommentar
         other: "%{count} kommentarer"
       comments_tab: Kommentarer
@@ -832,15 +809,12 @@ nn:
   votes:
     agree: Jeg er enig
     anonymous: For mange anonyme stemmer til å godkjenne stemme %{verify_account}.
-    comment_unauthenticated: Du må %{signin} eller %{signup} for å stemme.
     disagree: Jeg er uenig
     organizations: Organisasjoner er ikke berettiget til å stemme
     supports: Støtte
     verified_only: Kun verifiserte brukere kan stemme på forslag; %{verify_account}.
     budget_investments:
-      not_logged_in: Du må %{signin} eller %{signup} for å fortsette.
       not_verified: Kun verifiserte brukere kan stemme på investeringsprosjekter; %{verify_account}.
-      organization: Organisasjoner er ikke berettiget til å stemme
       unfeasible: Du kan ikke gi støtte til investeringsprojekter, som ikke kan gennemføres
       not_voting_allowed: Avstemmingsfasen er avsluttet
       different_heading_assigned:
@@ -873,23 +847,13 @@ nn:
       budget_investments:
         title: Anbefalte investeringer
       slide: "Se %{title}"
-    verification:
-      i_dont_have_an_account: Jeg har ingen konto
-      i_have_an_account: Jeg har allerede en konto
-      question: Har du allerede en konto i %{org_name}?
-      title: Verifisering av konto
     welcome:
       go_to_index: Vis forslag og debatter
       start_using_consul: Gå til indekssiden
       title: Delta
-      user_permission_debates: Delta i debatter
       user_permission_info: Med din konto kan du...
-      user_permission_proposal: Lag nye forslag
-      user_permission_support_proposal: Støtt forslag
       user_permission_verify: "Verifiser din konto for å utføre følgende handlinger."
-      user_permission_verify_info: "* Kun for brukere av Census."
       user_permission_verify_my_account: Verifiser min konto
-      user_permission_votes: Delta i endelig avstemning
   invisible_captcha:
     sentence_for_humans: "Hvis du er menneske, så kan du ignorere dette felt"
     timestamp_error_message: "Beklager, det gikk litt raskt! Vær vennlig å prøv på nytt."

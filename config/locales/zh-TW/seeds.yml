@@ -36,11 +36,6 @@ zh-TW:
       groups:
         all_city: 所有城市
         districts: 地區
-      valuator_groups:
-        culture_and_sports: 文化與體育
-        gender_and_diversity: 性別與多元化政策
-        urban_development: 可持續城市發展
-        equity_and_employment: 公等與就業
       statuses:
         studying_project: 研究此項目
         bidding: 投標

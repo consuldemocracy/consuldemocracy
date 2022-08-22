@@ -51,7 +51,6 @@ ast:
           winners: Escoyía
       debate:
         empty_questions: No hay preguntas
-        participate: Realiza tus aportaciones al debate previo participando en los siguientes temas.
       index:
         filter: Filtru
         filters:

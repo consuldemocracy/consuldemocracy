@@ -35,6 +35,10 @@ class Admin::ProposalsController < Admin::BaseController
     end
 
     def proposal_params
-      params.require(:proposal).permit(:selected)
+      params.require(:proposal).permit(allowed_params)
+    end
+
+    def allowed_params
+      [:selected]
     end
 end

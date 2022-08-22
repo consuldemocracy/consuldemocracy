@@ -7,15 +7,13 @@ fr:
       new_comment_by: Il y a un nouveau commentaire de <strong>%{commenter}</strong>
       subject: Quelqu'un a commenté votre %{commentable}
       title: Nouveau commentaire
-    config:
-      manage_email_subscriptions: Pour ne plus recevoir ces courriels, changer vos options dans
     email_verification:
       click_here_to_verify: sur ce lien
       instructions_2: Ce courriel va vérifier votre compte avec <b>%{document_type}%{document_number}</b>. Si ce compte ne vous appartient pas, veuillez ne pas cliquer sur le lien et ignorer ce courriel.
       instructions: Procéder à la vérification de votre compte utilisateur, vous devez cliquer sur %{verification_link}.
       subject: Confirmer votre courriel
       thanks: Merci beaucoup.
-      title: Confirmer votre compte en utilisant le lien suivant
+      title: "Confirmer votre compte en utilisant le lien suivant"
     reply:
       hi: Bonjour
       new_reply_by: Il y a une nouvelle réponse de <strong>%{commenter}</strong> à votre commentaire sur
@@ -26,17 +24,14 @@ fr:
       title: "Notifications des propositions sur %{org_name}"
       share: Partager une proposition
       comment: Commenter une proposition
-      unsubscribe: "Si vous ne souhaitez pas recevoir les notifications des propositions, rendez-vous sur %{account} et décochez 'Recevoir un résumé des notifications de proposition'."
-      unsubscribe_account: Mon compte
       unfollow: "Accédez à cette proposition et désabonnez-vous pour ne plus recevoir de notifications."
     direct_message_for_receiver:
       subject: "Vous avez un nouveau message privé"
       reply: Répondre à %{sender}
-      unsubscribe: "Si vous ne souhaitez pas recevoir de messages directs, rendez-vous sur %{account} et décochez 'Recevoir des courriels à propos de messages directs'."
-      unsubscribe_account: Mon compte
     direct_message_for_sender:
       subject: "Vous avez envoyé un nouveau message privé"
-      title: "Vous avez envoyé un nouveau message privé à <strong>%{receiver}</strong> avec le contenu suivant :"
+      title: "Vous avez envoyé un nouveau message privé"
+      text: "Vous avez envoyé un nouveau message privé à <strong>%{receiver}</strong> avec le contenu suivant :"
     user_invite:
       ignore: "Si vous n'avez pas requis cette invitation, pas d'inquiétude, vous pouvez ignorer ce courriel."
       text: "Merci d'avoir demandé à rejoindre %{org}! Dans quelques secondes vous pourrez commencer à participer, remplissez simplement le formulaire ci-dessous :"

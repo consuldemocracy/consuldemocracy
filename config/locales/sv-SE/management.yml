@@ -64,11 +64,6 @@ sv:
       users: Användarhantering
       user_invites: Skicka inbjudningar
       select_user: Välj användare
-    permissions:
-      create_proposals: Skapa förslag
-      debates: Delta i debatter
-      support_proposals: Stödja förslag
-      vote_proposals: Rösta på förslag
     print:
       proposals_info: Skapa ditt förslag på http://url.consul
       proposals_title: "Förslag:"

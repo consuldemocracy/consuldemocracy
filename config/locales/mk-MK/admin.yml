@@ -2,7 +2,6 @@ mk:
   admin:
     actions:
       actions: Акции
-      confirm: Дали сте сигурни?
       edit: Измени
     banners:
       index:

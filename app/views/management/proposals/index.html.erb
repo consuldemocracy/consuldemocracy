@@ -10,9 +10,9 @@
         <% if @search_terms %>
           <h3>
             <%= page_entries_info @proposals %>
-            <%= sanitize(
-              t("proposals.index.search_results", count: @proposals.size, search_term: @search_terms)
-            ) %>
+            <%= sanitize(t("proposals.index.search_results",
+                           count: @proposals.size,
+                           search_term: strip_tags(@search_terms))) %>
           </h3>
         <% end %>
 

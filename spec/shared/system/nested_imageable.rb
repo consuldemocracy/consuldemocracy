@@ -19,14 +19,14 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
   describe "at #{path}" do
     scenario "Should show new image link when imageable has not an associated image defined" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
 
       expect(page).to have_selector "#new_image_link"
     end
 
     scenario "Should hide new image link after adding one image" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
 
       click_on "Add image"
@@ -35,32 +35,32 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
     end
 
     scenario "Should update nested image file name after choosing any file" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
 
       click_link "Add image"
-      attach_file "Choose image", Rails.root.join("spec/fixtures/files/clippy.jpg")
+      attach_file "Choose image", file_fixture("clippy.jpg")
 
       expect(page).to have_selector ".file-name", text: "clippy.jpg"
     end
 
     scenario "Should update nested image file title with file name after choosing a file when no title defined" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
 
-      imageable_attach_new_file(Rails.root.join("spec/fixtures/files/clippy.jpg"))
+      imageable_attach_new_file(file_fixture("clippy.jpg"))
 
       expect_image_has_title("clippy.jpg")
     end
 
     scenario "Should not update nested image file title with file name after choosing a file when title already defined" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
 
       click_link "Add image"
       input_title = find(".image input[name$='[title]']")
       fill_in input_title[:id], with: "Title"
-      attach_file "Choose image", Rails.root.join("spec/fixtures/files/clippy.jpg")
+      attach_file "Choose image", file_fixture("clippy.jpg")
 
       if has_many_images
         expect(find("input[id$='_title']").value).to eq "Title"
@@ -70,63 +70,81 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
     end
 
     scenario "Should update loading bar style after valid file upload" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
 
-      imageable_attach_new_file(Rails.root.join("spec/fixtures/files/clippy.jpg"))
+      imageable_attach_new_file(file_fixture("clippy.jpg"))
 
       expect(page).to have_selector ".loading-bar.complete"
     end
 
     scenario "Should update loading bar style after invalid file upload" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
 
-      imageable_attach_new_file(Rails.root.join("spec/fixtures/files/logo_header.png"), false)
+      imageable_attach_new_file(file_fixture("logo_header.png"), false)
 
       expect(page).to have_selector ".loading-bar.errors"
     end
 
     scenario "Should update image cached_attachment field after valid file upload" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
 
-      imageable_attach_new_file(Rails.root.join("spec/fixtures/files/clippy.jpg"))
+      click_link "Add image"
 
-      expect_image_has_cached_attachment(".jpg")
+      cached_attachment_field = find("input[name$='[cached_attachment]']", visible: :hidden)
+      expect(cached_attachment_field.value).to be_empty
+
+      attach_file "Choose image", file_fixture("clippy.jpg")
+
+      expect(page).to have_css(".loading-bar.complete")
+      expect(cached_attachment_field.value).not_to be_empty
     end
 
     scenario "Should not update image cached_attachment field after invalid file upload" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
 
-      imageable_attach_new_file(Rails.root.join("spec/fixtures/files/logo_header.png"), false)
+      imageable_attach_new_file(file_fixture("logo_header.png"), false)
 
-      expect_image_has_cached_attachment("")
+      cached_attachment_field = find("input[name$='[cached_attachment]']", visible: :hidden)
+
+      expect(cached_attachment_field.value).to be_empty
     end
 
     scenario "Should show nested image errors after invalid form submit" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
 
-      send(fill_resource_method_name) if fill_resource_method_name == "imageable_fill_new_valid_proposal"
+      send(fill_resource_method_name, user) if fill_resource_method_name == "imageable_fill_new_valid_proposal"
       click_link "Add image"
       click_on submit_button
 
-      if has_many_images
-        # Pending. Review soon and test
-      else
-        within "#nested-image .image" do
-          expect(page).to have_content("can't be blank", count: 2)
-        end
+      within "#nested-image .image" do
+        expect(page).to have_content("can't be blank", count: 2)
       end
     end
 
-    scenario "Should remove nested image after valid file upload and click on remove button" do
-      do_login_for user
+    scenario "Render image preview after sending the form with validation errors",
+             unless: imageable_factory_name == "poll_question_answer" do
+      do_login_for user, management: management
       visit send(path, arguments)
 
-      imageable_attach_new_file(Rails.root.join("spec/fixtures/files/clippy.jpg"))
+      select user.geozone.name, from: "Scope of operation" rescue nil
+      imageable_attach_new_file(file_fixture("clippy.jpg"))
+      within_fieldset("Descriptive image") { fill_in "Title", with: "" }
+      click_on submit_button
+
+      expect(page).to have_content "can't be blank"
+      expect(page).to have_css "img[src$='clippy.jpg']"
+    end
+
+    scenario "Should remove nested image after valid file upload and click on remove button" do
+      do_login_for user, management: management
+      visit send(path, arguments)
+
+      imageable_attach_new_file(file_fixture("clippy.jpg"))
 
       within "#nested-image .image" do
         click_link "Remove image"
@@ -135,25 +153,22 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       expect(page).not_to have_selector("#nested-image .image")
     end
 
-    scenario "Should show successful notice when resource filled correctly without any nested images" do
-      if has_many_images
-        skip "no need to test, there are no attributes for the parent resource"
-      else
-        do_login_for user
-        visit send(path, arguments)
+    scenario "Should show successful notice when resource filled correctly without any nested images",
+             unless: has_many_images do
+      do_login_for user, management: management
+      visit send(path, arguments)
 
-        send(fill_resource_method_name) if fill_resource_method_name
-        click_on submit_button
-        expect(page).to have_content imageable_success_notice
-      end
+      send(fill_resource_method_name, user) if fill_resource_method_name
+      click_on submit_button
+      expect(page).to have_content imageable_success_notice
     end
 
     scenario "Should show successful notice when resource filled correctly and after valid file uploads" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
-      send(fill_resource_method_name) if fill_resource_method_name
+      send(fill_resource_method_name, user) if fill_resource_method_name
 
-      imageable_attach_new_file(Rails.root.join("spec/fixtures/files/clippy.jpg"))
+      imageable_attach_new_file(file_fixture("clippy.jpg"))
 
       expect(page).to have_selector ".loading-bar.complete"
 
@@ -163,29 +178,44 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
     end
 
     scenario "Should show new image after successful creation with one uploaded file" do
-      do_login_for user
+      do_login_for user, management: management
       visit send(path, arguments)
-      send(fill_resource_method_name) if fill_resource_method_name
+      send(fill_resource_method_name, user) if fill_resource_method_name
 
-      imageable_attach_new_file(Rails.root.join("spec/fixtures/files/clippy.jpg"))
+      imageable_attach_new_file(file_fixture("clippy.jpg"))
 
       expect(page).to have_selector ".loading-bar.complete"
 
       click_on submit_button
-      imageable_redirected_to_resource_show_or_navigate_to
 
-      if has_many_images
-        # Pending. Review soon and test
-      else
-        expect(page).to have_selector "figure img"
-        expect(page).to have_selector "figure figcaption" if show_caption_for?(imageable_factory_name)
-      end
+      expect(page).to have_content imageable_success_notice
+
+      imageable_redirected_to_resource_show_or_navigate_to(imageable)
+
+      expect(page).to have_selector "figure img"
+      expect(page).to have_selector "figure figcaption" if show_caption_for?(imageable_factory_name)
+    end
+
+    scenario "Different URLs for different images" do
+      do_login_for user, management: management
+      visit send(path, arguments)
+
+      imageable_attach_new_file(file_fixture("clippy.jpg"))
+
+      original_src = find(:fieldset, "Descriptive image").find("img")[:src]
+
+      click_link "Remove image"
+      imageable_attach_new_file(file_fixture("custom_map.jpg"))
+
+      updated_src = find(:fieldset, "Descriptive image").find("img")[:src]
+
+      expect(updated_src).not_to eq original_src
     end
 
     if path.include? "edit"
       scenario "show persisted image" do
         create(:image, imageable: imageable)
-        do_login_for user
+        do_login_for user, management: management
 
         visit send(path, arguments)
 
@@ -195,7 +225,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
       scenario "remove nested field after removing the image" do
         create(:image, imageable: imageable)
-        do_login_for user
+        do_login_for user, management: management
 
         visit send(path, arguments)
         click_link "Remove image"
@@ -206,7 +236,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
       scenario "don't duplicate fields after removing and adding an image" do
         create(:image, imageable: imageable)
-        do_login_for user
+        do_login_for user, management: management
 
         visit send(path, arguments)
         click_link "Remove image"
@@ -216,71 +246,4 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       end
     end
   end
-end
-
-def do_login_for(user)
-  common_do_login_for(user, management: management)
-end
-
-def imageable_redirected_to_resource_show_or_navigate_to
-  case imageable.class.to_s
-  when "Budget"
-    visit edit_admin_budget_path(Budget.last)
-  when "Proposal"
-    click_on "Not now, go to my proposal" rescue Capybara::ElementNotFound
-  end
-end
-
-def imageable_attach_new_file(path, success = true)
-  click_link "Add image"
-  within "#nested-image" do
-    image = find(".image")
-    attach_file "Choose image", path
-    within image do
-      if success
-        expect(page).to have_css(".loading-bar.complete")
-      else
-        expect(page).to have_css(".loading-bar.errors")
-      end
-    end
-  end
-end
-
-def imageable_fill_new_valid_proposal
-  fill_in_new_proposal_title with: "Proposal title"
-  fill_in "Proposal summary", with: "Proposal summary"
-  select user.geozone.name, from: "Scope of operation"
-  check :proposal_terms_of_service
-end
-
-def imageable_fill_new_valid_budget
-  fill_in "Name", with: "Budget name"
-end
-
-def imageable_fill_new_valid_budget_investment
-  fill_in_new_investment_title with: "Budget investment title"
-  fill_in_ckeditor "Description", with: "Budget investment description"
-  check :budget_investment_terms_of_service
-end
-
-def expect_image_has_title(title)
-  image = find(".image")
-
-  within image do
-    expect(find("input[name$='[title]']").value).to eq title
-  end
-end
-
-def expect_image_has_cached_attachment(extension)
-  within "#nested-image" do
-    image = find(".image")
-
-    within image do
-      expect(find("input[name$='[cached_attachment]']", visible: :hidden).value).to end_with(extension)
-    end
-  end
-end
-
-def show_caption_for?(imageable_factory_name)
-  imageable_factory_name != "budget"
 end

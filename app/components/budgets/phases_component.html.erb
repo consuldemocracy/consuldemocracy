@@ -53,9 +53,11 @@
             <% end %>
           </div>
 
-          <% if phase.image.present? %>
+          <% if phase.kind == "publishing_prices" || phase.kind == "balloting" %>
+            <%= render "budgets/custom_map" %>
+          <% elsif phase.image.present? %>
             <div class="budget-phase-image">
-              <%= image_tag phase.image.attachment.url(:large), alt: "" %>
+              <%= image_tag phase.image.variant(:large), alt: "" %>
             </div>
           <% end %>
         </div>

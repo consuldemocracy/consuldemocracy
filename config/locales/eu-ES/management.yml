@@ -63,11 +63,6 @@ eu:
       users: Erabiltzaile kudeaketa
       user_invites: Gonbidapenak bidali
       select_user: Erabiltzailea aukeratu
-    permissions:
-      create_proposals: Proposamen berriak sortu
-      debates: Eztabaidetan parte hartu
-      support_proposals: Proposamenak babestu
-      vote_proposals: Azken bozkaketetan parte hartu
     print:
       proposals_info: Zure proposamenak http://url.consul -(e)n egin
       proposals_title: "Proposamenak:"

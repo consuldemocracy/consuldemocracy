@@ -91,10 +91,14 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
 
     def budget_investment_params
+      params.require(:budget_investment).permit(allowed_params)
+    end
+
+    def allowed_params
       attributes = [:external_url, :heading_id, :administrator_id, :tag_list,
                     :valuation_tag_list, :incompatible, :visible_to_valuators, :selected,
                     :milestone_tag_list, valuator_ids: [], valuator_group_ids: []]
-      params.require(:budget_investment).permit(attributes, translation_params(Budget::Investment))
+      [*attributes, translation_params(Budget::Investment)]
     end
 
     def load_budget

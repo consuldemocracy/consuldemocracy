@@ -1,6 +1,6 @@
 <div id="image" class="small-12 column text-center image-preview">
   <figure>
-    <%= image_tag image.attachment.url(version),
+    <%= image_tag image.variant(version),
                   class: image_class(image),
                   alt: image.title.unicode_normalize,
                   title: image.title.unicode_normalize %>

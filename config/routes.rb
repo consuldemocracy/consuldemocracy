@@ -10,7 +10,6 @@ Rails.application.routes.draw do
 
   draw :account
   draw :admin
-  draw :annotation
   draw :budget
   draw :comment
   draw :community

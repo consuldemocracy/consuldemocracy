@@ -26,9 +26,8 @@ es:
       participation_text: Decide cómo debe ser la provincia que quieres.
       transparency_text: Obtén cualquier información sobre la provincia.
       transparency_title: Transparencia
-      faq: Asistencia técnica
     header:
-      collaborative_legislation: Legislación colaborativa
+      collaborative_legislation: "Consulta Pública Previa"
       notifications: Notificaciones
       new_notifications:
         one: Tienes una nueva notificación

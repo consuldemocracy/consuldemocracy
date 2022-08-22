@@ -55,7 +55,7 @@ tr:
           residence_card: İkamet belgesi
           spanish_id: DNI
         error_not_allowed_age: Katılmak için gereken yaşta değilsiniz
-        error_not_allowed_postal_code: Doğrulanmak için kaydolmalısınız.
+        error_not_allowed_postal_code: Doğrulanmak için kayıt olmalısınız.
         error_verifying_census: Pusula, bilgilerinizi doğrulayamadı. Lütfen, sayım bilgilerinizin doğru olduğunu Belediye Meclisini arayarak ya da bir Vatandaş Destek Ofisini ziyaret ederek onaylayın.
         form_errors: ikametinizin doğrulanmasını engelledi
         postal_code_note: Hesabınızı doğrulamak için kaydolmalısınız

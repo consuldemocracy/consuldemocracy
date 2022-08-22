@@ -6,15 +6,13 @@ so:
       new_comment_by: Waxa jira faalo cusub<strong>%{commenter}</strong>
       subject: Qof ayaa ka falooday%{commentable}
       title: Faalo cusub
-    config:
-      manage_email_subscriptions: Si aad u joojiso helitaanka emailladahaan waxay bedeshaa goobahaaga
     email_verification:
       click_here_to_verify: xidhiidhkan
       instructions_2: E-maylkan ayaa xaqiijin doona koontadaada <b> %{document_type}%{document_number} </b>. Haddii aysan kuwaan ku jirin, fadlan ha guji xiriirka hore oo iska dheji emailkan.
       instructions: Si aad u buuxiso xaqiijinta koontadaada akoonkaaga waa inaad gujisaa%{verification_link}.
       subject: Xaqiiji emailka
       thanks: Ad baad u mahadsantahay.
-      title: Xaqiiji xisaabtaada adigoo isticmaalaya xiriirka soo socda
+      title: "Xaqiiji xisaabtaada adigoo isticmaalaya xiriirka soo socda"
     reply:
       hi: Haye
       new_reply_by: Waxaa jira jawaab cusub oo ka socota <strong>%{commenter}</strong> si aad faallo uga bixiso
@@ -25,16 +23,13 @@ so:
       title: "Ogeysiisyada soo jeedinta ee%{org_name}"
       share: Lawadaag soo jeeedinta
       comment: Faalada soo jeedinta
-      unsubscribe: "Haddii aadan rabin inaad hesho ogeysiis soo jeedin, booqo%{account} oo aanad 'helin soo koobidda ogeysiinta soo jeedinta'."
-      unsubscribe_account: Xisaabteyda
     direct_message_for_receiver:
       subject: "Waxaad heshay farriin cusub oo gaar ah"
       reply: Jawaab u diir%{sender}
-      unsubscribe: "Haddii aadan rabin inaad hesho fariin toos ah, booqo%{account} oo aanad 'Helin emails wixii ku saabsan fariimaha tooska'."
-      unsubscribe_account: Xisaabteyda
     direct_message_for_sender:
       subject: "Waxaad soo dirtay farriin cusub oo gaar ah"
-      title: "Waxaad fariin gaar ah u dirtay <strong>% %{receiver}</strong> oo leh mawduuc:"
+      title: "Waxaad soo dirtay farriin cusub oo gaar ah"
+      text: "Waxaad fariin gaar ah u dirtay <strong>%{receiver}</strong> oo leh mawduuc:"
     user_invite:
       ignore: "Haddii aadan codsanin martiqaadkan ha walwalin, waad iska indha tiri kartaa emailkan."
       text: "Waad ku mahadsantahay codsigaaga inaad ku biirto %{org}! marbaad waxaad bilaabi kartaa inaad kaqaybqaadato, kaliya buuxi foomka hoose:"

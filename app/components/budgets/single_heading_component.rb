@@ -16,6 +16,6 @@ class Budgets::SingleHeadingComponent < ApplicationComponent
     end
 
     def price
-      budget.formatted_heading_price(heading)
+      tag.p budget.formatted_heading_price(heading) if budget.show_money?
     end
 end

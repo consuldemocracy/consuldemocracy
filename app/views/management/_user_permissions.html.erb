@@ -7,10 +7,10 @@
   <p><%= message %></p>
 
   <ul>
-    <% [:debates, :create_proposals, :support_proposals, :vote_proposals].each do |permission| %>
+    <% [:debates, :proposal, :support_proposal, :votes].each do |permission| %>
       <li>
         <span class="<%= permissions.include?(permission) ? "icon-check" : "icon-x" %>"></span>
-        <%= t("management.permissions.#{permission}") %>
+        <%= t("verification.user_permission_#{permission}") %>
       </li>
     <% end %>
   </ul>

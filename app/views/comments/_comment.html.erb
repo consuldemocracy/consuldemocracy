@@ -2,7 +2,7 @@
 <% cache [locale_and_user_status(comment), comment, commentable_cache_key(comment.commentable), comment.author] do %>
   <div id="<%= dom_id(comment) %>" class="comment small-12">
     <div class="comment-body">
-      <% if comment.hidden? || comment.user.nil? || comment.user.hidden? %>
+      <% if comment.hidden? %>
         <% if comment.children.size > 0 %>
           <div class="callout secondary">
             <p><%= t("comments.comment.deleted") %></p>

@@ -20,6 +20,7 @@ module Budgets
 
     before_action :load_ballot, only: [:index, :show]
     before_action :load_heading, only: [:index, :show]
+    before_action :load_map, only: [:index]
     before_action :set_random_seed, only: :index
     before_action :load_categories, only: :index
     before_action :set_default_investment_filter, only: :index
@@ -117,12 +118,17 @@ module Budgets
       end
 
       def investment_params
+        params.require(:budget_investment).permit(allowed_params)
+      end
+
+      def allowed_params
         attributes = [:heading_id, :tag_list, :organization_name, :location,
                       :terms_of_service, :related_sdg_list,
                       image_attributes: image_attributes,
                       documents_attributes: document_attributes,
                       map_location_attributes: map_location_attributes]
-        params.require(:budget_investment).permit(attributes, translation_params(Budget::Investment))
+
+        [*attributes, translation_params(Budget::Investment)]
       end
 
       def load_ballot
@@ -134,10 +140,8 @@ module Budgets
         if params[:heading_id].present?
           @heading = @budget.headings.find_by_slug_or_id! params[:heading_id]
           @assigned_heading = @ballot&.heading_for_group(@heading.group)
-          load_map
         elsif @budget.single_heading?
           @heading = @budget.headings.first
-          load_map
         end
       end
 
@@ -161,13 +165,23 @@ module Budgets
         @view = (params[:view] == "minimal") ? "minimal" : "default"
       end
 
+      def investments_with_filters
+        @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
+      end
+
       def investments
         if @current_order == "random"
-          @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
-                             .sort_by_random(session[:random_seed])
+          investments_with_filters.sort_by_random(session[:random_seed])
         else
-          @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
-                             .send("sort_by_#{@current_order}")
+          investments_with_filters.send("sort_by_#{@current_order}")
+        end
+      end
+
+      def set_default_investment_filter
+        if @budget&.finished?
+          params[:filter] ||= "winners"
+        elsif @budget&.publishing_prices_or_later?
+          params[:filter] ||= "selected"
         end
       end
 
@@ -180,7 +194,7 @@ module Budgets
       end
 
       def load_map
-        @map_location = MapLocation.load_from_heading(@heading)
+        @map_location = MapLocation.load_from_heading(@heading) if @heading.present?
       end
   end
 end

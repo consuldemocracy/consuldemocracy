@@ -109,7 +109,9 @@ describe "Cards", :admin do
     visit admin_homepage_path
 
     within("#widget_card_#{card.id}") do
-      accept_confirm { click_button "Delete" }
+      accept_confirm("Are you sure? This action will delete \"#{card.title}\" and can't be undone.") do
+        click_button "Delete"
+      end
     end
 
     expect(page).to have_content "Card removed successfully"
@@ -205,6 +207,19 @@ describe "Cards", :admin do
         end
       end
 
+      scenario "Show image if it is present" do
+        card_1 = create(:widget_card, cardable: custom_page, title: "Card one")
+        card_2 = create(:widget_card, cardable: custom_page, title: "Card two")
+
+        card_1.update!(image: create(:image, imageable: card_1, attachment: fixture_file_upload("clippy.jpg")))
+        card_2.update!(image: nil)
+
+        visit custom_page.url
+
+        within(".card", text: "CARD ONE") { expect(page).to have_css "img" }
+        within(".card", text: "CARD TWO") { expect(page).not_to have_css "img" }
+      end
+
       scenario "Edit" do
         create(:widget_card, cardable: custom_page, title: "Original title")
 
@@ -235,7 +250,9 @@ describe "Cards", :admin do
 
         expect(page).to have_content("Card title")
 
-        accept_confirm { click_button "Delete" }
+        accept_confirm("Are you sure? This action will delete \"Card title\" and can't be undone.") do
+          click_button "Delete"
+        end
 
         expect(page).to have_current_path admin_site_customization_page_widget_cards_path(custom_page)
         expect(page).not_to have_content "Card title"
@@ -243,11 +260,9 @@ describe "Cards", :admin do
     end
   end
 
-  pending "add image expectactions"
-
   def attach_image_to_card
     click_link "Add image"
-    attach_file "Choose image", Rails.root.join("spec/fixtures/files/clippy.jpg")
+    attach_file "Choose image", file_fixture("clippy.jpg")
 
     expect(page).to have_field("widget_card_image_attributes_title", with: "clippy.jpg")
   end

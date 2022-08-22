@@ -396,6 +396,7 @@ ActiveRecord::Schema.define(version: 2021_11_03_112944) do
     t.text "description_informing"
     t.string "voting_style", default: "knapsack"
     t.boolean "published"
+    t.boolean "hide_money", default: false
   end
 
   create_table "campaigns", id: :serial, force: :cascade do |t|
@@ -1628,6 +1629,7 @@ ActiveRecord::Schema.define(version: 2021_11_03_112944) do
     t.string "postal_code", limit: 10
     t.boolean "recommended_debates", default: true
     t.boolean "recommended_proposals", default: true
+    t.string "subscriptions_token"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["date_of_birth"], name: "index_users_on_date_of_birth"
     t.index ["email"], name: "index_users_on_email", unique: true

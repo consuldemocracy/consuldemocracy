@@ -64,11 +64,6 @@ ro:
       users: Administrarea utilizatorilor
       user_invites: Trimite invitații
       select_user: Selectează utilizator
-    permissions:
-      create_proposals: Crează propuneri
-      debates: Implicați-vă în dezbateri
-      support_proposals: Sprijină propuneri
-      vote_proposals: Votează propuneri
     print:
       proposals_info: Crează-ți propunerea pe http://url.consul
       proposals_title: "Propuneri:"

@@ -7,15 +7,13 @@ gl:
       new_comment_by: Hai un novo comentario de <strong>%{commenter}</strong> en
       subject: Alguén comentou no teu %{commentable}
       title: Novo comentario
-    config:
-      manage_email_subscriptions: Podes deixar de recibir estes correos electrónicos cambiando a túa configuración en
     email_verification:
       click_here_to_verify: neste enlace
       instructions_2: Este correo electrónico é para verificar a túa conta con <b>%{document_type} %{document_number}</b>. Se eses non son os teus datos, por favor non premas a ligazón anterior e ignora este correo.
       instructions: Para completar o proceso de verificación da túa conta, tes que premer en %{verification_link}
       subject: Verifica o teu correo electrónico
       thanks: Moitas grazas.
-      title: Verifica a túa conta co seguinte enlace
+      title: "Verifica a túa conta co seguinte enlace"
     reply:
       hi: Ola
       new_reply_by: Hai unha nova resposta de <strong>%{commenter}</strong> ao tu comentario en
@@ -26,16 +24,13 @@ gl:
       title: "Notificacións de propostas en %{org_name}"
       share: Compartir proposta
       comment: Comentar proposta
-      unsubscribe: "Se non desexas recibir notificacións sobre as propostas, visita %{account} e desmarca 'Recibir un resumo coas notificacións de propostas'."
-      unsubscribe_account: A miña conta
     direct_message_for_receiver:
       subject: "Recibiches unha nova mensaxe privada"
       reply: Responder a %{sender}
-      unsubscribe: "Se non desexas recibir mensaxes directas, visita %{account} e desmarca 'Recibir correos coas mensaxes privadas'."
-      unsubscribe_account: A miña conta
     direct_message_for_sender:
       subject: "Acabas de enviar unha nova mensaxe privada"
-      title: "Acabas de enviar unha nova mensaxe privada a <strong>%{receiver}</strong> co seguinte contido:"
+      title: "Acabas de enviar unha nova mensaxe privada"
+      text: "Acabas de enviar unha nova mensaxe privada a <strong>%{receiver}</strong> co seguinte contido:"
     user_invite:
       ignore: "Se non solicitaches este convite non te preocupes, podes ignorar este correo."
       text: "Grazas por solicitar unirte a %{org}! Nuns segundos poderás empezar a decidir a cidade que queres, só tes que cubrir o seguinte formulario:"

@@ -47,7 +47,11 @@ class TopicsController < ApplicationController
   private
 
     def topic_params
-      params.require(:topic).permit(:title, :description)
+      params.require(:topic).permit(allowed_params)
+    end
+
+    def allowed_params
+      [:title, :description]
     end
 
     def load_community

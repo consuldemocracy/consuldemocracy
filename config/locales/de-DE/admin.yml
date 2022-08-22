@@ -4,12 +4,10 @@ de:
       title: Verwaltung
     actions:
       actions: Aktionen
-      confirm: Sind Sie sich sicher?
       confirm_delete: "Sind Sie sicher? Diese Aktion wird \"%{name}\" löschen und kann nicht rückgängig gemacht werden."
       confirm_hide: Moderation bestätigen
       delete: "Löschen"
       hide: Ausblenden
-      hide_author: Verfasser*in verbergen
       restore: Wiederherstellen
       mark_featured: Hervorgehoben
       unmark_featured: Markierung aufheben
@@ -68,7 +66,7 @@ de:
     budgets:
       actions:
         edit: "Bürgerhaushalt bearbeiten"
-        preview: "Ansicht Budget"
+        preview: "Vorschau Bürgerhaushalt"
       index:
         title: Bürgerhaushalte
         new_link: Neuen Bürgerhaushalt erstellen
@@ -161,7 +159,6 @@ de:
       index:
         new_button: "Neue Gruppe hinzufügen"
     budget_headings:
-      no_headings: "Keine Rubriken vorhanden."
       create:
         notice: "Rubrik erfolgreich erstellt!"
       update:
@@ -250,7 +247,6 @@ de:
           incompatible: Inkompatibel
           price: Preis
           author: Autor
-        cannot_calculate_winners: Das Budget muss in einer der Phasen "Finale Abstimmung", "Abstimmung beendet" oder "Ergebnisse" stehen, um Gewinnervorschläge berechnen zu können
         see_results: "Ergebnisse anzeigen"
         milestone_tags_filter_all: "Status aller Ausgabenvorschläge"
       show:

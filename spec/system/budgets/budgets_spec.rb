@@ -96,12 +96,6 @@ describe "Budgets" do
       within("#budget_info") do
         expect(page).not_to have_link heading.name
         expect(page).to have_content "#{heading.name}\n€1,000,000"
-
-        expect(page).not_to have_link("List of all investment projects")
-        expect(page).not_to have_link("List of all unfeasible investment projects")
-        expect(page).not_to have_link("List of all investment projects not selected for balloting")
-
-        expect(page).not_to have_css("div.map")
       end
     end
 
@@ -115,8 +109,34 @@ describe "Budgets" do
       within("#budget_info") do
         expect(page).not_to have_link heading.name
         expect(page).to have_content "#{heading.name}\n€1,000,000"
+      end
+    end
 
-        expect(page).to have_css("div.map")
+    scenario "Hide money on single heading budget" do
+      budget = create(:budget, :finished, :hide_money)
+      heading = create(:budget_heading, budget: budget)
+
+      visit budgets_path
+
+      within("#budget_info") do
+        expect(page).to have_content heading.name
+        expect(page).not_to have_content "€"
+      end
+    end
+
+    scenario "Hide money on multiple headings budget" do
+      budget = create(:budget, :finished, :hide_money)
+      heading1 = create(:budget_heading, budget: budget)
+      heading2 = create(:budget_heading, budget: budget)
+      heading3 = create(:budget_heading, budget: budget)
+
+      visit budgets_path
+
+      within("#budget_info") do
+        expect(page).to have_content heading1.name
+        expect(page).to have_content heading2.name
+        expect(page).to have_content heading3.name
+        expect(page).not_to have_content "€"
       end
     end
 
@@ -155,6 +175,34 @@ describe "Budgets" do
         expect(page).to have_content "€10,000"
         expect(page).to have_content "Other new heading"
         expect(page).to have_content "€30,000"
+      end
+    end
+
+    scenario "Show custom map on publishing prices and balloting phases" do
+      iframe_src = "https://www.google.com/maps/d/embed?mid=1Z-mz5WgYFQS2yfpaQRZsybBEiRDFqu4&ehbc=2E312F"
+
+      budget.update!(phase: :publishing_prices)
+
+      visit budgets_path
+
+      within ".budget-phase" do
+        expect(page).to have_selector "iframe[src=\"#{iframe_src}\"]"
+      end
+
+      budget.update!(phase: :balloting)
+
+      visit budgets_path
+
+      within ".budget-phase" do
+        expect(page).to have_selector "iframe[src=\"#{iframe_src}\"]"
+      end
+
+      budget.update!(phase: :finished)
+
+      visit budgets_path
+
+      within ".budget-phase" do
+        expect(page).not_to have_selector "iframe[src=\"#{iframe_src}\"]"
       end
     end
   end
@@ -323,7 +371,7 @@ describe "Budgets" do
         }
       end
 
-      allow_any_instance_of(Budgets::BudgetComponent).to receive(:coordinates).and_return(coordinates)
+      allow_any_instance_of(Budgets::MapComponent).to receive(:coordinates).and_return(coordinates)
 
       visit budgets_path
 
@@ -446,6 +494,15 @@ describe "Budgets" do
       visit budget_path(budget)
 
       expect(page).to have_content "So far you've supported 0 projects."
+    end
+
+    scenario "Main link takes you to the defined URL" do
+      budget.update!(main_link_text: "See other budgets!", main_link_url: budgets_path)
+
+      visit budget_path(budget)
+      click_link "See other budgets!"
+
+      expect(page).to have_current_path budgets_path
     end
   end
 

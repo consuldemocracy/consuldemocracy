@@ -19,4 +19,14 @@ describe "Admin debates", :admin do
     expect(page).to have_content(debate.title)
     expect(page).to have_content(debate.description)
   end
+
+  scenario "Comments link" do
+    debate = create(:debate)
+    comment = create(:comment, commentable: debate)
+
+    visit admin_debate_path(debate)
+    click_link "1 comment"
+
+    expect(page).to have_content(comment.body)
+  end
 end

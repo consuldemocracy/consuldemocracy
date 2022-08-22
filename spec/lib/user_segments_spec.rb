@@ -5,7 +5,99 @@ describe UserSegments do
   let(:user2) { create(:user) }
   let(:user3) { create(:user) }
 
-  describe "#all_users" do
+  describe ".segment_name" do
+    it "returns a readable name of the segment" do
+      expect(UserSegments.segment_name("all_users")).to eq "All users"
+      expect(UserSegments.segment_name("administrators")).to eq "Administrators"
+      expect(UserSegments.segment_name("proposal_authors")).to eq "Proposal authors"
+    end
+
+    it "accepts symbols as parameters" do
+      expect(UserSegments.segment_name(:all_users)).to eq "All users"
+    end
+
+    it "returns nil for invalid segments" do
+      expect(UserSegments.segment_name("invalid")).to be nil
+    end
+
+    context "with geozones in the database" do
+      before do
+        create(:geozone, name: "Lands and Borderlands")
+        create(:geozone, name: "Lowlands and Highlands")
+      end
+
+      it "returns geozone names when the geozone exists" do
+        expect(UserSegments.segment_name("lands_and_borderlands")).to eq "Lands and Borderlands"
+        expect(UserSegments.segment_name("lowlands_and_highlands")).to eq "Lowlands and Highlands"
+      end
+
+      it "supports international alphabets" do
+        create(:geozone, name: "Česká republika")
+        create(:geozone, name: "България")
+        create(:geozone, name: "日本")
+
+        expect(UserSegments.segment_name("ceska_republika")).to eq "Česká republika"
+        expect(UserSegments.segment_name("България")).to eq "България"
+        expect(UserSegments.segment_name("日本")).to eq "日本"
+      end
+
+      it "returns regular segments when the geozone doesn't exist" do
+        expect(UserSegments.segment_name("all_users")).to eq "All users"
+      end
+
+      it "returns nil for invalid segments" do
+        expect(UserSegments.segment_name("invalid")).to be nil
+      end
+    end
+  end
+
+  describe ".valid_segment?" do
+    it "returns true when the segment exists" do
+      expect(UserSegments.valid_segment?("all_proposal_authors")).to be true
+      expect(UserSegments.valid_segment?("investment_authors")).to be true
+      expect(UserSegments.valid_segment?("feasible_and_undecided_investment_authors")).to be true
+    end
+
+    it "accepts symbols as parameters" do
+      expect(UserSegments.valid_segment?(:selected_investment_authors)).to be true
+      expect(UserSegments.valid_segment?(:winner_investment_authors)).to be true
+      expect(UserSegments.valid_segment?(:not_supported_on_current_budget)).to be true
+    end
+
+    it "is falsey when the segment doesn't exist" do
+      expect(UserSegments.valid_segment?("imaginary_segment")).to be_falsey
+    end
+
+    it "is falsey when nil is passed" do
+      expect(UserSegments.valid_segment?(nil)).to be_falsey
+    end
+
+    context "with geozones in the database" do
+      before do
+        create(:geozone, name: "Lands and Borderlands")
+        create(:geozone, name: "Lowlands and Highlands")
+      end
+
+      it "returns true when the geozone exists" do
+        expect(UserSegments.valid_segment?("lands_and_borderlands")).to be true
+        expect(UserSegments.valid_segment?("lowlands_and_highlands")).to be true
+      end
+
+      it "returns true when the segment exists" do
+        expect(UserSegments.valid_segment?("all_users")).to be true
+      end
+
+      it "is falsey when the segment doesn't exist" do
+        expect(UserSegments.valid_segment?("imaginary_segment")).to be_falsey
+      end
+
+      it "is falsey when nil is passed" do
+        expect(UserSegments.valid_segment?(nil)).to be_falsey
+      end
+    end
+  end
+
+  describe ".all_users" do
     it "returns all active users enabled" do
       active_user = create(:user)
       erased_user = create(:user, erased_at: Time.current)
@@ -15,7 +107,7 @@ describe UserSegments do
     end
   end
 
-  describe "#administrators" do
+  describe ".administrators" do
     it "returns all active administrators users" do
       active_user = create(:user)
       active_admin = create(:administrator).user
@@ -27,7 +119,7 @@ describe UserSegments do
     end
   end
 
-  describe "#all_proposal_authors" do
+  describe ".all_proposal_authors" do
     it "returns users that have created a proposal even if is archived or retired" do
       create(:proposal, author: user1)
       create(:proposal, :archived, author: user2)
@@ -49,7 +141,7 @@ describe UserSegments do
     end
   end
 
-  describe "#proposal_authors" do
+  describe ".proposal_authors" do
     it "returns users that have created a proposal" do
       create(:proposal, author: user1)
 
@@ -67,7 +159,7 @@ describe UserSegments do
     end
   end
 
-  describe "#investment_authors" do
+  describe ".investment_authors" do
     it "returns users that have created a budget investment" do
       investment = create(:budget_investment, author: user1)
       budget = create(:budget)
@@ -90,7 +182,7 @@ describe UserSegments do
     end
   end
 
-  describe "#feasible_and_undecided_investment_authors" do
+  describe ".feasible_and_undecided_investment_authors" do
     it "returns authors of a feasible or an undecided budget investment" do
       user4 = create(:user)
       user5 = create(:user)
@@ -128,7 +220,7 @@ describe UserSegments do
     end
   end
 
-  describe "#selected_investment_authors" do
+  describe ".selected_investment_authors" do
     it "returns authors of selected budget investments" do
       selected_investment = create(:budget_investment, :selected, author: user1)
       unselected_investment = create(:budget_investment, :unselected, author: user2)
@@ -153,7 +245,7 @@ describe UserSegments do
     end
   end
 
-  describe "#winner_investment_authors" do
+  describe ".winner_investment_authors" do
     it "returns authors of winner budget investments" do
       winner_investment = create(:budget_investment, :winner, author: user1)
       selected_investment = create(:budget_investment, :selected, author: user2)
@@ -178,7 +270,7 @@ describe UserSegments do
     end
   end
 
-  describe "#current_budget_investments" do
+  describe ".current_budget_investments" do
     it "only returns investments from the current budget" do
       investment1 = create(:budget_investment, author: create(:user))
       investment2 = create(:budget_investment, author: create(:user))
@@ -192,7 +284,7 @@ describe UserSegments do
     end
   end
 
-  describe "#not_supported_on_current_budget" do
+  describe ".not_supported_on_current_budget" do
     it "only returns users that haven't supported investments on current budget" do
       investment1 = create(:budget_investment)
       investment2 = create(:budget_investment)
@@ -209,13 +301,49 @@ describe UserSegments do
     end
   end
 
-  describe "#user_segment_emails" do
+  describe ".user_segment_emails" do
     it "returns list of emails sorted by user creation date" do
       create(:user, email: "first@email.com", created_at: 1.day.ago)
       create(:user, email: "last@email.com")
 
       emails = UserSegments.user_segment_emails(:all_users)
       expect(emails).to eq ["first@email.com", "last@email.com"]
+    end
+  end
+
+  context "Geozones" do
+    let!(:new_york) { create(:geozone, name: "New York") }
+    let!(:california) { create(:geozone, name: "California") }
+    let!(:user1) { create(:user, geozone: new_york) }
+    let!(:user2) { create(:user, geozone: new_york) }
+    let!(:user3) { create(:user, geozone: california) }
+
+    before do
+      create(:geozone, name: "Mars")
+      create(:user, geozone: nil)
+    end
+
+    it "includes geozones in available segments" do
+      expect(UserSegments.segments).to include("new_york")
+      expect(UserSegments.segments).to include("california")
+      expect(UserSegments.segments).to include("mars")
+      expect(UserSegments.segments).not_to include("jupiter")
+    end
+
+    it "returns users of a geozone" do
+      expect(UserSegments.recipients("new_york")).to match_array [user1, user2]
+      expect(UserSegments.recipients("california")).to eq [user3]
+    end
+
+    it "accepts symbols as parameters" do
+      expect(UserSegments.recipients(:new_york)).to match_array [user1, user2]
+      expect(UserSegments.recipients(:california)).to eq [user3]
+    end
+
+    it "only returns active users of a geozone" do
+      user2.update!(erased_at: Time.current)
+
+      expect(UserSegments.recipients("new_york")).to eq [user1]
     end
   end
 end

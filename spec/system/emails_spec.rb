@@ -50,8 +50,9 @@ describe "Emails" do
       expect(email).to have_subject("Someone has commented on your citizen proposal")
       expect(email).to deliver_to(proposal.author)
       expect(email).to have_body_text(proposal_path(proposal))
-      expect(email).to have_body_text("To stop receiving these emails change your settings in")
-      expect(email).to have_body_text(account_path)
+      expect(email).to have_body_text("To unsubscribe from these emails, visit")
+      expect(email).to have_body_text(edit_subscriptions_path(token: proposal.author.subscriptions_token))
+      expect(email).to have_body_text('and uncheck "Notify me by email when someone comments on my contents"')
     end
 
     scenario "Do not send email about own proposal comments" do
@@ -77,8 +78,9 @@ describe "Emails" do
       expect(email).to have_subject("Someone has commented on your debate")
       expect(email).to deliver_to(debate.author)
       expect(email).to have_body_text(debate_path(debate))
-      expect(email).to have_body_text("To stop receiving these emails change your settings in")
-      expect(email).to have_body_text(account_path)
+      expect(email).to have_body_text("To unsubscribe from these emails, visit")
+      expect(email).to have_body_text(edit_subscriptions_path(token: debate.author.subscriptions_token))
+      expect(email).to have_body_text('and uncheck "Notify me by email when someone comments on my contents"')
     end
 
     scenario "Do not send email about own debate comments" do
@@ -105,8 +107,9 @@ describe "Emails" do
       expect(email).to have_subject("Someone has commented on your investment")
       expect(email).to deliver_to(investment.author)
       expect(email).to have_body_text(budget_investment_path(investment, budget_id: investment.budget_id))
-      expect(email).to have_body_text("To stop receiving these emails change your settings in")
-      expect(email).to have_body_text(account_path)
+      expect(email).to have_body_text("To unsubscribe from these emails, visit")
+      expect(email).to have_body_text(edit_subscriptions_path(token: investment.author.subscriptions_token))
+      expect(email).to have_body_text('and uncheck "Notify me by email when someone comments on my contents"')
     end
 
     scenario "Do not send email about own budget investments comments" do
@@ -133,8 +136,9 @@ describe "Emails" do
       expect(email).to have_subject("Someone has commented on your topic")
       expect(email).to deliver_to(topic.author)
       expect(email).to have_body_text(community_topic_path(topic, community_id: topic.community_id))
-      expect(email).to have_body_text("To stop receiving these emails change your settings in")
-      expect(email).to have_body_text(account_path)
+      expect(email).to have_body_text("To unsubscribe from these emails, visit")
+      expect(email).to have_body_text(edit_subscriptions_path(token: topic.author.subscriptions_token))
+      expect(email).to have_body_text('and uncheck "Notify me by email when someone comments on my contents"')
     end
 
     scenario "Do not send email about own topic comments" do
@@ -160,8 +164,9 @@ describe "Emails" do
       expect(email).to have_subject("Someone has commented on your poll")
       expect(email).to deliver_to(poll.author)
       expect(email).to have_body_text(poll_path(poll))
-      expect(email).to have_body_text("To stop receiving these emails change your settings in")
-      expect(email).to have_body_text(account_path)
+      expect(email).to have_body_text("To unsubscribe from these emails, visit")
+      expect(email).to have_body_text(edit_subscriptions_path(token: poll.author.subscriptions_token))
+      expect(email).to have_body_text('and uncheck "Notify me by email when someone comments on my contents"')
     end
 
     scenario "Do not send email about own poll comments" do
@@ -189,8 +194,9 @@ describe "Emails" do
       expect(email).to deliver_to(user)
       expect(email).not_to have_body_text(debate_path(debate))
       expect(email).to have_body_text(comment_path(Comment.last))
-      expect(email).to have_body_text("To stop receiving these emails change your settings in")
-      expect(email).to have_body_text(account_path)
+      expect(email).to have_body_text("To unsubscribe from these emails, visit")
+      expect(email).to have_body_text(edit_subscriptions_path(token: user.subscriptions_token))
+      expect(email).to have_body_text('and uncheck "Notify me by email when someone replies to my comments"')
     end
 
     scenario "Do not send email about own replies to own comments" do
@@ -233,7 +239,8 @@ describe "Emails" do
       expect(email).to have_body_text(direct_message.title)
       expect(email).to have_body_text(direct_message.body)
       expect(email).to have_body_text(direct_message.sender.name)
-      expect(email).to have_body_text(/#{user_path(direct_message.sender_id)}/)
+      expect(email).to have_body_text(user_path(direct_message.sender_id))
+      expect(email).to have_body_text(edit_subscriptions_path(token: receiver.subscriptions_token))
     end
 
     scenario "Sender email" do
@@ -249,12 +256,10 @@ describe "Emails" do
       expect(email).to have_body_text(direct_message.body)
       expect(email).to have_body_text(direct_message.receiver.name)
     end
-
-    pending "In the copy sent to the sender, display the receiver's name"
   end
 
   context "Proposal notification digest" do
-    scenario "notifications for proposals that I'm following" do
+    scenario "notifications for proposals that I'm following", :no_js do
       Setting["org_name"] = "CONSUL"
       user = create(:user, email_digest: true)
 
@@ -280,26 +285,27 @@ describe "Emails" do
       expect(email).to have_body_text(notification1.notifiable.body)
       expect(email).to have_body_text(proposal1.author.name)
 
-      expect(email).to have_body_text(/#{proposal_path(proposal1, anchor: "tab-notifications")}/)
-      expect(email).to have_body_text(/#{proposal_path(proposal1, anchor: "comments")}/)
-      expect(email).to have_body_text(/#{proposal_path(proposal1, anchor: "social-share")}/)
+      expect(email).to have_body_text(proposal_path(proposal1, anchor: "tab-notifications"))
+      expect(email).to have_body_text(proposal_path(proposal1, anchor: "comments"))
+      expect(email).to have_body_text(proposal_path(proposal1, anchor: "social-share"))
 
       expect(email).to have_body_text(proposal2.title)
       expect(email).to have_body_text(notification2.notifiable.title)
       expect(email).to have_body_text(notification2.notifiable.body)
-      expect(email).to have_body_text(/#{proposal_path(proposal2, anchor: "tab-notifications")}/)
-      expect(email).to have_body_text(/#{proposal_path(proposal2, anchor: "comments")}/)
-      expect(email).to have_body_text(/#{proposal_path(proposal2, anchor: "social-share")}/)
+      expect(email).to have_body_text(proposal_path(proposal2, anchor: "tab-notifications"))
+      expect(email).to have_body_text(proposal_path(proposal2, anchor: "comments"))
+      expect(email).to have_body_text(proposal_path(proposal2, anchor: "social-share"))
       expect(email).to have_body_text(proposal2.author.name)
 
       expect(email).not_to have_body_text(proposal3.title)
-      expect(email).to have_body_text(/#{account_path}/)
+      expect(email).to have_body_text(edit_subscriptions_path(token: user.subscriptions_token))
       expect(email).to have_body_text("Visit this proposal and unfollow it to stop receiving notifications.")
 
       notification1.reload
       notification2.reload
       expect(notification1.emailed_at).to be
       expect(notification2.emailed_at).to be
+      expect(email_digest.notifications).to be_empty
     end
 
     scenario "notifications moderated are not sent" do
@@ -316,8 +322,6 @@ describe "Emails" do
 
       expect { open_last_email }.to raise_error "No email has been sent!"
     end
-
-    xscenario "Delete all Notifications included in the digest after email sent"
   end
 
   context "User invites" do
@@ -337,7 +341,7 @@ describe "Emails" do
 
       email = open_last_email
       expect(email).to have_subject("Invitation to CONSUL")
-      expect(email).to have_body_text(/#{new_user_registration_path}/)
+      expect(email).to have_body_text(new_user_registration_path)
     end
   end
 
@@ -461,8 +465,9 @@ describe "Emails" do
       expect(email).to deliver_to(user1)
       expect(email).not_to have_body_text(poll_path(poll))
       expect(email).to have_body_text(comment_path(Comment.last))
-      expect(email).to have_body_text("To stop receiving these emails change your settings in")
-      expect(email).to have_body_text(account_path)
+      expect(email).to have_body_text("To unsubscribe from these emails, visit")
+      expect(email).to have_body_text(edit_subscriptions_path(token: user1.subscriptions_token))
+      expect(email).to have_body_text('and uncheck "Notify me by email when someone replies to my comments"')
     end
   end
 
@@ -492,6 +497,10 @@ describe "Emails" do
       expect(email).to have_subject("This is a different subject")
       expect(email).to deliver_from("no-reply@consul.dev")
       expect(email.body.encoded).to include("This is a different body")
+      expect(email).to have_body_text("To unsubscribe from these emails, visit")
+      expect(email).to have_body_text(
+                        edit_subscriptions_path(token: user_with_newsletter_in_segment_2.subscriptions_token))
+      expect(email).to have_body_text('and uncheck "Receive relevant information by email"')
     end
   end
 

@@ -18,8 +18,8 @@
 
     <% answer.images.reverse.each_with_index do |image, index| %>
       <li class="orbit-slide <%= is_active_class(index) %>">
-        <%= link_to image.attachment.url(:original), target: "_blank" do %>
-          <%= image_tag image.attachment.url(:original),
+        <%= link_to image.attachment, target: "_blank" do %>
+          <%= image_tag image.attachment,
                         class: "orbit-image",
                         alt: image.title.unicode_normalize %>
         <% end %>

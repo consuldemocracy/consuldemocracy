@@ -16,6 +16,10 @@ class Management::EmailVerificationsController < Management::BaseController
   private
 
     def email_verification_params
-      params.require(:email_verification).permit(:document_type, :document_number, :email)
+      params.require(:email_verification).permit(allowed_params)
+    end
+
+    def allowed_params
+      [:document_type, :document_number, :email]
     end
 end

@@ -4,11 +4,9 @@ pt-BR:
       title: Administração
     actions:
       actions: Ações
-      confirm: Tem certeza?
       confirm_hide: Confirmar a moderação
       delete: "Apagar"
       hide: Ocultar
-      hide_author: Esconder o autor
       restore: Restaurar
       mark_featured: Destacado
       unmark_featured: Desmarcar destaques
@@ -136,7 +134,6 @@ pt-BR:
       index:
         new_button: "Adicionar novo grupo"
     budget_headings:
-      no_headings: "Não há títulos."
       create:
         notice: "Título criado com sucesso!"
       update:
@@ -214,7 +211,6 @@ pt-BR:
           incompatible: Incompatível
           price: Preço
           author: Autor
-        cannot_calculate_winners: O orçamento tem que ficar na fase "Projetos de votação", "Revendo votos" ou "Orçamento concluído" em ordem para calcular os projetos vencedores
         see_results: "Exibir resultados"
         milestone_tags_filter_all: "Todos os status de andamento"
       show:

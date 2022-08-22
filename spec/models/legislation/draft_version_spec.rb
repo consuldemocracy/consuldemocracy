@@ -10,6 +10,16 @@ describe Legislation::DraftVersion do
     expect(legislation_draft_version).to be_valid
   end
 
+  it "dynamically validates the valid statuses" do
+    stub_const("#{Legislation::DraftVersion}::VALID_STATUSES", %w[custom])
+
+    legislation_draft_version.status = "custom"
+    expect(legislation_draft_version).to be_valid
+
+    legislation_draft_version.status = "published"
+    expect(legislation_draft_version).not_to be_valid
+  end
+
   it "renders the html from the markdown body field" do
     legislation_draft_version.body = body_markdown
 

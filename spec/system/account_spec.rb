@@ -53,7 +53,7 @@ describe "Account" do
   scenario "Edit email address" do
     visit account_path
 
-    click_link "Change my credentials"
+    click_link "Change my login details"
     fill_in "user_email", with: "new_user_email@example.com"
     fill_in "user_password", with: "new_password"
     fill_in "user_password_confirmation", with: "new_password"
@@ -80,7 +80,7 @@ describe "Account" do
     expect(page).to have_content "You have been signed in successfully."
 
     visit account_path
-    click_link "Change my credentials"
+    click_link "Change my login details"
     expect(page).to have_selector("input[value='new_user_email@example.com']")
   end
 
@@ -150,8 +150,7 @@ describe "Account" do
 
     expect(page).to have_current_path(account_path, ignore_query: true)
 
-    expect(page).to have_link("Change my credentials")
-    click_link "Change my credentials"
+    click_link "Change my login details"
     click_button "Update"
 
     expect(page).to have_content error_message
@@ -173,35 +172,53 @@ describe "Account" do
     expect(page).to have_content "Invalid Email or username or password"
   end
 
+  scenario "Erasing an account removes all related roles" do
+    user.update!(username: "Admin")
+    administrators = [create(:administrator, user: user),
+                      create(:administrator, user: create(:user, username: "Other admin"))]
+    budget = create(:budget, administrators: administrators)
+    visit admin_budget_budget_investments_path(budget)
+
+    expect(page).to have_select options: ["All administrators", "Admin", "Other admin"]
+
+    visit account_path
+    click_link "Erase my account"
+    fill_in "user_erase_reason", with: "I don't want my roles anymore!"
+    click_button "Erase my account"
+
+    expect(page).to have_content "Goodbye! Your account has been cancelled. We hope to see you again soon."
+
+    login_as(administrators.last.user)
+    visit admin_budget_budget_investments_path(budget)
+
+    expect(page).to have_select options: ["All administrators", "Other admin"]
+  end
+
   context "Recommendations" do
     scenario "are enabled by default" do
       visit account_path
 
-      expect(page).to have_content("Recommendations")
-      expect(page).to have_content("Show debates recommendations")
-      expect(page).to have_content("Show proposals recommendations")
-      expect(find("#account_recommended_debates")).to be_checked
-      expect(find("#account_recommended_proposals")).to be_checked
+      expect(page).to have_content "Recommendations"
+      expect(page).to have_field "Recommend debates to me", checked: true
+      expect(page).to have_field "Recommend proposals to me", checked: true
     end
 
     scenario "can be disabled through 'My account' page" do
       visit account_path
 
-      expect(page).to have_content("Recommendations")
-      expect(page).to have_content("Show debates recommendations")
-      expect(page).to have_content("Show proposals recommendations")
-      expect(find("#account_recommended_debates")).to be_checked
-      expect(find("#account_recommended_proposals")).to be_checked
+      expect(page).to have_content "Recommendations"
+      expect(page).to have_field "Recommend debates to me", checked: true
+      expect(page).to have_field "Recommend proposals to me", checked: true
 
-      uncheck "account_recommended_debates"
-      uncheck "account_recommended_proposals"
+      uncheck "Recommend debates to me"
+      uncheck "Recommend proposals to me"
 
       click_button "Save changes"
 
       expect(page).to have_content "Changes saved"
 
-      expect(find("#account_recommended_debates")).not_to be_checked
-      expect(find("#account_recommended_proposals")).not_to be_checked
+      expect(page).to have_field "Recommend debates to me", checked: false
+      expect(page).to have_field "Recommend proposals to me", checked: false
 
       visit debates_path
 

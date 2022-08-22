@@ -3,14 +3,12 @@
     <%= render "shared/remote_translations_button", remote_translations: @remote_translations %>
   <% end %>
 
-  <% if I18n.available_locales.size > 1 %>
-    <div class="top-links">
-      <%= render "shared/locale_switcher" %>
-      <div class="hide-for-small-only">
-        <%= render "shared/top_links" %>
-      </div>
+  <div class="top-links">
+    <%= render "shared/locale_switcher" %>
+    <div class="hide-for-small-only">
+      <%= render "shared/top_links" %>
     </div>
-  <% end %>
+  </div>
 
   <div class="top-bar">
     <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
@@ -26,7 +24,7 @@
       <% end %>
     </h1>
 
-    <div id="responsive-menu" class="small-responsive-menu">
+    <div id="responsive-menu">
       <div class="top-bar-right">
         <ul class="menu" data-responsive-menu="medium-dropdown">
           <%= render "shared/admin_login_items" %>

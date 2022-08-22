@@ -6,15 +6,13 @@ ar:
       new_comment_by: هناك تعليق جديد من <strong>%{commenter}</strong>
       subject: تم التعليق على %{commentable}
       title: تعليق جديد
-    config:
-      manage_email_subscriptions: لإيقاف استلام رسائل البريد الإلكتروني هذه عليك بتغيير الإعدادات الخاصة بك في
     email_verification:
       click_here_to_verify: هذا الرابط
       instructions_2: سوف يتحقق هذا البريد الإلكتروني من حسابك باستخدام <b>%{document_type} %{document_number}</b>. إذا لم تكن هذه ملكًا لك، فالرجاء عدم النقر على الرابط السابق وتجاهل هذه الرسالة الإلكترونية.
       instructions: لإكمال عملية التحقق من حساب المستخدم الخاص بك يجب عليك النقر على %{verification_link}.
       subject: تأكيد بريدك الإلكتروني
       thanks: شكرا جزيلا.
-      title: أكد حسابك باستخدام الرابط التالي
+      title: "أكد حسابك باستخدام الرابط التالي"
     reply:
       hi: مرحبا
       new_reply_by: وهناك رد جديد من <strong>%{commenter}</strong> على التعليق الخاص بك
@@ -25,16 +23,13 @@ ar:
       title: "إشعارات المقترح في %{org_name}"
       share: مشاركة مقترح
       comment: تعليق على مقترح
-      unsubscribe: "إذا كنت لا تريد تلقي إشعارات المقترح، قم بزيارة %{account} وإلغاء تحديد 'تلقي ملخص إشهارات المقترح'."
-      unsubscribe_account: حسابي
     direct_message_for_receiver:
       subject: "لقد تلقيت رسالة خاصة جديدة"
       reply: الرد على %{sender}
-      unsubscribe: "إذا كنت لا تريد استلام رسائل مباشرة ، قم بزيارة %{account} وقم بإلغاء تفعيل هذا الخيار."
-      unsubscribe_account: حسابي
     direct_message_for_sender:
       subject: "لقد قمت بإرسال رسالة خاصة جديدة"
-      title: "وقد أرسلت رسالة خاصة جديدة إلى <strong>%{receiver}</strong> مع المحتوى:"
+      title: "لقد قمت بإرسال رسالة خاصة جديدة"
+      text: "وقد أرسلت رسالة خاصة جديدة إلى <strong>%{receiver}</strong> مع المحتوى:"
     user_invite:
       ignore: "إذا لم تقم بطلب هذه الدعوة لا تقلق، يمكنك تجاهل هذه الرسالة."
       text: "شكراً لك لتقديم طلب للإنضمام إلى %{org} ، خلال ثواني ستكون قادر على المشاركة ، الرجاء ملاً النموذج التالي:"

@@ -6,7 +6,7 @@ class Poll::Recount < ApplicationRecord
   belongs_to :officer_assignment
 
   validates :author, presence: true
-  validates :origin, inclusion: { in: VALID_ORIGINS }
+  validates :origin, inclusion: { in: ->(*) { VALID_ORIGINS }}
 
   scope :web,    -> { where(origin: "web") }
   scope :booth,  -> { where(origin: "booth") }

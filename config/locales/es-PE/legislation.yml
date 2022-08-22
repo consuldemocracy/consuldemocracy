@@ -52,7 +52,6 @@ es-PE:
           winners: Seleccionada
       debate:
         empty_questions: No hay preguntas
-        participate: Realiza tus aportaciones al debate previo participando en los siguientes temas.
       index:
         filter: Filtrar
         filters:

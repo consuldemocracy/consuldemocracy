@@ -11,14 +11,9 @@ sq:
       save_changes_submit: Ruaj ndryshimet
       recommendations: Rekomandimet
       title: Llogaria ime
-      user_permission_debates: Merrni pjesë në debate
       user_permission_info: Me llogarinë tuaj ju mund të...
-      user_permission_proposal: Krijo propozime të reja
-      user_permission_support_proposal: Përkrahni propozimet
       user_permission_title: Pjesëmarrje
       user_permission_verify: Për të kryer të gjitha veprimet verifikoni llogarinë tuaj.
-      user_permission_verify_info: "* Vetëm për përdoruesit e regjistruar."
-      user_permission_votes: Merrni pjesë në votimin përfundimtar
       verified_account: Llogaria është verifikuar
       verify_my_account: Verifikoni llogarinë time
   application:
@@ -103,9 +98,6 @@ sq:
         button: Kërko
         placeholder: Kërko debate...
         title: Kërko
-      search_results:
-        one: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
-        other: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
       start_debate: Filloni një debat
       title: Debate
       section_header:
@@ -187,7 +179,6 @@ sq:
       conditions: Termat dhe kushtet e përdorimit
       consul: Consul Tirana
       consul_url: https://github.com/consul/consul
-      contact_us: Për ndihmë teknike hyni në
       copyright: Bashkia Tiranë, %{year}
       description: Ky portal përdor %{consul} i cili është %{open_source}.
       open_source: programet open-source
@@ -334,7 +325,6 @@ sq:
       select_order_long: "Ju shikoni propozime sipas:"
       start_proposal: Krijo propozim
       title: Propozime
-      top: Top javore
       top_link_proposals: Propozimet më të mbështetura sipas kategorisë
       section_header:
         icon_alt: Ikona propozimeve
@@ -672,15 +662,12 @@ sq:
   votes:
     agree: Jam dakort
     anonymous: Shumë vota anonime për të lejuar votën %{verify_account}.
-    comment_unauthenticated: Ju duhet %{signin} ose %{signup} për të votuar.
     disagree: Nuk jam dakort
     organizations: Organizatat nuk lejohen të votojnë
     supports: Suporti
     verified_only: Vetëm përdoruesit e verifikuar mund të votojnë për propozimet; %{verify_account}.
     budget_investments:
-      not_logged_in: Ju duhet %{signin} ose %{signup} për të vazhduar.
       not_verified: Vetëm përdoruesit e verifikuar mund të votojnë për projektet e investimeve; %{verify_account}.
-      organization: Organizatat nuk lejohen të votojnë
       unfeasible: Projektet e papërshtatshme të investimeve nuk mund të mbështeten
       not_voting_allowed: Faza e zgjedhjes është e mbyllur
   welcome:
@@ -709,22 +696,12 @@ sq:
       budget_investments:
         title: Investimet e rekomanduara
       slide: "Shih %{title}"
-    verification:
-      i_dont_have_an_account: Unë nuk kam një llogari
-      i_have_an_account: Unë  kam tashmë një llogari
-      question: A keni një llogari në %{org_name} ?
-      title: Verifikimi llogarisë
     welcome:
       go_to_index: Shiko propozimet dhe debatet
       title: Mer pjesë
-      user_permission_debates: Merrni pjesë në debate
       user_permission_info: Me llogarinë tuaj ju mund të...
-      user_permission_proposal: Krijo propozime të reja
-      user_permission_support_proposal: Përkrahni propozimet
       user_permission_verify: "Për të kryer të gjitha veprimet verifikoni llogarinë tuaj."
-      user_permission_verify_info: "* Vetëm për përdoruesit e regjistrimit."
       user_permission_verify_my_account: Verifikoni llogarinë time
-      user_permission_votes: Merrni pjesë në votimin përfundimtar
   invisible_captcha:
     sentence_for_humans: "Nëse jeni njerëzor, injoroni këtë fushë"
     timestamp_error_message: "Na vjen keq, kjo ishte shumë e shpejtë! Ju lutemi ri-dërgoni."
