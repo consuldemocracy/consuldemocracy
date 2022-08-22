@@ -74,12 +74,6 @@ uk-UA:
       form:
         submit_button: Розпочати обговорення
     debate:
-      comments:
-        zero: Коментарі відсутні
-        one: 1 коментар
-        few: "%{count} коментарі"
-        many: "%{count} коментарів"
-        other: "%{count} коментарів"
       votes:
         zero: Голоси відсутні
         one: 1 голос
@@ -137,12 +131,6 @@ uk-UA:
       start_new: Розпочати обговорення
     show:
       author_deleted: Користувач видалений
-      comments:
-        zero: Коментарі відсутні
-        one: 1 коментар
-        few: "%{count} коментарі"
-        many: "%{count} коментарів"
-        other: "%{count} коментарів"
       comments_title: Коментарі
       edit_debate_link: Редагувати
       flag: Це обговорення позначене як недоречне кількома користувачами.
@@ -416,12 +404,6 @@ uk-UA:
         edit: "Перед тим, як ви поділитесь нею, ви можете змінити текст."
         view_proposal: Не зараз, перейти до моєї пропозиції
       already_supported: Ви вже підтримали цю пропозицію. Поділіться нею!
-      comments:
-        zero: Коментарі відсутні
-        one: 1 коментар
-        few: "%{count} коментарі"
-        many: "%{count} коментарів"
-        other: "%{count} коментарів"
       support: Підтримка
       support_title: Підтримати цю пропозицію
       supports:
@@ -444,12 +426,6 @@ uk-UA:
     show:
       author_deleted: Користувача видалено
       code: "Код пропозиції:"
-      comments:
-        zero: Коментарі відсутні
-        one: 1 коментар
-        few: "%{count} коментарі"
-        many: "%{count} коментарів"
-        other: "%{count} коментарів"
       comments_tab: Коментарі
       dashboard_proposal_link: Інформаційна панель
       flag: Цю пропозицію позначено як недоречну кількома користувачами.
