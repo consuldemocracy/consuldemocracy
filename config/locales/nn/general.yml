@@ -28,23 +28,19 @@ nn:
       deleted: Denne kommentaren har blitt slettet
       moderator: Moderator
       responses:
-        zero: Ingen svar
         zero: "%{count} svar"
         one: 1 svar
         other: "%{count} svar"
       responses_show:
-        zero: Ingen svar
         zero: "%{count} svar (vis)"
         one: "1 svar (vis)"
         other: "%{count} svar (vis)"
       responses_collapse:
-        zero: Ingen svar
         zero: "%{count} svar (skjul)"
         one: "1 svar (skjul)"
         other: "%{count} svar (skjul)"
       user_deleted: Brukeren er slettet
       votes:
-        zero: Ingen stemmer
         zero: "%{count} stemmer"
         one: 1 stemme
         other: "%{count} stemmer"
@@ -70,13 +66,7 @@ nn:
       form:
         submit_button: Start en debatt
     debate:
-      comments:
-        zero: Ingen kommentarer
-        zero: "%{count} kommentarer"
-        one: 1 kommentar
-        other: "%{count} kommentarer"
       votes:
-        zero: Ingen stemmer
         zero: "%{count} stemmer"
         one: 1 stemme
         other: "%{count} stemmer"
@@ -131,11 +121,6 @@ nn:
       start_new: Start en debatt
     show:
       author_deleted: Brukeren er slettet
-      comments:
-        zero: Ingen kommentarer
-        zero: "%{count} kommentarer"
-        one: 1 kommentar
-        other: "%{count} kommentarer"
       comments_title: Kommentarer
       edit_debate_link: Rediger
       flag: Denne debatten har blitt flagget som upassende av flere brukere.
@@ -191,7 +176,6 @@ nn:
         preview_proposal: Forhåndsvis forslag
         current_goal: Nåværende mål
         supports:
-          zero: Ingen støtte
           zero: "Støtte"
           one: Støtte
           other: "Støtte"
@@ -226,7 +210,6 @@ nn:
       budgets: Deltakende budsjettering
       notification_item:
         new_notifications:
-          zero: "Du har ingen nye varsler"
           zero: Du har %{count} nye varsler
           one: Du har 1 nye varsel
           other: Du har %{count} nye varsler
@@ -390,20 +373,13 @@ nn:
         edit: "Før forslaget deles, har du mulighet til å endre teksten som du vil."
         view_proposal: Ikke nå, gå til mitt forslag
       already_supported: Du har allerede støttet dette forslaget. Del det!
-      comments:
-        zero: Ingen kommentarer
-        zero: "%{count} kommentarer"
-        one: 1 kommentarer
-        other: "%{count} kommentarer"
       support: Støtte
       support_title: Støtt dette forslaget
       supports:
-        zero: Ingen støtte
         zero: "%{count} støtte"
         one: 1 støtte
         other: "%{count} støtte"
       votes:
-        zero: Ingen stemmer
         zero: "%{count} stemmer"
         one: 1 stemme
         other: "%{count} stemmer"
@@ -415,11 +391,6 @@ nn:
     show:
       author_deleted: Bruker er slettet
       code: "Forslagskode:"
-      comments:
-        zero: Ingen kommentarer
-        zero: "%{count} kommentarer"
-        one: 1 kommentar
-        other: "%{count} kommentarer"
       comments_tab: Kommentarer
       dashboard_proposal_link: Dashboard
       flag: Dette forslaget har blitt flagget som upassende av flere brukere.
