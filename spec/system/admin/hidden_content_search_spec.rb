@@ -102,4 +102,24 @@ describe "Hidden content search", :admin do
     expect(page).not_to have_content "alien1"
     expect(page).not_to have_content "alien2"
   end
+
+  scenario "keeps filter parameters after searching" do
+    create(:user, :hidden, :with_confirmed_hide, username: "person1")
+    create(:user, :hidden, :with_confirmed_hide, username: "alien1")
+    create(:user, :hidden, username: "person2")
+    create(:user, :hidden, username: "alien2")
+
+    visit admin_hidden_users_path(filter: "with_confirmed_hide")
+
+    fill_in "search", with: "alien"
+    click_button "Search"
+
+    expect(page).not_to have_content "person1"
+    expect(page).to have_content "alien1"
+    expect(page).not_to have_content "person2"
+    expect(page).not_to have_content "alien2"
+
+    expect(page).to have_content "Confirmed"
+    expect(page).not_to have_link "Confirmed"
+  end
 end

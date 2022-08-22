@@ -1,10 +1,9 @@
 class SDGManagement::Relations::SearchComponent < ApplicationComponent
   include SDG::OptionsForSelect
-  attr_reader :label, :current_filter
+  attr_reader :label
 
-  def initialize(label:, current_filter: nil)
+  def initialize(label:)
     @label = label
-    @current_filter = current_filter
   end
 
   private
