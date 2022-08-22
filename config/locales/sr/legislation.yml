@@ -4,10 +4,6 @@ sr:
       comments:
         see_all: Видите све
         see_complete: Видите потпуно
-        comments_count:
-          one: "%{count} коментар"
-          few: "%{count} коментари"
-          other: "%{count} коментари"
         replies_count:
           one: "%{count} одговор"
           few: "%{count} одговори"
@@ -20,10 +16,6 @@ sr:
         title: Коментари
         comments_about: Коментари изнад
         see_in_context: Видите у контексту
-        comments_count:
-          one: "%{count} коментар"
-          few: "%{count} коментара"
-          other: "%{count} коментара"
       show:
         title: Коментар
       version_chooser:
@@ -95,11 +87,6 @@ sr:
         form:
           leave_comment: Оставите ваш одговор
       question:
-        comments:
-          zero: Нема коментара
-          one: "%{count} коментар"
-          few: "%{count} коментара"
-          other: "%{count} коментара"
         debate: Расправа
       show:
         answer_question: Објавите одговор
@@ -141,11 +128,6 @@ sr:
         one: "%{count} предлог"
         few: "%{count} предлога"
         other: "%{count} предлога"
-      comments:
-        zero: "Нема коментара"
-        one: "%{count} коментар"
-        few: "%{count} коментара"
-        other: "%{count} коментара"
       download: "Преузмите сажетак"
       top_comments:
         zero: "Нема коментара"
