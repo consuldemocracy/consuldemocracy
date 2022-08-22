@@ -1,7 +1,7 @@
 pt:
   date:
     abbr_month_names:
-      - 
+      -
       - Jan
       - Feb
       - Mar
@@ -15,7 +15,7 @@ pt:
       - Nov
       - Dec
     month_names:
-      - 
+      -
       - January
       - February
       - March
