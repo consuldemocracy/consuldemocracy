@@ -56,8 +56,6 @@ sl:
       form:
         submit_button: Začni razpravo
     debate:
-      comments:
-        zero: Brez komentarjev
       votes:
         zero: Ni glasov
     edit:
@@ -107,8 +105,6 @@ sl:
       start_new: Začni razpravo
     show:
       author_deleted: Uporabnik izbrisan
-      comments:
-        zero: Ni komentarjev
       comments_title: Komentarji
       edit_debate_link: Uredi
       flag: To razpravo je več uporabnikov označilo kot neprimerno.
@@ -307,8 +303,6 @@ sl:
         edit: "Preden ga deliš, lahko še spremeniš besedilo."
         view_proposal: Ne zdaj, pojdi v moj predlog
       already_supported: Ta predlog si že podprl/-a. Deli ga z drugimi!
-      comments:
-        zero: Brez komentarjev
       support: Glasuj za predlog!
       support_title: Podpri ta predlog
       supports:
@@ -322,8 +316,6 @@ sl:
     show:
       author_deleted: Uporabnik izbrisan
       code: "Koda predloga:"
-      comments:
-        zero: Brez komentarjev
       comments_tab: Komentarji
       flag: Ta predlog je več uporabnikov označilo kot neprimeren.
       notifications_tab: Obvestila
