@@ -746,6 +746,10 @@ sv:
         other: "%{count} språk används"
     optional: "Valfritt"
     required: "Obligatoriskt"
+    comments:
+      zero: "Inga kommentarer"
+      one: "1 kommentar"
+      other: "%{count} kommentarer"
   social:
     facebook: "%{org} på Facebook"
     twitter: "%{org} på Twitter"
