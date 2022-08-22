@@ -25,10 +25,6 @@ mk:
       topic:
         edit: Едитирај тема
         destroy: Избриши тема
-        comments:
-          zero: Нема коментари
-          one: 1 коментар
-          other: "%{count} коментари"
       author: Автор
       back: Назад кон %{community} %{proposal}
     topic:
