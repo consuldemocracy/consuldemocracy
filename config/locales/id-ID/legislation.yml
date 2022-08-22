@@ -4,8 +4,6 @@ id:
       comments:
         see_all: Lihat semuanya
         see_complete: Lihat lengkap
-        comments_count:
-          other: "%{count} komentar"
         replies_count:
           other: "%{count} balas"
         cancel: Batal
@@ -16,8 +14,6 @@ id:
         title: Komentar
         comments_about: Komentar tentang
         see_in_context: Lihat dalam konteks
-        comments_count:
-          other: "%{count} komentar"
       show:
         title: Komentar
       version_chooser:
@@ -86,9 +82,6 @@ id:
         form:
           leave_comment: Meninggalkan jawaban anda
       question:
-        comments:
-          zero: Tidak ada komentar
-          other: "%{count} komentar"
         debate: Perdebatan
       show:
         answer_question: Kirim jawaban
@@ -117,8 +110,5 @@ id:
         other: "1 bulan\n\n%{count} bulan"
       debate_phase: "Masa perdebatan"
       proposals_phase: "Masa proposal"
-      comments:
-        zero: "Tidak ada komentar"
-        other: "%{count} komentar"
       top_comments:
         zero: "Tidak ada komentar"
