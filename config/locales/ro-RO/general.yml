@@ -73,11 +73,6 @@ ro:
       form:
         submit_button: Începe o dezbatere
     debate:
-      comments:
-        zero: Nu există comentarii
-        one: 1 comentariu
-        few: "%{count} comentarii"
-        other: "%{count} comentarii"
       votes:
         zero: Nu există voturi
         one: 1 vot
@@ -134,11 +129,6 @@ ro:
       start_new: Începe o dezbatere
     show:
       author_deleted: Utilizator șters
-      comments:
-        zero: Nu există comentarii
-        one: 1 comentariu
-        few: "%{count} comentarii"
-        other: "%{count} comentarii"
       comments_title: Comentarii
       edit_debate_link: Editează
       flag: Această dezbatere a fost semnalizată ca fiind inadecvată de mai mulți utilizatori.
@@ -408,11 +398,6 @@ ro:
         edit: "Înainte de a fi distribuit, veți putea modifica textul după cum doriți."
         view_proposal: Nu acum, mergeți la propunerea mea
       already_supported: Ați susținut deja această propunere. Distribuiți-o!
-      comments:
-        zero: Nu există comentarii
-        one: 1 comentariu
-        few: "%{count} comentarii"
-        other: "%{count} comentarii"
       support: Sprijină
       support_title: Sprijină această propunere
       supports:
@@ -433,11 +418,6 @@ ro:
     show:
       author_deleted: Utilizator șters
       code: "Codul propunerii:"
-      comments:
-        zero: Nu există comentarii
-        one: 1 comentariu
-        few: "%{count} comentarii"
-        other: "%{count} comentarii"
       comments_tab: Comentarii
       dashboard_proposal_link: Tablou de bord
       flag: Această propunere a fost semnalată ca fiind inadecvată de mai mulți utilizatori.
