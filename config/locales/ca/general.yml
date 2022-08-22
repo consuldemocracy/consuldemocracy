@@ -66,10 +66,6 @@ ca:
       form:
         submit_button: Comença un nou debat
     debate:
-      comments:
-        zero: Sense comentaris
-        one: 1 Comentari
-        other: "%{count} comentaris"
       votes:
         zero: Sense vots
         one: 1 vot
@@ -125,10 +121,6 @@ ca:
       start_new: Comença un nou debat
     show:
       author_deleted: Usuari eliminat
-      comments:
-        zero: Sense comentaris
-        one: 1 Comentari
-        other: "%{count} comentaris"
       comments_title: Comentarios
       edit_debate_link: Editar proposta
       flag: Aquest debat ha sigut marcat com a inadequat per diversos usuaris.
@@ -390,10 +382,6 @@ ca:
         edit: "Abans que es comparteixi, podreu canviar el text que vulgueu."
         view_proposal: Ara no, veure la meva proposta
       already_supported: Ja has avalat aquesta proposta.
-      comments:
-        zero: Sense comentaris
-        one: 1 Comentari
-        other: "%{count} comentaris"
       support: Avalar
       support_title: Avalar aquesta proposta
       supports:
@@ -412,10 +400,6 @@ ca:
     show:
       author_deleted: Usuari eliminat
       code: "Codi de la proposta:"
-      comments:
-        zero: Sense comentaris
-        one: 1 Comentari
-        other: "%{count} comentaris"
       comments_tab: Comentarios
       dashboard_proposal_link: Panell
       flag: Aquesta proposta ha sigut marcada com a inadequada per diversos usuaris.
