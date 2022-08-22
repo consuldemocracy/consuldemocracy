@@ -75,7 +75,7 @@ sv:
     accessibility:
       title: Tillgänglighet
       description: |-
-        Tillgänglighet på webben hänvisar till allas möjlighet att tillträda webben och dess innehåll oavsett de funktionshinder (fysiska, intellektuella eller tekniska) som kan uppstå eller från det som beror på användarsammanhang (teknisk eller miljömässig). 
+        Tillgänglighet på webben hänvisar till allas möjlighet att tillträda webben och dess innehåll oavsett de funktionshinder (fysiska, intellektuella eller tekniska) som kan uppstå eller från det som beror på användarsammanhang (teknisk eller miljömässig).
 
         När webbplatser designas med tillgänglighet i åtanke, kan alla användare få tillgång till innehållet på jämlika villkor, exempelvis:
       examples:
