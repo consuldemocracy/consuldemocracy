@@ -9,7 +9,7 @@ uk-UA:
       - Пт
       - Сб
     abbr_month_names:
-      - 
+      -
       - Січ.
       - Лют.
       - Бер.
@@ -35,7 +35,7 @@ uk-UA:
       long: "%B %d, %Y"
       short: "%b %d"
     month_names:
-      - 
+      -
       - Січень
       - Лютий
       - Березень
