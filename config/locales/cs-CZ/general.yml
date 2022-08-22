@@ -763,6 +763,12 @@ cs:
         other: "%{count} používaných jazyků"
     optional: "Volitelně"
     required: "Požadováno"
+    comments:
+      zero: "Žádné komentáře"
+      one: "1 komentář"
+      few: "%{count} komentáře"
+      many: "%{count} komentářů"
+      other: "%{count} komentářů"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
