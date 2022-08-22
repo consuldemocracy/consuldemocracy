@@ -107,5 +107,5 @@ de:
         hide: Block
         search_placeholder: E-Mail oder Benutzername
         title: Benutzer blockieren
-      notice_block: Der User wurde blockiert. Alle Inhalte dieses Users sind nun ausgeblendet. 
+      notice_block: Der User wurde blockiert. Alle Inhalte dieses Users sind nun ausgeblendet.
       notice_hide: Benutzer gesperrt. Alle Diskussionen und Kommentare dieses Benutzers wurden ausgeblendet.
