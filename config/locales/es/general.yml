@@ -66,10 +66,6 @@ es:
       form:
         submit_button: Empieza un debate
     debate:
-      comments:
-        zero: Sin comentarios
-        one: 1 Comentario
-        other: "%{count} Comentarios"
       votes:
         zero: Sin votos
         one: 1 voto
@@ -125,10 +121,6 @@ es:
       start_new: Empezar un debate
     show:
       author_deleted: Usuario eliminado
-      comments:
-        zero: Sin comentarios
-        one: 1 Comentario
-        other: "%{count} Comentarios"
       comments_title: Comentarios
       edit_debate_link: Editar debate
       flag: Este debate ha sido marcado como inapropiado por varios usuarios.
@@ -390,10 +382,6 @@ es:
         edit: "Antes de que se publique podrás modificar el texto a tu gusto."
         view_proposal: Ahora no, ir a mi propuesta
       already_supported: '¡Ya has apoyado esta propuesta, compártela!'
-      comments:
-        zero: Sin comentarios
-        one: 1 Comentario
-        other: "%{count} Comentarios"
       support: Apoyar
       support_title: Apoyar esta propuesta
       supports:
@@ -412,10 +400,6 @@ es:
     show:
       author_deleted: Usuario eliminado
       code: "Código de la propuesta:"
-      comments:
-        zero: Sin comentarios
-        one: 1 Comentario
-        other: "%{count} Comentarios"
       comments_tab: Comentarios
       dashboard_proposal_link: Panel de control
       flag: Esta propuesta ha sido marcada como inapropiada por varios usuarios.
