@@ -70,11 +70,6 @@ sr:
       form:
         submit_button: Започните расправу
     debate:
-      comments:
-        zero: Нема коментара
-        one: 1 коментар
-        few: "%{count} коментара"
-        other: "%{count} коментара"
       votes:
         zero: Нема гласова
         one: 1 глас
@@ -131,11 +126,6 @@ sr:
       start_new: Започните расправу
     show:
       author_deleted: Корисник избрисан
-      comments:
-        zero: Нема коментара
-        one: 1 коментар
-        few: "%{count} коментара"
-        other: "%{count} коментара"
       comments_title: Коментари
       edit_debate_link: Уреди
       flag: Ова дебата је означена као неприкладна од стране неколико корисника.
@@ -403,11 +393,6 @@ sr:
         edit: "Пре него поделите можете да мењате текст како желите."
         view_proposal: Не сада, идите на мој предлог
       already_supported: Већ сте подржали овај предлог. Објавите га!
-      comments:
-        zero: Нема коментара
-        one: 1 коментар
-        few: "%{count} коментара"
-        other: "%{count} коментара"
       support: Подршка
       support_title: Подржите овај предлог
       supports:
@@ -428,11 +413,6 @@ sr:
     show:
       author_deleted: Корисник обрисан
       code: "Код предлога:"
-      comments:
-        zero: Нема коментара
-        one: 1 коментар
-        few: "%{count} коментара"
-        other: "%{count} коментара"
       comments_tab: Коментари
       dashboard_proposal_link: Контролна табла
       flag: Овај предлог је означен као неприкладан од стране неколико корисника.
