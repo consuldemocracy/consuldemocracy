@@ -746,6 +746,8 @@ tr:
         other: "%{count} dil kullanımda"
     optional: "Opsiyonel"
     required: "Gerekli"
+    comments:
+      zero: "Yorum yok"
   social:
     facebook: "Facebook %{org}"
     twitter: "Twitter %{org}"
