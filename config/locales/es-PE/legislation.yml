@@ -4,9 +4,6 @@ es-PE:
       comments:
         see_all: Ver todas
         see_complete: Ver completo
-        comments_count:
-          one: "%{count} comentario"
-          other: "%{count} Comentarios"
         replies_count:
           one: "%{count} respuesta"
           other: "%{count} respuestas"
@@ -18,9 +15,6 @@ es-PE:
         title: Comentarios
         comments_about: Comentarios sobre
         see_in_context: Ver en contexto
-        comments_count:
-          one: "%{count} comentario"
-          other: "%{count} Comentarios"
       show:
         title: Comentario
       version_chooser:
@@ -88,10 +82,6 @@ es-PE:
         form:
           leave_comment: Deja tu respuesta
       question:
-        comments:
-          zero: Sin comentarios
-          one: "%{count} comentario"
-          other: "%{count} Comentarios"
         debate: el debate
       show:
         answer_question: Enviar respuesta
@@ -128,9 +118,5 @@ es-PE:
         other: "%{count} debates"
       proposals:
         zero: "No hay propuestas"
-      comments:
-        zero: "Sin comentarios"
-        one: "%{count} comentario"
-        other: "%{count} Comentarios"
       top_comments:
         zero: "Sin comentarios"
