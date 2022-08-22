@@ -4,9 +4,6 @@ bg:
       comments:
         see_all: Вижте всички
         see_complete: Вижте завършен/и
-        comments_count:
-          one: "%{count} коментар"
-          other: "%{count} коментари"
         replies_count:
           one: "%{count} отговор"
           other: "%{count} отговори"
@@ -18,9 +15,6 @@ bg:
         title: Коментари
         comments_about: Коментари относно
         see_in_context: Вижте в контекста
-        comments_count:
-          one: "%{count} коментар"
-          other: "%{count} коментари"
       show:
         title: Коментар
       version_chooser:
@@ -92,10 +86,6 @@ bg:
         form:
           leave_comment: Оставете вашия отговор
       question:
-        comments:
-          zero: Няма коментари
-          one: "%{count} коментар"
-          other: "%{count} коментари"
         debate: Дискусия
       show:
         answer_question: Изпратете отговор
@@ -134,10 +124,6 @@ bg:
         zero: "Няма предложения"
         one: "%{count} предложение"
         other: "%{count} предложения"
-      comments:
-        zero: "Няма коментари"
-        one: "%{count} коментар"
-        other: "%{count} коментара"
       download: "Изтеглете резюме"
       top_comments:
         zero: "Без коментари"
