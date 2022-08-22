@@ -4,11 +4,6 @@ ru:
       comments:
         see_all: Просмотреть все
         see_complete: Посмотреть целиком
-        comments_count:
-          one: "%{count} комментарий"
-          few: "%{count} комментария(иев)"
-          many: "%{count} комментария(иев)"
-          other: "%{count} комментария(иев)"
         replies_count:
           one: "%{count} ответ"
           few: "%{count} ответа"
@@ -22,11 +17,6 @@ ru:
         title: Комментарии
         comments_about: Комментарии о
         see_in_context: Посмотреть в контексте
-        comments_count:
-          one: "%{count} комментарий"
-          few: "%{count} комментария(иев)"
-          many: "%{count} комментария(иев)"
-          other: "%{count} комментария(иев)"
       show:
         title: Отзыв
       version_chooser:
@@ -98,12 +88,6 @@ ru:
         form:
           leave_comment: Оставьте ваш ответ
       question:
-        comments:
-          zero: Нет комментариев
-          one: "%{count} комментарий"
-          few: "%{count} комментария(иев)"
-          many: "%{count} комментария(иев)"
-          other: "%{count} комментария(иев)"
         debate: Обсуждение
       show:
         answer_question: Отправить ответ
@@ -132,11 +116,5 @@ ru:
       debate_phase: "Фаза дебатов"
       proposals_phase: "Фаза предложений"
       allegations_phase: "Фаза комментирования"
-      comments:
-        zero: "Нет комментариев"
-        one: "%{count} комментарий"
-        few: "%{count} комментария(иев)"
-        many: "%{count} комментария(иев)"
-        other: "%{count} комментария(иев)"
       top_comments:
         zero: "Нет комментариев"
