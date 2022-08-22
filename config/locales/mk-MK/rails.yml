@@ -9,7 +9,7 @@ mk:
       - Пет
       - Саб
     abbr_month_names:
-      - 
+      -
       - Јан
       - Феб
       - Мар
@@ -35,7 +35,7 @@ mk:
       long: "%B %d, %Y"
       short: "%b %d"
     month_names:
-      - 
+      -
       - Јануари
       - Фебруари
       - Март
