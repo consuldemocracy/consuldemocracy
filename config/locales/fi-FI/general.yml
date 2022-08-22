@@ -51,10 +51,6 @@ fi:
     reply_link: Vastaa
   debates:
     debate:
-      comments:
-        zero: Ei kommentteja
-        one: 1 kommentti
-        other: "%{count} kommenttia"
       votes:
         zero: Ei ääniä
         one: 1 ääni
@@ -77,10 +73,6 @@ fi:
       more_info: Lisää tietoa
     show:
       author_deleted: Käyttäjä poistettu
-      comments:
-        zero: Ei kommentteja
-        one: 1 kommentti
-        other: "%{count} kommenttia"
       comments_title: Kommentit
       edit_debate_link: Muokkaa
       share: Jaa
@@ -201,10 +193,6 @@ fi:
         submit_button: Luo ehdotus
       start_new: Luo uusi ehdotus
     proposal:
-      comments:
-        zero: Ei kommentteja
-        one: 1 kommentti
-        other: "%{count} kommenttia"
       support: Tue
       supports:
         zero: Ei tukijoita
@@ -217,10 +205,6 @@ fi:
       total_percent: 100%
     show:
       author_deleted: Käyttäjä poistettu
-      comments:
-        zero: Ei kommentteja
-        one: 1 kommentti
-        other: "%{count} kommenttia"
       comments_tab: Kommentit
       notifications_tab: Ilmoitukset
       milestones_tab: Tavoitteet
