@@ -25,10 +25,6 @@ gl:
       topic:
         edit: Editar tema
         destroy: Eliminar tema
-        comments:
-          zero: Ningún comentario
-          one: 1 comentario
-          other: "%{count} comentarios"
       author: Autoría
       back: Regresar á %{proposal} %{community}
     topic:
@@ -48,6 +44,6 @@ gl:
           comments_tab: Comentarios
       sidebar:
         recommendations_title: Recomendacións para crear un tema
-        recommendation_one: Non escribas o título do tema ou frases enteiras en maiúsculas. Na rede iso interprétase como berrar, e a ninguén lle gusta que lle berren. 
+        recommendation_one: Non escribas o título do tema ou frases enteiras en maiúsculas. Na rede iso interprétase como berrar, e a ninguén lle gusta que lle berren.
         recommendation_two: Calquera tema ou comentario que implique unha acción ilegar borrarase, igual que os que tiveren a intención de sabotar os espazos do tema. Todo o demais está permitido.
         recommendation_three: Goza deste espazo e das voces que o enchen, pois tamén é teu.
