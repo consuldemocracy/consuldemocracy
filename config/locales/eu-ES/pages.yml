@@ -66,7 +66,7 @@ eu:
       keyboard_shortcuts:
         navigation_table:
           rows:
-            - 
+            -
             - 
               page_column: Eztabaidak
             - 
@@ -75,24 +75,24 @@ eu:
               page_column: Bozkak
             - 
               page_column: Partaidetzazko aurrekontuak
-            - 
+            -
         browser_table:
           rows:
-            - 
+            -
             - 
               browser_column: Firefox
-            - 
-            - 
-            - 
+            -
+            -
+            -
       textsize:
         browser_settings_table:
           rows:
-            - 
+            -
             - 
               browser_column: Firefox
-            - 
-            - 
-            - 
+            -
+            -
+            -
     titles:
       help: "%{org} zer da? - Herri partaidetza"
     verify:
