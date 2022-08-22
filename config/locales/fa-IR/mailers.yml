@@ -18,8 +18,8 @@ fa:
     proposal_notification_digest:
       info: "در اینجا اعلان های جدیدی که توسط نویسندگان پیشنهاداتی که شما در آن حمایت کرده اید، منتشر شده است%{org_name}"
       title: "اعلانهای پیشنهاد در%{org_name}"
-      share: به اشتراک گذاشتن پیشنهاد 
-      comment: نظرات پیشنهاد 
+      share: به اشتراک گذاشتن پیشنهاد
+      comment: نظرات پیشنهاد
     direct_message_for_receiver:
       subject: "شما يك پيغام خصوصي جديد دريافت كرده ايد."
       reply: "پاسخ دادن به\n%{sender}"
