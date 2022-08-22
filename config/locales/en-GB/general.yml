@@ -36,10 +36,6 @@ en-GB:
       form:
         submit_button: Розпочати обговорення
     debate:
-      comments:
-        zero: Коментарів немає
-        one: 1 коментар
-        other: "%{count} коментарів"
       votes:
         zero: Голоси відсутні
         one: 1 голос
@@ -77,10 +73,6 @@ en-GB:
       start_new: Розпочати обговорення
     show:
       author_deleted: Користувача видалено
-      comments:
-        zero: Коментарі відсутні
-        one: 1 коментар
-        other: "%{count} коментарів"
       comments_title: Коментарі
       edit_debate_link: Редагувати
       share: Поділитися
@@ -204,10 +196,6 @@ en-GB:
         submit_button: Подати пропозицію
       recommendation_three: Отримуйте задоволення від користування цим простором та голосами, які його наповнюють. Все це належить в тому числі вам.
     proposal:
-      comments:
-        zero: Коментарі відсутні
-        one: 1 коментар
-        other: "%{count} коментарів"
       support: Підтримка
       support_title: Підтримати цю пропозицію
       supports:
@@ -220,10 +208,6 @@ en-GB:
         other: "%{count} голосів"
     show:
       author_deleted: Користувача видалено
-      comments:
-        zero: Коментарі відсутні
-        one: 1 коментар
-        other: "%{count} коментарів"
       comments_tab: Коментарі
       notifications_tab: Сповіщення
       milestones_tab: Віхи
