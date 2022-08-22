@@ -69,10 +69,6 @@ tr:
       form:
         submit_button: Bir tartışma başlat
     debate:
-      comments:
-        zero: Yorum yok
-        one: 1 yorum
-        other: "%{count} yorumlar"
       votes:
         zero: Hiç oy yok
         one: 1 oy
@@ -128,10 +124,6 @@ tr:
       start_new: Bir tartışma başlat
     show:
       author_deleted: Kullanıcı silindi
-      comments:
-        zero: Yorum yok
-        one: 1 yorum
-        other: "%{count} yorumlar"
       comments_title: Yorumlar
       edit_debate_link: Düzenle
       flag: Bu tartışma birkaç kullanıcı tarafından uygunsuz olarak işaretlendi.
@@ -396,10 +388,6 @@ tr:
         edit: "Paylaşılmadan önce, metni istediğiniz gibi değiştirebilirsiniz."
         view_proposal: Şimdi değil, önerime git
       already_supported: Bu öneriyi zaten daha önce desteklediniz. Paylaşın!
-      comments:
-        zero: Yorum yok
-        one: 1 yorum
-        other: "%{count} yorumlar"
       support: Destek
       support_label: "%{proposal} destekle"
       support_title: Bu öneriyi destekle
@@ -419,10 +407,6 @@ tr:
     show:
       author_deleted: Kullanıcı silindi
       code: "Öneri kodu:"
-      comments:
-        zero: Yorum yok
-        one: 1 yorum
-        other: "%{count} yorumlar"
       comments_tab: Yorumlar
       dashboard_proposal_link: Gösterge paneli
       flag: Bu öneri birkaç kullanıcı tarafından uygunsuz olarak işaretlendi.
