@@ -2785,6 +2785,18 @@ footer {
     }
   }
 
+  @include breakpoint(small only) {
+
+    .message {
+      position: unset !important;
+    }
+
+    .table-cell {
+      clear: both;
+      display: block;
+    }
+  }
+
   .question-list {
     font-size: $small-font-size;
 
