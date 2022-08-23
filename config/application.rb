@@ -22,7 +22,7 @@ module Consul
     config.active_support.use_authenticated_message_encryption = false
 
     # Keep reading existing data in the legislation_annotations ranges column
-    config.active_record.yaml_column_permitted_classes = [ActiveSupport::HashWithIndifferentAccess]
+    config.active_record.yaml_column_permitted_classes = [ActiveSupport::HashWithIndifferentAccess, Symbol]
 
     # Handle custom exceptions
     config.action_dispatch.rescue_responses["FeatureFlags::FeatureDisabled"] = :forbidden
