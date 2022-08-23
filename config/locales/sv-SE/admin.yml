@@ -1345,6 +1345,7 @@ sv:
         label:
           booths: "Sök röstbås efter namn eller plats"
           budget_investments: "Sök investeringar efter titel, beskrivning eller område"
+          comments: "Sök kommentarer"
           debates: "Sök debatter efter titel eller beskrivning"
           legislation_processes: "Sök processer efter titel eller beskrivning"
           legislation_proposals: "Sök förslag efter titel eller beskrivning"
@@ -1354,6 +1355,7 @@ sv:
           poll_questions: "Sök omröstningsfrågor"
           polls: "Sök omröstningar efter namn eller beskrivning"
           proposals: "Sök förslag efter titel, kod, beskrivning eller fråga"
+          proposal_notifications: "Sök aviseringar efter titel eller beskrivning"
           users: "Sök användare efter namn eller e-postadress"
         search: "Sök"
       search_results: "Sökresultat"
