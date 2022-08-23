@@ -1345,6 +1345,7 @@ tr:
         label:
           booths: "İsme göre kabin ara"
           budget_investments: "Yatırımları başlık ya da açıklamaya göre arayın"
+          comments: "Yorum arama"
           debates: "Tartışmaları başlığa veya açıklamaya göre ara"
           legislation_processes: "Süreçleri başlık ya da açıklamaya göre arayın"
           legislation_proposals: "Önerilerde başlık ve açıklamalara göre arama"
@@ -1354,6 +1355,7 @@ tr:
           poll_questions: "Anket sorularını ara"
           polls: "Anketleri ad veya açıklamaya göre arayın"
           proposals: "Başlığa, koda, tanımlamaya veya soruya göre önerileri ara"
+          proposal_notifications: "Bildirimleri başlığa veya açıklamaya göre arama"
           users: "İsim veya e-posta ile kullanıcı ara"
         search: "Ara"
       search_results: "Arama sonuçları"
