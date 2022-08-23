@@ -677,6 +677,10 @@ body > header,
 
 .subnavigation {
 
+  @include breakpoint(small only) {
+    padding: 0 !important;
+  }
+
   .dropdown.menu > li {
 
     &.opens-left > .is-dropdown-submenu {
@@ -716,8 +720,8 @@ body > header,
         top: 20px;
 
         @include breakpoint(small only) {
-          right: -10px;
-          top: 8px;
+          right: -10px !important;
+          top: 8px !important;
         }
       }
     }
