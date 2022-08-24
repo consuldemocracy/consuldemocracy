@@ -5,12 +5,12 @@ describe "Results" do
   let(:group)   { create(:budget_group, budget: budget) }
   let(:heading) { create(:budget_heading, group: group, price: 1000) }
 
-  let!(:investment1) { create(:budget_investment, :selected, heading: heading, price: 200, ballot_lines_count: 900) }
-  let!(:investment2) { create(:budget_investment, :selected, heading: heading, price: 300, ballot_lines_count: 800) }
-  let!(:investment3) { create(:budget_investment, :incompatible, heading: heading, price: 500, ballot_lines_count: 700) }
-  let!(:investment4) { create(:budget_investment, :selected, heading: heading, price: 600, ballot_lines_count: 600) }
-
   before do
+    create(:budget_investment, :selected, title: "First selected", heading: heading, price: 200, ballot_lines_count: 900)
+    create(:budget_investment, :selected, title: "Second selected", heading: heading, price: 300, ballot_lines_count: 800)
+    create(:budget_investment, :incompatible, title: "Incompatible investment", heading: heading, price: 500, ballot_lines_count: 700)
+    create(:budget_investment, :selected, title: "Exceeding price", heading: heading, price: 600, ballot_lines_count: 600)
+
     Budget::Result.new(budget, heading).calculate_winners
   end
 
@@ -39,12 +39,12 @@ describe "Results" do
     expect(page).to have_selector("a.is-active", text: heading.name)
 
     within("#budget-investments-compatible") do
-      expect(page).to have_content investment1.title
-      expect(page).to have_content investment2.title
-      expect(page).not_to have_content investment3.title
-      expect(page).not_to have_content investment4.title
+      expect(page).to have_content "First selected"
+      expect(page).to have_content "Second selected"
+      expect(page).not_to have_content "Incompatible investment"
+      expect(page).not_to have_content "Exceeding price"
 
-      expect(investment1.title).to appear_before(investment2.title)
+      expect("First selected").to appear_before("Second selected")
     end
   end
 
@@ -54,16 +54,16 @@ describe "Results" do
     click_link "Show all"
 
     within("#budget-investments-compatible") do
-      expect(page).to have_content investment1.title
-      expect(page).to have_content investment2.title
-      expect(page).to have_content investment4.title
+      expect(page).to have_content "First selected"
+      expect(page).to have_content "Second selected"
+      expect(page).to have_content "Exceeding price"
 
-      expect(investment1.title).to appear_before(investment2.title)
-      expect(investment2.title).to appear_before(investment4.title)
+      expect("First selected").to appear_before("Second selected")
+      expect("Second selected").to appear_before("Exceeding price")
     end
 
     within("#budget-investments-incompatible") do
-      expect(page).to have_content investment3.title
+      expect(page).to have_content "Incompatible"
     end
   end
 
@@ -72,10 +72,10 @@ describe "Results" do
     visit budget_path(budget)
     click_link "See results"
 
-    expect(page).to have_content investment1.title
-    expect(page).to have_content investment2.title
-    expect(page).not_to have_content investment1.price
-    expect(page).not_to have_content investment2.price
+    expect(page).to have_content "First selected"
+    expect(page).to have_content "Second selected"
+    expect(page).not_to have_content 200
+    expect(page).not_to have_content 300
     expect(page).not_to have_content "Price"
     expect(page).not_to have_content "Available budget"
     expect(page).not_to have_content "€"
@@ -101,7 +101,7 @@ describe "Results" do
     expect(page).to have_selector("a.is-active", text: heading.name)
 
     within("#budget-investments-compatible") do
-      expect(page).to have_content investment1.title
+      expect(page).to have_content "First selected"
     end
   end
 
@@ -112,7 +112,7 @@ describe "Results" do
     visit budget_results_path(budget)
 
     within("#budget-investments-compatible") do
-      expect(page).to have_content investment1.title
+      expect(page).to have_content "First selected"
       expect(page).not_to have_content other_investment.title
     end
   end
@@ -128,20 +128,19 @@ describe "Results" do
   end
 
   scenario "No incompatible investments" do
-    investment3.incompatible = false
-    investment3.save!
+    Budget::Investment.incompatible.first.update!(incompatible: false, title: "Compatible investment")
 
     visit budget_path(budget)
     click_link "See results"
 
-    expect(page).to have_content investment1.title
-    expect(page).to have_content investment2.title
-    expect(page).to have_content investment3.title
-    expect(page).not_to have_content investment4.title
+    expect(page).to have_content "First selected"
+    expect(page).to have_content "Second selected"
+    expect(page).to have_content "Compatible investment"
+    expect(page).not_to have_content "Exceeding price"
 
     click_link "Show all"
 
-    expect(page).to have_content investment4.title
+    expect(page).to have_content "Exceeding price"
     expect(page).not_to have_content "Incompatibles"
   end
 end
