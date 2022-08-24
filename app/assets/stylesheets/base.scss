@@ -1814,6 +1814,25 @@ footer {
   }
 }
 
+a {
+
+  &.legislation-date {
+    display: block;
+
+    &:hover {
+      background: $brand;
+      text-decoration: none;
+
+      h4,
+      p,
+      h4 span,
+      .date-status {
+        color: #fff;
+      }
+    }
+  }
+}
+
 .date-status {
   color: $highlight-text;
   display: block;
