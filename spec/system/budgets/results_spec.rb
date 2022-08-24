@@ -48,7 +48,7 @@ describe "Results" do
     end
   end
 
-  scenario "Show non winner & incomaptible investments" do
+  scenario "Show non winner & incompatible investments" do
     visit budget_path(budget)
     click_link "See results"
     click_link "Show all"
