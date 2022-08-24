@@ -3,5 +3,5 @@
   "extends": [
     "config:base"
   ],
-  "ignorePaths": ["Gemfile"]
+  "ignorePaths": ["Gemfile", ".github/workflows/*"]
 }
