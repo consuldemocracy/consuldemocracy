@@ -81,27 +81,6 @@ describe "Results" do
     expect(page).not_to have_content "€"
   end
 
-  scenario "Does not have in account the price on hide money budgets" do
-    budget.update!(voting_style: "approval", hide_money: true)
-    heading.update!(price: 0)
-
-    inv1 = create(:budget_investment, :selected, heading: heading, price: 2000, ballot_lines_count: 1000)
-    inv2 = create(:budget_investment, :selected, heading: heading, price: 5000, ballot_lines_count: 1000)
-
-    Budget::Result.new(budget, heading).calculate_winners
-
-    visit budget_path(budget)
-    click_link "See results"
-
-    expect(page).to have_content inv1.title
-    expect(page).to have_content inv2.title
-    expect(page).not_to have_content inv1.price
-    expect(page).not_to have_content inv2.price
-    expect(page).not_to have_content "Price"
-    expect(page).not_to have_content "Available budget"
-    expect(page).not_to have_content "€"
-  end
-
   scenario "Does not raise error if budget (slug or id) is not found" do
     visit budget_results_path("wrong budget")
 
