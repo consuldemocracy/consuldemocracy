@@ -309,7 +309,7 @@ GEM
     httpi (2.4.5)
       rack
       socksify
-    i18n (1.10.0)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     i18n-tasks (0.9.34)
       activesupport (>= 4.0.2)
@@ -386,7 +386,7 @@ GEM
     mini_magick (4.11.0)
     mini_mime (1.1.2)
     mini_portile2 (2.8.0)
-    minitest (5.15.0)
+    minitest (5.16.3)
     mixlib-cli (2.1.8)
     mixlib-config (3.0.9)
       tomlrb
@@ -689,7 +689,7 @@ GEM
     websocket-extensions (0.1.5)
     whenever (1.0.0)
       chronic (>= 0.6.3)
-    wicked_pdf (2.1.0)
+    wicked_pdf (2.6.3)
       activesupport
     wkhtmltopdf-binary (0.12.6.5)
     xpath (3.2.0)
@@ -799,7 +799,7 @@ DEPENDENCIES
   web-console (~> 4.0.4)
   webdrivers (~> 4.6.0)
   whenever (~> 1.0.0)
-  wicked_pdf (~> 2.1.0)
+  wicked_pdf (~> 2.6.3)
   wkhtmltopdf-binary (~> 0.12.6)
 
 BUNDLED WITH
