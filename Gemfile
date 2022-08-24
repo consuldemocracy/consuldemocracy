@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "5.2.8.1"
+gem "rails", "6.0.5.1"
 
 gem "acts-as-taggable-on", "~> 8.1.0"
 gem "acts_as_votable", "~> 0.13.1"
@@ -28,6 +28,7 @@ gem "globalize-accessors", "~> 0.3.0"
 gem "graphiql-rails", "~> 1.7.0"
 gem "graphql", "~> 1.12.14"
 gem "groupdate", "~> 5.2.2"
+gem "image_processing", "~> 1.12.2"
 gem "initialjs-rails", "~> 0.2.0.9"
 gem "invisible_captcha", "~> 2.0.0"
 gem "jquery-fileupload-rails"
@@ -112,7 +113,7 @@ group :development do
   gem "rubocop-rspec", "~> 2.4.0", require: false
   gem "rvm1-capistrano3", "~> 1.4.0", require: false
   gem "scss_lint", "~> 0.59.0", require: false
-  gem "web-console", "~> 3.7.0"
+  gem "web-console", "~> 4.0.4"
 end
 
 eval_gemfile "./Gemfile_custom"

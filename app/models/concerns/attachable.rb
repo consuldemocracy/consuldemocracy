@@ -1,9 +1,8 @@
 module Attachable
-  include HasAttachment
   extend ActiveSupport::Concern
 
   included do
-    has_attachment :attachment
+    has_one_attached :attachment
     attr_accessor :cached_attachment
 
     validate :attachment_presence

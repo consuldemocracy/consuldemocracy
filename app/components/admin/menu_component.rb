@@ -4,7 +4,7 @@ class Admin::MenuComponent < ApplicationComponent
   private
 
     def moderated_content?
-      moderated_sections.include?(controller_name) && controller.class.parent != Admin::Legislation
+      moderated_sections.include?(controller_name) && controller.class.module_parent != Admin::Legislation
     end
 
     def moderated_sections
@@ -17,7 +17,7 @@ class Admin::MenuComponent < ApplicationComponent
     end
 
     def polls?
-      controller.class.parent == Admin::Poll::Questions::Answers ||
+      controller.class.module_parent == Admin::Poll::Questions::Answers ||
         %w[polls active_polls recounts results questions answers].include?(controller_name) &&
         action_name != "booth_assignments"
     end
@@ -35,7 +35,7 @@ class Admin::MenuComponent < ApplicationComponent
       controllers_names = ["settings", "tags", "geozones", "images", "content_blocks",
                            "local_census_records", "imports"]
       controllers_names.include?(controller_name) &&
-        controller.class.parent != Admin::Poll::Questions::Answers
+        controller.class.module_parent != Admin::Poll::Questions::Answers
     end
 
     def customization?
@@ -57,7 +57,7 @@ class Admin::MenuComponent < ApplicationComponent
 
     def local_census_records?
       controller_name == "local_census_records" ||
-        (controller_name == "imports" && controller.class.parent == Admin::LocalCensusRecords)
+        (controller_name == "imports" && controller.class.module_parent == Admin::LocalCensusRecords)
     end
 
     def messages_menu_active?
@@ -69,11 +69,11 @@ class Admin::MenuComponent < ApplicationComponent
     end
 
     def sdg_managers?
-      controller_name == "managers" && controller.class.parent ==  Admin::SDG
+      controller_name == "managers" && controller.class.module_parent ==  Admin::SDG
     end
 
     def managers?
-      controller_name == "managers" && controller.class.parent ==  Admin
+      controller_name == "managers" && controller.class.module_parent ==  Admin
     end
 
     def officers_link
@@ -320,7 +320,7 @@ class Admin::MenuComponent < ApplicationComponent
       [
         t("admin.menu.site_customization.images"),
         admin_site_customization_images_path,
-        controller_name == "images" && controller.class.parent != Admin::Poll::Questions::Answers
+        controller_name == "images" && controller.class.module_parent != Admin::Poll::Questions::Answers
       ]
     end
 
