@@ -300,6 +300,9 @@ Rails/PluralizationGrammar:
 Rails/Presence:
   Enabled: true
 
+Rails/RedundantTravelBack:
+  Enabled: true
+
 Rails/RelativeDateConstant:
   Enabled: true
 
