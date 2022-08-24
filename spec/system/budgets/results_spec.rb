@@ -155,6 +155,14 @@ describe "Results" do
     visit budget_path(budget)
     click_link "See results"
 
+    expect(page).to have_content investment1.title
+    expect(page).to have_content investment2.title
+    expect(page).to have_content investment3.title
+    expect(page).not_to have_content investment4.title
+
+    click_link "Show all"
+
+    expect(page).to have_content investment4.title
     expect(page).not_to have_content "Incompatibles"
   end
 end
