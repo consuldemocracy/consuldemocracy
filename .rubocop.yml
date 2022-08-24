@@ -288,6 +288,9 @@ Rails/OutputSafety:
   Exclude:
     - app/helpers/text_with_links_helper.rb
 
+Rails/Pick:
+  Enabled: true
+
 Rails/PluckId:
   Enabled: true
 

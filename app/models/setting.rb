@@ -31,7 +31,7 @@ class Setting < ApplicationRecord
 
   class << self
     def [](key)
-      where(key: key).pluck(:value).first.presence
+      where(key: key).pick(:value).presence
     end
 
     def []=(key, value)
@@ -42,7 +42,7 @@ class Setting < ApplicationRecord
 
     def rename_key(from:, to:)
       if where(key: to).empty?
-        value = where(key: from).pluck(:value).first.presence
+        value = where(key: from).pick(:value).presence
         create!(key: to, value: value)
       end
       remove(from)

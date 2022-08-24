@@ -176,7 +176,7 @@ describe "Voter" do
           expect(page).not_to have_link(answer_yes.title)
         end
 
-        travel_back
+        unfreeze_time
 
         click_link "Sign out"
 
