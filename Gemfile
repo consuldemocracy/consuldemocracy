@@ -59,7 +59,7 @@ gem "turbolinks", "~> 5.2.1"
 gem "turnout", "~> 2.5.0"
 gem "uglifier", "~> 4.2.0"
 gem "uuidtools", "~> 2.1.5"
-gem "view_component", "~> 2.49.1"
+gem "view_component", "~> 2.69.0"
 gem "whenever", "~> 1.0.0", require: false
 gem "wicked_pdf", "~> 2.6.3"
 gem "wkhtmltopdf-binary", "~> 0.12.6"
