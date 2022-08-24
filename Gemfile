@@ -95,7 +95,7 @@ end
 group :development do
   gem "capistrano", "~> 3.16.0", require: false
   gem "capistrano-bundler", "~> 2.0", require: false
-  gem "capistrano-rails", "~> 1.6.1", require: false
+  gem "capistrano-rails", "~> 1.6.2", require: false
   gem "capistrano3-delayed-job", "~> 1.7.6"
   gem "capistrano3-puma", "~> 5.0.4"
   gem "erb_lint", "~> 0.0.37", require: false
