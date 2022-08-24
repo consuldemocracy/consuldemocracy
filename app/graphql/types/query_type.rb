@@ -15,6 +15,13 @@ module Types
       argument :id, ID, required: true, default_value: false
     end
 
+    field :polls, Types::PollType.connection_type, "Returns all polls [for filter]", null: false do
+      argument :filter, String, required: false, default_value: "current"
+    end
+    field :poll, Types::PollType, "Returns a poll", null: false do
+      argument :id, ID, required: true, default_value: false
+    end
+
     field :proposals, Types::ProposalType.connection_type, "Returns all proposals", null: false
     field :proposal, Types::ProposalType, "Returns proposal for ID", null: false do
       argument :id, ID, required: true, default_value: false
@@ -22,6 +29,27 @@ module Types
 
     field :proposal_notifications, Types::ProposalNotificationType.connection_type, "Returns all proposal notifications", null: false
     field :proposal_notification, Types::ProposalNotificationType, "Returns proposal notification for ID", null: false do
+      argument :id, ID, required: true, default_value: false
+    end
+
+    # Support deprecated API
+    field(
+      :proposal_notifications,
+      Types::ProposalNotificationType.connection_type,
+      "Returns all proposal notifications",
+      null: false,
+      camelize: false,
+      deprecation_reason: "Snake case fields are deprecated. Please use proposalNotifications."
+    )
+
+    field(
+      :proposal_notification,
+      Types::ProposalNotificationType,
+      "Returns proposal notification for ID",
+      null: false,
+      camelize: false,
+      deprecation_reason: "Snake case fields are deprecated. Please use proposalNotification."
+    ) do
       argument :id, ID, required: true, default_value: false
     end
 
@@ -62,6 +90,14 @@ module Types
 
     def geozone(id:)
       Geozone.find(id)
+    end
+
+    def polls(filter:)
+      ::Poll.all.created_by_admin.not_budget.send(filter).includes(:geozones) #.sort_for_list(current_user)
+    end
+
+    def poll(id:)
+      ::Poll.find(id)
     end
 
     def proposals

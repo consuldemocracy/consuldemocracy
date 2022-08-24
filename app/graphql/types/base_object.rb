@@ -25,5 +25,11 @@ module Types
         define_method(field_name) { object.send(field_name).public_for_api }
       end
     end
+
+    def attachment_url_for(model)
+      return "" if model.blank?
+
+      context[:controller].url_for(model.attachment)
+    end
   end
 end

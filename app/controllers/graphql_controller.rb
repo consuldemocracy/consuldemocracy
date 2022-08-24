@@ -1,5 +1,6 @@
 class GraphqlController < ApplicationController
   include FeatureFlags
+  include GraphqlDevise::Concerns::SetUserByToken
 
   feature_flag :graphql_api
 
@@ -14,7 +15,7 @@ class GraphqlController < ApplicationController
 
       result = ConsulSchema.execute(query_string,
         variables: prepare_variables,
-        context: {},
+        context: gql_devise_context(User),
         operation_name: params[:operationName]
       )
       render json: result
