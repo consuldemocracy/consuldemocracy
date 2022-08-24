@@ -69,16 +69,14 @@ describe "Results" do
 
   scenario "Does not show price and available budget when hide money" do
     budget.update!(voting_style: "approval", hide_money: true)
-    visit budget_path(budget)
-    click_link "See results"
 
-    expect(page).to have_content "First selected"
-    expect(page).to have_content "Second selected"
-    expect(page).not_to have_content 200
-    expect(page).not_to have_content 300
+    visit budget_results_path(budget)
+
     expect(page).not_to have_content "Price"
     expect(page).not_to have_content "Available budget"
     expect(page).not_to have_content "€"
+    within("tr", text: "First selected") { expect(page).not_to have_content 200 }
+    within("tr", text: "Second selected") { expect(page).not_to have_content 300 }
   end
 
   scenario "Does not raise error if budget (slug or id) is not found" do
