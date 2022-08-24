@@ -9,7 +9,7 @@ section "Creating Users" do
       confirmed_at:           Time.current,
       terms_of_service:       "1",
       gender:                 %w[male female].sample,
-      date_of_birth:          rand((Time.current - 80.years)..(Time.current - 16.years)),
+      date_of_birth:          rand((80.years.ago)..(16.years.ago)),
       public_activity:        (rand(1..100) > 30)
     )
   end

@@ -77,7 +77,7 @@ describe Dashboard::Action do
 
     it "is active when published after day_offset" do
       action = build(:dashboard_action, required_supports: 0, day_offset: 10)
-      proposal = build(:proposal, published_at: Time.current - 10.days)
+      proposal = build(:proposal, published_at: 10.days.ago)
 
       expect(action).to be_active_for(proposal)
     end
@@ -91,7 +91,7 @@ describe Dashboard::Action do
 
     it "is not active when not enough time published" do
       action = build(:dashboard_action, required_supports: 0, day_offset: 10)
-      proposal = build(:proposal, published_at: Time.current - 9.days)
+      proposal = build(:proposal, published_at: 9.days.ago)
 
       expect(action).not_to be_active_for(proposal)
     end

@@ -236,6 +236,9 @@ Rails/CreateTableWithTimestamps:
 Rails/Date:
   Enabled: true
 
+Rails/DurationArithmetic:
+  Enabled: true
+
 Rails/DynamicFindBy:
   Enabled: true
   Whitelist:

@@ -200,14 +200,14 @@ describe "Moderate budget investments" do
       flagged_investment = create(:budget_investment,
         heading: heading,
         title: "Flagged investment",
-        created_at: Time.current - 1.day,
+        created_at: 1.day.ago,
         flags_count: 5
       )
 
       flagged_new_investment = create(:budget_investment,
         heading: heading,
         title: "Flagged new investment",
-        created_at: Time.current - 12.hours,
+        created_at: 12.hours.ago,
         flags_count: 3
       )
 
