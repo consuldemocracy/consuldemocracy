@@ -367,6 +367,14 @@ describe "Budgets" do
     expect(page).to have_css(".tabs-panel.is-active", count: 1)
   end
 
+  scenario "Index phases list do not show on mobile", :small_window do
+    visit budgets_path
+
+    expect(page).not_to have_selector "#budget_phases_tabs"
+    expect(page).not_to have_selector ".phase-title.tabs-title"
+    expect(page).not_to have_selector ".phase-title.tabs-title.is-active.current-phase-tab"
+  end
+
   context "Index map" do
     let(:heading) { create(:budget_heading, budget: budget) }
 

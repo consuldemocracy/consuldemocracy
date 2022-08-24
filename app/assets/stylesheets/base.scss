@@ -3315,6 +3315,13 @@ footer {
   background: $light;
   padding-bottom: $line-height * 2;
 
+  @include breakpoint(small only) {
+
+    .phases-list {
+      display: none;
+    }
+  }
+
   h2 {
     font-size: $base-font-size;
   }
