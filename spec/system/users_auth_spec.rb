@@ -660,7 +660,7 @@ describe "Users" do
 
   scenario "Sign in, admin with password expired" do
     user = create(:administrator).user
-    user.update!(password_changed_at: Time.current - 1.year)
+    user.update!(password_changed_at: 1.year.ago)
 
     visit new_user_session_path
     fill_in "Email or username", with: user.email
@@ -679,7 +679,7 @@ describe "Users" do
   end
 
   scenario "Sign in, admin without password expired" do
-    user = create(:user, password_changed_at: Time.current - 360.days)
+    user = create(:user, password_changed_at: 360.days.ago)
     admin = create(:administrator, user: user)
 
     login_as(admin.user)
@@ -689,7 +689,7 @@ describe "Users" do
   end
 
   scenario "Sign in, user with password expired" do
-    user = create(:user, password_changed_at: Time.current - 1.year)
+    user = create(:user, password_changed_at: 1.year.ago)
 
     login_as(user)
     visit root_path
@@ -699,7 +699,7 @@ describe "Users" do
 
   scenario "Admin with password expired trying to use same password" do
     user = create(:administrator).user
-    user.update!(password_changed_at: Time.current - 1.year, password: "123456789")
+    user.update!(password_changed_at: 1.year.ago, password: "123456789")
 
     visit new_user_session_path
     fill_in "Email or username", with: user.email

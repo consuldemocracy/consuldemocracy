@@ -352,7 +352,7 @@ describe Poll do
 
   describe "#sort_for_list" do
     it "returns polls sorted by name ASC" do
-      starts_at = Time.current + 1.day
+      starts_at = 1.day.from_now
       poll1 = create(:poll, geozone_restricted: true, starts_at: starts_at, name: "Zzz...")
       poll2 = create(:poll, geozone_restricted: true, starts_at: starts_at, name: "Mmmm...")
       poll3 = create(:poll, geozone_restricted: true, starts_at: starts_at, name: "Aaaaah!")
@@ -361,7 +361,7 @@ describe Poll do
     end
 
     it "returns not geozone restricted polls first" do
-      starts_at = Time.current + 1.day
+      starts_at = 1.day.from_now
       poll1 = create(:poll, geozone_restricted: false, starts_at: starts_at, name: "Zzz...")
       poll2 = create(:poll, geozone_restricted: true, starts_at: starts_at, name: "Aaaaaah!")
 
@@ -382,7 +382,7 @@ describe Poll do
     end
 
     it "returns polls earlier to start first" do
-      starts_at = Time.current + 1.day
+      starts_at = 1.day.from_now
       poll1 = create(:poll, geozone_restricted: false, starts_at: starts_at - 1.hour, name: "Zzz...")
       poll2 = create(:poll, geozone_restricted: false, starts_at: starts_at, name: "Aaaaah!")
 
@@ -402,7 +402,7 @@ describe Poll do
       end
 
       it "orders by name considering fallback locales" do
-        starts_at = Time.current + 1.day
+        starts_at = 1.day.from_now
         poll1 = create(:poll, starts_at: starts_at, name: "Charlie")
         poll2 = create(:poll, starts_at: starts_at, name: "Delta")
         poll3 = I18n.with_locale(:es) do
