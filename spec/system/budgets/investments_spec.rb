@@ -604,7 +604,7 @@ describe "Budget Investments" do
       fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
       fill_in "Location additional info", with: "City center"
       fill_in "If you are proposing in the name of a collective/organization, "\
-        "or on behalf of more people, write its name", with: "T.I.A."
+              "or on behalf of more people, write its name", with: "T.I.A."
       fill_in "Tags", with: "Towers"
       check "I agree to the Privacy Policy and the Terms and conditions of use"
 
@@ -669,7 +669,7 @@ describe "Budget Investments" do
       fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
       fill_in "Location additional info", with: "City center"
       fill_in "If you are proposing in the name of a collective/organization, "\
-        "or on behalf of more people, write its name", with: "T.I.A."
+              "or on behalf of more people, write its name", with: "T.I.A."
       fill_in "Tags", with: "Towers"
       check "I agree to the Privacy Policy and the Terms and conditions of use"
 

@@ -66,6 +66,9 @@ Layout/IndentationWidth:
 Layout/LeadingEmptyLines:
   Enabled: true
 
+Layout/LineEndStringConcatenationIndentation:
+  Enabled: true
+
 Layout/LineLength:
   Max: 110
   Severity: refactor
