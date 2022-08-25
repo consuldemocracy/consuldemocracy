@@ -83,5 +83,20 @@ describe Budget::Result do
         expect(heading.investments.winners.pluck(:ballot_lines_count)).to match_array([900, 800, 700])
       end
     end
+
+    context "budget with the hide money option" do
+      before { budget.update!(voting_style: "approval", hide_money: true) }
+
+      it "does not take the price into account" do
+        create(:budget_investment, :selected, heading: heading, price: 100, ballot_lines_count: 500)
+        create(:budget_investment, :incompatible, heading: heading, price: 300, ballot_lines_count: 800)
+        create(:budget_investment, :selected, heading: heading, price: 800, ballot_lines_count: 700)
+        create(:budget_investment, :selected, heading: heading, price: 500, ballot_lines_count: 600)
+
+        Budget::Result.new(budget, heading).calculate_winners
+
+        expect(heading.investments.winners.pluck(:ballot_lines_count)).to match_array([700, 600, 500])
+      end
+    end
   end
 end
