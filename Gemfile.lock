@@ -519,7 +519,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rbtree3 (0.6.0)
-    recipient_interceptor (0.3.0)
+    recipient_interceptor (0.3.1)
       mail
     redcarpet (3.5.1)
     regexp_parser (2.5.0)
@@ -775,7 +775,7 @@ DEPENDENCIES
   rails (= 6.0.5.1)
   rails-assets-leaflet!
   rails-assets-markdown-it (~> 9.0.1)!
-  recipient_interceptor (~> 0.3.0)
+  recipient_interceptor (~> 0.3.1)
   redcarpet (~> 3.5.1)
   responders (~> 3.0.1)
   rinku (~> 2.0.6)
