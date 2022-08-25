@@ -2,7 +2,7 @@ module JsonExporter
   def to_json_file(filename)
     data = []
     model.find_each { |record| data << json_values(record) }
-    File.open(filename, "w") { |file| file.write(data.to_json) }
+    File.write(filename, data.to_json)
   end
 
   private
