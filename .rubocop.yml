@@ -179,6 +179,9 @@ Lint/EmptyFile:
 Lint/LiteralAsCondition:
   Enabled: true
 
+Lint/NonAtomicFileOperation:
+  Enabled: true
+
 Lint/ParenthesesAsGroupedExpression:
   Enabled: true
 

@@ -4,7 +4,7 @@ describe "rake sitemap:create", type: :system do
   let(:file) { Rails.root.join("public", "sitemap.xml") }
 
   before do
-    File.delete(file) if File.exist?(file)
+    FileUtils.rm_f(file)
     Rake::Task["sitemap:create"].reenable
   end
 
