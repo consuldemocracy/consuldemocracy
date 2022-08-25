@@ -57,8 +57,8 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
-    acts-as-taggable-on (8.1.0)
-      activerecord (>= 5.0, < 6.2)
+    acts-as-taggable-on (9.0.1)
+      activerecord (>= 6.0, < 7.1)
     acts_as_votable (0.13.2)
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
@@ -703,7 +703,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  acts-as-taggable-on (~> 8.1.0)
+  acts-as-taggable-on (~> 9.0.1)
   acts_as_votable (~> 0.13.2)
   ahoy_matey (~> 3.2.0)
   airbrake (~> 11.0.3)
