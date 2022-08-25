@@ -678,7 +678,7 @@ GEM
       addressable
       httpi (~> 2.0)
       nokogiri (>= 1.4.2)
-    web-console (4.0.4)
+    web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
@@ -800,7 +800,7 @@ DEPENDENCIES
   uglifier (~> 4.2.0)
   uuidtools (~> 2.1.5)
   view_component (~> 2.69.0)
-  web-console (~> 4.0.4)
+  web-console (~> 4.2.0)
   webdrivers (~> 4.7.0)
   whenever (~> 1.0.0)
   wicked_pdf (~> 2.6.3)
