@@ -236,6 +236,9 @@ Rails/CreateTableWithTimestamps:
 Rails/Date:
   Enabled: true
 
+Rails/DurationArithmetic:
+  Enabled: true
+
 Rails/DynamicFindBy:
   Enabled: true
   Whitelist:
@@ -298,6 +301,9 @@ Rails/PluralizationGrammar:
   Enabled: true
 
 Rails/Presence:
+  Enabled: true
+
+Rails/RedundantTravelBack:
   Enabled: true
 
 Rails/RelativeDateConstant:

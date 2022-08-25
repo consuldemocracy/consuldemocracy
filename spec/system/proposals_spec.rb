@@ -794,8 +794,8 @@ describe "Proposals" do
 
     scenario "Proposals are ordered by newest" do
       best_proposal = create(:proposal, title: "Best proposal", created_at: Time.current)
-      medium_proposal = create(:proposal, title: "Medium proposal", created_at: Time.current - 1.hour)
-      worst_proposal = create(:proposal, title: "Worst proposal", created_at: Time.current - 1.day)
+      medium_proposal = create(:proposal, title: "Medium proposal", created_at: 1.hour.ago)
+      worst_proposal = create(:proposal, title: "Worst proposal", created_at: 1.day.ago)
 
       visit proposals_path
       click_link "newest"
