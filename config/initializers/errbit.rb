@@ -15,6 +15,7 @@ Airbrake.add_filter do |notice|
     "ActionController::RoutingError",
     "ActionController::InvalidAuthenticityToken",
     "ActionController::UnknownFormat",
+    "ActionController::BadRequest",
     "ActionDispatch::Cookies::CookieOverflow",
     "ActionView::Template::Error",
     "ActiveRecord::RecordNotFound",
