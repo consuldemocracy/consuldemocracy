@@ -56,7 +56,8 @@ sl-SI:
         price_first_year: "Cena tekom prvega leta (%{currency}) <small>(neobvezno, podatki niso javni)</small>"
         feasibility: Izvedljivost
         valuation_finished_alert: "Ali si prepričan/-a, da želiš to poročilo označiti kot končano? Ko to storiš, ga ne moreš več spreminjati."
-        not_feasible_alert: "Avtorju/-ici projekta bomo nemudoma poslali e-pošto s poročilom o izvedljivosti."
+        not_feasible_alert: ""
+        # not_feasible_alert: "Avtorju/-ici projekta bomo nemudoma poslali e-pošto s poročilom o izvedljivosti."
         save: Shrani spremembe
       notice:
         valuate: "Dosje posodobljen"
