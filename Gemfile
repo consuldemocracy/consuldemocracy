@@ -87,7 +87,7 @@ group :test do
   gem "capybara-webmock", "~> 0.6.0"
   gem "coveralls", "~> 0.8.23", require: false
   gem "email_spec", "~> 2.2.0"
-  gem "rspec-rails", "~> 5.0"
+  gem "rspec-rails", "~> 5.1.2"
   gem "selenium-webdriver", "~> 3.142"
   gem "webdrivers", "~> 4.7.0"
 end
