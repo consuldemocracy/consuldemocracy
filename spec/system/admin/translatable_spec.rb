@@ -9,9 +9,9 @@ describe "Admin edit translatable records", :admin do
   let(:fields) { translatable.translated_attribute_names }
 
   let(:attributes) do
-    fields.product(%i[en es]).map do |field, locale|
+    fields.product(%i[en es]).to_h do |field, locale|
       [:"#{field}_#{locale}", text_for(field, locale)]
-    end.to_h
+    end
   end
 
   context "Add a translation" do
