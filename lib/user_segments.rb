@@ -84,9 +84,9 @@ class UserSegments
     end
 
     def self.geozones
-      Geozone.order(:name).map do |geozone|
+      Geozone.order(:name).to_h do |geozone|
         [geozone.name.gsub(/./) { |char| character_approximation(char) }.underscore.tr(" ", "_"), geozone]
-      end.to_h
+      end
     end
 
     def self.character_approximation(char)

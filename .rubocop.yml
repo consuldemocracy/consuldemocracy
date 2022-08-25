@@ -509,6 +509,9 @@ Style/IdenticalConditionalBranches:
 Style/IfWithBooleanLiteralBranches:
   Enabled: true
 
+Style/MapToHash:
+  Enabled: true
+
 Style/MethodDefParentheses:
   Enabled: true
 
