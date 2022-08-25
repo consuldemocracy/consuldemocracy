@@ -485,6 +485,12 @@ Style/ClassVars:
 Style/CollectionMethods:
   Enabled: true
 
+Style/FileRead:
+  Enabled: true
+
+Style/FileWrite:
+  Enabled: true
+
 Style/HashConversion:
   Enabled: true
 

@@ -216,9 +216,9 @@ describe "Machine learning" do
              kind: "comments_summary",
              updated_at: 2.minutes.from_now)
       comments_file = MachineLearning::DATA_FOLDER.join(MachineLearning.comments_filename)
-      File.open(comments_file, "w") { |file| file.write([].to_json) }
+      File.write(comments_file, [].to_json)
       proposals_comments_summary_file = MachineLearning::DATA_FOLDER.join(MachineLearning.proposals_comments_summary_filename)
-      File.open(proposals_comments_summary_file, "w") { |file| file.write([].to_json) }
+      File.write(proposals_comments_summary_file, [].to_json)
     end
 
     visit admin_machine_learning_path
