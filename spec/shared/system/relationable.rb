@@ -173,11 +173,11 @@ shared_examples "relationable" do |relationable_model_name|
     related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
 
     2.times do
-      related_content.send("score_positive", build(:user))
+      related_content.send(:score_positive, build(:user))
     end
 
     6.times do
-      related_content.send("score_negative", build(:user))
+      related_content.send(:score_negative, build(:user))
     end
 
     login_as(user)
