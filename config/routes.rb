@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   draw :account
   draw :admin
+  draw :aue
   draw :budget
   draw :comment
   draw :community

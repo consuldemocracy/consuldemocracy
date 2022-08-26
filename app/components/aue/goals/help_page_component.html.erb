@@ -1,0 +1,19 @@
+<% provide(:title) { t("aue.goals.help.title") } %>
+
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: sdg_help_url %>
+<% end %>
+
+<section class="aue-help-content">
+  <h1><%= t("aue.goals.help.title") %></h1>
+  <p><%= t("aue.goals.help.description") %></p>
+  <ul class="tabs" id="help_tabs" data-deep-link="true" data-tabs>
+    <% @goals.each do |goal| %>
+      <li class="tabs-title <%= is_active?(goal) %>">
+        <%= link_to "#goal_#{goal.code}_tab" do %>
+          <% render AUE::Goals::IconComponent.new(goal) %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</section>

@@ -1,0 +1,66 @@
+@mixin aue-goal-list($spacing: 1ch) {
+  $min-spacing: $aue-icon-min-width / 10;
+  $max-spacing: #{"Max(#{$min-spacing}, #{$spacing})"};
+
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  grid-column-gap: 16px;
+  grid-row-gap: 8px;
+  list-style: none;
+  margin: -$spacing 0 $line-height / 3 -#{$spacing};
+  margin-left: calc(-1 * #{$max-spacing});
+  margin-top: calc(-1 * #{$max-spacing});
+  width: calc(100% + #{$spacing});
+  width: calc(100% + #{$max-spacing});
+
+  @include breakpoint(medium) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
+
+  > *,
+  > .tabs-title {
+    margin-bottom: 0;
+    margin-left: $spacing;
+    margin-left: $max-spacing;
+    margin-right: 0;
+    margin-top: $spacing;
+    margin-top: $max-spacing;
+  }
+
+  a:hover .aue-goal-icon {
+    filter: brightness(90%);
+  }
+}
+
+%aue-goal-list {
+  @include aue-goal-list;
+}
+
+%aue-goal-list-expanded {
+  $spacing: 0.5%;
+  @include aue-goal-list($spacing);
+
+  label,
+  li {
+    min-width: $aue-icon-min-width;
+    width: calc(100% / 17 - #{$spacing});
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .aue-goal-icon {
+      width: 100%;
+    }
+
+    a:focus {
+      outline: none;
+
+      img {
+        outline: $outline-focus;
+      }
+    }
+  }
+}

@@ -14,3 +14,6 @@ load Rails.root.join("db", "pages.rb")
 
 # Sustainable Development Goals
 load Rails.root.join("db", "sdg.rb")
+
+# Agenda Urbana Española
+load Rails.root.join("db", "aue.rb")

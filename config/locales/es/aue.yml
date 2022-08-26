@@ -1,0 +1,63 @@
+es:
+  aue:
+    goals:
+      goal_1:
+        title: "Objetivo Estratégico 1"
+        description: "Ordenar el territorio y hacer un uso racional del suelo, conservarlo y protegerlo."
+      goal_2:
+        title: "Objetivo Estratégico 2"
+        description: "Evitar la dispersión urbana y revitalizar la ciudad existente."
+      goal_3:
+        title: "Objetivo Estratégico 3"
+        description: "Prevenir y reducir los impactos del cambio climático y mejorar la resiliencia."
+      goal_4:
+        title: "Objetivo Estratégico 4"
+        description: "Hacer una gestión sostenible de los recursos y favorecer la economía circular."
+      goal_5:
+        title: "Objetivo Estratégico 5"
+        description: "Favorecer la proximidad y la movilidad sostenible."
+      goal_6:
+        title: "Objetivo Estratégico 6"
+        description: "Fomentar la cohesión social y buscar la equidad."
+      goal_7:
+        title: "Objetivo Estratégico 7"
+        description: "Impulsar y favorecer la Economía Urbana."
+      goal_8:
+        title: "Objetivo Estratégico 8"
+        description: "Garantizar el acceso a la vivienda"
+      goal_9:
+        title: "Objetivo Estratégico 9"
+        description: "Liderar y fomentar la innovación digital."
+      goal_10:
+        title: "Objetivo Estratégico 10"
+        description: "Mejorar los instrumentos de intervención y la gobernanza."
+      help:
+        title: "Ayuda Agenda Urbana Española"
+        description: "Puedes alinear tus aportaciones a la comunidad (debates, propuestas ciudadanas y proyectos de inversión) con los Agenda Urbana Española de la Agenda 2030, esto nos permitirá tener una visión general de nuestra aportación en cada uno de los Agenda Urbana Española. A continuación puedes informarte de todos los objetivos, sus metas y las metas localizadas."
+      show:
+        read_more: "Leer más sobre %{goal}"
+        read_less: "Leer menos sobre %{goal}"
+        targets:
+          no_local_targets: Este objetivo no tiene metas localizadas
+      title: "Agenda Urbana Española"
+      filter:
+        heading: "Filtros por ODS"
+        link: "Ver %{resources} del objetivo %{code}"
+        more:
+          one: "Un objetivo más"
+          other: "%{count} objetivos más"
+    related_list_selector:
+      goal_identifier: "ODS%{code}"
+      goal_list: "Puedes seleccionar uno o varios ODS con los que se alinea tu %{record}"
+      help:
+        title: "¿Qué ODS y metas se alinean con mi %{record}?"
+        text: "página de ayuda de ODS"
+      hint: Puedes introducir el código de un objetivo/meta específico o un texto para encontrar uno. Para más información visita la %{link}.
+      remove_tag: "Eliminar"
+      title: "Agenda Urbana Española y Metas"
+    targets:
+      filter:
+        link: "Ver %{resources} de la meta %{code}"
+        more:
+          one: "Una meta más"
+          other: "%{count} metas más"

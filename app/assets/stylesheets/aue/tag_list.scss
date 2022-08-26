@@ -1,0 +1,32 @@
+.aue-tag-list {
+  .aue-goal-tag-list {
+    @extend %aue-goal-list;
+
+    .more-goals {
+      @extend %tag;
+    }
+  }
+
+  .aue-target-tag-list {
+    @extend %tags;
+
+    a:not(.more-targets),
+    span {
+      color: $white;
+    }
+
+    @each $code, $color in $aue-colors {
+      a[data-code^="#{$code}"] {
+        background-color: $color;
+
+        &:hover {
+          background-color: darken($color, 10%);
+        }
+      }
+
+      span[data-code^="#{$code}"] {
+        background-color: $color;
+      }
+    }
+  }
+}

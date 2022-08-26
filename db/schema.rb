@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_03_112944) do
+ActiveRecord::Schema.define(version: 2022_08_25_082012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -123,6 +123,25 @@ ActiveRecord::Schema.define(version: 2021_11_03_112944) do
     t.index ["created_at"], name: "index_audits_on_created_at"
     t.index ["request_uuid"], name: "index_audits_on_request_uuid"
     t.index ["user_id", "user_type"], name: "user_index"
+  end
+
+  create_table "aue_goals", force: :cascade do |t|
+    t.integer "code", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_aue_goals_on_code", unique: true
+  end
+
+  create_table "aue_relations", force: :cascade do |t|
+    t.string "related_aue_type"
+    t.bigint "related_aue_id"
+    t.string "relatable_type"
+    t.bigint "relatable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["relatable_type", "relatable_id"], name: "index_aue_relations_on_relatable_type_and_relatable_id"
+    t.index ["related_aue_id", "related_aue_type", "relatable_id", "relatable_type"], name: "aue_relations_unique", unique: true
+    t.index ["related_aue_type", "related_aue_id"], name: "index_aue_relations_on_related_aue_type_and_related_aue_id"
   end
 
   create_table "banner_sections", id: :serial, force: :cascade do |t|

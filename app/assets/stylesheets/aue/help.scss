@@ -1,0 +1,13 @@
+.aue-help-content {
+  @include grid-column-gutter;
+
+  > .tabs {
+    @extend %aue-goal-list-expanded;
+
+    li {
+      &:focus {
+        outline: $outline-focus;
+      }
+    }
+  }
+}

@@ -143,6 +143,21 @@ $sdg-colors: (
   17: #19486a
 ) !default;
 
+$aue-icon-min-width: 45px !default;
+
+$aue-colors: (
+  1: #97c00e1E,
+  2: #006ab31E,
+  3: #0097941E,
+  4: #80234a1E,
+  5: #f295011E,
+  6: #fdc4001E,
+  7: #ea6ea31E,
+  8: #977c221E,
+  9: #cc071e1E,
+  10: #9a0c7d1E
+) !default;
+
 // 3. Foundation overrides depending on CONSUL variables
 // -----------------------------------------------------
 
