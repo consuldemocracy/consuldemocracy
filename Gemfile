@@ -17,7 +17,7 @@ gem "cocoon", "~> 1.2.15"
 gem "daemons", "~> 1.4.1"
 gem "dalli", "~> 2.7.11"
 gem "delayed_job_active_record", "~> 4.1.7"
-gem "devise", "~> 4.8.0"
+gem "devise", "~> 4.8.1"
 gem "devise-security", "~> 0.16.0"
 gem "file_validators", "~> 3.0.0"
 gem "font-awesome-sass", "~> 5.15.1" # Remember to update vendor/assets/images/fontawesome when updating this gem
