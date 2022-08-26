@@ -17,9 +17,9 @@ module FlagActions
 
     def flaggable
       if resource_model.to_s == "Budget::Investment"
-        instance_variable_get("@investment")
+        instance_variable_get(:@investment)
       elsif resource_model.to_s == "Legislation::Proposal"
-        instance_variable_get("@proposal")
+        instance_variable_get(:@proposal)
       else
         instance_variable_get("@#{resource_model.to_s.downcase}")
       end
