@@ -1,6 +1,11 @@
 GEM
-  remote: https://rubygems.org/
   remote: https://rails-assets.org/
+  specs:
+    rails-assets-leaflet (1.5.1)
+    rails-assets-markdown-it (9.0.1)
+
+GEM
+  remote: https://rubygems.org/
   specs:
     actioncable (6.0.5.1)
       actionpack (= 6.0.5.1)
@@ -146,10 +151,8 @@ GEM
     chef-utils (16.4.41)
     childprocess (3.0.0)
     chronic (0.10.2)
-    ckeditor (4.3.0)
+    ckeditor (5.1.1)
       orm_adapter (~> 0.5.0)
-      terrapin
-    climate_control (0.2.0)
     cocoon (1.2.15)
     coffee-rails (5.0.0)
       coffee-script (>= 2.2.0)
@@ -500,8 +503,6 @@ GEM
       bundler (>= 1.3.0)
       railties (= 6.0.5.1)
       sprockets-rails (>= 2.0.0)
-    rails-assets-leaflet (1.5.1)
-    rails-assets-markdown-it (9.0.1)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -646,8 +647,6 @@ GEM
       tins (~> 1.0)
     terminal-table (3.0.2)
       unicode-display_width (>= 1.1.1, < 3)
-    terrapin (0.6.0)
-      climate_control (>= 0.0.3, < 1.0)
     thor (1.2.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -727,7 +726,7 @@ DEPENDENCIES
   capybara-webmock (~> 0.6.0)
   caxlsx (~> 3.2.0)
   caxlsx_rails (~> 0.6.3)
-  ckeditor (~> 4.3.0)
+  ckeditor (~> 5.1.1)
   cocoon (~> 1.2.15)
   coveralls (~> 0.8.23)
   daemons (~> 1.4.1)
