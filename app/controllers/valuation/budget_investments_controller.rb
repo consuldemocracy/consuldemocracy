@@ -16,11 +16,12 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
 
   def index
     @heading_filters = heading_filters
-    @investments = if current_user.valuator? && @budget.present?
-                      load_valuator_investments
-                   else
-                      Budget::Investment.none.page(params[:page])
-                   end
+
+    if current_user.valuator? && @budget.present?
+      @investments = load_valuator_investments
+    else
+      @investments = Budget::Investment.none.page(params[:page])
+    end
   end
 
   def valuate
