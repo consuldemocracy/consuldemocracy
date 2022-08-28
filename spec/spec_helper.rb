@@ -45,7 +45,7 @@ RSpec.configure do |config|
     example.run
     self.use_transactional_tests = true
 
-    DatabaseCleaner.clean_with(:truncation)
+    ActiveRecord::Tasks::DatabaseTasks.truncate_all
     Rails.application.load_seed
   end
 

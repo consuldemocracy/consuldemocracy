@@ -1709,7 +1709,7 @@ describe "Admin budget investments", :admin do
 
       header = page.response_headers["Content-Disposition"]
       expect(header).to match(/^attachment/)
-      expect(header).to match(/filename="budget_investments.csv"$/)
+      expect(header).to match(/filename="budget_investments.csv"/)
 
       csv_contents = "ID,Title,Supports,Administrator,Valuator,Valuation Group,Scope of operation,"\
                      "Feasibility,Val. Fin.,Selected,Show to valuators,Author username\n"\

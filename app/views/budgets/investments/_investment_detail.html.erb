@@ -5,6 +5,8 @@
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
   <%= l investment.created_at.to_date %>
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
+  <%= render Shared::CommentsCountComponent.new(investment.comments_count, url: "#comments") %>
+  <span class="bullet">&nbsp;&bull;&nbsp;</span>
   <%= investment.heading.name %>
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
   <% if local_assigns[:preview].nil? %>

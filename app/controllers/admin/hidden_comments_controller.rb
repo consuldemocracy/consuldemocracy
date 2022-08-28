@@ -1,11 +1,10 @@
 class Admin::HiddenCommentsController < Admin::BaseController
-  has_filters %w[without_confirmed_hide all with_confirmed_hide]
+  include Admin::HiddenContent
 
   before_action :load_comment, only: [:confirm_hide, :restore]
 
   def index
-    @comments = Comment.not_valuations.only_hidden.with_visible_author
-                       .send(@current_filter).order(hidden_at: :desc).page(params[:page])
+    @comments = hidden_content(Comment.not_valuations).with_visible_author
   end
 
   def confirm_hide

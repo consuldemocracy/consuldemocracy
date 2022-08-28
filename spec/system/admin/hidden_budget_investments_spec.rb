@@ -31,9 +31,6 @@ describe "Admin hidden budget investments", :admin do
     investment = create(:budget_investment, :hidden, heading: heading)
     visit admin_hidden_budget_investments_path
 
-    click_link "Pending"
-
-    expect(page).not_to have_link "Pending"
     expect(page).to have_content(investment.title)
 
     click_button "Confirm moderation"
@@ -46,18 +43,18 @@ describe "Admin hidden budget investments", :admin do
 
   scenario "Current filter is properly highlighted" do
     visit admin_hidden_budget_investments_path
-    expect(page).not_to have_link("All")
-    expect(page).to have_link("Pending")
-    expect(page).to have_link("Confirmed")
-
-    visit admin_hidden_budget_investments_path(filter: "without_confirmed_hide")
+    expect(page).not_to have_link("Pending")
     expect(page).to have_link("All")
     expect(page).to have_link("Confirmed")
-    expect(page).not_to have_link("Pending")
+
+    visit admin_hidden_budget_investments_path(filter: "all")
+    expect(page).to have_link("Pending")
+    expect(page).not_to have_link("All")
+    expect(page).to have_link("Confirmed")
 
     visit admin_hidden_budget_investments_path(filter: "with_confirmed_hide")
-    expect(page).to have_link("All")
     expect(page).to have_link("Pending")
+    expect(page).to have_link("All")
     expect(page).not_to have_link("Confirmed")
   end
 

@@ -10,7 +10,7 @@ class InstallationController < ApplicationController
   private
 
     def consul_installation_details
-      { release: "1.4.1" }.merge(features: settings_feature_flags)
+      { release: "1.5.0" }.merge(features: settings_feature_flags)
     end
 
     def settings_feature_flags

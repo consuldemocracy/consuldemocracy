@@ -193,4 +193,25 @@ describe Comment do
       expect(Comment.public_for_api).to be_empty
     end
   end
+
+  describe ".search" do
+    it "searches by body" do
+      comment = create(:comment, body: "I agree")
+
+      expect(Comment.search("agree")).to eq([comment])
+    end
+
+    it "searches by commentable title" do
+      proposal = create(:proposal, title: "More wood!")
+      comment = create(:comment, body: "I agree", commentable: proposal)
+
+      expect(Comment.search("wood")).to eq([comment])
+    end
+
+    it "does not return non-matching records" do
+      create(:comment, body: "I agree")
+
+      expect(Comment.search("disagree")).to be_empty
+    end
+  end
 end
