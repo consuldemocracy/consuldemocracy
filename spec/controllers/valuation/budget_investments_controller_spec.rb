@@ -6,6 +6,25 @@ describe Valuation::BudgetInvestmentsController do
   before { sign_in(valuator.user) }
 
   describe "GET index" do
+    context "when budget is present" do
+      it "not raise error" do
+        expect do
+          get :index, params: { budget_id: budget.id }
+        end.to_not raise_error
+      end
+    end
+      
+    context "when current user is not valuator" do
+      let(:moderator) { create(:moderator) }
+      before { sign_in(moderator.user) }
+
+      it "not raise error" do
+        expect do
+          get :index, params: { budget_id: budget.id }
+        end.to_not raise_error
+      end
+    end
+
     it "raises an exception when the feature is disabled" do
       Setting["process.budgets"] = false
 
