@@ -17,10 +17,16 @@ end
 
 Airbrake.add_filter do |notice|
   ignorables = [
-    "ActiveRecord::RecordNotFound",
-    "ActionController::RoutingError",
-    "FeatureFlags::FeatureDisabled",
     "AbstractController::ActionNotFound",
+    "ActionController::RoutingError",
+    "ActionController::InvalidAuthenticityToken",
+    "ActionController::UnknownFormat",
+    "ActionController::BadRequest",
+    "ActionDispatch::Cookies::CookieOverflow",
+    "ActionView::Template::Error",
+    "ActiveRecord::RecordNotFound",
+    "ArgumentError",
+    "FeatureFlags::FeatureDisabled",
     "SignalException"
   ]
   notice.ignore! if ignorables.include? notice[:errors].first[:type]
