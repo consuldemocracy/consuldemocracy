@@ -9,7 +9,7 @@
             attribute: "data-answer-id"
           });
           $.ajax({
-            url: $(".sortable").data("js-url"),
+            url: $(this).data("js-url"),
             data: {
               ordered_list: new_order
             },
