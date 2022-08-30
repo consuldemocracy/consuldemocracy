@@ -1,0 +1,20 @@
+<div class="small-12 medium-6 column">
+  <%= form.enum_select :vote_type, {}, class: "votation-type-vote-type" %>
+</div>
+
+<div class="small-12 column">
+  <div class="callout primary">
+    <span class="description-unique">
+      <%= t("admin.polls.votation_type.unique_description") %>
+    </span>
+    <span class="description-multiple hidden">
+      <%= t("admin.polls.votation_type.multiple_description") %>
+    </span>
+  </div>
+</div>
+
+<div class="small-12 medium-6 column end">
+  <div class="max-votes">
+    <%= form.number_field :max_votes, min: 2, max: 999, class: "votation-type-max-votes" %>
+  </div>
+</div>

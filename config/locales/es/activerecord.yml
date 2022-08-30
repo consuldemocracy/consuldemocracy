@@ -145,6 +145,9 @@ es:
       local_census_record:
         one: Registro del censo local
         other: Registros del censo local
+      votation_type:
+        one: Tipo de votación
+        other: Tipos de votación
     attributes:
       budget:
         name: "Nombre"
@@ -514,6 +517,12 @@ es:
         document_number: Número de documento
         date_of_birth: Fecha de nacimiento
         postal_code: Código postal
+      votation_type:
+        max_votes: Número máximo de votos
+        vote_type: Tipo de votación
+      votation_type/vote_type:
+        unique: Respuesta única
+        multiple: Respuesta múltiple
     errors:
       models:
         user:
