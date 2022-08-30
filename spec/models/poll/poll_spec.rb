@@ -468,7 +468,7 @@ describe Poll do
 
   describe "#recounts_confirmed" do
     it "is false for current polls" do
-      poll = create(:poll, :current)
+      poll = create(:poll)
 
       expect(poll.recounts_confirmed?).to be false
     end
