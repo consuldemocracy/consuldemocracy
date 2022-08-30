@@ -543,7 +543,7 @@ describe "Polls" do
     end
 
     scenario "Don't show poll results and stats if is not expired" do
-      poll = create(:poll, :current, results_enabled: true, stats_enabled: true)
+      poll = create(:poll, results_enabled: true, stats_enabled: true)
       user = create(:user)
 
       login_as user

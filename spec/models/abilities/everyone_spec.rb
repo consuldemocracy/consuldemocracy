@@ -33,12 +33,12 @@ describe Abilities::Everyone do
 
   it { should be_able_to(:results, create(:poll, :expired, results_enabled: true)) }
   it { should_not be_able_to(:results, create(:poll, :expired, results_enabled: false)) }
-  it { should_not be_able_to(:results, create(:poll, :current, results_enabled: true)) }
+  it { should_not be_able_to(:results, create(:poll, results_enabled: true)) }
   it { should_not be_able_to(:results, create(:poll, :for_budget, :expired, results_enabled: true)) }
 
   it { should be_able_to(:stats, create(:poll, :expired, stats_enabled: true)) }
   it { should_not be_able_to(:stats, create(:poll, :expired, stats_enabled: false)) }
-  it { should_not be_able_to(:stats, create(:poll, :current, stats_enabled: true)) }
+  it { should_not be_able_to(:stats, create(:poll, stats_enabled: true)) }
   it { should_not be_able_to(:stats, create(:poll, :for_budget, :expired, stats_enabled: true)) }
 
   it { should be_able_to(:read_results, create(:budget, :finished, results_enabled: true)) }

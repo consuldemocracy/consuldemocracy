@@ -7,11 +7,6 @@ FactoryBot.define do
     starts_at { 1.month.ago }
     ends_at { 1.month.from_now }
 
-    trait :current do
-      starts_at { 2.days.ago }
-      ends_at { 2.days.from_now }
-    end
-
     trait :expired do
       starts_at { 1.month.ago }
       ends_at { 15.days.ago }

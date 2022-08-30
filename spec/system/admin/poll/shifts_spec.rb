@@ -27,7 +27,7 @@ describe "Admin shifts", :admin do
 
   scenario "Create Vote Collection Shift and Recount & Scrutiny Shift on same date" do
     create(:poll)
-    poll = create(:poll, :current)
+    poll = create(:poll)
     booth = create(:poll_booth, polls: [poll, create(:poll, :expired)])
     officer = create(:poll_officer)
     vote_collection_dates = (Date.current..poll.ends_at.to_date).to_a.map { |date| I18n.l(date, format: :long) }
@@ -89,7 +89,7 @@ describe "Admin shifts", :admin do
   end
 
   scenario "Vote Collection Shift and Recount & Scrutiny Shift don't include already assigned dates to officer" do
-    poll = create(:poll, :current)
+    poll = create(:poll)
     booth = create(:poll_booth, polls: [poll])
     officer = create(:poll_officer)
 
@@ -137,7 +137,7 @@ describe "Admin shifts", :admin do
   end
 
   scenario "Error on create" do
-    poll = create(:poll, :current)
+    poll = create(:poll)
     booth = create(:poll_booth, polls: [poll])
     officer = create(:poll_officer)
 
@@ -158,7 +158,7 @@ describe "Admin shifts", :admin do
   end
 
   scenario "Destroy" do
-    poll = create(:poll, :current)
+    poll = create(:poll)
     booth = create(:poll_booth, polls: [poll])
     officer = create(:poll_officer)
 
