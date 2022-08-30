@@ -1107,6 +1107,10 @@ en:
         alert: "This action will remove the poll and all its associated questions."
         success_notice: "Poll deleted successfully"
         unable_notice: "You cannot delete a poll that has votes"
+      votation_type:
+        title: "Votation type"
+        unique_description: "It's only possible to answer one time to the question."
+        multiple_description: "Allows to choose multiple answers. It's possible to set the maximum number of answers."
     questions:
       index:
         title: "Questions"
