@@ -14,7 +14,7 @@ module AUE::Relatable
   end
 
   class_methods do
-    def by_goal(code)
+    def by_aue_goal(code)
       by_aue_related(:aue_goals, code)
     end
 
@@ -41,7 +41,9 @@ module AUE::Relatable
   end
 
   def related_aue_list=(codes)
-    goals = codes.map { |code| AUE::Goal[code] }
+    target_codes, goal_codes = codes.tr(" ", "").split(",").partition { |code| code.include?(".") }
+    # aue_codes = codes.split(", ")
+    goals = goal_codes.map { |code| AUE::Goal[code] }
 
     transaction do
       self.aue_goals = (goals).uniq

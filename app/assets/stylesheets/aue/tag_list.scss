@@ -1,6 +1,9 @@
 .aue-tag-list {
   .aue-goal-tag-list {
     @extend %aue-goal-list;
+    display: inline-flex;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
 
     .more-goals {
       @extend %tag;

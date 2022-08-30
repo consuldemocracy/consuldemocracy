@@ -1,4 +1,4 @@
-class AUE::Goals::IconComponent < ApplicationComponent
+class AUE::Goals::GoalComponent < ApplicationComponent
   attr_reader :goal
   delegate :code, to: :goal
 
@@ -12,6 +12,14 @@ class AUE::Goals::IconComponent < ApplicationComponent
     else
       png_path(locale)
     end
+  end
+
+  def title
+    t("aue.goals.goal_#{code}.title")
+  end
+
+  def description
+    t("aue.goals.goal_#{code}.description")
   end
 
   private

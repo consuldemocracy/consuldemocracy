@@ -683,6 +683,8 @@ es:
       target_blank: "Elige una meta"
       title: "Búsqueda avanzada"
       to: "Hasta"
+      aue_goal: "Por objetivo AUE"
+      aue_goal_blank: "Elige un objetivo"
     author_info:
       author_deleted: Usuario eliminado
       email_deleted: Email eliminado

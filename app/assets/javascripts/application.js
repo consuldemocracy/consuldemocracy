@@ -112,12 +112,13 @@
 //= require budget_hide_money
 //= require datepicker
 //= require_tree ./admin
+//= require_tree ./aue
 //= require_tree ./sdg
 //= require_tree ./sdg_management
 //= require custom
 //= require_tree ./custom
 
-var initialize_modules = function() {
+var initialize_modules = function () {
   "use strict";
 
   App.Answers.initialize();
@@ -172,9 +173,10 @@ var initialize_modules = function() {
   App.Datepicker.initialize();
   App.SDGRelatedListSelector.initialize();
   App.SDGManagementRelationSearch.initialize();
+  App.AUERelatedListSelector.initialize();
 };
 
-var destroy_non_idempotent_modules = function() {
+var destroy_non_idempotent_modules = function () {
   "use strict";
 
   App.ColumnsSelector.destroy();

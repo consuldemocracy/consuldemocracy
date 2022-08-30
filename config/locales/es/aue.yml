@@ -41,8 +41,8 @@ es:
           no_local_targets: Este objetivo no tiene metas localizadas
       title: "Agenda Urbana Española"
       filter:
-        heading: "Filtros por ODS"
-        link: "Ver %{resources} del objetivo %{code}"
+        heading: "Filtros por Agenda Urbana"
+        link: "Ver %{resources} del OBJETIVO %{code}"
         more:
           one: "Un objetivo más"
           other: "%{count} objetivos más"

@@ -18,10 +18,10 @@ class AUE::Goals::IndexComponent < ApplicationComponent
     end
 
     def goal_link(goal)
-      [icon(goal), aue_goal_path(goal.code)]
+      [item(goal), aue_goal_path(goal.code)]
     end
 
-    def icon(goal)
-      render AUE::Goals::IconComponent.new(goal)
+    def item(goal)
+      render AUE::Goals::GoalComponent.new(goal)
     end
 end

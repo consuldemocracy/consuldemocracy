@@ -27,6 +27,9 @@ module AUE::Related
   end
 
   def <=>(goal_or_target)
+    if goal_or_target.class.ancestors.include?(AUE::Related)
+      code <=> goal_or_target.code
+    end
   end
 
   def code_and_title

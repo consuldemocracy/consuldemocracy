@@ -1,5 +1,6 @@
 class Shared::AdvancedSearchComponent < ApplicationComponent
   include SDG::OptionsForSelect
+  include AUE::OptionsForSelect
 
   private
 
@@ -35,5 +36,14 @@ class Shared::AdvancedSearchComponent < ApplicationComponent
 
     def sdg?
       SDG::ProcessEnabled.new(controller_path).enabled?
+    end
+
+    def aue?
+      feature?("aue")
+      # SDG::ProcessEnabled.new(controller_path).enabled?
+    end
+
+    def aue_goal_options
+      super(advanced_search[:aue_goal])
     end
 end
