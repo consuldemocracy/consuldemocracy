@@ -1,1 +1,1 @@
-$("#<%= dom_id(@question) %>_answers").html("<%= j render("polls/questions/answers", question: @question) %>");
+$("#<%= dom_id(@question) %>_answers").html("<%= j render Polls::Questions::AnswersComponent.new(@question) %>");
