@@ -31,9 +31,7 @@
         <% end %>
       <% end %>
 
-      <% @questions.each do |question| %>
-        <%= render "polls/questions/question", question: question %>
-      <% end %>
+      <%= render Polls::Questions::QuestionComponent.with_collection(@questions) %>
     </div>
   </div>
 
