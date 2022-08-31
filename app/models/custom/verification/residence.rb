@@ -91,7 +91,7 @@ class Verification::Residence
     end
 
     def call_census_api
-      @census_api_response = CustomCensusApi.new.call(document_type, document_number, postal_code)
+      @census_api_response = CensusCaller.new.call(document_type, document_number, postal_code)
 
       return unless Rails.env.production? || Rails.env.staging?
 

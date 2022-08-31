@@ -22,10 +22,6 @@
                             prompt: true,
                             start_year: 1900, end_year: minimum_required_age.years.ago.year %>
         </div>
-      <% else %>
-        <div class="date-of-birth small-12 medium-6">
-          <%= f.text_field :year_of_birth, type: "number", autocomplete: "off" %>
-        </div>
       <% end %>
 
       <div class="small-12 medium-6">

@@ -85,11 +85,11 @@ class CustomCensusApi
     end
 
     def successful_request?
-      sml_message.at_css("exito")&.content == "-1"
+      sml_message&.at_css("exito")&.content == "-1"
     end
 
     def is_citizen?
-      sml_message.at_css("isHabitante")&.content == "-1"
+      sml_message&.at_css("isHabitante")&.content == "-1"
     end
 
     private
@@ -103,7 +103,7 @@ class CustomCensusApi
 
   def get_response_body(document_type, document_number, nonce, municipality_id)
     date = current_date
-    request_body = build_request_body(date, nonce, encoded_token(nonce, date), document_number, municipality_id)
+    request_body = build_request_body(date, nonce, encoded_token(nonce, date), document_type, document_number, municipality_id)
     make_request(request_body)
   end
 
@@ -115,26 +115,45 @@ class CustomCensusApi
     )
   end
 
-  def build_request_body(date, nonce, token, document_number, municipality_id)
+  def build_request_body(date, nonce, token, document_type, document_number, municipality_id)
     encoded_document_number = Base64.encode64(document_number).delete("\n")
 
     sml_message = Rack::Utils.escape_html(
-      "<E>\n\t<OPE>\n\t\t<APL>PAD</APL>\n\t\t<TOBJ>HAB</TOBJ>\n\t\t<CMD>ISHABITANTE</CMD>"\
-      "\n\t\t<VER>2.0</VER>\n\t</OPE>\n\t<SEC>\n\t\t<CLI>ACCEDE</CLI>\n\t\t"\
+      "<E>\n\t<OPE>\n\t\t<APL>PAD</APL>\n\t\t<TOBJ>HAB</TOBJ>\n\t\t"\
+      "<CMD>ISHABITANTE</CMD>\n\t\t<VER>2.0</VER>\n\t</OPE>\n\t<SEC>\n\t\t"\
+      "<CLI>ACCEDE</CLI>\n\t\t"\
       "<ORG>#{municipality_id}</ORG>\n\t\t"\
-      "<ENT>#{municipality_id}</ENT>"\
-      "\n\t\t<USU>" + census_user + "</USU>\n\t\t<PWD>" + encoded_census_password + "</PWD>\n\t\t<FECHA>" + date + "</FECHA>\n\t\t<NONCE>" + nonce + "</NONCE>"\
-      "\n\t\t<TOKEN>" + token + "</TOKEN>\n\t</SEC>\n\t<PAR>\n\t\t<nia></nia>\n\t\t<codigoTipoDocumento>1</codigoTipoDocumento>"\
-      "\n\t\t<documento>" + encoded_document_number + "</documento>\n\t\t<mostrarFechaNac>-1</mostrarFechaNac>\n\t</PAR>\n</E>"
+      "<ENT>#{municipality_id}</ENT>\n\t\t"\
+      "<USU>#{census_user}</USU>\n\t\t"\
+      "<PWD>#{encoded_census_password}</PWD>\n\t\t"\
+      "<FECHA>#{date}</FECHA>\n\t\t"\
+      "<NONCE>#{nonce}</NONCE>\n\t\t"\
+      "<TOKEN>#{token}</TOKEN>\n\t"\
+      "</SEC>\n\t<PAR>\n\t\t"\
+      "#{sml_for(document_type, encoded_document_number)}"\
+      "<mostrarFechaNac>-1</mostrarFechaNac>\n\t"\
+      "</PAR>\n</E>"
     )
 
     body = "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
     body += "<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" SOAP-ENV:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\">"
     body += "<SOAP-ENV:Body>"
-    body += "<m:servicio xmlns:m=\"" + census_host + "\"><sml>#{sml_message}</sml></m:servicio>"
+    body += "<m:servicio xmlns:m=\"#{census_host}\"><sml>#{sml_message}</sml></m:servicio>"
     body += "</SOAP-ENV:Body></SOAP-ENV:Envelope>"
 
     body
+  end
+
+  def sml_for(document_type, encoded_document_number)
+    if document_type.present?
+      "<nia></nia>\n\t\t"\
+      "<codigoTipoDocumento>#{document_type}</codigoTipoDocumento>\n\t\t"\
+      "<documento>#{encoded_document_number}</documento>\n\t\t"\
+    else
+      "<nia>#{encoded_document_number}</nia>\n\t\t"\
+      "<codigoTipoDocumento></codigoTipoDocumento>\n\t\t"\
+      "<documento></documento>\n\t\t"\
+    end
   end
 
   def census_host

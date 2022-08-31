@@ -23,6 +23,6 @@ class Officing::ResidenceController < Officing::BaseController
     end
 
     def allowed_params
-      [:document_number, :document_type, :year_of_birth, :date_of_birth, :postal_code]
+      [:document_number, :document_type, :postal_code]
     end
 end
