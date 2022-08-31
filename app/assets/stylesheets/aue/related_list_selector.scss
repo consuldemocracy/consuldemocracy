@@ -8,7 +8,7 @@
   .amsify-suggestags-area .amsify-select-tag {
     color: $white;
 
-    @each $code, $color in $aue-colors {
+    @each $code, $color in $aue-background-colors {
       &[data-val^="#{$code}"] {
         background-color: $color;
       }
@@ -85,7 +85,7 @@
     }
   }
 
-  @each $code, $color in $aue-colors {
+  @each $code, $color in $aue-background-colors {
     .aue-goal-#{$code} {
       color: black;
       background-color: $color;

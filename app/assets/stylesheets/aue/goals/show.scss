@@ -1,3 +1,5 @@
+$header-icon-min-width: 100px;
+
 .aue-goal-show {
   .aue-goal {
     > header {
@@ -5,57 +7,69 @@
       color: #fff;
       display: flex;
       margin: $line-height / 2 0;
-      text-shadow: 0 0 1px $black;
       min-width: fit-content;
+      margin-left: $header-icon-min-width / 2;
 
-      &::after {
-        align-self: stretch;
-        background: transparent no-repeat center right;
-        background-size: contain;
-        content: "";
-        flex: 1;
-        min-width: 100px;
+      .aue-goal-icon {
+        min-width: $header-icon-min-width;
+        height: auto;
+        border: 5px solid white;
+        background-color: #fff;
+        border-radius: 100%;
+        margin-left: -($header-icon-min-width / 2);
+      }
 
-        @include breakpoint(small only) {
-          min-width: 75px;
-        }
+      min-width: 100px;
+
+      // &::after {
+      //   align-self: stretch;
+      //   background: transparent no-repeat center right;
+      //   background-size: contain;
+      //   content: "";
+      //   flex: 1;
+      //   min-width: 100px;
+
+      //   @include breakpoint(small only) {
+      //     min-width: 75px;
+      //   }
+      // }
+      @include breakpoint(small only) {
+        min-width: 75px;
       }
     }
 
     h1 {
-      align-items: center;
+      align-items: flex-start;
       display: flex;
+      flex-direction: column;
+      justify-content: center;
       font-family: "Oswald", "Source Sans Pro", sans-serif !important;
-      font-weight: 500;
-      letter-spacing: -1px;
+      font-weight: 600;
       line-height: 1.1;
-      text-transform: uppercase;
+      padding-left: 30px;
+      margin: 0;
 
-      @include breakpoint(small only) {
-        font-size: rem-calc(
-          map-get(map-get(map-get($header-styles, small), h2), font-size)
-        );
+      .goal-title {
+        font-size: 24px;
+        @include breakpoint(medium) {
+          font-size: 34px;
+        }
       }
 
-      .goal-code {
-        font-size: 2.2em;
-        letter-spacing: -0.1em;
-        margin-right: 0.2em;
-      }
-
-      .goal-title > * {
-        display: block;
+      .goal-description {
+        font-size: 18px;
+        @include breakpoint(medium) {
+          font-size: 24px;
+        }
+        * {
+          display: block;
+        }
       }
     }
 
     @each $code, $color in $aue-colors {
       &.aue-goal-#{$code} > header {
-        @include full-width-background($adjust-padding: true);
         background-color: $color;
-
-        &::after {
-          background-image: image-url("aue/goal_#{$code}_icon_only");
-        }
       }
     }
 

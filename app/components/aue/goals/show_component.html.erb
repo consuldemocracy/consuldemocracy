@@ -5,7 +5,10 @@
 
   <article class="aue-goal aue-goal-<%= code %>">
     <header>
-      <h1><%= heading %></h1>
+      <%= render AUE::Goals::IconComponent.new(goal) %>
+      <h1>
+      <%= heading %>
+      </h1>
     </header>
     <div class="goal-description-content">
       <div id="description_goal_<%= goal.code %>" class="goal-description short" data-toggler="short">

@@ -81,7 +81,7 @@
     margin-bottom: $line-height;
   }
 
-  @each $code, $color in $aue-colors {
+  @each $code, $color in $aue-background-colors {
     .aue-goal-#{$code} {
       color: black;
       background-color: $color;

@@ -17,7 +17,7 @@ class AUE::Goals::ShowComponent < ApplicationComponent
     end
 
     def heading
-      safe_join([tag.span(code, class: "goal-code"), tag.span(split_title, class: "goal-title")], " ")
+      safe_join([tag.span(split_title, class: "goal-title"), tag.span(description, class: "goal-description")], " ")
     end
 
     def long_description
@@ -25,6 +25,10 @@ class AUE::Goals::ShowComponent < ApplicationComponent
     end
 
     def split_title
-      goal.title
+      goal.title + ':'
+    end
+
+    def description
+      goal.description
     end
 end
