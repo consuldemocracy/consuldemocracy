@@ -42,16 +42,16 @@ es:
       title: "Agenda Urbana Española"
       filter:
         heading: "Filtros por Agenda Urbana"
-        link: "Ver %{resources} del OBJETIVO %{code}"
+        link: "Ver %{resources} del Objetivo %{code}"
         more:
           one: "Un objetivo más"
           other: "%{count} objetivos más"
     related_list_selector:
-      goal_identifier: "ODS%{code}"
+      goal_identifier: "AUE%{code}"
       goal_list: "Puedes seleccionar uno o varios ODS con los que se alinea tu %{record}"
       help:
-        title: "¿Qué ODS y metas se alinean con mi %{record}?"
-        text: "página de ayuda de ODS"
+        title: "¿Qué objetivos de la Agenda Urbana Española se alinean con mi %{record}?"
+        text: "página de ayuda de AUE"
       hint: Puedes introducir el código de un objetivo/meta específico o un texto para encontrar uno. Para más información visita la %{link}.
       remove_tag: "Eliminar"
       title: "Agenda Urbana Española y Metas"

@@ -8,7 +8,7 @@ class AUE::Widget::Feed
   end
 
   def items
-    feed.items.by_goal(goal.code)
+    feed.items.by_aue_goal(goal.code)
   end
 
   def self.for_goal(goal)

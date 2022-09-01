@@ -57,7 +57,7 @@ class DebatesController < ApplicationController
     end
 
     def allowed_params
-      [:tag_list, :terms_of_service, :related_sdg_list, translation_params(Debate)]
+      [:tag_list, :terms_of_service, :related_sdg_list, :related_aue_list, translation_params(Debate)]
     end
 
     def resource_model
