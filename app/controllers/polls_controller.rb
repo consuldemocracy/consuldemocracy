@@ -19,8 +19,6 @@ class PollsController < ApplicationController
 
   def show
     @questions = @poll.questions.for_render.sort_for_list
-    @poll_questions_answers = Poll::Question::Answer.where(question: @poll.questions)
-                                                    .with_content.order(:given_order)
     @commentable = @poll
     @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
   end
