@@ -1,60 +1,63 @@
-<div class="small-12 medium-6 column end answer <%= cycle("first", "") %>" id="answer_<%= answer.id %>">
-  <h3><%= answer.title %></h3>
+<h2><%= question.title %></h2>
+<% question.question_answers.each do |answer| %>
+  <div class="small-12 medium-6 column end answer <%= cycle("first", "") %>" id="answer_<%= answer.id %>">
+    <h3><%= answer.title %></h3>
 
-  <% if answer.images.any? %>
-    <%= render "polls/gallery", answer: answer %>
-  <% end %>
+    <% if answer.images.any? %>
+      <%= render "polls/gallery", answer: answer %>
+    <% end %>
 
-  <% if answer.description.present? %>
-    <div class="margin-top">
-      <div id="answer_description_<%= answer.id %>" class="answer-description short" data-toggler="short">
-        <%= wysiwyg(answer.description) %>
+    <% if answer.description.present? %>
+      <div class="margin-top">
+        <div id="answer_description_<%= answer.id %>" class="answer-description short" data-toggler="short">
+          <%= wysiwyg(answer.description) %>
+        </div>
+        <div class="read-more">
+          <button type="button" id="read_more_<%= answer.id %>"
+              data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
+              data-toggler="hide">
+            <%= t("polls.show.read_more", answer: answer.title) %>
+          </button>
+          <button type="button" id="read_less_<%= answer.id %>"
+              data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
+              data-toggler="hide"
+              class="hide">
+            <%= t("polls.show.read_less", answer: answer.title) %>
+          </button>
+        </div>
       </div>
-      <div class="read-more">
-        <button type="button" id="read_more_<%= answer.id %>"
-            data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
-            data-toggler="hide">
-          <%= t("polls.show.read_more", answer: answer.title) %>
-        </button>
-        <button type="button" id="read_less_<%= answer.id %>"
-            data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
-            data-toggler="hide"
-            class="hide">
-          <%= t("polls.show.read_less", answer: answer.title) %>
-        </button>
+    <% end %>
+
+    <% if answer.documents.present? %>
+      <div class="document-link">
+        <p>
+          <span class="icon-document"></span>&nbsp;
+          <strong><%= t("polls.show.documents") %></strong>
+        </p>
+
+        <% answer.documents.each do |document| %>
+            <%= link_to document.title,
+                        document.attachment,
+                        target: "_blank",
+                        rel: "nofollow" %><br>
+        <% end %>
       </div>
-    </div>
-  <% end %>
+    <% end %>
 
-  <% if answer.documents.present? %>
-    <div class="document-link">
-      <p>
-        <span class="icon-document"></span>&nbsp;
-        <strong><%= t("polls.show.documents") %></strong>
-      </p>
+    <% if answer.videos.present? %>
+      <div class="video-link">
+        <p>
+          <span class="icon-video"></span>&nbsp;
+          <strong><%= t("polls.show.videos") %></strong>
+        </p>
 
-      <% answer.documents.each do |document| %>
-          <%= link_to document.title,
-                      document.attachment,
-                      target: "_blank",
-                      rel: "nofollow" %><br>
-      <% end %>
-    </div>
-  <% end %>
-
-  <% if answer.videos.present? %>
-    <div class="video-link">
-      <p>
-        <span class="icon-video"></span>&nbsp;
-        <strong><%= t("polls.show.videos") %></strong>
-      </p>
-
-      <% answer.videos.each do |video| %>
-          <%= link_to video.title,
-                      video.url,
-                      target: "_blank",
-                      rel: "nofollow" %><br>
-      <% end %>
-    </div>
-  <% end %>
-</div>
+        <% answer.videos.each do |video| %>
+            <%= link_to video.title,
+                        video.url,
+                        target: "_blank",
+                        rel: "nofollow" %><br>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

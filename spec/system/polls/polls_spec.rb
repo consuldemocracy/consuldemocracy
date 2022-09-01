@@ -183,18 +183,6 @@ describe "Polls" do
       expect("Second question").to appear_before("Third question")
     end
 
-    scenario "More info answers appear in the given order" do
-      question = create(:poll_question, poll: poll)
-      answer1 = create(:poll_question_answer, title: "First", question: question, given_order: 2)
-      answer2 = create(:poll_question_answer, title: "Second", question: question, given_order: 1)
-
-      visit poll_path(poll)
-
-      within("div.poll-more-info-answers") do
-        expect(answer2.title).to appear_before(answer1.title)
-      end
-    end
-
     scenario "Buttons to slide through images work back and forth" do
       question = create(:poll_question, :yes_no, poll: poll)
       create(:image, imageable: question.question_answers.last, title: "The no movement")
