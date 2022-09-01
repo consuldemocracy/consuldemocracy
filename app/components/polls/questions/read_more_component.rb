@@ -1,4 +1,4 @@
-class Polls::Questions::ReadMoreAnswerComponent < ApplicationComponent
+class Polls::Questions::ReadMoreComponent < ApplicationComponent
   with_collection_parameter :question
   attr_reader :question
   delegate :wysiwyg, to: :helpers
