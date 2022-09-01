@@ -55,7 +55,7 @@ end
 
 section "Creating Poll Questions & Answers" do
   Poll.find_each do |poll|
-    (1..4).to_a.sample.times do
+    (3..5).to_a.sample.times do
       question_title = Faker::Lorem.sentence(word_count: 3).truncate(60) + "?"
       question = Poll::Question.new(author: User.all.sample,
                                     title: question_title,
@@ -81,6 +81,15 @@ section "Creating Poll Questions & Answers" do
         answer.save!
       end
     end
+  end
+end
+
+section "Creating Poll Votation types" do
+  poll = Poll.first
+
+  poll.questions.each do |question|
+    vote_type = VotationType.vote_types.keys.sample
+    question.create_votation_type!(vote_type: vote_type, max_votes: (3 unless vote_type == "unique"))
   end
 end
 
