@@ -1,5 +1,5 @@
 <h2><%= question.title %></h2>
-<% question.question_answers.each do |answer| %>
+<% question.answers_with_read_more.each do |answer| %>
   <div class="small-12 medium-6 column end answer <%= cycle("first", "") %>" id="answer_<%= answer.id %>">
     <h3><%= answer.title %></h3>
 

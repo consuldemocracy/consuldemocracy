@@ -7,6 +7,8 @@ describe Polls::Questions::ReadMoreAnswerComponent do
   let(:answer) { create(:poll_question_answer, question: question) }
 
   it "renders question title" do
+    create(:poll_question_answer, question: question, description: "Question answer description")
+
     render_inline Polls::Questions::ReadMoreAnswerComponent.new(question: question)
 
     expect(page).to have_content "Question title?"
@@ -19,6 +21,14 @@ describe Polls::Questions::ReadMoreAnswerComponent do
     render_inline Polls::Questions::ReadMoreAnswerComponent.new(question: question)
 
     expect("Answer B").to appear_before("Answer A")
+  end
+
+  it "does not render when answers does not have more information" do
+    answer.update!(description: nil)
+
+    render_inline Polls::Questions::ReadMoreAnswerComponent.new(question: question)
+
+    expect(page).not_to be_rendered
   end
 
   it "renders answers with videos" do
