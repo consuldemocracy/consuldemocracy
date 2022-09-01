@@ -1,8 +1,8 @@
 <% provide(:title) { title } %>
 
 <main class="aue-goals-index">
-  <% if header.present? %>
-    <%= render "shared/header", header: header %>
+  <% if @header.present? %>
+    <%= render "shared/header", header: @header %>
   <% else %>
     <header class="section-header">
       <h1><%= title %></h1>

@@ -1,6 +1,10 @@
 class AUE::Goals::PlainTagListComponent < ApplicationComponent
   include AUE::TagList
 
+  def render?
+    feature?("aue")
+  end
+
   private
 
     def tags

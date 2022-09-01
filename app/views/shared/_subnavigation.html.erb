@@ -50,6 +50,14 @@
                                 accesskey: "6" %>
       </li>
     <% end %>
+     <% if feature?(:aue) %>
+      <li>
+        <%= layout_menu_link_to t("layouts.header.aue"),
+                                aue_goals_path,
+                                controller_path == "aue/goals" && action_name != "help",
+                                accesskey: "6" %>
+      </li>
+    <% end %>
     <% if feature?(:help_page) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.help"),

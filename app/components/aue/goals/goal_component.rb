@@ -48,6 +48,6 @@ class AUE::Goals::GoalComponent < ApplicationComponent
     end
 
     def base_path(locale)
-      "aue/#{locale}/goal_#{code}"
+      "aue/goal_#{code}"
     end
 end

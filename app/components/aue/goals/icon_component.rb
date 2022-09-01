@@ -8,9 +8,7 @@ class AUE::Goals::IconComponent < ApplicationComponent
 
   def image_path
     if svg_available?
-      svg_path(locale)
-    else
-      png_path(locale)
+      svg_path()
     end
   end
 
@@ -20,26 +18,15 @@ class AUE::Goals::IconComponent < ApplicationComponent
       goal.code_and_title
     end
 
-    def locale
-      @locale ||= [*I18n.fallbacks[I18n.locale], "default"].find do |fallback|
-        AssetFinder.find_asset(svg_path(fallback)) ||
-          AssetFinder.find_asset(png_path(fallback))
-      end
-    end
-
     def svg_available?
-      AssetFinder.find_asset(svg_path(locale))
+      AssetFinder.find_asset(svg_path())
     end
 
-    def svg_path(locale)
-      "#{base_path(locale)}.svg"
+    def svg_path()
+      "#{base_path()}.svg"
     end
 
-    def png_path(locale)
-      "#{base_path(locale)}.png"
-    end
-
-    def base_path(locale)
-      "aue/#{locale}/goal_#{code}"
+    def base_path()
+      "aue/goal_#{code}"
     end
 end
