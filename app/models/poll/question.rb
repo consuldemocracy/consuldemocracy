@@ -74,4 +74,12 @@ class Poll::Question < ApplicationRecord
   def possible_answers
     question_answers.joins(:translations).pluck("poll_question_answer_translations.title")
   end
+
+  def answers_with_read_more?
+    answers_with_read_more.any?
+  end
+
+  def answers_with_read_more
+    question_answers.select(&:with_read_more?)
+  end
 end
