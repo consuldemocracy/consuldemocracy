@@ -1,33 +1,31 @@
 <div class="poll-question-answers">
   <% if can?(:answer, question) && !question.poll.voted_in_booth?(current_user) %>
-    <% question.question_answers.each do |answer| %>
-      <% if answers_by_question_id[question.id] == answer.title &&
-            (!voted_before_sign_in? ||
-             question.poll.voted_in_booth?(current_user)) %>
+    <% question_answers.each do |question_answer| %>
+      <% if already_answered?(question_answer) && !voted_before_sign_in? %>
         <span class="button answered"
-              title="<%= t("poll_questions.show.voted", answer: answer.title) %>">
-          <%= answer.title %>
+              title="<%= t("poll_questions.show.voted", answer: question_answer.title) %>">
+          <%= question_answer.title %>
         </span>
       <% else %>
-        <%= button_to answer_question_path(question, answer: answer.title),
+        <%= button_to answer_question_path(question, answer: question_answer.title),
                       remote: true,
-                      title: t("poll_questions.show.vote_answer", answer: answer.title),
+                      title: t("poll_questions.show.vote_answer", answer: question_answer.title),
                       class: "button secondary hollow" do %>
-          <%= answer.title %>
+          <%= question_answer.title %>
         <% end %>
       <% end %>
     <% end %>
   <% elsif !user_signed_in? %>
-    <% question.question_answers.order(id: :desc).each do |answer| %>
-      <%= link_to answer.title, new_user_session_path, class: "button secondary hollow" %>
+    <% question_answers.order(id: :desc).each do |question_answer| %>
+      <%= link_to question_answer.title, new_user_session_path, class: "button secondary hollow" %>
     <% end %>
   <% elsif !current_user.level_two_or_three_verified? %>
-    <% question.question_answers.order(id: :desc).each do |answer| %>
-      <%= link_to answer.title, verification_path, class: "button secondary hollow" %>
+    <% question_answers.order(id: :desc).each do |question_answer| %>
+      <%= link_to question_answer.title, verification_path, class: "button secondary hollow" %>
     <% end %>
   <% else %>
-    <% question.question_answers.order(id: :desc).each do |answer| %>
-      <span class="button secondary hollow disabled"><%= answer.title %></span>
+    <% question_answers.order(id: :desc).each do |question_answer| %>
+      <span class="button secondary hollow disabled"><%= question_answer.title %></span>
     <% end %>
   <% end %>
 </div>
