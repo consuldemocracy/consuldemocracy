@@ -3,6 +3,7 @@ namespace :sdg_management do
 
   resources :goals, only: [:index]
   resources :aue_goals, only: [:index]
+  resources :aue_local_goals, except: [:show]
   resources :targets, only: [:index]
   resources :local_targets, except: [:show]
   resource :homepage, controller: :homepage, only: [:show] do

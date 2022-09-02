@@ -92,6 +92,12 @@ es:
       sdg/target:
         one: "meta"
         other: "metas"
+      aue/goal:
+        one: "objetivo global"
+        other: "objetivos globales"
+      aue/local_goal:
+        one: "objetivo local"
+        other: "objetivos locales"
       site_customization/page:
         one: Página
         other: Páginas
@@ -352,6 +358,17 @@ es:
       sdg/target:
         code: "Código"
         title: "Título"
+      aue/goal:
+        code: "Código"
+        title: "Título"
+        description: "Descripción"
+      aue/local_goal:
+        code: "Código"
+        title: "Título"
+        description: "Descripción"
+      aue/local_goal/translation:
+        title: "Título"
+        description: "Descripción"
       signature_sheet:
         title: "Título"
         signable_type: "Tipo de hoja de firmas"
@@ -607,6 +624,10 @@ es:
           attributes:
             code:
               invalid: "debe empezar con el código de su meta seguido de un punto y terminar con un número"
+        aue/local_goal:
+          attributes:
+            code:
+              invalid: "debe ser un número"
       messages:
         translations_too_short: El obligatorio proporcionar una traducción como mínimo
         record_invalid: "Error de validación: %{errors}"

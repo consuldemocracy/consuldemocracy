@@ -38,6 +38,22 @@ es:
         title: "Nueva meta localizada"
       update:
         notice: "Meta localizada asctualizada correctamente"
+    local_goals:
+      create:
+        notice: "Objetivo local creado correctamente"
+      destroy:
+        notice: "Objetivo local eliminado correctamente"
+      edit:
+        title: "Editar objetivo local"
+      form:
+        code: "El código debe ser numérico y debe ser único."
+        description: "Este texto ser mostrará como ayuda para los usuarios."
+      index:
+        new: "Crear objetivo local"
+      new:
+        title: "Nueva objetivo local"
+      update:
+        notice: "Objetivo local actualizada correctamente"
     relations:
       index:
         filter: "Filtro"

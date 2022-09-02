@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_25_082012) do
+ActiveRecord::Schema.define(version: 2022_09_02_095317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -130,6 +130,24 @@ ActiveRecord::Schema.define(version: 2022_08_25_082012) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["code"], name: "index_aue_goals_on_code", unique: true
+  end
+
+  create_table "aue_local_goal_translations", force: :cascade do |t|
+    t.bigint "aue_local_goal_id", null: false
+    t.string "locale", null: false
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["aue_local_goal_id"], name: "index_aue_local_goal_translations_on_aue_local_goal_id"
+    t.index ["locale"], name: "index_aue_local_goal_translations_on_locale"
+  end
+
+  create_table "aue_local_goals", force: :cascade do |t|
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_aue_local_goals_on_code", unique: true
   end
 
   create_table "aue_relations", force: :cascade do |t|

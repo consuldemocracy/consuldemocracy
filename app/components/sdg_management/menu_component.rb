@@ -42,7 +42,7 @@ class SDGManagement::MenuComponent < ApplicationComponent
     end
 
     def aue?
-      controller_name == "aue_goals"
+      %w[aue_goals aue_local_goals].include?(controller_name)
     end
 
     def relatable_type_path(type)

@@ -8,7 +8,7 @@ class SDGManagement::AUE::SubnavigationComponent < ApplicationComponent
   private
 
     def sections
-      %i[goals]
+      %i[goals local_goals]
     end
 
     def link_to_section(section)
@@ -21,7 +21,7 @@ class SDGManagement::AUE::SubnavigationComponent < ApplicationComponent
 
     def path_for(section)
       {
-        controller: "sdg_management/#{section}",
+        controller: "sdg_management/aue_#{section}",
         action: :index
       }
     end

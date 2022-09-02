@@ -10,5 +10,7 @@ class Abilities::SDG::Manager
     can [:create, :update, :destroy], Widget::Card do |card|
       card.cardable_type == "SDG::Phase" || card.cardable&.name == "sdg"
     end
+    can :read, WebSection, name: "aue"
+    can :manage, ::AUE::LocalGoal
   end
 end

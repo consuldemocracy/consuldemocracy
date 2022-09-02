@@ -1,0 +1,33 @@
+<%= header do %>
+  <%= link_to t("sdg_management.local_goals.index.new"),
+              new_sdg_management_aue_local_goal_path,
+              class: "new-link" %>
+<% end %>
+
+<%= render SDGManagement::AUE::SubnavigationComponent.new(current: :local_goals) do %>
+  <table>
+    <thead>
+      <tr>
+        <td></td>
+        <th id="local-target-title" scope="col"><%= attribute_name(:title) %></th>
+        <th id="local-target-actions" scope="col"><%= t("admin.actions.actions") %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% local_goals.each do |local_goal| %>
+        <tr id="<%= dom_id(local_goal) %>" class="local-target">
+          <th>
+            <%= local_goal.code %>
+          </th>
+          <td headers="local-target-title">
+            <%= local_goal.title %>
+          </td>
+          <td headers="local-target-actions">
+            <%= actions(local_goal) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
