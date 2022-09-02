@@ -3,6 +3,12 @@
     <%= question.title %>
   </h3>
 
+  <% if question.votation_type.present? %>
+    <strong>
+      <%= t("poll_questions.description.#{question.vote_type}", maximum: question.max_votes) %>
+    </strong>
+  <% end %>
+
   <div id="<%= dom_id(question) %>_answers" class="padding">
     <%= render Polls::Questions::AnswersComponent.new(question) %>
   </div>
