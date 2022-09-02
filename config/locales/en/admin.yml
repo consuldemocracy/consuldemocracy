@@ -1161,6 +1161,9 @@ en:
         title: Edit answer
       destroy:
         success_notice: "Answer deleted successfully"
+      images:
+        index:
+          title: Images
       videos:
         index:
           title: Videos

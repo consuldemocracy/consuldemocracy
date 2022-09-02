@@ -80,6 +80,10 @@ FactoryBot.define do
     trait :with_video do
       after(:create) { |answer| create(:poll_answer_video, answer: answer) }
     end
+
+    factory :future_poll_question_answer do
+      poll { association(:poll, :future) }
+    end
   end
 
   factory :poll_answer_video, class: "Poll::Question::Answer::Video" do

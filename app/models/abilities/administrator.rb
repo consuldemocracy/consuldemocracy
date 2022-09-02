@@ -103,8 +103,8 @@ module Abilities
       can [:create, :update, :destroy], Poll::Question::Answer::Video do |video|
         can?(:update, video.answer)
       end
-      can [:create, :destroy], Image do |image|
-        image.imageable_type == "Poll::Question::Answer"
+      can [:destroy], Image do |image|
+        image.imageable_type == "Poll::Question::Answer" && can?(:update, image.imageable)
       end
 
       can :manage, SiteCustomization::Page

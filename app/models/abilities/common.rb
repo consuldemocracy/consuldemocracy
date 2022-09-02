@@ -74,7 +74,9 @@ module Abilities
         document.documentable&.author_id == user.id
       end
 
-      can [:destroy], Image, imageable: { author_id: user.id }
+      can [:destroy], Image do |image|
+        image.imageable_type != "Poll::Question::Answer" && image.imageable&.author_id == user.id
+      end
 
       can [:create, :destroy], DirectUpload
 
