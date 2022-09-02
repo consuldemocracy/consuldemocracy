@@ -183,7 +183,7 @@ describe "Stats", :admin do
       let(:budget) { create(:budget, :balloting) }
       let(:group) { create(:budget_group, budget: budget) }
       let(:heading) { create(:budget_heading, group: group) }
-      let!(:investment) { create(:budget_investment, :feasible, :selected, heading: heading) }
+      let(:investment) { create(:budget_investment, :feasible, :selected, heading: heading) }
 
       scenario "Number of votes in investment projects" do
         investment_2 = create(:budget_investment, :feasible, :selected, budget: budget)
@@ -212,6 +212,27 @@ describe "Stats", :admin do
         end
 
         expect(page).to have_content "PARTICIPANTS\n2"
+      end
+
+      scenario "Does not show participants per district from old budgets" do
+        old_budget = create(:budget, :balloting)
+        old_group = create(:budget_group, budget: old_budget)
+        old_heading = create(:budget_heading, group: old_group, name: "Old Heading")
+        old_investment = create(:budget_investment, :feasible, :selected, heading: old_heading)
+        create(:user, ballot_lines: [old_investment])
+        create(:user, ballot_lines: [old_investment])
+
+        create(:user, ballot_lines: [investment])
+
+        visit admin_stats_path
+        click_link "Participatory Budgets"
+        within("#budget_#{budget.id}") do
+          click_link "Final voting"
+        end
+        expect(page).to have_content "VOTES\n1"
+        expect(page).to have_content "PARTICIPANTS\n1"
+
+        expect(page).not_to have_content "Old Heading"
       end
     end
   end
