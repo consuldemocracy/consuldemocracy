@@ -636,6 +636,9 @@ en:
     show:
       vote_answer: "Vote %{answer}"
       voted: "You have voted %{answer}"
+    description:
+      unique: "You can select a maximum of 1 answer."
+      multiple: "You can select a maximum of %{maximum} answers."
   proposal_notifications:
     new:
       title: "Send notification"

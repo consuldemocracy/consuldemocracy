@@ -18,6 +18,10 @@ class Polls::Questions::AnswersComponent < ApplicationComponent
     user_answers.find_by(answer: question_answer.title)
   end
 
+  def disable_answer?(question_answer)
+    question.multiple? && user_answers.count == question.max_votes
+  end
+
   private
 
     def user_answers

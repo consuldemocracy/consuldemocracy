@@ -15,7 +15,8 @@
                       remote: true,
                       title: t("poll_questions.show.vote_answer", answer: question_answer.title),
                       class: "button secondary hollow",
-                      "aria-pressed": false do %>
+                      "aria-pressed": false,
+                      disabled: disable_answer?(question_answer) do %>
           <%= question_answer.title %>
         <% end %>
       <% end %>
