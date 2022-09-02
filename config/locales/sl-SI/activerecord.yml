@@ -94,7 +94,7 @@ sl-SI:
         name: "Ime"
       budget/investment:
         heading_id: "Območje"
-        title: "Naslov"
+        title: "Naslov predloga"
         description: "Opis"
         external_url: "Povezava do dodatne dokumentacije"
         location: "Lokacija (neobvezno)"
@@ -115,8 +115,8 @@ sl-SI:
         valuator_ids: "Skupine"
         valuation_tag_list: "Oznake"
       budget/investment/translation:
-        title: "Naslov"
-        description: "Opis"
+        title: "Naslov predloga"
+        description: "Opis predloga"
       geozone:
         name: Ime
       milestone:
@@ -159,7 +159,7 @@ sl-SI:
         description: "Začetno besedilo razprave"
       proposal:
         author: "Avtor"
-        title: "Naslov"
+        title: "Naslov predloga"
         question: "Vprašanje"
         description: "Opis"
         responsible_name: "Polno ime predlagatelja"
