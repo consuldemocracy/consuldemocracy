@@ -22,6 +22,8 @@ describe Abilities::Administrator do
   let(:future_poll_question) { create(:poll_question, poll: future_poll) }
   let(:current_poll_question_answer) { create(:poll_question_answer) }
   let(:future_poll_question_answer) { create(:poll_question_answer, poll: future_poll) }
+  let(:current_poll_answer_video) { create(:poll_answer_video, answer: current_poll_question_answer) }
+  let(:future_poll_answer_video) { create(:poll_answer_video, answer: future_poll_question_answer) }
   let(:answer_image) { build(:image, imageable: current_poll_question_answer) }
 
   let(:past_process) { create(:legislation_process, :past) }
@@ -132,7 +134,12 @@ describe Abilities::Administrator do
   it { should_not be_able_to(:update, current_poll_question_answer) }
   it { should_not be_able_to(:destroy, current_poll_question_answer) }
 
-  it { should be_able_to(:manage, Poll::Question::Answer::Video) }
+  it { should be_able_to(:create, future_poll_answer_video) }
+  it { should be_able_to(:update, future_poll_answer_video) }
+  it { should be_able_to(:destroy, future_poll_answer_video) }
+  it { should_not be_able_to(:create, current_poll_answer_video) }
+  it { should_not be_able_to(:update, current_poll_answer_video) }
+  it { should_not be_able_to(:destroy, current_poll_answer_video) }
 
   it { should be_able_to(:create, answer_image) }
   it { should be_able_to(:destroy, answer_image) }
