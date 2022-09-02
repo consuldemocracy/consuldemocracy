@@ -1160,6 +1160,9 @@ es:
         title: Editar respuesta
       destroy:
         success_notice: "Respuesta eliminada correctamente"
+      images:
+        index:
+          title: Imágenes
       videos:
         index:
           title: Vídeos
