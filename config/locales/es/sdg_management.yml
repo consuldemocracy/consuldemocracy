@@ -21,6 +21,7 @@ es:
       proposals: "Propuestas"
       sdg_content: "Objetivos y Metas"
       sdg_homepage: "Página de inicio ODS"
+      aue_content: "Agenda Urbana Española"
     local_targets:
       create:
         notice: "Meta localizada creada correctamente"

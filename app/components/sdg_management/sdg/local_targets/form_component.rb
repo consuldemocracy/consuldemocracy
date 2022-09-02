@@ -1,4 +1,4 @@
-class SDGManagement::LocalTargets::FormComponent < ApplicationComponent
+class SDGManagement::SDG::LocalTargets::FormComponent < ApplicationComponent
   include Header
   include TranslatableFormHelper
   include GlobalizeHelper

@@ -1,4 +1,4 @@
-class SDGManagement::SubnavigationComponent < ApplicationComponent
+class SDGManagement::SDG::SubnavigationComponent < ApplicationComponent
   attr_reader :current
 
   def initialize(current:)
