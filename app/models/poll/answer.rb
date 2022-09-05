@@ -7,6 +7,7 @@ class Poll::Answer < ApplicationRecord
   validates :question, presence: true
   validates :author, presence: true
   validates :answer, presence: true
+  validate :max_votes
 
   validates :answer, inclusion: { in: ->(a) { a.question.possible_answers }},
                      unless: ->(a) { a.question.blank? }
@@ -21,4 +22,16 @@ class Poll::Answer < ApplicationRecord
       Poll::Voter.find_or_create_by!(user: author, poll: poll, origin: "web")
     end
   end
+
+  private
+
+    def max_votes
+      return if !question || question&.unique? || persisted?
+
+      author.lock!
+
+      if question.answers.by_author(author).count >= question.max_votes
+        errors.add(:answer, "Maximum number of votes per user exceeded")
+      end
+    end
 end
