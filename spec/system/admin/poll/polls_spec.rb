@@ -67,8 +67,8 @@ describe "Admin polls", :admin do
 
     expect(page).to have_content "Poll created successfully"
     expect(page).to have_content "Upcoming poll"
-    expect(page).to have_content I18n.l(start_date)
-    expect(page).to have_content I18n.l(end_date)
+    expect(page).to have_content "#{I18n.l(start_date)} 00:00"
+    expect(page).to have_content "#{I18n.l(end_date)} 23:59"
 
     visit poll_path(id: "upcoming-poll")
 
@@ -93,7 +93,7 @@ describe "Admin polls", :admin do
 
     expect(page).to have_content "Poll updated successfully"
     expect(page).to have_content "Next Poll"
-    expect(page).to have_content I18n.l(end_date.to_date)
+    expect(page).to have_content "#{I18n.l(end_date)} 23:59"
   end
 
   scenario "Edit from index" do
