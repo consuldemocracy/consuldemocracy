@@ -9,6 +9,10 @@ class AUE::LocalGoal < ApplicationRecord
 
   validates :code, presence: true, uniqueness: true
 
+  def altcode
+    "local-#{code}"
+  end
+
   def self.[](code)
     find_by!(code: code)
   end

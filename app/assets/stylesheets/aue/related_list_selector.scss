@@ -7,8 +7,9 @@
 
   .amsify-suggestags-area .amsify-select-tag {
     color: $white;
+    background-color: #004a83;
 
-    @each $code, $color in $aue-background-colors {
+    @each $code, $color in $aue-colors {
       &[data-val^="#{$code}"] {
         background-color: $color;
       }
@@ -80,6 +81,34 @@
       }
 
       &:checked + label img {
+        opacity: 0.15;
+      }
+    }
+  }
+
+  .aue-local-goal-list {
+    margin: 40px auto;
+    max-width: 60rem;
+    width: 100%;
+    a {
+      @extend %tag;
+      background: $highlight;
+      color: $link;
+
+      &:hover,
+      &.is-active {
+        @extend %brand-background;
+      }
+    }
+
+    input {
+      @include element-invisible;
+
+      &:focus + label {
+        outline: $outline-focus;
+      }
+
+      &:checked + label {
         opacity: 0.15;
       }
     }

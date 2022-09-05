@@ -961,6 +961,7 @@ footer {
 // 04. Tags
 // --------
 
+.local_goals a,
 .tag-cloud a,
 .categories a,
 .geozone a,
@@ -976,6 +977,18 @@ footer {
   &:hover,
   &.is-active {
     @extend %brand-background;
+  }
+}
+
+.local_goals a {
+  background: $highlight;
+  color: $link;
+
+  &:hover,
+  &.is-active {
+    cursor: default;
+    background: $highlight;
+    color: $link;
   }
 }
 

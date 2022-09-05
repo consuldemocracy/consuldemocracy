@@ -8,17 +8,16 @@ class AUE::TagListComponent < ApplicationComponent
   end
 
   def render?
-    record.aue_goals.any?
+    record.aue_goals.any? || record.aue_local_goals.any?
   end
 
   private
 
     def goals_list
       render AUE::Goals::PlainTagListComponent.new(record, limit: limit)
-      # if linkable
-      #   render AUE::Goals::TagListComponent.new(record, limit: limit)
-      # else
-      #   render AUE::Goals::PlainTagListComponent.new(record, limit: limit)
-      # end
+    end
+
+    def local_goals_list
+      render AUE::LocalGoals::TagListComponent.new(record, limit: limit)
     end
 end

@@ -10,19 +10,16 @@ class AUE::RelatedListSelectorComponent < ApplicationComponent
   end
 
   def goals_and_targets
-    goals.map do |goal|
-      # global_and_local_targets = goal.targets + goal.local_targets
-      # [goal, ""]
-      [goal]
-    end.flatten
+    goals_and_local_goals = goals + local_goals
+    goals_and_local_goals.flatten
   end
 
   def suggestion_tag_for(goal_or_target)
     {
       tag: goal_or_target.code_and_title.gsub(",", ""),
       display_text: text_for(goal_or_target),
-      title: goal_or_target.long_title,
-      value: goal_or_target.code
+      title: goal_or_target.title,
+      value: goal_or_target.altcode
     }
   end
 
@@ -37,11 +34,22 @@ class AUE::RelatedListSelectorComponent < ApplicationComponent
       AUE::Goal.order(:code)
     end
 
+    def local_goals
+      AUE::LocalGoal.order(:code)
+    end
+
     def goal_field(checkbox_form)
       goal = checkbox_form.object
 
       checkbox_form.check_box(data: { code: goal.code }) +
         checkbox_form.label { render(AUE::Goals::GoalComponent.new(goal)) }
+    end
+
+    def local_goal_field(checkbox_form)
+      local_goal = checkbox_form.object
+
+      checkbox_form.check_box(data: { code: "local-#{local_goal.code}" }) +
+        checkbox_form.label { render(AUE::LocalGoals::GoalComponent.new(local_goal)) }
     end
 
     def text_for(goal_or_target)

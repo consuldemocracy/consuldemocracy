@@ -1,13 +1,15 @@
 class AUE::TagComponent < ApplicationComponent
-  attr_reader :goal_or_target
+  attr_reader :goal
 
-  def initialize(goal_or_target)
-    @goal_or_target = goal_or_target
+  def initialize(goal)
+    @goal = goal
   end
 
   def text
-    if goal_or_target.is_a?(AUE::Goal)
-      render AUE::Goals::IconComponent.new(goal_or_target)
+    if goal.is_a?(AUE::Goal)
+      render AUE::Goals::IconComponent.new(goal)
+    else
+      goal.title
     end
   end
 end

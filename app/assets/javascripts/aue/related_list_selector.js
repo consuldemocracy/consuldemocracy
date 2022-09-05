@@ -98,8 +98,32 @@
             event.stopPropagation();
           }
         });
+      $(".aue-related-list-selector .local-goals input")
+        .on("change", function () {
+          var goal_id = this.dataset.code;
+
+          if (amsify_suggestags.isPresent(goal_id)) {
+            amsify_suggestags.removeTag(goal_id, false);
+          } else {
+            amsify_suggestags.addTag(goal_id, false);
+          }
+        })
+        .on("keydown", function (event) {
+          if (event.keyCode === 13) {
+            $(this).trigger("click");
+            event.preventDefault();
+            event.stopPropagation();
+          }
+        });
     },
     goal_element: function (value) {
+      if (value.includes("local-")) {
+        return $(
+          ".aue-related-list-selector .local-goals [data-code=" +
+            App.AUERelatedListSelector.goal_code(value) +
+            "]"
+        );
+      }
       return $(
         ".aue-related-list-selector .goals [data-code=" +
           App.AUERelatedListSelector.goal_code(value) +
@@ -107,7 +131,7 @@
       );
     },
     goal_code: function (value) {
-      return value.toString().split(".")[0];
+      return value.toString();
     },
     manage_add_help: function (amsify_suggestags, value) {
       var title = amsify_suggestags.getItem(value).title;
@@ -116,9 +140,8 @@
         value +
         '">' +
         "<strong>" +
-        value +
-        "</strong> " +
         title +
+        "</strong> " +
         "</li>";
       $(".aue-related-list-selector .help-section").removeClass("hide");
       $(".aue-related-list-selector .selected-info").append(html);

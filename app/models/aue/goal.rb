@@ -8,6 +8,10 @@ class AUE::Goal < ApplicationRecord
   end
   alias_method :long_title, :title
 
+  def altcode
+    code
+  end
+
   def title_in_two_lines
     I18n.t("aue.goals.goal_#{code}.title_in_two_lines")
   end
