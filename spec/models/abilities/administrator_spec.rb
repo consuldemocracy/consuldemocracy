@@ -26,6 +26,8 @@ describe Abilities::Administrator do
   let(:future_poll_answer_video) { create(:poll_answer_video, answer: future_poll_question_answer) }
   let(:current_poll_answer_image) { build(:image, imageable: current_poll_question_answer) }
   let(:future_poll_answer_image) { build(:image, imageable: future_poll_question_answer) }
+  let(:current_poll_answer_document) { build(:document, documentable: current_poll_question_answer) }
+  let(:future_poll_answer_document) { build(:document, documentable: future_poll_question_answer) }
 
   let(:past_process) { create(:legislation_process, :past) }
   let(:past_draft_process) { create(:legislation_process, :past, :not_published) }
@@ -144,6 +146,9 @@ describe Abilities::Administrator do
 
   it { should be_able_to(:destroy, future_poll_answer_image) }
   it { should_not be_able_to(:destroy, current_poll_answer_image) }
+
+  it { should be_able_to(:destroy, future_poll_answer_document) }
+  it { should_not be_able_to(:destroy, current_poll_answer_document) }
 
   it { is_expected.to be_able_to :manage, Dashboard::AdministratorTask }
   it { is_expected.to be_able_to :manage, dashboard_administrator_task }

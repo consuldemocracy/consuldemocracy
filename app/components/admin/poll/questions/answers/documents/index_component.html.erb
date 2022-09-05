@@ -8,15 +8,21 @@
 </ul>
 
 <div class="poll-question-form">
-  <%= form_for(Poll::Question::Answer.new, url: admin_answer_documents_path(answer)) do |f| %>
-    <%= render "shared/errors", resource: answer %>
+  <% if can?(:update, @answer) %>
+    <%= form_for(Poll::Question::Answer.new, url: admin_answer_documents_path(answer)) do |f| %>
+      <%= render "shared/errors", resource: answer %>
 
-    <div class="documents">
-      <%= render "documents/nested_documents", f: f %>
-    </div>
+      <div class="documents">
+        <%= render "documents/nested_documents", f: f %>
+      </div>
 
-    <div class="small-12 medium-6 large-2">
-      <%= f.submit(class: "button expanded", value: t("shared.save")) %>
+      <div class="small-12 medium-6 large-2">
+        <%= f.submit(class: "button expanded", value: t("shared.save")) %>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="callout warning">
+      <strong><%= t("admin.questions.no_edit") %></strong>
     </div>
   <% end %>
 
@@ -33,17 +39,7 @@
             <%= link_to document.title, document.attachment %>
           </td>
           <td>
-            <%= render Admin::TableActionsComponent.new(document,
-              actions: [:destroy],
-              destroy_path: document_path(document)
-            ) do |actions| %>
-              <%= actions.action(:download,
-                                 text: t("documents.buttons.download_document"),
-                                 path: document.attachment,
-                                 target: "_blank",
-                                 rel: "nofollow") %>
-
-            <% end %>
+            <%= render Admin::Poll::Questions::Answers::Documents::TableActionsComponent.new(document) %>
           </td>
         </tr>
       <% end %>
