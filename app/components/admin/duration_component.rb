@@ -16,6 +16,10 @@ class Admin::DurationComponent < ApplicationComponent
     end
 
     def end_time
-      durable.ends_at - 1.second if durable.ends_at.present?
+      if durable.ends_at.present? && durable.ends_at == durable.ends_at.beginning_of_day
+        durable.ends_at - 1.second
+      else
+        durable.ends_at
+      end
     end
 end
