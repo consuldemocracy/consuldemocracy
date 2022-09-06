@@ -5,6 +5,7 @@ class Legislation::Process < ApplicationRecord
   include Imageable
   include Documentable
   include SDG::Relatable
+  include AUE::Relatable
   include Searchable
 
   acts_as_paranoid column: :hidden_at
