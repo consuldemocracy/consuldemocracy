@@ -236,6 +236,11 @@ ignore_missing:
   - "welcome.proposal.title"
   - "verification.residence.new.info_message"
   - "verification.residence.new.email"
+  - "legislation.processes.index.section_footer.help_text_1"
+  - "legislation.processes.index.section_footer.help_text_2"
+  - "legislation.processes.index.section_footer.help_text_3"
+  - "proposals.index.section_footer.help_text_1"
+  - "proposals.index.section_footer.help_text_2"
 
 ## Consider these keys used:
 ignore_unused:
