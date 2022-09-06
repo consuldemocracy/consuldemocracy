@@ -235,6 +235,7 @@ es:
           author: Autor
           physical_votes: Votos Presenciales
           total_votes: Total Votos
+          winner: Ganador
         cannot_calculate_winners: El presupuesto debe estar en las fases "Votación final", "Votación finalizada" o "Resultados" para poder calcular las propuestas ganadoras
         see_results: "Ver resultados"
         milestone_tags_filter_all: "Todas las etiquetas de seguimiento"

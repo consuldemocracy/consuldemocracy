@@ -111,3 +111,7 @@
     <%= investment.incompatible? ? t("shared.yes") : t("shared.no") %>
   </td>
 <% end %>
+
+<td class="small" data-field="winner">
+  <%= investment.winner? ? t("shared.yes") : t("shared.no") %>
+</td>
