@@ -10,6 +10,7 @@ class Poll < ApplicationRecord
   include StatsVersionable
   include Reportable
   include SDG::Relatable
+  include AUE::Relatable
 
   translates :name,        touch: true
   translates :summary,     touch: true
