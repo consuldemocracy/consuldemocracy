@@ -13,6 +13,7 @@ class Budget
     include Mappable
     include Documentable
     include SDG::Relatable
+    include AUE::Relatable
 
     acts_as_taggable_on :valuation_tags
     acts_as_votable
