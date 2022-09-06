@@ -3,7 +3,7 @@
     <option value="<%= budget_investments_url(@budget, request.query_parameters.except(:tag_name)) %>"><%= t("custom.headings.select_tag").mb_chars.upcase %></option>
     <% @budget.categories.order("id ASC").each do |tag| %>
     <%= selected = " selected" if params[:tag_name] == tag.name %>
-    <option value="<%= budget_investments_url(@budget, { heading_id: params[:heading_id], status_id: params[:status_id], tag_name: tag.name }) %>" <%= selected %>><%= tag.name %></option>
+    <option value="<%= budget_investments_url(@budget, { heading_id: params[:heading_id], status_id: params[:status_id], tag_name: tag.name, unfeasible: params[:unfeasible] }) %>" <%= selected %>><%= tag.name %></option>
     <% end %>
   </select>
 </div>

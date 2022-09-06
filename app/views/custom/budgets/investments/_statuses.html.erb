@@ -5,7 +5,7 @@
     </option>
     <% @statuses.order("id ASC").each do |status| %>
       <%= selected = " selected" if params[:status_id].to_i == status.id %>
-      <option value="<%= budget_investments_url(@budget, { tag_name: params[:tag_name], heading_id: params[:heading_id], status_id: status.id }) %>" <%= selected %>>
+      <option value="<%= budget_investments_url(@budget, { tag_name: params[:tag_name], heading_id: params[:heading_id], status_id: status.id, unfeasible: params[:unfeasible] }) %>" <%= selected %>>
         <%= status.name %>
       </option>
     <% end %>

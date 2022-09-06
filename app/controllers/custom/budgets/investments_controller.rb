@@ -18,8 +18,12 @@ module Budgets
 
     def index
       # filters
+      if params[:unfeasible]
+        feasibility_filtered_investments = Budget::Investment.all.where.not(feasibility: 'feasible')
+      else
+        feasibility_filtered_investments = investments
+      end
       if params[:status_id]
-        puts params[:status_id]
         investment_ids = []
         Budget::Investment.all.order(:id).each do |investment|
           if investment.milestones.count > 0
@@ -28,12 +32,11 @@ module Budgets
             end
           end
         end
-        filtered_investments = investments.where(id: investment_ids)
+        filtered_investments = feasibility_filtered_investments.where(id: investment_ids)
       else
-        filtered_investments = investments
+        filtered_investments = feasibility_filtered_investments
       end
       if params[:tag_name]
-        puts params[:tag_name]
         tagged_investments = filtered_investments.tagged_with(params[:tag_name])
       else
         tagged_investments = filtered_investments

@@ -1,0 +1,21 @@
+<div class="districts-container">
+  <select onchange="if (this.value) location = this.value;" class="on-view">
+    <option value="<%= budget_investments_url(@budget, request.query_parameters.except(:unfeasible)) %>"><%= t("custom.feasibility.select_feasibility").mb_chars.upcase %></option>
+    <option
+      <%= selected = " selected" if params[:unfeasible] %>
+      value="<%= budget_investments_url(@budget, { tag_name: params[:tag_name], status_id: params[:status_id], heading_id: params[:heading_id], unfeasible: true }) %>"
+    ><%= t("custom.feasibility.unfeasible") %></option>
+    <option
+      <%= selected = " selected" if not params[:unfeasible] %>
+      value="<%= budget_investments_url(@budget, { tag_name: params[:tag_name], status_id: params[:status_id], heading_id: params[:heading_id] }) %>"
+    ><%= t("custom.feasibility.feasible") %></option>
+  </select>
+</div>
+
+<style>
+.districts-container {
+  position: relative;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+</style>
