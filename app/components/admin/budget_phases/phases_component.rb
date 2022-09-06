@@ -12,7 +12,7 @@ class Admin::BudgetPhases::PhasesComponent < ApplicationComponent
     end
 
     def dates(phase)
-      Admin::Budgets::DurationComponent.new(phase).dates
+      render Admin::DurationComponent.new(phase)
     end
 
     def enabled_cell(phase)
