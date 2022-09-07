@@ -14,52 +14,27 @@
 $black: #222 !default;
 $white: #fdfdfd !default;
 
-$body-font-family: "Source Sans Pro", "Helvetica", "Arial",
-  sans-serif !important !default;
+$body-font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif !important !default;
 
 $global-radius: rem-calc(3) !default;
 $global-width: rem-calc(1200) !default;
 
 $header-styles: (
   small: (
-    "h1": (
-      "font-size": 34,
-    ),
-    "h2": (
-      "font-size": 24,
-    ),
-    "h3": (
-      "font-size": 20,
-    ),
-    "h4": (
-      "font-size": 18,
-    ),
-    "h5": (
-      "font-size": 16,
-    ),
-    "h6": (
-      "font-size": 14,
-    ),
+    "h1": ("font-size": 34),
+    "h2": ("font-size": 24),
+    "h3": ("font-size": 20),
+    "h4": ("font-size": 18),
+    "h5": ("font-size": 16),
+    "h6": ("font-size": 14),
   ),
   medium: (
-    "h1": (
-      "font-size": 44,
-    ),
-    "h2": (
-      "font-size": 34,
-    ),
-    "h3": (
-      "font-size": 24,
-    ),
-    "h4": (
-      "font-size": 19,
-    ),
-    "h5": (
-      "font-size": 16,
-    ),
-    "h6": (
-      "font-size": 13,
-    ),
+    "h1": ("font-size": 44),
+    "h2": ("font-size": 34),
+    "h3": ("font-size": 24),
+    "h4": ("font-size": 19),
+    "h5": ("font-size": 16),
+    "h6": ("font-size": 13),
   ),
 ) !default;
 
@@ -77,69 +52,69 @@ $show-header-for-stacked: true !default;
 $body-margin: calc(50vw - #{$global-width / 2}) !default;
 $full-width-margin: unquote("#{$global-width / 2} - 50vw") !default;
 
-$base-font-size: rem-calc(17) !default;
-$base-line: rem-calc(26) !default;
-$line-height: rem-calc(24) !default;
-$tiny-font-size: rem-calc(12) !default;
+$base-font-size:      rem-calc(17) !default;
+$base-line:           rem-calc(26) !default;
+$line-height:         rem-calc(24) !default;
+$tiny-font-size:      rem-calc(12) !default;
 
 $font-family-serif: Georgia, "Times New Roman", Times, serif !default;
 
-$brand: #004a83 !default;
-$brand-secondary: darken($brand, 10%) !default;
-$dark: $brand-secondary !default;
+$brand:             #004a83 !default;
+$brand-secondary:   darken($brand, 10%) !default;
+$dark:              $brand-secondary !default;
 
-$text: $black !default;
-$text-medium: #515151 !default;
-$text-light: #bfbfbf !default;
+$text:              $black !default;
+$text-medium:       #515151 !default;
+$text-light:        #bfbfbf !default;
 
-$border: #dee0e3 !default;
+$border:            #dee0e3 !default;
 
-$link: $brand !default;
-$link-hover: darken($link, 20%) !default;
+$link:              $brand !default;
+$link-hover:        darken($link, 20%) !default;
 
-$debates: $brand !default;
+$debates:           $brand !default;
 
-$like: #7bd2a8 !default;
-$unlike: #ef8585 !default;
+$like:              #7bd2a8 !default;
+$unlike:            #ef8585 !default;
 
-$delete: #f04124 !default;
-$check: #46db91 !default;
+$delete:            #f04124 !default;
+$check:             #46db91 !default;
 
-$proposals: #ffa42d !default;
-$proposals-dark: #794500 !default;
+$proposals:         #ffa42d !default;
+$proposals-dark:    #794500 !default;
 
-$budget: #7e328a !default;
-$budget-hover: #7571bf !default;
+$budget:            #7e328a !default;
+$budget-hover:      #7571bf !default;
 
-$highlight: #e7f2fc !default;
-$highlight-soft: #f3f8fd !default;
-$light: #f5f7fa !default;
-$featured: #ffdc5c !default;
+$highlight:         #e7f2fc !default;
+$highlight-soft:    #f3f8fd !default;
+$light:             #f5f7fa !default;
+$featured:          #ffdc5c !default;
 
-$footer-border: #bfc1c3 !default;
+$footer-border:     #bfc1c3 !default;
 
-$success-bg: #dff0d8 !default;
-$success-border: #d6e9c6 !default;
-$color-success: #3c763d !default;
+$success-bg:        #dff0d8 !default;
+$success-border:    #d6e9c6 !default;
+$color-success:     #3c763d !default;
 
-$info-bg: #d9edf7 !default;
-$info-border: #bce8f1 !default;
-$color-info: #31708f !default;
+$info-bg:           #d9edf7 !default;
+$info-border:       #bce8f1 !default;
+$color-info:        #31708f !default;
 
-$warning-bg: #fcf8e3 !default;
-$warning-border: #faebcc !default;
-$color-warning: #8a6d3b !default;
+$warning-bg:        #fcf8e3 !default;
+$warning-border:    #faebcc !default;
+$color-warning:     #8a6d3b !default;
 
-$alert-bg: #f2dede !default;
-$alert-border: #ebccd1 !default;
-$color-alert: #a94442 !default;
+$alert-bg:          #f2dede !default;
+$alert-border:      #ebccd1 !default;
+$color-alert:       #a94442 !default;
 
-$pdf-primary: #0300ff !default;
-$pdf-secondary: #ff9e00 !default;
+$pdf-primary:       #0300ff !default;
+$pdf-secondary:     #ff9e00 !default;
 
-$outline-focus: 3px solid #ffbf47 !default;
+$outline-focus:     3px solid #ffbf47 !default;
 
-$input-height: $line-height * 2 !default;
+$input-height:      $line-height * 2 !default;
 
 $font-icon-margin: rem-calc(4) !default;
 $icon-width: $line-height * 2 !default;
