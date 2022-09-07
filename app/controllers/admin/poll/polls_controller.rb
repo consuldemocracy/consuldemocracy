@@ -4,7 +4,6 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
   include ReportAttributes
   load_and_authorize_resource
 
-  before_action :load_search, only: [:search_booths, :search_officers]
   before_action :load_geozones, only: [:new, :create, :edit, :update]
 
   def index
@@ -84,14 +83,6 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
                     geozone_ids: [], image_attributes: image_attributes]
 
       [*attributes, *report_attributes, translation_params(Poll)]
-    end
-
-    def search_params
-      params.permit(:poll_id, :search)
-    end
-
-    def load_search
-      @search = search_params[:search]
     end
 
     def resource
