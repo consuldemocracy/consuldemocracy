@@ -7,18 +7,18 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
   before_action :load_geozones, only: [:new, :create, :edit, :update]
 
   def index
-    @polls = Poll.not_budget.created_by_admin.order(starts_at: :desc)
+    @polls = @polls.not_budget.created_by_admin.order(starts_at: :desc)
   end
 
   def show
-    @poll = Poll.find(params[:id])
   end
 
   def new
   end
 
   def create
-    @poll = Poll.new(poll_params.merge(author: current_user))
+    @poll.author = current_user
+
     if @poll.save
       notice = t("flash.actions.create.poll")
       if @poll.budget.present?
