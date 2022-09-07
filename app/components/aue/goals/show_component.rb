@@ -21,7 +21,7 @@ class AUE::Goals::ShowComponent < ApplicationComponent
     end
 
     def long_description
-      sanitize t("aue.goals.goal_#{code}.description")
+      sanitize t("aue.goals.goal_#{code}.long_description")
     end
 
     def split_title

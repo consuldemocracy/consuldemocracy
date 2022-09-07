@@ -1,6 +1,5 @@
 .sdg-content-menu {
-
-  .goals-link::before {
+  .sdg-goals-link::before {
     @extend %font-icon;
     @extend %svg-icon;
     @extend %admin-menu-icon;
@@ -14,5 +13,13 @@
     &::before {
       @extend %admin-menu-icon;
     }
+  }
+
+  .aue-goals-link::before {
+    @extend %font-icon;
+    @extend %svg-icon;
+    @extend %admin-menu-icon;
+
+    mask-image: image-url("aue.svg");
   }
 }

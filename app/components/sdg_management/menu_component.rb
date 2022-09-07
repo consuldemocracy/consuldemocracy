@@ -8,12 +8,12 @@ class SDGManagement::MenuComponent < ApplicationComponent
     end
 
     def goals_link
-      [item_text("sdg_content"), sdg_management_goals_path, sdg?, class: "goals-link"]
+      [item_text("sdg_content"), sdg_management_goals_path, sdg?, class: "sdg-goals-link"]
     end
 
     def aue_goals_link
       return unless feature?(:aue)
-      [item_text("aue_content"), sdg_management_aue_goals_path, aue?, class: "goals-link"]
+      [item_text("aue_content"), sdg_management_aue_goals_path, aue?, class: "aue-goals-link"]
     end
 
     def homepage_link
