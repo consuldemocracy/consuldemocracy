@@ -358,7 +358,7 @@ describe Poll do
     describe ".recounting" do
       it "returns polls in recount & scrutiny phase" do
         about_to_start = create(:poll, starts_at: Date.tomorrow)
-        about_to_end = create(:poll, ends_at: Date.tomorrow)
+        about_to_end = create(:poll, ends_at: Date.current)
         just_ended = create(:poll, ends_at: Date.yesterday)
         recounting_ended = create(:poll, starts_at: 3.years.ago, ends_at: 2.years.ago)
 
