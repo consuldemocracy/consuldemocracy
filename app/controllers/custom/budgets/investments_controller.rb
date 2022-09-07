@@ -19,7 +19,11 @@ module Budgets
     def index
       # filters
       if params[:unfeasible]
-        feasibility_filtered_investments = Budget::Investment.all.where.not(feasibility: 'feasible')
+        if params[:heading_id]
+          feasibility_filtered_investments = Budget::Investment.all.where(heading_id: params[:heading_id]).where.not(feasibility: 'feasible')
+        else
+          feasibility_filtered_investments = Budget::Investment.all.where.not(feasibility: 'feasible')
+        end
       else
         feasibility_filtered_investments = investments
       end
