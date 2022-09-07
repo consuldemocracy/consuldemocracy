@@ -107,33 +107,6 @@ describe Poll do
     end
   end
 
-  describe "#recounting" do
-    it "returns polls in recount & scrutiny phase" do
-      current = create(:poll, :current)
-      expired = create(:poll, :expired)
-      recounting = create(:poll, :recounting)
-
-      recounting_polls = Poll.recounting
-
-      expect(recounting_polls).to eq [recounting]
-      expect(recounting_polls).not_to include(current)
-      expect(recounting_polls).not_to include(expired)
-    end
-  end
-
-  describe "#current_or_recounting" do
-    it "returns current or recounting polls" do
-      current = create(:poll, :current)
-      expired = create(:poll, :expired)
-      recounting = create(:poll, :recounting)
-
-      current_or_recounting = Poll.current_or_recounting
-
-      expect(current_or_recounting).to match_array [current, recounting]
-      expect(current_or_recounting).not_to include(expired)
-    end
-  end
-
   describe "answerable_by" do
     let(:geozone) { create(:geozone) }
 
@@ -198,7 +171,7 @@ describe Poll do
     end
   end
 
-  describe "votable_by" do
+  describe ".votable_by" do
     it "returns polls that have not been voted by a user" do
       user = create(:user, :level_two)
 
@@ -337,8 +310,35 @@ describe Poll do
     end
   end
 
-  context "scopes" do
-    describe "#not_budget" do
+  describe "scopes" do
+    describe ".recounting" do
+      it "returns polls in recount & scrutiny phase" do
+        current = create(:poll, :current)
+        expired = create(:poll, :expired)
+        recounting = create(:poll, :recounting)
+
+        recounting_polls = Poll.recounting
+
+        expect(recounting_polls).to eq [recounting]
+        expect(recounting_polls).not_to include(current)
+        expect(recounting_polls).not_to include(expired)
+      end
+    end
+
+    describe ".current_or_recounting" do
+      it "returns current or recounting polls" do
+        current = create(:poll, :current)
+        expired = create(:poll, :expired)
+        recounting = create(:poll, :recounting)
+
+        current_or_recounting = Poll.current_or_recounting
+
+        expect(current_or_recounting).to match_array [current, recounting]
+        expect(current_or_recounting).not_to include(expired)
+      end
+    end
+
+    describe ".not_budget" do
       it "returns polls not associated to a budget" do
         poll1 = create(:poll)
         poll2 = create(:poll)
@@ -350,7 +350,7 @@ describe Poll do
     end
   end
 
-  describe "#sort_for_list" do
+  describe ".sort_for_list" do
     it "returns polls sorted by name ASC" do
       starts_at = 1.day.from_now
       poll1 = create(:poll, geozone_restricted: true, starts_at: starts_at, name: "Zzz...")
