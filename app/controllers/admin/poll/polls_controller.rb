@@ -42,18 +42,6 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
     end
   end
 
-  def add_question
-    question = ::Poll::Question.find(params[:question_id])
-
-    if question.present?
-      @poll.questions << question
-      notice = t("admin.polls.flash.question_added")
-    else
-      notice = t("admin.polls.flash.error_on_question_added")
-    end
-    redirect_to admin_poll_path(@poll), notice: notice
-  end
-
   def booth_assignments
     @polls = Poll.current.created_by_admin
   end

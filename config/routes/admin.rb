@@ -141,7 +141,6 @@ namespace :admin do
   scope module: :poll do
     resources :polls do
       get :booth_assignments, on: :collection
-      patch :add_question, on: :member
 
       resources :booth_assignments, only: [:index, :show, :create, :destroy] do
         get :search_booths, on: :collection
