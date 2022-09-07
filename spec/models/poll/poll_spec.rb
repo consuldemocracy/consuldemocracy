@@ -86,17 +86,31 @@ describe Poll do
     end
   end
 
-  describe "#opened?" do
+  describe "#current?" do
     it "returns true only when it isn't too late" do
-      expect(create(:poll, :expired)).not_to be_current
-      expect(create(:poll)).to be_current
+      about_to_start = create(:poll, starts_at: Date.tomorrow)
+      just_started = create(:poll, starts_at: Date.current)
+      about_to_end = create(:poll, ends_at: Date.current)
+      just_ended = create(:poll, ends_at: Date.yesterday)
+
+      expect(just_started).to be_current
+      expect(about_to_end).to be_current
+      expect(about_to_start).not_to be_current
+      expect(just_ended).not_to be_current
     end
   end
 
   describe "#expired?" do
     it "returns true only when it is too late" do
-      expect(create(:poll, :expired)).to be_expired
-      expect(create(:poll)).not_to be_expired
+      about_to_start = create(:poll, starts_at: Date.tomorrow)
+      about_to_end = create(:poll, ends_at: Date.current)
+      just_ended = create(:poll, ends_at: Date.yesterday)
+      recounting_ended = create(:poll, starts_at: 3.years.ago, ends_at: 2.years.ago)
+
+      expect(just_ended).to be_expired
+      expect(recounting_ended).to be_expired
+      expect(about_to_start).not_to be_expired
+      expect(about_to_end).not_to be_expired
     end
   end
 
@@ -311,30 +325,65 @@ describe Poll do
   end
 
   describe "scopes" do
+    describe ".current" do
+      it "returns polls which have started but not ended" do
+        about_to_start = create(:poll, starts_at: Date.tomorrow)
+        just_started = create(:poll, starts_at: Date.current)
+        about_to_end = create(:poll, ends_at: Date.current)
+        just_ended = create(:poll, ends_at: Date.yesterday)
+
+        current_polls = Poll.current
+
+        expect(current_polls).to match_array [just_started, about_to_end]
+        expect(current_polls).not_to include(about_to_start)
+        expect(current_polls).not_to include(just_ended)
+      end
+    end
+
+    describe ".expired" do
+      it "returns polls which have already ended" do
+        about_to_start = create(:poll, starts_at: Date.tomorrow)
+        about_to_end = create(:poll, ends_at: Date.current)
+        just_ended = create(:poll, ends_at: Date.yesterday)
+        recounting_ended = create(:poll, starts_at: 3.years.ago, ends_at: 2.years.ago)
+
+        expired_polls = Poll.expired
+
+        expect(expired_polls).to match_array [just_ended, recounting_ended]
+        expect(expired_polls).not_to include(about_to_start)
+        expect(expired_polls).not_to include(about_to_end)
+      end
+    end
+
     describe ".recounting" do
       it "returns polls in recount & scrutiny phase" do
-        current = create(:poll, :current)
-        expired = create(:poll, :expired)
-        recounting = create(:poll, :recounting)
+        about_to_start = create(:poll, starts_at: Date.tomorrow)
+        about_to_end = create(:poll, ends_at: Date.tomorrow)
+        just_ended = create(:poll, ends_at: Date.yesterday)
+        recounting_ended = create(:poll, starts_at: 3.years.ago, ends_at: 2.years.ago)
 
         recounting_polls = Poll.recounting
 
-        expect(recounting_polls).to eq [recounting]
-        expect(recounting_polls).not_to include(current)
-        expect(recounting_polls).not_to include(expired)
+        expect(recounting_polls).to eq [just_ended]
+        expect(recounting_polls).not_to include(about_to_start)
+        expect(recounting_polls).not_to include(about_to_end)
+        expect(recounting_polls).not_to include(recounting_ended)
       end
     end
 
     describe ".current_or_recounting" do
       it "returns current or recounting polls" do
-        current = create(:poll, :current)
-        expired = create(:poll, :expired)
-        recounting = create(:poll, :recounting)
+        about_to_start = create(:poll, starts_at: Date.tomorrow)
+        just_started = create(:poll, starts_at: Date.current)
+        about_to_end = create(:poll, ends_at: Date.current)
+        just_ended = create(:poll, ends_at: Date.yesterday)
+        recounting_ended = create(:poll, starts_at: 3.years.ago, ends_at: 2.years.ago)
 
         current_or_recounting = Poll.current_or_recounting
 
-        expect(current_or_recounting).to match_array [current, recounting]
-        expect(current_or_recounting).not_to include(expired)
+        expect(current_or_recounting).to match_array [just_started, about_to_end, just_ended]
+        expect(current_or_recounting).not_to include(about_to_start)
+        expect(current_or_recounting).not_to include(recounting_ended)
       end
     end
 
@@ -425,7 +474,7 @@ describe Poll do
     end
 
     it "is false for recounting polls" do
-      poll = create(:poll, :recounting)
+      poll = create(:poll, ends_at: Date.yesterday)
 
       expect(poll.recounts_confirmed?).to be false
     end
