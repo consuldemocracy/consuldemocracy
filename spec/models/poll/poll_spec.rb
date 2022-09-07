@@ -86,12 +86,12 @@ describe Poll do
     end
   end
 
-  describe "#current?" do
+  describe "#current?", :with_frozen_time do
     it "returns true only when it isn't too late" do
-      about_to_start = create(:poll, starts_at: Date.tomorrow)
-      just_started = create(:poll, starts_at: Date.current)
-      about_to_end = create(:poll, ends_at: Date.current)
-      just_ended = create(:poll, ends_at: Date.yesterday)
+      about_to_start = create(:poll, starts_at: 1.second.from_now)
+      just_started = create(:poll, starts_at: Time.current)
+      about_to_end = create(:poll, ends_at: Time.current)
+      just_ended = create(:poll, ends_at: 1.second.ago)
 
       expect(just_started).to be_current
       expect(about_to_end).to be_current
@@ -100,11 +100,11 @@ describe Poll do
     end
   end
 
-  describe "#expired?" do
+  describe "#expired?", :with_frozen_time do
     it "returns true only when it is too late" do
-      about_to_start = create(:poll, starts_at: Date.tomorrow)
-      about_to_end = create(:poll, ends_at: Date.current)
-      just_ended = create(:poll, ends_at: Date.yesterday)
+      about_to_start = create(:poll, starts_at: 1.second.from_now)
+      about_to_end = create(:poll, ends_at: Time.current)
+      just_ended = create(:poll, ends_at: 1.second.ago)
       recounting_ended = create(:poll, starts_at: 3.years.ago, ends_at: 2.years.ago)
 
       expect(just_ended).to be_expired
@@ -325,12 +325,12 @@ describe Poll do
   end
 
   describe "scopes" do
-    describe ".current" do
+    describe ".current", :with_frozen_time do
       it "returns polls which have started but not ended" do
-        about_to_start = create(:poll, starts_at: Date.tomorrow)
-        just_started = create(:poll, starts_at: Date.current)
-        about_to_end = create(:poll, ends_at: Date.current)
-        just_ended = create(:poll, ends_at: Date.yesterday)
+        about_to_start = create(:poll, starts_at: 1.second.from_now)
+        just_started = create(:poll, starts_at: Time.current)
+        about_to_end = create(:poll, ends_at: Time.current)
+        just_ended = create(:poll, ends_at: 1.second.ago)
 
         current_polls = Poll.current
 
@@ -340,11 +340,11 @@ describe Poll do
       end
     end
 
-    describe ".expired" do
+    describe ".expired", :with_frozen_time do
       it "returns polls which have already ended" do
-        about_to_start = create(:poll, starts_at: Date.tomorrow)
-        about_to_end = create(:poll, ends_at: Date.current)
-        just_ended = create(:poll, ends_at: Date.yesterday)
+        about_to_start = create(:poll, starts_at: 1.second.from_now)
+        about_to_end = create(:poll, ends_at: Time.current)
+        just_ended = create(:poll, ends_at: 1.second.ago)
         recounting_ended = create(:poll, starts_at: 3.years.ago, ends_at: 2.years.ago)
 
         expired_polls = Poll.expired
@@ -355,11 +355,11 @@ describe Poll do
       end
     end
 
-    describe ".recounting" do
+    describe ".recounting", :with_frozen_time do
       it "returns polls in recount & scrutiny phase" do
-        about_to_start = create(:poll, starts_at: Date.tomorrow)
-        about_to_end = create(:poll, ends_at: Date.current)
-        just_ended = create(:poll, ends_at: Date.yesterday)
+        about_to_start = create(:poll, starts_at: 1.second.from_now)
+        about_to_end = create(:poll, ends_at: Time.current)
+        just_ended = create(:poll, ends_at: 1.second.ago)
         recounting_ended = create(:poll, starts_at: 3.years.ago, ends_at: 2.years.ago)
 
         recounting_polls = Poll.recounting
@@ -371,12 +371,12 @@ describe Poll do
       end
     end
 
-    describe ".current_or_recounting" do
+    describe ".current_or_recounting", :with_frozen_time do
       it "returns current or recounting polls" do
-        about_to_start = create(:poll, starts_at: Date.tomorrow)
-        just_started = create(:poll, starts_at: Date.current)
-        about_to_end = create(:poll, ends_at: Date.current)
-        just_ended = create(:poll, ends_at: Date.yesterday)
+        about_to_start = create(:poll, starts_at: 1.second.from_now)
+        just_started = create(:poll, starts_at: Time.current)
+        about_to_end = create(:poll, ends_at: Time.current)
+        just_ended = create(:poll, ends_at: 1.second.ago)
         recounting_ended = create(:poll, starts_at: 3.years.ago, ends_at: 2.years.ago)
 
         current_or_recounting = Poll.current_or_recounting
@@ -474,7 +474,7 @@ describe Poll do
     end
 
     it "is false for recounting polls" do
-      poll = create(:poll, ends_at: Date.yesterday)
+      poll = create(:poll, ends_at: 1.second.ago)
 
       expect(poll.recounts_confirmed?).to be false
     end

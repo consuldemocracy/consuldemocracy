@@ -12,7 +12,7 @@
   <div class="inline-block">
     <strong><%= t("admin.polls.index.dates") %></strong>
     <br>
-    <%= render Admin::DateRangeComponent.new(@poll.starts_at.beginning_of_day, @poll.ends_at.end_of_day) %>
+    <%= render Admin::DurationComponent.new(@poll) %>
   </div>
 
   <% if @poll.geozone_restricted %>
