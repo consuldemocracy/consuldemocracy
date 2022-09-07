@@ -19,3 +19,7 @@ es:
         filters:
           open: "Trámites abiertos en consulta pública previa"
           past: "Trámites cerrados en consulta pública previa"
+      shared:
+        key_dates: "Crear propuestas"
+        draft_publication_date: "Fecha de inicio del plazo"
+        result_publication_date: "Fecha de fin del plazo"

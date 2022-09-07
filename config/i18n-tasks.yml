@@ -345,6 +345,9 @@ ignore_unused:
   - "mailers.budget_investment_unfeasible.new_href"
   - "verification.residence.new.error_not_allowed_postal_code"
   - "layouts.header.poll_questions"
+  - "legislation.processes.header.description"
+  - "legislation.processes.process.see_latest_comments"
+  - "legislation.processes.process.see_latest_comments_title"
 ####
 ## Exclude these keys from the `i18n-tasks eq-base" report:
 # ignore_eq_base:

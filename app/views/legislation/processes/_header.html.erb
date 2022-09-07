@@ -16,7 +16,6 @@
         <div id="legislation_info" class="is-hidden" data-toggler=".is-hidden">
 
           <% if @process.description.present? %>
-            <p class="title"><%= t("legislation.processes.header.description") %></p>
             <%= markdown @process.description %>
           <% end %>
 
@@ -32,20 +31,6 @@
         </button>
       <% else %>
         <%= render "legislation/processes/header_full", process: @process %>
-      <% end %>
-    </div>
-
-    <aside class="small-12 medium-3 column">
-      <%= render "shared/social_share",
-        share_title: t("proposals.show.share"),
-        title: @process.title,
-        url: legislation_process_url(@process),
-        description: @process.title,
-        mobile: @process.title %>
-
-      <% if @process.image.present? %>
-        <hr>
-        <%= image_tag(@process.image.variant(:large), alt: @process.title, id: "image") %>
       <% end %>
 
       <% if process.draft_publication.enabled? %>
@@ -70,6 +55,13 @@
             <strong><%= format_date(process.result_publication_date) %></strong>
           <% end %>
         </p>
+      <% end %>
+    </div>
+
+    <aside class="small-12 medium-3 column">
+      <% if @process.image.present? %>
+        <hr>
+        <%= image_tag(@process.image.variant(:large), alt: @process.title, id: "image") %>
       <% end %>
     </aside>
   </div>

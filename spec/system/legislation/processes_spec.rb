@@ -77,7 +77,7 @@ describe "Legislation" do
 
       visit legislation_process_path(process, locale: "es")
 
-      expect(page).to have_content("Fases de participación")
+      expect(page).to have_content("Crear propuestas")
       expect(page).to have_content("Propuestas")
       expect(page).to have_content("01 ene 2018 - 01 dic 2018")
     end
@@ -168,7 +168,7 @@ describe "Legislation" do
 
         visit legislation_process_path(process)
 
-        within("aside") do
+        within(".legislation-hero") do
           expect(page).to have_content "DRAFT PUBLICATION"
           expect(page).to have_content "10 Jan 2019"
           expect(page).to have_content "FINAL RESULT PUBLICATION"

@@ -7,7 +7,8 @@ describe "Legislation Proposals" do
   let(:proposal) { create(:legislation_proposal) }
 
   context "Concerns" do
-    it_behaves_like "notifiable in-app", :legislation_proposal
+    # Comments hidden on legislation proposals
+    # it_behaves_like "notifiable in-app", :legislation_proposal
     it_behaves_like "flaggable", :legislation_proposal
   end
 
@@ -155,7 +156,7 @@ describe "Legislation Proposals" do
     expect(page).to have_css "img[alt='clippy.jpg']"
   end
 
-  scenario "Show votes score on index and show" do
+  scenario "Do not show votes score" do
     legislation_proposal_positive = create(:legislation_proposal,
                                            legislation_process_id: process.id,
                                            title: "Legislation proposal positive")
@@ -179,25 +180,25 @@ describe "Legislation Proposals" do
     visit legislation_process_proposals_path(process)
 
     within "#legislation_proposal_#{legislation_proposal_positive.id}" do
-      expect(page).to have_content("7 votes")
+      expect(page).not_to have_content("7 votes")
     end
 
     within "#legislation_proposal_#{legislation_proposal_zero.id}" do
-      expect(page).to have_content("No votes")
+      expect(page).not_to have_content("No votes")
     end
 
     within "#legislation_proposal_#{legislation_proposal_negative.id}" do
-      expect(page).to have_content("-6 votes")
+      expect(page).not_to have_content("-6 votes")
     end
 
     visit legislation_process_proposal_path(process, legislation_proposal_positive)
-    expect(page).to have_content("7 votes")
+    expect(page).not_to have_content("7 votes")
 
     visit legislation_process_proposal_path(process, legislation_proposal_zero)
-    expect(page).to have_content("No votes")
+    expect(page).not_to have_content("No votes")
 
     visit legislation_process_proposal_path(process, legislation_proposal_negative)
-    expect(page).to have_content("-6 votes")
+    expect(page).not_to have_content("-6 votes")
   end
 
   scenario "Show link to process on show" do
