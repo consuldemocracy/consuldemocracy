@@ -13,7 +13,7 @@ describe "Admin Budgets", :admin do
       expect(page).to have_current_path(/admin\/polls\/\d+/)
       expect(page).to have_content(budget.name)
       expect(page).to have_content("#{balloting_phase.starts_at.to_date} 00:00")
-      expect(page).to have_content("#{balloting_phase.ends_at.to_date} 23:59")
+      expect(page).to have_content("#{balloting_phase.ends_at.to_date - 1.day} 23:59")
     end
 
     scenario "Create poll in current locale if the budget does not have a poll associated" do
