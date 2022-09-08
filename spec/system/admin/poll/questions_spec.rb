@@ -147,8 +147,9 @@ describe "Admin poll questions", :admin do
       end
     end
 
-    expect(page).not_to have_content(question1.title)
-    expect(page).to have_content(question2.title)
+    expect(page).not_to have_content question1.title
+    expect(page).to have_content question2.title
+    expect(page).to have_current_path admin_poll_path(poll)
   end
 
   context "Poll select box" do
