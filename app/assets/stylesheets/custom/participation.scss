@@ -14,3 +14,66 @@
     margin-top: 0;
   }
 }
+
+.progress-bar-nav {
+  // position: relative;
+  z-index: 10;
+
+  @include breakpoint(medium) {
+    // transition: height 0.3s;
+
+    &.is-fixed {
+      // background: $body-background;
+      // border-bottom: 2px solid $border;
+      // height: auto;
+      // left: 0;
+      // padding: $line-height;
+      // padding-bottom: $line-height / 2;
+      // position: fixed;
+      // top: 0;
+      // width: 100%;
+
+      h2 {
+        // font-size: rem-calc(24);
+        // transition: font-size 0.3s;
+      }
+    }
+  }
+
+  h2 {
+    // transition: font-size 0.3s;
+
+    // @include breakpoint(small only) {
+    //   margin: $line-height 0;
+    // }
+  }
+}
+
+.progress-votes {
+  .total-amount {
+    margin-top: 15px;
+  }
+}
+
+.supports.ballot {
+  display: flex;
+  justify-content: center;
+
+  .button {
+    margin: 0;
+    padding: 6px 10px 8px;
+    font-size: 16px;
+  }
+}
+
+.investment-ballots {
+  display: flex;
+
+  .supports {
+    padding: 0 20px;
+  }
+
+  .remove.supported {
+    margin: 0;
+  }
+}

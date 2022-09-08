@@ -68,8 +68,7 @@
     <div class="main-indented-content">
       <section class="no-margin-top margin-bottom">
         <div class="expanded budget-heading padding">
-
-          <div class="row progress-votes">
+          <div class="progress-votes">
             <div class="row">
               <div class="small-12 column">
                 <% if @ballot.valid_heading?(@heading) %>
@@ -102,7 +101,7 @@
                       <%= sanitize(t("budgets.investments.header.different_heading_assigned", heading_link: heading_link(@assigned_heading, @budget))) %>
                       <br>
                       <small>
-                        <%= t("budgets.investments.header.change_ballot", heading_link: heading_link(@assigned_heading, @budget)).html_safe %>
+                        <%= t("budgets.investments.header.change_ballot", check_ballot: heading_link(@assigned_heading, @budget)).html_safe %>
                       </small>
                     </div>
                   </div>

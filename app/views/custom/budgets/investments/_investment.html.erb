@@ -44,38 +44,35 @@
                   <% end %>
                 </div>
               <% end %>
+
+              <% unless investment.unfeasible? %>
+                <% if @heading and investment.should_show_ballots? %>
+                  <div id="<%= dom_id(investment) %>_ballot"
+                      class="small-12 medium-12 text-right"
+                      <%= "data-equalizer-watch" if feature?(:allow_images) && investment.image.present? %>>
+                    <%= render partial: "/budgets/investments/ballot", locals: {
+                      investment: investment,
+                      investment_ids: investment_ids,
+                      ballot: ballot
+                    } %>
+                  </div>
+                <% elsif investment.should_show_ballots? %>
+                  <div class="small-12 medium-12 callout warning margin-top">
+                    <strong><%= t("custom.headings.select_heading_to_vote") %></strong>
+                  </div>
+                  <div <%= "data-equalizer-watch" if feature?(:allow_images) && investment.image.present? %>></div>
+                <% else %>
+                  <div <%= "data-equalizer-watch" if feature?(:allow_images) && investment.image.present? %>></div>
+                <% end %>
+
+              <% end %>
+
             <% end %>
           </div>
         <% end %>
       </div>
 
-      <% unless investment.unfeasible? %>
-        <% if @heading and investment.should_show_ballots? %>
-          <div class="border-tb clearfix">
-            <div id="<%= dom_id(investment) %>_ballot"
-                 class="small-12 medium-12 text-right float-right"
-                 <%= "data-equalizer-watch" if feature?(:allow_images) && investment.image.present? %>>
-              <%= render partial: "/budgets/investments/ballot", locals: {
-                investment: investment,
-                investment_ids: investment_ids,
-                ballot: ballot
-              } %>
-            </div>
-          </div>
-        <% elsif investment.should_show_ballots? %>
-          <div class="border-tb clearix">
-            <div class="small-12 medium-12">
-              <p>
-                <strong><%= t("custom.headings.select_heading_to_vote") %></strong>
-              </p>
-            </div>
-          </div>
-          <div <%= "data-equalizer-watch" if feature?(:allow_images) && investment.image.present? %>></div>
-        <% else %>
-          <div <%= "data-equalizer-watch" if feature?(:allow_images) && investment.image.present? %>></div>
-        <% end %>
-
-      <% end %>
+      
     </div>
   </div>
 </div>

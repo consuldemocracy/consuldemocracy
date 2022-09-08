@@ -47,6 +47,7 @@ sl-SI:
         share: "Deli!"
         copy: "Skopiraj povezavo!"
         price: "Vrednost projekta"
+        votes: "Želiš podpreti ta projekt?"
       edit:
         submit: "Shrani spremembe"
       form:
@@ -54,6 +55,34 @@ sl-SI:
         submit: "Oddaj predlog"
       index:
         title: Participativni proračun
+        by_heading: "Investicijski projekti na območju: %{heading}"
+        sidebar:
+          different_heading_assigned: "Imaš aktivna glasovanja na drugem območju: %{heading_link}."
+      header:
+        different_heading_assigned: "Imaš aktivna glasovanja na drugem območju: %{heading_link}."
+        change_ballot: "Če si premisliš, lahko odstraniš svoje glasove iz tega območja in začneš znova."
+    ballots:
+      show:
+        amount_progress: "%{amount_spent} / %{amount_limit}"
+        amount_available:
+          knapsack: "Na voljo vam je še <span>%{count}</span>."
+          approval:
+            zero: "You can still cast <span>%{count}</span> votes."
+            one: "You can still cast <span>%{count}</span> vote."
+            other: "You can still cast <span>%{count}</span> votes."
+        amount_spent:
+          knapsack: "Porabljeno: <span>%{count}</span>"
+          approval:
+            zero: "Votes cast: <span>%{count}</span>"
+            one: "Votes cast: <span>%{count}</span>"
+            other: "Votes cast: <span>%{count}</span>"
+        amount_limit:
+          knapsack: "Vaš proračun: <span>%{count}</span>"
+          approval:
+            one: "You can vote <span>1</span> project"
+            other: "You can vote up to <span>%{count}</span> projects"
+      reasons_for_not_balloting:
+        different_heading_assigned: "<strong>Glasuješ lahko samo za predloge v enakem območju.</strong>"
   comments:
     actions:
       confirm_delete: Potrdi izbris

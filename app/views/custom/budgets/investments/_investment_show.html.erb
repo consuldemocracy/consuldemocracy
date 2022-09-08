@@ -137,7 +137,7 @@
             <p class="investment-price-explanation"><%= investment.price_explanation %></p>
           <% end %>
         </div>
-        <hr />
+        
       <% end %>
       <% if investment.should_show_aside? %>
         <% if investment.should_show_votes? %>
@@ -153,23 +153,24 @@
             </div>
           </div>
         <% elsif investment.should_show_ballots? %>
-          <!-- <div class="sidebar-divider"></div> -->
-          <h2>
-            <!--
-              <%= t("budgets.investments.show.votes") %>
-            -->
-          </h2>
-          <div class="text-center">
-            <div id="<%= dom_id(investment) %>_ballot">
-              <%= render partial: "ballot", locals: {
-                investment: investment,
-                investment_ids: investment_ids,
-                ballot: ballot
-              } %>
+          <div class="investment-ballots">
+            <h4>
+                <%= t("budgets.investments.show.votes") %>
+            </h4>
+            <div class="">
+              <div id="<%= dom_id(investment) %>_ballot">
+                <%= render partial: "ballot", locals: {
+                  investment: investment,
+                  investment_ids: investment_ids,
+                  ballot: ballot
+                } %>
+              </div>
             </div>
           </div>
         <% end %>
       <% end %>
+
+      <hr />
 
       <div class="row social-box" data-equalizer>
         <div class="small-12 column medium-centered text-center">
