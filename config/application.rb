@@ -1,6 +1,19 @@
 require_relative "boot"
 
-require "rails/all"
+require "rails"
+# Pick the frameworks you want:
+require "active_model/railtie"
+require "active_job/railtie"
+require "active_record/railtie"
+require "active_storage/engine"
+require "action_controller/railtie"
+require "action_mailer/railtie"
+# require "action_mailbox/engine"
+# require "action_text/engine"
+require "action_view/railtie"
+require "action_cable/engine"
+require "sprockets/railtie"
+require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -8,7 +21,7 @@ Bundler.require(*Rails.groups)
 
 module Consul
   class Application < Rails::Application
-    config.load_defaults 5.2
+    config.load_defaults 6.0
 
     # Keep belongs_to fields optional by default, because that's the way
     # Rails 4 models worked
@@ -21,10 +34,22 @@ module Consul
     # in any CONSUL installations
     config.active_support.use_authenticated_message_encryption = false
 
+    # Keep using the classic autoloader until we decide how custom classes
+    # should work with zeitwerk
+    config.autoloader = :classic
+
+    # Use the default queue for ActiveStorage like we were doing with Rails 5.2
+    # because it will also be the default in Rails 6.1.
+    config.active_storage.queues.analysis = nil
+    config.active_storage.queues.purge    = nil
+
+    # Keep reading existing data in the legislation_annotations ranges column
+    config.active_record.yaml_column_permitted_classes = [ActiveSupport::HashWithIndifferentAccess, Symbol]
+
     # Handle custom exceptions
     config.action_dispatch.rescue_responses["FeatureFlags::FeatureDisabled"] = :forbidden
 
-    # Store files locally.
+    # Store uploaded files on the local file system (see config/storage.yml for options).
     config.active_storage.service = :local
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
@@ -72,7 +97,7 @@ module Consul
       "zh-CN",
       "zh-TW"]
     config.i18n.available_locales = available_locales
-    config.i18n.fallbacks = {
+    config.i18n.fallbacks = [I18n.default_locale, {
       "ca"    => "es",
       "es-PE" => "es",
       "eu"    => "es",
@@ -82,7 +107,7 @@ module Consul
       "oc"    => "fr",
       "pt-BR" => "es",
       "val"   => "es"
-    }
+    }]
 
     config.i18n.load_path += Dir[Rails.root.join("config", "locales", "**[^custom]*", "*.{rb,yml}")]
     config.i18n.load_path += Dir[Rails.root.join("config", "locales", "custom", "**", "*.{rb,yml}")]

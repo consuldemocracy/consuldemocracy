@@ -5,4 +5,15 @@ namespace :db do
     I18n.enforce_available_locales = false
     load(Rails.root.join("db", "dev_seeds.rb"))
   end
+
+  desc "Calculates the TSV column for all comments and proposal notifications"
+  task calculate_tsv: :environment do
+    logger = ApplicationLogger.new
+
+    logger.info "Calculating tsvector for comments"
+    Comment.with_hidden.find_each(&:calculate_tsvector)
+
+    logger.info "Calculating tsvector for proposal notifications"
+    ProposalNotification.with_hidden.find_each(&:calculate_tsvector)
+  end
 end

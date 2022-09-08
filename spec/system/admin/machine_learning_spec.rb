@@ -211,11 +211,11 @@ describe "Machine learning" do
     FileUtils.mkdir_p Rails.root.join("public", "machine_learning", "data")
 
     allow_any_instance_of(MachineLearning).to receive(:run) do
-      MachineLearningJob.first.update!(finished_at: Time.current + 2.minutes)
+      MachineLearningJob.first.update!(finished_at: 2.minutes.from_now)
       create(:machine_learning_info,
              script: "proposals_summary_comments_textrank.py",
              kind: "comments_summary",
-             updated_at: Time.current + 2.minutes)
+             updated_at: 2.minutes.from_now)
       comments_file = MachineLearning::DATA_FOLDER.join(MachineLearning.comments_filename)
       File.open(comments_file, "w") { |file| file.write([].to_json) }
       proposals_comments_summary_file = MachineLearning::DATA_FOLDER.join(MachineLearning.proposals_comments_summary_filename)

@@ -22,7 +22,7 @@
       <li>
         <%= layout_menu_link_to t("layouts.header.poll_questions"),
                                   polls_path,
-                                  controller_name == "polls" || (controller_name == "questions" && controller.class.parent == Polls),
+                                  controller_name == "polls" || (controller_name == "questions" && controller.class.module_parent == Polls),
                                   accesskey: "3" %>
       </li>
     <% end %>
@@ -30,7 +30,7 @@
       <li>
         <%= layout_menu_link_to t("layouts.header.collaborative_legislation"),
                                 legislation_processes_path,
-                                controller.class.parent == Legislation,
+                                controller.class.module_parent == Legislation,
                                 accesskey: "4" %>
       </li>
     <% end %>

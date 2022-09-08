@@ -1345,6 +1345,7 @@ es:
         label:
           booths: "Buscar urna por nombre"
           budget_investments: "Buscar proyectos por título, descripción o partida"
+          comments: "Buscar comentarios"
           debates: "Buscar debates por título o descripción"
           legislation_processes: "Buscar procesos por título o descripción"
           legislation_proposals: "Buscar propuestas por título o descripción"
@@ -1354,6 +1355,7 @@ es:
           poll_questions: "Buscar preguntas"
           polls: "Buscar votaciones por nombre o descripción"
           proposals: "Buscar propuestas por título, código, descripción o pregunta"
+          proposal_notifications: "Buscar notificaciones por título o descripción"
           users: "Buscar usuario por nombre o email"
         search: "Buscar"
       search_results: "Resultados de la búsqueda"

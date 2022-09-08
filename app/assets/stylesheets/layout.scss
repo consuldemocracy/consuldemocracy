@@ -1013,7 +1013,7 @@ footer {
 }
 
 .auth-image {
-  background: $brand image-url("auth_bg.jpg");
+  background-color: $brand;
   background-repeat: no-repeat;
   background-size: cover;
   color: $white;

@@ -3,7 +3,11 @@ shared_examples "relationable" do |relationable_model_name|
   let(:related1) { create([:proposal, :debate, :budget_investment].sample) }
   let(:related2) { create([:proposal, :debate, :budget_investment].sample) }
   let(:user) { create(:user) }
-  before { Setting["url"] = Capybara.app_host }
+
+  before do
+    integration_session.host = Capybara.app_host # TODO: remove after upgrading to Rails 6.1
+    Setting["url"] = Capybara.app_host
+  end
 
   scenario "related contents are listed" do
     create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))

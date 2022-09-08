@@ -18,7 +18,7 @@ class Shared::LinkListComponent < ApplicationComponent
 
     def list_items
       present_links.map do |text, url, current = false, **link_options|
-        tag.li(({ "aria-current": true } if current)) do
+        tag.li("aria-current": (true if current)) do
           if url
             link_to text, url, link_options
           else

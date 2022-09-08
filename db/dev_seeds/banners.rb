@@ -6,9 +6,9 @@ section "Creating banners" do
     banner = Banner.new(title: title,
                         description: description,
                         target_url: target_url,
-                        post_started_at: rand((Time.current - 1.week)..(Time.current - 1.day)),
-                        post_ended_at:   rand((Time.current - 1.day)..(Time.current + 1.week)),
-                        created_at: rand((Time.current - 1.week)..Time.current))
+                        post_started_at: rand((1.week.ago)..(1.day.ago)),
+                        post_ended_at:   rand((1.day.ago)..(1.week.from_now)),
+                        created_at: rand((1.week.ago)..Time.current))
     I18n.available_locales.map do |locale|
       Globalize.with_locale(locale) do
         banner.description = "Description for locale #{locale}"

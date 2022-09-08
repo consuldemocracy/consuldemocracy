@@ -22,7 +22,7 @@
   <% end %>
 
   <% if feature?(:legislation) %>
-    <li class="<%= "is-active" if controller.class.parent == Admin::Legislation %>">
+    <li class="<%= "is-active" if controller.class.module_parent == Admin::Legislation %>">
       <%= link_to t("admin.menu.legislation"), admin_legislation_processes_path, class: "legislation-link" %>
     </li>
   <% end %>
@@ -69,7 +69,7 @@
       banners_link,
       information_texts_link,
       documents_link,
-      class: ("is-active" if customization? && controller.class.parent != Admin::Poll::Questions::Answers)
+      class: ("is-active" if customization? && controller.class.module_parent != Admin::Poll::Questions::Answers)
     ) %>
   </li>
 

@@ -27,7 +27,7 @@
                       "aria-hidden": true, class: "button hollow expanded" %>
 
         <%= render "layouts/flash" %>
-        <%= render "layouts/officing_booth" if controller.class.parent == Officing && session[:booth_id].present? %>
+        <%= render "layouts/officing_booth" if controller.class.module_parent == Officing && session[:booth_id].present? %>
         <%= yield %>
       </div>
     </div>

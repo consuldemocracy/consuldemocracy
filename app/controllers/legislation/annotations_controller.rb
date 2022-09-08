@@ -6,12 +6,11 @@ class Legislation::AnnotationsController < Legislation::BaseController
 
   load_and_authorize_resource :process
   load_and_authorize_resource :draft_version, through: :process
-  load_and_authorize_resource
+  load_and_authorize_resource through: :draft_version
 
   has_orders %w[most_voted newest oldest], only: :show
 
   def index
-    @annotations = @draft_version.annotations
   end
 
   def show
@@ -61,13 +60,13 @@ class Legislation::AnnotationsController < Legislation::BaseController
   end
 
   def search
-    @annotations = @draft_version.annotations.order(Arel.sql("LENGTH(quote) DESC"))
+    @annotations = @annotations.order(Arel.sql("LENGTH(quote) DESC"))
     annotations_hash = { total: @annotations.size, rows: @annotations }
     render json: annotations_hash.to_json(methods: :weight)
   end
 
   def comments
-    @annotation = Legislation::Annotation.find(params[:annotation_id])
+    @annotation = @annotations.find(params[:annotation_id])
     @comment = @annotation.comments.new
   end
 
@@ -78,8 +77,7 @@ class Legislation::AnnotationsController < Legislation::BaseController
   end
 
   def new_comment
-    @draft_version = Legislation::DraftVersion.find(params[:draft_version_id])
-    @annotation = @draft_version.annotations.find(params[:annotation_id])
+    @annotation = @annotations.find(params[:annotation_id])
     @comment = @annotation.comments.new(body: params[:comment][:body], user: current_user)
     if @comment.save
       @comment = @annotation.comments.new
