@@ -72,8 +72,4 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
 
       [*attributes, *report_attributes, translation_params(Poll)]
     end
-
-    def resource
-      @poll ||= Poll.find(params[:id])
-    end
 end
