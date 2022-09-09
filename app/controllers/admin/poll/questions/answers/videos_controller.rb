@@ -25,8 +25,7 @@ class Admin::Poll::Questions::Answers::VideosController < Admin::Poll::BaseContr
 
   def update
     if @video.update(video_params)
-      redirect_to admin_answer_videos_path(@video.answer_id),
-               notice: t("flash.actions.save_changes.notice")
+      redirect_to admin_answer_videos_path(@video.answer), notice: t("flash.actions.save_changes.notice")
     else
       render :edit
     end

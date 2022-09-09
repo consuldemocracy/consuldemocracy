@@ -1,26 +1,53 @@
 require "rails_helper"
 
 describe "Videos", :admin do
-  scenario "Create" do
-    question = create(:poll_question)
-    answer = create(:poll_question_answer, question: question)
-    video_title = "'Magical' by Junko Ohashi"
-    video_url = "https://www.youtube.com/watch?v=-JMf43st-1A"
+  let!(:question) { create(:poll_question) }
+  let!(:answer) { create(:poll_question_answer, question: question) }
+  let(:title) { "'Magical' by Junko Ohashi" }
+  let(:url) { "https://www.youtube.com/watch?v=-JMf43st-1A" }
 
+  scenario "Create" do
     visit admin_question_path(question)
 
     within("#poll_question_answer_#{answer.id}") do
       click_link "Video list"
     end
-
     click_link "Add video"
 
-    fill_in "poll_question_answer_video_title", with: video_title
-    fill_in "poll_question_answer_video_url", with: video_url
+    fill_in "Title", with: title
+    fill_in "External video", with: url
 
     click_button "Save"
 
-    expect(page).to have_content(video_title)
-    expect(page).to have_content(video_url)
+    expect(page).to have_content title
+    expect(page).to have_content url
+  end
+
+  scenario "Update" do
+    video = create(:poll_answer_video, answer: answer)
+
+    visit edit_admin_video_path(video)
+
+    fill_in "Title", with: title
+    fill_in "External video", with: url
+
+    click_button "Save"
+
+    expect(page).to have_content title
+    expect(page).to have_content url
+  end
+
+  scenario "Destroy" do
+    video = create(:poll_answer_video, answer: answer)
+
+    visit admin_answer_videos_path(answer)
+
+    within("#poll_question_answer_video_#{video.id}") do
+      accept_confirm("Are you sure? This action will delete \"#{video.title}\" and can't be undone.") do
+        click_button "Delete"
+      end
+    end
+
+    expect(page).to have_content "Answer video deleted successfully."
   end
 end
