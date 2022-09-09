@@ -1,17 +1,14 @@
 class Admin::Poll::Questions::Answers::VideosController < Admin::Poll::BaseController
-  before_action :load_answer, only: [:index, :new, :create]
-  before_action :load_video, only: [:edit, :update, :destroy]
+  load_resource :answer, class: "::Poll::Question::Answer"
+  load_resource class: "::Poll::Question::Answer::Video", through: :answer
 
   def index
   end
 
   def new
-    @video = ::Poll::Question::Answer::Video.new
   end
 
   def create
-    @video = ::Poll::Question::Answer::Video.new(video_params)
-
     if @video.save
       redirect_to admin_answer_videos_path(@answer),
                notice: t("flash.actions.create.poll_question_answer_video")
@@ -25,7 +22,7 @@ class Admin::Poll::Questions::Answers::VideosController < Admin::Poll::BaseContr
 
   def update
     if @video.update(video_params)
-      redirect_to admin_answer_videos_path(@video.answer), notice: t("flash.actions.save_changes.notice")
+      redirect_to admin_answer_videos_path(@answer), notice: t("flash.actions.save_changes.notice")
     else
       render :edit
     end
@@ -34,7 +31,7 @@ class Admin::Poll::Questions::Answers::VideosController < Admin::Poll::BaseContr
   def destroy
     @video.destroy!
     notice = t("flash.actions.destroy.poll_question_answer_video")
-    redirect_to admin_answer_videos_path(@video.answer), notice: notice
+    redirect_to admin_answer_videos_path(@answer), notice: notice
   end
 
   private
@@ -44,14 +41,6 @@ class Admin::Poll::Questions::Answers::VideosController < Admin::Poll::BaseContr
     end
 
     def allowed_params
-      [:title, :url, :answer_id]
-    end
-
-    def load_answer
-      @answer = ::Poll::Question::Answer.find(params[:answer_id])
-    end
-
-    def load_video
-      @video = ::Poll::Question::Answer::Video.find(params[:id])
+      [:title, :url]
     end
 end

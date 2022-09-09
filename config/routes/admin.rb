@@ -172,7 +172,7 @@ namespace :admin do
       resources :answers, except: [:index, :show, :destroy], controller: "questions/answers", shallow: false
       resources :answers, only: [], controller: "questions/answers" do
         resources :images, controller: "questions/answers/images"
-        resources :videos, controller: "questions/answers/videos"
+        resources :videos, controller: "questions/answers/videos", shallow: false
         resources :documents, only: [:index, :create], controller: "questions/answers/documents"
       end
       post "/answers/order_answers", to: "questions/answers#order_answers"
@@ -328,5 +328,5 @@ resolve "Poll::Question::Answer" do |answer, options|
 end
 
 resolve "Poll::Question::Answer::Video" do |video, options|
-  [:video, options.merge(id: video)]
+  [:answer, :video, options.merge(answer_id: video.answer, id: video)]
 end

@@ -7,7 +7,7 @@
 </h2>
 
 <%= link_to t("admin.answers.videos.index.add_video"),
-            new_admin_answer_video_path,
+            new_admin_answer_video_path(@answer),
             class: "button success float-right" %>
 
 <div>
@@ -22,7 +22,7 @@
     </thead>
 
     <tbody>
-      <% @answer.videos.each do |video| %>
+      <% @videos.each do |video| %>
         <tr id="<%= dom_id(video) %>" class="poll_question_answer_video">
           <td><%= video.title %></td>
           <td><%= link_to video.url, video.url %></td>
