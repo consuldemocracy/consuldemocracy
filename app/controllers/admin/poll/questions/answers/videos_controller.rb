@@ -32,12 +32,9 @@ class Admin::Poll::Questions::Answers::VideosController < Admin::Poll::BaseContr
   end
 
   def destroy
-    notice = if @video.destroy
-               t("flash.actions.destroy.poll_question_answer_video")
-             else
-               t("flash.actions.destroy.error")
-             end
-    redirect_back(fallback_location: (request.referer || root_path), notice: notice)
+    @video.destroy!
+    notice = t("flash.actions.destroy.poll_question_answer_video")
+    redirect_to admin_answer_videos_path(@video.answer), notice: notice
   end
 
   private
