@@ -86,7 +86,7 @@ sl-SI:
         not_verified: Le verificirani uporabniki lahko glasujejo o naložbah; %{verify_account}.
         organization: Organizacijam ni dovoljeno glasovati
         not_selected: Neizbranih investicij ni mogoče podpreti
-        not_enough_money: "Ves razpoložljiv proračun si že porabil.<br><small>Lahko pa kadarkoli %{change_ballot}</small>"
+        not_enough_money: "Žal na voljo nimaš več dovolj proračuna."
         no_ballots_allowed: Faza izbiranja je končana
         different_heading_assigned: "<strong>Glasuješ lahko samo za predloge v enakem območju.</strong>"
         change_ballot: spremeniš svoje glasove
