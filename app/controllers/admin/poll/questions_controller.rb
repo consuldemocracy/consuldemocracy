@@ -62,8 +62,4 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
     def search_params
       params.permit(:poll_id, :search)
     end
-
-    def resource
-      @poll_question ||= Poll::Question.find(params[:id])
-    end
 end
