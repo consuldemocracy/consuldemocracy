@@ -114,6 +114,8 @@ describe Abilities::Administrator do
   it { should be_able_to(:create, Poll::Question) }
   it { should be_able_to(:update, Poll::Question) }
 
+  it { should be_able_to(:manage, Poll::Question::Answer) }
+
   it { is_expected.to be_able_to :manage, Dashboard::AdministratorTask }
   it { is_expected.to be_able_to :manage, dashboard_administrator_task }
 

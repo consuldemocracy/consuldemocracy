@@ -3,10 +3,10 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
   include DocumentAttributes
 
   load_and_authorize_resource :question, class: "::Poll::Question"
-  load_resource class: "::Poll::Question::Answer",
-                through: :question,
-                through_association: :question_answers,
-                except: :documents
+  load_and_authorize_resource class: "::Poll::Question::Answer",
+                              through: :question,
+                              through_association: :question_answers,
+                              except: :documents
 
   def new
   end
