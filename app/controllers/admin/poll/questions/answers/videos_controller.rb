@@ -1,6 +1,6 @@
 class Admin::Poll::Questions::Answers::VideosController < Admin::Poll::BaseController
-  load_resource :answer, class: "::Poll::Question::Answer"
-  load_resource class: "::Poll::Question::Answer::Video", through: :answer
+  load_and_authorize_resource :answer, class: "::Poll::Question::Answer"
+  load_and_authorize_resource class: "::Poll::Question::Answer::Video", through: :answer
 
   def index
   end
