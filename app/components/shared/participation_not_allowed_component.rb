@@ -16,7 +16,8 @@ class Shared::ParticipationNotAllowedComponent < ApplicationComponent
     def body
       @body ||=
         if !current_user
-          sanitize(t("users.login_to_continue", signin: link_to_signin, signup: link_to_signup))
+          # sanitize(t("users.login_to_continue", signin: link_to_signin, signup: link_to_signup))
+          sanitize(t("budgets.ballots.reasons_for_not_balloting.not_logged_in"))
         elsif organization?
           tag.p t("votes.organizations")
         elsif cannot_vote_text.present?

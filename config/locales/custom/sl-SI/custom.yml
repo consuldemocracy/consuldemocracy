@@ -82,7 +82,14 @@ sl-SI:
             one: "You can vote <span>1</span> project"
             other: "You can vote up to <span>%{count}</span> projects"
       reasons_for_not_balloting:
+        not_logged_in: "<strong>Za nadaljevanje se moraš vpisati ali registrirati.</strong>"
+        not_verified: Le verificirani uporabniki lahko glasujejo o naložbah; %{verify_account}.
+        organization: Organizacijam ni dovoljeno glasovati
+        not_selected: Neizbranih investicij ni mogoče podpreti
+        not_enough_money: "Ves razpoložljiv proračun si že porabil.<br><small>Lahko pa kadarkoli %{change_ballot}</small>"
+        no_ballots_allowed: Faza izbiranja je končana
         different_heading_assigned: "<strong>Glasuješ lahko samo za predloge v enakem območju.</strong>"
+        change_ballot: spremeniš svoje glasove
   comments:
     actions:
       confirm_delete: Potrdi izbris
