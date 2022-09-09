@@ -7,12 +7,11 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
   load_and_authorize_resource :question, class: "::Poll::Question"
 
   def new
-    @answer = ::Poll::Question::Answer.new
+    @answer = @question.answers.new
   end
 
   def create
-    @answer = ::Poll::Question::Answer.new(answer_params)
-    @question = @answer.question
+    @answer = @question.answers.new(answer_params)
 
     if @answer.save
       redirect_to admin_question_path(@question),
@@ -30,7 +29,7 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
 
   def update
     if @answer.update(answer_params)
-      redirect_to admin_question_path(@answer.question),
+      redirect_to admin_question_path(@question),
                notice: t("flash.actions.save_changes.notice")
     else
       render :edit
