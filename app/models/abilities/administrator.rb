@@ -92,6 +92,9 @@ module Abilities
       can :destroy, Poll::Question
       can :manage, Poll::Question::Answer
       can :manage, Poll::Question::Answer::Video
+      can [:create, :destroy], Image do |image|
+        image.imageable_type == "Poll::Question::Answer"
+      end
 
       can :manage, SiteCustomization::Page
       can :manage, SiteCustomization::Image

@@ -1,7 +1,7 @@
 class Admin::Poll::Questions::Answers::ImagesController < Admin::Poll::BaseController
   include ImageAttributes
 
-  before_action :load_answer, except: :destroy
+  load_and_authorize_resource :answer, class: "::Poll::Question::Answer"
 
   def index
   end
@@ -37,9 +37,5 @@ class Admin::Poll::Questions::Answers::ImagesController < Admin::Poll::BaseContr
 
     def allowed_params
       [:answer_id, images_attributes: image_attributes]
-    end
-
-    def load_answer
-      @answer = ::Poll::Question::Answer.find(params[:answer_id])
     end
 end
