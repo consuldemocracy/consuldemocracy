@@ -26,7 +26,7 @@ describe "Videos", :admin do
   scenario "Update" do
     video = create(:poll_answer_video, answer: answer)
 
-    visit edit_admin_video_path(video)
+    visit edit_admin_answer_video_path(answer, video)
 
     fill_in "Title", with: title
     fill_in "External video", with: url
