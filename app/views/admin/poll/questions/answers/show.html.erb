@@ -1,6 +1,6 @@
 <%= back_link_to %>
 
-<%= link_to t("admin.answers.show.edit"), edit_admin_answer_path(@answer),
+<%= link_to t("admin.answers.show.edit"), edit_admin_question_answer_path(@answer.question, @answer),
             class: "button hollow float-right" %>
 
 <ul class="breadcrumbs margin-top">

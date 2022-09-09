@@ -36,7 +36,7 @@ describe "Answers", :admin do
     answer = create(:poll_question_answer, question: question, title: "Answer title", given_order: 2)
     create(:poll_question_answer, question: question, title: "Another title", given_order: 1)
 
-    visit admin_answer_path(answer)
+    visit admin_question_answer_path(question, answer)
 
     click_link "Edit answer"
 

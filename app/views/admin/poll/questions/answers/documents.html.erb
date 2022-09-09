@@ -9,7 +9,7 @@
 
 <div class="poll-question-form">
   <%= form_for(Poll::Question::Answer.new,
-              url: admin_answer_path(@answer),
+              url: admin_question_answer_path(@answer.question, @answer),
               method: :put) do |f| %>
 
     <%= render "shared/errors", resource: @answer %>

@@ -52,7 +52,7 @@
   <tbody class="sortable" data-js-url="<%= admin_question_answers_order_answers_path(@question.id) %>">
     <% @question.question_answers.each do |answer| %>
       <tr id="<%= dom_id(answer) %>" class="poll_question_answer" data-answer-id="<%= answer.id %>">
-        <td class="align-top"><%= link_to answer.title, admin_answer_path(answer) %></td>
+        <td class="align-top"><%= link_to answer.title, admin_question_answer_path(@question, answer) %></td>
         <td class="align-top break"><%= wysiwyg(answer.description) %></td>
         <td class="align-top text-center">
           (<%= answer.images.count %>)
