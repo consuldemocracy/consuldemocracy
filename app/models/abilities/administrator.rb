@@ -91,6 +91,7 @@ module Abilities
       can [:read, :create, :update], Poll::Question
       can :destroy, Poll::Question
       can :manage, Poll::Question::Answer
+      can :manage, Poll::Question::Answer::Video
 
       can :manage, SiteCustomization::Page
       can :manage, SiteCustomization::Image
