@@ -2,9 +2,9 @@
   <div class="panel <%= ("with-image" if feature?(:allow_images) && investment.image.present?) %>">
     <div class="row" data-equalizer>
       <div class="column small-12 medium-12 large-12 investment-content-wrapper">
-        <# this is a horrible hack, it is here to make voting on the listing work #>
-        <# everything is duplicated except for the link_to wrapper which we don't #>
-        <# want on the listing page when people want to vote #>
+        <!-- this is a horrible hack, it is here to make voting on the listing work -->
+        <!-- everything is duplicated except for the link_to wrapper which we don't -->
+        <!-- want on the listing page when people want to vote -->
         <% unless @heading and investment.should_show_ballots? %>
           <%= link_to namespaced_budget_investment_path(investment), class: "" do %>
             <div class="image-holder">

@@ -41,9 +41,10 @@ class Budget < ApplicationRecord
       if self.phase === "balloting"
         url = budget_investments_url.call(
           self,
-          heading_id: current_user&.balloted_heading_id ?
-            current_user&.balloted_heading_id :
-            self&.headings&.first&.id
+          # TODO check with maja
+          # heading_id: current_user&.balloted_heading_id ?
+          #   current_user&.balloted_heading_id :
+          #   self&.headings&.first&.id
         )
       # elsif self.phase === "valuating"
       #   puts "@@@@@@@@@@@@@@"
