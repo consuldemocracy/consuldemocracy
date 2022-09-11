@@ -23,6 +23,16 @@ class Poll::Answer < ApplicationRecord
     end
   end
 
+  def destroy_and_remove_voter_participation
+    transaction do
+      destroy!
+
+      if author.poll_answers.where(question_id: poll.question_ids).none?
+        Poll::Voter.find_by(user: author, poll: poll, origin: "web").destroy!
+      end
+    end
+  end
+
   private
 
     def max_votes

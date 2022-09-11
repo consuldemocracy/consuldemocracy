@@ -5,7 +5,7 @@ class Polls::AnswersController < ApplicationController
                                        through_association: :answers
 
   def destroy
-    @answer.destroy!
+    @answer.destroy_and_remove_voter_participation
 
     respond_to do |format|
       format.html do
