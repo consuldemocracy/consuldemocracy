@@ -1,4 +1,8 @@
 [data-responsive-toggle=responsive_menu] {
+  @include breakpoint(medium) {
+    display: none;
+  }
+
   .menu-button {
     border: 1px solid;
     border-radius: $button-radius;
