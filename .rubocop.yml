@@ -505,6 +505,9 @@ Style/FileWrite:
 Style/HashConversion:
   Enabled: true
 
+Style/HashExcept:
+  Enabled: true
+
 Style/HashSyntax:
   Enabled: true
 
