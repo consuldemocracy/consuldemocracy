@@ -1,15 +1,19 @@
+require "logger"
 class Admin::BudgetsController < Admin::BaseController
   include Translatable
   include ReportAttributes
   include FeatureFlags
   feature_flag :budgets
 
-  has_filters %w[open finished], only: :index
+  has_filters %w[open finished], only: [:index, :index_physical_votes]
 
-  before_action :load_budget, except: [:index, :new, :create]
-  load_and_authorize_resource
+  before_action :load_budget, except: [:index, :new, :create, :index_physical_votes]
+  #load_and_authorize_resource
 
   def index
+    @budgets = Budget.send(@current_filter).order(created_at: :desc).page(params[:page])
+  end
+  def index_physical_votes
     @budgets = Budget.send(@current_filter).order(created_at: :desc).page(params[:page])
   end
 
@@ -18,6 +22,7 @@ class Admin::BudgetsController < Admin::BaseController
 
   def new
     load_staff
+	@budget = Budget.new()
   end
 
   def edit
@@ -26,8 +31,7 @@ class Admin::BudgetsController < Admin::BaseController
 
   def calculate_winners
     return unless @budget.balloting_process?
-
-    @budget.headings.each { |heading| Budget::Result.new(@budget, heading).delay.calculate_winners }
+    @budget.headings.each { |heading| Budget::Result.new(@budget, heading).calculate_winners }
     redirect_to admin_budget_budget_investments_path(
                   budget_id: @budget.id,
                   advanced_filters: ["winners"]),
