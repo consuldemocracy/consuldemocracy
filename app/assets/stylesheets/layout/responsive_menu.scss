@@ -1,0 +1,5 @@
+[data-responsive-toggle=responsive_menu] {
+  @include breakpoint(medium) {
+    display: none;
+  }
+}
