@@ -22,6 +22,7 @@ class Admin::BudgetsController < Admin::BaseController
 
   def new
     load_staff
+	@budget = Budget.new()
   end
 
   def edit
