@@ -75,7 +75,7 @@
             </div>
           <% end %>
         <% else %>
-          <div class="image-holder">
+          <%= link_to namespaced_budget_investment_path(investment), class: "image-holder" do %>
               <% if investment.image.present? %>
                 <%= image_tag investment.image.variant(:large), alt: investment.image.title.unicode_normalize %>
               <% else %>
@@ -83,11 +83,11 @@
                   <%= image_tag "default-investment.svg" %>
                 </div>
               <% end %>
-          </div>
+          <% end %>
 
           <div class="budget-investment-content">
             <% cache [locale_and_user_status(investment), "index", investment, investment.author] do %>
-              <div class="investment-project-text">
+              <%= link_to namespaced_budget_investment_path(investment), class: "investment-project-text" do %>
                 <h3 title="<%= investment.title %>">
                   <%= strip_tags(investment&.title&.gsub("><", "> <"))&.truncate(50, separator: " ", omission: "...") %>
                 </h3>
@@ -99,7 +99,7 @@
                 <div class="investment-project-description">
                   <%= strip_tags(investment.answers.first().text.gsub("><", "> <"))&.truncate(220, separator: " ", omission: "...") %>
                 </div>
-              </div>
+              <% end %>
 
               <% if investment.should_show_price? %>
                 <div id="<%= dom_id(investment) %>_price"
