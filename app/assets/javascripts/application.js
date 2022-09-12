@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require ava-config
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui/widgets/datepicker
@@ -110,6 +111,7 @@
 //= require cookies
 //= require columns_selector
 //= require budget_edit_associations
+//= require orbit_fix
 
 var initialize_modules = function() {
   "use strict";
@@ -164,6 +166,7 @@ var initialize_modules = function() {
     App.ColumnsSelector.initialize();
   }
   App.BudgetEditAssociations.initialize();
+  App.OrbitFix.initialize();
 };
 
 $(function() {

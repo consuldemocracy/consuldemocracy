@@ -40,6 +40,23 @@ module Budgets
     respond_to :html, :js
 
     def index
+		if (current_user)
+			if (current_user.document_number)
+				@locked_user = Budget::LockedUser.where(document_number: current_user.document_number, document_type: current_user.document_type, budget_id: @budget.id)
+				@already_locked = @locked_user.present?
+			else
+				@locked_user = Budget::LockedUser.where(document_number: current_user.username, document_type: '1', budget_id: @budget.id)
+				@already_locked_1 = @locked_user.present?
+				@locked_user = Budget::LockedUser.where(document_number: current_user.username, document_type: '2', budget_id: @budget.id)
+				@already_locked_2 = @locked_user.present?
+				@locked_user = Budget::LockedUser.where(document_number: current_user.username, document_type: '3', budget_id: @budget.id)
+				@already_locked_3 = @locked_user.present?
+				
+				@already_locked = @already_locked_1 || @already_locked_2 || @already_locked_3
+			end
+		else
+			@already_locked = false
+		end
       @investments = investments.page(params[:page]).per(PER_PAGE).for_render
 
       @investment_ids = @investments.pluck(:id)
@@ -54,6 +71,23 @@ module Budgets
     end
 
     def show
+		if (current_user)
+			if (current_user.document_number)
+				@locked_user = Budget::LockedUser.where(document_number: current_user.document_number, document_type: current_user.document_type, budget_id: @budget.id)
+				@already_locked = @locked_user.present?
+			else
+				@locked_user = Budget::LockedUser.where(document_number: current_user.username, document_type: '1', budget_id: @budget.id)
+				@already_locked_1 = @locked_user.present?
+				@locked_user = Budget::LockedUser.where(document_number: current_user.username, document_type: '2', budget_id: @budget.id)
+				@already_locked_2 = @locked_user.present?
+				@locked_user = Budget::LockedUser.where(document_number: current_user.username, document_type: '3', budget_id: @budget.id)
+				@already_locked_3 = @locked_user.present?
+				
+				@already_locked = @already_locked_1 || @already_locked_2 || @already_locked_3
+			end
+		else
+			@already_locked = false
+		end
       @commentable = @investment
       @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
       @related_contents = Kaminari.paginate_array(@investment.relationed_contents).page(params[:page]).per(5)

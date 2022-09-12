@@ -1,3 +1,4 @@
+require "logger"
 class Budget
   class Result
     attr_accessor :budget, :heading, :current_investment
@@ -9,16 +10,20 @@ class Budget
 
     def calculate_winners
       reset_winners
-      investments.compatible.each do |investment|
+      investments.each do |investment|
+		
         @current_investment = investment
         set_winner if inside_budget?
       end
     end
 
     def investments
-      heading.investments.selected.sort_by_ballots
+	
+      heading.investments.selected.to_a.sort_by(&:final_total_votes).reverse
     end
-
+	def investments_winners
+      heading.investments.selected.where(winner: true).sort_by(&:final_total_votes).reverse
+    end
     def inside_budget?
       available_budget >= @current_investment.price
     end
@@ -36,7 +41,10 @@ class Budget
     end
 
     def reset_winners
-      investments.update_all(winner: false)
+      #investments.update_all(winner: false)
+	  investments.each do |investment|
+		investment.update(winner: false)
+	  end
     end
 
     def set_winner
@@ -45,7 +53,7 @@ class Budget
     end
 
     def winners
-      investments.where(winner: true)
+      investments_winners
     end
   end
 end

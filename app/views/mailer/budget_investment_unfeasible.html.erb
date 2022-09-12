@@ -1,24 +1,28 @@
 <td style="padding-bottom: 20px; padding-left: 10px;">
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("mailers.budget_investment_unfeasible.hi") %>
+    <%= sanitize(t("mailers.budget_investment_unfeasible.hi", {code: @investment.title})) %>
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px; padding-left: 12px; border-left: 2px solid #ccc;">
-    <%= @investment.unfeasibility_explanation %>
+    <blockquote><%= @investment.unfeasibility_explanation %></blockquote>
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
   <%= sanitize(t("mailers.budget_investment_unfeasible.new",
-      url: link_to(t("mailers.budget_investment_unfeasible.new_href"),
-      new_budget_investment_url(@investment.budget), style: "color: #2895F1; text-decoration: underline;"))) %>
+		url: link_to(t("mailers.budget_investment_unfeasible.new_href"),
+				new_budget_investment_url(@investment.budget), style: "color: #2895F1; text-decoration: underline;"),
+		url_lugar: link_to(t("mailers.budget_investment_unfeasible.url_lugar_text"),
+				t("mailers.budget_investment_unfeasible.url_lugar"), style: "color: #2895F1; text-decoration: underline;"),
+		url_votacion: link_to(t("mailers.budget_investment_unfeasible.url_votacion_text"),
+				t("mailers.budget_investment_unfeasible.url_votacion"), style: "color: #2895F1; text-decoration: underline;"))) %>
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("mailers.budget_investment_unfeasible.sorry") %>
+    <%= sanitize(t("mailers.budget_investment_unfeasible.sorry")) %>
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("mailers.budget_investment_unfeasible.sincerely") %>
+    <%= sanitize(t("mailers.budget_investment_unfeasible.sincerely")) %>
   </p>
 </td>

@@ -1,10 +1,11 @@
 <div class="row account">
   <div class="small-12 column">
-    <div class="float-right text-right">
-      <%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: "button hollow" %>
-      <br>
-      <%= link_to t("account.show.erase_account_link"), users_registrations_delete_form_path, class: "delete" %>
-    </div>
+    <%# Permitimos cambiar la clave, si el usuario no es de participacion, por ejemplo usuarios desde los sistemas administrativos %>
+    <% if current_user.participacion_id.nil? ||current_user.participacion_id ==0  %>
+      <div class="float-right text-right">
+        <%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: "button hollow" %>
+      </div>
+    <% end %>
 
     <%= avatar_image(@account, seed: @account.id, size: 100, class: "margin-bottom") %>
 
@@ -19,16 +20,17 @@
           <h2><%= t("account.show.personal") %></h2>
 
           <div class="small-12 medium-10">
-            <% if @account.organization? %>
-              <%= f.fields_for :organization do |fo| %>
-                <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length, placeholder: t("account.show.organization_name_label") %>
-                <%= fo.text_field :responsible_name, autofocus: true, maxlength: Organization.responsible_name_max_length, placeholder: t("account.show.organization_responsible_name_placeholder") %>
-              <% end %>
-              <%= f.text_field :phone_number, placeholder: t("account.show.phone_number_label") %>
+            <%# EL SOPORTE ORGANIZACIONAL HUELGA... LOS USUARIOS PROVIENEN DEL SISTEMA EXTERNO... %>
+            <%# if @account.organization? %>
+              <%#= f.fields_for :organization do |fo| %>
+                <%#= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length, placeholder: t("account.show.organization_name_label") %>
+                <%#= fo.text_field :responsible_name, autofocus: true, maxlength: Organization.responsible_name_max_length, placeholder: t("account.show.organization_responsible_name_placeholder") %>
+              <%# end %>
+              <%#= f.text_field :phone_number, placeholder: t("account.show.phone_number_label") %>
 
-            <% else %>
-              <%= f.text_field :username, maxlength: User.username_max_length, placeholder: t("account.show.username_label") %>
-            <% end %>
+            <%# else %>
+              <%= f.text_field :username, disabled: true, maxlength: User.username_max_length, placeholder: t("account.show.username_label") %>
+            <%# end %>
           </div>
 
           <div>
@@ -41,7 +43,7 @@
 
           <% if @account.email.present? %>
             <h2><%= t("account.show.notifications") %></h2>
-            
+
             <% if Setting["feature.comments"] %>
               <div>
                 <%= f.check_box :email_on_comment %>

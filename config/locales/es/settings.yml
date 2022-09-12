@@ -82,7 +82,7 @@ es:
     proposal_notification_minimum_interval_in_days_description: "El número de días en los que un usuario puede enviar una notificación a todos los que apoyan su propuesta"
     direct_message_max_per_day: "Mensajes directos máximos por día"
     direct_message_max_per_day_description: "Número de mensajes directos máximos que un usuario puede enviar por día"
-    feature:
+    feature:   
       twitter_login: "Registro con Twitter"
       twitter_login_description: "Permitir que los usuarios se registren con su cuenta de Twitter"
       facebook_login: "Registro con Facebook"

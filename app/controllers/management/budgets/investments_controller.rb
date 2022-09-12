@@ -1,12 +1,17 @@
 class Management::Budgets::InvestmentsController < Management::BaseController
+  include FeatureFlags
+  include CommentableActions
+  include FlagActions
+  include RandomSeed
   include Translatable
+  include ImageAttributes
+
   before_action :load_budget
 
   load_resource :budget
   load_resource :investment, through: :budget, class: "Budget::Investment"
 
-  before_action :only_verified_users, except: :print
-
+  before_action :only_users, except: :print
   def index
     @investments = @investments.apply_filters_and_search(@budget, params).page(params[:page])
     load_investment_votes(@investments)
@@ -53,13 +58,26 @@ class Management::Budgets::InvestmentsController < Management::BaseController
       @investment_votes = managed_user ? managed_user.budget_investment_votes(investments) : {}
     end
 
+    ##def investment_params
+    ##  attributes = [:external_url, :heading_id, :tag_list, :organization_name, :location, :skip_map]
+    ##  params.require(:budget_investment).permit(attributes, translation_params(Budget::Investment))
+    ##end
+    
     def investment_params
-      attributes = [:external_url, :heading_id, :tag_list, :organization_name, :location, :skip_map]
+      attributes = [:external_url, :heading_id, :tag_list,
+                    :organization_name, :location, :skip_map,
+                    image_attributes: image_attributes,
+                    documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
+                    map_location_attributes: [:latitude, :longitude, :zoom]]
       params.require(:budget_investment).permit(attributes, translation_params(Budget::Investment))
     end
-
+    
     def only_verified_users
       check_verified_user t("management.budget_investments.alert.unverified_user")
+    end
+
+    def only_users
+      check_user t("management.budget_investments.alert.unverified_user")
     end
 
     def load_budget

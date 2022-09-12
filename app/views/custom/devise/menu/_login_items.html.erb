@@ -19,9 +19,4 @@
     <%= link_to t("devise_views.menu.login_items.logout"),
                 destroy_user_session_path, rel: "nofollow", method: :delete %>
   </li>
-<% else %>
-  <li id="login-va">
-    <%= link_to t("devise_views.menu.login_items.login"),
-                user_codigo_omniauth_authorize_path, rel: "nofollow", class: "button", method: :post %>
-  </li>
 <% end %>

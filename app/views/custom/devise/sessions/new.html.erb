@@ -1,0 +1,39 @@
+<% provide :title do %><%= t("devise_views.sessions.new.title") %><% end %>
+<h2><%= t("devise_views.sessions.new.title") %></h2>
+
+<%= render "devise/omniauth_form" %>
+<%# REALMENTE ESTA VENTANA SOLO APARECERÁ DESDE URLS AUTORIZADAS... EN OTRO CASO NO SERÁ, Y SOLO PARA
+    ACCESO INTERNO ADMINISTRATIVO, ASI QUE HUELGA EL ACCESO%>
+<p>
+  <%#= sanitize(t("devise_views.shared.links.signup",
+      signup_link: link_to(t("devise_views.shared.links.signup_link"), new_user_registration_path))) %>
+</p>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="row">
+    <div class="small-12 column">
+      <%= f.text_field :login, autofocus: true, placeholder: t("devise_views.sessions.new.login_label") %>
+    </div>
+
+
+    <div class="small-12 column">
+      <%= f.password_field :password, autocomplete: "off", placeholder: t("devise_views.sessions.new.password_label") %>
+      <%#=
+         REALMENTE ESTA VENTANA SOLO APARECERÁ DESDE URLS AUTORIZADAS... EN OTRO CASO NO SERÁ, Y SOLO PARA
+         ACCESO INTERNO ADMINISTRATIVO, ASI QUE HUELGA EL ACCESO%>
+      <%#= link_to t("devise_views.shared.links.new_password"), new_password_path(resource_name), class: "float-right" %>
+    </div>
+
+    <% if devise_mapping.rememberable? -%>
+      <div class="small-12 column">
+        <%= f.check_box :remember_me, label: t("devise_views.sessions.new.remember_me") %>
+      </div>
+    <% end -%>
+
+    <div class="small-12 medium-6 small-centered">
+      <%= f.submit(t("devise_views.sessions.new.submit"), class: "button expanded") %>
+    </div>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

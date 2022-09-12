@@ -51,7 +51,14 @@
         <% end %>
       </li>
     <% end %>
-
+	<% if feature?(:budgets) %>
+      <li class="section-title <%= "is-active" if menu_budgets? %>">
+        <%= link_to admin_budgets_physical_votes_path do %>
+          <span class="icon-budget"></span>
+          <strong><%= t("admin.menu.budgets_physical_votes") %></strong>
+        <% end %>
+      </li>
+    <% end %>
     <li class="section-title">
       <a href="#">
         <span class="icon-box"></span>

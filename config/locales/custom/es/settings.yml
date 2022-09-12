@@ -6,5 +6,9 @@ es:
       codigo_login: "Login con Códigos"
       comments: "Comentarios"
       comments_description: "Habilita o deshabilita los comentarios en los diferentes apartados de la web"
+      direct_messages: "Mensajes privados"
+      direct_messages_description: "Mensajes privados entre usuarios"
       ldap_login: "Login con LDAP"
       physical_final_votes: Votos finales presenciales
+    budget_monitoring_url_2018: "URL seguimiento presupuesto participativo 2018"
+    budget_monitoring_url_2019: "URL seguimiento presupuesto participativo 2019"

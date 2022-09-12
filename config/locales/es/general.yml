@@ -808,8 +808,8 @@ es:
     manage:
       all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
   users:
-    login_to_comment: "Necesitas %{signin} o %{signup} para comentar."
-    login_to_continue: "Necesitas %{signin} o %{signup} para continuar."
+    login_to_comment: "Necesitas %{signin} para comentar."
+    login_to_continue: "Necesitas %{signin} para continuar."
     signin: "iniciar sesión"
     signup: "registrarte"
     verify_account: "verifica tu cuenta"
@@ -945,7 +945,7 @@ es:
   annotator:
     help:
       alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
-      text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
+      text: Para comentar este documento debes %{sign_in}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
       title: '¿Cómo puedo comentar este documento?'
   links:
     form:

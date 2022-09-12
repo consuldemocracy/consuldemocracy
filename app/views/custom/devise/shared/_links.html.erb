@@ -17,21 +17,21 @@
     <%#= link_to t("devise_views.shared.links.new_password"), new_password_path(resource_name) %><!-- <br> -->
   <%# end -%>
 
-  <%- if devise_mapping.confirmable? && controller_name != "confirmations" %>
-    <%= link_to t("devise_views.shared.links.new_confirmation"), new_confirmation_path(resource_name) %><br>
-  <% end -%>
+  <%#- if devise_mapping.confirmable? && controller_name != "confirmations" %>
+    <%#= link_to t("devise_views.shared.links.new_confirmation"), new_confirmation_path(resource_name) %><br>
+  <%# end -%>
 
-  <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != "unlocks" %>
-    <%= link_to t("devise_views.shared.links.new_unlock"), new_unlock_path(resource_name) %><br>
-  <% end -%>
+  <%#- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != "unlocks" %>
+    <%#= link_to t("devise_views.shared.links.new_unlock"), new_unlock_path(resource_name) %><br>
+  <%# end -%>
 
-  <%- if devise_mapping.omniauthable? && devise_mapping.name == "user" %>
-    <%- resource_class.omniauth_providers.each do |provider| %>
-      <%= link_to t("devise_views.shared.links.signin_with_provider", provider: provider.to_s.titleize), omniauth_authorize_path(resource_name, provider) %><br>
-    <% end -%>
-  <% end -%>
-  
-  <% if feature? :ldap_login %>
-    <%= link_to t("devise_views.shared.links.ldap_login"), user_ldap_omniauth_authorize_path, method: :post %>
-  <% end %>
+  <%#- if devise_mapping.omniauthable? && devise_mapping.name == "user" %>
+    <%#- resource_class.omniauth_providers.each do |provider| %>
+      <%#= link_to t("devise_views.shared.links.signin_with_provider", provider: provider.to_s.titleize), omniauth_authorize_path(resource_name, provider) %><br>
+    <%# end -%>
+  <%# end -%>
+
+  <%# if feature? :ldap_login %>
+    <%#= link_to t("devise_views.shared.links.ldap_login"), user_ldap_omniauth_authorize_path, method: :post %>
+  <%# end %>
 </div>

@@ -10,4 +10,9 @@ namespace :consul do
     "migrations:valuation_taggings",
     "migrations:budget_admins_and_valuators"
   ]
+
+  desc "Data migrations for consul 1.1.0"
+  task update_to_1_1_0: :environment do
+    load Rails.root.join("db", "after_update_1_1_0.rb")
+  end
 end

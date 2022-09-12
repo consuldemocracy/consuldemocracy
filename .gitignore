@@ -38,3 +38,6 @@
 public/sitemap.xml
 public/system/
 /public/ckeditor_assets/
+public/presupuestosparticipativos/system/
+/public/presupuestosparticipativos/ckeditor_assets/
+/data/*.csv

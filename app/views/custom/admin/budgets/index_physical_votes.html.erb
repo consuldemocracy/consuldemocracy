@@ -1,0 +1,46 @@
+<h2 class="inline-block"><%= t("admin.budgets.index.title") %> - <%= t("admin.physical_final_votes.index.title") %></h2>
+
+<%= render "shared/filter_subnav", i18n_namespace: "admin.budgets.index" %>
+
+<% if @budgets.any? %>
+  <h3><%= page_entries_info @budgets %></h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th><%= t("admin.physical_final_votes.index.table_name") %></th>
+        <th><%= t("admin.physical_final_votes.index.table_phase") %></th>
+        <th><%= t("admin.physical_final_votes.index.table_physical_final_votes") %></th>
+        <th><%= t("admin.physical_final_votes.index.table_admin_ballots") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @budgets.each do |budget| %>
+        <tr id="<%= dom_id(budget) %>" class="budget">
+          <td>
+            <%= budget.name %>
+          </td>
+          <td class="small">
+            <%= t("budgets.phase.#{budget.phase}") %>
+          </td>
+          <td>
+            <%= link_to t("admin.physical_final_votes.index.physical_final_votes"),
+                           admin_budget_physical_final_votes_path(budget_id: budget.id),
+                           class: "button hollow medium" %>
+          </td>
+          <td class="small">
+		    <%= link_to t("admin.budgets.index.budget_investments"),
+                           admin_budget_budget_investments_path(budget_id: budget.id),
+                           class: "button hollow medium" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @budgets %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.budgets.index.no_budgets") %>
+  </div>
+<% end %>

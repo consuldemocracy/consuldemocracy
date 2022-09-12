@@ -1,0 +1,54 @@
+<% content_for :body_class, "home-page" %>
+
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: root_url %>
+<% end %>
+
+<% if has_banners? %>
+  <%= render "shared/banner" %>
+<% end %>
+
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: root_url %>
+<% end %>
+
+<%= render "header", header: @header %>
+
+<main>
+  <%= render "feeds" %>
+
+  <div class="row">
+    <% if @cards.any? %>
+      <div class="small-12 column <%= "large-8" if feed_processes_enabled? %>">
+        <%= render "cards" %>
+      </div>
+    <% end %>
+
+    <% if feed_processes_enabled? %>
+      <div class="small-12 large-4 column">
+        <%= render "processes" %>
+      </div>
+    <% end %>
+  </div>
+
+  <% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
+    <%= render "recommended",
+                recommended_debates: @recommended_debates,
+                recommended_proposals: @recommended_proposals %>
+  <% end %>
+</main>
+<%# Solo habilitamos la cabecera estándar si la petición no se incluye un Proxy %>
+<% unless request.headers['X-Proxy-Management'] == 'proxy' || session[:iframed]%>
+<div class="row expanded homepage-tu-voz">
+  <div class="row">
+    <div class="small-12 medium-6 column margin-top margin-bottom">
+      <%= image_tag 'logo_tu_voz_va.png', size: "439x155", alt: "Tu Voz" %>
+    </div>
+    <div class="small-12 medium-6 column margin-top margin-bottom">
+      <div class="margin"></div>
+      <%= t("pages.welcome.tu-voz").html_safe %>
+    </div>
+  </div>
+</div>
+<% end %>

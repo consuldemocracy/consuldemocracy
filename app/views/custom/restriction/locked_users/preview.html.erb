@@ -36,7 +36,8 @@
       <%= t("restriction.locked_users.user_allowed_to_be_locked") %>
     </div>
     <% end %>
+	<%= f.submit(class: "button", value: t("restriction.locked_users.preview.submit")) if @in_census && !@has_voted %>
   <% end %>
 
-  <%= f.submit(class: "button", value: t("restriction.locked_users.preview.submit")) if @in_census && !@has_voted %>
+  
 <% end %>

@@ -117,7 +117,7 @@
             <p class="lead">
               <strong><%= t("proposals.index.section_footer.title") %></strong>
             </p>
-            <p><%= t("proposals.index.section_footer.description") %></p>
+            <p><%= raw t("proposals.index.section_footer.description") %></p>
           </div>
         <% end %>
       </div>
@@ -139,6 +139,7 @@
         <% if params[:retired].blank? %>
           <%= render "categories" %>
           <%= render "shared/tag_cloud", taggable: "proposal" %>
+          <%= render "geozones" %>
         <% end %>
         <%= render "retired" %>
         <%= render "proposals_lists" %>

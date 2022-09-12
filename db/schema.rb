@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200407065432) do
+ActiveRecord::Schema.define(version: 20210617075928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -374,6 +374,7 @@ ActiveRecord::Schema.define(version: 20200407065432) do
     t.text     "description_drafting"
     t.text     "description_publishing_prices"
     t.text     "description_informing"
+    t.text     "result_text"
   end
 
   create_table "campaigns", force: :cascade do |t|
@@ -536,6 +537,7 @@ ActiveRecord::Schema.define(version: 20200407065432) do
     t.index ["cached_votes_total"], name: "index_debates_on_cached_votes_total", using: :btree
     t.index ["cached_votes_up"], name: "index_debates_on_cached_votes_up", using: :btree
     t.index ["confidence_score"], name: "index_debates_on_confidence_score", using: :btree
+    t.index ["deprecated_description"], name: "index_debates_on_deprecated_description", using: :btree
     t.index ["geozone_id"], name: "index_debates_on_geozone_id", using: :btree
     t.index ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
     t.index ["hot_score"], name: "index_debates_on_hot_score", using: :btree
@@ -581,6 +583,19 @@ ActiveRecord::Schema.define(version: 20200407065432) do
     t.index ["documentable_type", "documentable_id"], name: "index_documents_on_documentable_type_and_documentable_id", using: :btree
     t.index ["user_id", "documentable_type", "documentable_id"], name: "access_documents", using: :btree
     t.index ["user_id"], name: "index_documents_on_user_id", using: :btree
+  end
+
+  create_table "external_users", force: :cascade do |t|
+    t.string   "uuid",             limit: 128
+    t.string   "fullname",         limit: 512
+    t.string   "email",            limit: 256
+    t.boolean  "validated"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.boolean  "organization"
+    t.integer  "participacion_id"
+    t.string   "national_id"
+    t.index ["uuid"], name: "index_external_users_on_uuid", unique: true, using: :btree
   end
 
   create_table "failed_census_calls", force: :cascade do |t|
@@ -1287,6 +1302,7 @@ ActiveRecord::Schema.define(version: 20200407065432) do
     t.index ["cached_votes_up"], name: "index_proposals_on_cached_votes_up", using: :btree
     t.index ["community_id"], name: "index_proposals_on_community_id", using: :btree
     t.index ["confidence_score"], name: "index_proposals_on_confidence_score", using: :btree
+    t.index ["deprecated_description"], name: "index_proposals_on_deprecated_description", using: :btree
     t.index ["geozone_id"], name: "index_proposals_on_geozone_id", using: :btree
     t.index ["hidden_at"], name: "index_proposals_on_hidden_at", using: :btree
     t.index ["hot_score"], name: "index_proposals_on_hot_score", using: :btree
@@ -1528,6 +1544,8 @@ ActiveRecord::Schema.define(version: 20200407065432) do
     t.boolean  "recommended_proposals",                     default: true
     t.integer  "created_by"
     t.string   "postal_code",                    limit: 10
+    t.boolean  "origin_participacion"
+    t.integer  "participacion_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["geozone_id"], name: "index_users_on_geozone_id", using: :btree

@@ -1,5 +1,11 @@
 es:
   budgets:
+    valladolid:
+      my_voice: Mi voz
+      va_logo: Va!
+      budgets: Presupuestos participativos
+      descr_html: "Ahora <em>yo decido</em> como mejorar <strong>mi barrio</strong> con los <em>presupuestos participativos</em>"
+      knowmore: Informate
     ballots:
       show:
         title: Mis votos
@@ -14,7 +20,7 @@ es:
         voted_info_2: "Pero puedes cambiarlos en cualquier momento hasta el cierre de esta fase."
         zero: Todavía no has votado ningún proyecto de gasto.
       reasons_for_not_balloting:
-        not_logged_in: Necesitas %{signin} o %{signup} para continuar.
+        not_logged_in: Necesitas %{signin} para continuar.
         not_verified: Los proyectos de gasto sólo pueden ser apoyados por usuarios verificados, %{verify_account}.
         organization: Las organizaciones no pueden votar.
         not_selected: No se pueden votar proyectos inviables.
@@ -88,6 +94,7 @@ es:
             one: "<strong>Has votado un proyecto por un valor de %{amount_spent}</strong>"
             other: "<strong>Has votado %{count} proyectos por un valor de %{amount_spent}</strong>"
           voted_info: Puedes %{link} en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
+          locked_internet_info: Solo puede votar de forma presencial.
           voted_info_link: cambiar tus votos
           different_heading_assigned: "Ya apoyaste proyectos de otra sección del presupuesto: %{heading_link}"
           change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
@@ -95,7 +102,8 @@ es:
           zero: Todavía no has votado ningún proyecto de gasto en este ámbito del presupuesto.
           verified_only: "Para crear un nuevo proyecto de gasto %{verify}."
           create: "Crear proyecto de gasto"
-          not_logged_in: "Para crear un nuevo proyecto de gasto debes %{sign_in} o %{sign_up}."
+          not_logged_in: "Para crear un nuevo proyecto de gasto debes %{sign_in}."
+          ballot_not_logged_in: "Para votar debes %{sign_in}."
           by_feasibility: Por viabilidad
           feasible: Ver los proyectos viables
           unfeasible: Ver los proyectos inviables

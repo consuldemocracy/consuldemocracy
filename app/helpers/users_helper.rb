@@ -54,11 +54,19 @@ module UsersHelper
   def current_poll_officer?
     current_user&.poll_officer?
   end
+  
+  def current_signature_sheet_officer?
+    current_user&.signature_sheet_officer?
+  end
+  
+  def current_consultant?
+    current_user&.consultant?
+  end
 
   def show_admin_menu?(user = nil)
     unless namespace == "officing"
       current_administrator? || current_moderator? || current_valuator? || current_manager? ||
-        (user&.administrator?) || current_poll_officer?
+        (user&.administrator?) || current_poll_officer? || current_signature_sheet_officer? || current_consultant?
     end
   end
 

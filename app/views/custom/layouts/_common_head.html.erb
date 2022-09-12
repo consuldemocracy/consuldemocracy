@@ -1,0 +1,105 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title><%= content_for?(:title) ? yield(:title) : default_title %></title>
+<%= stylesheet_link_tag "application" %>
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<%= csrf_meta_tags %>
+<%= favicon_link_tag "favicon.ico" %>
+<%= render "layouts/disable_animations_in_tests" if Rails.env.test? %>
+<% if request.headers['X-Proxy-Management']=='proxy' || session[:iframed] %>
+<script type="text/javascript">
+  if(window.parent && window.parent !== window && window.postMessage && typeof(window.postMessage) === 'function') {
+    // Controlamos cambios en altura y el cambio de página, mediante un chequeo de intervalos
+    // cada segundo, tal y como funciona no se produce una navegación "física" con una recarga
+    // completa del documento, sino una navegación virtual vía JavaScript, se apoya en que la altura
+    // del wrapper no sea 100%, customizado vía un CSS específico para que no ocurra, cuando viene de un iframe
+    var _currentHeight = 0;
+    var _href=false;
+    setInterval(function(){
+      var $checkHeightOn = $('.wrapper');
+      if($checkHeightOn.length === 0) {
+        $checkHeightOn = $(document);
+      }
+
+      if($checkHeightOn.height() != _currentHeight) {
+        _currentHeight = $checkHeightOn.height();
+        window.parent.postMessage('h:'+_currentHeight,'<%=Rails.application.config.participacion_push_target_origin %>');
+      }
+
+    },1000);
+
+    $(document).on('ready page:load',function() {
+      // Los enlaces internos no parecen funcionar bien dentro del iframe...
+      var links = document.querySelectorAll('a[href^="#"]');
+      for(var i =0;i<links.length;i++) {
+        var anchor = links[i];
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+          return false;
+        });
+      }
+
+      // Además incluimos la notificación de cambio de página...
+      var _href = window.location.href;
+      if(_href.indexOf('#')>=0) {
+        setTimeout(function() {
+          document.querySelector(window.location.href.substring(window.location.href.indexOf('#'))).scrollIntoView({
+            behavior: 'smooth'
+          });
+        },500);
+        _href = _href.substring(0,_href.indexOf('#'));
+      }
+      window.parent.postMessage('l:' + _href, '<%=Rails.application.config.participacion_push_target_origin %>');
+    });
+  } else if(window.parent === undefined || window.parent === window) {
+    var _i = window.location.href.indexOf('//');
+    if(_i>=0) {
+      _i = window.location.href.indexOf('/',_i+2);
+      if(_i>=0) {
+        var _href = window.location.href.substring(_i);
+        _i = _href.indexOf('/', 1);
+        if (_i > 0) {
+          var module = _href.substring(_href.indexOf('/', 1)+1);
+          if (module.indexOf('admin') < 0 && module.indexOf('moderation') < 0 && module.indexOf('valuation') < 0 && module.indexOf('management') < 0 && module.indexOf('consultation') < 0 && module.indexOf('restriction') < 0 && module.indexOf('sign_in') < 0) {
+            window.location.href = '<%=Rails.application.secrets.participacion_iframe_source%>#'+encodeURIComponent(_href);
+          } // else - es admin: no hacemos nada
+        } else {
+          window.location.href = '<%=Rails.application.secrets.participacion_iframe_source%>#'+encodeURIComponent(_href);
+        }
+      } else {
+        window.location.href = '<%=Rails.application.secrets.participacion_iframe_source%>';
+      }
+    } else {
+      window.location.href = '<%=Rails.application.secrets.participacion_iframe_source%>'
+    }
+  }
+</script>
+<%else %>
+  <script type="text/javascript">
+    var _i = window.location.href.indexOf('//');
+    if(_i>=0) {
+      _i = window.location.href.indexOf('/',_i+2);
+      if(_i>=0) {
+        var _href = window.location.href.substring(_i);
+        _i = _href.indexOf('/', 1);
+        if (_i > 0) {
+          var module = _href.substring(_href.indexOf('/', 1)+1);
+          if (module.indexOf('admin') < 0 && module.indexOf('moderation') < 0 && module.indexOf('valuation') < 0 && module.indexOf('management') < 0 && module.indexOf('consultation') < 0 && module.indexOf('restriction') < 0 && module.indexOf('sign_in') < 0) {
+            window.location.href = '<%=Rails.application.secrets.participacion_iframe_source%>#'+encodeURIComponent(_href);
+          } // else - es admin: no hacemos nada
+        } else {
+          window.location.href = '<%=Rails.application.secrets.participacion_iframe_source%>#'+encodeURIComponent(_href);
+        }
+      } else {
+        window.location.href = '<%=Rails.application.secrets.participacion_iframe_source%>';
+      }
+    } else {
+      window.location.href = '<%=Rails.application.secrets.participacion_iframe_source%>'
+    }
+
+  </script>
+<% end %>

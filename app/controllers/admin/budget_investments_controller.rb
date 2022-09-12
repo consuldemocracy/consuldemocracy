@@ -2,6 +2,9 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   include FeatureFlags
   include CommentableActions
   include Translatable
+  include FlagActions
+  include RandomSeed
+  include ImageAttributes
 
   feature_flag :budgets
 
@@ -56,6 +59,9 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     authorize! :toggle_selection, @investment
     @investment.toggle :selected
     @investment.save!
+	if @investment.selected
+		@investment.send_selected_email
+	end
     load_investments
   end
 
@@ -84,7 +90,11 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     def budget_investment_params
       attributes = [:external_url, :heading_id, :administrator_id, :tag_list,
                     :valuation_tag_list, :incompatible, :visible_to_valuators, :selected,
-                    :milestone_tag_list, valuator_ids: [], valuator_group_ids: []]
+                    :milestone_tag_list,
+                    :organization_name, :location, :skip_map,
+                    image_attributes: image_attributes,
+                    documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
+                    map_location_attributes: [:latitude, :longitude, :zoom], valuator_ids: [], valuator_group_ids: []]
       params.require(:budget_investment).permit(attributes, translation_params(Budget::Investment))
     end
 

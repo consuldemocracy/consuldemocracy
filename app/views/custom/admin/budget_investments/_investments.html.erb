@@ -1,6 +1,7 @@
-<%= link_to t("admin.budget_investments.index.download_current_selection"),
-            admin_budget_budget_investments_path(csv_params),
-            class: "float-right small clear" %>
+<span class="float-right small clear" data-tooltip title="<%= t("admin.budget_investments.index.tooltip_download") %>">
+  <%= link_to t("admin.budget_investments.index.download_current_selection"),
+            admin_budget_budget_investments_path(csv_params) %>
+</span>
 
 <% if params[:advanced_filters].include?("winners") %>
   <% if display_calculate_winners_button?(@budget) %>
@@ -55,6 +56,7 @@
         <% if params[:advanced_filters]&.include?("selected") %>
           <th data-field="incompatible"><%= t("admin.budget_investments.index.list.incompatible") %></th>
         <% end %>
+		<th data-field="winner"><%= t("admin.budget_investments.index.list.winner") %></th>
       </tr>
     </thead>
 

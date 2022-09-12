@@ -1,11 +1,11 @@
 <td style="padding-bottom: 20px; padding-left: 10px;">
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("mailers.budget_investment_selected.hi") %>
+    <%= sanitize(t("mailers.budget_investment_selected.hi", {code: @investment.title})) %>
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("mailers.budget_investment_selected.share") %>
+    <%= sanitize(t("mailers.budget_investment_selected.share", {code: @investment.title})) %>
   </p>
 
   <table style="width: 100%;">
@@ -22,10 +22,16 @@
   </table>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("mailers.budget_investment_selected.thanks") %>
+	  <%= sanitize(t("mailers.budget_investment_selected.thanks",
+		url: link_to(t("mailers.budget_investment_selected.new_href"),
+				new_budget_investment_url(@investment.budget), style: "color: #2895F1; text-decoration: underline;"),
+		url_lugar: link_to(t("mailers.budget_investment_selected.url_lugar_text"),
+				t("mailers.budget_investment_selected.url_lugar"), style: "color: #2895F1; text-decoration: underline;"),
+		url_votacion: link_to(t("mailers.budget_investment_selected.url_votacion_text"),
+				t("mailers.budget_investment_selected.url_votacion"), style: "color: #2895F1; text-decoration: underline;"))) %>
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("mailers.budget_investment_selected.sincerely") %>
+    <%= sanitize(t("mailers.budget_investment_selected.sincerely")) %>
   </p>
 </td>

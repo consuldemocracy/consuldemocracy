@@ -9,8 +9,8 @@ gem 'axlsx', git: 'https://github.com/randym/axlsx.git', ref: 'c8ac844'
 gem 'caxlsx_rails'
 
 # Verificación de usuarios mediante LDAP
-gem 'omniauth-ldap', '~> 1.0.5'
-gem 'omniauth-codigo', path: './lib/omniauth-codigo'
+gem 'omniauth-ldap', path: './omniauth-ldap'
+gem 'omniauth-codigo', path: './omniauth-codigo'
 
 # Cliente REST para ruby
 gem 'rest-client', '~> 2.1.0'

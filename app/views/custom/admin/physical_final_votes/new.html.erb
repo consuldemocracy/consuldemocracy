@@ -1,8 +1,8 @@
-<%= link_to "< Volver", admin_physical_final_votes_path %>
+<%= link_to "< Volver", admin_budget_physical_final_votes_path %>
 
 <h2><%= t("admin.physical_final_votes.new.title") %></h2>
 
-<%= form_for [:admin, @physical_final_vote] do |f| %>
+<%= form_for [:admin, @budget, @physical_final_vote] do |f| %>
   <%= render 'shared/errors',
               resource: @physical_final_vote %>
   <input type="hidden" name="physical_final_vote[signable_type]" id="physical_final_vote_signable_type" value="Budget::Investment" readonly="readonly">

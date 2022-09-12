@@ -52,13 +52,13 @@
           <%= f.check_box :terms_of_service, title: t('verification.residence.new.accept_terms_text_title'), label: false, checked: ( (params[:terms_of_service] == "1") ? true : false ) %>
           <span class="checkbox">
             <%= t("consultation.codes.form.accept_terms_text",
-                terms_url: link_to(t("verification.residence.new.terms"), root_url + '/' + "census_terms",
+                terms_url: link_to(t("verification.residence.new.terms"), page_path("census_terms"),
                 title: t('shared.target_blank_html'),
                 target: "_blank"),
-                terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/conditions",
+                terms: link_to(t("devise_views.users.registrations.new.terms_link"), page_path("conditions"),
                 title: t('shared.target_blank_html'),
                 target: "_blank"),
-                privacy: link_to(t("verification.residence.new.privacy"), "/privacy",
+                privacy: link_to(t("verification.residence.new.privacy"), page_path("privacy"),
                 title: t('shared.target_blank_html'),
                 target: "_blank")).html_safe
             %>

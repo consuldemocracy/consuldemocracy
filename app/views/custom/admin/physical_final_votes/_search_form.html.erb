@@ -1,0 +1,20 @@
+<% init_advanced_menu %>
+<%= form_tag(admin_budget_physical_final_votes_path(budget: @budget), method: :get, enforce_utf8: false) do %>
+
+  <div class="small-12 medium-3 column">
+    <div class="input-group">
+      <%= text_field_tag :title_or_id, params["title_or_id"], placeholder: t("admin.physical_final_votes.index.placeholder") %>
+    </div>
+ </div>
+ <div class="small-12 medium-3 column">
+	<div class="input-group">
+      <%= text_field_tag :booth, params["booth"], placeholder: t("admin.physical_final_votes.index.booth.placeholder") %>
+    </div>
+  </div>
+<div class="small-12 medium-3 column">
+	
+  </div>
+  <div class="small-12 medium-3 column end">
+    <%= submit_tag t("admin.physical_final_votes.index.buttons.filter"), class: "button expanded" %>
+  </div>
+<% end %>

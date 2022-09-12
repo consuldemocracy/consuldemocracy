@@ -14,12 +14,19 @@
         <% end %>
       <% end %>
 
-      <h2 class="inline-block">
-        <%= avatar_image(@user, seed: @user.id, size: 60) %>
-        <%= @user.name %>
-        <% if current_administrator? %>
-          <small><%= @user.email %></small>
-        <% end %>
+      <h2 class="user-info-container inline-block">
+        <div class="user-info">
+          <%= avatar_image(@user, seed: @user.id, size: 60) %>
+          <%= @user.name %>
+          <% if current_administrator? %>
+            <small><%= @user.email %></small>
+          <% end %>
+        </div>
+        <div class="user-actions" id="responsive-menu">
+          <ul class="menu" data-responsive-menu="medium-dropdown">
+            <%= render "shared/admin_login_items" %>
+          </ul>
+        </div>
       </h2>
 
       <% if @user.public_activity || @authorized_current_user %>

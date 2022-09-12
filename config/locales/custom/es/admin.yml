@@ -32,12 +32,18 @@ es:
       signature_sheet_officers: "Gestores de votación presencial"
       physical_final_votes: Votos finales presenciales
     stats:
+      budget_balloting:
+        vote_total_physical_count: "Votos totales / Presenciales"
       show:
         summary:
           budget_votes: "PROYECTOS VOTADOS DEL PRESUPUESTO ACTUAL"
           budget_voters: "VOTOS DEL PRESUPUESTO ACTUAL"
+          physical_votes: "VOTOS FINALES PRESENCIALES"
+          vote_total_physical_count: "VOTOS TOTALES / PRESENCIALES *"
+          num_votes: "NÚMERO VOTACIONES *"
+          note: "* DEL PRESUPUESTO TOTAL"
     physical_final_votes:
-      name: Votos finales presenciales
+      name: Proyecto
       booth: Mesa electoral
       total_votes: Votos totales
       created_at: Creado el
@@ -54,7 +60,7 @@ es:
         new: Nuevo
         title: Votos finales presenciales
         delete: "Eliminar"
-        confirm_delete: "Confirmar acción"
+        confirm_delete: ¿Está seguro que desea borrar la votación presencial?
       show:
         total_votes: "Votos totales:"
         created_at: "Creado el "
@@ -64,3 +70,4 @@ es:
       index:
         physical_final_votes_count: Votos presenciales
         final_total_votes: Total votos
+        tooltip_download: El fichero está codificado en UTF-8, para abrirlo, importe los datos desde una hoja de Excel

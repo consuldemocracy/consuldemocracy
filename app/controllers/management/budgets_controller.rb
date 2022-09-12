@@ -3,7 +3,7 @@ class Management::BudgetsController < Management::BaseController
   include HasFilters
   feature_flag :budgets
 
-  before_action :only_verified_users, except: :print_investments
+  before_action :only_users, except: :print_investments
 
   def create_investments
     @budgets = Budget.accepting.order(created_at: :desc).page(params[:page])
@@ -26,6 +26,10 @@ class Management::BudgetsController < Management::BaseController
 
     def only_verified_users
       check_verified_user t("management.budget_investments.alert.unverified_user")
+    end
+
+    def only_users
+      check_user t("management.budget_investments.alert.unverified_user")
     end
 
     def current_manager_administrator?

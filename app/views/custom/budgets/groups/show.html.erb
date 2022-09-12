@@ -5,8 +5,8 @@
 <div class="expanded budget no-margin-top">
   <div class="row">
     <div class="small-12 medium-9 column padding">
-      <%= back_link_to budgets_path %>
-      <h2><%= t("budgets.groups.show.title") %></h2>
+      <%= back_link_to budget_path(@budget) %>
+      <h2 id="<%= @group.name.parameterize %>"><%= @group.name %></h2>
     </div>
   </div>
 </div>
@@ -26,25 +26,26 @@
 <% end %>
 
 <div class="row margin">
-  <div id="headings" class="small-12 medium-7 column select-district">
-    <div class="row">
-      <% @group.headings.sort_by(&:id).each_slice(7) do |slice| %>
-        <div class="small-6 medium-4 column end">
-          <% slice.each do |heading| %>
-            <span id="<%= dom_id(heading) %>"
-                  class="<%= css_for_ballot_heading(heading) %>">
-              <%= link_to((heading.long_name || heading.name),
-                          budget_investments_path(heading_id: heading.id,
-                                                  filter: @current_filter),
-                          data: { no_turbolink: true }) %><br>
-            </span>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
+  <div class="medium-6 column show-for-medium">
+    <table class="table-fixed table-areas">
+      <thead>
+        <tr>
+          <th><%= t("budgets.shared.select_area") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @group.headings.sort_by(&:id).each do |heading| %>
+          <tr>
+            <td>
+                <%= link_to((heading.long_name || heading.name), budget_investments_path(@budget, heading_id: heading.id, filter: @current_filter), data: { no_turbolink: true }) %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 
-  <div class="medium-5 column show-for-medium text-center">
+  <div class="medium-6 column show-for-medium text-center">
     <%= link_to asset_url('map_big.png'), target: "_blank" do %>
       <%= image_tag "map.png" %>
     <% end %>

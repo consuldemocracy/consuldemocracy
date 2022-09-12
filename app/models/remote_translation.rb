@@ -4,9 +4,9 @@ class RemoteTranslation < ApplicationRecord
   validates :remote_translatable_id, presence: true
   validates :remote_translatable_type, presence: true
   validates :locale, presence: true
-  validates :locale, inclusion: { in: RemoteTranslations::Microsoft::AvailableLocales.available_locales }
+  # validates :locale, inclusion: { in: RemoteTranslations::Microsoft::AvailableLocales.available_locales }
   validate :already_translated_resource
-  after_create :enqueue_remote_translation
+  # after_create :enqueue_remote_translation
 
   def enqueue_remote_translation
     RemoteTranslations::Caller.new(self).delay.call

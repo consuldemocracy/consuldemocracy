@@ -1,0 +1,6 @@
+<%
+  base_path = ""
+  base_path << "/#{Rails.root.basename.to_s}"
+  base_path << Rails.application.config.assets.prefix
+%>
+var CKEDITOR_BASEPATH = "<%= base_path %>";

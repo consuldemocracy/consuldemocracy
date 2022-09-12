@@ -8,13 +8,13 @@ CKEDITOR.editorConfig = function( config )
 
   config.forcePasteAsPlainText = true;
 
-  config.filebrowserBrowseUrl = "/ckeditor/attachment_files";
-  config.filebrowserFlashBrowseUrl = "/ckeditor/attachment_files";
-  config.filebrowserFlashUploadUrl = "/ckeditor/attachment_files";
-  config.filebrowserImageBrowseLinkUrl = "/ckeditor/pictures";
-  config.filebrowserImageBrowseUrl = "/ckeditor/pictures";
-  config.filebrowserImageUploadUrl = "/ckeditor/pictures";
-  config.filebrowserUploadUrl = "/ckeditor/attachment_files";
+  config.filebrowserBrowseUrl = ava_default_url + "/ckeditor/attachment_files";
+  config.filebrowserFlashBrowseUrl = ava_default_url + "/ckeditor/attachment_files";
+  config.filebrowserFlashUploadUrl = ava_default_url + "/ckeditor/attachment_files";
+  config.filebrowserImageBrowseLinkUrl = ava_default_url + "/ckeditor/pictures";
+  config.filebrowserImageBrowseUrl = ava_default_url + "/ckeditor/pictures";
+  config.filebrowserImageUploadUrl = ava_default_url + "/ckeditor/pictures";
+  config.filebrowserUploadUrl = ava_default_url + "/ckeditor/attachment_files";
   config.filebrowserUploadMethod = "form";
 
   config.allowedContent = true;
@@ -101,9 +101,16 @@ CKEDITOR.editorConfig = function( config )
     { name: "basicstyles", groups: [ "basicstyles", "cleanup" ], items: [ "Bold", "Italic", "Underline", "Strike" ] }
   ];
 
-  config.toolbar_admin = config.toolbar_mini.concat([
-    { name: "insert", items: [ "Image", "Table" ] }
-  ]);
+  config.toolbar_admin = [
+    { name: "document", groups: [ "mode", "document", "doctools" ], items: [ "Source"] },
+    { name: "links", items: [ "Link", "Unlink", "Anchor" ] },
+    { name: "editing", groups: [ "find", "selection", "spellchecker" ], items: [ "Find", "Replace", "-", "SelectAll", "-", "Scayt" ] },
+    { name: "insert", items: [ "Image", "Table", "HorizontalRule", "SpecialChar" ] },
+    { name: "paragraph", groups: [ "list", "indent", "blocks", "align", "bidi" ], items: [ "NumberedList", "BulletedList", "-", "Outdent", "Indent", "-", "Blockquote", "CreateDiv", "-", "JustifyLeft", "JustifyCenter", "JustifyRight", "JustifyBlock" ] },
+    { name: "styles", items: [ "Styles", "Format", "Font", "FontSize" ] },
+    { name: "colors", items: [ "TextColor", "BGColor" ] },
+    { name: "basicstyles", groups: [ "basicstyles", "cleanup" ], items: [ "Bold", "Italic", "Underline", "Strike", "Subscript", "Superscript", "-", "RemoveFormat" ] }
+  ];
 
   config.toolbar = "mini";
 };

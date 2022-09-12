@@ -18,6 +18,139 @@ strong, b, a, .ava-link {
   color: $brand !important;
 }
 
+.map .map-marker .map-icon {
+  background: #ED008C;
+}
+
+.resource-card .button,
+.featured-proposals .supports .button-support {
+  color: white;
+}
+
+#section_help {
+  a {
+    color: $tertiary-contrast;
+    font-weight: bold;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:active:hover,
+    &:active:focus {
+      color: $secondary;
+      text-decoration: inherit;
+    }
+  }
+}
+
+.button {
+  color: white;
+  background-color: $secondary;
+  border: 0px;
+  border-radius: 0px;
+  font-size: $font-size-base-small;
+  &.success, &.button-support {
+    color: white !important;
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  &.expanded {
+    border-radius: 0px;
+    background-color: $secondary !important;
+    &:not(.hollow) {
+      &:hover,
+      &:active,
+      &:focus,
+      &:active:hover,
+      &:active:focus {
+        background-color: lighten(saturate($secondary, 60%), 10%) !important;
+        text-decoration: inherit;
+      }
+    }
+  }
+
+  &.hollow {
+    border-radius: 0px;
+    background: transparent !important;
+    border-color: #979797;
+    font-size: $font-size-base-small;
+    font-weight: bold;
+    color: $secondary;
+  }
+  &:not(.hollow):not(.success) {
+    &:hover,
+    &:active,
+    &:focus,
+    &:active:hover,
+    &:active:focus {
+      background-color: lighten(saturate($secondary, 60%),10%) !important;
+      text-decoration: inherit;
+    }
+  }
+}
+
+.view-mode .button {
+  &:hover,
+  &:active,
+  &:focus,
+  &:active:hover,
+  &:active:focus {
+    background-color: $gray-base !important;
+    &:before {
+      color: white !important;
+    }
+    text-decoration: inherit;
+  }
+}
+
+a.back {
+  color: $tertiary-contrast;
+  font-weight: 600;
+  font-size: $base-font-size;
+  text-decoration: none;
+  &:not([class^="icon-"]) {
+    text-decoration: none;
+  }
+  &:hover,
+  &:active,
+  &:focus,
+  &:active:hover,
+  &:active:focus {
+    color: $secondary;
+    text-decoration: inherit;
+  }
+  .icon-angle-left {
+    color: inherit;
+  }
+}
+
+.callout {
+  color: $gray-base !important;
+  font-size: 1rem;
+}
+
+.debate-show aside h2,
+.proposal-show aside h2,
+.poll-question-show aside h2,
+.investment-project-show aside h2,
+.budget-investment-show aside h2,
+.polls-show aside h2,
+.debate-quiz aside h2,
+.budget-investment-show aside h2,
+.draft-panels aside h2,
+.debate-questions aside h2,
+.communities-show aside h2,
+.topic-show aside h2,
+.milestone-content aside h2,
+.sidebar-title {
+  border-top-color: $secondary;
+  & + p {
+    font-size: $font-size-base-small;
+  }
+}
+
 // 02. Header
 
 // Color de fondo de la cabecera
@@ -27,7 +160,7 @@ header, .top-bar {
 
 // Color de fondo de los enlaces en la parte superior de la cabecera
 .top-links {
-  background-color: #E6118F;
+  background-color: $brand-secondary;
 }
 
 // Eliminado margen en la cabecera
@@ -51,7 +184,7 @@ header, .top-bar {
 
 // Menú principal de la página
 .subnavigation {
-  background-color: $brand;
+  background-color: $brand-secondary;
 }
 
 .subnavigation {
@@ -60,7 +193,7 @@ header, .top-bar {
   }
 
   a:hover, a:active, a.is-active {
-    color: $brand_secondary;
+    color: $orange-hover-menu;
   }
 }
 
@@ -122,10 +255,16 @@ header, .top-bar {
 
 // Contenido debajo de la cabecera
 .homepage-tu-voz {
-  background: $brand;
+  background: $brand-secondary;
+  position: relative;
+  top: 48px;
 
   h4 {
     color: #FFF;
+  }
+
+  .color-brand-secondary {
+    color: $orange-hover-menu;
   }
 }
 
@@ -135,46 +274,41 @@ header, .top-bar {
     top: -25px;
     margin-left: 1.5rem;
   }
-
-  .homepage-tu-voz {
-    position: relative;
-    top: -25px;
-  }
 }
 
-@media screen and (max-width: 63.999em) {
-  .homepage-tu-voz {
-    margin-top: 8px;
-  }
+// Color de los títulos de las tarjetas
+.figure-card h3 {
+  color: #FFFFFF;
 }
 
 // 05. custom pages
 
 .budgets-calendar {
-
-  margin: 0;
-  padding: 0;
-  border: 1px solid white;
-  display: inline-block;
-  padding: 2.2rem 1.5rem 0.75rem 1.5rem;
-  background: $brand;
-  min-height: 8rem;
-  min-width: 15rem;
-  width: 20%;
-  color: white;
-  font-family: "Nunito Bold";
-  text-align: center;
-
+    margin: 0;
+    padding: 0;
+    border: 1px solid white;
+    display: inline-block;
+    padding: 2.2rem 1.5rem 0.75rem 1.5rem;
+    background: #1E1E1E;
+    min-height: 8rem;
+    min-width: 14rem;
+    width: 20%;
+    color: white;
+    font-family: "Nunito Bold";
+    text-align: center !important;
 }
 
 .budgets-calendar-active {
-  background: $brand_secondary;
-  color: black;
-  padding: 0.75rem 1.5rem 0.75rem 1.5rem;
+    background: $brand_secondary;
+    color: white;
+}
+
+.budgets-calendar-active > a {
+    color: white;
 }
 
 .tabla-puntos-encuentro {
-  
+
   background: #fff1f9;
   overflow: auto;
 
@@ -241,7 +375,7 @@ header, .top-bar {
   height: rem-calc(48) !important;
   position: relative;
   width: rem-calc(48) !important;
-  
+
   &:before{
     content: "A";
     font-family: "icons" !important;
@@ -326,13 +460,242 @@ body.management .admin-content {
 // 08. Budgets
 
 // Imágen de fondo de la cabecera y los botones
+.main-budget-home {
+  @media screen and (min-width: 64em) {
+    min-height: 230px;
+    .column {
+      min-height: 230px;
+    }
+  }
+}
 .expanded.budget, .budget-heading {
-  background-image: image-url("header_va_proposals.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  background-color: $bg-gray-content;
+  .row {
+    h1 {
+      color: $gray-darker;
+    }
+    .column:not(.info) {
+      a {
+        color: $tertiary-contrast;
+        font-weight: 600;
+        font-size: $font-size-largest;
+        text-decoration: none;
+        &:hover,
+        &:active,
+        &:focus,
+        &:active:hover,
+        &:active:focus {
+          color: $secondary;
+          text-decoration: inherit;
+        }
+        .icon-angle-left {
+          color: inherit;
+        }
+      }
+    }
+    .img {
+      padding-right: 0px;
+      padding-left: 0px;
+      .img-holder {
+        width: 100%;
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .info {
+      background-color: transparent;
+      .pre-title {
+        font-size: $font-size-largest;
+        text-transform: uppercase;
+      }
+      h2 {
+        font-size: $font-size-h2;
+        color: $gray-darker;
+      }
+      a.see-all-budgets {
+        color: $tertiary-contrast;
+        font-weight: 600;
+        font-size: $font-size-base-small;
+        text-decoration: none;
+        &:hover,
+        &:active,
+        &:focus,
+        &:active:hover,
+        &:active:focus {
+          color: $secondary;
+          text-decoration: inherit;
+        }
+      }
+      .button {
+        background-color: $brand-secondary;
+        color: white;
+        border-radius: 0px;
+        font-size: $font-size-base-small;
+      }
+
+
+      @media screen and (min-width: 64em) {
+        /*.decorated-on-large {
+          max-width: 50%;
+        }
+        background-image: image-url("background-budgets.jpg");
+        background-repeat: no-repeat;
+        background-position: 100%;
+        background-size: 50%;
+        .decorated-on-large {
+          padding-right: 10px;
+        }
+        @supports (background-size: contain) {
+          .decorated-on-large {
+            padding-right: 0px;
+          }
+          background-size: contain;
+        }*/
+
+
+      }
+    }
+  }
+  .description {
+    color: $gray-base;
+  }
+}
+/**
+ * Zona de destacados principal
+ */
+.budget-info {
+  // El mapa de las zonas, tal y como es la imagen de valladolid es mejor un posicionameinto
+  // absoluto del texto para qeu visualmente quede atractivo
+  .map-areas {
+    position: relative;
+    @media screen and (min-width: 64em) {
+      h3 {
+        position: absolute;
+        width: 100%;
+      }
+    }
+
+    h3 {
+      font-size: $font-size-h5;
+    }
+  }
+
+  .show-large {
+    @media screen and (min-width: 64em) {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+    }
+    color: $tertiary-contrast;
+    font-weight: 600;
+    font-size: $small-font-size;
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:active:hover,
+    &:active:focus {
+      color: $secondary;
+      text-decoration: inherit;
+    }
+  }
+
+  .current-budgets {
+    padding-left: 0px;
+
+    h2 {
+      font-size: $font-size-h4;
+      color: $brand-secondary;
+
+      &:not(:first-child) {
+        padding-top: 15px;
+      }
+    }
+
+    h3 {
+      font-size: $font-size-largest;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+
+      > li {
+        display: inline-block;
+        border: 1px solid #979797;
+        padding: 6px 15px;
+        font-size: $font-size-base-small;
+        font-weight: 600;
+      }
+    }
+  }
+
+  h3 {
+    font-size: $font-size-h4;
+  }
+
+  .extra-links {
+    a {
+      color: $tertiary-contrast;
+      font-weight: 600;
+      font-size: $small-font-size;
+      text-decoration: none;
+
+      &:hover,
+      &:active,
+      &:focus,
+      &:active:hover,
+      &:active:focus {
+        color: $secondary;
+        text-decoration: inherit;
+      }
+    }
+  }
+
+  .budget-timeline li.phase {
+    &::before {
+      border-color: #FBCFE0;
+    }
+    h3 {
+      font-size: $font-size-h6;
+    }
+    &.is-active {
+      h3 {
+        background-color: transparent;
+        color: $secondary;
+      }
+    }
+  }
+
+  .budget-investment {
+    h3 {
+      font-size: $font-size-h6;
+    }
+
+    .button {
+      background-color: $brand-secondary;
+      color: white;
+      border-radius: 0px;
+      font-size: $font-size-base-small;
+    }
+  }
+}
+
+ul.recommendations {
+  color: $gray-base;
+}
+
+.advanced-search-form input.button {
+  margin-top:$line-height;
+  height: 2*$line-height;
 }
 
 // Eliminar margen de la cabecera en los presupuestos participativos
@@ -357,38 +720,496 @@ body.management .admin-content {
     color: $brand !important;
 }
 
-// Botón de volver atrás
-.budget-heading a.back {
-  color: black !important;
-  background: #FFDB0A !important;
-  border: 1px solid #FFDB0A !important;
-  text-decoration: none;
-  display: inline-block;
-  line-height: 1;
-  cursor: pointer;
-  -webkit-appearance: none;
-  transition: background-color 0.25s ease-out, color 0.25s ease-out;
-  vertical-align: middle;
-  border: 1px solid #000000;
-  border-radius: 0.1875rem;
-  padding: 1em 1em;
-  font-size: 0.9rem;
+
+
+// Mostramos una propuesta de gasto.
+.budget-investment-show {
+  .budget-investment-info {
+    font-size: $font-size-base-small;
+    display: flex;
+    align-items: center;
+    span:not(.author) {
+      color: #ABABAB
+    }
+  }
+  p#investment_code,
+  p.in-name-of,
+  p.location {
+    font-size: $font-size-base-small;
+  }
+
+  .related-content h2,
+  h2#price_explanation {
+    font-size: $font-size-h5;
+  }
+
+
 }
 
-.budget-heading a.back span {
-  color: #000000;
-  font-weight: 100;
+.tags li a,
+.categories a {
+  border-radius: 2px;
 }
+
+
+.categories a:hover, .categories a.is-active,
+.geozone a:hover,
+.geozone a.is-active {
+  background-color: $secondary;
+}
+
+
 
 
 // Color de fondo de la barra de progreso en
 // la votación final
-.progress-bar-nav { 
-  @include breakpoint(medium) { 
+.progress-votes {
+  .progress-bar-nav {
+    color: $gray-base;
+
+    .total-amount,
+    .spent-amount-text {
+      color: inherit !important;
+    }
+
+    .spent-amount-text:before {
+      color: $orange-hover-menu;
+    }
+
+    .progress {
+      background-color: $bg-gray-light;
+      .progress-meter {
+        background-color: $secondary;
+      }
+    }
+
+    @include breakpoint(medium) {
+      background-color: transparent;
+
+      &.is-fixed {
+        background-color: $budget;
+      }
+    }
+  }
+}
+
+// 09. Propuestas
+
+.featured-proposals {
+  background: #eee;
+}
+
+
+// 10. Debates
+
+.featured-debates {
+  background: #eee;
+}
+
+// 11. Banners
+
+.banner {
+  background-image: image-url("banner-background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 10px 10px;
+}
+
+#debates .banner, #proposals .banner {
+  margin-bottom: 20px;
+}
+
+.home-page .banner, .budgets-banner .banner, .help-banner .banner {
+  top: -25px;
+  position: relative;
+}
+
+// 12. Votaciones
+
+#poll_more_info_answers .answer-description {
+  margin-top: 42px;
+}
+
+// 13. Enlaces de compartir en redes sociales
+
+.social-share-button {
+  a.ssb-icon {
+    border: 1px solid $border-gray-light;
+    color: $gray-light;
+    height: 3rem !important;
+    position: relative;
+    width: 3rem !important;
+    background-image: none;
     background-color: transparent;
 
-    &.is-fixed { 
-      background-color: $budget; 
-    } 
-  } 
+    &.ssb-whatsapp_web:before {
+      content: 'P';
+      font-family: icons;
+      font-size: rem-calc(24);
+      left: 50%;
+      line-height: $line-height * 2;
+      margin-left: rem-calc(-11);
+      position: absolute;
+      top: 0;
+    }
+    &.ssb-linkedin:before {
+      content: '\f08c';
+      font-family: "Font Awesome 5 Brands";
+      font-size: rem-calc(24);
+      left: 50%;
+      line-height: $line-height * 2;
+      margin-left: rem-calc(-11);
+      position: absolute;
+      top: 0;
+    }
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:active:hover,
+    &:active:focus {
+      border-color: $secondary;
+      color: $secondary;
+      &:before {
+        color: inherit;
+      }
+    }
+  }
+}
+
+
+
+
+
+.button.button-linkedin,
+.button.button-whatsapp_web {
+  background: #fff;
+  color: #222;
+  font-weight: bold;
+  height: 3rem;
+  line-height: 3rem;
+  padding: 0;
+  position:relative;
+}
+
+.button.button-whatsapp_web {
+  background: #ebeef4;
+  border-left: 3px solid #43d854;
+}
+
+.button.button-whatsapp_web::before {
+  color: #43d854;
+  content: "A";
+  font-family: "icons" !important;
+  font-size: 1.5rem;
+  left: 0;
+  line-height: 3rem;
+  padding: 0 1.25rem;
+  position: absolute;
+  top: 0;
+}
+
+
+
+.debate-show .whatsapp_web::before,
+.proposal-show .whatsapp_web::before,
+.poll-question-show .whatsapp_web::before,
+.investment-project-show .whatsapp_web::before,
+.budget-investment-show .whatsapp_web::before,
+.polls-show .whatsapp_web::before,
+.debate-quiz .whatsapp_web::before,
+.budget-investment-show .whatsapp_web::before,
+.draft-panels .whatsapp_web::before,
+.debate-questions .whatsapp_web::before,
+.communities-show .whatsapp_web::before,
+.topic-show .whatsapp_web::before,
+.milestone-content .whatsapp_web::before {
+  background-color: #43d854;
+  color: #fff;
+  display: inline-block;
+  font-size: 1.875rem;
+  height: 3rem;
+  padding-top: 0.5625rem;
+  text-align: center;
+  vertical-align: top;
+  width: 3rem;
+}
+
+.jumbo-budget {
+  border-bottom: 0px;
+}
+
+.jumbo-budget h2, .jumbo-budget h3, .jumbo-budget .back, .jumbo-budget .icon-angle-left, .jumbo-budget p, .jumbo-budget a,
+.expanded.budget h2, .expanded.budget h3, .expanded.budget  .back, .expanded.budget  .icon-angle-left, .expanded.budget  p, .expanded.budget  a
+{
+  color: $gray-base;
+}
+
+.jumbo-budget .social-share-button a[class^="social-share-button-whatsapp_web"] {
+  color: #43d854;
+}
+
+.jumbo-survey .social-share-button a.social-share-button-whatsapp_web:hover,
+.jumbo-featured .social-share-button a.social-share-button-whatsapp_web:hover,
+.jumbo-investment-project .social-share-button a.social-share-button-whatsapp_web:hover {
+  color: #2b9b20;
+}
+
+.whatsapp_web::before {
+  background-color: #43d854;
+  color: #fff;
+  font-size: 1.7em;
+  margin-left: 0.03125rem;
+  padding: 0.59375rem 0.6125rem;
+  vertical-align: 0.625rem;
+}
+
+.button.button-linkedin {
+  background: #ebeef4;
+  border-left: 3px solid #0e76a8;
+}
+
+.button.button-linkedin::before {
+  color: #0e76a8;
+  content:"#";
+  font-family:"icons" !important;
+  font-size: 1.5rem;
+  left: 0;
+  line-height: 3rem;
+  padding: 0 1.25rem;
+  position: absolute;
+  top: 0;
+}
+
+
+.jumbo-survey .social-share-button a.social-share-button-linkedin:hover,
+.jumbo-featured .social-share-button a.social-share-button-linkedin:hover,
+.jumbo-investment-project .social-share-button a.social-share-button-linkedin:hover {
+  color: #0e76a8;
+}
+
+.jumbo-survey .social-share-button a.social-share-button-telegram:hover,
+.jumbo-featured .social-share-button a.social-share-button-telegram:hover,
+.jumbo-investment-project .social-share-button a.social-share-button-telegram:hover {
+  color: #08c
+}
+
+
+// 14. Legislación
+
+.draft-panels a strong {
+  color: #FFF;
+}
+
+// 15. IE 10 & 11
+
+// Error de visualización en IE 11, parece que en ciertas circustancias tiene
+// problemas al especificar las medidas de las unidades con rem
+@media all and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .ssb-whatsapp_web::before, .ssb-facebook::before, .ssb-twitter::before, .ssb-telegram::before {
+    line-height: 50px;
+  }
+}
+
+// 16. Dentro de un iframe
+body.iframed {
+  > div.wrapper {
+    > section {
+      > div.row {
+        > .column:first-child {
+          padding-left: 0px;
+        }
+        > .column:last-child {
+          padding-right: 0px;
+        }
+      }
+    }
+    > div.row {
+      > .column:first-child {
+        padding-left: 0px;
+      }
+      > .column:last-child {
+        padding-right: 0px;
+      }
+    }
+    padding-top: 15px;
+    height: auto !important;
+    min-height: unset;
+    min-height: auto;
+  }
+
+  #featured-proposals {
+    margin-bottom: 15px;
+  }
+}
+
+/**
+ * Info del usuario
+ */
+.user-info-container {
+  clear: both;
+  width: 100%;
+  .user-info {
+    float: left;
+  }
+
+  .user-actions {
+    float: right;
+    font-size: 0.9rem;
+    .menu.vertical {
+      margin:  0.3rem;
+      padding: 0.3rem;
+    }
+    .menu.vertical li {
+      margin-bottom: 0.3rem;
+    }
+  }
+}
+
+@mixin bocadillo($pctg, $participacion-bg-color: #E6118F) {
+  height: 392px * $pctg;
+  width: 570px * $pctg;
+  margin-left: auto;
+  margin-right: auto;
+
+  > div.ellipse {
+    background-color: $participacion-bg-color;
+    height: 392px * $pctg;
+    width: 570px * $pctg;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    transform: rotate(-10deg);
+    position: absolute;
+    z-index: 2;
+
+    &:after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 50px * $pctg solid transparent;
+      border-right: 50px * $pctg solid transparent;
+      border-top: 100px * $pctg solid $participacion-bg-color;
+      display: block;
+      position: absolute;
+      right: 90px * $pctg;
+      z-index: 1;
+      bottom: -60px * $pctg;
+      transform: rotate(-30deg);
+    }
+
+  }
+  > div.bocadillo-text {
+    padding-top: 20%;
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    > h2.heading {
+      font-family: "Nunito Black";
+      font-size: 90px * $pctg;
+      font-weight: bold;
+      text-transform: uppercase;
+      transform: scaleY(1.2);
+      position: relative;
+      color: yellow !important;
+      display: block;
+      margin-bottom: 0px;
+      line-height: 1.1;
+    }
+
+    > p.text,
+    > p.text-small,
+    > div.actions {
+      text-align: left;
+      padding: 0px;
+      padding-left: 89px * $pctg;
+      padding-right: 77px * $pctg;
+      font-family: "Nunito Bold";
+      color: white;
+      font-size: 30px * $pctg;
+      margin-bottom: 0px;
+
+      line-height: 1.1;
+
+      em {
+        text-transform: none;
+        font-style: normal;
+        color: yellow;
+        font-size: 31px * $pctg;
+      }
+      strong {
+        color: inherit !important;
+        font-size: 31px * $pctg;
+        font-family: "Nunito Black";
+      }
+    }
+    > p.text-small {
+      font-size: 26px * $pctg;
+      em {
+        font-size: 28px * $pctg;
+      }
+    }
+    > div.actions {
+      margin-top: 6px;
+      font-size: 28px * $pctg;
+      .call {
+        background: yellow;
+        color: $participacion-bg-color;
+        text-transform: uppercase;
+        padding: 0 6px;
+      }
+      a.phone {
+        &:before {
+          content: '\f095';
+          font-family: "Font Awesome 5 Free";
+          display: inline-block;
+          padding: 0 6px;
+          transform: rotate(90deg);
+        }
+        color: yellow !important;
+        font-size: inherit !important;
+      }
+    }
+  }
+
+}
+
+@mixin bocadillo-wrapper($default-bocadillos-size) {
+  $main-color: #E6118F;
+  margin-top: 20px;
+  @include bocadillo($default-bocadillos-size,$main-color);
+  .small-bocadillo {
+    @include bocadillo($default-bocadillos-size/4,white);
+    display: inline-block;
+    position: relative;
+    top:  - rem-calc(70 * $default-bocadillos-size);
+    right: 15px;
+    > div.ellipse {
+      transform: rotateZ(10deg) rotateY(-180deg);
+    }
+    > div.bocadillo-text {
+      > div.title {
+        color: $main-color;
+        font-size: 60px * $default-bocadillos-size;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 1;
+        margin: 0px;
+        text-decoration: none;
+        border-bottom: 0px;
+        letter-spacing: -1px;
+      }
+    }
+  }
+}
+
+.main-bocadillo {
+  @include bocadillo-wrapper(0.5);
+  @media screen and (min-width: 40rem) {
+    @include bocadillo-wrapper(0.35);
+  }
+  @media screen and (min-width: 60rem) {
+    @include bocadillo-wrapper(0.45);
+  }
 }

@@ -9,30 +9,31 @@
             <div class="row" data-equalizer data-equalizer-on="medium">
               <div class="small-12 medium-6 column table" data-equalizer-watch>
                 <div class="table-cell align-middle">
-                  <h3><%= link_to budget.name, budget_path(budget), class: "ava-link" %></h3>
+                  <h3><%= link_to budget.name, budget_path(budget) %></h3>
                 </div>
               </div>
 
               <div class="small-12 medium-6 column table" data-equalizer-watch>
                 <div id="budget_<%= budget.id %>_results" class="table-cell align-middle">
-                  <% if budget.id == 1 %>
-                    <%= link_to t("budgets.index.milestones"),
-                                "https://cloud.valladolid.es/index.php/s/oXHrfDTwyvn63Vk#pdfviewer",
-                                class: "button", target: "_blank" %>
-                  <% elsif budget.id == 2 %>
-                    <%= link_to t("budgets.index.milestones"),
-                                "https://cloud.valladolid.es/index.php/s/NvOzxxZrG95wzLY#pdfviewer",
-                                class: "button", target: "_blank" %>
-                  <%  else %>
-                    <% if can?(:read_results, budget) %>
-                      <%= link_to t("budgets.index.see_results"),
-                                  budget_results_path(budget),
-                                  class: "button" %>
-                    <% end %>
-
-                    <%= link_to t("budgets.index.milestones"),
-                                budget_executions_path(budget),
+                  <% if can?(:read_results, budget) %>
+                    <%= link_to t("budgets.index.see_results"),
+                                budget_results_path(budget),
                                 class: "button" %>
+                  <% end %>
+                  <% if budget.id == 1 && Setting["budget_monitoring_url_2018"].present? %>
+                    <%= link_to t("budgets.index.milestones"),
+                              Setting["budget_monitoring_url_2018"],
+                              target: "_blank",
+                              class: "button" %>
+                  <% elsif budget.id == 2 && Setting["budget_monitoring_url_2019"].present? %>
+                    <%= link_to t("budgets.index.milestones"),
+                              Setting["budget_monitoring_url_2019"],
+                              target: "_blank",
+                              class: "button" %>
+                  <% else %>
+                    <%= link_to t("budgets.index.milestones"),
+                              budget_executions_path(budget),
+                              class: "button" %>
                   <% end %>
                 </div>
               </div>

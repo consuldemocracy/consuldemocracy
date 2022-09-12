@@ -33,7 +33,9 @@
 </td>
 
 <td class="small" data-field="author">
-  <%= investment.author.name %>
+  <% if investment.author.present? %>
+    <%= investment.author.name %>
+  <% end %>  
 </td>
 
 <td class="small" data-field="valuator">
@@ -81,7 +83,7 @@
                        advanced_filters: params[:advanced_filters],
                        page: params[:page]
                      ),
-                     method: :patch,
+                     method: :put,
                      remote: true,
                      class: "button small expanded" %>
   <% elsif investment.feasible? && investment.valuation_finished? %>
@@ -97,7 +99,7 @@
                     advanced_filters: params[:advanced_filters],
                     page: params[:page]
                   ),
-                  method: :patch,
+                  method: :put,
                   remote: true,
                   class: "button small hollow expanded" %>
     <% end %>
@@ -109,3 +111,7 @@
     <%= investment.incompatible? ? t("shared.yes") : t("shared.no") %>
   </td>
 <% end %>
+
+<td class="small" data-field="winner">
+  <%= investment.winner? ? t("shared.yes") : t("shared.no") %>
+</td>

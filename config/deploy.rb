@@ -14,9 +14,9 @@ set :full_app_name, deploysecret(:full_app_name)
 set :deploy_to, deploysecret(:deploy_to)
 set :server_name, deploysecret(:server_name)
 set :db_server, deploysecret(:db_server)
-set :ssh_options, port: deploysecret(:ssh_port)
+set :ssh_options, port: deploysecret(:ssh_port), auth_methods: %w[password]
 
-set :repo_url, "https://github.com/AytoVa/consul.git"
+set :repo_url, "https://github.com/AytoVa/consul"
 
 set :revision, `git rev-parse --short #{fetch(:branch)}`.strip
 
@@ -25,13 +25,14 @@ set :pty, true
 set :use_sudo, false
 
 set :linked_files, %w[config/database.yml config/secrets.yml]
-set :linked_dirs, %w[log tmp public/system public/assets public/ckeditor_assets]
+set :linked_dirs, %w[log tmp public/system public/assets public/ckeditor_assets public/presupuestosparticipativos]
 
 set :keep_releases, 5
 
 set :local_user, ENV["USER"]
 
 set :puma_conf, "#{release_path}/config/puma/#{fetch(:rails_env)}.rb"
+set :puma_bind, ["tcp://0.0.0.0:8080", "unix://#{deploysecret(:deploy_to)}/shared/tmp/sockets/puma.sock"]
 
 set :delayed_job_workers, 2
 set :delayed_job_roles, :background
@@ -45,15 +46,15 @@ set(:config_files, %w[
 set :whenever_roles, -> { :app }
 
 namespace :deploy do
-  after :updating, "rvm1:install:rvm"
-  after :updating, "rvm1:install:ruby"
-  after :updating, "install_bundler_gem"
-  before "deploy:migrate", "remove_local_census_records_duplicates"
+  # after :updating, "rvm1:install:rvm"
+  # after :updating, "rvm1:install:ruby"
+  # after :updating, "install_bundler_gem"
+  # before "deploy:migrate", "remove_local_census_records_duplicates"
 
-  after "deploy:migrate", "add_new_settings"
+  # after "deploy:migrate", "add_new_settings"
 
-  before :publishing, "smtp_ssl_and_delay_jobs_secrets"
-  after  :publishing, "setup_puma"
+  # before :publishing, "smtp_ssl_and_delay_jobs_secrets"
+  after :publishing, "setup_puma"
 
   after :published, "deploy:restart"
   before "deploy:restart", "puma:smart_restart"
@@ -61,11 +62,11 @@ namespace :deploy do
 
   after :finished, "refresh_sitemap"
 
-  desc "Deploys and runs the tasks needed to upgrade to a new release"
-  task :upgrade do
-    after "add_new_settings", "execute_release_tasks"
-    invoke "deploy"
-  end
+  # desc "Deploys and runs the tasks needed to upgrade to a new release"
+  # task :upgrade do
+  #   after "add_new_settings", "execute_release_tasks"
+  #   invoke "deploy"
+  # end
 end
 
 task :install_bundler_gem do

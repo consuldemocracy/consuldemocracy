@@ -1,21 +1,25 @@
-<h2 class="inline-block"><%= t("admin.physical_final_votes.index.title") %></h2>
+<h2 class="inline-block"><%= @budget.name %> - <%= t("admin.physical_final_votes.index.title") %></h2>
 
-<%= link_to t("admin.physical_final_votes.index.new"), new_admin_physical_final_vote_path,
+<%= link_to t("admin.physical_final_votes.index.new"), new_admin_budget_physical_final_vote_path,
             class: "button success float-right" %>
 
 <% if @physical_final_votes.any? %>
+  <%= render "search_form" %>
   <table>
-    <tr>
-      <th><%= t("admin.physical_final_votes.name") %></th>
-      <th><%= t("admin.physical_final_votes.booth") %></th>
-      <th><%= t("admin.physical_final_votes.total_votes") %></th>
-      <th><%= t("admin.physical_final_votes.created_at") %></th>
-      <th></th>
-    </tr>
+    <thead>
+      <tr>
+       
+        <th><%= t("admin.physical_final_votes.name") %></th>
+        <th><%= t("admin.physical_final_votes.booth") %></th>
+        <th><%= t("admin.physical_final_votes.total_votes") %></th>
+        <th><%= t("admin.physical_final_votes.created_at") %></th>
+        <th></th>
+      </tr>
+    </thead>
     <% @physical_final_votes.each do |physical_final_vote| %>
       <tr id="<%= dom_id(physical_final_vote) %>" class="physical_final_vote">
         <td>
-          <%= link_to physical_final_vote.name, [:admin, physical_final_vote] %>
+          <%= link_to physical_final_vote.name, [:admin, @budget, physical_final_vote] %>
         </td>
         <td>
           <%= physical_final_vote.booth %>
@@ -24,12 +28,19 @@
           <%= physical_final_vote.total_votes %>
         </td>
         <td>
-          <%= l(physical_final_vote.created_at, format: :short) %>
+          <%= l(physical_final_vote.created_at, format: :long) %>
         </td>
-        <td><%= link_to t("admin.physical_final_votes.index.delete"), admin_physical_final_vote_path(physical_final_vote),  method: :delete, data: { confirm: t("admin.physical_final_votes.index.confirm_delete") }, class: 'button alert' %></td>
+        <td>
+			<%= link_to t("admin.physical_final_votes.index.delete"), 
+			admin_budget_physical_final_vote_path(@budget, physical_final_vote),  
+			method: :delete, 
+			data: { confirm: t("admin.physical_final_votes.index.confirm_delete") }, 
+			class: 'button alert' %>
+		</td>
       </tr>
     <% end %>
   </table>
+  <%= paginate @physical_final_votes %>
 <% else %>
   <div class="callout primary margin-top">
     <%= t("admin.physical_final_votes.no_physical_final_votes") %>

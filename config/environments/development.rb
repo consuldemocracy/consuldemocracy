@@ -44,11 +44,14 @@ Rails.application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
-  config.assets.debug = true
+  config.assets.debug = false
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
-  config.assets.digest = true
+  config.assets.digest = false
+
+  # We allow connecting from our localhost supporting different VMBOX (Vagrant NAT; e.g)
+  config.web_console.whitelisted_ips = ['10.0.0.0/8', '172.16.0.0/12', '192.168.0.0/16']
 
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
@@ -74,4 +77,28 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  #
+  # Ips de acceso de gestion, ellas pasaran directamente al sign_in, en otro caso serán redirigidas
+  # a la URL de negociación, se pueden separar por ";" en caso de existir varias
+  config.participacion_management_ip = Rails.application.secrets.participacion_management_ip
+
+  # URL de renegociacion en el caso de que la IP no sea valida, para que se gestione una renegociacion
+  # de sesion, en cualquier caso siempre entra por aqui, sera el portal de participacion el que se
+  # encarga de comprobar si el resultado es valido
+  config.participacion_renegotiation = Rails.application.secrets.participacion_renegotiation
+
+  # Mantiene el token seguro que se negocia con la aplicacion para la conexión remota
+  config.participacion_xauth_secret = Rails.application.secrets.participacion_xauth_secret
+
+  # Mantiene las IPs de acceso remoto para la autenticacion
+  config.participacion_xauth_origin = Rails.application.secrets.participacion_xauth_origin
+
+  # targetOrigin para los pushmessage cuando se embebe como iframe
+  config.participacion_push_target_origin = Rails.application.secrets.participacion_push_target_origin
+
+  # El source del iframe que tenemos
+  config.participacion_iframe_source = Rails.application.secrets.participacion_iframe_source
+
+
 end

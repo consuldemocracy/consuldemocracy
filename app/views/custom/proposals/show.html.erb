@@ -17,7 +17,7 @@
           @proposal,
           @proposal.author,
           Flag.flagged?(current_user, @proposal),
-          @proposal_votes] do %>
+          @proposal_votes, @follow] do %>
   <div class="proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">
@@ -39,6 +39,7 @@
         <% end %>
 
         <%= render "proposals/info", proposal: @proposal %>
+        <%= render "shared/geozone", geozonable: @proposal %>
 
         <% unless @proposal.selected? %>
           <%= render "relationable/related_content", relationable: @proposal %>
@@ -72,7 +73,7 @@
             <div class="sidebar-divider"></div>
             <p class="sidebar-title"><%= t("shared.follow") %></p>
 
-            <%= render "follows/follow_button", follow: find_or_build_follow(current_user, @proposal) %>
+            <%= render "follows/follow_button", follow: @follow %>
           <% end %>
 
           <%= render "communities/access_button", community: @proposal.community %>

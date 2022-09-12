@@ -1,5 +1,8 @@
 ---
 es:
+  account:
+    show:
+      back: Volver
   codigos:
     errors:
       census: "El padrón no ha podido verificar tus datos, revisa los datos introducidos o contacta con el ayuntamiento."
@@ -20,6 +23,9 @@ es:
       title: "Consultas"
     menu:
       codes: "Códigos de acceso"
+  debates:
+    index:
+      featured_debates: Destacados
   restriction:
     dashboard:
       index:

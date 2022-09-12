@@ -46,6 +46,11 @@
       </div>
     <% end %>
 
+    <div class="small-12 medium-6 column">
+      <%= f.select :geozone_id, geozone_select_options,
+        include_blank: t("geozones.none") %>
+    </div>
+
     <% if feature?(:map) %>
       <div class="small-12 column">
 
@@ -93,8 +98,8 @@
         <%= f.check_box :terms_of_service,
           title: t("form.accept_terms_title"),
           label: t("form.accept_terms",
-                   policy: link_to(t("form.policy"), "/privacy", target: "blank"),
-                   conditions: link_to(t("form.conditions"), "/conditions", target: "blank")
+                   policy: link_to(t("form.policy"), page_path("privacy"), target: "blank"),
+                   conditions: link_to(t("form.conditions"), page_path("conditions"), target: "blank")
                   ) %>
       <% end %>
     </div>

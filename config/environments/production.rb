@@ -71,7 +71,7 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_url_options = { host: Rails.application.secrets.server_name }
-  config.action_mailer.asset_host = "https://#{Rails.application.secrets.server_name}"
+  config.action_mailer.asset_host = "#{Rails.application.secrets.server_protocol}://#{Rails.application.secrets.server_name}"
 
   # Configure your SMTP service credentials in secrets.yml
   if Rails.application.secrets.smtp_settings
@@ -101,4 +101,27 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  #
+  # Ips de acceso de gestion, ellas pasaran directamente al sign_in, en otro caso serán redirigidas
+  # a la URL de negociación, se pueden separar por ";" en caso de existir varias
+  config.participacion_management_ip = Rails.application.secrets.participacion_management_ip
+
+  # URL de renegociacion en el caso de que la IP no sea valida, para que se gestione una renegociacion
+  # de sesion, en cualquier caso siempre entra por aqui, sera el portal de participacion el que se
+  # encarga de comprobar si el resultado es valido
+  config.participacion_renegotiation = Rails.application.secrets.participacion_renegotiation
+
+  # Mantiene el token seguro que se negocia con la aplicacion para la conexión remota
+  config.participacion_xauth_secret = Rails.application.secrets.participacion_xauth_secret
+
+  # Mantiene las IPs de acceso remoto para la autenticacion
+  config.participacion_xauth_origin = Rails.application.secrets.participacion_xauth_origin
+
+  # targetOrigin para los pushmessage cuando se embebe como iframe
+  config.participacion_push_target_origin = Rails.application.secrets.participacion_push_target_origin
+
+  # El source del iframe que tenemos
+  config.participacion_iframe_source = Rails.application.secrets.participacion_iframe_source
+
 end

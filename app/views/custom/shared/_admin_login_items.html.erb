@@ -46,4 +46,26 @@
       <% end %>
     </ul>
   </li>
+<% elsif %>
+	  <% if current_user.administrator? || current_user.consultant? %>
+		<li class="has-submenu">
+		<%= link_to t("layouts.header.administration_menu"), "#", rel: "nofollow", class: "hide-for-small-only" %>
+		<ul class="submenu menu vertical" data-submenu>
+        <li>
+          <%= link_to t("layouts.header.consultation"), consultation_root_path %>
+        </li>
+		</ul>
+		</li>
+      <% end %>
+
+      <% if current_user.administrator? || current_user.signature_sheet_officer? %>
+		<li class="has-submenu">
+		<%= link_to t("layouts.header.administration_menu"), "#", rel: "nofollow", class: "hide-for-small-only" %>
+		<ul class="submenu menu vertical" data-submenu>
+        <li>
+          <%= link_to t("layouts.header.signature_sheet_officer"), restriction_root_path %>
+        </li>
+		</ul>
+		</li>
+      <% end %>
 <% end %>

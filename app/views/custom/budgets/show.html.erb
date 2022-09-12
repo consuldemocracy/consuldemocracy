@@ -2,10 +2,35 @@
   <%= render "shared/canonical", href: budget_url(@budget, filter: @current_filter) %>
 <% end %>
 
-<div class="expanded budget no-margin-top">
+<div class="expanded budget main-budget-home no-margin-top">
   <div class="row" data-equalizer data-equalizer-on="medium">
-    <div class="small-12 medium-9 column padding" data-equalizer-watch>
-      <%= back_link_to budgets_path %>
+    <div class="column img small-12 medium-4 large-3" data-equalizer-watch>
+      <div class="main-bocadillo">
+        <div class="ellipse"></div>
+        <div class="bocadillo-text">
+          <h2 class="heading"><%=t("budgets.valladolid.my_voice") %>
+            <div class="small-bocadillo">
+              <div class="ellipse"></div>
+              <div class="bocadillo-text">
+                <div class="title"><%=t("budgets.valladolid.va_logo") %></div>
+              </div>
+            </div>
+          </h2>
+          <%# <p class="text"><%=t("budgets.valladolid.budgets") </p>%>
+          <p class="text"><%=t("budgets.valladolid.descr_html") %></p>
+          <%# <div class="actions">
+              <span class="call"><%=t("budgets.valladolid.knowmore") </span>
+              <a class="phone" href="tel:010">010</a>
+            </div>%>
+        </div>
+      </div>
+    </div>
+    <div class="small-12 medium-5 large-6 column padding" data-equalizer-watch>
+      <% if params[:filter].present? && ['unfeasible', 'unselected'].include?(params[:filter]) %>
+        <%= back_link_to budget_path(@budget) %>
+      <% else %>
+        <%= back_link_to budgets_path %>
+      <% end %>
 
       <h1><%= @budget.name %></h1>
 
@@ -13,92 +38,118 @@
         <%= auto_link_already_sanitized_html wysiwyg(@budget.description) %>
       </div>
     </div>
-    <div class="small-12 medium-3 column info padding" data-equalizer-watch>
-      <p>
-        <strong><%= t("budgets.show.phase") %></strong>
-      </p>
-      <h2><%= t("budgets.phase.#{@budget.phase}") %></h2>
+    <div class="small-12 medium-3 large-3 column info padding" data-equalizer-watch>
+      <div class="decorated-on-large">
+        <p class="pre-title">
+          <strong><%= t("budgets.show.phase") %></strong>
+        </p>
+        <h2><%= t("budgets.phase.#{@budget.phase}") %></h2>
 
-      <% if @budget.accepting? %>
-        <% if current_user && can?(:create, Budget::Investment.new(budget: @budget)) %>
-          <%= link_to t("budgets.investments.index.sidebar.create"), new_budget_investment_path(@budget), class: "button margin-top expanded" %>
-        <% else %>
-          <div class="callout primary margin-top">
-            <%= sanitize(t("budgets.investments.index.sidebar.not_logged_in",
-                  sign_in: link_to_signin, sign_up: link_to_signup)) %>
+        <% if @budget.accepting? %>
+          <% if current_user && can?(:create, Budget::Investment.new(budget: @budget)) %>
+            <%= link_to t("budgets.investments.index.sidebar.create"), new_budget_investment_path(@budget), class: "button margin-top expanded" %>
+          <% else %>
+            <div class="callout primary margin-top">
+              <%= sanitize(t("budgets.investments.index.sidebar.not_logged_in",
+                             sign_in: link_to_signin, sign_up: link_to_signup)) %>
+            </div>
+          <% end %>
+        <% end %>
+
+        <%# Incluimos el boton de firmar cuando estamos en votacion final %>
+        <% if @budget.balloting?%>
+          <% unless current_user %>
+            <div class="callout primary margin-top">
+              <%= sanitize(t("budgets.investments.index.sidebar.ballot_not_logged_in",
+                             sign_in: link_to_signin, sign_up: link_to_signup)) %>
+            </div>
+          <% end %>
+        <% end %>
+
+        <% if can?(:read_results, @budget) %>
+          <%= link_to t("budgets.show.see_results"),
+                      budget_results_path(@budget),
+                      class: "button margin-top expanded" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="budget-info">
+  <div class="row margin">
+    <div class="small-12 column">
+      <div id="groups_and_headings" class="groups-and-headings small-12 medium-6 column current-budgets groups-<%= current_budget.groups.length %>
+">
+
+        <% if @current_filter == "unfeasible" %>
+          <h3 class="margin-bottom"><%= t("budgets.show.unfeasible_title") %></h3>
+        <% elsif @current_filter == "unselected" %>
+          <h3 class="margin-bottom"><%= t("budgets.show.unselected_title") %></h3>
+        <% end %>
+
+        <% @budget.groups.each do |group| %>
+          <h4 id="<%= group.name.parameterize %>"><%= group.name %></h4>
+          <table class="table-fixed table-areas">
+            <thead>
+            <tr>
+              <th><%= t("budgets.shared.select_area") %></th>
+            </tr>
+            </thead>
+            <tbody>
+            <% group.headings.sort_by(&:id).each do |heading| %>
+              <tr>
+                <td>
+                  <%= link_to((heading.long_name || heading.name), budget_investments_path(@budget, heading_id: heading.id, filter: @current_filter), data: { no_turbolink: true }) %>
+                </td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        <% end %>
+      </div>
+
+      <div class="medium-6 column text-center map-areas">
+        <h3><%= t("budgets.shared.budget_areas") %></h3>
+        <%= link_to asset_url('map_big.png'), target: "_blank" do %>
+          <%= image_tag "map.png" %>
+        <% end %>
+        <%= link_to(t("budgets.shared.see_map"), asset_url('map_big.png'), target: "_blank", class:"show-large") %>
+      </div>
+
+      <% if @budget.balloting_or_later? %>
+        <% if @current_filter == "unfeasible" || @current_filter == "unselected" %>
+          <div class="row">
+            <div class="small-12 column">
+              <%= link_to budget_path(@budget) do %>
+                <small><%= t("budgets.index.investment_proyects") %></small>
+              <% end %>
+            </div>
           </div>
         <% end %>
-      <% end %>
-
-      <% if can?(:read_results, @budget) %>
-        <%= link_to t("budgets.show.see_results"),
-                    budget_results_path(@budget),
-                    class: "button margin-top expanded" %>
-      <% end %>
-    </div>
-  </div>
-</div>
-
-<div class="row margin">
-  <div class="small-12 medium-6 column">
-    <% if @current_filter == "unfeasible" %>
-      <h3 class="margin-bottom"><%= t("budgets.show.unfeasible_title") %></h3>
-    <% elsif @current_filter == "unselected" %>
-      <h3 class="margin-bottom"><%= t("budgets.show.unselected_title") %></h3>
-    <% end %>
-    
-    <% @budget.groups.each do |group| %>
-      <h4 id="<%= group.name.parameterize %>"><%= group.name %></h4>
-      <table class="table-fixed table-areas">
-        <thead>
-          <tr>
-            <th><%= t("budgets.shared.select_area") %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% group.headings.sort_by(&:id).each do |heading| %>
-            <tr>
-              <td>
-                  <%= link_to((heading.long_name || heading.name), budget_investments_path(@budget, heading_id: heading.id, filter: @current_filter), data: { no_turbolink: true }) %>
-              </td>
-            </tr>
+        <ul class="extra-links no-bullet margin-top">
+          <% unless @current_filter == "unfeasible" %>
+            <li>
+              <small>
+                <%= link_to t("budgets.show.unfeasible"),
+                            budget_path(@budget, filter: "unfeasible") %>
+              </small>
+            </li>
           <% end %>
-        </tbody>
-      </table>
-    <% end %>
+          <% unless @current_filter == "unselected" %>
+            <li>
+              <small>
+                <%= link_to t("budgets.show.unselected"),
+                            budget_path(@budget, filter: "unselected") %>
+              </small>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+
+    </div>
   </div>
 
-  <div class="small-12 medium-6 column text-center">
-    <h3><%= t("budgets.shared.budget_areas") %></h3>
-    <p>
-      <%= raw t("budgets.shared.see_map", link: link_to(t("budgets.shared.link_map"), asset_url("map_big.png") , target: "_blank")) %>
-    </p>
-    <%= link_to asset_url('map_big.png'), target: "_blank" do %>
-      <%= image_tag "map.png" %>
-    <% end %>
-  </div>
+
+
 </div>
-
-<% if @budget.balloting_or_later? %>
-  <% unless @current_filter == "unfeasible" %>
-    <div class="row">
-      <div class="small-12 column">
-        <small>
-          <%= link_to t("budgets.show.unfeasible"),
-                      budget_path(@budget, filter: "unfeasible") %>
-        </small>
-      </div>
-    </div>
-  <% end %>
-
-  <% unless @current_filter == "unselected" %>
-    <div class="row">
-      <div class="small-12 column">
-        <small>
-          <%= link_to t("budgets.show.unselected"),
-                      budget_path(@budget, filter: "unselected") %>
-        </small>
-      </div>
-    </div>
-  <% end %>
-<% end %>

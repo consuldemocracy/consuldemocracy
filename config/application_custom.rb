@@ -8,5 +8,6 @@ module Consul
 
     # Ruta por defecto que utilizará la aplicación
     config.root_directory = "/presupuestosparticipativos"
+    config.assets.prefix = "/presupuestosparticipativos/assets/"
   end
 end

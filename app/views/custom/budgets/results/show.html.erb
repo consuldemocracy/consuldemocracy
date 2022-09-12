@@ -1,0 +1,72 @@
+<% provide :title, t("budgets.results.page_title", budget: @budget.name) %>
+<% content_for :meta_description do %><%= @budget.description_for_phase("finished") %><% end %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+            social_url: budget_results_url(@budget),
+            social_title: @budget.name,
+            social_description: @budget.description_for_phase("finished") %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: budget_results_url(@budget) %>
+<% end %>
+
+<div class="budgets-stats">
+  <div class="expanded budget no-margin-top padding header">
+    <div class="row">
+      <div class="small-12 column">
+        <%= back_link_to budget_path(@budget) %>
+        <h2 class="margin-top text-center">
+          <%= t("budgets.results.heading") %><br>
+          <span><%= @budget.name %></span>
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "budgets/subnav", budget: @budget %>
+
+<div class="row">
+  <div class="small-12 medium-3 large-2 column">
+    <h3 class="margin-bottom">
+      <%= t("budgets.results.heading_selection_title") %>
+    </h3>
+    <ul id="headings" class="menu vertical no-margin-top no-padding-top">
+      <% @headings.each do |heading| %>
+        <li>
+          <%= link_to heading.name,
+                      budget_results_path(@budget, heading_id: heading.to_param),
+                      class: heading.to_param == @heading.to_param ? "is-active" : "" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="small-12 medium-9 large-10 column">
+    <%= link_to t("budgets.results.show_all_link"), "#",
+                class: "js-toggle-link button hollow margin-bottom float-right-medium",
+                data: { "toggle-selector" => ".js-discarded",
+                        "toggle-text" => t("budgets.results.hide_discarded_link") } %>
+
+    <%= render "results_table", results_type: :compatible,
+                                title: @heading.name,
+                                heading_price: @heading.price,
+                                investments: @investments %>
+
+    <p>
+      <%= link_to budget_path(@budget) do %>
+        <small><%= t("budgets.results.investment_proyects") %></small>
+      <% end %><br>
+      <%= link_to budget_path(@budget, filter: "unfeasible") do %>
+        <small><%= t("budgets.results.unfeasible_investment_proyects") %></small>
+      <% end %><br>
+      <%= link_to budget_path(@budget, filter: "unselected") do %>
+        <small><%= t("budgets.results.not_selected_investment_proyects") %></small>
+      <% end %>
+    </p>
+
+    <% if @budget.result_text.present? %>
+      <%= raw @budget.result_text %>
+    <% end %>
+  </div>
+</div>

@@ -1,9 +1,9 @@
 require_dependency Rails.root.join("app", "models", "budget", "investment").to_s
-
+require "logger"
 class Budget
   class Investment < ApplicationRecord
     has_many :physical_final_votes, as: :signable
-
+	
     def permission_problem(user)
       return :not_logged_in unless user
       return :organization  if user.organization?
@@ -28,6 +28,7 @@ class Budget
     end
 
     def final_total_votes
+	
       ballot_lines_count + physical_final_votes_count
     end
 

@@ -52,17 +52,21 @@
         <div class="small-12 medium-3 column">
           <!-- AÑADIDOS VOTOS DEL PRESUPUESTO PARTICIPATIVO ACTUAL -->
           <p class="featured">
-            <%= t "admin.stats.show.summary.budget_votes" %> <br>
-            <span class="number"><%= number_with_delimiter(@last_budget_votes) %> <br></span>
+            <%= t "admin.stats.show.summary.vote_total_physical_count" %> <br>
+            <span class="number"><%= @vote_count %> / <%= @phisical_votes_count %> <br></span>
           </p>
           <!-- FIN AÑADIDOS VOTOS DEL PRESUPUESTO PARTICIPATIVO ACTUAL -->
           
           <!-- AÑADIDOS NÚMERO DE VOTANTES DEL PRESUPUESTO PARTICIPATIVO ACTUAL -->
           <p class="featured">
-            <%= t "admin.stats.show.summary.budget_voters" %> <br>
+            <%= t "admin.stats.show.summary.num_votes" %> <br>
             <span class="number"><%= number_with_delimiter(@last_budget_voters) %> <br></span>
           </p>
           <!-- FIN AÑADIDOS NÚMERO DE VOTANTES DEL PRESUPUESTO PARTICIPATIVO ACTUAL -->
+
+          <p>
+            <b><%= t "admin.stats.show.summary.note" %></b> <br>
+          </p>
 
           <p class="featured">
             <%= t "admin.stats.show.summary.proposal_votes" %> <br>
@@ -81,6 +85,11 @@
           <p>
             <%= t "admin.stats.show.summary.votes" %> <br>
             <span class="number"><%= number_with_delimiter(@votes) %></span>
+          </p>
+
+          <p>
+            <%= t "admin.stats.show.summary.physical_votes" %> <br>
+            <span class="number"><%= number_with_delimiter(@physical_votes) %></span>
           </p>
         </div>
 

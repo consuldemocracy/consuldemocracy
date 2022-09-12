@@ -6,6 +6,9 @@ es:
         user_locked: "Ya has votado presencialmente"
     investments:
       index:
+        orders:
+          random: Aleatorias
+          confidence_score: Mejor valoradas
         search_results:
           one: " que contiene <strong>'%{search_term}'</strong> en todas las zonas"
           other: " que contienen <strong>'%{search_term}'</strong> en todas las zonas"
@@ -16,5 +19,5 @@ es:
     shared:
       select_area: "Selecciona una Zona"
       budget_areas: "Zonas de participación"
-      see_map: "Pulsa %{link} para ver el mapa con detalle."
+      see_map: "Pulsa aquí para ver el mapa con detalle."
       link_map: "aquí"

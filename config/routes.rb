@@ -12,19 +12,19 @@ end
 
 Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
-  mount Ckeditor::Engine => "/ckeditor"
+  mount Ckeditor::Engine => "#{Rails.application.config.root_directory}/ckeditor"
 
   get "/", to: redirect(Rails.application.config.root_directory)
 
   scope RouteScoper.root do
-    # Omniauth LDAP
-    resources :ldap, only: [:new, :create]
+    # Omniauth LDAP; deshabilitado...
+    # resources :ldap, only: [:new, :create]
 
-    # Omniauth Códigos + API
-    post "codigos/api", to: "codigos#api"
-    post "codigos", to: "codigos#create"
+    # Omniauth Códigos + API; deshabilitado...
+    #post "codigos/api", to: "codigos#api"
+    #post "codigos", to: "codigos#create"
 
-    resources :codigos
+    #resources :codigos
 
     # Import routes
     draw :account
@@ -52,7 +52,7 @@ Rails.application.routes.draw do
     draw :verification
     draw :consultation
     draw :restriction
-
+    draw :external_user
     root "welcome#index"
     get "/welcome", to: "welcome#welcome"
     get "/consul.json", to: "installation#details"

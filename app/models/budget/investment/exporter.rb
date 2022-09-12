@@ -6,10 +6,12 @@ class Budget::Investment::Exporter
   end
 
   def to_csv
-    CSV.generate(headers: true) do |csv|
+
+    string = CSV.generate(col_sep: ';', encoding: 'ISO8859-1', headers: true) do |csv|
       csv << headers
       @investments.each { |investment| csv << csv_values(investment) }
     end
+    string.encode('UTF-8')
   end
 
   private
@@ -19,13 +21,17 @@ class Budget::Investment::Exporter
         I18n.t("admin.budget_investments.index.list.id"),
         I18n.t("admin.budget_investments.index.list.title"),
         I18n.t("admin.budget_investments.index.list.supports"),
+        I18n.t("admin.budget_investments.index.list.physical_votes"),
+        I18n.t("admin.budget_investments.index.list.total_votes"),
         I18n.t("admin.budget_investments.index.list.admin"),
         I18n.t("admin.budget_investments.index.list.valuator"),
         I18n.t("admin.budget_investments.index.list.valuation_group"),
         I18n.t("admin.budget_investments.index.list.geozone"),
         I18n.t("admin.budget_investments.index.list.feasibility"),
+        I18n.t("admin.budget_investments.index.list.price"),
         I18n.t("admin.budget_investments.index.list.valuation_finished"),
         I18n.t("admin.budget_investments.index.list.selected"),
+		I18n.t("admin.budget_investments.index.list.winner"),
         I18n.t("admin.budget_investments.index.list.visible_to_valuators"),
         I18n.t("admin.budget_investments.index.list.author_username")
       ]
@@ -36,13 +42,17 @@ class Budget::Investment::Exporter
         investment.id.to_s,
         investment.title,
         investment.total_votes.to_s,
+        investment.physical_final_votes_count,
+        investment.final_total_votes,
         admin(investment),
         investment.assigned_valuators || "-",
         investment.assigned_valuation_groups || "-",
         investment.heading.name,
-        price(investment),
+        I18n.t("admin.budget_investments.index.feasibility.#{investment.feasibility}"),
+        investment.price,
         investment.valuation_finished? ? I18n.t("shared.yes") : I18n.t("shared.no"),
         investment.selected? ? I18n.t("shared.yes") : I18n.t("shared.no"),
+		investment.winner? ? I18n.t("shared.yes") : I18n.t("shared.no"),
         investment.visible_to_valuators? ? I18n.t("shared.yes") : I18n.t("shared.no"),
         investment.author.username
       ]
