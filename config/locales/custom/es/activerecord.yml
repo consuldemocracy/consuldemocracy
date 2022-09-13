@@ -3,3 +3,6 @@ es:
     attributes:
       budget/heading:
         geozone_id: "Ámbito de actuación (opcional)"
+      legislation/process:
+        draft_publication_date: "Fecha de inicio del plazo"
+        result_publication_date: "Fecha de fin del plazo"

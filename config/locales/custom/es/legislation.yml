@@ -8,11 +8,18 @@ es:
         more_info: Más información y contexto
       index:
         section_header:
-          title: Legislación colaborativa
+          title: "Consulta Pública Previa"
           help: ¿Qué es la legislación colaborativa?
         section_footer:
-          title: ¿Qué es la legislación colaborativa?
-          description: En los procesos participativos, la Diputación ofrece a la ciudadanía la oportunidad de participar en la elaboración y modificación de normativa que afecta a la provincia y de dar su opinión sobre ciertas actuaciones que tiene previsto llevar a cabo.
+          title: "¿Qué es la Consulta Pública Previa?"
+          description: "A través de este apartado se da cumplimiento al trámite de consulta pública previa de anteproyectos y proyectos de disposiciones de carácter general, exigido en el artículo 133 de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas."
           help_text_1: "En los procesos participativos, la Diputación ofrece a la ciudadanía la oportunidad de participar en la elaboración y modificación de normativa que afecta a la provincia y de dar su opinión sobre ciertas actuaciones que tiene previsto llevar a cabo."
           help_text_2: "Las personas registradas en la Plataforma de Participación de la Diputación de Valladolid pueden participar con aportaciones en dichos procesos. Sus comentarios son analizados por el área correspondiente y tenidos en cuenta de cara a la redacción final."
           help_text_3: "La Diputación también abre procesos para recibir aportaciones y opiniones sobre actuaciones municipales."
+        filters:
+          open: "Trámites abiertos en consulta pública previa"
+          past: "Trámites cerrados en consulta pública previa"
+      shared:
+        key_dates: "Crear propuestas"
+        draft_publication_date: "Fecha de inicio del plazo"
+        result_publication_date: "Fecha de fin del plazo"

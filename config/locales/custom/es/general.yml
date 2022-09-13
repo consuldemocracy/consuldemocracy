@@ -57,8 +57,10 @@ es:
     index:
       title: Propuestas ciudadanas
       section_footer:
-        description: Haz una propuesta ciudadana. Si obtiene los apoyos suficientes y pasa a votación, puedes conseguir que todos los habitantes decidan cómo quieren que sea nuestra provincia.
-        help_text_1: "Las propuestas ciudadanas son una oportunidad para que los vecinos y colectivos decidan directamente cómo quieren que sea su provincia. Cualquier persona puede hacer una propuesta sobre un tema que le interese o preocupe para que el ayuntamiento la lleve a cabo, después de conseguir los apoyos suficientes y de someterse a votación ciudadana."
+        title: "¿Qué es la legislación colaborativa?"
+        description: "En los procesos participativos, la Diputación ofrece a la ciudadanía la oportunidad de participar en la elaboración y modificación de normativa que afecta a la provincia y de dar su opinión sobre ciertas actuaciones que tiene previsto llevar a cabo."
+        help_text_1: "Las personas registradas en la Plataforma de Participación de la Diputación de Valladolid pueden participar con aportaciones en dichos procesos. Sus comentarios son analizados por el área correspondiente y tenidos en cuenta de cara a la redacción final."
+        help_text_2: "La Diputación también abre procesos para recibir aportaciones y opiniones sobre actuaciones municipales."
   polls:
     index:
       no_geozone_restricted: "Toda la provincia"

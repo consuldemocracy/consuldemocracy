@@ -4,14 +4,6 @@
       <h3><%= link_to process.title, process %></h3>
     </div>
 
-    <div class="small-12 medium-4 column">
-      <%= link_to process, class: "button hollow big expanded",
-                           title:  t("legislation.processes.process.see_latest_comments_title") do %>
-        <span class="icon-comments"></span>&nbsp;
-        <%= t("legislation.processes.process.see_latest_comments") %>
-      <% end %>
-    </div>
-
     <div class="small-12 medium-11 column end">
       <%= markdown(process.summary.presence || first_paragraph(process.description)) %>
     </div>
@@ -44,13 +36,6 @@
         </div>
       <% end %>
 
-      <% if process.proposals_phase.enabled? %>
-        <div class="small-6 medium-<%= column_width %> column">
-          <h4><%= t("legislation.processes.shared.proposals_dates") %></h4>
-          <p><%= format_date(process.proposals_phase_start_date) %> - <%= format_date(process.proposals_phase_end_date) %></p>
-        </div>
-      <% end %>
-
       <% if process.allegations_phase.enabled? %>
         <div class="small-6 medium-<%= column_width %> column">
           <h4><%= t("legislation.processes.shared.allegations_dates") %></h4>
@@ -59,7 +44,7 @@
       <% end %>
 
       <% if process.result_publication.enabled? %>
-        <div class="small-6 medium-<%= column_width %> column">
+        <div class="small-6 medium-<%= column_width %> column end">
           <h4><%= t("legislation.processes.shared.result_publication_date") %></h4>
           <p><%= format_date(process.result_publication_date) %></p>
         </div>

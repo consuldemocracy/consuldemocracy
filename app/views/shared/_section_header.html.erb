@@ -3,9 +3,11 @@
     <div class="small-12 column" data-magellan>
       <%= image_tag "help/help_icon_#{image}.png", alt: t("#{i18n_namespace}.icon_alt"), class: "align-top" %>
       <h1 class="inline-block"><%= t("#{i18n_namespace}.title") %></h1>
-      <div class="float-right-medium">
-        <%= link_to t("#{i18n_namespace}.help"), "#section_help" %>
-      </div>
+      <% unless i18n_namespace == "legislation.processes.index.section_header" %>
+        <div class="float-right-medium">
+          <%= link_to t("#{i18n_namespace}.help"), "#section_help" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
