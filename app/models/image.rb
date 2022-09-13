@@ -3,7 +3,7 @@ class Image < ApplicationRecord
 
   def self.styles
     {
-      large: { resize: "x#{Setting["uploads.images.min_height"]}" },
+      large: { resize: "x475" },
       medium: { combine_options: { gravity: "center", resize: "300x300^", crop: "300x300+0+0" }},
       thumb: { combine_options: { gravity: "center", resize: "140x245^", crop: "140x245+0+0" }}
     }
