@@ -35,19 +35,16 @@
 </div>
 
 <table class="margin-top">
-  <tr>
-    <th colspan="5" scope="col" class="with-button">
-      <%= t("admin.questions.show.valid_answers") %>
-    </th>
-  </tr>
-
-  <tr>
-    <th><%= t("admin.questions.show.answers.title") %></th>
-    <th scope="col" class="medium-7"><%= t("admin.questions.show.answers.description") %></th>
-    <th scope="col" class="text-center"><%= t("admin.questions.show.answers.images") %></th>
-    <th scope="col" class="text-center"><%= t("admin.questions.show.answers.documents") %></th>
-    <th scope="col" class="text-center"><%= t("admin.questions.show.answers.videos") %></th>
-  </tr>
+  <caption><%= t("admin.questions.show.valid_answers") %></caption>
+  <thead>
+    <tr>
+      <th><%= t("admin.questions.show.answers.title") %></th>
+      <th scope="col" class="medium-7"><%= t("admin.questions.show.answers.description") %></th>
+      <th scope="col" class="text-center"><%= t("admin.questions.show.answers.images") %></th>
+      <th scope="col" class="text-center"><%= t("admin.questions.show.answers.documents") %></th>
+      <th scope="col" class="text-center"><%= t("admin.questions.show.answers.videos") %></th>
+    </tr>
+  </thead>
 
   <tbody class="sortable" data-js-url="<%= admin_question_answers_order_answers_path(@question.id) %>">
     <% @question.question_answers.each do |answer| %>
