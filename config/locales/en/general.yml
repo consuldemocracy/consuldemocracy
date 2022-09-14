@@ -140,6 +140,7 @@ en:
       past_date: "Must not be a past date"
       cannot_change_date:
         poll_started: "Cannot be changed if voting has already started"
+        poll_ended: "Cannot be changed if voting has already ended"
   form:
     accept_terms: I agree to the %{policy} and the %{conditions}
     accept_terms_title: I agree to the Privacy Policy and the Terms and conditions of use
