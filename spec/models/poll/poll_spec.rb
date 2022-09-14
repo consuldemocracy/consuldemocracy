@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe Poll do
-  let(:poll) { build(:poll) }
+  let(:poll) { build(:poll, :future) }
 
   describe "Concerns" do
     it_behaves_like "notifiable"
@@ -22,7 +22,9 @@ describe Poll do
 
     it "is not valid without a start date" do
       poll.starts_at = nil
+
       expect(poll).not_to be_valid
+      expect(poll.errors[:starts_at]).to eq ["Invalid date range"]
     end
 
     it "is not valid without an end date" do
@@ -35,11 +37,37 @@ describe Poll do
       poll.ends_at = 2.months.ago
       expect(poll).not_to be_valid
     end
+
+    it "is valid if start date is greater than current time" do
+      poll.starts_at = 1.minute.from_now
+      expect(poll).to be_valid
+    end
+
+    it "is not valid if start date is a past date" do
+      poll.starts_at = 1.minute.ago
+
+      expect(poll).not_to be_valid
+      expect(poll.errors[:starts_at]).to eq ["Must not be a past date"]
+    end
+
+    context "persisted poll" do
+      let(:poll) { create(:poll, :future) }
+
+      it "is valid if the start date changes to a future date" do
+        poll.starts_at = 1.minute.from_now
+        expect(poll).to be_valid
+      end
+
+      it "is not valid if the start date changes to a past date" do
+        poll.starts_at = 1.minute.ago
+        expect(poll).not_to be_valid
+      end
+    end
   end
 
   describe "proposal polls specific validations" do
     let(:proposal) { create(:proposal) }
-    let(:poll) { build(:poll, related: proposal) }
+    let(:poll) { build(:poll, :future, related: proposal) }
 
     it "is valid when overlapping but different proposals" do
       other_proposal = create(:proposal)

@@ -37,6 +37,8 @@ class Poll < ApplicationRecord
 
   validates_translation :name, presence: true
   validate :date_range
+  validate :start_date_is_not_past_date, on: :create
+  validate :start_date_change, on: :update
   validate :only_one_active, unless: :public?
 
   accepts_nested_attributes_for :questions, reject_if: :all_blank, allow_destroy: true
@@ -140,6 +142,18 @@ class Poll < ApplicationRecord
   def date_range
     unless starts_at.present? && ends_at.present? && starts_at <= ends_at
       errors.add(:starts_at, I18n.t("errors.messages.invalid_date_range"))
+    end
+  end
+
+  def start_date_is_not_past_date
+    if starts_at.present? && starts_at < Time.current
+      errors.add(:starts_at, I18n.t("errors.messages.past_date"))
+    end
+  end
+
+  def start_date_change
+    if will_save_change_to_starts_at? && starts_at < Time.current
+      errors.add(:starts_at, I18n.t("errors.messages.past_date"))
     end
   end
 
