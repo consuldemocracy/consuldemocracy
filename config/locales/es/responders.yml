@@ -31,7 +31,6 @@ es:
         translation: "Traducción actualizada correctamente"
       destroy:
         budget_investment: "Proyecto de gasto eliminado."
-        error: "No se pudo borrar"
         topic: "Tema eliminado."
         poll_question_answer_video: "Vídeo de respuesta eliminado."
         valuator_group: "Grupo de evaluadores eliminado correctamente"
