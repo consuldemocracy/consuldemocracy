@@ -242,7 +242,7 @@ describe "Admin edit translatable records", :admin do
     end
 
     context "Change value of a translated field to blank" do
-      let(:translatable) { create(:poll) }
+      let(:translatable) { create(:poll, :future) }
       let(:path) { edit_admin_poll_path(translatable) }
 
       scenario "Updates the field to a blank value" do

@@ -553,7 +553,7 @@ describe "Admin polls", :admin do
     end
 
     scenario "edit poll with sdg related list" do
-      poll = create(:poll, name: "Upcoming poll with SDG related content")
+      poll = create(:poll, :future, name: "Upcoming poll with SDG related content")
       poll.sdg_goals = [SDG::Goal[1], SDG::Goal[17]]
       visit edit_admin_poll_path(poll)
 

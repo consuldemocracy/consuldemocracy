@@ -62,6 +62,13 @@ describe Poll do
         poll.starts_at = 1.minute.ago
         expect(poll).not_to be_valid
       end
+
+      it "is not valid if changing the start date for an already started poll" do
+        poll = create(:poll, starts_at: 10.days.ago)
+
+        poll.starts_at = 10.days.from_now
+        expect(poll).not_to be_valid
+      end
     end
   end
 
