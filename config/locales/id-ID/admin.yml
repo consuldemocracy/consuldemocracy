@@ -712,9 +712,6 @@ id:
         no_questions: "Tidak ada pertanyaan yang ditugaskan untuk jajak pendapat ini."
         questions_title: "Daftar pertanyaan"
         table_title: "Judul"
-      flash:
-        question_added: "Pertanyaan menambahkan untuk jajak pendapat ini"
-        error_on_question_added: "Pertanyaan tidak bisa ditugaskan untuk jajak pendapat ini"
     questions:
       index:
         title: "Pertanyaan"
@@ -755,12 +752,6 @@ id:
     answers:
       new:
         title: Jawaban baru
-      show:
-        title: Judul
-        description: Deskripsi
-        images: Gambar
-        images_list: Daftar gambar
-        edit: Sunting jawaban
       edit:
         title: Sunting jawaban
       videos:
