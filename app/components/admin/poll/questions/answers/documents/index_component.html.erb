@@ -1,18 +1,15 @@
-<%= back_link_to %>
+<%= back_link_to admin_question_path(@answer.question) %>
 
 <h2><%= t("admin.questions.show.answers.documents_list") %></h2>
 
 <ul class="breadcrumbs">
-  <li><%= @answer.question.title %></li>
-  <li><%= @answer.title %></li>
+  <li><%= answer.question.title %></li>
+  <li><%= answer.title %></li>
 </ul>
 
 <div class="poll-question-form">
-  <%= form_for(Poll::Question::Answer.new,
-              url: admin_answer_path(@answer),
-              method: :put) do |f| %>
-
-    <%= render "shared/errors", resource: @answer %>
+  <%= form_for(Poll::Question::Answer.new, url: admin_answer_documents_path(answer)) do |f| %>
+    <%= render "shared/errors", resource: answer %>
 
     <div class="documents">
       <%= render "documents/nested_documents", f: f %>
@@ -23,14 +20,14 @@
     </div>
   <% end %>
 
-  <% if @answer.documents.present? %>
+  <% if answer.documents.present? %>
     <table>
       <tr>
         <th scope="col"><%= t("admin.questions.show.answers.document_title") %></th>
         <th scope="col"><%= t("admin.questions.show.answers.document_actions") %></th>
       </tr>
 
-      <% @answer.documents.each do |document| %>
+      <% answer.documents.each do |document| %>
         <tr>
           <td>
             <%= link_to document.title, document.attachment %>

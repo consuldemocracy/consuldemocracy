@@ -1,4 +1,4 @@
-<%= back_link_to %>
+<%= back_link_to admin_poll_path(@question.poll) %>
 
 <%= link_to t("admin.questions.show.edit_question"), edit_admin_question_path(@question),
             class: "button hollow float-right" %>
@@ -35,24 +35,22 @@
 </div>
 
 <table class="margin-top">
-  <tr>
-    <th colspan="5" scope="col" class="with-button">
-      <%= t("admin.questions.show.valid_answers") %>
-    </th>
-  </tr>
-
-  <tr>
-    <th><%= t("admin.questions.show.answers.title") %></th>
-    <th scope="col" class="medium-7"><%= t("admin.questions.show.answers.description") %></th>
-    <th scope="col" class="text-center"><%= t("admin.questions.show.answers.images") %></th>
-    <th scope="col" class="text-center"><%= t("admin.questions.show.answers.documents") %></th>
-    <th scope="col" class="text-center"><%= t("admin.questions.show.answers.videos") %></th>
-  </tr>
+  <caption><%= t("admin.questions.show.valid_answers") %></caption>
+  <thead>
+    <tr>
+      <th><%= t("admin.questions.show.answers.title") %></th>
+      <th scope="col" class="medium-7"><%= t("admin.questions.show.answers.description") %></th>
+      <th scope="col" class="text-center"><%= t("admin.questions.show.answers.images") %></th>
+      <th scope="col" class="text-center"><%= t("admin.questions.show.answers.documents") %></th>
+      <th scope="col" class="text-center"><%= t("admin.questions.show.answers.videos") %></th>
+      <th><%= t("admin.actions.actions") %></th>
+    </tr>
+  </thead>
 
   <tbody class="sortable" data-js-url="<%= admin_question_answers_order_answers_path(@question.id) %>">
     <% @question.question_answers.each do |answer| %>
       <tr id="<%= dom_id(answer) %>" class="poll_question_answer" data-answer-id="<%= answer.id %>">
-        <td class="align-top"><%= link_to answer.title, admin_answer_path(answer) %></td>
+        <td class="align-top"><%= answer.title %></td>
         <td class="align-top break"><%= wysiwyg(answer.description) %></td>
         <td class="align-top text-center">
           (<%= answer.images.count %>)
@@ -71,6 +69,9 @@
           <br>
           <%= link_to t("admin.questions.show.answers.video_list"),
                       admin_answer_videos_path(answer) %>
+        </td>
+        <td>
+          <%= render Admin::TableActionsComponent.new(answer, actions: [:edit]) %>
         </td>
       </tr>
     <% end %>

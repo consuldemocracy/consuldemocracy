@@ -43,12 +43,8 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
   end
 
   def destroy
-    if @question.destroy
-      notice = "Question destroyed succesfully"
-    else
-      notice = t("flash.actions.destroy.error")
-    end
-    redirect_to admin_questions_path, notice: notice
+    @question.destroy!
+    redirect_to admin_poll_path(@question.poll), notice: t("admin.questions.destroy.notice")
   end
 
   private
@@ -65,9 +61,5 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
 
     def search_params
       params.permit(:poll_id, :search)
-    end
-
-    def resource
-      @poll_question ||= Poll::Question.find(params[:id])
     end
 end

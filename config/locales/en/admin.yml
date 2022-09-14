@@ -1103,9 +1103,6 @@ en:
         table_title: "Title"
         edit_answers: Edit answers
         see_proposal: "(See proposal)"
-      flash:
-        question_added: "Question added to this poll"
-        error_on_question_added: "Question could not be assigned to this poll"
       destroy:
         alert: "This action will remove the poll and all its associated questions."
         success_notice: "Poll deleted successfully"
@@ -1129,6 +1126,8 @@ en:
       new:
         title: "Create question to poll %{poll}"
         title_proposal: "Create question"
+      destroy:
+        notice: "Question deleted succesfully"
       answers:
         images:
           add_image: "Add image"
@@ -1155,12 +1154,6 @@ en:
     answers:
       new:
         title: New answer
-      show:
-        title: Title
-        description: Description
-        images: Images
-        images_list: Images list
-        edit: Edit answer
       edit:
         title: Edit answer
       videos:

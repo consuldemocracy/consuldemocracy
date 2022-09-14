@@ -7,6 +7,8 @@ describe "Answers", :admin do
     visit admin_question_path(question)
     click_link "Add answer"
 
+    expect(page).to have_link "Go back", href: admin_question_path(question)
+
     fill_in "Answer", with: "The answer is always 42"
     fill_in_ckeditor "Description", with: "The Hitchhiker's Guide To The Universe"
 
@@ -33,15 +35,15 @@ describe "Answers", :admin do
 
   scenario "Update" do
     question = create(:poll_question)
-    answer = create(:poll_question_answer, question: question, title: "Answer title", given_order: 2)
+    create(:poll_question_answer, question: question, title: "Answer title", given_order: 2)
     create(:poll_question_answer, question: question, title: "Another title", given_order: 1)
 
-    visit admin_answer_path(answer)
+    visit admin_question_path(question)
+    within("tr", text: "Answer title") { click_link "Edit" }
 
-    click_link "Edit answer"
+    expect(page).to have_link "Go back", href: admin_question_path(question)
 
     fill_in "Answer", with: "New title"
-
     click_button "Save"
 
     expect(page).to have_content "Changes saved"

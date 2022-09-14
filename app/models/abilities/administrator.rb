@@ -83,13 +83,18 @@ module Abilities
 
       can [:index, :create, :update, :destroy], Geozone
 
-      can [:read, :create, :update, :destroy, :add_question, :search_booths, :search_officers, :booth_assignments], Poll
+      can [:read, :create, :update, :destroy, :booth_assignments], Poll
       can [:read, :create, :update, :destroy, :available], Poll::Booth
       can [:search, :create, :index, :destroy], ::Poll::Officer
       can [:create, :destroy, :manage], ::Poll::BoothAssignment
       can [:create, :destroy], ::Poll::OfficerAssignment
       can [:read, :create, :update], Poll::Question
       can :destroy, Poll::Question
+      can :manage, Poll::Question::Answer
+      can :manage, Poll::Question::Answer::Video
+      can [:create, :destroy], Image do |image|
+        image.imageable_type == "Poll::Question::Answer"
+      end
 
       can :manage, SiteCustomization::Page
       can :manage, SiteCustomization::Image

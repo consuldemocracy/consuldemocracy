@@ -141,7 +141,6 @@ namespace :admin do
   scope module: :poll do
     resources :polls do
       get :booth_assignments, on: :collection
-      patch :add_question, on: :member
 
       resources :booth_assignments, only: [:index, :show, :create, :destroy] do
         get :search_booths, on: :collection
@@ -170,10 +169,11 @@ namespace :admin do
     end
 
     resources :questions, shallow: true do
-      resources :answers, except: [:index, :destroy], controller: "questions/answers" do
+      resources :answers, except: [:index, :show, :destroy], controller: "questions/answers", shallow: false
+      resources :answers, only: [], controller: "questions/answers" do
         resources :images, controller: "questions/answers/images"
-        resources :videos, controller: "questions/answers/videos"
-        get :documents, to: "questions/answers#documents"
+        resources :videos, controller: "questions/answers/videos", shallow: false
+        resources :documents, only: [:index, :create], controller: "questions/answers/documents"
       end
       post "/answers/order_answers", to: "questions/answers#order_answers"
     end
@@ -323,6 +323,10 @@ resolve "Poll::Officer" do |officer, options|
   [:officer, options.merge(id: officer)]
 end
 
+resolve "Poll::Question::Answer" do |answer, options|
+  [:question, :answer, options.merge(question_id: answer.question, id: answer)]
+end
+
 resolve "Poll::Question::Answer::Video" do |video, options|
-  [:video, options.merge(id: video)]
+  [:answer, :video, options.merge(answer_id: video.answer, id: video)]
 end

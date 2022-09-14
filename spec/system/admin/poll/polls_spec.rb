@@ -61,6 +61,7 @@ describe "Admin polls", :admin do
 
     expect(page).not_to have_css("#poll_results_enabled")
     expect(page).not_to have_css("#poll_stats_enabled")
+    expect(page).to have_link "Go back", href: admin_polls_path
 
     click_button "Create poll"
 
@@ -83,6 +84,7 @@ describe "Admin polls", :admin do
     end_date = 1.year.from_now.to_date
 
     expect(page).to have_css("img[alt='#{poll.image.title}']")
+    expect(page).to have_link "Go back", href: admin_polls_path
 
     fill_in "Name", with: "Next Poll"
     fill_in "poll_ends_at", with: end_date

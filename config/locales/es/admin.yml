@@ -1102,9 +1102,6 @@ es:
         table_title: "Título"
         edit_answers: Editar respuestas
         see_proposal: "(Ver propuesta)"
-      flash:
-        question_added: "Pregunta añadida a esta votación"
-        error_on_question_added: "No se pudo asignar la pregunta"
       destroy:
         alert: "Esta acción eliminará la votación y todas sus preguntas asociadas."
         success_notice: "Votación eliminada correctamente"
@@ -1128,6 +1125,8 @@ es:
       new:
         title: "Crear pregunta ciudadana para la votación %{poll}"
         title_proposal: "Crear pregunta ciudadana"
+      destroy:
+        notice: "Pregunta eliminada correctamente"
       answers:
         images:
           add_image: "Añadir imagen"
@@ -1154,12 +1153,6 @@ es:
     answers:
       new:
         title: Nueva respuesta
-      show:
-        title: Título
-        description: Descripción
-        images: Imágenes
-        images_list: Lista de imágenes
-        edit: Editar respuesta
       edit:
         title: Editar respuesta
       videos:
