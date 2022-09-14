@@ -69,6 +69,18 @@ describe Poll do
         poll.starts_at = 10.days.from_now
         expect(poll).not_to be_valid
       end
+
+      it "is valid if changing the end date to a future date" do
+        poll.ends_at = 1.day.from_now
+        expect(poll).to be_valid
+      end
+
+      it "is not valid if changing the end date to a past date" do
+        poll = create(:poll, starts_at: 10.days.ago, ends_at: 10.days.from_now)
+
+        poll.ends_at = 1.day.ago
+        expect(poll).not_to be_valid
+      end
     end
   end
 
