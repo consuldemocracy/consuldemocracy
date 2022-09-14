@@ -727,9 +727,6 @@ eu:
         no_questions: "Bozkaketa honi ez zaio galderarik esleitu."
         questions_title: "Esleitutako galdera zerrenda"
         table_title: "Izenburua"
-      flash:
-        question_added: "Bozkaketa honi gehitutako galdera"
-        error_on_question_added: "Ezin izan da galdera esleitu"
     questions:
       index:
         title: "Galderak"
@@ -773,12 +770,6 @@ eu:
     answers:
       new:
         title: Erantzun berria
-      show:
-        title: Izenburua
-        description: Deskribapena
-        images: Irudiak
-        images_list: Irudi zerrenda
-        edit: Erantzuna editatu
       edit:
         title: Erantzuna editatu
       videos:
