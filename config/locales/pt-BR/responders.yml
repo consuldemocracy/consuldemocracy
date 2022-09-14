@@ -31,7 +31,6 @@ pt-BR:
         translation: "Tradução atualizada com sucesso"
       destroy:
         budget_investment: "Projeto de investimento excluído com sucesso."
-        error: "Não foi possível excluir"
         topic: "Tópico excluído com sucesso."
         poll_question_answer_video: "Vídeo de resposta excluído com sucesso."
         valuator_group: "Grupo avaliador apagado com sucesso"
