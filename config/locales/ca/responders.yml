@@ -31,7 +31,6 @@ ca:
         translation: "La traducció s’ha actualitzat correctament"
       destroy:
         budget_investment: "Proposta d'inversió eliminada."
-        error: "No s'ha pogut esborrar"
         topic: "El tema s'ha suprimit correctament."
         poll_question_answer_video: "Respondre al vídeo suprimit correctament."
         valuator_group: "El grup del valor s'ha suprimit correctament"
