@@ -1062,9 +1062,6 @@ ro:
         table_title: "Titlu"
         edit_answers: Editează răspunsuri
         see_proposal: "(Vezi propunere)"
-      flash:
-        question_added: "Întrebare adăugată la acest sondaj"
-        error_on_question_added: "Întrebarea nu a putut fi atribuită acestui sondaj"
       destroy:
         alert: "Această acțiune va elimina chestionarul și întrebările asociate acestuia."
         success_notice: "Chestionar șters cu succes"
@@ -1114,12 +1111,6 @@ ro:
     answers:
       new:
         title: Răspuns nou
-      show:
-        title: Titlu
-        description: Descriere
-        images: Imagini
-        images_list: Listă de imagini
-        edit: Editează răspuns
       edit:
         title: Editează răspuns
       videos:
