@@ -1005,9 +1005,6 @@ ar:
         table_title: "عنوان"
         edit_answers: تعديل الإجابات
         see_proposal: "(الإطلاع على المقترح)"
-      flash:
-        question_added: "تمت إضافة السؤال إلى هذا الاستطلاع"
-        error_on_question_added: "لا يمكن إضافة السؤال إلى هذا الاستطلاع"
       destroy:
         alert: "سيؤدي هذا الإجراء إلى إزالة الاستطلاع وجميع الأسئلة المرتبطة به."
         success_notice: "تم حذف الاستطلاع بنجاح"
@@ -1056,12 +1053,6 @@ ar:
     answers:
       new:
         title: إجابة جديدة
-      show:
-        title: عنوان
-        description: الوصف
-        images: صور
-        images_list: قائمة الصور
-        edit: تعديل الإجابة
       edit:
         title: تعديل الإجابة
       videos:
