@@ -26,6 +26,5 @@ es-PE:
         topic: "Tema actualizado correctamente."
       destroy:
         budget_investment: "Propuesta de inversión eliminada."
-        error: "No se pudo borrar"
         topic: "Tema eliminado."
         poll_question_answer_video: "Vídeo de respuesta eliminado."
