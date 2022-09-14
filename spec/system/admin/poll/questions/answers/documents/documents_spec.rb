@@ -9,6 +9,7 @@ describe "Documents", :admin do
       visit admin_answer_documents_path(answer)
 
       expect(page).not_to have_content(document.title)
+      expect(page).to have_link "Go back", href: admin_question_path(answer.question)
     end
 
     scenario "Answer with documents" do

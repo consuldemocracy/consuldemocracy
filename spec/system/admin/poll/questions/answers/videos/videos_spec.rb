@@ -28,6 +28,8 @@ describe "Videos", :admin do
 
     visit edit_admin_answer_video_path(answer, video)
 
+    expect(page).to have_link "Go back", href: admin_answer_videos_path(answer)
+
     fill_in "Title", with: title
     fill_in "External video", with: url
 
