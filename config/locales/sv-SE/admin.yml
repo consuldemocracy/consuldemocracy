@@ -1102,9 +1102,6 @@ sv:
         table_title: "Titel"
         edit_answers: Redigera svar
         see_proposal: "(Visa förslag)"
-      flash:
-        question_added: "Frågan har lagts till i omröstningen"
-        error_on_question_added: "Frågan kunde inte tilldelas den här omröstningen"
       destroy:
         alert: "Denna åtgärd tar bort omröstningen och alla dess frågor."
         success_notice: "Omröstningen har raderats"
@@ -1128,6 +1125,8 @@ sv:
       new:
         title: "Skapa fråga för omröstningen %{poll}"
         title_proposal: "Skapa fråga"
+      destroy:
+        notice: "Frågan raderades"
       answers:
         images:
           add_image: "Lägg till bild"
@@ -1154,12 +1153,6 @@ sv:
     answers:
       new:
         title: Nytt svar
-      show:
-        title: Titel
-        description: Beskrivning
-        images: Bilder
-        images_list: Lista med bilder
-        edit: Redigera svar
       edit:
         title: Redigera svar
       videos:
