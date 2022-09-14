@@ -152,8 +152,12 @@ class Poll < ApplicationRecord
   end
 
   def start_date_change
-    if will_save_change_to_starts_at? && starts_at < Time.current
-      errors.add(:starts_at, I18n.t("errors.messages.past_date"))
+    if will_save_change_to_starts_at?
+      if starts_at_in_database < Time.current
+        errors.add(:starts_at, I18n.t("errors.messages.cannot_change_date.poll_started"))
+      elsif starts_at < Time.current
+        errors.add(:starts_at, I18n.t("errors.messages.past_date"))
+      end
     end
   end
 
