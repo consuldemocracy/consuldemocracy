@@ -140,6 +140,7 @@ es:
       past_date: "No puede ser una fecha pasada"
       cannot_change_date:
         poll_started: "No puede ser cambiada si la votación ha comenzado"
+        poll_ended: "No puede ser cambiada si la votación ha acabado"
   form:
     accept_terms: Acepto la %{policy} y las %{conditions}
     accept_terms_title: Acepto la Política de privacidad y las Condiciones de uso

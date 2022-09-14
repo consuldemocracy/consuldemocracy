@@ -40,6 +40,7 @@ class Poll < ApplicationRecord
   validate :start_date_is_not_past_date, on: :create
   validate :start_date_change, on: :update
   validate :end_date_is_not_past_date, on: :update
+  validate :end_date_change, on: :update
   validate :only_one_active, unless: :public?
 
   accepts_nested_attributes_for :questions, reject_if: :all_blank, allow_destroy: true
@@ -165,6 +166,12 @@ class Poll < ApplicationRecord
   def end_date_is_not_past_date
     if will_save_change_to_ends_at? && ends_at < Time.current
       errors.add(:ends_at, I18n.t("errors.messages.past_date"))
+    end
+  end
+
+  def end_date_change
+    if will_save_change_to_ends_at? && ends_at_in_database < Time.current
+      errors.add(:ends_at, I18n.t("errors.messages.cannot_change_date.poll_ended"))
     end
   end
 
