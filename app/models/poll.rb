@@ -42,9 +42,9 @@ class Poll < ApplicationRecord
   accepts_nested_attributes_for :questions, reject_if: :all_blank, allow_destroy: true
 
   scope :for, ->(element) { where(related: element) }
-  scope :current,  -> { where("starts_at <= ? and ? <= ends_at", Date.current.beginning_of_day, Date.current.beginning_of_day) }
-  scope :expired,  -> { where("ends_at < ?", Date.current.beginning_of_day) }
-  scope :recounting, -> { where(ends_at: (Date.current.beginning_of_day - RECOUNT_DURATION)..Date.current.beginning_of_day) }
+  scope :current, -> { where("starts_at <= :time and ends_at >= :time", time: Time.current) }
+  scope :expired, -> { where("ends_at < ?", Time.current) }
+  scope :recounting, -> { where(ends_at: (RECOUNT_DURATION.ago)...Time.current) }
   scope :published, -> { where(published: true) }
   scope :by_geozone_id, ->(geozone_id) { where(geozones: { id: geozone_id }.joins(:geozones)) }
   scope :public_for_api, -> { all }
@@ -67,11 +67,11 @@ class Poll < ApplicationRecord
     name
   end
 
-  def current?(timestamp = Date.current.beginning_of_day)
+  def current?(timestamp = Time.current)
     starts_at <= timestamp && timestamp <= ends_at
   end
 
-  def expired?(timestamp = Date.current.beginning_of_day)
+  def expired?(timestamp = Time.current)
     ends_at < timestamp
   end
 

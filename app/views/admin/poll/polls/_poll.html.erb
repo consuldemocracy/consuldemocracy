@@ -1,7 +1,7 @@
 <tr id="<%= dom_id(poll) %>" class="poll">
   <td><strong><%= poll.name %></strong></td>
-  <td class="text-center"><%= l poll.starts_at.to_date %></td>
-  <td class="text-center"><%= l poll.ends_at.to_date %></td>
+  <td class="text-center"><%= l poll.starts_at, format: :short_datetime %></td>
+  <td class="text-center"><%= l poll.ends_at, format: :short_datetime %></td>
   <% if feature?(:sdg) %>
     <td class="text-center"><%= poll.sdg_goal_list %></td>
     <td class="text-center"><%= poll.sdg_target_list %></td>

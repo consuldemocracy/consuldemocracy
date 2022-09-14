@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Voter" do
   context "Origin", :with_frozen_time do
-    let(:poll) { create(:poll, :current) }
+    let(:poll) { create(:poll) }
     let(:question) { create(:poll_question, poll: poll) }
     let(:booth) { create(:poll_booth) }
     let(:officer) { create(:poll_officer) }

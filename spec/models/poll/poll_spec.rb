@@ -86,17 +86,31 @@ describe Poll do
     end
   end
 
-  describe "#opened?" do
+  describe "#current?", :with_frozen_time do
     it "returns true only when it isn't too late" do
-      expect(create(:poll, :expired)).not_to be_current
-      expect(create(:poll)).to be_current
+      about_to_start = create(:poll, starts_at: 1.second.from_now)
+      just_started = create(:poll, starts_at: Time.current)
+      about_to_end = create(:poll, ends_at: Time.current)
+      just_ended = create(:poll, ends_at: 1.second.ago)
+
+      expect(just_started).to be_current
+      expect(about_to_end).to be_current
+      expect(about_to_start).not_to be_current
+      expect(just_ended).not_to be_current
     end
   end
 
-  describe "#expired?" do
+  describe "#expired?", :with_frozen_time do
     it "returns true only when it is too late" do
-      expect(create(:poll, :expired)).to be_expired
-      expect(create(:poll)).not_to be_expired
+      about_to_start = create(:poll, starts_at: 1.second.from_now)
+      about_to_end = create(:poll, ends_at: Time.current)
+      just_ended = create(:poll, ends_at: 1.second.ago)
+      recounting_ended = create(:poll, starts_at: 3.years.ago, ends_at: 2.years.ago)
+
+      expect(just_ended).to be_expired
+      expect(recounting_ended).to be_expired
+      expect(about_to_start).not_to be_expired
+      expect(about_to_end).not_to be_expired
     end
   end
 
@@ -104,33 +118,6 @@ describe Poll do
     it "returns true only when published is true" do
       expect(create(:poll)).not_to be_published
       expect(create(:poll, :published)).to be_published
-    end
-  end
-
-  describe "#recounting" do
-    it "returns polls in recount & scrutiny phase" do
-      current = create(:poll, :current)
-      expired = create(:poll, :expired)
-      recounting = create(:poll, :recounting)
-
-      recounting_polls = Poll.recounting
-
-      expect(recounting_polls).to eq [recounting]
-      expect(recounting_polls).not_to include(current)
-      expect(recounting_polls).not_to include(expired)
-    end
-  end
-
-  describe "#current_or_recounting" do
-    it "returns current or recounting polls" do
-      current = create(:poll, :current)
-      expired = create(:poll, :expired)
-      recounting = create(:poll, :recounting)
-
-      current_or_recounting = Poll.current_or_recounting
-
-      expect(current_or_recounting).to match_array [current, recounting]
-      expect(current_or_recounting).not_to include(expired)
     end
   end
 
@@ -198,7 +185,7 @@ describe Poll do
     end
   end
 
-  describe "votable_by" do
+  describe ".votable_by" do
     it "returns polls that have not been voted by a user" do
       user = create(:user, :level_two)
 
@@ -337,8 +324,70 @@ describe Poll do
     end
   end
 
-  context "scopes" do
-    describe "#not_budget" do
+  describe "scopes" do
+    describe ".current", :with_frozen_time do
+      it "returns polls which have started but not ended" do
+        about_to_start = create(:poll, starts_at: 1.second.from_now)
+        just_started = create(:poll, starts_at: Time.current)
+        about_to_end = create(:poll, ends_at: Time.current)
+        just_ended = create(:poll, ends_at: 1.second.ago)
+
+        current_polls = Poll.current
+
+        expect(current_polls).to match_array [just_started, about_to_end]
+        expect(current_polls).not_to include(about_to_start)
+        expect(current_polls).not_to include(just_ended)
+      end
+    end
+
+    describe ".expired", :with_frozen_time do
+      it "returns polls which have already ended" do
+        about_to_start = create(:poll, starts_at: 1.second.from_now)
+        about_to_end = create(:poll, ends_at: Time.current)
+        just_ended = create(:poll, ends_at: 1.second.ago)
+        recounting_ended = create(:poll, starts_at: 3.years.ago, ends_at: 2.years.ago)
+
+        expired_polls = Poll.expired
+
+        expect(expired_polls).to match_array [just_ended, recounting_ended]
+        expect(expired_polls).not_to include(about_to_start)
+        expect(expired_polls).not_to include(about_to_end)
+      end
+    end
+
+    describe ".recounting", :with_frozen_time do
+      it "returns polls in recount & scrutiny phase" do
+        about_to_start = create(:poll, starts_at: 1.second.from_now)
+        about_to_end = create(:poll, ends_at: Time.current)
+        just_ended = create(:poll, ends_at: 1.second.ago)
+        recounting_ended = create(:poll, starts_at: 3.years.ago, ends_at: 2.years.ago)
+
+        recounting_polls = Poll.recounting
+
+        expect(recounting_polls).to eq [just_ended]
+        expect(recounting_polls).not_to include(about_to_start)
+        expect(recounting_polls).not_to include(about_to_end)
+        expect(recounting_polls).not_to include(recounting_ended)
+      end
+    end
+
+    describe ".current_or_recounting", :with_frozen_time do
+      it "returns current or recounting polls" do
+        about_to_start = create(:poll, starts_at: 1.second.from_now)
+        just_started = create(:poll, starts_at: Time.current)
+        about_to_end = create(:poll, ends_at: Time.current)
+        just_ended = create(:poll, ends_at: 1.second.ago)
+        recounting_ended = create(:poll, starts_at: 3.years.ago, ends_at: 2.years.ago)
+
+        current_or_recounting = Poll.current_or_recounting
+
+        expect(current_or_recounting).to match_array [just_started, about_to_end, just_ended]
+        expect(current_or_recounting).not_to include(about_to_start)
+        expect(current_or_recounting).not_to include(recounting_ended)
+      end
+    end
+
+    describe ".not_budget" do
       it "returns polls not associated to a budget" do
         poll1 = create(:poll)
         poll2 = create(:poll)
@@ -350,7 +399,7 @@ describe Poll do
     end
   end
 
-  describe "#sort_for_list" do
+  describe ".sort_for_list" do
     it "returns polls sorted by name ASC" do
       starts_at = 1.day.from_now
       poll1 = create(:poll, geozone_restricted: true, starts_at: starts_at, name: "Zzz...")
@@ -419,13 +468,13 @@ describe Poll do
 
   describe "#recounts_confirmed" do
     it "is false for current polls" do
-      poll = create(:poll, :current)
+      poll = create(:poll)
 
       expect(poll.recounts_confirmed?).to be false
     end
 
     it "is false for recounting polls" do
-      poll = create(:poll, :recounting)
+      poll = create(:poll, ends_at: 1.second.ago)
 
       expect(poll.recounts_confirmed?).to be false
     end
