@@ -1,12 +1,10 @@
 class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
   include Translatable
-  include DocumentAttributes
 
   load_and_authorize_resource :question, class: "::Poll::Question"
   load_and_authorize_resource class: "::Poll::Question::Answer",
                               through: :question,
-                              through_association: :question_answers,
-                              except: :documents
+                              through_association: :question_answers
 
   def new
   end
@@ -35,13 +33,6 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
     end
   end
 
-  def documents
-    @answer = ::Poll::Question::Answer.find(params[:answer_id])
-    @documents = @answer.documents
-
-    render "admin/poll/questions/answers/documents"
-  end
-
   def order_answers
     ::Poll::Question::Answer.order_answers(params[:ordered_list])
     head :ok
@@ -54,7 +45,7 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
     end
 
     def allowed_params
-      attributes = [:title, :description, :given_order, documents_attributes: document_attributes]
+      attributes = [:title, :description, :given_order]
 
       [*attributes, translation_params(Poll::Question::Answer)]
     end
