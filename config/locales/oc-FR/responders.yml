@@ -31,7 +31,6 @@ oc:
         translation: "La traduccion s’a actualizat corrèctament"
       destroy:
         budget_investment: "Proposicion d'inversion eliminada."
-        error: "S'es pas pogut esborrar"
         topic: "Lo tèma s'es suprimit corrèctament."
         poll_question_answer_video: "Respondre al vidèo suprimit corrèctament."
         valuator_group: "Lo grop de la valor s'es suprimit corrèctament"
