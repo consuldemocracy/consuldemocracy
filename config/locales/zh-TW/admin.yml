@@ -801,9 +801,6 @@ zh-TW:
         no_questions: "此投票項沒有穫分配的問題。"
         questions_title: "問題清單"
         table_title: "標題"
-      flash:
-        question_added: "此投票項中添加的問題"
-        error_on_question_added: "無法將問題分配給此投票項"
     questions:
       index:
         title: "問題"
@@ -847,12 +844,6 @@ zh-TW:
     answers:
       new:
         title: 新答案
-      show:
-        title: 標題
-        description: 描述
-        images: 圖像
-        images_list: 圖像清單
-        edit: 編輯答案
       edit:
         title: 編輯答案
       videos:
