@@ -7,6 +7,8 @@ describe "Answers", :admin do
     visit admin_question_path(question)
     click_link "Add answer"
 
+    expect(page).to have_link "Go back", href: admin_question_path(question)
+
     fill_in "Answer", with: "The answer is always 42"
     fill_in_ckeditor "Description", with: "The Hitchhiker's Guide To The Universe"
 
@@ -38,6 +40,8 @@ describe "Answers", :admin do
 
     visit admin_question_path(question)
     within("tr", text: "Answer title") { click_link "Edit" }
+
+    expect(page).to have_link "Go back", href: admin_question_path(question)
 
     fill_in "Answer", with: "New title"
     click_button "Save"

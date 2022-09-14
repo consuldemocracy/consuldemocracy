@@ -50,8 +50,9 @@ describe "Admin poll questions", :admin do
     visit admin_poll_path(poll)
     click_link "Edit answers"
 
-    expect(page).to have_content(question.title)
-    expect(page).to have_content(question.author.name)
+    expect(page).to have_link "Go back", href: admin_poll_path(poll)
+    expect(page).to have_content question.title
+    expect(page).to have_content question.author.name
   end
 
   scenario "Create" do
@@ -123,6 +124,7 @@ describe "Admin poll questions", :admin do
       click_link "Edit"
     end
 
+    expect(page).to have_link "Go back", href: admin_poll_path(poll)
     old_title = question1.title
     new_title = "Potatoes are great and everyone should have one"
     fill_in "Question", with: new_title
