@@ -1102,9 +1102,6 @@ tr:
         table_title: "Başlık"
         edit_answers: Cevapları düzenle
         see_proposal: "(Öneriyi gör)"
-      flash:
-        question_added: "Bu ankete soru eklendi"
-        error_on_question_added: "Bu ankete soru atanamadı"
       destroy:
         alert: "Bu işlem anketi ve onunla ilişkili tüm soruları kaldıracaktır."
         success_notice: "Anket başarıyla silindi"
@@ -1154,12 +1151,6 @@ tr:
     answers:
       new:
         title: Yeni cevap
-      show:
-        title: Başlık
-        description: Tanımlama
-        images: Resimler
-        images_list: Resim listesi
-        edit: Cevap düzenle
       edit:
         title: Cevap düzenle
       videos:
