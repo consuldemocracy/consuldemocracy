@@ -6,6 +6,7 @@ FactoryBot.define do
 
     starts_at { 1.month.ago }
     ends_at { 1.month.from_now }
+    to_create { |poll| poll.save(validate: false) }
 
     trait :expired do
       starts_at { 1.month.ago }
@@ -15,6 +16,10 @@ FactoryBot.define do
     trait :old do
       starts_at { 3.months.ago }
       ends_at { 2.months.ago }
+    end
+
+    trait :future do
+      starts_at { 1.day.from_now }
     end
 
     trait :published do
