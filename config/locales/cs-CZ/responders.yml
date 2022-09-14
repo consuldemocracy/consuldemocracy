@@ -32,7 +32,6 @@ cs:
         translation: "Překlad byl úspěšně aktualizován"
       destroy:
         budget_investment: "Investiční projekt byl smazán."
-        error: "Nelze odstranit"
         topic: "Téma bylo smazáno."
         poll_question_answer_video: "Odpověď na video byla smazána."
         valuator_group: "Skupina hodnotitelů byla smazána"
