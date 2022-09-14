@@ -1110,9 +1110,6 @@ cs:
         table_title: "Předmět"
         edit_answers: Upravit odpovědi
         see_proposal: "(Zobrazit návrh)"
-      flash:
-        question_added: "Otázka přidána k této anketě"
-        error_on_question_added: "Otázku nelze přiřadit k této anketě"
       destroy:
         alert: "Tato akce odstraní průzkum a všechny související otázky."
         success_notice: "Průzkum byl úspěšně smazán"
@@ -1162,12 +1159,6 @@ cs:
     answers:
       new:
         title: Nová odpověď
-      show:
-        title: Předmět
-        description: Description
-        images: Obrázky
-        images_list: Seznam obrázků
-        edit: Upravit odpověď
       edit:
         title: Upravit odpověď
       videos:
