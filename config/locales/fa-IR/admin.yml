@@ -729,9 +729,6 @@ fa:
         no_questions: "هیچ سؤالی برای این نظرسنجی وجود ندارد"
         questions_title: "فهرست پرسش ها"
         table_title: "عنوان"
-      flash:
-        question_added: "سوال اضافه شده به این نظر سنجی"
-        error_on_question_added: "سوال را نمی توان به این نظرسنجی اختصاص داد"
     questions:
       index:
         title: "سوالات"
@@ -775,12 +772,6 @@ fa:
     answers:
       new:
         title: پاسخ جدید
-      show:
-        title: عنوان
-        description: توضیحات
-        images: تصاویر
-        images_list: لیست تصاویر
-        edit: ویرایش پاسخ
       edit:
         title: ویرایش پاسخ
       videos:
