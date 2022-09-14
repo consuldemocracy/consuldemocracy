@@ -30,7 +30,6 @@ zh-TW:
         translation: "翻譯已成功更新"
       destroy:
         budget_investment: "投資項目已成功刪除。"
-        error: "無法刪除"
         topic: "主題已成功刪除。"
         poll_question_answer_video: "回答視頻已成功刪除。"
         valuator_group: "評估組已成功刪除"
