@@ -144,7 +144,6 @@ FactoryBot.define do
     poll { budget&.poll || association(:poll, budget: budget) }
     trait :from_web do
       origin { "web" }
-      token { SecureRandom.hex(32) }
     end
 
     trait :from_booth do

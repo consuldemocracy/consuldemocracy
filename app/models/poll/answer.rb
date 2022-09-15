@@ -14,11 +14,11 @@ class Poll::Answer < ApplicationRecord
   scope :by_author, ->(author_id) { where(author_id: author_id) }
   scope :by_question, ->(question_id) { where(question_id: question_id) }
 
-  def save_and_record_voter_participation(token)
+  def save_and_record_voter_participation
     transaction do
       touch if persisted?
       save!
-      Poll::Voter.find_or_create_by!(user: author, poll: poll, origin: "web", token: token)
+      Poll::Voter.find_or_create_by!(user: author, poll: poll, origin: "web")
     end
   end
 end

@@ -46,7 +46,7 @@ describe Poll::Answer do
       answer = create(:poll_answer, question: question, author: author, answer: "Yes")
       expect(answer.poll.voters).to be_blank
 
-      answer.save_and_record_voter_participation("token")
+      answer.save_and_record_voter_participation
       expect(poll.reload.voters.size).to eq(1)
       voter = poll.voters.first
 
@@ -57,12 +57,12 @@ describe Poll::Answer do
 
     it "updates a poll_voter with user and poll data" do
       answer = create(:poll_answer, question: question, author: author, answer: "Yes")
-      answer.save_and_record_voter_participation("token")
+      answer.save_and_record_voter_participation
 
       expect(poll.reload.voters.size).to eq(1)
 
       answer = create(:poll_answer, question: question, author: author, answer: "No")
-      answer.save_and_record_voter_participation("token")
+      answer.save_and_record_voter_participation
 
       expect(poll.reload.voters.size).to eq(1)
 
@@ -76,7 +76,7 @@ describe Poll::Answer do
       answer = build(:poll_answer)
 
       expect do
-        answer.save_and_record_voter_participation("token")
+        answer.save_and_record_voter_participation
       end.to raise_error(ActiveRecord::RecordInvalid)
 
       expect(answer).not_to be_persisted
