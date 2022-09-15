@@ -4,11 +4,9 @@ describe "Admin poll questions", :admin do
   scenario "Index" do
     poll1 = create(:poll, :future)
     poll2 = create(:poll, :future)
-    poll3 = create(:poll, :future)
     proposal = create(:proposal)
     question1 = create(:poll_question, poll: poll1)
-    question2 = create(:poll_question, poll: poll2)
-    question3 = create(:poll_question, poll: poll3, proposal: proposal)
+    question2 = create(:poll_question, poll: poll2, proposal: proposal)
 
     visit admin_poll_path(poll1)
     expect(page).to have_content(poll1.name)
@@ -25,17 +23,7 @@ describe "Admin poll questions", :admin do
 
     within("#poll_question_#{question2.id}") do
       expect(page).to have_content question2.title
-      expect(page).to have_link "Edit answers"
-      expect(page).to have_link "Edit"
-      expect(page).to have_button "Delete"
-    end
-
-    visit admin_poll_path(poll3)
-    expect(page).to have_content(poll3.name)
-
-    within("#poll_question_#{question3.id}") do
-      expect(page).to have_content question3.title
-      expect(page).to have_link "(See proposal)", href: proposal_path(question3.proposal)
+      expect(page).to have_link "(See proposal)", href: proposal_path(question2.proposal)
       expect(page).to have_link "Edit answers"
       expect(page).to have_link "Edit"
       expect(page).to have_button "Delete"
