@@ -1260,6 +1260,28 @@ footer {
   }
 }
 
+.budget-header .budgets-index,
+.budget-group-show,
+.budget-groups-index,
+.budget-ballot-show {
+
+  > header {
+
+    &::before {
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+.budget-header {
+
+  &::before {
+    left: 0;
+    right: 0;
+  }
+}
+
 .budget-phases {
 
   header {
