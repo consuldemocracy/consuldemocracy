@@ -7,7 +7,7 @@ data:
     production:
       adapter: postgresql
       encoding: unicode
-      host: postgresql.shared
+      host: postgresql-11.shared
       port: 5432
       username: <%= ENV['POSTGRES_USERNAME'] %>
       password: <%= ENV['POSTGRES_PASSWORD'] %>
