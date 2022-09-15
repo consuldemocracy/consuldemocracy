@@ -283,8 +283,8 @@ describe "Polls" do
       within("#poll_question_#{question.id}_answers") do
         expect(page).to have_content("Yes")
         expect(page).to have_content("No")
-        expect(page).not_to have_link("Yes")
-        expect(page).not_to have_link("No")
+        expect(page).not_to have_button "Yes"
+        expect(page).not_to have_button "No"
       end
       expect(page).to have_content("This poll has finished")
     end
@@ -302,8 +302,8 @@ describe "Polls" do
       within("#poll_question_#{question.id}_answers") do
         expect(page).to have_content("Yes")
         expect(page).to have_content("No")
-        expect(page).not_to have_link("Yes")
-        expect(page).not_to have_link("No")
+        expect(page).not_to have_button "Yes"
+        expect(page).not_to have_button "No"
       end
     end
 
@@ -317,8 +317,8 @@ describe "Polls" do
       visit poll_path(poll)
 
       within("#poll_question_#{question.id}_answers") do
-        expect(page).to have_link("Yes")
-        expect(page).to have_link("No")
+        expect(page).to have_button "Yes"
+        expect(page).to have_button "No"
       end
     end
 
@@ -329,8 +329,8 @@ describe "Polls" do
       visit poll_path(poll)
 
       within("#poll_question_#{question.id}_answers") do
-        expect(page).to have_link("Yes")
-        expect(page).to have_link("No")
+        expect(page).to have_button "Yes"
+        expect(page).to have_button "No"
       end
     end
 
@@ -343,8 +343,8 @@ describe "Polls" do
       visit poll_path(poll)
 
       within("#poll_question_#{question.id}_answers") do
-        expect(page).to have_link("Yes")
-        expect(page).to have_link("No")
+        expect(page).to have_button "Yes"
+        expect(page).to have_button "No"
       end
     end
 
@@ -359,10 +359,10 @@ describe "Polls" do
       visit poll_path(poll)
 
       within("#poll_question_#{question.id}_answers") do
-        click_link "Yes"
+        click_button "Yes"
 
-        expect(page).not_to have_link("Yes")
-        expect(page).to have_link("No")
+        expect(page).not_to have_button "Yes"
+        expect(page).to have_button "No"
       end
     end
 
@@ -377,15 +377,15 @@ describe "Polls" do
       visit poll_path(poll)
 
       within("#poll_question_#{question.id}_answers") do
-        click_link "Yes"
+        click_button "Yes"
 
-        expect(page).not_to have_link("Yes")
-        expect(page).to have_link("No")
+        expect(page).not_to have_button "Yes"
+        expect(page).to have_button "No"
 
-        click_link "No"
+        click_button "No"
 
-        expect(page).not_to have_link("No")
-        expect(page).to have_link("Yes")
+        expect(page).not_to have_button "No"
+        expect(page).to have_button "Yes"
       end
     end
 
@@ -400,30 +400,30 @@ describe "Polls" do
       visit poll_path(poll)
 
       within("#poll_question_#{question.id}_answers") do
-        click_link "Yes"
+        click_button "Yes"
 
-        expect(page).not_to have_link("Yes")
-        expect(page).to have_link("No")
+        expect(page).not_to have_button "Yes"
+        expect(page).to have_button "No"
       end
 
       click_link "Sign out"
       login_as user
       visit poll_path(poll)
       within("#poll_question_#{question.id}_answers") do
-        click_link "Yes"
+        click_button "Yes"
 
-        expect(page).not_to have_link("Yes")
-        expect(page).to have_link("No")
+        expect(page).not_to have_button "Yes"
+        expect(page).to have_button "No"
       end
 
       click_link "Sign out"
       login_as user
       visit poll_path(poll)
       within("#poll_question_#{question.id}_answers") do
-        click_link "No"
+        click_button "No"
 
-        expect(page).not_to have_link("No")
-        expect(page).to have_link("Yes")
+        expect(page).not_to have_button "No"
+        expect(page).to have_button "Yes"
       end
     end
 
@@ -449,6 +449,20 @@ describe "Polls" do
 
       expect("Not restricted").to appear_before("Geozone Poll")
       expect("Geozone Poll").to appear_before("A Poll")
+    end
+
+    scenario "Level 2 users answering in a browser without javascript", :no_js do
+      question = create(:poll_question, :yes_no, poll: poll)
+      user = create(:user, :level_two)
+      login_as user
+      visit poll_path(poll)
+
+      within("#poll_question_#{question.id}_answers") do
+        click_button "Yes"
+
+        expect(page).not_to have_button "Yes"
+        expect(page).to have_button "No"
+      end
     end
   end
 
@@ -481,8 +495,8 @@ describe "Polls" do
         expect(page).to have_content("Yes")
         expect(page).to have_content("No")
 
-        expect(page).not_to have_link("Yes")
-        expect(page).not_to have_link("No")
+        expect(page).not_to have_button "Yes"
+        expect(page).not_to have_button "No"
       end
     end
   end
