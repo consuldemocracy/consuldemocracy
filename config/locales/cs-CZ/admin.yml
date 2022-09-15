@@ -1133,6 +1133,8 @@ cs:
       new:
         title: "Vytvořit otázku do průzkumu %{poll}"
         title_proposal: "Vytvořit otázku"
+      destroy:
+        notice: "Otázka byla úspěšně smazána"
       answers:
         images:
           add_image: "Přidat obrázek"
