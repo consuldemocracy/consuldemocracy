@@ -8,9 +8,7 @@
 
   <div class="row">
     <div class="small-12">
-      <% if poll.present? %>
-        <%= f.hidden_field :poll_id, value: poll.id %>
-      <% elsif question.poll.present? %>
+      <% if question.poll.present? %>
         <%= f.hidden_field :poll_id, value: question.poll.id %>
       <% else %>
         <div class="small-12 medium-6 large-4 column">

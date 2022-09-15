@@ -1,10 +1,9 @@
 class Admin::Poll::Questions::FormComponent < ApplicationComponent
   include TranslatableFormHelper
   include GlobalizeHelper
-  attr_reader :poll, :question, :url
+  attr_reader :question, :url
 
-  def initialize(poll, question, url:)
-    @poll = poll
+  def initialize(question, url:)
     @question = question
     @url = url
   end

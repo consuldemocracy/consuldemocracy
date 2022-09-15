@@ -16,6 +16,7 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
     @polls = Poll.all
     proposal = Proposal.find(params[:proposal_id]) if params[:proposal_id].present?
     @question.copy_attributes_from_proposal(proposal)
+    @question.poll = @poll
   end
 
   def create
