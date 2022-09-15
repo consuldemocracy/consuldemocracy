@@ -1,6 +1,5 @@
 class PollsController < ApplicationController
   include FeatureFlags
-  include PollsHelper
 
   feature_flag :polls
 
@@ -20,7 +19,6 @@ class PollsController < ApplicationController
 
   def show
     @questions = @poll.questions.for_render.sort_for_list
-    @token = poll_voter_token(@poll, current_user)
     @poll_questions_answers = Poll::Question::Answer.where(question: @poll.questions)
                                                     .with_content.order(:given_order)
 

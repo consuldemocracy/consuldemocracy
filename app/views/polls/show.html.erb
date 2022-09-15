@@ -32,7 +32,7 @@
       <% end %>
 
       <% @questions.each do |question| %>
-        <%= render "polls/questions/question", question: question, token: @token %>
+        <%= render "polls/questions/question", question: question %>
       <% end %>
     </div>
   </div>

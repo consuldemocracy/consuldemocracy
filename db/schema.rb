@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_03_112944) do
+ActiveRecord::Schema.define(version: 2022_09_15_154808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -1210,7 +1210,6 @@ ActiveRecord::Schema.define(version: 2021_11_03_112944) do
     t.integer "user_id"
     t.string "origin"
     t.integer "officer_id"
-    t.string "token"
     t.index ["booth_assignment_id"], name: "index_poll_voters_on_booth_assignment_id"
     t.index ["document_number"], name: "index_poll_voters_on_document_number"
     t.index ["officer_assignment_id"], name: "index_poll_voters_on_officer_assignment_id"
