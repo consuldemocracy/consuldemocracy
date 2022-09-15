@@ -11,5 +11,14 @@ class Polls::QuestionsController < ApplicationController
     answer.save_and_record_voter_participation
 
     @answers_by_question_id = { @question.id => params[:answer] }
+
+    respond_to do |format|
+      format.html do
+        redirect_to request.referer
+      end
+      format.js do
+        render :answer
+      end
+    end
   end
 end

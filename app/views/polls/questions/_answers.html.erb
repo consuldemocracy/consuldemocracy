@@ -9,12 +9,12 @@
           <%= answer.title %>
         </span>
       <% else %>
-        <%= link_to answer.title,
-          answer_question_path(question, answer: answer.title),
-          method: :post,
-          remote: true,
-          title: t("poll_questions.show.vote_answer", answer: answer.title),
-          class: "button secondary hollow" %>
+        <%= button_to answer_question_path(question, answer: answer.title),
+                      remote: true,
+                      title: t("poll_questions.show.vote_answer", answer: answer.title),
+                      class: "button secondary hollow" do %>
+          <%= answer.title %>
+        <% end %>
       <% end %>
     <% end %>
   <% elsif !user_signed_in? %>

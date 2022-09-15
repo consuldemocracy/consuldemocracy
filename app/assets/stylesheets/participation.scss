@@ -1633,9 +1633,10 @@
 }
 
 .poll-question-answers {
+  @include flex-with-gap($line-height / 4);
+  flex-wrap: wrap;
 
   .button {
-    margin-right: $line-height / 4;
     min-width: rem-calc(168);
 
     @include breakpoint(medium down) {
