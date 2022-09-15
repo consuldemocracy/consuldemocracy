@@ -1123,6 +1123,8 @@ en:
         poll_not_assigned: "Poll not assigned"
       edit:
         title: "Edit Question"
+      form:
+        poll_help: "You can only select polls that have not started yet"
       new:
         title: "Create question to poll %{poll}"
         title_proposal: "Create question"
@@ -1151,6 +1153,7 @@ en:
           documents_list: Documents list
           document_title: Title
           document_actions: Actions
+      no_edit: "Once the poll has started it will not be possible to create, edit or delete questions, answers or any content associated with the poll."
     answers:
       new:
         title: New answer

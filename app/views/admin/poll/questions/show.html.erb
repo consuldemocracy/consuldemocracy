@@ -1,7 +1,9 @@
 <%= back_link_to admin_poll_path(@question.poll) %>
 
-<%= link_to t("admin.questions.show.edit_question"), edit_admin_question_path(@question),
-            class: "button hollow float-right" %>
+<% if can?(:update, @question) %>
+  <%= link_to t("admin.questions.show.edit_question"), edit_admin_question_path(@question),
+              class: "button hollow float-right" %>
+<% end %>
 
 <div class="clear"></div>
 
