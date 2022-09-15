@@ -16,8 +16,10 @@ describe Abilities::Administrator do
   let(:budget_investment) { create(:budget_investment) }
   let(:finished_investment) { create(:budget_investment, budget: create(:budget, :finished)) }
   let(:legislation_question) { create(:legislation_question) }
-  let(:poll) { create(:poll) }
-  let(:poll_question) { create(:poll_question) }
+  let(:current_poll) { create(:poll) }
+  let(:future_poll) { create(:poll, :future) }
+  let(:current_poll_question) { create(:poll_question) }
+  let(:future_poll_question) { create(:poll_question, poll: future_poll) }
   let(:poll_question_answer) { create(:poll_question_answer) }
   let(:answer_image) { build(:image, imageable: poll_question_answer) }
 
@@ -27,7 +29,7 @@ describe Abilities::Administrator do
 
   let(:proposal_document) { build(:document, documentable: proposal, user: proposal.author) }
   let(:budget_investment_document) { build(:document, documentable: budget_investment) }
-  let(:poll_question_document) { build(:document, documentable: poll_question) }
+  let(:poll_question_document) { build(:document, documentable: current_poll_question) }
 
   let(:proposal_image) { build(:image, imageable: proposal, user: proposal.author) }
   let(:budget_investment_image) { build(:image, imageable: budget_investment) }
@@ -74,8 +76,8 @@ describe Abilities::Administrator do
   it { should be_able_to(:comment_as_administrator, legislation_question) }
   it { should_not be_able_to(:comment_as_moderator, legislation_question) }
 
-  it { should be_able_to(:comment_as_administrator, poll) }
-  it { should_not be_able_to(:comment_as_moderator, poll) }
+  it { should be_able_to(:comment_as_administrator, current_poll) }
+  it { should_not be_able_to(:comment_as_moderator, current_poll) }
 
   it { should be_able_to(:summary, past_process) }
   it { should_not be_able_to(:summary, past_draft_process) }
@@ -113,8 +115,12 @@ describe Abilities::Administrator do
   it { should be_able_to(:manage, Dashboard::Action) }
 
   it { should be_able_to(:read, Poll::Question) }
-  it { should be_able_to(:create, Poll::Question) }
-  it { should be_able_to(:update, Poll::Question) }
+  it { should be_able_to(:create, future_poll_question) }
+  it { should be_able_to(:update, future_poll_question) }
+  it { should be_able_to(:destroy, future_poll_question) }
+  it { should_not be_able_to(:create, current_poll_question) }
+  it { should_not be_able_to(:update, current_poll_question) }
+  it { should_not be_able_to(:destroy, current_poll_question) }
 
   it { should be_able_to(:manage, Poll::Question::Answer) }
 
