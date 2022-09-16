@@ -15,6 +15,7 @@ sl-SI:
   account:
     show:
       change_credentials_link: Spremeni elektronski naslov ali geslo
+      verified_account: "Tvoj račun je potrjen."
   activerecord:
     attributes:
       user:
@@ -121,6 +122,7 @@ sl-SI:
           instructions_2: Ko potrdiš račun, lahko začneš sodelovati.
           thank_you: Hvala za registracijo na spletnem portalu. Zdaj moraš <b>potrditi svoj e-naslov</b>.
           title: Registracija
+          account_confirmed: 'Hvala za registracijo! Za nadaljevanje se moraš <b>vpisati</b>.'
     mailer:
       reset_password_instructions:
         ignore_text: Če nisi zahteval_a spremembe gesla, lahko ignoriraš to e-sporočilo.
