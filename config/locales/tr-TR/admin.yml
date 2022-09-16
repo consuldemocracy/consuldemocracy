@@ -1125,6 +1125,8 @@ tr:
       new:
         title: "Oylama%{poll} için soru oluştur"
         title_proposal: "Soru oluştur"
+      destroy:
+        notice: "Soru silindi"
       answers:
         images:
           add_image: "Görüntü ekle"
