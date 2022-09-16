@@ -748,6 +748,8 @@ tr:
     required: "Gerekli"
     comments:
       zero: "Yorum yok"
+      one: "1 yorum"
+      other: "%{count} yorum"
   social:
     facebook: "Facebook %{org}"
     twitter: "Twitter %{org}"
