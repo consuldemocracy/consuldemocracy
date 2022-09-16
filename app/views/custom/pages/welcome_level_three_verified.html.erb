@@ -4,10 +4,10 @@
       <div class="small-12 medium-8 small-centered column">
         <div class="margin text-center">
           <h1><%= t("account.show.verified_account") %></h1>
-          <p><%= raw t("devise_views.users.registrations.success.account_confirmed") %></p>
           <br />
           <div class="small-12 medium-6 column small-centered">
-            <%= link_to t("devise_views.menu.login_items.login"), new_user_session_path, rel: "nofollow", class: "action-button" %>
+          <%= link_to t("devise_views.users.registrations.success.back_to_index"),
+            root_path, class: "default-button" %>
           </div>
         </div>
       </div>
