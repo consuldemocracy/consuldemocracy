@@ -1,3 +1,3 @@
-<%= render Admin::TableActionsComponent.new(question, actions: actions) do |table_actions| %>
-  <%= table_actions.action(:answers, text: t("admin.polls.show.edit_answers")) %>
+<%= render Admin::AllowedTableActionsComponent.new(question) do |actions| %>
+  <%= actions.action(:answers, text: t("admin.polls.show.edit_answers")) %>
 <% end %>

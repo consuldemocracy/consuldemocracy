@@ -1,9 +1,8 @@
-<%= render Admin::TableActionsComponent.new(document,
-                                            actions: actions,
-                                            destroy_path: document_path(document)) do |table_actions| %>
-  <%= table_actions.action(:download,
-                           text: t("documents.buttons.download_document"),
-                           path: document.attachment,
-                           target: "_blank",
-                           rel: "nofollow") %>
+<%= render Admin::AllowedTableActionsComponent.new(document,
+                                                   destroy_path: document_path(document)) do |actions| %>
+  <%= actions.action(:download,
+                     text: t("documents.buttons.download_document"),
+                     path: document.attachment,
+                     target: "_blank",
+                     rel: "nofollow") %>
 <% end %>
