@@ -30,7 +30,7 @@ describe "Documents", :admin do
     documentable_attach_new_file(Rails.root.join("spec/fixtures/files/clippy.pdf"))
     click_button "Save"
 
-    expect(page).to have_content "Document uploaded succesfully"
+    expect(page).to have_content "Document uploaded successfully"
     expect(page).to have_link "clippy.pdf"
   end
 

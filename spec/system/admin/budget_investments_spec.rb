@@ -1069,7 +1069,7 @@ describe "Admin budget investments", :admin do
       select "Marta desc (marta@admins.org)", from: "budget_investment[administrator_id]"
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content "Investment project updated successfully."
       expect(page).to have_content "Assigned administrator: Marta"
     end
 
@@ -1102,7 +1102,7 @@ describe "Admin budget investments", :admin do
 
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content "Investment project updated successfully."
 
       within("#assigned_valuators") do
         expect(page).to have_content("Valentina (v1@valuators.org)")
@@ -1127,7 +1127,7 @@ describe "Admin budget investments", :admin do
 
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content "Investment project updated successfully."
 
       within("#assigned_valuator_groups") do
         expect(page).to have_content("Health")
@@ -1151,7 +1151,7 @@ describe "Admin budget investments", :admin do
 
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content "Investment project updated successfully."
 
       within("#assigned_valuator_groups") { expect(page).to have_content("Health") }
       within("#assigned_valuators") do
@@ -1173,7 +1173,7 @@ describe "Admin budget investments", :admin do
 
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content "Investment project updated successfully."
 
       within "#tags" do
         expect(page).to have_content "Education"
@@ -1190,7 +1190,7 @@ describe "Admin budget investments", :admin do
       fill_in "budget_investment_valuation_tag_list", with: "Refugees, Solidarity"
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content "Investment project updated successfully."
 
       within "#tags" do
         expect(page).to have_content "Refugees"
@@ -1216,7 +1216,7 @@ describe "Admin budget investments", :admin do
       fill_in "budget_investment_valuation_tag_list", with: "Education, Environment"
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully"
+      expect(page).to have_content "Investment project updated successfully"
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
 
@@ -1244,7 +1244,7 @@ describe "Admin budget investments", :admin do
       fill_in "budget_investment_valuation_tag_list", with: "Refugees, Solidarity"
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content "Investment project updated successfully."
 
       visit budget_investment_path(budget_investment.budget, budget_investment)
       expect(page).to have_content "Park"
@@ -1314,7 +1314,7 @@ describe "Admin budget investments", :admin do
 
       click_button "Update"
 
-      expect(page).to have_content "Investment project updated succesfully."
+      expect(page).to have_content "Investment project updated successfully."
       expect(page).to have_content("Milestone Tags: tag1, tag2")
     end
   end

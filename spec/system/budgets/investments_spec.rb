@@ -702,7 +702,7 @@ describe "Budget Investments" do
 
       click_button "Update Investment"
 
-      expect(page).to have_content "Investment project updated succesfully"
+      expect(page).to have_content "Investment project updated successfully"
       expect(page).to have_content "Park improvements"
     end
 
@@ -1157,7 +1157,7 @@ describe "Budget Investments" do
         accept_confirm { click_link("Delete") }
       end
 
-      expect(page).to have_content "Investment project deleted succesfully"
+      expect(page).to have_content "Investment project deleted successfully"
 
       visit user_path(user, tab: :budget_investments)
 

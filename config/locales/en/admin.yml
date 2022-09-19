@@ -528,10 +528,10 @@ en:
         size: "Size"
         url: "URL"
       create:
-        success_notice: "Document uploaded succesfully"
+        success_notice: "Document uploaded successfully"
         unable_notice: "Invalid document"
       destroy:
-        success_notice: "Document deleted succesfully"
+        success_notice: "Document deleted successfully"
     hidden_users:
       index:
         filter: Filter
@@ -894,7 +894,7 @@ en:
         pending_to_be_sent: This is the content pending to be sent
         moderate_pending: Moderate notification send
         send_pending: Send pending
-        send_pending_notification: Pending notifications sent succesfully
+        send_pending_notification: Pending notifications sent successfully
       proposal_notification_digest:
         title: "Proposal notification digest"
         description: "Gathers all proposal notifications for an user in a single message, to avoid too much emails."
@@ -1127,7 +1127,7 @@ en:
         title: "Create question to poll %{poll}"
         title_proposal: "Create question"
       destroy:
-        notice: "Question deleted succesfully"
+        notice: "Question deleted successfully"
       answers:
         images:
           add_image: "Add image"
@@ -1308,7 +1308,7 @@ en:
           title: Map configuration
           help: Here you can customize the way the map is displayed to users. Drag map marker or click anywhere over the map, set desired zoom and click button "Update".
           flash:
-            update: Map configuration updated succesfully.
+            update: Map configuration updated successfully.
           form:
             submit: Update
           how_to_enable: 'To show the map to users you must enable "Proposals and budget investments geolocation" on "Features" tab.'
