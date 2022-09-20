@@ -1122,6 +1122,8 @@ sv:
         poll_not_assigned: "Omröstningen har inte tilldelats"
       edit:
         title: "Redigera fråga"
+      form:
+        poll_help: "Du kan bara välja omröstningar som inte har inletts än"
       new:
         title: "Skapa fråga för omröstningen %{poll}"
         title_proposal: "Skapa fråga"
@@ -1150,11 +1152,17 @@ sv:
           documents_list: Lista med dokument
           document_title: Titel
           document_actions: Åtgärder
+      no_edit: "När omröstningen har inletts går det inte längre att skapa, redigera eller radera frågor, svar eller annat innehåll som kopplats till omröstningen."
     answers:
       new:
         title: Nytt svar
       edit:
         title: Redigera svar
+      destroy:
+        success_notice: "Svaret har raderats"
+      images:
+        index:
+          title: Bilder
       videos:
         index:
           title: Videor
