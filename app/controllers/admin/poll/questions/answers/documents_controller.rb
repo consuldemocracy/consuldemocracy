@@ -14,7 +14,7 @@ class Admin::Poll::Questions::Answers::DocumentsController < Admin::Poll::BaseCo
       redirect_to admin_answer_documents_path(@answer),
         notice: t("admin.documents.create.success_notice")
     else
-      render :new
+      render :index
     end
   end
 

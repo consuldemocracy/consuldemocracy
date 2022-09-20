@@ -26,14 +26,14 @@
     </div>
   <% end %>
 
-  <% if answer.documents.present? %>
+  <% if documents.present? %>
     <table>
       <tr>
         <th scope="col"><%= t("admin.questions.show.answers.document_title") %></th>
         <th scope="col"><%= t("admin.questions.show.answers.document_actions") %></th>
       </tr>
 
-      <% answer.documents.each do |document| %>
+      <% documents.each do |document| %>
         <tr>
           <td>
             <%= link_to document.title, document.attachment %>
