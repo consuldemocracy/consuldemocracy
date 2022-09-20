@@ -19,17 +19,23 @@ module Budgets
     def index
       # filters
       if params[:unfeasible]
+        winner_ids = []
+        winners = @budget.investments.winners.order(:id).each do |investment|
+          winner_ids.push(investment.id)
+        end
+        puts winner_ids
+        puts "ASDASDASDASD"
         if params[:heading_id]
-          feasibility_filtered_investments = Budget::Investment.all.where(heading_id: params[:heading_id]).where.not(feasibility: 'feasible')
+          feasibility_filtered_investments = @budget.investments.where(heading_id: params[:heading_id]).where.not(:id => winner_ids)
         else
-          feasibility_filtered_investments = Budget::Investment.all.where.not(feasibility: 'feasible')
+          feasibility_filtered_investments = @budget.investments.where.not(:id => winner_ids)
         end
       else
-        feasibility_filtered_investments = investments
+        feasibility_filtered_investments = @budget.investments.winners
       end
       if params[:status_id]
         investment_ids = []
-        Budget::Investment.all.order(:id).each do |investment|
+        @budget.investments.order(:id).each do |investment|
           if investment.milestones.count > 0
             if investment.milestones.order_by_publication_date.last.status_id == params[:status_id].to_i
               investment_ids.push(investment.id)
