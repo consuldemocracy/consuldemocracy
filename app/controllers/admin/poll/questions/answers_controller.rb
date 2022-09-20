@@ -30,6 +30,11 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
     end
   end
 
+  def destroy
+    @answer.destroy!
+    redirect_to admin_question_path(@question), notice: t("admin.answers.destroy.success_notice")
+  end
+
   def order_answers
     ::Poll::Question::Answer.order_answers(params[:ordered_list])
     head :ok

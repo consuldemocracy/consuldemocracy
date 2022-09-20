@@ -88,12 +88,23 @@ module Abilities
       can [:search, :create, :index, :destroy], ::Poll::Officer
       can [:create, :destroy, :manage], ::Poll::BoothAssignment
       can [:create, :destroy], ::Poll::OfficerAssignment
-      can [:read, :create, :update], Poll::Question
-      can :destroy, Poll::Question
-      can :manage, Poll::Question::Answer
-      can :manage, Poll::Question::Answer::Video
-      can [:create, :destroy], Image do |image|
-        image.imageable_type == "Poll::Question::Answer"
+      can :read, Poll::Question
+      can [:create], Poll::Question do |question|
+        question.poll.blank? || !question.poll.started?
+      end
+      can [:update, :destroy], Poll::Question do |question|
+        !question.poll.started?
+      end
+      can [:read, :order_answers], Poll::Question::Answer
+      can [:create, :update, :destroy], Poll::Question::Answer do |answer|
+        can?(:update, answer.question)
+      end
+      can :read, Poll::Question::Answer::Video
+      can [:create, :update, :destroy], Poll::Question::Answer::Video do |video|
+        can?(:update, video.answer)
+      end
+      can [:destroy], Image do |image|
+        image.imageable_type == "Poll::Question::Answer" && can?(:update, image.imageable)
       end
 
       can :manage, SiteCustomization::Page
@@ -113,7 +124,9 @@ module Abilities
       cannot :comment_as_moderator, [::Legislation::Question, Legislation::Annotation, ::Legislation::Proposal]
 
       can [:create], Document
-      can [:destroy], Document, documentable_type: "Poll::Question::Answer"
+      can [:destroy], Document do |document|
+        document.documentable_type == "Poll::Question::Answer" && can?(:update, document.documentable)
+      end
       can [:create, :destroy], DirectUpload
 
       can [:deliver], Newsletter, hidden_at: nil

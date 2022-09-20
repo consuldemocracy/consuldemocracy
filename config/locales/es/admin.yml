@@ -1122,6 +1122,8 @@ es:
         poll_not_assigned: "Votación no asignada"
       edit:
         title: "Editar pregunta ciudadana"
+      form:
+        poll_help: "Solo se pueden seleccionar votaciones que no hayan empezado"
       new:
         title: "Crear pregunta ciudadana para la votación %{poll}"
         title_proposal: "Crear pregunta ciudadana"
@@ -1150,11 +1152,17 @@ es:
           documents_list: Lista de documentos
           document_title: Título
           document_actions: Acciones
+      no_edit: "Una vez comenzada la votación no será posible crear, editar o eliminar preguntas, respuestas o cualquier contenido asociado a la votación."
     answers:
       new:
         title: Nueva respuesta
       edit:
         title: Editar respuesta
+      destroy:
+        success_notice: "Respuesta eliminada correctamente"
+      images:
+        index:
+          title: Imágenes
       videos:
         index:
           title: Vídeos

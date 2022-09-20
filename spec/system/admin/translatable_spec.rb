@@ -215,7 +215,7 @@ describe "Admin edit translatable records", :admin do
     end
 
     context "CKEditor fields" do
-      let(:translatable) { create(:poll_question_answer) }
+      let(:translatable) { create(:poll_question_answer, poll: create(:poll, :future)) }
       let(:path) { edit_admin_question_answer_path(translatable.question, translatable) }
 
       scenario "Changes the existing translation" do
@@ -242,7 +242,7 @@ describe "Admin edit translatable records", :admin do
     end
 
     context "Change value of a translated field to blank" do
-      let(:translatable) { create(:poll) }
+      let(:translatable) { create(:poll, :future) }
       let(:path) { edit_admin_poll_path(translatable) }
 
       scenario "Updates the field to a blank value" do
@@ -383,7 +383,7 @@ describe "Admin edit translatable records", :admin do
   end
 
   context "Remove a translation with invalid data" do
-    let(:translatable) { create(:poll_question) }
+    let(:translatable) { create(:poll_question, poll: create(:poll, :future)) }
     let(:path) { edit_admin_question_path(translatable) }
 
     scenario "Doesn't remove the translation" do

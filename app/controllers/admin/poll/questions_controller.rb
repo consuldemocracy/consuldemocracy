@@ -3,7 +3,8 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
   include Translatable
 
   load_and_authorize_resource :poll
-  load_and_authorize_resource :question, class: "Poll::Question"
+  load_resource class: "Poll::Question"
+  authorize_resource except: [:new, :index]
 
   def index
     @polls = Poll.not_budget
@@ -16,6 +17,9 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
     @polls = Poll.all
     proposal = Proposal.find(params[:proposal_id]) if params[:proposal_id].present?
     @question.copy_attributes_from_proposal(proposal)
+    @question.poll = @poll
+
+    authorize! :create, @question
   end
 
   def create

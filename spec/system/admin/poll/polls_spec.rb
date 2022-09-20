@@ -75,8 +75,8 @@ describe "Admin polls", :admin do
   end
 
   scenario "Edit" do
-    travel_to(Time.zone.local(2015, 7, 15, 13, 32, 13))
-    poll = create(:poll, :with_image, ends_at: 1.month.from_now.beginning_of_minute)
+    travel_to(Time.zone.local(2015, 7, 15, 13, 32, 00))
+    poll = create(:poll, :with_image, ends_at: 1.month.from_now)
 
     visit admin_poll_path(poll)
     click_link "Edit poll"
@@ -553,7 +553,7 @@ describe "Admin polls", :admin do
     end
 
     scenario "edit poll with sdg related list" do
-      poll = create(:poll, name: "Upcoming poll with SDG related content")
+      poll = create(:poll, :future, name: "Upcoming poll with SDG related content")
       poll.sdg_goals = [SDG::Goal[1], SDG::Goal[17]]
       visit edit_admin_poll_path(poll)
 

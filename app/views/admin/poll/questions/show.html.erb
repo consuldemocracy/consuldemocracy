@@ -1,7 +1,9 @@
 <%= back_link_to admin_poll_path(@question.poll) %>
 
-<%= link_to t("admin.questions.show.edit_question"), edit_admin_question_path(@question),
-            class: "button hollow float-right" %>
+<% if can?(:update, @question) %>
+  <%= link_to t("admin.questions.show.edit_question"), edit_admin_question_path(@question),
+              class: "button hollow float-right" %>
+<% end %>
 
 <div class="clear"></div>
 
@@ -30,8 +32,14 @@
 </div>
 
 <div class="clear">
-  <%= link_to t("admin.questions.show.add_answer"), new_admin_question_answer_path(@question),
-              class: "button float-right" %>
+  <% if can?(:create, Poll::Question::Answer.new(question: @question)) %>
+    <%= link_to t("admin.questions.show.add_answer"), new_admin_question_answer_path(@question),
+                class: "button float-right" %>
+  <% else %>
+    <div class="callout warning">
+      <strong><%= t("admin.questions.no_edit") %></strong>
+    </div>
+  <% end %>
 </div>
 
 <table class="margin-top">
@@ -71,7 +79,7 @@
                       admin_answer_videos_path(answer) %>
         </td>
         <td>
-          <%= render Admin::TableActionsComponent.new(answer, actions: [:edit]) %>
+          <%= render Admin::Poll::Questions::Answers::TableActionsComponent.new(answer) %>
         </td>
       </tr>
     <% end %>

@@ -8,12 +8,13 @@ class Admin::Poll::Questions::Answers::DocumentsController < Admin::Poll::BaseCo
 
   def create
     @answer.attributes = documents_params
+    authorize! :update, @answer
 
     if @answer.save
       redirect_to admin_answer_documents_path(@answer),
         notice: t("admin.documents.create.success_notice")
     else
-      render :new
+      render :index
     end
   end
 

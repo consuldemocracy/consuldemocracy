@@ -37,6 +37,10 @@ class Poll < ApplicationRecord
 
   validates_translation :name, presence: true
   validate :date_range
+  validate :start_date_is_not_past_date, on: :create
+  validate :start_date_change, on: :update
+  validate :end_date_is_not_past_date, on: :update
+  validate :end_date_change, on: :update
   validate :only_one_active, unless: :public?
 
   accepts_nested_attributes_for :questions, reject_if: :all_blank, allow_destroy: true
@@ -65,6 +69,10 @@ class Poll < ApplicationRecord
 
   def title
     name
+  end
+
+  def started?(timestamp = Time.current)
+    starts_at.present? && starts_at < timestamp
   end
 
   def current?(timestamp = Time.current)
@@ -140,6 +148,34 @@ class Poll < ApplicationRecord
   def date_range
     unless starts_at.present? && ends_at.present? && starts_at <= ends_at
       errors.add(:starts_at, I18n.t("errors.messages.invalid_date_range"))
+    end
+  end
+
+  def start_date_is_not_past_date
+    if starts_at.present? && starts_at < Time.current
+      errors.add(:starts_at, I18n.t("errors.messages.past_date"))
+    end
+  end
+
+  def start_date_change
+    if will_save_change_to_starts_at?
+      if starts_at_in_database < Time.current
+        errors.add(:starts_at, I18n.t("errors.messages.cannot_change_date.poll_started"))
+      elsif starts_at < Time.current
+        errors.add(:starts_at, I18n.t("errors.messages.past_date"))
+      end
+    end
+  end
+
+  def end_date_is_not_past_date
+    if will_save_change_to_ends_at? && ends_at < Time.current
+      errors.add(:ends_at, I18n.t("errors.messages.past_date"))
+    end
+  end
+
+  def end_date_change
+    if will_save_change_to_ends_at? && ends_at_in_database < Time.current
+      errors.add(:ends_at, I18n.t("errors.messages.cannot_change_date.poll_ended"))
     end
   end
 

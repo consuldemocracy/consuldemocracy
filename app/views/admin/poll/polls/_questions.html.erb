@@ -1,7 +1,9 @@
 <h3 class="inline-block"><%= t("admin.polls.show.questions_title") %></h3>
 
-<%= link_to t("admin.questions.index.create"), new_admin_question_path(poll_id: @poll.id),
-            class: "button float-right" %>
+<% if can?(:create, Poll::Question.new(poll: @poll)) %>
+  <%= link_to t("admin.questions.index.create"), new_admin_question_path(poll_id: @poll.id),
+              class: "button float-right" %>
+<% end %>
 
 <% if @poll.questions.empty? %>
   <div class="callout primary margin-top">
@@ -28,9 +30,7 @@
           <% end %>
         </td>
         <td>
-          <%= render Admin::TableActionsComponent.new(question) do |actions| %>
-            <%= actions.action(:answers, text: t("admin.polls.show.edit_answers")) %>
-          <% end %>
+          <%= render Admin::Poll::Questions::TableActionsComponent.new(question) %>
         </td>
       </tr>
     <% end %>
