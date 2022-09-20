@@ -1130,6 +1130,8 @@ cs:
         poll_not_assigned: "Anketa není přiřazena"
       edit:
         title: "Upravit dotaz"
+      form:
+        poll_help: "Můžete vybrat pouze ankety, které ještě nebyly zahájeny"
       new:
         title: "Vytvořit otázku do průzkumu %{poll}"
         title_proposal: "Vytvořit otázku"
@@ -1158,11 +1160,17 @@ cs:
           documents_list: Seznam dokumentů
           document_title: Předmět
           document_actions: Akce
+      no_edit: "Po spuštění ankety nebude možné vytvářet, upravovat ani mazat otázky, odpovědi nebo jakýkoli obsah související s anketou."
     answers:
       new:
         title: Nová odpověď
       edit:
         title: Upravit odpověď
+      destroy:
+        success_notice: "Odpověď úspěšně smazána"
+      images:
+        index:
+          title: Obrázky
       videos:
         index:
           title: Videa
@@ -1348,6 +1356,7 @@ cs:
         label:
           booths: "Vyhledat informační stánek podle jména"
           budget_investments: "Vyhledávání investic podle názvu, popisu nebo rozpočtové položky"
+          comments: "Vyhledat komentáře"
           debates: "Vyhledávání debat podle názvu nebo popisu"
           legislation_processes: "Vyhledávání procesů podle názvu nebo popisu"
           legislation_proposals: "Vyhledávání návrhů podle názvu nebo popisu"
@@ -1357,6 +1366,7 @@ cs:
           poll_questions: "Vyhledat otázky ankety"
           polls: "Vyhledávání průzkumů podle názvu nebo popisu"
           proposals: "Vyhledat návrhy podle názvu, kódu, popisu nebo otázky"
+          proposal_notifications: "Hledat oznámení podle názvu nebo popisu"
           users: "Vyhledat uživatele podle jména nebo e-mailu"
         search: "Hledat"
       search_results: "Výsledky vyhledávání"
