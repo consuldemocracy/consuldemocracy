@@ -147,6 +147,10 @@ cs:
       allowed_file_content_types: "typ obsahu musí být jeden z %{types}"
       user_not_found: Uživatel nenalezen
       invalid_date_range: "Neplatný rozsah dat"
+      past_date: "Nesmí být minulé datum"
+      cannot_change_date:
+        poll_started: "Nelze změnit, pokud již bylo zahájeno hlasování"
+        poll_ended: "Nelze změnit, pokud hlasování již skončilo"
   form:
     accept_terms: Souhlasím s podmínkami %{policy} a %{conditions}
     accept_terms_title: Souhlasím s Pravidly ochrany soukromí a Podmínkami používání
