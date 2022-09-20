@@ -31,11 +31,11 @@ module Budgets
           feasibility_filtered_investments = @budget.investments.where.not(:id => winner_ids)
         end
       else
-        feasibility_filtered_investments = @budget.investments.winners
+        feasibility_filtered_investments = investments
       end
       if params[:status_id]
         investment_ids = []
-        @budget.investments.order(:id).each do |investment|
+        Budget::Investment.all.order(:id).each do |investment|
           if investment.milestones.count > 0
             if investment.milestones.order_by_publication_date.last.status_id == params[:status_id].to_i
               investment_ids.push(investment.id)
