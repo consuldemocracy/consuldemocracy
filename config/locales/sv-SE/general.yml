@@ -137,6 +137,10 @@ sv:
       allowed_file_content_types: "innehållstypen måste vara en av %{types}"
       user_not_found: Användaren hittades inte
       invalid_date_range: "Felaktig datumföljd"
+      past_date: "Får inte vara ett tidigare datum"
+      cannot_change_date:
+        poll_started: "Kan inte ändras om omröstningen redan har inletts"
+        poll_ended: "Kan inte ändras om omröstningen redan har avslutats"
   form:
     accept_terms: Jag godkänner %{policy} och %{conditions}
     accept_terms_title: Jag godkänner integritetspolicyn och användarvillkoren
