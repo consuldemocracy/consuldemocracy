@@ -2,15 +2,12 @@ name: Kanban management
 on:
   pull_request_target:
     types: [opened, reopened]
-permissions:
-  contents: read
+permissions: {}
 env:
   MY_GITHUB_TOKEN: ${{ secrets.KANBAN_TOKEN }}
 
 jobs:
   assign_one_project:
-    permissions:
-      repository-projects: write  # for srggrs/assign-one-project-github-action to assign issues and PRs to repo project
     name: Add new pull requests to the kanban
     if: github.repository_owner == 'consul'
     runs-on: ubuntu-latest
