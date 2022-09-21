@@ -1122,6 +1122,8 @@ tr:
         poll_not_assigned: "Anket atanmamış"
       edit:
         title: "Soru Düzenle"
+      form:
+        poll_help: "Yalnızca henüz başlatılmamış anketleri seçebilirsiniz"
       new:
         title: "Oylama%{poll} için soru oluştur"
         title_proposal: "Soru oluştur"
@@ -1150,11 +1152,17 @@ tr:
           documents_list: Belgeler listesi
           document_title: Başlık
           document_actions: Aksiyon
+      no_edit: "Anket başlatıldıktan sonra sorular, yanıtlar ya da anket ile ilişkili diğer bilgiler eklenemez, düzenlenemez ya da silinemez."
     answers:
       new:
         title: Yeni cevap
       edit:
         title: Cevap düzenle
+      destroy:
+        success_notice: "Yanıt silindi"
+      images:
+        index:
+          title: Görseller
       videos:
         index:
           title: Videolar
