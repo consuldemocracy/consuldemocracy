@@ -6,7 +6,7 @@ class Budget < ApplicationRecord
   CUSTOM_PHASE_ACCEPTING = ["accepting"]
   CUSTOM_PHASE_SELECTING = ["selecting"]
   CUSTOM_PHASE_BALLOTING = ["balloting", "valuating"]
-  CUSTOM_PHASE_FINISHED = ["finished"]
+  CUSTOM_PHASE_FINISHED = ["reviewing_ballots", "finished"]
 
   CustomPhase = Struct.new(
     :kind,
