@@ -137,6 +137,10 @@ tr:
       allowed_file_content_types: "içerik türü %{types} seçeneklerinden biri olmalıdır"
       user_not_found: Kullanıcı bulunamadı
       invalid_date_range: "Geçersiz tarih aralığı"
+      past_date: "Tarih geçmişte olamaz"
+      cannot_change_date:
+        poll_started: "Oylama başlatıldıktan sonra değiştirilemez"
+        poll_ended: "Oylama bitirildikten sonra değiştirilemez"
   form:
     accept_terms: Ben %{policy} ve %{conditions} 'ı kabul ediyorum
     accept_terms_title: Gizlilik Politikasını ve Kullanım Şartlarını ve koşullarını kabul ediyorum
