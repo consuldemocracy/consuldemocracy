@@ -19,8 +19,7 @@ class PollsController < ApplicationController
 
   def show
     @questions = @poll.questions.for_render.sort_for_list
-    @commentable = @poll
-    @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
+    @comment_tree = CommentTree.new(@poll, params[:page], @current_order)
   end
 
   def stats
