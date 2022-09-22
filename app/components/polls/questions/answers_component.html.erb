@@ -16,15 +16,15 @@
       <% end %>
     <% end %>
   <% elsif !user_signed_in? %>
-    <% question_answers.order(id: :desc).each do |question_answer| %>
+    <% question_answers.each do |question_answer| %>
       <%= link_to question_answer.title, new_user_session_path, class: "button secondary hollow" %>
     <% end %>
   <% elsif !current_user.level_two_or_three_verified? %>
-    <% question_answers.order(id: :desc).each do |question_answer| %>
+    <% question_answers.each do |question_answer| %>
       <%= link_to question_answer.title, verification_path, class: "button secondary hollow" %>
     <% end %>
   <% else %>
-    <% question_answers.order(id: :desc).each do |question_answer| %>
+    <% question_answers.each do |question_answer| %>
       <span class="button secondary hollow disabled"><%= question_answer.title %></span>
     <% end %>
   <% end %>
