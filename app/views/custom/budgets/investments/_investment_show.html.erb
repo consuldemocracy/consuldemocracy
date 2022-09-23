@@ -23,6 +23,7 @@
         <% end %>
       </div>
       <% if @budget.phase == "accepting" %>
+      <% elsif @budget.phase == "valuating" %>
       <% elsif @budget.phase == "reviewing" %>
         <div class="callout warning">
           <%= t("custom.messages.finished_accepting") %>
