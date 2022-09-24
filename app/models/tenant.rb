@@ -31,6 +31,14 @@ class Tenant < ApplicationRecord
     ActionMailer::Base.default_url_options[:host]
   end
 
+  def self.current_schema
+    Apartment::Tenant.current
+  end
+
+  def self.default?
+    current_schema == "public"
+  end
+
   def self.switch(...)
     Apartment::Tenant.switch(...)
   end
