@@ -133,6 +133,27 @@ describe Tenant do
     end
   end
 
+  describe ".run_on_each" do
+    it "runs the code on all tenants, including the default one" do
+      create(:tenant, subdomain: "andromeda")
+      create(:tenant, subdomain: "milky-way")
+
+      Tenant.run_on_each do
+        Setting["org_name"] = "oh-my-#{Tenant.current_schema}"
+      end
+
+      expect(Setting["org_name"]).to eq "oh-my-public"
+
+      Tenant.switch("andromeda") do
+        expect(Setting["org_name"]).to eq "oh-my-andromeda"
+      end
+
+      Tenant.switch("milky-way") do
+        expect(Setting["org_name"]).to eq "oh-my-milky-way"
+      end
+    end
+  end
+
   describe "validations" do
     let(:tenant) { build(:tenant) }
 
