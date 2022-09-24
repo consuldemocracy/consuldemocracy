@@ -43,6 +43,12 @@ class Tenant < ApplicationRecord
     Apartment::Tenant.switch(...)
   end
 
+  def self.run_on_each(&block)
+    ["public"].union(Apartment.tenant_names).each do |schema|
+      switch(schema, &block)
+    end
+  end
+
   private
 
     def create_schema
