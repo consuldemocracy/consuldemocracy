@@ -124,6 +124,9 @@ es:
       images:
         one: "Imagen"
         other: "Imágenes"
+      tenant:
+        one: "entidad"
+        other: "entidades"
       topic:
         one: "Tema"
         other: "Temas"
@@ -378,6 +381,8 @@ es:
         body: Contenido
       tag:
         name: "Escribe el nombre del tema"
+      tenant:
+        subdomain: "Subdominio"
       topic:
         title: "Título"
         description: "Texto inicial"

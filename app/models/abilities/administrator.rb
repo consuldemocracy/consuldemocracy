@@ -134,6 +134,10 @@ module Abilities
 
       can :manage, LocalCensusRecord
       can [:create, :read], LocalCensusRecords::Import
+
+      if Rails.application.config.multitenancy && Tenant.default?
+        can [:create, :read, :update], Tenant
+      end
     end
   end
 end

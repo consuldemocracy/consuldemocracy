@@ -1,0 +1,7 @@
+<%= form_for [:admin, tenant] do |f| %>
+  <%= render "shared/errors", resource: tenant %>
+
+  <%= f.text_field :name %>
+  <%= f.text_field :subdomain %>
+  <%= f.submit %>
+<% end %>
