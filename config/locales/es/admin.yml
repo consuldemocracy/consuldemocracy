@@ -784,6 +784,7 @@ es:
       comments: "Comentarios"
       local_census_records: Gestionar censo local
       machine_learning: "IA / Machine learning"
+      multitenancy: Multientidad
     administrators:
       index:
         title: Administradores
@@ -1627,6 +1628,15 @@ es:
             notice: "Tarjeta actualizada con éxito"
           destroy:
             notice: "Tarjeta eliminada con éxito"
+    tenants:
+      create:
+        notice: Entidad creada correctamente
+      index:
+        create: Crear entidad
+      new:
+        title: Nueva entidad
+      update:
+        notice: Entidad actualizada correctamente
     homepage:
       title: Homepage
       description: Los módulos activos aparecerán en la homepage en el mismo orden que aquí.

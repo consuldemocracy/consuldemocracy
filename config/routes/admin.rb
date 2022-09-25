@@ -277,6 +277,8 @@ namespace :admin do
     post :execute, on: :collection
     delete :cancel, on: :collection
   end
+
+  resources :tenants, except: [:show, :destroy]
 end
 
 resolve "Milestone" do |milestone|

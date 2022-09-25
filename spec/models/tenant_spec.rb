@@ -133,6 +133,26 @@ describe Tenant do
     end
   end
 
+  describe ".host_for" do
+    before do
+      allow(Tenant).to receive(:default_url_options).and_return({ host: "consul.dev" })
+    end
+
+    it "returns the default host for the default schema" do
+      expect(Tenant.host_for("public")).to eq "consul.dev"
+    end
+
+    it "returns the host with a subdomain on other schemas" do
+      expect(Tenant.host_for("uranus")).to eq "uranus.consul.dev"
+    end
+
+    it "uses lvh.me for subdomains when the host is localhost" do
+      allow(Tenant).to receive(:default_url_options).and_return({ host: "localhost" })
+
+      expect(Tenant.host_for("uranus")).to eq "uranus.lvh.me"
+    end
+  end
+
   describe ".run_on_each" do
     it "runs the code on all tenants, including the default one" do
       create(:tenant, schema: "andromeda")

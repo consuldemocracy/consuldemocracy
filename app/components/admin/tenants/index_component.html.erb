@@ -1,0 +1,27 @@
+<%= header do %>
+  <%= link_to t("admin.tenants.index.create"), new_admin_tenant_path %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= attribute_name(:name) %></th>
+      <th><%= attribute_name(:schema) %></th>
+      <th><%= t("admin.shared.actions") %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tenants.each do |tenant| %>
+      <tr id="<%= dom_id(tenant) %>">
+        <td><%= tenant.name %></td>
+        <td><%= tenant.schema %></td>
+        <td>
+          <%= render Admin::TableActionsComponent.new(tenant, actions: [:edit]) do |actions| %>
+            <%= actions.action(:show, text: t("admin.shared.view"), path: root_url(host: tenant.host)) %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
