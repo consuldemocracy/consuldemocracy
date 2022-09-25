@@ -1,5 +1,6 @@
 class Admin::MenuComponent < ApplicationComponent
   include LinkListHelper
+  delegate :can?, to: :helpers
 
   private
 
@@ -32,8 +33,8 @@ class Admin::MenuComponent < ApplicationComponent
     end
 
     def settings?
-      controllers_names = ["settings", "tags", "geozones", "images", "content_blocks",
-                           "local_census_records", "imports"]
+      controllers_names = ["settings", "tenants", "tags", "geozones", "images",
+                           "content_blocks", "local_census_records", "imports"]
       controllers_names.include?(controller_name) &&
         controller.class.module_parent != Admin::Poll::Questions::Answers
     end
@@ -298,6 +299,16 @@ class Admin::MenuComponent < ApplicationComponent
         admin_settings_path,
         controller_name == "settings"
       ]
+    end
+
+    def tenants_link
+      if can?(:read, Tenant)
+        [
+          t("admin.menu.multitenancy"),
+          admin_tenants_path,
+          controller_name == "tenants"
+        ]
+      end
     end
 
     def tags_link

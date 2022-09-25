@@ -40,12 +40,16 @@ class Tenant < ApplicationRecord
   end
 
   def self.current_host
-    if default?
+    host_for(current_schema)
+  end
+
+  def self.host_for(schema)
+    if schema == "public"
       default_host
     elsif default_host == "localhost"
-      "#{current_schema}.lvh.me"
+      "#{schema}.lvh.me"
     else
-      "#{current_schema}.#{default_host}"
+      "#{schema}.#{default_host}"
     end
   end
 
@@ -65,6 +69,10 @@ class Tenant < ApplicationRecord
     ["public"].union(Apartment.tenant_names).each do |schema|
       switch(schema, &block)
     end
+  end
+
+  def host
+    self.class.host_for(schema)
   end
 
   private

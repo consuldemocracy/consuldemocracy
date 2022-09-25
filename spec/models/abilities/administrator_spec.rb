@@ -164,4 +164,37 @@ describe Abilities::Administrator do
   it { should be_able_to(:destroy, SDG::Manager) }
 
   it { should be_able_to(:manage, Widget::Card) }
+
+  describe "tenants" do
+    context "with multitenancy disabled" do
+      before { allow(Rails.application.config).to receive(:multitenancy).and_return(false) }
+
+      it { should_not be_able_to :create, Tenant }
+      it { should_not be_able_to :read, Tenant }
+      it { should_not be_able_to :update, Tenant }
+      it { should_not be_able_to :destroy, Tenant }
+    end
+
+    context "with multitenancy enabled" do
+      before { allow(Rails.application.config).to receive(:multitenancy).and_return(true) }
+
+      it { should be_able_to :create, Tenant }
+      it { should be_able_to :read, Tenant }
+      it { should be_able_to :update, Tenant }
+      it { should_not be_able_to :destroy, Tenant }
+
+      it "does not allow administrators from other tenants to manage tenants " do
+        create(:tenant, schema: "subsidiary")
+
+        Tenant.switch("subsidiary") do
+          admin = create(:administrator).user
+
+          expect(admin).not_to be_able_to :create, Tenant
+          expect(admin).not_to be_able_to :read, Tenant
+          expect(admin).not_to be_able_to :update, Tenant
+          expect(admin).not_to be_able_to :destroy, Tenant
+        end
+      end
+    end
+  end
 end

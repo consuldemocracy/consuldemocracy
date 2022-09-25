@@ -124,6 +124,9 @@ en:
       images:
         one: "Image"
         other: "Images"
+      tenant:
+        one: "tenant"
+        other: "tenants"
       topic:
         one: "Topic"
         other: "Topics"
@@ -378,6 +381,8 @@ en:
         body: Body
       tag:
         name: "Type the name of the topic"
+      tenant:
+        schema: "Subdomain"
       topic:
         title: "Title"
         description: "Initial text"
