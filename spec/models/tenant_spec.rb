@@ -25,6 +25,16 @@ describe Tenant do
       end
     end
 
+    it "is valid with nested subdomains" do
+      tenant.schema = "multiple.sub.domains"
+      expect(tenant).to be_valid
+    end
+
+    it "is not valid with an invalid subdomain" do
+      tenant.schema = "my sub domain"
+      expect(tenant).not_to be_valid
+    end
+
     it "is not valid without a name" do
       tenant.name = ""
       expect(tenant).not_to be_valid
