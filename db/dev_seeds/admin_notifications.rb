@@ -5,7 +5,7 @@ section "Creating Admin Notifications & Templates" do
         -> { I18n.t("seeds.admin_notifications.proposal.#{attribute}") }
       end
     ).merge(
-      link: Rails.application.routes.url_helpers.proposals_url(ActionMailer::Base.default_url_options),
+      link: Rails.application.routes.url_helpers.proposals_url(Tenant.current_url_options),
       segment_recipient: "administrators"
     )
   ).deliver
