@@ -20,16 +20,16 @@ describe "rake sitemap:create", type: :system do
       sitemap = File.read(file)
 
       # Static pages
-      expect(sitemap).to include(faq_path)
-      expect(sitemap).to include(help_path)
-      expect(sitemap).to include(how_to_use_path)
+      expect(sitemap).to have_content(faq_path)
+      expect(sitemap).to have_content(help_path)
+      expect(sitemap).to have_content(how_to_use_path)
 
       # Dynamic URLs
-      expect(sitemap).to include(polls_path)
-      expect(sitemap).to include(budgets_path)
-      expect(sitemap).to include(debates_path)
-      expect(sitemap).to include(proposals_path)
-      expect(sitemap).to include(legislation_processes_path)
+      expect(sitemap).to have_content(polls_path)
+      expect(sitemap).to have_content(budgets_path)
+      expect(sitemap).to have_content(debates_path)
+      expect(sitemap).to have_content(proposals_path)
+      expect(sitemap).to have_content(legislation_processes_path)
 
       expect(sitemap).to have_content("0.7", count: 5)
       expect(sitemap).to have_content("daily", count: 5)
@@ -56,16 +56,16 @@ describe "rake sitemap:create", type: :system do
       sitemap = File.read(file)
 
       # Static pages
-      expect(sitemap).to include(faq_path)
-      expect(sitemap).to include(help_path)
-      expect(sitemap).to include(how_to_use_path)
+      expect(sitemap).to have_content(faq_path)
+      expect(sitemap).to have_content(help_path)
+      expect(sitemap).to have_content(how_to_use_path)
 
       # Dynamic URLs
-      expect(sitemap).not_to include(polls_path)
-      expect(sitemap).not_to include(budgets_path)
-      expect(sitemap).not_to include(debates_path)
-      expect(sitemap).not_to include(proposals_path)
-      expect(sitemap).not_to include(legislation_processes_path)
+      expect(sitemap).not_to have_content(polls_path)
+      expect(sitemap).not_to have_content(budgets_path)
+      expect(sitemap).not_to have_content(debates_path)
+      expect(sitemap).not_to have_content(proposals_path)
+      expect(sitemap).not_to have_content(legislation_processes_path)
 
       expect(sitemap).not_to have_content("0.7")
       expect(sitemap).not_to have_content("daily")
