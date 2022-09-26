@@ -34,6 +34,10 @@ class Tenant < ApplicationRecord
     Apartment::Tenant.current
   end
 
+  def self.current_url_options
+    ApplicationMailer.new.default_url_options
+  end
+
   def self.default?
     current_schema == "public"
   end
