@@ -11,10 +11,6 @@ describe "rake sitemap:create", type: :system do
   describe "when processes are enabled" do
     before { Rake.application.invoke_task("sitemap:create") }
 
-    it "generates a sitemap" do
-      expect(file).to exist
-    end
-
     it "generates a valid sitemap" do
       sitemap = Nokogiri::XML(File.open(file))
       expect(sitemap.errors).to be_empty
@@ -49,10 +45,6 @@ describe "rake sitemap:create", type: :system do
       Setting["process.legislation"] = nil
 
       Rake.application.invoke_task("sitemap:create")
-    end
-
-    it "generates a sitemap" do
-      expect(file).to exist
     end
 
     it "generates a valid sitemap" do
