@@ -29,6 +29,7 @@
   <div class="row">
     <div class="small-12 medium-9 column">
       <h3 class="quiz-question"><%= @question.title %></h3>
+      <%= AdminWYSIWYGSanitizer.new.sanitize(@question.description) %>
       <div class="debate-questions" id="legislation-answer-form">
         <%= render "answer_form", process: @process, question: @question, answer: @answer %>
       </div>
