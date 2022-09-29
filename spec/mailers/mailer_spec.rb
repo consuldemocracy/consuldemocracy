@@ -69,5 +69,41 @@ describe Mailer do
       expect(body).to match "href=\"http://delay.consul.dev/"
       expect(body).to match "src=\"http://delay.consul.dev/"
     end
+
+    describe "SMTP settings" do
+      let(:default_settings) { { address: "mail.consul.dev", username: "main" } }
+      let(:super_settings) { { address: "super.consul.dev", username: "super" } }
+
+      before do
+        allow(Rails.application).to receive(:secrets).and_return(ActiveSupport::OrderedOptions.new.merge(
+          smtp_settings: default_settings,
+          tenants: {
+            supermailer: { smtp_settings: super_settings }
+          }
+        ))
+      end
+
+      it "does not overwrite the environment settings for the default tenant" do
+        Mailer.user_invite("test@consul.dev").deliver_now
+
+        expect(ActionMailer::Base.deliveries.last.delivery_method.settings).to eq({})
+      end
+
+      it "uses specific secret settings for tenants overwriting them" do
+        create(:tenant, subdomain: "supermailer")
+
+        Tenant.switch("supermailer") { Mailer.user_invite("test@consul.dev").deliver_now }
+
+        expect(ActionMailer::Base.deliveries.last.delivery_method.settings).to eq super_settings
+      end
+
+      it "uses the default secret settings for other tenants" do
+        create(:tenant, subdomain: "ultramailer")
+
+        Tenant.switch("ultramailer") { Mailer.user_invite("test@consul.dev").deliver_now }
+
+        expect(ActionMailer::Base.deliveries.last.delivery_method.settings).to eq default_settings
+      end
+    end
   end
 end
