@@ -10,12 +10,6 @@ class Polls::Questions::AnswersComponent < ApplicationComponent
     user_answers.find_by(answer: question_answer.title).present?
   end
 
-  def voted_before_sign_in?
-    user_answers.any? do |vote|
-      vote.updated_at < current_user.current_sign_in_at
-    end
-  end
-
   def question_answers
     question.question_answers
   end
