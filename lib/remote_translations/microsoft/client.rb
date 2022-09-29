@@ -6,7 +6,7 @@ class RemoteTranslations::Microsoft::Client
   PREVENTING_TRANSLATION_KEY = "notranslate".freeze
 
   def initialize
-    api_key = Rails.application.secrets.microsoft_api_key
+    api_key = Tenant.current_secrets.microsoft_api_key
     @client = TranslatorText::Client.new(api_key)
   end
 

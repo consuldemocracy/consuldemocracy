@@ -36,7 +36,7 @@ class RemoteTranslations::Microsoft::AvailableLocales
       uri = URI(host + path)
 
       request = Net::HTTP::Get.new(uri)
-      request["Ocp-Apim-Subscription-Key"] = Rails.application.secrets.microsoft_api_key
+      request["Ocp-Apim-Subscription-Key"] = Tenant.current_secrets.microsoft_api_key
 
       response = Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == "https") do |http|
         http.request(request)
