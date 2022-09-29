@@ -26,6 +26,6 @@ module RemotelyTranslatable
     end
 
     def api_key_has_been_set_in_secrets?
-      Rails.application.secrets.microsoft_api_key.present?
+      Tenant.current_secrets.microsoft_api_key.present?
     end
 end
