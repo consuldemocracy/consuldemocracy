@@ -31,7 +31,7 @@ class ManagerAuthenticator
     end
 
     def client
-      @client ||= Savon.client(wsdl: Rails.application.secrets.managers_url)
+      @client ||= Savon.client(wsdl: Tenant.current_secrets.managers_url)
     end
 
     def parser
@@ -39,6 +39,6 @@ class ManagerAuthenticator
     end
 
     def application_key
-      Rails.application.secrets.managers_application_key.to_s
+      Tenant.current_secrets.managers_application_key.to_s
     end
 end
