@@ -61,3 +61,5 @@ Rails.application.configure do
     end
   end
 end
+
+require Rails.root.join("config", "environments", "custom", "test")
