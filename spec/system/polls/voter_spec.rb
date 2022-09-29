@@ -163,31 +163,6 @@ describe "Voter" do
           expect(page).to have_content "1"
         end
       end
-
-      scenario "Trying to vote in web again" do
-        login_as user
-        vote_for_poll_via_web(poll, question, answer_yes.title)
-        expect(Poll::Voter.count).to eq(1)
-
-        visit poll_path(poll)
-
-        expect(page).to have_content "You have already participated in this poll. If you vote again it will be overwritten."
-        within("#poll_question_#{question.id}_answers") do
-          expect(page).not_to have_button(answer_yes.title)
-        end
-
-        unfreeze_time
-
-        click_link "Sign out"
-
-        login_as user
-        visit poll_path(poll)
-
-        within("#poll_question_#{question.id}_answers") do
-          expect(page).to have_button(answer_yes.title)
-          expect(page).to have_button(answer_no.title)
-        end
-      end
     end
 
     scenario "Voting in poll and then verifiying account" do

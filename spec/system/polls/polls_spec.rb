@@ -276,44 +276,6 @@ describe "Polls" do
       end
     end
 
-    scenario "Level 2 votes, signs out, signs in, votes again" do
-      poll.update!(geozone_restricted: true)
-      poll.geozones << geozone
-
-      question = create(:poll_question, :yes_no, poll: poll)
-      user = create(:user, :level_two, geozone: geozone)
-
-      login_as user
-      visit poll_path(poll)
-
-      within("#poll_question_#{question.id}_answers") do
-        click_button "Yes"
-
-        expect(page).not_to have_button "Yes"
-        expect(page).to have_button "No"
-      end
-
-      click_link "Sign out"
-      login_as user
-      visit poll_path(poll)
-      within("#poll_question_#{question.id}_answers") do
-        click_button "Yes"
-
-        expect(page).not_to have_button "Yes"
-        expect(page).to have_button "No"
-      end
-
-      click_link "Sign out"
-      login_as user
-      visit poll_path(poll)
-      within("#poll_question_#{question.id}_answers") do
-        click_button "No"
-
-        expect(page).not_to have_button "No"
-        expect(page).to have_button "Yes"
-      end
-    end
-
     scenario "Shows SDG tags when feature is enabled" do
       Setting["feature.sdg"] = true
       Setting["sdg.process.polls"] = true

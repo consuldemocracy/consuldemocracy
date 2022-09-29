@@ -22,7 +22,6 @@ describe Polls::Questions::AnswersComponent do
 
   it "renders a span instead of a button for existing user answers" do
     user = create(:user, :verified)
-    allow(user).to receive(:current_sign_in_at).and_return(user.created_at)
     create(:poll_answer, author: user, question: question, answer: "Yes")
     sign_in(user)
 
@@ -30,18 +29,6 @@ describe Polls::Questions::AnswersComponent do
 
     expect(page).to have_selector "span", text: "Yes"
     expect(page).not_to have_button "Yes"
-    expect(page).to have_button "No"
-  end
-
-  it "hides current answer and shows buttons in successive sessions" do
-    user = create(:user, :verified)
-    create(:poll_answer, author: user, question: question, answer: "Yes")
-    allow(user).to receive(:current_sign_in_at).and_return(Time.current)
-    sign_in(user)
-
-    render_inline Polls::Questions::AnswersComponent.new(question)
-
-    expect(page).to have_button "Yes"
     expect(page).to have_button "No"
   end
 

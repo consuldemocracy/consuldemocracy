@@ -1,7 +1,7 @@
 <div class="poll-question-answers">
   <% if can?(:answer, question) && !question.poll.voted_in_booth?(current_user) %>
     <% question_answers.each do |question_answer| %>
-      <% if already_answered?(question_answer) && !voted_before_sign_in? %>
+      <% if already_answered?(question_answer) %>
         <span class="button answered"
               title="<%= t("poll_questions.show.voted", answer: question_answer.title) %>">
           <%= question_answer.title %>
