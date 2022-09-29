@@ -153,6 +153,62 @@ describe Tenant do
     end
   end
 
+  describe ".current_secrets" do
+    context "same secrets for all tenants" do
+      before do
+        allow(Rails.application).to receive(:secrets).and_return(ActiveSupport::OrderedOptions.new.merge(
+          star: "Sun",
+          volume: "Medium"
+        ))
+      end
+
+      it "returns the default secrets for the default tenant" do
+        allow(Tenant).to receive(:current_schema).and_return("public")
+
+        expect(Tenant.current_secrets.star).to eq "Sun"
+        expect(Tenant.current_secrets.volume).to eq "Medium"
+      end
+
+      it "returns the default secrets for other tenants" do
+        allow(Tenant).to receive(:current_schema).and_return("earth")
+
+        expect(Tenant.current_secrets.star).to eq "Sun"
+        expect(Tenant.current_secrets.volume).to eq "Medium"
+      end
+    end
+
+    context "tenant overwriting secrets" do
+      before do
+        allow(Rails.application).to receive(:secrets).and_return(ActiveSupport::OrderedOptions.new.merge(
+          star: "Sun",
+          volume: "Medium",
+          tenants: { proxima: { star: "Alpha Centauri" }}
+        ))
+      end
+
+      it "returns the default secrets for the default tenant" do
+        allow(Tenant).to receive(:current_schema).and_return("public")
+
+        expect(Tenant.current_secrets.star).to eq "Sun"
+        expect(Tenant.current_secrets.volume).to eq "Medium"
+      end
+
+      it "returns the overwritten secrets for tenants overwriting them" do
+        allow(Tenant).to receive(:current_schema).and_return("proxima")
+
+        expect(Tenant.current_secrets.star).to eq "Alpha Centauri"
+        expect(Tenant.current_secrets.volume).to eq "Medium"
+      end
+
+      it "returns the default secrets for other tenants" do
+        allow(Tenant).to receive(:current_schema).and_return("earth")
+
+        expect(Tenant.current_secrets.star).to eq "Sun"
+        expect(Tenant.current_secrets.volume).to eq "Medium"
+      end
+    end
+  end
+
   describe ".run_on_each" do
     it "runs the code on all tenants, including the default one" do
       create(:tenant, schema: "andromeda")

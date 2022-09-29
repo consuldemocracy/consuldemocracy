@@ -53,6 +53,24 @@ class Tenant < ApplicationRecord
     end
   end
 
+  def self.current_secrets
+    if default?
+      Rails.application.secrets
+    else
+      @secrets ||= {}
+      @cached_rails_secrets ||= Rails.application.secrets
+
+      if @cached_rails_secrets != Rails.application.secrets
+        @secrets = {}
+        @cached_rails_secrets = nil
+      end
+
+      @secrets[current_schema] ||= Rails.application.secrets.merge(
+        Rails.application.secrets.dig(:tenants, current_schema.to_sym).to_h
+      )
+    end
+  end
+
   def self.default?
     current_schema == "public"
   end
