@@ -10,8 +10,25 @@ class Tenant < ApplicationRecord
   after_update :rename_schema
   after_destroy :destroy_schema
 
+  def self.resolve_host(host)
+    return nil unless Rails.application.config.multitenancy.present?
+    return nil if host.blank? || host.match?(Resolv::AddressRegex)
+
+    host_domain = allowed_domains.find { |domain| host == domain || host.ends_with?(".#{domain}") }
+    host.delete_prefix("www.").sub(/\.?#{host_domain}\Z/, "").presence
+  end
+
+  def self.allowed_domains
+    dev_domains = %w[localhost lvh.me example.com]
+    dev_domains + [default_host]
+  end
+
   def self.excluded_subdomains
-    Apartment::Elevators::Subdomain.excluded_subdomains + %w[mail shared_extensions]
+    %w[mail public shared_extensions www]
+  end
+
+  def self.default_host
+    ActionMailer::Base.default_url_options[:host]
   end
 
   def self.switch(...)

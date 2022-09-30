@@ -59,6 +59,9 @@ Rails.application.configure do
       Bullet.raise = true # raise an error if n+1 query occurs
     end
   end
+
+  # Allow managing different tenants using the same application
+  config.multitenancy = true
 end
 
 require Rails.root.join("config", "environments", "custom", "test")
