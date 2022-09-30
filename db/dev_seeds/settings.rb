@@ -18,7 +18,6 @@ section "Creating Settings" do
     "telegram_handle": "CONSUL",
     "twitter_handle": "@consul_dev",
     "twitter_hashtag": "#consul_dev",
-    "url": "http://localhost:3000",
     "votes_for_proposal_success": "100",
     "youtube_handle": "CONSUL"
   }.each do |name, value|

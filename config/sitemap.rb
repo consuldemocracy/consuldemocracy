@@ -9,7 +9,7 @@ SitemapGenerator::Sitemap.namer = SitemapGenerator::SimpleNamer.new(:sitemap, ex
 
 # default host
 SitemapGenerator::Sitemap.verbose = false if Rails.env.test?
-SitemapGenerator::Sitemap.default_host = Setting["url"]
+SitemapGenerator::Sitemap.default_host = root_url(ActionMailer::Base.default_url_options)
 
 # sitemap generator
 SitemapGenerator::Sitemap.create do
