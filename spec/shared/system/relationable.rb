@@ -6,7 +6,6 @@ shared_examples "relationable" do |relationable_model_name|
 
   before do
     integration_session.host = Capybara.app_host # TODO: remove after upgrading to Rails 6.1
-    Setting["url"] = Capybara.app_host
   end
 
   scenario "related contents are listed" do
@@ -40,7 +39,7 @@ shared_examples "relationable" do |relationable_model_name|
     expect(page).to have_css ".add-related-content[aria-expanded='true']"
 
     within("#related_content") do
-      fill_in "Link to related content", with: polymorphic_url(related1)
+      fill_in "Link to related content", with: polymorphic_url(related1, port: app_port)
       click_button "Add"
     end
 
@@ -57,7 +56,7 @@ shared_examples "relationable" do |relationable_model_name|
     click_button "Add related content"
 
     within("#related_content") do
-      fill_in "Link to related content", with: polymorphic_url(related2)
+      fill_in "Link to related content", with: polymorphic_url(related2, port: app_port)
       click_button "Add"
     end
 
@@ -77,7 +76,7 @@ shared_examples "relationable" do |relationable_model_name|
       click_button "Add"
     end
 
-    expect(page).to have_content "Link not valid. Remember to start with #{Capybara.app_host}."
+    expect(page).to have_content "Link not valid. Remember to start with #{app_host}/."
   end
 
   scenario "returns error when relating content URL to itself" do
@@ -87,7 +86,7 @@ shared_examples "relationable" do |relationable_model_name|
     click_button "Add related content"
 
     within("#related_content") do
-      fill_in "Link to related content", with: polymorphic_url(relationable)
+      fill_in "Link to related content", with: polymorphic_url(relationable, port: app_port)
       click_button "Add"
     end
 
@@ -111,7 +110,7 @@ shared_examples "relationable" do |relationable_model_name|
       click_button "Add related content"
 
       within("#related_content") do
-        fill_in "Link to related content", with: "#{Capybara.app_host}/mypath/#{related.id}"
+        fill_in "Link to related content", with: "#{app_host}/mypath/#{related.id}"
         click_button "Add"
       end
 
@@ -129,7 +128,7 @@ shared_examples "relationable" do |relationable_model_name|
     click_button "Add related content"
 
     within("#related_content") do
-      fill_in "url", with: polymorphic_url(related1)
+      fill_in "url", with: polymorphic_url(related1, port: app_port)
       click_button "Add"
     end
 
