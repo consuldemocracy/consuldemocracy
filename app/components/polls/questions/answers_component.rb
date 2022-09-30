@@ -7,11 +7,15 @@ class Polls::Questions::AnswersComponent < ApplicationComponent
   end
 
   def already_answered?(question_answer)
-    user_answers.find_by(answer: question_answer.title).present?
+    user_answer(question_answer).present?
   end
 
   def question_answers
     question.question_answers
+  end
+
+  def user_answer(question_answer)
+    user_answers.find_by(answer: question_answer.title)
   end
 
   private

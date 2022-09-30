@@ -246,10 +246,10 @@ describe "Polls" do
       visit poll_path(poll)
 
       within("#poll_question_#{question.id}_answers") do
-        click_button "Yes"
+        click_button "Vote Yes"
 
-        expect(page).not_to have_button "Yes"
-        expect(page).to have_button "No"
+        expect(page).to have_button "You have voted Yes"
+        expect(page).to have_button "Vote No"
       end
     end
 
@@ -266,13 +266,13 @@ describe "Polls" do
       within("#poll_question_#{question.id}_answers") do
         click_button "Yes"
 
-        expect(page).not_to have_button "Yes"
-        expect(page).to have_button "No"
+        expect(page).to have_button "You have voted Yes"
+        expect(page).to have_button "Vote No"
 
         click_button "No"
 
-        expect(page).not_to have_button "No"
-        expect(page).to have_button "Yes"
+        expect(page).to have_button "Vote Yes"
+        expect(page).to have_button "You have voted No"
       end
     end
 
@@ -309,7 +309,7 @@ describe "Polls" do
       within("#poll_question_#{question.id}_answers") do
         click_button "Yes"
 
-        expect(page).not_to have_button "Yes"
+        expect(page).to have_button "You have voted Yes"
         expect(page).to have_button "No"
       end
     end
