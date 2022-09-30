@@ -18,18 +18,19 @@ describe Polls::Questions::AnswersComponent do
 
     expect(page).to have_button "Yes"
     expect(page).to have_button "No"
+    expect(page).to have_css "button[aria-pressed='false']", count: 2
   end
 
-  it "renders a span instead of a button for existing user answers" do
+  it "renders button to destroy current user answers" do
     user = create(:user, :verified)
     create(:poll_answer, author: user, question: question, answer: "Yes")
     sign_in(user)
 
     render_inline Polls::Questions::AnswersComponent.new(question)
 
-    expect(page).to have_selector "span", text: "Yes"
-    expect(page).not_to have_button "Yes"
-    expect(page).to have_button "No"
+    expect(page).to have_button "You have voted Yes"
+    expect(page).to have_button "Vote No"
+    expect(page).to have_css "button[aria-pressed='true']", text: "Yes"
   end
 
   it "when user is not signed in, renders answers links pointing to user sign in path" do

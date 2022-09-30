@@ -23,8 +23,10 @@ describe "Voter" do
       visit poll_path(poll)
 
       within("#poll_question_#{question.id}_answers") do
-        click_button answer_yes.title
-        expect(page).not_to have_button(answer_yes.title)
+        click_button "Vote Yes"
+
+        expect(page).to have_button("You have voted Yes")
+        expect(page).not_to have_button("Vote Yes")
       end
 
       expect(Poll::Voter.count).to eq(1)
