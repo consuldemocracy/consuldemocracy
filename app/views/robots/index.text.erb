@@ -13,3 +13,9 @@ Disallow: /*?*search
 Disallow: /*?*locale-switcher
 Disallow: /*?*filter
 Disallow: user_id
+
+<% if Tenant.default? %>
+Sitemap: <%= "#{root_url}sitemap.xml" %>
+<% else %>
+Sitemap: <%= "#{root_url}sitemaps/#{Tenant.current_schema}/sitemap.xml" %>
+<% end %>
