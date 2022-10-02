@@ -1,4 +1,8 @@
-ActiveRecord::Tasks::DatabaseTasks.truncate_all unless Rails.env.test?
+unless Rails.env.test?
+  Tenant.destroy_all
+  ActiveRecord::Tasks::DatabaseTasks.truncate_all
+end
+
 @logger = Logger.new(STDOUT)
 @logger.formatter = proc do |_severity, _datetime, _progname, msg|
                       msg unless @avoid_log
