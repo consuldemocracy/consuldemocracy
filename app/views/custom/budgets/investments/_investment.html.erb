@@ -41,9 +41,9 @@
                       <%= investment.price %> €
                       <!-- <%= investment.formatted_price %> -->
                     </span>
-                    <% if investment.budget.phase == 'finished' && investment.winner %>
+                    <% if investment.budget.phase == 'finished' && investment.winner && investment.milestones.count > 0 %>
                       <div class="finvestment">
-                        <% if investment.milestones.count > 0 %><%= investment.milestones.order_by_publication_date.last.status.name %><% end %>
+                        <%= investment.milestones.order_by_publication_date.last.status.name %>
                       </div>
                     <% end %>
                   </div>
@@ -109,9 +109,9 @@
                     <%= investment.price %> €
                     <!-- <%= investment.formatted_price %> -->
                   </span>
-                  <% if investment.budget.phase == 'finished' && investment.winner %>
+                  <% if investment.budget.phase == 'finished' && investment.winner && investment.milestones.count > 0 %>
                     <div class="finvestment">
-                      <% if investment.milestones.count > 0 %><%= investment.milestones.order_by_publication_date.last.status.name %><% end %>
+                      <%= investment.milestones.order_by_publication_date.last.status.name %>
                     </div>
                   <% end %>
                 </div>
