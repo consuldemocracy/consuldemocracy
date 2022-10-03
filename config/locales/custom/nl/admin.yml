@@ -340,6 +340,7 @@ nl:
       all_proposal_authors: "Initiatiefnemers (verwijderd en gearchiveerd)"
       proposal_authors: "Initiatiefnemers"
       investment_authors: "Initiatiefnemers in huidige burgerbegroting"
+      investment_followers: "Gebruikers die initiatieven hebben gesteund in de huidige burgerbegroting"
       feasible_and_undecided_investment_authors: "Indieners ideeën in huidige burgerbegroting die niet voldoen (beoordeling is onhaalbaar)"
       selected_investment_authors: "Indieners geselecteerde ideeën huidige burgerbegroting"
       winner_investment_authors: "Indieners winnende ideeën huidige burgerbegroting"
