@@ -61,8 +61,20 @@ module Budgets
         tagged_investments = filtered_investments
       end
 
-      @filtered_investments_count = tagged_investments.count
-      @investments = tagged_investments.page(params[:page]).per(PER_PAGE).for_render
+      
+
+      if params[:chosen] == "false"
+        if @heading
+          chosen_filtered_investments = @budget.investments.where("selected = ? OR feasibility = ?", false, "unfeasible").where(heading_id: params[:heading_id])
+        else
+          chosen_filtered_investments = @budget.investments.where("selected = ? OR feasibility = ?", false, "unfeasible")
+        end
+      else
+        chosen_filtered_investments = tagged_investments
+      end
+
+      @filtered_investments_count = chosen_filtered_investments.count
+      @investments = chosen_filtered_investments.page(params[:page]).per(PER_PAGE).for_render
       @statuses = Milestone::Status.all
 
       @investment_ids = @investments.ids
@@ -75,24 +87,24 @@ module Budgets
     #   @investment_ids = @investments.pluck(:id)
 
       #@denied_investments = Budget::Investment.where(selected: false).page(params[:page]).per(21).for_render
-      if @budget.phase == "finished"
-        if @heading
-          denied_investments = Budget::Investment.where("winner = false AND budget_id = ?",
-            @budget.id).where("heading_id = ?", @heading.id)
-        else
-          denied_investments = Budget::Investment.where("winner = false AND budget_id = ?", @budget.id)
-        end
-      else
-        if @heading
-          denied_investments = Budget::Investment.where("selected = false OR feasibility = ?", "unfeasible")
-          .where("budget_id = ?", @budget.id).where("heading_id = ?", @heading.id)
-        else
-          denied_investments = Budget::Investment.where("selected = false OR feasibility = ?", "unfeasible")
-          .where("budget_id = ?", @budget.id)
-        end
-      end
-      @denied_investments_count = denied_investments.count
-      @denied_investments = denied_investments.page(params[:page]).per(400).for_render
+      # if @budget.phase == "finished"
+      #   if @heading
+      #     denied_investments = Budget::Investment.where("winner = false AND budget_id = ?",
+      #       @budget.id).where("heading_id = ?", @heading.id)
+      #   else
+      #     denied_investments = Budget::Investment.where("winner = false AND budget_id = ?", @budget.id)
+      #   end
+      # else
+      #   if @heading
+      #     denied_investments = Budget::Investment.where("selected = false OR feasibility = ?", "unfeasible")
+      #     .where("budget_id = ?", @budget.id).where("heading_id = ?", @heading.id)
+      #   else
+      #     denied_investments = Budget::Investment.where("selected = false OR feasibility = ?", "unfeasible")
+      #     .where("budget_id = ?", @budget.id)
+      #   end
+      # end
+      # @denied_investments_count = denied_investments.count
+      # @denied_investments = denied_investments.page(params[:page]).per(400).for_render
 
     #   # unfeasible_investments = Budget::Investment.where("feasibility = ?", "unfeasible")
     #   # @unfeasible_investments_count = unfeasible_investments.count

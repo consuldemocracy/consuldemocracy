@@ -1,0 +1,18 @@
+<div class="districts-container">
+  <select onchange="if (this.value) location = this.value;" class="on-view">
+    <option value="<%= budget_investments_url(@budget, { tag_name: params[:tag_name], heading_id: params[:heading_id], unfeasible: params[:unfeasible], chosen: "true" }) %>" <%= " selected" if params[:chosen] == "true" %>>
+      IZBRANI
+    </option>
+    <option value="<%= budget_investments_url(@budget, { tag_name: params[:tag_name], heading_id: params[:heading_id], unfeasible: params[:unfeasible], chosen: "false" }) %>" <%= " selected" if params[:chosen] == "false" %>>
+      NEIZBRANI
+    </option>
+  </select>
+</div>
+
+<style>
+.districts-container {
+  position: relative;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+</style>
