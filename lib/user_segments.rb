@@ -5,6 +5,7 @@ class UserSegments
        all_proposal_authors
        proposal_authors
        investment_authors
+       investment_followers
        feasible_and_undecided_investment_authors
        selected_investment_authors
        winner_investment_authors
@@ -33,6 +34,10 @@ class UserSegments
 
   def self.investment_authors
     author_ids(current_budget_investments.pluck(:author_id))
+  end
+
+  def self.investment_followers
+    author_ids(Follow.where(followable_type: "Budget::Investment", followable_id: current_budget_investments).pluck(:user_id))
   end
 
   def self.feasible_and_undecided_investment_authors

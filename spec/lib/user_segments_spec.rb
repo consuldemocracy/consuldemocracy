@@ -55,6 +55,7 @@ describe UserSegments do
     it "returns true when the segment exists" do
       expect(UserSegments.valid_segment?("all_proposal_authors")).to be true
       expect(UserSegments.valid_segment?("investment_authors")).to be true
+      expect(UserSegments.valid_segment?("investment_followers")).to be true
       expect(UserSegments.valid_segment?("feasible_and_undecided_investment_authors")).to be true
     end
 
@@ -179,6 +180,38 @@ describe UserSegments do
 
       investment_authors = UserSegments.investment_authors
       expect(investment_authors).to contain_exactly(user1)
+    end
+  end
+
+  describe ".investment_followers" do
+    it "returns users that follow a budget investment" do
+      investment1 = create(:budget_investment)
+      investment2 = create(:budget_investment)
+      budget1 = create(:budget)
+      budget2 = create(:budget)
+      investment1.update!(budget: budget1)
+      investment2.update!(budget: budget2)
+
+      create(:follow, followable: investment1, user: user1)
+      create(:follow, followable: investment2, user: user2)
+
+      investment_followers = UserSegments.investment_followers
+
+      expect(investment_followers).to eq [user2]
+    end
+
+    it "does not return duplicated users" do
+      investment1 = create(:budget_investment)
+      investment2 = create(:budget_investment)
+      budget = create(:budget)
+      investment1.update!(budget: budget)
+      investment2.update!(budget: budget)
+
+      create(:follow, followable: investment1, user: user1)
+      create(:follow, followable: investment2, user: user1)
+
+      investment_followers = UserSegments.investment_followers
+      expect(investment_followers).to eq [user1]
     end
   end
 
