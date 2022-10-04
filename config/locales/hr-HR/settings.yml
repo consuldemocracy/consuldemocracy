@@ -40,8 +40,6 @@ hr:
     telegram_handle_description: "Ukoliko je popunjeno pojavit će se u podnaslovu"
     instagram_handle: "Instagram ime"
     instagram_handle_description: "Ukoliko je popunjeno pojavit će se u podnaslovu"
-    url: "Glavni URL"
-    url_description: "Glavni URL vaše stranice"
     org_name: "Ime stranice"
     org_name_description: "Ovo ime pojavit će se na temi e-maila, pomoćnim stranicama..."
     related_content_score_threshold: "Prag srodnih sadržaja"
