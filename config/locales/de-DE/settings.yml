@@ -40,8 +40,6 @@ de:
     telegram_handle_description: "Falls ausgefüllt, wird es in der Fußzeile erscheinen"
     instagram_handle: "Instagram handle"
     instagram_handle_description: "Falls ausgefüllt, wird es in der Fußzeile erscheinen"
-    url: "Haupt-URL"
-    url_description: "Haupt-URL Ihrer Website"
     org_name: "Name der Organisation"
     org_name_description: "Name Ihrer Organisation"
     related_content_score_threshold: "Punktzahl-Grenze für verwandte Inhalte"
