@@ -40,8 +40,6 @@ es:
     telegram_handle_description: "Si está rellenado aparecerá en el pie de página"
     instagram_handle: "Usuario de Instagram"
     instagram_handle_description: "Si está rellenado aparecerá en el pie de página"
-    url: "URL general de la web"
-    url_description: "URL principal de tu web"
     org_name: "Nombre del sitio"
     org_name_description: "Este nombre aparecerá en el asunto de emails, páginas de ayuda..."
     related_content_score_threshold: "Umbral de puntuación de contenido relacionado"
