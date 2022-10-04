@@ -40,8 +40,6 @@ tr:
     telegram_handle_description: "Eğer doldurulursa alt bilgide görünecektir"
     instagram_handle: "Instagram kolu"
     instagram_handle_description: "Eğer doldurulursa alt bilgide görünecektir"
-    url: "Ana URL"
-    url_description: "Web sitenizin ana URL'si"
     org_name: "Site adı"
     org_name_description: "Bu isim posta gönderenin konusunda, yardım sayfalarında görünecek..."
     related_content_score_threshold: "İlgili içerik puanı eşiği"
