@@ -40,8 +40,6 @@ ca:
     telegram_handle_description: "Si l’empleneu, apareixerà al peu de pàgina"
     instagram_handle: "Instagram handle"
     instagram_handle_description: "Si l’empleneu, apareixerà al peu de pàgina"
-    url: "URL general de la web"
-    url_description: "URL principal del vostre lloc web"
     org_name: "Nomb de l'organizació"
     org_name_description: "Aquest nom apareixerà a l'assumpte de correu, a les pàgines d'ajuda..."
     related_content_score_threshold: "Llindar de puntuació de contingut relacionat"
