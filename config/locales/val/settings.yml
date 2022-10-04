@@ -40,8 +40,6 @@ val:
     telegram_handle_description: "Si està omplit apareixerà en el peu de pàgina"
     instagram_handle: "Usuari de Instagram"
     instagram_handle_description: "Si està omplit apareixerà en el peu de pàgina"
-    url: "URL general de la web"
-    url_description: "URL principal de la web"
     org_name: "Nom de la organització"
     org_name_description: "Nom de l'organització"
     related_content_score_threshold: "Llindar de puntuació de contingut relacionat"
