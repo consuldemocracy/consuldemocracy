@@ -40,8 +40,6 @@ ka:
     telegram_handle_description: "შევსების შემთხვევაში გამოჩნდება ქვედა პანელში"
     instagram_handle: "Instagram-ის იდენტიფიკატორი"
     instagram_handle_description: "შევსების შემთხვევაში გამოჩნდება ქვედა პანელში"
-    url: "მთავარი გვერდის URL"
-    url_description: "ვებგვერდის URL"
     org_name: "საიტის დასახელება"
     org_name_description: "ორგანიზაციის დასახელება"
     related_content_score_threshold: "მსგავსი შინაარსის ინფორმაციის გამოთვლის ზღვრული ნიშნული"
