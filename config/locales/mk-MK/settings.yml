@@ -40,8 +40,6 @@ mk:
     telegram_handle_description: "Ако е пополнето ќе се појави на дното"
     instagram_handle: "Инстаграм профил"
     instagram_handle_description: "Ако е пополнето ќе се појави на дното"
-    url: "Главен УРЛ"
-    url_description: "Главен УРЛ на твојот вебсајт"
     org_name: "Име на вебсајт"
     org_name_description: "Ова име ќе се појавува на насловот на дописници, страници за помош..."
     related_content_score_threshold: "Граница на поврзан број на содржини"
