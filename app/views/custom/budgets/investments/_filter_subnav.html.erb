@@ -1,3 +1,10 @@
+<!--
+if comments are hidden:
+  <ul> should only show up when milestones show up, that is when budgeting is finished and only for winning investments
+  if @investment.budget.phase == 'finished' && @investment.winner 
+else:
+  <ul> should always be there
+-->
 <ul class="tabs"
     id="investments_tabs"
     data-deep-link="true"
@@ -5,6 +12,8 @@
     data-deep-link-smudge="true"
     data-deep-link-smudge-delay="500"
     data-tabs>
+    
+  <!-- if comments are hidden, this <li> should be commented out -->
   <li class="tabs-title is-active">
     <%= link_to "#tab-comments" do %>
       <h3>
@@ -13,6 +22,8 @@
       </h3>
     <% end %>
   </li>
+  
+  <!-- milestones should only be shown in finished phase on winning investments -->
   <% if @investment.budget.phase == 'finished' && @investment.winner %>
     <li class="tabs-title">
         <%= link_to "#tab-milestones" do %>
