@@ -17,7 +17,6 @@ ast:
     youtube_handle: "Usuario de Youtube"
     telegram_handle: "Usuario de Telegram"
     instagram_handle: "Usuario de Instagram"
-    url: "URL general de la web"
     org_name: "Nombre de la organización"
     meta_description: "Descripción del sitio (SEO)"
     meta_keywords: "Palabras clave (SEO)"
