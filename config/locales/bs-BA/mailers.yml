@@ -65,30 +65,6 @@ bs:
       sincerely: "S poštovanjem"
     evaluation_comment:
       hi: Pozdrav
-    new_actions_notification_rake_created:
-      subject: "Nove vijesti o vašem građanskom prijedlogu"
-      hi: "Pozdrav %{name},"
-      new_resource: "NOVI OTKLJUČANI RESURS"
-      introduction: "Kao što znate, na dan %{created_at_day}%{created_at_month} izradili ste nacrt prijedloga pod nazivom %{title}."
-      text_1: "Kad god želite, možete objaviti na ovom linku: %{link_to_published}. Ako još uvijek niste sigurni..."
-      text_2: "Iskoristite trenutak! Učite, dodajte ljude s istim interesima i pripremite teren za trenutak kada ćete definitivno objaviti svoj prijedlog."
-      text_3: "Kao pomoć u ovom izazovu, stižu vam vijesti..."
-      text_4: "Pogledajte kakva vam se NOVA AKCIJA preporučuje:"
-      text_5: "Naredni korak koji vam preporučujemo je:"
-      footer_text: "Kao i uvijek, kada odete na kontrolnu ploču za prijedloge, detaljno ćemo vam reći kako da maksimalno iskoristite ove resurse."
-      dashboard_button: "Samo naprijed, otkrijte o čemu se radi!"
-    new_actions_notification_rake_published:
-      subject: "Nove vijesti o vašem građanskom prijedlogu"
-      hi: "Pozdrav %{name},"
-      new_resource: "NOVI OTKLJUČANI RESURS"
-      introduction: "Kao što znate, na dan %{published_at_day}%{published_at_month} objavili ste prijedlog pod nazivom %{title}."
-      text_1: "Zasad ste dobili %{votes_count} glasova podrške. Čestitke!"
-      text_2: "Tako, sada imate novi resurs koji će vam pomoći da idete dalje."
-      text_3: "Nedostaje vam %{days_count} dana prije nego vaš prijedlog dobije (maksimalni broj) %{max_votes_count} glasova podrške i ode na referendum. Ne posustajte i nastavite s promocijom. Ponestaje vam ideja?"
-      text_4: "NOVA PREPORUKA ZA PROMOCIJU"
-      text_5: "Ima još, pogledajte i ovu preporuku:"
-      footer_text: "Kao i uvijek, kada odete na kontrolnu ploču za prijedloge, detaljno ćemo vam reći kako da maksimalno iskoristite ove resurse."
-      dashboard_button: "Samo naprijed, otkrijte o čemu se radi!"
     new_actions_notification_on_create:
       subject: "Izradili ste nacrt vašeg građanskog prijedloga"
       hi: "Pozdrav, %{name}!"
