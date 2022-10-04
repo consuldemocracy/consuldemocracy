@@ -8,9 +8,7 @@
 <meta name="twitter:image" content="<%= root_url + (local_assigns[:twitter_image_url] || "social_media_icon_twitter.png") %>" />
 <!-- Facebook OG -->
 <meta id="ogtitle" property="og:title" content="<%= local_assigns[:social_title] || setting["meta_title"] %>" />
-<% if setting["url"] %>
-  <meta property="article:publisher" content="<%= setting["url"] %>" />
-<% end %>
+<meta property="article:publisher" content="<%= root_url %>" />
 <% if setting["facebook_handle"] %>
   <meta property="article:author" content="https://www.facebook.com/<%= setting["facebook_handle"] %>" />
 <% end %>
