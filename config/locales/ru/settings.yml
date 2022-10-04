@@ -40,8 +40,6 @@ ru:
     telegram_handle_description: "Если заполнено, то появится в подвале"
     instagram_handle: "Прозвище в Instagram"
     instagram_handle_description: "Если заполнено, то появится в подвале"
-    url: "Основной URL"
-    url_description: "Основной URL вашего вебсайта"
     org_name: "Организация"
     org_name_description: "Название вашей организации"
     related_content_score_threshold: "Порог очков релевантного контента"
