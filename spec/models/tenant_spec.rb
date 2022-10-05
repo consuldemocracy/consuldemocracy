@@ -3,7 +3,7 @@ require "rails_helper"
 describe Tenant do
   describe ".resolve_host" do
     before do
-      allow(ActionMailer::Base).to receive(:default_url_options).and_return({ host: "consul.dev" })
+      allow(Tenant).to receive(:default_url_options).and_return({ host: "consul.dev" })
     end
 
     it "returns nil for empty hosts" do
@@ -85,7 +85,7 @@ describe Tenant do
 
     context "default host contains subdomains" do
       before do
-        allow(ActionMailer::Base).to receive(:default_url_options).and_return({ host: "demo.consul.dev" })
+        allow(Tenant).to receive(:default_url_options).and_return({ host: "demo.consul.dev" })
       end
 
       it "ignores subdomains already present in the default host" do
@@ -120,7 +120,7 @@ describe Tenant do
 
     context "default host is similar to development and test domains" do
       before do
-        allow(ActionMailer::Base).to receive(:default_url_options).and_return({ host: "mylvh.me" })
+        allow(Tenant).to receive(:default_url_options).and_return({ host: "mylvh.me" })
       end
 
       it "returns nil for the default host" do

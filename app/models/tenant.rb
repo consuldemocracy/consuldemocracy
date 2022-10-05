@@ -27,20 +27,34 @@ class Tenant < ApplicationRecord
     %w[mail public shared_extensions www]
   end
 
-  def self.default_host
-    ActionMailer::Base.default_url_options[:host]
+  def self.default_url_options
+    ActionMailer::Base.default_url_options
   end
 
-  def self.current_schema
-    Apartment::Tenant.current
+  def self.default_host
+    default_url_options[:host]
   end
 
   def self.current_url_options
-    ApplicationMailer.new.default_url_options
+    default_url_options.merge(host: current_host)
+  end
+
+  def self.current_host
+    if default?
+      default_host
+    elsif default_host == "localhost"
+      "#{current_schema}.lvh.me"
+    else
+      "#{current_schema}.#{default_host}"
+    end
   end
 
   def self.default?
     current_schema == "public"
+  end
+
+  def self.current_schema
+    Apartment::Tenant.current
   end
 
   def self.switch(...)
