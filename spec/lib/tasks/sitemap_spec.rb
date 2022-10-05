@@ -74,7 +74,7 @@ describe "rake sitemap:create", type: :system do
   end
 
   it "generates a sitemap for every tenant" do
-    allow(ActionMailer::Base).to receive(:default_url_options).and_return({ host: "consul.dev" })
+    allow(Tenant).to receive(:default_url_options).and_return({ host: "consul.dev" })
     FileUtils.rm_f(Rails.root.join("public", "sitemaps", "*"))
 
     create(:tenant, subdomain: "debates")
