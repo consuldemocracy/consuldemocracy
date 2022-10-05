@@ -1632,6 +1632,9 @@ en:
     tenants:
       create:
         notice: Tenant created successfully
+      form:
+        use_subdomain: "Use a subdomain in the %{domain} domain to access this tenant"
+        use_domain: "Use a different domain to access this tenant"
       index:
         create: Create tenant
       new:

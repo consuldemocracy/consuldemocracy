@@ -1,7 +1,19 @@
-<%= form_for [:admin, tenant] do |f| %>
+<%= form_for [:admin, tenant], html: { class: "tenant-form" } do |f| %>
   <%= render "shared/errors", resource: tenant %>
 
   <%= f.text_field :name %>
-  <%= f.text_field :schema %>
+
+  <fieldset>
+    <legend><%= attribute_name(:url) %></legend>
+    <div class="radio-and-label">
+      <%= f.radio_button :schema_type, :subdomain, label: t("admin.tenants.form.use_subdomain", domain: domain) %>
+    </div>
+    <div class="radio-and-label">
+      <%= f.radio_button :schema_type, :domain, label: t("admin.tenants.form.use_domain") %>
+    </div>
+
+    <%= f.text_field :schema, label_options: { data: schema_labels_per_schema_type } %>
+  </fieldset>
+
   <%= f.submit %>
 <% end %>

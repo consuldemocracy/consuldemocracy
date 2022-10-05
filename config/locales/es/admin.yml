@@ -1631,6 +1631,9 @@ es:
     tenants:
       create:
         notice: Entidad creada correctamente
+      form:
+        use_subdomain: "Utiliza un subdominio en el dominio %{domain} para acceder a esta entidad"
+        use_domain: "Utiliza un dominio distinto para acceder a esta entidad"
       index:
         create: Crear entidad
       new:
