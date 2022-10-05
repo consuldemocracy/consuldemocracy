@@ -74,6 +74,49 @@ describe Tenant do
       expect(Tenant.resolve_host("www.mercury.anotherconsul.dev")).to eq "mercury.anotherconsul.dev"
     end
 
+    it "returns full domains when there's a tenant with a domain including the host" do
+      insert(:tenant, :domain, schema: "saturn.consul.dev")
+
+      expect(Tenant.resolve_host("saturn.consul.dev")).to eq "saturn.consul.dev"
+    end
+
+    it "returns subdomains when there's a subdomain-type tenant with that domain" do
+      insert(:tenant, schema: "saturn.consul.dev")
+
+      expect(Tenant.resolve_host("saturn.consul.dev")).to eq "saturn"
+    end
+
+    it "returns nil when a domain is accessed as a subdomain" do
+      insert(:tenant, :domain, schema: "saturn.dev")
+
+      expect(Tenant.resolve_host("saturn.dev.consul.dev")).to be nil
+    end
+
+    it "returns nested subdomains when there's a subdomain-type tenant with nested subdomains" do
+      insert(:tenant, schema: "saturn.dev")
+
+      expect(Tenant.resolve_host("saturn.dev.consul.dev")).to eq "saturn.dev"
+    end
+
+    it "returns domains when there are two tenants resolving to the same domain" do
+      insert(:tenant, schema: "saturn")
+      insert(:tenant, :domain, schema: "saturn.consul.dev")
+
+      expect(Tenant.resolve_host("saturn.consul.dev")).to eq "saturn.consul.dev"
+    end
+
+    it "returns domains when there's a tenant using the default host" do
+      insert(:tenant, :domain, schema: "consul.dev")
+
+      expect(Tenant.resolve_host("consul.dev")).to eq "consul.dev"
+    end
+
+    it "returns domains including www when the tenant contains it" do
+      insert(:tenant, :domain, schema: "www.consul.dev")
+
+      expect(Tenant.resolve_host("www.consul.dev")).to eq "www.consul.dev"
+    end
+
     context "multitenancy disabled" do
       before { allow(Rails.application.config).to receive(:multitenancy).and_return(false) }
 
@@ -150,6 +193,18 @@ describe Tenant do
       allow(Tenant).to receive(:default_url_options).and_return({ host: "localhost" })
 
       expect(Tenant.host_for("uranus")).to eq "uranus.lvh.me"
+    end
+
+    it "ignores the default host when given a full domain" do
+      insert(:tenant, :domain, schema: "whole.galaxy")
+
+      expect(Tenant.host_for("whole.galaxy")).to eq "whole.galaxy"
+    end
+
+    it "uses the default host when given nested subdomains" do
+      insert(:tenant, schema: "whole.galaxy")
+
+      expect(Tenant.host_for("whole.galaxy")).to eq "whole.galaxy.consul.dev"
     end
   end
 
@@ -230,6 +285,22 @@ describe Tenant do
     end
   end
 
+  describe "scopes" do
+    describe ".domain" do
+      it "returns tenants with domain schema type" do
+        insert(:tenant, schema_type: :domain, schema: "full.domain")
+
+        expect(Tenant.domain.pluck(:schema)).to eq ["full.domain"]
+      end
+
+      it "does not return tenants with subdomain schema type" do
+        insert(:tenant, schema_type: :subdomain, schema: "nested.subdomain")
+
+        expect(Tenant.domain).to be_empty
+      end
+    end
+  end
+
   describe "validations" do
     let(:tenant) { build(:tenant) }
 
@@ -272,6 +343,20 @@ describe Tenant do
     it "is not valid with an already existing name" do
       insert(:tenant, name: "Name X")
       expect(build(:tenant, name: "Name X")).not_to be_valid
+    end
+
+    context "Domain schema type" do
+      before { tenant.schema_type = :domain }
+
+      it "is valid with domains" do
+        tenant.schema = "my.domain"
+        expect(tenant).to be_valid
+      end
+
+      it "is valid with domains which are machine names" do
+        tenant.schema = "localmachine"
+        expect(tenant).to be_valid
+      end
     end
   end
 

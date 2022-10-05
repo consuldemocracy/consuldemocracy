@@ -30,6 +30,6 @@ class Admin::TenantsController < Admin::BaseController
   private
 
     def tenant_params
-      params.require(:tenant).permit(:name, :schema)
+      params.require(:tenant).permit(:name, :schema, :schema_type)
     end
 end

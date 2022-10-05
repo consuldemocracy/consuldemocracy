@@ -102,5 +102,9 @@ FactoryBot.define do
   factory :tenant do
     sequence(:name) { |n| "Tenant #{n}" }
     sequence(:schema) { |n| "subdomain#{n}" }
+
+    trait :domain do
+      schema_type { :domain }
+    end
   end
 end

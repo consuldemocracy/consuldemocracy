@@ -187,3 +187,15 @@
 %public-form {
   @include public-form;
 }
+
+@mixin admin-fieldset-separator {
+  border-top: 4px solid $admin-border-color;
+
+  > legend {
+    color: $admin-text;
+    font-size: $small-font-size;
+    font-weight: bold;
+    padding-right: $line-height / 2;
+    text-transform: uppercase;
+  }
+}

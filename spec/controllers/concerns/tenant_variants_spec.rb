@@ -20,4 +20,11 @@ describe TenantVariants do
     get :index
     expect(response.body).to eq '[:"random-name"]'
   end
+
+  it "keeps dots in the variant names" do
+    allow(Tenant).to receive(:current_schema).and_return("random.domain")
+
+    get :index
+    expect(response.body).to eq '[:"random.domain"]'
+  end
 end

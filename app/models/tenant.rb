@@ -1,4 +1,6 @@
 class Tenant < ApplicationRecord
+  enum schema_type: %w[subdomain domain]
+
   validates :schema,
     presence: true,
     uniqueness: true,
@@ -10,12 +12,26 @@ class Tenant < ApplicationRecord
   after_update :rename_schema
   after_destroy :destroy_schema
 
+  def self.find_by_domain(host)
+    domain.find_by(schema: host)
+  end
+
   def self.resolve_host(host)
     return nil unless Rails.application.config.multitenancy.present?
     return nil if host.blank? || host.match?(Resolv::AddressRegex)
 
-    host_domain = allowed_domains.find { |domain| host == domain || host.ends_with?(".#{domain}") }
-    host.delete_prefix("www.").sub(/\.?#{host_domain}\Z/, "").presence
+    host_without_www = host.delete_prefix("www.")
+
+    if find_by_domain(host)
+      host
+    elsif find_by_domain(host_without_www)
+      host_without_www
+    else
+      host_domain = allowed_domains.find { |domain| host == domain || host.ends_with?(".#{domain}") }
+      schema = host_without_www.sub(/\.?#{host_domain}\Z/, "").presence
+
+      schema unless find_by_domain(schema)
+    end
   end
 
   def self.allowed_domains
@@ -35,6 +51,14 @@ class Tenant < ApplicationRecord
     default_url_options[:host]
   end
 
+  def self.default_domain
+    if default_host == "localhost"
+      "lvh.me"
+    else
+      default_host
+    end
+  end
+
   def self.current_url_options
     default_url_options.merge(host: current_host)
   end
@@ -46,10 +70,10 @@ class Tenant < ApplicationRecord
   def self.host_for(schema)
     if schema == "public"
       default_host
-    elsif default_host == "localhost"
-      "#{schema}.lvh.me"
+    elsif find_by_domain(schema)
+      schema
     else
-      "#{schema}.#{default_host}"
+      "#{schema}.#{default_domain}"
     end
   end
 

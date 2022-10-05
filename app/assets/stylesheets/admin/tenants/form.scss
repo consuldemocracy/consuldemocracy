@@ -1,0 +1,19 @@
+.admin .tenant-form {
+  > fieldset {
+    @include admin-fieldset-separator;
+    margin-top: $line-height;
+  }
+
+  .radio-and-label {
+    display: flex;
+    margin-bottom: $line-height / 3;
+
+    &:last-of-type {
+      margin-bottom: $line-height * 2 / 3;
+    }
+
+    input {
+      margin-bottom: 0;
+    }
+  }
+}

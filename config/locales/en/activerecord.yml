@@ -382,7 +382,10 @@ en:
       tag:
         name: "Type the name of the topic"
       tenant:
-        schema: "Subdomain"
+        domain: "Domain"
+        schema: "Domain / Subdomain"
+        subdomain: "Subdomain"
+        url: "URL"
       topic:
         title: "Title"
         description: "Initial text"
