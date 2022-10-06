@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html <%= "dir=rtl" if rtl? %> lang="<%= I18n.locale %>">
-
+<html <%= common_html_attributes %>>
   <head>
     <%= render "layouts/common_head", default_title: "Management" %>
     <%= stylesheet_link_tag "print", media: "print" %>
