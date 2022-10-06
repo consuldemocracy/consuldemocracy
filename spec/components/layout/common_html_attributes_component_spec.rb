@@ -3,16 +3,36 @@ require "rails_helper"
 describe Layout::CommonHTMLAttributesComponent do
   let(:component) { Layout::CommonHTMLAttributesComponent.new }
 
-  it "includes the default language by default" do
-    render_inline component
+  context "with multitenancy disabled" do
+    before { allow(Rails.application.config).to receive(:multitenancy).and_return(false) }
 
-    expect(page.text).to eq 'lang="en"'
+    it "includes the default language by default" do
+      render_inline component
+
+      expect(page.text).to eq 'lang="en"'
+    end
+
+    it "includes the current language" do
+      I18n.with_locale(:es) { render_inline component }
+
+      expect(page.text).to eq 'lang="es"'
+    end
   end
 
-  it "includes the current language" do
-    I18n.with_locale(:es) { render_inline component }
+  context "with multitenancy enabled" do
+    it "includes a class with the 'public' suffix for the default tenant" do
+      render_inline component
 
-    expect(page.text).to eq 'lang="es"'
+      expect(page.text).to eq 'lang="en" class="tenant-public"'
+    end
+
+    it "includes a class with the schema name as suffix for other tenants" do
+      allow(Tenant).to receive(:current_schema).and_return "private"
+
+      render_inline component
+
+      expect(page.text).to eq 'lang="en" class="tenant-private"'
+    end
   end
 
   context "RTL languages" do
@@ -25,10 +45,22 @@ describe Layout::CommonHTMLAttributesComponent do
 
     after { I18n.enforce_available_locales = default_enforce }
 
-    it "includes the dir attribute" do
-      I18n.with_locale(:ar) { render_inline component }
+    context "with multitenancy disabled" do
+      before { allow(Rails.application.config).to receive(:multitenancy).and_return(false) }
 
-      expect(page.text).to eq 'dir="rtl" lang="ar"'
+      it "includes the dir attribute" do
+        I18n.with_locale(:ar) { render_inline component }
+
+        expect(page.text).to eq 'dir="rtl" lang="ar"'
+      end
+    end
+
+    context "with multitenancy enabled" do
+      it "includes the dir and the class attributes" do
+        I18n.with_locale(:ar) { render_inline component }
+
+        expect(page.text).to eq 'dir="rtl" lang="ar" class="tenant-public"'
+      end
     end
   end
 end
