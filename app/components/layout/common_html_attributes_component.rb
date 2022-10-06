@@ -4,7 +4,7 @@ class Layout::CommonHTMLAttributesComponent < ApplicationComponent
   private
 
     def attributes
-      sanitize([dir, lang].compact.join(" "))
+      sanitize([dir, lang, html_class].compact.join(" "))
     end
 
     def dir
@@ -13,5 +13,9 @@ class Layout::CommonHTMLAttributesComponent < ApplicationComponent
 
     def lang
       "lang=\"#{I18n.locale}\""
+    end
+
+    def html_class
+      "class=\"tenant-#{Tenant.current_schema}\"" if Rails.application.config.multitenancy
     end
 end
