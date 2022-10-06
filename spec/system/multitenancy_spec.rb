@@ -28,12 +28,16 @@ describe "Multitenancy" do
       visit polls_path
 
       expect(page).to have_content "Human rights for Martians?"
+      expect(page).to have_css "html.tenant-mars"
+      expect(page).not_to have_css "html.tenant-venus"
     end
 
     with_subdomain("venus") do
       visit polls_path
 
       expect(page).to have_content "There are no open votings"
+      expect(page).to have_css "html.tenant-venus"
+      expect(page).not_to have_css "html.tenant-mars"
     end
   end
 
