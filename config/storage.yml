@@ -1,9 +1,9 @@
 local:
-  service: Disk
+  service: TenantDisk
   root: <%= Rails.root.join("storage") %>
 
 test:
-  service: Disk
+  service: TenantDisk
   root: <%= Rails.root.join("tmp/storage") %>
 
 # s3:
