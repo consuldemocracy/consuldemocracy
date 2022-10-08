@@ -13,6 +13,20 @@ describe "budget tasks" do
       expect(ActionMailer::Base.deliveries.count).to eq 1
       expect(ActionMailer::Base.deliveries.last.to).to eq ["selectme@consul.dev"]
     end
+
+    it "accepts specifying the tenant" do
+      create(:budget_investment, :selected, author: create(:user, email: "default@consul.dev"))
+      create(:tenant, schema: "different")
+
+      Tenant.switch("different") do
+        create(:budget_investment, :selected, author: create(:user, email: "different@consul.dev"))
+      end
+
+      Rake.application.invoke_task("budgets:email:selected[different]")
+
+      expect(ActionMailer::Base.deliveries.count).to eq 1
+      expect(ActionMailer::Base.deliveries.last.to).to eq ["different@consul.dev"]
+    end
   end
 
   describe "rake budgets:email:unselected" do
@@ -26,6 +40,20 @@ describe "budget tasks" do
 
       expect(ActionMailer::Base.deliveries.count).to eq 1
       expect(ActionMailer::Base.deliveries.last.to).to eq ["ignorme@consul.dev"]
+    end
+
+    it "accepts specifying the tenant" do
+      create(:budget_investment, author: create(:user, email: "default@consul.dev"))
+      create(:tenant, schema: "different")
+
+      Tenant.switch("different") do
+        create(:budget_investment, author: create(:user, email: "different@consul.dev"))
+      end
+
+      Rake.application.invoke_task("budgets:email:unselected[different]")
+
+      expect(ActionMailer::Base.deliveries.count).to eq 1
+      expect(ActionMailer::Base.deliveries.last.to).to eq ["different@consul.dev"]
     end
   end
 end
