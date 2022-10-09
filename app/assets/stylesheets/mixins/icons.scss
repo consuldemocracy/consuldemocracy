@@ -1620,7 +1620,6 @@ $font-awesome-icons: (
 
   .manage-link {
     @include has-fa-icon(archive, solid);
-    color: $link;
   }
 
   .cards-link {

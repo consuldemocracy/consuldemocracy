@@ -784,20 +784,16 @@ body > header,
       &:hover {
         color: $link;
       }
-    }
 
-    &:focus {
-      z-index: 1;
-    }
-
-    &.is-active {
-      color: #fff;
-
-      @include breakpoint(medium) {
+      &.is-active {
         @include brand-text;
         border-bottom: 2px solid;
         margin-bottom: 1px;
       }
+    }
+
+    &:focus {
+      z-index: 1;
     }
   }
 
@@ -1190,10 +1186,6 @@ form {
     background-color: $info-bg;
     border-color: $info-border;
     color: $color-info;
-
-    a {
-      color: $link !important;
-    }
   }
 
   &.warning {
