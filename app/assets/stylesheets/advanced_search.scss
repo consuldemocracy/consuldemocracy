@@ -29,8 +29,7 @@
 
   > [aria-expanded] {
     @include xy-gutters;
-    color: $link;
-    cursor: pointer;
+    @include link;
     margin-top: $line-height;
     margin-bottom: $line-height;
     max-width: max-content;
