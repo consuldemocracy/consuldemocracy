@@ -685,13 +685,6 @@ body > header,
   margin-bottom: 1.5rem;
 }
 
-.horizontal-line {
-  height: 1px;
-  background-color: $black;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
 // show investment styles for unfeasibility
 .budget-investment-show .callout.warning {
   text-align: center;
@@ -721,7 +714,6 @@ body > header,
 
 // documents
 .documents {
-
   h4 {
     span {
       color: #4f4f4f;
@@ -735,7 +727,7 @@ body > header,
     border-radius: 0;
     display: block;
     margin: $line-height / 2 0;
-    padding: $line-height / 2;
+    padding: 0;
     position: relative;
 
     a {
