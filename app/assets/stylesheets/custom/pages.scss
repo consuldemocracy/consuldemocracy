@@ -385,6 +385,11 @@ span:hover::before {
 
     .investment-project-text {
       flex-grow: 1;
+      color: #222;
+
+      h3 {
+        margin-top: 0;
+      }
     }
 
     a {
