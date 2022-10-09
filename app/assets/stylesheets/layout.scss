@@ -135,11 +135,6 @@ button,
   @include inverted-selection;
   background: $brand;
 
-  &.warning,
-  &.warning:hover {
-    color: #000;
-  }
-
   &.medium {
     font-size: $small-font-size;
   }
@@ -752,7 +747,6 @@ body > header,
 
   @include breakpoint(medium) {
     background: $body-background;
-    color: $text;
     flex-direction: row;
     padding-bottom: 0;
 
@@ -1941,13 +1935,11 @@ table {
 }
 
 .comment-info {
-  color: $text-medium;
   display: inline-block;
   font-size: $small-font-size;
   line-height: rem-calc(32); // Same as avatar height
 
   .user-name {
-    color: $text;
     font-weight: bold;
   }
 }

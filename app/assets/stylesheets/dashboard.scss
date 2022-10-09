@@ -306,7 +306,6 @@
   border-right: 1px solid $border;
 
   [class^="icon-"] {
-    color: $text;
     display: inline-block;
     font-size: rem-calc(24);
     line-height: $line-height;
@@ -358,7 +357,6 @@
 
   .has-tip {
     border-bottom: 0;
-    color: $text;
     cursor: auto;
     font-weight: normal;
   }
@@ -519,7 +517,6 @@
     color: #fff;
 
     h1 {
-      color: #fff;
       text-align: left;
     }
   }
@@ -680,7 +677,6 @@
     }
 
     p {
-      color: #fff;
       font-size: rem-calc(80);
       line-height: rem-calc(100);
 
