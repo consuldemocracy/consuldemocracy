@@ -95,16 +95,9 @@ p {
 }
 
 a {
-  color: $link;
-
   &:hover,
   &:active {
-    color: $link-hover;
     text-decoration: underline;
-  }
-
-  &:focus {
-    color: $link-hover;
   }
 }
 
@@ -775,7 +768,7 @@ body > header,
       width: auto;
 
       &:hover {
-        color: $link;
+        color: $anchor-color;
       }
 
       &.is-active {
@@ -945,7 +938,7 @@ footer {
 .categories a,
 .geozone a {
   background: $highlight;
-  color: $link;
+  color: $anchor-color;
 
   &:hover,
   &.is-active {

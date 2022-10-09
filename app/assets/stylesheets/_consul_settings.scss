@@ -70,9 +70,6 @@ $text-light:        #bfbfbf !default;
 
 $border:            #dee0e3 !default;
 
-$link:              $brand !default;
-$link-hover:        darken($link, 20%) !default;
-
 $debates:           $brand !default;
 
 $like:              #7bd2a8 !default;
@@ -147,6 +144,9 @@ $sdg-colors: (
 
 // 3. Foundation overrides depending on CONSUL variables
 // -----------------------------------------------------
+
+$anchor-color: $brand !default;
+$anchor-color-hover: darken($anchor-color, 20%) !default;
 
 $tab-background-active: $white !default;
 
