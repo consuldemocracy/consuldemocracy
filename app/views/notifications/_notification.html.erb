@@ -5,7 +5,7 @@
                   title: notification.notifiable_title,
                   body: notification.notifiable_body } %>
     <% link_text = render "/notifications/notification_body", locals %>
-    <%= link_to_if notification.link.present?, link_text, notification.link %>
+    <%= link_to_if notification.link.present?, link_text, notification.link, class: "notification-link" %>
   <% else %>
     <p>
       <strong>
