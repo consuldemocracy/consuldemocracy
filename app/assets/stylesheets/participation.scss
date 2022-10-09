@@ -326,7 +326,7 @@
 }
 
 .bullet {
-  color: $text;
+  color: $body-font-color;
 }
 
 .budget-investment-show p {
@@ -893,7 +893,7 @@
 
   a,
   .info {
-    color: lighten($text, 15%);
+    color: lighten($body-font-color, 15%);
     font-size: $small-font-size;
   }
 }
@@ -926,7 +926,7 @@
     }
 
     .button-support {
-      background: $text;
+      background: $body-font-color;
       color: $featured;
       margin-top: 0;
 

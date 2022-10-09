@@ -16,6 +16,8 @@ $white: #fdfdfd !default;
 
 $body-font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif !important !default;
 
+$closebutton-color: $black !default;
+
 $global-radius: rem-calc(3) !default;
 $global-width: rem-calc(1200) !default;
 
@@ -64,7 +66,6 @@ $brand:             #004a83 !default;
 $brand-secondary:   darken($brand, 10%) !default;
 $dark:              $brand-secondary !default;
 
-$text:              $black !default;
 $text-medium:       #515151 !default;
 $text-light:        #bfbfbf !default;
 
@@ -153,8 +154,6 @@ $tab-background-active: $white !default;
 $tab-item-font-size: $base-font-size !default;
 $tab-item-padding: $line-height / 2  0 !default;
 $tab-content-border: $border !default;
-
-$closebutton-color: $text !default;
 
 $tooltip-background-color: $brand !default;
 
