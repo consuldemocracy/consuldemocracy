@@ -2359,8 +2359,7 @@ table {
 }
 
 .add-related-content {
-  color: $link;
-  cursor: pointer;
+  @include link;
   display: block;
   margin-bottom: $line-height;
 
