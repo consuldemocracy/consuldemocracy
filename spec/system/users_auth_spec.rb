@@ -223,11 +223,10 @@ describe "Users" do
     end
 
     context "Twitter" do
-      let(:twitter_hash) { { provider: "twitter", uid: "12345", info: { name: "manuela" }} }
-      let(:twitter_hash_with_email) { { provider: "twitter", uid: "12345", info: { name: "manuela", email: "manuelacarmena@example.com" }} }
+      let(:twitter_hash) { { uid: "12345", info: { name: "manuela" }} }
+      let(:twitter_hash_with_email) { { uid: "12345", info: { name: "manuela", email: "manuelacarmena@example.com" }} }
       let(:twitter_hash_with_verified_email) do
         {
-          provider: "twitter",
           uid: "12345",
           info: {
             name: "manuela",
@@ -480,13 +479,40 @@ describe "Users" do
       end
     end
 
-    context "Wordpress" do
-      let(:wordpress_hash) do
-        { provider: "wordpress",
+    context "Google" do
+      let(:google_hash) do
+        {
           uid: "12345",
           info: {
             name: "manuela",
-            email: "manuelacarmena@example.com" }}
+            email: "manuelacarmena@example.com",
+            email_verified: "1"
+          }
+        }
+      end
+
+      before { Setting["feature.google_login"] = true }
+
+      scenario "Sign in with an already registered user using a verified google account" do
+        OmniAuth.config.add_mock(:google_oauth2, google_hash)
+        create(:user, username: "manuela", email: "manuelacarmena@example.com")
+
+        visit new_user_session_path
+        click_link "Sign in with Google"
+
+        expect_to_be_signed_in
+      end
+    end
+
+    context "Wordpress" do
+      let(:wordpress_hash) do
+        {
+          uid: "12345",
+          info: {
+            name: "manuela",
+            email: "manuelacarmena@example.com"
+          }
+        }
       end
 
       before { Setting["feature.wordpress_login"] = true }
