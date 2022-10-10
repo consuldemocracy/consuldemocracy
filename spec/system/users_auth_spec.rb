@@ -223,11 +223,10 @@ describe "Users" do
     end
 
     context "Twitter" do
-      let(:twitter_hash) { { provider: "twitter", uid: "12345", info: { name: "manuela" }} }
-      let(:twitter_hash_with_email) { { provider: "twitter", uid: "12345", info: { name: "manuela", email: "manuelacarmena@example.com" }} }
+      let(:twitter_hash) { { uid: "12345", info: { name: "manuela" }} }
+      let(:twitter_hash_with_email) { { uid: "12345", info: { name: "manuela", email: "manuelacarmena@example.com" }} }
       let(:twitter_hash_with_verified_email) do
         {
-          provider: "twitter",
           uid: "12345",
           info: {
             name: "manuela",
@@ -482,11 +481,13 @@ describe "Users" do
 
     context "Wordpress" do
       let(:wordpress_hash) do
-        { provider: "wordpress",
+        {
           uid: "12345",
           info: {
             name: "manuela",
-            email: "manuelacarmena@example.com" }}
+            email: "manuelacarmena@example.com"
+          }
+        }
       end
 
       before { Setting["feature.wordpress_login"] = true }
