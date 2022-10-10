@@ -206,6 +206,7 @@ sl-SI:
     titles:
       edit: Uredi predlog
       investment_updated: Predlog uspešno posodobljen
+      proposals: Predlogi
       added_proposals: Oddani predlogi
       voted_proposals: Predlogi, uvrščeni na glasovanje
       selected_proposals: Izbrani predlogi
