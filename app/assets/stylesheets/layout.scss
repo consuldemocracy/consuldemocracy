@@ -746,7 +746,6 @@ body > header,
   flex-direction: column;
 
   @include breakpoint(medium) {
-    background: $body-background;
     flex-direction: row;
     padding-bottom: 0;
 
@@ -1761,8 +1760,6 @@ table {
 // ------------
 
 .comments {
-  background: $body-background;
-  background-repeat: repeat-x;
   padding-bottom: $line-height * 4;
 
   h2 {
