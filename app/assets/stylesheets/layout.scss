@@ -1490,7 +1490,7 @@ table {
 .button.button-facebook,
 .button.button-google,
 .button.button-wordpress {
-  color: $text;
+  color: inherit;
   font-weight: bold;
 
   &::before {
