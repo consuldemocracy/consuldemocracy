@@ -44,8 +44,7 @@
       }
 
       option {
-        background: $body-background;
-        color: $text;
+        @extend %body-colors;
         border: 0;
         outline: none;
       }

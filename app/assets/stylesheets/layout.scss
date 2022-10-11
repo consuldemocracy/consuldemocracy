@@ -637,8 +637,7 @@ body > header,
     }
 
     &.is-dropdown-submenu {
-      background: $body-background;
-      color: $text;
+      @extend %body-colors;
       margin: 0;
       margin-top: rem-calc(-12);
       padding: 0;
@@ -2614,9 +2613,8 @@ table {
     }
 
     span {
-      background: $body-background;
+      @extend %body-colors;
       border-radius: rem-calc(4);
-      color: $text;
       display: inline-block;
       font-size: $small-font-size;
       font-weight: bold;
