@@ -689,7 +689,7 @@ body > header,
 }
 
 .top-links {
-  @include background-with-text-contrast($dark);
+  @include background-with-text-contrast($brand-secondary);
   display: flex;
   flex-wrap: wrap;
   font-size: $small-font-size;
