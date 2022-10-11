@@ -1857,11 +1857,9 @@ table {
 
   .delete-comment {
     @include has-fa-icon(trash-alt, regular);
-    color: $delete;
 
-    &:hover,
-    &:active {
-      color: $link-hover;
+    &:not(:hover):not(:active) {
+      color: $delete;
     }
 
     &::before {
