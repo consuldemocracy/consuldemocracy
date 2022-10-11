@@ -1696,15 +1696,6 @@ table {
     }
   }
 
-  .send-letter {
-    background: none;
-    color: $link;
-
-    &:hover {
-      color: $link-hover;
-    }
-  }
-
   .button + form {
     display: inline-block;
     margin-left: $line-height / 2;
