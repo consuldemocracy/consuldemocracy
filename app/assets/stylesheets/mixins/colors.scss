@@ -12,6 +12,11 @@
   color: $brand;
 }
 
+@mixin body-colors {
+  background-color: $body-background;
+  color: $text;
+}
+
 @mixin normal-selection {
 
   &::selection,
@@ -35,4 +40,8 @@
 
 %brand-text {
   @include brand-text;
+}
+
+%body-colors {
+  @include body-colors;
 }

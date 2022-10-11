@@ -932,8 +932,7 @@
       margin-top: 0;
 
       &:hover {
-        background: $body-background;
-        color: $text;
+        @extend %body-colors;
       }
     }
 
@@ -1473,9 +1472,8 @@
 }
 
 .zoom-link {
-  background: $body-background;
+  @extend %body-colors;
   border-radius: rem-calc(48);
-  color: $text;
   font-size: rem-calc(24);
   font-weight: bold;
   height: rem-calc(48);
