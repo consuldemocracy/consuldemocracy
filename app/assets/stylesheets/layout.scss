@@ -146,9 +146,8 @@ button,
 }
 
 .button.hollow {
-  @include normal-selection;
+  @include brand-text;
   border: 1px solid;
-  color: $link;
 }
 
 .button.hollow.error {
