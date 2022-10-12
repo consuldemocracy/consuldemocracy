@@ -20,7 +20,7 @@
   thead {
 
     tr th {
-      border: 1px solid $brand;
+      @include brand-border;
     }
   }
 }

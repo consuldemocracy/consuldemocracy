@@ -125,8 +125,7 @@ button,
 
 .button {
   @extend %button;
-  @include inverted-selection($brand);
-  background: $brand;
+  @include brand-background;
 
   &.medium {
     font-size: $small-font-size;
@@ -949,7 +948,7 @@ footer {
 }
 
 .sidebar-title {
-  border-top: 2px solid $brand;
+  @include brand-border(top, 2px);
   display: inline-block;
   font-size: rem-calc(16);
   font-weight: bold;
@@ -969,7 +968,7 @@ footer {
 }
 
 .auth-image {
-  @include background-with-text-contrast($brand);
+  @include brand-background;
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -1358,8 +1357,8 @@ form {
   }
 
   &::before {
+    @include brand-color;
     background: $body-background;
-    color: $brand;
     content: "\4d";
     font-family: "icons" !important;
     font-size: $small-font-size;
@@ -2505,8 +2504,8 @@ table {
   h3 {
 
     &.title {
+      @include brand-border(top, 4px);
       display: inline-block;
-      border-top: 4px solid $brand;
       margin-bottom: 0;
       padding: $line-height / 2 0;
     }

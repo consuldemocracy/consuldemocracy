@@ -264,7 +264,7 @@
     }
 
     .control input:checked ~ .control-indicator {
-      background-color: $brand;
+      @include brand-background;
       border: 0;
     }
 

@@ -1,6 +1,11 @@
-@mixin background-with-text-contrast($color, $check-invert-selection: true) {
+@mixin background-with-text-contrast($color, $property-name: null, $check-invert-selection: true) {
   background-color: $color;
   color: color-pick-contrast($color);
+
+  @if $property-name {
+    background-color: var(--#{$property-name}, $color);
+    color: var(--#{$property-name}-contrast, color-pick-contrast($color));
+  }
 
   @if $check-invert-selection {
     @include inverted-selection($color);
@@ -8,12 +13,23 @@
 }
 
 @mixin brand-background {
-  @include background-with-text-contrast($brand);
+  @include background-with-text-contrast($brand, brand);
 }
 
 @mixin brand-color {
   @include normal-selection;
   color: $brand;
+  color: var(--brand, $brand);
+}
+
+@mixin brand-border($position: null, $width: 1px) {
+  @if $position == null {
+    border: $width solid $brand;
+    border: $width solid var(--brand, $brand);
+  } @else {
+    border-#{$position}: $width solid $brand;
+    border-#{$position}: $width solid var(--brand, $brand);
+  }
 }
 
 @mixin body-colors {
@@ -25,7 +41,7 @@
 
   &::selection,
   *::selection {
-    @include background-with-text-contrast($brand, $check-invert-selection: false);
+    @include background-with-text-contrast($brand, brand, $check-invert-selection: false);
   }
 }
 
@@ -34,7 +50,9 @@
     &::selection,
     *::selection {
       background-color: rgba(color-pick-contrast($brand), 0.99);
+      background-color: var(--brand-contrast, rgba(color-pick-contrast($brand), 0.99));
       color: $brand;
+      color: var(--brand, $brand);
     }
   }
 }
