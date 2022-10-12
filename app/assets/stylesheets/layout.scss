@@ -254,15 +254,11 @@ button,
     }
 
     a {
-      color: inherit;
+      @include text-colored-link;
       display: inline-block;
       font-weight: bold;
       position: relative;
       text-align: left;
-
-      &:hover {
-        color: $link;
-      }
     }
 
     + li {
@@ -844,7 +840,7 @@ body > header,
   margin-bottom: $line-height / 2;
 
   a {
-    color: inherit;
+    @include text-colored-link;
     display: inline-block;
     font-weight: bold;
     margin-right: $line-height / 2;
@@ -853,10 +849,6 @@ body > header,
 
     @include breakpoint(medium) {
       margin-right: $line-height;
-    }
-
-    &:hover {
-      color: $link;
     }
   }
 
@@ -1359,11 +1351,7 @@ form {
   }
 
   .notification-link {
-    color: inherit;
-
-    &:hover {
-      color: $link;
-    }
+    @include text-colored-link;
   }
 
   &:hover {
