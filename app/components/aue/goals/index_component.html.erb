@@ -1,0 +1,15 @@
+<% provide(:title) { title } %>
+
+<main class="aue-goals-index">
+  <% if @header.present? %>
+    <%= render "shared/header", header: @header %>
+  <% else %>
+    <header class="section-header">
+      <h1><%= title %></h1>
+    </header>
+  <% end %>
+
+  <%= render Shared::BannerComponent.new("aue") %>
+
+  <%= link_list(*goal_links, class: "aue-goal-list") %>
+</main>

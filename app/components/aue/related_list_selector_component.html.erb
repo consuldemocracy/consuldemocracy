@@ -1,0 +1,37 @@
+<fieldset class="aue-related-list-selector">
+  <legend><%= t("aue.related_list_selector.title") %></legend>
+
+  <div class="input-section">
+    <fieldset class="goals">
+      <legend><%= t("aue.related_list_selector.goal_list", record: relatable_name) %></legend>
+      <div class="aue-goal-list">
+        <%= f.collection_check_boxes(:aue_goal_ids, goals, :id, :code) do |checkbox_form| %>
+          <%= goal_field(checkbox_form) %>
+        <% end %>
+      </div>
+    </fieldset>
+      <br>
+    <fieldset class="local-goals">
+      <legend><%= t("aue.related_list_selector.goal_list", record: relatable_name) %></legend>
+      <div class="aue-local-goal-list">
+        <%= f.collection_check_boxes(:aue_local_goal_ids, local_goals, :id, :code) do |checkbox_form| %>
+           <%= local_goal_field(checkbox_form) %>
+        <% end %>
+      </div>
+    </fieldset>
+    <%= f.text_field :related_aue_list,
+                      class: "input",
+                      hint: sanitize(t("aue.related_list_selector.hint",
+                                      link: link_to(t("aue.related_list_selector.help.text"),
+                                                      aue_goals_path,
+                                                      title: t("shared.target_blank"),
+                                                      target: "_blank")),
+                                     attributes: %w[href title target]),
+                      data: { "suggestions-list": aue_related_suggestions,
+                              "remove-tag-text": t("aue.related_list_selector.remove_tag") } %>
+  </div>
+  <div class="help-section callout primary hide">
+    <h3><%= t("aue.related_list_selector.help.title", record: relatable_name) %></h3>
+    <ul class="selected-info"></ul>
+  </div>
+</fieldset>

@@ -19,6 +19,7 @@
         </ul>
       <% end %>
       <%= render SDG::TagListComponent.new(@poll, linkable: false) %>
+      <%= render AUE::TagListComponent.new(@poll) %>
     </div>
 
     <aside class="small-12 medium-3 column margin-top">

@@ -314,7 +314,8 @@
   }
 
   .tags,
-  .sdg-target-tag-list {
+  .sdg-target-tag-list,
+  .aue-target-tag-list {
 
     a {
       margin-right: rem-calc(6);
@@ -509,7 +510,8 @@
   }
 
   .tags,
-  .sdg-target-tag-list {
+  .sdg-target-tag-list,
+  .aue-target-tag-list {
     a {
       font-size: $tiny-font-size;
     }

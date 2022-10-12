@@ -8,7 +8,7 @@ class Setting < ApplicationRecord
   end
 
   def type
-    if %w[feature process proposals map html homepage uploads sdg machine_learning].include? prefix
+    if %w[feature process proposals map html homepage uploads sdg aue machine_learning].include? prefix
       prefix
     elsif %w[remote_census].include? prefix
       key.rpartition(".").first
@@ -101,6 +101,7 @@ class Setting < ApplicationRecord
         "feature.valuation_comment_notification": true,
         "feature.graphql_api": true,
         "feature.sdg": true,
+        "feature.aue": true,
         "feature.machine_learning": false,
         "feature.remove_investments_supports": true,
         "homepage.widgets.feeds.debates": true,

@@ -4,11 +4,16 @@ class SDGManagement::MenuComponent < ApplicationComponent
   private
 
     def links
-      [goals_link, homepage_link, *relatable_links]
+      [goals_link, homepage_link, aue_goals_link, *relatable_links]
     end
 
     def goals_link
-      [item_text("sdg_content"), sdg_management_goals_path, sdg?, class: "goals-link"]
+      [item_text("sdg_content"), sdg_management_goals_path, sdg?, class: "sdg-goals-link"]
+    end
+
+    def aue_goals_link
+      return unless feature?(:aue)
+      [item_text("aue_content"), sdg_management_aue_goals_path, aue?, class: "aue-goals-link"]
     end
 
     def homepage_link
@@ -34,6 +39,10 @@ class SDGManagement::MenuComponent < ApplicationComponent
 
     def homepage?
       controller_name == "homepage"
+    end
+
+    def aue?
+      %w[aue_goals aue_local_goals].include?(controller_name)
     end
 
     def relatable_type_path(type)

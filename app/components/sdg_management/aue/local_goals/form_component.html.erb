@@ -1,0 +1,35 @@
+<%= back_link_to sdg_management_aue_local_goals_path %>
+
+<%= header %>
+
+<%= render "shared/globalize_locales", resource: local_goal %>
+
+<%= translatable_form_for [:sdg_managment, local_goal], url: form_url do |f| %>
+  <%= render "shared/errors", resource: local_goal %>
+
+  <div class="row">
+    <div class="small-12 column">
+      <%= f.text_field :code, hint: t("sdg_management.local_goals.form.code") %>
+    </div>
+  </div>
+
+  <div class="row">
+    <%= f.translatable_fields do |translations_form| %>
+      <div class="small-12 column end">
+        <%= translations_form.text_field :title %>
+      </div>
+
+      <div class="small-12 column end">
+        <%= translations_form.text_area :description,
+                                        rows: 4,
+                                        hint: t("sdg_management.local_goals.form.description") %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="small-12 column">
+      <%= f.submit class: "button" %>
+    </div>
+  </div>
+<% end %>

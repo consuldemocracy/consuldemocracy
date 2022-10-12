@@ -1,4 +1,5 @@
 <%- limit ||= nil %>
 
 <%= render SDG::TagListComponent.new(taggable, limit: limit) %>
+<%= render AUE::TagListComponent.new(taggable, limit: limit) %>
 <%= render Shared::TagListComponent.new(taggable, limit: limit) %>

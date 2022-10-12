@@ -1,0 +1,159 @@
+.aue-related-list-selector {
+  clear: both;
+
+  > legend {
+    margin-bottom: 0;
+  }
+
+  .amsify-suggestags-area .amsify-select-tag {
+    color: $white;
+    background-color: #004a83;
+
+    @each $code, $color in $aue-colors {
+      &[data-val^="#{$code}"] {
+        background-color: $color;
+      }
+    }
+  }
+
+  .goals {
+    + label {
+      @include element-invisible;
+    }
+
+    legend {
+      font-weight: normal;
+      font-style: italic;
+    }
+  }
+
+  .aue-goal-list {
+    @extend %aue-goal-list-expanded;
+    $spacing: 1.5%;
+    @include aue-goal-list($spacing);
+
+    margin: 20px auto;
+    max-width: 60rem;
+    width: 100%;
+
+    label {
+      line-height: 0;
+      margin-left: $spacing / 2;
+      margin-right: $spacing / 2;
+      width: 100%;
+      height: 54px;
+      .aue-goal-item {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        align-items: center;
+        .aue-goal-item-text {
+          height: 100%;
+          margin-left: -30px;
+          clip-path: polygon(0 0, 93% 0%, 100% 100%, 0% 100%);
+          position: relative;
+          width: 100%;
+          padding-right: 7%;
+          padding-left: 40px;
+          display: flex;
+          align-items: center;
+          span {
+            font-size: clamp(14px, 1.6vw, 16px);
+            font-weight: 400;
+            line-height: 1rem;
+          }
+        }
+        .aue-goal-icon {
+          // width: calc(100% / 6 - #{$spacing});
+          height: 60px;
+          width: auto;
+          z-index: 9;
+        }
+      }
+    }
+
+    input {
+      @include element-invisible;
+
+      &:focus + label {
+        outline: $outline-focus;
+      }
+
+      &:checked + label img {
+        opacity: 0.15;
+      }
+    }
+  }
+
+  .aue-local-goal-list {
+    margin: 40px auto;
+    max-width: 60rem;
+    width: 100%;
+    a {
+      @extend %tag;
+      background: $highlight;
+      color: $link;
+
+      &:hover,
+      &.is-active {
+        @extend %brand-background;
+      }
+    }
+
+    input {
+      @include element-invisible;
+
+      &:focus + label {
+        outline: $outline-focus;
+      }
+
+      &:checked + label {
+        opacity: 0.15;
+      }
+    }
+  }
+
+  @each $code, $color in $aue-background-colors {
+    .aue-goal-#{$code} {
+      color: black;
+      background-color: $color;
+    }
+  }
+
+  .help-text {
+    font-weight: normal;
+    font-style: italic;
+    font-size: $base-font-size;
+  }
+
+  .input-section {
+    margin-bottom: 2 * $line-height / 3;
+  }
+
+  .amsify-suggestags-area {
+    position: relative;
+
+    .amsify-suggestags-list {
+      top: $input-height;
+    }
+  }
+
+  .amsify-suggestags-input-area {
+    display: flex;
+    flex-wrap: wrap;
+
+    > input {
+      margin-bottom: $line-height / 4 !important;
+      order: -1;
+    }
+  }
+
+  .remove-tag {
+    color: $white;
+  }
+
+  h3 {
+    @include header-font-size(h4);
+  }
+}

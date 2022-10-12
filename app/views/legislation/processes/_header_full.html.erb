@@ -4,6 +4,7 @@
 <% end %>
 
 <%= render SDG::TagListComponent.new(@process, linkable: false) %>
+<%= render AUE::TagListComponent.new(@process) %>
 
 <% if @process.additional_info.present? %>
   <div id="additional_info" class="is-hidden" data-toggler=".is-hidden">

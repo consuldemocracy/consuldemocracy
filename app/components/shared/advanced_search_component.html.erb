@@ -52,6 +52,14 @@
       </div>
     <% end %>
 
+    <% if aue? %>
+      <div class="filter">
+        <label for="advanced_search_aue_goal"><%= t("shared.advanced_search.aue_goal") %></label>
+        <%= select_tag("advanced_search[aue_goal]", aue_goal_options,
+                      include_blank: t("shared.advanced_search.aue_goal_blank")) %>
+      </div>
+    <% end %>
+
     <div class="submit">
       <%= submit_tag t("shared.advanced_search.search"), class: "button expanded" %>
     </div>

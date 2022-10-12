@@ -1,0 +1,7 @@
+<% if tags.any? %>
+  <ul id="local_goals" class="no-bullet local_goals aue-goal-tag-list">
+    <% tags.each do |local_goal| %>
+        <li><a><%= local_goal %></a></li>
+      <% end %>
+  </ul>
+<% end %>

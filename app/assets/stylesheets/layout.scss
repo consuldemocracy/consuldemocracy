@@ -72,6 +72,8 @@ main {
   &.proposal-new,
   &.sdg-goals-index,
   &.sdg-goal-show,
+  &.aue-goals-index,
+  &.aue-goal-show,
   &.topic-edit,
   &.topic-new,
   &.subscriptions-edit {
@@ -959,6 +961,7 @@ footer {
 // 04. Tags
 // --------
 
+.local_goals a,
 .tag-cloud a,
 .categories a,
 .geozone a,
@@ -974,6 +977,18 @@ footer {
   &:hover,
   &.is-active {
     @extend %brand-background;
+  }
+}
+
+.local_goals a {
+  background: $highlight;
+  color: $link;
+
+  &:hover,
+  &.is-active {
+    cursor: default;
+    background: $highlight;
+    color: $link;
   }
 }
 
@@ -2530,7 +2545,9 @@ table {
 .home-page,
 .custom-page,
 .sdg-goal-show,
-.sdg-goals-index {
+.sdg-goals-index,
+.aue-goal-show,
+.aue-goals-index {
 
   a {
 
@@ -2586,7 +2603,8 @@ table {
     }
 
     p,
-    .sdg-tag-list {
+    .sdg-tag-list,
+    .aue-tag-list {
       padding: 0 $line-height / 4;
     }
   }

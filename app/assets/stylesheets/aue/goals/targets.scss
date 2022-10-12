@@ -1,0 +1,17 @@
+.aue-goal-targets {
+  dt,
+  dd {
+    display: inline;
+  }
+
+  dd {
+    &::after {
+      content: "";
+      display: block;
+    }
+
+    &:not(:last-child)::after {
+      margin-bottom: $line-height / 2;
+    }
+  }
+}

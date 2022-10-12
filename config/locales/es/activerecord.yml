@@ -8,11 +8,15 @@ es:
     email: Email
     description: Descripción
     related_sdg_list: Objetivos y Metas
+    related_aue_list: Objetivos
   activerecord:
     models:
       activity:
         one: "actividad"
         other: "actividades"
+      aue/goal:
+        one: "objetivo"
+        other: "objetivos"
       budget:
         one: "Presupuesto participativo"
         other: "Presupuestos participativos"
@@ -88,6 +92,12 @@ es:
       sdg/target:
         one: "meta"
         other: "metas"
+      aue/goal:
+        one: "objetivo global"
+        other: "objetivos globales"
+      aue/local_goal:
+        one: "objetivo local"
+        other: "objetivos locales"
       site_customization/page:
         one: Página
         other: Páginas
@@ -146,6 +156,10 @@ es:
         one: Registro del censo local
         other: Registros del censo local
     attributes:
+      aue/goal:
+        code: "Código"
+        title: "Título"
+        description: "Descripción"
       budget:
         name: "Nombre"
         description_accepting: "Descripción durante la fase de presentación de proyectos"
@@ -344,6 +358,17 @@ es:
       sdg/target:
         code: "Código"
         title: "Título"
+      aue/goal:
+        code: "Código"
+        title: "Título"
+        description: "Descripción"
+      aue/local_goal:
+        code: "Código"
+        title: "Título"
+        description: "Descripción"
+      aue/local_goal/translation:
+        title: "Título"
+        description: "Descripción"
       signature_sheet:
         title: "Título"
         signable_type: "Tipo de hoja de firmas"
@@ -488,8 +513,8 @@ es:
         description: Descripción
         link: Enlace externo
         request_to_administrators: Incluir en el recurso un botón para solicitar el recurso a los administradores
-        day_offset: '¿En cuántos días tras la creación de la propuesta quieres que se active?'
-        required_supports: '¿Cuántos apoyos tiene que conseguir la propuesta para que se active?'
+        day_offset: "¿En cuántos días tras la creación de la propuesta quieres que se active?"
+        required_supports: "¿Cuántos apoyos tiene que conseguir la propuesta para que se active?"
         order: Puedes introducir la posición en la que se mostrará al usuario esta acción en la lista de acciones
         active: Activa
         action_type: Tipo
@@ -599,6 +624,10 @@ es:
           attributes:
             code:
               invalid: "debe empezar con el código de su meta seguido de un punto y terminar con un número"
+        aue/local_goal:
+          attributes:
+            code:
+              invalid: "debe ser un número"
       messages:
         translations_too_short: El obligatorio proporcionar una traducción como mínimo
         record_invalid: "Error de validación: %{errors}"

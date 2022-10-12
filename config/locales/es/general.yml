@@ -212,6 +212,7 @@ es:
     header:
       administration_menu: Menú
       administration: Administración
+      aue: "AUE"
       collaborative_legislation: Legislación colaborativa
       debates: Debates
       locale: "Idioma:"
@@ -287,7 +288,7 @@ es:
       form:
         submit_button: Crear propuesta
     created:
-      title: '¡Enhorabuena! Has dado el primer paso.'
+      title: "¡Enhorabuena! Has dado el primer paso."
       motivation: "Es importante preparar la campaña de lanzamiento de tu propuesta para que tenga éxito. Los primeros días son decisivos."
       motivation_2: "<strong>Si quieres recomendaciones para preparar la publicación deja tu propuesta como borrador y te guiaremos.</strong>"
       publish: No, quiero publicar la propuesta ya
@@ -376,7 +377,7 @@ es:
     new:
       form:
         submit_button: Crear propuesta
-      more_info: '¿Cómo funcionan las propuestas ciudadanas?'
+      more_info: "¿Cómo funcionan las propuestas ciudadanas?"
       recommendation_one: No escribas el título de la propuesta o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
       recommendation_three: Disfruta de este espacio, de las voces que lo llenan, también es tuyo.
       recommendation_two: Cualquier propuesta o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido.
@@ -670,6 +671,8 @@ es:
       target_blank: "Elige una meta"
       title: "Búsqueda avanzada"
       to: "Hasta"
+      aue_goal: "Por objetivo AUE"
+      aue_goal_blank: "Elige un objetivo"
     author_info:
       author_deleted: Usuario eliminado
       email_deleted: Email eliminado
@@ -911,7 +914,7 @@ es:
     help:
       alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
       text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
-      title: '¿Cómo puedo comentar este documento?'
+      title: "¿Cómo puedo comentar este documento?"
   links:
     form:
       delete_button: Borrar
