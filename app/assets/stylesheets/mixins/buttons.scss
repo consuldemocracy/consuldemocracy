@@ -1,6 +1,7 @@
 @import "mixins/colors";
 
 @mixin base-button {
+  @include button-base;
   font-size: $base-font-size;
 
   &:focus,
@@ -18,16 +19,35 @@
 }
 
 @mixin regular-button($color: $brand) {
-  @include button($background: $color);
-  @include inverted-selection($color);
   @include base-button;
+
+  @if $color == $brand {
+    @include brand-background;
+  } @else {
+    @include background-with-text-contrast($color);
+  }
+
+  &:hover,
+  &:focus {
+    @include background-with-text-contrast($button-background-hover);
+  }
 }
 
 @mixin hollow-button($color: $anchor-color) {
-  @include button($style: hollow, $background: $color);
   @include normal-selection;
   @include base-button;
+  border-color: currentcolor;
+  color: $color;
   margin-bottom: 0;
+
+  @if $color == $brand {
+    @include brand-color;
+  }
+
+  &:hover,
+  &:focus {
+    color: scale-color($color, $lightness: $button-hollow-hover-lightness);
+  }
 }
 
 @mixin link {

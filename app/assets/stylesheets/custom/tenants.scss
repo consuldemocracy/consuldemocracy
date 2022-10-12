@@ -1,0 +1,15 @@
+// If you're using multitenancy, you can override styles for a certain
+// tenant by styling the `<html>` element with the class
+// `tenant-<tenant_name>`. For example, to style the public (main)
+// tenant without these styles affecting any other tenants, use the
+// `.tenant-public` selector.
+//
+// You can use CSS variables to customize the colors. Here's an example
+// changing the brand color for just the main tenant.
+//
+// .tenant-public {
+//   --brand: #351;
+// }
+//
+// NOTE: If you are **not** using mulitenancy, we recommend overwriting
+// SCSS variables in the `_consul_custom_overrides.scss` file instead
