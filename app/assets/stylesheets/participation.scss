@@ -249,7 +249,7 @@
     font-weight: bold;
 
     a {
-      color: $link !important;
+      @include link;
     }
   }
 
