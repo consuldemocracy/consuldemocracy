@@ -1,6 +1,6 @@
 <div class="districts-container">
   <select onchange="if (this.value) location = this.value;" class="on-view">
-    <option value="<%= budget_investments_url(@budget, { tag_name: params[:tag_name], heading_id: params[:heading_id], unfeasible: params[:unfeasible], chosen: "true" }) %>" <%= " selected" if params[:chosen] == "true" %>>
+    <option value="<%= budget_investments_url(@budget, { tag_name: params[:tag_name], heading_id: params[:heading_id], unfeasible: params[:unfeasible]}) %>" <%= " selected" if params[:chosen] == "true" %>>
       <%= t("custom.chosen_for_voting.chosen") %>
     </option>
     <option value="<%= budget_investments_url(@budget, { tag_name: params[:tag_name], heading_id: params[:heading_id], unfeasible: params[:unfeasible], chosen: "false" }) %>" <%= " selected" if params[:chosen] == "false" %>>
