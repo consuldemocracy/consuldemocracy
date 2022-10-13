@@ -21,7 +21,7 @@ $admin-border:   2px solid $admin-border-color;
 $admin-color:    #245b80;
 $admin-text:     #434d54;
 
-$sidebar:        #245b80;
+$sidebar:        $admin-color;
 $sidebar-hover:  #25597c;
 $sidebar-active: #f4fcd0;
 
