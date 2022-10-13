@@ -636,7 +636,8 @@
   padding: $line-height / 2 0;
 }
 
-.proposal {
+.proposal,
+.budget-investment {
 
   .supports {
     @include supports;
@@ -647,7 +648,6 @@
 .budget-investment-show {
 
   .supports {
-    @include supports;
 
     .investment-project-amount,
     .budget-investment-amount {
