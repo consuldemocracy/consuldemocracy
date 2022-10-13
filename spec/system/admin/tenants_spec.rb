@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Tenants", :admin do
+describe "Tenants", :admin, :seed_tenants do
   before { allow(Tenant).to receive(:default_host).and_return("localhost") }
 
   scenario "Create" do

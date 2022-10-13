@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Multitenancy" do
+describe "Multitenancy", :seed_tenants do
   before do
     create(:tenant, subdomain: "mars")
     create(:tenant, subdomain: "venus")

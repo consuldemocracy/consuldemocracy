@@ -5,6 +5,7 @@ describe Attachable do
     create(:tenant, subdomain: "image-master")
 
     Tenant.switch("image-master") do
+      Setting.reset_defaults
       tenant_image = create(:image, attachment: fixture_file_upload("clippy.jpg"))
 
       expect(tenant_image.file_path).to include "storage/tenants/image-master/"
