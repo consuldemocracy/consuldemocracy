@@ -17,7 +17,7 @@ module Budgets
     end
 
     def index
-      
+
       # FILTERING
       # 'filtered_investments' is the variable representing final result
 
@@ -40,7 +40,7 @@ module Budgets
         filtered_investments = filtered_investments.tagged_with(param_tag_name)
       end
 
-      if @budget.phase == 'balloting' or @budget.phase == 'reviewing_ballots'
+      if (@budget.phase == "balloting") || (@budget.phase == "reviewing_ballots")
         # filter by selected
         if param_chosen == "false"
           filtered_investments = filtered_investments.where("selected = ? OR feasibility = ?", false, "unfeasible")
@@ -48,7 +48,7 @@ module Budgets
           filtered_investments = filtered_investments.where("selected = ? AND feasibility = ?", true, "feasible")
         end
 
-      elsif @budget.phase == 'finished'
+      elsif @budget.phase == "finished"
         # filter by status
         if param_status
           investment_ids = []
@@ -66,16 +66,16 @@ module Budgets
 
         # filter by winner
         winner_ids = []
-        winners = @budget.investments.winners.order(:id).each do |investment|
+        @budget.investments.winners.order(:id).each do |investment|
           winner_ids.push(investment.id)
         end
-        if params[:unfeasible]
-          filtered_investments = filtered_investments.where.not(:id => winner_ids)
+        if param_unfeasible
+          filtered_investments = filtered_investments.where.not(id: winner_ids)
         else
-          filtered_investments = filtered_investments.where(:id => winner_ids)
+          filtered_investments = filtered_investments.where(id: winner_ids)
         end
       end
-  
+
       # pagination
       @filtered_investments_count = filtered_investments.count
       @investments = filtered_investments.page(params[:page]).per(PER_PAGE).for_render
@@ -90,7 +90,6 @@ module Budgets
       # ?
       @tag_cloud = tag_cloud
       @remote_translations = detect_remote_translations(@investments)
-
 
       # TODO: remove this commented out section when you're sure you don't need it anywhere
       #@denied_investments = Budget::Investment.where(selected: false).page(params[:page]).per(21).for_render
