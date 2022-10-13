@@ -17,75 +17,82 @@ module Budgets
     end
 
     def index
-      # filters
-      if params[:unfeasible] # filter by winners
+      
+      # FILTERING
+      # 'filtered_investments' is the variable representing final result
+
+      # query parameters
+      param_heading = params[:heading_id] # obmocje
+      param_tag_name = params[:tag_name] # mestna cetrt
+      param_chosen = params[:chosen] # izbrani oz. selected, "false" or else
+      param_unfeasible = params[:unfeasible] # izglasovani oz. winners
+      param_status = params[:status_id] # status
+
+      # filter by heading in all phases
+      if param_heading
+        filtered_investments = @budget.investments.where(heading_id: param_heading)
+      else
+        filtered_investments = @budget.investments.all
+      end
+
+      # filter by tag in all phases
+      if param_tag_name
+        filtered_investments = filtered_investments.tagged_with(param_tag_name)
+      end
+
+      if @budget.phase == 'balloting' or @budget.phase == 'reviewing_ballots'
+        # filter by selected
+        if param_chosen == "false"
+          filtered_investments = filtered_investments.where("selected = ? OR feasibility = ?", false, "unfeasible")
+        else
+          filtered_investments = filtered_investments.where("selected = ? AND feasibility = ?", true, "feasible")
+        end
+
+      elsif @budget.phase == 'finished'
+        # filter by status
+        if param_status
+          investment_ids = []
+          Budget::Investment.all.order(:id).each do |investment|
+            if investment.milestones.count > 0
+              if investment.milestones.order_by_publication_date.last.status_id == params[:status_id].to_i
+                investment_ids.push(investment.id)
+              end
+            end
+          end
+          filtered_investments = filtered_investments.where(id: investment_ids)
+        else
+          filtered_investments = filtered_investments
+        end
+
+        # filter by winner
         winner_ids = []
         winners = @budget.investments.winners.order(:id).each do |investment|
           winner_ids.push(investment.id)
         end
-        if params[:heading_id]
-          feasibility_filtered_investments = @budget.investments.where(heading_id: params[:heading_id]).where.not(:id => winner_ids)
+        if params[:unfeasible]
+          filtered_investments = filtered_investments.where.not(:id => winner_ids)
         else
-          feasibility_filtered_investments = @budget.investments.where.not(:id => winner_ids)
-        end
-      else
-        if @budget.phase == 'valuating'
-          if params[:heading_id]
-            # filter by obmocje
-            feasibility_filtered_investments = @budget.investments.where(heading_id: params[:heading_id])
-          else
-            # take all investments
-            feasibility_filtered_investments = @budget.investments.all
-          end
-        else
-          # take all investments, which are already filtered by heading_id and feasibility
-          feasibility_filtered_investments = investments
+          filtered_investments = filtered_investments.where(:id => winner_ids)
         end
       end
-      if params[:status_id]
-        investment_ids = []
-        Budget::Investment.all.order(:id).each do |investment|
-          if investment.milestones.count > 0
-            if investment.milestones.order_by_publication_date.last.status_id == params[:status_id].to_i
-              investment_ids.push(investment.id)
-            end
-          end
-        end
-        filtered_investments = feasibility_filtered_investments.where(id: investment_ids)
-      else
-        filtered_investments = feasibility_filtered_investments
-      end
-      if params[:tag_name]
-        tagged_investments = filtered_investments.tagged_with(params[:tag_name])
-      else
-        tagged_investments = filtered_investments
-      end
+  
+      # pagination
+      @filtered_investments_count = filtered_investments.count
+      @investments = filtered_investments.page(params[:page]).per(PER_PAGE).for_render
 
-      
-
-      if params[:chosen] == "false"
-        if @heading
-          chosen_filtered_investments = @budget.investments.where("selected = ? OR feasibility = ?", false, "unfeasible").where(heading_id: params[:heading_id])
-        else
-          chosen_filtered_investments = @budget.investments.where("selected = ? OR feasibility = ?", false, "unfeasible")
-        end
-      else
-        chosen_filtered_investments = tagged_investments
-      end
-
-      @filtered_investments_count = chosen_filtered_investments.count
-      @investments = chosen_filtered_investments.page(params[:page]).per(PER_PAGE).for_render
+      # filters data
       @statuses = Milestone::Status.all
 
+      # map
       @investment_ids = @investments.ids
-      @investments_map_coordinates = MapLocation.where(investment: investments).map(&:json_data)
+      @investments_map_coordinates = MapLocation.where(investment: filtered_investments).map(&:json_data)
 
+      # ?
       @tag_cloud = tag_cloud
       @remote_translations = detect_remote_translations(@investments)
-    #   @investments_count = investments.count
-    #   @investments = investments.page(params[:page]).per(12).for_render
-    #   @investment_ids = @investments.pluck(:id)
 
+
+      # TODO: remove this commented out section when you're sure you don't need it anywhere
       #@denied_investments = Budget::Investment.where(selected: false).page(params[:page]).per(21).for_render
       # if @budget.phase == "finished"
       #   if @heading
