@@ -243,7 +243,7 @@ describe Tenant do
     end
 
     it "is not valid with an already existing schema" do
-      expect(create(:tenant, schema: "subdomainx")).to be_valid
+      insert(:tenant, schema: "subdomainx")
       expect(build(:tenant, schema: "subdomainx")).not_to be_valid
     end
 
@@ -270,7 +270,7 @@ describe Tenant do
     end
 
     it "is not valid with an already existing name" do
-      expect(create(:tenant, name: "Name X")).to be_valid
+      insert(:tenant, name: "Name X")
       expect(build(:tenant, name: "Name X")).not_to be_valid
     end
   end

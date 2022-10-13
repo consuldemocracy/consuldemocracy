@@ -3,6 +3,7 @@ require "email_spec"
 require "devise"
 require "knapsack_pro"
 
+Dir["./spec/factory_bot/**/*.rb"].sort.each { |f| require f }
 Dir["./spec/models/concerns/*.rb"].each { |f| require f }
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
 Dir["./spec/shared/**/*.rb"].sort.each  { |f| require f }
