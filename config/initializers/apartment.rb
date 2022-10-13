@@ -13,7 +13,7 @@ require "apartment/elevators/generic"
 #
 Apartment.configure do |config|
   ENV["IGNORE_EMPTY_TENANTS"] = "true" if Rails.env.test? || Rails.application.config.multitenancy.blank?
-  config.seed_after_create = true
+  config.seed_after_create = !Rails.env.test?
 
   # Add any models that you do not want to be multi-tenanted, but remain in the global (public) namespace.
   # A typical example would be a Customer or Tenant model that stores each Tenant's information.

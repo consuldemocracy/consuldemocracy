@@ -80,15 +80,18 @@ describe "rake sitemap:create", type: :system do
     create(:tenant, schema: "debates")
     create(:tenant, schema: "proposals")
 
+    Setting["process.budgets"] = true
     Setting["process.debates"] = false
     Setting["process.proposals"] = false
 
     Tenant.switch("debates") do
+      Setting["process.debates"] = true
       Setting["process.budgets"] = false
       Setting["process.proposals"] = false
     end
 
     Tenant.switch("proposals") do
+      Setting["process.proposals"] = true
       Setting["process.budgets"] = false
       Setting["process.debates"] = false
     end
