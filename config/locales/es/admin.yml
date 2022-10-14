@@ -835,6 +835,7 @@ es:
         information_texts_menu:
           basic: "Personalización básica"
           debates: "Debates"
+          budgets: "Presupuestos participativos"
           community: "Comunidad"
           proposals: "Propuestas"
           polls: "Votaciones"
