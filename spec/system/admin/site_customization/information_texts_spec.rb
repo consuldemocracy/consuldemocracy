@@ -9,11 +9,14 @@ describe "Admin custom information texts", :admin do
     expect(page).to have_content "Help with proposals"
     expect(page).to have_content "Help with voting"
     expect(page).to have_content "Help with collaborative legislation"
-    expect(page).to have_content "Help with participatory budgets"
 
     within("#information-texts-tabs") { click_link "Debates" }
 
     expect(page).to have_content "Edit debate"
+
+    within("#information-texts-tabs") { click_link "Budgets" }
+
+    expect(page).to have_content "Your ballot"
 
     within("#information-texts-tabs") { click_link "Community" }
     expect(page).to have_content "Access the community"

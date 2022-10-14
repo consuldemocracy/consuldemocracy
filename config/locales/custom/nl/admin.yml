@@ -447,6 +447,7 @@ nl:
         information_texts: "Informatie teksten"
         information_texts_menu:
           basic: "Systeemmeldingen"
+          budgets: "Ideeën"
           proposals: "Initiatieven"
           polls: "Peilingen"
           layouts: "Website lay-out"

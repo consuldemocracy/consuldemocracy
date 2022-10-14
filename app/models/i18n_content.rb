@@ -92,8 +92,6 @@ class I18nContent < ApplicationRecord
       polls.index.section_footer.description
       legislation.processes.index.section_footer.title
       legislation.processes.index.section_footer.description
-      budgets.index.section_footer.title
-      budgets.index.section_footer.description
     ]
   end
 

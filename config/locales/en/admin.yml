@@ -789,6 +789,7 @@ en:
         information_texts_menu:
           basic: "Basic customization"
           debates: "Debates"
+          budgets: "Budgets"
           community: "Community"
           proposals: "Proposals"
           polls: "Polls"
