@@ -5,10 +5,25 @@
 // `.tenant-public` selector.
 //
 // You can use CSS variables to customize the colors. Here's an example
-// changing the brand color for just the main tenant.
+// changing the brand and main header colors for just the main tenant.
 //
 // .tenant-public {
-//   --brand: #351;
+//   --brand: #153;
+//   --main-header: #351;
+// }
+//
+// Some colors default to another color, so you don't have to change
+// both colors if you'd like them to be the same. For instance, the
+// `--main-header` color will use the `--brand` color if `--main-header`
+// is not defined.
+//
+// If, for instance, you're using a light color for the main header when
+// the default color is a dark one, you should also change the text
+// color. You can do that with a variable ending in `-contrast`, like:
+//
+// .tenant-public {
+//   --main-header: #{$white};
+//   --main-header-contrast: #{$black};
 // }
 //
 // NOTE: If you are **not** using mulitenancy, we recommend overwriting

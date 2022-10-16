@@ -1,10 +1,18 @@
-@mixin background-with-text-contrast($color, $property-name: null, $check-invert-selection: true) {
+@mixin background-with-text-contrast($color, $property-names: null, $check-invert-selection: true) {
   background-color: $color;
   color: color-pick-contrast($color);
 
-  @if $property-name {
-    background-color: var(--#{$property-name}, $color);
-    color: var(--#{$property-name}-contrast, color-pick-contrast($color));
+  @if $property-names {
+    $background-color: $color;
+    $text-color: color-pick-contrast($color);
+
+    @each $property-name in reverse-list($property-names) {
+      $background-color: var(--#{$property-name}, #{$background-color});
+      $text-color: var(--#{$property-name}-contrast, #{$text-color});
+    }
+
+    background-color: $background-color;
+    color: $text-color;
   }
 
   @if $check-invert-selection {
