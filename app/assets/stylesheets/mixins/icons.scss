@@ -1516,7 +1516,7 @@ $font-awesome-icons: (
 
   &:hover,
   &:focus {
-    color: $anchor-color-hover;
+    @include anchor-color-hover;
     text-decoration: none;
   }
 
