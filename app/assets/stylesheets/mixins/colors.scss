@@ -20,14 +20,27 @@
   }
 }
 
+@mixin text-color($color, $property-names: null) {
+  color: $color;
+
+  @if $property-names {
+    $text-color: $color;
+
+    @each $property-name in reverse-list($property-names) {
+      $text-color: var(--#{$property-name}, #{$text-color});
+    }
+
+    color: $text-color;
+  }
+}
+
 @mixin brand-background {
   @include background-with-text-contrast($brand, brand);
 }
 
 @mixin brand-color {
   @include normal-selection;
-  color: $brand;
-  color: var(--brand, $brand);
+  @include text-color($brand, brand);
 }
 
 @mixin brand-border($position: null, $width: 1px) {
@@ -63,6 +76,14 @@
       color: var(--brand, $brand);
     }
   }
+}
+
+@mixin brand-secondary-background {
+  @include background-with-text-contrast($brand-secondary, brand-secondary);
+}
+
+@mixin brand-secondary-color {
+  @include text-color($brand-secondary, brand-secondary);
 }
 
 %brand-background {

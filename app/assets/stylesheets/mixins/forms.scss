@@ -1,6 +1,16 @@
 @import "mixins/icons";
 @import "mixins/layouts";
 
+@mixin public-form-header-background($color, $final-color-width) {
+  background-image: linear-gradient(
+    to right,
+    #{$color} 0,
+    #{$color} calc(100% - #{$final-color-width} - 1px),
+    #{$body-background} calc(100% - #{$final-color-width}),
+    #{$body-background} 100%
+  );
+}
+
 @mixin public-form-header {
   $border-width: 4px;
 
@@ -14,8 +24,9 @@
     $icon-size-with-padding: $icon-size + $padding-right;
     $polygon-size: $icon-size / 2;
     @include background-till-left-of-screen;
-    @include background-with-text-contrast($brand-secondary);
+    @include brand-secondary-background;
     border: $border-width solid $brand-secondary;
+    border: $border-width solid var(--brand-secondary, $brand-secondary);
     border-bottom-right-radius: rem-calc(12);
     border-top-right-radius: rem-calc(12);
     margin-top: $line-height * 2;
@@ -30,14 +41,9 @@
 
     @include breakpoint(large) {
       $rounding-error: 6px;
+      @include public-form-header-background($brand-secondary, $icon-size-with-padding);
+      @include public-form-header-background(var(--brand-secondary, $brand-secondary), $icon-size-with-padding);
       padding-right: $icon-size-with-padding;
-      background-image: linear-gradient(
-        to right,
-        #{$brand-secondary} 0,
-        #{$brand-secondary} calc(100% - #{$icon-size-with-padding} - 1px),
-        #{$body-background} calc(100% - #{$icon-size-with-padding}),
-        #{$body-background} 100%
-      );
 
       &::after {
         background: $body-background;
@@ -90,7 +96,7 @@
         }
 
         &::before {
-          color: $brand-secondary;
+          @include brand-secondary-color;
           display: block;
           font-size: $icon-size;
           right: $padding-right;

@@ -1482,7 +1482,7 @@
   cursor: pointer;
 
   &:hover {
-    @include background-with-text-contrast($brand-secondary);
+    @include brand-secondary-background;
     text-decoration: none;
   }
 }
