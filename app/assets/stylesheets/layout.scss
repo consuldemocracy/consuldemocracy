@@ -95,10 +95,7 @@ p {
 }
 
 a {
-  &:hover,
-  &:active {
-    text-decoration: underline;
-  }
+  @include link;
 }
 
 a,
@@ -134,8 +131,15 @@ button,
 
 .button.hollow {
   @include normal-selection;
+  @include anchor-color;
   border: 1px solid;
-  color: $anchor-color;
+
+  &:hover,
+  &:focus {
+    $hover-color: scale-color($anchor-color, $lightness: $button-hollow-hover-lightness);
+    color: $hover-color;
+    color: var(--anchor-color-hover, $hover-color);
+  }
 }
 
 .button.hollow.error {
@@ -769,7 +773,7 @@ body > header,
       width: auto;
 
       &:hover {
-        color: $anchor-color;
+        @include anchor-color;
       }
 
       &.is-active {
@@ -938,8 +942,8 @@ footer {
 
 .categories a,
 .geozone a {
+  @include anchor-color;
   background: $highlight;
-  color: $anchor-color;
 
   &:hover,
   &.is-active {

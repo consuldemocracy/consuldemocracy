@@ -86,6 +86,14 @@
   @include text-color($brand-secondary, brand-secondary);
 }
 
+@mixin anchor-color {
+  @include text-color($anchor-color, [anchor-color, brand]);
+}
+
+@mixin anchor-color-hover {
+  @include text-color($anchor-color-hover, anchor-color-hover);
+}
+
 %brand-background {
   @include brand-background;
 }
