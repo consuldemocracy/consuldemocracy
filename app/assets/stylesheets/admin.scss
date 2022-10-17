@@ -632,7 +632,6 @@ code {
   }
 }
 
-.admin-content .select-geozone,
 .admin-content .select-heading {
 
   a {
@@ -651,24 +650,6 @@ code {
 
   .total-price {
     white-space: nowrap;
-  }
-}
-
-.admin {
-
-  .geozone {
-    background: #ececec;
-    border-radius: rem-calc(6);
-    color: $text;
-    display: inline-block;
-    font-size: $small-font-size;
-    margin-bottom: $line-height / 3;
-    padding: $line-height / 4 $line-height / 3;
-    text-decoration: none;
-
-    &:hover {
-      background: #e0e0e0;
-    }
   }
 }
 

@@ -11,7 +11,6 @@
 // 10. Official levels
 // 11. Tables
 // 12. Social
-// 13. Pages
 // 14. Verification
 // 15. Comments
 // 16. Flags
@@ -1628,51 +1627,6 @@ table {
   }
 }
 
-// 13. Pages
-// ---------
-
-.help {
-
-  li {
-    border-bottom: 1px solid $border;
-    font-weight: bold;
-    margin-left: rem-calc(-12);
-    position: relative;
-
-    span {
-      color: $text;
-      display: inline-block;
-      font-weight: normal;
-    }
-
-    &::after {
-      content: none;
-      color: $text-medium;
-      font-family: "icons" !important;
-      position: absolute;
-      right: 0;
-      top: 24px;
-
-      @include breakpoint(medium) {
-        content: "c";
-      }
-    }
-  }
-
-  a {
-    display: block;
-    padding: $line-height / 2;
-  }
-
-  a:hover {
-    background: $highlight;
-
-    span {
-      text-decoration: none;
-    }
-  }
-}
-
 // 14. Verification
 // ----------------
 
@@ -1739,15 +1693,6 @@ table {
     &.is-active {
       background: #43ac6a;
       color: #fff;
-    }
-  }
-
-  .send-letter {
-    background: none;
-    color: $link;
-
-    &:hover {
-      color: $link-hover;
     }
   }
 
