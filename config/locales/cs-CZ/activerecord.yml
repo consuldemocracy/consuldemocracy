@@ -541,7 +541,7 @@ cs:
         description: Popis
       poll/question/answer/translation:
         title: Answer
-        description: Popis
+        description: "Popis"
       poll/question/answer/video:
         title: Předmět
         url: Externí video
