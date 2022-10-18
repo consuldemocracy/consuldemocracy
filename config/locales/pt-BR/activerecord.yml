@@ -450,7 +450,7 @@ pt-BR:
         description: Descrição
       poll/question/answer/translation:
         title: Resposta
-        description: Descrição
+        description: "Descrição"
       poll/question/answer/video:
         title: Título
         url: Vídeo externo
