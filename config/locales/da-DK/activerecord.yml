@@ -449,7 +449,7 @@ da:
         description: Beskrivelse
       poll/question/answer/translation:
         title: Svar
-        description: Beskrivelse
+        description: "Beskrivelse"
       poll/question/answer/video:
         title: Titel
         url: Ekstern video
