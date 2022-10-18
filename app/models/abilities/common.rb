@@ -112,6 +112,9 @@ module Abilities
         can :answer, Poll::Question do |question|
           question.answerable_by?(user)
         end
+        can :destroy, Poll::Answer do |answer|
+          answer.author == user && answer.question.answerable_by?(user)
+        end
       end
 
       can [:create, :show], ProposalNotification, proposal: { author_id: user.id }

@@ -145,6 +145,9 @@ en:
       local_census_record:
         one: Local census record
         other: Local census records
+      votation_type:
+        one: Votation type
+        other: Votation types
     attributes:
       budget:
         name: "Name"
@@ -451,7 +454,7 @@ en:
         description: Description
       poll/question/answer/translation:
         title: Answer
-        description: Description
+        description: "Description (optional)"
       poll/question/answer/video:
         title: Title
         url: External video
@@ -514,6 +517,12 @@ en:
         document_number: Document number
         date_of_birth: Date of birth
         postal_code: Postal code
+      votation_type:
+        max_votes: Maximum number of votes
+        vote_type: Votation type
+      votation_type/vote_type:
+        unique: Unique answer
+        multiple: Multiple answers
     errors:
       models:
         user:

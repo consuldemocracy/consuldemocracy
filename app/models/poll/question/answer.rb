@@ -40,4 +40,8 @@ class Poll::Question::Answer < ApplicationRecord
   def total_votes_percentage
     question.answers_total_votes.zero? ? 0 : (total_votes * 100.0) / question.answers_total_votes
   end
+
+  def with_read_more?
+    description.present? || images.any? || documents.any? || videos.any?
+  end
 end

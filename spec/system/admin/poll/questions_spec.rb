@@ -65,6 +65,34 @@ describe "Admin poll questions", :admin do
 
       expect(page).not_to have_link "Create question"
     end
+
+    describe "With votation type" do
+      before do
+        poll = create(:poll, :future)
+        visit admin_poll_path(poll)
+        click_link "Create question"
+      end
+
+      scenario "Unique" do
+        fill_in "Question", with: "Question with unique answer"
+        select "Unique answer", from: "Votation type"
+
+        click_button "Save"
+
+        expect(page).to have_content "Question with unique answer"
+        expect(page).to have_content "Unique answer"
+      end
+
+      scenario "Multiple" do
+        fill_in "Question", with: "Question with multiple answers"
+        select "Multiple answers", from: "Votation type"
+        fill_in "Maximum number of votes", with: 6
+        click_button "Save"
+
+        expect(page).to have_content "Question with multiple answers"
+        expect(page).to have_content "Multiple answers"
+      end
+    end
   end
 
   scenario "Create from proposal" do

@@ -58,6 +58,28 @@ FactoryBot.define do
         create(:poll_question_answer, question: question, title: "No")
       end
     end
+
+    trait :abc do
+      after(:create) do |question, evaluator|
+        %w[A B C].each do |letter|
+          create(:poll_question_answer, question: question, title: "Answer #{letter}")
+        end
+      end
+    end
+
+    factory :poll_question_unique do
+      after(:create) do |question|
+        create(:votation_type_unique, questionable: question)
+      end
+    end
+
+    factory :poll_question_multiple do
+      transient { max_votes { 3 } }
+
+      after(:create) do |question, evaluator|
+        create(:votation_type_multiple, questionable: question, max_votes: evaluator.max_votes)
+      end
+    end
   end
 
   factory :poll_question_answer, class: "Poll::Question::Answer" do

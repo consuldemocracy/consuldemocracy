@@ -1,16 +1,22 @@
 <div class="poll-question-answers">
   <% if can?(:answer, question) && !question.poll.voted_in_booth?(current_user) %>
     <% question_answers.each do |question_answer| %>
-      <% if already_answered?(question_answer) && !voted_before_sign_in? %>
-        <span class="button answered"
-              title="<%= t("poll_questions.show.voted", answer: question_answer.title) %>">
+      <% if already_answered?(question_answer) %>
+        <%= button_to question_answer_path(question, user_answer(question_answer)),
+                      method: :delete,
+                      remote: true,
+                      title: t("poll_questions.show.voted", answer: question_answer.title),
+                      class: "button answered",
+                      "aria-pressed": true do %>
           <%= question_answer.title %>
-        </span>
+        <% end %>
       <% else %>
         <%= button_to answer_question_path(question, answer: question_answer.title),
                       remote: true,
                       title: t("poll_questions.show.vote_answer", answer: question_answer.title),
-                      class: "button secondary hollow" do %>
+                      class: "button secondary hollow",
+                      "aria-pressed": false,
+                      disabled: disable_answer?(question_answer) do %>
           <%= question_answer.title %>
         <% end %>
       <% end %>

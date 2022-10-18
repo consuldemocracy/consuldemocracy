@@ -183,18 +183,6 @@ describe "Polls" do
       expect("Second question").to appear_before("Third question")
     end
 
-    scenario "More info answers appear in the given order" do
-      question = create(:poll_question, poll: poll)
-      answer1 = create(:poll_question_answer, title: "First", question: question, given_order: 2)
-      answer2 = create(:poll_question_answer, title: "Second", question: question, given_order: 1)
-
-      visit poll_path(poll)
-
-      within("div.poll-more-info-answers") do
-        expect(answer2.title).to appear_before(answer1.title)
-      end
-    end
-
     scenario "Buttons to slide through images work back and forth" do
       question = create(:poll_question, :yes_no, poll: poll)
       create(:image, imageable: question.question_answers.last, title: "The no movement")
@@ -258,10 +246,10 @@ describe "Polls" do
       visit poll_path(poll)
 
       within("#poll_question_#{question.id}_answers") do
-        click_button "Yes"
+        click_button "Vote Yes"
 
-        expect(page).not_to have_button "Yes"
-        expect(page).to have_button "No"
+        expect(page).to have_button "You have voted Yes"
+        expect(page).to have_button "Vote No"
       end
     end
 
@@ -278,51 +266,13 @@ describe "Polls" do
       within("#poll_question_#{question.id}_answers") do
         click_button "Yes"
 
-        expect(page).not_to have_button "Yes"
-        expect(page).to have_button "No"
+        expect(page).to have_button "You have voted Yes"
+        expect(page).to have_button "Vote No"
 
         click_button "No"
 
-        expect(page).not_to have_button "No"
-        expect(page).to have_button "Yes"
-      end
-    end
-
-    scenario "Level 2 votes, signs out, signs in, votes again" do
-      poll.update!(geozone_restricted: true)
-      poll.geozones << geozone
-
-      question = create(:poll_question, :yes_no, poll: poll)
-      user = create(:user, :level_two, geozone: geozone)
-
-      login_as user
-      visit poll_path(poll)
-
-      within("#poll_question_#{question.id}_answers") do
-        click_button "Yes"
-
-        expect(page).not_to have_button "Yes"
-        expect(page).to have_button "No"
-      end
-
-      click_link "Sign out"
-      login_as user
-      visit poll_path(poll)
-      within("#poll_question_#{question.id}_answers") do
-        click_button "Yes"
-
-        expect(page).not_to have_button "Yes"
-        expect(page).to have_button "No"
-      end
-
-      click_link "Sign out"
-      login_as user
-      visit poll_path(poll)
-      within("#poll_question_#{question.id}_answers") do
-        click_button "No"
-
-        expect(page).not_to have_button "No"
-        expect(page).to have_button "Yes"
+        expect(page).to have_button "Vote Yes"
+        expect(page).to have_button "You have voted No"
       end
     end
 
@@ -359,7 +309,7 @@ describe "Polls" do
       within("#poll_question_#{question.id}_answers") do
         click_button "Yes"
 
-        expect(page).not_to have_button "Yes"
+        expect(page).to have_button "You have voted Yes"
         expect(page).to have_button "No"
       end
     end

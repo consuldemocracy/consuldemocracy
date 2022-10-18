@@ -636,6 +636,10 @@ es:
     show:
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"
+    description:
+      unique: "Puedes seleccionar un máximo de 1 respuesta."
+      multiple: "Puedes seleccionar un máximo de %{maximum} respuestas."
+    read_more_about: "Leer más:"
   proposal_notifications:
     new:
       title: "Enviar notificación"

@@ -1698,6 +1698,15 @@ ActiveRecord::Schema.define(version: 2022_09_15_154808) do
     t.index ["user_id"], name: "index_visits_on_user_id"
   end
 
+  create_table "votation_types", force: :cascade do |t|
+    t.integer "questionable_id"
+    t.string "questionable_type"
+    t.integer "vote_type"
+    t.integer "max_votes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "votes", id: :serial, force: :cascade do |t|
     t.string "votable_type"
     t.integer "votable_id"

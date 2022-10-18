@@ -18,31 +18,33 @@ describe Polls::Questions::AnswersComponent do
 
     expect(page).to have_button "Yes"
     expect(page).to have_button "No"
+    expect(page).to have_css "button[aria-pressed='false']", count: 2
   end
 
-  it "renders a span instead of a button for existing user answers" do
+  it "renders button to destroy current user answers" do
     user = create(:user, :verified)
-    allow(user).to receive(:current_sign_in_at).and_return(user.created_at)
     create(:poll_answer, author: user, question: question, answer: "Yes")
     sign_in(user)
 
     render_inline Polls::Questions::AnswersComponent.new(question)
 
-    expect(page).to have_selector "span", text: "Yes"
-    expect(page).not_to have_button "Yes"
-    expect(page).to have_button "No"
+    expect(page).to have_button "You have voted Yes"
+    expect(page).to have_button "Vote No"
+    expect(page).to have_css "button[aria-pressed='true']", text: "Yes"
   end
 
-  it "hides current answer and shows buttons in successive sessions" do
+  it "renders disabled buttons when max votes is reached" do
     user = create(:user, :verified)
-    create(:poll_answer, author: user, question: question, answer: "Yes")
-    allow(user).to receive(:current_sign_in_at).and_return(Time.current)
+    question = create(:poll_question_multiple, :abc, max_votes: 2, author: user)
+    create(:poll_answer, author: user, question: question, answer: "Answer A")
+    create(:poll_answer, author: user, question: question, answer: "Answer C")
     sign_in(user)
 
     render_inline Polls::Questions::AnswersComponent.new(question)
 
-    expect(page).to have_button "Yes"
-    expect(page).to have_button "No"
+    expect(page).to have_button "You have voted Answer A"
+    expect(page).to have_button "Vote Answer B", disabled: true
+    expect(page).to have_button "You have voted Answer C"
   end
 
   it "when user is not signed in, renders answers links pointing to user sign in path" do

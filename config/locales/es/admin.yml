@@ -1106,6 +1106,10 @@ es:
         alert: "Esta acción eliminará la votación y todas sus preguntas asociadas."
         success_notice: "Votación eliminada correctamente"
         unable_notice: "No se pueden eliminar votaciones con votos"
+      votation_type:
+        title: "Tipo de votación"
+        unique_description: "Solo se puede responder a la pregunta con una única respuesta."
+        multiple_description: "Permite elegir más de una respuesta. Se puede elegir el número máximo de respuestas."
     questions:
       index:
         title: "Preguntas de votaciones"
