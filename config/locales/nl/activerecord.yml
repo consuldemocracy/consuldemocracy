@@ -446,7 +446,7 @@ nl:
         description: Omschrijving
       poll/question/answer/translation:
         title: Antwoord
-        description: Omschrijving
+        description: "Omschrijving"
       poll/question/answer/video:
         title: Titel
         url: Externe video
