@@ -495,7 +495,7 @@ ro:
         description: Descriere
       poll/question/answer/translation:
         title: Răspuns
-        description: Descriere
+        description: "Descriere"
       poll/question/answer/video:
         title: Titlu
         url: Video extern
