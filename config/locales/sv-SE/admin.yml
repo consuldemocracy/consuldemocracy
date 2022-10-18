@@ -1106,6 +1106,10 @@ sv:
         alert: "Denna åtgärd tar bort omröstningen och alla dess frågor."
         success_notice: "Omröstningen har raderats"
         unable_notice: "Det går inte att radera en omröstning som har röster"
+      votation_type:
+        title: "Omröstningstyp"
+        unique_description: "Det går bara att svara på frågan en gång."
+        multiple_description: "Gör det möjligt att välja flera svar. Det går att ställa in maximalt antal svar."
     questions:
       index:
         title: "Frågor"
