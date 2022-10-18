@@ -3,12 +3,15 @@ class MachineLearning
   attr_accessor :job
 
   SCRIPTS_FOLDER = Rails.root.join("public", "machine_learning", "scripts").freeze
-  DATA_FOLDER = Rails.root.join("public", "machine_learning", "data").freeze
 
   def initialize(job)
     @job = job
     @user = job.user
     @previous_modified_date = set_previous_modified_date
+  end
+
+  def data_folder
+    self.class.data_folder
   end
 
   def run
@@ -81,17 +84,33 @@ class MachineLearning
       "comments.json"
     end
 
+    def data_folder
+      Rails.root.join("public", tenant_data_folder)
+    end
+
+    def tenant_data_folder
+      File.join(tenant_subfolder, "machine_learning", "data").delete_prefix("/")
+    end
+
+    def tenant_subfolder
+      if Tenant.default?
+        ""
+      else
+        File.join("tenants", Tenant.current_schema)
+      end
+    end
+
     def data_output_files
       files = { tags: [], related_content: [], comments_summary: [] }
 
-      files[:tags] << proposals_tags_filename if File.exists?(DATA_FOLDER.join(proposals_tags_filename))
-      files[:tags] << proposals_taggings_filename if File.exists?(DATA_FOLDER.join(proposals_taggings_filename))
-      files[:tags] << investments_tags_filename if File.exists?(DATA_FOLDER.join(investments_tags_filename))
-      files[:tags] << investments_taggings_filename if File.exists?(DATA_FOLDER.join(investments_taggings_filename))
-      files[:related_content] << proposals_related_filename if File.exists?(DATA_FOLDER.join(proposals_related_filename))
-      files[:related_content] << investments_related_filename if File.exists?(DATA_FOLDER.join(investments_related_filename))
-      files[:comments_summary] << proposals_comments_summary_filename if File.exists?(DATA_FOLDER.join(proposals_comments_summary_filename))
-      files[:comments_summary] << investments_comments_summary_filename if File.exists?(DATA_FOLDER.join(investments_comments_summary_filename))
+      files[:tags] << proposals_tags_filename if File.exists?(data_folder.join(proposals_tags_filename))
+      files[:tags] << proposals_taggings_filename if File.exists?(data_folder.join(proposals_taggings_filename))
+      files[:tags] << investments_tags_filename if File.exists?(data_folder.join(investments_tags_filename))
+      files[:tags] << investments_taggings_filename if File.exists?(data_folder.join(investments_taggings_filename))
+      files[:related_content] << proposals_related_filename if File.exists?(data_folder.join(proposals_related_filename))
+      files[:related_content] << investments_related_filename if File.exists?(data_folder.join(investments_related_filename))
+      files[:comments_summary] << proposals_comments_summary_filename if File.exists?(data_folder.join(proposals_comments_summary_filename))
+      files[:comments_summary] << investments_comments_summary_filename if File.exists?(data_folder.join(investments_comments_summary_filename))
 
       files
     end
@@ -110,10 +129,10 @@ class MachineLearning
         proposals_comments_summary_filename,
         investments_comments_summary_filename
       ]
-      json = Dir[DATA_FOLDER.join("*.json")].map do |full_path_filename|
+      json = Dir[data_folder.join("*.json")].map do |full_path_filename|
         full_path_filename.split("/").last
       end
-      csv = Dir[DATA_FOLDER.join("*.csv")].map do |full_path_filename|
+      csv = Dir[data_folder.join("*.csv")].map do |full_path_filename|
         full_path_filename.split("/").last
       end
       (json + csv - excluded).sort
@@ -152,7 +171,7 @@ class MachineLearning
     end
 
     def data_path(filename)
-      "/machine_learning/data/" + filename
+      "/#{tenant_data_folder}/#{filename}"
     end
 
     def script_kinds
@@ -196,29 +215,35 @@ class MachineLearning
   private
 
     def create_data_folder
-      FileUtils.mkdir_p DATA_FOLDER
+      FileUtils.mkdir_p data_folder
     end
 
     def export_proposals_to_json
       create_data_folder
-      filename = DATA_FOLDER.join(MachineLearning.proposals_filename)
+      filename = data_folder.join(MachineLearning.proposals_filename)
       Proposal::Exporter.new.to_json_file(filename)
     end
 
     def export_budget_investments_to_json
       create_data_folder
-      filename = DATA_FOLDER.join(MachineLearning.investments_filename)
+      filename = data_folder.join(MachineLearning.investments_filename)
       Budget::Investment::Exporter.new(Array.new).to_json_file(filename)
     end
 
     def export_comments_to_json
       create_data_folder
-      filename = DATA_FOLDER.join(MachineLearning.comments_filename)
+      filename = data_folder.join(MachineLearning.comments_filename)
       Comment::Exporter.new.to_json_file(filename)
     end
 
     def run_machine_learning_scripts
-      output = `cd #{SCRIPTS_FOLDER} && python #{job.script} 2>&1`
+      command = if Tenant.default?
+                  "python #{job.script}"
+                else
+                  "CONSUL_TENANT=#{Tenant.current_schema} python #{job.script}"
+                end
+
+      output = `cd #{SCRIPTS_FOLDER} && #{command} 2>&1`
       result = $?.success?
       if result == false
         job.update!(finished_at: Time.current, error: output)
@@ -254,7 +279,7 @@ class MachineLearning
     end
 
     def import_ml_proposals_comments_summary
-      json_file = DATA_FOLDER.join(MachineLearning.proposals_comments_summary_filename)
+      json_file = data_folder.join(MachineLearning.proposals_comments_summary_filename)
       json_data = JSON.parse(File.read(json_file)).each(&:deep_symbolize_keys!)
       json_data.each do |attributes|
         attributes.delete(:id)
@@ -266,7 +291,7 @@ class MachineLearning
     end
 
     def import_ml_investments_comments_summary
-      json_file = DATA_FOLDER.join(MachineLearning.investments_comments_summary_filename)
+      json_file = data_folder.join(MachineLearning.investments_comments_summary_filename)
       json_data = JSON.parse(File.read(json_file)).each(&:deep_symbolize_keys!)
       json_data.each do |attributes|
         attributes.delete(:id)
@@ -278,7 +303,7 @@ class MachineLearning
     end
 
     def import_proposals_related_content
-      json_file = DATA_FOLDER.join(MachineLearning.proposals_related_filename)
+      json_file = data_folder.join(MachineLearning.proposals_related_filename)
       json_data = JSON.parse(File.read(json_file)).each(&:deep_symbolize_keys!)
       json_data.each do |related|
         id = related.delete(:id)
@@ -306,7 +331,7 @@ class MachineLearning
     end
 
     def import_budget_investments_related_content
-      json_file = DATA_FOLDER.join(MachineLearning.investments_related_filename)
+      json_file = data_folder.join(MachineLearning.investments_related_filename)
       json_data = JSON.parse(File.read(json_file)).each(&:deep_symbolize_keys!)
       json_data.each do |related|
         id = related.delete(:id)
@@ -335,7 +360,7 @@ class MachineLearning
 
     def import_ml_proposals_tags
       ids = {}
-      json_file = DATA_FOLDER.join(MachineLearning.proposals_tags_filename)
+      json_file = data_folder.join(MachineLearning.proposals_tags_filename)
       json_data = JSON.parse(File.read(json_file)).each(&:deep_symbolize_keys!)
       json_data.each do |attributes|
         if attributes[:name].present?
@@ -348,7 +373,7 @@ class MachineLearning
         end
       end
 
-      json_file = DATA_FOLDER.join(MachineLearning.proposals_taggings_filename)
+      json_file = data_folder.join(MachineLearning.proposals_taggings_filename)
       json_data = JSON.parse(File.read(json_file)).each(&:deep_symbolize_keys!)
       json_data.each do |attributes|
         if attributes[:tag_id].present?
@@ -365,7 +390,7 @@ class MachineLearning
 
     def import_ml_investments_tags
       ids = {}
-      json_file = DATA_FOLDER.join(MachineLearning.investments_tags_filename)
+      json_file = data_folder.join(MachineLearning.investments_tags_filename)
       json_data = JSON.parse(File.read(json_file)).each(&:deep_symbolize_keys!)
       json_data.each do |attributes|
         if attributes[:name].present?
@@ -378,7 +403,7 @@ class MachineLearning
         end
       end
 
-      json_file = DATA_FOLDER.join(MachineLearning.investments_taggings_filename)
+      json_file = data_folder.join(MachineLearning.investments_taggings_filename)
       json_data = JSON.parse(File.read(json_file)).each(&:deep_symbolize_keys!)
       json_data.each do |attributes|
         if attributes[:tag_id].present?
@@ -421,13 +446,13 @@ class MachineLearning
     end
 
     def last_modified_date_for(filename)
-      return nil unless File.exists? DATA_FOLDER.join(filename)
+      return nil unless File.exists? data_folder.join(filename)
 
-      File.mtime DATA_FOLDER.join(filename)
+      File.mtime data_folder.join(filename)
     end
 
     def updated_file?(filename)
-      return false unless File.exists? DATA_FOLDER.join(filename)
+      return false unless File.exists? data_folder.join(filename)
       return true unless previous_modified_date[filename].present?
 
       last_modified_date_for(filename) > previous_modified_date[filename]
