@@ -446,7 +446,7 @@ el:
         description: Περιγραφή
       poll/question/answer/translation:
         title: Απάντηση
-        description: Περιγραφή
+        description: "Περιγραφή"
       poll/question/answer/video:
         title: Τίτλος
         url: Εξωτερικό βίντεο
