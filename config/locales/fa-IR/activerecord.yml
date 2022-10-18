@@ -357,7 +357,7 @@ fa:
         description: توضیحات
       poll/question/answer/translation:
         title: پاسخ
-        description: توضیحات
+        description: "توضیحات"
       poll/question/answer/video:
         title: عنوان
         url: ویدیوهای خارجی
