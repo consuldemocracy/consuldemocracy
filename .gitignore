@@ -25,6 +25,7 @@ tmp/
 /public/tenants/*/sitemap.xml
 /public/assets/
 /public/machine_learning/data/
+/public/tenants/*/machine_learning/data/
 
 # Bundler config, cache and gemsets
 .bundle/
