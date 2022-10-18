@@ -60,9 +60,13 @@ tqdm_notebook = True
 
 
 # In[ ]:
+import os
 
+if os.environ.get("CONSUL_TENANT"):
+    data_path = '../data/tenants/' + os.environ["CONSUL_TENANT"]
+else:
+    data_path = '../data'
 
-data_path = '../data'
 config_file = 'budgets_summary_comments_textrank.ini'
 logging_file ='budgets_summary_comments_textrank.log'
 

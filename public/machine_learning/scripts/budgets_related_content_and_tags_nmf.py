@@ -63,14 +63,17 @@ tqdm_notebook = True
 
 
 # In[2]:
+import os
 
+if os.environ.get("CONSUL_TENANT"):
+    data_path = '../data/tenants/' + os.environ["CONSUL_TENANT"]
+else:
+    data_path = '../data'
 
-data_path = '../data'
 config_file = 'budgets_related_content_and_tags_nmf.ini'
 logging_file ='budgets_related_content_and_tags_nmf.log'
 
 # Read the configuration file
-import os
 import configparser
 config = configparser.ConfigParser()
 check_file(os.path.join(data_path,config_file))

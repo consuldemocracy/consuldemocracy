@@ -63,9 +63,13 @@ tqdm_notebook = True
 
 
 # In[2]:
+import os
 
+if os.environ.get("CONSUL_TENANT"):
+    data_path = '../data/tenants/' + os.environ["CONSUL_TENANT"]
+else:
+    data_path = '../data'
 
-data_path = '../data'
 config_file = 'proposals_related_content_and_tags_nmf.ini'
 logging_file ='proposals_related_content_and_tags_nmf.log'
 
