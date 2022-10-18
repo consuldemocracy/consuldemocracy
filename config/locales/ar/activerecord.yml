@@ -574,7 +574,7 @@ ar:
         description: الوصف
       poll/question/answer/translation:
         title: الإجابة
-        description: الوصف
+        description: "الوصف"
       poll/question/answer/video:
         title: عنوان
         url: فيديو خارجي
