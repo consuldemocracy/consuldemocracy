@@ -425,7 +425,7 @@ es:
         description: Descripción
       poll/question/answer/translation:
         title: Respuesta
-        description: Descripción
+        description: "Descripción"
       poll/question/answer/video:
         title: Título
         url: Vídeo externo
