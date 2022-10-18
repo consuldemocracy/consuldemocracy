@@ -635,6 +635,10 @@ sv:
     show:
       vote_answer: "Rösta på %{answer}"
       voted: "Du har röstat på %{answer}"
+    description:
+      unique: "Du kan välja maximalt 1 svar."
+      multiple: "Du kan välja maximalt %{maximum} svar."
+    read_more_about: "Läs mer om:"
   proposal_notifications:
     new:
       title: "Skicka meddelande"
