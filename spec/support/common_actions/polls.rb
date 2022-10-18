@@ -3,8 +3,10 @@ module Polls
     visit poll_path(poll)
 
     within("#poll_question_#{question.id}_answers") do
-      click_link answer.to_s
-      expect(page).not_to have_link(answer.to_s)
+      click_button answer
+
+      expect(page).to have_css("span.answered", text: answer)
+      expect(page).not_to have_button(answer)
     end
   end
 

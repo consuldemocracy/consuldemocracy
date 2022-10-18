@@ -23,8 +23,8 @@ describe "Voter" do
       visit poll_path(poll)
 
       within("#poll_question_#{question.id}_answers") do
-        click_link answer_yes.title
-        expect(page).not_to have_link(answer_yes.title)
+        click_button answer_yes.title
+        expect(page).not_to have_button(answer_yes.title)
       end
 
       expect(Poll::Voter.count).to eq(1)
@@ -38,8 +38,8 @@ describe "Voter" do
       visit poll_path(poll)
 
       within("#poll_question_#{question.id}_answers") do
-        expect(page).not_to have_link(answer_yes.title, href: "/questions/#{question.id}/answer?answer=#{answer_yes.title}&token=")
-        expect(page).not_to have_link(answer_no.title, href: "/questions/#{question.id}/answer?answer=#{answer_no.title}&token=")
+        expect(page).to have_link(answer_yes.title, href: verification_path)
+        expect(page).to have_link(answer_no.title, href: verification_path)
       end
 
       expect(page).to have_content("You must verify your account in order to answer")
@@ -145,7 +145,7 @@ describe "Voter" do
         visit poll_path(poll)
 
         within("#poll_question_#{question.id}_answers") do
-          expect(page).not_to have_link(answer_yes.title)
+          expect(page).not_to have_button(answer_yes.title)
         end
         expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
         expect(Poll::Voter.count).to eq(1)
@@ -173,7 +173,7 @@ describe "Voter" do
 
         expect(page).to have_content "You have already participated in this poll. If you vote again it will be overwritten."
         within("#poll_question_#{question.id}_answers") do
-          expect(page).not_to have_link(answer_yes.title)
+          expect(page).not_to have_button(answer_yes.title)
         end
 
         unfreeze_time
@@ -184,8 +184,8 @@ describe "Voter" do
         visit poll_path(poll)
 
         within("#poll_question_#{question.id}_answers") do
-          expect(page).to have_link(answer_yes.title)
-          expect(page).to have_link(answer_no.title)
+          expect(page).to have_button(answer_yes.title)
+          expect(page).to have_button(answer_no.title)
         end
       end
     end
@@ -209,7 +209,7 @@ describe "Voter" do
       visit poll_path(poll)
 
       within("#poll_question_#{question.id}_answers") do
-        expect(page).not_to have_link(answer_yes.title)
+        expect(page).not_to have_button(answer_yes.title)
       end
 
       expect(page).to have_content "You have already participated in a physical booth. You can not participate again."

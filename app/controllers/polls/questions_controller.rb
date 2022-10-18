@@ -6,11 +6,17 @@ class Polls::QuestionsController < ApplicationController
 
   def answer
     answer = @question.answers.find_or_initialize_by(author: current_user)
-    token = params[:token]
 
     answer.answer = params[:answer]
-    answer.save_and_record_voter_participation(token)
+    answer.save_and_record_voter_participation
 
-    @answers_by_question_id = { @question.id => params[:answer] }
+    respond_to do |format|
+      format.html do
+        redirect_to request.referer
+      end
+      format.js do
+        render :answer
+      end
+    end
   end
 end
