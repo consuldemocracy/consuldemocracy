@@ -53,6 +53,8 @@ module ApplicationHelper
 
     if image
       polymorphic_path(image)
+    elsif AssetFinder.find_asset(File.join(Tenant.subfolder_path, filename))
+      File.join(Tenant.subfolder_path, filename)
     else
       filename
     end
