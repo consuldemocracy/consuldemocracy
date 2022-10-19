@@ -6,7 +6,7 @@ module ActiveStorage
       if Tenant.default?
         super
       else
-        super.sub(root, File.join(root, "tenants", Tenant.current_schema))
+        super.sub(root, File.join(root, Tenant.subfolder_path))
       end
     end
   end

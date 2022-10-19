@@ -14,8 +14,4 @@ Disallow: /*?*locale-switcher
 Disallow: /*?*filter
 Disallow: user_id
 
-<% if Tenant.default? %>
-Sitemap: <%= "#{root_url}sitemap.xml" %>
-<% else %>
-Sitemap: <%= "#{root_url}tenants/#{Tenant.current_schema}/sitemap.xml" %>
-<% end %>
+Sitemap: <%= "#{root_url}#{Tenant.path_with_subfolder("sitemap.xml")}" %>

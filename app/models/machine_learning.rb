@@ -89,15 +89,7 @@ class MachineLearning
     end
 
     def tenant_data_folder
-      File.join(tenant_subfolder, "machine_learning", "data").delete_prefix("/")
-    end
-
-    def tenant_subfolder
-      if Tenant.default?
-        ""
-      else
-        File.join("tenants", Tenant.current_schema)
-      end
+      Tenant.path_with_subfolder("machine_learning/data")
     end
 
     def data_output_files
