@@ -303,9 +303,6 @@ describe MachineLearning do
 
   describe "#export_proposals_to_json" do
     it "creates a JSON file with all proposals" do
-      require "fileutils"
-      FileUtils.mkdir_p Rails.root.join("public", "machine_learning", "data")
-
       first_proposal = create(:proposal)
       last_proposal = create(:proposal)
 
@@ -332,9 +329,6 @@ describe MachineLearning do
 
   describe "#export_budget_investments_to_json" do
     it "creates a JSON file with all budget investments" do
-      require "fileutils"
-      FileUtils.mkdir_p Rails.root.join("public", "machine_learning", "data")
-
       first_budget_investment = create(:budget_investment)
       last_budget_investment = create(:budget_investment)
 
@@ -359,9 +353,6 @@ describe MachineLearning do
 
   describe "#export_comments_to_json" do
     it "creates a JSON file with all comments" do
-      require "fileutils"
-      FileUtils.mkdir_p Rails.root.join("public", "machine_learning", "data")
-
       first_comment = create(:comment)
       last_comment = create(:comment)
 
