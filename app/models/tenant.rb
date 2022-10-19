@@ -71,6 +71,18 @@ class Tenant < ApplicationRecord
     end
   end
 
+  def self.subfolder_path
+    if default?
+      ""
+    else
+      File.join("tenants", current_schema)
+    end
+  end
+
+  def self.path_with_subfolder(filename_or_folder)
+    File.join(subfolder_path, filename_or_folder).delete_prefix("/")
+  end
+
   def self.default?
     current_schema == "public"
   end

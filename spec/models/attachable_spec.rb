@@ -5,6 +5,7 @@ describe Attachable do
     file_path = build(:image).file_path
 
     expect(file_path).to include "storage/"
+    expect(file_path).not_to include "storage//"
     expect(file_path).not_to include "tenants"
   end
 

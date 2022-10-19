@@ -10,12 +10,7 @@ SitemapGenerator::Sitemap.verbose = false if Rails.env.test?
 
 Tenant.run_on_each do
   SitemapGenerator::Sitemap.default_host = root_url(Tenant.current_url_options)
-
-  if Tenant.default?
-    SitemapGenerator::Sitemap.sitemaps_path = nil
-  else
-    SitemapGenerator::Sitemap.sitemaps_path = "tenants/#{Tenant.current_schema}"
-  end
+  SitemapGenerator::Sitemap.sitemaps_path = Tenant.subfolder_path
 
   SitemapGenerator::Sitemap.create do
     add help_path
