@@ -7,7 +7,7 @@ class Budget::Investment::Exporter
 
   def to_csv
 
-    string = CSV.generate(col_sep: ';', encoding: 'ISO8859-1', headers: true) do |csv|
+    string = CSV.generate(col_sep: ';', encoding: 'UTF-8', headers: true) do |csv|
       csv << headers
       @investments.each { |investment| csv << csv_values(investment) }
     end
