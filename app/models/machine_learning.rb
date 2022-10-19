@@ -195,17 +195,24 @@ class MachineLearning
 
   private
 
+    def create_data_folder
+      FileUtils.mkdir_p DATA_FOLDER
+    end
+
     def export_proposals_to_json
+      create_data_folder
       filename = DATA_FOLDER.join(MachineLearning.proposals_filename)
       Proposal::Exporter.new.to_json_file(filename)
     end
 
     def export_budget_investments_to_json
+      create_data_folder
       filename = DATA_FOLDER.join(MachineLearning.investments_filename)
       Budget::Investment::Exporter.new(Array.new).to_json_file(filename)
     end
 
     def export_comments_to_json
+      create_data_folder
       filename = DATA_FOLDER.join(MachineLearning.comments_filename)
       Comment::Exporter.new.to_json_file(filename)
     end

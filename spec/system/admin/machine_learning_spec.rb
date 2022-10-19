@@ -207,8 +207,7 @@ describe "Machine learning" do
   end
 
   scenario "Show output files info on settins page" do
-    require "fileutils"
-    FileUtils.mkdir_p Rails.root.join("public", "machine_learning", "data")
+    FileUtils.mkdir_p MachineLearning::DATA_FOLDER
 
     allow_any_instance_of(MachineLearning).to receive(:run) do
       MachineLearningJob.first.update!(finished_at: 2.minutes.from_now)
