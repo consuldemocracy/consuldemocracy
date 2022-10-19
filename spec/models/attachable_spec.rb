@@ -14,6 +14,7 @@ describe Attachable do
     image = create(:image, attachment: fixture_file_upload("clippy.jpg"))
 
     expect(image.file_path).to include "storage/"
+    expect(image.file_path).not_to include "storage//"
     expect(image.file_path).not_to include "image-master"
   end
 end

@@ -38,6 +38,14 @@ class Tenant < ApplicationRecord
     Apartment::Tenant.current
   end
 
+  def self.subfolder_path
+    if default?
+      ""
+    else
+      File.join("tenants", current_schema)
+    end
+  end
+
   def self.current_host
     host_for(current_schema)
   end

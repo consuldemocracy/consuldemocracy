@@ -90,11 +90,7 @@ class MachineLearning
     end
 
     def data_subfolder
-      if Tenant.default?
-        ""
-      else
-        File.join("tenants", Tenant.current_schema)
-      end
+      Tenant.subfolder_path
     end
 
     def data_output_files
