@@ -66,6 +66,9 @@ Layout/IndentationWidth:
 Layout/LeadingEmptyLines:
   Enabled: true
 
+Layout/LineEndStringConcatenationIndentation:
+  Enabled: true
+
 Layout/LineLength:
   Max: 110
   Severity: refactor
@@ -174,6 +177,9 @@ Lint/EmptyFile:
   Enabled: true
 
 Lint/LiteralAsCondition:
+  Enabled: true
+
+Lint/NonAtomicFileOperation:
   Enabled: true
 
 Lint/ParenthesesAsGroupedExpression:
@@ -482,6 +488,12 @@ Style/ClassVars:
 Style/CollectionMethods:
   Enabled: true
 
+Style/FileRead:
+  Enabled: true
+
+Style/FileWrite:
+  Enabled: true
+
 Style/HashConversion:
   Enabled: true
 
@@ -498,6 +510,9 @@ Style/IdenticalConditionalBranches:
   Enabled: true
 
 Style/IfWithBooleanLiteralBranches:
+  Enabled: true
+
+Style/MapToHash:
   Enabled: true
 
 Style/MethodDefParentheses:

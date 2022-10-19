@@ -113,9 +113,9 @@ class I18nContent < ApplicationRecord
 
   def self.translations_hash(locale)
     Rails.cache.fetch(translation_class.where(locale: locale)) do
-      all.map do |content|
+      all.to_h do |content|
         [content.key, translation_class.find_by(i18n_content_id: content, locale: locale)&.value]
-      end.to_h
+      end
     end
   end
 
