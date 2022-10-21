@@ -145,6 +145,9 @@ tr:
       local_census_record:
         one: Yerel nüfus sayımı kaydı
         other: Yerel nüfus sayımı kayıtları
+      votation_type:
+        one: Oylama türü
+        other: Oylama türleri
     attributes:
       budget:
         name: "İsim"
@@ -514,6 +517,12 @@ tr:
         document_number: Belge numarası
         date_of_birth: Doğum tarihi
         postal_code: Posta kodu
+      votation_type:
+        max_votes: En fazla oy sayısı
+        vote_type: Oylama türü
+      votation_type/vote_type:
+        unique: Tekil yanıt
+        multiple: Birden çok yanıt
     errors:
       models:
         user:
