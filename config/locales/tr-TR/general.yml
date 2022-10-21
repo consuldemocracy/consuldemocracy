@@ -635,6 +635,10 @@ tr:
     show:
       vote_answer: "Oy %{answer}"
       voted: "%{answer} 'a oy verdiniz"
+    description:
+      unique: "En fazla 1 yanıt seçebilirsiniz."
+      multiple: "En fazla %{maximum} yanıt seçebilirsiniz."
+    read_more_about: "Ayrıntılı bilgi alın:"
   proposal_notifications:
     new:
       title: "Mesaj gönder"
