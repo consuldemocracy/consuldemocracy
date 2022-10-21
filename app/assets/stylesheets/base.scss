@@ -797,7 +797,7 @@ body > header,
 
 .locale .locale-form {
 
-  @include breakpoint(small-only) {
+  @include breakpoint(small only) {
     padding-left: $line-height / 4;
   }
 }
