@@ -1106,6 +1106,10 @@ tr:
         alert: "Bu işlem anketi ve onunla ilişkili tüm soruları kaldıracaktır."
         success_notice: "Anket başarıyla silindi"
         unable_notice: "Oyu olan bir anketi silemezsiniz"
+      votation_type:
+        title: "Oylama türü"
+        unique_description: "Soru yalnızca bir kez yanıtlanabilir."
+        multiple_description: "Birden fazla yanıt seçilmesine izin verir. En fazla yanıt sayısı ayarlanabilir."
     questions:
       index:
         title: "Sorular"
