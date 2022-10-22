@@ -1,6 +1,10 @@
-@mixin brand-background($color: $brand, $invert-selection: true) {
+@mixin background-with-text-contrast($color) {
   background-color: $color;
   color: color-pick-contrast($color);
+}
+
+@mixin brand-background($color: $brand, $invert-selection: true) {
+  @include background-with-text-contrast($color);
 
   @if $invert-selection {
     @include inverted-selection;
