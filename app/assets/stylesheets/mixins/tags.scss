@@ -16,7 +16,7 @@
 %tag {
   background: #ececec;
   border-radius: rem-calc(6);
-  color: $text;
+  color: color-pick-contrast(#ececec);
   display: inline-block;
   font-size: $small-font-size;
   margin-bottom: $line-height / 3;

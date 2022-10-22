@@ -2,7 +2,7 @@
 
   .card-divider {
     background: $primary-color;
-    color: $white;
+    color: color-pick-contrast($primary-color);
 
     h3 {
       margin-top: 0;

@@ -840,7 +840,7 @@ table {
 .fullscreen {
 
   .fullscreen-container {
-    color: $white;
+    color: color-pick-contrast($admin-color);
 
     a {
       line-height: 3rem;

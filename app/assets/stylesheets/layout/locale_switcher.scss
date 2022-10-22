@@ -29,7 +29,7 @@
       background: #001d33;
       border: 0;
       border-radius: rem-calc(4);
-      color: #fff;
+      color: color-pick-contrast(#001d33);
       font-size: $small-font-size;
       height: $line-height;
       margin-bottom: 0;
