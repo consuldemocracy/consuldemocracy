@@ -657,8 +657,7 @@
     }
 
     .button-support {
-      background: $budget;
-      color: color-pick-contrast($budget);
+      @include background-with-text-contrast($budget);
       font-size: $base-font-size;
       font-weight: bold;
 
@@ -1483,8 +1482,7 @@
   cursor: pointer;
 
   &:hover {
-    background: $dark;
-    color: color-pick-contrast($dark);
+    @include background-with-text-contrast($dark);
     text-decoration: none;
   }
 }

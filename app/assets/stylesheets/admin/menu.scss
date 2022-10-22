@@ -1,8 +1,7 @@
 .admin-sidebar {
-  background: $sidebar;
+  @include background-with-text-contrast($sidebar);
   background: linear-gradient(to bottom, $sidebar 0%, #488fb5 100%);
   border-right: 1px solid $border;
-  color: color-pick-contrast($sidebar);
 
   ul {
     list-style-type: none;

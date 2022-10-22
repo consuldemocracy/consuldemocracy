@@ -1,8 +1,7 @@
 .admin .machine-learning-setting {
 
   .card-divider {
-    background: $primary-color;
-    color: color-pick-contrast($primary-color);
+    @include background-with-text-contrast($primary-color);
 
     h3 {
       margin-top: 0;
