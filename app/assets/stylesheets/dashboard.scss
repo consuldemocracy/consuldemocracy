@@ -459,7 +459,7 @@
 
   .mail-header {
     background: $pdf-primary;
-    color: #fff;
+    color: color-pick-contrast($pdf-primary);
     padding: $line-height * 2;
 
     img {
@@ -514,7 +514,7 @@
 .dashboard-poster-pdf {
   .poster-header {
     background: $pdf-primary;
-    color: #fff;
+    color: color-pick-contrast($pdf-primary);
 
     h1 {
       text-align: left;

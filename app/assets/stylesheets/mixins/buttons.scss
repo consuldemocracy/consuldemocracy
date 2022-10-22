@@ -57,7 +57,7 @@
   position: relative;
 
   &::after {
-    background: $white;
+    background: color-pick-contrast($primary-color);
     border-radius: 100%;
     content: "";
     display: block;

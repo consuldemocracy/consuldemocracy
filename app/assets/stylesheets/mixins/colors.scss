@@ -1,6 +1,6 @@
 @mixin brand-background($color: $brand, $invert-selection: true) {
   background-color: $color;
-  color: $white;
+  color: color-pick-contrast($color);
 
   @if $invert-selection {
     @include inverted-selection;
@@ -29,7 +29,7 @@
 
   &::selection,
   *::selection {
-    background-color: rgba($white, 0.99);
+    background-color: rgba(color-pick-contrast($brand), 0.99);
     color: $brand;
   }
 }
