@@ -6,7 +6,7 @@ section "Creating DEMO polls" do
                       slug: "refurbishment-of-the-north-square",
                       summary: "Decided now what the Town Hall is going to do with this square.\r\nThis is one of the 10 squares that have been selected for a possible remodeling to improve its use for the population. There has been a participatory process that ends now in this final phase of voting. It decides with respect to the squares if they should be remodeled or not, and for those that mostly decide to remodel which will be the projects to carry out.",
                       description: "More information\r\nThe North Square aims to become a hub of attraction for the district and for the population that may come from other parts of the city, as it has optimal regional accessibility in public transport.\r\nIt comes from an order of the Plan of 1985, with the aim of consolidating a built residential front to the new park and accommodate uses to serve as a connection between the old and the new.\r\nThe plot is intended for sports use and green area, but currently has a large vacant area that requires rethinking under a new perspective to take advantage of position and generate a pole of attraction towards the district, is intended to create a new square as a venue for cultural events and social meetings that is one of the most obvious deficiencies in the districts of the periphery.",
-                      starts_at: 1.week.ago,
+                      starts_at: 1.minute.from_now,
                       ends_at:   1.week.from_now,
                       author_id: 1,
                       geozone_restricted: false,
@@ -33,8 +33,7 @@ section "Creating DEMO polls" do
                         document_number: user.document_number,
                         user: user,
                         poll: poll,
-                        origin: "web",
-                        token: SecureRandom.hex(32))
+                        origin: "web")
   end
 
   answer = question.question_answers.create!(title: "No", description: "", given_order: 2)
@@ -46,8 +45,7 @@ section "Creating DEMO polls" do
                         document_number: user.document_number,
                         user: user,
                         poll: poll,
-                        origin: "web",
-                        token: SecureRandom.hex(32))
+                        origin: "web")
   end
 
   question = poll.questions.create!(title: "Which of the two finalist projects do you prefer to be carried out?",
