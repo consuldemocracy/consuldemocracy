@@ -1,0 +1,7 @@
+nn:
+  seeds:
+    categories:
+      participation: Deltakelse
+    budgets:
+      groups:
+        districts: Distrikter

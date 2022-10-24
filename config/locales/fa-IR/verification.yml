@@ -8,7 +8,7 @@ fa:
         alert:
           failure: در ارسال ایمیل به حسابتان مشکلی وجود دارد.
         flash:
-          success: 'ایمیل تایید به حساب شما ارسال شده است: %{email}'
+          success: "ایمیل تایید به حساب شما ارسال شده است: %{email}"
       show:
         alert:
           failure: کد تأیید نادرست است.
@@ -17,20 +17,14 @@ fa:
     letter:
       alert:
         unconfirmed_code: شما هنوز کد تأیید را وارد نکرده اید.
-      create:
-        flash:
-          offices: دفاتر پشتیبانی شهروند
-          success_html: از شما به خاطر درخواستتان <b>حداکثر کد امنیت (فقط برای رای نهایی مورد نیاز است)</b> تشکر میکنیم. در چند روز آینده ما آن را به آدرس شما ارسال خواهیم کرد. همچنین شما می توانید کد خود را از هر یک از %{offices} دریافت کنید.
       edit:
         see_all: مشاهده طرح ها
         title: نامه درخواست شده
       errors:
         incorrect_code: کد تأیید نادرست است.
       new:
-        explanation: 'برای شرکت در رای گیری نهایی شما می توانید:'
+        explanation: "برای شرکت در رای گیری نهایی شما می توانید:"
         go_to_index: مشاهده طرح ها
-        office: تأیید در %{office}
-        offices: دفاتر پشتیبانی شهروند
         send_letter: یک نامه با کد ارسال کنید.
         title: تبریک میگم!
         user_permission_info: با حساب کاربریتان می توانید...
@@ -49,21 +43,16 @@ fa:
       new:
         accept_terms_text: من %{terms_url} سرشماری را قبول می کنم
         accept_terms_text_title: من شرایط و ضوابط دسترسی به سرشماری را می پذیرم.
-        date_of_birth: تاریخ تولد
         document_number: شماره سند
         document_number_help_title: کمک
-        document_number_help_text_html: 'DNI <strong></strong>: 12345678A<br> <strong>گذرنامه</strong>: AAA000001<br> <strong>کارت اقامت</strong>: X1234567P'
+        document_number_help_text: "DNI <strong></strong>: 12345678A<br> <strong>گذرنامه</strong>: AAA000001<br> <strong>کارت اقامت</strong>: X1234567P"
         document_type:
           passport: گذرنامه
           residence_card: کارت اقامت
           spanish_id: DNI
-        document_type_label: نوع سند
         error_not_allowed_age: سن مورد نیاز برای شرکت را ندارید.
         error_not_allowed_postal_code: به منظور تایید، شما باید ثبت نام کنید.
-        error_verifying_census: سرشماری قادر به تأیید اطلاعات شما نبود. لطفا با  تماس با شورای شهر، جزئیات مربوط به سرشماری خود را اصلاح کنید%{offices}.
-        error_verifying_census_offices: دفاتر پشتیبانی شهروند
         form_errors: مانع تایید محل اقامت شما شد.
-        postal_code: کد پستی
         postal_code_note: برای تایید حساب شما باید ثبت نام کنید.
         terms: شرایط و ضوابط دسترسی
         title: ' تایید اقامت'
@@ -73,16 +62,14 @@ fa:
         flash:
           success: کد تایید ارسال شده توسط پیام متنی را وارد کنید.
       edit:
-        confirmation_code: کد دریافت شده توسط تلفن همراه را وارد کنید.
         resend_sms_link: اینجا را کلیک کنید تا دوباره ارسال شود.
         resend_sms_text: متن با کد تایید خود را دریافت نکرده اید؟
         submit_button: "ارسال\n"
         title: تأیید کد امنیتی
       new:
         phone: شماره تلفن همراه خود را برای دریافت کد را وارد کنید
-        phone_format_html: "<strong>-<em>(مثال: 612345678 یا +34612345678)</em></strong>"
+        phone_format: "<strong>-<em>(مثال: 612345678 یا +34612345678)</em></strong>"
         phone_note: از تلفن شما برای ارسال کد یه شما استفاده خواهد شد، هرگز با شما تماس گرفته نمی شود.
-        phone_placeholder: "مثال: 612345678 یا +34612345678"
         submit_button: "ارسال\n"
         title: ارسال کد تأیید
       update:

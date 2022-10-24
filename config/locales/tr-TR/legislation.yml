@@ -1,1 +1,148 @@
 tr:
+  legislation:
+    annotations:
+      comments:
+        see_all: Hepsini gör
+        see_complete: Tamamını gör
+        comments_count:
+          one: "%{count} yorum"
+          other: "%{count} yorumlar"
+        replies_count:
+          one: "%{count} yanıt"
+          other: "%{count} yanıtlar"
+        cancel: İptal
+        publish_comment: Yorumu Yayınla
+      form:
+        phase_not_open: Bu aşama şu anda etkin değil
+      index:
+        title: Yorumlar
+        comments_about: Hakkında yorumlar
+        see_in_context: Mevcut bağlam içinde gör
+        comments_count:
+          one: "%{count} yorum"
+          other: "%{count} yorumlar"
+      show:
+        title: Yorum
+      version_chooser:
+        seeing_version: Değişiklikle ilgili yorumlar
+        see_text: Metin taslağını gör
+    draft_versions:
+      changes:
+        title: Değişiklikler
+        seeing_changelog_version: Değişikliklerin özetini gör
+        see_text: Taslak metni gör
+      show:
+        loading_comments: Yorumlar yükleniyor
+        seeing_version: Taslak düzenlemeyi görüyorsunuz
+        select_draft_version: Taslak seç
+        select_version_submit: bakın
+        updated_at: '%{date} ''de güncellendi'
+        see_changes: değişikliklerin özetini gör
+        see_comments: Tüm yorumları gör
+        text_toc: İçindekiler
+        text_body: Metin
+        text_comments: Yorumlar
+    processes:
+      header:
+        additional_info: Ek bilgi
+        description: Tanımlama
+        more_info: Daha fazla bilgi ve içerik
+      proposals:
+        empty_proposals: Herhangi bir öneri bulunmamaktadır
+        filters:
+          random: Gelişigüzel
+          winners: Seçilmiş
+      debate:
+        empty_questions: Herhangi bir soru bulunmamaktadır
+      index:
+        filter: Filtre
+        filters:
+          open: Katılımcı süreçler
+          past: Geçmiş
+        no_open_processes: Şu anda katılabileceğiniz herhangi bir süreç bulunmamaktadır
+        no_past_processes: Daha önce tamamlanan bir süreç bulunmamaktadır
+        section_header:
+          icon_alt: Katılımcı mevzuat simgesi
+          title: Katılımcı mevzuat
+          help: Katılımcı mevzuat hakkında yardım
+        section_footer:
+          title: Katılımcı mevzuat hakkında yardım
+          description: Yeni yönetmeliklerin veya stratejilerin onaylanmasından önce tartışmalara ve işlemlere katılın. Fikirlerinizi bizimle paylaşın.
+      phase_not_open:
+        not_open: Bu aşama henüz etkin değil
+      phase_empty:
+        empty: Henüz birşey yayınlanmadı
+      process:
+        see_latest_comments: Son yorumları gör
+        see_latest_comments_title: Bu süreçle ilgili yorumlar
+      shared:
+        key_dates: Katılım aşamaları
+        homepage: Ana sayfa
+        debate_dates: Tartışma
+        draft_publication_date: Taslak yayın
+        allegations_dates: Yorumlar
+        result_publication_date: Sonuçlarla ilgili yayın
+        milestones_date: Takip ediliyor
+        proposals_dates: Öneriler
+    questions:
+      comments:
+        comment_button: Cevabı yayınla
+        comments_title: Açık cevaplar
+        comments_closed: Süreç tamamlandı
+        form:
+          leave_comment: Cevabınızı paylaşın
+      question:
+        comments:
+          zero: Yorum yok
+          one: "%{count} yorum"
+          other: "%{count} yorumlar"
+        debate: Tartışma
+      show:
+        answer_question: Cevabı gönder
+        next_question: Sonraki soru
+        first_question: İlk soru
+        share: Paylaş
+        title: Katılımcı mevzuat süreci
+      participation:
+        phase_not_open: Bu aşama açık değil
+        organizations: Kurumların tartışmaya katılmasına izin verilmemektedir
+        unauthenticated: Katılmak için %{signin} veya %{signup} yapmalısınız.
+        verified_only: Yalnızca doğrulanan kullanıcılar katılabilir, %{verify_account}.
+        debate_phase_not_open: Tartışma süreci tamamlandığı için daha fazla cevap kabul edilmiyor
+    shared:
+      share: Paylaş
+      share_comment: İşlem taslağından %{process_name} %{version_name}'e yorum
+    proposals:
+      form:
+        tags_label: "Kategoriler"
+      not_verified: "Önerileri oylamak için %{verify_account}."
+      process_title: Katılımcı mevzuat süreci
+    summary:
+      title: "Özet"
+      votes:
+        zero: "%{count} oy"
+        one: "%{count} oy"
+        other: "%{count} oy"
+      debate_phase: "Tartışma aşaması"
+      proposals_phase: "Öneri aşaması"
+      allegations_phase: "Yorum aşaması"
+      debates:
+        zero: "Tartışma bulunmuyor"
+        one: "%{count} tartışma"
+        other: "%{count} tartışma"
+      proposals:
+        zero: "Öneri yok"
+        one: "%{count} öneri"
+        other: "%{count} öneri"
+      comments:
+        zero: "Yorum yok"
+        one: "%{count} yorum"
+        other: "%{count} yorum"
+      download: "Özeti İndir"
+      top_comments:
+        zero: "Yorum yok"
+        one: "%{count} yorum"
+        other: "Öne çıkan yorumlar"
+      most_voted_comments: "En çok oylanan yorumlar"
+      no_allegation: "Hiç yorum yok"
+      process_empty: "Bu sürecin bir katılım fazı yoktu"

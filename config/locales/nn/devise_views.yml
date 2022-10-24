@@ -1,0 +1,21 @@
+nn:
+  devise_views:
+    menu:
+      login_items:
+        login: Logg inn
+    sessions:
+      new:
+        title: Logg inn
+    shared:
+      links:
+        signup_link: Registrer deg
+    unlocks:
+      new:
+        email_label: E-post
+    users:
+      registrations:
+        delete_form:
+          submit: Slett min konto
+        edit:
+          edit: Rediger
+          email_label: E-post

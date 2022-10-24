@@ -1,4 +1,4 @@
-class Campaign < ActiveRecord::Base
+class Campaign < ApplicationRecord
 end
 
 # == Schema Information

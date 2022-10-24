@@ -1,0 +1,67 @@
+#Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+hr:
+  devise:
+    password_expired:
+      expire_password: "Istekla zaporka"
+      change_required: "Vaša je zaporka istekla"
+      change_password: "Izmjenite zaporku"
+      new_password: "Nova zaporka"
+      updated: "Zaporka je uspješno ažurirana"
+    confirmations:
+      confirmed: "Vaš račun je potvrđen."
+      send_instructions: "U nekoliko minuta primit ćete e-mail koji sadrži upute za ponovno postavljanje zaporke."
+      send_paranoid_instructions: "Ako je vaša e-mail adresa u našoj bazi podataka u nekoliko minuta ćete zaprimiti e-mail koji sadrži upute za ponovno postavljanje lozinke."
+    failure:
+      already_authenticated: "Već ste prijavljeni."
+      inactive: "Vaš račun još nije aktiviran."
+      invalid: "Nevažeći %{authentication_keys} ili zaporka."
+      locked: "Vaš račun je zaključan."
+      last_attempt: "Preostao vam je još jedan pokušaj prije nego što se račun blokira."
+      not_found_in_database: "Nevažeći %{authentication_keys} ili lozinka."
+      timeout: "Vaša je sjednica istekla. Molimo vas da se ponovno prijavite."
+      unauthenticated: "Morate se prijaviti ili registirati kako biste nastavili."
+      unconfirmed: "Kako biste nastavili molimo kliknite na potvrdni link koji Vam šaljemo putem e-maila"
+    mailer:
+      confirmation_instructions:
+        subject: "Upute za potvrdu"
+      reset_password_instructions:
+        subject: "Upute za ponovno uspostavljanje lozinke"
+      unlock_instructions:
+        subject: "Otključavanje uputa"
+    omniauth_callbacks:
+      failure: "Nije Vas moguće autorizirati kao %{kind} zbog \"%{reason}\"."
+      success: "Uspješno prepoznat kao %{kind}."
+    passwords:
+      no_token: "Ne možete pristupiti ovoj stranici osim putem linka za obnovu lozinke. Ukoliko ste probali pristupiti preko linka za obnovu lozinke, molimo vas provjerite cjelovitost URL-a."
+      send_instructions: "Za nekoliko minuta dobit ćete e-mail s uputama za obnovu lozinke."
+      send_paranoid_instructions: "Ako je Vaš e-mail u našoj bazi podataka u nekoliko minuta ćete dobiti link za obnovu lozinke."
+      updated: "Vaša je zaporka uspješno promijenjena. Potvrda autentičnosti uspješna."
+      updated_not_active: "Vaša je zaporka uspješno promijenjena."
+    registrations:
+      destroyed: "Doviđenja! Vaš račun je poništen. Nadamo se da ćemo vas ponovno vidjeti."
+      signed_up: "Dobrodošli! Potvrđena je vaša autentičnost."
+      signed_up_but_inactive: "Vaša je registracija uspjela, ali ne možete se prijaviti jer Vaš račun nije aktiviran."
+      signed_up_but_locked: "Vaša je registracija uspjela, ali ne možete se prijaviti jer je Vaš račun zaključan."
+      signed_up_but_unconfirmed: "Poslana Vam je poruka s verifikacijskom poveznicom. Molim Vas da pronađete poveznicu kako biste aktivirali Vaš račun."
+      update_needs_confirmation: "Vaš račun je uspješno ažuriran; sada još moramo potvrditi Vašu novu e-mail adresu. Molimo Vas da provjerite e-mail i krenete na poveznicu kako biste potvrdili novu e-mail adresu."
+      updated: "Vaš račun je uspješno ažuriran."
+    sessions:
+      signed_in: "Uspješno ste se prijavili."
+      signed_out: "Uspješno ste odjevljeni."
+      already_signed_out: "Uspješno ste odjevljeni."
+    unlocks:
+      send_instructions: "Za nekoliko minuta zaprimiti ćete e-mail s uputama za otključavanje Vašeg računa."
+      send_paranoid_instructions: "Ukoliko imate račun, za nekoliko minuta ćete zaprimiti e-mail s uputama za otključavanje Vašeg računa."
+      unlocked: "Vaš je račun otključan. Ponovno se prijavite da biste nastavili."
+  errors:
+    messages:
+      already_confirmed: "Vaš je račun već potvrđen; molimo vas da se pokušate prijaviti."
+      confirmation_period_expired: "Potrebno je potvrditi Vaš račun s %{period}; molimo vas da ponovite zahtjev za prijavu."
+      expired: "je istekao; molimo vas da ponovno pošaljete zahtjev."
+      not_found: "nije pronađeno."
+      not_locked: "nije zaključano."
+      not_saved:
+        one: "1 greška nije dopustila ovo %{resource} od spremanja. Molimo provjerite označena polja kako biste ih znali ispraviti:"
+        few: "%{count} grešaka nije dopustila ovo %{resource} od spremanja. Molimo provjerite označena polja kako biste ih znali ispraviti:"
+        other: "%{count} errora ne omogućava ovo %{resource} spremanje. Molimo Vas da provjerite označena polja kako biste ih znali izmijeniti:"
+      equal_to_current_password: "mora biti različita od trenutne lozinke."

@@ -7,7 +7,7 @@ class Budget
     end
 
     def check_for_reclassification
-      if heading_changed?
+      if saved_change_to_heading?
         log_heading_change
         store_reclassified_votes("heading_changed")
         remove_reclassified_votes
@@ -17,23 +17,21 @@ class Budget
       end
     end
 
-    def heading_changed?
-      budget.balloting? && heading_id_changed?
+    def saved_change_to_heading?
+      budget.balloting? && saved_change_to_heading_id?
     end
 
     def marked_as_unfeasible?
-      budget.balloting? && feasibility_changed? && unfeasible?
+      budget.balloting? && saved_change_to_feasibility? && unfeasible?
     end
 
     def log_heading_change
-      update_column(:previous_heading_id, heading_id_was)
+      update_column(:previous_heading_id, heading_id_before_last_save)
     end
 
     def store_reclassified_votes(reason)
       ballot_lines_for_investment.order(:id).each do |line|
-        attrs = { user: line.ballot.user,
-                  investment: self,
-                  reason: reason }
+        attrs = { user: line.ballot.user, investment: self, reason: reason }
         Budget::ReclassifiedVote.create!(attrs)
       end
     end
@@ -45,6 +43,5 @@ class Budget
     def ballot_lines_for_investment
       Budget::Ballot::Line.by_investment(id)
     end
-
   end
 end

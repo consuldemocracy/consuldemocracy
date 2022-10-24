@@ -1,0 +1,48 @@
+nn:
+  legislation:
+    annotations:
+      comments:
+        see_all: Se alle
+        cancel: Avbryt
+      index:
+        title: Kommentarer
+      show:
+        title: Kommenter
+    draft_versions:
+      show:
+        text_comments: Kommentarer
+    processes:
+      header:
+        additional_info: Tilleggsinformasjon
+      index:
+        filter: Filter
+        filters:
+          open: Åpne prosesser
+        section_header:
+          title: Deltakende lovgivning
+      shared:
+        debate_dates: Debatt
+        allegations_dates: Kommentarer
+        milestones_date: Følger
+        proposals_dates: Forslag
+    questions:
+      question:
+        comments:
+          zero: Ingen kommentarer
+        debate: Debatt
+      show:
+        share: Del
+      participation:
+        unauthenticated: Du må %{signin} eller %{signup} for å delta.
+    shared:
+      share: Del
+    proposals:
+      form:
+        tags_label: "Kategorier"
+    summary:
+      votes:
+        zero: "%{count} stemmer"
+      comments:
+        zero: "Ingen kommentarer"
+      top_comments:
+        zero: "Ingen kommentarer"

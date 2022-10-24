@@ -1,11 +1,11 @@
 es:
   documents:
     title: Documentos
-    max_documents_allowed_reached_html: '¡Has alcanzado el número máximo de documentos permitidos! <strong>Tienes que eliminar uno antes de poder subir otro.</strong>'
+    max_documents_allowed_reached: '¡Has alcanzado el número máximo de documentos permitidos! <strong>Tienes que eliminar uno antes de poder subir otro.</strong>'
+    additional: Documentación adicional
     form:
       title: Documentos
       title_placeholder: Añade un título descriptivo para el documento
-      attachment_label: Selecciona un documento
       delete_button: Eliminar documento
       note: "Puedes subir hasta un máximo de %{max_documents_allowed} documentos en los formatos: %{accepted_content_types}, y de hasta %{max_file_size} MB por archivo."
       add_new_document: Añadir nuevo documento

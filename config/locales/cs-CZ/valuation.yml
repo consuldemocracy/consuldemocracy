@@ -1,0 +1,68 @@
+cs:
+  valuation:
+    header:
+      title: Odhad ceny
+    menu:
+      title: Odhad ceny
+      budgets: Participativní rozpočty
+    budgets:
+      index:
+        title: Participativní rozpočty
+        filters:
+          current: Otevřené
+          finished: Dokončené
+        table_name: Název
+        table_phase: Fáze
+        table_assigned_investments_valuation_open: Investiční projekty s doposud otevřeným naceňováním
+        table_actions: Akce
+        evaluate: Posoudit cenu
+        no_budgets: "Neexistují žádné rozpočty"
+    budget_investments:
+      index:
+        headings_filter_all: Všechny kapitoly
+        filters:
+          valuation_open: Otevřené
+          valuating: Podhodnoceno
+          valuation_finished: Naceňování bylo ukončeno
+        assigned_to: "Přiřazeno hodnotiteli %{valuator}"
+        title: Investiční projekty
+        edit: Upravit dokumentaci
+        table_id: ID
+        table_title: Předmět
+        table_heading_name: Heading name
+        table_actions: Akce
+        no_investments: "Neexistují žádné investiční projekty."
+      show:
+        back: Zpět
+        title: Investiční projekt
+        info: Informace o autorovi
+        by: Odesláno uživatelem
+        sent: Odesláno v čase
+        heading: Heading
+        dossier: Dokumentace
+        edit_dossier: Upravit dokumentaci
+        price: Cena
+        price_first_year: Náklady během prvního roku
+        currency: "Kč"
+        feasibility: Proveditelnost
+        feasible: Proveditelný
+        unfeasible: Nerealizovatelné
+        undefined: Neproveditelný
+        valuation_finished: Naceňování bylo ukončeno
+        duration: Časový rozsah
+        responsibles: Odpovědnost
+        assigned_admin: Přiřazeno administrátorovi
+        assigned_valuators: Přiřazeno hodnotiteli
+        preview: Investiční přehled
+      edit:
+        dossier: Dokumentace
+        price: "Cena (%{currency})"
+        price_first_year: "Náklady během prvního roku (%{currency}) <small>(nepovinné, údaje nejsou veřejné)</small>"
+        feasibility: Proveditelnost
+        valuation_finished_alert: "Opravdu chcete tuto zprávu označit za dokončenou? Pokud to uděláte, nemůže již změnit."
+        not_feasible_alert: "Autorovi projektu bude okamžitě zaslán email s informací o nerealizovatelnosti projektu."
+        save: Uložit změny
+      notice:
+        valuate: "Dokumentace byla aktualizována"
+      valuation_comments: Komentáře hodnotitele
+      not_in_valuating_phase: Investice mohou být naceněny pouze tehdy, když je rozpočet ve fázi naceňování

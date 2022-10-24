@@ -23,7 +23,7 @@ de:
       employment: Beschäftigung
       equity: Eigenkapital
       sustainability: Nachhaltigkeit
-      participation: Beteiligung
+      participation: Teilnahme
       mobility: Mobilität
       media: Medien
       health: Gesundheit
@@ -36,11 +36,6 @@ de:
       groups:
         all_city: Alle Städte
         districts: Bezirke
-      valuator_groups:
-        culture_and_sports: Kultur & Sport
-        gender_and_diversity: Gender & Diversity-Politik
-        urban_development: Nachhaltige Stadtentwicklung
-        equity_and_employment: Eigenkapital & Beschäftigung
       statuses:
         studying_project: Das Projekt untersuchen
         bidding: Ausschreibung
@@ -49,7 +44,6 @@ de:
     polls:
       current_poll: "Aktuelle Umfrage"
       current_poll_geozone_restricted: "Aktuelle Umfrage eingeschränkt auf Geo-Zone"
-      incoming_poll: "Eingehende Umfrage"
       recounting_poll: "Umfrage wiederholen"
       expired_poll_without_stats: "Abgelaufene Umfrage ohne Statistiken und Ergebnisse"
       expired_poll_with_stats: "Abgelaufene Umfrage mit Statistiken und Ergebnisse"

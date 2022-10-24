@@ -1,0 +1,56 @@
+.admin .machine-learning-scripts {
+
+  .alert > :first-child {
+    @include has-fa-icon(ban, solid);
+  }
+
+  .success > :first-child {
+    @include has-fa-icon(check-circle, solid);
+  }
+
+  .warning > :first-child {
+    @include has-fa-icon(hourglass-half, solid);
+  }
+
+  .alert,
+  .success,
+  .warning {
+    > :first-child::before {
+      margin-right: $font-icon-margin;
+    }
+  }
+
+  dl {
+    font-size: $base-font-size;
+
+    dt,
+    dd {
+      display: inline;
+    }
+
+    * + dt::before {
+      content: "";
+      display: block;
+    }
+  }
+
+  form {
+    max-width: $global-width * 3 / 4;
+  }
+
+  select {
+    max-width: 100%;
+    width: auto;
+  }
+
+  [type=submit] {
+    @include regular-button;
+    display: block;
+    margin-bottom: 0;
+    margin-top: $line-height;
+
+    &.cancel {
+      @include hollow-button($alert-color);
+    }
+  }
+}

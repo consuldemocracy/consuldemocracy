@@ -1,0 +1,11 @@
+so:
+  stats:
+    title: "Macluumaadka ka qaybqaadashada"
+    total_participants: "Kaqayb galayaal"
+    total: "Wadarta guud"
+    budgets:
+      link: "Xogta"
+      total_unfeasible_investments: "Mashariicda an macquulka ahayn"
+      total: "Wadarta guud"
+      heading: "Madaxa"
+      participants_every_phase: "Wadarta kaqayb galayasha"

@@ -1,0 +1,41 @@
+<% if proposal.published? %>
+  <% content_for :action_title, t("dashboard.progress.title") %>
+
+  <div class="row expanded">
+    <div class="small-12 column">
+      <%= link_to t("dashboard.progress.group_by_date"),
+                  progress_proposal_dashboard_path(proposal),
+                  class: "button medium #{daily_selected_class}" %>
+      <%= link_to t("dashboard.progress.group_by_week"),
+                  progress_proposal_dashboard_path(proposal, group_by: "week"),
+                  class: "button medium #{weekly_selected_class}" %>
+      <%= link_to t("dashboard.progress.group_by_month"),
+                  progress_proposal_dashboard_path(proposal, group_by: "month"),
+                  class: "button medium #{monthly_selected_class}" %>
+    </div>
+  </div>
+
+  <div class="small-12 column">
+    <div id="proposal-graph"
+         data-proposal-graph-url="<%= proposal_dashboard_supports_path(proposal, format: :json) %>"
+         data-successful-proposal-graph-url="<%= proposal_dashboard_successful_supports_path(proposal, format: :json) %>"
+         data-proposal-achievements-url="<%= proposal_dashboard_achievements_path(proposal, format: :json) %>"
+         data-proposal-graph-group-by="<%= params[:group_by] %>"
+         data-proposal-graph-progress-label="<%= t("dashboard.progress.progress") %>"
+         data-proposal-graph-supports-label="<%= t("dashboard.progress.supports") %>"
+         data-proposal-graph-success-label="<%= t("dashboard.progress.success") %>"
+         data-proposal-success="<%= Setting["votes_for_proposal_success"] %>"
+         data-proposal-resources-url="<%= proposal_dashboard_resources_path(proposal, format: :json) %>"
+         class="c3 proposal-graph"></div>
+  </div>
+
+  <%= javascript_include_tag "dashboard_graphs", "data-turbolinks-track" => "reload" %>
+<% end %>
+
+<%= render "next_goal" %>
+
+<% if @pending_actions.any? || @done_actions.any? %>
+  <%= render "summary_recommended_actions" %>
+<% end %>
+
+<%= render "resources" %>

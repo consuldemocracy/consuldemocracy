@@ -1,4 +1,11 @@
 fa:
+  attributes:
+    geozone_id: "حوزه عملیات"
+    results_enabled: "مشاهده نتایج"
+    stats_enabled: "نمایش آمار"
+    name: نام
+    email: پست الکترونیکی
+    description: توضیحات
   activerecord:
     models:
       activity:
@@ -26,10 +33,10 @@ fa:
         one: "سردبیر"
         other: "سردبیرها"
       administrator:
-        one: "مدیر"
+        one: "مدیران"
         other: "مدیران"
       valuator:
-        one: "ارزیاب"
+        one: "ارزیابی"
         other: "ارزیاب ها"
       valuator_group:
         one: "گروه ارزيابي"
@@ -62,11 +69,17 @@ fa:
         one: صفحات سفارشی
         other: صفحات سفارشی
       site_customization/content_block:
-        one: محتوای بلوک سفارشی 
-        other: محتوای بلوکهای سفارشی 
+        one: محتوای بلوک سفارشی
+        other: محتوای بلوکهای سفارشی
+      document:
+        one: سند
+        other: اسناد
       legislation/process:
-        one: "روند\n"
+        one: "فرآیند\n"
         other: "روندها\n"
+      legislation/proposal:
+        one: "طرح های پیشنهادی"
+        other: "طرح های پیشنهادی"
       legislation/draft_versions:
         one: "نسخه پیش نویس"
         other: "نسخه های پیش نویس"
@@ -103,34 +116,83 @@ fa:
         description_finished: "شرح هنگامی که بودجه به پایان رسید"
         phase: "فاز"
         currency_symbol: "ارز"
+      budget/translation:
+        name: "نام"
       budget/investment:
         heading_id: "سرفصل"
         title: "عنوان"
         description: "توضیحات"
         external_url: "لینک به مدارک اضافی"
-        administrator_id: "مدیر"
+        administrator_id: "مدیران"
         location: "محل سکونت (اختیاری)"
         organization_name: "اگر شما به نام یک گروه / سازمان، یا از طرف افراد بیشتری پیشنهاد می کنید، نام آنها را بنویسید."
         image: "تصویر طرح توصیفی"
         image_title: "عنوان تصویر"
+        duration: "دامنه زمانی"
+        feasibility_feasible: "امکان پذیر"
+        feasibility_undecided: "تعریف نشده"
+        feasibility_unfeasible: "غیر قابل پیش بینی"
+        incompatible: "علامت گذاری به عنوان ناسازگار"
+        price_explanation: "توضیح قیمت"
+        selected: "علامت گذاری به عنوان انتخاب شده"
+        selected_true: "انتخاب شده"
+        selected_false: "انتخاب نشده\n"
+        unfeasibility_explanation: "توضیح امکان سنجی "
+        valuation_finished: " اتمام ارزیابی "
+        valuator_ids: "گروه ها"
+        valuation_tag_list: "برچسب ها"
+      budget/investment/translation:
+        title: "عنوان"
+        description: "توضیحات"
+      geozone:
+        name: نام
+      milestone:
+        title: "عنوان"
+        publication_date: "تاریخ انتشار"
+      milestone/translation:
+        description: "توضیحات"
+      milestone/status:
+        name: "نام"
+      progress_bar:
+        kind: "نوع"
+        title: "عنوان"
+      budget/group/translation:
+        name: "نام گروه"
       budget/heading:
-        name: "عنوان نام"
+        name: "عنوان سرفصل"
         price: "قیمت"
         population: "جمعیت"
+      budget/heading/translation:
+        name: "عنوان سرفصل"
+      budget/phase:
+        enabled: "فاز فعال"
+        ends_at: "تاریخ پایان"
+        starts_at: "تاریخ شروع\n"
+      budget/phase/translation:
+        name: "نام"
+        description: "توضیحات"
+        summary: "خلاصه"
       comment:
         body: "توضیح"
         user: "کاربر"
       debate:
         author: "نویسنده"
         description: "نظر"
+        tag_list: "موضوع ها"
         terms_of_service: "شرایط و ضوابط خدمات"
         title: "عنوان"
+      debate/translation:
+        title: "عنوان بحث"
+        description: "متن اولیه بحث"
       proposal:
         author: "نویسنده"
         title: "عنوان"
         question: "سوال"
         description: "توضیحات"
+        selected: "علامت گذاری به عنوان انتخاب شده"
         terms_of_service: "شرایط و ضوابط خدمات"
+      proposal/translation:
+        title: "عنوان پیشنهاد"
       user:
         login: "نام کاربری یا ایمیل"
         email: "پست الکترونیکی"
@@ -138,46 +200,83 @@ fa:
         password_confirmation: "تایید رمز عبور"
         password: "رمز عبور"
         current_password: "رمز ورود فعلی"
-        phone_number: "شماره تلفن"
+        email_on_comment: "وقتی کسی در مورد پیشنهادها یا بحث های من نظر می دهد، از طریق ایمیل به من اطلاع دهید"
+        email_on_comment_reply: "وقتی کسی به نظرات من پاسخ می دهد، از طریق ایمیل به من اطلاع دهید"
         official_position: "موضع رسمی"
         official_level: "سطح رسمی"
+        phone_number: "شماره تلفن"
+        public_activity: "نگه داشتن لیست فعالیت های عمومی  من"
         redeemable_code: "کد تایید  از طریق ایمیل دریافت شد."
+      direct_message:
+        title: "عنوان"
+        body: "پیام"
       organization:
         name: "نام سازمان"
         responsible_name: "شخص مسئول گروه"
-      spending_proposal:
-        association_name: "نام انجمن"
-        description: "توضیحات"
-        external_url: "لینک به مدارک اضافی"
-        geozone_id: "حوزه عملیات"
-        title: "عنوان"
       poll:
         name: "نام"
+        title: "نام"
         starts_at: "تاریخ شروع\n"
         ends_at: "تاريخ خاتمه"
         geozone_restricted: "محدود شده توسط geozone"
         summary: "خلاصه"
         description: "توضیحات"
+      active_poll/translation:
+        description: "توضیحات"
+      poll/booth:
+        name: "نام"
+        location: "محل"
+      poll/translation:
+        name: "نام"
+        summary: "خلاصه"
+        description: "توضیحات"
       poll/question:
+        poll_id: "نظرسنجی"
         title: "سوال"
         summary: "خلاصه"
         description: "توضیحات"
         external_url: "لینک به مدارک اضافی"
+      poll/question/translation:
+        title: "سوال"
+      poll/ballot_sheet:
+        poll_id: نظرسنجی
+      poll/shift:
+        task: "وظیفه\n"
+      proposal_notification:
+        body: "پیام"
+        title: "عنوان"
       signature_sheet:
+        title: "عنوان"
         signable_type: "نوع امضاء"
         signable_id: "شناسه  امضاء"
         document_numbers: "شماره سند"
+      sdg/goal:
+        title: "عنوان"
+        description: "توضیحات"
+      sdg/local_target:
+        title: "عنوان"
+      sdg/local_target/translation:
+        title: "عنوان"
+        description: "توضیحات"
+      sdg/target:
+        title: "عنوان"
       site_customization/page:
         content: محتوا
         created_at: "ایجاد شده در\n"
         subtitle: "عنوان فرعی\n"
         slug: slug
-        status: وضعیت
+        status: وضعیت ها
+        status_draft: " پیش نویس"
+        status_published: "منتشر شده"
         title: عنوان
         updated_at: "ایجاد شده در\n"
         more_info_flag: نمایش در صفحه راهنما
-        print_content_flag: چاپ محتوا 
+        print_content_flag: چاپ محتوا
         locale: زبان
+      site_customization/page/translation:
+        title: عنوان
+        subtitle: "عنوان فرعی\n"
+        content: محتوا
       site_customization/image:
         name: نام
         image: تصویر
@@ -185,38 +284,75 @@ fa:
         name: نام
         locale: زبان محلی
         body: بدنه
+      tag:
+        name: "نام موضوع را تایپ کنید"
+      topic:
+        title: "عنوان"
+        description: "متن اولیه"
+      banner:
+        post_ended_at: "پست پایان رسید در"
+        post_started_at: "پست شروع شد در"
+        target_url: "لینک"
+      banner/translation:
+        title: "عنوان"
+        description: "توضیحات"
       legislation/process:
         title: عنوان فرآیند
+        summary: خلاصه
         description: توضیحات
         additional_info: اطلاعات اضافی
         start_date: "تاریخ شروع\n"
         end_date: تاریخ پایان
         debate_start_date: "تاریخ شروع بحث\n"
         debate_end_date: تاریخ پایان بحث
+        draft_start_date: شروع
+        draft_end_date: پایان
         draft_publication_date: تاریخ انتشار پیش نویس
         allegations_start_date: ' تاریخ شروع ادعا'
         allegations_end_date: تاریخ پایان ادعا
+        proposals_phase_start_date: شروع
+        proposals_phase_end_date: پایان
         result_publication_date: تاریخ انتشار نهایی
+      legislation/process/translation:
+        title: عنوان فرآیند
+        summary: خلاصه
+        description: توضیحات
+        additional_info: اطلاعات اضافی
+        homepage: "توضیحات"
+        milestones_summary: خلاصه
+      legislation/proposal:
+        title: "عنوان پیشنهاد"
       legislation/draft_version:
         title: عنوان نسخه
         body: متن
         changelog: تغییرات
         status: وضعیت ها
+        status_draft: " پیش نویس"
+        status_published: "منتشر شده"
         final_version: "نسخه نهایی\n"
+      legislation/draft_version/translation:
+        title: عنوان نسخه
+        body: متن
+        changelog: تغییرات
       legislation/question:
         title: عنوان
         question_options: "گزینه ها\n"
+      legislation/question/translation:
+        title: سوال
       legislation/question_option:
         value: "ارزش\n"
       legislation/annotation:
         text: توضیح
       document:
         title: عنوان
-        attachment: پیوست
+        attachment: "پیوست"
       image:
         title: عنوان
-        attachment: پیوست
+        attachment: "پیوست"
       poll/question/answer:
+        title: پاسخ
+        description: توضیحات
+      poll/question/answer/translation:
         title: پاسخ
         description: توضیحات
       poll/question/answer/video:
@@ -227,14 +363,43 @@ fa:
         subject: "موضوع\n"
         from: "از \n"
         body: محتوای ایمیل
+      admin_notification:
+        segment_recipient: گیرندگان
+        title: عنوان
+        link: لینک
+        body: متن
+      admin_notification/translation:
+        title: عنوان
+        body: متن
       widget/card:
         label: برچسب (اختیاری)
         title: عنوان
         description: توضیحات
         link_text: لینک متن
         link_url: لینک آدرس
+      widget/card/translation:
+        label: برچسب (اختیاری)
+        title: عنوان
+        description: توضیحات
+        link_text: لینک متن
       widget/feed:
         limit: تعداد موارد
+      dashboard/action:
+        title: عنوان
+        description: توضیحات
+        active: فعال
+        action_type: نوع
+      link:
+        label: عنوان
+      valuator:
+        description: توضیحات
+        valuator_group_id: گروه ارزيابي
+      valuator_group:
+        name: "نام گروه"
+      local_census_record:
+        document_type: نوع سند
+        document_number: شماره سند
+        date_of_birth: تاریخ تولد
     errors:
       models:
         user:
@@ -258,14 +423,15 @@ fa:
           attributes:
             segment_recipient:
               invalid: "بخش دریافت کننده کاربر نامعتبر است."
-        map_location:
+        admin_notification:
           attributes:
-            map:
-              invalid: مکان نقشه نمیتواند خالی باشد یک نشانگر را قرار دهید یا اگر گزینه geolocalization مورد نیاز نیست، کادر انتخاب را انتخاب کنید.
+            segment_recipient:
+              invalid: "بخش دریافت کننده کاربر نامعتبر است."
         poll/voter:
           attributes:
             document_number:
               not_in_census: "سند در سرشماری نیست."
+            user_id:
               has_voted: "کاربر قبلا رای داده است"
         legislation/process:
           attributes:
@@ -290,8 +456,8 @@ fa:
         signature:
           attributes:
             document_number:
-              not_in_census: 'توسط سرشماری تایید نشده است.'
-              already_voted: 'قبلا این پیشنهاد رای گیری شده است.'
+              not_in_census: "توسط سرشماری تایید نشده است."
+              already_voted: "قبلا این پیشنهاد رای گیری شده است."
         site_customization/page:
           attributes:
             slug:
@@ -304,9 +470,9 @@ fa:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'شما نمیتوانید در ارزیابی اظهار نظر کنید.'
+              cannot_comment_valuation: "شما نمیتوانید در ارزیابی اظهار نظر کنید."
       messages:
-        record_invalid: "تأیید اعتبار ناموفق بود:%{errors}"
+        record_invalid: "تأیید اعتبار انجام نشد: %{errors}"
         restrict_dependent_destroy:
           has_one: "نمیتوان رکورد را حذف کرد زیرا وابستگی%{record} وجود دارد."
           has_many: "نمیتوان رکورد را حذف کرد زیرا وابستگی%{record} وجود دارد."

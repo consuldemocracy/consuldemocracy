@@ -1,0 +1,11 @@
+<div class="table-actions">
+  <%= content %>
+
+  <% if actions.include?(:edit) %>
+    <%= action(:edit, edit_options.merge(text: edit_text, path: edit_path)) %>
+  <% end %>
+
+  <% if actions.include?(:destroy) %>
+    <%= action(:destroy, destroy_options.merge(text: destroy_text, path: destroy_path)) %>
+  <% end %>
+</div>

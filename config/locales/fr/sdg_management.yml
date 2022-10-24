@@ -1,0 +1,19 @@
+fr:
+  sdg_management:
+    homepage:
+      header:
+        create: "Créer un entête"
+        title: "Entête"
+    menu:
+      budget_investments: "Budgets participatifs"
+      debates: "Débats"
+      legislation_processes: "Processus législatifs"
+      polls: "Votes"
+      proposals: "Propositions"
+      sdg_content: "Buts et Objectifs"
+    relations:
+      index:
+        filter: "Filtre"
+        filters:
+          all: "Toutes"
+          pending_sdg_review: "Indécis"

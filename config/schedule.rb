@@ -23,10 +23,24 @@ every 1.minute do
   command "date > ~/cron-test.txt"
 end
 
-every 1.day, at: '5:00 am' do
+every 1.day, at: "5:00 am" do
   rake "-s sitemap:refresh"
 end
 
-every 1.day, at: '3:00 am', roles: [:cron] do
+every 2.hours do
+  rake "-s stats:generate"
+end
+
+every 1.day, at: "1:00 am", roles: [:cron] do
+  rake "files:remove_old_cached_attachments"
+end
+
+every 1.day, at: "3:00 am", roles: [:cron] do
   rake "votes:reset_hot_score"
+end
+
+every :reboot do
+  command "cd #{@path} && bundle exec puma -C config/puma/#{@environment}.rb"
+  # Number of workers must be kept in sync with capistrano's delayed_job_workers
+  command "cd #{@path} && RAILS_ENV=#{@environment} bin/delayed_job -n 2 restart"
 end

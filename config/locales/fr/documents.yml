@@ -1,11 +1,11 @@
 fr:
   documents:
     title: Documents
-    max_documents_allowed_reached_html: Vous avez atteint le nombre maximum de documents ! <strong>Vous devez en supprimer pour pouvoir en ajouter un nouveau.</strong>
+    max_documents_allowed_reached: Vous avez atteint le nombre maximum de documents autorisés ! <strong>Vous devez un supprimer document pour pouvoir en ajouter de nouveau.</strong>
+    additional: Plus de documentation
     form:
       title: Documents
       title_placeholder: Ajouter un titre descriptif pour le document
-      attachment_label: Choisir un document
       delete_button: Supprimer le document
       note: "Vous pouvez ajouter au plus %{max_documents_allowed} documents de type %{accepted_content_types} et de taille %{max_file_size} Mo par fichier."
       add_new_document: Ajouter un nouveau document
@@ -20,4 +20,4 @@ fr:
     errors:
       messages:
         in_between: doit être entre %{min} et %{max}
-        wrong_content_type: le type de contenu %{content_type} ne correspond à aucun type de contenu accepté (%{accepted_content_types})
+        wrong_content_type: Le format %{content_type} ne correspond à aucun format accepté (%{accepted_content_types}).

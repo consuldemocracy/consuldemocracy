@@ -1,0 +1,11 @@
+zh-CN:
+  stats:
+    title: "参与数据"
+    total_participants: "参与者"
+    total: "总计"
+    budgets:
+      link: "统计"
+      total_unfeasible_investments: "不可行的项目"
+      total: "总计"
+      heading: "标题"
+      participants_every_phase: "总参与人数"

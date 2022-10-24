@@ -1,5 +1,8 @@
 en:
   pages:
+    census_terms:
+      title: "Terms and conditions of access of the Census"
+      description: "Information page on the terms and conditions of access of the Census."
     conditions:
       title: Terms and conditions of use
       subtitle: LEGAL NOTICE ON THE CONDITIONS OF USE, PRIVACY AND PROTECTION OF PERSONAL DATA OF THE OPEN GOVERNMENT PORTAL
@@ -18,7 +21,7 @@ en:
         title: "Debates"
         description: "In the %{link} section you can present and share your opinion with other people on issues of concern to you related to the city. It is also a place to generate ideas that through the other sections of %{org} lead to concrete actions by the City Council."
         link: "citizen debates"
-        feature_html: "You can open debates, comment and evaluate them with the <strong>I agree</strong> or <strong>I don't agree</strong>. For that you have to %{link}."
+        feature: "You can open debates, comment and evaluate them with the <strong>I agree</strong> or <strong>I don't agree</strong>. For that you have to %{link}."
         feature_link: "register in %{org}"
         image_alt: "Buttons to rate the debates"
         figcaption: '"I agree" and "I disagree" buttons to rate the debates.'
@@ -27,13 +30,13 @@ en:
         description: "In the %{link} section you can make proposals for the City Council to carry them out. The proposals require support, and if they reach sufficient support, they are put to a public vote. The proposals approved in these citizens' votes are accepted by the City Council and carried out."
         link: "citizen proposals"
         image_alt: "Button to support a proposal"
-        figcaption_html: 'Button to "Support" a proposal.'
+        figcaption: 'Button to "Support" a proposal.'
       budgets:
         title: "Participatory Budgeting"
         description: "The %{link} section helps people make a direct decision on what part of the municipal budget is spent on."
         link: "participative budgets"
         image_alt: "Different phases of a participatory budget"
-        figcaption_html: '"Support" and "Voting" phases of participatory budgets.'
+        figcaption: '"Support" and "Voting" phases of participatory budgets.'
       polls:
         title: "Polls"
         description: "The %{link} section is activated each time a proposal reaches 1% support and goes to the vote or when the City Council proposes an issue for people to decide on."
@@ -44,6 +47,8 @@ en:
         title: "Processes"
         description: "In the %{link} section, citizens participate in the drafting and modification of regulations affecting the city and can give their opinion on municipal policies in previous debates."
         link: "processes"
+        feature: "To participate in the processes you have to %{link} and verify your account."
+        feature_link: "register in %{org_name}"
       faq:
         title: "Technical problems?"
         description: "Read the FAQs and solve your questions."
@@ -51,11 +56,10 @@ en:
         page:
           title: "Frequently Asked Questions"
           description: "Use this page to resolve the common FAQs to the users of site."
-          faq_1_title: "Question 1"
-          faq_1_description: "This is an example for the description of question one."
       other:
         title: "Other information of interest"
         how_to_use: "Use %{org_name} in your city"
+        sdg: "Sustainable Development Goals help"
       how_to_use:
         text: |-
           Use it in your local government or help us to improve it, it is free software.
@@ -67,18 +71,7 @@ en:
         how_to_use: Use it in your local government
     privacy:
       title: Privacy Policy
-      subtitle: INFORMATION REGARDING DATA PRIVACY
-      info_items:
-        - text: The navigation through the information available in the Open Government Portal is anonymous.
-        - text: To use the services contained in the Open Government Portal, the user must register and previously provide personal data according to the specific information included in each type of registration.
-        - text: 'The data provided will be incorporated and processed by the City Council in accordance with the description of the following file:'
-        - subitems:
-          - field: 'File name:'
-            description: NAME OF THE FILE
-          - field: 'Purpose of the file:'
-            description: Managing participatory processes to control the qualification of the people participating in them and merely numerical and statistical recount of the results derived from citizen participation processes.
-          - field: 'Institution in charge of the file:'
-            description: INSTITUTION IN CHARGE OF THE FILE
+      subtitle: "Information page on privacy"
     accessibility:
       title: Accessibility
       description: |-
@@ -111,7 +104,7 @@ en:
             - key_column: 5
               page_column: Legislative processes
         browser_table:
-          description: 'Depending on the operating system and the browser used, the key combination will be as follows:'
+          description: "Depending on the operating system and the browser used, the key combination will be as follows:"
           caption: Key combination depending on the operating system and browser
           browser_header: Browser
           key_header: Key combination
@@ -144,25 +137,19 @@ en:
             - browser_column: Opera
               action_column: View > scale
         browser_shortcuts_table:
-          description: 'Another way to modify the text size is to use the keyboard shortcuts defined in browsers, in particular the key combination:'
+          description: "Another way to modify the text size is to use the keyboard shortcuts defined in browsers, in particular the key combination:"
           rows:
             - shortcut_column: CTRL and + (CMD and + on MAC)
               description_column: Increases text size
-            - shortcut_column: CTRL and - (CMD  and - on MAC)
+            - shortcut_column: CTRL and - (CMD and - on MAC)
               description_column: Decreases text size
       compatibility:
         title: Compatibility with standards and visual design
-        description_html: 'All pages of this website comply with the <strong>Accessibility Guidelines</strong> or General Principles of Accessible Design established by the Working Group <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> belonging to W3C.'
+        description: 'All pages of this website comply with the <strong>Accessibility Guidelines</strong> or General Principles of Accessible Design established by the Working Group <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> belonging to W3C.'
     titles:
-      accessibility: Accessibility
-      conditions: Terms of use
       help: "What is %{org}? - Citizen participation"
-      privacy: Privacy Policy
     verify:
-      code: Code you received in letter
-      email: Email
-      info: 'To verify your account introduce your access data:'
-      info_code: 'Now introduce the code you received in letter:'
-      password: Password
+      info: "To verify your account introduce your access data:"
+      info_code: "Now introduce the code you received in letter:"
       submit: Verify my account
       title: Verify your account

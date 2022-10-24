@@ -1,0 +1,1580 @@
+uk-UA:
+  admin:
+    header:
+      title: Адміністрування
+    actions:
+      actions: Дії
+      confirm_hide: Підтвердити модерацію
+      delete: "Видалити"
+      hide: Приховати
+      restore: Відновити
+      mark_featured: Рекомендовані
+      unmark_featured: Не показувати рекомендовані
+      edit: Редагувати
+      configure: Налаштувати
+    officing_booth:
+      title: "Ви призначені на кабінку, розташовану в %{booth}. Якщо це не так, не продовжуйте і зателефонуйте в службу підтримки. Дякуємо."
+    banners:
+      index:
+        title: Постери
+        create: Створити постер
+        filters:
+          all: Усі
+          with_active: Активні
+          with_inactive: Неактивні
+        preview: Попередній перегляд
+      banner:
+        sections_label: Розділи, у яких він з'явиться
+        sections:
+          homepage: Домашня сторінка
+          debates: Обговорення
+          proposals: Пропозиції
+          budgets: Бюджетування за участі громадськості
+          help_page: Довідка
+      edit:
+        editing: Редагувати постер
+        form:
+          submit_button: Зберегти зміни
+      new:
+        creating: Створити постер
+    activity:
+      show:
+        action: Дія
+        actions:
+          block: Заблоковано
+          hide: Приховано
+          restore: Відновлено
+        by: Модерується
+        content: Вміст
+        filter: Показати
+        filters:
+          all: Усі
+          on_comments: Коментарі
+          on_debates: Обговорення
+          on_proposals: Пропозиції
+          on_users: Користувачі
+          on_system_emails: Електронні листи системи
+        title: Посередницька діяльність
+        type: Тип
+        no_activity: Посередницька діяльність відсутня.
+    budgets:
+      actions:
+        edit: "Редагувати бюджет"
+        preview: "Попередній перегляд"
+      index:
+        title: Бюджети участі
+        new_link: Створити новий бюджет
+        filter: Фільтр
+        filters:
+          all: Усі
+          open: Відкрити
+          finished: Завершено
+        budget_investments: Управляти проектами
+        table_budget_type: "Тип"
+        table_draft: "Чернетка"
+        table_name: Назва
+        table_phase: Етап
+        admin_ballots: Адмініструвати бюлетені
+        no_budgets: "Бюджети відсутні."
+      create:
+        notice: Новий бюджет участі створено!
+      update:
+        notice: Бюджет участі оновлено
+      edit:
+        title: Редагувати бюджет участі
+        delete: Видалити бюджет
+        phase: Етап
+        enabled: Дозволено
+        actions: Дії
+        active: Активні
+        blank_dates: Дати порожні
+        administrators:
+          zero: "Обрати адміністраторів"
+          one: "Вибрано 1 адміністратора"
+          few: "Вибрано %{count} адміністратори"
+          many: "Вибрано %{count} адміністраторів"
+          other: "Вибрано %{count} адміністраторів"
+        valuators:
+          zero: "Обрати оцінювачів"
+          one: "Вибрано 1 оцінювача"
+          few: "Вибрано %{count} оцінювачі"
+          many: "Вибрано %{count} оцінювачів"
+          other: "Вибрано %{count} оцінювачів"
+        empty_administrators: "Адміністратори відсутні"
+        empty_valuators: "Оцінювачі відсутні"
+      destroy:
+        success_notice: Бюджет видалений
+        unable_notice: Ви не можете видалити бюджет, який має пов'язані інвестиції
+        unable_notice_polls: Ви не можете видалити бюджет, який має пов'язане опитування
+      winners:
+        calculate: Вирахувати переможні інвестиції
+        calculated: Переможці вираховуються, це може зайняти деякий час.
+        recalculate: Перерахувати переможні інвестиції
+    budget_groups:
+      name: "Назва"
+      headings_name: "Рубрики"
+      headings_manage: "Управляти розділами"
+      no_groups: "Групи відсутні."
+      amount:
+        one: "Є 1 група"
+        few: "Є %{count} групи"
+        many: "Є %{count} груп"
+        other: "Є %{count} груп"
+      create:
+        notice: "Групу створено!"
+      update:
+        notice: "Групу оновлено"
+      destroy:
+        success_notice: "Групу видалено"
+        unable_notice: "Ви не можете видалити групу, яка має пов'язану рубрику"
+      form:
+        create: "Створити нову групу"
+        edit: "Редагувати групу"
+        max_votable_headings_info: "Стосується лише етапу відбору проєктів. На етапі голосування за проєкти користувачі можуть проголосувати лише за одну рубрику в групі."
+        submit: "Зберегти групу"
+    budget_headings:
+      create:
+        notice: "Рубрику створено!"
+      update:
+        notice: "Рубрику оновлено"
+      destroy:
+        success_notice: "Рубрику видалено"
+        unable_notice: "Ви не можете видалити рубрику, яка має пов'язані інвестиції"
+      form:
+        max_ballot_lines_info: 'Максимальна кількість проєктів, за які може проголосувати користувач за даною рубрикою на етапі "Голосування за проєкти". Лише для бюджетів, де використовується голосування за одобрювальним принципом.'
+        population_info: "Поле \"Населення\" в рубриці бюджету використовується для статистичних цілей і показує, яка частка населення певної місцевості взяла участь в голосуванні. Поле є необов’язковим, тому ви можете залишити його порожнім."
+        coordinates_info: "Якщо зазначені широта і довгота, сторінка інвестиції включатиме мапу. Ця мапа буде відцентрована з використанням даних координат."
+        content_blocks_info: "Якщо встановлено прапорець біля \"Дозволити блокування контенту\", ви зможете створювати власний контент, пов’язаний із цим заголовком, у розділі Налаштування> Блоки контенту користувача. Цей контент з’явиться на сторінці інвестицій для цієї рубрики."
+        create: "Створити нову рубрику"
+        edit: "Редагувати рубрику"
+        submit: "Зберегти рубрику"
+      index:
+        back: "Повернутися до груп"
+    budget_phases:
+      edit:
+        title: "Редагувати етап"
+        description_help_text: Цей текст з'являтиметься у заголовку, якщо етап є активним
+        enabled_help_text: Цей етап буде загальнодоступним на часовій шкалі етапів бюджету та активним для будь-яких інших цілей
+        save_changes: Зберегти зміни
+    budget_investments:
+      index:
+        heading_filter_all: Усі рубрики
+        administrator_filter_all: Усі адміністратори
+        valuator_filter_all: Усі оцінювачі
+        tags_filter_all: Усі теги
+        advanced_filters: Розширені фільтри
+        placeholder: Пошук проектів
+        filters:
+          all: Усі
+          without_admin: Без призначеного адміністратора
+          without_valuator: Без призначеного оцінювача
+          under_valuation: В процесі оцінювання
+          valuation_finished: Оцінювання завершено
+          feasible: Реалізація доцільна
+          selected: Вибрано
+          undecided: Не вирішено
+          unfeasible: Реалізація недоцільна
+          min_total_supports: Найменше підтримки
+          max_total_supports: Найбільше підтримки
+          winners: Переможці
+          one_filter: "Застосовані фільтри: <b><em>%{filter}</em></b>"
+          two_filters: "Застосовані фільтри: <b><em>%{filter}, %{advanced_filters}</em></b>"
+        buttons:
+          filter: Фільтр
+        download_current_selection: "Завантажити поточний відбір"
+        no_budget_investments: "Інвестиційні проєкти відсутні."
+        title: Інвестиційні проєкти
+        columns: Колонки
+        assigned_admin: Призначений адміністратор
+        no_admin_assigned: Адміністратора не призначено
+        no_valuators_assigned: Оцінювачів не призначено
+        feasibility:
+          feasible: "Реалізація доцільна"
+          unfeasible: "Реалізація недоцільна"
+          undecided: "Не вирішено"
+        selected: "Вибрано"
+        select: "Обрати"
+        list:
+          id: ID
+          title: Назва
+          supports: Підтримка
+          admin: Адміністратор
+          valuator: Оцінювач
+          valuation_group: Група оцінювання
+          geozone: Сфера діяльності
+          feasibility: Доцільність
+          valuation_finished: Остаточне оцінювання.
+          selected: Вибрано
+          visible_to_valuators: Показати оцінювачам
+          author_username: Ім'я користувача автора
+          incompatible: Несумісно
+          price: Вартість
+          author: Автор
+        see_results: "Переглянути результати"
+        milestone_tags_filter_all: "Теги всіх етапів"
+      show:
+        assigned_admin: Призначений адміністратор
+        assigned_valuators: Призначені оцінювачі
+        classification: Класифікація
+        info: "%{budget_name} - Група: %{group_name} - Інвестиційний проєкт %{id}"
+        edit: Редагувати
+        edit_classification: Редагувати класифікацію
+        by: За
+        sent: Надіслані
+        group: Група
+        heading: Рубрика
+        dossier: Досьє
+        edit_dossier: Редагувати досьє
+        tags: Теги
+        undefined: Не визначено
+        compatibility:
+          title: Сумісність
+          "true": Несумісно
+          "false": Сумісно
+        selection:
+          title: Відбір
+        winner:
+          title: Переможець
+          "true": "Так"
+          "false": "Ні"
+        valuator_groups: "Групи оцінювачів"
+        preview: Попередній перегляд інвестиції
+      edit:
+        classification: Класифікація
+        compatibility: Сумісність
+        selection: Відбір
+        assigned_valuators: Оцінювачі
+        select_heading: Обрати рубрику
+        submit_button: Оновити
+        user_tags: Теги користувача
+        tags_placeholder: "Напишіть бажані теги, розділивши їх комами (,)"
+        undefined: Не визначено
+      search_unfeasible: Пошук неможливий
+    budgets_wizard:
+      creation_timeline:
+        budget: Бюджет
+        groups: Групи
+        headings: Рубрики
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "Заголовок"
+        table_description: "Опис"
+        table_publication_date: "Дата публікування"
+        table_status: Статус
+        table_actions: "Дії"
+        no_milestones: "Немає визначених віх"
+        image: "Зображення"
+        show_image: "Показати зображення"
+        documents: "Документи"
+        milestone: Віха
+        new_milestone: Створити нову віху
+        milestone_tags: Теги віх
+      form:
+        admin_statuses: Керувати статусами
+        no_statuses_defined: Визначених статусів ще немає
+      new:
+        creating: Створити віху
+      edit:
+        title: Редагувати віху
+      create:
+        notice: Нову віху створено!
+      update:
+        notice: Віху оновлено
+      delete:
+        notice: Віху видалено
+    statuses:
+      index:
+        title: Статуси віх
+        empty_statuses: Статусів віх не створено
+        new_status: Створити новий статус віхи
+        table_name: Назва
+        table_description: Опис
+        table_actions: Дії
+      edit:
+        title: Редагувати статус віхи
+      update:
+        notice: Статус віхи оновлено
+      new:
+        title: Створити статус віхи
+      create:
+        notice: Статус віхи створено
+      delete:
+        notice: Статус віхи видалено
+    progress_bars:
+      manage: "Керувати індикаторами прогресу"
+      index:
+        title: "Індикатори прогресу"
+        no_progress_bars: "Індикатори прогресу відсутні"
+        new_progress_bar: "Створити новий індикатор прогресу"
+        primary: "Головний індикатор прогресу"
+        table_id: "ID"
+        table_kind: "Тип"
+        table_title: "Заголовок"
+        table_percentage: "Поточний прогрес"
+      new:
+        creating: "Створити індикатор прогресу"
+      edit:
+        title:
+          primary: "Редагувати головний індикатор прогресу"
+          secondary: "Редагувати індикатор прогресу %{title}"
+      create:
+        notice: "Індикатор прогресу створено!"
+      update:
+        notice: "Індикатор прогресу оновлено"
+      delete:
+        notice: "Індикатор прогресу видалено"
+    comments:
+      index:
+        id: "ID"
+        content: "Вміст"
+        author: "Автор"
+        commentable_type: "Тип"
+        title: Коментарі
+        no_comments: Коментарів немає.
+        table_link: "Посилання"
+    hidden_comments:
+      index:
+        filter: Фільтр
+        filters:
+          all: Усі
+          with_confirmed_hide: Підтверджені
+          without_confirmed_hide: В очікуванні
+        hidden_debate: Приховане обговорення
+        hidden_proposal: Прихована пропозиція
+        title: Приховані коментарі
+        no_hidden_comments: Приховані коментарі відсутні.
+    dashboard:
+      index:
+        back: Повернутися до %{org}
+        title: Адміністрування
+        description: Ласкаво просимо до %{org} панелі адміністратора.
+      actions:
+        index:
+          description: "Коли користувачі подають пропозиції, вони отримують доступ до інформаційної панелі своєї пропозиції, де вони можуть пропонувати ресурси та надавати рекомендації для підтримки їхніх ідей."
+          create: Створити ресурс або дію
+          active: 'Так'
+          inactive: 'Ні'
+          title: Ресурси та дії
+          action_title: Заголовок
+          action_type: Тип
+          required_supports: Необхідна підтримка
+          day_offset: Необхідна кількість днів
+          action_active: Активні
+          order: Порядок
+          published_proposal: Опублікована пропозиція
+          default:
+            email: Електронна адреса
+            polls: Опитування
+            poster: Афіша
+        new:
+          creating: Нова дія для інформаційної панелі пропозицій
+          back: Назад до списку
+        create:
+          notice: Дію створено
+        edit:
+          editing: Редагувати дію для інформаційної панелі пропозицій
+          back: Назад до списку
+        delete:
+          success: Дію видалено
+        form:
+          submit_button: Зберегти
+          help_text: Введіть 0, щоб цю оцінку не було враховано
+          published_proposal_help_text: Встановіть позначку, щоб створювати дії лише для опублікованих пропозицій
+      administrator_tasks:
+        index:
+          description: "Ресурси на інформаційній панелі пропозицій можуть містити кнопку запитів для адміністраторів. Запити користувачів показані нижче."
+          title: Запитувані ресурси
+          solve: Вирішити
+          no_records: Запитувані ресурси відсутні
+          source: Джерело
+          resource: Запитуваний ресурс
+          filter: Фільтр
+          filters:
+            pending: В очікуванні
+            done: Вирішено
+        edit:
+          back: Назад до списку завдань в очікуванні
+          solving: Вирішити очікуване завдання
+        form:
+          solve: Позначити як вирішене
+          proposal: Пропозиція
+          request: Запитуваний ресурс
+        update:
+          success: Завдання позначене як вирішене.
+    debates:
+      index:
+        id: ID
+        author: Автор
+        title: Обговорення
+        no_debates: Обговорень немає.
+    hidden_debates:
+      index:
+        filter: Фільтр
+        filters:
+          all: Усі
+          with_confirmed_hide: Підтверджені
+          without_confirmed_hide: В очікуванні
+        title: Приховані обговорення
+        no_hidden_debates: Немає прихованих обговорень.
+    documents:
+      new:
+        title: "Завантажити документ"
+        submit_button: "Завантажити"
+      index:
+        new_link: "Додати новий документ"
+        no_documents: "Документів немає."
+        title: "Документи"
+        format: "Формат"
+        size: "Розмір"
+        url: "URL-адреса"
+      create:
+        success_notice: "Документ завантажено"
+        unable_notice: "Недійсний документ"
+      destroy:
+        success_notice: "Документ видалено"
+    hidden_users:
+      index:
+        filter: Фільтр
+        filters:
+          all: Усі
+          with_confirmed_hide: Підтверджені
+          without_confirmed_hide: В очікуванні
+        title: Приховані користувачі
+        user: Користувач
+        no_hidden_users: Прихованих користувачів немає.
+      show:
+        email: "Електронна адреса:"
+        hidden_at: "Приховано о:"
+        registered_at: "Зареєстровано о:"
+        title: Активність користувача (%{user})
+    hidden_budget_investments:
+      index:
+        filter: Фільтр
+        filters:
+          all: Усі
+          with_confirmed_hide: Підтверджені
+          without_confirmed_hide: В очікуванні
+        title: Приховані бюджетні інвестиції
+        no_hidden_budget_investments: Немає прихованих бюджетних інвестицій
+    legislation:
+      processes:
+        create:
+          notice: 'Процес створено. <a href="%{link}">Click to visit</a>'
+          error: Неможливо створити процес
+        update:
+          notice: 'Процес оновлено. <a href="%{link}">Click to visit</a>'
+          error: Неможливо оновити процес
+        destroy:
+          notice: Процес видалено
+        edit:
+          back: Назад
+          submit_button: Зберегти зміни
+        form:
+          enabled: Дозволено
+          process: Процес
+          debate_phase: Етап обговорення
+          draft_phase: Етап розробки проєкту
+          draft_phase_description: Якщо цей етап активний, процес процес не буде відображений у списку процесів. Зробіть можливим попередній перегляд процесу і створити контент перед початком.
+          allegations_phase: Етап коментування
+          proposals_phase: Етап подання пропозицій
+          use_markdown: Використовуйте Markdown, щоб відформатувати текст
+          homepage_description: Тут ви можете пояснити зміст процесу
+          banner_title: Кольори рубрик
+        index:
+          create: Новий процес
+          title: Спільна законотворчість
+          filters:
+            active: Активні
+            all: Усі
+        new:
+          back: Назад
+          title: Створити новий спільний законодавчий процес
+          submit_button: Створити процес
+        proposals:
+          orders:
+            id: "Id"
+            title: "Назва"
+            supports: "Загальна підтримка"
+        process:
+          title: Процес
+          comments: Коментарі
+          status: Статус
+          start_date: Дата початку
+          end_date: Дата закінчення
+          status_open: Відкриті
+          status_closed: Закриті
+          status_planned: Заплановані
+        subnav:
+          info: Інформація
+          homepage: Домашня сторінка
+          draft_versions: Розробка
+          questions: Обговорення
+          proposals: Пропозиції
+          milestones: Відслідковувані
+      homepage:
+        edit:
+          title: Налаштувати домашню сторінку процесу
+      proposals:
+        index:
+          title: Назва
+          back: Назад
+          id: Id
+          supports: Загальна підтримка
+        form:
+          custom_categories: Категорії
+          custom_categories_description: Категорії, які можуть обирати користувачі, подаючи пропозицію. Макс. 160 символів.
+          custom_categories_placeholder: Введіть теги, які хочете використовувати, розділивши їх комами (,) і поставивши лапки ("")
+      draft_versions:
+        create:
+          notice: 'Чернетку створено. <a href="%{link}">Click to visit</a>'
+          error: Не вдалося створити чернетку
+        update:
+          notice: 'Чернетку оновлено. <a href="%{link}">Click to visit</a>'
+          error: Не вдалося оновити чернетку
+        destroy:
+          notice: Чернетку видалено
+        edit:
+          back: Назад
+          submit_button: Зберегти зміни
+          warning: Ви відредагувати текст; не забудьте натиснути "Зберегти" для остаточного збереження.
+          markdown_changes_message: "Ви відредагували текст, не зберігши його. Ви дійсно хочете залишити сторінку?"
+        form:
+          title: 'Редагувати <span class="strong">%{draft_version_title}</span> з процесу <span class="strong">%{process_title}</span>'
+          launch_text_editor: Запустити текстовий редактор
+          close_text_editor: Закрити текстовий редактор
+          use_markdown: Використовуйте Markdown, щоб відформатувати текст
+          hints:
+            final_version: Ця версія буде опублікована як остаточний результат для даного процесу. У цій версії коментарі заборонені.
+            status:
+              draft: Ви можете здійснити попередній перегляд як адміністратор, ніхто інший не може бачити попередній перегляд
+              published: Видимий для всіх
+          changelog_placeholder: Додати основні зміни з попередньої версії
+        index:
+          title: Чорнові версії
+          create: Створити версію
+          delete: Видалити
+          preview: Попередній перегляд
+        new:
+          back: Назад
+          title: Створити нову версію
+          submit_button: Створити версію
+        table:
+          title: Назва
+          created_at: Створено о
+          comments: Коментарі
+          final_version: Остаточна версія
+          status: Статус
+      questions:
+        create:
+          notice: 'Запитання створено. <a href="%{link}">Натисніть, щоб переглянути</a>'
+          error: Не вдалося створити запитання
+        update:
+          notice: 'Запитання оновлено. <a href="%{link}">Натисніть, щоб переглянути</a>'
+          error: Не вдалося оновити запитання
+        destroy:
+          notice: Запитання видалено
+        edit:
+          back: Назад
+          title: "Редагувати “%{question_title}”"
+          submit_button: Зберегти зміни
+        form:
+          add_option: Додати опцію
+          value_placeholder: Додати закриту відповідь
+          question_options: "Можливі відповіді (за бажанням; за замовчуванням - відкриті відповіді)"
+        index:
+          back: Назад
+          title: Запитання, пов’язані з цим процесом
+          create: Створити запитання
+          delete: Видалити
+        new:
+          back: Назад
+          title: Створити нове запитання
+          submit_button: Створити запитання
+        table:
+          title: Заголовок
+          question_options: Варіанти відповідей
+          answers_count: Підрахунок відповідей
+          comments_count: Підрахунок коментарів
+        question_option_fields:
+          remove_option: Видалити опцію
+      milestones:
+        index:
+          title: Відслідковувані
+    managers:
+      index:
+        title: Керівники
+        no_managers: Менеджерів немає.
+      manager:
+        add: Додати
+      search:
+        title: "Керівники: користувацький пошук"
+    sdg_managers:
+      index:
+        no_sdg_managers: Користувачів немає.
+    sdg/managers:
+      sdg/manager:
+        add: Додати
+    menu:
+      activity: Посередницька діяльність
+      admin: Меню адміністратора
+      banner: Керувати постерами
+      proposals: Пропозиції
+      proposals_topics: Теми пропозицій
+      budgets: Бюджети участі
+      geozones: Управляти геозонами
+      hidden_comments: Приховані коментарі
+      hidden_debates: Приховані обговорення
+      hidden_proposals: Приховані пропозиції
+      hidden_budget_investments: Приховані бюджетні інвестиції
+      hidden_proposal_notifications: Приховані сповіщення щодо пропозицій
+      hidden_users: Приховані користувачі
+      administrators: Адміністратори
+      managers: Керівники
+      moderators: Модератори
+      messaging_users: Повідомлення користувачам
+      newsletters: Інформаційні розсилки
+      admin_notifications: Сповіщення
+      system_emails: Електронні листи системи
+      emails_download: Завантаження електронних листів
+      valuators: Оцінювачі
+      poll_officers: Інспектори опитувань
+      polls: Опитування
+      poll_booths: Розташування кабінок
+      poll_booth_assignments: Призначення кабінок
+      poll_shifts: Керувати змінами
+      officials: Інспектори
+      organizations: Організації
+      settings: Глобальні налаштування
+      stats: Статистика
+      signature_sheets: Аркуші підписів
+      site_customization:
+        documents: Особисті документи
+        homepage: Домашня сторінка
+        pages: Сторінки користувачів
+        images: Зображення користувача
+        content_blocks: Блоки контенту користувача
+        information_texts: Інформаційні тексти користувача
+        information_texts_menu:
+          basic: "Базові налаштування"
+          debates: "Обговорення"
+          community: "Спільнота"
+          proposals: "Пропозиції"
+          polls: "Опитування"
+          layouts: "Макети"
+          mailers: "Електронні адреси"
+          management: "Управління"
+          welcome: "Ласкаво просимо"
+        buttons:
+          save: "Зберегти"
+          content_block:
+            update: "Оновити блок"
+      title_moderated_content: Модерований контент
+      title_profiles: Профілі
+      title_settings: Налаштування
+      title_site_customization: Зміст сайту
+      title_booths: Кабінки для голосування
+      legislation: Спільна законотворчість
+      users: Користувачі
+      dashboard: Інформаційна панель пропозицій
+      administrator_tasks: Запитувані ресурси
+      dashboard_actions: Ресурси та дії
+      debates: "Обговорення"
+      comments: "Коментарі"
+      local_census_records: Керувати місцевим переписом населення
+    administrators:
+      index:
+        title: Адміністратори
+        id: ID адміністратора
+        no_administrators: Адміністратори відсутні.
+      administrator:
+        add: Додати
+        restricted_removal: "Вибачте, ви не можете видалити себе з переліку адміністраторів"
+      search:
+        title: "Адміністратори: користувацький пошук"
+      form:
+        edit_title: "Редагувати адміністратора"
+        updated: "Адміністратора оновлено"
+    moderators:
+      index:
+        title: Модератори
+        no_moderators: Модераторів немає.
+      moderator:
+        add: Додати
+      search:
+        title: "Модератори: користувацький пошук"
+    segment_recipient:
+      all_users: Усі користувачі
+      administrators: Адміністратори
+      all_proposal_authors: Автори пропозицій (в тому числі заархівованих та вилучених)
+      proposal_authors: Автори пропозицій
+      investment_authors: Автори інвестицій у поточному бюджеті
+      feasible_and_undecided_investment_authors: "Автори деяких інвестицій у поточному бюджеті, які не відповідають: [valuation finished unfesasible]"
+      selected_investment_authors: Автори вибраних інвестицій у поточному бюджеті
+      winner_investment_authors: Автори переможних інвестицій у поточному бюджеті
+      not_supported_on_current_budget: Користувачі, які не підтримали інвестиції в поточному бюджеті
+      invalid_recipients_segment: "Недопустимий користувацький сегмент користувачів"
+    newsletters:
+      create_success: Інформаційну розсилку створено
+      update_success: Інформаційну розсилку оновлено
+      send_success: Інформаційну розсилку надіслано
+      delete_success: Інформаційну розсилку видалено
+      index:
+        title: Інформаційні розсилки
+        new_newsletter: Нова інформаційна розсилка
+        subject: Предмет
+        segment_recipient: Отримувачі
+        sent: Надіслані
+        actions: Дії
+        draft: Чернетка
+        preview: Попередній перегляд
+        empty_newsletters: Інформаційних розсилок немає
+      new:
+        title: Нова інформаційна розсилка
+        header_footer_help_text: "Заголовок та нижній колонтитул однакові для всіх електронних листів, їх можна змінити в <code>app/views/layouts/mailer_header</code> та <code>app/views/layouts/mailer_footer</code>. <br> Ви може замінити зображення заголовка на %{link}."
+        image_link: "зображення користувача"
+      edit:
+        title: Редагувати інформаційну розсилку
+      show:
+        title: Попередній перегляд інформаційної розсилки
+        send: Надіслати
+        affected_users: (%{n} задіяних користувачів)
+        sent_emails:
+          one: Надіслано 1 електронний лист
+          few: "Надіслано %{count} електронних листи"
+          many: "Надіслано %{count} електронних листів"
+          other: "Надіслано %{count} електронних листів"
+        sent_at: Надіслано о
+        subject: Предмет
+        segment_recipient: Отримувачі
+        from: Електронна адреса, що відображатиметься як відправник інформаційного бюлетеня
+        body: Вміст листа
+        body_help_text: Ось у якому вигляді отримувачі бачитимуть лист.
+        send_alert: Ви впевнені, що хочете надіслати цю інформаційну розсилку %{n} користувачам?
+    admin_notifications:
+      create_success: Сповіщення створено
+      update_success: Сповіщення оновлено
+      send_success: Сповіщення надіслано
+      delete_success: Сповіщення видалено
+      index:
+        section_title: Сповіщення
+        new_notification: Нове сповіщення
+        title: Назва
+        segment_recipient: Одержувачі
+        sent: Надіслано
+        actions: Дії
+        draft: Чернетка
+        preview: Попередній перегляд
+        view: Переглянути
+        empty_notifications: Сповіщень немає
+      new:
+        section_title: Нове сповіщення
+        submit_button: Створити сповіщення
+      edit:
+        section_title: Редагувати сповіщення
+        submit_button: Оновити сповіщення
+      show:
+        section_title: Попередній перегляд сповіщення
+        send: Надіслати сповіщення
+        will_get_notified: (%{n} користувачів отримають сповіщення)
+        got_notified: (%{n} користувачів отримали сповіщення)
+        sent_at: Надіслано о
+        title: Назва
+        body: Текст
+        link: Посилання
+        segment_recipient: Отримувачі
+        preview_guide: "Таким бачитимуть сповіщення отримувачі:"
+        sent_guide: "Ось як виглядатиме сповіщення для отримувачів:"
+        send_alert: Ви впевнені, що хочете надіслати це сповіщення %{n} користувачам?
+    system_emails:
+      preview_pending:
+        action: Очікування попереднього перегляду
+        preview_of: Попередній перегляд %{name}
+        pending_to_be_sent: Цей вміст очікує надсилання
+        moderate_pending: Сповіщення про модерування надіслане
+        send_pending: Надіслати те, що в очікуванні
+        send_pending_notification: Сповіщення в очікуванні надіслано
+      proposal_notification_digest:
+        title: "Зведення сповіщень щодо пропозицій"
+        description: "Збирає всі сповіщення щодо пропозицій для користувача в одному повідомленні, щоб уникнути надсилання надмірної кількості електронних листів."
+        preview_detail: "Користувачі отримуватимуть лише сповіщення щодо пропозицій, за якими вони слідкують"
+      budget_investment_created:
+        title: "Створена бюджетна пропозиція"
+        description: "Надсилається, коли користувач створює бюджетну інвестицію."
+      budget_investment_selected:
+        title: "Відібрана бюджетна пропозиція"
+        description: "Надсилається автору, коли його бюджетну інвестицію відбирають."
+      budget_investment_unfeasible:
+        title: "Недоцільна бюджетна інвестиція"
+        description: "Надсилається автору, коли його бюджетну інвестицію визначено як недоцільну."
+      budget_investment_unselected:
+        title: "Вибір бюджетного інвестування скасований"
+        description: "Надсилається автору, коли його бюджетну інвестицію не відбирають для голосування."
+      comment:
+        title: "Коментар"
+        description: "Надсилається автору, коли отримано коментар."
+      reply:
+        title: "Відповідь"
+        description: "Надсилається автору коментаря, коли з'являється відповідь."
+      direct_message_for_receiver:
+        title: "Отримувач особистого повідомлення"
+        description: "Надсилається отримувачу особистого повідомлення."
+      direct_message_for_sender:
+        title: "Відправник особистого повідомлення"
+        description: "Надсилається відправнику особистого повідомлення."
+      email_verification:
+        title: "Перевірка електронної пошти"
+        description: "Надсилається новому користувачу для підтвердження облікового запису."
+      user_invite:
+        title: "Запрошення користувача"
+        description: "Надсилається особі, якій пропонується зареєструвати обліковий запис."
+      evaluation_comment:
+        title: "Новий коментар оцінки"
+        description: "Надсилається адміністраторам та оцінювачам, які мають відношення до прокоментованої інвестиції"
+      edit_info: "Ви можете редагувати електронну адресу в"
+      message_title: "Заголовок повідомлення"
+      message_body: "Ось приклад вмісту повідомлення."
+      alert:
+        no_investments: "Бюджетних інвестицій не створено. Для попереднього перегляду листа потрібні приклади даних."
+        no_comments: "Коментарів не створено. Для попереднього перегляду листа потрібні приклади даних."
+        no_replies: "Відповідей не створено. Для попереднього перегляду листа потрібні приклади даних."
+        no_evaluation_comments: "Коментарів оцінки не створено. Для попереднього перегляду листа потрібні приклади даних."
+    emails_download:
+      index:
+        title: Завантаження електронних листів
+        download_segment: Завантажити електронні адреси
+        download_segment_help_text: Завантажити у форматі CSV
+        download_emails_button: Завантажити список електронних адрес
+    valuators:
+      index:
+        title: Оцінювачі
+        name: Ім'я
+        email: Електронна адреса
+        description: Опис
+        no_description: Опис відсутній
+        no_valuators: Оцінювачів немає.
+        valuator_groups: "Групи оцінювачів"
+        group: "Група"
+        no_group: "Групи відсутні"
+        abilities: "Можливості"
+        can_comment: "Може коментувати"
+        can_edit_dossier: "Може редагувати досьє"
+      valuator:
+        add: Додати до оцінювачів
+      search:
+        title: "Оцінювачі: Користувацький пошук"
+      form:
+        edit_title: "Оцінювачі: Додати оцінювача"
+        updated: "Оцінювача оновлено"
+      show:
+        description: "Опис"
+        email: "Електронна адреса"
+        group: "Група"
+        abilities: "Можливості"
+        no_description: "Без опису"
+        no_group: "Без групи"
+        no_abilities: "Без можливостей"
+    valuator_groups:
+      index:
+        title: "Групи оцінювачів"
+        new: "Створити групи оцінювачів"
+        name: "Ім'я"
+        members: "Учасники"
+        no_groups: "Групи оцінювачів відсутні"
+      show:
+        title: "Група оцінювачів: %{group}"
+        no_valuators: "Для цієї групи немає призначених оцінювачів"
+      form:
+        new: "Створити групу оцінювачів"
+        edit: "Зберегти групу оцінювачів"
+    poll_officers:
+      index:
+        title: Посадові особи опитувань
+      officer:
+        add: Додати
+        delete: Видалити позицію
+        name: Ім'я
+        email: Електронна адреса
+        entry_name: інспектор
+      search:
+        email_placeholder: Пошук користувача за електронною адресою
+        user_not_found: Користувача не знайдено
+        help: "Щоб додати або усунути посадових осіб голосувань, скористайтеся формою нижче."
+    poll_officer_assignments:
+      index:
+        officers_title: "Список інспекторів"
+        no_officers: "Немає інспекторів, призначених для цього обговорення."
+        table_name: "Ім'я"
+        table_email: "Електронна адреса"
+      by_officer:
+        date: "Дата"
+        booth: "Кабінка"
+        assignments: "Зміни інспекторів у цьому голосуванні"
+        no_assignments: "У цього користувача немає змін в даному голосуванні."
+    poll_shifts:
+      new:
+        add_shift: "Додати зміну"
+        shift: "Завдання"
+        shifts: "Зміни у цій кабінці"
+        date: "Дата"
+        edit_shifts: Редагувати зміни
+        new_shift: "Нова зміна"
+        no_shifts: "У цій кабінці немає змін"
+        officer: "Інспектор"
+        remove_shift: "Усунути"
+        search_officer_button: Пошук
+        search_officer_placeholder: Шукати інспектора
+        search_officer_text: Шукати інспектора для призначення на нову зміну
+        select_date: "Обрати день"
+        no_voting_days: "Дні голосування завершені"
+        select_task: "Обрати завдання"
+        table_shift: "Зміна"
+        table_email: "Електронна адреса"
+        table_name: "Ім'я"
+      flash:
+        create: "Зміну додано"
+        destroy: "Зміну видалено"
+        unable_to_destroy: "Зміни з пов'язаними результатами та перерахунками не можуть бути видалені"
+        date_missing: "Необхідно обрати дату"
+      vote_collection: Зібрати голоси
+      recount_scrutiny: Перерахунок та перевірка правильності підрахунку голосів
+    booth_assignments:
+      manage_assignments: Управляти призначеннями
+      manage:
+        assignments_list: "Призначення для голосування '%{poll}'"
+        status:
+          assign_status: Призначення
+          assigned: Призначено
+          unassigned: Не призначено
+        actions:
+          assign: Призначити кабінку
+          unassign: Скасувати призначення кабінки
+    poll_booth_assignments:
+      alert:
+        shifts: "Є зміни, які пов'язані з даною кабінкою. Якщо ви видалите завдання для кабінки, зміни також будуть видалені. Продовжити?"
+      show:
+        location: "Розташування"
+        officers: "Інспектори"
+        officers_list: "Список інспекторів для цієї кабінки"
+        no_officers: "Немає інспекторів для цієї кабінки"
+        recounts: "Перерахунок"
+        recounts_list: "Список перерахунків для цієї кабінки"
+        results: "Результати"
+        date: "Дата"
+        count_final: "Остаточний перерахунок (інспектором)"
+        count_by_system: "Голоси (автоматично)"
+        total_system: Всього голосів (автоматично)
+      index:
+        booths_title: "Список кабінок"
+        no_booths: "Немає кабінок, призначених для цього голосування."
+        table_name: "Назва"
+        table_location: "Розташування"
+    active_polls:
+      edit:
+        title: "Опис опитувань"
+      form:
+        description:
+          help_text: "Цей текст з'явиться у заголовку сторінки голосувань. Його можна використати для того, щоб додати контексту відкритим голосуванням."
+    polls:
+      index:
+        title: "Список голосувань"
+        no_polls: "Голосувань немає."
+        create: "Створити голосування"
+        name: "Назва"
+        dates: "Дати"
+        start_date: "Дата початку"
+        closing_date: "Дата завершення"
+        geozone_restricted: "Обмежено дільницями"
+      new:
+        title: "Нове голосування"
+        submit_button: "Створити голосування"
+      edit:
+        title: "Редагувати голосування"
+        submit_button: "Оновити голосування"
+      show:
+        questions_tab: Запитання
+        booths_tab: Кабінки
+        officers_tab: Інспектори
+        recounts_tab: Перерахунок
+        results_tab: Результати
+        no_questions: "Немає запитань, призначених для цього обговорення."
+        questions_title: "Перелік запитань"
+        table_title: "Назва"
+        edit_answers: Редагувати відповіді
+        see_proposal: "(Переглянути пропозицію)"
+      flash:
+        question_added: "Запитання додано до голосування"
+        error_on_question_added: "Не вдалося призначити запитання для цього опитування"
+      destroy:
+        alert: "Ця дія видалить голосування і всі пов'язані запитання."
+        success_notice: "Голосування видалено"
+        unable_notice: "Ви не можете видалити голосування, за яке віддані голоси"
+    questions:
+      index:
+        title: "Запитання"
+        create: "Створити запитання"
+        no_questions: "Запитання відсутні."
+        filter_poll: Фільтр за голосуванням
+        select_poll: Обрати голосування
+        questions_tab: "Запитання"
+        successful_proposals_tab: "Успішні пропозиції"
+        create_question: "Створити запитання"
+        table_proposal: "Пропозиція"
+        table_question: "Запитання"
+        table_poll: "Голосування"
+        poll_not_assigned: "Голосування не призначено"
+      edit:
+        title: "Редагувати запитання"
+      new:
+        title: "Створити запитання в голосуванні %{poll}"
+        title_proposal: "Створити запитання"
+      answers:
+        images:
+          add_image: "Додати зображення"
+          save_image: "Зберегти зображення"
+      show:
+        proposal: Початкова пропозиція
+        author: Автор
+        question: Запитання
+        edit_question: Редагувати запитання
+        valid_answers: Правильні відповіді
+        add_answer: Додати відповідь
+        video_url: Зовнішнє відео
+        answers:
+          title: Відповідь
+          description: Опис
+          videos: Відео
+          video_list: Список відео
+          images: Зображення
+          images_list: Список зображень
+          documents: Документи
+          documents_list: Список документів
+          document_title: Назва
+          document_actions: Дії
+    answers:
+      new:
+        title: Нова відповідь
+      show:
+        title: Назва
+        description: Опис
+        images: Зображення
+        images_list: Список зображень
+        edit: Додати відповідь
+      edit:
+        title: Редагувати відповідь
+      videos:
+        index:
+          title: Відео
+          add_video: Додати відео
+          video_title: Назва
+          video_url: Зовнішнє відео
+        new:
+          title: Нове відео
+        edit:
+          title: Редагувати відео
+    recounts:
+      index:
+        title: "Перерахунок"
+        no_recounts: "Перераховувати нічого"
+        all_booths_total: "Сукупні дані по всіх кабінках:"
+        total_final: "Остаточний перерахунок"
+        total_system: "Голоси (автоматично)"
+        table_booth_name: "Кабінка"
+        table_total_recount: "Загальний перерахунок (інспектором)"
+        table_system_count: "Голоси (автоматично)"
+    results:
+      index:
+        title: "Результати"
+        no_results: "Немає результатів"
+      result:
+        table_whites: "Порожні бюлетені"
+        table_nulls: "Недійсні бюлетені"
+        table_total: "Дійсні бюлетені"
+        table_answer: Відповідь
+        table_votes: Голоси
+      results_by_booth:
+        booth: Кабінка
+        results: Результати
+        see_results: Переглянути результати
+        title: "Результати за кабінкою"
+    booths:
+      index:
+        title: "Список активних кабінок"
+        no_booths: "Для майбутніх опитувань немає активних кабінок."
+        add_booth: "Додати кабінку"
+        name: "Назва"
+        location: "Розташування"
+        no_location: "Немає розташування"
+      new:
+        title: "Нова кабінка"
+        submit_button: "Створити кабінку"
+      edit:
+        title: "Редагувати кабінку"
+        submit_button: "Оновити кабінку"
+      show:
+        location: "Розташування"
+      booth:
+        shifts: "Керувати змінами"
+    officials:
+      edit:
+        destroy: Прибрати статус "Службовець"
+        title: "Службовці: Редагувати користувача"
+      flash:
+        official_destroyed: "Деталі збережено: користувач більше не є службовцем"
+        official_updated: Деталі щодо службовця збережено
+      index:
+        title: Службовці
+        help: Облікові записи користувачів, позначених як службовці, будуть підсвічені. Ви можете визначити, яка мітка відобразиться поряд з іменами користувачів цих облікових записів, від найважливіших (рівень 1) до найменш важливих (рівень 5).
+        no_officials: Службовців немає.
+        name: Ім'я
+        official_position: Офіційна посада
+        official_level: Рівень
+      level_0: Не службовець
+      level_1: Рівень 1
+      level_2: Рівень 2
+      level_3: Рівень 3
+      level_4: Рівень 4
+      level_5: Рівень 5
+      search:
+        make_official: Зробити службовцем
+        title: "Посади службовців: пошук користувача"
+        no_results: Посад службовців не знайдено.
+    organizations:
+      index:
+        filter: Фільтр
+        filters:
+          all: Усі
+          pending: В очікуванні
+          rejected: Відхилені
+          verified: Перевірені
+        hidden_count:
+          one: Також є <strong> одна організація </strong>, в якій немає користувачів вони приховані.
+          few: Також є <strong>%{count} організації </strong>, в яких немає користувачів вони приховані.
+          many: Також є <strong>%{count} організацій </strong>, в яких немає користувачів вони приховані.
+          other: Також є <strong>%{count} організацій </strong>, в яких немає користувачів вони приховані.
+        name: Ім'я
+        email: Електронна адреса
+        phone_number: Телефон
+        responsible_name: Відповідальний
+        status: Статус
+        no_organizations: Немає організацій.
+        reject: Відхилити
+        rejected: Відхилено
+        title: Організації
+        verified: Перевірені
+        verify: Перевірити
+        pending: В очікуванні
+      search:
+        title: Шукати організації
+        no_results: Організацій не знайдено.
+    proposals:
+      index:
+        title: Пропозиції
+        id: ID
+        author: Автор
+        select: Обрати
+        selected: Вибрано
+        milestones: Основні етапи
+        no_proposals: Пропозицій немає.
+      show:
+        create_question: Додати пропозицію в опитування для голосування
+      form:
+        update: Оновити пропозицію
+      update:
+        notice: Пропозицію оновлено
+    hidden_proposals:
+      index:
+        filter: Фільтр
+        filters:
+          all: Усі
+          with_confirmed_hide: Підтверджені
+          without_confirmed_hide: В очікуванні
+        title: Приховані пропозиції
+        no_hidden_proposals: Приховані пропозиції відсутні.
+    hidden_proposal_notifications:
+      index:
+        filter: Фільтр
+        filters:
+          all: Усі
+          with_confirmed_hide: Підтверджено
+          without_confirmed_hide: В очікуванні
+        title: Приховані сповіщення
+        no_hidden_proposals: Приховані сповіщення відсутні.
+    settings:
+      flash:
+        updated: Значення оновлено
+      index:
+        title: Налаштування
+        general: Налаштування
+        update_setting: Оновити
+        participation_processes: "Процеси участі"
+        images_and_documents: "Зображення та документи"
+        feature_flags: Функції
+        features:
+          enabled: "Функцію ввімкнено"
+        map:
+          title: Налаштування карти
+          help: Тут ви можете налаштувати спосіб відображення карти для користувачів. Перетягніть маркер карти або клацніть де-небудь над картою, встановіть бажане масштабування та натисніть кнопку «Оновити».
+          flash:
+            update: Налаштування карти оновлено.
+          form:
+            submit: Оновити
+          how_to_enable: 'Щоб показати карту користувачам, потрібно увімкнути "Геолокація пропозицій та бюджетних інвестицій" на вкладці "Функції".'
+        dashboard:
+          title: Панель управління пропозиціями
+        remote_census:
+          title: Налаштування віддаленого перепису
+          how_to_enable: 'Щоб налаштувати віддалений перепис (SOAP), потрібно увімкнути "Налаштування підключення до віддаленого перепису (SOAP)" на вкладці "Функції".'
+      remote_census_general_name: Загальна інформація
+      remote_census_request_name: Запит даних
+      remote_census_response_name: Надання даних
+      setting: Функція
+      setting_name: Налаштування
+      setting_value: Значення
+      no_description: "Опис відсутній"
+    shared:
+      search:
+        label:
+          booths: "Шукати кабінку за назвою або розташуванням"
+          debates: "Шукати обговорення за назвою або описом"
+          local_census_records: "Шукати за номером документа"
+          organizations: "Ім'я, електронна адреса і номер телефону"
+          poll_officers: "Шукати службовців голосування"
+          poll_questions: "Шукати запитання голосувань"
+          proposals: "Шукати пропозиції за назвою, кодом, описом або запитанням"
+          users: "Шукати користувача за ім'ям або електронною адресою"
+        search: "Пошук"
+      search_results: "Результати пошуку"
+      no_search_results: "Результатів не знайдено."
+      actions: Дії
+      title: Назва
+      description: Опис
+      image: Зображення
+      show_image: Показати зображення
+      moderated_content: "Перевірте відмодерований вміст і підтвердьте, що модерація була проведена коректно."
+      view: Переглянути
+      proposal: Пропозиція
+      author: Автор
+      content: Зміст
+      created_at: Створено о
+      color_help: Шістнадцятковий формат
+      show_results_and_stats: "Показати результати і статистику"
+      results_and_stats_reminder: "Поставивши прапорець, можна зробити результати та/або статистику публічно доступними і видимими для кожного користувача."
+    geozones:
+      index:
+        title: Геозона
+        create: Створити геозону
+      geozone:
+        name: Назва
+        external_code: Зовнішній код
+        census_code: Код перепису
+        code_help: Код відповіді для цієї геозони у переписі API
+        coordinates: Координати
+        coordinates_help: Координати, за якими буде згенеровано клікабельну область на карті зображення у форматі HTML
+      edit:
+        form:
+          submit_button: Зберегти зміни
+        editing: Редагування геозони
+        back: Повернутися
+      new:
+        back: Повернутися
+        creating: Створити дільницю
+      delete:
+        success: Геозону видалено
+        error: Цю геозону не можна видалити, адже до неї прикріплені елементи
+    signature_sheets:
+      author: Автор
+      created_at: Дата створення
+      name: Назва
+      no_signature_sheets: "Підписних листів немає"
+      index:
+        title: Підписні листи
+        new: Нові підписні листи
+      new:
+        title: Нові підписні листи
+        document_numbers_note: "Вкажіть номери, розділені крапкою з комою (;)"
+        submit: Створити підписний лист
+        text_help:
+          required_fields_note: "Щоб перевірити користувача, додатку необхідний: Номер документа"
+          date_of_birth_note: ", Дата народження (дд.мм.рррр)"
+          postal_code_note: " та поштовий індекс"
+          required_fields_structure_note: "Для кожного користувача обов’язкові поля повинні бути відокремлені комами, а кожен користувач - крапкою з комою."
+          example_text: "Приклад: "
+      show:
+        created_at: Створено
+        author: Автор
+        users: Користувачі
+        signature_count: "Кількість підписів:"
+        verified:
+          one: "Є %{count} перевірений підпис"
+          few: "Є %{count} перевірених підписи"
+          many: "Є %{count} перевірених підписів"
+          other: "Є %{count} перевірених підписів"
+        unverified:
+          one: "Є %{count} неперевірений підпис"
+          few: "Є %{count} неперевірених підписи"
+          many: "Є %{count} неперевірених підписів"
+          other: "Є %{count} неперевірених підписів"
+        unverified_error: (Не перевірено Census)
+        voted:
+          zero: "Немає голосів, створених за допомогою перевірених підписів."
+          one: "Є %{count} голос, створений за допомогою перевірених підписів."
+          few: "Є %{count} голоси, створених за допомогою перевірених підписів."
+          many: "Є %{count} голосів, створених за допомогою перевірених підписів."
+          other: "Є %{count} голосів, створених за допомогою перевірених підписів."
+        loading: "Деякі підписи все ще перевіряються Census. Будь ласка, оновіть сторінку трішки пізніше"
+    stats:
+      show:
+        stats_title: Статистика
+        summary:
+          comment_votes: Голоси за коментарі
+          comments: Коментарі
+          debate_votes: Голоси за обговорення
+          debates: Обговорення
+          proposal_votes: Голоси за пропозиції
+          proposals: Пропозиції
+          budgets: Відкриті бюджети
+          budget_investments: Інвестиційні проєкти
+          unverified_users: Неперевірені користувачі
+          user_level_three: Користувачі третього рівня
+          user_level_two: Користувачі другого рівня
+          users: Загалом користувачів
+          verified_users: Перевірені користувачі
+          verified_users_who_didnt_vote_proposals: Перевірені користувачі, які не голосували за пропозиції
+          visits: Відвідування
+          votes: Загалом голосів
+        budgets_title: Бюджетування участі
+        participatory_budgets: Бюджети участі
+        direct_messages: Особисті повідомлення
+        proposal_notifications: Сповіщення щодо пропозицій
+        incomplete_verifications: Незавершені перевірки
+        polls: Голосування
+      graph:
+        debate_created: Обговорення
+        visit: Відвідування
+        level_2_user: Користувачі 2 рівня
+        proposal_created: Пропозиції громадян
+      budgets:
+        no_data_before_balloting_phase: "Немає даних для показу до етапу голосування."
+        title: "Бюджети участі - Статистика участі"
+        supporting_phase: Етап підтримки
+        balloting_phase: Остаточне голосування
+      budget_balloting:
+        title: "Статистика остаточного голосування"
+        vote_count: Голоси
+        participant_count: Учасники
+        votes_per_heading: Голосів на рубрику
+        participants_per_district: Учасників на дільниці
+      budget_supporting:
+        title: "Статистика етапу підтримки"
+        headings: Рубрики
+        users: Користувачі
+        vote_count: Голоси
+        participant_count: Учасники
+      direct_messages:
+        title: Особисті повідомлення
+        total: Загалом
+        users_who_have_sent_message: Користувачі, які надіслали приватне повідомлення
+      proposal_notifications:
+        title: Сповіщення щодо пропозицій
+        total: Загалом
+        proposals_with_notifications: Пропозиції зі сповіщеннями
+        not_available: "Пропозиція недоступна"
+      polls:
+        title: Статистика голосування
+        all: Голосування
+        web_participants: Учасники в мережі
+        total_participants: Загалом учасників
+        poll_questions: "Запитання з голосування: %{poll}"
+        table:
+          poll_name: Голосування
+          question_name: Запитання
+          origin_web: Учасники в мережі
+          origin_total: Загалом учасників
+      sdg:
+        debates: "Обговорення"
+        polls: "Голосування"
+        proposals: "Пропозиції"
+    tags:
+      create: Створити тему
+      index:
+        add_tag: Додати тему нової пропозиції
+        title: Теми пропозицій
+        topic: Тема
+        help: "Коли користувач подає пропозицію, наступні теми пропонуються як теги (за замовчуванням)."
+    users:
+      columns:
+        id: ID
+        erase_reason: Видалити причину
+        name: Ім'я
+        email: Електронна адреса
+        document_number: Номер документа
+        roles: Ролі
+        verification_level: Рівень перевірки
+      index:
+        title: Користувач
+        no_users: Користувачів немає.
+        filter: Фільтр
+        filters:
+          active: Активні
+          erased: Видалені
+      search:
+        placeholder: Шукати користувача за електронною адресою, ім'ям або номером документа
+    verifications:
+      index:
+        phone_not_given: Телефона немає
+        sms_code_not_confirmed: Не підтверджено sms-кодом
+        title: Незавершені перевірки
+    site_customization:
+      content_blocks:
+        information: Інформація про блоки контенту
+        about: "Ви можете створити блоки контенту в форматі HTML, які можна вставити у різних місцях на вашому сайті."
+        html_format: "Блок контенту - це група посилань, яка повинна мати наступний формат:"
+        no_blocks: "Блоків контенту немає."
+        create:
+          notice: Блок контенту створено
+          error: Не вдалося створити блок контенту
+        update:
+          notice: Блок контенту оновлено
+          error: Не вдалося оновити блок контенту
+        destroy:
+          notice: Блок контенту видалено
+        edit:
+          title: Редагування блоку контенту
+        index:
+          create: Створити новий блок контенту
+          delete: Видалити блок
+          title: Блоки контенту
+        new:
+          title: Створити новий блок контенту
+        content_block:
+          body: Орган
+          name: Назва
+          names:
+            top_links: Найпопулярніші посилання
+            footer: Нижній колонтитул
+            subnavigation_left: Головна навігація ліворуч
+            subnavigation_right: Головна навігація праворуч
+      images:
+        index:
+          title: Особисті зображення
+          update: Оновити
+          delete: Видалити
+          image: Зображення
+        update:
+          notice: Зображення оновлено
+          error: Не вдалося оновити зображення
+        destroy:
+          notice: Зображення видалено
+          error: Не вдалося видалити зображення
+      pages:
+        create:
+          notice: Сторінку створено
+          error: Не вдалося створити сторінку
+        update:
+          notice: Сторінку оновлено
+          error: Не вдалося оновити сторінку
+        destroy:
+          notice: Сторінку видалено
+        edit:
+          title: Редагування %{page_title}
+        form:
+          options: Опції
+        index:
+          create: Створити нову сторінку
+          delete: Видалити сторінку
+          title: Особисті сторінки
+          see_page: Переглянути сторінку
+        new:
+          title: Створити нову особисту сторінку
+          slug_help: "Текст для ідентифікації цієї сторінки через URL-адресу, наприклад <code>https://consulproject.org/page-slug</code>"
+        page:
+          created_at: Створено о
+          status: Статус
+          updated_at: Оновлено
+          title: Назва
+          slug: Блок
+          see_cards: Переглянути картки
+        cards:
+          cards_title: картки
+          create_card: Створити картку
+          no_cards: Картки відсутні.
+          columns_help: "Ширина картки у вигляді кількості колонок. На мобільних екранах це завжди 100% ширина."
+          create:
+            notice: "Картку створено!"
+          update:
+            notice: "Картку оновлено"
+          destroy:
+            notice: "Картку вилучено"
+    homepage:
+      title: Домашня сторінка
+      description: Активні модулі з'являються на домашній сторінці в тому ж порядку, що й тут.
+      header_title: Заголовок
+      no_header: Заголовків немає.
+      create_header: Створити заголовок
+      cards_title: Картки
+      create_card: Створити картку
+      no_cards: Карток немає.
+      feeds:
+        proposals: Пропозиції
+        debates: Обговорення
+        processes: Процеси
+      new:
+        header_title: Новий заголовок
+        submit_header: Створити заголовок
+        card_title: Нова картка
+        submit_card: Створити картку
+      edit:
+        header_title: Редагувати заголовок
+        submit_header: Зберегти заголовок
+        card_title: Редагувати картку
+        submit_card: Зберегти картку
+    audits:
+      title: "Журнал змін"
+      changes: "Список змін"
+      id: "ID"
+      field: "Сфера"
+      new_value: "Нова вартість"
+      old_value: "Стара вартість"
+      edited_at: "Оновлено о"
+      edited_by: "Оновлено"
+      actions: "Дії"
+      empty: "Зареєстровані зміни відсутні"
+    local_census_records:
+      index:
+        title: Керувати місцевим переписом населення
+        create: Створити новий журнал місцевого перепису
+        no_local_census_records: Журналу місцевого перепису немає.
+        document_type: Тип документа
+        document_number: Номер документа
+        date_of_birth: Дата народження
+        postal_code: Поштовий індекс
+        import: Імпорт CSV
+      new:
+        creating: Створення нового журналу місцевого перепису
+      create:
+        notice: Новий журнал місцевого перепису створений!
+      edit:
+        editing: Редагування нового журналу місцевого перепису
+      update:
+        notice: Журнал місцевого перепису оновлений!
+      destroy:
+        notice: Журнал місцевого перепису видалений!
+      imports:
+        new:
+          title: Дані місцевого перепису населення
+          subtitle: Імпортувати CSV-файл
+        create:
+          notice: Імпорт журналу місцевого перепису виконано!
+        show:
+          title: Керувати місцевим переписом населення
+          subtitle: Імпортувати результати процесу
+          import: Імпортувати знову
+          errored: Помилкові рядки
+          created: Створені записи
+        local_census_records:
+          no_records_found: Записів не знайдено.
+    machine_learning:
+      related_content: "Пов'язаний контент"
+      tab_help: "Допомога"
+      tags: "Теги"

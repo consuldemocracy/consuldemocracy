@@ -1,3 +1,5 @@
+require Rails.root.join("lib", "omniauth_wordpress")
+
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -12,20 +14,20 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  if Rails.env.test? || !ActiveRecord::Base.connection.table_exists?('settings')
-    config.mailer_sender = "noreply@consul.dev"
-  else
-    config.mailer_sender = "'#{Setting['mailer_from_name']}' <#{Setting['mailer_from_address']}>"
-  end
+  # We're not setting it here because it's set by the ApplicationMailer class
+  # config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
 
   # Configure the class responsible to send e-mails.
-  config.mailer = 'DeviseMailer'
+  config.mailer = "DeviseMailer"
+
+  # Configure the parent class responsible to send e-mails.
+  config.parent_mailer = "ApplicationMailer"
 
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
-  require 'devise/orm/active_record'
+  require "devise/orm/active_record"
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
@@ -76,7 +78,7 @@ Devise.setup do |config|
   # It will change confirmation, password recovery and other workflows
   # to behave the same regardless if the e-mail provided was right or wrong.
   # Does not affect registerable.
-  # config.paranoid = true
+  config.paranoid = true
 
   # By default Devise will store the user in session. You can skip storage for
   # particular strategies by setting this option.
@@ -244,8 +246,13 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :twitter, Rails.application.secrets.twitter_key, Rails.application.secrets.twitter_secret
-  config.omniauth :facebook, Rails.application.secrets.facebook_key, Rails.application.secrets.facebook_secret, scope: 'email', info_fields: 'email,name,verified'
+  config.omniauth :facebook, Rails.application.secrets.facebook_key, Rails.application.secrets.facebook_secret, scope: "email", info_fields: "email,name,verified"
   config.omniauth :google_oauth2, Rails.application.secrets.google_oauth2_key, Rails.application.secrets.google_oauth2_secret
+  config.omniauth :wordpress_oauth2,
+                  Rails.application.secrets.wordpress_oauth2_key,
+                  Rails.application.secrets.wordpress_oauth2_secret,
+                  strategy_class: OmniAuth::Strategies::Wordpress,
+                  client_options: { site: Rails.application.secrets.wordpress_oauth2_site }
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

@@ -1,0 +1,17 @@
+bs:
+  images:
+    remove_image: Ukloni sliku
+    form:
+      title: Opisna slika
+      title_placeholder: Dodaj opisni naziv za sliku
+      delete_button: Ukloni sliku
+      note: "Možete učitati jednu sliku sljedećeg sadržaja: %{accepted_content_types}, do %{max_file_size} MB."
+      add_new_image: Dodaj sliku
+    actions:
+      destroy:
+        notice: Slika uspješno obrisana.
+        alert: Slika se ne može uništiti.
+    errors:
+      messages:
+        in_between: mora biti između %{min} i %{max}
+        wrong_content_type: vrsta sadržaja %{content_type} ne odgovara nijednoj od prihvaćenih vrsta sadržaja %{accepted_content_types}

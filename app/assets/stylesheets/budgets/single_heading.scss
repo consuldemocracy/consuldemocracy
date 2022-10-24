@@ -1,0 +1,23 @@
+.single-heading {
+  margin-bottom: $line-height * 2;
+  padding-bottom: $line-height;
+  position: relative;
+
+  &::after {
+    background: $brand;
+    bottom: 0;
+    content: "";
+    height: rem-calc(6);
+    position: absolute;
+    width: 20%;
+  }
+
+  h2 {
+    font-size: rem-calc(60);
+    font-weight: normal;
+  }
+
+  p {
+    font-size: rem-calc(48);
+  }
+}

@@ -1,7 +1,7 @@
 zh-TW:
   community:
     sidebar:
-      title: 社群
+      title: 社區
       description:
         proposal: 參與本建議的用戶社群。
         investment: 參與本投資的用戶社群。
@@ -16,8 +16,7 @@ zh-TW:
       create_first_community_topic:
         first_theme_not_logged_in: 還沒有收到問題，請參與創建第一個。
         first_theme: 創建第一個社群主題
-        sign_in: "登錄"
-        sign_up: "登記"
+        sub_first_theme: "若要創建一個主題, 必須 %{sign_in} 或 %{sign_up}。"
       tab:
         participants: 參與者
       sidebar:
@@ -35,8 +34,6 @@ zh-TW:
       create: 創建主題
       edit: 編輯主題
       form:
-        topic_title: 標題
-        topic_text: 初始文本
         new:
           submit_button: 創建主題
         edit:
@@ -53,6 +50,3 @@ zh-TW:
         recommendation_one: 不要用大寫字母寫主題標題或整個句子。在互聯網上這是被當作為＂叫喊＂。沒有人喜歡被呼喝的。
         recommendation_two: 任何暗示非法行為、和那些意圖破壞主題空間的主題或評論都將被取消，其餘一切都是允許的。
         recommendation_three: 享受這片空間， 並其中充滿的聲音，這也是你的空間。
-  topics:
-    show:
-      login_to_comment: 您必須 %{signin} 或 %{signup} 才能留下評論。

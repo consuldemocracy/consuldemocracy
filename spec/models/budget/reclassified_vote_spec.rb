@@ -1,7 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Budget::ReclassifiedVote do
-
   describe "Validations" do
     let(:reclassified_vote) { build(:budget_reclassified_vote) }
 
@@ -35,18 +34,15 @@ describe Budget::ReclassifiedVote do
       reclassified_vote.reason = "unfeasible"
       expect(reclassified_vote).to be_valid
     end
+
+    it "dynamically validates the reasons" do
+      stub_const("#{Budget::ReclassifiedVote}::REASONS", %w[custom])
+
+      reclassified_vote.reason = "custom"
+      expect(reclassified_vote).to be_valid
+
+      reclassified_vote.reason = "unfeasible"
+      expect(reclassified_vote).not_to be_valid
+    end
   end
-
 end
-
-# == Schema Information
-#
-# Table name: budget_reclassified_votes
-#
-#  id            :integer          not null, primary key
-#  user_id       :integer
-#  investment_id :integer
-#  reason        :string
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
-#

@@ -1,0 +1,35 @@
+<h3 class="title"><%= t("dashboard.recommended_actions.#{status}_title") %></h3>
+<% if actions.any? %>
+  <div id="proposed_actions_<%= status %>" class="proposed-actions">
+    <% actions.first(4).each do |proposed_action| %>
+      <%= render "proposed_action", proposed_action: proposed_action %>
+    <% end %>
+    <% if actions.count > 4 %>
+      <div class="margin small" id="proposed_actions_<%= status %>_link" data-toggler=".hide">
+        <% if toggle == true %>
+          <button type="button" id="see_proposed_actions_link_<%= status %>" data-toggle="last_proposed_actions_<%= status %> proposed_actions_<%= status %>_link">
+            <strong><%= t("dashboard.recommended_actions.see_proposed_actions") %></strong>
+          </button>
+        <% else %>
+          <%= link_to recommended_actions_proposal_dashboard_path(proposal.to_param) do %>
+            <strong><%= t("dashboard.recommended_actions.goto_proposed_actions") %></strong>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <% if toggle == true %>
+    <% if actions.count > 4 %>
+      <div id="last_proposed_actions_<%= status %>" class="hide proposed-actions" data-toggler=".hide">
+        <%= render partial: "proposed_action", collection: actions - actions.first(4) %>
+        <div class="margin small">
+          <button type="button" data-toggle="last_proposed_actions_<%= status %> proposed_actions_<%= status %>_link">
+            <strong><%= t("dashboard.recommended_actions.hide_proposed_actions") %></strong>
+          </button>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% else %>
+  <%= t("dashboard.recommended_actions.without_#{status}_actions") %>
+<% end %>

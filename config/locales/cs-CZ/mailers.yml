@@ -1,0 +1,149 @@
+cs:
+  mailers:
+    title: "Otevřený úřad"
+    no_reply: "Tato zpráva byla odeslána z e-mailové adresy, která nepřijímá odpovědi."
+    already_confirmed:
+      info: "Obdrželi jsme žádost o zaslání pokynů k potvrzení vašeho účtu. Váš účet je však již potvrzen, takže to není třeba dělat znovu."
+      new_password: "Pokud jste zapomněli své heslo, můžete ho obnovit na následujícím odkazu:"
+      subject: Váš účet je již potvrzen
+    comment:
+      hi: Dobrý den
+      new_comment_by: K dispozici je nový komentář od <strong>%{commenter}</strong>
+      subject: Někdo komentoval váš příspěvek %{commentable}
+      title: Nový komentář
+    config:
+      notifications_link: Upozornění
+      unsubscribe_text: 'Chcete-li se z odběru těchto e-mailů odhlásit, navštivte stránku %{notifications} a zrušte zaškrtnutí políčka "%{notification}".'
+    email_verification:
+      click_here_to_verify: tento odkaz
+      instructions_2: Tento e-mail ověří váš účet pomocí <b>%{document_type} %{document_number} </b>. Pokud Vám email nepatří, prosím, neklikejte na předchozí odkaz a ignorujte tento e-mail.
+      instructions: K dokončení ověření uživatelského účtu musíte kliknout na %{verification_link}.
+      subject: Potvrďte svoji emailovou adresu
+      thanks: Mockrát děkujeme.
+      title: "Potvrďte svůj účet pomocí následujícího odkazu"
+    reply:
+      hi: Dobrý den
+      new_reply_by: Nová odpověď od <strong>%{commenter}</strong> na Váš komentář
+      subject: Někdo odpověděl na váš komentář
+      title: Nová odpověď na váš komentář
+    proposal_notification_digest:
+      info: "Josu zde nová oznámení, která byla publikována autory návrhů, které jste podpořili v %{org_name}."
+      title: "Oznámení o návrhu v %{org_name}"
+      share: Sdílet návrh
+      comment: Připomínky k návrhu
+      unsubscribe_text: "Pokud nechcete dostávat žádná oznámení o návrzích, navštivte stránku %{notifications} a zrušte zaškrtnutí políčka \"Přijímání souhrnu oznámení o návrzích\"."
+      unfollow: "Navštivte tento návrh a zrušte jeho sledování, abyste přestali dostávat oznámení."
+    direct_message_for_receiver:
+      subject: "Obdrželi jste novou soukromou zprávu"
+      reply: Odpovědět uživateli %{sender}
+      unsubscribe_text: "Pokud nechcete dostávat přímé zprávy, navštivte %{notifications} a zrušte zaškrtnutí políčka \"Dostávat e-maily o přímých zprávách\"."
+    direct_message_for_sender:
+      subject: "Odeslali jste novou soukromou zprávu"
+      title: "Odeslali jste novou soukromou zprávu"
+      text: "Do <strong>%{receiver} </strong> jste odeslali novou soukromou zprávu s obsahem:"
+    user_invite:
+      ignore: "Pokud jste o tuto pozvánku nepožádali, nemusíte se obávat a můžete tento e-mail ignorovat."
+      text: "Děkujeme za žádost o připojení k %{org}! Za pár vteřin se můžete zapojit, stačí vyplnit formulář níže:"
+      thanks: "Mockrát děkujeme."
+      title: "Vítejte v %{org}"
+      button: Dokončit registraci
+      subject: "Pozvánka k účasti na %{org_name}"
+    budget_investment_created:
+      subject: "Děkujeme za vytvoření investice!"
+      title: "Děkujeme za vytvoření investice!"
+      intro: "Zdravíme uživatele <strong>%{author}</strong>,"
+      text: "Děkujeme za vytvoření <strong>%{investment} </strong> v rámci participativního rozpočtu <strong>%{budget}</strong>."
+      follow: "Budeme vás informovat o tom jak postup probíhá a můžete ho také sledovat prostřednictvím tohoto odkazu <strong>%{link}</strong>."
+      follow_link: "Prticipativní rozpočty"
+      sincerely: "S pozdravem,"
+      share: "Sdílet projekt"
+    budget_investment_unfeasible:
+      hi: "Vážený uživateli,"
+      new: "Kvůli těmto skutečnostem Vás vyzýváme k vypracování <strong>nového návrhu</strong>, který se přizpůsobí podmínkám tohoto procesu. Můžete to udělat prostřednictvím tohoto odkazu: %{url}."
+      new_href: "nový investiční projekt"
+      sincerely: "S pozdravem"
+      sorry: "Omlouváme se za nepříjemnost a opět vám děkujeme za neocenitelnou účast."
+      subject: "Váš investiční projekt '%{code}' byl označen jako nerealizovatelný"
+    budget_investment_selected:
+      subject: "Váš investiční projekt '%{code}' byl vybrán"
+      hi: "Vážený uživateli,"
+      share: "Pro získání podpory sdílejte svůj investiční projekt na sociálních sítích. Sdílení je nezbytné pro získání široké podpory."
+      share_button: "Sdílejte svůj investiční projekt"
+      thanks: "Ještě jednou děkujeme za vaši účast."
+      sincerely: "S pozdravem"
+    budget_investment_unselected:
+      subject: "Váš investiční projekt '%{code}' nebyl vybrán"
+      hi: "Vážený uživateli,"
+      thanks: "Ještě jednou děkujeme za vaši účast."
+      sincerely: "S pozdravem"
+    evaluation_comment:
+      subject: "Nový komentář k hodnocení"
+      title: Nový hodnotící komentář pro %{investment}
+      hi: Dobrý den
+      new_comment_by: K rozpočtové investici %{investment} přibyl nový hodnotící komentář od <strong>%{commenter}</strong>
+      commenter_info: "%{commenter}, %{time}:"
+    machine_learning_error:
+      link: "Navštivte panel Strojové učení"
+      subject: "Strojové učení - Při spouštění skriptu došlo k chybě"
+      text: "Při spouštění skriptu strojového učení došlo k chybě."
+      title: "Skript strojového učení"
+    machine_learning_success:
+      link: "Navštivte panel Strojové učení"
+      subject: "Strojové učení - obsah byl úspěšně vygenerován"
+      text: "Obsah byl úspěšně vygenerován."
+      title: "Skript strojového učení"
+    new_actions_notification_rake_created:
+      subject: "Další novinky o vašem občanském návrhu"
+      hi: "Dobrý den %{name},"
+      new_resource: "NOVÝ ODEMČENÝ PROSTŘEDEK"
+      introduction: "Jak víte, dne %{created_at_day} v %{created_at_month} jste vytvořili návrh v režimu návrhu %{title}."
+      text_1: "Kdykoli budete chtít, můžete publikovat na tomto odkazu: %{link_to_published}. Pokud si stále nejste jisti..."
+      text_2: "Využijte tento okamžik! Učte se, přidejte další lidi se stejnými zájmy a připravte si rozptýlení, které budete potřebovat, až svůj návrh definitivně zveřejníte."
+      text_3: "A aby vás tato výzva provázela, přinášíme vám novinky..."
+      text_4: "Podívejte se na tuto NOVOU doporučenou AKCI:"
+      text_5: "Další akce, kterou doporučujeme, je:"
+      footer_text: "Jako vždy vstupte do panelu Návrhy a my vám podrobně řekneme, jak tyto zdroje používat a jak z nich co nejlépe vytěžit."
+      dashboard_button: "Jen do toho, objevte je!"
+    new_actions_notification_rake_published:
+      subject: "Další novinky o vašem občanském návrhu"
+      hi: "Dobrý den %{name},"
+      new_resource: "NOVÝ ODEMČENÝ PROSTŘEDEK"
+      introduction: "Jak víte, dne %{published_at_day} v %{published_at_month} jste zveřejnili návrh %{title}."
+      text_1: "No, zatím máte podporu %{votes_count} Gratulujeme!"
+      text_2: "A tak máte k dispozici nový prostředek, který vám pomůže jít dál."
+      text_3: "Chybí vám %{days_count} dnů, než váš návrh získá podporu %{max_votes_count} a postoupí do referenda. Hlavu vzhůru a šiřte dál. Chybí vám nápady?"
+      text_4: "NOVÁ DOPORUČENÁ ROZPTYLOVÁ AKCE"
+      text_5: "Je toho ještě více, viz následující akce:"
+      footer_text: "Jako vždy vstupte do panelu pro návrhy a my vám podrobně vysvětlíme, jak tyto zdroje používat a jak z nich vytěžit maximum."
+      dashboard_button: "Jen do toho, objevte je!"
+    new_actions_notification_on_create:
+      subject: "Váš návrh občanského návrhu je vytvořen"
+      hi: "Ahoj %{name}!"
+      introduction: "Váš návrh %{title} byl úspěšně vytvořen."
+      text_1: "Využijte toho, že váš návrh ještě není veřejný, a připravte se na kontaktování mnoha lidí."
+      text_2: "Až budete připraveni, zveřejněte svůj občanský návrh z tohoto <a href='%{link}'>odkazu</a>."
+      text_3: "Víme, že vytvoření návrhu s háčkem a získání potřebné podpory se může zdát složité. Ale nebojte se, protože my vám pomůžeme!"
+      text_4: "Máte nástroj, který bude vaším novým nejlepším spojencem: panel Občanské návrhy."
+      list_1: "Vstupte každý den do panelu svého návrhu a využijte tipy a zdroje, o které se s vámi podělíme."
+      list_2: "Tyto tipy, akce a zdroje vám poskytnou nápady a také praktická řešení, jak získat větší podporu a širší komunitu. Nezapomeňte na ně!"
+      list_3: "Když získáte větší podporu, odemknou se vám nové a lepší zdroje. V tuto chvíli máte k dispozici šablonu e-mailu, kterou můžete hromadně rozeslat všem svým kontaktům, plakát k vytištění a další funkce a odměny, které budete postupně objevovat. Nepřestávejte přidávat podporu a my vás nepřestaneme odměňovat a pomáhat vám!"
+      list_4: "Od zveřejnění návrhu máte %{max_month} měsíců na získání %{max_votes} podpory a váš návrh se může stát skutečností. Nejdůležitější jsou však první dny. Je to výzva. Připravte se!"
+      text_5: "A pro vás začít se vší motivací,"
+      text_6: "zde máte několik zdrojů a celý seznam tipů, které vám přijdou každý den k přípravě vysílání!"
+      dashboard_button: "Jen do toho, objevte je!"
+    new_actions_notification_on_published:
+      subject: "Váš občanský návrh je již zveřejněn. Nepřestávejte ho šířit!"
+      hi: "Gratulujeme %{name}! Váš návrh %{title} byl úspěšně vytvořen."
+      text_1: "A teď jděte pro prvních 100 podpor!"
+      text_2: "Proč 100?"
+      text_3: "Naše zkušenosti říkají, že první den je zásadní. Protože kromě toho, že budete mít energii na uvedení něčeho nového, budete mít jako nově zveřejněný návrh důležité zviditelnění, protože budete mezi novými návrhy zvýrazněni."
+      text_4: "Získejte 100 podporovatelů hned první den a budete mít první komunitu, která vás podpoří."
+      text_5: "Proto vás vyzýváme, abyste ji získali, ale ne bez velké pomoci!"
+      text_6: "Pamatujte, že na panelu návrhů máte k dispozici nové zdroje a doporučení pro akce šíření."
+      list_1: "Přijďte každý den, abyste viděli svůj pokrok a používali tipy a zdroje, které s vámi sdílíme. Jsou to nápady a také praktická řešení pro získání podpory, kterou potřebujete."
+      list_2: "Jakmile získáte větší podporu, odemknete nové a lepší zdroje. Nepřestávejte přidávat podporu a nepřestaneme odměňovat a pomáhat vám!"
+      text_7: "A abyste mohli začít plnou rychlostí..."
+      text_8: "Zde je skvělý zdroj k dispozici!"
+      text_9: "Najdete také tuto novou doporučenou akci šíření..."
+      text_10: "Určitě máte k dispozici více zdrojů!"
+      dashboard_button: "Jen do toho, objevte je!"

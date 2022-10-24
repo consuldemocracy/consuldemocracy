@@ -1,0 +1,3 @@
+<%= render Admin::BudgetsWizard::CreationStepComponent.new(heading, next_step_path) do %>
+  <%= render "/admin/budget_headings/form", heading: heading, path: form_path, action: "create" %>
+<% end %>

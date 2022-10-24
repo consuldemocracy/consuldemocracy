@@ -1,0 +1,24 @@
+bs:
+  documents:
+    title: Dokumenti
+    max_documents_allowed_reached: Došli ste do maksimalnog broja dozvoljenih dokumenata! <strong> Morate obrisati jedan kako bi mogli učitati drugi.</strong>
+    additional: Dodatna dokumentacija
+    form:
+      title: Dokumenti
+      title_placeholder: Dodajte opisni naziv dokumenta
+      delete_button: Ukloni dokument
+      cancel_button: Poništi
+      note: "Možete učitati maksimalno %{max_documents_allowed} dokumenata ovih vrsta sadržaja: %{accepted_content_types}, do %{max_file_size} MB po fajlu."
+      add_new_document: Dodaj novi dokument
+    actions:
+      destroy:
+        notice: Dokument uspješno obrisan.
+        alert: Dokument se ne može uništiti.
+        confirm: Sigurni ste da želite obrisati dokument? Ova radnja se ne može poništiti!
+    buttons:
+      download_document: Učitaj fajl
+      destroy_document: Uništi dokument
+    errors:
+      messages:
+        in_between: mora biti između %{min} i %{max}
+        wrong_content_type: vrsta sadržaja %{content_type} ne odgovara nijednoj od prihvaćenih vrsta sadržaja %{accepted_content_types}

@@ -2,11 +2,10 @@ fr:
   devise_views:
     confirmations:
       new:
-        email_label: Courriel
         submit: Renvoyer les instructions
         title: Renvoyer les instructions de confirmation
       show:
-        instructions_html: Confirmer le compte avec le courriel %{email}
+        instructions: Confirmer le compte avec le courriel %{email}
         new_password_confirmation_label: Re-saisissez le mot de passe
         new_password_label: Nouveau mot de passe
         please_set_password: Veuillez choisir votre nouveau mot de passe (cela vous permettra de vous connecter en combinaison avec le courriel ci-dessus)
@@ -15,19 +14,20 @@ fr:
     mailer:
       confirmation_instructions:
         confirm_link: Confirmer mon compte
-        text: 'Vous pouvez confirmer votre courriel en cliquant sur le lien suivant :'
+        text: "Vous pouvez confirmer votre courriel en cliquant sur le lien suivant :"
+        title: Bienvenue
         welcome: Bienvenue
       reset_password_instructions:
         change_link: Changer mon mot de passe
         hello: Bonjour
         ignore_text: Si vous n'avez demander à changer de mot de passe, vous pouvez ignorer ce courriel.
         info_text: Votre mot de passe ne sera pas changé si vous n'accédez pas au lien pour l'éditer.
-        text: 'Nous avons reçu une demande de changement de votre mot de passe. Vous pouvez le changer sur le lien suivant :'
+        text: "Nous avons reçu une demande de changement de votre mot de passe. Vous pouvez le changer sur le lien suivant :"
         title: Changer votre mot de passe
       unlock_instructions:
         hello: Bonjour
         info_text: Votre compte a été bloqué suite à un nombre excessif de tentatives de connexion erronées.
-        instructions_text: 'Veuillez cliquer sur ce lien pour débloquer votre compte :'
+        instructions_text: "Veuillez cliquer sur ce lien pour débloquer votre compte :"
         title: Votre compte a été bloqué
         unlock_link: Débloquer mon compte
     menu:
@@ -38,18 +38,16 @@ fr:
     organizations:
       registrations:
         new:
-          email_label: Courriel
-          organization_name_label: Nom de l'organisation
           password_confirmation_label: Confirmer le mot de passe
-          password_label: Mot de passe
-          phone_number_label: Numéro de téléphone
-          responsible_name_label: Nom complet de la personne responsable de ce collectif
           responsible_name_note: Il s'agit de la personne représentant l'association/le collectif au nom duquel les propositions sont présentées
           submit: S'enregistrer
           title: S'enregistrer en tant qu'organisation ou collectif
         success:
           back_to_index: Entendu, revenir à la page principale
-          instructions_3_html: Une fois confirmé, vous pourrez commencer à participer en tant que collectif non vérifié.
+          instructions_1: "<strong>Nous vous contacterons bientôt</strong>pour vérifier que vous représentez bien ce collectif."
+          instructions_2: Pendant que votre <strong>courriel est en cours de vérification</strong>, nous vous avons envoyé un <strong>lien pour confirmer votre compte</strong>.
+          instructions_3: Une fois confirmé, vous pourrez commencer à participer en tant que collectif non vérifié.
+          thank_you: Merci d'avoir enregistrer votre collectif sur la plateforme. Il est maintenant <strong>en attente de vérification</strong>.
           title: Enregistrement d'une organisation / d'un collectif
     passwords:
       edit:
@@ -58,13 +56,10 @@ fr:
         password_label: Nouveau mot de passe
         title: Changer votre mot de passe
       new:
-        email_label: Courriel
         send_submit: Envoyer les instructions
         title: Mot de passe oublié ?
     sessions:
       new:
-        login_label: Email ou nom d’utilisateur
-        password_label: Mot de passe
         remember_me: Se rappeler de moi
         submit: Entrer
         title: Se connecter
@@ -76,10 +71,10 @@ fr:
         new_unlock: Vous n'avez pas reçu les instructions pour débloquer votre compte?
         signin_with_provider: Se connecter avec %{provider}
         signup: Vous n'avez pas encore de compte ? %{signup_link}
-        signup_link: S'enregistrer
+        signup_link: S'inscrire
     unlocks:
       new:
-        email_label: Courriel
+        email_label: Email
         submit: Renvoyer les instructions de déblocage
         title: Renvoyer les instructions de déblocage
     users:
@@ -93,21 +88,18 @@ fr:
         edit:
           current_password_label: Mot de passe actuel
           edit: Éditer
-          email_label: Courriel
+          email_label: Email
           leave_blank: Laissez vide si vous ne souhaitez pas le modifier
           need_current: Nous avons besoin de votre mot de passe actuel pour confirmer les modifications
           password_confirmation_label: Confirmer le nouveau mot de passe
           password_label: Nouveau mot de passe
           update_submit: Mettre-à-jour
-          waiting_for: 'En attente de la confirmation de:'
+          waiting_for: "En attente de la confirmation de:"
         new:
           cancel: Annuler la connexion
-          email_label: Courriel
           organization_signup: Représentez-vous une organisation ou un collectif? %{signup_link}
           organization_signup_link: Enregistrez-vous ici
           password_confirmation_label: Confirmer le mot de passe
-          password_label: Mot de passe
-          redeemable_code: Code de vérification reçu par courriel (optionnel)
           submit: S'enregistrer
           terms: En vous enregistrant, vous acceptez les %{terms}
           terms_link: Conditions d'utilisation
@@ -115,10 +107,10 @@ fr:
           title: S'enregistrer
           username_is_available: Nom d'utilisateur disponible
           username_is_not_available: Nom d'utilisateur déjà utilisé
-          username_label: Nom d'utilisateur
           username_note: Nom qui apparaîtra en face de vos publications
         success:
           back_to_index: Entendu, revenir à la page principale
-          instructions_1_html: Veuillez <b>vérifier votre adresse</b> - nous vous avons envoyé un <b>lien pour confirmer votre compte</b>.
-          instructions_2_html: Une fois confirmé, vous pourrez commencer à participer.
-          thank_you_html: Merci de vous être enregistré sur la plateforme. Vous devez maintenant <b>confirmer votre adresse</b>.
+          instructions_1: Veuillez <b>vérifier votre adresse</b> - nous vous avons envoyé un <b>lien pour confirmer votre compte</b>.
+          instructions_2: Une fois confirmé, vous pourrez commencer à participer.
+          thank_you: Merci de vous être enregistré sur la plateforme. Vous devez maintenant <b>confirmer votre adresse</b>.
+          title: Confirmer votre adresse électronique

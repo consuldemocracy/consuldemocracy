@@ -1,0 +1,8 @@
+<% content_for :action_title, t("dashboard.poster.new.title") %>
+<div class="row expanded">
+  <div class="small-12 medium-9 column">
+    <%= Setting["proposals.poster_description"] %>
+  </div>
+
+  <%= render "poster_options" %>
+</div>

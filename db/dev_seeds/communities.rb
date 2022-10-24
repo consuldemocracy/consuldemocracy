@@ -6,7 +6,7 @@ end
 section "Creating Communities Topics" do
   Community.find_each do |community|
     Topic.create(community: community, author: User.all.sample,
-                 title: Faker::Lorem.sentence(3).truncate(60), description: Faker::Lorem.sentence)
+                 title: Faker::Lorem.sentence(word_count: 3).truncate(60), description: Faker::Lorem.sentence)
   end
 end
 

@@ -2,12 +2,15 @@ gl:
   activemodel:
     models:
       verification:
-        residence: "Domicilio"
+        residence: "Residencia"
         sms: "SMS"
+      local_census_records/import:
+        one: Rexistro importado do censo local
+        other: Rexistros importados do censo local
     attributes:
       verification:
         residence:
-          document_type: "Tipo de documento"
+          document_type: "Tipo documento"
           document_number: "Número de documento (incluída letra)"
           date_of_birth: "Data de nacemento"
           postal_code: "Código postal"
@@ -15,8 +18,30 @@ gl:
           phone: "Teléfono"
           confirmation_code: "Código de confirmación"
         email:
-          recipient: "Correo electrónico"
+          recipient: "O teu correo electrónico"
+      verification/letter:
+        email: "O teu correo electrónico"
+        password: "Contrasinal que empregarás para acceder a este sitio web"
+        verification_code: "Código que recibiches na túa carta"
+      verification/management/document:
+        document_type: "Tipo de documento:"
+        document_number: "Número de documento"
+      verification/residence:
+        date_of_birth: "Data de nacemento"
+        document_type: "Tipo documento"
+        postal_code: "Código postal"
+      verification/sms:
+        confirmation_code: "Introduce o código que recibiches no teu móbil"
       officing/residence:
-        document_type: "Tipo de documento"
+        document_type: "Tipo documento"
         document_number: "Número de documento (incluída letra)"
         year_of_birth: "Ano de nacemento"
+      local_census_records/import:
+        file: Ficheiros
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "O formato non é válido. Formato válido: %{valid_extensions}."
+              headers: "As cabeceiras do ficheiro non son válidas. As cabeceiras deben ter os seguintes nomes: %{required_headers}."

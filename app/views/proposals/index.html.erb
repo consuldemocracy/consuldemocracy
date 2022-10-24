@@ -9,35 +9,28 @@
 <% end %>
 
 <main>
-  <% if @search_terms || @advanced_search_terms || @tag_filter || params[:retired].present? %>
-    <div class="highlight no-margin-top padding margin-bottom">
-      <div class="row">
-        <div class="small-12 column">
-          <% if @search_terms || @advanced_search_terms %>
-            <h2><%= t("shared.search_results") %></h2>
-            <p>
-              <%= page_entries_info @proposals %>
-              <% if !@advanced_search_terms %>
-                <%= t("proposals.index.search_results_html", count: @proposals.size, search_term: @search_terms) %>
-              <% end %>
-            <p>
-          <% elsif @tag_filter %>
-            <h2><%= t("shared.search_results") %></h2>
-            <p>
-              <%= page_entries_info @proposals %>
-              <%= t("proposals.index.filter_topic", count: @proposals.size, topic: @tag_filter) %>
-            </p>
-          <% elsif params[:retired].present? %>
-            <h2><%= t("proposals.index.retired_proposals") %></h2>
-          <% end %>
-        </div>
-      </div>
-    </div>
+  <% if [
+          @search_terms,
+          @advanced_search_terms,
+          params[:retired].present?,
+          params[:selected].present?
+        ].any? %>
+    <%= render Shared::SearchResultsSummaryComponent.new(
+      results: @proposals,
+      search_terms: @search_terms,
+      advanced_search_terms: @advanced_search_terms
+    ) do %>
+      <% if params[:retired].present? %>
+        <h2><%= t("proposals.index.retired_proposals") %></h2>
+      <% elsif params[:selected].present? %>
+        <h2><%= t("proposals.index.selected_proposals") %></h2>
+      <% end %>
+    <% end %>
   <% else %>
     <%= render "shared/section_header", i18n_namespace: "proposals.index.section_header", image: "proposals" %>
   <% end %>
 
-  <% if feature?('user.recommendations') && @recommended_proposals.present? %>
+  <% if show_recommended_proposals? %>
     <%= render "shared/recommended_index", recommended: @recommended_proposals,
                                            disable_recommendations_path: recommendations_disable_proposals_path,
                                            namespace: "proposals" %>
@@ -46,11 +39,9 @@
   <div class="row">
     <div id="proposals" class="proposals-list small-12 medium-9 column">
 
-      <% if has_banners? %>
-        <%= render "shared/banner" %>
-      <% end %>
+      <%= render Shared::BannerComponent.new("proposals") %>
 
-      <% if @featured_proposals.present? %>
+      <% if show_featured_proposals? %>
         <div id="featured-proposals" class="row featured-proposals">
           <div class="small-12 column">
             <h2>
@@ -63,31 +54,37 @@
         </div>
       <% end %>
 
-      <div class="row">
-        <div class="small-12 column">
-          <%= render "view_mode" %>
+      <% unless params[:selected].present? %>
+        <div class="row">
+          <div class="small-12 column">
+            <%= render "view_mode" %>
+          </div>
         </div>
-      </div>
+      <% end %>
 
-      <%= render("shared/advanced_search", search_path: proposals_path(page: 1)) unless params[:retired].present? %>
+      <% unless params[:retired].present? || params[:selected].present? %>
+        <%= render Shared::AdvancedSearchComponent.new %>
+      <% end %>
 
-      <%= render 'shared/order_links', i18n_namespace: "proposals.index" %>
+      <% unless params[:selected].present? %>
+        <%= render "shared/order_links", i18n_namespace: "proposals.index" %>
+      <% end %>
 
       <% if @proposals.any? %>
         <div class="show-for-small-only">
           <%= link_to t("proposals.index.start_proposal"),
                       new_proposal_path,
-                      class: 'button expanded' %>
+                      class: "button expanded" %>
         </div>
       <% end %>
 
       <div id="proposals-list">
         <% if @proposals.any? || current_user.blank? %>
           <% if proposals_default_view? %>
-            <%= render partial: 'proposals/proposal', collection: @proposals %>
+            <%= render partial: "proposals/proposal", collection: @proposals %>
           <% else %>
             <% @proposals.each do |proposal| %>
-              <%= render partial: '/proposals/proposal_minimal', locals: { proposal: proposal } %>
+              <%= render "/proposals/proposal_minimal", proposal: proposal %>
             <% end %>
           <% end %>
         <% else %>
@@ -95,7 +92,7 @@
         <% end %>
         <%= paginate @proposals %>
 
-        <% unless @search_terms || @advanced_search_terms || @tag_filter %>
+        <% unless @search_terms || @advanced_search_terms %>
           <div id="section_help" class="margin" data-magellan-target="section_help">
             <p class="lead">
               <strong><%= t("proposals.index.section_footer.title") %></strong>
@@ -110,14 +107,22 @@
       <aside class="margin-bottom">
         <%= link_to t("proposals.index.start_proposal"),
                     new_proposal_path,
-                    class: 'button expanded' %>
+                    class: "button expanded" %>
+
+        <div class="sidebar-divider"></div>
+        <h2 class="sidebar-title"><%= t("proposals.index.selected_proposals") %></h2>
+        <br>
+        <p class="small">
+          <%= link_to t("proposals.index.selected_proposals_link"), proposals_path(selected: "all") %>
+        </p>
+
         <% if params[:retired].blank? %>
-          <%= render 'categories' %>
-          <%= render "shared/tag_cloud", taggable: 'proposal' %>
-          <%= render 'geozones' %>
-          <%= render 'popular' %>
+          <%= render "categories" %>
+          <%= render "shared/tag_cloud", taggable: "Proposal" %>
+          <%= render "geozones" %>
         <% end %>
-        <%= render 'retired' %>
+        <%= render "retired" %>
+        <%= render "proposals_lists" %>
       </aside>
     </div>
 

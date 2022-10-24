@@ -1,43 +1,68 @@
 ar:
   valuation:
-    budget_investments:
-      show:
-        feasible: مجدي
-        unfeasible: غير مجدي
-      edit:
-        feasible: مجدي
-        unfeasible: غير مجدي
-        undefined_feasible: تعليق \ إيقاف
-        feasible_explanation_html: تفسير مجدي \ ممكن
-        not_feasible_alert: "سوف يرسل بريد الكتروني للمشارك بتقرير عدم الجدوى."
-    spending_proposals:
+    header:
+      title: التقييم
+    menu:
+      title: التقييم
+      budgets: الميزانيات المشاركة
+    budgets:
       index:
-        geozone_filter_all: كل المناطق
+        title: الميزانيات المشاركة
+        filters:
+          current: فتح
+          finished: انتهى
+        table_name: الإ سم
+        table_phase: مرحلة
+        table_assigned_investments_valuation_open: مقترحات الاستثمار المخصصة مع تقييم مفتوح
+        table_actions: الإجراءات
+        evaluate: تقييم
+        no_budgets: "لا يوجد ميزانيات"
+    budget_investments:
+      index:
+        headings_filter_all: كل العناوين
         filters:
           valuation_open: فتح
           valuating: تحت التقييم
           valuation_finished: انتهى التقييم
-        title: مشاريع استثمارية للميزانية المشتركة
-        edit: تحرير
+        assigned_to: "تم تعيين %{valuator}"
+        title: مشاريع استثمارية
+        edit: تعديل الملف
+        table_id: ID
+        table_title: عنوان
+        table_heading_name: اسم العنوان
+        table_actions: الإجراءات
+        no_investments: "لا توجد مشاريع استثمارية."
       show:
         back: عودة
-        heading: مشروع استثماري
+        title: مشروع استثماري
         info: معلومات المشارك
-        association_name: جمعية
         by: إُرسال بواسطة
         sent: تم الإرسال بـ
-        geozone: نطاق
-        dossier: إضبارة
-        edit_dossier: تحرير إضبارة
+        heading: عنوان
+        dossier: الملف
+        edit_dossier: تعديل الملف
         price: السعر
         price_first_year: التكلفة خلال السنة الأولى
         currency: "€"
         feasibility: الجدوى
         feasible: مجدي
-        not_feasible: غير مجدي
+        unfeasible: غير مجدي
+        undefined: غير معرف
+        valuation_finished: انتهى التقييم
+        duration: الوقت المتاح
         responsibles: المسؤوليات
+        assigned_admin: المشرف المكلف
+        assigned_valuators: المقيمين الذين تم تعيينهم
+        preview: معاينة الاستثمار
       edit:
-        feasible: مجدي
-        not_feasible: غير مجدي
-        undefined_feasible: تعليق \ إيقاف
-        feasible_explanation_html: تفسير مجدي \ ممكن
+        dossier: الملف
+        price: "السعر (%{currency})"
+        price_first_year: "التكلفة خلال أول سنة (%{currency}) <small>(بيانات اختيارية، البيانات ليست للكل)</small>"
+        feasibility: الجدوى
+        valuation_finished_alert: "هل أنت متأكد من أنك تريد وضع علامة نهائي لهذا التقرير؟ بعد ذلك لا يمكن تعديله."
+        not_feasible_alert: "سوف يرسل بريد الكتروني للمشارك بتقرير عدم الجدوى."
+        save: حفظ التغييرات
+      notice:
+        valuate: "تم تحديث الملف"
+      valuation_comments: تعليقات التقييم
+      not_in_valuating_phase: لا يمكن تقييم الاستثمارات إلا عندما تكون الميزانية في مرحلة التقييم

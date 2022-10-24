@@ -1,0 +1,16 @@
+<% if can?(:calculate_winners, budget) %>
+  <%= render Admin::ActionComponent.new(
+    :calculate_winners,
+    budget,
+    "aria-describedby": !from_investments || nil,
+    text: text, method: :put, class: html_class
+  ) %>
+<% elsif from_investments %>
+  <span class="button hollow disabled float-right clear">
+    <%= t("admin.budgets.winners.calculate") %>
+  </span>
+  <div class="callout warning clear">
+    <%= t("admin.budget_investments.index.cannot_calculate_winners",
+          phase: t("budgets.phase.reviewing_ballots")) %>
+  </div>
+<% end %>

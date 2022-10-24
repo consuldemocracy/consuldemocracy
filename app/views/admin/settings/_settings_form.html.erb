@@ -1,0 +1,13 @@
+<%= form_for([:admin, setting]) do |f| %>
+  <%= f.hidden_field :tab, id: dom_id(setting, :tab), value: tab if defined?(tab) %>
+  <div class="small-12 medium-6 large-8 column">
+    <%= f.text_area :value,
+      label: false,
+      id: dom_id(setting, :value),
+      "aria-label": strip_tags(t("settings.#{setting.key}")),
+      "aria-describedby": dom_id(setting, :description) %>
+  </div>
+  <div class="small-12 medium-6 large-4 column">
+    <%= f.submit(t("admin.settings.index.update_setting"), class: "button hollow expanded") %>
+  </div>
+<% end %>

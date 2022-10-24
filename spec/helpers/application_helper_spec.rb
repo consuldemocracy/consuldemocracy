@@ -1,7 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe ApplicationHelper do
-
   describe "#author_of?" do
     it "is true if user is the author" do
       user = create(:user)
@@ -23,5 +22,4 @@ describe ApplicationHelper do
       expect(author_of?(proposal, nil)).to eq false
     end
   end
-
 end

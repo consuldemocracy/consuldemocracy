@@ -1,0 +1,28 @@
+<div class="small-12 column">
+  <table>
+    <thead>
+      <tr>
+        <th><%= t("admin.dashboard.administrator_tasks.form.proposal") %></th>
+        <th><%= t("admin.dashboard.administrator_tasks.form.request") %></th>
+        <th class="text-right"><%= t("admin.actions.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <%= link_to administrator_task.source.proposal.title,
+                      proposal_path(administrator_task.source.proposal), target: "_blank" %>
+        </td>
+        <td>
+          <%= administrator_task.source.action.title %>
+        </td>
+        <td class="text-right">
+          <%= form_for administrator_task, url: { action: "update" } do |f| %>
+            <%= f.submit(value: t("admin.dashboard.administrator_tasks.form.solve"),
+                         class: "button") %>
+          <% end %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

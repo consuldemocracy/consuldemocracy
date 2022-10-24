@@ -1,0 +1,50 @@
+ro:
+  sdg_management:
+    actions:
+      edit: "Gestionați obiective și ținte"
+    header:
+      title: "Conținutul ODD"
+    homepage:
+      title: "Configurarea paginii de pornire"
+      header:
+        create: "Crează antet"
+        no_cards: "Nu există antet"
+        title: "Antet"
+      create_card: "Crează un card %{phase}"
+      no_cards: "Nu există carduri în această etapă"
+    menu:
+      budget_investments: "Bugete participative"
+      debates: "Dezbateri"
+      legislation_processes: "Procese legislative"
+      legislation_proposals: "Propuneri legislative"
+      polls: "Sondaje"
+      proposals: "Propuneri"
+      sdg_content: "Obiective și Ținte"
+      sdg_homepage: "Pagină de pornire SDG"
+    local_targets:
+      create:
+        notice: "Obiectiv local creat cu succes"
+      destroy:
+        notice: "Obiectiv local șters cu succes"
+      edit:
+        title: "Modifică obiectivul local"
+      form:
+        code: "Codul trebuie să înceapă cu codul țintă selectat, urmat de un punct"
+        description: "Această descriere va fi afișată ca ajutor pentru utilizatori."
+      index:
+        new: "Crează o țintă locală"
+      new:
+        title: "Țintă locală nouă"
+      update:
+        notice: "Țintă locală actualizată cu succes"
+    relations:
+      index:
+        filter: "Filtru"
+        filters:
+          all: "Toate"
+          pending_sdg_review: "În așteptare"
+          sdg_reviewed: "Marcat ca revizuit"
+      update:
+        notice: "%{relatable} actualizat cu succes"
+      update_and_review:
+        notice: "%{relatable} actualizat cu succes și marcat ca revizuit"

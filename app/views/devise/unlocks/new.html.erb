@@ -1,7 +1,7 @@
 <h1 class="text-center"><%= t("devise_views.unlocks.new.title") %></h1>
 
 <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render 'shared/errors', resource: resource %>
+  <%= render "shared/errors", resource: resource %>
 
   <div class="field">
     <%= f.email_field :email, autofocus: true,

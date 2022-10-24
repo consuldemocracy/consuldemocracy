@@ -3,8 +3,10 @@ module Polls
     visit poll_path(poll)
 
     within("#poll_question_#{question.id}_answers") do
-      click_link answer.to_s
-      expect(page).not_to have_link(answer.to_s)
+      click_button answer
+
+      expect(page).to have_button("You have voted #{answer}")
+      expect(page).not_to have_button("Vote #{answer}")
     end
   end
 
@@ -23,14 +25,14 @@ module Polls
   def confirm_phone(user = nil)
     user ||= User.last
 
-    fill_in 'sms_phone', with: "611111111"
-    click_button 'Send'
+    fill_in "sms_phone", with: "611111111"
+    click_button "Send"
 
-    expect(page).to have_content 'Enter the confirmation code sent to you by text message'
+    expect(page).to have_content "Enter the confirmation code sent to you by text message"
 
-    fill_in 'sms_confirmation_code', with: user.reload.sms_confirmation_code
-    click_button 'Send'
+    fill_in "sms_confirmation_code", with: user.reload.sms_confirmation_code
+    click_button "Send"
 
-    expect(page).to have_content 'Code correct'
+    expect(page).to have_content "Code correct"
   end
 end

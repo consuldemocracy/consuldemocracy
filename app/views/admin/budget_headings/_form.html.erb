@@ -1,40 +1,50 @@
-<div class="small-12 medium-6">
+<%= translatable_form_for heading, url: path, html: { class: "budget-headings-form" } do |f| %>
+  <%= render "shared/globalize_locales", resource: heading %>
 
-  <%= form_for [:admin, @budget, @group, @heading], url: path do |f| %>
+  <%= render "shared/errors", resource: heading %>
 
-    <%= f.text_field :name,
-                     label: t("admin.budget_headings.form.name"),
-                     maxlength: 50,
-                     placeholder: t("admin.budget_headings.form.name") %>
+  <%= render Admin::BudgetsWizard::ModeFieldComponent.new %>
 
-    <%= f.text_field :price,
-                      label: t("admin.budget_headings.form.amount"),
-                      maxlength: 8,
-                      placeholder: t("admin.budget_headings.form.amount") %>
-
-    <%= f.label :population, t("admin.budget_headings.form.population") %>
-    <p class="help-text" id="budgets-population-help-text">
-      <%= t("admin.budget_headings.form.population_info") %>
-    </p>
-    <%= f.text_field :population,
-                      label: false,
-                      maxlength: 8,
-                      placeholder: t("admin.budget_headings.form.population"),
-                      data: {toggle_focus: "population-info"},
-                      aria: {describedby: "budgets-population-help-text"} %>
-
-    <%= f.text_field :latitude,
-                      label: t("admin.budget_headings.form.latitude"),
-                      maxlength: 22,
-                      placeholder: "latitude" %>
-
-    <%= f.text_field :longitude,
-                      label: t("admin.budget_headings.form.longitude"),
-                      maxlength: 22,
-                      placeholder: "longitude" %>
-
-    <%= f.check_box :allow_custom_content, label: t("admin.budget_headings.form.allow_content_block") %>
-
-    <%= f.submit t("admin.budget_headings.form.#{action}"), class: "button success" %>
+  <%= f.translatable_fields do |translations_form| %>
+    <div class="small-12 medium-6 column end">
+      <%= translations_form.text_field :name, maxlength: 50 %>
+    </div>
   <% end %>
-</div>
+
+  <div class="small-12 medium-6">
+    <% if @budget.show_money? %>
+      <%= f.text_field :price, maxlength: 8 %>
+    <% else %>
+      <%= f.hidden_field :price, value: 0 %>
+    <% end %>
+
+    <% if heading.budget.approval_voting? %>
+      <%= f.number_field :max_ballot_lines,
+                           hint: t("admin.budget_headings.form.max_ballot_lines_info") %>
+    <% end %>
+
+    <%= f.text_field :population,
+                      maxlength: 8,
+                      data: { toggle_focus: "population-info" },
+                      hint: t("admin.budget_headings.form.population_info") %>
+
+    <%= f.text_field :latitude, maxlength: 22 %>
+    <%= f.text_field :longitude, maxlength: 22 %>
+    <p class="help-text" id="budgets-coordinates-help-text">
+      <%= t("admin.budget_headings.form.coordinates_info") %>
+    </p>
+
+    <%= f.check_box :allow_custom_content %>
+    <p class="help-text" id="budgets-content-blocks-help-text">
+      <%= t("admin.budget_headings.form.content_blocks_info") %>
+    </p>
+  </div>
+
+  <div class="clear">
+    <% if respond_to?(:single_heading?) && single_heading? %>
+      <%= f.submit t("admin.budgets_wizard.headings.continue"), class: "button success" %>
+    <% else %>
+      <%= f.submit t("admin.budget_headings.form.#{action}"), class: "button hollow" %>
+    <% end %>
+  </div>
+<% end %>

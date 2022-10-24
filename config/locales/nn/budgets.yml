@@ -1,0 +1,48 @@
+nn:
+  budgets:
+    ballots:
+      show:
+        title: Dine stemmer
+        no_balloted_group_yet: "Du har ikke stemt i denne gruppen enda, stem nå!"
+        remove: Fjern stemme
+        voted_info: "Din stemme er bekreftet!"
+        voted_info_2: "Men du kan endre stemmen din når som helst frem til denne fasen lukkes."
+    phase:
+      informing: Informasjon
+    index:
+      milestones: Milepæler
+    investments:
+      form:
+        tag_category_label: "Kategorier"
+        tags_instructions: "Tagg forslaget. Du kan velge fra de foreslåtte kategoriene, eller legge til egne"
+        tags_label: Tagger
+        tags_placeholder: "Skriv tag'ene du vil bruke, avgrenset med komma (',')"
+        map_location: "Kartposisjon"
+        map_location_instructions: "Naviger til plassen på kartet og plasser markøren."
+        map_remove_marker: "Fjern kartmarkøren"
+      index:
+        title: Deltakende budsjettering
+        search_form:
+          button: Søk
+          title: Søk
+        filters:
+          unfeasible: "Ikke gjennomførbart"
+        orders:
+          confidence_score: mest populære
+      show:
+        author_deleted: Brukeren er slettet
+        share: Del
+        supports: Støtte
+        comments_tab: Kommentarer
+        milestones_tab: Milepæler
+        author: Forfatter
+      investment:
+        supports:
+          zero: Ingen støtte
+          one: 1 støtte
+          other: "%{count} støtte"
+    investments_list:
+      investment:
+        supports: "Støtte"
+    executions:
+      link: "Milepæler"

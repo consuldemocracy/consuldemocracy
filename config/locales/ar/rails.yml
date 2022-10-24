@@ -9,7 +9,7 @@ ar:
       - الجمعة
       - السبت
     abbr_month_names:
-      - 
+      -
       - يناير
       - فبراير
       - مارس
@@ -35,7 +35,7 @@ ar:
       long: "%B %d, %Y"
       short: "%b %d"
     month_names:
-      - 
+      -
       - يناير
       - فبراير
       - مارس
@@ -50,7 +50,91 @@ ar:
       - ديسمبر
   datetime:
     distance_in_words:
+      about_x_hours:
+        zero: منذ %{count} ساعة
+        one: منذ ساعة
+        two: منذ %{count} ساعة
+        few: منذ %{count} ساعة
+        many: منذ %{count} ساعة
+        other: منذ %{count} ساعة
+      about_x_months:
+        zero: منذ %{count} شهر
+        one: منذ شهر واحد
+        two: منذ %{count} شهر
+        few: منذ %{count} شهر
+        many: منذ %{count} شهر
+        other: منذ %{count} شهر
+      about_x_years:
+        zero: منذ %{count} سنة
+        one: منذ سنة
+        two: منذ %{count} سنة
+        few: منذ %{count} سنة
+        many: منذ %{count} سنة
+        other: منذ %{count} سنة
+      almost_x_years:
+        zero: '%{count} سنة تقريباً'
+        one: سنة واحدة تقريباً
+        two: '%{count} سنة تقريباً'
+        few: '%{count} سنة تقريباً'
+        many: '%{count} سنة تقريباً'
+        other: '%{count} سنة تقريباً'
       half_a_minute: نصف دقيقة
+      less_than_x_minutes:
+        zero: أقل من %{count} دقيقة
+        one: أقل من دقيقة واحدة
+        two: أقل من %{count} دقيقة
+        few: أقل من %{count} دقيقة
+        many: أقل من %{count} دقيقة
+        other: أقل من %{count} دقيقة
+      less_than_x_seconds:
+        zero: أقل من %{count} ثانية
+        one: أقل من ثانية واحدة
+        two: أقل من %{count} ثانية
+        few: أقل من %{count} ثانية
+        many: أقل من %{count} ثانية
+        other: أقل من %{count} ثانية
+      over_x_years:
+        zero: أكثر من %{count} سنوات
+        one: أكثر من سنة واحدة
+        two: أكثر من سنتين %{count}
+        few: أكثر من %{count} سنوات
+        many: أكثر من %{count} سنوات
+        other: أكثر من %{count} سنين
+      x_days:
+        zero: "%{count} أيام"
+        one: يوم واحد
+        two: "%{count} أيام"
+        few: "%{count} أيام"
+        many: "%{count} أيام"
+        other: "%{count} أيام"
+      x_minutes:
+        zero: "%{count} دقيقة"
+        one: '%{count} دقيقة'
+        two: "%{count} دقيقة"
+        few: "%{count} دقيقة"
+        many: "%{count} دقيقة"
+        other: "%{count} دقيقة"
+      x_months:
+        zero: "%{count} شهور"
+        one: شهر واحد
+        two: "%{count} شهور"
+        few: "%{count} شهور"
+        many: "%{count} شهور"
+        other: "%{count} شهور"
+      x_years:
+        zero: "%{count} سنوات"
+        one: سنة واحدة
+        two: "%{count} سنوات"
+        few: "%{count} سنوات"
+        many: "%{count} سنوات"
+        other: "%{count} سنوات"
+      x_seconds:
+        zero: "%{count} ثواني"
+        one: ثانية واحدة
+        two: "%{count} ثواني"
+        few: "%{count} ثواني"
+        many: "%{count} ثواني"
+        other: "%{count} ثواني"
     prompts:
       day: اليوم
       hour: الساعة
@@ -75,15 +159,43 @@ ar:
       invalid: غير صالح
       less_than: يجب أن يكون أقل من %{count}
       less_than_or_equal_to: يجب أن يكون أصغر أو يساوي %{count}
-      model_invalid: "فشل التحقق: %{errors}"
+      model_invalid: "فشل التحقق من صحة: %{errors}"
       not_a_number: ليس رقماً
       not_an_integer: يجب أن يكون عدد صحيح
       odd: يجب أن يكون عدد فردي
       required: مطلوب
       taken: محجوز مسبقاً
+      too_long:
+        zero: طويل جداً (الحد الأقصى %{count} حرفاً)
+        one: طويل جداً (الحد الأقصى حرفا واحدا)
+        two: طويل جداً (الحد الأقصى %{count} حرفاً)
+        few: طويل جداً (الحد الأقصى %{count} حرفاً)
+        many: طويل جداً (الحد الأقصى %{count} حرفاً)
+        other: طويل جداً (الحد الأقصى %{count} حرفاً)
+      too_short:
+        zero: قصير جداً (الحد الأدنى %{count} حروف)
+        one: قصير جداً (الحد الأدنى حرف 1)
+        two: قصير جداً (الحد الأدنى %{count} حروف)
+        few: قصير جداً (الحد الأدنى %{count} حروف)
+        many: قصير جداً (الحد الأدنى %{count} حروف)
+        other: طويل جداً (الحد الأقصى %{count} حرفاً)
+      wrong_length:
+        zero: الطول غير صحيح (يجب أن يكون عدد الأحرف %{count})
+        one: الطول غير صحيح (يجب أن يكون حرف واحد)
+        two: الطول غير صحيح (يجب أن يكون عدد الأحرف %{count})
+        few: الطول غير صحيح (يجب أن يكون عدد الأحرف %{count})
+        many: الطول غير صحيح (يجب أن يكون عدد الأحرف %{count})
+        other: الطول غير صحيح (يجب أن يكون عدد الأحرف %{count})
       other_than: يجب أن يكون خلاف %{count}
     template:
-      body: 'هناك مشاكل مع الحقول التالية:'
+      body: "هناك مشاكل مع الحقول التالية:"
+      header:
+        zero: "هناك %{count} خطأ يمنع عملية حفظ %{model}"
+        one: هناك خطأ يمنع عملية حفظ %{model}
+        two: "هناك %{count} خطأ يمنع عملية حفظ %{model}"
+        few: "هناك %{count} خطأ يمنع عملية حفظ %{model}"
+        many: "هناك %{count} خطأ يمنع عملية حفظ %{model}"
+        other: "هناك %{count} خطأ يمنع عملية حفظ %{model}"
   helpers:
     select:
       prompt: الرجاء تحديد
@@ -123,6 +235,13 @@ ar:
       storage_units:
         format: "%n %u"
         units:
+          byte:
+            zero: Bytes
+            one: Byte
+            two: Bytes
+            few: Bytes
+            many: Bytes
+            other: Bytes
           gb: غيغا بايت
           kb: كيلو بايت
           mb: ميغابايت
@@ -142,5 +261,6 @@ ar:
       default: "%a, %d %b %Y %H:%M:%S %z"
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
+      short_datetime: "%Y-%m-%d %H:%M:%S"
       api: "%Y-%m-%d %H"
     pm: مساء

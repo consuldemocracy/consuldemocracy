@@ -1,24 +1,103 @@
 so:
+  attributes:
+    geozone_id: "Baxada Hawlgalka"
+    results_enabled: "Tuus natiijada"
+    stats_enabled: "Muuji Xoogta"
+    name: Magac
+    email: Email
+    description: Sharaxaad
   activerecord:
     models:
       activity:
         one: "halqabasho"
         other: "halqabasho"
+      budget:
+        one: "Misaniyaad"
+        other: "Misaniyaado"
+      budget/investment:
+        one: "Maalgashi"
+        other: "Maalgashiyo"
+      comment:
+        one: "Faalo"
+        other: "Faalo"
+      debate:
+        one: "Dood"
+        other: "Doodo"
+      tag:
+        one: "Taag"
+        other: "Tagyada"
+      user:
+        one: "Istimale"
+        other: "Isticmaalayaal"
+      moderator:
+        one: "Dhexdhexaad ah"
+        other: "Dhexdhexadiyayal"
+      administrator:
+        one: "Mamulaha"
+        other: "Mamulayal"
       valuator:
         one: "Qimeeye"
-        other: "Qimeeye"
+        other: "Qimeeyayal"
+      valuator_group:
+        one: "Kooxda Qimeeynta"
+        other: "Bilaa Kooxdaha Qimeeynta"
       manager:
         one: "Mamule"
         other: "Mamule"
+      newsletter:
+        one: "Waraaqda Wargeeska"
+        other: "Wargeesyo"
+      vote:
+        one: "Codeyn"
+        other: "Codaad"
+      organization:
+        one: "Urur"
+        other: "Ururo"
       poll/booth:
         one: "labadaba"
         other: "labadodaba"
       site_customization/page:
         one: Bog gaara
         other: Bog gaara
+      site_customization/image:
+        one: Sawirka Cadada
+        other: Sawirada Cadada
       site_customization/content_block:
         one: Xayiraaddaha gaarka ah ee gaarka ah
-        other: Xayiraaddaha gaarka ah ee gaarka ah
+        other: Noocyada gaarka ah ee gaarka ah
+      document:
+        one: Dukumenti
+        other: Dukumentiyo
+      legislation/process:
+        one: "Geedisocoodka"
+        other: "Geedi socodka"
+      legislation/proposal:
+        one: "Sojeedin"
+        other: "Sojeedino"
+      legislation/draft_versions:
+        one: "Qaybta Qabyo Qoraalka ah"
+        other: "Weerinta qabya qoralka"
+      legislation/questions:
+        one: "Sual"
+        other: "Sualo"
+      legislation/question_options:
+        one: "Sual Dorsho"
+        other: "Doorashooyinka su'aasha"
+      documents:
+        one: "Dukumenti"
+        other: "Dukumentiyo"
+      images:
+        one: "Sawiir"
+        other: "Sawiiro"
+      topic:
+        one: "Mawduuc"
+        other: "Mawduucyada"
+      poll:
+        one: "Dorasho"
+        other: "Doorashooyinka"
+      proposal_notification:
+        one: "Ogeysiin Sojeedineed"
+        other: "Ogaysiis soo jedin"
     attributes:
       budget:
         name: "Magac"
@@ -31,6 +110,8 @@ so:
         description_finished: "Sharaxaada Marka ay Misaaniyadu dhamatoo"
         phase: "Weeji"
         currency_symbol: "Lacagta"
+      budget/translation:
+        name: "Magac"
       budget/investment:
         heading_id: "Madaxa"
         title: "Ciwaan"
@@ -41,24 +122,78 @@ so:
         organization_name: "Haddii aad soo jeedineyso magaca wadajir /urur, ama wakiil ka socda dad badan, qor magacisa"
         image: "Sawir muuqaal ah oo soo jeedinaya"
         image_title: "Sawirka Ciwaanka"
+        duration: "Xadida wakhtiga"
+        feasibility_feasible: "Surtagal"
+        feasibility_undecided: "Aan la garanayn"
+        feasibility_unfeasible: "An surtgak ahayn"
+        incompatible: "U calaamadee sida aan ula dhaqmi Karin"
+        price_explanation: "Faahfaahinta qiimaha"
+        selected: "Calamadee sida loodortay"
+        selected_true: "Ladoortay"
+        selected_false: "An la dooran"
+        unfeasibility_explanation: "Sharaxaadda faahfaahinta"
+        valuation_finished: "Qimeeyn ayaa dhamatay"
+        valuator_ids: "Kooxo"
+        valuation_tag_list: "Tagyada"
+      budget/investment/translation:
+        title: "Ciwaan"
+        description: "Sharaxaad"
+      geozone:
+        name: Magac
+      milestone:
+        title: "Ciwaan"
+        description: "Sharaxaad (ikhtiyaari haddii ay jirto xaalad loo xilsaaray)"
+        publication_date: "Taariikhda daabacaadda"
+      milestone/translation:
+        description: "Sharaxaad"
+      milestone/status:
+        name: "Magac"
+        description: "Sharaxaad (Ikhyaari ah)"
+      progress_bar:
+        kind: "Noca"
+        title: "Ciwaan"
+      budget/group/translation:
+        name: "Mgaca Kooxada"
       budget/heading:
         name: "Magaca Ciwaanka"
         price: "Qime"
-        population: "Dadka"
+        population: "Dadkaweyne"
+      budget/heading/translation:
+        name: "Magaca Ciwaanka"
+      budget/phase:
+        enabled: "Marxaladda la awoodo"
+        ends_at: "Tariikhada dhamadka"
+        starts_at: "Tariikhda biloowga"
+      budget/phase/translation:
+        name: "Magac"
+        description: "Sharaxaad"
+        summary: "Sookobiid"
       comment:
         body: "Faalo"
-        user: "Istimaale"
+        user: "Istimale"
       debate:
         author: "Qoraa"
         description: "Fikraad"
+        tag_list: "Mawduucyada"
         terms_of_service: "Shuruudaha adeega"
         title: "Ciwaan"
+      debate/translation:
+        title: "Ciwaanka dooda"
+        description: "Qoraalka hore ee doodda"
       proposal:
         author: "Qoraa"
         title: "Ciwaan"
         question: "Sual"
         description: "Sharaxaad"
+        responsible_name: "Magaca buuxa ee qofka soo gudbinaya soo jeedinta"
+        retired_reason: "Sababta loo joojiyo soo jeedinta"
+        selected: "Calamadee sida loodortay"
         terms_of_service: "Shuruudaha adeega"
+      proposal/translation:
+        title: "Ciwaanka soo jedinta"
+        description: "Qorlka sojedinta"
+        summary: "Sokoobida sojedinta"
+        retired_explanation: "Sharaxaad"
       user:
         login: "Email ama magaca isticmalaha"
         email: "Email"
@@ -66,48 +201,80 @@ so:
         password_confirmation: "Aqoonsiga furaha sirta ah"
         password: "Furaha sirta ah"
         current_password: "Magaca Sirta ah hada"
-        phone_number: "Talafoon lambar"
+        email_digest: "Soo hel warbixinta kooban ee soo jeedinta soo jeedinta"
+        email_on_comment: "Iigu soo sheegaan email ahaan marka qof uu ku faahfaahiyo soo jeedimaha ama doodaha"
+        email_on_comment_reply: "Ii wargali email ahaan marka qof uu jawaabo ku yiraahdo"
+        email_on_direct_message: "Helaan emayl ku saabsan fariimaha tooska ah"
+        newsletter: "Helitaanka bogga internetka ee macluumaadka khuseeya"
         official_position: "Goob rasmi ah"
+        official_position_badge: "Muuji calaamadda booska rasmiga ah"
         official_level: "Heerka Rasmiga ah"
+        phone_number: "Talafoon lambar"
+        public_activity: "Wakiilka hay'adda / wadajirka Liiska ku saabsan waxqabadka dadweynaha"
+        recommended_debates: "Muuji talooyinka dodaha"
+        recommended_proposals: "Muuji talooyinka soo jeedinta"
         redeemable_code: "Koodhka xaqiijinta ee la helay email ahaan"
+      direct_message:
+        title: "Ciwaan"
+        body: "Fariin"
       organization:
         name: "Magaca ururka"
         responsible_name: "Qofka masuulka ka ah kooxda"
-      spending_proposal:
-        administrator_id: "Mamulaha"
-        association_name: "Magaca ururka"
-        description: "Sharaxaad"
-        external_url: "Isku xirka dukumentiyada dheeraadka ah"
-        geozone_id: "Baxada Hawlgalka"
-        title: "Ciwaan"
       poll:
         name: "Magac"
+        title: "Magac"
         starts_at: "Tariikhda biloowga"
         ends_at: "Tarikhada xiritaanka"
         geozone_restricted: "Waxaa xakameynaya qulqulka"
         summary: "Sookobiid"
         description: "Sharaxaad"
+      active_poll/translation:
+        description: "Sharaxaad"
+      poll/booth:
+        name: "Magac"
+        location: "Goobta"
       poll/translation:
         name: "Magac"
         summary: "Sookobiid"
         description: "Sharaxaad"
       poll/question:
+        poll_id: "Dorasho"
         title: "Sual"
         summary: "Sookobiid"
         description: "Sharaxaad"
         external_url: "Isku xirka dukumentiyada dheeraadka ah"
       poll/question/translation:
         title: "Sual"
+      poll/ballot_sheet:
+        poll_id: Dorasho
+      poll/shift:
+        task: "Hawl"
+      proposal_notification:
+        body: "Fariin"
+        title: "Ciwaan"
       signature_sheet:
+        title: "Ciwaan"
         signable_type: "Nooca muuqda"
         signable_id: "Aqonsiga la aqoonsan yahay"
         document_numbers: "Tirada Dukumentiyada"
+      sdg/goal:
+        title: "Ciwaan"
+        description: "Sharaxaad"
+      sdg/local_target:
+        title: "Ciwaan"
+      sdg/local_target/translation:
+        title: "Ciwaan"
+        description: "Sharaxaad"
+      sdg/target:
+        title: "Ciwaan"
       site_customization/page:
-        content: Mawduuc
-        created_at: Abuuray
+        content: Mowduuc
+        created_at: Saame
         subtitle: Ciwaan hoosaad
         slug: Laqabso
-        status: Xaladda
+        status: Status
+        status_draft: "Qabyo Qorid"
+        status_published: "Sobandhigaay"
         title: Ciwaan
         updated_at: La casriyeeyay
         more_info_flag: Muuji bogga gargarka
@@ -124,6 +291,18 @@ so:
         name: Magac
         locale: degaanka
         body: Jirka
+      tag:
+        name: "Kudar magaca mowduuca"
+      topic:
+        title: "Ciwaan"
+        description: "Qoraalka hore"
+      banner:
+        post_ended_at: "Boostada kudhamaatay"
+        post_started_at: "Bostada laga bilaabo"
+        target_url: "Isku xirka"
+      banner/translation:
+        title: "Ciwaan"
+        description: "Sharaxaad"
       legislation/process:
         title: Hirgelinta Mowduuca
         summary: Sookobiid
@@ -133,38 +312,53 @@ so:
         end_date: Tariikhada dhamadka
         debate_start_date: Taariikhda bilaabashada doodda
         debate_end_date: Taariikhda dhamaadka doodda
+        draft_start_date: Biloow
+        draft_end_date: Dhamad
         draft_publication_date: Tariikhada Dabacaada
         allegations_start_date: Taageerida taariikhda bilawga
         allegations_end_date: Taageerida taariikhda dhamaadka
+        proposals_phase_start_date: Biloow
+        proposals_phase_end_date: Dhamad
         result_publication_date: Taariikhda daabacaadda natiijada kama dambaysta ah
       legislation/process/translation:
         title: Hirgelinta Mowduuca
         summary: Sookobiid
         description: Sharaxaad
         additional_info: Xogdheeriya
+        homepage: "Sharaxaad"
+        milestones_summary: Sookobiid
+      legislation/proposal:
+        description: "Qorlka sojedinta"
+        summary: "Sokoobida sojedinta"
+        title: "Ciwaanka soo jedinta"
+        video_url: "Xiriirinta fiidiyowga dibadda"
       legislation/draft_version:
         title: Ciwaanka Sawirka
         body: Qoraal
         changelog: Isbedel
-        status: Xaladda
+        status: Status
+        status_draft: "Qabyo Qorid"
+        status_published: "Sobandhigaay"
         final_version: Koobiga kama dabeysta ah
       legislation/draft_version/translation:
         title: Ciwaanka Sawirka
         body: Qoraal
-        changelog: Isbedeladda
+        changelog: Isbedel
       legislation/question:
         title: Ciwaan
         question_options: Fursadaha
+      legislation/question/translation:
+        title: Sual
       legislation/question_option:
         value: Qimaha
       legislation/annotation:
         text: Faalo
       document:
         title: Ciwaan
-        attachment: Kulifaaq
+        attachment: "Kulifaaq"
       image:
         title: Ciwaan
-        attachment: Kulifaaq
+        attachment: "Kulifaaq"
       poll/question/answer:
         title: Jawaab
         description: Sharaxaad
@@ -177,7 +371,7 @@ so:
       newsletter:
         segment_recipient: Sooqataha
         subject: Mawduuc
-        from: Ka
+        from: "Ka"
         body: Macluumadka Emailka
       admin_notification:
         segment_recipient: Sooqataha
@@ -200,6 +394,22 @@ so:
         link_text: Qoraalka Xirirka
       widget/feed:
         limit: Tirada Lambarada
+      dashboard/action:
+        title: Ciwaan
+        description: Sharaxaad
+        active: Firfircoon
+        action_type: Noca
+      link:
+        label: Ciwaan
+      valuator:
+        description: Sharaxaad
+        valuator_group_id: Kooxda Qimeeynta
+      valuator_group:
+        name: "Mgaca Kooxada"
+      local_census_record:
+        document_type: Qaybaha dukumentiga
+        document_number: Lambarka dukumeentiga
+        date_of_birth: Tarikhda Dhalashada
     errors:
       models:
         user:
@@ -227,14 +437,11 @@ so:
           attributes:
             segment_recipient:
               invalid: "Qeybta dadka qaata ee dadka isticmaala waa mid aan shaqeynin"
-        map_location:
-          attributes:
-            map:
-              invalid: Goobta khariidadu ma bannaan karto. Saar calaamad ama dooro sanduuqa sanduuqa haddii aan loo baahnayn geolocalization
         poll/voter:
           attributes:
             document_number:
               not_in_census: "Dukumenti mahan tiro koob"
+            user_id:
               has_voted: "Isticmaalkii hore ayaa u codeeyay"
         legislation/process:
           attributes:
@@ -259,8 +466,8 @@ so:
         signature:
           attributes:
             document_number:
-              not_in_census: 'Ma xaqiijin Tirakoobka'
-              already_voted: 'Hore uso jediyey qorshahan'
+              not_in_census: "Ma xaqiijin Tirakoobka"
+              already_voted: "Hore uso jediyey qorshahan"
         site_customization/page:
           attributes:
             slug:
@@ -273,7 +480,7 @@ so:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'Kama doodi kartid qiimaha'
+              cannot_comment_valuation: "Kama doodi kartid qiimaha"
       messages:
         record_invalid: "Xaqiijinta ayaa ku fashilantay%{errors}"
         restrict_dependent_destroy:

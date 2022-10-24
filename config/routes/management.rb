@@ -24,14 +24,9 @@ namespace :management do
   end
 
   resource :session, only: [:create, :destroy]
-  get 'sign_in', to: 'sessions#create', as: :sign_in
+  get "sign_in", to: "sessions#create", as: :sign_in
 
   resources :proposals, only: [:index, :new, :create, :show] do
-    post :vote, on: :member
-    get :print, on: :collection
-  end
-
-  resources :spending_proposals, only: [:index, :new, :create, :show] do
     post :vote, on: :member
     get :print, on: :collection
   end
@@ -43,9 +38,10 @@ namespace :management do
       get :print_investments
     end
 
-    resources :investments, only: [:index, :new, :create, :show, :destroy], controller: 'budgets/investments' do
-      post :vote, on: :member
+    resources :investments, only: [:index, :new, :create, :show, :destroy], controller: "budgets/investments" do
       get :print, on: :collection
+
+      resources :votes, controller: "budgets/investments/votes", only: [:create, :destroy]
     end
   end
 end

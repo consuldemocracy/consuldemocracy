@@ -1,24 +1,89 @@
 ar:
   officing:
+    header:
+      title: الاقتراع
+    dashboard:
+      index:
+        title: مكتب الاستطلاع
+        info: يمكنك هنا المصادقة على صحة وثائق المستخدم وتخزين نتائج التصويت
+        no_shifts: ليس لديك مناوبة اليوم.
+    menu:
+      voters: التحقق من الوثيقة
+      total_recounts: إجمالي إعادة فرز الأصوات والنتائج
     polls:
       final:
-        title: الاستبيانات جاهزة لعملية العد النهائي
-    results:
+        title: الاستطلاعات جاهزة لعملية العد النهائي
+        no_polls: أنت لا تقوم بإعداد عمليات إعادة فرز الأصوات النهائية في أي استطلاع ناشط
+        select_poll: تحديد استطلاع
+        add_results: إضافة نتائج
+    poll_budgets:
+      see_ballot_sheets: رؤية قائمة أوراق الاقتراع
+      index:
+        title: "%{poll_budget} - قائمة أوراق الاقتراع"
+        ballot_sheet: "ورقة الاقتراع %{id}"
+        ballot_sheet_name: الإسم
+        ballot_sheet_author: الكاتب
+        ballot_sheet_creation_date: تاريخ الإنشاء
+        empty_results: لا توجد أوراق اقتراع لهذا الاستطلاع بعد
       new:
+        title: "%{poll_budget} - ورقة اقتراع جديدة"
+        booth: مكتب الإقتراع
+        select_booth: حدّد مكتب الإقتراع
+        csv_data: بيانات CSV
+        submit: حفظ
+      show:
+        created_at: تاريخ الإنشاء
+        author: الكاتب
+        data: بيانات CSV
+    booth:
+      new:
+        title: "اختر مكتب الإقتراع"
+    results:
+      flash:
+        create: "تم حفظ النتائج"
+        error_create: "لم تم حفظ النتائج. هناك خظأ في البيانات."
+        error_wrong_booth: "هناك خطأ. لم يتم حفظ البيانات."
+      new:
+        title: "%{poll} - إضافة النتائج"
+        not_allowed: "لا يسمح لك إضافة نتائج لهذا الاستطلاع"
+        booth: "مكتب الإقتراع"
         date: "تاريخ"
+        select_booth: "حدّد مكتب الإقتراع"
+        ballots_white: "أوراق فارغة"
+        ballots_null: "أوراق غير صالحة"
+        ballots_total: "مجموع الأوراق"
         submit: "حفظ"
+        results_list: "نتائجك"
+        see_results: "رؤية النتائج"
       index:
         no_results: "لا توجد نتائج"
         results: النتائج
-        table_answer: الإجابة
+        table_answer: إجابة
+        table_votes: اصوات
+        table_whites: "أوراق فارغة"
+        table_nulls: "أوراق غير صالحة"
+        table_total: "مجموع الأوراق"
     residence:
       flash:
         create: "وثيقة تم التحقق منها من خلال التعداد"
+        not_allowed: "ليس لديك مناوبة اليوم"
       new:
+        title: التحقق من الوثيقة
+        submit: التحقق من الوثيقة
         error_verifying_census: "التعداد غير قادر على التحقق من هذه الوثيقة."
+        form_errors: منعَ التحقق من هذه الوثيقة
     voters:
       new:
-        title: استبيانات
-        table_status: حالة الاستبيانات
+        title: استطلاعات
+        table_poll: استطلاع
+        table_status: حالة الاستطلاع
+        table_actions: الإجراءات
+        not_to_vote: قرر الشخص عدم التصويت في هذه المرحلة
       show:
+        can_vote: يمكنه التصويت
+        cannot_vote: لا يمكن لهذا الشخص التصويت لأنه غير مسجل في المنطقة أو المناطق التي يتم فيها التصويت.
+        error_already_voted: شارك سابقا في هذا الاستطلاع
         submit: تأكيد التصويت
+        success: "تم التصويت!"
+      can_vote:
+        submit_disable_with: "انتظر، جاري تأكيد التصويت..."

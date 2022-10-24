@@ -16,6 +16,18 @@ so:
         no_polls: Adigu maahan inaad dib u soo celisid ugu dambeyn ra'yi ururin kasta oo firfircoon
         select_poll: Xuulo doorshada
         add_results: Ku dar Natijada
+    poll_budgets:
+      index:
+        ballot_sheet_name: Magac
+        ballot_sheet_author: Qoraa
+        ballot_sheet_creation_date: Tarikh Abuurid
+      new:
+        booth: Labadaba
+        select_booth: Dooro labadaba
+        submit: Badbaado
+      show:
+        created_at: Tarikh Abuurid
+        author: Qoraa
     results:
       flash:
         create: "Kaydi natijada"
@@ -47,11 +59,9 @@ so:
         not_allowed: "Adigu ma haysid wax isbeddel ah maanta"
       new:
         title: Ansixinta dukumentiga
-        document_number: "Lambarka dukumentiga (oo lugu daray warqadaha)"
         submit: Ansixinta dukumentiga
         error_verifying_census: "Tirakoobku ma awoodin inuu caddeeyo dokumentigan."
         form_errors: hortaagan xaqiijinta dukumintigan
-        no_assignments: "Adigu ma haysid wax isbeddel ah maanta"
     voters:
       new:
         title: Doorashooyinka

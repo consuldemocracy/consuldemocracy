@@ -8,7 +8,7 @@
     <% group.each do |content| %>
       <b><%= content.key %></b>
       <% content.globalize_locales.each do |locale| %>
-        <%= render "form_field", content: content, locale: locale %>
+        <%= render Admin::SiteCustomization::InformationTexts::FormFieldComponent.new(content, locale: locale) %>
       <% end %>
     <% end %>
   <% end %>

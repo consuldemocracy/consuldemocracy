@@ -1,4 +1,13 @@
 en:
+  attributes:
+    geozone_id: "Scope of operation"
+    results_enabled: "Show results"
+    stats_enabled: "Show stats"
+    advanced_stats_enabled: "Show advanced stats"
+    name: Name
+    email: Email
+    description: Description
+    related_sdg_list: Goals and Targets
   activerecord:
     models:
       activity:
@@ -16,6 +25,9 @@ en:
       milestone/status:
         one: "Milestone Status"
         other: "Milestone Statuses"
+      progress_bar:
+        one: "Progress bar"
+        other: "Progress bars"
       comment:
         one: "Comment"
         other: "Comments"
@@ -58,12 +70,24 @@ en:
       poll/officer:
         one: "officer"
         other: "officers"
+      poll/ballot_sheet:
+        one: Ballot sheet
+        other: Ballot sheets
       proposal:
         one: "Citizen proposal"
         other: "Citizen proposals"
-      spending_proposal:
-        one: "Investment project"
-        other: "Investment projects"
+      sdg/goal:
+        one: "goal"
+        other: "goals"
+      sdg/local_target:
+        one: "local target"
+        other: "local targets"
+      sdg/manager:
+        one: "SDG manager"
+        other: "SDG managers"
+      sdg/target:
+        one: "target"
+        other: "targets"
       site_customization/page:
         one: Custom page
         other: Custom pages
@@ -73,6 +97,9 @@ en:
       site_customization/content_block:
         one: Custom content block
         other: Custom content blocks
+      document:
+        one: Document
+        other: Documents
       legislation/process:
         one: "Process"
         other: "Processes"
@@ -106,6 +133,21 @@ en:
       proposal_notification:
         one: "Proposal notification"
         other: "Proposal notifications"
+      dashboard/action:
+        one: Proposal dashboard action
+        other: Proposal dashboard actions
+      dashboard/administrator_task:
+        one: Task
+        other: Tasks
+      link:
+        one: Link
+        other: Links
+      local_census_record:
+        one: Local census record
+        other: Local census records
+      votation_type:
+        one: Votation type
+        other: Votation types
     attributes:
       budget:
         name: "Name"
@@ -116,44 +158,116 @@ en:
         description_balloting: "Description during Balloting phase"
         description_reviewing_ballots: "Description during Reviewing Ballots phase"
         description_finished: "Description when the budget is finished"
-        phase: "Phase"
+        phase: "Active phase"
         currency_symbol: "Currency"
+        voting_style: "Final voting style"
+        voting_style_knapsack: "Knapsack"
+        voting_style_approval: "Approval"
+        hide_money: "Hide money amount for this budget"
+      budget/translation:
+        main_link_text: "Text on the link"
+        main_link_url: "The link takes you to (add a link)"
+        name: "Name"
       budget/investment:
         heading_id: "Heading"
         title: "Title"
         description: "Description"
         external_url: "Link to additional documentation"
         administrator_id: "Administrator"
-        location: "Location (optional)"
+        location: "Location additional info"
         organization_name: "If you are proposing in the name of a collective/organization, or on behalf of more people, write its name"
         image: "Proposal descriptive image"
         image_title: "Image title"
+        duration: "Time scope"
+        feasibility_feasible: "Feasible"
+        feasibility_undecided: "Undefined"
+        feasibility_unfeasible: "Unfeasible"
+        incompatible: "Mark as incompatible"
+        milestone_tag_list: "Milestone tags"
+        price_explanation: "Price explanation"
+        selected: "Mark as selected"
+        selected_true: "Selected"
+        selected_false: "Not selected"
+        unfeasibility_explanation: "Feasibility explanation"
+        valuation_finished: "Valuation finished"
+        valuator_ids: "Groups"
+        valuation_tag_list: "Tags"
+      budget/investment/translation:
+        title: "Title"
+        description: "Description"
+      geozone:
+        name: Name
+        external_code: "External code (optional)"
+        census_code: "Census code (optional)"
+        html_map_coordinates: "HTML <map> Coordinates (optional)"
       milestone:
         status_id: "Current status (optional)"
         title: "Title"
         description: "Description (optional if there's an status assigned)"
-        publication_date: "Publication date"
+        publication_date: "Date"
+      milestone/translation:
+        description: "Description"
       milestone/status:
         name: "Name"
         description: "Description (optional)"
+      progress_bar:
+        kind: "Type"
+        title: "Title"
+        percentage: "Current progress"
+      progress_bar/kind:
+        primary: "Primary"
+        secondary: "Secondary"
+      budget/group:
+        max_votable_headings: "Maximum number of headings in which a user can select projects"
+      budget/group/translation:
+        name: "Group name"
       budget/heading:
+        allow_custom_content: "Allow content block"
+        latitude: "Latitude (optional)"
+        longitude: "Longitude (optional)"
         name: "Heading name"
-        price: "Price"
-        population: "Population"
+        price: "Money amount"
+        population: "Population (optional)"
+        max_ballot_lines: "Votes allowed"
+      budget/heading/translation:
+        name: "Heading name"
+      budget/phase:
+        enabled: "Phase enabled"
+        ends_at: "End date"
+        starts_at: "Start date"
+      budget/phase/translation:
+        name: "Name"
+        description: "Description"
+        summary: "Summary"
+        main_link_text: "Text on the link"
+        main_link_url: "The link takes you to (add a link)"
       comment:
         body: "Comment"
         user: "User"
       debate:
         author: "Author"
         description: "Opinion"
+        tag_list: "Topics"
         terms_of_service: "Terms of service"
         title: "Title"
+      debate/translation:
+        title: "Debate title"
+        description: "Initial debate text"
       proposal:
         author: "Author"
         title: "Title"
         question: "Question"
         description: "Description"
+        responsible_name: "Full name of the person submitting the proposal"
+        retired_reason: "Reason to withdraw the proposal"
+        selected: "Mark as selected"
         terms_of_service: "Terms of service"
+        video_url: "External video URL"
+      proposal/translation:
+        title: "Proposal title"
+        description: "Proposal text"
+        summary: "Proposal summary"
+        retired_explanation: "Explanation"
       user:
         login: "Email or username"
         email: "Email"
@@ -161,48 +275,91 @@ en:
         password_confirmation: "Password confirmation"
         password: "Password"
         current_password: "Current password"
-        phone_number: "Phone number"
+        email_digest: "Receive a summary of proposal notifications"
+        email_on_comment: "Notify me by email when someone comments on my contents"
+        email_on_comment_reply: "Notify me by email when someone replies to my comments"
+        email_on_direct_message: "Receive emails about direct messages"
+        newsletter: "Receive relevant information by email"
         official_position: "Official position"
+        official_position_badge: "Show official position badge"
         official_level: "Official level"
+        phone_number: "Phone number"
+        public_activity: "Keep my list of activities public"
+        public_interests: "Keep the elements I follow public"
+        recommended_debates: "Recommend debates to me"
+        recommended_proposals: "Recommend proposals to me"
         redeemable_code: "Verification code received via email"
+      direct_message:
+        title: "Title"
+        body: "Message"
       organization:
         name: "Name of organisation"
         responsible_name: "Person responsible for the group"
-      spending_proposal:
-        administrator_id: "Administrator"
-        association_name: "Association name"
-        description: "Description"
-        external_url: "Link to additional documentation"
-        geozone_id: "Scope of operation"
-        title: "Title"
       poll:
         name: "Name"
+        title: "Name"
         starts_at: "Start Date"
         ends_at: "Closing Date"
         geozone_restricted: "Restricted by geozone"
         summary: "Summary"
         description: "Description"
+      active_poll/translation:
+        description: "Description"
+      poll/booth:
+        name: "Name"
+        location: "Location"
       poll/translation:
         name: "Name"
         summary: "Summary"
         description: "Description"
       poll/question:
+        poll_id: "Poll"
         title: "Question"
         summary: "Summary"
         description: "Description"
         external_url: "Link to additional documentation"
       poll/question/translation:
         title: "Question"
+      poll/ballot_sheet:
+        data: CSV data
+        poll_id: Poll
+        officer_assignment_id: Officer assignment
+      poll/shift:
+        task: "Task"
+      proposal_notification:
+        body: "Message"
+        title: "Title"
       signature_sheet:
+        title: "Title"
         signable_type: "Signable type"
         signable_id: "Signable ID"
         document_numbers: "Documents numbers"
+      sdg/goal:
+        code: "Code"
+        title: "Title"
+        description: "Description"
+      sdg/local_target:
+        code: "Code"
+        target_id: "Target"
+        title: "Title"
+      sdg/local_target/translation:
+        title: "Title"
+        description: "Description"
+      sdg/phase/kind:
+        sensitization: "Sensitization"
+        planning: "Planning"
+        monitoring: "Monitoring"
+      sdg/target:
+        code: "Code"
+        title: "Title"
       site_customization/page:
         content: Content
         created_at: Created at
         subtitle: Subtitle
         slug: Slug
         status: Status
+        status_draft: "Draft"
+        status_published: "Published"
         title: Title
         updated_at: Updated at
         more_info_flag: Show in help page
@@ -219,32 +376,59 @@ en:
         name: Name
         locale: locale
         body: Body
+      tag:
+        name: "Type the name of the topic"
+      topic:
+        title: "Title"
+        description: "Initial text"
+      banner:
+        background_color: Background color
+        font_color: Font color
+        post_ended_at: "Post ended at"
+        post_started_at: "Post started at"
+        target_url: "Link"
+      banner/translation:
+        title: "Title"
+        description: "Description"
       legislation/process:
         title: Process Title
         summary: Summary
         description: Description
         additional_info: Additional info
-        start_date: Start date
-        end_date: End date
-        debate_start_date: Debate start date
-        debate_end_date: Debate end date
-        draft_start_date: Draft start date
-        draft_end_date: Draft end date
+        start_date: Start
+        end_date: End
+        debate_start_date: Start
+        debate_end_date: End
+        draft_start_date: Start
+        draft_end_date: End
         draft_publication_date: Draft publication date
-        allegations_start_date: Allegations start date
-        allegations_end_date: Allegations end date
+        allegations_start_date: Start
+        allegations_end_date: End
+        proposals_phase_start_date: Start
+        proposals_phase_end_date: End
         result_publication_date: Final result publication date
+        background_color: Background color
+        font_color: Font color
+        homepage_enabled: "Homepage enabled"
       legislation/process/translation:
         title: Process Title
         summary: Summary
         description: Description
         additional_info: Additional info
+        homepage: "Description"
         milestones_summary: Summary
+      legislation/proposal:
+        description: "Proposal text"
+        summary: "Proposal summary"
+        title: "Proposal title"
+        video_url: "Link to external video"
       legislation/draft_version:
         title: Version title
         body: Text
         changelog: Changes
         status: Status
+        status_draft: "Draft"
+        status_published: "Published"
         final_version: Final version
       legislation/draft_version/translation:
         title: Version title
@@ -253,29 +437,31 @@ en:
       legislation/question:
         title: Title
         question_options: Options
+      legislation/question/translation:
+        title: Question
       legislation/question_option:
         value: Value
       legislation/annotation:
         text: Comment
       document:
         title: Title
-        attachment: Attachment
+        attachment: "Choose document"
       image:
         title: Title
-        attachment: Attachment
+        attachment: "Choose image"
       poll/question/answer:
         title: Answer
         description: Description
       poll/question/answer/translation:
         title: Answer
-        description: Description
+        description: "Description (optional)"
       poll/question/answer/video:
         title: Title
         url: External video
       newsletter:
         segment_recipient: Recipients
         subject: Subject
-        from: From
+        from: "E-mail address that will appear as sending the newsletter"
         body: Email content
       admin_notification:
         segment_recipient: Recipients
@@ -291,6 +477,7 @@ en:
         description: Description
         link_text: Link text
         link_url: Link URL
+        columns: Number of columns
       widget/card/translation:
         label: Label (optional)
         title: Title
@@ -298,6 +485,44 @@ en:
         link_text: Link text
       widget/feed:
         limit: Number of items
+      dashboard/action:
+        title: Title
+        short_description: Short description
+        description: Description
+        link: External link
+        request_to_administrators: Include in the resource a button to request the resource from administrators
+        day_offset: How many days after the creation of the proposal do you want it to be activated?
+        required_supports: How much supports does the proposal have to get in order to be activated?
+        order: You can enter the position where this action will be shown to the user in the list of actions
+        active: Active
+        action_type: Type
+        action_type_proposed_action: "Proposed action"
+        action_type_resource: "Resource"
+        published_proposal: "For published proposals?"
+      dashboard/administrator_task:
+        source: Source
+        user: Executed by
+      link:
+        label: Title
+        url: URL
+      valuator:
+        description: Description
+        valuator_group_id: Valuator group
+        can_comment: Can create comments
+        can_edit_dossier: Can edit dossiers
+      valuator_group:
+        name: "Group name"
+      local_census_record:
+        document_type: Document type
+        document_number: Document number
+        date_of_birth: Date of birth
+        postal_code: Postal code
+      votation_type:
+        max_votes: Maximum number of votes
+        vote_type: Votation type
+      votation_type/vote_type:
+        unique: Unique answer
+        multiple: Multiple answers
     errors:
       models:
         user:
@@ -325,14 +550,11 @@ en:
           attributes:
             segment_recipient:
               invalid: "The user recipients segment is invalid"
-        map_location:
-          attributes:
-            map:
-              invalid: Map location can't be blank. Place a marker or select the checkbox if geolocalization is not needed
         poll/voter:
           attributes:
             document_number:
               not_in_census: "Document not in census"
+            user_id:
               has_voted: "User has already voted"
         legislation/process:
           attributes:
@@ -343,7 +565,11 @@ en:
             draft_end_date:
               invalid_date_range: must be on or after the draft start date
             allegations_end_date:
-              invalid_date_range: must be on or after the allegations start date
+              invalid_date_range: must be on or after the comments start date
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: is not included in the list, allowed values are 1 for DNI, 2 for passport and 3 for residence card.
         proposal:
           attributes:
             tag_list:
@@ -355,12 +581,12 @@ en:
         proposal_notification:
           attributes:
             minimum_interval:
-              invalid: "You have to wait a minium of %{interval} days between notifications"
+              invalid: "You have to wait a minimum of %{interval} days between notifications"
         signature:
           attributes:
             document_number:
-              not_in_census: 'Not verified by Census'
-              already_voted: 'Already voted this proposal'
+              not_in_census: "Not verified by Census"
+              already_voted: "Already voted this proposal"
         site_customization/page:
           attributes:
             slug:
@@ -373,9 +599,19 @@ en:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'You cannot comment a valuation'
+              cannot_comment_valuation: "You cannot comment a valuation"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Already translated resource
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "must start with the same code as its target followed by a dot and end with a number"
       messages:
+        translations_too_short: Is mandatory to provide one translation at least
         record_invalid: "Validation failed: %{errors}"
+        another_poll_active: There is another poll active for the given period
         restrict_dependent_destroy:
           has_one: "Cannot delete record because a dependent %{record} exists"
           has_many: "Cannot delete record because dependent %{record} exist"

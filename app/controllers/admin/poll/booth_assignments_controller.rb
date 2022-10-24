@@ -1,15 +1,14 @@
 class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
-
-  before_action :load_poll, except: [:create, :destroy]
+  before_action :load_poll, except: [:create]
 
   def index
-    @booth_assignments = @poll.booth_assignments.includes(:booth).order('poll_booths.name')
+    @booth_assignments = @poll.booth_assignments.includes(:booth).order("poll_booths.name")
                               .page(params[:page]).per(50)
   end
 
   def search_booths
     load_search
-    @booths = ::Poll::Booth.search(@search)
+    @booths = ::Poll::Booth.quick_search(@search)
     respond_to do |format|
       format.js
     end
@@ -18,7 +17,7 @@ class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
   def show
     included_relations = [:recounts, :voters, officer_assignments: [officer: [:user]]]
     @booth_assignment = @poll.booth_assignments.includes(*included_relations).find(params[:id])
-    @voters_by_date = @booth_assignment.voters.group_by {|v| v.created_at.to_date}
+    @voters_by_date = @booth_assignment.voters.group_by { |v| v.created_at.to_date }
     @partial_results = @booth_assignment.partial_results
     @recounts = @booth_assignment.recounts
   end
@@ -26,29 +25,21 @@ class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
   def create
     @poll = Poll.find(booth_assignment_params[:poll_id])
     @booth = Poll::Booth.find(booth_assignment_params[:booth_id])
-    @booth_assignment = ::Poll::BoothAssignment.new(poll: @poll,
-                                                    booth: @booth)
+    @booth_assignment = ::Poll::BoothAssignment.new(poll: @poll, booth: @booth)
 
-    if @booth_assignment.save
-      notice = t("admin.poll_booth_assignments.flash.create")
-    else
-      notice = t("admin.poll_booth_assignments.flash.error_create")
-    end
+    @booth_assignment.save!
+
     respond_to do |format|
       format.js { render layout: false }
     end
   end
 
   def destroy
-    @poll = Poll.find(booth_assignment_params[:poll_id])
-    @booth = Poll::Booth.find(booth_assignment_params[:booth_id])
-    @booth_assignment = ::Poll::BoothAssignment.find(params[:id])
+    @booth_assignment = @poll.booth_assignments.find(params[:id])
+    @booth = @booth_assignment.booth
 
-    if @booth_assignment.destroy
-      notice = t("admin.poll_booth_assignments.flash.destroy")
-    else
-      notice = t("admin.poll_booth_assignments.flash.error_destroy")
-    end
+    @booth_assignment.destroy!
+
     respond_to do |format|
       format.js { render layout: false }
     end
@@ -80,5 +71,4 @@ class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
     def load_search
       @search = search_params[:search]
     end
-
 end

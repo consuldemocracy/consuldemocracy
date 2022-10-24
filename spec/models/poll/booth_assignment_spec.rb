@@ -1,9 +1,9 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Poll::BoothAssignment do
-  let(:poll){create(:poll)}
-  let(:booth){create(:poll_booth)}
-  let(:booth1){create(:poll_booth)}
+  let(:poll) { create(:poll) }
+  let(:booth) { create(:poll_booth) }
+  let(:booth1) { create(:poll_booth) }
 
   it "checks if there are shifts" do
     assignment_with_shifts = create(:poll_booth_assignment, poll: poll, booth: booth)
@@ -22,7 +22,7 @@ describe Poll::BoothAssignment do
     create(:poll_officer_assignment, officer: officer, booth_assignment: assignment)
     create(:poll_shift, booth: booth, officer: officer)
 
-    assignment.destroy
+    assignment.destroy!
 
     expect(Poll::Shift.all.count).to eq(0)
   end

@@ -1,0 +1,27 @@
+<aside class="supports-info">
+  <section>
+    <header>
+      <h2><%= sanitize(t("budgets.supports_info.title")) %></h2>
+    </header>
+
+    <p><%= t("budgets.supports_info.next") %></p>
+    <p><%= t("budgets.supports_info.different") %></p>
+  </section>
+
+  <section>
+    <header>
+      <h3><%= support_info_heading %></h3>
+    </header>
+
+    <p><%= t("budgets.supports_info.time",
+              phase_end_date: l(budget.current_phase.ends_at.to_date, format: :long)) %></p>
+
+    <p><%= t("budgets.supports_info.share") %></p>
+
+    <p>
+      <a href="#investments_list" class="keep-scrolling" data-smooth-scroll>
+        <%= t("budgets.supports_info.scrolling") %><br>
+      </a>
+    </p>
+  </section>
+</aside>

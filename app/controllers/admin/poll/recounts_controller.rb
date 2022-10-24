@@ -2,6 +2,8 @@ class Admin::Poll::RecountsController < Admin::Poll::BaseController
   before_action :load_poll
 
   def index
+    @stats = Poll::Stats.new(@poll)
+
     @booth_assignments = @poll.booth_assignments.
                               includes(:booth, :recounts, :voters).
                               order("poll_booths.name").

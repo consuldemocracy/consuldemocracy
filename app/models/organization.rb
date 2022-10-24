@@ -1,5 +1,4 @@
-class Organization < ActiveRecord::Base
-
+class Organization < ApplicationRecord
   include Graphqlable
 
   belongs_to :user, touch: true
@@ -27,13 +26,11 @@ class Organization < ActiveRecord::Base
   end
 
   def verified?
-    verified_at.present? &&
-      (rejected_at.blank? || rejected_at < verified_at)
+    verified_at.present? && (rejected_at.blank? || rejected_at < verified_at)
   end
 
   def rejected?
-    rejected_at.present? &&
-      (verified_at.blank? || verified_at < rejected_at)
+    rejected_at.present? && (verified_at.blank? || verified_at < rejected_at)
   end
 
   def self.search(text)
@@ -45,11 +42,11 @@ class Organization < ActiveRecord::Base
   end
 
   def self.name_max_length
-    @@name_max_length ||= columns.find { |c| c.name == 'name' }.limit || 60
+    @name_max_length ||= columns.find { |c| c.name == "name" }.limit || 60
   end
 
   def self.responsible_name_max_length
-    @@responsible_name_max_length ||= columns.find { |c| c.name == 'responsible_name' }.limit || 60
+    @responsible_name_max_length ||= columns.find { |c| c.name == "responsible_name" }.limit || 60
   end
 
   private
@@ -67,7 +64,6 @@ class Organization < ActiveRecord::Base
         maximum: Organization.responsible_name_max_length)
       validator.validate(self)
     end
-
 end
 
 # == Schema Information

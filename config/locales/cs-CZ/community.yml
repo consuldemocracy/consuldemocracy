@@ -1,0 +1,55 @@
+cs:
+  community:
+    sidebar:
+      title: Připojte se ke komunitě
+      description:
+        proposal: Komunikujte s dalšími členy ve skupině tohoto návrhu.
+        investment: Komunikujte s dalšími členy ve skupině této investice.
+      button_to_access: Diskusní fórum skupiny
+    show:
+      title:
+        proposal: Komunita ohledně tohoto návrhu
+        investment: Komunita ohledně této investice
+      description:
+        proposal: Účast v komunitě tohoto návrhu. Aktivní komunita může zlepšit obsah tohoto návrhu, zvýšit jeho sdílení a tím zajistit větší podporu.
+        investment: Zapojte se do komunity této investice. Aktivní komunita může zlepšit obsah investice, zvýšit sdílení návrhu a tím zajistit větší podporu.
+      create_first_community_topic:
+        first_theme_not_logged_in: Doposud není registrovaný žádný problém, zapojte se do vytvoření prvního.
+        first_theme: Vytvořte první téma této skupiny
+        sub_first_theme: "Pro vytvoření téma se musíte %{sign_in} nebo %{sign_up}."
+      tab:
+        participants: Účastníci
+      sidebar:
+        participate: Zapojte se
+        new_topic: Vytvořit téma
+      topic:
+        edit: Upravit téma
+        destroy: Smazat téma
+        comments:
+          zero: Žádné komentáře
+          one: 1 komentář
+          few: "%{count} komentáře"
+          many: "%{count} komentářů"
+          other: "%{count} komentářů"
+      author: Autor
+      back: Zpět na %{community} %{proposal}
+    topic:
+      create: Vytvořit téma
+      edit: Upravit téma
+      form:
+        new:
+          submit_button: Vytvořit téma
+        edit:
+          submit_button: Upravit téma
+        create:
+          submit_button: Vytvořit téma
+        update:
+          submit_button: Upravit téma
+      show:
+        tab:
+          comments_tab: Komentáře
+      sidebar:
+        recommendations_title: Doporučení k vytváření témat
+        recommendation_one: Nepište název tématu nebo celé věty velkými písmeny. Na internetu je to považováno  za výkřiky. A nikdo nechce, aby na něho někdo křičel.
+        recommendation_two: Jakékoli téma nebo komentář, který obsahuje nezákonné, nenávistné či vulgární projevy budou odstraněny, a to i ty, které chtějí zapojování ostatních sabotovat. Vše ostatní je povoleno.
+        recommendation_three: Užijte si tento prostor, myšlenky, které ho vyplňují, jsou i ty vaše.

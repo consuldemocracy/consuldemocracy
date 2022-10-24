@@ -1,13 +1,53 @@
 tr:
   seeds:
+    admin_notifications:
+      budget:
+        title: "Katılımcı Bütçe'yi kapatıyoruz!"
+        body: "Acele edin ve birkaç gün içinde bitmeden önce bir teklif oluşturun!"
+      help:
+        title: "Consul'u tercüme etmemize yardımcı olun"
+        body: "Eğer bir dilde yetkinseniz, lütfen Consul'u tercüme etmemize yardımcı olun!"
+      map:
+        title: "Artık teklifleri ve yatırımları konumlandırabilirsiniz"
+        body: "Bir teklif veya yatırım oluşturduğunuzda harita üzerinde bir nokta belirtebilirsiniz."
+      proposal:
+        title: "Teklifiniz var mı?"
+        body: "Fikirlerinizle bir teklif oluşturabileceğinizi ve insanların bunu tartışıp destekleyeceğini hatırlayın."
+    settings:
+      official_level_1_name: Resmi pozisyon 1
+      official_level_2_name: Resmi pozisyon 2
+      official_level_3_name: Resmi pozisyon 3
+      official_level_4_name: Resmi pozisyon 4
+      official_level_5_name: Resmi pozisyon 5
     geozones:
       north_district: Kuzey Bölgesi
-      west_district: Kuzey Bölgesi
+      west_district: Batı Bölgesi
       east_district: Doğu Bölgesi
-      central_district: Merkezî bahşı
+      central_district: Merkez İlçe
     organizations:
-      human_rights: İnsan hakları
+      human_rights: İnsan Hakları
       neighborhood_association: Mahalle Derneği
+    cards:
+      budget:
+        title: "Katılımcı bütçe nasıl çalışır?"
+        description: "Katılımcı bütçeler, vatandaşların bütçenin bir kısmının nasıl harcanacağına doğrudan karar vermelerini, kurumun vatandaş tekliflerini titiz bir şekilde izlemesi ve değerlendirmesi ile sağlar. Herkes için azami etki ve kontrol memnuniyeti."
+        link_text: "Katılımcı bütçeler hakkında daha fazlası"
+        label: "Katılımcı bütçeleri"
+      debate:
+        title: "Münazaralar nasıl gerçekleşir?"
+        description: "Herkes herhangi bir konuda başlık açarak insanların önerilen konuyu tartışabileceği ayrı alanlar yaratabilir. Tartışmalar, herkes için önem arz eden konulara değinmek için değerlidir."
+        link_text: "Münazaralar hakkında daha fazlası"
+        label: "Münazaralar"
+      header:
+        title: "CONSUL"
+        description: "Vatandaş katılımı için ücretsiz yazılım."
+        link_text: "Daha fazla bilgi"
+        label: "Hoş geldiniz"
+      proposal:
+        title: "Vatandaş önerileri nasıl gerçekleşir?"
+        description: "Herkesin, bir vatandaş teklifi oluşturması ve destek kazanması için bir platform. Yeterli desteğe ulaşan teklifler oylanacak ve böylece hepimiz için önem arz eden sorunlara birlikte karar vereceğiz."
+        link_text: "Öneriler hakkında daha fazlası"
+        label: "Vatandaş önerileri"
     categories:
       associations: Dernekler
       culture: Kültür
@@ -15,7 +55,7 @@ tr:
       social_rights: Sosyal haklar
       economy: Ekonomi
       employment: İstihdam
-      equity: Hisse senedi
+      equity: Eşitlik
       sustainability: Sürdürülebilirlik
       participation: Katılım
       mobility: Hareketlilik
@@ -30,10 +70,21 @@ tr:
       groups:
         all_city: Tüm şehir
         districts: İlçeler
+      phases:
+        description: "%{language} açıklama"
+        summary: "%{language} özet"
+      statuses:
+        studying_project: Projenin incelenmesi
+        bidding: Teklif verme
+        executing_project: Projeyi yürütmek
+        executed: Gerçekleştirilen
+    legislation:
+      draft_versions:
+        title: "Versiyon %{number}"
+        body: "%{language} versiyon taslağı"
     polls:
       current_poll: "Geçerli Anket"
       current_poll_geozone_restricted: "Geçerli Anket Geozone sınırlı"
-      incoming_poll: "Gelen anket"
-      recounting_poll: "Anket anlatırken"
-      expired_poll_without_stats: "İstatistikler ve sonuçları olmadan anket süresi"
-      expired_poll_with_stats: "İstatistikler ve sonuçları olmadan anket süresi"
+      recounting_poll: "Anket Yeniden Sayımı"
+      expired_poll_without_stats: "İstatistikler ve Sonuçlar Olmadan Süresi Dolmuş Anket"
+      expired_poll_with_stats: "İstatistikleri ve Sonuçları ile Süresi Dolmuş Anket"

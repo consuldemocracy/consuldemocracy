@@ -58,38 +58,46 @@
       <thead>
         <tr>
           <th class="text-center"><%= t("admin.poll_booth_assignments.show.count_final") %></th>
-          <th class="text-center"><%= t("admin.poll_booth_assignments.show.total_system") %></th>
+
+          <% unless @poll.recounts_confirmed? %>
+            <th class="text-center"><%= t("admin.poll_booth_assignments.show.total_system") %></th>
+          <% end %>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td class="text-center" id="total_final">
-            <%= total_recounts_by_booth(@booth_assignment) || '-'  %>
+            <%= total_recounts_by_booth(@booth_assignment) || "-" %>
           </td>
-          <td class="text-center" id="total_system">
-            <%= @booth_assignment.voters.count %>
-          </td>
+
+          <% unless @poll.recounts_confirmed? %>
+            <td class="text-center" id="total_system">
+              <%= @booth_assignment.voters.count %>
+            </td>
+          <% end %>
         </tr>
       </tbody>
     </table>
 
-    <table id="recounts_list">
-      <thead>
-        <tr>
-          <th><%= t("admin.poll_booth_assignments.show.date") %></th>
-          <th class="text-center"><%= t("admin.poll_booth_assignments.show.count_by_system") %></th>
-        </tr>
-      </thead>
-      <tbody>
-      <% (@poll.starts_at.to_date..@poll.ends_at.to_date).each do |voting_date| %>
-        <% system_count = @voters_by_date[voting_date].present? ? @voters_by_date[voting_date].size : 0 %>
-        <tr id="recounting_<%= voting_date.strftime('%Y%m%d') %>">
-          <td><%= l voting_date %></td>
-          <td class="text-center"><%= system_count %></td>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
+    <% unless @poll.recounts_confirmed? %>
+      <table id="recounts_list">
+        <thead>
+          <tr>
+            <th><%= t("admin.poll_booth_assignments.show.date") %></th>
+            <th class="text-center"><%= t("admin.poll_booth_assignments.show.count_by_system") %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% (@poll.starts_at.to_date..@poll.ends_at.to_date).each do |voting_date| %>
+            <% system_count = @voters_by_date[voting_date].present? ? @voters_by_date[voting_date].size : 0 %>
+            <tr id="recounting_<%= voting_date.strftime("%Y%m%d") %>">
+              <td><%= l voting_date %></td>
+              <td class="text-center"><%= system_count %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
   </div>
   <div class="tabs-panel is-active" id="tab-results">
     <%= render "results" %>

@@ -1,0 +1,54 @@
+hr:
+  community:
+    sidebar:
+      title: Zajednica
+      description:
+        proposal: Sudjelujte u zajednici korisnika za ovaj prijedlog.
+        investment: Sudjelujte u zajednici korisnika za ovu investiciju.
+      button_to_access: Pristupi zajednici
+    show:
+      title:
+        proposal: Prijedlog zajednice
+        investment: Zajednica investicijskog proračuna
+      description:
+        proposal: Sudjelujte u zajednici ovog prijedloga. Aktivna zajednica može pomoći u poboljšanju sadržaja prijedloga i potaknuti njegovo širenje kako bi prijedlog dobio više podrške.
+        investment: Sudjelujte u zajednici ove proračunske investicije. Aktivna zajednica može pomoći u poboljšanju sadržaja proračunske investicije i potaknuti njegovo širenje kako bi prijedlog dobio više podrške.
+      create_first_community_topic:
+        first_theme_not_logged_in: Nema dostupnog izdanja, sudjelujte u stvaranju prvog izdanja.
+        first_theme: Stvorite prvu temu u vašoj zajednici
+        sub_first_theme: "%{sign_in} ili %{sign_up} da bi otvorili temu."
+      tab:
+        participants: Sudionici
+      sidebar:
+        participate: Sudjeluj
+        new_topic: Stvori temu
+      topic:
+        edit: Uredi temu
+        destroy: Izbriši temu
+        comments:
+          zero: Bez komentara
+          one: 1 komentar
+          few: "%{count} komentare"
+          other: "%{count} komentare"
+      author: Autor
+      back: Nazad na %{community}%{proposal}
+    topic:
+      create: Stvori temu
+      edit: Uredi temu
+      form:
+        new:
+          submit_button: Stvori temu
+        edit:
+          submit_button: Uredi temu
+        create:
+          submit_button: Stvori temu
+        update:
+          submit_button: Ažuriraj temu
+      show:
+        tab:
+          comments_tab: Komentari
+      sidebar:
+        recommendations_title: Prijedlozi za stvaranje teme
+        recommendation_one: Izbjegavajte pisanje naslova teme ili cijele rečenice velikim slovima. Na internetu se to smatra vikanjem. Nitko ne voli kada se na njega viče.
+        recommendation_two: Bilo koja tema ili komentar koji implicira ilegalno djelovanje bit će eliminiran, kao i oni koji namjeravaju sabotirati mjesto subjekta, sve ostalo je dopušteno.
+        recommendation_three: Uživajte na ovom mjestu, nek se i vaš glas čuje.

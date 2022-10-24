@@ -13,9 +13,22 @@ val:
           postal_code: "Codi postal"
         sms:
           phone: "Telèfon"
-          confirmation_code: "Codi de confirmació"
+          confirmation_code: "SMS de confirmació"
         email:
-          recipient: "Correu electrònic"
+          recipient: "Correu electrónic"
+      verification/letter:
+        email: "Correu electrònic"
+        password: "Contrasenya"
+        verification_code: "Codi que has rebut en la teua carta"
+      verification/management/document:
+        document_type: "Tipus de document:"
+        document_number: "Número de document"
+      verification/residence:
+        date_of_birth: "Data de naixement"
+        document_type: "Tipus de document"
+        postal_code: "Codi postal"
+      verification/sms:
+        confirmation_code: "Introduïx el codi que has rebut en el teu mòbil"
       officing/residence:
         document_type: "Tipus de document"
         document_number: "Número de document (inclosa lletra)"

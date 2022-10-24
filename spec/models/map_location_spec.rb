@@ -1,7 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe MapLocation do
-
   let(:map_location) { build(:map_location, :proposal_map_location) }
 
   it "is valid" do
@@ -18,16 +17,15 @@ describe MapLocation do
   end
 
   it "is invalid when longitude/latitude/zoom are not numbers" do
-    map_location.longitude = 'wadus'
-    map_location.latitude = 'stuff'
-    map_location.zoom = '$%·'
+    map_location.longitude = "wadus"
+    map_location.latitude = "stuff"
+    map_location.zoom = "$%·"
 
     expect(map_location).not_to be_valid
     expect(map_location.errors.size).to eq(3)
   end
 
-  context "#available?" do
-
+  describe "#available?" do
     it "returns true when latitude, longitude and zoom defined" do
       expect(map_location.available?).to be(true)
     end
@@ -50,7 +48,6 @@ describe MapLocation do
       expect(map_location.available?).to be(false)
     end
   end
-
 end
 
 # == Schema Information

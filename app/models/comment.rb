@@ -1,11 +1,13 @@
-class Comment < ActiveRecord::Base
+class Comment < ApplicationRecord
   include Flaggable
   include HasPublicAuthor
   include Graphqlable
   include Notifiable
+  include Searchable
 
-  COMMENTABLE_TYPES = %w(Debate Proposal Budget::Investment Poll Topic Legislation::Question
-                        Legislation::Annotation Legislation::Proposal).freeze
+  COMMENTABLE_TYPES = %w[Debate Proposal Budget::Investment Poll Topic
+                        Legislation::Question Legislation::Annotation
+                        Legislation::Proposal].freeze
 
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
@@ -14,37 +16,34 @@ class Comment < ActiveRecord::Base
 
   attr_accessor :as_moderator, :as_administrator
 
-  validates :body, presence: true
+  translates :body, touch: true
+  include Globalizable
+
+  validates_translation :body, presence: true
   validates :user, presence: true
 
-  validates :commentable_type, inclusion: { in: COMMENTABLE_TYPES }
+  validates :commentable_type, inclusion: { in: ->(*) { COMMENTABLE_TYPES }}
 
   validate :validate_body_length
   validate :comment_valuation, if: -> { valuation }
 
-  belongs_to :commentable, -> { with_hidden }, polymorphic: true, counter_cache: true
-  belongs_to :user, -> { with_hidden }
+  belongs_to :commentable, -> { with_hidden }, polymorphic: true, counter_cache: true, touch: true
+  belongs_to :user, -> { with_hidden }, inverse_of: :comments
 
   before_save :calculate_confidence_score
 
   scope :for_render, -> { with_hidden.includes(user: :organization) }
-  scope :with_visible_author, -> { joins(:user).where("users.hidden_at IS NULL") }
-  scope :not_as_admin_or_moderator, -> do
-    where("administrator_id IS NULL").where("moderator_id IS NULL")
-  end
+  scope :with_visible_author, -> { joins(:user).where(users: { hidden_at: nil }) }
+  scope :not_as_admin_or_moderator, -> { where(administrator_id: nil).where(moderator_id: nil) }
   scope :sort_by_flags, -> { order(flags_count: :desc, updated_at: :desc) }
   scope :public_for_api, -> do
     not_valuations
-      .where(%{(comments.commentable_type = 'Debate' and comments.commentable_id in (?)) or
-            (comments.commentable_type = 'Proposal' and comments.commentable_id in (?)) or
-            (comments.commentable_type = 'Poll' and comments.commentable_id in (?))},
-          Debate.public_for_api.pluck(:id),
-          Proposal.public_for_api.pluck(:id),
-          Poll.public_for_api.pluck(:id))
+      .where(commentable: [Debate.public_for_api, Proposal.public_for_api, Poll.public_for_api])
   end
 
   scope :sort_by_most_voted, -> { order(confidence_score: :desc, created_at: :desc) }
   scope :sort_descendants_by_most_voted, -> { order(confidence_score: :desc, created_at: :asc) }
+  scope :sort_by_supports, -> { order(Arel.sql("cached_votes_up - cached_votes_down DESC")) }
 
   scope :sort_by_newest, -> { order(created_at: :desc) }
   scope :sort_descendants_by_newest, -> { order(created_at: :desc) }
@@ -80,6 +79,10 @@ class Comment < ActiveRecord::Base
     self.user = author
   end
 
+  def human_name
+    body.truncate(32)
+  end
+
   def total_votes
     cached_votes_total
   end
@@ -113,16 +116,31 @@ class Comment < ActiveRecord::Base
   end
 
   def call_after_commented
-    commentable.try(:after_commented)
+    commentable.after_commented if commentable.respond_to?(:after_commented)
   end
 
   def self.body_max_length
-    Setting['comments_body_max_length'].to_i
+    Setting["comments_body_max_length"].to_i
   end
 
   def calculate_confidence_score
     self.confidence_score = ScoreCalculator.confidence_score(cached_votes_total,
                                                              cached_votes_up)
+  end
+
+  def votes_score
+    cached_votes_up - cached_votes_down
+  end
+
+  def searchable_values
+    {
+      body               => "A",
+      commentable&.title => "B"
+    }
+  end
+
+  def self.search(terms)
+    pg_search(terms)
   end
 
   private

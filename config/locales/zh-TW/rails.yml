@@ -99,7 +99,7 @@ zh-TW:
       invalid: 是無效的
       less_than: 必須小於%{count}
       less_than_or_equal_to: 必須小於或等於%{count}
-      model_invalid: "驗證失敗：%{errors}"
+      model_invalid: "驗證失敗: %{errors}"
       not_a_number: 不是一個數字
       not_an_integer: 必須是整數
       odd: 必須是奇數
@@ -113,7 +113,7 @@ zh-TW:
         other: 是錯誤的長度 (應該是%{count} 個字元)
       other_than: 必須不是%{count}
     template:
-      body: '以下字段存在問題：'
+      body: "以下字段存在問題："
       header:
         other: "%{count} 個錯誤禁止此%{model} 被儲存"
   helpers:

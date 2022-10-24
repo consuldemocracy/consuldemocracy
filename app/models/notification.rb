@@ -1,5 +1,4 @@
-class Notification < ActiveRecord::Base
-
+class Notification < ApplicationRecord
   belongs_to :user, counter_cache: true
   belongs_to :notifiable, polymorphic: true
 
@@ -11,8 +10,9 @@ class Notification < ActiveRecord::Base
   scope :recent,      -> { order(id: :desc) }
   scope :for_render,  -> { includes(:notifiable) }
 
-  delegate :notifiable_title, :notifiable_available?, :check_availability,
-           :linkable_resource, to: :notifiable, allow_nil: true
+  delegate :notifiable_title, :notifiable_body, :notifiable_available?,
+           :check_availability, :linkable_resource,
+           to: :notifiable, allow_nil: true
 
   def mark_as_read
     update(read_at: Time.current)
@@ -44,7 +44,7 @@ class Notification < ActiveRecord::Base
   end
 
   def self.existent(user, notifiable)
-    unread.where(user: user, notifiable: notifiable).first
+    unread.find_by(user: user, notifiable: notifiable)
   end
 
   def notifiable_action
@@ -81,18 +81,17 @@ class Notification < ActiveRecord::Base
 
   private
 
-  def self.batch_size
-    10000
-  end
+    def self.batch_size
+      10000
+    end
 
-  def self.batch_interval
-    20.minutes
-  end
+    def self.batch_interval
+      20.minutes
+    end
 
-  def self.first_batch_run_at
-    Time.current
-  end
-
+    def self.first_batch_run_at
+      Time.current
+    end
 end
 
 # == Schema Information

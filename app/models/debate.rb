@@ -1,6 +1,6 @@
-require 'numeric'
-class Debate < ActiveRecord::Base
-  include Rails.application.routes.url_helpers
+require "numeric"
+
+class Debate < ApplicationRecord
   include Flaggable
   include Taggable
   include Conflictable
@@ -12,21 +12,25 @@ class Debate < ActiveRecord::Base
   include Graphqlable
   include Relationable
   include Notifiable
+  include Randomizable
+  include SDG::Relatable
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
-  belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
+  translates :title, touch: true
+  translates :description, touch: true
+  include Globalizable
+
+  belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :debates
   belongs_to :geozone
-  has_many :comments, as: :commentable
+  has_many :comments, as: :commentable, inverse_of: :commentable
 
-  validates :title, presence: true
-  validates :description, presence: true
+  validates_translation :title, presence: true, length: { in: 4..Debate.title_max_length }
+  validates_translation :description, presence: true
+  validate :description_length
   validates :author, presence: true
-
-  validates :title, length: { in: 4..Debate.title_max_length }
-  validates :description, length: { in: 10..Debate.description_max_length }
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
@@ -37,35 +41,32 @@ class Debate < ActiveRecord::Base
   scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc) }
   scope :sort_by_created_at,       -> { reorder(created_at: :desc) }
   scope :sort_by_most_commented,   -> { reorder(comments_count: :desc) }
-  scope :sort_by_random,           -> { reorder("RANDOM()") }
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :sort_by_recommendations,  -> { order(cached_votes_total: :desc) }
-  scope :last_week,                -> { where("created_at >= ?", 7.days.ago)}
-  scope :featured,                 -> { where("featured_at is not null")}
+  scope :last_week,                -> { where("created_at >= ?", 7.days.ago) }
+  scope :featured,                 -> { where.not(featured_at: nil) }
   scope :public_for_api,           -> { all }
 
-  # Ahoy setup
-  visitable # Ahoy will automatically assign visit_id on create
+  visitable class_name: "Visit"
 
   attr_accessor :link_required
 
-  def url
-    debate_path(self)
+  def self.recommendations(user)
+    tagged_with(user.interests, any: true).where.not(author_id: user.id)
   end
 
-  def self.recommendations(user)
-    tagged_with(user.interests, any: true)
-      .where("author_id != ?", user.id)
+  def searchable_translations_definitions
+    { title       => "A",
+      description => "D" }
   end
 
   def searchable_values
-    { title              => 'A',
-      author.username    => 'B',
-      tag_list.join(' ') => 'B',
-      geozone.try(:name) => 'B',
-      description        => 'D'
-    }
+    {
+      author.username    => "B",
+      tag_list.join(" ") => "B",
+      geozone&.name      => "B"
+    }.merge!(searchable_globalized_values)
   end
 
   def self.search(terms)
@@ -88,12 +89,16 @@ class Debate < ActiveRecord::Base
     cached_votes_total
   end
 
+  def votes_score
+    cached_votes_score
+  end
+
   def total_anonymous_votes
     cached_anonymous_votes_total
   end
 
   def editable?
-    total_votes <= Setting['max_votes_for_debate_edit'].to_i
+    total_votes <= Setting["max_votes_for_debate_edit"].to_i
   end
 
   def editable_by?(user)
@@ -109,15 +114,17 @@ class Debate < ActiveRecord::Base
 
   def votable_by?(user)
     return false unless user
+
     total_votes <= 100 ||
       !user.unverified? ||
-      Setting['max_ratio_anon_votes_on_debates'].to_i == 100 ||
-      anonymous_votes_ratio < Setting['max_ratio_anon_votes_on_debates'].to_i ||
+      Setting["max_ratio_anon_votes_on_debates"].to_i == 100 ||
+      anonymous_votes_ratio < Setting["max_ratio_anon_votes_on_debates"].to_i ||
       user.voted_for?(self)
   end
 
   def anonymous_votes_ratio
     return 0 if cached_votes_total == 0
+
     (cached_anonymous_votes_total.to_f / cached_votes_total) * 100
   end
 
@@ -135,11 +142,11 @@ class Debate < ActiveRecord::Base
   end
 
   def after_hide
-    tags.each{ |t| t.decrement_custom_counter_for('Debate') }
+    tags.each { |t| t.decrement_custom_counter_for("Debate") }
   end
 
   def after_restore
-    tags.each{ |t| t.increment_custom_counter_for('Debate') }
+    tags.each { |t| t.increment_custom_counter_for("Debate") }
   end
 
   def featured?
@@ -147,9 +154,23 @@ class Debate < ActiveRecord::Base
   end
 
   def self.debates_orders(user)
-    orders = %w{hot_score confidence_score created_at relevance}
-    orders << "recommendations" if Setting['feature.user.recommendations_on_debates'] && user&.recommended_debates
-    return orders
+    orders = %w[hot_score confidence_score created_at relevance]
+    orders << "recommendations" if Setting["feature.user.recommendations_on_debates"] && user&.recommended_debates
+    orders
+  end
+
+  def description_length
+    real_description_length = ActionView::Base.full_sanitizer.sanitize(description.to_s).squish.length
+
+    if real_description_length < Debate.description_min_length
+      errors.add(:description, :too_short, count: Debate.description_min_length)
+      translation.errors.add(:description, :too_short, count: Debate.description_min_length)
+    end
+
+    if real_description_length > Debate.description_max_length
+      errors.add(:description, :too_long, count: Debate.description_max_length)
+      translation.errors.add(:description, :too_long, count: Debate.description_max_length)
+    end
   end
 end
 

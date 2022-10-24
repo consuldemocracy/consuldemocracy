@@ -1,0 +1,24 @@
+<fieldset class="documents-list">
+  <legend><%= t("documents.form.title") %></legend>
+  <p class="help-text"><%= note %></p>
+
+  <div id="nested-documents" data-max-documents-allowed="<%= max_documents_allowed %>">
+    <%= f.fields_for :documents do |documents_builder| %>
+      <%= render Documents::FieldsComponent.new(documents_builder) %>
+    <% end %>
+  </div>
+
+  <%= link_to_add_association t("documents.form.add_new_document"), f, :documents,
+                              partial: "documents/document_fields",
+                              id: "new_document_link",
+                              class: "button upload-document
+                                      #{"hide" if max_documents_allowed?}",
+                              data: {
+                                association_insertion_node: "#nested-documents",
+                                association_insertion_method: "append"
+                              } %>
+
+  <div id="max-documents-notice" class="max-documents-notice callout primary text-center <%= "hide" unless max_documents_allowed? %>">
+    <%= sanitize(t("documents.max_documents_allowed_reached")) %>
+  </div>
+</fieldset>

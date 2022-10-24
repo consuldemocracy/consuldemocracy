@@ -3,15 +3,14 @@
 
 <%= form_for(@tag, url: admin_tags_path, as: :tag) do |f| %>
   <div class="small-12 medium-6">
-    <%= f.label :name, t("admin.tags.name.placeholder") %>
-    <%= f.text_field :name, placeholder: t("admin.tags.name.placeholder"), label: false  %>
+    <%= f.text_field :name %>
   </div>
 
   <%= f.submit(t("admin.tags.create"), class: "button success") %>
 <% end %>
 
 <hr>
-<h3 class="margin"><%= t("admin.tags.index.title") %>: <%= page_entries_info @tags %></h3>
+<h3><%= t("admin.tags.index.title") %>: <%= page_entries_info @tags %></h3>
 
 <table>
   <thead>
@@ -25,13 +24,13 @@
         <%= form_for(tag,
             url: admin_tag_path(tag),
             as: :tag,
-            html: { id: "edit_tag_#{tag.id}"}) do |f| %>
+            html: { id: "edit_tag_#{tag.id}" }) do |f| %>
 
             <strong><%= tag.name %></strong>
         <% end %>
       </td>
       <td id="tag_<%= tag.id %>">
-        <%= link_to t("admin.tags.destroy"), admin_tag_path(tag), method: :delete, class: "button hollow alert" %>
+        <%= render Admin::TableActionsComponent.new(tag, actions: [:destroy]) %>
       </td>
     </tr>
   <% end %>

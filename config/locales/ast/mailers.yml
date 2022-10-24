@@ -1,4 +1,64 @@
 ast:
   mailers:
+    no_reply: "Este mensaje se ha enviado desde una dirección de correo electrónico que no admite respuestas."
+    comment:
+      hi: Hola
+      new_comment_by: Hay un nuevo comentario de <strong>%{commenter}</strong> en
+      subject: Alguien ha comentado en tu %{commentable}
+      title: Nuevo comentario
+    email_verification:
+      click_here_to_verify: en este enlace
+      instructions_2: Este email es para verificar tu cuenta con <b>%{document_type} %{document_number}</b>. Si esos no son tus datos, por favor no pulses el enlace anterior e ignora este email.
+      subject: Verifica tu email
+      thanks: Muchas gracias.
+      title: "Verifica tu cuenta con el siguiente enlace"
+    reply:
+      hi: Hola
+      new_reply_by: Hay una nueva respuesta de <strong>%{commenter}</strong> a tu comentario en
+      subject: Alguien ha respondido a tu comentario
+      title: Nueva respuesta a tu comentario
     proposal_notification_digest:
-      unsubscribe_account: La mio cuenta
+      info: "A continuación te mostramos las nuevas notificaciones que han publicado los autores de las propuestas que estás apoyando en %{org_name}."
+      title: "Notificaciones de propuestas en %{org_name}"
+      share: Compartir propuesta
+      comment: Comentar propuesta
+    direct_message_for_receiver:
+      subject: "Has recibido un nuevo mensaje privado"
+      reply: Responder a %{sender}
+    direct_message_for_sender:
+      subject: "Has enviado un nuevo mensaje privado"
+      text: "Has enviado un nuevo mensaje privado a <strong>%{receiver}</strong> con el siguiente contenido:"
+    user_invite:
+      ignore: "Si no has solicitado esta invitación no te preocupes, puedes ignorar este correo."
+      thanks: "Muchas gracias."
+      title: "Bienvenido a %{org}"
+      button: Completar registro
+      subject: "Invitación a %{org_name}"
+    budget_investment_created:
+      subject: "¡Gracias por crear un proyecto!"
+      title: "¡Gracias por crear un proyecto!"
+      intro: "Hola <strong>%{author}</strong>,"
+      text: "Muchas gracias por crear tu proyecto <strong>%{investment}</strong> para los Presupuestos Participativos <strong>%{budget}</strong>."
+      follow: "Te informaremos de cómo avanza el proceso, que también puedes seguir en la página de <strong>%{link}</strong>."
+      follow_link: "Presupuestos participativos"
+      sincerely: "Atentamente,"
+    budget_investment_unfeasible:
+      hi: "Estimado/a usuario/a"
+      new_href: "nueva propuesta de inversión"
+      sincerely: "Atentamente"
+      sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
+      subject: "Tu propuesta de inversión '%{code}' ha sido marcada como inviable"
+    budget_investment_selected:
+      subject: "Tu propuesta de inversión '%{code}' ha sido seleccionada"
+      hi: "Estimado/a usuario/a"
+      share: "Empieza ya a conseguir votos, comparte tu proyecto de gasto en redes sociales. La difusión es fundamental para conseguir que se haga realidad."
+      share_button: "Comparte tu proyecto"
+      thanks: "Gracias de nuevo por tu participación."
+      sincerely: "Atentamente"
+    budget_investment_unselected:
+      subject: "Tu propuesta de inversión '%{code}' no ha sido seleccionada"
+      hi: "Estimado/a usuario/a"
+      thanks: "Gracias de nuevo por tu participación."
+      sincerely: "Atentamente"
+    evaluation_comment:
+      hi: Hola

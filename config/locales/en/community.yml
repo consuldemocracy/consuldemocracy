@@ -17,8 +17,6 @@ en:
         first_theme_not_logged_in: No issue available, participate creating the first one.
         first_theme: Create the first community topic
         sub_first_theme: "To create a theme you must %{sign_in} or %{sign_up}."
-        sign_in: "sign in"
-        sign_up: "sign up"
       tab:
         participants: Participants
       sidebar:
@@ -26,19 +24,13 @@ en:
         new_topic: Create topic
       topic:
         edit: Edit topic
-        destroy: Destroy topic
-        comments:
-          one: 1 comment
-          other: "%{count} comments"
-          zero: No comments
+        destroy: Delete topic
       author: Author
       back: Back to %{community} %{proposal}
     topic:
       create: Create a topic
       edit: Edit Topic
       form:
-        topic_title: Title
-        topic_text: Initial text
         new:
           submit_button: Create topic
         edit:
@@ -55,6 +47,3 @@ en:
         recommendation_one: Do not write the topic title or whole sentences in capital letters. On the internet that is considered shouting. And no one likes to be yelled at.
         recommendation_two: Any topic or comment that implies an illegal action will be eliminated, also those that intend to sabotage the spaces of the subject, everything else is allowed.
         recommendation_three: Enjoy this space, the voices that fill it, it's yours too.
-  topics:
-    show:
-      login_to_comment: You must %{signin} or %{signup} to leave a comment.

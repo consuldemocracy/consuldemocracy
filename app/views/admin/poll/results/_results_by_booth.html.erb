@@ -7,7 +7,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @poll.booth_assignments.sort_by {|ba| ba.booth.name }.each do |booth_assignment| %>
+    <% @poll.booth_assignments.sort_by { |ba| ba.booth.name }.each do |booth_assignment| %>
       <tr id="booth_assignment_<%= booth_assignment.id %>_result">
         <td><%= booth_assignment.booth.name %></td>
         <td class="text-center">

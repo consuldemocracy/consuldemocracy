@@ -36,11 +36,6 @@ zh-TW:
       groups:
         all_city: 所有城市
         districts: 地區
-      valuator_groups:
-        culture_and_sports: 文化與體育
-        gender_and_diversity: 性別與多元化政策
-        urban_development: 可持續城市發展
-        equity_and_employment: 公等與就業
       statuses:
         studying_project: 研究此項目
         bidding: 投標
@@ -49,7 +44,6 @@ zh-TW:
     polls:
       current_poll: "當前的投票"
       current_poll_geozone_restricted: "當前投票地理區域的限制"
-      incoming_poll: "傳入投票"
       recounting_poll: "重新計票"
       expired_poll_without_stats: "已過期的投票項目，沒有統計數據和結果"
       expired_poll_with_stats: "已過期的投票項目，連帶統計數據和結果"

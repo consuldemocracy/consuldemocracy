@@ -1,17 +1,15 @@
-class AddBannerTranslations < ActiveRecord::Migration
+class AddBannerTranslations < ActiveRecord::Migration[4.2]
+  def change
+    create_table :banner_translations do |t|
+      t.integer :banner_id, null: false
+      t.string :locale, null: false
+      t.timestamps null: false
 
-  def self.up
-    Banner.create_translation_table!(
-      {
-        title:       :string,
-        description: :text
-      },
-      { migrate_data: true }
-    )
-  end
+      t.string :title
+      t.text :description
 
-  def self.down
-    Banner.drop_translation_table!
+      t.index :banner_id
+      t.index :locale
+    end
   end
 end
-

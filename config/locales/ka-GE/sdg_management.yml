@@ -1,0 +1,17 @@
+ka:
+  sdg_management:
+    homepage:
+      header:
+        create: "ზედა პანელის შექმნა"
+        title: "ზედა პანელი"
+    menu:
+      budget_investments: "მონაწილეობითი ბიუჯეტები"
+      debates: "დებატები"
+      polls: "ხმის მიცემა"
+      proposals: "ინიციატივები"
+    relations:
+      index:
+        filter: "ფილტრი"
+        filters:
+          all: "ყველა"
+          pending_sdg_review: "მოლოდინის რეჟიმში"

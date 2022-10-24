@@ -1,0 +1,698 @@
+cs:
+  attributes:
+    geozone_id: "Rozsah činnosti"
+    results_enabled: "Zobrazit výsledky"
+    stats_enabled: "Zobrazit statistiky"
+    advanced_stats_enabled: "Zobrazit pokročilé statistiky"
+    name: Jméno
+    email: E-mail
+    description: Popis
+    related_sdg_list: Cíle a záměry
+  activerecord:
+    models:
+      activity:
+        one: "aktivita"
+        few: "aktivity"
+        many: "aktivit"
+        other: "aktivit"
+      budget:
+        one: "Rozpočet"
+        few: "Rozpočty"
+        many: "Rozpočtů"
+        other: "Rozpočty"
+      budget/investment:
+        one: "Investice"
+        few: "Investice"
+        many: "Investice"
+        other: "Investice"
+      milestone:
+        one: "milník"
+        few: "milníky"
+        many: "milníků"
+        other: "milníky"
+      milestone/status:
+        one: "Stav milníku"
+        few: "Stavy milníku"
+        many: "Stavů milníků"
+        other: "Stavy milníku"
+      progress_bar:
+        one: "Ukazatel průběhu"
+        few: "Ukazatele průběhu"
+        many: "Ukazatele průběhu"
+        other: "Ukazatele průběhu"
+      comment:
+        one: "Komentář"
+        few: "Komentáře"
+        many: "Komentáře"
+        other: "Komentáře"
+      debate:
+        one: "Debata"
+        few: "Debaty"
+        many: "Debaty"
+        other: "Debaty"
+      tag:
+        one: "Štítek"
+        few: "Štítky"
+        many: "Štítky"
+        other: "Štítky"
+      user:
+        one: "User"
+        few: "Uživatelé"
+        many: "Uživatelé"
+        other: "Uživatelé"
+      moderator:
+        one: "Moderátor"
+        few: "Moderátoři"
+        many: "Moderátoři"
+        other: "Moderátoři"
+      administrator:
+        one: "Administrator"
+        few: "Administrátoři"
+        many: "Administrátoři"
+        other: "Administrátoři"
+      valuator:
+        one: "Hodnotitel"
+        few: "Hodnotitel"
+        many: "Hodnotitel"
+        other: "Hodnotitel"
+      valuator_group:
+        one: "Skupina hodnotitelů"
+        few: "Skupiny hodnotitelů"
+        many: "Skupiny hodnotitelů"
+        other: "Skupiny hodnotitelů"
+      manager:
+        one: "Manažer"
+        few: "Manažeři"
+        many: "Manažeři"
+        other: "Manažeři"
+      newsletter:
+        one: "Informační bulletin"
+        few: "Informační bulletin"
+        many: "Informační bulletin"
+        other: "Informační bulletin"
+      vote:
+        one: "Hlas"
+        few: "Hlasů"
+        many: "Hlasů"
+        other: "Hlasů"
+      organization:
+        one: "Organizace"
+        few: "Organizace"
+        many: "Organizace"
+        other: "Organizace"
+      poll/booth:
+        one: "hlasovací kabina"
+        few: "hlasovací kabiny"
+        many: "hlasovacích kabin"
+        other: "hlasovacích kabin"
+      poll/officer:
+        one: "úředník"
+        few: "úředníci"
+        many: "úředníků"
+        other: "úředníků"
+      poll/ballot_sheet:
+        one: Hlasovací lístek
+        few: Hlasovací lístky
+        many: Hlasovacích lístků
+        other: Hlasovacích lístků
+      proposal:
+        one: "Návrh občana"
+        few: "Návrhy občanů"
+        many: "Návrhy občanů"
+        other: "Návrhů občanů"
+      sdg/goal:
+        one: "cíl"
+        few: "cíle"
+        many: "cílů"
+        other: "cílů"
+      sdg/local_target:
+        one: "místní záměr"
+        few: "místní záměry"
+        many: "místních záměrů"
+        other: "místní záměry"
+      sdg/manager:
+        one: "SDG manažer"
+        few: "SDG manažeři"
+        many: "SDG manažerů"
+        other: "SDG manažerů"
+      sdg/target:
+        one: "záměr"
+        few: "záměry"
+        many: "záměrů"
+        other: "záměry"
+      site_customization/page:
+        one: Vlastní stránka
+        few: Vlastní stránky
+        many: Vlastní stránky
+        other: Vlastní stránky
+      site_customization/image:
+        one: Vlastní obrázek
+        few: Vlastní obrázky
+        many: Vlastní obrázky
+        other: Vlastní obrázky
+      site_customization/content_block:
+        one: Vlastní blok obsahu
+        few: Vlastní bloky obsahu
+        many: Vlastní bloky obsahu
+        other: Vlastní bloky obsahu
+      document:
+        one: Dokument
+        few: Dokumenty
+        many: Dokumentů
+        other: Dokumenty
+      legislation/process:
+        one: "Proces"
+        few: "Procesy"
+        many: "Procesy"
+        other: "Procesy"
+      legislation/proposal:
+        one: "Návrhy"
+        few: "Návrhy"
+        many: "Návrhy"
+        other: "Návrhy"
+      legislation/draft_versions:
+        one: "Pracovní verze"
+        few: "Pracovní verze"
+        many: "Pracovní verze"
+        other: "Pracovní verze"
+      legislation/questions:
+        one: "Question"
+        few: "Otázky"
+        many: "Otázky"
+        other: "Otázky"
+      legislation/question_options:
+        one: "Možnosti otázky"
+        few: "Možnosti otázky"
+        many: "Možnosti otázky"
+        other: "Možnosti otázky"
+      legislation/answers:
+        one: "Odpověď"
+        few: "Odpovědi"
+        many: "Odpovědí"
+        other: "Odpovědí"
+      documents:
+        one: "Dokument"
+        few: "Dokumenty"
+        many: "Dokumenty"
+        other: "Dokumenty"
+      images:
+        one: "Obrázek"
+        few: "Obrázky"
+        many: "Obrázků"
+        other: "Obrázky"
+      topic:
+        one: "Téma"
+        few: "Obsah"
+        many: "Obsah"
+        other: "Obsah"
+      poll:
+        one: "Průzkum"
+        few: "Průzkum"
+        many: "Průzkum"
+        other: "Průzkum"
+      proposal_notification:
+        one: "Upozornění k návrhu"
+        few: "Upozornění k návrhům"
+        many: "Upozornění k návrhům"
+        other: "Upozornění k návrhům"
+      dashboard/action:
+        one: Akce na ovládacím panelu Návrhu
+        few: Akce na ovládacím panelu Návrhu
+        many: Akcí na ovládacím panelu Návrhu
+        other: Akcí na ovládacím panelu Návrhu
+      dashboard/administrator_task:
+        one: Úkol
+        few: Úkoly
+        many: Úkolů
+        other: Úkoly
+      link:
+        one: Odkaz
+        few: Odkazy
+        many: Odkazů
+        other: Odkazy
+      local_census_record:
+        one: Záznam místního registru občanů
+        few: Záznamy místního registru občanů
+        many: Záznamů místního registru občanů
+        other: Záznamů místního registru občanů
+    attributes:
+      budget:
+        name: "Name"
+        description_accepting: "Popis během fáze přijímání"
+        description_reviewing: "Popis během fáze revize"
+        description_selecting: "Popis během fáze výběru"
+        description_valuating: "Popis během fáze vyhodnocování"
+        description_balloting: "Popis během fáze hlasování"
+        description_reviewing_ballots: "Popis během fáze přezkoumání hlasování"
+        description_finished: "Popis při dokončení rozpočtu"
+        phase: "Fáze"
+        currency_symbol: "Měna"
+        voting_style: "Konečný styl hlasování"
+        voting_style_knapsack: "Kombinatorická optimalizace"
+        voting_style_approval: "Schválení"
+        hide_money: "Skrýt částku pro tento rozpočet"
+      budget/translation:
+        main_link_text: "Text na odkazu"
+        main_link_url: "Odkaz vede na (přidat odkaz)"
+        name: "Název"
+      budget/investment:
+        heading_id: "Heading"
+        title: "Předmět"
+        description: "Popis"
+        external_url: "Odkaz na další dokumenty"
+        administrator_id: "Administrátor"
+        location: "Lokalita (volitelné)"
+        organization_name: "If you are proposing in the name of a collective/organization, or on behalf of more people, write its name"
+        image: "Proposal názorný obrázek"
+        image_title: "Nadpis obrázku"
+        duration: "Časový rozsah"
+        feasibility_feasible: "Proveditelný"
+        feasibility_undecided: "Nedefinováno"
+        feasibility_unfeasible: "Neproveditelné"
+        incompatible: "Označit jako nekompatibilní"
+        milestone_tag_list: "Označení milníku"
+        price_explanation: "Vysvětlení nákladů"
+        selected: "Označit jako vybrané"
+        selected_true: "Vybrané"
+        selected_false: "Není vybráno"
+        unfeasibility_explanation: "Vysvětlení proveditelnosti"
+        valuation_finished: "Naceňování bylo ukončeno"
+        valuator_ids: "Skupiny"
+        valuation_tag_list: "Štítky"
+      budget/investment/translation:
+        title: "Předmět"
+        description: "Popis"
+      geozone:
+        name: Název
+        external_code: "Externí kód (volitelný)"
+        census_code: "Kód registru občanů (nepovinné)"
+        html_map_coordinates: "HTML <map> Souřadnice (nepovinné)"
+      milestone:
+        status_id: "Aktuální stav (volitelné)"
+        title: "Předmět"
+        description: "Popis (volitelné, jestliže je stav přiřazen)"
+        publication_date: "Datum publikace"
+      milestone/translation:
+        description: "Popis"
+      milestone/status:
+        name: "Název"
+        description: "Popis (volitelné)"
+      progress_bar:
+        kind: "Typ"
+        title: "Předmět"
+        percentage: "Aktuální pokrok"
+      progress_bar/kind:
+        primary: "Primární"
+        secondary: "Sekundární"
+      budget/group:
+        max_votable_headings: "Maximální počet kapitol, ve kterých uživatel může hlasovat"
+      budget/group/translation:
+        name: "Název skupiny"
+      budget/heading:
+        allow_custom_content: "Povolit blok obsahu"
+        latitude: "Zeměpisná šířka (volitelné)"
+        longitude: "Zeměpisná délka (volitelné)"
+        name: "Název záhlaví"
+        price: "Cena"
+        population: "Population"
+        max_ballot_lines: "Povolené hlasy"
+      budget/heading/translation:
+        name: "Název rozpočtové položky"
+      budget/phase:
+        enabled: "Fáze je povolena"
+        ends_at: "Konečné datum"
+        starts_at: "Počáteční datum"
+      budget/phase/translation:
+        name: "Název"
+        description: "Popis"
+        summary: "Souhrn"
+        main_link_text: "Text na odkazu"
+        main_link_url: "Odkaz vede na (přidat odkaz)"
+      comment:
+        body: "Komentář"
+        user: "User"
+      debate:
+        author: "Autor"
+        description: "Opinion"
+        tag_list: "Téma"
+        terms_of_service: "Terms of service"
+        title: "Předmět"
+      debate/translation:
+        title: "Název debaty"
+        description: "Počáteční text debaty"
+      proposal:
+        author: "Autor"
+        title: "Předmět"
+        question: "Otázka"
+        description: "Popis"
+        responsible_name: "Úplné jméno osoby, která podala návrh"
+        retired_reason: "Důvod k pozastavení návrhu"
+        selected: "Označit jako vybrané"
+        terms_of_service: "Terms of service"
+        video_url: "Externí URL videa"
+      proposal/translation:
+        title: "Název návrhu"
+        description: "Text návrhu"
+        summary: "Shrnutí návrhu"
+        retired_explanation: "Vysvětlení"
+      user:
+        login: "Email nebo uživatelské jméno"
+        email: "Email"
+        username: "Uživatelské jméno"
+        password_confirmation: "Potvrzení hesla"
+        password: "Heslo"
+        current_password: "Současné heslo"
+        email_digest: "Obdržet souhrn oznámení o návrzích"
+        email_on_comment: "Informujte mě e-mailem, když někdo okomentuje mé návrhy nebo debaty"
+        email_on_comment_reply: "Informujte mě emailem, když někdo odpoví na mé komentáře"
+        email_on_direct_message: "Přijímání e-mailů o přímých zprávách"
+        newsletter: "Přijímání relevantních informací o webových stránkách e-mailem"
+        official_position: "Official position"
+        official_position_badge: "Zobrazit odznak úřední pozice"
+        official_level: "Official level"
+        phone_number: "Telefon"
+        public_activity: "Udržet seznam mých aktivit veřejný"
+        public_interests: "Udržet prvky, které sleduji, veřejné"
+        recommended_debates: "Zobrazit doporučení k debatám"
+        recommended_proposals: "Zobrazit doporučení k návrhům"
+        redeemable_code: "Verification code received via email"
+      direct_message:
+        title: "Předmět"
+        body: "Zpráva"
+      organization:
+        name: "Název organizace"
+        responsible_name: "Osoba zodpovědná za organizaci či skupinu"
+      poll:
+        name: "Název"
+        title: "Jméno"
+        starts_at: "Start Date"
+        ends_at: "Closing Date"
+        geozone_restricted: "Restricted by geozone"
+        summary: "Souhrn"
+        description: "Popis"
+      active_poll/translation:
+        description: "Popis"
+      poll/booth:
+        name: "Název"
+        location: "Umístění"
+      poll/translation:
+        name: "Název"
+        summary: "Souhrn"
+        description: "Popis"
+      poll/question:
+        poll_id: "Průzkum"
+        title: "Question"
+        summary: "Souhrn"
+        description: "Popis"
+        external_url: "Odkaz na další dokumenty"
+      poll/question/translation:
+        title: "Question"
+      poll/ballot_sheet:
+        data: CSV data
+        poll_id: Průzkum
+        officer_assignment_id: Přidělení úředníka
+      poll/shift:
+        task: "Úkol"
+      proposal_notification:
+        body: "Zpráva"
+        title: "Předmět"
+      signature_sheet:
+        title: "Předmět"
+        signable_type: "Signable type"
+        signable_id: "Signable ID"
+        document_numbers: "Documents numbers"
+      sdg/goal:
+        code: "Kód"
+        title: "Název"
+        description: "Popis"
+      sdg/local_target:
+        code: "Kód"
+        target_id: "Cíl"
+        title: "Nadpis"
+      sdg/local_target/translation:
+        title: "Nadpis"
+        description: "Popis"
+      sdg/phase/kind:
+        sensitization: "Senzibilizace"
+        planning: "Plánování"
+        monitoring: "Monitoring"
+      sdg/target:
+        code: "Kód"
+        title: "Nadpis"
+      site_customization/page:
+        content: Obsah
+        created_at: Vytvořeno dne
+        subtitle: Titulek
+        slug: Slug
+        status: Status
+        status_draft: "Pracovní verze"
+        status_published: "Publikováno"
+        title: Předmět
+        updated_at: Aktualizováno dne
+        more_info_flag: Show in help page
+        print_content_flag: Print content button
+        locale: Language
+      site_customization/page/translation:
+        title: Předmět
+        subtitle: Podtitul
+        content: Obsah
+      site_customization/image:
+        name: Název
+        image: Obrázek
+      site_customization/content_block:
+        name: Název
+        locale: locale
+        body: Body
+      tag:
+        name: "Zadejte název tématu"
+      topic:
+        title: "Předmět"
+        description: "Úvodní text"
+      banner:
+        background_color: Barva pozadí
+        font_color: Barva písma
+        post_ended_at: "Příspěvek byl ukončen v"
+        post_started_at: "Příspěvek byl zahájen v"
+        target_url: "Odkaz"
+      banner/translation:
+        title: "Předmět"
+        description: "Popis"
+      legislation/process:
+        title: Název procesu
+        summary: Souhrn
+        description: Popis
+        additional_info: Additional info
+        start_date: Počáteční datum
+        end_date: Konečné datum
+        debate_start_date: Debate start date
+        debate_end_date: Debate end date
+        draft_start_date: Návrh počátečního data
+        draft_end_date: Datum konce návrhu
+        draft_publication_date: Datum návrhu publikace
+        allegations_start_date: Allegations start date
+        allegations_end_date: Allegations end date
+        proposals_phase_start_date: Zahájení
+        proposals_phase_end_date: Konec
+        result_publication_date: Publikace konečného výsledku
+        background_color: Barva pozadí
+        font_color: Barva písma
+        homepage_enabled: "Úvodní stránka povolena"
+      legislation/process/translation:
+        title: Název procesu
+        summary: Souhrn
+        description: Popis
+        additional_info: Additional info
+        homepage: "Popis"
+        milestones_summary: Souhrn
+      legislation/proposal:
+        description: "Popis návrhu"
+        summary: "Shrnutí návrhu"
+        title: "Název návrhu"
+        video_url: "Odkaz na externí video"
+      legislation/draft_version:
+        title: Název pracovní verze
+        body: Text
+        changelog: Změny
+        status: Status
+        status_draft: "Pracovní verze"
+        status_published: "Publikováno"
+        final_version: Konečná verze
+      legislation/draft_version/translation:
+        title: Název pracovní verze
+        body: Text
+        changelog: Changes
+      legislation/question:
+        title: Předmět
+        question_options: Options
+      legislation/question/translation:
+        title: Otázka
+      legislation/question_option:
+        value: Value
+      legislation/annotation:
+        text: Komentář
+      document:
+        title: Předmět
+        attachment: "Attachment"
+      image:
+        title: Předmět
+        attachment: "Attachment"
+      poll/question/answer:
+        title: Odpověď
+        description: Popis
+      poll/question/answer/translation:
+        title: Answer
+        description: Popis
+      poll/question/answer/video:
+        title: Předmět
+        url: Externí video
+      newsletter:
+        segment_recipient: Příjemci
+        subject: Subject
+        from: "Od"
+        body: Email content
+      admin_notification:
+        segment_recipient: Recipients
+        title: Předmět
+        link: Odkaz
+        body: Text
+      admin_notification/translation:
+        title: Předmět
+        body: Text
+      widget/card:
+        label: Label (optional)
+        title: Předmět
+        description: Popis
+        link_text: Link text
+        link_url: Link URL
+        columns: Počet sloupců
+      widget/card/translation:
+        label: Label (optional)
+        title: Předmět
+        description: Popis
+        link_text: Link text
+      widget/feed:
+        limit: Number of items
+      dashboard/action:
+        title: Předmět
+        short_description: Krátký popis
+        description: Popis
+        link: Externí odkaz
+        request_to_administrators: Zahrnout do zdroje tlačítko pro vyžádání zdroje od správců
+        day_offset: Kolik dní po vytvoření návrhu chcete, aby byl aktivován?
+        required_supports: Kolik podpory musí návrh získat, aby byl aktivován?
+        order: Můžete zadat pozici, na které se tato akce zobrazí uživateli v seznamu akcí
+        active: Aktivní
+        action_type: Typ
+        action_type_proposed_action: "Navrhované opatření"
+        action_type_resource: "Prostředek"
+        published_proposal: "Pro zveřejněné návrhy?"
+      dashboard/administrator_task:
+        source: Zdroj
+        user: Realizováno od
+      link:
+        label: Nadpis
+        url: Odkaz
+      valuator:
+        description: Popis
+        valuator_group_id: Skupina hodnotitelů
+        can_comment: Může vytvářet komentáře
+        can_edit_dossier: Může upravovat dokumentaci
+      valuator_group:
+        name: "Název skupiny"
+      local_census_record:
+        document_type: Typ dokumentu
+        document_number: Číslo dokladu
+        date_of_birth: Datum narození
+        postal_code: PSČ
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "This user already has a password"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "tags must be less than or equal to %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Dosáhli jste maximálního počtu soukromých zpráv za den"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Šířka obrázku musí být minimálně %{required_min_width} bodů"
+              min_image_height: "Výška obrázku musí být minimálně %{required_min_height} bodů"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "The user recipients segment is invalid"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "The user recipients segment is invalid"
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Document not in census"
+            user_id:
+              has_voted: "Uživatel již hlasoval"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: must be on or after the start date
+            debate_end_date:
+              invalid_date_range: must be on or after the debate start date
+            draft_end_date:
+              invalid_date_range: musí být v datum zahájení nebo pozdější
+            allegations_end_date:
+              invalid_date_range: must be on or after the allegations start date
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: není v seznamu uveden, povolené hodnoty jsou 1 pro DNI, 2 pro cestovní pas a 3 pro průkaz o povolení k pobytu.
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "tags must be less than or equal to %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "tags must be less than or equal to %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "You have to wait a minium of %{interval} days between notifications"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: "Not verified by Census"
+              already_voted: "Already voted this proposal"
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "must be letters, numbers, _ and -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Width must be %{required_width}px"
+              image_height: "Height must be %{required_height}px"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: "You cannot comment a valuation"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Již přeložený prostředek
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "musí začínat stejným kódem jako jeho záměr, za kterým následuje tečka a končí číslem"
+      messages:
+        translations_too_short: Je povinné poskytnout alespoň jeden překlad
+        record_invalid: "Validation failed: %{errors}"
+        another_poll_active: Pro dané období je aktivní jiný průzkum
+        restrict_dependent_destroy:
+          has_one: "Cannot delete record because a dependent %{record} exists"
+          has_many: "Cannot delete record because dependent %{record} exist"

@@ -1,38 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<html <%= "dir=rtl" if rtl? %> lang="<%= I18n.locale %>">
 
   <head>
     <%= render "layouts/common_head", default_title: "Management" %>
-    <%= stylesheet_link_tag  "print", media: "print" %>
+    <%= stylesheet_link_tag "print", media: "print" %>
     <%= content_for :head %>
   </head>
 
   <body class="admin">
-    <header class="header">
-      <div class="top-links">
-        <div class="expanded row">
-          <%= render "shared/locale_switcher" %>
-        </div>
-      </div>
+    <%= render "layouts/admin_header", current_user: manager_logged_in %>
 
-      <div class="expanded row admin-top-bar">
-        <div class="top-bar">
-          <div class="top-bar-left">
-            <ul class="menu">
-              <li class="menu-text">
-                <h1>
-                  <%= link_to management_root_path do %>
-                    <%= setting["org_name"] %>
-                    <br><small><%= t("management.dashboard.index.title") %></small>
-                  <% end %>
-                </h1>
-              </li>
-            </ul>
-          </div>
-          <% if show_admin_menu?(manager_logged_in) %>
-            <div id="responsive_menu">
+    <div class="menu-and-content">
+      <%= check_box_tag :show_menu, nil, false, role: "switch" %>
 
-              <div class="top-bar-right">
+              <%# <div class="top-bar-right">
                 <ul class="menu" data-responsive-menu="medium-dropdown">
                   <%= render "admin/shared/admin_shortcuts", current_user: manager_logged_in %>
                   <%= render "shared/admin_login_items", current_user: manager_logged_in %>
@@ -60,17 +41,20 @@
     </header>
 
     <main class="no-margin-top row expanded collapse">
-      <div class="small-12 medium-3 column">
+      <div class="small-12 medium-3 column"> %>
+
+      <nav class="admin-sidebar">
         <%= render "/management/menu" %>
-      </div>
+      </nav>
 
-      <%= render "management/account_info" %>
+      <main class="admin-content">
+        <%= label_tag :show_menu, t("admin.menu.admin"),
+                      "aria-hidden": true, class: "button hollow expanded" %>
 
-      <div class="admin-content small-12 medium-9 column">
-        <%= render 'layouts/flash' %>
+        <%= render "management/account_info" %>
+        <%= render "layouts/flash" %>
         <%= yield %>
-      </div>
-    </main>
-
+      </main>
+    </div>
   </body>
 </html>

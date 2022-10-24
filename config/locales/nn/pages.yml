@@ -1,0 +1,52 @@
+nn:
+  pages:
+    conditions:
+      title: Vilkår og betingelser
+      subtitle: Juridisk meddelelse om bruksbetingelser, privatpolitikk og beskyttelse av personopplysninger på open governance-portalen
+      description: Informasjonsside om forhold knyttet til bruk og beskyttelse av personlig data.
+    help:
+      title: "%{org} er en plattform for innbyggerinvolvering"
+      menu:
+        debates: "Debatter"
+        proposals: "Forslag"
+        polls: "Avstemninger"
+      debates:
+        title: "Debatter"
+      proposals:
+        title: "Forslag"
+      polls:
+        title: "Avstemninger"
+    privacy:
+      title: Personvernpolicy
+    accessibility:
+      title: Tilgjengelighet
+      keyboard_shortcuts:
+        navigation_table:
+          rows:
+            - 
+            - 
+              page_column: Debatter
+            - 
+              page_column: Forslag
+            - 
+            - 
+            - 
+        browser_table:
+          rows:
+            - 
+            - 
+              browser_column: Firefox
+            - 
+            - 
+            - 
+      textsize:
+        browser_settings_table:
+          rows:
+            - 
+            - 
+              browser_column: Firefox
+            - 
+            - 
+            - 
+    verify:
+      submit: Verifiser min konto

@@ -1,20 +1,20 @@
 class Polls::QuestionsController < ApplicationController
-
   load_and_authorize_resource :poll
-  load_and_authorize_resource :question, class: 'Poll::Question'
+  load_and_authorize_resource :question, class: "Poll::Question"
 
-  has_orders %w{most_voted newest oldest}, only: :show
+  has_orders %w[most_voted newest oldest], only: :show
 
   def answer
-    answer = @question.answers.find_or_initialize_by(author: current_user)
-    token = params[:token]
+    answer = @question.find_or_initialize_user_answer(current_user, params[:answer])
+    answer.save_and_record_voter_participation
 
-    answer.answer = params[:answer]
-    answer.touch if answer.persisted?
-    answer.save!
-    answer.record_voter_participation(token)
-    @question.question_answers.where(question_id: @question).each do |question_answer|
-      question_answer.set_most_voted
+    respond_to do |format|
+      format.html do
+        redirect_to request.referer
+      end
+      format.js do
+        render :answers
+      end
     end
     if params[:order_ids]
       @answers = []
@@ -26,5 +26,4 @@ class Polls::QuestionsController < ApplicationController
     end
     @answers_by_question_id = { @question.id => params[:answer] }
   end
-
 end

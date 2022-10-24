@@ -16,8 +16,7 @@ pt-BR:
       create_first_community_topic:
         first_theme_not_logged_in: Nenhum tema disponível, participe criando o primeiro.
         first_theme: Crie o primeiro tópico da comunidade
-        sign_in: "iniciar sessão"
-        sign_up: "inscrever-se"
+        sub_first_theme: "Para criar um tema você precisa %{sign_in} ou %{sign_up}."
       tab:
         participants: Participantes
       sidebar:
@@ -33,8 +32,6 @@ pt-BR:
       create: Criar um tópico
       edit: Editar tópico
       form:
-        topic_title: Título
-        topic_text: Texto inicial
         new:
           submit_button: Criar tópico
         edit:

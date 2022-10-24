@@ -1,0 +1,9 @@
+<ul class="no-bullet submenu order-links">
+  <% valid_orders.each do |order| %>
+    <li class="inline-block">
+      <%= link_to link_path(order), class: html_class(order) do %>
+        <%= content_tag tag_name(order), link_text(order) %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

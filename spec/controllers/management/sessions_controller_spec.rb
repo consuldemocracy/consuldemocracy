@@ -1,19 +1,25 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Management::SessionsController do
-
-  describe 'Sign in' do
+  describe "Sign in" do
     it "denies access if wrong manager credentials" do
       allow_any_instance_of(ManagerAuthenticator).to receive(:auth).and_return(false)
-      expect { get :create, login: "nonexistent", clave_usuario: "wrong"}.to raise_error CanCan::AccessDenied
+      get :create, params: { login: "nonexistent", clave_usuario: "wrong" }
+
+      expect(response).to redirect_to "/"
+      expect(flash[:alert]).to eq "You do not have permission to access this page."
       expect(session[:manager]).to be_nil
     end
 
     it "redirects to management root path if authorized manager with right credentials" do
-      manager = {login: "JJB033", user_key: "31415926", date: "20151031135905"}
+      manager = { login: "JJB033", user_key: "31415926", date: "20151031135905" }
       allow_any_instance_of(ManagerAuthenticator).to receive(:auth).and_return(manager)
 
-      get :create, login: "JJB033", clave_usuario: "31415926", fecha_conexion: "20151031135905"
+      get :create, params: {
+                     login: "JJB033",
+                     clave_usuario: "31415926",
+                     fecha_conexion: "20151031135905"
+                   }
       expect(response).to be_redirect
       expect(session[:manager][:login]).to eq "JJB033"
     end
@@ -36,14 +42,17 @@ describe Management::SessionsController do
 
     it "denies access if user is not admin or manager" do
       sign_in create(:user)
-      expect { get :create}.to raise_error CanCan::AccessDenied
+      get :create
+
+      expect(response).to redirect_to "/"
+      expect(flash[:alert]).to eq "You do not have permission to access this page."
       expect(session[:manager]).to be_nil
     end
   end
 
-  describe 'Sign out' do
+  describe "Sign out" do
     it "destroys the session data and redirect" do
-      session[:manager] = {user_key: "31415926", date: "20151031135905", login: "JJB033"}
+      session[:manager] = { user_key: "31415926", date: "20151031135905", login: "JJB033" }
       session[:document_type] = "1"
       session[:document_number] = "12345678Z"
 
@@ -55,5 +64,4 @@ describe Management::SessionsController do
       expect(response).to be_redirect
     end
   end
-
 end

@@ -1,9 +1,10 @@
+#Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 sv:
   devise:
     password_expired:
       expire_password: "Lösenordet har gått ut"
       change_required: "Ditt lösenord har gått ut"
-      change_password: "Uppdatera ditt lösenord"
+      change_password: "Ändra ditt lösenord"
       new_password: "Nytt lösenord"
       updated: "Lösenordet har uppdaterats"
     confirmations:
@@ -14,10 +15,10 @@ sv:
       already_authenticated: "Du är redan inloggad."
       inactive: "Ditt konto har inte aktiverats ännu."
       invalid: "Ogiltig %{authentication_keys} eller lösenord."
-      locked: "Ditt konto har blivit låst."
+      locked: "Ditt konto har låsts."
       last_attempt: "Du har ett försök kvar innan ditt konto spärras."
       not_found_in_database: "Ogiltig %{authentication_keys} eller lösenord."
-      timeout: "Din session har gått ut. Vänligen logga in igen för att fortsätta."
+      timeout: "Din session har gått ut. Vi ber dig logga in igen för att fortsätta."
       unauthenticated: "Du behöver logga in eller registrera dig för att fortsätta."
       unconfirmed: "Klicka på bekräftelselänken i ditt e-postmeddelande för att fortsätta"
     mailer:
@@ -33,7 +34,7 @@ sv:
       no_token: "Du kan inte komma åt denna sida utom genom en länk för återställning av lösenord. Om du har kommit hit genom en länk för återställning av lösenord, kontrollera att webbadressen är komplett."
       send_instructions: "Du kommer strax att få ett e-postmeddelande med instruktioner för att återställa ditt lösenord."
       send_paranoid_instructions: "Om din e-postadress finns i vår databas kommer du strax få en länk för att återställa ditt lösenord."
-      updated: "Ditt lösenord har ändrats."
+      updated: "Ditt lösenord har ändrats. Du har autentiserats."
       updated_not_active: "Ditt lösenord har ändrats."
     registrations:
       destroyed: "Hejdå! Ditt konto har avslutats. Vi hoppas på att snart få se dig igen."
@@ -41,7 +42,7 @@ sv:
       signed_up_but_inactive: "Din registrering lyckades, men du behöver aktivera ditt konto innan du kan logga in."
       signed_up_but_locked: "Din registrering lyckades, men du behöver aktivera ditt konto innan du kan logga in."
       signed_up_but_unconfirmed: "Vi har skickat ett meddelande med en bekräftelselänk. Vänligen klicka på länken för att aktivera ditt konto."
-      update_needs_confirmation: "Ditt konto har uppdaterats, men vi behöver verifiera din nya e-postadress. Kontrollera din e-post och klicka på länken för att slutföra verifieringen av dina nya e-postadress."
+      update_needs_confirmation: "Ditt konto har uppdaterats, men vi behöver verifiera din nya e-postadress. Kontrollera din e-post och klicka på länken för att slutföra verifieringen av din nya e-postadress."
       updated: "Ditt konto har uppdaterats."
     sessions:
       signed_in: "Du är inloggad."
@@ -53,9 +54,9 @@ sv:
       unlocked: "Ditt konto har låsts upp. Logga in för att fortsätta."
   errors:
     messages:
-      already_confirmed: "Du har redan verifierats; försök att logga in."
-      confirmation_period_expired: "Du behöver verifiera ditt konto inom %{period}, var vänlig skicka en ny förfrågan."
-      expired: "är inte längre giltig, var vänlig gör en ny förfrågan."
+      already_confirmed: "Du har redan verifierats. Försök logga in."
+      confirmation_period_expired: "Du behöver verifiera ditt konto inom %{period}. Vi ber dig skicka en ny förfrågan."
+      expired: "är inte längre giltig. Vi ber dig göra en ny förfrågan."
       not_found: "hittades inte."
       not_locked: "var inte låst."
       not_saved:

@@ -1,0 +1,31 @@
+<div id="<%= dom_id(resource) %>" class="small-12 medium-6 large-3 column end">
+  <div class="resource-card <%= resource_card_class(resource, proposal) %>"
+       data-equalizer-watch="resources"
+       title="<%= resource_tooltip(resource, proposal) %>">
+    <h4><%= resource.title %></h4>
+    <% if is_new_action_since_last_login?(resource, @new_actions_since_last_login) %>
+      <span class="label"><%= t("dashboard.progress.new_action") %></span>
+    <% end %>
+    <p class="resource-description">
+      <%= resource.short_description %>
+    </p>
+
+    <div class="small-12 column small-centered margin-top">
+      <% if resource.executed_for?(proposal) || (!resource.request_to_administrators && resource.active_for?(proposal)) %>
+        <%= link_to t("dashboard.resource.view_resource"),
+                    new_request_proposal_dashboard_action_path(proposal, resource),
+                    class: "button expanded" %>
+      <% elsif resource.requested_for?(proposal) %>
+        <strong><%= t("dashboard.resource.resource_requested") %></strong>
+      <% elsif resource.active_for?(proposal) %>
+        <%= link_to t("dashboard.resource.request_resource"),
+                    new_request_proposal_dashboard_action_path(proposal, resource),
+                    class: "button expanded" %>
+      <% else %>
+        <strong>
+          <%= resource_availability_label(resource) %>
+        </strong>
+      <% end %>
+    </div>
+  </div>
+</div>

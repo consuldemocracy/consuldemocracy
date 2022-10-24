@@ -5,14 +5,19 @@
 
   <h3><%= t("admin.results.index.title") %></h3>
 
-  <% if @partial_results.empty? %>
+  <% if @partial_results.empty? && @poll.voters.empty? %>
     <div class="callout primary margin-top">
       <%= t("admin.results.index.no_results") %>
     </div>
-  <% else %>
+  <% end %>
+
+  <% if @partial_results.present? %>
     <%= render "recount", resource: @poll %>
     <%= render "result" %>
     <%= render "results_by_booth" %>
+  <% end %>
+
+  <% if @poll.voters.any? %>
     <%= render "show_results", resource: @poll %>
   <% end %>
 </div>

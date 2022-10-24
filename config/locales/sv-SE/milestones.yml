@@ -1,1 +1,8 @@
 sv:
+  milestones:
+    index:
+      no_milestones: Har inga definierade milstolpar
+      progress: Förlopp
+    show:
+      publication_date: "Publicerad %{publication_date}"
+      status_changed: Förslagets status har ändrats till

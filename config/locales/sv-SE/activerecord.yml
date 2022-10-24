@@ -1,4 +1,13 @@
 sv:
+  attributes:
+    geozone_id: "Område"
+    results_enabled: "Visa resultat"
+    stats_enabled: "Visa statistik"
+    advanced_stats_enabled: "Visa avancerad statistik"
+    name: Namn
+    email: E-post
+    description: Beskrivning
+    related_sdg_list: Mål och delmål
   activerecord:
     models:
       activity:
@@ -10,11 +19,20 @@ sv:
       budget/investment:
         one: "Budgetförslag"
         other: "Budgetförslag"
+      milestone:
+        one: "milstolpe"
+        other: "milstolpar"
+      milestone/status:
+        one: "Milstolpestatus"
+        other: "Budgetförslagens status"
+      progress_bar:
+        one: "Förloppsindikator"
+        other: "Förloppsindikatorer"
       comment:
         one: "Kommentar"
         other: "Kommentarer"
       debate:
-        one: "Debatt"
+        one: "Debattera"
         other: "Debatter"
       tag:
         one: "Tagg"
@@ -52,12 +70,24 @@ sv:
       poll/officer:
         one: "funktionär"
         other: "funktionärer"
+      poll/ballot_sheet:
+        one: Valsedel
+        other: Valsedlar
       proposal:
         one: "Medborgarförslag"
         other: "Medborgarförslag"
-      spending_proposal:
-        one: "Budgetförslag"
-        other: "Budgetförslag"
+      sdg/goal:
+        one: "mål"
+        other: "mål"
+      sdg/local_target:
+        one: "lokalt delmål"
+        other: "lokala delmål"
+      sdg/manager:
+        one: "Globala målen-chef"
+        other: "Globala målen-chefer"
+      sdg/target:
+        one: "delmål"
+        other: "delmål"
       site_customization/page:
         one: Anpassad sida
         other: Anpassade sidor
@@ -67,17 +97,23 @@ sv:
       site_customization/content_block:
         one: Anpassat innehållsblock
         other: Anpassade innehållsblock
+      document:
+        one: Dokument
+        other: Dokument
       legislation/process:
         one: "Process"
         other: "Processer"
+      legislation/proposal:
+        one: "Förslag"
+        other: "Förslag"
       legislation/draft_versions:
         one: "Utkastversion"
-        other: "Utkastversioner"
+        other: "Versioner av utkast"
       legislation/questions:
         one: "Fråga"
         other: "Frågor"
       legislation/question_options:
-        one: "Svarsalternativ"
+        one: "Frågealternativ"
         other: "Svarsalternativ"
       legislation/answers:
         one: "Svar"
@@ -95,8 +131,20 @@ sv:
         one: "Omröstning"
         other: "Omröstningar"
       proposal_notification:
-        one: "Förslagsavisering"
-        other: "Förslagsaviseringar"
+        one: "Avisering om förslag"
+        other: "Aviseringar om förslag"
+      dashboard/action:
+        one: Åtgärd i förslagsdashboard
+        other: Åtgärder i förslagsdashboard
+      dashboard/administrator_task:
+        one: Åtgärd
+        other: Åtgärder
+      link:
+        one: Länk
+        other: Länkar
+      local_census_record:
+        one: Post i lokalt adressregister
+        other: Poster i lokalt adressregister
     attributes:
       budget:
         name: "Namn"
@@ -109,82 +157,215 @@ sv:
         description_finished: "Beskrivning för när budgeten är avslutad"
         phase: "Fas"
         currency_symbol: "Valuta"
+        voting_style: "Slutgiltigt omröstningsformat"
+        voting_style_knapsack: "Ryggsäck"
+        voting_style_approval: "Godkännande"
+        hide_money: "Dölj belopp för denna budget"
+      budget/translation:
+        main_link_text: "Text på länken"
+        main_link_url: "Länken leder till (lägg till en länk)"
+        name: "Namn"
       budget/investment:
         heading_id: "Område"
         title: "Titel"
         description: "Beskrivning"
         external_url: "Länk till ytterligare dokumentation"
         administrator_id: "Administratör"
-        location: "Plats (frivilligt fält)"
+        location: "Ytterligare information om plats"
         organization_name: "Organisation eller grupp i vars namn du lämnar förslaget"
         image: "Förklarande bild till förslaget"
         image_title: "Bildtext"
+        duration: "Tidsram"
+        feasibility_feasible: "Genomförbart"
+        feasibility_undecided: "Odefinierat"
+        feasibility_unfeasible: "Ej genomförbart"
+        incompatible: "Markera som oförenligt"
+        milestone_tag_list: "Milstolpe taggar"
+        price_explanation: "Kostnadsförklaring"
+        selected: "Markera som valda"
+        selected_true: "Vald"
+        selected_false: "Ej vald"
+        unfeasibility_explanation: "Förklaring av genomförbarhet"
+        valuation_finished: "Kostnadsberäkning avslutad"
+        valuator_ids: "Grupper"
+        valuation_tag_list: "Taggar"
+      budget/investment/translation:
+        title: "Titel"
+        description: "Beskrivning"
+      geozone:
+        name: Namn
+        external_code: "Extern kod (valfri)"
+        census_code: "Adressregisterkod (valfri)"
+        html_map_coordinates: "HTML-<map>koordinater (valfritt)"
+      milestone:
+        status_id: "Nuvarande status (valfritt)"
+        title: "Titel"
+        description: "Beskrivning (valfritt om status har tilldelats)"
+        publication_date: "Datum"
+      milestone/translation:
+        description: "Beskrivning"
+      milestone/status:
+        name: "Namn"
+        description: "Beskrivning (valfritt)"
+      progress_bar:
+        kind: "Typ"
+        title: "Titel"
+        percentage: "Aktuellt förlopp"
+      progress_bar/kind:
+        primary: "Primär"
+        secondary: "Sekundär"
+      budget/group:
+        max_votable_headings: "Högsta antal områden där användare kan välja projekt"
+      budget/group/translation:
+        name: "Gruppnamn"
       budget/heading:
-        name: "Område"
-        price: "Kostnad"
-        population: "Befolkning"
+        allow_custom_content: "Tillåt innehållsblock"
+        latitude: "Latitud (valfritt)"
+        longitude: "Longitud (valfritt)"
+        name: "Områdesnamn"
+        price: "Belopp"
+        population: "Befolkning (valfritt)"
+        max_ballot_lines: "Tillåtna röster"
+      budget/heading/translation:
+        name: "Områdesnamn"
+      budget/phase:
+        enabled: "Fasen är aktiverad"
+        ends_at: "Slutdatum"
+        starts_at: "Startdatum"
+      budget/phase/translation:
+        name: "Namn"
+        description: "Beskrivning"
+        summary: "Sammanfattning"
+        main_link_text: "Text på länken"
+        main_link_url: "Länken leder till (lägg till en länk)"
       comment:
         body: "Kommentar"
         user: "Användare"
       debate:
-        author: "Debattör"
+        author: "Skribent"
         description: "Inlägg"
+        tag_list: "Ämnen"
         terms_of_service: "Användarvillkor"
         title: "Titel"
+      debate/translation:
+        title: "Debatt-titel"
+        description: "Inledande debatt-text"
       proposal:
-        author: "Förslagslämnare"
+        author: "Skribent"
         title: "Titel"
         question: "Fråga"
         description: "Beskrivning"
+        responsible_name: "Förslagslämnarens fullständiga namn"
+        retired_reason: "Anledning att dra tillbaka förslaget"
+        selected: "Markera som valda"
         terms_of_service: "Användarvillkor"
+        video_url: "Extern video-URL"
+      proposal/translation:
+        title: "Förslagets titel"
+        description: "Förslagstext"
+        summary: "Sammanfattning av förslaget"
+        retired_explanation: "Förklaring"
       user:
-        login: "E-post eller användarnamn"
+        login: "E-postadress eller användarnamn"
         email: "E-post"
         username: "Användarnamn"
         password_confirmation: "Bekräfta lösenord"
         password: "Lösenord"
         current_password: "Nuvarande lösenord"
-        phone_number: "Telefonnummer"
-        official_position: "Titel"
+        email_digest: "Få en sammanfattning av aviseringar om förslag"
+        email_on_comment: "Meddela mig via e-post när någon kommenterar mina förslag eller debatter"
+        email_on_comment_reply: "Meddela mig via e-post när någon svarar på mina kommentarer"
+        email_on_direct_message: "Få e-post om direktmeddelanden"
+        newsletter: "Få relevanta uppdateringar om webbplatsen med e-post"
+        official_position: "Tjänstemans position"
+        official_position_badge: "Visa märke för tjänstemannens position"
         official_level: "Tjänstepersonnivå"
-        redeemable_code: "Mottagen bekräftelsekod"
-      organization:
-        name: "Organisationens namn"
-        responsible_name: "Representant för gruppen"
-      spending_proposal:
-        administrator_id: "Administratör"
-        association_name: "Föreningens namn"
-        description: "Beskrivning"
-        external_url: "Länk till ytterligare dokumentation"
-        geozone_id: "Område"
+        phone_number: "Telefonnummer"
+        public_activity: "Visa min lista över aktiviteter offentligt"
+        public_interests: "Visa etiketterna för de element jag följer offentligt"
+        recommended_debates: "Visa rekommenderade debatter"
+        recommended_proposals: "Visa rekommenderade förslag"
+        redeemable_code: "Bekräftelsekod mottagen via e-post"
+      direct_message:
         title: "Titel"
+        body: "Meddelande"
+      organization:
+        name: "Organisationsnamn"
+        responsible_name: "Representant för gruppen"
       poll:
         name: "Namn"
+        title: "Namn"
         starts_at: "Startdatum"
         ends_at: "Slutdatum"
         geozone_restricted: "Begränsat till område"
         summary: "Sammanfattning"
         description: "Beskrivning"
+      active_poll/translation:
+        description: "Beskrivning"
+      poll/booth:
+        name: "Namn"
+        location: "Plats"
+      poll/translation:
+        name: "Namn"
+        summary: "Sammanfattning"
+        description: "Beskrivning"
       poll/question:
+        poll_id: "Omröstning"
         title: "Fråga"
         summary: "Sammanfattning"
         description: "Beskrivning"
         external_url: "Länk till ytterligare dokumentation"
+      poll/question/translation:
+        title: "Fråga"
+      poll/ballot_sheet:
+        data: CSV-data
+        poll_id: Omröstning
+        officer_assignment_id: Tilldela valarbetare
+      poll/shift:
+        task: "Uppgift"
+      proposal_notification:
+        body: "Meddelande"
+        title: "Titel"
       signature_sheet:
-        signable_type: "Typ av underskrifter"
+        title: "Titel"
+        signable_type: "Typ som kan skrivas under"
         signable_id: "Förslagets ID"
         document_numbers: "Dokumentnummer"
+      sdg/goal:
+        code: "Kod"
+        title: "Titel"
+        description: "Beskrivning"
+      sdg/local_target:
+        code: "Kod"
+        target_id: "Delmål"
+        title: "Titel"
+      sdg/local_target/translation:
+        title: "Titel"
+        description: "Beskrivning"
+      sdg/phase/kind:
+        sensitization: "Sensibilisering"
+        planning: "Planering"
+        monitoring: "Övervakning"
+      sdg/target:
+        code: "Kod"
+        title: "Titel"
       site_customization/page:
         content: Innehåll
-        created_at: Skapad den
+        created_at: Skapad kl.
         subtitle: Underrubrik
         slug: URL
         status: Status
+        status_draft: "Utkast"
+        status_published: "Publicerad"
         title: Titel
-        updated_at: Uppdaterad den
+        updated_at: Uppdaterad kl.
         more_info_flag: Visa i hjälpsidor
         print_content_flag: Skriv ut innehåll
         locale: Språk
+      site_customization/page/translation:
+        title: Titel
+        subtitle: Textremsa
+        content: Innehåll
       site_customization/image:
         name: Namn
         image: Bild
@@ -192,6 +373,20 @@ sv:
         name: Namn
         locale: språk
         body: Innehåll
+      tag:
+        name: "Skriv namnet på ämnet"
+      topic:
+        title: "Titel"
+        description: "Inledande text"
+      banner:
+        background_color: Bakgrundsfärg
+        font_color: Teckenfärg
+        post_ended_at: "Slutdatum"
+        post_started_at: "Startdatum"
+        target_url: "Länk"
+      banner/translation:
+        title: "Titel"
+        description: "Beskrivning"
       legislation/process:
         title: Processens titel
         summary: Sammanfattning
@@ -201,30 +396,60 @@ sv:
         end_date: Slutdatum
         debate_start_date: Startdatum för diskussion
         debate_end_date: Slutdatum för diskussion
+        draft_start_date: Start
+        draft_end_date: Slut
         draft_publication_date: Publiceringsdatum för utkast
         allegations_start_date: Startdatum för att kommentera utkast
         allegations_end_date: Slutdatum för att kommentera utkast
+        proposals_phase_start_date: Start
+        proposals_phase_end_date: Slut
         result_publication_date: Publiceringsdatum för resultat
+        background_color: Bakgrundsfärg
+        font_color: Teckenfärg
+        homepage_enabled: "Startsida aktiverad"
+      legislation/process/translation:
+        title: Processens titel
+        summary: Sammanfattning
+        description: Beskrivning
+        additional_info: Ytterligare information
+        homepage: "Beskrivning"
+        milestones_summary: Sammanfattning
+      legislation/proposal:
+        description: "Förslagets text"
+        summary: "Sammanfattning av förslaget"
+        title: "Förslagets titel"
+        video_url: "Länk till extern video"
       legislation/draft_version:
         title: Titel på versionen
         body: Text
         changelog: Ändringar
         status: Status
-        final_version: Slutgiltig version
+        status_draft: "Utkast"
+        status_published: "Publicerad"
+        final_version: Slutversion
+      legislation/draft_version/translation:
+        title: Titel på versionen
+        body: Text
+        changelog: Ändringar
       legislation/question:
         title: Titel
         question_options: Alternativ
+      legislation/question/translation:
+        title: Fråga
       legislation/question_option:
-        value: Kostnad
+        value: Värde
       legislation/annotation:
         text: Kommentar
       document:
         title: Titel
-        attachment: Bilaga
+        attachment: "Välj dokument"
       image:
         title: Titel
-        attachment: Bilaga
+        attachment: "Välj bild"
       poll/question/answer:
+        title: Svar
+        description: Beskrivning
+      poll/question/answer/translation:
         title: Svar
         description: Beskrivning
       poll/question/answer/video:
@@ -233,16 +458,62 @@ sv:
       newsletter:
         segment_recipient: Mottagare
         subject: Ämne
-        from: Från
-        body: E-postmeddelande
+        from: "E-postadress som visas som avsändare för nyhetsbrevet"
+        body: E-postmeddelandets innehåll
+      admin_notification:
+        segment_recipient: Mottagare
+        title: Titel
+        link: Länk
+        body: Text
+      admin_notification/translation:
+        title: Titel
+        body: Text
       widget/card:
-        label: Etikett (frivilligt fält)
+        label: Etikett (valfritt)
         title: Titel
         description: Beskrivning
         link_text: Länktext
         link_url: Länk-URL
+        columns: Antal kolumner
+      widget/card/translation:
+        label: Etikett (valfritt)
+        title: Titel
+        description: Beskrivning
+        link_text: Länktext
       widget/feed:
         limit: Antal objekt
+      dashboard/action:
+        title: Titel
+        short_description: Kort beskrivning
+        description: Beskrivning
+        link: Extern länk
+        request_to_administrators: Ta med en knapp i resursen för att begära resursen från administratörerna
+        day_offset: Aktivera förslaget efter hur många dagar efter att det skapats?
+        required_supports: Hur mycket stöd måste förslaget ha för att aktiveras?
+        order: Du kan ange den plats där åtgärden ska visas för användaren i listan över åtgärder
+        active: Aktiv
+        action_type: Typ
+        action_type_proposed_action: "Föreslagen åtgärd"
+        action_type_resource: "Resurs"
+        published_proposal: "För publicerade förslag?"
+      dashboard/administrator_task:
+        source: Källa
+        user: Genomfört av
+      link:
+        label: Titel
+        url: Länk
+      valuator:
+        description: Beskrivning
+        valuator_group_id: Bedömargrupp
+        can_comment: Kan skapa kommentarer
+        can_edit_dossier: Kan redigera rapporter
+      valuator_group:
+        name: "Gruppnamn"
+      local_census_record:
+        document_type: Dokumenttyp
+        document_number: Dokumentnummer
+        date_of_birth: Födelsedatum
+        postal_code: Postnummer
     errors:
       models:
         user:
@@ -270,14 +541,11 @@ sv:
           attributes:
             segment_recipient:
               invalid: "Mottagardelen innehåller fel"
-        map_location:
-          attributes:
-            map:
-              invalid: Geografisk position kan inte lämnas tomt. Placera en markör eller markera kryssrutan om geografisk position inte är tillämpbart
         poll/voter:
           attributes:
             document_number:
               not_in_census: "Finns inte i adressregistret"
+            user_id:
               has_voted: "Användaren har redan röstat"
         legislation/process:
           attributes:
@@ -285,8 +553,14 @@ sv:
               invalid_date_range: måste vara på eller efter startdatum
             debate_end_date:
               invalid_date_range: måste vara på eller efter startdatum för diskussionen
+            draft_end_date:
+              invalid_date_range: måste vara på eller efter startdatum för utkastet
             allegations_end_date:
               invalid_date_range: måste vara på eller efter startdatum för fasen för att kommentera utkast
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: finns inte med i listan, tillåtna värden är 1 för legitimation, 2 för pass och 3 för övrig identitetshandling.
         proposal:
           attributes:
             tag_list:
@@ -302,8 +576,8 @@ sv:
         signature:
           attributes:
             document_number:
-              not_in_census: 'Ej verifierad adress'
-              already_voted: 'Har redan röstat om förslaget'
+              not_in_census: "Ej verifierad adress"
+              already_voted: "Har redan röstat om förslaget"
         site_customization/page:
           attributes:
             slug:
@@ -316,9 +590,19 @@ sv:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'Du kan inte kommentera en kostnadsberäkning'
+              cannot_comment_valuation: "Du kan inte kommentera en kostnadsberäkning"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Redan översatt resurs
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "måste börja med samma kod som sitt delmål, följt av en punkt, och sluta med ett tal"
       messages:
+        translations_too_short: Det krävs minst en översättning
         record_invalid: "Felmeddelanden: %{errors}"
+        another_poll_active: Det pågår en annan omröstning under perioden
         restrict_dependent_destroy:
-          has_one: "Inlägget kan inte raderas eftersom det hänger ihop med inlägget %{record}"
-          has_many: "Inlägget kan inte raderas eftersom det hänger ihop med inlägget %{record}"
+          has_one: "Posten kan inte raderas eftersom en underordnad %{record} finns"
+          has_many: "Posten kan inte raderas eftersom underordnade %{record} finns"

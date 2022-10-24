@@ -1,0 +1,21 @@
+nn:
+  valuation:
+    header:
+      title: Vurdering
+    menu:
+      title: Vurdering
+    budgets:
+      index:
+        filters:
+          current: Åpen
+        table_actions: Handlinger
+    budget_investments:
+      index:
+        filters:
+          valuation_open: Åpen
+        table_title: Tittel
+        table_actions: Handlinger
+      show:
+        unfeasible: Ikke gjennomførbart
+      edit:
+        save: Lagre endringer

@@ -4,6 +4,9 @@ sv:
       verification:
         residence: "Adress"
         sms: "SMS"
+      local_census_records/import:
+        one: Importer av poster i lokalt adressregister
+        other: Importera lokala adressregister
     attributes:
       verification:
         residence:
@@ -16,7 +19,29 @@ sv:
           confirmation_code: "Bekräftelsekod"
         email:
           recipient: "E-post"
+      verification/letter:
+        email: "E-post"
+        password: "Lösenord"
+        verification_code: "Koden du fick i ett brev"
+      verification/management/document:
+        document_type: "Dokumenttyp:"
+        document_number: "Identitetshandlingens nummer"
+      verification/residence:
+        date_of_birth: "Födelsedatum"
+        document_type: "Typ av identitetshandling"
+        postal_code: "Postnummer"
+      verification/sms:
+        confirmation_code: "Fyll i koden som skickats till din mobiltelefon"
       officing/residence:
         document_type: "Identitetshandling"
         document_number: "Identitetshandlingens nummer (inklusive bokstäver)"
         year_of_birth: "Födelseår"
+      local_census_records/import:
+        file: Fil
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "Det givna filformatet är fel. Det tillåtna filformatet är: %{valid_extensions}."
+              headers: "Den givna filnamnet är fel. Filnamn måste ha följande titlar: %{required_headers}."

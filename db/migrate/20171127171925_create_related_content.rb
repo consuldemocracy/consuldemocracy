@@ -1,9 +1,9 @@
-class CreateRelatedContent < ActiveRecord::Migration
+class CreateRelatedContent < ActiveRecord::Migration[4.2]
   def change
     create_table :related_contents do |t|
-      t.references :parent_relationable, polymorphic: true, index: { name: 'index_related_contents_on_parent_relationable' }
-      t.references :child_relationable, polymorphic: true, index: { name: 'index_related_contents_on_child_relationable' }
-      t.references :related_content, index: { name: 'opposite_related_content' }
+      t.references :parent_relationable, polymorphic: true, index: { name: "index_related_contents_on_parent_relationable" }
+      t.references :child_relationable, polymorphic: true, index: { name: "index_related_contents_on_child_relationable" }
+      t.references :related_content, index: { name: "opposite_related_content" }
       t.timestamps
     end
 

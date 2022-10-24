@@ -1,5 +1,4 @@
 module CommentsHelper
-
   def comment_tree_title_text(commentable)
     if commentable.class == Legislation::Question
       t("legislation.questions.comments.comments_title")
@@ -41,7 +40,7 @@ module CommentsHelper
   end
 
   def commentable_path(comment)
-    polymorphic_hierarchy_path(comment.commentable)
+    polymorphic_path(comment.commentable)
   end
 
   def user_level_class(comment)
@@ -83,5 +82,4 @@ module CommentsHelper
       t("comments.comments_closed")
     end
   end
-
 end

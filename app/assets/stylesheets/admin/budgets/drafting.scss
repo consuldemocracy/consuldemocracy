@@ -1,0 +1,23 @@
+.admin .drafting {
+  $vertical-gap: nth($callout-margin, 3);
+  @include flex-with-gap($line-height / 2);
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: $line-height * 1.5;
+  margin-top: -$vertical-gap;
+
+  > * {
+    margin-top: $vertical-gap;
+  }
+
+  .callout {
+    flex-basis: $global-width / 3;
+    flex-grow: 1;
+    margin-bottom: 0;
+  }
+
+  .publish-link {
+    @include regular-button;
+    margin-bottom: 0;
+  }
+}

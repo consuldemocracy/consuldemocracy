@@ -1,0 +1,11 @@
+zh-TW:
+  stats:
+    title: "參與量的數據"
+    total_participants: "參與者"
+    total: "總"
+    budgets:
+      link: "統計"
+      total_unfeasible_investments: "不可行項目"
+      total: "總"
+      heading: "標題"
+      participants_every_phase: "參與者總數"

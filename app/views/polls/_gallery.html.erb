@@ -1,8 +1,8 @@
-<div class="orbit margin-bottom" role="region" aria-label="<%= answer.title %>" data-orbit data-auto-play="false">
-  <a data-toggle="answer_<%= answer.id %> zoom_<%= answer.id %>" class="zoom-link hide-for-small-only">
+<div class="orbit margin-bottom" role="region" aria-label="<%= answer.title %>" data-orbit data-auto-play="false" data-use-m-u-i="false">
+  <button type="button" data-toggle="answer_<%= answer.id %> zoom_<%= answer.id %>" class="zoom-link hide-for-small-only">
     <span id="zoom_<%= answer.id %>" class="icon-search-plus" data-toggler="icon-search-plus icon-search-minus"></span>
     <span class="show-for-sr"><%= t("polls.show.zoom_plus") %></span>
-  </a>
+  </button>
 
   <ul class="orbit-container">
     <li>
@@ -18,8 +18,8 @@
 
     <% answer.images.reverse.each_with_index do |image, index| %>
       <li class="orbit-slide <%= is_active_class(index) %>">
-        <%= link_to image.attachment.url(:original), target: "_blank" do %>
-          <%= image_tag image.attachment.url(:original),
+        <%= link_to image.attachment, target: "_blank" do %>
+          <%= image_tag image.attachment,
                         class: "orbit-image",
                         alt: image.title.unicode_normalize %>
         <% end %>

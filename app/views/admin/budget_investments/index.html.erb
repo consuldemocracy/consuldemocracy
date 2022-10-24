@@ -1,4 +1,4 @@
-<% if @budget.has_winning_investments? %>
+<% if can?(:read_results, @budget) %>
   <div class="float-right">
     <%= link_to t("admin.budget_investments.index.see_results"),
                 budget_results_path(@budget, heading_id: @budget.headings.first),

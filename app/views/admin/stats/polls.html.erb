@@ -1,6 +1,6 @@
 <%= back_link_to %>
 
-<h2 id="top"><%= t("admin.stats.polls.title")%></h2>
+<h2 id="top"><%= t("admin.stats.polls.title") %></h2>
 
 <div class="stats">
   <div class="row stats-numbers">
@@ -25,7 +25,7 @@
 </div>
 
 <h2><%= t("admin.stats.polls.all") %></h2>
-<table id="polls" class="stack sortable">
+<table id="polls" class="stack table-sortable">
   <thead>
     <tr>
       <th><%= t("admin.stats.polls.table.poll_name") %></th>
@@ -52,7 +52,7 @@
   <h3 id="<%= dom_id(poll) %>_questions">
     <%= t("admin.stats.polls.poll_questions", poll: poll.name) %>
   </h3>
-  <table class="stack sortable">
+  <table class="stack table-sortable">
     <thead>
       <tr>
         <th><%= t("admin.stats.polls.table.question_name") %></th>
@@ -76,7 +76,7 @@
         <th></th>
         <th class="name text-right">
           <strong>
-            <%= t("admin.stats.polls.table.origin_total") %>: 
+            <%= t("admin.stats.polls.table.origin_total") %>:
             <%= ::Poll::Answer.where(question: poll.questions)
                               .select(:author_id).distinct.count %>
           </strong>

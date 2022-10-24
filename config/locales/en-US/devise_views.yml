@@ -1,1 +1,9 @@
 en-US:
+  devise_views:
+    unlocks:
+      new:
+        email_label: Email
+    users:
+      registrations:
+        edit:
+          email_label: Email

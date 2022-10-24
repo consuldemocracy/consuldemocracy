@@ -1,8 +1,8 @@
 <h2><%= t("devise_views.organizations.registrations.success.title") %></h2>
-<p><%= t("devise_views.organizations.registrations.success.thank_you_html") %></p>
-<p><%= t("devise_views.organizations.registrations.success.instructions_1_html") %></p>
-<p><%= t("devise_views.organizations.registrations.success.instructions_2_html") %></p>
-<p><%= t("devise_views.organizations.registrations.success.instructions_3_html") %></p>
+<p><%= sanitize(t("devise_views.organizations.registrations.success.thank_you")) %></p>
+<p><%= sanitize(t("devise_views.organizations.registrations.success.instructions_1")) %></p>
+<p><%= sanitize(t("devise_views.organizations.registrations.success.instructions_2")) %></p>
+<p><%= t("devise_views.organizations.registrations.success.instructions_3") %></p>
 <p>
   <%= link_to t("devise_views.organizations.registrations.success.back_to_index"),
       root_path, class: "button margin-top expanded" %>

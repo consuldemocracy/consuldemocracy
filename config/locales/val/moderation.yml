@@ -3,40 +3,36 @@ val:
     comments:
       index:
         block_authors: Bloquejar autors
-        confirm: Estàs segur?
         filter: Filtre
         filters:
-          all: Tots
+          all: Totes
           pending_flag_review: Pendents
           with_ignored_flag: Marcats com revisats
         headers:
           comment: Comentari
           moderate: Moderar
-        hide_comments: Ocultar comentaris
+        hide: Ocultar comentaris
         ignore_flags: Marcar com revisats
-        order: Ordre
         orders:
           flags: Més denunciats
           newest: Més nous
         title: Comentaris
     dashboard:
       index:
-        title: Moderar
+        title: Moderació
     debates:
       index:
         block_authors: Bloquejar autors
-        confirm: Estàs segur?
-        filter: Filtrar
+        filter: Filtre
         filters:
-          all: Tots
+          all: Totes
           pending_flag_review: Pendents
           with_ignored_flag: Marcats com revisats
         headers:
           debate: Debat
           moderate: Moderar
-        hide_debates: Ocultar debats
+        hide: Ocultar debats
         ignore_flags: Marcar com revisats
-        order: Ordre
         orders:
           created_at: Més nous
           flags: Més denunciats
@@ -46,33 +42,30 @@ val:
     menu:
       flagged_comments: Comentaris
       flagged_debates: Debats
-      flagged_investments: Propostes
+      flagged_investments: Projectes de pressupostos participatius
       proposals: Propostes
       proposal_notifications: Notificacions de propostes
       users: Bloquejar usuaris
     proposals:
       index:
         block_authors: Bloquejar autors
-        confirm: Estàs segur?
         filter: Filtre
         filters:
           all: Totes
           pending_flag_review: Pendents de revisió
-          with_ignored_flag: Marcades com revisades
+          with_ignored_flag: Marcar com revisats
         headers:
           moderate: Moderar
           proposal: Proposta
-        hide_proposals: Ocultar Propostes
-        ignore_flags: Marcar com revisades
-        order: Ordenar per
+        hide: Ocultar propostes
+        ignore_flags: Marcar com revisats
         orders:
-          created_at: Más recents
-          flags: Més denunciades
+          created_at: Més recents
+          flags: Més denunciats
         title: Propostes
     budget_investments:
       index:
         block_authors: Bloquejar autors
-        confirm: Estas segur?
         filter: Filtre
         filters:
           all: Totes
@@ -81,37 +74,32 @@ val:
         headers:
           moderate: Moderar
           budget_investment: Pressupost participatiu
-        hide_budget_investments: Ocultar propostes d'inversió
-        ignore_flags: Marcar com revisades
-        order: Ordenar per
+        hide: Ocultar propostes d'inversió
+        ignore_flags: Marcar com revisats
         orders:
-          created_at: Més recents
-          flags: Més denunciades
-        title: Pressupostos participatius
+          created_at: Más recents
+          flags: Més denunciats
+        title: Projectes de pressupostos participatius
     proposal_notifications:
       index:
         block_authors: Bloquejar autors
-        confirm: Estàs segur?
-        filter: Filtrar
+        filter: Filtre
         filters:
           all: Totes
           pending_review: Pendents de revisió
-          ignored: Marcar com a vistes
+          ignored: Marcar com revisats
         headers:
           moderate: Moderar
-          proposal_notification: Notificacio de proposta
-        hide_proposal_notifications: Ocultar propostes
-        ignore_flags: Marcar com a vistes
-        order: Ordenar per
+          proposal_notification: Notificació de proposta
+        hide: Ocultar propostes
+        ignore_flags: Marcar com revisats
         orders:
-          created_at: Més recents
+          created_at: Más recents
           moderated: Moderades
         title: Notificacions de propostes
     users:
       index:
-        hidden: Bloquejat
         hide: Bloquejar
-        search: Cercar
         search_placeholder: email o nom d'usuari
         title: Bloquejar usuaris
       notice_hide: Usuari bloquejat. S'han ocultat tots els seus debats i comentaris.

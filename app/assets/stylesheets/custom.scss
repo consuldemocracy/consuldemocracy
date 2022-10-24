@@ -1,7 +1,4 @@
-// Overrides and adds customized styles in this file
-// Read more on documentation:
-// * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
-// * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
+// Override and add customized styles in this file.
 //
 
 @font-face {
@@ -743,3 +740,5 @@ li.float_right {
     margin-bottom: 0.3rem;
   }
 }
+// You can also create SCSS files in the app/assets/stylesheets/custom/
+// folder and they will be loaded automatically.

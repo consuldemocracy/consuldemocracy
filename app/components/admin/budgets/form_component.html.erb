@@ -1,0 +1,93 @@
+<%= translatable_form_for [namespace, budget], html: { class: "budgets-form" } do |f| %>
+  <%= render Admin::BudgetsWizard::ModeFieldComponent.new %>
+
+  <fieldset>
+    <legend><%= t("admin.budgets.edit.info.budget_settings") %></legend>
+    <%= render "shared/globalize_locales", resource: budget %>
+    <%= render "shared/errors", resource: budget %>
+
+    <%= f.translatable_fields do |translations_form| %>
+      <div class="row expanded">
+        <div class="small-12 medium-9 large-6 column end">
+          <%= translations_form.text_field :name,
+                                            maxlength: Budget.title_max_length,
+                                            hint: t("admin.budgets.edit.name_description") %>
+        </div>
+      </div>
+      <div class="row expanded">
+        <div class="small-12 medium-9 large-6 column end">
+          <p class="form-label"><%= t("admin.budgets.edit.main_call_to_action") %></p>
+          <p class="help-text"> <%= t("admin.budgets.edit.main_call_to_action_description") %></p>
+          <%= translations_form.text_field :main_link_text %>
+        </div>
+      </div>
+
+      <div class="row expanded">
+        <div class="small-12 medium-9 large-6 column end">
+          <%= translations_form.text_field :main_link_url, hint: t("admin.shared.example_url") %>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="row expanded">
+      <div class="small-12 medium-4 column">
+        <%= f.select :voting_style, voting_styles_select_options %>
+      </div>
+
+      <div class="small-12 medium-2 column end">
+        <%= f.select :currency_symbol, currency_symbol_select_options %>
+      </div>
+    </div>
+
+    <div id="hide_money" class="row expanded <%= hide_money_style %>">
+      <div class="small-12 column">
+        <p class="form-label"><%= t("admin.budgets.edit.hide_money") %></p>
+        <p class="help-text"><%= t("admin.budgets.edit.hide_money_help_text") %></p>
+        <%= f.check_box :hide_money %>
+      </div>
+    </div>
+
+    <% unless wizard? %>
+      <div class="small-12 medium-6 column">
+        <%= f.select :phase, phases_select_options %>
+      </div>
+    <% end %>
+
+    <% if feature?(:allow_images) %>
+      <div class="images small-12 column">
+        <%= render "/images/nested_image", f: f %>
+        <p class="help-text"><%= t("admin.budgets.edit.image_description") %></p>
+      </div>
+    <% end %>
+  </fieldset>
+
+  <fieldset>
+    <legend><%= t("admin.budgets.edit.info.staff_settings") %></legend>
+
+    <% %w[administrators valuators].each do |staff| %>
+      <div class="small-12 medium-6 large-3 column end">
+        <%= link_to t("admin.budgets.edit.#{staff}", count: budget.send(staff).count),
+          "#",
+          class: "button expanded hollow js-budget-show-#{staff}-list js-budget-show-users-list",
+          data: { toggle: "#{staff}_list", texts: t("admin.budgets.edit.#{staff}") } %>
+      </div>
+    <% end %>
+
+    <%= render "/admin/budgets/association", assignable_type: "administrators", assignables: admins, form: f %>
+    <%= render "/admin/budgets/association", assignable_type: "valuators", assignables: valuators, form: f %>
+  </fieldset>
+
+  <% unless wizard? %>
+    <%= render "admin/shared/show_results_fields", form: f %>
+  <% end %>
+
+  <div class="small-12 column">
+    <div class="clear small-12 medium-4 large-3 inline-block">
+      <% if wizard? %>
+        <%= f.submit t("admin.budgets_wizard.budgets.continue"), class: "button success expanded" %>
+      <% else %>
+        <%= f.submit nil, class: "button success" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

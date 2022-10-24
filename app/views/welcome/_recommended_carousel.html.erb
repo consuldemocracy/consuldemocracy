@@ -6,7 +6,7 @@
     <div class="orbit" role="region" data-orbit data-use-m-u-i="false" data-timer-delay="4000">
       <div class="orbit-wrapper">
 
-        <ul class="orbit-container no-bullet" tabindex="0" >
+        <ul class="orbit-container no-bullet" tabindex="0">
           <% recommendeds.each_with_index do |recommended, index| %>
 
             <li class="orbit-slide <%= is_active_class(index) %>" data-slide="<%= index %>" style="position: relative; <%= slide_display(index) %>" aria-live="polite">
@@ -16,7 +16,7 @@
                   <%= link_to recommended_path(recommended) do %>
                     <h4 class="truncate-horizontal-text"><%= recommended.title %></h4>
                   <% end %>
-                  <%= recommended.description %>
+                  <%= wysiwyg(recommended.description) %>
                 </div>
               </div>
             </li>

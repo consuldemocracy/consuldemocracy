@@ -1,0 +1,7 @@
+.machine-learning-comments-summary {
+  border-bottom: 1px solid $medium-gray;
+
+  + * {
+    margin-top: $line-height * 1.5;
+  }
+}

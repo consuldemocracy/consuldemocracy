@@ -1,7 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Follow do
-
   let(:follow) { build(:follow, :followed_proposal) }
 
   it "is valid" do
@@ -23,6 +22,17 @@ describe Follow do
     expect(follow).not_to be_valid
   end
 
+  it "is not valid with an invalid followable_type" do
+    follow.followable_type = "NotARealModel"
+
+    expect { follow.valid? }.to raise_exception "uninitialized constant NotARealModel"
+  end
+
+  it "is not valid with the ID of a non-existent record" do
+    follow.followable_id = Proposal.last.id + 1
+
+    expect(follow).not_to be_valid
+  end
 end
 
 # == Schema Information

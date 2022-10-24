@@ -1,8 +1,8 @@
 FactoryBot.define do
-  factory :ahoy_event, class: Ahoy::Event do
+  factory :ahoy_event, class: "Ahoy::Event" do
     id { SecureRandom.uuid }
     time { DateTime.current }
-    sequence(:name) {|n| "Event #{n} type"}
+    sequence(:name) { |n| "Event #{n} type" }
   end
 
   factory :visit  do
@@ -12,6 +12,6 @@ FactoryBot.define do
 
   factory :campaign do
     sequence(:name) { |n| "Campaign #{n}" }
-    sequence(:track_id) { |n| n.to_s }
+    sequence(:track_id, &:to_s)
   end
 end

@@ -1,1 +1,164 @@
 ar:
+  legislation:
+    annotations:
+      comments:
+        see_all: اظهار الكل
+        see_complete: رؤية الكلّ
+        comments_count:
+          zero: "%{count} تعليقات"
+          one: "تعليق %{count}"
+          two: "%{count} تعليقات"
+          few: "%{count} تعليقات"
+          many: "%{count} تعليقات"
+          other: "%{count} تعليقات"
+        replies_count:
+          zero: "%{count} ردود"
+          one: "ردّ %{count}"
+          two: "%{count} ردود"
+          few: "%{count} ردود"
+          many: "%{count} ردود"
+          other: "%{count} ردود"
+        cancel: إلغاء
+        publish_comment: نشر التعليق
+      form:
+        phase_not_open: هذه المرحلة ليست مفتوحة
+      index:
+        title: تعليقات
+        comments_about: تعليقات حول
+        see_in_context: رؤيتها في السياق
+        comments_count:
+          zero: "%{count} تعليقات"
+          one: "%{count} تعليقات"
+          two: "%{count} تعليقات"
+          few: "%{count} تعليقات"
+          many: "%{count} تعليقات"
+          other: "%{count} تعليقات"
+      show:
+        title: التعليق
+      version_chooser:
+        seeing_version: تعليقات على الإصدار
+        see_text: رؤية مسودة النص
+    draft_versions:
+      changes:
+        title: تغييرات
+        seeing_changelog_version: ملخص مراجعة التغييرات
+        see_text: رؤية مسودة النص
+      show:
+        loading_comments: جاري تحميل التعليقات
+        seeing_version: أنت تشاهد إصدار المسودة
+        select_draft_version: حدّد المسودة
+        select_version_submit: رؤية
+        updated_at: تم التحديث في %{date}
+        see_changes: رؤية ملخص التغييرات
+        see_comments: مشاهدة كلّ التعليقات
+        text_toc: جدول المحتويات
+        text_body: نص
+        text_comments: تعليقات
+    processes:
+      header:
+        additional_info: معلومات اضافية
+        description: الوصف
+        more_info: مزيد من المعلومات والسياق
+      proposals:
+        empty_proposals: لا توجد مقترحات
+        filters:
+          random: عشوائي
+          winners: محدّد
+      debate:
+        empty_questions: لا توجد أي أسئلة
+      index:
+        filter: ترشيح
+        filters:
+          open: إجراءات مفتوحة
+          past: السابق
+        no_open_processes: لا توجد إجراءات مفتوحة
+        no_past_processes: لا توجد إجراءات سابقة
+        section_header:
+          icon_alt: أيقونة التشريع التشاركي
+          title: العمليات التشريعية
+          help: مساعدة حول التشريع التشاركي
+        section_footer:
+          title: مساعدة حول التشريع التشاركي
+          description: شارك في المناقشات وإجراءات ما قبل الموافقة على الوائح القانونية أو الاستراتيجيات الجديدة. سيتم أخذ رأيك في الإعتبار.
+      phase_not_open:
+        not_open: هذه المرحلة ليست مفتوحة بعد
+      phase_empty:
+        empty: لم ينشر شيء بعد
+      process:
+        see_latest_comments: مشاهدة أخر التعليقات
+        see_latest_comments_title: التعليق على الإجرائية
+      shared:
+        key_dates: مراحل المشاركة
+        homepage: الصفحة الرئيسية
+        debate_dates: الحوارات
+        draft_publication_date: نشر المسودة
+        allegations_dates: تعليقات
+        result_publication_date: نشر النتيجة النهائية
+        milestones_date: التالية
+        proposals_dates: إقتراحات
+    questions:
+      comments:
+        comment_button: نشر الاجابة
+        comments_title: الإجابات المفتوحة
+        comments_closed: مرحلة مغلقة
+        form:
+          leave_comment: اترك إجابتك
+      question:
+        comments:
+          zero: لا توجد تعليقات
+          one: "تعليق %{count}"
+          two: "%{count} تعليقات"
+          few: "%{count} تعليقات"
+          many: "%{count} تعليقات"
+          other: "%{count} تعليقات"
+        debate: الحوارات
+      show:
+        answer_question: سلم الاجابة
+        next_question: السّؤال التّالي
+        first_question: السّؤال الأوّل
+        share: مشاركة
+        title: عملية تشريع تشاركية
+      participation:
+        phase_not_open: هذه المرحلة ليست مفتوحة
+        organizations: لا يُسمح للمنظمات بالمشاركة في النقاش
+        unauthenticated: تحتاج الى %{signin} او %{signup} للمتابعة.
+        verified_only: يمكن للمستخدمين الذين تم التحقق منهم فقط المشاركة %{verify_account}.
+        debate_phase_not_open: انتهت مرحلة النقاش ولم تعد الإجابات مقبولة
+    shared:
+      share: مشاركة
+      share_comment: التعليق على %{version_name} من مسودة العملية %{process_name}
+    proposals:
+      form:
+        tags_label: "فئات"
+      not_verified: "لمقترحات التصويت %{verify_account}."
+      process_title: عملية تشريع تشاركية
+    summary:
+      title: "ملخص"
+      votes:
+        zero: "%{count} أصوات"
+      debate_phase: "مرحلة النقاش"
+      proposals_phase: "مرحلة الاقتراحات"
+      allegations_phase: "مرحلة التعليقات"
+      debates:
+        zero: "لا توجد مناقشات"
+        one: "مناقشة %{count}"
+        two: "مناقشتان %{count}"
+        few: "مناقشتان %{count}"
+        many: "مناقشتان %{count}"
+        other: "مناقشتان %{count}"
+      proposals:
+        zero: "لا توجد مقترحات"
+        one: "مقترح %{count}"
+        two: "%{count} مقترحات"
+        few: "%{count} مقترحات"
+        many: "%{count} مقترحات"
+        other: "%{count} مقترحات"
+      comments:
+        zero: "لا توجد تعليقات"
+        one: "تعليق %{count}"
+        two: "%{count} تعليقات"
+        few: "%{count} تعليقات"
+        many: "%{count} تعليقات"
+        other: "%{count} تعليقات"
+      top_comments:
+        zero: "لا توجد تعليقات"

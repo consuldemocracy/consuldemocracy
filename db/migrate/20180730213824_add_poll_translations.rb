@@ -1,18 +1,16 @@
-class AddPollTranslations < ActiveRecord::Migration
+class AddPollTranslations < ActiveRecord::Migration[4.2]
+  def change
+    create_table :poll_translations do |t|
+      t.integer :poll_id, null: false
+      t.string :locale, null: false
+      t.timestamps null: false
 
-  def self.up
-    Poll.create_translation_table!(
-      {
-        name:        :string,
-        summary:     :text,
-        description: :text
-      },
-      { migrate_data: true }
-    )
+      t.string :name
+      t.text :summary
+      t.text :description
+
+      t.index :locale
+      t.index :poll_id
+    end
   end
-
-  def self.down
-    Poll.drop_translation_table!
-  end
-
 end

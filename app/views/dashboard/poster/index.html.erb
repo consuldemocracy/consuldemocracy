@@ -1,0 +1,40 @@
+<% content_for :action_title, t("dashboard.poster.index.title") %>
+<div class="row expanded">
+  <div class="small-12 medium-9 column dashboard-poster-preview">
+    <div class="preview-width show-for-large">
+      <div class="poster-header">
+        <h1>
+          <%= t("dashboard.poster.index.poster_title") %>
+          <br>
+          <%= image_tag("finger.png") %>
+          <%= t("dashboard.poster.index.poster_subtitle") %>
+        </h1>
+        <p class="intro">
+          <%= sanitize(t("dashboard.poster.index.intro_text", org: Setting["org_name"])) %>
+        </p>
+
+        <p class="text-center">
+          <strong><%= t("dashboard.poster.index.proposal_code", code: proposal.code) %></strong>
+        </p>
+        <div class="proposal-image">
+          <% if proposal.image.present? %>
+            <div class="overflow-image" style="background-image: url(<%= polymorphic_path(proposal.image.variant(:large)) %>);"></div>
+          <% else %>
+            <div class="overflow-image" style="background-image: url(<%= asset_url "default_mailing.jpg" %>);"></div>
+          <% end %>
+        </div>
+        <div class="poster-content">
+          <h2><%= t("dashboard.poster.index.support") %></h2>
+            <%= image_tag "quote_before_blue.png" %>
+            <h3><%= proposal.title %></h3>
+            <%= image_tag "quote_after_blue.png" %>
+          <p class="poster-footer">
+            <%= sanitize(t("dashboard.poster.index.footer", link: proposal_url(proposal))) %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= render "poster_options" %>
+</div>

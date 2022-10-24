@@ -2,7 +2,7 @@ id:
   legislation:
     annotations:
       comments:
-        see_all: Lihat semua
+        see_all: Lihat semuanya
         see_complete: Lihat lengkap
         comments_count:
           other: "%{count} komentar"
@@ -12,9 +12,6 @@ id:
         publish_comment: Mempublikasikan Komentar
       form:
         phase_not_open: Fase ini tidak terbuka
-        login_to_comment: Anda harus %{signin} atau %{signup} untuk meninggalkan sebuah komentar.
-        signin: Masuk
-        signup: Daftar
       index:
         title: Komentar
         comments_about: Komentar tentang
@@ -43,18 +40,21 @@ id:
         text_body: Teks
         text_comments: Komentar
     processes:
+      header:
+        description: Deskripsi
+        more_info: Informasi lebih lanjut dan konteks
       proposals:
         empty_proposals: Tidak ada proposal
+        filters:
+          winners: Dipilih
       debate:
         empty_questions: Tidak ada pertanyaan
-        participate: Berpartisipasi dalam perdebatan
       index:
+        filter: Penyaring
         filters:
           open: Proses yang terbuka
-          next: Selanjutnya
-          past: Sebelumnya
+          past: Yang lalu
         no_open_processes: Tidak ada proses yang terbuka
-        no_next_processes: Tidak ada proses yang direncanakan
         no_past_processes: Tidak ada masa lalu proses
         section_header:
           icon_alt: Undang-undang proses ikon
@@ -71,9 +71,12 @@ id:
         see_latest_comments_title: Komentar pada proses ini
       shared:
         key_dates: Tanggal kunci
+        homepage: Halaman depan
         debate_dates: Perdebatan
         draft_publication_date: Konsep publikasi
+        allegations_dates: Komentar
         result_publication_date: Hasil akhir publikasi
+        milestones_date: Berikut
         proposals_dates: Proposal
     questions:
       comments:
@@ -86,7 +89,7 @@ id:
         comments:
           zero: Tidak ada komentar
           other: "%{count} komentar"
-        debate: Debat
+        debate: Perdebatan
       show:
         answer_question: Kirim jawaban
         next_question: Pertanyaan selanjutnya
@@ -96,11 +99,8 @@ id:
       participation:
         phase_not_open: Fase ini tidak terbuka
         organizations: Organisasi tidak diizinkan untuk berpartisipasi dalam perdebatan
-        signin: Masuk
-        signup: Daftar
         unauthenticated: Anda harus %{signin} atau %{signup} untuk berpartisipasi.
         verified_only: Hanya pengguna terverifikasi dapat berpartisipasi, %{verify_account}.
-        verify_account: memverifikasi akun anda
         debate_phase_not_open: Debat tahap telah selesai dan jawaban tidak diterima lagi
     shared:
       share: Berbagi
@@ -109,3 +109,16 @@ id:
       form:
         tags_label: "Kategori"
       not_verified: "Untuk memilih proposal %{verify_account}."
+      process_title: Kolaboratif dalam proses legislasi
+    summary:
+      title: "Ringkasan"
+      votes:
+        zero: "1 bulan\n\n%{count} bulan"
+        other: "1 bulan\n\n%{count} bulan"
+      debate_phase: "Masa perdebatan"
+      proposals_phase: "Masa proposal"
+      comments:
+        zero: "Tidak ada komentar"
+        other: "%{count} komentar"
+      top_comments:
+        zero: "Tidak ada komentar"

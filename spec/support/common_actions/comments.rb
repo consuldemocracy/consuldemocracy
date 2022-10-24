@@ -6,21 +6,17 @@ module Comments
     CommentNotifier.new(comment: comment).process
   end
 
-  def reply_to(original_user, manuela = nil)
-    manuela ||= create(:user)
+  def reply_to(comment, replier: create(:user))
+    login_as(replier)
 
-    debate  = create(:debate)
-    comment = create(:comment, commentable: debate, user: original_user)
-
-    login_as(manuela)
-    visit debate_path(debate)
+    visit polymorphic_path(comment.commentable)
 
     click_link "Reply"
     within "#js-comment-form-comment_#{comment.id}" do
-      fill_in "comment-body-comment_#{comment.id}", with: 'It will be done next week.'
-      click_button 'Publish reply'
+      fill_in "Leave your comment", with: "It will be done next week."
+      click_button "Publish reply"
     end
-    expect(page).to have_content 'It will be done next week.'
+    expect(page).to have_content "It will be done next week."
   end
 
   def avatar(name)

@@ -1,4 +1,13 @@
-<% provide :title do %><%= @poll.name %><% end %>
+<%= provide :title, t("social_share.polls_show.title_#{@poll.id}", default: @poll.title) %>
+<%= provide :meta_description, t("social_share.polls_show.description_#{@poll.id}", default: @poll.title) %>
+<%= provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: poll_url,
+              social_title: t("social_share.polls_show.title_#{@poll.id}", default: @poll.title),
+              social_description: t("social_share.polls_show.facebook_#{@poll.id}", default: @poll.title),
+              twitter_image_url:  "social_media_polls_twitter.jpg",
+              og_image_url: "social_media_polls.jpg" %>
+<% end %>
 
 <div class="polls-show">
   <%= render "poll_header" %>
@@ -22,15 +31,7 @@
         <% end %>
       <% end %>
 
-      <% @questions.each do |question| %>
-        <%= render 'polls/questions/question', question: question, token: @token %>
-      <% end %>
-
-      <% if poll_voter_token(@poll, current_user).empty? %>
-        <div class="callout token-message js-token-message" style="display: none">
-          <%= t('poll_questions.show.voted_token') %>
-        </div>
-      <% end %>
+      <%= render Polls::Questions::QuestionComponent.with_collection(@questions) %>
     </div>
   </div>
 
@@ -38,88 +39,15 @@
     <div class="row margin">
       <div class="small-12 medium-9 column">
         <h3><%= t("polls.show.more_info_title") %></h3>
-        <%= safe_html_with_links simple_format(@poll.description) %>
+        <%= auto_link_already_sanitized_html simple_format(@poll.description) %>
       </div>
-
-      <% if false %>
-        <aside class="small-12 medium-3 column">
-          <div class="sidebar-divider"></div>
-          <h2><%= t("polls.show.documents") %></h2>
-        </aside>
-      <% end %>
     </div>
   </div>
 
-  <div class="expanded poll-more-info-answers">
+  <div id="poll_more_info_answers" class="expanded poll-more-info-answers">
     <div class="row padding">
-
-      <% @poll_questions_answers.each do |answer| %>
-        <div class="small-12 medium-6 column end answer <%= cycle('first', '') %>" id="answer_<%= answer.id %>">
-
-          <% if answer.description.present? %>
-            <h3><%= answer.title %></h3>
-          <% end %>
-
-          <% if answer.images.any? %>
-            <%= render "gallery", answer: answer %>
-          <% end %>
-
-          <% if answer.description.present? %>
-            <div class="margin-top">
-              <div id="answer_description_<%= answer.id %>" class="answer-description short" data-toggler="short">
-                <%= safe_html_with_links simple_format(answer.description) %>
-              </div>
-              <div class="margin">
-                <a id="read_more_<%= answer.id %>"
-                   data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
-                   data-toggler="hide">
-                  <%= t("polls.show.read_more", answer: answer.title) %>
-                </a>
-                <a id="read_less_<%= answer.id %>"
-                   data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
-                   data-toggler="hide"
-                   class="hide">
-                  <%= t("polls.show.read_less", answer: answer.title) %>
-                </a>
-              </div>
-            </div>
-          <% end %>
-
-          <% if answer.documents.present? %>
-            <div class="document-link">
-              <p>
-                <span class="icon-document"></span>&nbsp;
-                <strong><%= t("polls.show.documents") %></strong>
-              </p>
-
-              <% answer.documents.each do |document| %>
-                  <%= link_to document.title,
-                              document.attachment.url,
-                              target: "_blank",
-                              rel: "nofollow" %><br>
-              <% end %>
-            </div>
-          <% end %>
-
-          <% if answer.videos.present? %>
-            <div class="video-link">
-              <p>
-                <span class="icon-video"></span>&nbsp;
-                <strong><%= t("polls.show.videos") %></strong>
-              </p>
-
-              <% answer.videos.each do |video| %>
-                  <%= link_to video.title,
-                              video.url,
-                              target: "_blank",
-                              rel: "nofollow" %><br>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
+      <%= render Polls::Questions::ReadMoreComponent.with_collection(@questions) %>
     </div>
-
   </div>
 
   <div class="tabs-content" data-tabs-content="polls_tabs">

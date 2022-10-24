@@ -1,4 +1,6 @@
 en-US:
+  attributes:
+    email: Email
   activerecord:
     models:
       comment:
@@ -16,3 +18,22 @@ en-US:
       administrator:
         one: "Administrator(in),Verwaltungsleiter(in)"
         other: "Administrator(in),Verwaltungsleiter(in)"
+    attributes:
+      budget/investment:
+        administrator_id: "Administrator(in),Verwaltungsleiter(in)"
+      comment:
+        body: "Kommentar"
+        user: "Benutzer"
+      user:
+        email: "Email"
+      banner:
+        target_url: "Link"
+      legislation/annotation:
+        text: Kommentar
+      admin_notification:
+        link: Link
+      link:
+        url: Link
+      local_census_record:
+        document_type: Document type
+        date_of_birth: Date of birth

@@ -1,0 +1,10 @@
+eu:
+  stats:
+    total_participants: "Partehartzaileak"
+    total: "Guztira"
+    budgets:
+      link: "Estatistikak"
+      total_unfeasible_investments: "Proiektu bideragarriezinak ikusi"
+      total: "Guztira"
+      heading: "Aurrekontu saila"
+      participants_every_phase: "Partehartzaileak guztira"

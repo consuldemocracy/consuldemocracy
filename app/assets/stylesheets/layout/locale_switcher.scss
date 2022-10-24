@@ -1,0 +1,75 @@
+.locale {
+  margin-bottom: $line-height / 4;
+  margin-top: $line-height / 4;
+  position: relative;
+
+  .locale-form {
+    @include has-fa-icon(angle-down, solid, after);
+    display: inline-block;
+    position: relative;
+
+    &::after {
+      color: $light-gray;
+      font-size: $small-font-size;
+      margin-right: 0;
+      pointer-events: none;
+      position: absolute;
+      right: 2px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    label {
+      color: #fff;
+      font-size: $tiny-font-size;
+      font-weight: normal;
+    }
+
+    select {
+      background: #001d33;
+      border: 0;
+      border-radius: rem-calc(4);
+      color: #fff;
+      font-size: $small-font-size;
+      height: $line-height;
+      margin-bottom: 0;
+      outline: none;
+      padding-left: $line-height / 4;
+      padding-right: calc(#{$line-height / 4} + 1em);
+      width: auto;
+
+      &:focus {
+        border: 0;
+        outline: $outline-focus;
+      }
+
+      option {
+        background: $body-background;
+        color: $text;
+        border: 0;
+        outline: none;
+      }
+    }
+  }
+
+  p {
+    @include element-invisible;
+  }
+
+  ul {
+    @include flex-with-gap(0.75em);
+    flex-wrap: wrap;
+
+    li::after {
+      content: none;
+    }
+
+    a {
+      margin-left: 0;
+    }
+
+    [aria-current] {
+      font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+sl:
+  stats:
+    title: "Podatki o sodelovanju"
+    total: "Skupaj"
+    budgets:
+      link: "Statistike"
+      total_unfeasible_investments: "Neizvedljivi projekti"
+      total: "Skupaj"
+      heading: "Glava"
+      participants_every_phase: "Vsi udeleženci"

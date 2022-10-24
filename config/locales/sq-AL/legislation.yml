@@ -14,11 +14,8 @@ sq:
         publish_comment: Publiko komentin
       form:
         phase_not_open: Kjo fazë nuk është e hapur
-        login_to_comment: Ju duhet %{signin} ose %{signup} për të lënë koment.
-        signin: Kycu
-        signup: Rregjistrohu
       index:
-        title: Komente
+        title: Komentet
         comments_about: "\nKomentet rreth"
         see_in_context: Shiko në kontekst
         comments_count:
@@ -44,7 +41,7 @@ sq:
         see_comments: Shiko të gjitha komentet
         text_toc: "\nTabela e përmbajtjes"
         text_body: Tekst
-        text_comments: Komente
+        text_comments: Komentet
     processes:
       header:
         additional_info: "\nInformacion shtese"
@@ -57,19 +54,16 @@ sq:
           winners: I zgjedhur
       debate:
         empty_questions: Nuk ka pyetje.
-        participate: Merrni pjesë në debat
       index:
         filter: Filtër
         filters:
           open: "\nProceset e hapura"
-          next: Tjetra
           past: E kaluara
         no_open_processes: Nuk ka procese të hapura
-        no_next_processes: Nuk ka procese të planifikuar
         no_past_processes: Nuk ka procese të kaluara
         section_header:
           icon_alt: Ikona e proceseve të legjilacionit
-          title: "\nProceset e legjislacionit"
+          title: Legjislacion
           help: Ndihmoni në lidhje me proceset legjislative
         section_footer:
           title: Ndihmoni në lidhje me proceset legjislative
@@ -83,10 +77,12 @@ sq:
         see_latest_comments_title: Komentoni në këtë proces
       shared:
         key_dates: Datat kryesore
+        homepage: Kryefaqja
         debate_dates: Debate
         draft_publication_date: Publikimi draft
-        allegations_dates: Komente
+        allegations_dates: Komentet
         result_publication_date: "\nPublikimi i rezultatit përfundimtar"
+        milestones_date: Duke ndjekur
         proposals_dates: Propozime
     questions:
       comments:
@@ -110,11 +106,8 @@ sq:
       participation:
         phase_not_open: Kjo fazë nuk është e hapur
         organizations: Organizatat nuk lejohen të marrin pjesë në debat
-        signin: Kycu
-        signup: Rregjistrohu
         unauthenticated: Ju duhet %{signin} ose %{signup} për të marë pjesë .
         verified_only: Vetëm përdoruesit e verifikuar mund të marin pjesë; %{verify_account}.
-        verify_account: verifikoni llogarinë tuaj
         debate_phase_not_open: "\nFaza e debatit ka përfunduar dhe përgjigjet nuk pranohen më"
     shared:
       share: Shpërndaj
@@ -123,3 +116,17 @@ sq:
       form:
         tags_label: "Kategoritë"
       not_verified: "Për propozimet e votimit %{verify_account}"
+      process_title: Procesi i Legjislacionit bashkëpunues
+    summary:
+      title: "Përmbledhje"
+      votes:
+        zero: "%{count} Vota"
+      debate_phase: "Faza e debatit"
+      proposals_phase: "Faza e propozimit"
+      allegations_phase: "Faza e komenteve"
+      comments:
+        zero: "Nuk ka komente"
+        one: "%{count} komente"
+        other: "%{count} komente"
+      top_comments:
+        zero: "Nuk ka komente"

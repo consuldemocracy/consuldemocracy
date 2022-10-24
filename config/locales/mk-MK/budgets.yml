@@ -1,0 +1,36 @@
+mk:
+  budgets:
+    index:
+      title: Партиципативни буџети
+      section_header:
+        title: Партиципативни буџети
+      see_results: Види резултати
+    investments:
+      form:
+        tag_category_label: "Категории"
+        tags_instructions: "Категоризирај го овој предлог. Можеш да одбереш од предложените категории или да додатеш твои"
+        tags_label: Тагови
+      index:
+        filters:
+          selected: "Селектирано"
+          unfeasible: "Неизводливо"
+      show:
+        author_deleted: Избришан корисник
+        price_explanation: Објаснување на цена
+        share: Сподели
+        title: Проекти за инвестирање
+        votes: Гласање
+        price: Цена
+        comments_tab: Коментари
+        author: Автор
+      investment:
+        add: Гласања
+    investments_list:
+      investment:
+        price: "Цена"
+    show:
+      see_results: Види резултати
+    results:
+      link: Резултати
+      ballot_lines_count: Гласање
+      price: Цена

@@ -2,11 +2,10 @@ class UsersController < ApplicationController
   has_filters %w{proposals debates budget_investments comments votes ballot_lines follows}, only: :show
 
   load_and_authorize_resource
-  helper_method :author?
   helper_method :valid_interests_access?
 
   def show
-    load_filtered_activity if valid_access?
+    raise CanCan::AccessDenied if params[:filter] == "follows" && !valid_interests_access?(@user)
   end
 
   private
@@ -123,27 +122,10 @@ class UsersController < ApplicationController
       @user.public_interests || authorized_current_user?
     end
 
+    def valid_interests_access?(user)
+      user.public_interests || user == current_user
+    end
+
     def author?(proposal)
       proposal.author_id == current_user.id if current_user
     end
-
-    def authorized_current_user?
-      @authorized_current_user ||= current_user && (current_user == @user || current_user.moderator? || current_user.administrator?)
-    end
-
-    def all_user_comments
-      Comment.not_valuations.not_as_admin_or_moderator.where(user_id: @user.id)
-    end
-
-    def only_active_commentables
-      disabled_commentables = []
-      disabled_commentables << "Debate" unless Setting['feature.debates']
-      disabled_commentables << "Budget::Investment" unless Setting['feature.budgets']
-      if disabled_commentables.present?
-        all_user_comments.where("commentable_type NOT IN (?)", disabled_commentables)
-      else
-        all_user_comments
-      end
-    end
-
-end

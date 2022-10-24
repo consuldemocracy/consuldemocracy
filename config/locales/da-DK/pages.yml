@@ -1,0 +1,170 @@
+da:
+  pages:
+    conditions:
+      title: Vilkår og betingelser
+      subtitle: JURIDISK MEDDELELSE OM BRUGERBETINGELSER, PRIVATPOLITIK OG BESKYTTELSE AF PERSONOPLYSNINGER PÅ OPEN GOVERNMENT PORTALEN
+      description: Information vedrørende brugerbetingelser, privatpolitik og beskyttelse af personlige oplysninger.
+    help:
+      title: "%{org} er en borgerdeltagelses platform"
+      guide: "Guiden forklarer hvad hver enkelt sektion %{org} er til, og hvordan den fungerer."
+      menu:
+        debates: "Debatforum"
+        proposals: "Forslag"
+        budgets: "Deltagerbudgetter"
+        polls: "Afstemninger"
+        other: "Andre oplysninger af interesse"
+        processes: "Borgerdialog"
+      debates:
+        title: "Debatforum"
+        description: "I sektionen %{link} kan du præsentere og dele din mening vedrørende emner relateret til din by. Det er også stedet, hvor idéer genereres og gennem de øvrige sektioner %{org} kan lede til konkrete handlinger fra kommunens side."
+        link: "borgerdebat"
+        feature: "Du kan åbne debatter, kommentere og evaluere dem ved at erklære dig <strong>Enig</strong> eller <strong>Uenig</strong>. Gå til debatforum %{link}."
+        feature_link: "registrer i %{org}"
+        image_alt: "Knapper til at rangere debatindlæg"
+        figcaption: '"Enig" og "Uenig" knapper til at rangere debatindlæggene.'
+      proposals:
+        title: "Forslag"
+        description: "I sektion %{link} kan du oprette forslag, som Aarhus Byråd kan føre ud i livet. Forslagene kræver opbakning, og hvis de opnår tilstrækkelig støtte, videreføres de til en offentlig afstemning. De forslag, der opnår flest stemmer og er mulige at gennemføre bliver derefter til virkelighed."
+        link: "borgerforslag"
+        image_alt: "Knap til at støtte op om et forslag"
+        figcaption: 'Knap til at "Støtte" et forslag.'
+      budgets:
+        title: "Deltagerbudget"
+        description: "Sektionen %{link} hjælper borgerne med at have direkte indflydelse på, hvad det kommunale budget skal bruges på."
+        link: "deltagerbudgetter"
+        image_alt: "Deltagerbudgettets forskellige faser"
+        figcaption: 'Deltagerbudgetternes "Støtte"- og "Afstemnings"-faser.'
+      polls:
+        title: "Afstemninger"
+        description: "Sektionen %{link} aktiveres hver gang et forslag opnår 1 % støtte og dermed skal stemmes om, eller når Byrådet selv fremsætter et anliggende, som borgerne skal være med til at beslutte."
+        link: "afstemninger"
+        feature_1: "For at deltage i afstemningen skal du gå til %{link} og bekræfte din konto."
+        feature_1_link: "registrer med %{org_name}"
+      processes:
+        title: "Borgerdialog"
+        description: "I %{link} deltager borgerne i udarbejdelsen af kommunale politikker eller handlingsplaner. Det kan være igennem debat, udvikling af forslag eller kommentering af udkast til tekster."
+        link: "Borgerdialoger"
+        feature: "For at deltage skal du gå til %{link} og bekræfte din konto."
+        feature_link: "registrer med %{org_name}"
+      faq:
+        title: "Tekniske problemer?"
+        description: "Læs de ofte stillede spørgsmål og find svar på dine egne."
+        button: "Se ofte stillede spørgsmål"
+        page:
+          title: "Ofte Stillede Spørgsmål"
+          description: "Anvend siden til at løse brugernes ofte stillede spørgsmål."
+      other:
+        title: "Andre oplysninger af interesse"
+        how_to_use: "Anvend %{org_name} i din by"
+        sdg: "Verdensmål hjælp"
+      how_to_use:
+        text: |-
+          Anvend portalen i din kommune eller hjælp os med at forbedre den. Det er en gratis software.
+
+          Denne Open Government Portal anvender [CONSUL app](https://github.com/consul/consul 'consul github'), som er en gratis software med [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ). Det betyder kort sagt, at alle kan anvende koden gratis, kopiere den, se detaljer om den, modificere den og redistribuere den til verdenen med de ændringer, man ønsker (og samtidig tillader man andre at gøre det samme). Fordi vi mener, at kultur er bedre og rigere, når den er fri. 
+
+          Hvis du er programmør, kan du se koden og hjælpe os med at forbedre den på [CONSUL app](https://github.com/consul/consul 'consul github').
+      titles:
+        how_to_use: Brug det i din kommune
+    privacy:
+      title: Privatpolitik
+      subtitle: "Informationsside om beskyttelse af personlige oplysninger"
+    accessibility:
+      title: Tilgængelighed
+      description: |-
+        Webtilgængelighed refererer til alle menneskers mulighed for at få adgang til internettet og dets indhold, uanset de handicaps (fysisk, mentalt eller teknisk), der måtte opstå, eller fra dem, der udledes af brugskonteksten (teknologisk eller miljømæssig).
+
+        Når hjemmesider er designet med henblik på tilgængelighed, kan alle brugere på lige vilkår få adgang til indholdet. For eksempel:
+      examples:
+        - Ved at sørge for en alternativ tekst til billeder, blinde og svagtseende brugere kan anvende speciallavede oplæsningsredskaber og dermed også få adgang til informationen.
+        - Når videoer har undertekster, sikrer det også brugere med hørebesvær en fuldstændig forståelse af videoens indhold.
+        - Hvis indholdet er skrevet i et simpelt og illustrativt sprog, sikrer det, at brugere med indlæringsproblemer kan opnå en bedre forståelse af det.
+        - Hvis brugeren er bevægelseshæmmet og derfor har svært at anvende en mus, hjælper tastatur-alternativerne med navigationen.
+      keyboard_shortcuts:
+        title: Tastatur genveje
+        navigation_table:
+          description: For at gøre det lettilgængeligt at navigere rundt på hjemmesiden, er der programmeret en gruppe adgangstaster, der samler de vigtigste sektioner af almen interesse, som siden er organiseret op omkring.
+          caption: Tastaturgenveje for navigationsmenuen
+          key_header: Tast
+          page_header: Side
+          rows:
+            - 
+              key_column: 0
+              page_column: Hjem
+            - 
+              key_column: 1
+              page_column: Debatforum
+            - 
+              key_column: 2
+              page_column: Forslag
+            - 
+              key_column: 3
+              page_column: Stemmer
+            - 
+              key_column: 4
+              page_column: Deltagerbudgetter
+            - 
+              key_column: 5
+              page_column: Borgerdialger
+        browser_table:
+          description: "Afhængig af styresystem og den anvendte browser vil tastkombinationen se ud som følgende:"
+          caption: Tastkombinationen afhængig af styresystem og browser
+          browser_header: Browser
+          key_header: Tastkombination
+          rows:
+            - 
+              browser_column: Explorer
+              key_column: ALT + genvej og så ENTER
+            - 
+              browser_column: Firefox
+              key_column: ALT + CAPS + genvej
+            - 
+              browser_column: Chrome
+              key_column: ALT + genvej (CTRL + ALT + genvej for MAC)
+            - 
+              browser_column: Safari
+              key_column: ALT + genvej (CMD + genvej for MAC)
+            - 
+              browser_column: Opera
+              key_column: CAPS + ESC + genvej
+      textsize:
+        title: Tekststørrelse
+        browser_settings_table:
+          description: Det lettilgængelige design af hjemmesiden gør det muligt for brugeren at vælge den tekststørrelse, der passer bedst til ham eller hende. Handlingen kan udføres på forskellige måder afhængig af, hvilken browser brugeren anvender.
+          browser_header: Browser
+          action_header: Handlingsplan
+          rows:
+            - 
+              browser_column: Explorer
+              action_column: Se > Tekststørrelse
+            - 
+              browser_column: Firefox
+              action_column: Se > Størrelse
+            - 
+              browser_column: Chrome
+              action_column: Indstillinger (symbol) > Valgmuligheder > Avanceret > Web Indhold > Tekststørrelse
+            - 
+              browser_column: Safari
+              action_column: Se > Zoom ind/Zoom ud
+            - 
+              browser_column: Opera
+              action_column: Se > skala
+        browser_shortcuts_table:
+          description: "En anden måde at ændre tekststørrelsen på er at anvende tastaturgenvejene defineret i browseren, specifikt denne tastaturkombinationen:"
+          rows:
+            - 
+              shortcut_column: CTRL og + (CMD og + på MAC)
+              description_column: Større tekststørrelse
+            - 
+              shortcut_column: CTRL og - (CMD og - på MAC)
+              description_column: Mindre tekststørrelse
+      compatibility:
+        title: Kompatibilitet med standarder og visuelt design
+        description: 'Alle sider på websitet retter sig efter <strong> Accessibility Guidelines</strong> eller General Principles of Accessible Design fastslået af Arbejdsgruppen <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> tilhørende W3C.'
+    titles:
+      help: "Hvad er %{org}? - Borgerdeltagelse"
+    verify:
+      info: "For at verificere din konto skal du indføre din dataadgang:"
+      info_code: "Indfør den kode du modtog i brevet:"
+      submit: Verificer min konto
+      title: Verificer din konto

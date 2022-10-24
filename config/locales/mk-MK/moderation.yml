@@ -1,0 +1,100 @@
+mk:
+  moderation:
+    comments:
+      index:
+        block_authors: Блокирај ги авторите
+        filter: Филтрирај
+        filters:
+          all: Сите
+          pending_flag_review: Во исчекување
+          with_ignored_flag: Означено како прегледано
+        headers:
+          comment: Коментирај
+          moderate: Модерирај
+        hide: Сокриј коментари
+        ignore_flags: Означи како прегледано
+        orders:
+          flags: Најобележан
+          newest: Најново
+        title: Коментари
+    dashboard:
+      index:
+        title: Модерација
+    debates:
+      index:
+        block_authors: Блокирај ги авторите
+        filter: Филтрирај
+        filters:
+          all: Сите
+          pending_flag_review: Во исчекување
+          with_ignored_flag: Означено како прегледано
+        headers:
+          debate: Дебатирај
+          moderate: Модерирај
+        hide: Скриј дебати
+        ignore_flags: Означи како прегледано
+        orders:
+          created_at: Најново
+          flags: Најобележан
+        title: Дебати
+    header:
+      title: Модерација
+    menu:
+      flagged_comments: Коментари
+      flagged_debates: Дебати
+      flagged_investments: Буџетски инвестиции
+      proposals: Предлози
+      proposal_notifications: Предлог нотификации
+      users: Блокирај корисници
+    proposals:
+      index:
+        block_authors: Блокирај автори
+        filter: Филтрирај
+        filters:
+          all: Сите
+          pending_flag_review: Во очекување на извештај
+          with_ignored_flag: Означи како прегледано
+        headers:
+          moderate: Модерирај
+          proposal: Предлог
+        hide: Скриј предлози
+        ignore_flags: Означи како прегледано
+        orders:
+          created_at: Најново
+          flags: Најобележано
+        title: Предлози
+    budget_investments:
+      index:
+        block_authors: Блокирај автори
+        filter: Филтрирај
+        filters:
+          all: Сите
+          pending_flag_review: Во исчекување
+          with_ignored_flag: Означи како прегледано
+        headers:
+          moderate: Модерирај
+          budget_investment: Буџетски инвестиции
+        ignore_flags: Означи како прегледано
+        orders:
+          created_at: Најново
+          flags: Најобележан
+        title: Буџетски инвестиции
+    proposal_notifications:
+      index:
+        block_authors: Блокирај ги авторите
+        filter: Филтрирај
+        filters:
+          all: Сите
+          pending_review: Во очекување на извештај
+          ignored: Означи како прегледано
+        headers:
+          moderate: Модерирај
+          proposal_notification: Предлог нотификација
+        hide: Скриј предлози
+        ignore_flags: Означи како прегледано
+        orders:
+          created_at: Најново
+        title: Предлог нотификации
+    users:
+      index:
+        title: Блокирај корисници

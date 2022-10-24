@@ -1,7 +1,6 @@
 <% commentable = comment_tree.commentable %>
 <% valuation = local_assigns.fetch(:valuation, false) %>
-<% allow_comments = local_assigns.fetch(:allow_comments, true) %>
-<% cache [locale_and_user_status, comment_tree.order, commentable_cache_key(commentable), comment_tree.comments, comment_tree.comment_authors, commentable.comments_count, comment_flags] do %>
+<% cache [locale_and_user_status, comment_tree.order, commentable_cache_key(commentable), comment_tree.comments, comment_tree.comment_authors, commentable.comments_count] do %>
   <section class="expanded comments">
     <div class="row">
       <div id="comments" class="small-12 column">
@@ -12,8 +11,6 @@
           </h2>
         <% end %>
 
-        <%= render 'shared/wide_order_selector', i18n_namespace: "comments" %>
-
         <% if user_signed_in? %>
           <% if comments_closed_for_commentable?(commentable) %>
             <br>
@@ -23,32 +20,20 @@
           <% elsif require_verified_resident_for_commentable?(commentable, current_user) %>
             <br>
             <div data-alert class="callout primary">
-              <%= t("comments.verified_only", verify_account: link_to(t("comments.verify_account"), verification_path )).html_safe %>
+              <%= sanitize(t("comments.verified_only", verify_account: link_to_verify_account)) %>
             </div>
-          <% elsif allow_comments %>
-            <%= render 'comments/form', { commentable: commentable,
+          <% elsif !valuation || can?(:comment_valuation, commentable) %>
+            <%= render "comments/form", { commentable: commentable,
                                           parent_id: nil,
-                                          toggeable: false,
                                           valuation: valuation } %>
           <% end %>
         <% else %>
-          <br>
-          <div data-alert class="callout primary">
-            <%= t("debates.show.login_to_comment",
-                signin: link_to(t("votes.signin"), new_user_session_path),
-                signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
-          </div>
+          <%= render "shared/login_to_comment" %>
         <% end %>
 
-        <% comment_tree.root_comments.each do |comment| %>
-          <%= render 'comments/comment', { comment: comment,
-                                           comment_flags: comment_flags,
-                                           valuation: valuation,
-                                           allow_votes: !valuation,
-                                           allow_actions: !valuation,
-                                           allow_comments: allow_comments } %>
-        <% end %>
-        <%= paginate comment_tree.root_comments %>
+        <%= render Shared::OrderLinksComponent.new("comments", anchor: "comments") %>
+        <%= render "comments/comment_list", comments: comment_tree.root_comments, valuation: valuation %>
+        <%= paginate comment_tree.root_comments, params: { anchor: "comments" } %>
       </div>
     </div>
   </section>

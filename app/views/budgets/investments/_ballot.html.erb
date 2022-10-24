@@ -1,4 +1,4 @@
-<% reason = investment.reason_for_not_being_ballotable_by(current_user, ballot) %>
+<%# <% reason = investment.reason_for_not_being_ballotable_by(current_user, ballot) %>
 <div class="js-participation supports ballot">
   <% if ballot.has_investment?(investment) %>
 
@@ -65,4 +65,9 @@
     </div>
 
   <% end %>
-</div>
+</div> %>
+<%= render Budgets::Investments::BallotComponent.new(
+  investment: investment,
+  investment_ids: investment_ids,
+  ballot: ballot
+) %>

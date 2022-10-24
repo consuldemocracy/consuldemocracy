@@ -1,0 +1,170 @@
+cs:
+  pages:
+    conditions:
+      title: Podmínky používání
+      subtitle: PRÁVNÍ OZNÁMENÍ O PODMÍNKÁCH POUŽITÍ, OCHRANY OSOBNÍCH ÚDAJŮ A OCHRANY OSOBNÍCH ÚDAJŮ PORTÁLU OTEVŘENÉ VLÁDY
+      description: Informační stránka o podmínkách používání, soukromí a ochraně osobních údajů.
+    help:
+      title: "%{org} je platforma pro zapojování občanů do spolurozhodování"
+      guide: "Tato příručka vysvětluje, k čemu slouží jednotlivé sekce %{org} a jak fungují."
+      menu:
+        debates: "Debaty"
+        proposals: "Návrhy"
+        budgets: "Participativní rozpočty"
+        polls: "Průzkum"
+        other: "Další zajímavé informace"
+        processes: "Procesy"
+      debates:
+        title: "Debaty"
+        description: "V sekci %{link} můžete prezentovat a sdílet svůj názor s ostatními lidmi k otázkám, které vás znepokojují ve vztahu k městu. Je také místem k vytváření nápadů, které prostřednictvím jiných částí %{org} vedou ke konkrétním opatřením vedení města."
+        link: "Debaty"
+        feature: "Debaty můžete otevírat, komentovat je a hodnotit pomocí tlačítek <strong>Souhlasím</strong> nebo <strong>Nesouhlasím</strong>. Musíte být ale %{link}."
+        feature_link: "registrováni na portále  %{org}"
+        image_alt: "Tlačítka k vyhodnocení debat"
+        figcaption: 'Tlačítka "souhlasím" a "nesouhlasím" k vyhodnocení debat.'
+      proposals:
+        title: "Návrhy"
+        description: "V sekci %{link} můžete publikovat návrhy pro vedení města. Návrhy vyžadují podporu, a pokud dosáhnou dostatečné podpory, jsou zařazené k veřejnému hlasování. Návrhy schválené těmito hlasy občanů jsou přijímány vedením města k projednání."
+        link: "návrhy občanů"
+        image_alt: "Tlačítko pro podporu návrhu"
+        figcaption: 'Tlačítko "Podpořit" návrh.'
+      budgets:
+        title: "Participativní rozpočty"
+        description: "Sekce %{link} pomáhá lidem přímo rozhodovat o tom, na kterou část rozpočtu města vynakládá své finanční prostředky."
+        link: "participativní rozpočty"
+        image_alt: "Různé fáze participativního rozpočtu"
+        figcaption: 'Fáze "Podpořit" a "Hlasovat" u participativního rozpočtu.'
+      polls:
+        title: "Průzkum"
+        description: "%{link} sekce je aktivována pokud návrh dosáhne 1% podpory a tím je zařazen do veřejného hlasování, a nebo když vedení města samo zveřejní tento návrh k veřejnému hlasování."
+        link: "průzkumy"
+        feature_1: "K účasti v hlasování využijte následující odkaz %{link} a ověřte svůj účet."
+        feature_1_link: "registrován na portále %{org_name}"
+      processes:
+        title: "Procesy"
+        description: "V části %{link} se občané podílejí na přípravě a úpravách předpisů, které mají vliv na město a mohou se vyjádřit např. k návrhům obecních vyhlášek v předchozích debatách."
+        link: "procesy"
+        feature: "K účasti v hlasování využijte následující odkaz %{link} a ověřte svůj účet."
+        feature_link: "registrovat v %{org_name}"
+      faq:
+        title: "Technické problémy?"
+        description: "Přečtěte si časté otázky a řešit vaše dotazy."
+        button: "Zobrazit často kladené otázky"
+        page:
+          title: "Otázky a odpovědi"
+          description: "Tato stránka slouží k vyřešení běžné dotazy uživatelům webového portálu."
+      other:
+        title: "Další zajímavé informace"
+        how_to_use: "Použijte %{org_name} ve vašem městě"
+        sdg: "Cíle udržitelného rozvoje - nápověda"
+      how_to_use:
+        text: |-
+          Použijte tento program ve své lokalitě, nebo nám ho pomozte zlepšit, je to svobodný software.
+
+          Tento otevřený portál používá [CONSUL app] (https://github.com/consul/consul 'consul github), který je svobodným softwarem, s licencí AGPLv3 (http://www.gnu.org/licenses/ agpl-3.0.html 'AGPLv3 gnu'), to znamená prostým slovem, že někdo může tento kód volně použít, zkopírovat jej, podrobně ji prohlédnout, upravit a přenést s modifikacemi, které jsou žádané). Myslíme si, že programy jsou lepší a bohatší, když jsou otevřené.
+
+          Pokud jste programátor, můžete tento kód nalézt a pomoci nám jej vylepšit v aplikaci [CONSUL] (https://github.com/consul/consul 'consul github').
+      titles:
+        how_to_use: Doporučte tento program k využití veřejnou správou v místě Vašeho bydliště
+    privacy:
+      title: Zásady ochrany osobních údajů
+      subtitle: "INFORMACE O OCHRANĚ ÚDAJŮ O DATECH"
+    accessibility:
+      title: Přístupnost
+      description: |-
+        Přístupnost webu se týká možnosti přístupu k internetu a jeho obsahu všemi lidmi, bez ohledu na postižení (fyzické, intelektuální nebo technické), které mohou vzniknout, nebo z těch, které vycházejí z kontextu použití (technologické nebo environmentální).
+
+        Pokud jsou webové stránky navrženy s ohledem na dostupnost, všichni uživatelé mohou přistupovat k obsahu za stejných podmínek, například:
+      examples:
+        - Poskytování alternativního textu k obrázkům pomáhá slepým nebo zrakově postiženým uživatelům, kteří mohou použít speciální čtečky k přístupu k informacím.
+        - Pokud mají videa titulky, mohou jim uživatelé s poruchami sluchu plně rozumět.
+        - Pokud je obsah napsán v jednoduchém a ilustrovaném jazyce, uživatelé s problémy s učením jsou lépe schopni mu porozumět.
+        - Pokud má uživatel problémy s mobilitou a je těžké používat myš, alternativy s klávesnicí pomáhají při navigaci.
+      keyboard_shortcuts:
+        title: Klávesové zkratky
+        navigation_table:
+          description: Na podporu přístupnosti webových stránek, byla naprogramována skupina rychlých klávesových zkratek, které zpřístupňují hlavní části sekcí, ve kterých je web organizován.
+          caption: Klávesové zkratky pro nabídky navigace
+          key_header: Klíč
+          page_header: Stránka
+          rows:
+            - 
+              key_column: 0
+              page_column: Úvod
+            - 
+              key_column: 1
+              page_column: Debaty
+            - 
+              key_column: 2
+              page_column: Návrhy
+            - 
+              key_column: 3
+              page_column: Hlasů
+            - 
+              key_column: 4
+              page_column: Participativní rozpočty
+            - 
+              key_column: 5
+              page_column: Legislativní procesy
+        browser_table:
+          description: "V závislosti na operačním systému a použitém prohlížeči bude kombinace kláves následující:"
+          caption: Kombinace kláves závisí na operačním systému a prohlížeči
+          browser_header: Prohlížeč
+          key_header: Kombinace kláves
+          rows:
+            - 
+              browser_column: Explorer
+              key_column: ALT + zkratka pak ENTER
+            - 
+              browser_column: Firefox
+              key_column: ALT + CAPS + zkratka
+            - 
+              browser_column: Chrome
+              key_column: ALT + zkratku (CTRL + ALT + klávesové zkratky pro MAC)
+            - 
+              browser_column: Safari
+              key_column: ALT + zkratku (CTRL + ALT + klávesové zkratky pro MAC)
+            - 
+              browser_column: Opera
+              key_column: CAPS + ESC + zkratka
+      textsize:
+        title: Velikost textu
+        browser_settings_table:
+          description: Design tohoto webu podporující dostupnost umožňuje uživateli zvolit velikost textu, který mu vyhovuje. Tuto akci lze provést různými způsoby v závislosti na prohlížeč použitý.
+          browser_header: Prohlížeč
+          action_header: Opatření, které je třeba podniknout
+          rows:
+            - 
+              browser_column: Explorer
+              action_column: Zobrazit > Velikost textu
+            - 
+              browser_column: Firefox
+              action_column: Zobrazit > Velikost
+            - 
+              browser_column: Chrome
+              action_column: Nastavení (ikona) > možnosti > Rozšířené > Obsah webu > Velikost textu
+            - 
+              browser_column: Safari
+              action_column: Zobrazit > Přiblížit / Oddálit
+            - 
+              browser_column: Opera
+              action_column: Zobrazit > Měřítko
+        browser_shortcuts_table:
+          description: "Další způsob, jak upravit velikost textu, je použít v prohlížečích, zejména kombinace kláves definované klávesové zkratky:"
+          rows:
+            - 
+              shortcut_column: CTRL + (CMD + pro počítače MAC)
+              description_column: Zvětší velikost textu
+            - 
+              shortcut_column: CTRL - (CMD - pro počítače MAC)
+              description_column: Zmenšit velikost textu
+      compatibility:
+        title: Kompatibilita se standardy a vizuální design
+        description: 'Všechny stránky tohoto webu splňují <strong>Pokyny pro přístupnost</strong> neboli Obecné zásady přístupného designu stanovené pracovní skupinou <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> patřící pod W3C.'
+    titles:
+      help: "Co je %{org}? - Zapojování občanů"
+    verify:
+      info: "Chcete-li ověřit svůj účet, zadejte své přístupové údaje:"
+      info_code: "Nyní zadejte kód, který jste obdrželi v dopise:"
+      submit: Ověřit můj účet
+      title: Ověřte svůj účet

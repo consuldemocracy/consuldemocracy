@@ -1,9 +1,7 @@
 shared_examples "notifiable" do
-
   let(:notifiable) { create(model_name(described_class)) }
 
   describe "#notification_title" do
-
     it "returns the notifiable title when it's a root comment" do
       notification = create(:notification, notifiable: notifiable)
 
@@ -16,11 +14,9 @@ shared_examples "notifiable" do
 
       expect(notification.notifiable_title).to eq notifiable.title
     end
-
   end
 
   describe "notifiable_available?" do
-
     it "returns true when it's a root comment and the notifiable is available" do
       notification = create(:notification, notifiable: notifiable)
 
@@ -52,11 +48,9 @@ shared_examples "notifiable" do
 
       expect(notification.notifiable_available?).to be(false)
     end
-
   end
 
   describe "check_availability" do
-
     it "returns true if the resource is present, not hidden, nor retired" do
       notification = create(:notification, notifiable: notifiable)
       expect(notification.check_availability(notifiable)).to be(true)
@@ -78,11 +72,10 @@ shared_examples "notifiable" do
       notification = create(:notification, notifiable: notifiable)
 
       if notifiable.respond_to?(:retired_at)
-        notifiable.update(retired_at: Time.current)
+        notifiable.update!(retired_at: Time.current, retired_reason: "unfeasible",
+          retired_explanation: "Unfeasibility explanation ...")
         expect(notification.check_availability(notifiable)).to be(false)
       end
     end
-
   end
-
 end

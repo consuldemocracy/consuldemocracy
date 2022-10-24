@@ -1,0 +1,48 @@
+sr:
+  activemodel:
+    models:
+      verification:
+        residence: "Пребивалиште"
+        sms: "Смс"
+      local_census_records/import:
+        one: Увоз записа локалног пописа
+        few: Увоз записа локалног пописа
+        other: Увози записа локалног пописа
+    attributes:
+      verification:
+        residence:
+          document_type: "Врста документа"
+          document_number: "Број исправе"
+          date_of_birth: "Датум рођења"
+          postal_code: "Поштански број"
+        sms:
+          phone: "Телефон"
+          confirmation_code: "Верификацион код"
+        email:
+          recipient: "Емаил"
+      verification/letter:
+        email: "Емаил"
+        password: "Лозинка"
+        verification_code: "Код који сте добили у писму"
+      verification/management/document:
+        document_type: "Тип документа:"
+        document_number: "Број документа"
+      verification/residence:
+        date_of_birth: "Датум рођења"
+        document_type: "Тип документа"
+        postal_code: "Поштански код"
+      verification/sms:
+        confirmation_code: "Унесите код који сте добили путем мобилног телефона"
+      officing/residence:
+        document_type: "Врста исправе"
+        document_number: "Број исправе"
+        year_of_birth: "Година рођења"
+      local_census_records/import:
+        file: Фајл
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "Дати формат фајла је погрешан. Дозвољени формат фајла је: %{valid_extensions}."
+              headers: "Дати наслови фајла су погрешни. Наслови фајла морају садржати следећа имена: %{required_headers}."

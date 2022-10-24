@@ -14,9 +14,6 @@ fr:
         publish_comment: Publier un commentaire
       form:
         phase_not_open: Cette phase n’est pas ouverte
-        login_to_comment: Il est nécessaire de %{signin} ou de %{signup} pour laisser un commentaire.
-        signin: Se connecter
-        signup: S'inscrire
       index:
         title: Commentaires
         comments_about: Commentaires au sujet de
@@ -52,17 +49,17 @@ fr:
         more_info: Plus d'information et de contexte
       proposals:
         empty_proposals: Il n’y a pas de propositions
+        filters:
+          random: Aléatoire
+          winners: Sélectionné
       debate:
         empty_questions: Il n'y a pas de question
-        participate: Participer au débat
       index:
-        filter: Filtrer
+        filter: Filtre
         filters:
           open: Processus ouverts
-          next: À venir
-          past: Passés
+          past: Passé
         no_open_processes: Il n'y a pas de processus ouverts
-        no_next_processes: Il n'y a pas de processus à venir
         no_past_processes: Il n'y a pas de processus passés
         section_header:
           icon_alt: Icône des processus législatifs
@@ -80,10 +77,12 @@ fr:
         see_latest_comments_title: Commentaires sur le processus
       shared:
         key_dates: Dates-clés
+        homepage: Page d’accueil
         debate_dates: Débat
         draft_publication_date: Brouillon de publication
         allegations_dates: Commentaires
         result_publication_date: Publication du résultat final
+        milestones_date: Suivent
         proposals_dates: Propositions
     questions:
       comments:
@@ -94,7 +93,7 @@ fr:
           leave_comment: Laisser une réponse
       question:
         comments:
-          zero: Aucun commentaire
+          zero: Aucun commentaires
           one: "%{count} commentaire"
           other: "%{count} commentaires"
         debate: Débat
@@ -107,11 +106,8 @@ fr:
       participation:
         phase_not_open: Cette phase n’est pas ouverte
         organizations: Les organisations ne sont pas autorisées à participer au débat
-        signin: Se connecter
-        signup: S'inscrire
         unauthenticated: Il est nécessaire de %{signin} ou de %{signup} pour participer.
         verified_only: Seuls les utilisateurs vérifiés peuvent participer, %{verify_account}.
-        verify_account: vérifier votre compte
         debate_phase_not_open: La phase de débat est terminée et les réponses ne sont plus acceptées
     shared:
       share: Partager
@@ -120,3 +116,33 @@ fr:
       form:
         tags_label: "Catégories"
       not_verified: "Pour voter pour les propositions, %{verify_account}."
+      process_title: Processus législatif collaboratif
+    summary:
+      title: "Résumé"
+      votes:
+        zero: "%{count} votes"
+        one: "%{count} vote"
+        other: "%{count} votes"
+      debate_phase: "Phase de débat"
+      proposals_phase: "Phase de propositions"
+      allegations_phase: "Phase de commentaires"
+      debates:
+        zero: "Aucun débat"
+        one: "%{count} débat"
+        other: "%{count} débats"
+      proposals:
+        zero: "Aucune proposition"
+        one: "%{count} proposition"
+        other: "%{count} propositions"
+      comments:
+        zero: "Aucun commentaires"
+        one: "%{count} commentaire"
+        other: "%{count} commentaires"
+      download: "Télécharger le résumé"
+      top_comments:
+        zero: "Aucun commentaires"
+        one: "%{count} commentaire"
+        other: "Meilleures Commentaires"
+      most_voted_comments: "Commentaires les plus votés"
+      no_allegation: "Il n'y a pas de commentaires"
+      process_empty: "Ce processus n'a pas eu de phases de participation"

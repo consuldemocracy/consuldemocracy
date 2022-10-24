@@ -1,6 +1,8 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Milestone do
+  it_behaves_like "globalizable", :milestone
+  it_behaves_like "globalizable", :milestone_with_description
 
   describe "Validations" do
     let(:milestone) { build(:milestone) }
@@ -42,16 +44,17 @@ describe Milestone do
     end
   end
 
-  describe ".published" do
-    it "uses the application's time zone date", :with_different_time_zone do
-      published_in_local_time_zone = create(:milestone,
-                                            publication_date: Date.today)
+  describe ".published", :application_zone_west_of_system_zone do
+    it "includes milestones published today" do
+      todays_milestone = create(:milestone, publication_date: Time.current)
 
-      published_in_application_time_zone = create(:milestone,
-                                                  publication_date: Date.current)
+      expect(Milestone.published).to eq [todays_milestone]
+    end
 
-      expect(Milestone.published).to include(published_in_application_time_zone)
-      expect(Milestone.published).not_to include(published_in_local_time_zone)
+    it "does not include future milestones" do
+      create(:milestone, publication_date: Date.tomorrow.beginning_of_day)
+
+      expect(Milestone.published).to be_empty
     end
   end
 end

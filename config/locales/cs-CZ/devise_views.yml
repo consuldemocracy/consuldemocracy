@@ -1,0 +1,116 @@
+cs:
+  devise_views:
+    confirmations:
+      new:
+        submit: Opětovné odeslání pokynů
+        title: Opětovné zaslání pokynů k potvrzení
+      show:
+        instructions: Potvrzení účtu e-mailem %{email}
+        new_password_confirmation_label: kontrola přístupového hesla
+        new_password_label: Nové přístupové heslo
+        please_set_password: Zvolte prosím nové heslo (umožní vám přihlásit se výše uvedeným e-mailem)
+        submit: Potvrdit
+        title: Potvrdit svůj účet
+    mailer:
+      confirmation_instructions:
+        confirm_link: Potvrdit svůj účet
+        text: "Váš e-mailový účet můžete potvrdit na následujícím odkazu:"
+        title: Vítejte
+        welcome: Vítejte
+      reset_password_instructions:
+        change_link: Změnit moje heslo
+        hello: Zdravíme Vás
+        ignore_text: Pokud jste nepožádali o změnu hesla, tento e-mail můžete ignorovat.
+        info_text: Vaše heslo nebude změněno, dokud ho tímto odkazem neupravíte.
+        text: "Obdrželi jsme žádost o změnu hesla. Můžete to udělat na následujícím odkazu:"
+        title: Změna hesla
+      unlock_instructions:
+        hello: Zdravíme Vás
+        info_text: Váš účet byl zablokován kvůli nadměrnému počtu neúspěšných pokusů o přihlášení.
+        instructions_text: "Klepnutím na tento odkaz odemknete svůj účet:"
+        title: Váš účet byl uzamčen
+        unlock_link: Odemknout účet
+    menu:
+      login_items:
+        login: Přihlásit
+        logout: Odhlásit se
+        signup: Registrovat se
+    organizations:
+      registrations:
+        new:
+          password_confirmation_label: Potvrďte heslo
+          responsible_name_note: Měla by být osoba zastupující a prezentující organizaci / kolektiv
+          submit: Registrovat se
+          title: Zaregistrujte se jako organizace nebo kolektiv
+        success:
+          back_to_index: Rozumím, jít zpět na hlavní stránku
+          instructions_1: "<strong>Budeme vás brzy kontaktovat</strong>, abychom ověřili, že skutečně zastupujete tento kolektiv."
+          instructions_2: Po zkontrolování vašeho <strong>e-mailu </strong> jsme vám poslali <strong>odkaz a potvrdili tak váš účet </strong>.
+          instructions_3: Po potvrzení se můžete začít účastnit jako neověřený kolektiv.
+          thank_you: Děkujeme, že jste zaregistrovali svůj kolektiv na webových stránkách. Nyní vyčkejte <strong> na ověření</strong>.
+          title: Registrace organizace / kolektivu
+    passwords:
+      edit:
+        change_submit: Změnit své heslo
+        password_confirmation_label: Potvrďte heslo
+        password_label: Nové heslo
+        title: Změňte si své heslo
+      new:
+        send_submit: Odeslat instrukce
+        title: Zapomněli jste heslo?
+    sessions:
+      new:
+        remember_me: Zapamatovat si
+        submit: Odeslat
+        title: Přihlásit se
+    shared:
+      links:
+        login: Odeslat
+        new_confirmation: Nedostali jste pokyny k aktivaci účtu?
+        new_password: Zapoměli jste heslo?
+        new_unlock: Nezískali jste pokyny k odemknutí?
+        signin_with_provider: Přihlaste se pomocí služby %{provider}
+        signup: Nemáte ještě účet? %{signup_link}
+        signup_link: Registrovat
+    unlocks:
+      new:
+        email_label: Email
+        submit: Instrukce k odblokování byly odeslány
+        title: Znovu poslat instrukce k odblokování
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Důvod
+          info: Tuto akci nelze vrátit zpět. Ujistěte se, že to je to, co chcete.
+          info_reason: Pokud chcete, řekněte nám důvod (volitelný)
+          submit: Smazat můj účet
+          title: Mazání účtu
+        edit:
+          current_password_label: Současné heslo
+          edit: Upravit
+          email_label: Email
+          leave_blank: Pokud nechcete upravit, nechte prázdné
+          need_current: Pro potvrzení změn potřebujeme vaše aktuální heslo
+          password_confirmation_label: Potvrďte nové heslo
+          password_label: Nové heslo
+          update_submit: Aktualizovat
+          waiting_for: "Čeká na potvrzení:"
+        new:
+          cancel: Zrušit přihlášení
+          organization_signup: Zastupujete organizaci nebo kolektiv? %{signup_link}
+          organization_signup_link: Registrujte se zde
+          password_confirmation_label: Potvrdit heslo
+          submit: Registrovat se
+          terms: Registrováním souhlasíte se %{terms}
+          terms_link: zpracováním osobních údajů a podmínkami používání portálu
+          terms_title: Registrováním souhlasíte s podmínkami používání
+          title: Registrovat se
+          username_is_available: Uživatelské jméno je k dispozici
+          username_is_not_available: Uživatelské jméno je již použito
+          username_note: Název, který se zobrazí vedle vašich příspěvků
+        success:
+          back_to_index: Rozumím; jít zpět na hlavní stránku
+          instructions_1: Prosím, <b>zkontrolujte e-mail</b> - poslali jsme vám <b>odkaz pro potvrzení vašeho účtu</b>.
+          instructions_2: Po potvrzení můžete začít účastnit se.
+          thank_you: Děkujeme za registraci na webových stránkách. Musíte nyní <b>potvrdit svou e-mailovou adresu</b>.
+          title: Potvrďte svou emailovou adresu

@@ -4,6 +4,9 @@ de:
       verification:
         residence: "Wohnsitz"
         sms: "SMS"
+      local_census_records/import:
+        one: Lokaler Register Datensatz import
+        other: Import von lokalen Volkszählungsdaten
     attributes:
       verification:
         residence:
@@ -16,7 +19,29 @@ de:
           confirmation_code: "Bestätigungscode"
         email:
           recipient: "E-Mail"
+      verification/letter:
+        email: "E-Mail"
+        password: "Passwort"
+        verification_code: "Code, den Sie per Brief/SMS erhalten haben"
+      verification/management/document:
+        document_type: "Dokumententyp:"
+        document_number: "Dokumentennummer"
+      verification/residence:
+        date_of_birth: "Geburtsdatum"
+        document_type: "Dokumententyp"
+        postal_code: "Postleitzahl"
+      verification/sms:
+        confirmation_code: "Geben Sie den Code ein, den Sie auf Ihrem Handy erhalten haben"
       officing/residence:
         document_type: "Dokumententyp"
         document_number: "Dokumentennummer (einschließlich Buchstaben)"
         year_of_birth: "Geburtsjahr"
+      local_census_records/import:
+        file: Datei
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "Das eingegebene Datei-Format ist falsch. Das erlaubte Datei-Format ist: %{valid_extensions}."
+              headers: "Die eingegebenen Datei Header sind falsch. Die Datei Header müssen folgende Bezeichnungen haben: %{required_headers}."

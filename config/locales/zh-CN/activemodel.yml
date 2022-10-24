@@ -2,7 +2,7 @@ zh-CN:
   activemodel:
     models:
       verification:
-        residence: "地址"
+        residence: "居住地"
         sms: "短信号码"
     attributes:
       verification:
@@ -13,9 +13,22 @@ zh-CN:
           postal_code: "邮政编码"
         sms:
           phone: "手机号码"
-          confirmation_code: "确认码"
+          confirmation_code: "确认代码"
         email:
-          recipient: "电子邮件地址"
+          recipient: "电子邮件"
+      verification/letter:
+        email: "电子邮件地址"
+        password: "密码"
+        verification_code: "您在信中收到的代码"
+      verification/management/document:
+        document_type: "文档类型："
+        document_number: "文档编号"
+      verification/residence:
+        date_of_birth: "出生日期"
+        document_type: "文档类型"
+        postal_code: "邮政编码"
+      verification/sms:
+        confirmation_code: "输入您在手机上收到的代码"
       officing/residence:
         document_type: "文档类型"
         document_number: "文档编号(包括信件)"

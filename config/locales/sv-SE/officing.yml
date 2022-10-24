@@ -4,7 +4,7 @@ sv:
       title: Omröstning
     dashboard:
       index:
-        title: Röststationer
+        title: Valarbete
         info: Här kan du granska identitetshandlingar och spara resultat från omröstningar
         no_shifts: Du har inga arbetspass idag.
     menu:
@@ -16,6 +16,28 @@ sv:
         no_polls: Du har inga omröstningar redo för rösträkning
         select_poll: Välj omröstning
         add_results: Lägg till resultat
+    poll_budgets:
+      see_ballot_sheets: Visa valsedelslista
+      index:
+        title: "%{poll_budget} - valsedelslista"
+        ballot_sheet: "Valsedel %{id}"
+        ballot_sheet_name: Namn
+        ballot_sheet_author: Skribent
+        ballot_sheet_creation_date: Tillverkningsdatum
+        empty_results: Det finns ännu inga valsedlar för denna omröstning
+      new:
+        title: "%{poll_budget} - ny valsedel"
+        booth: Röstbås
+        select_booth: Välj röstbås
+        csv_data: CSV-data
+        submit: Spara
+      show:
+        created_at: Skapad den
+        author: Skribent
+        data: CSV-data
+    booth:
+      new:
+        title: "Välj ditt röstbås"
     results:
       flash:
         create: "Resultatet har sparats"
@@ -28,7 +50,7 @@ sv:
         select_booth: "Välj röststation"
         ballots_white: "Blankröster"
         ballots_null: "Ogiltiga röster"
-        ballots_total: "Totalt antal röster"
+        ballots_total: "Giltiga röster"
         submit: "Spara"
         results_list: "Ditt resultat"
         see_results: "Visa resultat"
@@ -39,18 +61,16 @@ sv:
         table_votes: Röster
         table_whites: "Blankröster"
         table_nulls: "Ogiltiga röster"
-        table_total: "Totalt antal röster"
+        table_total: "Giltiga röster"
     residence:
       flash:
         create: "Verifierad identitetshandling"
         not_allowed: "Du har inga arbetspass idag"
       new:
         title: Godkänn identitetshandling
-        document_number: "Identitetshandlingens nummer (inklusive bokstäver)"
         submit: Godkänn identitetshandling
         error_verifying_census: "Din identitetshandling kunde inte verifieras."
         form_errors: förhindrade godkännandet av det här dokumentet
-        no_assignments: "Du har inga arbetspass idag"
     voters:
       new:
         title: Omröstningar
@@ -60,7 +80,8 @@ sv:
         not_to_vote: Personen har bestämt sig för att inte rösta den här gången
       show:
         can_vote: Kan rösta
-        error_already_voted: Du har redan deltagit i den här omröstningen
+        cannot_vote: Personen kan inte rösta eftersom de inte är registrerade i det/de distrikt där omröstningen sker.
+        error_already_voted: Har redan deltagit i den här omröstningen
         submit: Bekräfta röst
         success: "Du har röstat!"
       can_vote:

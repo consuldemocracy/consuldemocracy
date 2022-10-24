@@ -2,16 +2,14 @@ module Budgets
   module Ballot
     class LinesController < ApplicationController
       before_action :authenticate_user!
-      #before_action :ensure_final_voting_allowed
       before_action :load_budget
       before_action :load_ballot
       before_action :load_tag_cloud
       before_action :load_categories
       before_action :load_investments
-      before_action :load_ballot_referer
 
-      load_and_authorize_resource :budget
-      load_and_authorize_resource :ballot, class: "Budget::Ballot", through: :budget
+      authorize_resource :budget
+      authorize_resource :ballot
       load_and_authorize_resource :line, through: :ballot, find_by: :investment_id, class: "Budget::Ballot::Line"
 
       def create
@@ -27,26 +25,26 @@ module Budgets
         load_heading
         load_map
 
-        @line.destroy
+        @line.destroy!
         load_investments
       end
 
       private
 
-        def ensure_final_voting_allowed
-          return head(:forbidden) unless @budget.balloting?
+        def line_params
+          params.permit(allowed_params)
         end
 
-        def line_params
-          params.permit(:investment_id, :budget_id)
+        def allowed_params
+          [:investment_id, :budget_id]
         end
 
         def load_budget
-          @budget = Budget.find(params[:budget_id])
+          @budget = Budget.find_by_slug_or_id! params[:budget_id]
         end
 
         def load_ballot
-          @ballot = Budget::Ballot.where(user: current_user, budget: @budget).first_or_create
+          @ballot = Budget::Ballot.where(user: current_user, budget: @budget).first_or_create!
         end
 
         def load_investment
@@ -69,11 +67,7 @@ module Budgets
         end
 
         def load_categories
-          @categories = ActsAsTaggableOn::Tag.category.order(:name)
-        end
-
-        def load_ballot_referer
-          @ballot_referer = session[:ballot_referer]
+          @categories = Tag.category.order(:name)
         end
 
         def load_map
@@ -81,7 +75,6 @@ module Budgets
           @investments_map_coordinates = MapLocation.where(investment: @investments).map(&:json_data)
           @map_location = MapLocation.load_from_heading(@heading)
         end
-
     end
   end
 end

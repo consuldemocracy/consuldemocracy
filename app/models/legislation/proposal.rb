@@ -1,4 +1,4 @@
-class Legislation::Proposal < ActiveRecord::Base
+class Legislation::Proposal < ApplicationRecord
   include ActsAsParanoidAliases
   include Flaggable
   include Taggable
@@ -12,19 +12,18 @@ class Legislation::Proposal < ActiveRecord::Base
   include Documentable
   include Notifiable
   include Imageable
+  include Randomizable
+  include SDG::Relatable
 
-  documentable max_documents_allowed: 3,
-               max_file_size: 3.megabytes,
-               accepted_content_types: [ "application/pdf" ]
   accepts_nested_attributes_for :documents, allow_destroy: true
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
 
-  belongs_to :process, class_name: 'Legislation::Process', foreign_key: 'legislation_process_id'
-  belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
+  belongs_to :process, foreign_key: "legislation_process_id", inverse_of: :proposals
+  belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :legislation_proposals
   belongs_to :geozone
-  has_many :comments, as: :commentable
+  has_many :comments, as: :commentable, inverse_of: :commentable
 
   validates :title, presence: true
   validates :summary, presence: true
@@ -47,12 +46,10 @@ class Legislation::Proposal < ActiveRecord::Base
   scope :sort_by_most_commented,   -> { reorder(comments_count: :desc) }
   scope :sort_by_title,            -> { reorder(title: :asc) }
   scope :sort_by_id,               -> { reorder(id: :asc) }
-  scope :sort_by_supports,         -> { reorder(cached_votes_up: :desc) }
-  scope :sort_by_random,           -> { reorder("RANDOM()") }
+  scope :sort_by_supports,         -> { reorder(cached_votes_score: :desc) }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
-  scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
+  scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago) }
   scope :selected,                 -> { where(selected: true) }
-  scope :random,                   -> { sort_by_random }
   scope :winners,                  -> { selected.sort_by_confidence_score }
 
   def to_param
@@ -60,18 +57,17 @@ class Legislation::Proposal < ActiveRecord::Base
   end
 
   def searchable_values
-    { title              => 'A',
-      question           => 'B',
-      author.username    => 'B',
-      tag_list.join(' ') => 'B',
-      geozone.try(:name) => 'B',
-      summary            => 'C',
-      description        => 'D'}
+    { title              => "A",
+      author.username    => "B",
+      tag_list.join(" ") => "B",
+      geozone&.name      => "B",
+      summary            => "C",
+      description        => "D" }
   end
 
   def self.search(terms)
     by_code = search_by_code(terms.strip)
-    by_code.present? ? by_code : pg_search(terms)
+    by_code.presence || pg_search(terms)
   end
 
   def self.search_by_code(terms)
@@ -96,6 +92,10 @@ class Legislation::Proposal < ActiveRecord::Base
     cached_votes_total
   end
 
+  def votes_score
+    cached_votes_score
+  end
+
   def voters
     User.active.where(id: votes_for.voters)
   end
@@ -109,7 +109,7 @@ class Legislation::Proposal < ActiveRecord::Base
   end
 
   def votable_by?(user)
-    user && user.level_two_or_three_verified?
+    user&.level_two_or_three_verified?
   end
 
   def register_vote(user, vote_value)
@@ -117,7 +117,7 @@ class Legislation::Proposal < ActiveRecord::Base
   end
 
   def code
-    "#{Setting['proposal_code_prefix']}-#{created_at.strftime('%Y-%m')}-#{id}"
+    "#{Setting["proposal_code_prefix"]}-#{created_at.strftime("%Y-%m")}-#{id}"
   end
 
   def after_commented
@@ -133,17 +133,17 @@ class Legislation::Proposal < ActiveRecord::Base
   end
 
   def after_hide
-    tags.each{ |t| t.decrement_custom_counter_for('LegislationProposal') }
+    tags.each { |t| t.decrement_custom_counter_for("LegislationProposal") }
   end
 
   def after_restore
-    tags.each{ |t| t.increment_custom_counter_for('LegislationProposal') }
+    tags.each { |t| t.increment_custom_counter_for("LegislationProposal") }
   end
 
   protected
 
     def set_responsible_name
-      if author && author.document_number?
+      if author&.document_number?
         self.responsible_name = author.document_number
       end
     end

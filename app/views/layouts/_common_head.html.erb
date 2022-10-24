@@ -1,9 +1,13 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<title><%= content_for?(:title) ? yield(:title) : default_title  %></title>
-<%= stylesheet_link_tag "application" %>
-<%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+<meta name="generator" content="Zurb Foundation for Sites 6" class="foundation-mq">
+<title><%= content_for?(:title) ? yield(:title) : default_title %></title>
+<% if rtl? %>
+  <%= stylesheet_link_tag "application-rtl" %>
+<% else %>
+  <%= stylesheet_link_tag "application" %>
+<% end %>
+<%= javascript_include_tag "application", "data-turbolinks-track" => "reload" %>
 <%= csrf_meta_tags %>
-<%= favicon_link_tag "favicon.ico" %>
-<%= render "layouts/disable_animations_in_tests" if Rails.env.test? %>
+<%= favicon_link_tag image_path_for("favicon.ico") %>

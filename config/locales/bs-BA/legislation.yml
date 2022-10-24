@@ -1,0 +1,60 @@
+bs:
+  legislation:
+    annotations:
+      comments:
+        see_all: Vidi sve
+        cancel: Poništi
+      index:
+        title: Komentari
+      show:
+        title: Komentariši
+    draft_versions:
+      changes:
+        title: Izmjene
+      show:
+        text_body: Tekst
+        text_comments: Komentari
+    processes:
+      header:
+        additional_info: Dodatne informacije
+        description: Opis
+      proposals:
+        filters:
+          winners: Odabrano
+      index:
+        filter: Filter (suzi pretragu)
+        filters:
+          open: Otvoreni procesi
+        section_header:
+          title: Legislativna saradnja
+      shared:
+        homepage: Početna stranica
+        debate_dates: Debata
+        allegations_dates: Komentari
+        milestones_date: Praćenje
+        proposals_dates: Prijedlozi
+    questions:
+      question:
+        comments:
+          zero: Nema komentara
+        debate: Debata
+      show:
+        share: Podijeli
+      participation:
+        unauthenticated: Morate se prijaviti %{signin} ili otvoriti nalog %{signup} da bi učestvovali.
+    shared:
+      share: Podijeli
+    proposals:
+      form:
+        tags_label: "Kategorije"
+    summary:
+      title: "Sažetak"
+      votes:
+        zero: "%{count} glasa/glasova"
+      debate_phase: "Debatna faza"
+      proposals_phase: "Faza za podnošenje prijedloga"
+      allegations_phase: "Faza za podnošenje komentara"
+      comments:
+        zero: "Nema komentara"
+      top_comments:
+        zero: "Nema komentara"

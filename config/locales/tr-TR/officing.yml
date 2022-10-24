@@ -1,1 +1,89 @@
 tr:
+  officing:
+    header:
+      title: Anket
+    dashboard:
+      index:
+        title: Anket memuru
+        info: Burada kullanıcı belgelerini doğrulayabilir ve oylama sonuçlarını saklayabilirsiniz
+        no_shifts: Bugün memur vardiyanız yok.
+    menu:
+      voters: Belgeyi doğrula
+      total_recounts: Toplam yeniden sayımlar ve sonuçlar
+    polls:
+      final:
+        title: Anketler son kez yapılacak tekrar sayımına hazır
+        no_polls: Herhangi bir aktif ankette yapılacak olan son sayımda görev almıyorsunuz
+        select_poll: Anket seç
+        add_results: Sonuçları ekle
+    poll_budgets:
+      see_ballot_sheets: Oy pusulası listesini gör
+      index:
+        title: "%{poll_budget} - Oy pusulası listesi"
+        ballot_sheet: "Oy pusulası %{id}"
+        ballot_sheet_name: İsim
+        ballot_sheet_author: Yazar
+        ballot_sheet_creation_date: Oluşturma tarihi
+        empty_results: Bu anket için henüz bir oy pusulası bulunmamaktadır
+      new:
+        title: "%{poll_budget} - Yeni oy pusulası"
+        booth: Kabin
+        select_booth: Kabin seç
+        csv_data: CSV verisi
+        submit: Kaydet
+      show:
+        created_at: Oluşturma tarihi
+        author: Yazar
+        data: CSV verisi
+    booth:
+      new:
+        title: "Kabininizi seçiniz"
+    results:
+      flash:
+        create: "Sonuçlar kaydedildi"
+        error_create: "Sonuçlar KAYDEDİLMEDİ. Veri hatası."
+        error_wrong_booth: "Yanlış kabin. Sonuçlar KAYDEDİLMEDİ."
+      new:
+        title: "%{poll} - Sonuçları ekle"
+        not_allowed: "Bu anket için sonuçlar eklemeye yetkiniz yok"
+        booth: "Kabin"
+        date: "Tarih"
+        select_booth: "Kabin seç"
+        ballots_white: "Tamamen boş oylar"
+        ballots_null: "Geçersiz oylar"
+        ballots_total: "Toplam oylar"
+        submit: "Kaydet"
+        results_list: "Sonuçlarınız"
+        see_results: "Sonuçları gör"
+      index:
+        no_results: "Sonuç yok"
+        results: Sonuçlar
+        table_answer: Cevap
+        table_votes: Oylar
+        table_whites: "Tamamen boş oylar"
+        table_nulls: "Geçersiz oylar"
+        table_total: "Toplam oylar"
+    residence:
+      flash:
+        create: "Census ile doğrulanan belge"
+        not_allowed: "Bugün memur vardiyanız yok"
+      new:
+        title: Belgeyi doğrula
+        submit: Belgeyi doğrula
+        error_verifying_census: "Census bu belgeyi doğrulayamadı."
+        form_errors: bu belgenin doğrulanmasını engelledi
+    voters:
+      new:
+        title: Anketler
+        table_poll: Anket
+        table_status: Anket durumu
+        table_actions: Eylemler
+        not_to_vote: Kişi bu kez oy kullanmamaya karar verdi
+      show:
+        can_vote: Oy verebilir
+        cannot_vote: Kişi oylamanın yapılacağı bölge(lerde)de kayıtlı olmadığı için oy kullanamaz.
+        error_already_voted: Bu ankete zaten katıldı
+        submit: Oyu onayla
+        success: "Oy verildi!"
+      can_vote:
+        submit_disable_with: "Bekleyin, oy onaylanıyor..."

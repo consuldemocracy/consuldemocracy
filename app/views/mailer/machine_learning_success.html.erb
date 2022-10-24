@@ -1,0 +1,16 @@
+<td style="<%= css_for_mailer_content %>">
+
+  <h1 style="<%= css_for_mailer_heading %>">
+    <%= t("mailers.machine_learning_success.title") %>
+  </h1>
+
+  <p style="<%= css_for_mailer_text %>">
+    <%= t("mailers.machine_learning_success.text") %>
+  </p>
+
+  <p style="<%= css_for_mailer_text %>">
+    <%= link_to t("mailers.machine_learning_success.link"),
+                admin_machine_learning_url,
+                style: "color: #2895F1; text-decoration:none;" %>
+  </p>
+</td>

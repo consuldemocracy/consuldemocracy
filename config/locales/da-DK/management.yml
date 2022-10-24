@@ -1,0 +1,126 @@
+da:
+  management:
+    account:
+      menu:
+        reset_password_email: Nulstil adgangskode via e-mail
+        reset_password_manually: Nulstil adgangskode manuelt
+      alert:
+        unverified_user: Ingen verificeret bruger er logget ind endnu
+      show:
+        title: Brugerkonto
+      edit:
+        title: "Rediger konto: Nulstil adgangskode"
+        back: Tilbage
+        password:
+          password: Adgangskode
+          send_email: Send nulstil-adgangskode-mail
+          reset_email_send: E-mailen blev sendt.
+          reseted: Adgangskoden blev nulstillet
+          random: Generer tilfældig adgangskode
+          save: Gem adgangskode
+          print: Udskriv adgangskode
+          print_help: Du kan udskrive adgangskoden, når den er gemt.
+    account_info:
+      change_user: Skift bruger
+      document_number_label: "Dokumentnummer:"
+      document_type_label: "Dokumenttype:"
+      email_label: "E-mail:"
+      identified_label: "Identificeret som:"
+      username_label: "Brugernavn:"
+    check: Kontroller dokument
+    dashboard:
+      index:
+        title: Management
+        info: Her kan du administrere brugere gennem de handlinger, der er angivet i menuen til venstre.
+    document_verifications:
+      already_verified: Brugerkontoen er allerede verificeret.
+      has_no_account: For at oprette en konto følg %{link} og klik på <b>"Tilmeld dig"</b>.
+      link: CONSUL
+      in_census_has_following_permissions: "Med følgende tilladelse kan denne bruger deltage på hjemmesiden:"
+      not_in_census: Persondokumentet er ikke registreret.
+      not_in_census_info: "Borgere, der ikke er bosiddende i byen, kan stadig deltage på følgende måde:"
+      please_check_account_data: Vær venlig at tjekke om kontooplysningerne ovenfor er angivet korrekt.
+      title: Brugeradministration
+      under_age: "Du er ikke gammel nok til at deltage."
+      verify: Verificer
+    date_of_birth: Fødselsdato
+    email_verifications:
+      already_verified: Brugerkontoen er allerede verificeret.
+      choose_options: "Vær venlig at vælge en af de følgende valgmuligheder:"
+      document_found_in_census: Identitetsdokumentet er registreret, men er ikke knyttet til en brugerkonto.
+      document_mismatch: "Denne e-mail tilhører en bruger, der allerede har et tilknyttet id: %{document_number}%{document_type}"
+      email_sent_instructions: For at kunne færdiggøre verificeringen af brugeren, er det nødvendigt, at vedkommende klikker på det link, vi har sendt til den angivede e-mail ovenfor. Dette for at sikre, at mailen faktisk tilhører vedkommende.
+      if_existing_account: Hvis personen allerede har oprettet en brugerkonto på hjemmesiden,
+      if_no_existing_account: Hvis personen endnu ikke har oprettet en brugerkonto
+      introduce_email: "Skriv den e-mail der er anvendt til at oprette kontoen:"
+      send_email: Send bekræftelsesmail
+    menu:
+      create_proposal: Opret borgerforslag
+      print_proposals: Udskriv forslag
+      support_proposals: Støt på om forslag
+      create_budget_investment: Opret din idé
+      print_budget_investments: Udskriv projektidéer
+      support_budget_investments: Støt projekter
+      users: Brugeradministration
+      user_invites: Send invitationer
+      select_user: Vælg bruger
+    print:
+      proposals_info: Opret dit forslag på https://deltagbudget.aarhus.dk/
+      proposals_title: "Borgerforslag:"
+      budget_investments_info: Deltag på https://deltagbudget.aarhus.dk/
+    print_info: Udskriv information
+    proposals:
+      alert:
+        unverified_user: Brugeren er ikke verificeret
+      create_proposal: Opret borgerforslag
+      print:
+        print_button: Udskriv
+      index:
+        title: Støt op om forslag
+    budgets:
+      create_new_investment: Opret din idé
+      print_investments: Udskriv projektidéer
+      support_investments: Støt projekter
+      table_name: Navn
+      table_phase: Fase
+      table_actions: Handlinger
+      no_budgets: Der er ingen aktive deltagerbudgetter.
+    budget_investments:
+      alert:
+        unverified_user: Brugeren er ikke verificeret
+      create: Opret din idé
+      edit: Rediger budgetforslag
+      filters:
+        heading: Koncept
+        unfeasible: Uigennemførligt projekt
+      print:
+        print_button: Udskriv
+      search_results:
+        one: " indeholder betegnelsen '%{search_term}'"
+        other: " indeholder betegnelserne '%{search_term}'"
+    sessions:
+      signed_out: Du er nu logget af.
+      signed_out_managed_user: Brugersessionen blev afsluttet.
+    username_label: Brugernavn
+    users:
+      create_user: Opret ny brugerkonto
+      create_user_info: Vi vil oprette en konto med følgende oplysninger
+      create_user_submit: Opret bruger
+      create_user_success: Vi har sendt en e-mail til e-mail adressen <b>%{email}</b> for at sikre, at den tilhører den korrekte bruger. Mailen indeholder et link, som brugerne skal trykke på, hvorefter de vil blive bedt om at oprette en adgangskode, før de kan logge ind på hjemmesiden
+      autogenerated_password: "Din autogenererede adgangskode er <b>%{password}</b>. Du kan ændre den under \"Min konto\"-sektionen på hjemmesiden"
+      email_optional_label: E-mail (valgfrit)
+      erased_notice: Brugerkonto slettet.
+      erased_by_manager: "Slettet af manager: %{manager}"
+      erase_account_link: Slet bruger
+      erase_account_confirm: Er du sikker på, du vil slette din konto?`Du kan ikke fortryde, når handlingen er udført
+      erase_warning: Handlingen kan ikke fortydes. Er du sikker på, du vil fortsætte med at slette din konto?
+      erase_submit: Slet konto
+    user_invites:
+      new:
+        label: E-mails
+        info: "Skriv e-mail adresserne adskilt med komma (',')"
+        submit: Send invitationer
+        title: Send invitationer
+      create:
+        success: <strong>%{count} invitationer</strong> er blevet sendt.
+        title: Send invitationer

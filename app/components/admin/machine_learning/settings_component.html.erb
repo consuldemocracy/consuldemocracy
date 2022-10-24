@@ -1,0 +1,15 @@
+<div class="tabs-panel machine-learning-settings" id="settings">
+  <div class="settings-management">
+    <% script_kinds.each do |kind| %>
+      <%= render Admin::MachineLearning::SettingComponent.new(kind) %>
+    <% end %>
+  </div>
+
+  <div class="callout secondary">
+    <p><strong><%= t("admin.machine_learning.data_folder_content") %></strong></p>
+
+    <% filenames.each do |filename| %>
+      <a href="<%= data_path(filename) %>" target="_blank"><%= filename %></a><br>
+    <% end %>
+  </div>
+</div>

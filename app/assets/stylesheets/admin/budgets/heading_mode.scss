@@ -1,0 +1,77 @@
+.admin .heading-mode {
+  border-radius: rem-calc(12);
+  color: $admin-text;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: $global-width * 0.6;
+  width: 100%;
+
+  section {
+    @include grid-column-gutter;
+    display: flex;
+    flex-flow: column;
+    margin-bottom: $line-height;
+    width: 100%;
+
+    @include breakpoint(medium) {
+      width: 50%;
+
+      &:last-of-type {
+        border-left: $admin-border;
+      }
+    }
+
+    &.single-heading-option h2::after {
+      content: image-url("budgets/budget_single_heading_icon.png");
+    }
+
+    &.multiple-heading-option h2::after {
+      content: image-url("budgets/budget_multiple_heading_icon.png");
+    }
+
+    h2::after {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  h1 {
+    margin-bottom: $line-height * 2;
+    margin-top: $line-height;
+    text-transform: uppercase;
+    width: 100%;
+  }
+
+  h1,
+  h2 {
+    font-size: rem-calc(24);
+    text-align: center;
+  }
+
+  h2 {
+    font-weight: 500;
+    padding-top: $line-height;
+  }
+
+  p {
+    font-size: $small-font-size;
+    font-style: italic;
+    flex-grow: 1;
+  }
+
+  a {
+    @include hollow-button;
+    margin: 0 auto;
+    max-width: max-content;
+  }
+
+  .close-button {
+    border: 3px solid $admin-text;
+    border-radius: 50%;
+    color: $admin-text;
+    font-size: rem-calc(23);
+    font-weight: bold;
+    height: rem-calc(30);
+    width: rem-calc(30);
+  }
+}

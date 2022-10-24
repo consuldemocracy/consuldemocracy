@@ -1,0 +1,11 @@
+sq:
+  stats:
+    title: "Të dhënat pjesëmarrëse"
+    total_participants: "Pjesëmarrësit"
+    total: "Totali"
+    budgets:
+      link: "Statusi"
+      total_unfeasible_investments: "Projektet e parealizueshme"
+      total: "Totali"
+      heading: "Kreu"
+      participants_every_phase: "Totali i Pjesëmarrësve"

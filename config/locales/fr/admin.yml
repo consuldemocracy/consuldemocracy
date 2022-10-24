@@ -3,54 +3,48 @@ fr:
     header:
       title: Administration
     actions:
-      actions: Actions
-      confirm: Êtes-vous sûr(e) ?
+      actions: Statut des votes
+      confirm_action: "Êtes-vous sûr? %{action} \"%{name}\""
+      confirm_delete: "Êtes-vous sûr? Cette action supprimera \"%{name}\" et ne peut pas être annulée."
       confirm_hide: Confirmer
+      delete: "Supprimer"
       hide: Cacher
-      hide_author: Cacher l'auteur
+      label: "%{action} %{name}"
       restore: Restaurer
-      mark_featured: Mettre en avant
+      mark_featured: Mis en avant
       unmark_featured: Retirer la mise en avant
-      edit: Modifier
+      edit: Éditer
       configure: Configurer
-      delete: Supprimer
+    officing_booth:
+      title: "Vous dirigez le stand situé au %{booth}. Si ce n'est pas correct, ne continuez pas et appelez le numéro de téléphone d'assistance. Merci."
     banners:
       index:
         title: Bannières
-        create: Créer une bannière
-        edit: Modifier la bannière
-        delete: Supprimer la bannière
+        create: Créer la bannière
         filters:
-          all: Tous
+          all: Toutes
           with_active: Actif
           with_inactive: Inactif
         preview: Aperçu
       banner:
-        title: Titre
-        description: Description
-        target_url: Lien
-        post_started_at: Début de la publication
-        post_ended_at: Fin de la publication
         sections_label: Sections où il figurera
         sections:
           homepage: Page d’accueil
-          debates: Discussions
+          debates: Débats
           proposals: Propositions
           budgets: Budget participatif
           help_page: Page d'aide
-        background_color: Couleur de fond
-        font_color: Couleur de la police
+          sdg: ODD
+      create:
+        notice: "Bannière créée avec succès"
       edit:
         editing: Modifier la bannière
         form:
-          submit_button: Sauvegarder les changements
-      errors:
-        form:
-          error:
-            one: "a empêché cette bannière d'être sauvegardée"
-            other: "ont empêchés cette bannière d'être sauvegardée"
+          submit_button: Sauvegarder des changements
       new:
         creating: Créer la bannière
+      update:
+        notice: "Bannière mise à jour avec succès"
     activity:
       show:
         action: Actions
@@ -62,104 +56,182 @@ fr:
         content: Contenu
         filter: Montrer
         filters:
-          all: Tous
+          all: Toutes
           on_comments: Commentaires
-          on_debates: Discussions
+          on_debates: Débats
           on_proposals: Propositions
           on_users: Utilisateurs
           on_system_emails: Emails système
-        title: Activité de modération
+        title: Activité des modérateurs
         type: Type
         no_activity: Il n’y a aucune activité de modérateurs.
     budgets:
+      actions:
+        edit: "Modifier le budget"
+        preview: "Aperçu"
       index:
         title: Budgets participatifs
         new_link: Créer un nouveau budget
-        filter: Filtrer
+        filter: Filtre
         filters:
+          all: Tous
           open: Ouvert
           finished: Terminé
         budget_investments: Gestion de projets
+        table_budget_type: "Type"
+        table_completed: Terminé
+        table_draft: "Brouillon"
+        table_duration: "Durée"
         table_name: Nom
-        table_phase: Phases
-        table_investments: Propositions d'investissement
-        table_edit_groups: Groupes de rubriques
-        table_edit_budget: Modifier
-        edit_groups: Modifier les groupes de rubriques
-        edit_budget: Modifier le budget
+        table_phase: Phase
+        table_phase_progress: "(%{current_phase_number}/%{total_phases})"
+        type_multiple: "Plusieurs rubriques"
+        type_pending: "En attente : aucune rubrique pour le moment"
+        type_single: "Rubrique unique"
+        admin_ballots: Bulletins de l’admin
+        no_budgets: "Il n'y a pas de budgets."
       create:
         notice: Nouveau budget participatif créé avec succès !
       update:
         notice: Budget participatif mis-à-jour avec succès
+      publish:
+        notice: "Budget participatif mis-à-jour avec succès"
       edit:
         title: Modifier le budget participatif
+        drafting: "Ce budget participatif est en mode brouillon, seuls les administrateurs peuvent le voir dans le site public. Une fois publié, il ne peut plus être modifié en mode brouillon."
+        publish: "Publier le budget"
         delete: Supprimer le budget
         phase: Phase
-        dates: Dates
+        phases_caption: "Phase"
+        duration: "Durée"
         enabled: Activé
         actions: Actions
-        edit_phase: Modifier la phase
+        enable_phase: "Activer la phase %{phase}"
         active: Actif
         blank_dates: Les dates sont vides
+        administrators:
+          zero: "Sélectionnez les administrateurs"
+          one: "1 administrateur sélectionné"
+          other: "%{count} administrateurs sélectionnés"
+        valuators:
+          zero: "Sélectionner des évaluateurs"
+          one: "1 évaluateur sélectionné"
+          other: "%{count} évaluateurs sélectionnés"
+        empty_administrators: "Il n'y a pas d'administrateurs"
+        empty_valuators: "Il n'y a pas d'évaluateurs"
+        name_description: "C'est le nom du budget participatif utilisé sur l'en-tête et les fiches chaque fois qu'il est actif"
+        image_description: "Si une image est téléchargée, elle sera utilisée comme bannière au-dessus de ce budget participatif, sinon la couleur par défaut des budgets sera utilisée."
+        main_call_to_action: "Appel à l'action principal (facultatif)"
+        main_call_to_action_description: "Ce lien apparaîtra sur la bannière principale de ce budget participatif et encourage votre utilisateur à effectuer une action spécifique comme créer une proposition, voter pour les propositions existantes ou en savoir plus sur le processus."
+        info:
+          budget_settings: "Paramètres généraux du budget participatif"
+          staff_settings: "Administrateurs et évaluateurs affectés au budget"
       destroy:
         success_notice: Le budget a été supprimé avec succès
         unable_notice: Vous ne pouvez pas détruire un budget qui a des investissements associés
+        unable_notice_polls: Vous ne pouvez pas détruire un budget qui est associé à un sondage
       new:
-        title: Nouveau budget citoyen
+        title_multiple: Nouveau budget rubriques multiples
+        title_single: Nouveau budget à rubrique unique
+      help:
+        budgets: "Les budgets participatifs permettent aux citoyens de proposer et de décider directement comment dépenser une partie du budget, avec un suivi et une évaluation rigoureuse des propositions par l'institution."
+        groups:
+          multiple: "Les groupes sont destinés à organiser les titres. Une fois qu'un groupe est créé et qu'il contient des titres, il est possible de déterminer dans combien de titres un utilisateur peut voter par groupe."
+          single: "Les groupes sont destinés à organiser les rubriques, puisque ce budget ne contiendra qu'une seule rubrique, le même nom peut être utilisé car il n'apparaîtra nulle part. Vous pouvez simplement passer à l'étape suivante."
+        headings:
+          multiple: "Les rubriques sont destinées à répartir l'argent du budget participatif. Ici, vous pouvez ajouter des rubriques pour ce groupe et attribuer le montant d'argent qui sera utilisé pour chaque rubrique."
+          single: "Les rubriques sont destinées à répartir l'argent du budget participatif. Puisque ce budget ne contiendra qu'une seule rubrique, c'est ici que vous établissez l'argent qui sera dépensé dans ce budget participatif."
+        phases: "Les budgets participatifs ont différentes phases. Ici, vous pouvez activer ou désactiver des phases et également personnaliser chaque phase individuelle."
+      show:
+        add_heading: "Ajouter une rubrique"
       winners:
         calculate: Calculer les investissements gagnant
         calculated: Le calcul des gagnants peut prendre quelques minutes.
         recalculate: Recalculer les investissements gagnant
+    budget_groups:
+      name: "Nom"
+      headings_name: "Titres"
+      headings_manage: "Gérer les rubriques"
+      no_groups: "Il n'y a pas de groupes."
+      amount:
+        one: "Il y a 1 groupe"
+        other: "Il y a %{count} groupes"
+      create:
+        notice: "Groupe créé avec succès !"
+      update:
+        notice: "Groupe mis à jour avec succès"
+      destroy:
+        success_notice: "Groupe supprimé avec succès"
+        unable_notice: "Vous ne pouvez pas supprimer un groupe qui est associé à des rubriques"
+      form:
+        create: "Créer un nouveau groupe"
+        edit: "Modifier le groupe"
+        max_votable_headings_info: "S'applique uniquement à la phase de sélection des projets. Pendant la phase de vote des projets, les utilisateurs ne peuvent voter que dans une rubrique par groupe."
+        submit: "Sauvegarder le groupe"
+      index:
+        new_button: "Ajouter un nouveau groupe"
+    budget_headings:
+      create:
+        notice: "Rubrique créée avec succès !"
+      update:
+        notice: "Mise à jour de rubrique réussie"
+      destroy:
+        success_notice: "Rubrique supprimée avec succès"
+        unable_notice: "Vous ne pouvez pas supprimer une rubrique qui est associé à des investissements"
+      form:
+        max_ballot_lines_info: 'Nombre maximum de projets qu''un utilisateur peut voter sur cette rubrique lors de la phase « Vote des projets ». Uniquement pour les budgets utilisant le vote d''approbation.'
+        population_info: "Le champ de population pour la tranche du budget est utilisé à des fins statistiques à la fin du budget pour montrer le pourcentage de votants pour chaque tranche qui représente une zone. Le champ est optionnel donc vous pouvez le laissez blanc."
+        coordinates_info: "Si la latitude et la longitude sont fournies, la page d’investissements pour cette rubrique comprendra une carte. Cette carte sera centrée en utilisant ces coordonnées."
+        content_blocks_info: "Si autoriser le bloc de contenu est coché, vous pourrez créer un contenu personnalisé lié à cette rubrique à partir de la section Paramètres > Blocs de contenu personnalisés. Ce contenu apparaîtra sur la page des investissements de cette rubrique."
+        create: "Créer un nouveau titre"
+        edit: "Editer le titre"
+        submit: "Sauvegarder la rubrique"
+      group_switcher:
+        currently_showing: "Affichage les en-têtes du groupe %{group}."
+        different_group: "Gérer les en-têtes d'un groupe différent"
+      index:
+        back: "Retourner aux groupes"
     budget_phases:
       edit:
-        start_date: Date de début
-        end_date: Date de fin
-        summary: Résumé
-        summary_help_text: Ce texte informera l’utilisateur sur la phase. Pour le montrer même si la phase n’est pas active, cochez la case ci-dessous
-        description: Description
+        title: "Modifier la phase"
         description_help_text: Ce texte s’affiche dans l’en-tête lors de la phase est active
-        enabled: Phase active
         enabled_help_text: Cette phase sera publique dans la chronologie des phases du budget, mais aussi active pour tout autre usage
-        save_changes: Sauvegarder les changements
+        main_call_to_action: "Appel à l'action principal (facultatif)"
+        save_changes: Sauvegarder des changements
     budget_investments:
       index:
-        heading_filter_all: Toutes les rubriques
+        heading_filter_all: Tous les titres
         administrator_filter_all: Tous les administrateurs
         valuator_filter_all: Tous les évaluateurs
         tags_filter_all: Toutes les étiquettes
         advanced_filters: Filtres avancés
         placeholder: Chercher des projets
-        sort_by:
-          placeholder: Trier par
-          id: ID
-          title: Titre
-          supports: Soutiens
         filters:
-          all: Tous
-          without_admin: Sans administrateur assigné
+          all: Toutes
+          without_admin: Sans administrateur affecté
           without_valuator: Sans évaluateur assigné
           under_valuation: En cours d'évaluation
           valuation_finished: Évaluation terminée
-          feasible: Réalisable
+          feasible: Faisable
           selected: Sélectionné
-          undecided: Non décidé
-          unfeasible: Irréalisable
+          undecided: Incertain
+          unfeasible: Infaisable
           min_total_supports: Prise en charge minimale
+          max_total_supports: Soutiens maximum
           winners: Gagnants
-          one_filter_html: "Filtres activés : <b><em>%{filter}</em></b>"
-          two_filters_html: "Filtres activés : <b><em>%{filter}, %{advanced_filters}</em></b>"
+          one_filter: "Filtres activés : <b><em>%{filter}</em></b>"
+          two_filters: "Filtres activés : <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
-          filter: Filtrer
+          filter: Filtre
         download_current_selection: "Télécharger la sélection"
-        no_budget_investments: "Il n’y a aucun projet d’investissement."
+        no_budget_investments: "Il n’y a pas de projet d’investissement."
         title: Propositions d'investissement
-        assigned_admin: Administrateur assigné
-        no_admin_assigned: Pas d'administrateur assigné
-        no_valuators_assigned: Pas d'évaluateur assigné
-        no_valuation_groups: Aucun groupe d’évaluation assignés
+        assigned_admin: Administrateur affecté
+        no_admin_assigned: Aucun administrateur affecté
+        no_valuators_assigned: Aucun évaluateur affecté
         feasibility:
-          feasible: "Réalisable (%{price})"
-          unfeasible: "Irréalisable"
+          feasible: "Réalisable"
+          unfeasible: "Infaisable"
           undecided: "Incertain"
         selected: "Sélectionné"
         select: "Sélectionner"
@@ -176,59 +248,54 @@ fr:
           selected: Sélectionné
           visible_to_valuators: Montrer aux évaluateurs
           author_username: Nom de l'auteur
-          incompatible: Incompatible
-        cannot_calculate_winners: Le budget doit rester sur la phase "Vote des projets", "Dépouillage du bulletin de vote" ou "Budget terminé" afin de calculer les projets gagnants
+          incompatible: Incompatibles
+          price: Prix
+          author: Auteur
         see_results: "Voir les résultats"
       show:
-        assigned_admin: Administrateur assigné
-        assigned_valuators: Évaluateur assigné
+        assigned_admin: Administrateur affecté
+        assigned_valuators: Évaluateurs assignés
         classification: Classement
         info: "%{budget_name} - Groupe : %{group_name} - Proposition d'investissement %{id}"
-        edit: Modifier
-        edit_classification: Modifier la classification
+        edit: Éditer
+        edit_classification: Mettre-à-jour la classification
         by: Par
         sent: Envoyé
         group: Groupe
-        heading: Rubrique
+        heading: Titre
         dossier: Rapport
-        edit_dossier: Modifier le dossier
-        tags: Étiquettes
-        user_tags: Tags de l’utilisateur
-        undefined: Indéterminé
+        edit_dossier: Éditer le rapport
+        tags: Sujets
+        undefined: Indéfini
         compatibility:
           title: Compatibilité
           "true": Incompatibles
           "false": Compatible
         selection:
           title: Sélection
-          "true": Sélectionné
-          "false": Non sélectionné
         winner:
           title: Gagnants
           "true": "Oui"
           "false": "Non"
-        image: "Image"
-        see_image: "Voir l’image"
-        no_image: "Sans image"
-        documents: "Documents"
-        see_documents: "Voir les documents (%{count})"
-        no_documents: "Sans document"
         valuator_groups: "Groupes de l’évaluateur"
+        preview: Aperçu de l'investissement
       edit:
         classification: Classement
         compatibility: Compatibilité
-        mark_as_incompatible: Marquer comme incompatible
         selection: Sélection
-        mark_as_selected: Marquer comme sélectionnés
         assigned_valuators: Évaluateurs
         select_heading: Sélectionner la rubrique
-        submit_button: Mettre à jour
+        submit_button: Mettre-à-jour
         user_tags: Tags assignés par l'utilisateur
-        tags: Étiquettes
         tags_placeholder: "Saisir les étiquettes souhaitées séparées par des virgules (,)"
-        undefined: Indéterminé
-        user_groups: "Groupes"
+        undefined: Indéfini
       search_unfeasible: Recherche impossible
+    budgets_wizard:
+      creation_timeline:
+        budget: Budget participatif
+        groups: Groupes
+        headings: Titres
+        phases: Phase
     milestones:
       index:
         table_id: "ID"
@@ -237,7 +304,6 @@ fr:
         table_publication_date: "Date de publication"
         table_status: Statut
         table_actions: "Actions"
-        delete: "Supprimer le jalon"
         no_milestones: "Aucun jalon défini"
         image: "Image"
         show_image: "Afficher l'image"
@@ -247,8 +313,6 @@ fr:
         no_statuses_defined: Il n'y a pas encore de statuts d'investissement définis
       new:
         creating: Créer un nouveau jalon
-        date: Date
-        description: Description
       edit:
         title: Modifier le jalon
       create:
@@ -265,8 +329,6 @@ fr:
         table_name: Nom
         table_description: Description
         table_actions: Actions
-        delete: Supprimer
-        edit: Modifier
       edit:
         title: Modifier le statut d'investissement
       update:
@@ -277,53 +339,158 @@ fr:
         notice: Le statut d'investissement a été créé avec succès
       delete:
         notice: Le statut d'investissement a été supprimé avec succès
+    progress_bars:
+      manage: "Gérer la barre de progrès"
+      index:
+        title: "Barres de progrès"
+        no_progress_bars: "Il n'y a pas de barres de progrès"
+        new_progress_bar: "Créer une nouvelle barre de progrès"
+        primary: "Barre de progrès primaire"
+        table_id: "ID"
+        table_kind: "Type"
+        table_title: "Titre"
+        table_percentage: "Progrès actuel"
+      new:
+        creating: "Créer une nouvelle barre de progrès"
+      edit:
+        title:
+          primary: "Editer la barre de progrès primaire"
+          secondary: "Editer la barre de progrès %{title}"
+      create:
+        notice: "Barre de progrès créée avec succès!"
+      update:
+        notice: "Barre de progrès mise à jour avec succès"
+      delete:
+        notice: "Barre de progrès supprimée avec succès"
     comments:
       index:
-        filter: Filtrer
+        id: "ID"
+        content: "Contenu"
+        author: "Auteur"
+        commentable_type: "Type"
+        title: Commentaires masqués
+        table_link: "Lien"
+    hidden_comments:
+      index:
+        filter: Filtre
         filters:
-          all: Tous
+          all: Toutes
           with_confirmed_hide: Confirmé
-          without_confirmed_hide: En attente
+          without_confirmed_hide: Indécis
         hidden_debate: Débat masqué
         hidden_proposal: Proposition masquée
         title: Commentaires masqués
-        no_hidden_comments: Il n’y a aucun commentaire caché.
     dashboard:
       index:
-        back: Revenir
+        back: Retourner au %{org}
         title: Administration
         description: Bienvenue sur le page d’administration de %{org}.
+      actions:
+        index:
+          description: "Lorsque les utilisateurs créent des propositions il peuvent accéder au tableau de bord de leur proposition, où vous pouvez proposer des ressources et recommandations pour soutenir leur idée."
+          create: Créer une ressource ou une action
+          active: 'Oui'
+          inactive: 'Non'
+          title: Ressources et actions
+          action_title: Titre
+          action_type: Type
+          required_supports: Soutiens nécéssaires
+          day_offset: Jours requis
+          action_active: Actif
+          order: Ordre
+          published_proposal: Propositions publiées
+          default:
+            email: E-mail
+            polls: Sondages
+            poster: Affiche
+        new:
+          creating: Nouvelle action pour le tableau de bord des propositions
+          back: Retour à la liste
+        create:
+          notice: Action créée avec succès
+        edit:
+          editing: Editer l'action pour le tableau de bord des propositions
+          back: Retour à la liste
+        delete:
+          success: Action supprimée avec succès
+        form:
+          submit_button: Sauvegarder
+          help_text: Ecrire 0 pour que cette valeur ne soit pas prise en compte
+          published_proposal_help_text: Cochez la case pour créer l'action pour les propositions publiées uniquement
+      administrator_tasks:
+        index:
+          description: "Les ressources publiées dans le tableau de bord des propositions peuvent inclure un bouton à demander aux administrateurs. Les demandes des utilisateurs sont indiquées ci-dessous."
+          title: Ressources demandées
+          solve: Résoudre
+          no_records: Il n'y a pas de ressources demandées
+          source: Source
+          resource: Source demandées
+          filter: Filtre
+          filters:
+            pending: En attente
+            done: Résolu
+        edit:
+          back: Retour à la liste des tâches en attente
+          solving: Résoudre la tâche en attente
+        form:
+          solve: Marquer comme résolu
+          proposal: Proposition
+          request: Ressource demandées
+        update:
+          success: La tâche a été marquée comme résolue.
     debates:
       index:
-        filter: Filtrer
-        filters:
-          all: Tous
-          with_confirmed_hide: Confirmé
-          without_confirmed_hide: En attente
+        id: ID
+        author: Auteur
         title: Débats masqués
-        no_hidden_debates: Il n’y a aucun commentaire caché.
-    hidden_users:
-      index:
-        filter: Filtrer
-        filters:
-          all: Tous
-          with_confirmed_hide: Confirmé
-          without_confirmed_hide: En attente
-        title: Utilisateurs masqués
-        user: Utilisateur
-        no_hidden_users: Il n’y a aucun utilisateur masqué.
-      show:
-        email: 'Email :'
-        hidden_at: 'Masqué le :'
-        registered_at: 'Inscrit le :'
-        title: Activité de l'utilisateur (%{user})
-    hidden_budget_investments:
+        no_debates: Il n'y a pas de débats.
+    hidden_debates:
       index:
         filter: Filtre
         filters:
           all: Tous
           with_confirmed_hide: Confirmé
           without_confirmed_hide: En attente
+        title: Débats masqués
+        no_hidden_debates: Il n'y a pas de débats cachés.
+    documents:
+      new:
+        title: "Mettre en ligne un document"
+        submit_button: "Mettre en ligne"
+      index:
+        new_link: "Ajouter un nouveau document"
+        no_documents: "Il n'y a pas de documents."
+        title: "Documents"
+        format: "Format"
+        size: "Taille"
+        url: "URL"
+      create:
+        success_notice: "Document téléchargé avec succès"
+        unable_notice: "Document invalide"
+      destroy:
+        success_notice: "Document supprimé avec succès"
+    hidden_users:
+      index:
+        filter: Filtre
+        filters:
+          all: Toutes
+          with_confirmed_hide: Confirmé
+          without_confirmed_hide: Indécis
+        title: Utilisateurs masqués
+        user: Utilisateurs masqués
+        no_hidden_users: Il n’y a aucun utilisateur masqué.
+      show:
+        email: "Courriel :"
+        hidden_at: "Masqué le :"
+        registered_at: "Inscrit le :"
+        title: Activité de l'utilisateur (%{user})
+    hidden_budget_investments:
+      index:
+        filter: Filtre
+        filters:
+          all: Toutes
+          with_confirmed_hide: Confirmé
+          without_confirmed_hide: Indécis
         title: Investissements de budgets cachés
         no_hidden_budget_investments: Il n’y a aucun investissement budgétaire caché
     legislation:
@@ -338,61 +505,58 @@ fr:
           notice: Processus supprimé avec succès
         edit:
           back: Retour
-          submit_button: Sauvegarder les modifications
-        errors:
-          form:
-            error: Erreur
+          submit_button: Sauvegarder des changements
         form:
           enabled: Activé
           process: Processus
           debate_phase: Phase de débat
+          draft_phase: Etape du brouillon
+          draft_phase_description: Si cette étape est active, le processus ne sera pas listé dans l'index des procès. Authorisez l'aperçu du processus et créez du contenu avant son commencement.
+          allegations_phase: Phase de commentaires
           proposals_phase: Phase de propositions
-          start: Début
-          end: Fin
-          use_markdown: Utilisez Markdown pour formater le texte
-          title_placeholder: Le titre du processus
-          summary_placeholder: Bref résumé de la description
-          description_placeholder: Ajouter une description du processus
-          additional_info_placeholder: Ajouter n'importe quelle information supplémentaire que vous estimez utile
+          use_markdown: Utilisez Markdown pour formater le text
+          homepage_description: Ici vous pouvez expliquer le contenu du processus
+          banner_title: Couleurs de l'en-tête
         index:
           create: Nouveau processus
-          delete: Supprimer
+          title: Processus législatifs
           filters:
-            open: Ouvert
-            next: Suivant
-            past: Passé
-            all: Tous
+            active: Actif
+            all: Toutes
         new:
           back: Retour
           title: Créer un nouveau processus législatif collaboratif
           submit_button: Créer un processus
         proposals:
-          select_order: Trier par
           orders:
-            id: Id
-            title: Titre
-            supports: Soutiens
+            id: "Id"
+            title: "Titre"
+            supports: "Soutiens"
         process:
           title: Processus
           comments: Commentaires
           status: Statut
-          creation_date: Date de création
+          start_date: Date de début
+          end_date: Date de fin
           status_open: Ouvert
           status_closed: Fermé
           status_planned: Planifié
         subnav:
           info: Information
-          draft_versions: Rédaction
+          homepage: Page d’accueil
+          draft_versions: Brouillon
           questions: Débat
           proposals: Propositions
+          milestones: Suivent
+      homepage:
+        edit:
+          title: Configurez votre page d'accueil de processus
       proposals:
         index:
           title: Titre
           back: Retour
           id: Id
           supports: Soutiens
-          select: Sélectionner
-          selected: Sélectionné
         form:
           custom_categories: Catégories
           custom_categories_description: Catégories que les utilisateurs peuvent sélectionner créer une proposition.
@@ -408,26 +572,22 @@ fr:
           notice: Le brouillon a été supprimé avec succès
         edit:
           back: Retour
-          submit_button: Enregistrer les changements
+          submit_button: Sauvegarder des changements
           warning: Vous avez modifié le texte, n’oubliez pas de cliquer sur Enregistrer pour enregistrer vos modifications.
-        errors:
-          form:
-            error: Erreur
+          markdown_changes_message: "Vous avez modifié le texte sans l'enregistrer. Confirmez-vous pour quitter la page ?"
         form:
-          title_html: 'Édition <span class="strong">%{draft_version_title}</span> du processus <span class="strong">%{process_title}</span>'
+          title: 'Édition <span class="strong">%{draft_version_title}</span> du processus <span class="strong">%{process_title}</span>'
           launch_text_editor: Lancer l’éditeur de texte
           close_text_editor: Fermer l'éditeur de text
-          use_markdown: Utilisez Markdown pour formater le text
+          use_markdown: Utilisez Markdown pour formater le texte
           hints:
             final_version: Cette version sera publiée comme résultat final de ce processus. Les commentaires ne seront pas autorisés dans cette version.
             status:
               draft: Vous pouvez voir un aperçu en tant qu’admin, personne d’autre ne peut le voir
               published: Visible par tout le monde
-          title_placeholder: Écrire le titre du brouillon
           changelog_placeholder: Ajouter les changements de la version précédente
-          body_placeholder: Ecrivez le text du brouillon
         index:
-          title: Version brouillon
+          title: Ébauches
           create: Créer une version
           delete: Supprimer
           preview: Aperçu
@@ -435,9 +595,6 @@ fr:
           back: Retour
           title: Créer une nouvelle version
           submit_button: Créer une version
-        statuses:
-          draft: Brouillon
-          published: Publié
         table:
           title: Titre
           created_at: Créé le
@@ -456,14 +613,9 @@ fr:
         edit:
           back: Retour
           title: "Editer “%{question_title}”"
-          submit_button: Enregistrer les changements
-        errors:
-          form:
-            error: Erreur
+          submit_button: Sauvegarder des changements
         form:
           add_option: Ajouter une option
-          title: Question
-          title_placeholder: Ajouter une question
           value_placeholder: Ajouter une réponse
           question_options: "Réponses possibles (optionnel, réponses ouvertes par défaut)"
         index:
@@ -482,22 +634,28 @@ fr:
           comments_count: Nombre de commentaires
         question_option_fields:
           remove_option: Supprimer l’option
+      milestones:
+        index:
+          title: Suivent
     managers:
       index:
         title: Responsables
-        name: Nom
-        email: Courriel
         no_managers: Il n’y a aucun gestionnaire.
       manager:
-        add: Ajouter
-        delete: Supprimer
+        add: Ajouter en tant que président
       search:
-        title: 'Gestionnaires : Recherche d''utilisateur'
+        title: "Gestionnaires : Recherche d'utilisateur"
+    sdg_managers:
+      index:
+        no_sdg_managers: Il n'y a pas aucun utilisateur.
+    sdg/managers:
+      sdg/manager:
+        add: Ajouter
     menu:
       activity: Activité des modérateurs
       admin: Menu d'administration
       banner: Gérer les bannières
-      poll_questions: Questions des citoyens
+      proposals: Propositions
       proposals_topics: Sujets des propositions
       budgets: Budgets participatifs
       geozones: Gérer les districts
@@ -509,6 +667,7 @@ fr:
       hidden_users: Utilisateurs masqués
       administrators: Administrateurs
       managers: Responsables
+      sdg_managers: Gestionnaires ODD
       moderators: Modérateurs
       messaging_users: Messages aux utilisateurs
       newsletters: Bulletins d’information
@@ -516,66 +675,72 @@ fr:
       system_emails: Emails système
       emails_download: Téléchargement des courriels
       valuators: Évaluateurs
-      poll_officers: Assesseurs
+      poll_officers: Présidents
       polls: Votes
       poll_booths: Bureaux de vote
       poll_booth_assignments: Assignations des bureaux de vote
       poll_shifts: Assigner les périodes de travail
-      officials: Officiels
+      officials: Fonctionnaires
       organizations: Organisations
       settings: Paramétres de configuration
-      spending_proposals: Propositions d'investissement
       stats: Statistiques
       signature_sheets: Feuilles de signature
       site_customization:
+        documents: Documents personnalisés
         homepage: Page d’accueil
         pages: Pages personnalisées
         images: Images personnalisées
         content_blocks: Blocs de contenu personnalisés
         information_texts: Textes d’information personnalisés
         information_texts_menu:
+          basic: "Personnalisation de base"
           debates: "Débats"
           community: "Communauté"
           proposals: "Propositions"
-          polls: "Sondages"
+          polls: "Votes"
           layouts: "Mise en page"
+          machine_learning: "IA / Apprentissage automatique"
           mailers: "Courriels"
           management: "Gestion"
           welcome: "Bienvenue"
         buttons:
           save: "Sauvegarder"
+          content_block:
+            update: "Mettre à jour le bloc"
       title_moderated_content: Contenu modéré
-      title_budgets: Budgets
-      title_polls: Votes
       title_profiles: Profils
       title_settings: Paramètres
       title_site_customization: Personnalisation du site
       title_booths: Salle de vote
       legislation: Processus législatif collaboratif
       users: Utilisateurs
+      dashboard: Tableau de bord des propositions
+      administrator_tasks: Ressources demandées
+      dashboard_actions: Ressources et actions
+      debates: "Débats"
+      comments: "Commentaires"
+      local_census_records: Gérer le recensement local
+      machine_learning: "IA / Apprentissage automatique"
     administrators:
       index:
         title: Administrateurs
-        name: Nom
-        email: Email
+        id: ID Administrateur
         no_administrators: Il n'y a pas d'administrateurs.
       administrator:
-        add: Ajouter
-        delete: Supprimer
+        add: Ajouter en tant que président
         restricted_removal: "Désolé, vous ne pouvez pas vous retirer de la liste des administrateurs"
       search:
         title: "Administrateurs : Recherche d'utilisateur"
+      form:
+        edit_title: "Modifier l'administrateur"
     moderators:
       index:
         title: Modérateurs
-        name: Nom
-        email: Email
         no_moderators: Il n'y a pas de modérateurs.
       moderator:
-        add: Ajouter
-        delete: Supprimer
+        add: Ajouter en tant que président
       search:
-        title: 'Modérateurs : Recherche d''utilisateur'
+        title: "Modérateurs : Recherche d'utilisateur"
     segment_recipient:
       all_users: Tous les utilisateurs
       administrators: Administrateurs
@@ -599,13 +764,10 @@ fr:
         sent: Envoyé
         actions: Actions
         draft: Brouillon
-        edit: Modifier
-        delete: Supprimer
         preview: Aperçu
         empty_newsletters: Aucun bulletin d'information à afficher
       new:
         title: Nouveau bulletin d'information
-        from: Adresse électronique qui apparaîtra comme expéditeur de la newsletter
       edit:
         title: Modifier le bulletin d'information
       show:
@@ -632,8 +794,6 @@ fr:
         sent: Envoyé
         actions: Actions
         draft: Brouillon
-        edit: Éditer
-        delete: Supprimer
         preview: Aperçu
         view: Vue
         empty_notifications: Aucune notification à afficher
@@ -645,7 +805,7 @@ fr:
         submit_button: Editer la notification
       show:
         section_title: Aperçu de la notification
-        send: Envoyer la notification
+        send: Envoyer une notification
         will_get_notified: (%{n} utilisateurs seront avertis)
         got_notified: (%{n} utilisateurs ont été notifiés)
         sent_at: Envoyé à
@@ -665,9 +825,25 @@ fr:
         send_pending: Envoi en attente
         send_pending_notification: Les notifications en attente ont été envoyées avec succès
       proposal_notification_digest:
-        title: Résumé des notifications des propositions
-        description: Rassemble toutes les notifications de proposition pour un utilisateur dans un seul message, afin d’éviter trop d’e-mails.
-        preview_detail: Les utilisateurs recevront uniquement les notifications des propositions qu’ils suivent
+        title: "Résumé des notifications des propositions"
+        description: "Rassemble toutes les notifications de proposition pour un utilisateur dans un seul message, afin d’éviter trop d’e-mails."
+        preview_detail: "Les utilisateurs recevront uniquement les notifications des propositions qu’ils suivent"
+      budget_investment_created:
+        title: "Investissement budgétaire crée"
+        description: "Envoyé lorsqu'un utilisateur crée un investissement budgétaire."
+      budget_investment_selected:
+        title: "Investissement budgétaire selectionné"
+        description: "Envoyé à l'auteur lorque son investissement budgétaire a été selectionné."
+      budget_investment_unfeasible:
+        title: "Investissement budgétaire irréalisable"
+      comment:
+        title: "Commentaire"
+      reply:
+        title: "Répondre"
+      user_invite:
+        title: "Invitation d'utilisateur"
+      evaluation_comment:
+        title: "Nouveau commentaire d'évaluation"
     emails_download:
       index:
         title: Téléchargement des courriels
@@ -685,33 +861,25 @@ fr:
         valuator_groups: "Groupes de l’évaluateur"
         group: "Groupe"
         no_group: "Aucun groupe"
+        abilities: "Pouvoirs"
       valuator:
         add: Ajouter un évaluateur
-        delete: Supprimer
       search:
-        title: 'Évaluateurs : Recherche d''utilisateur'
-      summary:
-        title: Résumé de l'évaluateur pour les projets d'investissement
-        valuator_name: Évaluateur
-        finished_and_feasible_count: Terminé et réalisable
-        finished_and_unfeasible_count: Terminé et irréalisable
-        finished_count: Terminé
-        in_evaluation_count: En évaluation
-        total_count: Total
-        cost: Coût
+        title: "Évaluateurs : Recherche d'utilisateur"
       form:
         edit_title: "Évaluateurs : modifier l'évaluateur"
-        update: "Modifier l'évaluateur"
         updated: "L'évaluateur a bien été modifié"
       show:
         description: "Description"
-        email: "Courriel"
+        email: "Email"
         group: "Groupe"
+        abilities: "Pouvoirs"
         no_description: "Pas de description"
         no_group: "Pas de groupe"
+        no_abilities: "Sans pouvoirs"
     valuator_groups:
       index:
-        title: "Groupes d'évaluateurs"
+        title: "Groupes d’évaluateurs"
         new: "Créer un groupe d'évaluateurs"
         name: "Nom"
         members: "Membres"
@@ -720,46 +888,43 @@ fr:
         title: "Groupe d’évaluateurs : %{group}"
         no_valuators: "Il n’y a aucun évaluateurs assignés à ce groupe"
       form:
-        name: "Nom du groupe"
         new: "Créer un groupe d'évaluateurs"
         edit: "Sauvegarder le groupe d'évaluateurs"
     poll_officers:
       index:
         title: Assesseurs
       officer:
-        add: Ajouter
-        delete: Supprimer le rôle
+        add: Ajouter en tant que président
+        delete: Supprimer la position
         name: Nom
-        email: Courriel
+        email: Email
         entry_name: assesseur
       search:
         email_placeholder: Rechercher un utilisateur par courriel
-        search: Rechercher
-        user_not_found: Utilisateur non trouvé
+        user_not_found: Utilisateur introuvable
     poll_officer_assignments:
       index:
-        officers_title: "Liste des assesseurs"
-        no_officers: "Il n'y a aucun assesseur affecté à ce vote."
+        officers_title: "Liste des présidents"
+        no_officers: "Il n'y a aucun président affecté à ce vote."
         table_name: "Nom"
-        table_email: "Courriel"
+        table_email: "Email"
       by_officer:
         date: "Date"
-        booth: "Bureau de vote"
+        booth: "Urne"
         assignments: "Affectations pour ce vote"
         no_assignments: "Cet utilisateur n'a pas d'affectation pour ce vote."
     poll_shifts:
       new:
-        add_shift: "Ajouter une période de travail"
+        add_shift: "Ajouter une affectation"
         shift: "Affectation"
         shifts: "Périodes de travail dans ce bureau de vote"
         date: "Date"
-        task: "Tâche"
         edit_shifts: Modifier les périodes de travail
-        new_shift: "Nouvelle période de travail"
+        new_shift: "Nouvelle affectation"
         no_shifts: "Ce bureau de vote n'a aucune période de travail"
         officer: "Assesseur"
-        remove_shift: "Supprimer"
-        search_officer_button: Rechercher
+        remove_shift: "Retirer"
+        search_officer_button: Chercher
         search_officer_placeholder: Rechercher un assesseur
         search_officer_text: Rechercher un assesseur à qui associer une nouvelle période de travail
         select_date: "Sélectionner le jour"
@@ -788,21 +953,16 @@ fr:
     poll_booth_assignments:
       alert:
         shifts: "Il y a des périodes de travail associées à ce bureau de vote. Si vous supprimez l'affectation du bureau, ces périodes seront également supprimées. Continuer ?"
-      flash:
-        destroy: "Ce bureau de vote n'est plus affecté"
-        create: "Ce bureau de vote a été affecté"
-        error_destroy: "Une erreur s'est produite lors de la suppression de l'affectation du bureau de vote"
-        error_create: "Une erreur s'est produite lors de l'affectation du bureau de vote au vote"
       show:
         location: "Lieu"
-        officers: "Assesseurs"
-        officers_list: "Liste des assesseurs pour ce bureau de vote"
-        no_officers: "Il n'y a pas d'assesseur pour ce bureau de vote"
-        recounts: "Dépouillement"
+        officers: "Présidents"
+        officers_list: "Liste des présidents pour ce bureau de vote"
+        no_officers: "Il n'y a pas de président pour ce bureau de vote."
+        recounts: "Dépouillements"
         recounts_list: "Liste des dépouillements pour ce bureau de vote"
         results: "Résultats"
         date: "Date"
-        count_final: "Dépouillement final (par assesseur)"
+        count_final: "Dépouillement final (par président)"
         count_by_system: "Votes (automatique)"
         total_system: Nombre de voix (automatique)
       index:
@@ -814,16 +974,14 @@ fr:
       index:
         title: "Liste des votes"
         no_polls: "Il n'y a pas de votes."
-        create: "Créer un vote"
+        create: "Créer le vote"
         name: "Nom"
         dates: "Dates"
+        start_date: "Date de début"
+        closing_date: "Date de fin"
         geozone_restricted: "Limité aux quartiers"
       new:
         title: "Nouveau vote"
-        show_results_and_stats: "Afficher les résultats et statistiques"
-        show_results: "Afficher les résultats"
-        show_stats: "Afficher les statistiques"
-        results_and_stats_reminder: "En cochant cette case, les résultats et les statistiques du votes seront accessibles au public et tous les utilisateurs les verront."
         submit_button: "Créer le vote"
       edit:
         title: "Modifier le vote"
@@ -852,11 +1010,12 @@ fr:
         create_question: "Créer une question"
         table_proposal: "Proposition"
         table_question: "Question"
+        table_poll: "Vote"
       edit:
         title: "Modifier la question"
       new:
-        title: "Créer une question"
-        poll_label: "Vote"
+        title: "Créer une question pour le sondage %{poll}"
+        title_proposal: "Créer une question"
       answers:
         images:
           add_image: "Ajouter une image"
@@ -888,9 +1047,9 @@ fr:
         description: Description
         images: Images
         images_list: Liste des images
-        edit: Modifier la réponse
+        edit: Modifier réponse
       edit:
-        title: Modifier réponse
+        title: Modifier la réponse
       videos:
         index:
           title: Vidéos
@@ -905,7 +1064,9 @@ fr:
       index:
         title: "Dépouillements"
         no_recounts: "Il n'y a rien à dépouiller"
-        table_booth_name: "Bureau de vote"
+        total_final: "Dépouillement final"
+        total_system: "Votes (automatique)"
+        table_booth_name: "Urne"
         table_total_recount: "Dépouillement final (par assesseur)"
         table_system_count: "Votes (automatique)"
     results:
@@ -913,13 +1074,13 @@ fr:
         title: "Résultats"
         no_results: "Il n'y a pas de résultats."
       result:
-        table_whites: "Bulletins complètement blancs"
-        table_nulls: "Bulletins invalides"
+        table_whites: "Votes blancs"
+        table_nulls: "Votes invalides"
         table_total: "Total des bulletins"
         table_answer: Réponse
         table_votes: Votes
       results_by_booth:
-        booth: Bureau de vote
+        booth: Urne
         results: Résultats
         see_results: Voir les résultats
         title: "Résultats par bureau"
@@ -933,8 +1094,6 @@ fr:
         no_location: "Aucun emplacement"
       new:
         title: "Nouveau bureau de vote"
-        name: "Nom"
-        location: "Lieu"
         submit_button: "Créer un bureau de vote"
       edit:
         title: "Modifier le bureau de vote"
@@ -943,13 +1102,12 @@ fr:
         location: "Lieu"
       booth:
         shifts: "Assigner les périodes de travail"
-        edit: "Modifier le bureau de vote"
     officials:
       edit:
         destroy: Supprimer le statut de fonctionnaire
-        title: 'Fonctionnaire: Modifier l''utilisateur'
+        title: "Fonctionnaire: Modifier l'utilisateur"
       flash:
-        official_destroyed: 'Informations sauvegardées : l''utilisateur n''est plus un fonctionnaire.'
+        official_destroyed: "Informations sauvegardées : l'utilisateur n'est plus un fonctionnaire."
         official_updated: Informations du fonctionnaire sauvegardées
       index:
         title: Fonctionnaires
@@ -964,19 +1122,18 @@ fr:
       level_4: Niveau 4
       level_5: Niveau 5
       search:
-        edit_official: Modifier le fonctionnaire
         make_official: Convertir en fonctionnaire
-        title: 'Positions de fonctionnaire: recherche utilisateur'
+        title: "Positions de fonctionnaire: recherche utilisateur"
         no_results: Positions officielles introuvables.
     organizations:
       index:
-        filter: Filtrer
+        filter: Filtre
         filters:
-          all: Tous
-          pending: En attente
+          all: Toutes
+          pending: Indécis
           rejected: Rejeté
           verified: Vérifié
-        hidden_count_html:
+        hidden_count:
           one: Il y a également <strong>une organisation</strong> sans utilisateurs ou avec un utilisateur masqué.
           other: Il y a <strong>%{count} organisations</strong> sans utilisateurs ou avec un utilisateur masqué.
         name: Nom
@@ -987,72 +1144,78 @@ fr:
         no_organizations: Il n’y a pas d’organisations.
         reject: Rejeter
         rejected: Rejeté
-        search: Rechercher
-        search_placeholder: Nom, courriel ou téléphone
         title: Organisations
         verified: Vérifié
         verify: Vérifier
-        pending: En attente
+        pending: Indécis
       search:
         title: Rechercher une organisation
         no_results: Aucune organisation trouvée.
-    proposal_notifications:
+    proposals:
       index:
-        filter: Filtrer
+        title: Propositions
+        id: ID
+        author: Auteur
+        select: Sélecter
+        selected: Sélecté
+        milestones: Jalons
+    hidden_proposals:
+      index:
+        filter: Filtre
         filters:
-          all: Tous
+          all: Toutes
           with_confirmed_hide: Confirmé
-          without_confirmed_hide: En attente
+          without_confirmed_hide: Indécis
+        title: Propositions masquées
+        no_hidden_proposals: Il n’y a aucune proposition masquée.
+    hidden_proposal_notifications:
+      index:
+        filter: Filtre
+        filters:
+          all: Toutes
+          with_confirmed_hide: Confirmé
+          without_confirmed_hide: Indécis
         title: Notifications masquées
         no_hidden_proposals: Il n'y a pas de notifications masquées.
     settings:
       flash:
         updated: Valeur mise-à-jour
       index:
-        banners: Style des bannières
-        banner_imgs: Images des bannières
-        no_banners_images: Aucune image de bannière
-        no_banners_styles: Aucun style de bannière
         title: Paramètres
-        update_setting: Mettre à jour
+        general: Paramètres
+        update_setting: Mettre-à-jour
         feature_flags: Fonctionnalités
         features:
           enabled: "Fonctionnalité activée"
-          disabled: "Fonctionnalité désactivée"
-          enable: "Activer"
-          disable: "Désactiver"
         map:
           title: Configuration de la carte
           help: Vous pouvez ici modifier la manière dont la carte est affichée pour les utilisateurs. Déplacez le marqueur ou cliquez à n'importe quel endroit sur la carte, définissez le niveau de zoom et cliquez sur le bouton "Mettre à jour".
           flash:
             update: Configuration de la carte mise à jour avec succès.
           form:
-            submit: Mettre à jour
+            submit: Mettre-à-jour
+        dashboard:
+          title: Tableau de bord des propositions
+      remote_census_response_name: Données de Réponse
       setting: Fonctionnalité
-      setting_actions: Actions
       setting_name: Paramètres
-      setting_status: Statut
       setting_value: Valeur
       no_description: "Aucune description"
     shared:
-      booths_search:
-        button: Rechercher
-        placeholder: Rechercher le bureau de vote par nom
-      poll_officers_search:
-        button: Rechercher
-        placeholder: Rechercher un assesseur
-      poll_questions_search:
-        button: Rechercher
-        placeholder: Rechercher les questions d'un vote
-      proposal_search:
-        button: Rechercher
-        placeholder: Rechercher des propositions par titre, code, description ou question
-      spending_proposal_search:
-        button: Rechercher
-        placeholder: Rechercher des propositions de dépenses par titre ou description
-      user_search:
-        button: Rechercher
-        placeholder: Rechercher un utilisateur par nom ou courriel
+      search:
+        advanced_filters:
+          sdg_targets:
+            label: "Par cible"
+        label:
+          booths: "Rechercher le bureau de vote par nom"
+          debates: "Rechercher des débats par titre ou description"
+          local_census_records: "Recherche par numéro de document"
+          organizations: "Nom, courriel ou téléphone"
+          poll_officers: "Rechercher le président d'un vote"
+          poll_questions: "Rechercher les questions d'un vote"
+          proposals: "Rechercher des propositions par titre, code, description ou question"
+          users: "Rechercher un utilisateur par nom ou courriel"
+        search: "Chercher"
       search_results: "Résultats de recherche"
       no_search_results: "Aucun résultat trouvé."
       actions: Actions
@@ -1066,81 +1229,19 @@ fr:
       author: Auteur
       content: Contenu
       created_at: Créé le
-    spending_proposals:
-      index:
-        geozone_filter_all: Tous les districts
-        administrator_filter_all: Tous les administrateurs
-        valuator_filter_all: Tous les évaluateurs
-        tags_filter_all: Toutes les étiquettes
-        filters:
-          valuation_open: Ouvert
-          without_admin: Sans administrateur affecté
-          managed: Géré
-          valuating: Sous évaluation
-          valuation_finished: Évaluation terminée
-          all: Tous
-        title: Projets d'investissement du budget participatif
-        assigned_admin: Administrateur affecté
-        no_admin_assigned: Aucun administrateur affecté
-        no_valuators_assigned: Aucun évaluateur affecté
-        summary_link: "Résumé de la proposition d'investissement"
-        valuator_summary_link: "Résumé de l'évaluateur"
-        feasibility:
-          feasible: "Réalisable (%{price})"
-          not_feasible: "Irréalisable"
-          undefined: "Indéfini"
-      show:
-        assigned_admin: Administrateur affecté
-        assigned_valuators: Évaluateurs affectés
-        back: Retour
-        classification: Classement
-        heading: "Proposition d'investissement %{id}"
-        edit: Mettre-à-jour
-        edit_classification: Mettre-à-jour la classification
-        association_name: Association
-        by: Par
-        sent: Envoyé
-        geozone: Périmètre
-        dossier: Rapport
-        edit_dossier: Mettre-à-jour le dossier
-        tags: Étiquettes
-        undefined: Indéfini
-      edit:
-        classification: Classement
-        assigned_valuators: Évaluateurs
-        submit_button: Mettre-à-jour
-        tags: Étiquettes
-        tags_placeholder: "Saisir les étiquettes souhaitées séparées par des virgules (,)"
-        undefined: Indéfini
-      summary:
-        title: Résumé des propositions d'investissement
-        title_proposals_with_supports: Résumé des propositions d'investissement avec soutiens
-        geozone_name: Périmètre
-        finished_and_feasible_count: Terminé et réalisable
-        finished_and_unfeasible_count: Terminé et irréalisable
-        finished_count: Terminé
-        in_evaluation_count: En évaluation
-        total_count: Total
-        cost_for_geozone: Coût
+      show_results_and_stats: "Afficher les résultats et statistiques"
     geozones:
       index:
         title: District
         create: Créer un district
-        edit: Mettre-à-jour
-        delete: Supprimer
       geozone:
         name: Nom
         external_code: Code externe
         census_code: Code du bureau de recensement
         coordinates: Coordonnées
-      errors:
-        form:
-          error:
-            one: "a empêché ce district d'être sauvegardé"
-            other: 'a empêché ce district d''être sauvegardé'
       edit:
         form:
-          submit_button: Sauvegarder les changements
+          submit_button: Sauvegarder des changements
         editing: Mettre-à-jour le district
         back: Revenir
       new:
@@ -1159,13 +1260,14 @@ fr:
         new: Nouvelle feuilles de signature
       new:
         title: Nouvelle feuilles de signature
-        document_numbers_note: "Saisir les numéros séparés par des virgules (,)"
+        document_numbers_note: "Saisir les numéros séparés par des points-virgules (;)"
         submit: Créer la feuille de signature
+        text_help:
+          example_text: "Exemple: "
       show:
         created_at: Créé le
         author: Auteur
-        documents: Documents
-        document_count: "Nombre de documents :"
+        users: Utilisateurs
         verified:
           one: "Il y a %{count} signature valide"
           other: "Il y a %{count} signatures valides"
@@ -1186,7 +1288,6 @@ fr:
           proposals: Propositions
           budgets: Budgets ouverts
           budget_investments: Propositions d'investissement
-          spending_proposals: Propositions d'investissement
           unverified_users: Utilisateurs non-vérifiés
           user_level_three: Utilisateurs de niveau 3
           user_level_two: Utilisateurs de niveau 2
@@ -1195,13 +1296,32 @@ fr:
           verified_users_who_didnt_vote_proposals: Utilisateurs vérifiés n'ayant pas voté des propositions
           visits: Visites
           votes: Total des votes
-        spending_proposals_title: Propositions d'investissement
         budgets_title: Budget participatif
-        visits_title: Visites
+        participatory_budgets: Budgets participatifs
         direct_messages: Messages privés
         proposal_notifications: Notifications des propositions
         incomplete_verifications: Vérifications incomplètes
         polls: Votes
+        sdg: ODD
+      graph:
+        debate_created: Débats
+        visit: Visites
+        level_2_user: Utilisateurs de niveau 2
+        proposal_created: Propositions citoyennes
+      budgets:
+        title: "Budget participatifs - Stats de participation"
+        supporting_phase: Phase de soutien
+        balloting_phase: Vote final
+      budget_balloting:
+        title: "Stats de vote final"
+        vote_count: Votes
+        participant_count: Participants
+      budget_supporting:
+        title: "Stats de la phase de soutien"
+        headings: Titres
+        users: Utilisateurs
+        vote_count: Votes
+        participant_count: Participants
       direct_messages:
         title: Messages privés
         total: Total
@@ -1210,6 +1330,7 @@ fr:
         title: Notifications des propositions
         total: Total
         proposals_with_notifications: Propositions avec notifications
+        not_available: "Proposition non disponible"
       polls:
         title: Statistiques des votes
         all: Votes
@@ -1221,29 +1342,33 @@ fr:
           question_name: Question
           origin_web: Participants en ligne
           origin_total: Nombre total de participants
+      sdg:
+        debates: "Débats"
+        polls: "Votes"
+        proposals: "Propositions"
     tags:
       create: Créer un sujet
-      destroy: Supprimer un sujet
       index:
         add_tag: Ajouter un nouveau sujet de proposition
         title: Sujets de propositions
         topic: Sujet
         help: "Quand un utilisateur créé une proposition, les thèmes suivants sont proposés comme tags par défaut."
-      name:
-        placeholder: Saisir le nom du sujet
     users:
       columns:
+        id: ID
         name: Nom
         email: Email
-        document_number: Numéro du document
+        document_number: Numéro de document
         roles: Rôles
         verification_level: Niveau de vérification
       index:
         title: Utilisateurs masqués
         no_users: Il n'y a pas aucun utilisateur.
+        filter: Filtre
+        filters:
+          active: Actif
       search:
         placeholder: Rechercher un utilisateur par email, nom ou numéro de document
-        search: Rechercher
     verifications:
       index:
         phone_not_given: Téléphone non communiqué
@@ -1252,9 +1377,8 @@ fr:
     site_customization:
       content_blocks:
         information: Information à propos des blocs de contenu
-        about: Vous pouvez créer des blocs de contenu en HTML pour les insérer dans l'en-tête ou le pied de page de votre Consul.
-        top_links_html: "<strong>Les blocs de l'en-tête (top_links)</strong> sont des blocs de liens devant impérativement respecter ce format :"
-        footer_html: "<strong>Les blocs du pied de page</strong> ont un format libre et peuvent être utilisés pour insérer du Javascript, du CSS ou du HTML personnalisé."
+        about: "Vous pouvez créer des blocs de contenu en HTML pour les insérer dans l'en-tête ou le pied de page de votre Consul."
+        html_format: "Un bloc de contenu est un ensemble de liens, et doit avoir le format suivant:"
         no_blocks: "Il n'y a pas de bloc de contenu."
         create:
           notice: Bloc de contenu créé avec succès
@@ -1266,9 +1390,6 @@ fr:
           notice: Bloc de contenu supprimé avec succès
         edit:
           title: Mettre-à-jour le bloc de contenu
-        errors:
-          form:
-            error: Erreur
         index:
           create: Créer un nouveau bloc de contenu
           delete: Supprimer le bloc
@@ -1306,9 +1427,6 @@ fr:
           notice: Page supprimée avec succès
         edit:
           title: Édition de %{page_title}
-        errors:
-          form:
-            error: Erreur
         form:
           options: Options
         index:
@@ -1322,24 +1440,22 @@ fr:
           created_at: Créé le
           status: Statut
           updated_at: Mis-à-jour le
-          status_draft: Brouillon
-          status_published: Publié
           title: Titre
           slug: Slug
+          see_cards: Voir les Cartes
+        cards:
+          cards_title: cartes
+          create_card: Créer un encart
+          no_cards: Il n'y a pas d'encarts.
     homepage:
       title: Page d’accueil
       description: Les modules actifs apparaissent dans la page d’accueil dans le même ordre, comme en l’espèce.
       header_title: Entête
       no_header: Il n'y a pas d'entête.
       create_header: Créer un entête
-      cards_title: Encarts
+      cards_title: Mosaïque
       create_card: Créer un encart
       no_cards: Il n'y a pas d'encarts.
-      cards:
-        title: Titre
-        description: Description
-        link_text: Texte du lien
-        link_url: Url du lien
       feeds:
         proposals: Propositions
         debates: Débats
@@ -1354,6 +1470,26 @@ fr:
         submit_header: Sauvegarder l'entête
         card_title: Modifier l'encart
         submit_card: Sauvegarder l'encart
-    translations:
-      remove_language: Retirer la langue
-      add_language: Ajouter une langue
+    audits:
+      changes: "Liste de changements"
+      id: "ID"
+      new_value: "Valeur nouveau"
+      old_value: "Vieux Valeur"
+      actions: "Actions"
+    local_census_records:
+      index:
+        title: Gérer le recensement local
+        document_type: Type de document
+        document_number: Numéro de document
+        date_of_birth: Date de naissance
+        postal_code: Code postal
+      imports:
+        new:
+          title: Données du recensement local
+        show:
+          title: Gérer le recensement local
+    machine_learning:
+      related_content: "Contenu lié"
+      tab_help: "Aide"
+      tags: "Sujets"
+      title: "IA / Apprentissage automatique"

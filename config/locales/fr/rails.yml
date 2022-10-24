@@ -9,18 +9,18 @@ fr:
       - ven
       - sam
     abbr_month_names:
-      - 
-      - Janv
-      - Févr
-      - Mar
-      - Avr
-      - Mai
-      - Juin
-      - Juill
-      - Août
-      - Sept
-      - Oct
-      - Nov
+      -
+      - fév
+      - mar
+      - avr
+      - mai
+      - juin
+      - jul
+      - aoû
+      - sep
+      - oct
+      - nov
+      - déc
       - Déc
     day_names:
       - dimanche
@@ -35,18 +35,18 @@ fr:
       long: "%d %B %Y"
       short: "%d %b"
     month_names:
-      - 
-      - Janvier
-      - Février
-      - Mars
-      - Avril
-      - Mai
-      - Juin
-      - Juillet
-      - Août
-      - Septembre
-      - Octobre
-      - Novembre
+      -
+      - février
+      - mars
+      - avril
+      - mai
+      - juin
+      - juillet
+      - août
+      - septembre
+      - octobre
+      - novembre
+      - décembre
       - Décembre
   datetime:
     distance_in_words:
@@ -75,16 +75,22 @@ fr:
       x_days:
         one: 1 jour
         other: "%{count} jours"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
       x_months:
         one: 1 mois
         other: "%{count} mois"
+      x_years:
+        one: 1 an
+        other: "%{count} ans"
       x_seconds:
         one: 1 seconde
         other: "%{count} secondes"
     prompts:
       day: Jour
       hour: Heure
-      minute: Minute
+      minute: Minutes
       month: Mois
       second: Secondes
       year: Année
@@ -120,7 +126,7 @@ fr:
         other: a la mauvaise longueur (devrait être %{count} caractères)
       other_than: doit être différent de %{count}
     template:
-      body: 'Des problèmes ont été trouvés avec les champs suivants :'
+      body: "Des problèmes ont été trouvés avec les champs suivants :"
       header:
         one: Impossible d'enregistrer ce/cette %{model} car 1 erreur a été trouvée
         other: "Impossible d'enregistrer ce/cette %{model} car %{count} erreurs ont été trouvées"
@@ -142,6 +148,7 @@ fr:
         unit: "€"
     format:
       delimiter: "."
+      precision: 1
       separator: ","
       significant: false
       strip_insignificant_zeros: false
@@ -154,7 +161,7 @@ fr:
           thousand: mille
           trillion: trillion
       format:
-        precision: 1
+        precision: 3
         significant: true
         strip_insignificant_zeros: true
       storage_units:
@@ -176,5 +183,7 @@ fr:
       datetime: "%d/%m/%Y %H:%M:%S"
       default: "%A, %d %B %Y %H:%M:%S %z"
       long: "%d %B %Y %H:%M"
+      short: "%d %b %H:%M"
+      short_datetime: "%Y-%m-%d %H:%M"
       api: "%H %d/%m/%Y"
     pm: de l'après-midi

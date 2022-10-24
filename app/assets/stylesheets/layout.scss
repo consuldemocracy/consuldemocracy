@@ -8,40 +8,74 @@
 // 06. Forms
 // 07. Callout
 // 08. User account
-// 09. Search
 // 10. Official levels
 // 11. Tables
 // 12. Social
-// 13. Pages
 // 14. Verification
 // 15. Comments
 // 16. Flags
 // 17. Activity
-// 18. Banners
 // 19. Recommendations
 // 20. Documents
 // 21. Related content
 // 22. Images
 // 23. Maps
 // 24. Homepage
+// 25. LocalCensusRecords
 //
 
 // 01. Global styles
 // -----------------
 
-::selection {
-  color: #fff;
-  background-color: $brand;
+* {
+  @include normal-selection;
+}
+
+html {
+  font-size: calc(0.25em + Max(0.75em, 0.75vw));
 }
 
 html,
 body {
-  height: 100%;
   margin: 0;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  display: flex;
+  flex-direction: column;
   font-size: $base-font-size;
+  min-height: 100%;
+
+  &.public {
+    @include breakpoint($global-width) {
+      margin-left: $body-margin;
+      margin-right: $body-margin;
+    }
+  }
+
+  > .wrapper {
+    flex-grow: 1;
+  }
+}
+
+main {
+  display: block;
+
+  &.budget-groups-index,
+  &.budget-investment-new,
+  &.debate-new,
+  &.proposal-new,
+  &.sdg-goals-index,
+  &.sdg-goal-show,
+  &.topic-edit,
+  &.topic-new,
+  &.subscriptions-edit {
+    @include grid-column-gutter;
+  }
 }
 
 h1,
@@ -67,30 +101,39 @@ a {
   &:active {
     color: $link-hover;
     text-decoration: underline;
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: $link-hover;
-    }
   }
 
   &:focus {
     color: $link-hover;
-    outline: 3px solid #ffbf47;
+  }
+}
+
+a,
+button,
+[type="button"],
+[type="submit"] {
+  &:focus {
+    outline: $outline-focus;
+  }
+
+  &:focus-visible {
+    outline: $outline-focus;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:active,
+  &:focus:active {
+    outline: $outline-focus;
   }
 }
 
 .button {
+  @extend %button;
+  @include inverted-selection;
   background: $brand;
-  font-size: $base-font-size;
-
-  &:hover {
-    text-decoration: none !important;
-  }
 
   &.warning,
   &.warning:hover {
@@ -103,7 +146,8 @@ a {
 }
 
 .button.hollow {
-  border: 1px solid $link;
+  @include normal-selection;
+  border: 1px solid;
   color: $link;
 }
 
@@ -128,35 +172,12 @@ a {
   display: inline-block;
 }
 
-.aling-middle {
-  vertical-align: middle;
-}
-
 .sidebar-divider {
   border-top: 1px solid $border;
   margin-top: $line-height;
 
   &:first-child {
     margin-top: 0;
-  }
-}
-
-.f-dropdown {
-  li a {
-    font-size: $small-font-size;
-
-    &:hover {
-      color: $link-hover;
-    }
-  }
-
-  li:hover,
-  .f-dropdown li:focus {
-    background: #fff;
-  }
-
-  &.open {
-    outline: none;
   }
 }
 
@@ -197,6 +218,10 @@ a {
   padding-top: $line-height;
 }
 
+.padding-top {
+  padding-top: $line-height;
+}
+
 .light {
   background: $light;
 }
@@ -207,19 +232,6 @@ a {
 
 .icon-check {
   color: $check;
-}
-
-.wrapper {
-  min-height: 100%;
-  margin: 0 auto (-$line-height) * 12;
-  height: auto !important;
-  height: 100%;
-}
-
-.footer,
-.push {
-  clear: both;
-  min-height: $line-height * 12;
 }
 
 .ie-callout {
@@ -248,7 +260,7 @@ a {
     }
 
     a {
-      color: $text;
+      color: inherit;
       display: inline-block;
       font-weight: bold;
       position: relative;
@@ -264,13 +276,9 @@ a {
     }
 
     &.is-active {
-      border-bottom: 2px solid $brand;
-      color: $brand;
+      @include brand-text;
+      border-bottom: 2px solid;
       padding-bottom: rem-calc(1);
-
-      h2 a {
-        color: $brand;
-      }
     }
 
     &:not(.is-active) {
@@ -295,8 +303,8 @@ a {
       padding: 0;
 
       &.is-active {
+        @include brand-text;
         font-weight: bold;
-        color: $brand;
       }
     }
 
@@ -305,8 +313,8 @@ a {
     }
 
     &.is-active {
-      border-bottom: 2px solid $brand;
-      color: $brand;
+      @include brand-text;
+      border-bottom: 2px solid;
     }
   }
 
@@ -332,7 +340,6 @@ a {
 }
 
 .close-button {
-  color: $text;
   top: $line-height / 2;
 }
 
@@ -341,6 +348,7 @@ a {
   clear: both;
   color: $text-medium;
   display: inline-block;
+  padding-right: $line-height / 2;
 }
 
 .back:not([class^="icon-"]) {
@@ -367,22 +375,21 @@ a {
     position: relative;
 
     &:hover {
+      @include brand-text;
       background: none;
-      color: $brand;
       text-decoration: none;
     }
 
-    &[aria-selected='true'],
+    &[aria-selected="true"],
     &.is-active {
+      @include brand-text;
       border-bottom: 0;
-      color: $brand;
       font-weight: bold;
 
       &::after {
-        background: $brand;
-        border-bottom: 2px solid $brand;
+        border-bottom: 2px solid;
         bottom: 0;
-        content: '';
+        content: "";
         left: 0;
         position: absolute;
         width: 100%;
@@ -401,7 +408,11 @@ a {
 }
 
 .pagination .current {
-  background: $brand;
+  @extend %brand-background;
+}
+
+.pagination li {
+  display: inline-block;
 }
 
 .truncate-horizontal-text {
@@ -426,10 +437,6 @@ a {
   display: table-cell;
 }
 
-.off-canvas-content {
-  box-shadow: none;
-}
-
 .uppercase {
   text-transform: uppercase;
 }
@@ -437,89 +444,151 @@ a {
 .help-text {
   line-height: rem-calc(20);
   margin-top: 0;
+
+  strong {
+    font-style: normal;
+  }
+}
+
+.menu-and-content {
+  $side-menu-min-width: rem-calc(240);
+
+  @include breakpoint(medium) {
+    display: flex;
+
+    > nav {
+      flex: 20%;
+      min-width: $side-menu-min-width;
+      max-width: max-content;
+
+      + * {
+        flex: 80%;
+        padding: $line-height;
+      }
+    }
+
+    [for="show_menu"] {
+      display: none;
+    }
+  }
+
+  @include breakpoint(small only) {
+    > nav {
+      height: 100%;
+      left: -$side-menu-min-width;
+      overflow-y: auto;
+      position: fixed;
+      top: 0;
+      transition: left 0.5s ease;
+      width: $side-menu-min-width;
+      z-index: 12;
+
+      + * {
+        padding: $line-height;
+      }
+    }
+
+    [name="show_menu"]:checked + nav,
+    > nav:focus-within {
+      left: 0;
+
+      + * {
+        overflow-x: hidden;
+
+        [for="show_menu"]::after {
+          @include reveal-overlay;
+          content: "";
+          cursor: pointer;
+          display: block;
+          z-index: 11;
+        }
+      }
+    }
+  }
+
+  [name="show_menu"] {
+    display: none;
+  }
 }
 
 // 02. Header
 // ----------
 
-header {
-  background: $brand;
-  border-bottom: 1px solid $border;
+body > header,
+.wrapper > header {
+  @include grid-column-gutter;
   margin-bottom: $line-height;
+
+  @include breakpoint(small down) {
+    position: relative;
+    z-index: 10;
+  }
 
   .selected {
     border-bottom: 1px solid #fff;
   }
 
-  .locale {
-    float: left;
-    height: $line-height * 1.5;
-    margin-left: $line-height / 2;
-    position: relative;
+  .remote-translations-button {
 
-    &::after {
-      color: #808080;
-      content: '\61';
-      font-family: "icons" !important;
-      font-size: $small-font-size;
-      pointer-events: none;
-      position: absolute;
-      right: 2px;
-      top: 9px;
+    &.callout {
+      margin: 0;
+      padding: rem-calc(6);
+
+      [type="submit"] {
+        @include brand-text;
+        background: none;
+        border: 0;
+        cursor: pointer;
+        font-weight: bold;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 
   .external-links {
-    float: none;
     padding: rem-calc(6) 0;
     text-align: center;
+  }
+}
 
-    @include breakpoint(medium) {
-      float: right;
-    }
+.public > .wrapper > header,
+.proposal-dashboard > header {
+  @include full-width-border(bottom, 1px solid $border);
+
+  > * {
+    @include full-width-background($adjust-padding: true);
+  }
+
+  .top-bar {
+    @extend %brand-background;
+  }
+}
+
+.proposal-dashboard > header {
+
+  @include breakpoint($global-width) {
+    margin-left: $body-margin;
+    margin-right: $body-margin;
   }
 }
 
 .top-bar {
-  background: $brand !important;
-  color: #fff;
-  padding-bottom: 0;
-  padding-top: 0;
+  background-color: inherit;
+  padding: 0;
 
   @include breakpoint(medium) {
-    padding: 0;
+    justify-content: flex-start;
+
+    .top-bar-title {
+      flex-grow: 1;
+    }
   }
 
   ul {
     background: none;
-    padding-right: rem-calc(15);
-  }
-
-  .menu .menu-text {
-    padding: 0;
-
-    a {
-      color: #fff;
-      display: inline-block;
-      font-family: 'Lato' !important;
-      font-size: rem-calc(24);
-      font-weight: lighter;
-      line-height: $line-height * 2;
-      padding: 0;
-
-      @include breakpoint(medium) {
-        line-height: rem-calc(80);
-        margin-top: 0;
-      }
-
-      img {
-
-        @include breakpoint(medium) {
-          margin-right: $line-height / 2;
-          margin-top: 0;
-        }
-      }
-    }
   }
 
   .menu > li {
@@ -534,12 +603,13 @@ header {
     }
     a {
       color: $text;
+      line-height: inherit;
       padding-left: 0;
       font-size: 12px;
 
       @include breakpoint(medium) {
         font-size: $small-font-size;
-        padding: rem-calc(11) rem-calc(16);
+        padding: rem-calc(8) rem-calc(16);
       }
     }
 
@@ -548,8 +618,8 @@ header {
       text-align: left;
 
       @include breakpoint(medium) {
-        background: #fff;
-        color: $brand;
+        @include brand-text;
+        background: $body-background;
         text-align: center;
       }
     }
@@ -571,8 +641,20 @@ header {
 
   .menu {
 
+    @include breakpoint(small only) {
+      border-bottom: 1px solid $border;
+      margin-bottom: $line-height;
+      margin-top: $line-height / 2;
+      padding-bottom: $line-height;
+
+      .submenu {
+        margin-top: 0;
+      }
+    }
+
     &.is-dropdown-submenu {
-      background: #fff;
+      background: $body-background;
+      color: $text;
       margin: 0;
       margin-top: rem-calc(-12);
       padding: 0;
@@ -583,15 +665,12 @@ header {
       display: block;
       height: auto;
       margin-bottom: 0;
-
-      a {
-        color: $text;
-      }
     }
   }
 
   .top-bar-title {
     line-height: $line-height;
+    margin-right: 0;
 
     a img {
       height: rem-calc(48);
@@ -605,16 +684,16 @@ header {
   }
 }
 
+.menu-button {
+  border: 1px solid;
+  border-radius: $button-radius;
+  color: inherit;
+  padding: 0.6em;
+}
+
 .menu-icon {
-
-  &.dark {
-
-    &:hover::after,
-    &::after {
-      background: #fff;
-      box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
-    }
-  }
+  @include hamburger($color: currentcolor, $color-hover: currentcolor);
+  cursor: inherit;
 }
 
 .title-bar {
@@ -624,19 +703,32 @@ header {
 
 .dropdown.menu > li {
 
+  a {
+    background: none;
+  }
+
+  &.is-active > a {
+    color: inherit;
+  }
+
   &.is-dropdown-submenu-parent > a::after {
-    border-color: #fff transparent transparent;
+    border-top-color: currentcolor;
   }
 }
 
 .top-links {
   background: $dark;
-  color: #fff;
+  color: $white;
+  display: flex;
+  flex-wrap: wrap;
   font-size: $small-font-size;
-  padding-right: $line-height / 2;
+
+  > :first-child {
+    flex-grow: 1;
+  }
 
   a {
-    color: #fff;
+    color: inherit;
     margin: 0 rem-calc(6);
 
     &:hover {
@@ -654,9 +746,9 @@ header {
     @include breakpoint(medium) {
       display: inline-block;
 
-      // &::after {
-      //   content: '|';
-      // }
+      &::after {
+        content: "|";
+      }
 
       &:last-child::after {
         content: none;
@@ -666,10 +758,18 @@ header {
 }
 
 .subnavigation {
+  display: flex;
+  flex-direction: column;
 
   @include breakpoint(medium) {
-    background: #fff;
+    background: $body-background;
+    color: $text;
+    flex-direction: row;
     padding-bottom: 0;
+
+    > :first-child {
+      flex-grow: 1;
+    }
   }
 
   ul {
@@ -685,15 +785,15 @@ header {
   }
 
   a {
-    color: #fff;
+    color: inherit;
     display: inline-block;
-    line-height: $line-height * 2;
+    padding-bottom: $line-height / 2;
+    padding-top: $line-height / 2;
     position: relative;
     text-align: left;
     width: 100%;
 
     @include breakpoint(medium) {
-      color: $text;
       display: block;
       font-weight: bold;
       width: auto;
@@ -703,12 +803,17 @@ header {
       }
     }
 
+    &:focus {
+      z-index: 1;
+    }
+
     &.is-active {
       color: #fff;
 
       @include breakpoint(medium) {
-        border-bottom: 2px solid $brand;
-        color: $brand;
+        @include brand-text;
+        border-bottom: 2px solid;
+        margin-bottom: 1px;
       }
     }
   }
@@ -762,7 +867,7 @@ header {
   margin-bottom: $line-height / 2;
 
   a {
-    color: $text;
+    color: inherit;
     display: inline-block;
     font-weight: bold;
     margin-right: $line-height / 2;
@@ -779,8 +884,8 @@ header {
   }
 
   .is-active {
-    border-bottom: 2px solid $brand;
-    color: $brand;
+    @include brand-text;
+    border-bottom: 2px solid;
 
     &:hover {
       text-decoration: none;
@@ -800,10 +905,12 @@ header {
 // ----------
 
 footer {
-  color: $text;
+  .logo {
+    color: inherit;
+  }
 
   .logo a {
-    font-family: 'Lato' !important;
+    font-family: "Lato" !important;
     text-decoration: none;
 
     &:hover {
@@ -822,7 +929,7 @@ footer {
   a,
   a:active,
   a:focus {
-    color: $text;
+    color: inherit;
     text-decoration: underline;
 
     &:hover {
@@ -842,8 +949,14 @@ footer {
 
 .footer {
   background: #f1f1f1;
+  clear: both;
   margin-top: $line-height * 2;
+  padding-bottom: $line-height;
   padding-top: $line-height;
+
+  .public & {
+    @include full-width-background;
+  }
 }
 
 .subfooter {
@@ -855,25 +968,11 @@ footer {
 // 04. Tags
 // --------
 
-.tags a ,
 .tag-cloud a,
 .categories a,
 .geozone a,
-.sidebar-links a,
-.sidebar-map a,
-.tags span {
-  background: #ececec;
-  border-radius: rem-calc(6);
-  color: $text;
-  display: inline-block;
-  font-size: $small-font-size;
-  margin-bottom: $line-height / 3;
-  padding: $line-height / 4 $line-height / 3;
-  text-decoration: none;
-
-  &:hover {
-    background: #e0e0e0;
-  }
+.sidebar-links a {
+  @extend %tag;
 }
 
 .categories a,
@@ -883,15 +982,7 @@ footer {
 
   &:hover,
   &.is-active {
-    background: $brand;
-    color: #fff;
-  }
-}
-
-.sidebar-map {
-
-  .map {
-    z-index: -1;
+    @extend %brand-background;
   }
 }
 
@@ -910,15 +1001,16 @@ footer {
 
 .auth-page {
 
-  .wrapper {
-    margin: 0 auto (-$line-height) * 14;
+  .footer {
+    margin-top: 0;
   }
 }
 
 .auth-image {
-  background: $brand image-url('auth_bg.jpg');
+  background-color: $brand;
   background-repeat: no-repeat;
   background-size: cover;
+  color: $white;
 
   @include breakpoint(medium) {
     min-height: $line-height * 42;
@@ -928,7 +1020,7 @@ footer {
     margin-top: $line-height;
 
     a {
-      color: #fff;
+      color: inherit;
       display: block;
       text-align: center;
 
@@ -954,59 +1046,22 @@ footer {
 }
 
 .auth-divider {
-  border-bottom: 1px solid $border;
-  height: rem-calc(14);
-  margin: $line-height 0;
+  border-top: 1px solid $border;
+  margin-top: $line-height * 1.5;
   text-align: center;
 
   span {
-    background: #fff;
+    background: $body-background;
+    box-decoration-break: clone;
     font-weight: bold;
     padding: 0 $line-height / 2;
+    position: relative;
+    top: -$line-height / 2;
   }
 }
 
 // 06. Forms
 // ---------
-
-.locale-form {
-  display: inline-block;
-  position: relative;
-
-  label {
-    color: #fff;
-    font-size: $tiny-font-size;
-    font-weight: normal;
-  }
-
-  select {
-
-    option {
-      background: #fff;
-      color: $text;
-      border: 0;
-      outline: none;
-    }
-  }
-
-  .locale-switcher {
-    background: #1a1a1a;
-    border: 0;
-    border-radius: rem-calc(4);
-    color: #fff;
-    font-size: $small-font-size;
-    height: $line-height;
-    margin-bottom: 0;
-    margin-top: $line-height / 4;
-    outline: none;
-    padding: 0 $line-height / 4;
-    width: auto;
-
-    &:focus {
-      outline: 3px solid #ffbf47;
-    }
-  }
-}
 
 form {
 
@@ -1014,6 +1069,10 @@ form {
     font-size: $base-font-size;
     font-weight: bold;
     line-height: $line-height;
+  }
+
+  .checkbox-label {
+    display: table;
   }
 
   fieldset legend {
@@ -1033,13 +1092,17 @@ form {
     }
   }
 
-  [type]:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]):not(.close-button) {
+  [type]:not([type="button"], [type=checkbox], [type=file], [type=radio], [type=submit]) {
     background: #f8f8f8;
-    height: $line-height * 2;
+    height: $input-height;
     margin-bottom: rem-calc(16);
 
     &.error {
       margin-bottom: rem-calc(1);
+    }
+
+    &:disabled {
+      background-color: $input-background-disabled;
     }
   }
 
@@ -1052,17 +1115,38 @@ form {
     margin: $line-height / 2 0 $line-height / 2 $line-height / 4;
   }
 
-  .ckeditor {
-    min-height: $line-height * 13;
+  .cke {
+    margin-bottom: $line-height;
+  }
+
+  .html-area:not(.form-error) {
+    height: 272px;
+    margin-bottom: $line-height;
+
+    &.admin {
+      height: 572px;
+    }
   }
 
   .checkbox,
   .radio {
-    display: inline-block;
     font-weight: normal;
     line-height: $line-height;
     vertical-align: middle;
   }
+}
+
+.translatable-fields {
+
+  &.highlight {
+    display: inline-block;
+    padding-top: $line-height;
+    width: 100%;
+  }
+}
+
+.translation-locale {
+  padding-top: $line-height;
 }
 
 // 07. Callout
@@ -1087,9 +1171,12 @@ form {
 
 .notice-container {
   min-width: $line-height * 12;
-  position: absolute;
   right: 24px;
   top: 24px;
+
+  @include breakpoint(medium) {
+    position: absolute;
+  }
 
   .notice {
     height: $line-height * 4;
@@ -1258,38 +1345,12 @@ form {
   }
 }
 
-.notifications {
-  position: relative;
-
-  &:hover {
-    text-decoration: none;
-  }
-
-  [class^="icon-"] {
-    font-size: rem-calc(19);
-    vertical-align: middle;
-  }
-
-  .icon-circle {
-    color: #ecf00b;
-    font-size: rem-calc(10);
-    position: absolute;
-    left: 12px;
-    top: 6px;
-
-    @include breakpoint(medium) {
-      left: auto;
-      right: 8px;
-    }
-  }
-}
-
 .notifications-list {
   position: relative;
 
   &::before {
     background: $border;
-    content: '';
+    content: "";
     height: 100%;
     left: 7px;
     position: absolute;
@@ -1335,14 +1396,14 @@ form {
     }
 
     &::before {
-      content: '\43';
+      content: "\43";
     }
   }
 
   &::before {
-    background: #fff;
+    background: $body-background;
     color: $brand;
-    content: '\4d';
+    content: "\4d";
     font-family: "icons" !important;
     font-size: $small-font-size;
     height: rem-calc(20);
@@ -1362,36 +1423,6 @@ form {
   .time {
     font-size: $small-font-size;
     color: $text-medium;
-  }
-}
-
-// 09. Search
-// ----------
-
-.advanced-search {
-  float: left;
-  margin: $line-height 0;
-  position: inherit;
-
-  @include breakpoint(medium) {
-    float: right;
-    margin-bottom: 0;
-    margin-top: $line-height / 4;
-    position: absolute;
-    right: 0;
-  }
-}
-
-.advanced-search-form {
-
-  @include breakpoint(medium) {
-    > .column {
-      padding: 0;
-    }
-  }
-
-  select {
-    height: $line-height * 2;
   }
 }
 
@@ -1451,11 +1482,11 @@ table {
     }
 
     &:nth-child(odd) {
-      background: #fff;
+      background: $table-background;
     }
 
     &:nth-child(even) {
-      background: #fafcfb;
+      background: adjust-color($table-background, $red: -3, $green: -1, $blue: -2);
     }
   }
 
@@ -1481,206 +1512,120 @@ table {
 .button.button-twitter,
 .button.button-facebook,
 .button.button-google,
-.button.button-telegram {
-  background: #fff;
+.button.button-wordpress {
   color: $text;
   font-weight: bold;
-  height: $line-height * 2;
-  line-height: $line-height * 2;
-  padding: 0;
-  position: relative;
+
+  &::before {
+    font-size: rem-calc(24);
+    margin-right: $font-icon-margin;
+  }
 }
 
 .button.button-twitter {
+  @include has-fa-icon(twitter, brands);
   background: #ecf7fc;
   border-left: 3px solid #45b0e3;
 
   &::before {
     color: #45b0e3;
-    content: 'f';
-    font-family: "icons" !important;
-    font-size: rem-calc(24);
-    left: 0;
-    line-height: $line-height * 2;
-    padding: 0 rem-calc(20);
-    position: absolute;
-    top: 0;
   }
 }
 
-.ssb-twitter {
-  background: #45b0e3;
-  background-image: none !important;
+.social-share-button .ssb-icon {
+  background-image: none;
   color: #fff;
-  height: $line-height * 2 !important;
-  position: relative;
-  width: $line-height * 2 !important;
+  height: $icon-width;
+  line-height: $icon-width;
+  text-align: center;
+  width: $icon-width;
 
   &::before {
-    content: 'f';
-    font-family: "icons" !important;
-    font-size: rem-calc(24);
-    left: 50%;
-    line-height: $line-height * 2;
-    margin-left: rem-calc(-11);
-    position: absolute;
-    top: 0;
+    font-size: $icon-width / 2;
+    margin-right: 0;
   }
 
   &:hover,
   &:focus {
     background: #fff;
+  }
+}
+
+.ssb-twitter {
+  @include has-fa-icon(twitter, brands);
+  background: #45b0e3;
+
+  &:hover,
+  &:focus {
     color: #40a2d1;
   }
 }
 
 .button.button-facebook {
+  @include has-fa-icon(facebook-f, brands);
   background: #ebeef4;
   border-left: 3px solid #3b5998;
 
   &::before {
     color: #3b5998;
-    content: 'A';
-    font-family: "icons" !important;
-    font-size: rem-calc(24);
-    left: 0;
-    line-height: $line-height * 2;
-    padding: 0 rem-calc(20);
-    position: absolute;
-    top: 0;
   }
 }
 
 .ssb-facebook {
+  @include has-fa-icon(facebook-f, brands);
   background: #3b5998;
-  background-image: none !important;
-  color: #fff;
-  height: rem-calc(48) !important;
-  position: relative;
-  width: rem-calc(48) !important;
-
-  &::before {
-    content: 'A';
-    font-family: "icons" !important;
-    font-size: rem-calc(24);
-    left: 50%;
-    line-height: $line-height * 2;
-    margin-left: rem-calc(-11);
-    position: absolute;
-    top: 0;
-  }
 
   &:hover,
   &:focus {
-    background: #fff;
     color: #354f88;
   }
 }
 
 .button.button-google {
+  @include has-fa-icon(google, brands);
   background: #fcedea;
   border-left: 3px solid #de4c34;
 
   &::before {
     color: #de4c34;
-    content: 'B';
-    font-family: "icons" !important;
-    font-size: rem-calc(24);
-    left: 0;
-    line-height: $line-height * 2;
-    padding: 0 rem-calc(20);
-    position: absolute;
-    top: 0;
   }
 }
 
-[class^="ssb-icon ssb-google"] {
-  background: #de4c34;
-  background-image: none !important;
-  color: #fff;
-  height: $line-height * 2 !important;
-  position: relative;
-  width: $line-height * 2 !important;
+.button.button-wordpress {
+  @include has-fa-icon(wordpress, brands);
+  background: #dcdde3;
+  border-left: 3px solid #2f2f33;
 
   &::before {
-    content: 'B';
-    font-family: "icons" !important;
-    font-size: rem-calc(24);
-    left: 50%;
-    line-height: $line-height * 2;
-    margin-left: rem-calc(-11);
-    position: absolute;
-    top: 0;
-  }
-
-  &:hover,
-  &:focus {
-    background: #fff;
-    color: #ce3e26;
-  }
-}
-
-.button.button-telegram {
-  background: #ecf7fc;
-  border-left: 3px solid #08c;
-
-  &::before {
-    color: #08c;
-    content: '1';
-    font-family: "icons" !important;
-    font-size: rem-calc(24);
-    left: 0;
-    line-height: $line-height * 2;
-    padding: 0 rem-calc(20);
-    position: absolute;
-    top: 0;
+    color: #2f2f33;
   }
 }
 
 .ssb-telegram {
+  @include has-fa-icon(telegram-plane, brands);
   background: #08c;
-  background-image: none !important;
-  color: #fff;
-  height: $line-height * 2 !important;
-  position: relative;
-  width: $line-height * 2 !important;
-
-  &::before {
-    content: '1';
-    font-family: "icons" !important;
-    font-size: rem-calc(24);
-    left: 50%;
-    line-height: $line-height * 2;
-    margin-left: rem-calc(-11);
-    position: absolute;
-    top: 0;
-  }
 
   &:hover,
   &:focus {
-    background: #fff;
     color: #40a2d1;
+  }
+}
+
+.ssb-whatsapp_app {
+  @include has-fa-icon(whatsapp, brands);
+  background: #43d854;
+
+  &:hover,
+  &:focus {
+    color: #43d854;
   }
 }
 
 @include breakpoint(medium) {
 
-  .button.button-telegram,
-  .ssb-telegram {
+  .ssb-telegram,
+  .ssb-whatsapp_app {
     display: none !important;
-  }
-}
-
-.social {
-
-  a {
-    font-size: rem-calc(24);
-    margin: 0 $line-height / 2;
-    text-decoration: none;
-
-    &:hover {
-      color: $brand;
-    }
   }
 }
 
@@ -1689,151 +1634,6 @@ table {
 
   .social-share-button {
     display: inline-block;
-  }
-
-  .ssb-twitter {
-    background: #45b0e3;
-    color: #fff;
-    height: $line-height;
-    position: relative;
-    width: $line-height * 2;
-
-    &::before {
-      content: 'f';
-      font-family: "icons" !important;
-      font-size: rem-calc(24);
-      left: 50%;
-      line-height: $line-height * 2;
-      margin-left: rem-calc(-11);
-      position: absolute;
-      top: 0;
-    }
-
-    &:hover,
-    &:focus {
-      background: #fff;
-      color: #40a2d1;
-    }
-  }
-
-  .ssb-facebook {
-    background: #3b5998;
-    color: #fff;
-    height: rem-calc(24);
-    position: relative;
-    width: rem-calc(48);
-
-    &::before {
-      content: 'A';
-      font-family: "icons" !important;
-      font-size: rem-calc(24);
-      left: 50%;
-      line-height: $line-height * 2;
-      margin-left: rem-calc(-11);
-      position: absolute;
-      top: 0;
-    }
-
-    &:hover,
-    &:focus {
-      background: #fff;
-      color: #354f88;
-    }
-  }
-
-  [class^="ssb-icon ssb-google"] {
-    background: #de4c34;
-    color: #fff;
-    height: rem-calc(24);
-    position: relative;
-    width: rem-calc(48);
-
-    &::before {
-      content: 'B';
-      font-family: "icons" !important;
-      font-size: rem-calc(24);
-      left: 50%;
-      line-height: $line-height * 2;
-      margin-left: rem-calc(-11);
-      position: absolute;
-      top: 0;
-    }
-
-    &:hover,
-    &:focus {
-      background: #fff;
-      color: #ce3e26;
-    }
-  }
-
-  .ssb-telegram {
-    background: #08c;
-    color: #fff;
-    height: $line-height;
-    position: relative;
-    width: $line-height * 2;
-
-    &::before {
-      content: '1';
-      font-family: "icons" !important;
-      font-size: rem-calc(24);
-      left: 50%;
-      line-height: $line-height * 2;
-      margin-left: rem-calc(-11);
-      position: absolute;
-      top: 0;
-    }
-
-    &:hover,
-    &:focus {
-      background: #fff;
-      color: #40a2d1;
-    }
-  }
-}
-
-// 13. Pages
-// ---------
-
-.help {
-
-  li {
-    border-bottom: 1px solid $border;
-    font-weight: bold;
-    margin-left: rem-calc(-12);
-    position: relative;
-
-    span {
-      color: $text;
-      display: inline-block;
-      font-weight: normal;
-    }
-
-    &::after {
-      content: none;
-      color: $text-medium;
-      font-family: "icons" !important;
-      position: absolute;
-      right: 0;
-      top: 24px;
-
-      @include breakpoint(medium) {
-        content: 'c';
-      }
-    }
-  }
-
-  a {
-    display: block;
-    padding: $line-height / 2;
-  }
-
-  a:hover {
-    background: $highlight;
-
-    span {
-      text-decoration: none;
-    }
   }
 }
 
@@ -1906,15 +1706,6 @@ table {
     }
   }
 
-  .send-letter {
-    background: none;
-    color: $link;
-
-    &:hover {
-      color: $link-hover;
-    }
-  }
-
   .button + form {
     display: inline-block;
     margin-left: $line-height / 2;
@@ -1977,7 +1768,7 @@ table {
     position: relative;
 
     .icon-letter {
-      background: #fff;
+      background: $body-background;
       color: $color-info;
       font-size: rem-calc(24);
       margin-left: -27px;
@@ -1992,7 +1783,7 @@ table {
 // ------------
 
 .comments {
-  background: #fff;
+  background: $body-background;
   background-repeat: repeat-x;
   padding-bottom: $line-height * 4;
 
@@ -2007,7 +1798,13 @@ table {
     }
   }
 
+  .order-links {
+    margin-bottom: $line-height;
+    margin-top: $line-height;
+  }
+
   .comment {
+    line-height: $list-lineheight;
     margin: $line-height / 4 0;
     position: relative;
 
@@ -2031,7 +1828,6 @@ table {
   }
 
   .reply {
-    background: #fff;
     border: 1px solid $border;
     border-left: 0;
     border-right: 0;
@@ -2040,17 +1836,8 @@ table {
     padding: $line-height / 4;
     position: relative;
 
-    .relative,
-    [class^="icon-arrow"] {
-      padding-left: $line-height / 2;
-    }
-
-    [class^="icon-arrow"] {
-      font-size: $base-font-size;
-      left: -20px;
-      position: absolute;
-      text-decoration: none;
-      top: -1px;
+    &:empty {
+      display: none;
     }
 
     .divider {
@@ -2058,8 +1845,53 @@ table {
       display: inline-block;
     }
 
-    form {
+    .comment-form form {
       margin-top: $line-height / 2;
+    }
+  }
+
+  .responses-count {
+    .show-children {
+      @include has-fa-icon(plus-square, regular);
+    }
+
+    .collapse-children {
+      @include has-fa-icon(minus-square, regular);
+    }
+
+    .show-children::before,
+    .collapse-children::before {
+      margin-right: $font-icon-margin;
+      transform: translateY(-1px);
+    }
+
+    &.collapsed {
+
+      .collapse-children {
+        display: none;
+      }
+    }
+
+    &:not(.collapsed) {
+
+      .show-children {
+        display: none;
+      }
+    }
+  }
+
+  .delete-comment {
+    @include has-fa-icon(trash-alt, regular);
+    color: $delete;
+
+    &:hover,
+    &:active {
+      color: $link-hover;
+    }
+
+    &::before {
+      margin-right: $font-icon-margin;
+      transform: translateY(-1px);
     }
   }
 
@@ -2096,12 +1928,24 @@ table {
   }
 }
 
-.comment-children {
-  border-left: 1px dashed $border;
-  display: inline-block;
-  margin-left: rem-calc(16);
-  padding-left: rem-calc(8);
-  width: 100%;
+.comment-list {
+  margin: $line-height / 4 0;
+
+  .comment-list {
+    border-left: 1px dashed $border;
+    display: inline-block;
+    padding-left: rem-calc(8);
+    width: 100%;
+
+  }
+
+  .comment-form {
+    display: none;
+  }
+
+  &:empty {
+    display: none;
+  }
 }
 
 .comment-info {
@@ -2118,21 +1962,32 @@ table {
 
 .comment-votes {
 
-  a {
+  button,
+  form {
     color: $text-light;
     display: inline-block;
-    vertical-align: top;
   }
 
-  a:hover {
-    color: $text-medium;
-    text-decoration: none;
+  button {
+    font-size: $base-font-size;
 
-    .icon-like {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .in-favor button {
+    @include has-fa-icon(thumbs-up, solid);
+
+    &:hover {
       color: $like;
     }
+  }
 
-    .icon-unlike {
+  .against button {
+    @include has-fa-icon(thumbs-down, solid);
+
+    &:hover {
       color: $unlike;
     }
   }
@@ -2140,25 +1995,6 @@ table {
 
 .faded {
   opacity: 0.4;
-}
-
-.wide-order-selector {
-  float: none;
-  margin-top: 0;
-
-  @include breakpoint(medium) {
-    float: right;
-    margin-top: rem-calc(-24);
-  }
-
-  label {
-    padding-right: $line-height / 2;
-    float: none;
-
-    @include breakpoint(medium) {
-      float: right;
-    }
-  }
 }
 
 .comment-form {
@@ -2171,17 +2007,14 @@ table {
 
 .flag-content {
 
-  .button {
-    background: none;
-    margin-bottom: 0;
-    padding: 0;
+  button {
+    @include link;
   }
 }
 
 .flag-disable,
 .flag-active {
   line-height: 0;
-  vertical-align: sub;
 }
 
 .flag-disable {
@@ -2249,80 +2082,6 @@ table {
       border-left: 1px solid #ececec;
       padding-left: $line-height;
     }
-  }
-}
-
-// 18. Banners
-// -----------
-
-.banner-style-one {
-  background-color: $brand;
-}
-
-.banner-style-two {
-  background-color: $budget;
-}
-
-.banner-style-three {
-  background-color: #33dadf;
-}
-
-@include breakpoint(large) {
-
-  .banner-img-one {
-    background-image: image-url('banners/banner1.png');
-  }
-
-  .banner-img-two {
-    background-image: image-url('banners/banner2.png');
-  }
-
-  .banner-img-three {
-    background-image: image-url('banners/banner3.png');
-  }
-}
-
-.banner-img-one,
-.banner-img-two,
-.banner-img-three {
-  background-position: bottom right;
-  background-repeat: no-repeat;
-}
-
-.banner-style-one,
-.banner-style-two,
-.banner-style-three,
-.banner {
-  margin: 0;
-  margin-bottom: $line-height;
-
-  @include breakpoint(large) {
-
-    h3 {
-      width: 80%;
-    }
-  }
-
-  h2,
-  h3,
-  a {
-    color: #eaeaf2;
-  }
-
-  h2 {
-    padding: $line-height / 2;
-    padding-bottom: 0;
-  }
-
-  h3 {
-    padding: $line-height / 2;
-    padding-top: 0;
-  }
-
-  a:hover h2,
-  a:hover h3 {
-    color: #eaeaf2 !important;
-    text-decoration: none;
   }
 }
 
@@ -2395,7 +2154,7 @@ table {
   }
 
   .card .orbit .orbit-wrapper .truncate {
-    background: image-url('truncate.png');
+    background: image-url("truncate.png");
     background-repeat: repeat-x;
     bottom: 0;
     height: rem-calc(20);
@@ -2406,7 +2165,6 @@ table {
   .debates-inner,
   .proposals-inner,
   .budget-investments-inner {
-    background: #fff;
     max-height: rem-calc(350);
 
     @include breakpoint(small) {
@@ -2470,8 +2228,10 @@ table {
 }
 
 .recommended-index {
+  @include full-width-background;
+  @include full-width-border(bottom, 1px solid #eee);
+  @include full-width-border(top, 1px solid #fafafa);
   background: #fafafa;
-  border-bottom: 1px solid #eee;
   margin-bottom: $line-height;
   margin-top: rem-calc(-25);
   padding: $line-height 0 $line-height / 2;
@@ -2498,7 +2258,7 @@ table {
   }
 
   .recommendation {
-    background: #fff;
+    background: $body-background;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
     display: block;
     margin-bottom: $line-height / 4;
@@ -2609,56 +2369,17 @@ table {
 }
 
 .add-related-content {
+  color: $link;
+  cursor: pointer;
   display: block;
+  margin-bottom: $line-height;
 
   @include breakpoint(medium) {
     float: right;
   }
-}
 
-.related-content-list {
-  list-style-type: none;
-  margin-left: 0;
-
-  li {
-    border-bottom: 1px solid $border;
-    margin-bottom: 0 !important;
-    padding: $line-height / 2;
-
-    @include breakpoint(medium) {
-
-      .score-actions {
-        display: none;
-        float: right;
-      }
-    }
-
-    &:first-child {
-      border-top: 1px solid $border;
-    }
-
-    &:hover {
-      background: #f9f9f9;
-
-      .score-actions {
-        display: block;
-      }
-    }
-  }
-
-  h3 {
-    font-size: $base-font-size;
-    font-weight: normal;
-  }
-
-  .related-content-title {
-    color: #4f4f4f;
-    font-size: rem-calc(12);
-    text-transform: uppercase;
-  }
-
-  .flag {
-    margin-top: $line-height / 2;
+  &[aria-expanded="false"] + form {
+    display: none;
   }
 }
 
@@ -2672,33 +2393,20 @@ table {
   a {
     font-weight: bold;
     margin-right: $line-height;
-    padding-left: rem-calc(20);
-    position: relative;
     text-decoration: none;
 
-    &.score-positive::before,
-    &.score-negative::before {
-      font-family: 'icons';
-      left: 0;
-      position: absolute;
-    }
-
     &.score-positive {
+      @include has-fa-icon(check, solid);
       color: $color-success;
-
-      &::before {
-        color: $color-success;
-        content: '\6c';
-      }
     }
 
     &.score-negative {
+      @include has-fa-icon(times, solid);
       color: $color-alert;
+    }
 
-      &::before {
-        color: $color-alert;
-        content: '\76';
-      }
+    &::before {
+      margin-right: $font-icon-margin;
     }
   }
 }
@@ -2706,8 +2414,27 @@ table {
 // 22. Images
 // -----------------
 
-.images .button {
-  margin-top: $line-height / 2;
+.button {
+
+  &.upload-image {
+    @include has-fa-icon(image, solid);
+  }
+
+  &.upload-document {
+    @include has-fa-icon(file, solid);
+  }
+
+  &.upload-image,
+  &.upload-document {
+    font-weight: bold;
+    margin-bottom: $line-height * 1.5;
+
+    &::before {
+      $button-padding-left: nth($button-padding, 2);
+      margin-left: -$button-padding-left / 2;
+      margin-right: $button-padding-left / 2;
+    }
+  }
 }
 
 // 23. Maps
@@ -2722,7 +2449,7 @@ table {
   &:hover,
   &:active,
   &:focus {
-    border-bottom: 1px solid #cf2a0e;
+    border-bottom-style: solid;
     color: #cf2a0e;
     text-decoration: none;
   }
@@ -2731,14 +2458,34 @@ table {
 .leaflet-bar a {
 
   &.leaflet-disabled {
-    color: #525252 !important;
+    color: #525252;
   }
+}
+
+.leaflet-container {
+
+  .leaflet-control-attribution {
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  a {
+    color: $link;
+  }
+}
+
+.leaflet-bottom,
+.leaflet-pane,
+.leaflet-top {
+  z-index: 4;
 }
 
 // 24. Homepage
 // ------------
 
-.home-page {
+.home-page,
+.custom-page,
+.sdg-goal-show,
+.sdg-goals-index {
 
   a {
 
@@ -2746,14 +2493,8 @@ table {
 
       &.description {
         color: $text;
+        word-wrap: break-word;
       }
-    }
-  }
-
-  a:hover {
-
-    h3 {
-      color: #fff;
     }
   }
 
@@ -2762,15 +2503,29 @@ table {
     height: $line-height * 2;
     background: $highlight;
     margin-top: rem-calc(-48);
+
+    @include breakpoint($global-width) {
+      margin-left: calc(#{$full-width-margin});
+      margin-right: calc(#{$full-width-margin});
+    }
+  }
+
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    .card a {
+      height: 100%;
+    }
   }
 
   .card {
     border: 0;
+    flex-grow: 0;
     overflow: visible;
 
     a {
-
-      img {
+      .figure-card img {
         transition-duration: 0.3s;
         transition-property: transform;
       }
@@ -2780,39 +2535,31 @@ table {
       box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
       text-decoration: none;
 
-      img {
+      .figure-card img {
         transform: scale(1.1);
       }
     }
 
-    p {
+    p,
+    .sdg-tag-list {
       padding: 0 $line-height / 4;
     }
   }
 
+  h2 {
+    &.title {
+      @include header-font-size(h3);
+    }
+  }
+
+  h2,
   h3 {
 
     &.title {
       display: inline-block;
       border-top: 4px solid $brand;
       margin-bottom: 0;
-      min-width: rem-calc(240);
       padding: $line-height / 2 0;
-    }
-  }
-
-  .figure-card {
-
-    figcaption {
-      z-index: 3;
-    }
-
-    .gradient {
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 1) 100%);
-      height: 100%;
-      position: absolute;
-      width: 100%;
-      z-index: 2;
     }
   }
 
@@ -2822,11 +2569,11 @@ table {
   }
 }
 
-.feeds-list {
+.home-page .feeds-participation {
+  @include grid-column-gutter;
+}
 
-  .proposal {
-    clear: both;
-  }
+.feeds-list {
 
   a {
 
@@ -2841,60 +2588,30 @@ table {
   }
 }
 
-.feed-image {
-  display: inline-block;
-  height: rem-calc(120);
-  overflow: hidden;
-
-  @include breakpoint(medium) {
-    height: rem-calc(96);
-  }
-
-  img {
-    margin-left: rem-calc(-15);
-    max-width: none;
-    width: rem-calc(120);
-  }
-}
-
-.feed-description {
-
-  p {
-    font-size: $small-font-size;
-    margin-bottom: 0;
-  }
-}
-
-.feed-content {
-
-  .debate,
-  .proposal {
-    margin-bottom: 0;
-    margin-top: 0;
-    padding: $line-height / 2 0;
-  }
-}
-
 .figure-card {
   display: flex;
   margin: 0 0 $line-height;
+  overflow: hidden;
   position: relative;
+
+  @include breakpoint(medium down) {
+    min-height: $line-height * 4;
+  }
 
   @include breakpoint(medium) {
     max-height: rem-calc(185);
-    overflow: hidden;
   }
 
-  a {
+  @include breakpoint(large) {
+    min-height: rem-calc(185);
+  }
 
-    h3,
-    .title {
-      color: #fff;
-    }
-
-    &:hover {
-      text-decoration: none;
-    }
+  .gradient {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 1) 100%);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
   }
 
   img {
@@ -2911,22 +2628,45 @@ table {
     padding: $line-height / 4 $line-height / 2;
     position: absolute;
     width: 100%;
+    z-index: 3;
 
-    h3,
-    .title {
-      font-size: rem-calc(24);
-      line-height: rem-calc(24);
+    h3 {
+      font-size: $base-font-size;
+
+      @include breakpoint(medium) {
+        font-size: rem-calc(20);
+      }
+
+      @include breakpoint(large) {
+        font-size: rem-calc(24);
+        line-height: rem-calc(24);
+      }
     }
 
     span {
-      background: #fff;
+      background: $body-background;
       border-radius: rem-calc(4);
-      color: #000;
+      color: $text;
       display: inline-block;
       font-size: $small-font-size;
       font-weight: bold;
       margin-bottom: $line-height / 4;
       padding: rem-calc(4) rem-calc(8);
+    }
+  }
+}
+
+// 25. Local Census Records
+// ------------------------
+
+.local-census-record-new,
+.local-census-record-edit {
+
+  .date-of-birth {
+    select {
+      float: left;
+      width: 30%;
+      margin-right: $line-height / 4;
     }
   }
 }

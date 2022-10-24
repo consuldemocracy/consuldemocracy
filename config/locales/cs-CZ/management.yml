@@ -1,0 +1,129 @@
+cs:
+  management:
+    account:
+      menu:
+        reset_password_email: Obnovit heslo emailem
+        reset_password_manually: Ručně obnovit heslo
+      alert:
+        unverified_user: Doposud není přihlášen žádný ověřený uživatel
+      show:
+        title: Uživatelský účet
+      edit:
+        title: "Upravit uživatelský účet: obnovení hesla"
+        back: Zpět
+        password:
+          password: Heslo
+          send_email: Odeslat e-mail pro obnovení hesla
+          reset_email_send: E-mail byl úspěšně odeslán.
+          reseted: Heslo bylo úspěšně resetováno
+          random: Vytvořit náhodné heslo
+          save: Uložit heslo
+          print: Tisknout heslo
+          print_help: Když je heslo uložené, můžete ho vytisknout.
+    account_info:
+      change_user: Změnit uživatele
+      document_number_label: "Číslo dokladu:"
+      document_type_label: "Typ dokladu:"
+      email_label: "E-mail:"
+      identified_label: "Identifikován jako:"
+      username_label: "Uživatelské jméno:"
+    check: Zkontrolovat doklad
+    dashboard:
+      index:
+        title: Správa
+        info: Zde můžete spravovat uživatele prostřednictvím všech akcí uvedených v levém menu.
+    document_verifications:
+      already_verified: Tento uživatelský účet je již ověřen.
+      has_no_account: Chcete-li si vytvořit účet, přejděte na %{link} a klikněte na <b>"Registovat"</b> v levé horní části obrazovky.
+      link: CONSUL
+      in_census_has_following_permissions: "Tento uživatel se může zapojovat s následujícími oprávněními:"
+      not_in_census: Tento doklad není registrován.
+      not_in_census_info: "Občané neověření v základních registrech se mohou zapojovat s následujícími oprávněními:"
+      please_check_account_data: Zkontrolujte prosím správnost výše uvedených údajů účtu.
+      title: Správa uživatelů
+      under_age: "Nemáte požadovaný věk pro ověření účtu."
+      verify: Ověřit
+    date_of_birth: Datum narození
+    email_verifications:
+      already_verified: Tento uživatelský účet již ověřen.
+      choose_options: "Vyberte jednu z následujících možností:"
+      document_found_in_census: Tento doklad byl úspěšně ověřen v základních registrech, ale nemá přidružený žádný uživatelský účet.
+      document_mismatch: "Tento e-mail patří uživateli, který již má přidružené Id: %{document_number} (%{document_type})"
+      email_sent_instructions: Za účelem úplného ověření tohoto uživatele je nutné, aby uživatel kliknul na odkaz, který jsme odeslali na výše uvedenou e-mailovou adresu. Tento krok je nutný k potvrzení, že mu emailová adresa patří.
+      if_existing_account: Pokud má uživatel již vytvořen uživatelský účet na webu,
+      if_no_existing_account: Pokud tato osoba dosud nevytvořila účet
+      introduce_email: "Vložte e-mail, používaný účtem:"
+      send_email: Odeslat ověřovací e-mail
+    menu:
+      create_proposal: Vytvořit návrh
+      print_proposals: Tisk návrhů
+      support_proposals: Podpora návrhů
+      create_budget_investment: Přidat investiční projekt
+      print_budget_investments: Tisk investic rozpočtu
+      support_budget_investments: Podpora investic rozpočtu
+      users: Správa uživatelů
+      user_invites: Odeslat pozvánky
+      select_user: Vybrat uživatele
+    print:
+      proposals_info: Vytvořte svůj návrh na http://url.consul
+      proposals_title: "Návrhy:"
+      budget_investments_info: Zapojte se na http://url.consul
+    print_info: Vytisknout tuto informaci
+    proposals:
+      alert:
+        unverified_user: Uživatel není ověřen
+      create_proposal: Vytvořit návrh
+      print:
+        print_button: Tisk
+      index:
+        title: Podpora návrhů
+    budgets:
+      create_new_investment: Vytvořte investici rozpočtu
+      print_investments: Tisk investic rozpočtu
+      support_investments: Podpora investic rozpočtu
+      table_name: Název
+      table_phase: Fáze
+      table_actions: Akce
+      no_budgets: Neexistují žádné aktivní participativní rozpočty.
+    budget_investments:
+      alert:
+        unverified_user: Uživatel není ověřen
+      create: Přidat investiční projekt
+      edit: Upravit rozpočet investic
+      filters:
+        heading: Koncepce
+        unfeasible: Nerealizovatelná investuce
+      print:
+        print_button: Tisk
+      search_results:
+        one: " obsahující výraz %{search_term}'"
+        few: " obsahující výraz %{search_term}'"
+        many: " obsahující výraz %{search_term}'"
+        other: " obsahující výraz %{search_term}'"
+    sessions:
+      need_managed_user: Chcete-li provést tuto akci, musíte vybrat uživatele
+      signed_out: Odhlášení bylo úspěšné.
+      signed_out_managed_user: Uživatelská relace byla úspěšně odhlášená.
+    username_label: Uživatelské jméno
+    users:
+      create_user: Vytvořit nový účet
+      create_user_info: Vytvoříme účet s následujícími údaji
+      create_user_submit: Vytvořit uživatele
+      create_user_success: Na e-mailovou adresu <b>%{email} </b> jsme poslali e-mail abychom ověřili, že Vám patří. E-mail obsahuje odkaz, na který musíte kliknout. Poté si ještě před přihlášením na webové stránky nastavíte přístupové heslo
+      autogenerated_password: "Vygenerované heslo je <b>%{password} </b>, můžete jej změnit v sekci \"Můj účet\""
+      email_optional_label: E-mail (volitelné)
+      erased_notice: Uživatelský účet byl smazán.
+      erased_by_manager: "Smazáno manažerem: %{manager}"
+      erase_account_link: Smazat uživatele
+      erase_account_confirm: Opravdu chcete smazat účet? Tuto akci nelze vrátit zpět
+      erase_warning: Tuto akci nelze vrátit zpět. Ujistěte se, že skutečně chcete smazat tento účet.
+      erase_submit: Smazat účet
+    user_invites:
+      new:
+        label: E-maily
+        info: "Zadejte e-maily oddělené čárkami (',')"
+        submit: Odeslat pozvánky
+        title: Odeslat pozvánky
+      create:
+        success: Bylo odesláno <strong>%{count} pozvánek</strong>.
+        title: Odeslat pozvánky

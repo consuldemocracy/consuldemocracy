@@ -2,13 +2,12 @@ FactoryBot.define do
   factory :proposal do
     sequence(:title)     { |n| "Proposal #{n} title" }
     sequence(:summary)   { |n| "In summary, what we want is... #{n}" }
-    description          'Proposal description'
-    question             'Proposal question'
-    external_url         'http://external_documention.es'
-    video_url            'https://youtu.be/nhuNb0XtRhQ'
-    responsible_name     'John Snow'
-    terms_of_service     '1'
-    skip_map             '1'
+    description          { "Proposal description" }
+    video_url            { "https://youtu.be/nhuNb0XtRhQ" }
+    responsible_name     { "John Snow" }
+    terms_of_service     { "1" }
+    published_at         { Time.current }
+
     association :author, factory: :user
 
     trait :hidden do
@@ -33,12 +32,16 @@ FactoryBot.define do
       created_at { 25.months.ago }
     end
 
+    trait :selected do
+      selected { true }
+    end
+
     trait :with_hot_score do
-      before(:save) { |d| d.calculate_hot_score }
+      before(:save, &:calculate_hot_score)
     end
 
     trait :with_confidence_score do
-      before(:save) { |d| d.calculate_confidence_score }
+      before(:save, &:calculate_confidence_score)
     end
 
     trait :conflictive do
@@ -51,6 +54,38 @@ FactoryBot.define do
     trait :successful do
       cached_votes_up { Proposal.votes_needed_for_success + 100 }
     end
+
+    trait :draft do
+      published_at { nil }
+    end
+
+    trait :retired do
+      retired_at { Time.current }
+      retired_reason { "unfeasible" }
+      retired_explanation { "Retired explanation" }
+    end
+
+    trait :published do
+      published_at { Time.current }
+    end
+
+    trait :with_milestone_tags do
+      after(:create) { |proposal| proposal.milestone_tags << create(:tag, :milestone) }
+    end
+
+    trait :with_image do
+      after(:create) { |proposal| create(:image, imageable: proposal) }
+    end
+
+    transient do
+      voters { [] }
+      followers { [] }
+    end
+
+    after(:create) do |proposal, evaluator|
+      evaluator.voters.each { |voter| create(:vote, votable: proposal, voter: voter) }
+      evaluator.followers.each { |follower| create(:follow, followable: proposal, user: follower) }
+    end
   end
 
   factory :proposal_notification do
@@ -60,7 +95,7 @@ FactoryBot.define do
     association :author, factory: :user
 
     trait :moderated do
-      moderated true
+      moderated { true }
     end
 
     trait :ignored do
@@ -68,7 +103,7 @@ FactoryBot.define do
     end
 
     trait :hidden do
-      hidden_at { Date.current }
+      hidden_at { Time.current }
     end
 
     trait :with_confirmed_hide do
@@ -79,7 +114,11 @@ FactoryBot.define do
   factory :signature_sheet do
     association :signable, factory: :proposal
     association :author, factory: :user
-    document_numbers "123A, 456B, 789C"
+    required_fields_to_verify { "123A, 456B, 789C" }
+
+    trait :with_title do
+      title { Faker::Lorem.sentence }
+    end
   end
 
   factory :signature do
@@ -89,7 +128,71 @@ FactoryBot.define do
 
   factory :activity do
     user
-    action "hide"
+    action { "hide" }
     association :actionable, factory: :proposal
+  end
+
+  factory :dashboard_action, class: "Dashboard::Action" do
+    title { Faker::Lorem.sentence[0..79].strip }
+    description { Faker::Lorem.sentence }
+    request_to_administrators { true }
+    day_offset { 0 }
+    required_supports { 0 }
+    order { 0 }
+    active { true }
+    hidden_at { nil }
+    action_type { "proposed_action" }
+
+    trait :admin_request do
+      request_to_administrators { true }
+    end
+
+    trait :inactive do
+      active { false }
+    end
+
+    trait :active do
+      active { true }
+    end
+
+    trait :deleted do
+      hidden_at { Time.current }
+    end
+
+    trait :proposed_action do
+      action_type { "proposed_action" }
+    end
+
+    trait :resource do
+      action_type { "resource" }
+    end
+  end
+
+  factory :dashboard_executed_action, class: "Dashboard::ExecutedAction" do
+    proposal
+    action { |s| s.association(:dashboard_action) }
+    executed_at { Time.current }
+  end
+
+  factory :dashboard_administrator_task, class: "Dashboard::AdministratorTask" do
+    source { |s| s.association(:dashboard_executed_action) }
+    user
+    executed_at { Time.current }
+
+    trait :pending do
+      user { nil }
+      executed_at { nil }
+    end
+
+    trait :done do
+      user
+      executed_at { Time.current }
+    end
+  end
+
+  factory :link do
+    linkable { |s| s.association(:action) }
+    label { Faker::Lorem.sentence }
+    url { Faker::Internet.url }
   end
 end

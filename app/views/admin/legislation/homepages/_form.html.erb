@@ -1,28 +1,31 @@
-<%= render "admin/shared/globalize_tabs",
+<%= render "shared/globalize_locales",
            resource: @process,
-           display_style: lambda { |locale| enable_translation_style(@process, locale) } %>
+           display_style: lambda { |locale| enable_translation_style(@process, locale) },
+           manage_languages: false %>
 
-<%= translatable_form_for [:admin, @process], url: url, html: {data: {watch_changes: true}} do |f| %>
+<%= translatable_form_for [:admin, @process], url: url do |f| %>
 
   <%= render "shared/errors", resource: @process %>
-
-  <div class="small-12 column margin-top">
-    <%= f.check_box :homepage_enabled, label: t("admin.legislation.processes.form.homepage_enabled") %>
+  <div class="row">
+    <div class="small-12 column margin-top">
+      <%= f.check_box :homepage_enabled %>
+    </div>
   </div>
 
-  <%= f.translatable_fields do |translations_form| %>
-    <div class="small-12 column">
-      <div class="ckeditor">
-        <%= translations_form.cktext_area :homepage,
-                                          language: I18n.locale,
-                                          label: t("admin.legislation.processes.form.homepage"),
-                                          ckeditor: { height: 500, toolbar: 'admin' },
-                                          hint: t("admin.legislation.processes.form.homepage_description") %>
+  <div class="row">
+    <%= f.translatable_fields do |translations_form| %>
+      <div class="small-12 column">
+        <%= translations_form.text_area :homepage,
+                                        language: I18n.locale,
+                                        class: "html-area admin",
+                                        hint: t("admin.legislation.processes.form.homepage_description") %>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 
-  <div class="small-12 medium-3 column end margin-top">
-    <%= f.submit(class: "button success expanded", value: t("admin.legislation.processes.#{admin_submit_action(@process)}.submit_button")) %>
+  <div class="row">
+    <div class="small-12 medium-3 column end margin-top">
+      <%= f.submit(class: "button success expanded", value: t("admin.legislation.processes.#{admin_submit_action(@process)}.submit_button")) %>
+    </div>
   </div>
 <% end %>

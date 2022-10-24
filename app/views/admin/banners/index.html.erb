@@ -3,7 +3,7 @@
 
 <h2 class="inline-block"><%= t("admin.banners.index.title") %></h2>
 
-<%= render 'shared/filter_subnav', i18n_namespace: "admin.banners.index" %>
+<%= render "shared/filter_subnav", i18n_namespace: "admin.banners.index" %>
 
 <h3><%= page_entries_info @banners %></h3>
 
@@ -11,36 +11,21 @@
   <table>
     <thead>
       <tr id="<%= dom_id(banner) %>">
-        <th scope="col"><%= t("admin.banners.banner.post_started_at")%></th>
-        <th scope="col"><%= t("admin.banners.banner.post_ended_at")%></th>
-        <th scope="col" class="small-4"><%= t("admin.actions.actions")%></th>
+        <th scope="col"><%= Banner.human_attribute_name(:post_started_at) %></th>
+        <th scope="col"><%= Banner.human_attribute_name(:post_ended_at) %></th>
+        <th scope="col"><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td><%= banner.post_started_at %></td>
         <td><%= banner.post_ended_at %></td>
-        <td>
-          <div class="small-12 medium-6 column">
-            <%= link_to t("admin.banners.index.edit"), edit_admin_banner_path(banner),
-                        class: 'button hollow expanded' %>
-          </div>
-          <div class="small-12 medium-6 column">
-            <%= link_to t("admin.banners.index.delete"), admin_banner_path(banner),
-                        method: :delete,
-                        class: 'button hollow alert expanded' %>
-          </div>
-        </td>
+        <td><%= render Admin::TableActionsComponent.new(banner) %></td>
       </tr>
       <tr>
         <td colspan="3">
           <span class="help-text"><%= t("admin.banners.index.preview") %></span>
-          <div class="banner" style="background-color:<%= banner.background_color %>">
-            <%= link_to banner.target_url do %>
-              <h2 style="color:<%= banner.font_color %>"><%= banner.title %></h2>
-              <h3 style="color:<%= banner.font_color %>"><%= banner.description %></h3>
-            <% end %>
-          </div>
+          <%= render Shared::BannerComponent.new(banner) %>
         </td>
       </tr>
     </tbody>

@@ -9,6 +9,6 @@
 
     <h1><%= t("proposals.edit.editing") %></h1>
 
-    <%= render "form", form_url: legislation_process_proposal_url(@proposal.legislation_process_id, @proposal) %>
+    <%= render "form", form_url: legislation_process_proposal_path(@proposal.legislation_process_id, @proposal) %>
   </div>
 </div>

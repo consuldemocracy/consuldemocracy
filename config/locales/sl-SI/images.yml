@@ -1,1 +1,17 @@
 sl:
+  images:
+    remove_image: Odstrani sliko
+    form:
+      title: Opisna slika
+      title_placeholder: Dodaj opisen naslov slike
+      delete_button: Odstrani sliko
+      note: "Naložiš lahko datoteke naslednjih vrst: %{accepted_content_types}, velike največ %{max_file_size} MB."
+      add_new_image: Dodaj sliko
+    actions:
+      destroy:
+        notice: Slika uspešno izbrisana.
+        alert: Slike ni mogoče izbrisati.
+    errors:
+      messages:
+        in_between: mora biti med %{min} in %{max}
+        wrong_content_type: tip dokumenta %{content_type} ni skladen s sprejemljivimi %{accepted_content_types}

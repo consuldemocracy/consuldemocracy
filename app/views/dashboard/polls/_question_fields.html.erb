@@ -1,0 +1,27 @@
+<div class="question-fields nested-fields">
+  <%= f.hidden_field :author_id, value: f.object.author_id || current_user.id %>
+  <%= f.hidden_field :proposal_id, value: f.object.proposal_id || proposal.id %>
+  <div class="row expanded">
+    <div class="small-12 large-9 column">
+      <%= f.text_field :title %>
+    </div>
+    <div class="small-12 large-3 column margin-top">
+      <%= link_to_remove_association f, class: "delete" do %>
+        <%= t("dashboard.polls.question_fields.remove_question") %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="js-answers">
+    <%= f.fields_for :question_answers do |answer| %>
+      <%= render "question_answer_fields", f: answer %>
+    <% end %>
+
+    <div class="answer-links links row expanded">
+      <div class="small-12 column">
+        <%= link_to_add_association t("dashboard.polls.question_fields.add_answer"),
+                                    f, :question_answers, class: "button hollow" %>
+      </div>
+    </div>
+  </div>
+</div>

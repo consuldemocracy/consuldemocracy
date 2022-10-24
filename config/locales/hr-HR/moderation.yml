@@ -1,0 +1,105 @@
+hr:
+  moderation:
+    comments:
+      index:
+        block_authors: Blokirani autori
+        filter: Filter
+        filters:
+          all: Svi
+          pending_flag_review: U tijeku
+          with_ignored_flag: Označeno za pregled
+        headers:
+          comment: Komentar
+          moderate: Uredi
+        hide: Sakrij komentare
+        ignore_flags: Označi kao pogledano
+        orders:
+          flags: Najviše označeno
+          newest: Najnovije
+        title: Komentari
+    dashboard:
+      index:
+        title: Uređivanje
+    debates:
+      index:
+        block_authors: Blokiraj autore
+        filter: Filtriraj
+        filters:
+          all: Svi
+          pending_flag_review: U tijeku
+          with_ignored_flag: Označi kao pogledano
+        headers:
+          debate: Rasprava
+          moderate: Uredi
+        hide: Sakrij rasprave
+        ignore_flags: Označi kao pogledano
+        orders:
+          created_at: Najnovije
+          flags: Najviše označeno
+        title: Rasprave
+    header:
+      title: Uređivanje
+    menu:
+      flagged_comments: Komentari
+      flagged_debates: Rasprave
+      flagged_investments: Proračunske investicije
+      proposals: Prijedlozi
+      proposal_notifications: Obavijesti o prijedlozima
+      users: Blokiraj korisnike
+    proposals:
+      index:
+        block_authors: Blokiraj autore
+        filter: Filter
+        filters:
+          all: Svi
+          pending_flag_review: Pregled u tijeku
+          with_ignored_flag: Označi kao pogledano
+        headers:
+          moderate: Uređivanje
+          proposal: Prijedlog
+        hide: Sakrij prijedloge
+        ignore_flags: Označi kao pogledano
+        orders:
+          created_at: Posljednje
+          flags: Najviše označeno
+        title: Prijedlozi
+    budget_investments:
+      index:
+        block_authors: Blok autora
+        filter: Filter
+        filters:
+          all: Svi
+          pending_flag_review: U tijeku
+          with_ignored_flag: Označite kao pogledano
+        headers:
+          moderate: Uredite
+          budget_investment: Budžet investicija
+        hide: Sakrij budžet investicije
+        ignore_flags: Označi kao pogledano
+        orders:
+          created_at: Posljednje
+          flags: Najviše označeno
+        title: Budžet investicije
+    proposal_notifications:
+      index:
+        block_authors: Blok autora
+        filter: Filter
+        filters:
+          all: Svi
+          pending_review: Čeka pregled
+          ignored: Označi kao pogledano
+        headers:
+          moderate: Uredi
+          proposal_notification: Obavijest o prijedlogu
+        hide: Sakrij prijedloge
+        ignore_flags: Označi kao pogledano
+        orders:
+          created_at: Posljednje
+          moderated: Uređeno
+        title: Obavijesti prijedloga
+    users:
+      index:
+        hide: Blok
+        search_placeholder: email ili ime korisnika
+        title: Blokirani korisnici
+      notice_hide: Korisnik blokiran. Sve baze podataka i komentari ovog korisnika su sakrivene.

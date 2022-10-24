@@ -1,5 +1,5 @@
 section "Commenting Investments, Debates & Proposals" do
-  %w(Budget::Investment Debate Proposal).each do |commentable_class|
+  %w[Budget::Investment Debate Proposal].each do |commentable_class|
     100.times do
       commentable = commentable_class.constantize.all.sample
       Comment.create!(user: User.all.sample,

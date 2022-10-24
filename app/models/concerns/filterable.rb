@@ -7,10 +7,9 @@ module Filterable
   end
 
   class_methods do
-
-    def filter(params)
+    def filter_by(params)
       resources = all
-      params.each do |filter, value|
+      (params.presence || {}).each do |filter, value|
         if allowed_filter?(filter, value)
           resources = resources.send("by_#{filter}", value)
         end
@@ -20,9 +19,8 @@ module Filterable
 
     def allowed_filter?(filter, value)
       return if value.blank?
-      ['official_level', 'date_range'].include?(filter)
+
+      ["date_range", "goal", "target"].include?(filter)
     end
-
   end
-
 end

@@ -1,10 +1,1 @@
-<div class="small-12 medium-6">
-  <%= form_for(User.new, url: url, as: :user, method: :get) do |f| %>
-    <div class="input-group">
-        <%= text_field_tag :name_or_email, "", placeholder: t("admin.shared.user_search.placeholder") %>
-      <div class="input-group-button">
-        <%= f.submit t("admin.shared.user_search.button"), class: "button" %>
-      </div>
-    </div>
-  <% end %>
-</div>
+<%= render Admin::SearchComponent.new(url: url, label: t("admin.shared.search.label.users")) %>

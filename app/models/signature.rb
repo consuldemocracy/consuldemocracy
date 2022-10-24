@@ -1,8 +1,10 @@
-class Signature < ActiveRecord::Base
+class Signature < ApplicationRecord
   belongs_to :signature_sheet
   belongs_to :user
 
   validates :document_number, presence: true
+  validates :date_of_birth, presence: true, if: -> { Setting.force_presence_date_of_birth? }
+  validates :postal_code, presence: true, if: -> { Setting.force_presence_postal_code? }
   validates :signature_sheet, presence: true
 
   scope :verified,   -> { where(verified: true) }
@@ -26,7 +28,7 @@ class Signature < ActiveRecord::Base
   def assign_vote_to_user
     set_user
     if signable.is_a? Budget::Investment
-      signable.vote_by(voter: user, vote: 'yes') if [nil, :no_selecting_allowed].include?(signable.reason_for_not_being_selectable_by(user))
+      signable.vote_by(voter: user, vote: "yes") if [nil, :no_selecting_allowed].include?(signable.reason_for_not_being_selectable_by(user))
     else
       signable.register_vote(user, "yes")
     end
@@ -34,8 +36,8 @@ class Signature < ActiveRecord::Base
   end
 
   def assign_signature_to_vote
-    vote = Vote.where(votable: signable, voter: user).first
-    vote.update(signature: self) if vote
+    vote = Vote.find_by(votable: signable, voter: user)
+    vote&.update!(signature: self)
   end
 
   def user_exists?
@@ -49,27 +51,28 @@ class Signature < ActiveRecord::Base
       verified_at: Time.current,
       erased_at: Time.current,
       password: random_password,
-      terms_of_service: '1',
+      terms_of_service: "1",
       email: nil,
       date_of_birth: @census_api_response.date_of_birth,
       gender: @census_api_response.gender,
-      geozone: Geozone.where(census_code: @census_api_response.district_code).first
+      geozone: Geozone.find_by(census_code: @census_api_response.district_code)
     }
     User.create!(user_params)
   end
 
   def clean_document_number
     return if document_number.blank?
+
     self.document_number = document_number.gsub(/[^a-z0-9]+/i, "").upcase
   end
 
   def random_password
-    (0...20).map { ('a'..'z').to_a[rand(26)] }.join
+    (0...20).map { ("a".."z").to_a[rand(26)] }.join
   end
 
   def in_census?
-    document_types.detect do |document_type|
-      response = CensusCaller.new.call(document_type, document_number)
+    document_types.find do |document_type|
+      response = CensusCaller.new.call(document_type, document_number, date_of_birth, postal_code)
       if response.valid?
         @census_api_response = response
         true
@@ -82,7 +85,7 @@ class Signature < ActiveRecord::Base
   end
 
   def set_user
-    user = User.where(document_number: document_number).first
+    user = User.find_by(document_number: document_number)
     update(user: user)
   end
 
@@ -91,9 +94,8 @@ class Signature < ActiveRecord::Base
   end
 
   def document_types
-    %w(1 2 3 4)
+    %w[1 2 3 4]
   end
-
 end
 
 # == Schema Information

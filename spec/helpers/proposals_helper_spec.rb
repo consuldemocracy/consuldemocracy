@@ -1,7 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe ProposalsHelper do
-
   describe "#progress_bar_percentage" do
     it "is 0 if no votes" do
       proposal = create(:proposal)
@@ -39,7 +38,5 @@ describe ProposalsHelper do
       proposal = create(:proposal, cached_votes_up: Proposal.votes_needed_for_success * 2)
       expect(supports_percentage(proposal)).to eq "100%"
     end
-
   end
-
 end

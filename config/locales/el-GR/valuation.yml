@@ -1,0 +1,67 @@
+el:
+  valuation:
+    header:
+      title: Αξιολόγηση
+    menu:
+      title: Αξιολόγηση
+      budgets: Συμμετοχικοί προϋπολογισμοί
+    budgets:
+      index:
+        title: Συμμετοχικοί προϋπολογισμοί
+        filters:
+          current: Ανοιχτό
+          finished: Ολοκληρώθηκε
+        table_name: Όνομα
+        table_phase: Φάση
+        table_assigned_investments_valuation_open: Επενδυτικά σχέδια που έχουν ανατεθεί με αποτίμηση ανοίξτε
+        table_actions: Ενέργειες
+        evaluate: Αξιολόγηση
+        no_budgets: "Δεν υπάρχουν προϋπολογισμοί"
+    budget_investments:
+      index:
+        headings_filter_all: Όλες οι επικεφαλίδες
+        filters:
+          valuation_open: Άνοιγμα
+          valuating: Υπό αξιολόγηση
+          valuation_finished: Η αξιολόγηση ολοκληρώθηκε
+        assigned_to: "Έχει ανατεθεί σε %{valuator}"
+        title: Επενδυτικά έργα
+        edit: Επεξεργασία φακέλου
+        table_id: Ταυτότητα
+        table_title: Τίτλος
+        table_heading_name: Όνομα επικεφαλίδας
+        table_actions: Ενέργειες
+        no_investments: "Δεν υπάρχουν επενδυτικά έργα."
+      show:
+        back: Πίσω
+        title: Επενδυτικό έργο
+        info: Πληροφορίες συντάκτη
+        by: Αποστολή από
+        sent: Αποστολή σε
+        heading: Επικεφαλίδα
+        dossier: Φάκελος
+        edit_dossier: Επεξεργασία φακέλου
+        price: Τιμή
+        price_first_year: Κόστος κατά το πρώτο έτος
+        currency: "€"
+        feasibility: Κατά πόσο είναι εφικτό
+        feasible: Εφικτό
+        unfeasible: Δεν είναι εφικτό
+        undefined: Δεν έχει προσδιοριστεί
+        valuation_finished: Η αξιολόγηση ολοκληρώθηκε
+        duration: Χρονικό πλαίσιο
+        responsibles: Υπεύθυνοι
+        assigned_admin: Αναθετημένος λειτουργός
+        assigned_valuators: Ανατεθημένοι αξιολογητές
+      edit:
+        dossier: Φάκελος
+        price: "Τιμή (%{currency})"
+        price_first_year: "Κόστος πρώτου έτους (%{currency}) <small>(προαιρετικό, μη δημόσια δεδομένα)</small>"
+        feasibility: Κατά πόσο έιναι εφικτό 
+        valuation_finished_alert: "Είστε βέβαιοι ότι θέλετε να επισημάνετε αυτή την έκθεση ως ολοκληρωμένη; Αυτό θα αποτρέψει την δυνατότητα τροποποίηση της."
+        not_feasible_alert: "Ο συντάκτης του έργου θα λάβει άμεσα email με επεξήγηση των λόγων για τους οποίος το έργο έχει κριθέι ως μη εφικτό."
+        save: Αποθήκευση αλλαγών
+      notice:
+        valuate: "Ο φάκελος έχει ενημερεί"
+      valuation_comments: Σχόλια αξιολόγησης
+      not_in_valuating_phase: Οι επενδύσεις μπορούν να τιμολογηθούν μόνο όταν ο προϋπολογισμός είναι σε φάση τιμολόγησης

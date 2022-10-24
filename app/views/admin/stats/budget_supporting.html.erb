@@ -1,0 +1,49 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "stat_graphs", "data-turbolinks-track" => "reload" %>
+<% end %>
+
+<%= back_link_to budgets_admin_stats_path %>
+
+<h2><%= @budget.name %> - <%= t("admin.stats.budget_supporting.title") %></h2>
+
+<div class="stats">
+  <div class="row stats-numbers">
+    <div class="small-12 medium-3 column">
+      <p class="featured">
+        <%= t("admin.stats.budget_supporting.vote_count") %>
+        <br>
+        <span id="total_votes_count" class="number">
+          <%= @vote_count %>
+        </span>
+      </p>
+    </div>
+
+    <div class="small-12 medium-6 column end">
+      <p>
+        <%= t("admin.stats.budget_supporting.participant_count") %>
+        <br>
+        <span id="total_participants_count" class="number">
+          <%= @user_count %>
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<%= render "graph", name: "user_supported_budgets", event: "", count: @user_count %>
+
+<table class="investment-projects-summary">
+  <th><%= t("admin.stats.budget_supporting.headings") %></th>
+  <th><%= t("admin.stats.budget_supporting.users") %></th>
+
+  <% @voters_in_heading.each do |heading, count| %>
+    <tr id="<%= dom_id(heading) %>">
+      <td class="name">
+        <%= heading.name %>
+      </td>
+      <td class="name">
+        <%= number_with_delimiter count %>
+      </td>
+    </tr>
+  <% end %>
+</table>

@@ -1,5 +1,5 @@
-class RemoveRelatedContentsFlagsCount < ActiveRecord::Migration
+class RemoveRelatedContentsFlagsCount < ActiveRecord::Migration[4.2]
   def change
-    remove_column :related_contents, :flags_count
+    remove_column :related_contents, :flags_count, :integer
   end
 end

@@ -3,11 +3,12 @@
 <h2><%= t("devise_views.users.registrations.edit.edit") %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+  <%= render "shared/errors", resource: resource %>
   <div class="row">
     <div class="small-12 column">
-      <%= f.label :email, t("devise_views.users.registrations.edit.email_label") %>
-      <%= f.email_field :email, label: false, autofocus: true, placeholder: t("devise_views.users.registrations.edit.email_label") %>
+      <%= f.email_field :email,
+        label: t("devise_views.users.registrations.edit.email_label"),
+        autofocus: true %>
     </div>
 
     <div class="small-12 column">
@@ -17,24 +18,23 @@
     </div>
 
     <div class="small-12 column">
-      <%= f.label :password, t("devise_views.users.registrations.edit.password_label") %>
-      <p class="help-text" id="password-help-text"><%= t("devise_views.users.registrations.edit.leave_blank") %></p>
-      <%= f.password_field :password, autocomplete: "off", label: false,
-                                      placeholder: t("devise_views.users.registrations.edit.password_label"),
-                                      aria: {describedby: "password-help-text"} %>
+      <%= f.password_field :password,
+        autocomplete: "off",
+        label: t("devise_views.users.registrations.edit.password_label"),
+        hint: t("devise_views.users.registrations.edit.leave_blank") %>
     </div>
 
     <div class="small-12 column">
-      <%= f.label :password_confirmation, t("devise_views.users.registrations.edit.password_confirmation_label") %>
-      <%= f.password_field :password_confirmation, label: false, autocomplete: "off", placeholder: t("devise_views.users.registrations.edit.password_confirmation_label") %>
+      <%= f.password_field :password_confirmation,
+        label: t("devise_views.users.registrations.edit.password_confirmation_label"),
+        autocomplete: "off" %>
     </div>
 
     <div class="small-12 column">
-      <%= f.label :current_password, t("devise_views.users.registrations.edit.current_password_label") %>
-      <p class="help-text" id="current-password-help-text"><%= t("devise_views.users.registrations.edit.need_current") %></p>
-      <%= f.password_field :current_password, label: false, autocomplete: "off",
-                                              placeholder: t("devise_views.users.registrations.edit.current_password_label"),
-                                              aria: {describedby: "current-password-help-text"} %>
+      <%= f.password_field :current_password,
+        label: t("devise_views.users.registrations.edit.current_password_label"),
+        autocomplete: "off",
+        hint: t("devise_views.users.registrations.edit.need_current") %>
     </div>
 
     <div class="small-12 column">

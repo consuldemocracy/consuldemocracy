@@ -1,5 +1,5 @@
-class RemoveOfficerAssigmentComposedIndex < ActiveRecord::Migration
+class RemoveOfficerAssigmentComposedIndex < ActiveRecord::Migration[4.2]
   def change
-    remove_index "poll_officer_assignments", name: "index_poll_officer_assignments_on_officer_id_and_date"
+    remove_index "poll_officer_assignments", column: [:officer_id, :date]
   end
 end

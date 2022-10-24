@@ -1,0 +1,5 @@
+<% if current_user.poll_officer? %>
+  <div id="officing-booth" class="callout info">
+    <%= t("admin.officing_booth.title", booth: try(:current_booth)&.location) %>
+  </div>
+<% end %>

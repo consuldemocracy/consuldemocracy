@@ -1,6 +1,6 @@
 <%= back_link_to %>
 
-<h2><%= t("admin.stats.proposal_notifications.title")%></h2>
+<h2><%= t("admin.stats.proposal_notifications.title") %></h2>
 
 <div class="stats">
   <div class="row stats-numbers">
@@ -31,7 +31,13 @@
         <td>
           <h3>
             <%= notification.title %>
-            <small><%= link_to notification.proposal.title, proposal_path(notification.proposal) %></small>
+            <small>
+              <% if notification.proposal.present? %>
+                <%= link_to notification.proposal.title, proposal_path(notification.proposal) %>
+              <% else %>
+                <%= t("admin.stats.proposal_notifications.not_available") %><br>
+              <% end %>
+            </small>
           </h3>
           <p><%= notification.body %></p>
         </td>

@@ -1,0 +1,15 @@
+.admin .table-actions {
+  @include admin-action-icons;
+  @include flex-with-gap(1.6em);
+  align-items: flex-start;
+  padding: 0 0.5em;
+
+  a,
+  button {
+    @include icon-on-top;
+  }
+
+  button {
+    cursor: pointer;
+  }
+}

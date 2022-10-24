@@ -1,0 +1,126 @@
+bs:
+  management:
+    account:
+      menu:
+        reset_password_email: Promijenite lozinku emailom
+        reset_password_manually: Promijenite lozinku ručno
+      alert:
+        unverified_user: Verifikovani korisnik se još uvijek nije prijavio
+      show:
+        title: Korisnički nalog
+      edit:
+        title: "Edituj korisnički nalog: promijeni lozinku"
+        back: Nazad
+        password:
+          password: Lozinka
+          send_email: Pošalji mail za promjenu lozinke
+          reset_email_send: Email ispravno poslan.
+          reseted: Lozinka uspješno promijenjena
+          random: Automatski napravi lozinku
+          save: Spasi lozinku
+          print: Printaj lozinku
+          print_help: Možeš printati lozinku nakon što se spasi.
+    account_info:
+      change_user: Promijeni korisnika
+      document_number_label: "Broj dokumenta:"
+      document_type_label: "Vrsta dokumenta:"
+      email_label: "Email:"
+      identified_label: "Identifikovana kao:"
+      username_label: "Korisničko ime:"
+    check: Provjeri dokument
+    dashboard:
+      index:
+        title: Menadžment
+        info: Ovdje možete pratiti korisnike putem svih radnji pobrojanih na meniju slijeva.
+    document_verifications:
+      already_verified: Korisnički nalog je već potvrđen.
+      has_no_account: Za otvaranje naloga, idite na %{link} i kliknite na <b> "Registracija" </b> u gornjem lijevom dijelu ekrana.
+      link: CONSUL
+      in_census_has_following_permissions: "Korisnik može učestvovati na web-stranici pod ovim uvjetima:"
+      not_in_census: Dokument nije registrovan.
+      not_in_census_info: "Građani koji nisu na popisu mogu učestvovati na web-stranici pod sljedećim uvjetima:"
+      please_check_account_data: Provjeri da li su gore navedeni podaci o nalogu ispravni.
+      title: Praćenje korisnika
+      under_age: "Vaš nalog se ne može potvrditi zbog nedovoljne starosne dobi."
+      verify: Potvrdi
+    date_of_birth: Datum rođenja
+    email_verifications:
+      already_verified: Korisnički nalog je već potvrđen.
+      choose_options: "Odaberite jednu od opcija:"
+      document_found_in_census: Dokument pronađen u popisu, ali nema vezanog korisničkog naloga.
+      document_mismatch: "Ovaj email pripada korisniku koji je već unio broj lične isprave: %{document_number}%{document_type}"
+      email_sent_instructions: Kako bi finalizirali verifikaciju ovog korisnika, morate kliknuti na link koji smo poslali na gorenavedenu email adresu. Ovo je neophodno kako bi se potvrdilo da je adresa zaista njegova.
+      if_existing_account: Ako osoba već ima korisnički profil otvoren na ovoj web-stranici,
+      if_no_existing_account: Ako ova osoba nije još uvijek otvorila nalog,
+      introduce_email: "Navedite email adresu koju koristite za nalog:"
+      send_email: Pošalji verifikacijski email
+    menu:
+      create_proposal: Napravi prijedlog
+      print_proposals: Odštampaj prijedloge
+      support_proposals: Podrži prijedloge
+      create_budget_investment: Formuliši budžetsku investiciju
+      print_budget_investments: Odštampaj budžetske investicije
+      support_budget_investments: Podrži budžetske investicije
+      users: Praćenje korisnika
+      user_invites: Pošalji pozivnice
+      select_user: Odaberi korisnika
+    print:
+      proposals_info: Kreirajte vlastiti prijedlog na http://url.consul
+      proposals_title: "Prijedlozi:"
+      budget_investments_info: Učestvujte na http://url.consul
+    print_info: Printaj
+    proposals:
+      alert:
+        unverified_user: Korisnik nije potvrđen
+      create_proposal: Formuliši prijedlog
+      print:
+        print_button: Odštampaj
+      index:
+        title: Podrži prijedloge
+    budgets:
+      create_new_investment: Formuliši budžetsku investiciju
+      print_investments: Odštampaj budžetske investicije
+      support_investments: Podrži budžetske investicije
+      table_name: Naziv
+      table_phase: Faza
+      table_actions: Poduzete radnje
+      no_budgets: Nema aktivnih participativnih budžeta.
+    budget_investments:
+      alert:
+        unverified_user: Korisnik nije potvrđen
+      create: Formuliši budžetsku investiciju
+      filters:
+        heading: Koncept
+        unfeasible: Neizvodiva investicija
+      print:
+        print_button: Odštampaj
+      search_results:
+        one: " sadrži pojam %{search_term}"
+        few: " sadrži pojam %{search_term}"
+        other: " sadrži pojam %{search_term}"
+    sessions:
+      signed_out: Odjava uspješna.
+      signed_out_managed_user: Korisnička sesija uspješno odjavljena.
+    username_label: Korisničko ime
+    users:
+      create_user: Otvori novi nalog
+      create_user_info: Otvorićemo nalog sa sljedećim podacima
+      create_user_submit: Postani korisnik
+      create_user_success: 'Poslali smo email na sljedeću adresu: <b>%{email}</b>, kako bi potvrdili da se adresa zaista vodi na korisnika. Email sadrži link koji se mora kliknuti. Nakon toga, korisnik mora namjestiti lozinku prije nego mu se omogući da se prijavi na web-stranici'
+      autogenerated_password: "Automatski napravljena lozinka je <b>%{password}</b>. Možete je promijeniti ako odete na \"Moj nalog\""
+      email_optional_label: Email (nije obavezno navesti)
+      erased_notice: Korisnički nalog obrisan.
+      erased_by_manager: "Obrisao menadžer: %{manager}"
+      erase_account_link: Obriši korisnika
+      erase_account_confirm: Sigurni ste da želite obrisati profil? Ova radnja se ne može poništiti
+      erase_warning: Ova radnja se ne može poništiti. Budite sigurni da želite obrisati ovaj nalog.
+      erase_submit: Obriši nalog
+    user_invites:
+      new:
+        label: Emailovi
+        info: "Unesite email adrese, razdvojene zarezima (,)"
+        submit: Pošalji pozivnice
+        title: Pošalji pozivnice
+      create:
+        success: Poslano <strong>%{count} pozivnica</strong>.
+        title: Pošalji pozivnice

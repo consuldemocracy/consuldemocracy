@@ -14,7 +14,7 @@ en:
     official_level_5_name_description: "Tag that will appear on users marked as Level 5 official position"
     max_ratio_anon_votes_on_debates: "Maximum ratio of anonymous votes per Debate"
     max_ratio_anon_votes_on_debates_description: "Anonymous votes are by registered users with an unverified account"
-    max_votes_for_proposal_edit: "Number of votes from which a Proposal can no longer be edited"
+    max_votes_for_proposal_edit: "Number of supports from which a Proposal can no longer be edited"
     max_votes_for_proposal_edit_description: "From this number of supports the author of a Proposal can no longer edit it"
     max_votes_for_debate_edit: "Number of votes from which a Debate can no longer be edited"
     max_votes_for_debate_edit_description: "From this number of votes the author of a Debate can no longer edit it"
@@ -22,16 +22,12 @@ en:
     proposal_code_prefix_description: "This prefix will appear in the Proposals before the creation date and its ID"
     featured_proposals_number: "Number of featured proposals"
     featured_proposals_number_description: "Number of featured proposals that will be displayed if the Featured proposals feature is active"
-    votes_for_proposal_success: "Number of votes necessary for approval of a Proposal"
+    votes_for_proposal_success: "Number of supports necessary for approval of a Proposal"
     votes_for_proposal_success_description: "When a proposal reaches this number of supports it will no longer be able to receive more supports and is considered successful"
     months_to_archive_proposals: "Months to archive Proposals"
     months_to_archive_proposals_description: "After this number of months the Proposals will be archived and will no longer be able to receive supports"
     email_domain_for_officials: "Email domain for public officials"
     email_domain_for_officials_description: "All users registered with this domain will have their account verified at registration"
-    per_page_code_head: "Code to be included on every page (<head>)"
-    per_page_code_head_description: "This code will appear inside the <head> label. Useful for entering custom scripts, analytics..."
-    per_page_code_body: "Code to be included on every page (<body>)"
-    per_page_code_body_description: "This code will appear inside the <body> label. Useful for entering custom scripts, analytics..."
     twitter_handle: "Twitter handle"
     twitter_handle_description: "If filled in it will appear in the footer"
     twitter_hashtag: "Twitter hashtag"
@@ -44,24 +40,14 @@ en:
     telegram_handle_description: "If filled in it will appear in the footer"
     instagram_handle: "Instagram handle"
     instagram_handle_description: "If filled in it will appear in the footer"
-    url: "Main URL"
-    url_description: "Main URL of your website"
-    org_name: "Organization"
-    org_name_description: "Name of your organization"
-    place_name: "Place"
-    place_name_description: "Name of your city"
+    org_name: "Site name"
+    org_name_description: "This name will appear on mailers subject, help pages..."
     related_content_score_threshold: "Related content score threshold"
-    related_content_score_threshold_description: "Hides content that users mark as unrelated"
+    related_content_score_threshold_description: "According to the rating of votes in a related content, hides content that users mark as unrelated"
     hot_score_period_in_days: "Period (days) used by the filter 'most active'"
     hot_score_period_in_days_description: "The filter 'most active' used in multiple sections will be based on the votes during the last X days"
-    map_latitude: "Latitude"
-    map_latitude_description: "Latitude to show the map position"
-    map_longitude: "Longitude"
-    map_longitude_description: "Longitude to show the position of the map"
-    map_zoom: "Zoom"
-    map_zoom_description: "Zoom to show the map position"
     mailer_from_name: "Sender email name"
-    mailer_from_name_description: "This name will appear in emails sent from the application"
+    mailer_from_name_description: "This name will appear as sender name in emails sent from the application"
     mailer_from_address: "Sender email address"
     mailer_from_address_description: "This email address will appear in emails sent from the application"
     meta_title: "Site title (SEO)"
@@ -71,39 +57,44 @@ en:
     meta_keywords: "Keywords (SEO)"
     meta_keywords_description: 'Keywords <meta name="keywords">, used to improve SEO'
     min_age_to_participate: Minimum age needed to participate
-    min_age_to_participate_description: "Users over this age can participate in all processes"
+    min_age_to_participate_description: "Users over this age can participate in all processes where a user verified account is needed"
+    postal_codes: "Postal Codes"
+    postal_codes_description: "A comma-separated list of valid postal codes; you can also introduce ranges separated with a colon. Example: 00001:00010,00024,AB3 45FG,00031:00035 will allow postal codes between 00001 and 00010, the postal code 00024, the postal code AB3 45FG, and postal codes between 00031 and 00035. If you leave it blank, all postal codes will be valid."
+    proposals:
+      successful_proposal_id: Successful proposal
+      successful_proposal_id_description: This proposal is used as a reference for a successful proposal in supports number and will be displayed in the dashboard graph.
+      poll_short_title: Polls
+      poll_short_title_description: Short description of the survey feature. Allows users to create surveys on a proposal
+      poll_description: Polls description
+      poll_description_description: Detailed description of the survey feature
+      poll_link: Additional information link
+      poll_link_description: Adds an additional information link to survey feature
+      email_short_title: Email
+      email_short_title_description: 'Short description of the email feature. Allows users to send an email to promote their proposal. You can find all the content of this email in "/app/views/dashboard/mailer/forward.html.erb"'
+      email_description: Email description
+      email_description_description: Detailed description of the email feature
+      poster_short_title: Poster
+      poster_short_title_description: 'Short description of the poster feature. Allows users to download a poster on PDF format to promote their proposal. You can find all the content of this poster in "/app/views/dashboard/poster/index.pdf.erb"'
+      poster_description: Poster description
+      poster_description_description: Detailed description of the poster feature
     analytics_url: "Analytics URL"
-    blog_url: "Blog URL"
-    transparency_url: "Transparency URL"
-    opendata_url: "Open Data URL"
-    verification_offices_url: Verification offices URL
-    proposal_improvement_path: Proposal improvement info internal link
+    proposal_notification_minimum_interval_in_days: "Minimum interval (in days) for authors of proposals to send new proposal notifications"
+    proposal_notification_minimum_interval_in_days_description: "The number of days user can send a notification for all followers of their proposal"
+    direct_message_max_per_day: "Direct Message max number per day"
+    direct_message_max_per_day_description: "Number max of direct messages one user can send per day"
     feature:
-      budgets: "Participatory budgeting"
-      budgets_description: "With participatory budgets, citizens decide which projects presented by their neighbours will receive a part of the municipal budget"
       twitter_login: "Twitter login"
       twitter_login_description: "Allow users to sign up with their Twitter account"
       facebook_login: "Facebook login"
       facebook_login_description: "Allow users to sign up with their Facebook account"
       google_login: "Google login"
       google_login_description: "Allow users to sign up with their Google Account"
-      proposals: "Proposals"
-      proposals_description: "Citizens' proposals are an opportunity for neighbours and collectives to decide directly how they want their city to be, after getting sufficient support and submitting to a citizens' vote"
+      wordpress_login: "Wordpress login"
+      wordpress_login_description: "Allow users to sign up with their Wordpress Account"
       featured_proposals: "Featured proposals"
       featured_proposals_description: "Shows featured proposals on index proposals page"
-      debates: "Debates"
-      debates_description: "The citizens' debate space is aimed at anyone who can present issues that concern them and about which they want to share their views with others"
-      polls: "Polls"
-      polls_description:  "Citizens' polls are a participatory mechanism by which citizens with voting rights can make direct decisions"
       signature_sheets: "Signature sheets"
       signature_sheets_description: "It allows adding from the Administration panel signatures collected on-site to Proposals and investment projects of the Participative Budgets"
-      legislation: "Legislation"
-      legislation_description: "In participatory processes, citizens are offered the opportunity to participate in the drafting and modification of regulations that affect the city and to give their opinion on certain actions that are planned to be carried out"
-      spending_proposals: "Spending proposals"
-      spending_proposals_description: "⚠️ NOTE: This functionality has been replaced by Participatory Budgeting and will disappear in new versions"
-      spending_proposal_features:
-        voting_allowed: Voting on investment projects - Preselection phase
-        voting_allowed_description: "⚠️ NOTE: This functionality has been replaced by Participatory Budgeting and will disappear in new versions"
       user:
         recommendations: "Recommendations"
         recommendations_description: "Shows users recommendations on the homepage based on the tags of the following items"
@@ -115,6 +106,8 @@ en:
         recommendations_on_proposals_description: "Displays recommendations to users on the proposals page based on the tags of the items followed"
       community: "Community on proposals and investments"
       community_description: "Enables the community section in the proposals and investment projects of the Participatory Budgets"
+      machine_learning: "AI / Machine learning"
+      machine_learning_description: "Enable the AI / Machine Learning section to run python scripts and enrich content automatically."
       map: "Proposals and budget investments geolocation"
       map_description: "Enables geolocation of proposals and investment projects"
       allow_images: "Allow upload and show images"
@@ -126,4 +119,109 @@ en:
       public_stats: "Public stats"
       public_stats_description: "Display public stats in the Administration panel"
       help_page: "Help page"
-      help_page_description: "Displays a Help menu that contains a page with an info section about each enabled feature"
+      help_page_description: 'Displays a Help menu that contains a page with an info section about each enabled feature. Also custom pages and menus can be created in the "Custom pages" and  "Custom content blocks" sections'
+      remote_translations: "Remote translation"
+      remote_translations_description: "Displays a button that allows users to request a translation when there are not contents in their language."
+      translation_interface: "Translation interface"
+      translation_interface_description: "Displays the manual translation interface that allows users to enter their content in all application available languages. This option only affects user application forms and independently will always be active in the administration panel."
+      remote_census: "Configure connection to remote census (SOAP)"
+      remote_census_description: "Allows to configure the connection to the remote census of each institution"
+      valuation_comment_notification: "Valuation comment notification"
+      valuation_comment_notification_description: "Send an email to all associated users except valuation commenter to budget investment when a new valuation comment is created"
+      graphql_api: "GraphQL API"
+      dashboard:
+        notification_emails: "Dashboard notification emails"
+        notification_emails_description: "Enable sending dashboard notification emails to proposal's authors"
+      remove_investments_supports: "Allow removing supports on budget investments"
+      remove_investments_supports_description: "Allow users to remove supports on participatory budgets investments during the selecting projects phase."
+      sdg: SDG
+      sdg_description: Enable Sustainable Development Goals sections in the administration menu and in the Global Settings.
+    remote_census:
+      general:
+        endpoint: "Endpoint"
+        endpoint_description: "Host name where the census service is available (wsdl)"
+      request:
+        method_name: "Request method name"
+        method_name_description: "Request method name accepted by the City Census WebService."
+        structure: "Request Structure"
+        structure_description: 'Structure of the Request to send to the Census WebService of the City council. The "static" values of this request should be filled. Values related to Document Type, Document Number, Date of Birth and Postal Code should be null. Example of a valid format: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": 1, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
+        document_type: "Path for Document Type"
+        document_type_description: "Path in the request structure that sends the Document Type. DO NOT FILL IN if the WebService does not require the Document Type to verify a user."
+        document_number: "Path for Document Number"
+        document_number_description: "Path in the request structure that sends the Document Number. DO NOT FILL IN if the WebService does not require the Document Number to verify a user."
+        date_of_birth: "Path for Date of Birth"
+        date_of_birth_description: "Path in the request structure that sends the Date of Birth. DO NOT FILL IN if the WebService does not require the Date of Birth to verify a user."
+        postal_code: "Path for Postal Code"
+        postal_code_description: "Path in the request structure that sends the Postal Code. DO NOT FILL IN if the WebService does not require the Postal Code to verify a user."
+      response:
+        date_of_birth: "Path for Date of Birth"
+        date_of_birth_description: "In what path of the response is the user's Date of Birth?"
+        postal_code: "Path for Postal Code"
+        postal_code_description: "In what path of the response is the user's Postal Code?"
+        district: "Path for District"
+        district_description: "In what path of the response is the user's District?"
+        gender: "Path for Gender"
+        gender_description: "In what path of response is the user's Gender?"
+        name: "Path for Name"
+        name_description: "In what path of the response is the user's Name?"
+        surname: "Path for the Last Name"
+        surname_description: "In what path of the response is the user's Last Name?"
+        valid: "Condition for detecting a valid response"
+        valid_description: "What response path has to come informed to be considered a valid response and user verified"
+    map:
+      latitude: "Latitude"
+      latitude_description: "Latitude to show the map position"
+      longitude: "Longitude"
+      longitude_description: "Longitude to show the position of the map"
+      zoom: "Zoom"
+      zoom_description: "Zoom to show the map position"
+    process:
+      debates: "Debates"
+      debates_description: "The citizens' debate space is aimed at anyone who can present issues that concern them and about which they want to share their views with others"
+      proposals: "Proposals"
+      proposals_description: "Citizens' proposals are an opportunity for neighbours and collectives to decide directly how they want their society to be, after getting sufficient support and submitting to a citizens' vote"
+      polls: "Polls"
+      polls_description:  "Citizens' polls are a participatory mechanism by which citizens with voting rights can make direct decisions"
+      budgets: "Participatory budgeting"
+      budgets_description: "With participatory budgets, citizens decide which projects presented by their neighbours will receive a part of the budget"
+      legislation: "Collaborative Legislation"
+      legislation_description: "In participatory processes, citizens are offered the opportunity to participate in the drafting and modification of regulations that affect the society and to give their opinion on certain actions that are planned to be carried out"
+    html:
+      per_page_code_head: "Code to be included on every page (<head>)"
+      per_page_code_head_description: "This code will appear inside the <head> label. Useful for entering custom scripts, analytics..."
+      per_page_code_body: "Code to be included on every page (<body>)"
+      per_page_code_body_description: "This code will appear inside the <body> label. Useful for entering custom scripts, analytics..."
+    uploads:
+      images:
+        min_width: "Image minimum width"
+        min_width_description: "Minimum width allowed for an uploaded image (in pixels)"
+        min_height: "Image minimum height"
+        min_height_description: "Minimum height allowed for an uploaded image (in pixels)"
+        max_size: "Image maximum size"
+        max_size_description: "Maximum size allowed for an uploaded image (in Megabytes/MB)"
+        content_types: "Accepted content types for images"
+        content_types_description: "Select all the content types allowed for uploaded images"
+        title:
+          min_length: "Image title minimum length"
+          min_length_description: "Title provided by the user when uploading an image (used as alt HTML attribute)"
+          max_length: "Image title maximum length"
+          max_length_description: "Title provided by the user when uploading an image (used as alt HTML attribute)"
+      documents:
+        max_amount: "Maximum number of documents"
+        max_amount_description: "Maximum number of documents that can be attached to a proposal, investment..."
+        max_size: "Document maximum size"
+        max_size_description: "Maximum size allowed for an uploaded document (in Megabytes/MB)"
+        content_types: "Accepted content types for documents"
+        content_types_description: "Select all the content types allowed for uploaded documents"
+    sdg:
+      process:
+        debates: Related SDG in debates
+        debates_description: Allow debates to be linked to Sustainable Development Goals
+        proposals: Related SDG in proposals
+        proposals_description: Allow proposals to be linked to Sustainable Development Goals
+        polls: Related SDG in polls
+        polls_description: Allow polls to be linked to Sustainable Development Goals
+        budgets: Related SDG in partipatory budgets
+        budgets_description: Allow participatory budgets to be linked to Sustainable Development Goals
+        legislation: Related SDG in collaborative legislation
+        legislation_description: Allow collaborative legislation to be linked to Sustainable Development Goals

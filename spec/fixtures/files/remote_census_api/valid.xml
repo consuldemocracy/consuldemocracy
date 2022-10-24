@@ -1,0 +1,15 @@
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <s:Body>
+    <response>
+      <data>
+        <date_of_birth>31/12/1980</date_of_birth>
+        <document_number>12345678Z</document_number>
+        <gender>Male</gender>
+        <name>William</name>
+        <surname>Widmore</surname>
+        <postal_code>28013</postal_code>
+        <district_code>01</district_code>
+      </data>
+    </response>
+  </s:Body>
+</s:Envelope>

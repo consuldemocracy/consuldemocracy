@@ -1,0 +1,116 @@
+bs:
+  devise_views:
+    confirmations:
+      new:
+        submit: Ponovo pošaljite uputstvo
+        title: Ponovo pošaljite uputstvo za potvrđivanje
+      show:
+        instructions: Potvrđivanje naloga emailom %{email}
+        new_password_confirmation_label: Ponovite pristupnu lozinku
+        new_password_label: Nova lozinka za pristup
+        please_set_password: Odaberite novu lozinku (s kojom se možete prijaviti putem emaila gore)
+        submit: Potvrdi
+        title: Potvrdi moj nalog
+    mailer:
+      confirmation_instructions:
+        confirm_link: Potvrdi moj nalog
+        text: "Možete potvrditi svoju email adresu na ovom linku:"
+        title: Dobrodošli
+        welcome: Dobrodošli
+      reset_password_instructions:
+        change_link: Promjeni moju lozinku
+        hello: Pozdrav
+        ignore_text: Ako niste tražili promjenu lozinke, ne obraćajte pažnju na ovaj email.
+        info_text: Lozinka se neće promijeniti ako ne odete na link i promijenite je.
+        text: "Dobili smo zahtjev da promijenimo vašu lozinku. To se može uraditi na sljedećem linku:"
+        title: Promijenite svoju lozinku
+      unlock_instructions:
+        hello: Pozdrav
+        info_text: Vaš nalog je blokiran zbog prevelikog broja neuspješnih pokušaja prijave.
+        instructions_text: "Kliknite na ovaj link kako bi se otključao nalog:"
+        title: Vaš nalog je zaključan
+        unlock_link: Otključaj moj nalog
+    menu:
+      login_items:
+        login: Prijavite se
+        logout: Odjavite se
+        signup: Registrujte se
+    organizations:
+      registrations:
+        new:
+          password_confirmation_label: Potvrdite lozinku
+          responsible_name_note: Ovo je osoba koja predstavlja udruženje/zajednicu u čije se ime podnose prijedlozi
+          submit: Registrujte se
+          title: Registrujte se kao organizacija ili zajednica
+        success:
+          back_to_index: Shvatam; idi nazad na početnu stranicu
+          instructions_1: "<strong> Kontaktiraćemo vas uskoro </strong> kako bi potvrdili da zaista predstavljate ovu zajednicu."
+          instructions_2: Dok se vaš <strong> email provjerava </strong>, poslali smo vam <strong> link za potvrdu vašeg naloga </strong>.
+          instructions_3: Nakon što dobijete potvrdu, moći ćete krenuti s učestvovanjem kao neverifikovana zajednica.
+          thank_you: Hvala što ste registrovali svoju zajednicu na web-stranici. Sad je u toku <strong> verifikacija </strong>.
+          title: Registracija organizacije ili zajednice
+    passwords:
+      edit:
+        change_submit: Promjeni moju lozinku
+        password_confirmation_label: Potvrdi novu lozinku
+        password_label: Nova lozinka
+        title: Promjenite svoju lozinku
+      new:
+        send_submit: Pošalji uputstvo
+        title: Zaboravili ste lozinku?
+    sessions:
+      new:
+        remember_me: Zapamti me
+        submit: Uđite
+        title: Prijavite se
+    shared:
+      links:
+        login: Uđite
+        new_confirmation: Niste dobili uputstvo kako da aktivirate svoj nalog?
+        new_password: Zaboravili ste lozinku?
+        new_unlock: Niste dobili uputstvo za otključavanje?
+        signin_with_provider: Prijava sa %{provider}
+        signup: Nemate nalog? (link za otvaranje naloga) %{signup_link}
+        signup_link: Otvorite nalog
+    unlocks:
+      new:
+        email_label: Email
+        submit: Ponovo pošalji uputstvo za otključavanje
+        title: Upustvo za otključavanje ponovo poslano
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Razlog
+          info: Ova radnja se ne može poništiti. Budite sigurni da to želite uraditi.
+          info_reason: Ako želite, navedite nam razlog (nije obavezno)
+          submit: Obriši moj nalog
+          title: Obriši nalog
+        edit:
+          current_password_label: Sadašnja lozinka
+          edit: Edituj
+          email_label: Email
+          leave_blank: Ostavite prazno ako ne želite mijenjati
+          need_current: Treba nam vaša sadašnja lozinka da potvrdimo izmjene
+          password_confirmation_label: Potvrdi novu lozinku
+          password_label: Nova lozinka
+          update_submit: Ažuriraj
+          waiting_for: "Čekamo potvrdu za:"
+        new:
+          cancel: Ukini prijavu
+          organization_signup: Da li predstavljate organizaciju ili zajednicu? %{signup_link}
+          organization_signup_link: Otvorite nalog ovdje
+          password_confirmation_label: Potvrdi lozinku
+          submit: Registrujte se
+          terms: Registracijom prihvatate (uvjete) %{terms}
+          terms_link: uvjeti korištenja
+          terms_title: Registracijom prihvatate uvjete korištenja
+          title: Registrujte se
+          username_is_available: Korisničko ime se može uzeti
+          username_is_not_available: Neko drugi već koristi ovo korisničko ime
+          username_note: Ime koje je navedeno pored vaših objava
+        success:
+          back_to_index: Shvatam; idi nazad na početnu stranicu
+          instructions_1: Provjerite <b> vaš email</b> - poslali smo vam <b> link da potvrdimo vaš nalog </b>.
+          instructions_2: Nakon potvrde, možete početi s učestvovanjem.
+          thank_you: Hvala što ste se registrovali za web-stranicu. Sad morate <b> potvrditi svoju email adresu </b>.
+          title: Potvrdite svoju email adresu

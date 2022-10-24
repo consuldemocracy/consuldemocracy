@@ -1,0 +1,17 @@
+eu:
+  sdg_management:
+    homepage:
+      header:
+        create: "Goiburua sortu"
+        title: "Goiburua"
+    menu:
+      budget_investments: "Partaidetzazko aurrekontuak"
+      debates: "Eztabaidak"
+      polls: "Bozkaketak"
+      proposals: "Proposamenak"
+    relations:
+      index:
+        filter: "Iragazkia"
+        filters:
+          all: "Guztiak"
+          pending_sdg_review: "Egiteke"

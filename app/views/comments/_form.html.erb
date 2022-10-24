@@ -1,27 +1,32 @@
 <% valuation = local_assigns.fetch(:valuation, false) %>
 <% cache [locale_and_user_status, parent_id, commentable_cache_key(commentable), valuation] do %>
   <% css_id = parent_or_commentable_dom_id(parent_id, commentable) %>
-  <div id="js-comment-form-<%= css_id %>" <%= "style='display:none'".html_safe if toggeable %> class="comment-form">
-    <%= form_for Comment.new, remote: true do |f| %>
-      <%= label_tag "comment-body-#{css_id}", leave_comment_text(commentable) %>
-      <%= f.text_area :body, id: "comment-body-#{css_id}", maxlength: Comment.body_max_length, label: false %>
-      <%= f.hidden_field :commentable_type, value: commentable.class.name %>
-      <%= f.hidden_field :commentable_id, value: commentable.id %>
-      <%= f.hidden_field :parent_id, value: parent_id %>
-      <%= f.hidden_field :valuation, value: valuation %>
+  <div id="js-comment-form-<%= css_id %>" class="comment-form">
+    <%= form_for Comment.new, remote: true, html: { id: "new_comment_#{css_id}" } do |f| %>
+      <%= f.text_area :body,
+        id: "comment-body-#{css_id}",
+        maxlength: Comment.body_max_length,
+        label: leave_comment_text(commentable) %>
 
-      <%= f.submit comment_button_text(parent_id, commentable), class: "button", id: "publish_comment" %>
+      <%= f.hidden_field :commentable_type, value: commentable.class.name, id: "comment_commentable_type_#{css_id}" %>
+      <%= f.hidden_field :commentable_id, value: commentable.id, id: "comment_commentable_id_#{css_id}" %>
+      <%= f.hidden_field :parent_id, value: parent_id, id: "comment_parent_id_#{css_id}" %>
+      <%= f.hidden_field :valuation, value: valuation, id: "comment_valuation_#{css_id}" %>
+
+      <%= f.submit comment_button_text(parent_id, commentable), class: "button", id: "publish_comment_#{css_id}" %>
 
       <% if can? :comment_as_moderator, commentable %>
         <div class="float-right">
-          <%= f.check_box :as_moderator, title: t('comments.form.comment_as_moderator'), id: "comment-as-moderator-#{css_id}", label: false %>
-          <%= label_tag "comment-as-moderator-#{css_id}", t("comments.form.comment_as_moderator"), class: "checkbox" %>
+          <%= f.check_box :as_moderator,
+            label: t("comments.form.comment_as_moderator"),
+            id: "comment-as-moderator-#{css_id}" %>
         </div>
       <% end %>
       <% if can? :comment_as_administrator, commentable %>
         <div class="float-right">
-          <%= f.check_box :as_administrator, title: t('comments.form.comment_as_admin'), id: "comment-as-administrator-#{css_id}",label: false %>
-          <%= label_tag "comment-as-administrator-#{css_id}", t("comments.form.comment_as_admin"), class: "checkbox" %>
+          <%= f.check_box :as_administrator,
+            label: t("comments.form.comment_as_admin"),
+            id: "comment-as-administrator-#{css_id}" %>
         </div>
       <% end %>
 

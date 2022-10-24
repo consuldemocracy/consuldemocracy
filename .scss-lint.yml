@@ -98,6 +98,7 @@ linters:
 
   PlaceholderInExtend:
     enabled: true
+    exclude: "app/assets/stylesheets/mixins/icons.scss"
 
   PrivateNamingConvention:
     enabled: true
@@ -175,7 +176,7 @@ linters:
 
   StringQuotes:
     enabled: true
-    style: single_quotes
+    style: double_quotes
 
   TrailingSemicolon:
     enabled: true

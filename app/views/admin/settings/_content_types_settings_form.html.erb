@@ -1,0 +1,19 @@
+<%= form_tag admin_update_content_types_path, method: :put, id: "edit_#{dom_id(setting)}" do %>
+  <%= hidden_field_tag "id", setting.id, id: dom_id(setting, :id) %>
+
+  <div class="small-12 medium-6 large-8 column">
+    <% group = setting.content_type_group %>
+    <% Setting.mime_types[group].each do |content_type, mime_type_value| %>
+      <span class="content-type">
+        <%= check_box_tag content_type,
+            setting.value.split.include?(mime_type_value),
+            setting.value.split.include?(mime_type_value) %>
+        <%= label_tag content_type, content_type.upcase %>
+      </span>
+    <% end %>
+  </div>
+
+  <div class="small-12 medium-6 large-4 column">
+    <%= submit_tag t("admin.settings.index.update_setting"), class: "button hollow expanded" %>
+  </div>
+<% end %>

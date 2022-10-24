@@ -27,15 +27,19 @@ namespace :admin do
     end
   end
 
-  resources :debates, only: :index do
+  resources :hidden_debates, only: :index do
     member do
       put :restore
       put :confirm_hide
     end
   end
 
-  resources :proposals, only: [:index, :show] do
+  resources :debates, only: [:index, :show]
+
+  resources :proposals, only: [:index, :show, :update] do
+    member { patch :toggle_selection }
     resources :milestones, controller: "proposal_milestones"
+    resources :progress_bars, except: :show, controller: "proposal_progress_bars"
   end
 
   resources :hidden_proposals, only: :index do
@@ -45,37 +49,46 @@ namespace :admin do
     end
   end
 
-  resources :spending_proposals, only: [:index, :show, :edit, :update] do
-    member do
-      patch :assign_admin
-      patch :assign_valuators
-    end
-
-    get :summary, on: :collection
-  end
-
-  resources :proposal_notifications, only: :index do
+  resources :hidden_proposal_notifications, only: :index do
     member do
       put :restore
       put :confirm_hide
     end
   end
 
-  resources :budgets do
+  resources :budgets, except: [:create, :new] do
     member do
+      patch :publish
       put :calculate_winners
     end
 
-    resources :groups, except: [:show], controller: "budget_groups" do
-      resources :headings, except: [:show], controller: "budget_headings"
+    resources :groups, except: [:index, :show], controller: "budget_groups" do
+      resources :headings, except: [:index, :show], controller: "budget_headings"
     end
 
     resources :budget_investments, only: [:index, :show, :edit, :update] do
-      resources :milestones, controller: 'budget_investment_milestones'
       member { patch :toggle_selection }
+
+      resources :audits, only: :show, controller: "budget_investment_audits"
+      resources :milestones, controller: "budget_investment_milestones"
+      resources :progress_bars, except: :show, controller: "budget_investment_progress_bars"
     end
 
-    resources :budget_phases, only: [:edit, :update]
+    resources :budget_phases, only: [:edit, :update] do
+      member { patch :toggle_enabled }
+    end
+  end
+
+  namespace :budgets_wizard do
+    resources :budgets, only: [:create, :new, :edit, :update] do
+      resources :groups, only: [:index, :create, :edit, :update, :destroy] do
+        resources :headings, only: [:index, :create, :edit, :update, :destroy]
+      end
+
+      resources :phases, as: "budget_phases", only: [:index, :edit, :update] do
+        member { patch :toggle_enabled }
+      end
+    end
   end
 
   resources :milestone_statuses, only: [:index, :new, :create, :update, :edit, :destroy]
@@ -86,12 +99,14 @@ namespace :admin do
     collection { get :search }
   end
 
-  resources :comments, only: :index do
+  resources :hidden_comments, only: :index do
     member do
       put :restore
       put :confirm_hide
     end
   end
+
+  resources :comments, only: :index
 
   resources :tags, only: [:index, :create, :update, :destroy]
 
@@ -101,6 +116,7 @@ namespace :admin do
 
   resources :settings, only: [:index, :update]
   put :update_map, to: "settings#update_map"
+  put :update_content_types, to: "settings#update_content_types"
 
   resources :moderators, only: [:index, :create, :destroy] do
     get :search, on: :collection
@@ -117,7 +133,11 @@ namespace :admin do
     get :search, on: :collection
   end
 
-  resources :administrators, only: [:index, :create, :destroy] do
+  namespace :sdg do
+    resources :managers, only: [:index, :create, :destroy]
+  end
+
+  resources :administrators, only: [:index, :create, :destroy, :edit, :update] do
     get :search, on: :collection
   end
 
@@ -126,7 +146,6 @@ namespace :admin do
   scope module: :poll do
     resources :polls do
       get :booth_assignments, on: :collection
-      patch :add_question, on: :member
 
       resources :booth_assignments, only: [:index, :show, :create, :destroy] do
         get :search_booths, on: :collection
@@ -155,13 +174,16 @@ namespace :admin do
     end
 
     resources :questions, shallow: true do
-      resources :answers, except: [:index, :destroy], controller: 'questions/answers' do
-        resources :images, controller: 'questions/answers/images'
-        resources :videos, controller: 'questions/answers/videos'
-        get :documents, to: 'questions/answers#documents'
+      resources :answers, except: [:index, :show], controller: "questions/answers", shallow: false
+      resources :answers, only: [], controller: "questions/answers" do
+        resources :images, controller: "questions/answers/images"
+        resources :videos, controller: "questions/answers/videos", shallow: false
+        resources :documents, only: [:index, :create], controller: "questions/answers/documents"
       end
-      post '/answers/order_answers', to: 'questions/answers#order_answers'
+      post "/answers/order_answers", to: "questions/answers#order_answers"
     end
+
+    resource :active_polls, only: [:create, :edit, :update]
   end
 
   resources :verifications, controller: :verifications, only: :index do
@@ -195,9 +217,14 @@ namespace :admin do
   end
 
   resource :stats, only: :show do
+    get :graph, on: :member
+    get :budgets, on: :collection
+    get :budget_supporting, on: :member
+    get :budget_balloting, on: :member
     get :proposal_notifications, on: :collection
     get :direct_messages, on: :collection
     get :polls, on: :collection
+    get :sdg, on: :collection
   end
 
   namespace :legislation do
@@ -208,6 +235,7 @@ namespace :admin do
       end
       resources :draft_versions
       resources :milestones
+      resources :progress_bars, except: :show
       resource :homepage, only: [:edit, :update]
     end
   end
@@ -219,15 +247,18 @@ namespace :admin do
   resources :geozones, only: [:index, :new, :create, :edit, :update, :destroy]
 
   namespace :site_customization do
-    resources :pages, except: [:show]
+    resources :pages, except: [:show] do
+      resources :cards, except: [:show], as: :widget_cards
+    end
     resources :images, only: [:index, :update, :destroy]
     resources :content_blocks, except: [:show]
-    delete '/heading_content_blocks/:id', to: 'content_blocks#delete_heading_content_block', as: 'delete_heading_content_block'
-    get '/edit_heading_content_blocks/:id', to: 'content_blocks#edit_heading_content_block', as: 'edit_heading_content_block'
-    put '/update_heading_content_blocks/:id', to: 'content_blocks#update_heading_content_block', as: 'update_heading_content_block'
+    delete "/heading_content_blocks/:id", to: "content_blocks#delete_heading_content_block", as: "delete_heading_content_block"
+    get "/edit_heading_content_blocks/:id", to: "content_blocks#edit_heading_content_block", as: "edit_heading_content_block"
+    put "/update_heading_content_blocks/:id", to: "content_blocks#update_heading_content_block", as: "update_heading_content_block"
     resources :information_texts, only: [:index] do
       post :update, on: :collection
     end
+    resources :documents, only: [:index, :new, :create, :destroy]
   end
 
   resource :homepage, controller: :homepage, only: [:show]
@@ -236,4 +267,71 @@ namespace :admin do
     resources :cards
     resources :feeds, only: [:update]
   end
+
+  namespace :dashboard do
+    resources :actions, only: [:index, :new, :create, :edit, :update, :destroy]
+    resources :administrator_tasks, only: [:index, :edit, :update]
+  end
+
+  resources :local_census_records
+  namespace :local_census_records do
+    resources :imports, only: [:new, :create, :show]
+  end
+
+  resource :machine_learning, controller: :machine_learning, only: [:show] do
+    post :execute, on: :collection
+    delete :cancel, on: :collection
+  end
+end
+
+resolve "Milestone" do |milestone|
+  [*resource_hierarchy_for(milestone.milestoneable), milestone]
+end
+
+resolve "ProgressBar" do |progress_bar|
+  [*resource_hierarchy_for(progress_bar.progressable), progress_bar]
+end
+
+resolve "Audit" do |audit|
+  [*resource_hierarchy_for(audit.associated || audit.auditable), audit]
+end
+
+resolve "Widget::Card" do |card, options|
+  [*resource_hierarchy_for(card.cardable), card]
+end
+
+resolve "Budget::Group" do |group, options|
+  [group.budget, :group, options.merge(id: group)]
+end
+
+resolve "Budget::Heading" do |heading, options|
+  [heading.budget, :group, :heading, options.merge(group_id: heading.group, id: heading)]
+end
+
+resolve "Budget::Phase" do |phase, options|
+  [phase.budget, :phase, options.merge(id: phase)]
+end
+
+resolve "Poll::Booth" do |booth, options|
+  [:booth, options.merge(id: booth)]
+end
+
+resolve "Poll::BoothAssignment" do |assignment, options|
+  [assignment.poll, :booth_assignment, options.merge(id: assignment)]
+end
+
+resolve "Poll::Shift" do |shift, options|
+  [:booth, :shift, options.merge(booth_id: shift.booth, id: shift)]
+end
+
+resolve "Poll::Officer" do |officer, options|
+  [:officer, options.merge(id: officer)]
+end
+
+resolve "Poll::Question::Answer" do |answer, options|
+  [:question, :answer, options.merge(question_id: answer.question, id: answer)]
+end
+
+resolve "Poll::Question::Answer::Video" do |video, options|
+  [:answer, :video, options.merge(answer_id: video.answer, id: video)]
 end

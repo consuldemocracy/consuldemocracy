@@ -21,12 +21,12 @@
   }
 
   &.light {
+    @include full-width-background;
     background: #ecf0f1;
   }
 
-  h1,
-  p {
-    color: $text;
+  &.header-card {
+    @include full-width-background;
   }
 }
 
@@ -57,7 +57,7 @@
 .more-info-content {
 
   h3 {
-    color: $brand;
+    @include brand-text;
   }
 
   .additional-info {

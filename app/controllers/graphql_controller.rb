@@ -1,52 +1,61 @@
 class GraphqlController < ApplicationController
+  include FeatureFlags
+
+  feature_flag :graphql_api
 
   skip_before_action :verify_authenticity_token
   skip_authorization_check
 
   class QueryStringError < StandardError; end
 
-  def query
+  def execute
     begin
-      if query_string.nil? then raise GraphqlController::QueryStringError end
-      response = consul_schema.execute query_string, variables: query_variables
-      render json: response, status: :ok
+      raise GraphqlController::QueryStringError if query_string.nil?
+
+      result = ConsulSchema.execute(query_string,
+        variables: prepare_variables,
+        context: {},
+        operation_name: params[:operationName]
+      )
+      render json: result
     rescue GraphqlController::QueryStringError
-      render json: { message: 'Query string not present' }, status: :bad_request
+      render json: { message: "Query string not present" }, status: :bad_request
     rescue JSON::ParserError
-      render json: { message: 'Error parsing JSON' }, status: :bad_request
+      render json: { message: "Error parsing JSON" }, status: :bad_request
     rescue GraphQL::ParseError
-      render json: { message: 'Query string is not valid JSON' }, status: :bad_request
-    rescue
-      unless Rails.env.production? then raise end
+      render json: { message: "Query string is not valid JSON" }, status: :bad_request
+    rescue ArgumentError => e
+      render json: { message: e.message }, status: :bad_request
     end
   end
 
   private
 
-    def consul_schema
-      api_types  = GraphQL::ApiTypesCreator.create(API_TYPE_DEFINITIONS)
-      query_type = GraphQL::QueryTypeCreator.create(api_types)
-
-      GraphQL::Schema.define do
-        query query_type
-        max_depth 8
-        max_complexity 2500
-      end
-    end
-
     def query_string
-      if request.headers["CONTENT_TYPE"] == 'application/graphql'
-        request.body.string # request.body.class => StringIO
+      if request.headers["CONTENT_TYPE"] == "application/graphql"
+        request.body.string
       else
         params[:query]
       end
     end
 
-    def query_variables
-      if params[:variables].blank? || params[:variables] == 'null'
+    # Handle variables in URL query string and JSON body
+    def prepare_variables
+      case variables_param = params[:variables]
+      # URL query string
+      when String
+        if variables_param.present?
+          JSON.parse(variables_param) || {}
+        else
+          {}
+        end
+      # JSON object in request body gets converted to ActionController::Parameters
+      when ActionController::Parameters
+        variables_param.to_unsafe_hash # GraphQL-Ruby will validate name and type of incoming variables.
+      when nil
         {}
       else
-        JSON.parse(params[:variables])
+        raise ArgumentError, "Unexpected parameter: #{variables_param}"
       end
     end
 end

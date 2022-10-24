@@ -8,37 +8,43 @@ ar:
       title: "%{org} منصة لمشاركة المواطنين"
       guide: "هذا الدليل يوضح ما الهدف من الأقسام %{org} وكيفية عملها."
       menu:
-        debates: "الحوارات"
-        proposals: "مقترحات"
+        debates: "النقاشات"
+        proposals: "إقتراحات"
         budgets: "الميزانيات المشاركة"
-        polls: "الاستبيانات"
+        polls: "استطلاعات"
         other: "معلومات أخرى مفيدة"
-        processes: "العمليات"
+        processes: "عمليات"
       debates:
-        title: "الحوارات"
+        title: "النقاشات"
         description: "في القسم %{link} يمكنك عرض ومشاركة رأيك مع الآخرين حول القضايا ذات الأهمية المتعلقة بالمدينة. كما أنها مكان لتوليد الأفكار التي تؤدي إلى اتخاذ إجراءات ملموسة بمجلس المدينة من خلال الأقسام الأخرى في %{org}."
         link: "حوارات المواطنين"
-        feature_html: "يمكنك فتح حوار أو التعليق والتقييم على حوار موجود <strong>أنا اتفق مع</strong> أو <strong>لا أوافق على</strong>. من خلال %{link}."
+        feature: "يمكنك فتح حوار أو التعليق والتقييم على حوار موجود <strong>أنا اتفق مع</strong> أو <strong>لا أوافق على</strong>. من خلال %{link}."
         feature_link: "سجل في %{org}"
         image_alt: "أزرار تقييم الحوارات"
         figcaption: '"اوافق" و "لا اوافق" لتقييم الحوارات.'
       proposals:
-        title: "مقترحات"
+        title: "إقتراحات"
+        description: "في القسم %{link}، يمكنك تقديم مقترحات لمجلس المدينة لتنفيذها. تتطلب المقترحات الدعم، وإذا وصلت إلى دعم كاف، يتم طرحها للتصويت العلني. يتم قبول وتنفيذ المقترحات التي يفرزها تصويت المواطنين من قبل مجلس المدينة."
         link: "مقترحات المواطنين"
         image_alt: "زر لدعم اقتراح"
-        figcaption_html: 'الزر "دعم" اقتراح.'
+        figcaption: 'الزر "دعم" اقتراح.'
       budgets:
         title: "الميزانية التشاركية"
+        description: "يساعد قسم %{link} الأشخاص في اتخاذ قرار مباشر بشأن كيفية توزيع ميزانية البلدية."
         link: "الميزانيات التشاركية"
         image_alt: "المراحل المختلفة للميزانية التشاركية"
-        figcaption_html: '"الدعم" و "التصويت" مراحل ميزانيات المشتركة.'
+        figcaption: '"الدعم" و "التصويت" مراحل ميزانيات المشتركة.'
       polls:
-        title: "الاستبيانات"
-        link: "الاستبيانات"
+        title: "استطلاعات"
+        description: "يتم تنشيط قسم %{link} في كل مرة يصل فيها دعم الاقتراح إلى 1% ويذهب إلى عملية التصويت أو عندما يقترح مجلس المدينة مشكلة على الأشخاص لإتخاذ قرار بشأنها."
+        link: "استطلاعات الرأي"
+        feature_1: "للمشاركة في التصويت، يجب عليك %{link} والتحقق من حسابك."
         feature_1_link: "سجل في %{org_name}"
       processes:
-        title: "العمليات"
+        title: "عمليات"
+        description: "في القسم %{link}، يشارك المواطنون في صياغة وتعديل القوانين التي تؤثر على المدينة ويمكنهم إبداء رأيهم في السياسات البلدية في المناقشات السابقة."
         link: "العمليات"
+        feature_link: "سجل في %{org_name}"
       faq:
         title: "مشاكل فنية؟"
         description: "يمكنك الإطلاع على الاسئلة الأكثر تكراراً."
@@ -46,122 +52,117 @@ ar:
         page:
           title: "الأسئلة الأكثر تكراراً"
           description: "استخدام هذه الصفحة لحل الأسئلة الأكثر تكراراً من مستخدمين الموقع."
-          faq_1_title: "السؤال 1"
       other:
         title: "معلومات أخرى مفيدة"
         how_to_use: "استخدم %{org_name} في مدينتك"
+      how_to_use:
+        text: |-
+          استخدمه في حكومتك المحلية أو ساعدنا في تحسينه، فهو برنامج مجاني.
+
+          بوابة الحوكمة المفتوحة هذه تستخدم [CONSUL app] (https://github.com/consul/consul 'consul github') الذي يعد برنامجًا مجانيًا، مع [رخصة AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' )، وهذا يعني بكلمات بسيطة أنه يمكن لأي شخص استخدام البرنامج بحرية، ونسخه،ورؤيته بالتفصيل، وتعديله وإعادة توزيعه على العالم مع التعديلات التي يريدها (مع السماح للآخرين بالقيام بنفس الشيء). لأننا نعتقد أن الثقافة أفضل وأكثر ثراءً عندما يتم نشرها.
+
+          إذا كنت مبرمجًا، يمكنك الاطلاع على الكود ومساعدتنا على تحسينه في [CONSUL app](https://github.com/consul/consul 'consul github').
       titles:
         how_to_use: استخدامه في المؤسسات العامة
     privacy:
       title: سياسة الخصوصية
-      subtitle: معلومات بخصوص خصوصية البيانات
-      info_items:
-        - 
-        - 
-        - 
-        - 
-          subitems:
-            - 
-              field: 'اسم الملف:'
-              description: اسم الملف
-            - 
-              field: 'الهدف من الملف:'
-            - 
+      subtitle: "معلومات بخصوص خصوصية البيانات"
     accessibility:
+      title: إمكانية الوصول
       description: |-
         يشير مفهوم (سهولة التصفح) إلى إمكانية الوصول إلى شبكة الإنترنت ومحتوياتها من قبل جميع الناس، بغض النظر عن الإعاقة (المادية أو الفكرية أو الفنية) التي قد تحدث، أو من تلك التي تحدث في السياق (التكنولوجي أو البيئي).
 
         عندما يتم تصميم المواقع الإلكترونية وفقا لمفهوم (سهولة التصفح)،سيتمكن كافة المستخدمين من الوصول إلى المحتوى في ظروف متساوية، على سبيل المثال:
       examples:
-        - Providing alternative text to the images, blind or visually impaired users can use special readers to access the information.
-        - When videos have subtitles, users with hearing difficulties can fully understand them.
-        - If the contents are written in a simple and illustrated language, users with learning problems are better able to understand them.
+        - بتوفير نص بديل للصور، يمكن للمستخدمين المكفوفين وضعاف البصر استخدام قارئات خاصة للوصول إلى المعلومات.
+        - عندما تحتوي مقاطع الفيديو على نصوص، يمكن للمستخدمين الذين يعانون من صعوبات في السمع فهمها تمامًا.
+        - إذا كانت المحتويات مكتوبة بلغة بسيطة وواضحة، فإن المستخدمين الذين يعانون من مشاكل في التعلم يكونون أكثر قدرة على فهمها.
         - إذا كان المستخدم لديه مشاكل في التنقل ومن الصعب عليه استخدام الفأرة، فهناك بدائل في لوحة المفاتيح ستساعده في عملية التصفح.
       keyboard_shortcuts:
         title: اختصارات لوحة المفاتيح
         navigation_table:
+          description: لتتمكن من التنقل عبر هذا الموقع الإلكتروني بطريقة سهلة، تمت برمجة مجموعة من مفاتيح الوصول السريع التي تجمع الأقسام الرئيسية ذات الاهتمام العام التي تنظّم الموقع.
           caption: اختصارات لوحة المفاتيح لتصفح القائمة
           key_header: مفتاح
           page_header: الصفحة
           rows:
-            - 
+            -
               key_column: 0
               page_column: الصفحة الرئيسية
-            - 
+            -
               key_column: 1
-              page_column: الحوارات
-            - 
+              page_column: النقاشات
+            -
               key_column: 2
               page_column: إقتراحات
-            - 
+            -
               key_column: 3
-              page_column: الأصوات
-            - 
+              page_column: اصوات
+            -
               key_column: 4
-              page_column: الميزانية التشاركية
-            - 
+              page_column: الميزانيات المشاركة
+            -
               key_column: 5
               page_column: العمليات التشريعية
         browser_table:
+          description: "حسب نظام التشغيل والمتصفح المستخدم، ستكون تركيبة المفاتيح وفقا لما يلي:"
+          caption: تركيبة المفاتيح حسب نظام التشغيل والمتصفح
           browser_header: مستعرض
           key_header: تركيبة المفاتيح
           rows:
-            - 
+            -
               browser_column: إكسبلورر
               key_column: ALT + الاختصار ثم ENTER
-            - 
+            -
               browser_column: فايرفوكس
               key_column: ALT + CAPS + الاختصار
-            - 
+            -
               browser_column: كروم
               key_column: ALT + الاختصار (CTRL + ALT + اختصارات ل MAC)
-            - 
+            -
               browser_column: سفاري
               key_column: ALT + الاختصار (CMD + اختصار ل MAC)
-            - 
+            -
               browser_column: أوبرا
               key_column: CAPS + ESC + الاختصار
       textsize:
         title: حجم النص
         browser_settings_table:
+          description: يسمح التصميم المتاح لهذا الموقع للمستخدم باختيار حجم النص الذي يناسبه. يمكن تنفيذ هذا الإجراء بطرق مختلفة حسب المتصفح المستخدم.
           browser_header: مستعرض
           action_header: إجراءات واجب اتخاذها
           rows:
-            - 
+            -
               browser_column: إكسبلورر
               action_column: عرض > حجم النص
-            - 
+            -
               browser_column: فايرفوكس
               action_column: عرض > الحجم
-            - 
+            -
               browser_column: كروم
               action_column: إعدادات (رمز) > خيارات > متقدم > محتوى الويب > حجم النص
-            - 
+            -
               browser_column: سفاري
               action_column: عرض > التكبير/التصغير
-            - 
+            -
               browser_column: أوبرا
               action_column: عرض > مقياس
         browser_shortcuts_table:
-          description: 'طريقة أخرى لتعديل حجم النص استخدام اختصارات لوحة المفاتيح المحددة في المستعرضات:'
+          description: "طريقة أخرى لتعديل حجم النص استخدام اختصارات لوحة المفاتيح المحددة في المستعرضات:"
           rows:
-            - 
+            -
               shortcut_column: CTRL و + (CMD و + على الماك)
               description_column: زيادة حجم النص
-            - 
+            -
               shortcut_column: CTRL و - (CMD و - على الماك)
               description_column: تصغير حجم النص
       compatibility:
         title: التوافق مع المعايير والتصميم المرئي
+        description: 'تتوافق جميع صفحات هذا الموقع مع <strong>إرشادات إمكانية الوصول </strong> أو المبادئ العامة للتصميم المتاح التي وضعتها مجموعة العمل <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> التي تنتمي إلى W3C.'
     titles:
-      accessibility: إمكانية الوصول
-      conditions: شروط الاستخدام
-      privacy: سياسة الخصوصية
+      help: "ما هو %{org}؟ - مشاركة المواطن"
     verify:
-      code: الكود الذي وصل في الرسالة
-      email: البريد الإلكتروني
-      info: 'للتحقق من حسابك ادخل بيانات الدخول الخاصة بك:'
-      info_code: 'الرجاء إدخال الكود التي وصل إلى بريدك الالكتروني:'
-      password: كلمة المرور
+      info: "للتحقق من حسابك ادخل بيانات الدخول الخاصة بك:"
+      info_code: "الرجاء إدخال الكود التي وصل إلى بريدك الالكتروني:"
       submit: التحقق من حسابي
       title: التحقق من حسابك

@@ -18,7 +18,7 @@ so:
         title: "Doodo"
         description: "Qeybta %{link} waxaad soo bandhigi kartaa oo kula wadaagi kartaa ra'yigaaga dadka kale arrimaha khuseeya ee aad la xiriirto magaalada. Sidoo kale waa meel lagu abuuro fikrado ayadoo loo marayo qaybaha kale ee%{org} oo keenaya talaabooyin la taaban karo oo ka soo baxay Golaha Magaalada."
         link: "doodo Muwadinanta"
-        feature_html: "Waxaad furi kartaa doodo, faallo iyo qiimeyn ku leh<strong> waxaan ku raacsanahay </strong>> ama <strong> Ma aqbalo </strong>. Sababta aad u leedahay%{link}."
+        feature: "Waxaad furi kartaa doodo, faallo iyo qiimeyn ku leh<strong> waxaan ku raacsanahay </strong>> ama <strong> Ma aqbalo </strong>. Sababta aad u leedahay%{link}."
         feature_link: "iska diiwaan gali%{org}"
         image_alt: "Badhannada si loo qiimeeyo doodaha"
         figcaption: '"Waan isku raacsanahay" iyo "Anigu waan diiddanahay" badhanka si aan u qiimeeyo doodaha.'
@@ -27,13 +27,13 @@ so:
         description: "Qaybta%{link} waxaad samayn kartaa talo soo jeedin ah Golaha Deegaanka si aad u bixiso. Soo jeedinta waxay u baahan tahay taageero, haddii ay gaaraan taageerid ku filan, waxaa lagu dhigaa codeyn dadweyne. Soo jeedimaha la ansixiyay ee codkooda muwaadiniinta waxaa aqbalay Golaha Magaalada waxaana la fuliyay."
         link: "soo jeedinta muwaadiniinta"
         image_alt: "Badhanka si aad u taageerto soo jeedinta"
-        figcaption_html: 'Badhanka si aad u taageerto soo jeedinta.'
+        figcaption: 'Badhanka si aad u taageerto soo jeedinta.'
       budgets:
         title: "Misaaniyada kaqayb qadashada"
         description: "Qaybta%{link} waxay ka caawisaa dadka inay sameeyaan go'aan toos ah oo ku saabsan qayb ka mid ah miisaaniyadda degmada."
         link: "miisaaniyada ka qaybqaadashada"
         image_alt: "Qaybaha kala duwan ee miisaaniyadda ka qaybqaadashada"
-        figcaption_html: '"Taageerada" iyo "Codbixinta" wejiyada miisaaniyada ka qaybqaadashada.'
+        figcaption: '"Taageerada" iyo "Codbixinta" wejiyada miisaaniyada ka qaybqaadashada.'
       polls:
         title: "Doorashooyinka"
         description: "Qaybta %{link} waa la hawlgalaa mar kasta oo soo jeedinta la gaarsiiyo 1% taageerada oo tagta codka ama marka Golaha Degmadu soo jeediyo arrin dadka in ay go'aan ka gaaraan."
@@ -44,6 +44,7 @@ so:
         title: "Geedi socodka"
         description: "Qeybta qaybta%{link} muwaadiniintu waxay ka qaybqaataan qorista iyo wax ka bedelidda xeerarka saameynaya magaalada waxayna ka fekerayaan fikradahooda ku saabsan siyaasadaha degmada ee doodihii hore."
         link: "hababka"
+        feature_link: "iska diwaangeli%{org_name}"
       faq:
         title: "Dhibaatoyinka Farasamada?"
         description: "Akhri su'aalaha iyo xalinta su'aalahaaga."
@@ -51,8 +52,6 @@ so:
         page:
           title: "Su'aalaha badanaa la isweydiiyo"
           description: "Isticmaal boggan si aad u xaliso su'aalaha caadiga ah ee dadka isticmaala bogga."
-          faq_1_title: "Sual1"
-          faq_1_description: "Tani waa tusaale loogu talagalay sharaxaadda su'aal mid."
       other:
         title: "Macluumaadka kale ee xiisaha"
         how_to_use: "Isticmaal %{org_name} Magaladada"
@@ -67,25 +66,7 @@ so:
         how_to_use: U adeegso dawladaada hoose
     privacy:
       title: Qaanuunka Arrimaha Khaaska ah
-      subtitle: Macluumaadka ku saabsan macluumaadka asturnaanta
-      info_items:
-        - 
-          text: Marin-hawleedka iyada oo la adeegsanayo macluumaadka laga heli karo Mashruuca Furan ee Open.
-        - 
-          text: Si aad u isticmaasho adeegyadda ku jira Diiwaanka Dawladda ee furan, isticmaaluhu waa inuu diiwaan-geliyaa oo horay u bixiyaa xog shakhsi ah sida ku xusan macluumaadka gaarka ah ee ku jira nooc kasta oo diiwaangelin ah.
-        - 
-          text: 'Xogta la bixiyay waxaa lagu dari doonaa oo ay ka baaraandegi doontaa Golaha Magaalada iyada oo la raacayo sharaxaadda faylka soo socda:'
-        - 
-          subitems:
-            - 
-              field: 'Magaca faylka:'
-              description: Faylka Magaciisa
-            - 
-              field: 'Ujeedka faylka:'
-              description: Maareynta geedi socodka ka qaybqaadashada si loo xakameeyo aqoonta dadka ka qayb galaya iyaga oo keliya tirinta tirooyinka iyo tirakoobka natiijooyinka ka soo baxay habka ka qaybgalka muwaadiniinta.
-            - 
-              field: 'Hay''ad masuul ka ah feylka:'
-              description: Hay'ad u xil saaran faylka
+      subtitle: "Macluumaadka ku saabsan macluumaadka asturnaanta"
     accessibility:
       title: Helitaanka
       description: |-
@@ -105,43 +86,43 @@ so:
           key_header: Fuure
           page_header: Boga
           rows:
-            - 
+            -
               key_column: 0
               page_column: Guriga
-            - 
+            -
               key_column: 1
               page_column: Doodo
-            - 
+            -
               key_column: 2
               page_column: Sojeedino
-            - 
+            -
               key_column: 3
               page_column: Codaad
-            - 
+            -
               key_column: 4
               page_column: Misaaniyadaha kaqayb qadashada
-            - 
+            -
               key_column: 5
               page_column: Nidaamka sharci dejinta
         browser_table:
-          description: 'Iyada oo ku xidhan nidaamka hirgelinta iyo daaqada loo isticmaalo, isku-dhafka muhiimka ah wuxuu noqon doonaa sidan soo socota:'
+          description: "Iyada oo ku xidhan nidaamka hirgelinta iyo daaqada loo isticmaalo, isku-dhafka muhiimka ah wuxuu noqon doonaa sidan soo socota:"
           caption: Isku-geynta muhiimka ah waxay ku xiran tahay nidaamka hawlgalka iyo shabakadda
           browser_header: Barowsar
           key_header: Wadajirta muhiimka ah
           rows:
-            - 
+            -
               browser_column: Sahamiso
               key_column: ALT + gaaban kadibna geli
-            - 
+            -
               browser_column: Dab-demiska
               key_column: ALT + CAPS + gaaban
-            - 
+            -
               browser_column: Chrome
               key_column: ALT + gaaban (CTRL + ALT + gaaban MAC)
-            - 
+            -
               browser_column: Safari
               key_column: ALT + gaaban (CMD + gaaban MAC)
-            - 
+            -
               browser_column: Faan muusik
               key_column: CAPS + ESC + gaaban
       textsize:
@@ -151,43 +132,37 @@ so:
           browser_header: Barowsar
           action_header: Tilabada laqadayo
           rows:
-            - 
+            -
               browser_column: Sahamiso
               action_column: View> cabbirka qoraalka
-            - 
+            -
               browser_column: Dab-demiska
               action_column: Arag> cabbir
-            - 
+            -
               browser_column: Chrome
               action_column: Goobaha (icon)> Options> Advanced> tusmada wabsatydka> Cabirka Qorlka
-            - 
+            -
               browser_column: Safari
               action_column: Eeg> Ku Dhawaaqa / Soo dhawee
-            - 
+            -
               browser_column: Faan muusik
               action_column: Muuqaal> cabbir
         browser_shortcuts_table:
-          description: 'Hab kale oo wax looga beddelo qiyaasta qoraalka waa in la isticmaalo gaabnaanta gaaban ee lagu qeexay daalacayaasha, gaar ahaan isugeynta muhiimka ah:'
+          description: "Hab kale oo wax looga beddelo qiyaasta qoraalka waa in la isticmaalo gaabnaanta gaaban ee lagu qeexay daalacayaasha, gaar ahaan isugeynta muhiimka ah:"
           rows:
-            - 
+            -
               shortcut_column: CTRL iyo + (CMD iyo + MAC)
               description_column: Kordhi cabbirka qoraalka
-            - 
+            -
               shortcut_column: CTRL iyo - (CMD iyo - MAC)
               description_column: Hoos u dhig/ yare cabbirka qoraalka
       compatibility:
         title: U hoggaansanaanta jaangooyooyinka iyo qaabka muuqaalka
-        description_html: 'Dhammaan boggaga shabakadani waxay raacayaan "Tilmaamaha Habboonaanta" </ strong> ama Mabaadi''da Guud ee Habboonaanta La Isticmaali karo oo ay aasaaseen Kooxda Shaqada <abbr title = "Websaytka ''Accessibility Initiative'' lang =" en "> WAI </ abbr> W3C.'
+        description: 'Dhammaan boggaga shabakadani waxay raacayaan "Tilmaamaha Habboonaanta" </ strong> ama Mabaadi''da Guud ee Habboonaanta La Isticmaali karo oo ay aasaaseen Kooxda Shaqada <abbr title = "Websaytka ''Accessibility Initiative'' lang =" en "> WAI </ abbr> W3C.'
     titles:
-      accessibility: Helitaanka
-      conditions: Shuruudaha isticmaalka
       help: "Wamaxy %{org}- kaqayb galka muwadinka"
-      privacy: Qaanuunka Arrimaha Khaaska ah
     verify:
-      code: Waraq Kodh ah oo ad heshay
-      email: Email
-      info: 'Si loo xaqiijiyo koontadaada ku soo bandhigaysa xogtaada:'
-      info_code: 'Hadda ku baro kodhka aad heshay warqad:'
-      password: Furaha sirta ah
+      info: "Si loo xaqiijiyo koontadaada ku soo bandhigaysa xogtaada:"
+      info_code: "Hadda ku baro kodhka aad heshay warqad:"
       submit: Hubi xisaabtayda
       title: Hubi xisaabtaada

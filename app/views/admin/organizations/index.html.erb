@@ -1,21 +1,14 @@
 <h2><%= t("admin.organizations.index.title") %></h2>
 
-<div class="small-12 medium-6">
-  <%= form_for(Organization.new, url: search_admin_organizations_path, method: :get) do |f| %>
-    <div class="input-group">
-      <%= text_field_tag :term, "", placeholder: t("admin.organizations.index.search_placeholder") %>
+<%= render Admin::SearchComponent.new(
+  url: search_admin_organizations_path,
+  label: t("admin.shared.search.label.organizations")
+) %>
 
-      <div class="input-group-button">
-        <%= f.submit t("admin.organizations.index.search"), class: "button" %>
-      </div>
-    </div>
-  <% end %>
-</div>
-
-<%= render 'shared/filter_subnav', i18n_namespace: "admin.organizations.index" %>
+<%= render "shared/filter_subnav", i18n_namespace: "admin.organizations.index" %>
 
 <% if @organizations.any? %>
-  <h3 class="margin"><%= page_entries_info @organizations %></h3>
+  <h3><%= page_entries_info @organizations %></h3>
 
   <table>
     <% hidden = 0 %>
@@ -29,7 +22,7 @@
     </thead>
     <tbody>
     <% @organizations.each do |organization| %>
-      <% hidden += 1 and next if organization.user.nil? || organization.user.hidden? %>
+      <% hidden += 1 and next if organization.user.nil? %>
       <tr id="<%= dom_id(organization) %>">
       <td><%= organization.name %></td>
       <td><%= organization.email %></td>
@@ -48,17 +41,7 @@
         <% end %>
       </td>
       <td>
-        <% if can? :verify, organization %>
-          <%= link_to t("admin.organizations.index.verify"),
-                  verify_admin_organization_path(organization, request.query_parameters),
-                  method: :put, class: "button success small-5" %>
-        <% end %>
-
-        <% if can? :reject, organization %>
-          <%= link_to t("admin.organizations.index.reject"),
-                  reject_admin_organization_path(organization, request.query_parameters),
-                  method: :put, class: "button hollow alert small-5"%>
-        <% end %>
+        <%= render Admin::Organizations::TableActionsComponent.new(organization) %>
       </td>
     </tr>
     <% end %>
@@ -67,7 +50,7 @@
 
   <% if hidden > 0 %>
     <div class="callout warning">
-      <%= t("admin.organizations.index.hidden_count_html", count: hidden) %>
+      <%= sanitize(t("admin.organizations.index.hidden_count", count: hidden)) %>
     </div>
   <% end %>
 

@@ -1,15 +1,17 @@
 class CommentTree
-
   ROOT_COMMENTS_PER_PAGE = 10
 
-  attr_accessor :root_comments, :comments, :commentable, :page, :order
+  attr_reader :commentable, :page, :order
 
-  def initialize(commentable, page, order = 'confidence_score', valuations: false)
+  def initialize(commentable, page, order = "confidence_score", valuations: false)
     @commentable = commentable
     @page = page
     @order = order
     @valuations = valuations
-    @comments = root_comments + root_descendants
+  end
+
+  def comments
+    @comments ||= root_comments + root_descendants
   end
 
   def root_comments
@@ -18,7 +20,7 @@ class CommentTree
   end
 
   def base_comments
-    if @valuations && commentable.respond_to?('valuations')
+    if @valuations && commentable.respond_to?("valuations")
       commentable.valuations
     else
       commentable.comments

@@ -3,8 +3,7 @@ ar:
     comments:
       index:
         block_authors: حظر المؤلفين\المشاركين
-        confirm: هل أنت متأكد؟
-        filter: فرز
+        filter: ترشيح
         filters:
           all: الكل
           pending_flag_review: معلق
@@ -12,49 +11,45 @@ ar:
         headers:
           comment: التعليق
           moderate: المشرف
-        hide_comments: إخفاء التعليقات
+        hide: إخفاء التعليقات
         ignore_flags: شوهد
-        order: طلب
         orders:
           flags: العلامة مطلوبة
           newest: الأحدث
-        title: التعليقات
+        title: تعليقات
     dashboard:
       index:
         title: الإشراف
     debates:
       index:
         block_authors: حظر المؤلفين\المشاركين
-        confirm: هل أنت متأكد؟
-        filter: فرز
+        filter: ترشيح
         filters:
           all: الكل
           pending_flag_review: معلق
           with_ignored_flag: شوهد
         headers:
-          debate: الحوارات
+          debate: النقاشات
           moderate: المشرف
-        hide_debates: حوارات مخفية
+        hide: حوارات مخفية
         ignore_flags: شوهد
-        order: طلب
         orders:
           created_at: الأحدث
           flags: العلامة مطلوبة
-        title: الحوارات
+        title: النقاشات
     header:
       title: الإشراف
     menu:
-      flagged_comments: التعليقات
-      flagged_debates: الحوارات
+      flagged_comments: تعليقات
+      flagged_debates: النقاشات
       flagged_investments: استثمارات الميزانية
-      proposals: مقترحات
+      proposals: إقتراحات
       proposal_notifications: اقتراح الإشعارات
       users: حظر المستخدمين
     proposals:
       index:
-        block_authors: حظر المؤلفين
-        confirm: هل أنت متأكد؟
-        filter: فرز
+        block_authors: حظر المؤلفين\المشاركين
+        filter: ترشيح
         filters:
           all: الكل
           pending_flag_review: بانتظار المراجعة
@@ -62,18 +57,16 @@ ar:
         headers:
           moderate: المشرف
           proposal: اقتراح
-        hide_proposals: الإقتراحات المخفية
+        hide: الإقتراحات المخفية
         ignore_flags: شوهد
-        order: ترتيب حسب
         orders:
           created_at: الأحدث
           flags: العلامة مطلوبة
-        title: مقترحات
+        title: إقتراحات
     budget_investments:
       index:
         block_authors: حظر المؤلفين\المشاركين
-        confirm: هل أنت متأكد؟
-        filter: إنتقاء \ فلترة
+        filter: ترشيح
         filters:
           all: الكل
           pending_flag_review: معلق
@@ -81,37 +74,32 @@ ar:
         headers:
           moderate: المشرف
           budget_investment: ميزانية الاستثمار
-        hide_budget_investments: إخفاء استثمارات الميزانية
+        hide: إخفاء استثمارات الميزانية
         ignore_flags: شوهد
-        order: ترتيب حسب
         orders:
           created_at: الأحدث
-          flags: علامات أكثر
+          flags: العلامة مطلوبة
         title: استثمارات الميزانية
     proposal_notifications:
       index:
-        block_authors: حظر الكاتبين
-        confirm: هل أنت متأكد؟
-        filter: إنتقاء \ فلترة
+        block_authors: حظر المؤلفين\المشاركين
+        filter: ترشيح
         filters:
           all: الكل
           pending_review: بانتظار المراجعة
           ignored: شوهد
         headers:
           moderate: المشرف
-          proposal_notification: التنبيه لاقتراح
-        hide_proposal_notifications: الإقتراحات المخفية
+          proposal_notification: إشعار المقترح
+        hide: الإقتراحات المخفية
         ignore_flags: شوهد
-        order: الطلب من طرف
         orders:
           created_at: الأحدث
           moderated: تمت المراجعة
-        title: التنبيه لاقتراح
+        title: إشعارات المقترح
     users:
       index:
-        hidden: محظور
         hide: حظر
-        search: بحث
         search_placeholder: البريد الإلكتروني أو اسم المستخدم
         title: حظر المستخدمين
       notice_hide: تم حظر المستخدم و إخفاء جميع المناقشات والتعليقات الخاصة به.

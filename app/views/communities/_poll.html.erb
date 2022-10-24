@@ -1,0 +1,10 @@
+<div class="community-poll">
+  <h4>
+    <%= link_to poll.title, proposal_poll_path(@community.proposal, poll) %>
+  </h4>
+
+  <p class="topic-info">
+    <%= t("communities.poll.take_part",
+           from: l(poll.starts_at.to_date), to: l(poll.ends_at.to_date)) %>
+  </p>
+</div>

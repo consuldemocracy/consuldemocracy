@@ -1,0 +1,109 @@
+<%= translatable_form_for(investment, url: url, html: { class: "budget-investment-form" }) do |f| %>
+
+  <%= render "shared/errors", resource: investment %>
+
+  <fieldset class="required-fields">
+    <legend><%= t("shared.required") %></legend>
+
+    <% unless budget.single_heading? %>
+      <div>
+        <%= f.select :heading_id, budget_heading_select_options(budget), { include_blank: true } %>
+      </div>
+    <% end %>
+
+    <div>
+      <%= render "shared/globalize_locales", resource: investment %>
+    </div>
+
+    <%= f.translatable_fields do |translations_form| %>
+      <div>
+        <%= translations_form.text_field :title,
+              maxlength: Budget::Investment.title_max_length,
+              data: suggest_data(investment) %>
+      </div>
+      <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
+
+      <div>
+        <%= translations_form.text_area :description,
+              maxlength: Budget::Investment.description_max_length,
+              class: "html-area" %>
+      </div>
+    <% end %>
+  </fieldset>
+
+  <%= f.invisible_captcha :subtitle %>
+
+  <fieldset>
+    <legend><%= t("shared.optional") %></legend>
+
+    <% if feature?(:allow_images) %>
+      <div class="images">
+        <%= render "images/nested_image", f: f %>
+      </div>
+    <% end %>
+
+    <% if feature?(:allow_attached_documents) %>
+      <div class="documents">
+        <%= render "documents/nested_documents", f: f %>
+      </div>
+    <% end %>
+
+    <% if feature?(:map) %>
+      <div>
+        <%= render "map_locations/form_fields",
+                   form:     f,
+                   map_location: investment.map_location || MapLocation.new,
+                   label:    t("budgets.investments.form.map_location"),
+                   help:     t("budgets.investments.form.map_location_instructions"),
+                   remove_marker_label: t("budgets.investments.form.map_remove_marker"),
+                   parent_class: "budget_investment",
+                   i18n_namespace: "budgets.investments" %>
+      </div>
+    <% end %>
+
+    <div>
+      <%= f.text_field :location %>
+    </div>
+
+    <div>
+      <%= f.text_field :organization_name %>
+    </div>
+
+    <div>
+      <%= f.label :tag_list, t("budgets.investments.form.tags_label") %>
+      <p class="help-text" id="tags-list-help-text"><%= t("budgets.investments.form.tags_instructions") %></p>
+
+      <div id="category_tags" class="tags">
+        <%= f.label :category_tag_list, t("budgets.investments.form.tag_category_label") %>
+        <% categories.each do |tag| %>
+          <a class="js-add-tag-link"><%= tag.name %></a>
+        <% end %>
+      </div>
+
+      <br>
+      <%= f.text_field :tag_list, value: investment.tag_list.to_s,
+                        label: false,
+                        placeholder: t("budgets.investments.form.tags_placeholder"),
+                        aria: { describedby: "tags-list-help-text" },
+                        class: "js-tag-list tag-autocomplete",
+                        data: { js_url: suggest_tags_path } %>
+    </div>
+
+    <%= render SDG::RelatedListSelectorComponent.new(f) %>
+  </fieldset>
+
+  <div class="actions">
+    <% unless current_user.manager? || investment.persisted? %>
+      <div>
+        <%= f.check_box :terms_of_service,
+          title: t("form.accept_terms_title"),
+          label: t("form.accept_terms",
+                   policy: link_to(t("form.policy"), "/privacy", target: "blank"),
+                   conditions: link_to(t("form.conditions"), "/conditions", target: "blank")
+                  ) %>
+      </div>
+    <% end %>
+
+    <%= f.submit %>
+  </div>
+<% end %>

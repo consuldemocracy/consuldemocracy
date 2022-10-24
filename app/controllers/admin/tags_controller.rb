@@ -1,31 +1,41 @@
 class Admin::TagsController < Admin::BaseController
   before_action :find_tag, only: [:update, :destroy]
+  before_action :tags, only: [:index, :create]
 
   respond_to :html, :js
 
   def index
-    @tags = ActsAsTaggableOn::Tag.category.page(params[:page])
-    @tag  = ActsAsTaggableOn::Tag.category.new
+    @tag = Tag.category.new
   end
 
   def create
-    ActsAsTaggableOn::Tag.category.create(tag_params)
-    redirect_to admin_tags_path
+    @tag = Tag.find_or_initialize_by(tag_params)
+
+    save_and_update = @tag.save && @tag.update!(kind: "category")
+
+    if save_and_update
+      redirect_to admin_tags_path
+    else
+      render :index
+    end
   end
 
   def destroy
-    @tag.destroy
+    @tag.destroy!
     redirect_to admin_tags_path
   end
 
   private
+
+    def tags
+      @tags ||= Tag.category.page(params[:page])
+    end
 
     def tag_params
       params.require(:tag).permit(:name)
     end
 
     def find_tag
-      @tag = ActsAsTaggableOn::Tag.category.find(params[:id])
+      @tag = Tag.category.find(params[:id])
     end
-
 end

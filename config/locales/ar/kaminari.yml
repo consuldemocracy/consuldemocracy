@@ -1,1 +1,28 @@
 ar:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: السّجلات
+        one: السّجلّ
+        two: السّجلات
+        few: السّجلات
+        many: السّجلات
+        other: السّجلات
+      more_pages:
+        display_entries: عرض <strong>%{first}&nbsp;-&nbsp;%{last}</strong> من <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "لا يمكن العثور على %{entry_name}"
+          one: يوجد <strong>1 %{entry_name}</strong>
+          two: يوجد <strong>%{count} %{entry_name}</strong>
+          few: يوجد <strong>%{count} %{entry_name}</strong>
+          many: يوجد <strong>%{count} %{entry_name}</strong>
+          other: يوجد <strong>%{count} %{entry_name}</strong>
+  views:
+    pagination:
+      current: أنت في الصفحة
+      first: الأولى
+      last: الاخيرة
+      next: التالي
+      previous: سابقة
+      truncate: "&hellip;"

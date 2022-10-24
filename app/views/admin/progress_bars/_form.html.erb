@@ -1,0 +1,42 @@
+<%= render "shared/globalize_locales", resource: @progress_bar %>
+
+<%= translatable_form_for @progress_bar, url: admin_polymorphic_path(@progress_bar) do |f| %>
+
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= f.enum_select :kind %>
+    </div>
+  </div>
+
+  <div class="row">
+    <%= f.translatable_fields do |translations_form| %>
+      <div class="small-12 medium-6 column end">
+        <%= translations_form.text_field :title %>
+      </div>
+    <% end %>
+  </div>
+
+  <% progress_options = { min: ProgressBar::RANGE.min, max: ProgressBar::RANGE.max, step: 1 } %>
+  <div class="row">
+    <div class="small-12 medium-6 large-2 column">
+      <%= f.label :percentage %>
+      <%= f.text_field :percentage, { type: :range,
+                                      id: "percentage_range",
+                                      label: false,
+                                      class: "column" }.merge(progress_options) %>
+    </div>
+
+    <div class="small-12 medium-6 large-2 column">
+      <div class="input-group">
+        <%= f.text_field :percentage, { type: :number,
+                                        label: false,
+                                        class: "input-group-field" }.merge(progress_options) %>
+        <span class="input-group-label">%</span>
+      </div>
+    </div>
+
+    <div class="column">
+      <%= f.submit nil, class: "button success" %>
+    </div>
+  </div>
+<% end %>

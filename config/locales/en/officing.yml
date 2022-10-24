@@ -16,6 +16,28 @@ en:
         no_polls: You are not officing final recounts in any active poll
         select_poll: Select poll
         add_results: Add results
+    poll_budgets:
+      see_ballot_sheets: See ballot sheets list
+      index:
+        title: "%{poll_budget} - Ballot sheets list"
+        ballot_sheet: "Ballot sheet %{id}"
+        ballot_sheet_name: Name
+        ballot_sheet_author: Author
+        ballot_sheet_creation_date: Creation date
+        empty_results: There are no ballot sheets for this poll yet
+      new:
+        title: "%{poll_budget} - New ballot sheet"
+        booth: Booth
+        select_booth: Select booth
+        csv_data: CSV data
+        submit: Save
+      show:
+        created_at: Creation date
+        author: Author
+        data: CSV data
+    booth:
+      new:
+        title: "Choose your booth"
     results:
       flash:
         create: "Results saved"
@@ -29,7 +51,7 @@ en:
         select_booth: "Select booth"
         ballots_white: "Totally blank ballots"
         ballots_null: "Invalid ballots"
-        ballots_total: "Total ballots"
+        ballots_total: "Valid ballots"
         submit: "Save"
         results_list: "Your results"
         see_results: "See results"
@@ -40,18 +62,16 @@ en:
         table_votes: Votes
         table_whites: "Totally blank ballots"
         table_nulls: "Invalid ballots"
-        table_total: "Total ballots"
+        table_total: "Valid ballots"
     residence:
       flash:
         create: "Document verified with Census"
         not_allowed: "You don't have officing shifts today"
       new:
         title: Validate document
-        document_number: "Document number (including letters)"
         submit: Validate document
         error_verifying_census: "The Census was unable to verify this document."
         form_errors: prevented the verification of this document
-        no_assignments: "You don't have officing shifts today"
     voters:
       new:
         title: Polls
@@ -61,6 +81,7 @@ en:
         not_to_vote: The person has decided not to vote at this time
       show:
         can_vote: Can vote
+        cannot_vote: The person cannot vote because they are not registered in the district(s) where the voting takes place.
         error_already_voted: Has already participated in this poll
         submit: Confirm vote
         success: "Vote introduced!"

@@ -7,17 +7,14 @@
       <%= f.hidden_field :document_type %>
       <%= f.hidden_field :document_number %>
       <%= f.text_field :username,
-          label: t('management.username_label'),
-          placeholder: t('management.username_label') %>
+          label: t("management.username_label") %>
       <%= f.text_field :email,
-          label: t('management.users.email_optional_label'),
-          placeholder: t('management.email_label') %>
+          label: t("management.users.email_optional_label") %>
       <div class="date-of-birth">
-        <%= f.label t("management.date_of_birth") %>
         <%= f.date_select :date_of_birth,
                           prompt: true,
                           start_year: 1900, end_year: 16.years.ago.year,
-                          label: false %>
+                          label: t("management.date_of_birth") %>
       </div>
       <%= f.submit t("management.users.create_user_submit"), class: "button success" %>
     <% end %>
@@ -28,6 +25,6 @@
   <div class="callout">
     <%= render "management/user_permissions",
                 message: t("management.document_verifications.in_census_has_following_permissions"),
-                permissions: [:debates, :create_proposals, :support_proposals, :vote_proposals] %>
+                permissions: [:debates, :proposal, :support_proposal, :votes] %>
   </div>
 </div>

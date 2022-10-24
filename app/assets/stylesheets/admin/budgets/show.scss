@@ -1,0 +1,22 @@
+.admin-budgets-show {
+
+  h3 {
+    margin-top: $line-height * 1.5;
+
+    @each $size, $headers in $header-styles {
+      @include breakpoint($size) {
+        font-size: (rem-calc(map-get(map-get($headers, h2), font-size)) + rem-calc(map-get(map-get($headers, h3), font-size))) / 2;
+      }
+    }
+  }
+
+  h4 {
+    @include header-font-size(h3);
+  }
+
+  .phases {
+    h3 {
+      margin-bottom: 0;
+    }
+  }
+}

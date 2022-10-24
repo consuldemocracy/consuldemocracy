@@ -1,19 +1,36 @@
-ENV['RAILS_ENV'] ||= 'test'
-if ENV['TRAVIS']
-  require 'coveralls'
-  Coveralls.wear!('rails')
+ENV["RAILS_ENV"] ||= "test"
+if ENV["COVERALLS_REPO_TOKEN"]
+  require "coveralls"
+  Coveralls.wear!("rails")
 end
-require File.expand_path('../../config/environment', __FILE__)
+require File.expand_path("../../config/environment", __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 
-require 'rspec/rails'
-require 'spec_helper'
-require 'capybara/rails'
-require 'capybara/rspec'
-require 'selenium/webdriver'
+require "rspec/rails"
+require "spec_helper"
+require "custom_spec_helper"
+require "capybara/rails"
+require "capybara/rspec"
+require "selenium/webdriver"
+require "view_component/test_helpers"
+
+module ViewComponent
+  module TestHelpers
+    def sign_in(user)
+      allow(controller).to receive(:current_user).and_return(user)
+    end
+
+    def within(...)
+      raise "`within` doesn't work in component tests. Use `page.find` instead."
+    end
+  end
+end
+
+RSpec.configure do |config|
+  config.include ViewComponent::TestHelpers, type: :component
+end
 
 Rails.application.load_tasks if Rake::Task.tasks.empty?
-I18n.default_locale = :en
 
 include Warden::Test::Helpers
 Warden.test_mode!
@@ -27,13 +44,13 @@ RSpec.configure do |config|
   end
 end
 
-Capybara.register_driver :chrome do |app|
-  Capybara::Selenium::Driver.new(app, browser: :chrome)
-end
+FactoryBot.use_parent_strategy = false
 
 Capybara.register_driver :headless_chrome do |app|
   capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
-    chromeOptions: { args: %w(headless no-sandbox window-size=1200,600) }
+    "goog:chromeOptions" => {
+      args: %W[headless no-sandbox window-size=1200,800 proxy-server=#{Capybara.app_host}:#{Capybara::Webmock.port_number}]
+    }
   )
 
   Capybara::Selenium::Driver.new(
@@ -43,8 +60,8 @@ Capybara.register_driver :headless_chrome do |app|
   )
 end
 
-Capybara.javascript_driver = :headless_chrome
-
 Capybara.exact = true
+Capybara.enable_aria_label = true
+Capybara.disable_animation = true
 
 OmniAuth.config.test_mode = true

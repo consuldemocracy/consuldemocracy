@@ -1,0 +1,30 @@
+<fieldset class="sdg-related-list-selector">
+  <legend><%= t("sdg.related_list_selector.title") %></legend>
+
+  <div class="input-section">
+    <fieldset class="goals">
+      <legend><%= t("sdg.related_list_selector.goal_list", record: relatable_name) %></legend>
+      <div class="goal-list">
+        <%= f.collection_check_boxes(:sdg_goal_ids, goals, :id, :code) do |checkbox_form| %>
+          <%= goal_field(checkbox_form) %>
+        <% end %>
+      </div>
+    </fieldset>
+
+    <%= f.text_field :related_sdg_list,
+                      class: "input",
+                      hint: sanitize(t("sdg.related_list_selector.hint",
+                                      link: link_to(t("sdg.related_list_selector.help.text"),
+                                                      sdg_help_path,
+                                                      title: t("shared.target_blank"),
+                                                      target: "_blank")),
+                                     attributes: %w[href title target]),
+                      data: { "suggestions-list": sdg_related_suggestions,
+                              "remove-tag-text": t("sdg.related_list_selector.remove_tag") } %>
+  </div>
+
+  <div class="help-section callout primary hide">
+    <h3><%= t("sdg.related_list_selector.help.title", record: relatable_name) %></h3>
+    <ul class="selected-info"></ul>
+  </div>
+</fieldset>

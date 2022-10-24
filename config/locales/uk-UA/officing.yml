@@ -1,0 +1,89 @@
+uk-UA:
+  officing:
+    header:
+      title: Голосування
+    dashboard:
+      index:
+        title: Проведення голосування
+        info: Тут ви можете перевірити документи користувачів та зберегти результати голосування
+        no_shifts: Сьогодні немає службових змін.
+    menu:
+      voters: Перевірити документ
+      total_recounts: Загальні перерахунки та результати
+    polls:
+      final:
+        title: Опитування, голові до остаточних перерахунків
+        no_polls: Ви не проводите остаточного перерахунку за жодним активним опитуванням
+        select_poll: Обрати опитування
+        add_results: Додати результати
+    poll_budgets:
+      see_ballot_sheets: Переглянути список бюлетенів для голосування
+      index:
+        title: "%{poll_budget} - Список бюлетенів для голосування"
+        ballot_sheet: "Бюлетень для голосування %{id}"
+        ballot_sheet_name: Назва
+        ballot_sheet_author: Автор
+        ballot_sheet_creation_date: Дата створення
+        empty_results: Для даного опитування ще немає бюлетенів для голосування
+      new:
+        title: "%{poll_budget} - Новий бюлетень для голосування"
+        booth: Кабінка
+        select_booth: Обрати кабінку
+        csv_data: Дані CSV
+        submit: Зберегти
+      show:
+        created_at: Дата створення
+        author: Автор
+        data: Дані CSV
+    booth:
+      new:
+        title: "Оберіть кабінку"
+    results:
+      flash:
+        create: "Результати збережено"
+        error_create: "Результати НЕ збережено. Помилка даних."
+        error_wrong_booth: "Неправильна кабінка. Результати НЕ збережено."
+      new:
+        title: "%{poll} - Додати результати"
+        not_allowed: "Вам не дозволено додавати результати у цьому опитуванні"
+        booth: "Кабінка"
+        date: "Дата"
+        select_booth: "Обрати кабінку"
+        ballots_white: "Порожні бюлетені"
+        ballots_null: "Недійсні бюлетені"
+        ballots_total: "Дійсні бюлетені"
+        submit: "Зберегти"
+        results_list: "Ваші результати"
+        see_results: "Переглянути результати"
+      index:
+        no_results: "Результати відсутні"
+        results: Результати
+        table_answer: Відповідь
+        table_votes: Голоси
+        table_whites: "Порожні бюлетені"
+        table_nulls: "Недійсні бюлетені"
+        table_total: "Дійсні бюлетені"
+    residence:
+      flash:
+        create: "Документ перевірено за допомогою Census"
+        not_allowed: "Сьогодні немає службових змін"
+      new:
+        title: Перевірити документ
+        submit: Перевірити документ
+        error_verifying_census: "Census не вдалося перевірити цей документ."
+        form_errors: не вдалося перевірити цей документ
+    voters:
+      new:
+        title: Опитування
+        table_poll: Опитування
+        table_status: Статус опитувань
+        table_actions: Дії
+        not_to_vote: Наразі особа вирішила не голосувати
+      show:
+        can_vote: Можна голосувати
+        cannot_vote: Особа не може голосувати, оскільки вона не зареєстрована у районі, де відбувається голосування.
+        error_already_voted: Вже взяв (-ла) участь у цьому опитуванні
+        submit: Підтвердити голос
+        success: "Голос внесено!"
+      can_vote:
+        submit_disable_with: "Зачекайте, голос підтверджується..."

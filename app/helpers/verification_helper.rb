@@ -1,9 +1,12 @@
 module VerificationHelper
-
   def document_types
-    [[t('verification.residence.new.document_type.spanish_id'), 1],
-     [t('verification.residence.new.document_type.passport'), 2],
-     [t('verification.residence.new.document_type.residence_card'), 3]]
+    [[t("verification.residence.new.document_type.spanish_id"), 1],
+     [t("verification.residence.new.document_type.passport"), 2],
+     [t("verification.residence.new.document_type.residence_card"), 3]]
+  end
+
+  def minimum_required_age
+    (Setting["min_age_to_participate"] || 16).to_i
   end
 
   def mask_phone(number)
@@ -18,7 +21,6 @@ module VerificationHelper
     data_to_mask    = match[2]
     email_provider  = match[3]
 
-    data_to_display + "*" * data_to_mask.size + "@" + email_provider
+    "#{data_to_display}#{"*" * data_to_mask.size}@#{email_provider}"
   end
-
 end

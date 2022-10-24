@@ -1,0 +1,18 @@
+<% if dashboard_action.requested_for?(proposal) %>
+  <div class="callout success">
+    <strong><%= t("dashboard.create_request.success") %></strong>
+  </div>
+<% end %>
+
+<% if proposal.archived? %>
+  <div class="callout primary">
+    <p><%= t("dashboard.create_request.archived") %></p>
+  </div>
+<% else %>
+  <% if dashboard_action.request_to_administrators && !dashboard_action.requested_for?(proposal) %>
+    <%= form_for @dashboard_executed_action,
+                 url: create_request_proposal_dashboard_action_path(proposal, dashboard_action) do |f| %>
+      <%= f.submit(class: "button", value: t("dashboard.form.request")) %>
+    <% end %>
+  <% end %>
+<% end %>

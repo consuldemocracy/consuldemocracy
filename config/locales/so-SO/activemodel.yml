@@ -7,8 +7,8 @@ so:
     attributes:
       verification:
         residence:
-          document_type: "Qaybaha dukumentiga"
-          document_number: "Lambarka dukumentiga (oo lugu daray warqadaha)"
+          document_type: "Noocyada Dukumeentiga"
+          document_number: "Lambarka dukumentiga (oo ay ku jiraan warqad)"
           date_of_birth: "Tarikhda Dhalashada"
           postal_code: "Lambar ama Xarfo Kokoban oo qaybka ah Adareeska"
         sms:
@@ -16,7 +16,20 @@ so:
           confirmation_code: "Koodhka Saxda ah"
         email:
           recipient: "Email"
+      verification/letter:
+        email: "Email"
+        password: "Furaha sirta ah"
+        verification_code: "Waraq Kodh ah oo ad heshay"
+      verification/management/document:
+        document_type: "Qaybaha dukumentiga:"
+        document_number: "Lambarka dukumeentiga"
+      verification/residence:
+        date_of_birth: "Tarikhda Dhalashada"
+        document_type: "Qaybaha dukumentiga"
+        postal_code: "Lambar ama Xarfo Kokoban oo qaybka ah Adareeska"
+      verification/sms:
+        confirmation_code: "Gali koodka aad ka heshay moobaylkaaga"
       officing/residence:
-        document_type: "Noocyada Dukumeentiga"
-        document_number: "Lambarka dukumentiga (oo ay ku jiraan warqad)"
+        document_type: "Qaybaha dukumentiga"
+        document_number: "Lambarka dukumentiga (oo lugu daray warqadaha)"
         year_of_birth: "Sanadka Dhalashada"

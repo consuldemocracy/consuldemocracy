@@ -1,0 +1,18 @@
+sq:
+  sdg_management:
+    homepage:
+      header:
+        create: "Krijo header"
+        title: "Header"
+    menu:
+      budget_investments: "Buxhetet  pjesëmarrës"
+      debates: "Debate"
+      legislation_processes: "Legjislacion"
+      polls: "Sondazhet"
+      proposals: "Propozime"
+    relations:
+      index:
+        filter: "Filtër"
+        filters:
+          all: "Të gjithë"
+          pending_sdg_review: "Në pritje"

@@ -1,1 +1,132 @@
 ca:
+  legislation:
+    annotations:
+      comments:
+        see_all: veure tots
+        see_complete: veure complet
+        comments_count:
+          one: "%{count} comentari"
+          other: "%{count} comentaris"
+        replies_count:
+          one: "%{count} resposta"
+          other: "%{count} respostes"
+        cancel: Cancel · lar
+        publish_comment: publicar Comentari
+      form:
+        phase_not_open: Aquesta fase no està oberta
+      index:
+        title: Comentarios
+        comments_about: comentaris sobre
+        see_in_context: Veure en context
+        comments_count:
+          one: "%{count} comentari"
+          other: "%{count} comentaris"
+      show:
+        title: Comentar
+      version_chooser:
+        seeing_version: Comentaris per a la versió
+        see_text: Veure esborrany del text
+    draft_versions:
+      changes:
+        title: canvis
+        seeing_changelog_version: Resum de canvis de la revisió
+        see_text: Veure esborrany del text
+      show:
+        loading_comments: carregant comentaris
+        seeing_version: Estàs veient la revisió
+        select_draft_version: seleccionar esborrany
+        select_version_submit: veure
+        updated_at: actualitzada el %{date}
+        see_changes: veure resum de canvis
+        see_comments: Veure tots els comentaris
+        text_toc: índex
+        text_body: text
+        text_comments: Comentarios
+    processes:
+      header:
+        additional_info: Informació addicional
+        description: Descripció detallada
+        more_info: Més informació i context
+      proposals:
+        empty_proposals: No hi ha propostes
+        filters:
+          random: L’atzar
+          winners: seleccionada
+      debate:
+        empty_questions: No hi ha preguntes
+      index:
+        filter: Filtrar
+        filters:
+          open: processos actius
+          past: acabats
+        no_open_processes: No hi ha processos actius
+        no_past_processes: No hi ha processos acabats
+        section_header:
+          icon_alt: Icona de legislació col·laborativa
+          title: processos legislatius
+          help: Ajuda sobre legislació col·laborativa
+        section_footer:
+          title: Ajuda sobre legislació col·laborativa
+          description: Participa en els debats i processos previs a l’aprovació de noves normatives o estratègies. Es considerarà la vostra opinió.
+      phase_not_open:
+        not_open: Aquesta fase del procés encara no està oberta
+      phase_empty:
+        empty: No hi ha res publicat encara
+      process:
+        see_latest_comments: Veure últimes aportacions
+        see_latest_comments_title: Aportar a aquest procés
+      shared:
+        key_dates: Fases de participació
+        homepage: Pàgina inicial
+        debate_dates: debat previ
+        draft_publication_date: publicació esborrany
+        allegations_dates: Comentarios
+        result_publication_date: publicació resultats
+        milestones_date: A continuació
+        proposals_dates: Propostes ciutadanes
+    questions:
+      comments:
+        comment_button: Publica resposta
+        comments_title: respostes obertes
+        comments_closed: fase tancada
+        form:
+          leave_comment: Deixa la teva resposta
+      question:
+        comments:
+          zero: Sense comentaris
+          one: "%{count} comentari"
+          other: "%{count} comentaris"
+        debate: debat previ
+      show:
+        answer_question: Enviar resposta
+        next_question: següent pregunta
+        first_question: primera pregunta
+        share: compartir
+        title: Procés de legislació col·laborativa
+      participation:
+        phase_not_open: Aquesta fase no està oberta
+        organizations: Les organitzacions no poden participar en el debat
+        unauthenticated: Necessites %{signin} o %{signup} per participar en el debat.
+        verified_only: Només els usuaris verificats poden participar en el debat, %{verify_account}.
+        debate_phase_not_open: La fase de debat previ ja ha finalitzat i en aquest moment no s'accepten respostes
+    shared:
+      share: compartir
+      share_comment: Comentari sobre la %{version_name} de l'esborrany del procés %{process_name}
+    proposals:
+      form:
+        tags_label: "Categories"
+      not_verified: "Per a propostes de vot %{verify_account}."
+      process_title: Procés de legislació col·laborativa
+    summary:
+      title: "Resumen"
+      votes:
+        zero: "%{count} vots"
+      debate_phase: "fase prèvia"
+      proposals_phase: "Fase de propostes"
+      allegations_phase: "Fase de comentaris"
+      comments:
+        zero: "Sense comentaris"
+        one: "%{count} comentari"
+        other: "%{count} comentaris"
+      top_comments:
+        zero: "Sense comentaris"

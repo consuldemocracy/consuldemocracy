@@ -1,0 +1,183 @@
+@import "mixins/icons";
+@import "mixins/layouts";
+
+@mixin public-form-header {
+  $border-width: 4px;
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  header {
+    $icon-size: $line-height * 4;
+    $padding-right: rem-calc(20);
+    $icon-size-with-padding: $icon-size + $padding-right;
+    $polygon-size: $icon-size / 2;
+    @include background-till-left-of-screen;
+    @include brand-background($brand-secondary);
+    border: $border-width solid $brand-secondary;
+    border-bottom-right-radius: rem-calc(12);
+    border-top-right-radius: rem-calc(12);
+    margin-top: $line-height * 2;
+    padding: $line-height * 2 0;
+    position: relative;
+
+    @include breakpoint(small) {
+      &::after {
+        display: none;
+      }
+    }
+
+    @include breakpoint(large) {
+      $rounding-error: 6px;
+      padding-right: $icon-size-with-padding;
+      background-image: linear-gradient(
+        to right,
+        #{$brand-secondary} 0,
+        #{$brand-secondary} calc(100% - #{$icon-size-with-padding} - 1px),
+        #{$body-background} calc(100% - #{$icon-size-with-padding}),
+        #{$body-background} 100%
+      );
+
+      &::after {
+        background: $body-background;
+        content: "";
+        clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% calc(100% + 1px), 0 50%);
+        display: block;
+        position: absolute;
+        right: calc(#{$icon-size-with-padding} - #{$rounding-error});
+        top: 0;
+        height: 100%;
+        width: $polygon-size;
+      }
+    }
+
+    &::before {
+      top: -$border-width;
+      height: calc(100% + #{$border-width * 2});
+    }
+
+    h1 {
+      $heading-icon-size: $icon-size * 0.85;
+      @include has-fa-icon(building, regular);
+      font-size: rem-calc(36);
+
+      @include breakpoint(small) {
+        &::after,
+        &::before {
+          display: none;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+
+      @include breakpoint(medium) {
+        padding-right: $heading-icon-size * 2.5;
+
+        &::after {
+          display: block;
+          font-size: $heading-icon-size;
+          right: $heading-icon-size;
+        }
+      }
+
+      @include breakpoint(large) {
+        font-size: rem-calc(44);
+
+        &::after {
+          right: $icon-size-with-padding + $polygon-size + $heading-icon-size / 2;
+        }
+
+        &::before {
+          color: $brand-secondary;
+          display: block;
+          font-size: $icon-size;
+          right: $padding-right;
+        }
+      }
+
+      span {
+        display: block;
+        font-size: 0.75em;
+        margin-top: $line-height / 2;
+      }
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+}
+
+%public-form-header {
+  @include public-form-header;
+}
+
+@mixin public-form {
+
+  .required-fields {
+    @include full-width-background($adjust-padding: true);
+    background: $light;
+    margin-bottom: $line-height;
+    padding-top: $line-height;
+  }
+
+  > fieldset > legend {
+    float: left;
+    font-size: rem-calc(36);
+    font-weight: bold;
+    margin-bottom: $line-height;
+    text-transform: uppercase;
+
+    + * {
+      clear: left;
+    }
+  }
+
+  select {
+    min-height: $line-height * 2;
+
+    @include breakpoint(medium) {
+      &:not(.js-add-language):not(.js-select-language) {
+        width: 50%;
+      }
+    }
+  }
+
+  .globalize-languages,
+  .translatable-fields {
+    @include grid-row-nest;
+    @include grid-column-gutter;
+  }
+
+  [type="submit"] {
+    @include regular-button;
+    font-size: map-get($button-sizes, large);
+    margin-top: $line-height;
+  }
+
+  .actions {
+    border: 6px solid $border;
+    border-radius: rem-calc(12);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: $line-height * 2;
+    padding: $line-height * 2 $line-height;
+    text-align: center;
+
+    @include breakpoint(medium) {
+      width: 75%;
+    }
+
+    label {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+%public-form {
+  @include public-form;
+}

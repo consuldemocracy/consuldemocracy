@@ -1,0 +1,55 @@
+<div id="<%= dom_id(proposed_action) %>">
+  <div class="action">
+    <% if proposed_action.proposals.where(id: proposal.id).any? %>
+      <%= link_to unexecute_proposal_dashboard_action_path(proposal, proposed_action),
+                  id: "#{dom_id(proposed_action)}_unexecute",
+                  method: :post,
+                  class: "checked-link" do %>
+        <span class="icon-check"></span>
+      <% end %>
+    <% else %>
+      <%= link_to execute_proposal_dashboard_action_path(proposal, proposed_action),
+                  id: "#{dom_id(proposed_action)}_execute",
+                  method: :post,
+                  class: "unchecked-link" do %>
+        <span class="unchecked"></span>
+      <% end %>
+    <% end %>
+    <div class="action-content">
+      <h4><%= proposed_action.title %></h4>
+      <% if is_new_action_since_last_login?(proposed_action, @new_actions_since_last_login) %>
+        <span class="label"><%= t("dashboard.progress.new_action") %></span>
+      <% end %>
+
+      <% if proposed_action.proposals.where(id: proposal.id).any? %>
+        <p class="inline">
+          <%= l(proposed_action.executed_actions.find_by(proposal: proposal).executed_at.to_date) %>
+        </p>
+      <% end %>
+
+      <% if proposed_action.description.present? %>
+        <% if proposed_action_long_description?(proposed_action) %>
+          <div id="truncated_description_<%= dom_id(proposed_action) %>"
+               data-toggler=".hide">
+            <%= proposed_action_description(proposed_action) %>
+          </div>
+          <button type="button" data-toggle="proposed_action_description_<%= dom_id(proposed_action) %>
+                          truncated_description_<%= dom_id(proposed_action) %>">
+            <small><%= t("dashboard.recommended_actions.show_description") %></small>
+          </button>
+          <div id="proposed_action_description_<%= dom_id(proposed_action) %>" class="hide" data-toggler=".hide">
+            <%= wysiwyg(proposed_action.description) %>
+          </div>
+        <% else %>
+          <%= wysiwyg(proposed_action.description) %>
+        <% end %>
+      <% end %>
+
+      <% proposed_action.links.each do |link| %>
+        <p><%= link_to link.label, link.url, target: "_blank" %></p>
+      <% end %>
+
+      <%= render partial: "document", collection: proposed_action.documents %>
+    </div>
+  </div>
+</div>

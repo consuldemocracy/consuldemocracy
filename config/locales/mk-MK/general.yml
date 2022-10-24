@@ -1,0 +1,312 @@
+mk:
+  account:
+    show:
+      change_credentials_link: Смени ги моите податоци
+      erase_account_link: Избриши ја мојата корисничка сметка
+      finish_verification: Комплетирај верификација
+      notifications: Нотификации
+      personal: Лични детали
+      public_interests_my_title_list: Тагови на елементи кои ги следиш
+      public_interests_user_title_list: Тагови на елементи кои овој корисник ги следи
+      save_changes_submit: Зачувај промени
+      recommendations: Препораки
+      title: Мој профил
+      user_permission_info: Со својот профил можеш...
+      user_permission_title: Партиципација
+      user_permission_verify: За да ги извршиш сите акции верифицирај го твојот профил.
+      verified_account: Верификуван профил
+      verify_my_account: Потврди го мојот профил
+  application:
+    close: Затвори
+    menu: Мени
+  comments:
+    comments_closed: Коментарите се затворени
+    verified_only: За да учествуваш %{verify_account}
+    comment:
+      admin: Администратор
+      author: Автор
+      deleted: Овој коментар беше избришан
+      moderator: Модератор
+      responses:
+        zero: Нема одговори
+        one: 1 одговор
+        other: "%{count} одговори"
+      responses_show:
+        zero: Нема одговори
+        one: "1 одговор (покажи)"
+        other: "%{count} одговори (покажи)"
+      responses_collapse:
+        zero: Нема одговори
+        one: "1 одговор (спушти)"
+        other: "%{count} одговори (спушти)"
+      user_deleted: Избришан корисник
+      votes:
+        zero: Нема гласови
+        one: 1 глас
+        other: "%{count} гласови"
+    form:
+      comment_as_admin: Коментирај како администратор
+      comment_as_moderator: Коментирај како модератор
+      leave_comment: Остави коментар
+    orders:
+      most_voted: Најгласано
+      newest: Прво најново
+      oldest: Прво најстаро
+      most_commented: Најкоментирано
+    show:
+      return_to_commentable: "Врати се до "
+  comments_helper:
+    comment_button: Објави коментар
+    comment_link: Коментар
+    comments_title: Коментари
+  debates:
+    debate:
+      comments:
+        zero: Нема коментари
+        one: 1 коментар
+        other: "%{count} коментари"
+      votes:
+        zero: Нема гласови
+        one: 1 глас
+        other: "%{count} гласови"
+    edit:
+      form:
+        submit_button: Зачувај промени
+    index:
+      recommendations:
+        without_interests: Заследи предлози за да може да може да пронајдеш слични
+      title: Дебати
+      section_header:
+        title: Дебати
+    show:
+      author_deleted: Избришан корисник
+      comments:
+        zero: Нема коментари
+        one: 1 коментар
+        other: "%{count} коментари"
+      comments_title: Коментари
+      edit_debate_link: Измени
+      flag: Оваа дебата беше посочена како несоодветна од повеќе корисници.
+      share: Сподели
+      author: Автор
+    update:
+      form:
+        submit_button: Зачувај промени
+  errors:
+    messages:
+      user_not_found: Корисникот не е пронајден
+  form:
+    conditions: Правила и услови на користење
+    debate: Дебата
+    policy: Политика за Приватност
+    proposal: Предлог
+    budget/investment: Инвестиции
+    poll/question/answer: Одговор
+    document: Документ
+    topic: Тема
+    image: Слика
+  layouts:
+    application:
+      firefox: Firefox
+    dashboard:
+      proposal_header:
+        published: Објавено
+        draft: Нацрт текст
+    footer:
+      accessibility: Пристапност
+      conditions: Правила и услови на користење
+      participation_title: Партиципација
+      privacy: Политика за Приватност
+    header:
+      administration_menu: Мени
+      collaborative_legislation: Колаборативна легислатива
+      debates: Дебати
+      moderation: Модерација
+      valuation: Вредност
+      help: Помош
+      my_account_link: Мој профил
+      proposals: Предлози
+      notification_item:
+        notifications: Нотификации
+  notifications:
+    index:
+      title: Нотификации
+  map:
+    title: "Области"
+    proposal_for_district: "Започни предлог за твојата општина"
+    start_proposal: Направи предлог
+  omniauth:
+    facebook:
+      name: Фејсбук
+    twitter:
+      name: Твитер
+  proposals:
+    create:
+      form:
+        submit_button: Направи предлог
+    edit:
+      editing: Измени пердлог
+      form:
+        submit_button: Зачувај промени
+      show_link: Види предлог
+    retire_form:
+      title: Затвори предлог
+      retired_explanation_placeholder: Опиши на кратко зошто мислиш дека овој предлог не треба повеќе да добива поддршка
+      submit_button: Затвори предлог
+    retire_options:
+      unfeasible: Неизводливо
+    form:
+      tag_category_label: "Категории"
+      tags_instructions: "Категоризирај го овој предлог. Можеш да одбереш од предложените категории или да додатеш твои"
+      tags_label: Тагови
+    index:
+      recommendations:
+        without_results: Нема предлози поврзани со твоите интереси
+        without_interests: Заследи предлози за да може да може да пронајдеш слични
+      retired_proposals: Затворени предлози
+      retired_proposals_link: "Предлози затворени од авторот"
+      retired_links:
+        all: Сите
+        unfeasible: Неизводливо
+      search_form:
+        placeholder: Пребарај предлози...
+      select_order_long: "Прегледуваш предлози според:"
+      start_proposal: Направи предлог
+      title: Предлози
+      top_link_proposals: Најподдржаните предлози според категорија
+      section_header:
+        icon_alt: Икона на предлози
+        title: Предлози
+        help: Помош околку предлози
+      section_footer:
+        title: Помош околку предлози
+    new:
+      form:
+        submit_button: Направи предлог
+      more_info: Како работат граѓански предлози?
+      recommendation_one: Не користи големи букви во насловот или во цели реченици. На интернет, ова се смета како викање, а никој неќе да му се вика.
+      start_new: Направи нов предлог
+    notice:
+      retired: Предлогот е затворен
+    proposal:
+      created: "Направи нов предлог!"
+      share:
+        view_proposal: Не сега, однеси ме до мојот предлог
+      comments:
+        zero: Нема коментари
+        one: 1 коментар
+        other: "%{count} коментари"
+      votes:
+        zero: Нема гласови
+        one: 1 глас
+        other: "%{count} гласови"
+    show:
+      author_deleted: Избришан корисник
+      comments:
+        zero: Нема коментари
+        one: 1 коментар
+        other: "%{count} коментари"
+      comments_tab: Коментари
+      notifications_tab: Нотификации
+      share: Сподели
+      title_video_url: "Надворешно видео"
+      author: Автор
+    update:
+      form:
+        submit_button: Зачувај промени
+  dashboard:
+    menu:
+      progress: Прогрес
+      community: Заедница
+      polls: Анкети
+    index:
+      edit_proposal_link: Измени пердлог
+      retire: Затвори предлог
+    new_request:
+      links: Линкови
+    recommended_actions:
+      pending_title: Во исчекување
+    community:
+      access_community: Пристап до заедницата
+      participants: Учесници
+      debates: Дебати
+      comments: Коментари
+    polls:
+      index:
+        title: Анкети
+        links: Линкови
+        additiontal_information: Додатни информации
+  polls:
+    all: "Сите"
+    index:
+      filters:
+        current: "Отворено"
+      title: "Анкети"
+      geozone_restricted: "Области"
+    show:
+      cant_answer_not_logged_in: "Неопходно е %{signin} или %{signup} за учество."
+      comments_tab: Коментари
+      documents: Документи
+      videos: "Надворешно видео"
+      results:
+        title: "Прашање"
+  shared:
+    edit: "Измени"
+    filter: "Филтрирај"
+    save: "Зачувај"
+    advanced_search:
+      search: "Филтрирај"
+    author_info:
+      author_deleted: Избришан корисник
+    check_all: Сите
+    following: "Следи"
+    suggest:
+      debate:
+        see_all: "Види ги сите"
+      budget_investment:
+        see_all: "Види ги сите"
+      proposal:
+        see_all: "Види ги сите"
+    tags_cloud:
+      districts: "Области"
+      categories: "Категории"
+    share: Сподели
+    documentation: Дополнителна документација
+    recommended_index:
+      title: Препораки
+  stats:
+    index:
+      debates: Дебати
+      proposals: Предлози
+      comments: Коментари
+  users:
+    show:
+      proposals: Предлози
+      proposals_status: Статус
+      debates: Дебати
+      budget_investments: Буџетски инвестиции
+      comments: Коментари
+      actions: Акции
+    proposals:
+      draft: Нацрт текст
+      published: Објавено
+      actions: Акции
+  welcome:
+    feed:
+      most_active:
+        processes: "Отворени процеси"
+      process_label: Процес
+    welcome:
+      title: Учествувај
+      user_permission_info: Со својот профил можеш...
+      user_permission_verify_my_account: Потврди го мојот профил
+  related_content:
+    content_title:
+      proposal: "Предлог"
+      debate: "Дебата"
+      budget_investment: "Буџетски инвестиции"
+  links:
+    form:
+      cancel_button: Откажи
+    nested_links:
+      title: Линкови

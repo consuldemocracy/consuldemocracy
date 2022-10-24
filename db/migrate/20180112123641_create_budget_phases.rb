@@ -1,4 +1,4 @@
-class CreateBudgetPhases < ActiveRecord::Migration
+class CreateBudgetPhases < ActiveRecord::Migration[4.2]
   def change
     create_table :budget_phases do |t|
       t.references :budget

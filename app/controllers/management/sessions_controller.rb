@@ -1,6 +1,9 @@
 require "manager_authenticator"
 
 class Management::SessionsController < ActionController::Base
+  include GlobalizeFallbacks
+  include AccessDeniedHandler
+  default_form_builder ConsulFormBuilder
 
   def create
     destroy_session
@@ -25,14 +28,14 @@ class Management::SessionsController < ActionController::Base
     end
 
     def admin?
-      if current_user.try(:administrator?)
-        session[:manager] = {login: "admin_user_#{current_user.id}"}
+      if current_user&.administrator?
+        session[:manager] = { login: "admin_user_#{current_user.id}" }
       end
     end
 
     def manager?
-      if current_user.try(:manager?)
-        session[:manager] = {login: "manager_user_#{current_user.id}"}
+      if current_user&.manager?
+        session[:manager] = { login: "manager_user_#{current_user.id}" }
       end
     end
 
@@ -40,5 +43,4 @@ class Management::SessionsController < ActionController::Base
       manager = ManagerAuthenticator.new(params).auth
       session[:manager] = manager if manager.present?
     end
-
 end

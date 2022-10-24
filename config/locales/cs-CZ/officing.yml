@@ -1,0 +1,89 @@
+cs:
+  officing:
+    header:
+      title: Hlasování
+    dashboard:
+      index:
+        title: Anketa
+        info: Zde můžete ověřit doklady uživatelů a výsledky hlasování
+        no_shifts: Dnes nemáte žádnou službu na informačním stánku.
+    menu:
+      voters: Ověřit doklad
+      total_recounts: Celkový počet přepočítávání a výsledky
+    polls:
+      final:
+        title: Ankety jsou připraveny k závěrečnému přepočítávání
+        no_polls: V žádném aktivním hlasování nejste účastníkem závěrečného přepočítávání
+        select_poll: Vyberte anketu
+        add_results: Přidat výsledky
+    poll_budgets:
+      see_ballot_sheets: Viz seznam hlasovacích lístků
+      index:
+        title: "%{poll_budget} - Seznam hlasovacích lístků"
+        ballot_sheet: "Hlasovací lístek %{id}"
+        ballot_sheet_name: Název
+        ballot_sheet_author: Autor
+        ballot_sheet_creation_date: Datum vytvoření
+        empty_results: Pro tento průzkum zatím nejsou k dispozici žádné hlasovací lístky
+      new:
+        title: "%{poll_budget} - Nový hlasovací arch"
+        booth: Hlasovací kabina
+        select_booth: Vyberte hlasovací kabinu
+        csv_data: CSV data
+        submit: Uložit
+      show:
+        created_at: Datum vytvoření
+        author: Autor
+        data: CSV data
+    booth:
+      new:
+        title: "Zvolte si hlasovací kabinu"
+    results:
+      flash:
+        create: "Výsledky byly uloženy"
+        error_create: "Výsledky NEJSOU uloženy. Chyba v datech."
+        error_wrong_booth: "Nesprávná volební booth. Výsledky NEJSOU uloženy."
+      new:
+        title: "%{poll} - přidat výsledky"
+        not_allowed: "Není dovoleno přidat výsledky pro toto hlasování"
+        booth: "Informační stánek"
+        date: "Datum"
+        select_booth: "Vyberte informační stánek"
+        ballots_white: "Celkem prázdných hlasovacích lístků"
+        ballots_null: "Neplatné hlasovací lístky"
+        ballots_total: "Celkový počet hlasovacích lístků"
+        submit: "Uložit"
+        results_list: "Vaše výsledky"
+        see_results: "Zobrazit výsledky"
+      index:
+        no_results: "Žádné výsledky"
+        results: Výsledky
+        table_answer: Answer
+        table_votes: Hlasů
+        table_whites: "Naprosto prázdné hlasovací lístky"
+        table_nulls: "Neplatné hlasovací lístky"
+        table_total: "Celkový počet hlasovacích lístků"
+    residence:
+      flash:
+        create: "Doklad ověřen pomocí datových registrů"
+        not_allowed: "Dnes nemáte žádnou službu na informačním stánku"
+      new:
+        title: Ověřit doklad
+        submit: Ověřit doklad
+        error_verifying_census: "Tento doklad se nepodařilo ověřit pomocí datových registrů."
+        form_errors: došlo k zabránění ověření tohoto dokladu
+    voters:
+      new:
+        title: Průzkum
+        table_poll: Průzkum
+        table_status: Stav hlasování
+        table_actions: Akce
+        not_to_vote: Osoba se rozhodla v současné době nehlasovat
+      show:
+        can_vote: Lze hlasovat
+        cannot_vote: Osoba nemůže volit, protože není zapsána v městské části (částích), kde se hlasování koná.
+        error_already_voted: Již se tohoto hlasování účastnil
+        submit: Potvrzení hlasování
+        success: "Hlasování bylo zahájeno!"
+      can_vote:
+        submit_disable_with: "Čekejte na potvrzení hlasování..."

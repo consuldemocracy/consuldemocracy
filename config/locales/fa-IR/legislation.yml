@@ -13,10 +13,7 @@ fa:
         cancel: لغو
         publish_comment: نشر نظر
       form:
-        phase_not_open: این فاز  باز نمی شود.
-        login_to_comment: برای نظر دادن شما باید %{signin} یا %{signup} کنید .
-        signin: ورود به برنامه
-        signup: ثبت نام
+        phase_not_open: این مرحله هنوز باز نشده است
       index:
         title: توضیحات
         comments_about: تعداد نظرات
@@ -52,17 +49,16 @@ fa:
         more_info: کسب اطلاعات بیشتر و زمینه
       proposals:
         empty_proposals: پیشنهادی وجود ندارد
+        filters:
+          winners: انتخاب شده
       debate:
         empty_questions: هیچ سوالی وجود ندارد
-        participate: مشارکت در بحث
       index:
         filter: فیلتر
         filters:
           open: فرآیندهای باز
-          next: بعدی
           past: گذشته
         no_open_processes: فرایندهای باز وجود ندارد
-        no_next_processes: فرایندها برنامه ریزی نشده است
         no_past_processes: فرآیندهای گذشته وجود ندارد
         section_header:
           icon_alt: آیکون قوانین پردازش 
@@ -80,8 +76,10 @@ fa:
         see_latest_comments_title: اظهار نظر در مورد این روند
       shared:
         key_dates: تاريخهاي مهم
+        homepage: صفحه اصلی
         debate_dates: بحث
         draft_publication_date: انتشار پیش نویس
+        allegations_dates: توضیحات
         result_publication_date: انتشار نتیجه نهایی
         proposals_dates: طرح های پیشنهادی
     questions:
@@ -104,13 +102,10 @@ fa:
         share: "اشتراک گذاری\n"
         title: روند قانونی همکاری
       participation:
-        phase_not_open: این مرحله هنوز باز نشده است
+        phase_not_open: این فاز  باز نمی شود.
         organizations: سازمانها مجاز به شرکت در بحث نیستند
-        signin: ورود به برنامه
-        signup: ثبت نام
         unauthenticated: شما باید %{signin} یا %{signup} کنید برای نظر دادن.
         verified_only: فقط کاربران تأیید شده میتوانند شرکت کنند%{verify_account}
-        verify_account: "حساب کاربری خودراتایید کنید\n"
         debate_phase_not_open: مرحله مذاکره به پایان رسیده است و پاسخ هنوز پذیرفته نشده است
     shared:
       share: "اشتراک گذاری\n"
@@ -119,3 +114,16 @@ fa:
       form:
         tags_label: "دسته بندی ها\n"
       not_verified: "برای  رای به پیشنهادات%{verify_account}"
+      process_title: روند قانونی همکاری
+    summary:
+      title: "خلاصه"
+      votes:
+        zero: "%{count} رای"
+      debate_phase: "فاز بحث"
+      proposals_phase: " فاز طرحها"
+      comments:
+        zero: "بدون نظر"
+        one: "%{count} نظر"
+        other: "%{count} نظرات"
+      top_comments:
+        zero: "بدون نظر"

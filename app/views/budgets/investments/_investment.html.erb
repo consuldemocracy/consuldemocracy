@@ -1,14 +1,11 @@
 <div id="<%= dom_id(investment) %>" class="budget-investment clear">
-  <div class="panel <%= ('with-image' if feature?(:allow_images) && investment.image.present?) %>">
+  <div class="panel <%= ("with-image" if feature?(:allow_images) && investment.image.present?) %>">
 
     <% if feature?(:allow_images) && investment.image.present? %>
-    <div class="row" data-equalizer>
+    <div class="row">
 
       <div class="small-12 medium-3 large-2 column text-center">
-        <div data-equalizer-watch>
-          <%= image_tag investment.image_url(:thumb),
-                        alt: investment.image.title.unicode_normalize %>
-        </div>
+        <%= image_tag investment.image.variant(:thumb), alt: investment.image.title.unicode_normalize %>
       </div>
 
       <div class="small-12 medium-6 large-7 column">
@@ -18,10 +15,10 @@
     <% end %>
         <div class="budget-investment-content">
 
-          <% cache [locale_and_user_status(investment), 'index', investment, investment.author] do %>
+          <% cache [locale_and_user_status(investment), "index", investment, investment.author] do %>
             <h3><%= link_to investment.title, namespaced_budget_investment_path(investment) %></h3>
 
-            <p class="investment-project-info">
+            <%# <p class="investment-project-info">
               <%= l investment.created_at.to_date %>
 
               <% if investment.author.hidden? || investment.author.erased? %>
@@ -48,13 +45,12 @@
                     <%= investment.author.official_position %>
                   </span>
                 <% end %>
-              <% end %>
+              <% end %> %>
 
-              <span class="bullet">&nbsp;&bull;&nbsp;</span>
-              <%= investment.heading.name %>
-            </p>
+            <%= render Budgets::Investments::InfoComponent.new(investment) %>
+
             <div class="investment-project-description">
-              <%= investment.description %>
+              <%= wysiwyg(investment.description) %>
               <div class="truncate"></div>
             </div>
             <%= render "shared/tags", taggable: investment, limit: 5 %>
@@ -66,49 +62,37 @@
 
         <% if investment.should_show_votes? %>
           <div id="<%= dom_id(investment) %>_votes"
-               class="small-12 medium-3 column text-center"
-               <%= 'data-equalizer-watch' if feature?(:allow_images) && investment.image.present? %>>
-               <%= render partial: '/budgets/investments/votes', locals: {
-                 investment: investment,
-                 investment_votes: investment_votes,
-                 vote_url: namespaced_budget_investment_vote_path(investment, value: 'yes')
-               } %>
+               class="small-12 medium-3 column text-center">
+               <%= render Budgets::Investments::VotesComponent.new(investment) %>
           </div>
         <% elsif investment.should_show_vote_count? %>
           <div id="<%= dom_id(investment) %>_votes"
-               class="small-12 medium-3 column text-center"
-               <%= 'data-equalizer-watch' if feature?(:allow_images) && investment.image.present? %>>
-            <div class="supports js-participation">
+               class="small-12 medium-3 column text-center">
+            <div class="supports">
               <span class="total-supports no-button">
                 <%= t("budgets.investments.investment.supports",
                     count: investment.total_votes) %>
               </span>
             </div>
           </div>
-        <% elsif investment.should_show_ballots? %>
+        <% elsif investment.should_show_ballots? && !management_controller? %>
           <div id="<%= dom_id(investment) %>_ballot"
-                class="small-12 medium-3 column text-center"
-                <%= 'data-equalizer-watch' if feature?(:allow_images) && investment.image.present? %>>
-                <%= render partial: '/budgets/investments/ballot', locals: {
+               class="small-12 medium-3 column text-center">
+                <%= render "/budgets/investments/ballot",
                   investment: investment,
                   investment_ids: investment_ids,
-                  ballot: ballot
-                } %>
+                  ballot: ballot %>
           </div>
         <% elsif investment.should_show_price? %>
           <div id="<%= dom_id(investment) %>_price"
-               class="supports small-12 medium-3 column text-center"
-               <%= 'data-equalizer-watch' if feature?(:allow_images) && investment.image.present? %>>
+               class="supports small-12 medium-3 column text-center">
             <div class="supports">
               <span class="total-supports no-button">
                 <%= investment.formatted_price %>
               </span>
             </div>
           </div>
-        <% else %>
-          <div <%= 'data-equalizer-watch' if feature?(:allow_images) && investment.image.present? %>></div>
         <% end %>
-
       <% end %>
     </div>
   </div>

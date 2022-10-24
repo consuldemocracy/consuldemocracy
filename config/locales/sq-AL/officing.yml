@@ -16,6 +16,18 @@ sq:
         no_polls: Ju nuk po ofroni  rinumërim përfundimtar në çdo sondazh aktiv
         select_poll: Zgjidh sondazhin
         add_results: Shto rezultatet
+    poll_budgets:
+      index:
+        ballot_sheet_name: Emri
+        ballot_sheet_author: Autor
+        ballot_sheet_creation_date: Data e krijimit
+      new:
+        booth: Kabinë
+        select_booth: Zgjidh stendën
+        submit: Ruaj
+      show:
+        created_at: Data e krijimit
+        author: Autor
     results:
       flash:
         create: "\nRezultatet u ruajtën"
@@ -36,8 +48,8 @@ sq:
       index:
         no_results: "Nuk ka rezultate"
         results: Rezultatet
-        table_answer: Përgjigje
-        table_votes: Vota
+        table_answer: Përgjigjet
+        table_votes: Votim
         table_whites: "Vota të plota"
         table_nulls: "Votat e pavlefshme"
         table_total: "Totali i fletëvotimeve"
@@ -47,11 +59,9 @@ sq:
         not_allowed: "Ju nuk keni ndërrime zyrtare sot."
       new:
         title: Validoni dokumentin
-        document_number: "Numri i dokumentit ( përfshirë gërma)"
         submit: Validoni dokumentin
         error_verifying_census: "\nRegjistri nuk ishte në gjendje të verifikonte këtë dokument."
         form_errors: pengoi verifikimin e ketij dokumenti
-        no_assignments: "Ju nuk keni ndërrime zyrtare sot."
     voters:
       new:
         title: Sondazhet

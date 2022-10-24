@@ -1,0 +1,81 @@
+.sdg-related-list-selector {
+  clear: both;
+
+  > legend {
+    margin-bottom: 0;
+  }
+
+  .amsify-suggestags-area .amsify-select-tag {
+    color: $white;
+
+    @each $code, $color in $sdg-colors {
+      &[data-val^="#{$code}"] {
+        background-color: $color;
+      }
+    }
+  }
+
+  .goals {
+
+    + label {
+      @include element-invisible;
+    }
+
+    legend {
+      font-weight: normal;
+      font-style: italic;
+    }
+  }
+
+  .goal-list {
+    @extend %sdg-goal-list-expanded;
+
+    input {
+      @include element-invisible;
+
+      &:focus + label {
+        outline: $outline-focus;
+      }
+
+      &:checked + label img {
+        opacity: 0.15;
+      }
+    }
+  }
+
+  .help-text {
+    font-weight: normal;
+    font-style: italic;
+    font-size: $base-font-size;
+  }
+
+  .input-section {
+    margin-bottom: 2 * $line-height / 3;
+  }
+
+  .amsify-suggestags-area {
+    position: relative;
+
+    .amsify-suggestags-list {
+      top: $input-height;
+    }
+  }
+
+  .amsify-suggestags-input-area {
+    display: flex;
+    flex-wrap: wrap;
+
+    > input {
+      margin-bottom: $line-height / 4 !important;
+      order: -1;
+    }
+  }
+
+  .remove-tag {
+    color: $white;
+  }
+
+  h3 {
+    @include header-font-size(h4);
+  }
+}

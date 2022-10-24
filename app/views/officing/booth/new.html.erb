@@ -1,0 +1,25 @@
+<div class="row margin-top">
+  <div class="small-12 medium-6 column small-centered">
+    <div class="panel margin-top">
+      <h1 class="text-center">
+        <%= t("officing.booth.new.title") %>
+      </h1>
+      <%= form_for Poll::Booth.new,
+                   as: :booth,
+                   url: officing_booth_path,
+                   method: :post do |f| %>
+        <div class="row">
+          <div class="small-12 column">
+            <%= f.select :id,
+                         @booths.map { |booth| [booth.location, booth.id] },
+                         selected: @booths.first,
+                         label: false,
+                         tabindex: "1" %>
+
+            <%= f.submit(t("devise_views.sessions.new.submit"), class: "button expanded") %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

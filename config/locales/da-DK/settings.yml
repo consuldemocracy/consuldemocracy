@@ -1,0 +1,171 @@
+da:
+  settings:
+    comments_body_max_length: "Kommentarfeltets maksimale længde"
+    comments_body_max_length_description: "Angivet i antal tegn"
+    official_level_1_name: "Myndighedsperson/embedsmand, niveau 1"
+    official_level_1_name_description: "Identifikationsmærkat, der vil være synligt ved brugere verificeret som embedsmænd på niveau 1"
+    official_level_2_name: "Myndighedsperson/embedsmand, niveau 2"
+    official_level_2_name_description: "Identifikationsmærkat, der vil være synligt ved brugere verificeret som embedsmænd på niveau 2"
+    official_level_3_name: "Myndighedsperson/embedsmand, niveau 3"
+    official_level_3_name_description: "Identifikationsmærkat, der vil være synligt ved brugere verificeret som embedsmænd på niveau 3"
+    official_level_4_name: "Myndighedsperson/embedsmand, niveau 4"
+    official_level_4_name_description: "Identifikationsmærkat, der vil være synligt ved brugere verificeret som embedsmænd på niveau 4"
+    official_level_5_name: "Myndighedsperson/embedsmand, niveau 5"
+    official_level_5_name_description: "Identifikationsmærkat, der vil være synligt ved brugere verificeret som embedsmænd på niveau 5"
+    max_ratio_anon_votes_on_debates: "Maksimalt antal anonyme stemmer pr. debat"
+    max_ratio_anon_votes_on_debates_description: "Anonyme stemmer er dem, der foretages af brugere med en registreret, men ikke verificeret, brugerkonto"
+    max_votes_for_proposal_edit: "Forslaget kan ikke længere redigeres, når dette antal personer støtter op om det:"
+    max_votes_for_proposal_edit_description: "Når dette antal personer støtter op om forslaget, kan brugeren, der oprettede forslaget, ikke længere redigere det"
+    max_votes_for_debate_edit: "Debatindlægget kan ikke længere redigeres, når dette antal personer har stemt på det:"
+    max_votes_for_debate_edit_description: "Når debatindlægget har opnået dette antal s, kan brugeren, der oprettede debatindlægget, ikke længere redigere det"
+    proposal_code_prefix: "Foranstillet titel for Forslag koder"
+    proposal_code_prefix_description: "Denne foranstillede titel vil være synlig i Borgerslagene før oprettelsesdatoen og dens ID"
+    featured_proposals_number: "Antal viste forslag"
+    featured_proposals_number_description: "Antal forslag, der vil være synlige, hvis Vis Forslag er slået til"
+    votes_for_proposal_success: "Det nødvendige antal brugere, der støtter op om et forslag, før forslaget kan godkendes"
+    votes_for_proposal_success_description: "Når et forslag støttes af dette antal brugere, vil det betragtes som succesfuldt og derfor ikke længere kunne støttes af øvrige brugere"
+    months_to_archive_proposals: "Måneder til at arkivere Borgerforslagene"
+    months_to_archive_proposals_description: "Efter dette antal måneder vil Borgerforslagene arkiveres og derfor ikke længere kunne modtage støtte af brugere"
+    email_domain_for_officials: "E-mail domæne for offentlige ansatte"
+    email_domain_for_officials_description: "Alle brugere registreret i dette domæne vil få deres brugerkonto verificeret ved tilmelding"
+    twitter_handle: "Twitter"
+    twitter_handle_description: "Hvis udfyldt, vil twitter-ikonet være synligt nederst på siden"
+    twitter_hashtag: "Twitter hashtag"
+    twitter_hashtag_description: "Hashtag, der vil vises, når indholdet deles på Twitter"
+    facebook_handle: "Facebook"
+    facebook_handle_description: "Hvis udfyldt, vil facebook-ikonet være synligt nederst på siden"
+    youtube_handle: "Youtube"
+    youtube_handle_description: "Hvis udfyldt, vil youtube-ikonet være synligt nederst på siden"
+    telegram_handle: "Telegram"
+    telegram_handle_description: "Hvis udfyldt, vil telegram-ikonet være synligt nederst på siden"
+    instagram_handle: "Instagram"
+    instagram_handle_description: "Hvis udfyldt, vil instagram-ikonet være synligt nederst på siden"
+    url: "Hjemmesidens URL"
+    url_description: "Angiv URL for din hjemmeside"
+    org_name: "Sidens navn"
+    org_name_description: "Dette navn vil fremgå i emnefeltet (e-mails), hjælpesider..."
+    related_content_score_threshold: "Tærskelværdi af relateret indhold"
+    related_content_score_threshold_description: "Udregnet på baggrund af stemmer, skjuler indhold brugeren har markeret som 'ej relevant'"
+    hot_score_period_in_days: "Tidsperiode (dage) anvendt af filtreret 'mest aktiv'"
+    hot_score_period_in_days_description: "Filtret 'mest aktiv', der anvendes i flere sektioner, vil være baseret på stemmer modtaget de seneste X dage"
+    mailer_from_name: "Afsenderens e-mail"
+    mailer_from_name_description: "Dette navn vil fremstå som afsenderen, når brugere modtager e-mails fra programmet"
+    mailer_from_address: "Afsenderens e-mail"
+    mailer_from_address_description: "Dette er e-mailen, brugerne kan se, når de modtager e-mails fra programmet"
+    meta_title: "Sidens titel (SEO)"
+    meta_title_description: "Titel til siden <titel>, anvendt til at øge SEO"
+    meta_description: "Beskrivelse af siden (SEO)"
+    meta_description_description: 'Beskrivelse af siden <meta name="description" >, anvendes til forbedring af SEO'
+    meta_keywords: "Søgeord (SEO)"
+    meta_keywords_description: 'Nøgleord <meta name="keywords">, anvendes til at forbedre SEO'
+    min_age_to_participate: Minimumsalder for deltagelse
+    min_age_to_participate_description: "Brugere over den angivede alder kan deltage i alle de processer, hvor en verificeret brugerkonto er nødvendig"
+    proposals:
+      successful_proposal_id: Succesfulde borgerforslag
+      successful_proposal_id_description: Forslaget anvendes som reference til succesfulde borgerforslag rangeret efter mængden af støtte og vil blive vist på instrumentbrættets graf.
+      poll_short_title: Afstemninger
+      poll_short_title_description: Kort beskrivelse af undersøgelsen. Tillader brugere at oprette undersøgelser vedrørende et borgerforslag
+      poll_description: Beskrivelse af afstemning
+      poll_description_description: Detaljeret beskrivelse af undersøgelsen
+      poll_link: Link til yderligere information
+      poll_link_description: Tilføj et link for yderligere information vedrørende kontrolpanelets undersøgelse
+      email_short_title: E-mail
+      email_short_title_description: 'Kort beskrivelse af mail-funktionen. Tillader brugere at sende mails, hvori de promoverer deres forslag'
+      email_description: Beskrivelse af e-mail
+      email_description_description: Detaljeret beskrivelse af mail-funktionen
+      poster_short_title: Plakat
+      poster_short_title_description: 'Kort beskrivelse af plakatfunktionen. Tillader brugere at downloade plakater i PDF format for at promovere deres forslag'
+      poster_description: Beskrivelse af plakat
+      poster_description_description: Detaljeret beskrivelse af plakatfunktionen
+    analytics_url: "Analytisk URL"
+    proposal_notification_minimum_interval_in_days: "Minimum interval (i dage) hvor brugere kan sende nye meddelelse vedrørende deres oprettede forslag"
+    proposal_notification_minimum_interval_in_days_description: "Antal dage brugere kan sende beskeder til de brugere, der støtter deres forslag"
+    direct_message_max_per_day: "Max antal direkte beskeder pr. dag"
+    direct_message_max_per_day_description: "Det maksimale antal direkte beskeder en bruger kan sende om dagen"
+    feature:
+      twitter_login: "Twitter login"
+      twitter_login_description: "Tillad brugere at registrere sig med Twitter"
+      facebook_login: "Facebook login"
+      facebook_login_description: "Tillad brugere at registrere sig med Facebook"
+      google_login: "Google login"
+      google_login_description: "Tillad brugere at registrere sig med Google"
+      wordpress_login: "Wordpress log ind"
+      wordpress_login_description: "Tillad brugere at registrere sig med Wordpress"
+      featured_proposals: "Udvalgte forslag"
+      featured_proposals_description: "Viser udvalgte forslag på indeks"
+      signature_sheets: "Signaturark"
+      signature_sheets_description: "Det giver mulighed for at tilføje underskrifter fra Administrationspanelet indsamlet fysisk i forbindelse med Borgerforslag og projektidéer til deltagerbudgetter"
+      user:
+        recommendations: "Anbefalinger"
+        recommendations_description: "Viser brugeranbefalinger på startsiden baseret på hashtags og følgere"
+        skip_verification: "Spring brugerverificering over"
+        skip_verification_description: "This will disable user verification and all registered users will be able to participate in all processes"
+        recommendations_on_debates: "Anbefalinger på debatindlæg"
+        recommendations_on_debates_description: "Viser brugeranbefalinger baseret på hashtags og følgere til andre brugere på debatsiden"
+        recommendations_on_proposals: "Andbefalede forslag"
+        recommendations_on_proposals_description: "Viser anbefalinger baseret på hashtags og følgere til brugere på forslagssiden"
+      community: "Fællesskab for forslag og projektidéer"
+      community_description: "Aktiver 'Fællesskab'"
+      map: "Projektetidéernes geografiske områder"
+      map_description: "Aktiver geografisk område for forslag og investeringsprojekter"
+      allow_images: "Tillad overførsler og vis billeder"
+      allow_images_description: "Tillader brugere at overføre billeder, når de opretter forslag og projektidéer til et deltagerbudget"
+      allow_attached_documents: "Tillad overførsler og vis vedhæftede filer"
+      allow_attached_documents_description: "Tillader brugere at overføre filer, når de opretter forslag og projektidéer til et deltagerbudget"
+      guides: "Guide til oprettelse af forslag eller projektidéer"
+      guides_description: "Viser en guide, der forklarer forskellen på et borgerforslag og en projektidé, hvis et deltagerbudget er aktivt"
+      public_stats: "Offentlig statistik"
+      public_stats_description: "Viser offentlig statistik i Administrationspanelet"
+      help_page: "Hjælp"
+      help_page_description: 'Viser en Hjælpeside, der indeholder en informationssektion omkring enhver aktiveret funktion. Derudover kan brugerdefinerede sider og sektioner oprettes under "Brugerdefinerede sider" og "Brugerdefinerede indholdsblokke"'
+      remote_translations: "Fjern oversættelse"
+      remote_translations_description: "Vis en knap der tillader brugere at anmode om en oversættelse når deres indhold ikke er tilgængeligt i deres sprog."
+      translation_interface: "Oversættelses interface"
+      valuation_comment_notification: "Notifikation"
+      valuation_comment_notification_description: "Send en e-mail til alle brugere (med undtagelse af evaluatorerne) når en ny vurdering af foretaget"
+      sdg: Verdensmål
+    map:
+      latitude: "Breddegrad"
+      latitude_description: "Breddegrader"
+      longitude: "Længdegrad"
+      longitude_description: "Længdegrader"
+      zoom: "Zoom"
+      zoom_description: "Zoom for at vise lokationen"
+    process:
+      debates: "Debatforum"
+      debates_description: "Borgernes debatforum er tilegnet enhver, der ønsker at præsentere og dele deres mening om en eller flere problematikker af interesse"
+      proposals: "Forslag"
+      proposals_description: "Borgerforslag åbner muligheden for, at borgere og foreninger kan være med til direkte at beslutte, hvordan de ønsker deres samfund skal være"
+      polls: "Afstemninger"
+      polls_description: "Borgerafstemningerne er en deltagelsesproces, hvor stemmeberettigede borgere kan få direkte indflydelse og være med til at træffe lokalpolitiske beslutninger"
+      budgets: "Deltagerbudgetter"
+      budgets_description: "Med deltagerbudgetter beslutter borgerne hvilke projekter, der vil blive en del af det kommunale budget"
+      legislation: "Lovgivning"
+      legislation_description: "I deltagelsesprocesserne får borgerne mulighed for at deltage i udarbejdelse og ændring af forordninger, der påvirker samfundet, og give deres mening i forhold til de foranstaltninger, der skal gennemføres"
+    html:
+      per_page_code_head: "Kode inkluderet på alle sidesektioner (<head>)"
+      per_page_code_head_description: "Denne kode vises i <head>. Brugbar i forhold til indlæsning af brugerdefinerede fremstillinger, analyser..."
+      per_page_code_body: "Kode inkluderet på alle sidesektioner (<body>)"
+      per_page_code_body_description: "Denne kode vises i <body>. Brugbar i forhold til indlæsning af brugerdefinerede fremsitllinger, analyser..."
+    uploads:
+      images:
+        min_width: "Minimum bredde"
+        min_width_description: "Minimum billedbredde (i pixels)"
+        min_height: "Minimum højde"
+        min_height_description: "Minimum billedehøjde (i pixels)"
+        max_size: "Billedets maksimale størrelse"
+        max_size_description: "Maksimal størrelse (i Megabytes/MB)"
+        content_types: "Billedet kan være af følgende type"
+        content_types_description: "Vælg hvilke filformater billeder kan uploades i"
+        title:
+          min_length: "Minimum længde på billedtitel"
+          min_length_description: "Brugerens valgte billedtitel (HTML)"
+          max_length: "Maksimal længde på billedtitel"
+          max_length_description: "Brugerens valgte billedtitel (HTML)"
+      documents:
+        max_amount: "Max antal dokumenter"
+        max_amount_description: "Max antal dokumenter, der kan vedhæftes borgerforslag, projektidéer..."
+        max_size: "Maksimale dokumentstørrelse"
+        max_size_description: "Maksimale størrelse på et uploadet dokument (i Megabytes/MB)"
+        content_types: "Accepterede filformater for dokumenter"
+        content_types_description: "Vælg alle tilladte filformater for dokumenter"

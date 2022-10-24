@@ -1,0 +1,37 @@
+<% if headings.any? %>
+  <table>
+    <caption><%= t("admin.budgets.show.headings_caption", group: group.name) %></caption>
+    <thead>
+      <tr>
+        <th><%= Budget::Heading.human_attribute_name(:name) %></th>
+        <% if budget.show_money? %>
+          <th class="text-center"><%= Budget::Heading.human_attribute_name(:price) %></th>
+        <% end %>
+        <% if budget.approval_voting? %>
+          <th><%= Budget::Heading.human_attribute_name(:max_ballot_lines) %></th>
+        <% end %>
+        <th><%= t("admin.actions.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% headings.each do |heading| %>
+        <tr id="<%= dom_id(heading) %>" class="heading">
+          <td><%= heading.name %></td>
+          <% if budget.show_money? %>
+            <td><%= budget.formatted_heading_price(heading) %></td>
+          <% end %>
+          <% if budget.approval_voting? %>
+            <td><%= heading.max_ballot_lines %></td>
+          <% end %>
+          <td>
+            <%= render Admin::TableActionsComponent.new(heading) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="callout primary clear">
+    <%= sanitize(t("admin.budget_headings.no_headings", group: group.name)) %>
+  </div>
+<% end %>

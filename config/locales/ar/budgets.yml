@@ -3,28 +3,28 @@ ar:
     ballots:
       show:
         title: الاقتراح الخاص بك
-        amount_spent: المبلغ المنفق
-        remaining: "لا يزال لديك <span>%{amount}</span> للاستثمار."
         no_balloted_group_yet: "انت لم تقم بالتصويت على هذه المجموعة بعد، اذهب للتصويت!"
         remove: ازالة التصويت
-        voted_info_html: "يمكنك تغيير تصويتك في اي وقت حتى اغلاق هذه المرحلة.<br> لا حاجة لانفاق كل الاموال المتاحة."
+        voted:
+          zero: "لقد قمت بتصويت على <span>%{count}</span> استثمار."
+          one: "لقد قمت بتصويت على <span>one</span> استثمار."
+          two: "لقد قمت بتصويت على <span>%{count}</span> استثمار."
+          few: "لقد قمت بتصويت على <span>%{count}</span> استثمار."
+          many: "لقد قمت بتصويت على <span>%{count}</span> استثمار."
+          other: "لقد قمت بتصويت على <span>%{count}</span> استثمار."
+        voted_info_2: "ولكن يمكنك تغيير تصويتك في أي وقت إلى أن يتم إغلاق هذه المرحلة."
         zero: أنت لم تصوت على أي مشروع استثماري.
       reasons_for_not_balloting:
-        not_logged_in: تحتاج الى %{signin} او %{signup} للمتابعة.
         not_verified: يمكن للمستخدمين الذين تم التحقق منهم فقط التصويت على الاستثمارات; %{verify_account}.
-        organization: المنظمات لا يسمح لها بالتصويت
         not_selected: لا يمكن دعم المشاريع الإستثمارية الغير محددة
-        not_enough_money_html: "لقد قمت بالفعل بتعيين الميزانية المتاحة.<br><small>تذكر يمكنك%{change_ballot} في أي وقت</small>"
+        not_enough_money: "لقد قمت بالفعل بتعيين الميزانية المتاحة.<br><small>تذكر يمكنك%{change_ballot} في أي وقت</small>"
         no_ballots_allowed: مرحلة التحديد مغلقة
-        different_heading_assigned_html: "أنت بالفعل قمت بتصويت عنوان مختلف: %{heading_link}"
+        different_heading_assigned: "أنت بالفعل قمت بتصويت عنوان مختلف: %{heading_link}"
         change_ballot: تغيير الأصوات الخاصة بك
+        casted_offline: لقد شاركت مسبقا في وضع عدم الاتصال
     groups:
       show:
         title: قم بتحديد خيار
-        unfeasible_title: الإستثمارات غير مجدية
-        unfeasible: انظر الى الاستثمارات الغير مجدية
-        unselected_title: الإستثمارات غير محددة لمرحلة الإقتراع
-        unselected: انظر للاستثمارات الغير محددة لمرحلة الاقتراع
     phase:
       drafting: مسودة(غير مرئي للعامة)
       informing: معلومات
@@ -43,29 +43,24 @@ ar:
         icon_alt: رمز الميزانيات المشاركة
         title: الميزانيات المشاركة
         help: ساعد في ميزانيات المشاركة
-        all_phases: انظر الى جميع المراحل
       all_phases: مرحلة الميزانية الاستثمارية
       map: مقتراحات استثمارات الميزانية محددة جغرافيا
-      investment_proyects: قائمة بجميع المشاريع الاستثمارية
-      unfeasible_investment_proyects: قائمة بجميع المشاريع الاستثمارية الغير مجدية
-      not_selected_investment_proyects: قائمة بجميع المشاريع الاستثمارية الغير مختارة للاقتراع
       finished_budgets: ميزانيات المشاركة النهائية
-      see_results: انظر للنتائج
+      see_results: رؤية النتائج
       section_footer:
         title: ساعد في ميزانيات المشاركة
         description: مع ميزانيات المشاركة يقرر المواطنين اي المشاريع متجهة الى حزء من الميزانية.
-      milestones: الأهداف المرحلية
+      milestones: معالم
     investments:
       form:
+        title: "انشاء ميزانية استثمار"
         tag_category_label: "فئات"
         tags_instructions: "علم على هذا الاقتراح. تستطيع الاختيار من بين الفئات المقترحة او اضافة الخاصة بك"
-        tags_label: علامات
+        tags_label: العلامات
         tags_placeholder: "ادخل العلامات التي ترغب في استخدامها، مفصولة بفواصل (',')"
         map_location: "موقع الخريطة"
         map_location_instructions: "تنقل في الخريطة الى الموقع و ضع العلامة."
         map_remove_marker: "ازل علامة الخريطة"
-        location: "موقع معلومات اضافية"
-        map_skip_checkbox: "الاستثمار لا يملك موقع ملموس او لست على دراية به."
       index:
         title: الميزانية التشاركية
         unfeasible: الاستثمارات الغير مجدية
@@ -74,84 +69,95 @@ ar:
         search_form:
           button: بحث
           placeholder: البحث عن المشاريع الاستثمارية...
-          title: بحت
+          title: بحث
         sidebar:
           my_ballot: قرعتي
-          voted_info: يمكنك %{link} في اي وقت حتى اغلاف هذه المرحلة. لا داعي لانفاق جميع الاموال المتاحة.
-          voted_info_link: غيير الصوت الخاص بك
-          different_heading_assigned_html: "انت بالفعل قمت تصويت عنوان مختلف: %{heading_link}"
-          change_ballot: "اذا تريد تغير رايك تستطيع ازالة تصويتك في %{check_ballot} والبدء مرة اخرى."
+          voted_info:
+            knapsack:
+              zero: "<strong>لقد قمت بتصويت %{count} اقتراحات بتكلفة %{amount_spent}</strong>"
+              one: "<strong>لقد قمت بتصويت اقتراح واحد بتكلفة %{amount_spent}</strong>"
+              two: "<strong>لقد قمت بتصويت %{count} اقتراحات بتكلفة %{amount_spent}</strong>"
+              few: "<strong>لقد قمت بتصويت %{count} اقتراحات بتكلفة %{amount_spent}</strong>"
+              many: "<strong>لقد قمت بتصويت %{count} اقتراحات بتكلفة %{amount_spent}</strong>"
+              other: "<strong>لقد قمت بتصويت %{count} اقتراحات بتكلفة %{amount_spent}</strong>"
+          change_vote_link: "غيير الصوت الخاص بك"
+          different_heading_assigned: "لديك تصويت فعال في عنوان مختلف: %{heading_link}"
+          change_ballot: "اذا تريد تغيير رايك تسطيع ازالة التصويت الخاص بك في %{check_ballot} و البدء مرة اخرى."
           check_ballot_link: "تحقق من قرعتي"
           zero: انت لم تصوت على اي مشروع استثماري في هذه المحموعة.
           verified_only: "لانشاء ميزانية استثمار جديدة %{verify}."
-          verify_account: "تحقق من حسابك"
           create: "انشاء ميزانية استثمار"
           not_logged_in: "لانشاء ميزانية استثمار جديدة يجب عليك %{sign_in} او %{sign_up}."
-          sign_in: "تسجيل الدخول"
-          sign_up: "التسجيل"
-          by_feasibility: حسب الجدوى
-          feasible: مشاريع مجدية
-          unfeasible: مشاريع غير مجدية
+        filters:
+          selected: "محدّد"
+          unfeasible: "غير مجدي"
+          winners: "الفائزين"
         orders:
           random: عشوائي
           confidence_score: اعلى تقييم
           price: حسب السعر
       share:
-        message: "لقد أنشأت مشروع استثماري %{title} في %{org}. أنشىء مشروع الاستثماري أنت أيضاً!"
-        message_mobile: "لقد أنشأت مشروع استثماري %{title} في %{handle}. أنشىء مشروع الاستثماري أنت أيضاً!"
+        message: "لقد أنشأت مشروع استثماري %{title} في %{handle}. أنشىء مشروع الاستثماري أنت أيضاً!"
       show:
-        author_deleted: حذف المستخدم
+        author_deleted: تم حذف المستخدم
         price_explanation: توضيح الاسعار
         unfeasibility_explanation: تفسير غير مجدي
-        code_html: 'رمز مشروع الاستثمار: <strong>%{code}</strong>'
-        location_html: 'المكان: <strong>%{location}</strong>'
-        organization_name_html: 'تم اقتراحه نيابة عن: <strong>%{name}</strong>'
+        code: "رمز مشروع الاستثمار: <strong>%{code}</strong>"
+        location: "المكان: <strong>%{location}</strong>"
+        organization_name: "تم اقتراحه نيابة عن: <strong>%{name}</strong>"
         share: مشاركة
-        title: مشاريع استثمارية
-        supports: دعم
+        title: مشروع استثماري
+        supports: تشجيعات
         votes: اصوات
-        price: سعر
+        price: السعر
         comments_tab: تعليقات
-        milestones_tab: معالم
+        milestones_tab: الأهداف المرحلية
         author: كاتب
-        project_unfeasible_html: 'مشروع الاستثمار هذا <strong> تم تعليمه كغير مجدي</strong> ولن يذهب الى مرحلة الاقتراع.'
-        project_selected_html: 'مشروع الاستثمار هذا<strong>تم اختياره</strong>لمرحلة الاقتراع.'
-        project_winner: 'مشروع الاستثمار الفائز'
-        project_not_selected_html: 'مشروع الاستثمار هذا <strong> لم يتم اختياره</strong>لمرحلة الاقتراع.'
+        project_unfeasible: "مشروع الاستثمار هذا <strong> تم تعليمه كغير مجدي</strong> ولن يذهب الى مرحلة الاقتراع."
+        project_selected: "مشروع الاستثمار هذا<strong>تم اختياره</strong>لمرحلة الاقتراع."
+        project_winner: "مشروع الاستثمار الفائز"
+        project_not_selected: "مشروع الاستثمار هذا <strong> لم يتم اختياره</strong>لمرحلة الاقتراع."
         see_price_explanation: انظر شرح السعر
       wrong_price_format: الاعداد الصحيحة فقط
       investment:
         add: صوت
         already_added: قمت بالفعل باضافة هذا المشروع الاستثماري
-        already_supported: لقد قمت بالفعل بدعم هذا المشروع الاستثماري. شاركه!
         support_title: ادعم هذا المشروع
         supports:
           zero: لا يوجد دعم
-        give_support: دعم
+          one: دعم واحد
+          two: "%{count} دعم"
+          few: "%{count} دعم"
+          many: "%{count} دعم"
+          other: "%{count} دعم"
       header:
-        check_ballot: تحقق من قرعتي
-        different_heading_assigned_html: "لديك تصويت فعال في عنوان مختلف: %{heading_link}"
-        change_ballot: "اذا تريد تغيير رايك تسطيع ازالة التصويت الخاص بك في %{check_ballot} و البدء مرة اخرى."
+        check_ballot: "تحقق من قرعتي"
+        different_heading_assigned: "لديك تصويت فعال في عنوان مختلف: %{heading_link}"
+        change_ballot: "اذا تريد تغير رايك تستطيع ازالة تصويتك في %{check_ballot} والبدء مرة اخرى."
         check_ballot_link: "تحقق من قرعتي"
         price: "هذا البند لديه ميزانية بقدر"
-    progress_bar:
-      assigned: "لقد قمت بتعيين: "
-      available: "الميزانية المتاحة: "
+      votes:
+        already_supported: "لقد قمت بالفعل بدعم هذا المشروع الاستثماري. شاركه!"
+        confirm_group:
+          zero: "يمكنك فقط دعم الاستثمارات في %{count} منطقة. اذا تابعت لا يمكنك تغير انتخاب منطقتك. هل انت واثق؟"
+          one: "يمكنك فقط دعم الاستثمار في %{count} المنطقة. اذا تابعت لا يمكنك تغير انتخاب منطقتك. هل انت واثق؟"
+          two: "يمكنك فقط دعم الاستثمارات في %{count} منطقة. اذا تابعت لا يمكنك تغير انتخاب منطقتك. هل انت واثق؟"
+          few: "يمكنك فقط دعم الاستثمارات في %{count} منطقة. اذا تابعت لا يمكنك تغير انتخاب منطقتك. هل انت واثق؟"
+          many: "يمكنك فقط دعم الاستثمارات في %{count} منطقة. اذا تابعت لا يمكنك تغير انتخاب منطقتك. هل انت واثق؟"
+          other: "يمكنك فقط دعم الاستثمار في %{count} المنطقة. اذا تابعت لا يمكنك تغير انتخاب منطقتك. هل انت واثق؟"
+        support: "دعم"
+    investments_list:
+      investment:
+        price: "السعر"
+        supports: "دعم"
     show:
-      group: مجموعة
-      phase: المرحلة الفعلية
-      unfeasible_title: الاستثمارات الغير مجدية
-      unfeasible: انظر الى الاستثمارات الغير مجدية
-      unselected_title: الاستثمارات الغير محددة لمرحلة الاقتراع
-      unselected: انظر للاستثمارات الغير مجدية لمرحلة الاقتراع
-      see_results: انظر للنتائج
+      see_results: رؤية النتائج
     results:
       link: النتائج
       page_title: "%{budget} -النتائج"
       heading: "نتائج الميزانيات المشاركة"
       heading_selection_title: "جسب المنطقة"
-      spending_proposal: عنوان الاقتراح
-      ballot_lines_count: أصوات
+      ballot_lines_count: اصوات
       hide_discarded_link: اخفاء المهملة
       show_all_link: اظهار الكل
       price: السعر
@@ -159,18 +165,23 @@ ar:
       accepted: "اقرتاح الإنفاق المقبول: "
       discarded: "اقرتاح الإنفاق الغير مقبولة: "
       incompatibles: غير متوافق
+      investment_title: عنوان المشروع
       investment_proyects: قائمة بجميع المشاريع الاستثمارية
       unfeasible_investment_proyects: قائمة بجميع المشاريع الاستثمارية الغير مجدية
-      not_selected_investment_proyects: قائمة بالمشاريع الاستثمارية الغير محددة للاقرتاح
+      not_selected_investment_proyects: قائمة بجميع المشاريع الاستثمارية الغير مختارة للاقتراع
     executions:
-      link: "الأهداف المرحلية"
+      link: "معالم"
       page_title: "%{budget} - الأهداف المرحلية"
       heading: "معالم الميزانية التشاركية"
       heading_selection_title: "جسب المنطقة"
       no_winner_investments: "لا يوجد استثمارات فائزة"
       filters:
-        label: "حالة المشروع الحالية"
-        all: "الكل (%{count})"
+        status:
+          label: "حالة المشروع الحالية"
+          all: "الكل (%{count})"
+        milestone_tag:
+          label: "علامة المعلم"
+          all: "الكل (%{count})"
     phases:
       errors:
         dates_range_invalid: "تاريخ البدأ لا يمكن ان يكون مساو او يتجاوز تاريخ الانتهاء"

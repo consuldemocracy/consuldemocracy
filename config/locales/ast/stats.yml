@@ -1,0 +1,8 @@
+ast:
+  stats:
+    total: "Total"
+    budgets:
+      link: "Estadísticas"
+      total_unfeasible_investments: "Ver los proyeutos invidables"
+      total: "Total"
+      heading: "Partida"

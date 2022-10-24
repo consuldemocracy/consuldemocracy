@@ -2,8 +2,7 @@
 //
 
 .ui-datepicker-header {
-  background: $brand;
-  color: #fff;
+  @extend %brand-background;
   font-weight: bold;
 }
 
@@ -16,8 +15,7 @@
 
   .ui-state-hover,
   .ui-state-active {
-    background: $brand;
-    color: #fff;
+    @extend %brand-background;
   }
 
   thead {
@@ -34,7 +32,7 @@
 
   .ui-datepicker-prev,
   .ui-datepicker-next {
-    color: #fff;
+    color: inherit;
     cursor: pointer;
     font-family: "icons" !important;
     font-size: rem-calc(24);
@@ -51,11 +49,11 @@
   }
 
   .ui-datepicker-prev::after {
-    content: '\62';
+    content: "\62";
   }
 
   .ui-datepicker-next::after {
-    content: '\63';
+    content: "\63";
   }
 
   table {
@@ -87,7 +85,7 @@
     a {
       text-align: center;
       line-height: $line-height;
-      color: $text;
+      color: inherit;
     }
   }
 }

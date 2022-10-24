@@ -3,18 +3,16 @@ pl:
     comments:
       index:
         block_authors: Blokuj autorów
-        confirm: Jesteś pewien?
-        filter: Filtr
+        filter: Filtruj
         filters:
           all: Wszystkie
           pending_flag_review: Oczekujące
           with_ignored_flag: Oznaczone jako wyświetlone
         headers:
-          comment: Skomentuj
+          comment: Komentarz
           moderate: Moderuj
-        hide_comments: Ukryj komentarze
+        hide: Ukryj komentarze
         ignore_flags: Oznacz jako wyświetlone
-        order: Porządkuj
         orders:
           flags: Najbardziej oflagowane
           newest: Najnowsze
@@ -25,18 +23,16 @@ pl:
     debates:
       index:
         block_authors: Blokuj autorów
-        confirm: Jesteś pewny/a?
-        filter: Filtrtuj
+        filter: Filtruj
         filters:
-          all: Wszystko
+          all: Wszystkie
           pending_flag_review: Oczekujące
           with_ignored_flag: Oznaczone jako wyświetlone
         headers:
           debate: Debata
           moderate: Moderuj
-        hide_debates: Ukryj debaty
+        hide: Ukryj debaty
         ignore_flags: Oznacz jako wyświetlone
-        order: Porządkuj
         orders:
           created_at: Najnowsze
           flags: Najbardziej oflagowane
@@ -47,71 +43,63 @@ pl:
       flagged_comments: Komentarze
       flagged_debates: Debaty
       flagged_investments: Inwestycje budżetowe
-      proposals: Propozycje
+      proposals: Wnioski
       proposal_notifications: Zgłoszenia propozycji
       users: Blokuj użytkowników
     proposals:
       index:
         block_authors: Blokuj autorów
-        confirm: Jesteś pewny/a?
-        filter: Filtrtuj
+        filter: Filtruj
         filters:
-          all: Wszystko
+          all: Wszystkie
           pending_flag_review: Recenzja oczekująca
           with_ignored_flag: Oznacz jako wyświetlone
         headers:
           moderate: Moderuj
-          proposal: Propozycja
-        hide_proposals: Ukryj propozycje
+          proposal: Wniosek
+        hide: Ukryj propozycje
         ignore_flags: Oznacz jako wyświetlone
-        order: Uporządkuj według
         orders:
-          created_at: Ostatnie
+          created_at: Najnowsze
           flags: Najbardziej oflagowane
-        title: Propozycje
+        title: Wnioski
     budget_investments:
       index:
         block_authors: Blokuj autorów
-        confirm: Jesteś pewien?
-        filter: Filtr
+        filter: Filtruj
         filters:
-          all: Wszystko
+          all: Wszystkie
           pending_flag_review: Oczekujące
           with_ignored_flag: Oznaczone jako wyświetlone
         headers:
           moderate: Moderuj
           budget_investment: Inwestycje budżetowe
-        hide_budget_investments: Ukryj inwestycje budżetowe
+        hide: Ukryj inwestycje budżetowe
         ignore_flags: Oznacz jako wyświetlone
-        order: Uporządkuj według
         orders:
-          created_at: Ostatnie
+          created_at: Najnowsze
           flags: Najbardziej oflagowane
         title: Inwestycje budżetowe
     proposal_notifications:
       index:
         block_authors: Blokuj autorów
-        confirm: Jesteś pewny/a?
-        filter: Filtrtuj
+        filter: Filtruj
         filters:
-          all: Wszystko
+          all: Wszystkie
           pending_review: Recenzja oczekująca
           ignored: Oznacz jako wyświetlone
         headers:
           moderate: Moderuj
-          proposal_notification: Zgłoszenie propozycji
-        hide_proposal_notifications: Ukryj propozycje
+          proposal_notification: Powiadomienie o wniosku
+        hide: Ukryj propozycje
         ignore_flags: Oznacz jako wyświetlone
-        order: Uporządkuj według
         orders:
           created_at: Ostatnie
           moderated: Moderowany
-        title: Zgłoszenia propozycji
+        title: Powiadomienie o wnioskach
     users:
       index:
-        hidden: Zablokowany
         hide: Blokuj
-        search: Szukaj
         search_placeholder: e-mail lub nazwa użytkownika
         title: Blokuj użytkowników
       notice_hide: Użytkownik jest zablokowany. Wszystkie dyskusje i komentarze tego użytkownika zostały ukryte.

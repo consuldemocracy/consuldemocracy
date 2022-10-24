@@ -1,0 +1,18 @@
+.sdg-content-menu {
+
+  .goals-link::before {
+    @extend %font-icon;
+    @extend %svg-icon;
+    @extend %admin-menu-icon;
+
+    mask-image: image-url("sdg.svg");
+  }
+
+  .homepage-link {
+    @include has-fa-icon(home, solid);
+
+    &::before {
+      @extend %admin-menu-icon;
+    }
+  }
+}

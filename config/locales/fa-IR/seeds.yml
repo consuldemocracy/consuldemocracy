@@ -33,7 +33,6 @@ fa:
     polls:
       current_poll: "نظرسنجی کنونی"
       current_poll_geozone_restricted: "نظرسنجی کنونی Geozone محصور"
-      incoming_poll: "نظرسنجی ورودی"
       recounting_poll: "بازپرداخت نظرسنجی"
       expired_poll_without_stats: "نظرسنجی منقضی شده بدون آمار & نتیجه "
       expired_poll_with_stats: "نظرسنجی منقضی شده با آمار & نتیجه "

@@ -1,0 +1,89 @@
+da:
+  officing:
+    header:
+      title: Afstemning
+    dashboard:
+      index:
+        title: Valgsteder
+        info: Her kan du erklære brugerens dokumenter for gyldige og gemme afstemningsresultater
+        no_shifts: Du har ingen arbejdsopgaver i dag.
+    menu:
+      voters: Erklær dokument gyldigt
+      total_recounts: Omtælling og resultater
+    polls:
+      final:
+        title: Afstemningen klar til den endelige fintælling
+        no_polls: Du har ingen afstemninger klar til tælling
+        select_poll: Vælg afstemning
+        add_results: Tilføj resultater
+    poll_budgets:
+      see_ballot_sheets: Se lister over stemmesedler
+      index:
+        title: "%{poll_budget} - Liste over valgsteder"
+        ballot_sheet: "Valgsteder %{id}"
+        ballot_sheet_name: Navn
+        ballot_sheet_author: Oprettet af
+        ballot_sheet_creation_date: Oprettelsesdato
+        empty_results: Der er ingen valgsteder tilknyttet denne afstemning
+      new:
+        title: "%{poll_budget} - Ny stemmeseddel"
+        booth: Valgsted
+        select_booth: Vælg valgsted
+        csv_data: CSV data
+        submit: Gem
+      show:
+        created_at: Oprettelsesdato
+        author: Oprettet af
+        data: CSV data
+    booth:
+      new:
+        title: "Vælg dit valgsted"
+    results:
+      flash:
+        create: "Resultater gemt"
+        error_create: "Resultaterne blev IKKE gemt. Fejl i data."
+        error_wrong_booth: "Forkert stemmeboks. Resultaterne blev IKKE gemt."
+      new:
+        title: "%{poll} - Tilføj resultater"
+        not_allowed: "Du har ikke tilladelse til at tilføje resultaterne for denne afstemning"
+        booth: "Stemmeboks"
+        date: "Dato"
+        select_booth: "Vælg stemmeboks"
+        ballots_white: "Ingen stemmer"
+        ballots_null: "Ugyldige stemmer"
+        ballots_total: "Samlet antal stemmer"
+        submit: "Gem"
+        results_list: "Dine resultater"
+        see_results: "Se resultater"
+      index:
+        no_results: "Ingen resultater"
+        results: Resultater
+        table_answer: Svar
+        table_votes: Stemmer
+        table_whites: "Ingen stemmer"
+        table_nulls: "Ugyldige stemmer"
+        table_total: "Samlet antal stemmer"
+    residence:
+      flash:
+        create: "Verificeret ID"
+        not_allowed: "Du har ingen arbejdsopgaver i dag"
+      new:
+        title: Erklær dokument gyldigt
+        submit: Erklær dokument gyldigt
+        error_verifying_census: "Dit identitetsdokument kunne ikke verificeres."
+        form_errors: forhindrede verificeringen af dit identitetsdokument
+    voters:
+      new:
+        title: Afstemninger
+        table_poll: Afstemning
+        table_status: Afstemningsstatus
+        table_actions: Handlinger
+        not_to_vote: Denne person har besluttet ikke at stemme på dette tidspunkt
+      show:
+        can_vote: Kan stemme
+        cannot_vote: Vedkommende kan ikke stemme, fordi han/hun ikke er registreret i det distrikt, hvor afstemningen finder sted.
+        error_already_voted: Har allerede deltaget i afstemningen
+        submit: Bekræft stemme
+        success: "Du har stemt!"
+      can_vote:
+        submit_disable_with: "Vent, bekræfter stemme..."

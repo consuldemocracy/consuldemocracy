@@ -8,7 +8,7 @@ ar:
         alert:
           failure: هناك مشكلة في إرسال بريد إلكتروني إلى الحساب الخاص بك
         flash:
-          success: 'لقد أرسلنا رسالة تأكيد إلكترونية إلى حسابك:%{email}'
+          success: "لقد أرسلنا رسالة تأكيد إلكترونية إلى حسابك:%{email}"
       show:
         alert:
           failure: رمز التحقق غير صحيح
@@ -19,29 +19,73 @@ ar:
         unconfirmed_code: لم تقم بادخال رمز التحقق
       create:
         flash:
-          offices: مكاتب دعم المواطنين
+          success: شكرًا لك على طلب <b>رمز الحماية الأقصى (مطلوب فقط للأصوات النهائية)</b>. في غضون أيام قليلة، سوف نرسلها إلى العنوان الذي يظهر في البيانات الموجودة لدينا في الملف. يرجى تذكر أنه، إذا كنت تفضل ذلك، يمكنك أخذ الشفرة الخاصة بك من أي مكتب لدعم المواطنين.
+      edit:
+        see_all: انظر جميع المقترحات
+        title: أحرف مطلوبة
       errors:
         incorrect_code: رمز التحقق غير صحيح
       new:
-        explanation: 'للمشاركة في التصويت النهائي يمكن لك أن:'
+        explanation: "للمشاركة في التصويت النهائي يمكن لك أن:"
         go_to_index: انظر جميع المقترحات
-        office: التحقق من أي %{office}
-        offices: مكاتب دعم المواطنين
         send_letter: أرسل لي رسالة مع الرمز
         title: تهانينا!
         user_permission_info: من خلال حسابك يمكنك...
+      update:
+        flash:
+          success: الكود صحيح. تم التأكد من حسابك بنجاح
     redirect_notices:
+      already_verified: تم تأكيد حسابك مسبقاً
       email_already_sent: لقد أرسلنا بالفعل رسالة إلكترونية تحتوي على رابط التأكيد. إذا لم تتمكن من إيجاد الرسالة الإلكترونية، يمكنك طلب إرسال رسالة أخرى
     residence:
+      alert:
+        unconfirmed_residency: لم تؤكد إقامتك بعد
+      create:
+        flash:
+          success: تم التحقق من الإقامة
       new:
-        date_of_birth: تاريخ الميلاد
+        accept_terms_text: أقبل %{terms_url} التعداد
+        accept_terms_text_title: أوافق على أحكام وشروط النّفاذ إلى التعداد
+        document_number: رقم الوثيقة
         document_number_help_title: المساعدة
-        postal_code: الرمز البريدي
+        document_number_help_text: "<strong>DNI</strong>: 12345678A<br> <strong>جواز السّفر</strong>: AAA000001<br> <strong>بطاقة الإقامة</strong>: X1234567P"
+        document_type:
+          passport: جواز السفر
+          residence_card: بطاقة الإقامة
+          spanish_id: بطاقة الهوية
+        error_not_allowed_age: ليس لديك العمر المطلوب للمشاركة
+        error_not_allowed_postal_code: يجب أن تكون مسجلا ليتم التحقق منك.
+        error_verifying_census: لم يتمكن الاحصاء من التحقق من معلوماتك. الرجاء تأكيد صحة تفاصيل الاحصاء عن طريق الاتصال بمجلس المدينة أو زيارة أحد مكاتب دعم المواطن.
+        form_errors: منعَ التحقق من إقامتك
         postal_code_note: لتتمكن من تاكيد حسابك يرجى التسجيل
+        terms: أحكام وشروط النّفوذ
+        title: التحقق من مكان الإقامة
+        verify_residence: التحقق من مكان الإقامة
     sms:
+      create:
+        flash:
+          success: ادخل الرمز الذي ارسل إلك برسالة نصية
       edit:
         resend_sms_link: اضغط هنا لاعادة الارسال
+        resend_sms_text: لم احصل على رمز التاكيد ؟
+        submit_button: إرسال
+        title: رمز التأكيد
+      new:
+        phone: ادخل رقم الموبايل ليصلك الرمز
+        phone_format: "<strong><em>(مثال: 0958044933 أو +963934543234)</em></strong>"
+        phone_note: سوف نستخدم رقم الموبايل لإرسال الرمز فقط ، لن يتم الاتصال بك مطلقاً.
         submit_button: ارسال
+        title: إرسال رمز التأكيد
+      update:
+        error: كود تأكيد غير صحيح
+        flash:
+          level_three:
+            success: الرمز صحيح. تم التأكد من حسابك بنجاح
+          level_two:
+            success: الرمز الصحيح
+    step_1: الإقامة
+    step_2: رمز التأكيد
+    step_3: الخطوة الأخيرة للتحقق
     user_permission_debates: المشاركة بالحوارات
     user_permission_info: التحقق من معلومات سيمنحك...
     user_permission_proposal: انشاء مقترحات جديدة

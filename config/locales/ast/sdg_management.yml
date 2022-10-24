@@ -1,0 +1,14 @@
+ast:
+  sdg_management:
+    menu:
+      budget_investments: "Presupuestu participativu"
+      debates: "Alderique"
+      legislation_processes: "Procesos legislativos"
+      polls: "Votaciones"
+      proposals: "Propuestes"
+    relations:
+      index:
+        filter: "Filtru"
+        filters:
+          all: "Toes"
+          pending_sdg_review: "Pindios"

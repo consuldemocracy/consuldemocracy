@@ -1,1 +1,21 @@
 sv-FI:
+  admin:
+    menu:
+      admin_notifications: Meddelanden
+    admin_notifications:
+      index:
+        section_title: Meddelanden
+    system_emails:
+      comment:
+        title: "Kommentit"
+    results:
+      result:
+        table_votes: Röst
+    stats:
+      budget_balloting:
+        vote_count: Röst
+      budget_supporting:
+        vote_count: Röst
+    local_census_records:
+      index:
+        date_of_birth: Födelsedatum

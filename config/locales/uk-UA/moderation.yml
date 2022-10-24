@@ -1,0 +1,105 @@
+uk-UA:
+  moderation:
+    comments:
+      index:
+        block_authors: Заблокувати авторів
+        filter: Фільтр
+        filters:
+          all: Усі
+          pending_flag_review: В очікуванні
+          with_ignored_flag: Позначити як переглянуте
+        headers:
+          comment: Коментар
+          moderate: Модерувати
+        hide: Приховати коментарі
+        ignore_flags: Позначити як переглянуте
+        orders:
+          flags: З найбільшою кількістю відміток
+          newest: Найновіші
+        title: Коментарі
+    dashboard:
+      index:
+        title: Модерування
+    debates:
+      index:
+        block_authors: Заблокувати авторів
+        filter: Фільтр
+        filters:
+          all: Усі
+          pending_flag_review: В очікуванні
+          with_ignored_flag: Позначити як переглянуте
+        headers:
+          debate: Обговорення
+          moderate: Модерувати
+        hide: Приховати обговорення
+        ignore_flags: Позначити як переглянуте
+        orders:
+          created_at: Найновіші
+          flags: З найбільшою кількістю відміток
+        title: Обговорення
+    header:
+      title: Модерування
+    menu:
+      flagged_comments: Коментарі
+      flagged_debates: Обговорення
+      flagged_investments: Бюджетні інвестиції
+      proposals: Пропозиції
+      proposal_notifications: Сповіщення щодо пропозицій
+      users: Заблокувати користувачів
+    proposals:
+      index:
+        block_authors: Заблокувати авторів
+        filter: Фільтр
+        filters:
+          all: Усі
+          pending_flag_review: Очікують на розгляд
+          with_ignored_flag: Позначити як переглянуте
+        headers:
+          moderate: Модерувати
+          proposal: Пропозиція
+        hide: Приховати пропозиції
+        ignore_flags: Позначити як переглянуте
+        orders:
+          created_at: Найновіші
+          flags: З найбільшою кількістю відміток
+        title: Пропозиції
+    budget_investments:
+      index:
+        block_authors: Заблокувати авторів
+        filter: Фільтр
+        filters:
+          all: Усі
+          pending_flag_review: В очікуванні
+          with_ignored_flag: Позначити як переглянуте
+        headers:
+          moderate: Модерувати
+          budget_investment: Бюджетна інвестиція
+        hide: Приховати бюджетні інвестиції
+        ignore_flags: Позначити як переглянуте
+        orders:
+          created_at: Найновіші
+          flags: З найбільшою кількістю відміток
+        title: Бюджетні інвестиції
+    proposal_notifications:
+      index:
+        block_authors: Заблокувати авторів
+        filter: Фільтр
+        filters:
+          all: Усі
+          pending_review: Очікують на розгляд
+          ignored: Позначити як переглянуте
+        headers:
+          moderate: Модерувати
+          proposal_notification: Сповіщення щодо пропозицій
+        hide: Приховати пропозиції
+        ignore_flags: Позначити як переглянуте
+        orders:
+          created_at: Найновіші
+          moderated: Відмодеровано
+        title: Сповіщення щодо пропозицій
+    users:
+      index:
+        hide: Заблокувати
+        search_placeholder: email або ім'я користувача
+        title: Заблокувати користувачів
+      notice_hide: Користувача заблоковано. Усі обговорення та коментарі цього користувача приховано.

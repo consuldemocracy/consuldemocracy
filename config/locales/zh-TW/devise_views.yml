@@ -2,11 +2,10 @@ zh-TW:
   devise_views:
     confirmations:
       new:
-        email_label: 電郵
         submit: 重新發送說明
         title: 重新發送確認說明
       show:
-        instructions_html: 用電郵%{email} 確認帳戶
+        instructions: 用電郵%{email} 確認帳戶
         new_password_confirmation_label: 重複訪問密碼
         new_password_label: 新訪問密碼
         please_set_password: 請選擇您的新密碼 (將允許您使用上面的電郵登錄)
@@ -15,7 +14,7 @@ zh-TW:
     mailer:
       confirmation_instructions:
         confirm_link: 確認我的帳戶
-        text: '您可以通過以下鏈接確認您的電郵帳戶：'
+        text: "您可以通過以下鏈接確認您的電郵帳戶："
         title: 歡迎
         welcome: 歡迎
       reset_password_instructions:
@@ -23,12 +22,12 @@ zh-TW:
         hello: 您好
         ignore_text: 如果您沒有請求更改密碼，您可以忽略此電郵。
         info_text: 您的密碼將不會更改，除非您訪問該鏈接並進行編輯。
-        text: '我們收到更改密碼的請求。 您可以通過以下鏈接來執行此操作：'
+        text: "我們收到更改密碼的請求。 您可以通過以下鏈接來執行此操作："
         title: 更改您的密碼
       unlock_instructions:
         hello: 您好
         info_text: 您的帳戶已被禁用，因為登錄失敗嘗試次數過多。
-        instructions_text: '請點擊此鏈接以解鎖您的帳戶：'
+        instructions_text: "請點擊此鏈接以解鎖您的帳戶："
         title: 你的賬戶被鎖了
         unlock_link: 解鎖我的帳戶
     menu:
@@ -39,18 +38,16 @@ zh-TW:
     organizations:
       registrations:
         new:
-          email_label: 電郵
-          organization_name_label: 組織名稱
           password_confirmation_label: 確認密碼
-          password_label: 密碼
-          phone_number_label: 電話號碼
-          responsible_name_label: 集體負責人的全名
           responsible_name_note: 這將是代表協會/集體的人，所有建議都會用他的名義提出
           submit: 註冊
           title: 註冊為一個組織或集體
         success:
           back_to_index: 我明白；回到主頁
-          instructions_3_html: 一旦確認後，您可以作為未核實的集體來開始參與。
+          instructions_1: "<b>我們會盡快與您聯繫</b>以核實您確實代表此集體。"
+          instructions_2: 在<b>審查您的電郵</b>的同時，我們已向您發送了<b>鏈接以確認您的帳戶</b>。
+          instructions_3: 一旦確認後，您可以作為未核實的集體來開始參與。
+          thank_you: 感謝您在網站上註冊您的集體。 現在<b>有待審核</b>。
           title: 註冊組織/集體
     passwords:
       edit:
@@ -59,13 +56,10 @@ zh-TW:
         password_label: 新密碼
         title: 更改您的密碼
       new:
-        email_label: 電郵
         send_submit: 發送說明
         title: 忘記密碼？
     sessions:
       new:
-        login_label: 電郵或用戶名
-        password_label: 密碼
         remember_me: 記住我
         submit: 進入
         title: 登錄
@@ -100,15 +94,12 @@ zh-TW:
           password_confirmation_label: 確認新密碼
           password_label: 新密碼
           update_submit: 更新
-          waiting_for: '等待確認：'
+          waiting_for: "等待確認："
         new:
           cancel: 取消登錄
-          email_label: 電郵
           organization_signup: 你是否代表一個組織或集體？%{signup_link}
           organization_signup_link: 在此登記
           password_confirmation_label: 確認密碼
-          password_label: 密碼
-          redeemable_code: 驗證碼通過電郵接收 (可選擇填寫)
           submit: 註冊
           terms: 註冊即表示您接受 %{terms}
           terms_link: 使用條款及條件
@@ -116,10 +107,10 @@ zh-TW:
           title: 註冊
           username_is_available: 可用的用戶名
           username_is_not_available: 用戶名已被使用
-          username_label: 用戶名
           username_note: 顯示在您的帖子旁邊的名稱
         success:
           back_to_index: 我明白；回到主頁
-          instructions_1_html: 請<b>查看您的電郵</b> - 我們已向您發送了<b>鏈接以確認您的帳戶</b>。
-          instructions_2_html: 一旦確認後，您可以開始參與。
-          thank_you_html: 感謝您在此網站註冊。 您現在必須<b>確認您的電郵地址</b>。
+          instructions_1: 請<b>查看您的電郵</b> - 我們已向您發送了<b>鏈接以確認您的帳戶</b>。
+          instructions_2: 一旦確認後，您可以開始參與。
+          thank_you: 感謝您在此網站註冊。 您現在必須<b>確認您的電郵地址</b>。
+          title: 修改您的電郵

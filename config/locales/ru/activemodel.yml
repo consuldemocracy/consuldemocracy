@@ -16,6 +16,19 @@ ru:
           confirmation_code: "Код подтверждения"
         email:
           recipient: "Электронный адрес"
+      verification/letter:
+        email: "Email"
+        password: "Пароль"
+        verification_code: "Код, который вы получили в письме"
+      verification/management/document:
+        document_type: "Тип документа:"
+        document_number: "Номер документа"
+      verification/residence:
+        date_of_birth: "Дата рождения"
+        document_type: "Тип документа"
+        postal_code: "Почтовый индекс"
+      verification/sms:
+        confirmation_code: "Введите код, который вы получили на свой мобильный телефон"
       officing/residence:
         document_type: "Тип документа"
         document_number: "Номер документа (включая буквы)"

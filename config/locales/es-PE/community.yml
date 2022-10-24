@@ -16,15 +16,14 @@ es-PE:
       create_first_community_topic:
         first_theme_not_logged_in: No hay ningún tema disponible, participa creando el primero.
         first_theme: Crea el primer tema de la comunidad
-        sign_in: "iniciar sesión"
-        sign_up: "registrarte"
+        sub_first_theme: "Para crear un tema debes %{sign_in} o %{sign_up}."
       tab:
         participants: Participantes
       sidebar:
-        participate: Participa
-        new_topic: Crea un tema
+        participate: Empieza a participar
+        new_topic: Crear tema
       topic:
-        edit: Editar tema
+        edit: Guardar cambios
         destroy: Eliminar tema
         comments:
           zero: Sin comentarios
@@ -36,14 +35,12 @@ es-PE:
       create: Crear un tema
       edit: Editar tema
       form:
-        topic_title: Título
-        topic_text: Texto inicial
         new:
-          submit_button: Crear tema
+          submit_button: Crea un tema
         edit:
-          submit_button: Guardar cambios
+          submit_button: Editar tema
         create:
-          submit_button: Crear tema
+          submit_button: Crea un tema
         update:
           submit_button: Actualizar tema
       show:
@@ -54,6 +51,3 @@ es-PE:
         recommendation_one: No escribas el título del tema o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
         recommendation_two: Cualquier tema o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios del tema, todo lo demás está permitido.
         recommendation_three: Disfruta de este espacio, de las voces que lo llenan, también es tuyo
-  topics:
-    show:
-      login_to_comment: Necesitas %{signin} o %{signup} para comentar.

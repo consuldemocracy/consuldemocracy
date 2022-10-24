@@ -6,48 +6,9 @@
 
 <div id="valuators">
   <% if @valuators.any? %>
-    <h3 class="margin"><%= page_entries_info @valuators %></h3>
+    <h3><%= page_entries_info @valuators %></h3>
 
-    <table>
-      <thead>
-        <th scope="col"><%= t("admin.valuators.index.name") %></th>
-        <th scope="col"><%= t("admin.valuators.index.email") %></th>
-        <th scope="col"><%= t("admin.valuators.index.description") %></th>
-        <th scope="col"><%= t("admin.valuators.index.group") %></th>
-        <th scope="col" class="small-3"><%= t("admin.actions.actions") %></th>
-      </thead>
-      <tbody>
-        <% @valuators.each do |valuator| %>
-          <tr>
-            <td><%= link_to valuator.name, admin_valuator_path(valuator) %></td>
-            <td><%= valuator.email %></td>
-            <td>
-              <% if valuator.description.present? %>
-                <%= valuator.description %>
-              <% else %>
-                <%= t("admin.valuators.index.no_description") %>
-              <% end %>
-            </td>
-            <td>
-              <% if valuator.valuator_group.present? %>
-                <%= valuator.valuator_group.try(:name) %>
-              <% else %>
-                <%= t("admin.valuators.index.no_group") %>
-              <% end %>
-            </td>
-            <td>
-              <%= link_to t("admin.actions.edit"),
-                          edit_admin_valuator_path(valuator),
-                          class: "button hollow" %>
-              <%= link_to t("admin.valuators.valuator.delete"),
-                          admin_valuator_path(valuator),
-                          method: :delete,
-                          class: "button hollow alert" %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <%= render "valuators", valuators: @valuators %>
 
     <%= paginate @valuators %>
   <% else %>

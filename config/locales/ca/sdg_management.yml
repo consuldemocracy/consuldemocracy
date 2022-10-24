@@ -1,0 +1,18 @@
+ca:
+  sdg_management:
+    homepage:
+      header:
+        create: "Crea capçalera"
+        title: "Capçalera"
+    menu:
+      budget_investments: "Pressupostos participatius"
+      debates: "Debats"
+      legislation_processes: "processos legislatius"
+      polls: "votacions"
+      proposals: "Propostes ciutadanes"
+    relations:
+      index:
+        filter: "Filtrar"
+        filters:
+          all: "tots"
+          pending_sdg_review: "Sense decidir"

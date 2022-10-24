@@ -16,7 +16,20 @@ ar:
           confirmation_code: "رمز التأكيد"
         email:
           recipient: "البريد الإلكتروني"
+      verification/letter:
+        email: "البريد الإلكتروني"
+        password: "كلمة المرور"
+        verification_code: "الكود الذي وصل في الرسالة"
+      verification/management/document:
+        document_type: "نوع الوثيقة:"
+        document_number: "رقم الوثيقة"
+      verification/residence:
+        date_of_birth: "تاريخ الميلاد"
+        document_type: "نوع الوثيقة"
+        postal_code: "الرمز البريدي"
+      verification/sms:
+        confirmation_code: "أدخل الرمز الذي وصلك على هاتفك"
       officing/residence:
         document_type: "نوع الوثيقة"
         document_number: "رقم المستند (بما في ذلك الاحرف)"
-        year_of_birth: "ولد في العام"
+        year_of_birth: "عام الولادة"

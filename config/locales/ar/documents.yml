@@ -1,14 +1,14 @@
 ar:
   documents:
-    title: مستندات
-    max_documents_allowed_reached_html: لقد وصلت الى الحد الاقصى لعدد الوثائق المسموح به! <strong> يجب عليك ان تحذف واحدة قبل ان ترفع اخرى.</strong>
+    title: الوثائق
+    max_documents_allowed_reached: لقد وصلت الى الحد الاقصى لعدد الوثائق المسموح به! <strong> يجب عليك ان تحذف واحدة قبل ان ترفع اخرى.</strong>
+    additional: وثائق إضافية
     form:
-      title: وثائق
+      title: الوثائق
       title_placeholder: اضف عنوان وصفي للمستند
-      attachment_label: اختر وثيقة
       delete_button: ازالة مستند
       cancel_button: إلغاء
-      note: "يمكنك تحميل بحد اقصى قدره%{max_documents_allowed} وثائق لانواع المحتوى التالية: %{accepted_content_types}، يصل الى %{max_file_size} ميغابايت لكل ملف."
+      note: "يمكنك تحميل ما يصل إلى%{max_documents_allowed} وثيقة بحد أقصى من أنواع المحتوى التالية: %{accepted_content_types} ، و ذلك حتى %{max_file_size} ميغابايت لكل ملف."
       add_new_document: اضافة مستند جديد
     actions:
       destroy:
@@ -16,9 +16,9 @@ ar:
         alert: يتعذر اتلاف الوثيقة.
         confirm: هل انت متاكد من انك تريد حذف المستند؟ لا يمكن التراجع هن هذه الخطوة!
     buttons:
-      download_document: تحميل الملف
+      download_document: تنزيل الملف
       destroy_document: تدمير المستند
     errors:
       messages:
-        in_between: يجب ان تكون بين %{min} و %{max}
-        wrong_content_type: نوع المحتوى%{content_type} لا يطابق اي من المحتويات المقبولة %{accepted_content_types}
+        in_between: يجب أن تكون بين %{min} و %{max}
+        wrong_content_type: الإمتداد %{content_type} لا يتطابق مع الإمتداد المسموح بها %{accepted_content_types}

@@ -1,0 +1,42 @@
+.admin .budgets-help {
+  $padding: $line-height / 2;
+  $quote-size: 1em;
+  $quote-padding: 2 * $quote-size / 5;
+  $quote-width: $quote-size + 2 * $quote-padding;
+
+  @include has-fa-icon(quote-right, solid, after);
+  background: $table-header;
+  border-radius: rem-calc(6);
+  clear: both;
+  color: $admin-text;
+  margin-bottom: $line-height;
+  padding: $padding;
+  padding-right: calc(2 * #{$padding} + #{$quote-width});
+  position: relative;
+
+  @include breakpoint(medium) {
+    width: 50%;
+  }
+
+  p {
+    font-size: $small-font-size;
+    font-style: italic;
+  }
+
+  &::before {
+    background: #ccd8e4;
+    content: "";
+    height: 100%;
+    position: absolute;
+    right: $padding;
+    top: 0;
+    width: $quote-width;
+  }
+
+  &::after {
+    bottom: $padding / 2;
+    color: $white;
+    position: absolute;
+    right: calc(#{$padding} + #{$quote-padding});
+  }
+}

@@ -36,11 +36,6 @@ so:
       groups:
         all_city: Dhamaan Magalooyinka
         districts: Degmooyinka
-      valuator_groups:
-        culture_and_sports: Dhaqanka& ciyaraha
-        gender_and_diversity: Jinsiaga & kaladuwanata siyasadaha
-        urban_development: Horumarka waara ee magalooyinka
-        equity_and_employment: Sinanta iyo shaqada
       statuses:
         studying_project: Baranaya Mashruca
         bidding: Dalbashada
@@ -49,7 +44,6 @@ so:
     polls:
       current_poll: "Rayiga haadda"
       current_poll_geozone_restricted: "Ra'yiga hadda taagan Geozone xaddidan"
-      incoming_poll: "Codayn soo socota"
       recounting_poll: "Dib u Tiriinta codaynta"
       expired_poll_without_stats: "Codeynta oo dhacay taariikh aan lahayn balabsho & Natijooyin"
       expired_poll_with_stats: "Codeynta oo dhacay taariikh aan leh balabsho & Natijooyin"

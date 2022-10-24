@@ -1,4 +1,4 @@
-class CreateAdminNotifications < ActiveRecord::Migration
+class CreateAdminNotifications < ActiveRecord::Migration[4.2]
   def change
     create_table :admin_notifications do |t|
       t.string :title

@@ -3,18 +3,16 @@ pt-BR:
     comments:
       index:
         block_authors: Bloquear autores
-        confirm: Tem certeza?
-        filter: Filtrar
+        filter: Filtro
         filters:
-          all: Todos
+          all: Tudo
           pending_flag_review: Pendente
-          with_ignored_flag: Marcar como visto
+          with_ignored_flag: Marcados como visto
         headers:
-          comment: Comentário
+          comment: Comentar
           moderate: Moderar
-        hide_comments: Ocultar comentários
+        hide: Ocultar comentários
         ignore_flags: Marcar como visto
-        order: Ordem
         orders:
           flags: Mais sinalizado
           newest: Mais recente
@@ -22,18 +20,16 @@ pt-BR:
     debates:
       index:
         block_authors: Bloquear autores
-        confirm: Tem certeza?
-        filter: Filtrar
+        filter: Filtro
         filters:
-          all: Todos
+          all: Tudo
           pending_flag_review: Pendente
-          with_ignored_flag: Marcados como visto
+          with_ignored_flag: Marcar como visto
         headers:
-          debate: Debate
+          debate: Debater
           moderate: Moderar
-        hide_debates: Ocultar os debates
+        hide: Ocultar os debates
         ignore_flags: Marcar como visto
-        order: Ordem
         orders:
           created_at: Mais recente
           flags: Mais sinalizado
@@ -50,16 +46,15 @@ pt-BR:
     proposals:
       index:
         block_authors: Bloquear autores
-        confirm: Tem certeza?
         filter: Filtro
         filters:
-          all: Todos
+          all: Tudo
           pending_flag_review: Revisão pendente
           with_ignored_flag: Marcar como visto
         headers:
           moderate: Moderar
           proposal: Proposta
-        hide_proposals: Ocultar propostas
+        hide: Ocultar propostas
         ignore_flags: Marcar como visto
         orders:
           created_at: Mais recentes
@@ -67,47 +62,41 @@ pt-BR:
         title: Propostas
     budget_investments:
       index:
-        block_authors: Bloquear alterações
-        confirm: Você tem certeza?
+        block_authors: Bloquear autores
         filter: Filtro
         filters:
-          all: Todos
+          all: Tudo
           pending_flag_review: Pendente
           with_ignored_flag: Marcar como visto
         headers:
           moderate: Moderar
-          budget_investment: Investimentos Orçamentários
-        hide_budget_investments: Ocultar investimentos orçamentários
+          budget_investment: Proposta de investimento
+        hide: Ocultar investimentos orçamentários
         ignore_flags: Marcar como visto
-        order: Ordenar por
         orders:
           created_at: Mais recentes
           flags: Mais sinalizado
-        title: Investimentos Orçamentários
+        title: Proposta de investimento
     proposal_notifications:
       index:
         block_authors: Bloquear autores
-        confirm: Você tem certeza?
-        filter: Filtrar
+        filter: Filtro
         filters:
-          all: Todos
+          all: Tudo
           pending_review: Revisão pendente
           ignored: Marcar como visto
         headers:
-          moderate: Moderado
-          proposal_notification: Notificação da proposta
-        hide_proposal_notifications: Ocultar propostas
-        ignore_flags: Marcar com visualizado
-        order: Ordenar por
+          moderate: Moderar
+          proposal_notification: Notificação de proposta
+        hide: Ocultar propostas
+        ignore_flags: Marcar como visto
         orders:
           created_at: Mais recentes
           moderated: Moderado
-        title: Notificações da proposta
+        title: Notificações de proposta
     users:
       index:
-        hidden: Bloqueados
         hide: Bloquear
-        search: Buscar
         search_placeholder: e-mail ou nome de usuário
         title: Bloquear usuários
       notice_hide: Usuário bloqueado. Todos os debates e comentários do usuário foram ocultados.

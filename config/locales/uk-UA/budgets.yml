@@ -1,0 +1,212 @@
+uk-UA:
+  budgets:
+    ballots:
+      show:
+        title: Ваше голосування
+        amount_available:
+          knapsack: "Ви можете інвестувати <span>%{count}</span>."
+          approval:
+            zero: "Ви можете віддати ще <span>%{count}</span> голосів."
+            one: "Ви можете віддати ще <span>%{count}</span> голос."
+            few: "Ви можете віддати ще <span>%{count}</span> голоси."
+            many: "Ви можете віддати ще <span>%{count}</span> голосів."
+            other: "Ви можете віддати ще <span>%{count}</span> голосів."
+        amount_spent:
+          knapsack: "Використана кількість <span>%{count}</span>"
+          approval:
+            zero: "Віддано голосів: <span>%{count}</span>"
+            one: "Віддано голосів: <span>%{count}</span>"
+            few: "Віддано голосів: <span>%{count}</span>"
+            many: "Віддано голосів: <span>%{count}</span>"
+            other: "Віддано голосів: <span>%{count}</span>"
+        amount_limit:
+          knapsack: "%{count}"
+          approval:
+            one: "Ви можете проголосувати за <span>1</span> проєкт"
+            few: "Ви можете проголосувати за <span>%{count}</span> проєкти"
+            many: "Ви можете проголосувати за <span>%{count}</span> проєктів"
+            other: "Ви можете проголосувати за <span>%{count}</span> проєктів"
+        no_balloted_group_yet: "Ви ще не голосували у цій групі. Вперед!"
+        remove: Скасувати голос
+        voted:
+          one: "Ви віддали голос за <span>одну</span> інвестицію."
+          few: "Ви віддали голоси за <span>%{count}</span> інвестиції."
+          many: "Ви віддали голоси за <span>%{count}</span> інвестицій."
+          other: "Ви віддали голоси за <span>%{count}</span> інвестицій."
+        voted_info: "Ваш голос підтверджено!"
+        voted_info_2: "Ви маєте можливість змінити свій вибір в будь-який час до завершення даного етапу."
+        zero: Ви не проголосували за жоден інвестиційний проєкт.
+      reasons_for_not_balloting:
+        not_verified: Тільки підтверджені користувачі можуть голосувати за інвестиції; %{verify_account}.
+        not_selected: Ви не можете підтримати не вибрані інвестиційні проєкти
+        not_enough_money: "Ви вже розподілили доступний бюджет.<br><small>Пам'ятайте, що ви можете %{change_ballot} у будь-який час</small>"
+        no_ballots_allowed: Фаза відбору закрита
+        different_heading_assigned: "Ви вже віддали голос за інший заголовок: %{heading_link}"
+        not_enough_available_votes: "Ви віддали максимально дозволену кількість голосів"
+        change_ballot: змінити голоси
+        casted_offline: Ви вже взяли участь в офлайн-режимі
+    groups:
+      show:
+        title: Обрати варіант
+    phase:
+      drafting: Чернетка (не є публічно доступною)
+      informing: Інформація
+      accepting: Прийняття проєктів
+      reviewing: Перегляд проєктів
+      selecting: Відбір проєктів
+      valuating: Оцінювання проєктів
+      publishing_prices: Публікування вартості проєктів
+      balloting: Голосування за проєкти
+      reviewing_ballots: Перегляд голосування
+      finished: Готовий бюджет
+    index:
+      title: Бюджети участі
+      empty_budgets: Бюджетів немає.
+      section_header:
+        icon_alt: Значок партисипативних бюджетів
+        title: Бюджети участі
+        help: Допомога щодо бюджетів участі
+      all_phases: Етапи бюджетної інвестиції
+      map: Пропозиції щодо бюджетних інвестицій, розташовані географічно
+      finished_budgets: Готові бюджети участі
+      see_results: Переглянути результати
+      section_footer:
+        title: Допомога щодо бюджетів участі
+        description: За допомогою бюджетів участі громадяни вирішують, на які проєкти буде виділена частина бюджету.
+      milestones: Віхи
+    investments:
+      form:
+        title: "Створити бюджетну інвестицію"
+        tag_category_label: "Категорії"
+        tags_instructions: "Відмітьте цю пропозицію. Ви можете вибрати із запропонованих або створити власну"
+        tags_label: Теги
+        tags_placeholder: "Введіть теги, які хочете використовувати, розділивши їх комами (,)"
+        map_location: "Розташування мапи"
+        map_location_instructions: "Знайдіть місце на мапі та розташуйте на ньому маркер."
+        map_remove_marker: "Вилучити маркер"
+      index:
+        title: Бюджетування участі
+        unfeasible: Недоцільні інвестиційні проєкти
+        unfeasible_text: "Інвестиції повинні відповідати низці критеріїв (законність, конкретність, не перевищувати обмеження бюджету), щоб бути визнаними доцільними та дійти до стадії остаточного голосування. Усі інвестиції, які не відповідають цим критеріям, позначені як недоцільні та опубліковані в наступному переліку разом із звітом про недоцільність."
+        by_heading: "Інвестиційні проєкти з обсягом: %{heading}"
+        search_form:
+          button: Пошук
+          placeholder: Шукати інвестиційні проєкти...
+          title: Пошук
+        sidebar:
+          my_ballot: Моє голосування
+          voted_info:
+            knapsack:
+              one: "<strong> Ви проголосували за одну пропозицію вартістю в %{amount_spent}</strong>"
+              few: "<strong> Ви проголосували за %{count} пропозиції вартістю в %{amount_spent}</strong>"
+              many: "<strong> Ви проголосували за %{count} пропозицій вартістю в %{amount_spent}</strong>"
+              other: "<strong> Ви проголосували за %{count} пропозицій вартістю в %{amount_spent}</strong>"
+            approval:
+              one: "<strong>Ви проголосували за одну пропозицію</strong>"
+              few: "<strong>Ви проголосували за %{count} пропозиції</strong>"
+              many: "<strong>Ви проголосували за %{count} пропозицій</strong>"
+              other: "<strong>Ви проголосували за %{count} пропозицій</strong>"
+          change_vote_link: "змінити голос"
+          different_heading_assigned: "У вас є активні голоси в іншому заголовку: %{heading_link}"
+          change_ballot: "Якщо ви передумали, ви можете видалити свої голоси в %{check_ballot} і розпочати знову."
+          check_ballot_link: "перевірити і підтвердити моє голосування"
+          zero: Ви не проголосували за жоден інвестиційний проєкт у цій групі.
+          verified_only: "Для створення нової бюджетної інвестиції %{verify}."
+          create: "Створити бюджетну інвестицію"
+          not_logged_in: "Щоб створити нову бюджетну інвестицію, потрібно %{sign_in} або %{sign_up}."
+        filters:
+          selected: "Вибрано"
+          unfeasible: "Недоцільно"
+          winners: "Переможці"
+        orders:
+          random: випадково
+          confidence_score: найвищий рейтинг
+          price: за вартістю
+      share:
+        message: "Я створив інвестиційний проект %{title} у %{handle}. Створіть теж інвестиційний проект!"
+      show:
+        author_deleted: Користувача видалено
+        price_explanation: Обґрунтування вартості
+        unfeasibility_explanation: Обґрунтування недоцільності
+        code: "Код інвестиційного проєкту:<strong>%{code}</strong>"
+        location: "Розташування: <strong>%{location}</strong>"
+        organization_name: "Запропоновано від імені: <strong>%{name}</strong>"
+        share: Поділитися
+        title: Інвестиційний проєкт
+        supports: Підтримки
+        votes: Голоси
+        price: Вартість
+        comments_tab: Коментарі
+        milestones_tab: Віхи
+        author: Автор
+        project_unfeasible: "Цей інвестиційний проєкт <strong> був позначений як недоцільний </strong> і не перейде до фази голосування."
+        project_selected: "Цей інвестиційний проєкт <strong> був відібраний </strong> для фази голосування."
+        project_winner: "Інвестиційний проєкт, який отримав перемогу"
+        project_not_selected: "Цей інвестиційний проєкт <strong> не був відібраний </strong> для фази голосування."
+        see_price_explanation: Переглянути обґрунтування вартості
+      wrong_price_format: Тільки цілі числа
+      investment:
+        add: Голосувати
+        already_added: Ви вже додали цей інвестиційний проєкт
+        support_title: Підтримати цей проєкт
+        supports:
+          zero: Немає підтримок
+          one: 1 підтримка
+          few: "%{count} підтримки"
+          many: "%{count} підтримок"
+          other: "%{count} підтримок"
+      header:
+        check_ballot: "Перевірити і підтвердити моє голосування"
+        different_heading_assigned: "У вас є активні голоси в іншому заголовку: %{heading_link}"
+        change_ballot: "Якщо ви передумали, ви можете видалити свої голоси в %{check_ballot} і розпочати знову."
+        check_ballot_link: "перевірити і підтвердити моє голосування"
+        price: "Цей головок має бюджет"
+      votes:
+        already_supported: "Ви вже підтримали цей інвестиційний проєкт. Поділіться ним!"
+        confirm_group:
+          one: "Ви можете підтримувати інвестиції лише на %{count} дільниці. Якщо ви продовжите, ви не зможете змінити вибори на своїй дільниці. Ви впевнені?"
+          few: "Ви можете підтримувати інвестиції лише на %{count} дільницях. Якщо ви продовжите, ви не зможете змінити вибори на своїй дільниці. Ви впевнені?"
+          many: "Ви можете підтримувати інвестиції лише на %{count} дільницях. Якщо ви продовжите, ви не зможете змінити вибори на своїй дільниці. Ви впевнені?"
+          other: "Ви можете підтримувати інвестиції лише на %{count} дільницях. Якщо ви продовжите, ви не зможете змінити вибори на своїй дільниці. Ви впевнені?"
+        support: "Підтримка"
+    investments_list:
+      investment:
+        price: "Ціна"
+        supports: "Підтримання"
+    show:
+      see_results: Переглянути результати
+    results:
+      link: Результати
+      page_title: "%{budget} - Результати"
+      heading: "Результати бюджетів участі"
+      heading_selection_title: "За дільницями"
+      ballot_lines_count: Голоси
+      hide_discarded_link: Приховати відхилені
+      show_all_link: Показати усі
+      price: Вартість
+      amount_available: Доступний бюджет
+      accepted: "Прийняті інвестиції: "
+      discarded: "Відхилені інвестиції: "
+      incompatibles: Несумісні
+      investment_title: Назва проєкту
+      investment_proyects: Перелік усіх інвестиційних проєктів
+      unfeasible_investment_proyects: Перелік усіх недоцільних інвестиційних проєктів
+      not_selected_investment_proyects: Перелік усіх інвестиційних проєктів, не відібраних для голосування
+    executions:
+      link: "Віхи"
+      page_title: "%{budget} - Віхи"
+      heading: "Віхи бюджетів участі"
+      heading_selection_title: "За дільницями"
+      no_winner_investments: "У цій області немає інвестиції, що отримала перемогу"
+      filters:
+        status:
+          label: "Поточний стан проєкту"
+          all: "Усі (%{count})"
+        milestone_tag:
+          label: "Тег етапу"
+          all: "Усі (%{count})"
+    phases:
+      errors:
+        dates_range_invalid: "Дата початку не може співпадати з датою завершення або бути пізнішою"
+        prev_phase_dates_invalid: "Дата початку повинна бути пізнішою, ніж дата початку попередньої фази (%{phase_name})"
+        next_phase_dates_invalid: "Дата завершення повинна бути ранішою, ніж дата завершення наступної фази (%{phase_name})"

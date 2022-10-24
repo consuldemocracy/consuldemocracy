@@ -1,0 +1,61 @@
+<div class="dashboard-proposals-stats">
+  <div class="row expanded">
+    <div class="small-12 medium-6 large-2 column">
+      <div class="counter">
+        <div class="counter-value">
+          <%= active_resources_for(proposal) %>
+          /
+          <%= active_resources_count(proposal) %>
+        </div>
+        <span class="counter-label"><%= t("layouts.dashboard.proposal_totals.active_resources") %></span>
+      </div>
+    </div>
+
+    <div class="small-12 medium-6 large-2 column counter-divider">
+      <div class="counter">
+        <div class="counter-value"><%= number_with_delimiter(community_members_count, delimiter: ".") %></div>
+        <span class="counter-label"><%= t("layouts.dashboard.proposal_totals.community") %></span>
+      </div>
+    </div>
+
+    <div class="change-behaviour">
+      <div class="small-12 medium-6 large-4 column supports">
+        <div class="counter">
+          <div class="counter-value">
+            <%= number_with_delimiter(proposal.votes_for.size, delimiter: ".") %>
+            /
+            <%= number_with_delimiter(next_goal_supports, delimiter: ".") %>
+          </div>
+          <div class="counter-label">
+            <%= t("layouts.dashboard.proposal_totals.supports", count: proposal.votes_for.size) %>
+            <br>
+            <%= t("layouts.dashboard.proposal_totals.current_goal") %>
+          </div>
+        </div>
+
+        <div class="next-goal-progress">
+          <%= next_goal_progress %>%
+        </div>
+        <div class="progress" role="progressbar" tabindex="0" aria-valuenow="0" aria-valuemin="0"
+             aria-valuetext="<%= "#{next_goal_progress}%" %>" aria-valuemax="100">
+           <div class="progress-meter" style="width: <%= next_goal_progress %>%"></div>
+        </div>
+      </div>
+
+      <div class="small-12 medium-6 large-4 column">
+        <div class="row">
+          <div class="small-12 column">
+            <div class="proposal-link">
+              <% if proposal.draft? %>
+                <%= link_to t("layouts.dashboard.proposal_totals.preview_proposal"), proposal_path(proposal), class: "button success expanded", target: "_blank" %>
+              <% else %>
+                <%= link_to t("layouts.dashboard.proposal_totals.show_proposal"), proposal_path(proposal), class: "button success expanded", target: "_blank" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

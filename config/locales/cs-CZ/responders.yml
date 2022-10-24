@@ -1,0 +1,38 @@
+cs:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} úspěšně vytvořen(a)."
+        debate: "Debata byla úspěšně vytvořena."
+        direct_message: "Vaše zpráva byla úspěšně odeslána."
+        poll: "Anketa úspěšně vytvořena."
+        poll_booth: "Booth byl úspěšně vytvořen."
+        poll_question_answer: "Odpověď byla úspěšně vytvořena"
+        poll_question_answer_video: "Video bylo úspěšně vytvořeno"
+        poll_question_answer_image: "Obrázek byl úspěšně nahrán"
+        proposal: "Návrh byl úspěšně vytvořen."
+        proposal_notification: "Vaše zpráva byla odeslána správně."
+        budget_investment: "Rozpočtová investice byla úspěšně vytvořena."
+        signature_sheet: "Podpisový list byl úspěšně vytvořen"
+        support: "Úspěšně podpořená investice"
+        topic: "Téma bylo úspěšně vytvořeno."
+        valuator_group: "Skupina hodnotitelů byla úspěšně vytvořena"
+      save_changes:
+        notice: Změny byly uloženy
+      update:
+        notice: "%{resource_name} byl úspěšně aktualizován."
+        debate: "Debata byla úspěšně aktualizovaná."
+        poll: "Anketa byla úspěšně aktualizovaná."
+        poll_booth: "Booth byl úspěšně aktualizován."
+        active_poll: "Popis ankety byl úspěšně aktualizován."
+        proposal: "Návrh byl úspěšně aktualizován."
+        budget_investment: "Investiční projekt byl úspěšně aktualizován."
+        topic: "Téma bylo úspěšně aktualizované."
+        valuator_group: "Skupina hodnotitelů byla úspěšně aktualizovaná"
+        translation: "Překlad byl úspěšně aktualizován"
+      destroy:
+        budget_investment: "Investiční projekt byl smazán."
+        error: "Nelze odstranit"
+        topic: "Téma bylo smazáno."
+        poll_question_answer_video: "Odpověď na video byla smazána."
+        valuator_group: "Skupina hodnotitelů byla smazána"

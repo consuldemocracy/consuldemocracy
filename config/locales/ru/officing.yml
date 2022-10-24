@@ -1,1 +1,89 @@
 ru:
+  officing:
+    header:
+      title: Голосование
+    dashboard:
+      index:
+        title: Удаленный офис голосования
+        info: Здесь вы можете проверить документы пользователя и сохранить результаты голосования
+        no_shifts: У вас на сегодня нет смен в удаленном офисе.
+    menu:
+      voters: Проверить документ
+      total_recounts: Всего пересчетов и результаты
+    polls:
+      final:
+        title: Голосования, готовые для финального пересчета
+        no_polls: Вы не осуществляете удаленную работу по финальным пересчетам ни в одном из активных голосований
+        select_poll: Выберите голосование
+        add_results: Добавить результаты
+    poll_budgets:
+      see_ballot_sheets: Просмотреть список бюллетеней
+      index:
+        title: "%{poll_budget} - Список бюллетеней"
+        ballot_sheet: "Бюллетень %{id}"
+        ballot_sheet_name: Название
+        ballot_sheet_author: Автор
+        ballot_sheet_creation_date: Дата создания
+        empty_results: Для этого голосования пока нет бюллетеней
+      new:
+        title: "%{poll_budget} - Новый бюллетень"
+        booth: Кабинка
+        select_booth: Выберите кабинку
+        csv_data: Данные в CSV
+        submit: Сохранить
+      show:
+        created_at: Дата создания
+        author: Автор
+        data: Данные в CSV
+    booth:
+      new:
+        title: "Выберите вашу кабинку"
+    results:
+      flash:
+        create: "Результаты сохранены"
+        error_create: "Результаты НЕ сохранены. Ошибка в данных."
+        error_wrong_booth: "Неправильная кабинка. Результаты НЕ сохранены."
+      new:
+        title: "%{poll} - Добавить результаты"
+        not_allowed: "Вам разрешено добавлять результаты для этого голосования"
+        booth: "Кабинка"
+        date: "Дата"
+        select_booth: "Выберите кабинку"
+        ballots_white: "Всего путсых бюллетеней"
+        ballots_null: "Недействительные бюллетени"
+        ballots_total: "Всего бюллетеней"
+        submit: "Сохранить"
+        results_list: "Ваши результаты"
+        see_results: "Просмотр результатов"
+      index:
+        no_results: "Нет результатов"
+        results: Результаты
+        table_answer: Ответ
+        table_votes: Голоса
+        table_whites: "Полностью пустые бюллетени"
+        table_nulls: "Недействительные бюллетени"
+        table_total: "Всего бюллетеней"
+    residence:
+      flash:
+        create: "Документы, верицифированные Цензусом"
+        not_allowed: "У вас на сегодня нет смен в удаленном офисе"
+      new:
+        title: Проверить документ
+        submit: Проверить документ
+        error_verifying_census: "Цензус не смог верифицировать этот документ."
+        form_errors: предотвращена верификация этого документа
+    voters:
+      new:
+        title: Опросы
+        table_poll: Опрос
+        table_status: Статус голосований
+        table_actions: Действия
+        not_to_vote: Лицо решило не голосовать в данный момент
+      show:
+        can_vote: Может голосовать
+        cannot_vote: Лицо не может голосовать, поскольку не зарегистрировано в районе(ах), где проводится голосование.
+        error_already_voted: Уже принял участие в этом голосовании
+        submit: Подтвердить голос
+        success: "Голос представлен!"
+      can_vote:
+        submit_disable_with: "Подождите, подтверждаем голос..."

@@ -7,7 +7,7 @@
 <div class="row">
   <div id="legislation" class="legislation-list small-12 medium-9 column">
 
-    <%= render 'shared/filter_subnav', i18n_namespace: "legislation.processes.index" %>
+    <%= render "shared/filter_subnav", i18n_namespace: "legislation.processes.index" %>
 
     <div id="legislation-list">
       <% if @processes.any? %>
@@ -15,7 +15,7 @@
         <%= paginate @processes %>
       <% else %>
         <div class="callout primary margin-top">
-          <%= t(".no_#{@current_filter}_processes") %>
+          <%= t("legislation.processes.index.no_#{@current_filter}_processes") %>
         </div>
       <% end %>
 

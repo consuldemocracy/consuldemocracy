@@ -1,4 +1,4 @@
-class CreateLegislationProposals < ActiveRecord::Migration
+class CreateLegislationProposals < ActiveRecord::Migration[4.2]
   def change
     create_table :legislation_proposals do |t|
       t.references :legislation_process, index: true, foreign_key: true
@@ -25,8 +25,7 @@ class CreateLegislationProposals < ActiveRecord::Migration
       t.text       :retired_explanation
       t.integer    :community_id
 
-      t.datetime   :created_at, null: false
-      t.datetime   :updated_at, null: false
+      t.timestamps null: false
     end
   end
 end

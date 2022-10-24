@@ -16,6 +16,20 @@ gl:
         no_polls: Non tes permiso para o reconto final en ningunha votación recente
         select_poll: Escolle votación
         add_results: Engadir resultados
+    poll_budgets:
+      index:
+        ballot_sheet_name: Nome
+        ballot_sheet_author: Autoría
+        ballot_sheet_creation_date: Data de creación
+      new:
+        booth: Urna
+        select_booth: Elixe urna
+        csv_data: Datos CSV
+        submit: Gardar
+      show:
+        created_at: Data de creación
+        author: Autoría
+        data: Datos CSV
     results:
       flash:
         create: "Gardaronse os resultados"
@@ -25,12 +39,12 @@ gl:
         title: "%{poll} - Engadir resultados"
         not_allowed: "Non tes o permiso necesario para inserir resultados nesta votación"
         booth: "Urna"
-        date: "Día"
+        date: "Data"
         select_booth: "Elixe urna"
-        ballots_white: "Papeletas totalmente en blanco"
+        ballots_white: "Papeletas totalmente en branco"
         ballots_null: "Papeletas nulas"
-        ballots_total: "Papeletas totales"
-        submit: "Guardar"
+        ballots_total: "Papeletas totais"
+        submit: "Gardar"
         results_list: "Os teus resultados"
         see_results: "Ver resultados"
       index:
@@ -38,20 +52,18 @@ gl:
         results: Resultados
         table_answer: Resposta
         table_votes: Votos
-        table_whites: "Papeletas totalmente en branco"
+        table_whites: "Papeletas totalmente en blanco"
         table_nulls: "Papeletas nulas"
         table_total: "Papeletas totais"
     residence:
       flash:
         create: "Documento verificado co padrón"
-        not_allowed: "Hoxe non tes quenda de presidente de mesa"
+        not_allowed: "Non tes quenda de presidente de mesa"
       new:
         title: Validar documento
-        document_number: "Número de documento (con letra)"
         submit: Validar documento
         error_verifying_census: "O Servizo de padrón non puido verificar este documento."
         form_errors: evitaron verificar este documento
-        no_assignments: "Non tes quenda de presidente de mesa"
     voters:
       new:
         title: Votacións

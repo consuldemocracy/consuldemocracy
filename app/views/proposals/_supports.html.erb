@@ -1,0 +1,16 @@
+<div class="progress small-12 round">
+  <span class="meter" style="width: <%= progress_bar_percentage(proposal) %>%;"></span>
+  <span class="percentage">
+    <%= supports_percentage(proposal) %>&nbsp;/&nbsp;<%= t("proposals.proposal.total_percent") %>
+  </span>
+</div>
+
+<span class="total-supports">
+  <%= t("proposals.proposal.supports", count: proposal.total_votes) %>&nbsp;
+  <span>
+    <abbr title="<%= t("proposals.proposal.reason_for_supports_necessary") %>">
+      <%= t("proposals.proposal.supports_necessary",
+          number: number_with_delimiter(Proposal.votes_needed_for_success)) %>
+    </abbr>
+  </span>
+</span>

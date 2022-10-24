@@ -1,8 +1,6 @@
-class Widget::Card < ActiveRecord::Base
+class Widget::Card < ApplicationRecord
   include Imageable
-
-  # table_name must be set before calls to 'translates'
-  self.table_name = "widget_cards"
+  belongs_to :cardable, polymorphic: true
 
   translates :label,       touch: true
   translates :title,       touch: true
@@ -10,11 +8,14 @@ class Widget::Card < ActiveRecord::Base
   translates :link_text,   touch: true
   include Globalizable
 
+  validates_translation :title, presence: true
+  validates :link_url, presence: true, if: -> { !header? || link_text.present? }
+
   def self.header
     where(header: true)
   end
 
   def self.body
-    where(header: false).order(:created_at)
+    where(header: false, cardable_id: nil).order(:created_at)
   end
 end

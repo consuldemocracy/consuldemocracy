@@ -1,0 +1,9 @@
+es-PE:
+  stats:
+    title: "Datos de participación"
+    total_participants: "Participantes"
+    budgets:
+      link: "Estadísticas"
+      total_unfeasible_investments: "Ver los proyectos inviables"
+      heading: "Partida"
+      participants_every_phase: "Participantes Totales"

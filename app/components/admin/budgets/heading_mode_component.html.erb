@@ -1,0 +1,17 @@
+<section class="reveal heading-mode" id="heading_mode" data-reveal>
+  <h1><%= t("#{i18n_namespace}.title") %></h1>
+
+  <% modes.each do |mode| %>
+    <section class="<%= mode %>-heading-option">
+      <h2><%= sanitize(t("#{i18n_namespace}.#{mode}.title")) %></h2>
+      <p><%= t("#{i18n_namespace}.#{mode}.description") %></p>
+      <%= link_to t("#{i18n_namespace}.#{mode}.link"),
+                  new_admin_budgets_wizard_budget_path(mode: mode), data: { close: "" } %>
+    </section>
+  <% end %>
+
+  <button class="close-button" aria-label="<%= t("admin.shared.close_modal") %>"
+          type="button" data-close>
+    &times;
+  </button>
+</section>

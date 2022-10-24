@@ -1,0 +1,32 @@
+local:
+  service: Disk
+  root: <%= Rails.root.join("storage") %>
+
+test:
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage") %>
+
+# s3:
+#   service: S3
+#   access_key_id: <%= Rails.application.secrets.dig(:s3, :access_key_id) %>
+#   secret_access_key: <%= Rails.application.secrets.dig(:s3, :secret_access_key) %>
+#   region: <%= Rails.application.secrets.dig(:s3, :region) %>
+#   bucket: <%= Rails.application.secrets.dig(:s3, :bucket) %>
+
+# Remember not to checkin your GCS keyfile to a repository
+# gcs:
+#   service: GCS
+#   project: <%= Rails.application.secrets.dig(:gcs, :project) %>
+#   credentials: <%= Rails.root.join(Rails.application.secrets.dig(:gcs, :credentials).to_s) %>
+#   bucket: <%= Rails.application.secrets.dig(:gcs, :bucket) %>
+
+# azure:
+#   service: AzureStorage
+#   storage_account_name: <%= Rails.application.secrets.dig(:azure, :storage_account_name) %>
+#   storage_access_key: <%= Rails.application.secrets.dig(:azure, :storage_access_key) %>
+#   container: <%= Rails.application.secrets.dig(:azure, :container) %>
+
+# mirror:
+#   service: Mirror
+#   primary: local
+#   mirrors: [ s3, gcs, azure ]

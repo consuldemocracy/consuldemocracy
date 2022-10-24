@@ -1,0 +1,79 @@
+<%= render "shared/errors" %>
+
+<div class="row expanded">
+  <div class="small-12 medium-4 column">
+    <%= f.label :action_type %>
+    <% ::Dashboard::Action.action_types.keys.each do |action_type_value| %>
+      <span class="margin-right">
+        <%= f.radio_button :action_type, action_type_value,
+          data: { toggle: "request_to_administrators short_description" } %>
+      </span>
+    <% end %>
+  </div>
+
+  <div class="small-12 column margin-top">
+    <%= f.check_box :active %>
+  </div>
+
+  <div id="request_to_administrators"
+       class="small-12 column margin-bottom <%= css_for_resource(@dashboard_action.action_type) %>"
+       data-toggler=".hide">
+    <%= f.check_box :request_to_administrators %>
+  </div>
+
+</div>
+
+<div class="row expanded">
+  <div class="small-12 column">
+    <%= f.text_field :title %>
+
+    <div id="short_description" class="hide">
+      <%= f.text_field :short_description %>
+    </div>
+
+    <%= f.text_area :description, class: "html-area" %>
+  </div>
+</div>
+
+<div class="row expanded margin-top">
+  <div class="small-12 column">
+    <%= f.check_box :published_proposal %>
+    <p class="help-text"><%= t("admin.dashboard.actions.form.published_proposal_help_text") %></p>
+  </div>
+</div>
+
+<div class="row expanded margin-top">
+  <div class="small-12 medium-4 column">
+    <%= f.number_field :day_offset, step: 1, min: 0,
+      hint: t("admin.dashboard.actions.form.help_text") %>
+  </div>
+
+  <div class="small-12 medium-4 column">
+    <%= f.number_field :required_supports, step: 1, min: 0,
+      hint: t("admin.dashboard.actions.form.help_text") %>
+  </div>
+
+  <div class="small-12 medium-4 column">
+    <%= f.number_field :order, step: 1, min: 0,
+      hint: t("admin.dashboard.actions.form.help_text") %>
+  </div>
+</div>
+
+<% if feature?(:allow_attached_documents) %>
+  <div class="documents small-12 column">
+    <hr>
+    <%= render "documents/nested_documents", f: f %>
+    <hr>
+  </div>
+<% end %>
+
+<div class="links small-12 column">
+  <%= render "links/nested_links", linkable: dashboard_action, f: f %>
+  <hr>
+</div>
+
+<div class="row expanded">
+  <div class="small-12 medium-6 large-4 column">
+    <%= f.submit(class: "button expanded", value: t("admin.dashboard.actions.form.submit_button")) %>
+  </div>
+</div>

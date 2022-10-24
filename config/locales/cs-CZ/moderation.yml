@@ -1,0 +1,111 @@
+cs:
+  moderation:
+    actions:
+      confirm_action: "Jste si jistý? %{action}"
+    comments:
+      index:
+        block_authors: Blokovat autory
+        filter: Filtr
+        filters:
+          all: Vše
+          pending_flag_review: Nevyřízený
+          with_ignored_flag: Označené jako přečtené
+        headers:
+          comment: Komentář
+          moderate: Moderovat
+        hide: Skrýt komentáře
+        ignore_flags: Označené jako přečtené
+        orders:
+          flags: Nejvíce označené
+          newest: Nejnovější
+        title: Komentáře
+    dashboard:
+      index:
+        title: Moderování
+    debates:
+      index:
+        block_authors: Blokovat autory
+        filter: Filtr
+        filters:
+          all: Vše
+          pending_flag_review: Nevyřízený
+          with_ignored_flag: Označené jako přečtené
+        headers:
+          debate: Debata
+          moderate: Moderovat
+        hide: Skrýt debaty
+        ignore_flags: Označit za přečtené
+        orders:
+          created_at: Nejnovější
+          flags: Nejvíce označené
+        title: Debaty
+    header:
+      title: Moderování
+    menu:
+      flagged_comments: Komentáře
+      flagged_debates: Debaty
+      flagged_investments: Rozpočtové investice
+      proposals: Návrhy
+      proposal_notifications: Oznámení návrhů
+      users: Blokovat uživatele
+    proposals:
+      index:
+        block_authors: Blokovat autory
+        filter: Filtr
+        filters:
+          all: Vše
+          pending_flag_review: Čeká na kontrolu
+          with_ignored_flag: Označit za přečtené
+        headers:
+          moderate: Moderovat
+          proposal: Návrhy
+        hide: Skrýt návrhy
+        ignore_flags: Označit za přečtené
+        orders:
+          created_at: Nejnovější
+          flags: Nejvíce označené
+        title: Návrhy
+    budget_investments:
+      index:
+        block_authors: Blokovat autory
+        filter: Filtr
+        filters:
+          all: Vše
+          pending_flag_review: Nevyřízený
+          with_ignored_flag: Označené jako přečtené
+        headers:
+          moderate: Moderovat
+          budget_investment: Rozpočet
+        hide: Skrýt rozpočtové investice
+        ignore_flags: Označit za přečtené
+        orders:
+          created_at: Nejnovější
+          flags: Nejvíce označené
+        title: Rozpočtové investice
+    proposal_notifications:
+      index:
+        block_authors: Blokovat autory
+        filter: Filtr
+        filters:
+          all: Vše
+          pending_review: Čeká na kontrolu
+          ignored: Označit za přečtené
+        headers:
+          moderate: Moderovat
+          proposal_notification: Upozornění k návrhům
+        hide: Skrýt návrhy
+        ignore_flags: Označit za přečtené
+        orders:
+          created_at: Nejnovější
+          moderated: Moderované
+        title: Upozornění k návrhům
+    users:
+      index:
+        block: Blokovat
+        confirm_block: "Jste si jistý? Tím se skryje uživatel \"%{name}\" a veškerý jeho obsah."
+        confirm_hide: "Jste si jistý? Tím se skryje uživatel \"%{name}\", aniž by se skryl jeho obsah."
+        hide: Blokovat
+        search_placeholder: email nebo jméno uživatele
+        title: Blokovat uživatele
+      notice_block: Uživatel byl zablokován. Veškerý obsah, jehož je tento uživatel autorem, byl skryt.
+      notice_hide: Uživatel byl zablokován. Všechny debaty a komentáře tohoto uživatele byly skryty.

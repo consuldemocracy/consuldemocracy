@@ -1,4 +1,4 @@
-class CreatePollQuestionAnswerVideos < ActiveRecord::Migration
+class CreatePollQuestionAnswerVideos < ActiveRecord::Migration[4.2]
   def change
     create_table :poll_question_answer_videos do |t|
       t.string :title

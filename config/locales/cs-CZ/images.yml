@@ -1,0 +1,17 @@
+cs:
+  images:
+    remove_image: Odebrat obrázek
+    form:
+      title: Názorný obrázek
+      title_placeholder: Přidat název názorného obrázku
+      delete_button: Odebrat obrázek
+      note: "Můžete nahrát jeden obrázek následujících typů obsahu: %{accepted_content_types}, až do velikosti %{max_file_size} MB."
+      add_new_image: Přidat obrázek
+    actions:
+      destroy:
+        notice: Obrázek byl úspěšně smazán.
+        alert: Obrázek nelze odstranit
+    errors:
+      messages:
+        in_between: musí být mezi %{min} a %{max}
+        wrong_content_type: typ dokumentu  %{content_type} neodpovídá povoleným typům %{accepted_content_types}

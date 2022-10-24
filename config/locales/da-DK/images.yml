@@ -1,0 +1,17 @@
+da:
+  images:
+    remove_image: Fjern billede
+    form:
+      title: Billedbeskrivelse
+      title_placeholder: Tilføje en beskrivende titel på billedet
+      delete_button: Fjern billede
+      note: "Du kan uploade et billede i følgende format: %{accepted_content_types}, op til %{max_file_size} MB."
+      add_new_image: Tilføj billede
+    actions:
+      destroy:
+        notice: Billedet blev slettet.
+        alert: Kan ikke fjerne billedet.
+    errors:
+      messages:
+        in_between: skal være mellem %{min} og %{max}
+        wrong_content_type: billedformatet %{content_type} svarer ikke til de accepterede billedformater %{accepted_content_types}

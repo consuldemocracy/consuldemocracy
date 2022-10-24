@@ -1,0 +1,35 @@
+bs:
+  activemodel:
+    models:
+      verification:
+        residence: "Prebivalište"
+        sms: "SMS"
+    attributes:
+      verification:
+        residence:
+          document_type: "Vrsta dokumenta"
+          document_number: "Broj isprave"
+          date_of_birth: "Datum rođenja"
+          postal_code: "Poštanski broj"
+        sms:
+          phone: "Telefon"
+          confirmation_code: "Verifikacioni kod"
+        email:
+          recipient: "Email"
+      verification/letter:
+        email: "Email"
+        password: "Lozinka"
+        verification_code: "Kod koji ste dobili u pismu"
+      verification/management/document:
+        document_type: "Vrsta dokumenta:"
+        document_number: "Broj dokumenta"
+      verification/residence:
+        date_of_birth: "Datum rođenja"
+        document_type: "Vrsta dokumenta"
+        postal_code: "Poštanski broj"
+      verification/sms:
+        confirmation_code: "Unesite kod koji ste dobili na svom mobilnom telefonu"
+      officing/residence:
+        document_type: "Vrsta isprave"
+        document_number: "Broj isprave"
+        year_of_birth: "Godina rođenja"

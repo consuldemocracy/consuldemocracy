@@ -1,1 +1,116 @@
 tr:
+  devise_views:
+    confirmations:
+      new:
+        submit: Açıklamaları tekrar gönder
+        title: Onay açıklamalarını tekrar gönder
+      show:
+        instructions: '%{email} adresli hesap doğrulanıyor'
+        new_password_confirmation_label: Erişim şifresini tekrarla
+        new_password_label: Yeni erişim şifresi
+        please_set_password: Lütfen yeni şifrenizi seçin (yukarıdaki e-posta ile giriş yapmanızı sağlar)
+        submit: Onayla
+        title: Hesabımı onayla
+    mailer:
+      confirmation_instructions:
+        confirm_link: Hesabımı onayla
+        text: "E-posta hesabınızı aşağıdaki bağlantıdan onaylayabilirsiniz:"
+        title: Hoş geldiniz
+        welcome: Hoş geldiniz
+      reset_password_instructions:
+        change_link: Şifremi değiştir
+        hello: Merhaba
+        ignore_text: Eğer şifre değişikliği istemediyseniz, bu e-postayı dikkate almayın.
+        info_text: Şifrenizi değiştirmeniz için gönderilen bağlantıyı (link'i) kullanarak yeniden düzenlemeniz gerekiyor.
+        text: "Şifre değişim talebinizi aldık. Bunu aşağıdaki bağlantıdan yapabilirsiniz:"
+        title: Şifreni değiştir
+      unlock_instructions:
+        hello: Merhaba
+        info_text: Fazla sayıda başarısız oturum açma denemesi nedeniyle hesabınız engellendi.
+        instructions_text: "Hesabınızın kilidini kaldırmak için lütfen bu bağlantıya tıklayın:"
+        title: Hesabınız kilitlenmiştir
+        unlock_link: Hesabımın kilidini aç
+    menu:
+      login_items:
+        login: Oturum aç
+        logout: Oturumu kapat
+        signup: Kaydol
+    organizations:
+      registrations:
+        new:
+          password_confirmation_label: Şifreyi onayla
+          responsible_name_note: Bu, önerileri sunan dernek/topluluğu temsil eden kişi olacaktır
+          submit: Kaydol
+          title: Bir kurum veya topluluk olarak kaydol
+        success:
+          back_to_index: Anladım; ana sayfaya geri dön
+          instructions_1: "Bu topluluğu temsil ettiğinizi doğrulamak için <strong>Yakında sizinle iletişime geçeceğiz</strong>."
+          instructions_2: <strong>E-postanız incelenirken</strong>,<strong>hesabınızı doğrulamanız için size bir bağlantı</strong> gönderdik.
+          instructions_3: Onaylandıktan sonra, doğrulanmamış grup olarak katılım sağlayabilirsiniz.
+          thank_you: Topluluğunuzu web sitesine kaydettiğiniz için teşekkür ederiz. <strong>Doğrulama bekleniyor</strong>.
+          title: Kurumun / topluluğun kaydı
+    passwords:
+      edit:
+        change_submit: Şifremi değiştir
+        password_confirmation_label: Yeni şifreyi onayla
+        password_label: Yeni şifre
+        title: Şifrenizi değiştirin
+      new:
+        send_submit: Açıklamaları gönder
+        title: Şifrenizi mi unuttunuz?
+    sessions:
+      new:
+        remember_me: Beni hatırla
+        submit: Giriş
+        title: Oturum aç
+    shared:
+      links:
+        login: Giriş
+        new_confirmation: Hesabınızı etkinleştirmek için açıklamaları almadınız mı?
+        new_password: Şifrenizi mi unuttunuz?
+        new_unlock: Kilidinizi kaldırmanız için gönderilen açıklamaları almadınız mı?
+        signin_with_provider: '%{provider} ile oturum aç'
+        signup: Bir hesabınız yok mu? %{signup_link}
+        signup_link: Kaydol
+    unlocks:
+      new:
+        email_label: E-posta
+        submit: Kilit açma açıklamalarını tekrar gönder
+        title: Kilit açma açıklamaları tekrar gönderildi
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Sebep
+          info: Bu işlem geri alınamaz. Lütfen bu işlemi yapmak istediğinizden emin olun.
+          info_reason: Eğer isterseniz, bizimle nedenini paylaşabilirsiniz (tercihe bağlı)
+          submit: Hesabımı sil
+          title: Hesabı sil
+        edit:
+          current_password_label: Mevcut şifre
+          edit: Düzenle
+          email_label: E-posta
+          leave_blank: Değiştirmek istemiyorsanız boş bırakın
+          need_current: Değişiklikleri onaylamak için mevcut şifrenize ihtiyacımız var
+          password_confirmation_label: Yeni şifreyi onayla
+          password_label: Yeni şifre
+          update_submit: Güncelle
+          waiting_for: "Onayı bekleniyor:"
+        new:
+          cancel: Girişi iptal et
+          organization_signup: Bir kurumu veya topluluğu mu temsil ediyorsunuz? %{signup_link}
+          organization_signup_link: Buradan kaydolun
+          password_confirmation_label: Şifreyi onayla
+          submit: Kaydol
+          terms: Kayıt yaparak %{terms} kabul etmiş sayılırsınız
+          terms_link: şartlar ve kullanım koşulları
+          terms_title: Kayıt yaparak kullanım şart ve koşullarını kabul etmiş sayılırsınız
+          title: Kaydol
+          username_is_available: Kullanıcı adı müsait
+          username_is_not_available: Kullanıcı adı zaten kullanılıyor
+          username_note: Gönderilerinizin yanında görünen isim
+        success:
+          back_to_index: Anladım; ana sayfaya geri dön
+          instructions_1: Lütfen <b>e-posta adresinizi kontrol edin</b> - <b>hesabınızı doğrulamak için bir bağlantı</b> gönderdik.
+          instructions_2: Onaylandıktan sonra, katılım sağlayabilirsiniz.
+          thank_you: Web sitesine kayıt olduğunuz için teşekkür ederiz. Şimdi <b>e-posta adresinizi doğrulamalısınız</b>.
+          title: E-posta adresini onayla

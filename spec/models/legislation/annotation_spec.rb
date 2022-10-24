@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Legislation::Annotation, type: :model do
   let(:draft_version) { create(:legislation_draft_version) }
@@ -24,7 +24,7 @@ RSpec.describe Legislation::Annotation, type: :model do
     annotation = create(:legislation_annotation,
       draft_version: draft_version,
       quote: quote,
-      ranges: [{"start" => "/p[1]", "startOffset" => 6, "end" => "/p[3]", "endOffset" => 11}]
+      ranges: [{ "start" => "/p[1]", "startOffset" => 6, "end" => "/p[3]", "endOffset" => 11 }]
     )
 
     context = "Lorem <span class=annotator-hl>ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt"\
@@ -49,7 +49,7 @@ RSpec.describe Legislation::Annotation, type: :model do
     annotation = create(:legislation_annotation,
       draft_version: draft_version,
       quote: quote,
-      ranges: [{"start" => "/p[1]", "startOffset" => 273, "end" => "/p[2]", "endOffset" => 190}]
+      ranges: [{ "start" => "/p[1]", "startOffset" => 273, "end" => "/p[2]", "endOffset" => 190 }]
     )
 
     context = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna"\
@@ -95,7 +95,7 @@ RSpec.describe Legislation::Annotation, type: :model do
     annotation = create(:legislation_annotation,
       draft_version: draft_version,
       quote: quote,
-      ranges: [{"start" => "/p[2]", "startOffset" => 127, "end" => "/p[3]", "endOffset" => 223}]
+      ranges: [{ "start" => "/p[2]", "startOffset" => 127, "end" => "/p[3]", "endOffset" => 223 }]
     )
 
     context = "The licenses for most software and other practical works are designed to take away your freedom to share and change the"\

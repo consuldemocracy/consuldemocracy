@@ -9,7 +9,7 @@ en:
       show:
         title: User account
       edit:
-        title: 'Edit user account: Reset password'
+        title: "Edit user account: Reset password"
         back: Back
         password:
           password: Password
@@ -22,64 +22,51 @@ en:
           print_help: You will be able to print the password when it is saved.
     account_info:
       change_user: Change user
-      document_number_label: 'Document number:'
-      document_type_label: 'Document type:'
-      email_label: 'Email:'
-      identified_label: 'Identified as:'
-      username_label: 'Username:'
+      document_number_label: "Document number:"
+      document_type_label: "Document type:"
+      email_label: "Email:"
+      identified_label: "Identified as:"
+      username_label: "Username:"
     check: Check document
     dashboard:
       index:
         title: Management
         info: Here you can manage users through all actions listed in the left menu.
-    document_number: Document number
-    document_type_label: Document type
     document_verifications:
       already_verified: This user account is already verified.
-      has_no_account_html: In order to create an account, go to %{link} and click in <b>'Register'</b> in the upper-left part of the screen.
+      has_no_account: In order to create an account, go to %{link} and click in <b>"Register"</b> in the upper-left part of the screen.
       link: CONSUL
-      in_census_has_following_permissions: 'This user can participate in the website with the following permissions:'
+      in_census_has_following_permissions: "This user can participate in the website with the following permissions:"
       not_in_census: This document is not registered.
-      not_in_census_info: 'Citizens not in the Census can participate in the website with the following permissions:'
+      not_in_census_info: "Citizens not in the Census can participate in the website with the following permissions:"
       please_check_account_data: Please check that the account data above are correct.
       title: User management
       under_age: "You don't have the required age to verify your account."
       verify: Verify
-    email_label: Email
     date_of_birth: Date of birth
     email_verifications:
       already_verified: This user account is already verified.
-      choose_options: 'Please choose one of the following options:'
+      choose_options: "Please choose one of the following options:"
       document_found_in_census: This document was found in the census, but it has no user account associated to it.
-      document_mismatch: 'This email belongs to a user which already has an associated id: %{document_number}(%{document_type})'
-      email_placeholder: Write the email this person used to create his or her account
+      document_mismatch: "This email belongs to a user which already has an associated id: %{document_number}(%{document_type})"
       email_sent_instructions: In order to completely verify this user, it is necessary that the user clicks on a link which we have sent to the email address above. This step is needed in order to confirm that the address belongs to him.
       if_existing_account: If the person has already a user account created in the website,
       if_no_existing_account: If this person has not created an account yet
-      introduce_email: 'Please introduce the email used on the account:'
+      introduce_email: "Please introduce the email used on the account:"
       send_email: Send verification email
     menu:
       create_proposal: Create proposal
       print_proposals: Print proposals
       support_proposals: Support proposals
-      create_spending_proposal: Create spending proposal
-      print_spending_proposals: Print spending proposals
-      support_spending_proposals: Support spending proposals
       create_budget_investment: Create budget investment
       print_budget_investments: Print budget investments
       support_budget_investments: Support budget investments
       users: Users management
       user_invites: Send invitations
       select_user: Select user
-    permissions:
-      create_proposals: Create proposals
-      debates: Engage in debates
-      support_proposals: Support proposals
-      vote_proposals: Vote proposals
     print:
       proposals_info: Create your proposal on http://url.consul
-      proposals_title: 'Proposals:'
-      spending_proposals_info: Participate at http://url.consul
+      proposals_title: "Proposals:"
       budget_investments_info: Participate at http://url.consul
     print_info: Print this info
     proposals:
@@ -102,6 +89,7 @@ en:
       alert:
         unverified_user: User is not verified
       create: Create a budget investment
+      edit: Edit budget investment
       filters:
         heading: Concept
         unfeasible: Unfeasible investment
@@ -110,19 +98,8 @@ en:
       search_results:
         one: " containing the term '%{search_term}'"
         other: " containing the term '%{search_term}'"
-    spending_proposals:
-      alert:
-        unverified_user: User is not verified
-      create: Create spending proposal
-      filters:
-        unfeasible: Unfeasible investment projects
-        by_geozone: "Investment projects with scope: %{geozone}"
-      print:
-        print_button: Print
-      search_results:
-        one: " containing the term '%{search_term}'"
-        other: " containing the term '%{search_term}'"
     sessions:
+      need_managed_user: To perform this action you must select a user
       signed_out: Signed out successfully.
       signed_out_managed_user: User session signed out successfully.
     username_label: Username
@@ -130,8 +107,8 @@ en:
       create_user: Create a new account
       create_user_info: We will create an account with the following data
       create_user_submit: Create user
-      create_user_success_html: We have sent an email to the email address <b>%{email}</b> in order to verify that it belongs to this user. It contains a link they have to click. Then they will have to set their access password before being able to log in to the website
-      autogenerated_password_html: "Autogenerated password is <b>%{password}</b>, you can change it in the 'My account' section of the web"
+      create_user_success: We have sent an email to the email address <b>%{email}</b> in order to verify that it belongs to this user. It contains a link they have to click. Then they will have to set their access password before being able to log in to the website
+      autogenerated_password: "Autogenerated password is <b>%{password}</b>, you can change it in the 'My account' section of the web"
       email_optional_label: Email (optional)
       erased_notice: User account deleted.
       erased_by_manager: "Deleted by manager: %{manager}"
@@ -146,5 +123,5 @@ en:
         submit: Send invitations
         title: Send invitations
       create:
-        success_html: <strong>%{count} invitations</strong> have been sent.
+        success: <strong>%{count} invitations</strong> have been sent.
         title: Send invitations

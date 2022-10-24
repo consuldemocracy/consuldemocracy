@@ -1,0 +1,23 @@
+<div class="nested-fields nested-answers small-12 medium-6 column">
+  <div class="answer-fields">
+    <%= f.hidden_field :given_order %>
+    <div class="row expanded">
+      <div class="small-12 medium-9 column">
+        <%= f.text_field :title %>
+      </div>
+      <div class="small-12 medium-3 column margin-top">
+        <%= link_to_remove_association f, class: "delete" do %>
+          <%= t("dashboard.polls.question_answer_fields.remove_answer") %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row expanded">
+      <div class="small-12 column">
+        <%= f.text_area :description,
+                        maxlength: Poll::Question.description_max_length,
+                        class: "html-area" %>
+      </div>
+    </div>
+  </div>
+</div>

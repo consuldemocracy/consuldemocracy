@@ -18,25 +18,30 @@
         <%= t("admin.system_emails.#{system_email_title}.description") %>
       </td>
       <td>
-        <% if system_email_actions.include?('view') %>
-          <div class="small-4 column">
-            <%= link_to t("admin.shared.view"), admin_system_email_view_path(system_email_title),
-                                                class: "button hollow expanded" %>
-          </div>
+        <%= render Admin::TableActionsComponent.new(system_email_title, actions: []) do |actions| %>
+          <% if system_email_actions.include?("view") %>
+            <%= actions.action(:show,
+                               text: t("admin.shared.view"),
+                               path: admin_system_email_view_path(system_email_title)) %>
+          <% end %>
+
+          <% if system_email_actions.include?("preview_pending") %>
+            <%= actions.action(:preview_pending,
+                               text: t("admin.system_emails.preview_pending.action"),
+                               path: admin_system_email_preview_pending_path(system_email_title)) %>
+             <%= actions.action(:send_pending,
+                                text: t("admin.system_emails.preview_pending.send_pending"),
+                                path: admin_system_email_send_pending_path(system_email_title),
+                                method: :put) %>
+          <% end %>
+
+          <% if system_email_actions.include?("edit_info") %>
+            <p class="help-text">
+              <%= t("admin.system_emails.edit_info") %><br>
+              <code><%= "app/views/mailer/#{system_email_title}.html.erb" %></code>
+            </p>
+          <% end %>
         <% end %>
-        <% if system_email_actions.include?('preview_pending') %>
-          <div class="small-4 column">
-            <%= link_to t("admin.system_emails.preview_pending.action"),
-                        admin_system_email_preview_pending_path(system_email_title),
-                        class: "button expanded" %>
-          </div>
-        <% end %>
-        <div class="small-4 column">
-          <%= link_to t("admin.system_emails.preview_pending.send_pending"),
-                      admin_system_email_send_pending_path(system_email_title),
-                      class: "button success expanded",
-                      method: :put %>
-        </div>
       </td>
     </tr>
   <% end %>

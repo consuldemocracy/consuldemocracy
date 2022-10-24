@@ -1,91 +1,74 @@
 nl:
   pages:
     conditions:
-      title: Gebruikersvoorwaarden
+      title: Gebruiksvoorwaarden
       subtitle: JURIDISCHE KENNISGEVING OP DE GEBRUIKSVOORWAARDEN, PRIVACY EN BESCHERMING VAN GEGEVENS VAN DE OPEN OVERHEID PORTAL
       description: Informatiepagina over de gebruiksvoorwaarden, privacy en bescherming van persoonsgegevens.
     help:
       title: "%{org} is een platform voor burgerparticipatie"
       guide: "Deze handleiding behandelt ieder onderdeel van %{org}. Meer informatie vind je door te klikken op onderstaande links."
       menu:
-        debates: "Discussies"
+        debates: "Debatten"
         proposals: "Voorstellen"
-        budgets: "Burgerbegrotingen"
-        polls: "Peilingen"
-        other: "Andere relevante informatie"
-        processes: "Plannen"
+        budgets: "Participatory budgets"
+        polls: "Polls"
+        other: "Verdere informatie"
+        processes: "Proces"
       debates:
-        title: "Discussies"
-        description: "Bij dit onderdeel %{link} kun je discussies over zaken in jouw gemeente starten om je mening met anderen te delen en te bespreken. Dit is ook een plek waar je ideeen kunt presenteren, die via andere onderdelen van  %{org} tot concrete acties voor de gemeente kunnen leiden."
-        link: "Discussies"
-        feature_html: "Je kunt discussies een score geven via de <strong>Eens</strong> of <strong>Oneens</strong> knoppen. Daarvoor moet je %{link}."
+        title: "Debatten"
+        description: "Bij dit onderdeel %{link} kun je debatteren om je mening met anderen te delen en te bespreken. Dit is ook een plek waar je voorstellen kunt presenteren, die via andere onderdelen van %{org} tot concrete acties voor de gemeente kunnen leiden."
+        link: "debatten"
+        feature: "Je kunt debatten openen en reageren en je waardering uitdrukken via de <strong>Eens</strong> of <strong>Oneens</strong> knoppen. Daarvoor moet je %{link}."
         feature_link: "registreren in %{org}"
-        image_alt: "Knoppen om een discussie te scoren"
-        figcaption: '"Eens" en "Oneens" knoppen om de discussie te scoren.'
+        image_alt: "Knoppen om een debat te waarderen"
+        figcaption: '"Eens" en "Oneens" knoppen om debatten te waarderen.'
       proposals:
         title: "Voorstellen"
         description: "In dit %{link} onderdeel kun je voorstellen indienen aan jouw gemeente en reageren op voorstellen van anderen. De voorstellen hebben voldoende steun van anderen nodig om tot een stemming te leiden. Als een voorstel veel stemmen krijgt, wordt deze door de gemeente goedgekeurd en uitgevoerd."
         link: "Voorstellen"
         image_alt: "Knop om een voorstel te steunen"
-        figcaption_html: 'Knop om een voorstel te ''''steunen''''.'
+        figcaption: 'Knop om een voorstel te ''''steunen''''.'
       budgets:
-        title: "Burgerbegrotingen"
+        title: "Burgerbegroting"
         description: "Het %{link} onderdeel helpt bij het geven van direct zeggenschap aan inwoners over de besteding van gebiedsbudgetten van de gemeente."
         link: "Burgerbegrotingen"
-        image_alt: "Verschillende fasen van een burgerbegroting"
-        figcaption_html: '"Steun" and "Stem" fases van de burgerbegroting.'
+        image_alt: "Verschillende fasen in de burgerbegroting"
+        figcaption: '"Steun" fase en "Stem" fase in de burgerbegroting.'
       polls:
-        title: "Peilingen"
+        title: "Polls"
         description: "Het %{link} onderdeel wordt geactiveerd elke keer wanneer een voorstel 1% steun krijgt en tot stemming over gaat, of als de gemeente een vraagstuk en besluit aan de inwoners wil voorleggen."
         link: "peilingen"
         feature_1: "Om te participeren bij de peilingen moet je %{link} en je account verifiëren."
         feature_1_link: "registreren in %{org_name}"
       processes:
-        title: "Plannen"
-        description: "In het %{link} onderdeel kunnen inwoners participeren in het opstellen en aanpassen van regelgeving die de gemeente en haar inwoners betreft. Inwoners kunnen hier ook hun mening geven over gemeentelijk beleid en plannen in eerdere discussies."
+        title: "Proces"
+        description: "In het %{link} onderdeel kun je deelnemen in het opstellen en aanpassen van formele stukken. Je kunt hier ook je mening geven over beleid en plannen ontstaan uit eerdere debatten."
         link: "plannen"
+        feature: "Om te participeren bij de processen moet je %{link} en je account verifiëren."
+        feature_link: "registreren in %{org_name}"
       faq:
         title: "Technische problemen?"
-        description: "Vind de antwoorden op je vragen in de Veelgestelde vragen."
-        button: "Bekijk de Veelgestelde vragen"
+        description: "Lees de FAQs en kijk of dat helpt."
+        button: "Bekijk de meest gestelde vragen"
         page:
-          title: "Veelgestelde vragen"
-          description: "Gebruik deze pagina om de meest gestelde vragen te verzamelen."
-          faq_1_title: "Vraag 1"
-          faq_1_description: "Beschrijf hier de vraag."
+          title: "Veel gestelde vragen"
+          description: "Gebruik deze pagina veelgestelde vragen van de gebruikers van de site te beantwoorden."
       other:
-        title: "Andere relevante informatie"
-        how_to_use: "Gebruik %{org_name} in jouw gemeente"
+        title: "Verdere informatie"
+        how_to_use: "Gebruik %{org_name} in uw gemeente"
+        sdg: "hulp bij Sustainable Development Goals"
       how_to_use:
         text: |-
-          Gebruik consul in je gemeente of help ons consul te verbeteren, dat kan met open source software.
+          Gebruik het in je gemeente of help ons het te verbeteren, het is open source software.
 
-          Dit platform is gemaakt met [CONSUL](https://github.com/consul/consul 'consul github'). Consul is uitgegeven als open source software met de [AGPLv3 licentie](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), wat betekent dat iedereen vrij is om de code te gebruiken, te kopiëren, de broncode te bekijken en aan te passen en aanpassingen te delen. Wij geloven dat open source bijdraagt aan betere producten.
+          Dit platform gebruikt de [CONSUL app](https://github.com/consul/consul 'consul github') wat open source software is [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), wat betekent dat iedereen vrij is om de code te gebruiken, te kopieren, in detail te bekijken aan te passen en opnieuw de wereld in te sturen met de aanpassingen die men maakt (en daarmee anderen toe te staan dit ook te doen). Omdat wij denken dat cultuur beter en rijker wordt als het wordt opengesteld.
 
-          Als je programmeur bent kun je de broncode bekijken en ons helpen deze te verbeteren via [Github](https://github.com/consul/consul 'consul github').
+          Als je programmeur bent kun je de code bekijken en ons helpen deze te verbeteren via [CONSUL app](https://github.com/consul/consul 'consul github').
       titles:
-        how_to_use: Gebruik het in je gemeente
+        how_to_use: Gebruik het in uw gemeente
     privacy:
-      title: Privacybeleid
-      subtitle: INFORMATIE OVER GEGEVENSBESCHERMING
-      info_items:
-        - 
-          text: De navigatie door de informatie beschikbaar in de Open Overheid Portal is anoniem.
-        - 
-          text: Voor het gebruik van de diensten van de Open Overheid Portal moet de gebruiker zich registreren en persoonlijke gegevens verstrekken volgens de specifieke informatie die bij de registratie nodig is.
-        - 
-          text: 'De verstrekte gegevens zullen worden opgenomen en verwerkt door de gemeenteraad overeenkomstig de omschrijving van het volgende bestand:'
-        - 
-          subitems:
-            - 
-              field: 'Bestandsnaam:'
-              description: NAAM VAN HET BESTAND
-            - 
-              field: 'Doel van het bestand:'
-              description: Het beheer van participatie processen om te bepalen wat de kwalificatie van mensen die daaraan deelnemen is en numerieke hertelling van de resultaten van deelname aan participatieve processen.
-            - 
-              field: 'Instelling die belast is met het bestand:'
-              description: INSTELLING DIE BELAST IS MET HET BESTAND
+      title: Privacy Verklaring
+      subtitle: "INFORMATIE OVER GEGEVENSBESCHERMING"
     accessibility:
       title: Toegankelijkheid
       description: |-
@@ -105,43 +88,43 @@ nl:
           key_header: Toets
           page_header: Pagina
           rows:
-            - 
+            -
               key_column: 0
               page_column: Homepagina
-            - 
+            -
               key_column: 1
-              page_column: Discussies
-            - 
+              page_column: Debatten
+            -
               key_column: 2
               page_column: Voorstellen
-            - 
+            -
               key_column: 3
-              page_column: Stemmen
-            - 
+              page_column: Votes
+            -
               key_column: 4
-              page_column: Burgerbegrotingen
-            - 
+              page_column: Participatory budgets
+            -
               key_column: 5
               page_column: Plannen
         browser_table:
-          description: 'Afhankelijk van het besturingssysteem en de browser die je gebruikt, zullen de toetsencombinaties als volgt zijn:'
+          description: "Afhankelijk van het besturingssysteem en de browser die je gebruikt, zullen de toetsencombinaties als volgt zijn:"
           caption: Toetsencombinatie afhankelijk van het besturingssysteem en browser
           browser_header: Browser
           key_header: Toetsencombinatie
           rows:
-            - 
+            -
               browser_column: Explorer
               key_column: ALT + sneltoets en ENTER
-            - 
+            -
               browser_column: Firefox
               key_column: ALT + CAPS + sneltoets
-            - 
+            -
               browser_column: Chrome
               key_column: ALT + sneltoets (CTRL + ALT + sneltoets voor MAC)
-            - 
+            -
               browser_column: Safari
               key_column: ALT + sneltoets (CMD + sneltoets voor MAC)
-            - 
+            -
               browser_column: Opera
               key_column: CAPS + ESC + sneltoets
       textsize:
@@ -151,42 +134,37 @@ nl:
           browser_header: Browser
           action_header: Te ondernemen actie
           rows:
-            - 
+            -
               browser_column: Explorer
               action_column: Weergave > tekstgrootte
-            - 
+            -
               browser_column: Firefox
               action_column: Weergave > grootte
-            - 
+            -
               browser_column: Chrome
               action_column: Instellingen (pictogram) > Opties > Geavanceerd > Web Content > tekstgrootte
-            - 
+            -
               browser_column: Safari
               action_column: Weergave > zoom in/zoom uit
-            - 
+            -
               browser_column: Opera
               action_column: Weergave > schaal
         browser_shortcuts_table:
-          description: 'Een andere manier om de tekst te wijzigen is om sneltoetsen van je toetsenbord te gebruiken zoals gedefinieerd in browsers, in het bijzonder de toetsencombinatie:'
+          description: "Een andere manier om de tekst te wijzigen is om sneltoetsen van je toetsenbord te gebruiken zoals gedefinieerd in browsers, in het bijzonder de toetsencombinatie:"
           rows:
-            - 
+            -
               shortcut_column: CTRL en + (CMD en + bij MAC)
               description_column: Vergroot de tekstgrootte
-            - 
+            -
               shortcut_column: CTRL en - (CMD  en - bij MAC)
               description_column: Tekst verkleinen
       compatibility:
         title: Compatibiliteit met standaarden en visuele vormgeving
+        description: 'Alle pagina''s van deze website voldoen aan <strong> Toegankelijkheidsrichtlijnen </strong> of generieke principes van toegankelijk ontwerp zoals opgesteld door de werkgroep <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> behorend bij W3C.'
     titles:
-      accessibility: Toegankelijkheid
-      conditions: Gebruikersvoorwaarden
       help: "Wat is %{org}? - Burgerparticipatie"
-      privacy: Privacybeleid
     verify:
-      code: Code die je in je email ontvangt
-      email: Email
-      info: 'Geef hier je contactgegevens op om je account te verifieren:'
-      info_code: 'Geef hier de code in die je hebt ontvangen:'
-      password: Wachtwoord
+      info: "Geef hier je contactgegevens op om je account te verifieren:"
+      info_code: "en de code die u heeft ontvangen:"
       submit: Verifieer mijn account
-      title: Verifieer je account
+      title: Verifieer uw account

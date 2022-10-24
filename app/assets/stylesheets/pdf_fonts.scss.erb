@@ -1,0 +1,65 @@
+// Fonts
+//
+// 01. Source Sans Pro (https://www.google.com/fonts/specimen/Source+Sans+Pro)
+// 02. Lato (https://www.google.com/fonts/specimen/Lato)
+//
+
+// 01. Source Sans Pro
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@font-face {
+  font-family: 'Source Sans Pro PDF';
+  font-style: normal;
+  font-weight: 300;
+  src: url("<%= ApplicationHelper.asset_data_base64('sourcesanspro-light-webfont.ttf') %>");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro PDF';
+  font-style: normal;
+  font-weight: 400;
+  src: url("<%= ApplicationHelper.asset_data_base64('sourcesanspro-regular-webfont.ttf') %>");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro PDF';
+  font-style: italic;
+  font-weight: 400;
+  src: url("<%= ApplicationHelper.asset_data_base64('sourcesanspro-italic-webfont.ttf') %>");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro PDF';
+  font-style: normal;
+  font-weight: 700;
+  src: url("<%= ApplicationHelper.asset_data_base64('sourcesanspro-bold-webfont.ttf') %>");
+}
+
+// 02. Lato
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@font-face {
+  font-family: 'Lato PDF';
+  src: url("<%= ApplicationHelper.asset_data_base64('lato-light.ttf') %>");
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato PDF';
+  src: url("<%= ApplicationHelper.asset_data_base64('lato-regular.ttf') %>");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato PDF';
+  src: url("<%= ApplicationHelper.asset_data_base64('lato-bold.ttf') %>");
+  font-weight: bold;
+  font-style: normal;
+}
+
+body, h1, h2, h3 {
+  font-family: Lato PDF !important;
+  font-weight: lighter !important;
+}

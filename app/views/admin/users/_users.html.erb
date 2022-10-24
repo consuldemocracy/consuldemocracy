@@ -1,24 +1,36 @@
+<%= render "shared/filter_subnav", i18n_namespace: "admin.users.index" %>
+
 <% if @users.any? %>
-  <h3 class="margin"><%= page_entries_info @users %></h3>
+  <h3><%= page_entries_info @users %></h3>
 
   <table>
     <thead>
       <tr>
-        <th scope="col"><%= t("admin.users.columns.name") %></th>
-        <th scope="col"><%= t("admin.users.columns.email") %></th>
-        <th scope="col"><%= t("admin.users.columns.document_number") %></th>
-        <th scope="col"><%= t("admin.users.columns.roles") %></th>
-        <th scope="col"><%= t("admin.users.columns.verification_level") %></th>
+        <% if @current_filter == "erased" %>
+          <th scope="col"><%= t("admin.users.columns.id") %></th>
+          <th scope="col"><%= t("admin.users.columns.erase_reason") %></th>
+        <% else %>
+          <th scope="col"><%= t("admin.users.columns.name") %></th>
+          <th scope="col"><%= t("admin.users.columns.email") %></th>
+          <th scope="col"><%= t("admin.users.columns.document_number") %></th>
+          <th scope="col"><%= t("admin.users.columns.roles") %></th>
+          <th scope="col"><%= t("admin.users.columns.verification_level") %></th>
+        <% end %>
       </tr>
     </thead>
     <tbody>
       <% @users.each do |user| %>
         <tr>
-          <td><%= link_to user.name, user_path(user), target: "_blank" %></td>
-          <td><%= user.email %></td>
-          <td><%= user.document_number %></td>
-          <td><%= display_user_roles(user) %></td>
-          <td><%= user.user_type %></td>
+          <% if @current_filter == "erased" %>
+            <td><%= link_to user.id, user_path(user), target: "_blank" %></td>
+            <td><%= user.erase_reason %></td>
+          <% else %>
+            <td><%= link_to user.name, user_path(user), target: "_blank" %></td>
+            <td><%= user.email %></td>
+            <td><%= user.document_number %></td>
+            <td><%= display_user_roles(user) %></td>
+            <td><%= user.user_type %></td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>

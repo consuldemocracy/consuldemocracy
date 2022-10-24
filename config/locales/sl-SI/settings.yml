@@ -1,1 +1,55 @@
 sl:
+  settings:
+    comments_body_max_length: "Največja dolžina komentarja"
+    official_level_1_name: "Javni uslužbenec/-ka 1. stopnje"
+    official_level_2_name: "Javni uslužbenec/-ka 2. stopnje"
+    official_level_3_name: "Javni uslužbenec/-ka 3. stopnje"
+    official_level_4_name: "Javni uslužbenec/-ka 4. stopnje"
+    official_level_5_name: "Javni uslužbenec/-ka 5. stopnje"
+    max_ratio_anon_votes_on_debates: "Največje razmerje anonimnih glasov v razpravah"
+    max_votes_for_proposal_edit: "Število glasov, ki določijo, da predloga ni več mogoče urejati"
+    max_votes_for_debate_edit: "Število glasov, ki določijo, da razprave ni več mogoče urejati"
+    proposal_code_prefix: "Predpona za kodo predloga"
+    votes_for_proposal_success: "Število glasov, nujnih za odobritev predloga"
+    months_to_archive_proposals: "Meseci za arhiviranje predlogov"
+    email_domain_for_officials: "Domena e-naslovov javnih uslužbencev"
+    twitter_handle: "Twitter uporabniško ime"
+    facebook_handle: "Facebook uporabniško ime"
+    youtube_handle: "Youtube uporabniško ime"
+    telegram_handle: "Telegram uporabniško ime"
+    instagram_handle: "Instagram uporabniško ime"
+    org_name: "Organizacija"
+    mailer_from_name: "Izvorno ime e-naslova"
+    mailer_from_address: "Izvorni e-naslov"
+    meta_title: "Naslov strani (SEO)"
+    meta_description: "Opis strani (SEO)"
+    meta_keywords: "Ključne besede (SEO)"
+    min_age_to_participate: Minimalna starost za sodelovanje
+    proposals:
+      poll_short_title: Glasovanja
+      email_short_title: E-naslov
+    feature:
+      twitter_login: "Prijava v Twitter"
+      facebook_login: "Prijava v Facebook"
+      google_login: "Prijava v Google"
+      signature_sheets: "Podpisni listi"
+      user:
+        recommendations: "Priporočila"
+        skip_verification: "Preskoči verifikacijo uporabnika"
+      community: "Skupnost o predlogih in naložbah"
+      map: "Geolokacija predlogov in proračunskih naložb"
+      allow_images: "Dovoli nalaganje in prikaz slik"
+      allow_attached_documents: "Dovoli nalaganje in prikaz pripetih dokumentov"
+    map:
+      latitude: "Zemljepisna širina"
+      longitude: "Zemljepisna dolžina"
+      zoom: "Povečava"
+    process:
+      debates: "Razprave"
+      proposals: "Predlogi"
+      polls: "Glasovanja"
+      polls_description: "Za glasovanje o državljanskih predlogih se registriraj. Pomagaj sprejemati direktne odločitve."
+      budgets: "Participatorni proračun"
+      legislation: "Kolaborativna zakonodaja"
+    html:
+      per_page_code_head: "Koda, ki bo vključena na vsaki strani (<head>)"

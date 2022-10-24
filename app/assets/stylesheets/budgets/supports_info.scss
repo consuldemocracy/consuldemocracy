@@ -1,0 +1,60 @@
+.budget-info .supports-info {
+  text-align: center;
+
+  @include breakpoint(medium) {
+
+    h2 {
+      font-size: rem-calc(48);
+    }
+
+    h3 {
+      font-size: rem-calc(36);
+    }
+  }
+
+  h2,
+  h3 {
+    font-weight: normal;
+  }
+
+  section {
+    @include grid-column-gutter;
+    border: 6px solid #f4f4f4;
+    border-radius: rem-calc(12);
+    margin-bottom: $line-height;
+    margin-top: $line-height;
+    padding-bottom: $line-height;
+    padding-top: $line-height;
+
+    @include breakpoint(medium) {
+      padding-top: $line-height * 2;
+    }
+  }
+
+  > section:first-child h2::after {
+    content: image-url("budgets/budgets_support.png");
+    display: block;
+    margin-top: $line-height;
+  }
+
+  section + section p {
+    margin-left: auto;
+    margin-right: auto;
+
+    @include breakpoint(medium) {
+      width: 50%;
+    }
+  }
+
+  .keep-scrolling {
+    @include has-fa-icon(angle-double-down, solid, after);
+    color: $brand;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &::after {
+      font-size: 1.3em;
+    }
+  }
+}

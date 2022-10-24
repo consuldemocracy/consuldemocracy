@@ -1,0 +1,49 @@
+stages:
+  - test
+  - lint
+
+tests:
+  image: "ruby:2.7.6"
+  stage: test
+  services:
+    - postgres:10.10
+  cache:
+    key: consul
+    paths:
+      - vendor/
+  variables:
+    POSTGRES_USER: consul
+    RAILS_ENV: test
+    COVERALLS: 1
+  parallel: 5
+  script:
+    - apt-get update && apt-get install -y nodejs chromium
+    - for i in config/*.example; do cp "$i" "${i/.example}"; done
+    - for i in config/*.gitlab; do cp "$i" "${i/.gitlab}"; done
+    - bundle --without development
+    - bundle exec rake db:setup
+    - bundle exec rake assets:precompile > /dev/null 2>&1
+    - bin/knapsack_pro_rspec
+  artifacts:
+    when: on_failure
+    paths:
+      - tmp/screenshots/
+
+# To make this job work, create a Personal Access Token with permissions
+# to comment on your repository and add a variable named
+# PRONTO_GITLAB_API_PRIVATE_TOKEN to your repository CI/CD settings
+# giving it the value of the Personal Access Token
+linters:
+  image: "ruby:2.7.6"
+  stage: lint
+  cache:
+    key: consul
+    paths:
+      - vendor/
+  only:
+    - merge_requests
+  script:
+    - apt-get update && apt-get install -y nodejs cmake pkg-config
+    - bundle --without test
+    - git fetch origin $CI_MERGE_REQUEST_TARGET_BRANCH_NAME
+    - bundle exec pronto run -f gitlab_mr -c origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME

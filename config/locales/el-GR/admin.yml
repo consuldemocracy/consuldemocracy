@@ -1,0 +1,1505 @@
+el:
+  admin:
+    header:
+      title: Διαχείριση
+    actions:
+      actions: Ενέργειες
+      confirm_hide: Επιβεβαίωση μέτρησης
+      delete: "Διαγραφή"
+      hide: Απόκρυψη
+      restore: Επαναφορά
+      mark_featured: Προτεινόμενα
+      unmark_featured: Ξεμαρκάρισμα των επιλεγμένων
+      edit: Επεξεργασία
+      configure: Ρύθμιση παραμέτρων
+    officing_booth:
+      title: "Διαχειρίζεστε το περίπτερο που βρίσκεται στο %{booth}. Εάν αυτό δεν ισχύει, μην συνεχίσετε και καλέστε τον αριθμό τηλεφώνου βοήθειας. Ευχαριστώ."
+    banners:
+      index:
+        title: Πανό
+        create: Δημιουργία πανό
+        filters:
+          all: Όλα
+          with_active: Ενεργό
+          with_inactive: Ανενεργό
+        preview: Προεπισκόπηση
+      banner:
+        sections_label: Ενότητες όπου θα εμφανίζεται
+        sections:
+          homepage: Αρχική σελίδα
+          debates: Συζητήσεις
+          proposals: Προτάσεις
+          budgets: Συμμετοχικός προϋπολογισμός
+          help_page: Σελίδα βοήθειας
+          sdg: ΣΒΑ
+      edit:
+        editing: Επεξεργασία πανό
+        form:
+          submit_button: Αποθήκευση αλλαγών
+      new:
+        creating: Δημιουργία πανό
+    activity:
+      show:
+        action: Ενέργεια
+        actions:
+          block: Αποκλεισμένο
+          hide: Κρυφό
+          restore: Αποκατεστημένο
+        by: Συντονίζεται από
+        content: Περιεχόμενο
+        filter: Εμφάνιση
+        filters:
+          all: Όλα
+          on_comments: Σχόλια
+          on_debates: Συζητήσεις
+          on_proposals: Προτάσεις
+          on_users: Χρήστες
+          on_system_emails: Email συστήματος
+        title: Δραστηριότητα συντονιστή
+        type: Τύπος
+        no_activity: Δεν υπάρχουν ενεργοί συντονιστές.
+    budgets:
+      actions:
+        edit: "Επεξεργασία προϋπολογισμού"
+        preview: "Προεπισκόπηση προϋπολογισμού"
+      index:
+        title: Συμμετοχικοί προϋπολογισμοί
+        new_link: Δημιουργήσετε νέο προϋπολογισμό
+        filter: Φίλτρο
+        filters:
+          all: Όλα
+          open: '''Ανοιξε'
+          finished: Ολοκληρωμένο
+        budget_investments: Διαχείριση προγραμμάτων
+        table_budget_type: "Τύπος"
+        table_completed: Ολοκληρώθηκε
+        table_draft: "Προσχέδιο"
+        table_duration: "Διάρκεια"
+        table_name: Όνομα
+        table_phase: Φάση
+        table_phase_progress: "(%{current_phase_number}/%{total_phases})"
+        admin_ballots: Ψηφοδέλτια διαχειριστών
+        no_budgets: "Δεν υπάρχουν προϋπολογισμοί."
+      create:
+        notice: Ο νέος συμμετοχικός προϋπολογισμός δημιουργήθηκε επιτυχώς!
+      update:
+        notice: Ο συμμετοχικός προϋπολογισμός ενημερώθηκε με επιτυχία
+      publish:
+        notice: "Ο συμμετοχικός προϋπολογισμός δημοσιεύτηκε με επιτυχία"
+      edit:
+        title: Επεξεργασία συμμετοχικού προϋπολογισμού
+        drafting: "Αυτός ο συμμετοχικός προϋπολογισμός είναι σε λειτουργία προσχεδιασμού, μόνο οι διαχειριστές μπορούν να το δουν στην δημόσια ιστοσελίδα. Αφού δημοσιευτεί δεν θα μπορεί να τεθεί σε λειτουργία προσχεδιασμού ξανά."
+        publish: "Δημοσίευση προϋπολογισμού"
+        delete: Διαγραφή προϋπολογισμού
+        phase: Φάση
+        phases_caption: "Φάσεις"
+        duration: "Διάρκεια"
+        enabled: Ενεργοποιημένη
+        actions: Ενέργειες
+        active: Ενεργό
+        blank_dates: Οι ημερομηνίες είναι κενές
+        administrators:
+          zero: "Επιλογή διαχειριστών"
+          one: "1 επιλεγμένος διαχειριστής"
+          other: "%{count} επιλεγμένοι διαχειριστές"
+        valuators:
+          zero: "Επιλογή αξιολογητών"
+          one: "1 επιλεγμένος αξιολογητής"
+          other: "%{count} επιλεγμένοι αξιολογητές"
+        empty_administrators: "Δεν υπάρχουν διαχειριστές"
+        empty_valuators: "Δεν υπάρχουν αξιολογητές"
+        name_description: "Αυτό είναι το όνομα του συμμετοχικού προϋπολογισμού που χρησιμοποιείται στην κεφαλίδα και στις κάρτες όταν είναι ενεργός"
+        info:
+          budget_settings: "Γενικές ρυθμίσεις συμμετοχικού προϋπολογισμού"
+          staff_settings: "Διαχειριστές και Αξιολογητές που που έχουν ανατεθεί στον προϋπολογισμό"
+      destroy:
+        success_notice: Ο προϋπολογισμός διαγράφηκε επιτυχώς
+        unable_notice: Δεν μπορείτε να διαγράψετε έναν προϋπολογισμό ο οποίος έχει σχετικές επενδύσεις
+        unable_notice_polls: Δεν μπορείτε να διαγράψετε έναν προϋπολογισμό ο οποίος έχει σχετική δημοσκόπηση
+      help:
+        budgets: "Οι συμμετοχικού προϋπολογισμοί επιτρέπουν στους πολίτες να προτείνουν και να αποφασίζουν απευθείας για το πώς να δαπανηθεί μέρος του προϋπολογισμού, με παρακολούθηση και επιμελή αξιολόγηση από το ίδρυμα."
+        groups:
+          multiple: "Οι ομάδες προορίζονται για την οργάνωση επικεφαλίδων. Αφότου μία ομάδα έχει δημιουργηθεί και περιέχει επικεφαλίδες είναι δυνατόν να προσδιοριστεί σε πόσες επικεφαλίδες μπορεί να ψηφίσει ένας χρήστης ανά ομάδα."
+        headings:
+          multiple: "Οι επικεφαλίδες προορίζονται για τον διαμοιρασμό των χρημάτων του συμμετοχικού προϋπολογισμού. Εδώ μπορείτε να προσθέσετε επικεφαλίδες για αυτή την ομάδα και να αναθέσετε το χρηματικό ποσό που θα χρησιμοποιηθεί για κάθε κεφαλίδα."
+      winners:
+        calculate: Υπολογισμός νικητήριων επενδύσεων
+        calculated: Υπολογισμός νικητών. Η διαδικασία θα ολοκληρωθεί σύντομα. 
+        recalculate: Επαναυπολογισμός νικητήριων επενδύσεων
+    budget_groups:
+      name: "Όνομα"
+      headings_name: "Επικεφαλίδες"
+      headings_manage: "Διαχείριση επικεφαλίδων "
+      no_groups: "Δεν υπάρχουν ομάδες."
+      amount:
+        one: "Υπάρχει 1 ομάδα"
+        other: "Υπάρχουν %{count} ομάδες"
+      create:
+        notice: "Η ομάδα δημιουργήθηκε επιτυχώς!"
+      update:
+        notice: "Η ομάδα ενημερώθηκε επιτυχώς"
+      destroy:
+        success_notice: "Η ομάδα διαγράφηκε επιτυχώς"
+        unable_notice: "Δεν μπορείτε να διαγράψετε μια ομάδα η οποία έχει σχετικές επικεφαλίδες"
+      form:
+        create: "Δημιουργία νέας ομάδας"
+        edit: "Επεξεργασία ομάδας"
+        max_votable_headings_info: "Ισχύει μόνο για την φάση επιλογής έργων. Κατά την φάση ψήφισης έργων οι χρήστες μπορούν να ψηφίσουν μόνο σε μία επικεφαλίδα ανά ομάδα."
+        submit: "Αποθήκευση ομάδας"
+    budget_headings:
+      create:
+        notice: "Η επικεφαλίδα δημιουργήθηκε επιτυχώς!"
+      update:
+        notice: "Η επικεφαλίδα ενημερώθηκε επιτυχώς"
+      destroy:
+        success_notice: "Η επικεφαλίδα διαγράφηκε επιτυχώς"
+        unable_notice: "Δεν μπορείτε να διαγράψετε μια επικεφαλίδα οι οποία περιέχει σχετκές επενδύσεις"
+      form:
+        max_ballot_lines_info: 'Μέγιστος αριθμός έργων που μπορεί να ψηφίσει ένας χρήστης σε αυτή την επικεφαλίδα κατά την φάση "Ψήφιση έργων". Μόνο για προϋπολογισμούς που χρησιμοποιούν ψηφοφορία με έγκριση.'
+        population_info: "Το πεδίο πληθυσμού της επικεφαλίδας προϋπολογισμού χρησιμοποιείται για σκοπούς στατιστικής στο τέλος του προϋπολογισμού ούτως ώστε να καταγραφεί το ποσοστό ψήφων για κάθε επικεφαλίδα η οποία αντιπροσωπεύει μια περιοχή με πληθυσμό. Το πεδίο είναι προαιρετικό, έτσι μπορείτε να το αφήσετε κενό εαν δεν ισχύει."
+        coordinates_info: "Εάν παρέχετε το γεωγραφικό πλάτος και μήκος, η σελίδα των επενδύσεων για την επικεφαλίδα αυτή θα περιλαμβάνει έναν χάρτη. Αυτός ο Χάρτης θα κεντροθετηθεί χρησιμοποιώντας αυτές τις συντεταγμένες."
+        content_blocks_info: "Εάν το κουτί αποκλεισμού περιεχομένου είναι επιλεγμένο, θα είστε σε θέση να δημιουργήσετε προσαρμοσμένο περιεχόμενο σχετικά με αυτήν την επικεφαλίδα από την ενότητα Ρυθμίσεις > Αποκλεισμός των κουτιών περιεχομένου. Αυτό το περιεχόμενο θα εμφανιστεί στη σελίδα επενδύσεων για την επικεφαλίδα αυτή."
+        create: "Δημιουργία νέας επικεφαλίδας"
+        edit: "Επεξεργασία επικεφαλίδας"
+        submit: "Αποθήκευση επικεφαλίδας"
+      index:
+        back: "Επιστροφή στις ομάδες"
+    budget_phases:
+      edit:
+        title: "Επεξεργασία φάσης"
+        description_help_text: Αυτό το κείμενο θα εμφανίζεται στην επικεφαλίδα όταν η φάση είναι ενεργή
+        duration: "Διάρκεια φάσης"
+        enabled_help_text: Αυτή η φάση θα δημοσιευθεί στο χρονοδιάγραμμα των φάσεων του προϋπολογισμού, και θα είναι ενεργή για οποιονδήποτε άλλο σκοπό
+        save_changes: Αποθήκευση αλλαγών
+    budget_investments:
+      index:
+        heading_filter_all: Όλες οι επικεφαλίδες
+        administrator_filter_all: Όλοι οι διαχειριστές
+        valuator_filter_all: Όλοι οι εκτιμητές
+        tags_filter_all: Όλες οι ετικέτες
+        advanced_filters: Σύνθετα φίλτρα
+        placeholder: Αναζήτηση έργων
+        filters:
+          all: Όλα
+          without_admin: Δεν έχει ανατεθεί διαχειριστής
+          without_valuator: Δεν έχει ανατεθεί εκτιμητής
+          under_valuation: Υπό αξιολόγηση
+          valuation_finished: Η αξιολόγηση ολοκληρώθηκε
+          feasible: Εφικτό
+          selected: Επιλεγμένο
+          undecided: Δεν έχει συμφωνηθεί
+          unfeasible: Δεν είναι εφικτό
+          min_total_supports: Ελάχιστη στήριξη
+          max_total_supports: Μέγιστη στήριξη
+          winners: Νικητές
+          one_filter: "Τρέχοντα εφαρμοσμένα φίλτρα: <b><em>%{filter}</em></b>"
+          two_filters: "Τρέχοντα εφαρμοσμένα φίλτρα: <b><em>%{filter}, %{advanced_filters}</em></b>"
+        buttons:
+          filter: Φίλτρο
+        download_current_selection: "Κατεβάστε την τρέχουσα επιλογή"
+        no_budget_investments: "Δεν υπάρχουν επενδυτικά έργα."
+        title: Επενδυτικά έργα
+        assigned_admin: Ανατεθημένος διαχειριστής
+        no_admin_assigned: Δεν έχει ανατεθεί διαχειριστής
+        no_valuators_assigned: Δεν έχουν ανατεθεί αξιολογητές
+        feasibility:
+          feasible: "Εφικτό"
+          unfeasible: "Δεν είναι έφικτο"
+          undecided: "Δεν έχει συμφωνηθεί"
+        selected: "Επιλεγμένο"
+        select: "Επιλέξτε"
+        list:
+          id: Ταυτότητα
+          title: Τίτλος
+          supports: Υποστηρίξεις
+          admin: Διαχειριστής
+          valuator: Αξιολογητής
+          valuation_group: Ομάδα αξιολογητών
+          geozone: Στόχος Δράσεως
+          feasibility: Κατά πόσο έιναι εφικτό
+          valuation_finished: Val. Fin.
+          selected: Επιλεγμένο
+          visible_to_valuators: Προβολή στους εκτιμητές
+          author_username: Όνομα συντάκτη
+          incompatible: Δεν είναι συμβατά
+          price: Τιμή
+          author: Συντάκτης
+        see_results: "Εμφάνιση αποτελεσμάτων"
+      show:
+        assigned_admin: Ανατεθημένος διαχειριστής
+        assigned_valuators: Ανατεθημένοι αξιολογητές
+        classification: Ταξινόμηση
+        info: "%{budget_name} - Ομάδα: %{group_name} - Επενδυτικό πρόγραμμα %{id}"
+        edit: Επεξεργασία
+        edit_classification: Επεξεργασία ταξινόμησης
+        by: Από
+        sent: Απεσταλμένα
+        group: Ομάδα
+        heading: Επικεφαλίδα
+        dossier: Φάκελος
+        edit_dossier: Επεξεργασία φακέλου
+        tags: Ετικέτες
+        undefined: Δεν έχει προσδιοριστεί
+        compatibility:
+          title: Συμβατότητα
+          "true": Δεν είναι συμβατό
+          "false": Συμβατό
+        selection:
+          title: Επιλογή
+        winner:
+          title: Νικητής
+          "true": "Ναι"
+          "false": "Όχι"
+        valuator_groups: "Ομάδες αξιολογητών"
+      edit:
+        classification: Ταξινόμηση
+        compatibility: Συμβατότητα
+        selection: Επιλογή
+        assigned_valuators: Αξιολογητές
+        select_heading: Επιλογή επικεφαλίδας
+        submit_button: Ενημέρωση
+        user_tags: Ετικέτες που έχουν ανατεθεί από τον χρήστη
+        tags_placeholder: "Γράψτε τις ετικέτες που θέλετε διαχωρίζοντας τις με κόμματα (,)"
+        undefined: Δεν έχει προσδιοριστεί
+      search_unfeasible: Η αναζήτηση αυτή δεν είναι εφικτή
+    budgets_wizard:
+      creation_timeline:
+        budget: Προϋπολογισμός
+        groups: Ομάδες
+        headings: Επικεφαλίδες
+        phases: Φάσεις
+    milestones:
+      index:
+        table_id: "Ταυτότητα"
+        table_title: "Τίτλος"
+        table_description: "Περιγραφή"
+        table_publication_date: "Ημερομηνία δημοσίευσης"
+        table_status: Κατάσταση
+        table_actions: "Ενέργειες"
+        no_milestones: "Δεν υπάρχουν καθορισμένα ορόσημα"
+        image: "Εικόνα"
+        show_image: "Προβολή εικόνας"
+        documents: "Έγγραφα"
+        milestone: Ορόσημο
+        new_milestone: Δημιουργία νέου ορόσημου
+        milestone_tags: Ετικέτες οροσήμου
+      form:
+        admin_statuses: Διαχείριση καταστάσεων
+        no_statuses_defined: Δεν υπάρχουν καθορισμένες καταστάσεις
+      new:
+        creating: Δημιουργία ορόσημου
+      edit:
+        title: Επεξεργασία ορόσημου
+      create:
+        notice: Το νέο ορόσημο δημιουργήθηκε επιτυχώς!
+      update:
+        notice: Το ορόσημο ενημερώθηκε επιτυχώς
+      delete:
+        notice: Το ορόσημο διαγράφηκε επιτυχώς
+    statuses:
+      index:
+        title: Καταστάσεις οροσήμων
+        empty_statuses: Δεν υπάρχουν καταστάσεις ορόσημων 
+        new_status: Δημιουργία νέας κατάστασης οροσήμου
+        table_name: Όνομα
+        table_description: Περιγραφή
+        table_actions: Ενέργειες
+      edit:
+        title: Επεξεργασία κατάστασης οροσήμου
+      update:
+        notice: Η κατάσταση του οροσήμου ενημερώθηκε επιτυχώς
+      new:
+        title: Δημιουργία κατάστασης οροσήμου
+      create:
+        notice: Η κατάσταση οροσήμου δημιουργήθηκε επιτυχώς
+      delete:
+        notice: Η κατάσταση του οροσήμου διαγράφηκε επιτυχώς
+    progress_bars:
+      manage: "Διαχείριση γραμμής προόδου"
+      index:
+        title: "Γραμμές προόδου"
+        no_progress_bars: "Δεν υπάρχουν γραμμές προόδου"
+        new_progress_bar: "Δημιουργία νέας γραμμής προόδου"
+        primary: "Βασική γραμμή προόδου"
+        table_id: "Ταυτότητα"
+        table_kind: "Τύπος"
+        table_title: "Τίτλος"
+        table_percentage: "Τρέχουσα πρόοδος"
+      new:
+        creating: "Δημιουργία γραμμής προόδου"
+      edit:
+        title:
+          primary: "Επεξεργασία βασικής γραμμής προόδου"
+          secondary: "Επεξεργασία γραμμής προόδου %{title}"
+      create:
+        notice: "Η γραμμή προόδου δημιουργήθηκε επιτυχώς!"
+      update:
+        notice: "Η γραμμή προόδου ενημερώθηκε επιτυχώς"
+      delete:
+        notice: "Η γραμμή προόδου διαγράφηκε επιτυχώς"
+    comments:
+      index:
+        id: "Ταυτότητα"
+        content: "Περιεχόμενο"
+        author: "Συντάκτης"
+        commentable_type: "Τύπος"
+        title: Κρυφά σχόλια
+        table_link: "Σύνδεσμος"
+    hidden_comments:
+      index:
+        filter: Φίλτρο
+        filters:
+          all: Όλα
+          with_confirmed_hide: Επιβεβαιωμένο
+          without_confirmed_hide: Σε εκκρεμότητα
+        hidden_debate: Κρυφή συζήτηση
+        hidden_proposal: Κρυφή πρόταση
+        title: Κρυφά σχόλια
+    dashboard:
+      index:
+        back: Πίσω στο %{org}
+        title: Διαχείριση
+        description: Καλώς ήλθατε στο πάνελ διαχειρισης %{org}.
+      actions:
+        index:
+          description: "Οι χρήστες που υποβάλουν προτάσεις έχουν πρόσβαση στον πίνακα της πρότασής τους, όπου άλλοι χρήστες μπορούν να προτείνουν πόρους και συστάσεις για να λάβουν στήριξη για την ιδέα τους."
+          create: Δημιουργία πόρων ή δράσης
+          active: 'Ναι'
+          inactive: 'Όχι'
+          title: Πόροι και δράσεις
+          action_title: Τίτλος
+          action_type: Τύπος
+          required_supports: Απαιτούμενη στήριξη
+          day_offset: Απαιτούμενες ημέρες
+          action_active: Ενεργό
+          order: Σειρά 
+          published_proposal: Δημοσιευμένη πρόταση
+          default:
+            email: E-Mail
+            polls: Δημοσκοπήσεις
+            poster: Αφίσα
+        new:
+          creating: Νέα ενέργεια για τον πίνακα προτάσεων
+          back: Πίσω στη λίστα
+        create:
+          notice: Η ενέργεια δημιουργήθηκε επιτυχώς
+        edit:
+          editing: Επεξεργασία ενέργειας για τον πίνακα προτάσεων
+          back: Πίσω στη λίστα
+        delete:
+          success: Η ενέργεια διαγράφηκε επιτυχώς
+        form:
+          submit_button: Αποθήκευση
+          help_text: Εισαγάγετε 0 για να μην ληφθεί υπόψη αυτή η τιμή
+          published_proposal_help_text: Σημειώστε αυτό το κουτί ελέγχου για να δημιουργήσετε την ενέργεια μόνο για δημοσιευμένες προτάσεις
+      administrator_tasks:
+        index:
+          description: "Οι πόροι που δημοσιεύονται στον πίνακα προτάσεων ενδέχεται να περιλαμβάνουν ένα κουμπί το οποίο θα ζητηθεί από τους διαχειριστές. Τα αιτήματα χρηστών εμφανίζονται παρακάτω."
+          title: Απαιτούνται πόροι
+          solve: Επίλυση
+          no_records: Δεν απαιτούνται πόροι
+          source: Πηγή
+          resource: Απαιτούμενος πόρος
+          filter: Φίλτρο
+          filters:
+            pending: Σε εκκρεμότητα
+            done: Επίλυμένο
+        edit:
+          back: Πίσω στη λίστα εκκρεμούντων ενεργειών
+          solving: Επίλυση εκκρεμούσας ενέργειας
+        form:
+          solve: Σημείωση ως επιλυμένο
+          proposal: Πρόταση
+          request: Απαιτούμενος πόρος
+        update:
+          success: Η ενέργεια αυτή έχει σημειωθεί ως επίλυμένη.
+    debates:
+      index:
+        id: Ταυτότητα
+        author: Συντάκτης
+        title: Κρυφές συζητήσεις
+    hidden_debates:
+      index:
+        filter: Φίλτρο
+        filters:
+          all: Όλα
+          with_confirmed_hide: Επιβεβαιωμένο
+          without_confirmed_hide: Σε εκκρεμότητα
+        title: Κρυφές συζητήσεις
+    documents:
+      new:
+        title: "Ανεβάσε ένα έγγραφο"
+        submit_button: "Ανεβάστε"
+      index:
+        new_link: "Προσθέστε νέο έγγραφο"
+        no_documents: "Δεν υπάρχουν έγγραφα."
+        title: "Έγγραφα"
+        format: "Μορφή"
+        size: "Μέγεθος"
+        url: "URL"
+      create:
+        success_notice: "Το έγγραφο φορτώθηκε με επιτυχία"
+        unable_notice: "Μη έγκυρο έγγραφο"
+      destroy:
+        success_notice: "Το έγγραφο διαγράφηκε επιτυχώς."
+    hidden_users:
+      index:
+        filter: Φίλτρο
+        filters:
+          all: Όλα
+          with_confirmed_hide: Επιβεβαιωμένο
+          without_confirmed_hide: Σε εκκρεμότητα
+        title: Κρυφοί χρήστες
+        user: Χρήστης
+        no_hidden_users: Δεν υπάρχουν κρυφοί χρήστες.
+      show:
+        email: "E-Mail:"
+        hidden_at: "Κρύφτηκε στις:"
+        registered_at: "Εγγεγραμμένος στο:"
+        title: Δραστηριότητα του χρήστη (%{user})
+    hidden_budget_investments:
+      index:
+        filter: Φίλτρο
+        filters:
+          all: Όλα
+          with_confirmed_hide: Επιβεβαιωμένο
+          without_confirmed_hide: Σε εκκρεμότητα
+        title: Κρυφοί προϋπολογισμοί επενδύσεων
+        no_hidden_budget_investments: Δεν υπάρχουν κρυφοί προϋπολογισμοί επενδύσεων
+    legislation:
+      processes:
+        create:
+          notice: 'Η διαδικασία δημιουργήθηκε με επιτυχία. <a href="%{link}">κάντε κλικ για να επισκεφθείτε</a>'
+          error: Η διαδικασία δεν μπόρεσε να δημιουργηθεί
+        update:
+          notice: 'Διαδικασία ενημερώθηκε με επιτυχία. <a href="%{link}">κάντε κλικ για να επισκεφθείτε</a>'
+          error: Η διαδικασία δεν μπόρεσε να ενημερωθεί
+        destroy:
+          notice: Η διαδικασία διαγράφηκε με επιτυχία
+        edit:
+          back: Πίσω
+          submit_button: Αποθηκεύστε τις αλλαγές
+        form:
+          enabled: Ενεργοποιημένη
+          process: Διαδικασία
+          debate_phase: Φάση συζήτησης
+          draft_phase: Φάση του σχεδίου
+          draft_phase_description: Εάν αυτή η φάση είναι ενεργή, η διαδικασία δεν θα εμφανίζεται στον δείκτη των διεργασιών. Επιτρέψτε προεπισκόπηση της διαδικασίας και δημιουργήστε περιεχόμενο πριν από την έναρξη.
+          allegations_phase: Φάση σχολίων
+          proposals_phase: Φάση προτάσεων
+          use_markdown: Χρησιμοποιήστε Markdown να μορφοποιήσετε το κείμενο
+          homepage_description: Εδώ μπορείτε να εξηγήσετε το περιεχόμενο της διαδικασίας
+          banner_title: Χρώματα επικεφαλίδας
+        index:
+          create: Νέα διαδικασία
+          title: Συνεργατική νομοθεσία
+          filters:
+            active: Ενεργό
+            all: Όλα
+        new:
+          back: Πίσω
+          title: Δημιουργήστε νέα διαδικασία συνεργατικής νομοθεσίας
+          submit_button: Δημιουργία διαδικασίας
+        proposals:
+          orders:
+            id: "Ταυτότητα"
+            title: "Τίτλος"
+            supports: "Συνολικές υποστηρίξεις"
+        process:
+          title: Διαδικασία
+          comments: Σχόλια
+          status: Κατάσταση
+          start_date: Ημερομηνία έναρξης
+          end_date: Ημερομηνία λήξης
+          status_open: Ανοιχτό
+          status_closed: Κλειστό
+          status_planned: Σχεδιασμένο
+        subnav:
+          info: Πληροφορίες
+          homepage: Αρχική σελίδα
+          draft_versions: Σχεδιασμός
+          questions: Συζήτηση
+          proposals: Προτάσεις
+          milestones: Ακολουθεί
+      homepage:
+        edit:
+          title: Ρύθμιση της αρχικής σελίδα της διαδικασίας
+      proposals:
+        index:
+          title: Τίτλος
+          back: Πίσω
+          id: Ταυτότητα
+          supports: Συνολικές υποστηρίξεις
+        form:
+          custom_categories: Κατηγορίες
+          custom_categories_description: 'Κατηγορίες που μπορούν να επιλέξουν οι χρήστες για τη δημιουργία της πρότασης τους. Μέγιστος αριθμός χαρακτήρων: 160.'
+          custom_categories_placeholder: Εισαγάγετε τις ετικέτες που θα θέλατε να χρησιμοποιήσετε, διαχωρισμένες με κόμματα (,) και μεταξύ εισαγωγικών ("")
+      draft_versions:
+        create:
+          notice: 'Το προσχέδιο δημιουργήθηκε επιτυχώς. <a href="%{link}">Κάντε κλικ για να επισκεφθείτε</a>'
+          error: Το προσχέδιο δεν μπόρεσε να δημιουργηθεί
+        update:
+          notice: 'Το προσχέδιο ανανεώθηκε επιτυχώς. <a href="%{link}">κάντε κλικ για να επισκεφθείτε</a>'
+          error: Το προσχέδιο δεν μπόρεσε να ενημερωθεί
+        destroy:
+          notice: Το προσχέδιο διαγράφηκε επιτυχώς
+        edit:
+          back: Πίσω
+          submit_button: Αποθήκευση αλλαγών
+          warning: Έχετε επεξεργαστεί το κείμενο, μη ξεχάσετε να πατήσετε "Αποθήκευση" για να αποθηκεύσετε μόνιμα τις αλλαγές.
+        form:
+          title: 'Επεξεργασία <span class="strong">%{draft_version_title}</span> από τη διαδικασία <span class="strong">%{process_title}</span>'
+          launch_text_editor: Άνοιγμα επεξεργαστή κειμένου
+          close_text_editor: Κλείσιμο επεξεργαστή κειμένου
+          use_markdown: Χρησιμοποιήστε το Markdown για να διαμορφώσετε το κείμενο
+          hints:
+            final_version: Αυτή η έκδοση θα δημοσιευθεί ως τελικό αποτέλεσμα για αυτήν τη διαδικασία. Τα σχόλια δεν θα επιτρέπονται σε αυτή την έκδοση.
+            status:
+              draft: Μπορείτε να κάνετε προεπισκόπηση ως διαχειριστής, κανείς άλλος δεν θα μπορεί να έχει πρόσβαση
+              published: Ορατό για όλους
+          changelog_placeholder: Προσθέστε τις κύριες αλλαγές από την προηγούμενη έκδοση
+        index:
+          title: Εκδόσεις προσχεδίου
+          create: Δημιουργία έκδοσης
+          delete: Διαγραφή
+          preview: Προεπισκόπηση
+        new:
+          back: Πίσω
+          title: Δημιουργήστε νέα έκδοση
+          submit_button: Δημιουργία έκδοσης
+        table:
+          title: Τίτλος
+          created_at: Δημιουργήθηκε στις
+          comments: Σχόλια
+          final_version: Τελική έκδοση
+          status: Κατάσταση
+      questions:
+        create:
+          notice: 'Η ερώτηση δημιουργήθηκε επιτυχώς. <a href="%{link}">κάντε κλικ για να επισκεφθείτε</a>'
+          error: Η ερώτηση δεν μπόρεσε να δημιουργηθεί
+        update:
+          notice: 'Η ερώτηση ενημερώθηκε επιτυχώς. <a href="%{link}">κάντε κλικ για να επισκεφθείτε</a>'
+          error: Η ερώτηση δεν μπόρεσε να ενημερωθεί
+        destroy:
+          notice: Η ερώτηση διαγράφηκε επιτυχώς
+        edit:
+          back: Πίσω
+          title: "Επεξεργασία “%{question_title}”"
+          submit_button: Αποθήευση αλλαγών
+        form:
+          add_option: Προσθήκη επιλογής
+          value_placeholder: Προσθήκη κλειστής απάντησης
+          question_options: "Πιθανές απαντήσεις (προαιρετικό, ανοικτές απαντήσεις από προεπιλογή)"
+        index:
+          back: Πίσω
+          title: Ερωτήσεις που σχετίζονται με αυτήν τη διαδικασία
+          create: Δημιουργία ερώτησης
+          delete: Διαγραφή
+        new:
+          back: Πίσω
+          title: Δημιουργία νέας ερώτησης
+          submit_button: Δημιουργία ερώτησης
+        table:
+          title: Τίτλος
+          question_options: Επιλογές ερωτήσεων
+          answers_count: Καταμέτρηση απαντήσεων
+          comments_count: Καταμέτρηση σχολίων
+        question_option_fields:
+          remove_option: Αφαίρεση επιλογής
+      milestones:
+        index:
+          title: Ακολουθεί
+    managers:
+      index:
+        title: Υπεύθυνοι
+        no_managers: Δεν υπάρχουν υπεύθυνοι
+      manager:
+        add: Προσθήκη
+      search:
+        title: "Συντονιστές: Αναζήτηση χρήστη"
+    sdg_managers:
+      index:
+        no_sdg_managers: Δεν υπάρχουν χρήστες.
+    sdg/managers:
+      sdg/manager:
+        add: Προσθήκη
+    menu:
+      activity: Δραστηριότητα συντονιστή
+      admin: Μενού διαχειριστή
+      banner: Διαχείριση πανό
+      proposals: Προτάσεις
+      proposals_topics: Θέματα προτάσεων
+      budgets: Συμμετοχικοί προϋπολογισμοί
+      geozones: Διαχείριση geozones
+      hidden_comments: Κρυφά σχόλια
+      hidden_debates: Κρυφές συζητήσεις
+      hidden_proposals: Κρυφές προτάσεις
+      hidden_budget_investments: Κρυφές επενδύσεις προϋπολογισμού
+      hidden_proposal_notifications: Κρυφές ειδοποιήσεις προτάσεων
+      hidden_users: Κρυφοί χρήστες
+      administrators: Διαχειριστές
+      managers: Υπεύθυνοι
+      moderators: Συντονιστές
+      messaging_users: Μηνύματα προς τους χρήστες
+      newsletters: Ενημερωτικά δελτία
+      admin_notifications: Ειδοποιήσεις
+      system_emails: Email συστήματος
+      emails_download: Λήψη email
+      valuators: Αξιολογητές
+      poll_officers: Λειτουργοί ψηφοφορίας
+      polls: Ψηφοφορίες
+      poll_booths: Τοποθεσία περιπτέρων
+      poll_booth_assignments: Αναθέσεις περιπτέρων
+      poll_shifts: Διαχείριση μετατοπίσεων
+      officials: Επίσημοι
+      organizations: Οργανισμοί
+      settings: Καθολικές ρυθμίσεις
+      stats: Στατιστικά στοιχεία
+      signature_sheets: Φύλλα υπογραφών
+      site_customization:
+        documents: Προσαρμοσμένα έγγραφα
+        homepage: Αρχική σελίδα
+        pages: Προσαρμοσμένες σελίδες
+        images: Προσαρμοσμένες εικόνες
+        content_blocks: Προσαρμοσμένα μπλοκ περιεχομένου
+        information_texts: Προσαρμοσμένα κείμενα πληροφοριών
+        information_texts_menu:
+          debates: "Συζητήσεις"
+          community: "Κοινότητα"
+          proposals: "Προτάσεις"
+          polls: "Δημοσκοπήσεις"
+          layouts: "Σχεδιαγράμματα"
+          mailers: "E-Mails"
+          management: "Διαχείριση"
+          welcome: "Καλώς ήλθατε"
+        buttons:
+          save: "Αποθήκευση"
+          content_block:
+            update: "Ενημερωμένη έκδοση μπλοκ"
+      title_moderated_content: Ελεγχόμενο περιεχόμενο
+      title_profiles: Προφίλ
+      title_settings: Ρυθμίσεις
+      title_site_customization: Περιεχόμενο δικτυακού τόπου
+      title_booths: Θάλαμοι ψηφοφορίας
+      legislation: Συνεργατική νομοθεσία
+      users: Χρήστες
+      dashboard: Πίνακας εργαλείων προτάσεων
+      administrator_tasks: Απαιτούνται πόροι
+      dashboard_actions: Πόροι και δράσεις
+      debates: "Συζητήσεις"
+      comments: "Σχόλια"
+    administrators:
+      index:
+        title: Διαχειριστές
+        id: ID διαχειριστή
+        no_administrators: Δεν υπάρχουν διαχειριστές.
+      administrator:
+        add: Προσθέστε
+        restricted_removal: "Συγνώμη, δεν μπορείτε να αφαιρέσετε τον εαυτό σας από τους διαχειριστές"
+      search:
+        title: "Διαχειριστές: Αναζήτηση χρήστη"
+    moderators:
+      index:
+        title: Συντονιστές
+        no_moderators: Δεν υπάρχουν συντονιστές.
+      moderator:
+        add: Προσθέστε
+      search:
+        title: "Συντονιστές: Αναζήτηση χρήστη"
+    segment_recipient:
+      all_users: Όλοι οι χρήστες
+      administrators: Διαχειριστές
+      proposal_authors: Συγγραφείς πρότασης
+      investment_authors: Συγγραφείς επενδύσεων στον παρών προϋπολογισμό
+      feasible_and_undecided_investment_authors: "Συγγραφείς ορισμένων επενδύσεων στον τρέχοντα προϋπολογισμό που δεν συμμορφώνονται με: [η αποτίμηση τελείωσε ανέφικτη]"
+      selected_investment_authors: Συγγραφείς επιλεγμένων επενδύσεων στον τρέχοντα προϋπολογισμό
+      winner_investment_authors: Συγγραφείς των επενδύσεων που κέρδισαν στον τρέχοντα προϋπολογισμό
+      not_supported_on_current_budget: Χρήστες που δεν έχουν υποστηρίξει επενδύσεις στον τρέχοντα προϋπολογισμό
+      invalid_recipients_segment: "Το τμήμα χρήστη των παραληπτών δεν είναι έγκυρο"
+    newsletters:
+      create_success: Το ενημερωτικό δελτίο δημιουργήθηκε με επιτυχία
+      update_success: Το ενημερωτικό δελτίο ανανεώθηκε με επιτυχία
+      send_success: Το ενημερωτικό δελτίο εστάλλη με επιτυχία
+      delete_success: Το ενημερωτικό δελτίο διαγράφηκε με επιτυχία
+      index:
+        title: Ενημερωτικά δελτία
+        new_newsletter: Νέο ενημερωτικό δελτίο
+        subject: Θέμα
+        segment_recipient: Παραλήπτες
+        sent: Απεσταλμένα
+        actions: Ενέργειες
+        draft: Προσχέδιο
+        preview: Προεπισκόπηση
+        empty_newsletters: Δεν υπάρχουν ενημερωτικά δελτία για προβολή
+      new:
+        title: Νέο ενημερωτικό δελτίο
+      edit:
+        title: Επεξεργασία ενημερωτικού δελτίου
+      show:
+        title: Προεπισκόπηση ενημερωτικού δελτίου
+        send: Αποστολή
+        affected_users: (%{n} επηρεασμένοι χρήστες)
+        sent_emails:
+          one: 1 email εστάλη
+          other: "%{count} email στάλθηκαν"
+        sent_at: Αποστολή σε
+        subject: Θέμα
+        segment_recipient: Παραλήπτες
+        from: Διεύθυνση ηλεκτρονικού ταχυδρομείου που θα εμφανιστεί στέλνοντας το ενημερωτικό δελτίο
+        body: Περιεχόμενο μηνύματος ηλεκτρονικού ταχυδρομείου
+        body_help_text: Αυτός είναι ο τρόπος με τον οποίο οι χρήστες θα βλέπουν το μήνυμα ηλεκτρονικού ταχυδρομείου
+        send_alert: Είστε βέβαιοι ότι θέλετε να στείλετε αυτό το ενημερωτικό δελτίο στους %{n} χρήστες;
+    admin_notifications:
+      create_success: Η ειδοποίηση δημιουργήθηκε με επιτυχία
+      update_success: Η ειδοποίηση ανανεώθηκε με επιτυχία
+      send_success: Η ειδοποίηση εστάλη με επιτυχία
+      delete_success: Η ειδοποίηση διεγράφη με επιτυχία
+      index:
+        section_title: Ειδοποιήσεις
+        new_notification: Νέα ειδοποίηση
+        title: Τίτλος
+        segment_recipient: Παραλήπτες
+        sent: Απεσταλμένα
+        actions: Ενέργειες
+        draft: Προσχέδιο
+        preview: Προεπισκόπηση
+        view: Προβολή
+        empty_notifications: Δεν υπάρχουν ειδοποιήσεις για προβολή
+      new:
+        section_title: Νέα ειδοποίηση
+        submit_button: Δημιουργία ειδοποίησης
+      edit:
+        section_title: Επεξεργασία ειδοποίησης
+        submit_button: Ενημέρωση ειδοποίησης
+      show:
+        section_title: Προεπισκόπηση ειδοποίησης
+        send: Αποστολή ειδοποίησης
+        will_get_notified: (%{n} χρήστες θα ειδοποιηθούν)
+        got_notified: (%{n} χρήστες ειδοποιήθηκαν)
+        sent_at: Αποστολή σε
+        title: Τίτλος
+        body: Κείμενο
+        link: Σύνδεσμος
+        segment_recipient: Παραλήπτες
+        preview_guide: "Αυτό είναι το πώς οι χρήστες θα βλέπουν την ειδοποίηση:"
+        sent_guide: "Αυτό είναι το πώς οι χρήστες βλέπουν την ειδοποίηση:"
+        send_alert: Είστε βέβαιοι ότι θέλετε να στείλετε αυτή την ειδοποίηση σε %{n} χρήστες;
+    system_emails:
+      preview_pending:
+        action: Προεπισκόπηση σε εκκρεμότητα
+        preview_of: Προεπισκόπηση του %{name}
+        pending_to_be_sent: Αυτό είναι το περιεχόμενο σε αναμονή να αποσταλλεί
+        moderate_pending: Μέτρια αποστολή ειδοποίησης
+        send_pending: Αποστολή σε εκκρεμότητα
+        send_pending_notification: Εκκρεμείς ειδοποιήσεις που έχουν σταλεί με επιτυχία
+      proposal_notification_digest:
+        title: "Ανακοίνωση για την υποβολή προτάσεων"
+        description: "Συγκεντρώνει όλες τις ειδοποιήσεις για προτάσεις για ένα χρήστη σε ένα μήνυμα, για να αποφύγετε πάρα πολλά μηνύματα ηλεκτρονικού ταχυδρομείου."
+        preview_detail: "Οι χρήστες θα λάβουν μόνο τις ειδοποιήσεις από τις προτάσεις που ακολουθούν"
+      budget_investment_created:
+        title: "Ο προϋπολογισμος επενδύσεων δημιουργήθηκε"
+        description: "Αποστέλλονται όταν ένας χρήστης δημιουργεί έναν προϋπολογισμό επενδύσεων."
+      budget_investment_selected:
+        title: "Προϋπολογισμός επενδύσεων που επιλέχτηκε"
+        description: "Αποστέλλεται στο συντάκτη όταν ο προϋπολογισμός επενδύσεών του έχει επιλεγεί."
+      budget_investment_unfeasible:
+        title: "Προϋπολογισμός επενδύσεων ανέφικτος"
+        description: "Αποστέλλονται στο συντάκτη όταν ο προϋπολογισμός επενδύσεών του έχει σημανθεί ως ανέφικτος."
+      budget_investment_unselected:
+        title: "Προϋπολογισμός επενδύσεων μη επιλεγμένος"
+        description: "Αποστέλλονται στο συντάκτη όταν ο προϋπολογισμός επενδύσεών του δεν έχει επιλεγεί για τη φάση ψηφοφορίας."
+      comment:
+        title: "Σχόλιο"
+        description: "Αποστέλλονται στο συντάκτη όταν λαμβάνει ένα σχόλιο."
+      reply:
+        title: "Απάντηση"
+        description: "Αποστέλλονται στον συγγραφέα του σχολίου όταν λαμβάνει μια απάντηση."
+      direct_message_for_receiver:
+        title: "Δέκτης ιδιωτικού μηνύματος"
+        description: "Εστάλη στον δέκτη ιδιωτικού μηνύματος."
+      direct_message_for_sender:
+        title: "Αποστολέας ιδιωτικού μηνύματος"
+        description: "Στείλτε στον αποστολέα του ιδιωτικού μηνύματος."
+      email_verification:
+        title: "Επιβεβαίωση mail"
+        description: "Στείλτε σε έναν νέο χρήστη για να επαληθεύσετε τον λογαριασμό του."
+      user_invite:
+        title: "Πρόσκληση χρήστη"
+        description: "Στείλτε στο άτομο που έχει προσκληθεί να καταχωρίσει λογαριασμό."
+      evaluation_comment:
+        title: "Νέο σχόλιο αξιολόγησης"
+      edit_info: "Μπορείτε να επεξεργαστείτε αυτό το μήνυμα ηλεκτρονικού ταχυδρομείου σε"
+      message_title: "Τίτλος μηνύματος"
+      message_body: "Αυτό είναι ένα δείγμα περιεχομένου μηνυμάτων."
+      alert:
+        no_investments: "Δεν επενδύσεις προϋπολογισμού δημιουργημένες. Ορισμένα παραδείγματα δεδομένων είναι απαραίτητα για την προεπισκόπηση του μηνύματος ηλεκτρονικού ταχυδρομείου."
+        no_comments: "Δεν δημιουργήθηκαν σχόλια. Ορισμένα παραδείγματα δεδομένων είναι απαραίτητα για την προεπισκόπηση του μηνύματος ηλεκτρονικού ταχυδρομείου."
+        no_replies: "Δεν έχουν δημιουργηθεί απαντήσεις. Ορισμένα παραδείγματα δεδομένων είναι απαραίτητα για την προεπισκόπηση του μηνύματος ηλεκτρονικού ταχυδρομείου."
+    emails_download:
+      index:
+        title: Λήψη email
+        download_segment: Λήψη διευθύνσεων email
+        download_segment_help_text: Λήψη σε μορφή CSV
+        download_emails_button: Λήψη λίστας email
+    valuators:
+      index:
+        title: Αξιολογητές
+        name: Όνομα
+        email: E-Mail
+        description: Περιγραφή
+        no_description: Δεν υπάρχει περιγραφή
+        no_valuators: Δεν υπάρχουν αξιολογητές.
+        valuator_groups: "Ομάδα αξιολογητών"
+        group: "Ομάδα"
+        no_group: "Δεν υπάρχει ομάδα"
+      valuator:
+        add: Προσθέστε στους εκτιμητές
+      search:
+        title: "Εκτιμητές: Αναζήτηση χρήστη"
+      form:
+        edit_title: "Εκτιμητές: Επεξεργασία εκτιμητή"
+        updated: "Ο εκτιμητής ανανεώθηκε με επιτυχία"
+      show:
+        description: "Περιγραφή"
+        email: "E-Mail"
+        group: "Ομάδα"
+        no_description: "Χωρίς περιγραφή"
+        no_group: "Χωρίς ομάδα"
+    valuator_groups:
+      index:
+        title: "Ομάδες αξιολογητών"
+        new: "Δημιουργήστε ομάδα εκτιμητών"
+        name: "Όνομα"
+        members: "Μέλη"
+        no_groups: "Δεν υπάρχουν ομάδες αξιολογητών"
+      show:
+        title: "Ομάδα εκτιμητών: %{group}"
+        no_valuators: "Δεν υπάρχουν αξιολογητές που να έχουν ανατεθεί σε αυτήν την ομάδα"
+      form:
+        new: "Δημιουργήστε ομάδα εκτιμητών"
+        edit: "Αποθήκευση ομάδας αποτίµησης"
+    poll_officers:
+      index:
+        title: Επίσημοι της ψηφοφορίας
+      officer:
+        add: Προσθέστε
+        delete: Διαγραφή της θέσης
+        name: Όνομα
+        email: E-Mail
+        entry_name: λειτουργός
+      search:
+        email_placeholder: Αναζήτηση χρήστη μέσω ηλεκτρονικού ταχυδρομείου
+        user_not_found: Ο χρήστης δεν βρέθηκε
+    poll_officer_assignments:
+      index:
+        officers_title: "Λίστα λειτουργών"
+        no_officers: "Δεν υπάρχουν λειτουργοί που να έχουν ανατεθεί σε αυτήν τη δημοσκόπηση."
+        table_name: "Όνομα"
+        table_email: "E-Mail"
+      by_officer:
+        date: "Ημερομηνία"
+        booth: "Περίπτερο"
+        assignments: "Οι μετατοπίσεις σε αυτή τη δημοσκόπηση"
+        no_assignments: "Αυτός ο χρήστης δεν έχει αξιόλογες αλλαγές στη δημοσκόπηση."
+    poll_shifts:
+      new:
+        add_shift: "Πρόσθεσε μετατόπιση"
+        shift: "Ανάθεση"
+        shifts: "Μετατοπίσεις σε αυτό το περίπτερο"
+        date: "Ημερομηνία"
+        edit_shifts: Επεξεργαστείτε τις μετατοπίσεις
+        new_shift: "Νέα μετατόπιση"
+        no_shifts: "Αυτό το περίπτερο δεν έχει μετατοπίσεις"
+        officer: "Λειτουργός"
+        remove_shift: "Κατάργηση"
+        search_officer_button: Αναζήτηση
+        search_officer_placeholder: Αναζήτηση λειτουργού
+        search_officer_text: Αναζητήστε έναν αξιωματικό να αναθέσει μια νέα μετατόπιση
+        select_date: "Επιλέξτε ημέρα"
+        no_voting_days: "Οι ημέρες ψηφοφορίας τέλιωσαν"
+        select_task: "Επιλέξτε καθήκον"
+        table_shift: "Μετατόπιση"
+        table_email: "E-Mail"
+        table_name: "Όνομα"
+      flash:
+        create: "Μετατόπιση που πρόσθεσαν"
+        destroy: "Μετατόπιση που αφαιρέθηκε"
+        unable_to_destroy: "Μετατοπίσεις με σχετικά αποτελέσματα ή επανυπολογισμούς δεν μπορούν να διαγραφούν"
+        date_missing: "Μία ημερομηνία πρέπει να επιλεγεί"
+      vote_collection: Συλλογή ψήφων
+      recount_scrutiny: Καταμέτρηση και έλεγχος
+    booth_assignments:
+      manage_assignments: Διαχείριση αναθέσεων
+      manage:
+        assignments_list: "Αναθέσεις για την ψηφοφορία '%{poll}'"
+        status:
+          assign_status: Ανάθεση
+          assigned: Που έχουν ανατεθεί
+          unassigned: Δεν έχει ανατεθεί
+        actions:
+          assign: Περίπτερο ανάθεσης
+          unassign: Περίπτερο μη ανάθεσης
+    poll_booth_assignments:
+      alert:
+        shifts: "Υπάρχουν μετατοπίσεις που σχετίζονται με αυτό το περίπτερο. Εάν αφαιρέσετε την ανάθεση του θαλάμου, οι μετατοπίσεις θα διαγραφούν επίσης. Να συνεχίσει;"
+      show:
+        location: "Τοποθεσία"
+        officers: "Λειτουργοί"
+        officers_list: "Λίστα αξιωματικών για αυτό το περίπτερο"
+        no_officers: "Δεν υπάρχει λίστα αξιωματικών για αυτό το περίπτερο"
+        recounts: "Αναφορές"
+        recounts_list: "Λίστα καταγραφής για αυτό το περίπτερο"
+        results: "Αποτελέσματα"
+        date: "Ημερομηνία"
+        count_final: "Τελική καταμέτρηση (από λειτουργό)"
+        count_by_system: "Ψηφοφορίες (αυτόματο)"
+        total_system: Συνόλου των ψήφων (αυτόματη)
+      index:
+        booths_title: "Λίστα των θαλάμων"
+        no_booths: "Δεν υπάρχουν θάλαμοι που να έχουν ανατεθεί σε αυτήν τη δημοσκόπηση."
+        table_name: "Όνομα"
+        table_location: "Τοποθεσία"
+    active_polls:
+      edit:
+        title: "Περιγραφή δημοσκοπήσεων"
+      form:
+        description:
+          help_text: "Αυτό το κείμενο θα εμφανίζεται στην κεφαλίδα της σελίδας δημοσκοπήσεων. Μπορεί να χρησιμοποιηθεί για να προσθέσετε ένα περιεχόμενο στις ανοιγμένες δημοσκοπήσεις."
+    polls:
+      index:
+        title: "Λίστα των δημοσκοπήσεων"
+        no_polls: "Δεν υπάρχουν δημοσκοπήσεις που να έπονται."
+        create: "Δημιουργία δημοσκόπησης"
+        name: "Όνομα"
+        dates: "Ημερομηνίες"
+        start_date: "Ημερομηνία έναρξης"
+        closing_date: "Καταληκτική ημερομηνία"
+        geozone_restricted: "Περιορίζεται σε περιοχές"
+      new:
+        title: "Νέα δημοσκόπηση"
+        submit_button: "Δημιουργία δημοσκόπησης"
+      edit:
+        title: "Επεξεργαστείτε τη δημοσκόπηση"
+        submit_button: "Ενημέρωση δημοσκόπησης"
+      show:
+        questions_tab: Ερωτήσεις
+        booths_tab: Περίπτερα
+        officers_tab: Λειτουργοί
+        recounts_tab: Αναφορές
+        results_tab: Αποτελέσματα
+        no_questions: "Δεν υπάρχουν ερωτήσεις που να έχουν ανατεθεί σε αυτήν τη δημοσκόπηση."
+        questions_title: "Λίστα ερωτήσεων"
+        table_title: "Τίτλος"
+        edit_answers: Επεξεργασία απαντήσεων
+        see_proposal: "(Βλ. πρόταση)"
+      flash:
+        question_added: "Ερώτηση που έχει προστεθεί σε αυτήν τη δημοσκόπηση"
+        error_on_question_added: "Η ερώτηση δεν μπόρεσε να ανατεθεί σε αυτή την ψηφοφορία"
+      destroy:
+        alert: "Αυτή η ενέργεια θα καταργήσει την ψηφοφορία και όλες τις σχετικές ερωτήσεις."
+        success_notice: "Η δημοσκόπηση διαγράφηκε επιτυχώς"
+        unable_notice: "Δεν μπορείτε να διαγράψετε μια ψηφοφορία η οπόια περιέχει ψηφοφορίες"
+    questions:
+      index:
+        title: "Ερωτήσεις"
+        create: "Δημιουργήστε ερώτηση"
+        no_questions: "Δεν υπάρχουν ερωτήσεις."
+        filter_poll: Φίλτρο βάσει της ψηφοφορίας
+        select_poll: Επιλέξτε ψηφοφορία
+        questions_tab: "Ερωτήσεις"
+        successful_proposals_tab: "Επιτυχείς προτάσεις"
+        create_question: "Δημιουργήστε ερώτηση"
+        table_proposal: "Πρόταση"
+        table_question: "Ερώτηση"
+        table_poll: "Δημοσκόπηση"
+        poll_not_assigned: "Η ψηφοφορία δεν ανατέθηκε"
+      edit:
+        title: "Επεξεργασία ερώτησης"
+      new:
+        title: "Δημουργήστε ερώτηση στην ψηφοφορία %{poll}"
+        title_proposal: "Δημιουργήστε ερώτηση"
+      answers:
+        images:
+          add_image: "Προσθέστε εικόνα"
+          save_image: "Αποθηκεύστε την εικόνα"
+      show:
+        proposal: Αυθεντική πρόταση
+        author: Συγγραφέας
+        question: Ερώτηση
+        edit_question: Επεξεργασία ερώτησης
+        valid_answers: Έγκυρες ερωτήσεις
+        add_answer: Πρόσθεσε ερώτηση
+        video_url: Εξωτερικό βίντεο
+        answers:
+          title: Απάντηση
+          description: Περιγραφή
+          videos: Βίντεο
+          video_list: Λίστα βίντεο
+          images: Εικόνες
+          images_list: Λίστα εικόνων
+          documents: Έγγραφα
+          documents_list: Λίστα εγγράφων
+          document_title: Τίτλος
+          document_actions: Ενέργειες
+    answers:
+      new:
+        title: Νέα ερώτηση
+      show:
+        title: Τίτλος
+        description: Περιγραφή
+        images: Εικόνες
+        images_list: Λίστα εικόνων
+        edit: Επεξεργασία απάντησης
+      edit:
+        title: Επεξεργασία απάντησης
+      videos:
+        index:
+          title: Βίντεο
+          add_video: Προσθήκη βίντεο
+          video_title: Τίτλος
+          video_url: Εξωτερικό βίντεο
+        new:
+          title: Νέο βίντεο
+        edit:
+          title: Επεξεργασία βίντεο
+    recounts:
+      index:
+        title: "Αναφορές"
+        no_recounts: "Δεν υπάρχει τίποτα να ξαναμετρηθεί"
+        all_booths_total: "Αθροιστικό σύνολο από όλες τις καμπίνες:"
+        total_final: "Τελικές αναφορές"
+        total_system: "Ψήφοι (αυτόματο)"
+        table_booth_name: "Περίπτερο"
+        table_total_recount: "Συνολική καταμέτρηση (από λειτουργό)"
+        table_system_count: "Ψήφοι (αυτόματο)"
+    results:
+      index:
+        title: "Αποτελέσματα"
+        no_results: "Δεν υπάρχουν αποτελέσματα"
+      result:
+        table_whites: "Πλήρως κενά ψηφοδέλτια"
+        table_nulls: "Άκυρα ψηφοδέλτια"
+        table_total: "Συνολικά ψηφοδέλτια"
+        table_answer: Απάντηση
+        table_votes: Ψήφοι
+      results_by_booth:
+        booth: Περίπτερο
+        results: Αποτελέσματα
+        see_results: Εμφάνιση αποτελεσμάτων
+        title: "Αποτελέσματα από περίπτερο"
+    booths:
+      index:
+        title: "Λίστα ενεργών θαλάμων"
+        no_booths: "Δεν υπάρχουν ενεργοί θάλαμοι για οποιαδήποτε επερχόμενη δημοσκόπηση."
+        add_booth: "Προσθέστε περίπτερο"
+        name: "Όνομα"
+        location: "Τοποθεσία"
+        no_location: "Καμία τοποθεσία"
+      new:
+        title: "Νέο περίπτερο"
+        submit_button: "Δημιουργία περιπτέρου"
+      edit:
+        title: "Επεξεργαστείτε το περίπτερο"
+        submit_button: "Ενημέρωση περιπτέρου"
+      show:
+        location: "Τοποθεσία"
+      booth:
+        shifts: "Διαχείριση μετατοπίσεων"
+    officials:
+      edit:
+        destroy: Αφαιρέστε την «Επίσημη» κατάσταση
+        title: "Αξιωματούχοι: Επεξεργασία χρήστη"
+      flash:
+        official_destroyed: "Αποθηκεύτηκαν οι λεπτομέρειες: ο χρήστης δεν είναι πλέον ένας επίσημος"
+        official_updated: Λεπτομέρειες του επίσημου αποθηκεύτηκαν
+      index:
+        title: Επίσημοι
+        help: Λογαριασμοί χρήστη που επισημαίνονται ως επίσημοι θα έχουν τις παρεμβάσεις τους στην πλατφόρμα τονισμένες. Μπορείτε να ορίσετε την ετικέτα που εμφανίζεται δίπλα από τα ονόματα των χρηστών αυτών των λογαριασμών από το πιο σημαντικό (επίπεδο 1) στο λιγότερο (επίπεδο 5).
+        no_officials: Δεν υπάρχουν επίσημοι.
+        name: Όνομα
+        official_position: Επίσημη θέση
+        official_level: Επίπεδο
+      level_0: Δεν είναι επίσημο
+      level_1: Επίπεδο
+      level_2: Επίπεδο 2
+      level_3: Επίπεδο 3
+      level_4: Επίπεδο 4
+      level_5: Επίπεδο 5
+      search:
+        make_official: Φτιάξε επίσημο
+        title: "Επίσημες θέσεις: Αναζήτηση χρήστη"
+        no_results: Δεν βρέθηκαν επίσημες θέσεις.
+    organizations:
+      index:
+        filter: Φίλτρο
+        filters:
+          all: Όλα
+          pending: Σε εκκρεμότητα
+          rejected: Απερρίφθη
+          verified: Επιβεβαιωμένο
+        hidden_count:
+          one: Υπάρχει επίσης <strong>ένας οργανισμός</strong> χωρίς χρήστες ή με έναν κρυφό χρήστη.
+          other: Υπάρχουν <strong>%{count} οργανισμοί</strong> χωρίς χρήστες ή με έναν κρυφό χρήστη.
+        name: Όνομα
+        email: E-Mail
+        phone_number: Τηλέφωνο
+        responsible_name: Υπεύθυνος
+        status: Κατάσταση
+        no_organizations: Δεν υπάρχουν οργανισμοί.
+        reject: Απερρίφθη
+        rejected: Απερρίφθη
+        title: Οργανισμοί
+        verified: Επιβεβαιωμένο
+        verify: Βεβαιωθείτε
+        pending: Σε εκκρεμότητα
+      search:
+        title: Αναζητήστε οργανισμούς
+        no_results: Δεν βρέθηκαν οργανισμοί.
+    proposals:
+      index:
+        title: Προτάσεις
+        id: ID
+        author: Συγγραφέας
+        select: Επιλογή
+        selected: Επιλεγμένο
+        milestones: Ορόσημα
+        no_proposals: Δεν υπάρχουν προτάσεις.
+      show:
+        create_question: Πρόσθεσε αυτήν την πρόταση σε ένα δημοψήφισμα για να ψηφιστεί
+    hidden_proposals:
+      index:
+        filter: Φίλτρο
+        filters:
+          all: Όλα
+          with_confirmed_hide: Επιβεβαιωμένο
+          without_confirmed_hide: Σε εκκρεμότητα
+        title: Κρυφές προτάσεις
+        no_hidden_proposals: Δεν υπάρχουν κρυφές προτάσεις.
+    hidden_proposal_notifications:
+      index:
+        filter: Φίλτρο
+        filters:
+          all: Όλα
+          with_confirmed_hide: Επιβεβαιωμένο
+          without_confirmed_hide: Σε εκκρεμότητα
+        title: Κρυφές ειδοποιήσεις
+        no_hidden_proposals: Δεν υπάρχουν κρυφές ειδοποιήσεις.
+    settings:
+      flash:
+        updated: Η αξία ανανεώθηκε
+      index:
+        title: Ρυθμίσεις διαμόρφωσης
+        general: Ρυθμίσεις διαμόρφωσης
+        update_setting: Ενημέρωση
+        participation_processes: "Διαδικασίες συμμετοχής"
+        feature_flags: Χαρακτηριστικά
+        features:
+          enabled: "Χαρακτηριστικό ενεργοποιημένο"
+        map:
+          title: Διαμόρφωση χάρτη
+          help: Εδώ μπορείτε να προσαρμόσετε τον τρόπο που θα εμφανιστεί ο χάρτης για τους χρήστες. Σύρετε το δείκτη του χάρτη ή κάντε κλικ οπουδήποτε πάνω στο χάρτη, ρυθμίστε το επιθυμητό ζουμ και κάντε κλικ στο κουμπί «Ενημέρωση».
+          flash:
+            update: Η διαμόρφωση χάρτη ενημερώθηκε με επιτυχία.
+          form:
+            submit: Ενημέρωση
+          how_to_enable: 'Για να δείξετε το χάρτη σε χρήστες πρέπει να ενεργοποιήσετε το «Προτάσεις και γεωτοποθεσία προϋπολογισμού επενδύσεων » στην καρτέλα «Χαρακτηριστικά».'
+        dashboard:
+          title: Πίνακας εργαλείων προτάσεων
+      setting: Χαρακτηριστικό
+      setting_name: Ρύθμιση
+      setting_value: Τιμή
+      no_description: "Δεν υπάρχει περιγραφή"
+    shared:
+      search:
+        label:
+          booths: "Αναζητήστε περίπτερο με το όνομα"
+          debates: "Αναζήτηση συζητήσεων από τον τίτλο ή περιγραφή"
+          local_census_records: "Αναζήτηση με αριθμό εγγράφου"
+          organizations: "Όνομα, email ή τηλεφωνικός αριθμός"
+          poll_officers: "Αναζήτηση υπαλλήλων δημοσκόπησης"
+          poll_questions: "Αναζήτηση ερωτήσεων δημοσκόπησης"
+          proposals: "Αναζήτηση προτάσεων από τον τίτλο, κωδικό, περιγραφή ή ερώτηση"
+          users: "Αναζήτηση χρηστών με όνομα ή ηλεκτρονικό ταχυδρομείο"
+        search: "Αναζήτηση"
+      search_results: "Αναζήτηση αποτελεσμάτων"
+      no_search_results: "Δεν βρέθηκαν αποτελέσματα."
+      actions: Ενέργειες
+      title: Τίτλος
+      description: Περιγραφή
+      image: Εικόνα
+      show_image: Δείξε την εικόνα
+      moderated_content: "Ελέγξτε το περιεχόμενο που συντονίζεται από τους συντονιστές και επιβεβαιώστε εάν ο συντονισμός έγινε σωστά."
+      view: Όψη
+      proposal: Πρόταση
+      author: Συγγραφέας
+      content: Περιεχόμενο
+      created_at: Δημιουργήθηκε στις
+      color_help: Δεκαεξαδική μορφή
+      show_results_and_stats: "Εμφάνιση αποτελεσμάτων και στατιστικά"
+    geozones:
+      index:
+        title: Γεωζώνη
+        create: Δημιουργία γεωζώνης
+      geozone:
+        name: Όνομα
+        external_code: Εξωτερικός κωδικός
+        census_code: Κωδικός απογραφής
+        code_help: Κωδικός απόκρισης για αυτήν τη γεωζώνη στο API της απογραφής
+        coordinates: Συντεταγμένες
+        coordinates_help: Συντεταγμένες που θα δημιουργούν μια περιοχή με δυνατότητα κλικ σε έναν χάρτη εικόνων HTML
+      edit:
+        form:
+          submit_button: Αποθηκεύστε τις αλλαγές
+        editing: Επεξεργασία γεωζώνης
+        back: Πήγαινε πίσω
+      new:
+        back: Πήγαινε πίσω
+        creating: Δημιούργησε περιοχή
+      delete:
+        success: Η γεωζώνη διαγράφηκε με επιτυχία
+        error: Αυτή η γεωζώνη δεν μπορεί να διαγραφεί αφού υπάρχουν στοιχεία που είναι προσαρτημένα σε αυτήν
+    signature_sheets:
+      author: Συγγραφέας
+      created_at: Ημερομηνία δημιουργίας
+      name: Όνομα
+      no_signature_sheets: "Δεν υπάρχουν φύλλα υπογραφής"
+      index:
+        title: Φύλλα υπογραφών
+        new: Νέα φύλλα υπογραφών
+      new:
+        title: Νέα φύλλα υπογραφών
+        document_numbers_note: "Γράψτε τους αριθμούς χωρισμένους με κόμματα (,)"
+        submit: Δημιουργία φύλλου υπογραφών
+      show:
+        created_at: Δημιουργήθηκε
+        author: Συγγραφέας
+        users: Χρήστης
+        verified:
+          one: "Υπάρχει %{count} έγκυρη υπογραφή"
+          other: "Υπάρχουν %{count} έγκυρες υπογραφές"
+        unverified:
+          one: "Υπάρχει %{count} άκυρη υπογραφή"
+          other: "Υπάρχουν %{count} άκυρες υπογραφές"
+        unverified_error: (Μη εγκεκριμένο από την απογραφή)
+        loading: "Υπάρχουν ακόμη υπογραφές που επαληθεύονται από την Απογραφή, ανανεώστε τη σελίδα σε λίγα λεπτά"
+    stats:
+      show:
+        stats_title: Στατιστικά
+        summary:
+          comment_votes: Σχολίασε τις ψήφους
+          comments: Σχόλια
+          debate_votes: Συζήτηση ψήφων
+          debates: Συζητήσεις
+          proposal_votes: Ψήφοι προτάσεων
+          proposals: Προτάσεις
+          budgets: Άνοιξε προϋπολογισμούς
+          budget_investments: Επενδυτικά έργα
+          unverified_users: Μη επαληθευμένοι χρήστες
+          user_level_three: Χρήστες τρίτου επιπέδου
+          user_level_two: Χρήστες δεύτερου επιπέδου
+          users: Συνολικοί χρήστες
+          verified_users: Επαληθευμένοι χρήστες
+          verified_users_who_didnt_vote_proposals: Επαληθευμένοι χρήστες που δεν ψήφισαν προτάσεις
+          visits: Επισκέψεις
+          votes: Συνολικοί ψήφοι
+        budgets_title: Συμμετοχικός προϋπολογισμός
+        participatory_budgets: Συμμετοχικοί προϋπολογισμοί
+        direct_messages: Άμεσα μηνύματα
+        proposal_notifications: Ειδοποιήσεις προτάσεων
+        incomplete_verifications: Ελλιπής επαληθεύσεις
+        polls: Δημοσκοπήσεις
+        sdg: ΣΒΑ
+      graph:
+        debate_created: Συζητήσεις
+        visit: Επισκέψεις
+        level_2_user: Χρήστες δεύτερου επιπέδου
+        proposal_created: Προτάσεις πολιτών
+      budgets:
+        title: "Συμμετοχικοί Προϋπολογισμοί - Στατιστικά Συμμετοχής"
+        supporting_phase: Υποστηρικτική φάση
+        balloting_phase: Τελική ψηφοφορία
+      budget_balloting:
+        title: "Στατιστικά τελικής ψηφοφορίας"
+        vote_count: Ψήφοι
+        participant_count: Συμμετέχοντες
+        votes_per_heading: Ψηφοφορίες ανά επικεφαλίδα
+        participants_per_district: Συμμετέχοντες ανά περιοχή
+      budget_supporting:
+        title: "Στατιστικά υποστηρικτικής φάσης"
+        headings: Επικεφαλίδες
+        users: Χρήστες
+        vote_count: Ψήφοι
+        participant_count: Συμμετέχοντες
+      direct_messages:
+        title: Άμεσα μηνύματα
+        total: Όλα
+        users_who_have_sent_message: Οι χρήστες που έχουν στείλει ένα ιδιωτικό μήνυμα
+      proposal_notifications:
+        title: Ειδοποιήσεις προτάσεων
+        total: Όλα
+        proposals_with_notifications: Προτάσεις με ειδοποιήσεις
+        not_available: "Πρόταση μη διαθέσιμη"
+      polls:
+        title: Στατιστικά δημοσκόπησης
+        all: Δημοσκοπήσεις
+        web_participants: Οι συμμετέχοντες στο Web
+        total_participants: Σύνολο συμμετεχόντων
+        poll_questions: "Ερωτήσεις από th δημοσκόπηση: %{poll}"
+        table:
+          poll_name: Δημοσκόπηση
+          question_name: Ερώτηση
+          origin_web: Οι συμμετέχοντες στο Web
+          origin_total: Σύνολο συμμετεχόντων
+      sdg:
+        debates: "Συζητήσεις"
+        polls: "Δημοσκοπήσεις"
+        proposals: "Προτάσεις"
+    tags:
+      create: Δημιουργία θέματος
+      index:
+        add_tag: Προσθέστε ένα νέο θέμα πρότασης
+        title: Θέματα προτάσεων
+        topic: Θέμα
+        help: "Όταν ένας χρήστης δημιουργεί μια πρόταση, προτείνονται τα ακόλουθα θέματα ως προεπιλεγμένες ετικέτες."
+    users:
+      columns:
+        id: Ταυτότητα
+        erase_reason: Λόγοι Διαγραφής
+        name: Όνομα
+        email: E-Mail
+        document_number: Αριθμός εγγράφου
+        roles: Ρόλοι
+        verification_level: Επίπεδο επαλήθευσης
+      index:
+        title: Χρήστης
+        no_users: Δεν υπάρχουν χρήστες.
+        filter: Φίλτρο
+        filters:
+          active: Ενεργό
+          erased: Αίτημα
+      search:
+        placeholder: Αναζήτηση χρήστη με μήνυμα ηλεκτρονικού ταχυδρομείου, το όνομα ή τον αριθμό εγγράφου
+    verifications:
+      index:
+        phone_not_given: Δεν δίνεται το τηλέφωνο
+        sms_code_not_confirmed: Δεν έχει επιβεβαιωθεί ο sms κωδικός
+        title: Ελλιπείς επαληθεύσεις
+    site_customization:
+      content_blocks:
+        information: Πληροφορίες σχετικά με τα μπλοκ περιεχομένου
+        about: "Μπορείτε να δημιουργήσετε HTML μπλοκ περιεχομένου που μπορούν να εισαχθούν σε διάφορα μέρη της ιστοσελίδας σας."
+        html_format: "Ένα κουτί περιεχομένου είναι μια ομάδα από συνδέσμους, και πρέπει να έχει την εξής μορφή:"
+        no_blocks: "Δεν υπάρχουν μπλοκ περιεχομένου."
+        create:
+          notice: Το μπλοκ περιεχομένου δημιουργήθηκε με επιτυχία
+          error: Το μπλοκ περιεχομένου δεν μπόρεσε να δημιουργηθεί
+        update:
+          notice: Το μπλοκ περιεχομένου ενημερώθηκε με επιτυχία
+          error: Το μπλοκ περιεχομένου δεν μπόρεσε να ανανεωθεί
+        destroy:
+          notice: Το μπλοκ περιεχομένου διαγράφηκε με επιτυχία
+        edit:
+          title: Επεξεργασία μπλοκ περιεχομένου
+        index:
+          create: Δημιουργήστε νέο μπλοκ περιεχομένου
+          delete: Διαγραφή του μπλοκ
+          title: Μπλοκ περιεχομένου
+        new:
+          title: Δημιουργήστε νέο μπλοκ περιεχομένου
+        content_block:
+          body: Σώμα
+          name: Όνομα
+          names:
+            top_links: Κορυφαίοι σύνδεσμοι
+            footer: Υποσέλιδο
+            subnavigation_left: Κύρια πλοήγηση αριστερά
+            subnavigation_right: Κύρια πλοήγηση δεξιά
+      images:
+        index:
+          title: Προσαρμοσμένες εικόνες
+          update: Ενημέρωση
+          delete: Διαγραφή
+          image: Εικόνα
+        update:
+          notice: Η εικόνα ενημερώθηκε με επιτυχία
+          error: Η εικόνα δεν μπόρεσε να ανανεωθεί
+        destroy:
+          notice: Η εικόνα έχει διαγραφεί με επιτυχία
+          error: Η εικόνα δεν μπόρεσε να διαγραφεί
+      pages:
+        create:
+          notice: Η σελίδα δημιουργήθηκε με επιτυχία
+          error: Η σελίδα δεν μπόρεσε να δημιουργηθεί
+        update:
+          notice: Η σελίδα ανανεώθηκε με επιτυχία
+          error: Η σελίδα δεν μπόρεσε να ανανεωθεί
+        destroy:
+          notice: Η σελίδα διαγράφηκε επιτυχώς
+        edit:
+          title: Επεξεργασία %{page_title}
+        form:
+          options: Επιλογές
+        index:
+          create: Δημιουργήστε νέα σελίδα
+          delete: Διαγραφή σελίδας
+          title: Προσαρμοσμένες σελίδες
+          see_page: Δες την σελίδα
+        new:
+          title: Δημιουργία νέας προσαρμοσμένης σελίδας
+        page:
+          created_at: Δημιουργήθηκε στις
+          status: Κατάσταση
+          updated_at: Ενημερώθηκε στις
+          title: Τίτλος
+          slug: Χτυπώ δυνατά
+          see_cards: Προβολή Καρτών
+        cards:
+          cards_title: κάρτες
+          create_card: Δημιουργία κάρτας
+          no_cards: Δεν υπάρχουν κάρτες.
+          columns_help: "Πλάτος της κάρτας σε αριθμό στηλών. Σε οθόνες κινητών το πλάτος είναι πάντα 100%."
+          create:
+            notice: "Η κάρτα δημιουργήθηκε επιτυχώς!"
+          update:
+            notice: "Η κάρτα ενημερώθηκε επιτυχώς"
+          destroy:
+            notice: "Η κάρτα διαγράφηκε επιτυχώς"
+    homepage:
+      title: Αρχική σελίδα
+      description: Οι ενεργές ενότητες εμφανίζονται στην αρχική σελίδα με την ίδια σειρά όπως εδώ.
+      header_title: Κεφαλίδα
+      no_header: Δεν υπάρχουν επικεφαλίδες.
+      create_header: Δημιουργήστε την κεφαλίδα
+      cards_title: Κάρτες
+      create_card: Δημιουργία κάρτας
+      no_cards: Δεν υπάρχουν κάρτες.
+      feeds:
+        proposals: Προτάσεις
+        debates: Συζητήσεις
+        processes: Διαδικασίες
+      new:
+        header_title: Νέα επικεφαλίδα
+        submit_header: Δημιουργήστε την κεφαλίδα
+        card_title: Νέα κάρτα
+        submit_card: Δημιουργία κάρτας
+      edit:
+        header_title: Επεξεργασία της κεφαλίδας
+        submit_header: Αποθήκευση επικεφαλίδας
+        card_title: Επεξεργασία καρτών
+        submit_card: Αποθήκευση καρτών
+    audits:
+      id: "Ταυτότητα"
+      actions: "Ενέργειες"
+    local_census_records:
+      index:
+        document_type: Τύπος εγγράφου
+        document_number: Αριθμός εγγράφου
+        date_of_birth: Ημερομηνία γέννησης
+        postal_code: Ταχυδρομικός κώδικας
+      imports:
+        new:
+          title: Τίτλος
+    machine_learning:
+      related_content: "Σχετικό περιεχόμενο"
+      tab_help: "Βοήθεια"
+      tags: "Ετικέτες"

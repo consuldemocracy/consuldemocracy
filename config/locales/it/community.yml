@@ -17,8 +17,6 @@ it:
         first_theme_not_logged_in: Nessun argomento disponibile, partecipa creando il primo.
         first_theme: Crea il primo argomento della comunità
         sub_first_theme: "Per creare un tema è necessario %{sign_in} o %{sign_up}."
-        sign_in: "accedere"
-        sign_up: "registrarsi"
       tab:
         participants: Partecipanti
       sidebar:
@@ -28,7 +26,7 @@ it:
         edit: Modifica argomento
         destroy: Distruggi argomento
         comments:
-          zero: Nessun commento
+          zero: Non ci sono commenti
           one: 1 commento
           other: "%{count} commenti"
       author: Autore
@@ -37,8 +35,6 @@ it:
       create: Crea un argomento
       edit: Modifica argomento
       form:
-        topic_title: Titolo
-        topic_text: Testo iniziale
         new:
           submit_button: Crea argomento
         edit:
@@ -55,6 +51,3 @@ it:
         recommendation_one: Non scrivere il titolo dell’argomento o intere frasi in maiuscolo. Su internet equivale a urlare. E a nessuno piace che qualcuno gli urli contro.
         recommendation_two: Qualsiasi argomento o commento che suggerisca o implichi attività illecite verrà eliminato, così come quelli intesi a sabotare lo spazio dedicato al tema. Tutto il resto è permesso.
         recommendation_three: Goditi questo spazio e le voci che lo riempiono, appartiene anche a te.
-  topics:
-    show:
-      login_to_comment: È necessario %{signin} o %{signup} per lasciare un commento.

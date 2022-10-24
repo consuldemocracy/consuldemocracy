@@ -1,101 +1,118 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'rails', '4.2.11'
+gem "rails", "6.0.5.1"
 
-gem 'acts-as-taggable-on', '~> 5.0.0'
-gem 'acts_as_votable', '~> 0.11.1'
-gem 'ahoy_matey', '~> 1.6.0'
-gem 'ancestry', '~> 3.0.2'
-gem 'autoprefixer-rails', '~> 8.2.0'
-gem 'browser', '~> 2.5.3'
-gem 'cancancan', '~> 2.3.0'
-gem 'ckeditor', '~> 4.2.3'
-gem 'cocoon', '~> 1.2.9'
-gem 'coffee-rails', '~> 4.2.2'
-gem 'daemons', '~> 1.2.4'
-gem 'dalli', '~> 2.7.6'
-gem 'delayed_job_active_record', '~> 4.1.3'
-gem 'devise', '~> 3.5.7'
-gem 'devise-async', '~> 0.10.2'
-gem 'devise_security_extension', '~> 0.10.0'
-gem 'foundation-rails', '~> 6.5.3.0'
-gem 'foundation_rails_helper', '~> 2.0.0'
-gem 'graphiql-rails', '~> 1.4.1'
-gem 'graphql', '~> 1.7.8'
-gem 'groupdate', '~> 3.2.0'
-gem 'initialjs-rails', '~> 0.2.0.5'
-gem 'invisible_captcha', '~> 0.10.0'
-gem 'jquery-fileupload-rails'
-gem 'jquery-rails', '~> 4.3.3'
-gem 'jquery-ui-rails', '~> 6.0.1'
-gem 'kaminari', '~> 1.1.1'
-gem 'newrelic_rpm', '~> 4.1.0.333'
-gem 'omniauth', '~> 1.8.1'
-gem 'omniauth-facebook', '~> 4.0.0'
-gem 'omniauth-google-oauth2', '~> 0.4.0'
-gem 'omniauth-twitter', '~> 1.4.0'
-gem 'paperclip', '~> 5.2.1'
-gem 'paranoia', '~> 2.4.1'
-gem 'pg', '~> 0.21.0'
-gem 'pg_search', '~> 2.0.1'
-gem 'redcarpet', '~> 3.4.0'
-gem 'responders', '~> 2.4.0'
-gem 'rinku', '~> 2.0.2', require: 'rails_rinku'
-gem 'rollbar', '~> 2.18.0'
-gem 'sass-rails', '~> 5.0', '>= 5.0.4'
-gem 'savon', '~> 2.12.0'
-gem 'sitemap_generator', '~> 6.0.1'
-gem 'social-share-button', '~> 1.1'
-gem 'sprockets', '~> 3.7.2'
-gem 'turbolinks', '~> 2.5.3'
-gem 'turnout', '~> 2.4.0'
-gem 'uglifier', '~> 4.1.19'
-gem 'unicorn', '~> 5.4.1'
-gem 'whenever', '~> 0.10.0', require: false
-gem 'globalize', '~> 5.0.0'
-gem 'globalize-accessors', '~> 0.2.1'
+gem "acts-as-taggable-on", "~> 9.0.1"
+gem "acts_as_votable", "~> 0.13.2"
+gem "ahoy_matey", "~> 4.1.0"
+gem "airbrake", "~> 11.0.3"
+gem "ancestry", "~> 4.2.0"
+gem "audited", "~> 5.0.2"
+gem "autoprefixer-rails", "~> 8.2.0"
+gem "cancancan", "~> 3.4.0"
+gem "caxlsx", "~> 3.2.0"
+gem "caxlsx_rails", "~> 0.6.3"
+gem "ckeditor", "~> 4.3.0"
+gem "cocoon", "~> 1.2.15"
+gem "daemons", "~> 1.4.1"
+gem "dalli", "~> 2.7.11"
+gem "delayed_job_active_record", "~> 4.1.7"
+gem "devise", "~> 4.8.1"
+gem "devise-security", "~> 0.16.0"
+gem "file_validators", "~> 3.0.0"
+gem "font-awesome-sass", "~> 5.15.1" # Remember to update vendor/assets/images/fontawesome when updating this gem
+gem "foundation-rails", "~> 6.6.2.0"
+gem "foundation_rails_helper", "~> 4.0.1"
+gem "globalize", "~> 6.2.1"
+gem "globalize-accessors", "~> 0.3.0"
+gem "graphiql-rails", "~> 1.8.0"
+gem "graphql", "~> 1.12.14"
+gem "groupdate", "~> 6.1.0"
+gem "image_processing", "~> 1.12.2"
+gem "initialjs-rails", "~> 0.2.0.9"
+gem "invisible_captcha", "~> 2.0.0"
+gem "jquery-fileupload-rails"
+gem "jquery-rails", "~> 4.5.0"
+gem "jquery-ui-rails", "~> 6.0.1"
+gem "kaminari", "~> 1.2.2"
+gem "mini_magick", "~> 4.11.0"
+gem "omniauth", "~> 2.1.0"
+gem "omniauth-facebook", "~> 9.0.0"
+gem "omniauth-google-oauth2", "~> 1.0.1"
+gem "omniauth-rails_csrf_protection", "~> 1.0.1"
+gem "omniauth-twitter", "~> 1.4.0"
+gem "paranoia", "~> 2.6.0"
+gem "pg", "~> 1.4.3"
+gem "pg_search", "~> 2.3.6"
+gem "puma", "~> 4.3.12"
+gem "recipient_interceptor", "~> 0.3.1"
+gem "redcarpet", "~> 3.5.1"
+gem "responders", "~> 3.0.1"
+gem "rinku", "~> 2.0.6", require: "rails_rinku"
+gem "sassc-rails", "~> 2.1.2"
+gem "savon", "~> 2.13.0"
+gem "sitemap_generator", "~> 6.3.0"
+gem "social-share-button", "~> 1.2.4"
+gem "sprockets", "~> 4.1.1"
+gem "translator-text", "~> 0.1.0"
+gem "turbolinks", "~> 5.2.1"
+gem "turnout", "~> 2.5.0"
+gem "uglifier", "~> 4.2.0"
+gem "uuidtools", "~> 2.2.0"
+gem "view_component", "~> 2.69.0"
+gem "whenever", "~> 1.0.0", require: false
+gem "wicked_pdf", "~> 2.6.3"
+gem "wkhtmltopdf-binary", "~> 0.12.6"
 
-gem 'letter_opener_web', '~> 1.3.1'
-
-source 'https://rails-assets.org' do
-  gem 'rails-assets-leaflet'
-  gem 'rails-assets-markdown-it', '~> 8.2.1'
+source "https://rails-assets.org" do
+  gem "rails-assets-leaflet"
+  gem "rails-assets-markdown-it", "~> 9.0.1"
 end
 
 group :development, :test do
-  gem 'bullet', '~> 5.7.0'
-  gem 'byebug', '~> 10.0.0'
-  gem 'factory_bot_rails', '~> 4.8.2'
-  gem 'faker', '~> 1.8.7'
-  gem 'i18n-tasks', '~> 0.9.25'
-  gem 'knapsack_pro', '~> 1.1.0'
-  gem 'launchy', '~> 2.4.3'
-  #gem 'letter_opener_web', '~> 1.3.4'
-  gem 'quiet_assets', '~> 1.1.0'
-  gem 'spring', '~> 2.0.1'
-  gem 'spring-commands-rspec', '~> 1.0.4'
+  gem "bullet", "~> 7.0.3"
+  gem "byebug", "~> 11.1.3"
+  gem "factory_bot_rails", "~> 6.2.0"
+  gem "faker", "~> 2.22.0"
+  gem "i18n-tasks", "~> 0.9.37"
+  gem "knapsack_pro", "~> 3.3.1"
+  gem "launchy", "~> 2.5.0"
+  gem "letter_opener_web", "~> 2.0.0"
+  gem "spring", "~> 2.1.1"
+  gem "spring-commands-rspec", "~> 1.0.4"
 end
 
 group :test do
-  gem 'capybara', '~> 2.17.0'
-  gem 'coveralls', '~> 0.8.22', require: false
-  gem 'database_cleaner', '~> 1.7.0'
-  gem 'email_spec', '~> 2.1.0'
-  gem 'rspec-rails', '~> 3.8'
-  gem 'selenium-webdriver', '~> 3.10'
+  gem "capybara", "~> 3.37.1"
+  gem "capybara-webmock", "~> 0.6.0"
+  gem "coveralls", "~> 0.8.23", require: false
+  gem "email_spec", "~> 2.2.0"
+  gem "rspec-rails", "~> 5.1.2"
+  gem "selenium-webdriver", "~> 3.142"
+  gem "webdrivers", "~> 4.7.0"
 end
 
 group :development do
-  gem 'capistrano', '~> 3.10.1', require: false
-  gem 'capistrano-bundler', '~> 1.2', require: false
-  gem 'capistrano-rails', '~> 1.4.0', require: false
-  gem 'capistrano3-delayed-job', '~> 1.7.3'
-  gem 'mdl', '~> 0.5.0', require: false
-  gem 'rubocop', '~> 0.54.0', require: false
-  gem 'rubocop-rspec', '~> 1.26.0', require: false
-  gem 'rvm1-capistrano3', '~> 1.4.0', require: false
-  gem 'scss_lint', '~> 0.55.0', require: false
-  gem 'web-console', '~> 3.3.0'
+  gem "capistrano", "~> 3.17.1", require: false
+  gem "capistrano-bundler", "~> 2.1.0", require: false
+  gem "capistrano-rails", "~> 1.6.2", require: false
+  gem "capistrano3-delayed-job", "~> 1.7.6"
+  gem "capistrano3-puma", "~> 5.2.0"
+  gem "erb_lint", "~> 0.0.37", require: false
+  gem "github_changelog_generator", "~> 1.15.2"
+  gem "mdl", "~> 0.11.0", require: false
+  gem "pronto", "~> 0.11.0", require: false
+  gem "pronto-erb_lint", "~> 0.1.5", require: false
+  gem "pronto-eslint", "~> 0.11.0", require: false
+  gem "pronto-rubocop", "~> 0.11.2", require: false
+  gem "pronto-scss", "~> 0.11.0", require: false
+  gem "rubocop", "~> 1.18.4", require: false
+  gem "rubocop-performance", "~> 1.11.4", require: false
+  gem "rubocop-rails", "~> 2.15.2", require: false
+  gem "rubocop-rspec", "~> 2.4.0", require: false
+  gem "rvm1-capistrano3", "~> 1.4.0", require: false
+  gem "scss_lint", "~> 0.59.0", require: false
+  gem "web-console", "~> 4.2.0"
 end
 
-eval_gemfile './Gemfile_custom'
+eval_gemfile "./Gemfile_custom"

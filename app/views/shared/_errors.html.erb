@@ -5,12 +5,14 @@
     </button>
 
     <strong>
-      <%= pluralize resource.errors.count, t("form.error"), t("form.errors") %>
+      <% errors_count = resource.errors.messages.excluding(:base).count %>
+
+      <%= pluralize errors_count, t("form.error"), t("form.errors") %>
 
       <% if local_assigns[:message].present? %>
         <%= message %>
       <% else %>
-        <%= t("form.not_saved_html", resource: t("form.#{resource.class.to_s.underscore}")) %>
+        <%= sanitize(t("form.not_saved", resource: t("form.#{resource.class.to_s.underscore}"))) %>
       <% end %>
     </strong>
   </div>

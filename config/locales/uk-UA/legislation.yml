@@ -1,0 +1,166 @@
+uk-UA:
+  legislation:
+    annotations:
+      comments:
+        see_all: Переглянути все
+        see_complete: Переглянути повністю
+        comments_count:
+          one: "%{count} коментар"
+          few: "%{count} коментарі"
+          many: "%{count} коментарів"
+          other: "%{count} коментарів"
+        replies_count:
+          one: "%{count} відповідь"
+          few: "%{count} відповіді"
+          many: "%{count} відповідей"
+          other: "%{count} відповідей"
+        cancel: Скасувати
+        publish_comment: Опублікувати коментар
+      form:
+        phase_not_open: Цей етап не відкрито
+      index:
+        title: Коментарі
+        comments_about: Коментарі щодо
+        see_in_context: Переглянути в контексті
+        comments_count:
+          one: "%{count} коментар"
+          few: "%{count} коментарі"
+          many: "%{count} коментарів"
+          other: "%{count} коментарів"
+      show:
+        title: Коментар
+      version_chooser:
+        seeing_version: Коментарі до версії
+        see_text: Переглянути чернетку тексту
+    draft_versions:
+      changes:
+        title: Зміни
+        seeing_changelog_version: Короткий виклад змін
+        see_text: Переглянути чернетку тексту
+      show:
+        loading_comments: Завантаження коментарів
+        seeing_version: Ви переглядаєте чорнову версію
+        select_draft_version: Обрати чернетку
+        select_version_submit: переглянути
+        updated_at: оновлено %{date}
+        see_changes: переглянути короткий виклад змін
+        see_comments: Переглянути всі коментарі
+        text_toc: Зміст
+        text_body: Текст
+        text_comments: Коментарі
+    processes:
+      header:
+        additional_info: Додаткова інформація
+        description: Опис
+        more_info: Більше інформації та контексту
+      proposals:
+        empty_proposals: Пропозицій немає
+        filters:
+          random: Випадково
+          winners: Вибране
+      debate:
+        empty_questions: Запитань немає
+      index:
+        filter: Фільтр
+        filters:
+          open: Відкриті процеси
+          past: Завершені
+        no_open_processes: Немає відкритих процесів
+        no_past_processes: Немає завершених процесів
+        section_header:
+          icon_alt: Значок спільної законотворчості
+          title: Спільна законотворчість
+          help: Допомога щодо спільної законотворчості
+        section_footer:
+          title: Допомога щодо спільної законотворчості
+          description: Беріть участь в обговореннях та процесах перед затвердженням нових положень або стратегій. Ваша думка буде врахована.
+      phase_not_open:
+        not_open: Цей етап ще не відкрито
+      phase_empty:
+        empty: Ще не опубліковано
+      process:
+        see_latest_comments: Переглянути останні коментарі
+        see_latest_comments_title: Коментувати цей процес
+      shared:
+        key_dates: Етапи участі
+        homepage: Домашня сторінка
+        debate_dates: Обговорення
+        draft_publication_date: Публікування чернетки
+        allegations_dates: Коментарі
+        result_publication_date: Публікування остаточного результату
+        milestones_date: Підписки
+        proposals_dates: Пропозиції
+    questions:
+      comments:
+        comment_button: Опублікувати відповідь
+        comments_title: Відкрити відповіді
+        comments_closed: Закритий етап
+        form:
+          leave_comment: Залиште відповідь
+      question:
+        comments:
+          zero: Коментарів немає
+          one: "%{count} коментар"
+          few: "%{count} коментарі"
+          many: "%{count} коментарів"
+          other: "%{count} коментарів"
+        debate: Обговорення
+      show:
+        answer_question: Надіслати відповідь
+        next_question: Наступне запитання
+        first_question: Перше запитання
+        share: Поділитися
+        title: Процес спільної законотворчості
+      participation:
+        phase_not_open: Цей етап не відкрито
+        organizations: Організаціям не дозволено брати участь в обговореннях
+        unauthenticated: Щоб взяти участь, необхідно %{signin} або %{signup}.
+        verified_only: Тільки користувачі, які підтвердили свій обліковий запис, можуть брати участь, %{verify_account}.
+        debate_phase_not_open: Етап обговорення завершено. Відповіді більше не приймаються
+    shared:
+      share: Поділитися
+      share_comment: Коментувати %{version_name} із чернетки процесу %{process_name}
+    proposals:
+      form:
+        tags_label: "Категорії"
+      not_verified: "Для надання пропозицій щодо голосів %{verify_account}."
+      process_title: Процес спільної законотворчості
+    summary:
+      title: "Підсумок"
+      votes:
+        zero: "%{count} голосів"
+        one: "%{count} голос"
+        few: "%{count} голоси"
+        many: "%{count} голосів"
+        other: "%{count} голосів"
+      debate_phase: "Етап обговорення"
+      proposals_phase: "Етап подання пропозицій"
+      allegations_phase: "Етап коментування"
+      debates:
+        zero: "Обговорень немає"
+        one: "%{count} обговорення"
+        few: "%{count} обговорення"
+        many: "%{count} обговорень"
+        other: "%{count} обговорень"
+      proposals:
+        zero: "Пропозицій немає"
+        one: "%{count} пропозиція"
+        few: "%{count} пропозиції"
+        many: "%{count} пропозицій"
+        other: "%{count} пропозицій"
+      comments:
+        zero: "Коментарів немає"
+        one: "%{count} коментар"
+        few: "%{count} коментарі"
+        many: "%{count} коментарів"
+        other: "%{count} коментарів"
+      download: "Завантажити підсумки"
+      top_comments:
+        zero: "Коментарів немає"
+        one: "%{count} коментар"
+        few: "Найкращі коментарі"
+        many: "Найкращі коментарі"
+        other: "Найкращі коментарі"
+      most_voted_comments: "Коментарі, які отримали найбільшу кількість голосів"
+      no_allegation: "Коментарів немає"
+      process_empty: "Цей процес не мав етапів участі"

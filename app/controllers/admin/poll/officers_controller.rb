@@ -6,7 +6,7 @@ class Admin::Poll::OfficersController < Admin::Poll::BaseController
   end
 
   def search
-    @user = User.find_by(email: params[:email])
+    @user = User.find_by(email: params[:search])
 
     respond_to do |format|
       if @user
@@ -20,14 +20,13 @@ class Admin::Poll::OfficersController < Admin::Poll::BaseController
 
   def create
     @officer.user_id = params[:user_id]
-    @officer.save
+    @officer.save!
 
     redirect_to admin_officers_path
   end
 
   def destroy
-    @officer.destroy
+    @officer.destroy!
     redirect_to admin_officers_path
   end
-
 end

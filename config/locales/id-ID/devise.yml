@@ -1,3 +1,4 @@
+#Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 id:
   devise:
     password_expired:
@@ -36,6 +37,7 @@ id:
       updated: "Kata sandi anda telah berhasil diubah. Otentikasi berhasil."
       updated_not_active: "Kata sandi anda telah berhasil diubah."
     registrations:
+      destroyed: "Selamat tinggal! Akun anda telah dibatalkan. Sampai bertemu kembali."
       signed_up: "Selamat datang! Anda telah dikonfirmasi."
       signed_up_but_inactive: "Pendaftaran anda telas berhasil, namun anda tidak dapat masuk karena akun anda belum diaktifkan."
       signed_up_but_locked: "Pendaftaran anda telah berhasil, namun anda tidak dapat masuk karena akun anda terkunci."

@@ -1,0 +1,20 @@
+nn:
+  community:
+    sidebar:
+      title: Fellesskap
+      button_to_access: Gå til fellesskapet
+    show:
+      tab:
+        participants: Deltakere
+      sidebar:
+        participate: Delta
+      topic:
+        comments:
+          zero: Ingen kommentarer
+          one: 1 kommentar
+          other: "%{count} kommentarer"
+      author: Forfatter
+    topic:
+      show:
+        tab:
+          comments_tab: Kommentarer

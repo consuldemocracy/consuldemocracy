@@ -1,14 +1,14 @@
 de:
   officing:
     header:
-      title: Umfrage
+      title: Abstimmung
     dashboard:
       index:
         title: Vorsitzende/r der Abstimmung
         info: Hier können Sie Benutzerdokumente überprüfen und Abstimmungsergebnisse speichern
         no_shifts: Sie haben heute keinen Amtswechsel.
     menu:
-      voters: Dokument überprüfen
+      voters: Dokument bestätigen
       total_recounts: Komplette Nachzählungen und Ergebnisse
     polls:
       final:
@@ -16,6 +16,28 @@ de:
         no_polls: Sie führen keine Nachzählungen in einer aktiven Umfrage durch
         select_poll: Umfrage auswählen
         add_results: Ergebnisse hinzufügen
+    poll_budgets:
+      see_ballot_sheets: Siehe Liste Wahlzettel
+      index:
+        title: "%{poll_budget} - Wahlzettel Liste"
+        ballot_sheet: "Wahlzettel %{id}"
+        ballot_sheet_name: Name
+        ballot_sheet_author: Autor
+        ballot_sheet_creation_date: Erstellungsdatum
+        empty_results: Bisher keine Wahlzettel für die Abstimmung verfügbar
+      new:
+        title: "%{poll_budget} - Neue Wahlzettel"
+        booth: Wahlkabine
+        select_booth: Wahlkabine auswählen
+        csv_data: CSV Daten
+        submit: Speichern
+      show:
+        created_at: Erstellungsdatum
+        author: Autor
+        data: CSV Daten
+    booth:
+      new:
+        title: "Wähle deine Wahlkabine"
     results:
       flash:
         create: "Ergebnisse speichern"
@@ -28,7 +50,7 @@ de:
         select_booth: "Wahlkabine auswählen"
         ballots_white: "Völlig leere Stimmzettel"
         ballots_null: "Ungültige Stimmzettel"
-        ballots_total: "Gesamtanzahl der Stimmzettel"
+        ballots_total: "Stimmzettel gesamt"
         submit: "Speichern"
         results_list: "Ihre Ergebnisse"
         see_results: "Ergebnisse anzeigen"
@@ -36,30 +58,29 @@ de:
         no_results: "Keine Ergebnisse"
         results: Ergebnisse
         table_answer: Antwort
-        table_votes: Bewertung
+        table_votes: Stimmen
         table_whites: "Völlig leere Stimmzettel"
         table_nulls: "Ungültige Stimmzettel"
-        table_total: "Gesamtanzahl der Stimmzettel"
+        table_total: "Stimmzettel gesamt"
     residence:
       flash:
         create: "Dokument mit Volkszählung überprüft"
         not_allowed: "Sie haben heute keine Amtswechsel"
       new:
-        title: Dokument bestätigen
-        document_number: "Dokumentennummer (einschließlich Buchstaben)"
-        submit: Dokument bestätigen
+        title: Dokument überprüfen
+        submit: Dokument überprüfen
         error_verifying_census: "Die Volkszählung konnte dieses Dokument nicht bestätigen."
         form_errors: verhinderte die Bestätigung dieses Dokumentes
-        no_assignments: "Sie haben heute keine Amtswechsel"
     voters:
       new:
         title: Umfragen
-        table_poll: Umfrage
+        table_poll: Abstimmung
         table_status: Status Umfrage
         table_actions: Aktionen
         not_to_vote: Die Person hat beschlossen, zu diesem Zeitpunkt nicht zu stimmen
       show:
         can_vote: Kann abstimmen
+        cannot_vote: Die Person kann nicht abstimmen, da sie nicht in dem Bezirk registriert ist, in dem die Abstimmung stattfindet.
         error_already_voted: Hat bereits an dieser Abstimmung teilgenommen
         submit: Wahl bestätigen
         success: "Wahl eingeführt!"

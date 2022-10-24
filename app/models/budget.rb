@@ -1,42 +1,72 @@
-class Budget < ActiveRecord::Base
-
+class Budget < ApplicationRecord
   include Measurable
   include Sluggable
+  include StatsVersionable
+  include Reportable
+  include Imageable
 
-  CURRENCY_SYMBOLS = %w(€ $ £ ¥).freeze
+  translates :name, :main_link_text, :main_link_url, touch: true
+  include Globalizable
 
-  # validates :name, presence: true, length: { maximum: 80 }
-  validates :name, presence: true, uniqueness: true
-  validates :phase, inclusion: { in: Budget::Phase::PHASE_KINDS }
+  class Translation
+    validate :name_uniqueness_by_budget
+
+    def name_uniqueness_by_budget
+      if Budget.joins(:translations)
+               .where(name: name)
+               .where.not("budget_translations.budget_id": budget_id).any?
+        errors.add(:name, I18n.t("errors.messages.taken"))
+      end
+    end
+  end
+
+  CURRENCY_SYMBOLS = %w[€ $ £ ¥].freeze
+  VOTING_STYLES = %w[knapsack approval].freeze
+
+  #validates :name, presence: true, uniqueness: true
+  validates_translation :name, presence: true
+  validates_translation :main_link_url, presence: true, unless: -> { main_link_text.blank? }
+  validates :phase, inclusion: { in: ->(*) { Budget::Phase::PHASE_KINDS }}
+  #validates :phase, inclusion: { in: Budget::Phase::PHASE_KINDS }
   validates :currency_symbol, presence: true
   validates :slug, presence: true, format: /\A[a-z0-9\-_]+\z/
+  validates :voting_style, inclusion: { in: ->(*) { VOTING_STYLES }}
 
 
   has_many :investments, dependent: :destroy
   has_many :ballots, dependent: :destroy
   has_many :groups, dependent: :destroy
   has_many :headings, through: :groups
-  has_many :phases, class_name: Budget::Phase
+  has_many :lines, through: :ballots, class_name: "Budget::Ballot::Line"
+  has_many :phases, class_name: "Budget::Phase"
+  has_many :budget_administrators, dependent: :destroy
+  has_many :administrators, through: :budget_administrators
+  has_many :budget_valuators, dependent: :destroy
+  has_many :valuators, through: :budget_valuators
 
-  before_validation :sanitize_descriptions
+  has_one :poll
 
   after_create :generate_phases
+  accepts_nested_attributes_for :phases
 
-  scope :drafting, -> { where(phase: "drafting") }
+  scope :published, -> { where(published: true) }
+  scope :drafting,  -> { where.not(id: published) }
   scope :informing, -> { where(phase: "informing") }
   scope :accepting, -> { where(phase: "accepting") }
   scope :reviewing, -> { where(phase: "reviewing") }
   scope :selecting, -> { where(phase: "selecting") }
   scope :valuating, -> { where(phase: "valuating") }
+  scope :valuating_or_later, -> { where(phase: Budget::Phase.kind_or_later("valuating")) }
   scope :publishing_prices, -> { where(phase: "publishing_prices") }
   scope :balloting, -> { where(phase: "balloting") }
   scope :reviewing_ballots, -> { where(phase: "reviewing_ballots") }
   scope :finished, -> { where(phase: "finished") }
 
+  class << self; undef :open; end
   scope :open, -> { where.not(phase: "finished") }
 
   def self.current
-    where.not(phase: "drafting").order(:created_at).last
+    published.order(:created_at).last
   end
 
   def current_phase
@@ -47,6 +77,14 @@ class Budget < ActiveRecord::Base
     phases.published.order(:id)
   end
 
+  def starts_at
+    phases.published.first&.starts_at
+  end
+
+  def ends_at
+    phases.published.last&.ends_at
+  end
+
   def description
     description_for_phase(phase)
   end
@@ -55,7 +93,7 @@ class Budget < ActiveRecord::Base
     if phases.exists? && phases.send(phase).description.present?
       phases.send(phase).description
     else
-      send("description_#{phase}").try(:html_safe)
+      send("description_#{phase}")
     end
   end
 
@@ -63,12 +101,16 @@ class Budget < ActiveRecord::Base
     80
   end
 
-  def reviewing_or_later?
-    ["reviewing", "selecting"].include?(phase) || valuating_or_later?
+  #def reviewing_or_later?
+  #  ["reviewing", "selecting"].include?(phase) || valuating_or_later?
+  #end
+
+  def publish!
+    update!(published: true)
   end
 
   def drafting?
-    phase == "drafting"
+    !published?
   end
 
   def informing?
@@ -112,23 +154,31 @@ class Budget < ActiveRecord::Base
   end
 
   def valuating_or_later?
-    valuating? || publishing_prices? || balloting_or_later?
+    current_phase&.valuating_or_later?
   end
 
-  def balloting_process?
-    balloting? || reviewing_ballots?
+  def publishing_prices_or_later?
+    current_phase&.publishing_prices_or_later?
   end
 
   def balloting_or_later?
-    balloting_process? || finished?
+    current_phase&.balloting_or_later?
+  end
+
+  def balloting_finished?
+    balloting_or_later? && !balloting?
+  end
+
+  def single_group?
+    groups.one?
+  end
+
+  def single_heading?
+    single_group? && headings.one?
   end
 
   def heading_price(heading)
     heading_ids.include?(heading.id) ? heading.price : -1
-  end
-
-  def translated_phase
-    I18n.t "budgets.phase.#{phase}"
   end
 
   def formatted_amount(amount)
@@ -142,22 +192,25 @@ class Budget < ActiveRecord::Base
     formatted_amount(heading_price(heading))
   end
 
-  def formatted_heading_amount_spent(heading)
-    formatted_amount(amount_spent(heading))
-  end
-
   def investments_orders
     case phase
-    when 'accepting', 'reviewing'
-      %w{random}
-    when 'publishing_prices', 'balloting', 'reviewing_ballots'
-      %w{random price}
-    when 'finished'
-      %w{random}
+    when "accepting", "reviewing", "finished"
+      %w[random]
+    when "publishing_prices", "balloting", "reviewing_ballots"
+      hide_money? ? %w[random] : %w[random price]
     else
-      %w{random confidence_score}
-      # %w{random}
+      %w[random confidence_score]
     end
+  end
+
+  def investments_filters
+    [
+      ("winners" if finished?),
+      ("selected" if publishing_prices_or_later? && !finished?),
+      ("unselected" if publishing_prices_or_later?),
+      ("not_unfeasible" if valuating?),
+      ("unfeasible" if valuating_or_later?)
+    ].compact
   end
 
   def email_selected
@@ -176,45 +229,60 @@ class Budget < ActiveRecord::Base
     investments.winners.any?
   end
 
-  def disable_areas_check
-    !investments.empty? || (investments.empty? && !Setting["feature.areas"])
+  # def disable_areas_check
+  #   !investments.empty? || (investments.empty? && !Setting["feature.areas"])
+  # end
+
+  # def only_heading
+  #   headings = []
+  #   groups.each do |group|
+  #     group.headings.each do |heading|
+  #       headings.push(heading)
+  #     end
+  #   end
+  #   headings.count == 1 ? headings.first : false
+  # end
+
+  private
+
+  # def sanitize_descriptions
+  #   s = WYSIWYGSanitizer.new
+  #   Budget::Phase::PHASE_KINDS.each do |phase|
+  #     sanitized = s.sanitize(send("description_#{phase}"))
+  #     send("description_#{phase}=", sanitized)
+  #   end
+  # end
+
+  def investments_milestone_tags
+    investments.winners.map(&:milestone_tag_list).flatten.uniq.sort
   end
 
-  def only_heading
-    headings = []
-    groups.each do |group|
-      group.headings.each do |heading|
-        headings.push(heading)
-      end
-    end
-    headings.count == 1 ? headings.first : false
+  def approval_voting?
+    voting_style == "approval"
+  end
+
+  def show_money?
+    !hide_money?
   end
 
   private
 
-  def sanitize_descriptions
-    s = WYSIWYGSanitizer.new
-    Budget::Phase::PHASE_KINDS.each do |phase|
-      sanitized = s.sanitize(send("description_#{phase}"))
-      send("description_#{phase}=", sanitized)
+    def generate_phases
+      Budget::Phase::PHASE_KINDS.each do |phase|
+        Budget::Phase.create(
+          budget: self,
+          kind: phase,
+          name: I18n.t("budgets.phase.#{phase}"),
+          prev_phase: phases&.last,
+          starts_at: phases&.last&.ends_at || Date.current,
+          ends_at: (phases&.last&.ends_at || Date.current) + 1.month
+        )
+      end
     end
-  end
 
-  def generate_phases
-    Budget::Phase::PHASE_KINDS.each do |phase|
-      Budget::Phase.create(
-        budget: self,
-        kind: phase,
-        prev_phase: phases&.last,
-        starts_at: phases&.last&.ends_at || Date.current,
-        ends_at: (phases&.last&.ends_at || Date.current) + 1.month
-      )
+    def generate_slug?
+      slug.nil? || drafting?
     end
-  end
-
-  def generate_slug?
-    slug.nil? || drafting?
-  end
 end
 
 # == Schema Information

@@ -1,1 +1,7 @@
 ru:
+  social_share_button:
+    share_to: "Поделиться с %{name}"
+    twitter: "Twitter"
+    facebook: "Facebook"
+    email: "Электронный адрес"
+    whatsapp_app: "WhatsApp"

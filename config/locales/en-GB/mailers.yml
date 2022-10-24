@@ -1,1 +1,43 @@
 en-GB:
+  mailers:
+    comment:
+      hi: Привіт,
+    email_verification:
+      thanks: Дякуємо.
+    reply:
+      hi: Привіт,
+    user_invite:
+      thanks: "Дякуємо."
+    budget_investment_created:
+      subject: "Дякуємо за створення інвестиції!"
+      title: "Дякуємо за створення інвестиції!"
+      follow_link: "Бюджети участі"
+    budget_investment_unfeasible:
+      hi: "Шановний користувачу,"
+    budget_investment_selected:
+      hi: "Шановний користувачу,"
+      thanks: "Ще раз дякуємо за участь."
+      sincerely: "З повагою"
+    budget_investment_unselected:
+      hi: "Шановний користувачу,"
+      thanks: "Ще раз дякуємо за участь."
+      sincerely: "З повагою"
+    evaluation_comment:
+      subject: "Новий коментар оцінки"
+      hi: Привіт,
+    new_actions_notification_rake_created:
+      subject: "Більше новин про вашу пропозицію громадянина"
+      hi: "Привіт, %{name},"
+      new_resource: "НОВИЙ РОЗБЛОКОВАНИЙ РЕСУРС"
+      footer_text: "Як завжди, увійдіть до панелі пропозицій, і ми детально розповімо, як використовувати ці ресурси та отримати від них максимум користі."
+      dashboard_button: "Вперед, відкрийте їх!"
+    new_actions_notification_rake_published:
+      subject: "Більше новин про вашу пропозицію громадянина"
+      hi: "Привіт, %{name},"
+      new_resource: "НОВИЙ РОЗБЛОКОВАНИЙ РЕСУРС"
+      footer_text: "Як завжди, увійдіть до панелі пропозицій, і ми детально розповімо, як використовувати ці ресурси та отримати від них максимум користі."
+      dashboard_button: "Вперед, відкрийте їх!"
+    new_actions_notification_on_create:
+      dashboard_button: "Вперед, відкрийте їх!"
+    new_actions_notification_on_published:
+      dashboard_button: "Вперед, відкрийте їх!"

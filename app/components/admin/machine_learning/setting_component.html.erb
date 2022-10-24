@@ -1,0 +1,33 @@
+<div class="card machine-learning-setting" id="<%= dom_id(setting) %>">
+  <div class="card-divider">
+    <h3 id="<%= dom_id(setting, :title) %>"><%= t("admin.machine_learning.#{kind}") %></h3>
+  </div>
+  <div class="card-section">
+    <p id="<%= dom_id(setting, :description) %>"><%= t("admin.machine_learning.#{kind}_description") %></p>
+
+    <% if ml_info.present? %>
+      <%= render Admin::Settings::FeaturedSettingsFormComponent.new(setting, tab: "#settings") %>
+
+      <dl class="callout success">
+        <dt><strong><%= t("admin.machine_learning.last_execution") %></strong></dt>
+        <dd>
+          <strong><%= render Admin::DateRangeComponent.new(ml_info.generated_at, ml_info.updated_at) %></strong>
+        </dd>
+
+        <dt><%= t("admin.machine_learning.executed_script") %></dt>
+        <dd><%= ml_info.script %></dd>
+
+        <dt><%= t("admin.machine_learning.output_files") %></dt>
+        <dd>
+          <% filenames.each do |filename| %>
+            <a href="<%= data_path(filename) %>" target="_blank"><%= filename %></a><br>
+          <% end %>
+        </dd>
+      </dl>
+    <% else %>
+      <div class="callout secondary">
+        <%= t("admin.machine_learning.no_content") %>
+      </div>
+    <% end %>
+  </div>
+</div>

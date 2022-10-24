@@ -1,0 +1,26 @@
+@import "mixins/buttons";
+@import "mixins/layouts";
+
+%budget-header {
+  @extend %brand-background;
+  @include full-width-background;
+
+  h1 {
+    font-size: rem-calc(60);
+    padding: $line-height 0;
+  }
+
+  h1,
+  h2,
+  p,
+  a,
+  .back,
+  .icon-angle-left,
+  .description {
+    color: inherit;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}

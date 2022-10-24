@@ -1,0 +1,87 @@
+<% budget = investment.budget %>
+<%= form_for(investment, url: valuate_valuation_budget_budget_investment_path(budget, investment), html: { id: "valuation_budget_investment_edit_form" }) do |f| %>
+  <%= render "shared/errors", resource: investment %>
+  <div class="row">
+    <div class="small-12 column">
+      <fieldset class="fieldset">
+        <legend><%= t("valuation.budget_investments.edit.feasibility") %></legend>
+        <div class="small-4 column">
+            <span class="radio">
+              <%= f.radio_button :feasibility, "undecided" %>
+            </span>
+        </div>
+
+        <div class="small-4 column">
+            <span class="radio">
+              <%= f.radio_button :feasibility, "feasible" %>
+            </span>
+        </div>
+
+        <div class="small-4 column">
+            <span class="radio">
+              <%= f.radio_button :feasibility, "unfeasible" %>
+            </span>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+
+  <div id="unfeasible_fields">
+
+    <div class="row">
+      <div class="small-12 column">
+        <%= f.text_area :unfeasibility_explanation, rows: 3 %>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="feasible_fields">
+
+    <% if budget.show_money? %>
+      <div class="row">
+        <div class="small-12 medium-6 column">
+          <%= f.number_field :price,
+            label: t("valuation.budget_investments.edit.price", currency: budget.currency_symbol),
+            max: 1000000000000000 %>
+        </div>
+
+        <div class="small-12 medium-6 column end">
+          <%= f.number_field :price_first_year,
+            label: t("valuation.budget_investments.edit.price_first_year", currency: budget.currency_symbol),
+            max: 1000000000000000 %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="small-12 column">
+          <%= f.text_area :price_explanation, rows: 3 %>
+        </div>
+      </div>
+    <% else %>
+      <%= f.hidden_field :price, value: 0 %>
+    <% end %>
+
+    <div class="row">
+      <div class="small-12 medium-6 column">
+        <%= f.text_field :duration %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-8 column">
+      <%= f.check_box :valuation_finished,
+          id: "js-investment-report-alert",
+          "data-alert": t("valuation.budget_investments.edit.valuation_finished_alert"),
+          "data-not-feasible-alert": t("valuation.budget_investments.edit.not_feasible_alert") %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="actions small-12 medium-4 column">
+      <%= f.submit(class: "button expanded large", value: t("valuation.budget_investments.edit.save")) %>
+    </div>
+  </div>
+<% end %>

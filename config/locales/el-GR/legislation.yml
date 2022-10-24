@@ -1,0 +1,140 @@
+el:
+  legislation:
+    annotations:
+      comments:
+        see_all: Εμφάνιση όλων
+        see_complete: Εμφάνιση 
+        comments_count:
+          one: "%{count} σχόλιο"
+          other: "%{count} σχόλια"
+        replies_count:
+          one: "%{count} απάντηση"
+          other: "%{count} απαντήσεις"
+        cancel: Ακύρωση
+        publish_comment: Δημοσίευση σχολίου
+      form:
+        phase_not_open: Η φάση αυτή δεν είναι ανοιχτή
+      index:
+        title: Σχόλια
+        comments_about: Σχόλια σχετικά με
+        see_in_context: Προβολή στο πλαίσιο
+        comments_count:
+          one: "%{count} σχόλιο"
+          other: "%{count} σχόλια"
+      show:
+        title: Σχόλιο
+      version_chooser:
+        seeing_version: Σχόλια έκδοσης
+        see_text: Προβολή προσχέδιου κειμένου
+    draft_versions:
+      changes:
+        title: Αλλαγές
+        seeing_changelog_version: Συνοπτική προβολή αλλαγών
+        see_text: Δείτε το κείμενο
+      show:
+        loading_comments: Φόρτωση σχολίων
+        seeing_version: Βλέπετε το προσχέδιο
+        select_draft_version: Επιλογή προσχεδίου
+        select_version_submit: βλ.
+        updated_at: ενημερώθηκε στις %{date}
+        see_changes: προβολή σύνοψης αλλαγών
+        see_comments: Προβολή όλων των σχολίων
+        text_toc: Πίνακας περιεχομένων
+        text_body: Κείμενο
+        text_comments: Σχόλια
+    processes:
+      header:
+        additional_info: Πρόσθετες πληροφορίες
+        description: Περιγραφή
+        more_info: Περισσότερες πληροφορίες και περιεχόμενο
+      proposals:
+        empty_proposals: Δεν υπάρχουν προτάσεις
+        filters:
+          random: Τυχαία
+          winners: Επιλεγμένο
+      debate:
+        empty_questions: Δεν υπάρχουν ερωτήσεις
+      index:
+        filter: Φίλτρο
+        filters:
+          open: Τρέχουσες διαδικασίες
+          past: Προηγούμενα
+        no_open_processes: Δεν υπάρχουν τρέχουσες διαδικασίες
+        no_past_processes: Δεν υπάρχουν προηγούμενες διαδικασίες
+        section_header:
+          icon_alt: Εικονίδιο συνεργατικής νομοθεσίας
+          title: Συνεργατική νομοθεσία
+          help: Βοήθεια σχετικά με τη συλλογική νομοθεσία
+        section_footer:
+          title: Βοήθεια σχετικά με τη συλλογική νομοθεσία
+          description: Συμμετέχετε σε συζητήσεις και διαδικασίες πριν εγκρίνετε κάποιο διάταγμα ή δημοτική πράξη. Η γνώμη σας λαμβάνεται υπόψη από το δημοτικό συμβούλιο.
+      phase_not_open:
+        not_open: Αυτή η φάση δεν είναι ανοιχτή
+      phase_empty:
+        empty: Δεν υπάρχουν δημοσιεύσεις
+      process:
+        see_latest_comments: Προβολή των πιο πρόσφατων σχόλιων
+        see_latest_comments_title: Σχολιάστε σχετικά με αυτή τη διαδικασία
+      shared:
+        key_dates: Φάσεις συμμετοχής
+        homepage: Αρχική σελίδα
+        debate_dates: Συζήτηση
+        draft_publication_date: Προσχέδιο δημοσίευσης
+        allegations_dates: Σχόλια
+        result_publication_date: Δημοσίευση τελικού αποτελέσματος
+        milestones_date: Ακολουθείται από
+        proposals_dates: Προτάσεις
+    questions:
+      comments:
+        comment_button: Δημοσίευση απάντησης
+        comments_title: Ανοιχτές απαντήσεις
+        comments_closed: Ολοκληρωμένη φάση
+        form:
+          leave_comment: Απάντηση
+      question:
+        comments:
+          zero: Δεν υπάρχουν σχόλια
+          one: "%{count} σχόλιο"
+          other: "%{count} σχόλια"
+        debate: Συζήτηση
+      show:
+        answer_question: Υποβολή απάντησης
+        next_question: Επόμενη ερώτηση
+        first_question: Πρώτη ερώτηση
+        share: Κοινοποιήστε
+        title: Διαδικασία συνεργατικής νομοθεσίας
+      participation:
+        phase_not_open: Αυτή η φάση δεν είναι ανοιχτή
+        organizations: Δεν επιτρέπεται στους οργανισμούς να συμμετέχουν στη συζήτηση
+        unauthenticated: Θα πρέπει να %{signin} ή να %{signup} για να συμμετάσχετε.
+        verified_only: Μόνο επιβεβαιωμένοι χρήστες μπορούν να συμμετάσχουν, %{verify_account}.
+        debate_phase_not_open: Η φάση συζήτησης έχει ολοκληρωθεί και οι απαντήσεις δεν γίνονται πλέον αποδεκτές
+    shared:
+      share: Κοινοποιήστε
+      share_comment: Σχόλιο στο %{version_name} από το σχεδιασμό διαδικασίας %{process_name}
+    proposals:
+      form:
+        tags_label: "Κατηγορίες"
+      not_verified: "Για να ψηφίσετε %{verify_account}."
+      process_title: Διαδικασία συνεργατικής νομοθεσίας
+    summary:
+      title: "Περίληψη"
+      votes:
+        zero: "%{count} ψήφοι"
+      debate_phase: "Φάση συζήτησης"
+      proposals_phase: "Φάση προτάσεων"
+      allegations_phase: "Φάση σχολίων"
+      debates:
+        zero: "Δεν υπάρχουν συζητήσεις"
+        one: "%{count} συζήτηση"
+        other: "%{count} συζητήσεις"
+      proposals:
+        zero: "Δεν υπάρχουν προτάσεις"
+        one: "%{count} πρόταση"
+        other: "%{count} πρότάσεις"
+      comments:
+        zero: "Δεν υπάρχουν σχόλια"
+        one: "%{count} σχόλιο"
+        other: "%{count} σχόλια"
+      top_comments:
+        zero: "Δεν υπάρχουν σχόλια"

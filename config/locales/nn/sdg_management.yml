@@ -1,0 +1,12 @@
+nn:
+  sdg_management:
+    menu:
+      debates: "Debatter"
+      polls: "Avstemninger"
+      proposals: "Forslag"
+    relations:
+      index:
+        filter: "Filter"
+        filters:
+          all: "Alle"
+          pending_sdg_review: "Under behandling"

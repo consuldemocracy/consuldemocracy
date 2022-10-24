@@ -1,0 +1,46 @@
+<h2 class="inline-block"><%= t("admin.documents.index.title") %></h2>
+
+<%= link_to t("admin.documents.index.new_link"),
+            new_admin_site_customization_document_path,
+            class: "button float-right" %>
+
+<% if @documents.any? %>
+  <h3><%= page_entries_info @documents %></h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th scope="col"><%= t("admin.shared.title") %></th>
+        <th scope="col"><%= t("admin.documents.index.format") %></th>
+        <th scope="col"><%= t("admin.documents.index.size") %></th>
+        <th scope="col"><%= t("admin.documents.index.url") %></th>
+        <th scope="col"><%= t("admin.shared.actions") %></th>
+      </tr>
+    </thead>
+    <tbody id="documents">
+      <% @documents.each do |document| %>
+        <tr id="<%= dom_id(document) %>" class="document">
+          <td><%= document.title %></td>
+          <td><%= document.attachment.content_type %></td>
+          <td><%= number_to_human_size(document.attachment.byte_size) %></td>
+          <td><%= link_to document.title, document.attachment, target: :blank %></td>
+          <td>
+            <div class="small-12 medium-6 column">
+              <%= render Admin::TableActionsComponent.new(
+                document,
+                actions: [:destroy],
+                destroy_path: admin_site_customization_document_path(document)
+              ) %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  <table>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.documents.index.no_documents") %>
+  </div>
+<% end %>
+
+<%= paginate @documents %>

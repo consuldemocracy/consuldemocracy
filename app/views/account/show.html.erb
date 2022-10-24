@@ -16,97 +16,59 @@
       <div class="row">
         <div class="small-12 medium-7 column">
 
-          <h2><%= t("account.show.personal")%></h2>
+          <h2><%= t("account.show.personal") %></h2>
 
           <div class="small-12 medium-10">
             <% if @account.organization? %>
 
-              <%= f.text_field :phone_number, placeholder: t("account.show.phone_number_label") %>
+              <%= f.fields_for :organization do |fo| %>
+                <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length %>
+                <%= fo.text_field :responsible_name, autofocus: true, maxlength: Organization.responsible_name_max_length %>
+              <% end %>
+              <%= f.phone_field :phone_number %>
+              <%#= f.text_field :phone_number, placeholder: t("account.show.phone_number_label") %>
 
             <% else %>
-              <%= f.text_field :username, maxlength: User.username_max_length, placeholder: t("account.show.username_label") %>
+              <%= f.text_field :username, maxlength: User.username_max_length %>
             <% end %>
             <%= f.text_field :phone_number, maxlength: 9, placeholder: t("account.show.phone_number_label") %>
           </div>
 
           <div>
-            <%= f.label :public_activity do %>
-              <%= f.check_box :public_activity, title: t('account.show.public_activity_label'), label: false %>
-              <span class="checkbox">
-                <%= t("account.show.public_activity_label") %>
-              </span>
-            <% end %>
+            <%= f.check_box :public_activity %>
           </div>
 
           <div>
-            <%= f.label :public_interests do %>
-              <%= f.check_box :public_interests, title: t('account.show.public_interests_label'), label: false %>
-              <span class="checkbox">
-                <%= t("account.show.public_interests_label") %>
-              </span>
-            <% end %>
+            <%= f.check_box :public_interests %>
           </div>
 
-
           <% if @account.email.present? %>
-            <h2><%= t("account.show.notifications")%></h2>
+            <h2><%= t("account.show.notifications") %></h2>
 
             <div>
-              <%= f.label :email_on_comment do %>
-                <%= f.check_box :email_on_comment, title: t('account.show.email_on_comment_label'), label: false %>
-                <span class="checkbox">
-                  <%= t("account.show.email_on_comment_label") %>
-                </span>
-              <% end %>
+              <%= f.check_box :email_on_comment %>
             </div>
 
             <div>
-              <%= f.label :email_on_comment_reply do %>
-                <%= f.check_box :email_on_comment_reply, title: t('account.show.email_on_comment_reply_label'), label: false %>
-                <span class="checkbox">
-                  <%= t("account.show.email_on_comment_reply_label") %>
-                </span>
-              <% end %>
+              <%= f.check_box :email_on_comment_reply %>
             </div>
 
             <div>
-              <%= f.label :email_newsletter_subscribed do %>
-                <%= f.check_box :newsletter, title: t('account.show.subscription_to_website_newsletter_label'), label: false %>
-                <span class="checkbox">
-                  <%= t("account.show.subscription_to_website_newsletter_label") %>
-                </span>
-              <% end %>
+              <%= f.check_box :newsletter %>
             </div>
 
             <div>
-              <%= f.label :email_digest do %>
-                <%= f.check_box :email_digest, title: t('account.show.email_digest_label'), label: false %>
-                <span class="checkbox">
-                  <%= t("account.show.email_digest_label") %>
-                </span>
-              <% end %>
+              <%= f.check_box :email_digest %>
             </div>
 
             <div>
-              <%= f.label :email_on_direct_message do %>
-                <%= f.check_box :email_on_direct_message, title: t('account.show.email_on_direct_message_label'), label: false %>
-                <span class="checkbox">
-                  <%= t("account.show.email_on_direct_message_label") %>
-                </span>
-              <% end %>
+              <%= f.check_box :email_on_direct_message %>
             </div>
           <% end %>
 
           <% if @account.official_level == 1 %>
             <div>
-              <%= f.label :official_position_badge do %>
-                <%= f.check_box :official_position_badge,
-                                 title: t('account.show.official_position_badge_label'),
-                                 label: false %>
-                <span class="checkbox">
-                  <%= t("account.show.official_position_badge_label") %>
-                </span>
-              <% end %>
+              <%= f.check_box :official_position_badge %>
             </div>
           <% end %>
 
@@ -115,23 +77,13 @@
 
             <% if feature?("user.recommendations_on_debates") %>
               <div>
-                <%= f.label :recommended_debates do %>
-                  <%= f.check_box :recommended_debates, title: t("account.show.show_debates_recommendations"), label: false %>
-                  <span class="checkbox">
-                    <%= t("account.show.show_debates_recommendations") %>
-                  </span>
-                <% end %>
+                <%= f.check_box :recommended_debates %>
               </div>
             <% end %>
 
             <% if feature?("user.recommendations_on_proposals") %>
               <div>
-                <%= f.label :recommended_proposals do %>
-                  <%= f.check_box :recommended_proposals, title: t("account.show.show_proposals_recommendations"), label: false %>
-                  <span class="checkbox">
-                    <%= t("account.show.show_proposals_recommendations") %>
-                  </span>
-                <% end %>
+                <%= f.check_box :recommended_proposals %>
               </div>
             <% end %>
           <% end %>
@@ -145,15 +97,15 @@
           <p><%= t("account.show.user_permission_info") %></p>
 
           <ul>
-            <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_debates") %></li>
-            <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_proposal") %></li>
+            <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_debates") %></li>
+            <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_proposal") %></li>
             <li>
               <% if current_user.level_two_or_three_verified? %>
                 <span class="icon-check"></span>
               <% else %>
                 <span class="icon-x"></span>
               <% end %>
-              <%= t("account.show.user_permission_support_proposal") %>
+              <%= t("verification.user_permission_support_proposal") %>
             </li>
             <li>
               <% if current_user.level_three_verified? %>
@@ -161,13 +113,10 @@
               <% else %>
                 <span class="icon-x"></span>
               <% end %>
-              <%= t("account.show.user_permission_votes") %>
+              <%= t("verification.user_permission_votes") %>
             </li>
           </ul>
 
-          <p>
-            <span><%= t("account.show.user_permission_verify_info") %></span>
-          </p>
           <p>
             <%= t("account.show.user_permission_verify") %>
           </p>

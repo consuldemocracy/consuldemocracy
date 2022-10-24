@@ -1,42 +1,34 @@
 <!DOCTYPE html>
-<html lang="es">
+<html <%= "dir=rtl" if rtl? %> lang="<%= I18n.locale %>">
 
   <head>
     <%= render "layouts/common_head", default_title: "Admin" %>
     <%= content_for :head %>
   </head>
 
-  <body class="admin" data-watch-form-message="<%= I18n.t('layouts.admin.watch_form_message') %>">
-    <div class="off-canvas-wrapper">
-      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-        <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+  <body class="admin">
+    <%= render "layouts/admin_header" %>
 
-          <div class="show-for-small-only">
-            <%= side_menu %>
-          </div>
-        </div>
+    <div class="menu-and-content">
+      <%= check_box_tag :show_menu, nil, false, role: "switch" %>
 
-        <div class="off-canvas-content" data-off-canvas-content>
-          <%= render 'layouts/admin_header' %>
+      <nav id="side_menu" class="admin-sidebar">
+        <% if namespace == "admin" %>
+          <%= render Admin::MenuComponent.new %>
+        <% elsif namespace == "sdg_management" %>
+          <%= render SDGManagement::MenuComponent.new %>
+        <% else %>
+          <%= render "/#{namespace}/menu" %>
+        <% end %>
+      </nav>
 
-          <div class="no-margin-top row expanded collapse" data-equalizer>
-            <div class="small-12 medium-3 column" data-equalizer-watch>
+      <div class="admin-content">
+        <%= label_tag :show_menu, t("admin.menu.admin"),
+                      "aria-hidden": true, class: "button hollow expanded" %>
 
-              <div class="show-for-small-only">
-                <button type="button" class="button hollow expanded" data-toggle="offCanvas"><%= t("admin.menu.admin") %></button>
-              </div>
-
-              <div id="side_menu" class="hide-for-small-only">
-                <%= side_menu %>
-              </div>
-            </div>
-
-            <div class="admin-content small-12 medium-9 column" data-equalizer-watch>
-              <%= render 'layouts/flash' %>
-              <%= yield %>
-            </div>
-          </div>
-        </div>
+        <%= render "layouts/flash" %>
+        <%= render "layouts/officing_booth" if controller.class.module_parent == Officing && session[:booth_id].present? %>
+        <%= yield %>
       </div>
     </div>
   </body>

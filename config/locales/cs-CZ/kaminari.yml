@@ -1,0 +1,26 @@
+cs:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Záznamy
+        one: Záznam
+        few: Záznamy
+        many: Záznamy
+        other: Záznamy
+      more_pages:
+        display_entries: Zobrazí se<strong>%{first}&nbsp;-&nbsp;%{last}</strong> z <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "%{entry_name} nebyl nalezen"
+          one: Existuje <strong>1 %{entry_name}</strong>
+          few: Existují <strong>%{count}%{entry_name}</strong>
+          many: Existují <strong>%{count}%{entry_name}</strong>
+          other: Existuje <strong>%{count} %{entry_name}</strong>
+  views:
+    pagination:
+      current: Jste na stránce
+      first: První
+      last: Poslední
+      next: Plánované
+      previous: Předchozí
+      truncate: "&hellip;"

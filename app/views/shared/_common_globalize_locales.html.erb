@@ -1,0 +1,33 @@
+<div class="row globalize-languages column padding-top <%= highlight_translation_html_class %>">
+  <div class="small-6 large-3 column">
+    <span class="small">
+      <strong class="js-languages-description"
+        data-texts="<%= t("shared.translations.languages_in_use").to_json %>">
+        <%= selected_languages_description(resource) %>
+      </strong>
+    </span>
+    <%= select_tag :select_language,
+                   options_for_select_language(resource),
+                   prompt: t("shared.translations.select_language_prompt"),
+                   class: "js-select-language" %>
+    <%= select_language_error(resource) %>
+    <div class="margin-bottom">
+      <% if manage_languages %>
+        <% I18n.available_locales.each do |locale| %>
+          <%= link_to t("shared.translations.remove_language"), "#",
+                      style: display_destroy_locale_style(resource, locale),
+                      class: "delete js-delete-language js-delete-#{locale}",
+                      data: { locale: locale } %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="small-6 large-3 column margin-top end">
+    <% if manage_languages %>
+      <%= select_tag :add_language,
+                     options_for_add_language,
+                     prompt: t("shared.translations.add_language"),
+                     class: "js-add-language" %>
+    <% end %>
+  </div>
+</div>

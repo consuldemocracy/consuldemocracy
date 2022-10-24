@@ -1,0 +1,900 @@
+nn:
+  account:
+    show:
+      change_credentials_link: Endre mine opplysninger
+      erase_account_link: Slett min konto
+      finish_verification: Fullfør verifisering
+      notifications: Varsler
+      personal: Personlige detaljer
+      public_interests_my_title_list: Tagger for emnene du følger
+      public_interests_user_title_list: Tagger for emner denne brukeren følger
+      save_changes_submit: Lagre endringer
+      recommendations: Anbefalinger
+      title: Min konto
+      user_permission_info: Med din konto kan du...
+      user_permission_title: Deltakelse
+      user_permission_verify: Verifiser din konto for å få tilgang til alle funksjoner.
+      verified_account: Konto er verifisert
+      verify_my_account: Verifiser min konto
+  application:
+    close: Lukk
+    menu: Meny
+  comments:
+    comments_closed: Kommentarer er avstengt
+    verified_only: For å delta %{verify_account}
+    comment:
+      admin: Administrator
+      author: Forfatter
+      deleted: Denne kommentaren har blitt slettet
+      moderator: Moderator
+      responses:
+        zero: Ingen svar
+        one: 1 svar
+        other: "%{count} svar"
+      responses_show:
+        zero: Ingen svar
+        one: "1 svar (vis)"
+        other: "%{count} svar (vis)"
+      responses_collapse:
+        zero: Ingen svar
+        one: "1 svar (skjul)"
+        other: "%{count} svar (skjul)"
+      user_deleted: Brukeren er slettet
+      votes:
+        zero: Ingen stemmer
+        one: 1 stemme
+        other: "%{count} stemmer"
+    form:
+      comment_as_admin: Kommenter som administrator
+      comment_as_moderator: Kommenter som moderator
+      leave_comment: Kommenter
+    orders:
+      most_voted: Flest stemmer
+      newest: Nyeste først
+      oldest: Eldste først
+      most_commented: Mest kommentert
+    show:
+      return_to_commentable: "Gå tilbake til "
+  comments_helper:
+    comment_button: Publiser kommentar
+    comment_link: Kommenter
+    comments_title: Kommentarer
+    reply_button: Publiser svar
+    reply_link: Svar
+  debates:
+    create:
+      form:
+        submit_button: Start en debatt
+    debate:
+      comments:
+        zero: Ingen kommentarer
+        one: 1 kommentar
+        other: "%{count} kommentarer"
+      votes:
+        zero: Ingen stemmer
+        one: 1 stemme
+        other: "%{count} stemmer"
+    edit:
+      editing: Rediger debatt
+      form:
+        submit_button: Lagre endringer
+      show_link: Vis debatt
+    form:
+      tags_instructions: Tag denne debatten.
+      tags_placeholder: "Skriv tag'ene du vil bruke, avgrenset med komma (',')"
+    index:
+      featured_debates: Utvalgte
+      orders:
+        confidence_score: mest populære
+        created_at: nyeste
+        hot_score: mest aktive
+        most_commented: mest kommenterte
+        relevance: relevans
+        recommendations: anbefalinger
+      recommendations:
+        without_results: Det finnes ingen debatter relatert til dine interesser
+        without_interests: Følg forslag så vi kan gi deg anbefalinger
+        disable: "Anbefalte debatter vil ikke vises vis du deaktiverer de. Du kan aktivere funksjonen igjen under \"Min konto\""
+        actions:
+          success: "Anbefalte debatter er nå deaktivert for denne kontoen"
+          error: "En feil har oppstått. Gå til \"Min konto\" for å manuelt deaktivere anbefalte debatter"
+      search_form:
+        button: Søk
+        placeholder: Søk debatter...
+        title: Søk
+      start_debate: Start en debatt
+      title: Debatter
+      section_header:
+        icon_alt: Debatt-ikon
+        title: Debatter
+        help: Hjelp til debatter
+      section_footer:
+        title: Hjelp med debatter
+        description: Start en debatt for å dele meninger med andre om temaer du er opptatt av.
+        help_text_1: "Rommet for innbyggerdebatt er rettet mot alle som vil ta opp spørsmål som de er opptatt av og som de ønsker å diskutere med andre."
+        help_text_2: 'For å starte en debatt må du registrere deg på %{org}. Brukere kan også kommentere i åpne debatter og rangere de med knappene "jeg er enig" eller "jeg er uenig".'
+    new:
+      form:
+        submit_button: Start en debatt
+      more_info: Mer informasjon
+      recommendation_four: Dette er din plass, du skal kunne trives og sørge for at din stemme blir hørt.
+      recommendation_one: Ikke bruk bare store bokstaver i debatt-titler eller i hele setninger. På internet blir dette oppfattet som roping, og ingen liker og bli ropt til.
+      recommendation_three: Hensynsløs kritikk ønskes velkommen. Dette er rommet for refleksjon. Men vi anbefaler at du holder diskusjonen elegant og intelligent. Verden blir et bedre sted om vi alle tenker slik.
+      recommendation_two: Alle debattinnlegg eller kommentarer som foreslår ulovlige handlinger eller forsøker og sabotere diskusjoner vil bli slettet. Alt annet er tillatt.
+      recommendations_title: Anbefalinger for debattinnlegg
+      start_new: Start en debatt
+    show:
+      author_deleted: Brukeren er slettet
+      comments:
+        zero: Ingen kommentarer
+        one: 1 kommentar
+        other: "%{count} kommentarer"
+      comments_title: Kommentarer
+      edit_debate_link: Rediger
+      flag: Denne debatten har blitt flagget som upassende av flere brukere.
+      share: Del
+      author: Forfatter
+    update:
+      form:
+        submit_button: Lagre endringer
+  errors:
+    messages:
+      user_not_found: Finner ikke bruker
+      invalid_date_range: "Ugyldig dato"
+  form:
+    accept_terms: Jeg er enig i %{policy} og %{conditions}
+    accept_terms_title: Jeg er enig i personvern- og brukervilkår
+    conditions: Brukervilkår
+    debate: Debatt
+    direct_message: private meldinger
+    error: feil
+    errors: feil
+    not_saved: "gjorde at %{resource} ikke kunne lagres. <br>Kontroller og endre de markerte feltene:"
+    policy: Personvernpolicy
+    proposal: Forslag
+    proposal_notification: "Varsler"
+    budget/investment: Budsjettforslag
+    budget/group: Budsjettgruppe
+    budget/heading: Budsjettoverskrift
+    poll/shift: Shift
+    poll/question/answer: Svar
+    user: Konto
+    verification/sms: telefon
+    signature_sheet: Signaturside
+    document: Dokument
+    topic: Emne
+    image: Bilde
+  geozones:
+    none: Hele byen
+  layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
+      ie: Vi har oppdaget at du bruker Internet Explorer. For en bedre opplevelse anbefaler vi %{firefox} eller %{chrome}.
+      ie_title: Denne siden er ikke optimalisert for din nettleser
+    dashboard:
+      proposal_header:
+        published: Publisert
+        draft: Utkast
+        retired: Tilbakekalt
+      proposal_totals:
+        active_resources: Aktive ressurser
+        community: Deltakere i fellesskap
+        show_proposal: Vis forslag
+        preview_proposal: Forhåndsvis forslag
+        current_goal: Nåværende mål
+        supports:
+          zero: Ingen støtte
+          zero: "Støtte"
+          one: Støtte
+          other: "Støtte"
+    footer:
+      accessibility: Tilgjengelighet
+      conditions: Brukervilkår
+      consul: CONSUL
+      consul_url: https://github.com/consul/consul
+      copyright: CONSUL, %{year}
+      description: Denne portalen bruker %{consul} som er %{open_source}.
+      open_source: open-source software
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: Vær med å forme den byen du vil bo i.
+      participation_title: Deltakelse
+      privacy: Personvernpolicy
+    header:
+      administration_menu: Meny
+      administration: Administrasjon
+      collaborative_legislation: Deltakende lovgivning
+      debates: Debatter
+      locale: "Språk:"
+      management: Ledelse
+      moderation: Moderering
+      valuation: Vurdering
+      officing: Avstemningskontrollører
+      help: Hjelp
+      my_account_link: Min konto
+      my_activity_link: Min aktivitet
+      open_gov: Open Government
+      proposals: Forslag
+      poll_questions: Avstemming
+      budgets: Deltakende budsjettering
+      notification_item:
+        new_notifications:
+          zero: "Du har ingen nye varsler"
+          one: Du har 1 nye varsel
+          other: Du har %{count} nye varsler
+        notifications: Varsler
+  notifications:
+    index:
+      empty_notifications: Du har ingen nye varsler.
+      mark_all_as_read: Marker alle som lest
+      read: Les
+      title: Varsler
+      unread: Ulest
+    notification:
+      action:
+        comments_on:
+          zero: Det er %{count} nye kommentarer
+          one: Noen kommenterte på
+          other: Det er %{count} nye kommentarer på
+        proposal_notification:
+          zero: Du har %{count} nye varsler om
+          one: Du har 1 ny varsel om
+          other: Du har %{count} nye varsler om
+        replies_to:
+          zero: Du har fått %{count} svar på din kommentar om
+          one: Noen svarte på kommentaren om
+          other: Det er %{count} nye svar på din kommentar om
+      mark_as_read: Marker som lest
+      mark_as_unread: Marker som ulest
+      notifiable_hidden: Denne ressursen er ikke lenger tilgjengelig.
+  map:
+    title: "Distrikter"
+    proposal_for_district: "Opprett et forslag for distriktet ditt"
+    start_proposal: Lag nye forslag
+  omniauth:
+    facebook:
+      sign_in: Logg på med Facebook
+      sign_up: Registrer deg med Facebook
+      name: Facebook
+    finish_signup:
+      title: "Tilleggsdetaljer"
+      username_warning: "På grunn av endringer i måten vi interagerer med sosiale medier, er det mulig at brukernavnet ditt fremstår som \"allerede i bruk\". Hvis dette er tilfelle, kan du velge et annet brukernavn."
+    google_oauth2:
+      sign_in: Logg på med Google
+      sign_up: Registrer deg med Google
+      name: Google
+    twitter:
+      sign_in: Logg inn via Twitter
+      sign_up: Registrer deg med Twitter
+      name: Twitter
+    info:
+      sign_in: "Logg på med:"
+      sign_up: "Registrer deg med:"
+    or_fill: "Eller fyll ut følgende skjema:"
+  proposals:
+    create:
+      form:
+        submit_button: Lag nye forslag
+    created:
+      title: Gratulerer! Du har gjennomført først steg.
+      motivation: "Det er viktig å forberede en introduksjonskampanje for at forslaget ditt skal bli en suksess. Det første dagene er avgjørende."
+      motivation_2: "<strong>Hvis du vil ha anbefalinger til forberedelsene før forslaget blir offentliggjort, kan du la forslaget stå som utkast, og vi vil veilede deg.</strong>"
+      publish: Nei, jeg vil offentliggjøre forslaget
+      dashboard: Ja, jeg ønsker hjelp, og offentligjør forslaget senere
+      preview_title: Dette er hvordan forslaget ditt vil se ut når det er offentliggjort
+    share:
+      improve_it: Gjør kampanjen din bedre og få mer støtte.
+      dashboard: Mer informasjon
+      message: "Jeg støttet dette forslaget %{title} i %{handle}. Hvis du er interesseret, så kan du også gå inn og støtte!"
+    edit:
+      editing: Rediger forslag
+      form:
+        submit_button: Lagre endringer
+      show_link: Se forslag
+    retire_form:
+      title: Trekk tilbake forslag
+      warning: "Hvis du trekker tilbake forslaget ditt, kan andre brukere fortsatt støtte det. Forslaget fjernes likevel fra hovedlista, og andre brukere vil bli informert om at du ikke lenger mener forslaget bør støttes"
+      retired_reason_blank: Velg et alternativ
+      retired_explanation_placeholder: Forklar kort hvorfor du ikke mener dette forslaget burde få mer støtte
+      submit_button: Ta tilbake forslaget
+    retire_options:
+      duplicated: Duplikert
+      started: Pågående
+      unfeasible: Ikke gjennomførbart
+      done: Ferdig
+      other: Annet
+    form:
+      proposal_responsible_name_note: "(individuelt eller som representant for en gruppe; vil ikke bli publisert offentlig)"
+      proposal_summary_note: "(Maks 200 tegn)"
+      proposal_video_url_note: Du kan legge til en link fra Youtube eller Vimeo
+      tag_category_label: "Kategorier"
+      tags_instructions: "Tagg forslaget. Du kan velge fra de foreslåtte kategoriene, eller legge til egne"
+      tags_label: Tagger
+      tags_placeholder: "Skriv taggene du ønsker å bruke, avgrenset med komma (',')"
+      map_location: "Kartposisjon"
+      map_location_instructions: "Naviger til plassen på kartet og plasser markøren."
+      map_remove_marker: "Fjern kartmarkøren"
+    index:
+      featured_proposals: Utvalgte
+      orders:
+        confidence_score: populære
+        created_at: nyeste
+        hot_score: mest aktive
+        most_commented: mest kommenterte
+        relevance: relevans
+        archival_date: arkivert
+        recommendations: anbefalinger
+      recommendations:
+        without_results: Det finnes ingen forslag relatert til dine interesser
+        without_interests: Følg forslag så vi kan gi deg anbefalinger
+        disable: "Anbefalte forslag vil ikke vises vis du deaktiverer de. Du kan aktivere funksjonen igjen under \"Min konto\""
+        actions:
+          success: "Anbefalte forslag er nå deaktivert for denne kontoen"
+          error: "En feil har oppstått. Gå til \"Min konto\" for å manuelt deaktivere anbefalte forslag"
+      retired_proposals: Trekk tilbake forslag
+      retired_proposals_link: "Forslaget er trukket tilbake av forslagsstiller"
+      selected_proposals: Valgte forslag
+      selected_proposals_link: Vis valgte forslag
+      archived_proposals: Arkiverte forslag
+      proposals_lists: Liste over forslag
+      retired_links:
+        all: Alle
+        duplicated: Duplikert
+        started: Pågående
+        unfeasible: Ikke gjennomførbart
+        done: Gjennomført
+        other: Andre
+      search_form:
+        button: Søk
+        placeholder: Søk forslag...
+        title: Søk
+      search_results:
+        zero: " som inneholder <strong>'%{search_term}'</strong>"
+        one: " som inneholder <strong>'%{search_term}'</strong>"
+        other: " som inneholder <strong>'%{search_term}'</strong>"
+      select_order_long: "Du viser forslag i henhold til:"
+      start_proposal: Opprett et forslag
+      title: Forslag
+      top_link_proposals: Mest populære forslag fra hver kategori
+      section_header:
+        icon_alt: Forslagsikon
+        title: Forslag
+        help: Hjelp til forslag
+      section_footer:
+        title: Hjelp til forslag
+        description: Innbyggere sine forslag er en mulighet for naboer og foreninger å få direkte innflytelse på hvordan deres by skal være. Det skjer ved at forslagene oppnår støtte fra andre brukere og deretter går videre til en offentlig avstemming.
+    new:
+      form:
+        submit_button: Opprett forslag
+      more_info: Hvordan fungerer innbyggerforslag?
+      recommendation_one: Ikke bruk bare store bokstaver i tittel på forslag eller i hele setninger. På internet blir dette oppfattet som roping, og ingen liker og bli ropt til.
+      recommendation_three: Dette er din plass, du skal kunne trives og sørge for at din stemme blir hørt.
+      recommendation_two: Alle debattinnlegg eller kommentarer som foreslår ulovlige handlinger eller forsøker og sabotere diskusjoner vil bli slettet. Alt annet er tillatt.
+      recommendations_title: Anbefalinger hvis du ønsker å opprette et forslag
+      start_new: Lag et nytt forslag
+    notice:
+      retired: Forslaget er trukket
+      published: Forslaget har blitt offentliggjort
+    proposal:
+      created: "Du har opprettet et forslag!"
+      share:
+        guide: "Nå kan du dele forslaget, så folk kan støtte deg."
+        edit: "Før forslaget deles, har du mulighet til å endre teksten som du vil."
+        view_proposal: Ikke nå, gå til mitt forslag
+      already_supported: Du har allerede støttet dette forslaget. Del det!
+      comments:
+        zero: Ingen kommentarer
+        one: 1 kommentarer
+        other: "%{count} kommentarer"
+      support: Støtte
+      support_title: Støtt dette forslaget
+      supports:
+        zero: Ingen støtte
+        one: 1 støtte
+        other: "%{count} støtte"
+      votes:
+        zero: Ingen stemmer
+        one: 1 stemme
+        other: "%{count} stemmer"
+      supports_necessary: "%{number} støtter trengs"
+      total_percent: 100%
+      archived: "Dette forslaget har blitt arkivert og kan ikke samle støtte."
+      successful: "Dette forslaget har nådd nok støtte."
+      selected: "Valgt forslag"
+    show:
+      author_deleted: Bruker er slettet
+      code: "Forslagskode:"
+      comments:
+        zero: Ingen kommentarer
+        one: 1 kommentar
+        other: "%{count} kommentarer"
+      comments_tab: Kommentarer
+      dashboard_proposal_link: Dashboard
+      flag: Dette forslaget har blitt flagget som upassende av flere brukere.
+      notifications_tab: Notifikasjoner
+      milestones_tab: Milepæler
+      retired_warning: "Forslagstilleren ønsker ikke at dette forslaget skal få mer støtte."
+      retired_warning_link_to_explanation: Les forklaringen før du avgir en stemme.
+      retired: Forslaget er trukket tilbake av forslagsstiller
+      share: Del
+      no_notifications: "Dette forslaget har ingen notifikasjoner."
+      embed_video_title: "Video for %{proposal}"
+      title_video_url: "Ekstern video"
+      author: Forslagsstiller
+      draft: Forslag står som utkast. Utkastet kan ikke motta støtte enda, og vil ikke komme opp på lista for forslag.
+    update:
+      form:
+        submit_button: Lagre endringer
+  dashboard:
+    menu:
+      my_proposal: Rediger mitt forslag
+      progress: Fremdrift
+      resources: Ressurser
+      community: Fellesskap
+      polls: Avstemninger
+      mailing: Epost
+      poster: Plakat
+      recommended_actions: Anbefalte handlinger
+      messages: Melding til brukere
+      related_content: Relatert innhold
+    form:
+      request: Forespørsel
+    create_request:
+      success: Forespørselen har blitt sendt. Vi vil kontakte deg så snart som mulig med informasjon.
+      archived: Dette forslaget er arkivert og du kan derfor ikke etterspørre ressurser.
+    progress:
+      title: Grafikk
+      group_by_month: Månedlig
+      group_by_week: Ukentlig
+      group_by_date: Daglig
+      progress: Akkumulert fremdrift
+      supports: Støtte
+      success: Idéell fremdrift
+      new_action: Ny
+    index:
+      title: Utgave
+      edit_proposal_link: Rediger forslag
+      publish: Publiser forslag
+      retire: Trekk tilbake forslag
+    new_request:
+      links: Linker
+    resources:
+      available_resources: Tilgjengelige ressurser
+    resource:
+      required_days: "%{days} dager påkrevd"
+      required_supports: "%{supports} støtte påkrevd"
+      and: og
+      view_resource: Se ressurser
+      resource_requested: Ressurs allerede forespurt
+      request_resource: Be om ressurs
+      resource_locked: Låst ressurs
+    recommended_actions:
+      title: Anbefalte handlinger
+      goto_proposed_actions: Gå til anbefalte handlinger
+      see_proposed_actions: Sjekk ut anbefalte handlinger
+      hide_proposed_actions: Skjul anbefalte handlinger
+      pending_title: Under behandling
+      show_description: Vis beskrivelse
+      without_pending_actions: Ingen anbefalte handlinger
+      done_title: Gjennomført
+      without_done_actions: Ingen anbefalte handlinger gjennomført
+    next_goal:
+      title: Mål
+      see_complete_course: Sjekk ut det komplette forløpet
+      hide_course: Skjul forløp
+    goal:
+      target_supports:
+        zero: Få %{count} antall brukere som støtter ditt forslag
+        one: Få %{count} antall brukere som støtter ditt forslag
+        other: Få %{count} antall brukere som støtter ditt forslag
+      days:
+        zero: "%{count} dager"
+        one: "%{count} dag"
+        other: "%{count} dager"
+      locked_resource: Låst ressurs
+      ideal_time: Ideelt tidspunkt
+    community:
+      access_community: Gå til fellesskapet
+      latest_activity: "Siste aktiviteter i fellesskapet: %{at}"
+      participants: Deltakere
+      debates: Debatter
+      comments: Kommentarer
+      latest_comments: Siste meldinger
+    messages:
+      send_notification: Send melding til brukere som støtter forslaget
+      previous_notifications: Se tidligere varsler
+    polls:
+      index:
+        title: Avstemninger
+        create: Lag avstemning
+        count:
+          zero: Du har laget %{count} avstemninger.
+          one: Du har laget %{count} avstemninger.
+          other: Du har laget %{count} avstemninger.
+        links: Linker
+        additiontal_information: Tilleggsinformasjon
+      new:
+        title: Ny avstemning
+        submit: Opprett avstemning
+      edit:
+        submit: Oppdater avstemning
+      poll:
+        responses:
+          zero: "%{count} svar"
+          one: "%{count} svar"
+          other: "%{count} svar"
+        view_results: Se resultater
+        edit_poll: Rediger undersøkelse
+        show_results_help: Om du krysser av her, vil resultatene bli offentliggjort og alle brukere vil ha muligheten til å se dem
+        delete: Slett undersøkelse
+        alert_notice: Denne handlingen vil fjerne undersøkelsen og alle tilhørende spørsmål.
+        success_notice: Undersøkelsen er slettet
+        unable_notice: Du kan slette en undersøkelse som har fått respons
+      form:
+        name: Tittel på undersøkelse
+        add_question: Legg til spørsmål
+      question_fields:
+        remove_question: Fjern spørsmål
+        add_answer: Legg til svar
+      question_answer_fields:
+        remove_answer: Fjern svar
+    poster:
+      index:
+        title: Forhåndsvisning av plakat
+        poster_title: "Du trenger ikke å lete mer,"
+        poster_subtitle: "støtt meg!"
+        proposal_code: "Forslagets kode: %{code}"
+        support: Støtt mitt forslag
+      new:
+        title: Plakat for ditt forslag
+      options:
+        preview: Forhåndsvisning
+        download: Last ned
+    mailing:
+      index:
+        title: Forhåndsvisning av epost
+      new:
+        title: Epost modell for deling
+      mailing_options:
+        send: Send til %{address}
+        preview: Forhåndsvisning
+      create:
+        sent: Eposten har blitt sendt
+    mailer:
+      forward:
+        subtitle: "Om du støtte meg, <br> vil vi oppnå det."
+        support_button: Støtt forslag
+        share_in: Del i
+        hi: "Hei!"
+        introduction: Jeg skriver til deg for at fortelle at jeg deltar på %{org}, en platform hvor vi kan være med og bestemme hvordan byen vår skal være. Derfor har jeg opprettet mitt eget innbyggerforslag, hvor jeg har bruk for din støtte! Men fortvil ikke, det er veldig lett.
+        support: "Alt du trenger å gjøre er å klikke på knappen 'Støtt forslag'. Bare forslag som mottar maksimal støtte, vil bli videreført, og jeg er sikker på at du kan hjelpe meg med å få det til!"
+        share: "Om du også vil gjøre meg en tjeneste og dele forslaget mitt med vennene dine, familie og kontakter, ville jeg satt stor pris på det!"
+  polls:
+    all: "Alle"
+    no_dates: "ingen dato er satt"
+    dates: "Fra%{open_at} til%{closed_at}"
+    final_date: "Endelige opptellinger/resultater"
+    index:
+      filters:
+        current: "Åpen"
+        expired: "Utgått"
+      title: "Avstemninger"
+      participate_button: "Delta i avstemningen"
+      participate_button_expired: "Avstemningen er avsluttet"
+      no_geozone_restricted: "Hele byen"
+      geozone_restricted: "Distrikter"
+      geozone_info: "Åpen for beboere fra: "
+      already_answer: "Du har allerede deltatt i denne avstemmingen"
+      not_logged_in: "Du må logge inn eller opprette bruker for å delta"
+      unverified: "Du må verifisere kontoen din for å kunne delta"
+      cant_answer: "Denne avstemningen er ikke tilgjengelig i ditt geografiske område"
+      section_header:
+        icon_alt: Avstemningsikon
+        title: Avstemning
+        help: Hjelp til avstemning
+      section_footer:
+        title: Hjelp til avstemning
+        description: Innbyggeravstemning er en deltakende prosess hvor innbyggere kan få direkte innflytelse og være med å påvirke lokalpolitiske beslutninger
+      no_polls: "Det er ingen pågående avstemninger."
+    show:
+      already_voted_in_booth: "Du har allerede deltatt via en fysisk stemmeboks. Du kan ikke delta igjen."
+      already_voted_in_web: "Du har allerede deltatt i avstemningen. Hvis du stemmer igjen vil den bli overskrevet."
+      back: Tilbake til avstemningen
+      cant_answer_not_logged_in: "Du må %{signin} eller %{signup} for å delta."
+      comments_tab: Kommentarer
+      cant_answer_verify: "Du må %{verify_link} for å svare."
+      verify_link: "verifiser din konto"
+      cant_answer_expired: "Denne avstemningen er avsluttet."
+      cant_answer_wrong_geozone: "Dette spørsmålet er ikke tilgjengelig i ditt geografiske område."
+      more_info_title: "Mer informasjon"
+      documents: Dokumenter
+      zoom_plus: Utvid bilde
+      read_more: "Les mer om %{answer}"
+      read_less: "Les mindre om %{answer}"
+      videos: "Ekstern video"
+      info_menu: "Informasjon"
+      stats_menu: "Statistikk over deltakelse"
+      results_menu: "Resultat av avstemning"
+      stats:
+        total_votes: "Totalt antall avgitte stemmer"
+        votes: "STEMMER"
+        web: "WEB"
+        mail: "MAIL"
+        booth: "STEMMEBOKS"
+        total: "TOTALT"
+        valid: "Gyldig"
+        white: "Blanke stemmer"
+        null_votes: "Ugyldig"
+      results:
+        title: "Spørsmål"
+        most_voted_answer: "Mest populære svar: "
+    poll_header:
+      back_to_proposal: Tilbake til forslag
+  poll_questions:
+    show:
+      vote_answer: "Stem %{answer}"
+      voted: "Du har stemt%{answer}"
+  proposal_notifications:
+    new:
+      title: "Send melding"
+      submit_button: "Send melding"
+      proposal_page: "forslagssiden"
+    show:
+      back: "Gå tilbake til mitt innhold"
+  shared:
+    edit: "Rediger"
+    filter: "Filter"
+    save: "Lagre"
+    delete: "Slett"
+    "yes": "Ja"
+    "no": "Nei"
+    search_results: "Søk i resultater"
+    advanced_search:
+      date: "Etter dato"
+      date_placeholder: "DD/MM/ÅÅÅÅ"
+      date_range_blank: "Velg en dato"
+      date_1: "Siste 24 timer"
+      date_2: "Forrige uke"
+      date_3: "Siste måned"
+      date_4: "Siste år"
+      date_5: "Tilpasset"
+      from: "Fra"
+      general: "Med teksten"
+      search: "Filter"
+      title: "Avansert søk"
+      to: "Til"
+    author_info:
+      author_deleted: Bruker slettet
+      email_deleted: E-post er slettet
+    back: Gå tilbake
+    check: Velg
+    check_all: Alle
+    check_none: Ingen
+    collective: Grupper
+    flag: Marker som upassende
+    follow: "Følg"
+    following: "Følger"
+    follow_entity: "Følg %{entity}"
+    print:
+      print_button: Skriv ut denne informasjonen
+    search: Søk
+    show: Vis
+    suggest:
+      debate:
+        found:
+          zero: "Det er allerede flere debattinnlegg om '%{query}', du kan delta i de i stedet for å starte en ny."
+          one: "Det er allerede et debattinnlegg om '%{query}', du kan delta i den i stedet for å starte en ny."
+          other: "Det er allerede flere debattinnlegg om '%{query}', du kan delta i de i stedet for å starte en ny."
+        message: "Du ser %{limit} av %{count} debattinnlegg, som inneholder '%{query}'"
+        see_all: "Se alle"
+      budget_investment:
+        found:
+          zero: "Det er allerede flere investeringsforslag om '%{query}', du kan delta i de i stedet for å starte en ny."
+          one: "Det er allerede et investeringsforslag om '%{query}', du kan delta i den i stedet for å starte en ny."
+          other: "Det er allerede flere investeringsforslag om '%{query}', du kan delta i de i stedet for å starte en ny."
+        message: "Du ser %{limit} av %{count} investeringsforslag, som inneholder '%{query}'"
+        see_all: "Se alle"
+      proposal:
+        found:
+          zero: "Det er allerede flere forslag om '%{query}', du kan delta i de i stedet for å starte en ny"
+          one: "Det er allerede et forslag om '%{query}', du kan delta i den i stedet for å starte en ny"
+          other: "Det er allerede flere forslag om '%{query}', du kan delta i de i stedet for å starte en ny"
+        message: "Du ser %{limit} av %{count} forslag, som inneholder '%{query}'"
+        see_all: "Se alle"
+    tags_cloud:
+      tags: Populære
+      districts: "Distrikter"
+      districts_list: "Liste over distrikter"
+      categories: "Kategorier"
+    target_blank: " (link åpnes i et nytt vindu)"
+    you_are_in: "Du er inne"
+    unflag: Ta bort flagg
+    unfollow_entity: "Ikke lenger følg %{entity}"
+    outline:
+      searcher: Søkemotor
+    go_to_page: "Gå til siden "
+    share: Del
+    orbit:
+      previous_slide: Forrige side
+      next_slide: Neste side
+    documentation: Ytterligere dokumentasjon
+    view_mode:
+      title: Visningsmodus
+      cards: Kort
+      list: Liste
+    recommended_index:
+      title: Anbefalinger
+      see_more: Se flere anbefalinger
+      hide: Skjul anbefalinger
+  social:
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
+  stats:
+    index:
+      visits: Besøk
+      debates: Debatter
+      proposals: Forslag
+      comments: Kommentarer
+      proposal_votes: Stemmer på forslag
+      debate_votes: Stemmer på debattinnlegg
+      comment_votes: Stemmer på kommentarer
+      votes: Totalt antall stemmer
+      verified_users: Verifiserte brukere
+      unverified_users: Uverifiserte brukere
+  unauthorized:
+    default: Du har ikke tilgang til denne siden.
+    manage:
+      all: "Du har ikke tillatelse til å utføre handlingen '%{action}' på %{subject}."
+  users:
+    login_to_comment: "Du må %{signin} eller %{signup} for å kunne kommentere."
+    login_to_continue: "Du må %{signin} eller %{signup} for å fortsette."
+    signin: "logg inn"
+    signup: "registrer deg"
+    verify_account: "verifiser din konto"
+    direct_messages:
+      new:
+        direct_messages_bloqued: "Denne brukeren har besluttet å ikke motta direktemeldinger"
+        submit_button: Send melding
+        title: Send privat melding til %{receiver}
+        verified_only: For å sende en privat melding %{verify_account}
+      show:
+        receiver: Melding sendt til %{receiver}
+    show:
+      deleted: Slettet
+      deleted_debate: Denne debatten har blitt slettet
+      deleted_proposal: Dette forslaget har blitt slettet
+      deleted_budget_investment: Dette investeringsprosjektet har blitt slettet
+      proposals: Forslag
+      proposals_status: Status
+      debates: Debatter
+      budget_investments: Budsjettinvesteringer
+      comments: Kommentarer
+      actions: Handlinger
+      filters:
+        comments:
+          zero: "%{count} kommentarer"
+          one: 1 kommentar
+          other: "%{count} kommentarer"
+        debates:
+          zero: "%{count} debatter"
+          one: 1 debatt
+          other: "%{count} debatter"
+        proposals:
+          zero: "%{count} Forslag"
+          one: 1 Forslag
+          other: "%{count} Forslag"
+        budget_investments:
+          zero: "%{count} investeringer"
+          one: 1 investering
+          other: "%{count} investeringer"
+        follows:
+          zero: "%{count} Følgere"
+          one: 1Følger
+          other: "%{count} Følgere"
+      no_activity: Brukeren har ingen offentlig aktivitet
+      no_private_messages: "Denne brukeren aksepterer ikke private meldinger."
+      private_activity: Denne brukeren har valgt at holde sine aktiviteter private.
+      send_private_message: "Send private meldinger"
+      delete_alert: "Er du sikker på at du ønsker at slette ditt investeringsprojekt? Denne handlingen kan ikke gjøres om"
+    proposals:
+      retired: "Forslaget er trukket tilbake"
+      draft: Utkast
+      published: Publisert
+      see: "Se forslag"
+      actions: Handlinger
+      retired_help_text: Dashboardet er ikke tilgjengelig for forslag som er trukket tilbake
+  votes:
+    agree: Jeg er enig
+    anonymous: For mange anonyme stemmer til å godkjenne stemme %{verify_account}.
+    disagree: Jeg er uenig
+    organizations: Organisasjoner er ikke berettiget til å stemme
+    supports: Støtte
+    verified_only: Kun verifiserte brukere kan stemme på forslag; %{verify_account}.
+    budget_investments:
+      not_verified: Kun verifiserte brukere kan stemme på investeringsprosjekter; %{verify_account}.
+      unfeasible: Du kan ikke gi støtte til investeringsprojekter, som ikke kan gennemføres
+      not_voting_allowed: Avstemmingsfasen er avsluttet
+      different_heading_assigned:
+        zero: "Du kan kun gi støtte til investeringsprojekter i %{count} distrikter. Du har allerede støttet investeringer i %{supported_headings}."
+        one: "Du kan kun gi støtte til investeringsprojekter i %{count} distrikt. Du har allerede støttet investeringer i %{supported_headings}."
+        other: "Du kan kun gi støtte til investeringsprojekter i %{count} distrikter. Du har allerede støttet investeringer i %{supported_headings}."
+  welcome:
+    feed:
+      most_active:
+        debates: "Mest aktive debattinnlegg"
+        proposals: "Mest aktive forslag"
+        processes: "Åpne prosesser"
+      see_all:
+        debates: Se alle debattinnlegg
+        proposals: Se alle forslag
+        processes: Se alle prosesser
+      process_label: Prosess
+      see_process: Se prosess
+    cards:
+      title: Utvalgte
+    recommended:
+      title: Anbefalinger som kan være interessante for deg
+      help: "Disse anbefalingene er generert av taggene i debattinnlegg og forslag som du følger."
+      debates:
+        title: Anbefalte debatter
+        btn_text_link: Alle anbefalte debatter
+      proposals:
+        title: Anbefalte forslag
+        btn_text_link: Alle anbefalte forslag
+      budget_investments:
+        title: Anbefalte investeringer
+      slide: "Se %{title}"
+    welcome:
+      go_to_index: Vis forslag og debatter
+      start_using_consul: Gå til indekssiden
+      title: Delta
+      user_permission_info: Med din konto kan du...
+      user_permission_verify: "Verifiser din konto for å utføre følgende handlinger."
+      user_permission_verify_my_account: Verifiser min konto
+  invisible_captcha:
+    sentence_for_humans: "Hvis du er menneske, så kan du ignorere dette felt"
+    timestamp_error_message: "Beklager, det gikk litt raskt! Vær vennlig å prøv på nytt."
+  related_content:
+    title: "Relatert innhold"
+    add: "Legg til relatert innhold"
+    label: "Link til relatert innhold"
+    placeholder: "%{url}"
+    help: "Du kan legge til linkar til %{models} i %{org}."
+    submit: "Legg til"
+    error: "Linken er ugyldig. Husk å starte med %{url}."
+    error_itself: "Linken er ugyldig. Du kan ikke relatere innhold til seg selv."
+    success: "Du la til nytt relatert innhold"
+    is_related: "Er det relatert innhold?"
+    score_positive: "Ja"
+    score_negative: "Nei"
+    content_title:
+      proposal: "Forslag"
+      debate: "Debatt"
+      budget_investment: "Budsjettinvesteringer"
+  admin/widget:
+    header:
+      title: Administrasjon
+  annotator:
+    help:
+      alt: Velg teksten du vil kommentere på og trykk på knappen med pennen.
+      text: For at kunne kommentere i dette dokumentet må du %{sign_in} eller %{sign_up}. Deretter velger du den teksten du vil kommentere på og trykker på knappen med pennen.
+      title: Hvordan kan jeg kommentere på dette dokumentet?
+  links:
+    form:
+      delete_button: Slett
+      cancel_button: Avbryt
+    nested_links:
+      title: Linker
+      note: Legg til linkene som er av interesse
+      add_new_link: Legg til ny link
+  communities:
+    show:
+      surveys: Undersøkelser
+      complete_survey: Fullfør undersøkelsen
+    subnav:
+      surveys: Undersøkelser
+    poll:
+      take_part: Delta fra %{from} til %{to}

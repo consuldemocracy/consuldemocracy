@@ -9,7 +9,7 @@ es:
       - vie
       - sáb
     abbr_month_names:
-      - 
+      -
       - ene
       - feb
       - mar
@@ -35,7 +35,7 @@ es:
       long: "%d de %B de %Y"
       short: "%d de %b"
     month_names:
-      - 
+      -
       - enero
       - febrero
       - marzo
@@ -113,7 +113,7 @@ es:
       taken: ya está en uso
       other_than: debe ser distinto de %{count}
     template:
-      body: 'Se encontraron problemas con los siguientes campos:'
+      body: "Se encontraron problemas con los siguientes campos:"
       header:
         one: No se pudo guardar este/a %{model} porque se encontró 1 error
         other: "No se pudo guardar este/a %{model} porque se encontraron %{count} errores"
@@ -154,4 +154,6 @@ es:
       default: "%A, %d de %B de %Y %H:%M:%S %z"
       long: "%d de %B de %Y %H:%M"
       short: "%d de %b %H:%M"
-      api: "%d-%m-%Y %H"
+      short_datetime: "%d/%m/%Y %H:%M"
+      api: "%d/%m/%Y %H"
+    pm: pm

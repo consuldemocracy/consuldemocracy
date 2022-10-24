@@ -1,0 +1,27 @@
+<td style="<%= css_for_mailer_content %>">
+
+  <h1 style="<%= css_for_mailer_heading %>">
+    <%= t("mailers.evaluation_comment.title", investment: @email.commentable.title) %>
+  </h1>
+
+  <p style="<%= css_for_mailer_text %>">
+    <%= t("mailers.evaluation_comment.hi") %> <strong><%= @email_to.name %></strong>,
+  </p>
+
+  <p style="<%= css_for_mailer_text %>">
+    <%= sanitize(
+      t("mailers.evaluation_comment.new_comment_by",
+        commenter: @email.comment.author.name,
+        investment: valuation_comments_link(@email.commentable)
+      )
+    ) %>
+  </p>
+
+  <p style="<%= css_for_mailer_text %>">
+    <%= t("mailers.evaluation_comment.commenter_info", commenter: @email.comment.author.name, time: l(@email.comment.created_at)) %>
+  </p>
+
+  <div style="<%= css_for_mailer_text + css_for_mailer_quote %>">
+    <%= mailer_simple_format(@email.comment.body) %>
+  </div>
+</td>

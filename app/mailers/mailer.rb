@@ -2,7 +2,6 @@ class Mailer < ApplicationMailer
   after_action :prevent_delivery_to_users_without_email
 
   helper :text_with_links
-  helper :mailer
   helper :users
   helper :application
 
@@ -14,22 +13,21 @@ class Mailer < ApplicationMailer
     @comment = comment
     @commentable = comment.commentable
     @email_to = @commentable.author.email
+    manage_subscriptions_token(@commentable.author)
 
     with_user(@commentable.author) do
-      subject = t('mailers.comment.subject', commentable: t("activerecord.models.#{@commentable.class.name.underscore}", count: 1).downcase)
+      subject = t("mailers.comment.subject", commentable: t("activerecord.models.#{@commentable.class.name.underscore}", count: 1).downcase)
       mail(to: @email_to, subject: subject) if @commentable.present? && @commentable.author.present?
     end
   end
 
   def reply(reply)
-    @reply = reply
-    @commentable = @reply.commentable
-    parent = Comment.find(@reply.parent_id)
-    @recipient = parent.author
-    @email_to = @recipient.email
+    @email = ReplyEmail.new(reply)
+    @email_to = @email.to
+    manage_subscriptions_token(@email.recipient)
 
-    with_user(@recipient) do
-      mail(to: @email_to, subject: t('mailers.reply.subject')) if @commentable.present? && @recipient.present?
+    with_user(@email.recipient) do
+      mail(to: @email_to, subject: @email.subject) if @email.can_be_sent?
     end
   end
 
@@ -41,17 +39,7 @@ class Mailer < ApplicationMailer
     @document_number = document_number
 
     with_user(user) do
-      mail(to: @email_to, subject: t('mailers.email_verification.subject'))
-    end
-  end
-
-  def unfeasible_spending_proposal(spending_proposal)
-    @spending_proposal = spending_proposal
-    @author = spending_proposal.author
-    @email_to = @author.email
-
-    with_user(@author) do
-      mail(to: @email_to, subject: t('mailers.unfeasible_spending_proposal.subject', code: @spending_proposal.code))
+      mail(to: @email_to, subject: t("mailers.email_verification.subject"))
     end
   end
 
@@ -59,9 +47,10 @@ class Mailer < ApplicationMailer
     @direct_message = direct_message
     @receiver = @direct_message.receiver
     @email_to = @receiver.email
+    manage_subscriptions_token(@receiver)
 
     with_user(@receiver) do
-      mail(to: @email_to, subject: t('mailers.direct_message_for_receiver.subject'))
+      mail(to: @email_to, subject: t("mailers.direct_message_for_receiver.subject"))
     end
   end
 
@@ -71,16 +60,17 @@ class Mailer < ApplicationMailer
     @email_to = @sender.email
 
     with_user(@sender) do
-      mail(to: @email_to, subject: t('mailers.direct_message_for_sender.subject'))
+      mail(to: @email_to, subject: t("mailers.direct_message_for_sender.subject"))
     end
   end
 
   def proposal_notification_digest(user, notifications)
     @notifications = notifications
     @email_to = user.email
+    manage_subscriptions_token(user)
 
     with_user(user) do
-      mail(to: @email_to, subject: t('mailers.proposal_notification_digest.title', org_name: Setting['org_name']))
+      mail(to: @email_to, subject: t("mailers.proposal_notification_digest.title", org_name: Setting["org_name"]))
     end
   end
 
@@ -88,7 +78,7 @@ class Mailer < ApplicationMailer
     @email_to = email
 
     I18n.with_locale(I18n.default_locale) do
-      mail(to: @email_to, subject: t('mailers.user_invite.subject', org_name: Setting["org_name"]))
+      mail(to: @email_to, subject: t("mailers.user_invite.subject", org_name: Setting["org_name"]))
     end
   end
 
@@ -97,7 +87,7 @@ class Mailer < ApplicationMailer
     @email_to = @investment.author.email
 
     with_user(@investment.author) do
-      mail(to: @email_to, subject: t('mailers.budget_investment_created.subject'))
+      mail(to: @email_to, subject: t("mailers.budget_investment_created.subject"))
     end
   end
 
@@ -105,7 +95,8 @@ class Mailer < ApplicationMailer
     @investment = investment
     @author = investment.author
     with_user(@author) do
-      mail(to: @email_to, subject: t('mailers.budget_investment_selected.subject', code: @investment.code))
+      #mail(to: @email_to, subject: t('mailers.budget_investment_selected.subject', code: @investment.code))
+      mail(to: @email_to, subject: t("mailers.budget_investment_unfeasible.subject", code: @investment.code))
     end
   end
 
@@ -115,7 +106,8 @@ class Mailer < ApplicationMailer
     @email_to = @author.email
 
     with_user(@author) do
-      mail(to: @email_to, subject: t('mailers.budget_investment_unselected.subject', code: @investment.code))
+      #mail(to: @email_to, subject: t('mailers.budget_investment_unselected.subject', code: @investment.code))
+      mail(to: @email_to, subject: t("mailers.budget_investment_selected.subject", code: @investment.code))
     end
   end
 
@@ -131,29 +123,61 @@ class Mailer < ApplicationMailer
     @investment = investment
     @author = investment.author
     with_user(@author) do
-      mail(to: @author.email, subject: t('mailers.budget_investment_moderate_unfeasible.subject', title: @investment.title))
+      #mail(to: @author.email, subject: t('mailers.budget_investment_moderate_unfeasible.subject', title: @investment.title))
+      mail(to: @email_to, subject: t("mailers.budget_investment_unselected.subject", code: @investment.code))
     end
   end
 
   def newsletter(newsletter, recipient_email)
     @newsletter = newsletter
     @email_to = recipient_email
+    manage_subscriptions_token(User.find_by(email: @email_to))
 
     mail(to: @email_to, from: @newsletter.from, subject: @newsletter.subject)
   end
 
+  def evaluation_comment(comment, to)
+    @email = EvaluationCommentEmail.new(comment)
+    @email_to = to
+
+    mail(to: @email_to.email, subject: @email.subject) if @email.can_be_sent?
+  end
+
+  def machine_learning_error(user)
+    @email_to = user.email
+
+    mail(to: @email_to, subject: t("mailers.machine_learning_error.subject"))
+  end
+
+  def machine_learning_success(user)
+    @email_to = user.email
+
+    mail(to: @email_to, subject: t("mailers.machine_learning_success.subject"))
+  end
+
+  def already_confirmed(user)
+    @email_to = user.email
+    @user = user
+
+    with_user(@user) do
+      mail(to: @email_to, subject: t("mailers.already_confirmed.subject"))
+    end
+  end
+
   private
 
-  def with_user(user, &block)
-    I18n.with_locale(user.locale) do
-      yield
+    def with_user(user, &block)
+      I18n.with_locale(user.locale, &block)
     end
-  end
 
-  def prevent_delivery_to_users_without_email
-    if @email_to.blank?
-      mail.perform_deliveries = false
+    def prevent_delivery_to_users_without_email
+      if @email_to.blank?
+        mail.perform_deliveries = false
+      end
     end
-  end
 
+    def manage_subscriptions_token(user)
+      user.add_subscriptions_token
+      @token = user.subscriptions_token
+    end
 end

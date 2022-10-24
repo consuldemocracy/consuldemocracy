@@ -1,11 +1,11 @@
 zh-CN:
   documents:
     title: 文档
-    max_documents_allowed_reached_html: 您已经达到文档允许的最大数量！<strong>您必须先删除一个才可以上传另一个。</strong>
+    max_documents_allowed_reached: 您已经达到文档允许的最大数量！<strong>您必须先删除一个才可以上传另一个。</strong>
+    additional: 附加文档
     form:
       title: 文档
       title_placeholder: 为此文档添加描述性标题
-      attachment_label: 选择文档
       delete_button: 删除文档
       cancel_button: 取消
       note: "您最多可以上传%{max_documents_allowed} 个以下内容类型的文档：%{accepted_content_types}，每个文档最大%{max_file_size} MB。"

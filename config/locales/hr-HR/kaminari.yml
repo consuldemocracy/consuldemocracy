@@ -1,0 +1,24 @@
+hr:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Unosi
+        one: Unos
+        few: Unosi
+        other: Unosi
+      more_pages:
+        display_entries: Prikaz <strong>%{first}&nbsp;-&nbsp;%{last}</strong> od <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "%{entry_name} ne može pronaći"
+          one: Postoji <strong> 1%{entry_name}</strong>
+          few: Postoji <strong> %{count} %{entry_name}</strong>
+          other: Postoje <strong>%{count} %{entry_name}</strong>
+  views:
+    pagination:
+      current: Vi ste na stranici
+      first: Prva
+      last: Posljednja
+      next: Sljedeća
+      previous: Prethodna
+      truncate: "&hellip;"

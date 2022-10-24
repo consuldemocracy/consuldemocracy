@@ -1,4 +1,4 @@
-class AddGeozoneToProposalsAndDebates < ActiveRecord::Migration
+class AddGeozoneToProposalsAndDebates < ActiveRecord::Migration[4.2]
   def change
     add_column :proposals, :geozone_id, :integer, default: nil
     add_index :proposals, :geozone_id

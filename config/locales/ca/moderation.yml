@@ -1,1 +1,105 @@
 ca:
+  moderation:
+    comments:
+      index:
+        block_authors: Bloquejar autors
+        filter: Filtrar
+        filters:
+          all: tots
+          pending_flag_review: Sense decidir
+          with_ignored_flag: Marcats com revisats
+        headers:
+          comment: Comentar
+          moderate: Moderar
+        hide: Ocultar comentaris
+        ignore_flags: Marcar como revisades
+        orders:
+          flags: Més denunciades
+          newest: Més nous
+        title: Comentarios
+    dashboard:
+      index:
+        title: Moderación
+    debates:
+      index:
+        block_authors: Bloquejar autors
+        filter: Filtrar
+        filters:
+          all: tots
+          pending_flag_review: Sense decidir
+          with_ignored_flag: Marcats com revisats
+        headers:
+          debate: debat previ
+          moderate: Moderar
+        hide: Ocultar debats
+        ignore_flags: Marcar como revisades
+        orders:
+          created_at: Més nous
+          flags: Més denunciades
+        title: Debats
+    header:
+      title: Moderación
+    menu:
+      flagged_comments: Comentarios
+      flagged_debates: Debats
+      flagged_investments: Inversions pressupostàries
+      proposals: Propostes ciutadanes
+      proposal_notifications: Propostes de notificacions
+      users: Bloquejar usuaris
+    proposals:
+      index:
+        block_authors: Bloquejar autors
+        filter: Filtrar
+        filters:
+          all: tots
+          pending_flag_review: Pendents de revisió
+          with_ignored_flag: Marcar como revisades
+        headers:
+          moderate: Moderar
+          proposal: la proposta
+        hide: Ocultar Propostes
+        ignore_flags: Marcar como revisades
+        orders:
+          created_at: Més recents
+          flags: Més denunciades
+        title: Propostes ciutadanes
+    budget_investments:
+      index:
+        block_authors: Bloquejar autors
+        filter: Filtrar
+        filters:
+          all: tots
+          pending_flag_review: Sense decidir
+          with_ignored_flag: Marcats com revisats
+        headers:
+          moderate: Moderar
+          budget_investment: Inversió pressupostària
+        hide: Amagueu les inversions pressupostàries
+        ignore_flags: Marcar como revisades
+        orders:
+          created_at: Més recents
+          flags: Més denunciades
+        title: Inversions pressupostàries
+    proposal_notifications:
+      index:
+        block_authors: Bloquejar autors
+        filter: Filtrar
+        filters:
+          all: tots
+          pending_review: Pendents de revisió
+          ignored: Marcar como revisades
+        headers:
+          moderate: Moderar
+          proposal_notification: Notificació de la proposta
+        hide: Ocultar Propostes
+        ignore_flags: Marcar como revisades
+        orders:
+          created_at: Més recents
+          moderated: Moderada
+        title: Notificacions de propostes
+    users:
+      index:
+        hide: Bloquejar
+        search_placeholder: email o nom d'usuari
+        title: Bloquejar usuaris
+      notice_hide: Usuari bloquejat. S'han ocultat tots els seus debats i comentaris.

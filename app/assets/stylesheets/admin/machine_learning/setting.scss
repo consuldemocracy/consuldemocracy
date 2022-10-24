@@ -1,0 +1,24 @@
+.admin .machine-learning-setting {
+
+  .card-divider {
+    background: $primary-color;
+    color: $white;
+
+    h3 {
+      margin-top: 0;
+    }
+  }
+
+  dl {
+    @include callout-size(map-get($callout-sizes, small));
+  }
+
+  dt {
+    font-weight: normal;
+    margin-bottom: 0;
+  }
+
+  * + dt {
+    margin-top: $line-height;
+  }
+}

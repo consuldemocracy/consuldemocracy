@@ -1,0 +1,17 @@
+he:
+  sdg_management:
+    homepage:
+      header:
+        create: "יצירת כותרת דף"
+        title: "כותרת הדף"
+    menu:
+      budget_investments: "תקציבים השתתפותיים"
+      debates: "דיונים"
+      polls: "סקרים"
+      proposals: "הצעות"
+    relations:
+      index:
+        filter: "Filter"
+        filters:
+          all: "כולם"
+          pending_sdg_review: "Pending"

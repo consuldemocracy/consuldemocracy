@@ -4,7 +4,7 @@
 
 <ul id="valuators">
   <% if @group.valuators.any? %>
-    <%= render partial: 'valuator', collection: @group.valuators %>
+    <%= render partial: "valuator", collection: @group.valuators %>
   <% else %>
     <div class="callout primary">
       <%= t("admin.valuator_groups.show.no_valuators") %>

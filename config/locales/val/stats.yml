@@ -1,0 +1,11 @@
+val:
+  stats:
+    title: "Dades de participació"
+    total_participants: "Participants"
+    total: "Total"
+    budgets:
+      link: "Estadístiques"
+      total_unfeasible_investments: "Veure les propostes d'inversió inviables"
+      total: "Total"
+      heading: "Partida pressupostària"
+      participants_every_phase: "Participants Totals"

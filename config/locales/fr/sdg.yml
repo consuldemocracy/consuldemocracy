@@ -1,0 +1,7 @@
+fr:
+  sdg:
+    goals:
+      help:
+        title: "Aide Objectifs de développement durable"
+    related_list_selector:
+      remove_tag: "Retirer"

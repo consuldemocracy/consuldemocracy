@@ -1,0 +1,130 @@
+da:
+  mailers:
+    title: "Åben Kommune"
+    no_reply: "Denne meddelelse blev sendt fra en e-mail-adresse, der ikke kan besvares."
+    comment:
+      hi: Hej
+      new_comment_by: Der er en ny kommentar fra <strong>%{commenter}</strong>
+      subject: Nogen har kommenteret på din %{commentable}
+      title: Ny kommentar
+    email_verification:
+      click_here_to_verify: dette link
+      instructions_2: Denne e-mail vil verificere din konto med <b>%{document_type} %{document_number}</b>. Hvis disse ikke tilhører dig, vær sød ikke at klikke på det tidligere link og ignorere denne e-mail.
+      instructions: For at færdiggøre verifikationen af din brugerkonto klik på %{verification_link}.
+      subject: Bekræft din e-mail
+      thanks: Mange tak.
+      title: "Bekræft din konto ved hjælp af følgende link"
+    reply:
+      hi: Hej
+      new_reply_by: Der er et nyt svar fra <strong>%{commenter}</strong> på din kommentar
+      subject: Nogen har reageret på din kommentar
+      title: Nyt svar til din kommentar
+    proposal_notification_digest:
+      info: "Her er de nye notifikationer, der er blevet publiceret af forfatterne til de forslag, du har støttet op om i %{org_name}."
+      title: "Notifikationer vedrørende forslag i %{org_name}"
+      share: Del forslag
+      comment: Skriv en kommentar til forslaget
+      unfollow: "Besøg dette forslag og stop med at følge det, hvis du ikke ønsker notifikationer."
+    direct_message_for_receiver:
+      subject: "Du har modtaget en ny privat besked"
+      reply: Svar %{sender}
+    direct_message_for_sender:
+      subject: "Du har sendt en ny privat besked"
+      title: "Du har sendt en ny privat besked"
+      text: "Du har sendt en ny privat besked til <strong>%{receiver}</strong>:"
+    user_invite:
+      ignore: "Hvis du ikke har anmodet om denne invitation, skal du ikke bekymre dig. Du kan ignorere denne e-mail."
+      text: "Tak for din ansøgning til %{org}! Du kan påbegynde din deltagelse om få sekunder, du skal blot udfylde nedenstående formular:"
+      thanks: "Mange tak."
+      title: "Velkommen til %{org}"
+      button: Færdiggør registrering
+      subject: "Invitation til %{org_name}"
+    budget_investment_created:
+      subject: "Tak fordi du oprettede en idé!"
+      title: "Tak fordi du har oprettet en idé!"
+      intro: "Hej <strong>%{author}</strong>,"
+      text: "Tak fordi du oprettede din idé <strong>%{investment}</strong> for Deltagerbudgettet <strong>%{budget}</strong>."
+      follow: "Vi vil løbende informere dig om deltagerbudgettets forløb, som du også kan følge på <strong>%{link}</strong>."
+      follow_link: "Deltagerbudgetter"
+      sincerely: "Med venlig hilsen"
+      share: "Del dit projekt"
+    budget_investment_unfeasible:
+      hi: "Kære bruger,"
+      new: "På trods af dette, opfordrer vi dig til at udforme en <strong>ny projektidé</strong>, der er tilpasset forholdene i denne proces. Klik på følgende link:%{url}."
+      new_href: "ny projektidé"
+      sincerely: "Med venlig hilsen"
+      sorry: "Undskyld ulejligheden og vi takker endnu engang for din deltagelse."
+      subject: "Vi har desværre vurderet, at din projektidé '%{code}' ikke kan gennemføres inden for budgettets rammer"
+    budget_investment_selected:
+      subject: "Din projektidé '%{code}' er blevet valgt"
+      hi: "Kære bruger,"
+      share: "Del din projektidé i dit sociale netværk. "
+      share_button: "Del din projektidé"
+      thanks: "Endnu engang tak for din deltagelse."
+      sincerely: "Med venlig hilsen"
+    budget_investment_unselected:
+      subject: "Din projektidé '%{code}' er desværre ikke blevet valgt"
+      hi: "Kære bruger,"
+      thanks: "Endnu engang tak for din deltagelse."
+      sincerely: "Med venlig hilsen"
+    evaluation_comment:
+      subject: "Ny kommentar"
+      title: Ny kommentar til projektidéen %{investment}
+      hi: Hej
+      new_comment_by: Der er en ny kommentar på din evaluering fra <strong>%{commenter}</strong> til dit budget forslag %{investment}
+      commenter_info: "%{commenter}, %{time}:"
+    new_actions_notification_rake_created:
+      subject: "Flere nyheder vedrørende dit borgerforslag"
+      hi: "Hej %{name},"
+      new_resource: "NY ULÅST FUNKTION"
+      introduction: "Som du ved, oprettede du den %{created_at_day} %{created_at_month} udkastet til et borgerforslag %{title}."
+      text_1: "Du kan altid offentliggøre det ved at følge dette link: %{link_to_published}. Hvis du stadig ikke er sikker..."
+      text_2: "Grib øjeblikket! Lær, tilføj andre mennesker med de samme interesser og forbered dig på udbredelsen af din idé, når du definitivt vælger at offentliggøre dit forslag."
+      text_3: "For at ledsage dig i udfordringen, får du her nyhederne..."
+      text_4: "Tag et kig på denne NYE anbefalede HANDLING:"
+      text_5: "Det næste vi anbefaler dig at gøre er:"
+      footer_text: "Som altid kan du gå til Forslagspanelet, hvor vi vil fortælle dig i detaljer, hvordan du kan bruge disse funktioner, og hvordan du får mest ud af dem."
+      dashboard_button: "Værsgo, opdag dem!"
+    new_actions_notification_rake_published:
+      subject: "Flere nyheder vedrørende dit borgerforslag"
+      hi: "Hej %{name},"
+      new_resource: "NY ULÅST FUNKTION"
+      introduction: "Som du ved, offentliggjorde du den %{published_at_day} %{published_at_month} borgerforslaget %{title}."
+      text_1: "Tillykke, du har indtil videre fået %{votes_count}, der støtte op om dit forslag!"
+      text_2: "Og nu har du en ny funktion til rådighed, der kan hjælpe dig med de næste skridt."
+      text_3: "Der mangler %{days_count} dage, før dit forslag har modtaget %{max_votes_count}, støtte og går videre til afstemning. Frisk mod og bliv ved med at dele! Er du løbet tør for idéer?"
+      text_4: "NY ANBEFALET DELEFUNKTION"
+      text_5: "Se også følgende funktioner:"
+      footer_text: "Som altid kan du gå til Forslagspanelet, hvor vi vil fortælle dig i detaljer, hvordan du kan bruge disse funktioner, og hvordan du får mest ud af dem."
+      dashboard_button: "Værsgo, opdag dem!"
+    new_actions_notification_on_create:
+      subject: "Udkastet til dit borgerforslag blev oprettet"
+      hi: "Hej %{name}!"
+      introduction: "Dit %{title} forslag er blevet oprettet."
+      text_1: "Udnyt at dit forslag ikke er offentliggjort og gør dig klar til at kontakte en masse mennesker."
+      text_2: "Når du er klar, kan du offentliggøre dit borgerforslag på <a href='%{link}'>link</a>."
+      text_3: "Vi ved, at det kan virke kompliceret at oprette et borgerforslag, der får opmærksomhed og modtager den nødvendige opbakning. Derfor vil vi gerne hjælpe dig!"
+      text_4: "Din nye, bedste allierede er: Forslagspanelet."
+      list_1: "Panelet kan anvendes hver dag, hvor du kan modtage tips til funktioner, der kan hjælpe dig i processen."
+      list_2: "Disse tips og funktioner vil give dig forskellige idéer, men også praktiske løsninger i forhold til at modtage mere støtte. Glem dem ikke!"
+      list_3: "Efterhånden som du får mere opbakning, vil der låses op for, at du får adgang til nye og bedre funktioner. I øjeblikket kan du via din e-mail sende besked ud til alle dine kontakter, udskrive plakater, men også adgang til andre funktioner, som du vil opdage. Bliv ved med at søge opbakning, og vi vil blive ved med at belønne og hjælpe dig!"
+      list_4: "Du har %{max_month} måneder fra du offentliggjorde dit forslag til at få %{max_votes}, der støtte dit forslag, så det kan blive en realitet. De første dage er dog de mest vigtige dage. Det er en udfordring. Gør dig klar!"
+      text_5: "For at finde din motivation,"
+      text_6: "her har du forskellige funktioner og en liste over tips, som du vil modtage hver dag, så du kan gøre dit forslag endnu bedre!"
+      dashboard_button: "Værsgo, opdag dem!"
+    new_actions_notification_on_published:
+      subject: "Dit borgerforslag er allerede offentliggjort. Stop ikke med at dele det!"
+      hi: "Tillykke %{name}! Dit forslag %{title} er blevet oprettet."
+      text_1: "Nu skal du bare forsøge at få 100 til at støtte op om dit forslag!"
+      text_2: "Hvorfor 100?"
+      text_3: "Vores erfaring siger os, at den første dag er vigtig, da et nyt publiceret forslag vil være mere synligt på platformen."
+      text_4: "Få 100, der støtter op om dit forslag, på den første dag og du vil have det første fællesskab, der bakker dig op."
+      text_5: "Det er derfor, vi opfordrer dig til at få det, men selvfølgelig ikke uden en masse hjælp!"
+      text_6: "Husk at du i Forslagspanelet kan tilgå dine nye funktioner og se anbefalinger til, hvordan du bedst når ud til flest mulige mennesker."
+      list_1: "Besøg panelet hver dag for at se din udvikling og få adgang til tips og funktioner, som vi vil dele med dig. Det kan hjælpe dig til at modtage den opbakning, du behøver."
+      list_2: "Efterhånden som du modtager støtte, vil flere nye og bedre funktioner blive tilgængelige for dig. Stop ikke med at søge opbakning, og vi vil ikke stoppe med at hjælpe dig!"
+      text_7: "Og for at du kan komme godt i gang..."
+      text_8: "Her har du en god funktion til din rådighed!"
+      text_9: "Du kan også finde nye, anbefalelsesværdige delefunktioner..."
+      text_10: "Du har helt sikkert flere funktioner til rådighed!"
+      dashboard_button: "Værsgo, opdag dem!"

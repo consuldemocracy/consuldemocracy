@@ -23,7 +23,7 @@ pl:
       employment: Zatrudnienie
       equity: Sprawiedliwość
       sustainability: Zrównoważony Rozwój
-      participation: Partycypacja
+      participation: Udział
       mobility: Transport
       media: Media
       health: Zdrowie
@@ -35,12 +35,7 @@ pl:
       currency: '€'
       groups:
         all_city: Całe miasto
-        districts: Dzielnice
-      valuator_groups:
-        culture_and_sports: Kultura i sport
-        gender_and_diversity: Polityki dotyczące Płci i Różnorodności
-        urban_development: Zrównoważony Rozwój Obszarów Miejskich
-        equity_and_employment: Sprawiedliwość i Zatrudnienie
+        districts: Podział dzielnicy
       statuses:
         studying_project: Badanie projektu
         bidding: Licytacja
@@ -49,7 +44,6 @@ pl:
     polls:
       current_poll: "Aktualna Ankieta"
       current_poll_geozone_restricted: "Obecna Ankieta Ograniczona przez Geostrefę"
-      incoming_poll: "Nadchodząca ankieta"
       recounting_poll: "Przeliczanie ankiety"
       expired_poll_without_stats: "Ankieta Wygasła bez Statystyk i Wyników"
       expired_poll_with_stats: "Ankieta Wygasła ze Statystykami i Wynikami"

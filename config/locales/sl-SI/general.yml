@@ -1,1 +1,633 @@
 sl:
+  account:
+    show:
+      change_credentials_link: Spremeni moje podatke
+      erase_account_link: Izbriši moj račun
+      finish_verification: Zaključi verifikacijo
+      notifications: Obvestila
+      personal: Osebni podatki
+      public_interests_my_title_list: Oznake elementov, ki jim slediš
+      public_interests_user_title_list: Oznake elementov, ki jim sledi ta uporabnik
+      save_changes_submit: Shrani spremembe
+      recommendations: Priporočila
+      title: Moj račun
+      user_permission_info: S svojim računom lahko ...
+      user_permission_title: Sodelovanje
+      user_permission_verify: Za izvedbo vseh dejanj potrdi svoj račun.
+      verified_account: Račun potrjen
+      verify_my_account: Potrdi moj račun
+  application:
+    close: Zapri
+    menu: Meni
+  comments:
+    comments_closed: Komentarji so zaprti
+    verified_only: Če želiš sodelovati, %{verify_account}
+    comment:
+      author: Avtor
+      deleted: Ta komentar je bil izbrisan
+      responses:
+        zero: Ni odgovorov
+      responses_show:
+        zero: Ni odgovorov
+      responses_collapse:
+        zero: Ni odgovorov
+      user_deleted: Uporabnik izbrisan
+      votes:
+        zero: Ni glasov
+    form:
+      comment_as_admin: Komentiraj kot administrator
+      comment_as_moderator: Komentiraj kot moderator
+      leave_comment: Pusti svoj komentar
+    orders:
+      most_voted: Največ glasov
+      newest: Novejši naprej
+      oldest: Starejši naprej
+      most_commented: Največ komentarjev
+    show:
+      return_to_commentable: "Pojdi nazaj na "
+  comments_helper:
+    comment_button: Objavi komentar
+    comment_link: Komentiraj
+    comments_title: Komentarji
+    reply_button: Objavi odgovor
+    reply_link: Odgovori
+  debates:
+    create:
+      form:
+        submit_button: Začni razpravo
+    debate:
+      comments:
+        zero: Brez komentarjev
+      votes:
+        zero: Ni glasov
+    edit:
+      editing: Uredi razpravo
+      form:
+        submit_button: Shrani spremembe
+      show_link: Poglej razpravo
+    form:
+      tags_instructions: Dodaj oznake tej razpravi.
+      tags_placeholder: "Vnesi oznake, ki jih želiš uporabiti, in jih loči z vejico (',')"
+    index:
+      featured_debates: Izpostavljeno
+      orders:
+        confidence_score: najbolje ocenjene
+        created_at: najnovejše
+        hot_score: najbolj aktivne
+        most_commented: z največ komentarji
+        relevance: najbolj relevantno
+        recommendations: priporočeno
+      recommendations:
+        without_results: Trenutno ni nobenih razprav, povezanih s tvojimi interesi.
+        without_interests: Sledi predlogom, da ti lahko ponudimo priporočila.
+      search_form:
+        button: Išči
+        placeholder: Išči razprave...
+        title: Išči
+      start_debate: Začni razpravo
+      title: Razprave
+      section_header:
+        icon_alt: Ikona razprav
+        title: Razprave
+        help: Pomoč v zvezi z razpravami
+      section_footer:
+        title: Pomoč v zvezi z razpravami
+        description: Začni razpravo, da z drugimi deliš mnenja o temah, ki te zaposlujejo.
+        help_text_1: "Prostor za debate je namenjen vsakomur, ki želi izraziti svoje skrbi in deliti svoja mnenja z drugimi."
+        help_text_2: 'Da odpreš debato, se moraš registrirati na  %{org}. Uporabniki lahko tudi komentirajo odprte razprave in jih ocenjujejo s pomočjo gumbov "Strinjam se" ali "Ne strinjam se".'
+    new:
+      form:
+        submit_button: Začni razpravo
+      more_info: Več informacij
+      recommendation_four: Uživaj v tem prostoru in v glasovih, ki ga naseljujejo. Ta prostor pripada tudi tebi.
+      recommendation_one: Ne uporabljaj velikih tiskanih črk za naslov razprave ali za pisanje celih stavkov. Na internetu to pomeni, da kričiš - in nihče ne mara, da kričijo nanj.
+      recommendation_three: Ostra kritika je dobrodošla. To je mesto refleksije in razmisleka. A priporočamo ti, da kritiko sporočaš elegantno in inteligentno. Svet je lepši, če smo vljudni.
+      recommendation_two: Katera koli razprava ali komentar, ki bo predlagal nezakonito delovanje, bo izbrisan, skupaj s tistimi, ki bodo želeli sabotirati prostor debate kot tak. Vse drugo je dovoljeno.
+      recommendations_title: Nasveti za ustvarjanje razprave
+      start_new: Začni razpravo
+    show:
+      author_deleted: Uporabnik izbrisan
+      comments:
+        zero: Ni komentarjev
+      comments_title: Komentarji
+      edit_debate_link: Uredi
+      flag: To razpravo je več uporabnikov označilo kot neprimerno.
+      share: Deli
+      author: Avtor
+    update:
+      form:
+        submit_button: Shrani spremembe
+  errors:
+    messages:
+      user_not_found: Uporabnika ni mogoče najti
+      invalid_date_range: "Neveljavno časovno obdobje"
+  form:
+    accept_terms: Strinjam se s %{policy} in s %{conditions}
+    accept_terms_title: Strinjam se s politko zasebnosti in pogoji uporabe
+    conditions: Pogoji uporabe
+    debate: Razprava
+    direct_message: Zasebno sporočilo
+    error: Napaka
+    errors: Napake
+    not_saved: "preprečil ta %{resource}, da bi se shranil. <br>Prosimo, preveri označena polja:"
+    policy: Politiko zasebnosti
+    proposal: Predlog
+    proposal_notification: "Obvestilo"
+    budget/investment: Naložba
+    budget/heading: Proračunska postavka
+    poll/shift: Izmena
+    poll/question/answer: Odgovor
+    user: Račun
+    verification/sms: telefon
+    signature_sheet: Podpisni list
+    document: Dokument
+    topic: Tema
+    image: Slika
+  geozones:
+    none: Celo mesto/občina
+  layouts:
+    application:
+      ie: Zaznali smo, da za brskanje po internetu uporabljaš Internet Explorer. Za boljšo izkušno te spletne strani, ti predlagamo preklop na %{firefox} ali %{chrome}.
+      ie_title: Ta spletna stran ni optimizirana za tvoj brskalnik
+    dashboard:
+      proposal_header:
+        published: Objavljena
+        draft: Osnutek
+      proposal_totals:
+        supports:
+          zero: Brez podpornikov
+    footer:
+      accessibility: Dostopnosti
+      conditions: Pogoji uporabe
+      consul: Aplikacija CONSUL
+      description: Ta portal uporablja %{consul}, ki je %{open_source}.
+      open_source: odprtokodna programska oprema
+      participation_text: Odloči se, kako sooblikovati tako mesto, v kakršnem si želiš živeti.
+      participation_title: Sodelovanje
+      privacy: Politiko zasebnosti
+    header:
+      administration_menu: Meni
+      administration: Administracija
+      collaborative_legislation: Zakonodajni procesi
+      debates: Razprave
+      locale: "Jezik:"
+      management: Upravljanje
+      moderation: Moderacija
+      valuation: Vrednotenje
+      officing: Glasovanja
+      help: Pomoč
+      my_account_link: Moj račun
+      my_activity_link: Moje aktivnosti
+      open_gov: Odprta vlada
+      proposals: Predlogi
+      poll_questions: Glasovanje
+      budgets: Participatorni proračun
+      notification_item:
+        new_notifications:
+          zero: "Nimaš novih obvestil"
+        notifications: Obvestila
+  notifications:
+    index:
+      empty_notifications: Nimaš novih obvestil.
+      mark_all_as_read: Označi vse kot prebrano
+      read: Prebrano
+      title: Obvestila
+      unread: Neprebrano
+    notification:
+      mark_as_read: Označi kot prebrano
+      mark_as_unread: Označi kot neprebrano
+      notifiable_hidden: Ta vir ni več na voljo.
+  map:
+    title: "Občine"
+    proposal_for_district: "Začni nov predlog v svoji občini"
+    start_proposal: Ustvari predlog
+  omniauth:
+    facebook:
+      sign_in: Vpiši se s Facebookom
+      sign_up: Vpiši se s Facebookom
+    finish_signup:
+      title: "Dodatne podrobnosti"
+      username_warning: "Zaradi spremembe načina interakcije z družbenimi omrežji, je mogoče, da je tvoje uporabniško ime zdaj označeno kot 'že v uporabi'. Če se ti to zgodi, prosimo izberi novo uporabniško ime."
+    google_oauth2:
+      sign_in: Vpiši se z Googlom
+      sign_up: Vpiši se z Googlom
+    twitter:
+      sign_in: Vpiši se s Twitterjem
+      sign_up: Vpiši se s Twitterjem
+    info:
+      sign_in: "Vpiši se z:"
+      sign_up: "Registriraj se z:"
+    or_fill: "Ali izpolni ta obrazec:"
+  proposals:
+    create:
+      form:
+        submit_button: Ustvari predlog
+    share:
+      dashboard: Oglej si več informacij
+    edit:
+      editing: Uredi predlog
+      form:
+        submit_button: Shrani spremembe
+      show_link: Poglej predlog
+    retire_form:
+      title: Upokoji predlog
+      warning: "Če upokojiš predlog, lahko še vedno prejema podporo, ampak bo odstranjen iz glavnega seznama, vsem uporabnikom pa bo vidno sporočilo, da avtor meni, da predlog ni več vreden podpore"
+      retired_reason_blank: Izberi možnost
+      retired_explanation_placeholder: Na kratko razloži, zakaj meniš, da ta predlog ne bi smel več dobivati podpore
+      submit_button: Upokoji predlog
+    retire_options:
+      duplicated: Duplikat
+      started: Že v teku
+      unfeasible: Neizvedljiv
+      done: Izveden
+      other: Drugo
+    form:
+      proposal_responsible_name_note: "(posamično ali kot predstavnik kolektiva; ne bo javno prikazano)"
+      proposal_summary_note: "(največ 200 znakov)"
+      proposal_video_url_note: Lahko dodaš povezavo na YouTube ali Vimeo
+      tag_category_label: "Kategorije"
+      tags_instructions: "Kategoriziraj ta predlog. Izbiraš lahko med predlaganimi kategorijami ali dodaš novo"
+      tags_label: Oznake
+      tags_placeholder: "Vpiši oznake, ki jih želiš uporabiti, loči jih z vejico (',')"
+      map_location: "Lokacija na zemljevidu"
+      map_location_instructions: "Na zemljevidu najdi lokacijo in postavi označevalec."
+      map_remove_marker: "Odstrani označevalec"
+    index:
+      featured_proposals: Izpostavljeno
+      orders:
+        confidence_score: najbolje ocenjeni
+        created_at: najnovejši
+        hot_score: najbolj aktivni
+        most_commented: z največ komentarji
+        relevance: po relevantnosti
+        archival_date: arhivirani
+        recommendations: priporočila
+      recommendations:
+        without_results: Ni predlogov, povezanih s tvojimi interesi
+        without_interests: Sledi predlogom, da ti lako damo priporočila
+      retired_proposals: Upokojeni predlogi
+      retired_proposals_link: "Predlogi, ki jih je upokojil avtor"
+      retired_links:
+        all: Vsi
+        duplicated: Duplikati
+        started: V teku
+        unfeasible: Neizvedljivi
+        done: Izvedeni
+        other: Drugi
+      search_form:
+        button: Išči
+        placeholder: Išči predloge...
+        title: Išči
+      select_order_long: "Predloge si ogleduješ glede na:"
+      start_proposal: Ustvari predlog
+      title: Predlogi
+      top_link_proposals: Z največ podpore po kategorijah
+      section_header:
+        icon_alt: Ikona predlogov
+        title: Predlogi
+        help: Pomoč glede predlogov
+      section_footer:
+        title: Pomoč glede predlogov
+        description: Ustvari državljanski predlog. Če dobi dovolj podpore, bo napredoval v fazo glasovanja, kjer se bodo o njem odločali vsi tvoji someščani/soobčani.
+    new:
+      form:
+        submit_button: Ustvari predlog
+      more_info: Kako delujejo državljanski predlogi?
+      recommendation_one: Za naslov predloga ali daljše stavke ne uporabljaj velikih tiskanih črk. Na internetu to razumemo kot kričanje - in nihče ne mara, da ljudje kričijo nanj.
+      recommendation_three: Uživaj v tem prostoru in v glasovih, ki ga napolnjujejo. Ta prostor je tudi tvoj.
+      recommendation_two: Kateri koli predlog ali komentar, ki bo predlagal nezakonito delovanje, bo izbrisan, skupaj s tistimi, ki bodo želeli sabotirati prostor debate kot tak. Vse drugo je dovoljeno.
+      recommendations_title: Priporočila za ustvarjanje predloga
+      start_new: Ustvari nov predlog
+    notice:
+      retired: Predlog upokojen
+    proposal:
+      created: "Ustvaril/-a si predlog!"
+      share:
+        guide: "Zdaj ga lahko deliš z drugimi, da lahko začne pridobivati podporo."
+        edit: "Preden ga deliš, lahko še spremeniš besedilo."
+        view_proposal: Ne zdaj, pojdi v moj predlog
+      already_supported: Ta predlog si že podprl/-a. Deli ga z drugimi!
+      comments:
+        zero: Brez komentarjev
+      support: Glasuj za predlog!
+      support_title: Podpri ta predlog
+      supports:
+        zero: Brez podpornikov
+      votes:
+        zero: Brez glasov
+      supports_necessary: "%{number} potrebnih podpornikov"
+      total_percent: 100 %
+      archived: "Ta predlog je bil arhiviran in ne more zbirati podpornikov."
+      successful: "Ta predlog je dosegel zahtevano podporo."
+    show:
+      author_deleted: Uporabnik izbrisan
+      code: "Koda predloga:"
+      comments:
+        zero: Brez komentarjev
+      comments_tab: Komentarji
+      flag: Ta predlog je več uporabnikov označilo kot neprimeren.
+      notifications_tab: Obvestila
+      milestones_tab: Mejniki
+      retired_warning: "Avtor meni, da ta predlog ne bi smel več dobivati podpore."
+      retired_warning_link_to_explanation: Preberi razlago, preden glasuješ zanj.
+      retired: Predlog upokojen s strani avtorja
+      share: Deli
+      no_notifications: "Ta predlog nima obvestil."
+      embed_video_title: "Video o %{proposal}"
+      title_video_url: "Zunanji video"
+      author: Avtor
+    update:
+      form:
+        submit_button: Shrani spremembe
+  dashboard:
+    menu:
+      polls: Glasovanja
+      related_content: Povezane vsebine
+    progress:
+      supports: Glasovi
+    index:
+      edit_proposal_link: Uredi predlog
+      retire: Upokoji predlog
+    recommended_actions:
+      pending_title: V teku
+      done_title: Izveden
+    community:
+      debates: Razprave
+      comments: Komentarji
+    polls:
+      index:
+        title: Glasovanja
+        create: Ustvari glasovanje
+        additiontal_information: Dodatne informacije
+      new:
+        title: Novo glasovanja
+        submit: Ustvari glasovanje
+      edit:
+        submit: Posodobi glasovanje
+      form:
+        add_question: Dodaj naslov
+      question_fields:
+        add_answer: Dodaj odgovor
+    poster:
+      options:
+        preview: Predogled
+    mailing:
+      mailing_options:
+        preview: Predogled
+    mailer:
+      forward:
+        support_button: Podpri ta predlog
+  polls:
+    all: "Vsi"
+    no_dates: "Brez datuma"
+    dates: "Od %{open_at} do %{closed_at}"
+    final_date: "Končni rezultati"
+    index:
+      filters:
+        current: "Odprta"
+        expired: "Potečena"
+      title: "Glasovanja"
+      participate_button: "Sodeluj v tem glasovanju"
+      participate_button_expired: "Glasovanje končano"
+      no_geozone_restricted: "Povsod"
+      geozone_restricted: "Področja"
+      geozone_info: "Lahko sodelujejo ljudje iz cenzusa: "
+      already_answer: "V tem glasovanju si že sodeloval/-a"
+      section_header:
+        icon_alt: Ikona glasovanja
+        title: Glasovanje
+        help: Pomoč glede glasovanja
+      section_footer:
+        title: Pomoč glede glasovanja
+        description: Za glasovanje o državljanskih predlogih se registriraj. Pomagaj sprejemati direktne odločitve.
+      no_polls: "Trenutno ni odprtih glasovanj."
+    show:
+      already_voted_in_booth: "O tem vprašanju si že glasoval/-a na fizičnem mestu. Ne moreš glasovati ponovno."
+      already_voted_in_web: "O tem vprašanju si že glasoval/-a na tem spletnem mestu. Če glasuješ ponovno, bo upoštevan samo tvoj novejši glas."
+      back: Nazaj na glasovanje
+      cant_answer_not_logged_in: "Za sodelovaje se moraš %{signin} ali %{signup}."
+      comments_tab: Komentarji
+      cant_answer_verify: "Za odgovarjanje moraš %{verify_link}."
+      verify_link: "potrditi svoj račun"
+      cant_answer_expired: "To glasovanje je že končano."
+      cant_answer_wrong_geozone: "To vprašanje ni na voljo v tvojem mestu/občini."
+      more_info_title: "Več informacij"
+      documents: Dokumenti
+      zoom_plus: Povečaj sliko
+      read_more: "Preberi več %{answer}"
+      read_less: "Preberi manj %{answer}"
+      videos: "Zunanji video"
+      info_menu: "Informacije"
+      stats_menu: "Statistika o sodelovanju"
+      results_menu: "Rezultati glasovanja"
+      stats:
+        total_votes: "Skupno število glasov"
+        votes: "GLASOV"
+        web: "SPLETNI"
+        booth: "FIZIČNI"
+        total: "SKUPAJ"
+        valid: "Veljavni"
+        white: "Beli glasovi"
+        null_votes: "Neveljavni"
+      results:
+        title: "Vprašanja"
+        most_voted_answer: "Najbolj izglasovan odgovor: "
+  poll_questions:
+    show:
+      vote_answer: "Glasuj %{answer}"
+      voted: "Glasoval/-a si %{answer}"
+  proposal_notifications:
+    new:
+      title: "Pošlji sporočilo"
+      submit_button: "Pošlji sporočilo"
+      proposal_page: "strani predloga"
+    show:
+      back: "Vrni se na mojo aktivnost"
+  shared:
+    edit: "Uredi"
+    filter: "Filtriraj"
+    save: "Shrani"
+    delete: "Izbriši"
+    "yes": "Da"
+    "no": "Ne"
+    search_results: "Rezultati iskanja"
+    advanced_search:
+      date: "Po datumu"
+      date_range_blank: "Izberi datum"
+      date_1: "Zadnjih 24 ur"
+      date_2: "Zadnji teden"
+      date_3: "Zadnji mesec"
+      date_4: "Zadnje leto"
+      date_5: "Po meri"
+      from: "Od"
+      general: "Z besedilom"
+      search: "Filtriraj"
+      title: "Napredno iskanje"
+      to: "Za"
+    author_info:
+      author_deleted: Uporabnik izbrisan
+    back: Pojdi nazaj
+    check: Izberi
+    check_all: Vse
+    check_none: Nič
+    collective: Kolektiv
+    flag: Označi kot neprimeren
+    follow: "Sledi"
+    following: "Sledim"
+    follow_entity: "Sledi %{entity}"
+    print:
+      print_button: Natisni te informacije
+    search: Išči
+    show: Pokaži
+    suggest:
+      debate:
+        message: "Ogleduješ si %{limit} od %{count} razprav, ki vsebujejo besedo '%{query}'"
+        see_all: "Poglej vse"
+      budget_investment:
+        message: "Ogleduješ si %{limit} od %{count} investicij, ki vsebujejo besedo '%{query}'"
+        see_all: "Poglej vse"
+      proposal:
+        message: "Ogleduješ si %{limit} od %{count} predlogov, ki vsebuejo besedo '%{query}'"
+        see_all: "Poglej vse"
+    tags_cloud:
+      districts: "Področja"
+      districts_list: "Seznam področij"
+      categories: "Kategorije"
+    target_blank: " (povezava se odpre v novem oknu)"
+    you_are_in: "Si v"
+    unflag: Odznači
+    unfollow_entity: "Prenehaj slediti %{entity}"
+    outline:
+      searcher: Iskalnik
+    go_to_page: "Pojdi na stran "
+    share: Išči
+    orbit:
+      previous_slide: Prejšnji pogled
+      next_slide: Naslednji pogled
+    documentation: Dodatna dokumentacija
+    view_mode:
+      title: Način prikaza
+      cards: Kartice
+      list: Seznam
+    recommended_index:
+      title: Priporočila
+  stats:
+    index:
+      visits: Obiski
+      debates: Razprave
+      proposals: Predlogi
+      comments: Komentarji
+      proposal_votes: Glasovi o predlogih
+      debate_votes: Glasovi o razpravah
+      comment_votes: Glasovi na komentarjih
+      votes: Skupaj glasov
+      verified_users: Preverjenih uporabnikov
+      unverified_users: Nepreverjenih uporabnikov
+  unauthorized:
+    default: Nimaš dovoljenja za obisk te strani.
+    manage:
+      all: "Nimaš dovoljenja za izvedbo '%{action}' glede %{subject}."
+  users:
+    login_to_comment: "Če želiš komentirati, se moraš %{signin} ali %{signup}."
+    login_to_continue: "Za nadaljevanje se moraš %{signin} ali %{signup}."
+    signin: "vpisati"
+    signup: "registrirati"
+    verify_account: "potrditi svoj račun"
+    direct_messages:
+      new:
+        direct_messages_bloqued: "Ta uporabnik/-ca se je odločil/-a, da ne želi prejemati direktnih sporočil."
+        submit_button: Pošlji sporočilo
+        title: Pošlji zasebno sporočilo %{receiver}
+        verified_only: Za pošiljanje zasebnega sporočila %{verify_account}
+      show:
+        receiver: Sporočilo %{receiver} poslano
+    show:
+      deleted: Izbrisano
+      deleted_debate: Ta razprava je bila izbrisana
+      deleted_proposal: Ta predlog je bil izbrisan
+      deleted_budget_investment: Ta naložbeni projekt je bil izbrisan
+      proposals: Predlogi
+      debates: Razprave
+      budget_investments: Proračunske naložbe
+      comments: Komentarji
+      actions: Dejanja
+      no_activity: Uporabnik nima javnih aktivnosti
+      no_private_messages: "Ta uporabnik/-ca ne sprejema zasebnih sporočil."
+      private_activity: Ta uporabnik/-ca se je odločil/-a za zaseben seznam aktivnosti.
+      send_private_message: "Pošlji zasebno sporočilo"
+      delete_alert: "Si prepričan/-a, da želiš izbrisati svoj naložbeni projekt? Tega ni mogoče razveljaviti."
+    proposals:
+      retired: "Upokoji predlog"
+      draft: Osnutek
+      published: Objavljena
+      see: "Poglej predlog"
+      actions: Dejanja
+  votes:
+    agree: Strinjam se
+    anonymous: Preveč anonimnih glasov za sprejetje glasu %{verify_account}.
+    disagree: Ne strinjam se
+    organizations: Organizacijam ni dovoljeno glasovati.
+    supports: Glasovi
+    verified_only: Samo verificirani uporabniki lahko glasujejo o predlogih; %{verify_account}.
+    budget_investments:
+      not_verified: Samo verificirani uporabniki lahko glasujejo o investicijskih projektih; %{verify_account}.
+      unfeasible: Neizvedljivih investicijskih projektov ni mogoče podpreti
+      not_voting_allowed: Faza glasovanja je zaključena
+  welcome:
+    feed:
+      most_active:
+        debates: "Najbolj aktivne razprave"
+        proposals: "Najbolj aktivni predlogi"
+        processes: "Odprti procesi"
+      see_all:
+        debates: Poglej vse razprave
+        proposals: Poglej vse predloge
+        processes: Poglej vse procese
+      process_label: Proces
+      see_process: Poglej proces
+    cards:
+      title: Izpostavljeno
+    recommended:
+      title: Priporočila glede na tvoje interese
+      help: "Ta priporočila generiramo glede na oznake razprav in predlogov, ki jim slediš."
+      debates:
+        title: Priporočene razprave
+        btn_text_link: Vse priporočene razprave
+      proposals:
+        title: Priporočeni predlogi
+        btn_text_link: Vsi priporočeni predlogi
+      budget_investments:
+        title: Priporočene investicije
+      slide: "Poglej %{title}"
+    welcome:
+      go_to_index: Oglej si predloge in razprave
+      title: Sodeluj
+      user_permission_info: S svojim računom lahko ...
+      user_permission_verify: "Za izvedbo vseh dejanj verificiraj svoj račun."
+      user_permission_verify_my_account: Preveri moj račun
+  invisible_captcha:
+    sentence_for_humans: "Če si človek, ignoriraj to polje"
+    timestamp_error_message: "Oprosti, to je bilo pa prehitro. Prosim, poskusi ponovno."
+  related_content:
+    title: "Povezane vsebine"
+    add: "Dodaj povezane vsebine"
+    label: "Dodaj povezavo do povezanih vsebin"
+    help: "Dodaš lahko povezave %{models} znotraj %{org}."
+    submit: "Dodaj"
+    error: "Povezava ni veljavna. Ne pozabi začeti z %{url}."
+    error_itself: "Povezava ni veljavna. Ne moreš povezovati vsebine same s sabo."
+    success: "Dodal/-a si novo povezano vsebino."
+    is_related: "Ali gre za povezano vsebino?"
+    score_positive: "Da"
+    score_negative: "Ne"
+    content_title:
+      proposal: "Predlog"
+      debate: "Razprava"
+      budget_investment: "Proračunska naložba"
+  admin/widget:
+    header:
+      title: Administracija
+  links:
+    form:
+      delete_button: Izbriši
+      cancel_button: Prekliči

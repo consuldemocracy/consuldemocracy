@@ -1,14 +1,14 @@
 <% provide :title, t("budgets.executions.page_title", budget: @budget.name) %>
-<% content_for :meta_description do %><%= @budget.description_for_phase('finished') %><% end %>
+<% content_for :meta_description do %><%= @budget.description_for_phase("finished") %><% end %>
 <% provide :social_media_meta_tags do %>
-<%= render 'shared/social_media_meta_tags',
+<%= render "shared/social_media_meta_tags",
             social_url: budget_executions_url(@budget),
             social_title: @budget.name,
-            social_description: @budget.description_for_phase('finished') %>
+            social_description: @budget.description_for_phase("finished") %>
 <% end %>
 
 <% content_for :canonical do %>
-  <%= render 'shared/canonical', href: budget_executions_url(@budget) %>
+  <%= render "shared/canonical", href: budget_executions_url(@budget) %>
 <% end %>
 
 <div class="budgets-stats">
@@ -25,18 +25,7 @@
   </div>
 </div>
 
-<div class="row margin-top">
-  <div class="small-12 column">
-    <ul class="tabs">
-      <li class="tabs-title">
-        <%= link_to t("budgets.results.link"), budget_results_path(@budget) %>
-      </li>
-      <li class="tabs-title is-active">
-        <%= link_to t("budgets.executions.link"), budget_executions_path(@budget), class: 'is-active' %>
-      </li>
-    </ul>
-  </div>
-</div>
+<%= render "budgets/subnav", budget: @budget %>
 
 <div class="row">
   <div class="small-12 medium-3 large-2 column">
@@ -53,21 +42,10 @@
   </div>
 
   <div class="small-12 medium-9 large-10 column">
-    <%= form_tag(budget_executions_path(@budget), method: :get) do %>
-      <div class="small-12 medium-3 column">
-        <%= label_tag :status, t("budgets.executions.filters.label") %>
-        <%= select_tag :status,
-                      options_from_collection_for_select(@statuses,
-                      :id, lambda { |s| "#{s.name} (#{filters_select_counts(s.id)})" },
-                      params[:status]),
-                      class: "js-submit-on-change",
-                      prompt: t("budgets.executions.filters.all",
-                      count: @budget.investments.winners.with_milestones.count) %>
-      </div>
-    <% end %>
+    <%= render Budgets::Executions::FiltersComponent.new(@budget, @statuses) %>
 
     <% if @investments_by_heading.any? %>
-      <%= render 'budgets/executions/investments' %>
+      <%= render "budgets/executions/investments" %>
     <% else %>
       <div class="callout primary clear">
         <%= t("budgets.executions.no_winner_investments") %>

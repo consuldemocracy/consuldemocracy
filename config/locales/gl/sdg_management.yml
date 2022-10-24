@@ -1,0 +1,18 @@
+gl:
+  sdg_management:
+    homepage:
+      header:
+        create: "Crear cabeceira"
+        title: "Cabeceira"
+    menu:
+      budget_investments: "Orzamentos participativos"
+      debates: "Debates"
+      legislation_processes: "Procesos lexislativos"
+      polls: "Votacións"
+      proposals: "Propostas cidadás"
+    relations:
+      index:
+        filter: "Filtro"
+        filters:
+          all: "Todo"
+          pending_sdg_review: "Pendentes"

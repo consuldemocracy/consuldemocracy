@@ -1,0 +1,12 @@
+gl:
+  stats:
+    title: "Datos de participación"
+    total_participants: "Participantes"
+    age: "Idade"
+    total: "Total"
+    budgets:
+      link: "Estatísticas"
+      total_unfeasible_investments: "Ver os proxectos inviables"
+      total: "Total"
+      heading: "Partida do orzamento"
+      participants_every_phase: "Participantes totais"

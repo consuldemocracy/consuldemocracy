@@ -16,23 +16,42 @@ module Abilities
       can :update, Proposal do |proposal|
         proposal.editable_by?(user)
       end
+      can :publish, Proposal do |proposal|
+        proposal.draft? && proposal.author.id == user.id && !proposal.retired?
+      end
+      can :dashboard, Proposal do |proposal|
+        proposal.author.id == user.id
+      end
+      can :manage_polls, Proposal do |proposal|
+        proposal.author.id == user.id
+      end
+      can :manage_mailing, Proposal do |proposal|
+        proposal.author.id == user.id
+      end
+      can :manage_poster, Proposal do |proposal|
+        proposal.author.id == user.id
+      end
+
+      can :results, Poll do |poll|
+        poll.related&.author&.id == user.id
+      end
+
       can [:retire_form, :retire], Proposal, author_id: user.id
 
       can :read, Legislation::Proposal
-      cannot [:edit, :update], Legislation::Proposal do |proposal|
-        proposal.editable_by?(user)
-      end
       can [:retire_form, :retire], Legislation::Proposal, author_id: user.id
 
       can :create, Comment
       can :create, Debate
-      can :create, Proposal
+      can [:create, :created], Proposal
       can :create, Legislation::Proposal
+
+      can :hide, Comment, user_id: user.id
 
       can :suggest, Debate
       can :suggest, Proposal
       can :suggest, Legislation::Proposal
-      can :suggest, ActsAsTaggableOn::Tag
+      can :suggest, Tag
 
       can [:flag, :unflag], Comment
       cannot [:flag, :unflag], Comment, user_id: user.id
@@ -49,11 +68,15 @@ module Abilities
       can [:flag, :unflag], Budget::Investment
       cannot [:flag, :unflag], Budget::Investment, author_id: user.id
 
-      can [:create, :destroy], Follow
+      can [:create, :destroy], Follow, user_id: user.id
 
-      can [:destroy], Document, documentable: { author_id: user.id }
+      can [:destroy], Document do |document|
+        document.documentable_type != "Poll::Question::Answer" && document.documentable&.author_id == user.id
+      end
 
-      can [:destroy], Image, imageable: { author_id: user.id }
+      can [:destroy], Image do |image|
+        image.imageable_type != "Poll::Question::Answer" && image.imageable&.author_id == user.id
+      end
 
       can [:create, :destroy], DirectUpload
 
@@ -65,12 +88,10 @@ module Abilities
       can :suggest, Budget::Investment,              budget: { phase: "accepting" }
 
       if user.level_two_or_three_verified?
-        can :vote, Proposal
-        can :vote_featured, Proposal
-        can :vote, SpendingProposal
-        can :create, SpendingProposal
+        can :vote, Proposal, &:published?
 
 
+####################################################### mio
         # Dejar solamente una propuesta por grupo.
         if true || user
            .budget_investments
@@ -102,9 +123,18 @@ module Abilities
           end
 
         end
+####################################################### fin mio
+        can :vote, Legislation::Proposal
+        can :create, Legislation::Answer
 
+        can :create, Budget::Investment,               budget: { phase: "accepting" }
+        can :update, Budget::Investment,               budget: { phase: "accepting" }, author_id: user.id
         can :suggest, Budget::Investment,              budget: { phase: "accepting" }
         can :destroy, Budget::Investment,              budget: { phase: ["accepting", "reviewing"] }, author_id: user.id
+        can [:create, :destroy], ActsAsVotable::Vote,
+          voter_id: user.id,
+          votable_type: "Budget::Investment",
+          votable: { budget: { phase: "selecting" }}
 
         budgets_current = Budget.includes(:investments).where(phase: ['selecting'])
         investment_ids = budgets_current.map { |b| b.investment_ids }.flatten
@@ -135,12 +165,12 @@ module Abilities
         can :answer, Poll::Question do |question|
           question.answerable_by?(user)
         end
+        can :destroy, Poll::Answer do |answer|
+          answer.author == user && answer.question.answerable_by?(user)
+        end
       end
 
       can [:create, :show], ProposalNotification, proposal: { author_id: user.id }
-
-      can :create, Annotation
-      can [:update, :destroy], Annotation, user_id: user.id
 
       can [:create], Topic
       can [:update, :destroy], Topic, author_id: user.id

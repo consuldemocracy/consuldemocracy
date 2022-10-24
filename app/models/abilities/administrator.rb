@@ -4,6 +4,7 @@ module Abilities
 
     def initialize(user)
       merge Abilities::Moderation.new(user)
+      merge Abilities::SDG::Manager.new(user)
 
       can :restore, Comment
       cannot :restore, Comment, hidden_at: nil
@@ -55,54 +56,91 @@ module Abilities
       can :mark_featured, Debate
       can :unmark_featured, Debate
 
-      can :comment_as_administrator, [Debate, Comment, Proposal, Poll::Question, Budget::Investment,
+      can :comment_as_administrator, [Debate, Comment, Proposal, Poll, Poll::Question, Budget::Investment,
                                       Legislation::Question, Legislation::Proposal, Legislation::Annotation, Topic]
 
-      can [:search, :create, :index, :destroy], ::Administrator
+      can [:search, :create, :index, :destroy, :update], ::Administrator
       can [:search, :create, :index, :destroy], ::Moderator
-      can [:search, :show, :edit, :update, :create, :index, :destroy, :summary], ::Valuator
+      can [:search, :show, :update, :create, :index, :destroy, :summary], ::Valuator
       can [:search, :create, :index, :destroy], ::Manager
+      can [:create, :read, :destroy], ::SDG::Manager
       can [:search, :index], ::User
 
-      can :manage, Annotation
+      can :manage, Dashboard::Action
 
-      can [:read, :update, :valuate, :destroy, :summary], SpendingProposal
-      can [:index, :read, :new, :create, :update, :destroy, :calculate_winners], Budget
+      can [:index, :read, :create, :update, :destroy], Budget
+      can :publish, Budget, id: Budget.drafting.ids
+      can :calculate_winners, Budget, &:reviewing_ballots?
+      can :read_results, Budget do |budget|
+        budget.balloting_finished? && budget.has_winning_investments?
+      end
+
       can [:read, :create, :update, :destroy], Budget::Group
       can [:read, :create, :update, :destroy], Budget::Heading
-      can [:hide, :update, :toggle_selection], Budget::Investment
+      can [:hide, :admin_update, :toggle_selection], Budget::Investment
       can [:valuate, :comment_valuation], Budget::Investment
+      cannot [:admin_update, :toggle_selection, :valuate, :comment_valuation],
+        Budget::Investment, budget: { phase: "finished" }
+
       can :create, Budget::ValuatorAssignment
 
-      can [:search, :edit, :update, :create, :index, :destroy], Banner
+      can :read_admin_stats, Budget, &:balloting_or_later?
 
-      can [:index, :create, :edit, :update, :destroy], Geozone
+      can [:search, :update, :create, :index, :destroy], Banner
 
-      can [:read, :create, :update, :destroy, :add_question, :search_booths, :search_officers, :booth_assignments, :results, :stats], Poll
+      can [:index, :create, :update, :destroy], Geozone
+
+      can [:read, :create, :update, :destroy, :booth_assignments], Poll
       can [:read, :create, :update, :destroy, :available], Poll::Booth
       can [:search, :create, :index, :destroy], ::Poll::Officer
       can [:create, :destroy, :manage], ::Poll::BoothAssignment
       can [:create, :destroy], ::Poll::OfficerAssignment
-      can [:read, :create, :update], Poll::Question
-      can :destroy, Poll::Question # , comments_count: 0, votes_up: 0
+      can :read, Poll::Question
+      can [:create], Poll::Question do |question|
+        question.poll.blank? || !question.poll.started?
+      end
+      can [:update, :destroy], Poll::Question do |question|
+        !question.poll.started?
+      end
+      can [:read, :order_answers], Poll::Question::Answer
+      can [:create, :update, :destroy], Poll::Question::Answer do |answer|
+        can?(:update, answer.question)
+      end
+      can :read, Poll::Question::Answer::Video
+      can [:create, :update, :destroy], Poll::Question::Answer::Video do |video|
+        can?(:update, video.answer)
+      end
+      can [:destroy], Image do |image|
+        image.imageable_type == "Poll::Question::Answer" && can?(:update, image.imageable)
+      end
 
       can :manage, SiteCustomization::Page
       can :manage, SiteCustomization::Image
       can :manage, SiteCustomization::ContentBlock
+      can :manage, Widget::Card
 
       can :access, :ckeditor
       can :manage, Ckeditor::Picture
 
-      can [:manage], ::Legislation::Process
+      can [:read, :debate, :draft_publication, :allegations, :result_publication,
+           :milestones], Legislation::Process
+      can [:create, :update, :destroy], Legislation::Process
       can [:manage], ::Legislation::DraftVersion
       can [:manage], ::Legislation::Question
       can [:manage], ::Legislation::Proposal
       cannot :comment_as_moderator, [::Legislation::Question, Legislation::Annotation, ::Legislation::Proposal]
 
       can [:create], Document
+      can [:destroy], Document do |document|
+        document.documentable_type == "Poll::Question::Answer" && can?(:update, document.documentable)
+      end
       can [:create, :destroy], DirectUpload
 
       can [:deliver], Newsletter, hidden_at: nil
+      can [:manage], Dashboard::AdministratorTask
+
+      can :manage, LocalCensusRecord
+      can [:create, :read], LocalCensusRecords::Import
     end
   end
 end

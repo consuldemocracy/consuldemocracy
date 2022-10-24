@@ -1,5 +1,4 @@
 class TagCloud
-
   attr_accessor :resource_model, :scope
 
   def initialize(resource_model, scope = nil)
@@ -9,18 +8,26 @@ class TagCloud
 
   def tags
     resource_model_scoped.
-    last_week.tag_counts.
+    last_week.send(counts).
     where("lower(name) NOT IN (?)", category_names + geozone_names + default_blacklist).
     order("#{table_name}_count": :desc, name: :asc).
     limit(10)
   end
 
+  def counts
+    if Tag.machine_learning? && [Proposal, Budget::Investment].include?(resource_model)
+      :ml_tag_counts
+    else
+      :tag_counts
+    end
+  end
+
   def category_names
-    ActsAsTaggableOn::Tag.category_names.map(&:downcase)
+    Tag.category_names.map(&:downcase)
   end
 
   def geozone_names
-    Geozone.all.map {|geozone| geozone.name.downcase }
+    Geozone.all.map { |geozone| geozone.name.downcase }
   end
 
   def resource_model_scoped
@@ -28,11 +35,10 @@ class TagCloud
   end
 
   def default_blacklist
-    ['']
+    [""]
   end
 
   def table_name
-    resource_model.to_s.downcase.pluralize.gsub("::", "/")
+    resource_model.to_s.tableize.tr("/", "_")
   end
-
 end

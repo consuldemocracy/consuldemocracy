@@ -1,19 +1,53 @@
 sv:
   seeds:
+    admin_notifications:
+      budget:
+        title: "Vi stänger medborgarbudgeten!"
+        body: "Skynda dig att skapa ett förslag innan det upphör inom de närmaste dagarna!"
+      help:
+        title: "Hjälp oss att översätta consul"
+        body: "Om du talar ett språk flytande, ber vi dig hjälpa oss att översätta consul!"
+      map:
+        title: "Du kan nu geografiskt placera förslag och investeringar"
+        body: "När du skapar ett förslag eller en investering kan du nu ange en plats på en karta."
+      proposal:
+        title: "Har du ett förslag?"
+        body: "Kom ihåg att du kan skapa ett förslag med dina idéer så att andra kan diskutera och stödja det."
     settings:
-      official_level_1_name: Representant för staden nivå 1
-      official_level_2_name: Representant för staden nivå 2
-      official_level_3_name: Representant för staden nivå 3
-      official_level_4_name: Representant för staden nivå 4
-      official_level_5_name: Representant för staden nivå 5
+      official_level_1_name: Tjänsteman nivå 1
+      official_level_2_name: Tjänsteman nivå 2
+      official_level_3_name: Tjänsteman nivå 3
+      official_level_4_name: Tjänsteman nivå 4
+      official_level_5_name: Tjänsteman nivå 5
     geozones:
       north_district: Norra stadsdelen
       west_district: Västra stadsdelen
       east_district: Östra stadsdelen
-      central_district: Centrum
+      central_district: Centrala distriktet
     organizations:
       human_rights: Mänskliga rättigheter
-      neighborhood_association: Lokal förening
+      neighborhood_association: Kvartersförening
+    cards:
+      budget:
+        title: "Hur fungerar medborgarbudgetar?"
+        description: "Med medborgarbudgetar kan medborgarna föreslå och direkt bestämma hur en del av budgeten ska användas, med institutionell övervakning och rigorös utvärdering av förslag. Maximal effektivitet och kontroll så att alla blir nöjda."
+        link_text: "Mer om medborgarbudgetar"
+        label: "Medborgarbudgetar"
+      debate:
+        title: "Hur fungerar debatter?"
+        description: "Vem som helst kan starta trådar om vilket ämne som helst och skapa separata utrymmen där alla kan diskutera det föreslagna ämnet. Debatter uppskattas av alla och lyfter fram de viktigaste frågorna."
+        link_text: "Mer om debatter"
+        label: "Debatter"
+      header:
+        title: "CONSUL"
+        description: "Kostnadsfri programvara för medborgardeltagande."
+        link_text: "Mer information"
+        label: "Välkommen till"
+      proposal:
+        title: "Hur fungerar medborgarförslag?"
+        description: "Ett utrymme där alla kan skapa ett medborgarförslag och söka stöd. Förslag som får tillräckligt stöd går vidare till omröstning, och på så vis kan vi tillsammans avgöra de frågor som är viktiga för oss."
+        link_text: "Mer om förslag"
+        label: "Medborgarförslag"
     categories:
       associations: Föreningar
       culture: Kultur
@@ -35,21 +69,22 @@ sv:
       currency: kr
       groups:
         all_city: Hela staden
-        districts: Stadsdelar
-      valuator_groups:
-        culture_and_sports: Kultur och sport
-        gender_and_diversity: Jämställdhet och mångfald
-        urban_development: Hållbar stadsutveckling
-        equity_and_employment: Jämlikhet och sysselsättning
+        districts: Distrikt
+      phases:
+        description: "Beskrivning på %{language}"
+        summary: "Sammanfattning på %{language}"
       statuses:
         studying_project: Granskning av projekt
         bidding: Budgivning
         executing_project: Genomförande av projekt
         executed: Genomfört
+    legislation:
+      draft_versions:
+        title: "Version %{number}"
+        body: "Utkastversion på %{language}"
     polls:
       current_poll: "Aktuell omröstning"
       current_poll_geozone_restricted: "Omröstningen är begränsad till ett geografiskt område"
-      incoming_poll: "Kommande omröstning"
       recounting_poll: "Rösträkning"
       expired_poll_without_stats: "Avslutad omröstning (utan statistik eller resultat)"
       expired_poll_with_stats: "Avslutad omröstning (med statistik och resultat)"

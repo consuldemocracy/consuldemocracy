@@ -91,3 +91,5 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
+#require Rails.root.join("config", "environments", "staging")
+#require Rails.root.join("config", "environments", "custom", "preproduction")

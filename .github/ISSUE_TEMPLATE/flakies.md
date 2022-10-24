@@ -3,7 +3,7 @@ Tests that fail randomly are called "flakies", this one seems to be one:
 
 **Randomized seed:** FILL_WITH_RANDOM_SEED
 
-**Travis failed build:** FILL_WITH_TRAVIS_FAILED_BUILD_LINK
+**Failed action:** FILL_WITH_A_LINK_WHERE_THE_FAILURE_IS_SHOWN
 
 **Failure:**
 
@@ -26,7 +26,7 @@ do
 done
 ```
 
-You can also try running a single spec in Travis:
+You can also try running a single spec:
 Add option `:focus` to the spec and push your branch to Github, for example:
 ```ruby
 scenario 'Show', :focus do

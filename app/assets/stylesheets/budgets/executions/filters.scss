@@ -1,0 +1,16 @@
+.budget-executions-filters {
+  margin-bottom: $line-height / 2;
+
+  @include breakpoint(medium) {
+    @include flex-with-gap(1em);
+    align-items: flex-end;
+  }
+
+  select {
+    height: $line-height * 2;
+  }
+
+  [type="submit"] {
+    @include regular-button;
+  }
+}

@@ -1,0 +1,49 @@
+cs:
+  activemodel:
+    models:
+      verification:
+        residence: "Bydliště"
+        sms: "SMS"
+      local_census_records/import:
+        one: Import záznamu místního registru občanů
+        few: Importy záznamu místního registru občanů
+        many: Importů záznamů místního registru občanů
+        other: Importů záznamů místního registru občanů
+    attributes:
+      verification:
+        residence:
+          document_type: "Typ dokumentu"
+          document_number: "Identifikátor dokumentu (včetně písmen)"
+          date_of_birth: "Datum narození"
+          postal_code: "PSČ"
+        sms:
+          phone: "Telefon"
+          confirmation_code: "Potvrzující kód"
+        email:
+          recipient: "Email"
+      verification/letter:
+        email: "E-mail"
+        password: "Heslo"
+        verification_code: "Kód, který jste obdrželi v dopise"
+      verification/management/document:
+        document_type: "Typ dokumentu:"
+        document_number: "Číslo dokumentu"
+      verification/residence:
+        date_of_birth: "Datum narození"
+        document_type: "Typ dokumentu"
+        postal_code: "Psč"
+      verification/sms:
+        confirmation_code: "Zadejte kód, který jste obdrželi na váš mobil"
+      officing/residence:
+        document_type: "Typ dokumentu"
+        document_number: "Identifikátor dokumentu (včetně písmen)"
+        year_of_birth: "Rok narození"
+      local_census_records/import:
+        file: Soubor
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "Uvedený formát souboru je chybný. Povolený formát souboru je: %{valid_extensions}."
+              headers: "Uvedené hlavičky souborů jsou chybné. Hlavičky souborů musí mít následující názvy: %{required_headers}."

@@ -1,5 +1,4 @@
 module WelcomeHelper
-
   def is_active_class(index)
     "is-active is-in" if index.zero?
   end
@@ -15,7 +14,7 @@ module WelcomeHelper
     when "Proposal"
       proposal_path(recommended)
     else
-      '#'
+      "#"
     end
   end
 
@@ -25,8 +24,9 @@ module WelcomeHelper
   end
 
   def calculate_image_path(recommended, image_default)
-    if recommended.try(:image) && recommended.image.present? && recommended.image.attachment.exists?
-      recommended.image.attachment.send("url", :medium)
+    if recommended.respond_to?(:image) && recommended.image.present? &&
+        recommended.image.attachment.attached?
+      recommended.image.variant(:medium)
     elsif image_default.present?
       image_default
     end
@@ -35,24 +35,23 @@ module WelcomeHelper
   def calculate_carousel_size(debates, proposals, apply_offset)
     offset = calculate_offset(debates, proposals, apply_offset)
     centered = calculate_centered(debates, proposals)
-    "#{offset if offset} #{centered if centered}"
+    "#{offset} #{centered}"
   end
 
   def calculate_centered(debates, proposals)
     if (debates.blank? && proposals.any?) ||
        (debates.any? && proposals.blank?)
-      centered = "medium-centered large-centered"
+      "medium-centered large-centered"
     end
   end
 
   def calculate_offset(debates, proposals, apply_offset)
     if debates.any? && proposals.any?
-      offset = if apply_offset
+      if apply_offset
         "medium-offset-2 large-offset-2"
-               else
+      else
         "end"
-               end
+      end
     end
   end
-
 end

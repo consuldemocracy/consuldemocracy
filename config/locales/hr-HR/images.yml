@@ -1,0 +1,17 @@
+hr:
+  images:
+    remove_image: Ukloni sliku
+    form:
+      title: Opisna slika
+      title_placeholder: Dodaj opisni naziv slike
+      delete_button: Ukloni sliku
+      note: "Možete postaviti jednu sliku iz sljedećih tipova sadržaja: %{accepted_content_types}, do %{max_file_size} MB."
+      add_new_image: Dodajte sliku
+    actions:
+      destroy:
+        notice: Slika je uspješno obrisana.
+        alert: Ne možete obrisati sliku.
+    errors:
+      messages:
+        in_between: mora biti između %{min} i %{max}
+        wrong_content_type: tip sadržaja %{content_type} ne poklapa se s prihvačenim tipovima sadržaja %{accepted_content_types}

@@ -1,0 +1,103 @@
+bs:
+  verification:
+    alert:
+      lock: Imate maksimalni broj pokušaja. Pokušajte ponovo kasnije.
+    back: Nazad na moj nalog
+    email:
+      create:
+        alert:
+          failure: Problem sa slanjem emaila na vaš nalog
+        flash:
+          success: "Poslali smo email za potvrđivanje na vaš nalog: (email adresa) %{email}"
+      show:
+        alert:
+          failure: Verifikacioni kod nije ispravan
+        flash:
+          success: Vi ste potvrđeni korisnik
+    letter:
+      alert:
+        unconfirmed_code: Niste unijeli verifikacioni kod
+      create:
+        flash:
+          success: Hvala što se tražili svoj <b> (maksimalno zaštićeni kod) (koji je samo potreban za finalno glasanje </b>. Za nekoliko dana poslaćemo vam kod na adresu koju imamo u našim podacima. Ako želite, alternativa je da uzmete kod u bilo kojoj kancelariji za pružanje podrške građanima.
+      edit:
+        see_all: Vidi prijedloge
+        title: Zatražena poruka
+      errors:
+        incorrect_code: Verifikacioni kod nije ispravan
+      new:
+        explanation: "Za učešće u finalnom glasanju, možete:"
+        go_to_index: Vidi prijedloge
+        office: Potvrdite u bilo kojoj kancelariji za pružanje podrške građanima
+        send_letter: Pošaljite mi poruku sa kodom
+        title: Čestitke!
+        user_permission_info: Sa svojim nalogom, možete...
+      update:
+        flash:
+          success: Kod ispravan. Vaš nalog je potvrđen
+    redirect_notices:
+      already_verified: Nalog je već potvrđen
+      email_already_sent: Već smo poslali email sa linkom za verifikaciju. Ako ne možete naći email, možete tražiti da vam se ponovo pošalje email
+    residence:
+      alert:
+        unconfirmed_residency: Još uvijek niste povrdili svoje prebivalište
+      create:
+        flash:
+          success: Prebivalište potvrđeno
+      new:
+        accept_terms_text: Prihvatam %{terms_url} popisa
+        accept_terms_text_title: Prihvatam uvjete za pristup popisu
+        document_number: Broj isprave
+        document_number_help_title: Pomoć
+        document_number_help_text: "<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Residence card</strong>: X1234567P"
+        document_type:
+          passport: Pasoš
+          residence_card: Lična karta
+          spanish_id: JMBG
+        error_not_allowed_age: Nemate dovoljnu starosnu dob da učestvujete
+        error_not_allowed_postal_code: Morate se registrovati kako bi dobili potvrdu.
+        error_verifying_census: Popis nije potvrdio vaše priložene podatke. Potvrdite tačnost vaših podataka u popisu tako što ćete se obratiti gradskom vijeću ili otići u kancelariju za pružanje podrške građanima.
+        form_errors: je razlog zašto je spriječena verifikacija vašeg prebivališta
+        postal_code_note: Morate se registrovati za verifikaciju vašeg naloga
+        terms: uvjeti za pristup
+        title: Potvrdi prebivalište
+        verify_residence: Potvrdi prebivalište
+    sms:
+      create:
+        flash:
+          success: Unesite verifikacijski kod koji ste dobili u SMS-poruci
+      edit:
+        resend_sms_link: Kliknite ovdje za ponovno slanje
+        resend_sms_text: Niste dobili poruku sa verifikacijskim kodom?
+        submit_button: Pošalji
+        title: Potvrda zaštitnog koda
+      new:
+        phone: Unesite broj mobilnog telefona kako biste dobili kod
+        phone_format: "<strong><em>(Primjer: 612345678 ili +34612345678)</em></strong>"
+        phone_note: Koristimo vaš broj telefona samo da bi vam poslali kod, nećemo vas kontaktirati.
+        submit_button: Pošalji
+        title: Pošalji verifikacioni kod
+      update:
+        error: Verifikacioni kod nije ispravan
+        flash:
+          level_three:
+            success: Kod ispravan. Vaš nalog je potvrđen
+          level_two:
+            success: Kod je ispravan
+    step_1: Prebivalište
+    step_2: Verifikacioni kod
+    step_3: Finalna verifikacija
+    user_permission_debates: Učestvuj u debatama
+    user_permission_info: Nakon što potvrdite podatke, moći ćete...
+    user_permission_proposal: Kreirajte nove prijedloge
+    user_permission_support_proposal: Podržite prijedloge*
+    user_permission_votes: Učestvujte u finalnom glasanju*
+    verified_user:
+      form:
+        submit_button: Pošalji kod
+      show:
+        email_title: Emailovi
+        explanation: Trenutno imamo sljedeće podatke u registru; odaberite način na koji će vam se poslati verifikacioni kod.
+        phone_title: Brojevi telefona
+        title: Raspoloživi podaci
+        use_another_phone: Koristi drugi telefon

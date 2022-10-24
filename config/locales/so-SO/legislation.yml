@@ -6,7 +6,7 @@ so:
         see_complete: Fiiri dhamaystiran
         comments_count:
           one: "%{count} Falo"
-          other: "%{count} Falooyin"
+          other: "%{count} falooyinka"
         replies_count:
           one: "%{count} j Jawab celin"
           other: "%{count} j Jawabo celin"
@@ -14,16 +14,13 @@ so:
         publish_comment: Dabaac falada
       form:
         phase_not_open: Wejigan ma furan yahay
-        login_to_comment: Wa inaad%{signin} ama%{signup} si aad uga tagto faalo.
-        signin: Geliid
-        signup: Is diwan gelid
       index:
         title: Faalo
         comments_about: Faaloyin ku sabsan
         see_in_context: Fiiri macnaha guud
         comments_count:
           one: "%{count} Falo"
-          other: "%{count} Falooyin"
+          other: "%{count} falooyinka"
       show:
         title: Faalo
       version_chooser:
@@ -57,15 +54,12 @@ so:
           winners: Ladoortay
       debate:
         empty_questions: Wax sual ah miyeysan jirin
-        participate: Kaqayb qadashada dooda
       index:
         filter: Sifeeyee
         filters:
           open: Gedisocodka furaan
-          next: Xiga
           past: Hore
         no_open_processes: Miyeysan geedi socodku furneyn
-        no_next_processes: Ma jiraan habab loo qorsheeyay
         no_past_processes: Miyeysan geedi socodku hore
         section_header:
           icon_alt: Nidaamka Sharciga icon
@@ -83,10 +77,12 @@ so:
         see_latest_comments_title: Falada kusabsan Habkan
       shared:
         key_dates: Tarikhaha muhiimka ah
+        homepage: Bogga
         debate_dates: Dood
         draft_publication_date: Daabacaadda qoraalka
         allegations_dates: Faalo
         result_publication_date: Daabacaadda natiijada kama dambaysta ah
+        milestones_date: Kuxiga
         proposals_dates: Sojeedino
     questions:
       comments:
@@ -98,8 +94,8 @@ so:
       question:
         comments:
           zero: Falooyin majiraan
-          one: "%{count} faalo"
-          other: "%{count} faaloyin"
+          one: "%{count} Falo"
+          other: "%{count} falooyinka"
         debate: Dood
       show:
         answer_question: Soo gudbi jawaabta
@@ -110,11 +106,8 @@ so:
       participation:
         phase_not_open: Wejigan ma furan yahay
         organizations: Ururada looma oggola inay ka qaybqaataan doodda
-        signin: Geliid
-        signup: Saxiixid
         unauthenticated: Waa inaad%{signin}%{signup} inaad ka qayb qaadato.
         verified_only: Kaliya isticmaalayaasha ayaa xaqiijin kara,%{verify_account}.
-        verify_account: hubi xisaabtaada
         debate_phase_not_open: Marxaladda dooddu way dhammaatay, jawaabahana lama aqbalo
     shared:
       share: Lawadag
@@ -123,3 +116,17 @@ so:
       form:
         tags_label: "Qaybaha"
       not_verified: "Soo jeedinta cod bixinta%{verify_account}."
+      process_title: Nidaamka sharciyeed ee wadajirka ah
+    summary:
+      title: "Sookobiid"
+      votes:
+        zero: "%{count} codadka"
+      debate_phase: "Wajiga doodda"
+      proposals_phase: "Wajiga soo jeedinada"
+      allegations_phase: "Heerarka faallooyinka"
+      comments:
+        zero: "Falooyin majiraan"
+        one: "%{count} Falo"
+        other: "%{count} falooyinka"
+      top_comments:
+        zero: "Falooyin majiraan"

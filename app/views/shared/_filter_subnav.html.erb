@@ -1,8 +1,8 @@
 <ul class="menu simple clear" id="filter-subnav">
   <li class="show-for-sr"><%= t("#{i18n_namespace}.filter") %>: </li>
 
-  <% @valid_filters.each do |filter| %>
-    <% if @current_filter == filter %>
+  <% valid_filters.each do |filter| %>
+    <% if current_filter == filter %>
       <li class="is-active"><h2><%= t("#{i18n_namespace}.filters.#{filter}") %></h2></li>
     <% else %>
       <li><%= link_to t("#{i18n_namespace}.filters.#{filter}"),

@@ -1,40 +1,42 @@
 class Admin::Legislation::ProcessesController < Admin::Legislation::BaseController
   include Translatable
+  include ImageAttributes
+  include DocumentAttributes
 
-  has_filters %w{open next past all}, only: :index
+  has_filters %w[active all], only: :index
 
   load_and_authorize_resource :process, class: "Legislation::Process"
 
   def index
-    @processes = ::Legislation::Process.send(@current_filter).order('id DESC').page(params[:page])
+    @processes = ::Legislation::Process.send(@current_filter).order(start_date: :desc)
+                 .page(params[:page])
   end
 
   def create
     if @process.save
-      link = legislation_process_path(@process).html_safe
-      notice = t('admin.legislation.processes.create.notice', link: link)
+      link = legislation_process_path(@process)
+      notice = t("admin.legislation.processes.create.notice", link: link)
       redirect_to edit_admin_legislation_process_path(@process), notice: notice
     else
-      flash.now[:error] = t('admin.legislation.processes.create.error')
+      flash.now[:error] = t("admin.legislation.processes.create.error")
       render :new
     end
   end
 
   def update
     if @process.update(process_params)
-      set_tag_list
-
-      link = legislation_process_path(@process).html_safe
-      redirect_to :back, notice: t('admin.legislation.processes.update.notice', link: link)
+      link = legislation_process_path(@process)
+      redirect_back(fallback_location: (request.referer || root_path),
+                    notice: t("admin.legislation.processes.update.notice", link: link))
     else
-      flash.now[:error] = t('admin.legislation.processes.update.error')
+      flash.now[:error] = t("admin.legislation.processes.update.error")
       render :edit
     end
   end
 
   def destroy
-    @process.destroy
-    notice = t('admin.legislation.processes.destroy.notice')
+    @process.destroy!
+    notice = t("admin.legislation.processes.destroy.notice")
     redirect_to admin_legislation_processes_path, notice: notice
   end
 
@@ -66,14 +68,13 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
         :result_publication_enabled,
         :published,
         :custom_list,
+        :background_color,
+        :font_color,
+        :related_sdg_list,
         translation_params(::Legislation::Process),
-        documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
+        documents_attributes: document_attributes,
+        image_attributes: image_attributes
       ]
-    end
-
-    def set_tag_list
-      @process.set_tag_list_on(:customs, process_params[:custom_list])
-      @process.save
     end
 
     def resource

@@ -1,30 +1,27 @@
 <% provide :title do %><%= t("devise_views.sessions.new.title") %><% end %>
 <h2><%= t("devise_views.sessions.new.title") %></h2>
 
-<%= render 'devise/omniauth_form' %>
+<%= render "devise/omniauth_form", action: "sign_in" %>
 
 <p>
-  <%= t("devise_views.shared.links.signup",
-      signup_link: link_to(t("devise_views.shared.links.signup_link"), new_user_registration_path)).html_safe %>
+  <%= sanitize(t("devise_views.shared.links.signup",
+      signup_link: link_to(t("devise_views.shared.links.signup_link"), new_user_registration_path))) %>
 </p>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="row">
     <div class="small-12 column">
-      <%= f.text_field :login, autofocus: true, placeholder: t("devise_views.sessions.new.login_label") %>
+      <%= f.text_field :login, autofocus: true %>
     </div>
 
     <div class="small-12 column">
-      <%= f.password_field :password, autocomplete: "off", placeholder: t("devise_views.sessions.new.password_label") %>
+      <%= f.password_field :password, autocomplete: "off" %>
       <%= link_to t("devise_views.shared.links.new_password"), new_password_path(resource_name), class: "float-right" %>
     </div>
 
     <% if devise_mapping.rememberable? -%>
       <div class="small-12 column">
-        <%= f.label :remember_me do %>
-          <%= f.check_box :remember_me, title: t('devise_views.sessions.new.remember_me'), label: false %>
-          <span class="checkbox"><%= t("devise_views.sessions.new.remember_me") %></span>
-        <% end %>
+        <%= f.check_box :remember_me, label: t("devise_views.sessions.new.remember_me") %>
       </div>
     <% end -%>
 

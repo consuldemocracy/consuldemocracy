@@ -2,11 +2,10 @@ sq:
   devise_views:
     confirmations:
       new:
-        email_label: Email
-        submit: Ridergo instruksionet 
+        submit: Ridergo instruksionet
         title: Ridërgo udhëzimet e konfirmimit
       show:
-        instructions_html: Konfirmimi i llogarisë me email %{email}
+        instructions: Konfirmimi i llogarisë me email %{email}
         new_password_confirmation_label: Përsëritni fjalëkalimin e qasjes
         new_password_label: Fjalëkalimi i ri i qasjes
         please_set_password: Ju lutemi zgjidhni fjalëkalimin tuaj të ri (kjo do t'ju lejojë të identifikoheni me emailin e mësipërm)
@@ -15,7 +14,7 @@ sq:
     mailer:
       confirmation_instructions:
         confirm_link: Konfirmo llogarinë time
-        text: 'Ju mund të konfirmoni llogarinë tuaj të postës elektronike në lidhjen e mëposhtme:'
+        text: "Ju mund të konfirmoni llogarinë tuaj të postës elektronike në lidhjen e mëposhtme:"
         title: Mirësevini
         welcome: Mirësevini
       reset_password_instructions:
@@ -23,12 +22,12 @@ sq:
         hello: Përshëndetje
         ignore_text: Nëse nuk keni kërkuar ndryshim të fjalëkalimit, mund ta injoroni këtë email.
         info_text: Fjalëkalimi juaj nuk do të ndryshohet nëse nuk e përdorni lidhjen dhe ta redaktoni.
-        text: 'Ne kemi marrë një kërkesë për të ndryshuar fjalëkalimin tuaj. Këtë mund ta bëni në lidhjen e mëposhtme:'
+        text: "Ne kemi marrë një kërkesë për të ndryshuar fjalëkalimin tuaj. Këtë mund ta bëni në lidhjen e mëposhtme:"
         title: Ndrysho fjalëkalimin tënd
       unlock_instructions:
         hello: Përshëndetje
         info_text: Llogaria juaj është bllokuar për shkak të një numri të tepërt të përpjekjeve të dështuara identifikimi.
-        instructions_text: 'Ju lutemi klikoni në këtë link për të zhbllokuar llogarinë tuaj:'
+        instructions_text: "Ju lutemi klikoni në këtë link për të zhbllokuar llogarinë tuaj:"
         title: Llogaria juaj është bllokuar.
         unlock_link: Zhblloko llogarinë time
     menu:
@@ -39,21 +38,16 @@ sq:
     organizations:
       registrations:
         new:
-          email_label: Email
-          organization_name_label: Emri i organizatës
           password_confirmation_label: Konfirmo fjalëkalimin
-          password_label: Fjalëkalim
-          phone_number_label: Numri i telefonit
-          responsible_name_label: Emri i plotë i personit përgjegjës për kolektivin.
           responsible_name_note: Ky do të ishte personi që përfaqëson shoqatën / kolektivin në emër të të cilit paraqiten propozimet
           submit: Rregjistrohu
           title: Regjistrohuni si një organizatë ose kolektiv
         success:
           back_to_index: E kuptoj; kthehu në faqen kryesore
-          instructions_1_html: "<strong> Do t'ju kontaktojmë së shpejti</strong> për të verifikuar që ju në fakt e përfaqësoni këtë kolektiv."
-          instructions_2_html: Ndërsa <strong> emaili juaj është rishikuar </strong>, ne ju kemi dërguar një <strong> lidhje për të konfirmuar llogarinë tuaj</strong>.
-          instructions_3_html: Sapo të konfirmohet, mund të filloni të merrni pjesë si kolektiv i paverifikuar.
-          thank_you_html: Faleminderit që regjistruat kolektivin tuaj në faqen e internetit. Tani është <strong>në pritje të verifikimit</strong>.
+          instructions_1: "<b> Do t'ju kontaktojmë së shpejti</b> për të verifikuar që ju në fakt e përfaqësoni këtë kolektiv."
+          instructions_2: Ndërsa <b> emaili juaj është rishikuar </b>, ne ju kemi dërguar një <b> lidhje për të konfirmuar llogarinë tuaj</b>.
+          instructions_3: Sapo të konfirmohet, mund të filloni të merrni pjesë si kolektiv i paverifikuar.
+          thank_you: Faleminderit që regjistruat kolektivin tuaj në faqen e internetit. Tani është <b> në pritje të verifikimit</b>.
           title: Regjistrimi i organizatës / kolektivit
     passwords:
       edit:
@@ -62,13 +56,10 @@ sq:
         password_label: Fjalëkalim i ri
         title: Ndrysho fjalëkalimin tënd
       new:
-        email_label: Email
-        send_submit: Dërgo instruksionet 
+        send_submit: Dërgo instruksionet
         title: Harrruat fjalëkalimin?
     sessions:
       new:
-        login_label: Email ose emer përdoruesi
-        password_label: Fjalëkalim
         remember_me: Me mbaj mënd
         submit: Hyr
         title: Kycu
@@ -93,7 +84,7 @@ sq:
           info: Ky veprim nuk mund të zhbëhet. Ju lutemi sigurohuni që kjo është ajo që ju dëshironi.
           info_reason: Nëse dëshironi, na lini një arsye (opsionale)
           submit: Fshi llogarinë time
-          title: Fshi llogarinë 
+          title: Fshi llogarinë
         edit:
           current_password_label: Fjalëkalimi aktual
           edit: Ndrysho
@@ -103,15 +94,12 @@ sq:
           password_confirmation_label: Konfirmo fjalëkalimin
           password_label: Fjalëkalim i ri
           update_submit: Përditëso
-          waiting_for: 'Duke pritur konfirmimin e:'
+          waiting_for: "Duke pritur konfirmimin e:"
         new:
           cancel: Anulo hyrjen
-          email_label: Email
           organization_signup: A përfaqësoni një organizatë ose kolektiv? %{signup_link}
           organization_signup_link: Rregjistrohu këtu
           password_confirmation_label: Konfirmo fjalëkalimin
-          password_label: Fjalëkalim
-          redeemable_code: Kodi i verifikimit është mar përmes postës elektronike
           submit: Rregjistrohu
           terms: Duke u regjistruar ju pranoni %{terms}
           terms_link: termat dhe kushtet e përdorimit
@@ -119,11 +107,10 @@ sq:
           title: Rregjistrohu
           username_is_available: Emri  përdoruesit në dispozicion
           username_is_not_available: Emri i përdoruesit është i zënë
-          username_label: Emer përdoruesi
           username_note: Emri që shfaqet pranë postimeve tuaja
         success:
           back_to_index: E kuptoj; kthehu në faqen kryesore
-          instructions_1_html: Ju lutem <b> Kontrrolloni emaili tuaj </b>- ne ju kemi dërguar një <b> lidhje për të konfirmuar llogarinë tuaj </b>.
-          instructions_2_html: Sapo të konfirmohet, mund të filloni përdorimin.
-          thank_you_html: Faleminderit për regjistrimin në faqen e internetit. Ju duhet tani <b> të konfirmoni adresën e emailit </b>.
-          title: Konfirmoni adresen tuaj te e-mailit
+          instructions_1: Ju lutem <b> Kontrrolloni emaili tuaj </b>- ne ju kemi dërguar një <b> lidhje për të konfirmuar llogarinë tuaj </b>.
+          instructions_2: Sapo të konfirmohet, mund të filloni përdorimin.
+          thank_you: Faleminderit për regjistrimin në faqen e internetit. Ju duhet tani <b> të konfirmoni adresën e emailit </b>.
+          title: Modifiko email-in tënd

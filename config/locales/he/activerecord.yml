@@ -1,1 +1,637 @@
 he:
+  attributes:
+    geozone_id: "היקף הפעילות"
+    results_enabled: "הצג תוצאות"
+    stats_enabled: "הצג נתונים סטטיסטיים"
+    advanced_stats_enabled: "הצג נתונים סטטיסטיים מתקדמים"
+    name: Name
+    email: דואר אלקטרוני
+    description: תיאור
+  activerecord:
+    models:
+      activity:
+        one: "פעילות"
+        two: "פעילויות"
+        many: "פעילויות"
+        other: "פעילויות"
+      budget:
+        one: "תקציב"
+        two: "תקציבים"
+        many: "תקציבים"
+        other: "תקציבים"
+      budget/investment:
+        one: "השקעה"
+        two: "השקעות"
+        many: "השקעות"
+        other: "השקעות"
+      milestone:
+        one: "אבן דרך"
+        two: "אבני דרך"
+        many: "אבני דרך"
+        other: "אבני דרך"
+      milestone/status:
+        one: "סטטוס אבן דרך"
+        two: "סטטוס אבני הדרך"
+        many: "סטטוס אבני הדרך"
+        other: "סטטוס אבני הדרך"
+      progress_bar:
+        one: "סרגל התקדמות"
+        two: "סרגלי התקדמות"
+        many: "סרגלי התקדמות"
+        other: "סרגלי התקדמות"
+      comment:
+        one: "הערה"
+        two: "הערות"
+        many: "הערות"
+        other: "הערות"
+      debate:
+        one: "דיון"
+        two: "דיונים"
+        many: "דיונים"
+        other: "דיונים"
+      tag:
+        one: "תגית"
+        two: "תגיות"
+        many: "תגיות"
+        other: "תגיות"
+      user:
+        one: "משתמש"
+        two: "משתמשים"
+        many: "משתמשים"
+        other: "משתמשים"
+      moderator:
+        one: "מנחה"
+        two: "מנחים"
+        many: "מנחים"
+        other: "מנחים"
+      administrator:
+        one: "מנהל מערכת"
+        two: "מנהלי מערכת"
+        many: "מנהלי מערכת"
+        other: "מנהלי מערכת"
+      valuator:
+        one: "מעריך"
+        two: "מעריכים"
+        many: "מעריכים"
+        other: "מעריכים"
+      valuator_group:
+        one: "קבוצת מעריך"
+        two: "קבוצות מעריכים"
+        many: "קבוצות מעריכים"
+        other: "קבוצות מעריכים"
+      manager:
+        one: "מנהל"
+        two: "מנהלים"
+        many: "מנהלים"
+        other: "מנהלים"
+      newsletter:
+        one: "ידיעון"
+        two: "ידיעונים"
+        many: "ידיעונים"
+        other: "ידיעונים"
+      vote:
+        one: "הצבעה"
+        two: "הצבעות"
+        many: "הצבעות"
+        other: "הצבעות"
+      organization:
+        one: "ארגון"
+        two: "ארגונים"
+        many: "ארגונים"
+        other: "ארגונים"
+      poll/booth:
+        one: "דוכן"
+        two: "דוכנים"
+        many: "דוכנים"
+        other: "דוכנים"
+      poll/officer:
+        one: "נושא משרה"
+        two: "נושאי משרות"
+        many: "נושאי משרות"
+        other: "נושאי משרות"
+      poll/ballot_sheet:
+        one: גליון הצבעה
+        two: גיליון הצבעות
+        many: גיליון הצבעות
+        other: גיליון הצבעות
+      proposal:
+        one: "הצעת תושב"
+        two: "הצעת תושבים"
+        many: "הצעת תושבים"
+        other: "הצעת תושבים"
+      site_customization/page:
+        one: דף מותאם אישית
+        two: דפים מותאמים אישית
+        many: דפים מותאמים אישית
+        other: דפים מותאמים אישית
+      site_customization/image:
+        one: תמונה מותאמת אישית
+        two: תמונות מותאמות אישית
+        many: תמונות מותאמות אישית
+        other: תמונות מותאמות אישית
+      site_customization/content_block:
+        one: תוכן בלוק מותאם אישית
+        two: תוכני בלוקים מותאמים אישית
+        many: תוכני בלוקים מותאמים אישית
+        other: תוכני בלוקים מותאמים אישית
+      document:
+        one: מסמך
+        two: מסמכים
+        many: מסמכים
+        other: מסמכים
+      legislation/process:
+        one: "תהליך"
+        two: "תהליכים"
+        many: "תהליכים"
+        other: "תהליכים"
+      legislation/proposal:
+        one: "הצעה"
+        two: "הצעות"
+        many: "הצעות"
+        other: "הצעות"
+      legislation/draft_versions:
+        one: "גרסת טיוטה"
+        two: "גרסאות טיוטה"
+        many: "גרסאות טיוטה"
+        other: "גרסאות טיוטה"
+      legislation/questions:
+        one: "שאלה"
+        two: "שאלות"
+        many: "שאלות"
+        other: "שאלות"
+      legislation/question_options:
+        one: "אפשרויות שאלה"
+        two: "אפשרויות שאלות"
+        many: "אפשרויות שאלות"
+        other: "אפשרויות שאלות"
+      legislation/answers:
+        one: "תשובה"
+        two: "תשובות"
+        many: "תשובות"
+        other: "תשובות"
+      documents:
+        one: "מסמך"
+        two: "מסמכים"
+        many: "מסמכים"
+        other: "מסמכים"
+      images:
+        one: "תמונה"
+        two: "תמונות"
+        many: "תמונות"
+        other: "תמונות"
+      topic:
+        one: "נושא"
+        two: "נושאים"
+        many: "נושאים"
+        other: "נושאים"
+      poll:
+        one: "סקר"
+        two: "סקרים"
+        many: "סקרים"
+        other: "סקרים"
+      proposal_notification:
+        one: "התראת הצעה"
+        two: "התראת הצעות"
+        many: "הצעת התראות"
+        other: "הצעת התראות"
+      dashboard/action:
+        one: פעולת לוח המחוונים להצעה
+        two: פעולת לוח המחוונים להצעות
+        many: פעולת לוח המחוונים להצעות
+        other: פעולת לוח המחוונים להצעות
+      dashboard/administrator_task:
+        one: משימה
+        two: משימות
+        many: משימות
+        other: משימות
+      link:
+        one: קישור
+        two: קישורים
+        many: קישורים
+        other: קישורים
+    attributes:
+      budget:
+        name: "שם"
+        description_accepting: "תיאור במהלך קבלת שלב"
+        description_reviewing: "תיאור במהלך בדיקת שלב"
+        description_selecting: "תיאור במהלך בחירת שלב"
+        description_valuating: "תיאור במהלך שלב ההערכה"
+        description_balloting: "תיאור במהלך שלב ההצבעה"
+        description_reviewing_ballots: "תיאור במהלך סקירת שלב ההצבעה"
+        description_finished: "תיאור כאשר התקציב מסתיים"
+        phase: "שלב"
+        currency_symbol: "מטבע"
+      budget/translation:
+        name: "Name"
+      budget/investment:
+        heading_id: "כותרת"
+        title: "כותרת"
+        description: "תיאור"
+        external_url: "קישור למידע נוסף"
+        administrator_id: "מנהל/ת מערכת"
+        location: "מיקום (אופציונלי)"
+        organization_name: "אם אתה מציע בשם ארגון/קולקטיב, או עבור אנשים נוספים, רשום את השם שלהם"
+        image: "תמונה המייצגת את ההצעה"
+        image_title: "כותרת תמונה"
+        duration: "טווח זמן"
+        feasibility_feasible: "בר ביצוע"
+        feasibility_undecided: "Undefined"
+        feasibility_unfeasible: "אינו בר ביצוע"
+        incompatible: "סמן כלא תואם"
+        milestone_tag_list: "תגיות אבני דרך"
+        price_explanation: "ראה הסבר תמחור"
+        selected: "סמן כנבחר"
+        selected_true: "נבחר"
+        selected_false: "לא נבחר"
+        unfeasibility_explanation: "הסבר להיתכנות"
+        valuation_finished: "Valuation finished"
+        valuator_ids: "קבוצות"
+        valuation_tag_list: "תגיות"
+      budget/investment/translation:
+        title: "שם"
+        description: "תיאור"
+      geozone:
+        name: שם
+        external_code: "קוד חיצוני (אופציונלי)"
+        census_code: "קוד מפקד אוכלוסין (אופציונלי)"
+        html_map_coordinates: "HTML <מפה> נקודות ציון (אופציונלי)"
+      milestone:
+        status_id: "סטטוס עדכני (אופציונלי)"
+        title: "כותרת"
+        description: "תיאור (אופציונלי אם יש סטטוס מוקצה)"
+        publication_date: "תאריך פרסום"
+      milestone/translation:
+        description: "תיאור"
+      milestone/status:
+        name: "שם"
+        description: "תיאור (אופציונלי)"
+      progress_bar:
+        kind: "סוג"
+        title: "כותרת"
+        percentage: "התקדמות נוכחית"
+      progress_bar/kind:
+        primary: "ראשי"
+        secondary: "משני"
+      budget/group/translation:
+        name: "Group name"
+      budget/heading:
+        allow_custom_content: "אפשר חסימת תוכן"
+        latitude: "קו רוחב (אופציונלי)"
+        longitude: "קו רוחב (אופציונלי)"
+        name: "שם כותרת"
+        price: "מחיר"
+        population: "אוכלוסיה"
+      budget/heading/translation:
+        name: "Heading name"
+      budget/phase:
+        enabled: "השלב מופעל"
+        ends_at: "תאריך סיום"
+        starts_at: "תאריך פתיחה"
+      budget/phase/translation:
+        name: "Name"
+        description: "תיאור"
+        summary: "תקציר"
+      comment:
+        body: "הערות"
+        user: "משתמש/ת"
+      debate:
+        author: "מחבר/ת"
+        description: "דעה"
+        tag_list: "נושאים"
+        terms_of_service: "תנאי השימוש"
+        title: "כותרת"
+      debate/translation:
+        title: "כותרת הדיון"
+        description: "מלל הדיון"
+      proposal:
+        author: "מחבר/ת"
+        title: "כותרת"
+        question: "שאלה"
+        description: "תיאור"
+        responsible_name: "שם ושם משפחה מלא של מציע/ת ההצעה"
+        retired_reason: "הסיבה להסרת ההצעה"
+        selected: "סמן כנבחר"
+        terms_of_service: "תנאי השימוש"
+      proposal/translation:
+        title: "כותרת ההצעה"
+        description: "מלל ההצעה"
+        summary: "תקציר ההצעה"
+        retired_explanation: "הסבר"
+      user:
+        login: "כתובת דוא\"ל או שם משתמש"
+        email: "דואר אלקטרוני"
+        username: "שם המשתמש/ת"
+        password_confirmation: "אימות סיסמה"
+        password: "סיסמה"
+        current_password: "הסיסמה הנוכחית"
+        email_digest: "לקבל סיכום של ההודעות על הצעות חדשות"
+        email_on_comment: "הודיעו לי בדואר אלקטרוני בכל פעם שמישהו מעיר להצעות או לדיונים שלי"
+        email_on_comment_reply: "הודיעו לי בדואר אלקטרוני בכל פעם שמישהו מגיב על ההערות שלי"
+        email_on_direct_message: "לקבל בדואר אלקטרוני על פניות אישיות"
+        newsletter: "ארצה לקבל בדואר אלקטרוני מידע מהאתר"
+        official_position: "תפקיד נושא משרה"
+        official_position_badge: "הצג את אות הדירוג הרשמי שלי"
+        official_level: "רמת תפקיד נושא המשרה"
+        phone_number: "מספר טלפון"
+        public_activity: "השאר את פירוט הפעילויות שלי גלוי לציבור"
+        recommended_debates: "הצג המלצות לדיונים"
+        recommended_proposals: "הצג המלצות להצעות"
+        redeemable_code: "אימות הסיסמה יתקבל בדואר אלקטרוני"
+      direct_message:
+        title: "שם"
+        body: "תוכן ההודעה"
+      organization:
+        name: "שם הארגון"
+        responsible_name: "האחראי/ת לקבוצה"
+      poll:
+        name: "שם"
+        title: "Name"
+        starts_at: "תאריך פתיחה"
+        ends_at: "תאריך סיום"
+        geozone_restricted: "מוגבל על ידי האזור הגיאוגרפי"
+        summary: "תקציר"
+        description: "תיאור"
+      active_poll/translation:
+        description: "תיאור"
+      poll/booth:
+        name: "Name"
+        location: "מקום"
+      poll/translation:
+        name: "שם"
+        summary: "תקציר"
+        description: "תיאור"
+      poll/question:
+        poll_id: "הצבעה"
+        title: "שאלה"
+        summary: "תקציר"
+        description: "תיאור"
+        external_url: "קישור למידע נוסף"
+      poll/question/translation:
+        title: "שאלה"
+      poll/ballot_sheet:
+        data: נתוני ה-CSV
+        poll_id: סקר
+        officer_assignment_id: משימת בעל המשרה
+      poll/shift:
+        task: "משימה"
+      proposal_notification:
+        body: "תוכן ההודעה"
+        title: "שם"
+      signature_sheet:
+        title: "שם"
+        signable_type: "סוג החתימה"
+        signable_id: "סוג מזהה"
+        document_numbers: "מספרי המסמכים"
+      sdg/goal:
+        title: "שם"
+        description: "תיאור"
+      sdg/local_target:
+        title: "שם"
+      sdg/local_target/translation:
+        title: "שם"
+        description: "תיאור"
+      sdg/target:
+        title: "שם"
+      site_customization/page:
+        content: תוכן
+        created_at: נוצר ב
+        subtitle: תת כותרת
+        slug: אסימון
+        status: סטטוס
+        status_draft: "טיוטה"
+        status_published: "פורסם"
+        title: כותרת
+        updated_at: עודכן ב
+        more_info_flag: הצג בדף העזרה
+        print_content_flag: כפתור הדפסת תוכן
+        locale: שפה
+      site_customization/page/translation:
+        title: כותרת
+        subtitle: תת כותרת
+        content: תוכן
+      site_customization/image:
+        name: שם
+        image: תמונה
+      site_customization/content_block:
+        name: שם
+        locale: אזור
+        body: גוף
+      tag:
+        name: "הקלד/י את שם הנושא"
+      topic:
+        title: "שם"
+        description: "טקסט ראשוני"
+      banner:
+        background_color: צבע הרקע
+        font_color: צבע גופן
+        post_ended_at: "תאריך תפוגה"
+        post_started_at: "מתאריך"
+        target_url: "קישור"
+      banner/translation:
+        title: "שם"
+        description: "תיאור"
+      legislation/process:
+        title: כותרת התהליך
+        summary: תקציר
+        description: תיאור
+        additional_info: מידע נוסף
+        start_date: התחלה
+        end_date: סיום
+        debate_start_date: התחלה
+        debate_end_date: סיום
+        draft_start_date: התחלה
+        draft_end_date: סיום
+        draft_publication_date: טיוטת תאריך פרסום
+        allegations_start_date: התחלה
+        allegations_end_date: סיום
+        proposals_phase_start_date: התחלה
+        proposals_phase_end_date: סיום
+        result_publication_date: תאריך פרסום סופי לתוצאות
+        background_color: צבע הרקע
+        font_color: צבע גופן
+        homepage_enabled: "דף הבית מאופשר"
+      legislation/process/translation:
+        title: כותרת התהליך
+        summary: תקציר
+        description: תיאור
+        additional_info: מידע נוסף
+        homepage: "תיאור"
+        milestones_summary: תקציר
+      legislation/proposal:
+        description: "מלל ההצעה"
+        summary: "תקציר ההצעה"
+        title: "כותרת ההצעה"
+        video_url: "קישור לוידאו חיצוני"
+      legislation/draft_version:
+        title: גרסת כותרת
+        body: טקסט
+        changelog: שינויים
+        status: סטטוס
+        status_draft: "טיוטה"
+        status_published: "פורסם"
+        final_version: גרסה סופית
+      legislation/draft_version/translation:
+        title: גרסת כותרת
+        body: טקסט
+        changelog: שינויים
+      legislation/question:
+        title: כותרת
+        question_options: אפשרויות
+      legislation/question/translation:
+        title: שאלה
+      legislation/question_option:
+        value: ערך
+      legislation/annotation:
+        text: הערות
+      document:
+        title: כותרת
+        attachment: "צרופה"
+      image:
+        title: כותרת
+        attachment: "צרופה"
+      poll/question/answer:
+        title: תשובה
+        description: תיאור
+      poll/question/answer/translation:
+        title: תשובה
+        description: תיאור
+      poll/question/answer/video:
+        title: כותרת
+        url: מקור וידאו חיצוני
+      newsletter:
+        segment_recipient: נמענים
+        subject: נושא
+        from: "מאת"
+        body: תוכן האימייל
+      admin_notification:
+        segment_recipient: נמענים
+        title: כותרת
+        link: קישור
+        body: טקסט
+      admin_notification/translation:
+        title: כותרת
+        body: טקסט
+      widget/card:
+        label: תווית (אופציונלי)
+        title: כותרת
+        description: תיאור
+        link_text: טקסט הקישור
+        link_url: כתובת url של קישור
+        columns: מספר העמודות
+      widget/card/translation:
+        label: תווית (אופציונלי)
+        title: כותרת
+        description: תיאור
+        link_text: טקסט הקישור
+      widget/feed:
+        limit: מספר פריטים
+      dashboard/action:
+        title: כותרת
+        short_description: תיאור קצר
+        description: תיאור
+        link: קישור חיצוני
+        request_to_administrators: כלול לחצן במשאב בכדי לבקש את המשאב ממנהל המערכת
+        day_offset: כמה ימים לאחר יצירת ההצעה אתה רוצה שהיא תופעל?
+        required_supports: כמה תומכים ההצעה צריכה בכדי להיות פעילה?
+        order: באפשרותך להזין את המיקום שבה פעולה זו תוצג למשתמש ברשימת הפעולות
+        active: פעיל
+        action_type: סוג
+        action_type_proposed_action: "פעולה מוצעת"
+        action_type_resource: "משאב"
+        published_proposal: "עבור הצעות שפורסמו?"
+      dashboard/administrator_task:
+        source: מקור
+        user: בוצע על ידי
+      link:
+        label: כותרת
+        url: קישור
+      valuator:
+        description: תיאור
+        valuator_group_id: קבוצת מעריך
+        can_comment: ניתן ליצור הערות
+        can_edit_dossier: ניתן לערוך את התיק
+      valuator_group:
+        name: "Group name"
+      local_census_record:
+        document_type: סוג תעודה מזהה
+        document_number: מספר תעודה מזהה
+        date_of_birth: תאריך לידה
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "למשתמש זה יש כבר סיסמה"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "תגיות צריכות להיות קטנות מ- או שוות ל %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "הגעת למקסימום ההודעות הפרטיות ליום"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "רוחב התמונה חייב להיות לפחות%{required_min_width} פיקסלים"
+              min_image_height: "גובה התמונה חייב להיות לפחות%{required_min_height} פיקסלים"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "מקטע הנמענים אינו חוקי"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "מקטע הנמענים אינו חוקי"
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "המסמך לא במפקד האוכלוסין"
+            user_id:
+              has_voted: "המשתמש כבר הצביע"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: חייב להיות בתאריך ההתחלה או לאחריו
+            debate_end_date:
+              invalid_date_range: חייב להיות בתאריך תחילת הדיון או לאחריו
+            draft_end_date:
+              invalid_date_range: חייב להיות בתאריך ההתחלה או לאחר התחלת הטיוטה
+            allegations_end_date:
+              invalid_date_range: חייב להיות בתאריך ההתחלה או לאחר תחילת התגובות
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "תגיות צריכות להיות קטנות או שוות ל %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "תגיות צריכות להיות קטנות או שוות ל %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "עליך לחכות לפחות %{interval} ימים בין התרעות"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: "לא זוהה במאגר מפקד האוכלוסין"
+              already_voted: "כבר הצביע/ה על הצעה זו"
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "חייב להיות אותיות, מספרים, _ ו -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "רוחב חייב להיות%{required_width} פיקסלים"
+              image_height: "הגובה חייב להיות%{required_height} פיקסלים"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: "אינך כול להגיב על הערכה"
+      messages:
+        record_invalid: "האימות נכשל:%{errors}"
+        another_poll_active: יש עוד סקר פעיל לתקופה הנתונה
+        restrict_dependent_destroy:
+          has_one: "לא ניתן למחוק רשומה מכיוון שקיימת%{record} תלויה"
+          has_many: "לא ניתן למחוק את הרשומה כי תלויות%{record} קיימות"

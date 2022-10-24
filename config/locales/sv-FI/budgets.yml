@@ -1,1 +1,9 @@
 sv-FI:
+  budgets:
+    investments:
+      show:
+        votes: Röst
+      investment:
+        add: Röst
+    results:
+      ballot_lines_count: Röst

@@ -1,0 +1,68 @@
+#Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+cs:
+  devise:
+    password_expired:
+      expire_password: "Platnost hesla vypršela"
+      change_required: "Vaše heslo vypršelo"
+      change_password: "Změňte si své heslo"
+      new_password: "Nové heslo"
+      updated: "Heslo bylo úspěšně aktualizováno"
+    confirmations:
+      confirmed: "Váš účet byl potvrzen."
+      send_instructions: "Během pár minut obdržíte e-mail s pokyny k obnovení hesla."
+      send_paranoid_instructions: "Je-li vaše e-mailová adresa v naší databázi, během pár minut obdržíte e-mail s pokyny k obnovení hesla."
+    failure:
+      already_authenticated: "Jste již přihlášeni."
+      inactive: "Váš účet nebyl dosud aktivován."
+      invalid: "Neplatný %{authentication_keys} nebo heslo."
+      locked: "Váš účet byl uzamčen."
+      last_attempt: "Máte ještě jeden další pokus, než váš účet bude zablokován."
+      not_found_in_database: "Neplatný %{authentication_keys} nebo heslo."
+      timeout: "Platnost vaší relace vypršela. Chcete-li pokračovat, přihlaste se znovu."
+      unauthenticated: "Pro pokračování se musíte přihlásit nebo registrovat."
+      unconfirmed: "Chcete-li pokračovat, klikněte na potvrzovací odkaz, který vám byl zaslán e-mailem"
+    mailer:
+      confirmation_instructions:
+        subject: "Pokyny pro potvrzení"
+      reset_password_instructions:
+        subject: "Pokyny k obnovení hesla"
+      unlock_instructions:
+        subject: "Pokyny k odblokování"
+    omniauth_callbacks:
+      failure: "Nebylo možné Vás autorizovat jako %{kind} protože \"%{reason}\"."
+      success: "Úspěšně byl identifikován jako %{kind}."
+    passwords:
+      no_token: "Na tuto stránku nemůžete přistupovat jinak než odkazem pro obnovení hesla. Pokud se tak stalo prostřednictvím odkazu pro obnovení hesla, zkontrolujte, zda je adresa URL kompletní."
+      send_instructions: "Během pár minut obdržíte e-mail s pokyny k obnovení hesla."
+      send_paranoid_instructions: "Je-li vaše e-mailová adresa je v naší databázi, během pár minut obdržíte odkaz použít k obnovení hesla."
+      updated: "Vaše heslo bylo úspěšně změněno. Ověření bylo úspěšné."
+      updated_not_active: "Vaše heslo bylo úspěšně změněno."
+    registrations:
+      destroyed: "Na shledanou! Váš účet byl zrušen. Doufáme, že se někdy vrátíte zpět."
+      signed_up: "Vítejte! Ověření bylo úspěšné."
+      signed_up_but_inactive: "Registrace byla úspěšná, ale nemohli jste být přihlášeni, protože váš účet nebyl aktivován."
+      signed_up_but_locked: "Registrace byla úspěšná, ale nemohli jste být přihlášeni, protože váš účet je uzamčen."
+      signed_up_but_unconfirmed: "Byla vám zaslána zpráva s ověřovacím odkazem. Kliknutím na tento odkaz aktivujete svůj účet."
+      update_needs_confirmation: "Účet byl úspěšně aktualizován. musíme však ověřit vaši novou e-mailovou adresu. Zkontrolujte e-mail a kliknutím na odkaz dokončete potvrzení vaší nové e-mailové adresy."
+      updated: "Účet byl úspěšně aktualizován."
+    sessions:
+      signed_in: "Byli jste úspěšně přihlášeni."
+      signed_out: "Byli jste úspěšně odhlášeni."
+      already_signed_out: "Byli jste úspěšně odhlášeni."
+    unlocks:
+      send_instructions: "Během několika minut obdržíte e-mail obsahující pokyny k odemčení účtu."
+      send_paranoid_instructions: "Pokud máte účet, během několika minut obdržíte e-mail obsahující pokyny k odemčení účtu."
+      unlocked: "Váš účet byl odemčen. Chcete-li pokračovat, přihlaste se."
+  errors:
+    messages:
+      already_confirmed: "Byl jste již ověřen; prosím, pokuste se přihlásit."
+      confirmation_period_expired: "Musíte být ověřeni během %{period}; prosím, opakujte žádost."
+      expired: "vypršela platnost; prosím, opakujte žádost."
+      not_found: "nebylo nalezeno."
+      not_locked: "nebyl uzamčen."
+      not_saved:
+        one: "1 chyba zabránila uložení %{resource}. Zkontrolujte označené pole a pokuste se ji opravit:"
+        few: "%{count} chyby zabránily uložení %{resource}. Zkontrolujte označená pole a pokuste se je opravit:"
+        many: "%{count} chyb zabránilo uložení %{resource}. Zkontrolujte označená pole a pokuste se je opravit:"
+        other: "%{count} chyb zabránilo uložení %{resource}. Zkontrolujte označená pole a pokuste se je opravit:"
+      equal_to_current_password: "musí být jiné než současné heslo."

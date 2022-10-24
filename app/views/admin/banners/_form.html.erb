@@ -1,29 +1,15 @@
-<%= render "admin/shared/globalize_locales", resource: @banner %>
+<%= render "shared/globalize_locales", resource: @banner %>
 
 <%= translatable_form_for [:admin, @banner] do |f| %>
 
-  <%= render 'errors' %>
+  <%= render "shared/errors", resource: @banner %>
 
   <div class="row">
-    <% date_started_at = @banner.post_started_at.present? ? I18n.localize(@banner.post_started_at) : "" %>
     <div class="small-12 medium-3 column">
-      <%= f.label :post_started_at, t("admin.banners.banner.post_started_at") %>
-      <%= f.text_field :post_started_at,
-                        label: false,
-                        placeholder: t("admin.banners.banner.post_started_at"),
-                        value: date_started_at,
-                        class: "js-calendar-full",
-                        id: "post_started_at" %>
+      <%= f.date_field :post_started_at, id: "post_started_at" %>
     </div>
-    <% date_ended_at = @banner.post_ended_at.present? ? I18n.localize(@banner.post_ended_at) : ""%>
     <div class="small-12 medium-3 column end">
-      <%= f.label :post_ended_at, t("admin.banners.banner.post_ended_at") %>
-      <%= f.text_field  :post_ended_at,
-                        label: false,
-                        placeholder: t("admin.banners.banner.post_ended_at"),
-                        value: date_ended_at,
-                        class: "js-calendar-full",
-                        id: "post_ended_at" %>
+      <%= f.date_field :post_ended_at, id: "post_ended_at" %>
     </div>
   </div>
 
@@ -31,48 +17,58 @@
     <%= f.translatable_fields do |translations_form| %>
       <div class="small-12 medium-6 column">
         <%= translations_form.text_field :title,
-          placeholder: t("admin.banners.banner.title"),
-          data: {js_banner_title: "js_banner_title"},
-          label: t("admin.banners.banner.title") %>
+          data: { js_banner_title: "js_banner_title" } %>
       </div>
 
       <div class="small-12 column">
         <%= translations_form.text_field :description,
-          placeholder: t("admin.banners.banner.description"),
-          data: {js_banner_description: "js_banner_description"},
-          label: t("admin.banners.banner.description")  %>
+          data: { js_banner_description: "js_banner_description" } %>
       </div>
     <% end %>
   </div>
 
   <div class="row">
     <div class="small-12 medium-6 column">
-      <%= f.label :target_url, t("admin.banners.banner.target_url") %>
-      <%= f.text_field :target_url,
-                        label: false,
-                        placeholder: t("admin.banners.banner.target_url") %>
+      <%= f.text_field :target_url %>
     </div>
   </div>
 
   <div class="row">
-    <div class="small-12 column">
-      <%= f.label :sections, t("admin.banners.banner.sections_label") %>
+    <fieldset class="small-12 column">
+      <legend><%= t("admin.banners.banner.sections_label") %></legend>
       <%= f.collection_check_boxes(:web_section_ids, @banner_sections, :id, :name) do |b| %>
-        <%= b.check_box %> <%= t("admin.banners.banner.sections.#{b.text}") %><br>
+        <%= b.label do %>
+          <%= b.check_box + t("admin.banners.banner.sections.#{b.text}") %>
+        <% end %>
       <% end %>
-    </div>
+    </fieldset>
   </div>
 
   <div class="row">
-    <div class="small-3 column">
-      <%= f.label :sections, t("admin.banners.banner.background_color") %>
-      <%= color_field(:banner, :background_color, id: 'banner_background_color_picker') %>
-      <%= f.text_field :background_color, label: false %>
+    <div class="small-12 medium-6 large-3 column">
+      <%= f.label :background_color, nil, for: "background_color_input" %>
+      <p class="help-text"><%= t("admin.shared.color_help") %></p>
+      <div class="row collapse">
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :background_color, label: false, type: :color %>
+        </div>
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :background_color, label: false, id: "background_color_input" %>
+        </div>
+      </div>
     </div>
-    <div class="small-3 column end">
-      <%= f.label :sections, t("admin.banners.banner.font_color") %>
-      <%= color_field(:banner, :font_color, id: 'banner_font_color_picker') %>
-      <%= f.text_field :font_color, label: false %>
+
+    <div class="small-12 medium-6 large-3 column end">
+      <%= f.label :font_color, nil, for: "font_color_input" %>
+      <p class="help-text"><%= t("admin.shared.color_help") %></p>
+      <div class="row collapse">
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :font_color, label: false, type: :color %>
+        </div>
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :font_color, label: false, id: "font_color_input" %>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -81,10 +77,8 @@
       <%= f.submit(class: "button expanded", value: t("admin.banners.edit.form.submit_button")) %>
     </div>
   </div>
-  <div id="js-banner-background" class="banner" style="background-color:<%= @banner.background_color %>">
-    <%= link_to @banner.target_url do %>
-      <h2 id="js-banner-title" style="color:<%= @banner.font_color %>"><%= @banner.title %></h2>
-      <h3 id="js-banner-description" style="color:<%= @banner.font_color %>"><%= @banner.description %></h3>
-    <% end %>
+
+  <div class="row">
+    <%= render Shared::BannerComponent.new(@banner) %>
   </div>
 <% end %>

@@ -1,12 +1,13 @@
 class Budget
-  class Ballot < ActiveRecord::Base
+  class Ballot < ApplicationRecord
     belongs_to :user
     belongs_to :budget
+    belongs_to :poll_ballot, class_name: "Poll::Ballot"
 
     has_many :lines, dependent: :destroy
     has_many :investments, through: :lines
-    has_many :groups, -> { uniq }, through: :lines
-    has_many :headings, -> { uniq }, through: :groups
+    has_many :groups, -> { distinct }, through: :lines
+    has_many :headings, -> { distinct }, through: :groups
 
     def add_investment(investment)
       lines.create(investment: investment).persisted?
@@ -14,22 +15,6 @@ class Budget
 
     def total_amount_spent
       investments.sum(:price).to_i
-    end
-
-    def amount_spent(heading)
-      investments.by_heading(heading.id).sum(:price).to_i
-    end
-
-    def formatted_amount_spent(heading)
-      budget.formatted_amount(amount_spent(heading))
-    end
-
-    def amount_available(heading)
-      budget.heading_price(heading) - amount_spent(heading)
-    end
-
-    def formatted_amount_available(heading)
-      budget.formatted_amount(amount_available(heading))
     end
 
     def has_lines_in_group?(group)
@@ -67,9 +52,30 @@ class Budget
 
     def heading_for_group(group)
       return nil unless has_lines_in_group?(group)
-      investments.where(group: group).first&.heading
+      #investments.where(group: group).first&.heading
+
+      investments.find_by(group: group).heading
     end
 
+    def casted_offline?
+      budget.poll&.voted_by?(user)
+    end
+
+    def voting_style
+      @voting_style ||= voting_style_class.new(self)
+    end
+    delegate :amount_available, :amount_available_info, :amount_progress, :amount_spent,
+             :amount_spent_info, :amount_limit, :amount_limit_info, :change_vote_info,
+             :enough_resources?, :formatted_amount_available, :formatted_amount_limit,
+             :formatted_amount_spent, :not_enough_resources_error, :percentage_spent,
+             :reason_for_not_being_ballotable, :voted_info,
+             to: :voting_style
+
+    private
+
+      def voting_style_class
+        "Budget::VotingStyles::#{budget.voting_style.camelize}".constantize
+      end
   end
 end
 

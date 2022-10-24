@@ -16,8 +16,7 @@ fa:
       create_first_community_topic:
         first_theme_not_logged_in: هیچ موضوعی در دسترس نیست، مشارکت در ایجاد اولین.
         first_theme: ایجاد اولین موضوع جامعه
-        sign_in: "ورود به برنامه"
-        sign_up: "ثبت نام"
+        sub_first_theme: "برای ایجاد تم شما باید %{sign_in} درجه %{sign_up}."
       tab:
         participants: شرکت کنندگان
       sidebar:
@@ -36,8 +35,6 @@ fa:
       create: ایجاد موضوع
       edit: ویرایش موضوع
       form:
-        topic_title: عنوان
-        topic_text: متن اولیه
         new:
           submit_button: ایجاد موضوع
         edit:
@@ -45,7 +42,7 @@ fa:
         create:
           submit_button: ایجاد موضوع
         update:
-          submit_button: به روز رسانی موضوع 
+          submit_button: به روز رسانی موضوع
       show:
         tab:
           comments_tab: توضیحات
@@ -54,6 +51,3 @@ fa:
         recommendation_one: عنوان یا جملات کامل را در حروف بزرگ ننویسید.. در اینترنت به عنوان فریاد در نظر گرفته می شود. و هیچ کس فریاد زدن را دوست ندارد.
         recommendation_two: هر موضوع یا نظری که شامل یک اقدام غیرقانونی است، حذف خواهد شد، همچنین کسانی که قصد خرابکاری از فضاهای موضوع را دارند، هر چیز غیر از این مجاز است.
         recommendation_three: از این فضا لذت ببرید، صدایی که آن را پر می کند، آن هم شما هستید.
-  topics:
-    show:
-      login_to_comment: شما باید %{signin} یا %{signup} کنید برای نظر دادن.

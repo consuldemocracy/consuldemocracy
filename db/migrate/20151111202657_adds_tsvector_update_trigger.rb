@@ -1,5 +1,4 @@
-class AddsTsvectorUpdateTrigger < ActiveRecord::Migration
-
+class AddsTsvectorUpdateTrigger < ActiveRecord::Migration[4.2]
   def up
     add_column :proposals, :tsv, :tsvector
     add_index :proposals, :tsv, using: "gin"
@@ -9,5 +8,4 @@ class AddsTsvectorUpdateTrigger < ActiveRecord::Migration
     remove_index :proposals, :tsv
     remove_column :proposals, :tsv
   end
-
 end

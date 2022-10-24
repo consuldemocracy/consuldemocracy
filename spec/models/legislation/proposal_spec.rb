@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Legislation::Proposal do
   let(:proposal) { build(:legislation_proposal) }
@@ -27,7 +27,7 @@ describe Legislation::Proposal do
     expect(proposal).not_to be_valid
   end
 
-  describe '#hot_score' do
+  describe "#hot_score" do
     let(:now) { Time.current }
 
     it "period is correctly calculated to get exact votes per day" do
@@ -47,7 +47,7 @@ describe Legislation::Proposal do
     it "remains the same for not voted proposals" do
       new = create(:legislation_proposal, created_at: now)
       old = create(:legislation_proposal, created_at: 1.day.ago)
-      older = create(:legislation_proposal, created_at: 2.month.ago)
+      older = create(:legislation_proposal, created_at: 2.months.ago)
       expect(new.hot_score).to be 0
       expect(old.hot_score).to be 0
       expect(older.hot_score).to be 0
@@ -67,7 +67,7 @@ describe Legislation::Proposal do
       newer_proposal = create(:legislation_proposal, created_at: now)
       5.times { newer_proposal.vote_by(voter: create(:user), vote: "yes") }
 
-      older_proposal = create(:legislation_proposal, created_at: 1.day.ago)
+      older_proposal = create(:legislation_proposal, created_at: 2.days.ago)
       5.times { older_proposal.vote_by(voter: create(:user), vote: "yes") }
 
       expect(newer_proposal.hot_score).to be > older_proposal.hot_score
@@ -83,8 +83,7 @@ describe Legislation::Proposal do
       expect(newer_proposal.hot_score).to be > older_proposal.hot_score
     end
 
-    describe 'actions which affect it' do
-
+    describe "actions which affect it" do
       let(:proposal) { create(:legislation_proposal) }
 
       before do

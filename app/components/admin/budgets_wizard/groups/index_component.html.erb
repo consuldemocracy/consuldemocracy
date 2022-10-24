@@ -1,0 +1,11 @@
+<%= back_link_to edit_admin_budgets_wizard_budget_path(budget), t("admin.budgets_wizard.groups.back") %>
+
+<%= header %>
+
+<%= render Admin::Budgets::HelpComponent.new("groups") %>
+<%= render Admin::BudgetsWizard::CreationTimelineComponent.new("groups") %>
+
+<% unless single_heading? %>
+  <%= render Admin::BudgetGroups::GroupsComponent.new(groups) %>
+<% end %>
+<%= render Admin::BudgetsWizard::Groups::CreationStepComponent.new(new_group, groups.first) %>

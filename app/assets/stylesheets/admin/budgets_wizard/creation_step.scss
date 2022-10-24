@@ -1,0 +1,50 @@
+.budget-creation-step {
+
+  .add {
+    @include has-fa-icon(plus-square, solid);
+    @include regular-button;
+
+    font-weight: bold;
+    padding-left: rem-calc(10);
+
+    &::before {
+      margin-right: rem-calc(12);
+    }
+
+    &[aria-expanded="false"] {
+      ~ :not(.next-step) {
+        display: none;
+      }
+    }
+
+    &[aria-expanded="true"] {
+      display: none;
+
+      ~ .next-step {
+        display: none;
+      }
+    }
+  }
+
+  .cancel {
+    display: block;
+    margin-bottom: $line-height;
+  }
+
+  .next-step {
+    @include regular-button;
+  }
+
+  a {
+    &.next-step {
+      @include button-style($success-color, auto, auto);
+    }
+  }
+
+  p {
+    &.next-step {
+      @include button-style($secondary-color, auto, auto);
+      @include button-disabled;
+    }
+  }
+}

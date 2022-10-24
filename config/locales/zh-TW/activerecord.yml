@@ -1,4 +1,11 @@
 zh-TW:
+  attributes:
+    geozone_id: "經營範圍"
+    results_enabled: "顯示結果"
+    stats_enabled: "顯示統計資訊"
+    name: 名字
+    email: 電郵
+    description: 描述
   activerecord:
     models:
       activity:
@@ -16,19 +23,19 @@ zh-TW:
       user:
         other: "用戶"
       moderator:
-        other: "版主"
+        other: "審核員"
       administrator:
         other: "管理員"
       valuator:
         other: "評估員"
       valuator_group:
-        other: "評估小組"
+        other: "評估組"
       manager:
         other: "經理"
       newsletter:
         other: "通訊"
       vote:
-        other: "票"
+        other: "投票數"
       organization:
         other: "組織"
       poll/booth:
@@ -37,16 +44,18 @@ zh-TW:
         other: "職員"
       proposal:
         other: "公民提議"
-      spending_proposal:
-        other: "投資項目"
       site_customization/page:
-        other: 自定義頁面
+        other: 自訂頁
       site_customization/image:
-        other: 自定義圖像
+        other: 自訂圖像
       site_customization/content_block:
-        other: 自定義內容塊
+        other: 自訂內容塊
+      document:
+        other: 文檔
       legislation/process:
         other: "過程"
+      legislation/proposal:
+        other: "建議"
       legislation/draft_versions:
         other: "草稿版本"
       legislation/questions:
@@ -56,7 +65,7 @@ zh-TW:
       legislation/answers:
         other: "答案"
       documents:
-        other: "文件"
+        other: "文檔"
       images:
         other: "圖像"
       topic:
@@ -64,7 +73,7 @@ zh-TW:
       poll:
         other: "投票"
       proposal_notification:
-        other: "提議通知"
+        other: "建議通知"
     attributes:
       budget:
         name: "名字"
@@ -77,82 +86,181 @@ zh-TW:
         description_finished: "預算完成時的說明"
         phase: "階段"
         currency_symbol: "貨幣"
+      budget/translation:
+        name: "名字"
       budget/investment:
         heading_id: "標題"
         title: "標題"
-        description: "說明"
-        external_url: "鏈接到其他文檔"
+        description: "描述"
+        external_url: "鏈接到額外文檔"
         administrator_id: "管理員"
         location: "地點 (可選擇填寫)"
         organization_name: "如果您以集體/組織的名義，或代表多人提出建議，請寫下其名稱"
         image: "建議說明性圖像"
         image_title: "圖像標題"
+        duration: "時間範圍"
+        feasibility_feasible: "可行"
+        feasibility_undecided: "未定義"
+        feasibility_unfeasible: "不可行"
+        incompatible: "標記為不相容"
+        price_explanation: "價格說明"
+        selected: "標記為已選中"
+        selected_true: "已選擇"
+        selected_false: "未被選擇"
+        unfeasibility_explanation: "可行性的解釋"
+        valuation_finished: "評估完成"
+        valuator_ids: "組"
+        valuation_tag_list: "標籤"
+      budget/investment/translation:
+        title: "標題"
+        description: "描述"
+      geozone:
+        name: 名字
+      milestone:
+        status_id: "當前投資狀況 (可選擇填寫)"
+        title: "標題"
+        description: "說明 (如果已經指定了狀態, 則可選擇填寫)"
+        publication_date: "發佈日期"
+      milestone/translation:
+        description: "描述"
+      milestone/status:
+        name: "名字"
+        description: "說明 (可選擇填寫)"
+      progress_bar:
+        kind: "類型"
+        title: "標題"
+      budget/group/translation:
+        name: "組名字"
       budget/heading:
         name: "標題名稱"
         price: "價格"
         population: "人口"
+      budget/heading/translation:
+        name: "標題名稱"
+      budget/phase:
+        enabled: "啟用階段"
+        ends_at: "結束日期"
+        starts_at: "開始日期"
+      budget/phase/translation:
+        name: "名字"
+        description: "描述"
+        summary: "總結"
       comment:
         body: "評論"
         user: "用戶"
       debate:
         author: "作者"
         description: "意見"
+        tag_list: "主題"
         terms_of_service: "服務條款"
         title: "標題"
+      debate/translation:
+        title: "辯論標題"
+        description: "初始辯論文本"
       proposal:
         author: "作者"
         title: "標題"
         question: "問題"
-        description: "說明"
+        description: "描述"
+        responsible_name: "提交建議的人的全名"
+        retired_reason: "把建議撤回的原因"
+        selected: "標記為已選中"
         terms_of_service: "服務條款"
+      proposal/translation:
+        title: "建議標題"
+        description: "建議文本"
+        summary: "建議摘要"
+        retired_explanation: "解釋"
       user:
-        login: "電子郵件或用戶名"
+        login: "電郵或用戶名"
         email: "電郵"
         username: "用戶名"
         password_confirmation: "密碼確認"
         password: "密碼"
         current_password: "當前密碼"
-        phone_number: "電話號碼"
+        email_digest: "接收建議通知的摘要"
+        email_on_comment: "當有人評論我的建議或辯論時，通過電郵通知我"
+        email_on_comment_reply: "當有人回覆我的評論時，通過電郵通知我"
+        email_on_direct_message: "以電郵接收有關直接消息（direct messages）"
+        newsletter: "通過電郵接收網站相關信息"
         official_position: "正式職位"
+        official_position_badge: "顯示官方職位徽章"
         official_level: "正式級別"
+        phone_number: "電話號碼"
+        public_activity: "把我的活動清單公開"
+        recommended_debates: "顯示辯論推薦"
+        recommended_proposals: "顯示建議推薦"
         redeemable_code: "通過電子郵件收到的驗證代碼"
+      direct_message:
+        title: "標題"
+        body: "消息"
       organization:
         name: "組織名稱"
         responsible_name: "組織的負責人"
-      spending_proposal:
-        administrator_id: "管理員"
-        association_name: "協會名稱"
-        description: "說明"
-        external_url: "鏈接到其他文檔"
-        geozone_id: "經營範圍"
-        title: "標題"
       poll:
         name: "名字"
+        title: "名字"
         starts_at: "開始日期"
         ends_at: "截止日期"
         geozone_restricted: "受地理區域（geozone）限制"
         summary: "總結"
-        description: "說明"
+        description: "描述"
+      active_poll/translation:
+        description: "描述"
+      poll/booth:
+        name: "名字"
+        location: "位置"
+      poll/translation:
+        name: "名字"
+        summary: "總結"
+        description: "描述"
       poll/question:
+        poll_id: "投票"
         title: "問題"
         summary: "總結"
-        description: "說明"
-        external_url: "鏈接到其他文檔"
+        description: "描述"
+        external_url: "鏈接到額外文檔"
+      poll/question/translation:
+        title: "問題"
+      poll/ballot_sheet:
+        poll_id: 投票
+      poll/shift:
+        task: "任務"
+      proposal_notification:
+        body: "消息"
+        title: "標題"
       signature_sheet:
+        title: "標題"
         signable_type: "可簽名類型"
         signable_id: "可簽名 ID"
         document_numbers: "文檔編號"
+      sdg/goal:
+        title: "標題"
+        description: "描述"
+      sdg/local_target:
+        title: "標題"
+      sdg/local_target/translation:
+        title: "標題"
+        description: "描述"
+      sdg/target:
+        title: "標題"
       site_customization/page:
         content: 內容
         created_at: 創建於
         subtitle: 副標題
         slug: Slug
         status: 狀態
+        status_draft: "草稿"
+        status_published: "發表"
         title: 標題
         updated_at: 更新於
         more_info_flag: 在説明頁中顯示
         print_content_flag: '"列印內容" 按鈕'
         locale: 語言
+      site_customization/page/translation:
+        title: 標題
+        subtitle: 副標題
+        content: 內容
       site_customization/image:
         name: 名字
         image: 圖像
@@ -160,57 +268,124 @@ zh-TW:
         name: 名字
         locale: 地區
         body: 內容
+      tag:
+        name: "鍵入主題的名稱"
+      topic:
+        title: "標題"
+        description: "初始文本"
+      banner:
+        post_ended_at: "通告結束於"
+        post_started_at: "通告開始於"
+        target_url: "鏈接"
+      banner/translation:
+        title: "標題"
+        description: "描述"
       legislation/process:
         title: 進程標題
         summary: 總結
-        description: 說明
+        description: 描述
         additional_info: 附加其他資訊
         start_date: 開始日期
         end_date: 結束日期
         debate_start_date: 辯論開始日期
         debate_end_date: 辯論結束日期
+        draft_start_date: 開始
+        draft_end_date: 結束
         draft_publication_date: 草稿發佈日期
         allegations_start_date: 指控開始日期
         allegations_end_date: 指控結束日期
+        proposals_phase_start_date: 開始
+        proposals_phase_end_date: 結束
         result_publication_date: 最終結果發佈日期
+      legislation/process/translation:
+        title: 進程標題
+        summary: 總結
+        description: 描述
+        additional_info: 附加其他資訊
+        homepage: "描述"
+        milestones_summary: 總結
+      legislation/proposal:
+        description: "建議文本"
+        summary: "建議摘要"
+        title: "建議標題"
+        video_url: "鏈接到外部視頻"
       legislation/draft_version:
         title: 版本標題
         body: 文本
-        changelog: 變化
+        changelog: 更改
         status: 狀態
+        status_draft: "草稿"
+        status_published: "發表"
         final_version: 最終版本
+      legislation/draft_version/translation:
+        title: 版本標題
+        body: 文本
+        changelog: 變化
       legislation/question:
         title: 標題
         question_options: 選項
+      legislation/question/translation:
+        title: 問題
       legislation/question_option:
         value: 價值
       legislation/annotation:
         text: 評論
       document:
         title: 標題
-        attachment: 附件
+        attachment: "附件"
       image:
         title: 標題
-        attachment: 附件
+        attachment: "附件"
       poll/question/answer:
-        title: 答案
-        description: 說明
+        title: 回答
+        description: 描述
+      poll/question/answer/translation:
+        title: 回答
+        description: 描述
       poll/question/answer/video:
         title: 標題
         url: 外部視頻
       newsletter:
         segment_recipient: 收件者
         subject: 主題
-        from: 從
-        body: 電子郵件內容
+        from: "從"
+        body: 電郵內容
+      admin_notification:
+        segment_recipient: 收件者
+        title: 標題
+        link: 鏈接
+        body: 文本
+      admin_notification/translation:
+        title: 標題
+        body: 文本
       widget/card:
         label: 標籤 (可選擇填寫)
         title: 標題
-        description: 說明
+        description: 描述
         link_text: 鏈接文本
         link_url: 鏈接 URL
+      widget/card/translation:
+        label: 標籤 (可選擇填寫)
+        title: 標題
+        description: 描述
+        link_text: 鏈接文本
       widget/feed:
         limit: 項目數
+      dashboard/action:
+        title: 標題
+        description: 描述
+        active: 活躍
+        action_type: 類型
+      link:
+        label: 標題
+      valuator:
+        description: 描述
+      valuator_group:
+        name: "組名字"
+      local_census_record:
+        document_type: 文檔類型
+        document_number: 文檔編號
+        date_of_birth: 出生日期
     errors:
       models:
         user:
@@ -220,7 +395,7 @@ zh-TW:
         debate:
           attributes:
             tag_list:
-              less_than_or_equal_to: "標記必須小於或等於%{count}"
+              less_than_or_equal_to: "標記必須小於或等於 %{count}"
         direct_message:
           attributes:
             max_per_day:
@@ -238,14 +413,11 @@ zh-TW:
           attributes:
             segment_recipient:
               invalid: "用戶收件段無效"
-        map_location:
-          attributes:
-            map:
-              invalid: 地圖位置不能為空。 如果不需要地理定位（geolocalization），請放置標記，或選中復選框
         poll/voter:
           attributes:
             document_number:
               not_in_census: "不在人口普查中的文檔"
+            user_id:
               has_voted: "用戶已經投票"
         legislation/process:
           attributes:
@@ -258,7 +430,7 @@ zh-TW:
         proposal:
           attributes:
             tag_list:
-              less_than_or_equal_to: "標記必須小於或等於 %{count}"
+              less_than_or_equal_to: "標記必須小於或等於%{count}"
         budget/investment:
           attributes:
             tag_list:
@@ -270,8 +442,8 @@ zh-TW:
         signature:
           attributes:
             document_number:
-              not_in_census: '未通過人口普查核實'
-              already_voted: '這個提案已經被投票'
+              not_in_census: "未通過人口普查核實"
+              already_voted: "這個提案已經被投票"
         site_customization/page:
           attributes:
             slug:
@@ -284,9 +456,9 @@ zh-TW:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: '你不能對評估作評論'
+              cannot_comment_valuation: "你不能對評估作評論"
       messages:
-        record_invalid: "驗證失敗: %{errors}"
+        record_invalid: "驗證失敗：%{errors}"
         restrict_dependent_destroy:
           has_one: "無法刪除記錄, 因為有依賴的%{record} 存在"
           has_many: "無法刪除記錄, 因為有依賴的%{record} 存在"

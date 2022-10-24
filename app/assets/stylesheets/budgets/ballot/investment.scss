@@ -1,0 +1,47 @@
+.ballot-list li {
+  $side-padding: $line-height / 2;
+  $close-icon-size: rem-calc(20);
+  $close-icon-margin: rem-calc(6);
+
+  background: #f1f1f1;
+  border-radius: rem-calc(12);
+  line-height: $line-height;
+  margin-bottom: $line-height / 4;
+  padding: $line-height $side-padding;
+  position: relative;
+
+  a {
+    color: inherit;
+  }
+
+  .ballot-list-title {
+    display: block;
+    padding-right: calc(#{$close-icon-size} + #{$close-icon-margin} - #{$side-padding});
+  }
+
+  .ballot-list-price {
+    @include brand-text;
+    display: block;
+    font-weight: bold;
+    margin-top: $line-height / 2;
+    text-align: right;
+  }
+
+  .remove-budget-investment {
+    @include has-fa-icon(times, solid);
+    font-size: $close-icon-size;
+    position: absolute;
+    right: $close-icon-margin;
+    top: $close-icon-margin;
+  }
+
+  &:hover {
+    @include brand-background;
+
+    span {
+      color: inherit;
+      outline: 0;
+      text-decoration: none;
+    }
+  }
+}

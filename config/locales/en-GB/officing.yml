@@ -1,1 +1,44 @@
 en-GB:
+  officing:
+    menu:
+      voters: Перевірити документ
+    poll_budgets:
+      index:
+        ballot_sheet_name: Назва
+        ballot_sheet_author: Автор
+        ballot_sheet_creation_date: Дата створення
+      new:
+        booth: Кабінка
+        select_booth: Обрати кабінку
+        csv_data: Дані CSV
+        submit: Зберегти
+      show:
+        created_at: Дата створення
+        author: Автор
+        data: Дані CSV
+    results:
+      new:
+        booth: "Кабінка"
+        date: "Дата"
+        select_booth: "Обрати кабінку"
+        ballots_white: "Порожні бюлетені"
+        ballots_null: "Недійсні бюлетені"
+        ballots_total: "Дійсні бюлетені"
+        submit: "Зберегти"
+        see_results: "Переглянути результати"
+      index:
+        results: Результати
+        table_answer: Відповідь
+        table_votes: Голоси
+        table_whites: "Порожні бюлетені"
+        table_nulls: "Недійсні бюлетені"
+        table_total: "Дійсні бюлетені"
+    residence:
+      new:
+        title: Перевірити документ
+        submit: Перевірити документ
+    voters:
+      new:
+        title: Голосування
+        table_poll: Голосування
+        table_actions: Дії

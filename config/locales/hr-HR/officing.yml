@@ -1,0 +1,89 @@
+hr:
+  officing:
+    header:
+      title: Anketiranje
+    dashboard:
+      index:
+        title: Službeno prebrojavanje
+        info: Ovdje možete potvrditi dokumente korisnika i spremiti rezultate glasova
+        no_shifts: Danas nemate službene smjene.
+    menu:
+      voters: Potvrdi dokument
+      total_recounts: Ukupno prebrojavanja i rezultata
+    polls:
+      final:
+        title: Ankee spremne za finalno prebrojavanje
+        no_polls: Nemate službeno prebrojavanje u nijednoj aktivnoj anketi
+        select_poll: Odaberi anketu
+        add_results: Dodaj rezultate
+    poll_budgets:
+      see_ballot_sheets: Vidi glasačke liste
+      index:
+        title: "%{poll_budget} - Glasačke liste"
+        ballot_sheet: "Glasačke liste %{id}"
+        ballot_sheet_name: Ime
+        ballot_sheet_author: Autor
+        ballot_sheet_creation_date: Datum stvaranja
+        empty_results: Ne postoje glasačke liste za ovu anketu
+      new:
+        title: "%{poll_budget} - Nove glasačke liste"
+        booth: Glasačko mjesto
+        select_booth: Odaberi glasačko mjesto
+        csv_data: CSV podaci
+        submit: Spremi
+      show:
+        created_at: Datum stvaranja
+        author: Autor
+        data: CSV podaci
+    booth:
+      new:
+        title: "Odaberi svoje glasačko mjesto"
+    results:
+      flash:
+        create: "Spremljeni rezultati"
+        error_create: "Rezultati NISU spremljeni. Greška u podacima."
+        error_wrong_booth: "Pogrešno glasačko mjesto. Rezultati nisu spremljeni."
+      new:
+        title: "%{poll} - Dodaj rezultate"
+        not_allowed: "Nije vam dopušteno dodavati rezultate za ovu anketu"
+        booth: "Glasačko mjesto"
+        date: "Datum"
+        select_booth: "Odaberi glasačko mjesto"
+        ballots_white: "Ukupno praznih glasova"
+        ballots_null: "Nevažeći glasovi"
+        ballots_total: "Ukupno glasova"
+        submit: "Spremi"
+        results_list: "Vaši rezultati"
+        see_results: "Pogledaj rezultate"
+      index:
+        no_results: "Nema rezultata"
+        results: Rezultati
+        table_answer: Odgovor
+        table_votes: Glasovi
+        table_whites: "Ukupno praznih glasova"
+        table_nulls: "Nevažeći glasovi"
+        table_total: "Ukupno glasova"
+    residence:
+      flash:
+        create: "Dokument potvrđen s Cenzusom"
+        not_allowed: "Danas nemate službene smjene"
+      new:
+        title: Potvrdi dokument
+        submit: Potvrdi dokument
+        error_verifying_census: "Cenzus nije u mogućnosti potvriditi ovaj dokument."
+        form_errors: spriječena je verifikacija ovog dokumenta
+    voters:
+      new:
+        title: Ankete
+        table_poll: Glasanje
+        table_status: Stanje glasovanja
+        table_actions: Djelovanja
+        not_to_vote: Osoba je odlučila da neće glasati ovaj puta
+      show:
+        can_vote: Može glasati
+        cannot_vote: Osoba ne može glasati jer nije registrirana u distriktu/distriktima gdje se glasa.
+        error_already_voted: Već je sudjelovao u ovom glasovanju
+        submit: Potvrdi glas
+        success: "Glas je unesen!"
+      can_vote:
+        submit_disable_with: "Pričekajte, glas se potvrđuje..."

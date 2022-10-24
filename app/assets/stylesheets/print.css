@@ -44,18 +44,6 @@ input[type="submit"] { display: none !important; }
 
 .admin h2 { font-size: 20px !important; line-height: 20px !important; }
 
-.select-order {
-  border: 0 !important;
-  font-size: 20px !important;
-  font-weight: bold !important;
-  line-height: 20px !important;
-  margin-left: 10px !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  margin-right: 0 !important;
-  padding: 0 !important;
-}
-
 p.proposal-info { margin-left: -6px; }
 
 a { text-decoration: none !important; }

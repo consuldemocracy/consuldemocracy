@@ -1,8 +1,10 @@
 class Management::BaseController < ActionController::Base
-  layout 'management'
+  include GlobalizeFallbacks
+  layout "management"
+  default_form_builder ConsulFormBuilder
 
   before_action :verify_manager
-  before_action :set_locale
+  around_action :switch_locale
 
   helper_method :managed_user
   helper_method :current_user
@@ -11,7 +13,7 @@ class Management::BaseController < ActionController::Base
   private
 
     def verify_manager
-      raise ActionController::RoutingError.new('Not Found') if current_manager.blank?
+      raise ActionController::RoutingError, "Not Found" if current_manager.blank?
     end
 
     def current_manager
@@ -30,20 +32,20 @@ class Management::BaseController < ActionController::Base
     end
 
     def check_verified_user(alert_msg)
-      unless managed_user.level_two_or_three_verified?
-        redirect_to management_document_verifications_path, alert: alert_msg
-      end
+      return if managed_user.persisted? && managed_user.level_two_or_three_verified?
+
+      message = managed_user.persisted? ? alert_msg : t("management.sessions.need_managed_user")
+      redirect_to management_document_verifications_path, alert: message
     end
 
-    def set_locale
+    def switch_locale(&action)
       if params[:locale] && I18n.available_locales.include?(params[:locale].to_sym)
         session[:locale] = params[:locale]
       end
 
       session[:locale] ||= I18n.default_locale
 
-      I18n.locale = session[:locale]
-      Globalize.locale = I18n.locale
+      I18n.with_locale(session[:locale], &action)
     end
 
     def current_budget
@@ -59,5 +61,4 @@ class Management::BaseController < ActionController::Base
         @manager_logged_in = User.find_by_manager_login(session[:manager]["login"])
       end
     end
-
 end

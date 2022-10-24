@@ -1,0 +1,17 @@
+<div class="row comments">
+  <div id="comments" class="small-12 column">
+    <%= content %>
+
+    <% cache cache_key do %>
+      <% if current_user %>
+        <%= render "comments/form", { commentable: record, parent_id: nil } %>
+      <% else %>
+        <%= render "shared/login_to_comment" %>
+      <% end %>
+
+      <%= render Shared::OrderLinksComponent.new("comments", anchor: "comments") %>
+      <%= render "comments/comment_list", comments: comment_tree.root_comments %>
+      <%= paginate comment_tree.root_comments, params: { anchor: "comments" } %>
+    <% end %>
+  </div>
+</div>

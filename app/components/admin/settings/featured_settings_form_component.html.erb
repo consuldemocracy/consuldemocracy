@@ -1,0 +1,6 @@
+<%= form_for([:admin, feature], remote: remote?, html: { class: "featured-settings-form" }) do |f| %>
+  <%= f.hidden_field :tab, id: dom_id(feature, :tab), value: tab if tab %>
+  <%= f.hidden_field :describedby, id: dom_id(feature, :describedby), value: describedby if describedby %>
+  <%= f.hidden_field :value, id: dom_id(feature, :value), value: (enabled? ? "" : "active") %>
+  <%= f.button text, options %>
+<% end %>

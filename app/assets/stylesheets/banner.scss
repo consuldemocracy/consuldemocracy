@@ -1,0 +1,27 @@
+.banner {
+  @include full-width-background;
+
+  .debates-list &::before,
+  .proposals-list &::before,
+  .admin &::before {
+    content: none;
+  }
+
+  a {
+    display: block;
+
+    > * {
+      padding: 0 rem-calc(16);
+
+      &:empty {
+        display: none;
+      }
+    }
+  }
+
+  + .budget-header,
+  + .budgets-index > .budget-header,
+  + .jumbo {
+    margin-top: 0;
+  }
+}

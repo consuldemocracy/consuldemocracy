@@ -119,7 +119,6 @@ Por supuesto es posible utilizar cualquier librería HTTP de lenguajes de progra
 
 `User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36`
 
-
 ## Información disponible
 
 El fichero [config/api.yml](../../config/api.yml) contiene una lista completa de los modelos (y sus campos) que están expuestos actualmente en la API.
@@ -134,7 +133,7 @@ La lista de modelos es la siguiente:
 | `Comment`               | Comentarios en debates, propuestas y otros comentarios |
 | `Geozone`               | Geozonas (distritos)         |
 | `ProposalNotification`  | Notificaciones asociadas a propuestas |
-| `ActsAsTaggableOn::Tag` | Tags en debates y propuestas |
+| `Tag`                   | Tags en debates y propuestas |
 | `Vote`                  | Información sobre votos      |
 
 ## Ejemplos de consultas

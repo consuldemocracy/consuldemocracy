@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Geozone do
   let(:geozone) { build(:geozone) }
@@ -26,11 +26,6 @@ describe Geozone do
 
     it "is false when already linked to proposal" do
       create(:proposal, geozone: geozone)
-      expect(geozone).not_to be_safe_to_destroy
-    end
-
-    it "is false when already linked to spending proposal" do
-      create(:spending_proposal, geozone: geozone)
       expect(geozone).not_to be_safe_to_destroy
     end
 

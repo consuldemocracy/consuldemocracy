@@ -1,19 +1,17 @@
-class AddHomepageContentTranslations < ActiveRecord::Migration
+class AddHomepageContentTranslations < ActiveRecord::Migration[4.2]
+  def change
+    create_table :widget_card_translations do |t|
+      t.integer :widget_card_id, null: false
+      t.string :locale, null: false
+      t.timestamps null: false
 
-  def self.up
-    Widget::Card.create_translation_table!(
-      {
-        label:       :string,
-        title:       :string,
-        description: :text,
-        link_text:   :string
-      },
-      { migrate_data: true }
-    )
-  end
+      t.string :label
+      t.string :title
+      t.text :description
+      t.string :link_text
 
-  def self.down
-    Widget::Card.drop_translation_table!
+      t.index :locale
+      t.index :widget_card_id
+    end
   end
 end
-

@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :debate do
     sequence(:title)     { |n| "Debate #{n} title" }
-    description          'Debate description'
-    terms_of_service     '1'
+    description          { "Debate description" }
+    terms_of_service     { "1" }
     association :author, factory: :user
 
     trait :hidden do
@@ -24,11 +24,11 @@ FactoryBot.define do
     end
 
     trait :with_hot_score do
-      before(:save) { |d| d.calculate_hot_score }
+      before(:save, &:calculate_hot_score)
     end
 
     trait :with_confidence_score do
-      before(:save) { |d| d.calculate_confidence_score }
+      before(:save, &:calculate_confidence_score)
     end
 
     trait :conflictive do
@@ -36,6 +36,12 @@ FactoryBot.define do
         Flag.flag(create(:user), debate)
         4.times { create(:vote, votable: debate) }
       end
+    end
+
+    transient { voters { [] } }
+
+    after(:create) do |debate, evaluator|
+      evaluator.voters.each { |voter| create(:vote, votable: debate, voter: voter) }
     end
   end
 

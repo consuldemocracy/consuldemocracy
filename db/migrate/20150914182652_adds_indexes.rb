@@ -1,4 +1,4 @@
-class AddsIndexes < ActiveRecord::Migration
+class AddsIndexes < ActiveRecord::Migration[4.2]
   def change
     add_index :debates, :author_id
     add_index :debates, [:author_id, :hidden_at]

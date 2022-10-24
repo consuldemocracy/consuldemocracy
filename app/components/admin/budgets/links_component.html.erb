@@ -1,0 +1,21 @@
+<div class="budgets-links">
+  <% if budget.investments.any? %>
+    <%= action(:investments,
+               text: t("admin.budgets.index.budget_investments"),
+               path: admin_budget_budget_investments_path(budget)) %>
+  <% end %>
+
+  <% if budget.poll.present? %>
+    <%= action(:ballots,
+               text: t("admin.budgets.index.admin_ballots"),
+               path: admin_poll_booth_assignments_path(budget.poll)) %>
+  <% end %>
+
+  <% if can?(:read_results, budget) %>
+    <%= action(:results, text: results_text, path: budget_results_path(budget)) %>
+  <% else %>
+    <%= action(:preview, text: preview_text, path: budget_path(budget)) %>
+  <% end %>
+
+  <%= action(:edit, text: t("admin.budgets.actions.edit")) %>
+</div>

@@ -1,0 +1,50 @@
+sv:
+  sdg_management:
+    actions:
+      edit: "Hantera mål och delmål"
+    header:
+      title: "Globala målen, innehåll"
+    homepage:
+      title: "Startsidekonfiguration"
+      header:
+        create: "Skapa sidhuvud"
+        no_cards: "Det finns inget sidhuvud"
+        title: "Sidhuvud"
+      create_card: "Skapa %{phase}-kort"
+      no_cards: "Det finns inga kort för den här fasen"
+    menu:
+      budget_investments: "Medborgarbudgetar"
+      debates: "Debatter"
+      legislation_processes: "Lagstiftningsprocesser"
+      legislation_proposals: "Lagförslag"
+      polls: "Omröstningar"
+      proposals: "Förslag"
+      sdg_content: "Mål och delmål"
+      sdg_homepage: "Startsida för Globala målen"
+    local_targets:
+      create:
+        notice: "Lokalt delmål har skapats"
+      destroy:
+        notice: "Lokalt delmål har tagits bort"
+      edit:
+        title: "Redigera lokalt delmål"
+      form:
+        code: "Koden måste börja med vald delmålskod, följt av en punkt"
+        description: "Denna beskrivning kommer att visas som hjälp för användare."
+      index:
+        new: "Skapa lokalt delmål"
+      new:
+        title: "Nytt lokalt delmål"
+      update:
+        notice: "Lokalt delmål har uppdaterats"
+    relations:
+      index:
+        filter: "Filtrera"
+        filters:
+          all: "Alla"
+          pending_sdg_review: "Väntande"
+          sdg_reviewed: "Markerat som granskat"
+      update:
+        notice: "%{relatable} har uppdaterats"
+      update_and_review:
+        notice: "%{relatable} har uppdaterats och markerats som granskat"

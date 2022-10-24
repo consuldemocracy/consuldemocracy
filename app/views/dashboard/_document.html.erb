@@ -1,0 +1,8 @@
+<p>
+  <%= link_to document.attachment, target: "_blank" do %>
+    <%= document.title %>
+    (<%= document.humanized_content_type %>
+    &nbsp;|&nbsp;
+    <%= number_to_human_size(document.attachment_file_size, precision: 2) %>)
+  <% end %>
+</p>

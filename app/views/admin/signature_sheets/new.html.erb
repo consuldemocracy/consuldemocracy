@@ -3,8 +3,12 @@
 <h2><%= t("admin.signature_sheets.new.title") %></h2>
 
 <%= form_for [:admin, @signature_sheet] do |f| %>
-  <%= render 'shared/errors',
+  <%= render "shared/errors",
               resource: @signature_sheet %>
+
+  <div class="small-12 medium-6 large-4">
+    <%= f.text_field :title %>
+  </div>
 
   <div class="small-12 medium-6 large-4">
     <%= f.select :signable_type, signable_options %>
@@ -14,9 +18,8 @@
     <%= f.text_field :signable_id %>
   </div>
 
-  <%= f.label :document_numbers %>
-  <p class="help-text" id="document-numbers-help-text"><%= t("admin.signature_sheets.new.document_numbers_note") %></p>
-  <%= f.text_area :document_numbers, rows: "6", label: false, aria: {describedby: "document-numbers-help-text"} %>
+  <%= f.text_area :required_fields_to_verify, rows: "6",
+    hint: sanitize("#{required_fields_to_verify_text_help}<br/>#{example_text_help}") %>
 
   <%= f.submit(class: "button", value: t("admin.signature_sheets.new.submit")) %>
 <% end %>

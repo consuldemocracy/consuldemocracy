@@ -1,0 +1,22 @@
+mk:
+  management:
+    account:
+      edit:
+        back: Назад
+        password:
+          password: Лозинка
+    account_info:
+      document_type_label: "Вид на документ:"
+    date_of_birth: Датум на раѓање
+    menu:
+      create_proposal: Направи предлог
+      support_proposals: Поддржи предлози
+    proposals:
+      create_proposal: Направи предлог
+      index:
+        title: Поддржи предлози
+    budgets:
+      table_name: Име
+      table_phase: Фаза
+      table_actions: Акции
+    username_label: Корисничко име

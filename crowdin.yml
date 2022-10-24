@@ -3,7 +3,7 @@ files:
     translation: /config/locales/%locale%/%original_file_name%
     ignore:
       - /config/locales/**/rails_date_order.yml
-    update_option: update_without_changes
+    update_option: update_as_unapproved
     languages_mapping:
       locale:
         ar: ar
@@ -17,4 +17,6 @@ files:
         nl: nl
         pt-PT: pt
         ru: ru
+        sr: sr
+        sr-CS: sr-CS
         val-ES: val

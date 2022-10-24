@@ -1,9 +1,7 @@
-class Geozone < ActiveRecord::Base
-
+class Geozone < ApplicationRecord
   include Graphqlable
 
   has_many :proposals
-  has_many :spending_proposals
   has_many :debates
   has_many :users
   has_many :budget_investments
@@ -13,10 +11,6 @@ class Geozone < ActiveRecord::Base
 
   def self.names
     Geozone.pluck(:name)
-  end
-
-  def self.city
-    where(name: 'city').first
   end
 
   def safe_to_destroy?

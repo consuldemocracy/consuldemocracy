@@ -22,10 +22,10 @@
       </p>
     <% end %>
 
-    <%= image_tag(milestone.image_url(:large), { id: "image_#{milestone.id}", alt: milestone.image.title, class: "margin" }) if milestone.image.present? %>
+    <%= image_tag(milestone.image.variant(:large), { id: "image_#{milestone.id}", alt: milestone.image.title, class: "margin" }) if milestone.image.present? %>
 
     <p>
-      <%= text_with_links milestone.description %>
+      <%= sanitize_and_auto_link milestone.description %>
     </p>
 
     <% if milestone.documents.present? %>
@@ -37,7 +37,7 @@
 
           <% milestone.documents.each do |document| %>
               <%= link_to document.title,
-                      document.attachment.url,
+                      document.attachment,
                       target: "_blank",
                       rel: "nofollow" %><br>
               <small>

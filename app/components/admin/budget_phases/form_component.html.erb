@@ -1,0 +1,68 @@
+<%= render "shared/globalize_locales", resource: phase %>
+
+<%= translatable_form_for [namespace, phase.budget, phase], html: { class: "budget-phases-form" } do |f| %>
+
+  <%= render "shared/errors", resource: phase %>
+
+  <%= render Admin::BudgetsWizard::ModeFieldComponent.new %>
+
+  <fieldset>
+    <legend aria-describedby="phase_duration_description">
+      <%= t("admin.budget_phases.edit.duration") %>
+    </legend>
+
+    <p class="help-text" id="phase_duration_description">
+      <%= sanitize(t("admin.budget_phases.edit.duration_description")) %>
+    </p>
+
+    <div class="date-field">
+      <%= f.date_field :starts_at, id: "start_date", hint: t("admin.budget_phases.edit.dates_help_text") %>
+    </div>
+
+    <div class="date-field">
+      <%= f.date_field :ends_at, id: "end_date", hint: t("admin.budget_phases.edit.dates_help_text") %>
+    </div>
+  </fieldset>
+
+  <div class="small-12 column margin">
+    <%= f.check_box :enabled %>
+
+    <span class="help-text" id="phase-summary-help-text">
+      <%= t("admin.budget_phases.edit.enabled_help_text") %>
+    </span>
+  </div>
+
+  <%= f.translatable_fields do |translations_form| %>
+    <div class="small-12 column">
+      <%= translations_form.text_field :name, hint: t("admin.budget_phases.edit.name_help_text") %>
+    </div>
+
+    <div class="small-12 column">
+      <%= translations_form.text_area :description,
+                                       maxlength: Budget::Phase::DESCRIPTION_MAX_LENGTH,
+                                       class: "html-area",
+                                       hint: t("admin.budget_phases.edit.description_help_text") %>
+    </div>
+
+    <div class="small-12 column">
+      <p class="form-label"><%= t("admin.budget_phases.edit.main_call_to_action") %></p>
+      <p class="help-text"> <%= t("admin.budget_phases.edit.main_call_to_action_description") %></p>
+      <%= translations_form.text_field :main_link_text %>
+    </div>
+
+    <div class="small-12 column">
+      <%= translations_form.text_field :main_link_url, hint: t("admin.shared.example_url") %>
+    </div>
+  <% end %>
+
+  <% if feature?(:allow_images) %>
+    <div class="images small-12 column">
+      <%= render "images/nested_image", f: f %>
+      <p class="help-text"><%= t("admin.budget_phases.edit.image_description") %></p>
+    </div>
+  <% end %>
+
+  <div class="small-12 column">
+    <%= f.submit t("admin.budget_phases.edit.save_changes"), class: "button success" %>
+  </div>
+<% end %>

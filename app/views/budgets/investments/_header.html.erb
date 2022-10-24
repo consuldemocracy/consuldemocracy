@@ -4,12 +4,12 @@
 
       <div class="row">
         <div class="small-12 column">
-          <%= back_link_to budgets_path %>
+          <%= back_link_to budget_path(@budget) %>
 
           <% if can? :show, @ballot %>
             <%= link_to t("budgets.investments.header.check_ballot"),
                         budget_ballot_path(@budget),
-                        class: "button float-right" %>
+                        class: "check-ballot button" %>
           <% end %>
         </div>
       </div>
@@ -26,8 +26,8 @@
                 <h2>
                   <%= t("budgets.investments.index.by_heading", heading: @heading.name) %>
                 </h2>
-                <div id="progress_bar" class="no-margin-top">
-                  <%= render 'budgets/ballot/progress_bar' %>
+                <div id="progress_bar">
+                  <%= render "budgets/ballot/progress_bar", ballot: @ballot, heading: @heading %>
                 </div>
               </div>
             <% else %>
@@ -36,13 +36,13 @@
               </h2>
               <div class="small-12 medium-9">
                 <div class="callout warning margin-top">
-                  <%= t("budgets.investments.header.different_heading_assigned_html",
-                        heading_link: heading_link(@assigned_heading, @budget)) %>
+                  <%= sanitize(t("budgets.investments.header.different_heading_assigned",
+                        heading_link: heading_link(@assigned_heading, @budget))) %>
                   <br>
                   <small>
-                    <%= t("budgets.investments.header.change_ballot",
+                    <%= sanitize(t("budgets.investments.header.change_ballot",
                         check_ballot: link_to(t("budgets.investments.header.check_ballot_link"),
-                                      budget_ballot_path(@budget))).html_safe %>
+                                      budget_ballot_path(@budget)))) %>
                   </small>
                 </div>
               </div>

@@ -1,11 +1,9 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Signature do
-
   let(:signature) { build(:signature) }
 
   describe "validations" do
-
     it "is valid" do
       expect(signature).to be_valid
     end
@@ -25,7 +23,42 @@ describe Signature do
       signature.signature_sheet = nil
       expect(signature).not_to be_valid
     end
+  end
 
+  describe "custom validations" do
+    let(:signature) do
+      build(:signature,
+            document_number: "12345678Z",
+            date_of_birth: "31/12/1980",
+            postal_code: "28013")
+    end
+
+    before do
+      Setting["feature.remote_census"] = true
+      Setting["remote_census.request.date_of_birth"] = "some.value"
+      Setting["remote_census.request.postal_code"] = "some.value"
+    end
+
+    it "is valid" do
+      expect(signature).to be_valid
+    end
+
+    it "is not valid without a document number" do
+      signature.document_number = nil
+      expect(signature).not_to be_valid
+    end
+
+    it "is not valid without a date of birth" do
+      signature.date_of_birth = nil
+
+      expect(signature).not_to be_valid
+    end
+
+    it "is not valid without a postal_code" do
+      signature.postal_code = nil
+
+      expect(signature).not_to be_valid
+    end
   end
 
   describe "#clean_document_number" do
@@ -47,9 +80,7 @@ describe Signature do
   end
 
   describe "#verify" do
-
     describe "existing user" do
-
       it "assigns vote to user on proposal" do
         user = create(:user, :level_two, document_number: "123A")
         signature = create(:signature, document_number: user.document_number)
@@ -106,9 +137,8 @@ describe Signature do
       end
 
       it "does not assign vote to user if already voted" do
-        proposal = create(:proposal)
         user = create(:user, :level_two, document_number: "123A")
-        vote = create(:vote, votable: proposal, voter: user)
+        proposal = create(:proposal, voters: [user])
         signature_sheet = create(:signature_sheet, signable: proposal)
         signature = create(:signature, signature_sheet: signature_sheet, document_number: user.document_number)
 
@@ -118,9 +148,8 @@ describe Signature do
       end
 
       it "does not assign vote to user if already voted on budget investment" do
-        investment = create(:budget_investment)
         user = create(:user, :level_two, document_number: "123A")
-        vote = create(:vote, votable: investment, voter: user)
+        investment = create(:budget_investment, voters: [user])
 
         signature_sheet = create(:signature_sheet, signable: investment)
         signature = create(:signature, document_number: user.document_number, signature_sheet: signature_sheet)
@@ -139,15 +168,12 @@ describe Signature do
 
         expect(Vote.last.signature).to eq(signature)
       end
-
     end
 
     describe "inexistent user" do
-
       it "creates a user with that document number" do
         create(:geozone, census_code: "01")
         signature = create(:signature, document_number: "12345678Z")
-        proposal = signature.signable
 
         signature.verify
 
@@ -181,7 +207,6 @@ describe Signature do
     end
 
     describe "document in census" do
-
       it "calls assign_vote_to_user" do
         signature = create(:signature, document_number: "12345678Z")
 
@@ -197,11 +222,23 @@ describe Signature do
 
         expect(signature).to be_verified
       end
+    end
 
+    describe "document in census throught CustomCensusApi" do
+      it "calls assign_vote_to_user", :remote_census do
+        signature = create(:signature, document_number: "12345678Z",
+                                       date_of_birth: "31/12/1980",
+                                       postal_code: "28013")
+
+        mock_valid_remote_census_response
+
+        expect_any_instance_of(Signature).to receive(:assign_vote_to_user).exactly(1).times
+
+        signature.verify
+      end
     end
 
     describe "document not in census" do
-
       it "does not call assign_vote_to_user" do
         signature = create(:signature, document_number: "123A")
 
@@ -216,9 +253,7 @@ describe Signature do
         expect(signature).not_to be_verified
       end
     end
-
   end
-
 end
 
 # == Schema Information

@@ -1,0 +1,18 @@
+da:
+  sdg_management:
+    homepage:
+      header:
+        create: "Opret sidehoved"
+        title: "Sidehoved"
+    menu:
+      budget_investments: "Deltagerbudgetter"
+      debates: "Debatforum"
+      polls: "Afstemning"
+      proposals: "Forslag"
+      sdg_content: "Mål og delmål"
+    relations:
+      index:
+        filter: "Filtrere"
+        filters:
+          all: "Alle"
+          pending_sdg_review: "Under behandling"

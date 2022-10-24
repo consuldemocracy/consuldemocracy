@@ -1,0 +1,40 @@
+<% if phases.present? %>
+  <table class="budget-phases-table">
+    <caption><%= t("admin.budgets.edit.phases_caption") %></caption>
+    <thead>
+      <tr>
+        <th><%= t("admin.budgets.edit.phase") %></th>
+        <th><%= t("admin.budgets.edit.duration") %></th>
+        <th class="text-center"><%= t("admin.budgets.edit.enabled") %></th>
+        <th><%= t("admin.budgets.edit.actions") %></th>
+      </tr>
+    </thead>
+
+    <% phases.each do |phase| %>
+      <tr id="<%= dom_id(phase) %>" class="phase">
+        <td>
+          <%= phase.name %>
+          <% if phase.current? %>
+            <span class="label success"><strong><%= t("admin.budgets.edit.active") %></strong></span>
+          <% end %>
+        </td>
+        <td>
+          <% if phase.starts_at.present? || phase.ends_at.present? %>
+            <%= dates(phase) %>
+          <% else %>
+            <em><%= t("admin.budgets.edit.blank_dates") %></em>
+          <% end %>
+        </td>
+        <td class="text-center">
+          <%= enabled_cell(phase) %>
+        </td>
+        <td>
+          <%= render Admin::TableActionsComponent.new(phase,
+            actions: [:edit],
+            edit_path: edit_path(phase)
+          ) %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

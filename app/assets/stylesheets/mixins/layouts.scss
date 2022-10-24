@@ -1,0 +1,107 @@
+@mixin admin-layout {
+  height: 100%;
+
+  > header {
+    margin-bottom: 0;
+  }
+
+  > .menu-and-content {
+    flex-grow: 1;
+  }
+}
+
+@mixin logo {
+  color: #fff;
+  display: inline-block;
+  font-family: "Lato" !important;
+  font-size: rem-calc(24);
+  font-weight: lighter;
+
+  @include breakpoint(medium) {
+    line-height: $line-height * 2;
+    margin-top: 0;
+  }
+}
+
+@mixin flex-with-gap($gap: rem-calc(map-get($grid-column-gutter, medium))) {
+  display: flex;
+  margin-#{$global-left}: -$gap;
+
+  > * {
+    margin-#{$global-left}: $gap;
+  }
+}
+
+@mixin full-width-cover($adjust-margin: true, $adjust-padding: false) {
+  $global-padding: rem-calc(map-get($grid-column-gutter, medium)) / 2;
+  bottom: 0;
+  content: "";
+  display: block;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  @if $adjust-padding {
+    $small-padding: rem-calc(map-get($grid-column-gutter, small)) / 2;
+
+    left: -$small-padding;
+    right: -$small-padding;
+
+    @include breakpoint(medium) {
+      left: -$global-padding;
+      right: -$global-padding;
+    }
+  }
+
+  @include breakpoint($global-width) {
+
+    @if $adjust-padding and $adjust-margin {
+      left: calc(#{$full-width-margin} - #{$global-padding});
+      right: calc(#{$full-width-margin} - #{$global-padding});
+    } @else if $adjust-margin {
+      left: calc(#{$full-width-margin});
+      right: calc(#{$full-width-margin});
+    }
+  }
+}
+
+@mixin full-width-background($adjust-margin: true, $adjust-padding: false) {
+  position: relative;
+
+  &::before {
+    @include full-width-cover($adjust-margin: $adjust-margin, $adjust-padding: $adjust-padding);
+    background: inherit;
+    z-index: -1;
+  }
+}
+
+@mixin full-width-border($position, $border, $adjust-margin: true, $adjust-padding: false) {
+  position: relative;
+
+  &::after {
+    @include full-width-cover($adjust-margin: $adjust-margin, $adjust-padding: $adjust-padding);
+    border-#{$position}: $border;
+  }
+}
+
+@mixin full-width-form {
+  .globalize-languages {
+    max-width: none;
+  }
+}
+
+@mixin background-till-left-of-screen {
+  position: relative;
+
+  &::before {
+    background-color: inherit;
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: 100vw;
+  }
+}

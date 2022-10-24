@@ -1,1 +1,144 @@
 sl:
+  budgets:
+    ballots:
+      show:
+        title: Tvoje glasovanje
+        no_balloted_group_yet: "Nisi še glasoval v tej skupini, glasuj zdaj!"
+        remove: Odstrani glas
+        zero: Nisi glasoval za noben naložbeni projekt.
+      reasons_for_not_balloting:
+        not_verified: Le verificirani uporabniki lahko glasujejo o naložbah; %{verify_account}.
+        not_selected: Neizbraneih investicij ni mogoče podpreti
+        not_enough_money: "Ves razpoložljiv proračun si že porabil.<br><small>Lahko pa kadarkoli %{change_ballot}</small>"
+        no_ballots_allowed: Faza izbiranja je končana
+        different_heading_assigned: "Glasoval si že za drugačen naslov: %{heading_link}"
+        change_ballot: spremeniš svoje glasove
+    groups:
+      show:
+        title: Izberi možnost
+    phase:
+      drafting: Osnutek (skrito javnosti)
+      informing: Informiranje
+      accepting: Sprejemanje projektov
+      reviewing: Pregled projektov
+      selecting: Izbiranje projektov
+      valuating: Vrednotenje projektov
+      publishing_prices: Objavljanje cen projektov
+      balloting: Glasovanje o projektih
+      reviewing_ballots: Pregled glasovanj
+      finished: Končan proračun
+    index:
+      title: Participatorni proračuni
+      empty_budgets: Ni proračunov.
+      section_header:
+        icon_alt: Participatorni proračuni ikona
+        title: Participatorni proračuni
+        help: Pomoč s participatornimi proračuni
+      all_phases: Faze proračunskih naložb
+      map: Predlogi za proračunske naložbe po geografski lokaciji
+      finished_budgets: Končani participatorni proračuni
+      see_results: Poglej rezultate
+      section_footer:
+        title: Pomoč s participatornimi proračuni
+        description: S participatornimi proračuni se državljani odločijo, kateri projekti, ki jih predstavljajo sosedi, so namenjeni delu občinskega proračuna.
+      milestones: Mejniki
+    investments:
+      form:
+        title: "Dodaj svoj predlog!"
+        tag_category_label: "Kategorije"
+        tags_instructions: "Označi ta predlog. Izbiraš lahko med predlaganimi kategorijami ali dodaš svojo lastno."
+        tags_label: Oznake
+        tags_placeholder: "Vnesi oznake, ki jih želiš uporabiti in jih loči z vejico (',')"
+        map_location: "Lokacija na zemljevidu"
+        map_location_instructions: "Na zemljevidu poišči lokacijo in jo označi."
+        map_remove_marker: "Odstrani označeno lokacijo"
+      index:
+        title: Participatorni proračun
+        unfeasible: Neizvedljivi naložbeni projekti
+        unfeasible_text: "Investicije morajo izpolnjevati nekatere kriterije (legalnost, konkretnost, da so v pristojnosti občine/mesta, ne presegajo meje proračuna), da se jih označi kot izvedljive in lahko dosežejo fazo končnega glasovanja. Vse investicije, ki ne izpolnjuejo teh kriterijev, so označene kot neizvedljive in objavljene na spodnjem seznamu, skupaj s poročili o neizvedljivosti."
+        by_heading: "Investicijski projekti z obsegom: %{heading}"
+        search_form:
+          button: Išči
+          placeholder: Išči investicijske projekte ...
+          title: Išči
+        sidebar:
+          my_ballot: Moja glasovanja
+          change_vote_link: "spremeniš svoj glas"
+          different_heading_assigned: "Imaš aktivna glasovanja v drugem naslovu: %{heading_link}"
+          change_ballot: "Če si premisliš, lahko odstraniš svoje glasove v %{check_ballot} in začneš znova."
+          check_ballot_link: "preveri moja glasovanja"
+          zero: Nisi glasoval za noben naložbeni projekt v tej skupini.
+          verified_only: "Za ustvarjanje nove proračunske naložbe %{verify}."
+          create: "Dodaj svoj predlog!"
+          not_logged_in: "Za ustvarjanje nove proračunske naložbe se moraš %{sign_in} ali %{sign_up}."
+        filters:
+          selected: "Označeno"
+          unfeasible: "Neizvedljiv"
+          winners: "Zmagovalci"
+        orders:
+          random: naključno
+          confidence_score: najbolje ocenjeni
+          price: po ceni
+      show:
+        author_deleted: Uporabnik izbrisan
+        price_explanation: Razlaga cene
+        unfeasibility_explanation: Razlaga neizvedljivosti
+        code: "Koda naložbenega projekta: <strong>%{code}</strong>"
+        location: "Lokacija: <strong>%{location}</strong>"
+        organization_name: "Predlagan v imenu: <strong>%{name}</strong>"
+        share: Deli
+        title: Investicijski projekt
+        supports: Podpore
+        votes: Glasovi
+        price: Cena
+        comments_tab: Komentarji
+        milestones_tab: Mejniki
+        author: Avtor
+        project_unfeasible: "Ta naložbeni projekt <strong>je bil označen kot neizvedljiv</strong> in ni dosegel faze glasovanja."
+        project_not_selected: "Ta naložbeni projekt <strong>ni bil izbran</strong> za fazo glasovanja."
+      wrong_price_format: Samo cela števila
+      investment:
+        add: Glasuj
+        already_added: Ta naložbeni projekt si že dodal
+        support_title: Podpri ta projekt
+        supports:
+          zero: brez podpore
+      header:
+        check_ballot: "Preveri moja glasovanja"
+        different_heading_assigned: "Imaš aktivna glasovanja v drugem naslovu: %{heading_link}"
+        change_ballot: "Če si premisliš, lahko odstraniš svoje glasove v %{check_ballot} and start again."
+        check_ballot_link: "preveri moja glasovanja"
+        price: "Ta naslov ima proračun v višini"
+      votes:
+        already_supported: "Ta naložbeni projekt si že podprl. Deli ga z drugimi!"
+        support: "Glasuj za predlog!"
+    investments_list:
+      investment:
+        price: "Cena"
+        supports: "Glasovi"
+    show:
+      see_results: Poglej rezultate
+    results:
+      link: Rezultati
+      page_title: "%{budget} - Rezultati"
+      heading: "Rezultati participatornega proračuna"
+      heading_selection_title: "Po občini"
+      ballot_lines_count: Kolikokrat izbran
+      hide_discarded_link: Skrij zavržene
+      show_all_link: Pokaži vse
+      price: Cena
+      amount_available: Razpoložljivi proračun
+      accepted: "Sprejet predlog porabe: "
+      discarded: "Zavržen predlog porabe: "
+      incompatibles: Nezdružljivi
+      investment_proyects: Seznam vseh investicijskih projektov
+      unfeasible_investment_proyects: Seznam vseh neizvedljivih investicijskih projektov
+      not_selected_investment_proyects: Seznam vseh investicijskih projektov, ki niso bili izbrani za glasovanje
+    executions:
+      link: "Mejniki"
+      heading_selection_title: "Po občini"
+    phases:
+      errors:
+        dates_range_invalid: "Začetni datum ne more biti enak ali poznejši od končnega datuma"
+        prev_phase_dates_invalid: "Začetni datum mora biti pozneje kot začetni datum prejšnje omogočene faze (%{phase_name})"
+        next_phase_dates_invalid: "Končni datum mora biti prej kot je končni datum naslednje omogočene faze (%{phase_name})"

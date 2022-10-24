@@ -1,5 +1,4 @@
 <div class="row verify">
-  <%track_event(category: "verification", action: "edit_letter" )%>
   <div class="small-12 medium-9 large-6 small-centered column">
     <div class="text-center">
       <h1>
@@ -12,8 +11,8 @@
 
     <div class="small-12 large-9 small-centered column">
       <%= form_for @letter, url: letter_path, method: :patch do |f| %>
-        <%= f.text_field :email, label: t("pages.verify.email"), placeholder: t("pages.verify.email") %>
-        <%= f.password_field :password, label: t("pages.verify.password"), placeholder: t("pages.verify.password") %>
+        <%= f.text_field :email %>
+        <%= f.password_field :password %>
 
         <p class="letter-divider text-center">
           <span class="icon-letter"></span>
@@ -23,7 +22,7 @@
           <%= t("pages.verify.info_code") %>
         </p>
 
-        <%= f.text_field :verification_code, label: t("pages.verify.code"), placeholder: t("pages.verify.code") %>
+        <%= f.text_field :verification_code %>
 
         <%= f.submit(class: "button success expanded", value: t("pages.verify.submit")) %>
       <% end %>

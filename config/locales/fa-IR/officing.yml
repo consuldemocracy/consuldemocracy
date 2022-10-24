@@ -7,7 +7,7 @@ fa:
         title: نظرسنجی
         info: در اینجا میتوانید اسناد کاربر را تأیید کنید و نتایج رای گیری را ذخیره کنید.
     menu:
-      voters: اعتبار سند
+      voters: مدارک معتبر
       total_recounts: مجموع بازدیدها و نتایج
     polls:
       final:
@@ -15,6 +15,18 @@ fa:
         no_polls: شما در نظرسنجی فعال هیچ گزارش نهایی ندارید
         select_poll: انتخاب نظرسنجي
         add_results: اضافه کردن نتایج
+    poll_budgets:
+      index:
+        ballot_sheet_name: نام
+        ballot_sheet_author: نویسنده
+        ballot_sheet_creation_date: ' ایجاد تاریخ'
+      new:
+        booth: غرفه
+        select_booth: انتخاب غرفه
+        submit: ذخیره کردن
+      show:
+        created_at: ' ایجاد تاریخ'
+        author: نویسنده
     results:
       flash:
         create: "نتایج ذخیره شده"
@@ -44,12 +56,10 @@ fa:
         create: "سند با سرشماری تأیید شد"
         not_allowed: "شما امروز شیفت ندارید"
       new:
-        title: مدارک معتبر
-        document_number: "شماره سند ( حروف هم شامل میشوند)"
-        submit: مدارک معتبر
+        title: اعتبار سند
+        submit: اعتبار سند
         error_verifying_census: "سرشماری قادر به تایید این سند نیست."
         form_errors: مانع تایید این سند شد
-        no_assignments: "شما امروز شیفت ندارید"
     voters:
       new:
         title: نظر سنجی ها

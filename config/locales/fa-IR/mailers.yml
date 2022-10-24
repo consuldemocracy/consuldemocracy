@@ -3,38 +3,30 @@ fa:
     no_reply: "این پیام از آدرس ایمیلي فرستاده شده است که پاسخ ها را قبول نمي كند."
     comment:
       hi: سلام
-      new_comment_by_html: نظر جدید از %{commenter}<b></b> وجود دارد
       subject: کسی توضیح داده است درباره%{commentable}
       title: نظر جدید
-    config:
-      manage_email_subscriptions: برای جلوگیری از دریافت ایمیل ها، تنظیمات را تغيير دهيد.
     email_verification:
       click_here_to_verify: این لینک
-      instructions_2_html: این ایمیل حساب شما را با <b>%{document_type}%{document_number}</b>تأیید میکند. اگر این به شما تعلق ندارد، لطفا روی لینک قبلی کلیک نکنید و این ایمیل را نادیده بگیرید.
+      instructions_2: این ایمیل حساب شما را با <b>%{document_type}%{document_number}</b>تأیید میکند. اگر این به شما تعلق ندارد، لطفا روی لینک قبلی کلیک نکنید و این ایمیل را نادیده بگیرید.
       subject: تایید ایمیل
       thanks: با تشكر فراوان.
-      title: با استفاده از لینک زیر، حساب خود را تاييد كنيد.
+      title: "با استفاده از لینک زیر، حساب خود را تاييد كنيد."
     reply:
       hi: سلام
-      new_reply_by_html: پاسخ جدید از%{commenter}<b></b> برای نظر شما وجود دارد.
       subject: کسی به نظر شما پاسخ داده است.
       title: ' پاسخ جديد به نظر شما'
-    unfeasible_spending_proposal:
-      hi: "کاربر گرامی"
-      new_href: "پروژه جدید سرمایه گذاری"
-      sincerely: "با تشکر."
-      sorry: "متاسفم. دوباره از مشارکت ارزشمند شما تشکر می کنیم."
-      subject: "پروژه سرمایه گذاری شما%{code}غیر قابل قبول است"
     proposal_notification_digest:
       info: "در اینجا اعلان های جدیدی که توسط نویسندگان پیشنهاداتی که شما در آن حمایت کرده اید، منتشر شده است%{org_name}"
       title: "اعلانهای پیشنهاد در%{org_name}"
-      share: به اشتراک گذاشتن پیشنهاد 
-      comment: نظرات پیشنهاد 
-      unsubscribe_account: حساب من
+      share: به اشتراک گذاشتن پیشنهاد
+      comment: نظرات پیشنهاد
     direct_message_for_receiver:
       subject: "شما يك پيغام خصوصي جديد دريافت كرده ايد."
       reply: "پاسخ دادن به\n%{sender}"
-      unsubscribe_account: حساب من
+    direct_message_for_sender:
+      subject: "شما يك پيغام خصوصي جديد دريافت كرده ايد."
+      title: "شما يك پيغام خصوصي جديد دريافت كرده ايد"
+      text: "شما یک پیام خصوصی جدید برای <strong>%{receiver}</strong>با محتوا ارسال کرده اید:"
     user_invite:
       ignore: "اگر این دعوت را درخواست نکردید نگران نباشید، می توانید این ایمیل را نادیده بگیرید."
       thanks: "با تشكر فراوان."
@@ -44,14 +36,15 @@ fa:
     budget_investment_created:
       subject: "با تشکر از شما برای ایجاد یک سرمایه گذاری!"
       title: "با تشکر از شما برای ایجاد یک سرمایه گذاری!"
-      intro_html: "سلام <strong>%{author}</strong>"
-      text_html: "از شما برای ایجاد سرمایه گذاری <strong>%{investment}</strong> برای بودجه مشارکتی <strong>%{budget}</strong>متشکریم."
-      follow_html: "ما شما را در مورد چگونگی پیشرفت روند، که شما همچنین می توانید آن را دنبال کنید، اطلاع خواهیم داد<strong>%{link}</strong>"
+      intro: "سلام <strong>%{author}</strong>"
+      text: "از شما برای ایجاد سرمایه گذاری <strong>%{investment}</strong> برای بودجه مشارکتی <strong>%{budget}</strong>متشکریم."
+      follow: "ما شما را در مورد چگونگی پیشرفت روند، که شما همچنین می توانید آن را دنبال کنید، اطلاع خواهیم داد<strong>%{link}</strong>"
       follow_link: "بودجه مشارکتی"
       sincerely: "با تشکر."
       share: "پروژه خود را به اشتراک بگذارید"
     budget_investment_unfeasible:
       hi: "کاربر گرامی"
+      new: "برای همه اینها، از شما دعوت میکنیم که یک  <strong>پیشنویس جدید </ strong> را که با شرایط این روند تنظیم شده است، تدوین کنید. شما می توانید این را با دنبال کردن این لینک انجام دهید:%{url}."
       new_href: "پروژه جدید سرمایه گذاری"
       sincerely: "با تشکر."
       sorry: "متاسفم. دوباره از مشارکت ارزشمند شما تشکر می کنیم."
@@ -68,3 +61,5 @@ fa:
       hi: "کاربر گرامی"
       thanks: "با تشکر دوباره از شما  برای شرکت."
       sincerely: "با تشكر."
+    evaluation_comment:
+      hi: سلام

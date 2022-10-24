@@ -1,0 +1,11 @@
+pl:
+  stats:
+    title: "Dane uczestnictwa"
+    total_participants: "Uczestnicy"
+    total: "Łączny"
+    budgets:
+      link: "Statystyki"
+      total_unfeasible_investments: "Projekty uznane za niemożliwe do realizacji"
+      total: "Łączny"
+      heading: "Nagłówek"
+      participants_every_phase: "Całkowity udział"

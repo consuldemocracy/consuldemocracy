@@ -1,4 +1,4 @@
-class AddTsvToPollQuestions < ActiveRecord::Migration
+class AddTsvToPollQuestions < ActiveRecord::Migration[4.2]
   def up
     add_column :poll_questions, :tsv, :tsvector
     add_index :poll_questions, :tsv, using: "gin"

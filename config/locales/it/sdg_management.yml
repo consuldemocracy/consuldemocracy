@@ -1,0 +1,50 @@
+it:
+  sdg_management:
+    actions:
+      edit: "Gestisci obiettivi e scopi"
+    header:
+      title: "Contenuto del SDG"
+    homepage:
+      title: "Configurazione della homepage"
+      header:
+        create: "Crea intestazione"
+        no_cards: "Nessun'intestazione"
+        title: "Intestazione"
+      create_card: "Crea %{phase} scheda"
+      no_cards: "Nessuna scheda per questa fase"
+    menu:
+      budget_investments: "Bilanci partecipativi"
+      debates: "Dibattiti"
+      legislation_processes: "Processi di legislazione"
+      legislation_proposals: "Proposte legislative"
+      polls: "Votazioni"
+      proposals: "Proposte"
+      sdg_content: "Scopi e Obiettivi"
+      sdg_homepage: "Pagina home SDG"
+    local_targets:
+      create:
+        notice: "Fine locale creato correttamente"
+      destroy:
+        notice: "Fine locale eliminato correttamente"
+      edit:
+        title: "Modifica fine locale"
+      form:
+        code: "Il codice deve iniziare per il codice del fine selezionato seguito da un punto"
+        description: "Questa descrizione sarà mostrate come un aiuto agli utenti."
+      index:
+        new: "Crea fine locale"
+      new:
+        title: "Nuovo fine locale"
+      update:
+        notice: "Fine locale aggiornato correttamente"
+    relations:
+      index:
+        filter: "Filtra"
+        filters:
+          all: "Tutti"
+          pending_sdg_review: "In sospeso"
+          sdg_reviewed: "Segnato come revisionato"
+      update:
+        notice: "%{relatable} aggiornato correttamente"
+      update_and_review:
+        notice: "%{relatable} aggiornato correttamente e segnato come revisionato"

@@ -14,7 +14,7 @@ class Verification::SmsController < ApplicationController
   def create
     @sms = Verification::Sms.new(phone: @phone, user: current_user)
     if @sms.save
-      redirect_to edit_sms_path, notice: t('verification.sms.create.flash.success')
+      redirect_to edit_sms_path, notice: t("verification.sms.create.flash.success")
     else
       render :new
     end
@@ -27,7 +27,7 @@ class Verification::SmsController < ApplicationController
   def update
     @sms = Verification::Sms.new(sms_params.merge(user: current_user))
     if @sms.verified?
-      current_user.update(confirmed_phone: current_user.unconfirmed_phone)
+      current_user.update!(confirmed_phone: current_user.unconfirmed_phone)
       ahoy.track(:level_2_user, user_id: current_user.id) rescue nil
 
       if VerifiedUser.phone?(current_user)
@@ -36,7 +36,7 @@ class Verification::SmsController < ApplicationController
 
       redirect_to_next_path
     else
-      @error = t('verification.sms.update.error')
+      @error = t("verification.sms.update.error")
       render :edit
     end
   end
@@ -44,7 +44,11 @@ class Verification::SmsController < ApplicationController
   private
 
     def sms_params
-      params.require(:sms).permit(:phone, :confirmation_code)
+      params.require(:sms).permit(allowed_params)
+    end
+
+    def allowed_params
+      [:phone, :confirmation_code]
     end
 
     def set_phone
@@ -57,16 +61,16 @@ class Verification::SmsController < ApplicationController
 
     def verified_user
       return false unless params[:verified_user]
-      @verified_user = VerifiedUser.by_user(current_user).where(id: params[:verified_user][:id]).first
+
+      @verified_user = VerifiedUser.by_user(current_user).find_by(id: params[:verified_user][:id])
     end
 
     def redirect_to_next_path
       current_user.reload
       if current_user.level_three_verified?
-        redirect_to account_path, notice: t('verification.sms.update.flash.level_three.success')
+        redirect_to account_path, notice: t("verification.sms.update.flash.level_three.success")
       else
-        redirect_to new_letter_path, notice: t('verification.sms.update.flash.level_two.success')
+        redirect_to new_letter_path, notice: t("verification.sms.update.flash.level_two.success")
       end
     end
-
 end

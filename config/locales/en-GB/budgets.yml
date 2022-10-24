@@ -1,1 +1,89 @@
 en-GB:
+  budgets:
+    ballots:
+      show:
+        amount_available:
+          approval:
+            zero: "Ви можете віддати ще <span>%{count}</span> голосів."
+        amount_spent:
+          approval:
+            zero: "Віддано голосів: <span>%{count}</span>"
+            one: "Віддано голосів: <span>%{count}</span>"
+            other: "Віддано голосів: <span>%{count}</span>"
+    phase:
+      informing: Інформація
+    index:
+      title: Бюджети участі
+      empty_budgets: Бюджети відсутні.
+      section_header:
+        title: Бюджети участі
+        help: Допомога щодо бюджетів участі
+      see_results: Переглянути результати
+      section_footer:
+        title: Допомога щодо бюджетів участі
+      milestones: Віхи
+    investments:
+      form:
+        title: "Створити бюджетну інвестицію"
+        tag_category_label: "Категорії"
+        tags_instructions: "Відмітьте цю пропозицію. Ви можете вибрати із запропонованих або створити власну"
+        tags_label: Теги
+        tags_placeholder: "Введіть теги, які хочете використовувати, розділивши їх комами (,)"
+        map_location: "Розташування мапи"
+        map_location_instructions: "Знайдіть місце на мапі та розташуйте на ньому маркер."
+        map_remove_marker: "Вилучити маркер"
+      index:
+        title: Бюджетування участі
+        search_form:
+          button: Пошук
+          title: Пошук
+        sidebar:
+          different_heading_assigned: "У вас є активні голоси в іншому заголовку: %{heading_link}"
+          create: "Створити бюджетну інвестицію"
+        filters:
+          selected: "Вибрано"
+          unfeasible: "Недоцільно"
+          winners: "Переможці"
+        orders:
+          confidence_score: з найвищим рейтингом
+      show:
+        author_deleted: Користувача видалено
+        price_explanation: Обгрунтування вартості
+        share: Поділитися
+        title: Інвестиційний проєкт
+        supports: Підтримання
+        votes: Голоси
+        price: Ціна
+        comments_tab: Коментарі
+        milestones_tab: Віхи
+        author: Автор
+      investment:
+        add: Голос
+        supports:
+          zero: Немає підтримки
+          one: 1 підтримання
+          other: "%{count} підтримань"
+      header:
+        different_heading_assigned: "У вас є активні голоси в іншому заголовку: %{heading_link}"
+    investments_list:
+      investment:
+        price: "Ціна"
+        supports: "Підтримання"
+    show:
+      see_results: Переглянути результати
+    results:
+      link: Результати
+      heading_selection_title: "За дільницями"
+      ballot_lines_count: Голоси
+      price: Ціна
+      investment_proyects: Перелік усіх інвестиційних проєктів
+      unfeasible_investment_proyects: Перелік усіх недоцільних інвестиційних проєктів
+      not_selected_investment_proyects: Перелік усіх інвестиційних проєктів, не відібраних для голосування
+    executions:
+      link: "Віхи"
+      heading_selection_title: "За дільницями"
+      filters:
+        status:
+          all: "Усі (%{count})"
+        milestone_tag:
+          all: "Усі (%{count})"

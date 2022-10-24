@@ -1,0 +1,214 @@
+hr:
+  date:
+    abbr_day_names:
+      - Ned
+      - Pon
+      - Uto
+      - Sri
+      - Čet
+      - Pet
+      - Sub
+    abbr_month_names:
+      - 
+      - Siječanj
+      - Veljača
+      - Ožuj
+      - Trav
+      - Svib
+      - Lip
+      - Srp
+      - Kol
+      - Ruj
+      - List
+      - Stud
+      - Pro
+    day_names:
+      - Nedjelja
+      - Ponedjeljak
+      - Utorak
+      - Srijeda
+      - Četvrtak
+      - Petak
+      - Subota
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B%d%Y"
+      short: "%b%d"
+    month_names:
+      - 
+      - Siječanj
+      - Veljača
+      - Ožujak
+      - Travanj
+      - Svibanj
+      - Lipanj
+      - Srpanj
+      - Kolovoz
+      - Rujan
+      - Listopad
+      - Studeni
+      - Prosinac
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: oko 1 sat
+        few: oko %{count} sata
+        other: oko %{count} sati
+      about_x_months:
+        one: oko 1 mjesec
+        few: oko %{count} mjeseca
+        other: oko %{count} mjeseci
+      about_x_years:
+        one: oko 1 godine
+        few: oko %{count} godine
+        other: oko %{count} godina
+      almost_x_years:
+        one: gotovo 1 godina
+        few: oko %{count} godine
+        other: gotovo %{count} godina
+      half_a_minute: pola minute
+      less_than_x_minutes:
+        one: manje od minute
+        few: manje od %{count} minute
+        other: manje od %{count} minuta
+      less_than_x_seconds:
+        one: manje od 1 sekunde
+        few: manje od %{count} sekunde
+        other: manje od %{count} sekundi
+      over_x_years:
+        one: više od 1 godine
+        few: više od %{count} godine
+        other: više od %{count} godina
+      x_days:
+        one: 1 dan
+        few: "%{count} dana"
+        other: "%{count} dana"
+      x_minutes:
+        one: 1 minuta
+        few: "%{count} minute"
+        other: "%{count} minuta"
+      x_months:
+        one: 1 mjesec
+        few: "%{count} mjeseci"
+        other: "%{count} mjeseci"
+      x_years:
+        one: 1 godina
+        few: "%{count} godina"
+        other: "%{count} godina"
+      x_seconds:
+        one: 1 sekunda
+        few: "%{count} sekundi"
+        other: "%{count} sekundi"
+    prompts:
+      day: Dan
+      hour: Sat
+      minute: Minuta
+      month: Mjesec
+      second: Sekundi
+      year: Godina
+  errors:
+    format: "%{attribute}%{message}"
+    messages:
+      accepted: mora biti prihvačeno
+      blank: ne može biti prazno
+      present: mora ostati prazno
+      confirmation: ne podudara se %{attribute}
+      empty: ne može biti prazno
+      equal_to: mora biti jednako %{count}
+      even: mora biti jednako
+      exclusion: je rezervirano
+      greater_than: mora biti veće od %{count}
+      greater_than_or_equal_to: mora biti veće od ili jednako %{count}
+      inclusion: nije uključeno u listu
+      invalid: ne vrijedi
+      less_than: mora biti manje od %{count}
+      less_than_or_equal_to: mora biti manje od ili jednako %{count}
+      model_invalid: "Provjera nije uspjela: %{errors}"
+      not_a_number: nije broj
+      not_an_integer: mora biti cijelobrojna vrijednost
+      odd: mora biti neparan
+      required: mora postojati
+      taken: mora biti zauzet
+      too_long:
+        one: je predugo (maksimum je 1 znak)
+        few: je predugo (maksimum je %{count} znak)
+        other: je predug (maksimum je %{count} znak)
+      too_short:
+        one: je prekratak (minimum je 1 znak)
+        few: je prekratak (minimum je %{count} znakova)
+        other: je prekratak (minimum je %{count} znakova)
+      wrong_length:
+        one: je kriva duljina (treba biti 1 znak)
+        few: is the wrong length (should be %{count} characters)
+        other: je pogrešne dužine (mora biti %{count} znakova)
+      other_than: mora biti različit od %{count}
+    template:
+      body: "Postoje poteškoće sa sljedećim poljima:"
+      header:
+        one: 1 greška ne dozvoljava pohranu ovog %{model}
+        few: "%{count} errora nedozvoljava ovaj/e %{model} od spremanja"
+        other: "%{count} errora nedozvoljava ovaj/e %{model} od spremanja"
+  helpers:
+    select:
+      prompt: Molimo odaberite
+    submit:
+      create: Kreiraj %{model}
+      submit: Spremi %{model}
+      update: Ažuriraj %{model}
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n%u"
+        units:
+          billion: Milijarda
+          million: Milijun
+          quadrillion: Kvadrilion
+          thousand: Tisuću
+          trillion: Bilijun
+      format:
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n%u"
+        units:
+          byte:
+            one: Bajt
+            few: Bajtova
+            other: Bajta
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  support:
+    array:
+      last_word_connector: ", i "
+      two_words_connector: " i "
+      words_connector: ", "
+  time:
+    am: sam
+    formats:
+      datetime: "%Y-%m-%d %H:%M:%S"
+      default: "%a %d %b %Y %H:%M:%S %z"
+      long: "%B %d %Y %H:%M"
+      short: "%d %b %H:%M"
+      api: "%Y-%m-%d %H"
+    pm: pm

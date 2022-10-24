@@ -1,0 +1,229 @@
+cs:
+  settings:
+    comments_body_max_length: "Maximální délka komentáře"
+    comments_body_max_length_description: "V počtu znaků"
+    official_level_1_name: "Pracovník úřadu - Úroveň 1"
+    official_level_1_name_description: "Štítek, který se zobrazí u uživatele označeným oficiální pozicí na úřadě - Úroveň 1"
+    official_level_2_name: "Pracovník úřadu - Úroveň 2"
+    official_level_2_name_description: "Štítek, který se zobrazí u uživatele označeným oficiální pozicí na úřadě - Úroveň 2"
+    official_level_3_name: "Pracovník úřadu - Úroveň 3"
+    official_level_3_name_description: "Štítek, který se zobrazí u uživatele označeným oficiální pozicí na úřadě - Úroveň 3"
+    official_level_4_name: "Pracovník úřadu - Úroveň 4"
+    official_level_4_name_description: "Štítek, který se zobrazí u uživatele označeným oficiální pozicí na úřadě - Úroveň 4"
+    official_level_5_name: "Pracovník úřadu - Úroveň 5"
+    official_level_5_name_description: "Štítek, který se zobrazí u uživatele označeným oficiální pozicí na úřadě - Úroveň 5"
+    max_ratio_anon_votes_on_debates: "Maximální poměr anonymní hlasů u debaty"
+    max_ratio_anon_votes_on_debates_description: "Anonymní hlasy jsou registrovaní uživatelé s neověřeným účtem"
+    max_votes_for_proposal_edit: "Počet podporovatelů návrhu, od kterého již nelze návrh upravovat"
+    max_votes_for_proposal_edit_description: "Autor návrhu již od tohoto počtu podporovatelů nemůže svůj návrh upravovat"
+    max_votes_for_debate_edit: "Počet hlasů, od kterého nelze debatu již dále upravovat"
+    max_votes_for_debate_edit_description: "Autor debaty již od tohoto počtu hlasů nemůže svoji debatu upravovat"
+    proposal_code_prefix: "Předpona pro návrh kódy"
+    proposal_code_prefix_description: "Tato předpona se objeví v návrzích před datem vytvoření a jeho ID"
+    featured_proposals_number: "Počet doporučených návrhů"
+    featured_proposals_number_description: "Počet doporučených návrhů které se zobrazí, pokud je funkce doporučené návrhy aktivní"
+    votes_for_proposal_success: "Počet podporovatelů, které jsou nezbytné ke schválení návrhu"
+    votes_for_proposal_success_description: "Když návrh dosáhne tento počet podporovatelů nebude již další přijímat a je považován za úspěšný"
+    months_to_archive_proposals: "Počet měsíců k archivaci návrhů"
+    months_to_archive_proposals_description: "Po uplynutí této doby budou návrhy archivovány a již nebude možné přijímat podporovatele"
+    email_domain_for_officials: "E-mailová doména pro úředníky veřejné správy"
+    email_domain_for_officials_description: "Všichni uživatelé registrovaní s emailem v této doméně budou mít svůj účet ověřen v rámci registrace"
+    twitter_handle: "Twitter handle"
+    twitter_handle_description: "Je-li vyplněno, zobrazí se v zápatí"
+    twitter_hashtag: "Twitter hashtag"
+    twitter_hashtag_description: "Hashtag, který se objeví při sdílení obsahu v síti Twitter"
+    facebook_handle: "Facebook propojení"
+    facebook_handle_description: "Je-li vyplněno, zobrazí se v zápatí"
+    youtube_handle: "Youtube propojení"
+    youtube_handle_description: "Je-li vyplněno, zobrazí se v zápatí"
+    telegram_handle: "Telegram propojení"
+    telegram_handle_description: "Je-li vyplněno, zobrazí se v zápatí"
+    instagram_handle: "Instagram propojení"
+    instagram_handle_description: "Je-li vyplněno, zobrazí se v zápatí"
+    url: "Hlavní URL"
+    url_description: "Hlavní URL vašeho webu"
+    org_name: "Organizace"
+    org_name_description: "Název vaší organizace"
+    related_content_score_threshold: "Prahová hodnota pro související obsah"
+    related_content_score_threshold_description: "Skrývá obsah, kteří uživatelé označí jako nesouvisející"
+    hot_score_period_in_days: "Období (dny) použité ve filtru \"nejaktivnější\""
+    hot_score_period_in_days_description: "Filtr \"Nejvíce aktivní\" používaný ve více oddílech bude nastaven na základě hlasování během posledních X dní"
+    mailer_from_name: "Jméno odesílatele"
+    mailer_from_name_description: "Toto jméno se objeví v emailech odesílaných aplikací"
+    mailer_from_address: "E-mailová adresa odesílatele"
+    mailer_from_address_description: "Tato e-mailová adresa se objeví v emailech odeslaných aplikací"
+    meta_title: "Název stránek (SEO)"
+    meta_title_description: "Název pro webový portál <title>, použitý ke zlepšení SEO"
+    meta_description: "Popis stránek (SEO)"
+    meta_description_description: 'Popis webového portálu <meta name="description">, použitý ke zlepšení SEO'
+    meta_keywords: "Klíčová slova (SEO)"
+    meta_keywords_description: 'Klíčová slova <meta name="keywords">, použitá ke zlepšení SEO'
+    min_age_to_participate: Minimální věk potřebný k účasti
+    min_age_to_participate_description: "Uživatelé od tohoto věku se mohou účastnit všech procesů"
+    postal_codes: "PSČ"
+    postal_codes_description: "Seznam platných poštovních směrovacích čísel oddělených čárkou; můžete také uvést rozsahy oddělené dvojtečkou. Příklad: 00001:00010,00024,AB3 45FG,00031:00035 povolí poštovní směrovací čísla mezi 00001 a 00010, poštovní směrovací číslo 00024, poštovní směrovací číslo AB3 45FG a poštovní směrovací čísla mezi 00031 a 00035. Pokud jej necháte prázdný, budou platná všechna poštovní směrovací čísla."
+    proposals:
+      successful_proposal_id: Úspěšný návrh
+      successful_proposal_id_description: Tento návrh slouží jako reference pro úspěšný návrh v množství podpory a zobrazí se v grafu ovládacího panelu.
+      poll_short_title: Průzkumy
+      poll_short_title_description: Stručný popis funkce průzkumu. Umožňuje uživatelům vytvářet průzkumy k návrhu
+      poll_description: Popis hlasování
+      poll_description_description: Podrobný popis funkce průzkumu
+      poll_link: Odkaz na doplňující informace
+      poll_link_description: Přidává další informační odkaz na funkci průzkumu
+      email_short_title: Email
+      email_short_title_description: 'Stručný popis funkce e-mailu. Umožňuje uživatelům odeslat e-mail na podporu jejich návrhu. Celý obsah tohoto e-mailu najdete v souboru "/app/views/dashboard/mailer/forward.html.erb"'
+      email_description: Popis e-mailu
+      email_description_description: Podrobný popis funkce e-mailu
+      poster_short_title: Plakát
+      poster_short_title_description: 'Stručný popis funkce plakátu. Umožňuje uživatelům stáhnout plakát ve formátu PDF a propagovat tak svůj návrh. Celý obsah tohoto plakátu najdete v souboru "/app/views/dashboard/poster/index.pdf.erb"'
+      poster_description: Popis plakátu
+      poster_description_description: Podrobný popis funkce plakátu
+    analytics_url: "Adresa URL služby Analytics"
+    proposal_notification_minimum_interval_in_days: "Minimální interval (ve dnech) pro autory návrhů pro zasílání oznámení o nových návrzích"
+    proposal_notification_minimum_interval_in_days_description: "Počet dní, po které může uživatel posílat oznámení všem sledujícím jeho návrhu"
+    direct_message_max_per_day: "Maximální počet přímých zpráv za den"
+    direct_message_max_per_day_description: "Maximální počet přímých zpráv, které může jeden uživatel odeslat za den"
+    feature:
+      twitter_login: "Twutter přihlášení"
+      twitter_login_description: "Povolit uživatelům, aby se zaregistrovali se svým účtem Twitter"
+      facebook_login: "Facebook přihlášení"
+      facebook_login_description: "Povolit uživatelům, aby se zaregistrovali se svým účtem Facebook"
+      google_login: "Přihlášení Google"
+      google_login_description: "Povolit uživatelům, aby se zaregistrovali se svým účtem Google"
+      wordpress_login: "Přihlášení do Wordpressu"
+      wordpress_login_description: "Umožnit uživatelům přihlásit se pomocí účtu Wordpress"
+      featured_proposals: "Doporučené návrhy"
+      featured_proposals_description: "Zobrazit doporučené návrhy na hlavní stránce návrhů"
+      signature_sheets: "Podpisové archy"
+      signature_sheets_description: "Umožnit v administrativním panelu přidávat podpisy shromážděné v terénu k návrhům a investičním projektům v rámci participativních rozpočtů"
+      user:
+        recommendations: "Doporučení"
+        recommendations_description: "Zobrazuje na domovské stránce doporučení uživatelům založené na štítcích následujících položek"
+        skip_verification: "Přeskočit ověřování uživatele"
+        skip_verification_description: "Zakázat ověřování uživatelů, všichni registrovaní uživatelé se budou moci účastnit všech procesů"
+        recommendations_on_debates: "Doporučení k debatám"
+        recommendations_on_debates_description: "Zobrazit doporučení uživatelů na stránce debat na základě štítků sledovaných položek"
+        recommendations_on_proposals: "Doporučení k návrhům"
+        recommendations_on_proposals_description: "Zobrazit doporučení uživatelů na stránce návrhů na základě štítků sledovaných položek"
+      community: "Komunita kolem návrhů a investic"
+      community_description: "Povolit sekci komunit v návrzích a investičních projektech participativního rozpočtu"
+      machine_learning: "AI / Machine learning"
+      machine_learning_description: "Povolte sekci AI / Machine Learning pro automatické spouštění skriptů Python a obohacování obsahu."
+      map: "Provádět geolokaci návrhů a projektů rozpočtu"
+      map_description: "Povolit geolokaci návrhů a investičních projektů"
+      allow_images: "Umožnit nahrát a zobrazit obrázky"
+      allow_images_description: "Umožnit uživatelům nahrát obrázky v sekci participativní rozpočet při vytváření návrhů a investičních projektů"
+      allow_attached_documents: "Umožnit nahrát a zobrazit připojené dokumenty"
+      allow_attached_documents_description: "Umožnit uživatelům nahrát dokumenty v sekci participativní rozpočet při vytváření návrhů a investičních projektů"
+      guides: "Zobrazit návod pro vytváření návrhů nebo investičních projektů"
+      guides_description: "Zobrazit průvodce rozdílů mezi návrhy a investičními projekty, pokud je aktivní participativní rozpočet"
+      public_stats: "Veřejné statistiky"
+      public_stats_description: "Zobrazit veřejné statistiky v panelu Administrace"
+      help_page: "Stránka nápovědy"
+      help_page_description: 'Zobrazí nabídku Nápověda obsahující stránku s informacemi o každé povolené funkci'
+      remote_translations: "Vzdálený překlad"
+      remote_translations_description: "Zobrazí tlačítko, které umožňuje uživatelům vyžádat si překlad, pokud obsah není v jejich jazyce."
+      translation_interface: "Překlad rozhraní"
+      translation_interface_description: "Zobrazí rozhraní pro ruční překlad, které uživatelům umožňuje zadávat obsah ve všech dostupných jazycích aplikace. Tato možnost ovlivňuje pouze formuláře uživatelských aplikací a nezávisle na tom bude vždy aktivní v panelu správy."
+      remote_census: "Konfigurace připojení ke vzdálenému registru občanů (SOAP)"
+      remote_census_description: "Umožňuje konfigurovat připojení ke vzdálenému registru občanů každé instituce"
+      valuation_comment_notification: "Oznámení o připomínkách k hodnocení"
+      valuation_comment_notification_description: "Odeslat e-mail všem přidruženým uživatelům kromě komentátora ocenění do rozpočtu investic, když je vytvořen nový komentář k ocenění"
+      graphql_api: "GraphQL API"
+      dashboard:
+        notification_emails: "E-maily s upozorněním na ovládacím panelu"
+        notification_emails_description: "Povolit zasílání e-mailů s upozorněním na ovládací panel autorům návrhu"
+      remove_investments_supports: "Umožnit odstranění podpor pro rozpočtové investice"
+      remove_investments_supports_description: "Umožnit uživatelům odstranit podporu investic do participativních rozpočtů ve fázi výběru projektů."
+      sdg: SDG
+      sdg_description: Povolit sekce Cílů udržitelného rozvoje v nabídce správy a v globálních nastaveních.
+    remote_census:
+      general:
+        endpoint: "Koncový bod"
+        endpoint_description: "Název hostitele, kde je služba registru občanů dostupná (wsdl)"
+      request:
+        method_name: "Název metody požadavku"
+        method_name_description: "Název metody požadavku přijímaný webovou službou City Census WebService."
+        structure: "Struktura požadavku"
+        structure_description: 'Struktura požadavku, který odesílá do webové služby registru občanů městského úřadu. V tomto požadavku by měly být vyplněny "statické" hodnoty. Hodnoty týkající se typu dokladu, čísla dokladu, data narození a poštovního směrovacího čísla by měly být nulové. Příklad platného formátu: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": 1, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
+        document_type: "Cesta k typu dokladu"
+        document_type_description: "Cesta ve struktuře požadavku, která odesílá Typ dokladu. NEVYPLŇUJTE, pokud webová služba nevyžaduje Typ dokladu k ověření uživatele."
+        document_number: "Cesta k číslu dokladu"
+        document_number_description: "Cesta ve struktuře požadavku, která odesílá číslo dokumentu. NEVYPLŇUJTE, pokud webová služba nevyžaduje číslo dokladu k ověření uživatele."
+        date_of_birth: "Cesta k datu narození"
+        date_of_birth_description: "Cesta ve struktuře požadavku, která odesílá datum narození. NEVYPLŇUJTE, pokud webová služba nevyžaduje datum narození k ověření uživatele."
+        postal_code: "Cesta k PSČ"
+        postal_code_description: "Cesta ve struktuře požadavku, která odesílá poštovní směrovací číslo. NEVYPLŇUJTE, pokud webová služba nevyžaduje poštovní směrovací číslo k ověření uživatele."
+      response:
+        date_of_birth: "Cesta k datu narození"
+        date_of_birth_description: "V jaké cestě odpovědi se nachází datum narození uživatele?"
+        postal_code: "Cesta k PSČ"
+        postal_code_description: "V jaké cestě odpovědi se nachází poštovní směrovací číslo uživatele?"
+        district: "Cesta pro městskou část"
+        district_description: "V jaké cestě odpovědi se nachází městská část uživatele?"
+        gender: "Cesta pro pohlaví"
+        gender_description: "Na jaké cestě odpovědi je pohlaví uživatele?"
+        name: "Cesta pro jméno"
+        name_description: "V jaké cestě odpovědi se nachází jméno uživatele?"
+        surname: "Cesta pro příjmení"
+        surname_description: "V jaké cestě odpovědi se nachází Příjmení uživatele?"
+        valid: "Podmínka pro zjištění platné odpovědi"
+        valid_description: "Jaká cesta odpovědi musí být oznámena, aby byla považována za platnou odpověď a ověřena uživatelem"
+    map:
+      latitude: "Zeměpisná šířka"
+      latitude_description: "Zeměpisná šířka pro zobrazení pozice na mapě"
+      longitude: "Zeměpisná délka"
+      longitude_description: "Zeměpisná délka pro zobrazení pozice na mapě"
+      zoom: "Zvětšení"
+      zoom_description: "Zvětšení pro zobrazení pozice na mapě"
+    process:
+      debates: "Debaty"
+      debates_description: "Občanský debatní prostor je zaměřen na každého, kdo představuje záležitosti, které se jich týkají a o kterých chtějí sdílet své názory s ostatními"
+      proposals: "Návrhy"
+      proposals_description: "Návrhy občanů jsou příležitostí pro sousedy a kolektivy, aby po získání dostatečné podpory a předložení k hlasování občanů přímo rozhodli o tom, jaká má být jejich společnost"
+      polls: "Průzkumy"
+      polls_description: "Občanské volby jsou participativním mechanismem, jehož prostřednictvím mohou občané s volebním právem přímo rozhodovat"
+      budgets: "Participativní rozpočet"
+      budgets_description: "V rámci participativních rozpočtů občané rozhodují o tom, které projekty předložené jejich sousedy obdrží část rozpočtu"
+      legislation: "Participativní legislativní proces"
+      legislation_description: "V participačních procesech mají občané možnost podílet se na přípravě a úpravě předpisů, které mají vliv na společnost, a vyjádřit se k určitým plánovaným opatřením"
+    html:
+      per_page_code_head: "Kód, který má být obsažen na každé stránce (<head>)"
+      per_page_code_head_description: "Tento kód se objeví v sekci <head>. Užitečné pro zadávání vlastních skriptů, Google analytics..."
+      per_page_code_body: "Kód, který má být obsažen na každé stránce (<body>)"
+      per_page_code_body_description: "Tento kód se zobrazí uvnitř značky <body>. Užitečné pro zadávání vlastních skriptů, analytický kód..."
+    uploads:
+      images:
+        min_width: "Minimální šířka obrázku"
+        min_width_description: "Minimální povolená šířka nahraného obrázku (v pixelech)"
+        min_height: "Minimální výška obrázku"
+        min_height_description: "Minimální povolená výška nahraného obrázku (v pixelech)"
+        max_size: "Maximální velikost obrázku"
+        max_size_description: "Maximální povolená velikost pro nahraný obrázek (v megabajtech / MB)"
+        content_types: "Přijímané typy obsahu pro obrázky"
+        content_types_description: "Výběr všech typů obsahu povolených pro nahrané obrázky"
+        title:
+          min_length: "Minimální délka názvu obrázku"
+          min_length_description: "Název zadaný uživatelem při nahrávání obrázku (používá se jako atribut alt HTML)"
+          max_length: "Maximální délka názvu obrázku"
+          max_length_description: "Název zadaný uživatelem při nahrávání obrázku (používá se jako atribut alt HTML)"
+      documents:
+        max_amount: "Maximální počet dokumentů"
+        max_amount_description: "Maximální počet dokumentů, které lze přiložit k návrhu, investici..."
+        max_size: "Maximální velikost dokumentu"
+        max_size_description: "Maximální povolená velikost nahraného dokumentu (v megabajtech/MB)"
+        content_types: "Povolené typy dokumentů"
+        content_types_description: "Vyberte všechny typy obsahu povolené pro nahrané dokumenty"
+    sdg:
+      process:
+        debates: Související SDG v debatách
+        debates_description: Umožnit propojení debat s cíli udržitelného rozvoje
+        proposals: Související SDG v návrzích
+        proposals_description: Umožnit propojení návrhů s Cíli udržitelného rozvoje
+        polls: Související SDG v průzkumech
+        polls_description: Umožnit propojení průzkumů s Cíli udržitelného rozvoje
+        budgets: Související Cíle udržitelného rozvoje v participačních rozpočtech
+        budgets_description: Umožnit propojení participačních rozpočtů s Cíli udržitelného rozvoje
+        legislation: Související Cíle udržitelného rozvoje ve spolupracujících právních předpisech
+        legislation_description: Umožnit propojení legislativy založené na spolupráci s Cíli udržitelného rozvoje

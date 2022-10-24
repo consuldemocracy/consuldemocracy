@@ -13,7 +13,7 @@
       <% @budgets.each do |budget| %>
         <tr id="<%= dom_id(budget) %>">
           <td><%= budget.name %></td>
-          <td><%= budget.translated_phase %></td>
+          <td><%= budget.current_phase.name %></td>
           <td align="right">
             <%= link_to t("management.budgets.create_new_investment"),
                         new_management_budget_investment_path(budget),

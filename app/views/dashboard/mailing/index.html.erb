@@ -1,0 +1,40 @@
+<% content_for :action_title, t("dashboard.mailing.index.title") %>
+<div class="row expanded">
+  <div class="small-12 medium-9 dashboard-mail-preview column dashboard-mail-preview">
+    <div class="mail-header text-left">
+      <%= image_tag "quote_before_white.png" %>
+      <h1 class="inline"><%= proposal.title %></h1>
+      <%= image_tag "quote_after_white.png" %>
+      <h2><%= sanitize(t("dashboard.mailer.forward.subtitle")) %></h2>
+    </div>
+
+    <div class="margin-bottom">
+      <%= image_tag(proposal.image&.variant(:large).presence || "default_mailing.jpg") %>
+    </div>
+
+    <div class="mail-body">
+      <p><%= t("dashboard.mailer.forward.hi") %></p>
+      <p><%= t("dashboard.mailer.forward.introduction", org: setting["org_name"]) %></p>
+      <p><%= t("dashboard.mailer.forward.support") %></p>
+
+      <div class="text-center">
+        <%= link_to t("dashboard.mailer.forward.support_button"),
+                    proposal_url(@proposal), class: "button large" %>
+      </div>
+
+      <p>
+        <%= t("dashboard.mailer.forward.share") %>
+      </p>
+
+      <div class="text-center">
+        <h3><%= t("dashboard.mailer.forward.share_in") %></h3>
+        <%= render "shared/social_share",
+                   title: @proposal.title,
+                   url: proposal_url(@proposal),
+                   description: @proposal.summary %>
+      </div>
+    </div>
+  </div>
+
+  <%= render "mailing_options" %>
+</div>

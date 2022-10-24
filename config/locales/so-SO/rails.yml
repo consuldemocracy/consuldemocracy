@@ -9,7 +9,7 @@ so:
       - Jimce
       - Sabti
     abbr_month_names:
-      - 
+      -
       - Janaayo
       - Febarayo
       - Marso
@@ -35,7 +35,7 @@ so:
       long: "%B %d, %Y"
       short: "%d%d"
     month_names:
-      - 
+      -
       - Janaayo
       - Fabaraayo
       - Marso
@@ -128,7 +128,7 @@ so:
         other: waa dherer khaldan (waa inay ahaataa%{count} xarfaha)
       other_than: waa inay ahaataa mid ka duwan%{count}
     template:
-      body: 'Waxaa jiray dhibaatooyin dhinacyada soo socda:'
+      body: "Waxaa jiray dhibaatooyin dhinacyada soo socda:"
       header:
         one: 1 qalad ayaa ka mamnuucday%{model} laga bilaabo kaydka
         other: "%{count} qalad ayaa ka mamnuucday%{model} laga bilaabo kaydka"
@@ -145,19 +145,19 @@ so:
         delimiter: ","
         format: "%u%n"
         precision: 2
-        separator: "."
+        separator: ",."
         significant: false
         strip_insignificant_zeros: false
         unit: "&"
     format:
       delimiter: ","
       precision: 3
-      separator: ",."
+      separator: "."
       significant: false
       strip_insignificant_zeros: false
     human:
       decimal_units:
-        format: "%u%u"
+        format: "%n"
         units:
           billion: Bilyaan
           million: Malyaan
@@ -169,7 +169,7 @@ so:
         significant: true
         strip_insignificant_zeros: true
       storage_units:
-        format: "%n"
+        format: "%u%u"
         units:
           byte:
             one: Byte

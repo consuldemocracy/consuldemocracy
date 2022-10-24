@@ -1,8 +1,7 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe UsersHelper do
-
-  describe '#humanize_document_type' do
+  describe "#humanize_document_type" do
     it "returns a humanized document type" do
       expect(humanize_document_type("1")).to eq "DNI"
       expect(humanize_document_type("2")).to eq "Passport"
@@ -10,14 +9,14 @@ describe UsersHelper do
     end
   end
 
-  describe '#deleted_commentable_text' do
+  describe "#deleted_commentable_text" do
     it "returns the appropriate message for deleted debates" do
       debate = create(:debate)
       comment = create(:comment, commentable: debate)
 
       debate.hide
 
-      expect(comment_commentable_title(comment)).to eq('<del>' + comment.commentable.title +
+      expect(comment_commentable_title(comment)).to eq("<del>" + comment.commentable.title +
                                                        '</del> <span class="small">(This debate has been deleted)</span>')
     end
 
@@ -27,7 +26,7 @@ describe UsersHelper do
 
       proposal.hide
 
-      expect(comment_commentable_title(comment)).to eq('<del>' + comment.commentable.title +
+      expect(comment_commentable_title(comment)).to eq("<del>" + comment.commentable.title +
                                                        '</del> <span class="small">(This proposal has been deleted)</span>')
     end
 
@@ -37,12 +36,12 @@ describe UsersHelper do
 
       investment.hide
 
-      expect(comment_commentable_title(comment)).to eq('<del>' + comment.commentable.title +
+      expect(comment_commentable_title(comment)).to eq("<del>" + comment.commentable.title +
                                                        '</del> <span class="small">(This investment project has been deleted)</span>')
     end
   end
 
-  describe '#comment_commentable_title' do
+  describe "#comment_commentable_title" do
     it "returns a link to the comment" do
       comment = create(:comment)
       expect(comment_commentable_title(comment)).to eq link_to comment.commentable.title, comment
@@ -51,9 +50,8 @@ describe UsersHelper do
     it "returns a hint if the commentable has been deleted" do
       comment = create(:comment)
       comment.commentable.hide
-      expect(comment_commentable_title(comment)).to eq('<del>' + comment.commentable.title +
+      expect(comment_commentable_title(comment)).to eq("<del>" + comment.commentable.title +
                                                        '</del> <span class="small">(This debate has been deleted)</span>')
     end
   end
-
 end

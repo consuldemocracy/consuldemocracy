@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>" data-current-user-id="<%= current_user&.id %>">
+  <head>
+    <%= render "layouts/common_head", default_title: setting["org_name"] %>
+    <%= render "layouts/meta_tags" %>
+    <%= content_for :canonical %>
+    <%= favicon_link_tag image_path_for("apple-touch-icon-200.png"),
+                     rel: "icon apple-touch-icon",
+                     sizes: "200x200",
+                     type: "image/png" %>
+    <%= content_for :social_media_meta_tags %>
+
+    <%= raw setting["per_page_code_head"] %>
+  </head>
+  <body class="proposal-dashboard">
+    <%= raw setting["per_page_code_body"] %>
+
+    <h1 class="show-for-sr"><%= setting["org_name"] %></h1>
+
+    <%= render "layouts/header", with_subnavigation: false %>
+
+    <div class="menu-and-content">
+      <%= check_box_tag :show_menu, nil, false, role: "switch" %>
+
+      <nav id="side_menu" class="dashboard-sidebar">
+        <%= render "dashboard/menu" %>
+      </nav>
+
+      <div class="admin-content">
+        <%= label_tag :show_menu, t("admin.menu.admin"),
+                      "aria-hidden": true, class: "button hollow expanded" %>
+
+        <%= render "layouts/flash" %>
+        <%= render "layouts/dashboard/proposal_totals" %>
+        <%= render "layouts/dashboard/proposal_header" %>
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

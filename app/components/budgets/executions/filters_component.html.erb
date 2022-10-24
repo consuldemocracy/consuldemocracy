@@ -1,0 +1,24 @@
+<%= form_tag(budget_executions_path(budget), method: :get, class: "budget-executions-filters") do %>
+  <div class="filter">
+    <%= label_tag :milestone_tag, t("budgets.executions.filters.milestone_tag.label") %>
+    <%= select_tag :milestone_tag,
+                  options_for_select(
+                    options_for_milestone_tags,
+                    params[:milestone_tag]
+                  ),
+                  prompt: t("budgets.executions.filters.milestone_tag.all",
+                  count: budget.investments.winners.with_milestones.count) %>
+  </div>
+  <div class="filter">
+    <%= label_tag :status, t("budgets.executions.filters.status.label") %>
+    <%= select_tag :status,
+                  options_from_collection_for_select(statuses,
+                  :id, lambda { |s| "#{s.name} (#{filters_select_counts(s.id)})" },
+                  params[:status]),
+                  prompt: t("budgets.executions.filters.status.all",
+                  count: budget.investments.winners.with_milestones.count) %>
+  </div>
+  <div class="submit">
+    <%= submit_tag t("shared.filter") %>
+  </div>
+<% end %>

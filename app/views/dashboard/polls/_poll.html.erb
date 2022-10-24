@@ -1,0 +1,39 @@
+<div id="<%= dom_id(poll) %>" class="small-12 medium-6 large-4 column end">
+  <div class="poll-card" data-equalizer-watch="poll-cards">
+    <h4>
+      <%= link_to poll.title,
+                  proposal_poll_path(proposal, poll),
+                  target: "_blank" %>
+    </h4>
+    <span class="small">
+      <%= l(poll.starts_at.to_date) %> - <%= l(poll.ends_at.to_date) %>
+    </span>
+
+    <p class="margin-top">
+      <strong><%= t("dashboard.polls.poll.responses", count: poll.answer_count) %></strong>
+    </p>
+
+    <div class="small-12 column small-centered margin-top">
+      <% if poll.starts_at.to_date >= Date.current %>
+        <%= link_to t("dashboard.polls.poll.edit_poll"),
+                    edit_proposal_dashboard_poll_path(proposal, poll), class: "button hollow" %>
+      <% else %>
+        <%= link_to t("dashboard.polls.poll.view_results"),
+                    results_proposal_poll_path(proposal, poll),
+                    class: "button", target: "_blank" %>
+      <% end %>
+    </div>
+
+    <%= form_for poll, remote: true, data: { type: :json },
+      url: proposal_dashboard_poll_path(proposal, poll) do |f| %>
+      <%= f.check_box :results_enabled, class: "js-submit-on-change" %>
+    <% end %>
+    <p class="help-text"><%= t("dashboard.polls.poll.show_results_help") %></p>
+
+    <%= link_to t("dashboard.polls.poll.delete"),
+                proposal_dashboard_poll_path(proposal, poll),
+                method: :delete,
+                "data-confirm": t("dashboard.polls.poll.alert_notice"),
+                class: "delete" %>
+  </div>
+</div>

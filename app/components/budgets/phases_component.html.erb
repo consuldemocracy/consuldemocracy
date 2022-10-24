@@ -1,0 +1,65 @@
+<section class="budget-phases">
+  <header>
+    <h2><%= t("budgets.index.all_phases") %></h2>
+  </header>
+
+  <ul class="phases-list tabs" data-tabs id="budget_phases_tabs" data-deep-link="true">
+    <% phases.each do |phase| %>
+      <li class="phase-title tabs-title <%= "is-active current-phase-tab" if phase.current? %>">
+        <a href="#<%= phase_dom_id(phase) %>">
+          <% if phase.current? %>
+            <span class="current-phase-timeline"><%= t("budgets.index.current_phase") %></span>
+          <% end %>
+
+          <span class="phase-name"><%= phase.name %></span>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="tabs-content" data-tabs-content="budget_phases_tabs">
+    <% phases.each do |phase| %>
+      <div id="<%= phase_dom_id(phase) %>" class="tabs-panel <%= "is-active" if phase.current? %>">
+        <div class="tabs-controls">
+          <% if phase == phases.first %>
+            <span class="budget-prev-phase-disabled"></span>
+          <% else %>
+            <a href="#<%= prev_phase_dom_id(phase) %>" title="<%= t("budgets.index.prev_phase") %>"
+               data-turbolinks="false"
+               class="budget-prev-phase">
+              <span><%= t("budgets.index.prev_phase") %></span>
+            </a>
+          <% end %>
+
+          <% if phase == phases.last %>
+            <span class="budget-next-phase-disabled"></span>
+          <% else %>
+            <a href="#<%= next_phase_dom_id(phase) %>" title="<%= t("budgets.index.next_phase") %>"
+               data-turbolinks="false"
+               class="budget-next-phase">
+              <span><%= t("budgets.index.next_phase") %></span>
+            </a>
+          <% end %>
+        </div>
+
+        <div class="budget-phase">
+          <div class="budget-phase-content">
+            <h3><%= phase.name %></h3>
+            <p><%= start_date(phase) %> - <%= end_date(phase) %></p>
+            <%= auto_link_already_sanitized_html(wysiwyg(phase.description)) %>
+
+            <% if phase.main_link_text.present? && phase.main_link_url.present? %>
+              <%= link_to phase.main_link_text, phase.main_link_url, class: "main-link" %>
+            <% end %>
+          </div>
+
+          <% if phase.image.present? %>
+            <div class="budget-phase-image">
+              <%= image_tag phase.image.variant(:large), alt: "" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>

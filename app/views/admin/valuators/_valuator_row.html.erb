@@ -1,0 +1,26 @@
+<tr>
+  <td><%= valuator.name %></td>
+  <td><%= valuator.email %></td>
+  <td>
+    <% if valuator.description.present? %>
+      <%= valuator.description %>
+    <% else %>
+      <%= t("admin.valuators.index.no_description") %>
+    <% end %>
+  </td>
+  <td>
+    <% if valuator.valuator_group.present? %>
+      <%= valuator.valuator_group&.name %>
+    <% else %>
+      <%= t("admin.valuators.index.no_group") %>
+    <% end %>
+  </td>
+  <td>
+    <%= valuator_abilities(valuator) %>
+  </td>
+  <td>
+    <%= render Admin::TableActionsComponent.new(valuator) do |actions| %>
+      <%= actions.action(:show, text: t("admin.shared.view")) %>
+    <% end %>
+  </td>
+</tr>

@@ -1,5 +1,4 @@
 class Management::UsersController < Management::BaseController
-
   def new
     @user = User.new
   end
@@ -13,17 +12,22 @@ class Management::UsersController < Management::BaseController
       user_with_email
     end
 
-    @user.terms_of_service = '1'
+    # @user.terms_of_service = '1'
 
-    # @user.save
+    # # @user.save
 
-    verificado = verificar_residencia
-    if verificado && @user.save
-      @user.residence_verified_at = verificado
-      @user.level_two_verified_at = verificado
-      @user.verified_at = verificado
-      @user.send_reset_password_instructions
-      flash[:notice] = 'Verificación correcta en el Padrón'
+    # verificado = verificar_residencia
+    # if verificado && @user.save
+    #   @user.residence_verified_at = verificado
+    #   @user.level_two_verified_at = verificado
+    #   @user.verified_at = verificado
+    #   @user.send_reset_password_instructions
+    #   flash[:notice] = 'Verificación correcta en el Padrón'
+    @user.terms_of_service = "1"
+    @user.residence_verified_at = Time.current
+    @user.verified_at = Time.current
+
+    if @user.save
       render :show
     else
       flash[:alert] = 'Verificación incorrecta en el Padrón'
@@ -32,20 +36,24 @@ class Management::UsersController < Management::BaseController
   end
 
   def erase
-    managed_user.erase(t("management.users.erased_by_manager", manager: current_manager['login'])) if current_manager.present?
+    managed_user.erase(t("management.users.erased_by_manager", manager: current_manager["login"])) if current_manager.present?
     destroy_session
     redirect_to management_document_verifications_path, notice: t("management.users.erased_notice")
   end
 
   def logout
     destroy_session
-    redirect_to management_root_url, notice: t("management.sessions.signed_out_managed_user")
+    redirect_to management_root_path, notice: t("management.sessions.signed_out_managed_user")
   end
 
   private
 
     def user_params
-      params.require(:user).permit(:document_type, :document_number, :username, :email, :date_of_birth)
+      params.require(:user).permit(allowed_params)
+    end
+
+    def allowed_params
+      [:document_type, :document_number, :username, :email, :date_of_birth]
     end
 
     def residence_params
@@ -71,7 +79,7 @@ class Management::UsersController < Management::BaseController
     end
 
     def user_without_email
-      new_password = "aAbcdeEfghiJkmnpqrstuUvwxyz23456789$!".split('').sample(10).join('')
+      new_password = "aAbcdeEfghiJkmnpqrstuUvwxyz23456789$!".chars.sample(10).join
       @user.password = new_password
       @user.password_confirmation = new_password
 

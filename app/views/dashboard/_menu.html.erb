@@ -1,0 +1,106 @@
+<ul id="proposal_dashboard_menu" class="no-bullet">
+  <li class="section-title <%= "is-active" if my_proposal_menu_active? %>">
+    <span class="icon-proposals"></span>
+    <%= link_to proposal_dashboard_path(proposal.to_param) do %>
+      <strong><%= t("dashboard.menu.my_proposal") %></strong>
+    <% end %>
+  </li>
+
+  <li class="section-title <%= "is-active" if progress_menu_active? %>">
+    <span class="icon-stats"></span>
+    <%= link_to progress_proposal_dashboard_path(proposal.to_param) do %>
+      <strong><%= t("dashboard.menu.progress") %></strong>
+    <% end %>
+  </li>
+
+  <% if proposed_actions.any? %>
+    <li class="section-title <%= "is-active" if recommended_actions_menu_active? %>">
+      <span class="icon-checkmark-circle"></span>
+      <%= link_to recommended_actions_proposal_dashboard_path(proposal.to_param) do %>
+        <strong><%= t("dashboard.menu.recommended_actions") %></strong>
+      <% end %>
+      <% if new_resources_since_last_login?(proposed_actions, @new_actions_since_last_login) %>
+        <span class="label"><%= t("dashboard.progress.new_action") %></span>
+      <% end %>
+    </li>
+  <% end %>
+
+  <% if resources_menu_visible?(proposal, resources) %>
+    <li class="section-title <%= "is-active" if resources_menu_active? %>">
+      <span class="icon-zip"></span>
+      <strong><%= t("dashboard.menu.resources") %></strong>
+      <% if new_resources_since_last_login?(resources, @new_actions_since_last_login) %>
+        <span class="label"><%= t("dashboard.progress.new_action") %></span>
+      <% end %>
+      <ul class="no-bullet resources">
+        <% if can?(:manage_polls, proposal) %>
+          <li>
+            <%= link_to proposal_dashboard_polls_path(proposal),
+                        class: ("submenu-active" if polls_menu_active?) do %>
+              <span data-tooltip title="<%= Setting["proposals.poll_short_title"] ||
+                                            t("dashboard.menu.polls") %>">
+                <%= t("dashboard.menu.polls") %>
+              </span>
+            <% end %>
+          </li>
+        <% end %>
+
+        <% if can?(:manage_mailing, proposal) %>
+          <li>
+            <%= link_to new_proposal_dashboard_mailing_path(proposal),
+                        class: ("submenu-active" if mailing_menu_active?) do %>
+              <span data-tooltip title="<%= Setting["proposals.email_short_title"] ||
+                                            t("dashboard.menu.mailing") %>">
+                <%= t("dashboard.menu.mailing") %>
+              </span>
+            <% end %>
+          </li>
+        <% end %>
+
+        <% if can?(:manage_poster, proposal) %>
+          <li>
+            <%= link_to new_proposal_dashboard_poster_path(proposal),
+                        class: ("submenu-active" if poster_menu_active?) do %>
+              <span data-tooltip title="<%= Setting["proposals.poster_short_title"] ||
+                                            t("dashboard.menu.poster") %>">
+                <%= t("dashboard.menu.poster") %>
+              </span>
+            <% end %>
+          </li>
+        <% end %>
+
+        <% resources.each do |resource| %>
+          <li>
+            <%= link_to new_request_proposal_dashboard_action_path(proposal, resource),
+                        class: ("submenu-active" if is_request_active(resource.id)) do %>
+              <span data-tooltip title="<%= resource.short_description %>">
+                <%= resource.title %>
+              </span>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+
+  <li class="section-title <%= "is-active" if community_menu_active? %>">
+    <span class="icon-organizations"></span>
+    <%= link_to community_proposal_dashboard_path(proposal) do %>
+      <strong><%= t("dashboard.menu.community") %></strong>
+    <% end %>
+  </li>
+
+  <li class="section-title <%= "is-active" if messages_menu_active? %>">
+    <span class="icon-letter"></span>
+    <%= link_to messages_proposal_dashboard_path(proposal) do %>
+      <strong><%= t("dashboard.menu.messages") %></strong>
+    <% end %>
+  </li>
+
+  <li class="section-title <%= "is-active" if related_content_menu_active? %>">
+    <span class="icon-comments"></span>
+    <%= link_to related_content_proposal_dashboard_path(proposal) do %>
+      <strong><%= t("dashboard.menu.related_content") %></strong>
+    <% end %>
+  </li>
+</ul>

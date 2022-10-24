@@ -3,7 +3,6 @@ zh-CN:
     comments:
       index:
         block_authors: 封锁作者
-        confirm: 您确定吗？
         filter: 过滤器
         filters:
           all: 所有
@@ -12,9 +11,8 @@ zh-CN:
         headers:
           comment: 评论
           moderate: 审核
-        hide_comments: 隐藏评论
+        hide: 隐藏评论
         ignore_flags: 标记为已查看
-        order: 排序
         orders:
           flags: 最多标记
           newest: 最新
@@ -25,7 +23,6 @@ zh-CN:
     debates:
       index:
         block_authors: 封锁作者
-        confirm: 您确定吗？
         filter: 过滤器
         filters:
           all: 所有
@@ -34,9 +31,8 @@ zh-CN:
         headers:
           debate: 辩论
           moderate: 审核
-        hide_debates: 隐藏辩论
+        hide: 隐藏辩论
         ignore_flags: 标记为已查看
-        order: 排序
         orders:
           created_at: 最新
           flags: 最多标记
@@ -53,7 +49,6 @@ zh-CN:
     proposals:
       index:
         block_authors: 封锁作者
-        confirm: 您确定吗？
         filter: 过滤器
         filters:
           all: 所有
@@ -62,9 +57,8 @@ zh-CN:
         headers:
           moderate: 审核
           proposal: 提议
-        hide_proposals: 隐藏提议
+        hide: 隐藏提议
         ignore_flags: 标记为已查看
-        order: 排序依据
         orders:
           created_at: 最近
           flags: 最多标记
@@ -72,7 +66,6 @@ zh-CN:
     budget_investments:
       index:
         block_authors: 封锁作者
-        confirm: 您确定吗？
         filter: 过滤器
         filters:
           all: 所有
@@ -81,9 +74,8 @@ zh-CN:
         headers:
           moderate: 审核
           budget_investment: 预算投资
-        hide_budget_investments: 隐藏预算投资
+        hide: 隐藏预算投资
         ignore_flags: 标记为已查看
-        order: 排序依据
         orders:
           created_at: 最近
           flags: 最多标记
@@ -91,7 +83,6 @@ zh-CN:
     proposal_notifications:
       index:
         block_authors: 封锁作者
-        confirm: 您确定吗？
         filter: 过滤器
         filters:
           all: 所有
@@ -100,18 +91,15 @@ zh-CN:
         headers:
           moderate: 审核
           proposal_notification: 提议通知
-        hide_proposal_notifications: 隐藏提议
+        hide: 隐藏提议
         ignore_flags: 标记为已查看
-        order: 排序依据
         orders:
           created_at: 最近
           moderated: 已审核
         title: 提议通知
     users:
       index:
-        hidden: 已封锁
         hide: 封锁
-        search: 搜索
         search_placeholder: 电子邮件或用户名
         title: 封锁用户
       notice_hide: 用户已被封锁。这个用户的所有辩论和评论都已被隐藏。

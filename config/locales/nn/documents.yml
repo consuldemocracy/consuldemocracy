@@ -1,0 +1,7 @@
+nn:
+  documents:
+    title: Dokumenter
+    additional: Ytterligere dokumentasjon
+    form:
+      title: Dokumenter
+      cancel_button: Avbryt

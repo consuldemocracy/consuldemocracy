@@ -1,0 +1,2 @@
+$("#<%= dom_id(@investment) %>_votes")
+  .html("<%= j render Budgets::Investments::VotesComponent.new(@investment) %>");

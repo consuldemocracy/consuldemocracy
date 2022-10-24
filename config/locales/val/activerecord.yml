@@ -1,4 +1,11 @@
 val:
+  attributes:
+    geozone_id: "Ámbit d'actuació"
+    results_enabled: "Mostrar resultats"
+    stats_enabled: "Mostrar estadístiques"
+    name: Nom
+    email: Correu electrònic
+    description: Descripció
   activerecord:
     models:
       activity:
@@ -16,6 +23,9 @@ val:
       milestone/status:
         one: "Estat de la Fita"
         other: "Estats de la Fita"
+      progress_bar:
+        one: "Barra de progrés"
+        other: "Barres de progrés"
       comment:
         one: "Comentari"
         other: "Comentaris"
@@ -26,7 +36,7 @@ val:
         one: "Tema"
         other: "Temes"
       user:
-        one: "Usuari"
+        one: "Usuaris"
         other: "Usuaris"
       moderator:
         one: "Moderador"
@@ -45,13 +55,13 @@ val:
         other: "Gestors"
       newsletter:
         one: "Butlletí informatiu"
-        other: "Butlletins informatius"
+        other: "Enviament de Newsletters"
       vote:
-        one: "Vot"
+        one: "Votar"
         other: "Vots"
       organization:
         one: "Associació"
-        other: "Associacions"
+        other: "Organitzacions"
       poll/booth:
         one: "urna"
         other: "urnes"
@@ -61,33 +71,33 @@ val:
       proposal:
         one: "Proposta ciutadana"
         other: "Propostes ciutadanes"
-      spending_proposal:
-        one: "Proposta d'inversió"
-        other: "Propostes d'inversió"
       site_customization/page:
         one: Pàgina
-        other: Pàgines
+        other: Pàgines personalitzades
       site_customization/image:
         one: Imatge
-        other: Imatges
+        other: Personalitzar imatges
       site_customization/content_block:
         one: Bloc
-        other: Blocs
+        other: Personalitzar blocs
+      document:
+        one: Document
+        other: Documents
       legislation/process:
         one: "Proces"
-        other: "Processos"
+        other: "Processos legislatius"
       legislation/proposal:
         one: "Proposta"
         other: "Propostes"
       legislation/draft_versions:
         one: "Versió esborrany"
-        other: "Versions esborrany"
+        other: "Versions de l'esborrany"
       legislation/questions:
         one: "Pregunta"
         other: "Preguntes"
       legislation/question_options:
         one: "Opció de resposta tancada"
-        other: "Opcions de resposta tancada"
+        other: "Opcions de resposta"
       legislation/answers:
         one: "Resposta"
         other: "Respostes"
@@ -104,7 +114,7 @@ val:
         one: "Votació"
         other: "Votacions"
       proposal_notification:
-        one: "Notificació de proposta"
+        one: "Notificacio de proposta"
         other: "Notificacions de propostes"
     attributes:
       budget:
@@ -118,96 +128,186 @@ val:
         description_finished: "Descripció quan el pressupost ha finalitzat"
         phase: "Fase"
         currency_symbol: "Divisa"
+      budget/translation:
+        name: "Nom"
       budget/investment:
-        heading_id: "Partida pressupostària"
+        heading_id: "Partida"
         title: "Títol"
         description: "Descripció"
-        external_url: "Enllaç a documentació addicional"
+        external_url: "Enllaç a documentació adicional"
         administrator_id: "Administrador"
         location: "Localització (opcional)"
         organization_name: "Si estàs proposant en nom d'una associació o col·lectiu, escriu el seu nom"
         image: "Imatge descriptiva de la proposta d'inversió"
         image_title: "Títol de la imatge"
+        duration: "Plaç d'execució"
+        feasibility_feasible: "Viable"
+        feasibility_undecided: "Sense definir"
+        feasibility_unfeasible: "Inviable"
+        incompatible: "Marcar com incompatible"
+        price_explanation: "Informe de cost"
+        selected: "Marcar com seleccionat"
+        selected_true: "Seleccionades"
+        selected_false: "No seleccionat"
+        unfeasibility_explanation: "Informe de viabilitat"
+        valuation_finished: "Avaluació finalitzada"
+        valuator_ids: "Grups"
+        valuation_tag_list: "Temes"
+      budget/investment/translation:
+        title: "Títol"
+        description: "Descripció"
+      geozone:
+        name: Nom
       milestone:
         status_id: "Estat actual (opcional)"
         title: "Títol"
         description: "Descripció (opcional si hi ha un estat asignat)"
         publication_date: "Data de publicació"
+      milestone/translation:
+        description: "Descripció"
       milestone/status:
         name: "Nom"
         description: "Descripció (opcional)"
+      progress_bar:
+        kind: "Tipus"
+        title: "Títol"
+        percentage: "Progrés actual"
+      progress_bar/kind:
+        primary: "Primari"
+        secondary: "Secondari"
+      budget/group/translation:
+        name: "Nom del grup"
       budget/heading:
+        allow_custom_content: "Permet contingut bloquejat"
         name: "Nom de la partida"
         price: "Cost"
         population: "Població"
+      budget/heading/translation:
+        name: "Nom de la partida"
+      budget/phase:
+        enabled: "Fase habilitada"
+        ends_at: "Data de fi del procés"
+        starts_at: "Data d'inici del procés"
+      budget/phase/translation:
+        name: "Nom"
+        description: "Descripció"
+        summary: "Resumen"
       comment:
         body: "Comentari"
         user: "Usuari"
       debate:
         author: "Autor"
         description: "Opinió"
-        terms_of_service: "Termes de servei"
+        tag_list: "Temes"
+        terms_of_service: "Termes de servici"
         title: "Títol"
+      debate/translation:
+        title: "Títol del debat"
+        description: "Text inicial del debat"
       proposal:
         author: "Autor"
         title: "Títol"
         question: "Pregunta"
         description: "Descripció"
-        terms_of_service: "Termes de servici"
+        responsible_name: "Nom i cognoms de la persona que fa aquesta proposta"
+        retired_reason: "Raó per la que es retira la proposta"
+        selected: "Marcar com seleccionat"
+        terms_of_service: "Termes de servei"
+      proposal/translation:
+        title: "Títol de la proposta"
+        description: "Texte desenvolupat de la proposta"
+        summary: "Resum de la proposta"
+        retired_explanation: "Explicació"
       user:
         login: "Email o nom d'usuari"
-        email: "Correu electrónic"
+        email: "Correu electrònic"
         username: "Nom d'usuari"
         password_confirmation: "Confirmació de contrasenya"
         password: "Contrasenya"
         current_password: "Contrasenya actual"
-        phone_number: "Telèfon"
+        email_digest: "Rebre un resum de notificacions sobre propostes"
+        email_on_comment: "Rebre un correu electrònic quan algú comenta en les meues propostes o debats"
+        email_on_comment_reply: "Rebre un correu electrònic quant algú contesta els meus comentaris"
+        email_on_direct_message: "Rebre correus electrònics amb missatges privats"
+        newsletter: "Rebre correus electrònics amb informació interesant sobre la web"
         official_position: "Càrrec públic"
+        official_position_badge: "Mostrar etiqueta de tipus d'usuari"
         official_level: "Nivell del càrrec"
+        phone_number: "Telèfon"
+        public_activity: "Mostrar públicament la meua llista d'activitats"
+        recommended_debates: "Mostrar recomanacions de debats"
+        recommended_proposals: "Mostrar recomanacions de propostes"
         redeemable_code: "Codi de verificació per carta"
+      direct_message:
+        title: "Títol"
+        body: "Missatge"
       organization:
         name: "Nom de l'organització"
         responsible_name: "Persona responsable de l'associació"
-      spending_proposal:
-        administrator_id: "Administrador"
-        association_name: "Nom de l'associació"
-        description: "Descripció"
-        external_url: "Enllaç a documentació addicional"
-        geozone_id: "Ámbit d'actuació"
-        title: "Títol"
       poll:
         name: "Nom"
-        starts_at: "Data d'apertura"
+        title: "Nom"
+        starts_at: "Data d'inici"
         ends_at: "Data de tancament"
         geozone_restricted: "Restringida per zones"
-        summary: "Resum"
+        summary: "Resumen"
+        description: "Descripció"
+      active_poll/translation:
+        description: "Descripció"
+      poll/booth:
+        name: "Nom"
+        location: "Ubicació"
+      poll/translation:
+        name: "Nom"
+        summary: "Resumen"
         description: "Descripció"
       poll/translation:
         name: "Nom"
         summary: "Resum"
         description: "Descripció"
       poll/question:
+        poll_id: "Votació"
         title: "Pregunta"
-        summary: "Resumen"
+        summary: "Resum"
         description: "Descripció"
         external_url: "Enllaç a documentació adicional"
       poll/question/translation:
         title: "Pregunta"
+      poll/ballot_sheet:
+        poll_id: Votació
+      poll/shift:
+        task: "Tasca"
+      proposal_notification:
+        body: "Missatge"
+        title: "Títol"
       signature_sheet:
+        title: "Títol"
         signable_type: "Tipus de fulla de signatures"
         signable_id: "ID Proposta ciutadana/Proposada inversió"
         document_numbers: "Números de documents"
+      sdg/goal:
+        title: "Títol"
+        description: "Descripció"
+      sdg/local_target:
+        title: "Títol"
+      sdg/local_target/translation:
+        title: "Títol"
+        description: "Descripció"
+      sdg/target:
+        title: "Títol"
       site_customization/page:
         content: Contingut
-        created_at: Creada el
+        created_at: Creada
         subtitle: Subtítol
         slug: Slug
         status: Estat
+        status_draft: "Esborrany"
+        status_published: "Publicada"
         title: Títol
         updated_at: Actualitzada el
         more_info_flag: Mostra a la pàgina de més informació
         print_content_flag: Botó d'imprimir contingut
-        locale: Llengua
+        locale: Idioma
       site_customization/page/translation:
         title: Títol
         subtitle: Subtítol
@@ -219,9 +319,23 @@ val:
         name: Nom
         locale: idioma
         body: Contingut
+      tag:
+        name: "Escriu el nom del tema"
+      topic:
+        title: "Títol"
+        description: "Text inicial"
+      banner:
+        background_color: Color de fons
+        font_color: Color de font
+        post_ended_at: "Fi de publicació"
+        post_started_at: "Inici de publicació"
+        target_url: "Enllaç"
+      banner/translation:
+        title: "Títol"
+        description: "Descripció"
       legislation/process:
-        title: Títol del procés
-        summary: Resum
+        title: Títol del Procés
+        summary: Resumen
         description: Descripció
         additional_info: Informació addicional
         start_date: Data d'inici del procés
@@ -233,18 +347,31 @@ val:
         draft_publication_date: Data de publicació de l'esborrany
         allegations_start_date: Data d'inici d'al·legacions
         allegations_end_date: Data de fi d'al·legacions
+        proposals_phase_start_date: Inici
+        proposals_phase_end_date: Fi
         result_publication_date: Data de publicació del resultat final
+        background_color: Color de fons
+        font_color: Color de font
+        homepage_enabled: "Pàgina principal habilitada"
       legislation/process/translation:
-        title: Títol del Procés
-        summary: Resum
+        title: Títol del procés
+        summary: Resumen
         description: Descripció
         additional_info: Informació addicional
-        milestones_summary: Resum
+        homepage: "Descripció"
+        milestones_summary: Resumen
+      legislation/proposal:
+        description: "Texte desenvolupat de la proposta"
+        summary: "Resum de la proposta"
+        title: "Títol de la proposta"
+        video_url: "Enllaç a video extern"
       legislation/draft_version:
         title: Títol de la versió
         body: Text
         changelog: Canvis
         status: Estat
+        status_draft: "Esborrany"
+        status_published: "Publicada"
         final_version: Versió final
       legislation/draft_version/translation:
         title: Títol de la versió
@@ -252,17 +379,19 @@ val:
         changelog: Canvis
       legislation/question:
         title: Títol
-        question_options: Respostes
+        question_options: Opcions
+      legislation/question/translation:
+        title: Pregunta
       legislation/question_option:
         value: Valor
       legislation/annotation:
         text: Comentari
       document:
         title: Títol
-        attachment: Archiu adjunt
+        attachment: "Fitxer adjunt"
       image:
         title: Títol
-        attachment: Fitxer adjunt
+        attachment: "Archiu adjunt"
       poll/question/answer:
         title: Resposta
         description: Descripció
@@ -271,11 +400,11 @@ val:
         description: Descripció
       poll/question/answer/video:
         title: Títol
-        url: Vídeo extern
+        url: Video extern
       newsletter:
         segment_recipient: Destinataris
         subject: Asumpte
-        from: De
+        from: "Desde"
         body: Contingut del email
       admin_notification:
         segment_recipient: Destinataris
@@ -291,6 +420,7 @@ val:
         description: Descripció
         link_text: Text de l'enllaç
         link_url: URL de l'enllaç
+        columns: Número de columnes
       widget/card/translation:
         label: Etiqueta (opcional)
         title: Títol
@@ -298,6 +428,22 @@ val:
         link_text: Text de l'enllaç
       widget/feed:
         limit: Número d'elements
+      dashboard/action:
+        title: Títol
+        description: Descripció
+        active: Actius
+        action_type: Tipus
+      link:
+        label: Títol
+      valuator:
+        description: Descripció
+        valuator_group_id: Grup d'Avaluadors
+      valuator_group:
+        name: "Nom del grup"
+      local_census_record:
+        document_type: Tipus de document
+        document_number: Número de document
+        date_of_birth: Data de naixement
     errors:
       models:
         user:
@@ -307,7 +453,7 @@ val:
         debate:
           attributes:
             tag_list:
-              less_than_or_equal_to: "els temes han de ser menor o igual que %{count}"
+              less_than_or_equal_to: "els temes han de ser menor o igual a %{count}"
         direct_message:
           attributes:
             max_per_day:
@@ -320,19 +466,16 @@ val:
         newsletter:
           attributes:
             segment_recipient:
-              invalid: "El segment d'usuaris es invàlid"
+              invalid: "L'usuari del destinatari es invàlid"
         admin_notification:
           attributes:
             segment_recipient:
-              invalid: "L'usuari del destinatari es invàlid"
-        map_location:
-          attributes:
-            map:
-              invalid: Localització en el mapa no pot estar en blanc. Inserta un marcador o selecciona en la check si la geolocalització no es necessaria
+              invalid: "El segment d'usuaris es invàlid"
         poll/voter:
           attributes:
             document_number:
               not_in_census: "Este document no apareix en el cens"
+            user_id:
               has_voted: "Este usuari ja ha votat"
         legislation/process:
           attributes:
@@ -347,11 +490,11 @@ val:
         proposal:
           attributes:
             tag_list:
-              less_than_or_equal_to: "els temes han de ser menor o igual a %{count}"
+              less_than_or_equal_to: "els temes han de ser menor o igual que %{count}"
         budget/investment:
           attributes:
             tag_list:
-              less_than_or_equal_to: "els temes han de ser menor o igual a %{count}"
+              less_than_or_equal_to: "els temes han de ser menor o igual que %{count}"
         proposal_notification:
           attributes:
             minimum_interval:
@@ -359,8 +502,8 @@ val:
         signature:
           attributes:
             document_number:
-              not_in_census: 'No verificat per Padró'
-              already_voted: 'Ja ha votat aquesta proposta'
+              not_in_census: "No verificat per Padró"
+              already_voted: "Ja ha votat aquesta proposta"
         site_customization/page:
           attributes:
             slug:
@@ -373,7 +516,7 @@ val:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'No pots comentar una valoració'
+              cannot_comment_valuation: "No pots comentar una valoració"
       messages:
         record_invalid: "Error de validació: %{errors}"
         restrict_dependent_destroy:

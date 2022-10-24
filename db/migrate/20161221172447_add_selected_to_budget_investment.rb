@@ -1,5 +1,5 @@
-class AddSelectedToBudgetInvestment < ActiveRecord::Migration
+class AddSelectedToBudgetInvestment < ActiveRecord::Migration[4.2]
   def change
-    add_column :budget_investments, :selected, :bool, default: false, index: true
+    add_column :budget_investments, :selected, :bool, default: false
   end
 end

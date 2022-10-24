@@ -3,116 +3,166 @@
 //
 //  Table of Contents:
 //
-//  1. CONSUL variables
-//  2. Foundation settings overrides
-//
+//  1. Foundation settings overrides
+//  2. CONSUL variables
+//  3. Foundation overrides depending on CONSUL variables
+//  4. Foundation fixes
 
-// 1. CONSUL variables
-// --------------------
-
-$base-font-size:      17px;
-$base-line:           rem-calc(26);
-$small-font-size:     rem-calc(14);
-$line-height:         rem-calc(24);
-$tiny-font-size:      rem-calc(12);
-
-$brand:             #004a83;
-$dark:              darken($brand, 10%);
-
-$text:              #222;
-$text-medium:       #515151;
-$text-light:        #bfbfbf;
-
-$border:            #dee0e3;
-
-$link:              $brand;
-$link-hover:        darken($link, 20%);
-
-$debates:           $brand;
-
-$like:              #7bd2a8;
-$unlike:            #ef8585;
-
-$delete:            #f04124;
-$check:             #46db91;
-
-$proposals:         #ffa42d;
-$proposals-dark:    #794500;
-
-$budget:            #7e328a;
-$budget-hover:      #7571bf;
-
-$highlight:         #e7f2fc;
-$highlight-soft:    #f3f8fd;
-$light:             #f5f7fa;
-$featured:          #ffdc5c;
-
-$footer-border:     #bfc1c3;
-
-$success-bg:        #dff0d8;
-$success-border:    #d6e9c6;
-$color-success:     #3c763d;
-
-$info-bg:           #d9edf7;
-$info-border:       #bce8f1;
-$color-info:        #31708f;
-
-$warning-bg:        #fcf8e3;
-$warning-border:    #faebcc;
-$color-warning:     #8a6d3b;
-
-$alert-bg:          #f2dede;
-$alert-border:      #ebccd1;
-$color-alert:       #a94442;
-
-// 2. Foundation settings overrides
+// 1. Foundation settings overrides
 // ---------------------------------
 
-$black: #222;
-$white: #fff;
+$black: #222 !default;
+$white: #fdfdfd !default;
 
-$body-font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif !important;
+$body-font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif !important !default;
 
-$header-font-family: $body-font-family;
-
-$global-radius: rem-calc(3);
-
-$button-radius: $global-radius;
-
-$font-family-serif: Georgia, 'Times New Roman', Times, serif;
+$global-radius: rem-calc(3) !default;
+$global-width: rem-calc(1200) !default;
 
 $header-styles: (
   small: (
-    'h1': ('font-size': 34),
-    'h2': ('font-size': 24),
-    'h3': ('font-size': 20),
-    'h4': ('font-size': 18),
-    'h5': ('font-size': 16),
-    'h6': ('font-size': 14),
+    "h1": ("font-size": 34),
+    "h2": ("font-size": 24),
+    "h3": ("font-size": 20),
+    "h4": ("font-size": 18),
+    "h5": ("font-size": 16),
+    "h6": ("font-size": 14),
   ),
   medium: (
-    'h1': ('font-size': 44),
-    'h2': ('font-size': 34),
-    'h3': ('font-size': 24),
-    'h4': ('font-size': 19),
-    'h5': ('font-size': 16),
-    'h6': ('font-size': 13),
+    "h1": ("font-size": 44),
+    "h2": ("font-size": 34),
+    "h3": ("font-size": 24),
+    "h4": ("font-size": 19),
+    "h5": ("font-size": 16),
+    "h6": ("font-size": 13),
   ),
-);
+) !default;
 
-$small-font-size: rem-calc(14);
+$small-font-size: rem-calc(14) !default;
 
-$abbr-underline: none;
+$abbr-underline: none !default;
 
-$tab-background-active: $white;
+$orbit-bullet-diameter: 0.8rem !default;
 
-$accordion-item-color: foreground($accordion-background, $text);
-$accordion-content-color: foreground($accordion-background, $text);
+$show-header-for-stacked: true !default;
 
-$tab-item-font-size: $base-font-size;
-$tab-item-padding: $line-height / 2  0;
-$tab-content-border: $border;
+// 2. CONSUL variables
+// --------------------
 
-$orbit-bullet-diameter: 0.8rem;
+$body-margin: calc(50vw - #{$global-width / 2}) !default;
+$full-width-margin: unquote("#{$global-width / 2} - 50vw") !default;
 
-$pagination-radius: $global-radius;
+$base-font-size:      rem-calc(17) !default;
+$base-line:           rem-calc(26) !default;
+$line-height:         rem-calc(24) !default;
+$tiny-font-size:      rem-calc(12) !default;
+
+$font-family-serif: Georgia, "Times New Roman", Times, serif !default;
+
+$brand:             #004a83 !default;
+$brand-secondary:   darken($brand, 10%) !default;
+$dark:              $brand-secondary !default;
+
+$text:              $black !default;
+$text-medium:       #515151 !default;
+$text-light:        #bfbfbf !default;
+
+$border:            #dee0e3 !default;
+
+$link:              $brand !default;
+$link-hover:        darken($link, 20%) !default;
+
+$debates:           $brand !default;
+
+$like:              #7bd2a8 !default;
+$unlike:            #ef8585 !default;
+
+$delete:            #f04124 !default;
+$check:             #46db91 !default;
+
+$proposals:         #ffa42d !default;
+$proposals-dark:    #794500 !default;
+
+$budget:            #7e328a !default;
+$budget-hover:      #7571bf !default;
+
+$highlight:         #e7f2fc !default;
+$highlight-soft:    #f3f8fd !default;
+$light:             #f5f7fa !default;
+$featured:          #ffdc5c !default;
+
+$footer-border:     #bfc1c3 !default;
+
+$success-bg:        #dff0d8 !default;
+$success-border:    #d6e9c6 !default;
+$color-success:     #3c763d !default;
+
+$info-bg:           #d9edf7 !default;
+$info-border:       #bce8f1 !default;
+$color-info:        #31708f !default;
+
+$warning-bg:        #fcf8e3 !default;
+$warning-border:    #faebcc !default;
+$color-warning:     #8a6d3b !default;
+
+$alert-bg:          #f2dede !default;
+$alert-border:      #ebccd1 !default;
+$color-alert:       #a94442 !default;
+
+$pdf-primary:       #0300ff !default;
+$pdf-secondary:     #ff9e00 !default;
+
+$outline-focus:     3px solid #ffbf47 !default;
+
+$input-height:      $line-height * 2 !default;
+
+$font-icon-margin: rem-calc(4) !default;
+$icon-width: $line-height * 2 !default;
+
+$off-screen-left: -1000rem !default;
+
+$sdg-icon-min-width: 45px !default;
+
+$sdg-colors: (
+  1: #e5243b,
+  2: #dda63a,
+  3: #4c9f38,
+  4: #c5192d,
+  5: #ff3a21,
+  6: #26bde2,
+  7: #fcc30b,
+  8: #a21942,
+  9: #fd6925,
+  10: #dd1367,
+  11: #fd9d24,
+  12: #bf8b2e,
+  13: #3f7e44,
+  14: #0a97d9,
+  15: #56c02b,
+  16: #00689d,
+  17: #19486a
+) !default;
+
+// 3. Foundation overrides depending on CONSUL variables
+// -----------------------------------------------------
+
+$tab-background-active: $white !default;
+
+$tab-item-font-size: $base-font-size !default;
+$tab-item-padding: $line-height / 2  0 !default;
+$tab-content-border: $border !default;
+
+$closebutton-color: $text !default;
+
+$tooltip-background-color: $brand !default;
+
+// 4. Foundation fixes
+// -------------------
+
+$alert-color: null !default;
+$primary-color: null !default;
+$secondary-color: null !default;
+$success-color: null !default;
+$warning-color: null !default;
+$-zf-bp-value: null !default;
+$-zf-size: null !default;

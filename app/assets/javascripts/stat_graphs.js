@@ -4,11 +4,10 @@
 //= require stats
 
 var initialize_stats_modules = function() {
+  "use strict";
+
   App.Stats.initialize();
 };
 
-$(function(){
-  $(document).ready(initialize_stats_modules);
-  $(document).on('page:load', initialize_stats_modules);
-  $(document).on('ajax:complete', initialize_stats_modules);
-});
+$(document).on("turbolinks:load", initialize_stats_modules);
+$(document).on("ajax:complete", initialize_stats_modules);

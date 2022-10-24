@@ -1,9 +1,8 @@
-require 'spec_helper'
+require "spec_helper"
 
-shared_examples_for 'sluggable' do |updatable_slug_trait:|
-
-  describe 'generate_slug' do
-    let(:factory_name) { described_class.name.parameterize('_').to_sym }
+shared_examples_for "sluggable" do |updatable_slug_trait:|
+  describe "generate_slug" do
+    let(:factory_name) { described_class.name.parameterize(separator: "_").to_sym }
     let(:sluggable) { create(factory_name, name: "Marló Brañido Carlo") }
 
     context "when a new sluggable is created" do
@@ -14,16 +13,15 @@ shared_examples_for 'sluggable' do |updatable_slug_trait:|
 
     context "slug updating condition is true" do
       it "slug is updated" do
-        updatable = create(factory_name, updatable_slug_trait, name: 'Old Name')
-        expect{updatable.update_attributes(name: 'New Name')}
-          .to change{ updatable.slug }.from('old-name').to('new-name')
+        updatable = create(factory_name, updatable_slug_trait, name: "Old Name")
+        expect { updatable.update(name: "New Name") }
+          .to change { updatable.slug }.from("old-name").to("new-name")
       end
     end
 
     context "slug updating condition is false" do
       it "slug isn't updated" do
-        expect{sluggable.update_attributes(name: 'New Name')}
-          .not_to (change{ sluggable.slug })
+        expect { sluggable.update(name: "New Name") }.not_to change { sluggable.slug }
       end
     end
   end

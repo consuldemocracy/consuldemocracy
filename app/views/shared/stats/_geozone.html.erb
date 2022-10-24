@@ -1,0 +1,21 @@
+<div id="participants_by_geozone" class="stats-group">
+  <h4><%= t("stats.by_geozone") %></h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th><%= t("stats.geozone") %></th>
+        <th><%= t("stats.total") %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% stats.participants_by_geozone.each do |geozone, participants| %>
+        <tr>
+          <td><%= geozone %></td>
+          <td><%= "#{participants[:count]} (#{number_to_stats_percentage(participants[:percentage])})" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

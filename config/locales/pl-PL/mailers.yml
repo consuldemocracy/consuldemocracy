@@ -3,39 +3,33 @@ pl:
     no_reply: "Ta wiadomość została wysłana z adresu e-mail, który nie akceptuje odpowiedzi."
     comment:
       hi: Cześć
-      new_comment_by_html: Nowy komentarz od <b>%{commenter}</b>
+      new_comment_by: Nowy komentarz od <strong>%{commenter}</strong>
       subject: Ktoś skomentował Twój %{commentable}
       title: Nowy komentarz
-    config:
-      manage_email_subscriptions: Aby zrezygnować z otrzymywania tych wiadomości e-mail, zmień ustawienia w
     email_verification:
       click_here_to_verify: ten link
-      instructions_2_html: Ten e-mail zweryfikuje Twoje konto z <b>%{document_type}%{document_number}</b>. Jeśli nie należą one do Ciebie, nie klikaj w powyższy link i zignoruj ten e-mail.
-      instructions_html: Aby zakończyć weryfikację Twojego konta użytkownika, musisz kliknąć %{verification_link}.
+      instructions_2: Ten e-mail zweryfikuje Twoje konto z <b>%{document_type}%{document_number}</b>. Jeśli nie należą one do Ciebie, nie klikaj w powyższy link i zignoruj ten e-mail.
+      instructions: Aby zakończyć weryfikację Twojego konta użytkownika, musisz kliknąć %{verification_link}.
       subject: Potwierdź swój adres e-mail
       thanks: Dziękujemy bardzo.
-      title: Potwierdź swoje konto za pomocą następującego linku
+      title: "Potwierdź swoje konto za pomocą następującego linku"
     reply:
       hi: Cześć
-      new_reply_by_html: Nowa odpowiedź od <b>%{commenter}</b> na Twój komentarz odnośnie
+      new_reply_by: Nowa odpowiedź od <strong>%{commenter}</strong> na Twój komentarz odnośnie
       subject: Ktoś odpowiedział na Twój komentarz
       title: Nowa odpowiedź na Twój komentarz
-    unfeasible_spending_proposal:
-      hi: "Drogi Użytkowniku,"
-      new_href: "nowy projekt inwestycyjny"
-      sincerely: "Z poważaniem"
-      sorry: "Przepraszamy za niedogodności i ponownie dziękujemy Ci za Twoje nieocenione uczestnictwo."
-      subject: "Twój projekt inwestycyjny '%{code}' został oznaczony jako niewykonalny"
     proposal_notification_digest:
       info: "Oto nowe powiadomienia opublikowane przez autorów propozycji, które wsparłeś w %{org_name}."
       title: "Powiadomienia o wniosku w %{org_name}"
       share: Udostępnij wniosek
       comment: Skomentuj wniosek
-      unsubscribe_account: Moje konto
     direct_message_for_receiver:
       subject: "Otrzymałeś nową wiadomość prywatną"
       reply: Odpowiedz %{sender}
-      unsubscribe_account: Moje konto
+    direct_message_for_sender:
+      subject: "Wysłałeś nową wiadomość prywatną"
+      title: "Wysłałeś nową wiadomość prywatną"
+      text: "Wysłałeś nową wiadomość prywatną do <strong>%{receiver}</strong> o następującej treści:"
     user_invite:
       ignore: "Jeżeli nie prosiłeś o to zaproszenie, nie martw się, możesz zignorować ten e-mail."
       text: "Dziękujemy za wniosek o dołączenie do %{org}! Już za kilka sekund możesz rozpocząć uczestnictwo, wypełnij tylko poniższy formularz:"
@@ -46,14 +40,15 @@ pl:
     budget_investment_created:
       subject: "Dziękujemy za stworzenie inwestycji!"
       title: "Dziękujemy za stworzenie inwestycji!"
-      intro_html: "Cześć <strong>%{author}</strong>,"
-      text_html: "Dziękujemy za stworzenie Twojej inwestycji <strong>%{investment}</strong> dla Budżetów Partycypacyjnych <strong>%{budget}</strong>."
-      follow_html: "Będziemy Cię informowali o tym, jak postępuje proces, co możesz również śledzić na <strong>%{link}</strong>."
+      intro: "Cześć <strong>%{author}</strong>,"
+      text: "Dziękujemy za stworzenie Twojej inwestycji <strong>%{investment}</strong> dla Budżetów Partycypacyjnych <strong>%{budget}</strong>."
+      follow: "Będziemy Cię informowali o tym, jak postępuje proces, co możesz również śledzić na <strong>%{link}</strong>."
       follow_link: "Budżety partycypacyjne"
       sincerely: "Z poważaniem"
       share: "Udostępnij swój projekt"
     budget_investment_unfeasible:
       hi: "Drogi Użytkowniku,"
+      new: "Dla tych wszystkich, zachęcamy do opracowania <strong>nowej inwestycji</strong>, która dostosowana jest do warunków tego procesu. Można to zrobić wchodząc w ten link: %{url}."
       new_href: "nowy projekt inwestycyjny"
       sincerely: "Z poważaniem"
       sorry: "Przepraszamy za niedogodności i ponownie dziękujemy Ci za Twoje nieocenione uczestnictwo."
@@ -70,3 +65,5 @@ pl:
       hi: "Drogi Użytkowniku,"
       thanks: "Dziękujemy ponownie za uczestnictwo."
       sincerely: "Z poważaniem"
+    evaluation_comment:
+      hi: Cześć

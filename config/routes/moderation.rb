@@ -4,7 +4,7 @@ namespace :moderation do
   resources :users, only: :index do
     member do
       put :hide
-      put :hide_in_moderation_screen
+      put :block
     end
   end
 
@@ -18,6 +18,12 @@ namespace :moderation do
     put :moderate, on: :collection
   end
 
+  namespace :legislation do
+    resources :proposals, only: :index do
+      put :hide, on: :member
+      put :moderate, on: :collection
+    end
+  end
   resources :comments, only: :index do
     put :hide, on: :member
     put :moderate, on: :collection
@@ -28,7 +34,9 @@ namespace :moderation do
     put :moderate, on: :collection
   end
 
-  resources :budget_investments, only: :index, controller: 'budgets/investments' do
+  resources :administrator_tasks, only: %i[index edit update]
+
+  resources :budget_investments, only: :index, controller: "budgets/investments" do
     put :hide, on: :member
     put :moderate, on: :collection
   end

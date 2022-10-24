@@ -1,0 +1,14 @@
+<li id="<%= list_item_id %>">
+  <%= investment_title %>
+  <%= investment_price %>
+
+  <% if budget.balloting? %>
+    <%= link_to delete_path,
+                title: t("budgets.ballots.show.remove"),
+                class: "remove-budget-investment",
+                method: :delete,
+                remote: true do %>
+      <span class="show-for-sr"><%= t("budgets.ballots.show.remove") %></span>
+    <% end %>
+  <% end %>
+</li>

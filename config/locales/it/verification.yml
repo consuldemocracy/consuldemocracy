@@ -8,7 +8,7 @@ it:
         alert:
           failure: C'è stato un problema nell'invio di un'e-mail di conferma al tuo account
         flash:
-          success: 'Abbiamo inviato una email di conferma al tuo account: %{email}'
+          success: "Abbiamo inviato una email di conferma al tuo account: %{email}"
       show:
         alert:
           failure: Codice di verifica non corretto
@@ -17,49 +17,86 @@ it:
     letter:
       alert:
         unconfirmed_code: Non hai ancora inserito il codice di conferma
+      create:
+        flash:
+          success: Grazie per aver richiesto il tuo <b>codice di massima sicurezza (richiesto solo per i voti finali)</b>. Tra qualche giorno lo invieremo all'indirizzo evidenziando i dati che abbiamo sul file. Sei pregato di ricordare che, se preferisci, puoi raccogliere il tuo codice da qualsiasi Ufficio di Supporto Cittadino.
       edit:
         see_all: Vedere le proposte
         title: Lettera richiesta
+      errors:
+        incorrect_code: Codice di verifica non corretto
       new:
-        explanation: 'Per partecipare alla votazione finale puoi:'
+        explanation: "Per partecipare alla votazione finale puoi:"
+        go_to_index: Vedere le proposte
+        office: Verifica in ogni Ufficio di Supporto al Cittadino
         send_letter: Inviatemi una lettera con il codice
         title: Congratulazioni!
-        user_permission_info: Con il tuo profilo puoi...
+        user_permission_info: Con il tuo account puoi...
+      update:
+        flash:
+          success: Il codice è corretto, pertanto il tuo account è ora considerato come verificato
     redirect_notices:
       already_verified: Questo account utente è già verificato
       email_already_sent: Abbiamo già inviato un'e-mail con un link di conferma. Se non è possibile recuperare l'email, qui si può richiedere che venga reinviata
     residence:
+      alert:
+        unconfirmed_residency: Non hai ancora confermato la tua residenza
+      create:
+        flash:
+          success: Residenza verificata
       new:
+        accept_terms_text: Accetto i %{terms_url} del Censimento
+        accept_terms_text_title: Accetto i termini e le condizioni d'accesso del Censimento
         document_number: Numero del documento
+        document_number_help_title: Aiuto
+        document_number_help_text: "<strong>CIE</strong>: 12345678A<br> <strong>Passaporto</strong>: AAA000001<br> <strong>Permesso di Soggiorno</strong>: X1234567P"
         document_type:
           passport: Passaporto
+          residence_card: Permesso di soggiorno
+          spanish_id: CIE
         error_not_allowed_age: Non hai l'età minima richiesta per partecipare
+        error_not_allowed_postal_code: I cittadini da questo codice postale non possono partecipare
+        error_verifying_census: Il Censo non ha potuto verificare le tue informazioni. Sei pregato di confermare che i tuoi dettagli di censo siano corretti chiamando il Consiglio Cittadino o visitando un Ufficio di Supporto del Cittadino.
+        form_errors: ha impedito la verifica della tua residenza
+        postal_code_note: Per verificare il tuo profilo devi esser registrato
         terms: termini e condizioni d'uso
+        title: Verifica la residenza
+        verify_residence: Verifica la residenza
     sms:
       create:
         flash:
           success: Inserisci il codice di conferma inviato tramite SMS
       edit:
-        confirmation_code: Inserisci il codice ricevuto sul tuo telefonino
         resend_sms_link: Cliccare qui per richiedere un nuovo codice
         resend_sms_text: Non hai ricevuto un SMS con il codice di conferma?
         submit_button: Inviare
         title: SMS di conferma
       new:
         phone: Inserisci il tuo numero di cellulare per ricevere il codice
+        phone_format: "<strong><em>(Esempio: 612345678 o +34612345678)</em></strong>"
+        phone_note: Usiamo il tuo telefono solo per inviarti un codice, mai per contattarti.
+        submit_button: Inviare
         title: Inviare SMS di conferma
       update:
         error: Codice di conferma non corretto
         flash:
+          level_three:
+            success: Il codice è corretto, pertanto il tuo account è ora considerato come verificato
           level_two:
             success: Codice corretto
+    step_1: Indirizzo
+    step_2: SMS di conferma
     step_3: Verifica finale
     user_permission_debates: Partecipare ai dibattiti
     user_permission_proposal: Creare nuove proposte
+    user_permission_support_proposal: Sostenere proposte*
     user_permission_votes: Partecipare al voto finale *
     verified_user:
+      form:
+        submit_button: Invia codice
       show:
-        email_title: E-mail
+        email_title: Email
+        explanation: Correntemente, deteniamo i seguenti dettagli sul Registro; sei pregato di selezionare un metodo per inviare il tuo codice di conferma.
         phone_title: Numeri di telefono
         title: Informazioni disponibili
         use_another_phone: Utilizzare un altro telefono

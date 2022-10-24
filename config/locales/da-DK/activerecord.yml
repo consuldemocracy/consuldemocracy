@@ -1,0 +1,598 @@
+da:
+  attributes:
+    geozone_id: "Område"
+    results_enabled: "Vis resultater"
+    stats_enabled: "Vis statistik"
+    advanced_stats_enabled: "Vis avanceret statistik"
+    name: Navn
+    email: Email
+    description: Beskrivelse
+    related_sdg_list: Mål og delmål
+  activerecord:
+    models:
+      activity:
+        one: "Aktivitet"
+        other: "Aktiviteter"
+      budget:
+        one: "Budget"
+        other: "Budgetter"
+      budget/investment:
+        one: "Projekt"
+        other: "Projekter"
+      milestone:
+        one: "Milepæl"
+        other: "Milepæle"
+      milestone/status:
+        one: "Status for milepæl"
+        other: "Status for milepæle"
+      progress_bar:
+        one: "Statusbar"
+        other: "Statusindikator"
+      comment:
+        one: "Kommentar"
+        other: "Kommentarer"
+      debate:
+        one: "Debat"
+        other: "Debatter"
+      tag:
+        one: "Hashtag"
+        other: "Hashtags"
+      user:
+        one: "Bruger"
+        other: "Brugere"
+      moderator:
+        one: "Moderator"
+        other: "Moderator"
+      administrator:
+        one: "Administrator"
+        other: "Administrator"
+      valuator:
+        one: "Evaluator"
+        other: "Evaluator"
+      valuator_group:
+        one: "Evalueringsgruppe"
+        other: "Evaluatorgruppe"
+      manager:
+        one: "Manager"
+        other: "Manager"
+      newsletter:
+        one: "Nyhedsbrev"
+        other: "Nyhedsbreve"
+      vote:
+        one: "Stemmer"
+        other: "Stemmer"
+      organization:
+        one: "Organisationer"
+        other: "Organisationer"
+      poll/booth:
+        one: "valgsted"
+        other: "valgsteder"
+      poll/officer:
+        one: "valgtilforordnede"
+        other: "ansvarlig medarbejdere"
+      poll/ballot_sheet:
+        one: Stemmeseddel
+        other: Stemmesedler
+      proposal:
+        one: "Borgerforslag"
+        other: "Borgerforslag"
+      sdg/goal:
+        one: "mål"
+        other: "mål"
+      sdg/local_target:
+        one: "lokale delmål"
+        other: "lokale delmål"
+      sdg/manager:
+        one: "Verdensmåls konsulent"
+        other: "Verdensmåls konsulenter"
+      sdg/target:
+        one: "delmål"
+        other: "delmål"
+      site_customization/page:
+        one: Brugerdefineret side
+        other: Brugerdefinerede sider
+      site_customization/image:
+        one: Brugerdefineret billede
+        other: Tilpassede billeder
+      site_customization/content_block:
+        one: Tilpassede indholdsblok
+        other: Tilpassede indholdsblokke
+      document:
+        one: Dokument
+        other: Dokumenter
+      legislation/process:
+        one: "Proces"
+        other: "Processer"
+      legislation/proposal:
+        one: "Forslag"
+        other: "Forslag"
+      legislation/draft_versions:
+        one: "Kladde"
+        other: "Versioner af udkast"
+      legislation/questions:
+        one: "Spørgsmål"
+        other: "Spørgsmål"
+      legislation/question_options:
+        one: "Spørgsmålsindstillinger"
+        other: "Spørgsmålsindstillinger"
+      legislation/answers:
+        one: "Svar"
+        other: "Svar"
+      documents:
+        one: "Dokumenter"
+        other: "Dokumenter"
+      images:
+        one: "Billede"
+        other: "Billeder"
+      topic:
+        one: "Emner"
+        other: "Emner"
+      poll:
+        one: "Meningsmålinger"
+        other: "Meningsmålinger"
+      proposal_notification:
+        one: "Notifikationer om forslag"
+        other: "Notifikationer om forslag"
+      dashboard/action:
+        one: Handling
+        other: Handlinger
+      dashboard/administrator_task:
+        one: Opgave
+        other: Opgaver
+      link:
+        one: Link
+        other: Links
+      local_census_record:
+        one: Lokal census
+        other: Lokal census data
+    attributes:
+      budget:
+        name: "Navn"
+        description_accepting: "Synlig beskrivelse under modtagelsesfasen"
+        description_reviewing: "Synlig beskrivelse under gennemgangsfasen"
+        description_selecting: "Synlig beskrivelse under støttefasen"
+        description_valuating: "Synlig beskrivelse under evalueringsfasen"
+        description_balloting: "Synlig beskrivelse under afstemningsfasen"
+        description_reviewing_ballots: "Beskrivelse under fasen Gennemgang af Stemmesedler"
+        description_finished: "Synlig beskrivelse, når budgettet er færdiggjort"
+        phase: "Fase"
+        currency_symbol: "Valuta"
+        voting_style: "Afstemningstype"
+        voting_style_knapsack: "Knapsack"
+        voting_style_approval: "Approval"
+      budget/translation:
+        main_link_text: "Link tekst"
+        main_link_url: "Linket tager dig til (tilføj et link)"
+        name: "Navn"
+      budget/investment:
+        heading_id: "Overskrift"
+        title: "Titel"
+        description: "Beskrivelse"
+        external_url: "Link til yderligere dokumentation"
+        administrator_id: "Administrator"
+        location: "Placering (valgfri)"
+        organization_name: "Hvis du fremsender et forslag på vegne af en gruppe/organisation, angiv navnet på denne"
+        image: "Et beskrivende billede"
+        image_title: "Titel på billede"
+        duration: "Tidsramme"
+        feasibility_feasible: "Kan gennemføres"
+        feasibility_undecided: "Udefineret"
+        feasibility_unfeasible: "Kan ikke gennemføres"
+        incompatible: "Marker som inkompatibel"
+        milestone_tag_list: "Milepæle"
+        price_explanation: "Forklaring på pris"
+        selected: "Marker som valgt"
+        selected_true: "Valgt"
+        selected_false: "Ikke valgt"
+        unfeasibility_explanation: "Forklaring på om projektet kan gennemføres"
+        valuation_finished: "Vurderingen er færdig"
+        valuator_ids: "Grupper"
+        valuation_tag_list: "Hashtags"
+      budget/investment/translation:
+        title: "Titel"
+        description: "Beskrivelse"
+      geozone:
+        name: Navn
+        external_code: "Ekstern kode (valgfri)"
+        census_code: "Census kode (valfrit)"
+        html_map_coordinates: "HTML <map> Koordinater (valgfri)"
+      milestone:
+        status_id: "Nuværende status (valgfri)"
+        title: "Titel"
+        description: "Beskrivelse (valgfrit hvis en status er tildelt)"
+        publication_date: "Dato for offentliggørelse"
+      milestone/translation:
+        description: "Beskrivelse"
+      milestone/status:
+        name: "Navn"
+        description: "Placering (valgfri)"
+      progress_bar:
+        kind: "Type"
+        title: "Titel"
+        percentage: "Aktuelle forløb"
+      progress_bar/kind:
+        primary: "Primære"
+        secondary: "Sekundære"
+      budget/group:
+        max_votable_headings: "Maksimum antal områder en bruger kan stemme i"
+      budget/group/translation:
+        name: "Gruppenavn"
+      budget/heading:
+        allow_custom_content: "Tillad indholdsblok"
+        latitude: "Breddegrad (valgfri)"
+        longitude: "Længdegrad (valgfri)"
+        name: "Titelnavn"
+        price: "Pris"
+        population: "Population"
+        max_ballot_lines: "Antal stemmer tilladt"
+      budget/heading/translation:
+        name: "Navn på område"
+      budget/phase:
+        enabled: "Fase aktiveret"
+        ends_at: "Slutdato"
+        starts_at: "Startdato"
+      budget/phase/translation:
+        name: "Navn"
+        description: "Beskrivelse"
+        summary: "Opsummering"
+        main_link_text: "Link tekst"
+        main_link_url: "Linket tager dig til (tilføj et link)"
+      comment:
+        body: "Kommentar"
+        user: "Bruger"
+      debate:
+        author: "Forfatter"
+        description: "Mening"
+        tag_list: "Emner"
+        terms_of_service: "Servicevilkår"
+        title: "Titel"
+      debate/translation:
+        title: "Titel på debat"
+        description: "Indledende debattekst"
+      proposal:
+        author: "Forfatter"
+        title: "Titel"
+        question: "Spørgsmål"
+        description: "Beskrivelse"
+        responsible_name: "Fulde navn på vedkommende, der fremsender forslaget"
+        retired_reason: "Begrundelse for at trække forslaget tilbage"
+        selected: "Markeret som valgt"
+        terms_of_service: "Servicevilkår"
+        video_url: "Ekstern video"
+      proposal/translation:
+        title: "Forslagets titel"
+        description: "Beskrivelse"
+        summary: "Resume af forslag"
+        retired_explanation: "Forklaring"
+      user:
+        login: "E-mail eller brugernavn"
+        email: "E-mail"
+        username: "Brugernavn"
+        password_confirmation: "Bekræftelse af adgangskode"
+        password: "Adgangskode"
+        current_password: "Nuværende adgangskode"
+        email_digest: "Modtag et resumé af forslagsnotifikationer"
+        email_on_comment: "Send mig en e-mail når nogen kommenterer mine forslag eller debatindlæg"
+        email_on_comment_reply: "Send mig en e-mail når nogen svarer på mine kommentarer"
+        email_on_direct_message: "Modtag e-mails vedrørende direkte beskeder"
+        newsletter: "Modtag relevant information via e-mail"
+        official_position: "Embedsposition"
+        official_position_badge: "Vis officiel position/stilling"
+        official_level: "Embedsniveau"
+        phone_number: "Telefonnummer"
+        public_activity: "Lad min aktivitetsliste være offentlig"
+        public_interests: "Andre brugere kan se de tags, jeg følger"
+        recommended_debates: "Se anbefalede debatindlæg"
+        recommended_proposals: "Se anbefalede borgerforslag"
+        redeemable_code: "Verifikationskode modtaget via e-mail"
+      direct_message:
+        title: "Titel"
+        body: "Besked"
+      organization:
+        name: "Navn på organisation"
+        responsible_name: "Den ansvarlige for gruppen"
+      poll:
+        name: "Navn"
+        title: "Navn"
+        starts_at: "Startdato"
+        ends_at: "Slutdato"
+        geozone_restricted: "Begrænset af geozone"
+        summary: "Resumé"
+        description: "Beskrivelse"
+      active_poll/translation:
+        description: "Beskrivelse"
+      poll/booth:
+        name: "Navn"
+        location: "Lokation"
+      poll/translation:
+        name: "Navn"
+        summary: "Resumé"
+        description: "Beskrivelse"
+      poll/question:
+        poll_id: "Afstemning"
+        title: "Spørgsmål"
+        summary: "Resumé"
+        description: "Beskrivelse"
+        external_url: "Link til yderligere dokumentation"
+      poll/question/translation:
+        title: "Spørgsmål"
+      poll/ballot_sheet:
+        data: CSV data
+        poll_id: Afstemning
+        officer_assignment_id: Tilknyttet medarbejder
+      poll/shift:
+        task: "Opgave"
+      proposal_notification:
+        body: "Besked"
+        title: "Titel"
+      signature_sheet:
+        title: "Titel"
+        signable_type: "Underskriftstype"
+        signable_id: "ID"
+        document_numbers: "Dokumentnummer"
+      sdg/goal:
+        code: "Kode"
+        title: "Titel"
+        description: "Beskrivelse"
+      sdg/local_target:
+        code: "Kode"
+        target_id: "Mål"
+        title: "Titel"
+      sdg/local_target/translation:
+        title: "Titel"
+        description: "Beskrivelse"
+      sdg/phase/kind:
+        planning: "Planlægning"
+        monitoring: "Overvågning"
+      sdg/target:
+        code: "Kode"
+        title: "Titel"
+      site_customization/page:
+        content: Indhold
+        created_at: Oprettet den
+        subtitle: Undertitel
+        slug: Signaturlinje
+        status: Status
+        status_draft: "Udkast"
+        status_published: "Offentliggjort"
+        title: Titel
+        updated_at: Opdateret
+        more_info_flag: Vis i "hjælp"
+        print_content_flag: Udskriftsknap
+        locale: Sprog
+      site_customization/page/translation:
+        title: Titel
+        subtitle: Undertitel
+        content: Indhold
+      site_customization/image:
+        name: Navn
+        image: Billede
+      site_customization/content_block:
+        name: Navn
+        locale: baggrund
+        body: Indhold
+      tag:
+        name: "Skriv emnets navn"
+      topic:
+        title: "Titel"
+        description: "Indledende tekst"
+      banner:
+        background_color: Baggrundsfarve
+        font_color: Skriftfarve
+        post_ended_at: "Slutdato"
+        post_started_at: "Startdato"
+        target_url: "Link"
+      banner/translation:
+        title: "Titel"
+        description: "Beskrivelse"
+      legislation/process:
+        title: Titel på proces
+        summary: Resumé
+        description: Beskrivelse
+        additional_info: Yderligere information
+        start_date: Startdato
+        end_date: Slutdato
+        debate_start_date: Startdato for debat
+        debate_end_date: Slutdato for debat
+        draft_start_date: Startdato for udkast
+        draft_end_date: Slutdato for udkast
+        draft_publication_date: Dato for offentliggørelse af udkast
+        allegations_start_date: Start
+        allegations_end_date: Slut
+        proposals_phase_start_date: Start
+        proposals_phase_end_date: Slut
+        result_publication_date: Dato for publicering af det endelige resultat
+        background_color: Baggrundsfarve
+        font_color: Skriftfarve
+        homepage_enabled: "Opsummering aktiveret"
+      legislation/process/translation:
+        title: Titel på proces
+        summary: Resumé
+        description: Beskrivelse
+        additional_info: Yderligere information
+        homepage: "Beskrivelse"
+        milestones_summary: Resumé
+      legislation/proposal:
+        description: "Beskrivelse"
+        summary: "Resume af forslag"
+        title: "Forslagets titel"
+        video_url: "Link til video"
+      legislation/draft_version:
+        title: Titel på version
+        body: Tekst
+        changelog: Ændringer
+        status: Status
+        status_draft: "Udkast"
+        status_published: "Offentliggjort"
+        final_version: Den endelige version
+      legislation/draft_version/translation:
+        title: Titel på version
+        body: Tekst
+        changelog: Ændringer
+      legislation/question:
+        title: Titel
+        question_options: Indstillinger
+      legislation/question/translation:
+        title: Spørgsmål
+      legislation/question_option:
+        value: Værdi
+      legislation/annotation:
+        text: Kommentar
+      document:
+        title: Titel
+        attachment: "Vedhæft fil"
+      image:
+        title: Titel
+        attachment: "Vedhæft fil"
+      poll/question/answer:
+        title: Svar
+        description: Beskrivelse
+      poll/question/answer/translation:
+        title: Svar
+        description: Beskrivelse
+      poll/question/answer/video:
+        title: Titel
+        url: Ekstern video
+      newsletter:
+        segment_recipient: Modtagere
+        subject: Emne
+        from: "Fra"
+        body: Indhold af e-mail
+      admin_notification:
+        segment_recipient: Modtagere
+        title: Titel
+        link: Link
+        body: Tekst
+      admin_notification/translation:
+        title: Titel
+        body: Tekst
+      widget/card:
+        label: Mærke (valgfrit)
+        title: Titel
+        description: Beskrivelse
+        link_text: Link
+        link_url: Link URL
+        columns: Antal kolonner
+      widget/card/translation:
+        label: Mærkat (valgfrit)
+        title: Titel
+        description: Beskrivelse
+        link_text: Link tekst
+      widget/feed:
+        limit: Antal postes
+      dashboard/action:
+        title: Titel
+        short_description: Kort beskrivelse
+        description: Beskrivelse
+        link: Ekstern link
+        request_to_administrators: Inkluder en knap i funktionen til at anmode administratorene om adgang til funktionen
+        day_offset: Hvor mange dag efter oprettelsen af forslaget ønsker du, at det skal være aktivt?
+        required_supports: Hvor meget støtte skal mit forslag modtage for at blive aktiveret?
+        order: Du kan angive den position, hvor denne handling vil blive vist til brugeren på listen over handlinger
+        active: Aktiv
+        action_type: Type
+        action_type_proposed_action: "Foreslået handling"
+        action_type_resource: "Funktion"
+        published_proposal: "For offentlige forslag?"
+      dashboard/administrator_task:
+        source: Kilde
+        user: Udført af
+      link:
+        label: Titel
+        url: Link
+      valuator:
+        description: Beskrivelse
+        valuator_group_id: Evaluatorer
+        can_comment: Kan oprette kommentarer
+        can_edit_dossier: Kan redigere projektinformation
+      valuator_group:
+        name: "Gruppenavn"
+      local_census_record:
+        document_type: Dokumenttype
+        document_number: Dokument nummer
+        date_of_birth: Fødselsdato
+        postal_code: Postnummer
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Denne bruger har allerede en adgangskode"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "Tags skal være mindre end eller lig med %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Du har nået det maksimale antal private beskeder på en dag"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Billedbredde skal være mindst %{required_min_width}px"
+              min_image_height: "Billedets højde skal være mindst %{required_min_height}px"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Modtagersektionen indeholder fejl"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Modtagersektionen indeholder fejl"
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Findes ikke i adresseregistret"
+            user_id:
+              has_voted: "Brugeren har allerede stemt"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: skal være på eller efter startdatoen
+            debate_end_date:
+              invalid_date_range: skal være på eller efter startdatoen for debatten
+            draft_end_date:
+              invalid_date_range: skal være på eller efter startdatoen for udkastet
+            allegations_end_date:
+              invalid_date_range: skal være udført på eller efter startdatoen for kommentarer
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "tags skal være mindre end eller lig med %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "tags skal være mindre end eller lig med %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Du skal vente mindst %{interval} dage mellem notifikationer"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: "Ikke verificeret adresse"
+              already_voted: "Der er allerede stemt på dette forslag"
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "skal være bogstaver, tal, _ og -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Bredden skal være %{required_width}px"
+              image_height: "Højde skal være %{required_height}px"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: "Du kan ikke kommentere en værdisættelse"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Allerede oversat
+      messages:
+        translations_too_short: Det er obligatorisk at tilføje minimum en oversættelse
+        record_invalid: "Valideringen mislykkedes: %{errors}"
+        another_poll_active: Der er en anden afstemning aktiv i den angivet periode
+        restrict_dependent_destroy:
+          has_one: "Indlægget kan ikke slettes, fordi det er tilknyttet %{record}"
+          has_many: "Indlægget kan ikke slettes, fordi det er tilknyttet %{record}"

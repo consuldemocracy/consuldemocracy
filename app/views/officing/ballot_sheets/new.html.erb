@@ -1,0 +1,15 @@
+<% if @officer_assignments.any? %>
+  <h2><%= t("officing.poll_budgets.new.title", poll_budget: @poll.name) %></h2>
+
+  <%= form_tag(officing_poll_ballot_sheets_path(@poll)) do %>
+    <%= label_tag :officer_assignment_id, t("officing.poll_budgets.new.booth") %>
+    <%= select_tag :officer_assignment_id,
+                    booths_for_officer_select_options(@officer_assignments),
+                    { prompt: t("officing.poll_budgets.new.select_booth") } %>
+
+    <%= label_tag :data, t("officing.poll_budgets.new.csv_data") %>
+    <%= text_area_tag :data, nil, rows: 10 %>
+
+    <%= submit_tag t("officing.poll_budgets.new.submit"), class: "button" %>
+  <% end %>
+<% end %>

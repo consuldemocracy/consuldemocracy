@@ -1,0 +1,146 @@
+da:
+  legislation:
+    annotations:
+      comments:
+        see_all: Se alle
+        see_complete: Se færdige
+        comments_count:
+          one: "%{count} kommentar"
+          other: "%{count} kommentarer"
+        replies_count:
+          one: "%{count} svar"
+          other: "%{count} svar"
+        cancel: Annuller
+        publish_comment: Udgive kommentar
+      form:
+        phase_not_open: Denne fase er ikke aktiv
+      index:
+        title: Kommentarer
+        comments_about: Kommentarer om
+        see_in_context: Se i context
+        comments_count:
+          one: "%{count} kommentar"
+          other: "%{count} kommentarer"
+      show:
+        title: Kommentar
+      version_chooser:
+        seeing_version: Commments for version
+        see_text: Se tekst udkast
+    draft_versions:
+      changes:
+        title: Ændringer
+        seeing_changelog_version: Revider ændret procedure
+        see_text: Se tekst udkast
+      show:
+        loading_comments: Indlæser kommentarer
+        seeing_version: Du ser kladdeversionen
+        select_draft_version: Vælg kladde
+        select_version_submit: se
+        updated_at: opdateret på %{date}
+        see_changes: se ændret procedure
+        see_comments: Se alle kommentarer
+        text_toc: Indholdsfortegnelse
+        text_body: Tekst
+        text_comments: Kommentar
+    processes:
+      header:
+        additional_info: Hvordan bliver dit bidrag brugt?
+        description: Beskrivelse
+        more_info: Mere information og kontekst
+      proposals:
+        empty_proposals: Der er ingen forslag
+        filters:
+          random: Alle idéer
+          winners: Valgt
+      debate:
+        empty_questions: Der er ingen spørgsmål
+      index:
+        filter: Filtrere
+        filters:
+          open: Aktive dialoger
+          past: Tidligere dialoger
+        no_open_processes: Ingen aktive dialoger
+        no_past_processes: Ingen tidligere processer
+        section_header:
+          icon_alt: Skærmikon for borgerdialog
+          title: Borgerdialoger
+          help: Hjælp til borgerdialoger
+        section_footer:
+          title: Hjælp til borgerdialoger
+          description: Deltag i debat om og processer forud for godkendelsen af nye reglementer eller strategier. Din mening vil blive taget i betragtning.
+      phase_not_open:
+        not_open: Denne fase er ikke igangsat endnu
+      phase_empty:
+        empty: Intet er offentliggjort endnu
+      process:
+        see_latest_comments: Se seneste kommentarer
+        see_latest_comments_title: Kommenter processen
+      shared:
+        key_dates: Deltagelsesfaser
+        homepage: Opsummering
+        debate_dates: Debat
+        draft_publication_date: Udkast til publikation
+        allegations_dates: Kommentarer
+        result_publication_date: Offentliggørelse af endeligt resultat
+        milestones_date: Tidslinje
+        proposals_dates: Forslag
+    questions:
+      comments:
+        comment_button: Offentliggør svar
+        comments_title: Åben svar
+        comments_closed: Afsluttet fase
+        form:
+          leave_comment: Svar
+      question:
+        comments:
+          zero: Ingen kommentarer
+          one: "%{count} kommentar"
+          other: "%{count} kommentarer"
+        debate: Debat
+      show:
+        answer_question: Afgiv svar
+        next_question: Næste spørgsmål
+        first_question: Første spørgsmål
+        share: Del
+        title: Borgerproces
+      participation:
+        phase_not_open: Fasen er ikke åben
+        organizations: Organisationer har ikke tilladelse til at deltage i debatten
+        unauthenticated: Du skal %{signin} eller %{signup} for at deltage.
+        verified_only: Kun verificerede brugere kan deltage, %{verify_account}.
+        debate_phase_not_open: Debatfasen er slut og du kan ikke længere angive svar
+    shared:
+      share: Del
+      share_comment: Kommenter på %{version_name} fra processen %{process_name}
+    proposals:
+      form:
+        tags_label: "Kategorier"
+      not_verified: "For at stemme på borgerforslag %{verify_account}."
+      process_title: Borgerproces
+    summary:
+      title: "Opsummering"
+      votes:
+        zero: "%{count} stemmer"
+        one: "%{count} stemme"
+        other: "%{count} stemmer"
+      debate_phase: "Debatfase"
+      proposals_phase: "Forslagsfasen"
+      allegations_phase: "Kommentarfasen"
+      debates:
+        zero: "Ingen debatindlæg"
+        one: "%{count} debatindlæg"
+        other: "%{count} debatindlæg"
+      proposals:
+        zero: "Ingen borgerforslag"
+        one: "%{count} borgerforslag"
+        other: "%{count} borgerforslag"
+      comments:
+        zero: "Ingen kommentarer"
+        one: "%{count} kommentar"
+        other: "%{count} kommentarer"
+      download: "Hent opsummering"
+      top_comments:
+        zero: "Ingen kommentarer"
+      most_voted_comments: "Kommentarer med flest stemmer"
+      no_allegation: "Der er ingen kommentarer"
+      process_empty: "Denne proces havde ingen faser for deltagelse"

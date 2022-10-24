@@ -1,0 +1,41 @@
+<% if budget.image.present? %>
+  <div class="budget-header with-background-image"
+       style="background-image: url(<%= polymorphic_path(budget.image.variant(:large)) %>);">
+<% else %>
+  <div class="budget-header">
+<% end %>
+  <div class="row">
+    <div class="small-12 column text-center">
+      <span class="budget-title"><%= t("budgets.index.title") %></span>
+      <h1><%= budget.name %></h1>
+
+      <% if budget.main_link_text.present? && budget.main_link_url.present? %>
+        <%= link_to budget.main_link_text, budget.main_link_url, class: "main-link" %>
+      <% end %>
+
+      <p>
+        <%= link_to t("budgets.index.section_header.help"), "#section_help" %>
+      </p>
+    </div>
+  </div>
+</div>
+
+<%= render Budgets::SubheaderComponent.new(budget) %>
+<%= render Budgets::PhasesComponent.new(budget) %>
+
+<div id="budget_info" class="budget-info">
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <% if budget.single_heading? %>
+        <%= render Budgets::SingleHeadingComponent.new(budget) %>
+      <% else %>
+        <%= render Budgets::GroupsAndHeadingsComponent.new(budget) %>
+      <% end %>
+
+      <%= render Budgets::SupportsInfoComponent.new(budget) %>
+      <%= render Budgets::MapComponent.new(budget) %>
+    </div>
+  </div>
+</div>
+
+<%= render Budgets::InvestmentsListComponent.new(budget) %>

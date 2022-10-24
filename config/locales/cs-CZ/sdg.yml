@@ -1,0 +1,646 @@
+cs:
+  sdg:
+    goals:
+      goal_1:
+        title: "Konec chudoby"
+        title_in_two_lines: "Konec chudoby"
+        description: "Vymýtit chudobu ve všech jejích formách všude na světě."
+        long_description: '<p>V celosvětovém měřítku se počet lidí žijících v extrémní chudobě snížil z 36 % v roce 1990 na 10 % v roce 2015. Tempo změn se však zpomaluje a krize COVID-19 <a href="https://www.un.org/sites/un2.un.org/files/sg_report_socio-economic_impact_of_covid19.pdf">hrozí zvrácením desetiletí trvajícího pokroku</a> v boji proti chudobě. <a href="https://www.wider.unu.edu/node/237051">Nový výzkum</a> zveřejněný Světovým institutem pro výzkum rozvojové ekonomiky při Univerzitě OSN varuje, že ekonomické důsledky <a href="https://www.wider.unu.edu/publication/estimates-impact-covid-19-global-poverty">globální pandemie by mohly zvýšit celosvětovou chudobu až o půl miliardy lidí</a>, tedy o 8 % celkové lidské populace. Bylo by to poprvé po třiceti letech, co se chudoba celosvětově zvýšila, a to od roku 1990.</p> <p>Více než <a href="http://www.worldbank.org/en/news/press-release/2018/09/19/decline-of-global-extreme-poverty-continues-but-has-slowed-world-bank">700 milionů lidí</a>, tedy 10 % světové populace, dnes stále žije v extrémní chudobě a bojuje o naplnění těch nejzákladnějších potřeb, jako je například zdraví, vzdělání a přístup k vodě a hygienickým zařízením. Většina lidí žijících za méně než 1,90 dolaru na den žije v subsaharské Africe. Celosvětově je <a href="https://unstats.un.org/sdgs/report/2019/goal-01/">míra chudoby ve venkovských oblastech 17,2 %</a> - více než třikrát vyšší než v městských oblastech.&nbsp;</p> <p>Pro ty, kteří pracují, nezaručuje mít práci důstojný život. Ve skutečnosti <a href="https://unstats.un.org/sdgs/report/2019/goal-01/">8 procent</a> zaměstnaných pracovníků a jejich rodin na celém světě žilo v roce 2018 v extrémní chudobě. Každé páté dítě žije v extrémní chudobě. Zajištění sociální ochrany pro všechny děti a další zranitelné skupiny je pro snížení chudoby zásadní.</p>'
+        targets:
+          target_1_1:
+            long_title: "Do roku 2030 odstranit extrémní chudobu všude na světě; extrémní chudoba je v současnosti definována jako život za méně než 1,25 dolaru na den"
+            short_title: "Vymýcení extrémní chudoby"
+          target_1_2:
+            long_title: "Do roku 2030 snížit alespoň o polovinu podíl můžu, žen a dětí všech věkových kategorií, kteří žijí v chudobě tak jak je definována v národní legislativě"
+            short_title: "Snížení chudoby nejméně o 50 %"
+          target_1_3:
+            long_title: "Zavést na úrovni států vhodné systémy sociální ochrany pro všechny včetně nejpotřebnějších, a do roku 2030 rozšířit jejich dosah na většinu chudých a ohrožených"
+            short_title: "Zavádění systémů sociální ochrany"
+          target_1_4:
+            long_title: "Do roku 2030 zajistit, aby všichni muži a ženy, zejména chudí a zranitelní, měli stejná práva v přístupu k ekonomickým zdrojům i základním službám, na vlastnictví a možnost nakládat s půdou a stejná práva na další formy vlastnictví, dědictví, přírodní zdroje, příslušné nové technologie a finanční služby, jako například mikrofinancování"
+            short_title: "Rovná práva na vlastnictví, základní služby, technologie a ekonomické zdroje"
+          target_1_5:
+            long_title: "Do roku 2030 posílit odolnost chudých a zranitelných a zmírnit jejich zranitelnost před extrémními klimatickými jevy a jinými ekonomickými, sociálními a environmentálními otřesy a pohromami"
+            short_title: "Budování odolnosti vůči environmentálním, ekonomickým a sociálním katastrofám"
+          target_1_A:
+            long_title: "Zajistit výraznou mobilizaci prostředků z různých zdrojů, mimo jiné i dokonalejší rozvojovou spoluprací, a zajistit tak přiměřené a předvídatelné prostředky pro rozvojové země – zejména nejméně rozvinuté – na zavádění programů a politik na odstranění chudoby ve všech jejích formách"
+            short_title: "Mobilizace zdrojů k provádění politik pro odstranění chudoby"
+          target_1_B:
+            long_title: "Vytvořit výrazné politické strategie na národní, regionální i mezinárodní úrovni, založené na genderově citlivých rozvojových strategiích na podporu chudých, které povedou ke zrychlení investic do opatření na odstranění chudoby"
+            short_title: "Vytvořit politické rámce ve prospěch chudých a s ohledem na rovnost žen a mužů"
+      goal_2:
+        title: "Konec hladu"
+        title_in_two_lines: "Konec hladu"
+        description: "Konec hladu."
+        long_description: '<p>Po desetiletích neustálého poklesu začal v roce 2015 počet lidí, kteří trpí hladem - měřeno výskytem podvýživy -, opět pomalu stoupat. Aktuální odhady ukazují, že <a href="http://www.fao.org/publications/sofi/2020/en/">téměř 690 milionů lidí trpí hladem, což představuje 8,9 % světové populace</a> - za jeden rok se počet lidí zvýšil o 10 milionů a za pět let o téměř 60 milionů.</p> <p>Svět není na dobré cestě k dosažení nulového hladu do roku 2030. Pokud budou současné trendy pokračovat, počet lidí postižených hladem by do roku 2030 překročil 840 milionů.</p> <p>Podle Světového potravinového programu <a href="https://www.wfp.org/publications/2020-global-report-food-crises">135 milionů lidí trpí akutním hladem</a>, a to především v důsledku konfliktů způsobených člověkem, klimatických změn a hospodářského poklesu. Pandemie COVID-19 by nyní mohla toto číslo zdvojnásobit, takže do konce roku 2020 bude akutním hladem ohroženo dalších 130 milionů lidí.</p> <p>Vzhledem k tomu, že více než <a href="https://insight.wfp.org/covid-19-will-almost-double-people-in-acute-hunger-by-end-of-2020-59df0c4a8072">čtvrt miliardy lidí se může ocitnout na pokraji hladomoru</a>, je třeba urychleně přijmout opatření k zajištění potravinové a humanitární pomoci v nejohroženějších regionech. </p> <p>Současně,&nbsp;pokud chceme nasytit více než 690 milionů lidí, kteří dnes trpí hladem - a&nbsp;<a href="https://www.un.org/development/desa/en/news/population/world-population-prospects-2019.html">dalších 2 miliard lidí</a>&nbsp;na světě do roku 2050 -, je zapotřebí zásadní změna globálního potravinového a zemědělského systému. Zvýšení zemědělské produktivity a udržitelná produkce potravin jsou zásadní pro zmírnění nebezpečí hladu.</p>'
+        targets:
+          target_2_1:
+            long_title: "Do roku 2030 vymýtit hlad a zajistit přístup všem lidem, zejména chudým a ohroženým, včetně malých dětí, k bezpečné, výživné a dostačující stravě po celý rok."
+            short_title: "Všeobecný přístup k bezpečným a výživným potravinám"
+          target_2_2:
+            long_title: "Do roku 2030 odstranit všechny formy podvýživy a do roku 2025 dosáhnout mezinárodně dohodnutých cílů ohledně zakrnění a hubnutí dětí mladších pěti let a vyřešit výživové potřeby dospívajících dívek, těhotných a kojících žen a starších osob."
+            short_title: "Ukončení všech forem podvýživy"
+          target_2_3:
+            long_title: "Do roku 2030 zdvojnásobit zemědělskou produktivitu a příjmy malých zemědělců – zejména žen, původních obyvatel, rodinných farmářů, pastevců a rybářů – pomocí zajištění bezpečného a rovného přístupu k půdě, dalším výrobním zdrojům (a vstupům), znalostem, finančním službám, trhům a vytvářením příležitostí k vytváření přidané hodnoty a přístupu k zaměstnání v nezemědělském sektoru."
+            short_title: "Zdvojnásobení produktivity a příjmů drobných výrobců potravin"
+          target_2_4:
+            long_title: "Do roku 2030 zajistit/zavést systémy udržitelné výroby potravin a zavést odolné zemědělské postupy, které zvýší produktivitu a výrobu a pomohou zachovat ekosystémy posilující schopnosti půdy přizpůsobit se klimatické změně, extrémnímu počasí, suchu, záplavám a dalším pohromám, a které postupně zlepší kvalitu půdy."
+            short_title: "Udržitelná produkce potravin a odolné zemědělské postupy"
+          target_2_5:
+            long_title: "Do roku 2020 zajistit zachování genetické rozmanitosti osiv, pěstovaných plodin, hospodářských a domácích zvířat a jejich divoce žijících příbuzných druhů, mimo jiné pomocí správně spravovaných a diverzifikovaných semenných a rostlinných bank na národní, regionální i mezinárodní úrovni a zajistit přístup ke spravedlivému sdílení přínosů z využívání genetických zdrojů a tradičních poznatků, v souladu s mezinárodními dohodami."
+            short_title: "Zachování genetické rozmanitosti v produkci potravin"
+          target_2_A:
+            long_title: "Zvýšit investice, mimo jiné i prostřednictvím posílené mezinárodní spolupráce, do venkovské infrastruktury, zemědělského výzkumu a nadstavbových služeb, vývoje technologií a genových bank zvířat a rostlin za účelem zlepšení zemědělských výrobních kapacit v rozvojových zemích, zejména v těch nejméně rozvinutých."
+            short_title: "Investice do venkovské infrastruktury, zemědělského výzkumu, technologií a genových bank"
+          target_2_B:
+            long_title: "Napravit a předcházet obchodním omezením a pokřivením na světových zemědělských trzích, mimo jiné prostřednictvím souběžného odstranění všech forem dotací na vývoz a dalších opatření s obdobným účinkem, v souladu s mandátem rozvojového kola v Dauhá."
+            short_title: "Zabránit omezením zemědělského obchodu, narušením trhu a vývozním subvencím"
+          target_2_C:
+            long_title: "Přijmout opatření k zajištění řádného fungování trhu potravinářských komodit a jejich derivátů a usnadnit včasný přístup k informacím o trhu, včetně informací o potravinových rezervách, s cílem přispět k omezení extrémní volatility cen potravin."
+            short_title: "Zajištění stabilních trhů s potravinářskými komoditami a včasného přístupu k informacím"
+      goal_3:
+        title: "Zdraví a kvalitní život"
+        title_in_two_lines: "Zdraví a kvalitní život"
+        description: "Zajistit zdravý život a zvyšovat jeho kvalitu pro všechny v jakémkoli věku."
+        long_description: '<p>Zajistit zdravý život a podporovat dobré životní podmínky v každém věku je pro udržitelný rozvoj zásadní. V současné době čelí svět <a href="https://www.un.org/coronavirus">globální zdravotní krizi</a>, která nemá obdoby - COVID-19 šíří lidské utrpení, destabilizuje globální ekonomiku a podkopává životy miliard lidí na celém světě.&nbsp;</p> <p>Před pandemií bylo dosaženo významného pokroku v <a href="https://unstats.un.org/sdgs/report/2019/goal-03/">zlepšování zdraví milionů lidí</a>. Bylo dosaženo významných pokroků v prodlužování průměrné délky života a snižování některých běžných smrtelných onemocnění spojených s dětskou a mateřskou úmrtností. K úplnému vymýcení celé řady nemocí a řešení mnoha různých přetrvávajících i nově vznikajících zdravotních problémů je však zapotřebí dalšího úsilí. Zaměřením se na zajištění efektivnějšího financování zdravotnických systémů, zlepšení hygieny a sanitace a zlepšení přístupu k lékařům lze dosáhnout významného pokroku, který pomůže zachránit životy milionů lidí.</p> <p>Náhlé zdravotní situace, jako je COVID-19, představují celosvětové riziko a ukázaly, že je nezbytně nutné být připraven. Rozvojový program OSN upozornil na obrovské rozdíly ve <a href="https://www.undp.org/content/undp/en/home/news-centre/news/2020/COVID19_UNDP_data_dashboards_reveal_disparities_among_countries_to_cope_and_recover.html">schopnosti zemí vyrovnat se s krizí COVID-19 a zotavit se z ní</a>. Tato pandemie představuje přelomový okamžik pro připravenost na mimořádné zdravotní události a pro investice do kritických veřejných služeb 21. století.&nbsp;</p>'
+        targets:
+          target_3_1:
+            long_title: "Do roku 2030 celosvětově snížit míru mateřské úmrtnosti na méně než 70 na 100 tisíc porodů."
+            short_title: "Snížení mateřské úmrtnosti"
+          target_3_2:
+            long_title: "Do roku 2030 zabránit úmrtím novorozenců a dětí mladších pěti let, jimž je možné předejít. Všechny země budou usilovat o snížení novorozenecké úmrtnosti na úroveň maximálně 12 úmrtí na 1000 živě narozených dětí a snížení úmrtnosti dětí mladších pěti let na úroveň 25 a méně na 1000 živě narozených dětí."
+            short_title: "Ukončení všech úmrtí do 5 let věku, kterým lze předcházet"
+          target_3_3:
+            long_title: "Do roku 2030 ukončit epidemii AIDS, tuberkulózy, malárie a zanedbávaných tropických nemocí a bojovat proti hepatitidě, vodou přenášeným nemocem a ostatním přenosným nemocem."
+            short_title: "Boj proti přenosným nemocem"
+          target_3_4:
+            long_title: "Do roku 2030 snížit pomocí prevence a léčby o třetinu předčasnou úmrtnost na nepřenosné choroby; podporovat duševní zdraví a duševní pohodu."
+            short_title: "Snížení úmrtnosti na neinfekční nemoci a podpora duševního zdraví"
+          target_3_5:
+            long_title: "Posílit prevenci a léčbu užívání návykových látek, včetně užívání narkotik a škodlivého užívání alkoholu."
+            short_title: "Prevence a léčba zneužívání návykových látek"
+          target_3_6:
+            long_title: "Do roku 2020 celosvětově snížit na polovinu počet úmrtí a zranění při dopravních nehodách."
+            short_title: "Snížit počet zranění a úmrtí na silnicích"
+          target_3_7:
+            long_title: "Do roku 2030 zajistit všeobecný přístup ke službám v oblasti sexuálního a reprodukčního zdraví, včetně plánování rodiny, informací a vzdělávání, a začlenit reprodukční zdraví do národních strategií a programů."
+            short_title: "Všeobecný přístup k sexuální a reprodukční péči, plánování rodiny a vzdělávání"
+          target_3_8:
+            long_title: "Docílit všeobecného zabezpečení zdraví, včetně ochrany finančních rizik, přístupu ke kvalitní základní zdravotní péči a přístupu k bezpečným, účinným, kvalitním a cenově dostupným základním léčivům a očkovacím látkám pro všechny."
+            short_title: "Dosáhnout všeobecného zdravotního pojištění"
+          target_3_9:
+            long_title: "Do roku 2030 výrazně snížit počet úmrtí a onemocnění způsobených nebezpečnými chemickými látkami a znečištěním a kontaminací ovzduší, vody a půdy."
+            short_title: "Snížit počet onemocnění a úmrtí způsobených nebezpečnými chemickými látkami a znečištěním"
+          target_3_A:
+            long_title: "Posílit provádění Rámcové úmluvy Světové zdravotnické organizace o kontrole tabáku ve všech zemích, je-li to vhodné."
+            short_title: "Provádění Rámcové úmluvy WHO o kontrole tabáku"
+          target_3_B:
+            long_title: "Podporovat výzkum a vývoj vakcín a léků na přenosné i nepřesné choroby, které primárně postihují především rozvojové země, poskytnout přístup k cenově dostupným základním lékům a vakcínám v souladu s Deklarací z Dohá o Dohodě TRIPS a veřejném zdraví, která potvrzuje právo rozvojových zemí plně využít ujednání v Dohodě o obchodních aspektech práv k duševnímu vlastnictví, pokud jde o flexibilitu v ochraně veřejného zdraví a zejména v přístupu k lékům pro všechny."
+            short_title: "Podpora výzkumu, vývoje a všeobecného přístupu k cenově dostupným vakcínám a lékům"
+          target_3_C:
+            long_title: "Podstatně zvýšit financování zdravotnictví a nábor, rozvoj, školení a retence pracovníků ve zdravotnictví v rozvojových zemích, zejména v těch nejméně rozvinutých a v malých ostrovních rozvojových státech."
+            short_title: "Zvýšení financování zdravotnictví a podpora pracovníků ve zdravotnictví v rozvojových zemích"
+          target_3_D:
+            long_title: "Zvýšit kapacitu všech zemí, zejména rozvojových, pro včasné varování, snižování rizik a řízení národních a globálních zdravotních rizik."
+            short_title: "Zlepšení systémů včasného varování před globálními zdravotními riziky"
+      goal_4:
+        title: "Kvalitní vzdělání"
+        title_in_two_lines: "Kvalitní vzdělání"
+        description: "Kvalitní vzdělání."
+        long_description: '<p>Vzdělání umožňuje vzestupnou socioekonomickou mobilitu a je klíčem k úniku z chudoby. V uplynulém desetiletí bylo dosaženo významného pokroku při zvyšování přístupu ke vzdělání a míry zápisu do škol na všech úrovních, zejména u dívek. Přesto <a href="http://uis.unesco.org/en/topic/out-school-children-and-youth">přibližně 260 milionů dětí v roce 2018 stále nechodilo do školy</a>, což je téměř pětina celosvětové populace v této věkové skupině. A více než polovina všech dětí a dospívajících na celém světě <a href="https://unstats.un.org/sdgs/report/2019/goal-04/">nedosahuje minimálních standardů znalostí</a> ve čtení a matematice.&nbsp;</p> <p>V roce 2020, kdy se pandemie COVID-19 rozšířila po celém světě, většina zemí oznámila dočasné uzavření škol, což mělo dopad na více než 91 % studentů na celém světě. V dubnu 2020 bylo mimo školu téměř <a href="https://en.unesco.org/covid19/educationresponse">1,6 miliardy dětí a mladých lidí</a>. A téměř <a href="https://www.un.org/sites/un2.un.org/files/policy_brief_on_covid_impact_on_children_16_april_2020.pdf">369 milionů dětí, které jsou závislé na školním stravování</a>, muselo hledat jiné zdroje každodenní výživy.&nbsp;</p> <p>Nikdy předtím nebylo mimo školu tolik dětí najednou, což narušilo výuku a zničilo životy zejména těch nejzranitelnějších a marginalizovaných. Celosvětová pandemie má dalekosáhlé důsledky, které mohou ohrozit těžce vydobyté úspěchy při zlepšování globálního vzdělávání.</p>'
+        targets:
+          target_4_1:
+            long_title: "Do roku 2030 zajistit, aby všechny dívky a chlapci ukončili bezplatné, rovnoprávné a kvalitní primární a sekundární základní vzdělání, které bude mít odpovídající a efektivní studijní výsledky."
+            short_title: "Bezplatné základní a střední vzdělání"
+          target_4_2:
+            long_title: "Do roku 2030 zajistit, aby všechny dívky a chlapci měli možnost kvalitního rozvoje v raném dětství, aby měli přístup k předškolní péči a vzdělání tak, že budou připraveni pro základní vzdělávání."
+            short_title: "Rovný přístup ke kvalitnímu předškolnímu vzdělávání"
+          target_4_3:
+            long_title: "Do roku 2030 zajistit rovný přístup všech žen a mužů k cenově dostupnému a kvalitnímu odbornému, učňovskému a vyššímu vzdělání, včetně univerzitního."
+            short_title: "Rovný přístup k dostupnému technickému, odbornému a vysokoškolskému vzdělávání"
+          target_4_4:
+            long_title: "Do roku 2030 výrazně zvýšit počet mladých a dospělých, kteří mají příslušné dovednosti včetně technických a odborných, které budou předpokladem pro zaměstnání, důstojné pracovní zařazení a pro podnikání."
+            short_title: "Zvýšení počtu lidí s příslušnými dovednostmi pro finanční úspěch"
+          target_4_5:
+            long_title: "Do roku 2030 eliminovat genderové nerovnosti ve vzdělávání a zajistit rovný přístup ke všem úrovním vzdělání a odborné přípravy pro znevýhodněné – osoby se zdravotním postižením, původní obyvatelstvo či ohrožené děti."
+            short_title: "Odstranit veškerou diskriminaci ve vzdělávání"
+          target_4_6:
+            long_title: "Do roku 2030 zajistit, aby všichni mladí a značná část dospělých mužů i žen dosáhli čtenářské a matematické gramotnosti."
+            short_title: "Univerzální gramotnost a matematická gramotnost"
+          target_4_7:
+            long_title: "Do roku 2030 zajistit, aby všichni žáci získali znalosti a dovednosti potřebné k podpoře udržitelného rozvoje, mimo jiné prostřednictvím vzdělávání pro udržitelný rozvoj a udržitelný životní styl, lidských práv, rovnosti žen a mužů, podpory kultury míru a nenásilí, globálního občanství a ocenění kulturní rozmanitosti a přínosu kultury k udržitelnému rozvoji."
+            short_title: "Vzdělávání pro udržitelný rozvoj a globální občanství"
+          target_4_A:
+            long_title: "Vybudovat a vylepšit genderově citlivá vzdělávací zařízení, která budou vhodná pro děti i lidi se zdravotním postižením, a poskytnout bezpečné, nenásilné, inkluzivní a efektivní vzdělávací prostředí pro všechny."
+            short_title: "Budování a modernizace inkluzivních a bezpečných škol"
+          target_4_B:
+            long_title: "Do roku 2020 výrazně na celém světě rozšířit počet stipendií pro studenty z rozvojových zemí – zejména těch nejméně rozvinutých, malých ostrovních rozvojových a afrických států – pro zápis do vysokoškolského vzdělávání, učňovské přípravy a vzdělávacích programů v informačních a komunikačních technologiích, technologických, stavebních a vědeckých oborech v rozvinutých i rozvojových státech."
+            short_title: "Rozšíření vysokoškolských stipendií pro rozvojové země"
+          target_4_C:
+            long_title: "Do roku 2030 výrazně zvýšit počty kvalifikovaných učitelů, a to i prostřednictvím mezinárodní spolupráce pro vzdělávání učitelů v rozvojových zemích, zejména těch nejméně rozvinutých, a malých ostrovních rozvojových státech."
+            short_title: "Zvýšení nabídky kvalifikovaných učitelů v rozvojových zemích"
+      goal_5:
+        title: "Rovnost mužů a žen"
+        title_in_two_lines: "Rovnost mužů a žen"
+        description: "Dosáhnout rovnosti žen a mužů a posílit postavení všech žen a dívek."
+        long_description: '<p>Rovnost žen a mužů je nejen základním lidským právem, ale také nezbytným základem mírového, prosperujícího a udržitelného světa.&nbsp;</p> <p>V posledních desetiletích došlo k <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/gender-equality-womens-rights-in-review-key-facts-and-figures-en.pdf?la=en&amp;vs=935">pokroku</a>: Přes tyto úspěchy chodí více dívek do školy, méně dívek je nuceno uzavírat předčasné sňatky, více žen zasedá v parlamentu a ve vedoucích funkcích a zákony jsou reformovány tak, aby podporovaly rovnost žen a mužů.&nbsp;</p> <p>Přes tyto úspěchy je mnoho <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/gender-equality-womens-rights-in-review-key-facts-and-figures-en. pdf?la=en&amp;vs=935">výzev</a>: diskriminační zákony a společenské normy jsou stále rozšířené, ženy jsou stále nedostatečně zastoupeny na všech úrovních politického vedení a 1 z 5 žen a dívek ve věku 15 až 49 let uvádí, že během 12 měsíců zažila fyzické nebo sexuální násilí ze strany intimního partnera. </p> <p>Důsledky <a href="https://www.un.org/sites/un2.un.org/files/policy_brief_on_covid_impact_on_women_9_apr_2020_updated.pdf">pandemie COVID-19 by mohly zvrátit omezený pokrok</a>, kterého bylo dosaženo v oblasti rovnosti žen a mužů a práv žen.&nbsp; Epidemie koronaviru <a href="https://www.unfpa. org/sites/default/files/resource-pdf/COVID-19_A_Gender_Lens_Guidance_Note.pdf">zhoršuje stávající nerovnosti</a> pro ženy a dívky ve všech oblastech - od zdravotnictví a ekonomiky až po bezpečnost a sociální ochranu.&nbsp;</p> <p>Ženy hrají v reakci na virus nepřiměřenou roli, a to i jako zdravotníci v první linii a pečovatelé v domácnosti. Neplacená pečovatelská práce žen výrazně vzrostla v důsledku uzavření škol a zvýšených potřeb starších lidí. Ženy jsou také více zasaženy ekonomickými dopady COVID-19, protože neúměrně často pracují na nejistých pracovních trzích. Téměř 60 % žen pracuje v neformální ekonomice, což je vystavuje většímu riziku pádu do chudoby.&nbsp;</p> <p>Pandemie vedla také k prudkému nárůstu <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/issue-brief-covid-19-and-ending-violence-against-women-and-girls-en.pdf?la=en&amp;vs=5006">násilí na ženách a dívkách</a>. V důsledku výlukových opatření je mnoho žen uvězněno doma se svými násilníky a snaží se získat přístup ke službám, které trpí škrty a omezeními. Nové údaje ukazují, že od vypuknutí pandemie se násilí na ženách a dívkách - a zejména domácí násilí - zintenzivnilo.</p>'
+        targets:
+          target_5_1:
+            long_title: "Celosvětově skoncovat se všemi formami diskriminace žen a dívek."
+            short_title: "Ukončení diskriminace žen a dívek"
+          target_5_2:
+            long_title: "Eliminovat všechny formy násilí vůči ženám a dívkám ve veřejné i soukromé sféře, včetně obchodu s lidmi a sexuálního či jiného vykořisťování."
+            short_title: "Ukončení veškerého násilí na ženách a dívkách a jejich vykořisťování"
+          target_5_3:
+            long_title: "Odstranit všechny škodlivé praktiky jako jsou dětské, předčasné a nucené sňatky či ženská obřízka."
+            short_title: "Odstranit nucené sňatky a mrzačení pohlavních orgánů"
+          target_5_4:
+            long_title: "Uznávat a oceňovat neplacenou péči a domácí práce pomocí zajištění veřejných služeb, infrastruktury a politik sociální ochrany a prosazování sdílené odpovědnosti v rámci domácnosti a rodiny podle zvyklostí dané země."
+            short_title: "Oceňování neplacené péče a podpora sdílených domácích povinností"
+          target_5_5:
+            long_title: "Zajistit ženám rovné příležitosti a plnou a efektivní účast na rozhodování na všech úrovních v politickém, ekonomickém i veřejném životě."
+            short_title: "Zajištění plné účasti na vedení a rozhodování"
+          target_5_6:
+            long_title: "Zajistit všeobecnou dostupnost služeb sexuálního a reprodukčního zdraví a reprodukčního práva, jak bylo dohodnuto v souladu s Akčním programem Mezinárodní konference o populaci a rozvoji a Pekingskou akční platformou a závěrečnými dokumenty návazných konferencí."
+            short_title: "Všeobecný přístup k reprodukčnímu zdraví a právům"
+          target_5_A:
+            long_title: "Provést reformy, které ženám zajistí rovná práva k ekonomickým zdrojům, možnost vlastnictví a hospodaření s pozemky i dalších forem vlastnictví, přístup k finančním službám, dědictví a přírodním zdrojům v souladu s národní legislativou."
+            short_title: "Rovná práva na hospodářské zdroje, vlastnictví majetku a finanční služby"
+          target_5_B:
+            long_title: "Rozšířit možnosti využívání moderních technologií, zejména informačních a komunikačních, pro posilování postavení žen."
+            short_title: "Podpora posílení postavení žen prostřednictvím technologií"
+          target_5_C:
+            long_title: "Přijmout a posílit vhodné politiky a vymahatelné právní předpisy pro prosazování rovnosti žen a mužů a posilování postavení žen a dívek ve všech sférách."
+            short_title: "Přijmout a posílit politiky a vymahatelné právní předpisy pro rovnost žen a mužů"
+      goal_6:
+        title: "Pitná voda, kanalizace"
+        title_in_two_lines: "Pitná voda, kanalizace"
+        description: "Zajistit všem dostupnost vody a sanitačních zařízení a udržitelné hospodaření s nimi."
+        long_description: '<p>Přestože bylo dosaženo značného pokroku ve zvyšování dostupnosti čisté pitné vody a hygienických zařízení, miliardy lidí - převážně ve venkovských oblastech - tyto základní služby stále postrádají. Na celém světě <a href="https://www.who.int/news-room/detail/18-06-2019-1-in-3-people-globally-do-not-have-access-to-safe-drinking-water-unicef-who">jeden ze tří lidí nemá přístup k nezávadné pitné vodě</a>, <a href="https://www.unwater.org/water-facts/water-sanitation-and-hygiene/">dva z pěti lidí nemají k dispozici základní zařízení na mytí rukou</a> vodou a mýdlem a více než <a href="https://news.un.org/en/story/2019/11/1051561">673 milionů lidí stále praktikuje otevřenou defekaci</a>.</p> <p>Pandemie COVID-19 ukázala, jak zásadní význam mají pro prevenci a tlumení nemocí sanitace, hygiena a odpovídající přístup k čisté vodě. <a href="https://www.unwater.org/water-facts/handhygiene/">Hygiena rukou zachraňuje životy</a>. Podle Světové zdravotnické organizace je <a href="https://www.who.int/news-room/events/detail/2020/05/05/default-calendar/hand-hygiene-day">mytí rukou jedním z nejúčinnějších opatření, která můžete podniknout</a> ke snížení šíření patogenů a prevenci infekcí, včetně viru COVID-19. Přesto miliardy lidí stále nemají k dispozici bezpečnou vodu a hygienické prostředky jsou nedostatečné.</p>'
+        targets:
+          target_6_1:
+            long_title: "Do roku 2030 zajistit univerzální a rovný přístup k bezpečné a cenově dostupné pitné vodě pro všechny."
+            short_title: "Bezpečná a cenově dostupná pitná voda"
+          target_6_2:
+            long_title: "Do roku 2030 zajistit spravedlivě všem odpovídající sanitační a hygienická zařízení a skoncovat s vylučováním na volných prostranstvích, se zvláštním ohledem na potřeby žen, dívek a lidí v těžké situaci."
+            short_title: "Ukončení defekace na otevřeném prostranství a zajištění přístupu k hygieně a sanitaci"
+          target_6_3:
+            long_title: "Do roku 2030 zlepšit kvalitu vody snížením jejího znečišťování, zamezením vyhazování odpadů do vody a minimalizací vypouštění nebezpečných chemických látek do vody, snížit na polovinu podíl znečistěných odpadních vod a podstatně zvýšit recyklaci a bezpečné opětovné využívání vody v celosvětovém měřítku."
+            short_title: "Zlepšení kvality vody, čištění odpadních vod a bezpečné opětovné využití"
+          target_6_4:
+            long_title: "Do roku 2030 podstatně zvýšit efektivitu využívání vody ve všech sektorech a zajistit udržitelný odběr a dodávky pitné vody tak, aby byl vyřešen nedostatek vody a podstatně se snížil počet lidí trpících jejím nedostatkem."
+            short_title: "Zvýšení efektivity využívání vody a zajištění zásob sladké vody"
+          target_6_5:
+            long_title: "Do roku 2030 zavést integrovanou správu vodních zdrojů na všech úrovních, a to i pomocí přeshraniční spolupráce tam, kde je to vhodné."
+            short_title: "Provádění integrovaného řízení vodních zdrojů"
+          target_6_6:
+            long_title: "Do roku 2020 zajistit ochranu a obnovu ekosystémů související s vodou, včetně hor, lesů, mokřad, řek, vodonosných vrstev a jezer."
+            short_title: "Ochrana a obnova ekosystémů souvisejících s vodou"
+          target_6_A:
+            long_title: "Do roku 2030 rozšířit mezinárodní spolupráci a podporu budování kapacit v rozvojových zemích v rámci programů a činností souvisejících s vodou a sanitačními zařízeními zahrnující zadržování, odsolování a efektivní využívání vody, čištění odpadních vod a využívání technologií pro recyklaci a opětovné využívání vody."
+            short_title: "Rozšíření podpory vody a hygieny v rozvojových zemích"
+          target_6_B:
+            long_title: "Podporovat a posilovat zapojení místních komunit do zlepšování správy vodních zdrojů a sanitačních zařízení."
+            short_title: "Podpora zapojení místních obyvatel do hospodaření s vodou a sanitací"
+      goal_7:
+        title: "Dostupné a čisté energie"
+        title_in_two_lines: "Dostupné a čisté energie"
+        description: "Zajistit přístup k cenově dostupným, spolehlivým, udržitelným a moderním zdrojům energie pro všechny."
+        long_description: '<p>Svět dosahuje <a href="https://unstats.un.org/sdgs/report/2019/goal-07/">pokroku v plnění cíle č. 7</a> a objevují se povzbudivé známky toho, že energie se stává udržitelnější a dostupnější. Přístup k elektřině v chudších zemích se začal zrychlovat, energetická účinnost se stále zlepšuje a obnovitelné zdroje energie dosahují v odvětví elektrické energie působivých úspěchů.&nbsp;</p> <p>Přesto je třeba věnovat větší pozornost zlepšení přístupu k čistým a bezpečným palivům a technologiím na vaření pro 3 miliardy lidí, rozšíření využívání obnovitelných zdrojů energie mimo odvětví elektrické energie a zvýšení elektrifikace v subsaharské Africe. </p> <p>Zpráva <a href="https://trackingsdg7.esmap.org/">o pokroku v oblasti energetiky</a> poskytuje globální přehled, který zaznamenává pokrok v oblasti přístupu k energii, energetické účinnosti a obnovitelných zdrojů energie. Hodnotí pokrok, kterého jednotlivé země v těchto třech pilířích dosáhly, a poskytuje přehled o tom, jak daleko jsme od dosažení cílů udržitelného rozvoje do roku 2030.</p>'
+        targets:
+          target_7_1:
+            long_title: "Do roku 2030 zajistit všem přístup k cenově dostupným, spolehlivým a moderním energetickým službám."
+            short_title: "Všeobecný přístup k moderní energii"
+          target_7_2:
+            long_title: "Do roku 2030 podstatně zvýšit podíl energie z obnovitelných zdrojů na celosvětovém energetickém mixu."
+            short_title: "Zvýšení celosvětového podílu energie z obnovitelných zdrojů"
+          target_7_3:
+            long_title: "Do roku 2030 celosvětově zdvojnásobit energetickou účinnost."
+            short_title: "Dvojnásobné zvýšení energetické účinnosti"
+          target_7_A:
+            long_title: "Do roku 2030 zlepšit mezinárodní spolupráci ve zpřístupňování výzkumu a technologií čisté energie, včetně energie z obnovitelných zdrojů, energetické účinnosti a pokročilých a čistších technologií fosilních paliv; podporovat investice do energetické infrastruktury a technologií čisté energie."
+            short_title: "Podpora přístupu k výzkumu, technologiím a investicím do čisté energie "
+          target_7_B:
+            long_title: "Do roku 2030 rozšířit infrastrukturu a vylepšit technologie pro dodávky moderních a udržitelných energetických služeb pro všechny v rozvojových zemích, zejména v nejméně rozvinutých a malých ostrovních rozvojových státech."
+            short_title: "Rozšíření a modernizace energetických služeb pro rozvojové země"
+      goal_8:
+        title: "Důstojná práce a ekonomický růst"
+        title_in_two_lines: "Důstojná práce a ekonomický růst"
+        description: "Podporovat trvalý, inkluzivní a udržitelný hospodářský růst, plnou a produktivní zaměstnanost a důstojnou práci pro všechny."
+        long_description: '<p>Udržitelný hospodářský růst podporující začlenění může být hnací silou pokroku, vytvářet důstojná pracovní místa pro všechny a zlepšovat životní úroveň.</p> <p>COVID-19 <a href="https://www.un.org/sites/un2.un.org/files/sg_report_socio-economic_impact_of_covid19.pdf">zničil životy miliard lidí</a> a ohrozil globální ekonomiku. Mezinárodní měnový fond (MMF) očekává <a href="https://blogs.imf.org/2020/04/14/the-great-lockdown-worst-economic-downturn-since-the-great-depression/">globální recesi</a> stejně silnou nebo horší než v roce 2009. Ztráta pracovních míst se stupňuje a Mezinárodní organizace práce odhaduje, že <a href="https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_743036/lang--en/index.htm">téměř polovině celosvětové pracovní síly</a> hrozí ztráta živobytí.</p> <p><a href="https://developmentfinance.un.org/press-release-financing-sustainable-development-report-2020">Ještě před vypuknutím COVID-19</a> se v roce 2020 v každé páté zemi, kde žijí miliardy lidí žijících v chudobě, pravděpodobně projeví stagnace nebo pokles příjmů na obyvatele. Nyní<a href="https://developmentfinance.un.org/press-release-financing-sustainable-development-report-2020">ekonomické a finanční šoky</a> spojené s COVID-19 - jako je narušení průmyslové výroby, pokles cen komodit, volatilita finančních trhů a rostoucí nejistota - vykolejují již tak vlažný hospodářský růst a zvyšují rizika plynoucí z dalších faktorů.&nbsp;&nbsp;</p>'
+        targets:
+          target_8_1:
+            long_title: "Udržovat ekonomický růst na hlavu v závislosti na podmínkách jednotlivých zemí, zejména minimálně 7procentní růst Hdp ročně v nejméně rozvinutých zemích."
+            short_title: "Udržitelný hospodářský růst"
+          target_8_2:
+            long_title: "Dosáhnout vyšší úrovně ekonomické produktivity pomocí diverzifikace, technologického rozvoje a inovací, mimo jiné také zaměřením se na odvětví s vysokou přidanou hodnotou a s vysokým podílem lidské práce."
+            short_title: "Diverzifikace, inovace a modernizace pro ekonomickou produktivitu"
+          target_8_3:
+            long_title: "Podporovat politiky orientované na rozvoj, které podporují produktivní činnosti, vytváření důstojných pracovních míst, podnikání, kreativitu a inovace, a podporují vznik a růst mikropodniků, malých a středních podniků, mimo jiné prostřednictvím zpřístupňování finančních služeb."
+            short_title: "Podpora politik na podporu vytváření pracovních míst a rostoucích podniků"
+          target_8_4:
+            long_title: "Postupně až do roku 2030 zlepšovat efektivní využívání globálních zdrojů ve spotřebě i výrobě a učinit vše potřebné pro to, aby ekonomický růst nebyl spojen s poškozováním životního prostředí, v souladu s desetiletým rámcovým programem trvale udržitelné spotřeby a výroby, v jehož čele stojí rozvinuté země."
+            short_title: "Zlepšení účinnosti zdrojů při spotřebě a výrobě"
+          target_8_5:
+            long_title: "Do roku 2030 dosáhnout plné a produktivní zaměstnanosti a zajistit důstojnou práci pro všechny ženy a muže, včetně mladých lidí a osob se zdravotním postižením, a zajistit stejnou odměnu za rovnocennou práci."
+            short_title: "Plná zaměstnanost a důstojná práce s rovným odměňováním"
+          target_8_6:
+            long_title: "Do roku 2020 podstatně snížit podíl mladých lidí, kteří nepracují ani nestudují."
+            short_title: "Podpora zaměstnanosti, vzdělávání a odborné přípravy mládeže"
+          target_8_7:
+            long_title: "Přijmout okamžitá a účinná opatření k vymýcení nucené práce, skoncovat s moderními formami otroctví a s obchodováním s lidmi a dosáhnout zákazu a odstranění nejhorších forem dětské práce, včetně náboru a využívání dětských vojáků, a do roku 2025 odstranit dětskou práci ve všech jejích formách."
+            short_title: "Konec moderního otroctví, obchodování s lidmi a dětské práce"
+          target_8_8:
+            long_title: "Chránit práva a podporovat bezpečné a stabilní pracovní podmínky pro všechny pracující, včetně pracujících migrantů – zejména žen, a lidí s nebezpečným povoláním."
+            short_title: "Ochrana pracovních práv a podpora bezpečného pracovního prostředí"
+          target_8_9:
+            long_title: "Do roku 2030 navrhnout a realizovat politiky podpory udržitelného cestovního ruchu, který vytváří pracovní místa a podporuje místní kulturu a produkty"
+            short_title: "Podpora prospěšného a udržitelného cestovního ruchu"
+          target_8_10:
+            long_title: "Posílit kapacitu domácích finančních institucí na podporu a rozšíření přístupu k bankovnictví, pojišťovnictví a finančním službám pro všechny."
+            short_title: "Všeobecný přístup k bankovním, pojišťovacím a finančním službám"
+          target_8_A:
+            long_title: "Zvýšit podporu konceptu „Pomoc na podporu obchodu“ (Aid for Trade) pro rozvojové země, zejména těch nejméně rozvinutých, mimo jiné prostřednictvím programu „Prohloubený integrovaný rámec obchodní technické asistsence pro nejméně rozvinuté státy (Enhanced Integrated Framework for Trade-Related Technical Assistance to Least Developed Countries, Eif)."
+            short_title: "Zvýšit podporu obchodu"
+          target_8_B:
+            long_title: "Do roku 2020 rozvinout a uvést v život globální strategii pro zaměstnávání mladých a realizovat Globální pakt pro pracovní místa Mezinárodní organizace práce."
+            short_title: "Vypracování globální strategie zaměstnanosti mládeže"
+      goal_9:
+        title: "Průmysl, inovace a infrastruktura"
+        title_in_two_lines: "Průmysl, inovace a infrastruktura"
+        description: "Vybudovat odolnou infrastrukturu, podporovat inkluzivní a udržitelnou industrializaci a inovace."
+        long_description: '<p>Inkluzivní a udržitelná industrializace může spolu s <a href="https://unstats.un.org/sdgs/report/2019/goal-09/">inovací a infrastrukturou</a> uvolnit dynamické a konkurenceschopné ekonomické síly, které vytvářejí zaměstnanost a příjmy. Hrají klíčovou roli při zavádění a podpoře nových technologií, usnadňují mezinárodní obchod a umožňují efektivní využívání zdrojů.&nbsp;</p> <p>Svět však má před sebou ještě dlouhou cestu, než tento potenciál plně využije. Zejména nejméně rozvinuté země musí urychlit rozvoj svého zpracovatelského průmyslu, pokud chtějí splnit cíl pro rok 2030, a zvýšit investice do vědeckého výzkumu a inovací.&nbsp;</p> <p>Globální růst zpracovatelského průmyslu se neustále snižoval, a to i před vypuknutím pandemie COVID-19. V posledních letech se však ukazuje, že se tento potenciál stále zvyšuje. Pandemie <a href="https://unctad.org/en/pages/newsdetails.aspx?OriginalVersionID=2297">tvrdě zasahuje výrobní odvětví</a> a způsobuje narušení globálních hodnotových řetězců a dodávek výrobků.&nbsp;</p> <p>Inovace a technologický pokrok jsou klíčem k nalezení trvalých řešení hospodářských i environmentálních výzev, jako je například vyšší účinnost zdrojů a energie. V celosvětovém měřítku se <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">investice do výzkumu a vývoje</a> (R&amp;D) v poměru k HDP zvýšily z 1,5 % v roce 2000 na 1,7 % v roce 2015 a v roce 2017 zůstaly téměř beze změny, avšak v rozvojových regionech činily pouze necelé 1 %&nbsp;</p> <p>Co se týče komunikační infrastruktury, více než polovina světové populace je nyní online a téměř celá světová populace žije v oblasti pokryté mobilní sítí. Odhaduje se, že v roce 2019 bude <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">96,5 procenta pokryto alespoň sítí 2G</a>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p> <p>Pandemie koronaviru odhalila naléhavou <a href="https://www.unescap.org/blog/covid-19-reveals-urgent-need-resilient-infrastructure">potřebu odolné infrastruktury</a>. Asijská rozvojová banka upozorňuje, že kritická infrastruktura v regionu není v mnoha zemích zdaleka dostatečná, a to navzdory rychlému hospodářskému růstu a rozvoji, který region v posledním desetiletí zaznamenal. <a href="https://www.unescap.org/publications/economic-and-social-survey-asia-and-pacific-2019-ambitions-beyond-growth">Hospodářský a sociální průzkum Asie a Tichomoří</a> zdůrazňuje, že zajištění odolnosti infrastruktury vůči katastrofám a změně klimatu si vyžádá dodatečné investice ve výši 434 miliard dolarů ročně. V některých subregionech, například v malých ostrovních rozvojových státech v Tichomoří, může být tato částka ještě vyšší.&nbsp; &nbsp; &nbsp; </p>'
+        targets:
+          target_9_1:
+            long_title: "Rozvinout kvalitní, spolehlivou, udržitelnou a odolnou infrastrukturu, zahrnující i regionální a přeshraniční infrastrukturu, na podporu ekonomického rozvoje a zvýšené kvality života, se zaměřením na ekonomicky dostupný a rovný přístup pro všechny."
+            short_title: "Rozvoj udržitelných, odolných a inkluzivních infrastruktur"
+          target_9_2:
+            long_title: "Podporovat inkluzivní a udržitelnou industrializaci a do roku 2030 významně zvýšit podíl průmyslu na zaměstnanosti a HDP, a to s ohledem na podmínky v jednotlivých zemích, a zdvojnásobit jeho podíl v nejméně rozvinutých státech."
+            short_title: "Podpora inkluzivní a udržitelné industrializace"
+          target_9_3:
+            long_title: "Zlepšit přístup malých průmyslových a jiných podniků – zejména v rozvojových zemích – k finančním službám, včetně dostupných úvěrů, a jejich začleňování do hodnotových řetězců a trhů."
+            short_title: "Zlepšení přístupu k finančním službám a trhům"
+          target_9_4:
+            long_title: "Do roku 2030 zmodernizovat infrastrukturu a zdokonalit vybavení průmyslových podniků tak, aby byly udržitelné, účinněji využívaly zdroje; dále využívat více čistých a k životnímu prostředí šetrných technologií a výrobních procesů; zapojí se všechny státy s ohledem na své možnosti."
+            short_title: "Modernizace všech odvětví a infrastruktur pro udržitelnost"
+          target_9_5:
+            long_title: "Posílit vědecký výzkum, zlepšit technologickou vybavenost průmyslových odvětví ve všech zemích, zejména rozvojových, a do roku 2030 podporovat inovace a významně zvýšit počet výzkumných a vývojových pracovníků na jeden milion obyvatel a výdaje na soukromý i veřejný výzkum a vývoj."
+            short_title: "Posílení výzkumu a modernizace průmyslových technologií "
+          target_9_A:
+            long_title: "Napomáhat rozvoji udržitelné a odolné infrastruktury v rozvojových zemích prostřednictvím lepší finanční, technologické a technické podpory africkým, nejméně rozvinutým, vnitrozemským rozvojovým a malým ostrovním rozvojovým státům."
+            short_title: "Usnadnění udržitelného rozvoje infrastruktury pro rozvojové země"
+          target_9_B:
+            long_title: "Podporovat rozvoj technologií, výzkumu a inovací v rozvojových zemích, včetně zajišťování příznivého politického prostředí mimo jiné pro průmyslovou diverzifikaci a výrobu zboží s přidanou hodnotou."
+            short_title: "Podpora rozvoje domácích technologií a diverzifikace průmyslu"
+          target_9_C:
+            long_title: "Výrazně zvýšit přístup k informačním a komunikačním technologiím a usilovat o poskytování všeobecného a cenově dostupného přístupu k internetu v nejméně rozvinutých státech do roku 2020."
+            short_title: "Všeobecný přístup k informačním a komunikačním technologiím"
+      goal_10:
+        title: "Méně nerovností"
+        title_in_two_lines: "Méně nerovností"
+        description: "Snížit nerovnost v rámci jednotlivých zemí i mezi nimi."
+        long_description: '<p>Snižování nerovností a zajištění toho, aby nikdo nezůstal pozadu, jsou nedílnou součástí dosažení cílů udržitelného rozvoje.&nbsp;</p> <p>Nerovnosti v rámci jednotlivých zemí i mezi nimi jsou stále znepokojujícím důvodem. Navzdory některým pozitivním signálům směřujícím ke snižování nerovností v některých dimenzích, jako je snižování relativní příjmové nerovnosti v některých zemích a preferenční obchodní status zvýhodňující země s nižšími příjmy, <a href="https://unstats.un.org/sdgs/report/2019/goal-10/">nerovnosti stále přetrvávají</a>.</p> <p><a href="https://www.un.org/sustainabledevelopment/goal-of-the-month-may-2020">COVID-19 prohloubil stávající nerovnosti</a>, přičemž nejhůře zasáhl nejchudší a nejzranitelnější komunity. Upozornila na ekonomické nerovnosti a křehké sociální záchranné sítě, které nechávají zranitelné komunity nést hlavní tíhu krize.&nbsp;Zároveň sociální, politické a ekonomické nerovnosti zesílily dopady pandemie.</p> <p>Na ekonomickém poli pandemie COVID-19 výrazně zvýšila globální <a href="https://www. ilo.org/global/about-the-ilo/newsroom/news/WCMS_743036/lang--en/index.htm">nezaměstnanost</a> a dramaticky snížila příjmy pracovníků.</p> <p>COVID-19 také ohrožuje omezený pokrok, kterého bylo v posledních desetiletích dosaženo v oblasti <a href="https://data.unwomen.org/resources/covid-19-emerging-gender-data-and-why-it-matters">rovnosti pohlaví</a> a práv žen. Ve všech oblastech, od zdravotnictví po ekonomiku, od bezpečnosti po sociální ochranu, se dopady COVID-19 pro ženy a dívky zhoršují už jen z důvodu jejich pohlaví.</p> <p>Nerovnosti se prohlubují také u <a href="https://www.un.org/sites/un2.un.org/files/un_policy_brief_on_human_rights_and_covid_23_april_2020.pdf">zranitelných skupin obyvatel</a> v zemích se slabšími zdravotnickými systémy a v zemích, které čelí stávajícím humanitárním krizím. Zvláště ohroženi jsou uprchlíci a migranti, stejně jako domorodé obyvatelstvo, starší osoby, osoby se zdravotním postižením a děti. A <a href="https://www.un.org/en/coronavirus/covid-19-un-counters-pandemic-related-hate-and-xenophobia">závistných projevů</a> zaměřených na zranitelné skupiny přibývá.</p>'
+        targets:
+          target_10_1:
+            long_title: "Do roku 2030 postupně dosáhnout a udržet růst příjmů spodních 40 procent populace na úrovni vyšší než je celostátní průměr."
+            short_title: "Snížení příjmových nerovností"
+          target_10_2:
+            long_title: "Do roku 2030 posilovat a podporovat sociální, ekonomické a politické začleňování všech, bez ohledu na věk, pohlaví, zdravotní postižení, rasu, etnický původ, náboženské vyznání a ekonomické či jiné postavení."
+            short_title: "Podpora všeobecného sociálního, ekonomického a politického začlenění"
+          target_10_3:
+            long_title: "Zajistit rovné příležitosti a snížit nerovnosti, zejména odstraňováním diskriminačních zákonů, politik a postupů, a podporou vhodných právních předpisů, politik a postupů."
+            short_title: "Zajištění rovných příležitostí a ukončení diskriminace"
+          target_10_4:
+            long_title: "Přijmout politická opatření, zejména v oblasti fiskální, mzdové a v oblasti sociální ochrany a postupně dosáhnout větší rovnosti."
+            short_title: "Přijmout fiskální a sociální politiku podporující rovnost"
+          target_10_5:
+            long_title: "Zlepšit regulaci a monitoring globálních finančních trhů a institucí a posílit uplatňování těchto regulací."
+            short_title: "Zlepšení regulace globálních finančních trhů a institucí"
+          target_10_6:
+            long_title: "Zajistit větší zastoupení a silnější hlas pro rozvojové státy v rozhodování v mezinárodních ekonomických a finančních institucí s cílem vytvořit efektivnější, věrohodnější, spolehlivější a legitimnější instituce."
+            short_title: "Posílené zastoupení rozvojových zemí ve finančních institucích"
+          target_10_7:
+            long_title: "Usnadňovat řízenou, bezpečnou a zodpovědnou migraci a mobilitu lidí, zahrnující uplatňování plánovaných a dobře řízených migračních politik."
+            short_title: "Odpovědné a dobře řízené migrační politiky"
+          target_10_A:
+            long_title: "Uplatňovat zásadu zvláštního a diferencovaného přístupu k rozvojovým zemím, zejména k těm nejméně rozvinutým, v souladu s dohodami Světové obchodní organizace."
+            short_title: "Zvláštní a diferencované zacházení pro rozvojové země"
+          target_10_B:
+            long_title: "Podporovat oficiální rozvojovou pomoc (Oda) a finanční toky zahrnující přímé zahraniční investice do států, které to potřebují nejvíce, zejména nejméně rozvinuté, africké země, malé ostrovní a vnitrozemské rozvojové státy, v souladu s jejich národními plány a programy."
+            short_title: "Podpora rozvojové pomoci a investic v nejméně rozvinutých zemích"
+          target_10_C:
+            long_title: "Do roku 2030 snížit náklady na převody remitencí migrantů na méně než 3 procenta a eliminovat transakční kanály s náklady vyššími než 5 procent."
+            short_title: "Snížení transakčních nákladů na převody peněz migrantů"
+      goal_11:
+        title: "Udržitelná města a obce"
+        title_in_two_lines: "Udržitelná města a obce"
+        description: "Vytvořit inkluzivní, bezpečná, odolná a udržitelná města a obce."
+        long_description: '<p>Svět se stále více urbanizuje. Od roku 2007 žije <a href="https://unstats.un.org/sdgs/report/2019/goal-11/">více než polovina světové populace ve městech</a> a do roku 2030 se předpokládá, že tento podíl vzroste na 60 %.&nbsp;</p> <p>Města a metropolitní oblasti jsou tahouny hospodářského růstu - přispívají přibližně 60 % světového HDP. Zároveň se však podílejí přibližně 70 procenty na celosvětových emisích uhlíku a více než 60 procenty na spotřebě zdrojů.&nbsp;</p> <p>Rychlá urbanizace má za následek rostoucí počet obyvatel chudinských čtvrtí, nedostatečnou a přetíženou infrastrukturu a služby (například sběr odpadu a vodovodní a kanalizační systémy, silnice a dopravu), zhoršující se znečištění ovzduší a neplánované rozšiřování měst.&nbsp;</p> <p><a href="https://unhabitat. org/coronavirus-bude-cestovat-neuvěřitelně-rychle-v-afrických-slumech-bez-habitatu-varoval">Dopad COVID-19</a> bude nejničivější v chudých a hustě obydlených městských oblastech, zejména pro miliardu lidí žijících v neformálních osadách a slumech po celém světě, kde přelidněnost rovněž ztěžuje dodržování doporučených opatření, jako je sociální distancování a sebeizolace. &nbsp;</p> <p>Agentura OSN pro výživu a zemědělství FAO varovala, že bez opatření, která by zajistila chudým a zranitelným obyvatelům <a href="https://news.un.org/en/story/2020/05/1063622">přístup k potravinám</a>, by v městských oblastech mohlo dojít k výraznému nárůstu hladu a úmrtí.&nbsp;</p>'
+        targets:
+          target_11_1:
+            long_title: "Do roku 2030 zajistit všem přístup k odpovídajícímu, bezpečnému a cenově dostupnému bydlení a základním službám, zlepšit podmínky bydlení ve slumech."
+            short_title: "Bezpečné a dostupné bydlení"
+          target_11_2:
+            long_title: "Do roku 2030 poskytnout všem přístup k bezpečným, finančně dostupným, snadno přístupným a udržitelným dopravním systémům zlepšit bezpečnost silničního provozu zejména rozšířením veřejné dopravy se zvláštním důrazem na potřeby lidí v těžké situaci jako ženy, děti, osoby se zdravotním postižením a starší osoby."
+            short_title: "Cenově dostupné a udržitelné dopravní systémy"
+          target_11_3:
+            long_title: "Do roku 2030 posílit inkluzivní a udržitelnou urbanizaci a kapacity pro participativní, integrované a udržitelné plánování a správu měst a obcí ve všech zemích."
+            short_title: "Inkluzivní a udržitelná urbanizace"
+          target_11_4:
+            long_title: "Zlepšit úsilí na ochranu a záchranu světového kulturního a přírodního dědictví."
+            short_title: "Ochrana světového kulturního a přírodního dědictví"
+          target_11_5:
+            long_title: "Do roku 2030 výrazně snížit počet úmrtí a dalších negativních dopadů přírodních katastrof zahrnujících pohromy spojené s vodou. Týká se to také přímých ekonomických ztrát ve vztahu ke globálnímu HDP. Zvláštní pozornost je nutné věnovat ochraně chudých a zranitelných lidí."
+            short_title: "Snížení nepříznivých účinků přírodních katastrof"
+          target_11_6:
+            long_title: "Do roku 2030 snížit nepříznivý dopad životního prostředí měst na jejich obyvatele, zejména zaměřením pozornosti na kvalitu ovzduší a nakládání s komunálním i jiným odpadem."
+            short_title: "Snížení dopadu měst na životní prostředí"
+          target_11_7:
+            long_title: "Do roku 2030 zajistit všeobecný přístup k bezpečné, inkluzivní a přístupné městské zeleni a veřejnému prostoru, zejména pro ženy a děti, starší osoby a osoby se zdravotním postižením."
+            short_title: "Zajištění přístupu k bezpečné a inkluzivní zeleni a veřejným prostranstvím"
+          target_11_A:
+            long_title: "Podporovat pozitivní ekonomické, sociální a environmentální vazby mezi městskými, příměstskými a venkovskými oblastmi zlepšením národního a regionálního rozvojového plánování."
+            short_title: "Silné plánování národního a regionálního rozvoje"
+          target_11_B:
+            long_title: "Do roku 2020 výrazně zvýšit počet měst a obcí, které přijímají a realizují integrované politiky a plány na podporu inkluze, účinného využívání zdrojů, zmírňování a adaptace na změnu klimatu, odolnost vůči katastrofám, a vypracovat a realizovat komplexní řízení rizik katastrof na všech úrovních v souladu se Sendaiským rámcem pro DRR 2015 – 2030."
+            short_title: "Provádění politik pro začleňování, účinné využívání zdrojů a snižování rizika katastrof"
+          target_11_C:
+            long_title: "Podporovat nejméně rozvinuté země, mimo jiné prostřednictvím finanční a technické pomoci, při stavbě udržitelných a odolných budov s využitím místních materiálů."
+            short_title: "Podpora nejméně rozvinutých zemí v oblasti udržitelného a odolného stavebnictví"
+      goal_12:
+        title: "Odpovědná výroba a spotřeba"
+        title_in_two_lines: "Odpovědná výroba a spotřeba"
+        description: "Zajistit udržitelnou spotřebu a výrobu."
+        long_description: '<p>Celosvětová spotřeba a výroba - hnací síla globální ekonomiky - se opírá o využívání přírodního prostředí a zdrojů způsobem, který má na planetu stále destruktivní dopady.&nbsp;</p> <p>Hospodářský a sociální pokrok v posledním století doprovází zhoršování životního prostředí, které ohrožuje samotné systémy, na nichž závisí náš budoucí rozvoj - ba dokonce naše přežití. &nbsp;</p> <p>Několik <a href="https://www.unenvironment.org/explore-topics/sustainable-development-goals/why-do-sustainable-development-goals-matter/goal-12">faktů a čísel</a>:</p> <ul> <li style="font-weight: 400">Každý rok podle odhadů třetina všech vyprodukovaných potravin - což odpovídá 1,3 miliardám tun v hodnotě přibližně 1 bilionu dolarů - skončí shnilá v popelnicích spotřebitelů a prodejců nebo se zkazí v důsledku špatných postupů při přepravě a sklizni. </li> <li style="font-weight: 400">Pokud by lidé na celém světě přešli na energeticky úsporné žárovky, svět by ročně ušetřil 120 miliard USD.</li> <li style="font-weight: 400">Pokud by světová populace do roku 2050 dosáhla 9,6 miliardy, k zajištění přírodních zdrojů potřebných k udržení současného životního stylu by bylo zapotřebí téměř tří planet. </li> </ul> <p>Pandemie COVID-19 nabízí zemím příležitost vytvořit plány obnovy, které zvrátí současné trendy a změní naše vzorce spotřeby a výroby směrem k udržitelnější budoucnosti.</p> <p><a href="https://www.unenvironment.org/explore-topics/resource-efficiency/what-we-do/sustainable-consumption-and-production-policies">Udržitelná spotřeba a výroba</a> znamená dělat více a lépe s méně. Jde také o oddělení hospodářského růstu od zhoršování životního prostředí, zvýšení účinnosti využívání zdrojů a podporu udržitelného životního stylu.</p> <p>Udržitelná spotřeba a výroba může také významně přispět ke zmírnění chudoby a k přechodu na nízkouhlíkové a zelené hospodářství.</p>'
+        targets:
+          target_12_1:
+            long_title: "Uplatňovat desetiletý rámec programů pro udržitelnou spotřebu a výrobu se zapojením všech států v čele s rozvinutými a s přihlédnutím k rozvoji a schopnostem států rozvojových."
+            short_title: "Zavedení desetiletého rámce udržitelné spotřeby a výroby"
+          target_12_2:
+            long_title: "Do roku 2030 dosáhnout udržitelného hospodaření s přírodními zdroji a jejich efektivního využívání."
+            short_title: "Udržitelné řízení a využívání přírodních zdrojů"
+          target_12_3:
+            long_title: "Do roku 2030 snížit v přepočtu na hlavu na polovinu globální plýtvání potravinami na maloobchodní a spotřebitelské úrovni a snížit ztráty potravin v celém výrobním a zásobovacím procesu, včetně posklizňových ztrát."
+            short_title: "Snížit celosvětový potravinový odpad na obyvatele na polovinu"
+          target_12_4:
+            long_title: "Do roku 2020 dosáhnout k životnímu prostředí šetrného nakládání s chemickými látkami a odpady během celého jejich životního cyklu, v souladu s dohodnutými mezinárodními rámci, a výrazně snížit jejich uvolňování do ovzduší, vody a půdy tak, aby se minimalizovaly nepříznivé dopady na lidské zdraví a životní prostředí."
+            short_title: "Odpovědné nakládání s chemickými látkami a odpady"
+          target_12_5:
+            long_title: "Do roku 2030 výrazně snížit produkci odpadů s pomocí prevence, redukce, recyklace a opětovného používání."
+            short_title: "Výrazné snížení produkce odpadů"
+          target_12_6:
+            long_title: "Podporovat podniky, zejména velké a nadnárodní společnosti, aby přijaly udržitelné postupy a začlenily informace o udržitelnosti do svých pravidelných zpráv."
+            short_title: "Podporovat společnosti v zavádění udržitelných postupů a podávání zpráv o udržitelnosti"
+          target_12_7:
+            long_title: "Prosazovat udržitelné postupy v zadávání veřejných zakázek v souladu s národními politikami a prioritami."
+            short_title: "Podpora udržitelných postupů při zadávání veřejných zakázek "
+          target_12_8:
+            long_title: "Do roku 2030 zajistit, aby lidé v celém světě měli relevantní informace a povědomí o udržitelném rozvoji a životním stylu v souladu s přírodou."
+            short_title: "Podpora všeobecného porozumění udržitelnému životnímu stylu"
+          target_12_A:
+            long_title: "Podporovat rozvojové země, aby posílily své vědecké a technologické kapacity, a přešly tak k udržitelnějšímu způsobu výroby a spotřeby."
+            short_title: "Podpora vědeckých a technologických kapacit rozvojových zemí pro udržitelnou spotřebu a výrobu"
+          target_12_B:
+            long_title: "Vytvořit a zavést nástroje pro sledování dopadů udržitelného rozvoje na cestovní ruch, který vytváří pracovní místa a podporuje místní kulturu a produkty."
+            short_title: "Vyvinout a zavést nástroje pro sledování udržitelného cestovního ruchu"
+          target_12_C:
+            long_title: "Usměrnit neefektivní dotace na fosilní paliva podporující nadbytečnou spotřebu odstraňováním pokřivení trhu v souladu s podmínkami v jednotlivých státech, mimo jiné prostřednictvím daňové restrukturalizace a rušením těchto škodlivých dotací tam, kde existují, aby byl zřejmý jejich dopad na životní prostředí. Je potřeba přitom brát plně v úvahu specifické potřeby a podmínky rozvojových zemí a minimalizovat možné negativní dopady na jejich rozvoj způsobem, který bude chránit chudé a dotčené komunity."
+            short_title: "Odstranění deformací trhu, které podporují nehospodárnou spotřebu"
+      goal_13:
+        title: "Klimatická opatření"
+        title_in_two_lines: "Klimatická \nopatření"
+        description: "Přijmout bezodkladná opatření na boj se změnou klimatu a zvládání jejích dopadů."
+        long_description: '<p>Rok 2019 byl <a href="https://news.un.org/en/story/2020/03/1059061">druhým nejteplejším rokem v historii</a> a koncem nejteplejšího desetiletí (2010- 2019), jaké kdy bylo zaznamenáno.&nbsp;&nbsp;</p> <p>Hladiny oxidu uhličitého (CO2) a dalších <a href="https://news.un.org/en/story/2020/04/1062332">skleníkových plynů v atmosféře</a> v roce 2019 vzrostly na nové rekordy.&nbsp;</p> <p>Změna klimatu ovlivňuje všechny země na všech kontinentech. Narušuje národní hospodářství a ovlivňuje životy lidí. Mění se charakter počasí, stoupá hladina moří a povětrnostní jevy jsou stále extrémnější.</p> <p>Ačkoli se předpokládá, že emise skleníkových plynů v roce 2020 klesnou asi o 6 % v důsledku zákazu cestování a zpomalení ekonomiky v důsledku pandemie COVID-19, toto zlepšení je pouze dočasné. <a href="https://news.un.org/en/story/2020/04/1062332">Změna klimatu není v pauze</a>. Jakmile se světová ekonomika začne zotavovat z pandemie, očekává se, že emise se vrátí na vyšší úroveň.</p> <p>Záchrana životů a zdrojů obživy vyžaduje naléhavá opatření k řešení jak pandemie, tak klimatické nouze.</p> <p>Pařížská dohoda <a href="https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement">přijatá v roce 2015 si klade za cíl posílit globální reakci na hrozbu změny klimatu tím, že udrží nárůst globální teploty v tomto století výrazně pod 2 stupni Celsia nad předindustriální úrovní. Cílem dohody je také posílit schopnost zemí vypořádat se s dopady změny klimatu, a to prostřednictvím vhodných finančních toků, nového technologického rámce a posíleného rámce pro budování kapacit.</p>'
+        targets:
+          target_13_1:
+            long_title: "Ve všech zemích zvýšit odolnost a schopnost adaptace na nebezpečí související s klimatem a přírodními pohromami."
+            short_title: "Posílení odolnosti a adaptační kapacity na katastrofy související s klimatem"
+          target_13_2:
+            long_title: "Začlenit opatření v oblasti změny klimatu do národních politik, strategií a plánování."
+            short_title: "Začlenění opatření v oblasti změny klimatu do politik a plánování"
+          target_13_3:
+            long_title: "Zlepšit vzdělávání a zvyšování povědomí o klimatické změně, rozšířit lidské i institucionální kapacity pro zmírňování změny klimatu, adaptaci na ni, snižování jejích dopadů a včasné varování."
+            short_title: "Budování znalostí a kapacit pro boj se změnou klimatu"
+          target_13_A:
+            long_title: "Uvést do praxe závazek přijatý vyspělými zeměmi v Rámcové úmluvě OSN o změně klimatu a do roku 2020 společně dát k dispozici ze všech zdrojů 100 miliard ročně na řešení potřeb rozvojových zemí v souvislosti se smysluplnými opatřeními na zmírňování a transparentností při jejich zavádění a plně zprovoznit Zelený klimatický fond v co nejkratší době."
+            short_title: "Provádění Rámcové úmluvy OSN o změně klimatu"
+          target_13_B:
+            long_title: "Podporovat mechanismy pro zvyšování kapacit pro efektivní plánování a řízení v oblasti změny klimatu v nejméně rozvinutých zemích, se zaměřením na ženy, mládež, místní a přehlížené komunity\n\n* S vědomím, že Rámcová úmluva OSN o změně klimatu je primárním mezinárodním, mezivládním fórem pro vyjednávání globální reakce na změnu klimatu."
+            short_title: "Podpora mechanismů pro zvyšování kapacity pro plánování a řízení"
+      goal_14:
+        title: "Život ve vodě"
+        title_in_two_lines: "Život ve \nvodě"
+        description: "Chránit a udržitelně využívat oceány, moře a mořské zdroje pro zajištění udržitelného rozvoje."
+        long_description: '<p>Oceán je hnacím motorem globálních systémů, které zajišťují obyvatelnost Země pro lidstvo. Naše dešťová voda, pitná voda, počasí, klima, pobřeží, většina našich potravin, a dokonce i kyslík ve vzduchu, který dýcháme, to vše je v konečném důsledku zajišťováno a regulováno mořem.&nbsp;</p> <p>Šetrné hospodaření s tímto <a href="https://www.unenvironment.org/explore-topics/oceans-seas/why-do-oceans-and-seas-matter">zásadním globálním zdrojem</a> je klíčovým prvkem udržitelné budoucnosti. V současné době však dochází k neustálému zhoršování stavu pobřežních vod v důsledku znečištění a okyselování oceánů má nepříznivý vliv na fungování ekosystémů a biologickou rozmanitost. To má negativní dopad i na drobný rybolov.&nbsp;</p> <p>Záchrana našeho oceánu musí zůstat prioritou. Biologická rozmanitost moří je pro zdraví lidí a naší planety zásadní. Je třeba účinně spravovat chráněné mořské oblasti a zajistit jim dostatek zdrojů a zavést předpisy, které omezí nadměrný rybolov, znečištění moří a okyselování oceánů.</p>'
+        targets:
+          target_14_1:
+            long_title: "Do roku 2025 předcházet a výrazně snižovat znečištění moří, zejména znečištění, které je způsobováno činností na pevnině, včetně odpadků a znečištění z živin."
+            short_title: "Snížení znečištění moří"
+          target_14_2:
+            long_title: "Do roku 2020 udržitelně spravovat a chránit mořské a pobřežní ekosystémy, aby se zabránilo výrazným negativním dopadům, mimo jiné posilováním jejich odolnosti a opatřeními na jejich obnovu s cílem zajistit zdravé a produktivní oceány."
+            short_title: "Ochrana a obnova ekosystémů"
+          target_14_3:
+            long_title: "Minimalizovat a řešit dopady okyselování oceánů, mimo jiné prohlubováním vědecké spolupráce na všech úrovních."
+            short_title: "Snížení okyselování oceánů"
+          target_14_4:
+            long_title: "Do roku 2020 dosáhnout účinné regulace rybolovu a skoncovat s nadměrným rybolovem, nezákonným, nehlášeným a neregulovaným rybolovem a nešetrnými metodami rybolovu, zavést vědecky podložené plány hospodaření s cílem obnovit populace ryb v co nejkratším možném čase přinejmenším na úroveň, která dokáže produkovat maximální udržitelný výnos podle biologických vlastností jednotlivých druhů."
+            short_title: "Udržitelný rybolov"
+          target_14_5:
+            long_title: "Do roku 2020 zakonzervovat alespoň 10 procent pobřežních a mořských oblastí v souladu s vnitrostátním i mezinárodním právem a na základě nejlepších dostupných vědeckých informací."
+            short_title: "Ochrana pobřežních a mořských oblastí"
+          target_14_6:
+            long_title: "Do roku 2020 zakázat některé formy dotací na rybolov, které přispívají k nadměrnému rybolovu, odstranit dotace, které přispívají k nezákonnému, nehlášenému a neregulovanému rybolovu a upustit od zavádění obdobných nových dotací s vědomím , že odpovídající a efektivní zvláštní a diferencovaný přístup k rozvojovým a nejméně rozvinutým zemím by se měl stát nedílnou součástí vyjednávání Světové obchodní organizace o dotacích na rybolov*\n\n* S ohledem na probíhající vyjednávání Světové obchodní organizace, Rozvojovou agendu a Dauhá a Hongkongským ministerským mandátem."
+            short_title: "Ukončení dotací přispívajících k nadměrnému rybolovu"
+          target_14_7:
+            long_title: "Do roku 2030 zvýšit ekonomický přínos z udržitelného využívání mořských zdrojů, mimo jiné prostřednictvím řízeného rybolovu, akvakultury a cestovního ruchu pro malé ostrovní rozvojové a nejméně rozvinuté státy."
+            short_title: "Zvýšení ekonomických přínosů z udržitelného využívání mořských zdrojů"
+          target_14_A:
+            long_title: "Rozšířit vědecké poznání, rozvíjet výzkumné kapacity a transfer námořních technologií s ohledem na kritéria a pokyny Mezivládní oceánografické komise o transferu námořních technologií a s cílem zlepšit zdraví oceánů a zvýšit přínos biologické rozmanitosti moří na rozvoj rozvojových zemí, zejména malých ostrovních rozvojových a nejméně rozvinutých států."
+            short_title: "Zvyšování vědeckých znalostí, výzkumu a technologií pro zdraví oceánů"
+          target_14_B:
+            long_title: "Zajistit malým rybářům přístup k mořským zdrojům a trhům."
+            short_title: "Support Small Scale Fishers"
+          target_14_C:
+            long_title: "Posílit ochranu a udržitelné využívání oceánů a jejich zdrojů prostřednictvím mezinárodního práva, jak je zapsáno v Úmluvě o mořském právu, která stanovuje právní rámec pro zachování a udržitelné využívání oceánů a jejich zdrojů, s odvoláním na článek 158 dokumentu Budoucnost, jakou chceme (The Future We Want)."
+            short_title: "Provádění a prosazování mezinárodního námořního práva"
+      goal_15:
+        title: "Život na souši"
+        title_in_two_lines: "Život na \nsouši"
+        description: "Chránit, obnovovat a podporovat udržitelné využívání suchozemských ekosystémů, udržitelně hospodařit s lesy, potírat rozšiřování pouští, zastavit a následně zvrátit degradaci půdy a zastavit úbytek biodiverzity."
+        long_description: '<p>Příroda má zásadní význam pro naše přežití: dodává nám kyslík, reguluje počasí, opyluje plodiny, produkuje potraviny, krmiva a vlákna. Je však vystavena stále většímu stresu. <a href="https://news.un.org/en/story/2020/04/1061082">Člověk svou činností změnil téměř 75 % zemského povrchu</a> a stlačuje divoká zvířata a přírodu do stále menšího koutu planety.</p> <p>Podle zprávy o globálním hodnocení biologické rozmanitosti a ekosystémových služeb z roku 2019 hrozí vyhynutí <a href="https://ipbes.net/sites/default/files/2020-02/ipbes_global_assessment_report_summary_for_policymakers_en.pdf">1 milionu živočišných a rostlinných druhů</a> - mnoha z nich během několika desetiletí. Zpráva vyzývá k transformačním změnám, které by obnovily a ochránily přírodu. Zjistila, že stav ekosystémů, na nichž jsme my i všechny ostatní druhy závislí, se zhoršuje rychleji než kdykoli předtím, což ovlivňuje&nbsp;samotné základy našich ekonomik, živobytí, potravinové bezpečnosti, zdraví a kvality života na celém světě.&nbsp;</p> <p>Odlesňování a rozšiřování pouští - způsobené lidskou činností a změnou klimatu - představují hlavní výzvu pro udržitelný rozvoj a ovlivňují životy a živobytí milionů lidí. <a href="https://news.un.org/en/story/2019/05/1038291">Lesy jsou životně důležité </a>pro udržení života na Zemi a hrají významnou roli v boji proti změně klimatu. A investice do <a href="https://news.un.org/en/story/2019/09/1045802">obnovy půdy</a> mají zásadní význam pro zlepšení životních podmínek, snížení zranitelnosti a omezení rizik pro ekonomiku.</p> <p>Zdraví naší planety hraje důležitou roli také při <a href="https://www.unenvironment.org/resources/emerging-zoonotic-diseases-and-links-ecosystem-health-unep-frontiers-2016-chapter">výskytu zoonóz</a>, tj. nemocí přenosných mezi zvířaty a lidmi. Vzhledem k tomu, že stále zasahujeme do křehkých ekosystémů, dostáváme lidi do stále většího kontaktu s volně žijícími zvířaty, což umožňuje, aby se patogeny ve volně žijících zvířatech přenesly na hospodářská zvířata a lidi, a tím se zvyšuje riziko vzniku a rozšíření onemocnění.</p>'
+        targets:
+          target_15_1:
+            long_title: "Do roku 2020 zajistit ochranu, obnovu a udržitelné využívání suchozemských a vnitrozemských sladkovodních ekosystémů a jejich služeb, zejména lesů, mokřadů, hor a suchých oblastí, v souladu se závazky z mezinárodních dohod."
+            short_title: "Ochrana a obnova suchozemských a sladkovodních ekosystémů"
+          target_15_2:
+            long_title: "Do roku 2020 podpořit zavádění udržitelného hospodaření se všemi typy lesů, zastavit odlesňování, obnovit zničené lesy a podstatně zvýšit zalesňování a obnovu lesů na celém světě."
+            short_title: "Ukončení odlesňování a obnova degradovaných lesů"
+          target_15_3:
+            long_title: "Do roku 2030 bojovat proti rozšiřování pouští, obnovovat znehodnocenou půdu, včetně pozemků postižených rozšiřováním pouští, suchem či záplavami, usilovat o dosažení světa, ve kterém již nedochází k degradaci půdy."
+            short_title: "Ukončení rozšiřování pouští a obnova znehodnocené půdy"
+          target_15_4:
+            long_title: "Do roku 2030 zajistit zachování horských ekosystémů, včetně jejich biodiverzity, aby se zvýšila jejich schopnost poskytovat výhody, které jsou nezbytné pro udržitelný rozvoj."
+            short_title: "Zajištění ochrany horských ekosystémů"
+          target_15_5:
+            long_title: "Přijmout neodkladná a výrazná opatření na snižování degradace přirozeného prostředí, zastavit ztrátu biodiverzity a do roku 2020 chránit a zabraňovat vyhynutí ohrožených druhů."
+            short_title: "Ochrana biologické rozmanitosti a přírodních stanovišť"
+          target_15_6:
+            long_title: "Zajistit spravedlivé rozdělování přínosů plynoucích z využívání genetických zdrojů a podporovat odpovídající přístup k těmto zdrojům."
+            short_title: "Podpora přístupu ke genetickým zdrojům a spravedlivého sdílení přínosů"
+          target_15_7:
+            long_title: "Přijmout neodkladná opatření ke skoncování s pytlačením a pašováním chráněných druhů rostlin a živočichů a řešit nabídku i poptávku po nelegálních přírodních produktech."
+            short_title: "Eliminace pytláctví a obchodování s chráněnými druhy"
+          target_15_8:
+            long_title: "Do roku 2020 zavést opatření proti zavlečení invazivních druhů do suchozemských a vodních ekosystémů a výrazně snížit jejich dopad na tyto ekosystémy, kontrolovat nebo vymýtit prioritní invazivní druhy."
+            short_title: "Prevence invazních cizích druhů na souši a ve vodních ekosystémech"
+          target_15_9:
+            long_title: "Do roku 2020 začlenit hodnoty ekosystému a biodiverzity do národního i regionálního plánování, rozvojových procesů a strategií na snižování chudoby."
+            short_title: "Integrace ekosystémů a biologické rozmanitosti do vládního plánování"
+          target_15_A:
+            long_title: "Mobilizovat a významně zvýšit finanční prostředky ze všech zdrojů na zachování a udržitelné využívání biodiverzity a ekosystémů."
+            short_title: "Zvýšení finančních zdrojů na ochranu a udržitelné využívání ekosystémů a biologické rozmanitosti"
+          target_15_B:
+            long_title: "Mobilizovat značné prostředky ze všech zdrojů na všech úrovních na financování udržitelného hospodaření s lesy a poskytnout odpovídající pobídky rozvojovým zemím na zlepšení tohoto hospodaření, včetně ochrany a obnovy lesů."
+            short_title: "Financování a motivace k udržitelnému obhospodařování lesů"
+          target_15_C:
+            long_title: "Zvýšit mezinárodní podporu boji proti pytlačení a pašování chráněných druhů, mimo jiné zvyšováním schopností místních komunit věnovat se udržitelným příležitostem k obživě."
+            short_title: "Boj proti celosvětovému pytláctví a pašování"
+      goal_16:
+        title: "Mír, spravedlnost a silné instituce"
+        title_in_two_lines: "Mír, spravedlnost a \nsilné instituce"
+        description: "Podporovat mírové a inkluzivní společnosti pro udržitelný rozvoj, zajistit všem přístup ke spravedlnosti a vytvořit efektivní, odpovědné a inkluzivní instituce na všech úrovních."
+        long_description: '<p>Konflikty, nejistota, slabé instituce a omezený přístup ke spravedlnosti zůstávají velkou hrozbou pro udržitelný rozvoj.&nbsp;</p> <p>Počet <a href="https://www.unhcr.org/en-us/news/press/2019/6/5d03b22b4/worldwide-displacement-tops-70-million-un-refugee-chief-urges-greater-solidarity.html">lidí prchajících před válkou, pronásledováním a konflikty přesáhl v roce 2018 70 milionů</a>, což je nejvyšší počet zaznamenaný Agenturou OSN pro uprchlíky (UNHCR) za téměř 70 let.&nbsp;</p> <p>V roce 2019 sledovala Organizace spojených národů <a href="https://sustainabledevelopment. un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">357 vražd a 30 nucených zmizení</a> obránců lidských práv, novinářů a odborářů ve 47 zemích.</p> <p>A narození přibližně <a href="https://data.unicef.org/topic/child-protection/birth-registration/">jednoho ze čtyř dětí</a> mladších pěti let na celém světě není nikdy úředně zaznamenáno, což je připravuje o doklad o právní totožnosti, který je zásadní pro ochranu jejich práv a pro přístup ke spravedlnosti a sociálním službám.</p>'
+        targets:
+          target_16_1:
+            long_title: "Výrazně snížit všechny formy násilí a související míru úmrtnosti všude na světě."
+            short_title: "Snížení násilí všude"
+          target_16_2:
+            long_title: "Skoncovat se zneužíváním, vykořisťováním a obchodem s lidmi a všemi formami násilí na dětech a jejich mučení."
+            short_title: "Ochrana dětí před zneužíváním, vykořisťováním, obchodováním a násilím"
+          target_16_3:
+            long_title: "Podporovat svrchovanost práva na národní i mezinárodní úrovni a zajistit rovný přístup ke spravedlnosti pro všechny."
+            short_title: "Podpora právního státu a zajištění rovného přístupu ke spravedlnosti"
+          target_16_4:
+            long_title: "Do roku 2030 výrazně snížit pohyb nezákonných finančních prostředků a zbraní, usilovat o navrácení odcizeného majetku a bojovat proti všem formám organizovaného zločinu."
+            short_title: "Boj proti organizovanému zločinu a nezákonným finančním tokům a obchodu se zbraněmi"
+          target_16_5:
+            long_title: "Podstatně omezit korupci a úplatkářství ve všech formách."
+            short_title: "Podstatné omezení korupce a úplatkářství"
+          target_16_6:
+            long_title: "Vytvořit účinné, odpovědné a transparentní instituce na všech úrovních."
+            short_title: "Rozvoj účinných, odpovědných a transparentních institucí"
+          target_16_7:
+            long_title: "Zajistit odpovědné, inkluzivní, participační a zastupitelské rozhodování na všech úrovních."
+            short_title: "Zajištění odpovědného, inkluzivního a reprezentativního rozhodování"
+          target_16_8:
+            long_title: "Rozšířit a posílit zapojení rozvojových zemí do rozhodování v mezinárodních institucích."
+            short_title: "Posílení účasti na globálním řízení"
+          target_16_9:
+            long_title: "Do roku 2030 poskytnout všem právní subjektivitu, včetně registrace při narození."
+            short_title: "Poskytnutí univerzální právní identity"
+          target_16_10:
+            long_title: "Zajistit veřejnosti přístup k informacím a ochranu základních svobod, v souladu s vnitrostátními právními předpisy a mezinárodními dohodami."
+            short_title: "Zajištění přístupu veřejnosti k informacím a ochrana základních svobod"
+          target_16_A:
+            long_title: "Posílit příslušné instituce státu, mimo jiné prostřednictvím mezinárodní spolupráce, pro budování kapacit na všech úrovních pro boj proti násilí, terorismu a trestné činnosti, zejména v rozvojových státech."
+            short_title: "Posílení národních institucí pro prevenci násilí a boj proti terorismu a trestné činnosti"
+          target_16_B:
+            long_title: "Podporovat a prosazovat nediskriminační zákony a politiku udržitelného rozvoje."
+            short_title: "Podpora a prosazování nediskriminačních zákonů a politik"
+      goal_17:
+        title: "Partnerství ke splnění cílů"
+        title_in_two_lines: "Partnerství ke \nsplnění cílů"
+        description: "Oživit globální partnerství pro udržitelný rozvoj a posílit prostředky pro jeho uplatňování."
+        long_description: '<p>Cíle udržitelného rozvoje lze realizovat pouze za předpokladu silného globálního partnerství a spolupráce.</p> <p>Úspěšný rozvojový program vyžaduje inkluzivní partnerství - na globální, regionální, národní a místní úrovni - postavené na zásadách a hodnotách a na společné vizi a společných cílech, v jejichž centru stojí lidé a planeta.</p> <p>Mnoho zemí potřebuje oficiální rozvojovou pomoc na podporu růstu a obchodu. Přesto <a href="https://www.un.org/press/en/2019/ga12191.doc.htm">úroveň pomoci klesá</a> a dárcovské země nesplnily svůj závazek navýšit financování rozvoje.</p> <p>V důsledku pandemie COVID-19 se <a href="https://www.imf. org/en/Publications/WEO/Issues/2020/04/14/weo-april-2020">předpokládá se, že světová ekonomika</a> v roce 2020 prudce poklesne, a to o 3 %, a zažije tak nejhorší recesi od dob Velké hospodářské krize.</p> <p>V současné době je více než kdy jindy zapotřebí silné mezinárodní spolupráce, která zajistí, aby země měly prostředky na zotavení z pandemie, lepší obnovu a dosažení cílů udržitelného rozvoje.</p>'
+        targets:
+          target_17_1:
+            long_title: "Posílit mobilizaci domácích zdrojů, mimo jiné prostřednictvím mezinárodní podpory rozvojovým zemím, ke zlepšení domácích kapacit pro výběr daní a dalších příjmů."
+            short_title: "Mobilizace zdrojů pro zlepšení výběru domácích příjmů "
+          target_17_2:
+            long_title: "Plně realizovat závazky rozvinutých zemí v rámci Oficiální rozvojové pomoci (ODA), včetně závazku mnoha vyspělých zemích poskytnout 0,7 procenta ODA/HND rozvojovým zemím a 0,15 až 0,20 procenta ODA/HND nejméně rozvinutým zemím; poskytovatelé ODA by měli zvážit stanovení cíle poskytnout alespoň 0,20 procenta ODA/HND nejméně rozvinutým zemím."
+            short_title: "Provádění všech závazků rozvojové pomoci"
+          target_17_3:
+            long_title: "Mobilizovat dodatečné finanční prostředky z různých zdrojů pro rozvojové státy."
+            short_title: "Mobilizace finančních zdrojů pro rozvojové země"
+          target_17_4:
+            long_title: "Pomoci rozvojovým zemím při dosahování dlouhodobé dluhové udržitelnosti prostřednictvím koordinovaných politik zaměřených na podporu financování dluhu, oddlužení a restrukturalizaci dluhu dle potřeby, a zabývat se vnějším zadlužením silně zadlužených chudých zemí, aby se snížila jejich míra zadluženosti."
+            short_title: "Pomoc rozvojovým zemím při dosahování udržitelnosti dluhu"
+          target_17_5:
+            long_title: "Přijmout a realizovat režimy na podporu investic pro nejméně rozvinuté státy."
+            short_title: "Investice do nejméně rozvinutých zemí"
+          target_17_6:
+            long_title: "Posílit spolupráci sever-jih, jih-jih, trojstrannou regionální a mezinárodní spolupráci v přístupu k vědě, technologiím a inovacím, a posílit sdílení znalostí za vzájemně dohodnutých podmínek, mimo jiné prostřednictvím lepší koordinace stávajících mechanismů, zejména na úrovni OSN, a prostřednictvím mechanismu mezinárodního zpřístupňování technologií."
+            short_title: "Sdílení znalostí a spolupráce pro přístup k vědě, technologiím a inovacím"
+          target_17_7:
+            long_title: "Podporovat rozvoj, transfer a rozšiřování technologií šetrných k životnímu prostředí do rozvojových zemí za výhodných podmínek, včetně koncesí a preferenčních podmínek na základě vzájemných dohod."
+            short_title: "Podpora udržitelných technologií v rozvojových zemích"
+          target_17_8:
+            long_title: "Plně zprovoznit technologickou banku a mechanismy budování vědeckých, technologických a inovačních kapacit pro nejméně rozvinuté státy do roku 2017 rozšířit používání technologií, zejména informačních a komunikačních."
+            short_title: "Posílení vědecké, technologické a inovační kapacity pro nejméně rozvinuté země"
+          target_17_9:
+            long_title: "Posílit mezinárodní podporu pro realizaci efektivního a cíleného budování kapacit v rozvojových zemích na podporu národních plánů naplňování všech cílů udržitelného rozvoje, a to i prostřednictvím spolupráce sever-jih, jih-jih a trojstranné spolupráce."
+            short_title: "Posílení kapacit SDG v rozvojových zemích "
+          target_17_10:
+            long_title: "Podporovat univerzální, standardizovaný, otevřený, nediskriminační a spravedlivý multilaterální obchodní systém pod dohledem Světové obchodní organizace (WTO), a to i prostřednictvím závěrů vyjednávání v Rozvojové agendě WTO z Dauhá."
+            short_title: "Podpora univerzálního obchodního systému v rámci WTO"
+          target_17_11:
+            long_title: "Výrazně zvýšit vývoz rozvojových zemí, zejména s cílem zdvojnásobit podíl nejméně rozvinutých států na světovém vývozu do roku 2020."
+            short_title: "Zvýšení vývozu rozvojových zemí"
+          target_17_12:
+            long_title: "Umožnit nejméně rozvinutým státům bezcelní a bezkvótový přístup na trhy v dlouhodobém měřítku, v souladu s rozhodnutími Světové obchodní organizace, mimo jiné zajištěním toho, že preferenčních pravidla původu vztahující se na dovoz z nejméně rozvinutých států jsou transparentní a jednoduchá a přispívají k usnadnění přístupu na trhy."
+            short_title: "Odstranění obchodních překážek pro nejméně rozvinuté země"
+          target_17_13:
+            long_title: "Posílit globální makroekonomickou stabilitu, mimo jiné prostřednictvím koordinace politik a jejich koherence."
+            short_title: "Posílení globální makroekonomické stability"
+          target_17_14:
+            long_title: "Podporovat politickou soudržnost pro udržitelný rozvoj."
+            short_title: "Posílení soudržnosti politik pro udržitelný rozvoj"
+          target_17_15:
+            long_title: "Respektovat politiku jednotlivých států při zavádění a provádění politik pro vymýcení chudoby a udržitelný rozvoj."
+            short_title: "Respektování národního vedení při provádění politik pro cíle udržitelného rozvoje"
+          target_17_16:
+            long_title: "Posílit globální partnerství pro udržitelný rozvoj podporované mnohostranným partnerstvím ve prospěch mobilizace a sdílení znalostí, expertízy, technologií a finančních zdrojů na podporu dosažení cílů udržitelného rozvoje ve všech zemích, zejména rozvojových."
+            short_title: "Posílení globálního partnerství pro udržitelný rozvoj"
+          target_17_17:
+            long_title: "Podněcovat a podporovat efektivní partnerství veřejných institucí, partnerství veřejného a soukromého sektoru a partnerství v rámci občanské společnosti, a to na základě zkušeností a využívání zdrojových strategií partnerství."
+            short_title: "Podporovat efektivní partnerství"
+          target_17_18:
+            long_title: "Do roku 2020 zvýšit podporu budování kapacit rozvojových zemí, včetně nejméně rozvinutých a malých ostrovních rozvojových států, k výraznému zvýšení dostupnosti vysoce kvalitních, aktuálních a spolehlivých údajů členěných podle příjmů, pohlaví, věku, rasy, etnického původu, migračního statutu, zdravotního postižení, geografické polohy a dalších relevantních charakteristik v národním kontextu."
+            short_title: "Zvýšení dostupnosti spolehlivých údajů"
+          target_17_19:
+            long_title: "Do roku 2030 stavět na stávajících iniciativách s cílem rozvinout prostředky pro měření pokroku v oblasti trvale udržitelného rozvoje, které doplní hrubý domácí produkt a podporou budování statistických kapacit rozvojových států."
+            short_title: "Další rozvoj Měření pokroku"
+      help:
+        title: "Cíle udržitelného rozvoje - nápověda"
+        description: "Své příspěvky komunitě (debaty, návrhy občanů a investiční projekty) můžete sladit s agendou udržitelného rozvoje do roku 2030, což nám umožní získat přehled o našem příspěvku k jednotlivým cílům udržitelného rozvoje. Níže se můžete seznámit se všemi cíli, jejich úkoly a lokalizovanými cíli."
+      show:
+        read_more: "Číst více o %{goal}"
+        read_less: "Číst méně o %{goal}"
+        targets:
+          no_local_targets: Tento cíl nemá žádné místní záměry
+      title: "Cíle udržitelného rozvoje"
+      filter:
+        heading: "Filtry podle SDG"
+        link: "Zobrazit všechny %{resources} související s cílem %{code}"
+        more:
+          one: "Ještě jeden cíl"
+          few: "%{count} cíle navíc"
+          many: "%{count} cílů navíc"
+          other: "%{count} cíle navíc"
+    related_list_selector:
+      goal_identifier: "SDG%{code}"
+      goal_list: "Můžete si vybrat jeden nebo více cílů udržitelného rozvoje, které odpovídají vašemu %{record}"
+      help:
+        title: "Které cíle udržitelného rozvoje jsou v souladu s mým %{record}?"
+        text: "Nápověda k SDG"
+      hint: Můžete zadat kód konkrétního cíle/úkolu nebo text k jeho nalezení. Další informace naleznete na stránce %{link}.
+      remove_tag: "Odstranit"
+      title: "Cíle a úkoly udržitelného rozvoje"
+    targets:
+      filter:
+        link: "Zobrazit všechny %{resources} související s cílem %{code}"
+        more:
+          one: "Ještě jeden cíl"
+          few: "ještě %{count} cíle"
+          many: "ještě %{count} cílů"
+          other: "dalších %{count} cílů"

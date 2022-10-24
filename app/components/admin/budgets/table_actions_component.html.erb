@@ -1,0 +1,5 @@
+<%= render actions_component do |actions| %>
+  <%= actions.action(:investments,
+                     text: t("admin.budgets.index.budget_investments"),
+                     path: admin_budget_budget_investments_path(budget)) %>
+<% end %>

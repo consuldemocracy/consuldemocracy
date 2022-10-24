@@ -1,0 +1,127 @@
+$progress-bar-background: #fef0e2;
+$progress-bar-color:      #fea230;
+
+.tab-milestones {
+
+  .progress-bars {
+    margin-bottom: $line-height * 2;
+    margin-top: $line-height;
+
+    h5 {
+      font-size: rem-calc(24);
+    }
+
+    .progress {
+      background: $progress-bar-background;
+      border-radius: rem-calc(6);
+      position: relative;
+    }
+
+    .progress-meter {
+      background: $progress-bar-color;
+      border-radius: rem-calc(6);
+    }
+
+    .progress-meter-text {
+      color: #000;
+      right: 12px;
+      text-align: right;
+      transform: translate(0%, -50%);
+    }
+
+    .milestone-progress .row {
+      margin-bottom: $line-height / 2;
+    }
+  }
+}
+
+.tab-milestones .timeline li {
+  margin: 0 auto;
+  position: relative;
+  width: 0;
+
+  @include breakpoint(small only) {
+    width: 100%;
+  }
+
+  &::before {
+    background: $budget;
+    border-radius: rem-calc(20);
+    content: "";
+    height: rem-calc(20);
+    position: absolute;
+    top: 5px;
+    transform: translateX(-50%);
+    width: rem-calc(20);
+    z-index: 2;
+  }
+
+  &::after {
+    background: $light-gray;
+    bottom: 100%;
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 25px;
+    width: 1px;
+    z-index: 1;
+  }
+
+  .milestone-content {
+    padding: $line-height / 6 $line-height / 2;
+    position: relative;
+
+    @include breakpoint(medium) {
+      width: rem-calc(300);
+    }
+
+    @include breakpoint(large) {
+      width: rem-calc(450);
+    }
+
+    h3 {
+      margin-bottom: 0;
+    }
+
+    .milestone-date {
+      color: $text-medium;
+      font-size: $small-font-size;
+    }
+  }
+
+  &:nth-child(odd) {
+
+    .milestone-content {
+      text-align: right;
+
+      @include breakpoint(medium) {
+        margin-left: rem-calc(-315);
+      }
+
+      @include breakpoint(large) {
+        margin-left: rem-calc(-465);
+      }
+
+      @include breakpoint(small only) {
+        left: 15px;
+        text-align: left;
+      }
+    }
+  }
+
+  &:nth-child(even) {
+
+    .milestone-content {
+      left: 15px;
+    }
+  }
+}
+
+.milestone-status {
+  background: $budget;
+  border-radius: rem-calc(4);
+  color: #fff;
+  display: inline-block;
+  margin-top: $line-height / 6;
+  padding: $line-height / 4 $line-height / 2;
+}

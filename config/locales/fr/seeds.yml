@@ -36,11 +36,6 @@ fr:
       groups:
         all_city: Toute la ville
         districts: Secteurs
-      valuator_groups:
-        culture_and_sports: Culture & Sports
-        gender_and_diversity: Politique en matière de genre et de diversité
-        urban_development: Développement durable urbain
-        equity_and_employment: Équité & Emploi
       statuses:
         studying_project: Études du projet
         bidding: Soumettre
@@ -49,7 +44,6 @@ fr:
     polls:
       current_poll: "Vote en cours"
       current_poll_geozone_restricted: "Géozone du vote en cours restreinte"
-      incoming_poll: "Vote entrant"
       recounting_poll: "Re-dépouillement du vote"
       expired_poll_without_stats: "Vote terminé sans statistiques ni résultats"
       expired_poll_with_stats: "Vote terminé avec statistiques et résultats"

@@ -1,0 +1,67 @@
+bs:
+  budgets:
+    phase:
+      informing: Informacije
+    index:
+      title: Participativni budžeti
+      empty_budgets: Nema budžeta.
+      section_header:
+        title: Participativni budžeti
+      see_results: Vidi rezultate
+      milestones: Rokovi
+    investments:
+      form:
+        title: "Formuliši budžetsku investiciju"
+        tag_category_label: "Kategorije"
+        tags_instructions: "Taguj prijedlog. Možeš birati iz predloženih kategorija ili dodati vlastiti tag"
+        tags_label: Tagovi
+        tags_placeholder: "Unesite tagove koje želite koristiti, razdvojene zarezima (,)"
+        map_location: "Lokacija mape"
+        map_location_instructions: "Idite mapom do lokacije i stavite marker."
+        map_remove_marker: "Uklonite marker na mapi"
+      index:
+        title: Participativno budžetiranje
+        unfeasible: Neizvodivi investicioni projekti
+        search_form:
+          button: Traži
+          title: Traži
+        sidebar:
+          create: "Formuliši budžetsku investiciju"
+        filters:
+          selected: "Odabrano"
+          unfeasible: "Nije izvodivo"
+          winners: "Odabrane investicije"
+        orders:
+          confidence_score: sa najvišim ocjenama
+      show:
+        author_deleted: Korisnik obrisan
+        price_explanation: Objašnjenje za cijenu
+        share: Podijeli
+        title: Investicioni projekat
+        supports: Glasovi podrške
+        votes: Glasovi
+        price: Cijena
+        comments_tab: Komentari
+        milestones_tab: Rokovi
+        author: Autor
+      wrong_price_format: Samo cijeli brojevi
+      investment:
+        add: Glas
+        support_title: Podrži prijedlog
+        supports:
+          zero: Nema podrške
+          one: 1 glas podrške
+          few: "%{count} glasa/glasova podrške"
+          other: "%{count} glasa/glasova podrške"
+    investments_list:
+      investment:
+        price: "Cijena"
+        supports: "Glasovi podrške"
+    show:
+      see_results: Vidi rezultate
+    results:
+      link: Rezultati
+      ballot_lines_count: Glasovi
+      price: Cijena
+    executions:
+      link: "Rokovi"

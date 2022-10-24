@@ -1,0 +1,37 @@
+uk-UA:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} успішно створено."
+        debate: "Обговорення успішно створене."
+        direct_message: "Ваше повідомлення успішно надіслане."
+        poll: "Опитування успішно створене."
+        poll_booth: "Кабінка успішно створена."
+        poll_question_answer: "Відповідь успішно створено"
+        poll_question_answer_video: "Відео успішно створено"
+        poll_question_answer_image: "Зображення успішно завантажено"
+        proposal: "Пропозицію успішно подано."
+        proposal_notification: "Ваше повідомлення успішно надіслане."
+        budget_investment: "Бюджетна інвестиція успішно створена."
+        signature_sheet: "Підписний лист створено"
+        topic: "Тема успішно створена."
+        valuator_group: "Група оцінювачів успішно створена"
+      save_changes:
+        notice: Зміни збережено
+      update:
+        notice: "%{resource_name} успішно оновлено."
+        debate: "Обговорення успішно оновлене."
+        poll: "Опитування успішно оновлене."
+        poll_booth: "Кабінку успішно оновлено."
+        active_poll: "Опис опитування успішно оновлено."
+        proposal: "Пропозицію успішно оновлено."
+        budget_investment: "Інвестиційний проект успішно оновлено."
+        topic: "Тема успішно оновлена."
+        valuator_group: "Група оцінювачів успішно оновлена"
+        translation: "Переклад успішно оновлений"
+      destroy:
+        budget_investment: "Інвестиційний проект успішно видалено."
+        error: "Не вдалося видалити"
+        topic: "Тему видалено."
+        poll_question_answer_video: "Відеовідповідь видалено."
+        valuator_group: "Групу оцінювачів видалено"

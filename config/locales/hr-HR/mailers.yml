@@ -1,0 +1,130 @@
+hr:
+  mailers:
+    title: "Otvorena uprava"
+    no_reply: "Ova poruka se šalje s email adrese koja ne prima odgovore."
+    comment:
+      hi: Pozdrav
+      new_comment_by: Stigao je novi komentar od <strong>%{commenter}</strong>
+      subject: Netko je komentirao vašu %{commentable}
+      title: Novi komentar
+    email_verification:
+      click_here_to_verify: ova poveznica
+      instructions_2: Ova će e-poruka potvrditi vaš račun s<b>%{document_type} %{document_number}</b>. Ako ovo ne pripada vama, ne otvarajte prethodnu poveznicu i zanemarite ovu e-poruku.
+      instructions: Za potvrdu svojeg korisničkog računa, kliknite %{verification_link}.
+      subject: Potvrdite svoj e-mail
+      thanks: Hvala vam puno.
+      title: "Potvrdite Vaš račun koristeći sljedeću poveznicu"
+    reply:
+      hi: Pozdrav
+      new_reply_by: Stigao je novi odgovor od <strong>%{commenter}</strong> na vaš komentar o temi
+      subject: Netko je odgovorio na vaš komentar
+      title: Novi odgovor na vaš komentar
+    proposal_notification_digest:
+      info: "Evo novih obavijesti koje su objavili autori prijedloga koje ste podržali u %{org_name}."
+      title: "Obavijesti prijedloga u %{org_name}"
+      share: Podijeli prijedlog
+      comment: Komentiraj prijedlog
+      unfollow: "Pogledajte prijedlog i prestanite ga pratiti ukoliko ne želite primati obavijesti."
+    direct_message_for_receiver:
+      subject: "Primili ste novu privatnu poruku"
+      reply: Odgovori %{sender}
+    direct_message_for_sender:
+      subject: "Vi ste poslali novu privatnu poruku"
+      title: "Vi ste poslali novu privatnu poruku"
+      text: "Vi ste poslali novu privatnu poruku <strong>%{receiver}</strong> sa sadržajem:"
+    user_invite:
+      ignore: "Ukoliko niste zatražili ovu pozivnicu ne brinite, možete ignorirati ovaj e-mail."
+      text: "Hvala vam na prijavi %{org}! U nekoliko sekundi možete započeti sudjelovanje, samo popunite obrazac dolje:"
+      thanks: "Hvala vam puno."
+      title: "Dobrodošli %{org}"
+      button: Dovršite registraciju
+      subject: "Pozivnica za %{org_name}"
+    budget_investment_created:
+      subject: "Hvala Vam što ste stvorili investiciju!"
+      title: "Hvala Vam što ste stvorili investiciju!"
+      intro: "Pozdrav <strong>%{author}</strong>,"
+      text: "Hvala vam što ste pokrenuli ulaganje <strong>%{investment}</strong> za Sudioničke proračune <strong>%{budget}</strong>."
+      follow: "Obavijestit ćemo vas o tijeku postupka, koji i sami možete pratiti na <strong>%{link}</strong>."
+      follow_link: "Participativni proračun"
+      sincerely: "Iskreno,"
+      share: "Podijelite svoj projekt"
+    budget_investment_unfeasible:
+      hi: "Dragi korisniče,"
+      new: "Za sve ovo, pozivamo vas da razradite <strong>novo ulaganje</strong> koje je u skladu s uvjetima ovog postupka. Možete to učiniti na sljedećoj poveznici: %{url}."
+      new_href: "novi investicijski projekt"
+      sincerely: "Iskreno"
+      sorry: "Ispričavamo se zbog neugodnosti i ponovno vam zahvaljujemo na sudjelovanju."
+      subject: "Vaš investicijski projekt '%{code}' je označen kao neizvediv"
+    budget_investment_selected:
+      subject: "Vaš investicijski projekt '%{code}' je odabran"
+      hi: "Dragi korisniče,"
+      share: "Kako biste dobili glasove, podjelite svoje investicijske projekte za društvene mreže. Dijeljenje je važno kako bi se projekti mogli ostvariti."
+      share_button: "Podjelite svoj investicijski projekt"
+      thanks: "Hvala vam na sudjelovanju."
+      sincerely: "Iskreno"
+    budget_investment_unselected:
+      subject: "Vaš investicijski projekt '%{code}' nije odabran"
+      hi: "Dragi korisniče,"
+      thanks: "Hvala vam na sudjelovanju."
+      sincerely: "Iskreno"
+    evaluation_comment:
+      subject: "Novi komentar procjene"
+      title: Novi komentar procjene za %{investment}
+      hi: Pozdrav
+      new_comment_by: Stigao je novi komentar procjene od <strong>%{commenter}</strong> u proračunsko ulaganje %{investment}
+      commenter_info: "%{commenter}, %{time}:"
+    new_actions_notification_rake_created:
+      subject: "Više vijesti o vašem građanskom prijeldogu"
+      hi: "Pozdrav %{name},"
+      new_resource: "NOVI OTKLJUČANI RESURS"
+      introduction: "Kao što znate, na %{created_at_day} dan %{created_at_month} ste stvorili svoj prijedlog u draft modu %{title}."
+      text_1: "Kad god želite možete objaviti ovo na poveznici: %{link_to_published}. Ukoliko još uvijek niste sigurni..."
+      text_2: "Iskoristite ovaj trenutak! Naučite dodati druge ljude s istim interesima i pripremite vidljivost koja će vam trebati kada konačno objavite svoj prijedlog."
+      text_3: "Te da vas prate u ovom izazovu, ovdje su vijesti..."
+      text_4: "Pogledajte ovu NOVU preporučenu akciju:"
+      text_5: "Sljedeća preporučena radnja je:"
+      footer_text: "Kao i uvijek, uđite u Panel za Prijedloge te ćemo Vam detaljno objasniti kako koristiti te resurse i kako iz njih izvući maksimum."
+      dashboard_button: "Samo naprijed, otkrijte ih!"
+    new_actions_notification_rake_published:
+      subject: "Više vijesti o vašem građanskom prijedlogu"
+      hi: "Pozdrav %{name},"
+      new_resource: "NOVI OTKLJUČARNI RESURS"
+      introduction: "Kao što znate, na %{published_at_day} dan %{published_at_month} vi ste objavili prijedlog %{title}."
+      text_1: "Do sada ste dobili %{votes_count} glasova podrške Čestitamo!"
+      text_2: "Imate na raspolaganju novi resurs koji će vam pomoći da nastavite napredovati."
+      text_3: "Nedostaje vam %{days_count} dana prije nego što prijedlozi doboju %{max_votes_count} glasova potpore te će ići na referendum. Nastavite širiti svoje ideje. Nedostaje li vam ideja?"
+      text_4: "NOVA PREPORUČENA AKCIJA ŠIRENJA"
+      text_5: "Sada ih postoji još više, pogledajte sljedeću radnju:"
+      footer_text: "Kao i uvijek, uđite u Panel za Prijedloge te ćemo Vam detaljno objasniti kako koristiti te resurse i kako iz njih izvući maksimum."
+      dashboard_button: "Samo naprijed, otkrijte ih!"
+    new_actions_notification_on_create:
+      subject: "Vaš je nacrt građanskog prijedloga izrađen"
+      hi: "Pozdrav %{name}!"
+      introduction: "Vaš %{title} prijedlog je uspješno stvoren."
+      text_1: "Iskoristite mogućnost dok vaš prijedlog još nije javan i pripremite se za kontakt s ostalim građanima."
+      text_2: "Kada budete spremni, objavite svoj prijedlog za građanina na ovoj <a href='%{link}'>link</a>."
+      text_3: "Znamo da se stvaranje primamljivog prijedlgoa i dobivanje potrebne podrške može činiti komplicirano. Ali ne brinite jer ćemo vam pomoći!"
+      text_4: "Imate alat koji će vam biti novi najbolji saveznik: Panel za Građanske Prijedloge."
+      list_1: "Unesi svaki dan u panel svoj prijedlog kako biste iskoristili savjete i resurse koje ćemo podijeliti s vama."
+      list_2: "Ove savjete, djelovanje i resurse će podjeliti ideje i praktična rješenja kako biste dobili više potpore i širu zajednicu. Nemojte zaboraviti na njih!"
+      list_3: "Kako dobivate više podrške, otključat ćete nove i bolje resurse. Trenutačno imate predložak e-pošte koji možete poslati svim svojim kontaktima, plakati za ispis te među ostalim značajkama i nagradama koje ćete otkriti. Nemojte prestati dodavati podršku i nećemo vas prestati nagrađivati ​​i pomagati vam!"
+      list_4: "Imate %{max_month} mjeseci od objave prijedloga kako bi dobili %{max_votes} glasova potpore te bi vaš prijedlog postao stvarnost. Pripremite se za prvih par dana pošto je izazovno pripremiti dobar prijedlog!"
+      text_5: "Te za vas kako bi započeli s motivacijom,"
+      text_6: "ovdje imate par resursa i cijelu listu savjeta kako svakodnevno pripremati emitiranje!"
+      dashboard_button: "Samo naprijed, otkrijte ih!"
+    new_actions_notification_on_published:
+      subject: "Vaš građanski prijedlog je već objavljen Nemojte stati dijeliti!"
+      hi: "Čestitamo %{name}! Vaš prijedlog %{title} je uspješno stvoren."
+      text_1: "Sada krenite kako biste dobili 100 potpora!"
+      text_2: "Zašto 100?"
+      text_3: "Naše iskustvo je pokazalo da je prvi dan najvažniji. Kako bi imali energije uspostaviti novi prijedlog morate imati važnu vidljivost unutar novih prijedloga kako bi odma postao istaknut."
+      text_4: "Dobijte 100 prijedloga prvi dan te ćete imati prvu zajendicu koja će vas poduprijeti."
+      text_5: "Zato vas izazivamo da uspijete, ali sad ćete morati dalje bez naše pomoći!"
+      text_6: "Upamtite da u vašem Panelu Prijedloga morate imati nove resurse i preporuke za diseminiaciju djelovanja."
+      list_1: "Dođite svaki dan kako bi vidjeli napredak i koristili savjete i resurse koje smo podjelili s vama. Ideje su praktične te vam mogu pomoći pri dobivanju potrebne potpore."
+      list_2: "Kako dobivate više podrške, otključat ćete nove i bolje resurse. Nemojte prestati dobivati potporu i mi vas nećemo stati nagrađivati i pomagati vam!"
+      text_7: "Kako bi započeli punom brzinom..."
+      text_8: "Ovdje je super reurs na vašem raspolaganju!"
+      text_9: "Pronaći ćete nove preporuke za diseminacijsko djelovanje..."
+      text_10: "Osigurajte si više resursa za korištenje!"
+      dashboard_button: "Samo naprijed, otkrijte ih!"

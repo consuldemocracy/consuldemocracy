@@ -6,69 +6,66 @@
                new_budget_investment_path(budget_id: @budget.id), class: "button budget expanded" %>
   <% else %>
     <div class="callout warning">
-      <%= t("budgets.investments.index.sidebar.verified_only",
-          verify: link_to(t("budgets.investments.index.sidebar.verify_account"),
-                  verification_path)).html_safe %>
+      <%= sanitize(t("budgets.investments.index.sidebar.verified_only",
+          verify: link_to_verify_account)) %>
     </div>
   <% end %>
 <% end %>
 
 <% if @heading && can?(:show, @ballot) %>
-  <p class="callout">
-    <%= t("budgets.investments.index.sidebar.voted_info",
-        link: link_to(t("budgets.investments.index.sidebar.voted_info_link"),
-            budget_ballot_path(@budget))).html_safe %>
-  </p>
+  <div class="my-ballot">
+    <h2 class="sidebar-title">
+      <%= t("budgets.investments.index.sidebar.my_ballot") %>
+    </h2>
+
+    <% if @ballot.investments.by_heading(@heading.id).count > 0 %>
+      <p>
+        <em><%= sanitize(@ballot.voted_info(@heading)) %></em>
+      </p>
+    <% elsif @assigned_heading.present? %>
+      <p>
+        <%= sanitize(t("budgets.investments.index.sidebar.different_heading_assigned",
+                heading_link: heading_link(@assigned_heading, @budget)
+              )) %>
+        <br>
+        <small>
+          <%= sanitize(t("budgets.investments.index.sidebar.change_ballot",
+              check_ballot: link_to(t("budgets.investments.index.sidebar.check_ballot_link"),
+                            budget_ballot_path(@budget)))) %>
+        </small>
+      </p>
+    <% else %>
+      <p><strong><%= t("budgets.investments.index.sidebar.zero") %></strong></p>
+    <% end %>
+
+    <p>
+      <%= sanitize(@ballot.change_vote_info(
+          link: link_to(t("budgets.investments.index.sidebar.change_vote_link"),
+              budget_ballot_path(@budget)))) %>
+    </p>
+
+    <ul class="ballot-list">
+      <% if @heading %>
+        <%= render Budgets::Ballot::InvestmentForSidebarComponent.with_collection(
+          @ballot.investments.by_heading(@heading.id),
+          investment_ids: @investment_ids
+        ) %>
+      <% end %>
+    </ul>
+
+    <%= link_to t("budgets.investments.header.check_ballot"),
+                  budget_ballot_path(@budget),
+                  class: "button hollow expanded" %>
+  </div>
 <% end %>
 
 <% if @heading && !@heading.content_blocks.where(locale: I18n.locale).empty? %>
-  <%= render 'budgets/investments/content_blocks' %>
+  <%= render "budgets/investments/content_blocks" %>
 <% end %>
+
 <% if @map_location&.available? %>
-  <%= render 'budgets/investments/map' %>
+  <%= render "budgets/investments/map" %>
 <% end %>
-<%= render "shared/tag_cloud", taggable: 'budget/investment' %>
-<%= render 'budgets/investments/categories' %>
-
-<% if @heading && can?(:show, @ballot) %>
-
-  <div class="sidebar-divider"></div>
-
-  <h2 class="sidebar-title">
-    <%= t("budgets.investments.index.sidebar.my_ballot") %>
-  </h2>
-
-  <% if @ballot.investments.by_heading(@heading.id).count > 0 %>
-    <p>
-      <em>
-        <%= t("budgets.investments.index.sidebar.voted_html",
-            count: @ballot.investments.by_heading(@heading.id).count,
-            amount_spent: @ballot.formatted_amount_spent(@heading)) %>
-      </em>
-    </p>
-  <% elsif @assigned_heading.present? %>
-    <p>
-      <%= t("budgets.investments.index.sidebar.different_heading_assigned_html",
-              heading_link: heading_link(@assigned_heading, @budget)
-            ) %>
-      <br>
-      <small>
-        <%= t("budgets.investments.index.sidebar.change_ballot",
-            check_ballot: link_to(t("budgets.investments.index.sidebar.check_ballot_link"),
-                          budget_ballot_path(@budget))).html_safe %>
-      </small>
-    </p>
-  <% else %>
-    <p><strong><%= t("budgets.investments.index.sidebar.zero") %></strong></p>
-  <% end %>
-
-  <ul class="ballot-list">
-    <% if @heading %>
-      <% @ballot.investments.by_heading(@heading.id).each do |investment| %>
-        <%= render 'budgets/ballot/investment_for_sidebar',
-                    investment: investment,
-                    investment_ids: @investment_ids %>
-      <% end %>
-    <% end %>
-  </ul>
-<% end %>
+<%= render "shared/tag_cloud", taggable: "Budget::Investment" %>
+<%= render "budgets/investments/categories" %>
+<%= render Budgets::Investments::FiltersComponent.new %>

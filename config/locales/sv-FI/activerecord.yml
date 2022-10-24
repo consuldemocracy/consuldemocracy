@@ -1,1 +1,13 @@
 sv-FI:
+  activerecord:
+    models:
+      vote:
+        one: "Röst"
+        other: "Röst"
+    attributes:
+      comment:
+        body: "Kommentit"
+      legislation/annotation:
+        text: Kommentit
+      local_census_record:
+        date_of_birth: Födelsedatum

@@ -1,4 +1,4 @@
-class AdminNotification < ActiveRecord::Base
+class AdminNotification < ApplicationRecord
   include Notifiable
 
   translates :title, touch: true
@@ -13,11 +13,11 @@ class AdminNotification < ActiveRecord::Base
   before_validation :complete_link_url
 
   def list_of_recipients
-    UserSegments.send(segment_recipient) if valid_segment_recipient?
+    UserSegments.recipients(segment_recipient) if valid_segment_recipient?
   end
 
   def valid_segment_recipient?
-    segment_recipient && UserSegments.respond_to?(segment_recipient)
+    UserSegments.valid_segment?(segment_recipient)
   end
 
   def draft?
@@ -25,24 +25,25 @@ class AdminNotification < ActiveRecord::Base
   end
 
   def list_of_recipients_count
-    list_of_recipients.try(:count) || 0
+    list_of_recipients&.count || 0
   end
 
   def deliver
     list_of_recipients.each { |user| Notification.add(user, self) }
-    self.update(sent_at: Time.current, recipients_count: list_of_recipients.count)
+    update!(sent_at: Time.current, recipients_count: list_of_recipients.count)
   end
 
   private
 
-  def validate_segment_recipient
-    errors.add(:segment_recipient, :invalid) unless valid_segment_recipient?
-  end
-
-  def complete_link_url
-    return unless link.present?
-    unless self.link[/\Ahttp:\/\//] || self.link[/\Ahttps:\/\//]
-      self.link = "http://#{self.link}"
+    def validate_segment_recipient
+      errors.add(:segment_recipient, :invalid) unless valid_segment_recipient?
     end
-  end
+
+    def complete_link_url
+      return unless link.present?
+
+      unless link =~ /\A(http:\/\/|https:\/\/|\/)/
+        self.link = "http://#{link}"
+      end
+    end
 end

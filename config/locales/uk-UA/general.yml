@@ -1,0 +1,985 @@
+uk-UA:
+  account:
+    show:
+      change_credentials_link: Змінити мої облікові дані
+      erase_account_link: Видалити мій обліковий запис
+      finish_verification: Повна перевірка
+      notifications: Сповіщення
+      personal: Персональні дані
+      public_interests_my_title_list: Теги елементів, за якими ви стежите
+      public_interests_user_title_list: Теги елементів, за якими стежить даний користувач
+      save_changes_submit: Зберегти зміни
+      recommendations: Рекомендації
+      title: Мій обліковий запис
+      user_permission_info: З вашим обліковим записом можна...
+      user_permission_title: Участь
+      user_permission_verify: Для виконання дій підтвердьте свій обліковий запис.
+      verified_account: Обліковий запис підтверджено
+      verify_my_account: Підтвердити мій обліковий запис
+  application:
+    close: Закрити
+    menu: Меню
+  comments:
+    comments_closed: Коментарі недоступні
+    verified_only: Щоб взяти участь, %{verify_account}
+    comment:
+      admin: Адміністратор
+      author: Автор
+      deleted: Цей коментар видалено
+      moderator: Модератор
+      responses:
+        zero: Відповіді відсутні
+        one: 1 відповідь
+        few: "%{count} відповіді"
+        many: "%{count} відповідей"
+        other: "%{count} відповідей"
+      responses_show:
+        zero: Відповіді відсутні
+        one: "1 відповідь (показати)"
+        few: "%{count} відповіді (показати)"
+        many: "%{count} відповідей (показати)"
+        other: "%{count} відповідей (показати)"
+      responses_collapse:
+        zero: Відповіді відсутні
+        one: "1 відповідь (приховати)"
+        few: "%{count} відповіді (приховати)"
+        many: "%{count} відповідей (приховати)"
+        other: "%{count} відповідей (приховати)"
+      user_deleted: Користувача видалено
+      votes:
+        zero: Голоси відсутні
+        one: 1 голос
+        few: "%{count} голоси"
+        many: "%{count} голоси"
+        other: "%{count} голоси"
+    form:
+      comment_as_admin: Коментувати як адміністратор
+      comment_as_moderator: Коментувати як модератор
+      leave_comment: Залиште свій коментар
+    orders:
+      most_voted: Найбільша кількість голосів
+      newest: Спочатку останні (найновіші)
+      oldest: Спочатку перші (найстаріші)
+      most_commented: Найбільша кількість коментарів
+    show:
+      return_to_commentable: "Повернутися до "
+  comments_helper:
+    comment_button: Опублікувати коментар
+    comment_link: Коментар
+    comments_title: Коментарі
+    reply_button: Опублікувати відповідь
+    reply_link: Відповідь
+  debates:
+    create:
+      form:
+        submit_button: Розпочати обговорення
+    debate:
+      comments:
+        zero: Коментарі відсутні
+        one: 1 коментар
+        few: "%{count} коментарі"
+        many: "%{count} коментарів"
+        other: "%{count} коментарів"
+      votes:
+        zero: Голоси відсутні
+        one: 1 голос
+        few: "%{count} голоси"
+        many: "%{count} голосів"
+        other: "%{count} голосів"
+    edit:
+      editing: Редагувати обговорення
+      form:
+        submit_button: Зберегти зміни
+      show_link: Переглянути обговорення
+    form:
+      tags_instructions: Відмітити обговорення.
+      tags_placeholder: "Введіть теги, які хочете використовувати, розділивши їх комами (,)"
+    index:
+      featured_debates: Рекомендовані
+      orders:
+        confidence_score: з найвищим рейтингом
+        created_at: найновіші
+        hot_score: найактивніші
+        most_commented: найбільш коментовані
+        relevance: актуальність
+        recommendations: рекомендації
+      recommendations:
+        without_results: Відсутні обговорення, пов'язані зі сферою ваших інтересів
+        without_interests: Слідкуйте за пропозиціями, щоб ми могли надавати вам рекомендації
+        disable: "Рекомендовані обговорення не будуть показані, якщо ви їх відхилите. Щоб увімкнути їх, перейдіть на сторінку \"Мій обліковий запис\""
+        actions:
+          success: "Рекомендовані обговорення вимкнено для цього облікового запису"
+          error: "Сталася помилка. Перейдіть на сторінку \"Мій обліковий запис\", щоб власноруч увімкнути рекомендовані обговорення"
+      search_form:
+        button: Пошук
+        placeholder: Пошук обговорень...
+        title: Пошук
+      start_debate: Розпочати обговорення
+      title: Обговорення
+      section_header:
+        icon_alt: Значок обговорення
+        title: Обговорення
+        help: Допомога щодо обговорень
+      section_footer:
+        title: Допомога щодо обговорень
+        description: Розпочніть обговорення, щоб поділитися з іншими думками щодо тем, які вас турбують.
+        help_text_1: "Простір для обговорень створений для кожного, хто прагне порушити запитання, що його турбують, та поділитися думками з іншими."
+        help_text_2: 'Щоб розпочати обговорення, необхідно зареєструватися у %{org}. Також користувачі можуть коментувати відкриті обговорення та оцінювати їх за допомогою кнопок "Я погоджуюсь" та "Я не погоджуюсь", які є у кожному обговоренні.'
+    new:
+      form:
+        submit_button: Розпочати обговорення
+      more_info: Більше інформації
+      recommendation_four: Отримуйте задоволення від користування цим простором та голосами, які його наповнюють. Все це належить в тому числі вам.
+      recommendation_one: Не використовуйте великі літери у назвах пропозицій та реченнях, адже в інтернеті це сприймається як крик. Нікому не подобається, коли на нього кричать.
+      recommendation_three: Нещадна критика вітається. Це - місце для роздумів. Але ми радимо вам дотримуватися культури. Світ стає кращим з цим принципом.
+      recommendation_two: Будь-яка пропозиція, яка міститиме заклик до незаконної дії або шкодитиме простору для обговорень, буде видалена. Все інше дозволено.
+      recommendations_title: Рекомендації щодо створення обговорень
+      start_new: Розпочати обговорення
+    show:
+      author_deleted: Користувач видалений
+      comments:
+        zero: Коментарі відсутні
+        one: 1 коментар
+        few: "%{count} коментарі"
+        many: "%{count} коментарів"
+        other: "%{count} коментарів"
+      comments_title: Коментарі
+      edit_debate_link: Редагувати
+      flag: Це обговорення позначене як недоречне кількома користувачами.
+      share: Поділитися
+      author: Автор
+    update:
+      form:
+        submit_button: Зберегти зміни
+  errors:
+    messages:
+      user_not_found: Користувача не знайдено
+      invalid_date_range: "Недійсний діапазон даних"
+  form:
+    accept_terms: Я погоджуюся з %{policy} та %{conditions}
+    accept_terms_title: Я погоджуюся з Політикою конфіденційності і Правилами та умовами користування
+    conditions: Правила та умови користування
+    debate: Обговорення
+    direct_message: особисте повідомлення
+    error: помилка
+    errors: помилки
+    not_saved: "не вдалося зберегти цей %{resource}. <br>Перевірте позначені поля, щоб знати, як їх виправити:"
+    policy: Політика конфіденційності
+    banner: постер
+    proposal: Пропозиція
+    proposal_notification: "Сповіщення"
+    budget/investment: Інвестиція
+    budget/group: Група бюджету
+    budget/heading: Заголовок бюджету
+    geozone: геозона
+    legislation/draft_version: чернетка
+    legislation/process: процес
+    legislation/question: запитання
+    poll/shift: Зміна
+    poll/question/answer: Відповідь
+    user: Обліковий запис
+    verification/sms: телефон
+    signature_sheet: Підписний лист
+    document: Документ
+    topic: Тема
+    image: Зображення
+    local_census_record: Місцеві дані Цензусу
+    local_census_records/import: Імпорт місцевих даних Цензусу
+    site_customization/content_block: блок контенту
+    site_customization/page: сторінка
+  geozones:
+    none: Все місто
+  layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
+      ie: Ми виявили, що ви користуєтесь браузером Internet Explorer. Для кращого результату ми рекомендуємо користуватися %{firefox} або %{chrome}.
+      ie_title: Цей вебсайт не пристосований для вашого браузера
+    dashboard:
+      proposal_header:
+        published: Опубліковано
+        draft: Чернетка
+        retired: Той, що втратив силу
+      proposal_totals:
+        active_resources: Активні ресурси
+        community: Учасники у вашій спільноті
+        show_proposal: Показати пропозицію
+        preview_proposal: Попередній перегляд пропозиції
+        current_goal: Поточна ціль
+        supports:
+          zero: Немає підтримки
+          one: 1 підтримка
+          few: "Підтримки"
+          many: "Підтримок"
+          other: "Підтримок"
+    footer:
+      accessibility: Доступність
+      conditions: Правила та умови користування
+      consul: Додаток CONSUL
+      consul_url: https://github.com/consul/consul
+      copyright: CONSUL, %{year}
+      description: Цей портал використовує %{consul} який знаходиться %{open_source}.
+      open_source: відкрите програмне забезпечення
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: Вирішуйте, як створити місто, у якому ви бажаєте жити.
+      participation_title: Участь
+      privacy: Політика конфіденційності
+    header:
+      administration_menu: Меню
+      administration: Адміністрування
+      collaborative_legislation: Спільна законотворчість
+      debates: Обговорення
+      locale: "Мова:"
+      management: Управління
+      moderation: Модерування
+      valuation: Оцінка
+      officing: Посадові особи опитувань
+      help: Допомога
+      my_account_link: Мій обліковий запис
+      my_activity_link: Мій контент
+      open_gov: Відкритий уряд
+      proposals: Пропозиції
+      poll_questions: Голосування
+      budgets: Бюджетування участі
+      notification_item:
+        new_notifications:
+          zero: "Нових сповіщень немає"
+          one: Ви маєте нове сповіщення
+          few: Ви маєте %{count} нових сповіщення
+          many: Ви маєте %{count} нових сповіщень
+          other: Ви маєте %{count} нових сповіщень
+        notifications: Сповіщення
+  notifications:
+    index:
+      empty_notifications: Нових сповіщень немає.
+      mark_all_as_read: Позначити все як прочитане
+      read: Прочитане
+      title: Сповіщення
+      unread: Непрочитане
+    notification:
+      action:
+        comments_on:
+          one: Хтось залишив коментар
+          few: З'явилось %{count} нових коментарі щодо
+          many: З'явилось %{count} нових коментарів щодо
+          other: З'явилось %{count} нових коментарів щодо
+        proposal_notification:
+          one: Є нове сповіщення щодо
+          few: Є %{count} нових сповіщення щодо
+          many: Є %{count} нових сповіщень щодо
+          other: Є %{count} нових сповіщень щодо
+        replies_to:
+          one: Хтось відповів на ваш коментар
+          few: Є %{count} нових відповіді на ваш коментар щодо
+          many: Є %{count} нових відповідей на ваш коментар щодо
+          other: Є %{count} нових відповідей на ваш коментар щодо
+      mark_as_read: Позначити як прочитане
+      mark_as_unread: Позначити як непрочитане
+      notifiable_hidden: Цей ресурс більше не доступний.
+  map:
+    title: "Дільниці"
+    proposal_for_district: "Подати пропозицію для своєї дільниці"
+    start_proposal: Подати пропозицію
+  omniauth:
+    facebook:
+      sign_in: Реєстрація через Facebook
+      sign_up: Вхід через Facebook
+      name: Facebook
+    finish_signup:
+      title: "Додаткові деталі"
+      username_warning: "У зв'язку зі змінами нашої взаємодії з соціальними мережами ваше ім'я користувача може відображатися як таке, що вже використовується. В такому разі оберіть, будь ласка, інше ім'я користувача."
+    google_oauth2:
+      sign_in: Реєстрація через Google
+      sign_up: Вхід через Google
+      name: Google
+    wordpress_oauth2:
+      sign_in: Реєстрація через Wordpress
+      sign_up: Вхід через Wordpress
+      name: Wordpress
+    twitter:
+      sign_in: Реєстрація через Twitter
+      sign_up: Увійти через Twitter
+      name: Twitter
+    info:
+      sign_in: "Реєстрація через:"
+      sign_up: "Вхід через:"
+    or_fill: "Або заповніть форму нижче:"
+  proposals:
+    create:
+      form:
+        submit_button: Подати пропозицію
+    created:
+      title: Вітаємо! Ви виконали перший крок.
+      motivation: "Для того, щоб результати подання вашої пропозиції були успішними, потрібно розпочати кампанію для її підтримки. Перші кілька днів є вирішальними."
+      motivation_2: "<strong>Якщо вам необхідні поради щодо створення публікації, створіть чернетку і ми допоможемо вам.</strong>"
+      publish: Ні, я хочу опублікувати пропозицію
+      dashboard: Так, я хочу отримати допомогу і опублікувати пропозицію пізніше
+      preview_title: Коли ви опублікуєте пропозицію, вона буде виглядати наступним чином
+    share:
+      improve_it: Удоскональте свою кампанію та отримайте більше підтримки.
+      dashboard: Отримати більше інформації
+      message: "Я підтримав (-ла) пропозицію %{title} у %{handle}. Якщо ви зацікавлені, теж підтримайте її!"
+    edit:
+      editing: Редагувати пропозицію
+      form:
+        submit_button: Зберегти зміни
+      show_link: Переглянути пропозицію
+    retire_form:
+      title: Відкликати пропозицію
+      warning: "Якщо ви відкличете пропозицію, вона все ще отримуватиме підтримку, але її буде усунуто з основного переліку. Усі користувачі бачитимуть повідомлення про те, що автор більше не бажає отримувати підтримку своєї пропозиції"
+      retired_reason_blank: Обрати варіант
+      retired_explanation_placeholder: Коротко поясніть, чому на вашу думку пропозиція більше не повинна отримувати підтримку
+      submit_button: Вилучити пропозицію
+    retire_options:
+      duplicated: Дублювання
+      started: Вже в процесі
+      unfeasible: Недоцільно
+      done: Виконано
+      other: Інше
+    form:
+      proposal_responsible_name_note: "(індивідуально або як представник колективу; не відображатиметься публічно)"
+      proposal_summary_note: "(до 200 символів)"
+      proposal_video_url_note: Ви можете додати посилання на YouTube або Vimeo
+      tag_category_label: "Категорії"
+      tags_instructions: "Відмітьте цю пропозицію. Ви можете вибрати із запропонованих або створити власну"
+      tags_label: Теги
+      tags_placeholder: "Введіть теги, які хочете використовувати, розділивши їх комами (,)"
+      map_location: "Розташування мапи"
+      map_location_instructions: "Знайдіть місце на мапі та розташуйте на ньому маркер."
+      map_remove_marker: "Вилучити маркер"
+    index:
+      featured_proposals: Рекомендовані
+      orders:
+        confidence_score: з найвищим рейтингом
+        created_at: найновіші
+        hot_score: найактивніші
+        most_commented: з найбільшою кількістю коментарів
+        relevance: актуальність
+        archival_date: заархівовані
+        recommendations: рекомендації
+      recommendations:
+        without_results: Відсутні пропозиції, пов'язані зі сферою ваших інтересів
+        without_interests: Слідкуйте за пропозиціями, щоб ми могли надавати вам рекомендації
+        disable: "Рекомендовані пропозиції не будуть показані, якщо ви їх відхилите. Щоб увімкнути їх, перейдіть на сторінку \"Мій обліковий запис\""
+        actions:
+          success: "Рекомендовані пропозиції вимкнено для цього облікового запису"
+          error: "Сталася помилка. Перейдіть на сторінку \"Мій обліковий запис\", щоб власноруч увімкнути рекомендовані пропозиції"
+      retired_proposals: Відкликані пропозиції
+      retired_proposals_link: "Пропозиції, відкликані автором"
+      selected_proposals: Вибрані пропозиції
+      selected_proposals_link: Переглянути вибрані пропозиції
+      archived_proposals: Заархівовані пропозиції
+      proposals_lists: Список пропозицій
+      retired_links:
+        all: Усі
+        duplicated: Дублювання
+        started: В процесі
+        unfeasible: Недоцільні
+        done: Виконані
+        other: Інші
+      search_form:
+        button: Пошук
+        placeholder: Шукати пропозиції...
+        title: Пошук
+      search_results:
+        one: " що містить термін <strong>'%{search_term}'</strong>"
+        few: " що містять термін <strong>'%{search_term}'</strong>"
+        many: " що містять термін <strong>'%{search_term}'</strong>"
+        other: " що містять термін <strong>'%{search_term}'</strong>"
+      select_order_long: "Ви переглядаєте пропозиції згідно з:"
+      start_proposal: Подати пропозицію
+      title: Пропозиції
+      top_link_proposals: Найбільш підтримувані пропозиції за категоріями
+      section_header:
+        icon_alt: Значок пропозицій
+        title: Пропозиції
+        help: Допомога щодо пропозицій
+      section_footer:
+        title: Допомога щодо пропозицій
+        description: Пропозиції громадян є можливістю для колективів безпосередньо вирішувати, яким має бути їхнє місто, шляхом отримання достатньої підтримки та подання на голосування громадян.
+    new:
+      form:
+        submit_button: Подати пропозицію
+      more_info: Як працюють пропозиції громадян?
+      recommendation_one: Не використовуйте великі літери у назвах пропозицій та реченнях, адже в інтернеті це сприймається як крик. Нікому не подобається, коли на нього кричать.
+      recommendation_three: Отримуйте задоволення від користування цим простором та голосами, які його наповнюють. Все це належить в тому числі вам.
+      recommendation_two: Будь-яка пропозиція, яка міститиме заклик до незаконної дії або шкодитиме простору для обговорень, буде видалена. Все інше дозволено.
+      recommendations_title: Рекомендації щодо створення пропозицій
+      start_new: Подати нову пропозицію
+    notice:
+      retired: Пропозицію відкликано
+      published: Пропозицію опубліковано
+    proposal:
+      created: "Ви створили пропозицію!"
+      share:
+        guide: "Тепер ви можете поділитися нею, щоб люди її підтримали."
+        edit: "Перед тим, як ви поділитесь нею, ви можете змінити текст."
+        view_proposal: Не зараз, перейти до моєї пропозиції
+      already_supported: Ви вже підтримали цю пропозицію. Поділіться нею!
+      comments:
+        zero: Коментарі відсутні
+        one: 1 коментар
+        few: "%{count} коментарі"
+        many: "%{count} коментарів"
+        other: "%{count} коментарів"
+      support: Підтримка
+      support_title: Підтримати цю пропозицію
+      supports:
+        zero: Немає підтримки
+        one: 1 підтримка
+        few: "%{count} підтримки"
+        many: "%{count} підтримок"
+        other: "%{count} підтримок"
+      votes:
+        zero: Голоси відсутні
+        one: 1 голос
+        few: "%{count} голоси"
+        many: "%{count} голосів"
+        other: "%{count} голосів"
+      supports_necessary: "необхідно %{number} підтримань"
+      total_percent: 100%
+      archived: "Ця пропозиція заархівована і не збирає підтримки."
+      successful: "Ця пропозиція отримала достатню підтримку."
+      selected: "Вибрана пропозиція"
+    show:
+      author_deleted: Користувача видалено
+      code: "Код пропозиції:"
+      comments:
+        zero: Коментарі відсутні
+        one: 1 коментар
+        few: "%{count} коментарі"
+        many: "%{count} коментарів"
+        other: "%{count} коментарів"
+      comments_tab: Коментарі
+      dashboard_proposal_link: Інформаційна панель
+      flag: Цю пропозицію позначено як недоречну кількома користувачами.
+      notifications_tab: Сповіщення
+      milestones_tab: Віхи
+      retired_warning: "Автор вважає, що ця пропозиція більше не повинна отримувати підтримку."
+      retired_warning_link_to_explanation: Перед тим, як віддавати голос, прочитайте пояснення.
+      retired: Пропозиція вилучена автором
+      share: Поділитися
+      no_notifications: "Щодо даної пропозиції немає сповіщень."
+      embed_video_title: "Відео щодо %{proposal}"
+      title_video_url: "Зовнішнє відео"
+      author: Автор
+      draft: Пропозиція на стадії чернетки. Вона не з'являється в переліку пропозицій і не збирає підтримку.
+    update:
+      form:
+        submit_button: Зберегти зміни
+  dashboard:
+    menu:
+      my_proposal: Редагувати мою пропозицію
+      progress: Прогрес
+      resources: Ресурси
+      community: Спільнота
+      polls: Опитування
+      mailing: Електронна адреса
+      poster: Афіша
+      recommended_actions: Рекомендовані дії
+      messages: Повідомлення користувачам
+      related_content: Пов'язаний вміст
+    form:
+      request: Запит
+    create_request:
+      success: Запит надіслано. Найближчим часом ми зв'яжемося з вами, щоб повідомити про результати.
+      archived: Цю пропозицію заархівовано; для неї неможливо призначити ресурси.
+    progress:
+      title: Графік
+      group_by_month: Щомісяця
+      group_by_week: Щотижня
+      group_by_date: Щодня
+      progress: Досягнутий прогрес
+      supports: Підтримки
+      success: Оптимальний прогрес
+      new_action: Новий
+    index:
+      title: Версія
+      edit_proposal_link: Редагувати пропозицію
+      publish: Опублікувати пропозицію
+      retire: Відкликати пропозицію
+    new_request:
+      links: Посилання
+    resources:
+      available_resources: Доступні ресурси
+    resource:
+      required_days: "%{days} днів потрібно"
+      required_supports: "%{supports} підтримок потрібно"
+      and: і
+      view_resource: Переглянути ресурс
+      resource_requested: Ресурси, на які вже був запит
+      request_resource: Здійснити запит ресурсів
+      resource_locked: Ресурс заблоковано
+    recommended_actions:
+      title: Рекомендовані дії
+      goto_proposed_actions: Перейти до рекомендованих дій
+      see_proposed_actions: Перевірити рекомендовані дії
+      hide_proposed_actions: Приховати рекомендовані дії
+      pending_title: В очікуванні
+      show_description: Показати опис
+      without_pending_actions: Немає рекомендованих дій в очікуванні
+      done_title: Виконано
+      without_done_actions: Немає виконаних рекомендованих дій
+    next_goal:
+      title: Ціль
+      see_complete_course: Ознайомитись із повним курсом
+      hide_course: Приховати курс
+    goal:
+      target_supports:
+        one: Отримати %{count} підтримку для вашої пропозиції
+        few: Отримати %{count} підтримки для вашої пропозиції
+        many: Отримати %{count} підтримок для вашої пропозиції
+        other: Отримати %{count} підтримок для вашої пропозиції
+      days:
+        one: "%{count} день"
+        few: "%{count} дні"
+        many: "%{count} днів"
+        other: "%{count} днів"
+      locked_resource: Ресурс заблоковано
+      ideal_time: Оптимальний час
+    community:
+      access_community: Отримати доступ до спільноти
+      latest_activity: "Остання активність спільноти: %{at}"
+      participants: Учасники
+      debates: Обговорення
+      comments: Коментарі
+      latest_comments: Останні повідомлення
+    messages:
+      send_notification: Надіслати повідомлення тим, хто слідкує за пропозицією
+      previous_notifications: Переглянути попередні сповіщення
+    polls:
+      index:
+        title: Голосування
+        create: Створити голосування
+        count:
+          one: Ви створили %{count} голосування.
+          few: Ви створили %{count} голосування.
+          many: Ви створили %{count} голосувань.
+          other: Ви створили %{count} голосувань.
+        links: Посилання
+        additiontal_information: Додаткова інформація
+      new:
+        title: Нове голосування
+        submit: Створити голосування
+      edit:
+        submit: Оновити голосування
+      poll:
+        responses:
+          one: "%{count} відповідь"
+          few: "%{count} відповіді"
+          many: "%{count} відповідей"
+          other: "%{count} відповідей"
+        view_results: Переглянути результати
+        edit_poll: Редагувати опитування
+        show_results_help: Якщо ви встановите тут прапорець, результати будуть загальнодоступними і всі користувачі зможуть їх бачити
+        delete: Видалити дослідження
+        alert_notice: Ця дія видалить дослідження і всі пов'язані запитання.
+        success_notice: Дослідження видалене
+        unable_notice: Ви не можете знищити дослідження, у якому є відповіді
+      form:
+        name: Назва опитування
+        add_question: Додати запитання
+      question_fields:
+        remove_question: Видалити запитання
+        add_answer: Додати відповідь
+      question_answer_fields:
+        remove_answer: Видалити відповідь
+    poster:
+      index:
+        title: Попередній перегляд афіші
+        poster_title: "Не варто більше шукати,"
+        poster_subtitle: "підтримайте мене! ;)"
+        intro_text: "<strong>Я беру участь у %{org}</strong> з власною пропозицією громадянина, і тільки завдяки вашій підтримці ми можемо зробити наше місто таким, яким ми всі хочемо його бачити"
+        proposal_code: "Код пропозиції: %{code}"
+        support: Підтримати мою пропозицію
+        footer: "<strong>Перейдіть %{link} та підтримайте цю пропозицію.</strong> Чим більше, тим краще. Зробіть свій внесок. Дякуємо!"
+      new:
+        title: Афіша вашої пропозиції
+      options:
+        preview: Попередній перегляд
+        download: Завантажити
+    mailing:
+      index:
+        title: Попередній перегляд електронного листа
+      new:
+        title: Модель листа для розповсюдження
+      mailing_options:
+        send: Надіслати на %{address}
+        preview: Попередній перегляд
+      create:
+        sent: Цей лист надіслано
+    mailer:
+      forward:
+        subtitle: "Якщо ви підтримаєте мене, <br>ми досягнемо цілі."
+        support_button: Підтримати цю пропозицію
+        share_in: Поділитися
+        hi: "Привіт!"
+        introduction: Я хочу повідомити вам, що беру участь в %{org} - платформі, на якій ми вирішуємо, яким має бути наше місто. Для цього я створив (-ла) власну пропозицію громадянина, і мені потрібна ваша підтримка! Не хвилюйтеся - все зовсім просто.
+        support: "Все, що потрібно зробити - натиснути на кнопку \"Підтримати цю пропозицію\", яку ви побачите нижче. Перед тим, як підтримати пропозицію, ви можете ознайомитися з нею.\nЛише ті пропозиції, які отримають максимальну підтримку, будуть роглянуті міською радою. Я впевнений (-на), що ваша підтримка допоможе!"
+        share: "Також ви зробите мені велику послугу, якщо поділитеся моєю пропозицією зі своїми друзями, родиною та контактами - це було б чудово!"
+  polls:
+    all: "Усі"
+    no_dates: "без призначеної дати"
+    dates: "Від %{open_at} до %{closed_at}"
+    final_date: "Остаточний перерахунок/Результати"
+    index:
+      filters:
+        current: "Відкриті"
+        expired: "З завершеним терміном"
+      title: "Голосування"
+      participate_button: "Взяти участь у цьому голосуванні"
+      participate_button_expired: "Голосування завершено"
+      no_geozone_restricted: "Все місто"
+      geozone_restricted: "Дільниці"
+      geozone_info: "Можуть брати участь люди в Цензусі: "
+      already_answer: "Ви вже взяли участь у цьому голосуванні"
+      not_logged_in: "Зареєструйтеся або увійдіть у свій обліковий запис, щоб взяти участь"
+      unverified: "Підтвердьте свій обліковий запис, щоб взяти участь"
+      cant_answer: "Це голосування недоступне у вашій геозоні"
+      section_header:
+        icon_alt: Значок голосування
+        title: Голосування
+        help: Допомога з голосуванням
+      section_footer:
+        title: Допомога з голосуванням
+        description: Голосування громадян - це механізм залучення, завдяки якому громадяни з правом голосу можуть приймати безпосередні рішення
+      no_polls: "Відкриті голосування відсутні."
+    show:
+      already_voted_in_booth: "Ви вже взяли участь у фізичній кабінці. Ви не можете брати участь знову."
+      already_voted_in_web: "Ви вже взяли участь в цьому опитуванні. Якщо ви проголосуєте знову, ваш голос буде перезаписаний."
+      back: Повернутися до голосування
+      cant_answer_not_logged_in: "Для продовження %{signin} або %{signup}."
+      comments_tab: Коментарі
+      cant_answer_verify: "Щоб дати відповідь, необхідно %{verify_link}."
+      verify_link: "підтвердьте свій обліковий запис"
+      cant_answer_expired: "Голосування завершено."
+      cant_answer_wrong_geozone: "Це питання недоступне у вашій геозоні."
+      more_info_title: "Більше інформації"
+      documents: Документи
+      zoom_plus: Збільшити зображення
+      read_more: "Читати більше про %{answer}"
+      read_less: "Читати менше про %{answer}"
+      videos: "Зовнішнє відео"
+      info_menu: "Інформація"
+      stats_menu: "Статистика участі"
+      results_menu: "Результати голосування"
+      stats:
+        total_votes: "Загальна кількість голосів"
+        votes: "ГОЛОСИ"
+        web: "Мережа"
+        mail: "ЕЛЕКТРОННОЮ ПОШТОЮ"
+        booth: "КАБІНКА"
+        total: "ЗАГАЛОМ"
+        valid: "Дійсні"
+        white: "Порожні"
+        null_votes: "Недійсні"
+      results:
+        title: "Запитання"
+        most_voted_answer: "Запитання, яке отримало найбільше голосів: "
+    poll_header:
+      back_to_proposal: Повернутися до пропозиції
+  poll_questions:
+    show:
+      vote_answer: "Голосувати за %{answer}"
+      voted: "Ми проголосували за%{answer}"
+  proposal_notifications:
+    new:
+      title: "Надіслати повідомлення"
+      submit_button: "Надіслати повідомлення"
+      info_about_receivers: "Це повідомлення буде надіслане <strong>%{count} людям</strong> і його можна буде переглянути %{proposal_page}.<br> Повідомлення не надсилаються негайно, користувачі періодично отримують листи з усіма сповіщеннями щодо пропозицій."
+      proposal_page: "сторінка пропозицій"
+    show:
+      back: "Повернутися до мого контенту"
+  shared:
+    edit: "Редагувати"
+    filter: "Фільтр"
+    save: "Зберегти"
+    delete: "Видалити"
+    "yes": "Так"
+    "no": "Ні"
+    search_results: "Результати пошуку"
+    advanced_search:
+      date: "За датою"
+      date_placeholder: "ДД/ММ/РРРР"
+      date_range_blank: "Обрати дату"
+      date_1: "Останні 24 години"
+      date_2: "Останній тиждень"
+      date_3: "Останній місяць"
+      date_4: "Останній рік"
+      date_5: "Індивідуальні"
+      from: "Від"
+      general: "З текстом"
+      search: "Фільтр"
+      title: "Розширений пошук"
+      to: "До"
+    author_info:
+      author_deleted: Користувача видалено
+      email_deleted: Електронну адресу видалено
+    back: Повернутися
+    check: Обрати
+    check_all: Усі
+    check_none: Жодного
+    collective: Колективні
+    flag: Позначити як неприйнятні
+    follow: "Слідкувати"
+    following: "Відслідковувані"
+    follow_entity: "Слідкувати %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice: "Ви слідкуєте за цим інвестиційним проєктом! <br> Ми сповістимо вас про зміни, які відбуватимуться, щоб тримати вас в курсі."
+        destroy:
+          notice: "Ви припинили відслідковувати цей інвестиційний проєкт! <br> Ви більше не отримуватимете сповіщень щодо цього проєкту."
+      proposal:
+        create:
+          notice: "Відтепер ви слідкуєте за цією пропозицією громадянина! <br> Ми сповістимо вас про зміни, які відбуватимуться, щоб тримати вас в курсі."
+        destroy:
+          notice: "Ви припинили відслідковувати цю пропозицію громадянина! <br> Ви більше не отримуватимете сповіщень щодо цієї пропозиції."
+    print:
+      print_button: Роздрукувати цю інформацію
+    search: Пошук
+    show: Показати
+    suggest:
+      debate:
+        found:
+          one: "Є обговорення з терміном %{query}', ви можете взяти участь у ньому замість того, щоб створювати нове."
+          few: "Є обговорення з терміном %{query}', ви можете взяти участь у них замість того, щоб створювати нові."
+          many: "Є обговорення з терміном %{query}', ви можете взяти участь у ньому замість того, щоб створювати нове."
+          other: "Є обговорення з терміном %{query}', ви можете взяти участь у ньому замість того, щоб створювати нове."
+        message: "Ви бачите %{limit} %{count} обговорень, які містять термін '%{query}'"
+        see_all: "Переглянути все"
+      budget_investment:
+        found:
+          one: "Є інветиція з терміном '%{query}', ви можете взяти участь у ній замість того, щоб створювати нову."
+          few: "Є інвестиції з терміном '%{query}', ви можете взяти участь у них замість того, щоб створювати нові."
+          many: "Є інвестиції з терміном '%{query}', ви можете взяти участь у них замість того, щоб створювати нові."
+          other: "Є інвестиції з терміном '%{query}', ви можете взяти участь у них замість того, щоб створювати нові."
+        message: "Ви бачите %{limit} %{count} інвестицій, які містять термін '%{query}'"
+        see_all: "Переглянути все"
+      proposal:
+        found:
+          one: "Є пропозиція з терміном %{query}', ви можете взяти участь у ній замість того, щоб створювати нову"
+          few: "Є пропозиції з терміном %{query}', ви можете взяти участь у них замість того, щоб створювати нові"
+          many: "Є пропозиції з терміном %{query}', ви можете взяти участь у них замість того, щоб створювати нові"
+          other: "Є пропозиції з терміном %{query}', ви можете взяти участь у них замість того, щоб створювати нові"
+        message: "Ви бачите %{limit} %{count} пропозицій, які містять термін '%{query}'"
+        see_all: "Переглянути все"
+    tags_cloud:
+      tags: Популярні
+      districts: "Дільниці"
+      districts_list: "Перелік дільниць"
+      categories: "Категорії"
+    target_blank: " (посилання відкривається у новому вікні)"
+    you_are_in: "Ви знаходитеся в"
+    unflag: Зняти позначку
+    unfollow_entity: "Не слідкувати за %{entity}"
+    outline:
+      searcher: Шукач
+    go_to_page: "Перейти до сторінки "
+    share: Поділитися
+    orbit:
+      previous_slide: Попередній слайд
+      next_slide: Наступний слайд
+    documentation: Додаткова документація
+    view_mode:
+      title: Режим перегляду
+      cards: Картки
+      list: Перелік
+    recommended_index:
+      title: Рекомендації
+      see_more: Переглянути більше рекомендацій
+      hide: Приховати рекомендації
+    translations:
+      select_language_prompt: Обрати мову
+      remove_language: Видалити мову
+      add_language: Додати мову
+      languages_in_use:
+        zero: "Використовуються 0 мов"
+        one: "Використовується 1 мова"
+        few: "використовується %{count} мови"
+        many: "використовується %{count} мов"
+        other: "використовується %{count} мов"
+  social:
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
+  stats:
+    index:
+      visits: Відвідування
+      debates: Обговорення
+      proposals: Пропозиції
+      comments: Коментарі
+      proposal_votes: Голоси за пропозиції
+      debate_votes: Голоси за обговорення
+      comment_votes: Голоси за коментарі
+      votes: Усі голоси
+      verified_users: Перевірені користувачі
+      unverified_users: Неперевірені користувачі
+  unauthorized:
+    default: Ви не маєте дозволу на відвідання цієї сторінки.
+    manage:
+      all: "Ви не маєте дозволу для виконання дії %{action} з %{subject}."
+  users:
+    login_to_comment: "Щоб залишити коментар, необхідно %{signin} або %{signup}."
+    login_to_continue: "Щоб продовжити, необхідно %{signin} або %{signup}."
+    signin: "реєстрація"
+    signup: "вхід"
+    verify_account: "підтвердьте свій обліковий запис"
+    direct_messages:
+      new:
+        direct_messages_bloqued: "Цей користувач вирішив не отримувати особистих повідомлень"
+        submit_button: Надіслати повідомлення
+        title: Надіслати особисте повідомлення %{receiver}
+        verified_only: Щоб надіслати приватне повідомлення, %{verify_account}
+      show:
+        receiver: Повідомлення надіслане %{receiver}
+    show:
+      deleted: Видалено
+      deleted_debate: Це обговорення видалено
+      deleted_proposal: Пропозицію видалено
+      deleted_budget_investment: Інвестиційний проєкт видалено
+      proposals: Пропозиції
+      proposals_status: Статус
+      debates: Обговорення
+      budget_investments: Бюджетні інвестиції
+      comments: Коментарі
+      actions: Дії
+      filters:
+        comments:
+          one: 1 коментар
+          few: "%{count} коментарі"
+          many: "%{count} коментарів"
+          other: "%{count} коментарів"
+        debates:
+          one: 1 обговорення
+          few: "%{count} обговорення"
+          many: "%{count} обговорень"
+          other: "%{count} обговорень"
+        proposals:
+          one: 1 пропозиція
+          few: "%{count} пропозиції"
+          many: "%{count} пропозицій"
+          other: "%{count} пропозицій"
+        budget_investments:
+          one: 1 інвестиція
+          few: "%{count} інвестиції"
+          many: "%{count} інвестицій"
+          other: "%{count} інвестицій"
+        follows:
+          one: 1 підписник
+          few: "%{count} підписники"
+          many: "%{count} підписників"
+          other: "%{count} підписників"
+      no_activity: У користувача немає публічної активності
+      no_private_messages: "Користувач не приймає приватні повідомлення."
+      private_activity: Цей користувач вирішив залишити список дій приватним.
+      send_private_message: "Надіслати приватне повідомлення"
+      delete_alert: "Ви впевнені, що хочете видалити свій інвестиційний проект? Цю дію неможливо скасувати"
+    proposals:
+      retired: "Вилучена пропозиція"
+      draft: Чернетка
+      published: Опубліковано
+      see: "Переглянути пропозицію"
+      actions: Дії
+      retired_help_text: Для вилучених пропозицій немає інформаційної панелі
+  votes:
+    agree: Я погоджуюсь
+    anonymous: Надто багато анонімних голосів, щоб визнати голос %{verify_account}.
+    disagree: Я не погоджуюсь
+    organizations: Організації не допускаються до голосування
+    supports: Підтримання
+    verified_only: Тільки користувачі, які підтвердили свій обліковий запис, можуть віддавати голоси за пропозиції; %{verify_account}.
+    budget_investments:
+      not_verified: Тільки підтверджені користувачі можуть віддавати голоси за інвестиційні проєкти; %{verify_account}.
+      unfeasible: Не можна підтримати недоцільні інвестиційні проєкти
+      not_voting_allowed: Етап голосування завершено
+      different_heading_assigned:
+        one: "Ви можете підтримати лише інвестиційні проєкти на %{count} дільниці. Ви вже підтримали інвестиції у %{supported_headings}."
+        few: "Ви можете підтримати лише інвестиційні проєкти на %{count} дільницях. Ви вже підтримали інвестиції у%{supported_headings}."
+        many: "Ви можете підтримати лише інвестиційні проєкти на %{count} дільницях. Ви вже підтримали інвестиції у%{supported_headings}."
+        other: "Ви можете підтримати лише інвестиційні проєкти на %{count} дільницях. Ви вже підтримали інвестиції у%{supported_headings}."
+  welcome:
+    feed:
+      most_active:
+        debates: "Найактивніші обговорення"
+        proposals: "Найактивніші пропозиції"
+        processes: "Відкрити процеси"
+      see_all:
+        debates: Переглянути всі обговорення
+        proposals: Переглянути всі пропозиції
+        processes: Переглянути всі процеси
+      process_label: Процес
+      see_process: Переглянути процес
+    cards:
+      title: Рекомендовані
+    recommended:
+      title: Рекомендації, які можуть вас зацікавити
+      help: "Ці рекомендації згенеровано відповідно до тег та обговорень, за якими ви слідкуєте."
+      debates:
+        title: Рекомендовані обговорення
+        btn_text_link: Усі рекомендовані обговорення
+      proposals:
+        title: Рекомендовані пропозиції
+        btn_text_link: Усі рекомендовані пропозиції
+      budget_investments:
+        title: Рекомендовані інвестиції
+      slide: "Переглянути %{title}"
+    welcome:
+      go_to_index: Не зараз, перейти до сторінки індексу
+      start_using_consul: Перейти до сторінки індексу
+      title: Взяти участь
+      user_permission_info: З вашим обліковим записом ви маєте можливість...
+      user_permission_verify: "Для виконання цих дій підтвердьте свій обліковий запис."
+      user_permission_verify_my_account: Підтвердити мій обліковий запис
+  invisible_captcha:
+    sentence_for_humans: "Якщо ви людина, проігноруйте це поле"
+    timestamp_error_message: "Вибачте, це було занадто швидко! Будь ласка, повторіть."
+  related_content:
+    title: "Пов'язаний контент"
+    add: "Весь пов'язаний контент"
+    label: "Посилання на пов'язаний контент"
+    placeholder: "%{url}"
+    help: "Ви можете додавати посилання %{models} у %{org}."
+    submit: "Додати"
+    error: "Посилання недійсне. Починайте з %{url}."
+    error_itself: "Посилання недійсне. Ви не можете пов'язати контент із самим собою."
+    success: "Ви додали новий пов'язаний контент"
+    is_related: "Це пов'язаний контент?"
+    score_positive: "Так"
+    score_negative: "Ні"
+    content_title:
+      proposal: "Пропозиція"
+      debate: "Обговорення"
+      budget_investment: "Бюджетна інвестиція"
+  admin/widget:
+    header:
+      title: Адміністрування
+  annotator:
+    help:
+      alt: Виберіть текст, який хочете прокоментувати, і натисніть кнопку з зображенням олівця.
+      text: Щоб прокоментувати цей документ, необхідно %{sign_in} або %{sign_up}. Потім виберіть текст, який хочете прокоментувати, і натисніть кнопку з зображенням олівця.
+      title: Як я можу прокоментувати цей документ?
+  links:
+    form:
+      delete_button: Видалити
+      cancel_button: Скасувати
+    nested_links:
+      title: Посилання
+      note: Додати посилання, які можуть становити інтерес
+      add_new_link: Додати нове посилання
+  communities:
+    show:
+      surveys: Опитування
+      complete_survey: Заповнити опитування
+    subnav:
+      surveys: Опитування
+    poll:
+      take_part: Взяти участь від %{from} до %{to}
+  remote_translations:
+    text: Вміст цієї сторінки недоступний вашою мовою
+    all_remote_translations_enqueued_text: Згодом після оновлення сторінки її вміст буде доступним вашою мовою.
+    create:
+      enqueue_remote_translation: Запит на переклад здійснено коректно.
+    button: Перекласти сторінку

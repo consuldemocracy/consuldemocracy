@@ -1,0 +1,29 @@
+<% provide(:title) { t("sdg.goals.help.title") } %>
+
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: sdg_help_url %>
+<% end %>
+
+<section class="sdg-help-content">
+  <h1><%= t("sdg.goals.help.title") %></h1>
+  <p><%= t("sdg.goals.help.description") %></p>
+  <ul class="tabs" id="help_tabs" data-deep-link="true" data-tabs>
+    <% @goals.each do |goal| %>
+      <li class="tabs-title <%= is_active?(goal) %>">
+        <%= link_to "#goal_#{goal.code}_tab" do %>
+          <% render SDG::Goals::IconComponent.new(goal) %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="tabs-content" data-tabs-content="help_tabs">
+    <% @goals.each do |goal| %>
+      <div id="goal_<%= goal.code %>_tab" class="tabs-panel <%= is_active?(goal) %>">
+        <h2><%= goal.code_and_title %></h2>
+        <p><%= sanitize t("sdg.goals.goal_#{goal.code}.description") %></p>
+        <%= render SDG::Goals::TargetsComponent.new(goal) %>
+      </div>
+    <% end %>
+  </div>
+</section>

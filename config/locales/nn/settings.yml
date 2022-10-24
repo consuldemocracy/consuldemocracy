@@ -1,0 +1,15 @@
+nn:
+  settings:
+    proposals:
+      poll_short_title: Avstemninger
+      email_short_title: E-post
+      poster_short_title: Plakat
+    feature:
+      user:
+        recommendations: "Anbefalinger"
+    process:
+      debates: "Debatter"
+      proposals: "Forslag"
+      polls: "Avstemninger"
+      polls_description: "Innbyggeravstemning er en deltakende prosess hvor innbyggere kan få direkte innflytelse og være med å påvirke lokalpolitiske beslutninger"
+      budgets: "Deltakende budsjettering"

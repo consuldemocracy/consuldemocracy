@@ -2,11 +2,10 @@ val:
   devise_views:
     confirmations:
       new:
-        email_label: Correu electrònic
         submit: Reenviar instruccions
         title: Reenviar instruccions de confirmació
       show:
-        instructions_html: Confirmar el compte amb l'email %{email}
+        instructions: Confirmar el compte amb l'email %{email}
         new_password_confirmation_label: Torna a introduïr la clau de nou
         new_password_label: Nova clau d'acces
         please_set_password: Si us plau introdueix una nova clau d'acces per al teu compte (et permetrà iniciar sessió amb el correu electrònic de més amunt)
@@ -15,7 +14,7 @@ val:
     mailer:
       confirmation_instructions:
         confirm_link: Confirmar el meu compte
-        text: 'Pots confirmar el teu compte de correu en el següent enllaç:'
+        text: "Pots confirmar el teu compte de correu en el següent enllaç:"
         title: Benvingut/da
         welcome: Benvingut/da
       reset_password_instructions:
@@ -23,12 +22,12 @@ val:
         hello: Hola
         ignore_text: Si no ho has sol·licitat, pots ignorar aquest correu.
         info_text: La teua contrasenya no canviarà fins que no accedeixques a l'enllaç i la modifiques.
-        text: 'S''ha sol·licitat canviar la teua contrasenya, pots fer-ho en el següent enllaç:'
+        text: "S'ha sol·licitat canviar la teua contrasenya, pots fer-ho en el següent enllaç:"
         title: Canvia la teua contrasenya
       unlock_instructions:
         hello: Hola
         info_text: El teu compte ha segut bloquejat a causa d'un exessiu número d'intents fallits d'alta.
-        instructions_text: 'Segueix el seguent enllaç per a desbloquejar el teu compte:'
+        instructions_text: "Segueix el seguent enllaç per a desbloquejar el teu compte:"
         title: El teu compte ha segut bloquejat
         unlock_link: Desbloquejar el meu compte
     menu:
@@ -39,21 +38,16 @@ val:
     organizations:
       registrations:
         new:
-          email_label: Correu electrònic
-          organization_name_label: Nom de l'organització
           password_confirmation_label: Repeteix la contrasenya anterior
-          password_label: Contrasenya
-          phone_number_label: Telèfon
-          responsible_name_label: Nom i cognoms de la persona responsable del colectiu
           responsible_name_note: Sera la persona representant de l'associació/col·lectiu en el nom del qual es presenten les propostes
           submit: Registrarse
           title: Registrar-se com organització / col·lectiu
         success:
-          back_to_index: Entes, tornar a la pàgina principal
-          instructions_1_html: "<strong>Contactarem amb tu en breu</strong> per comprovar que tens la capacitat de representar a aquest colectiu."
-          instructions_2_html: Mentres que el teu <strong>email es revisat</strong>, t'hem enviat un <strong>enllaç per a confirmar el teu compte</strong>.
-          instructions_3_html: Una vegada confirmat, podràs començar a participar com a col·lectiu no verificat.
-          thank_you_html: Gracies per registrar el teu col·lectiu en la web. Ara està <strong>pendent de verificació</strong>.
+          back_to_index: Entés, tornar a la pàgina principal
+          instructions_1: "<strong>Contactarem amb tu en breu</strong> per comprovar que tens la capacitat de representar a aquest colectiu."
+          instructions_2: Mentres que el teu <strong>email es revisat</strong>, t'hem enviat un <strong>enllaç per a confirmar el teu compte</strong>.
+          instructions_3: Una vegada confirmat, podràs començar a participar com a col·lectiu no verificat.
+          thank_you: Gracies per registrar el teu col·lectiu en la web. Ara està <strong>pendent de verificació</strong>.
           title: Registre d'organització / col·lectiu
     passwords:
       edit:
@@ -62,13 +56,10 @@ val:
         password_label: Nova contrasenya
         title: Canvia la teua contrasenya
       new:
-        email_label: Correu electrònic
         send_submit: Enviar instruccions
         title: Has oblidat la teua contrasenya?
     sessions:
       new:
-        login_label: Email o nom d'usuari
-        password_label: Contrasenya
         remember_me: Recordam
         submit: Entrar
         title: Iniciar sessió
@@ -103,27 +94,23 @@ val:
           password_confirmation_label: Repeteix la nova contrasenya
           password_label: Nova contrasenya
           update_submit: Actualitzar
-          waiting_for: 'Esperant confirmació de:'
+          waiting_for: "Esperant confirmació de:"
         new:
           cancel: Cancelar login
-          email_label: Correu electrònic
           organization_signup: Representes a una organització / col·lectiu? %{signup_link}
           organization_signup_link: Regístrat ací
           password_confirmation_label: Repeteix la contrasenya anterior
-          password_label: Contrasenya
-          redeemable_code: Codi de verificació per correu electronic (opcional)
-          submit: Registrar-se
+          submit: Registrarse
           terms: Al registrarte acceptes les %{terms}
           terms_link: termes i condicions d'us
           terms_title: Al registrar-te acceptes les condicions d'us
-          title: Registrar-se
+          title: Registrarse
           username_is_available: Nom d'usuari disponible
           username_is_not_available: Nom d'usuari ya existeix
-          username_label: Nom d'usuari
           username_note: Nom public que apareixerà en les teues publicacions
         success:
-          back_to_index: Entés, tornar a la pàgina principal
-          instructions_1_html: Si us plau <strong>revisa el teu correu electrònic</strong> - t'hem envat un <strong>enllaç per a confirmar el teu compte</strong>.
-          instructions_2_html: Una vegada confirmat, podràs començar a participar.
-          thank_you_html: Gràcies per registrar-te en la web. Ara has de <strong>confirmar el teu correu</strong>.
+          back_to_index: Entes, tornar a la pàgina principal
+          instructions_1: Si us plau <strong>revisa el teu correu electrònic</strong> - t'hem envat un <strong>enllaç per a confirmar el teu compte</strong>.
+          instructions_2: Una vegada confirmat, podràs començar a participar.
+          thank_you: Gràcies per registrar-te en la web. Ara has de <strong>confirmar el teu correu</strong>.
           title: Confirma la teua direcció d'email

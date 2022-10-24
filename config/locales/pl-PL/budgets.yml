@@ -3,33 +3,25 @@ pl:
     ballots:
       show:
         title: Twój tajny głos
-        amount_spent: Łączna wartość wybranych projektów
-        remaining: "Wciąż masz <span>%{amount}</span> do zainwestowania."
         no_balloted_group_yet: "Jeszcze nie zagłosowałeś na tej grupie, oddaj swój głos!"
         remove: Usuń głos
-        voted_html:
+        voted:
           one: "Zagłosowałeś na <span>jedną</span> inwestycję."
-          few: "Zagłosowałeś na <span>%{count}</span> inwestycje."
+          few: "Zagłosowałeś na <span>%{count}</span> inwestycji."
           many: "Zagłosowałeś na <span>%{count}</span> inwestycji."
           other: "Zagłosowałeś na <span>%{count}</span> inwestycji."
-        voted_info_html: "Możesz zmienić swój głos w każdej chwili aż do końca tej fazy.<br> Nie ma potrzeby wydawania wszystkich dostępnych pieniędzy."
+        voted_info_2: "Ale możesz zmienić swój głos w dowolnym momencie, dopóki ta faza jest zamknięta."
         zero: Nie wybrałeś/aś jeszcze żadnego projektu.
       reasons_for_not_balloting:
-        not_logged_in: Muszą być %{signin} lub %{signup} do udziału.
         not_verified: W głosowaniu mogą wziąć udział tylko zweryfikowani użytkownicy. %{verify_account}.
-        organization: Organizacje nie mogą głosować
         not_selected: Niewybrane projekty inwestycyjne nie mogą być wspierane
-        not_enough_money_html: "Już przypisałeś/łaś dostępny budżet.<br><small>Pamiętaj, że możesz %{change_ballot} w każdej chwili</small>"
+        not_enough_money: "Już przypisałeś/łaś dostępny budżet.<br><small>Pamiętaj, że możesz %{change_ballot} w każdej chwili</small>"
         no_ballots_allowed: Faza wybierania jest zamknięta
-        different_heading_assigned_html: "Już głosowałeś na inny nagłówek: %{heading_link}"
+        different_heading_assigned: "Już głosowałeś na inny nagłówek: %{heading_link}"
         change_ballot: zmieńcie swoje głosy
     groups:
       show:
         title: Wybierz opcję
-        unfeasible_title: Niewykonalne inwestycje
-        unfeasible: Zobacz niewykonalne inwestycje
-        unselected_title: Inwestycje niewybrane do fazy głosowania
-        unselected: Zobacz inwestycje niewybrane do fazy głosowania
     phase:
       drafting: Wersja robocza (niewidoczna dla pozostałych użytkowników)
       informing: Informacje
@@ -48,30 +40,26 @@ pl:
         icon_alt: Ikona budżetów partycypacyjnych
         title: Budżety partycypacyjne
         help: Pomoc z budżetem partycypacyjnym
-        all_phases: Zobacz wszystkie fazy
       all_phases: Fazy inwestycji budżetowych
       map: Propozycje inwestycji budżetowych zlokalizowane geograficznie
-      investment_proyects: Lista wszystkich projektów inwestycyjnych
-      unfeasible_investment_proyects: Lista wszystkich niewykonalnych projektów inwestycyjnych
-      not_selected_investment_proyects: Lista wszystkich projektów inwestycyjnych nie wybranych do głosowania
       finished_budgets: Ukończone budżety partycypacyjne
       see_results: Zobacz wyniki
       section_footer:
         title: Pomoc z budżetem partycypacyjnym
         description: Przy pomocy budżetów partycypacyjnych obywatele decydują, którym projektom przeznaczona jest część budżetu gminnego.
+      milestones: Kamienie milowe
     investments:
       form:
+        title: "Utwórz inwestycję budżetową"
         tag_category_label: "Kategorie"
-        tags_instructions: "Otaguj tę propozycję. Możesz wybrać spośród proponowanych kategorii lub dodać własną"
+        tags_instructions: "Otaguj ten wniosek. Możesz wybrać spośród proponowanych kategorii lub dodać własną"
         tags_label: Tagi
-        tags_placeholder: "Wprowadź tagi, których chciałbyś użyć, rozdzielone przecinkami (',')"
+        tags_placeholder: "Wprowadź oznaczenia, których chciałbyś użyć, rozdzielone przecinkami (',')"
         map_location: "Lokalizacja na mapie"
         map_location_instructions: "Przejdź na mapie do lokalizacji i umieść znacznik."
-        map_remove_marker: "Usuń znacznik"
-        location: "Dodatkowe informacje o lokalizacji"
-        map_skip_checkbox: "Ta inwestycja nie posiada konkretnej lokalizacji lub nie jest mi ona znana."
+        map_remove_marker: "Usuń znacznik mapy"
       index:
-        title: Budżetowanie Partycypacyjne
+        title: Budżetowanie partycypacyjne
         unfeasible: Niewykonalne projekty inwestycyjne
         unfeasible_text: "Inwestycje muszą spełniać określone kryteria (legalność, konkretność, bycie odpowiedzialnością miasta, mieszczenie się w ramach budżetu), aby zostały zadeklarowane wykonalnymi i osiągnęły etap ostatecznego głosowania. Wszystkie inwestycje nie spełniające tych kryteriów są oznaczane jako nierealne i publikowane na następującej liście, wraz z raportem ich niewykonalności."
         by_heading: "Projekty inwestycyjne z zakresu: %{heading}"
@@ -81,76 +69,87 @@ pl:
           title: Szukaj
         sidebar:
           my_ballot: Moje głosowanie
-          voted_info: Możesz %{link} w każdej chwili aż do zamknięcia tej fazy. Nie ma potrzeby wydawania wszystkich dostępnych pieniędzy.
-          voted_info_link: zmień swój głos
-          different_heading_assigned_html: "Posiadasz aktywne głosy w innym nagłówku: %{heading_link}"
+          voted_info:
+            knapsack:
+              one: "<strong>Zagłosowałeś na jedną propozycję kosztem %{amount_spent}</strong>"
+              few: "<strong>Zagłosowałeś na %{count} propozycji kosztem %{amount_spent}</strong>"
+              many: "<strong>Zagłosowałeś na %{count} propozycji kosztem %{amount_spent}</strong>"
+              other: "<strong>Zagłosowałeś na %{count} propozycji kosztem %{amount_spent}</strong>"
+          change_vote_link: "zmień swój głos"
+          different_heading_assigned: "Posiadasz aktywne głosy w innym nagłówku: %{heading_link}"
           change_ballot: "Jeśli zmienisz zdanie, możesz usunąć swoje głosy w %{check_ballot} i zacząć od nowa."
           check_ballot_link: "sprawdź moje głosowanie"
           zero: Nie zagłosowałeś na żaden z projektów inwestycyjnych w tej grupie.
           verified_only: "By stworzyć nową inwestycję budżetową %{verify}."
-          verify_account: "zweryfikuj swoje konto"
-          create: "Utwórz nowy projekt"
+          create: "Utwórz inwestycję budżetową"
           not_logged_in: "By stworzyć nową inwestycję budżetową musisz %{sign_in} lub %{sign_up}."
-          sign_in: "zaloguj się"
-          sign_up: "zarejestruj się"
-          by_feasibility: Według wykonalności
-          feasible: Projekty uznane za możliwe do realizacji
-          unfeasible: Projekty uznane za niemożliwe do realizacji
+        filters:
+          selected: "Wybrany"
+          unfeasible: "Niewykonalne"
+          winners: "Zwycięzcy"
         orders:
           random: losowe
           confidence_score: najwyżej oceniane
           price: według ceny
+      share:
+        message: "Stworzyłem projekt inwestycji %{title} w %{handle}. Utwórz także projekt inwestycyjny!"
       show:
         author_deleted: Użytkownik usunięty
         price_explanation: Wyjaśnienie ceny
         unfeasibility_explanation: Wyjaśnienie niewykonalności
-        code_html: 'Kod projektu inwestycyjnego: <strong>%{code}</strong>'
-        location_html: 'Lokalizacja <strong>%{location}</strong>'
-        organization_name_html: 'Zawnioskowano w imieniu: <strong>%{name}</strong>'
+        code: "Kod projektu inwestycyjnego: <strong>%{code}</strong>"
+        location: "Lokalizacja <strong>%{location}</strong>"
+        organization_name: "Zawnioskowano w imieniu: <strong>%{name}</strong>"
         share: Udostępnij
         title: Projekt inwestycyjny
-        supports: Wspiera
-        votes: Głosy
+        supports: Wsparcie
+        votes: Głosów
         price: Koszt
         comments_tab: Komentarze
         milestones_tab: Kamienie milowe
         author: Autor
-        project_unfeasible_html: 'Ten projekt inwestycyjny <strong>został oznaczony jako niewykonalny</strong> i nie przejdzie do fazy głosowania.'
-        project_selected_html: 'Ten projekt inwestycyjny <strong>został wybrany</strong> do fazy głosowania.'
-        project_winner: 'Zwycięski projekt inwestycyjny'
-        project_not_selected_html: 'Ten projekt inwestycyjny <strong>nie został wybrany</strong> do fazy głosowania.'
+        project_unfeasible: "Ten projekt inwestycyjny <strong>został oznaczony jako niewykonalny</strong> i nie przejdzie do fazy głosowania."
+        project_selected: "Ten projekt inwestycyjny <strong>został wybrany</strong> do fazy głosowania."
+        project_winner: "Zwycięski projekt inwestycyjny"
+        project_not_selected: "Ten projekt inwestycyjny <strong>nie został wybrany</strong> do fazy głosowania."
+        see_price_explanation: Wyjaśnienie cen
       wrong_price_format: Tylko liczby całkowite
       investment:
         add: Głos
         already_added: Dodałeś już ten projekt inwestycyjny
-        already_supported: Już wsparłeś ten projekt inwestycyjny. Udostępnij go!
         support_title: Wesprzyj ten projekt
         supports:
-          zero: Brak wsparcia
-        give_support: Wsparcie
+          zero: Brak poparcia
+          one: 1 popierający
+          few: "%{count} popierających"
+          many: "%{count} popierających"
+          other: "%{count} popierających"
       header:
-        check_ballot: Sprawdź moje głosowanie
-        different_heading_assigned_html: "Posiadasz aktywne głosy w innym nagłówku: %{heading_link}"
+        check_ballot: "Sprawdź moje głosowanie"
+        different_heading_assigned: "Posiadasz aktywne głosy w innym nagłówku: %{heading_link}"
         change_ballot: "Jeśli zmienisz zdanie, możesz usunąć swoje głosy w %{check_ballot} i zacząć od nowa."
         check_ballot_link: "sprawdź moje głosowanie"
         price: "Ten dział ma budżet w wysokości"
-    progress_bar:
-      assigned: "Przypisałeś: "
-      available: "Dostępny budżet: "
+      votes:
+        already_supported: "Już wsparłeś ten projekt inwestycyjny. Udostępnij go!"
+        confirm_group:
+          one: "Możesz wspierać jedynie inwestycje w %{count} dzielnicy. Jeśli postanowisz kontynuować, nie będzie możliwości zmiany wyboru Twojej dzielnicy. Czy jesteś pewny/a?"
+          few: "Możesz wspierać tylko inwestycje w dzielnicy %{count}  Jeśli będziesz kontynuować, nie będziesz mógł/a zmienić dzielnicy. Jesteś pewny/a?  "
+          many: "Możesz wspierać tylko inwestycje w dzielnicy %{count}  Jeśli będziesz kontynuować, nie będziesz mógł/a zmienić dzielnicy. Jesteś pewny/a?  "
+          other: "Możesz wspierać jedynie inwestycje w %{count} dzielnicy. Jeśli postanowisz kontynuować, nie będzie możliwości zmiany wyboru Twojej dzielnicy. Czy jesteś pewny/a?"
+        support: "Poparcie"
+    investments_list:
+      investment:
+        price: "Koszt"
+        supports: "Wsparcie"
     show:
-      group: Grupa
-      phase: Aktualna faza
-      unfeasible_title: Niewykonalne inwestycje
-      unfeasible: Zobacz niewykonalne inwestycje
-      unselected_title: Inwestycje niewybrane do fazy głosowania
-      unselected: Zobacz inwestycje niewybrane do fazy głosowania
       see_results: Zobacz wyniki
     results:
       link: Wyniki
       page_title: "%{budget} - wyniki"
       heading: "Wyniki budżetu partycypacyjnego"
       heading_selection_title: "Przez powiat"
-      spending_proposal: Tytuł wniosku
+      ballot_lines_count: Głosów
       hide_discarded_link: Ukryj odrzucone
       show_all_link: Pokaż wszystkie
       price: Koszt
@@ -161,6 +160,18 @@ pl:
       investment_proyects: Lista wszystkich projektów inwestycyjnych
       unfeasible_investment_proyects: Lista wszystkich niewykonalnych projektów inwestycyjnych
       not_selected_investment_proyects: Lista wszystkich projektów inwestycyjnych nie wybranych do głosowania
+    executions:
+      link: "Kamienie milowe"
+      page_title: "%{budget} - Kamienie Milowe"
+      heading: "Kamienie milowe budżetu partycypacyjnego"
+      heading_selection_title: "Przez powiat"
+      no_winner_investments: "Brak zwycięskich inwestycji"
+      filters:
+        status:
+          label: "Bieżący stan projektu"
+          all: "Wszystko (%{count})"
+        milestone_tag:
+          all: "Wszystko (%{count})"
     phases:
       errors:
         dates_range_invalid: "Data rozpoczęcia nie może być taka sama lub późniejsza od daty zakończenia"

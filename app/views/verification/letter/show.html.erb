@@ -1,5 +1,4 @@
 <div class="row">
-  <%track_event(category: "verification", action: "start_letter" )%>
   <div class="small-12 column">
 
     <%= back_link_to account_path, t("verification.back") %>
@@ -7,12 +6,7 @@
     <h1><%= t("verification.letter.edit.title") %></h1>
 
     <div data-alert class="callout success">
-      <%= t("verification.letter.create.flash.success_html",
-          offices: link_to(t("verification.letter.create.flash.offices"),
-                           setting['verification_offices_url'],
-                           title: t('shared.target_blank_html'),
-                           target: "_blank")).html_safe
-      %>
+      <%= sanitize(t("verification.letter.create.flash.success")) %>
     </div>
 
     <%= link_to t("verification.letter.edit.see_all"), proposals_path, class: "button warning" %>

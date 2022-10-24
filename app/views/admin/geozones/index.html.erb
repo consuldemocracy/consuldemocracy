@@ -10,7 +10,7 @@
       <th><%= t("admin.geozones.geozone.external_code") %></th>
       <th><%= t("admin.geozones.geozone.census_code") %></th>
       <th><%= t("admin.geozones.geozone.coordinates") %></th>
-      <th class="small-3"><%= t("admin.actions.actions") %></th>
+      <th><%= t("admin.actions.actions") %></th>
     </tr>
   </thead>
 
@@ -22,17 +22,7 @@
         <td><%= geozone.census_code %></td>
         <td class="break"><%= geozone.html_map_coordinates %></td>
         <td>
-          <div class="small-6 column">
-            <%= link_to t("admin.geozones.index.edit"),
-                        edit_admin_geozone_path(geozone),
-                        class: "button hollow expanded" %>
-          </div>
-          <div class="small-6 column">
-            <%= link_to t("admin.geozones.index.delete"),
-                        admin_geozone_path(geozone),
-                        method: :delete,
-                        class: "button hollow alert expanded" %>
-          </div>
+          <%= render Admin::TableActionsComponent.new(geozone) %>
         </td>
       </tr>
     <% end %>

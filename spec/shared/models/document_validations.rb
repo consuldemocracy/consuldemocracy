@@ -1,11 +1,7 @@
 shared_examples "document validations" do |documentable_factory|
-  include DocumentsHelper
-  include DocumentablesHelper
-
   let!(:document)               { build(:document, documentable_factory.to_sym) }
-  let!(:documentable)           { document.documentable }
-  let!(:maxfilesize)            { max_file_size(document.documentable.class) }
-  let!(:acceptedcontenttypes)   { accepted_content_types(document.documentable.class) }
+  let!(:maxfilesize)            { document.max_file_size }
+  let!(:acceptedcontenttypes)   { document.accepted_content_types }
 
   it "is valid" do
     expect(document).to be_valid
@@ -26,14 +22,14 @@ shared_examples "document validations" do |documentable_factory|
   it "is valid for all accepted content types" do
     acceptedcontenttypes.each do |content_type|
       extension = content_type.split("/").last
-      document.attachment = File.new("spec/fixtures/files/empty.#{extension}")
+      document.attachment = fixture_file_upload("empty.#{extension}")
 
       expect(document).to be_valid
     end
   end
 
-  it 'is not valid for attachments larger than documentable max_file_size definition' do
-    allow(document).to receive(:attachment_file_size).and_return(maxfilesize.megabytes + 1.byte)
+  it "is not valid for attachments larger than documentable max_file_size definition" do
+    allow(document.attachment).to receive(:byte_size).and_return(maxfilesize.megabytes + 1.byte)
     max_size_error_message = "must be in between 0 Bytes and #{maxfilesize} MB"
 
     expect(document).not_to be_valid
@@ -47,17 +43,16 @@ shared_examples "document validations" do |documentable_factory|
   end
 
   it "is not valid without a documentable_id" do
-    document.save
+    document.save!
     document.documentable_id = nil
 
     expect(document).not_to be_valid
   end
 
   it "is not valid without a documentable_type" do
-    document.save
+    document.save!
     document.documentable_type = nil
 
     expect(document).not_to be_valid
   end
-
 end

@@ -4,51 +4,35 @@ sq:
       title: Administrim
     actions:
       actions: Veprimet
-      confirm: A je i sigurt?
       confirm_hide: Konfirmo moderimin
-      hide: Fsheh
-      hide_author: Fshih autorin
+      delete: "Fshi"
+      hide: Fshih
       restore: Kthej
       mark_featured: Karakteristika
       unmark_featured: Çaktivizo karakteristikat
-      edit: Redaktoj
+      edit: Ndrysho
       configure: Konfiguro
-      delete: Fshi
     banners:
       index:
         title: Banderol
         create: Krijo banderol
-        edit: Redakto banderol
-        delete: Fshi banderol
         filters:
           all: Të gjithë
           with_active: Aktiv
           with_inactive: Inaktiv
         preview: Parapamje
       banner:
-        title: Titull
-        description: Përshkrimi
-        target_url: Link
-        post_started_at: Post filloi në
-        post_ended_at: Post përfundoi në
         sections_label: Seksionet ku do të shfaqet
         sections:
           homepage: Kryefaqja
           debates: Debate
           proposals: Propozime
-          budgets: Buxhetimi me pjesëmarrje
+          budgets: Buxhetet  pjesëmarrës
           help_page: Faqja ndihmëse
-        background_color: Ngjyra e sfondit
-        font_color: Ngjyra e shkronjave
       edit:
         editing: Redakto banderol
         form:
           submit_button: Ruaj ndryshimet
-      errors:
-        form:
-          error:
-            one: "gabimi nuk lejonte që ky banderol të ruhej"
-            other: "gabimet nuk lejonin që ky banderol të ruhej"
       new:
         creating: Krijo banderol
     activity:
@@ -63,7 +47,7 @@ sq:
         filter: Shfaq
         filters:
           all: Të gjithë
-          on_comments: Komente
+          on_comments: Komentet
           on_debates: Debate
           on_proposals: Propozime
           on_users: Përdorues
@@ -72,22 +56,23 @@ sq:
         type: Tipi
         no_activity: Nuk ka aktivitet të moderatorëve.
     budgets:
+      actions:
+        edit: "Ndrysho buxhetin"
+        preview: "Parapamje"
       index:
-        title: Buxhetet me pjesëmarrje
+        title: Buxhetet  pjesëmarrës
         new_link: Krijo buxhet të ri
         filter: Filtër
         filters:
+          all: Të gjithë
           open: Hapur
           finished: Përfunduar
         budget_investments: Menaxho projektet
+        table_budget_type: "Tipi"
+        table_draft: "Drafti"
         table_name: Emri
         table_phase: Fazë
-        table_investments: Investimet
-        table_edit_groups: Grupet e titujve
-        table_edit_budget: Ndrysho
-        edit_groups: Ndrysho grupet e titujve
-        edit_budget: Ndrysho buxhetin
-        no_budgets: "Nuk ka buxhet të hapur."
+        no_budgets: "Nuk ka buxhet."
       create:
         notice: Buxheti i ri pjesëmarrës u krijua me sukses!
       update:
@@ -96,45 +81,44 @@ sq:
         title: Ndrysho buxhetin pjesëmarrës
         delete: Fshi buxhetin
         phase: Fazë
-        dates: Datat
         enabled: Aktivizuar
         actions: Veprimet
-        edit_phase: Ndrysho Fazën
         active: Aktiv
         blank_dates: Datat janë bosh
       destroy:
         success_notice: Buxheti u fshi me sukses
         unable_notice: Ju nuk mund të shkatërroni një Buxhet që ka investime të lidhura
-      new:
-        title: Buxheti i ri pjesëmarrës
+      show:
+        add_heading: "Vendos titullin"
       winners:
         calculate: Llogaritni investimet e fituesit
         calculated: Fituesit duke u llogaritur, mund të marrë një minutë.
         recalculate: Rivlerësoni Investimet e Fituesit
+    budget_groups:
+      name: "Emri"
+      form:
+        edit: "Ndrysho grupin"
+        submit: "Ruaj grupin"
+      index:
+        new_button: "Shto grup të ri"
+    budget_headings:
+      form:
+        population_info: "Fusha e popullimit të Kreut të buxhetit përdoret për qëllime statistikore në fund të Buxhetit për të treguar për çdo Kre që përfaqëson një zonë me popullatë sa përqindje votuan. Fusha është opsionale kështu që ju mund ta lini atë bosh nëse nuk zbatohet."
+        submit: "Ruaj titullin"
     budget_phases:
       edit:
-        start_date: Data e fillimit
-        end_date: Data e përfundimit
-        summary: Përmbledhje
-        summary_help_text: Ky tekst do të informojë përdoruesit për fazën. Për ta treguar atë edhe nëse faza nuk është aktive, zgjidhni kutinë e mëposhtme
-        description: Përshkrimi
+        title: "Ndrysho Fazën"
         description_help_text: Ky tekst do të shfaqet në kokë kur faza është aktive
-        enabled: Faza e aktivizuar
         enabled_help_text: Kjo fazë do të jetë publike në afatet kohore të buxhetit, si dhe aktivë për çdo qëllim tjetër
         save_changes: Ruaj ndryshimet
     budget_investments:
       index:
         heading_filter_all: Të gjitha krerët
-        administrator_filter_all: Administrator
+        administrator_filter_all: Të gjithë administratorët
         valuator_filter_all: Të gjithë vlerësuesit
         tags_filter_all: Të gjitha etiketat
         advanced_filters: Filtra të avancuar
         placeholder: Kërko projekte
-        sort_by:
-          placeholder: Ndaj sipas
-          id: ID
-          title: Titull
-          supports: Suporti
         filters:
           all: Të gjithë
           without_admin: Pa caktuar administratorin
@@ -147,8 +131,8 @@ sq:
           unfeasible: Parealizueshme
           min_total_supports: Mbështetje minimale
           winners: Fituesit
-          one_filter_html: "Filtrat aktuale të aplikuara:<b><em>%{filter}</em></b>"
-          two_filters_html: "Filtrat e aplikuara aktuale:<b><em>%{filter},%{advanced_filters}</em></b>"
+          one_filter: "Filtrat aktuale të aplikuara:<b><em>%{filter}</em></b>"
+          two_filters: "Filtrat e aplikuara aktuale:<b><em>%{filter},%{advanced_filters}</em></b>"
         buttons:
           filter: Filtër
         download_current_selection: "Filtër"
@@ -157,13 +141,12 @@ sq:
         assigned_admin: Administrator i caktuar
         no_admin_assigned: Asnjë admin i caktuar
         no_valuators_assigned: Asnjë vlerësues nuk është caktuar
-        no_valuation_groups: Asnjë grup vlerësimi nuk është caktuar
         feasibility:
-          feasible: "I mundshëm%{price}"
+          feasible: "I mundshëm"
           unfeasible: "Parealizueshme"
           undecided: "I pavendosur"
         selected: "I zgjedhur"
-        select: "Zgjedh"
+        select: "Zgjidh"
         list:
           id: ID
           title: Titull
@@ -172,13 +155,14 @@ sq:
           valuator: Vlerësues
           valuation_group: Grup vlerësuesish
           geozone: Fusha e veprimit
-          feasibility: Fizibilitetit
+          feasibility: Fizibiliteti
           valuation_finished: Vle. Fin.
           selected: I zgjedhur
           visible_to_valuators: Trego tek vlerësuesit
           author_username: Emri i përdoruesit të autorit
           incompatible: I papajtueshëm
-        cannot_calculate_winners: Buxheti duhet të qëndrojë në fazën "Projektet e votimit", "Rishikimi i fletëve të votimit" ose "Buxheti i përfunduar" me qëllim të llogaritjes së projekteve të fituesve
+          price: Çmim
+          author: Autor
         see_results: "Shiko rezultatet"
       show:
         assigned_admin: Administrator i caktuar
@@ -193,8 +177,7 @@ sq:
         heading: Kreu
         dossier: Dosje
         edit_dossier: Ndrysho dosjen
-        tags: Etiketimet
-        user_tags: Përdorues të etiketuar
+        tags: Etiketë
         undefined: E padefinuar
         compatibility:
           title: Pajtueshmëri
@@ -202,34 +185,26 @@ sq:
           "false": Pajtueshëm
         selection:
           title: Përzgjedhje
-          "true": I zgjedhur
-          "false": Jo të zgjedhur
         winner:
           title: Fitues
           "true": "Po"
           "false": "Jo"
-        image: "Imazh"
-        see_image: "Shiko imazhin"
-        no_image: "Pa imazh"
-        documents: "Dokumentet"
-        see_documents: "Shiko dokumentet (%{count})"
-        no_documents: "Pa dokumentet"
         valuator_groups: "Grup vlerësuesish"
       edit:
         classification: Klasifikim
         compatibility: Pajtueshmëri
-        mark_as_incompatible: Zgjidh si i papajtueshëm
         selection: Përzgjedhje
-        mark_as_selected: Shëno si të zgjedhur
-        assigned_valuators: Vlerësues
+        assigned_valuators: Vlerësuesit
         select_heading: Zgjidh shkrimin
         submit_button: Përditëso
         user_tags: Etiketat e caktuara të përdoruesit
-        tags: Etiketë
         tags_placeholder: "Shkruani etiketat që dëshironi të ndahen me presje (,)"
         undefined: E padefinuar
-        user_groups: "Grupet"
       search_unfeasible: Kërkoni të papërshtatshëm
+    budgets_wizard:
+      creation_timeline:
+        budget: Buxhet
+        groups: Grupet
     milestones:
       index:
         table_id: "ID"
@@ -238,8 +213,7 @@ sq:
         table_publication_date: "Data e publikimit"
         table_status: Statusi
         table_actions: "Veprimet"
-        delete: "Fshi momentet historik"
-        no_milestones: "Mos keni afate të përcaktuara"
+        no_milestones: "Nuk  keni pikëarritje të përcaktuara"
         image: "Imazh"
         show_image: "Trego imazhin"
         documents: "Dokumentet"
@@ -248,8 +222,6 @@ sq:
         no_statuses_defined: Ende nuk ka statuse të përcaktuara për investime
       new:
         creating: Krijo momentet historik
-        date: Data
-        description: Përshkrimi
       edit:
         title: Modifiko momentet historike
       create:
@@ -266,8 +238,6 @@ sq:
         table_name: Emri
         table_description: Përshkrimi
         table_actions: Veprimet
-        delete: Fshi
-        edit: Redaktoj
       edit:
         title: Ndrysho statusin e investimeve
       update:
@@ -278,7 +248,20 @@ sq:
         notice: Statusi i investimeve krijua me sukses
       delete:
         notice: Statusi i investimeve u fshi me sukses
+    progress_bars:
+      index:
+        table_id: "ID"
+        table_kind: "Tipi"
+        table_title: "Titull"
     comments:
+      index:
+        id: "ID"
+        content: "Përmbajtje"
+        author: "Autor"
+        commentable_type: "Tipi"
+        title: Komentet e fshehura
+        table_link: "Link"
+    hidden_comments:
       index:
         filter: Filtër
         filters:
@@ -288,13 +271,37 @@ sq:
         hidden_debate: Debati i fshehtë
         hidden_proposal: Propozimi i fshehur
         title: Komentet e fshehura
-        no_hidden_comments: Nuk ka komente të fshehura.
     dashboard:
       index:
         back: Shko pas tek %{org}
         title: Administrim
         description: Mirë se erdhët në panelin %{org} të admin.
+      actions:
+        index:
+          active: 'Po'
+          inactive: 'Jo'
+          action_title: Titull
+          action_type: Tipi
+          action_active: Aktiv
+          order: Porosi
+          default:
+            email: Email
+            polls: Sondazhet
+        form:
+          submit_button: Ruaj
+      administrator_tasks:
+        index:
+          filter: Filtër
+          filters:
+            pending: Në pritje
+        form:
+          proposal: Propozime
     debates:
+      index:
+        id: ID
+        author: Autor
+        title: Debate të fshehta
+    hidden_debates:
       index:
         filter: Filtër
         filters:
@@ -302,7 +309,10 @@ sq:
           with_confirmed_hide: Konfirmuar
           without_confirmed_hide: Në pritje
         title: Debate të fshehta
-        no_hidden_debates: Nuk ka debate të fshehura.
+    documents:
+      index:
+        new_link: "Shto dokument të ri"
+        title: "Dokumentet"
     hidden_users:
       index:
         filter: Filtër
@@ -314,9 +324,9 @@ sq:
         user: Përdorues
         no_hidden_users: Nuk ka përdorues të fshehur.
       show:
-        email: 'Email:'
-        hidden_at: 'Fshehur në:'
-        registered_at: 'Regjistruar në:'
+        email: "Email:"
+        hidden_at: "Fshehur në:"
+        registered_at: "Regjistruar në:"
         title: Aktiviteti i përdoruesit (%{user})
     hidden_budget_investments:
       index:
@@ -340,9 +350,6 @@ sq:
         edit:
           back: Pas
           submit_button: Ruaj ndryshimet
-        errors:
-          form:
-            error: Gabim
         form:
           enabled: Aktivizuar
           process: Proçes
@@ -351,52 +358,44 @@ sq:
           draft_phase_description: Nëse kjo fazë është aktive, procesi nuk do të renditet në indeksin e proceseve. Lejoni të parashini procesin dhe të krijoni përmbajtjen para fillimit.
           allegations_phase: Faza e komenteve
           proposals_phase: Faza e propozimit
-          start: Fillo
-          end: Fund
           use_markdown: Përdorni Markdown për të formatuar tekstin
-          title_placeholder: Titulli i procesit
-          summary_placeholder: Përmbledhje e shkurtër e përshkrimit
-          description_placeholder: Shto një përshkrim të procesit
-          additional_info_placeholder: Shto një informacion shtesë që e konsideron të dobishme
         index:
           create: Proces i ri
-          delete: Fshi
-          title: Proceset e legjislacionit
+          title: Legjislacion
           filters:
-            open: Hapur
-            next: Tjetër
-            past: E kaluara
+            active: Aktiv
             all: Të gjithë
         new:
           back: Pas
           title: Krijo një proces të ri bashkëpunues të legjislacionit
           submit_button: Krijo procesin
         proposals:
-          select_order: Ndaj sipas
           orders:
-            id: Id
-            title: Titull
-            supports: Suporti
+            id: "Id"
+            title: "Titull"
+            supports: "Suporti"
         process:
           title: Proçes
-          comments: Komente
+          comments: Komentet
           status: Statusi
-          creation_date: Data e krijimit
+          start_date: Data e fillimit
+          end_date: Data e përfundimit
           status_open: Hapur
           status_closed: Mbyllur
           status_planned: Planifikuar
         subnav:
           info: Informacion
+          homepage: Kryefaqja
+          draft_versions: Hartimi
           questions: Debate
           proposals: Propozime
+          milestones: Duke ndjekur
       proposals:
         index:
           title: Titull
           back: Pas
           id: Id
           supports: Suporti
-          select: Zgjidh
-          selected: I zgjedhur
         form:
           custom_categories: Kategoritë
           custom_categories_description: Kategoritë që përdoruesit mund të zgjedhin duke krijuar propozimin.
@@ -414,11 +413,8 @@ sq:
           back: Pas
           submit_button: Ruaj ndryshimet
           warning: Ju keni redaktuar tekstin, mos harroni të klikoni mbi Ruaj për të ruajtur përgjithmonë ndryshimet.
-        errors:
-          form:
-            error: Gabim
         form:
-          title_html: 'Ndrysho <span class="strong">%{draft_version_title}</span> nga procesi <span class="strong">%{process_title}</span>'
+          title: 'Ndrysho <span class="strong">%{draft_version_title}</span> nga procesi <span class="strong">%{process_title}</span>'
           launch_text_editor: Nis versionin e tekstit
           close_text_editor: Mbyll tekst editor
           use_markdown: Përdorni Markdown për të formatuar tekstin
@@ -427,9 +423,7 @@ sq:
             status:
               draft: Ju mund të shikoni paraprakisht si admin, askush tjetër nuk mund ta shohë atë
               published: E dukshme për të gjithë
-          title_placeholder: Shkruani titullin e versionit të draftit
           changelog_placeholder: Shto ndryshimet kryesore nga versioni i mëparshëm
-          body_placeholder: Shkruani tekstin e draftit
         index:
           title: Version drafti
           create: Krijo versionin
@@ -439,9 +433,6 @@ sq:
           back: Pas
           title: Krijo version të ri
           submit_button: Krijo versionin
-        statuses:
-          draft: Drafti
-          published: Publikuar
         table:
           title: Titull
           created_at: Krijuar në
@@ -461,13 +452,8 @@ sq:
           back: Pas
           title: "Ndrysho \"%{question_title}\""
           submit_button: Ruaj ndryshimet
-        errors:
-          form:
-            error: Gabim
         form:
           add_option: Shtoni opsionin
-          title: Pyetje
-          title_placeholder: Shto pyetjet
           value_placeholder: Shto një përgjigje të përafërt
           question_options: "Përgjigjet e mundshme (opsionale, sipas përgjigjeve të hapura)"
         index:
@@ -486,24 +472,30 @@ sq:
           comments_count: Numërimi i komenteve
         question_option_fields:
           remove_option: Hiq opsinon
+      milestones:
+        index:
+          title: Duke ndjekur
     managers:
       index:
         title: Menaxherët
-        name: Emri
-        email: Email
         no_managers: Nuk ka menaxherë.
       manager:
         add: Shto
-        delete: Fshi
       search:
-        title: 'Menaxherët: Kërkimi i përdoruesit'
+        title: "Menaxherët: Kërkimi i përdoruesit"
+    sdg_managers:
+      index:
+        no_sdg_managers: Nuk ka përdorues.
+    sdg/managers:
+      sdg/manager:
+        add: Shto
     menu:
       activity: Aktiviteti i moderatorit
       admin: Menuja e Administratorit
       banner: Menaxhoni banderolat
-      poll_questions: Pyetjet
+      proposals: Propozime
       proposals_topics: Temat e propozimeve
-      budgets: Buxhetet me pjesëmarrje
+      budgets: Buxhetet  pjesëmarrës
       geozones: Menaxho gjeozonat
       hidden_comments: Komentet e fshehura
       hidden_debates: Debate të fshehta
@@ -516,24 +508,23 @@ sq:
       moderators: Moderator
       messaging_users: Mesazhe për përdoruesit
       newsletters: Buletin informativ
-      admin_notifications: Njoftime
+      admin_notifications: Njoftimet
       system_emails: Emailet e sistemit
       emails_download: Shkarkimi i emaileve
-      valuators: Vlerësuesit
+      valuators: Vlerësues
       poll_officers: Oficerët e anketës
-      polls: Sondazh
+      polls: Sondazhet
       poll_booths: Vendndodhja e kabinave
       poll_booth_assignments: Detyrat e kabinave
       poll_shifts: Menaxho ndërrimet
       officials: Zyrtarët
-      organizations: Organizatat
+      organizations: Organizim
       settings: Parametrat globale
-      spending_proposals: Shpenzimet e propozimeve
       stats: Të dhëna statistikore
       signature_sheets: Nënshkrimi i fletëve
       site_customization:
         homepage: Kryefaqja
-        pages: Faqet e personalizuara
+        pages: Faqe e personalizuar
         images: Imazhe personalizuara
         content_blocks: Personalizimi i blloqeve të përmbatjeve
         information_texts: Tekste informacioni të personalizuara
@@ -541,7 +532,7 @@ sq:
           debates: "Debate"
           community: "Komunitet"
           proposals: "Propozime"
-          polls: "Sondazh"
+          polls: "Sondazhet"
           layouts: "Layouts"
           mailers: "Emailet"
           management: "Drejtuesit"
@@ -549,38 +540,32 @@ sq:
         buttons:
           save: "Ruaj"
       title_moderated_content: Përmbajtja e moderuar
-      title_budgets: Buxhet
-      title_polls: Sondazh
       title_profiles: Profilet
       title_settings: Opsione
       title_site_customization: Përmbajtja e faqes
       title_booths: Kabinat e votimit
       legislation: Legjislacioni Bashkëpunues
-      users: Përdoruesit
+      users: Përdorues
+      debates: "Debate"
+      comments: "Komentet"
     administrators:
       index:
         title: Administrator
-        name: Emri
-        email: Email
         id: Administrator ID
         no_administrators: Nuk ka administratorë.
       administrator:
         add: Shto
-        delete: Fshi
         restricted_removal: "Na vjen keq, nuk mund ta heqësh veten nga administratorët"
       search:
         title: "Administratorët: Kërkimi i përdoruesit"
     moderators:
       index:
-        title: Moderatorët
-        name: Emri
-        email: Email
+        title: Moderator
         no_moderators: Nuk ka moderator.
       moderator:
         add: Shto
-        delete: Fshi
       search:
-        title: 'Moderatorët: Kërkimi i përdoruesit'
+        title: "Moderatorët: Kërkimi i përdoruesit"
     segment_recipient:
       all_users: Te gjithe perdoruesit
       administrators: Administrator
@@ -604,23 +589,20 @@ sq:
         sent: Dërguar
         actions: Veprimet
         draft: Drafti
-        edit: Ndrysho
-        delete: Fshi
         preview: Parapamje
         empty_newsletters: Nuk ka buletin për të treguar
       new:
         title: Buletin informativ të ri
-        from: Adresa e emailit që do të shfaqet si dërgimi i buletinit
       edit:
         title: Ndrysho Buletinin informativ
       show:
         title: Parapamje e buletinit
-        send: Dërgo
+        send: Dergo
         affected_users: (%{n} përdoruesit e prekur)
         sent_emails:
           one: 1 email dërguar
           other: "%{count} emaile të dërguara"
-        sent_at: Dërguar në
+        sent_at: Dërguar tek
         subject: Subjekt
         segment_recipient: Marrësit
         from: Adresa e emailit që do të shfaqet si dërgimi i buletinit
@@ -633,15 +615,13 @@ sq:
       send_success: Njoftimi u dërgua me sukses
       delete_success: Njoftimi u fshi me sukses
       index:
-        section_title: Njoftime
+        section_title: Njoftimet
         new_notification: Njoftim i ri
         title: Titull
         segment_recipient: Marrësit
         sent: Dërguar
         actions: Veprimet
         draft: Drafti
-        edit: Ndrysho
-        delete: Fshi
         preview: Parapamje
         view: Pamje
         empty_notifications: Nuk ka njoftim për të treguar
@@ -656,7 +636,7 @@ sq:
         send: Dërgo njoftimin
         will_get_notified: (%{n} përdoruesit do të njoftohen)
         got_notified: (%{n} përdoruesit u njoftuan)
-        sent_at: Dërguar në
+        sent_at: Dërguar tek
         title: Titull
         body: Tekst
         link: Link
@@ -673,9 +653,13 @@ sq:
         send_pending: Dërgo në pritje
         send_pending_notification: Njoftimet në pritje janë dërguar me sukses
       proposal_notification_digest:
-        title: Përfundimi i njoftimeve të propozimeve
-        description: Mblidh të gjitha njoftimet e propozimeve për një përdorues në një mesazh të vetëm, për të shmangur shumë e-mail.
-        preview_detail: Përdoruesit do të marrin njoftime vetëm nga propozimet që po ndjekin
+        title: "Përfundimi i njoftimeve të propozimeve"
+        description: "Mblidh të gjitha njoftimet e propozimeve për një përdorues në një mesazh të vetëm, për të shmangur shumë e-mail."
+        preview_detail: "Përdoruesit do të marrin njoftime vetëm nga propozimet që po ndjekin"
+      comment:
+        title: "Koment"
+      reply:
+        title: "Përgjigju"
     emails_download:
       index:
         title: Shkarkimi i emaileve
@@ -695,21 +679,10 @@ sq:
         no_group: "Asnjë grup"
       valuator:
         add: Shto tek vlerësuesit
-        delete: Fshi
       search:
-        title: 'Vlerësuesit: Kërkimi i përdoruesit'
-      summary:
-        title: Përmbledhja e vlerësuesit për projektet e investimeve
-        valuator_name: Vlerësues
-        finished_and_feasible_count: Përfunduar dhe e realizueshme
-        finished_and_unfeasible_count: Përfunduar dhe e parealizueshme
-        finished_count: Përfunduar
-        in_evaluation_count: Në vlerësim
-        total_count: Totali
-        cost: Kosto
+        title: "Vlerësuesit: Kërkimi i përdoruesit"
       form:
         edit_title: "Vlerësuesit: Ndrysho vlerësuesin"
-        update: "Përditëso vlerësuesin"
         updated: "Vlerësuesi u përditësua me sukses"
       show:
         description: "Përshkrimi"
@@ -728,7 +701,6 @@ sq:
         title: "Grupi i vlerësuesve:%{group}"
         no_valuators: "Nuk ka ndonjë vlerësues të caktuar për këtë grup"
       form:
-        name: "Emri grupit"
         new: "Krijo grupin e vlerësuesve"
         edit: "Ruaj grupin e vlerësuesve"
     poll_officers:
@@ -742,7 +714,6 @@ sq:
         entry_name: oficer
       search:
         email_placeholder: Kërko përdoruesin me email
-        search: Kërko
         user_not_found: Përdoruesi nuk u gjet
     poll_officer_assignments:
       index:
@@ -761,7 +732,6 @@ sq:
         shift: "Caktim"
         shifts: "Ndërrime në këtë kabinë"
         date: "Data"
-        task: "Task"
         edit_shifts: Ndrysho ndërrimet
         new_shift: "Ndërrim i ri"
         no_shifts: "Kjo kabinë nuk ka ndërrime"
@@ -796,11 +766,6 @@ sq:
     poll_booth_assignments:
       alert:
         shifts: "Ka ndërrime të lidhura me këtë kabinë. Nëse hiqni caktimin e kabinës, ndërrimet do të fshihen gjithashtu. Vazhdo?"
-      flash:
-        destroy: "Kabina nuk është caktuar më"
-        create: "Kabinë e caktuar"
-        error_destroy: "Ndodhi një gabim gjatë heqjes së caktimit të kabinës"
-        error_create: "Ndodhi një gabim kur caktohet kabina në sondazh"
       show:
         location: "Vendndodhja"
         officers: "Oficeret"
@@ -825,13 +790,11 @@ sq:
         create: "Krijo sondazhin"
         name: "Emri"
         dates: "Datat"
+        start_date: "Data e fillimit"
+        closing_date: "Data e mbylljes"
         geozone_restricted: "E kufizuar në rrethe"
       new:
         title: "Sondazhi i ri"
-        show_results_and_stats: "Trego rezultatet dhe statistikat"
-        show_results: "Shfaq rezultatet"
-        show_stats: "Shfaq statistikat"
-        results_and_stats_reminder: "Duke shënuar këto kuti kontrolli rezultatet dhe / ose statistikat e këtij sondazhi do të jenë në dispozicion të publikut dhe çdo përdorues do t'i shohë ato."
         submit_button: "Krijo sondazhin"
       edit:
         title: "Ndrysho sondazhin"
@@ -860,11 +823,11 @@ sq:
         create_question: "Krijo pyetje"
         table_proposal: "Propozime"
         table_question: "Pyetje"
+        table_poll: "Sondazh"
       edit:
         title: "Ndrysho pyetjet"
       new:
-        title: "Krijo pyetje"
-        poll_label: "Sondazh"
+        title_proposal: "Krijo pyetje"
       answers:
         images:
           add_image: "Shto imazhin"
@@ -878,11 +841,11 @@ sq:
         add_answer: Shto përgjigje
         video_url: Video e jashtme
         answers:
-          title: Përgjigjet
+          title: Përgjigje
           description: Përshkrimi
           videos: Videot
           video_list: Lista e videove
-          images: Imazhet
+          images: Imazh
           images_list: Lista e imazheve
           documents: Dokumentet
           documents_list: Lista e dokumentave
@@ -894,7 +857,7 @@ sq:
       show:
         title: Titull
         description: Përshkrimi
-        images: Imazhet
+        images: Imazh
         images_list: Lista e imazheve
         edit: Ndrysho përgjigjet
       edit:
@@ -913,6 +876,7 @@ sq:
       index:
         title: "Rinumërimet"
         no_recounts: "Nuk ka asgjë për t'u rinumëruar"
+        total_system: "Votat (automatik)"
         table_booth_name: "Kabinë"
         table_total_recount: "Totali i rinumërimeve (nga oficer)"
         table_system_count: "Votat (automatik)"
@@ -924,7 +888,7 @@ sq:
         table_whites: "Vota të plota"
         table_nulls: "Votat e pavlefshme"
         table_total: "Totali i fletëvotimeve"
-        table_answer: Përgjigjet
+        table_answer: Përgjigje
         table_votes: Votim
       results_by_booth:
         booth: Kabinë
@@ -941,8 +905,6 @@ sq:
         no_location: "Asnjë vendndodhje"
       new:
         title: "Kabinë e re"
-        name: "Emri"
-        location: "Vendndodhja"
         submit_button: "Krijo Kabinën"
       edit:
         title: "Ndrysho kabinën"
@@ -951,13 +913,12 @@ sq:
         location: "Vendndodhja"
       booth:
         shifts: "Menaxho ndërrimet"
-        edit: "Ndrysho kabinën"
     officials:
       edit:
         destroy: Hiq statusin 'Zyrtar'
-        title: 'Zyrtarët: Ndryshoni përdoruesin'
+        title: "Zyrtarët: Ndryshoni përdoruesin"
       flash:
-        official_destroyed: 'Detajet e ruajtura: përdoruesi nuk është më zyrtar'
+        official_destroyed: "Detajet e ruajtura: përdoruesi nuk është më zyrtar"
         official_updated: Detajet e zyrtarëve të ruajtur
       index:
         title: Zyrtarët
@@ -972,9 +933,8 @@ sq:
       level_4: Nivel 4
       level_5: Nivel 5
       search:
-        edit_official: Ndrysho zyrtar
         make_official: Bëni zyrtar
-        title: 'Pozicionet zyrtare: Kërkimi i përdoruesit'
+        title: "Pozicionet zyrtare: Kërkimi i përdoruesit"
         no_results: Pozitat zyrtare nuk u gjetën.
     organizations:
       index:
@@ -984,7 +944,7 @@ sq:
           pending: Në pritje
           rejected: Refuzuar
           verified: Verifikuar
-        hidden_count_html:
+        hidden_count:
           one: Ka gjithashtu<strong>një organizatë</strong>me asnjë përdorues ose me një përdorues të fshehur.
           other: Janë gjithashtu<strong> %{count} organizatat</strong>me asnjë përdorues ose me një përdorues të fshehur.
         name: Emri
@@ -995,16 +955,31 @@ sq:
         no_organizations: Nuk ka organizata.
         reject: Refuzuar
         rejected: Refuzuar
-        search: Kërko
-        search_placeholder: Emri, emaili ose numri i telefonit
-        title: Organizatat
+        title: Organizim
         verified: Verifikuar
         verify: Verifiko
         pending: Në pritje
       search:
         title: Kërko Organizatat
         no_results: Asnjë organizatë nuk u gjet.
-    proposal_notifications:
+    proposals:
+      index:
+        title: Propozime
+        id: ID
+        author: Autor
+        select: Zgjidh
+        selected: I zgjedhur
+        milestones: Pikëarritje
+    hidden_proposals:
+      index:
+        filter: Filtër
+        filters:
+          all: Të gjithë
+          with_confirmed_hide: Konfirmuar
+          without_confirmed_hide: Në pritje
+        title: Propozime të fshehura
+        no_hidden_proposals: Nuk ka propozime të fshehura.
+    hidden_proposal_notifications:
       index:
         filter: Filtër
         filters:
@@ -1017,18 +992,12 @@ sq:
       flash:
         updated: Vlera e përditësuar
       index:
-        banners: Stili i banderolës
-        banner_imgs: Imazhet banderol
-        no_banners_images: Jo Imazhet banderol
-        no_banners_styles: Jo Stil i banderolës
         title: Cilësimet e konfigurimit
+        general: Cilësimet e konfigurimit
         update_setting: Përditëso
         feature_flags: Karakteristikat
         features:
           enabled: "Funksioni i aktivizuar"
-          disabled: "Funksioni i caktivizuar"
-          enable: "Aktivizuar"
-          disable: "Caktivizo"
         map:
           title: Konfigurimi i hartës
           help: Këtu mund të personalizoni mënyrën se si hartë shfaqet tek përdoruesit. Zvarrit shënuesin e hartës ose kliko kudo mbi hartën, vendosni zmadhimin e dëshiruar dhe klikoni butonin "Përditëso".
@@ -1037,30 +1006,19 @@ sq:
           form:
             submit: Përditëso
       setting: Karakteristikat
-      setting_actions: Veprimet
       setting_name: Opsione
-      setting_status: Statusi
       setting_value: Vlerë
       no_description: "Jo Përshkrim"
     shared:
-      booths_search:
-        button: Kërko
-        placeholder: Kërko kabinat sipas emrit
-      poll_officers_search:
-        button: Kërko
-        placeholder: Kërko ofruesit e sondazhit
-      poll_questions_search:
-        button: Kërko
-        placeholder: Kërkoni pyetjet e sondazhit
-      proposal_search:
-        button: Kërko
-        placeholder: Kërkoni propozime sipas titullit, kodit, përshkrimit ose pyetjes
-      spending_proposal_search:
-        button: Kërko
-        placeholder: Kërko shpenzimet e propozimeve sipas titullit ose përshkrimit
-      user_search:
-        button: Kërko
-        placeholder: Kërko përdoruesin sipas emrit ose email
+      search:
+        label:
+          booths: "Kërko kabinat sipas emrit"
+          organizations: "Emri, emaili ose numri i telefonit"
+          poll_officers: "Kërko ofruesit e sondazhit"
+          poll_questions: "Kërkoni pyetjet e sondazhit"
+          proposals: "Kërkoni propozime sipas titullit, kodit, përshkrimit ose pyetjes"
+          users: "Kërko përdoruesin sipas emrit ose email"
+        search: "Kërko"
       search_results: "Kërko rezultatet"
       no_search_results: "Nuk u gjetën rezultate."
       actions: Veprimet
@@ -1074,78 +1032,16 @@ sq:
       author: Autor
       content: Përmbajtje
       created_at: Krijuar në
-    spending_proposals:
-      index:
-        geozone_filter_all: Të gjitha zonat
-        administrator_filter_all: Të gjithë administratorët
-        valuator_filter_all: Të gjithë vlerësuesit
-        tags_filter_all: Të gjitha etiketat
-        filters:
-          valuation_open: Hapur
-          without_admin: Pa caktuar administratorin
-          managed: Menaxhuar
-          valuating: Nën vlerësimin
-          valuation_finished: Vlerësimi përfundoi
-          all: Të gjithë
-        title: Projektet e investimeve për buxhetimin me pjesëmarrje
-        assigned_admin: Administrator i caktuar
-        no_admin_assigned: Asnjë admin i caktuar
-        no_valuators_assigned: Asnjë vlerësues nuk është caktuar
-        summary_link: "Përmbledhje e projektit të investimeve"
-        valuator_summary_link: "Përmbledhja e vlerësuesit"
-        feasibility:
-          feasible: "I mundshëm%{price}"
-          not_feasible: "Nuk është e realizueshme"
-          undefined: "E padefinuar"
-      show:
-        assigned_admin: Administrator i caktuar
-        assigned_valuators: Vlerësuesit e caktuar
-        back: Pas
-        classification: Klasifikim
-        heading: "Projekt investimi%{id}"
-        edit: Ndrysho
-        edit_classification: Ndrysho klasifikimin
-        association_name: Asociacion
-        by: Nga
-        sent: Dërguar
-        geozone: Qëllim
-        dossier: Dosje
-        edit_dossier: Ndrysho dosjen
-        tags: Etiketimet
-        undefined: E padefinuar
-      edit:
-        classification: Klasifikim
-        assigned_valuators: Vlerësuesit
-        submit_button: Përditëso
-        tags: Etiketë
-        tags_placeholder: "Shkruani etiketat që dëshironi të ndahen me presje (,)"
-        undefined: E padefinuar
-      summary:
-        title: Përmbledhje për projektet e investimeve
-        title_proposals_with_supports: Përmbledhje për projektet e investimeve me mbështetje
-        geozone_name: Qëllim
-        finished_and_feasible_count: Përfunduar dhe e realizueshme
-        finished_and_unfeasible_count: Përfunduar dhe e parealizueshme
-        finished_count: Përfunduar
-        in_evaluation_count: Në vlerësim
-        total_count: Totali
-        cost_for_geozone: Kosto
+      show_results_and_stats: "Trego rezultatet dhe statistikat"
     geozones:
       index:
         title: Gjeozona
         create: Krijo gjeozonë
-        edit: Ndrysho
-        delete: Fshi
       geozone:
         name: Emri
         external_code: Kodi i jashtëm
         census_code: Kodi i regjistrimit
         coordinates: Koordinatat
-      errors:
-        form:
-          error:
-            one: "gabimi e pengoi këtë gjeozonë të ruhej"
-            other: 'gabimet e penguan këtë gjeozonë të ruhej'
       edit:
         form:
           submit_button: Ruaj ndryshimet
@@ -1167,13 +1063,12 @@ sq:
         new: Fletë të reja nënshkrimi
       new:
         title: Fletë të reja nënshkrimi
-        document_numbers_note: "Shkruani numrat që dëshironi të ndahen me presje (,)"
+        document_numbers_note: "Shkruani numrat që dëshironi të ndahen me pikëpresje (;)"
         submit: Krijo Fletë nënshkrimi
       show:
         created_at: Krijuar
         author: Autor
-        documents: Dokumentet
-        document_count: "Numri i dokumenteve:"
+        users: Përdorues
         verified:
           one: "Ky është %{count} nënshkrim i vlefshëm"
           other: "Këto janë %{count} nënshkrime të vlefshme"
@@ -1194,7 +1089,6 @@ sq:
           proposals: Propozime
           budgets: Hap buxhetin
           budget_investments: Projekt investimi
-          spending_proposals: Shpenzimet e propozimeve
           unverified_users: Përdoruesit e paverifikuar
           user_level_three: Përdoruesit e nivelit të tretë
           user_level_two: Përdoruesit e nivelit të dytë
@@ -1203,13 +1097,23 @@ sq:
           verified_users_who_didnt_vote_proposals: Përdoruesit e verifikuar që nuk votuan propozime
           visits: Vizitat
           votes: Totali i votimeve
-        spending_proposals_title: Shpenzimet e propozimeve
-        budgets_title: Buxhetimi me pjesëmarrje
-        visits_title: Vizitat
+        budgets_title: Buxhetet  pjesëmarrës
+        participatory_budgets: Buxhetet  pjesëmarrës
         direct_messages: Mesazhe direkte
         proposal_notifications: Notifikimi i propozimeve
         incomplete_verifications: Verifikime jo të plota
         polls: Sondazhet
+      graph:
+        debate_created: Debate
+        visit: Vizitat
+        proposal_created: Propozimi qytetar
+      budget_balloting:
+        vote_count: Votim
+        participant_count: Pjesëmarrësit
+      budget_supporting:
+        users: Përdorues
+        vote_count: Votim
+        participant_count: Pjesëmarrësit
       direct_messages:
         title: Mesazhe direkte
         total: Totali
@@ -1229,18 +1133,20 @@ sq:
           question_name: Pyetje
           origin_web: Pjesëmarrësit në web
           origin_total: Totali i Pjesëmarrësve
+      sdg:
+        debates: "Debate"
+        polls: "Sondazhet"
+        proposals: "Propozime"
     tags:
       create: Krijo një temë
-      destroy: Fshi temën
       index:
         add_tag: Shto një temë të re propozimi
         title: Temat e propozimeve
         topic: Temë
         help: "Kur një përdorues krijon një propozim, temat e mëposhtme sugjerohen si etiketa default."
-      name:
-        placeholder: Shkruani emrin e temës
     users:
       columns:
+        id: ID
         name: Emri
         email: Email
         document_number: Numri i dokumentit
@@ -1249,9 +1155,11 @@ sq:
       index:
         title: Përdorues
         no_users: Nuk ka përdorues.
+        filter: Filtër
+        filters:
+          active: Aktiv
       search:
         placeholder: Kërko përdoruesin sipas email, emrin ose numrin e dokumentit
-        search: Kërko
     verifications:
       index:
         phone_not_given: Telefon nuk është dhënë
@@ -1260,9 +1168,7 @@ sq:
     site_customization:
       content_blocks:
         information: Informacion rreth blloqeve të përmbajtjes
-        about: Mund të krijoni blloqe të përmbajtjes HTML që duhet të futni në kokë ose në fund të CONSUL-it tuaj.
-        top_links_html: "<strong>Header blocks(lidhjet kryesore)</strong>janë blloqe të lidhjeve që duhet të kenë këtë format:"
-        footer_html: "<strong>Footer blocks</strong>mund të ketë ndonjë format dhe mund të përdoret për të futur Javascript, CSS ose HTML."
+        about: "Mund të krijoni blloqe të përmbajtjes HTML që duhet të futni në kokë ose në fund të CONSUL-it tuaj."
         no_blocks: "Nuk ka blloqe përmbajtjeje."
         create:
           notice: Blloku i përmbajtjes është krijuar me sukses
@@ -1274,9 +1180,6 @@ sq:
           notice: Blloku i përmbajtjes është fshirë me sukses
         edit:
           title: Ndrysho bllokun e përmbajtjes
-        errors:
-          form:
-            error: Gabim
         index:
           create: Krijo bllok të ri të përmbajtjes
           delete: Fshi bllokun
@@ -1314,9 +1217,6 @@ sq:
           notice: Faqja u fshi me sukses
         edit:
           title: Ndrysho %{page_title}
-        errors:
-          form:
-            error: Gabim
         form:
           options: Opsionet
         index:
@@ -1330,10 +1230,11 @@ sq:
           created_at: Krijuar në
           status: Statusi
           updated_at: Përditësuar në
-          status_draft: Drafti
-          status_published: Publikuar
           title: Titull
           slug: Slug
+        cards:
+          create_card: Krijo kartë
+          no_cards: Nuk ka karta.
     homepage:
       title: Kryefaqja
       description: Modulet aktive shfaqen në faqen kryesore në të njëjtën mënyrë si këtu.
@@ -1343,15 +1244,10 @@ sq:
       cards_title: Kartat
       create_card: Krijo kartë
       no_cards: Nuk ka karta.
-      cards:
-        title: Titull
-        description: Përshkrimi
-        link_text: Linku tekstit
-        link_url: Linku URL
       feeds:
         proposals: Propozime
         debates: Debate
-        processes: Proçese
+        processes: Proçes
       new:
         header_title: Header i ri
         submit_header: Krijo header
@@ -1362,6 +1258,15 @@ sq:
         submit_header: Ruaj titullin
         card_title: Ndrysho kartën
         submit_card: Ruaj kartën
-    translations:
-      remove_language: Hiq gjuhën
-      add_language: Shto gjuhën
+    audits:
+      id: "ID"
+      actions: "Veprimet"
+    local_census_records:
+      index:
+        document_type: Tipi i dokumentit
+        document_number: Numri i dokumentit
+        date_of_birth: Data e lindjes
+    machine_learning:
+      related_content: "Përmbajtja e ngjashme"
+      tab_help: "Ndihmë"
+      tags: "Etiketë"

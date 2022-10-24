@@ -1,1 +1,621 @@
 fi:
+  admin:
+    header:
+      title: Järjestelmänvalvonta
+    actions:
+      actions: Toiminnot
+      delete: "Poista"
+      hide: Piilota
+      restore: Palauta
+      edit: Muokkaa
+      configure: Määritä
+    banners:
+      index:
+        title: Bannerit
+        create: Luo banneri
+        filters:
+          all: Kaikki
+          with_active: Aktiivinen
+          with_inactive: Passiivinen
+        preview: Esikatselu
+      banner:
+        sections:
+          homepage: Kotisivu
+          proposals: Ehdotukset
+          help_page: Ohje-sivu
+      edit:
+        editing: Muokkaa banneria
+        form:
+          submit_button: Tallenna muutokset
+      new:
+        creating: Luo banneri
+    activity:
+      show:
+        action: Toiminto
+        actions:
+          block: Estetty
+          hide: Piilotettu
+          restore: Palautettu
+        content: Sisältö
+        filter: Näytä
+        filters:
+          all: Kaikki
+          on_comments: Kommentit
+          on_proposals: Ehdotukset
+          on_users: Käyttäjät
+        type: Tyyppi
+    budgets:
+      actions:
+        edit: "Muokkaa budjettia"
+        preview: "Esikatselu"
+      index:
+        new_link: Luo uusi budjetti
+        filter: Suodatin
+        filters:
+          all: Kaikki
+          open: Avaa
+          finished: Päättynyt
+        table_budget_type: "Tyyppi"
+        table_name: Nimi
+        table_phase: Vaihe
+      edit:
+        delete: Poista budjetti
+        phase: Vaihe
+        enabled: Käytössä
+        actions: Toiminnot
+        active: Aktiivinen
+      destroy:
+        success_notice: Budjetti poistettu onnistuneesti
+    budget_groups:
+      name: "Nimi"
+      create:
+        notice: "Ryhmä luotu onnistuneesti!"
+      update:
+        notice: "Ryhmä päivitetty onnistuneesti"
+      destroy:
+        success_notice: "Ryhmä poistettu onnistuneesti"
+      form:
+        create: "Luo uusi ryhmä"
+        edit: "Muokkaa ryhmää"
+        submit: "Tallenna ryhmä"
+    budget_headings:
+      index:
+        back: "Takaisin ryhmiin"
+    budget_phases:
+      edit:
+        title: "Muokkaa vaihetta"
+        save_changes: Tallenna muutokset
+    budget_investments:
+      index:
+        administrator_filter_all: Kaikki järjestelmänvalvojat
+        tags_filter_all: Kaikki tunnisteet
+        advanced_filters: Edistyneet suodattimet
+        placeholder: Hae projekteja
+        filters:
+          all: Kaikki
+          selected: Valittu
+          unfeasible: Toteuttamiskelvoton
+          winners: Voittajat
+          one_filter: "Käytössä olevat suodattimet: <b><em>%{filter}</em></b>"
+          two_filters: "Käytössä olevat suodattimet: <b><em>%{filter}, %{advanced_filters}</em></b>"
+        buttons:
+          filter: Suodatin
+        feasibility:
+          unfeasible: "Toteuttamiskelvoton"
+        selected: "Valittu"
+        select: "Valitse"
+        list:
+          id: ID
+          admin: Järjestelmänvalvoja
+          feasibility: Toteutettavuus
+          selected: Valittu
+          author_username: Tekijän käyttäjätunnus
+          incompatible: Yhteensopimaton
+          price: Hinta
+          author: Tekijä
+        see_results: "Näytä tulokset"
+      show:
+        classification: Luokitus
+        edit: Muokkaa
+        group: Ryhmä
+        tags: Tunnisteet
+        undefined: Määrittelemätön
+        compatibility:
+          title: Yhteensopivuus
+          "true": Yhteensopimaton
+          "false": Yhteensopiva
+        selection:
+          title: Valinta
+        winner:
+          title: Voittaja
+          "true": "Kyllä"
+          "false": "Ei"
+      edit:
+        classification: Luokitus
+        compatibility: Yhteensopivuus
+        selection: Valinta
+        submit_button: Päivitä
+        undefined: Määrittelemätön
+    budgets_wizard:
+      creation_timeline:
+        budget: Budjetti
+        groups: Ryhmät
+    milestones:
+      index:
+        table_id: "ID"
+        table_description: "Kuvaus"
+        table_publication_date: "Julkaisupäivä"
+        table_status: Tila
+        table_actions: "Toiminnot"
+        no_milestones: "Ei määriteltyjä tavoitteita"
+        image: "Kuva"
+        show_image: "Näytä kuva"
+        documents: "Asiakirjat"
+        milestone: Tavoite
+        new_milestone: Luo uusi tavoite
+      new:
+        creating: Luo tavoite
+      edit:
+        title: Muokkaa tavoite
+      create:
+        notice: Uusi tavoite luotu onnistuneesti!
+      update:
+        notice: Tavoite päivitetty onnistuneesti
+      delete:
+        notice: Tavoite poistettu onnistuneesti
+    statuses:
+      index:
+        title: Tavoitteen tilat
+        table_name: Nimi
+        table_description: Kuvaus
+        table_actions: Toiminnot
+      edit:
+        title: Muokkaa tavoitteen tilaa
+    progress_bars:
+      index:
+        table_id: "ID"
+        table_kind: "Tyyppi"
+    comments:
+      index:
+        id: "ID"
+        content: "Sisältö"
+        author: "Tekijä"
+        commentable_type: "Tyyppi"
+        title: Piilotetut kommentit
+        table_link: "Linkki"
+    hidden_comments:
+      index:
+        filter: Suodatin
+        filters:
+          all: Kaikki
+          with_confirmed_hide: Vahvistettu
+          without_confirmed_hide: Vireillä
+        hidden_proposal: Piilotettu ehdotus
+        title: Piilotetut kommentit
+    dashboard:
+      index:
+        back: Mene takaisin %{org}
+        title: Järjestelmänvalvonta
+      actions:
+        index:
+          active: 'Kyllä'
+          inactive: 'Ei'
+          action_type: Tyyppi
+          action_active: Aktiivinen
+          order: Järjestys
+          default:
+            email: Sähköposti
+            polls: Kyselyt
+        form:
+          submit_button: Tallenna
+      administrator_tasks:
+        index:
+          filter: Suodatin
+          filters:
+            pending: Vireillä
+        form:
+          proposal: Ehdotus
+    debates:
+      index:
+        id: ID
+        author: Tekijä
+    hidden_debates:
+      index:
+        filter: Suodatin
+        filters:
+          all: Kaikki
+          with_confirmed_hide: Vahvistettu
+          without_confirmed_hide: Vireillä
+    documents:
+      index:
+        title: "Asiakirjat"
+        url: "URL"
+    hidden_users:
+      index:
+        filter: Suodatin
+        filters:
+          all: Kaikki
+          with_confirmed_hide: Vahvistettu
+          without_confirmed_hide: Vireillä
+        title: Piilotetut käyttäjät
+        user: Käyttäjä
+        no_hidden_users: Ei piilotettuja käyttäjiä.
+      show:
+        email: "Sähköposti:"
+    hidden_budget_investments:
+      index:
+        filter: Suodatin
+        filters:
+          all: Kaikki
+          with_confirmed_hide: Vahvistettu
+          without_confirmed_hide: Vireillä
+    legislation:
+      processes:
+        edit:
+          back: Takaisin
+          submit_button: Tallenna muutokset
+        form:
+          enabled: Käytössä
+          process: Prosessi
+        index:
+          create: Uusi prosessi
+          filters:
+            active: Aktiivinen
+            all: Kaikki
+        new:
+          back: Takaisin
+          submit_button: Luo prosessi
+        proposals:
+          orders:
+            id: "Id"
+        process:
+          title: Prosessi
+          comments: Kommentit
+          status: Tila
+          start_date: Aloituspäivä
+          end_date: Päättymispäivä
+          status_open: Avaa
+          status_closed: Suljettu
+        subnav:
+          info: Tiedot
+          homepage: Kotisivu
+          proposals: Ehdotukset
+      proposals:
+        index:
+          back: Takaisin
+          id: Id
+        form:
+          custom_categories: Kategoriat
+      draft_versions:
+        destroy:
+          notice: Luonnos poistettu onnistuneesti
+        edit:
+          back: Takaisin
+          submit_button: Tallenna muutokset
+        form:
+          close_text_editor: Sulje tekstieditori
+        index:
+          delete: Poista
+          preview: Esikatselu
+        new:
+          back: Takaisin
+        table:
+          created_at: Luotu
+          comments: Kommentit
+          status: Tila
+      questions:
+        destroy:
+          notice: Kysymys poistettu onnistuneesti
+        edit:
+          back: Takaisin
+          submit_button: Tallenna muutokset
+        index:
+          back: Takaisin
+          create: Luo kysymys
+          delete: Poista
+        new:
+          back: Takaisin
+          submit_button: Luo kysymys
+    managers:
+      manager:
+        add: Lisää
+    sdg/managers:
+      sdg/manager:
+        add: Lisää
+    menu:
+      proposals: Ehdotukset
+      hidden_comments: Piilotetut kommentit
+      hidden_proposals: Piilotetut ehdotukset
+      hidden_users: Piilotetut käyttäjät
+      newsletters: Uutiskirjeet
+      admin_notifications: Ilmoitukset
+      polls: Kyselyt
+      organizations: Organisaatiot
+      site_customization:
+        homepage: Kotisivu
+        pages: Mukautetut sivut
+        information_texts_menu:
+          community: "Yhteisö"
+          proposals: "Ehdotukset"
+          polls: "Kyselyt"
+          mailers: "Sähköpostit"
+          welcome: "Tervetuloa"
+        buttons:
+          save: "Tallenna"
+      users: Käyttäjät
+      comments: "Kommentit"
+    administrators:
+      index:
+        id: Järjestelmänvalvojan ID
+      administrator:
+        add: Lisää
+    moderators:
+      moderator:
+        add: Lisää
+    segment_recipient:
+      proposal_authors: Ehdotuksen tekijät
+    newsletters:
+      delete_success: Uutiskirje poistettu onnistuneesti
+      index:
+        title: Uutiskirjeet
+        subject: Aihe
+        actions: Toiminnot
+        preview: Esikatselu
+      show:
+        send: Lähetä
+        subject: Aihe
+    admin_notifications:
+      delete_success: Ilmoitus poistettu onnistuneesti
+      index:
+        section_title: Ilmoitukset
+        actions: Toiminnot
+        preview: Esikatselu
+      show:
+        send: Lähetä ilmoitus
+        body: Teksti
+        link: Linkki
+    system_emails:
+      comment:
+        title: "Kommentti"
+      reply:
+        title: "Vastaa"
+    valuators:
+      index:
+        name: Nimi
+        email: Sähköposti
+        description: Kuvaus
+        no_description: Ei kuvausta
+        group: "Ryhmä"
+      show:
+        description: "Kuvaus"
+        email: "Sähköposti"
+        group: "Ryhmä"
+        no_description: "Ilman kuvausta"
+    valuator_groups:
+      index:
+        name: "Nimi"
+    poll_officers:
+      officer:
+        add: Lisää
+        name: Nimi
+        email: Sähköposti
+      search:
+        user_not_found: Käyttäjää ei löydy
+    poll_officer_assignments:
+      index:
+        table_name: "Nimi"
+        table_email: "Sähköposti"
+      by_officer:
+        date: "Päivämäärä"
+    poll_shifts:
+      new:
+        date: "Päivämäärä"
+        search_officer_button: Etsi
+        table_email: "Sähköposti"
+        table_name: "Nimi"
+    poll_booth_assignments:
+      show:
+        date: "Päivämäärä"
+      index:
+        table_name: "Nimi"
+    polls:
+      index:
+        name: "Nimi"
+        dates: "Päivämäärät"
+        start_date: "Aloituspäivä"
+        closing_date: "Sulkeutumispäivä"
+      show:
+        questions_tab: Kysymykset
+    questions:
+      index:
+        title: "Kysymykset"
+        create: "Luo kysymys"
+        questions_tab: "Kysymykset"
+        create_question: "Luo kysymys"
+        table_proposal: "Ehdotus"
+        table_question: "Kysymys"
+        table_poll: "Kysely"
+      new:
+        title_proposal: "Luo kysymys"
+      answers:
+        images:
+          add_image: "Lisää kuva"
+      show:
+        author: Tekijä
+        question: Kysymys
+        video_url: Ulkoinen video
+        answers:
+          title: Vastaus
+          description: Kuvaus
+          videos: Videot
+          video_list: Videolista
+          images: Kuvat
+          documents: Asiakirjat
+          document_actions: Toiminnot
+    answers:
+      show:
+        description: Kuvaus
+        images: Kuvat
+      videos:
+        index:
+          title: Videot
+          add_video: Lisää video
+          video_url: Ulkoinen video
+        new:
+          title: Uusi video
+        edit:
+          title: Muokkaa videota
+    results:
+      result:
+        table_answer: Vastaus
+        table_votes: Äänet
+      results_by_booth:
+        see_results: Näytä tulokset
+    booths:
+      index:
+        name: "Nimi"
+    officials:
+      index:
+        name: Nimi
+    organizations:
+      index:
+        filter: Suodatin
+        filters:
+          all: Kaikki
+          pending: Vireillä
+        name: Nimi
+        email: Sähköposti
+        phone_number: Puhelin
+        status: Tila
+        title: Organisaatiot
+        pending: Vireillä
+    proposals:
+      index:
+        title: Ehdotukset
+        id: ID
+        author: Tekijä
+        select: Valitse
+        selected: Valittu
+        milestones: Tavoitteet
+    hidden_proposals:
+      index:
+        filter: Suodatin
+        filters:
+          all: Kaikki
+          with_confirmed_hide: Vahvistettu
+          without_confirmed_hide: Vireillä
+        title: Piilotetut ehdotukset
+        no_hidden_proposals: Ei piilotettuja ehdotuksia.
+    hidden_proposal_notifications:
+      index:
+        filter: Suodatin
+        filters:
+          all: Kaikki
+          with_confirmed_hide: Vahvistettu
+          without_confirmed_hide: Vireillä
+        title: Piilotetut ilmoitukset
+        no_hidden_proposals: Ei piilotettuja ilmoituksia.
+    settings:
+      index:
+        update_setting: Päivitä
+        features:
+          enabled: "Käytössä"
+        map:
+          form:
+            submit: Päivitä
+      no_description: "Ei kuvausta"
+    shared:
+      search:
+        search: "Etsi"
+      actions: Toiminnot
+      description: Kuvaus
+      image: Kuva
+      show_image: Näytä kuva
+      proposal: Ehdotus
+      author: Tekijä
+      content: Sisältö
+      created_at: Luotu
+    geozones:
+      geozone:
+        name: Nimi
+      edit:
+        form:
+          submit_button: Tallenna muutokset
+        back: Takaisin
+      new:
+        back: Takaisin
+    signature_sheets:
+      author: Tekijä
+      name: Nimi
+      show:
+        author: Tekijä
+        users: Käyttäjät
+    stats:
+      show:
+        summary:
+          comments: Kommentit
+          proposals: Ehdotukset
+          budgets: Avaa budjetit
+        polls: Kyselyt
+      budget_balloting:
+        vote_count: Äänet
+      budget_supporting:
+        users: Käyttäjät
+        vote_count: Äänet
+      polls:
+        all: Kyselyt
+        table:
+          poll_name: Kysely
+          question_name: Kysymys
+      sdg:
+        polls: "Kyselyt"
+        proposals: "Ehdotukset"
+    tags:
+      create: Luo aihe
+      index:
+        topic: Aihe
+    users:
+      columns:
+        id: ID
+        name: Nimi
+        email: Sähköposti
+      index:
+        title: Käyttäjä
+        filter: Suodatin
+        filters:
+          active: Aktiivinen
+    site_customization:
+      content_blocks:
+        content_block:
+          name: Nimi
+      images:
+        index:
+          update: Päivitä
+          delete: Poista
+          image: Kuva
+        destroy:
+          notice: Kuva poistettu onnistuneesti
+          error: Kuvaa ei voitu poistaa
+      pages:
+        destroy:
+          notice: Sivu poistettu onnistuneesti
+        index:
+          delete: Poista sivu
+        page:
+          created_at: Luotu
+          status: Tila
+    homepage:
+      title: Kotisivu
+      feeds:
+        proposals: Ehdotukset
+        processes: Prosessit
+    audits:
+      id: "ID"
+      actions: "Toiminnot"
+    local_census_records:
+      index:
+        document_type: Asiakirjatyyppi
+        date_of_birth: Syntymäaika
+    machine_learning:
+      tab_help: "Apua"
+      tags: "Tunnisteet"

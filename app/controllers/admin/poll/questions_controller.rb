@@ -3,25 +3,27 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
   include Translatable
 
   load_and_authorize_resource :poll
-  load_and_authorize_resource :question, class: 'Poll::Question'
+  load_resource class: "Poll::Question"
+  authorize_resource except: [:new, :index]
 
   def index
-    @polls = Poll.all
-    @search = search_params[:search]
-
+    @polls = Poll.not_budget
     @questions = @questions.search(search_params).page(params[:page]).order("created_at DESC")
 
     @proposals = Proposal.successful.sort_by_confidence_score
   end
 
   def new
-    @polls = Poll.all
     proposal = Proposal.find(params[:proposal_id]) if params[:proposal_id].present?
     @question.copy_attributes_from_proposal(proposal)
+    @question.poll = @poll
+    @question.votation_type = VotationType.new
+
+    authorize! :create, @question
   end
 
   def create
-    @question.author = @question.proposal.try(:author) || current_user
+    @question.author = @question.proposal&.author || current_user
 
     if @question.save
       redirect_to admin_question_path(@question)
@@ -45,26 +47,22 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
   end
 
   def destroy
-    if @question.destroy
-      notice = "Question destroyed succesfully"
-    else
-      notice = t("flash.actions.destroy.error")
-    end
-    redirect_to admin_questions_path, notice: notice
+    @question.destroy!
+    redirect_to admin_poll_path(@question.poll), notice: t("admin.questions.destroy.notice")
   end
 
   private
 
     def question_params
-      attributes = [:poll_id, :question, :proposal_id]
-      params.require(:poll_question).permit(*attributes, translation_params(Poll::Question))
+      params.require(:poll_question).permit(allowed_params)
+    end
+
+    def allowed_params
+      attributes = [:poll_id, :question, :proposal_id, votation_type_attributes: [:vote_type, :max_votes]]
+      [*attributes, translation_params(Poll::Question)]
     end
 
     def search_params
       params.permit(:poll_id, :search)
-    end
-
-    def resource
-      @poll_question ||= Poll::Question.find(params[:id])
     end
 end

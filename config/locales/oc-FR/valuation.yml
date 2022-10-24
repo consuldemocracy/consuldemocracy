@@ -1,0 +1,68 @@
+oc:
+  valuation:
+    header:
+      title: Evaluación
+    menu:
+      title: Evaluación
+      budgets: de Budgèts participatius
+    budgets:
+      index:
+        title: de Budgèts participatius
+        filters:
+          current: dobèrt
+          finished: Finalitzats
+        table_name: Nome
+        table_phase: fasa
+        table_assigned_investments_valuation_open: Près. Inv. asignades En avaloracion
+        table_actions: d'Accions
+        evaluate: Avalorar
+        no_budgets: "I a pas de budgèts"
+    budget_investments:
+      index:
+        headings_filter_all: Totas las partidas
+        filters:
+          valuation_open: dobèrt
+          valuating: En avaloracion
+          valuation_finished: avaloracion finalizada
+        assigned_to: "Asignades a %{valuator}"
+        title: de Proposicions d'inversion
+        edit: Editar informe
+        table_id: ID
+        table_title: Títol
+        table_heading_name: Nom de la partida
+        table_actions: d'Accions
+        no_investments: "I a pas projèctes d’inversion."
+      show:
+        back: Tornar
+        title: Proposicion d'inversion
+        info: de Donadas d'enviament
+        by: Enviada per
+        sent: Data de creacion
+        heading: Partida
+        dossier: Informe
+        edit_dossier: Editar informe
+        price: Còst
+        price_first_year: Còst en lo primièr an
+        currency: "€"
+        feasibility: Viabilitat
+        feasible: Viable
+        unfeasible: Pas viables
+        undefined: Sens definir
+        valuation_finished: avaloracion finalizada
+        duration: Plaç d'execucion
+        responsibles: Responsables
+        assigned_admin: Administrador asignat
+        assigned_valuators: Avaluadors asignats
+        preview: Vista prealabla de l'inversion
+      edit:
+        dossier: Informe
+        price: "Prètz (%{currency})"
+        price_first_year: "Còst pendent lo primièr an (%{currency}) <small>(optional, data not public)</small>"
+        feasibility: Viabilitat
+        valuation_finished_alert: "Sètz segur que volètz marcar aquel informe coma finalizat? S'o fas, se poirà pas mai modificar."
+        not_feasible_alert: "S'enviarà immediatament un corrièr electronic a l'autor del projècte amb l'informe de inviabilitat."
+        save: Gardar de cambiaments
+      notice:
+        valuate: "Informe actualizat"
+      valuation_comments: de Comentaris d'avaloracion
+      not_in_valuating_phase: Las inversions se pòdon solament avalorar quand lo budgèt es en fasa d'avaloracion

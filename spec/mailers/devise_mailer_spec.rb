@@ -1,5 +1,4 @@
-# coding: utf-8
-require 'rails_helper'
+require "rails_helper"
 
 describe DeviseMailer do
   describe "#confirmation_instructions" do
@@ -7,10 +6,19 @@ describe DeviseMailer do
       user = create(:user, locale: "es")
 
       email = I18n.with_locale :en do
-        described_class.confirmation_instructions(user, "ABC")
+        DeviseMailer.confirmation_instructions(user, "ABC")
       end
 
       expect(email.subject).to include("confirmación")
+    end
+
+    it "reads the from address at runtime" do
+      Setting["mailer_from_name"] = "New organization"
+      Setting["mailer_from_address"] = "new@consul.dev"
+
+      email = DeviseMailer.confirmation_instructions(create(:user), "ABC")
+
+      expect(email).to deliver_from "New organization <new@consul.dev>"
     end
   end
 end

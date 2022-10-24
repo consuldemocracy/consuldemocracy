@@ -1,6 +1,0 @@
-es-CL:
-  date:
-    order:
-      - :day
-      - :month
-      - :year

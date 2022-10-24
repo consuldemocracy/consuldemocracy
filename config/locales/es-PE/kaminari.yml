@@ -2,7 +2,7 @@ es-PE:
   helpers:
     page_entries_info:
       entry:
-        zero: Entradas
+        zero: entradas
         one: entrada
         other: entradas
       more_pages:

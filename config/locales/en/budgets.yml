@@ -3,31 +3,45 @@ en:
     ballots:
       show:
         title: Your ballot
-        amount_spent: Amount spent
-        remaining: "You still have <span>%{amount}</span> to invest."
+        amount_progress: "%{amount_spent} / %{amount_limit}"
+        amount_available:
+          knapsack: "Still available to you <span>%{count}</span>"
+          approval:
+            zero: "You can still cast <span>%{count}</span> votes."
+            one: "You can still cast <span>%{count}</span> vote."
+            other: "You can still cast <span>%{count}</span> votes."
+        amount_spent:
+          knapsack: "Amount spent <span>%{count}</span>"
+          approval:
+            zero: "Votes cast: <span>%{count}</span>"
+            one: "Votes cast: <span>%{count}</span>"
+            other: "Votes cast: <span>%{count}</span>"
+        amount_limit:
+          knapsack: "Total budget <span>%{count}</span>"
+          approval:
+            one: "You can vote <span>1</span> project"
+            other: "You can vote up to <span>%{count}</span> projects"
         no_balloted_group_yet: "You have not voted on this group yet, go vote!"
         remove: Remove vote
-        voted_html:
+        remove_label: "Remove your vote for %{investment}"
+        voted:
           one: "You have voted <span>one</span> investment."
           other: "You have voted <span>%{count}</span> investments."
-        voted_info_html: "You can change your vote at any time until the close of this phase.<br> No need to spend all the money available."
+        voted_info: "Your ballot is confirmed!"
+        voted_info_2: "But you can change your vote at any time until this phase is closed."
         zero: You have not voted any investment project.
       reasons_for_not_balloting:
-        not_logged_in: You must %{signin} or %{signup} to continue.
         not_verified: Only verified users can vote on investments; %{verify_account}.
-        organization: Organizations are not permitted to vote
         not_selected: Unselected investment projects can not be supported
-        not_enough_money_html: "You have already assigned the available budget.<br><small>Remember you can %{change_ballot} at any time</small>"
+        not_enough_money: "You have already assigned the available budget.<br><small>Remember you can %{change_ballot} at any time</small>"
         no_ballots_allowed: Selecting phase is closed
-        different_heading_assigned_html: "You have already voted a different heading: %{heading_link}"
+        different_heading_assigned: "You have already voted a different heading: %{heading_link}"
+        not_enough_available_votes: "You have reached the maximum number of votes allowed"
         change_ballot: change your votes
+        casted_offline: You have already participated offline
     groups:
       show:
-        title: Select an option
-        unfeasible_title: Unfeasible investments
-        unfeasible: See unfeasible investments
-        unselected_title: Investments not selected for balloting phase
-        unselected: See investments not selected for balloting phase
+        title: Select a heading
     phase:
       drafting: Draft (Not visible to the public)
       informing: Information
@@ -46,12 +60,11 @@ en:
         icon_alt: Participatory budgets icon
         title: Participatory budgets
         help: Help with participatory budgets
-        all_phases: See all phases
-      all_phases: Budget investment's phases
+      all_phases: Participatory budgets phases
+      next_phase: Next phase
+      prev_phase: Previous phase
+      current_phase: Current phase
       map: Budget investments' proposals located geographically
-      investment_proyects: List of all investment projects
-      unfeasible_investment_proyects: List of all unfeasible investment projects
-      not_selected_investment_proyects: List of all investment projects not selected for balloting
       finished_budgets: Finished participatory budgets
       see_results: See results
       section_footer:
@@ -60,6 +73,9 @@ en:
       milestones: Milestones
     investments:
       form:
+        title: "Create a budget investment"
+        subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
         tag_category_label: "Categories"
         tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
         tags_label: Tags
@@ -67,54 +83,55 @@ en:
         map_location: "Map location"
         map_location_instructions: "Navigate the map to the location and place the marker."
         map_remove_marker: "Remove map marker"
-        location: "Location additional info"
-        map_skip_checkbox: "This investment doesn't have a concrete location or I'm not aware of it."
       index:
         title: Participatory budgeting
         unfeasible: Unfeasible investment projects
-        unfeasible_text: "The investments must meet a number of criteria (legality, concreteness, be the responsibility of the city, not exceed the limit of the budget) to be declared viable and reach the stage of final vote. All investments don't meet these criteria are marked as unfeasible and published in the following list, along with its report of infeasibility."
+        unfeasible_text: "The investments must meet a number of criteria (legality, concreteness, not exceed the limit of the budget) to be declared viable and reach the stage of final vote. All investments don't meet these criteria are marked as unfeasible and published in the following list, along with its report of infeasibility."
         by_heading: "Investment projects with scope: %{heading}"
         search_form:
           button: Search
           placeholder: Search investment projects...
           title: Search
-        search_results_html:
-          one: " containing the term <strong>'%{search_term}'</strong>"
-          other: " containing the term <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: My ballot
-          voted_html:
-            one: "<strong>You voted one proposal with a cost of %{amount_spent}</strong>"
-            other: "<strong>You voted %{count} proposals with a cost of %{amount_spent}</strong>"
-          voted_info: You can %{link} at any time until the close of this phase. No need to spend all the money available.
-          voted_info_link: change your vote
-          different_heading_assigned_html: "You have active votes in another heading: %{heading_link}"
-          change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
-          check_ballot_link: "check my ballot"
+          voted_info:
+            knapsack:
+              one: "<strong>You voted one proposal with a cost of %{amount_spent}</strong>"
+              other: "<strong>You voted %{count} proposals with a cost of %{amount_spent}</strong>"
+            approval:
+              one: "<strong>You voted one proposal</strong>"
+              other: "<strong>You voted %{count} proposals</strong>"
+          change_vote_info:
+            knapsack: "You can %{link} at any time until %{phase_end_date}. No need to spend all the money available."
+            approval: "You can %{link} at any time until %{phase_end_date}."
+          change_vote_link: "change your vote"
+          different_heading_assigned: "You have active votes in another heading: %{heading_link}"
+          change_ballot: "If you change your mind you can remove your votes in %{check_ballot} and start again."
+          check_ballot_link: "submit my ballot"
           zero: You have not voted any investment project in this group.
           verified_only: "To create a new budget investment %{verify}."
-          verify_account: "verify your account"
           create: "Create a budget investment"
           not_logged_in: "To create a new budget investment you must %{sign_in} or %{sign_up}."
-          sign_in: "sign in"
-          sign_up: "sign up"
-          by_feasibility: By feasibility
-          feasible: Feasible projects
-          unfeasible: Unfeasible projects
+        filter: "Filtering projects by"
+        filters:
+          not_unfeasible: "Active"
+          selected: "Active"
+          unfeasible: "Unfeasible"
+          unselected: "Not selected for the final voting"
+          winners: "Winners"
         orders:
           random: random
           confidence_score: highest rated
           price: by price
       share:
-        message: "I created the investment project %{title} in %{org}. Create an investment project you too!"
-        message_mobile: "I created the investment project %{title} in %{handle}. Create an investment project you too!"
+        message: "I created the investment project %{title} in %{handle}. Create an investment project too!"
       show:
         author_deleted: User deleted
         price_explanation: Price explanation
         unfeasibility_explanation: Unfeasibility explanation
-        code_html: 'Investment project code: <strong>%{code}</strong>'
-        location_html: 'Location: <strong>%{location}</strong>'
-        organization_name_html: 'Proposed on behalf of: <strong>%{name}</strong>'
+        code: "Investment project code: <strong>%{code}</strong>"
+        location: "Location: <strong>%{location}</strong>"
+        organization_name: "Proposed on behalf of: <strong>%{name}</strong>"
         share: Share
         title: Investment project
         supports: Supports
@@ -123,56 +140,70 @@ en:
         comments_tab: Comments
         milestones_tab: Milestones
         author: Author
-        project_unfeasible_html: 'This investment project <strong>has been marked as not feasible</strong> and will not go to balloting phase.'
-        project_selected_html: 'This investment project <strong>has been selected</strong> for balloting phase.'
-        project_winner: 'Winning investment project'
-        project_not_selected_html: 'This investment project <strong>has not been selected</strong> for balloting phase.'
+        project_unfeasible: "This investment project <strong>has been marked as not feasible</strong> and will not go to balloting phase."
+        project_selected: "This investment project <strong>has been selected</strong> for balloting phase."
+        project_winner: "Winning investment project"
+        project_not_selected: "This investment project <strong>has not been selected</strong> for balloting phase."
         see_price_explanation: See price explanation
       wrong_price_format: Only integer numbers
       investment:
         add: Vote
+        add_label: "Vote %{investment}"
         already_added: You have already added this investment project
-        already_supported: You have already supported this investment project. Share it!
         support_title: Support this project
-        confirm_group:
-          one: "You can only support investments in %{count} district. If you continue you cannot change the election of your district. Are you sure?"
-          other: "You can only support investments in %{count} district. If you continue you cannot change the election of your district. Are you sure?"
         supports:
           one: 1 support
           other: "%{count} supports"
           zero: No supports
-        give_support: Support
       header:
-        check_ballot: Check my ballot
-        different_heading_assigned_html: "You have active votes in another heading: %{heading_link}"
-        change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
-        check_ballot_link: "check my ballot"
-        price: "This heading have a budget of"
-    progress_bar:
-      assigned: "You have assigned: "
-      available: "Available budget: "
+        check_ballot: "Submit my ballot"
+        different_heading_assigned: "You have active votes in another heading: %{heading_link}"
+        change_ballot: "If you change your mind you can remove your votes in %{check_ballot} and start again."
+        check_ballot_link: "submit my ballot"
+        price: "Total budget"
+      votes:
+        already_supported: "You have already supported this investment project. Share it!"
+        confirm_group:
+          one: "You can only support investments in %{count} district. If you continue you cannot change the election of your district. Are you sure?"
+          other: "You can only support investments in %{count} districts. If you continue you cannot change the election of your district. Are you sure?"
+        remove_support: "Remove your support"
+        remove_support_label: "Remove your support to %{investment}"
+        support: "Support"
+        support_label: "Support %{investment}"
+    investments_list:
+      investment:
+        price: "Price"
+        read_more: "Read more"
+        supports: "Supports"
+      see_all: "See all investments"
+      title: "List of investments"
     show:
-      group: Group
-      phase: Actual phase
-      unfeasible_title: Unfeasible investments
-      unfeasible: See unfeasible investments
-      unselected_title: Investments not selected for balloting phase
-      unselected: See investments not selected for balloting phase
       see_results: See results
+    supports_info:
+      different: "You may support on as many different projects as you would like."
+      next: "Support the projects you would like to see move on to the next phase."
+      scrolling: "Keep scrolling to see all ideas"
+      share: "You can share the projects you have supported on through social media and attract more attention and support to them!"
+      supported:
+        one: "So far you've supported <strong>1 project</strong>."
+        other: "So far you've supported <strong>%{count} projects</strong>."
+      supported_not_logged_in: "Log in to start <strong>supporting projects</strong>."
+      time: "There's still time until %{phase_end_date} to support projects."
+      title: "It's time to <strong>support</strong> projects!"
     results:
       link: Results
       page_title: "%{budget} - Results"
       heading: "Participatory budget results"
       heading_selection_title: "By district"
-      spending_proposal: Proposal title
       ballot_lines_count: Votes
       hide_discarded_link: Hide discarded
       show_all_link: Show all
       price: Price
       amount_available: Available budget
-      accepted: "Accepted spending proposal: "
-      discarded: "Discarded spending proposal: "
+      accepted: "Accepted investment: "
+      discarded: "Discarded investment: "
       incompatibles: Incompatibles
+      investment_title: Project title
       investment_proyects: List of all investment projects
       unfeasible_investment_proyects: List of all unfeasible investment projects
       not_selected_investment_proyects: List of all investment projects not selected for balloting
@@ -183,8 +214,12 @@ en:
       heading_selection_title: "By district"
       no_winner_investments: "No winner investments in this state"
       filters:
-        label: "Project's current state"
-        all: "All (%{count})"
+        status:
+          label: "Project's current state"
+          all: "All (%{count})"
+        milestone_tag:
+          label: "Milestone tag"
+          all: "All (%{count})"
     phases:
       errors:
         dates_range_invalid: "Start date can't be equal or later than End date"

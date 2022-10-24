@@ -1,1 +1,23 @@
 fi:
+  officing:
+    poll_budgets:
+      index:
+        ballot_sheet_name: Nimi
+        ballot_sheet_author: Tekijä
+      new:
+        submit: Tallenna
+      show:
+        author: Tekijä
+    results:
+      new:
+        date: "Päivämäärä"
+        submit: "Tallenna"
+        see_results: "Näytä tulokset"
+      index:
+        table_answer: Vastaus
+        table_votes: Äänet
+    voters:
+      new:
+        title: Kyselyt
+        table_poll: Kysely
+        table_actions: Toiminnot

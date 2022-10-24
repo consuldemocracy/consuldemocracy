@@ -2,7 +2,213 @@ tr:
   budgets:
     ballots:
       show:
-        title: Oy
-        amount_spent: Harcanan miktar
-        remaining: "<span>%{amount}</span> yatırım yapmaya kalkmadı."
-        remove: Oy kaldırmak
+        title: Oyunuz
+        amount_progress: "%{amount_spent}%{amount_limit}\nharcanan tutar / tutar limiti"
+        amount_available:
+          knapsack: "Şu an itibariyle yatırım yapabileceğiniz miktar <span>%{count}</span>"
+          approval:
+            zero: "Şu an itibariyle <span>%{count}</span> oy hakkınız bulunmaktadır."
+            one: "Şu an itibariyle <span>%{count}</span> oy hakkınız bulunmaktadır."
+            other: "Şu an itibariyle <span>%{count}</span> oy hakkınız bulunmaktadır."
+        amount_spent:
+          knapsack: "Harcanan miktar <span>%{count}</span>"
+          approval:
+            zero: "Kullanılan oy sayısı: <span>%{count}</span>"
+            one: "Kullanılan oy sayısı: <span>%{count}</span>"
+            other: "Kullanılan oy sayısı: <span>%{count}</span>"
+        amount_limit:
+          knapsack: "Toplam bütçe <span>%{count}</span>"
+          approval:
+            one: "<span>1</span> projeye oy verebilirsiniz"
+            other: "En fazla <span>%{count}</span> projeye oy verebilirsiniz"
+        no_balloted_group_yet: "Henüz bu gruba oy vermediniz, oy verin!"
+        remove: Oyu geri çek
+        voted:
+          one: "<span> bir </span> yatırımına oy verdiniz."
+          other: "<span>%{count}</span> yatırımına oy verdiniz."
+        voted_info: "Oyunuz onaylandı!"
+        voted_info_2: "Ancak bu aşama tamamlanana kadar oyunuzu istediğiniz zaman değiştirebilirsiniz."
+        zero: Herhangi bir yatırım projesine oy vermediniz.
+      reasons_for_not_balloting:
+        not_verified: Yalnızca doğrulanan kullanıcılar yatırımlara oy verebilir; %{verify_account}.
+        not_selected: Seçilmeyen yatırım projeleri desteklenemez
+        not_enough_money: "Mevcut bütçeyi zaten atadınız. <br> <small> İstediğiniz zaman%{change_ballot} yapabileceğinizi unutmayın </small>"
+        no_ballots_allowed: Seçim aşaması tamamlanmıştır
+        different_heading_assigned: "Zaten farklı bir başlık seçtiniz:%{heading_link}"
+        not_enough_available_votes: "Kullanabileceğiniz maksimum oy sayısına ulaştınız"
+        change_ballot: oylarınızı değiştirin
+        casted_offline: Daha önce çevrimdışı olarak katıldınız
+    groups:
+      show:
+        title: Bir seçenek belirleyin
+    phase:
+      drafting: Taslak (diğer kişiler tarafından görülemez)
+      informing: Bilgi
+      accepting: Projeler kabul ediliyor
+      reviewing: Projeler inceleniyor
+      selecting: Projeler seçiliyor
+      valuating: Projeler değerlendiriliyor
+      publishing_prices: Projelerin maliyetleri yayınlanıyor
+      balloting: Projeler oylanıyor
+      reviewing_ballots: Oylama inceleniyor
+      finished: Bütçe tamamlandı
+    index:
+      title: Katılımcı bütçeler
+      empty_budgets: Herhangi bir bütçe bulunmamaktadır.
+      section_header:
+        icon_alt: Katılımcı bütçeler simgesi
+        title: Katılımcı bütçeler
+        help: Katılımcı bütçelere yardım edin
+      all_phases: Bütçe yatırım aşamaları
+      next_phase: Sonraki aşama
+      prev_phase: Önceki aşama
+      current_phase: Mevcut aşama
+      map: Bölgelere göre bütçe yatırım önerileri
+      finished_budgets: Tamamlanmış katılımcı bütçeler
+      see_results: Sonuçları göster
+      section_footer:
+        title: Katılımcı bütçelere yardım edin
+        description: Katılımcı bütçeler sayesinde vatandaşlar bütçeye hangi projelerin dahil edileceğine karar verir.
+      milestones: Kilometre taşları
+    investments:
+      form:
+        title: "Bütçe yatırımı oluştur"
+        subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
+        tag_category_label: "Kategoriler"
+        tags_instructions: "Bu öneriyi etiketle. Önerilen kategoriler arasından seçim yapabilir veya kendini önerinizi ekleyebilirsiniz"
+        tags_label: Etiketler
+        tags_placeholder: "Kullanmak istediğiniz etiketleri virgülle ayırarak yazın (',')"
+        map_location: "Harita konumu"
+        map_location_instructions: "Harita ile konuma gidin ve işaretçiyi yerleştirin."
+        map_remove_marker: "Harita işaretçisini kaldır"
+      index:
+        title: Katılımcı bütçeleme
+        unfeasible: Uygulanabilir olmayan yatırım projeleri
+        unfeasible_text: "Yatırımların, geçerli olarak kabul edilerek nihai oylama aşamasına ulaşmaları için birtakım kriterlere (yasallık, somutluk, bütçenin sınırı) uygun olmaları karşılamalıdır. Bu kriterlere uymayan tüm yatırımlar uygulanamaz olarak işaretlenir ve uygunsuzluğunu belirten raporu takip eden listede yayınlanır."
+        by_heading: "Kapsamlı yatırım projeleri: %{heading}"
+        search_form:
+          button: Ara
+          placeholder: Yatırım projelerini ara...
+          title: Ara
+        sidebar:
+          my_ballot: Oyum
+          voted_info:
+            knapsack:
+              one: "<strong>%{amount_spent} değerindeki bir tasarı için oy kullandınız</strong>"
+              other: "<strong>%{amount_spent} değerindeki %{count} tasarıya oy verdiniz</strong>"
+            approval:
+              one: "<strong>Bir tasarı için oy kullandınız</strong>"
+              other: "<strong>%{count} tasarı için oy kullandınız</strong>"
+          change_vote_info:
+            knapsack: "%{phase_end_date} tarihine kadar istediğiniz zaman %{link} yapabilirsiniz. Mevcut tüm parayı harcamanız gerekmemektedir."
+            approval: "%{phase_end_date} tarihine kadar istediğiniz zaman %{link} yapabilirsiniz."
+          change_vote_link: "oyunuzu değiştirin"
+          different_heading_assigned: "Başka bir tasarı için aktif oylarınız bulunmaktadır: %{heading_link}"
+          change_ballot: "Eğer fikrinizi değiştirirseniz, oyunuzu %{check_ballot}'dan geri çekebilirsiniz ve tekrar oy verebilirsiniz."
+          check_ballot_link: "oyumu kontrol et"
+          zero: Bu kategoride herhangi bir yatırım projesine oy vermediniz.
+          verified_only: "Yeni bir bütçe yatırımı oluşturmak için %{verify}."
+          create: "Bütçe yatırımı oluşturun"
+          not_logged_in: "Yeni bir bütçe yatırımı oluşturmak istiyorsanız %{sign_in} ya da %{sign_up}."
+        filter: "Projelere göre filtreleme"
+        filters:
+          not_unfeasible: "Uygulanabilir"
+          selected: "Seçilmiş"
+          unfeasible: "Uygulanamaz"
+          unselected: "Seçilemez"
+          winners: "Kazananlar"
+        orders:
+          random: gelişi güzel
+          confidence_score: en yüksek puanlı
+          price: maliyete göre
+      share:
+        message: "Ben %{title} konusunda %{handle} yatırım projesi oluşturdum. Siz de bir yatırım projesi oluşturun!"
+      show:
+        author_deleted: Kullanıcı silindi
+        price_explanation: Maliyet açıklaması
+        unfeasibility_explanation: Uygulanabilirlik açıklaması
+        code: "Yatırım projesi kodu: <strong>%{code}</strong>"
+        location: "Konum: <strong>%{location}</strong>"
+        organization_name: "Tasarıyı sunan: <strong>%{name}</strong>"
+        share: Paylaş
+        title: Yatırım projesi
+        supports: Destekler
+        votes: Oylar
+        price: Maliyet
+        comments_tab: Yorumlar
+        milestones_tab: Kilometre taşları
+        author: Fikir sahibi
+        project_unfeasible: "Bu yatırım projesinin <strong> uygulanabilir olmadığı belirlendi </strong> ve oy kullanma aşamasına geçmesi mümkün olmayacak."
+        project_selected: "Bu yatırım projesi oylama aşaması için <strong>seçildi</strong>."
+        project_winner: "Kazanan yatırım projesi"
+        project_not_selected: "Bu yatırım projesi oylama aşaması için <strong>seçilmedi</strong>."
+        see_price_explanation: Maliyet açıklamasını gör
+      wrong_price_format: Sadece tam sayılar
+      investment:
+        add: Oy
+        already_added: Bu yatırım projesini daha önce eklediniz
+        support_title: Bu projeyi destekleyin
+        supports:
+          zero: Destek yok
+          one: 1 destek
+          other: "%{count} destekler"
+      header:
+        check_ballot: "Oyumu kontrol et"
+        different_heading_assigned: "Başka bir konuda aktif oylarınız bulunmakta: %{heading_link}"
+        change_ballot: "Eğer fikrinizi değiştirirseniz oyunuzu %{check_ballot} 'dan geri çekebilirsiniz ve başka bir fikre oy verebilirsiniz."
+        check_ballot_link: "oyumu kontrol et"
+        price: "Bu konunun bir bütçesi var"
+      votes:
+        already_supported: "Bu yatırım projesini daha önce desteklediniz. Paylaşın!"
+        confirm_group:
+          one: "Yalnızca %{count} bölgesindeki yatırımları destekleyebilirsiniz. Devam ederseniz, bölgenizdeki seçimi değiştiremezsiniz. Emin misiniz?"
+          other: "Yalnızca %{count} bölgesindeki yatırımları destekleyebilirsiniz. Devam ederseniz, bölgenizdeki seçimi değiştiremezsiniz. Emin misiniz?"
+        remove_support: "Desteğini kaldır"
+        remove_support_label: "Desteğini kaldır %{investment}"
+        support: "Destek"
+        support_label: "Destekle %{investment}"
+    investments_list:
+      investment:
+        price: "Ücret"
+        read_more: "Daha fazla oku"
+        supports: "Yardımlar"
+      see_all: "Tüm yatırımları gör"
+      title: "Yatırımların listesi"
+    show:
+      see_results: Sonuçları gör
+    results:
+      link: Sonuçlar
+      page_title: "%{budget} - Sonuçlar"
+      heading: "Katılımcı bütçe sonuçları"
+      heading_selection_title: "Bölgeye göre"
+      ballot_lines_count: Oylar
+      hide_discarded_link: Geri çekilen fikirleri gizle
+      show_all_link: Tümünü göster
+      price: Maliyet
+      amount_available: Mevcut bütçe
+      accepted: "Kabul edilen yatırım: "
+      discarded: "Kabul edilmeyen yatırım: "
+      incompatibles: Uygun olmayan yatırımlar
+      investment_title: Proje başlığı
+      investment_proyects: Yatırım projelerinin tam listesi
+      unfeasible_investment_proyects: Uygulanabilir olmayan yatırım projelerinin tam listesi
+      not_selected_investment_proyects: Oylama için seçilmeyen yatırım projelerinin tam listesi
+    executions:
+      link: "Kilometre taşları"
+      page_title: "%{budget} - Kilometre taşları"
+      heading: "Katılımcı bütçe Kilometre taşları"
+      heading_selection_title: "Bölgeye göre"
+      no_winner_investments: "Bu mevkide kazanan yatırım yok"
+      filters:
+        status:
+          label: "Projenin şimdiki durumu"
+          all: "Tüm (%{count})"
+        milestone_tag:
+          label: "Kilometre taşı etiketi"
+          all: "Tüm (%{count})"
+    phases:
+      errors:
+        dates_range_invalid: "Başlangıç tarihi Bitiş tarihine eşit veya ondan sonra olamaz"
+        prev_phase_dates_invalid: "Başlangıç tarihi, etkin olan bir önceki aşamanın başlangıç tarihinden sonra olmalıdır (%{phase_name})"
+        next_phase_dates_invalid: "Bitiş tarihi, bir sonraki etkinleştirilmiş aşamanın bitiş tarihinden önce olmalıdır (%{phase_name})"

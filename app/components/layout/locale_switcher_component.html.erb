@@ -1,0 +1,14 @@
+<div class="locale">
+  <% if many_locales? %>
+    <form class="locale-form">
+      <label class="inline-block" for="locale-switcher"><%= label %></label>
+      <select class="js-location-changer locale-switcher inline-block" name="locale-switcher" id="locale-switcher">
+        <%= options_for_select(language_options, current_path_with_query_params(locale: I18n.locale)) %>
+      </select>
+    </form>
+  <% else %>
+    <p id="<%= label_id %>"><%= label %></p>
+
+    <%= link_list(*language_links, "aria-labelledby": label_id) %>
+  <% end %>
+</div>

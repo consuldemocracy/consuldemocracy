@@ -1,4 +1,4 @@
-require 'open-uri'
+require "open-uri"
 class SMSApi
   attr_accessor :client
 
@@ -8,7 +8,8 @@ class SMSApi
 
   def url
     return "" unless end_point_available?
-    open(Rails.application.secrets.sms_end_point).base_uri.to_s
+
+    URI.parse(Rails.application.secrets.sms_end_point).to_s
   end
 
   def authorization
@@ -53,5 +54,4 @@ class SMSApi
       }
     }
   end
-
 end

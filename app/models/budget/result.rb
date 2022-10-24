@@ -1,7 +1,6 @@
 class Budget
   class Result
-
-    attr_accessor :budget, :heading, :money_spent, :current_investment
+    attr_accessor :budget, :heading, :current_investment
 
     def initialize(budget, heading)
       @budget = budget
@@ -10,9 +9,13 @@ class Budget
 
     def calculate_winners
       reset_winners
-      investments.compatible.each do |investment|
-        @current_investment = investment
-        set_winner if inside_budget?
+      if @budget.hide_money?
+        investments.compatible.update_all(winner: true)
+      else
+        investments.compatible.each do |investment|
+          @current_investment = investment
+          set_winner if inside_budget?
+        end
       end
     end
 
@@ -42,12 +45,11 @@ class Budget
 
     def set_winner
       @money_spent += @current_investment.price
-      @current_investment.update(winner: true)
+      @current_investment.update!(winner: true)
     end
 
     def winners
       investments.where(winner: true)
     end
-
   end
 end

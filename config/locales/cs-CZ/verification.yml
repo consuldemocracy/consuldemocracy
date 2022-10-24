@@ -1,0 +1,103 @@
+cs:
+  verification:
+    alert:
+      lock: Dosáhli jste maximálního počtu pokusů. Opakujte akci později.
+    back: Návrat do mého účtu
+    email:
+      create:
+        alert:
+          failure: Došlo k potížím s odesíláním e-mailu na váš účet
+        flash:
+          success: "Odeslali jsem potvrzovací e-mail k účtu: %{email}"
+      show:
+        alert:
+          failure: Ověřovací kód je nesprávný
+        flash:
+          success: Jste ověřený uživatel
+    letter:
+      alert:
+        unconfirmed_code: Doposud jste nezadali žádný potvrzovací kód
+      create:
+        flash:
+          success: Děkujeme, že jste si vyžádali <b>maximální bezpečnostní kód (nutný pouze pro závěrečné hlasování)</b>. Během několika dní vám jej zašleme na adresu uvedenou v údajích, které máme v souboru. Nezapomeňte prosím, že pokud si přejete, můžete si kód vyzvednout na kterémkoli úřadě pro podporu občanů.
+      edit:
+        see_all: Zobrazit návrhy
+        title: Dopis požadován
+      errors:
+        incorrect_code: Ověřovací kód je nesprávný
+      new:
+        explanation: "Pro účast na finálním hlasování může:"
+        go_to_index: Zobrazit návrhy
+        office: Ověřte na všech úřadech pro podporu občanů
+        send_letter: Pošlete mi dopis s kódem
+        title: Blahopřejeme!
+        user_permission_info: S vaším účtem můžete...
+      update:
+        flash:
+          success: Správný kód. Váš účet je nyní ověřen
+    redirect_notices:
+      already_verified: Tento uživatelský účet je již ověřen
+      email_already_sent: E-mail s odkazem pro potvrzení jsme již odeslali. Pokud nemůžete najít e-mail, můžete požádat o opětovné zaslání zde
+    residence:
+      alert:
+        unconfirmed_residency: Doposud jste nepotvrdili své bydliště
+      create:
+        flash:
+          success: Bydliště ověřeno
+      new:
+        accept_terms_text: Přijímám %{terms_url} přístupu k základním registrům
+        accept_terms_text_title: Přijímám podmínky přístupu k základním registrům
+        document_number: Číslo dokladu
+        document_number_help_title: Nápověda
+        document_number_help_text: "<strong>Číslo občanského průkazu</strong>: AJ12345678<br> <strong>Pas</strong>: AAA000001<br> <strong>řidičský průkaz</strong>: X1234567P"
+        document_type:
+          passport: Cestovní pas
+          residence_card: Občanský průkaz
+          spanish_id: Číslo OP
+        error_not_allowed_age: Nemáte požadovaný věk pro účast
+        error_not_allowed_postal_code: Abyste mohli být ověřeni, musíte se zaregistrovat.
+        error_verifying_census: Nepodařilo se ověřit vaše údaje. Ověřte si prosím správnost svých údajů telefonicky na městském úřadě, nebo navštivte jednu z kanceláří pro podporu občanů.
+        form_errors: zabránil ověření vašeho bydliště
+        postal_code_note: Chcete-li ověřit svůj účet, že musíte se registrovat
+        terms: podmínky přístupu
+        title: Ověření bydliště
+        verify_residence: Ověření bydliště
+    sms:
+      create:
+        flash:
+          success: Zadejte potvrzovací kód, který vám byl odeslán textovou zprávu
+      edit:
+        resend_sms_link: Klikněte zde pro opětovné odeslání
+        resend_sms_text: Nedostali jste text s potvrzovací kód?
+        submit_button: Odeslat
+        title: Bezpečnostní kód potvrzení
+      new:
+        phone: Zadejte číslo svého mobilního telefonu pro získání kódu
+        phone_format: "<strong><em>(příklad: 712345678 nebo +42012345678)</em></strong>"
+        phone_note: Váš telefon používáme pouze k zaslání kódu, nikdy vás nebudeme kontaktovat.
+        submit_button: Odeslat
+        title: Poslat potvrzovací kód
+      update:
+        error: Nesprávný potvrzovací kód
+        flash:
+          level_three:
+            success: Správný kód. Váš účet je nyní ověřen
+          level_two:
+            success: Správný kód
+    step_1: Bydliště
+    step_2: Potvrzující kód
+    step_3: Konečné ověření
+    user_permission_debates: Zapojte se do debat
+    user_permission_info: Ověřením informací budete mít možnost...
+    user_permission_proposal: Vytvořit nové návrhy
+    user_permission_support_proposal: Podpořit návrhy *
+    user_permission_votes: Účast na závěrečném hlasování *
+    verified_user:
+      form:
+        submit_button: Odeslat kód
+      show:
+        email_title: E-maily
+        explanation: 'V procesu registrace evidujeme v současné době následující údaje: vyberte prosím způsob odeslání potvrzovacího kódu.'
+        phone_title: Telefonní čísla
+        title: Dostupné informace
+        use_another_phone: Použít jiný telefon

@@ -1,4 +1,4 @@
-class CreateAnnotations < ActiveRecord::Migration
+class CreateAnnotations < ActiveRecord::Migration[4.2]
   def change
     create_table :annotations do |t|
       t.string :quote

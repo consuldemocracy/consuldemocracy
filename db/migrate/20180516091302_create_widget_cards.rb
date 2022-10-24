@@ -1,4 +1,4 @@
-class CreateWidgetCards < ActiveRecord::Migration
+class CreateWidgetCards < ActiveRecord::Migration[4.2]
   def change
     create_table :widget_cards do |t|
       t.string :title

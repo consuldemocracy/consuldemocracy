@@ -3,12 +3,12 @@ de:
     sidebar:
       title: Community
       description:
-        proposal: An der Benutzer-Community dieses Vorschlags teilnehmen.
+        proposal: Beteiligen Sie sich in der Nutzergemeinde für diesen Vorschlag.
         investment: Beteiligen Sie sich in der Nutzergemeinde dieser Investition.
       button_to_access: Treten Sie der Community bei
     show:
       title:
-        proposal: Antragsgemeinschaft
+        proposal: Vorschlags-Community
         investment: Budgetinvestitions-Gemeinschaft
       description:
         proposal: Beteiligen Sie sich an der Community dieses Antrags. Eine aktive Gemeinschaft kann dazu beitragen, den Inhalt des Vorschlags zu verbessern und seine Verbreitung zu fördern, um mehr Unterstützung zu erhalten.
@@ -16,10 +16,9 @@ de:
       create_first_community_topic:
         first_theme_not_logged_in: Es ist kein Anliegen verfügbar, beteiligen Sie sich, indem Sie das erste erstellen.
         first_theme: Erstellen Sie das erste Community-Thema
-        sign_in: "Anmelden"
-        sign_up: "registrieren"
+        sub_first_theme: "Um ein Thema zu erstellen, müssen Sie %{sign_in} o %{sign_up}."
       tab:
-        participants: Teilnehmer
+        participants: Teilnehmer*innen
       sidebar:
         participate: Teilnehmen
         new_topic: Thema erstellen
@@ -36,8 +35,6 @@ de:
       create: Ein Thema erstellen
       edit: Thema bearbeiten
       form:
-        topic_title: Titel
-        topic_text: Anfangstext
         new:
           submit_button: Thema erstellen
         edit:
@@ -54,6 +51,3 @@ de:
         recommendation_one: Schreiben Sie den Themen-Titel oder ganze Sätze nicht in Großbuchstaben. Im Internet wird dies als Geschrei betrachtet. Und niemand wird gerne angeschrien.
         recommendation_two: Themen oder Kommentare, die illegale Handlungen beinhalten, werden gelöscht. Auch diejenigen, die die Diskussionen absichtlich sabotieren. Alles andere ist erlaubt.
         recommendation_three: Genießen Sie diesen Ort, die Stimmen, die ihn füllen, sind auch Ihre.
-  topics:
-    show:
-      login_to_comment: Sie müssen sich %{signin} oder %{signup}, um einen Kommentar zu hinterlassen.

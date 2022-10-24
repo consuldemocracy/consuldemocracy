@@ -1,0 +1,43 @@
+<% if proposal.selected? %>
+  <div class="callout success">
+    <strong><%= t("proposals.proposal.selected") %></strong>
+  </div>
+<% else %>
+  <div id="proposal_sticky" data-sticky-container>
+    <div class="sticky fixed-mobile-content"
+         data-sticky
+         data-stick-to="bottom"
+         data-sticky-on="small"
+         data-top-anchor="0"
+         data-btm-anchor="sticky_stop"
+         data-check-every="0">
+      <div class="fixed-mobile-content">
+        <div class="sidebar-divider"></div>
+        <h2><%= t("votes.supports") %></h2>
+
+        <div id="<%= dom_id(proposal) %>_votes">
+          <% if proposal.draft? %>
+            <div class="callout primary">
+              <p class="text-center small"><strong><%= t("proposals.show.draft") %></strong></p>
+            </div>
+          <% elsif proposal.successful? %>
+            <div class="supports text-center">
+              <%= render "proposals/supports", proposal: proposal %>
+            </div>
+          <% elsif proposal.archived? %>
+            <div class="padding text-center">
+              <p>
+                <strong><%= t("proposals.proposal.supports", count: proposal.total_votes) %></strong>
+              </p>
+              <p><%= t("proposals.proposal.archived") %></p>
+            </div>
+          <% else %>
+            <%= render "votes", proposal: proposal %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sticky_stop"></div>
+<% end %>

@@ -1,0 +1,5 @@
+.machine-learning-info {
+  @include has-fa-icon(info-circle, solid);
+  float: left;
+  margin-right: $font-icon-margin;
+}

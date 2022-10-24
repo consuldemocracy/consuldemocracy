@@ -1,89 +1,83 @@
 nl:
   moderation:
+    actions:
+      confirm_action: "Weet je het zeker?%{action}"
     comments:
       index:
-        block_authors: Blokkeer auteurs
-        confirm: Weet je het zeker?
+        block_authors: Block authors
         filter: Filter
         filters:
-          all: Allen
+          all: All
           pending_flag_review: In afwachting
-          with_ignored_flag: Markeer als gelezen
+          with_ignored_flag: Marked as viewed
         headers:
-          comment: Reactie
-          moderate: Modereer
-        hide_comments: Verberg reacties
-        ignore_flags: Markeer als gelezen
-        order: order
+          comment: Commentaar
+          moderate: Moderate
+        hide: Hide comments
+        ignore_flags: Mark as viewed
         orders:
-          flags: Meest gemarkeerd
-          newest: Nieuwste
-        title: Reacties
+          flags: Most flagged
+          newest: Newest
+        title: Comments
     dashboard:
       index:
-        title: Moderatie
+        title: Moderation
     debates:
       index:
         block_authors: Blokkeer auteurs
-        confirm: Weet je het zeker?
         filter: Filter
         filters:
-          all: Allen
+          all: All
           pending_flag_review: In afwachting
           with_ignored_flag: Markeer als gelezen
         headers:
-          debate: Discussieer
+          debate: Debat
           moderate: Modereer
-        hide_debates: Verberg discussies
+        hide: Debatten verbergen
         ignore_flags: Markeer als gelezen
-        order: Order
         orders:
           created_at: Nieuwste
-          flags: Meest gemarkeerde
-        title: Discussies
+          flags: Meest gemarkeerd
+        title: Debatten
     header:
-      title: Moderatie
+      title: Moderation
     menu:
-      flagged_comments: Reacties
-      flagged_debates: Discussies
+      flagged_comments: Comments
+      flagged_debates: Debatten
       flagged_investments: Begrotingsvoorstellen
       proposals: Voorstellen
-      proposal_notifications: Voorgestelde notificaties
-      users: Blokkeer deelnemers
+      proposal_notifications: Notificaties
+      users: Block users
     proposals:
       index:
-        block_authors: Blokkeer auteurs
-        confirm: Weet je het zeker?
+        block_authors: Auteurs blokkeren
         filter: Filter
         filters:
-          all: Allen
-          pending_flag_review: In afwachting van evaluatie
+          all: All
+          pending_flag_review: Pending review
           with_ignored_flag: Markeer als gelezen
         headers:
           moderate: Modereer
           proposal: Voorstel
-        hide_proposals: Verberg voorstellen
+        hide: Voorstellen verbergen
         ignore_flags: Markeer als gelezen
-        order: Op volgorde van
         orders:
-          created_at: Meest recent
+          created_at: Most recent
           flags: Meest gemarkeerd
         title: Voorstellen
     budget_investments:
       index:
         block_authors: Blokkeer auteurs
-        confirm: Weet je het zeker?
         filter: Filter
         filters:
-          all: Allen
+          all: All
           pending_flag_review: In afwachting
           with_ignored_flag: Markeer als gelezen
         headers:
-          moderate: Bemiddelen
+          moderate: Modereer
           budget_investment: Begrotingsvoorstel
-        hide_budget_investments: Verbergen begrotingsinvesteringen
+        hide: Verbergen begrotingsinvesteringen
         ignore_flags: Markeer als gelezen
-        order: Bestel door
         orders:
           created_at: Meest recent
           flags: Meest gemarkeerd
@@ -91,7 +85,6 @@ nl:
     proposal_notifications:
       index:
         block_authors: Blokkeer auteurs
-        confirm: Bent u zeker?
         filter: Filter
         filters:
           all: All
@@ -99,19 +92,20 @@ nl:
           ignored: Markeer als gelezen
         headers:
           moderate: Modereer
-          proposal_notification: Voorgestelde notificaties
-        hide_proposal_notifications: Verberg voorstellen
+          proposal_notification: Notificatie
+        hide: Voorstellen verbergen
         ignore_flags: Markeer als gelezen
-        order: Sorteer op
         orders:
           created_at: Meest recent
           moderated: Gemodereerd door
-        title: Voorgestelde notificaties
+        title: Notificaties
     users:
       index:
-        hidden: Geblokkeerd
-        hide: Blokkeer
-        search: Zoek
-        search_placeholder: email of gebruikersnaam
+        block: Blokkeer
+        confirm_block: "Weet je het zeker? Hierdoor is gebruiker \"%{name}\" en al hun inhoud niet meer zichtbaar."
+        confirm_hide: "Weet je het zeker? Hierdoor wordt gebruiker \"%{name}\" niet meer zichtbaar, maar de inhoud wel."
+        hide: Block
+        search_placeholder: email or name of user
         title: Blokkeer deelnemers
-      notice_hide: Deelnemer geblokkeerd. Alle discussies en reacties van deze deelnemer worden verborgen.
+      notice_block: De gebruiker is geblokkeerd. Alle inhoud die door deze gebruiker is gemaakt, is niet meer zichtbaar.
+      notice_hide: De gebruiker is geblokkeerd. Debatten en reacties van deze gebruiker zijn verborgen.

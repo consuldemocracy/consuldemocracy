@@ -1,0 +1,18 @@
+nn:
+  officing:
+    poll_budgets:
+      index:
+        ballot_sheet_author: Forfatter
+      new:
+        submit: Lagre
+      show:
+        author: Forfatter
+    results:
+      new:
+        submit: "Lagre"
+      index:
+        table_answer: Svar
+    voters:
+      new:
+        title: Avstemninger
+        table_actions: Handlinger

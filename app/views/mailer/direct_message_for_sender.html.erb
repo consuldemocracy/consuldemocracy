@@ -1,15 +1,18 @@
-<td style="padding-bottom: 20px; padding-left: 10px;">
+<td style="<%= css_for_mailer_content %>">
 
-  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif; font-size: 20px;">
-    <%= t('mailers.direct_message_for_sender.title_html',
-        receiver: @direct_message.receiver.name ) %>
+  <h1 style="<%= css_for_mailer_heading %>">
+    <%= t("mailers.direct_message_for_sender.title") %>
+  </h1>
+
+  <p style="<%= css_for_mailer_text %>">
+    <%= sanitize(t("mailers.direct_message_for_sender.text", receiver: @direct_message.receiver.name)) %>
   </p>
 
-  <h2 style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif; font-size: 18px;">
+  <p style="<%= css_for_mailer_text %>">
     <%= @direct_message.title %>
-  </h2>
+  </p>
 
-  <div style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= simple_format text_with_links(@direct_message.body), {}, sanitize: false  %>
+  <div style="<%= css_for_mailer_text %>">
+    <%= mailer_simple_format(@direct_message.body) %>
   </div>
 </td>

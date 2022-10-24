@@ -1,17 +1,13 @@
-<div class="row section-content">
-  <div class="small-12 column">
-    <h3 id="processes" data-magellan-target="processes">
-      <%= t("pages.help.processes.title") %>
-    </h3>
-
-    <p>
-      <% link = link_to(t("pages.help.processes.link"), legislation_processes_path) %>
-      <%= t("pages.help.processes.description", link: link).html_safe %>
-    </p>
-    <ul class="features">
-      <li>
-        <% link = link_to(t("pages.help.processes.link"), legislation_processes_path) %>
-      </li>
-    </ul>
-  </div>
-</div>
+<%= render Pages::Help::SectionComponent.new("processes") do %>
+  <p>
+    <% link = link_to(t("pages.help.processes.link"), legislation_processes_path) %>
+    <%= sanitize(t("pages.help.processes.description", link: link)) %>
+  </p>
+  <ul class="features">
+    <li>
+      <%= sanitize(t("pages.help.processes.feature",
+            link: link_to(t("pages.help.processes.feature_link", org_name: setting["org_name"]),
+                             new_user_registration_path))) %>
+    </li>
+  </ul>
+<% end %>

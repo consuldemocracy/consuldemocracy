@@ -1,0 +1,18 @@
+<%= f.hidden_field :id %>
+
+<%= f.label :links, t("links.nested_links.title") %>
+<p class="help-text"><%= t("links.nested_links.note") %></p>
+
+<div id="nested-links">
+  <%= f.fields_for :links do |links_builder| %>
+    <%= render "links/link_fields", f: links_builder %>
+  <% end %>
+</div>
+
+<%= link_to_add_association t("links.nested_links.add_new_link"), f, :links,
+                            partial: "links/link_fields", id: "new_link_button",
+                            data: {
+                              association_insertion_node: "#nested-links",
+                              association_insertion_method: "append"
+                            },
+                            class: "button hollow" %>

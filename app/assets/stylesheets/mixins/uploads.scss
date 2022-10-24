@@ -1,0 +1,82 @@
+@mixin direct-uploads {
+
+  .cached-image {
+    max-width: rem-calc(150);
+    max-height: rem-calc(150);
+  }
+
+  .progress-bar-placeholder {
+    display: none;
+    margin-bottom: $line-height;
+  }
+
+  .document,
+  .image {
+
+    .document-attachment,
+    .image-attachment {
+      padding-left: 0;
+
+      p {
+        margin-bottom: 0;
+      }
+
+      &:focus-within label {
+        outline: $outline-focus;
+      }
+    }
+
+    .attachment-errors {
+
+      > [type=file] {
+        @include element-invisible;
+
+        ~ .error {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .progress-bar {
+    width: 100%;
+    background-color: $light-gray;
+  }
+
+  .file-name {
+    padding-left: 0;
+    margin-top: 0;
+
+    &:empty {
+      display: none;
+    }
+
+    &:not(:empty) + .document-attachment,
+    &:not(:empty) + .image-attachment {
+      display: none;
+    }
+  }
+
+  .loading-bar {
+    height: 5px;
+    width: 0;
+    transition: width 500ms ease-out;
+
+    &.uploading {
+      background-color: $dark-gray;
+    }
+
+    &.complete {
+      background-color: $success-color;
+    }
+
+    &.errors {
+      background-color: $alert-color;
+      margin-top: $line-height / 2;
+    }
+  }
+
+  .loading-bar.no-transition {
+    transition: none;
+  }
+}

@@ -1,5 +1,4 @@
 module CacheKeysHelper
-
   def locale_and_user_status(authorable = nil)
     @cache_key_user ||= calculate_user_status(authorable)
     "#{I18n.locale}/#{@cache_key_user}"
@@ -26,5 +25,4 @@ module CacheKeysHelper
   def commentable_cache_key(commentable)
     "#{commentable.class.name}-#{commentable.id}"
   end
-
 end

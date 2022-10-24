@@ -1,5 +1,4 @@
 <div class="verification account row">
-  <%track_event(category: "verification", action: "start_census" )%>
   <div class="small-12 column">
 
     <div class="text-center">
@@ -39,8 +38,9 @@
       <div class="row">
         <div class="small-12 medium-8">
           <div class="small-12 medium-3 column">
-            <%= f.label t("verification.residence.new.document_type_label") %>
-            <%= f.select :document_type, document_types, prompt: "", label: false %>
+            <%#= f.label t("verification.residence.new.document_type_label") %>
+            <%#= f.select :document_type, document_types, prompt: "", label: false %>
+          <%= f.select :document_type, document_types, prompt: "" %>
           </div>
           <div class="small-12 medium-5 column end">
 
@@ -48,14 +48,14 @@
             <%= f.label t("verification.residence.new.document_number") %>
           </div>
 
-          <div class="inline-block" data-toggle="info-document-number">
+          <button type="button" class="inline-block" data-toggle="info-document-number">
             <span class="icon-help"></span>
             <span class="show-for-sr"><%= t("verification.residence.new.document_number_help_title") %></span>
-          </div>
+          </button>
 
           <div class="dropdown-pane" id="info-document-number" data-dropdown
                data-hover="true" data-hover-pane="true">
-            <%= t("verification.residence.new.document_number_help_text_html") %>
+            <%= sanitize(t("verification.residence.new.document_number_help_text")) %>
           </div>
 
           <%= f.text_field :document_number, label: false %>
@@ -64,32 +64,24 @@
       </div>
 
       <div class="date-of-birth small-12 medium-6 clear">
-      <%= f.label t("verification.residence.new.date_of_birth") %>
       <%= f.date_select :date_of_birth,
                         prompt: true,
-                        start_year: 1900, end_year: 16.years.ago.year,
-                        label: false %>
+                        start_year: 1900, end_year: minimum_required_age.years.ago.year %>
       </div>
 
       <div class="small-12 medium-5 clear">
-        <%= f.label t("verification.residence.new.postal_code") %>
-        <p class="help-text" id="postal-code-help-text"><%= t("verification.residence.new.postal_code_note") %></p>
-        <div class="medium-6">
-          <%= f.text_field :postal_code, label: false, aria: {describedby: "postal-code-help-text"} %>
-        </div>
+        <%= f.text_field :postal_code,
+          hint: t("verification.residence.new.postal_code_note") %>
       </div>
 
       <div class="small-12">
-        <%= f.label :terms_of_service do %>
-          <%= f.check_box :terms_of_service, title: t('verification.residence.new.accept_terms_text_title'), label: false %>
-          <span class="checkbox">
-            <%= t("verification.residence.new.accept_terms_text",
-                terms_url: link_to(t("verification.residence.new.terms"), "/census_terms",
-                title: t('shared.target_blank_html'),
-                target: "_blank")).html_safe
-            %>
-          </span>
-        <% end %>
+        <%= f.check_box :terms_of_service,
+          title: t("verification.residence.new.accept_terms_text_title"),
+          label: t("verification.residence.new.accept_terms_text",
+                   terms_url: link_to(t("verification.residence.new.terms"), page_path("census_terms"),
+                                      title: t("shared.target_blank"),
+                                      target: "_blank")
+                  ) %>
       </div>
 
       <div class="small-12 medium-3 clear">

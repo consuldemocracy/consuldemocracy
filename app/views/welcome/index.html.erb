@@ -4,31 +4,32 @@
   <%= render "shared/canonical", href: root_url %>
 <% end %>
 
-<% if has_banners? %>
-  <%= render "shared/banner" %>
-<% end %>
+<%= render Shared::BannerComponent.new("homepage") %>
 
 <% provide :social_media_meta_tags do %>
   <%= render "shared/social_media_meta_tags",
               social_url: root_url %>
 <% end %>
 
-<%= render "header", header: @header %>
+<%= render "shared/header", header: @header %>
 
 <main>
   <%= render "feeds" %>
 
-
   <div class="row">
     <% if @cards.any? %>
-      <div class="small-12 column <%= 'large-8' if feed_processes_enabled? %>">
-        <%= render "cards" %>
+      <div class="small-12 column <%= "large-8" if feed_processes_enabled? %>">
+        <h2 class="title"><%= t("welcome.cards.title") %></h2>
+
+        <%= render "shared/cards", cards: @cards %>
       </div>
     <% end %>
 
-    <div class="small-12 large-4 column">
-      <%= render "processes" %>
-    </div>
+    <% if feed_processes_enabled? %>
+      <div class="small-12 large-4 column">
+        <%= render "processes" %>
+      </div>
+    <% end %>
   </div>
 
   <% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>

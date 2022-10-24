@@ -16,12 +16,28 @@
 // 01. Global styles
 // -----------------
 
+$admin-border-color: #d3d9dd;
+$admin-border:   2px solid $admin-border-color;
 $admin-color:    #245b80;
+$admin-text:     #434d54;
+
 $sidebar:        #245b80;
 $sidebar-hover:  #25597c;
 $sidebar-active: #f4fcd0;
 
+$table-border:   $admin-border;
+$table-header:   #ecf1f6;
+
 .admin {
+  @include admin-layout;
+
+  > header {
+    border-bottom: 1px solid #eee;
+
+    > * {
+      @include full-width-background($adjust-margin: false, $adjust-padding: true);
+    }
+  }
 
   h2 {
     font-weight: 100;
@@ -36,35 +52,26 @@ $sidebar-active: #f4fcd0;
     }
   }
 
+  h3 {
+    margin: $line-height 0;
+  }
+
   .back {
     float: none;
   }
 
-  .header {
-    border: 0;
-  }
-
   .top-links {
     background: #000;
+    color: $white;
 
     a {
       line-height: rem-calc($line-height * 1.5);
     }
   }
 
-  .admin-top-bar {
-    background: #fff;
-  }
-
   .top-bar {
-    background: #fff !important;
-    border-bottom: 1px solid #eee;
-    color: #000;
     height: auto;
-
-    @include breakpoint(medium) {
-      box-shadow: 0 2px 2px #eee;
-    }
+    padding-top: $line-height / 2;
 
     @include breakpoint(small only) {
 
@@ -74,25 +81,18 @@ $sidebar-active: #f4fcd0;
 
       .top-bar-right {
 
+        > ul {
+          border-bottom: 0;
+          padding-bottom: 0;
+          margin-bottom: 0;
+        }
+
         .submenu {
-          border: 0;
-          display: block;
-          margin-top: 0;
           position: initial;
-          width: 100%;
-        }
-
-        .is-active {
-          font-weight: normal;
-          text-decoration: none;
-        }
-
-        .is-submenu-item {
-          padding: $line-height / 2 0;
         }
 
         a {
-          font-weight: normal !important;
+          font-weight: normal;
         }
       }
 
@@ -101,34 +101,30 @@ $sidebar-active: #f4fcd0;
       }
     }
 
-    [class^="icon-"]:not(.icon-circle) {
+    [class^="icon-"] {
       font-size: $base-font-size;
     }
-  }
-
-  .menu .menu-text {
 
     h1 {
       margin-top: $line-height / 2;
       margin-bottom: 0;
 
       @include breakpoint(medium) {
-        margin-left: $line-height / 2;
         margin-top: 0;
       }
 
       small {
-        color: #000;
+        color: inherit;
         text-transform: uppercase;
       }
-    }
 
-    a {
-      color: #000 !important;
-      line-height: $line-height !important;
-
-      @include breakpoint(medium) {
-        line-height: $line-height !important;
+      a {
+        color: inherit;
+        display: inline-block;
+        font-family: "Lato" !important;
+        font-size: rem-calc(24);
+        font-weight: lighter;
+        line-height: 1;
       }
     }
   }
@@ -137,11 +133,6 @@ $sidebar-active: #f4fcd0;
 
     @include breakpoint(medium) {
       height: auto !important;
-      padding-top: $line-height / 2;
-    }
-
-    a {
-      color: #000 !important;
     }
   }
 
@@ -151,20 +142,8 @@ $sidebar-active: #f4fcd0;
     right: 12px;
   }
 
-  .menu-icon {
-
-    &::after {
-      background: #000;
-      box-shadow: 0 7px 0 #000, 0 14px 0 #000;
-    }
-  }
-
-  .notifications .icon-circle {
+  .notifications.unread-notifications::after {
     color: $admin-color;
-  }
-
-  .dropdown.menu > .is-dropdown-submenu-parent > a::after {
-    border-color: #000 transparent transparent;
   }
 
   .fieldset {
@@ -194,35 +173,54 @@ $sidebar-active: #f4fcd0;
 
     &.with-button {
       line-height: $line-height * 2;
-
-      .button {
-        background: #fff;
-        color: $brand;
-      }
-    }
-  }
-
-  tr {
-    background: #fff;
-    border: 1px solid $border;
-
-    &:hover {
-      background: #f3f6f7;
     }
   }
 
   table {
 
+    caption {
+      font-style: italic;
+      font-weight: normal;
+      padding: 0;
+      text-align: $global-left;
+    }
+
     thead {
-      color: #fff;
+
+      &,
+      tr {
+        border: 0;
+      }
+
+      th:first-of-type {
+        border-top-left-radius: rem-calc(8);
+      }
+
+      th:last-of-type {
+        border-top-right-radius: rem-calc(8);
+      }
     }
 
     th {
-      background: $brand;
-      color: #fff;
+      background: $table-header;
+      color: $admin-text;
+      padding: $line-height / 2;
 
       label {
-        color: #fff;
+        color: $white;
+      }
+
+      a {
+        color: inherit;
+        white-space: nowrap;
+      }
+    }
+
+    tr {
+      border: $table-border;
+
+      &:hover {
+        background: adjust-color(darken($table-background, 2%), $red: -4, $green: -1);
       }
     }
 
@@ -234,16 +232,13 @@ $sidebar-active: #f4fcd0;
       table-layout: fixed;
     }
 
-    [type="submit"] ~ a,
-    a ~ a {
-      margin-left: 0;
-      margin-right: 0;
-      margin-top: $line-height / 2;
+    [type="submit"] ~ a {
+      margin-left: $line-height / 2;
+    }
 
-      @include breakpoint(medium) {
-        margin-left: $line-height / 2;
-        margin-top: 0;
-      }
+    [type="checkbox"] {
+      margin-bottom: 0;
+      vertical-align: middle;
     }
   }
 
@@ -251,7 +246,41 @@ $sidebar-active: #f4fcd0;
     max-width: none;
   }
 
-  .menu.simple {
+  form {
+
+    .input-group-label {
+      height: $line-height * 2;
+    }
+
+    .checkbox,
+    .radio {
+      font-weight: bold;
+    }
+
+    select {
+      height: $input-height;
+    }
+
+    [type]:not([type="button"], [type=checkbox], [type=file], [type=radio], [type=submit]),
+    select {
+      background-color: $white;
+      border: $admin-border;
+      border-radius: rem-calc(6);
+      box-shadow: none;
+
+      &:focus {
+        border: $input-border-focus;
+      }
+    }
+  }
+
+  .form-label {
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+
+  .menu.simple,
+  .order-links {
     margin-bottom: $line-height / 2;
 
     h2 {
@@ -260,10 +289,13 @@ $sidebar-active: #f4fcd0;
     }
 
     .is-active {
-      border-bottom: 2px solid $admin-color;
       color: $admin-color;
       font-weight: bold;
     }
+  }
+
+  .order-links {
+    margin-bottom: $line-height;
   }
 
   .tabs-panel {
@@ -280,8 +312,7 @@ $sidebar-active: #f4fcd0;
   }
 
   .admin-content {
-
-    .proposal-form {
+    .proposal-new {
       padding-top: 0;
     }
   }
@@ -289,19 +320,10 @@ $sidebar-active: #f4fcd0;
   .is-featured {
     margin-top: rem-calc(36);
   }
-
-  .select-order {
-    min-width: rem-calc(160);
-  }
 }
 
 .for-print-only {
   display: none;
-}
-
-.admin-content {
-  overflow: scroll;
-  padding: $line-height !important;
 }
 
 @include breakpoint(medium) {
@@ -360,100 +382,60 @@ $sidebar-active: #f4fcd0;
   color: $text-medium;
 }
 
-// 02. Sidebar
-// -----------
+.icon-sortable {
+  font-family: "Font Awesome 5 Free";
+  font-size: $small-font-size;
+  position: relative;
 
-.admin-sidebar {
-  background: $sidebar;
-  background: linear-gradient(to bottom, #245b80 0%, #488fb5 100%);
-  border-right: 1px solid $border;
-
-  @include breakpoint(medium) {
-    min-height: rem-calc(1100);
+  &::before,
+  &::after {
+    left: 6px;
+    opacity: 0.5;
+    position: absolute;
   }
 
-  ul {
-    list-style-type: none;
-    margin-bottom: 0;
-    margin-left: 0;
-    padding: 0;
-
-    [class^="icon-"] {
-      color: #fff;
-      display: inline-block;
-      font-size: rem-calc(24);
-      line-height: $line-height;
-      padding: $line-height / 2 $line-height / 4;
-      padding-left: 0;
-      vertical-align: middle;
-    }
+  &::before {
+    content: "\f0d8";
+    bottom: 0;
   }
 
-  li {
-    margin: 0;
-    outline: 0;
+  &::after {
+    content: "\f0d7";
+    top: 0;
+  }
 
-    ul {
-      margin-left: $line-height / 1.5;
-      border-left: 1px solid $sidebar-hover;
-      padding-left: $line-height / 2;
-    }
+  &.asc {
 
-    &.is-active a {
-      background: $sidebar-hover;
-      border-left: 2px solid $sidebar-active;
-      font-weight: bold;
+    &::after {
+      opacity: 1;
     }
   }
 
-  li a {
-    color: #fff;
-    display: block;
-    line-height: rem-calc(48);
-    padding-left: rem-calc(12);
-    vertical-align: top;
+  &.desc {
 
-    &:hover {
-      background: $sidebar-hover;
-      color: #fff;
-      text-decoration: none;
-    }
-  }
-
-  .is-accordion-submenu-parent {
-
-    > a::after {
-      border: 0;
-      content: '\61' !important;
-      font-family: "icons" !important;
-      height: auto;
-      position: absolute !important;
-      right: 30px;
-      top: 6px !important;
-    }
-  }
-
-  .submenu {
-    border-bottom: 0;
-    margin-left: $line-height;
-
-    li:first-child {
-      padding-top: $line-height / 2;
-    }
-
-    li:last-child {
-      padding-bottom: $line-height / 2;
-    }
-
-    a {
-      font-weight: normal;
-    }
-
-    .is-active {
-      border-bottom: 0;
+    &::before {
+      opacity: 1;
     }
   }
 }
+
+code {
+  word-break: break-all;
+}
+
+.content-type {
+  white-space: nowrap;
+  padding-right: $line-height;
+
+  label {
+    margin-left: 0 !important;
+  }
+}
+
+// 02. Sidebar
+// -----------
+
+// See admin/menu.scss
 
 // 03. List elements
 // -----------------
@@ -466,7 +448,7 @@ $sidebar-active: #f4fcd0;
   &:hover,
   &:active,
   &:focus {
-    border-bottom: 1px dotted #fff;
+    border-bottom-color: transparent;
     color: #cf2a0e;
   }
 }
@@ -474,16 +456,6 @@ $sidebar-active: #f4fcd0;
 [class^="icon-"].delete {
   border: 0;
   font-size: $base-font-size;
-}
-
-.verified {
-  color: $check;
-
-  a {
-    border-bottom: 1px dotted $check;
-    color: $check;
-    font-size: rem-calc(12);
-  }
 }
 
 .archived {
@@ -534,10 +506,6 @@ $sidebar-active: #f4fcd0;
 
 // 04. Stats
 // ---------
-
-.stats {
-  background: #fff;
-}
 
 .stats-numbers {
   p {
@@ -595,7 +563,7 @@ $sidebar-active: #f4fcd0;
   border-radius: rem-calc(3);
   font-size: rem-calc(16);
   font-weight: normal;
-  margin: $line-height;
+  margin-bottom: $line-height;
   padding: $line-height / 2;
 
   strong {
@@ -607,7 +575,7 @@ $sidebar-active: #f4fcd0;
   background: #fafafa;
   border-bottom-left-radius: rem-calc(6);
   border-bottom-right-radius: rem-calc(6);
-  border-top: 2px solid #000;
+  border-top: 2px solid;
   font-size: $small-font-size;
   padding: $line-height / 2;
 }
@@ -622,13 +590,6 @@ $sidebar-active: #f4fcd0;
   p {
     font-size: $small-font-size;
     margin-bottom: 0;
-  }
-}
-
-.admin {
-
-  .investment-projects-list.medium-9 {
-    width: 100%;
   }
 }
 
@@ -659,15 +620,26 @@ $sidebar-active: #f4fcd0;
   }
 }
 
-.admin-content .select-geozone,
+.admin-content > header {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+
+  a,
+  button {
+    @include regular-button;
+    margin-left: auto;
+  }
+}
+
 .admin-content .select-heading {
 
   a {
-    color: $text;
+    color: inherit;
     display: block;
 
     &.is-active {
-      color: $brand;
+      @include brand-text;
       font-weight: bold;
       text-decoration: underline;
     }
@@ -678,24 +650,6 @@ $sidebar-active: #f4fcd0;
 
   .total-price {
     white-space: nowrap;
-  }
-}
-
-.admin {
-
-  .geozone {
-    background: #ececec;
-    border-radius: rem-calc(6);
-    color: $text;
-    display: inline-block;
-    font-size: $small-font-size;
-    margin-bottom: $line-height / 3;
-    padding: $line-height / 4 $line-height / 3;
-    text-decoration: none;
-
-    &:hover {
-      background: #e0e0e0;
-    }
   }
 }
 
@@ -729,7 +683,7 @@ table {
 // ---------------
 
 .markdown-editor {
-  background-color: #fff;
+  background-color: $body-background;
 
   .markdown-area,
   .markdown-preview {
@@ -799,10 +753,6 @@ table {
       color: $text-medium;
     }
 
-    [type]:not([type="submit"]):not([type="file"]):not([type="checkbox"]):not([type="radio"]) {
-      background: $white;
-    }
-
     .legislation-process-start,
     .legislation-process-end {
       @include breakpoint(medium) {
@@ -835,7 +785,6 @@ table {
 .legislation-questions-form {
 
   [type]:not([type="submit"]):not([type="file"]):not([type="checkbox"]):not([type="radio"]) {
-    background: $white;
     margin-bottom: 0;
 
     @include breakpoint(medium) {
@@ -961,10 +910,6 @@ table {
     }
   }
 
-  [type]:not([type="submit"]):not([type="file"]):not([type="checkbox"]):not([type="radio"]) {
-    background: $white;
-  }
-
   .control {
     cursor: pointer;
     margin-bottom: 1rem;
@@ -1001,17 +946,6 @@ table {
       vertical-align: sub;
       text-decoration: none;
       line-height: 0;
-    }
-  }
-
-  .legislation-draft-version-body {
-    font-family: $font-family-serif;
-    background: #f5f5f5;
-    height: 16em;
-
-    &:focus {
-      border: 1px solid #cacaca;
-      box-shadow: inset 0 1px 2px rgba(34, 34, 34, 0.1);
     }
   }
 
@@ -1058,11 +992,14 @@ table {
 
     .legislation-draft-version-body {
       border-radius: 0;
-      padding: 1rem;
-      border: 0;
 
       @include breakpoint(medium) {
-        padding: 1rem 2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+
+      &:focus {
+        box-shadow: inset 0 1px 2px rgba(34, 34, 34, 0.1);
       }
     }
 
@@ -1074,12 +1011,6 @@ table {
         padding: 1rem 2rem;
       }
     }
-  }
-}
-
-.legislation-draft-version-body {
-  &:focus {
-    border: 0;
   }
 }
 
@@ -1106,7 +1037,7 @@ table {
     }
 
     .map-icon::after {
-      content: '';
+      content: "";
       width: 14px;
       height: 14px;
       margin: 8px 0 0 8px;
@@ -1151,6 +1082,11 @@ table {
   .filter {
     display: inline-block;
     margin: 0 $line-height / 2;
+
+    label {
+      font-weight: normal;
+      margin: 0;
+    }
   }
 
   .button {
@@ -1158,42 +1094,56 @@ table {
   }
 }
 
-.budget-phase-enabled {
-  font-weight: bold;
-  padding-left: rem-calc(20);
-  position: relative;
-  text-decoration: none;
+.columns-selector {
 
-  &.enabled::before,
-  &.disabled::before {
-    font-family: 'icons';
-    left: 0;
-    position: absolute;
+  [class^="icon-"] {
+    vertical-align: middle;
   }
 
-  &.enabled {
-    color: $check;
+  &[aria-expanded='false'] {
+    @include hollow-button;
 
-    &::before {
-      color: $check;
-      content: '\6c';
+    + .columns-selector-wrapper {
+      display: none;
     }
   }
 
-  &.disabled {
-    color: #000;
+  &[aria-expanded='true'] {
+    @include regular-button;
+  }
+}
 
-    &::before {
-      color: #000;
-      content: '\76';
+.columns-selector-wrapper {
+  background: $light-gray;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+
+  .column-selector-item {
+    display: inline-block;
+
+    &.hidden {
+      display: none;
     }
+
+    label {
+      font-size: $base-font-size;
+      line-height: 1.5rem;
+    }
+  }
+}
+
+.column-selectable {
+
+  .hidden {
+    display: none;
   }
 }
 
 // 11. Newsletters
 // -----------------
 
-.newsletter-body-content {
+.admin .newsletter-body-content {
 
   table,
   tbody,

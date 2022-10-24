@@ -1,0 +1,6 @@
+nn:
+  social_share_button:
+    twitter: "Twitter"
+    facebook: "Facebook"
+    email: "E-post"
+    whatsapp_app: "WhatsApp"

@@ -1,20 +1,20 @@
 sv:
   moderation:
+    actions:
+      confirm_action: "Är du säker? %{action}"
     comments:
       index:
         block_authors: Blockera användare
-        confirm: Är du säker?
         filter: Filtrera
         filters:
           all: Alla
           pending_flag_review: Väntande
           with_ignored_flag: Markerad som läst
         headers:
-          comment: Kommentera
+          comment: Kommentar
           moderate: Moderera
-        hide_comments: Dölj kommentarer
+        hide: Dölj kommentarer
         ignore_flags: Markera som läst
-        order: Sortera efter
         orders:
           flags: Mest flaggade
           newest: Senaste
@@ -24,19 +24,17 @@ sv:
         title: Moderering
     debates:
       index:
-        block_authors: Blockera användare
-        confirm: Är du säker?
+        block_authors: Blockera förslagslämnare
         filter: Filtrera
         filters:
           all: Alla
           pending_flag_review: Väntande
           with_ignored_flag: Markerad som läst
         headers:
-          debate: Diskutera
+          debate: Debattera
           moderate: Moderera
-        hide_debates: Dölj debatter
+        hide: Dölj debatter
         ignore_flags: Markera som läst
-        order: Sortera efter
         orders:
           created_at: Senaste
           flags: Mest flaggade
@@ -52,8 +50,7 @@ sv:
       users: Blockera användare
     proposals:
       index:
-        block_authors: Blockera användare
-        confirm: Är du säker?
+        block_authors: Blockera förslagslämnare
         filter: Filtrera
         filters:
           all: Alla
@@ -62,36 +59,32 @@ sv:
         headers:
           moderate: Moderera
           proposal: Förslag
-        hide_proposals: Dölj förslag
+        hide: Dölj förslag
         ignore_flags: Markera som läst
-        order: Sortera efter
         orders:
           created_at: Senaste
           flags: Mest flaggade
         title: Förslag
     budget_investments:
       index:
-        block_authors: Blockera förslagslämnare
-        confirm: Är du säker?
+        block_authors: Blockera användare
         filter: Filtrera
         filters:
           all: Alla
-          pending_flag_review: Avvaktar
+          pending_flag_review: Väntande
           with_ignored_flag: Markerad som läst
         headers:
           moderate: Moderera
           budget_investment: Budgetförslag
-        hide_budget_investments: Dölj budgetförslag
+        hide: Dölj budgetförslag
         ignore_flags: Markera som läst
-        order: Sortera efter
         orders:
           created_at: Senaste
           flags: Mest flaggade
         title: Budgetförslag
     proposal_notifications:
       index:
-        block_authors: Blockera förslagslämnare
-        confirm: Är du säker?
+        block_authors: Blockera användare
         filter: Filtrera
         filters:
           all: Alla
@@ -99,19 +92,20 @@ sv:
           ignored: Markera som läst
         headers:
           moderate: Moderera
-          proposal_notification: Avisering om förslag
-        hide_proposal_notifications: Dölj förslag
+          proposal_notification: Förslagsavisering
+        hide: Dölj förslag
         ignore_flags: Markera som läst
-        order: Sortera efter
         orders:
           created_at: Senaste
           moderated: Modererad
-        title: Förslagsaviseringar
+        title: Aviseringar om förslag
     users:
       index:
-        hidden: Blockerade
+        block: Blockera
+        confirm_block: "Är du säker? Det här kommer att dölja användaren \"%{name}\" och användarens hela innehåll."
+        confirm_hide: "Är du säker? Det här kommer att dölja användaren \"%{name}\" utan att dölja användarens innehåll."
         hide: Blockera
-        search: Sök
-        search_placeholder: e-postadress eller namn på användare
+        search_placeholder: användares e-postadress eller namn
         title: Blockera användare
-      notice_hide: Användaren blockerades. Alla användarens inlägg och kommentarer har dolts.
+      notice_block: Användaren har blockerats. Allt innehåll som har skapats av denna användare har dolts.
+      notice_hide: Användaren blockerades. Användarens alla inlägg och kommentarer har dolts.

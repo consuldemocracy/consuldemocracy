@@ -1,8 +1,9 @@
 module DocumentParser
-
   def get_document_number_variants(document_type, document_number)
+    return [] if document_number.blank?
+
     # Delete all non-alphanumerics
-    document_number = document_number.to_s.gsub(/[^0-9A-Za-z]/i, '')
+    document_number = document_number.to_s.gsub(/[^0-9A-Za-z]/i, "")
     variants = []
 
     if dni?(document_type)
@@ -34,7 +35,7 @@ module DocumentParser
   # ['1234', '01234', '001234', '0001234']
   def get_number_variants_with_leading_zeroes_from(document_number, digits = 8)
     document_number = document_number.to_s.last(digits) # Keep only the last x digits
-    document_number = document_number.gsub(/^0+/, '')   # Removes leading zeros
+    document_number = document_number.gsub(/^0+/, "")   # Removes leading zeros
 
     variants = []
     variants << document_number if document_number.present?
@@ -56,5 +57,9 @@ module DocumentParser
       end
     end
     variants
+  end
+
+  def dni?(document_type)
+    document_type.to_s == "1"
   end
 end

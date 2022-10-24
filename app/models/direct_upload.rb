@@ -34,11 +34,8 @@ class DirectUpload
   end
 
   def save_attachment
-    @relation.attachment.save
-  end
-
-  def destroy_attachment
-    @relation.attachment.destroy
+    @relation.attachment.blob.save!
+    @relation.attachment_changes["attachment"].upload
   end
 
   def persisted?
@@ -47,20 +44,19 @@ class DirectUpload
 
   private
 
-  def parent_resource_attachment_validations
-    @relation.valid?
+    def parent_resource_attachment_validations
+      @relation.valid?
 
-    if @relation.errors.key? :attachment
-      errors[:attachment] = @relation.errors[:attachment]
+      if @relation.errors.key? :attachment
+        errors.add(:attachment, @relation.errors.full_messages_for(:attachment))
+      end
     end
-  end
 
-  def relation_attributtes
-    {
-      attachment: @attachment,
-      cached_attachment: @cached_attachment,
-      user: @user
-    }
-  end
-
+    def relation_attributtes
+      {
+        attachment: @attachment,
+        cached_attachment: @cached_attachment,
+        user: @user
+      }
+    end
 end

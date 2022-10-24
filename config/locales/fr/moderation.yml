@@ -3,18 +3,16 @@ fr:
     comments:
       index:
         block_authors: Bloquer un auteur
-        confirm: Êtes-vous sûr(e) ?
-        filter: Filtrer
+        filter: Filtre
         filters:
-          all: Tous
-          pending_flag_review: En attente
+          all: Toutes
+          pending_flag_review: Indécis
           with_ignored_flag: Marqué comme vu
         headers:
           comment: Commentaire
           moderate: Modérer
-        hide_comments: Masquer les commentaires
+        hide: Masquer les commentaires
         ignore_flags: Marqué comme vu
-        order: Ordre
         orders:
           flags: Les plus signalés
           newest: Les plus récents
@@ -25,18 +23,16 @@ fr:
     debates:
       index:
         block_authors: Bloquer un auteur
-        confirm: Êtes-vous sûr(e) ?
-        filter: Filtrer
+        filter: Filtre
         filters:
-          all: Tous
-          pending_flag_review: En attente
+          all: Toutes
+          pending_flag_review: Indécis
           with_ignored_flag: Marqué comme vu
         headers:
           debate: Débat
           moderate: Modérer
-        hide_debates: Masquer les débats
+        hide: Masquer les débats
         ignore_flags: Marqué comme vu
-        order: Ordre
         orders:
           created_at: Les plus récents
           flags: Les plus signalés
@@ -53,65 +49,57 @@ fr:
     proposals:
       index:
         block_authors: Bloquer un auteur
-        confirm: Êtes-vous sûr(e) ?
-        filter: Filtrer
+        filter: Filtre
         filters:
-          all: Tous
+          all: Toutes
           pending_flag_review: En attente de revue
           with_ignored_flag: Marqué comme vu
         headers:
           moderate: Modérer
           proposal: Proposition
-        hide_proposals: Masquer les propositions
+        hide: Masquer les propositions
         ignore_flags: Marqué comme vu
-        order: Trier par
         orders:
           created_at: Les plus récents
           flags: Les plus signalés
         title: Propositions
     budget_investments:
       index:
-        block_authors: Bloquer des auteurs
-        confirm: Êtes-vous sûr(e) ?
-        filter: Filtrer
+        block_authors: Bloquer un auteur
+        filter: Filtre
         filters:
-          all: Tous
-          pending_flag_review: En attente
+          all: Toutes
+          pending_flag_review: Indécis
           with_ignored_flag: Marqué comme vu
         headers:
           moderate: Modérer
           budget_investment: Proposition d'investissement
-        hide_budget_investments: Cacher les propositions d'investissement
-        ignore_flags: Marquer comme vu
-        order: Trier par
+        hide: Cacher les propositions d'investissement
+        ignore_flags: Marqué comme vu
         orders:
           created_at: Les plus récents
           flags: Les plus signalés
         title: Propositions d'investissement
     proposal_notifications:
       index:
-        block_authors: Bloquer des auteurs
-        confirm: Êtes-vous sûr(e) ?
+        block_authors: Bloquer un auteur
         filter: Filtre
         filters:
-          all: Tout
-          pending_review: Examen en attente
-          ignored: Marquer comme vu
+          all: Toutes
+          pending_review: En attente de revue
+          ignored: Marqué comme vu
         headers:
           moderate: Modérer
           proposal_notification: Notification de proposition
-        hide_proposal_notifications: Masquer les propositions
-        ignore_flags: Marquer comme vu
-        order: Trier par
+        hide: Masquer les propositions
+        ignore_flags: Marqué comme vu
         orders:
-          created_at: Plus récent
+          created_at: Les plus récents
           moderated: Modéré
-        title: Notifications de proposition
+        title: Notifications des propositions
     users:
       index:
-        hidden: Bloqué
         hide: Bloquer
-        search: Rechercher
         search_placeholder: courriel ou nom de l'utilisateur
         title: Bloquer les utilisateurs
       notice_hide: Utilisateur bloqué. Tous les débats et les propositions de cet utilisateur ont été masqués.

@@ -20,13 +20,14 @@ de:
     max_votes_for_debate_edit_description: "Ab dieser Anzahl von Unterstützungen kann der Autor einer Debatte diese nicht länger ändern"
     proposal_code_prefix: "Präfix für Vorschlag-Codes"
     proposal_code_prefix_description: "Dieses Präfix wird in den Vorschlägen vor dem Erstellungsdatum und der ID angezeigt"
+    featured_proposals_number: "Zahl der veröffentlichten Vorschläge"
+    featured_proposals_number_description: "Anzahl der veröffentlichten Vorschläge, die angezeigt werden, wenn die Funktion Veröffentlichte Vorschläge aktiv ist"
     votes_for_proposal_success: "Anzahl der notwendigen Stimmen zur Genehmigung eines Vorschlags"
     votes_for_proposal_success_description: "Wenn ein Antrag diese Anzahl von Unterstützungen erreicht, kann er nicht mehr mehr unterstützt werden und gilt als erfolgreich"
     months_to_archive_proposals: "Anzahl der Monate, um Vorschläge zu archivieren"
+    months_to_archive_proposals_description: "Nach dieser Anzahl von Monaten werden die Anträge archiviert und können keine Unterstützung mehr erhalten\""
     email_domain_for_officials: "E-Mail-Domäne für Beamte"
     email_domain_for_officials_description: "Alle Benutzer, die mit dieser Domain registriert sind, erhalten bei der Registrierung eine Bestätigung ihres Kontos"
-    per_page_code_head: "Code, der auf jeder Seite eingefügt wird (<head>)"
-    per_page_code_body: "Code, der auf jeder Seite eingefügt wird (<body>)"
     twitter_handle: "Twitter Benutzer*name"
     twitter_handle_description: "Falls ausgefüllt, wird es in der Fußzeile erscheinen"
     twitter_hashtag: "Twitter hashtag"
@@ -43,16 +44,10 @@ de:
     url_description: "Haupt-URL Ihrer Website"
     org_name: "Name der Organisation"
     org_name_description: "Name Ihrer Organisation"
-    place_name: "Name des Ortes"
-    place_name_description: "Name Ihrer Stadt"
     related_content_score_threshold: "Punktzahl-Grenze für verwandte Inhalte"
     related_content_score_threshold_description: "Inhalte, die Benutzer als zusammenhangslos markiert haben"
-    map_latitude: "Breitengrad"
-    map_latitude_description: "Breitengrad zur Anzeige der Kartenposition"
-    map_longitude: "Längengrad"
-    map_longitude_description: "Längengrad, um die Position der Karte zu zeigen"
-    map_zoom: "Zoom"
-    map_zoom_description: "Zoomen, um die Kartenposition anzuzeigen"
+    hot_score_period_in_days: "Zeitrahmen (Tage), der für den Filter \"am Aktivsten\" verwendet wird"
+    hot_score_period_in_days_description: "Der in mehreren Sektionen verwendete Filter \"Am Aktivsten\" basiert auf den Stimmen der letzten X Tage"
     mailer_from_name: "Absender E-Mail-Name"
     mailer_from_name_description: "Dieser Name wird in E-Mails angezeigt, die von dieser Anwendung versendet werden"
     mailer_from_address: "Absender E-Mail-Adresse"
@@ -65,35 +60,41 @@ de:
     meta_keywords_description: 'Stichwörter <meta name="keywords">, zur Verbesserung der SEO'
     min_age_to_participate: erforderliches Mindestalter zur Teilnahme
     min_age_to_participate_description: "Nutzer ab diesem Alter können an allen Prozessen teilnehmen"
+    proposals:
+      successful_proposal_id: Erfolgreicher Vorschlag
+      successful_proposal_id_description: Dieser Vorschlag wird als Referenz für einen erfolgreichen Vorschlag in der Unterstützungs-Anzahl verwendet und im Dashboard-Diagramm angezeigt.
+      poll_short_title: Abstimmungen
+      poll_short_title_description: Kurze Beschreibung der Umfrage-Funktion. Erlaubt Benutzer*innen Umfragen zu einem Vorschlag zu erstellen
+      poll_description: Beschreibung Abstimmung
+      poll_description_description: Detaillierte Beschreibung der Umfrage-Funktion
+      poll_link: Weitere Informationen Link
+      poll_link_description: Füge einen zusätzlichen Informationslink zur Funktionaliät der Abstimmung in der Kontrollanzeige hinzu
+      email_short_title: E-Mail
+      email_short_title_description: 'Kurze Beschreibung der E-Mail-Funktion. Ermöglicht Benutzern das Senden einer E-Mail zur Bewerbung ihres Vorschlags. Sie finden den gesamten Inhalt dieser E-Mail unter "/app/views/dashboard/mailer/forward.html.erb"'
+      email_description: E-Mail Beschreibung
+      email_description_description: Detaillierte Beschreibung der E-Mail-Funktion
+      poster_short_title: Poster
+      poster_short_title_description: 'Kurze Beschreibung der Poster-Funktion. Ermöglicht Benutzern den Download eines Posters im PDF-Formats zur Bewerbung ihres Vorschlags. Sie finden den gesamten Inhalt dieses Posters unter "/app/views/dashboard/poster/index.pdf.erb"'
+      poster_description: Beschreibung Poster
+      poster_description_description: Detaillierte Beschreibung der Poster-Funktion
     analytics_url: "Analytik-URL"
-    blog_url: "Blog URL"
-    transparency_url: "Transparenz-URL"
-    opendata_url: "Offene-Daten-URL"
-    verification_offices_url: Bestätigungsbüro URL
-    proposal_improvement_path: Interner Link zur Antragsverbesserungsinformation
+    proposal_notification_minimum_interval_in_days: "Mindestintervall (in Tagen), in dem Autoren von Vorschlägen neue Vorschlagsbenachrichtigungen senden können"
+    proposal_notification_minimum_interval_in_days_description: "Die Anzahl der Tage, nach denen Benutzer Benachrichtungen an alle Unterstützer ihres Vorschlags senden können"
+    direct_message_max_per_day: "Maximale Anzahl direkter Nachrichten per Tag"
+    direct_message_max_per_day_description: "Maximale Anzahl direkter Nachrichten, die Benutzer*innen am Tag senden können"
     feature:
-      budgets: "Bürgerhaushalt"
-      budgets_description: "Bei Bürgerhaushalten entscheiden die Bürger, welche von ihren Nachbarn vorgestellten Projekte einen Teil des Gemeindebudgets erhalten"
       twitter_login: "Twitter login"
       twitter_login_description: "Anmeldung mit Twitter-Account erlauben"
       facebook_login: "Facebook login"
       facebook_login_description: "Anmeldung mit Facebook-Account erlauben"
       google_login: "Google login"
       google_login_description: "Anmeldung mit Google-Account erlauben"
-      proposals: "Vorschläge"
-      proposals_description: "Die Vorschläge der Bürger sind eine Möglichkeit für Nachbarn und Kollektive direkt zu entscheiden, wie sie ihre Stadt gestalten wollen, nachdem sie ausreichende Unterstützung erhalten und sich einer Bürgerabstimmung unterzogen haben"
-      debates: "Diskussionen"
-      debates_description: "Der Debattenraum der Bürger richtet sich an alle, die Themen präsentieren können, die sie betreffen und zu denen sie ihre Ansichten mit anderen teilen wollen"
-      polls: "Umfragen"
-      polls_description: "Bürgerumfragen sind ein partizipatorischer Mechanismus, mit dem Bürger mit Wahlrecht direkte Entscheidungen treffen können"
+      wordpress_login: "Wordpress-Login"
+      wordpress_login_description: "Anmeldung mit Wordpress-Account erlauben"
+      featured_proposals: "Veröffentlichte Vorschläge"
+      featured_proposals_description: "Zeigt veröffentlichte Vorschläge auf der Index Vorschlags-Seite"
       signature_sheets: "Unterschriftenbögen"
-      legislation: "Gesetzgebung"
-      legislation_description: "In partizipativen Prozessen wird den Bürgern die Möglichkeit geboten, sich an der Ausarbeitung und Änderung von Vorschriften, die die Stadt betreffen, zu beteiligen und ihre Meinung zu bestimmten geplanten Aktionen abzugeben"
-      spending_proposals: "Ausgabenvorschläge"
-      spending_proposals_description: "⚠️ Hinweis: Diese Funktionalität wurde durch Bürgerhaushaltung ersetzt und verschwindet in neuen Versionen"
-      spending_proposal_features:
-        voting_allowed: Abstimmung über Investitionsprojekte - Vorauswahlphase
-        voting_allowed_description: "⚠️ Hinweis: Diese Funktionalität wurde durch Bürgerhaushaltung ersetzt und verschwindet in neuen Versionen"
+      signature_sheets_description: "Es ermöglicht das Hinzufügen von vor Ort gesammelten Unterschriften aus dem Administrationspanel zu Vorschlägen und Investitionsprojekten des Bürgerhaushalts"
       user:
         recommendations: "Empfehlungen"
         recommendations_description: "Zeigt Nutzerempfehlungen auf der Startseite auf Grundlage der Tags aus den folgenden Objekten"
@@ -116,4 +117,91 @@ de:
       public_stats: "Öffentliche Statistiken"
       public_stats_description: "Öffentliche Statistiken im Administrationsbereich anzeigen"
       help_page: "Hilfeseite"
-      help_page_description: "Zeigt ein \"Hilfe\"-Menü an, das eine Seite mit Informationen über die einzelnen aktivierten Funktionen enthält"
+      help_page_description: 'Zeigt ein "Hilfe"-Menü an, das eine Seite mit Informationen über die einzelnen aktivierten Funktionen enthält'
+      remote_translations: "Übersetzung ablegen"
+      remote_translations_description: "Zeigt eine Schaltfläche an, mit der Benutzer eine Übersetzung anfordern können, wenn keine Inhalte in ihrer Sprache existieren."
+      translation_interface: "Übersetzung Interface"
+      translation_interface_description: "Zeigt die manuelle Übersetzungsoberfläche an, mit der Benutzer*innen ihren Inhalt in allen verfügbaren Sprachen der Anwendung eingeben können. Diese Option wirkt sich nur auf Benutzeranwendungsformulare aus und ist unabhängig davon immer im Administrationsbereich aktiv."
+      remote_census: "Konfigurieren Sie die Verbindung zum abgelegten Zensus (SOAP)"
+      remote_census_description: "Ermöglicht die Konfiguration der Verbindung zum abgewählten Zensus jeder Institution"
+      valuation_comment_notification: "Bewertung Kommentar Benachrichtigung"
+      valuation_comment_notification_description: "Senden Sie eine E-Mail an alle verbundenen Benutzer*innen, wenn ein neuer Bewertungskommentar erstellt wird - mit Ausnahme des Bewertungskommentars für Budgetinvestitionen"
+      graphql_api: "GraphQL API"
+      sdg: SDG
+    remote_census:
+      general:
+        endpoint: "Endpunkt"
+        endpoint_description: "Host Name, auf dem der Zensus Dienst verfügbar ist (wsdl)"
+      request:
+        method_name: "Angefragte Methode Name"
+        method_name_description: "Name der Anforderungsmethode, die vom Zensus WebService der Stadt akzeptiert wird."
+        structure: "Anforderung Struktur"
+        structure_description: 'Anforderungsstruktur, die den Zensus-WebService der Stadtverwaltung erhält. Die "statischen" Werte dieser Anfrage sollten ausgefüllt werden. Die Werte für Dokumenttyp, Dokumentennummer, Geburtsdatum und Postleitzahl sollten null sein. Beispiel für ein gültiges Format: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": 1, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
+        document_type: "Pfad für Dokumenten Typ"
+        document_type_description: "Pfad in der Anforderungsstruktur, die den Dokumenttyp sendet. NICHT AUSFÜLLEN, wenn der WebService zur Überprüfung eines Benutzers nicht den Dokumenttyp benötigt."
+        document_number: "Pfad für Dokumenten Nummer"
+        document_number_description: "Pfad in der Anforderungsstruktur, die die Dokumentennummer sendet. NICHT AUSFÜLLEN, wenn der WebService zur Überprüfung eines Benutzers nicht die Dokumentennummer benötigt."
+        date_of_birth: "Pfad für Geburtsdatum"
+        date_of_birth_description: "Pfad in der Anforderungsstruktur, die das Geburtsdatum sendet. NICHT AUSFÜLLEN, wenn der WebService zur Überprüfung eines Benutzers nicht das Geburtsdatum benötigt."
+        postal_code: "Pfad für Postleitzahl"
+        postal_code_description: "Pfad in der Anforderungsstruktur, der die Postleitzahl sendet. NICHT AUSFÜLLEN, wenn der WebService zur Überprüfung eines Benutzers nicht den Postleitzahl benötigt."
+      response:
+        date_of_birth: "Pfad für Geburtsdatum"
+        date_of_birth_description: "In welchem Antwortpfad befindet sich das Geburtsdatum des Benutzers?"
+        postal_code: "Pfad für Postleitzahl"
+        postal_code_description: "In welchem Antwortpfad befindet sich die Postleitzahl des Benutzers?"
+        district: "Pfad für Bezirk"
+        district_description: "In welchem Antwortpfad befindet sich der Bezirk des Benutzers?"
+        gender: "Pfad für Geschlecht"
+        gender_description: "In welchem Antwortpfad befindet sich das Geschlecht des Benutzers?"
+        name: "Pfad für Vornamen"
+        name_description: "In welchem Antwortpfad befindet sich der Vornamen des Benutzers?"
+        surname: "Pfad für Nachnamen"
+        surname_description: "In welchem Antwortpfad befindet sich der Nachnamen des Benutzers?"
+        valid: "Bedingung zum Erkennen einer gültigen Antwort"
+        valid_description: "Welcher Antwortweg ist notwendig, um als gültige Antwort angesehen und vom Benutzer verifiziert zu werden"
+    map:
+      latitude: "Breitengrad"
+      latitude_description: "Breitengrad zur Anzeige der Kartenposition"
+      longitude: "Längengrad"
+      longitude_description: "Längengrad, um die Position der Karte zu zeigen"
+      zoom: "Zoom"
+      zoom_description: "Zoomen, um die Kartenposition anzuzeigen"
+    process:
+      debates: "Debatten"
+      debates_description: "Der Debattenraum der Bürger richtet sich an alle, die Themen präsentieren können, die sie betreffen und zu denen sie ihre Ansichten mit anderen teilen wollen"
+      proposals: "Vorschläge"
+      proposals_description: "Die Vorschläge der Bürger sind eine Möglichkeit für Nachbarn und Kollektive direkt zu entscheiden, wie sie ihre Stadt gestalten wollen, nachdem sie ausreichende Unterstützung erhalten und sich einer Bürgerabstimmung unterzogen haben"
+      polls: "Abstimmungen"
+      polls_description: "Bürgerabstimmungen sind ein partizipatorischer Mechanismus, mit dem Bürger mit Wahlrecht direkte Entscheidungen treffen können"
+      budgets: "Bürgerhaushalt"
+      budgets_description: "Bei Bürgerhaushalten entscheiden die Bürger, welche von ihren Nachbarn vorgestellten Projekte einen Teil des Budgets erhalten"
+      legislation: "Kollaborative Gesetzgebung"
+      legislation_description: "In partizipativen Prozessen wird den Bürgern die Möglichkeit geboten, sich an der Ausarbeitung und Änderung von Vorschriften, die die Gesellschaft betreffen, zu beteiligen und ihre Meinung zu bestimmten geplanten Aktionen abzugeben"
+    html:
+      per_page_code_head: "Code, der auf jeder Seite eingefügt wird (<head>)"
+      per_page_code_head_description: "Dieser Code wird innerhalb des Labels <head> angezeigt. Nützlich für die Eingabe von benutzerdefinierten Skripten, Analysen..."
+      per_page_code_body: "Code, der auf jeder Seite eingefügt wird (<body>)"
+      per_page_code_body_description: "Dieser Code wird innerhalb des Labels <body> angezeigt. Nützlich für die Eingabe von benutzerdefinierten Skripten, Analysen..."
+    uploads:
+      images:
+        min_width: "Mindestbreite des Bildes"
+        min_width_description: "Erforderliche Mindestbreite für upload eine Bildes (in Pixel)"
+        min_height: "Mindesthöhe des Bildes"
+        min_height_description: "Erforderliche Mindesthöhe für upload eine Bildes (in Pixel)"
+        max_size: "Maximale Größe des Bildes"
+        max_size_description: "Zulässige maximale Größe für upload eines Bildes (in Megabytes/MB)"
+        content_types: "Akzeptierte Formate für Bilder"
+        content_types_description: "Wählen Sie alle Formate, die zum Upload für Bilder zulässig sind"
+        title:
+          min_length: "Titel des Bildes minimale Länge"
+          min_length_description: "Titel, den der Benutzer beim Hochladen eines Bildes angegeben hat (Verwendung als alt-HTML)"
+          max_length: "Titel des Bildes maximale Länge"
+          max_length_description: "Titel, den der Benutzer beim Hochladen eines Bildes angegeben hat (Verwendung als alt-HTML)"
+      documents:
+        max_amount: "Maximale Zahl von Dokumenten"
+        max_amount_description: "Maximale Anzahl von Dokumenten, die hinzugefügt werden können zu einem Angebot, einer Investition..."
+        max_size: "Maximale Größe Dokument"
+        max_size_description: "Zulässige maximale Größe für upload eines Dokuments (in Megabytes/MB)"
+        content_types: "Akzeptierte Inhaltstypen für Dokumente"
+        content_types_description: "Wählen Sie alle Inhaltsarten, die zum Upload für Dokumente erlaubt sind"

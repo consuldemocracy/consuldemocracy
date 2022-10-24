@@ -1,1 +1,78 @@
 eu:
+  officing:
+    header:
+      title: Bozkaketak
+    dashboard:
+      index:
+        title: Bozka mahaiburua
+        info: Hemen herri agiriak egiaztatu eta hautetsontzien emaitzak gorde ditzakezu
+        no_shifts: Gaur ez duzu mahaiburu txandarik esleituta.
+    menu:
+      voters: Agiria egiaztatu eta bozkatu
+      total_recounts: Zenbaketa
+    polls:
+      final:
+        title: Amaitutako bozkaketen zerrenda
+        no_polls: Ez duzu baimenik duela gutxi amaitutako bozkaketen azken zenbaketak ikusteko.
+        select_poll: Bozkaketa aukeratu
+        add_results: Emaitzak gehitu
+    poll_budgets:
+      index:
+        ballot_sheet_name: Izena
+        ballot_sheet_author: Sortzailea
+        ballot_sheet_creation_date: Sortze data
+      new:
+        booth: Hautetsontzia
+        select_booth: Hautetsontzia aukeratu
+        submit: Gorde
+      show:
+        created_at: Sortze data
+        author: Sortzailea
+    results:
+      flash:
+        create: "Datuak gordeta"
+        error_create: "Emaitzak EZ dira gehitu. Errorea datuetan."
+        error_wrong_booth: "Hautetsontzi okerra. Emaitzak ez dira gorde."
+      new:
+        title: "%{poll} - Emaitzak gehitu"
+        not_allowed: "Ez duzu baimenik emaitzak sartzeko"
+        booth: "Hautetsontzia"
+        date: "Eguna"
+        select_booth: "Hautetsontzia aukeratu"
+        ballots_white: "Bozka zuriak"
+        ballots_null: "Baliogabeko bozkak"
+        ballots_total: "Bozkak guztira"
+        submit: "Gorde"
+        results_list: "Zure emaitzak"
+        see_results: "Emaitzak ikusi"
+      index:
+        no_results: "Ez dago emaitzik"
+        results: Emaitzak
+        table_answer: Erantzuna
+        table_votes: Bozkak
+        table_whites: "Bozka zuriak"
+        table_nulls: "Baliogabeko bozkak"
+        table_total: "Bozkak guztira"
+    residence:
+      flash:
+        create: "Erroldarekin egiaztatutako agiria"
+        not_allowed: "Gaur ez duzu mahaiburu izateko txandarik"
+      new:
+        title: Agiria egiaztatu
+        submit: Agiria egiaztatu
+        error_verifying_census: "Erroldak ezin izan du agiri hau egiaztatu."
+        form_errors: agiri hau egiaztatzea ekidin zuten
+    voters:
+      new:
+        title: Bozkaketak
+        table_poll: Bozkaketa
+        table_status: Bozkaketen egoera
+        table_actions: Ekintzak
+        not_to_vote: Pertsonak momentuz ez bozkatzea erabaki du
+      show:
+        can_vote: Bozka dezakezu
+        error_already_voted: Jadanik bozkaketa honetan parte hartu duzu.
+        submit: Bozka baieztatu
+        success: "Bozkatuta!"
+      can_vote:
+        submit_disable_with: "Itxaron, bozka baieztatzen..."

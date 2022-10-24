@@ -2,13 +2,13 @@ nl:
   activemodel:
     models:
       verification:
-        residence: "Woonplaats"
+        residence: "Adres"
         sms: "SMS"
     attributes:
       verification:
         residence:
-          document_type: "Document type"
-          document_number: "Document nummer (inclusief letters)"
+          document_type: "Documentsoort"
+          document_number: "Documentnummer (inclusief letters)"
           date_of_birth: "Geboortedatum"
           postal_code: "Postcode"
         sms:
@@ -16,7 +16,29 @@ nl:
           confirmation_code: "Bevestigingscode"
         email:
           recipient: "Email"
+      verification/letter:
+        email: "E-mail"
+        password: "Wachtwoord"
+        verification_code: "Code die je in je email ontvangt"
+      verification/management/document:
+        document_type: "Documentsoort:"
+        document_number: "Document nummer"
+      verification/residence:
+        date_of_birth: "Date of birth"
+        document_type: "Documentsoort"
+        postal_code: "Postcode"
+      verification/sms:
+        confirmation_code: "Voer de code in die je hebt ontvangen op je mobiele telefoon"
       officing/residence:
-        document_type: "Documenttype"
+        document_type: "Documentsoort"
         document_number: "Documentnummer (inclusief letters)"
         year_of_birth: "Geboortejaar"
+      local_census_records/import:
+        file: Bestand
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "Het opgegeven bestandsformaat is onjuist. Toegestane bestandsformaat: %{valid_extensions}."
+              headers: "De opgegeven headers van het bestand zijn fout. De volgende namen zijn toegestaan voor de bestanden: %{required_headers}."

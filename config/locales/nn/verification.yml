@@ -1,0 +1,48 @@
+nn:
+  verification:
+    alert:
+      lock: Du har ikke flere forsøk igjen. Prøv igjen senere.
+    back: Tilbake til min konto
+    email:
+      create:
+        alert:
+          failure: Det oppstod et problem ved sending av e-post til din konto
+        flash:
+          success: "Vi har sendt en bekreftelsese-post til din konto: %{email}"
+      show:
+        alert:
+          failure: Feil verifikasjonskode
+        flash:
+          success: Du er en bekreftet bruker
+    letter:
+      alert:
+        unconfirmed_code: Du har ikke tastet inn verifikasjonskode enda
+      edit:
+        see_all: Se forslag
+        title: Brev forespurt
+      errors:
+        incorrect_code: Feil verifikasjonskode
+      new:
+        explanation: "For å delta i den endelige avstemmingen kan du:"
+        go_to_index: Se forslag
+        send_letter: Send meg et brev med koden
+        title: Gratulerer!
+        user_permission_info: Med en konto kan du...
+      update:
+        flash:
+          success: Riktig kode. Din konto er nå verifisert
+    redirect_notices:
+      already_verified: Din konto er allerede verifisert
+    residence:
+      new:
+        document_number_help_title: Hjelp
+    sms:
+      update:
+        flash:
+          level_three:
+            success: Riktig kode. Din konto er nå verifisert
+    step_1: Adresse
+    step_2: Bekreftelseskode
+    user_permission_debates: Delta i debatter
+    user_permission_proposal: Lag nye forslag
+    user_permission_support_proposal: Støtt forslag

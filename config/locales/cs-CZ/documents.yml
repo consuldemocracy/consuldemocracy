@@ -1,0 +1,24 @@
+cs:
+  documents:
+    title: Dokumenty
+    max_documents_allowed_reached: Dosáhli jste maximálního počtu povolených dokumentů! <strong>Musíte jeden odstranit, než budete moci nahrát další. </strong>
+    additional: Dodatečná dokumentace
+    form:
+      title: Dokumenty
+      title_placeholder: Přidejte popisný název dokumentu
+      delete_button: Smazat dokument
+      cancel_button: Zrušit
+      note: "Můžete nahrát maximálně %{max_documents_allowed} dokumentů z následujících typů obsahu: %{accepted_content_types}, až do %{max_file_size} MB v souboru."
+      add_new_document: Přidat nový dokument
+    actions:
+      destroy:
+        notice: Dokument byl úspěšně smazán.
+        alert: Dokument nelze smazat.
+        confirm: Opravdu chcete dokument odstranit? Tuto akci nelze vrátit zpět!
+    buttons:
+      download_document: Stáhnout soubor
+      destroy_document: Odstranit dokument
+    errors:
+      messages:
+        in_between: musí být mezi %{min} a %{max}
+        wrong_content_type: obsah typu %{content_type} neodpovídá žádnému z přijímaných typů obsahu %{accepted_content_types}

@@ -1,0 +1,63 @@
+<div class="tabs-panel is-active machine-learning-scripts" id="scripts">
+  <% if machine_learning_job.errored? %>
+    <div class="callout alert">
+      <p>
+        <strong><%= t("admin.machine_learning.notice.error") %></strong>
+      </p>
+
+      <dl>
+        <dt><%= t("admin.machine_learning.executed_by") %></dt>
+        <dd><%= machine_learning_job.user.name %></dd>
+
+        <dt><%= t("admin.machine_learning.script_name") %></dt>
+        <dd><%= machine_learning_job.script %></dd>
+
+        <dt><%= t("admin.machine_learning.error") %></dt>
+        <dd><%= sanitize(machine_learning_job.error) %></dd>
+      </dl>
+    </div>
+  <% elsif machine_learning_job.finished? %>
+    <div class="callout success">
+      <strong><%= t("admin.machine_learning.notice.success") %></strong>
+    </div>
+  <% elsif machine_learning_job.started? %>
+    <div class="callout warning">
+      <p>
+        <strong><%= t("admin.machine_learning.notice.working") %></strong>
+      </p>
+
+      <dl>
+        <dt><%= t("admin.machine_learning.executed_by") %></dt>
+        <dd><%= machine_learning_job.user.name %></dd>
+
+        <dt><%= t("admin.machine_learning.script_name") %></dt>
+        <dd><%= machine_learning_job.script %></dd>
+
+        <dt><%= t("admin.machine_learning.started_at") %></dt>
+        <dd><%= machine_learning_job.started_at %></dd>
+      </dl>
+    </div>
+  <% end %>
+
+  <% if machine_learning_job.running_for_too_long? %>
+    <%= button_to t("admin.machine_learning.cancel"),
+                  cancel_admin_machine_learning_path,
+                  method: :delete, class: "cancel",
+                  data: { confirm: t("admin.machine_learning.cancel_alert") } %>
+  <% elsif machine_learning_job.errored? || !machine_learning_job.started? || machine_learning_job.finished? %>
+    <%= form_tag execute_admin_machine_learning_path, method: :post do %>
+      <label for="script"><%= t("admin.machine_learning.select_script") %></label>
+      <%= select_tag "script", options_for_select(script_select_options) %>
+
+      <div id="script_descriptions">
+        <% scripts_info.each_with_index do |script_info, index| %>
+          <div id="<%= script_info[:name] %>" class="help-text">
+            <%= sanitize(script_info[:description]) %>
+          </div>
+        <% end %>
+      </div>
+
+      <%= submit_tag t("admin.machine_learning.execute_script") %>
+    <% end %>
+  <% end %>
+</div>

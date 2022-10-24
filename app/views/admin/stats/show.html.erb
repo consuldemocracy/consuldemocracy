@@ -1,7 +1,4 @@
-<% content_for :head do %>
-  <%= javascript_include_tag "stat_graphs", 'data-turbolinks-track' => true %>
-<% end %>
-<div class="stats">
+<div id="stats" class="stats">
   <div class="row">
     <div class="small-12 column">
       <h1 class="inline-block"><%= t "admin.stats.show.stats_title" %></h1>
@@ -9,12 +6,16 @@
       <div class="float-right clear">
         <%= link_to t("admin.stats.show.polls"),
                     polls_admin_stats_path, class: "button hollow" %>
+        <%= link_to t("admin.stats.show.participatory_budgets"),
+                    budgets_admin_stats_path, class: "button hollow" %>
         <%= link_to t("admin.stats.show.direct_messages"),
                     direct_messages_admin_stats_path, class: "button hollow" %>
         <%= link_to t("admin.stats.show.proposal_notifications"),
                     proposal_notifications_admin_stats_path, class: "button hollow" %>
         <%= link_to t("admin.stats.show.incomplete_verifications"),
                      admin_verifications_path, class: "button hollow" %>
+        <%= link_to t("admin.stats.show.sdg"),
+                     sdg_admin_stats_path, class: "button hollow" if feature?(:sdg) %>
       </div>
 
       <div class="clear"></div>
@@ -22,10 +23,10 @@
       <div class="row stats-numbers">
         <div class="small-12 medium-3 column">
           <p class="featured">
-            <%= t "admin.stats.show.summary.visits" %> <br>
+            <%= link_to t("admin.stats.show.summary.visits"),
+                        graph_admin_stats_path(id: "visits", count: @visits) %> <br>
             <span class="number"><%= number_with_delimiter(@visits) %></span>
           </p>
-
           <p>
             <%= t "admin.stats.show.summary.debates" %> <br>
             <span class="number"><%= number_with_delimiter(@debates) %></span>
@@ -55,7 +56,6 @@
             <%= t "admin.stats.show.summary.proposal_votes" %> <br>
             <span class="number"><%= number_with_delimiter(@proposal_votes) %> <br></span>
           </p>
-
           <p>
             <%= t "admin.stats.show.summary.debate_votes" %> <br>
             <span class="number"><%= number_with_delimiter(@debate_votes) %></span>
@@ -103,39 +103,21 @@
           <p>
             <%= t "admin.stats.show.summary.verified_users_who_didnt_vote_proposals" %> <br>
             <span class="number">
-              <%=number_with_delimiter(@user_ids_who_didnt_vote_proposals)%>
+              <%= number_with_delimiter(@user_ids_who_didnt_vote_proposals) %>
             </span>
           </p>
         </div>
 
-        <% if feature?(:spending_proposals) %>
-          <div class="small-12 medium-3 column">
-            <p class="featured">
-              <%= t "admin.stats.show.summary.spending_proposals" %> <br>
-              <span class="number"><%= number_with_delimiter(@spending_proposals) %></span>
-            </p>
-          </div>
-        <% end %>
       </div>
 
       <div class="small-12 column">
-        <h2><%= t "admin.stats.show.visits_title" %></h2>
-        <%= visits_chart_tag id: "visits" %>
-      </div>
-
-      <div class="small-12 column">
-        <% @event_types.each do |event, count| %>
-          <h2><%= event.titleize %> (<%= count %>)</h2>
-          <%= events_chart_tag event %>
+        <% @event_types.each do |event| %>
+          <h3>
+            <%= link_to graph_link_text(event),
+                        graph_admin_stats_path(event: event) %>
+          </h3>
         <% end %>
       </div>
-
-      <% if feature?(:spending_proposals) %>
-        <div class="small-12 column">
-          <h2><%= t "admin.stats.show.spending_proposals_title" %></h2>
-          <%= spending_proposals_chart_tag id: "spending_proposals" %>
-        </div>
-      <% end %>
 
       <% if feature?(:budgets) %>
         <div class="small-12 column">

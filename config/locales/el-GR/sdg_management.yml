@@ -1,0 +1,18 @@
+el:
+  sdg_management:
+    homepage:
+      header:
+        create: "Δημιουργήστε την κεφαλίδα"
+        title: "Κεφαλίδα"
+    menu:
+      budget_investments: "Συμμετοχικοί προϋπολογισμοί"
+      debates: "Συζητήσεις"
+      polls: "Δημοσκοπήσεις"
+      proposals: "Προτάσεις"
+      sdg_content: "Σκοποί και Στόχοι"
+    relations:
+      index:
+        filter: "Φίλτρο"
+        filters:
+          all: "Όλα"
+          pending_sdg_review: "Σε εκκρεμότητα"

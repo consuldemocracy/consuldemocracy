@@ -1,0 +1,68 @@
+da:
+  valuation:
+    header:
+      title: Vurdering
+    menu:
+      title: Vurdering
+      budgets: Deltagerbudgetter
+    budgets:
+      index:
+        title: Deltagerbudgetter
+        filters:
+          current: Åben
+          finished: Afsluttede budgetter
+        table_name: Navn
+        table_phase: Fase
+        table_assigned_investments_valuation_open: Projektidéerne er klar til vurdering
+        table_actions: Handlinger
+        evaluate: Evaluere
+        no_budgets: "Der er ingen budgetter"
+    budget_investments:
+      index:
+        headings_filter_all: Alle områder
+        filters:
+          valuation_open: Åben
+          valuating: Under vurdering
+          valuation_finished: Vurderingen er færdig
+        assigned_to: "Tildelt til %{valuator}"
+        title: Projekter
+        edit: Rediger rapport
+        table_id: ID
+        table_title: Titel
+        table_heading_name: Område
+        table_actions: Handlinger
+        no_investments: "Der er ingen projekter."
+      show:
+        back: Tilbage
+        title: Projekt
+        info: Brugerinformation
+        by: Sendt af
+        sent: Sendt den
+        heading: Område
+        dossier: Rapport
+        edit_dossier: Rediger rapport
+        price: Pris
+        price_first_year: Omkostninger i løbet af det første år
+        currency: "€"
+        feasibility: Kan gennemføres
+        feasible: Kan gennemføres
+        unfeasible: Kan ikke gennemføres
+        undefined: Uafklaret
+        valuation_finished: Vurderingen færdig
+        duration: Tidsramme
+        responsibles: Ansvarlige
+        assigned_admin: Tildel admin
+        assigned_valuators: Tilknyttet evaluatorer
+        preview: Forhåndsvisning af forslag
+      edit:
+        dossier: Rapport
+        price: "Pris (%{currency})"
+        price_first_year: "Omkostninger i løbet af det første år (%{currency}) <small>(valgfri, data er ikke offentlig)</small>"
+        feasibility: Kan gennemføres
+        valuation_finished_alert: "Er du sikker på, du vil markér rapporten som afsluttet? Hvis ja, kan du ikke længere foretage ændringer."
+        not_feasible_alert: "Brugeren, der oprettede projektforslaget, vil straks modtage en e-mail med den vedhæftede rapport, der forklarer, hvorfor projektet ikke kan gennemføres."
+        save: Gem ændringer
+      notice:
+        valuate: "Rapporten blev opdateret"
+      valuation_comments: Kommentarer på vurdering
+      not_in_valuating_phase: Projektidéer kan kun vurderes, når budgettet befinder sig i vurderingsfasen

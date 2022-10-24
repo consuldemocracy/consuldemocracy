@@ -5,15 +5,14 @@
 module I18n
   module Backend
     module Base
-
       def pluralize(locale, entry, count)
         return entry unless entry.is_a?(Hash) && count
 
         key = pluralization_key(entry, count)
-        return count unless entry.has_key?(key)
+        return count.to_s unless entry.has_key?(key)
+
         entry[key]
       end
-
     end
   end
 end

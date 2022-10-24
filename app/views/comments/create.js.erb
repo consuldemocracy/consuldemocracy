@@ -1,11 +1,10 @@
-var comment_html = "<%= j(render @comment) %>"
-
 <% if @comment.root? -%>
-  var commentable_id = '<%= dom_id(@commentable) %>';
-  App.Comments.reset_form(commentable_id);
-  App.Comments.add_comment(commentable_id, comment_html);
+  var parent_id = "";
 <% else -%>
-  var parent_id = '<%= "comment_#{@comment.parent_id}" %>';
-  App.Comments.reset_and_hide_form(parent_id);
-  App.Comments.add_reply(parent_id, comment_html);
+  var parent_id = "#" + "<%= "comment_#{@comment.parent_id}" %>";
+  var responses_count_html = "<%= j(render "comments/responses_count", count: @comment.parent.children.size) %>"
+  App.Comments.update_responses_count(parent_id, responses_count_html);
 <% end -%>
+
+App.Comments.reset_form(parent_id);
+App.Comments.add_comment(parent_id, "<li><%= j(render @comment) %></li>");

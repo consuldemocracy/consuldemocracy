@@ -1,24 +1,33 @@
-<td style="padding-bottom: 20px; padding-left: 10px;">
+<td style="<%= css_for_mailer_content %>">
 
-  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+  <h1 style="<%= css_for_mailer_heading %>">
+    <%= t("mailers.budget_investment_unfeasible.title") %>
+  </h1>
+
+  <p style="<%= css_for_mailer_text %>">
     <%= t("mailers.budget_investment_unfeasible.hi") %>
   </p>
 
-  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px; padding-left: 12px; border-left: 2px solid #ccc;">
+  <p style="<%= css_for_mailer_text + css_for_mailer_quote %>">
     <%= @investment.unfeasibility_explanation %>
   </p>
 
-  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-  <%= t("mailers.budget_investment_unfeasible.new_html",
-      url: link_to(t("mailers.budget_investment_unfeasible.new_href"),
-      new_budget_investment_url(@investment.budget), style: "color: #2895F1; text-decoration: underline;")) %>
+  <p style="<%= css_for_mailer_text %>">
+    <%= sanitize(
+      t("mailers.budget_investment_unfeasible.new",
+        url: link_to(t("mailers.budget_investment_unfeasible.new_href"),
+                     new_budget_investment_url(@investment.budget),
+                     style: css_for_mailer_link)
+      ),
+      attributes: %w[href style]
+    ) %>
   </p>
 
-  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+  <p style="<%= css_for_mailer_text %>">
     <%= t("mailers.budget_investment_unfeasible.sorry") %>
   </p>
 
-  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+  <p style="<%= css_for_mailer_text %>">
     <%= t("mailers.budget_investment_unfeasible.sincerely") %>
   </p>
 </td>

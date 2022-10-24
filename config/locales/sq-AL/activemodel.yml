@@ -2,7 +2,7 @@ sq:
   activemodel:
     models:
       verification:
-        residence: "Rezident"
+        residence: "Vendbanimi"
         sms: "SMS"
     attributes:
       verification:
@@ -16,6 +16,19 @@ sq:
           confirmation_code: "Kodi i konfirmimit"
         email:
           recipient: "Email"
+      verification/letter:
+        email: "Email"
+        password: "Fjalëkalim"
+        verification_code: "Kodi që keni marrë në letër"
+      verification/management/document:
+        document_type: "Tipi i dokumentit"
+        document_number: "Numri i dokumentit"
+      verification/residence:
+        date_of_birth: "Data e lindjes"
+        document_type: "Tipi i dokumentit"
+        postal_code: "Kodi Postar"
+      verification/sms:
+        confirmation_code: "Shkruani kodin që keni marrë në celularin tuaj"
       officing/residence:
         document_type: "Tipi i dokumentit"
         document_number: "Numri i dokumentit ( përfshirë letër)"

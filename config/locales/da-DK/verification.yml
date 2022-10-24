@@ -1,0 +1,103 @@
+da:
+  verification:
+    alert:
+      lock: Du har forsøgt for mange gange. Prøv igen senere.
+    back: Tilbage til min konto
+    email:
+      create:
+        alert:
+          failure: Vi kunne ikke sende en email til din konto
+        flash:
+          success: "Vi har sendt en bekræftelsesmail til din konto: %{email}"
+      show:
+        alert:
+          failure: Bekræftelseskoden er forkert
+        flash:
+          success: Du er en verificeret bruger
+    letter:
+      alert:
+        unconfirmed_code: Du har endnu ikke indtastet bekræftelseskoden
+      create:
+        flash:
+          success: Tak fordi du anmodede om din <b> sikkerhedskode (kun påkrævet ved endelige afstemninger)</b>. Om få dage vil koden blive sendt til den angivne adresse.
+      edit:
+        see_all: Se forslag
+        title: Brev anmodet
+      errors:
+        incorrect_code: Bekræftelseskoden er forkert
+      new:
+        explanation: "Ved deltagelse i den endelige afstemning, kan du:"
+        go_to_index: Se forslag
+        office: Verificer i ethvert borgerservicecenter
+        send_letter: Send mig koden via brev
+        title: Tillykke!
+        user_permission_info: Som bruger kan du...
+      update:
+        flash:
+          success: Koden er korrekt. Din konto er nu verificeret
+    redirect_notices:
+      already_verified: Din konto er allerede verificeret
+      email_already_sent: Vi har allerede sendt dig en e-mail med et bekræftelseslink. Hvis du ikke kan finde e-mailen, kan du anmode om en ny her (husk at tjekke dit spamfilter)
+    residence:
+      alert:
+        unconfirmed_residency: Du har endnu ikke bekræftet din adresse
+      create:
+        flash:
+          success: Adresse verificeret
+      new:
+        accept_terms_text: Jeg accepterer %{terms_url} for adresseregistret
+        accept_terms_text_title: Jeg accepterer vilkår og betingelser for adgangen til adresseregistret
+        document_number: Dokumentnummer
+        document_number_help_title: Hjælp
+        document_number_help_text: "<strong>DNI</strong>: 12345678A<br> <strong>pas</strong>: AAA000001<br> <strong>residence kort</strong>: X1234567P"
+        document_type:
+          passport: Pas
+          residence_card: Øvrig identitetsdokument
+          spanish_id: DNI
+        error_not_allowed_age: Du er ikke gammel nok til at deltage
+        error_not_allowed_postal_code: For at blive verificeret, skal du være registreret.
+        error_verifying_census: Din adresse stemmer ikke overens med adresseregistret. Vær venlig at kontrollere dine adresseoplysninger ved at ringe til Aarhus Kommune eller besøge et af vores borgerservicecentre.
+        form_errors: forhindrede verificeringen af din adresse
+        postal_code_note: For at verificere din konto skal du være registreret
+        terms: adgangsvilkår og betingelser
+        title: Bekræft din adresse
+        verify_residence: Bekræft din adresse
+    sms:
+      create:
+        flash:
+          success: Angiv den bekræftelseskode, der er blevet sendt til dig som tekstbesked
+      edit:
+        resend_sms_link: Klik her for at sende igen
+        resend_sms_text: Modtog du ikke en besked med din bekræftelseskode?
+        submit_button: Send
+        title: Bekræftelse af sikkerhedskode
+      new:
+        phone: Skriv dit telefonnummer for at modtage koden
+        phone_format: "<strong><em>(Eksempel: 612345678 eller +34612345678)</em></strong>"
+        phone_note: Vi bruger kun dit telefonnummer til at sende dig en kode. Vi vil aldrig kontakte dig.
+        submit_button: Send
+        title: Send bekræftelseskode
+      update:
+        error: Forkert bekræftelseskode
+        flash:
+          level_three:
+            success: Koden er korrekt. Din konto er nu verificeret
+          level_two:
+            success: Koden er korrekt
+    step_1: Adresse
+    step_2: Bekræftelseskode
+    step_3: Endelig verifikation
+    user_permission_debates: Deltage i debat
+    user_permission_info: Verificer dine oplysninger og du vil have mulighed for at...
+    user_permission_proposal: Opret nye forslag
+    user_permission_support_proposal: Støt forslag*
+    user_permission_votes: Deltage i den endelige afstemning*
+    verified_user:
+      form:
+        submit_button: Send kode
+      show:
+        email_title: E-mails
+        explanation: Vi har i øjeblikket registreret følgende oplysninger; Vælg hvordan du vil modtage din bekræftelseskode.
+        phone_title: Telefonnumre
+        title: Tilgængelige oplysninger
+        use_another_phone: Brug anden telefon

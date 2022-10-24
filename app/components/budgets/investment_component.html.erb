@@ -1,0 +1,33 @@
+<div id="<%= dom_id(investment) %>" class="investments-list-item">
+  <% if investment.image.present? %>
+    <%= image_tag investment.image.variant(:large), alt: investment.image.title.unicode_normalize %>
+  <% else %>
+    <%= image_tag(image_path_for("budget_investment_no_image.jpg"), alt: investment.title) %>
+  <% end %>
+
+  <% if investment.should_show_vote_count? || investment.should_show_price? %>
+    <div class="supports-and-price">
+      <% if investment.should_show_vote_count? %>
+        <span class="supports-title"><%= t("budgets.investments_list.investment.supports") %></span>
+        <strong><%= investment.total_votes %></strong>
+      <% end %>
+
+      <% if investment.should_show_price? %>
+        <span class="price-title"><%= t("budgets.investments_list.investment.price") %></span>
+        <strong><%= investment.formatted_price %></strong>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="budget-investment-content">
+    <% cache [locale_and_user_status(investment), "index", investment, investment.author] do %>
+      <h3><%= link_to investment.title, namespaced_budget_investment_path(investment) %></h3>
+
+      <%= render Budgets::Investments::InfoComponent.new(investment) %>
+
+      <%= link_to namespaced_budget_investment_path(investment), class: "read-more" do %>
+        <small><%= t("budgets.investments_list.investment.read_more") %></small>
+      <% end %>
+    <% end %>
+  </div>
+</div>

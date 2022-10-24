@@ -3,31 +3,22 @@ so:
     ballots:
       show:
         title: Warqadda codbixintaada
-        amount_spent: Qadarka la kharashadka
-        remaining: "Weli waad heysataa <span>%{amount}</span> si aad u maal gasho."
         no_balloted_group_yet: "Uma adan codeynin kooxdan wali, cod bixin!"
         remove: Kassar codka
-        voted_html:
+        voted:
           one: "Waxaad adigu u codsatay <span> one </ span> maalgashiga."
           other: "Waxaad adigu u codsatay <span> %{count}</ span> maalgashiga."
-        voted_info_html: "Waad beddeli kartaa codkaaga wakhti kasta illaa inta laga gaarayo wejigan. • Looma baahna in la isticmaalo lacagta oo dhan."
         zero: Uma codeynin wax mashruuc maalgashi.
       reasons_for_not_balloting:
-        not_logged_in: Waa inad igu %{signin} ama%{signup} si wada.
         not_verified: Kaliya dadka isticmaala hubinta ayaa codayn kara maalgashiga; %{verify_account}.
-        organization: Ururada loma fasixin iney codeyaan
         not_selected: Mashariicda Malagashiga e an la dooran lana tageeri karin
-        not_enough_money_html: "Waxaad horay u qoondeeysay miisaaniyadda la heli karo. <br> <yari> Xusuusnow inaad awoodi karto %{change_ballot} wakhti kasta </small>"
+        not_enough_money: "Waxaad horay u qoondeeysay miisaaniyadda la heli karo. <br> <yari> Xusuusnow inaad awoodi karto %{change_ballot} wakhti kasta </small>"
         no_ballots_allowed: Xulashada wajiga waa la xidhay
-        different_heading_assigned_html: "Horay ayaad u doortay madax kale%{heading_link}"
+        different_heading_assigned: "Horay ayaad u doortay madax kale%{heading_link}"
         change_ballot: bedelka codadka
     groups:
       show:
         title: Xuulo dorasho
-        unfeasible_title: Malgashiyo an macqul ahayn
-        unfeasible: Arrag Malgashiyada an macqulka ahayn
-        unselected_title: Maalgashiyada lama doorto wajiga ballanka
-        unselected: Eeg maalgashiyada aan loo dooran muddada gaaban
     phase:
       drafting: Qabayo qoralka uma muuqanaya dadweynaha
       informing: Maclumaad
@@ -46,12 +37,8 @@ so:
         icon_alt: Misaniyadaha ka qaybgalka icon
         title: Misaaniyadaha kaqayb qadashada
         help: Kacawinta Misaniyadaha ka qayb qadshada
-        all_phases: Fiiri dhammaan wejiyada
       all_phases: Misaniyada Qaybaha malgelinnada
       map: Miisaaniyadda maaliyadeed ee 'soo jeedinta juquraafi ahaan
-      investment_proyects: Liska dhaman mashariicda Malgelinta
-      unfeasible_investment_proyects: Liiska dhammaanba mashaariicda maalgashiga suurtagalka ah
-      not_selected_investment_proyects: Liiska dhammaan mashaariicda maalgashiga ee aan loo dooran mudnaanta
       finished_budgets: Dhameystiray Misaniyada ka qayb qadashada
       see_results: Arag Natijada
       section_footer:
@@ -60,6 +47,7 @@ so:
       milestones: Dhib meel loga baxo oo an lahayn dhibato wayn
     investments:
       form:
+        title: "Saame misaaniyad malgashelin"
         tag_category_label: "Qaybaha"
         tags_instructions: "Tag soojeedintaan. Waxaad kala dooran kartaa qaybaha la soo jeediyey ama ku dar adiga keligaa"
         tags_label: Tagyada
@@ -67,8 +55,6 @@ so:
         map_location: "Goobta Khariirada"
         map_location_instructions: "Ku dhaji khariidada meesha ay ku taallan tahay kuna calaamadee sumadeeyaha."
         map_remove_marker: "Ka saar sumadaha khariidada"
-        location: "Maclumaadka dheeriga ah ee goobta"
-        map_skip_checkbox: "Malgashigana meel latabn karo anigu ama anigu waxba kama ogi."
       index:
         title: Misaaniyada kaqayb qadashada
         unfeasible: Mashaariicda maalgashiga aan macquulka ahayn
@@ -78,43 +64,37 @@ so:
           button: Raadin
           placeholder: Raadi mashriicda malgelinta...
           title: Raadin
-        search_results_html:
-          one: " an ku jirin ereyga<strong>%{search_term}</strong>"
-          other: " an ku jirin ereyga<strong>%{search_term}</strong>"
         sidebar:
           my_ballot: Codkayga
-          voted_html:
-            one: "<strong>waxad u codeysay halsojeedin o wadta kharashaad%{amount_spent}"
-            other: "<strong>waxad u codeysay%{count} halsojeedin o wadta kharashaad%{amount_spent}</strong>"
-          voted_info: Waxaad%{link} gaari kartaa ilaa wakhti xaddidan. Looma baahna inaad isticmaasho dhammaan lacagaha la heli karo.
-          voted_info_link: bedelka codadkaga
-          different_heading_assigned_html: "Waxaad ku leedahay codad firfircoon dhinaca kale%{heading_link}"
+          voted_info:
+            knapsack:
+              one: "<strong>waxad u codeysay halsojeedin o wadta kharashaad%{amount_spent}"
+              other: "<strong>waxad u codeysay%{count} halsojeedin o wadta kharashaad%{amount_spent}</strong>"
+          change_vote_link: "bedelka codadkaga"
+          different_heading_assigned: "Waxaad ku leedahay codad firfircoon dhinaca kale%{heading_link}"
           change_ballot: "Haddii aad bedesho maskaxda waxaad ka saari kartaa codadkaaga%{check_ballot} oo mar kale bilow."
           check_ballot_link: "huubi codkayga"
           zero: Uma adan codayn wax msharuuc malgashi ah o koox ah.
           verified_only: "In la abuuro maalgalin cusub oo maaliyadeed%{verify}."
-          verify_account: "hubi xisaabtaada"
           create: "Saame misaaniyad malgashelin"
           not_logged_in: "Waa inaad samaysaa misaniyaad malgashi waana inaad%{sign_in} ama%{sign_up}."
-          sign_in: "saxiixid"
-          sign_up: "saxiixid ilaa"
-          by_feasibility: Iyada oo suurta gal ah
-          feasible: Mashariicda macquulka ah
-          unfeasible: Mashariicda an macquulka ahayn
+        filters:
+          selected: "Ladoortay"
+          unfeasible: "An surtgak ahayn"
+          winners: "Guleystayasha"
         orders:
           random: kala sooc la an
           confidence_score: ugu sareeya
           price: qiime ahaan
       share:
-        message: "Waxaan abuuray mashruuca maalgashiga%{title} ee%{org} Samee mashruuc maal-gashi aad adigu leedahay!"
-        message_mobile: "Waxaan abuuray mashruuca maalgashiga%{title} ee%{handle} Samee mashruuc maal-gashi aad adigu leedahay!"
+        message: "Waxaan abuuray mashruuca maalgashiga %{title} ee %{handle} Samee mashruuc maal-gashi aad adigu leedahay!"
       show:
         author_deleted: Isticmalaha la tirtiray
         price_explanation: Faahfaahinta qiimaha
         unfeasibility_explanation: Sharaxaad aan macquul ahayn
-        code_html: 'Koodka mashruuca malgashiga<strong>%{code}</strong>'
-        location_html: 'Goobta<strong>%{location}</strong>'
-        organization_name_html: 'Lagu soo bandhigay: <strong>%{name}</strong>'
+        code: "Koodka mashruuca malgashiga<strong>%{code}</strong>"
+        location: "Goobta<strong>%{location}</strong>"
+        organization_name: "Lagu soo bandhigay: <strong>%{name}</strong>"
         share: Lawadag
         title: Mashruuca Malgelinta
         supports: Tageerayaal
@@ -123,47 +103,42 @@ so:
         comments_tab: Faalo
         milestones_tab: Dhib meel loga baxo oo an lahayn dhibato wayn
         author: Qoraa
-        project_unfeasible_html: 'Mashruucan maalgashiga <strong> ayaa loo calaamadeeyay sida aan suurtagal ahayn </ strong> oo uma tagi doono wajiga ballanka.'
-        project_selected_html: 'Mashruucan maalgashiga <strong> ayaa loo xushay </ strong> muddada ballanka.'
-        project_winner: 'Ku guuleysiga mashruuca maalgashiga'
-        project_not_selected_html: 'Mashruucan maalgashiga <strong> ayaan la xusalan </ strong> muddada ballanka.'
+        project_unfeasible: "Mashruucan maalgashiga <strong> ayaa loo calaamadeeyay sida aan suurtagal ahayn </ strong> oo uma tagi doono wajiga ballanka."
+        project_selected: "Mashruucan maalgashiga <strong> ayaa loo xushay </ strong> muddada ballanka."
+        project_winner: "Ku guuleysiga mashruuca maalgashiga"
+        project_not_selected: "Mashruucan maalgashiga <strong> ayaan la xusalan </ strong> muddada ballanka."
       wrong_price_format: Tirooyinka keliya e isku dhafka ah
       investment:
         add: Codeyn
         already_added: Waxaad horeyba ugu dartay mashruucan maalgashiga
-        already_supported: Waxaad hore u taageertay mashruucan maalgashiga. La wadaag!
         support_title: Tageer Mashruucaan
-        confirm_group:
-          one: "Waxaad kaliya ku taageeri kartaa maalgelinada%{count} degmada. Haddii aad sii wado, ma beddeli kartid doorashada degmadaada. Ma hubtaa?"
-          other: "Waxaad kaliya ku taageeri kartaa maalgelinada%{count} degmada. Haddii aad sii wado, ma beddeli kartid doorashada degmadaada. Ma hubtaa?"
         supports:
           zero: Tageero la an
-          one: 1 Tageero
-          other: "%{count} Tageero"
-        give_support: Tageero
+          one: 1 tagere
+          other: "%{count} tagerayal"
       header:
-        check_ballot: Huubi codkayga
-        different_heading_assigned_html: "Waxaad ku leedahay codad firfircoon dhinaca kale%{heading_link}"
+        check_ballot: "Huubi codkayga"
+        different_heading_assigned: "Waxaad ku leedahay codad firfircoon dhinaca kale%{heading_link}"
         change_ballot: "Haddii aad bedesho maskaxda waxaad ka saari kartaa codadkaaga%{check_ballot} oo mar kale bilow."
         check_ballot_link: "huubi codkayga"
         price: "Taani waxay ledaahay misaniyaad"
-    progress_bar:
-      assigned: "Waa lugu asteyey: "
-      available: "Misaniyada lahelikaro: "
+      votes:
+        already_supported: "Waxaad hore u taageertay mashruucan maalgashiga. La wadaag!"
+        confirm_group:
+          one: "Waxaad kaliya ku taageeri kartaa maalgelinada%{count} degmada. Haddii aad sii wado, ma beddeli kartid doorashada degmadaada. Ma hubtaa?"
+          other: "Waxaad kaliya ku taageeri kartaa maalgelinada%{count} degmada. Haddii aad sii wado, ma beddeli kartid doorashada degmadaada. Ma hubtaa?"
+        support: "Tageero"
+    investments_list:
+      investment:
+        price: "Qime"
+        supports: "Tageerayaal"
     show:
-      group: Koox
-      phase: Wejiga dhabta ah
-      unfeasible_title: Malgashiyo an macqul ahayn
-      unfeasible: Arrag Malgashiyada an macqulka ahayn
-      unselected_title: Maalgashiyada lama doorto wajiga ballanka
-      unselected: Eeg maalgashiyada aan loo dooran muddada gaaban
       see_results: Arag Natijada
     results:
       link: Natiijoyin
       page_title: "%{budget} natiijooyinka"
       heading: "Misanayadda kaqayb qadashada natijooyinka"
       heading_selection_title: "Degmo ahaan"
-      spending_proposal: Ciwaanka soo jedinta
       ballot_lines_count: Codaad
       hide_discarded_link: Qari Haraga
       show_all_link: Muji dhamaan
@@ -173,7 +148,7 @@ so:
       discarded: "Soo jeedinta kharashka la tuuray: "
       incompatibles: Isfaham la'aan
       investment_proyects: Liska dhaman mashariicda Malgelinta
-      unfeasible_investment_proyects: Liiska dhammaan mashaariicda maal-gashiga ee suurtogalka ah
+      unfeasible_investment_proyects: Liiska dhammaanba mashaariicda maalgashiga suurtagalka ah
       not_selected_investment_proyects: Liiska dhammaan mashaariicda maalgashiga ee aan loo dooran mudnaanta
     executions:
       link: "Dhib meel loga baxo oo an lahayn dhibato wayn"
@@ -182,8 +157,11 @@ so:
       heading_selection_title: "Degmo ahaan"
       no_winner_investments: "Mana jiraan maalgalin ku guuleysta gobolkan"
       filters:
-        label: "Mashruca hada gobolka kasocda"
-        all: "Dhaman%{count}"
+        status:
+          label: "Mashruca hada gobolka kasocda"
+          all: "Dhaman%{count}"
+        milestone_tag:
+          all: "Dhaman%{count}"
     phases:
       errors:
         dates_range_invalid: "Taariikhda bilowga ma noqon karto mid siman ama ka dambeysa taariikhda dhammaadka"

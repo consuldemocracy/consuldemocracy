@@ -1,9 +1,10 @@
 en:
   moderation:
+    actions:
+      confirm_action: "Are you sure? %{action}"
     comments:
       index:
         block_authors: Block authors
-        confirm: Are you sure?
         filter: Filter
         filters:
           all: All
@@ -12,9 +13,8 @@ en:
         headers:
           comment: Comment
           moderate: Moderate
-        hide_comments: Hide comments
+        hide: Hide comments
         ignore_flags: Mark as viewed
-        order: Order
         orders:
           flags: Most flagged
           newest: Newest
@@ -25,7 +25,6 @@ en:
     debates:
       index:
         block_authors: Block authors
-        confirm: Are you sure?
         filter: Filter
         filters:
           all: All
@@ -34,9 +33,8 @@ en:
         headers:
           debate: Debate
           moderate: Moderate
-        hide_debates: Hide debates
+        hide: Hide debates
         ignore_flags: Mark as viewed
-        order: Order
         orders:
           created_at: Newest
           flags: Most flagged
@@ -53,7 +51,6 @@ en:
     proposals:
       index:
         block_authors: Block authors
-        confirm: Are you sure?
         filter: Filter
         filters:
           all: All
@@ -62,9 +59,8 @@ en:
         headers:
           moderate: Moderate
           proposal: Proposal
-        hide_proposals: Hide proposals
+        hide: Hide proposals
         ignore_flags: Mark as viewed
-        order: Order by
         orders:
           created_at: Most recent
           flags: Most flagged
@@ -72,7 +68,6 @@ en:
     budget_investments:
       index:
         block_authors: Block authors
-        confirm: Are you sure?
         filter: Filter
         filters:
           all: All
@@ -81,9 +76,8 @@ en:
         headers:
           moderate: Moderate
           budget_investment: Budget investment
-        hide_budget_investments: Hide budget investments
+        hide: Hide budget investments
         ignore_flags: Mark as viewed
-        order: Order by
         orders:
           created_at: Most recent
           flags: Most flagged
@@ -91,7 +85,6 @@ en:
     proposal_notifications:
       index:
         block_authors: Block authors
-        confirm: Are you sure?
         filter: Filter
         filters:
           all: All
@@ -100,18 +93,19 @@ en:
         headers:
           moderate: Moderate
           proposal_notification: Proposal notification
-        hide_proposal_notifications: Hide proposals
+        hide: Hide proposals
         ignore_flags: Mark as viewed
-        order: Order by
         orders:
           created_at: Most recent
           moderated: Moderated
         title: Proposal notifications
     users:
       index:
-        hidden: Blocked
-        hide: Block
-        search: Search
+        block: Block
+        confirm_block: "Are you sure? This will hide the user \"%{name}\" and all their contents."
+        confirm_hide: "Are you sure? This will hide the user \"%{name}\" without hiding their contents."
+        hide: Hide
         search_placeholder: email or name of user
         title: Block users
-      notice_hide: User blocked. All of this user's debates and comments have been hidden.
+      notice_block: The user has been blocked. All contents authored by this user have been hidden.
+      notice_hide: The user has been hidden. Contents authored by this user are still available.

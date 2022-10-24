@@ -1,0 +1,24 @@
+el:
+  documents:
+    title: Έγγραφα
+    max_documents_allowed_reached: Έχετε φτάσει το μέγιστο αριθμό των εγγράφων που επιτρέπονται! <strong>Πρέπει να διαγράψετε ένα πριν μπορέσετε να ανεβάσετε ένα άλλο.</strong>
+    additional: Πρόσθετη τεκμηρίωση
+    form:
+      title: Έγγραφα
+      title_placeholder: Προσθέστε έναν περιγραφικό τίτλο για το έγγραφο
+      delete_button: Αφαιρέστε το έγγραφο
+      cancel_button: Άκυρο
+      note: "Μπορείτε να ανεβάσετε έως και ένα μέγιστο %{max_documents_allowed} εγγράφων των ακόλουθων τύπων περιεχομένου: \n%{accepted_content_types}, μέχρι %{max_file_size} MB ανά αρχείο."
+      add_new_document: Προσθέστε νέο έγγραφο
+    actions:
+      destroy:
+        notice: Το έγγραφο διαγράφηκε επιτυχώς.
+        alert: Δεν μπορεί να καταστρέψει το έγγραφο.
+        confirm: Είστε βέβαιοι ότι θέλετε να διαγράψετε το έγγραφο; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί!
+    buttons:
+      download_document: Κατεβάστε το αρχείο
+      destroy_document: Καταστροφή εγγράφου
+    errors:
+      messages:
+        in_between: πρέπει να είναι μεταξύ %{min} και %{max}
+        wrong_content_type: "ο τύπος περιεχομένου %{content_type} δεν συμφωνεί με οποιοδήποτε από τους αποδεκτούς τύπους περιεχομένου \n%{accepted_content_types}"

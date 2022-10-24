@@ -1,0 +1,17 @@
+nn:
+  management:
+    dashboard:
+      index:
+        title: Ledelse
+    date_of_birth: Fødselsdato
+    menu:
+      create_proposal: Lag nye forslag
+      support_proposals: Støtt forslag
+    print_info: Skriv ut denne informasjonen
+    proposals:
+      create_proposal: Lag nye forslag
+      index:
+        title: Støtt forslag
+    budgets:
+      table_actions: Handlinger
+    username_label: Brukernavn

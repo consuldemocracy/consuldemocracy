@@ -9,33 +9,17 @@
 <% end %>
 
 <main>
-  <% if @search_terms || @advanced_search_terms || @tag_filter %>
-    <div class="highlight no-margin-top padding margin-bottom">
-      <div class="row">
-        <div class="small-12 column">
-          <% if @search_terms || @advanced_search_terms %>
-            <h2><%= t("shared.search_results") %></h2>
-            <p>
-              <%= page_entries_info @debates %>
-              <% if !@advanced_search_terms %>
-                <%= t("debates.index.search_results_html", count: @debates.size, search_term: @search_terms) %>
-              <% end %>
-            </p>
-          <% elsif @tag_filter %>
-            <h2><%= t("shared.search_results") %></h2>
-            <p>
-              <%= page_entries_info @debates %>
-              <%= t("debates.index.filter_topic", count: @debates.size, topic: @tag_filter) %>
-            </p>
-          <% end %>
-        </div>
-      </div>
-    </div>
+  <% if @search_terms || @advanced_search_terms %>
+    <%= render Shared::SearchResultsSummaryComponent.new(
+      results: @debates,
+      search_terms: @search_terms,
+      advanced_search_terms: @advanced_search_terms
+    ) %>
   <% else %>
     <%= render "shared/section_header", i18n_namespace: "debates.index.section_header", image: "debates" %>
   <% end %>
 
-  <% if feature?('user.recommendations') && @recommended_debates.present? %>
+  <% if feature?("user.recommendations") && @recommended_debates.present? %>
     <%= render "shared/recommended_index", recommended: @recommended_debates,
                                            disable_recommendations_path: recommendations_disable_debates_path,
                                            namespace: "debates" %>
@@ -44,11 +28,9 @@
   <div class="row">
     <div id="debates" class="debates-list small-12 medium-9 column">
 
-      <% if has_banners? %>
-        <%= render "shared/banner" %>
-      <% end %>
+      <%= render Shared::BannerComponent.new("debates") %>
 
-      <% unless @tag_filter || @search_terms || !has_featured? %>
+      <% unless @search_terms || !has_featured? %>
         <%= render "featured_debates" %>
       <% end %>
 
@@ -58,7 +40,7 @@
         </div>
       </div>
 
-      <%= render "shared/advanced_search", search_path: debates_path(page: 1) %>
+      <%= render Shared::AdvancedSearchComponent.new %>
 
       <%= render "shared/order_links", i18n_namespace: "debates.index" %>
 
@@ -71,7 +53,7 @@
           <%= render @debates %>
         <% else %>
           <% @debates.each do |debate| %>
-            <%= render partial: 'debates/debate_minimal', locals: { debate: debate } %>
+            <%= render "debates/debate_minimal", debate: debate %>
           <% end %>
         <% end %>
       <% else %>
@@ -79,15 +61,15 @@
       <% end %>
       <%= paginate @debates %>
 
-      <% unless @search_terms || @advanced_search_terms || @tag_filter %>
+      <% unless @search_terms || @advanced_search_terms %>
         <div id="section_help" class="margin" data-magellan-target="section_help">
           <p class="lead">
             <strong><%= t("debates.index.section_footer.title") %></strong>
           </p>
           <p><%= t("debates.index.section_footer.description") %></p>
           <p><%= t("debates.index.section_footer.help_text_1") %></p>
-          <p><%= t("debates.index.section_footer.help_text_2",
-                    org: link_to(setting["org_name"], new_user_registration_path)).html_safe %></p>
+          <p><%= sanitize(t("debates.index.section_footer.help_text_2",
+                    org: link_to(setting["org_name"], new_user_registration_path))) %></p>
           </p>
         </div>
       <% end %>
@@ -97,7 +79,7 @@
 
       <aside class="margin-bottom">
         <%= link_to t("debates.index.start_debate"), new_debate_path, class: "button expanded" %>
-        <%= render "shared/tag_cloud", taggable: "debate" %>
+        <%= render "shared/tag_cloud", taggable: "Debate" %>
       </aside>
     </div>
 

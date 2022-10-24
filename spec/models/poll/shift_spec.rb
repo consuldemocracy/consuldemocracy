@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Poll::Shift do
   let(:poll) { create(:poll) }
@@ -35,35 +35,30 @@ describe Poll::Shift do
     end
 
     it "is not valid with same booth, officer, date and task" do
-      recount_shift.save
+      recount_shift.save!
 
       expect(build(:poll_shift, booth: booth, officer: officer, date: Date.current, task: :recount_scrutiny)).not_to be_valid
     end
 
     it "is valid with same booth, officer and date but different task" do
-      recount_shift.save
+      recount_shift.save!
 
       expect(build(:poll_shift, booth: booth, officer: officer, date: Date.current, task: :vote_collection)).to be_valid
     end
 
     it "is valid with same booth, officer and task but different date" do
-      recount_shift.save
+      recount_shift.save!
 
       expect(build(:poll_shift, booth: booth, officer: officer, date: Date.tomorrow, task: :recount_scrutiny)).to be_valid
     end
-
   end
 
   describe "officer_assignments" do
-
     it "creates and destroy corresponding officer_assignments" do
-      poll2 = create(:poll)
-      poll3 = create(:poll)
+      booth_assignment1 = create(:poll_booth_assignment, booth: booth)
+      booth_assignment2 = create(:poll_booth_assignment, booth: booth)
 
-      booth_assignment1 = create(:poll_booth_assignment, poll: poll, booth: booth)
-      booth_assignment2 = create(:poll_booth_assignment, poll: poll2, booth: booth)
-
-      expect { create(:poll_shift, booth: booth, officer: officer, date: Date.current) }.to change {Poll::OfficerAssignment.all.count}.by(2)
+      expect { create(:poll_shift, booth: booth, officer: officer, date: Date.current) }.to change { Poll::OfficerAssignment.all.count }.by(2)
 
       officer_assignments = Poll::OfficerAssignment.all
       oa1 = officer_assignments.first
@@ -81,12 +76,12 @@ describe Poll::Shift do
 
       create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment1, date: Date.tomorrow)
 
-      expect { described_class.last.destroy }.to change {Poll::OfficerAssignment.all.count}.by(-2)
+      expect { Poll::Shift.last.destroy }.to change { Poll::OfficerAssignment.all.count }.by(-2)
     end
 
     it "creates final officer_assignments" do
       booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
-      recount_shift.save
+      recount_shift.save!
 
       officer_assignments = Poll::OfficerAssignment.all
       expect(officer_assignments.count).to eq(1)
@@ -98,28 +93,25 @@ describe Poll::Shift do
       expect(officer_assignment.booth_assignment).to eq(booth_assignment)
       expect(officer_assignment.final).to be_truthy
     end
-
   end
 
   describe "#persist_data" do
     let(:shift) { create(:poll_shift, officer: officer, booth: booth) }
 
     it "maintains officer data after destroying associated user" do
-      shift.officer.user.destroy
+      shift.officer.user.destroy!
 
       expect(shift.officer_name).to eq "Ana"
       expect(shift.officer_email).to eq "ana@example.com"
     end
 
     it "maintains officer data after destroying officer role" do
-      shift.officer.destroy
+      shift.officer.destroy!
 
       expect(shift.officer_name).to eq "Ana"
       expect(shift.officer_email).to eq "ana@example.com"
     end
-
   end
-
 end
 
 # == Schema Information

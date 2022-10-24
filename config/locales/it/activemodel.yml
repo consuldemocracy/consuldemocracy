@@ -3,3 +3,44 @@ it:
     models:
       verification:
         sms: "SMS"
+      local_census_records/import:
+        one: Importazione del registro del censo locale
+        other: Importazioni dei registri del censo locale
+    attributes:
+      verification:
+        residence:
+          document_type: "Tipo Documento di identità"
+          document_number: "Numero del documento (lettere incluse)"
+          date_of_birth: "Data di nascita"
+          postal_code: "Cap"
+        sms:
+          phone: "Telefono"
+          confirmation_code: "SMS di conferma"
+        email:
+          recipient: "E-mail"
+      verification/letter:
+        email: "Email"
+        password: "Password"
+        verification_code: "Codice che hai ricevuto nella lettera"
+      verification/management/document:
+        document_type: "Tipo documento:"
+        document_number: "Numero documento"
+      verification/residence:
+        date_of_birth: "Data di nascita"
+        document_type: "Tipo documento"
+        postal_code: "Codice Postale"
+      verification/sms:
+        confirmation_code: "Inserisci il codice che hai ricevuto sul tuo cellulare"
+      officing/residence:
+        document_type: "Tipo di documento"
+        document_number: "Numero del documento (lettere incluse)"
+        year_of_birth: "Anno di nascita"
+      local_census_records/import:
+        file: File
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "Il formato file dato è sbagliato. Il formato file consentito è: %{valid_extensions}."
+              headers: "Le intestazioni file date sono sbagliate. Le intestazioni file devono avere i nomi seguenti: %{required_headers}."

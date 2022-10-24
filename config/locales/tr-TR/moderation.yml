@@ -1,1 +1,111 @@
 tr:
+  moderation:
+    actions:
+      confirm_action: "\"%{action}\" yapmak istediğinizden emin misiniz"
+    comments:
+      index:
+        block_authors: Yazarları engelle
+        filter: Filtre
+        filters:
+          all: Tüm
+          pending_flag_review: Beklemede
+          with_ignored_flag: Görüldü olarak işaretlendi
+        headers:
+          comment: Yorum
+          moderate: Yönet
+        hide: Yorumları gizle
+        ignore_flags: Görüldü olarak işaretle
+        orders:
+          flags: En çok işaretlenen
+          newest: En yeni
+        title: Yorumlar
+    dashboard:
+      index:
+        title: Moderasyon
+    debates:
+      index:
+        block_authors: Yazarları engelle
+        filter: Filtre
+        filters:
+          all: Tüm
+          pending_flag_review: Beklemede
+          with_ignored_flag: Görüldü olarak işaretlendi
+        headers:
+          debate: Tartışma
+          moderate: Yönet
+        hide: Tartışmaları gizle
+        ignore_flags: Görüldü olarak işaretle
+        orders:
+          created_at: En yeni
+          flags: En çok işaretlenen
+        title: Tartışmalar
+    header:
+      title: Moderasyon
+    menu:
+      flagged_comments: Yorumlar
+      flagged_debates: Tartışmalar
+      flagged_investments: Bütçe yatırımları
+      proposals: Öneriler
+      proposal_notifications: Öneri bildirimleri
+      users: Kullanıcıları engelle
+    proposals:
+      index:
+        block_authors: Yazarları engelle
+        filter: Filtre
+        filters:
+          all: Tüm
+          pending_flag_review: Bekleyen inceleme
+          with_ignored_flag: Görüldü olarak işaretle
+        headers:
+          moderate: Yönet
+          proposal: Öneri
+        hide: Önerileri gizle
+        ignore_flags: Görüldü olarak işaretle
+        orders:
+          created_at: En son
+          flags: En çok işaretlenen
+        title: Öneriler
+    budget_investments:
+      index:
+        block_authors: Yazarları engelle
+        filter: Filtre
+        filters:
+          all: Tüm
+          pending_flag_review: Beklemede
+          with_ignored_flag: Görüldü olarak işaretlendi
+        headers:
+          moderate: Yönet
+          budget_investment: Bütçe yatırımı
+        hide: Bütçe yatırımlarını gizle
+        ignore_flags: Görüldü olarak işaretle
+        orders:
+          created_at: En son
+          flags: En çok işaretlenen
+        title: Bütçe yatırımları
+    proposal_notifications:
+      index:
+        block_authors: Yazarları engelle
+        filter: Filtre
+        filters:
+          all: Tüm
+          pending_review: Bekleyen yeniden inceleme
+          ignored: Görüldü olarak işaretle
+        headers:
+          moderate: Yönet
+          proposal_notification: Öneri bildirimi
+        hide: Önerileri gizle
+        ignore_flags: Görüldü olarak işaretle
+        orders:
+          created_at: En son
+          moderated: Denetlendi
+        title: Öneri bildirimleri
+    users:
+      index:
+        block: Engelle
+        confirm_block: "Emin misiniz? Bu, \"%{name}\" kullanıcısını ve tüm içeriklerini gizleyecektir."
+        confirm_hide: "Emin misiniz? Bu, içeriklerini gizlemeden \"%{name}\" kullanıcısını gizleyecektir."
+        hide: Engelle
+        search_placeholder: e-posta veya kullanıcının adı
+        title: Kullanıcıları engelle
+      notice_block: Kullanıcı engellenmiştir. Bu kullanıcı tarafından yazılan tüm içerikler gizlenmiştir.
+      notice_hide: Kullanıcı engellendi. Bu kullanıcının tüm tartışmaları ve yorumları gizlendi.

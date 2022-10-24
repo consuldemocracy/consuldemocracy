@@ -1,0 +1,27 @@
+<% if header.present? %>
+  <div class="header-card jumbo highlight">
+    <div class="row">
+      <div class="small-12 medium-6 column <%= "medium-9 small-centered text-center" unless header.image.present? %>">
+        <span><%= header.label %></span>
+        <h1><%= header.title %></h1>
+
+        <p class="lead"><%= header.description %></p>
+
+        <% if header.link_text.present? && header.link_url.present? %>
+          <div class="small-12 medium-6 large-4 <%= "small-centered" unless header.image.present? %>">
+            <%= link_to header.link_text, header.link_url, class: "button expanded large" %>
+          </div>
+        <% end %>
+      </div>
+
+      <% if header.image.present? %>
+        <div class="small-12 medium-6 column">
+          <%= image_tag(header.image.variant(:large),
+                        class: "margin",
+                        alt: header.image.title) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="background-header"></div>
+<% end %>

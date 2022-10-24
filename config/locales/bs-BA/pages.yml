@@ -1,0 +1,168 @@
+bs:
+  pages:
+    conditions:
+      title: Uvjeti korištenja
+      subtitle: PRAVNA OBAVIJEST O UVJETIMA KORIŠTENJA, PRIVATNOSTI I ZAŠTITI LIČNIH PODATAKA NA PORTALU OTVORENE VLADE
+      description: Informacije o uvjetima korištenja, privatnosti i zaštiti ličnih podataka.
+    help:
+      title: "%{org} je platforma za učešće građana"
+      guide: "U ovom vodiču je objašnjena svrha svakog dijela %{org} i način na koji funkcioniše."
+      menu:
+        debates: "Debate"
+        proposals: "Prijedlozi"
+        budgets: "Participativni budžeti"
+        polls: "Glasačke ankete"
+        other: "Ostale informacije"
+        processes: "Procesi"
+      debates:
+        title: "Debate"
+        description: "U dijelu %{link} možete predočiti i podijeliti svoje stavove s drugima, u vezi pitanja koja se tiču vas i vašeg grada. To je i prostor za osmišljavanje ideja koje putem drugih dijelova %{org} dovode do konkretnog djelovanja od strane gradskog vijeća."
+        link: "građanske debate"
+        feature: "Možete pokrenuti debate, davati komentare i ocijenjivati ih sa <strong>\"Slažem se\"</strong> ili <strong> \"Ne slažem se\" </strong>. Kako bi to uradili, morate ići na %{link}."
+        feature_link: "registrujte se u %{org}"
+        image_alt: "Dugmad za ocjenjivanje debata"
+        figcaption: 'Tasteri "Slažem se" i "Ne slažem se" za ocjenjivanje debata.'
+      proposals:
+        title: "Prijedlozi"
+        description: "U dijelu %{link}, možete podnositi prijedloge gradskom vijeću. Za prijedloge je potrebna podrška. Ako dobiju dovoljno podrške, biće stavljeni na javno glasanje. Prijedlozi koji prođu glasanje građana se prihvataju i realizuju od strane gradskog vijeća."
+        link: "građanski prijedlozi"
+        image_alt: "Dugme za podršku prijedlogu"
+        figcaption: 'Dugme za "podršku" prijedlogu.'
+      budgets:
+        title: "Participativno budžetiranje"
+        description: "Dio %{link} pomaže ljudima u neposrednom odlučivanju kako će se trošiti određeni dio opštinskog budžeta."
+        link: "participativni budžeti"
+        image_alt: "Različite faze participativnog budžeta"
+        figcaption: 'Faze "podrške" i "glasanja" u participativnom budžetu.'
+      polls:
+        title: "Glasačke ankete"
+        description: "%{link} se aktivira svaki put kada prijedlog dobije podršku od 1% i ide na glasanje, ili kada gradsko vijeće predloži neko pitanje da odluče građani."
+        link: "ankete"
+        feature_1: "Kako bi glasali, morate otići na %{link} i potvrditi svoj profil."
+        feature_1_link: "registrujte se u %{org_name}"
+      processes:
+        title: "Procesi"
+        description: "U %{link}, građani učestvuju u izradi i mijenjanju gradskih propisa, te mogu izraziti mišljenje o opštinskim politikama iz prethodnih debata."
+        link: "procesi"
+        feature_link: "registrujte se u %{org_name}"
+      faq:
+        title: "Tehnički problemi?"
+        description: "Pogledajte šta su najčešće postavljena pitanja i riješite svoje pitanje."
+        button: "Pogledajte najčešće postavljena pitanja"
+        page:
+          title: "Najčešće postavljena pitanja"
+          description: "Na ovoj stranici možete dati odgovore na najčešće postavljena pitanja od strane korisnika ovog sajta."
+      other:
+        title: "Ostale informacije"
+        how_to_use: "Koristite %{org_name} u vašem gradu"
+      how_to_use:
+        text: |-
+          Koristite ovaj besplatni softver u vašoj lokalnoj vladi, ili nam pomozite da ga poboljšamo. 
+
+          Ovaj Portal otvorene vlade koristi [CONSUL app](https://github.com/consul/consul 'consul github'), besplatni softver, sa [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ). Pojednostavljeno, to znači da svako može besplatno koristiti kod, kopirati ga, proučavati, mijenjati i redistribuirati globalno, te unositi izmjene kakve želi (i dozvoliti drugima da urade isto). Zato što mislimo da je kultura bolja i bogatija ako je slobodna.
+
+          Ako ste programer, pogledajte kod i pomozite nam da ga poboljšamo na [CONSUL app](https://github.com/consul/consul 'consul github').
+      titles:
+        how_to_use: Koristite ga u svojoj lokalnoj vladi
+    privacy:
+      title: Politika privatnosti
+      subtitle: "Zaštita privatnosti"
+    accessibility:
+      title: Pristupačnost
+      description: |-
+        Web-pristupačnost se odnosi na mogućnost pristupa Web-u i svim njegovim sadržajima od strane svih ljudi, bez obzira na njihova ograničenja (fizička, intelektualna, ili tehnička) do kojih može doći, ili na ograničenja koja proizilaze iz konteksta upotrebe (tehnološka ili okolišna).
+
+        Kada se web-stranice dizajniraju imajući na umu njihovu pristupačnost, svi korisnici imaju pristup sadržajima pod jednakim uslovima. Naprimjer:
+      examples:
+        - Uz upotrebu alternativnih tekstova za slike, slijepa ili slabovidna lica mogu koristiti specijalne čitače za pristup informacijama.
+        - Kada video zapisi sadrže titlove, korisnici sa slušnim poteškoćama mogu ih u potpunosti razumjeti.
+        - Ako su sadržaji napisani jednostavnim i ilustrovanim jezikom, korisnici sa poteškoćama u učenju mogu ih bolje razumjeti.
+        - Ako korisnik ima problema s kretanjem i poteškoće sa upotrebom miša, alternativne opcije na tastaturi mu pomažu u navigaciji.
+      keyboard_shortcuts:
+        title: Prečice na tastaturi
+        navigation_table:
+          description: Kako bi mogli da se krećete po ovoj web-stranici na pristupačan način, isprogramirali smo grupu tipki za brzi pristup glavnim organizacionim dijelovima stranice.
+          caption: Tipkovne prečice za navigacioni meni
+          key_header: Tipka
+          page_header: Strana
+          rows:
+            - 
+              key_column: 0
+              page_column: Početna strana
+            - 
+              key_column: 1
+              page_column: Debate
+            - 
+              key_column: 2
+              page_column: Prijedlozi
+            - 
+              key_column: 3
+              page_column: Glasanja
+            - 
+              key_column: 4
+              page_column: Participativni budžeti
+            - 
+              key_column: 5
+              page_column: Izrada zakona
+        browser_table:
+          description: "Ovisno o operativnom sistemu i pregledniku koji se koristi, kombinacija tipki je kako slijedi:"
+          caption: Kombinacija tipki, ovisno o operativnom sistemu i pregledniku
+          browser_header: Preglednik
+          key_header: Kombinacija tipki
+          rows:
+            - 
+              browser_column: Pretraživač
+              key_column: ALT + prečica, onda ENTER
+            - 
+              browser_column: Firefox
+              key_column: ALT + CAPS (velika slova) + prečica
+            - 
+              browser_column: Chrome
+              key_column: ALT + prečica (CTRL + ALT + prečice za MAC)
+            - 
+              browser_column: Safari
+              key_column: ALT + prečica (CMD + prečica za MAC)
+            - 
+              browser_column: Opera
+              key_column: CAPS (velika slova) + ESC + prečica
+      textsize:
+        title: Veličina slova
+        browser_settings_table:
+          description: Pristupačan dizajn ove web-stranice omogućava korisniku da odabere veličinu slova koju želi. Ovo se može uraditi na više načina, ovisno o pregledniku koji se koristi.
+          browser_header: Preglednik
+          action_header: Radnja koja će se poduzeti
+          rows:
+            - 
+              browser_column: Pretraživač
+              action_column: Vidi > Veličina slova
+            - 
+              browser_column: Firefox
+              action_column: Vidi > Veličina
+            - 
+              browser_column: Chrome
+              action_column: Postavke (ikonica) > Opcije > Napredno > Web-sadržaj > Veličina slova
+            - 
+              browser_column: Safari
+              action_column: Vidi > Povećaj/Smanji
+            - 
+              browser_column: Opera
+              action_column: Vidi > omjer
+        browser_shortcuts_table:
+          description: "Drugi način da se promijeni veličina slova je da se koriste prečice za tastaturu u preglednicima, naročito ova kombinacija tipki:"
+          rows:
+            - 
+              shortcut_column: CTRL i + (CMD i + na Mac-u)
+              description_column: Povećava slova
+            - 
+              shortcut_column: CTRL i - (CMD i - na Mac-u)
+              description_column: Smanjuje slova
+      compatibility:
+        title: Usklađenost sa standardima i vizuelni dizajn
+        description: 'Sve strane na ovoj Web-stranici su u skladu sa <strong>Smjernicama za pristupačnost </strong> i Opštim principima pristupačnog dizajna, utvrđenim od strane Radne grupe <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> koja pripada W3C.'
+    titles:
+      help: "Šta je %{org}? - Učešće građana"
+    verify:
+      info: "Za potvrdu svog naloga, unesite podatke za pristup:"
+      info_code: "Sada unesite kod koji ste dobili u pismu:"
+      submit: Potvrdi moj nalog
+      title: Potvrdi svoj nalog

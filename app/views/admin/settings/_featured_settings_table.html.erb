@@ -1,0 +1,25 @@
+<table class="featured-settings-table">
+  <thead>
+    <tr>
+      <th><%= t("admin.settings.setting") %></th>
+      <th><%= t("admin.settings.index.features.enabled") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% features.each do |feature| %>
+      <tr>
+        <td>
+          <strong id="<%= dom_id(feature, :title) %>"><%= t("settings.#{feature.key}") %></strong>
+          <br>
+          <span class="small" id="<%= dom_id(feature, :description) %>">
+            <%= t("settings.#{feature.key}_description", default: t("admin.settings.no_description")) %>
+          </span>
+        </td>
+
+        <td>
+          <%= render Admin::Settings::FeaturedSettingsFormComponent.new(feature, tab: tab) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,13 +1,11 @@
-class Newsletter < ActiveRecord::Base
-  has_many :activities, as: :actionable
+class Newsletter < ApplicationRecord
+  has_many :activities, as: :actionable, inverse_of: :actionable
 
   validates :subject, presence: true
   validates :segment_recipient, presence: true
-  validates :from, presence: true
+  validates :from, presence: true, format: { with: /\A.+@.+\Z/ }
   validates :body, presence: true
   validate :validate_segment_recipient
-
-  validates_format_of :from, :with => /@/
 
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
@@ -17,7 +15,7 @@ class Newsletter < ActiveRecord::Base
   end
 
   def valid_segment_recipient?
-    segment_recipient && UserSegments.respond_to?(segment_recipient)
+    UserSegments.valid_segment?(segment_recipient)
   end
 
   def draft?
@@ -55,16 +53,16 @@ class Newsletter < ActiveRecord::Base
 
   private
 
-  def validate_segment_recipient
-    errors.add(:segment_recipient, :invalid) unless valid_segment_recipient?
-  end
+    def validate_segment_recipient
+      errors.add(:segment_recipient, :invalid) unless valid_segment_recipient?
+    end
 
-  def valid_email?(email)
-    email.match(/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i)
-  end
+    def valid_email?(email)
+      email.match(/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i)
+    end
 
-  def log_delivery(recipient_email)
-    user = User.where(email: recipient_email).first
-    Activity.log(user, :email, self)
-  end
+    def log_delivery(recipient_email)
+      user = User.find_by(email: recipient_email)
+      Activity.log(user, :email, self)
+    end
 end

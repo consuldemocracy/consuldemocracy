@@ -1,1 +1,106 @@
 en-US:
+  admin:
+    banners:
+      banner:
+        sections:
+          debates: Debatten
+    activity:
+      show:
+        filters:
+          on_comments: Kommentare
+          on_debates: Debatten
+          on_users: Benutzer
+    budget_investments:
+      index:
+        list:
+          admin: Administrator(in),Verwaltungsleiter(in)
+    comments:
+      index:
+        title: Kommentare
+        table_link: "Link"
+    dashboard:
+      actions:
+        index:
+          default:
+            email: Email
+    debates:
+      index:
+        title: Debatten
+    hidden_users:
+      index:
+        user: Benutzer
+    legislation:
+      processes:
+        process:
+          comments: Kommentare
+        subnav:
+          questions: Debatte
+      draft_versions:
+        table:
+          comments: Kommentare
+    menu:
+      administrators: Administrator(in),Verwaltungsleiter(in)
+      moderators: Moderatoren,Gesprächsleiter
+      site_customization:
+        information_texts_menu:
+          debates: "Debatten"
+      users: Benutzer
+      debates: "Debatten"
+      comments: "Kommentare"
+    administrators:
+      index:
+        title: Administrator(in),Verwaltungsleiter(in)
+    moderators:
+      index:
+        title: Moderatoren,Gesprächsleiter
+    segment_recipient:
+      administrators: Administrator(in),Verwaltungsleiter(in)
+    admin_notifications:
+      show:
+        link: Link
+    system_emails:
+      comment:
+        title: "Kommentar"
+    valuators:
+      index:
+        email: Email
+      show:
+        email: "Email"
+    poll_officers:
+      officer:
+        email: Email
+    poll_officer_assignments:
+      index:
+        table_email: "Email"
+    poll_shifts:
+      new:
+        table_email: "Email"
+    organizations:
+      index:
+        email: Email
+    signature_sheets:
+      show:
+        users: Benutzer
+    stats:
+      show:
+        summary:
+          comments: Kommentare
+          debates: Debatten
+      graph:
+        debate_created: Debatten
+      budget_supporting:
+        users: Benutzer
+      sdg:
+        debates: "Debatten"
+    users:
+      columns:
+        email: Email
+      index:
+        title: Benutzer
+    homepage:
+      feeds:
+        debates: Debatten
+    local_census_records:
+      index:
+        document_type: Document type
+        date_of_birth: Date of birth

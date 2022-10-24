@@ -1,1 +1,103 @@
 eu:
+  moderation:
+    comments:
+      index:
+        block_authors: Egileak blokeatu
+        filter: Iragazkia
+        filters:
+          all: Guztiak
+          pending_flag_review: Egiteke
+          with_ignored_flag: Berrikusitako marka du
+        headers:
+          comment: Iruzkin
+          moderate: Moderatu
+        hide: Iruzkinak ezkutatu
+        ignore_flags: Berrikusitzat markatu
+        orders:
+          flags: Salatuenak
+          newest: Berrienak
+        title: Iruzkinak
+    dashboard:
+      index:
+        title: Moderatu
+    debates:
+      index:
+        block_authors: Egileak blokeatu
+        filter: Iragazi
+        filters:
+          all: Guztiak
+          pending_flag_review: Egiteke
+          with_ignored_flag: Berrikusitako marka du
+        headers:
+          debate: Eztabaida
+          moderate: Moderatu
+        hide: Eztabaidak ezkutatu
+        ignore_flags: Berrikusitzat markatu
+        orders:
+          created_at: Berrienak
+          flags: Salatuenak
+        title: Eztabaidak
+    header:
+      title: Moderazioa
+    menu:
+      flagged_comments: Iruzkinak
+      flagged_debates: Eztabaidak
+      flagged_investments: Partaidetzazko aurrekontu proiektuak
+      proposals: Proposamenak
+      proposal_notifications: Proposamen jakinarazpenak
+      users: Erabiltzaileak blokeatu
+    proposals:
+      index:
+        block_authors: Egileak blokeatu
+        filter: Iragazkia
+        filters:
+          all: Guztiak
+          pending_flag_review: Berriz aztertzeke
+          with_ignored_flag: Berrikusitzat markatuta
+        headers:
+          moderate: Moderatu
+          proposal: Proposamena
+        hide: Proposamenak Ezkutatu
+        ignore_flags: Berrikusitzat markatu
+        orders:
+          created_at: Berrienak
+          flags: Salatuenak
+        title: Proposamenak
+    budget_investments:
+      index:
+        block_authors: Egileak blokeatu
+        filter: Iragazkia
+        filters:
+          all: Guztiak
+          pending_flag_review: Egiteke
+          with_ignored_flag: Berrikusitako marka du
+        headers:
+          moderate: Moderatu
+          budget_investment: Gastu proiektua
+        ignore_flags: Berrikusitzat markatu
+        orders:
+          created_at: Berrienak
+          flags: Salatuenak
+        title: Partaidetzazko aurrekontu proiektuak
+    proposal_notifications:
+      index:
+        block_authors: Sortzaileak blokeatu
+        filter: Iragazkia
+        filters:
+          all: Guztiak
+          pending_review: Berrikusteke
+          ignored: Ikusitzat markatuta
+        headers:
+          moderate: Moderatu
+          proposal_notification: Proposamen jakinarazpena
+        hide: Proposamenak Ezkutatu
+        ignore_flags: Berrikusitzat markatu
+        orders:
+          created_at: Berrienak
+          moderated: Moderatutakoak
+        title: Proposamen jakinarazpenak
+    users:
+      index:
+        hide: Blokeatu
+        search_placeholder: erabiltzailea edo emaila
+        title: Erabiltzaileak blokeatu

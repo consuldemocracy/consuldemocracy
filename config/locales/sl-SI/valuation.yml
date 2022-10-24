@@ -1,1 +1,64 @@
 sl:
+  valuation:
+    header:
+      title: Cenitev
+    menu:
+      title: Cenitev
+      budgets: Participatorni proračun
+    budgets:
+      index:
+        title: Participatorni proračun
+        filters:
+          current: Odprti
+          finished: Končani
+        table_name: Ime
+        table_phase: Faza
+        table_assigned_investments_valuation_open: Naložbeni projekti, dodeljeni s cenitvijo, so odprti
+        table_actions: Dejanja
+        evaluate: Oceni
+    budget_investments:
+      index:
+        headings_filter_all: Vsi naslovi
+        filters:
+          valuation_open: Odprti
+          valuating: V cenitvi
+          valuation_finished: Cenitev končana
+        assigned_to: "Dodeljeno cenilcu %{valuator}"
+        title: Naložbeni projekt
+        edit: Uredi
+        table_title: Naslov
+        table_heading_name: Ime naslova
+        table_actions: Dejanja
+        no_investments: "Ni nobenih naložbenih projektov."
+      show:
+        back: Nazaj
+        title: Naložbeni projekt
+        info: Informacije o avtorju
+        by: Poslano od
+        sent: Poslano na
+        heading: Naslov
+        dossier: Dosje
+        edit_dossier: Uredi dosje
+        price: Cena
+        price_first_year: Cena tekom prvega leta
+        feasibility: Izvedljivost
+        feasible: Izvedljiv
+        unfeasible: Neizvedljiv
+        undefined: Nedefinirano
+        valuation_finished: Cenitev končana
+        duration: Časovni obseg
+        responsibles: Odgovornosti
+        assigned_admin: Zadolžen admin
+        assigned_valuators: Zadolženi cenilci
+      edit:
+        dossier: Dosje
+        price: "Cena (%{currency})"
+        price_first_year: "Cena tekom prvega leta (%{currency}) <small>(neobvezno, podatki niso javni)</small>"
+        feasibility: Izvedljivost
+        valuation_finished_alert: "Ali si prepričan/-a, da želiš to poročilo označiti kot končano? Ko to storiš, ga ne moreš več spreminjati."
+        not_feasible_alert: "Avtorju/-ici projekta bomo nemudoma poslali e-pošto s poročilom o izvedljivosti."
+        save: Shrani spremembe
+      notice:
+        valuate: "Dosje posodobljen"
+      valuation_comments: Komentarji cenitve
+      not_in_valuating_phase: Naložbe so lahko ocenjene le, ko je proračun v fazi vrednotenja

@@ -1,0 +1,43 @@
+.notifications {
+  $notification-icon-size: rem-calc(19);
+  position: relative;
+
+  &.unread-notifications {
+    @include has-fa-icon(bell, solid);
+    @include has-fa-icon(circle, solid, after);
+
+    &::before {
+      @include breakpoint(small only) {
+        margin-right: $font-icon-margin;
+      }
+    }
+
+    &::after {
+      $menu-link-top-padding: rem-calc(11);
+      $circle-icon-size: rem-calc(10);
+
+      color: #ecf00b;
+      font-size: $circle-icon-size;
+      position: absolute;
+      left: $notification-icon-size - rem-calc(5);
+      top: $menu-link-top-padding - $circle-icon-size / 2;
+
+      @include breakpoint(medium) {
+        $menu-link-left-padding: rem-calc(16);
+        left: $notification-icon-size + $menu-link-left-padding;
+      }
+    }
+  }
+
+  &.no-notifications {
+    @include has-fa-icon(bell, regular);
+  }
+
+  &::before {
+    font-size: $notification-icon-size;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}

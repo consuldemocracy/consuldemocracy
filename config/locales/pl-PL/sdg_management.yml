@@ -1,0 +1,18 @@
+pl:
+  sdg_management:
+    homepage:
+      header:
+        create: "Utwórz nagłówek"
+        title: "Nagłówek"
+    menu:
+      budget_investments: "Budżety partycypacyjne"
+      debates: "Debaty"
+      legislation_processes: "Procesy legislacyjne"
+      polls: "Ankiety"
+      proposals: "Zrealizowane projekty"
+    relations:
+      index:
+        filter: "Filtruj"
+        filters:
+          all: "Wszystkie"
+          pending_sdg_review: "Oczekujące"

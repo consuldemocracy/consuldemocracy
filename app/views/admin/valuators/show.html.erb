@@ -13,18 +13,15 @@
   </p>
   <p>
     <strong><%= t("admin.valuators.show.description") %></strong><br>
-    <% if @valuator.description.present? %>
-      <%= @valuator.description %>
-    <% else %>
-      <%= t("admin.valuators.show.no_description") %>
-    <% end %>
+    <%= @valuator.description.presence || t("admin.valuators.show.no_description") %>
   </p>
   <p>
     <strong><%= t("admin.valuators.show.group") %></strong><br>
-    <% if @valuator.valuator_group.present? %>
-      <%= @valuator.valuator_group.try(:name) %>
-    <% else %>
-      <%= t("admin.valuators.show.no_group") %>
-    <% end %>
+    <%= @valuator.valuator_group&.name || t("admin.valuators.show.no_group") %>
+  </p>
+
+  <p>
+    <strong><%= t("admin.valuators.show.abilities") %></strong><br>
+    <%= valuator_abilities(@valuator).presence || t("admin.valuators.show.no_abilities") %>
   </p>
 </div>

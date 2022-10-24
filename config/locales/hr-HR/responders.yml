@@ -1,0 +1,37 @@
+hr:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} stvoreno uspješno."
+        debate: "Rasprava uspješno stvorena."
+        direct_message: "Vaša poruka je uspješno poslana."
+        poll: "Anketa je stvorena uspješno."
+        poll_booth: "Glasačko mjesto uspješno stvoreno."
+        poll_question_answer: "Odgovor je uspješno stvoren"
+        poll_question_answer_video: "Video je uspješno stvoren"
+        poll_question_answer_image: "Slika je uspješno učitana"
+        proposal: "Prijedlog je uspješno stvoren."
+        proposal_notification: "Vaša poruka je točno poslana."
+        budget_investment: "Proračunska investicija je uspješno stvorena."
+        signature_sheet: "Potpisna lista je uspješno stvorena"
+        topic: "Tema je uspješno stvorena."
+        valuator_group: "Grupa evaluatora je uspješno stvorena"
+      save_changes:
+        notice: Izmjene spremljene
+      update:
+        notice: "%{resource_name} ažurirano uspješno."
+        debate: "Rasprave ažurirane uspješno."
+        poll: "Anekata ažurirana uspješno."
+        poll_booth: "Glasačko mjesto ažurirano uspješno."
+        active_poll: "Opis ankete uspješno ažurirano."
+        proposal: "Prijedlog uspješno ažuriran."
+        budget_investment: "Investicijski projekt uspješno ažuriran."
+        topic: "Tema je uspješno ažurirana."
+        valuator_group: "Grupa evaluatora uspješno ažurirana"
+        translation: "Prijevod uspješno ažuriran"
+      destroy:
+        budget_investment: "Investicijski projekti uspješno obrisani."
+        error: "Ne mogu biti obrisani"
+        topic: "Tema je uspješno obrisana."
+        poll_question_answer_video: "Video odgovora uspješno obrisan."
+        valuator_group: "Grupa evaluatora uspješno obrisana"

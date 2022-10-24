@@ -1,11 +1,11 @@
 sq:
   documents:
     title: Dokumentet
-    max_documents_allowed_reached_html: Ju keni arritur numrin maksimal të dokumenteve të lejuara! <strong> Duhet të fshish një para se të ngarkosh një tjetër. </ strong
+    max_documents_allowed_reached: Ju keni arritur numrin maksimal të dokumenteve të lejuara! <strong> Duhet të fshish një para se të ngarkosh një tjetër. </ strong
+    additional: Dokumentacion shtesë
     form:
       title: Dokumentet
       title_placeholder: Shto një titull përshkrues për dokumentin
-      attachment_label: Zgjidh dokumentin
       delete_button: Hiq dokumentin
       cancel_button: Anullo
       note: "Mund të ngarkoni deri në një maksimum prej %{max_documents_allowed} dokumenta të llojeve të mëposhtme të përmbajtjes: %{accepted_content_types}, deri%{max_file_size} MB pë dokument"

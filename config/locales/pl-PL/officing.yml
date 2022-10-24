@@ -16,6 +16,18 @@ pl:
         no_polls: Nie uoficjalniasz ostatecznych rozliczeń w żadnej aktywnej ankiecie
         select_poll: Wybierz ankietę
         add_results: Dodaj wyniki
+    poll_budgets:
+      index:
+        ballot_sheet_name: Nazwa
+        ballot_sheet_author: Autor
+        ballot_sheet_creation_date: Data utworzenia
+      new:
+        booth: Kabina wyborcza
+        select_booth: Wybierz kabinę wyborczą
+        submit: Zapisz
+      show:
+        created_at: Data utworzenia
+        author: Autor
     results:
       flash:
         create: "Wyniki zapisane"
@@ -36,7 +48,7 @@ pl:
         no_results: "Brak wyników"
         results: Wyniki
         table_answer: Odpowiedź
-        table_votes: Głosy
+        table_votes: Głosów
         table_whites: "Całkowicie puste karty do głosowania"
         table_nulls: "Nieprawidłowe karty do głosowania"
         table_total: "Całkowita liczba kart do głosowania"
@@ -46,15 +58,13 @@ pl:
         not_allowed: "Nie masz dziś uoficjalniających zmian"
       new:
         title: Uprawomocnij dokument
-        document_number: "Numer dokumentu (w tym litery)"
         submit: Uprawomocnij dokument
         error_verifying_census: "Spis powszechny nie był w stanie zweryfikować tego dokumentu."
         form_errors: uniemożliwił weryfikację tego dokumentu
-        no_assignments: "Nie masz dziś uoficjalniających zmian"
     voters:
       new:
         title: Ankiety
-        table_poll: Ankieta
+        table_poll: Głosowanie
         table_status: Stan ankiet
         table_actions: Akcje
         not_to_vote: Osoba ta postanowiła nie głosować w tej chwili

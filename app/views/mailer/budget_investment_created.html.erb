@@ -1,39 +1,46 @@
-<td style="padding-bottom: 20px; padding-left: 10px;">
+<td style="<%= css_for_mailer_content %>">
 
-  <h1 style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;">
+  <h1 style="<%= css_for_mailer_heading %>">
     <%= t("mailers.budget_investment_created.title") %>
   </h1>
 
-  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("mailers.budget_investment_created.intro_html",
-           author: @investment.author.name).html_safe %>
+  <p style="<%= css_for_mailer_text %>">
+    <%= sanitize(
+      t("mailers.budget_investment_created.intro", author: @investment.author.name)
+    ) %>
   </p>
 
-  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("mailers.budget_investment_created.text_html",
-           investment: @investment.title,
-           budget: @investment.budget.name).html_safe %>
+  <p style="<%= css_for_mailer_text %>">
+    <%= sanitize(
+      t("mailers.budget_investment_created.text",
+        investment: @investment.title,
+        budget: @investment.budget.name)
+    ) %>
   </p>
 
-  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("mailers.budget_investment_created.follow_html",
-           link: link_to(t("mailers.budget_investment_created.follow_link"), budgets_url)).html_safe %>
+  <p style="<%= css_for_mailer_text %>">
+    <%= sanitize(
+      t("mailers.budget_investment_created.follow",
+        link: link_to(t("mailers.budget_investment_created.follow_link"), budgets_url,
+        style: css_for_mailer_link)
+      ),
+      attributes: %w[href style]
+    ) %>
   </p>
 
   <table style="width: 100%;">
     <tbody>
       <tr>
         <td style="padding-bottom: 12px; text-align: center;">
-          <%= link_to budget_investment_url(@investment.budget, @investment, anchor: "social-share"), style: "font-family: 'Open Sans','Helvetica Neue',arial,sans-serif; background: #f7f5f2; border-radius: 6px; color: #3d3d66!important; font-weight: bold; margin: 0px; padding: 10px 15px; text-align: center; text-decoration: none; min-width: 160px; display: inline-block;" do %>
-              <%= image_tag('icon_mailer_share.png',  style: "border: 0; display: inline-block; width: 100%; max-width: 16px", alt: "") %>
-              <%= t('mailers.budget_investment_created.share') %>
+          <%= link_to budget_investment_url(@investment.budget, @investment, anchor: "social-share"), style: css_for_mailer_button do %>
+            <%= t("mailers.budget_investment_created.share") %>
           <% end %>
         </td>
       </tr>
     </tbody>
   </table>
 
-  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+  <p style="<%= css_for_mailer_text %>">
     <%= t("mailers.budget_investment_created.sincerely") %>
   </p>
 </td>

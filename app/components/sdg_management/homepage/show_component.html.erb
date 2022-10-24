@@ -1,0 +1,32 @@
+<%= header %>
+
+<section class="sdg-header">
+  <header>
+    <h3><%= t("sdg_management.homepage.header.title") %></h3>
+
+    <% unless header_card %>
+      <%= link_to t("sdg_management.homepage.header.create"), new_sdg_management_homepage_header_path %>
+    <% end %>
+  </header>
+
+  <%= render Admin::Widget::Cards::TableComponent.new(
+    [header_card],
+    edit_path: edit_sdg_management_homepage_header_path,
+    destroy_path: sdg_management_homepage_header_path,
+    no_cards_message: t("sdg_management.homepage.header.no_cards")
+  ) %>
+</section>
+
+<% phases.each do |phase| %>
+  <section class="phase-cards <%= phase.kind %>-cards">
+    <header>
+      <h3><%= phase.title %></h3>
+      <%= link_to create_card_text(phase), new_sdg_management_sdg_phase_widget_card_path(phase) %>
+    </header>
+
+    <%= render Admin::Widget::Cards::TableComponent.new(
+      phase.cards,
+      no_cards_message: no_cards_message
+    ) %>
+  </section>
+<% end %>

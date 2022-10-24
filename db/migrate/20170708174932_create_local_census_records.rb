@@ -1,4 +1,4 @@
-class CreateLocalCensusRecords < ActiveRecord::Migration
+class CreateLocalCensusRecords < ActiveRecord::Migration[4.2]
   def change
     create_table :local_census_records do |t|
       t.string :document_number, null: false

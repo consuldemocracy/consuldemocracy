@@ -4,3 +4,32 @@ sl:
       verification:
         residence: "Prebivališče"
         sms: "SMS"
+    attributes:
+      verification:
+        residence:
+          document_type: "Vrsta dokumenta"
+          document_number: "Številka dokumenta (vključno s črkami)"
+          date_of_birth: "Datum rojstva"
+          postal_code: "Poštna številka"
+        sms:
+          phone: "Telefonska številka"
+          confirmation_code: "Potrditvena koda"
+        email:
+          recipient: "E-naslov"
+      verification/letter:
+        email: "E-naslov"
+        password: "Geslo"
+        verification_code: "Koda, ki si jo prejel/-a po e-pošti"
+      verification/management/document:
+        document_type: "Vrsta dokumenta:"
+        document_number: "Številka dokumenta"
+      verification/residence:
+        date_of_birth: "Datum rojstva"
+        document_type: "Vrsta dokumenta"
+        postal_code: "Poštna številka"
+      verification/sms:
+        confirmation_code: "Vnesi kodo, ki si jo dobil/-a po SMS"
+      officing/residence:
+        document_type: "Vrsta dokumenta"
+        document_number: "Številka dokumenta (vključno s črkami)"
+        year_of_birth: "Leto rojstva"

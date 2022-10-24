@@ -1,22 +1,36 @@
-<h3><%= t("admin.polls.show.questions_title") %></h3>
+<h3 class="inline-block"><%= t("admin.polls.show.questions_title") %></h3>
+
+<% if can?(:create, Poll::Question.new(poll: @poll)) %>
+  <%= link_to t("admin.questions.index.create"), new_admin_question_path(poll_id: @poll.id),
+              class: "button float-right" %>
+<% end %>
 
 <% if @poll.questions.empty? %>
   <div class="callout primary margin-top">
     <%= t("admin.polls.show.no_questions") %>
   </div>
 <% else %>
-  <table class="fixed margin">
+  <table class="margin">
     <thead>
       <tr>
         <th><%= t("admin.polls.show.table_title") %></th>
+        <th><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
-    <% @poll.questions.each do |question| %>
+    <% @poll.questions.sort_for_list.each do |question| %>
       <tr id="<%= dom_id(question) %>">
         <td>
-          <strong>
-            <%= link_to question.title, admin_question_path(question) %>
-          </strong>
+          <strong><%= question.title %></strong>
+          <% if question.proposal.present? %>
+            <small>
+              <%= link_to t("admin.polls.show.see_proposal"),
+                          proposal_path(question.proposal),
+                          target: "_blank" %>
+            </small>
+          <% end %>
+        </td>
+        <td>
+          <%= render Admin::Poll::Questions::TableActionsComponent.new(question) %>
         </td>
       </tr>
     <% end %>

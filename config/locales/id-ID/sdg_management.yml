@@ -1,0 +1,14 @@
+id:
+  sdg_management:
+    menu:
+      budget_investments: "Anggaran partisipasif"
+      debates: "Perdebatan"
+      legislation_processes: "Undang-undang proses"
+      polls: "Jajak pendapat"
+      proposals: "Proposal"
+    relations:
+      index:
+        filter: "Penyaring"
+        filters:
+          all: "Semua"
+          pending_sdg_review: "Tertunda"

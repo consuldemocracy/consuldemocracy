@@ -1,0 +1,66 @@
+#Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+da:
+  devise:
+    password_expired:
+      expire_password: "Adgangskode er udløbet"
+      change_required: "Din adgangskode er udløbet"
+      change_password: "Skift adgangskode"
+      new_password: "Ny adgangskode"
+      updated: "Din adgangskode blev opdateret"
+    confirmations:
+      confirmed: "Din brugerkonto er blevet bekræftet."
+      send_instructions: "Om få minutter vil du modtage en e-mail, der instruerer dig i, hvordan du nulstiller din adgangskode."
+      send_paranoid_instructions: "Hvis din e-mail findes i vores database, vil du om få minutter modtage en e-mail, der instruerer dig i, hvordan du nulstiller din adgangskode."
+    failure:
+      already_authenticated: "Du er allerede logget ind."
+      inactive: "Din konto er endnu ikke blevet aktiveret."
+      invalid: "Ugyldig %{authentication_keys} eller adgangskode."
+      locked: "Din konto er blevet spærret."
+      last_attempt: "Du har et sidste forsøg, inden din konto blokeres."
+      not_found_in_database: "Ugyldig %{authentication_keys} eller adgangskode."
+      timeout: "Din session er udløbet. Log ind igen for at fortsætte."
+      unauthenticated: "Du skal logge ind eller oprette en bruger for at fortsætte."
+      unconfirmed: "For at fortsætte skal du klikke på det bekræftelseslink, vi har sendt dig via e-mail"
+    mailer:
+      confirmation_instructions:
+        subject: "Bekræftelsesinstrukser"
+      reset_password_instructions:
+        subject: "Instruktioner i hvordan du nulstiller din adgangskode"
+      unlock_instructions:
+        subject: "Instruktioner vedrørende genåbning af konto"
+    omniauth_callbacks:
+      failure: "Det har ikke været muligt at godkende dig %{kind} fordi \"%{reason}\"."
+      success: "Du er succesfuldt identificeret som %{kind}."
+    passwords:
+      no_token: "Du kan kun tilgå denne side gennem et nulstil-adgangskode-link. Hvis du allerede har tilgået siden gennem et sådan link, så tjek venligst om websiteadressen er korrekt."
+      send_instructions: "Om få minutter vil du modtage en e-mail, der instruerer dig i, hvordan du nulstiller din adgangskode."
+      send_paranoid_instructions: "Hvis din e-mail findes i vores database, vil du om få minutter modtage et link, som du kan anvende til at nulstille din adgangskode."
+      updated: "Din adgangskode er blevet ændret."
+      updated_not_active: "Din adgangskode er blevet ændret."
+    registrations:
+      destroyed: "Farvel! Din konto er blevet slettet. Vi håber, du kommer igen."
+      signed_up: "Velkommen! Du er blevet verificeret."
+      signed_up_but_inactive: "Du er registreret, men kan ikke logge ind, fordi din konto endnu ikke er aktiveret."
+      signed_up_but_locked: "Du er registreret, men kan ikke logge ind, fordi din konto er spærret."
+      signed_up_but_unconfirmed: "Du har fået tilsendt en besked med et bekræftelseslink. Klik på linket for at aktivere din konto."
+      update_needs_confirmation: "Din konto er blevet opdateret; vi bliver dog nødt til at verificere din nye e-mail adresse. Tjek din e-mail og klik på linket for at bekræfte din nye e-mail adresse."
+      updated: "Din konto er blevet opdateret."
+    sessions:
+      signed_in: "Du er nu logget ind."
+      signed_out: "Du er nu logget ud."
+      already_signed_out: "Du er nu logget ud."
+    unlocks:
+      send_instructions: "Om få minutter vil du modtage en e-mail, der instruerer dig i, hvordan du genåbner din konto."
+      send_paranoid_instructions: "Hvis du har en brugerkonto, vil du om få minutter modtage en e-mail med instruktioner om, hvordan du genåbner din konto."
+      unlocked: "Din konto er blevet genåbnet. Log ind for at fortsætte."
+  errors:
+    messages:
+      already_confirmed: "Du er allerede blevet verificeret; gå til log ind."
+      confirmation_period_expired: "Du skal verificeres inden for denne %{period}; vær venlig at gentage anmodningen."
+      expired: "er udløbet; vær venlig at gentage anmodningen."
+      not_found: "ikke fundet."
+      not_locked: "var ikke spærret."
+      not_saved:
+        one: "1 fejl forhindrede dette %{resource} i at blive gemt. Se de markerede felter for at vide, hvordan du retter dem:"
+        other: "%{count} fejl forhindrede dette %{resource} i at blive gemt. Se de markerede felter for at vide, hvordan du retter dem:"
+      equal_to_current_password: "må adskille sig fra den nuværende adgangskode."

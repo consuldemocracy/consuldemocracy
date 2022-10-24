@@ -1,0 +1,105 @@
+da:
+  moderation:
+    comments:
+      index:
+        block_authors: Bloker bruger
+        filter: Filter
+        filters:
+          all: Alle
+          pending_flag_review: Under behandling
+          with_ignored_flag: Markér som set
+        headers:
+          comment: Kommentar
+          moderate: Moderér
+        hide: Skjul kommentarer
+        ignore_flags: Markér som set
+        orders:
+          flags: Mest markeret
+          newest: Nyeste
+        title: Kommentarer
+    dashboard:
+      index:
+        title: Moderation
+    debates:
+      index:
+        block_authors: Bloker forfattere
+        filter: Filter
+        filters:
+          all: Alle
+          pending_flag_review: Under behandling
+          with_ignored_flag: Markér som set
+        headers:
+          debate: Debat
+          moderate: Moderér
+        hide: Skjul debatindlæg
+        ignore_flags: Markér som set
+        orders:
+          created_at: Nyeste
+          flags: Mest markeret
+        title: Debatindlæg
+    header:
+      title: Moderation
+    menu:
+      flagged_comments: Kommentarer
+      flagged_debates: Debatter
+      flagged_investments: Budgetidéer
+      proposals: Borgerforslag
+      proposal_notifications: Notifikationer om forslag
+      users: Bloker brugere
+    proposals:
+      index:
+        block_authors: Bloker forfattere
+        filter: Filter
+        filters:
+          all: Alle
+          pending_flag_review: Afventer gennemgang
+          with_ignored_flag: Markér som set
+        headers:
+          moderate: Moderér
+          proposal: Borgerforslag
+        hide: Skjul forslag
+        ignore_flags: Markér som set
+        orders:
+          created_at: Seneste
+          flags: Mest markeret
+        title: Borgerforslag
+    budget_investments:
+      index:
+        block_authors: Bloker forfattere
+        filter: Filter
+        filters:
+          all: Alle
+          pending_flag_review: Afventer
+          with_ignored_flag: Markér som set
+        headers:
+          moderate: Moderér
+          budget_investment: Budgetidéer
+        hide: Skjul
+        ignore_flags: Markér som set
+        orders:
+          created_at: Seneste
+          flags: Mest markeret
+        title: Forslag
+    proposal_notifications:
+      index:
+        block_authors: Bloker forfattere
+        filter: Filter
+        filters:
+          all: Alle
+          pending_review: Afventer gennemgang
+          ignored: Markér som set
+        headers:
+          moderate: Moderér
+          proposal_notification: Notifikationer om forslag
+        hide: Skjul forslag
+        ignore_flags: Markér som set
+        orders:
+          created_at: Seneste
+          moderated: Modereret
+        title: Notifikationer om forslag
+    users:
+      index:
+        hide: Bloker
+        search_placeholder: e-mail eller brugernavn
+        title: Bloker brugere
+      notice_hide: Bruger blokeret. Alle brugerens debatindlag og kommentarer er blevet skjult.

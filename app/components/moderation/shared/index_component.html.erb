@@ -1,0 +1,39 @@
+<h2><%= t("moderation.#{i18n_namespace}.index.title") %></h2>
+
+<%= render "shared/filter_subnav", i18n_namespace: "moderation.#{i18n_namespace}.index" %>
+
+<h3 class="inline-block"><%= page_entries_info records %></h3>
+
+<% if records.any? %>
+  <%= render "shared/order_links", i18n_namespace: "moderation.#{i18n_namespace}.index" %>
+<% end %>
+
+<%= form_tag form_path, method: :put do %>
+  <p class="float-left js-check">
+    <%= t("shared.check") %>:
+    <%= link_to t("shared.check_all"), "#", data: { check_all: field_name } %>
+    |
+    <%= link_to t("shared.check_none"), "#", data: { check_none: field_name } %>
+  </p>
+
+  <%= content %>
+
+  <%= submit_tag t("moderation.#{i18n_namespace}.index.block_authors"),
+                 name: "block_authors",
+                 class: "button hollow alert",
+                 data: { confirm: t("moderation.actions.confirm_action", action: t("moderation.#{i18n_namespace}.index.block_authors")) } %>
+
+  <div class="float-right">
+    <%= submit_tag t("moderation.#{i18n_namespace}.index.hide"),
+                   name: "hide_#{table_name}",
+                   class: "button hollow alert",
+                   data: { confirm: t("moderation.actions.confirm_action", action: t("moderation.#{i18n_namespace}.index.hide")) } %>
+
+    <%= submit_tag t("moderation.#{i18n_namespace}.index.ignore_flags"),
+                   name: "ignore_flags",
+                   class: "button hollow",
+                   data: { confirm: t("moderation.actions.confirm_action", action: t("moderation.#{i18n_namespace}.index.ignore_flags")) } %>
+  </div>
+
+  <%= paginate records %>
+<% end %>

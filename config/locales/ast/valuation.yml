@@ -1,25 +1,61 @@
 ast:
   valuation:
+    header:
+      title: Evaluación
     menu:
-      spending_proposals: Propuestes d'inversión
+      title: Evaluación
+      budgets: Presupuestu participativu
     budgets:
       index:
+        title: Presupuestu participativu
         filters:
-          finished: Terminaos
+          current: Abiertu
+          finished: Remataes
+        table_name: Nome
+        table_phase: Fase
+        table_assigned_investments_valuation_open: Prop. Inv. asignadas en evaluación
+        table_actions: Acciones
+        evaluate: Evaluar
     budget_investments:
       index:
         headings_filter_all: Toles partíes
         filters:
+          valuation_open: Abiertu
           valuating: N'evaluación
           valuation_finished: Evaluación rematada
+        assigned_to: "Asignadas a %{valuator}"
         title: Propuestes d'inversión
-        no_valuators_assigned: Ensin evaluaor
+        edit: Editar informe
         table_id: ID
+        table_title: Títulu
         table_heading_name: Nome de la partida
+        table_actions: Acciones
       show:
+        back: Volver
+        title: Propuesta d'inversión
+        info: Datos de envío
+        by: Enviada por
+        sent: Fecha de creación
+        heading: Partida
+        dossier: Informe
+        edit_dossier: Editar informe
+        price: Costu
+        price_first_year: Coste en el primer año
+        currency: "€"
         feasibility: Viabilidá
+        feasible: Viable
         unfeasible: Invidable
         undefined: Ensin definir
+        valuation_finished: Evaluación rematada
+        duration: Plazo de ejecución <small>(opcional, dato no público)</small>
+        responsibles: Responsables
+        assigned_admin: Administrador asignado
         assigned_valuators: Evaluaores asignaos
       edit:
+        dossier: Informe
+        price: "Coste (%{currency}) <small>(dato público)</small>"
+        price_first_year: "Coste en el primer año (%{currency}) <small>(opcional, dato no público)</small>"
+        feasibility: Viabilidá
         save: Guardar Cambeos
+      notice:
+        valuate: "Informe actualizado"

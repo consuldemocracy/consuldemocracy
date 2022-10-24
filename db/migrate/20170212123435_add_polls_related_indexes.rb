@@ -1,6 +1,5 @@
-class AddPollsRelatedIndexes < ActiveRecord::Migration
+class AddPollsRelatedIndexes < ActiveRecord::Migration[4.2]
   def change
-
     add_index :poll_booth_assignments, :booth_id
     add_index :poll_booth_assignments, :poll_id
 
@@ -16,7 +15,6 @@ class AddPollsRelatedIndexes < ActiveRecord::Migration
     add_index :poll_voters, :officer_assignment_id
 
     add_index :polls, [:starts_at, :ends_at]
-
 
     add_foreign_key :poll_answers, :poll_questions, column: :question_id
     add_foreign_key :poll_booth_assignments, :polls

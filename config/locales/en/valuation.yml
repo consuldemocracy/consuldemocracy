@@ -5,7 +5,6 @@ en:
     menu:
       title: Valuation
       budgets: Participatory budgets
-      spending_proposals: Spending proposals
     budgets:
       index:
         title: Participatory budgets
@@ -28,10 +27,6 @@ en:
         assigned_to: "Assigned to %{valuator}"
         title: Investment projects
         edit: Edit dossier
-        valuators_assigned:
-          one: Assigned valuator
-          other: "%{count} valuators assigned"
-        no_valuators_assigned: No valuators assigned
         table_id: ID
         table_title: Title
         table_heading_name: Heading name
@@ -58,71 +53,16 @@ en:
         responsibles: Responsibles
         assigned_admin: Assigned admin
         assigned_valuators: Assigned valuators
+        preview: Investment preview
       edit:
         dossier: Dossier
-        price_html: "Price (%{currency})"
-        price_first_year_html: "Cost during the first year (%{currency}) <small>(optional, data not public)</small>"
-        price_explanation_html: Price explanation
+        price: "Price (%{currency})"
+        price_first_year: "Cost during the first year (%{currency}) <small>(optional, data not public)</small>"
         feasibility: Feasibility
-        feasible: Feasible
-        unfeasible: Not feasible
-        undefined_feasible: Pending
-        feasible_explanation_html: Feasibility explanation
-        valuation_finished: Valuation finished
         valuation_finished_alert: "Are you sure you want to mark this report as completed? If you do it, it can no longer be modified."
         not_feasible_alert: "An email will be sent immediately to the author of the project with the report of unfeasibility."
-        duration_html: Time scope
         save: Save changes
       notice:
         valuate: "Dossier updated"
       valuation_comments: Valuation comments
       not_in_valuating_phase: Investments can only be valuated when Budget is in valuating phase
-    spending_proposals:
-      index:
-        geozone_filter_all: All zones
-        filters:
-          valuation_open: Open
-          valuating: Under valuation
-          valuation_finished: Valuation finished
-        title: Investment projects for participatory budgeting
-        edit: Edit
-      show:
-        back: Back
-        heading: Investment project
-        info: Author info
-        association_name: Association
-        by: Sent by
-        sent: Sent at
-        geozone: Scope
-        dossier: Dossier
-        edit_dossier: Edit dossier
-        price: Price
-        price_first_year: Cost during the first year
-        currency: "€"
-        feasibility: Feasibility
-        feasible: Feasible
-        not_feasible: Not feasible
-        undefined: Undefined
-        valuation_finished: Valuation finished
-        time_scope: Time scope
-        internal_comments: Internal comments
-        responsibles: Responsibles
-        assigned_admin: Assigned admin
-        assigned_valuators: Assigned valuators
-      edit:
-        dossier: Dossier
-        price_html: "Price (%{currency})"
-        price_first_year_html: "Cost during the first year (%{currency})"
-        currency: "€"
-        price_explanation_html: Price explanation
-        feasibility: Feasibility
-        feasible: Feasible
-        not_feasible: Not feasible
-        undefined_feasible: Pending
-        feasible_explanation_html: Feasibility explanation
-        valuation_finished: Valuation finished
-        time_scope_html: Time scope
-        internal_comments_html: Internal comments
-        save: Save changes
-      notice:
-        valuate: "Dossier updated"

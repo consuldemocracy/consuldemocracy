@@ -1,0 +1,35 @@
+.admin .budget-phases-form {
+
+  > fieldset {
+    margin-top: $line-height;
+
+    > * {
+      @include grid-column;
+    }
+
+    > .date-field {
+
+      @include breakpoint(medium) {
+        width: 50%;
+      }
+
+      @include breakpoint(large) {
+        width: 25%;
+      }
+
+      &:last-child {
+        float: left;
+      }
+    }
+  }
+
+  .images {
+    @include direct-uploads;
+  }
+
+  .button {
+    &.upload-image {
+      margin-bottom: $line-height / 2;
+    }
+  }
+}

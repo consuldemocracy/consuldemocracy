@@ -1,13 +1,11 @@
 <% flash.each do |flash_key, flash_message| %>
-  <% if flash_key != 'timedout' %>
-    <div id="<%= flash_key %>" data-alert class="notice-container callout-slide" data-closable>
-      <div class="callout notice <%= flash_key %>">
-        <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <div class="notice-text">
-          <%= flash_message.try(:html_safe) %>
-        </div>
+  <div id="<%= flash_key %>" data-alert class="notice-container callout-slide" data-closable>
+    <div class="callout notice <%= flash_key %>">
+      <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="notice-text">
+        <%= sanitize(flash_message) %>
       </div>
     </div>
   <% end %>

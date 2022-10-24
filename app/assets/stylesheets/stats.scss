@@ -1,0 +1,205 @@
+.participation-stats {
+
+  @include breakpoint(medium) {
+
+    .stats-content {
+      border-left: 1px solid $border;
+    }
+  }
+
+  .sidebar {
+    border-bottom: 1px solid $border;
+    margin-bottom: $line-height;
+
+    @include breakpoint(medium) {
+      border-bottom: 0;
+    }
+
+    ul {
+      margin-left: $line-height / 2;
+      margin-top: 0;
+      padding: 0;
+    }
+  }
+
+  .section-title {
+    font-size: rem-calc(24);
+    border-bottom: 1px solid $border;
+  }
+
+  .stats-group {
+    margin-bottom: $line-height;
+    margin-top: $line-height;
+  }
+
+  .number-with-info {
+    display: inline-block;
+
+    &::before {
+      display: inline-block;
+      margin-right: $line-height / 2;
+      vertical-align: top;
+    }
+
+    &.total-participants::before {
+      content: image-url("stats_users.png");
+    }
+
+    &.male::before {
+      content: image-url("stats_man.png");
+    }
+
+    &.female::before {
+      content: image-url("stats_woman.png");
+    }
+
+    &.total-investments::before {
+      content: image-url("stats_investments.png");
+    }
+
+    &.web::before {
+      content: image-url("stats_web.png");
+    }
+
+    &.booth::before {
+      content: image-url("stats_booth.png");
+    }
+
+    &.mail::before {
+      content: image-url("stats_mail.png");
+    }
+
+    .content {
+      display: inline-block;
+      margin-right: $line-height * 2;
+    }
+
+    .number {
+      display: block;
+      font-size: rem-calc(36);
+      font-weight: bold;
+      line-height: rem-calc(36);
+    }
+
+    .info {
+      color: $text-medium;
+      font-size: $small-font-size;
+      font-style: italic;
+    }
+
+    &.total-participants {
+
+      .number {
+        font-size: rem-calc(60);
+        line-height: rem-calc(60);
+      }
+    }
+  }
+
+  .progress {
+    background: #ebf0f4;
+    border-radius: rem-calc(20);
+    height: $line-height / 2;
+  }
+
+  .progress-meter {
+    background: #52a4ee;
+    border-bottom-left-radius: rem-calc(20);
+    border-top-left-radius: rem-calc(20);
+  }
+
+  .gender-and-channel {
+
+    thead,
+    tbody {
+      border: 0;
+    }
+
+    thead,
+    tr,
+    th {
+      background-color: transparent;
+    }
+
+    td,
+    th {
+      text-align: center;
+      text-transform: uppercase;
+
+      &::before {
+        display: inline-block;
+        transform: scale(0.6);
+        vertical-align: middle;
+      }
+    }
+
+    th {
+      font-weight: bold;
+      font-size: rem-calc(21);
+
+      &.gender {
+        opacity: 0;
+      }
+
+      &.web::before {
+        content: image-url("stats_web.png");
+      }
+
+      &.booth::before {
+        content: image-url("stats_booth.png");
+      }
+
+      &.mail::before {
+        content: image-url("stats_mail.png");
+      }
+    }
+
+    td {
+
+      &.gender {
+        font-weight: bold;
+        font-size: rem-calc(21);
+        text-align: left;
+      }
+
+      &.male::before {
+        content: image-url("stats_man.png");
+      }
+
+      &.female::before {
+        content: image-url("stats_woman.png");
+      }
+    }
+  }
+}
+
+table {
+
+  &.survey-districts {
+
+    @include breakpoint(medium down) {
+      thead {
+        font-size: rem-calc(12);
+
+        th {
+          width: 25%;
+          word-break: break-all;
+        }
+      }
+    }
+
+    tr th {
+      border: 1px solid $border;
+      text-align: center;
+    }
+
+    .phase-subheader {
+      font-size: rem-calc(11);
+      font-weight: normal;
+    }
+
+    .success {
+      background: #c1fdd2;
+    }
+  }
+}

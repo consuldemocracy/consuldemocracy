@@ -1,0 +1,18 @@
+so:
+  sdg_management:
+    homepage:
+      header:
+        create: "Abuur madax"
+        title: "Madaxa"
+    menu:
+      budget_investments: "Misaaniyadaha kaqayb qadashada"
+      debates: "Doodo"
+      legislation_processes: "Nidaamka Sharciga"
+      polls: "Doorashooyinka"
+      proposals: "Sojeedino"
+    relations:
+      index:
+        filter: "Sifeeyee"
+        filters:
+          all: "Dhamaan"
+          pending_sdg_review: "Joojin"

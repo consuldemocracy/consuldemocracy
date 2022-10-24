@@ -1,0 +1,190 @@
+ka:
+  budgets:
+    ballots:
+      show:
+        title: თქვენი ბიულეტენი
+        amount_available:
+          knapsack: "თქვენ დაგრჩათ <span>%{count}</span> ინვესტირებისათვის."
+          approval:
+            zero: "თქვენ დაგრჩათ <span>%{count}</span> ხმა."
+            one: "თქვენ დაგრჩათ <span>%{count}</span> ხმა."
+            other: "თქვენ დაგრჩათ <span>%{count}</span> ხმა."
+        amount_spent:
+          knapsack: "დახარჯული თანხის რაოდენობა<span>%{count}</span>"
+          approval:
+            zero: "<span>%{count}</span> მიცემული ხმა"
+            one: "<span>%{count}</span> მიცემული ხმა"
+            other: "<span>%{count}</span> მიცემული ხმა"
+        amount_limit:
+          knapsack: "%{count}"
+        no_balloted_group_yet: "ამ ჯგუფისთვის ჯერ ხმა არ მიგიციათ, ამის გაკეთება ახლა შეგიძლიათ!"
+        remove: ხმის წაშლა
+        voted:
+          one: "თვენ ხმა მიეცით <span>ერთ</span> ინვესტიციას."
+          other: "თქვენ ხმა მიეცით <span>%{count}</span> ინვესტიციას."
+        voted_info: "თქვენი ბიულეტენი დადასტურებულია!"
+        voted_info_2: "თუმცა, ხმის შეცვლა მიმდინარე ფაზის დასრულებამდე ნებისმიერ დროს შეგიძლიათ."
+        zero: თქვენ ჯერ არ მიგიციათ ხმა საინვესტიციო პროექტისთვის.
+      reasons_for_not_balloting:
+        not_verified: მხოლოდ გადამოწმებული ანგარიშის მქონე მომხმარებლებს შეუძლიათ საინვესტიციო პროექტებზე ხმის მიცემა; %{verify_account}.
+        not_selected: მოუნიშნავ საინვესტიციო პროექტებზე ხმის მიცემა შეუძლებელია
+        not_enough_money: "თქვენ უკვე გამოყავით ხელმისაწვდომი ბიუჯეტი.<br><small>გახსოვდეთ, შეგიძლიათ %{change_ballot} ნებისმიერ დროს</small>"
+        no_ballots_allowed: შერჩევის ფაზა დახურულია
+        different_heading_assigned: "თქვენ უკვე მიეცით ხმა სხვა რუბრიკაზე: %{heading_link}"
+        not_enough_available_votes: "თქვენ მიაღწიეთ დასაშვები ხმების მაქსიმალურ რაოდენობას"
+        change_ballot: ხმების შეცვლა
+        casted_offline: თქვენ უკვე მიიღეთ მონაწილეობა ინტერნეტის გარეშე
+    groups:
+      show:
+        title: შეარჩიეთ შესაძლო ვარიანტი
+    phase:
+      drafting: მონახაზი (საჯარო არ არის)
+      informing: ინფორმაცია
+      accepting: პროექტების მიღება
+      reviewing: პროექტების მიმოხილვა
+      selecting: პროექტების შერჩევა
+      valuating: პროექტების შეფასება
+      publishing_prices: პროექტების ღირებულებების გამოქვეყნება
+      balloting: ხმის მიცემა პროექტებზე
+      reviewing_ballots: კენჭისყრის განხილვა
+      finished: დასრულებული ბიუჯეტი
+    index:
+      title: მონაწილეობითი ბიუჯეტები
+      empty_budgets: ბიუჯეტები არ მოიძებნა.
+      section_header:
+        icon_alt: მონაწილეობითი ბიუჯეტის ნიშანი
+        title: მონაწილეობითი ბიუჯეტები
+        help: ინფორმაცია მონაწილეობითი ბიუჯეტების შესახებ
+      all_phases: საბიუჯეტო ინვესტიციის ფაზები
+      map: საბიუჯეტო ინვესტიციებთან დაკავშირებული ინიციატივების გეოგრაფიული განაწილება
+      finished_budgets: დასრულებული მონაწილეობითი ბიუჯეტები
+      see_results: შედეგების ნახვა
+      section_footer:
+        title: ინფორმაცია მონაწილეობითი ბიუჯეტების შესახებ
+        description: მონაწილეობითი ბიუჯეტის საშუალებით, მოქალაქეებს შეუძლიათ გადაწყვიტონ, რომელი პროექტი იმსახურებს დაფინანსებას ბიუჯეტიდან.
+      milestones: ეტაპები
+    investments:
+      form:
+        title: "საბიუჯეტო ინვესტიციის შექმნა"
+        tag_category_label: "კატეგორიები"
+        tags_instructions: "მონიშნეთ ეს ინიციატივა. შეგიძლიათ შეარჩიოთ შემოთავაზებული კატეგორიებიდან, ან შექმნათ საკუთარი"
+        tags_label: ტეგები
+        tags_placeholder: "შეიყვანეთ ის ტეგები, რომელთა გამოყენებაც გსურთ, გამოყავით ისინი მძიმით (',')"
+        map_location: "ლოკაცია რუკაზე"
+        map_location_instructions: "დასვით მარკერი რუკის სასურველ პოზიციაზე."
+        map_remove_marker: "მარკერის წაშლა"
+      index:
+        title: მონაწილეობითი ბიუჯეტირება
+        unfeasible: არაგანხორციელებადი საინვესტიციო პროექტები
+        unfeasible_text: "კენჭისყრის საბოლოო ეტაპზე გადასასვლელად, ინვესტიციები უნდა აკმაყოფილებდეს გარკვეულ კრიტერიუმებს (ლეგალური მხარე, სიზუსტე, ბიუჯეტის ზღვართან თანხვედრა). ყველა ინვესტიცია, რომელიც არ აკმაყოფილებს ამ კრიტერიუმებს, აღინიშნება, როგორც არაგანხორციელებადი და გამოქვეყნდება შემდეგ ჩამონათვალში შესაბამის მოხსენებასთან ერთად."
+        by_heading: "საინვესტიციო პროექტები მასშტაბით: %{heading}"
+        search_form:
+          button: ძებნა
+          placeholder: საინვესტიციო პროექტების ძიება...
+          title: ძებნა
+        sidebar:
+          my_ballot: ჩემი ბიულეტენი
+          voted_info:
+            knapsack:
+              one: "<strong>თქვენ ხმა მიეცით %{amount_spent} ღირებულების ერთ ინიციატივას</strong>"
+              other: "<strong>თქვენ ხმა მიეცით %{count} ინიციატივას ღირებულებით %{amount_spent}</strong>"
+          change_vote_link: "ხმის შეცვლა"
+          different_heading_assigned: "თქვენ უკვე მიეცით ხმა სხვა რუბრიკაზე: %{heading_link}"
+          change_ballot: "თუ გადაწყვეტილებას შეცვლით, შეგიძლიათ %{check_ballot}-ში ხმების გაუქმება და თავიდან დაწყება."
+          check_ballot_link: "მონიშნეთ და დაადასტურეთ ბიულეტენი"
+          zero: თქვენ ჯერ არ მიგიციათ ხმა საინვესტიციო პროექტისთვის ამ ჯგუფში.
+          verified_only: "ახალი საბიუჯეტო ინვესტიციის შესაქმნელად საჭიროა %{verify}."
+          create: "საბიუჯეტო ინვესტიციის შექმნა"
+          not_logged_in: "საბიუჯეტო ინვესტიციის შესაქმნელად საჭიროა %{sign_in} ან %{sign_up}."
+        filters:
+          selected: "შერჩეული"
+          unfeasible: "შეუძლებელი"
+          winners: "გამარჯვებულები"
+        orders:
+          random: შემთხვევითი
+          confidence_score: მაღალი შეფასების მქონე
+          price: ფასის მიხედვით
+      share:
+        message: "მე შევქმენი საინვესტიციო პროექტი %{title} %{handle}-ში. შენც შექმენი საინვესტიციო პროექტი!"
+      show:
+        author_deleted: მომხმარებელი წაშლილია
+        price_explanation: ფასის განმარტება
+        unfeasibility_explanation: განუხორციელებადობის განმარტება
+        code: "საინვესტიციო პროექტის კოდი: <strong>%{code}</strong>"
+        location: "ლოკაცია: <strong>%{location}</strong>"
+        organization_name: "<strong>%{name}</strong>-ის სახელით ინიცირებული"
+        share: გაზიარება
+        title: საინვესტიციო პროექტი
+        supports: მხარდამჭერები
+        votes: ხმები
+        price: ფასი
+        comments_tab: კომენტარები
+        milestones_tab: ეტაპები
+        author: ავტორი
+        project_unfeasible: "ეს საინვესტიციო პროექტი <strong>მოინიშნა, როგორც არაგანხორციელებადი</strong> და შესაბამისად, ვეღარ გადავა კენჭისყრის ეტაპზე."
+        project_selected: "ეს საინვესტიციო პროექტი <strong>შერჩეულ იქნა</strong> კენჭისყრის ფაზისთვის."
+        project_winner: "გამარჯვებული საინვესტიციო პროექტები"
+        project_not_selected: "ეს საინვესტიციო პროექტი <strong>არ იქნა შერჩეული</strong> კენჭისყრის ფაზისთვის."
+        see_price_explanation: ფასის განმარტების ნახვა
+      wrong_price_format: მხოლოდ მთელი რიცხვები
+      investment:
+        add: ხმა
+        already_added: თქვენ უკვე დაამატეთ საინვესტიციო პროექტი
+        support_title: დაუჭირეთ მხარი ამ პროექტს
+        supports:
+          zero: მხარდამჭერები არ მოიძებნა
+          one: 1 მხარდამჭერი
+          other: "%{count} მხარდამჭერი"
+      header:
+        check_ballot: "მონიშნეთ და დაადასტურეთ ბიულეტენი"
+        different_heading_assigned: "თქვენ უკვე მიეცით ხმა სხვა რუბრიკაზე: %{heading_link}"
+        change_ballot: "თუ გადაწყვეტთ, შეგიძლიათ %{check_ballot}-ში ხმის გაუქმება და ხელახლა დაწყება."
+        check_ballot_link: "მონიშნეთ და დაადასტურეთ ბიულეტენი"
+        price: "ამ რუბრიკის ბიუჯეტია"
+      votes:
+        already_supported: "თქვენ უკვე დაუჭირეთ მხარი ამ საინვესტიციო პროექტს. გააზიარეთ!"
+        confirm_group:
+          one: "საინვესტიციო პროექტების მხარდაჭერა მხოლოდ %{count} ოლქში შეგიძლიათ. თუ გააგრძელებთ, თქვენს ოლქს ვეღარ შეცვლით. დარწმუნებული ხართ?"
+          other: "თქვენ მხოლოდ %{count} რაიონში შეგიძლიათ დაუჭიროთ მხარი საინვესტიციო პროექტებს. თუ გააგრძელებთ, თქვენს რაიონს ვეღარ შეცვლით. დარწმუნებული ხართ?"
+        support: "მხარდაჭერა"
+    investments_list:
+      investment:
+        price: "ფასი"
+        supports: "მხარდამჭერები"
+    show:
+      see_results: შედეგების ნახვა
+    results:
+      link: შედეგები
+      page_title: "%{budget} - შედეგები"
+      heading: "მონაწილეობითი ბიუჯეტების შედეგები"
+      heading_selection_title: "ოლქის მიხედვით"
+      ballot_lines_count: ხმები
+      hide_discarded_link: გაუქმებულის დამალვა
+      show_all_link: ყველას ნახვა
+      price: ფასი
+      amount_available: ხელმისაწვდომი ბიუჯეტი
+      accepted: "მიღებული ინვესტიციები: "
+      discarded: "გამოუსადეგარი ინვესტიცია: "
+      incompatibles: შეუთავსებელი
+      investment_title: პროექტის სათაური
+      investment_proyects: საინვესტიციო პროექტების ჩამონათვალი
+      unfeasible_investment_proyects: არაგანხორციელებადი საინვესტიციო პროექტების ჩამონათვალი
+      not_selected_investment_proyects: კენჭისყრისთვის გამოტოვებული საინვესტიციო პროექტების ჩამონათვალი
+    executions:
+      link: "ეტაპები"
+      page_title: "%{budget} - ეტაპები"
+      heading: "მონაწილეობითი ბიუჯეტის ეტაპები"
+      heading_selection_title: "ოლქის მიხედვით"
+      no_winner_investments: "ამ ეტაპზე გამარჯვებული ინვესტიციები არ მოიძებნა"
+      filters:
+        status:
+          label: "პროექტის მიმდინარე მდგომარეობა"
+          all: "ყველა (%{count})"
+        milestone_tag:
+          label: "ეტაპის ტეგები"
+          all: "ყველა (%{count})"
+    phases:
+      errors:
+        dates_range_invalid: "დაწყების თარიღი არ უნდა აღემატებოდეს დასრულების თარიღს"
+        prev_phase_dates_invalid: "დაწყების თარიღი წინმსწრები გააქტიურებული ფაზის დაწყების თარიღს უნდა აღემატებოდეს (%{phase_name})"
+        next_phase_dates_invalid: "დასრულების თარიღი მომდევნო გააქტიურებული ფაზის დაწყების თარიღს არ უნდა აღემატებოდეს (%{phase_name})"

@@ -2,7 +2,7 @@ module Budgets
   class ExecutionsController < ApplicationController
     before_action :load_budget
 
-    load_and_authorize_resource :budget
+    authorize_resource :budget
 
     def show
       authorize! :read_executions, @budget
@@ -11,26 +11,22 @@ module Budgets
     end
 
     private
+
       def investments_by_heading
+        base = @budget.investments.winners
+        base = base.joins(milestones: :translations).includes(:milestones)
+        base = base.tagged_with(params[:milestone_tag]) if params[:milestone_tag].present?
+
         if params[:status].present?
-          @budget.investments.winners
-                  .with_milestone_status_id(params[:status])
-                  .uniq
-                  .group_by(&:heading)
+          base = base.with_milestone_status_id(params[:status])
+          base.uniq.group_by(&:heading)
         else
-          @budget.investments.winners
-                  .joins(:milestones).includes(:milestones)
-                  .distinct.group_by(&:heading)
+          base.distinct.group_by(&:heading)
         end
       end
 
       def load_budget
-        # @budget = Budget.find_by(slug: params[:id]) || Budget.find_by(id: params[:budget_id])
-        @budget = if params[:id]
-                    Budget.find_by(slug: params[:id])
-                  else
-                    Budget.find_by(id: params[:budget_id])
-                  end
+        @budget = Budget.find_by_slug_or_id params[:budget_id]
       end
 
       def investments_by_heading_ordered_alphabetically

@@ -1,11 +1,11 @@
 sv:
   documents:
     title: Dokument
-    max_documents_allowed_reached_html: Du har nått gränsen för uppladdade dokument! <strong>Du måste radera ett dokument innan du kan ladda upp ett nytt.</strong>
+    max_documents_allowed_reached: Du har nått gränsen för uppladdade dokument! <strong>Du måste radera ett dokument innan du kan ladda upp ett nytt.</strong>
+    additional: Ytterligare dokumentation
     form:
       title: Dokument
-      title_placeholder: Lägg till en titel för dokumentet
-      attachment_label: Välj dokument
+      title_placeholder: Lägg till en beskrivande titel för dokumentet
       delete_button: Radera dokument
       note: "Du kan maximalt ladda upp %{max_documents_allowed} dokument av de följande innehållstyperna: %{accepted_content_types}, upp till %{max_file_size} MB per fil."
       add_new_document: Lägg till ett nytt dokument

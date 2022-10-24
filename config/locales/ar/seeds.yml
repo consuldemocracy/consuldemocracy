@@ -36,11 +36,6 @@ ar:
       groups:
         all_city: جميع المدن
         districts: مقاطعات
-      valuator_groups:
-        culture_and_sports: الثقافة و الرياضة
-        gender_and_diversity: الجس و سياسات التنوع
-        urban_development: التنمية الحضرية المستدامة
-        equity_and_employment: المساوة و العمالة
       statuses:
         studying_project: دراسة المشروع
         bidding: تقديم العطاءات
@@ -49,7 +44,6 @@ ar:
     polls:
       current_poll: "الاستطلاع الحالي"
       current_poll_geozone_restricted: "الاستطلاع الجغرافي الاحالي مقيد"
-      incoming_poll: "الاقتراع الوارد"
       recounting_poll: "اعادة حساب الاستطلاع"
       expired_poll_without_stats: "انتهاء مدة صلاحية الاستطلاع دون احصائيات و النتائج"
       expired_poll_with_stats: "انتهاء مدة صلاحية الاستطلاع مع الاحصائيات و النتائج"

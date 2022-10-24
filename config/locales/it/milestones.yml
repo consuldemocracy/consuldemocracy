@@ -1,1 +1,8 @@
 it:
+  milestones:
+    index:
+      no_milestones: Non risultano traguardi predefiniti
+      progress: Progresso
+    show:
+      publication_date: "Pubblicato il %{publication_date}"
+      status_changed: Status dell’investimento cambiato in

@@ -1,5 +1,7 @@
 class PollsController < ApplicationController
-  include PollsHelper
+  include FeatureFlags
+
+  feature_flag :polls
 
   load_and_authorize_resource
   skip_load_resource only: [:results, :stats]
@@ -8,10 +10,13 @@ class PollsController < ApplicationController
   has_filters %w{current expired incoming}
   has_orders %w{most_voted newest oldest}, only: [:show, :current_cartell]
 
-  ::Poll::Answer # trigger autoload
+  before_action :load_poll, except: [:index]
+  before_action :load_active_poll, only: :index
 
   def index
-    @polls = @polls.send(@current_filter).includes(:geozones).sort_for_list.page(params[:page])
+    @polls = Kaminari.paginate_array(
+      @polls.created_by_admin.not_budget.send(@current_filter).includes(:geozones).sort_for_list(current_user)
+    ).page(params[:page])
   end
 
   def show
@@ -31,10 +36,12 @@ class PollsController < ApplicationController
   end
 
   def stats
-    @poll = params[:id].present? ? Poll.find(params[:id]) : Poll.current_cartell
-    @stats = calcula_resultados_cartel(@poll)
-    @all_ages_count = @stats[:age_groups].values.sum.to_f
-    authorize! :stats, @poll
+    @stats = Poll::Stats.new(@poll)
+    #@poll = params[:id].present? ? Poll.find(params[:id]) : Poll.current_cartell
+    #@stats = calcula_resultados_cartel(@poll)
+    #@all_ages_count = @stats[:age_groups].values.sum.to_f
+    #authorize! :stats, @poll
+    #@comment_tree = CommentTree.new(@poll, params[:page], @current_order)
   end
 
   def results
@@ -69,4 +76,13 @@ class PollsController < ApplicationController
 
     @answers = @questions.first.question_answers.sort { |a, b| Random.rand <=> Random.rand }
   end
+  private
+
+    def load_poll
+      @poll = Poll.find_by_slug_or_id!(params[:id])
+    end
+
+    def load_active_poll
+      @active_poll = ActivePoll.first
+    end
 end

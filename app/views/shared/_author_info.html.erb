@@ -4,7 +4,7 @@
       <%= t("shared.author_info.author_deleted") %>
   </span>
 <% else %>
-  <%= avatar_image(resource.author, seed: resource.author_id, size: 32, class: 'author-photo') %>
+  <%= avatar_image(resource.author, seed: resource.author_id, size: 32, class: "author-photo") %>
   <span class="author">
       <%= link_to resource.author.name, user_path(resource.author) %>
   </span>

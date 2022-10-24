@@ -1,0 +1,7 @@
+<div class="budget-investment-new">
+  <div>
+    <h1><%= t("management.budget_investments.edit") %></h1>
+  </div>
+
+  <%= render "/budgets/investments/form", form_url: budget_investment_path(@budget, @investment) %>
+</div>

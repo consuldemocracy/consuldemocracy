@@ -1,0 +1,11 @@
+fa:
+  stats:
+    title: "مشارکت در بحث"
+    total_participants: "شرکت کنندگان"
+    total: "جمع\n"
+    budgets:
+      link: "آمار "
+      total_unfeasible_investments: "پروژه های غیرقابل اجرا"
+      total: "جمع\n"
+      heading: "سرفصل"
+      participants_every_phase: "کل شرکت کنندگان"

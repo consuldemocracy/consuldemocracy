@@ -1,0 +1,37 @@
+.admin .budgets-links {
+  $vertical-gap: $line-height;
+  @include admin-action-icons;
+  @include flex-with-gap;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: -$vertical-gap;
+
+  > * {
+    $min-width: $sdg-icon-min-width;
+    margin-top: $vertical-gap;
+    min-width: $min-width;
+
+    @supports (max-width: max-content) {
+      flex-basis: $min-width;
+      flex-grow: 1;
+      max-width: max-content;
+    }
+  }
+
+  + * {
+    margin-top: $line-height;
+  }
+
+  a {
+    @include icon-on-top;
+  }
+
+  .ballots-link {
+    @include has-fa-icon(archive, solid);
+    color: $link;
+  }
+
+  .results-link {
+    @include has-fa-icon(poll, solid);
+  }
+}

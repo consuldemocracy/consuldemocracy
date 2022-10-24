@@ -1,0 +1,227 @@
+cs:
+  date:
+    abbr_day_names:
+      - ned
+      - pon
+      - úte
+      - stř
+      - čtv
+      - pát
+      - sob
+    abbr_month_names:
+      - 
+      - Led
+      - úno
+      - bře
+      - Dub
+      - květen
+      - čer
+      - črv
+      - Srp
+      - zář
+      - říj
+      - Lis
+      - Pro
+    day_names:
+      - Sobota
+      - pondělí
+      - úterý
+      - středa
+      - čtvrtek
+      - pátek
+      - sobota
+    formats:
+      default: "%d-%m-%Y"
+      long: "%d. %B %Y"
+      short: "%d %b"
+    month_names:
+      - 
+      - Leden
+      - únor
+      - březen
+      - Duben
+      - kvě
+      - červen
+      - červenec
+      - Srpen
+      - září
+      - říjen
+      - Listopad
+      - Prosinec
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: asi 1 hodina
+        few: asi %{count} hodin
+        many: asi %{count} hodin
+        other: asi %{count} hodin
+      about_x_months:
+        one: asi 1 měsíc
+        few: asi %{count} měsíce
+        many: asi %{count} měsíců
+        other: asi %{count} měsíců
+      about_x_years:
+        one: asi 1 rok
+        few: asi %{count} roky
+        many: asi %{count} roků
+        other: asi %{count} let
+      almost_x_years:
+        one: téměř 1 rokem
+        few: asi %{count} roky
+        many: asi %{count} let
+        other: téměř %{count} lety
+      half_a_minute: p
+      less_than_x_minutes:
+        one: méně než minutou
+        few: méně než %{count} minutami
+        many: méně než %{count} minutami
+        other: méně než %{count} minutami
+      less_than_x_seconds:
+        one: méně než 1 sekundou
+        few: méně než %{count} sekundami
+        many: méně než %{count} sekundami
+        other: méně než %{count} sekundami
+      over_x_years:
+        one: více než rok
+        few: přes %{count} roky
+        many: více než %{count} let
+        other: více než %{count} let
+      x_days:
+        one: 1 den
+        few: "%{count} dny"
+        many: "%{count} dnů"
+        other: "%{count} dnů"
+      x_minutes:
+        one: 1 minuta
+        few: "%{count} minuty"
+        many: "%{count} minut"
+        other: "%{count} minut"
+      x_months:
+        one: 1 měsíc
+        few: "%{count} měsíce"
+        many: "%{count} měsíců"
+        other: "%{count} měsíci"
+      x_years:
+        one: 1 rok
+        few: "%{count} roky"
+        many: "%{count} let"
+        other: "%{count} lety"
+      x_seconds:
+        one: 1 sekunda
+        few: "%{count} sekundy"
+        many: "%{count} sekund"
+        other: "%{count} sekundami"
+    prompts:
+      day: Den
+      hour: Hodina
+      minute: Minuta
+      month: Měsíc
+      second: Sekund
+      year: Rok
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: musí být přijata
+      blank: nemůže být prázdné
+      present: musí být prázdné
+      confirmation: neodpovídá %{attribute}
+      empty: nemůže být prázdné
+      equal_to: musí být rovno %{count}
+      even: musí být sudé
+      exclusion: je vyhrazeno
+      greater_than: musí být větší než %{count}
+      greater_than_or_equal_to: musí být větší nebo rovno %{count}
+      inclusion: není zahrnuto v seznamu
+      invalid: je neplatné
+      less_than: musí být menší než %{count}
+      less_than_or_equal_to: musí být menší nebo rovno %{count}
+      model_invalid: "Validation failed: %{errors}"
+      not_a_number: není číslo
+      not_an_integer: musí být celé číslo
+      odd: musí být liché
+      required: musí existovat
+      taken: již byla přijata
+      too_long:
+        one: je příliš dlouhé (maximum je 1 znak)
+        few: je příliš dlouhé (maximum jsou %{count} znaky)
+        many: je příliš dlouhé (maximum je %{count} znaků)
+        other: je příliš dlouhé (maximum je %{count} znaků)
+      too_short:
+        one: je příliš krátké (minimum je 1 znak)
+        few: je příliš krátké (minimum jsou %{count} znaky)
+        many: je příliš krátké (minimum je %{count} znaků)
+        other: je příliš krátké (minimum je %{count} znaků)
+      wrong_length:
+        one: má špatnou délku (měl by mít 1 znak)
+        few: má špatnou délku (měly by být %{count} znaky)
+        many: má špatnou délku (mělo by být %{count} znaků)
+        other: nemá správnou délku (měla by být %{count} znaků)
+      other_than: musí být jiný než %{count}
+    template:
+      body: "Došlo k problémům s následujícími poli:"
+  helpers:
+    select:
+      prompt: Prosím vyberte
+    submit:
+      create: Vytvořte %{model}
+      submit: Uložte %{model}
+      update: Aktualizujte %{model}
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: miliarda
+          million: milión
+          quadrillion: kvadrilion
+          thousand: tisíc
+          trillion: bilión
+      format:
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Bajt
+            few: Bajty
+            many: Bajtů
+            other: Bajtů
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  support:
+    array:
+      last_word_connector: ", a "
+      two_words_connector: " a "
+      words_connector: ", "
+  time:
+    am: dopoledne
+    formats:
+      datetime: "%d.%m.%Y %H:%M:%S"
+      default: "%a %d. %B %Y %H:%M %z"
+      long: "%A %d. %B %Y %H:%M"
+      short: "%d. %m. %H:%M"
+      short_datetime: "%Y-%m-%d %H:%M"
+      api: "%d.%m.%Y %H"
+    pm: odpoledne

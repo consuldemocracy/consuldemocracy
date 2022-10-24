@@ -1,11 +1,11 @@
 val:
   documents:
     title: Documents
-    max_documents_allowed_reached_html: Has arribat al número màxim de documents permesos! <strong>Has d'eliminar un abans de poder pujar un altre.</strong>
+    max_documents_allowed_reached: Has arribat al número màxim de documents permesos! <strong>Has d'eliminar un abans de poder pujar un altre.</strong>
+    additional: Documentació adicional
     form:
       title: Documents
       title_placeholder: Afegeix un títol descriptiu al document
-      attachment_label: Selecciona un document
       delete_button: Eliminar document
       cancel_button: Cancel·lar
       note: "Pots pujar fins un màxim de %{max_documents_allowed} documents en els formats: %{accepted_content_types}, y de fins %{max_file_size} MB per arxiu."

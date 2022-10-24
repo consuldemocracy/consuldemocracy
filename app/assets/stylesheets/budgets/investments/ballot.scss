@@ -1,0 +1,14 @@
+.ballot {
+
+  .button-remove-support {
+    @include has-fa-icon(times, solid);
+    background: #e7eaec;
+    color: $brand-secondary;
+    font-weight: bold;
+    margin-top: $line-height;
+
+    &::before {
+      margin-right: $font-icon-margin;
+    }
+  }
+}

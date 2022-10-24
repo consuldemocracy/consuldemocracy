@@ -1,12 +1,8 @@
-<% comment_flags ||= @comment_flags %>
 <% valuation = local_assigns.fetch(:valuation, false) %>
-<% allow_votes = local_assigns.fetch(:allow_votes, true) %>
-<% allow_actions = local_assigns.fetch(:allow_actions, true) %>
-<% allow_comments = local_assigns.fetch(:allow_comments, true) %>
-<% cache [locale_and_user_status(comment), comment, commentable_cache_key(comment.commentable), comment.author, (comment_flags[comment.id] if comment_flags)] do %>
-  <ul id="<%= dom_id(comment) %>" class="comment no-bullet small-12">
-    <li class="comment-body">
-      <% if comment.hidden? || comment.user.hidden? %>
+<% cache [locale_and_user_status(comment), comment, commentable_cache_key(comment.commentable), comment.author] do %>
+  <div id="<%= dom_id(comment) %>" class="comment small-12">
+    <div class="comment-body">
+      <% if comment.hidden? %>
         <% if comment.children.size > 0 %>
           <div class="callout secondary">
             <p><%= t("comments.comment.deleted") %></p>
@@ -30,7 +26,14 @@
         <div class="comment-info">
 
           <% if comment.as_administrator? %>
-            <span class="user-name"><%= t("comments.comment.admin") %> #<%= comment.administrator_id %></span>
+            <span class="user-name">
+              <%= t("comments.comment.admin") %>
+              <% if valuation %>
+                <%= Administrator.find(comment.administrator_id).description_or_name %>
+              <% else %>
+                #<%= comment.administrator_id %>
+              <% end %>
+            </span>
           <% elsif comment.as_moderator? %>
             <span class="user-name"><%= t("comments.comment.moderator") %> #<%= comment.moderator_id %></span>
           <% else %>
@@ -61,65 +64,50 @@
 
           <% end %>
 
-          &nbsp;&bull;&nbsp;<span><%= l comment.created_at.to_datetime, format: :datetime %></span>
+          &nbsp;&bull;&nbsp;
+          <span>
+            <%= link_to comment_path(comment) do %>
+              <%= l comment.created_at.to_datetime, format: :datetime %>
+            <% end %>
+          </span>
         </div>
 
         <div class="comment-user
                   <%= user_level_class comment %>
                   <%= comment_author_class comment, comment.commentable.author_id %>">
-          <%= simple_format text_with_links(comment.body), {}, sanitize: false %>
+          <%= simple_format sanitize_and_auto_link(comment.body), {}, sanitize: false %>
         </div>
 
         <div id="<%= dom_id(comment) %>_reply" class="reply">
-          <% if allow_votes %>
+          <% unless valuation %>
             <div id="<%= dom_id(comment) %>_votes" class="comment-votes float-right">
-              <%= render 'comments/votes', comment: comment %>
+              <%= render "comments/votes", comment: comment %>
             </div>
           <% end %>
 
-          <% if comment.children.size > 0 %>
-            <%= link_to "", class: "js-toggle-children relative", data: {'id': "#{dom_id(comment)}"} do %>
-              <span class="show-for-sr js-child-toggle" style="display: none;"><%= t("shared.show") %></span>
-              <span class="show-for-sr js-child-toggle"><%= t("shared.hide") %></span>
-              <span id="<%= dom_id(comment) %>_children_arrow" class="icon-arrow-down"></span> <%= t("comments.comment.responses", count: comment.children.size) %>
-            <% end %>
-          <% else %>
-            <%= t("comments.comment.responses", count: 0) %>
-          <% end %>
+          <span class="responses-count">
+            <%= render "comments/responses_count", count: comment.children.size %>
+          </span>
 
           <% if user_signed_in? && !comments_closed_for_commentable?(comment.commentable) && !require_verified_resident_for_commentable?(comment.commentable, current_user) %>
             <span class="divider">&nbsp;|&nbsp;</span>
             <%= link_to(comment_link_text(comment), "",
-                        class: "js-add-comment-link", data: {'id': dom_id(comment)}) %>
+                        class: "js-add-comment-link", data: { id: dom_id(comment) }) %>
 
-            <% if allow_actions %>
-              <%= render 'comments/actions', { comment: comment } %>
+            <% unless valuation %>
+              <%= render "comments/actions", { comment: comment } %>
             <% end %>
 
-            <% if allow_comments %>
-              <%= render 'comments/form', {commentable: comment.commentable,
+            <% if !valuation || can?(:comment_valuation, comment.commentable) %>
+              <%= render "comments/form", { commentable: comment.commentable,
                                            parent_id: comment.id,
-                                           toggeable: true,
                                            valuation: valuation } %>
             <% end %>
           <% end %>
         </div>
       <% end %>
-    </li>
-    <% unless child_comments_of(comment).empty? %>
-    <li>
-      <ul id="<%= dom_id(comment) %>_children" class="no-bullet comment-children">
-        <% child_comments_of(comment).each do |child| %>
-          <li>
-            <%= render 'comments/comment', { comment: child,
-                                             valuation: valuation,
-                                             allow_votes: allow_votes,
-                                             allow_actions: allow_actions,
-                                             allow_comments: allow_comments } %>
-          </li>
-        <% end %>
-      </ul>
-    </li>
-    <% end %>
-  </ul>
+    </div>
+
+    <%= render "comments/comment_list", comments: child_comments_of(comment), valuation: valuation %>
+  </div>
 <% end %>

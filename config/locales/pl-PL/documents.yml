@@ -1,11 +1,11 @@
 pl:
   documents:
     title: Dokumenty
-    max_documents_allowed_reached_html: Osiągnąłeś maksymalną dozwoloną liczbę dokumentów! <strong> Musisz usunąć jeden, zanim prześlesz inny. </strong>
+    max_documents_allowed_reached: Osiągnąłeś maksymalną dozwoloną liczbę dokumentów! <strong> Musisz usunąć jeden, zanim prześlesz inny. </strong>
+    additional: Dodatkowa dokumentacja
     form:
       title: Dokumenty
       title_placeholder: Dodaj tytuł opisowy dla dokumentu
-      attachment_label: Wybierz dokument
       delete_button: Usuń dokument
       note: "Możesz przesłać maksymalnie do %{max_documents_allowed} dokumentów o następujących typach treści: %{accepted_content_types} aż do %{max_file_size} MB na plik."
       add_new_document: Dodaj nowy dolument

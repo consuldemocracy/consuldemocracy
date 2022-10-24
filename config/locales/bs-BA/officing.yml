@@ -1,0 +1,88 @@
+bs:
+  officing:
+    header:
+      title: Anketiranje
+    dashboard:
+      index:
+        title: Vođenje glasačke ankete
+        info: Ovdje možete potvrditi korisničke dokumente i pohraniti rezultate glasanja
+        no_shifts: Danas nemate anketarskih smjena u rasporedu.
+    menu:
+      voters: Potvrdi dokument
+      total_recounts: Ukupno ponovnih brojanja i rezultati
+    polls:
+      final:
+        title: Glasačke ankete spremne za konačno ponovno brojanje
+        no_polls: Ne vršite ponovno prebrojavanje ni u jednoj aktivnoj anketi
+        select_poll: Odaberi glasačku anketu
+        add_results: Dodaj rezultate
+    poll_budgets:
+      see_ballot_sheets: Vidi spisak glasačkih listića
+      index:
+        title: "%{poll_budget} - Spiskovi glasačkih listića"
+        ballot_sheet: "Glasački listić %{id}"
+        ballot_sheet_name: Ime
+        ballot_sheet_author: Autor
+        ballot_sheet_creation_date: Datum pravljenja
+        empty_results: Još uvijek nema glasačkih listića za ovu anketu
+      new:
+        title: "%{poll_budget} - Novi glasački listić"
+        booth: Kabina
+        select_booth: Odaberi kabinu
+        csv_data: CSV podaci
+        submit: Spasi
+      show:
+        created_at: Datum izrade
+        author: Autor
+        data: CSV podaci
+    booth:
+      new:
+        title: "Odaberite svoju kabinu"
+    results:
+      flash:
+        create: "Rezultati spašeni"
+        error_create: "Rezultati NISU spašeni. Greška u podacima."
+        error_wrong_booth: "Pogrešna kabina. Rezultati NISU spašeni."
+      new:
+        title: "%{poll} - Dodaj rezultate"
+        not_allowed: "Ne možete dodati rezultate za ovu anketu"
+        booth: "Kabina"
+        date: "Datum"
+        select_booth: "Odaberi kabinu"
+        ballots_white: "Potpuno prazni glasački listići"
+        ballots_null: "Nevažeći glasački listići"
+        ballots_total: "Ukupno glasačkih listića"
+        submit: "Spasi"
+        results_list: "Vaši rezultati"
+        see_results: "Vidi rezultate"
+      index:
+        no_results: "Nema rezultata"
+        results: Rezultati
+        table_answer: Odgovor
+        table_votes: Glasovi
+        table_whites: "Potpuno prazni glasački listići"
+        table_nulls: "Nevažeći glasački listići"
+        table_total: "Ukupno glasačkih listića"
+    residence:
+      flash:
+        create: "Dokumenti potvrđeni popisom"
+        not_allowed: "Danas nemate anketarskih smjena u rasporedu"
+      new:
+        title: Potvrdi dokument
+        submit: Potvrdi dokument
+        error_verifying_census: "Dokument se ne može potvrditi u popisu."
+        form_errors: je razlog zašto je spriječena verifikacija ovog dokumenta
+    voters:
+      new:
+        title: Glasačke ankete
+        table_poll: Glasačka anketa
+        table_status: Status anketa
+        table_actions: Poduzete radnje
+        not_to_vote: Osoba je odlučila da ne glasa sada
+      show:
+        can_vote: Može glasati
+        error_already_voted: Već je učestvovao/la u ovoj anketi
+        submit: Potvrdi glas
+        success: "Glas unesen!"
+      can_vote:
+        submit_disable_with: "Sačekajte, glas se potvrđuje..."

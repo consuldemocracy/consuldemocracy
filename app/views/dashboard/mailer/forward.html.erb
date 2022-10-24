@@ -1,0 +1,64 @@
+<td style="padding-bottom: 20px;padding-left: 10px;font-size: 14px;font-weight: normal;
+           font-family:'Open Sans',arial,sans-serif;line-height: 24px; text-align: justify;">
+
+  <table cellpadding="0" cellspacing="0" border="0" style="margin-top: 20px;width: 100%;">
+    <tbody>
+      <tr>
+        <td style="background: #0300ff; padding: 50px; padding-top:40px; text-align: left;">
+          <%= image_tag "quote_before_white.png", style: "max-width: 40px; vertical-align: top;" %>
+          <h1 style="color: #fff; font-size: 60px; line-height: 90px; display: inline;"><%= @proposal.title %></h1>
+          <%= image_tag "quote_after_white.png", style: "max-width: 40px; vertical-align: top;" %>
+          <h2 style="color: #fff; font-size: 40px; line-height: 60px"><%= sanitize(t("dashboard.mailer.forward.subtitle")) %></h2>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <% if @proposal.image.present? %>
+    <%= image_tag @proposal.image.variant(:large), style: "width: 100%; box-shadow: -16px 61px 49px -19px rgba(0,0,0,0.1);" %>
+  <% else %>
+    <%= image_tag "default_mailing.jpg", style: "width: 100%; box-shadow: -16px 61px 49px -19px rgba(0,0,0,0.1);" %>
+  <% end %>
+
+  <p style="padding: 0 50px; font-size:32px; text-align: left; line-height:43px; color: #515151;"><%= t("dashboard.mailer.forward.hi") %></p>
+  <p style="padding: 0 50px; font-size:32px; text-align: left; line-height:43px; color: #515151;"><%= t("dashboard.mailer.forward.introduction", org: setting["org_name"]) %></p>
+  <p style="padding: 0 50px; font-size:32px; text-align: left; line-height:43px; color: #515151;"><%= t("dashboard.mailer.forward.support") %></p>
+
+  <table style="width: 100%;">
+    <tbody>
+      <tr>
+        <td style="padding-bottom: 12px; padding-top: 24px; text-align: center;">
+          <%= link_to proposal_url(@proposal),
+                      style: "font-family: 'Open Sans',arial,sans-serif; background: #064c86;
+                      border-radius: 6px; color: #fff !important; font-weight: bold;
+                      padding: 17px 20px; text-align: center; text-decoration: none;
+                      font-size: 20px; min-width: 200px; display: inline-block;
+                      box-shadow: -4px 18px 45px -19px rgba(0,0,0,0.75);",
+                      target: "_blank" do %>
+            <%= t("dashboard.mailer.forward.support_button") %>
+          <% end %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="padding: 0 50px; font-size:32px; text-align: left; line-height:43px; color: #515151;"><%= t("dashboard.mailer.forward.share") %></p>
+
+  <table style="width: 100%; margin-top: 24px;">
+    <tbody>
+      <tr>
+        <td style="text-align: center;">
+          <h3 style="font-size: 22px; line-height: 10px;"><%= t("dashboard.mailer.forward.share_in") %></h3>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">
+          <%= link_to proposal_url(@proposal, anchor: "social-share") do %>
+            <%= image_tag("social_buttons_mailer.png", alt: t("dashboard.mailer.forward.share_in"),
+                           style: "max-width: 100%;") %>
+          <% end %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</td>

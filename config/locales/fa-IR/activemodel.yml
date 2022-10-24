@@ -16,6 +16,19 @@ fa:
           confirmation_code: "کد تایید"
         email:
           recipient: "پست الکترونیکی"
+      verification/letter:
+        email: "پست الکترونیکی"
+        password: "رمز عبور"
+        verification_code: "کدی که شما در نامه دریافت کردید"
+      verification/management/document:
+        document_type: "نوع سند:"
+        document_number: "شماره سند"
+      verification/residence:
+        date_of_birth: "تاریخ تولد"
+        document_type: "نوع سند"
+        postal_code: "کد پستی"
+      verification/sms:
+        confirmation_code: "کد دریافت شده توسط تلفن همراه را وارد کنید."
       officing/residence:
         document_type: "نوع سند"
         document_number: "شماره سند ( حروف هم شامل میشوند)"

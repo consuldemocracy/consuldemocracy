@@ -1,0 +1,52 @@
+nn:
+  moderation:
+    comments:
+      index:
+        filter: Filter
+        filters:
+          all: Alle
+          pending_flag_review: Under behandling
+        headers:
+          comment: Kommenter
+        title: Kommentarer
+    dashboard:
+      index:
+        title: Moderering
+    debates:
+      index:
+        filter: Filter
+        filters:
+          all: Alle
+          pending_flag_review: Under behandling
+        headers:
+          debate: Debatt
+        title: Debatter
+    header:
+      title: Moderering
+    menu:
+      flagged_comments: Kommentarer
+      flagged_debates: Debatter
+      flagged_investments: Budsjettinvesteringer
+      proposals: Forslag
+    proposals:
+      index:
+        filter: Filter
+        filters:
+          all: Alle
+        headers:
+          proposal: Forslag
+        title: Forslag
+    budget_investments:
+      index:
+        filter: Filter
+        filters:
+          all: Alle
+          pending_flag_review: Under behandling
+        headers:
+          budget_investment: Budsjettinvesteringer
+        title: Budsjettinvesteringer
+    proposal_notifications:
+      index:
+        filter: Filter
+        filters:
+          all: Alle

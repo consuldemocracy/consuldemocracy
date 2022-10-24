@@ -1,0 +1,564 @@
+mk:
+  admin:
+    actions:
+      actions: Акции
+      edit: Измени
+    banners:
+      index:
+        filters:
+          all: Сите
+          with_active: Активно
+      banner:
+        sections:
+          homepage: Почетна страница
+          debates: Дебати
+          proposals: Предлози
+          help_page: Страница за помош
+      edit:
+        form:
+          submit_button: Зачувај промени
+    activity:
+      show:
+        content: Содржина
+        filters:
+          all: Сите
+          on_comments: Коментари
+          on_debates: Дебати
+          on_proposals: Предлози
+          on_users: Корисници
+        type: Тип
+    budgets:
+      index:
+        title: Партиципативни буџети
+        filter: Филтрирај
+        filters:
+          all: Сите
+          open: Отворено
+          finished: Завршено
+        budget_investments: Проекти за инвестирање
+        table_budget_type: "Тип"
+        table_draft: "Нацрт текст"
+        table_name: Име
+        table_phase: Фаза
+      edit:
+        phase: Фаза
+        actions: Акции
+        active: Активно
+    budget_groups:
+      name: "Име"
+    budget_phases:
+      edit:
+        save_changes: Зачувај промени
+    budget_investments:
+      index:
+        heading_filter_all: Сите наслови
+        filters:
+          all: Сите
+          under_valuation: Подлежи на вреднување
+          valuation_finished: Завршено вреднување
+          feasible: Изводливо
+          selected: Селектирано
+          unfeasible: Неизводливо
+        buttons:
+          filter: Филтрирај
+        no_budget_investments: "Нема инвестициски проекти."
+        title: Проекти за инвестирање
+        feasibility:
+          feasible: "Изводливо"
+          unfeasible: "Неизводливо"
+        selected: "Селектирано"
+        list:
+          id: ИД
+          title: Наслов
+          admin: Администратор
+          valuator: Вреднувач
+          geozone: Опсег на операцијата
+          feasibility: Изводливост
+          selected: Селектирано
+          price: Цена
+          author: Автор
+        see_results: "Види резултати"
+      show:
+        assigned_valuators: Одредени вреднувачи
+        edit: Измени
+        heading: Наслов
+        dossier: Досие
+        edit_dossier: Измени досие
+        tags: Тагови
+        undefined: Недефинирано
+        preview: Преглед на инвестицијата
+      edit:
+        assigned_valuators: Вреднувач
+        submit_button: Ажурирање
+        undefined: Недефинирано
+    budgets_wizard:
+      creation_timeline:
+        budget: Буџет
+        groups: Групи
+    milestones:
+      index:
+        table_id: "ИД"
+        table_title: "Наслов"
+        table_description: "Опис"
+        table_status: Статус
+        table_actions: "Акции"
+        no_milestones: "Нема дефинирано цели"
+        image: "Слика"
+        documents: "Документи"
+    statuses:
+      index:
+        table_name: Име
+        table_description: Опис
+        table_actions: Акции
+    progress_bars:
+      index:
+        title: "Стапка на прогрес"
+        table_id: "ИД"
+        table_kind: "Тип"
+        table_title: "Наслов"
+        table_percentage: "Моментален прогрес"
+    comments:
+      index:
+        id: "ИД"
+        content: "Содржина"
+        author: "Автор"
+        commentable_type: "Тип"
+        title: Коментари
+        table_link: "Линк"
+    hidden_comments:
+      index:
+        filter: Филтрирај
+        filters:
+          all: Сите
+          without_confirmed_hide: Во исчекување
+    dashboard:
+      actions:
+        index:
+          action_title: Наслов
+          action_type: Тип
+          action_active: Активно
+          order: Ред
+          default:
+            email: Е-пошта
+            polls: Анкети
+        form:
+          submit_button: Зачувај
+      administrator_tasks:
+        index:
+          source: Извор
+          filter: Филтрирај
+          filters:
+            pending: Во исчекување
+        form:
+          proposal: Предлог
+    debates:
+      index:
+        id: ИД
+        author: Автор
+        title: Дебати
+    hidden_debates:
+      index:
+        filter: Филтрирај
+        filters:
+          all: Сите
+          without_confirmed_hide: Во исчекување
+    documents:
+      index:
+        new_link: "Додади нов документ"
+        title: "Документи"
+    hidden_users:
+      index:
+        filter: Филтрирај
+        filters:
+          all: Сите
+          without_confirmed_hide: Во исчекување
+        user: Корисник
+    hidden_budget_investments:
+      index:
+        filter: Филтрирај
+        filters:
+          all: Сите
+          without_confirmed_hide: Во исчекување
+    legislation:
+      processes:
+        edit:
+          back: Назад
+          submit_button: Зачувај промени
+        form:
+          process: Процес
+        index:
+          title: Колаборативна легислатива
+          filters:
+            active: Активно
+            all: Сите
+        new:
+          back: Назад
+        process:
+          title: Процес
+          comments: Коментари
+          status: Статус
+          start_date: Почетен датум
+          end_date: Краен датум
+          status_open: Отворено
+        subnav:
+          homepage: Почетна страница
+          questions: Дебата
+          proposals: Предлози
+          milestones: Следи
+      proposals:
+        index:
+          title: Наслов
+          back: Назад
+        form:
+          custom_categories: Категории
+      draft_versions:
+        edit:
+          back: Назад
+          submit_button: Зачувај промени
+        index:
+          title: Нацрт верзија
+        new:
+          back: Назад
+        table:
+          title: Наслов
+          created_at: Креирано на
+          comments: Коментари
+          final_version: Конечна верзија
+          status: Статус
+      questions:
+        edit:
+          back: Назад
+          submit_button: Зачувај промени
+        index:
+          back: Назад
+        new:
+          back: Назад
+        table:
+          title: Наслов
+          question_options: Опции за прашање
+      milestones:
+        index:
+          title: Следи
+    managers:
+      index:
+        title: Менаџер
+    menu:
+      proposals: Предлози
+      budgets: Партиципативни буџети
+      administrators: Администратори
+      managers: Менаџер
+      moderators: Модератори
+      newsletters: Билтен
+      admin_notifications: Нотификации
+      valuators: Вреднувач
+      polls: Анкети
+      organizations: Органзација
+      site_customization:
+        homepage: Почетна страница
+        pages: Стилизирана страница
+        images: Стилизирана слика
+        content_blocks: Стилизиран блок на содржини
+        information_texts_menu:
+          debates: "Дебати"
+          community: "Заедница"
+          proposals: "Предлози"
+          polls: "Анкети"
+          welcome: "Добредојдовте"
+        buttons:
+          save: "Зачувај"
+      users: Корисници
+      debates: "Дебати"
+      comments: "Коментари"
+    administrators:
+      index:
+        title: Администратори
+    moderators:
+      index:
+        title: Модератори
+    segment_recipient:
+      administrators: Администратори
+    newsletters:
+      index:
+        title: Билтен
+        subject: Предмет
+        segment_recipient: Примачи
+        actions: Акции
+        draft: Нацрт текст
+      show:
+        send: Испрати
+        sent_at: Испратено на
+        subject: Предмет
+        segment_recipient: Примачи
+        from: Електронска адреса која ќе се појави при испраќање на билтен
+        body: Содржина на електронска пошта
+    admin_notifications:
+      index:
+        section_title: Нотификации
+        title: Наслов
+        segment_recipient: Примачи
+        actions: Акции
+        draft: Нацрт текст
+      show:
+        sent_at: Испратено на
+        title: Наслов
+        body: Текст
+        link: Линк
+        segment_recipient: Примачи
+    system_emails:
+      comment:
+        title: "Коментар"
+    valuators:
+      index:
+        title: Вреднувач
+        name: Име
+        email: Е-пошта
+        description: Опис
+      show:
+        description: "Опис"
+        email: "Е-пошта"
+    valuator_groups:
+      index:
+        title: "Група на вреднувачи"
+        name: "Име"
+    poll_officers:
+      officer:
+        name: Име
+        email: Е-пошта
+        entry_name: офицер
+      search:
+        user_not_found: Корисникот не е пронајден
+    poll_officer_assignments:
+      index:
+        table_name: "Име"
+        table_email: "Е-пошта"
+      by_officer:
+        date: "Датум"
+        booth: "Кабина"
+    poll_shifts:
+      new:
+        date: "Датум"
+        table_email: "Е-пошта"
+        table_name: "Име"
+    poll_booth_assignments:
+      show:
+        location: "Локација"
+        results: "Резултати"
+        date: "Датум"
+      index:
+        table_name: "Име"
+        table_location: "Локација"
+    polls:
+      index:
+        name: "Име"
+        start_date: "Почетен датум"
+        closing_date: "Краен датум"
+      show:
+        questions_tab: Прашање
+        results_tab: Резултати
+        table_title: "Наслов"
+    questions:
+      index:
+        title: "Прашање"
+        questions_tab: "Прашање"
+        table_proposal: "Предлог"
+        table_question: "Прашање"
+        table_poll: "Анкета"
+      answers:
+        images:
+          add_image: "Додади слика"
+      show:
+        author: Автор
+        question: Прашање
+        video_url: Надворешно видео
+        answers:
+          title: Одговор
+          description: Опис
+          images: Слики
+          documents: Документи
+          document_title: Наслов
+          document_actions: Акции
+    answers:
+      show:
+        title: Наслов
+        description: Опис
+        images: Слики
+      videos:
+        index:
+          video_title: Наслов
+          video_url: Надворешно видео
+    recounts:
+      index:
+        table_booth_name: "Кабина"
+    results:
+      index:
+        title: "Резултати"
+      result:
+        table_whites: "Целосно празни ливчиња"
+        table_nulls: "Невалидни ливчиња"
+        table_total: "Валидни ливчиња"
+        table_answer: Одговор
+        table_votes: Гласање
+      results_by_booth:
+        booth: Кабина
+        results: Резултати
+        see_results: Види резултати
+    booths:
+      index:
+        name: "Име"
+        location: "Локација"
+      show:
+        location: "Локација"
+    officials:
+      index:
+        name: Име
+        official_position: Официјална позиција
+    organizations:
+      index:
+        filter: Филтрирај
+        filters:
+          all: Сите
+          pending: Во исчекување
+        name: Име
+        email: Е-пошта
+        status: Статус
+        title: Органзација
+        pending: Во исчекување
+    proposals:
+      index:
+        title: Предлози
+        id: ИД
+        author: Автор
+        selected: Селектирано
+    hidden_proposals:
+      index:
+        filter: Филтрирај
+        filters:
+          all: Сите
+          without_confirmed_hide: Во исчекување
+    hidden_proposal_notifications:
+      index:
+        filter: Филтрирај
+        filters:
+          all: Сите
+          without_confirmed_hide: Во исчекување
+    settings:
+      index:
+        update_setting: Ажурирање
+        map:
+          form:
+            submit: Ажурирање
+      setting_value: Вредност
+    shared:
+      actions: Акции
+      title: Наслов
+      description: Опис
+      image: Слика
+      proposal: Предлог
+      author: Автор
+      content: Содржина
+      created_at: Креирано на
+    geozones:
+      geozone:
+        name: Име
+      edit:
+        form:
+          submit_button: Зачувај промени
+    signature_sheets:
+      author: Автор
+      created_at: Дата на создавање
+      name: Име
+      new:
+        document_numbers_note: "Con i numeri separati da punto e virgola (;)"
+      show:
+        author: Автор
+        users: Корисници
+    stats:
+      show:
+        stats_title: Статистика
+        summary:
+          comments: Коментари
+          debates: Дебати
+          proposals: Предлози
+          budget_investments: Проекти за инвестирање
+        proposal_notifications: Предлог нотификации
+        polls: Анкети
+      graph:
+        debate_created: Дебати
+        proposal_created: Граѓански предлог
+      budget_balloting:
+        vote_count: Гласање
+        participant_count: Учесници
+      budget_supporting:
+        users: Корисници
+        vote_count: Гласање
+        participant_count: Учесници
+      direct_messages:
+        total: Вкупно
+      proposal_notifications:
+        title: Предлог нотификации
+        total: Вкупно
+      polls:
+        all: Анкети
+        table:
+          poll_name: Анкета
+          question_name: Прашање
+          origin_total: Вкупно учесници
+      sdg:
+        debates: "Дебати"
+        polls: "Анкети"
+        proposals: "Предлози"
+    tags:
+      create: Креирај тема
+      index:
+        topic: Тема
+    users:
+      columns:
+        id: ИД
+        name: Име
+        email: Е-пошта
+        document_number: Број на документ
+      index:
+        title: Корисник
+        filter: Филтрирај
+        filters:
+          active: Активно
+    site_customization:
+      content_blocks:
+        content_block:
+          body: Тело на текстот
+          name: Име
+      images:
+        index:
+          title: Стилизирана слика
+          update: Ажурирање
+          image: Слика
+      pages:
+        form:
+          options: Опции
+        page:
+          created_at: Креирано на
+          status: Статус
+          updated_at: Ажурирано на
+          title: Наслов
+          slug: Опис на дел од УРЛ
+    homepage:
+      title: Почетна страница
+      feeds:
+        proposals: Предлози
+        debates: Дебати
+        processes: Процес
+    audits:
+      id: "ИД"
+      actions: "Акции"
+    local_census_records:
+      index:
+        document_type: Вид на документ
+        document_number: Број на документ
+        date_of_birth: Датум на раѓање
+        postal_code: Поштенски код
+      imports:
+        new:
+          title: Досиеjа од локален попис
+    machine_learning:
+      tab_help: "Помош"
+      tags: "Тагови"

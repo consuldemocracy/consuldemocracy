@@ -1,5 +1,5 @@
 class Poll
-  class Shift < ActiveRecord::Base
+  class Shift < ApplicationRecord
     belongs_to :booth
     belongs_to :officer
 
@@ -10,13 +10,15 @@ class Poll
 
     enum task: { vote_collection: 0, recount_scrutiny: 1 }
 
-    scope :vote_collection,  -> { where(task: 'vote_collection') }
-    scope :recount_scrutiny, -> { where(task: 'recount_scrutiny') }
     scope :current, -> { where(date: Date.current) }
 
     before_create :persist_data
     after_create :create_officer_assignments
     before_destroy :destroy_officer_assignments
+
+    def title
+      "#{I18n.t("admin.poll_shifts.#{task}")} #{officer_name} #{I18n.l(date.to_date, format: :long)}"
+    end
 
     def persist_data
       self.officer_name = officer.name
@@ -33,6 +35,10 @@ class Poll
         }
         Poll::OfficerAssignment.create!(attrs)
       end
+    end
+
+    def unable_to_destroy?
+      booth.booth_assignments.map(&:unable_to_destroy?).any?
     end
 
     def destroy_officer_assignments

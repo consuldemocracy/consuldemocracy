@@ -8,18 +8,13 @@
   cursor: default;
 }
 
-/* workarounds */
-* html .ui-autocomplete {
-  width: 1px;
-} /* without this, the menu expands to 100% in IE6 */
-
 /* Menu
 ----------------------------------*/
 .ui-menu {
   list-style: none;
   padding: $line-height / 4 $line-height / 3;
   display: block;
-  background: #fff;
+  background: $body-background;
   border: 1px solid $border;
   font-size: $small-font-size;
 

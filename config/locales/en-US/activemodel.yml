@@ -16,6 +16,12 @@ en-US:
           confirmation_code: "Confirmation code"
         email:
           recipient: "Email"
+      verification/letter:
+        email: "Email"
+      verification/residence:
+        date_of_birth: "Date of birth"
+        document_type: "Document type"
+        postal_code: "Postcode"
       officing/residence:
         document_type: "Document type"
         document_number: "Document number (including letters)"

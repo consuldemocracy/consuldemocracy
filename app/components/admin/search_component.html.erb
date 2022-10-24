@@ -1,0 +1,6 @@
+<%= form_tag(url, options) do |f| %>
+  <%= hidden_current_filter_tag %>
+  <%= text_field_tag :search, search_terms.to_s, placeholder: label, "aria-label": label %>
+  <%= content %>
+  <%= submit_tag t("admin.shared.search.search") %>
+<% end %>

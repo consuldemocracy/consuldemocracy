@@ -1,7 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe VerificationHelper do
-
   describe "#mask_phone" do
     it "masks a phone" do
       expect(mask_phone("612345678")).to eq("******678")
@@ -20,5 +19,4 @@ describe VerificationHelper do
       expect(mask_email("aina@example.com")).to eq("ain*@example.com")
     end
   end
-
 end

@@ -1,5 +1,8 @@
 es:
   pages:
+    census_terms:
+      title: "Términos y condiciones de acceso al Padrón"
+      description: "Página de información sobre los términos y condiciones de acceso al Padrón."
     conditions:
       title: Condiciones de uso
       subtitle: AVISO LEGAL SOBRE LAS CONDICIONES DE USO, PRIVACIDAD Y PROTECCIÓN DE DATOS PERSONALES DEL PORTAL DE GOBIERNO ABIERTO
@@ -7,34 +10,63 @@ es:
     help:
       menu:
         polls: "Votaciones"
-        processes: "Procesos legislativos"
+        other: "Otra información de interés"
+        processes: "Legislación colaborativa"
+      debates:
+        title: "Debates"
+        description: "En la sección de %{link} puedes exponer y compartir tu opinión con otras personas sobre temas que te preocupan relacionados con la ciudad. También es un espacio donde generar ideas que a través de las otras secciones de %{org} lleven a actuaciones concretas por parte del Ayuntamiento."
+        link: "debates ciudadanos"
+        feature: "Puedes abrir debates, comentarlos y valorarlos con los botones de <strong>Estoy de acuerdo</strong> o <strong>No estoy de acuerdo</strong>. Para ello tienes que %{link}."
+        feature_link: "registrarte en %{org}"
+        image_alt: "Botones para valorar los debates"
+        figcaption: 'Botones "Estoy de acuerdo" y "No estoy de acuerdo" para valorar los debates.'
       proposals:
-        figcaption_html: 'Botón para "Apoyar" una propuesta.'
+        title: "Propuestas"
+        description: "En la sección de %{link} puedes plantear propuestas para que el Ayuntamiento las lleve a cabo. Las propuestas recaban apoyos, y si alcanzan los apoyos suficientes se someten a votación ciudadana. Las propuestas aprobadas en estas votaciones ciudadanas son asumidas por el Ayuntamiento y se llevan a cabo."
+        link: "propuestas ciudadanas"
+        image_alt: "Botón para apoyar una propuesta"
+        figcaption: 'Botón para "Apoyar" una propuesta.'
+      budgets:
+        title: "Presupuestos participativos"
+        description: "La sección de %{link} sirve para que la gente decida de manera directa a qué se destina una parte del presupuesto municipal."
+        link: "presupuestos participativos"
+        image_alt: "Diferentes fases de un presupuesto participativo"
+        figcaption: 'Fase de "Apoyos" y fase de "Votación" de los presupuestos participativos.'
+      polls:
+        title: "Votaciones"
+        description: "La sección de %{link} se activa cada vez que una propuesta alcanza el 1% de apoyos y pasa a votación o cuando el Ayuntamiento propone un tema para que la gente decida sobre él."
+        link: "votaciones ciudadanas"
+        feature_1: "Para participar en las votaciones tienes que %{link} y verificar tu cuenta."
+        feature_1_link: "registrarte en %{org_name}"
       processes:
-        title: "Procesos legislativos"
+        title: "Legislación colaborativa"
         description: "En la sección de %{link} la ciudadanía participa en la elaboración y modificación de normativa que afecta a la ciudad y puede dar su opinión sobre las políticas municipales en debates previos."
-        link: "procesos legislativos"
+        link: "legislación colaborativa"
+        feature: "Para participar en la legislación colaborativa tienes que %{link} y verificar tu cuenta."
+        feature_link: "registrarte en %{org_name}"
+      faq:
+        title: "¿Problemas técnicos?"
+        description: "Lee las preguntas frecuentes y resuelve tus dudas."
+        button: "Ver preguntas frecuentes"
+        page:
+          title: "Preguntas Frecuentes"
+          description: "Utiliza esta página para resolver las Preguntas frecuentes a los usuarios del sitio."
+      other:
+        title: "Otra información de interés"
+        how_to_use: "Utiliza %{org_name} en tu municipio"
+        sdg: "Ayuda Objetivos de Desarrollo Sostenible"
+      how_to_use:
+        text: |-
+          Utilízalo en tu municipio libremente o ayúdanos a mejorarlo, es software libre.
+
+          Este Portal de Gobierno Abierto usa la [aplicación CONSUL](https://github.com/consul/consul 'github consul') que es software libre, con [licencia AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), esto significa en palabras sencillas, que cualquiera puede libremente usar el código, copiarlo, verlo en detalle, modificarlo, y redistribuirlo al mundo con las modificaciones que quiera (manteniendo el que otros puedan a su vez hacer lo mismo). Porque creemos que la cultura es mejor y más rica cuando se libera.
+
+          Si eres programador, puedes ver el código y ayudarnos a mejorarlo en [aplicación CONSUL](https://github.com/consul/consul 'github consul').
+      titles:
+        how_to_use: Utilízalo en tu municipio
     privacy:
       title: Política de privacidad
-      subtitle: AVISO DE PROTECCIÓN DE DATOS
-      info_items:
-        - 
-          text: La navegación por la informacion disponible en el Portal de Gobierno Abierto es anónima.
-        - 
-          text: Para utilizar los servicios contenidos en el Portal de Gobierno Abierto el usuario deberá darse de alta y proporcionar previamente los datos de carácter personal segun la informacion especifica que consta en cada tipo de alta.
-        - 
-          text: 'Los datos aportados serán incorporados y tratados por el Ayuntamiento de acuerdo con la descripción del fichero siguiente:'
-        - 
-          subitems:
-            - 
-              field: 'Nombre del fichero/tratamiento:'
-              description: NOMBRE DEL FICHERO
-            - 
-              field: 'Finalidad del fichero/tratamiento:'
-              description: Gestionar los procesos participativos para el control de la habilitación de las personas que participan en los mismos y recuento meramente numérico y estadístico de los resultados derivados de los procesos de participación ciudadana.
-            - 
-              field: 'Órgano responsable:'
-              description: ÓRGANO RESPONSABLE
+      subtitle: "Página de información de protección de datos"
     accessibility:
       title: Accesibilidad
       description: |-
@@ -54,43 +86,43 @@ es:
           key_header: Tecla
           page_header: Página
           rows:
-            - 
+            -
               key_column: 0
               page_column: Inicio
-            - 
+            -
               key_column: 1
               page_column: Debates
-            - 
+            -
               key_column: 2
               page_column: Propuestas
-            - 
+            -
               key_column: 3
               page_column: Votaciones
-            - 
+            -
               key_column: 4
               page_column: Presupuestos participativos
-            - 
+            -
               key_column: 5
-              page_column: Procesos legislativos
+              page_column: Legislación colaborativa
         browser_table:
-          description: 'Dependiendo del sistema operativo y del navegador que se utilice, la combinación de teclas será la siguiente:'
+          description: "Dependiendo del sistema operativo y del navegador que se utilice, la combinación de teclas será la siguiente:"
           caption: Combinación de teclas dependiendo del sistema operativo y navegador
           browser_header: Navegador
           key_header: Combinación de teclas
           rows:
-            - 
+            -
               browser_column: Explorer
               key_column: ALT + atajo y luego ENTER
-            - 
+            -
               browser_column: Firefox
               key_column: ALT + MAYÚSCULAS + atajo
-            - 
+            -
               browser_column: Chrome
               key_column: ALT + atajo (si es un MAC, CTRL + ALT + atajo)
-            - 
+            -
               browser_column: Safari
               key_column: ALT + atajo (si es un MAC, CMD + atajo)
-            - 
+            -
               browser_column: Opera
               key_column: MAYÚSCULAS + ESC + atajo
       textsize:
@@ -100,38 +132,36 @@ es:
           browser_header: Navegador
           action_header: Acción a realizar
           rows:
-            - 
+            -
               browser_column: Explorer
               action_column: Ver > Tamaño del texto
-            - 
+            -
               browser_column: Firefox
               action_column: Ver > Tamaño
-            - 
+            -
               browser_column: Chrome
               action_column: Ajustes (icono) > Opciones > Avanzada > Contenido web > Tamaño fuente
-            - 
+            -
               browser_column: Safari
               action_column: Visualización > ampliar/reducir
-            - 
+            -
               browser_column: Opera
               action_column: Ver > escala
         browser_shortcuts_table:
-          description: 'Otra forma de modificar el tamaño de texto es utilizar los atajos de teclado definidos en los navegadores, en particular la combinación de teclas:'
+          description: "Otra forma de modificar el tamaño de texto es utilizar los atajos de teclado definidos en los navegadores, en particular la combinación de teclas:"
           rows:
-            - 
+            -
               shortcut_column: CTRL y + (CMD y + en MAC)
               description_column: para aumentar el tamaño del texto
-            - 
+            -
               shortcut_column: CTRL y - (CMD y - en MAC)
       compatibility:
         title: Compatibilidad con estándares y diseño visual
+        description: 'Todas las páginas de este sitio web cumplen con las <strong>Pautas de Accesibilidad</strong> o Principios Generales de Diseño Accesible establecidas por el Grupo de Trabajo <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> perteneciente al W3C.'
     titles:
-      accessibility: Accesibilidad
-      conditions: Condiciones de uso
+      help: "¿Qué es %{org}? - Participación ciudadana"
     verify:
-      code: Código que has recibido en tu carta
-      info: 'Para verificar tu cuenta introduce los datos con los que te registraste:'
-      info_code: 'Ahora introduce el código que has recibido en tu carta:'
-      password: Contraseña
+      info: "Para verificar tu cuenta introduce los datos con los que te registraste:"
+      info_code: "Ahora introduce el código que has recibido en tu carta:"
       submit: Verificar mi cuenta
       title: Verifica tu cuenta

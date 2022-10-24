@@ -16,8 +16,7 @@ fr:
       create_first_community_topic:
         first_theme_not_logged_in: Aucun thème, créez le premier.
         first_theme: Créez le premier sujet de la communauté
-        sign_in: "se connecter"
-        sign_up: "s'inscrire"
+        sub_first_theme: "Pour créer un thème, il est nécessaire de %{sign_in} ou %{sign_up}."
       tab:
         participants: Participants
       sidebar:
@@ -25,9 +24,9 @@ fr:
         new_topic: Créer un sujet
       topic:
         edit: Modifier le sujet
-        destroy: Supprimer le sujet
+        destroy: Supprimer un sujet
         comments:
-          zero: Aucun commentaire
+          zero: Aucun commentaires
           one: 1 commentaire
           other: "%{count} commentaires"
       author: Auteur
@@ -36,8 +35,6 @@ fr:
       create: Créer un sujet
       edit: Modifier le sujet
       form:
-        topic_title: Titre
-        topic_text: Texte initial
         new:
           submit_button: Créer un sujet
         edit:
@@ -54,6 +51,3 @@ fr:
         recommendation_one: N'écrivez pas le titre de votre sujet ou des phrases entières en majuscules. Sur Internet, cela équivaut à crier. Et personne n'aime se faire crier dessus.
         recommendation_two: Tout sujet ou commentaire impliquant une action illégale ou cherchant à porter atteinte aux débat sera supprimé, tout le reste est autorisé.
         recommendation_three: Appréciez cet espace de parole, les voix qui le remplissent, c'est aussi le vôtre.
-  topics:
-    show:
-      login_to_comment: Vous devez %{signin} ou %{signup} pour laisser un commentaire.

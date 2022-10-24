@@ -1,13 +1,13 @@
-class Legislation::Annotation < ActiveRecord::Base
+class Legislation::Annotation < ApplicationRecord
   COMMENTS_PAGE_SIZE = 5
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
   serialize :ranges, Array
 
-  belongs_to :draft_version, class_name: 'Legislation::DraftVersion', foreign_key: 'legislation_draft_version_id'
-  belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
-  has_many :comments, as: :commentable, dependent: :destroy
+  belongs_to :draft_version, foreign_key: "legislation_draft_version_id", inverse_of: :annotations
+  belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :legislation_annotations
+  has_many :comments, as: :commentable, inverse_of: :commentable, dependent: :destroy
 
   validates :text, presence: true
   validates :quote, presence: true
@@ -35,8 +35,8 @@ class Legislation::Annotation < ActiveRecord::Base
       selector_end = "/html/body/#{range_end}"
       el_end = doc.at_xpath(selector_end)
 
-      remainder_el_start = el_start.text[0 .. range_start_offset - 1] unless range_start_offset.zero?
-      remainder_el_end = el_end.text[range_end_offset .. -1]
+      remainder_el_start = el_start.text[0..range_start_offset - 1] unless range_start_offset.zero?
+      remainder_el_end = el_end.text[range_end_offset..-1]
 
       self.context = "#{remainder_el_start}<span class=annotator-hl>#{quote}</span>#{remainder_el_end}"
     rescue
@@ -54,6 +54,10 @@ class Legislation::Annotation < ActiveRecord::Base
 
   def weight
     comments_count + comments.sum(:cached_votes_total)
+  end
+
+  def comments_closed?
+    !draft_version.process.allegations_phase.open?
   end
 end
 

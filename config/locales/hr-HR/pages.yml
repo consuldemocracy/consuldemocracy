@@ -1,0 +1,169 @@
+hr:
+  pages:
+    conditions:
+      title: Odredbe i uvjeti korištenja
+      subtitle: PRAVNA OBAVIJEST O UVJETIMA KORIŠTENJA, PRIVATNOSTI I ZAŠTITE OSOBNIH PODATAKA NA PORTALU OTVORENE UPRAVE
+      description: Informativna strana za uvjete korištenja, privatnost i zaštitu osobnih podataka.
+    help:
+      title: "%{org} je platforma za građansko sudjelovanje"
+      guide: "Ovaj vodič objašnjava što je pojedina sekcija i kako %{org} sekcija funkcionira."
+      menu:
+        debates: "Rasprave"
+        proposals: "Prijedlozi"
+        budgets: "Participativni budžeti"
+        polls: "Ankete"
+        other: "Ostale informacije o interesima"
+        processes: "Procesi"
+      debates:
+        title: "Rasprave"
+        description: "U %{link} sekciji možete prezentirati i podijeliti svoje mišljenje o problematičnim temama u gradu s ostalim građanima. Ovo je također mjesto za stvaranje ideja uz ostale sekcije %{org} koje će voditi do konkretnih akcija od strane tijela javne vlasti."
+        link: "rasprave građana"
+        feature: "Možete otvarati rasprave, komentirati i ocjenjivati ih sa <strong>Slažem se</strong> ili <strong>Ne slažem se</strong>. Za to trebate %{link}."
+        feature_link: "registrirajte se u %{org}"
+        image_alt: "Gumbi za rangiranje rasprava"
+        figcaption: '"Slažem se" i "Ne slažem se" gumbi kako biste ocijenili rasprave.'
+      proposals:
+        title: "Prijedlozi"
+        description: "U %{link} sekciji možete napraviti prijedlog za tijelo javne vlasti kako bi ih izvršila. Prijedlozima treba potpora te ukoliko zadobe dovoljno potpore mogu ići na javno izglasavanje. Izglasane prijedloge tijelo javne vlasti treba prihvatiti i sprovesti."
+        link: "prijedlozi građana"
+        image_alt: "Gumb za potporu prijedloga"
+        figcaption: 'Dugme za "Potporu" prijedloga.'
+      budgets:
+        title: "Participativno Budžetiranje"
+        description: "%{link} sekcija pomaže građanima kako bi sproveli direktnu odluku o trošenju dijelova javnog budžeta."
+        link: "participativni budžeti"
+        image_alt: "Različite faze participativnog budžetiranja"
+        figcaption: 'Faze "Potpore" i "Glasanja" sudioničkih proračuna.'
+      polls:
+        title: "Glasanje"
+        description: "%{link} sekcije aktiviraju sesvaki puta kada prijedlog postigne 1% potpore i počne izglasavanje ili kada tijelo javne vlasti predlaže problem oko kojeg građani zatim odlučuju."
+        link: "glasanje"
+        feature_1: "Kako bi sudjelovali u izglasavanju morate %{link} i potvrditi svoj račun."
+        feature_1_link: "registrirajte se %{org_name}"
+      processes:
+        title: "Procesi"
+        description: "U sekciji %{link} građani sudjeluju u stvaranju i promjenama propisa koji utječu na područne javnog djelovanja i mogu ponuditi svoja viđenja na temu gradskih politika u prošlim raspravama."
+        link: "procesi"
+        feature: "Kako biste sudjelovali u izglasavanju kliknite na %{link} i potvrdite svoj račun."
+        feature_link: "registrirajte se u %{org_name}"
+      faq:
+        title: "Tehnički problemi?"
+        description: "Pročitajte FAQ kako biste dobili odgovore na svoja pitanja."
+        button: "Pregledajte često postavljana pitanja"
+        page:
+          title: "Često postavljana pitanja"
+          description: "Koristite ovu stranicu kako biste riješili učestala FAQ korisnika ove stranice."
+      other:
+        title: "Ostale zanimljive informacije"
+        how_to_use: "Koristi %{org_name} u tvojem gradu"
+      how_to_use:
+        text: |-
+          Koristite ga za Vašu lokalnu vlast ili nam ga pomognite poboljšati jer ovo je slobodan softver.
+
+          Ovaj Otvoreni Portal Vlade koristi [CONSUL app](https://github.com/consul/consul 'consul github'), slobodan softver, [licenciran pod AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), a što jednostavno znači da ga svatko može slobodno koristiti, kopirati, detaljno pregledati, modificirati i dalje distribuirati svijetu s izmjenama kakvim želi (prilikom čega i ostali mogu raditi isto). Zato jer mislimo da je kultura bolja i bogatija kada se dijeli. 
+
+          Ako ste programer možete vidjeti izvorni kôd i pomoći nam poboljšati ga [CONSUL app](https://github.com/consul/consul 'consul github').
+      titles:
+        how_to_use: Koristite ga za svoju lokalno javno tijelo
+    privacy:
+      title: Politika Privatnosti
+      subtitle: "Informacijska stranica o privatnosti"
+    accessibility:
+      title: Dostupnost
+      description: |-
+        Pristupačnost na webu se odnosi na mogućnost pristupu internetu i sadržaju svim ljudima, bez obzira na moguće nemogućnosti (fizičke, intelektualne i tehničke) koji mogu nastati ili od onih koji proizlaze iz konteksta uporabe (tehnološke ili okolišne).
+
+        Kada su web sjedišta osmišljena s obzirom na pristupačnost, svi korisnici mogu pristupiti sadržaju pod jednakim uvjetima, na primjer:
+      examples:
+        - Pružanjem alternativni tekst da zamijene slike, slijepi ili slabovidni korisnici mogu koristiti posebne čitače za pristup informacijama.
+        - Kada videozapisi imaju titlove, korisnici s poteškoćama u slušanju mogu u potpunosti razumjeti video.
+        - Ako su sadržaji pisani jednostavnim i ilustriranim jezikom, korisnicima s problemima u učenju se omogućava bolje razumijevanje.
+        - Ako korisnici s problemima s pokretljivošću imaju poteškoća s korištenjem miša, postoje alternativni načini korištenja tipkovnice u navigaciji.
+      keyboard_shortcuts:
+        title: Prečaci na tipkovnici
+        navigation_table:
+          description: Kako bi se na ovoj web stranici mogli kretati na pristupačan način, programirana je grupa tipki za brzi pristup, koja okuplja glavne dijelove od općeg interesa u kojima je stranica organizirana.
+          caption: Prečaci tipkovnice za navigacijski izbornik
+          key_header: Tipka
+          page_header: Stranica
+          rows:
+            - 
+              key_column: 0
+              page_column: Home
+            - 
+              key_column: 1
+              page_column: Rasprave
+            - 
+              key_column: 2
+              page_column: Prijedlozi
+            - 
+              key_column: 3
+              page_column: Glas
+            - 
+              key_column: 4
+              page_column: Participativni budžeti
+            - 
+              key_column: 5
+              page_column: Zakonski procesi
+        browser_table:
+          description: "Ovisno o operativnom sustavu i korištenom pregledniku, kombinacija tipki bit će slijedeća:"
+          caption: Kombinacija tipki ovisi o operativnom sustavu i pregledniku
+          browser_header: Preglednik
+          key_header: Kombinacija tipki
+          rows:
+            - 
+              browser_column: Pretraživač
+              key_column: ALT + prečac nako čega treba pritisnuti ENTER
+            - 
+              browser_column: Firefox
+              key_column: ALT+ CAPS + prečac
+            - 
+              browser_column: Chrome
+              key_column: ALT + prečac (CTRL + ALT + prečac za MAC)
+            - 
+              browser_column: Safari
+              key_column: ALT + prečac (CMD + prečac za MAC)
+            - 
+              browser_column: Opera
+              key_column: CAPS + ESC + prečac
+      textsize:
+        title: Veličina teksta
+        browser_settings_table:
+          description: Web dizajn stranice omogućuje korisniku da odabere veličinu teksta koja mu odgovara. Ova radnja može se izvršiti na različite načine, ovisno o pregledniku koji se koristi.
+          browser_header: Preglednik
+          action_header: Potrebno je provesti sljedeću radnju
+          rows:
+            - 
+              browser_column: Explorer
+              action_column: Pregled > Veličina teksta
+            - 
+              browser_column: Firefox
+              action_column: Pregeled > Veličina
+            - 
+              browser_column: Chrome
+              action_column: Postavke (ikona) > Opcije > Napredno > Web Sadržaj > Veličina teksta
+            - 
+              browser_column: Safari
+              action_column: Pregled > Povećaj/Umanji
+            - 
+              browser_column: Opera
+              action_column: Pregled > skala
+        browser_shortcuts_table:
+          description: "Drugi način za izmjenu veličine teksta je korištenje prečaca na tipkovnici koji su definirani u preglednicima, posebice kombinacije tipki:"
+          rows:
+            - 
+              shortcut_column: CTRL i + (CMD i + na MAC)
+              description_column: Povećava veličinu teksta
+            - 
+              shortcut_column: CTRL i - (CMD i - na MAC)
+              description_column: Umanjuje veličinu teksta
+      compatibility:
+        title: Kompatibilno sa standardima i vizualnim dizajnom
+        description: 'Sve stranice ove internetske stranice u skladu su sa <strong>Smjernicama o pristupačnosti</strong> ili Općim Uvjetima dostupnog dizajna koje je utemeljila Radna skupina <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> koja pripada W3C.'
+    titles:
+      help: "Što je %{org}? - Građansko sudjelovanje"
+    verify:
+      info: "Kako biste potvrdili svoju adresu koristite svoje podatke za pristup:"
+      info_code: "Sada koristite kôd koji ste zaprimili u pismu:"
+      submit: Potvrdi moj račun
+      title: Potvrditi tvoj račun

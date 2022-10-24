@@ -1,0 +1,147 @@
+nn:
+  attributes:
+    geozone_id: "Område"
+    results_enabled: "Se resultater"
+    email: E-post
+  activerecord:
+    models:
+      budget/investment:
+        zero: "Investeringer"
+        one: "Investering"
+        other: "Investeringer"
+      comment:
+        zero: "Kommentarer"
+        one: "Kommenter"
+        other: "Kommentarer"
+      debate:
+        zero: "Debatter"
+        one: "Diskusjoner"
+        other: "Diskusjoner"
+      document:
+        zero: Dokumenter
+        one: Dokument
+        other: Dokumenter
+      legislation/proposal:
+        zero: "Forslag"
+        one: "Forslag"
+        other: "Forslag"
+      documents:
+        zero: "Dokumenter"
+        one: "Dokument"
+        other: "Dokumenter"
+      topic:
+        zero: "Emner"
+        one: "Emne"
+        other: "Emner"
+    attributes:
+      budget/investment:
+        title: "Tittel"
+        administrator_id: "Administrator"
+        feasibility_unfeasible: "Ikke gjennomførbart"
+        valuation_tag_list: "Tagger"
+      budget/investment/translation:
+        title: "Tittel"
+      milestone:
+        title: "Tittel"
+      progress_bar:
+        title: "Tittel"
+      comment:
+        body: "Kommenter"
+      debate:
+        author: "Forfatter"
+        tag_list: "Emner"
+        title: "Tittel"
+      debate/translation:
+        title: "Tittel på debatt"
+        description: "Innledende debatt-tekst"
+      proposal:
+        author: "Forfatter"
+        title: "Tittel"
+        responsible_name: "Fullt navn på personen som eier forslaget"
+        retired_reason: "Grunn til å trekke forslaget"
+      proposal/translation:
+        title: "Tittel på forslag"
+        description: "Forslagstekst"
+        summary: "Oppsummering av forslag"
+        retired_explanation: "Forklaring"
+      user:
+        email: "E-post"
+        username: "Brukernavn"
+        email_digest: "Motta oppsummering av forslag"
+        email_on_comment: "Gi meg varsel via e-post når noen kommenterer på mine forslag eller debatter"
+        email_on_comment_reply: "Gi meg varsel via e-post når noen kommenterer på mine kommentarer"
+        email_on_direct_message: "Motta e-post om direktemeldinger"
+        newsletter: "Motta relevante oppdateringer om nettsiden via e-post"
+        official_position_badge: "Vis etikett for representant fra kommunen"
+        phone_number: "Telefonnr"
+        public_activity: "Vis min liste over aktiviteter offentlig"
+        recommended_debates: "Vise anbefalte debatter"
+        recommended_proposals: "Vis anbefalte forslag"
+      direct_message:
+        title: "Tittel"
+        body: "Melding"
+      proposal_notification:
+        body: "Melding"
+        title: "Tittel"
+      signature_sheet:
+        title: "Tittel"
+      sdg/goal:
+        title: "Tittel"
+      sdg/local_target:
+        title: "Tittel"
+      sdg/local_target/translation:
+        title: "Tittel"
+      sdg/target:
+        title: "Tittel"
+      site_customization/page:
+        status: Status
+        status_draft: "Utkast"
+        status_published: "Publisert"
+        title: Tittel
+      site_customization/page/translation:
+        title: Tittel
+      site_customization/image:
+        image: Bilde
+      topic:
+        title: "Tittel"
+      banner/translation:
+        title: "Tittel"
+      legislation/proposal:
+        description: "Forslagstekst"
+        summary: "Oppsummering av forslag"
+        title: "Tittel på forslag"
+        video_url: "Link til ekstern video"
+      legislation/draft_version:
+        status: Status
+        status_draft: "Utkast"
+        status_published: "Publisert"
+      legislation/question:
+        title: Tittel
+      legislation/annotation:
+        text: Kommenter
+      document:
+        title: Tittel
+      image:
+        title: Tittel
+      poll/question/answer:
+        title: Svar
+      poll/question/answer/translation:
+        title: Svar
+      poll/question/answer/video:
+        title: Tittel
+        url: Ekstern video
+      admin_notification:
+        title: Tittel
+      admin_notification/translation:
+        title: Tittel
+      widget/card:
+        title: Tittel
+      widget/card/translation:
+        title: Tittel
+      dashboard/action:
+        title: Tittel
+      link:
+        label: Tittel
+      local_census_record:
+        document_type: Dokumenttype
+        date_of_birth: Fødselsdato

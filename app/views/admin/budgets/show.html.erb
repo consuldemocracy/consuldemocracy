@@ -1,5 +1,1 @@
-<%= back_link_to admin_budgets_path %>
-
-<h2><%= @budget.name %></h2>
-
-<%= render "form" %>
+<%= render Admin::Budgets::ShowComponent.new(@budget) %>

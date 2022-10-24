@@ -1,15 +1,15 @@
 <h2><%= t("admin.managers.index.title") %></h2>
 
-<%= render 'admin/shared/user_search', url: search_admin_managers_path %>
+<%= render "admin/shared/user_search", url: search_admin_managers_path %>
 
 <div id="managers">
   <% if @managers.any? %>
-    <h3 class="margin"><%= page_entries_info @managers %></h3>
+    <h3><%= page_entries_info @managers %></h3>
 
     <table>
       <thead>
-        <th scope="col"><%= t("admin.managers.index.name") %></th>
-        <th scope="col"><%= t("admin.managers.index.email") %></th>
+        <th scope="col"><%= Manager.human_attribute_name(:name) %></th>
+        <th scope="col"><%= Manager.human_attribute_name(:email) %></th>
         <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
       </thead>
       <tbody>
@@ -22,20 +22,7 @@
               <%= manager.email %>
             </td>
             <td>
-              <% if manager.persisted? %>
-                <%= link_to t('admin.managers.manager.delete'),
-                  admin_manager_path(manager),
-                  method: :delete,
-                  class: "button hollow alert expanded"
-                %>
-              <% else %>
-                <%= link_to t('admin.managers.manager.add'),
-                             { controller: "admin/managers",
-                               action: :create,
-                               user_id: manager.user_id },
-                               method: :post,
-                               class: "button success expanded" %>
-              <% end %>
+              <%= render Admin::Roles::TableActionsComponent.new(manager) %>
             </td>
           </tr>
         <% end %>

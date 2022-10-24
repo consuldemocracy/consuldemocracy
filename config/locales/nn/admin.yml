@@ -1,0 +1,390 @@
+nn:
+  admin:
+    header:
+      title: Administrasjon
+    actions:
+      actions: Handlinger
+      delete: "Slett"
+      hide: Skjul
+      mark_featured: Utvalgte
+      edit: Rediger
+    banners:
+      index:
+        filters:
+          all: Alle
+        preview: Forhåndsvisning
+      banner:
+        sections:
+          debates: Debatter
+          proposals: Forslag
+          budgets: Deltakende budsjettering
+      edit:
+        form:
+          submit_button: Lagre endringer
+    activity:
+      show:
+        filter: Vis
+        filters:
+          all: Alle
+          on_comments: Kommentarer
+          on_debates: Debatter
+          on_proposals: Forslag
+          on_users: Brukere
+    budgets:
+      actions:
+        preview: "Forhåndsvisning"
+      index:
+        filter: Filter
+        filters:
+          all: Alle
+          open: Åpen
+        table_draft: "Utkast"
+      edit:
+        actions: Handlinger
+    budget_phases:
+      edit:
+        save_changes: Lagre endringer
+    budget_investments:
+      index:
+        filters:
+          all: Alle
+          unfeasible: Ikke gjennomførbart
+        buttons:
+          filter: Filter
+        feasibility:
+          unfeasible: "Ikke gjennomførbart"
+        select: "Velg"
+        list:
+          title: Tittel
+          supports: Støtte
+          admin: Administrator
+          geozone: Område
+          author: Forfatter
+      show:
+        edit: Rediger
+        tags: Tagger
+        winner:
+          "true": "Ja"
+          "false": "Nei"
+    milestones:
+      index:
+        table_title: "Tittel"
+        table_status: Status
+        table_actions: "Handlinger"
+        image: "Bilde"
+        documents: "Dokumenter"
+    statuses:
+      index:
+        table_actions: Handlinger
+    progress_bars:
+      index:
+        title: "Fremdriftsindikatorer"
+        table_title: "Tittel"
+    comments:
+      index:
+        author: "Forfatter"
+        title: Kommentarer
+    hidden_comments:
+      index:
+        filter: Filter
+        filters:
+          all: Alle
+          without_confirmed_hide: Under behandling
+    dashboard:
+      index:
+        title: Administrasjon
+      actions:
+        index:
+          active: 'Ja'
+          inactive: 'Nei'
+          action_title: Tittel
+          default:
+            email: E-post
+            polls: Avstemninger
+            poster: Plakat
+        form:
+          submit_button: Lagre
+      administrator_tasks:
+        index:
+          filter: Filter
+          filters:
+            pending: Under behandling
+        form:
+          proposal: Forslag
+    debates:
+      index:
+        author: Forfatter
+        title: Debatter
+    hidden_debates:
+      index:
+        filter: Filter
+        filters:
+          all: Alle
+          without_confirmed_hide: Under behandling
+    documents:
+      index:
+        title: "Dokumenter"
+    hidden_users:
+      index:
+        filter: Filter
+        filters:
+          all: Alle
+          without_confirmed_hide: Under behandling
+    hidden_budget_investments:
+      index:
+        filter: Filter
+        filters:
+          all: Alle
+          without_confirmed_hide: Under behandling
+    legislation:
+      processes:
+        edit:
+          submit_button: Lagre endringer
+        form:
+          process: Prosess
+        index:
+          title: Deltakende lovgivning
+          filters:
+            all: Alle
+        process:
+          title: Prosess
+          comments: Kommentarer
+          status: Status
+          status_open: Åpen
+        subnav:
+          info: Informasjon
+          questions: Debatt
+          proposals: Forslag
+          milestones: Følger
+      proposals:
+        index:
+          title: Tittel
+        form:
+          custom_categories: Kategorier
+      draft_versions:
+        edit:
+          submit_button: Lagre endringer
+        index:
+          delete: Slett
+          preview: Forhåndsvisning
+        table:
+          title: Tittel
+          comments: Kommentarer
+          status: Status
+      questions:
+        edit:
+          submit_button: Lagre endringer
+        index:
+          delete: Slett
+        table:
+          title: Tittel
+      milestones:
+        index:
+          title: Følger
+    managers:
+      manager:
+        add: Legg til
+    sdg/managers:
+      sdg/manager:
+        add: Legg til
+    menu:
+      proposals: Forslag
+      admin_notifications: Varsler
+      polls: Avstemninger
+      site_customization:
+        information_texts_menu:
+          debates: "Debatter"
+          community: "Fellesskap"
+          proposals: "Forslag"
+          polls: "Avstemninger"
+          management: "Ledelse"
+        buttons:
+          save: "Lagre"
+      users: Brukere
+      debates: "Debatter"
+      comments: "Kommentarer"
+    administrators:
+      administrator:
+        add: Legg til
+    moderators:
+      moderator:
+        add: Legg til
+    newsletters:
+      index:
+        actions: Handlinger
+        draft: Utkast
+        preview: Forhåndsvisning
+    admin_notifications:
+      index:
+        section_title: Varsler
+        title: Tittel
+        actions: Handlinger
+        draft: Utkast
+        preview: Forhåndsvisning
+      show:
+        title: Tittel
+    system_emails:
+      comment:
+        title: "Kommenter"
+      reply:
+        title: "Svar"
+    valuators:
+      index:
+        email: E-post
+      show:
+        email: "E-post"
+    poll_officers:
+      officer:
+        add: Legg til
+        email: E-post
+      search:
+        user_not_found: Finner ikke bruker
+    poll_officer_assignments:
+      index:
+        table_email: "E-post"
+    poll_shifts:
+      new:
+        search_officer_button: Søk
+        table_shift: "Shift"
+        table_email: "E-post"
+    polls:
+      index:
+        create: "Lag avstemning"
+      new:
+        title: "Ny avstemning"
+        submit_button: "Lag avstemning"
+      edit:
+        submit_button: "Oppdater avstemning"
+      show:
+        questions_tab: Spørsmål
+        table_title: "Tittel"
+    questions:
+      index:
+        title: "Spørsmål"
+        questions_tab: "Spørsmål"
+        table_proposal: "Forslag"
+      show:
+        author: Forfatter
+        add_answer: Legg til svar
+        video_url: Ekstern video
+        answers:
+          title: Svar
+          documents: Dokumenter
+          document_title: Tittel
+          document_actions: Handlinger
+    answers:
+      show:
+        title: Tittel
+      videos:
+        index:
+          video_title: Tittel
+          video_url: Ekstern video
+    results:
+      result:
+        table_answer: Svar
+    organizations:
+      index:
+        filter: Filter
+        filters:
+          all: Alle
+          pending: Under behandling
+        email: E-post
+        status: Status
+        pending: Under behandling
+    proposals:
+      index:
+        title: Forslag
+        author: Forfatter
+        select: Velg
+        milestones: Milepæler
+    hidden_proposals:
+      index:
+        filter: Filter
+        filters:
+          all: Alle
+          without_confirmed_hide: Under behandling
+    hidden_proposal_notifications:
+      index:
+        filter: Filter
+        filters:
+          all: Alle
+          without_confirmed_hide: Under behandling
+    shared:
+      search:
+        search: "Søk"
+      search_results: "Søk i resultater"
+      actions: Handlinger
+      title: Tittel
+      image: Bilde
+      proposal: Forslag
+      author: Forfatter
+    geozones:
+      edit:
+        form:
+          submit_button: Lagre endringer
+        back: Gå tilbake
+      new:
+        back: Gå tilbake
+    signature_sheets:
+      author: Forfatter
+      show:
+        author: Forfatter
+        users: Brukere
+    stats:
+      show:
+        summary:
+          comments: Kommentarer
+          debates: Debatter
+          proposals: Forslag
+          unverified_users: Uverifiserte brukere
+          verified_users: Verifiserte brukere
+          visits: Besøk
+          votes: Totalt antall stemmer
+        budgets_title: Deltakende budsjettering
+        polls: Avstemninger
+      graph:
+        debate_created: Debatter
+        visit: Besøk
+      budget_balloting:
+        participant_count: Deltakere
+      budget_supporting:
+        users: Brukere
+        participant_count: Deltakere
+      polls:
+        all: Avstemninger
+      sdg:
+        debates: "Debatter"
+        polls: "Avstemninger"
+        proposals: "Forslag"
+    tags:
+      index:
+        topic: Emne
+    users:
+      columns:
+        email: E-post
+      index:
+        filter: Filter
+    site_customization:
+      images:
+        index:
+          delete: Slett
+          image: Bilde
+      pages:
+        page:
+          status: Status
+          title: Tittel
+    homepage:
+      cards_title: Kort
+      feeds:
+        proposals: Forslag
+        debates: Debatter
+    audits:
+      actions: "Handlinger"
+    local_census_records:
+      index:
+        document_type: Dokumenttype
+        date_of_birth: Fødselsdato
+    machine_learning:
+      related_content: "Relatert innhold"
+      tab_help: "Hjelp"
+      tags: "Tagger"

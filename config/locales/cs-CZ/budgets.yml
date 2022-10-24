@@ -1,0 +1,245 @@
+cs:
+  budgets:
+    ballots:
+      show:
+        title: Vaše hlasování
+        amount_progress: "%{amount_spent} / %{amount_limit}"
+        amount_available:
+          knapsack: "Stále máte k dispozici <span>%{count}</span>"
+          approval:
+            zero: "Stále máte možnost odevzdat <span>%{count}</span> hlasy."
+            one: "Stále můžete dát <span>%{count}</span> hlas."
+            few: "Stále můžete dát <span>%{count}</span> hlasy."
+            many: "Stále můžete dát <span>%{count}</span> hlasů."
+            other: "Stále můžete dát <span>%{count}</span> hlasů."
+        amount_spent:
+          knapsack: "Utracená částka <span>%{count}</span>"
+          approval:
+            zero: "Odevzdaných hlasů: <span>%{count}</span>"
+            one: "Odevzdaných hlasů: <span>%{count}</span>"
+            few: "Odevzdaných hlasů: <span>%{count}</span>"
+            many: "Odevzdaných hlasů: <span>%{count}</span>"
+            other: "Odevzdaných hlasů <span>%{count}</span>"
+        amount_limit:
+          knapsack: "%{count}"
+          approval:
+            one: "Hlasovat můžete pro <span>1</span> projekt"
+            few: "Hlasovat můžete až pro <span>%{count}</span> projekty"
+            many: "Hlasovat můžete až pro <span>%{count}</span> projektů"
+            other: "Hlasovat můžete až pro <span>%{count}</span> projekty"
+        no_balloted_group_yet: "Dosud jste o této skupině nehlasovali, hlasujte!"
+        remove: Odstranit hlas
+        remove_label: "Odebrat svou podporu k %{investment}"
+        voted:
+          one: "Hlasovali jste pro <span>jednu</span> investici."
+          few: "Hlasovali jste pro <span>%{count}</span>investic."
+          many: "Hlasovali jste pro <span>%{count}</span>investic."
+          other: "Hlasovali jste pro <span>%{count}</span>investic."
+        voted_info: "Vaše hlasování je potvrzeno!"
+        voted_info_2: "Hlas však můžete kdykoli změnit, dokud nebude tato fáze uzavřena."
+        zero: Nehlasoval jste pro žádný investiční projekt.
+      reasons_for_not_balloting:
+        not_verified: O investicích mohou hlasovat pouze ověření uživatelé; %{verify_account}.
+        not_selected: Nevybrané investiční projekty nelze podpořit
+        not_enough_money: "Již jste rozdělili dostupný rozpočet. <br> <small>Pamatujte, že můžete kdykoli %{change_ballot}</small>"
+        no_ballots_allowed: Fáze výběru byla ukončena
+        different_heading_assigned: "Už jste hlasovali v jiné rozpočtové položce: %{heading_link}"
+        not_enough_available_votes: "Dosáhli jste maximálního povoleného počtu hlasů"
+        change_ballot: změnit své hlasování
+        casted_offline: Již jste se zúčastnili offline
+    groups:
+      show:
+        title: Vyberte možnost
+    phase:
+      drafting: Koncept (není veřejně viditelný)
+      informing: Informace
+      accepting: Přijímání projektů
+      reviewing: Posuzování projektů
+      selecting: Výběr projektů
+      valuating: Oceňování projektů
+      publishing_prices: Zveřejnění cen projektů
+      balloting: Hlasování o projektech
+      reviewing_ballots: Přezkoumání hlasování
+      finished: Dokončený rozpočet
+    index:
+      title: Participativní rozpočty
+      empty_budgets: Neexistují žádné rozpočty.
+      section_header:
+        icon_alt: Ikona participativního rozpočtu
+        title: Participativní rozpočty
+        help: Nápověda pro paticipativní rozpočty
+      all_phases: Fáze participativního rozpočtu
+      next_phase: Další fáze
+      prev_phase: Předchozí fáze
+      current_phase: Aktuální fáze
+      map: Lokalizace návrhů pro participativní rozpočet
+      finished_budgets: Ukončené participativní rozpočty
+      see_results: Zobrazit výsledky
+      section_footer:
+        title: Nápověda pro participativní rozpočet
+        description: Prostřednictvím participativních rozpočtů se občané rozhodnou, které projekty budou zahrnuty do rozpočtu.
+      milestones: Milníky
+    investments:
+      form:
+        title: "Přidat investiční projekt"
+        subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
+        tag_category_label: "Kategorie"
+        tags_instructions: "Štítek tohoto návrhu. Můžete si vybrat z kategorií nebo přidat vlastní"
+        tags_label: Štítky
+        tags_placeholder: "Zadejte štítky, které chcete používat, oddělené čárkami (',')"
+        map_location: "Mapa umístění"
+        map_location_instructions: "Nalezněte mapu lokality a umístěte kliknutím značku."
+        map_remove_marker: "Odstranit značku z mapy"
+      index:
+        title: Participativní rozpočtování
+        unfeasible: Nerealizovatelné investiční projekty
+        unfeasible_text: "Investice musí splňovat řadu kritérií (zákonnost, konkrétní věc, odpovědnost města, nesmí překročit hranici rozpočtu), aby byly prohlášeny za životaschopné a byly zařazeny do konečného hlasování. Všechny investice, které nesplňují tato kritéria, jsou označeny jako neuskutečnitelné a publikovány v následujícím seznamu spolu se zprávou o neudržitelnosti."
+        by_heading: "Investiční projekty s působností: %{heading}"
+        search_form:
+          button: Vyhledat
+          placeholder: Vyhledat investiční projekty...
+          title: Vyhledat
+        sidebar:
+          my_ballot: Moje hlasování
+          voted_info:
+            knapsack:
+              one: "<strong>Odhlasovali jste jeden návrh s náklady %{amount_spent}</strong>"
+              few: "<strong>Odhlasovali jste %{count} návrhy s náklady %{amount_spent}</strong>"
+              many: "<strong>Odhlasovali jste %{count} návrhů s náklady %{amount_spent}</strong>"
+              other: "<strong>Odhlasovali jste %{count} návrhů s náklady %{amount_spent}</strong>"
+            approval:
+              one: "<strong>Odhlasovali jste jeden návrh</strong>"
+              few: "<strong>Odhlasovali jste %{count} návrhy</strong>"
+              many: "<strong>Odhlasovali jste %{count} návrhů</strong>"
+              other: "<strong>Odhlasovali jste %{count} návrhů</strong>"
+          change_vote_info:
+            knapsack: "Můžete %{link} kdykoli před %{phase_end_date}. Není třeba utrácet všechny dostupné peníze."
+            approval: "Můžete %{link} kdykoli až do %{phase_end_date}."
+          change_vote_link: "změnit své hlasování"
+          different_heading_assigned: "Už jste hlasovali v jiné položce: %{heading_link}"
+          change_ballot: "Pokud změníte názor, můžete odebrat své hlasy v %{check_ballot} a začít znovu."
+          check_ballot_link: "kontrola mého hlasování"
+          zero: V této skupině jste nehlasovali pro žádný investiční projekt.
+          verified_only: "Pro vytvoření nové položky participativního rozpočtu %{verify}."
+          create: "Přidat investiční projekt"
+          not_logged_in: "Pro vytvoření nové položky participativního rozpočtu musíte %{sign_in} nebo%{sign_up}."
+        filter: "Filtrování projektů podle"
+        filters:
+          not_unfeasible: "Není neproveditelné"
+          selected: "Vybrané"
+          unfeasible: "Nerealizovatelné"
+          unselected: "Nevybráno"
+          winners: "Vítězové"
+        orders:
+          random: náhodné pořadí
+          confidence_score: nejlépe hodnocené
+          price: podle ceny
+      share:
+        message: "Vytvořil(a) jsem investiční projekt %{title} v %{handle}. Vytvořte také investiční projekt!"
+      show:
+        author_deleted: Uživatel
+        price_explanation: Vysvětlení nákladů
+        unfeasibility_explanation: Vysvětlení neproveditelnosti
+        code: "Kód investičního projektu: <strong>%{code}</strong>"
+        location: "Umístění: <strong>%{location}</strong>"
+        organization_name: "Navrhované jménem: <strong>%{name}</strong>"
+        share: Sdílet
+        title: Investiční projekt
+        supports: Podpora
+        votes: Hlasů
+        price: Cena
+        comments_tab: Komentáře
+        milestones_tab: Milníky
+        author: Autor
+        project_unfeasible: "Tento investiční projekt <strong>byla označen jako neuskutečnitelný</strong> a nepůjde do fáze závěrečného hlasování."
+        project_selected: "Tento investiční projekt <strong>byl zařazen</strong> do fáze závěrečného hlasování."
+        project_winner: "Vítězný investiční projekt"
+        project_not_selected: "Tento investiční projekt <strong>nebyl zařazen</strong> do fáze závěrečného hlasování."
+        see_price_explanation: Viz vysvětlení nákladů
+      wrong_price_format: Pouze celá čísla
+      investment:
+        add: Hlasujte
+        add_label: "Hlasuji pro %{investment}"
+        already_added: Tento investiční projekt jste již přidali
+        support_title: Podpořit tento projekt
+        supports:
+          zero: Žádná podpora
+          one: Jedna podpora
+          few: "%{count} podpory"
+          many: "%{count} podpor"
+          other: "%{count} podpor"
+      header:
+        check_ballot: "Kontrola mého hlasování"
+        different_heading_assigned: "Už jste hlasovali v jiné rozpočtové položce: %{heading_link}"
+        change_ballot: "Pokud změníte názor, můžete odebrat své hlasy v %{check_ballot} a začít znovu."
+        check_ballot_link: "kontrola mého hlasování"
+        price: "Tato položka má rozpočet"
+      votes:
+        already_supported: "Tento návrh jste již podpořili. Sdílejte jej!"
+        confirm_group:
+          one: "Lze podpořit investice pouze v %{count} městské čtvrti. Pokud budete pokračovat, nemůžete změnit hlasování ve vaší městské čtvrti. Jste si jist?"
+          few: "Lze podpořit investice pouze ve %{count} městských čtvrtích. Pokud budete pokračovat, nemůžete změnit hlasování ve vaší městské čtvrti. Jste si jist?"
+          many: "Lze podpořit investice pouze v %{count} městských čtvrtích. Pokud budete pokračovat, nemůžete změnit hlasování ve vaší městské čtvrti. Jste si jist?"
+          other: "Lze podpořit investice pouze v %{count} městských čtvrtích. Pokud budete pokračovat, nemůžete změnit hlasování ve vaší městské čtvrti. Jste si jist?"
+        remove_support: "Odebrat podporu"
+        remove_support_label: "Odeberte svou podporu k %{investment}"
+        support: "Podpořte!"
+        support_label: "Podpora %{investment}"
+    investments_list:
+      investment:
+        price: "Cena"
+        read_more: "Čtěte více"
+        supports: "Podporuje"
+      see_all: "Zobrazit všechny investice"
+      title: "Přehled investic"
+    show:
+      see_results: Zobrazit výsledky
+    supports_info:
+      different: "Můžete podpořit libovolný počet různých projektů."
+      next: "Podpořte projekty, které byste rádi viděli postoupit do další fáze."
+      scrolling: "Projděte si všechny nápady"
+      share: "Projekty, které jste podpořili, můžete sdílet prostřednictvím sociálních médií a přitáhnout k nim více pozornosti a podpory!"
+      supported:
+        one: "Zatím jste podpořili <strong>1 projekt</strong>."
+        few: "Zatím jste podpořili <strong>%{count} projekty</strong>."
+        many: "Zatím jste podpořili <strong>%{count} projektů</strong>."
+        other: "Zatím jste podpořili <strong>%{count} projektů</strong>."
+      supported_not_logged_in: "Přihlaste se a začněte <strong>podporovat projekty</strong>."
+      time: "Do %{phase_end_date} je ještě čas na podporu projektů."
+      title: "Je čas <strong>podpořit</strong> projekty!"
+    results:
+      link: Výsledky
+      page_title: "%{budget} - výsledky"
+      heading: "Výsledky participativního rozpočtu"
+      heading_selection_title: "Podle městských částí"
+      ballot_lines_count: Hlasů
+      hide_discarded_link: Skrýt vyřazené
+      show_all_link: Zobrazit vše
+      price: Price
+      amount_available: Rozpočet k dispozici
+      accepted: "Přijatelné výdaje návrhu: "
+      discarded: "Vyřazené náklady návrhu: "
+      incompatibles: Nekompatibilní
+      investment_title: Název projektu
+      investment_proyects: Seznam všech investičních projektů
+      unfeasible_investment_proyects: Seznam všech nerealizovatelných investičních projektů
+      not_selected_investment_proyects: Seznam všech nerealizovatelných investičních projektů odmítnutých pro hlasování
+    executions:
+      link: "Milníky"
+      page_title: "%{budget} - Milníky"
+      heading: "Participatory Milníky rozpočtu"
+      heading_selection_title: "Podle městských částí"
+      no_winner_investments: "V tomto stavu není žádná vítězná investice"
+      filters:
+        status:
+          label: "Aktuální stav projektu"
+          all: "Vše (%{count})"
+        milestone_tag:
+          label: "Označení milníku"
+          all: "Všech (%{count})"
+    phases:
+      errors:
+        dates_range_invalid: "Počáteční datum nemůže být stejné nebo pozdější než koncové datum"
+        prev_phase_dates_invalid: "Počáteční datum musí být pozdější než počáteční datum předchozí povolené fáze (%{phase_name})"
+        next_phase_dates_invalid: "Konečné datum musí být dřívější než datum ukončení další povolené fáze (%{phase_name})"

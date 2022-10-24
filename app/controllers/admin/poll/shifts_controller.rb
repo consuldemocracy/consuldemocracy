@@ -1,13 +1,12 @@
 class Admin::Poll::ShiftsController < Admin::Poll::BaseController
-
   before_action :load_booth
   before_action :load_officer
 
   def new
     load_shifts
     @shift = ::Poll::Shift.new
-    @voting_polls = @booth.polls.current_or_incoming
-    @recount_polls = @booth.polls.current_or_recounting_or_incoming
+    @voting_polls = @booth.polls.current
+    @recount_polls = @booth.polls.current_or_recounting
   end
 
   def create
@@ -26,13 +25,18 @@ class Admin::Poll::ShiftsController < Admin::Poll::BaseController
 
   def destroy
     @shift = Poll::Shift.find(params[:id])
-    @shift.destroy
-    notice = t("admin.poll_shifts.flash.destroy")
-    redirect_to new_admin_booth_shift_path(@booth), notice: notice
+    if @shift.unable_to_destroy?
+      alert = t("admin.poll_shifts.flash.unable_to_destroy")
+      redirect_to new_admin_booth_shift_path(@booth), alert: alert
+    else
+      @shift.destroy!
+      notice = t("admin.poll_shifts.flash.destroy")
+      redirect_to new_admin_booth_shift_path(@booth), notice: notice
+    end
   end
 
   def search_officers
-    @officers = User.search(params[:search]).order(username: :asc).select { |o| o.poll_officer? }
+    @officers = User.search(params[:search]).order(username: :asc).select(&:poll_officer?)
   end
 
   private
@@ -52,9 +56,13 @@ class Admin::Poll::ShiftsController < Admin::Poll::BaseController
     end
 
     def shift_params
-      date_attributes = [:vote_collection_date, :recount_scrutiny_date]
-      attributes = [:booth_id, :officer_id, :task, date: date_attributes]
-      shift_params = params.require(:shift).permit(*attributes)
+      shift_params = params.require(:shift).permit(allowed_params)
       shift_params.merge(date: shift_params[:date]["#{shift_params[:task]}_date".to_sym])
+    end
+
+    def allowed_params
+      date_attributes = [:vote_collection_date, :recount_scrutiny_date]
+
+      [:booth_id, :officer_id, :task, date: date_attributes]
     end
 end
