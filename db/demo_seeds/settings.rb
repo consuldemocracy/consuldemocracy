@@ -5,7 +5,6 @@ section "Creating DEMO Settings" do
     "meta_description": "Citizen participation tool for an open, transparent and democratic government",
     "meta_keywords": "citizen participation, open government",
     "meta_title": "CONSUL DEMO",
-    "mailer_from_address": "noreply@demo.consulproject.org",
     "mailer_from_name": "CONSUL",
     "feature.map": true,
     "feature.remove_investments_supports": true,
