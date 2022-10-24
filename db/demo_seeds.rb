@@ -1,5 +1,18 @@
+Tenant.destroy_all if Tenant.default?
+internal_tables = [
+  ActiveRecord::Base.internal_metadata_table_name,
+  ActiveRecord::Base.schema_migrations_table_name
+]
+tables = ActiveRecord::Base.connection.tables - internal_tables
+
+ActiveRecord::Base.connection.execute("TRUNCATE TABLE #{tables.join(", ")} RESTART IDENTITY")
+
 @logger = Logger.new(STDOUT)
 @logger.formatter = proc { |_severity, _datetime, _progname, msg| msg }
+
+def load_demo_seeds(demo_seeds_file)
+  load Rails.root.join("db", "demo_seeds", "#{demo_seeds_file}.rb")
+end
 
 def section(section_title)
   @logger.info section_title
@@ -25,18 +38,20 @@ def add_image(image, imageable)
   imageable.save
 end
 
+log "Creating demo seeds for tenant #{Tenant.current_schema}" unless Tenant.default?
 load Rails.root.join("db", "seeds.rb")
 
-require_relative "demo_seeds/settings"
-require_relative "demo_seeds/geozones"
-require_relative "demo_seeds/users"
-require_relative "demo_seeds/tags_categories"
-require_relative "demo_seeds/debates"
-require_relative "demo_seeds/proposals"
-require_relative "demo_seeds/polls"
-require_relative "demo_seeds/legislation_processes"
-require_relative "demo_seeds/budgets"
-require_relative "demo_seeds/widgets"
-require_relative "demo_seeds/sdg"
+load_demo_seeds "settings"
+load_demo_seeds "geozones"
+load_demo_seeds "users"
+load_demo_seeds "tags_categories"
+load_demo_seeds "debates"
+load_demo_seeds "proposals"
+load_demo_seeds "polls"
+load_demo_seeds "legislation_processes"
+load_demo_seeds "budgets"
+load_demo_seeds "widgets"
+load_demo_seeds "sdg"
+load_demo_seeds "tenants" if Tenant.default?
 
 log "DEMO seeds created successfuly 👍"
