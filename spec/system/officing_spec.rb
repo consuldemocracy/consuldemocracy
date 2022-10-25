@@ -61,7 +61,6 @@ describe "Poll Officing" do
 
   scenario "Access as an administrator is not authorized" do
     create(:administrator, user: user)
-    create(:poll)
     login_as(user)
 
     visit officing_root_path
@@ -74,7 +73,6 @@ describe "Poll Officing" do
   scenario "Access as an administrator with poll officer role is authorized" do
     create(:administrator, user: user)
     create(:poll_officer, user: user)
-    create(:poll)
     login_as(user)
     visit root_path
 
@@ -87,7 +85,6 @@ describe "Poll Officing" do
 
   scenario "Access as a poll officer is authorized" do
     create(:poll_officer, user: user)
-    create(:poll)
     login_as(user)
     visit root_path
 
