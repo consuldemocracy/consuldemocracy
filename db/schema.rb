@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(version: 2022_09_15_154808) do
   create_table "activities", id: :serial, force: :cascade do |t|
     t.integer "user_id"
     t.string "action"
-    t.string "actionable_type"
     t.integer "actionable_id"
+    t.string "actionable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["actionable_id", "actionable_type"], name: "index_activities_on_actionable_id_and_actionable_type"
@@ -101,6 +101,22 @@ ActiveRecord::Schema.define(version: 2022_09_15_154808) do
     t.index ["time"], name: "index_ahoy_events_on_time"
     t.index ["user_id"], name: "index_ahoy_events_on_user_id"
     t.index ["visit_id"], name: "index_ahoy_events_on_visit_id"
+  end
+
+  create_table "area_translations", id: :serial, force: :cascade do |t|
+    t.integer "area_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.index ["area_id"], name: "index_area_translations_on_area_id"
+    t.index ["locale"], name: "index_area_translations_on_locale"
+  end
+
+  create_table "areas", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "audits", id: :serial, force: :cascade do |t|
@@ -285,25 +301,33 @@ ActiveRecord::Schema.define(version: 2022_09_15_154808) do
     t.string "location"
     t.string "organization_name"
     t.datetime "unfeasible_email_sent_at"
+    t.datetime "ignored_flag_at"
+    t.text "moderation_text"
+    t.integer "flags_count", default: 0
+    t.integer "cached_ballots_up", default: 0, null: false
     t.integer "ballot_lines_count", default: 0
     t.integer "previous_heading_id"
     t.boolean "winner", default: false
     t.boolean "incompatible", default: false
     t.integer "community_id"
+    t.boolean "selected_by_assembly", default: false, null: false
     t.boolean "visible_to_valuators", default: false
     t.integer "valuator_group_assignments_count", default: 0
     t.datetime "confirmed_hide_at"
-    t.datetime "ignored_flag_at"
-    t.integer "flags_count", default: 0
+    t.datetime "accepted_at"
+    t.integer "sub_area_id"
+    t.integer "geozone_id"
     t.integer "original_heading_id"
     t.index ["administrator_id"], name: "index_budget_investments_on_administrator_id"
     t.index ["author_id"], name: "index_budget_investments_on_author_id"
     t.index ["budget_id"], name: "index_budget_investments_on_budget_id"
     t.index ["community_id"], name: "index_budget_investments_on_community_id"
+    t.index ["geozone_id"], name: "index_budget_investments_on_geozone_id"
     t.index ["group_id"], name: "index_budget_investments_on_group_id"
     t.index ["heading_id"], name: "index_budget_investments_on_heading_id"
     t.index ["incompatible"], name: "index_budget_investments_on_incompatible"
     t.index ["selected"], name: "index_budget_investments_on_selected"
+    t.index ["sub_area_id"], name: "index_budget_investments_on_sub_area_id"
     t.index ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
   end
 
@@ -392,6 +416,7 @@ ActiveRecord::Schema.define(version: 2022_09_15_154808) do
     t.text "description_drafting"
     t.text "description_publishing_prices"
     t.text "description_informing"
+    t.boolean "areas", default: false
     t.string "voting_style", default: "knapsack"
     t.boolean "published"
     t.boolean "hide_money", default: false
@@ -580,8 +605,8 @@ ActiveRecord::Schema.define(version: 2022_09_15_154808) do
     t.bigint "attachment_file_size"
     t.datetime "attachment_updated_at"
     t.integer "user_id"
-    t.string "documentable_type"
     t.integer "documentable_id"
+    t.string "documentable_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false
@@ -618,8 +643,8 @@ ActiveRecord::Schema.define(version: 2022_09_15_154808) do
 
   create_table "follows", id: :serial, force: :cascade do |t|
     t.integer "user_id"
-    t.string "followable_type"
     t.integer "followable_id"
+    t.string "followable_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["followable_type", "followable_id"], name: "index_follows_on_followable_type_and_followable_id"
@@ -667,8 +692,8 @@ ActiveRecord::Schema.define(version: 2022_09_15_154808) do
   end
 
   create_table "images", id: :serial, force: :cascade do |t|
-    t.string "imageable_type"
     t.integer "imageable_id"
+    t.string "imageable_type"
     t.string "title", limit: 80
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -963,8 +988,8 @@ ActiveRecord::Schema.define(version: 2022_09_15_154808) do
   end
 
   create_table "milestones", id: :serial, force: :cascade do |t|
-    t.string "milestoneable_type"
     t.integer "milestoneable_id"
+    t.string "milestoneable_type"
     t.datetime "publication_date"
     t.integer "status_id"
     t.datetime "created_at", null: false
@@ -998,8 +1023,8 @@ ActiveRecord::Schema.define(version: 2022_09_15_154808) do
 
   create_table "notifications", id: :serial, force: :cascade do |t|
     t.integer "user_id"
-    t.string "notifiable_type"
     t.integer "notifiable_id"
+    t.string "notifiable_type"
     t.integer "counter", default: 1
     t.datetime "emailed_at"
     t.datetime "read_at"
@@ -1226,9 +1251,12 @@ ActiveRecord::Schema.define(version: 2022_09_15_154808) do
     t.integer "comments_count", default: 0
     t.integer "author_id"
     t.datetime "hidden_at"
-    t.string "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string "kind"
+    t.boolean "when_show_results", default: false
+    t.boolean "when_show_stats", default: false
+    t.string "slug"
     t.integer "budget_id"
     t.string "related_type"
     t.integer "related_id"
@@ -1331,10 +1359,10 @@ ActiveRecord::Schema.define(version: 2022_09_15_154808) do
   end
 
   create_table "related_contents", id: :serial, force: :cascade do |t|
-    t.string "parent_relationable_type"
     t.integer "parent_relationable_id"
-    t.string "child_relationable_type"
+    t.string "parent_relationable_type"
     t.integer "child_relationable_id"
+    t.string "child_relationable_type"
     t.integer "related_content_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -1449,8 +1477,8 @@ ActiveRecord::Schema.define(version: 2022_09_15_154808) do
   end
 
   create_table "signature_sheets", id: :serial, force: :cascade do |t|
-    t.string "signable_type"
     t.integer "signable_id"
+    t.string "signable_type"
     t.text "required_fields_to_verify"
     t.boolean "processed", default: false
     t.integer "author_id"
@@ -1520,12 +1548,29 @@ ActiveRecord::Schema.define(version: 2022_09_15_154808) do
     t.index ["process_type", "process_id"], name: "index_stats_versions_on_process_type_and_process_id"
   end
 
+  create_table "sub_area_translations", id: :serial, force: :cascade do |t|
+    t.integer "sub_area_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.index ["locale"], name: "index_sub_area_translations_on_locale"
+    t.index ["sub_area_id"], name: "index_sub_area_translations_on_sub_area_id"
+  end
+
+  create_table "sub_areas", id: :serial, force: :cascade do |t|
+    t.text "name"
+    t.integer "area_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "taggings", id: :serial, force: :cascade do |t|
     t.integer "tag_id"
-    t.string "taggable_type"
     t.integer "taggable_id"
-    t.string "tagger_type"
+    t.string "taggable_type"
     t.integer "tagger_id"
+    t.string "tagger_type"
     t.string "context", limit: 128
     t.datetime "created_at"
     t.index ["context"], name: "index_taggings_on_context"
@@ -1625,10 +1670,10 @@ ActiveRecord::Schema.define(version: 2022_09_15_154808) do
     t.boolean "created_from_signature", default: false
     t.integer "failed_email_digests_count", default: 0
     t.text "former_users_data_log", default: ""
-    t.integer "balloted_heading_id"
     t.boolean "public_interests", default: false
     t.boolean "recommended_debates", default: true
     t.boolean "recommended_proposals", default: true
+    t.integer "balloted_heading_id"
     t.string "subscriptions_token"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["date_of_birth"], name: "index_users_on_date_of_birth"
@@ -1708,10 +1753,10 @@ ActiveRecord::Schema.define(version: 2022_09_15_154808) do
   end
 
   create_table "votes", id: :serial, force: :cascade do |t|
-    t.string "votable_type"
     t.integer "votable_id"
-    t.string "voter_type"
+    t.string "votable_type"
     t.integer "voter_id"
+    t.string "voter_type"
     t.boolean "vote_flag"
     t.string "vote_scope"
     t.integer "vote_weight"

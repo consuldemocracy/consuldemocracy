@@ -11,6 +11,81 @@
   <%= render 'shared/canonical', href: budget_executions_url(@budget) %>
 <% end %>
 
+<div class="budgets-stats">
+  <div class="expanded no-margin-top padding header">
+    <div class="row">
+      <div class="small-12 column">
+        <%= back_link_to budgets_path %>
+        <h2 class="margin-top">
+          <%= t("budgets.executions.heading") %><br>
+          <span><%= @budget.name %></span>
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "budgets/subnav", budget: @budget %>
+
+<div class="row">
+  <div class="small-12 medium-3 large-2 column">
+    <h3 class="margin-bottom">
+      <%= t("budgets.executions.heading_selection_title") %>
+    </h3>
+    <ul class="menu vertical no-margin-top no-padding-top">
+      <% @investments_by_heading.each_pair do |heading, investments| %>
+        <li>
+          <%= link_to heading.name, "#" + heading.name.parameterize %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="small-12 medium-9 large-10 column">
+    <%= render Budgets::Executions::FiltersComponent.new(@budget, @statuses) %>
+
+    <% if @investments_by_heading.any? %>
+      <%= render "budgets/executions/investments" %>
+    <% else %>
+      <div class="callout primary clear">
+        <%= t("budgets.executions.no_winner_investments") %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="expanded no-margin-top padding">
   <div class="row">
     <div class="small-12 column">
@@ -33,7 +108,7 @@
       </li>
       <% if @budget.finished? %>
         <li class="tabs-title">
-          <%= link_to t("progress.progress_link"), budget_progress_path(@budget) %>
+          <%#= link_to t("progress.progress_link"), budget_progress_path(@budget) %>
         </li>
       <% end %>
     </ul>

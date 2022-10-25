@@ -472,7 +472,6 @@ class Budget
           description => "D" }
       end
   end
-end
 
 # == Schema Information
 #

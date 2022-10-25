@@ -1,10 +1,9 @@
-class User < ActiveRecord::Base
-
+class User < ApplicationRecord
   include Verification
 
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable,
-         :trackable, :validatable, :omniauthable, :async, :password_expirable, :secure_validatable,
-         :timeoutable, authentication_keys: [:login]
+         :trackable, :validatable, :omniauthable, :password_expirable, :secure_validatable,
+         authentication_keys: [:login]
 
   acts_as_voter
   acts_as_paranoid column: :hidden_at

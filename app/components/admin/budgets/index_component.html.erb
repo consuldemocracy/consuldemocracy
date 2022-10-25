@@ -27,7 +27,7 @@
             <strong><%= budget.name %></strong>
           </td>
           <td>
-            <%= budget.current_phase.name %>
+            <%= budget.current_phase&.name %>
             <small><%= phase_progress_text(budget) %></small>
           </td>
           <td><%= type(budget) %></td>

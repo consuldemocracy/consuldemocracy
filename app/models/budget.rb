@@ -27,7 +27,6 @@ class Budget < ApplicationRecord
   validates_translation :name, presence: true
   validates_translation :main_link_url, presence: true, unless: -> { main_link_text.blank? }
   validates :phase, inclusion: { in: ->(*) { Budget::Phase::PHASE_KINDS }}
-  #validates :phase, inclusion: { in: Budget::Phase::PHASE_KINDS }
   validates :currency_symbol, presence: true
   validates :slug, presence: true, format: /\A[a-z0-9\-_]+\z/
   validates :voting_style, inclusion: { in: ->(*) { VOTING_STYLES }}
@@ -242,8 +241,6 @@ class Budget < ApplicationRecord
   #   end
   #   headings.count == 1 ? headings.first : false
   # end
-
-  private
 
   # def sanitize_descriptions
   #   s = WYSIWYGSanitizer.new

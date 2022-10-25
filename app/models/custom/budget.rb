@@ -1,8 +1,7 @@
 
 require_dependency Rails.root.join('app', 'models', 'budget').to_s
 
-
-class Budget < ActiveRecord::Base
+class Budget < ApplicationRecord
 
   def self.current_budget
     current.last
