@@ -102,7 +102,7 @@ describe Layout::AdminLoginItemsComponent do
   end
 
   it "shows the officing link to poll officers" do
-    user = create(:poll_officer, polls: [create(:poll)]).user
+    user = create(:poll_officer).user
 
     render_inline Layout::AdminLoginItemsComponent.new(user)
 
