@@ -23,7 +23,7 @@
   @include base-button;
 }
 
-@mixin hollow-button($color: $link) {
+@mixin hollow-button($color: $brand) {
   @include button($style: hollow, $background: $color);
   @include normal-selection;
   @include base-button;

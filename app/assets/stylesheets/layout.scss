@@ -146,9 +146,8 @@ button,
 }
 
 .button.hollow {
-  @include normal-selection;
+  @include brand-text;
   border: 1px solid;
-  color: $link;
 }
 
 .button.hollow.error {
@@ -1375,14 +1374,18 @@ form {
     }
   }
 
+  .notification-link {
+    color: inherit;
+
+    &:hover {
+      color: $link;
+    }
+  }
+
   &:hover {
 
     a {
       text-decoration: none;
-    }
-
-    p:not(.time) {
-      color: $link;
     }
 
     &::before {
@@ -1405,7 +1408,6 @@ form {
   }
 
   p {
-    color: $text;
     margin-bottom: 0;
     max-width: 80%;
   }
@@ -2359,8 +2361,7 @@ table {
 }
 
 .add-related-content {
-  color: $link;
-  cursor: pointer;
+  @include link;
   display: block;
   margin-bottom: $line-height;
 
@@ -2459,7 +2460,7 @@ table {
   }
 
   a {
-    color: $link;
+    @include link;
   }
 }
 
