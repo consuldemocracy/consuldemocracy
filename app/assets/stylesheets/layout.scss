@@ -135,11 +135,6 @@ button,
   @include inverted-selection;
   background: $brand;
 
-  &.warning,
-  &.warning:hover {
-    color: #000;
-  }
-
   &.medium {
     font-size: $small-font-size;
   }
@@ -259,15 +254,11 @@ button,
     }
 
     a {
-      color: inherit;
+      @include text-colored-link;
       display: inline-block;
       font-weight: bold;
       position: relative;
       text-align: left;
-
-      &:hover {
-        color: $link;
-      }
     }
 
     + li {
@@ -642,8 +633,7 @@ body > header,
     }
 
     &.is-dropdown-submenu {
-      background: $body-background;
-      color: $text;
+      @extend %body-colors;
       margin: 0;
       margin-top: rem-calc(-12);
       padding: 0;
@@ -751,8 +741,6 @@ body > header,
   flex-direction: column;
 
   @include breakpoint(medium) {
-    background: $body-background;
-    color: $text;
     flex-direction: row;
     padding-bottom: 0;
 
@@ -790,20 +778,16 @@ body > header,
       &:hover {
         color: $link;
       }
-    }
 
-    &:focus {
-      z-index: 1;
-    }
-
-    &.is-active {
-      color: #fff;
-
-      @include breakpoint(medium) {
+      &.is-active {
         @include brand-text;
         border-bottom: 2px solid;
         margin-bottom: 1px;
       }
+    }
+
+    &:focus {
+      z-index: 1;
     }
   }
 
@@ -856,7 +840,7 @@ body > header,
   margin-bottom: $line-height / 2;
 
   a {
-    color: inherit;
+    @include text-colored-link;
     display: inline-block;
     font-weight: bold;
     margin-right: $line-height / 2;
@@ -865,10 +849,6 @@ body > header,
 
     @include breakpoint(medium) {
       margin-right: $line-height;
-    }
-
-    &:hover {
-      color: $link;
     }
   }
 
@@ -1196,10 +1176,6 @@ form {
     background-color: $info-bg;
     border-color: $info-border;
     color: $color-info;
-
-    a {
-      color: $link !important;
-    }
   }
 
   &.warning {
@@ -1375,11 +1351,7 @@ form {
   }
 
   .notification-link {
-    color: inherit;
-
-    &:hover {
-      color: $link;
-    }
+    @include text-colored-link;
   }
 
   &:hover {
@@ -1505,7 +1477,7 @@ table {
 .button.button-facebook,
 .button.button-google,
 .button.button-wordpress {
-  color: $text;
+  color: inherit;
   font-weight: bold;
 
   &::before {
@@ -1775,8 +1747,6 @@ table {
 // ------------
 
 .comments {
-  background: $body-background;
-  background-repeat: repeat-x;
   padding-bottom: $line-height * 4;
 
   h2 {
@@ -1874,11 +1844,9 @@ table {
 
   .delete-comment {
     @include has-fa-icon(trash-alt, regular);
-    color: $delete;
 
-    &:hover,
-    &:active {
-      color: $link-hover;
+    &:not(:hover):not(:active) {
+      color: $delete;
     }
 
     &::before {
@@ -1941,13 +1909,11 @@ table {
 }
 
 .comment-info {
-  color: $text-medium;
   display: inline-block;
   font-size: $small-font-size;
   line-height: rem-calc(32); // Same as avatar height
 
   .user-name {
-    color: $text;
     font-weight: bold;
   }
 }
@@ -2635,9 +2601,8 @@ table {
     }
 
     span {
-      background: $body-background;
+      @extend %body-colors;
       border-radius: rem-calc(4);
-      color: $text;
       display: inline-block;
       font-size: $small-font-size;
       font-weight: bold;

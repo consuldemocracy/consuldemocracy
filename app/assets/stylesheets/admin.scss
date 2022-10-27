@@ -135,7 +135,7 @@ $table-header:   #ecf1f6;
   }
 
   .title-bar {
-    color: #000;
+    color: inherit;
     position: absolute;
     right: 12px;
   }
@@ -203,10 +203,6 @@ $table-header:   #ecf1f6;
       background: $table-header;
       color: $admin-text;
       padding: $line-height / 2;
-
-      label {
-        color: $white;
-      }
 
       a {
         color: inherit;
@@ -844,6 +840,7 @@ table {
 .fullscreen {
 
   .fullscreen-container {
+    color: $white;
 
     a {
       line-height: 3rem;
@@ -856,7 +853,6 @@ table {
     .markdown-editor-header {
       vertical-align: top;
       display: inline-block;
-      color: $white;
 
       @include breakpoint(medium) {
         line-height: 3rem;
@@ -895,7 +891,7 @@ table {
     }
 
     a {
-      color: $white;
+      color: inherit;
     }
   }
 }

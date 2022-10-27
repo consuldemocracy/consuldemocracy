@@ -28,7 +28,6 @@
 
   .ballots-link {
     @include has-fa-icon(archive, solid);
-    color: $link;
   }
 
   .results-link {

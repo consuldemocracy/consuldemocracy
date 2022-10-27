@@ -81,7 +81,7 @@
   }
 
   .supported {
-    color: $text;
+    color: inherit;
     margin-top: rem-calc(12);
   }
 }
@@ -438,7 +438,6 @@
 }
 
 %panel {
-  background: $body-background;
   border: 1px solid;
   border-color: #e5e6e9 #dfe0e4 #d0d1d5;
   border-radius: 0;
@@ -665,7 +664,6 @@
 
       &:hover {
         background: $budget-hover;
-        color: #fff;
         cursor: pointer;
       }
 
@@ -934,8 +932,7 @@
       margin-top: 0;
 
       &:hover {
-        background: $body-background;
-        color: $text;
+        @extend %body-colors;
       }
     }
 
@@ -1041,7 +1038,6 @@
 
 .jumbo-budget {
   @include full-width-border(bottom, 2px solid $border);
-  background: $body-background;
 
   &.budget-heading {
     min-height: $line-height * 10;
@@ -1476,9 +1472,8 @@
 }
 
 .zoom-link {
-  background: $body-background;
+  @extend %body-colors;
   border-radius: rem-calc(48);
-  color: $text;
   font-size: rem-calc(24);
   font-weight: bold;
   height: rem-calc(48);
@@ -1616,7 +1611,6 @@
 
 .section-title-divider {
   border-bottom: 1px solid #eee;
-  color: #000;
   margin: $line-height 0;
 
   span {
