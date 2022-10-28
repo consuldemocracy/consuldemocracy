@@ -5,21 +5,26 @@
 // `.tenant-public` selector.
 //
 // You can use CSS variables to customize the colors. Here's an example
-// changing the brand, links and main header colors for just the main
+// changing the brand, links and main layout colors for just the main
 // tenant.
 //
 // .tenant-public {
 //   --anchor-color: #372;
 //   --anchor-color-hover: #137;
 //   --brand: #153;
-//   --brand-secondary: #173a00;
+//   --brand-secondary: #134a00;
+//   --footer: #e6e6e6;
 //   --main-header: #351;
+//   --top-links: var(--main-header);
+//   --subnavigation: #ffd;
 // }
 //
 // Some colors default to another color, so you don't have to change
 // both colors if you'd like them to be the same. For instance, the
 // `--main-header` and `--anchor-color` colors will use the `--brand`
-// color if `--main-header` or `--anchor-color` are not defined.
+// color if `--main-header` or `--anchor-color` are not defined, while
+// the `--top-links` color will use the `--brand-secondary` color if
+// `--top-links` is not defined.
 //
 // If, for instance, you're using a light color for the main header when
 // the default color is a dark one, you should also change the text
