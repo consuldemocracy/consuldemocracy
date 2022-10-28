@@ -14,10 +14,6 @@
   }
 }
 
-%button {
-  @include base-button;
-}
-
 @mixin regular-button($color: $brand) {
   @include base-button;
 
@@ -29,8 +25,12 @@
 
   &:hover,
   &:focus {
-    @include background-with-text-contrast($button-background-hover);
+    @include background-with-text-contrast($button-background-hover, button-background-hover);
   }
+}
+
+%button {
+  @include regular-button;
 }
 
 @mixin hollow-button($color: $anchor-color) {

@@ -122,7 +122,6 @@ button,
 
 .button {
   @extend %button;
-  @include brand-background;
 
   &.medium {
     font-size: $small-font-size;
