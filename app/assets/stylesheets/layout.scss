@@ -693,7 +693,7 @@ body > header,
 }
 
 .top-links {
-  @include background-with-text-contrast($top-links);
+  @include background-with-text-contrast($top-links, [top-links, brand-secondary]);
   display: flex;
   flex-wrap: wrap;
   font-size: $small-font-size;
@@ -737,7 +737,7 @@ body > header,
   flex-direction: column;
 
   @include breakpoint(medium) {
-    @include background-with-text-contrast($subnavigation);
+    @include background-with-text-contrast($subnavigation, subnavigation);
     flex-direction: row;
     padding-bottom: 0;
 
@@ -913,7 +913,7 @@ footer {
 }
 
 .footer {
-  @include background-with-text-contrast($footer);
+  @include background-with-text-contrast($footer, footer);
   clear: both;
   margin-top: $line-height * 2;
   padding-bottom: $line-height;
