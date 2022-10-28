@@ -39,3 +39,43 @@
 //
 // NOTE: If you are **not** using mulitenancy, we recommend overwriting
 // SCSS variables in the `_consul_custom_overrides.scss` file instead
+
+.tenant-megacity {
+  --brand: #83004a;
+  --brand-secondary: #63003a;
+  --main-header: #003a93;
+}
+
+.tenant-middletown {
+  --brand: #ffa;
+  --brand: #004a83;
+  --brand: #834a00;
+  --brand: #83004a;
+  --brand: #f60;
+  --brand: #350;
+  --brand-secondary: #173a00;
+  --main-header: #007a90;
+}
+
+.tenant-microvillage {
+  --anchor-color: #073;
+  --anchor-color-hover: #626;
+  --button-background-hover: #fc6;
+  --button-background-hover-contrast: #{$black};
+  --footer: #{$info-bg};
+  --main-header: #{$white};
+  --main-header-contrast: #{$black};
+  --subnavigation: var(--brand, #{$brand});
+  --subnavigation-contrast: #{$white};
+  --top-links: #{$white};
+  --top-links-contrast: #{$black};
+
+  .public > .wrapper > header img {
+    filter: invert(100%);
+  }
+
+  .subnavigation {
+    --anchor-color: #fdfdcc;
+    --brand: #{$info-border};
+  }
+}
