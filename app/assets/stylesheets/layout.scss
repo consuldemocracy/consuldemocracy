@@ -696,8 +696,7 @@ body > header,
 }
 
 .top-links {
-  background: $dark;
-  color: $white;
+  @include background-with-text-contrast($dark);
   display: flex;
   flex-wrap: wrap;
   font-size: $small-font-size;
@@ -808,10 +807,9 @@ body > header,
     padding-bottom: 0;
 
     button {
-      background: $border;
+      @include background-with-text-contrast($border);
       border: 1px solid #ccc;
       border-left: 0;
-      color: $text;
       height: $line-height * 1.5;
       line-height: $line-height * 1.5;
       padding-top: 0;
@@ -976,10 +974,9 @@ footer {
 }
 
 .auth-image {
-  background-color: $brand;
+  @include background-with-text-contrast($brand);
   background-repeat: no-repeat;
   background-size: cover;
-  color: $white;
 
   @include breakpoint(medium) {
     min-height: $line-height * 42;

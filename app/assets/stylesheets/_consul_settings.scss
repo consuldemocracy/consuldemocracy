@@ -43,6 +43,7 @@ $small-font-size: rem-calc(14) !default;
 $abbr-underline: none !default;
 
 $orbit-bullet-diameter: 0.8rem !default;
+$orbit-caption-background: #eee;
 
 $show-header-for-stacked: true !default;
 
@@ -123,6 +124,7 @@ $off-screen-left: -1000rem !default;
 
 $sdg-icon-min-width: 45px !default;
 
+$sdg-text: #fff;
 $sdg-colors: (
   1: #e5243b,
   2: #dda63a,

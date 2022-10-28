@@ -458,8 +458,7 @@
   max-width: rem-calc(600);
 
   .mail-header {
-    background: $pdf-primary;
-    color: #fff;
+    @include background-with-text-contrast($pdf-primary);
     padding: $line-height * 2;
 
     img {
@@ -513,8 +512,7 @@
 .dashboard-poster-preview,
 .dashboard-poster-pdf {
   .poster-header {
-    background: $pdf-primary;
-    color: #fff;
+    @include background-with-text-contrast($pdf-primary);
 
     h1 {
       text-align: left;

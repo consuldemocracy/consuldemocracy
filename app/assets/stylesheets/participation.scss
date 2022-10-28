@@ -657,8 +657,7 @@
     }
 
     .button-support {
-      background: $budget;
-      color: #fff;
+      @include background-with-text-contrast($budget);
       font-size: $base-font-size;
       font-weight: bold;
 
@@ -781,7 +780,7 @@
     width: rem-calc(36);
 
     &::before {
-      color: $text;
+      color: color-pick-contrast(#eee);
       font-family: "icons";
     }
   }
@@ -1461,11 +1460,6 @@
   position: relative;
 }
 
-.orbit-caption {
-  background: #eee;
-  color: $text;
-}
-
 .orbit-next,
 .orbit-previous {
   background: rgba(34, 34, 34, 0.25);
@@ -1488,8 +1482,7 @@
   cursor: pointer;
 
   &:hover {
-    background: $dark;
-    color: #fff;
+    @include background-with-text-contrast($dark);
     text-decoration: none;
   }
 }
@@ -1640,7 +1633,7 @@
     &.answered {
       background: #f4f8ec;
       border: 2px solid #92ba48;
-      color: $text;
+      color: color-pick-contrast(#f4f8ec);
       position: relative;
 
       &::after {
