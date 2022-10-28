@@ -125,7 +125,7 @@ button,
 
 .button {
   @extend %button;
-  @include inverted-selection;
+  @include inverted-selection($brand);
   background: $brand;
 
   &.medium {
