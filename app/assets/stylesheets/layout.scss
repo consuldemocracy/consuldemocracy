@@ -547,7 +547,7 @@ body > header,
   }
 
   .top-bar {
-    @extend %brand-background;
+    @include background-with-text-contrast($main-header);
   }
 }
 
@@ -690,7 +690,7 @@ body > header,
 }
 
 .top-links {
-  @include background-with-text-contrast($brand-secondary);
+  @include background-with-text-contrast($top-links);
   display: flex;
   flex-wrap: wrap;
   font-size: $small-font-size;
@@ -734,6 +734,7 @@ body > header,
   flex-direction: column;
 
   @include breakpoint(medium) {
+    @include background-with-text-contrast($subnavigation);
     flex-direction: row;
     padding-bottom: 0;
 
@@ -909,7 +910,7 @@ footer {
 }
 
 .footer {
-  background: #f1f1f1;
+  @include background-with-text-contrast($footer);
   clear: both;
   margin-top: $line-height * 2;
   padding-bottom: $line-height;
