@@ -95,16 +95,9 @@ p {
 }
 
 a {
-  color: $link;
-
   &:hover,
   &:active {
-    color: $link-hover;
     text-decoration: underline;
-  }
-
-  &:focus {
-    color: $link-hover;
   }
 }
 
@@ -696,7 +689,7 @@ body > header,
 }
 
 .top-links {
-  @include background-with-text-contrast($dark);
+  @include background-with-text-contrast($brand-secondary);
   display: flex;
   flex-wrap: wrap;
   font-size: $small-font-size;
@@ -775,7 +768,7 @@ body > header,
       width: auto;
 
       &:hover {
-        color: $link;
+        color: $anchor-color;
       }
 
       &.is-active {
@@ -945,7 +938,7 @@ footer {
 .categories a,
 .geozone a {
   background: $highlight;
-  color: $link;
+  color: $anchor-color;
 
   &:hover,
   &.is-active {
@@ -2446,7 +2439,7 @@ table {
     p {
 
       &.description {
-        color: $text;
+        color: $body-font-color;
         word-wrap: break-word;
       }
     }

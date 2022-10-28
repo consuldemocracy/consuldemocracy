@@ -31,12 +31,12 @@
 }
 
 @mixin link {
-  color: $link;
+  color: $anchor-color;
   cursor: pointer;
 
   &:hover,
   &:active {
-    color: $link-hover;
+    color: $anchor-color-hover;
     text-decoration: underline;
   }
 }
@@ -45,7 +45,7 @@
   color: inherit;
 
   &:hover {
-    color: $link;
+    color: $anchor-color;
   }
 }
 
