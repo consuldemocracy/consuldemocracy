@@ -5,14 +5,16 @@
 // `.tenant-public` selector.
 //
 // You can use CSS variables to customize the colors. Here's an example
-// changing the brand, links and main layout colors for just the main
-// tenant.
+// changing the brand, buttons, links and main layout colors for just
+// the main tenant.
 //
 // .tenant-public {
 //   --anchor-color: #372;
 //   --anchor-color-hover: #137;
 //   --brand: #153;
 //   --brand-secondary: #134a00;
+//   --button-background-hover: #fa0;
+//   --button-background-hover-contrast: #{$black};
 //   --footer: #e6e6e6;
 //   --main-header: #351;
 //   --top-links: var(--main-header);
