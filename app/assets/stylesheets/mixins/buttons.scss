@@ -19,7 +19,7 @@
 
 @mixin regular-button($color: $brand) {
   @include button($background: $color);
-  @include inverted-selection;
+  @include inverted-selection($color);
   @include base-button;
 }
 
