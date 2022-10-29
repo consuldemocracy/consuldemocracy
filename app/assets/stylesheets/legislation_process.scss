@@ -134,7 +134,7 @@
     margin-bottom: rem-calc(40);
 
     .debate-type {
-      @include brand-text;
+      @include brand-color;
       text-transform: uppercase;
       font-weight: 700;
       font-size: $small-font-size;
@@ -145,7 +145,7 @@
     }
 
     .debate-title a {
-      @include brand-text;
+      @include brand-color;
     }
   }
 
@@ -194,7 +194,7 @@
     }
 
     h4 a {
-      @include brand-text;
+      @include brand-color;
 
       &:hover {
         text-decoration: none;
@@ -211,7 +211,7 @@
     }
 
     .quiz-next {
-      @include brand-text;
+      @include brand-color;
       background: #ccdbe5;
       font-size: $small-font-size;
       font-weight: bold;

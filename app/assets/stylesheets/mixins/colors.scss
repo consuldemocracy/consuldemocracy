@@ -11,7 +11,7 @@
   @include background-with-text-contrast($brand);
 }
 
-@mixin brand-text {
+@mixin brand-color {
   @include normal-selection;
   color: $brand;
 }
@@ -43,8 +43,8 @@
   @include brand-background;
 }
 
-%brand-text {
-  @include brand-text;
+%brand-color {
+  @include brand-color;
 }
 
 %body-colors {

@@ -20,7 +20,7 @@
     text-decoration: none;
 
     &:hover {
-      @include brand-text;
+      @include brand-color;
     }
   }
 }
