@@ -14,7 +14,7 @@
     $icon-size-with-padding: $icon-size + $padding-right;
     $polygon-size: $icon-size / 2;
     @include background-till-left-of-screen;
-    @include brand-background($brand-secondary);
+    @include background-with-text-contrast($brand-secondary);
     border: $border-width solid $brand-secondary;
     border-bottom-right-radius: rem-calc(12);
     border-top-right-radius: rem-calc(12);
