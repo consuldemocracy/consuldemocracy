@@ -7,8 +7,8 @@
   }
 }
 
-@mixin brand-background($color: $brand) {
-  @include background-with-text-contrast($color);
+@mixin brand-background {
+  @include background-with-text-contrast($brand);
 }
 
 @mixin brand-text {
