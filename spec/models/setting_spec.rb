@@ -258,4 +258,50 @@ describe Setting do
       expect(Setting.force_presence_postal_code?).to be true
     end
   end
+
+  describe ".available_locales" do
+    before { allow(I18n).to receive(:available_locales).and_return(%i[de en es pt-BR]) }
+
+    it "uses I18n available locales by default" do
+      Setting["locales.available"] = ""
+
+      expect(Setting.available_locales).to eq %i[de en es pt-BR]
+    end
+
+    it "defines available locales with a space-separated list" do
+      Setting["locales.available"] = "de es"
+
+      expect(Setting.available_locales).to eq %i[de es]
+    end
+
+    it "handles locales which include a dash" do
+      Setting["locales.available"] = "de en pt-BR"
+
+      expect(Setting.available_locales).to eq %i[de en pt-BR]
+    end
+
+    it "ignores extra whitespace between locales" do
+      Setting["locales.available"] = " de  en   pt-BR "
+
+      expect(Setting.available_locales).to eq %i[de en pt-BR]
+    end
+
+    it "ignores locales which aren't available" do
+      Setting["locales.available"] = "de es en-US fr zh-CN"
+
+      expect(Setting.available_locales).to eq %i[de es]
+    end
+
+    it "ignores words that don't make sense in this context" do
+      Setting["locales.available"] = "yes es 1234 en SuperCool"
+
+      expect(Setting.available_locales).to eq %i[es en]
+    end
+
+    it "uses I18n available locales when no locale is available" do
+      Setting["locales.available"] = "nl fr zh-CN"
+
+      expect(Setting.available_locales).to eq %i[de en es pt-BR]
+    end
+  end
 end

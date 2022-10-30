@@ -1,7 +1,7 @@
 <%= render "globalize_locales" %>
 
 <%= form_tag admin_site_customization_information_texts_path do %>
-  <% I18n.available_locales.each do |l| %>
+  <% Setting.available_locales.each do |l| %>
     <%= translation_enabled_tag l, site_customization_enable_translation?(l) %>
   <% end %>
   <% contents.each do |group| %>

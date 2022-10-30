@@ -14,7 +14,7 @@ module Globalizable
     end
 
     def locales_marked_for_destruction
-      I18n.available_locales - locales_not_marked_for_destruction
+      Setting.available_locales - locales_not_marked_for_destruction
     end
 
     def locales_persisted_and_marked_for_destruction
