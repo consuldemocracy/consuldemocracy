@@ -20,6 +20,14 @@ describe Budget::ContentBlock do
     expect(valid_block).to be_valid
   end
 
+  it "is not valid with a disabled locale" do
+    Setting["locales.enabled"] = "nl pt-BR"
+
+    block.locale = "en"
+
+    expect(block).not_to be_valid
+  end
+
   describe "#name" do
     it "uses the heading name" do
       block = Budget::ContentBlock.new(heading: Budget::Heading.new(name: "Central"))

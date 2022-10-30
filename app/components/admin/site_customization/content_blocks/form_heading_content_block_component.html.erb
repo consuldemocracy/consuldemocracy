@@ -7,7 +7,7 @@
   </div>
   <div class="small-12 medium-6 column">
     <%= label_tag :locale %>
-    <%= select_tag :locale, options_for_select(I18n.available_locales, content_block.locale.to_sym) %>
+    <%= select_tag :locale, options_for_select(Setting.enabled_locales, content_block.locale.to_sym) %>
   </div>
   <div class="small-12 column">
     <%= label_tag :body %>

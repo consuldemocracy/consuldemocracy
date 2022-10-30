@@ -13,7 +13,7 @@
     <%= select_language_error %>
     <div class="margin-bottom">
       <% if manage_languages %>
-        <% I18n.available_locales.each do |locale| %>
+        <% Setting.enabled_locales.each do |locale| %>
           <%= link_to t("shared.translations.remove_language"), "#",
                       style: display_destroy_locale_style(locale),
                       class: "delete js-delete-language js-delete-#{locale}",

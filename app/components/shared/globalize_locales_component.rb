@@ -15,7 +15,7 @@ class Shared::GlobalizeLocalesComponent < ApplicationComponent
     end
 
     def available_locales
-      I18n.available_locales.select { |locale| enabled_locale?(resource, locale) }.map do |locale|
+      Setting.enabled_locales.select { |locale| enabled_locale?(resource, locale) }.map do |locale|
         [name_for_locale(locale), locale, { data: { locale: locale }}]
       end
     end
@@ -84,7 +84,7 @@ class Shared::GlobalizeLocalesComponent < ApplicationComponent
     end
 
     def all_language_options
-      I18n.available_locales.map do |locale|
+      Setting.enabled_locales.map do |locale|
         [name_for_locale(locale), locale]
       end
     end

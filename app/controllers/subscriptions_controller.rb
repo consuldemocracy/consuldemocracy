@@ -38,6 +38,6 @@ class SubscriptionsController < ApplicationController
     end
 
     def find_locale
-      I18n.available_locales.find { |locale| locale == @user.locale&.to_sym } || I18n.locale
+      Setting.enabled_locales.find { |locale| locale == @user.locale&.to_sym } || I18n.locale
     end
 end

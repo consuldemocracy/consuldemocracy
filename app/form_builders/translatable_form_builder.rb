@@ -63,7 +63,7 @@ class TranslatableFormBuilder < ConsulFormBuilder
 
     def visible_locales
       if @template.translations_interface_enabled?
-        @object.globalize_locales
+        Setting.enabled_locales & @object.globalize_locales
       else
         [I18n.locale]
       end

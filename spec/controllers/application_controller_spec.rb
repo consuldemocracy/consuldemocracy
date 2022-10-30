@@ -54,6 +54,22 @@ describe ApplicationController do
       expect(response.body).to eq "es"
     end
 
+    it "only accepts enabled locales" do
+      Setting["locales.enabled"] = "en es fr"
+
+      get :index, params: { locale: :es }
+
+      expect(response.body).to eq "es"
+
+      get :index, params: { locale: :de }
+
+      expect(response.body).to eq "es"
+
+      get :index, params: { locale: :fr }
+
+      expect(response.body).to eq "fr"
+    end
+
     context "authenticated user" do
       let(:user) { create(:user) }
       before { sign_in(user) }

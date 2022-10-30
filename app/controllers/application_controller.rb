@@ -51,9 +51,9 @@ class ApplicationController < ActionController::Base
     end
 
     def current_locale
-      if I18n.available_locales.include?(params[:locale]&.to_sym)
+      if Setting.enabled_locales.include?(params[:locale]&.to_sym)
         params[:locale]
-      elsif I18n.available_locales.include?(session[:locale]&.to_sym)
+      elsif Setting.enabled_locales.include?(session[:locale]&.to_sym)
         session[:locale]
       else
         I18n.default_locale

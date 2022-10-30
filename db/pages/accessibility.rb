@@ -104,7 +104,7 @@ end
 
 if SiteCustomization::Page.find_by(slug: "accessibility").nil?
   page = SiteCustomization::Page.new(slug: "accessibility", status: "published")
-  I18n.available_locales.each do |locale|
+  Setting.enabled_locales.each do |locale|
     I18n.with_locale(locale) { generate_content(page) }
   end
 end
