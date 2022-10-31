@@ -1,1 +1,49 @@
 gd:
+  activemodel:
+    models:
+      verification:
+        residence: "Àite-còmhnaidh"
+        sms: "SMS"
+      local_census_records/import:
+        one: Clàr cunntas-sluaigh ionadail air a thoirt a-steach
+        two: Clàran cunntas-sluaigh ionadail air an toirt a-steach
+        few: Clàran cunntas-sluaigh ionadail air an toirt a-steach
+        other: Clàran cunntas-sluaigh ionadail air an toirt a-steach
+    attributes:
+      verification:
+        residence:
+          document_type: "Seòrsa sgrìobhainn"
+          document_number: "Àireamh na sgrìobhainne (a’ gabhail a-staigh litrichean)"
+          date_of_birth: "Latha-breith"
+          postal_code: "Còd-puist"
+        sms:
+          phone: "Fòn"
+          confirmation_code: "Còd dearbhaidh"
+        email:
+          recipient: "Post-d"
+      verification/letter:
+        email: "Post-d"
+        password: "Facal-faire"
+        verification_code: "An còd a fhuair thu anns an litir"
+      verification/management/document:
+        document_type: "Seòrsa sgrìobhainn:"
+        document_number: "Àireamh na sgrìobhainne"
+      verification/residence:
+        date_of_birth: "Latha-breith"
+        document_type: "Seòrsa sgrìobhainn"
+        postal_code: "Còd-puist"
+      verification/sms:
+        confirmation_code: "Cuir a-steach an còd a fhuair thu air an fhòn agad"
+      officing/residence:
+        document_type: "Seòrsa sgrìobhainn"
+        document_number: "Àireamh na sgrìobhainne (a’ gabhail a-staigh litrichean)"
+        year_of_birth: "Bliadhna breith"
+      local_census_records/import:
+        file: Faidhle
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "Tha fòrmat an fhaidhle ceàrr. ’S e am fòrmat faidhle a tha ceadaichte: %{valid_extensions}."
+              headers: "Tha bannan-cinn nam faidhlichean ceàrr. Feumaidh na h-ainmean a leanas a bhith air bann-cinn nam faidhleachan: %{required_headers}."
