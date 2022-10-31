@@ -1,5 +1,13 @@
 gd:
   date:
+    abbr_day_names:
+      - Didòmhnaich
+      - Diluain
+      - Dimàirt
+      - Wed
+      - Thu
+      - Fri
+      - Sat
     abbr_month_names:
       -
       - Jan
