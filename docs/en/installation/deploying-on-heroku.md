@@ -147,7 +147,7 @@ in the file _Gemfile\_custom_, where `x.y.z` is the version defined in the `.rub
 bundle install
 ```
 
-to generate _Gemfile.lock_ before commiting and pushing to the server.
+to generate _Gemfile.lock_ before committing and pushing to the server.
 
 ### Use Puma as a web server
 

@@ -129,15 +129,15 @@ The aim of this feature is to allow users the introduction of dynamic contents i
 To activate this feature you must follow 2 steps:
 1. Execute the following command `bin/rake settings:create_translation_interface_setting RAILS_ENV=production` (This is only required for already existing intallations, for new consul installations this step is not needed).
 2. Accessing as administrator user to the administration panel of your Consul application to the section **Configuration > Features** and activating the feature called **Translation Interface** as you can see next:
-![Active interface translations](../../img/translations/interface_translations/active-interface-translations-en.png)
+![Active interface translations](../../img/translations/interface_translations/active-interface-translations-en.png).
 
 #### Use Cases
 
 * When the translation interface is active:
-As you can see in the image below translation interface has two selectors, the firt one "Select language" is to switch between enabled languages and the second one "Add language" is to add new languages to the form. Translatable fields appears with a blue background to facilitate users to distinguish between translatable and not translatable fields. Additionally interface provides a link `Remove language` to delete the current language shown at "Select language". If a user accidentally removes a translation he can recover it re-adding it to the form.
+As you can see in the image below translation interface has two selectors, the first one "Select language" is to switch between enabled languages and the second one "Add language" is to add new languages to the form. Translatable fields appears with a blue background to facilitate users to distinguish between translatable and not translatable fields. Additionally interface provides a link `Remove language` to delete the current language shown at "Select language". If a user accidentally removes a translation he can recover it re-adding it to the form.
 This feature is visible during creation and edition of translatable resources.
-![Translations inteface enabled](../../img/translations/interface_translations/translations-interface-enabled-en.png)
+![Translations interface enabled](../../img/translations/interface_translations/translations-interface-enabled-en.png)
 
 * When the translation interface is disabled:
 When this feature is deactivated users will see standard forms without translation interface and without translation highlight.
-![Translations inteface enabled](../../img/translations/interface_translations/translations-interface-disabled-en.png)
+![Translations interface enabled](../../img/translations/interface_translations/translations-interface-disabled-en.png)

@@ -1,22 +1,23 @@
 # API Documentation
 
-* [Characteristics](#characteristics)
-* [GraphQL](#graphql)
-* [Making API requests](#making-api-requests)
-  * [Supported clients](#supported-clients)
-    * [GraphiQL](#graphiql)
-    * [Postman](#postman)
-    * [HTTP libraries](#http-libraries)
-* [Available information](#available-information)
-* [Examples of queries](#examples-of-queries)
-  * [Request a single record from a collection](#request-a-single-record-from-a-collection)
-  * [Request a complete collection](#request-a-complete-collection)
-    * [Pagination](#pagination)
-  * [Accessing several resources in a single request](#accessing-several-resources-in-a-single-request)
-* [Security limitations](#security-limitations)
-  * [Example of too deep query](#example-of-too-deep-query)
-  * [Example of too complex query](#example-of-too-complex-query)
-* [Code examples](#code-examples)
+- [API Documentation](#api-documentation)
+  - [Characteristics](#characteristics)
+  - [GraphQL](#graphql)
+  - [Making API requests](#making-api-requests)
+    - [Supported clients](#supported-clients)
+      - [GraphiQL](#graphiql)
+      - [Postman](#postman)
+      - [HTTP libraries](#http-libraries)
+  - [Available information:](#available-information)
+  - [Examples of queries](#examples-of-queries)
+    - [Request a single record from a collection](#request-a-single-record-from-a-collection)
+    - [Request a complete collection](#request-a-complete-collection)
+      - [Pagination](#pagination)
+    - [Accessing several resources in a single request](#accessing-several-resources-in-a-single-request)
+  - [Security limitations](#security-limitations)
+    - [Example of too deep query](#example-of-too-deep-query)
+    - [Example of too complex query](#example-of-too-complex-query)
+  - [Code examples](#code-examples)
 
 ## Characteristics
 
@@ -34,7 +35,7 @@ The CONSUL API uses GraphQL [http://graphql.org](http://graphql.org), the [Ruby 
 
 One of the characteristics that differentiates a REST API from a GraphQL one is that with the last one it's possible for the client to build its own *custom queries*, so the server will only return information in which we're interested.
 
-GraphQL queries are written following a standard which ressembles to JSON, for example:
+GraphQL queries are written following a standard which resembles to JSON, for example:
 
 ```
 {

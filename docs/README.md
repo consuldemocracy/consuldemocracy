@@ -17,11 +17,11 @@ Citizen Participation and Open Government Application
 [![Join the chat at https://gitter.im/consul/consul](https://badges.gitter.im/consul/consul.svg)](https://gitter.im/consul/consul?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/consul/consul/issues?q=is%3Aissue+is%3Aopen+label%3APRs-welcome)
 
-This is the opensource code repository of the eParticipation website CONSUL, originally developed for the Madrid City government eParticipation website
+This is the opensource code repository of the eParticipation website CONSUL, originally developed for the Madrid City government eParticipation website.
 
 ## Current state
 
-Development started on [2015 July 15th](https://github.com/consul/consul/commit/8db36308379accd44b5de4f680a54c41a0cc6fc6). Code was deployed to production on 2015 september 7th to [decide.madrid.es](https://decide.madrid.es). Since then new features are added often. You can take a look at the current features in [features]( http://www.decide.es/en/) or [docs](https://github.com/consul/consul/tree/master/doc) and future features in the [open issues list](https://github.com/consul/consul/issues). For current status on upcoming features go to [Roadmap](https://github.com/consul/consul/projects/6)
+Development started on [2015 July 15th](https://github.com/consul/consul/commit/8db36308379accd44b5de4f680a54c41a0cc6fc6). Code was deployed to production on 2015 September 7th to [decide.madrid.es](https://decide.madrid.es). Since then new features are added often. You can take a look at the current features in [features]( http://www.decide.es/en/) or [docs](https://github.com/consul/consul/tree/master/doc) and future features in the [open issues list](https://github.com/consul/consul/issues). For current status on upcoming features go to [Roadmap](https://github.com/consul/consul/projects/6).
 
 ## Configuration for development and test environments
 
@@ -67,12 +67,12 @@ But for some actions like voting, you will need a verified user, the seeds file 
 
 ## Documentation
 
-You can find this project documentation at https://github.com/consul/docs
+You can find this project documentation at https://github.com/consul/docs.
 
 ## License
 
-Code published under AFFERO GPL v3 (see [LICENSE-AGPLv3.txt](LICENSE-AGPLv3.txt))
+Code published under AFFERO GPL v3 (see [LICENSE-AGPLv3.txt](LICENSE-AGPLv3.txt)).
 
 ## Contributions
 
-See [CONTRIBUTING.md](https://github.com/consul/consul/blob/master/CONTRIBUTING.md)
+See [CONTRIBUTING.md](https://github.com/consul/consul/blob/master/CONTRIBUTING.md).

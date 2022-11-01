@@ -4,7 +4,7 @@ You can use Docker to have a local CONSUL installation for development if:
 
 - You're having troubles having [prerequisites](prerequisites.md) installed.
 - You want to do a quick local installation just to try CONSUL or make a demo.
-- You prefer not to interfer with other rails installations.
+- You prefer not to interfere with other rails installations.
 
 ## Prerequisites
 
