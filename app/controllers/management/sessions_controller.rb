@@ -1,6 +1,7 @@
 require "manager_authenticator"
 
 class Management::SessionsController < ActionController::Base
+  include TenantVariants
   include GlobalizeFallbacks
   include AccessDeniedHandler
   default_form_builder ConsulFormBuilder
