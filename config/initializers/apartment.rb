@@ -107,7 +107,7 @@ end
 
 # Setup a custom Tenant switching middleware. The Proc should return the name of the Tenant that
 # you want to switch to.
-Rails.application.config.middleware.use Apartment::Elevators::Generic, ->(request) do
+Rails.application.config.middleware.insert_before Warden::Manager, Apartment::Elevators::Generic, ->(request) do
   Tenant.resolve_host(request.host)
 end
 

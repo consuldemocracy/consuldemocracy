@@ -156,4 +156,17 @@ describe "Multitenancy", :seed_tenants do
       expect(page).to have_content "Invalid Email or username or password."
     end
   end
+
+  scenario "Uses the right tenant after failing to sign in" do
+    with_subdomain("mars") do
+      visit new_user_session_path
+      fill_in "Email or username", with: "wrong@consul.dev"
+      fill_in "Password", with: "wrong"
+      click_button "Enter"
+
+      expect(page).to have_content "Invalid Email or username or password"
+      expect(page).to have_css "html.tenant-mars"
+      expect(page).not_to have_css "html.tenant-public"
+    end
+  end
 end
