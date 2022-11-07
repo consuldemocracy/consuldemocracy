@@ -95,3 +95,8 @@ es:
           create: "Realizar propuesta de gasto"
       investment:
         confirm_group: "Sólo puedes apoyar proyectos de una partida. Si sigues adelante no podrás cambiar esta decisión. ¿Estás seguro?"
+    results:
+      zona_este: "De acuerdo con el acuerdo tomado por la Mesa Técnica en su reunión del 7 de octubre de 2022, el proyecto \"CONSTRUCCIÓN, REHABILITACIÓN Y MEJORAS DE INSTALACIONES DEPORTIVAS\", presupuestado inicialmente en 100.000 €, contará para su ejecución con un presupuesto de 83.537 €."
+      zona_norte: "De acuerdo con el acuerdo tomado por la Mesa Técnica en su reunión del 7 de octubre de 2022, en virtud del artículo 7.3 del %{link}, se asignará la cantidad sobrante de 3.491 € al proyecto \"ENERGÍA SOLAR EN DEPÓSITOS DE AGUA\", que contará para su ejecución con un presupuesto de 93.491 €."
+      zona_norte_link: "Reglamento de Presupuestos Participativos"
+      zona_sur: "De acuerdo con el acuerdo tomado por la Mesa Técnica en su reunión del 7 de octubre de 2022, el proyecto \"ENERGÍA SOLAR EN EDIFICIOS MUNICIPALES\", presupuestado inicialmente en 200.000 €, contará para su ejecución con un presupuesto de 187.972 €."

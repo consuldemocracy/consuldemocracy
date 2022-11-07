@@ -60,6 +60,8 @@
                                   investments: @investments.incompatible %>
     <% end %>
 
+    <%= render "results_text", budget: @budget, heading: @heading %>
+
     <p>
       <%= link_to budget_investments_path(@budget, heading_id: @heading) do %>
         <small><%= t("budgets.results.investment_proyects") %></small>

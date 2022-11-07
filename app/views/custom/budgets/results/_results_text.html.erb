@@ -1,0 +1,18 @@
+<% if budget.id == 5 %>
+  <ul>
+    <% if heading.id == 12 %>
+      <li><%= sanitize(t("budgets.results.zona_este")) %></li>
+    <% end %>
+    <% if heading.id == 13 %>
+      <li><%= sanitize(t("budgets.results.zona_norte",
+                         link: link_to(t("budgets.results.zona_norte_link"),
+                                         "https://www.diputaciondevalladolid.es/documents/10181/2918792/Texto+Consolidado+Reglamento+Presupuestos+Participativos+%28Junio+2021%29/a0962221-db6d-45f9-9754-2fb8bc43dd81",
+                                         target: "_blank")),
+                                         attributes: %w[href target]) %>
+      </li>
+    <% end %>
+    <% if heading.id == 14 %>
+      <li><%= sanitize(t("budgets.results.zona_sur")) %></li>
+    <% end %>
+  </ul>
+<% end %>
