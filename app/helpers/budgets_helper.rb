@@ -44,4 +44,12 @@ module BudgetsHelper
       }
     end
   end
+
+  def show_all_investments(budget)
+    [5].include?(budget.id) == true
+  end
+
+  def organize_investments(budget)
+    [5].include?(budget.id) == false
+  end
 end

@@ -157,4 +157,28 @@ describe "Results" do
 
     expect(page).not_to have_content "Incompatibles"
   end
+
+  scenario "Show all investments on budget 5 results" do
+    budget_five = create(:budget, :finished, id: 5, results_enabled: true)
+    group = create(:budget_group, budget: budget_five)
+    heading = create(:budget_heading, group: group, price: 1000)
+
+    investment1 = create(:budget_investment, :selected, heading: heading, price: 200, ballot_lines_count: 900)
+    investment2 = create(:budget_investment, :selected, heading: heading, price: 300, ballot_lines_count: 800)
+    investment3 = create(:budget_investment, :selected, heading: heading, price: 600, ballot_lines_count: 600)
+
+    Budget::Result.new(budget_five, heading).calculate_winners
+
+    visit budget_results_path(budget_five)
+
+    expect(page).not_to have_link "Show all"
+    expect(page).not_to have_content "Available budget"
+
+    expect(page).to have_content investment1.title
+    expect(page).to have_content investment2.title
+    expect(page).to have_content investment3.title
+
+    expect(page).to have_selector(".icon-check", count: 2)
+    expect(page).to have_selector(".icon-x.delete", count: 1)
+  end
 end

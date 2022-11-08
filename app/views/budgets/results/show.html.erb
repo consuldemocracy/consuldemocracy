@@ -43,10 +43,12 @@
   </div>
 
   <div class="small-12 medium-9 large-10 column">
-    <%= link_to t("budgets.results.show_all_link"), "#",
-                class: "js-toggle-link button hollow margin-bottom float-right-medium",
-                data: { "toggle-selector" => ".js-discarded",
-                        "toggle-text" => t("budgets.results.hide_discarded_link") } %>
+    <% if organize_investments(@budget) %>
+      <%= link_to t("budgets.results.show_all_link"), "#",
+                  class: "js-toggle-link button hollow margin-bottom float-right-medium",
+                  data: { "toggle-selector" => ".js-discarded",
+                          "toggle-text" => t("budgets.results.hide_discarded_link") } %>
+    <% end %>
 
     <%= render "results_table", results_type: :compatible,
                                 title: @heading.name,

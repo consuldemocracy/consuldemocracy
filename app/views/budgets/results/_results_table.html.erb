@@ -17,7 +17,7 @@
           <th scope="col" class="text-center">
             <%= t("budgets.results.price") %>
           </th>
-          <% if results_type == :compatible %>
+          <% if results_type == :compatible && organize_investments(@budget) %>
             <th scope="col" class="text-right">
               <small><%= t("budgets.results.amount_available") %></small><br>
               <%= @budget.formatted_amount(heading_price) %><br>
@@ -32,7 +32,7 @@
       <% investments.each do |investment| %>
           <tr id="<%= dom_id(investment) %>"
               class="budget-investments <%= investment.winner? ? "success" : "js-discarded" %>"
-              style="<%= investment.winner? ? "" : "display: none" %>">
+              style="<%= investment.winner? || show_all_investments(@budget) ? "" : "display: none" %>">
             <td>
               <% if investment.winner? %>
                 <span class="icon-check">
@@ -56,7 +56,7 @@
               <td class="text-center">
                 <%= @budget.formatted_amount(investment.price) %>
               </td>
-              <% if results_type == :compatible %>
+              <% if results_type == :compatible && organize_investments(@budget) %>
                 <td class="small text-right"
                     title="<%= @budget.formatted_amount(amount_available) %> - <%= @budget.formatted_amount(investment.price) %>">
                     <%= @budget.formatted_amount(amount_available - investment.price) %>
