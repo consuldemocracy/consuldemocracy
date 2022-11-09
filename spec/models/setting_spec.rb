@@ -187,6 +187,20 @@ describe Setting do
     end
   end
 
+  describe ".default_org_name" do
+    it "returns the main org name for the default tenant" do
+      expect(Setting.default_org_name).to eq "CONSUL"
+    end
+
+    it "returns the tenant name for other tenants" do
+      create(:tenant, schema: "new", name: "New Institution")
+
+      Tenant.switch("new") do
+        expect(Setting.default_org_name).to eq "New Institution"
+      end
+    end
+  end
+
   describe ".default_mailer_from_address" do
     before { allow(Tenant).to receive(:default_host).and_return("consulproject.org") }
 
