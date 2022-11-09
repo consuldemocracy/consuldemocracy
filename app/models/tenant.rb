@@ -91,6 +91,10 @@ class Tenant < ApplicationRecord
     Apartment::Tenant.current
   end
 
+  def self.current
+    find_by(schema: current_schema)
+  end
+
   def self.switch(...)
     Apartment::Tenant.switch(...)
   end
