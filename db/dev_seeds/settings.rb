@@ -6,7 +6,6 @@ section "Creating Settings" do
     "feature.featured_proposals": "true",
     "feature.map": "true",
     "instagram_handle": "CONSUL",
-    "mailer_from_address": "noreply@consul.dev",
     "mailer_from_name": "CONSUL",
     "meta_description": "Citizen participation tool for an open, "\
                         "transparent and democratic government",

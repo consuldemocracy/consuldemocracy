@@ -167,7 +167,7 @@ class Setting < ApplicationRecord
         "proposal_notification_minimum_interval_in_days": 3,
         "direct_message_max_per_day": 3,
         "mailer_from_name": "CONSUL",
-        "mailer_from_address": "noreply@consul.dev",
+        "mailer_from_address": default_mailer_from_address,
         "min_age_to_participate": 16,
         "hot_score_period_in_days": 31,
         "related_content_score_threshold": -0.3,
@@ -197,6 +197,10 @@ class Setting < ApplicationRecord
         "sdg.process.budgets": true,
         "sdg.process.legislation": true
       }
+    end
+
+    def default_mailer_from_address
+      "noreply@#{Tenant.current_host.presence || "consul.dev"}"
     end
 
     def reset_defaults
