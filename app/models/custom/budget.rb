@@ -5,7 +5,7 @@ class Budget < ApplicationRecord
 
   CUSTOM_PHASE_ACCEPTING = ["accepting"]
   CUSTOM_PHASE_SELECTING = ["selecting"]
-  CUSTOM_PHASE_BALLOTING = ["balloting", "valuating"]
+  CUSTOM_PHASE_BALLOTING = ["balloting", "publishing_prices", "valuating"]
   CUSTOM_PHASE_FINISHED = ["finished", "reviewing_ballots"]
 
   CustomPhase = Struct.new(

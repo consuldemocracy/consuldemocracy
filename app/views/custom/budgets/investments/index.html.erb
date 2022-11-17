@@ -48,7 +48,7 @@
                       <%= render "budgets/investments/tags" %>
                     <% end %>
                     <%# filter accepted / denied investments in 'balloting' and 'reviewing_ballots' phases %>
-                    <% if @budget.phase == 'balloting' or @budget.phase == 'reviewing_ballots' %>
+                    <% if @budget.phase == 'publishing_prices' or @budget.phase == 'balloting' or @budget.phase == 'reviewing_ballots' %>
                       <%= render "budgets/investments/chosen_for_voting" %>
                     <% end %>
                     <%# filter statuses and winners / losers in 'finished' phase %>
@@ -132,7 +132,7 @@
                       <%= render "budgets/investments/tags" %>
                     <% end %>
                     <%# filter accepted / denied investments in 'balloting' and 'reviewing_ballots' phases %>
-                    <% if @budget.phase == 'balloting' or @budget.phase == 'reviewing_ballots' %>
+                    <% if @budget.phase == 'publishing_prices' or @budget.phase == 'balloting' or @budget.phase == 'reviewing_ballots' %>
                       <%= render "budgets/investments/chosen_for_voting" %>
                     <% end %>
                     <%# filter statuses and winners / losers in 'finished' phase %>

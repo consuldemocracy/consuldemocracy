@@ -40,7 +40,7 @@ module Budgets
         filtered_investments = filtered_investments.tagged_with(param_tag_name)
       end
 
-      if (@budget.phase == "balloting") || (@budget.phase == "reviewing_ballots")
+      if (@budget.phase == "publishing_prices") || (@budget.phase == "balloting") || (@budget.phase == "reviewing_ballots")
         # filter by selected
         if param_chosen == "false"
           filtered_investments = filtered_investments.where("selected = ? OR feasibility = ?", false, "unfeasible")

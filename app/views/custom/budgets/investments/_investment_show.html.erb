@@ -36,8 +36,8 @@
       <% end %>
 
       <%# "Project unfeasible" message %>
-      <%# shows for unfeasible projects in phases: balloting, reviewing_ballots, finished %>
-      <% if @budget.balloting_or_later? and investment.unfeasible? %>
+      <%# shows for unfeasible projects in phases: publishing_prices, balloting, reviewing_ballots, finished %>
+      <% if @budget.publishing_prices_or_later? and investment.unfeasible? %>
         <div class="callout warning margin-top">
           <%= t("budgets.investments.show.project_unfeasible").html_safe %>
         </div>
@@ -45,8 +45,8 @@
           <div class="callout primary">
             <%= investment.unfeasibility_explanation %>
           </div>
-          <hr />
         <% end %>
+        <hr />
       <% end %>
 
       <%# "Project not winner" message %>
@@ -133,7 +133,7 @@
             <p class="investment-price-explanation"><%= investment.price_explanation %></p>
           <% end %>
         </div>
-        <% if @budget.phase == "reviewing_ballots" or @budget.phase == "finished" %>
+        <% if @budget.phase == "publishing_prices" or @budget.phase == "reviewing_ballots" or @budget.phase == "finished" %>
           <hr />
         <% end %>
       <% end %>
