@@ -5,9 +5,12 @@ namespace :votes do
 
     models.each do |model|
       print "Updating votes hot_score for #{model}s"
-      model.find_each do |resource|
-        new_hot_score = resource.calculate_hot_score
-        resource.update_columns(hot_score: new_hot_score, updated_at: Time.current)
+
+      Tenant.run_on_each do
+        model.find_each do |resource|
+          new_hot_score = resource.calculate_hot_score
+          resource.update_columns(hot_score: new_hot_score, updated_at: Time.current)
+        end
       end
       puts " ✅ "
     end

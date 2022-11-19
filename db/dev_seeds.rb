@@ -1,8 +1,16 @@
-ActiveRecord::Tasks::DatabaseTasks.truncate_all unless Rails.env.test?
+unless Rails.env.test?
+  Tenant.destroy_all if Tenant.default?
+  ActiveRecord::Tasks::DatabaseTasks.truncate_all
+end
+
 @logger = Logger.new(STDOUT)
 @logger.formatter = proc do |_severity, _datetime, _progname, msg|
-                      msg unless @avoid_log
+                      msg unless Rails.env.test?
                     end
+
+def load_dev_seeds(dev_seeds_file)
+  load Rails.root.join("db", "dev_seeds", "#{dev_seeds_file}.rb")
+end
 
 def section(section_title)
   @logger.info section_title
@@ -28,28 +36,30 @@ def random_locales_attributes(**attribute_names_with_values)
   end
 end
 
-require_relative "dev_seeds/settings"
-require_relative "dev_seeds/geozones"
-require_relative "dev_seeds/users"
-require_relative "dev_seeds/tags_categories"
-require_relative "dev_seeds/debates"
-require_relative "dev_seeds/proposals"
-require_relative "dev_seeds/budgets"
-require_relative "dev_seeds/comments"
-require_relative "dev_seeds/votes"
-require_relative "dev_seeds/flags"
-require_relative "dev_seeds/hiddings"
-require_relative "dev_seeds/banners"
-require_relative "dev_seeds/polls"
-require_relative "dev_seeds/communities"
-require_relative "dev_seeds/legislation_processes"
-require_relative "dev_seeds/newsletters"
-require_relative "dev_seeds/notifications"
-require_relative "dev_seeds/widgets"
-require_relative "dev_seeds/admin_notifications"
-require_relative "dev_seeds/legislation_proposals"
-require_relative "dev_seeds/milestones"
-require_relative "dev_seeds/pages"
-require_relative "dev_seeds/sdg"
+log "Creating dev seeds for tenant #{Tenant.current_schema}" unless Tenant.default?
+
+load_dev_seeds "settings"
+load_dev_seeds "geozones"
+load_dev_seeds "users"
+load_dev_seeds "tags_categories"
+load_dev_seeds "debates"
+load_dev_seeds "proposals"
+load_dev_seeds "budgets"
+load_dev_seeds "comments"
+load_dev_seeds "votes"
+load_dev_seeds "flags"
+load_dev_seeds "hiddings"
+load_dev_seeds "banners"
+load_dev_seeds "polls"
+load_dev_seeds "communities"
+load_dev_seeds "legislation_processes"
+load_dev_seeds "newsletters"
+load_dev_seeds "notifications"
+load_dev_seeds "widgets"
+load_dev_seeds "admin_notifications"
+load_dev_seeds "legislation_proposals"
+load_dev_seeds "milestones"
+load_dev_seeds "pages"
+load_dev_seeds "sdg"
 
 log "All dev seeds created successfuly 👍"

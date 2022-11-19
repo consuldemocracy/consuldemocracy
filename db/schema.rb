@@ -561,6 +561,7 @@ ActiveRecord::Schema.define(version: 2022_09_15_154808) do
     t.string "queue"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string "tenant"
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
   end
 
@@ -1553,6 +1554,15 @@ ActiveRecord::Schema.define(version: 2022_09_15_154808) do
     t.index ["legislation_proposals_count"], name: "index_tags_on_legislation_proposals_count"
     t.index ["name"], name: "index_tags_on_name", unique: true
     t.index ["proposals_count"], name: "index_tags_on_proposals_count"
+  end
+
+  create_table "tenants", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.string "schema"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_tenants_on_name", unique: true
+    t.index ["schema"], name: "index_tenants_on_schema", unique: true
   end
 
   create_table "topics", id: :serial, force: :cascade do |t|

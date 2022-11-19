@@ -117,6 +117,14 @@ RSpec.configure do |config|
     Delayed::Worker.delay_jobs = false
   end
 
+  config.before(:each, :seed_tenants) do
+    Apartment.seed_after_create = true
+  end
+
+  config.after(:each, :seed_tenants) do
+    Apartment.seed_after_create = false
+  end
+
   config.before(:each, :small_window) do
     @window_size = Capybara.current_window.size
     Capybara.current_window.resize_to(639, 479)
