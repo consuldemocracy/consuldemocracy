@@ -124,6 +124,9 @@ tr:
       images:
         one: "Görsel"
         other: "Resimler"
+      tenant:
+        one: "kiracı"
+        other: "kiracı"
       topic:
         one: "Konu"
         other: "Konular"
@@ -378,6 +381,8 @@ tr:
         body: Gövde
       tag:
         name: "Konunun adını yazın"
+      tenant:
+        schema: "Alt etki alanı"
       topic:
         title: "Başlık"
         description: "İlk metin"
