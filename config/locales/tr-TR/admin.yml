@@ -784,6 +784,7 @@ tr:
       comments: "Yorumlar"
       local_census_records: Yerel nüfus sayımını yönet
       machine_learning: "Yapay Zeka / Makine Öğrenmesi"
+      multitenancy: Çok kiracılı
     administrators:
       index:
         title: Yöneticiler
@@ -1627,6 +1628,15 @@ tr:
             notice: "Kart başarıyla güncellendi"
           destroy:
             notice: "Kart başarıyla kaldırıldı"
+    tenants:
+      create:
+        notice: Kiracı eklendi
+      index:
+        create: Kiracı ekle
+      new:
+        title: Yeni kiracı
+      update:
+        notice: Kiracı güncellendi
     homepage:
       title: Ana sayfa
       description: Aktif modüller ana sayfada, buradakiyle aynı sırada görünür.
