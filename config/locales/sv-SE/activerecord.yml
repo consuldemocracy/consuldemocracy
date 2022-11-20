@@ -124,6 +124,9 @@ sv:
       images:
         one: "Bild"
         other: "Bilder"
+      tenant:
+        one: "hyresgäst"
+        other: "hyresgäster"
       topic:
         one: "Ämne"
         other: "Ämnen"
@@ -378,6 +381,8 @@ sv:
         body: Innehåll
       tag:
         name: "Skriv namnet på ämnet"
+      tenant:
+        schema: "Underdomän"
       topic:
         title: "Titel"
         description: "Inledande text"
