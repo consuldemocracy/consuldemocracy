@@ -784,6 +784,7 @@ sv:
       comments: "Kommentarer"
       local_census_records: Hantera lokalt adressregister
       machine_learning: "AI/maskininlärning"
+      multitenancy: Flera hyresgäster
     administrators:
       index:
         title: Administratörer
@@ -1627,6 +1628,15 @@ sv:
             notice: "Kortet har uppdaterats"
           destroy:
             notice: "Kortet har tagits bort"
+    tenants:
+      create:
+        notice: Hyresgäst har skapats
+      index:
+        create: Skapa hyresgäst
+      new:
+        title: Ny hyresgäst
+      update:
+        notice: Hyresgäst har uppdaterats
     homepage:
       title: Startsida
       description: De aktiva modulerna visas på startsidan i samma ordning som här.
