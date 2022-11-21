@@ -1,1 +1,11 @@
 gd:
+  account:
+    show:
+      change_credentials_link: Atharraich am fiosrachadh clàraidh agam
+      erase_account_link: Sguab às an cunntas agam
+      personal: Fiosrachadh pearsanta
+  application:
+    close: Dùin
+    menu: Clàr-taic
+  comments:
+    comments_closed: Tha beachdan dùinte
