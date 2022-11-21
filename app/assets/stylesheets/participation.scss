@@ -256,7 +256,7 @@
   aside {
 
     h2 {
-      border-top: 2px solid $brand;
+      @include brand-border(top, 2px);
       display: inline-block;
       font-size: rem-calc(16);
       margin: -1px 0 rem-calc(12);
@@ -830,7 +830,7 @@
   }
 
   .is-active {
-    @include brand-text;
+    @include brand-color;
 
     &::after {
       content: "\6c";
@@ -1082,7 +1082,7 @@
 }
 
 .current-phase {
-  @include brand-text;
+  @include brand-color;
 }
 
 .progress-votes {
@@ -1097,7 +1097,7 @@
   }
 
   .progress-meter {
-    background: $brand;
+    @include brand-background;
     border-radius: rem-calc(12);
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
@@ -1119,7 +1119,7 @@
     }
 
     span {
-      @include brand-text;
+      @include brand-color;
       font-size: $base-font-size;
     }
   }
@@ -1133,7 +1133,7 @@
     white-space: nowrap;
 
     &::before {
-      color: $brand;
+      @include brand-color;
       content: "\57";
       font-family: "icons";
       font-size: $small-font-size;
@@ -1144,7 +1144,7 @@
     }
 
     span {
-      @include brand-text;
+      @include brand-color;
       font-size: rem-calc(24);
     }
   }
@@ -1180,7 +1180,7 @@
   }
 
   .subtitle {
-    border-left: 2px solid $brand;
+    @include brand-border(left, 2px);
     margin: $line-height / 2 0;
     padding-left: $line-height / 2;
   }
@@ -1442,7 +1442,7 @@
   width: $line-height / 2;
 
   &.is-active {
-    background-color: $brand;
+    @include brand-background;
   }
 }
 
@@ -1482,7 +1482,7 @@
   cursor: pointer;
 
   &:hover {
-    @include background-with-text-contrast($brand-secondary);
+    @include brand-secondary-background;
     text-decoration: none;
   }
 }

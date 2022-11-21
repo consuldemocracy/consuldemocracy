@@ -20,7 +20,7 @@
   }
 
   .ballot-list-price {
-    @include brand-text;
+    @include brand-color;
     display: block;
     font-weight: bold;
     margin-top: $line-height / 2;

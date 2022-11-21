@@ -95,10 +95,7 @@ p {
 }
 
 a {
-  &:hover,
-  &:active {
-    text-decoration: underline;
-  }
+  @include link;
 }
 
 a,
@@ -125,8 +122,6 @@ button,
 
 .button {
   @extend %button;
-  @include inverted-selection;
-  background: $brand;
 
   &.medium {
     font-size: $small-font-size;
@@ -135,8 +130,15 @@ button,
 
 .button.hollow {
   @include normal-selection;
+  @include anchor-color;
   border: 1px solid;
-  color: $anchor-color;
+
+  &:hover,
+  &:focus {
+    $hover-color: scale-color($anchor-color, $lightness: $button-hollow-hover-lightness);
+    color: $hover-color;
+    color: var(--anchor-color-hover, $hover-color);
+  }
 }
 
 .button.hollow.error {
@@ -260,7 +262,7 @@ button,
     }
 
     &.is-active {
-      @include brand-text;
+      @include brand-color;
       border-bottom: 2px solid;
       padding-bottom: rem-calc(1);
     }
@@ -287,7 +289,7 @@ button,
       padding: 0;
 
       &.is-active {
-        @include brand-text;
+        @include brand-color;
         font-weight: bold;
       }
     }
@@ -297,7 +299,7 @@ button,
     }
 
     &.is-active {
-      @include brand-text;
+      @include brand-color;
       border-bottom: 2px solid;
     }
   }
@@ -359,14 +361,14 @@ button,
     position: relative;
 
     &:hover {
-      @include brand-text;
+      @include brand-color;
       background: none;
       text-decoration: none;
     }
 
     &[aria-selected="true"],
     &.is-active {
-      @include brand-text;
+      @include brand-color;
       border-bottom: 0;
       font-weight: bold;
 
@@ -519,7 +521,7 @@ body > header,
       padding: rem-calc(6);
 
       [type="submit"] {
-        @include brand-text;
+        @include brand-color;
         background: none;
         border: 0;
         cursor: pointer;
@@ -547,7 +549,7 @@ body > header,
   }
 
   .top-bar {
-    @extend %brand-background;
+    @include background-with-text-contrast($main-header, [main-header, brand]);
   }
 }
 
@@ -599,7 +601,7 @@ body > header,
       text-align: left;
 
       @include breakpoint(medium) {
-        @include brand-text;
+        @include brand-color;
         background: $body-background;
         text-align: center;
       }
@@ -690,7 +692,7 @@ body > header,
 }
 
 .top-links {
-  @include background-with-text-contrast($brand-secondary);
+  @include background-with-text-contrast($top-links, [top-links, brand-secondary]);
   display: flex;
   flex-wrap: wrap;
   font-size: $small-font-size;
@@ -734,6 +736,7 @@ body > header,
   flex-direction: column;
 
   @include breakpoint(medium) {
+    @include background-with-text-contrast($subnavigation, subnavigation);
     flex-direction: row;
     padding-bottom: 0;
 
@@ -769,11 +772,11 @@ body > header,
       width: auto;
 
       &:hover {
-        color: $anchor-color;
+        @include anchor-color;
       }
 
       &.is-active {
-        @include brand-text;
+        @include brand-color;
         border-bottom: 2px solid;
         margin-bottom: 1px;
       }
@@ -845,7 +848,7 @@ body > header,
   }
 
   .is-active {
-    @include brand-text;
+    @include brand-color;
     border-bottom: 2px solid;
 
     &:hover {
@@ -909,7 +912,7 @@ footer {
 }
 
 .footer {
-  background: #f1f1f1;
+  @include background-with-text-contrast($footer, footer);
   clear: both;
   margin-top: $line-height * 2;
   padding-bottom: $line-height;
@@ -938,8 +941,8 @@ footer {
 
 .categories a,
 .geozone a {
+  @include anchor-color;
   background: $highlight;
-  color: $anchor-color;
 
   &:hover,
   &.is-active {
@@ -948,7 +951,7 @@ footer {
 }
 
 .sidebar-title {
-  border-top: 2px solid $brand;
+  @include brand-border(top, 2px);
   display: inline-block;
   font-size: rem-calc(16);
   font-weight: bold;
@@ -968,7 +971,7 @@ footer {
 }
 
 .auth-image {
-  @include background-with-text-contrast($brand);
+  @include brand-background;
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -1357,8 +1360,8 @@ form {
   }
 
   &::before {
+    @include brand-color;
     background: $body-background;
-    color: $brand;
     content: "\4d";
     font-family: "icons" !important;
     font-size: $small-font-size;
@@ -2504,8 +2507,8 @@ table {
   h3 {
 
     &.title {
+      @include brand-border(top, 4px);
       display: inline-block;
-      border-top: 4px solid $brand;
       margin-bottom: 0;
       padding: $line-height / 2 0;
     }

@@ -633,7 +633,7 @@ code {
     display: block;
 
     &.is-active {
-      @include brand-text;
+      @include brand-color;
       font-weight: bold;
       text-decoration: underline;
     }

@@ -8,7 +8,7 @@
   }
 
   .heading {
-    @include brand-text;
+    @include brand-color;
     border: 2px solid $border;
     border-radius: rem-calc(6);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
