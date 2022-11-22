@@ -43,6 +43,8 @@ sl-SI:
               invalid: EMŠO ni pravilne oblike.
   budgets:
     investments:
+      investment:
+        add: Glasuj za ta predlog
       show:
         share_title: "Povej naprej!"
         share: "Deli!"

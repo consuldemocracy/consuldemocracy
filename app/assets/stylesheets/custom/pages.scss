@@ -747,6 +747,86 @@ span:hover::before {
   // }
 }
 
+.balloting-indicator {
+  position: relative;
+  margin: 3rem 0;
+
+  @media screen and (min-width: 64em) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bg-light-gray {
+    position: absolute;
+    background-color: #fafafa;
+    height: 120px;
+    width: 100%;
+    z-index: -1;
+
+    @media screen and (min-width: 52em) {
+      height: 55px;
+    }
+  }
+
+  .indicator {
+    width: 100%;
+
+    .note {
+      text-align: center;
+
+      img {
+        max-height: 35px;
+        margin: 10px;
+      }
+  
+      p {
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 700;
+        @media screen and (min-width: 64em) {
+          width: 500px;
+        }
+      }
+    }
+
+    @media screen and (min-width: 64em) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .note {
+        text-align: start;
+        display: flex;
+        align-items: center;
+
+        img {
+          margin: 0 20px;
+        }
+      }
+    }
+
+    .supports {
+      margin: 0 20px;
+
+      .button {
+        text-transform: none;
+        font-size: 28px;
+        padding: 14px 20px 16px;
+        margin-top: 2rem;
+
+        @media screen and (min-width: 64em) {
+          white-space: nowrap;
+          margin-top: 0;
+        }
+      }
+      
+    }
+  }
+}
+
+
+
 .qs {
   display: block;
 }

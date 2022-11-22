@@ -3,6 +3,10 @@ require_dependency Rails.root.join("app", "controllers", "budgets", "investments
 module Budgets
   class InvestmentsController < ApplicationController
     PER_PAGE = 12
+    SHOW_TOP_INVESTMENTS = false
+    NUMBER_OF_TOP_PROJECTS = 3
+    MISSING_A_LITTLE_TO_TOP = 10
+
     before_action :load_categories, only: [:index, :new, :create, :edit, :update]
     # before_action :load_budgets,  only: [:index, :new, :create, :edit, :update]
 
@@ -12,8 +16,39 @@ module Budgets
     #   @budgets = Budget.where("id > -1");
     # end
 
+    
     def load_categories
       @categories = Tag.category.order(:name)
+    end
+
+    def show
+      @commentable = @investment
+      @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
+      set_comment_flags(@comment_tree.comments)
+      @investment_ids = [@investment.id]
+      @remote_translations = detect_remote_translations([@investment], @comment_tree.comments)
+
+      @show_top_investments = SHOW_TOP_INVESTMENTS
+
+      if (SHOW_TOP_INVESTMENTS && @budget.phase == "balloting")
+        @top_investments = @budget.investments.where("selected = ? AND feasibility = ?", true, "feasible").order(ballot_lines_count: :desc).limit(NUMBER_OF_TOP_PROJECTS)
+        
+        unless (@top_investments.empty?)
+          @top_investments_ids = @top_investments.ids
+
+          if @top_investments_ids.include?(@investment.id)
+            @is_top_investment = true
+          else
+            @is_top_investment = false
+
+            if @top_investments.last.ballot_lines_count - @investment.ballot_lines_count <= MISSING_A_LITTLE_TO_TOP
+              @missing_a_little = true
+            else
+              @missing_a_little = false
+            end
+          end
+        end
+      end
     end
 
     def index

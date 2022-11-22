@@ -141,11 +141,42 @@
       <%# Vote button  %>
       <%# show for all selected projects in phases: balloting  %>
       <% if investment.should_show_ballots? %>
-      <div class="bggray margin-top margin-bottom">
+      <div class="margin-top margin-bottom">
         <div class="investment-ballots">
-          <h2>
-              <%= t("budgets.investments.show.votes") %>
-          </h2>
+          <%# Voting indicator  %>
+          <%# show for all selected projects in phases: balloting  %>
+          <% if @show_top_investments %>
+            <div class="balloting-indicator">   
+              <div class="bg-light-gray"></div>
+              <div class="indicator">
+                <% if @is_top_investment %>
+                  <div class="note">
+                    <%= image_tag(image_path_for("top3.svg")) %>
+                    <p>Ta predlog je trenutno eden izmed top 3 predlogov po številu glasov!</p>
+                  </div>
+                <% elsif @missing_a_little %>
+                  <div class="note">
+                    <%= image_tag(image_path_for("manjka-nekaj.svg")) %>
+                    <p>Temu predlogu manjka samo nekaj glasov, da bo v top 3!</p>
+                  </div>
+                <% else %>
+                  <div class="note">
+                    <%= image_tag(image_path_for("manjka-veliko.svg")) %>
+                    <p>Temu predlogu manjka veliko glasov, da bo v top 3!</p>
+                  </div>
+                <% end %>
+                <div id="<%= dom_id(investment) %>_ballot">
+                  <%= render partial: "ballot", locals: {
+                    investment: investment,
+                    investment_ids: investment_ids,
+                    ballot: ballot
+                  } %>
+                </div>
+              </div>
+            </div>
+
+          <% else %>
+
           <div class="">
             <div id="<%= dom_id(investment) %>_ballot">
               <%= render partial: "ballot", locals: {
@@ -155,6 +186,8 @@
               } %>
             </div>
           </div>
+          <% end %>
+
         </div>
       </div>
       <hr />
