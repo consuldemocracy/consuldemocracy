@@ -36,7 +36,7 @@ module Budgets
         unless (@top_investments.empty?)
           @top_investments_ids = @top_investments.ids
 
-          if @top_investments_ids.include?(@investment.id)
+          if @investment.ballot_lines_count >= @top_investments.last.ballot_lines_count
             @is_top_investment = true
           else
             @is_top_investment = false
