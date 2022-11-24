@@ -1,1 +1,68 @@
 gd:
+  valuation:
+    header:
+      title: Luachadh
+    menu:
+      title: Luachadh
+      budgets: Buidseatan Com-pàirteachail
+    budgets:
+      index:
+        title: Buidseatan Com-pàirteachail
+        filters:
+          current: Fosgailte
+          finished: Crìochnaichte
+        table_name: Ainm
+        table_phase: Ceum
+        table_assigned_investments_valuation_open: Pròiseactan tasgaidh air an sònrachadh le luachadh fosgailte
+        table_actions: Gnìomhan
+        evaluate: Luachaich
+        no_budgets: "Chan eil buidseat sam bith ann"
+    budget_investments:
+      index:
+        headings_filter_all: A h-uile bann-cinn
+        filters:
+          valuation_open: Fosgailte
+          valuating: Ga luachadh
+          valuation_finished: Luachadh crìochnaichte
+        assigned_to: "Air a shònrachadh do %{valuator}"
+        title: Pròiseactan tasgaidh
+        edit: Deasaich an dossier
+        table_id: ID
+        table_title: Tiotal
+        table_heading_name: Ainm a’ bhanna-chinn
+        table_actions: Gnìomhan
+        no_investments: "Chan eil pròiseact tasgaidh sam bith ann."
+      show:
+        back: Air ais
+        title: Pròiseactan tasgaidh
+        info: Fiosrachadh mun ùghdair
+        by: Chaidh a chur le
+        sent: Air a chur aig
+        heading: Bann-cinn
+        dossier: Dossier
+        edit_dossier: Deasaich an dossier
+        price: Prìs
+        price_first_year: Cosgais sa chiad bhliadhna
+        currency: "€"
+        feasibility: Comas Dèanamh
+        feasible: Comasach Dèanamh
+        unfeasible: Eu-comasach Dèanamh
+        undefined: Gun sònrachadh
+        valuation_finished: Luachadh crìochnaichte
+        duration: Clàr-ama
+        responsibles: Dleastanasan
+        assigned_admin: Rianadair air a shònrachadh
+        assigned_valuators: Luchd-luachaidh air an sònrachadh
+        preview: Ro-shealladh air an tasgadh
+      edit:
+        dossier: Dossier
+        price: "Prìs (%{currency})"
+        price_first_year: "Cosgais sa chiad bhliadhna (%{currency}) <small>(roghainneil, chan eil an dàta poblach)</small>"
+        feasibility: Ion-dhèantachd
+        valuation_finished_alert: "A bheil thu cinnteach gu bheil thu airson comharrachadh gu bheil an aithisg seo crìochnaichte? Ma nì thu sin, cha ghabh atharrachadh tuilleadh."
+        not_feasible_alert: "Thèid post-d a chur gu ùghdar a’ phròiseict sa bhad ag aithris nach eil am pròiseact ion-dhèante."
+        save: Sàbhail na h-atharraichean
+      notice:
+        valuate: "Dossier air ùrachadh"
+      valuation_comments: Beachdan bho luachadh
+      not_in_valuating_phase: Chan urrainnear tasgaidhean a luachadh ach a-mhàin nuair a tha am Buidseit aig ìre luachaidh
