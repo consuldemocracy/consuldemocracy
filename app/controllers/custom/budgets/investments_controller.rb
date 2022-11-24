@@ -30,8 +30,10 @@ module Budgets
 
       @show_top_investments = SHOW_TOP_INVESTMENTS
 
+      # if the "show top investments" setting is on and phase is balloting -> calculate top investments
       if (SHOW_TOP_INVESTMENTS && @budget.phase == "balloting")
-        @top_investments = @budget.investments.where("selected = ? AND feasibility = ?", true, "feasible").order(ballot_lines_count: :desc).limit(NUMBER_OF_TOP_PROJECTS)
+        # get top investments from selected investments in the same obmocje (heading)
+        @top_investments = @budget.investments.where("selected = ? AND feasibility = ?", true, "feasible").where(heading_id: @investment.heading_id).order(ballot_lines_count: :desc).limit(NUMBER_OF_TOP_PROJECTS)
         
         unless (@top_investments.empty?)
           @top_investments_ids = @top_investments.ids
