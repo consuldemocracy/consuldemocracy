@@ -78,4 +78,22 @@ describe ApplicationMailer do
       end
     end
   end
+
+  describe "#set_variant" do
+    let(:mailer) { ApplicationMailer.new }
+
+    it "uses the default tenant by default" do
+      mailer.set_variant
+
+      expect(mailer.lookup_context.variants).to eq [:public]
+    end
+
+    it "uses the current tenant schema when defined" do
+      allow(Tenant).to receive(:current_schema).and_return("random-name")
+
+      mailer.set_variant
+
+      expect(mailer.lookup_context.variants).to eq [:"random-name"]
+    end
+  end
 end
