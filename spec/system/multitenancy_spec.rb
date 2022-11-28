@@ -129,6 +129,8 @@ describe "Multitenancy", :seed_tenants do
       check "By registering you accept the terms and conditions of use"
       click_button "Register"
 
+      expect(page).to have_content "You have been sent a message containing a verification link"
+
       confirm_email
 
       expect(page).to have_content "Your account has been confirmed."

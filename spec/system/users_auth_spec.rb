@@ -392,6 +392,9 @@ describe "Users" do
 
         fill_in "Username", with: "manuela2"
         click_button "Register"
+
+        expect(page).to have_content "To continue, please click on the confirmation link that we have sent you via email"
+
         confirm_email
 
         expect(page).to have_content "Your account has been confirmed"
