@@ -1,1 +1,128 @@
 gd:
+  mailers:
+    title: "Riaghaltas Fosgailte"
+    no_reply: "Chaidh am brath seo a chur bho sheòladh puist-d nach gabh ri freagairtean."
+    already_confirmed:
+      info: "Tha sinn air iarrtas fhaighinn gus stiùireadh a chur thugad gus do chunntas a dhearbhadh. Ach, tha an cunntas agad dearbhte mar-thà, agus mar sin chan fheumar sin a dhèanamh a-rithist."
+      new_password: "Ma dhìochuimhnich thu am facal-faire agad, faodaidh tu ath-shuidheachadh aig a’ cheangal a leanas:"
+      subject: Chaidh an cunntas agad a dearbhadh mar-thà
+    comment:
+      hi: Haidh
+      new_comment_by: Tha beachd ùr ann bho <strong>%{commenter}</strong>
+      subject: Thug cuideigin beachd seachad air %{commentable}
+      title: Beachd ùr
+    config:
+      notifications_link: Brathan
+      unsubscribe_text: 'Gus stad a chur air na puist-d seo fhaighinn, tadhail air %{notifications} is thoir a’ chromag air falbh bho "%{notification}".'
+    email_verification:
+      click_here_to_verify: an ceangal seo
+      instructions_2: Dearbhaidh am post-d seo an cunntas agad le <b>%{document_type} %{document_number}</b> . Mura buin iad seo dhut, na briog air a’ cheangal agus leig seachad am post-d seo.
+      instructions: Feumaidh tu briogadh air %{verification_link} gus an cunntais cleachdaiche agad a dhearbhadh.
+      subject: Dearbhaich am post-d agad
+      thanks: Mòran taing.
+      title: "Dearbhaich am post-d agad"
+      text: "Dearbhaich do chunntas leis a’ cheangal a leanas."
+    reply:
+      hi: Haidh
+      new_reply_by: Tha beachd ùr ann bho <strong>%{commenter}</strong> air do bheachd air
+      subject: Thug cuideigin air do bheachd a fhreagairt
+      title: Freagairt ùr dhan bheachd agad
+    proposal_notification_digest:
+      info: "Seo na brathan ùra a chaidh fhoillseachadh le ùghdaran nam molaidhean ris an do chuir thu taic ann an %{org_name}."
+      title: "Brathan mu mholaidhean ann an %{org_name}"
+      share: Co-roinn moladh
+      comment: Thoir seachad beachd air moladh
+      unsubscribe_text: "Mur eil thu airson fios fhaighinn mu mholaidhean, tadhail air %{notifications} agus thoir air falbh a’ chromag bho 'Faigh geàrr-chunntas air brathan mu mholaidhean’."
+      unfollow: "Tadhail air a’ mholadh seo agus sgur a bhith ga leantainn gus stad a chur air brathan."
+    direct_message_for_receiver:
+      subject: "Fhuair thu teachdaireachd puist-d prìobhaideach ùr"
+      reply: Cuir freagairt ùr gu %{sender}
+      unsubscribe_text: "Mur eil thu airson teachdaireachdan dìreach fhaighinn, tadhail air %{notifications} is thoir air falbh a’ chromag bho 'Faigh puist-d mu bhrathan dìreach’."
+    direct_message_for_sender:
+      subject: "Tha thu air teachdaireachd phrìobhaideach ùr a chur"
+      title: "Tha thu air teachdaireachd phrìobhaideach ùr a chur"
+      text: "Chuir thu teachdaireachd phrìobhaideach ùr gu <strong>%{receiver}</strong> leis an t-susbaint:"
+    user_invite:
+      ignore: "Mur an do dh’iarr thu air an cuireadh seo, na gabh dragh, faodaidh tu am post-d seo a leigeil seachad."
+      text: "Tapadh leat airson tagradh a dhèanamh airson pàirt a ghabhail ann an %{org}! Is urrainn dhut tòiseachadh air pàirt a ghabhail ann an ùine nach bi fada, chan eil agad ri dhèanamh ach am foirm gu h-ìosal a lìonadh:"
+      thanks: "Mòran taing."
+      title: "Fàilte gu %{org}"
+      button: Cuir crìoch air a’ chlàradh agad
+      subject: "Cuireadh gu %{org_name}"
+    budget_investment_created:
+      subject: "Tapadh leat airson tasgadh a chruthachadh!"
+      title: "Tapadh leat airson tasgadh a chruthachadh!"
+      intro: "Haidh <strong>%{author}</strong>,"
+      text: "Tapadh leat airson do thasgadh <strong>%{investment}</strong> a chruthachadh airson Buidseatan Com-pàirteachail <strong>%{ buidseit}</strong> ."
+      follow: "Cumaidh sinn fiosrachadh riut air mar a thèid am pròiseas air adhart, agus is urrainn dhut sùil a chumail air seo cuideachd air <strong>%{link}</strong> ."
+      follow_link: "Buidseatan Com-pàirteachail"
+      sincerely: "Le deagh dhùrachd,"
+      share: "Co-roinn am pròiseact agad"
+    budget_investment_unfeasible:
+      title: "Chaidh comharrachadh gu bheil do phròiseact tasgaidh neo-chomasach dèanamh"
+      hi: "A charaid chòir,"
+      new: "Airson nan rudan seo uile, tha sinn a’ toirt cuireadh dhut <strong>tasgadh ùr</strong> a chur air adhart a bhios ag atharrachadh a rèir cruth a’ phròiseis seo. ’S urrainn dhut a dhèanamh leis a’ cheangal seo: %{url}."
+      new_href: "pròiseact tasgaidh ùr"
+      sincerely: "Le deagh dhùrachd"
+      sorry: "Tha sinn duilich ma chuireas seo fo mhì-ghoireas thu. Moran taing a-rithist airson pàirt a ghabhail ann."
+      subject: "Chaidh comharrachadh gu bheil am pròiseact tasgaidh agad '%{code}' neo-chomasach dèanamh."
+    budget_investment_selected:
+      subject: "Chaidh am pròiseact tasgaidh '%{code}' agad a thaghadh"
+      title: "Chaidh do phròiseact tasgaidh a thaghadh"
+      hi: "A charaid chòir,"
+      share: "Tòisich air bhòtaichean fhaighinn, co-roinn do phròiseact tasgaidh air lìonraidhean sòisealta. Tha e deatamach a bhith ga cho-roinn ma tha thu airson a thoirt gu buil."
+      share_button: "Co-roinn am pròiseact tasgaidh"
+      thanks: "Taing mhòr a-rithist airson pàirt a ghabhail ann."
+      sincerely: "Le deagh dhùrachd,"
+    budget_investment_unselected:
+      subject: "Cha deach am pròiseact tasgaidh agad '%{code}' a thaghadh"
+      title: "Cha deach am pròiseact tasgaidh agad a thaghadh"
+      hi: "A charaid chòir,"
+      thanks: "Taing mhòr a-rithist airson pàirt a ghabhail ann."
+      sincerely: "Le deagh dhùrachd,"
+    evaluation_comment:
+      subject: "Beachd luachaidh ùr"
+      title: Beachd luachaidh ùr airson %{investment}
+      hi: Haidh
+      new_comment_by: Tha beachd luachaidh ùr ann bho <strong>%{commenter}</strong> dhan tasgadh buidseit %{investment}
+    machine_learning_error:
+      link: "Tadhail air pannal Ionnsachadh Inneil"
+      subject: "Ionnsachadh Inneill - Thachair mearachd le bhith a’ ruith an sgriobt"
+      text: "Thachair mearachd le bhith a’ ruith an sgriobt Ionnsachadh Inneil."
+      title: "Sgriobt Ionnsachaidh Inneil"
+    machine_learning_success:
+      link: "Tadhail air pannal Ionnsachadh Inneil"
+      subject: "Ionnsachadh Inneil - Chaidh susbaint a chruthachadh gu soirbheachail"
+      text: "Chaidh an t-susbaint a chruthachadh."
+      title: "Sgriobt Ionnsachaidh Inneil"
+    new_actions_notification_on_create:
+      subject: "Chaidh an dreachd mholadh saoranach agad a chruthachadh"
+      hi: "Haidh %{name}!"
+      introduction: "Chaidh do mholadh %{title} a chruthachadh."
+      text_1: "Chan eil am moladh agad poblach fhathast - dèan feum air seo agus ullaich airson fios a chur gu tòrr mòr dhaoine."
+      text_2: "Nuair a bhios tu deiseil foillsich do mholadh saoranach bhon <a href='%{link}'>cheangal</a> seo."
+      text_3: "Tha fios againn gu bheil e toinnte e a bhith a’ cruthachadh moladh tarraingeach agus a bhith a’ faighinn na taic a tha a dhìth. Ach na gabh dragh oir tha sinn ann airson do chuideachadh!"
+      text_4: "Tha inneal agad a bhios na chuideachadh mòr dhut: pannal Molaidhean nan Saoranach."
+      list_1: "Cuir a-steach a h-uile latha ann am pannal a’ mholaidh agad gus na molaidhean agus na goireasan a co-roinneas sinn leat a chleachdadh."
+      list_2: "Cuidichidh na molaidhean, gnìomhan agus goireasan seo thu gus beachdan agus fuasglaidhean practaigeach fhaighinn gus barrachd taic agus coimhearsnachd nas fharsainge fhaighinn. Dèan cinnteach gun cleachd thu e!"
+      list_3: "Mas as motha de thaic a gheibh thu ’s ann as motha de thaic a gheibh thu: bidh cothrom agad air goireasan ùra is nas fheàrr. Aig an àm seo, tha teamplaid post-d agad airson a sgaoileadh fad is farsaing dhan a h-uile neach-aithne agad, postair airson a chlò-bhualadh, am measg fheartan agus dhuaisean eile a lorgas tu. Cùm ort a bhith a’ faighinn taic agus cumaidh sinn oirnn a bhith gad chuideachadh!"
+      list_4: "Tha %{max_month} mìosan agad bho dh’fhoillsicheas thu am moladh agad gus %{max_votes} fhaighinn agus gus am moladh agad a thoirt gu buil. Ach is e na ciad làithean na làithean as cudromaiche. ’S e dùbhlan a th’ ann. Dèan deiseil!"
+      text_5: "Agus gus do bhrosnachadh, "
+      text_6: "tha grunn ghoireasan agad an seo agus liosta mhòr de mholaidhean a thig thugad a h-uile latha gus do chuideachadh le bhith a’ sgaoileadh fios!"
+      dashboard_button: "Siuthad, lorg iad!"
+    new_actions_notification_on_published:
+      subject: "Tha do mholadh saoranach air fhoillseachadh mar-thà. Cùm ort ga sgaoileadh!"
+      hi: "Mealaibh ur naidheachd %{name}! Chaidh do mholadh %{title} a chruthachadh."
+      text_1: "Siuthad a-nis, feuch ris a’ chiad 100 comharraidhean taic fhaighinn!"
+      text_2: "Carson 100?"
+      text_3: "Tha na dh’fhiosraich sinn ag innse dhuinn gu bheil a’ chiad latha fìor chudromach. A bharrachd air an spionnadh a bhith agad bho bhith a’ cur rudeigin ùr air bhog, gheibh am moladh sanasachd chudromach am measg nam molaidhean ùra a chaidh a chomharrachadh."
+      text_4: "Faigh taic bho 100 air a’ chiad latha, agus bidh a’ chiad choimhearsnachd agad a bheir taic dhut."
+      text_5: "Sin as adhbhar gu bheil sinn a’ toirt dùbhlan dhut ga fhaighinn, ach le mòran cuideachaidh!"
+      text_6: "Cuimhnich gu bheil goireasan ùra agus molaidhean gus fios a sgaoileadh rim faighinn ann am Pannal nam Molaidhean agad ."
+      list_1: "Thig a-steach a h-uile latha gus an t-adhartas agad fhaicinn agus cleachd na molaidhean agus na goireasan a cho-roinneas sinn dhut. ’S e a th’ annta ach beachdan agus cuideachd fuasglaidhean practaigeach gus an taic a tha a dhìth ort fhaighinn."
+      list_2: "Mar as motha de thaic a gheibh thu, ’s ann as motha de goireasan ùra is goireasan nas fheàrr a gheibh thu. Cùm ort a bhith a’ faighinn taic ùr ris agus cumaidh sinn oirnn a bhith a’ toirt duaisean dhut agus a bhith gad chuideachadh!"
+      text_7: "Agus gus am bi deagh thoiseach tòiseachaidh agad..."
+      text_8: "Seo fìor dheagh goireas dhut!"
+      text_9: "Tha an gnìomh sgaoilidh ùr seo ann cuideachd a tha sinn a’ moladh..."
+      text_10: "Tha fios gu bheil gu leòr ghoireasan agad ri chleachdadh!"
+      dashboard_button: "Siuthad, lorg iad!"
