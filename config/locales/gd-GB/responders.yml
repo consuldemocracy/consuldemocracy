@@ -1,1 +1,37 @@
 gd:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} a chruthachadh."
+        debate: "Chaidh deasbad a chruthachadh."
+        direct_message: "Chaidh do theachdaireachd a chur."
+        poll: "Chaidh cunntais-bheachd a chruthachadh."
+        poll_booth: "Chaidh bothan a chruthachadh."
+        poll_question_answer: "Chaidh freagairt a chruthachadh"
+        poll_question_answer_video: "Chaidh bhideo a chruthachadh"
+        poll_question_answer_image: "Chaidh dealbh a luchdachadh suas"
+        proposal: "Chaidh moladh a chruthachadh."
+        proposal_notification: "Chaidh do theachdaireachd a chur."
+        budget_investment: "Chaidh Tasgadh Buidseit a chruthachadh."
+        signature_sheet: "Chaidh duilleag ainmean-sgrìobhte a chruthachadh gu soirbheachail"
+        support: "Chaidh taic a thoirt do thasgadh"
+        topic: "Chaidh cuspair a chruthachadh."
+        valuator_group: "Chaidh buidheann luachaidh a chruthachadh"
+      save_changes:
+        notice: Chaidh na h-atharraichean a shàbhaladh
+      update:
+        notice: "%{resource_name} air ùrachadh."
+        debate: "Chaidh an deasbad ùrachadh."
+        poll: "Chaidh an cunntas-bheachd ùrachadh."
+        poll_booth: "Chaidh am bothan ùrachadh."
+        active_poll: "Chaidh tuairisgeul nan cunntasan-bheachd ùrachadh"
+        proposal: "Chaidh am moladh ùrachadh."
+        budget_investment: "Chaidh am pròiseact tasgaidh ùrachadh."
+        topic: "Chaidh an cuspair ùrachadh."
+        valuator_group: "Chaidh a’ bhuidheann luachaidh ùrachadh"
+        translation: "Chaidh an t-eadar-theangachadh ùrachadh"
+      destroy:
+        budget_investment: "Chaidh am pròiseact tasgaidh a sguabadh às."
+        topic: "Chaidh an cuspair a sguabadh às."
+        poll_question_answer_video: "Chaidh a’ bhideo freagairt a sguabadh às."
+        valuator_group: "Chaidh a’ bhuidheann luachaidh a sguabadh às"
