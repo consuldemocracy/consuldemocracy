@@ -14,7 +14,7 @@ tests:
   variables:
     POSTGRES_USER: consul
     RAILS_ENV: test
-    COVERALLS: 1
+    TEST_COVERAGE: 1
   parallel: 5
   script:
     - apt-get update && apt-get install -y nodejs chromium
