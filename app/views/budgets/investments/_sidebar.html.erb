@@ -59,9 +59,7 @@
   </div>
 <% end %>
 
-<% if @heading && !@heading.content_blocks.where(locale: I18n.locale).empty? %>
-  <%= render "budgets/investments/content_blocks" %>
-<% end %>
+<%= render Budgets::Investments::ContentBlocksComponent.new(@heading) %>
 
 <% if @map_location&.available? %>
   <%= render "budgets/investments/map" %>
