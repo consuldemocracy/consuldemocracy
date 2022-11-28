@@ -23,10 +23,7 @@ jobs:
           POSTGRES_USER: consul
           POSTGRES_PASSWORD: ""
     env:
-      CI_BUILD_NUMBER: ${{ github.run_number }}
-      COVERALLS_FLAG_NAME: run-${{ matrix.ci_node_index }}
-      COVERALLS_PARALLEL: true
-      COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+      TEST_COVERAGE: 1
       PGUSER: consul
       POSTGRES_HOST: postgres
       RAILS_ENV: test
@@ -56,6 +53,12 @@ jobs:
           KNAPSACK_PRO_FIXED_QUEUE_SPLIT: true
           KNAPSACK_PRO_LOG_LEVEL: info
         run: bin/knapsack_pro_rspec
+      - name: Coveralls Parallel
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          flag-name: run-${{ matrix.ci_node_index }}
+          parallel: true
       - name: Upload screenshots
         if: failure()
         uses: actions/upload-artifact@v2
@@ -67,9 +70,9 @@ jobs:
       contents: none
     runs-on: ubuntu-latest
     needs: tests
-    env:
-      CI_BUILD_NUMBER: ${{ github.run_number }}
-      COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
     steps:
       - name: Finish coveralls
-        run: curl -k https://coveralls.io/webhook?repo_token=$COVERALLS_REPO_TOKEN -d "payload[build_num]=$CI_BUILD_NUMBER&payload[status]=done"
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel-finished: true
