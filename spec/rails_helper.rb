@@ -1,7 +1,14 @@
 ENV["RAILS_ENV"] ||= "test"
-if ENV["COVERALLS_REPO_TOKEN"]
-  require "coveralls"
-  Coveralls.wear!("rails")
+if ENV["TEST_COVERAGE"]
+  require "simplecov"
+  require "simplecov-lcov"
+  SimpleCov::Formatter::LcovFormatter.config.report_with_single_file = true
+  SimpleCov::Formatter::LcovFormatter.config do |config|
+    config.output_directory = "coverage"
+    config.lcov_file_name = "lcov.info"
+  end
+  SimpleCov.formatter = SimpleCov::Formatter::LcovFormatter
+  SimpleCov.start("rails")
 end
 require File.expand_path("../../config/environment", __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
