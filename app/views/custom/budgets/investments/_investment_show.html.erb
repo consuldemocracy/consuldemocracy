@@ -152,17 +152,17 @@
                 <% if @is_top_investment %>
                   <div class="note">
                     <%= image_tag(image_path_for("top3.svg")) %>
-                    <p>Ta predlog je trenutno eden izmed top 3 predlogov po številu glasov!</p>
+                    <p><%= t("budgets.investments.show.top_investment") %></p>
                   </div>
                 <% elsif @missing_a_little %>
                   <div class="note">
                     <%= image_tag(image_path_for("manjka-nekaj.svg")) %>
-                    <p>Temu predlogu manjka samo nekaj glasov, da bo v top 3!</p>
+                    <p><%= t("budgets.investments.show.top_investment_close") %></p>
                   </div>
                 <% else %>
                   <div class="note">
                     <%= image_tag(image_path_for("manjka-veliko.svg")) %>
-                    <p>Temu predlogu manjka veliko glasov, da bo v top 3!</p>
+                    <p><%= t("budgets.investments.show.top_investment_far") %></p>
                   </div>
                 <% end %>
                 <div id="<%= dom_id(investment) %>_ballot">
