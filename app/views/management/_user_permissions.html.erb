@@ -1,18 +1,5 @@
-<%# # Parameters:
-    #   message: A string explaining the permissions
-    #   permissions: An array of symbols containing the permissions
-    #   (can be :debates, :proposal, :support_proposal, :votes) %>
 <div class="user-permissions">
-
   <p><%= message %></p>
 
-  <ul>
-    <% [:debates, :proposal, :support_proposal, :votes].each do |permission| %>
-      <li>
-        <span class="<%= permissions.include?(permission) ? "icon-check" : "icon-x" %>"></span>
-        <%= t("verification.user_permission_#{permission}") %>
-      </li>
-    <% end %>
-  </ul>
-
+  <%= render Account::PermissionsListComponent.new(user) %>
 </div>

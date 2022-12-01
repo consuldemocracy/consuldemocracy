@@ -25,6 +25,6 @@
   <div class="callout">
     <%= render "management/user_permissions",
                 message: t("management.document_verifications.in_census_has_following_permissions"),
-                permissions: [:debates, :proposal, :support_proposal, :votes] %>
+                user: @user %>
   </div>
 </div>

@@ -1,6 +1,6 @@
 class Management::UsersController < Management::BaseController
   def new
-    @user = User.new(user_params)
+    @user = User.new(user_params.merge(verified_at: Time.current))
   end
 
   def create
