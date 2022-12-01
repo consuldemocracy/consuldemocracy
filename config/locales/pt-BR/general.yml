@@ -741,7 +741,7 @@ pt-BR:
         other: "%{count} idiomas em uso"
     comments:
       zero: "Sem comentários"
-      one: "%{count} comentários"
+      one: "1 comentário"
       other: "%{count} comentários"
   social:
     facebook: "%{org} Facebook"
