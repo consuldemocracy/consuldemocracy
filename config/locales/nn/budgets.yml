@@ -37,10 +37,7 @@ nn:
         milestones_tab: Milepæler
         author: Forfatter
       investment:
-        supports:
-          zero: "%{count} støtte"
-          one: 1 støtte
-          other: "%{count} støtte"
+        supports: [ ]
     investments_list:
       investment:
         supports: "Støtte"
