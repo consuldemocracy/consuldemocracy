@@ -59,7 +59,7 @@ cs:
       sincerely: "S pozdravem,"
       share: "Sdílet projekt"
     budget_investment_unfeasible:
-      title: "Váš investiční projekt '%{code}' byl označen jako nerealizovatelný"
+      title: "Váš investiční projekt byl označen jako nerealizovatelný"
       hi: "Vážený uživateli,"
       new: "Kvůli těmto skutečnostem Vás vyzýváme k vypracování <strong>nového návrhu</strong>, který se přizpůsobí podmínkám tohoto procesu. Můžete to udělat prostřednictvím tohoto odkazu: %{url}."
       new_href: "nový investiční projekt"
@@ -68,7 +68,7 @@ cs:
       subject: "Váš investiční projekt '%{code}' byl označen jako nerealizovatelný"
     budget_investment_selected:
       subject: "Váš investiční projekt '%{code}' byl vybrán"
-      title: "Váš investiční projekt '%{code}' byl vybrán"
+      title: "Váš investiční projekt byl vybrán"
       hi: "Vážený uživateli,"
       share: "Pro získání podpory sdílejte svůj investiční projekt na sociálních sítích. Sdílení je nezbytné pro získání široké podpory."
       share_button: "Sdílejte svůj investiční projekt"
@@ -76,7 +76,7 @@ cs:
       sincerely: "S pozdravem"
     budget_investment_unselected:
       subject: "Váš investiční projekt '%{code}' nebyl vybrán"
-      title: "Váš investiční projekt '%{code}' nebyl vybrán"
+      title: "Váš investiční projekt nebyl vybrán"
       hi: "Vážený uživateli,"
       thanks: "Ještě jednou děkujeme za vaši účast."
       sincerely: "S pozdravem"
