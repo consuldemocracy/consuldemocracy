@@ -823,7 +823,7 @@ gd:
   unauthorized:
     default: Chan eil cead agad an duilleag seo inntrigeadh
     manage:
-      all: "Chan eil cead agad an gnìomh '%{action}' a dhèanamh air %{ subject}."
+      all: "Chan eil cead agad an gnìomh '%{action}' a dhèanamh air %{subject}."
   users:
     login_to_comment: "Feumaidh tu %{signin} no %{signup} gus beachd a thoirt seachad."
     login_to_continue: "Feumaidh tu %{signin} no %{signup} gus leantainn ort."
@@ -834,7 +834,7 @@ gd:
       new:
         direct_messages_bloqued: "Tha an cleachdaiche seo air cur romhpa gun a bhith a’ faighinn teachdaireachdan dìreach"
         submit_button: Cuir teachdaireachd
-        title: Cuir teachdaireachd prìobhaideach gu %{reciever}
+        title: Cuir teachdaireachd prìobhaideach gu %{receiver}
         verified_only: Gus teachdaireachd phrìobhaideach a chur %{verify_account}
       show:
         receiver: Teachdaireachd air a chur gu %{receiver}
