@@ -53,7 +53,7 @@ gd:
       subject: "Tapadh leat airson tasgadh a chruthachadh!"
       title: "Tapadh leat airson tasgadh a chruthachadh!"
       intro: "Haidh <strong>%{author}</strong>,"
-      text: "Tapadh leat airson do thasgadh <strong>%{investment}</strong> a chruthachadh airson Buidseatan Com-pàirteachail <strong>%{ buidseit}</strong> ."
+      text: "Tapadh leat airson do thasgadh <strong>%{investment}</strong> a chruthachadh airson Buidseatan Com-pàirteachail <strong>%{budget}</strong>."
       follow: "Cumaidh sinn fiosrachadh riut air mar a thèid am pròiseas air adhart, agus is urrainn dhut sùil a chumail air seo cuideachd air <strong>%{link}</strong> ."
       follow_link: "Buidseatan Com-pàirteachail"
       sincerely: "Le deagh dhùrachd,"
