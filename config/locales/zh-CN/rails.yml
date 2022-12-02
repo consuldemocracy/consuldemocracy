@@ -9,7 +9,7 @@ zh-CN:
       - 星期五
       - 星期六
     abbr_month_names:
-      - 
+      -
       - 一月
       - 二月
       - 三月
@@ -35,7 +35,7 @@ zh-CN:
       long: "%B %d, %Y"
       short: "%b %d"
     month_names:
-      - 
+      -
       - 一月
       - 二月
       - 三月

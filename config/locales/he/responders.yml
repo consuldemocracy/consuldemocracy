@@ -31,7 +31,6 @@ he:
         translation: "התרגום עודכן בהצלחה"
       destroy:
         budget_investment: "מיזם ההשקעות נמחק בהצלחה"
-        error: "אין אפשרות למחוק"
         topic: "הנושא נמחק בהצלחה."
         poll_question_answer_video: "תשובת הוידאו נמחק בהצלחה."
         valuator_group: "קבוצת המעריכים נמחקה בהצלחה"

@@ -32,7 +32,6 @@ it:
         translation: "Traduzione caricata con successo"
       destroy:
         budget_investment: "Progetto di investimento eliminato."
-        error: "Non può essere eliminato"
         topic: "Argomento eliminato con successo."
         poll_question_answer_video: "Video di risposta eliminato con successo."
         valuator_group: "Gruppo di stimatori eliminato con successo"

@@ -38,7 +38,7 @@ fa:
       keyboard_shortcuts:
         navigation_table:
           rows:
-            - 
+            -
             - 
               page_column: مباحثه
             - 
@@ -49,7 +49,7 @@ fa:
               page_column: آرا
             - 
               page_column: بودجه مشارکتی
-            - 
+            -
     titles:
       help: "%{org}چیست؟ -شرکت شهروند"
     verify:

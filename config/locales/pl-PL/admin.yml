@@ -904,9 +904,6 @@ pl:
         table_title: "Tytuł"
         edit_answers: Edytowanie odpowiedzi
         see_proposal: "(Zobacz wnioski)"
-      flash:
-        question_added: "Pytanie dodane do tego głosowania"
-        error_on_question_added: "Pytanie nie mogło zostać przypisane do tego głosowania"
     questions:
       index:
         title: "Pytania"
@@ -951,12 +948,6 @@ pl:
     answers:
       new:
         title: Nowa odpowiedź
-      show:
-        title: Tytuł
-        description: Opis
-        images: Obrazów
-        images_list: Lista obrazów
-        edit: Edytuj odpowiedź
       edit:
         title: Edytuj odpowiedź
       videos:

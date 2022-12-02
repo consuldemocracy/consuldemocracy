@@ -4,9 +4,6 @@ gl:
       comments:
         see_all: Ver todos
         see_complete: Ver completo
-        comments_count:
-          one: "%{count} comentario"
-          other: "%{count} comentarios"
         replies_count:
           one: "%{count} resposta"
           other: "%{count} respostas"
@@ -18,9 +15,6 @@ gl:
         title: Comentarios
         comments_about: Comentarios sobre
         see_in_context: Amosar no contexto
-        comments_count:
-          one: "%{count} comentario"
-          other: "%{count} comentarios"
       show:
         title: Comentar
       version_chooser:
@@ -92,10 +86,6 @@ gl:
         form:
           leave_comment: Deixa a túa resposta
       question:
-        comments:
-          zero: Ningún comentario
-          one: "%{count} comentario"
-          other: "%{count} comentarios"
         debate: o debate
       show:
         answer_question: Enviar a resposta
@@ -132,9 +122,5 @@ gl:
         zero: "Sen propostas"
         one: "%{count} proposta"
         other: "%{count} propostas"
-      comments:
-        zero: "Sen comentarios"
-        one: "%{count} comentario"
-        other: "%{count} comentarios"
       top_comments:
         zero: "Ningún comentario"

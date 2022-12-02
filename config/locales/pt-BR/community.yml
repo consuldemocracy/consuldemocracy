@@ -25,10 +25,6 @@ pt-BR:
       topic:
         edit: Editar tópico
         destroy: Deletar tópico
-        comments:
-          zero: Nenhum comentário
-          one: 1 comentário
-          other: "%{count} comentários"
       author: Autor
       back: Voltar para %{community} %{proposal}
     topic:

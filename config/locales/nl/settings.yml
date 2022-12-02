@@ -40,8 +40,6 @@ nl:
     telegram_handle_description: "Als het is ingevuld, verschijnt het in het voettekst"
     instagram_handle: "Instagram id"
     instagram_handle_description: "Als het is ingevuld, verschijnt het in het voettekst"
-    url: "Main URL"
-    url_description: "Hoofd URL van je website"
     org_name: "Organization"
     org_name_description: "Naam van uw organisatie"
     related_content_score_threshold: "Gerelateerde scorelimiet voor inhoud"

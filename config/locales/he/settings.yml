@@ -40,8 +40,6 @@ he:
     telegram_handle_description: "אם נכתב פה, יופיע בכותרת התחתונה של הדף"
     instagram_handle: "בערוץ אינסטגרם"
     instagram_handle_description: "אם נכתב פה, יופיע בכותרת התחתונה של הדף"
-    url: "כתובת האתר הראשי"
-    url_description: "ראשי ה-URL של אתר האינטרנט שלך"
     org_name: "שם האתר"
     org_name_description: "שם זה יופיע בנושא פרסומי, דפי עזרה..."
     related_content_score_threshold: "סף ציון תוכן קשור"

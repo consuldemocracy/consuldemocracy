@@ -4,9 +4,6 @@ so:
       comments:
         see_all: Eegida dhaaman
         see_complete: Fiiri dhamaystiran
-        comments_count:
-          one: "%{count} Falo"
-          other: "%{count} falooyinka"
         replies_count:
           one: "%{count} j Jawab celin"
           other: "%{count} j Jawabo celin"
@@ -18,9 +15,6 @@ so:
         title: Faalo
         comments_about: Faaloyin ku sabsan
         see_in_context: Fiiri macnaha guud
-        comments_count:
-          one: "%{count} Falo"
-          other: "%{count} falooyinka"
       show:
         title: Faalo
       version_chooser:
@@ -92,10 +86,6 @@ so:
         form:
           leave_comment: Jawaabtaada ka tag
       question:
-        comments:
-          zero: Falooyin majiraan
-          one: "%{count} Falo"
-          other: "%{count} falooyinka"
         debate: Dood
       show:
         answer_question: Soo gudbi jawaabta
@@ -124,9 +114,5 @@ so:
       debate_phase: "Wajiga doodda"
       proposals_phase: "Wajiga soo jeedinada"
       allegations_phase: "Heerarka faallooyinka"
-      comments:
-        zero: "Falooyin majiraan"
-        one: "%{count} Falo"
-        other: "%{count} falooyinka"
       top_comments:
         zero: "Falooyin majiraan"

@@ -4,9 +4,6 @@ eu:
       comments:
         see_all: Guztiak ikusi
         see_complete: Osoa ikusi
-        comments_count:
-          one: "Iruzkin %{count}"
-          other: "%{count} Iruzkin"
         replies_count:
           one: "Erantzun %{count}"
           other: "%{count} erantzun"
@@ -18,9 +15,6 @@ eu:
         title: Iruzkinak
         comments_about: '-ri buruz iruzkinak'
         see_in_context: Testuinguruan ikusi
-        comments_count:
-          one: "Iruzkin %{count}"
-          other: "%{count} Iruzkin"
       show:
         title: Iruzkin
       version_chooser:
@@ -91,10 +85,6 @@ eu:
         form:
           leave_comment: Zure erantzuna utzi
       question:
-        comments:
-          zero: Iruzkinik gabe
-          one: "Iruzkin %{count}"
-          other: "%{count} Iruzkin"
         debate: Eztabaida
       show:
         answer_question: Erantzuna bidali
@@ -123,9 +113,5 @@ eu:
       debate_phase: "Eztabaida fasea"
       proposals_phase: "Proposamen fasea"
       allegations_phase: "Idazketa fasea"
-      comments:
-        zero: "Iruzkin gabe"
-        one: "Iruzkin %{count}"
-        other: "%{count} Iruzkin"
       top_comments:
         zero: "Iruzkin gabe"

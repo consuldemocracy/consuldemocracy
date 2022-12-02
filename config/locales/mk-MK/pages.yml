@@ -72,7 +72,7 @@ mk:
       keyboard_shortcuts:
         navigation_table:
           rows:
-            - 
+            -
             - 
               page_column: Дебати
             - 
@@ -99,8 +99,8 @@ mk:
               key_column: ALT + CAPS + кратенка
             - 
               browser_column: Chrome
-            - 
-            - 
+            -
+            -
       textsize:
         browser_settings_table:
           browser_header: Прелистувач
@@ -111,8 +111,8 @@ mk:
               browser_column: Firefox
             - 
               browser_column: Chrome
-            - 
-            - 
+            -
+            -
     verify:
       submit: Потврди ја мојата корисничка сметка
       title: Потврди ја твојата корисничка сметка

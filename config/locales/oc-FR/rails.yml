@@ -9,7 +9,7 @@ oc:
       - Dv
       - Ds
     abbr_month_names:
-      - 
+      -
       - Gen
       - Feb
       - Mar
@@ -35,7 +35,7 @@ oc:
       long: "%d de %B de %Y"
       short: "%d de %b"
     month_names:
-      - 
+      -
       - en Genièr
       - en Febrièr
       - en Març

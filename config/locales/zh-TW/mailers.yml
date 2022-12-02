@@ -67,9 +67,5 @@ zh-TW:
       sincerely: "真誠的"
     evaluation_comment:
       hi: 您好
-    new_actions_notification_rake_created:
-      hi: "你好 %{name}"
-    new_actions_notification_rake_published:
-      hi: "你好 %{name}"
     new_actions_notification_on_create:
       hi: "你好 %{name}！"

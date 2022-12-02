@@ -40,8 +40,6 @@ pl:
     telegram_handle_description: "Jeśli zostanie wypełniony, pojawi się w stopce"
     instagram_handle: "Identyfikator użytkownika na Instagramie"
     instagram_handle_description: "Jeśli zostanie wypełniony, pojawi się w stopce"
-    url: "Główny adres URL"
-    url_description: "Główny adres URL Twojej strony internetowej"
     org_name: "Organizacja"
     org_name_description: "Nazwa Twojej organizacji"
     related_content_score_threshold: "Próg wyniku powiązanej treści"

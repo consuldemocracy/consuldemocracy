@@ -14,7 +14,7 @@ fa:
         hide: پنهان کردن نظرات
         ignore_flags: علامتگذاری به عنوان مشاهده شده
         orders:
-          flags: بیشتر پرچم گذاری شده 
+          flags: بیشتر پرچم گذاری شده
           newest: جدیدترین
         title: توضیحات
     dashboard:
@@ -35,14 +35,14 @@ fa:
         ignore_flags: علامتگذاری به عنوان مشاهده شده
         orders:
           created_at: جدیدترین
-          flags: بیشتر پرچم گذاری شده 
+          flags: بیشتر پرچم گذاری شده
         title: مباحثه
     header:
       title: سردبیر
     menu:
       flagged_comments: توضیحات
       flagged_debates: مباحثه
-      flagged_investments: بودجه سرمایه گذاری ها 
+      flagged_investments: بودجه سرمایه گذاری ها
       proposals: طرح های پیشنهادی
       users: انسداد کاربران
     proposals:
@@ -60,7 +60,7 @@ fa:
         ignore_flags: علامتگذاری به عنوان مشاهده شده
         orders:
           created_at: جدید ترین
-          flags: بیشتر پرچم گذاری شده 
+          flags: بیشتر پرچم گذاری شده
         title: طرح های پیشنهادی
     budget_investments:
       index:
@@ -76,8 +76,8 @@ fa:
         ignore_flags: علامتگذاری به عنوان مشاهده شده
         orders:
           created_at: جدید ترین
-          flags: بیشتر پرچم گذاری شده 
-        title: بودجه سرمایه گذاری ها 
+          flags: بیشتر پرچم گذاری شده
+        title: بودجه سرمایه گذاری ها
     proposal_notifications:
       index:
         block_authors: بلوک نویسنده

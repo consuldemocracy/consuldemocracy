@@ -9,18 +9,25 @@ tr:
         targets:
           target_1_1:
             long_title: "2030'a kadar, Günde 1,25 dolardan daha az gelirle geçinen insanların sayısı üzerinden ölçülen aşırı yoksulluğun her yerde herkes için ortadan kaldırılması"
+            short_title: "Aşırı Yoksulluğun Ortadan Kaldırılması"
           target_1_2:
             long_title: "2030’a kadar, ulusal tanımlara göre tüm boyutlarıyla yoksulluk içinde yaşayan her yaştan erkek, kadın ve çocuk oranının en az yarıya indirilmesi"
+            short_title: "Yoksulluğun En Az %50 Azaltılması"
           target_1_3:
             long_title: "Temel mal ve hizmetler de dahil olmak üzere herkes için ulusal açıdan uygun sosyal koruma sistemleri ve önlemlerinin hayata geçirilmesi ve 2030’a kadar yoksul ve savunmasız durumdaki kişiler için önemli ölçüde korunma sağlanması"
+            short_title: "Sosyal Güvenlik Sistemlerinin Uygulanması"
           target_1_4:
             long_title: "2030’a kadar, özellikle yoksullar ve savunmasız durumdaki insanlar olmak üzere, bütün erkek ve kadınların ekonomik kaynaklara ulaşma, temel hizmetlere erişim, toprak ve diğer mülkiyet biçimlerine sahip olma ve üzerinde kontrol kurabilme, miras, doğal kaynaklar, uygun yeni teknolojiler ve mikro finansı da kapsayan finansal hizmetler gibi konularda eşit haklara sahip olmalarının güvence altına alınması"
+            short_title: "Mülkiyet, Temel Hizmetler, Teknoloji ve Ekonomik Kaynaklar için Hak Eşitliğinin Sağlanması"
           target_1_5:
             long_title: "2030’a kadar, yoksulların ve savunmasız durumda olan kişilerin dayanıklılık kazanmalarının sağlanması ve aşırı hava olayları ve diğer ekonomik, sosyal ve çevresel şoklar ve afetlere karşı kırılganlıklarının azaltılması"
+            short_title: "Çevresel, Ekonomik ve Sosyal Afetlere Karşı Dayanıklılık Oluşturulması"
           target_1_A:
             long_title: "Özellikle en az gelişmiş ülkeler olmak üzere, gelişmekte olan ülkelerin yoksulluğu bütün boyutlarıyla sona erdirmek adına programlar ve politikalar uygulayabilmeleri için onlara yeterli ve öngörülebilir araçlar sunmak amacıyla, gelişmiş kalkınma işbirliği aracılığıyla olanlar dahil, çeşitli kaynaklardan kaynakların önemli ölçüde seferber edilmesinin sağlanması"
+            short_title: "Yoksulluğu Sonlandıracak Politikaları Uygulamak için Kaynakların Harekete Geçirilmesi"
           target_1_B:
             long_title: "Yoksulluğun ortadan kaldırılmasına yönelik eylemlere yapılan hızlandırılmış yatırımları desteklemek için ulusal, bölgesel ve uluslararası düzeylerde, yoksulların lehine ve toplumsal cinsiyet eşitliğine duyarlı kalkınma stratejilerine dayalı sağlam politika altyapılarının oluşturulması"
+            short_title: "Yoksul yanlısı ve cinsiyete duyarlı politika çerçeveleri oluşturulması"
       goal_2:
         title: "Açlığa Son"
         title_in_two_lines: "Açlığa Son"
@@ -29,20 +36,28 @@ tr:
         targets:
           target_2_1:
             long_title: "2030’a kadar, açlığın sona erdirilmesi ve özellikle bebekler dahil olmak üzere, yoksul ve savunmasız durumda olan herkesin bütün yıl boyunca güvenli, besleyici ve yeterli miktarda besine erişiminin güvence altına alınması."
+            short_title: "Güvenli ve Besleyici Gıdaya Evrensel Erişim Sağlanması"
           target_2_2:
             long_title: "2025’e kadar, 5 yaş altı çocukların büyümelerini engelleyen unsurlar konusunda üzerinde anlaşmaya varılan uluslararası hedeflerin gerçekleştirilmesi de dahil olmak üzere 2030’a kadar, kötü ve yetersiz beslenmenin tüm biçimlerinin ortadan kaldırılması; genç kızlar, hamile ve emziren kadınlar ile yaşlı insanların beslenmeyle ilgili ihtiyaçlarının ele alınması."
+            short_title: "Her Türlü Yetersiz Beslenmenin Sonlandırılması"
           target_2_3:
             long_title: "2030’a kadar, tarımsal verimliliğin ve özellikle kadınlar, yerli halklar, çiftçi aileler, çobanlar ve balıkçılar olmak üzere küçük ölçekli gıda üreticilerinin toprağa, diğer verimli kaynaklara ve girdilere, bilgiye, finansal hizmetlere, piyasalara ve değer temini ve tarım dışı istihdam olanaklarına güvenli ve eşit erişiminin sağlanması aracılığıyla gelirlerinin iki katına çıkarılması."
+            short_title: "Küçük Ölçekli Gıda Üreticilerinin Verimliliğinin ve Gelirlerinin İki Katına Çıkarılması"
           target_2_4:
             long_title: "2030’a kadar, sürdürülebilir gıda üretimi sistemlerinin güvence altına alınması ve üretimi ve üretkenliği artıran, ekosistemlerin sürdürülmesine yardımcı olan, iklim değişikliğine, aşırı hava koşullarına, kuraklığa, sele ve diğer felaketlere uyum sağlama kapasitesini güçlendiren ve toprak kalitesini devamlı olarak iyileştiren dayanıklı tarım uygulamalarının hayata geçirilmesi."
+            short_title: "Sürdürülebilir Gıda Üretimi ve Dayanıklı Tarım Uygulamaları"
           target_2_5:
             long_title: "2020’ye kadar, tohumların, kültür bitkilerinin, çiftlik hayvanlarının ve evcilleştirilmiş hayvanların ve onlara bağlı vahşi türlerin ulusal, bölgesel ve uluslararası düzeylerde etkin bir biçimde yönetilen ve çeşitlendirilmiş tohum ve bitki bankaları aracılığıyla genetik çeşitliliğinin sürdürülmesi ve uluslararası kabul gören biçimde genetik kaynakların ve ilgili geleneksel bilginin kullanımından elde edilen kazanımlara erişimin ve bu kazanımların adil ve eşitlikçi biçimde paylaştırılmasının desteklenmesi."
+            short_title: "Gıda Üretiminde Genetik Çeşitliliğin Korunması"
           target_2_A:
             long_title: "Gelişmekte olan ülkelerde, özellikle de en az gelişmiş ülkelerde tarımsal üretim kapasitesini artırmak için kırsal altyapı, tarımsal araştırma ve yayım hizmetleri, teknoloji geliştirme ve bitki ve hayvancılık gen bankalarında gelişmiş uluslararası işbirliği yoluyla yatırımları artırmak."
+            short_title: "Kırsal Altyapı, Tarımsal Araştırma, Teknoloji ve Gen Bankalarına Yatırım Yapılması"
           target_2_B:
             long_title: "Tarımsal ihracat sübvansiyonlarının her türünün ve eş etkili mali yüklerle birlikte bütün ihracat önlemlerinin paralel olarak ortadan kaldırılması yoluyla, Doha Kalkınma Turuna uygun olarak, dünya tarım piyasalarındaki ticari kısıtlamalar ve aksaklıkların düzeltilmesi ve önlenmesi."
+            short_title: "Tarımsal Ticaret Kısıtlamalarının, Piyasa Bozulmalarının ve İhracat Sübvansiyonlarının Önlenmesi"
           target_2_C:
             long_title: "Gıda mamulleri piyasalarının ve türevlerinin uygun biçimde işleyişini sağlamak için önlemler alınması ve gıda fiyatlarındaki aşırı değişkenliği sınırlandırmaya yardımcı olmak için gıda rezervleri de dahil olmak üzere piyasa bilgilerine zamanında erişimin kolaylaştırılması."
+            short_title: "İstikrarlı Gıda Emtia Piyasaları ve Bilgiye Zamanında Erişimin Sağlanması"
       goal_3:
         title: "Sağlık ve Kaliteli Yaşam"
         title_in_two_lines: "Sağlık ve Kaliteli Yaşam"
@@ -51,30 +66,43 @@ tr:
         targets:
           target_3_1:
             long_title: "2030'a kadar, dünya genelinde anne ölüm oranının 100.000 canlı doğumda 70'in altına düşürülmesi."
+            short_title: "Anne Ölümlerinin Azaltılması"
           target_3_2:
             long_title: "2030'a kadar, yenidoğan ölüm oranının her 1000 canlı doğumda en az 12’ye ve 5 yaş altı çocuk ölüm oranının da her 1000 canlı doğumda en az 25’e düşmesinin hedeflenmesiyle, yenidoğan ve 5 yaş altı çocukların önlenebilir ölümlerinin sona erdirilmesi."
+            short_title: "5 Yaş Altı Önlenebilir Tüm Ölümlerin Bitirilmesi"
           target_3_3:
             long_title: "2030’a kadar, AIDS, tüberküloz, sıtma ve göz ardı edilen tropikal hastalık gibi salgınların sona erdirilmesi ve hepatit, su yoluyla bulaşan hastalıklar ve diğer bulaşıcı hastalıklarla mücadele edilmesi."
+            short_title: "Bulaşıcı Hastalıklarla Mücadele Edilmesi"
           target_3_4:
             long_title: "2030’a kadar, bulaşıcı olmayan hastalıklardan kaynaklanan prematüre bebek ölümlerinin, bu hastalıkların önlenmesi ve tedavisi yoluyla üçte bir oranında azaltılması ve zihinsel sağlığın ve refahın geliştirilmesi."
+            short_title: "Bulaşıcı Olmayan Hastalıklardan Ölümlerin Azaltılması ve Ruh Sağlığının Geliştirilmesi"
           target_3_5:
             long_title: "Uyuşturucu madde kullanımı ve alkol bağımlılığı dahil olmak üzere madde bağımlılığının önlenmesi ve tedavisinin güçlendirilmesi."
+            short_title: "Madde Bağımlılığının Önlenmesi ve Tedavi Edilmesi"
           target_3_6:
             long_title: "2020'ye kadar, trafik kazalarından kaynaklanan toplam yaralanma ve ölüm sayısının yarıya indirilmesi."
+            short_title: "Trafik Kazalarında Yaralanma ve Ölümlerin Azaltılması"
           target_3_7:
             long_title: "2030'a kadar, aile planlaması, bilgilendirme ve eğitim dahil olmak üzere cinsel sağlık ve üreme sağlığı hizmetlerine evrensel erişimin sağlanması ve üreme sağlığının ulusal strateji ve programlara entegre edilmesi."
+            short_title: "Cinsel ve Üreme ile İlgili Bakım, Aile Planlaması ve Eğitime Evrensel Erişim Sağlanması"
           target_3_8:
             long_title: "Finansal risk korumasını, kaliteli temel sağlık hizmetlerine erişimi ve herkesin güvenli, etkili, kaliteli ve makul fiyatlı zaruri ilaçlara ve aşılara erişimini de kapsayan evrensel bir sağlık güvencesi sisteminin sağlanması."
+            short_title: "Evrensel Kapsamda Sağlık Hizmetlerine Ulaşımın Sağlanması"
           target_3_9:
             long_title: "2030’a kadar, zararlı kimyasallardan ve hava, su ve toprak kirliliğinden kaynaklanan hastalıkların ve ölümlerin sayısının büyük ölçüde azaltılması."
+            short_title: "Tehlikeli Kimyasallar ve Kirlilik Nedeniyle Hastalıkların ve Ölümlerin Azaltılması"
           target_3_A:
             long_title: "Dünya Sağlık Örgütü Tütün Kontrolü Çerçeve Sözleşmesinin bütün ülkelerde, uygun şekilde uygulanmasının güçlendirilmesi."
+            short_title: "DSÖ Tütün Kontrolü Çerçeve Sözleşmesinin Uygulanması"
           target_3_B:
             long_title: "Öncelikli olarak, gelişmekte olan ülkeleri etkileyen bulaşıcı olan ve bulaşıcı olmayan hastalıklar için aşı ve ilaçların geliştirilmesinin desteklenmesi, gelişmekte olan ülkelerin kamu sağlığının korunmasına yönelik esnekliklere ilişkin Fikri Mülkiyet Haklarının Ticari Niteliklerine İlişkin Anlaşma hükümlerini tamamıyla uygulayabilme hakkını onaylayan TRIPS Anlaşması ve Doha Bildirgesi gereğince, uygun fiyatlı temel ilaçlara ve aşılara erişimin sağlanması ve özellikle her kesimden bireylerin ilaçlara erişiminin sağlanması."
+            short_title: "Uygun Fiyatlı Aşılara ve İlaçlara Araştırma, Geliştirme ve Evrensel Erişimin Desteklenmesi"
           target_3_C:
             long_title: "Az gelişmiş ülkeler ve gelişmekte olan küçük ada devletleri başta olmak üzere gelişmekte olan ülkelerde sağlık hizmeti finansmanının ve sağlık iş gücü istihdamının, geliştirilmesinin, eğitilmesinin ve devamlılığının önemli ölçüde artırılması."
+            short_title: "Gelişmekte Olan Ülkelerde Sağlık Finansmanının Artırılması ve Sağlık İşgücünün Desteklenmesi"
           target_3_D:
             long_title: "Erken uyarı, risk azaltma ve ulusal ve küresel sağlık risklerinin yönetimi için başta gelişmekte olan ülkeler olmak üzere tüm ülkelerin kapasitesinin güçlendirilmesi."
+            short_title: "Küresel Sağlık Riskleri İçin Erken Uyarı Sistemlerinin İyileştirilmesi"
       goal_4:
         title: "Nitelikli Eğitim"
         title_in_two_lines: "Nitelikli Eğitim"
@@ -83,24 +111,34 @@ tr:
         targets:
           target_4_1:
             long_title: "2030'a kadar, bütün kız ve erkek çocuklarının ücretsiz, eşitlikçi ve kaliteli ilk ve orta öğretimi tamamlamalarının ve böylece Hedef-4'teki ilgili etkili öğrenme çıktılarının elde edilmesinin sağlanması."
+            short_title: "Ücretsiz İlk ve Orta Öğretim"
           target_4_2:
             long_title: "2030'a kadar, tüm kız ve erkek çocuklarının kaliteli erken çocukluk gelişimi, bakımı ve okul öncesi eğitimine erişebilmelerinin ve böylece ilköğretime hazır olmalarının sağlanması."
+            short_title: "Kaliteli Okul Öncesi Eğitime Eşit Erişim Hakkının Sağlanması"
           target_4_3:
             long_title: "2030’a kadar bütün kadın ve erkeklerin erişilebilir ve kaliteli teknik eğitim, mesleki eğitim ve üniversiteyi de kapsayan yüksek öğretime eşit biçimde erişimlerinin sağlanması."
+            short_title: "Ekonomik Teknik, Mesleki ve Yüksek Öğrenime Eşit Erişim Hakkının Sağlanması"
           target_4_4:
             long_title: "2030’a kadar, istihdam, insana yakışır işlerde çalışma ve girişimcilik hakkında teknik ve mesleki beceriler de dahil olmak üzere ilgili becerilere sahip gençlerin ve yetişkinlerin sayısının önemli ölçüde artırılması."
+            short_title: "Finansal Başarı için İlgili Becerilere Sahip Kişi Sayısının Artırılması"
           target_4_5:
             long_title: "2030'a kadar, eğitimdeki cinsiyet eşitsizliklerini ortadan kaldırmak ve engelli kişiler, yerli halklar ve savunmasız durumdaki çocuklar da dahil olmak üzere savunmasız kişiler için tüm eğitim ve mesleki eğitime eşit erişim sağlamak."
+            short_title: "Eğitimde Ayrımcılığın Tümüyle Ortadan Kaldırılması"
           target_4_6:
             long_title: "2030’a kadar bütün gençlerin ve hem erkek hem de kadın yetişkinlerin büyük bir kısmının okuryazar olması ve matematiksel beceriler kazanmasının garanti edilmesi."
+            short_title: "Evrensel Okuryazarlık ve Matematik"
           target_4_7:
             long_title: "2030’a kadar, diğerleri arasında sürdürülebilir kalkınma ve sürdürülebilir yaşam tarzları için eğitim, insan hakları, toplumsal cinsiyet eşitliği, barış ve şiddetsizlik kültürünün teşviki, dünya vatandaşlığı ve kültürel çeşitliliğin ve kültürün sürdürülebilir kalkınmaya katkısının takdiri de dahil olmak üzere bütün öğrenciler tarafından sürdürülebilir kalkınmanın ilerletilmesi için gereken bilgi ve beceri edinmesinin sağlanması."
+            short_title: "Sürdürülebilir Kalkınma ve Küresel Vatandaşlık Eğitimi"
           target_4_A:
             long_title: "Çocuklara, engellilere ve cinsiyete duyarlı ve herkes için güvenli, şiddet içermeyen, kapsayıcı ve etkili öğrenme ortamları sağlayan eğitim tesisleri inşa edin ve geliştirin."
+            short_title: "Okulların Kapsayıcı ve Güvenli Şekilde Kurulması ve Geliştirilmesi"
           target_4_B:
             long_title: "2020 yılına kadar, gelişmekte olan ülkeler, özellikle en az gelişmiş ülkeler, gelişmekte olan küçük ada Devletleri ve Afrika ülkeleri için mesleki eğitim ve bilgi ve iletişim teknolojisi, teknik, mühendislik ve bilimsel programlar da dahil olmak üzere gelişmiş ülkelerde ve diğer gelişmekte olan ülkelerde yüksek öğrenimdeki mevcut bursların sayısını küresel olarak önemli ölçüde artırmak."
+            short_title: "Gelişmekte Olan Ülkeler İçin Yüksek Öğrenim Burslarının Genişletilmesi"
           target_4_C:
             long_title: "2030'a kadar, özellikle en az gelişmiş ülkelerde ve gelişmekte olan küçük ada devletlerinde, gelişmekte olan ülkelerde öğretmen eğitimi için uluslararası işbirliği yoluyla da dahil olmak üzere nitelikli öğretmen arzını önemli ölçüde artırmak."
+            short_title: "Gelişmekte Olan Ülkelerde Nitelikli Öğretmen Arzının Artırılması"
       goal_5:
         title: "Cinsiyet Eşitliği"
         title_in_two_lines: "Toplumsal Cinsiyet Eşitliği"
@@ -109,22 +147,31 @@ tr:
         targets:
           target_5_1:
             long_title: "Kadınlara ve kız çocuklarına karşı her yerde, her türlü ayrımcılığı ortadan kaldırın."
+            short_title: "Kadınlara ve Kız Çocuklarına Karşı Ayrımcılığın Sonlandırılması"
           target_5_2:
             long_title: "İnsan ticareti, cinsel ve diğer sömürü türleri dahil olmak üzere, kamusal ve özel alanlarda tüm kadınlara ve kızlara yönelik her türlü şiddetin ortadan kaldırılması."
+            short_title: "Kadınlara ve Kız Çocuklarına Yönelik Tüm Şiddet ve Sömürülere Son Verilmesi"
           target_5_3:
             long_title: "Çocuk evliliği, erken yaşta ve zorla evlendirilme ve kadın sünneti gibi tüm zararlı uygulamaların ortadan kaldırılması."
+            short_title: "Zorla Evliliklerin ve Genital Sakatlamanın Ortadan Kaldırılması"
           target_5_4:
             long_title: "Ücretsiz bakımı ve ev işlerini kamu hizmetleri, altyapı ve sosyal koruma politikalarının sağlanması ve hane ve aile içinde uygun şekilde paylaşılan sorumluluğun ulusal düzeyde teşvik edilmesi yoluyla tanımak ve bunlara değer vermek."
+            short_title: "Ödemesiz Bakıma Değer Verilmesi ve Paylaşılan Yurtiçi Sorumlulukların Teşvik Edilmesi"
           target_5_5:
             long_title: "Kadınların siyasi, ekonomik ve sosyal yaşamın her seviyesinde karar alma süreçlerine tam ve etkin biçimde katılımının ve liderlik etmeleri için eşit fırsatlar tanınmasının garanti altına alınması."
+            short_title: "Liderlik ve Karar Almada Tam Katılımın Sağlanması"
           target_5_6:
             long_title: "Uluslararası Nüfus ve Kalkınma Konferansı Eylem Programı ve Pekin Eylem Platformu ve bunların gözden geçirme konferanslarının sonuç belgelerine uygun olarak üzerinde mutabık kalınan cinsel sağlık, üreme sağlığı ve üreme haklarına evrensel erişimin sağlanması."
+            short_title: "Üreme Sağlığı ve Haklarına Evrensel Erişim Sağlanması"
           target_5_A:
             long_title: "Ulusal yasalara uygun olarak, kadınlara ekonomik kaynaklara eşit ulaşım, toprak, mali hizmetler, miras ve doğal kaynaklar üzerinde mülkiyet ve kontrole erişim hakkı verecek reformları gerçekleştirmek."
+            short_title: "Ekonomik Kaynaklar, Mülk Sahipliği ve Finansal Hizmetlerde Hak Eşitliği Sağlanması"
           target_5_B:
             long_title: "Kadınların güçlendirilmesini teşvik etmek için özellikle bilgi ve iletişim teknolojisi olmak üzere etkinleştirme teknolojisinin kullanımının geliştirilmesi."
+            short_title: "Kadınların Teknoloji Yoluyla Güçlenmesinin Teşvik Edilmesi"
           target_5_C:
             long_title: "Toplumsal cinsiyet eşitliğinin geliştirilmesi ve tüm kadın ve kız çocuklarının her düzeyde güçlendirilmesi için sağlam politikalar ve uygulanabilir mevzuatın kabul edilmesi ve güçlendirilmesi."
+            short_title: "Toplumsal Cinsiyet Eşitliğine Yönelik Politikaların ve Uygulanabilir Mevzuatın Kabul Edilmesi ve Güçlendirilmesi"
       goal_6:
         title: "Temiz Su ve Hijyen Önlemleri"
         title_in_two_lines: "Temiz Su ve Sanitasyon"
@@ -133,20 +180,28 @@ tr:
         targets:
           target_6_1:
             long_title: "2030’a kadar, herkesin güvenilir ve uygun fiyatlı içme suyuna evrensel ve eşit erişiminin sağlanması."
+            short_title: "Güvenli ve Uygun Maliyetli İçme Suyunun Sağlanması"
           target_6_2:
             long_title: "2030’a kadar, herkesin elverişli hijyen ve sıhhi koşullara eşit biçimde erişiminin sağlanması ve kadınların, kız çocuklarının ve savunmasız durumda olanların ihtiyaçlarına özel önem göstererek kamuya açık alanlarda dışkılamanın sona erdirilmesi."
+            short_title: "Açığa Dışkılamanın Sonlandırılması ve Sanitasyon ile Hijyene Erişim Sağlanması"
           target_6_3:
             long_title: "2030'a kadar, kirliliği azaltarak, atıkların doğaya bırakılmasını ortadan kaldırarak ve tehlikeli kimyasalların ve malzemelerin salınımını en aza indirerek, arıtılmamış atık su oranını yarıya indirerek ve küresel olarak geri dönüşümü ve güvenli yeniden kullanımı önemli ölçüde artırarak su kalitesini iyileştirmek."
+            short_title: "Su Kalitesinin, Atıksu Arıtımının ve Güvenli Yeniden Kullanımın İyileştirilmesi"
           target_6_4:
             long_title: "2030’a kadar, tüm sektörlerde su kullanım verimliliğinin büyük ölçüde artırılması, su kıtlığı sorununun çözülmesi için sürdürülebilir tatlı su tedarikinin ve su çekilmesinin sağlanması ile su kıtlığından muzdarip insan sayısının önemli ölçüde azaltılması."
+            short_title: "Su Kullanımı Verimliliğinin Artırılması ve Tatlı Su Temininşn Sağlanması"
           target_6_5:
             long_title: "2030'a kadar, uygun görüldüğü hallerde sınır ötesi işbirliği de dahil olmak üzere her düzeyde entegre su kaynakları yönetimi uygulanması."
+            short_title: "Entegre Su Kaynakları Yönetiminin Uygulanması"
           target_6_6:
             long_title: "2020'ye kadar, dağlar, ormanlar, sulak alanlar, nehirler, akiferler ve göller dahil olmak üzere su ekosistemlerinin korunması ve eski haline getirilmesi."
+            short_title: "Suyla İlgili Ekosistemlerin Korunması ve Yenilenmesi"
           target_6_A:
             long_title: "2030’a kadar, gelişmekte olan ülkelere su hasadı, tuzdan arındırma, su verimliliği, atık su arıtma, geri dönüşüm ve tekrar kullanım teknolojileri dahil olmak üzere suyla ve sıhhi koşullarla ilgili faaliyet ve programlarda kapasite geliştirme desteğinin ve uluslararası işbirliğinin genişletilmesi."
+            short_title: "Gelişmekte Olan Ülkelere Su ve Sanitasyon Desteğinin Artırılması"
           target_6_B:
             long_title: "Yerel toplulukların su ve sıhhi koşullar yönetiminin geliştirilmesine katılımlarının desteklenmesi ve güçlendirilmesi."
+            short_title: "Su ve Sanitasyon Yönetiminde Yerel Katılımın Desteklenmesi"
       goal_7:
         title: "Erişilebilir ve Temiz Enerji"
         title_in_two_lines: "Erişilebilir ve Temiz Enerji"
@@ -155,14 +210,19 @@ tr:
         targets:
           target_7_1:
             long_title: "2030’a kadar, uygun fiyatlı, güvenilir ve modern enerji hizmetlerine evrensel erişimin garanti altına alınması."
+            short_title: "Modern Enerjiye Evrensel Erişimin Sağlanması"
           target_7_2:
             long_title: "2030’a kadar, küresel enerji kaynakları çeşitliliği içerisinde yenilenebilir enerjinin payının büyük ölçüde artırılması."
+            short_title: "Yenilenebilir Enerjinin Küresel Yüzdesinin Artırılması"
           target_7_3:
             long_title: "2030’a kadar küresel enerji verimliliğini iyileştirme oranının iki katına çıkarılması."
+            short_title: "Enerji Verimliliğinin İki Kat İyileştirilmesi"
           target_7_A:
             long_title: "2030’a kadar, yenilenebilir enerji, enerji verimliliği ve gelişmiş ve daha temiz fosil yakıt teknolojisi dahil olmak üzere, temiz enerji araştırma ve teknolojisine erişimi kolaylaştırmak için uluslararası işbirliğinin geliştirilmesi ve enerji altyapısı ve temiz enerji teknolojisine yatırımın teşvik edilmesi."
+            short_title: "Temiz Enerjide Araştırma, Teknoloji ve Yatırımlara Erişimin Teşvik Edilmesi "
           target_7_B:
             long_title: "2030’a kadar, özellikle en az gelişmiş ülkeler, gelişmekte olan küçük ada devletleri ve denize kıyısı olmayan gelişmekte olan ülkeler olmak üzere gelişmekte olan ülkelerde, destek programları gereğince herkese modern ve sürdürülebilir enerji hizmetleri sağlamak için altyapının genişletilmesi ve teknolojinin geliştirilmesi."
+            short_title: "Gelişmekte Olan Ülkeler İçin Enerji Hizmetlerinin Genişletilmesi ve Yükseltilmesi"
       goal_8:
         title: "İnsana Yakışır İş ve Ekonomik Büyüme"
         title_in_two_lines: "İnsana Yakışır İş ve Ekonomik Büyüme"
@@ -171,28 +231,40 @@ tr:
         targets:
           target_8_1:
             long_title: "Ulusal koşullara uygun olarak kişi başına düşen gelir artışının ve özellikle en az gelişmiş ülkelerde gayri safi yurt içi hasılanın yılda en az yüzde 7 oranında büyümesinin sürdürülmesi."
+            short_title: "Sürdürülebilir Ekonomik Büyüme"
           target_8_2:
             long_title: "Yüksek katma değerli ve emek yoğun sektörler üzerine odaklanıp çeşitlendirme, teknolojik gelişim ve yenilikçilik aracılığıyla daha yüksek seviyelerde ekonomik verimlilik sağlanması."
+            short_title: "Ekonomik Verimlilik için Çeşitlendirme, Yenileme ve Güncelleme"
           target_8_3:
             long_title: "Üretim faaliyetleri, insana yakışır istihdam yaratma, girişimcilik, yaratıcılık ve yenilikçilik gibi desteklenen kalkınma odaklı politikaların teşvik edilmesi ve finansal hizmetlere erişim aracılığıyla mikro, küçük ve orta büyüklükteki işletmelerin resmiyet kazanmalarının ve büyümelerinin teşvik edilmesi."
+            short_title: "İstihdam Yaratmayı ve Büyüyen İşletmeleri Destekleyecek Politikaların Teşvik Edilmesi"
           target_8_4:
             long_title: "2030 yılı sonuna kadar, üretim ve tüketimde küresel kaynak yeterliliğinin devamlı biçimde artırılması ve gelişmiş ülkelerin liderlik ettiği sürdürülebilir üretim ve tüketim için 10 yıllık çerçeve programına uygun olarak ekonomik büyümenin çevre kirliliğine neden olmasının engellenmesi için çaba gösterilmesi."
+            short_title: "Tüketim ve Üretimde Kaynak Verimliliğinin Artırılması"
           target_8_5:
             long_title: "2030’a kadar, gençler ve engelli bireyler de dahil olmak üzere bütün kadın ve erkekler için tam, üretken istihdam ve insana yakışır işlerin kazanımının sağlanması ve eşit işe eşit ücret ilkesinin gerçekleştirilmesi."
+            short_title: "Tam İstihdam ve Eşit Ücretle İnsana Yakışır İş Sağlanması"
           target_8_6:
             long_title: "2020 yılına kadar, istihdam edilmeyen, eğitim veya öğretim görmeyen gençlerin oranının önemli ölçüde azaltılması."
+            short_title: "Genç İstihdam, Eğitim ve Öğretiminin Teşvik Edilmesi"
           target_8_7:
             long_title: "Zorla çalıştırmayı ortadan kaldırmak, modern köleliği ve insan ticaretini kökünden halletmek ve çocukların askere alınması ve asker olarak kullanılması da dahil çocuk işçiliğinin en kötü türlerinin yasaklanmasını ve ortadan kaldırılmasını güvence altına almak için acil ve etkili önlemler alınması ve 2025’e kadar çocuk işçiliğinin her türünün sona erdirilmesi."
+            short_title: "Modern Köleliğe, İnsan Ticaretine ve Çocuk İşçiliğine Son Verilmesi"
           target_8_8:
             long_title: "Göçmen işçiler, özellikle göçmen kadınlar ve tehlikeli işlerde çalışanlar dahil olmak üzere tüm çalışanların işçi haklarının korunması ve güvenli çalışma ortamlarının teşvik edilmesi."
+            short_title: "İşçi Haklarının Korunması ve Güvenli Çalışma Ortamlarının Teşvik Edilmesi"
           target_8_9:
             long_title: "2030’a kadar, istihdam alanı yaratan ve yerel kültür ve ürünlerini teşvik eden sürdürülebilir turizmin desteklenmesi adına politikalar düzenlenmesi ve uygulanması"
+            short_title: "Faydalı ve Sürdürülebilir Turizmin Teşvik Edilmesi"
           target_8_10:
             long_title: "Herkesin bankacılık, sigorta ve finansal hizmetlere erişiminin genişletilmesi ve bu hizmetlerin teşvik edilmesi için yurt için finansal kurumların kapasitesinin güçlendirilmesi."
+            short_title: "Bankacılık, Sigorta ve Finansal Hizmetlere Evrensel Erişim Sağlanması"
           target_8_A:
             long_title: "Özellikle en az gelişmiş ülkeler dahil olmak üzere gelişmekte olan ülkeler için, En Az Gelişmiş Ülkelere Ticaretle Bağlantılı Teknik Destek İçin Entegre Edilmiş Çerçeve Dayanışma Fonu aracılığıyla ticaret yardımının artırılması."
+            short_title: "Ticaret Desteği için Yardımın Artırılması"
           target_8_B:
             long_title: "2020'ye kadar, Uluslararası Çalışma Örgütü'nün Küresel İş Paktı'nın uygulanması ve genç istihdamı için küresel bir strateji yürütülmesi ve geliştirilmesi."
+            short_title: "Küresel bir Genç İstihdam Stratejisi Geliştirilmesi"
       goal_9:
         title: "Sanayi, Yenilikçilik ve Altyapı"
         title_in_two_lines: "Sanayi, Yenilikçilik ve Altyapı"
@@ -201,20 +273,28 @@ tr:
         targets:
           target_9_1:
             long_title: "Bölgesel ve sınır ötesi altyapısı dahil olmak üzere herkes için uygun fiyatlı ve adil bir erişime odaklanarak ekonomik kalkınmanın ve birey refahının desteklenmesi için kaliteli, güvenilir, sürdürülebilir ve dayanıklı altyapının geliştirilmesi."
+            short_title: "Sürdürülebilir, Dayanıklı ve Kapsayıcı Altyapılar Geliştirilmesi"
           target_9_2:
             long_title: "Kapsayıcı ve sürdürülebilir sanayileşmenin teşvik edilmesi ve 2030'a kadar, endüstrinin istihdam ve gayri safi yurt içi hasıla payının ulusal koşullara paralel olarak önemli ölçüde artırılması ve en az gelişmiş ülkelerdeki payının iki katına çıkarılması."
+            short_title: "Kapsayıcı ve Sürdürülebilir Sanayileşmenin Teşvik Edilmesi"
           target_9_3:
             long_title: "Özellikle gelişmekte olan ülkelerde küçük ölçekli sanayi işletmelerinin ve diğer işletmelerin uygun fiyatlı kredi dahilinde finansal hizmetlere erişimlerinin ve değer zincirlerine ve pazarlara entegrasyonlarının artırılması."
+            short_title: "Finansal Hizmetlere ve Piyasalara Erişimin Artırılması"
           target_9_4:
             long_title: "2030’a kadar her ülkenin ayrı ayrı kendi kapasitesine uygun olarak harekete geçmesi, etkin kaynak kullanımının artırılması ve temiz ve çevreye uyumlu teknolojilerin ve sanayi süreçlerinin büyük ölçüde benimsenmesi ile altyapının ve güçlendirme sanayilerinin sürdürülebilir hale getirilerek geliştirilmesi."
+            short_title: "Sürdürülebilirlik için Tüm Endüstrilerin ve Altyapıların Güncellenmesi"
           target_9_5:
             long_title: "Özellikle gelişmekte olan ülkeler olmak üzere bütün ülkelerde, 2030’a kadar, yenilikçiliğin teşvik edilmesi ve 1 milyonda insanda, araştırma-geliştirme alanında çalışan kişi sayısının, kamusal ve özel araştırmaların ve kalkınma harcamalarının önemli ölçüde artırılması; bilimsel araştırmanın iyileştirilmesi ve sanayi sektörlerinin teknolojik yeterliliklerinin geliştirilmesi."
+            short_title: "Araştırmaların Genişletilmesi ve Endüstriyel Teknolojilerin Güncellenmesi "
           target_9_A:
             long_title: "Afrika ülkelerine, az gelişmiş ülkelere, denize kıyısı olmayan gelişmekte olan ülkelere ve gelişmekte olan küçük ada devletlerine gelişmiş finansal, teknolojik ve teknik desteğin sağlanması aracılığıyla, gelişmekte olan ülkelerde sürdürülebilir ve dayanıklı altyapı geliştirmenin kolaylaştırılması."
+            short_title: "Gelişmekte Olan Ülkeler İçin Sürdürülebilir Altyapılar Geliştirmenin Kolaylaştırılması"
           target_9_B:
             long_title: "Sanayi çeşitliliği ve sanayi ürünlerinde değer artırımının yanı sıra, elverişli bir politika ortamı sağlamak için, gelişmekte olan ülkelerde yurt içi teknoloji gelişiminin, araştırma ve yenilikçiliğin desteklenmesi."
+            short_title: "Yerli Teknoloji Geliştirilmesi ve Endüstriyel Çeşitliliğin Desteklenmesi"
           target_9_C:
             long_title: "Bilgi ve iletişim teknolojisine erişimin önemli ölçüde artırılması ve en az gelişmiş ülkelerde 2020'ye kadar evrensel ve ekonomik internet hizmetlerine erişimin sağlanması için çaba gösterilmesi."
+            short_title: "Bilgi ve İletişim Teknolojisine Evrensel Erişimin Sağlanması"
       goal_10:
         title: "Eşitsizliklerin Azaltılması"
         title_in_two_lines: "Eşitsizliklerin Azaltılması"
@@ -223,24 +303,34 @@ tr:
         targets:
           target_10_1:
             long_title: "2030’a kadar nüfusun en altındaki yüzde 40'lık kesiminin gelirinin ulusal ortalamadan daha yüksek bir oranda, aşamalı olarak artışının ve sürdürülmesinin sağlanması."
+            short_title: "Gelir Eşitsizliklerinin Azaltılması"
           target_10_2:
             long_title: "2030'a kadar, yaşa, cinsiyete, engelliliğe, ırka, etnik kökene, soya, dine veya ekonomik ya da diğer rollere bakılmaksızın herkesin sosyal, ekonomik ve politik katılımının güçlendirilmesi ve teşvik edilmesi."
+            short_title: "Evrensel Sosyal, Ekonomik ve Politik Katılımın Teşvik Edilmesi"
           target_10_3:
             long_title: "Ayrımcı yasaların, politikaların ve uygulamaların sona erdirilmesi ve bu bağlamda uygun mevzuat, politikalar ve eylemlerin teşvik edilmesi ile sonuç eşitsizliklerinin azaltılması ve fırsat eşitliğinin garanti altına alınması."
+            short_title: "Fırsat Eşitliğinin Sağlanması ve Ayrımcılığın Sona Erdirilmesi"
           target_10_4:
             long_title: "Özellikle mali, ücret ve sosyal koruma politikaları olmak üzere politikaların benimsenmesi ve eşitliğin giderek daha fazla sağlanması."
+            short_title: "Eşitliği Destekleyen Mali ve Sosyal Politikaların Uyarlanması"
           target_10_5:
             long_title: "Küresel finans piyasalarının ve kurumların düzenlenmesi ve denetlenmesinin geliştirilmesi ve bu tür düzenlemelerin uygulanmasının güçlendirilmesi."
+            short_title: "Küresel Finansal Piyasalar ve Kurumlar ile İlgili Düzenlemelerin Geliştirilmesi"
           target_10_6:
             long_title: "Daha etkili, güvenilir, hesap verebilir ve meşru kurumların oluşturulması için küresel uluslararası ekonomik ve finans kurumlarının karar verme aşamalarında gelişmekte olan ülkelerin seslerinin duyurulması ve temsiliyetlerinin garanti edilmesi."
+            short_title: "Gelişmekte Olan Ülkelerde Finansal Kurumların Temsilinin Artırılması"
           target_10_7:
             long_title: "Planlı ve iyi yönetilen göç politikalarının uygulanması aracılığıyla, insanların sistemli, güvenli, düzenli ve sorumlu bir biçimde göç etmelerinin ve hareketliliğinin kolaylaştırılması."
+            short_title: "Sorumlu ve İyi Yönetilen Göç Politikalarınn Geliştirilmesi"
           target_10_A:
             long_title: "Dünya Ticaret Örgütü anlaşmalarına uygun olarak gelişmekte olan ülkeler, özellikle en az gelişmiş ülkeler için özel ve farklı muamele ilkesini uygulamak."
+            short_title: "Gelişmekte Olan Ülkelere Özel ve Farklı Şekilde Davranılması"
           target_10_B:
             long_title: "Ulusal plan ve programlarına uygun olarak, özellikle en az gelişmiş ülkelere, Afrika ülkelerine, gelişmekte olan küçük ada Devletlerine ve karayla çevrili gelişmekte olan ülkelere, doğrudan yabancı yatırım da dahil olmak üzere, resmi kalkınma yardımı ve finansal akışları teşvik etmek."
+            short_title: "Az Gelişmiş Ülkelere Kalkınma Yardımı ve Yatırımın Teşvik Edilmesi"
           target_10_C:
             long_title: "2030'a kadar, maliyetleri yüzde 5'ten daha yüksek olan havale koridorlarının ortadan kaldırılması ve göçmen havalelerindeki işlem maliyetlerinin yüzde 3'ün altına düşürülmesi."
+            short_title: "Göçmenlere Yapılan Mali Desteklerde İşlem Maliyetlerinin Azaltılması"
       goal_11:
         title: "Sürdürülebilir Şehirler ve Topluluklar"
         title_in_two_lines: "Sürdürülebilir Şehirler ve Topluluklar"
@@ -249,24 +339,34 @@ tr:
         targets:
           target_11_1:
             long_title: "2030'a kadar herkesin yeterli, güvenli ve uygun fiyatlı konutlara ve temel hizmetlere erişimini sağlamak ve gecekondu mahallelerini iyileştirmek."
+            short_title: "Güvenli ve Uygun Maliyetli Konut Sağlanması"
           target_11_2:
             long_title: "2030’a kadar, özellikle korunmasız durumda olan insanların, kadınların, çocukların, engellilerin ve yaşlıların ihtiyaçlarına özel özen gösterilerek başta toplu taşıma ağının genişletilmesi olmak üzere yol güvenliğinin sağlanması; herkesin güvenli, uygun fiyatlı, erişilebilir ve sürdürülebilir ulaşım sistemlerine erişiminin sağlanması."
+            short_title: "Ekonomik ve Sürdürülebilir Ulaşım Sistemlerine Geçilmesi"
           target_11_3:
             long_title: "2030'a kadar kapsayıcı ve sürdürülebilir kentleşmeyi ve tüm ülkelerde katılımcı, entegre ve sürdürülebilir insan yerleşimi planlama ve yönetimi için kapasiteyi geliştirmek."
+            short_title: "Kapsayıcı ve Sürdürülebilir Kentleşme"
           target_11_4:
             long_title: "Dünyanın kültürel ve doğal mirasını koruma ve koruma çabalarını güçlendirmek."
+            short_title: "Dünyanın Kültürel ve Doğal Mirasının Korunması"
           target_11_5:
             long_title: "2030’a kadar, yoksulların ve korunmasız durumda olan insanların korunmasına odaklanılarak suyla ilgili afetler de dahil, afet sebebiyle küresel gayri safi yurt içi hasılaya bağlı olarak gerçekleşen doğrudan ekonomik kayıpların önemli ölçüde düşürülmesi; ölümlerin ve etkilenen insan sayısının önemli ölçüde azaltılması."
+            short_title: "Doğal Afetlerin Olumsuz Etkilerinin Azaltılması"
           target_11_6:
             long_title: "2030’a kadar, hava kalitesine ve belediye ve diğer atık yönetimlerine özel önem gösterilerek şehirlerin kişi başına düşen olumsuz çevresel etkilerinin azaltılması."
+            short_title: "Şehirlerin Çevresel Etkisinin Azaltılması"
           target_11_7:
             long_title: "2030'a kadar, özellikle kadınlar ve çocuklar, yaşlılar ve engelli bireylerin güvenli, her kesimi kapsayan ve ulaşılabilir, yeşil ve açık alanlara evrensel erişimlerinin sağlanması."
+            short_title: "Güvenli ve Kapsayıcı Yeşil ve Kamusal Alanlara Erişimin Sağlanması"
           target_11_A:
             long_title: "Ulusal ve bölgesel kalkınma planının güçlendirilmesi aracılığıyla kentsel, kent çevresi ve kırsal alanlar arasındaki pozitif ekonomik, sosyal ve çevresel bağlantıların desteklenmesi."
+            short_title: "Güçlü Ulusal ve Bölgesel Kalkınma Planlamasının Yapılması"
           target_11_B:
             long_title: "2020'ye kadar, afetlere dayanıklılığına, iklim değişikliğine uyum ve etkilerinin hafifletilmesine, kaynak verimliliğini de kapsamaya yönelik entegrasyon politikalarını ve planlarını benimseyen ve uygulayan insan yerleşimlerinin ve şehirlerin sayısının önemli ölçüde artırılması; Sendai Afet Riskini Azaltma Çerçevesi doğrultusunda, 2015-2030 yılları arasında her seviyede bütüncül afet risk yönetiminin geliştirilmesi ve uygulanması."
+            short_title: "Kapsayıcılık, Kaynak Verimliliği ve Afet Riskini Azaltma Politikalarının Uygulanması"
           target_11_C:
             long_title: "Yerel malzemelerden faydalanılarak sürdürülebilir ve dayanıklı binalar inşa etmede finansal ve teknik yardım aracılığıyla en az gelişmiş ülkelerin desteklenmesi."
+            short_title: "Az Gelişmiş Ülkelerde Sürdürülebilir ve Dayanıklı İnşaatların Desteklenmesi"
       goal_12:
         title: "Sorumlu Tüketim ve Üretim"
         title_in_two_lines: "Sorumlu Tüketim ve Üretim"
@@ -275,26 +375,37 @@ tr:
         targets:
           target_12_1:
             long_title: "Gelişmiş ülkelerin öncülük etmesiyle birlikte bütün ülkeleri harekete geçmesi akabinde, gelişmekte olan ülkelerin kalkınma ve yetkinliklerini göz önünde bulundurarak sürdürülebilir tüketim ve üretim için 10 yıllık çerçeve programının uygulanması."
+            short_title: "10 Yıllık Sürdürülebilir Tüketim ve Üretim Çerçevesinin Uygulanması"
           target_12_2:
             long_title: "2030'a kadar, doğal kaynakların etkin kullanımını ve sürdürülebilir yönetimi sağlamak."
+            short_title: "Doğal Kaynakların Sürdürülebilir Yönetiminin ve Kullanımının Sağlanması"
           target_12_3:
             long_title: "2030’a kadar, perakende ve tüketici düzeylerinde kişi başına düşen küresel gıda atığının yarıya indirilmesi ve hasat sonrası kayıplar dahil üretim ve tedarik zincirlerinde, gıda kayıplarının azaltılması."
+            short_title: "Kişi Başına Küresel Gıda Atığının Yarıya İndirilmesi"
           target_12_4:
             long_title: "2020’ye kadar, üzerinde anlaşmaya varılan uluslararası çerçevelere uygun olarak, kimyasalların ve tüm atıkların yaşam döngüleri boyunca çevreye duyarlı yönetiminin sağlanması ve bu kimyasalların ve atıkların insan sağlığına ve çevreye olan olumsuz etkilerini en aza indirmek için havaya, suya ve toprağa karışmalarının önemli ölçüde azaltılması."
+            short_title: "Kimyasallar ve Atıkların Sorumlu Yönetilmesi"
           target_12_5:
             long_title: "2030'a kadar, önleme, azaltma, geri dönüşüm ve yeniden kullanım yoluyla atık oluşumunun önemli ölçüde azaltılması."
+            short_title: "Atık Üretiminin Önemli Ölçüde Azaltılması"
           target_12_6:
             long_title: "Özellikle büyük ve ulus-ötesi şirketler başta olmak üzere, şirketlerin sürdürülebilir uygulamaları benimsemelerinin ve sürdürülebilirlik bilgilerini raporlama döngülerine entegre etmelerinin teşvik edilmesi."
+            short_title: "Şirketlerin Sürdürülebilirliğe Katkı Sağlamaya ve Sürdürülebilirlik Raporları Yayınlamaya Teşvik Edilmesi"
           target_12_7:
             long_title: "Ulusal politikalar ve öncelikler gereğince sürdürülebilir kamu ihalesi uygulamalarının desteklenmesi."
+            short_title: "Sürdürülebilir Kamu Alımları Uygulamalarının Teşvik Edilmesi "
           target_12_8:
             long_title: "2030'a kadar, dünyanın her yerindeki insanların doğa ile uyumlu, sürdürülebilir kalkınma ve yaşam tarzları için ilgili bilgilere ve farkındalığa sahip olmalarını sağlamak."
+            short_title: "Sürdürülebilir Yaşam Tarzlarının Evrensel Olarak Anlaşılmasının Teşvik Edilmesi"
           target_12_A:
             long_title: "Gelişmekte olan ülkelerin daha sürdürülebilir tüketim ve üretim modellerine doğru ilerlemeleri için bilimsel ve teknolojik kapasitelerini güçlendirme konusunda desteklenmesi."
+            short_title: "Gelişmekte Olan Ülkelerin Sürdürülebilir Tüketim ve Üretim İçin Bilimsel ve Teknolojik Kapasitesinin Desteklenmesi"
           target_12_B:
             long_title: "Yerel kültür ve ürünlerin tanıtımını yapan ve istihdam yaratan sürdürülebilir turizm için sürdürülebilir kalkınmanın etkilerini gözleyebilecekleri araçlar geliştirilmesi ve uygulanması."
+            short_title: "Sürdürülebilir Turizmi İzlemek için Araçlar Geliştirilmesi ve Uygulanması"
           target_12_C:
             long_title: "Piyasa aksaklıklarının ortadan kaldırılmasıyla ulusal koşullara uygun biçimde, gelişmekte olan ülkelerin özel ihtiyaç ve durumlarını göz önünde bulundurarak ve etkilenmiş toplulukları koruyacak biçimde kalkınmaları üzerindeki olası olumsuz etkileri en aza indirgeyerek çevresel etkilere sahip zararlı teşviklerin aşamalı olarak ortadan kaldırılması ve vergilendirmenin yeniden yapılandırılması da dahil olmak üzere savurgan tüketime özendiren verimsiz fosil yakıtlara yönelik teşviklerin verimli hale getirilmesi."
+            short_title: "İsrafa Dönük Tüketimi Teşvik Eden Piyasa Sorunlarının Kaldırılması"
       goal_13:
         title: "İklim Eylemi"
         title_in_two_lines: "İklim Eylemi"
@@ -303,14 +414,19 @@ tr:
         targets:
           target_13_1:
             long_title: "Tüm ülkelerde, doğal afetlere ve iklimle ilgili tehlikelere karşı dayanıklılığın ve uyum kapasitesinin güçlendirilmesi."
+            short_title: "İklimle İlgili Afetlere Dayanıklılığın ve Uyum Kapasitesinin Güçlendirilmesi"
           target_13_2:
             long_title: "İklim değişikliği hakkında önlemlerin ulusal politika, strateji ve planlamaya entegre edilmesi."
+            short_title: "İklim Değişikliği Önlemlerinin Politikalar ve Planlama ile Bütünleştirilmesi"
           target_13_3:
             long_title: "İklim değişikliklerinin hafifletilmesi, adaptasyonu, etkilerinin azaltılması ve erken uyarı hakkında eğitimin, farkındalık yaratmanın ve insani ve kurumsal kapasitenin geliştirilmesi."
+            short_title: "İklim Değişikliğini Karşılamak için Bilgi ve Kapasite Oluşturulması"
           target_13_A:
             long_title: "Gelişmiş ülke taraflarının Birleşmiş Milletler İklim Değişikliği Çerçeve Sözleşmesi doğrultusunda üstlendikleri, anlamlı azaltım eylemleri ve şeffaflık bağlamında, gelişmekte olan ülkelerin ihtiyaçlarını ele alarak tüm kaynaklardan, 2020 yılına kadar yıllık 100 milyar dolar seferber edilmesi hakkındaki vaatlerinin uygulatılması ve Yeşil İklim Fonu'nu mümkün olan en kısa sürede sermayelendirme yoluyla tam olarak faaliyete geçirilmesi."
+            short_title: "BM İklim Değişikliği Çerçeve Sözleşmesinin Uygulanması"
           target_13_B:
             long_title: "Kadınlara, gençlere, yerel ve ötekileştirilen topluluklara odaklanmak da dahil olmak üzere, en az gelişmiş ülkelerde ve gelişmekte olan küçük ada devletlerinde iklim değişikliği ile ilgili etkin planlama ve yönetim adına kapasiteyi artıracak mekanizmaların desteklenmesi."
+            short_title: "Planlama ve Yönetim Kapasitesini Artıracak Mekanizmaların Teşvik Edilmesi"
       goal_14:
         title: "Sudaki Yaşam"
         title_in_two_lines: "Sudaki Yaşam"
@@ -319,24 +435,34 @@ tr:
         targets:
           target_14_1:
             long_title: "2025 yılına kadar, deniz artıkları ve besin kirliliği de dahil olmak üzere, özellikle kara kaynaklı faaliyetlerden kaynaklanan her türlü deniz kirliliğini önlemek ve önemli ölçüde azaltmak."
+            short_title: "Deniz Kirliliğinin Azaltılması"
           target_14_2:
             long_title: "2020'ye kadar, önemli olumsuz etkilerinden kaçılması da dahil olmak üzere deniz ve kıyı ekosistemlerinin sürdürülebilir bir biçimde yönetilmesi ve korunması adına dayanıklılığının artırılması; sağlıklı ve üretken okyanuslar elde edilmesi için okyanusların eski haline döndürülmesi adına harekete geçilmesi."
+            short_title: "Ekosistemlerin Korunması ve Önceki Haline Döndürülmesi"
           target_14_3:
             long_title: "Her seviyede gelişmiş bilimsel işbirliği yoluyla, okyanus asitlenmesinin etkilerinin ele alınması en aza indirilmesi."
+            short_title: "Okyanuslarda Asitleşmenin Azaltılması"
           target_14_4:
             long_title: "2020’ye kadar, balık stoklarını mümkün olan en kısa zamanda eski haline getirmek ya da en azından biyolojik karakteristiklerine göre maksimum sürdürülebilir verimi üretebileceği seviyelere ulaştırmak için balık hasadının etkin bir biçimde düzenlenmesi, aşırı avlanma, yasa dışı, rapor edilmeyen ve kaçak balıkçılığın ve yıkıcı etkileri olan balıkçılık uygulamalarının sona erdirilmesi ve bilime dayalı yönetim planlarının uygulanması."
+            short_title: "Sürdürülebilir Balıkçılık"
           target_14_5:
             long_title: "2020'ye kadar, kıyı ve deniz alanlarının, ulusal ve uluslararası hukuka uygun biçimde mevcut en iyi bilimsel bilgilere dayanarak, en az %10'unun korunması."
+            short_title: "Kıyı ve Deniz Alanlarının Korunması"
           target_14_6:
             long_title: "2020 yılına kadar, aşırı kapasite ve aşırı avlanmaya katkıda bulunan belirli türdeki balıkçılık sübvansiyonlarının yasaklanması, yasadışı, rapor edilmemiş ve düzenlenmemiş balıkçılığa katkıda bulunan sübvansiyonların ortadan kaldırılması ve bu tür yeni sübvansiyonların uygulanmasından kaçınılması, gelişmekte olan ve en az gelişmiş ülkeler için uygun ve etkili özel ve farklı muamelenin kabul edilmesi Dünya Ticaret Örgütü balıkçılık sübvansiyonları müzakerelerinin ayrılmaz bir parçası olmalıdır."
+            short_title: "Aşırı Avlanmaya Yol Açan Desteklere Son Verilmesi"
           target_14_7:
             long_title: "2030'a kadar, balıkçılık, su ürünleri yetiştiriciliği ve turizmin sürdürülebilir yönetimi dahil olmak üzere, deniz kaynaklarının sürdürülebilir kullanımından Küçük Ada Gelişmekte Olan Devletlere ve en az gelişmiş ülkelere ekonomik faydaların artırılması."
+            short_title: "Deniz Kaynaklarının Sürdürülebilir Kullanımının Ekonomik Faydalarının Artırılması"
           target_14_A:
             long_title: "Okyanus sağlığını iyileştirmek ve deniz biyoçeşitliliğinin gelişmekte olan ülkelerin kalkınmasına katkısını artırmak için, Hükümetlerarası Oşinografi Komisyonu Kriterleri ve Deniz Teknolojisinin Transferine İlişkin Kılavuzları dikkate alarak özellikle gelişmekte olan küçük ada devletleri ve en az gelişmiş ülkelerde bilimsel bilgiyi artırmak, araştırma kapasitesini geliştirmek ve deniz teknolojisini transfer etmek."
+            short_title: "Okyanus Sağlığı için Bilimsel Bilginin, Araştırmanın ve Teknolojinin Artırılması"
           target_14_B:
             long_title: "Küçük ölçekli zanaatkar balıkçıların deniz kaynaklarına ve pazarlara erişiminin sağlanması."
+            short_title: "Küçük Ölçekli Balıkçıların Desteklenmesi"
           target_14_C:
             long_title: "İstediğimiz Gelecek'in 158. paragrafında hatırlatıldığı üzere, okyanusların ve kaynaklarının korunması ve sürdürülebilir kullanımı için yasal çerçeve sağlayan UNCLOS'ta tanımlanan uluslararası hukuku uygulayarak okyanusların ve kaynaklarının korunmasını ve sürdürülebilir kullanımını geliştirmek."
+            short_title: "Uluslararası Deniz Hukukunun Uygulanması ve Uyarlanması"
       goal_15:
         title: "Karasal Yaşam"
         title_in_two_lines: "Karasal Yaşam"
@@ -345,28 +471,40 @@ tr:
         targets:
           target_15_1:
             long_title: "2020'ye kadar, karasal ve iç tatlı su ekosistemlerinin ve hizmetlerinin, özellikle ormanların, sulak alanların, dağların ve kurak alanların uluslararası anlaşmalardaki yükümlülükler doğrultusunda korunması, restorasyonu ve sürdürülebilir kullanımının sağlanması."
+            short_title: "Karasal ve Tatlı Su Ekosistemlerinin Korunması ve Önceki Haline Döndürülmesi"
           target_15_2:
             long_title: "2020’ye kadar, her tür ormanın sürdürülebilir yönetiminin sağlanmasının desteklenmesi, ormansızlaşmanın durdurulması, tahrip edilmiş ormanların eski haline döndürülmesi ve küresel olarak ağaçlandırma ve yeniden ormanlaştırmanın önemli ölçüde artırılması."
+            short_title: "Ormansızlaşmanın Sona Erdirilmesi ve Bozulmuş Orman Alanlarının Önceki Haline Döndürülmesi"
           target_15_3:
             long_title: "2030'a kadar, çölleşmeyle mücadele edilmesi, çölleşme, kuraklık ve sellerden etkilenen alanlar dahil tahrip edilmiş toprakların eski haline getirilmesi ve daha verimli arazilerin elde edilmesi."
+            short_title: "Çölleşmenin Sona Erdirilmesi ve Niteliğini Kaybetmiş Toprakların Önceki Haline Döndürülmesi"
           target_15_4:
             long_title: "2030 yılına kadar, sürdürülebilir kalkınma için gerekli olan faydaları sağlama kapasitelerini artırmak için biyolojik çeşitlilikleri de dahil olmak üzere dağ ekosistemlerinin korunmasının sağlanması."
+            short_title: "Dağ Ekosistemlerinin Korunmasının Sağlanması"
           target_15_5:
             long_title: "Doğal yaşam alanlarının bozulmasını azaltmak için acil ve önemli adımlar atılması, biyoçeşitlilik kaybının durdurulması ve 2020’ye kadar yok olma tehlikesi altında olan türlerin korunması ve nesillerinin tükenmesinin engellenmesi."
+            short_title: "Biyoçeşitliliğinin ve Doğal Yaşam Alanlarının Korunması"
           target_15_6:
             long_title: "Genetik kaynakların kullanımından kaynaklanan yararların adil ve eşitlikçi biçimde paylaşımının desteklenmesi ve bu tür kaynaklara uluslararası kabul görülen şekilde erişiminin teşvik edilmesi."
+            short_title: "Genetik Kaynaklara Erişimin ve Faydaların Adil Paylaşımının Teşvik Edilmesi"
           target_15_7:
             long_title: "Koruma altındaki bitki ve hayvan türlerinin kaçakçılığı ve yasa dışı avlanmasını sona erdirmek için acil eyleme geçilmesi ve yasa dışı vahşi yaşam ürünlerinin arz ve talebinin ele alınması."
+            short_title: "Kaçak Avlanmanın ve Korunan Türlerin Kaçakçılığının Ortadan Kaldırılması"
           target_15_8:
             long_title: "2020 yılına kadar, istilacı türlerin kara ve su ekosistemlerine girişinin önlenmesi ve ekosistemler üzerindeki etkisinin önemli ölçüde azaltılması, istilacı türlerin öncelikli olanlarının kontrolünün sağlanması veya yok edilmesi için önlemlerin alınması."
+            short_title: "Karada ve Su Ekosistemlerinde İstilacı Yabancı Türlerin Önlenmesi"
           target_15_9:
             long_title: "2020'ye kadar, ekosistem ve biyoçeşitlilik değerlerinin ulusal ve yerel planlama, geliştirme süreçleri, yoksulluğu azaltma stratejileri ve hesaplarına entegre edilmesi."
+            short_title: "Ekosistemin ve Biyoçeşitliliğinin Devlet Planlaması ile Bütünleştirilmesi"
           target_15_A:
             long_title: "Biyoçeşitliliği ve ekosistemleri korumak ve sürdürülebilir bir biçimde kullanmak için tüm kaynaklardan elde edilen finansal kaynakların seferber edilmesi ve önemli ölçüde artırılması."
+            short_title: "Ekosistemi ve Biyoçeşitliliği Korumak ve Sürdürülebilir Bir Şekilde Kullanmak için Mali Kaynakların Artırılması"
           target_15_B:
             long_title: "Sürdürülebilir orman yönetimini her düzeyde finanse etmek ve tüm kaynaklardan elde edilen önemli kaynakların seferber edilmesi, gelişmekte olan ülkelere koruma ve yeniden ağaçlandırma da dahil olmak üzere bu tür bir yönetim geliştirilmeleri için yeterli teşvik sağlanması."
+            short_title: "Sürdürülebilir Orman Yönetiminin Finansmanı ve Teşvik Edilmesi"
           target_15_C:
             long_title: "Yerel toplulukların sürdürülebilir geçim kaynaklarına sahip olma kapasitelerinin artırılması da dahil olmak üzere korunan türlerin yasa dışı avlanması ve kaçakçılığının yapılmasıyla mücadele etme çabalarına yönelik küresel desteğin artırılması."
+            short_title: "Küresel Kaçak Avlanma ve Kaçakçılıkla Mücadele Edilmesi"
       goal_16:
         title: "Barış, Adalet ve Güçlü Kurumlar"
         title_in_two_lines: "Barış, Adalet ve Güçlü Kurumlar"
@@ -375,28 +513,40 @@ tr:
         targets:
           target_16_1:
             long_title: "Şiddetin tüm biçimlerinin ve şiddete bağlı ölüm oranlarının her yerde büyük ölçüde azaltılması."
+            short_title: "Şiddetin Her Yerde Azaltılması"
           target_16_2:
             long_title: "Çocuk istismarı, sömürüsü, ticareti ve çocuklara karşı şiddet ve işkencenin her türünün sona erdirilmesi."
+            short_title: "Çocukların İstismar, Sömürü, İnsan Ticareti ve Şiddetten Korunması"
           target_16_3:
             long_title: "Hukuk üstünlüğünün ulusal ve uluslararası düzeyde teşvik edilmesi ve herkes için adalete eşit biçimde erişimin garanti edilmesi."
+            short_title: "Hukukun Üstünlüğünün Teşvik Edilmesi ve Adalete Eşit Erişimin Sağlanması"
           target_16_4:
             long_title: "2030'a kadar, yasadışı para ve silah akışlarının önemli derece azaltılması, çalınan varlıkların kurtarılması ve iade edilmesinin sağlanması ve her türlü organize suçla mücadele edilmesi."
+            short_title: "Organize Suçlar ile Yasadışı Para ve Silah Akışlarıyla Mücadele Edilmesi"
           target_16_5:
             long_title: "Her türlü yolsuzluk ve rüşvetin önemli ölçüde azaltılması."
+            short_title: "Yolsuzluk ve Rüşvetin Önemli Ölçüde Azaltılması"
           target_16_6:
             long_title: "Her düzeyde etkili, hesap verebilir ve şeffaf kurumların büyütülmesi."
+            short_title: "Etkin, Hesap Verebilir ve Şeffaf Kurumlar Geliştirilmesi"
           target_16_7:
             long_title: "Her düzeyde duyarlı, her kesimi kapsayan, katılımcı ve temsili karar almayı sağlamak."
+            short_title: "Duyarlı, Kapsayıcı ve Temsil Edici Karar Almanın Sağlanması"
           target_16_8:
             long_title: "Gelişmekte olan ülkelerin küresel yönetişim kurumlarına katılımını genişletmek ve güçlendirmek."
+            short_title: "Küresel Yönetişime Katılımın Güçlendirilmesi"
           target_16_9:
             long_title: "2030'a kadar, doğum kaydı dahil herkes için yasal kimlik sağlamak."
+            short_title: "Evrensel Yasal Tanınmanın Sağlanması"
           target_16_10:
             long_title: "Ulusal mevzuata ve uluslararası anlaşmalara uygun olarak halkın bilgiye erişiminin sağlanması ve temel özgürlüklerin korunması."
+            short_title: "Halkın Bilgiye Erişiminin Sağlanması ve Temel Özgürlüklerin Korunması"
           target_16_A:
             long_title: "Başta gelişmekte olan ülkeler olmak üzere şiddeti önlemek, terör ve suçla mücadele etmek için her düzeyde kapasitenin oluşturulması adına uluslararası işbirliği aracılığıyla ilgili ulusal kurumların güçlendirilmesi."
+            short_title: "Şiddeti Önlemek, Terörizm ve Suçla Mücadele Etmek İçin Ulusal Kurumların Güçlendirilmesi"
           target_16_B:
             long_title: "Sürdürülebilir kalkınma için ayrımcılık gözetmeyen yasaların ve politikaların uygulatılması ve teşvik edilmesi."
+            short_title: "Ayrımcı Olmayan Yasaların ve Politikaların Teşvik Edilmesi ve Uygulanması"
       goal_17:
         title: "Amaçlar İçin Ortaklıklar"
         title_in_two_lines: "Amaçlar İçin Ortaklıklar"
@@ -405,42 +555,61 @@ tr:
         targets:
           target_17_1:
             long_title: "Vergi ve diğer gelir tahsilleri için yurt içi kapasiteyi artırmak için gelişmekte olan ülkelere uluslararası destek sağlanması yoluyla yurt içi kaynak seferberliğinin güçlendirilmesi."
+            short_title: "Yurtiçi Vergi Toplamanın İyileştirilmesi için Kaynakların Harekete Geçirilmesi "
           target_17_2:
             long_title: "Gelişmiş ülkeler, gelişmekte olan ülkelere yönelik ODA / GSMG'nin yüzde 0,7'si ve en az gelişmiş ülkelere ODA / GSMG'nin yüzde 0,15 ila 0,20'si hedefine ulaşma taahhüdü de dahil olmak üzere, resmi kalkınma yardımı taahhütlerini tam olarak uygulamak için RKY sağlayıcılarıdır. ODA / GSMG'nin en az yüzde 0,20'sini en az gelişmiş ülkelere sağlamak için bir hedef belirlemeyi düşünmeye teşvik edilmelidir."
+            short_title: "Tüm Kalkınma Yardımı Taahhütlerinin Yerine Getirilmesi"
           target_17_3:
             long_title: "Gelişmekte olan ülkeler için çok sayıda kaynaktan sağlanan ek mali kaynakların seferber edilmesi."
+            short_title: "Gelişmekte Olan Ülkeler İçin Mali Kaynakların Harekete Geçirilmesi"
           target_17_4:
             long_title: "Gelişmekte olan ülkelerin borç finansmanı, borç hafifletme ve borç yeniden yapılandırmayı güçlendirmeyi hedefleyen birbiriyle uyumlu politikalar aracılığıyla uzun vadeli borç sürdürülebilirliğini sağlamalarına yardım edilmesi ve uygun görüldüğünde borç sıkıntısını azaltmak için ağır borç yükü altındaki yoksul ülkelerin dış borç sorunlarının ele alınması."
+            short_title: "Gelişmekte Olan Ülkelere Borç Sürdürülebilirliğini Sağlamakta Destek Olunması"
           target_17_5:
             long_title: "En az gelişmiş ülkeler için yatırım teşvik rejimlerinin kabul edilmesi ve uygulanması."
+            short_title: "Az Gelişmiş Ülkelere Yatırım Yapılması"
           target_17_6:
             long_title: "Bilim, teknoloji ve yenilikçilik alanlarında Kuzey-Güney, Güney-Güney ve üçlü bölgesel ve uluslararası işbirliğinin ve bu gelişmelere erişiminin ilerletilmesi ve özellikle Birleşmiş Milletler düzeyinde mevcut mekanizmalar arasında geliştirilmiş işbirliği ve küresel bir teknoloji kolaylaştırma mekanizması aracılığıyla üzerinde anlaşmaya varılan hükümler konusunda bilgi paylaşımının çoğaltılması."
+            short_title: "Bilim, Teknoloji ve Yeniliğe Erişim İçin Bilgi Paylaşımı ve İşbirliğinin Sağlanması"
           target_17_7:
             long_title: "Çevreye duyarlı teknolojilerin gelişmekte olan ülkelerde, karşılıklı olarak anlaşma sağlandığı üzere, ayrıcalıklı ve öncelikli koşullar da dahil olmak üzere uygun koşullarda gelişiminin, transferinin ve yayılmasının teşvik edilmesi."
+            short_title: "Gelişmekte Olan Ülkelerde Sürdürülebilir Teknolojilerin Teşvik Edilmesi"
           target_17_8:
             long_title: "2017 yılına kadar, en az gelişmiş ülkeler için teknoloji bankasının ve bilim, teknoloji ve yenilikçi kapasite geliştirme sisteminin tümden faaliyete geçirilmesi ve özellikle bilgi ve iletişim teknolojileri olmak üzere etkinleştirme teknolojileri kullanımının artırılması."
+            short_title: "Az Gelişmiş Ülkelerin Bilim, Teknoloji ve Yenilik Kapasitesinin Güçlendirilmesi"
           target_17_9:
             long_title: "Kuzey-Güney, Güney-Güney ve üçlü işbirliği dahil olmak üzere tüm Sürdürülebilir Kalkınma Hedeflerinin uygulanabilmesi adına ulusal planları desteklemek amacıyla gelişmekte olan ülkelerdeki etkili ve hedeflenen kapasite geliştirme uygulamaları için uluslararası destek sağlanması."
+            short_title: "Gelişmekte Olan Ülkelerde SKH Kapasitesinin Artırılması "
           target_17_10:
             long_title: "Doha Kalkınma Gündemi çerçevesinde yürütülen müzakerelerin sonuçlandırılması da dahil olmak üzere, Dünya Ticaret Örgütü bünyesinde evrensel, kurallara dayanan, açık, ayrımcı olmayan ve eşitlikçi, çok taraflı bir ticaret sisteminin desteklenmesi."
+            short_title: "DTÖ Gözetiminde bir Evrensel Ticaret Sisteminin Teşvik Edilmesi"
           target_17_11:
             long_title: "Gelişmekte olan ülkelerin ihracatlarının, özellikle en az gelişmiş ülkelerin küresel ihracat payının, 2020’ye kadar iki katına çıkarılması amacıyla önemli ölçüde artırılması."
+            short_title: "Gelişmekte Olan Ülkelerin İhracatının Artırılması"
           target_17_12:
             long_title: "Dünya Ticaret Örgütü kararlarına uygun olarak, en az gelişmiş ülkelerden yapılan ithalata uygulanan tercihli menşe kurallarının şeffaf ve basit olmasını sağlamak da dahil olmak üzere, tüm en az gelişmiş ülkeler için kalıcı bir temelde gümrüksüz ve kotasız pazar erişiminin zamanında uygulanmasını gerçekleştirmek, ve pazara erişimin kolaylaştırılmasına katkıda bulunmak."
+            short_title: "Az Gelişmiş Ülkelerin Ticaret Engellerinin Kaldırılması"
           target_17_13:
             long_title: "Politika koordinasyonu ve tutarlılığına dayanan küresel makroekonomik istikrarın geliştirilmesi."
+            short_title: "Küresel Makroekonomik İstikrarın Geliştirilmesi"
           target_17_14:
             long_title: "Sürdürülebilir kalkınma için politik tutarlılığın arttırılması."
+            short_title: "Sürdürülebilir Kalkınma için Politik Tutarlılığının Artırılması"
           target_17_15:
             long_title: "Yoksulluğun ortadan kaldırılması ve sürdürülebilir kalkınma için politikalar oluşturulması ve uygulanması amacıyla her bir ülkenin politik alanına ve liderliğine saygı duyulması."
+            short_title: "Sürdürülebilir Kalkınma Hedeflerine Yönelik Politikaları Uygulamak İçin Ulusal Liderliğe Saygı Duyulması"
           target_17_16:
             long_title: "Gelişmekte olan ülkeler başta olmak üzere, tüm ülkelerde Sürdürülebilir Kalkınma Hedeflerine ulaşılmasının desteklenmesi için bilgi, uzmanlık, teknoloji ve finansal kaynakları seferber eden ve paylaşan çok paydaşlı ortaklıklar ile tamamlanan sürdürülebilir kalkınma için küresel ortaklıkların iyileştirilmesi."
+            short_title: "Sürdürülebilir Kalkınma için Küresel İş Birliğinin Geliştirilmesi"
           target_17_17:
             long_title: "Ortaklıkların deneyim ve kaynak sağlama stratejilerine dayanan kamu, kamu-özel ve sivil toplum ortaklıklarının teşvik edilmesi ve desteklenmesi."
+            short_title: "Etkili Ortaklıkların Teşvik Edilmesi"
           target_17_18:
             long_title: "2020’ye kadar, gelir, cinsiyet, yaş, ırk, etnik köken, göçmen statüsü, engellilik, coğrafi konum ve ulusal bağlamlardaki ilgili diğer niteliklere göre ayrılan kaliteli, güncel ve güvenilir verilerin elde edilebilirliğini büyük ölçüde artırmak için en az gelişmiş ülkeleri ve gelişmekte olan küçük ada devletleri de dahil olmak üzere gelişmekte olan ülkelere verilen kapasite geliştirme desteğinin artırılması."
+            short_title: "Güvenilir Verilerin Kullanılabilirliğinin Artırılması"
           target_17_19:
             long_title: "2030’a kadar, gayri safi yurt içi hasılayı tamamlayan sürdürülebilir kalkınmanın ilerletilmesine yönelik ölçümleri geliştirmek için mevcut girişimlerin yapılandırılması ve gelişmekte olan ülkelerde istatistiksel kapasite geliştirmenin desteklenmesi."
+            short_title: "İlerleme Ölçümlerinin Daha Fazla Geliştirilmesi"
       help:
         title: "Sürdürülebilir Kalkınma Amaçları yardım"
         description: "Topluma olan katkılarınızı (tartışmalar, vatandaş önerileri ve yatırım projeleri) Sürdürülebilir Kalkınma Hedefleri 2030 Ajandası ile uyumlu hale getirebilirsiniz, bu, Sürdürülebilir Kalkınma Hedeflerinin her birine olan katkımızın genel bakışına sahip olmamızı sağlayacaktır. Aşağıda tüm amaçlar, hedefler ve yerelleştirilmiş hedefler hakkında bilgi bulabilirsiniz."

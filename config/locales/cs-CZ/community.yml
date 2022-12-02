@@ -25,12 +25,6 @@ cs:
       topic:
         edit: Upravit téma
         destroy: Smazat téma
-        comments:
-          zero: Žádné komentáře
-          one: 1 komentář
-          few: "%{count} komentáře"
-          many: "%{count} komentářů"
-          other: "%{count} komentářů"
       author: Autor
       back: Zpět na %{community} %{proposal}
     topic:

@@ -54,10 +54,6 @@ fa:
       form:
         submit_button: شروع بحث
     debate:
-      comments:
-        zero: بدون نظر
-        one: 1 نظر
-        other: "%{count} نظرات"
       votes:
         zero: بدون رای
         one: 1 رای
@@ -94,10 +90,6 @@ fa:
       start_new: شروع بحث
     show:
       author_deleted: کاربر حذف شد
-      comments:
-        zero: بدون نظر
-        one: 1 نظر
-        other: "%{count} نظرات"
       comments_title: توضیحات
       edit_debate_link: ویرایش
       share: "اشتراک گذاری\n"
@@ -116,7 +108,7 @@ fa:
     proposal: طرح های پیشنهادی
     proposal_notification: "اطلاعیه ها"
     budget/investment: سرمایه گذاری
-    poll/shift: تغییر 
+    poll/shift: تغییر
     poll/question/answer: پاسخ
     user: "حساب\n"
     verification/sms: تلفن
@@ -133,7 +125,7 @@ fa:
         draft: ' پیش نویس'
       proposal_totals:
         supports:
-          zero: بدون پشتیبانی 
+          zero: بدون پشتیبانی
     footer:
       accessibility: قابلیت دسترسی
       participation_title: "مشارکت\n"
@@ -165,7 +157,7 @@ fa:
   proposals:
     create:
       form:
-        submit_button: ایجاد طرح 
+        submit_button: ایجاد طرح
     edit:
       form:
         submit_button: ذخیره تغییرات
@@ -202,15 +194,11 @@ fa:
         title: طرح های پیشنهادی
     new:
       form:
-        submit_button: ایجاد طرح 
+        submit_button: ایجاد طرح
     proposal:
-      comments:
-        zero: بدون نظر
-        one: 1 نظر
-        other: "%{count} نظرات"
       support: پشتیبانی
       supports:
-        zero: بدون پشتیبانی 
+        zero: بدون پشتیبانی
         one: 1 پشتیبانی
         other: "%{count}پشتیبانی"
       votes:
@@ -220,10 +208,6 @@ fa:
     show:
       author_deleted: کاربر حذف شد
       code: "کد طرح:"
-      comments:
-        zero: بدون نظر
-        one: 1 نظر
-        other: "%{count} نظرات"
       comments_tab: توضیحات
       notifications_tab: اطلاعیه ها
       milestones_tab: نقطه عطف
@@ -362,7 +346,7 @@ fa:
       proposals: طرح های پیشنهادی
       proposals_status: وضعیت ها
       debates: مباحثه
-      budget_investments: بودجه سرمایه گذاری ها 
+      budget_investments: بودجه سرمایه گذاری ها
       comments: توضیحات
       actions: اقدامات
       filters:

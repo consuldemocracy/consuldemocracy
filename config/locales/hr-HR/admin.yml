@@ -998,9 +998,6 @@ hr:
         table_title: "Naziv"
         edit_answers: Uredi odgovore
         see_proposal: "(Vidi prijedlog)"
-      flash:
-        question_added: "Dodana pitanja ovom glasanju"
-        error_on_question_added: "Pitanja nisu mogla biti pripisana ovom glasanju"
       destroy:
         alert: "Akcija će se ukloniti s glasanja i svih povezanih pitanja."
         success_notice: "Anketa uspješno obrisana"
@@ -1050,12 +1047,6 @@ hr:
     answers:
       new:
         title: Novi odgovor
-      show:
-        title: Naziv
-        description: Opis
-        images: Slike
-        images_list: Popis slika
-        edit: Uredi odgovor
       edit:
         title: Uredi odgovor
       videos:

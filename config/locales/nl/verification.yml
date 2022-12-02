@@ -74,7 +74,7 @@ nl:
       new:
         phone: Enter your mobile phone number to receive the code
         phone_format: "<strong><em>(Voorbeeld: 612345678 or +34612345678)</em></strong>"
-        phone_note: We gebruiken uw mobiele telefoonnummer alleen om u een code toe te sturen, nooit om u te contacten.  
+        phone_note: We gebruiken uw mobiele telefoonnummer alleen om u een code toe te sturen, nooit om u te contacten.
         submit_button: Verzenden
         title: Send confirmation code
       update:

@@ -32,7 +32,6 @@ tr:
         translation: "Çeviri başarıyla güncellendi"
       destroy:
         budget_investment: "Yatırım projesi başarıyla silindi."
-        error: "Silinemedi"
         topic: "Konu başarıyla silindi."
         poll_question_answer_video: "Yanıt videosu başarıyla silindi."
         valuator_group: "Bilirkişi grubu başarıyla silindi"

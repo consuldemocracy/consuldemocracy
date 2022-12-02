@@ -993,9 +993,6 @@ ka:
         table_title: "სათაური"
         edit_answers: პასუხების რედაქტირება
         see_proposal: "(ინიციატივის ნახვა)"
-      flash:
-        question_added: "შეკითხვა დაემატა კენჭისყრას"
-        error_on_question_added: "შეკითხვის დამატება მოცემულ კენჭისყრაზე ვერ მოხერხდა"
       destroy:
         alert: "ამ მოქმედებით წაიშლება კენჭისყრა და მასთან დაკავშირებული შეკითხვები."
         success_notice: "კენჭისყრა წარმატებით წაიშალა"
@@ -1045,12 +1042,6 @@ ka:
     answers:
       new:
         title: ახალი პასუხი
-      show:
-        title: სათაური
-        description: აღწერა
-        images: ფოტოსურათები
-        images_list: ფოტოსურათების სია
-        edit: პასუხის რედაქტირება
       edit:
         title: პასუხის რედაქტირება
       videos:

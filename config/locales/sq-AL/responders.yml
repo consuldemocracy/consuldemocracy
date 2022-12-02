@@ -30,7 +30,6 @@ sq:
         translation: "\nPërkthimi u përditësua me sukses"
       destroy:
         budget_investment: "\nProjekti i investimeve u fshi me sukses."
-        error: "\nNuk mund të fshihej"
         topic: "Tematika u fshi me sukses"
         poll_question_answer_video: "\nPërgjigjja e videos u fshi me sukses."
         valuator_group: "\nGrupi i vlerësuesve u fshi me sukses"

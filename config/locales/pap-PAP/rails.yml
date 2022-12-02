@@ -1,7 +1,7 @@
 pap:
   date:
     abbr_month_names:
-      - 
+      -
       - Jan
       - Feb
       - Mar
@@ -15,7 +15,7 @@ pap:
       - Nov
       - Dec
     month_names:
-      - 
+      -
       - January
       - February
       - March

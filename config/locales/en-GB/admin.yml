@@ -549,12 +549,6 @@ en-GB:
           document_title: Заголовок
           document_actions: Дії
     answers:
-      show:
-        title: Заголовок
-        description: Опис
-        images: Зображення
-        images_list: Список зображень
-        edit: Редагувати відповідь
       edit:
         title: Додати відповідь
       videos:

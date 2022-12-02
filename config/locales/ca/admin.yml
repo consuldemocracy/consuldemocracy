@@ -997,9 +997,6 @@ ca:
         table_title: "Títol"
         edit_answers: Edita les respostes
         see_proposal: "(Veure proposta)"
-      flash:
-        question_added: "Pregunta añadida a esta votación"
-        error_on_question_added: "No se pudo asignar la pregunta"
       destroy:
         alert: "Aquesta acció eliminarà l'enquesta i totes les seves preguntes associades."
         success_notice: "L'enquesta s'ha suprimit correctament"
@@ -1049,12 +1046,6 @@ ca:
     answers:
       new:
         title: Nova resposta
-      show:
-        title: Títol
-        description: Descripció detallada
-        images: Imatges
-        images_list: Llista d’imatges
-        edit: Edita la resposta
       edit:
         title: Edita la resposta
       videos:

@@ -466,7 +466,7 @@ sr:
         description: Опис
       poll/question/answer/translation:
         title: Одговор
-        description: Опис
+        description: "Опис"
       poll/question/answer/video:
         title: Наслов
         url: Спољни видео

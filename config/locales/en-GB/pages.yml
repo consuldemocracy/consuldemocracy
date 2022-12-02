@@ -29,7 +29,7 @@ en-GB:
       keyboard_shortcuts:
         navigation_table:
           rows:
-            - 
+            -
             - 
               page_column: Обговорення
             - 
@@ -40,7 +40,7 @@ en-GB:
               page_column: Голоси
             - 
               page_column: Бюджети участі
-            - 
+            -
         browser_table:
           browser_header: Веб-переглядач
           rows:

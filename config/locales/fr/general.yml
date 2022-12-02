@@ -67,10 +67,6 @@ fr:
       form:
         submit_button: Commencer un débat
     debate:
-      comments:
-        zero: Aucun commentaire
-        one: 1 commentaire
-        other: "%{count} commentaires"
       votes:
         zero: Aucun votes
         one: 1 vote
@@ -126,10 +122,6 @@ fr:
       start_new: Commencer un débat
     show:
       author_deleted: Utilisateur effacé
-      comments:
-        zero: Aucun commentaires
-        one: 1 commentaire
-        other: "%{count} commentaires"
       comments_title: Commentaires
       edit_debate_link: Éditer
       flag: Ce débat a été étiquetté comme inapproprié par plusieurs utilisateurs
@@ -393,10 +385,6 @@ fr:
         edit: "Avant qu'elle soit partagée, vous pouvez changer le texte autant que vous le désirez."
         view_proposal: Pas maintenant, revenir à la proposition
       already_supported: Vous avez déjà soutenu cette proposition. Partagez-la !
-      comments:
-        zero: Aucun commentaires
-        one: 1 commentaire
-        other: "%{count} commentaires"
       support: Soutenir
       support_title: Soutenir cette proposition
       supports:
@@ -415,10 +403,6 @@ fr:
     show:
       author_deleted: Utilisateur effacé
       code: "Code de la proposition"
-      comments:
-        zero: Aucun commentaires
-        one: 1 commentaire
-        other: "%{count} commentaires"
       comments_tab: Commentaires
       dashboard_proposal_link: Tableau de bord
       flag: Cette proposition a été signalée comme inappropriée par plusieurs utilisateurs

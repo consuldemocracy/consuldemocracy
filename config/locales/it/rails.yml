@@ -9,7 +9,7 @@ it:
       - Ven
       - Sab
     abbr_month_names:
-      - 
+      -
       - Gen
       - Feb
       - Mar
@@ -35,7 +35,7 @@ it:
       long: "%B %d, %Y"
       short: "%b %d"
     month_names:
-      - 
+      -
       - Gennaio
       - Febbraio
       - Marzo

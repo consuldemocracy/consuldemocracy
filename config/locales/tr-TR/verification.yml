@@ -92,6 +92,7 @@ tr:
     user_permission_proposal: Yeni öneriler oluştur
     user_permission_support_proposal: Önerileri destekle*
     user_permission_votes: Son oylamaya katıl*
+    verification_needed: Ek doğrulama gerekli
     verified_user:
       form:
         submit_button: Kodu gönder

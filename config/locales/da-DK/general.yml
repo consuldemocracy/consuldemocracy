@@ -69,10 +69,6 @@ da:
       form:
         submit_button: Start en debat
     debate:
-      comments:
-        zero: Ingen kommentarer
-        one: 1 kommentar
-        other: "%{count} kommentarer"
       votes:
         zero: Ingen stemmer
         one: 1 stemme
@@ -128,10 +124,6 @@ da:
       start_new: Start en debat
     show:
       author_deleted: Bruger slettet
-      comments:
-        zero: Ingen kommentarer
-        one: 1 kommentar
-        other: "%{count} kommentarer"
       comments_title: Kommentarer
       edit_debate_link: Rediger
       flag: Denne debat er blevet markeret som upassende af flere brugere.
@@ -396,10 +388,6 @@ da:
         edit: "Før forslaget deles har du mulighed for at ændre i teksten."
         view_proposal: Ikke nu, gå til mit forslag
       already_supported: Du har allerede støttet dette forslag. Del det!
-      comments:
-        zero: Ingen kommentarer
-        one: 1 kommentar
-        other: "%{count} kommentarer"
       support: Støt
       support_label: "Støt %{proposal}"
       support_title: Støt dette forslag
@@ -419,10 +407,6 @@ da:
     show:
       author_deleted: Bruger slettet
       code: "Forslagskode:"
-      comments:
-        zero: Ingen kommentarer
-        one: 1 kommentar
-        other: "%{count} kommentarer"
       comments_tab: Kommentarer
       dashboard_proposal_link: Dashboard
       flag: Dette forslag er blevet markeret som upassende af flere brugere.

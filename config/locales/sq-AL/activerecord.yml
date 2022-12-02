@@ -380,7 +380,7 @@ sq:
         description: Përshkrimi
       poll/question/answer/translation:
         title: Përgjigje
-        description: Përshkrimi
+        description: "Përshkrimi"
       poll/question/answer/video:
         title: Titull
         url: Video e jashtme

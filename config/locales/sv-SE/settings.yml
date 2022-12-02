@@ -40,8 +40,6 @@ sv:
     telegram_handle_description: "Om ifyllt visas det i sidfoten"
     instagram_handle: "Användarnamn på Instagram"
     instagram_handle_description: "Om ifyllt visas det i sidfoten"
-    url: "Huvudsaklig webbadress"
-    url_description: "Huvud-URL till webbplatsen"
     org_name: "Organisation"
     org_name_description: "Detta visas i ämnesrad i e-brev, på hjälpsidor..."
     related_content_score_threshold: "Nivå för överensstämmelse med relaterat innehåll"

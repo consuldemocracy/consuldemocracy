@@ -66,12 +66,6 @@ pl:
       form:
         submit_button: Rozpocznij debatę
     debate:
-      comments:
-        zero: Brak komentarzy
-        one: 1 komentarz
-        few: "%{count} komentarze"
-        many: "%{count} komentarze"
-        other: "%{count} komentarze"
       votes:
         zero: Brak głosów
         one: 1 głos
@@ -129,12 +123,6 @@ pl:
       start_new: Rozpocznij debatę
     show:
       author_deleted: Użytkownik usunięty
-      comments:
-        zero: Brak komentarzy
-        one: 1 komentarz
-        few: "%{count} komentarzy"
-        many: "%{count} komentarzy"
-        other: "%{count} komentarzy"
       comments_title: Komentarze
       edit_debate_link: Edytuj
       flag: Ta debata została oznaczona jako nieodpowiednia przez kilku użytkowników.
@@ -372,12 +360,6 @@ pl:
         edit: "Zanim zostanie udostępniony, będziesz mógł zmieniać tekst według własnego uznania."
         view_proposal: Nie teraz, idź do mojego wniosku
       already_supported: Już poparłeś ten wniosek. Udostępnij go!
-      comments:
-        zero: Brak komentarzy
-        one: 1 komentarz
-        few: "%{count} komentarzy"
-        many: "%{count} komentarzy"
-        other: "%{count} komentarzy"
       support: Wsparcie
       support_title: Poprzyj ten wniosek
       supports:
@@ -399,12 +381,6 @@ pl:
     show:
       author_deleted: Użytkownik usunięty
       code: "Kod wniosku:"
-      comments:
-        zero: Brak komentarzy
-        one: 1 komentarz
-        few: "%{count} komentarzy"
-        many: "%{count} komentarzy"
-        other: "%{count} komentarzy"
       comments_tab: Komentarze
       flag: Ten wniosek został oznaczona jako nieodpowiedni przez kilku użytkowników.
       notifications_tab: Powiadomienia

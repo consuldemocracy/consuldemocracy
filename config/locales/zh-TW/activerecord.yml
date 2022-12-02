@@ -345,7 +345,7 @@ zh-TW:
         description: 描述
       poll/question/answer/translation:
         title: 回答
-        description: 描述
+        description: "描述"
       poll/question/answer/video:
         title: 標題
         url: 外部視頻

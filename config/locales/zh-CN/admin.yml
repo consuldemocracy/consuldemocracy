@@ -810,9 +810,6 @@ zh-CN:
         no_questions: "没有分配给此投票项的问题。"
         questions_title: "问题列表"
         table_title: "标题"
-      flash:
-        question_added: "已添加到此投票项的问题"
-        error_on_question_added: "无法被指定到此投票项的问题"
     questions:
       index:
         title: "问题"
@@ -856,12 +853,6 @@ zh-CN:
     answers:
       new:
         title: 新答案
-      show:
-        title: 标题
-        description: 说明
-        images: 图片
-        images_list: 图像列表
-        edit: 编辑答案
       edit:
         title: 编辑答案
       videos:

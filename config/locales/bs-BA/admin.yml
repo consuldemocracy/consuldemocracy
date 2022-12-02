@@ -962,9 +962,6 @@ bs:
         table_title: "Naziv"
         edit_answers: Edituj odgovore
         see_proposal: "(Vidi prijedlog)"
-      flash:
-        question_added: "Pitanje dodato u ovoj glasačkoj anketi"
-        error_on_question_added: "Pitanje se ne može uvrstiti u ovu glasačku anketu"
       destroy:
         alert: "Ovom radnjom će se ukloniti glasačka anketa i sva povezana pitanja."
         success_notice: "Glasačka anketa uspješno obrisana"
@@ -1014,12 +1011,6 @@ bs:
     answers:
       new:
         title: Novi odgovor
-      show:
-        title: Naslov
-        description: Opis
-        images: Slike
-        images_list: Lista slika
-        edit: Edituj odgovor
       edit:
         title: Edituj odgovor
       videos:

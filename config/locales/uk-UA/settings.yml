@@ -40,8 +40,6 @@ uk-UA:
     telegram_handle_description: "При зазначенні з'явиться у нижньому колонтитулі"
     instagram_handle: "Нік в Instagram"
     instagram_handle_description: "При зазначенні з'явиться у нижньому колонтитулі"
-    url: "Основна URL-адреса"
-    url_description: "Основна URL-адреса вашого вебсайту"
     org_name: "Назва сайту"
     org_name_description: "Ця назва з'являтиметься у темах листів, на сторінках допомоги..."
     related_content_score_threshold: "Пороговий рівень для пов'язаного контенту"

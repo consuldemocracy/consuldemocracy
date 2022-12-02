@@ -70,11 +70,6 @@ hr:
       form:
         submit_button: Započnite raspravu
     debate:
-      comments:
-        zero: Nema komentara
-        one: 1 komentar
-        few: "%{count} komentara"
-        other: "%{count} komentara"
       votes:
         zero: Nema glasova
         one: 1 glas
@@ -131,11 +126,6 @@ hr:
       start_new: Započnite raspravu
     show:
       author_deleted: Korisnik obrisan
-      comments:
-        zero: Nema komentara
-        one: 1 komentar
-        few: "%{count} komentare"
-        other: "%{count} komentare"
       comments_title: Kometari
       edit_debate_link: Uredi
       flag: Rasprava je označena kao neprimjerena od strane više korisnika.
@@ -403,11 +393,6 @@ hr:
         edit: "Prije nego što podjelite možete izmijeniti tekst koji vam se sviđa."
         view_proposal: Ne sad, idite na moj prijedlog
       already_supported: Vi ste već poduprli ovaj prijedlog. Podijelite ga!
-      comments:
-        zero: Bez komentara
-        one: 1 komentar
-        few: "%{count} komentare"
-        other: "%{count} komentare"
       support: Potpora
       support_title: Podupri ovaj prijedlog
       supports:
@@ -428,11 +413,6 @@ hr:
     show:
       author_deleted: Korisnik obrisan
       code: "Kod prijedloga:"
-      comments:
-        zero: Bez komentara
-        one: 1 komentar
-        few: "%{count} komentare"
-        other: "%{count} komentare"
       comments_tab: Komentari
       dashboard_proposal_link: Kontrolna ploča
       flag: Prijedlog je označen kao neprimjerena od strane više korisnika.

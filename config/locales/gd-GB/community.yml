@@ -1,1 +1,49 @@
 gd:
+  community:
+    sidebar:
+      title: Coimhearsnachd
+      description:
+        proposal: Gabh pàirt ann an coimhearsnachd luchd-cleachdaidh a’ mholaidh seo.
+        investment: Gabh pàirt ann an coimhearsnachd luchd-cleachdaidh an tasgaidh seo.
+      button_to_access: Faigh a-steach dhan choimhearsnachd
+    show:
+      title:
+        proposal: Coimhearsnachd a’ mholaidh
+        investment: Coimhearsnachd Tasgadh Buidseit
+      description:
+        proposal: Gabh pàirt ann an coimhearsnachd a’ mholaidh seo. Is urrainn coimhearsnachd ghnìomhach cuideachadh le bhith a’ toirt piseach air susbaint a’ mholaidh agus a bhith a’ cur ri a sgaoileadh gus barrachd taic fhaighinn.
+        investment: Gabh pàirt ann an coimhearsnachd an tasgaidh buidseat seo. Is urrainn coimhearsnachd ghnìomhach cuideachadh le bhith a’ toirt piseach air susbaint a’ mholaidh agus a bhith a’ cur ri a sgaoileadh gus barrachd taic fhaighinn.
+      create_first_community_topic:
+        first_theme_not_logged_in: Chan eil cuspair sam bith ann, gabh pàirt agus cruthaich a’ chiad fhear.
+        first_theme: Cruthaich a’ chiad chuspair coimhearsnachd
+        sub_first_theme: "Feumaidh tu %{sign_in} neo %{sign_up} airson cuspair a chruthachadh."
+      tab:
+        participants: Com-pàirtichean
+      sidebar:
+        participate: Gabh pàirt
+        new_topic: Cruthaich cuspair
+      topic:
+        edit: Deasaich cuspair
+        destroy: Sguab cuspair às
+      author: Ùghdar
+      back: Air ais gu %{community} %{proposal}
+    topic:
+      create: Cruthaich cuspair
+      edit: Deasaich cuspair
+      form:
+        new:
+          submit_button: Cruthaich cuspair
+        edit:
+          submit_button: Deasaich cuspair
+        create:
+          submit_button: Cruthaich cuspair
+        update:
+          submit_button: Ùraich cuspair
+      show:
+        tab:
+          comments_tab: Beachdan
+      sidebar:
+        recommendations_title: Molaidhean gus cuspair a chruthachadh
+        recommendation_one: Na sgrìobh tiotal a’ chuspair no seantansan slàn ann an litrichean mòra. Air an eadar-lìon thathar a’ meas seo mar èigheachd. Agus chan eil e a' còrdadh ri duine sam bith ma thathar ag èigheach.
+        recommendation_two: Thèid cuir às do chuspair no beachd sam bith a tha a’ moladh gnìomh mì-laghail, no a tha an dùil sgrios a dhèanamh air àite deasbaid a' chuspair, ach tha a h-uile càil eile ceadaichte.
+        recommendation_three: Faigh tlachd às an àite seo, agus às na guthan a chluinnear ann, is ann leatsa a tha e cuideachd.

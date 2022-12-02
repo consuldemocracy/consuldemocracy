@@ -847,9 +847,6 @@ val:
         no_questions: "No hi ha preguntes asignades a esta votació."
         questions_title: "Listat de preguntes assignades"
         table_title: "Títol"
-      flash:
-        question_added: "Pregunta afegida a esta votació"
-        error_on_question_added: "No es va poder asignar la pregunta"
     questions:
       index:
         title: "Preguntes"
@@ -894,12 +891,6 @@ val:
     answers:
       new:
         title: Nova resposta
-      show:
-        title: Títol
-        description: Descripció
-        images: Imatges
-        images_list: Lista d'imatges
-        edit: Editar resposta
       edit:
         title: Editar resposta
       videos:

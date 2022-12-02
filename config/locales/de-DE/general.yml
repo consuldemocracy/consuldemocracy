@@ -69,10 +69,6 @@ de:
       form:
         submit_button: Starten Sie eine Diskussion
     debate:
-      comments:
-        zero: Keine Kommentare
-        one: 1 Kommentar
-        other: "%{count} Kommentare"
       votes:
         zero: Keine Bewertung
         one: 1 Stimme
@@ -128,10 +124,6 @@ de:
       start_new: Eine Diskussion starten
     show:
       author_deleted: Benutzer*in gelöscht
-      comments:
-        zero: Keine Kommentare
-        one: 1 Kommentar
-        other: "%{count} Kommentare"
       comments_title: Kommentare
       edit_debate_link: Bearbeiten
       flag: Diese Diskussion wurde von verschiedenen Benutzern als unangebracht gemeldet.
@@ -395,10 +387,6 @@ de:
         edit: "Bevor Sie ihren Text teilen, können Sie ihn beliebig bearbeiten. "
         view_proposal: Nicht jetzt. Gehe zu meinem Vorschlag
       already_supported: Sie haben diesen Vorschlag bereits unterstützt. Teilen Sie ihn!
-      comments:
-        zero: Keine Kommentare
-        one: 1 Kommentar
-        other: "%{count} Kommentare"
       support: Unterstützung
       support_title: Vorschlag unterstützen
       supports:
@@ -417,10 +405,6 @@ de:
     show:
       author_deleted: Benutzer*in gelöscht
       code: "Antrags-Code:"
-      comments:
-        zero: Keine Kommentare
-        one: 1 Kommentar
-        other: "%{count} Kommentare"
       comments_tab: Kommentare
       dashboard_proposal_link: Dashboard
       flag: Dieser Vorschlag wurde von verschiedenen Benutzern als unangebracht gemeldet.
