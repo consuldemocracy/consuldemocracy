@@ -25,13 +25,6 @@ ar:
       topic:
         edit: تحرير الموضوع
         destroy: حذف الموضوع
-        comments:
-          zero: لا توجد تعليقات
-          one: تعليق واحد
-          two: "%{count} تعليق"
-          few: "%{count} تعليق"
-          many: "%{count} تعليق"
-          other: "%{count} تعليق"
       author: كاتب
       back: العودة إلى %{community}%{proposal}
     topic:

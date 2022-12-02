@@ -3,9 +3,6 @@ fi:
     annotations:
       comments:
         see_all: Näytä kaikki
-        comments_count:
-          one: "%{count} kommentti"
-          other: "%{count} kommenttia"
         replies_count:
           one: "%{count} vastaus"
           other: "%{count} vastausta"
@@ -13,9 +10,6 @@ fi:
         publish_comment: Julkaise kommentti
       index:
         title: Kommentit
-        comments_count:
-          one: "%{count} kommentti"
-          other: "%{count} kommenttia"
       show:
         title: Kommentti
     draft_versions:
@@ -47,11 +41,6 @@ fi:
         comments_closed: Suljettu vaihe
         form:
           leave_comment: Jätä vastauksesi
-      question:
-        comments:
-          zero: Ei kommentteja
-          one: "%{count} kommentti"
-          other: "%{count} kommenttia"
       show:
         next_question: Seuraava kysymys
         first_question: Ensimmäinen kysymys
@@ -65,9 +54,5 @@ fi:
       title: "Yhteenveto"
       votes:
         zero: "%{count} ääntä"
-      comments:
-        zero: "Ei kommentteja"
-        one: "%{count} kommentti"
-        other: "%{count} kommenttia"
       top_comments:
         zero: "Ei kommentteja"

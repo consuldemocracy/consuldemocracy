@@ -40,8 +40,6 @@ bs:
     telegram_handle_description: "Ako se upiše, stajaće na kraju teksta"
     instagram_handle: "Ime na Instagramu"
     instagram_handle_description: "Ako se upiše, stajaće na kraju teksta"
-    url: "Glavni URL"
-    url_description: "Glavni URL vaše web-stranice"
     org_name: "Ime stranice"
     org_name_description: "Ovo ime će biti navedeno u nazivu maila, stranama za pomoć..."
     related_content_score_threshold: "Prag za broj vezanih sadržaja"

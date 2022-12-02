@@ -65,7 +65,7 @@ fa:
       new:
         title: نظر سنجی ها
         table_poll: نظرسنجی
-        table_status: وضعیت نظرسنجی ها 
+        table_status: وضعیت نظرسنجی ها
         table_actions: اقدامات
       show:
         can_vote: می توانید رای بدهید

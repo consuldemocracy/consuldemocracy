@@ -997,9 +997,6 @@ fr:
         no_questions: "Il n'y a pas de questions affectées à ce vote."
         questions_title: "Liste des questions"
         table_title: "Titre"
-      flash:
-        question_added: "La question a été ajoutée à ce vote"
-        error_on_question_added: "La question n'a pas pu être ajoutée à ce vote."
     questions:
       index:
         title: "Questions"
@@ -1044,12 +1041,6 @@ fr:
     answers:
       new:
         title: Nouvelle réponse
-      show:
-        title: Titre
-        description: Description
-        images: Images
-        images_list: Liste des images
-        edit: Modifier réponse
       edit:
         title: Modifier la réponse
       videos:

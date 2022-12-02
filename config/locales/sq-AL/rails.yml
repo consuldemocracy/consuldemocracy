@@ -9,7 +9,7 @@ sq:
       - E premte
       - E shtunë
     abbr_month_names:
-      - 
+      -
       - Janar
       - Shkurt
       - Mars
@@ -35,7 +35,7 @@ sq:
       long: "%B%d, %Y"
       short: "%b%d"
     month_names:
-      - 
+      -
       - Janar
       - Shkurt
       - Mars

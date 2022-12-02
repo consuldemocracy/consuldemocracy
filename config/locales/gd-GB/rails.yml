@@ -1,7 +1,15 @@
 gd:
   date:
+    abbr_day_names:
+      - Didòmhnaich
+      - Diluain
+      - Dimàirt
+      - Wed
+      - Thu
+      - Fri
+      - Sat
     abbr_month_names:
-      - 
+      -
       - Jan
       - Feb
       - Mar
@@ -15,7 +23,7 @@ gd:
       - Nov
       - Dec
     month_names:
-      - 
+      -
       - January
       - February
       - March

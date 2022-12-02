@@ -12,10 +12,6 @@ en-GB:
       topic:
         edit: Редагувати тему
         destroy: Видалити тему
-        comments:
-          zero: Коментарі відсутні
-          one: 1 коментар
-          other: "%{count} коментарів"
       author: Автор
     topic:
       form:

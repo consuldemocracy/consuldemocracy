@@ -67,7 +67,7 @@ id:
       keyboard_shortcuts:
         navigation_table:
           rows:
-            - 
+            -
             - 
               page_column: Perdebatan
             - 
@@ -78,24 +78,24 @@ id:
               page_column: Suara
             - 
               page_column: Anggaran partisipasif
-            - 
+            -
         browser_table:
           rows:
-            - 
+            -
             - 
               browser_column: Firefox
-            - 
-            - 
-            - 
+            -
+            -
+            -
       textsize:
         browser_settings_table:
           rows:
-            - 
+            -
             - 
               browser_column: Firefox
-            - 
-            - 
-            - 
+            -
+            -
+            -
     titles:
       help: "Apa %{org}? - Partisipasi warga"
     verify:

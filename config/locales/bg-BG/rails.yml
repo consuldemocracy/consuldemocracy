@@ -9,7 +9,7 @@ bg:
       - Пт
       - Сб
     abbr_month_names:
-      - 
+      -
       - Ян
       - Февр
       - Март
@@ -35,7 +35,7 @@ bg:
       long: "%d %B %Y"
       short: "%d %b"
     month_names:
-      - 
+      -
       - Януари
       - Февруари
       - Март

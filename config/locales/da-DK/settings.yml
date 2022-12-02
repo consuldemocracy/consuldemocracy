@@ -40,8 +40,6 @@ da:
     telegram_handle_description: "Hvis udfyldt, vil telegram-ikonet være synligt nederst på siden"
     instagram_handle: "Instagram"
     instagram_handle_description: "Hvis udfyldt, vil instagram-ikonet være synligt nederst på siden"
-    url: "Hjemmesidens URL"
-    url_description: "Angiv URL for din hjemmeside"
     org_name: "Sidens navn"
     org_name_description: "Dette navn vil fremgå i emnefeltet (e-mails), hjælpesider..."
     related_content_score_threshold: "Tærskelværdi af relateret indhold"

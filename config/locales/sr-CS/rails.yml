@@ -9,7 +9,7 @@ sr-CS:
       - Pet
       - Sub
     abbr_month_names:
-      - 
+      -
       - Jan
       - Feb
       - Mar
@@ -35,7 +35,7 @@ sr-CS:
       long: "%B %d, %Y"
       short: "%b %d"
     month_names:
-      - 
+      -
       - Januar
       - Februar
       - Mart

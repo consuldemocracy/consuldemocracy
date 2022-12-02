@@ -115,7 +115,7 @@ el:
       investment:
         add: Ψηφίστε
         already_added: Έχετε ήδη καταχωρήσει αυτό το επενδυτικό σχέδιο
-        support_title: Υποστηρίξτε αυτό το έργο 
+        support_title: Υποστηρίξτε αυτό το έργο
         supports:
           zero: Χωρίς υποστηρίξεις
           one: 1 υποστήριξη

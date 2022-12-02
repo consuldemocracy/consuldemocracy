@@ -73,30 +73,6 @@ hr:
       hi: Pozdrav
       new_comment_by: Stigao je novi komentar procjene od <strong>%{commenter}</strong> u proračunsko ulaganje %{investment}
       commenter_info: "%{commenter}, %{time}:"
-    new_actions_notification_rake_created:
-      subject: "Više vijesti o vašem građanskom prijeldogu"
-      hi: "Pozdrav %{name},"
-      new_resource: "NOVI OTKLJUČANI RESURS"
-      introduction: "Kao što znate, na %{created_at_day} dan %{created_at_month} ste stvorili svoj prijedlog u draft modu %{title}."
-      text_1: "Kad god želite možete objaviti ovo na poveznici: %{link_to_published}. Ukoliko još uvijek niste sigurni..."
-      text_2: "Iskoristite ovaj trenutak! Naučite dodati druge ljude s istim interesima i pripremite vidljivost koja će vam trebati kada konačno objavite svoj prijedlog."
-      text_3: "Te da vas prate u ovom izazovu, ovdje su vijesti..."
-      text_4: "Pogledajte ovu NOVU preporučenu akciju:"
-      text_5: "Sljedeća preporučena radnja je:"
-      footer_text: "Kao i uvijek, uđite u Panel za Prijedloge te ćemo Vam detaljno objasniti kako koristiti te resurse i kako iz njih izvući maksimum."
-      dashboard_button: "Samo naprijed, otkrijte ih!"
-    new_actions_notification_rake_published:
-      subject: "Više vijesti o vašem građanskom prijedlogu"
-      hi: "Pozdrav %{name},"
-      new_resource: "NOVI OTKLJUČARNI RESURS"
-      introduction: "Kao što znate, na %{published_at_day} dan %{published_at_month} vi ste objavili prijedlog %{title}."
-      text_1: "Do sada ste dobili %{votes_count} glasova podrške Čestitamo!"
-      text_2: "Imate na raspolaganju novi resurs koji će vam pomoći da nastavite napredovati."
-      text_3: "Nedostaje vam %{days_count} dana prije nego što prijedlozi doboju %{max_votes_count} glasova potpore te će ići na referendum. Nastavite širiti svoje ideje. Nedostaje li vam ideja?"
-      text_4: "NOVA PREPORUČENA AKCIJA ŠIRENJA"
-      text_5: "Sada ih postoji još više, pogledajte sljedeću radnju:"
-      footer_text: "Kao i uvijek, uđite u Panel za Prijedloge te ćemo Vam detaljno objasniti kako koristiti te resurse i kako iz njih izvući maksimum."
-      dashboard_button: "Samo naprijed, otkrijte ih!"
     new_actions_notification_on_create:
       subject: "Vaš je nacrt građanskog prijedloga izrađen"
       hi: "Pozdrav %{name}!"

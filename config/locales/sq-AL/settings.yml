@@ -38,8 +38,6 @@ sq:
     telegram_handle_description: "Nëse plotësohet ajo do të shfaqet në fund të faqes"
     instagram_handle: "Instagram handle"
     instagram_handle_description: "Nëse plotësohet ajo do të shfaqet në fund të faqes"
-    url: "URL kryesore"
-    url_description: "URL-ja kryesore e faqes suaj të internetit"
     org_name: "Organizatë"
     org_name_description: "Emri i organizatës"
     related_content_score_threshold: "Pragu i vlerësimit të përmbajtjes përkatëse"

@@ -25,11 +25,6 @@ ro:
       topic:
         edit: Editează subiect
         destroy: Șterge subiect
-        comments:
-          zero: Nu există comentarii
-          one: 1 comentariu
-          few: "%{count} comentarii"
-          other: "%{count} comentarii"
       author: Autor
       back: Înapoi la %{community}%{proposal}
     topic:

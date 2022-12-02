@@ -40,8 +40,6 @@ cs:
     telegram_handle_description: "Je-li vyplněno, zobrazí se v zápatí"
     instagram_handle: "Instagram propojení"
     instagram_handle_description: "Je-li vyplněno, zobrazí se v zápatí"
-    url: "Hlavní URL"
-    url_description: "Hlavní URL vašeho webu"
     org_name: "Organizace"
     org_name_description: "Název vaší organizace"
     related_content_score_threshold: "Prahová hodnota pro související obsah"

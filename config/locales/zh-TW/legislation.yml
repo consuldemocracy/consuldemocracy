@@ -4,8 +4,6 @@ zh-TW:
       comments:
         see_all: 查看所有
         see_complete: 查看完成
-        comments_count:
-          other: "%{count} 個評論"
         replies_count:
           other: "%{count} 個回覆"
         cancel: 取消
@@ -16,8 +14,6 @@ zh-TW:
         title: 評論
         comments_about: 評論關於
         see_in_context: 在上下文中查看
-        comments_count:
-          other: "%{count} 個評論"
       show:
         title: 評論
       version_chooser:
@@ -88,9 +84,6 @@ zh-TW:
         form:
           leave_comment: 留下您的答案
       question:
-        comments:
-          zero: 沒有評論
-          other: "%{count} 個評論"
         debate: 辯論
       show:
         answer_question: 提交答案
@@ -120,8 +113,5 @@ zh-TW:
       debate_phase: "辯論階段"
       proposals_phase: "建議階段"
       allegations_phase: "評論階段"
-      comments:
-        zero: "沒有評論"
-        other: "%{count} 個評論"
       top_comments:
         zero: "沒有評論"

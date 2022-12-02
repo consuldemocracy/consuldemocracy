@@ -23,30 +23,30 @@ nn:
       keyboard_shortcuts:
         navigation_table:
           rows:
-            - 
+            -
             - 
               page_column: Debatter
             - 
               page_column: Forslag
-            - 
-            - 
-            - 
+            -
+            -
+            -
         browser_table:
           rows:
-            - 
+            -
             - 
               browser_column: Firefox
-            - 
-            - 
-            - 
+            -
+            -
+            -
       textsize:
         browser_settings_table:
           rows:
-            - 
+            -
             - 
               browser_column: Firefox
-            - 
-            - 
-            - 
+            -
+            -
+            -
     verify:
       submit: Verifiser min konto

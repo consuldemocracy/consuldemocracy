@@ -40,8 +40,6 @@ tr:
     telegram_handle_description: "Eğer doldurulursa alt bilgide görünecektir"
     instagram_handle: "Instagram kolu"
     instagram_handle_description: "Eğer doldurulursa alt bilgide görünecektir"
-    url: "Ana URL"
-    url_description: "Web sitenizin ana URL'si"
     org_name: "Site adı"
     org_name_description: "Bu isim posta gönderenin konusunda, yardım sayfalarında görünecek..."
     related_content_score_threshold: "İlgili içerik puanı eşiği"
@@ -108,6 +106,8 @@ tr:
         recommendations_on_proposals_description: "Kullanıcılara tavsiyeleri, takip edilen öğelerin etiketlerine göre öneriler sayfasında gösterir"
       community: "Öneriler ve yatırımlar topluluğu"
       community_description: "Öneriler ve Katılımcı Bütçelerin yatırım projelerinde topluluk bölümünü etkinleştirir"
+      machine_learning: "Yapay Zeka / Makine Öğrenmesi"
+      machine_learning_description: "İçeriği otomatik olarak zenginleştirecek Python betiklerinin yürütülmesi için Yapay Zeka / Makine Öğrenmesi bölümünü etkinleştirin."
       map: "Öneriler ve bütçe yatırımları coğrafi konumu"
       map_description: "Önerilerin ve yatırım projelerinin coğrafi konumunu etkinleştirir"
       allow_images: "Yüklemeye izin ver ve görüntüleri göster"
@@ -132,6 +132,8 @@ tr:
       dashboard:
         notification_emails: "Gösterge paneli bildirim iletileri"
         notification_emails_description: "Gösterge paneli bildirim e-postalarının teklif yazarlarına gönderilmesini etkinleştir"
+      remove_investments_supports: "Bütçe yatırımlarından destekler geri çekilebilsin"
+      remove_investments_supports_description: "Projelerin seçilmesi aşamasında kullanıcılar bütçe yatırımlarına katkı desteklerini geri çekebilsin."
       sdg: SKH
       sdg_description: Yönetim menüsünde ve genel ayarlarda Sürdürülebilir Kalkınma Hedefleri bölümlerini etkinleştirin.
     remote_census:

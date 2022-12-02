@@ -4,9 +4,6 @@ pt-BR:
       comments:
         see_all: Ver todos
         see_complete: Ver completo
-        comments_count:
-          one: "%{count} comentário"
-          other: "%{count} comentários"
         replies_count:
           one: "%{count} resposta"
           other: "%{count} respostas"
@@ -18,9 +15,6 @@ pt-BR:
         title: Comentários
         comments_about: Comentários sobre
         see_in_context: Ver no contexto
-        comments_count:
-          one: "%{count} comentário"
-          other: "%{count} comentários"
       show:
         title: Comentar
       version_chooser:
@@ -92,10 +86,6 @@ pt-BR:
         form:
           leave_comment: Deixe sua resposta
       question:
-        comments:
-          zero: Nenhum comentário
-          one: "%{count} comentário"
-          other: "%{count} comentários"
         debate: Debater
       show:
         answer_question: Enviar resposta
@@ -134,10 +124,6 @@ pt-BR:
         zero: "Nenhuma proposta"
         one: "%{count} proposta"
         other: "%{count} propostas"
-      comments:
-        zero: "Nenhum comentário"
-        one: "%{count} comentário"
-        other: "%{count} comentários"
       download: "Resumo do download"
       top_comments:
         zero: "Nenhum comentário"

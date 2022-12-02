@@ -40,8 +40,6 @@ ro:
     telegram_handle_description: "Dacă este completat, va apărea în subsol"
     instagram_handle: "Instagram"
     instagram_handle_description: "Dacă este completat, va apărea în subsol"
-    url: "URL-ul principal"
-    url_description: "URL-ul principal al site-ului dumneavoastră"
     org_name: "Numele site-ului"
     org_name_description: "Acest nume va apărea pe subiectul mailers în paginile de ajutor..."
     related_content_score_threshold: "Prag de scor pentru conținut"

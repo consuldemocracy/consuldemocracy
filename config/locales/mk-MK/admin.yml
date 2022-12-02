@@ -378,10 +378,6 @@ mk:
           document_title: Наслов
           document_actions: Акции
     answers:
-      show:
-        title: Наслов
-        description: Опис
-        images: Слики
       videos:
         index:
           video_title: Наслов

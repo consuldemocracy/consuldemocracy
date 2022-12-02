@@ -31,7 +31,6 @@ de:
         translation: "Übersetzung erfolgreich hochgeladen"
       destroy:
         budget_investment: "Investitionsprojekt erfolgreich gelöscht."
-        error: "Konnte nicht gelöscht werden"
         topic: "Thema erfolgreich gelöscht."
         poll_question_answer_video: "Video-Antwort erfolgreich gelöscht."
         valuator_group: "Gutachtergruppe erfolgreich gelöscht"

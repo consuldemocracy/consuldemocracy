@@ -4,9 +4,6 @@ oc:
       comments:
         see_all: veire totas
         see_complete: veire complet
-        comments_count:
-          one: "%{count} comentari"
-          other: "%{count} de comentaris"
         replies_count:
           one: "%{count} responsa"
           other: "%{count} de responsas"
@@ -18,9 +15,6 @@ oc:
         title: Comentarios
         comments_about: de comentaris dessús
         see_in_context: Veire en contèxt
-        comments_count:
-          one: "%{count} comentari"
-          other: "%{count} de comentaris"
       show:
         title: Comentar
       version_chooser:
@@ -92,10 +86,6 @@ oc:
         form:
           leave_comment: Daissa la tiá responsa
       question:
-        comments:
-          zero: Sens comentaris
-          one: "%{count} comentari"
-          other: "%{count} de comentaris"
         debate: debat prealable
       show:
         answer_question: Enviar responsa
@@ -124,9 +114,5 @@ oc:
       debate_phase: "fasa prealabla"
       proposals_phase: "Fasa de proposicions"
       allegations_phase: "Fasa de comentaris"
-      comments:
-        zero: "Sens comentaris"
-        one: "%{count} comentari"
-        other: "%{count} de comentaris"
       top_comments:
         zero: "Sens comentaris"

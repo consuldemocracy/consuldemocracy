@@ -23,6 +23,7 @@ tr:
             other: "En fazla <span>%{count}</span> projeye oy verebilirsiniz"
         no_balloted_group_yet: "Henüz bu gruba oy vermediniz, oy verin!"
         remove: Oyu geri çek
+        remove_label: "%{investment} yatırımından desteğini çek"
         voted:
           one: "<span> bir </span> yatırımına oy verdiniz."
           other: "<span>%{count}</span> yatırımına oy verdiniz."
@@ -147,6 +148,7 @@ tr:
       wrong_price_format: Sadece tam sayılar
       investment:
         add: Oy
+        add_label: "%{investment} yatırımını destekle"
         already_added: Bu yatırım projesini daha önce eklediniz
         support_title: Bu projeyi destekleyin
         supports:
@@ -177,6 +179,17 @@ tr:
       title: "Yatırımların listesi"
     show:
       see_results: Sonuçları gör
+    supports_info:
+      different: "İstediğiniz kadar sayıda farklı projeyi destekleyebilirsiniz."
+      next: "Bir sonraki aşamaya geçmesini istediğiniz projeleri destekleyin."
+      scrolling: "Tüm fikirleri görmek için aşağıya kaydırmayı sürdürün"
+      share: "Desteklediğiniz projeleri sosyal ağlarda paylaşarak daha fazla ilgi çekmesini ve destek almasını sağlayabilirsiniz!"
+      supported:
+        one: "Şimdiye kadar <strong>1 projeyi</strong> desteklediniz."
+        other: "Şimdiye kadar <strong>%{count} projeyi</strong> desteklediniz."
+      supported_not_logged_in: "<strong>Projeleri desteklemeye başlamak</strong> için oturum açın."
+      time: "Projeleri desteklemek için %{phase_end_date} tarihine kadar zaman var."
+      title: "Projeleri <strong>destekleme</strong> zamanıdır!"
     results:
       link: Sonuçlar
       page_title: "%{budget} - Sonuçlar"

@@ -784,6 +784,7 @@ sv:
       comments: "Kommentarer"
       local_census_records: Hantera lokalt adressregister
       machine_learning: "AI/maskininlärning"
+      multitenancy: Flera hyresgäster
     administrators:
       index:
         title: Administratörer
@@ -1102,13 +1103,14 @@ sv:
         table_title: "Titel"
         edit_answers: Redigera svar
         see_proposal: "(Visa förslag)"
-      flash:
-        question_added: "Frågan har lagts till i omröstningen"
-        error_on_question_added: "Frågan kunde inte tilldelas den här omröstningen"
       destroy:
         alert: "Denna åtgärd tar bort omröstningen och alla dess frågor."
         success_notice: "Omröstningen har raderats"
         unable_notice: "Det går inte att radera en omröstning som har röster"
+      votation_type:
+        title: "Omröstningstyp"
+        unique_description: "Det går bara att svara på frågan en gång."
+        multiple_description: "Gör det möjligt att välja flera svar. Det går att ställa in maximalt antal svar."
     questions:
       index:
         title: "Frågor"
@@ -1125,9 +1127,13 @@ sv:
         poll_not_assigned: "Omröstningen har inte tilldelats"
       edit:
         title: "Redigera fråga"
+      form:
+        poll_help: "Du kan bara välja omröstningar som inte har inletts än"
       new:
         title: "Skapa fråga för omröstningen %{poll}"
         title_proposal: "Skapa fråga"
+      destroy:
+        notice: "Frågan raderades"
       answers:
         images:
           add_image: "Lägg till bild"
@@ -1151,17 +1157,17 @@ sv:
           documents_list: Lista med dokument
           document_title: Titel
           document_actions: Åtgärder
+      no_edit: "När omröstningen har inletts går det inte längre att skapa, redigera eller radera frågor, svar eller annat innehåll som kopplats till omröstningen."
     answers:
       new:
         title: Nytt svar
-      show:
-        title: Titel
-        description: Beskrivning
-        images: Bilder
-        images_list: Lista med bilder
-        edit: Redigera svar
       edit:
         title: Redigera svar
+      destroy:
+        success_notice: "Svaret har raderats"
+      images:
+        index:
+          title: Bilder
       videos:
         index:
           title: Videor
@@ -1345,6 +1351,7 @@ sv:
         label:
           booths: "Sök röstbås efter namn eller plats"
           budget_investments: "Sök investeringar efter titel, beskrivning eller område"
+          comments: "Sök kommentarer"
           debates: "Sök debatter efter titel eller beskrivning"
           legislation_processes: "Sök processer efter titel eller beskrivning"
           legislation_proposals: "Sök förslag efter titel eller beskrivning"
@@ -1354,6 +1361,7 @@ sv:
           poll_questions: "Sök omröstningsfrågor"
           polls: "Sök omröstningar efter namn eller beskrivning"
           proposals: "Sök förslag efter titel, kod, beskrivning eller fråga"
+          proposal_notifications: "Sök aviseringar efter titel eller beskrivning"
           users: "Sök användare efter namn eller e-postadress"
         search: "Sök"
       search_results: "Sökresultat"
@@ -1620,6 +1628,15 @@ sv:
             notice: "Kortet har uppdaterats"
           destroy:
             notice: "Kortet har tagits bort"
+    tenants:
+      create:
+        notice: Hyresgäst har skapats
+      index:
+        create: Skapa hyresgäst
+      new:
+        title: Ny hyresgäst
+      update:
+        notice: Hyresgäst har uppdaterats
     homepage:
       title: Startsida
       description: De aktiva modulerna visas på startsidan i samma ordning som här.

@@ -62,10 +62,6 @@ nl:
       form:
         submit_button: Debat starten
     debate:
-      comments:
-        zero: Geen reacties
-        one: 1 opmerking
-        other: "%{count} opmerkingen"
       votes:
         zero: Geen stemmen
         one: 1 stem
@@ -121,10 +117,6 @@ nl:
       start_new: Debat starten
     show:
       author_deleted: Gebruiker verwijderd
-      comments:
-        zero: Geen reacties
-        one: 1 opmerking
-        other: "%{count} opmerkingen"
       comments_title: Comments
       edit_debate_link: Edit
       flag: Verschillende mensen vinden de inhoud ongepast.
@@ -364,10 +356,6 @@ nl:
         edit: "Voordat het gedeeld gaat worden, kun je de tekst nog wijzigen."
         view_proposal: Niet nu, door naar mijn voorstel
       already_supported: U steunt dit voorstel al. Deel het!
-      comments:
-        zero: Geen reacties
-        one: 1 opmerking
-        other: "%{count} opmerkingen"
       support: Steun
       support_title: Steun dit voorstel
       supports:
@@ -385,10 +373,6 @@ nl:
     show:
       author_deleted: Gebruiker verwijderd
       code: "Voorstel code:"
-      comments:
-        zero: Geen reacties
-        one: 1 opmerking
-        other: "%{count} opmerkingen"
       comments_tab: Comments
       dashboard_proposal_link: Dashboard
       flag: Dit voorstel is door verschillende deelnemers aangemerkt als ongepast.

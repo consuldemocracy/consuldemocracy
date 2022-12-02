@@ -31,7 +31,6 @@ ar:
         translation: "تم تحديث الترجمة بنجاح"
       destroy:
         budget_investment: "تم حذف مشروع الاستثمار بنجاح."
-        error: "لا يمكن الحذف"
         topic: "تم حذف الموضوع بنجاح."
         poll_question_answer_video: "تم حذف إجابة الفيديو بنجاح."
         valuator_group: "تم حذف مجموعة المقيّمين بنجاح"

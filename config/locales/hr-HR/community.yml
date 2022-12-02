@@ -25,11 +25,6 @@ hr:
       topic:
         edit: Uredi temu
         destroy: Izbriši temu
-        comments:
-          zero: Bez komentara
-          one: 1 komentar
-          few: "%{count} komentare"
-          other: "%{count} komentare"
       author: Autor
       back: Nazad na %{community}%{proposal}
     topic:

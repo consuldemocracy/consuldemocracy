@@ -40,8 +40,6 @@ gl:
     telegram_handle_description: "Se se enche, aparecerá no rodapé"
     instagram_handle: "Usuario de Instagram"
     instagram_handle_description: "Se se enche, aparecerá no rodapé"
-    url: "URL xeral do web"
-    url_description: "URL principal do sitio"
     org_name: "Organización"
     org_name_description: "Nome de organización"
     related_content_score_threshold: "Límite de puntuación de contido relacionados"

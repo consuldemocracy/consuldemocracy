@@ -1,1 +1,144 @@
 gd:
+  legislation:
+    annotations:
+      comments:
+        see_all: Faic uile
+        see_complete: Faic crìochnaichte
+        replies_count:
+          one: "%{count} freagairt"
+          two: "%{count} fhreagairt"
+          few: "%{count} freagairtean"
+          other: "%{count} freagairtean"
+        cancel: Sguir
+        publish_comment: Foillsich Beachd
+      form:
+        phase_not_open: Chan eil an ìre seo fosgailte
+      index:
+        title: Beachdan
+        comments_about: Beachdan mu dheidhinn
+        see_in_context: Faic ann an co-theacsa
+      show:
+        title: Beachd
+      version_chooser:
+        seeing_version: Beachdan airson an tionndaidh
+        see_text: Faic dreach teacsa
+    draft_versions:
+      changes:
+        title: Atharraichean
+        seeing_changelog_version: Geàrr-chunntas air na h-atharrachaidhean
+        see_text: Faic dreach teacsa
+      show:
+        loading_comments: A’ luchdadh bheachdan
+        seeing_version: Tha thu a’ coimhead air dreach tionndadh
+        select_draft_version: Tagh dreach
+        select_version_submit: faic
+        updated_at: ùraichte air %{date}
+        see_changes: faic geàrr-chunntas de na h-atharraichean
+        see_comments: Faic na beachdan uile
+        text_toc: Clàr-innse
+        text_body: Teacsa
+        text_comments: Beachdan
+    processes:
+      header:
+        additional_info: Fiosrachadh a bharrachd
+        description: Tuairisgeul
+        more_info: Barrachd fiosrachaidh is co-theacsa
+      proposals:
+        empty_proposals: Chan eil moladh sam bith ann
+        filters:
+          random: Air thuaiream
+          winners: Air a thaghadh
+      debate:
+        empty_questions: Chan eil ceist sam bith ann
+      index:
+        filter: Criathraich
+        filters:
+          open: Pròiseasan fosgailte
+          past: Crìochnaichte
+        no_open_processes: Chan eil pròiseas fosgailte sam bith ann
+        no_past_processes: Chan eil seann phròiseasan ann
+        section_header:
+          icon_alt: Ìomhaigh an reachdais cho-obrachail
+          title: Reachdas co-obrachail
+          help: Cuidich le reachdas co-obrachail
+        section_footer:
+          title: Cuidich le reachdas co-obrachail
+          description: Gabh pàirt ann an deasbadan agus pròiseasan mus tèid riaghailtean no ro-innleachdan ùra aontachadh. Thèid meòrachadh air do bheachd.
+      phase_not_open:
+        not_open: Chan eil an ìre seo fosgailte fhathast
+      phase_empty:
+        empty: Chan deach dad fhoillseachadh fhathast
+      process:
+        see_latest_comments: Faic na beachdan as ùire
+        see_latest_comments_title: Thoir seachad beachd air a’ phròiseas seo
+      shared:
+        key_dates: Ìrean com-pàirteachaidh
+        homepage: Duilleag=dachaigh
+        debate_dates: Deasbad
+        draft_publication_date: Dreach fhoillseachadh
+        allegations_dates: Beachdan
+        result_publication_date: Foillseachadh nan toraidhean deireannach
+        milestones_date: Ga leantainn
+        proposals_dates: Molaidhean
+    questions:
+      comments:
+        comment_button: Foillsich freagairt
+        comments_title: Freagairtean fosgailte
+        comments_closed: Ìre dhùinte
+        form:
+          leave_comment: Fàg do fhreagairt
+      question:
+        debate: Deasbad
+      show:
+        answer_question: Cuir a-steach freagairt
+        next_question: An ath cheist
+        first_question: A’ chiad cheist
+        share: Co-roinn
+        title: Pròiseas reachdais cho-obrachail
+      participation:
+        phase_not_open: Chan eil an ìre seo fosgailte
+        organizations: Chan fhaod buidhnean pàirt a ghabhail san deasbad
+        unauthenticated: Feumaidh tu %{signin} no %{signup} gus pàirt a ghabhail.
+        verified_only: Chan fhaod ach cleachdaichean dearbhte pàirt a ghabhail, %{verify_account}.
+        debate_phase_not_open: Tha an ìre deasbaid air tighinn gu crìch agus cha ghabhar ri freagairtean tuilleadh
+    shared:
+      share: Co-roinn
+      share_comment: Thoir beachd seachad air %{version_name} bhon dreach phròiseas %{process_name}
+    proposals:
+      form:
+        tags_label: "Roinnean-seòrsa"
+      not_verified: "Airson molaidhean bhòtaidh %{verify_account}."
+      process_title: Pròiseas reachdais cho-obrachail
+    summary:
+      title: "Geàrr-chunntas"
+      votes:
+        zero: "%{count} bhòtaichean"
+        one: "%{count} bhòt"
+        two: "%{count} bhòt"
+        few: "%{count} bhòtaichean"
+        other: "%{count} bhòtaichean"
+      debate_phase: "Ìre deasbaid"
+      proposals_phase: "Ìre nam molaidhean"
+      allegations_phase: "Ìre nam beachdan"
+      debates:
+        zero: "Chan eil deasbad sam bith ann"
+        one: "%{count} deasbad"
+        two: "%{count} dheasbad"
+        few: "%{count} deasbadan"
+        other: "%{count} deasbadan"
+      proposals:
+        zero: "Chan eil mmoladh sam bith ann"
+        one: "%{count} moladh"
+        two: "%{count} mholadh"
+        few: "%{count} molaidhean"
+        other: "%{count} molaidhean"
+      download: "Luchdaich sìos geàrr-chunntas"
+      top_comments:
+        zero: "Chan eil beachd sam bith ann"
+        one: "%{count} beachd"
+        two: "Beachdan as fheàrr"
+        few: "Beachdan as fheàrr"
+        other: "Brod nam beachd"
+      most_voted_comments: "Beachdan a fhuair an àireamh as motha de bhòtaichean"
+      no_allegation: "Chan eil beachd sam bith ann"
+      process_empty: "Cha robh ìre com-pàirteachaidh sam bith aig a’ phròiseas seo"

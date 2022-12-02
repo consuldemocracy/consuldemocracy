@@ -62,10 +62,6 @@ eu:
       form:
         submit_button: Eztabaida bat hasi
     debate:
-      comments:
-        zero: Iruzkin gabe
-        one: Iruzkin 1
-        other: "%{count} Iruzkin"
       votes:
         zero: Bozka gabe
         one: Bozka 1
@@ -121,10 +117,6 @@ eu:
       start_new: Eztabaida bat hasi
     show:
       author_deleted: Erabiltzailea ezabatuta
-      comments:
-        zero: Iruzkin gabe
-        one: Iruzkin 1
-        other: "%{count} iruzkin"
       comments_title: Iruzkinak
       edit_debate_link: Eztabaida editatu
       flag: Eztabaida hau desegoki moduan markatu da zenbait erabiltzaileengaitik.
@@ -343,10 +335,6 @@ eu:
         edit: "Argitaratu aurretik testua zure gustura eraldatu dezakezu."
         view_proposal: Orain ez, nire proposamenera joan
       already_supported: Proposamen hau babestu duzu, orain partekatu ezazu!
-      comments:
-        zero: Iruzkin gabe
-        one: Iruzkin 1
-        other: "%{count} Iruzkin"
       support: Babestu
       support_title: Proposamen hau babestu
       supports:
@@ -363,10 +351,6 @@ eu:
     show:
       author_deleted: Erabiltzailea ezabatuta
       code: "Proposamen kodea:"
-      comments:
-        zero: Iruzkin gabe
-        one: Iruzkin 1
-        other: "%{count} iruzkin"
       comments_tab: Iruzkinak
       flag: Eztabaida hau desegoki moduan markatu da zenbait erabiltzaileengaitik.
       notifications_tab: Jakinarazpenak

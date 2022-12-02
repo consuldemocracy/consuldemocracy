@@ -9,12 +9,12 @@ tr:
       - Cum
       - Cts
     abbr_month_names:
-      - 
+      -
       - Ock
       - Şub
       - Mar
       - Nis
-      - Mayıs 
+      - Mayıs
       - Haz
       - Tem
       - Ağu
@@ -35,12 +35,12 @@ tr:
       long: "%B %d,%Y"
       short: "%b %d"
     month_names:
-      - 
+      -
       - Ocak
       - Şubat
       - Mart
       - Nisan
-      - Mayıs 
+      - Mayıs
       - Haziran
       - Temmuz
       - Ağustos
@@ -193,5 +193,6 @@ tr:
       default: "%a, %d %b %Y %H:%M:%S %z"
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
+      short_datetime: "%Y-%m-%d %H:%M"
       api: "%Y-%m-%d %H"
     pm: ös

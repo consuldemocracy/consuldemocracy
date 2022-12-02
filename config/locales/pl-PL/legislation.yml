@@ -4,11 +4,6 @@ pl:
       comments:
         see_all: Zobacz wszystkie
         see_complete: Zobacz pełne
-        comments_count:
-          one: "%{count} komentarz"
-          few: "%{count} komentarzy"
-          many: "%{count} komentarzy"
-          other: "%{count} komentarzy"
         replies_count:
           one: "%{count} odpowiedz"
           few: "%{count} odpowiedzi"
@@ -22,11 +17,6 @@ pl:
         title: Komentarze
         comments_about: Komentarze na temat
         see_in_context: Zobacz w kontekście
-        comments_count:
-          one: "%{count} komentarz"
-          few: "%{count} komentarzy"
-          many: "%{count} komentarzy"
-          other: "%{count} komentarzy"
       show:
         title: Komentarz
       version_chooser:
@@ -98,12 +88,6 @@ pl:
         form:
           leave_comment: Zostaw swoją odpowiedź
       question:
-        comments:
-          zero: Brak komentarzy
-          one: "%{count} komentarz"
-          few: "%{count} komentarzy"
-          many: "%{count} komentarzy"
-          other: "%{count} komentarzy"
         debate: Debata
       show:
         answer_question: Zatwierdź odpowiedź
@@ -132,11 +116,5 @@ pl:
       debate_phase: "Faza debaty"
       proposals_phase: "Etap składania wniosków"
       allegations_phase: "Faza Komentarzy"
-      comments:
-        zero: "Brak komentarzy"
-        one: "%{count} komentarz"
-        few: "%{count} komentarzy"
-        many: "%{count} komentarzy"
-        other: "%{count} komentarzy"
       top_comments:
         zero: "Brak komentarzy"
