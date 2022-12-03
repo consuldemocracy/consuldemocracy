@@ -1,12 +1,10 @@
 require "rails_helper"
 
 describe "Multitenancy", :seed_tenants do
-  before do
-    create(:tenant, schema: "mars")
-    create(:tenant, schema: "venus")
-  end
+  before { create(:tenant, schema: "mars") }
 
   scenario "Disabled features", :no_js do
+    create(:tenant, schema: "venus")
     Tenant.switch("mars") { Setting["process.debates"] = true }
     Tenant.switch("venus") { Setting["process.debates"] = nil }
 
@@ -22,6 +20,7 @@ describe "Multitenancy", :seed_tenants do
   end
 
   scenario "Content is different for differents tenants" do
+    create(:tenant, schema: "venus")
     Tenant.switch("mars") { create(:poll, name: "Human rights for Martians?") }
 
     with_subdomain("mars") do
@@ -69,6 +68,7 @@ describe "Multitenancy", :seed_tenants do
   end
 
   scenario "Creating content in one tenant doesn't affect other tenants" do
+    create(:tenant, schema: "venus")
     Tenant.switch("mars") { login_as(create(:user)) }
 
     with_subdomain("mars") do
@@ -96,6 +96,7 @@ describe "Multitenancy", :seed_tenants do
   end
 
   scenario "Users from another tenant cannot vote" do
+    create(:tenant, schema: "venus")
     Tenant.switch("mars") { create(:proposal, title: "Earth invasion") }
     Tenant.switch("venus") { login_as(create(:user)) }
 
@@ -138,6 +139,7 @@ describe "Multitenancy", :seed_tenants do
   end
 
   scenario "Users from another tenant can't sign in" do
+    create(:tenant, schema: "venus")
     Tenant.switch("mars") { create(:user, email: "marty@consul.dev", password: "20151021") }
 
     with_subdomain("mars") do
