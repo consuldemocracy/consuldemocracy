@@ -173,4 +173,12 @@ describe "Multitenancy", :seed_tenants do
       expect(page).not_to have_css "html.tenant-public"
     end
   end
+
+  scenario "Shows the not found page when accessing a non-existing tenant", :show_exceptions do
+    with_subdomain("jupiter") do
+      visit root_path
+
+      expect(page).to have_title "Not found"
+    end
+  end
 end

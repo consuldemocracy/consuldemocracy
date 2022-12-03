@@ -48,6 +48,7 @@ module Consul
 
     # Handle custom exceptions
     config.action_dispatch.rescue_responses["FeatureFlags::FeatureDisabled"] = :forbidden
+    config.action_dispatch.rescue_responses["Apartment::TenantNotFound"] = :not_found
 
     # Store uploaded files on the local file system (see config/storage.yml for options).
     config.active_storage.service = :local
