@@ -1,5 +1,5 @@
 ENV["RAILS_ENV"] ||= "test"
-if ENV["TEST_COVERAGE"]
+if ENV["TEST_COVERAGE"] && !ENV["TEST_COVERAGE"].empty?
   require "simplecov"
   require "simplecov-lcov"
   SimpleCov::Formatter::LcovFormatter.config.report_with_single_file = true
