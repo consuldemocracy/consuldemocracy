@@ -1,12 +1,12 @@
 <!--
-  Title: CONSUL
+  Title: CONSUL DEMOCRACY
   Description: Aplicación de Participación Ciudadana y Gobierno Abierto
   Keywords: democracia, participación ciudadana, participación electrónica, debates, propuestas, votaciones, consultas, legislación colaborativa, presupuestos participativos
 -->
 
-![Logotipo de CONSUL](https://raw.githubusercontent.com/consul/consul/master/public/consul_logo.png)
+![Logotipo de CONSUL DEMOCRACY](https://raw.githubusercontent.com/consul/consul/master/public/consul_logo.png)
 
-# CONSUL
+# CONSUL DEMOCRACY
 
 Aplicación de Participación Ciudadana y Gobierno Abierto
 
@@ -22,13 +22,13 @@ Aplicación de Participación Ciudadana y Gobierno Abierto
 [![Join the chat at https://gitter.im/consul/consul](https://badges.gitter.im/consul/consul.svg)](https://gitter.im/consul/consul?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Help wanted](https://img.shields.io/badge/help-wanted-brightgreen.svg?style=flat-square)](https://github.com/consul/consul/issues?q=is%3Aopen+label%3A"help+wanted")
 
-Este es el repositorio de código abierto de la Aplicación de Participación Ciudadana CONSUL, creada originariamente por el Ayuntamiento de Madrid.
+Este es el repositorio de código abierto de la Aplicación de Participación Ciudadana CONSUL DEMOCRACY, creada originariamente por el Ayuntamiento de Madrid.
 
 ## Documentación
 
 Por favor visita la documentación que está siendo completada en [https://docs.consulproject.org](https://docs.consulproject.org) para conocer más sobre este proyecto, cómo comenzar tu propio fork, instalarlo, personalizarlo y usarlo como administrador/mantenedor.
 
-## Web CONSUL Project
+## Web CONSUL DEMOCRACY Project
 
 Puedes acceder a la página principal del proyecto en [http://consulproject.org](http://consulproject.org) donde puedes encontrar documentación sobre el uso de la plataforma, videos y enlaces al espacio de la comunidad.
 

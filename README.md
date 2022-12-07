@@ -1,12 +1,12 @@
 <!--
-  Title: CONSUL
+  Title: CONSUL DEMOCRACY
   Description: Citizen Participation and Open Government Application
   Keywords: democracy, citizen participation, eparticipation, debates, proposals, voting, consultations, crowdlaw, participatory budgeting
 -->
 
-![CONSUL logo](https://raw.githubusercontent.com/consul/consul/master/public/consul_logo.png)
+![CONSUL DEMOCRACY logo](https://raw.githubusercontent.com/consul/consul/master/public/consul_logo.png)
 
-# CONSUL
+# CONSUL DEMOCRACY
 
 Citizen Participation and Open Government Application
 
@@ -24,13 +24,13 @@ Citizen Participation and Open Government Application
 
 [![Knapsack Pro Parallel CI builds for RSpec tests](https://img.shields.io/badge/Knapsack%20Pro-Parallel%20/%20RSpec%20tests-%230074ff)](https://knapsackpro.com/dashboard/organizations/176/projects/202/test_suites/318/builds?utm_campaign=organization-id-176&utm_content=test-suite-id-318&utm_medium=readme&utm_source=knapsack-pro-badge&utm_term=project-id-202)
 
-This is the opensource code repository of the eParticipation website CONSUL, originally developed for the Madrid City government eParticipation website
+This is the opensource code repository of the eParticipation website CONSUL DEMOCRACY, originally developed for the Madrid City government eParticipation website
 
 ## Documentation
 
-Check the ongoing documentation at [https://docs.consulproject.org](https://docs.consulproject.org) to learn more about how to start your own CONSUL fork, install it, customize it and learn to use it from an administrator/maintainer perspective.
+Check the ongoing documentation at [https://docs.consulproject.org](https://docs.consulproject.org) to learn more about how to start your own CONSUL DEMOCRACY fork, install it, customize it and learn to use it from an administrator/maintainer perspective.
 
-## CONSUL Project main website
+## CONSUL DEMOCRACY Project main website
 
 You can access the main website of the project at [http://consulproject.org](http://consulproject.org) where you can find documentation about the use of the platform, videos, and links to the community space.
 
