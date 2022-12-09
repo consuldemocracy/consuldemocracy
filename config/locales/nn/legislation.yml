@@ -42,4 +42,7 @@ nn:
         zero: "%{count} stemmer"
         one: "%{count} stemme"
         other: "%{count} stemmer"
-      top_comments: [ ]
+      top_comments:
+        zero: "Ingen kommentarer"
+        one: "%{count} kommentar"
+        other: "Toppkommentarer"
