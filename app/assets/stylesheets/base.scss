@@ -1689,6 +1689,13 @@ footer {
       height: auto;
     }
   }
+
+  .investments-list-item {
+
+    h3 {
+      word-wrap: break-word;
+    }
+  }
 }
 
 .budget-investment-new .header {
