@@ -113,7 +113,13 @@ ar:
       process_title: عملية تشريع تشاركية
     summary:
       title: "ملخص"
-      votes: [ ]
+      votes:
+        zero: "%{count} أصوات"
+        one: "%{count} تصويت"
+        two: "%{count} أصوات"
+        few: "%{count} أصوات"
+        many: "%{count} أصوات"
+        other: "%{count} أصوات"
       debate_phase: "مرحلة النقاش"
       proposals_phase: "مرحلة الاقتراحات"
       allegations_phase: "مرحلة التعليقات"
