@@ -38,5 +38,8 @@ nn:
       form:
         tags_label: "Kategorier"
     summary:
-      votes: [ ]
+      votes:
+        zero: "%{count} stemmer"
+        one: "%{count} stemme"
+        other: "%{count} stemmer"
       top_comments: [ ]
