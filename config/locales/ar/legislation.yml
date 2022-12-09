@@ -137,4 +137,10 @@ ar:
         few: "%{count} مقترحات"
         many: "%{count} مقترحات"
         other: "%{count} مقترحات"
-      top_comments: [ ]
+      top_comments:
+        zero: "لا توجد تعليقات"
+        one: "تعليق %{count}"
+        two: "أعلى تعليقات"
+        few: "أعلى تعليقات"
+        many: "أعلى تعليقات"
+        other: "أعلى تعليقات"
