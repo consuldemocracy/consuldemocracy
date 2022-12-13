@@ -19,11 +19,7 @@ describe "Tenants", :admin, :seed_tenants do
 
       expect(page).to have_content "Tenant created successfully"
 
-      within("tr", text: "earth") do
-        expect(page).to have_content "earth.lvh.me"
-
-        click_link "View"
-      end
+      click_link "earth.lvh.me"
 
       expect(current_host).to eq "http://earth.lvh.me"
       expect(page).to have_current_path root_path
@@ -38,11 +34,7 @@ describe "Tenants", :admin, :seed_tenants do
       fill_in "Name", with: "Earthlings"
       click_button "Create tenant"
 
-      within("tr", text: "earth") do
-        expect(page).to have_content "earth.lvh.me"
-
-        click_link "View"
-      end
+      click_link "earth.lvh.me"
 
       expect(current_host).to eq "http://earth.lvh.me"
       expect(page).to have_current_path root_path
@@ -65,7 +57,7 @@ describe "Tenants", :admin, :seed_tenants do
 
     expect(page).to have_content "Tenant updated successfully"
 
-    within("tr", text: "the-moon") { click_link "View" }
+    click_link "the-moon.lvh.me"
 
     expect(current_host).to eq "http://the-moon.lvh.me"
     expect(page).to have_current_path root_path
