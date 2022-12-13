@@ -86,30 +86,16 @@ tr:
       hi: Merhaba
       new_comment_by: <strong>%{commenter}</strong> kullanıcısı, bütçe yatırımına dair %{investment} yeni bir değerlendirme yorumu paylaştı
       commenter_info: "%{commenter}, %{time}:"
-    new_actions_notification_rake_created:
-      subject: "Vatandaş öneriniz ile ilgili daha fazla haberler"
-      hi: "Merhaba %{name},"
-      new_resource: "SERBEST BIRAKILAN YENİ KAYNAK"
-      introduction: "Bildiğiniz gibi, %{created_at_day} %{created_at_month} tarihinde %{title} başlıklı bir öneri taslağı oluşturdunuz."
-      text_1: "İstediğiniz zaman önerinizi bu link'e tıklayarak paylaşabilirsiniz: %{link_to_published}. Eğer henüz emin değilseniz..."
-      text_2: "Zamanı değerlenirin! Öğrenin, ayni ilgi alanlarına sahip farklı insanları ekleyin ve önerinizi açık şekilde paylaşacağınız zaman ihtiyacınız olan bağlantıları şimdiden kurmaya başlayın."
-      text_3: "Ve bu süreçte size yardımcı olacak haberlerimiz var..."
-      text_4: "Bu YENİ önerilen EYLEM'e bir göz atın:"
-      text_5: "Bir sonraki eylem önerimiz:"
-      footer_text: "Her zaman olduğu gibi, Öneriler Paneline ilerleyin; size bu kaynakları nasıl kullanacağınızı ve en iyi şekilde nasıl yararlanabileceğinizi ayrıntılı olarak anlatacağız."
-      dashboard_button: "Devam edin, onları keşfedin!"
-    new_actions_notification_rake_published:
-      subject: "Vatandaş öneriniz ile ilgili daha fazla haberler"
-      hi: "Merhaba %{name},"
-      new_resource: "SERBEST BIRAKILAN YENİ KAYNAK"
-      introduction: "Bildiğiniz gibi, %{published_at_day} %{published_at_month} tarihinde %{title} başlıklı bir öneri taslağı yayınladınız."
-      text_1: "Şimdiye kadar, %{votes_count} oranında destek aldınız. Tebrikler!"
-      text_2: "Ve böylece, ilerlemeye devam etmenize yardımcı olacak yeni bir kaynak elde ettiniz."
-      text_3: "Teklifinizin %{max_votes_count} desteği alarak oylamaya gitmesine yalnızca %{days_count} gün kaldı. Bu sürecin keyfini çıkarın ve fikrinizi yaymaya devam edin. Yeni fikirlere mi ihtiyacınız var?"
-      text_4: "YENİ DUYURU ÖNERİSİ"
-      text_5: "Dahası fazlası için, bir sonraki adımı görebilirsiniz:"
-      footer_text: "Her zaman olduğu gibi, Öneriler Paneline ilerleyin; size bu kaynakları nasıl kullanacağınızı ve en iyi şekilde nasıl yararlanabileceğinizi ayrıntılı olarak anlatacağız."
-      dashboard_button: "Devam edin, onları keşfedin!"
+    machine_learning_error:
+      link: "Makine Öğrenmesi panosuna git"
+      subject: "Makine Öğrenmesi - Betik yürütülürken bir sorun çıktı"
+      text: "Makine Öğrenmesi betiği yürütülürken bir sorun çıktı."
+      title: "Makine Öğrenmesi betiği"
+    machine_learning_success:
+      link: "Makine Öğrenmesi panosuna git"
+      subject: "Makine Öğrenmesi - İçerik oluşturuldu"
+      text: "İçerik oluşturuldu."
+      title: "Makine Öğrenmesi betiği"
     new_actions_notification_on_create:
       subject: "Taslak vatandaş öneriniz oluşturuldu"
       hi: "Merhaba %{name}!"

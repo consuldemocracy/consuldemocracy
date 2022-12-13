@@ -25,12 +25,6 @@ ru:
       topic:
         edit: Редактировать тему
         destroy: Удалить тему
-        comments:
-          zero: Нет комментариев
-          one: 1 комментарий
-          few: "%{count} комментария(иев)"
-          many: "%{count} комментария(иев)"
-          other: "%{count} комментария(иев)"
       author: Автор
       back: Вернуться к %{community} %{proposal}
     topic:

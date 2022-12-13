@@ -92,6 +92,7 @@ sv:
     user_permission_proposal: Skapa nya förslag
     user_permission_support_proposal: Stöd förslag*
     user_permission_votes: Delta i slutomröstningar*
+    verification_needed: Ytterligare verifiering krävs
     verified_user:
       form:
         submit_button: Skicka koden

@@ -73,30 +73,6 @@ ca:
       hi: Hola
       new_comment_by: Hi ha un nou comentari d'avaluació de <strong>%{commenter}</strong> a la inversió pressupostària %{investment}
       commenter_info: "%{commenter}, %{time}:"
-    new_actions_notification_rake_created:
-      subject: "Més notícies sobre la vostra proposta ciutadana"
-      hi: "Hola %{name},"
-      new_resource: "NOU RECURS SENSE BLOC"
-      introduction: "Com ja sabeu, a la web %{created_at_day} dia de la %{created_at_month} heu creat la proposta en mode d'esborrany %{title}."
-      text_1: "Sempre que vulgueu, podeu publicar en aquest enllaç: %{link_to_published}. Si encara no esteu segur..."
-      text_2: "Aprofiteu aquest moment! Apreneu, afegiu altres persones amb els mateixos interessos i prepareu la difusió que necessitareu quan publiqueu definitivament la vostra proposta."
-      text_3: "I per acompanyar-vos en aquest repte, aquí teniu les novetats..."
-      text_4: "Doneu un cop d'ull a aquesta NOVA ACCIÓ recomanada:"
-      text_5: "La següent acció que recomanem és:"
-      footer_text: "Com sempre, entra al tauler de propostes i t’explicarem amb detall com utilitzar aquests recursos i com treure’n el màxim partit."
-      dashboard_button: "Endavant, descobreix-los!"
-    new_actions_notification_rake_published:
-      subject: "Més notícies sobre la vostra proposta ciutadana"
-      hi: "Hola %{name},"
-      new_resource: "NOU RECURS SENSE BLOC"
-      introduction: "Com ja sabeu, a la web %{published_at_day} dia de la %{published_at_month} vas publicar la proposta %{title}."
-      text_1: "Bé, tens %{votes_count} suport fins ara Felicitats!"
-      text_2: "Així doncs, teniu disponible un nou recurs que us ajudarà a seguir endavant."
-      text_3: "Et trobes a faltar %{days_count} dies abans de la proposta %{max_votes_count} recolza i va a referèndum. Animar-se i seguir estenent. Et falten idees?"
-      text_4: "NOVA ACCIÓ DE DIFUSIÓ RECOMANADA"
-      text_5: "Encara n’hi ha més, consulteu l’acció següent:"
-      footer_text: "Com sempre, entra al tauler de propostes i t’explicarem amb detall com utilitzar aquests recursos i com treure’n el màxim partit."
-      dashboard_button: "Endavant, descobreix-los!"
     new_actions_notification_on_create:
       subject: "La proposta de ciutadà del projecte es crea"
       hi: "Hola %{name}!"

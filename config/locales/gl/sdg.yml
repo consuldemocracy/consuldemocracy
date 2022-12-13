@@ -1,4 +1,642 @@
 gl:
   sdg:
+    goals:
+      goal_1:
+        title: "Fin da pobreza"
+        title_in_two_lines: "Fin\nda pobreza"
+        description: "Poñer fin á pobreza en todas as súas formas en todo o mundo."
+        long_description: '<p>A nivel mundial, o número de persoas que viven en situación de extrema pobreza diminuíu desde un 36&nbsp;% en 1990 ata un 10&nbsp;% en 2015. Non obstante, o ritmo ao que se produce este cambio está diminuíndo, e a crise da COVID-19 <a href="https://www.un.org/sites/un2.un.org/files/sg_report_socio-economic_impact_of_covid19.pdf">pon en risco décadas de progreso</a> na loita contra a pobreza. <a href="https://www.wider.unu.edu/node/237051">Unha nova investigación</a> publicada polo Instituto Mundial de Investigacións de Economía do Desenvolvemento da Universidade das Nacións Unidas advirte de que as consecuencias económicas da <a href="https://www.wider.unu.edu/publication/estimates-impact-covid-19-global-poverty"> pandemia mundial poderían incrementar a pobreza en todo o mundo ata chegar a afectar a 500&nbsp;millóns de persoas máis</a>, ou o que é o mesmo, a un 8&nbsp;% máis da poboación total mundial. Esta sería a primeira vez que a pobreza aumente en todo o mundo en 30&nbsp;anos, desde 1990.</p> <p>Máis de <a href="http://www.worldbank.org/en/news/press-release/2018/09/19/decline-of-global-extreme-poverty-continues-but-has-slowed-world-bank">700&nbsp;millóns de persoas</a>, ou o 10&nbsp;% da poboación mundial, aínda vive en situación de extrema pobreza a día de hoxe, con dificultades para satisfacer as necesidades máis básicas, como a saúde, a educación e o acceso a auga e saneamento, por nomear algunhas. A maioría das persoas que viven con menos de 1,90&nbsp;dólares ao día viven na África subsahariana. En todo o mundo, os <a href="https://unstats.un.org/sdgs/report/2019/goal-01/">índices de pobreza nas áreas rurais son do 17,2&nbsp;%</a>; máis do triplo dos mesmos índices para as áreas urbanas.</p> <p>Para os que traballan, o seu posto de traballo non lles garante unha vida digna. De feito, <a href="https://unstats.un.org/sdgs/report/2019/goal-01/">o 8&nbsp;%</a> dos traballadores de todo o mundo, e as súas familias, vivían en situación de extrema pobreza en 2018. Un de cada cinco nenos vive en situación de extrema pobreza. Garantir a protección social de todos os nenos e outros grupos vulnerables resulta crucial para reducir a pobreza.</p>'
+        targets:
+          target_1_1:
+            long_title: "Para 2030, erradicar a pobreza extrema para tódalas persoas no mundo, actualmente medida por un ingreso por persoa inferior a 1,25 dólares ao día."
+            short_title: "Erradicación da pobreza extrema"
+          target_1_2:
+            long_title: "Para 2030, reducir cando menos á metade a proporción de homes, mulleres e nenos e nenas de tódalas idades que viven na pobreza en tódalas súas dimensións con arranxo ás definicións nacionais."
+            short_title: "Redución da pobreza relativa en tódalas súas dimensións"
+          target_1_3:
+            long_title: "Poñer en práctica a nivel nacional sistemas e medidas apropiadas de protección social para todos e, para 2030, lograr unha ampla cobertura dos pobres e os máis vulnerables."
+            short_title: "Implantación de sistemas de protección social"
+          target_1_4:
+            long_title: "Para 2030, garantir que todos os homes e mulleres, en particular os pobres e os máis vulnerables, teñan os mesmos dereitos aos recursos económicos, así como acceso aos servizos básicos, a propiedade e o control das terras e outros bens, a herdanza, os recursos naturais, as novas tecnoloxías e os servizos económicos, incluída a microfinanciación."
+            short_title: "Garantía de acceso a servizos básicos e recursos financeiros"
+          target_1_5:
+            long_title: "Para 2030, fomentar a resiliencia dos pobres e das persoas que se atopan en situacións vulnerables e reducir a súa exposición e vulnerabilidade aos fenómenos extremos relacionados co clima e a outros desastres económicos, sociais e ambientais."
+            short_title: "Resiliencia a desastres ambientais, económicos e sociais"
+          target_1_A:
+            long_title: "Garantir unha mobilización importante de recursos procedentes de diversas fontes, incluso mediante a mellora da cooperación para o desenvolvemento, a fin de proporcionar medios suficientes e previsibles para os países en desenvolvemento, en particular os países menos adiantados, para poñer en práctica programas e políticas encamiñados a poñer fin á pobreza en tódalas súas dimensións."
+            short_title: "Fomentar a resiliencia aos desastres ambientais, económicos e sociais"
+          target_1_B:
+            long_title: "Crear marcos normativos sólidos no ámbito nacional, rexional e internacional, sobre a base de estratexias de desenvolvemento en favor dos pobres que teñan en conta as cuestións de xénero, a fin de apoiar a inversión acelerada en medidas para erradicar a pobreza."
+            short_title: "Creación de marcos normativos para erradicar a pobreza"
+      goal_2:
+        title: "Fame Cero"
+        title_in_two_lines: "Fame\nCero"
+        description: "Poñer fin á fame."
+        long_description: '<p>Tras décadas dunha diminución constante, o número de persoas que padecen fame (medido pola prevalencia de desnutrición) comezou a aumentar lentamente de novo en 2015. As estimacións actuais indican que preto de <a href="http://www.fao.org/3/ca9699es/CA9699ES.pdf">690 millóns de persoas no mundo padecen fame</a>, é dicir, o 8,9 por cento da poboación mundial, o que supón un aumento duns 10 millóns de persoas nun ano e duns 60 millóns en cinco anos.</p> <p>O mundo non está ben encamiñado para alcanzar o obxectivo de fame cero para 2030. Si continúan as tendencias recentes, o número de persoas afectadas pola fame superará os 840 millóns de persoas para 2030.</p> <p>Segundo o Programa Mundial de Alimentos, arredor de <a href="https://www.wfp.org/publications/2020-global-report-food-crises">135&nbsp;millóns de persoas padecen fame severa</a> <img src="https://www.un.org/common/images/icons/ico_en.gif" alt="Dispoñible en inglés" width="14" height="14" style="border:none">, debido principalmente aos conflitos causados polos seres humans, o cambio climático e as recesións económicas. A pandemia de COVID-19 podería duplicar agora esa cifra e sumar uns 130&nbsp;millóns de persoas máis que estarían en risco de padecer fame severa a finais de 2020.</p> <p>Con máis de <a href="https://insight.wfp.org/covid-19-will-almost-double-people-in-acute-hunger-by-end-of-2020-59df0c4a8072">250&nbsp;millóns de persoas que poderían atoparse ao borde da fame</a> <img src="https://www.un.org/common/images/icons/ico_en.gif" alt="Dispoñible en inglés" width="14" height="14" style="border:none">, é preciso actuar rapidamente para proporcionar alimentos e axuda humanitaria ás rexións que corren máis riscos.</p> <p>Ao mesmo tempo, é preciso levar a cabo un cambio profundo no sistema agroalimentario mundial si queremos alimentar a máis de 820&nbsp;millóns de persoas que padecen fame e aos <a href="https://www.un.org/development/desa/en/news/population/world-population-prospects-2019.html">2000&nbsp;millóns de persoas máis</a> que vivirán no mundo en 2050. O aumento da produtividade agrícola e a produción alimentaria sostible son cruciais para axudar a aliviar os riscos da fame.</p>'
+        targets:
+          target_2_1:
+            long_title: "Para 2030, poñer fin á fame e asegurar o acceso de tódalas persoas, en particular os pobres e as persoas en situacións vulnerables, incluídos os lactantes, a unha alimentación sa, nutritiva e suficiente durante todo o ano."
+            short_title: "Poñer fin á fame"
+          target_2_2:
+            long_title: "Para 2030, poñer fin a tódalas formas de malnutrición, incluso logrando, a máis tardar en 2025, as metas convidas internacionalmente sobre o retraso do crecemento e a emaciación dos nenos menores de 5 anos, e abordar as necesidades de nutrición das adolescentes, as mulleres embarazadas e lactantes e as persoas de idade."
+            short_title: "Poñer fin a tódalas formas de malnutrición"
+          target_2_3:
+            long_title: "Para 2030, duplicar a produtividade agrícola e os ingresos dos produtores de alimentos en pequena escala, en particular as mulleres, os pobos indíxenas, os agricultores familiares, os pastores e os pescadores, entre outras cousas mediante un acceso seguro e equitativo ás terras, a outros recursos de produción e insumos, coñecementos, servizos financeiros, mercados e oportunidades para a xeración de valor engadido e empregos non agrícolas."
+            short_title: "Duplicación da produtividade e ingresos agrícolas a pequena escala"
+          target_2_4:
+            long_title: "Para 2030, asegurar a sostibilidade dos sistemas de produción de alimentos e aplicar prácticas agrícolas resilientes que aumenten a produtividade e a produción, contribúan ao mantemento dos ecosistemas, fortalezan a capacidade de adaptación ao cambio climático, os fenómenos meteorolóxicos extremos, as secas, as inundacións e outros desastres, e melloren progresivamente a calidade do chan e a terra."
+            short_title: "Prácticas agrícolas sostibles e resilientes"
+          target_2_5:
+            long_title: "Para 2030, manter a diversidade xenética das sementes, as plantas cultivadas e os animais de granxa e domesticados e as súas especies silvestres conexas, entre outras cousas mediante unha boa xestión e diversificación dos bancos de sementes e plantas a nivel nacional, rexional e internacional, e promover o acceso aos beneficios que se deriven da utilización dos recursos xenéticos e os coñecementos tradicionais e a súa distribución xusta e equitativa, como acordou internacionalmente."
+            short_title: "Mantemento da diversidade xenética de sementes"
+          target_2_A:
+            long_title: "Aumentar as inversións, incluso mediante unha maior cooperación internacional, na infraestrutura rural, a investigación agrícola e os servizos de extensión, o desenvolvemento tecnolóxico e os bancos de xenes de plantas e gando a fin de mellorar a capacidade de produción agrícola nos países en desenvolvemento, en particular nos países menos adiantados."
+            short_title: "Aumento de inversións en agricultura"
+          target_2_B:
+            long_title: "Corrixir e previr as restricións e distorsións comerciais nos mercados agropecuarios mundiais, entre outras cousas mediante a eliminación paralela de tódalas formas de subvencións ás exportacións agrícolas e tódalas medidas de exportación con efectos equivalentes, de conformidade co mandato da Ronda de Doha para o Desenvolvemento."
+            short_title: "Estabilidade dos mercados agropecuarios mundiais"
+          target_2_C:
+            long_title: "Adoptar medidas para asegurar o bo funcionamento dos mercados de produtos básicos alimentarios e os seus derivados e facilitar o acceso oportuno a información sobre os mercados, en particular sobre as reservas de alimentos, a fin de axudar a limitar a extrema volatilidade dos prezos dos alimentos."
+            short_title: "Control da volatilidade de prezos dos alimentos"
+      goal_3:
+        title: "Saúde e Benestar"
+        title_in_two_lines: "Saúde\ne Benestar"
+        description: "Garantir unha vida sa e promover o benestar para todos en tódalas idades."
+        long_description: '<p>Garantir unha vida sa e promover o benestar en tódalas idades é esencial para o desenvolvemento sostible.</p> <p>Actualmente, o mundo enfrontase a unha <a href="https://www.un.org/coronavirus">crisis sanitaria mundial</a> sen precedentes; a COVID-19 está propagando o sufrimento humano, desestabilizando a economía mundial e cambiando drasticamente as vidas de miles de millóns de persoas en todo o mundo.</p> <p>Antes da pandemia, conseguíronse grandes avances na <a href="https://unstats.un.org/sdgs/report/2019/goal-03/"> mellora da saúde de millóns de persoas</a>. En concreto, estes grandes avances acadáronse ao aumentar a esperanza de vida e reducir algunhas das causas de morte comúns asociadas coa mortalidade infantil e materna. Sen embargo, precísanse máis esforzos para erradicar por completo unha gran variedade de enfermidades e abordar un gran número de problemas de saúde, tanto constantes como emerxentes. A través dunha financiación máis eficiente dos sistemas sanitarios, un maior saneamento e hixiene, e un maior acceso ao persoal médico, poderanse conseguir avances significativos á hora de axudar a salvar as vidas de millóns de persoas.</p> <p>As emerxencias sanitarias, como a derivada da COVID-19, supoñen un risco mundial e demostraron que a preparación é vital. O Programa das Nacións Unidas para o Desenvolvemento sinalou as grandes diferenzas relativas ás <a href="https://www.undp.org/content/undp/en/home/news-centre/news/2020/COVID19_UNDP_data_dashboards_reveal_disparities_among_countries_to_cope_and_recover.html">capacidades dos países para lidar coa crise da COVID-19 e recuperarse dela</a>. A pandemia constitúe un punto de inflexión no referente á preparación para as emerxencias sanitarias e a inversión en servizos públicos vitais do século XXI.</p>'
+        targets:
+          target_3_1:
+            long_title: "Para 2030, reducir a taxa mundial de mortalidade materna a menos de 70 por cada 100.000 nacidos vivos."
+            short_title: "Redución da taxa de mortalidade materna"
+          target_3_2:
+            long_title: "Para 2030, poñer fin ás mortes evitables de recén nacidos e de nenos menores de 5 anos, logrando que tódolos países intenten reducir a mortalidade neonatal cando menos ata 12 por cada 1.000 nacidos vivos, e a mortalidade de nenos menores de 5 anos cando menos ata 25 por cada 1.000 nacidos vivos."
+            short_title: "Eliminar a mortalidade infantil"
+          target_3_3:
+            long_title: "Para 2030, poñer fin ás epidemias do SIDA, a tuberculose, a malaria e as enfermidades tropicais desatendidas e combater a hepatite, as enfermidades transmitidas pola auga e outras enfermidades transmisibles."
+            short_title: "Poñer fin ás enfermidades transmisibles"
+          target_3_4:
+            long_title: "Para 2030, reducir nun terzo a mortalidade prematura por enfermidades non transmisibles mediante a prevención e o tratamento e promover a saúde mental e o benestar."
+            short_title: "Redución das enfermidades non transmisibles e saúde mental"
+          target_3_5:
+            long_title: "Fortalecer a prevención e o tratamento do abuso de sustancias aditivas, incluído o uso indebido de estupefacientes e o consumo nocivo de alcohol."
+            short_title: "Prevención e tratamento de abusos de drogas e alcohol"
+          target_3_6:
+            long_title: "Para 2030, reducir á metade o número de mortes e lesións causadas por accidentes de tráfico no mundo."
+            short_title: "Redución de accidentes de tráfico"
+          target_3_7:
+            long_title: "Para 2030, garantir o acceso universal aos servizos de saúde sexual e reprodutiva, incluídos os de planificación da familia, información e educación, e a integración da saúde reprodutiva nas estratexias e os programas nacionais."
+            short_title: "Garantía de acceso á saúde sexual e reprodutiva, e á planificación familiar"
+          target_3_8:
+            long_title: "Lograr a cobertura sanitaria universal, en particular a protección contra os riscos financeiros, o acceso a servizos de saúde esenciais de calidade e o acceso a medicamentos e vacinas seguras, eficaces, alcanzables e de calidade para todos."
+            short_title: "Lograr a cobertura universal e acceso a medicamentos"
+          target_3_9:
+            long_title: "Para 2030, reducir substancialmente o número de mortes e enfermidades producidas por produtos químicos perigosos e a contaminación do aire, a auga e o chan."
+            short_title: "Redución de mortes por contaminación química e polución"
+          target_3_A:
+            long_title: "Fortalecer a aplicación do Convenio Marco da Organización Mundial da Saúde para o Control do Tabaco en tódolos países, segundo proceda."
+            short_title: "Control do tabaco"
+          target_3_B:
+            long_title: "Apoiar as actividades de investigación e desenvolvemento de vacinas e medicamentos para as enfermidades transmisibles e non transmisibles que afectan primordialmente aos países en desenvolvemento e facilitar o acceso a medicamentos e vacinas esenciais alcanzables de conformidade coa Declaración de Doha relativa ao Acordo sobre os ADPIC e a Saúde Pública, na que se afirma o dereito dos países en desenvolvemento a utilizar ao máximo as disposicións do Acordo sobre os Aspectos dos Dereitos de Propiedade Intelectual Relacionados co Comercio no relativo á flexibilidade para protexer a saúde pública e, en particular, proporcionar acceso aos medicamentos para todos."
+            short_title: "Apoio á I+D de vacinas e medicamentos esenciais"
+          target_3_C:
+            long_title: "Aumentar substancialmente a financiación da saúde e a contratación, o desenvolvemento, a capacitación e a retención do persoal sanitario nos países en desenvolvemento, especialmente nos países menos adiantados e os pequenos Estados insulares en desenvolvemento."
+            short_title: "Aumento da financiación do sistema sanitario"
+          target_3_D:
+            long_title: "Reforzar a capacidade de tódolos países, en particular os países en desenvolvemento, en materia de alerta temperá, redución de riscos e xestión dos riscos para a saúde nacional e mundial."
+            short_title: "Reforzo na xestión de riscos sanitarios"
+      goal_4:
+        title: "Educación de Calidade"
+        title_in_two_lines: "Educación\nde Calidade"
+        description: "Garantir unha educación inclusiva, equitativa e de calidade e promover oportunidades de aprendizaxe durante toda a vida para todos."
+        long_description: '<p>A educación permite a mobilidade socioeconómica ascendente e é clave para saír da pobreza. Durante a última década, conseguíronse grandes avances á hora de ampliar o acceso á educación e as taxas de matriculación nas escolas en tódolos niveis, especialmente para as nenas. Non obstante, <a href="http://uis.unesco.org/en/topic/out-school-children-and-youth">arrededor de 260&nbsp;millóns de nenos aínda estaban fora da escola</a> en 2018; cerca dunha quinta parte da poboación mundial dese grupo de idade. Ademais, máis da metade de todos os nenos e adolescentes de todo o mundo <a href="https://unstats.un.org/sdgs/report/2019/goal-04/">non están alcanzando os estándares mínimos de competencia</a> en lectura e matemáticas.</p> <p>En 2020, a medida que a pandemia da COVID-19 se propagaba por todo o planeta, a maior parte dos países anunciaron o peche temporal das escolas, o que afectou a máis do 91&nbsp;% dos estudantes en todo o mundo. Nabril de 2020, cerca de <a href="https://en.unesco.org/covid19/educationresponse">1600&nbsp;millóns de nenos e xoves estaban fora da escola</a>. Igualmente, cerca de <a href="https://www.un.org/sites/un2.un.org/files/policy_brief_on_covid_impact_on_children_16_april_2020.pdf">369&nbsp;millóns de nenos que dependen dos comedores escolares</a> tiveron que buscar outras fontes de nutrición diaria.</p> <p>Nunca antes estiveran tantos nenos fora da escola ao mesmo tempo, o que altera a súa aprendizaxe e cambia drasticamente as súas vidas, especialmente as dos nenos máis vulnerables e marxinados. A pandemia mundial ten graves consecuencias que poden poñer en perigo os avances que tanto costaron conseguir á hora de mellorar a educación a nivel mundial.</p>'
+        targets:
+          target_4_1:
+            long_title: "De aquí a 2030, asegurar que todas as nenas e todos os nenos terminna ensinanza primaria e secundaria, que debe ser gratuíta, equitativa e de calidade e producir resultados de aprendizaxe pertinentes e efectivos."
+            short_title: "Asegurar a calidade da educación primaria e secundaria"
+          target_4_2:
+            long_title: "De aquí a 2030, asegurar que todas as nenas e todos os nenos teñan acceso a servizos de atención e desenvolvemento na primeira infancia e educación preescolar de calidade, a fin de que estean preparados para a ensinanza primaria."
+            short_title: "Asegurar o acceso e calidade da educación Pre-escolar"
+          target_4_3:
+            long_title: "De aquí a 2030, asegurar o acceso igualitario de todos os homes e as mulleres a unha formación técnica, profesional e superior de calidade, incluída a ensinanza universitaria."
+            short_title: "Asegurar o acceso igualitario á formación superior"
+          target_4_4:
+            long_title: "De aquí a 2030, aumentar considerablemente o número de mozos e adultos que teñnas competencias necesarias, en particular técnicas e profesionais, para acceder ao emprego, o traballo decente e o emprendemento."
+            short_title: "Aumento das competencias para acceder ao emprego"
+          target_4_5:
+            long_title: "De aquí a 2030, eliminar as disparidades de xénero na educación e asegurar o acceso igualitario a tódolos niveis da ensinanza e a formación profesional para as persoas vulnerables, incluídas as persoas con discapacidadee, os pobos indíxenas e os nenos en situacións de vulnerabilidade."
+            short_title: "Eliminación da disparidade de xénero e colectivos vulnerables"
+          target_4_6:
+            long_title: "De aquí a 2030, asegurar que todos os mozos e unha proporción considerable dos adultos, tanto homes como mulleres, estean alfabetizados e teñan nocións elementais de aritmética."
+            short_title: "Asegurar a alfabetización e coñecemento de aritmética"
+          target_4_7:
+            long_title: "De aquí a 2030, asegurar que todos os alumnos adquiran os coñecementos teóricos e prácticos precisos para promover o desenvolvemento sostible, entre outras cousas mediante a educación para o desenvolvemento sostible e os estilos de vida sostibles, os dereitos humans, a igualdade de xénero, a promoción dunha cultura de paz e non violencia, a cidadanía mundial e a valoración da diversidade cultural e a contribución da cultura ao desenvolvemento sostible."
+            short_title: "Fomentar a educación Global para o Desenvolvemento Sostible"
+          target_4_A:
+            long_title: "Construír e adecuar instalacións educativas que teñan en conta as necesidades dos nenos e as persoas con discapacidade e as diferenzas de xénero, e que ofrezan contornas de aprendizaxe seguras, non violentas, inclusivas e eficaces para todos."
+            short_title: "Mellora de instalacións educativas inclusivas e seguras"
+          target_4_B:
+            long_title: "De aquí a 2020, aumentar considerablemente a nivel mundial o número de becas dispoñibles para os países en desenvolvemento, en particular os países menos adiantados, os pequenos Estados insulares en desenvolvemento e os países africanos, a fin de que os seus estudantes poidan matricularse en programas de ensinanza superior, incluídos programas de formación profesional e programas técnicos, científicos, de enxeñería e de tecnoloxía da información e as comunicacións, de países desenvolvidos e outros países en desenvolvemento."
+            short_title: "Aumento de becas para ensinanza superior"
+          target_4_C:
+            long_title: "De aquí a 2030, aumentar considerablemente a oferta de docentes cualificados, incluso mediante a cooperación internacional para a formación de docentes nos países en desenvolvemento, especialmente os países menos adiantados e os pequenos Estados insulares en desenvolvemento."
+            short_title: "Mellorar a cualificación de docentes"
+      goal_5:
+        title: "Igualdade de Xénero"
+        title_in_two_lines: "Igualdade\nde Xénero"
+        description: "Lograr a igualdade entre os xéneros e empoderar a tódalas mulleres e as nenas."
+        long_description: '<p>A igualdade de xénero non só é un dereito humano fundamental, senón que é un dos fundamentos esenciais para construír un mundo pacífico, próspero e sostible.</p> <p>Conseguíronse algúns <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/gender-equality-womens-rights-in-review-key-facts-and-figures-en.pdf?a=en&amp;vs=935">avances</a> durante as últimas décadas: máis nenas están escolarizadas, e obrígase a menos nenas ao matrimonio precoz; hai máis mulleres con cargos en parlamentos e en posicións de liderado, e as leis estanse reformando para fomentar a igualdade de xénero.</p> <p>A pesar destes logros, aínda existen moitas <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/gender-equality-womens-rights-in-review-key-facts-and-figures-en.pdf?a=en&amp;vs=935">dificultades</a>: as leis e as normas sociais discriminatorias continúan sendo xeneralizadas, as mulleres seguen estando infrarrepresentadas a tódolos niveis de liderado político, e 1 de cada 5&nbsp;mulleres e nenas de entre 15 e 49&nbsp;anos afirma ter sufrido violencia sexual ou física a mans dunha parella íntima nun período de 12&nbsp;meses.</p> <p>Os efectos da <a href="https://www.un.org/sites/un2.un.org/files/policy_brief_on_covid_impact_on_women_9_apr_2020_updated.pdf">pandemia da COVID-19 poderían reverter os escasos logros</a> que se acadaron en materia de igualdade de xénero e dereitos das mulleres.&nbsp; O brote de coronavirus <a href="https://www.unfpa.org/sites/default/files/resource-pdf/COVID-19_A_Gender_Lens_Guidance_Note.pdf">agrava as desigualdades existentes</a> para as mulleres e nenas a nivel mundial; desde a saúde e a economía, ata a seguridade e a protección social.</p> <p>As mulleres desempeñan un papel desproporcionado na resposta ao virus, incluso como traballadoras sanitarias en primeira liña e como coidadoras no fogar. O traballo de coidados non remunerado das mulleres aumentou de xeito significativo como consecuencia do peche das escolas e o aumento das necesidades dos anciáns. As mulleres tamén se ven máis afectadas polos efectos económicos da COVID-19, xa que traballan, de maneira desproporcionada, en mercados laborais inseguros. Preto do 60&nbsp;% das mulleres traballa na economía informal, o que as expón aínda máis a caer na pobreza.</p> <p>A pandemia tamén conduciu a un forte aumento da <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/issue-brief-covid-19-and-ending-violence-against-women-and-girls-en.pdf?a=en&amp;vs=5006">violencia contra as mulleres e as nenas</a>. Coas medidas de confinamento en vigor, moitas mulleres atópanse atrapadas na casa cos seus abusadores, con dificultades para acceder a servizos que están padecendo recortes e restricións. Os novos datos mostran que, desde o brote da pandemia, a violencia contra as mulleres e as nenas (e, especialmente, a violencia doméstica) intensificouse.</p>'
+        targets:
+          target_5_1:
+            long_title: "Poñer fin a tódalas formas de discriminación contra todas as mulleres e as nenas en todo o mundo."
+            short_title: "Poñer fin á discriminación"
+          target_5_2:
+            long_title: "Eliminar todas as formas de violencia contra todas as mulleres e as nenas nos ámbitos público e privado, incluídas a trata e a explotación sexual e outros tipos de explotación."
+            short_title: "Eliminar todas as formas de violencia de xénero"
+          target_5_3:
+            long_title: "Eliminar tódalas prácticas nocivas, como o matrimonio infantil, precoz e forzado e a mutilación xenital feminina."
+            short_title: "Eliminar matrimonio infantil e mutilación xenital feminina"
+          target_5_4:
+            long_title: "Recoñecer e valorar os coidados e o traballo doméstico non remunerados mediante servizos públicos, infraestruturas e políticas de protección social, e promovendo a responsabilidade compartida no fogar e a familia, segundo proceda en cada país."
+            short_title: "Recoñecer o traballo de coidados e doméstico"
+          target_5_5:
+            long_title: "Asegurar a participación plena e efectiva das mulleres e a igualdade de oportunidades de liderado a tódolos niveis decisorios na vida política, económica e pública."
+            short_title: "Asegurar a participación plena da muller e igualdade oportunidades"
+          target_5_6:
+            long_title: "Asegurar o acceso universal á saúde sexual e reprodutiva e os dereitos reprodutivos segundo o acordado de conformidade co Programa de Acción da Conferencia Internacional sobre a Poboación e o Desenvolvemento, a Plataforma de Acción de Beijing e os documentos finais das súas conferencias de exame."
+            short_title: "Asegurar o acceso a saúde sexual e reprodutiva e dereitos reprodutivos"
+          target_5_A:
+            long_title: "Emprender reformas que outorguen ás mulleres igualdade de dereitos aos recursos económicos, así como acceso á propiedade e ao control da terra e outros tipos de bens, os servizos financeiros, a herdanza e os recursos naturais, de conformidade coas leis nacionais."
+            short_title: "Asegurar a igualdade de dereitos aos recursos económicos"
+          target_5_B:
+            long_title: "Mellorar o uso da tecnoloxía instrumental, en particular a tecnoloxía da información e as comunicacións, para promover o empoderamento das mulleres."
+            short_title: "Mellorar o uso de tecnoloxía e TIC"
+          target_5_C:
+            long_title: "Aprobar e fortalecer políticas acertadas e leis aplicables para promover a igualdade de xénero e o empoderamento de tódalas mulleres e as nenas a todos os niveis."
+            short_title: "Aprobar políticas e leis para a igualdade e o empoderamento"
+      goal_6:
+        title: "Auga Limpa e Saneamento"
+        title_in_two_lines: "Auga Limpa\ne Saneamento"
+        description: "Garantir a dispoñibilidade de auga e a súa xestión sostible e o saneamento para todos."
+        long_description: '<p>Si ben conseguiuse progresar de maneira substancial á hora de ampliar o acceso a auga potable e saneamento, existen miles de millóns de persoas (principalmente en áreas rurais) que aínda carecen destes servizos básicos. En todo o mundo, <a href="https://www.who.int/news-room/detail/18-06-2019-1-in-3-people-globally-do-not-have-access-to-safe-drinking-water-unicef-who">unha de cada tres persoas non tnacceso a auga potable salubre</a>, <a href="https://www.unwater.org/water-facts/water-sanitation-and-hygiene/">dúas de cada cinco persoas non dispoñen dunha instalación básica destinada a lavarse as mans</a> con auga e xabón, e máis de <a href="https://news.un.org/en/story/2019/11/1051561">673&nbsp;millóns de persoas aínda defecan ao aire libre</a>.</p> <p>A pandemia da COVID-19 puxo de manifesto a importancia vital do saneamento, a hixiene e un acceso axeitado a auga limpa para previr e conter as enfermidades. <a href="https://www.unwater.org/water-facts/handhygiene/">A hixiene de mans salva vidas</a>. De acordo coa Organización Mundial da Saúde, <a href="https://www.who.int/news-room/events/detail/2020/05/05/default-calendar/hand-hygiene-day">o lavado de mans é unha das accións máis efectivas que se poden facer</a> para reducir a propagación de patóxenos e previr infeccións, incluído o virus da COVID-19. Aínda así, hai miles de millóns de persoas que carecen de acceso a auga salubre e saneamento, e os fondos son insuficientes.</p>'
+        targets:
+          target_6_1:
+            long_title: "De aquí a 2030, lograr o acceso universal e equitativo á auga potable a un prezo alcanzable para todos."
+            short_title: "Lograr o acceso a auga potable"
+          target_6_2:
+            long_title: "De aquí a 2030, lograr o acceso a servizos de saneamento e hixiene axeitados e equitativos para todos e poñer fin á defecación ao aire libre, prestando especial atención ás necesidades das mulleres e as nenas e as persoas en situacións de vulnerabilidade."
+            short_title: "Lograr o acceso a servizos de saneamento e hixiene"
+          target_6_3:
+            long_title: "De aquí a 2030, mellorar a calidade da auga reducindo a contaminación, eliminando as verteduras e minimizando a emisión de produtos químicos e materiais perigosos, reducindo á metade a porcentaxe de augas residuais sen tratar e aumentando considerablemente o reciclado e a reutilización sen riscos a nivel mundial."
+            short_title: "Mellorar a calidade da auga. Reducir a contaminación e augas residuais"
+          target_6_4:
+            long_title: "De aquí a 2030, aumentar considerablemente o uso eficiente dos recursos hídricos en tódolos sectores e asegurar a sostibilidade da extracción e o abastecemento de auga doce para facer fronte á escaseza de auga e reducir considerablemente o número de persoas que sofren falta de auga."
+            short_title: "Aumentar o uso eficiente de recursos hídricos (extracción de auga doce)"
+          target_6_5:
+            long_title: "De aquí a 2030, implementar a xestión integrada dos recursos hídricos a tódolos niveis, incluso mediante a cooperación transfronteiriza, segundo proceda."
+            short_title: "Implementar a xestión integral de recursos hídricos"
+          target_6_6:
+            long_title: "De aquí a 2030, protexer e restablecer os ecosistemas relacionados coa auga, incluídos os bosques, as montañas, os humedais, os ríos, os acuíferos e os lagos."
+            short_title: "Protección dos ecosistemas relacionados coa auga"
+          target_6_A:
+            long_title: "De aquí a 2030, ampliar a cooperación internacional e o apoio prestado aos países en desenvolvemento para a creación de capacidade nactividades e programas relativos á auga e o saneamento, como os de captación de auga, desalinización, uso eficiente dos recursos hídricos, tratamento de augas residuais, reciclado e tecnoloxías de reutilización."
+            short_title: "Fomentar a creación de capacidades de xestión"
+          target_6_B:
+            long_title: "Apoiar e fortalecer a participación das comunidades locais na mellora da xestión da auga e o saneamento."
+            short_title: "Apoiar a participación das comunidades locais"
+      goal_7:
+        title: "Enerxía Alcanzable e Non Contaminante"
+        title_in_two_lines: "Enerxía Sostible\ne Non Contaminante"
+        description: "Garantir o acceso a unha enerxía alcanzable, segura, sostible e moderna."
+        long_description: '<p>O mundo está <a href="https://unstats.un.org/sdgs/report/2019/goal-07/">avanzando cara a consecución do Obxectivo 7</a> con indicios alentadores de que a enerxía estase volvendo máis sostible e amplamente dispoñible. O acceso á electricidade nos países máis pobres comezou a acelerarse, a eficiencia enerxética continúa mellorando e a enerxía renovable está logrando resultados excelentes no sector eléctrico.</p> <p>A pesar diso, é preciso prestar unha maior atención ás melloras para o acceso a combustibles de cociña limpos e seguros, e a tecnoloxías para 3000&nbsp;millóns de persoas, para expandir o uso da enerxía renovable máis aló do sector eléctrico e incrementar a electrificación no África subsahariana.</p> <p>O <a href="https://trackingsdg7.esmap.org/">informe de progreso en materia de enerxía</a> proporciona un rexistro mundial do progreso relativo ao acceso á enerxía, a eficiencia enerxética e a enerxía renovable. Avalía o progreso conseguido por cada país nestes tres pilares e ofrece unha panorámica do camiño que nos queda por recorrer para conseguir as metas dos Obxectivos de Desenvolvemento Sostible 2030.</p>'
+        targets:
+          target_7_1:
+            long_title: "De aquí a 2030, garantir o acceso universal a servizos enerxéticos alcanzables, fiables e modernos."
+            short_title: "Garantir acceso universal a enerxía"
+          target_7_2:
+            long_title: "De aquí a 2030, aumentar considerablemente a proporción de enerxía renovable no conxunto de fontes enerxéticas."
+            short_title: "Aumento das enerxías renovables"
+          target_7_3:
+            long_title: "De aquí a 2030, duplicar a taxa mundial de mellora da eficiencia enerxética."
+            short_title: "Duplicar a taxa de eficiencia enerxética"
+          target_7_A:
+            long_title: "De aquí a 2030, aumentar a cooperación internacional para facilitar o acceso á investigación e a tecnoloxía relativas á enerxía limpa, incluídas as fontes renovables, a eficiencia enerxética e as tecnoloxías avanzadas e menos contaminantes de combustibles fósiles, e promover a inversión en infraestrutura enerxética e tecnoloxías limpas."
+            short_title: "Aumento da investigación e inversión en enerxías limpas"
+          target_7_B:
+            long_title: "De aquí a 2030, ampliar a infraestrutura e mellorar a tecnoloxía para prestar servizos enerxéticos modernos e sostibles para todos nos países en desenvolvemento, en particular os países menos adiantados, os pequenos Estados insulares en desenvolvemento e os países en desenvolvemento sen litoral, en consonancia cos seus respectivos programas de apoio."
+            short_title: "Ampliar a infraestrutura e tecnoloxía en países en desenvolvemento"
+      goal_8:
+        title: "Traballo Decente e Crecemento Económico"
+        title_in_two_lines: "Traballo Decente\ne Crecemento Económico"
+        description: "Promover o crecemento económico inclusivo e sostible, o emprego e o traballo decente para todos."
+        long_description: '<p>Un crecemento económico inclusivo e sostido pode impulsar o progreso, crear empregos decentes para todos e mellorar os estándares de vida.</p> <p>A COVID-19 alterou <a href="https://www.un.org/sites/un2.un.org/files/sg_report_socio-economic_impact_of_covid19.pdf">miles de millóns de vidas</a> e puxo en perigo a economía mundial. O Fondo Monetario Internacional (FMI) prevé unha <a href="https://blogs.imf.org/2020/04/14/the-great-lockdown-worst-economic-downturn-since-the-great-depression/">recesión mundial</a> tan mala ou peor que a de 2009. A medida que se intensifica a perda de emprego, a Organización Internacional do Traballo estima que <a href="https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_743036/lang--en/index.htm">cerca da metade de tódolos traballadores a nivel mundial atópanse en risco</a> de perder os seus medios de subsistencia.</p> <p><a href="https://developmentfinance.un.org/press-release-financing-sustainable-development-report-2020">Incluso antes do brote da COVID-19</a>, era probable que un de cada cinco países (onde habitan miles de millóns de persoas que viven en situación de pobreza) viran os seus ingresos per cápita estancarse ou reducirse en 2020. A día de hoxe, as <a href="https://developmentfinance.un.org/press-release-financing-sustainable-development-report-2020">perturbacións económicas e financeiras</a> derivadas da COVID-19 (como as alteracións na produción industrial, a caída dos prezos dos produtos básicos, a volatilidade do mercado financeiro e o aumento da inseguridade) están desbaratando o xa de por si tépedo crecemento económico e empeorando os riscos acentuados doutros factores.</p>'
+        targets:
+          target_8_1:
+            long_title: "Manter o crecemento económico per cápita de conformidade coas circunstancias nacionais e, en particular, un crecemento do produto interno bruto de cando menos o 7% anual nos países menos adiantados."
+            short_title: "Mantemento do crecemento económico"
+          target_8_2:
+            long_title: "Lograr niveles máis elevados de produtividade económica mediante a diversificación, a modernización tecnolóxica e a innovación, entre outras cosas centrándose nos sectores con gran valor engadido e un uso intensivo da man de obra."
+            short_title: "Elevar a produtividade a través da diversificación, tecnoloxía e innovación"
+          target_8_3:
+            long_title: "Promover políticas orientadas ao desenvolvemento que apoien as actividades produtivas, a creación de postos de traballo decentes, o emprendemento, a creatividade e a innovación, e fomentar a formalización e o crecemento das microempresas e as pequenas e medianas empresas, incluso mediante o acceso a servizos financeiros."
+            short_title: "Fomento da pequena e mediana empresa"
+          target_8_4:
+            long_title: "Mellorar progresivamente, de aquí a 2030, a produción e o consumo eficientes dos recursos mundiais e procurar desvincular o crecemento económico da degradación do medio ambiente, conforme ao Marco Decenal de Programas sobre modalidades de Consumo e Produción Sostibles, empezando polos países desenvolvidos."
+            short_title: "Mellora da produción e consumo eficiente e respectuoso"
+          target_8_5:
+            long_title: "De aquí a 2030, lograr o emprego pleno e produtivo e o traballo decente para tódalas mulleres e os homes, incluídos os mozos e as persoas con discapacidade, así como a igualdade de remuneración por traballo de igual valor."
+            short_title: "Lograr o pleno emprego e traballo decente"
+          target_8_6:
+            long_title: "De aquí a 2030, reducir considerablemente a proporción de mozos que non están empregados e non cursan estudios nin reciben capacitación."
+            short_title: "Redución dos mozos sen traballo nin estudios"
+          target_8_7:
+            long_title: "Adoptar medidas inmediatas e eficaces para erradicar o traballo forzoso, poñer fin ás formas contemporáneas de escravitude e a trata de persoas e asegurar a prohibición e eliminación das peores formas de traballo infantil, incluídos o recrutamento e a utilización de nenos soldados, e, de aquí a 2025, poñer fin ao traballo infantil en tódalas súas formas."
+            short_title: "Erradicación da escravitude, trata e traballo infantil"
+          target_8_8:
+            long_title: "Protexer os dereitos laborais e promover un entorno de traballo seguro e sen riscos para tódolos traballadores, incluídos os traballadores migrantes, en particular as mulleres migrantes e as persoas con empregos precarios."
+            short_title: "Protección dos dereitos laborais e traballo seguro"
+          target_8_9:
+            long_title: "De aquí a 2030, elaborar e poñer en práctica políticas encamiñadas a promover un turismo sostible que cree postos de traballo e promova a cultura e os produtos locais."
+            short_title: "Promoción do turismo sostible"
+          target_8_10:
+            long_title: "Fortalecer a capacidade das institucións financeiras nacionais para fomentar e ampliar o acceso a os servizos bancarios, financeiros e de seguros para todos."
+            short_title: "Fortalecemento da capacidade das institucións financeiras"
+          target_8_A:
+            long_title: "Aumentar o apoio á iniciativa de axuda para o comercio nos países en desenvolvemento, en particular os países menos adiantados, incluso mediante o Marco Integrado Mellorado para a Asistencia Técnica aos Países Menos Adiantados en Materia de Comercio."
+            short_title: "Aumento axuda para o comercio en países en desenvolvemento"
+          target_8_B:
+            long_title: "De aquí a 2020, desenvolver e poñer en marcha unha estratexia mundial para o emprego dos mozos e aplicar o Pacto Mundial para o Emprego da Organización Internacional do Traballo."
+            short_title: "Desenvolvemento da estratexia mundial para emprego xuvenil"
+      goal_9:
+        title: "Industria, Innovación e Infraestruturas"
+        title_in_two_lines: "Industria, Innovación\ne Infraestruturas"
+        description: "Construír infraestruturas resilientes, promover a industrialización sostible e fomentar a innovación."
+        long_description: '<p>A industrialización inclusiva e sostible, xunto coa <a href="https://unstats.un.org/sdgs/report/2019/goal-09/">innovación e a infraestrutura</a>, poden dar renda solta ás forzas económicas dinámicas e competitivas que xeran o emprego e os ingresos. Estas desempeñan un papel clave á hora de introducir e promover novas tecnoloxías, facilitar o comercio internacional e permitir o uso eficiente dos recursos.</p> <p>Sen embargo, aínda queda un largo camiño que recorrer para que o mundo poida aproveitar ao máximo este potencial. En especial, os países menos desenvolvidos necesitan acelerar o desenvolvemento dos seus sectores manufactureiros si desexan conseguir a meta de 2030 e aumentar a inversión en investigación e innovación científicas.</p> <p>O crecemento do sector manufactureiro a nivel mundial foi diminuíndo constantemente, incluso antes do brote da pandemia da COVID-19. A pandemia está <a href="https://unctad.org/en/pages/newsdetails.aspx?OriginalVersionID=2297">afectando gravemente a as industrias manufactureiras</a> e está provocando alteracións nas cadeas de valor mundiais e no subministro de produtos.</p> <p>A innovación e o progreso tecnolóxico son claves para descubrir solucións duradeiras para os desafíos económicos e medioambientais, como o aumento da eficiencia enerxética e de recursos. A nivel mundial, <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">a inversión en investigación e desenvolvemento</a> (I+D), como porcentaxe do PIB, aumentou dun 1,5&nbsp;% no 2000 a un 1,7&nbsp;% no 2015, e continuou case no mesmo nivel no 2017. Sen embargo, nas rexións en desenvolvemento foi inferior ao 1&nbsp;%.</p> <p>En termos de infraestrutura de comunicacións, máis da metade da poboación mundial está agora conectada e case toda a poboación global vive nunha área con cobertura de rede móbil. Estimase que, en 2019, <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">o 96,5&nbsp;% da poboación tiña cobertura de rede, como mínimo, 2G</a>.</p>'
+        targets:
+          target_9_1:
+            long_title: "Desenvolver infraestruturas fiables, sostibles, resilientes e de calidade, incluídas infraestruturas rexionais e transfronteirizas, para apoiar o desenvolvemento económico e o benestar humano, facendo especial fincapé no acceso alcanzable e equitativo para todos."
+            short_title: "Desenvolvemento de Infraestrutura sostible"
+          target_9_2:
+            long_title: "Promover unha industrialización inclusiva e sostible e, de aquí a 2030, aumentar significativamente a contribución da industria ao emprego e ao produto interno bruto, de acordo coas circunstancias nacionais, e duplicar esa contribución nos países menos adiantados."
+            short_title: "Promoción de industria inclusiva e sostible"
+          target_9_3:
+            long_title: "Aumentar o acceso das pequenas industrias e outras empresas, particularmente nos países en desenvolvemento, a os servizos financeiros, incluídos créditos alcanzables, e a súa integración nas cadeas de valor e os mercados."
+            short_title: "Aumento do acceso PYMES a servizos financeiros e cadeas de valor"
+          target_9_4:
+            long_title: "De aquí a 2030, modernizar a infraestrutura e reconverter as industrias para que sexan sostibles, utilizando os recursos con maior eficacia e promovendo a adopción de tecnoloxías e procesos industriais limpos e ambientalmente racionais, e logrando que todos os países tomen medidas de acordo coas súass capacidades respectivas."
+            short_title: "Modernización da infraestrutura, tecnoloxía limpa"
+          target_9_5:
+            long_title: "Aumentar a investigación científica e mellorar a capacidade tecnolóxica dos sectores industriales de todos os países, en particular os países en desenvolvemento, entre outras cosas fomentando a innovación e aumentando considerablemente, de aquí a 2030, o número de persoas que traballan en investigación e desenvolvemento por millón de habitantes e os gastos dos sectores público e privado en investigación e desenvolvemento."
+            short_title: "Aumento da investigación científica, capacidade tecnolóxica"
+          target_9_A:
+            long_title: "Facilitar o desenvolvemento de infraestruturas sostibles e resilientes nos países en desenvolvemento mediante un maior apoio financeiro, tecnolóxico e técnico aos países africanos, os países menos adiantados, os países en desenvolvemento sen litoral e os pequenos Estados insulares en desenvolvemento."
+            short_title: "Apoio a infraestruturas sostibles e resilientes"
+          target_9_B:
+            long_title: "Apoiar o desenvolvemento de tecnoloxías, a investigación e a innovación nacionais nos países en desenvolvemento, incluso garantindo un entorno normativo propicio á diversificación industrial e a adición de valor aos produtos básicos, entre outras cosas."
+            short_title: "Desenvolvemento da tecnoloxía, investigación e innovación"
+          target_9_C:
+            long_title: "Aumentar significativamente o acceso á tecnoloxía da información e as comunicacións e esforzarse por proporcionar acceso universal e alcanzable a Internet nos países menos adiantados de aquí a 2030."
+            short_title: "Aumento do acceso a TIC e Internet"
+      goal_10:
+        title: "Redución das Desigualdades"
+        title_in_two_lines: "Redución das\nDesigualdades"
+        description: "Reducir a desigualdade en e entre os países."
+        long_description: '<p>Reducir as desigualdades e garantir que ninguén se queda atrás forma parte integral da consecución dos Obxectivos de Desenvolvemento Sostible.</p> <p>A desigualdade dentro dos países e entre estes é un continuo motivo de preocupación. A pesar da existencia dalgúns indicios positivos cara a redución da desigualdade nalgunhas dimensións, como a redución da desigualdade de ingresos nalgúns países e o estatus comercial preferente que beneficia aos países de baixos ingresos, <a href="https://unstats.un.org/sdgs/report/2019/goal-10/">a desigualdade aínda continúa</a>.</p> <p><a href="https://www.un.org/sustainabledevelopment/goal-of-the-month-may-2020">A COVID-19 intensificou as desigualdades existentes</a> e afectou máis que ninguén aos pobres e ás comunidades máis vulnerables. Sacou á luz as desigualdades económicas e as fráxiles redes de seguridade social que fan que as comunidades vulnerables teñan que sufrir as consecuencias da crise.&nbsp; Ao mesmo tempo, as desigualdades sociais, políticas e económicas amplificaron os efectos da pandemia.</p> <p>Na fronte económica, a pandemia da COVID-19 aumentou significativamente o <a href="https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_743036/lang--en/index.htm">desemprego</a> mundial e recortou drasticamente os ingresos dos traballadores.</p> <p>A COVID-19 tamén pon en risco os escasos avances que se conseguiron <a href="https://data.unwomen.org/resources/covid-19-emerging-gender-data-and-why-it-matters">en materia de igualdade de xénero</a> e dereitos das mulleres durante as últimas décadas. Practicamente en tódolos ámbitos, desde a saúde ata a economía, desde a seguridade ata a protección social, os efectos da COVID-19 agravaron a situación das mulleres e as nenas simplemente como consecuencia do seu sexo.</p> <p>As desigualdades tamén están aumentando para as <a href="https://www.un.org/sites/un2.un.org/files/un_policy_brief_on_human_rights_and_covid_23_april_2020.pdf">poboacións vulnerables</a> en países con sistemas sanitarios máis deficientes e en países que se enfrontan a crises humanitarias existentes. Os refuxiados e os migrantes, así como os pobos indíxenas, os anciáns, as persoas con discapacidade e os nenos atópanse especialmente en risco de ser excluídos. Ademais, o <a href="https://www.un.org/en/coronavirus/covid-19-un-counters-pandemic-related-hate-and-xenophobia">discurso de odio</a> dirixido aos grupos vulnerables está en aumento.</p>'
+        targets:
+          target_10_1:
+            long_title: "De aquí a 2030, lograr progresivamente e manter o crecemento dos ingresos do 40% máis pobre da poboación a unha taxa superior á media nacional."
+            short_title: "Crecemento de Ingresos do 40% poboación pobre"
+          target_10_2:
+            long_title: "De aquí a 2030, potenciar e promover a inclusión social, económica e política de tódalas persoas, independentemente da súa idade, sexo, discapacidade, raza, etnia, orixe, relixión ou situación económica ou outra condición."
+            short_title: "Promoción da Inclusión social, económica e política"
+          target_10_3:
+            long_title: "Garantir a igualdade de oportunidades e reducir a desigualdade de resultados, incluso eliminando as leis, políticas e prácticas discriminatorias e promovendo lexislacións, políticas e medidas axeitadas a ese respecto."
+            short_title: "Garantir a igualdade de oportunidades"
+          target_10_4:
+            long_title: "Adoptar políticas, especialmente fiscais, salariais e de protección social, e lograr progresivamente unha maior igualdade."
+            short_title: "Adopción de políticas fiscais, salariais e de protección social"
+          target_10_5:
+            long_title: "Mellorar a regulamentación e vixilancia das institucións e os mercados financeiros mundiais e fortalecer a aplicación de eses regulamentos."
+            short_title: "Mellorar a regulación dos mercados financeiros mundiais"
+          target_10_6:
+            long_title: "Asegurar unha maior representación e intervención dos países en desenvolvemento nas decisións adoptadas polas institucións económicas e financeiras internacionais para aumentar a eficacia, fiabilidade, rendición de contas e lexitimidade desas institucións."
+            short_title: "Participación de países en desenvolvemento en IFIs e OOII"
+          target_10_7:
+            long_title: "Facilitar a migración e a mobilidade ordenadas, seguras, regulares e responsables das persoas, incluso mediante a aplicación de políticas migratorias planificadas e ben xestionadas."
+            short_title: "Facilitar a migración e políticas migratorias ordenadas"
+          target_10_A:
+            long_title: "Aplicar o principio do trato especial e diferenciado para os países en desenvolvemento, en particular os países menos adiantados, de conformidade cos acordos da Organización Mundial do Comercio."
+            short_title: "Aplicación do principio do trato especial e diferenciado (OMC)"
+          target_10_B:
+            long_title: "Fomentar a asistencia oficial para o desenvolvemento e as correntes financeiras, incluída a inversión estranxeira directa, para os Estados con maiores necesidades, en particular os países menos adiantados, os países africanos, os pequenos Estados insulares en desenvolvemento e os países en desenvolvemento sen litoral, en consonancia cos seus planes e programas nacionais."
+            short_title: "Fomento de correntes financeiras para países en desenvolvemento"
+          target_10_C:
+            long_title: "De aquí a 2030, reducir a menos do 3% os costos de transacción das remesas dos migrantes e eliminar os corredores de remesas cun costo superior ao 5%."
+            short_title: "Redución de costes de Remesas"
+      goal_11:
+        title: "Cidades e Comunidades Sostibles"
+        title_in_two_lines: "Cidades e Comunidades\nSostibles"
+        description: "Lograr que as cidades sexan máis inclusivas, seguras, resilientes e sostibles."
+        long_description: '<p>O mundo cada vez está máis urbanizado. Desde 2007, <a href="https://unstats.un.org/sdgs/report/2019/goal-11/">máis da metade da poboación mundial está vivindo en cidades</a>, e agárdase que dita cantidade aumente ata o 60&nbsp;% para 2030.</p> <p>As cidades e as áreas metropolitanas son centros neurálxicos do crecemento económico, xa que contribúen ao 60&nbsp;% aproximadamente do PIB mundial. Sen embargo, tamén representan arredor do 70&nbsp;% das emisións de carbono mundiais e máis do 60&nbsp;% do uso de recursos.</p> <p>A rápida urbanización está dando como resultado un número crecente de habitantes en barrios pobres, infraestruturas e servizos inadecuados e sobrecargados (como a recollida de residuos e os sistemas de auga e saneamento, estradas e transporte), o cal está empeorando a contaminación do aire e o crecemento urbano incontrolado.</p> <p><a href="https://unhabitat.org/coronavirus-will-travel-incredibly-fast-in-africas-slums-un-habitat-chief-warns">O impacto da COVID-19</a> será máis devastador nas zonas urbanas pobres e densamente poboadas, especialmente para o mil millón de persoas que vive en asentamentos informais e en barrios marxinais en todo o mundo, onde a masificación tamén dificulta cumprir coas medidas recomendadas, como o distanciamento social e o autoaislamento.</p> <p>O organismo das Nacións Unidas para os alimentos, a FAO, advertiu de que a fame e as mortes poderían aumentar de maneira significativa nas zonas urbanas que non contan con medidas para garantir que os residentes pobres e vulnerables teñan <a href="https://news.un.org/en/story/2020/05/1063622">acceso a alimentos</a>.</p>'
+        targets:
+          target_11_1:
+            long_title: "De aquí a 2030, asegurar o acceso de tódalas persoas a vivendas e servizos básicos axeitados, seguros e alcanzables e mellorar os barrios marxinais."
+            short_title: "Asegurar o acceso á vivenda"
+          target_11_2:
+            long_title: "De aquí a 2030, proporcionar acceso a sistemas de transporte seguros, alcanzables, accesibles e sostibles para todos e mellorar a seguridade viaria, en particular mediante a ampliación do transporte público, prestando especial atención ás necesidades das persoas en situación de vulnerabilidade, as mulleres, os nenos, as persoas con discapacidade e as persoas de idade."
+            short_title: "Proporcionar o acceso a transporte público"
+          target_11_3:
+            long_title: "De aquí a 2030, aumentar a urbanización inclusiva e sostible e a capacidade para a planificación e a xestión participativas, integradas e sostibles dos asentamentos humanos en todos os países."
+            short_title: "Aumento da urbanización inclusiva e sostible"
+          target_11_4:
+            long_title: "Redobrar os esforzos para protexer e salvagardar o patrimonio cultural e natural do mundo."
+            short_title: "Protección do patrimonio cultural e natural"
+          target_11_5:
+            long_title: "De aquí a 2030, reducir significativamente o número de mortes causadas polos desastres, incluídos os relacionados coa auga, e de persoas afectadas por eles, e reducir considerablemente as perdas económicas directas provocadas polos desastres en comparación co produto interno bruto mundial, facendo especial fincapé na protección dos pobres e as persoas en situacións de vulnerabilidade."
+            short_title: "Redución do número de mortes por desastres e redución de vulnerabilidade"
+          target_11_6:
+            long_title: "De aquí a 2030, reducir o impacto ambiental negativo per cápita das cidades, incluso prestando especial atención á calidade do aire e a xestión dos residuos municipais e doutro tipo."
+            short_title: "Redución do impacto ambiental en cidades"
+          target_11_7:
+            long_title: "De aquí a 2030, proporcionar acceso universal a zonas verdes e espazos públicos seguros, inclusivos e accesibles, en particular para as mulleres e os nenos, as persoas de idade e as persoas con discapacidade."
+            short_title: "Proporcionar o acceso a zonas verdes e espazos públicos seguros"
+          target_11_A:
+            long_title: "Apoiar os vínculos económicos, sociais e ambientais positivos entre as zonas urbanas, periurbanas e rurais fortalecendo a planificación do desenvolvemento nacional e rexional."
+            short_title: "Apoio a vínculos zonas urbanas, periurbanas e rurais"
+          target_11_B:
+            long_title: "De aquí a 2020, aumentar considerablemente o número de cidades e asentamentos humanos que adoptan e implementan políticas e plans integrados para promover a inclusión, o uso eficiente dos recursos, a mitigación do cambio climático e a adaptación a el e a resiliencia ante os desastres, e desenvolver e poñer en práctica, en consonancia con o Marco de Sendai para a Redución do Risco de Desastres 2015-2030, a xestión integral dos riscos de desastre a todos os niveles."
+            short_title: "Aumento da redución de riscos de desastres en cidades"
+          target_11_C:
+            long_title: "Proporcionar apoio aos países menos adiantados, incluso mediante asistencia financeira e técnica, para que poidan construír edificios sostibles e resilientes utilizando materiais locais."
+            short_title: "Apoio a a construción de edificios sostibles e resilientes en PMAs"
+      goal_12:
+        title: "Produción e Consumo Responsables"
+        title_in_two_lines: "Produción e Consumo\nResponsables"
+        description: "Garantir modalidades de consumo e produción sostibles."
+        long_description: '<p>O consumo e a produción mundiais (forzas impulsoras da economía mundial) dependen do uso do medio ambiente natural e dos recursos dunha maneira que continúa tendo efectos destrutivos sobre o planeta.</p> <p>O progreso económico e social conseguido durante o último século estivo acompañado dunha degradación medioambiental que está poñendo en perigo os mesmos sistemas dos que depende o noso desenvolvemento futuro (e certamente, a nosa supervivencia).</p> <p>Estes son algúns <a href="https://www.unenvironment.org/explore-topics/sustainable-development-goals/why-do-sustainable-development-goals-matter/goal-12">feitos e cifras</a>:</p> <ul> <li>Cada ano, estimase que un terzo de toda a comida producida (o equivalente a 1300&nbsp;millóns de toneladas con un valor arredor do billón de dólares) acaba podrecendo nos cubos de lixo dos consumidores e minoristas, o estragándose debido a un transporte e unhas prácticas de recolección deficientes.</li> <li>Si todo o mundo cambiase as súas lámpadas por unhas enerxéticamente eficientes, aforraríanse 120&nbsp;000&nbsp;millóns de dólares estadounidenses ao año.</li> <li>No caso de que a poboación mundial alcance os 9600&nbsp;millóns de persoas en 2050, poderíase precisar o equivalente a case tres planetas para proporcionar os recursos naturais precisos para manter os estilos de vida actuais.</li> </ul> <p>A pandemia da COVID-19 ofrece aos países a oportunidade de elaborar plans de recuperación que revertan as tendencias actuais e cambien os nosos patróns de consumo e produción cara un futuro máis sostible.</p> <p><a href="https://www.unenvironment.org/explore-topics/resource-efficiency/what-we-do/sustainable-consumption-and-prodution-policies">O consumo e a produción sostibles </a>consisten en facer máis e mellor con menos. Tamén se trata de desvincular o crecemento económico da degradación medioambiental, aumentar a eficiencia de recursos e promover estilos de vida sostibles.</p> <p>O consumo e a produción sostibles tamén poden contribuír de maneira substancial á mitigación da pobreza e á transición car economías verdes e con baixas emisións de carbono.</p>'
+        targets:
+          target_12_1:
+            long_title: "Aplicar o Marco Decenal de Programas sobre Modalidades de Consumo e Produción Sostibles, coa participación de tódolos países e baixo o liderado dos países desenvolvidos, tendo en conta o grado de desenvolvemento e as capacidades dos países en desenvolvemento."
+            short_title: "Aplicación marco de consumo e produción sostibles"
+          target_12_2:
+            long_title: "De aquí a 2030, lograr a xestión sostible e o uso eficiente dos recursos naturais."
+            short_title: "Lograr o uso eficiente de recursos naturais"
+          target_12_3:
+            long_title: "De aquí a 2030, reducir á metade o desperdicio de alimentos per cápita mundial na venta ao por menor e a nivel dos consumidores e reducir as perdas de alimentos nas cadeas de produción e subministro, incluídas as perdas posteriores á colleita."
+            short_title: "Redución do desperdicio de alimentos"
+          target_12_4:
+            long_title: "De aquí a 2030, lograr a xestión ecolóxicamente racional dos produtos químicos e de tódolos ciscallos ao longo do seu ciclo de vida, de conformidade cos marcos internacionais convidos, e reducir significativamente a súa liberación á atmosfera, a auga e o chan a fin de minimizar os seus efectos adversos na saúde humana e o medio ambiente."
+            short_title: "Xestión de ciscallos e produtos químicos"
+          target_12_5:
+            long_title: "De aquí a 2030, reducir considerablemente a xeración de ciscallos mediante actividades de prevención, redución, reciclado e reutilización."
+            short_title: "Prevención, redución, reciclado e reutilización de ciscallos"
+          target_12_6:
+            long_title: "Alentar a as empresas, en especial as grandes empresas e as empresas transnacionais, a que adopten prácticas sostibles e incorporen información sobre a sostibilidade no seu ciclo de presentación de informes."
+            short_title: "Adopción de prácticas sostibles en empresas"
+          target_12_7:
+            long_title: "Promover prácticas de adquisición pública que sexan sostibles, de conformidade coas políticas e prioridades nacionais."
+            short_title: "Adquisicións públicas sostibles"
+          target_12_8:
+            long_title: "De aquí a 2030, asegurar que as persoas de todo o mundo teñan a información e os coñecementos pertinentes para o desenvolvemento sostible e os estilos de vida en harmonía coa natureza."
+            short_title: "Asegurar a educación para o Desenvolvemento Sostible"
+          target_12_A:
+            long_title: "Axudar aos países en desenvolvemento a fortalecer a súa capacidade científica e tecnolóxica para avanzar car modalidades de consumo e produción máis sostibles."
+            short_title: "Fortalecemento de ciencia e tecnoloxía para a sostibilidade"
+          target_12_B:
+            long_title: "Elaborar e aplicar instrumentos para vixiar os efectos no desenvolvemento sostible, a fin de lograr un turismo sostible que cree postos de traballo e promova a cultura e os produtos locais."
+            short_title: "Lograr turismo sostible"
+          target_12_C:
+            long_title: "Racionalizar os subsidios ineficientes a os combustibles fósiles que fomentan o consumo antieconómico eliminando as distorsións do mercado, de acordo coas circunstancias nacionais, incluso mediante a reestruturación dos sistemas tributarios e a eliminación gradual dos subsidios prexudiciais, cando existan, para reflexar o seu impacto ambiental, tendo plenamente en conta as necesidades e condicións específicas dos países en desenvolvemento e minimizando os posibles efectos adversos no seu desenvolvemento, de maneira que se protexa aos pobres e ás comunidades afectadas."
+            short_title: "Regulación de subsidios a combustibles fósiles"
+      goal_13:
+        title: "Acción Polo Clima"
+        title_in_two_lines: "Acción\nPolo Clima"
+        description: "Adoptar medidas urxentes para combater o cambio climático e os seus efectos."
+        long_description: '<p>O 2019 foi o <a href="https://news.un.org/en/story/2020/03/1059061">segundo ano máis caloroso de tódolos tempos</a> e marcou o final da década máis calorosa (2010-2019) que se rexistrou xamais.</p> <p>Os niveis de dióxido de carbono (CO2) e doutros <a href="https://news.un.org/en/story/2020/04/1062332">gases de efecto invernadoiro na atmosfera</a> aumentaron ata niveis récord en 2019.</p> <p>O cambio climático está afectando a tódolos países de tódolos continentes. Está alterando as economías nacionais e afectando a distintas vidas. Os sistemas meteorolóxicos están cambiando, os niveis do mar están subindo e os fenómenos meteorolóxicos son cada vez máis extremos.</p> <p>A pesar de que se estima que as emisións de gases de efecto invernadoiro caian arredor dun 6&nbsp;% en 2020 debido ás restricións de movemento e as recesións económicas derivadas da pandemia da COVID-19, esta mellora é só temporal. <a href="https://news.un.org/en/story/2020/04/1062332">O cambio climático non se vai a pausar</a>. Unha vez que a economía mundial comece a recuperarse da pandemia, agardase que as emisións volvan a niveis maiores.</p> <p>É preciso tomar medidas urxentes para abordar tanto a pandemia como a emerxencia climática co fin de salvar vidas e medios de subsistencia.</p> <p>O <a href="https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement">Acordo de París</a>, aprobado en 2015, aspira a reforzar a resposta mundial á ameaza do cambio climático mantendo o aumento global da temperatura durante este século moi por debaixo de 2&nbsp;graos Celsius con respecto aos niveis preindustriais. O acordo tamén aspira a reforzar a capacidade dos países para lidar cos efectos do cambio climático mediante fluxos financeiros apropiados, un novo marco tecnolóxico e un marco de desenvolvemento da capacidade mellorado.</p>'
+        targets:
+          target_13_1:
+            long_title: "Fortalecer a resiliencia e a capacidade de adaptación aos riscos relacionados co clima e os desastres naturais en tódolos países."
+            short_title: "Fortalecemento da resiliencia e adaptación"
+          target_13_2:
+            long_title: "Incorporar medidas relativas ao cambio climático nas políticas, estratexias e plans nacionais."
+            short_title: "Incorporación do cambio climático en políticas, estratexias e plans nacionais"
+          target_13_3:
+            long_title: "Mellorar a educación, a sensibilización e a capacidade humana e institucional respecto da mitigación do cambio climático, a adaptación a el, a redución dos seus efectos e a alerta temperá."
+            short_title: "Mellora da Educación e sensibilización medioambiental"
+          target_13_A:
+            long_title: "Cumplir o compromiso dos países desenvolvidos que son partes na Convención Marco das Nacións Unidas sobre o Cambio Climático de lograr para o ano 2030 o obxectivo de mobilizar conxuntamente 100.000 millóns de dólares anuais procedentes de tódalas fontes a fin de atender as necesidades dos países en desenvolvemento respecto da adopción de medidas concretas de mitigación e a transparencia da súa aplicación, e poñer en pleno funcionamento o Fondo Verde para o Clima capitalizándoo o antes posible."
+            short_title: "Mobilización de recursos económicos"
+          target_13_B:
+            long_title: "Promover mecanismos para aumentar a capacidade para a planificación e xestión eficaces en relación co cambio climático nos países menos adiantados e os pequenos Estados insulares en desenvolvemento, facendo particular fincapé nas mulleres, os mozos e as comunidades locais e marxinadas."
+            short_title: "Xestión do cambio climático nos países menos avanzados"
+      goal_14:
+        title: "Vida Submarina"
+        title_in_two_lines: "Vida\nSubmarina"
+        description: "Conservar e utilizar sostiblemente os océanos, os mares e os recursos mariños."
+        long_description: '<p>O océano impulsa os sistemas mundiais que fan da Terra un lugar habitable para o ser humano. A nosa choiva, a auga potable, o tempo, o clima, os litorais, gran parte da nosa comida e incluso o osíxeno do aire que respiramos proporciónaos e regúlaos o mar.</p> <p>Unha xestión coidadosa deste <a href="https://www.unenvironment.org/explore-topics/oceans-seas/why-do-oceans-and-seas-matter">recurso mundial esencial</a> é unha característica clave dun futuro sostible. Non obstante, na actualidade, existe un deterioro continuo das augas costeiras debido á contaminación e á acidificación dos océanos que está tendo un efecto adverso sobre o funcionamento dos ecosistemas e a biodiversidade. Así mesmo, tamén está tendo un impacto prexudicial sobre as pesqueirías de pequena escala.</p> <p>Protexer os nosos océanos debe seguir sendo unha prioridade. A biodiversidade mariña é vital para a saúde das persoas e do noso planeta. As áreas mariñas protexidas deben xestionarse de maneira efectiva, ao igual que os seus recursos, e débense poñer en marcha regulamentos que reduzan a sobrepesca, a contaminación mariña e a acidificación dos océanos.</p>'
+        targets:
+          target_14_1:
+            long_title: "De aquí a 2025, previr e reducir significativamente a contaminación mariña de todo tipo, en particular a producida por actividades realizadas en terra, incluídos os detritos mariños e a polución por nutrintes."
+            short_title: "Prevención e redución da contaminación mariña"
+          target_14_2:
+            long_title: "De aquí a 2020, xestionar e protexer sostiblemente os ecosistemas mariños e costeiros para evitar efectos adversos importantes, incluso fortalecendo a súa resiliencia, e adoptar medidas para restauralos a fin de restablecer a saúde e a produtividade dos océanos."
+            short_title: "Xestión de ecosistemas mariños e costeiros"
+          target_14_3:
+            long_title: "Minimizar e abordar os efectos da acidificación dos océanos, incluso mediante unha maior cooperación científica a tódolos niveis."
+            short_title: "Minimización da acidificación de océanos"
+          target_14_4:
+            long_title: "De aquí a 2030, regulamentar eficazmente a explotación pesqueira e poñer fin á pesca excesiva, á pesca ilegal, non declarada e non regulamentada e as prácticas pesqueiras destrutivas, e aplicar plans de xestión con fundamento científico a fin de restablecer as poboacións de peces no prazo máis breve posible, ao menos alcanzando niveis que poidan producir o máximo rendemento sostible de acordo coas súas características biolóxicas."
+            short_title: "Regulación da explotación pesqueira sostible"
+          target_14_5:
+            long_title: "De aquí a 2030, conservar ao menos o 10% das zonas costeiras e mariñas, de conformidade coas leis nacionais e o dereito internacional e sobre a base da mellor información científica dispoñible."
+            short_title: "Conservación zonas costeiras e mariñas"
+          target_14_6:
+            long_title: "De aquí a 2030, prohibir certas formas de subvencións á pesca que contribúan a sobrecapacidade e a pesca excesiva, eliminar as subvencións que contribúan á pesca ilegal, non declarada e non regulamentada e absterse de introducir novas subvencións desa índole, recoñecendo que a negociación sobre as subvencións á pesca no marco da Organización Mundial do Comercio debe incluír un trato especial e diferenciado, apropiado e efectivo para os países en desenvolvemento e os países menos adiantados ¹ (¹ Tendo en conta as negociacións en curso da Organización Mundial do Comercio, o Programa de Doha para o Desenvolvemento e o mandato da Declaración Ministerial de Hong Kong)."
+            short_title: "Combater a pesca ilegal e excesiva"
+          target_14_7:
+            long_title: "De aquí a 2030, aumentar os beneficios económicos que os pequenos Estados insulares en desenvolvemento e os países menos adiantados obteñen do uso sostible dos recursos mariños, en particular mediante a xestión sostible da pesca, a acuicultura e o turismo."
+            short_title: "Aumento dos beneficios económicos da pesca sostible"
+          target_14_A:
+            long_title: "Aumentar os coñecementos científicos, desenvolver a capacidade de investigación e transferir tecnoloxía mariña, tendo en conta os Criterios e Directrices para a Transferencia de Tecnoloxía Mariña da Comisión Oceanográfica Intergobernamental, a fin de mellorar a saúde dos océanos e potenciar a contribución da biodiversidade mariña ao desenvolvemento dos países en desenvolvemento, en particular os pequenos Estados insulares en desenvolvemento e os países menos adiantados."
+            short_title: "Apoio á investigación e tecnoloxía mariña"
+          target_14_B:
+            long_title: "Facilitar o acceso dos pescadores artesanais aos recursos mariños e os mercados."
+            short_title: "Fomento da pesca a pequena escala e artesanal"
+          target_14_C:
+            long_title: "Mellorar a conservación e o uso sostible dos océanos e os seus recursos aplicando o dereito internacional reflexado na Convención das Nacións Unidas sobre o Dereito do Mar, que constitúe o marco xurídico para a conservación e a utilización sostible dos océanos e os seus recursos, como se recorda no paragrafo 158 do documento “O futuro que queremos”."
+            short_title: "Aplicación Convención de NNUU sobre o Dereito do Mar"
+      goal_15:
+        title: "Vida de Ecosistemas Terrestres"
+        title_in_two_lines: "Vida de Ecosistemas\nTerrestres"
+        description: "Xestionar sostiblemente os bosques, loitar contra a desertización, deter e inverter a degradación das terras, deter a perda de biodiversidade."
+        long_description: '<p>O brote da COVID-19 resalta a necesidade de <a href="https://www.unenvironment.org/news-and-stories/story/coronavirus-outbreak-highlights-need-address-threats-ecosystems-and-wildlife">abordar as ameazas ás que se enfrontan as especies silvestres e os ecosistemas</a>.</p> <p>En 2016, o Programa das Nacións Unidas para o Medio Ambiente (PNUMA) alertou de que un aumento mundial das <a href="https://www.unenvironment.org/resources/emerging-zoonotic-diseases-and-links-ecosystem-health-unep-frontiers-2016-chapter">epidemias zoonóticas</a> era motivo de preocupación. En concreto, sinalou que o 75&nbsp;% de todas as enfermidades infecciosas novas en humanos son zoonóticas e que ditas enfermidades están estreitamente relacionadas coa saúde dos ecosistemas.</p> <p>«Coa COVID-19, o planeta enviou a súa maior alerta ata a data indicando que a humanidade debe cambiar», <a href="https://www.unenvironment.org/news-and-stories/press-release/unep-steps-work-zoonotics-protecting-environment-reduce-pandemic">explicou a Directora Executiva do PNUMA, Inger Andersen</a>.</p> <p>En <a href="https://wedocs.unep.org/bitstream/handle/20.500.11822/32218/UNEP_COVID.pdf?sequence=1&amp;isAllowed=e"><em>Traballar co medio ambiente para protexer ás persoas</em></a>, o PNUMA detalla como «reconstruír mellor», mediante unha base científica máis sólida, políticas que contribúan a un planeta máis san e máis inversións verdes.</p> <p>A resposta do PNUMA ocupase de catro áreas:</p> <ol> <li>Axudar ás nacións a xestionar os ciscallos médicos da COVID-19.</li> <li>Producir un cambio transformativo para a natureza e as persoas.</li> <li>Traballar para garantir que os paquetes de recuperación económica creen resiliencia para crises futuras.</li> <li>Modernizar o goberno ambiental a nivel mundial.</li> </ol> <p>Para prever, deter e reverter a degradación dos ecosistemas de todo o mundo, as Nacións Unidas declarararon a <a href="http://www.decadeonrestoration.org/">Década para a Restauración dos Ecosistemas (2021-2030)</a>. Esta resposta coordinada a nivel mundial ante a perda e degradación dos hábitats centrarase en desenvolver a vontade e a capacidade políticas para restaurar a relación dos seres humanos coa natureza. Así mesmo, trátase dunha resposta directa ao aviso da ciencia, tal e como se expresa no <a href="https://www.ipcc.ch/srccl/">Informe especial sobre cambio climático e terra</a> do Grupo Intergobernamental de Expertos sobre o Cambio Climático, ás decisións adoptadas por tódolos Estados Membros das Nacións Unidas nas convencións de Río sobre <a href="https://unfccc.int/resource/docs/convkp/conveng.pdf">cambio climático</a> e <a href="https://www.cbd.int/">biodiversidade</a> e a a <a href="https://www.unccd.int/sites/default/files/relevant-links/2017-01/English_0.pdf">Convención das Nacións Unidas para a Loita contra a Desertización</a>.</p> <p>Séguese traballando nun nvo e ambicioso <a href="https://www.cbd.int/conferences/post2020">Marco mundial de diversidade biolóxica posterior a 2020</a>.</p> <p>Mentres o mundo responde á actual pandemia e se recupera dela, precisará dun plan sólido destinado á protección da natureza, de maneira que a natureza poida protexer á humanidade.</p>'
+        targets:
+          target_15_1:
+            long_title: "Para 2030, velar pola conservación, o restablecemento e o uso sostible dos ecosistemas terrestres e os ecosistemas interiores de auga doce e os servizos que proporcionan, en particular os bosques, os humedais, as montañas e as zonas áridas, en consonancia coas obrigas contraídas en virtude de acordos internacionais."
+            short_title: "Asegurar a Conservación e uso sostibles dos ecosistemas"
+          target_15_2:
+            long_title: "Para 2030, promover a xestión sostible de tódolos tipos de bosques, poñer fin á deforestación, recuperar os bosques degradados e incrementar a forestación e a reforestación a nivel mundial."
+            short_title: "Xestión sostible de bosques"
+          target_15_3:
+            long_title: "Para 2030, combater a desertización, restaurando terras e chans degradados, incluíndo terras afectadas pola desertización, secas e inundacións, e loitar para alcanzar un mundo neutral na degradación das terras."
+            short_title: "Loita contra a desertización"
+          target_15_4:
+            long_title: "Para 2030, velar pola conservación dos ecosistemas montañosos, incluída a súa diversidade biolóxica, a fin de mellorar a súa capacidade de proporcionar beneficios esenciais para o desenvolvemento sostible."
+            short_title: "Asegurar a conservación de ecosistemas montañosos"
+          target_15_5:
+            long_title: "Adoptar medidas urxentes e significativas para reducir a degradación dos hábitats naturais, deter a perda da diversidade biolóxica e, para 2020, protexer as especies ameazadas e evitar a súa extinción."
+            short_title: "Medidas contra a degradación e perda de biodiversidade"
+          target_15_6:
+            long_title: "Promover a participación xusta e equitativa nos beneficios que se deriven da utilización dos recursos xenéticos e promover o acceso axeitado a eses recursos, como se acordou internacionalmente."
+            short_title: "Acceso e uso adecuado dos recursos xenéticos"
+          target_15_7:
+            long_title: "Adoptar medidas urxentes para poñer fin á caza furtiva e o tráfico de especies protexidas de flora e fauna e abordar a demanda e a oferta ilegais de produtos silvestres."
+            short_title: "Combater a caza furtiva e especies protexidas"
+          target_15_8:
+            long_title: "Para 2030, adoptar medidas para prever a introdución de especies exóticas invasoras e reducir de forma significativa os seus efectos nos ecosistemas terrestres e acuáticos e controlar ou erradicar as especies prioritarias."
+            short_title: "Prevención de especies invasoras"
+          target_15_9:
+            long_title: "Para 2030, integrar os valores dos ecosistemas e a diversidade biolóxica na planificación nacional e local, os procesos de desenvolvemento, as estratexias de redución da pobreza e a contabilidade."
+            short_title: "Integración de planes sensibles ao medio ambiente"
+          target_15_A:
+            long_title: "Mobilizar e aumentar de maneira significativa os recursos financeiros procedentes de tódalas fontes para conservar e utilizar de forma sostible a diversidade biolóxica e os ecosistemas."
+            short_title: "Mobilización e aumento dos recursos financeiros"
+          target_15_B:
+            long_title: "Mobilizar un volume apreciable de recursos procedentes de tódalas fontes e a tódolos niveis para financiar a xestión forestal sostible e proporcionar incentivos axeitados aos países en desenvolvemento para que promovan dita xestión, en particular con miras á conservación e a reforestación."
+            short_title: "Aumento de recursos para xestión forestal"
+          target_15_C:
+            long_title: "Aumentar o apoio mundial á loita contra a caza furtiva e o tráfico de especies protexidas, en particular aumentando a capacidade das comunidades locais para promover oportunidades de subsistencia sostibles."
+            short_title: "Apoiar a loita contra caza furtiva"
+      goal_16:
+        title: "Paz, Xustiza e Institucións Sólidas"
+        title_in_two_lines: "Paz, Xustiza e\nInstitucións Sólidas"
+        description: "Promover sociedades xustas, pacíficas e inclusivas."
+        long_description: '<p>Os conflitos, a inseguridade, as institucións débiles e o acceso limitado á xustiza continúan supoñendo unha grave ameaza para o desenvolvemento sostible.</p> <p>O número de <a href="https://www.unhcr.org/en-us/news/press/2019/6/5d03b22b4/worldwide-displacement-tops-70-million-un-refugee-chief-urges-greater-solidarity.html">persoas que fuxen das guerras, as persecucións e os conflitos superou os 70&nbsp;millóns</a> en 2018, a cifra máis alta rexistrada pola Oficina do Alto Comisionado das Nacións Unidas para os Refuxiados (ACNUR) en case 70&nbsp;anos.</p> <p>En 2019, as Nacións Unidas rexistraron <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">357&nbsp;asasinatos e 30&nbsp;desaparicións forzadas</a> de defensores dos dereitos humanos, periodistas e sindicalistas en 47&nbsp;países.</p> <p>Por outra banda, os nacementos de arredor de <a href="https://data.unicef.org/topic/child-protection/birth-registration/">un de cada catro nenos</a> en todo o mundo con menos de 5&nbsp;anos nunca se rexistran de maneira oficial, o que lles priva dunha proba de identidade legal, que é crucial para a protección dos seus dereitos e para o acceso á xustiza e aos servizos sociais.</p>'
+        targets:
+          target_16_1:
+            long_title: "Reducir significativamente tódalas formas de violencia e as correspondentes taxas de mortalidade en todo o mundo."
+            short_title: "Redución de tódalas formas de violencia"
+          target_16_2:
+            long_title: "Poñer fin ao maltrato, a explotación, a trata e todas as formas de violencia e tortura contra os nenos."
+            short_title: "Erradicación do maltrato, trata e explotación infantil"
+          target_16_3:
+            long_title: "Promover o estado de dereito nos planos nacional e internacional e garantir a igualdade de acceso á xustiza para todos."
+            short_title: "Promoción do Estado de Dereito, acceso á xustiza"
+          target_16_4:
+            long_title: "Para 2030, reducir significativamente as correntes financeiras e de armas ilícitas, fortalecer la recuperación e devolución de activos roubados e combater tódalas formas de crime organizado."
+            short_title: "Redución das Correntes financeiras e de armas ilícitas"
+          target_16_5:
+            long_title: "Reducir considerablemente a corrupción e o suborno en tódalas súas formas."
+            short_title: "Redución da corrupción e suborno"
+          target_16_6:
+            long_title: "Crear a tódolos niveis institucións eficaces e transparentes que rendan contas."
+            short_title: "Creación de institucións eficaces e transparentes"
+          target_16_7:
+            long_title: "Garantir a adopción en tódolos niveis de decisións inclusivas, participativas e representativas que respondan ás necesidades."
+            short_title: "Fomento da participación cidadá"
+          target_16_8:
+            long_title: "Ampliar e fortalecer a participación dos países en desenvolvemento nas institucións de goberno mundial."
+            short_title: "Fortalecemento da participación países en desenvolvemento no OII"
+          target_16_9:
+            long_title: "Para 2030, proporcionar identidade xurídica para todos, incluíndo rexistro de nacementos."
+            short_title: "Proporción de identidade xurídica e rexistro de nacementos"
+          target_16_10:
+            long_title: "Garantir o acceso público á información e protexer as liberdades fundamentais, de conformidade coas leis nacionais e os acordos internacionais."
+            short_title: "Acceso a información e liberdades fundamentais"
+          target_16_A:
+            long_title: "Fortalecer as institucións nacionais pertinentes, incluso mediante a cooperación internacional, para crear a tódolos niveiss, particularmente nos países en desenvolvemento, a capacidade de prever a violencia e combater o terrorismo e a delincuencia."
+            short_title: "Fortalecemento das institucións en prevención da violencia"
+          target_16_B:
+            long_title: "Promover e aplicar leis e políticas non discriminatorias en favor do desenvolvemento sostible."
+            short_title: "Promoción e aplicación de leis e políticas (DDHH)"
+      goal_17:
+        title: "Alianzas para Lograr os Obxectivos"
+        title_in_two_lines: "Alianzas para\nLograr os Obxectivos"
+        description: "Revitalizar a Alianza Mundial para o Desenvolvemento Sostible."
+        long_description: '<p>Os ODS solo se poden conseguir con asociacións mundiais sólidas e cooperación.</p> <p>Para que un programa de desenvolvemento se cumpra satisfactoriamente, é preciso establecer asociacións inclusivas (a nivel mundial, rexional, nacional e local) sobre principios e valores, así como sobre unha visión e uns obxectivos compartidos que se centren primeiro nas persoas e o planeta.</p> <p>Moitos países requiren asistencia oficial para o desenvolvemento co fin de fomentar o crecemento e o comercio. Aínda así, <a href="https://www.un.org/press/en/2019/ga12191.doc.htm">os niveis de axuda están diminuíndo</a> e os países doantes non respectaron o seu compromiso de aumentar a financiación para o desenvolvemento.</p> <p>Debido á pandemia da COVID-19, agárdase que a <a href="https://www.imf.org/en/Publications/WEO/Issues/2020/04/14/weo-april-2020">economía mundial</a> se contraia fortemente, nun 3&nbsp;%, en 2020, o que constituiría a súa peor recesión desde a Gran Depresión.</p> <p>Agora máis que nunca é precisa unha sólida cooperación internacional co fin de garantir que os países que teñen os medios para recuperarse da pandemia reconstrúan mellor e consigan os Obxectivos de Desenvolvemento Sostible.</p>'
+        targets:
+          target_17_1:
+            long_title: "Fortalecer a mobilización de recursos internos, incluso mediante a prestación de apoio internacional a os países en desenvolvemento, co fin de mellorar a capacidade nacional para recadar ingresos fiscais e doutra índole."
+            short_title: "Mobilización de recursos domésticos para recadación fiscal"
+          target_17_2:
+            long_title: "Velar por que os países desenvolvidos cumpran plenamente os seus compromisos en relación coa asistencia oficial para o desenvolvemento, incluído o compromiso de numerosos países desenvolvidos de alcanzar o obxectivo de destinar o 0,7% do ingreso nacional bruto á asistencia oficial para o desenvolvemento dos países en desenvolvemento e entre o 0,15% e o 0,20% do ingreso nacional bruto á asistencia oficial para o desenvolvemento dos países menos adiantados; aléntase aos provedores de asistencia oficial para o desenvolvemento a que consideren a posibilidade de fixar unha meta para destinar ao menos o 0,20% do ingreso nacional bruto á asistencia oficial para o desenvolvemento dos países menos adiantados."
+            short_title: "Cumprimento do 0,7% AOD"
+          target_17_3:
+            long_title: "Mobilizar recursos financeiros adicionais de múltiples fontes para os países en desenvolvemento."
+            short_title: "Mobilización de recursos financeiros adicionais"
+          target_17_4:
+            long_title: "Axudar aos países en desenvolvemento a lograr a sostibilidade da débeda a longo prazo con políticas coordinadas orientadas a fomentar a financiación, o alivio e a reestruturación da débeda, segundo proceda, e facer fronte á débeda externa dos países pobres moi endebedados a fin de reducir o endebedamento excesivo."
+            short_title: "Reestruturación da Débeda"
+          target_17_5:
+            long_title: "Adoptar e aplicar sistemas de promoción das inversións en favor dos países menos adiantados."
+            short_title: "Promoción de inversións en países menos adiantados"
+          target_17_6:
+            long_title: "Mellorar a cooperación rexional e internacional Norte-Sur, Sur-Sur e triangular en materia de ciencia, tecnoloxía e innovación e o acceso a estas, e aumentar o intercambio de coñecementos en condiciones mutuamente convidas, incluso mellorando a coordinación entre os mecanismos existentes, en particular a nivel das Nacións Unidas, e mediante un mecanismo mundial de facilitación da tecnoloxía."
+            short_title: "Mellora do traspaso de tecnoloxía"
+          target_17_7:
+            long_title: "Promover o desenvolvemento de tecnoloxías ecoloxicamente racionais e a súa transferencia, divulgación e difusión aos países en desenvolvemento en condicións favorables, incluso en condicións concesionarias e preferenciais, segundo o convido de mutuo acordo."
+            short_title: "Promoción de tecnoloxías ecoloxicamente racionais"
+          target_17_8:
+            long_title: "Poñer en pleno funcionamento, a máis tardar en 2017, o banco de tecnoloxía e o mecanismo de apoio á creación de capacidade en materia de ciencia, tecnoloxía e innovación para os países menos adiantados e aumentar a utilización de tecnoloxías instrumentais, en particular a tecnoloxía da información e as comunicacións."
+            short_title: "Creación de banco de tecnoloxía"
+          target_17_9:
+            long_title: "Aumentar o apoio internacional para realizar actividades de creación de capacidade eficaces e específicas nos países en desenvolvemento a fin de respaldar os plans nacionais de implementación de tódolos Obxectivos de Desenvolvemento Sostible, incluso mediante a cooperación Norte-Sur, Sur-Sur e triangular."
+            short_title: "Reforzo de capacidades de implementación ODS"
+          target_17_10:
+            long_title: "Promover un sistema de comercio multilateral universal, baseado en normas, aberto, non discriminatorio e equitativo no marco da Organización Mundial do Comercio, incluso mediante a conclusión das negociacións no marco do Programa de Doha para o Desenvolvemento."
+            short_title: "Promoción de comercio multilateral universal"
+          target_17_11:
+            long_title: "Aumentar significativamente as exportacións dos países en desenvolvemento, en particular con miras a duplicar a participación dos países menos adiantados nas exportacións mundiais de aquí a 2030."
+            short_title: "Aumento das exportacións de países en desenvolvemento"
+          target_17_12:
+            long_title: "Lograr a consecución oportuna do acceso a os mercados libre de dereitos e continxentes de maneira duradeira para tódolos países menos adiantados, conforme ás decisións da Organización Mundial do Comercio, incluso velando por que as normas de orixe preferenciais aplicables ás importacións dos países menos adiantados sexan transparentes e sinxelas e contribúan a facilitar o acceso aos mercados."
+            short_title: "Acceso a mercados para países en desenvolvemento"
+          target_17_13:
+            long_title: "Aumentar a estabilidade macroeconómica mundial, incluso mediante a coordinación e coherencia das políticas."
+            short_title: "Aumento da estabilidade macroeconómica mundial"
+          target_17_14:
+            long_title: "Mellorar a coherencia das políticas para o desenvolvemento sostible."
+            short_title: "Mellora da coherencia de políticas"
+          target_17_15:
+            long_title: "Respectar o marxe normativo e o liderado de cada país para establecer e aplicar políticas de erradicación da pobreza e desenvolvemento sostible."
+            short_title: "Respecto á Soberanía nacional"
+          target_17_16:
+            long_title: "Mellorar a Alianza Mundial para o Desenvolvemento Sostible, complementada por alianzas entre múltiples interesados que mobilicen e intercambien coñecementos, especialización, tecnoloxía e recursos financeiros, a fin de apoiar o logro dos Obxectivos de Desenvolvemento Sostible en tódolos países, particularmente os países en desenvolvemento."
+            short_title: "Mellorar a Alianza Mundial para o desenvolvemento sostible"
+          target_17_17:
+            long_title: "Fomentar e promover a constitución de alianzas eficaces nas esferas pública, público-privada e da sociedade civil, aproveitando a experiencia e as estratexias de obtención de recursos das alianzas."
+            short_title: "Fomento de alianzas público-privadas"
+          target_17_18:
+            long_title: "De aquí a 2030, mellorar o apoio á creación de capacidade prestado aos países en desenvolvemento, incluídos os países menos adiantados e os pequenos Estados insulares en desenvolvemento, para aumentar significativamente a dispoñibilidade de datos oportunos, fiables e de gran calidade desagregados por ingresos, sexo, idade, raza, orixe étnico, estatus migratorio, discapacidade, situación xeográfica e outras características pertinentes nos contextos nacionais."
+            short_title: "Creación de capacidade estatística"
+          target_17_19:
+            long_title: "De aquí a 2030, aproveitar as iniciativas existentes para elaborar indicadores que permitan medir os progresos en materia de desenvolvemento sostible e complemento produto interno bruto, e apoiar a creación de capacidade estatística nos países en desenvolvemento."
+            short_title: "Promoción de indicadores que vaian máis aló do PIB"
+      help:
+        title: "Axuda Obxectivos de Desenvolvemento Sostible"
+        description: "Podes aliñar as túas aportacións á comunidade (temas, propostas cidadás e proxectos de inversión) cos Obxectivos de Desenvolvemento Sostible da Axenda 2030, isto  permitiranos ter unha visión xeral da nosa aportación en cada uno dos obxectivos de desenvolvemento sostible. A continuación podes informarte de todos os obxectivos, as súas metas e as metas localizadas."
+      show:
+        read_more: "Ler máis sobre %{goal}"
+        read_less: "Ler menos sobre %{goal}"
+        targets:
+          no_local_targets: Este obxectivo non ten metas localizadas
+      title: "Obxectivos de Desenvolvemento Sostible"
+      filter:
+        heading: "Filtros por ODS"
+        link: "Ver %{resources} do obxectivo %{code}"
+        more:
+          one: "Un obxectivo máis"
+          other: "%{count} obxectivos máis"
     related_list_selector:
+      goal_identifier: "ODS%{code}"
+      goal_list: "Podes seleccionar un ou varios ODS cos que se aliña e teu %{record}"
+      help:
+        title: "¿Qué ODS e metas se aliñan co meu %{record}?"
+        text: "páxina de axuda de ODS"
+      hint: Podes introducir o código dun obxectivo/meta específico ou un texto para atopar un. Para máis información visita a %{link}.
       remove_tag: "Borrar"
+      title: "Obxectivos de Desenvolvemento Sostible e Metas"
+    targets:
+      filter:
+        link: "Ver %{resources} da meta %{code}"
+        more:
+          one: "Unha meta máis"
+          other: "%{count} metas máis"

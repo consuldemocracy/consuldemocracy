@@ -40,8 +40,6 @@ el:
     telegram_handle_description: "Αν συμπληρωθεί, θα εμφανιστεί στο υποσέλιδο"
     instagram_handle: "Διαχείριση Instagram"
     instagram_handle_description: "Αν συμπληρωθεί, θα εμφανιστεί στο υποσέλιδο"
-    url: "Κύρια διεύθυνση URL"
-    url_description: "Κύρια διεύθυνση URL της ιστοσελίδας σας"
     org_name: "Όνομα ιστοσελίδας"
     org_name_description: "Το όνομα αυτό θα εμφανίζεται στο θέμα του E-mail, σελίδες βοήθειας..."
     related_content_score_threshold: "Όριο βαθμολογίας σχετικού περιεχομένου"

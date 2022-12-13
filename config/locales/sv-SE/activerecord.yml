@@ -124,6 +124,9 @@ sv:
       images:
         one: "Bild"
         other: "Bilder"
+      tenant:
+        one: "hyresgäst"
+        other: "hyresgäster"
       topic:
         one: "Ämne"
         other: "Ämnen"
@@ -145,6 +148,9 @@ sv:
       local_census_record:
         one: Post i lokalt adressregister
         other: Poster i lokalt adressregister
+      votation_type:
+        one: Omröstningstyp
+        other: Omröstningstyper
     attributes:
       budget:
         name: "Namn"
@@ -375,6 +381,8 @@ sv:
         body: Innehåll
       tag:
         name: "Skriv namnet på ämnet"
+      tenant:
+        schema: "Underdomän"
       topic:
         title: "Titel"
         description: "Inledande text"
@@ -451,7 +459,7 @@ sv:
         description: Beskrivning
       poll/question/answer/translation:
         title: Svar
-        description: Beskrivning
+        description: "Beskrivning"
       poll/question/answer/video:
         title: Titel
         url: Extern video
@@ -514,6 +522,12 @@ sv:
         document_number: Dokumentnummer
         date_of_birth: Födelsedatum
         postal_code: Postnummer
+      votation_type:
+        max_votes: Högsta antalet röster
+        vote_type: Omröstningstyp
+      votation_type/vote_type:
+        unique: Unikt svar
+        multiple: Flera svar
     errors:
       models:
         user:

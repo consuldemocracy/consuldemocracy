@@ -124,6 +124,9 @@ tr:
       images:
         one: "Görsel"
         other: "Resimler"
+      tenant:
+        one: "kiracı"
+        other: "kiracı"
       topic:
         one: "Konu"
         other: "Konular"
@@ -145,6 +148,9 @@ tr:
       local_census_record:
         one: Yerel nüfus sayımı kaydı
         other: Yerel nüfus sayımı kayıtları
+      votation_type:
+        one: Oylama türü
+        other: Oylama türleri
     attributes:
       budget:
         name: "İsim"
@@ -375,6 +381,8 @@ tr:
         body: Gövde
       tag:
         name: "Konunun adını yazın"
+      tenant:
+        schema: "Alt etki alanı"
       topic:
         title: "Başlık"
         description: "İlk metin"
@@ -451,7 +459,7 @@ tr:
         description: Tanımlama
       poll/question/answer/translation:
         title: Cevap
-        description: Tanımlama
+        description: "Tanımlama"
       poll/question/answer/video:
         title: İsim
         url: Harici video
@@ -514,6 +522,12 @@ tr:
         document_number: Belge numarası
         date_of_birth: Doğum tarihi
         postal_code: Posta kodu
+      votation_type:
+        max_votes: En fazla oy sayısı
+        vote_type: Oylama türü
+      votation_type/vote_type:
+        unique: Tekil yanıt
+        multiple: Birden çok yanıt
     errors:
       models:
         user:

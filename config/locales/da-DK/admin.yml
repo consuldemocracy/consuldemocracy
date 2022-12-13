@@ -993,9 +993,6 @@ da:
         table_title: "Titel"
         edit_answers: Rediger svar
         see_proposal: "(Se forslag)"
-      flash:
-        question_added: "Spørgsmål til denne afstemning"
-        error_on_question_added: "Spørgsmålet kunne ikke stilles til denne afstemning"
       destroy:
         alert: "Denne handling vil slette undersøgelsen og dets associerede spørgsmål."
         success_notice: "Undersøgelsen blev slettet"
@@ -1044,12 +1041,6 @@ da:
     answers:
       new:
         title: Nyt svar
-      show:
-        title: Titel
-        description: Beskrivelse
-        images: Billeder
-        images_list: Billedliste
-        edit: Rediger svar
       edit:
         title: Rediger svar
       videos:

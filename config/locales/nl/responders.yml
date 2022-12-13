@@ -31,7 +31,6 @@ nl:
         translation: "Vertaling is succesvol bijgewerkt"
       destroy:
         budget_investment: "Budget investering is verwijderd."
-        error: "Verwijderen mislukt"
         topic: "Onderwerp is verwijderd."
         poll_question_answer_video: "Reactie video is verwijderd."
         valuator_group: "Beoordelingsgroep is verwijderd"

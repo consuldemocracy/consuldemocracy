@@ -31,7 +31,6 @@ da:
         translation: "Oversættelsen blev opdateret"
       destroy:
         budget_investment: "Projektet blev slettet."
-        error: "Kunne ikke slettes"
         topic: "Emne blev slettet."
         poll_question_answer_video: "Svarvideoen blev slettet."
         valuator_group: "Evaluatorgruppen blev slettet"

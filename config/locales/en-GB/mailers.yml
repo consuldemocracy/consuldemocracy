@@ -25,18 +25,6 @@ en-GB:
     evaluation_comment:
       subject: "Новий коментар оцінки"
       hi: Привіт,
-    new_actions_notification_rake_created:
-      subject: "Більше новин про вашу пропозицію громадянина"
-      hi: "Привіт, %{name},"
-      new_resource: "НОВИЙ РОЗБЛОКОВАНИЙ РЕСУРС"
-      footer_text: "Як завжди, увійдіть до панелі пропозицій, і ми детально розповімо, як використовувати ці ресурси та отримати від них максимум користі."
-      dashboard_button: "Вперед, відкрийте їх!"
-    new_actions_notification_rake_published:
-      subject: "Більше новин про вашу пропозицію громадянина"
-      hi: "Привіт, %{name},"
-      new_resource: "НОВИЙ РОЗБЛОКОВАНИЙ РЕСУРС"
-      footer_text: "Як завжди, увійдіть до панелі пропозицій, і ми детально розповімо, як використовувати ці ресурси та отримати від них максимум користі."
-      dashboard_button: "Вперед, відкрийте їх!"
     new_actions_notification_on_create:
       dashboard_button: "Вперед, відкрийте їх!"
     new_actions_notification_on_published:

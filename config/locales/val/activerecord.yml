@@ -393,7 +393,7 @@ val:
         description: Descripció
       poll/question/answer/translation:
         title: Resposta
-        description: Descripció
+        description: "Descripció"
       poll/question/answer/video:
         title: Títol
         url: Video extern

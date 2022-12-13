@@ -68,7 +68,7 @@ sl:
       keyboard_shortcuts:
         navigation_table:
           rows:
-            - 
+            -
             - 
               page_column: Razprave
             - 
@@ -77,7 +77,7 @@ sl:
               page_column: Glasovi
             - 
               page_column: Participatorni proračuni
-            - 
+            -
     titles:
       help: "Kaj je %{org}? - državljanska participacija"
     verify:

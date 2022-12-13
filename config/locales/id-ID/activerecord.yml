@@ -368,7 +368,7 @@ id:
         description: Deskripsi
       poll/question/answer/translation:
         title: Jawaban
-        description: Deskripsi
+        description: "Deskripsi"
       poll/question/answer/video:
         title: Judul
         url: Video eksternal

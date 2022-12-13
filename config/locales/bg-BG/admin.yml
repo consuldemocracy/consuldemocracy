@@ -1032,9 +1032,6 @@ bg:
         table_title: "Заглавие"
         edit_answers: Редактиране на отговори
         see_proposal: "(Вижте предложението)"
-      flash:
-        question_added: "Въпросът е добавен към тази анкета"
-        error_on_question_added: "Въпросът не може да бъде зададен към тази анкета"
       destroy:
         alert: "Това действие ще премахне анкетата и всички свързани с нея въпроси."
         success_notice: "Анкета е изтрита успешно"
@@ -1084,12 +1081,6 @@ bg:
     answers:
       new:
         title: Нов отговор
-      show:
-        title: Заглавие
-        description: Описание
-        images: Изображения
-        images_list: Списък с изображения
-        edit: Редактиране на отговор
       edit:
         title: Редактиране на отговор
       videos:

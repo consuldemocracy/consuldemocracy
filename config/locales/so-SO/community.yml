@@ -25,10 +25,6 @@ so:
       topic:
         edit: Tafatir moowduuca
         destroy: Burburi moowduuca
-        comments:
-          zero: Falooyin majiraan
-          one: 1 faalo
-          other: "%{count} falooyinka"
       author: Qoraa
       back: Kulaabo ila%{community}%{proposal}
     topic:

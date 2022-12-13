@@ -62,10 +62,6 @@ val:
       form:
         submit_button: Iniciar un debat
     debate:
-      comments:
-        zero: Sense comentaris
-        one: 1 Comentari
-        other: "%{count} comentaris"
       votes:
         zero: Sense vots
         one: 1 vot
@@ -121,10 +117,6 @@ val:
       start_new: Iniciar un debat
     show:
       author_deleted: Usuari eliminat
-      comments:
-        zero: Sense comentaris
-        one: 1 Comentari
-        other: "%{count} Comentaris"
       comments_title: Comentaris
       edit_debate_link: Editar
       flag: Este debat ha sigut marcat com a inapropiat per alguns usuaris.
@@ -351,10 +343,6 @@ val:
         edit: "Abans de publicar-se podràs modificar el text al teu gust."
         view_proposal: Ara no, anar a la meua proposta
       already_supported: Ja has avalat aquesta proposta. Comparteixla!
-      comments:
-        zero: Sense comentaris
-        one: 1 Comentari
-        other: "%{count} Comentaris"
       support: Avalar
       support_title: Avalar aquesta proposta
       supports:
@@ -372,10 +360,6 @@ val:
     show:
       author_deleted: Usuari eliminat
       code: "Codi de la proposta:"
-      comments:
-        zero: Sense comentaris
-        one: 1 Comentari
-        other: "%{count} Comentaris"
       comments_tab: Comentaris
       flag: Esta proposta ha sigut marcada com inapropiada per diversos usuaris.
       notifications_tab: Notificacions

@@ -1054,9 +1054,6 @@ de:
         table_title: "Titel"
         edit_answers: Antworten bearbeiten
         see_proposal: "(Vorschlag anzeigen)"
-      flash:
-        question_added: "Die Frage wurde zu dieser Abstimmung hinzugefügt"
-        error_on_question_added: "Die Frage konnte dieser Abstimmung nicht zugeordnet werden"
       destroy:
         alert: "Diese Aktion entfernt die Umfrage und alle damit verbundenen Fragen."
         success_notice: "Umfrage erfolgreich gelöscht"
@@ -1106,12 +1103,6 @@ de:
     answers:
       new:
         title: Neue Antwort
-      show:
-        title: Titel
-        description: Beschreibung
-        images: Bilder
-        images_list: Liste der Bilder
-        edit: Antwort bearbeiten
       edit:
         title: Antwort bearbeiten
       videos:

@@ -69,10 +69,6 @@ bg:
       form:
         submit_button: Започнете дебат
     debate:
-      comments:
-        zero: Няма коментари
-        one: 1 коментар
-        other: "%{count} коментари"
       votes:
         zero: Няма гласове
         one: 1 глас
@@ -128,10 +124,6 @@ bg:
       start_new: Започнете дебат
     show:
       author_deleted: Потребителят е изтрит
-      comments:
-        zero: Няма коментари
-        one: 1 коментар
-        other: "%{count} коментари"
       comments_title: Коментари
       edit_debate_link: Редактирайте
       flag: Този дебат бе означен като неподходящ от няколко потребители.
@@ -395,10 +387,6 @@ bg:
         edit: "Преди да бъде споделено, ще можете да променяте текста, както искате."
         view_proposal: Не сега, отидете на моето предложение
       already_supported: Вече сте подкрепили това предложение. Споделете го!
-      comments:
-        zero: Няма коментари
-        one: 1 коментар
-        other: "%{count} коментари"
       support: Подкрепа
       support_title: Подкрепете това предложение
       supports:
@@ -417,10 +405,6 @@ bg:
     show:
       author_deleted: Потребителят е изтрит
       code: "Код на предложението:"
-      comments:
-        zero: Няма коментари
-        one: 1 коментар
-        other: "%{count} коментари"
       comments_tab: Коментари
       dashboard_proposal_link: Табло
       flag: Няколко потребители са означили това предложение като неподходящо.

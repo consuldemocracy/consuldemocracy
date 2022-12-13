@@ -60,9 +60,6 @@ zh-TW:
       form:
         submit_button: 開始一個辯論
     debate:
-      comments:
-        zero: 沒有評論
-        other: "%{count} 個評論"
       votes:
         zero: 沒有投票
         other: "%{count} 個投票"
@@ -117,9 +114,6 @@ zh-TW:
       start_new: 開始一個辯論
     show:
       author_deleted: 用戶已刪除
-      comments:
-        zero: 沒有評論
-        other: "%{count} 個評論"
       comments_title: 評論
       edit_debate_link: 編輯
       flag: 此辯論已被一些用戶標記為不適當。
@@ -341,9 +335,6 @@ zh-TW:
         edit: "在分享之前，您可以隨意更改文本。"
         view_proposal: 不是現在，請轉到我的建議
       already_supported: 您已經支持此建議。 把它分享吧！
-      comments:
-        zero: 沒有評論
-        other: "%{count} 個評論"
       support: 支持
       support_title: 支持此建議
       supports:
@@ -359,9 +350,6 @@ zh-TW:
     show:
       author_deleted: 用戶已刪除
       code: "建議編號："
-      comments:
-        zero: 沒有評論
-        other: "%{count} 個評論"
       comments_tab: 評論
       flag: 此建議已被一些用戶標記為不適當。
       notifications_tab: 通知

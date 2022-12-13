@@ -40,8 +40,6 @@ oc:
     telegram_handle_description: "Se l’ramplissètz, apareisserà al pè de pagina"
     instagram_handle: "Instagram handle"
     instagram_handle_description: "Se l’ramplissètz, apareisserà al pè de pagina"
-    url: "URL generala de la web"
-    url_description: "URL principala de lo vòstre luòc web"
     org_name: "Nomb de l'organizació"
     org_name_description: "Aquel nom apareisserà a l'afar de corrièr, a las paginas d'ajuda ..."
     related_content_score_threshold: "Lindal de pontuacion de contengut ligat"

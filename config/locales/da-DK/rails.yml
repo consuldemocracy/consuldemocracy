@@ -9,7 +9,7 @@ da:
       - Fre
       - Lør
     abbr_month_names:
-      - 
+      -
       - Jan
       - Feb
       - Mar
@@ -35,7 +35,7 @@ da:
       long: "%B %d, %Y"
       short: "%b %d"
     month_names:
-      - 
+      -
       - Januar
       - Februar
       - Marts

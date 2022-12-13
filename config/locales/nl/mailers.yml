@@ -86,10 +86,3 @@ nl:
       subject: "Machine Learning - Content werd succesvol gegenereerd"
       text: "Content werd succesvol gegenereerd."
       title: "Machine Learning script"
-    new_actions_notification_rake_created:
-      subject: "Meer nieuws over je voorstel"
-      hi: "Hallo %{name},"
-      introduction: "Zoals je weet, heb je op %{created_at_day} van %{created_at_month} een conceptvoorstel %{title} gemaakt."
-      text_1: "Je kan hem publiceren wanneer je wilt door op deze link te klikken: %{link_to_published}. Als je het nog niet weet..."
-      text_2: "Gebruik dit moment! Leer van anderen door mensen met dezelfde interesses toe te voegen en bereid je samen voor op het launchen van je voorstel."
-      text_3: "Om je te ondersteunen bij deze uitdagingen, is hier het nieuws..."

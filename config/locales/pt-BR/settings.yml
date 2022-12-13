@@ -40,8 +40,6 @@ pt-BR:
     telegram_handle_description: "Se preenchido vai aparecer no rodapé"
     instagram_handle: "Usuário do Instagram"
     instagram_handle_description: "Se preenchido vai aparecer no rodapé"
-    url: "URL principal"
-    url_description: "URL principal do seu website"
     org_name: "Organização"
     org_name_description: "Nome da sua organização"
     related_content_score_threshold: "Limiar de pontuação de conteúdo relacionado"

@@ -334,7 +334,7 @@ ast:
         description: Descripción detallada
       poll/question/answer/translation:
         title: Respuesta
-        description: Descripción detallada
+        description: "Descripción detallada"
       poll/question/answer/video:
         title: Títulu
       newsletter:

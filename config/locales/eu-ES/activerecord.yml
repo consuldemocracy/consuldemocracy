@@ -321,7 +321,7 @@ eu:
         description: Deskribapena
       poll/question/answer/translation:
         title: Erantzuna
-        description: Deskribapena
+        description: "Deskribapena"
       poll/question/answer/video:
         title: Izenburua
         url: Kanpo bideoa

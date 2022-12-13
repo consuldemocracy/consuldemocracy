@@ -4,9 +4,6 @@ sq:
       comments:
         see_all: Shiko të gjitha
         see_complete: "\nShih të plotë"
-        comments_count:
-          one: "%{count} komente"
-          other: "%{count} komente"
         replies_count:
           one: "%{count} përgjigje"
           other: "%{count} përgjigje"
@@ -18,9 +15,6 @@ sq:
         title: Komentet
         comments_about: "\nKomentet rreth"
         see_in_context: Shiko në kontekst
-        comments_count:
-          one: "%{count} komente"
-          other: "%{count} komente"
       show:
         title: Koment
       version_chooser:
@@ -92,10 +86,6 @@ sq:
         form:
           leave_comment: "\nLëreni përgjigjen tuaj"
       question:
-        comments:
-          zero: Nuk ka komente
-          one: "%{count} komente"
-          other: "%{count} komente"
         debate: Debate
       show:
         answer_question: Publikoni përgjigjen
@@ -124,9 +114,5 @@ sq:
       debate_phase: "Faza e debatit"
       proposals_phase: "Faza e propozimit"
       allegations_phase: "Faza e komenteve"
-      comments:
-        zero: "Nuk ka komente"
-        one: "%{count} komente"
-        other: "%{count} komente"
       top_comments:
         zero: "Nuk ka komente"

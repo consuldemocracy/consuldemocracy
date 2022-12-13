@@ -25,10 +25,6 @@ sq:
       topic:
         edit: Ndryshoni temën
         destroy: Fshi temën
-        comments:
-          zero: Nuk ka komente
-          one: 1 koment
-          other: "%{count} komente"
       author: Autor
       back: Kthehu mbrapsht te %{community}%{proposal}
     topic:

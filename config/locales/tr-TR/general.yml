@@ -69,10 +69,6 @@ tr:
       form:
         submit_button: Bir tartışma başlat
     debate:
-      comments:
-        zero: Yorum yok
-        one: 1 yorum
-        other: "%{count} yorumlar"
       votes:
         zero: Hiç oy yok
         one: 1 oy
@@ -128,10 +124,6 @@ tr:
       start_new: Bir tartışma başlat
     show:
       author_deleted: Kullanıcı silindi
-      comments:
-        zero: Yorum yok
-        one: 1 yorum
-        other: "%{count} yorumlar"
       comments_title: Yorumlar
       edit_debate_link: Düzenle
       flag: Bu tartışma birkaç kullanıcı tarafından uygunsuz olarak işaretlendi.
@@ -142,8 +134,13 @@ tr:
         submit_button: Değişiklikleri kaydet
   errors:
     messages:
+      allowed_file_content_types: "içerik türü %{types} seçeneklerinden biri olmalıdır"
       user_not_found: Kullanıcı bulunamadı
       invalid_date_range: "Geçersiz tarih aralığı"
+      past_date: "Tarih geçmişte olamaz"
+      cannot_change_date:
+        poll_started: "Oylama başlatıldıktan sonra değiştirilemez"
+        poll_ended: "Oylama bitirildikten sonra değiştirilemez"
   form:
     accept_terms: Ben %{policy} ve %{conditions} 'ı kabul ediyorum
     accept_terms_title: Gizlilik Politikasını ve Kullanım Şartlarını ve koşullarını kabul ediyorum
@@ -395,11 +392,8 @@ tr:
         edit: "Paylaşılmadan önce, metni istediğiniz gibi değiştirebilirsiniz."
         view_proposal: Şimdi değil, önerime git
       already_supported: Bu öneriyi zaten daha önce desteklediniz. Paylaşın!
-      comments:
-        zero: Yorum yok
-        one: 1 yorum
-        other: "%{count} yorumlar"
       support: Destek
+      support_label: "%{proposal} destekle"
       support_title: Bu öneriyi destekle
       supports:
         zero: Destek yok
@@ -417,10 +411,6 @@ tr:
     show:
       author_deleted: Kullanıcı silindi
       code: "Öneri kodu:"
-      comments:
-        zero: Yorum yok
-        one: 1 yorum
-        other: "%{count} yorumlar"
       comments_tab: Yorumlar
       dashboard_proposal_link: Gösterge paneli
       flag: Bu öneri birkaç kullanıcı tarafından uygunsuz olarak işaretlendi.
@@ -645,6 +635,10 @@ tr:
     show:
       vote_answer: "Oy %{answer}"
       voted: "%{answer} 'a oy verdiniz"
+    description:
+      unique: "En fazla 1 yanıt seçebilirsiniz."
+      multiple: "En fazla %{maximum} yanıt seçebilirsiniz."
+    read_more_about: "Ayrıntılı bilgi alın:"
   proposal_notifications:
     new:
       title: "Mesaj gönder"
@@ -760,6 +754,10 @@ tr:
         other: "%{count} dil kullanımda"
     optional: "Opsiyonel"
     required: "Gerekli"
+    comments:
+      zero: "Yorum yok"
+      one: "1 yorum"
+      other: "%{count} yorum"
   social:
     facebook: "Facebook %{org}"
     twitter: "Twitter %{org}"
@@ -837,8 +835,10 @@ tr:
       retired_help_text: Geri çekilen öneriler için gösterge panosu mevcut değil
   votes:
     agree: Katılıyorum
+    agree_label: "%{title} için düşüncem olumlu"
     anonymous: Oy kullanmak için çok fazla isimsiz oy kullanıldı %{verify_account}.
     disagree: Katılmıyorum
+    disagree_label: "%{title} için düşüncem olumsuz"
     organizations: Organizasyonların oy kullanmalarına izin verilmez
     supports: Destekler
     verified_only: Yalnızca doğrulanan kullanıcılar önerilere oy verebilir; %{verify_account}.
@@ -943,3 +943,6 @@ tr:
         more:
           one: "Bir etiket daha"
           other: "%{count} etiket daha"
+  machine_learning:
+    comments_summary: "Yorumlar özeti"
+    info_text: "İçerik Yapay Zeka / Makine Öğrenmesi tarafından oluşturulmuş"

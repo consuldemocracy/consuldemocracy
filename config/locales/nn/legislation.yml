@@ -27,8 +27,6 @@ nn:
         proposals_dates: Forslag
     questions:
       question:
-        comments:
-          zero: Ingen kommentarer
         debate: Debatt
       show:
         share: Del
@@ -42,7 +40,9 @@ nn:
     summary:
       votes:
         zero: "%{count} stemmer"
-      comments:
-        zero: "Ingen kommentarer"
+        one: "%{count} stemme"
+        other: "%{count} stemmer"
       top_comments:
         zero: "Ingen kommentarer"
+        one: "%{count} kommentar"
+        other: "Toppkommentarer"

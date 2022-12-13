@@ -25,10 +25,6 @@ it:
       topic:
         edit: Modifica argomento
         destroy: Distruggi argomento
-        comments:
-          zero: Non ci sono commenti
-          one: 1 commento
-          other: "%{count} commenti"
       author: Autore
       back: Torna a %{community} %{proposal}
     topic:

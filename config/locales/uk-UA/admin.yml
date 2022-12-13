@@ -1002,9 +1002,6 @@ uk-UA:
         table_title: "Назва"
         edit_answers: Редагувати відповіді
         see_proposal: "(Переглянути пропозицію)"
-      flash:
-        question_added: "Запитання додано до голосування"
-        error_on_question_added: "Не вдалося призначити запитання для цього опитування"
       destroy:
         alert: "Ця дія видалить голосування і всі пов'язані запитання."
         success_notice: "Голосування видалено"
@@ -1054,12 +1051,6 @@ uk-UA:
     answers:
       new:
         title: Нова відповідь
-      show:
-        title: Назва
-        description: Опис
-        images: Зображення
-        images_list: Список зображень
-        edit: Додати відповідь
       edit:
         title: Редагувати відповідь
       videos:
