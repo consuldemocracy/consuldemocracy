@@ -193,11 +193,10 @@ describe Setting do
     end
 
     it "returns the tenant name for other tenants" do
-      create(:tenant, schema: "new", name: "New Institution")
+      insert(:tenant, schema: "new", name: "New Institution")
+      allow(Tenant).to receive(:current_schema).and_return("new")
 
-      Tenant.switch("new") do
-        expect(Setting.default_org_name).to eq "New Institution"
-      end
+      expect(Setting.default_org_name).to eq "New Institution"
     end
   end
 
