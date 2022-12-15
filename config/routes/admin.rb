@@ -70,7 +70,10 @@ namespace :admin do
     end
 
     resources :budget_phases, only: [:edit, :update] do
-      member { patch :toggle_enabled }
+      member do
+        patch :enable
+        patch :disable
+      end
     end
   end
 
@@ -81,7 +84,10 @@ namespace :admin do
       end
 
       resources :phases, as: "budget_phases", only: [:index, :edit, :update] do
-        member { patch :toggle_enabled }
+        member do
+          patch :enable
+          patch :disable
+        end
       end
     end
   end
