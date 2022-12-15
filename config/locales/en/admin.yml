@@ -1638,6 +1638,7 @@ en:
       index:
         create: Create tenant
       new:
+        admin_information: 'When you create a tenant, your current user <b>"%{username}"</b> with the email  <b>"%{email}"</b> will be copied into the database of the new tenant and will be automatically granted administration permissions.'
         title: New tenant
       update:
         notice: Tenant updated successfully

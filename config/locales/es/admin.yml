@@ -1637,6 +1637,7 @@ es:
       index:
         create: Crear entidad
       new:
+        admin_information: 'Al crear una entidad se copiará su usuario actual <b>"%{username}"</b> con el email <b>"%{email}"</b> en la base de datos de la nueva entidad y se le otorgarán permisos de administración automáticamente.'
         title: Nueva entidad
       update:
         notice: Entidad actualizada correctamente
