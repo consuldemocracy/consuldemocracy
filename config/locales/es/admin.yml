@@ -1641,6 +1641,7 @@ es:
         enable: "Habilitar entidad %{tenant}"
         enabled: Habilitada
       new:
+        admin_information: 'Al crear una entidad se copiará tu usuario actual <strong>"%{username}"</strong> con el email <strong>"%{email}"</strong> y tu actual contraseña en la base de datos de la nueva entidad y se te otorgarán permisos de administración en la nueva entidad automáticamente. Nótese que serán cuentas de usuarios que están en bases de datos completamente independientes por lo que si cambias la contraseña de tu usuario en una entidad, las cuentas que tengas en otras entidades permanecerán intactas.'
         title: Nueva entidad
       restore:
         notice: Entidad habilitada correctamente
