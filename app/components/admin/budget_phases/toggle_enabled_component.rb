@@ -1,5 +1,6 @@
 class Admin::BudgetPhases::ToggleEnabledComponent < ApplicationComponent
   attr_reader :phase
+  delegate :enabled?, to: :phase
 
   def initialize(phase)
     @phase = phase
@@ -13,12 +14,21 @@ class Admin::BudgetPhases::ToggleEnabledComponent < ApplicationComponent
         method: :patch,
         remote: true,
         "aria-label": t("admin.budgets.edit.enable_phase", phase: phase.name),
-        "aria-pressed": phase.enabled?
+        "aria-pressed": enabled?,
+        form_class: "toggle-switch"
       }
     end
 
+    def action
+      if enabled?
+        :disable
+      else
+        :enable
+      end
+    end
+
     def text
-      if phase.enabled?
+      if enabled?
         t("shared.yes")
       else
         t("shared.no")
