@@ -13,6 +13,7 @@ class Admin::TenantsController < Admin::BaseController
 
   def create
     if @tenant.save
+      update_default_tenant_administrator
       redirect_to admin_tenants_path, notice: t("admin.tenants.create.notice")
     else
       render :new
@@ -49,5 +50,20 @@ class Admin::TenantsController < Admin::BaseController
 
     def tenant_params
       params.require(:tenant).permit(:name, :schema, :schema_type)
+    end
+
+    def update_default_tenant_administrator
+      tenant_administrator_credentials = {
+        email: current_user.email,
+        username: current_user.username,
+        encrypted_password: current_user.encrypted_password
+      }
+
+      Tenant.switch(@tenant.schema) do
+        default_admin_account = User.administrators.first
+        default_admin_account.skip_confirmation_notification!
+        default_admin_account.update!(tenant_administrator_credentials)
+        default_admin_account.confirm
+      end
     end
 end
