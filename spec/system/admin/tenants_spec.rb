@@ -63,6 +63,29 @@ describe "Tenants", :admin, :seed_tenants do
 
       expect(page).to have_content "You have been signed in successfully."
     end
+
+    scenario "does not create admin by default on seeds when tenant is not default tenant" do
+      allow(Rails.env).to receive(:test?).and_return(false)
+      user = create(:user, password: "secret_password", password_confirmation: "secret_password")
+      create(:administrator, user: user)
+      login_as(user)
+
+      visit new_admin_tenant_path
+
+      fill_in "Name", with: "Earthlings"
+      fill_in "Subdomain", with: "earth"
+      click_button "Create tenant"
+
+      click_link "earth.lvh.me"
+
+      click_link "Sign in"
+      fill_in "Email or username", with: "admin@consul.dev"
+      fill_in "Password", with: "12345678"
+      click_button "Enter"
+
+      expect(page).to have_content "Invalid Email or username or password."
+      expect(page).not_to have_content "You have been signed in successfully."
+    end
   end
 
   scenario "Update" do
