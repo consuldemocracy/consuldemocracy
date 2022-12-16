@@ -1631,6 +1631,9 @@ sv:
     tenants:
       create:
         notice: Hyresgäst har skapats
+      form:
+        use_subdomain: "Använd en underdomän i domänen %{domain} för att gå till den här hyresgästen"
+        use_domain: "Använd en annan domän för att gå till den här hyresgästen"
       index:
         create: Skapa hyresgäst
       new:
