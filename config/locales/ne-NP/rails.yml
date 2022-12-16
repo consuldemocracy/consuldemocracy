@@ -1,0 +1,198 @@
+ne:
+  date:
+    abbr_day_names:
+      - आइत
+      - सोम
+      - मंगल
+      - बुध
+      - बिही
+      - शुक्र
+      - शनि
+    abbr_month_names:
+      -
+      - जन
+      - फेब्र
+      - मार्
+      - अप्रि
+      - मे
+      - जुन
+      - जुल
+      - अग
+      - सेप्ट
+      - अक्ट
+      - नोभ
+      - डिस
+    day_names:
+      - आइतबार
+      - सोमबार
+      - मंगलबार
+      - बुधबार
+      - बिहीबार
+      - शुक्रबार
+      - शनिबार
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names:
+      -
+      - जनवरी
+      - फेब्रुअरी
+      - मार्च
+      - अप्रिल
+      - मे
+      - जुन
+      - जुलाई
+      - अगस्ट
+      - सेप्टेम्बर
+      - अक्टोबर
+      - नोभेम्बर
+      - डिसेम्बर
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: लगभग १ घण्टा
+        other: लगभग %{count} घण्टा
+      about_x_months:
+        one: लगभग १ महिना
+        other: लगभग %{count} महिना
+      about_x_years:
+        one: करिब १ वर्ष
+        other: करिब %{count} वर्ष
+      almost_x_years:
+        one: लगभग १ वर्ष
+        other: लगभग %{count} वर्ष
+      half_a_minute: आधा मिनेट
+      less_than_x_minutes:
+        one: एक मिनेट भन्दा कम
+        other: '%{count} मिनेट भन्दा कम'
+      less_than_x_seconds:
+        one: १ सेकेन्डभन्दा कम
+        other: '%{count} सेकेन्डभन्दा कम'
+      over_x_years:
+        one: १ बर्ष भन्दा बढी
+        other: '%{count} बर्ष भन्दा बढी'
+      x_days:
+        one: १ दिन
+        other: "%{count} दिनहरू"
+      x_minutes:
+        one: १ मिनेट
+        other: "%{count} मिनेट"
+      x_months:
+        one: १ महिना
+        other: "%{count} महिनाहरू"
+      x_years:
+        one: १ वर्ष
+        other: "%{count} वर्षहरू"
+      x_seconds:
+        one: १ सेकेन्ड
+        other: "%{count} सेकेन्ड"
+    prompts:
+      day: दिन
+      hour: घण्टा
+      minute: मिनेट
+      month: महिना
+      second: सेकेन्ड
+      year: वर्ष
+  errors:
+    format: "%{attribute}%{message}"
+    messages:
+      accepted: स्वीकार गर्नै पर्छ
+      blank: खाली हुन सक्दैन
+      present: खाली हुनुपर्छ
+      confirmation: '%{attribute} सँग मेल खाँदैन'
+      empty: खाली हुन सकिँदैन
+      equal_to: '%{count} बराबर हुनुपर्छ'
+      even: बराबर हुनुपर्छ
+      exclusion: आरक्षित गरिएको छ
+      greater_than: '%{count} भन्दा बढी हुनुपर्छ'
+      greater_than_or_equal_to: '%{count} भन्दा बढी वा बराबर हुनुपर्छ'
+      inclusion: सूचीमा समावेश गरिएको छैन
+      invalid: अवैध छ
+      less_than: '%{count} भन्दा कम हुनुपर्छ'
+      less_than_or_equal_to: '%{count} भन्दा कम वा बराबर हुनुपर्छ'
+      model_invalid: "प्रमाणीकरण असफल भयो: %{errors}"
+      not_a_number: संख्या होइन
+      not_an_integer: पूर्णांक हुनुपर्छ
+      odd: बिजोर हुनुपर्छ
+      required: अवस्थित हुनुपर्छ
+      taken: पहिले नै लिइएको छ
+      too_long:
+        one: धेरै लामो छ (अधिकतम १ वर्ण हो)
+        other: धेरै लामो छ (अधिकतम %{count} वर्णहरू छन्)
+      too_short:
+        one: धेरै छोटो छ (न्यूनतम १ वर्ण हो)
+        other: धेरै छोटो छ (न्यूनतम %{count} वर्णहरू छन्)
+      wrong_length:
+        one: गलत लम्बाइ हो (१ वर्ण हुनुपर्छ)
+        other: गलत लम्बाइ हो (%{count} वर्ण हुनुपर्छ)
+      other_than: '%{count} बाहेक अन्य हुनुपर्छ'
+    template:
+      body: "निम्न क्षेत्रहरूमा समस्याहरू थिए:"
+      header:
+        one: १ त्रुटिले यो %{model} लाई बचत हुनबाट रोकेको छ
+        other: "%{count} त्रुटिहरूले यो %{model} लाई बचत हुनबाट रोकेको छ"
+  helpers:
+    select:
+      prompt: कृपया छान्नुहोस
+    submit:
+      create: '%{model} सिर्जना गर्नुहोस्'
+      submit: '%{model} बचत गर्नुहोस्'
+      update: अद्यावधिक गर्नुहोस् %{model}
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 0
+        separator: "।"
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 0
+      separator: "।"
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: बिलियन
+          million: मिलियन
+          quadrillion: क्वाड्रिलियन
+          thousand: हजार
+          trillion: ट्रिलियन
+      format:
+        precision: 0
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: बाइट
+            other: बाइटहरू
+          gb: जी बि
+          kb: के बि
+          mb: एम बि
+          tb: टी बि
+    percentage:
+      format:
+        format: "%n%"
+  support:
+    array:
+      last_word_connector: ", र"
+      two_words_connector: " र "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      datetime: "%Y-%m-%d %H:%M:%S"
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+      short_datetime: "%Y-%m-%d %H:%M"
+      api: "%Y-%m-%d %H"
+    pm: pm
