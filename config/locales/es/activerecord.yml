@@ -6,8 +6,7 @@ es:
     advanced_stats_enabled: "Mostrar estadísticas avanzadas"
     name: Nombre
     email: Email
-    description: Descripción
-    related_sdg_list: Objetivos y Metas
+    description: Descripción detallada
   activerecord:
     models:
       activity:
@@ -76,18 +75,6 @@ es:
       proposal:
         one: "Propuesta ciudadana"
         other: "Propuestas ciudadanas"
-      sdg/goal:
-        one: "objetivo"
-        other: "objetivos"
-      sdg/local_target:
-        one: "meta localizada"
-        other: "metas localizadas"
-      sdg/manager:
-        one: "gestor ODS"
-        other: "gestores ODS"
-      sdg/target:
-        one: "meta"
-        other: "metas"
       site_customization/page:
         one: Página
         other: Páginas
@@ -124,9 +111,6 @@ es:
       images:
         one: "Imagen"
         other: "Imágenes"
-      tenant:
-        one: "entidad"
-        other: "entidades"
       topic:
         one: "Tema"
         other: "Temas"
@@ -148,9 +132,6 @@ es:
       local_census_record:
         one: Registro del censo local
         other: Registros del censo local
-      votation_type:
-        one: Tipo de votación
-        other: Tipos de votación
     attributes:
       budget:
         name: "Nombre"
@@ -161,15 +142,12 @@ es:
         description_balloting: "Descripción durante la fase de votación"
         description_reviewing_ballots: "Descripción durante la fase de revisión de votos"
         description_finished: "Descripción cuando el presupuesto ha finalizado / Resultados"
-        phase: "Fase activa"
+        phase: "Fase"
         currency_symbol: "Divisa"
         voting_style: "Estilo de la votación final"
-        voting_style_knapsack: Bolsa de dinero
-        voting_style_approval: Por aprobación
-        hide_money: "Ocultar la cantidad de dinero para este presupuesto"
+        voting_style_knapsack: "Bolsa de dinero"
+        voting_style_approval: "Por aprobación"
       budget/translation:
-        main_link_text: "Texto del enlace"
-        main_link_url: "El enlace te lleva a (añade un enlace)"
         name: "Nombre"
       budget/investment:
         heading_id: "Partida presupuestaria"
@@ -177,7 +155,7 @@ es:
         description: "Descripción"
         external_url: "Enlace a documentación adicional"
         administrator_id: "Administrador"
-        location: "Información adicional de la ubicación"
+        location: "Ubicación (opcional)"
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, o en nombre de más gente, escribe su nombre"
         image: "Imagen descriptiva del proyecto de gasto"
         image_title: "Título de la imagen"
@@ -221,7 +199,7 @@ es:
         primary: "Principal"
         secondary: "Secundaria"
       budget/group:
-        max_votable_headings: "Máximo número de partidas en que un usuario puede seleccionar proyectos"
+        max_votable_headings: "Máximo número de partidas en que un usuario puede votar"
       budget/group/translation:
         name: "Nombre del grupo"
       budget/heading:
@@ -229,7 +207,7 @@ es:
         latitude: "Latitud (opcional)"
         longitude: "Longitud (opcional)"
         name: "Nombre de la partida"
-        price: "Cantidad de dinero"
+        price: "Cantidad"
         population: "Población (opcional)"
         max_ballot_lines: "Votos permitidos"
       budget/heading/translation:
@@ -242,8 +220,6 @@ es:
         name: "Nombre"
         description: "Descripción"
         summary: "Resumen"
-        main_link_text: "Texto del enlace"
-        main_link_url: "El enlace te lleva a (añade un enlace)"
       comment:
         body: "Comentario"
         user: "Usuario"
@@ -279,7 +255,7 @@ es:
         password: "Contraseña"
         current_password: "Contraseña actual"
         email_digest: "Recibir resumen de notificaciones sobre propuestas"
-        email_on_comment: "Recibir un email cuando alguien comenta en mis contenidos"
+        email_on_comment: "Recibir un email cuando alguien comenta en mis propuestas o debates"
         email_on_comment_reply: "Recibir un email cuando alguien contesta a mis comentarios"
         email_on_direct_message: "Recibir emails con mensajes privados"
         newsletter: "Recibir emails con información interesante sobre la web"
@@ -288,7 +264,7 @@ es:
         official_level: "Nivel del cargo"
         phone_number: "Teléfono"
         public_activity: "Mostrar públicamente mi lista de actividades"
-        public_interests: "Mostrar públicamente los elementos que sigo"
+        public_interests: "Mostrar públicamente las etiquetas de los elementos que sigo"
         recommended_debates: "Mostrar recomendaciones en el listado de debates"
         recommended_proposals: "Mostrar recomendaciones en el listado de propuestas"
         redeemable_code: "Código de verificación por carta (opcional)"
@@ -332,29 +308,21 @@ es:
       proposal_notification:
         body: "Mensaje"
         title: "Título"
-      sdg/goal:
-        code: "Código"
-        title: "Título"
-        description: "Descripción"
-      sdg/local_target:
-        code: "Código"
-        target_id: "Meta"
-        title: "Título"
-      sdg/local_target/translation:
-        title: "Título"
-        description: "Descripción"
-      sdg/phase/kind:
-        sensitization: "Sensibilización"
-        planning: "Planificación"
-        monitoring: "Seguimiento"
-      sdg/target:
-        code: "Código"
-        title: "Título"
       signature_sheet:
         title: "Título"
         signable_type: "Tipo de hoja de firmas"
         signable_id: "ID Propuesta ciudadana/Proyecto de gasto"
         document_numbers: "Números de documentos"
+      sdg/goal:
+        title: "Título"
+        description: "Descripción detallada"
+      sdg/local_target:
+        title: "Título"
+      sdg/local_target/translation:
+        title: "Título"
+        description: "Descripción detallada"
+      sdg/target:
+        title: "Título"
       site_customization/page:
         content: Contenido
         created_at: Creada
@@ -381,11 +349,6 @@ es:
         body: Contenido
       tag:
         name: "Escribe el nombre del tema"
-      tenant:
-        domain: "Dominio"
-        schema: "Dominio / Subdominio"
-        subdomain: "Subdominio"
-        url: "URL"
       topic:
         title: "Título"
         description: "Texto inicial"
@@ -446,7 +409,7 @@ es:
         title: Título
         question_options: Respuestas
       legislation/question/translation:
-        title: "Pregunta"
+        title: Pregunta
       legislation/question_option:
         value: Valor
       legislation/annotation:
@@ -462,7 +425,7 @@ es:
         description: Descripción
       poll/question/answer/translation:
         title: Respuesta
-        description: "Descripción (opcional)"
+        description: "Descripción"
       poll/question/answer/video:
         title: Título
         url: Vídeo externo
@@ -512,7 +475,7 @@ es:
         user: Ejecutado por
       link:
         label: Título
-        url: URL
+        url: Enlace
       valuator:
         description: Descripción
         valuator_group_id: Grupo de evaluación
@@ -525,12 +488,6 @@ es:
         document_number: Número de documento
         date_of_birth: Fecha de nacimiento
         postal_code: Código postal
-      votation_type:
-        max_votes: Número máximo de votos
-        vote_type: Tipo de votación
-      votation_type/vote_type:
-        unique: Respuesta única
-        multiple: Respuesta múltiple
     errors:
       models:
         user:
@@ -612,10 +569,6 @@ es:
           attributes:
             locale:
               already_translated: Recurso ya traducido
-        sdg/local_target:
-          attributes:
-            code:
-              invalid: "debe empezar con el código de su meta seguido de un punto y terminar con un número"
       messages:
         translations_too_short: El obligatorio proporcionar una traducción como mínimo
         record_invalid: "Error de validación: %{errors}"
