@@ -9,14 +9,7 @@ class Admin::BudgetPhases::ToggleEnabledComponent < ApplicationComponent
   private
 
     def options
-      {
-        text: text,
-        method: :patch,
-        remote: true,
-        "aria-label": t("admin.budgets.edit.enable_phase", phase: phase.name),
-        "aria-pressed": enabled?,
-        form_class: "toggle-switch"
-      }
+      { "aria-label": t("admin.budgets.edit.enable_phase", phase: phase.name) }
     end
 
     def action
@@ -24,14 +17,6 @@ class Admin::BudgetPhases::ToggleEnabledComponent < ApplicationComponent
         :disable
       else
         :enable
-      end
-    end
-
-    def text
-      if enabled?
-        t("shared.yes")
-      else
-        t("shared.no")
       end
     end
 end

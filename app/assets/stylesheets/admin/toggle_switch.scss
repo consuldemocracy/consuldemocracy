@@ -1,0 +1,6 @@
+.admin .toggle-switch {
+  [aria-pressed] {
+    @include switch;
+    margin-bottom: 0;
+  }
+}
