@@ -4,6 +4,9 @@ nl:
       verification:
         residence: "Adres"
         sms: "SMS"
+      local_census_records/import:
+        one: Lokaal volkstellingsregister importeren
+        other: Lokale volkstellingsregisters importeren
     attributes:
       verification:
         residence:
@@ -41,4 +44,4 @@ nl:
           attributes:
             file:
               extension: "Het opgegeven bestandsformaat is onjuist. Toegestane bestandsformaat: %{valid_extensions}."
-              headers: "De opgegeven headers van het bestand zijn fout. De volgende namen zijn toegestaan voor de bestanden: %{required_headers}."
+              headers: "De opgegeven headers van het bestand zijn fout. De bestandsheaders moeten de volgende namen bevatten: %{required_headers}."

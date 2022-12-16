@@ -82,7 +82,6 @@ da:
         tags_placeholder: "Tilføj de tags du gerne vil anvende og adskil dem med komma (',')"
         map_location: "Lokation"
         map_location_instructions: "Naviger kortet til den rette lokation og placer markøren."
-        map_remove_marker: "Fjern markøren"
       index:
         title: Deltagerbudgetter
         unfeasible: Projekter, der ikke er mulige at gennemføre

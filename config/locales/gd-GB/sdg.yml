@@ -1,1 +1,646 @@
 gd:
+  sdg:
+    goals:
+      goal_1:
+        title: "Gun bhochdainn sam bith a bhith ann"
+        title_in_two_lines: "Gun \nbhochdainn sam bith a bhith ann"
+        description: "Cuir às do bhochdainn den a h-uile seòrsa, sa h-uile àite.."
+        long_description: '<p>Gu cruinneil, chaidh an àireamh de dhaoine a tha a’ tighinn beò ann am fìor bhochdainn sìos bho 36 sa cheud ann an 1990 gu 10 sa cheud ann an 2015. Ach tha astar an atharrachaidh a’ fàs nas slaodaiche agus tha cunnart ann gum bi èiginn COVID-19 <a href="https://www.un.org/sites/un2.un.org/files/sg_report_socio-economic_impact_of_covid19.pdf">a’ cur às do dheicheadan de dh’adhartas</a> anns an t-sabaid an aghaidh bochdainn. <a href="https://www.wider.unu.edu/node/237051">Tha rannsachadh ùr a</a> chaidh fhoillseachadh le Institiud Cruinneil UNU airson Rannsachadh Eaconamachd Leasachaidh a’ toirt rabhadh gum faodadh an tuiteam eaconamach bhon <a href="https://www.wider.unu.edu/publication/estimates-impact-covid-19-global-poverty">ghalar lèir-sgaoilte cruinneil àrdachadh a thoirt air bochdainn na cruinne le ìre cho mòr ri leth billean neach</a> , no 8% den t-sluagh iomlan. B’ e seo a’ chiad uair a tha bochdainn air a dhol suas air feadh na cruinne ann an trithead bliadhna, bho 1990.</p><p> Tha còrr air <a href="http://www.worldbank.org/en/news/press-release/2018/09/19/decline-of-global-extreme-poverty-continues-but-has-slowed-world-bank">700 millean neach</a> , no 10 sa cheud de shluagh an t-saoghail, fhathast a’ tighinn beò ann am fìor bhochdainn an-diugh, a’ strì gus na feumalachdan as bunaitiche a choileanadh leithid slàinte, foghlam, agus ruigsinneachd air uisge is slàintealachd, gus dìreach beagan ainmeachadh. Tha a’ mhòr-chuid de dhaoine a tha a’ fuireach air nas lugha na $1.90 san latha a’ fuireach ann an Afraga fon t-Sahara. Air feadh na cruinne, tha an <a href="https://unstats.un.org/sdgs/report/2019/goal-01/">ìre bochdainn ann an sgìrean dùthchail aig 17.2 sa cheud</a> - còrr is trì tursan nas àirde na ann an sgìrean bailteil.</p><p> Dhaibhsan a tha ag obair, chan eil obair a’ daonnan a’ toirt seachad bith-beò iomchaidh. Gu dearbh, bha <a href="https://unstats.un.org/sdgs/report/2019/goal-01/">8 sa cheud</a> de luchd-obrach fastaichte agus an teaghlaichean air feadh an t-saoghail beò ann am fìor bhochdainn ann an 2018. Tha aonan a-mach à còignear chloinne beò ann am fìor bhochdainn. Tha e deatamach gun tèid dìon sòisealta a thoirt do chloinn air fad agus buidhnean so-leònte eile gus bochdainn a lùghdachadh.</p>'
+        targets:
+          target_1_1:
+            long_title: "Ro 2030, cuir às do dh’fhìor bhochdainn do gach neach anns a h-uile àite, air a thomhas aig an àm seo mar dhaoine a tha beò air nas lugha na $1.25 san latha"
+            short_title: "Cur às do dhroch bhochdainn"
+          target_1_2:
+            long_title: "Ro 2030, lughdaich le co-dhiù 50% an chuibhreann de dh’fhir, boireannaich agus clann de gach aois a tha a’ tighinn beò ann am bochdainn a rèir a-uile tomhais a rèir mhìneachaidhean nàiseanta."
+            short_title: "Lùghdaich bochdainn le co-dhiù 50%"
+          target_1_3:
+            long_title: "Cuir an gnìomh siostaman agus ceumannan dìon sòisealta a tha iomchaidh gu nàiseanta do na h-uile, a’ gabhail a-steach ùrlaran, agus ro 2030 dèan cinnteach gu bheil coileanadh susbainteach ann do dhaoine bochda agus so-leònte."
+            short_title: "Cuir Siostaman Dìon Sòisealta an gnìomh"
+          target_1_4:
+            long_title: "Ro 2030, dèan cinnteach gu bheil còraichean co-ionann aig fireannaich agus boireannaich, gu sònraichte daoine bochda agus so-leònte, air goireasan eaconamach, a bharrachd air cothrom air seirbheisean bunaiteach, seilbh agus smachd air fearann agus seòrsaichean seilbh eile, oighreachd, stòrasan nàdarra, teicneòlas ùr iomchaidh agus seirbheisean ionmhais, a’ gabhail a-steach meanbh-mhaoineachadh"
+            short_title: "Còraichean Co-ionann air Seilbh, Seirbheisean Bunasach, Teicneòlas agus Goireasan Eaconamach"
+          target_1_5:
+            long_title: "Ro 2030, tog air seasmhachd nam bochd agus an fheadhainn a tha ann an suidheachaidhean so-leònte agus lughdaich an ìre is gu bheil iad nochdte agus so-leònte do fhìor dhroch thachartasan co-cheangailte ri gnàth-shìde agus buillean is mòr-thubaistean eaconamach, sòisealta is àrainneachdail eile."
+            short_title: "Tog Seasmhachd an aghaidh Tubaistean Àrainneachdail, Eaconamach is Sòisealta"
+          target_1_A:
+            long_title: "Dèan cinnteach gum faighear stòrasan nach beag bho ghrunn thùsan, a’ gabhail a-steach tro cho-obrachadh leasachaidh leasaichte, gus dòighean iomchaidh agus cunbhalach a thoirt do dhùthchannan fo leasachadh, gu sònraichte na dùthchannan as lugha leasaichte, gus prògraman agus poileasaidhean a chur an gnìomh gus crìoch a chur air bochdainn den a h-uile seòrsa."
+            short_title: "Cuir goireasan air dòigh gus Poileasaidhean a chur an gnìomh gus crìoch a chur air Bochdainn"
+          target_1_B:
+            long_title: "Cruthaich frèaman poileasaidh làidir aig ìrean nàiseanta, roinneil agus eadar-nàiseanta, stèidhichte air ro-innleachdan leasachaidh airson nam bochd agus a tha mothachail air gnè, gus taic a thoirt do thasgadh luathaichte ann an gnìomhan gus cur às do bhochdainn."
+            short_title: "Cruthaich frèaman poileasaidh a tha taiceil do na bochd agus mothachail air gnè"
+      goal_2:
+        title: "Gun acras sam bith a bhith ann"
+        title_in_two_lines: "Gun \nacras sam bith a bhith ann"
+        description: "Gun acras sam bith a bhith ann."
+        long_description: '<p>Às dèidh deicheadan de chrìonadh cunbhalach, thòisich an àireamh de dhaoine a tha a’ fulang leis an acras – mar a chaidh a thomhas le tricead fo-bheathachaidh – a’ dol suas gu slaodach a-rithist ann an 2015. Tha tuairmsean làithreach a’ sealltainn gu bheil <a href="http://www.fao.org/publications/sofi/2020/en/">faisg air 690 millean neach acrach, no 8.9 sa cheud de shluagh an t-saoghail</a> – suas le 10 millean neach ann an aon bhliadhna agus faisg air 60 millean ann an còig bliadhna.</p><p> Chan eil an saoghal air an t-slighe gus Cur às do dh’Acras a choileanadh ro 2030. Ma chumas gluasadan den t-seòrsa a chunnacas bho chionn ghoirid a’ dol, rachadh an àireamh de dhaoine air an toireadh an t-acras buaidh thairis air 840 millean ro 2030.</p><p> A rèir Prògram Bidhe na Cruinne, tha <a href="https://www.wfp.org/publications/2020-global-report-food-crises">135 millean a’ fulang le fìor acras</a> gu ìre mhòr mar thoradh air còmhstri a chaidh a chruthachadh le mac an duine, atharrachadh gnàth-shìde agus crìonadh eaconamach. Dh’fhaodadh an galar lèir-sgaoilte COVID-19 a-nis an àireamh sin a dhùblachadh, a’ cur 130 millean neach a bharrachd ann an cunnart fulang leis an acras ro dheireadh 2020.</p><p> Le còrr air <a href="https://insight.wfp.org/covid-19-will-almost-double-people-in-acute-hunger-by-end-of-2020-59df0c4a8072">cairteal billean neach a dh’fhaodadh a bhith an cunnart bho ghort</a> , feumar gnìomh luath a ghabhail gus biadh agus faochadh daonnachd a thoirt do na sgìrean as motha a tha ann an cunnart.</p><p> Aig an aon àm, tha feum air atharrachadh mòr air siostam bìdh is àiteachais na cruinne ma tha sinn gu bhith a’ beathachadh còrr is 690 millean neach a tha acrach an-diugh – agus an <a href="https://www.un.org/development/desa/en/news/population/world-population-prospects-2019.html">2 billean neach a bharrachd</a> a bhios san t-saoghal ro 2050. Tha e deatamach a bhith ag àrdachadh tarbhachd àiteachais agus gum bi dèanamh bìdh seasmhach gus cunnart an acrais a lùghdachadh.</p>'
+        targets:
+          target_2_1:
+            long_title: "Ro 2030, cuir às do dh’acras agus dèan cinnteach gum faigh a h-uile duine, gu sònraichte daoine bochda agus daoine ann an suidheachaidhean so-leònte, a’ gabhail a-steach leanaban, cothrom air biadh sàbhailte, beathachail agus biadh gu leòr fad na bliadhna."
+            short_title: "Cothrom aig a h-uile duine air biadh sàbhailte agus beathachail"
+          target_2_2:
+            long_title: "Ro 2030, cuir crìoch air a h-uile seòrsa de dhìth-beathachaidh, a’ gabhail a-steach a bhith a’ coileanadh, ro 2025, na targaidean a chaidh aontachadh gu h-eadar-nàiseanta a thaobh sgrogachadh agus crìonadh ann an clann fo aois 5 bliadhna, agus dèilig ri feumalachdan beathachaidh nigheanan a tha nan deugairean, boireannaich a tha trom le leanabh no aig a bheil pàiste air a’ bhroilleach agus seann daoine."
+            short_title: "Cuir crìoch air a h-uile seòrsa dìth-beathachaidh"
+          target_2_3:
+            long_title: "Ro 2030, dùblaich tarbhachd àiteachais agus teachd-a-steach luchd-dèanaimh bìdh air sgèile bheag, gu sònraichte boireannaich, tùsanaich, tuathanaich teaghlaich, iniltearean agus iasgairean, a’ gabhail a-steach ruigsinneachd thèarainte is cho-ionann air fearann, goireasan agus nighean tarbhach eile eòlas, seirbheisean ionmhais, margaidhean agus cothroman airson luach a chur ris agus airson cosnadh far tuathanasan."
+            short_title: "Dèan dùblachadh air tarbhachd agus teachd-a-steach luchd-dèanaimh bìdh air sgèile bheag"
+          target_2_4:
+            long_title: "Ro 2030, dèan cinnteach gu bheil siostaman dèanamh bìdh seasmhach agus cuir an gnìomh cleachdaidhean àiteachais seasmhach a mheudaicheas tarbhachd agus cruthachadh, a chuidicheas le bhith a’ cumail suas eag-shiostaman, a neartaicheas comas airson freagairt ri atharrachadh clìomaid, fìor dhroch shìde, tart, tuiltean agus mòr-thubaistean eile agus a leasaicheas càileachd fearainn is ùir mean air mhean."
+            short_title: "Cleachdaidhean Dèanamh Bidhe Seasmhach agus Àiteachais Seasmhach"
+          target_2_5:
+            long_title: "Ro 2020, cùm suas iomadachd ginteil sìol, lusan àitich agus beathaichean àitich agus dachaigheil agus na gnèithean fiadhaich co-cheangailte riutha, a’ gabhail a-steach tro bhancaichean sìl agus planntrais air an riaghladh gu làidir agus air an iomadachadh aig ìrean nàiseanta, roinneil agus eadar-nàiseanta, agus brosnaich ruigsinneachd do co-roinn cothromach de bhuannachdan a tha ag èirigh bho bhith a’ cleachdadh stòrasan ginteil agus eòlas traidiseanta co-cheangailte riutha, mar a chaidh aontachadh gu h-eadar-nàiseanta."
+            short_title: "Cùm an iomadachd ginteil ann an dèanamh biadh"
+          target_2_A:
+            long_title: "Cuir ri tasgadh, a’ gabhail a-steach tro cho-obrachadh eadar-nàiseanta leasaichte, ann am bun-structar dùthchail, rannsachadh agus seirbheisean leudachaidh àiteachais, leasachadh teicneòlais agus bancaichean ghineachan de phlanntrais is sprèidh gus comas tarbhachd àiteachais àrdachadh ann an dùthchannan fo leasachadh, gu sònraichte na dùthchannan as lugha leasaichte."
+            short_title: "Dèan tasgadh ann am Bun-structar Dùthchail, Rannsachadh Àiteachais, Teicneòlas agus Bancaichean Gine"
+          target_2_B:
+            long_title: "Ceartaich agus cuir casg air cuingealachaidhean malairt agus fiaraidhean ann am margaidhean àiteachais an t-saoghail, a’ gabhail a-steach a bhith a’ cuir às aig an aon am ri gach seòrsa subsadaidh às-mhalairt àiteachais agus a h-uile ceum às-mhalairt leis an aon bhuaidh, a rèir ùghdarras Cuairt Leasachaidh Doha."
+            short_title: "Cuir casg air cuingealachaidhean malairt àiteachais, fiaraidhean margaidh agus subsadaidhean às-mhalairt"
+          target_2_C:
+            long_title: "Gabh ri ceumannan gus dèanamh cinnteach gu bheil margaidhean bathar bìdh agus nithean co-cheangailte riutha ag obair gu ceart agus a’ comasachadh ruigsinneachd ann an deagh àm air fiosrachadh margaidh, a’ gabhail a-steach stòran bìdh, gus cuideachadh le bhith a’ lùghdachadh caochlaideachd ann am prìsean bìdh."
+            short_title: "Dèan cinnteach gu bheil margaidhean bathar bìdh seasmhach le cothrom air fiosrachadh ann an deagh àm"
+      goal_3:
+        title: "Deagh shlàinte is sunnd"
+        title_in_two_lines: "Deagh shlàinte \nis sunnd"
+        description: "Dèan cinnteach gum bi beatha fhallain aig daoine de gach aois agus brosnaich sunnd dhan a h-uile duine aig gach aois."
+        long_description: '<p>Tha e deatamach do leasachadh seasmhach a bhith a’ dèanamh cinnteach gu bheil beatha fhallain aig daoine agus a bhith a’ brosnachadh sunnd aig gach aois. An-dràsta, tha <a href="https://www.un.org/coronavirus">èiginn slàinte cruinneil</a> mu choinneamh an t-saoghail a tha eu-coltach ri gin eile - tha COVID-19 a’ sgaoileadh fulaing dhaoine, a’ dèanamh eaconamaidh na cruinne dì-sheasmhach agus a’ toirt droch bhuaidh air beatha nam billeanan de dhaoine air feadh na cruinne.</p><p> Ron ghalar sgaoilte, chaidh adhartas mòr a dhèanamh ann <a href="https://unstats.un.org/sdgs/report/2019/goal-03/">a bhith a’ leasachadh slàinte aig na milleanan de dhaoine</a> . Chaidh adhartas mòr a dhèanamh ann a bhith ag àrdachadh dùil-beatha agus a’ lughdachadh cuid de na h-adhbharan bàs cumanta co-cheangailte ri bàsmhorachd chloinne is màthraichean. Ach tha feum air barrachd oidhirpean gus cuir às do raon farsaing de ghalaran agus gus dèiligeadh ri mòran de chùisean slàinte a tha leantainneach agus a tha a’ tighinn am bàrr. Le bhith ag amas air maoineachadh nas èifeachdaiche a thoirt do shiostaman slàinte, slàintealachd agus slàinteachas nas fheàrr, agus barrachd ruigsinneachd air lighichean, faodar adhartas mòr a dhèanamh ann a bhith a’ cuideachadh le bhith a’ sàbhaladh beatha nam milleanan.</p><p> Tha suidheachaidhean-èiginn slàinte leithid COVID-19 nan cunnart cruinneil agus tha iad air sealltainn gu bheil feum mòr air ullachadh. Chomharraich Prògram Leasachaidh nan Dùthchannan Aonaichte eadar-dhealachaidhean mòra ann an <a href="https://www.undp.org/content/undp/en/home/news-centre/news/2020/COVID19_UNDP_data_dashboards_reveal_disparities_among_countries_to_cope_and_recover.html">comasan dhùthchannan gus dèiligeadh ri agus faighinn seachad air èiginn COVID-19</a> . Tha an galar sgaoilte na chomharra fìor chudromach gum feumar ullachadh airson suidheachaidhean-èiginn slàinte agus airson tasgadh ann an seirbheisean poblach èiginneach san 21mh linn.</p>'
+        targets:
+          target_3_1:
+            long_title: "Ro 2030, lughdaich an co-mheas an ìre bàsmhorachd mhàthaireil chruinneil gu nas lugha na 70 gach 100,000 breith beò."
+            short_title: "Lùghdaich bàsmhorachd màthaireil"
+          target_3_2:
+            long_title: "Ro 2030, cuir stad air bàsan leanaban air an ùr-bhreith agus clann fo 5 bliadhna a dh’aois a ghabhas a sheachnadh, leis a h-uile dùthaich ag amas air bàsmhorachd neonatal a lughdachadh gu co-dhiù 12 gach 1,000 breith beò agus bàsmhorachd fo aois 5 gu co-dhiù 25 gach 1,000 breith beò."
+            short_title: "Cuir crìoch air a h-uile bàs fo aois 5 bliadhna a ghabhas seachnadh"
+          target_3_3:
+            long_title: "Ro 2030, cuir crìoch air galaran sgaoilte AIDS, a’ chaitheamh, malaria agus galaran tropaigeach air nach eil mothachadh gu leòr agus cuir an-aghaidh hepatitis, galaran air an giùlan le uisge agus galaran gabhaltach eile."
+            short_title: "Cuir an-aghaidh galaran gabhaltach"
+          target_3_4:
+            long_title: "Ro 2030, lùghdaich bàsmhorachd ro-thràth bho ghalaran neo-sgaoilteach le trian tro ro-chasg agus làimhseachadh agus brosnaich slàinte agus sunnd inntinn."
+            short_title: "Lùghdaich ìrean bàsmhorachd bho ghalaran neo-sgaoilteach agus brosnaich Slàinte-Inntinn"
+          target_3_5:
+            long_title: "Neartaich ro-casg agus làimhseachadh ana-cleachdadh stuthan, a’ gabhail a-steach ana-cleachdadh dhrogaichean narcotic agus cleachdadh deoch-làidir ann an dòigh a nì cron."
+            short_title: "Cuir casg air agus a’ làimhseachadh ana-cleachdadh dhrogaichean is deoch làidir"
+          target_3_6:
+            long_title: "Ro 2020, lethich an àireamh de bhàsan is leòntan cruinne bho thubaistean rathaid."
+            short_title: "Lùghdaich Leòintean is Bàs air Rathaidean"
+          target_3_7:
+            long_title: "Ro 2030, dèan cinnteach gum bi cothrom uile-choitcheann air seirbheisean cùram slàinte gnèitheasach agus gintinn, a’ gabhail a-steach planadh teaghlaich, fiosrachadh agus foghlam, agus a bhith ag amalachadh slàinte gintinn ann an ro-innleachdan agus prògraman nàiseanta."
+            short_title: "Cothrom Uile-choitcheann air Cùram Gnè is Gintinn, Planadh Teaghlaich agus Foghlam"
+          target_3_8:
+            long_title: "Dèan cinnteach gu bheil seirbheisean slàinte uile-choitcheann ann, a’ gabhail a-steach dìon cunnart ionmhais, ruigsinneachd air seirbheisean cùram slàinte deatamach de dheagh chàileachd agus cothrom air cungaidhean is banachdaichean deatamach a tha sàbhailte, èifeachdach, agus de dheagh chàileachd agus air prìs reusanta do na h-uile."
+            short_title: "Cùram Slàinte Uile-choitcheann"
+          target_3_9:
+            long_title: "Ro 2030, lughdaich gu mòr an àireamh de bhàsan is ghalaran bho cheimigean cunnartach agus truailleadh èadhair, uisge is ùir."
+            short_title: "Lùghdaich tinneasan agus bàs bho cheimigean cunnartach agus bho thruailleadh"
+          target_3_A:
+            long_title: "Neartaich buileachadh Cùmhnant Frèam Buidheann Slàinte na Cruinne air Smachd Tombaca anns a h-uile dùthaich, mar a bhios iomchaidh."
+            short_title: "Cuir an gnìomh Cùmhnant Frèam WHO air smachd air tombaca"
+          target_3_B:
+            long_title: "Cuir taic ri rannsachadh agus cruthachadh bhanachdaichean agus cungaidhean-leighis airson galaran so-sgaoilidh agus neo-sgaoilidh a tha gu sònraichte a’ toirt buaidh air dùthchannan fo leasachadh, a’ toirt cothrom air cungaidhean is banachdaichean deatamach air prìs reusanta, a rèir Gairm Doha air Aonta TRIPS agus air Slàinte a’ Phobaill, a tha a’ daingneachadh còir dhùthchannan a tha fo leasachadh a bhith a’ cleachdadh na h-ullachaidhean anns an Aonta air Taobhan Co-cheangailte ri Malairt de Chòraichean Seilbh Inntleachdail gu h-iomlan a thaobh sùbailteachd gus slàinte a’ phobaill a dhìon, agus, gu sònraichte, thoir cothrom air cungaidhean-leigheis do na h-uile."
+            short_title: "Cuir taic ri Rannsachadh, Leasachadh agus Cothrom Coitcheann air Banachdaichean agus Cungaidhean-leigheis air Prìs Ruigsinneach "
+          target_3_C:
+            long_title: "Meudaich gu mòr ionmhas slàinte agus fastadh, leasachadh, trèanadh agus gleidheadh luchd-obrach slàinte ann an dùthchannan fo leasachadh, gu sònraichte anns na dùthchannan as lugha leasaichte agus Stàitean fo leasachadh a tha nan eilean beaga."
+            short_title: "Meudaich Maoineachadh Slàinte agus Thoir taic do Luchd-obrach Slàinte ann an Dùthchannan fo Leasachadh"
+          target_3_D:
+            long_title: "Neartaich comas gach dùthaich, gu sònraichte dùthchannan fo leasachadh, airson rabhadh tràth, lughdachadh cunnairt agus riaghladh chunnartan slàinte nàiseanta is cruinneil."
+            short_title: "Thoir piseach air siostaman rabhaidh tràth airson cunnartan slàinte cruinneil"
+      goal_4:
+        title: "Deagh fhoghlam"
+        title_in_two_lines: "Deagh \nfhoghlam"
+        description: "Deagh fhoghlam."
+        long_description: '<p>Tha foghlam a’ cur an comas gluasad sòisio-eaconamach agus tha e na phrìomh dhòigh air faighinn seachad air bochdainn. Thairis air na deich bliadhna a dh’fhalbh, chaidh adhartas mòr a dhèanamh le bhith a’ cur ri ruigsinneachd air foghlam agus ìrean clàraidh sgoile aig gach ìre, gu sònraichte do nigheanan. Ach a dh’aindeoin sin, bha <a href="http://uis.unesco.org/en/topic/out-school-children-and-youth">timcheall air 260 millean leanabh fhathast taobh a-muigh na sgoile</a> ann an 2018 - faisg air a’ chòigeamh cuid de shluagh na cruinne sa bhuidhinn aoise sin. Agus chan eil còrr is an dàrna leth de chlann is de dheugairean air feadh an t-saoghail <a href="https://unstats.un.org/sdgs/report/2019/goal-04/">a’ coileanadh nan ìrean comais as ìsle</a> ann an leughadh agus matamataig.</p><p> Ann an 2020, nuair a sgaoil an galar lèir-sgaoilte COVID-19 air feadh na cruinne, dh’ainmich mòr-chuid de dhùthchannan gun dùnadh iad na sgoiltean aca rè ùine, a’ toirt buaidh air còrr is 91 sa cheud de sgoilearan air feadh an t-saoghail. Ron Ghiblean 2020, bha faisg air <a href="https://en.unesco.org/covid19/educationresponse">1.6 billean leanabh is òganach taobh a-muigh na sgoile</a> . Agus dh’fheumadh faisg air <a href="https://www.un.org/sites/un2.un.org/files/policy_brief_on_covid_impact_on_children_16_april_2020.pdf">369 millean duine-cloinne a tha an urra ri biadh sgoile</a> beathachadh làitheil fhaighinn ann an dòighean eile.</p><p> Cha robh na h-uimhir de chloinn air a bhith taobh a-muigh na sgoile a-riamh aig an aon àm, a’ cur bacadh air ionnsachadh agus a’ toirt buaireadh air am beatha, gu sònraichte an fheadhainn as so-leònte agus air an iomall. Tha builean farsaing aig galar lèir-sgaoilte na cruinne a dh’fhaodadh a bhith na chunnart do na buannachdan a chaidh a choisinn gu cruaidh gus leasachadh a thoirt air foghlam cruinneil.</p>'
+        targets:
+          target_4_1:
+            long_title: "Ro 2030, dèan cinnteach gun cuir a h-uile nighean agus balach crìoch air foghlam bun-sgoile agus àrd-sgoile an-asgaidh, a tha cothromach agus de dheagh chàileachd, le builean ionnsachaidh iomchaidh agus èifeachdach Goal-4 a’ tighinn mar thoradh air seo."
+            short_title: "Foghlam bun-sgoile agus àrd-sgoile an-asgaidh"
+          target_4_2:
+            long_title: "Ro 2030, dèan cinnteach gum bi cothrom aig nigheanan is balach air leasachadh tràth, cùram agus foghlam ro-sgoile gus am bi iad deiseil airson foghlam bun-sgoile."
+            short_title: "Cothrom Co-ionann air Foghlam Ro-bhun-sgoile de Chàileachd àrd"
+          target_4_3:
+            long_title: "Ro 2030, dèan cinnteach gum bi cothrom co-ionann aig boireannaich is fireannaich air foghlam teicnigeach, dreuchdail agus treas ìre air prìs reusanta, a’ gabhail a-steach oilthigh."
+            short_title: "Cothrom Co-ionann air Foghlam Teicnigeach, Dreuchdail agus Àrd-ìre air Prìs Ruigsinneach"
+          target_4_4:
+            long_title: "Ro 2030, thoirt àrdachadh mòr air an àireamh de dh’òigridh is inbhich aig a bheil sgilean iomchaidh, a’ gabhail a-steach sgilean teicnigeach agus dreuchdail, airson cosnadh, obraichean matha agus tionnsgalachd."
+            short_title: "Meudaich an àireamh dhaoine le sgilean iomchaidh airson soirbheachas ionmhasail"
+          target_4_5:
+            long_title: "Ro 2030, cuir às do eadar-dhealachaidhean gnè ann am foghlam agus dèan cinnteach gum bi cothrom co-ionann aig gach ìre de dh’fhoghlam agus trèanadh dreuchdail do dhaoine so-leònte, a’ gabhail a-steach daoine le ciorraman, tùsanaich agus clann ann an suidheachaidhean so-leònte."
+            short_title: "Cuir às do leth-bhreith uile ann am foghlam"
+          target_4_6:
+            long_title: "Ro 2030, dèan cinnteach gun faigh an òigridh air fad agus cuid mhath de dh’inbhich, gach cuid fireannaich is boireannaich, sgilean litearrachd agus àireamhachd."
+            short_title: "Litearrachd agus Àireamhachd Uile-choitcheann"
+          target_4_7:
+            long_title: "Ro 2030, dèan cinnteach gum faigh a h-uile neach-ionnsachaidh an t-eòlas agus na sgilean a dh’fheumar gus leasachadh seasmhach a bhrosnachadh, a’ gabhail a-steach, tro fhoghlam airson leasachadh seasmhach agus dòighean-beatha seasmhach, còraichean daonna, co-ionannachd gnè, adhartachadh cultar sìthe agus neo-fhòirneart, saoranachd chruinneil agus meas air iomadachd chultarach agus na tha cultar a’ cur ri leasachadh seasmhach."
+            short_title: "Foghlam airson Leasachadh Seasmhach agus Saoranachd Chruinneil"
+          target_4_A:
+            long_title: "Tog agus àrdaich goireasan foghlaim a tha mothachail air clann, ciorram agus gnè agus a bheir seachad àrainneachdan ionnsachaidh sàbhailte, neo-ainneartach, in-ghabhalach agus èifeachdach do na h-uile."
+            short_title: "Tog agus àrdaich Sgoiltean In-ghabhalach is Sàbhailte"
+          target_4_B:
+            long_title: "Le 2020, leudaich gu mòr an àireamh de sgoilearachdan a tha rim faighinn le dùthchannan fo leasachadh air feadh na cruinne, gu sònraichte na dùthchannan as lugha leasaichte, Stàitean fo leasachadh a tha nan eileanan beaga agus dùthchannan Afraganach, airson clàradh ann am foghlam àrd-ìre, a’ toirt a-steach trèanadh dreuchdail agus teicneòlas fiosrachaidh is conaltraidh, prògraman teignigeach, innleadaireachd agus saidheansail, ann an dùthchannan leasaichte agus dùthchannan eile fo leasachadh."
+            short_title: "Leudaich Sgoilearachdan Foghlaim Àrd-ìre airson Dùthchannan fo Leasachadh"
+          target_4_C:
+            long_title: "Ro 2030, thoirt àrdachadh mòr air an t-solar de thidsearan le teisteanas, a’ gabhail a-steach tro cho-obrachadh eadar-nàiseanta airson trèanadh thidsearan ann an dùthchannan fo leasachadh, gu sònraichte na dùthchannan as lugha leasaichte agus stàitean eileanach beaga fo leasachadh."
+            short_title: "Meudaich an àireamh de thidsearan teisteanaichte ann an Dùthchannan fo Leasachadh"
+      goal_5:
+        title: "Co-ionnanachd gnè"
+        title_in_two_lines: "Co-ionnanachd \ngnè"
+        description: "Co-ionannachd gnè a choileanadh agus cumhachd a thoirt do gach boireannach is nighean."
+        long_description: '<p>Chan eil co-ionannachd gnè dìreach na còir dhaonna bhunaiteach, ach na bunait riatanach airson saoghal sìtheil, beairteach agus seasmhach.</p><p> Tha <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/gender-equality-womens-rights-in-review-key-facts-and-figures-en.pdf?la=en&vs=935">adhartas</a> air a bhith ann thar nan deicheadan mu dheireadh: tha barrachd nigheanan a’ dol dhan sgoil, chan eilear a’ toirt air an uiread de chlann-nighean pòsadh tràth, tha barrachd bhoireannaich a’ frithealadh ann am pàrlamaidean agus dreuchdan ceannardais, agus tha laghan gan ath-leasachadh gus co-ionannachd gnè adhartachadh.</p><p> A dh’aindeoin nam buannachdan sin, tha mòran <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/gender-equality-womens-rights-in-review-key-facts-and-figures-en.pdf?la=en&vs=935">dhùbhlain</a> ann fhathast: tha laghan a agus gnàthasan sòisealta a tha a’ cur ri lethbhreith fhathast cumanta, chan eil boireannaich fhathast gan riochdachadh gu leòr aig gach ìre de cheannas poilitigeach, agus tha 1 ann an 5 boireannaich is nigheanan eadar aois 15 agus 49 ag aithris gu bheil iad air fòirneart corporra no gnèitheasach fhulang. bho dhlùth chompanach sna 12 mìosan mu dheireadh.</p><p> Dh’fhaodadh buaidhean <a href="https://www.un.org/sites/un2.un.org/files/policy_brief_on_covid_impact_on_women_9_apr_2020_updated.pdf">a’ ghalair lèir-sgaoilte COVID-19 stad a chur air an adhartas chuibhrichte</a> a rinneadh air co-ionannachd gnè agus còraichean bhoireannach. Tha lèir-sgaoileadh a’ choròna-bhìorais a’ cur ri <a href="https://www.unfpa.org/sites/default/files/resource-pdf/COVID-19_A_Gender_Lens_Guidance_Note.pdf">neo-ionannachdan a th’ ann mar-thà</a> do bhoireannaich is nigheanan thar gach raon - bho shlàinte is an eaconamaidh, gu tèarainteachd agus dìon sòisealta.</p><p> Tha ròl neo-chothromach aig boireannaich ann a bhith a’ dèiligeadh ris a’ bhìoras, a’ gabhail a-steach mar luchd-obrach cùram slàinte aghaidh-ri-aghaidh agus luchd-cùraim aig an taigh. Tha obair cùraim gun phàigheadh do bhoireannaich air a dhol suas gu mòr mar thoradh air dùnadh sgoiltean agus feumalachdan nas motha aig seann daoine. Tha boireannaich cuideachd air am bualadh nas cruaidhe le buaidhean eaconamach COVID-19, leis gu bheil cuibhreann mòr aca ag obair ann am margaidhean obrach mì-chinnteach. Tha faisg air 60 sa cheud de bhoireannaich ag obair san eaconamaidh neo-fhoirmeil, a tha gan cur ann an cunnart nas motha a bhith a’ fàs bochd.</p><p> Tha an galar lèir-sgaoilte cuideachd air àrdachadh mòr adhbharachadh ann an <a href="https://www.unwomen.org/-/media/headquarters/attachments/sections/library/publications/2020/issue-brief-covid-19-and-ending-violence-against-women-and-girls-en.pdf?la=en&vs=5006">fòirneart an aghaidh bhoireannaich is nigheanan</a> . Le ceumannan glasaidh-sìos an sàs, tha mòran bhoireannaich glaiste aig an taigh leis na daoine a tha a’ dèanamh droch-dhìol orra, is duilgheadas aca a bhith a’ faighinn cothrom air seirbheisean a tha a’ fulang le gearraidhean is cuingeachaidhean. Tha dàta a tha a’ tighinn am bàrr a’ sealltainn, bho thòisich an galar lèir-sgaoilte, gu bheil fòirneart an aghaidh bhoireannaich is nigheanan - agus gu sònraichte fòirneart dachaigheil - air a dhol am meud.</p>'
+        targets:
+          target_5_1:
+            long_title: "Cuir crìoch air a h-uile seòrsa de leth-bhreith an aghaidh boireannaich is nigheanan anns gach àite."
+            short_title: "Cuir crìoch air leth-bhreith an aghaidh bhoireannaich is nigheanan"
+          target_5_2:
+            long_title: "Cuir às do gach seòrsa fòirneart an-aghaidh boireannaich is nigheanan uile anns an raon phoblach agus phrìobhaideach, a’ gabhail a-steach malairt dhaoine agus dubh-shaothrachadh feise is eile."
+            short_title: "Cuir crìoch air fòirneart an-aghaidh agus mì-làimhseachadh boireannaich agus nigheanan"
+          target_5_3:
+            long_title: "Cuir às do gach cleachdadh cronail, leithid pòsadh chloinne, pòsadh tràth is pòsadh co-èignichte agus milleadh buill-ghineamhainn nam ban."
+            short_title: "Cuir às do Phòsaidhean Co-èignichte agus Milleadh Buill-ghineamhainn nam Ban"
+          target_5_4:
+            long_title: "Aithnich agus cuir luach air cùram gun phàigheadh agus obair dhachaigheil tro bhith a’ toirt seachad seirbheisean poblach, bun-structar agus poileasaidhean dìon sòisealta agus a bhith a’ brosnachadh uallach co-roinnte taobh a-staigh an taighe agus an teaghlaich mar a tha iomchaidh san dùthaich sin."
+            short_title: "Cuir luach air cùram gun phàigheadh agus brosnaich Co-roinn Dleastanasan Dachaigh"
+          target_5_5:
+            long_title: "Dèan cinnteach gum bi làn chom-pàirteachadh èifeachdach aig boireannaich agus co-ionannachd chothroman airson ceannardas aig gach ìre de cho-dhùnaidhean ann am beatha phoilitigeach, eaconamach agus phoblach."
+            short_title: "Dèan cinnteach gum bi làn chom-pàirteachadh ann an ceannas agus dèanamh cho-dhùnaidhean"
+          target_5_6:
+            long_title: "Dèan cinnteach gum bi cothrom uile-choitcheann air còraichean slàinte feiseil agus còraichean gintinn mar a chaidh aontachadh a rèir Prògram Gnìomh na Co-labhairt Eadar-nàiseanta air Sluagh is Leasachadh agus Àrd-ùrlar Beijing airson Gnìomh agus sgrìobhainnean builean nan co-labhairtean ath-bhreithneachaidh aca."
+            short_title: "Cothrom aig a h-uile duine air Slàinte is Còraichean Gintinn"
+          target_5_A:
+            long_title: "Dèan ath-leasachaidhean gus còraichean co-ionann a thoirt do bhoireannaich air goireasan eaconamach, a bharrachd air ruigsinneachd air seilbh agus smachd air fearann agus seòrsaichean seilbh eile, seirbheisean ionmhais, dìleab agus goireasan nàdarra, a rèir laghan nàiseanta."
+            short_title: "Còraichean Co-ionann air Goireasan Eaconamach, Seilbheadaireachd agus Seirbheisean Ionmhais"
+          target_5_B:
+            long_title: "Cuir ri cleachdadh teicneòlas comasachaidh, gu sònraichte teicneòlas fiosrachaidh is conaltraidh, gus cumhachd a thoirt do bhoireannaich."
+            short_title: "Brosnaich Cumhachdachadh Boireannaich tro Theicneòlas"
+          target_5_C:
+            long_title: "Gabh ri agus neartaich poileasaidhean làidir agus reachdas a ghabhas cur an gnìomh airson co-ionannachd gnè a thoirt air adhart agus gus cumhachd a thoirt do bhoireannaich is nigheanan aig gach ìre."
+            short_title: "Gabh ri agus Neartaich Poileasaidhean agus Reachdas a ghabhas a chur an gnìomh airson Co-ionannachd Gnè"
+      goal_6:
+        title: "Uisge glan agus slàintealachd"
+        title_in_two_lines: "Uisge glan \nagus slàintealachd"
+        description: "Dèan cinnteach gu bheil cothrom air uisge agus slàinteachas do na h-uile."
+        long_description: '<p>Ged a rinneadh adhartas mòr ann a bhith ag àrdachadh ruigsinneachd air uisge-òil glan agus air slàintealachd, tha na billeanan de dhaoine - gu ìre mhòr ann an sgìrean dùthchail - fhathast às aonais nan seirbheisean bunaiteach sin. Air feadh an t-saoghail, <a href="https://www.who.int/news-room/detail/18-06-2019-1-in-3-people-globally-do-not-have-access-to-safe-drinking-water-unicef-who">chan eil cothrom aig aonan às gach triùir air uisge-òil sàbhailte</a> , <a href="https://www.unwater.org/water-facts/water-sanitation-and-hygiene/">chan eil goireas nighe làimhe bunaiteach aig dithis às gach còignear</a> le siabann is uisge, agus tha còrr is <a href="https://news.un.org/en/story/2019/11/1051561">673 millean neach fhathast a’ cacadh a-muigh</a> .</p><p> Tha galar lèir-sgaoilte COVID-19 air sealltainn cho cudromach ’s a tha slàinteachas, slàintealachd agus ruigsinneachd iomchaidh air uisge glan airson casg a chur air agus smachd a cumail air galaran. <a href="https://www.unwater.org/water-facts/handhygiene/">Bidh slàinteachas làimhe a’ sàbhaladh beatha</a> . A rèir Buidheann Slàinte na Cruinne, <a href="https://www.who.int/news-room/events/detail/2020/05/05/default-calendar/hand-hygiene-day">is e nigheadaireachd làimhe fear de na gnìomhan as èifeachdaiche as urrainn dhut dèanamh</a> gus sgaoileadh nam pathogen a lughdachadh agus gus casg a chur air galaran, a’ gabhail a-steach a’ bhìoras COVID-19. Ach tha dìth uisge sàbhailte fhathast aig billeanan de dhaoine, agus chan eil maoineachadh iomchaidh ann.</p>'
+        targets:
+          target_6_1:
+            long_title: "Ro 2030, faigh cothrom uile-choitcheann agus cothromach air uisge òil sàbhailte agus air prìs reusanta do na h-uile."
+            short_title: "Uisge òil sàbhailte agus aig prìs ruigsinneach"
+          target_6_2:
+            long_title: "Ro 2030, faigh cothrom air slàintealachd agus slàinteachas iomchaidh agus cothromach do na h-uile agus cuir crìoch air cacadh a-muigh, a’ toirt aire shònraichte do dh’fheumalachdan boireannaich is nigheanan agus an fheadhainn ann an suidheachaidhean so-leònte."
+            short_title: "Cuir crìoch air cacadh a-muigh agus thoir cothrom air slàinteachas agus slàintealachd"
+          target_6_3:
+            long_title: "Ro 2030, thoir piseach air càileachd uisge le bhith a’ lùghdachadh truailleadh, cuir às do dhumpadh agus lùghdachadh a bhith a’ leigeil cheimigean agus stuthan cunnartach ma sgaoil, a’ lùghdachadh a’ chuibhreann de dh’uisge-caithte gun làimhseachadh agus ag àrdachadh gu mòr ath-chuairteachadh agus ath-chleachdadh sàbhailte air feadh na cruinne."
+            short_title: "Cuir ri càileachd uisge, làimhseachadh uisge-caithte agus ath-chleachdadh sàbhailte"
+          target_6_4:
+            long_title: "Ro 2030, àrdaich èifeachdas cleachdadh uisge gu mòr thar gach roinn dèan gu bheil tarraing agus solar fìor-uisge seasmhach ann gus dèiligeadh ri gainnead uisge agus lùghdaich gu mòr an àireamh de dhaoine a tha a’ fulang bho ghainnead uisge."
+            short_title: "Meudaich Èifeachdas Cleachdadh Uisge agus Dèan cinnteach gu bheil solar fìor-uisge ann"
+          target_6_5:
+            long_title: "Ro 2030, cuir an gnìomh riaghladh ghoireasan uisge amalaichte aig gach ìre, a’ gabhail a-steach tro cho-obrachadh thar-chrìochan mar a bhios iomchaidh."
+            short_title: "Cur an gnìomh Riaghladh Goireasan Uisge Amalaichte"
+          target_6_6:
+            long_title: "Ro 2020, dìon agus cuir air ais eag-shiostaman co-cheangailte ri uisge, a’ gabhail a-steach beanntan, coilltean, talamh fliuch, aibhnichean, clach-uisge agus lochan."
+            short_title: "Dìon agus ath-nuadhachadh eag-shiostaman co-cheangailte ri uisge"
+          target_6_A:
+            long_title: "Ro 2030, leudaich co-obrachadh eadar-nàiseanta agus taic togail comas do dhùthchannan fo leasachadh ann an gnìomhan agus prògraman co-cheangailte ri uisge agus slàintealachd, a’ gabhail a-steach buain uisge, dì-salachadh, èifeachdas uisge, làimhseachadh uisge-caithte, teicneòlasan ath-chuairteachadh agus ath-chleachdadh."
+            short_title: "Leudaich taic le uisge is slàintealachd gu dùthchannan fo leasachadh"
+          target_6_B:
+            long_title: "Thoirt taic do agus neartaich com-pàirteachadh choimhearsnachdan ionadail ann a bhith a’ toirt piseach air riaghladh uisge is slàintealachd."
+            short_title: "Cuir taic ri Com-pàirt Ionadail ann an Stiùireadh Uisge is Slàintealachd"
+      goal_7:
+        title: "Lùth glan is air prìs reusanta"
+        title_in_two_lines: "Lùth glan is \nair prìs reusanta"
+        description: "Dèanamh cinnteach gum bi cothrom air lùths earbsach, seasmhach agus ùr-nodha agus air prìs reusanta."
+        long_description: '<p>Tha an saoghal a’ dèanamh <a href="https://unstats.un.org/sdgs/report/2019/goal-07/">adhartas a dh’ionnsaigh Amas 7</a> , le comharran brosnachail gu bheil lùths a’ fàs nas seasmhaiche agus gu bheil e ri fhaighinn gu farsaing. Tha ruigsinneachd air dealan ann an dùthchannan bochda air tòiseachadh air luathachadh, tha èifeachdas lùtha a’ sìor dhol am feabhas, agus tha lùth ath-nuadhachail a’ dèanamh buannachdan mòra ann an roinn an dealain.</p><p> Ach a dh’aindeoin sin, tha feum air aire nas cuimsichte gus ruigsinneachd air connadh agus teicneòlasan còcaireachd glan is sàbhailte a leasachadh airson 3 billean neach, gus cleachdadh lùth ath-nuadhachail a leudachadh taobh a-muigh roinn an dealain, agus gus dealan a mheudachadh ann an Afraga fon t-Sahara.</p><p> Tha <a href="https://trackingsdg7.esmap.org/">an Aithisg Adhartais Lùtha a’</a> na deas-bhòrd cruinneil gus adhartas a chlàradh a thaobh ruigsinneachd lùths, èifeachdas lùths agus lùths ath-nuadhachail. Bidh e a’ measadh an adhartais a rinn gach dùthaich air na trì colbhan sin agus a’ toirt dealbh dhuinn air dè cho fada ‘s a tha sinn bho bhith a’ coileanadh targaidean Amasan Leasachadh Seasmhach 2030.</p>'
+        targets:
+          target_7_1:
+            long_title: "Ro 2030, dèan cinnteach gum bi cothrom uile-choitcheann air seirbheisean lùths air prìs reusanta, a tha earbsach agus ùr-nodha."
+            short_title: "Cothrom uile-choitcheann air lùth an latha an-diugh"
+          target_7_2:
+            long_title: "Ro 2030, thoir àrdachadh mòr air a’ chuibhreann de lùths ath-nuadhachail ann am measgachadh lùths na cruinne."
+            short_title: "Meudachadh an àireamh sa cheud de lùth ath-nuadhachail"
+          target_7_3:
+            long_title: "Ro 2030, dùblaich an ìre leasachaidh cruinneil air èifeachdas lùths."
+            short_title: "Dèan dùblachadh air an àrdachadh ann an èifeachd lùtha"
+          target_7_A:
+            long_title: "Ro 2030, leasaich co-obrachadh eadar-nàiseanta gus cothrom air rannsachadh agus teicneòlas lùths glan, a’ gabhail a-steach lùths ath-nuadhachail, èifeachdas lùths agus teicneòlas connaidh fosail adhartach is nas glaine, agus brosnaich tasgadh ann am bun-structar lùths agus teicneòlas lùths glan."
+            short_title: "Brosnaich Cothrom air Rannsachadh, Teicneòlas agus Tasgadh ann an Lùth Glan"
+          target_7_B:
+            long_title: "Ro 2030, leudaich bun-structar agus ùrachadh teicneòlas airson a bhith a’ toirt seachad seirbheisean lùths ùr-nodha agus seasmhach do na h-uile ann an dùthchannan fo leasachadh, gu sònraichte na dùthchannan as lugha leasaichte, Stàitean fo leasachadh a tha nan eileanan beaga, agus dùthchannan fo leasachadh tìr-dhruidte, a rèir am prògraman taic fa leth."
+            short_title: "Leudaich agus àrdaich seirbheisean lùtha airson dùthchannan fo leasachadh"
+      goal_8:
+        title: "Deagh obraichean agus fàs eaconamach"
+        title_in_two_lines: "Deagh obraichean \nagus fàs eaconamach"
+        description: "Brosnaich fàs eaconamach in-ghabhalach agus seasmhach, cosnadh agus obair mhath dha na h-uile."
+        long_description: '<p>Is urrainn fàs eaconamach seasmhach agus in-ghabhalach adhartas a stiùireadh, obraichean iomchaidh a chruthachadh do na h-uile agus inbhean bith-beò a leasachadh.</p><p> Tha COVID-19 air <a href="https://www.un.org/sites/un2.un.org/files/sg_report_socio-economic_impact_of_covid19.pdf">droch bhuaidh a thoirt air beatha nam billeanan de dhaoine</a> agus air eaconamaidh na cruinne a chur ann an cunnart. Tha a’ Mhaoin-airgid Eadar-nàiseanta (IMF) an dùil gum bi <a href="https://blogs.imf.org/2020/04/14/the-great-lockdown-worst-economic-downturn-since-the-great-depression/">crìonadh eaconamach san t-saoghal</a> -a cheart cho dona no nas miosa na ann an 2009. Mar a tha call obrach a’ dol am meud, tha a’ Bhuidheann Làbarach Eadar-nàiseanta a’ meas gu bheil <a href="https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_743036/lang--en/index.htm">faisg air an dàrna de leth luchd-obrach na cruinne ann an cunnart</a> am beòshlaint a chall.</p><p> <a href="https://developmentfinance.un.org/press-release-financing-sustainable-development-report-2020">Fiù ’s mus do thòisich COVID-19</a> , bha coltas ann an aon às gach còig dùthchannan - dachaigh do bhilleanan de dhaoine a tha beò ann am bochdainn - gum biodh teachd-a-steach per capita gun àrdachadh no a’ crìonadh ann an 2020. A-nis, tha na buillean <a href="https://developmentfinance.un.org/press-release-financing-sustainable-development-report-2020">eaconamach is ionmhais</a> co-cheangailte ri COVID-19 - mar eisimpleir, brisidhean air toradh gnìomhachais, prìsean bathar-amh a’ tuiteam, caochlaideachd sa mhargaidh ionmhais, agus fàs ann an neo-thèarainteachd - a’ cur às dhan fhàs eaconamach a tha mar-thà meadhanach agus a’ cur ri cunnartan nas motha bho fhactaran eile.</p>'
+        targets:
+          target_8_1:
+            long_title: "Cùm suas fàs eaconamach per capita a rèir suidheachaidhean nàiseanta agus, gu sònraichte, faigh co-dhiù fàs e 7 sa cheud ann an GGP gach bliadhna anns na dùthchannan as lugha leasaichte."
+            short_title: "Fàs Ionmhasail Seasmhach"
+          target_8_2:
+            long_title: "Faigh ìrean nas àirde de tharbhachd eaconamach tro iomadachadh, ùrachadh teicneòlach agus ùr-ghnàthachadh, a’ gabhail a-steach fòcas air roinnean àrd-luach-leasaichte agus a tha dian a thaobh obrach."
+            short_title: "Dèan iomadachadh, ùr-ghnàthachadh agus ùrachadh airson tarbhachd eaconamach"
+          target_8_3:
+            long_title: "Brosnaich poileasaidhean a tha ag amas air leasachadh a bheir taic do ghnìomhachd tarbhach, air cruthachadh obraichean matha, tionnsgalachd, cruthachalachd agus ùr-ghnàthachadh, agus a bhrosnaicheas cur an gnìomh agus fàs meanbh-iomairtean, iomairtean beaga is meadhanach, a’ gabhail a-steach tro chothrom air seirbheisean ionmhais."
+            short_title: "Brosnaich Poileasaidhean gus Taic a thoirt do Chruthachadh Obrach agus gus Fàs a thoirt air Iomairtean"
+          target_8_4:
+            long_title: "Leasaich mean air mhean, gu 2030, èifeachdas stòrasan cruinne ann an caitheamh is dèanamh agus feuch ri fàs eaconamach a dhì-cheangal bho mhilleadh àrainneachdail, a rèir frèam 10-bliadhna nam phrògraman air caitheamh is dèanamh seasmhach, le dùthchannan leasaichte aig an stiùir."
+            short_title: "Cuir ri èifeachdas ghoireasan ann an caitheamh is dèanamh"
+          target_8_5:
+            long_title: "Ro 2030, faigh cosnadh làn agus tarbhach agus obair fhreagarrach do gach boireannach is fireannach, a’ gabhail a-steach do dhaoine òga agus daoine air a bheil ciorraman, agus le pàigheadh co-ionann airson obair leis an aon luach."
+            short_title: "Làn-chosnadh agus obair reusanta le tuarastal co-ionann"
+          target_8_6:
+            long_title: "Ro 2020, thoirt lùghdachadh mòr air a’ chuibhreann de dhaoine òga nach eil ann an cosnadh, foghlam no trèanadh."
+            short_title: "Brosnaich Cosnadh, Foghlam agus Trèanadh Òigridh"
+          target_8_7:
+            long_title: "Gabh ceumannan èifeachdach sa bhad gus cuir às do shaothair èignichte, cuir crìoch air nua-thràilleachd agus malairt dhaoine agus dèan cinnteach gun tèid casg a chur air agus gun tèid cur às do na seòrsaichean saothair chloinne as miosa, a’ gabhail a-steach fastadh agus cleachdadh saighdearan chloinne, agus ro 2025 cuir crìoch air saothair chloinne den a h-uile seòrsa."
+            short_title: "Cuir crìoch air nua-tràilleachd, malairt dhaoine agus saothair chloinne"
+          target_8_8:
+            long_title: "Dìon còraichean obrach agus brosnaich àrainneachdan obrach sàbhailte agus tèarainte dhan a h-uile neach-obrach, a’ gabhail a-steach luchd-obrach imrich, gu sònraichte boireannaich a tha nan imrichean, agus an fheadhainn ann an cosnadh cugallach."
+            short_title: "Dìon Còraichean Luchd-obrach agus Brosnaich Àrainneachdan Obrach Sàbhailte"
+          target_8_9:
+            long_title: "Ro 2030, cruthaich agus cuir an gnìomh poileasaidhean gus turasachd seasmhach a bhrosnachadh a chruthaicheas obraichean agus a bhrosnaicheas cultar agus toraidhean ionadail."
+            short_title: "Brosnaich Turasachd Bhuannachdail is Sheasmhach"
+          target_8_10:
+            long_title: "Neartaich comas ionadan ionmhais dachaigheil gus cothrom air bancaireachd, àrachas agus seirbheisean ionmhais a bhrosnachadh agus a leudachadh do na h-uile."
+            short_title: "Cothrom uile-choitcheann air bancaireachd, àrachas agus seirbheisean ionmhais"
+          target_8_A:
+            long_title: "Meudaich Taic Malairt do dhùthchannan fo leasachadh, gu sònraichte na dùthchannan as lugha leasaichte, a’ gabhail a-steach tron Fhrèam-obrach Amalaichte Leasaichte airson Taic Teicnigeach Co-cheangailte ri Malairt do na Dùthchannan as Lugha Leasaiche."
+            short_title: "Meudaich Cobhair airson Taic Malairt"
+          target_8_B:
+            long_title: "Ro 2020, cruthaich agus cuir an gnìomh ro-innleachd chruinneil airson cosnadh òigridh agus cuir an gnìomh Aonta Obraichean Cruinneil na Buidhne Làbaraich Eadar-nàiseanta."
+            short_title: "Cruthaich Ro-innleachd Cosnaidh Òigridh Cruinneil"
+      goal_9:
+        title: "Gnìomhachas, ùr-ghnàthachas agus bun-structar"
+        title_in_two_lines: "Gnìomhachas, ùr-ghnàthachas \nagus bun-structar"
+        description: "Tog bun-structar seasmhach, brosnaich gnìomhachasadh seasmhach agus àrach ùr-ghnàthachadh."
+        long_description: '<p>Faodaidh gnìomhachasadh in-ghabhalach agus seasmhach, còmhla ri <a href="https://unstats.un.org/sdgs/report/2019/goal-09/">ùr-ghnàthachadh agus bun-structar</a>, neartan eaconamach fiùghantach agus farpaiseach a sgaoileadh a chruthaicheas cosnadh agus teachd-a-steach. Tha prìomh phàirt aca ann a bhith a’ toirt a-steach agus ag adhartachadh theicneòlasan ùra, a’ comasachadh malairt eadar-nàiseanta agus a’ comasachadh cleachdadh èifeachdach de ghoireasan.</p><p> Ach, tha slighe fhada ri dhol fhathast aig an t-saoghal gus làn fheum a dhèanamh den chomas seo. Feumaidh na dùthchannan as lugha leasaichte, gu sònraichte, leasachadh na roinne saothrachaidh aca a luathachadh ma tha iad gu bhith a’ coileanadh targaid 2030, agus àrdachadh a dhèanamh air tasgadh ann an rannsachadh saidheansail agus ùr-ghnàthachadh.</p><p> Tha fàs saothrachaidh cruinneil air a bhith a’ crìonadh mean air mhean, eadhon mus do thòisich an galar lèir-sgaoilte COVID-19. Tha an galar lèir-sgaoilte <a href="https://unctad.org/en/pages/newsdetails.aspx?OriginalVersionID=2297">a’ bualadh gu cruaidh air gnìomhachasan saothrachaidh </a> agus ag adhbharachadh brisidhean ann an sèineachan luach agus solar thoraidhean cruinneil.</p><p> Tha ùr-ghnàthachadh agus adhartas teicneòlach deatamach ann a bhith a’ lorg fhuasglaidhean maireannach an dà chuid do dhùbhlain eaconamach is àrainneachdail, leithid barrachd ghoireasan agus lùth-èifeachdas. Gu cruinneil, mheudaich <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">tasgadh ann an rannsachadh is leasachadh</a> (R&D) mar chuibhreann de GDP bho 1.5 sa cheud ann an 2000 gu 1.7 sa cheud ann an 2015 agus is gann gun do dh’atharraich e gus 2017, ach cha robh e ach nas lugha na 1 sa cheud ann an roinnean fo leasachadh.</p><p> A thaobh bun-structair conaltraidh, tha còrr air leth de shluagh an t-saoghail a-nis air-loidhne agus tha cha mhòr sluagh an t-saoghail gu lèir a’ fuireach ann an sgìre a tha còmhdaichte le lìonra gluasadach. Thathar a’ meas, ann an 2019, gun robh <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">96.5 sa cheud còmhdaichte le lìonra 2G co-dhiù</a> .</p><p> Tha an galar lèir-sgaoilte an corònabhìoras air nochdadh gu bheil <a href="https://www.unescap.org/blog/covid-19-reveals-urgent-need-resilient-infrastructure">feum èiginneach air bun-structar tapaidh</a> . Tha am Banca Leasachaidh Àisianach a’ toirt fa-near gu bheil bun-structar èiginneach san roinn fhathast fada bho bhith iomchaidh ann am mòran dhùthchannan, a dh’aindeoin an fhàis agus an leasachaidh eaconamach luath a tha air a bhith san roinn thar nan deich bliadhna a dh’ fhalbh. Tha <a href="https://www.unescap.org/publications/economic-and-social-survey-asia-and-pacific-2019-ambitions-beyond-growth">Sgrùdadh Eaconamach is Sòisealta Àisia agus a’ Chuan Shèimh</a> a’ nochdadh gum feum tasgadh a bharrachd de $434 billean gach bliadhna airson bun-structar a tha seasmhach ri mòr-thubaistean agus atharrachadh na gnàth-shìde. Dh’fhaodadh gum feum an t-suim seo a bhith fiùs nas motha ann an cuid de dh’fho-sgìrean, leithid stàitean fo leasachadh a tha nan eileanan beaga sa Chuain Shèimh.</p>'
+        targets:
+          target_9_1:
+            long_title: "Cruthaich bun-structar earbsach, seasmhach agus ath-leumach de dheagh chàileachd, a’ gabhail a-steach bun-structar roinneil agus tar-chrìochan, gus taic a thoirt do leasachadh eaconamach agus sunnd daonna, le fòcas air ruigsinneachd cothromach agus air pris reusanta do na h-uile."
+            short_title: "Leasaich Bun-structaran Seasmhach, Ath-leumach agus In-ghabhalach"
+          target_9_2:
+            long_title: "Brosnaich gnìomhachasadh in-ghabhalach agus seasmhach agus, ro 2030, àrdaich gu mòr an cuibhreann de chosnadh aig saothrachadh agus GDP, a rèir suidheachaidhean nàiseanta, agus dùblaich a chuibhreann anns na dùthchannan as lugha leasaichte."
+            short_title: "Brosnaich Gnìomhachasadh In-ghabhalach is Seasmhach"
+          target_9_3:
+            long_title: "Meudaich ruigsinneachd iomairtean gnìomhachais beaga agus eile, gu sònraichte ann an dùthchannan fo leasachadh, air seirbheisean ionmhais, a’ gabhail a-steach creideas air prìs ruigsinneach, agus an amalachadh ann an sèineachan luach agus margaidhean."
+            short_title: "Meudachadh Cothrom air Seirbheisean Ionmhais agus Margaidean"
+          target_9_4:
+            long_title: "Ro 2030, ùraich bun-structair agus ais-dhealbhaich gnìomhachasan gus am bi iad seasmhach, le barrachd èifeachdais ann an cleachdadh ghoireasan agus ìre cleachdaidh nas àirde airson teicneòlasan agus pròiseasan gnìomhachais a tha math dhan àrainneachd, leis a h-uile dùthaich a’ gabhail cheuman a rèir an comasan fa leth."
+            short_title: "Dèan ùrachadh air a h-uile gnìomhachas agus bun-structar airson seasmhachd"
+          target_9_5:
+            long_title: "Cuir ri rannsachadh saidheansail, àrdaich comasan teicneòlach roinnean gnìomhachais anns a h-uile dùthaich, gu sònraichte dùthchannan fo leasachadh, a’ gabhail a-steach, ro 2030, a bhith a’ brosnachadh ùr-ghnàthachadh agus a’ meudachadh na h-àireimh gu mòr de luchd-obrach rannsachaidh is leasachaidh gach 1 millean neach agus caiteachas rannsachaidh is leasachaidh poblach is prìobhaideach."
+            short_title: "Cuir ri rannsachadh agus àrdaich teicneòlasan gnìomhachais"
+          target_9_A:
+            long_title: "Cuir an comas leasachadh bun-structair seasmhach agus ath-leumach ann an dùthchannan fo leasachadh tro thaic ionmhasail, teicneòlach agus teignigeach do dhùthchannan Afraganach, na dùthchannan as lugha leasaichte, dùthchannan fo leasachadh tìr-dhruidte agus stàitean fo leasachadh a tha nan eileanan beaga."
+            short_title: "Cuidich le Leasachadh Bun-structair Seasmhach airson Dùthchannan fo Leasachadh"
+          target_9_B:
+            long_title: "Cuir taic ri leasachadh teicneòlas dachaigheil, rannsachadh agus ùr-ghnàthachadh ann an dùthchannan fo leasachadh, a’ gabhail a-steach le bhith a’ dèanamh cinnteach gu bheil àrainneachd poileasaidh ann a tha cuideachail do, am measg rudan eile, iomadachadh gnìomhachasail agus luach a bharrachd air bathar."
+            short_title: "Cuir taic ri Leasachadh Teicneòlais Dachaigheil agus Iomadachadh Gnìomhachail"
+          target_9_C:
+            long_title: "Meudaich gu mòr ruigsinneachd air teicneòlas fiosrachaidh is conaltraidh agus feuch ri ruigsinneachd uile-choitcheann agus air pris reusanta a thoirt seachad dhan eadar-lìn anns na dùthchannan as lugha leasaichte ro 2020."
+            short_title: "Cothrom Coitcheann air Teicneòlas Fiosrachaidh is Conaltraidh"
+      goal_10:
+        title: "A’ lùghdachadh neo-ionannachd"
+        title_in_two_lines: "A’ lùghdachadh \nneo-ionannachd"
+        description: "Lùghdaich neo-ionannachd taobh a-staigh agus eadar dùthchannan."
+        long_description: '<p>Tha lùghdachadh neo-ionannachd agus dèanamh cinnteach nach tèid duine fhàgail air dheireadh deatamach ann a bhith a’ coileanadh nan Amasan Leasachadh Seasmhach.</p><p> Tha neo-ionannachd taobh a-staigh agus am measg dhùthchannan na adhbhar dragh leantainneach. A dh’aindeoin cuid de chomharran adhartach a thaobh lùghdachadh neo-ionannachd ann an cuid de dhòighean, leithid lùghdachadh neo-ionannachd teachd-a-steach coimeasach ann an cuid de dhùthchannan agus inbhe malairt fàbharach a’ toirt buannachd do dhùthchannan le teachd-a-steach ìosal, tha <a href="https://unstats.un.org/sdgs/report/2019/goal-10/">neo-ionannachd ann fhathast</a> .</p><p> <a href="https://www.un.org/sustainabledevelopment/goal-of-the-month-may-2020">Tha COVID-19 air na neo-ionannachdan a th’ ann a dhoimhneachadh</a> , a’ bualadh as cruaidhe air na coimhearsnachdan as bochda agus as so-leònte. Tha e air cuideam a chur air neo-ionannachd eaconamach agus lìn shàbhailteachd shòisealta chugallach a dh’fhàgas coimhearsnachdan so-leònte a bhith a’ fulang leis an èiginn. Aig an aon àm, tha neo-ionannachdan sòisealta, poilitigeach agus eaconamach air buaidh a’ ghalair lèir-sgaoilte àrdachadh.</p><p> A thaobh na h-eaconamaidh, tha an galar lèir-sgaoilte COVID-19 air àrdachadh mòr a thoirt air <a href="https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_743036/lang--en/index.htm">cinn-cosnaidh</a> na cruinne agus air teachd-a-steach luchd-obrach a lùghdachadh gu mòr.</p><p> Tha COVID-19 cuideachd na chunnart air an adhartas chuibhrichte a rinneadh <a href="https://data.unwomen.org/resources/covid-19-emerging-gender-data-and-why-it-matters">a thaobh co-ionannachd gnè</a> agus còraichean bhoireannach thar nan deicheadan a dh’fhalbh. Air feadh gach raon, bho shlàinte gu eaconamaidh, tèarainteachd gu dìon sòisealta, tha buaidhean COVID-19 air a dhèanamh nas miosa do bhoireannaich is nigheanan dìreach mar thoradh air an gnè aca.</p><p> Tha neo-ionannachd cuideachd a’ dol am miosad airson <a href="https://www.un.org/sites/un2.un.org/files/un_policy_brief_on_human_rights_and_covid_23_april_2020.pdf">àireamhan so-leònte</a> ann an dùthchannan le siostaman slàinte nas laige agus dùthchannan far a bheil suidheachadh èiginn ann mar-thà. Tha fògarraich agus imrichean, a bharrachd air tùsanaich, seann daoine, daoine le ciorraman agus clann gu sònraichte ann an cunnart a bhith air an dearmad. Agus <a href="https://www.un.org/en/coronavirus/covid-19-un-counters-pandemic-related-hate-and-xenophobia">tha fuath-chainnt a tha</a> ag amas air buidhnean so-leònte ag èirigh.</p>'
+        targets:
+          target_10_1:
+            long_title: "Ro 2030, mean air mhean, coilean agus cum suas fàs teachd a-steach aig ìre nas àirde na a’ chuibheasachd nàiseanta airson nan 40 sa cheud as ìsle den t-sluagh."
+            short_title: "Lùghdaich neo-ionannachd teachd a-steach"
+          target_10_2:
+            long_title: "Ro 2030, thoir cumhachd do na h-uile agus adhartaich in-ghabhail sòisealta, eaconamach agus poilitigeach do na h-uile, ge bith dè an aois, gnè, ciorram, cinneadh, tùs, creideamh, inbhe eaconamach no inbhe eile a th’ aca."
+            short_title: "Brosnaich In-ghabhail Sòisealta, Eaconamach agus Poilitigeach Uile-choitcheann"
+          target_10_3:
+            long_title: "Dèan cinnteach gu bheil co-ionannachd chothroman ann agus lughdaich neo-ionannachd bhuilean, a’ gabhail a-steach le bhith a’ cur às do laghan, poileasaidhean agus cleachdaidhean leth-bhreith agus le bhith a’ brosnachadh reachdas, poileasaidhean agus gnìomhan iomchaidh a thaobh seo."
+            short_title: "Dèan cinnteach gu bheil Co-ionannachd Chothroman ann agus Cuir crìoch air Lethbhreith"
+          target_10_4:
+            long_title: "Gabh ri poileasaidhean, gu sònraichte poileasaidhean fiosgail, tuarastail agus dìon sòisealta, agus faigh barrachd coileanaidh mean air mhean."
+            short_title: "Gabh ri Poileasaidhean Fiosgail is Sòisealta a bhrosnaicheas Co-ionannachd"
+          target_10_5:
+            long_title: "Thoirt piseach air riaghladh agus sgrùdadh air margaidhean ionmhais agus institiudan ionmhais na cruinne agus neartaich buileachadh nan riaghailtean sin."
+            short_title: "Riaghladh nas fheàrr air Margaidean Ionmhais agus Institiudan Cruinneil "
+          target_10_6:
+            long_title: "Dèan cinnteach gum bi riochdachadh agus guth leasaichte airson dùthchannan fo leasachadh ann an co-dhùnaidhean ann an institiudan eaconamach is ionmhais eadar-nàiseanta cruinneil gus institiudan nas èifeachdaiche, nas earbsaich, nas cunntachaile agus nas dligheach a lìbhrigeadh."
+            short_title: "Riochdachadh Leasaichte airson Dùthchannan fo Leasachadh ann an Institiudan Ionmhais"
+          target_10_7:
+            long_title: "Cuidich le imrich is gluasad dhaoine a tha òrdail, sàbhailte, cunbhalach agus cunntachail, a’ gabhail a-steach tro bhith a’ cur an gnìomh poileasaidhean imrich planaichte agus air an deagh riaghladh."
+            short_title: "Poileasaidhean Imrich cunntachail agus air an deagh riaghladh"
+          target_10_A:
+            long_title: "Cuir an gnìomh prionnsapal làimhseachadh sònraichte agus eadar-dhealaichte airson dùthchannan fo leasachadh, gu sònraichte na dùthchannan as lugha leasaichte, a rèir aontaidhean Buidheann Malairt na Cruinne."
+            short_title: "Làimhseachadh Sònraichte agus Eadar-dhealaichte do Dhùthchannan fo Leasachadh"
+          target_10_B:
+            long_title: "Brosnaich taic leasachaidh agus sruthan ionmhais oifigeil, a’ gabhail a-steach tasgadh dìreach bho thall thairis, gu Stàitean far a bheil am feum as motha, gu sònraichte na dùthchannan as lugha leasaichte, dùthchannan Afraganach, eileanan beaga fo leasachadh agus dùthchannan fo leasachadh a tha tìr-dhruidte, a rèir am planaichean agus prògraman nàiseanta."
+            short_title: "Brosnaich Taic Leasachaidh agus Tasgadh anns na Dùthchannan as neo-Leasaiche"
+          target_10_C:
+            long_title: "Ro 2030, lughdaich gu nas lugha na 3 sa cheud cosgaisean tar-chur airgead aig imrich agus cuir às do shlighean pàighidh le cosgaisean nas àirde na 5 sa cheud."
+            short_title: "Lùghdaich cosgaisean malairt airson airgead luchd-imrich"
+      goal_11:
+        title: "Cathair-bhailtean agus coimhearsnachdan seasmhach"
+        title_in_two_lines: "Bailtean mòra \nagus coimhearsnachdan seasmhach"
+        description: "Dèan cathair-bhailtean in-ghabhalach, sàbhailte, ath-leumach agus seasmhach."
+        long_description: '<p>Tha an saoghal a’ sìor fhàs bailteil. Bho 2007, <a href="https://unstats.un.org/sdgs/report/2019/goal-11/">tha còrr air leth de shluagh an t-saoghail air a bhith a’ fuireach ann an cathair-bhailtean</a>, agus thathar an dùil gun èirich an cuibhreann sin gu 60 sa cheud ro 2030.</p><p> Tha cathair-bhailtean agus sgìrean metropolitan nan taighean cumhachd airson fàs eaconamach - a’ cur timcheall air 60 sa cheud ri GDP na cruinne. Ach, tha iad cuideachd a’ dèanamh suas mu 70 sa cheud de dh’eimiseanan carboin na cruinne agus còrr air 60 sa cheud de chleachdadh stòrasan.</p><p> Tha bailteachadh luath ag adhbharachadh àireamh a tha a’ sìor fhàs de luchd-còmhnaidh slumaichean, bun-structar agus seirbheisean neo-iomchaidh agus air a bheil cus cuideim (leithid cruinneachadh sgudail agus siostaman uisge is slàintealachd, rathaidean agus còmhdhail), truailleadh èadhair a’ fàs nas miosa agus sgaoileadh bailtean gun phlanadh.</p><p> <a href="https://unhabitat.org/coronavirus-will-travel-incredibly-fast-in-africas-slums-un-habitat-chief-warns">Bidh buaidh COVID-19</a> gu math sgriosail ann an sgìrean bailteil bochda agus le sluagh mòr, gu sònraichte dhan bhillean neach a tha a’ fuireach ann am bailtean neo-fhoirmeil agus slumaichean air feadh an t-saoghail, far a bheil cus sluaigh cuideachd ga dhèanamh duilich ceumannan a tha air am moladh leithid astar sòisealta agus fèin-iomallachadh a leantainn.</p><p> Thug buidheann bìdh nan Dùthchannan Aonaichte, FAO, rabhadh gum faodadh acras agus bàsan èirigh gu mòr ann an sgìrean bailteil, às aonais ceumannan gus dèanamh cinnteach gu bheil <a href="https://news.un.org/en/story/2020/05/1063622">cothrom aig luchd-còmhnaidh bochd agus so-leònte air biadh</a> .</p>'
+        targets:
+          target_11_1:
+            long_title: "Ro 2030, dèan cinnteach gum bi cothrom aig a h-uile duine air taigheadas iomchaidh, sàbhailte agus air prìs reusanta agus air seirbheisean bunaiteach agus ùraich slumaichean."
+            short_title: "Taighean air prìs ruigsinneach agus shàbhailte"
+          target_11_2:
+            long_title: "Ro 2030, thoir seachad cothrom air siostaman còmhdhail shàbhailte, ruigsinneach, ath-leumach agus seasmhach do na h-uile, a’ cur air adhart sàbhailteachd rathaid, gu sònraichte le bhith a’ leudachadh còmhdhail phoblach, le aire shònraichte do dh’fheumalachdan an fheadhainn ann an suidheachaidhean so-leònte, boireannaich, clann, daoine air a bheil ciorraman agus seann daoine."
+            short_title: "Siostaman còmhdhail seasmhach agus air prìs ruigsinneach"
+          target_11_3:
+            long_title: "Ro 2030, cuir ri bailteachadh in-ghabhalach agus seasmhach agus ris a’ chomas planadh agus riaghladh tuineachaidh com-pàirteachail, aonaichte agus seasmhach anns a h-uile dùthaich."
+            short_title: "Bailteachadh In-ghabhalach agus Seasmhach"
+          target_11_4:
+            long_title: "Neartaich oidhirpean gus dualchas cultarail is nàdarra an t-saoghail a dhìon."
+            short_title: "Dìon Dualchas Cultarach is Nàdarra an t-Saoghail"
+          target_11_5:
+            long_title: "Ro 2030, lughdaich gu mòr an àireamh de bhàsan agus an àireamh de dhaoine air a bheil buaidh ga thoirt, agus lughdaich gu mòr na call eaconamach dìreach an coimeas ri làn-thoradh dachaigheil cruinneil air adhbharachadh le mòr-thubaistean, a’ gabhail a-steach mòr-thubaistean co-cheangailte ri uisge, le fòcas air dìon dhaoine bochda agus daoine ann an suidheachaidhean so-leònte."
+            short_title: "Lùghdaich Buaidhean Droch Thubaistean Nàdarra"
+          target_11_6:
+            long_title: "Ro 2030, lughdaich droch bhuaidh àrainneachdail per capita de bhailtean-mòra, a’ gabhail a-steach a bhith a’ toirt aire shònraichte do chàileachd adhair agus riaghladh sgudail bailteil is eile."
+            short_title: "Lùghdaich Buaidh Àrainneachdail nan Cathair-bhailtean"
+          target_11_7:
+            long_title: "Ro 2030, thoir cothrom uile-choitcheann do dh’àiteachan sàbhailte, in-ghabhalach agus ruigsinneach, uaine agus poblach, gu sònraichte do bhoireannaich is clann, seann daoine agus daoine le ciorraman."
+            short_title: "Thoir seachad ruigsinneachd air àiteachan uaine is poblach a tha sàbhailte is in-ghabhalach"
+          target_11_A:
+            long_title: "Cuir taic ri ceanglaichean adhartach eaconamach, sòisealta agus àrainneachdail eadar sgìrean bailteil, peri-bhailteil agus dùthchail le bhith a’ neartachadh planadh leasachaidh nàiseanta is roinneil."
+            short_title: "Planadh Leasachaidh Nàiseanta is Roinneil làidir"
+          target_11_B:
+            long_title: "Ro 2020, dèan àrdachadh mòr air an àireamh de cathair-bhailtean agus tuineachaidhean eile agus cuir an gnìomh phoileasaidhean agus phlanaichean amalaichte a dh’ionnsaigh in-ghabhail, èifeachdas stòrasan, lasachadh air agus freagarrachadh ri atharrachadh na gnàth-shìde, fulangas an aghaidh mòr-thubaistean, agus cruthaich agus cur an gnìomh ro-innleachd riaghladh cunnart mòr-thubaist iomlan aig gach ìre, a rèir Frèam Sendai airson Lùghdachadh Cunnart Tubaist airson 2015-2030."
+            short_title: "Cuir an gnìomh Poileasaidhean airson In-ghabhail, Èifeachdas Ghoireasan agus Lùghdachadh Cunnartan bho Mhòr-thubaistean"
+          target_11_C:
+            long_title: "Thoir taic do na dùthchannan as lugha leasaichte, a’ gabhail a-steach tro thaic ionmhais is theicnigeach, ann a bhith a’ togail thogalaichean seasmhach agus tapaidh a’ cleachdadh stuthan-togail ionadail."
+            short_title: "Thoir taic do na dùthchannan as lugha leasaichte ann an togail seasmhach agus ath-leumach"
+      goal_12:
+        title: "Caitheamh is dèanamh cunntachail"
+        title_in_two_lines: "Caitheamh is dèanamh cunntachail"
+        description: "Dèan cinnteach gu bheil pàtrain caitheamh is dèanaimh seasmhach ann."
+        long_description: '<p>Tha caitheamh is dèanamh air feadh an t-saoghail - prìomh fhactar a tha a’ cur air adhart eaconamaidh na cruinne - stèidhichte air cleachdadh na h-àrainneachd agus goireasan nàdarra ann an dòigh a tha fhathast a’ toirt buaidh millteach air a’ phlanaid.</p><p> An cois adhartas eaconamach is sòisealta thar na linn a chaidh seachad tha truailleadh àrainneachdail a tha a’ cur nan dearbh shiostaman air a bheil ar leasachadh san àm ri teachd - gu dearbh, ar saoghal - ann an cunnart.</p><p> Beagan <a href="https://www.unenvironment.org/explore-topics/sustainable-development-goals/why-do-sustainable-development-goals-matter/goal-12">fios agus figearan</a> :</p><ul><li style="font-weight: 400"> Gach bliadhna, bidh timcheall air trian den bhiadh a thèid a dhèanamh - co-ionann ri 1.3 billean tunna luach timcheall air $  trillean - a’ grodadh ann am bionaichean coinsiumairean agus luchd-reic, no a’ milleadh air sgàth droch chleachdaidhean còmhdhail is buain.</li><li style="font-weight: 400"> Nan cleachdadh daoine air feadh an t-saoghail bulbaichean solais lùth-èifeachdach sàbhaladh an saoghal US $120 billean gach bliadhna.</li><li style="font-weight: 400"> Ma ruigeas sluagh na cruinne 9.6 billean ro 2050, dh’fhaodadh gum bi feum faisg air trì planaidean gus na goireasan nàdarra a thoirt seachad a dh’fheumar gus dòighean-beatha làithreach a chumail suas.</li></ul><p> Tha an galar lèir-sgaoilte COVID-19 a’ toirt cothrom do dhùthchannan planaichean ath-bheothachaidh a thogail a chuireas cùl ri gluasadan làithreach agus a dh’atharraicheas ar pàtrain caitheamh is cinneasachaidh gus am bi an t-àm ri teachd nas seasmhaiche.</p><p> <a href="https://www.unenvironment.org/explore-topics/resource-efficiency/what-we-do/sustainable-consumption-and-production-policies">Tha caitheamh is dèanamh seasmhach</a> mu bhith a’ dèanamh barrachd agus nas fheàrr le nas lugha. Tha e cuideachd mu bhith a’ dì-cheangail fàs eaconamach bho ìsleachadh àrainneachd, àrdachadh èifeachdas stòrasan agus adhartachadh dòighean-beatha seasmhach.</p><p> Faodaidh caitheamh is dèanamh seasmhach cuideachd cur gu mòr ri bhith a’ lughdachadh bochdainn agus a’ gluasad a dh’ionnsaigh eaconamaidhean uaine is beag-carboin.</p>'
+        targets:
+          target_12_1:
+            long_title: "Cuir an gnìomh frèam 10-bliadhna de phrògraman air caitheamh is dèanamh seasmhach, le gach dùthaich a’ gabhail cheuman, le dùthchannan leasaichte aig an stiùir, a’ toirt aire do leasachadh agus comasan dhùthchannan fo leasachadh."
+            short_title: "Cuir an gnìomh am frèam caitheamh is dèanamh seasmhach 10-bliadhna"
+          target_12_2:
+            long_title: "Ro 2030, dèan cinnteach gu bheil riaghladh seasmhach agus cleachdadh èifeachdach de stòrasan nàdarra."
+            short_title: "Riaghladh agus Cleachdadh Seasmhach air Goireasan Nàdarra"
+          target_12_3:
+            long_title: "Ro 2030, lethich sgudal bìdh cruinneil per capita aig ìrean reic agus luchd-cleachdaidh agus lughdaich call bìdh ri taobh sèineachan-solair cinneasachaidh is solair, a’ gabhail a-steach call às dèidh an fhoghair."
+            short_title: "Leithich sgudal bìdh cruinneil per capita"
+          target_12_4:
+            long_title: "Ro 2020, dèan cinnteach gum bi riaghladh seasmhach is àrainneachdail de cheimigean agus gach seòrsa sgudail rè an cuairt-beatha, a rèir frèaman eadar-nàiseanta aontaichte, agus lùghdaich gu mòr an sgaoileadh do dh’èadhar, uisge agus ùir gus an droch bhuaidh air slàinte dhaoine agus air an àrainneachd a lughdachadh."
+            short_title: "Riaghladh cunntachail de cheimigean agus de sgudal"
+          target_12_5:
+            long_title: "Ro 2030, luchdaich gu mòr an ìre de sgudail a nithear tro ro-chasg, lùghdachadh, ath-chuairteachadh agus ath-chleachdadh."
+            short_title: "Lùghdachadh mòr air cruthachadh sgudal"
+          target_12_6:
+            long_title: "Brosnaich companaidhean, gu sònraichte companaidhean mòra agus tar-nàiseanta, gus gabhail ri cleachdaidhean seasmhach agus gus fiosrachadh seasmhachd fhilleadh a-steach dhan chuairt aithris aca."
+            short_title: "Brosnaich Companaidhean gus Cleachdaidhean Seasmhach agus Aithris Seasmhachd a dhèanamh"
+          target_12_7:
+            long_title: "Brosnaich cleachdaidhean solarachaidh poblach a tha seasmhach, a rèir phoileasaidhean agus phrìomhachasan nàiseanta."
+            short_title: "Brosnaich Cleachdaidhean Solar Poblach Seasmhach"
+          target_12_8:
+            long_title: "Ro 2030, dèan cinnteach gu bheil am fiosrachadh agus am mothachadh iomchaidh aig daoine anns a h-uile àite airson leasachadh seasmhach agus dòighean-beatha ann an co-chòrdadh ri nàdar."
+            short_title: "Brosnaich Tuigse Uile-choitcheann air Dòighean-beatha Seasmhach"
+          target_12_A:
+            long_title: "Thoir taic do dhùthchannan fo leasachadh gus an comas saidheansail agus teicneòlach a neartachadh gus gluasad a dh’ionnsaigh pàtrain caitheamh is dèanamh nas seasmhaiche."
+            short_title: "Cuir taic ri comas saidheansail is teicneòlach dhùthchannan fo leasachadh airson caitheamh is dèanamh seasmhach"
+          target_12_B:
+            long_title: "Leasaich agus cuir an gnìomh innealan gus sùil a chumail air buaidhean leasachadh seasmhach airson turasachd sheasmhach a chruthaicheas obraichean agus a bhrosnaicheas cultar agus toraidhean ionadail."
+            short_title: "Cruthaich agus cuir an gnìomh Innealan gus sùil a chumail air Turasachd Seasmhach"
+          target_12_C:
+            long_title: "Lùghdaich subsadaidhean connadh fosail neo-èifeachdach a bhrosnaicheas ana-caitheimh le bhith a’ toirt air falbh fiaraidhean margaidh, a rèir suidheachaidhean nàiseanta, a’ gabhail a-steach le bhith ag ath-structaradh chìsean agus a’ toirt air falbh nan subsadaidhean cronail sin, far a bheil iad ann, mar thoradh air na buaidhean àrainneachdail aca, a’ toirt làn aire do na feumalachdan agus suidheachaidhean sònraichte aig dùthchannan fo leasachadh agus a’ lughdachadh na droch bhuaidh a dh’fhaodadh a bhith aca air an leasachadh ann an dòigh a dhìonas na daoine bochda agus na coimhearsnachdan air a bheil buaidh."
+            short_title: "Thoir air falbh fiaraidhean margaidh a bhrosnaicheas ana-caitheamh"
+      goal_13:
+        title: "Gnìomhach a thaobh na gnàth-shìde"
+        title_in_two_lines: "Gnìomhach \na thaobh na gnàth-shìde"
+        description: "Gabh ceumannan èiginneach gus cur an-aghaidh atharrachadh na gnàth-thìde agus nam buaidhean aige."
+        long_description: '<p>B’ e 2019 <a href="https://news.un.org/en/story/2020/03/1059061">an dàrna bliadhna as blàithe a chaidh a chlàradh a-riamh</a> agus aig deireadh na deichead as blàithe (2010-2019) a chaidh a chlàradh a-riamh.</p><p> Dh’èirich ìrean carbon dà-ogsaid (CO2) agus <a href="https://news.un.org/en/story/2020/04/1062332">gasaichean taigh-glainne eile san àile</a> gu na h-ìrean as àirde a chaidh a chlàradh riamh ann an 2019.</p><p> Tha atharrachadh gnàth-shìde a’ toirt buaidh air gach dùthaich air gach mòr-thìr. Tha e a’ cur bacadh air eaconamaidhean nàiseanta agus a’ toirt buaidh air beatha. Tha pàtrain sìde ag atharrachadh, tha ìrean na mara ag èirigh, agus tha tachartasan droch-shìde a’ fàs nas miosa.</p><p> Ged a thathar an dùil gun tuit sgaoilidhean gas taigh-glainne mu 6 sa cheud ann an 2020 mar thoradh air casg siubhail agus slaodachadh eaconamach mar thoradh air galar lèir-sgaoilte COVID-19, chan eil an leasachadh seo ach sealach. <a href="https://news.un.org/en/story/2020/04/1062332">Chan eil atharrachadh gnàth-shìde air stad</a> . Cho luath ‘s a thòisicheas eaconamaidh na cruinne a’ faighinn seachad air a’ ghalair lèir-sgaoilte, tha dùil gun till sgaoilidhean gu ìrean nas àirde.</p><p> Gus beatha agus bith-beò a shàbhaladh feumar gnìomh èiginneach gus dèiligeadh ris an dà chuid an galar lèir-sgaoilte agus èiginn na gnàth-shìde.</p><p> Tha <a href="https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement">Aonta Paris</a> , a chaidh gabhail ris ann an 2015, ag amas air freagairt chruinneil do bhagairt atharrachadh clìomaid a neartachadh le bhith a’ cumail àrdachadh teothachd na cruinne san linn seo gu math nas ìsle na 2 ìre Celsius os cionn ìrean ro-ghnìomhachais. Tha an t-aonta cuideachd ag amas air comas dhùthchannan dèiligeadh ri buaidhean atharrachadh clìomaid a neartachadh, tro shruthan ionmhais iomchaidh, frèam teicneòlais ùr agus frèam togail comais leasaichte.</p>'
+        targets:
+          target_13_1:
+            long_title: "Neartaich fulangas agus comas freagairt a thaobh cunnartan co-cheangailte ri gnàth-shìde agus mòr-thubaistean nàdarrach anns a h-uile dùthaich."
+            short_title: "Neartaich fulangas agus Comas Freagairt airson Mòr-thubaistean Co-cheangailte ri Gnàth-shìde"
+          target_13_2:
+            long_title: "Amalachadh ceumannan atharrachadh Gnàth-shìde ann am poileasaidhean, ro-innleachdan agus planadh nàiseanta."
+            short_title: "Amalachadh Ceumannan Atharrachadh Gnàth-shìde ann am Poileasaidhean agus Planadh"
+          target_13_3:
+            long_title: "Thoir piseach air foghlam, togail mothachaidh agus comas daonna is institiùideach a thaobh lasachadh gnàth-shìde, freagairt ri atharrachadh gnàth-shìde lughdachadh buaidh agus rabhadh tràth."
+            short_title: "Tog eòlas agus comas gus dèiligeadh ri atharrachadh gnàth-shìde"
+          target_13_A:
+            long_title: "Cuir an gnìomh an dealas a ghabh pàrtaidhean a tha dùthchannan leasaichte ri Cùmhnant Frèam-obrach nan Dùthchannan Aonaichte air Atharrachadh na Gnàth-shìde ri amas a bhith a’ cur $100 billean ann gach bliadhna ro 2020 bhon a h-uile tùs gus dèiligeadh ri feumalachdan dhùthchannan fo leasachadh ann an co-theacsa gnìomhan lasachaidh brìoghmhor agus follaiseachd air buileachadh. agus gus a’ Mhaoin Gnàth-shìde Uaine a chur an gnìomh gu h-iomlan tro bhith ga calpachadh cho luath ‘s a ghabhas."
+            short_title: "Cuir an gnìomh Cùmhnant Frèam nan Dùthchannan Aonaichte air Atharrachadh na Gnàth-shìde"
+          target_13_B:
+            long_title: "Brosnaich dòighean gus comas-lìbhrigidh àrdachadh airson planadh agus riaghladh èifeachdach co-cheangailte ri atharrachadh na gnàth-shìde anns na dùthchannan as lugha leasaichte agus ann an stàitean eileanach beaga fo leasachadh, a’ gabhail a-steach fòcas air boireannaich, òigridh agus coimhearsnachdan ionadail agus air an iomall."
+            short_title: "Brosnaich dòighean gus comas àrdachadh airson planadh agus riaghladh"
+      goal_14:
+        title: "Beatha san uisge"
+        title_in_two_lines: "Beatha \nsan uisge"
+        description: "Glèidh agus cleachd na cuantan, marannan agus goireasan mara gu seasmhach."
+        long_description: '<p>Tha an cuan a’ stiùireadh shiostaman cruinneil a tha a’ fàgail gu bheil an Talamh freagarrach mar àite-fuirich do mhac an duine. Tha ar cuid uisge, uisge-òil, aimsir, gnàth-shìde, oirthirean, mòran den bhiadh againn, agus fiùs an ocsaidean san adhar a bhios sinn a’ tarraing nar n-anail, uile air an toirt seachad agus air an riaghladh leis a’ mhuir.</p><p> Tha riaghladh faiceallach air  <a href="https://www.unenvironment.org/explore-topics/oceans-seas/why-do-oceans-and-seas-matter">a’ ghoireas chruinneil ro-chudromach seo</a> na phrìomh fheart de sheasmhachd san àm ri teachd. Ach, aig an àm seo, tha crìonadh leantainneach ann an uisgeachan cladaich mar thoradh air truailleadh, agus tha searbhachadh cuain a’ toirt droch bhuaidh air gnìomhachd eag-shiostaman agus bith-iomadachd. Tha seo cuideachd a’ toirt droch bhuaidh air iasgach air sgèile bheag.</p><p> Feumaidh ’ sàbhaladh a’ chuan a bhith na phrìomhachas. Tha bith-iomadachd mara deatamach do shlàinte dhaoine agus dhan phlanaid againn. Feumaidh raointean dìon mara a bhith air an riaghladh gu h-èifeachdach agus le deagh ghoireasan agus feumar riaghailtean a chur an sàs gus ro-iasgach, truailleadh mara agus searbhachadh cuain a lùghdachadh.</p>'
+        targets:
+          target_14_1:
+            long_title: "Ro 2025, cuir casg air agus lùghdaich gu mòr truailleadh mara de gach seòrsa, gu sònraichte bho ghnìomhachd stèidhichte air fearann, a’ gabhail a-steach sprùilleach mara agus truailleadh beathachaidh."
+            short_title: "Lùghdaich Truailleadh Mara"
+          target_14_2:
+            long_title: "Ro 2020, riaghlaich agus dìon eag-shiostaman mara is cladaich gu seasmhach gus droch bhuaidhean mòra a sheachnadh, a’ gabhail a-steach le bhith a’ neartachadh an ath-leumachd, agus a ghabhail cheuman airson an ath-nuadhachadh gus cuantan fallain agus torach a bhith ann."
+            short_title: "Dìon agus ath-nuadhaich eag-shiostaman"
+          target_14_3:
+            long_title: "Lùghdaich agus cuir aghaidh air buaidhean searbhachadh cuain, a’ gabhail a-steach tro cho-obrachadh saidheansail nas fheàrr aig gach ìre."
+            short_title: "Lùghdaich searbhachadh a’ chuain"
+          target_14_4:
+            long_title: "Ro 2020, dèan riaghladh èifeachdach air iasgach agus cuir crìoch air ro-iasgach, iasgach mì-laghail, gun aithris agus neo-riaghlaichte agus cleachdaidhean iasgaich millteach agus cuir an gnìomh planaichean riaghlaidh stèidhichte air saidheans, gus stoc èisg a thoirt air ais anns an ùine as giorra a ghabhas dèanamh, co-dhiù gu ìrean as urrainn an toradh seasmhach as àirde a thoirt seachad. mar a tha air a dhearbhadh leis na feartan bith-eòlasach aca."
+            short_title: "Iasgach Seasmhach"
+          target_14_5:
+            long_title: "Ro 2020, glèidh co-dhiù 10 sa cheud de raointean cladaich is mara, a rèir lagh nàiseanta is eadar-nàiseanta agus stèidhichte air an fhiosrachadh saidheansail as fheàrr a tha ri fhaighinn."
+            short_title: "Glèidh Sgìrean Cladaich is Mara"
+          target_14_6:
+            long_title: "Ro 2020, cuir casg air seòrsaichean sònraichte de shubsadaidhean iasgaich a chuireas ri cus comas-iasgaich agus cus iasgach, cuir às do shubsadaidhean a chuireas ri iasgach mì-laghail, gun aithris agus neo-riaghlaichte agus na toir a-staigh subsadaidhean ùra den leithid, ag aithneachadh gu bheil làimhseachadh sònraichte agus eadar-dhealaichte iomchaidh agus èifeachdach airson dùthchannan fo leasachadh agus as lugha leasaichte na phàirt riatanach de cho-rèiteachadh subsadaidh iasgaich Buidheann Malairt na Cruinne."
+            short_title: "Crìochnaich subsadaidhean a’ cur ri ro-iasgaich"
+          target_14_7:
+            long_title: "Ro 2030, àrdaich na buannachdan eaconamach do Stàitean Eileanach Beaga fo Leasachadh agus do na dùthchannan as lugha leasaichte bho bhith a’ cleachdadh stòrasan mara gu seasmhach, a’ gabhail a-steach tro riaghladh seasmhach air iasgach, tuathanachas-uisge agus turasachd."
+            short_title: "Meudaich na Buannachdan Eaconamach bho Chleachdadh Seasmhach air Goireasan Mara"
+          target_14_A:
+            long_title: "Meudaich eòlas saidheansail, leasaich comas rannsachaidh agus gluasad teicneòlas mara, a’ gabhail a-steach Slatan-tomhais Coimisean Eadar-riaghaltais Oceanographic agus Stiùireadh air Gluasad Teicneòlais Mara, gus piseach a thoirt air slàinte a’ chuain agus gus cur ri na tha bith-iomadachd mara a’ cur ri leasachadh dhùthchannan fo leasachadh, gu sònraichte eileanan beaga fo leasachadh agus na dùthchannan as lugha leasaichte."
+            short_title: "Meudaich Eòlas Saidheansail, Rannsachadh agus Teicneòlas airson Slàinte a’ Chuain"
+          target_14_B:
+            long_title: "Thoir cothrom do iasgairean artisanal air sgèile bheag air goireasan mara agus margaidhean."
+            short_title: "Cùm taic ri iasgairean beaga"
+          target_14_C:
+            long_title: "Meudaich glèidhteachas agus cleachdadh seasmhach chuantan agus an cuid ghoireasan le bhith a’ cur an gnìomh lagh eadar-nàiseanta mar a chithear ann an UNCLOS, a tha a’ toirt seachad frèam laghail airson glèidhteachas agus cleachdadh seasmhach chuantan agus an stòrasan, mar a tha ann am paragraf 158 den Àm ri Teachd a tha sinn ag iarraidh."
+            short_title: "Cur an gnìomh agus co-èignich lagh mara eadar-nàiseanta"
+      goal_15:
+        title: "Beatha air Tìr"
+        title_in_two_lines: "Beatha air \nTìr"
+        description: "Stiùirich choilltean gu seasmhach, cuir an-aghaidh fàsachadh, cuir stad air ath-thionndadh truailleadh fearainn, agus cuir stad air call bith-iomadachd."
+        long_description: '<p>Tha nàdar ro-chudromach ma tha sinn gu bhith a’ mairsinn: tha nàdar a’ toirt dhuinn ar cuid ogsaidean, a’ riaghladh ar pàtrain sìde, a’ poileanachadh ar cuid bàrr, a’ cruthachadh air cuid biadh, fodair agus freumhagan. Ach tha e fo chuideam a tha a’ sìor fhàs. <a href="https://news.un.org/en/story/2020/04/1061082">Tha gnìomhachd daonna air atharrachadh a thoirt air faisg air 75 sa cheud de dh’uachdar na talmhainn</a> , a’ brùthadh fiadh-bheatha agus nàdar gu oisean nas lugha den phlanaid.</p><p> Tha timcheall air <a href="https://ipbes.net/sites/default/files/2020-02/ipbes_global_assessment_report_summary_for_policymakers_en.pdf">1 millean gnè beathach is planntrais ann an cunnart dol à bith</a> - mòran taobh a-staigh deicheadan - a rèir Aithisg Measaidh Cruinneil 2019 air Seirbheis Bith-iomadachd agus Eag-shiostam. Dh’iarr an aithisg atharrachaidhean cruth-atharrachail gus nàdar ath-nuadhachadh agus a dhìon. Lorg e gu bheil slàinte eag-shiostaman air a bheil sinn fhèin agus gach gnè eile an urra a’ dol nas miosa na bha e a-riamh, a’ toirt buaidh air fìor bhunaitean ar eaconamaidhean, beòshlaint, tèarainteachd bìdh, slàinte agus càileachd beatha air feadh an t-saoghail.</p><p> Tha dì-choillteachadh agus fàsachadh - air adhbharachadh le gnìomhachd daonna agus atharrachadh na gnàth-shìde - nan dùbhlain mòra do leasachadh seasmhach agus air buaidh a thoirt air beatha agus beòshlaint nam milleanan de dhaoine. <a href="https://news.un.org/en/story/2019/05/1038291">Tha coilltean air leth cudromach</a> airson beatha a chumail suas air an Talamh, agus tha prìomh àite aca anns an t-strì an aghaidh atharrachadh na gnàth-shìde. Agus tha tasgadh ann an - <a href="https://news.un.org/en/story/2019/09/1045802">ath-leasachadh fearainn</a> deatamach airson bith-beò a leasachadh, a bhith a’ lùghdachadh so-leòntachd, agus a bhith a’ lughdachadh chunnartan dhan eaconamaidh.</p><p> Tha àite cudromach aig slàinte ar planaid cuideachd a thaobh <a href="https://www.unenvironment.org/resources/emerging-zoonotic-diseases-and-links-ecosystem-health-unep-frontiers-2016-chapter">galaran zoonotic a bhith a’ tighinn am bàrr</a> , i.e. galaran a ghabhas tar-ghluasad eadar beathaichean agus daoine. Mar a bhios sinn a’ leantainn air adhart a’ toirt buaidh air eag-shiostaman cugallach, bidh sinn a’ toirt barrachd conaltraidh do dhaoine le fiadh-bheatha, a’ leigeil le pathogenan ann am fiadh-bheatha a dhol a-null gu stoc is daoine, a’ meudachadh cunnart gun nochd galaran agus gun leudaich iad.</p>'
+        targets:
+          target_15_1:
+            long_title: "Ro 2020, dèan cinnteach gun tèid eag-shiostaman talmhaidh agus fìor-uisge agus na seirbheisean aca a ghleidheadh, ath-nuadhachadh agus a chleachdadh gu seasmhach, gu sònraichte coilltean, talamh fliuch, beanntan agus talamh tioram, a rèir dleastanasan fo aontaidhean eadar-nàiseanta."
+            short_title: "Glèidh agus ath-nuadhaich eag-shiostaman talmhainn agus fìor-uisge"
+          target_15_2:
+            long_title: "Ro 2020, cuir air adhart riaghladh seasmhach de gach seòrsa coille, cuir stad air dì-choillteachadh, cuir air ais coilltean crìonte agus àrdaich gu mòr coilltearachd agus ath-choillteachadh air feadh na cruinne."
+            short_title: "Cuir crìoch air dì-choillteachadh agus thoir air ais coilltean truaillte"
+          target_15_3:
+            long_title: "Ro 2030, cuir an-aghaidh fàsachadh, ath-bheothaich talamh agus ùir crìonte, a’ gabhail a-steach fearann air an tug fàsachadh, tart agus tuiltean buaidh, agus dèan strì gus saoghal nàdarra fhaighinn gun chrìonadh fearainn."
+            short_title: "Cuir crìoch air dì-choillteachadh agus thoir air ais fearann truaillte"
+          target_15_4:
+            long_title: "Ro 2030, dèan cinnteach gun tèid eag-shiostaman beinne a ghlèidheadh, a’ gab hail a-steach am bith-iomadachd, gus an comas àrdachadh gus buannachdan a thoirt seachad a tha riatanach airson leasachadh seasmhach."
+            short_title: "Dèan cinnteach gun tèid eag-shiostaman beinne a ghleidheadh"
+          target_15_5:
+            long_title: "Dèan gnìomh èiginneach agus cudromach gus crìonadh àrainnean nàdarra a lughdachadh, stad a chur air call bith-iomadachd agus, ro 2020, cuir dìon agus casg air gnèithean ann an cunnart a’ dol à bith."
+            short_title: "Dìon Bith-iomadachd agus Àrainnean Nàdarra"
+          target_15_6:
+            long_title: "Brosnaich co-roinn cothromach de na buannachdan a thig bho bhith a’ cleachdadh ghoireasan ginteil agus brosnaich cothrom iomchaidh air na goireasan sin, mar a chaidh aontachadh gu h-eadar-nàiseanta."
+            short_title: "Brosnaich Cothrom air Goireasan Ginteil agus Co-roinn Chothromach de na Buannachdan"
+          target_15_7:
+            long_title: "Gabh ceumannan èiginneach gus stad a chuir air poidseadh agus malairt ann an gnèithean dìonta de fhlùraichean is bheathaichean agus gus dèiligeadh ris an dà chuid iarrtas agus solar de thoraidhean fiadh-bheatha mì-laghail."
+            short_title: "Cuir às do phoidseadh agus malairt de ghnèithean fo dhìon"
+          target_15_8:
+            long_title: "Ro 2020, thoir a-steach ceumannan gus casg a chur air toirt a-steach agus gus lughdachadh mòr a thoirt air buaidh gnèithean ionnsaigheach gallda air eag-shiostaman fearainn is uisge agus smachd a chumail air no cuir às do na gnèithean a tha nam prìomhachas."
+            short_title: "Cuir casg air gnèithean ionnsaigheach gallda air fearann agus ann an eag-shiostaman uisge"
+          target_15_9:
+            long_title: "Ro 2020, fill a-steach luachan eag-shiostam agus bith-iomadachd ann am planadh nàiseanta is ionadail, pròiseasan leasachaidh, ro-innleachdan agus aithrisean lughdachadh bochdainn."
+            short_title: "Amalaich Eag-shiostam agus Bith-iomadachd ann am Planadh Riaghaltais"
+          target_15_A:
+            long_title: "Faigh agus àrdaich gu mòr stòrasan ionmhais bho gach tùs gus bith-iomadachd agus eag-shiostaman a ghleidheadh agus a chleachdadh gu seasmhach."
+            short_title: "Cuir ri Goireasan Ionmhais gus Eag-shiostam agus Bith-iomadachd a ghleidheadh agus a chleachdadh gu seasmhach"
+          target_15_B:
+            long_title: "Faigh goireasan cudromach bho gach stòr agus aig gach ìre gus riaghladh coille seasmhach a mhaoineachadh agus gus brosnachaidhean iomchaidh a thoirt do dhùthchannan fo leasachadh gus an leithid de riaghladh a chur air adhart, a’ gabhail a-steach glèidhteachas agus ath-choillteachadh."
+            short_title: "Maoinich agus Brosnaich Riaghladh Coilltean Seasmhach"
+          target_15_C:
+            long_title: "Meudaich taic chruinneil airson oidhirpean gus cuir an-aghaidh poidseadh agus malairt ghnèithean a tha fo dhìon, a’ gabhail a-steach le bhith ag àrdachadh comas choimhearsnachdan ionadail gus cothroman beòshlaint sheasmhach a leantainn."
+            short_title: "Cuir an-aghaidh poidseadh agus malairt cruinneil"
+      goal_16:
+        title: "Sìth, ceartas agus buidhnean-stèidhichte làidir"
+        title_in_two_lines: "Sìth, ceartas agus buidhnean-stèidhichte làidir"
+        description: "Brosnaich comainn-shòisealta a tha cothromach, sìtheil agus in-ghabhalach."
+        long_description: '<p>Tha còmhstri, mì-thèarainteachd, institiudan lag agus bacadh air cothrom air ceartas fhathast nan cunnart mòr do leasachadh seasmhach.</p><p> Chaidh an àireamh de <a href="https://www.unhcr.org/en-us/news/press/2019/6/5d03b22b4/worldwide-displacement-tops-70-million-un-refugee-chief-urges-greater-solidarity.html">dhaoine a theich bho chogadh, geur-leanmhainn agus còmhstri thairis air 70 millean</a> ann an 2018, an ìre as àirde a chaidh a chlàradh le buidheann fògarraich nan Dùthchannan Aonaichte (UNHCR) ann am faisg air 70 bliadhna.</p><p> Ann an 2019, dh’aithris na Dùthchannan Aonaichte <a href="https://sustainabledevelopment.un.org/content/documents/26158Final_SG_SDG_Progress_Report_14052020.pdf">air 357 daoine a chaidh a mharbhadh agus 30 a chaidh a chur à sealladh</a> am measg luchd-dìon chòraichean daonna, luchd-naidheachd agus aonaidhean ciùird ann an 47 dùthchannan.</p><p> Agus chan tèid am breith aig timcheall air <a href="https://data.unicef.org/topic/child-protection/birth-registration/">aonan às gach ceathrar chloinne</a> fo aois 5 air feadh an t-saoghail a clàradh gu h-oifigeil idir, a’ fàgail nach eil dearbhadh dearbh-aithne laghail aca, rud a tha deatamach gus an còraichean a dhìon agus gus cothrom fhaighinn air ceartas agus seirbheisean sòisealta.</p>'
+        targets:
+          target_16_1:
+            long_title: "Lùghdaich gu mòr a h-uile seòrsa fòirneart agus ìrean bàis co-cheangailte anns a h-uile àite."
+            short_title: "Lùghdaich fòirneart anns a h-uile àite"
+          target_16_2:
+            long_title: "Cuir crìoch air droch dhìol, mì-làimhseachadh, malairt dhaoine agus gach seòrsa fòirneart an aghaidh, agus ciùirreadh chloinne."
+            short_title: "Dìon clann bho dhroch dhìol, mì-làimhseachadh, malairt dhaoine agus fòirneart"
+          target_16_3:
+            long_title: "Brosnaich riaghladh an lagha aig ìrean nàiseanta is eadar-nàiseanta agus dèan cinnteach gum bi cothrom co-ionann air ceartas do na h-uile."
+            short_title: "Brosnaich Riaghailt an Lagha agus Dèan cinnteach gu bheil Cothrom Co-ionann air Ceartas"
+          target_16_4:
+            long_title: "Ro 2030, lughdaich gu mòr sruthan ionmhais is armachd mì-laghail, neartaich faighinn air ais agus tilleadh maoin a chaidh a ghoid agus cuir an-aghaidh gach seòrsa eucoir eagraichte."
+            short_title: "Cuir an-aghaidh Eucoir Eagraichte agus Sruthan Ionmhais is Armachd mì-laghail"
+          target_16_5:
+            long_title: "Lùghdaich gu mòr coirbeachd agus brìbearachd de gach seòrsa."
+            short_title: "Lùghdaich Coirbeachd agus Brìbearachd gu mòr"
+          target_16_6:
+            long_title: "Cruthaich institiudan èifeachdach, cunntachail agus follaiseach aig gach ìre."
+            short_title: "Cruthaich institiudan èifeachdach, cunntachail agus follaiseach"
+          target_16_7:
+            long_title: "Dèanamh cinnteach gum bi co-dhùnaidhean freagairtean, in-ghabhalach, com-pàirteachail agus riochdachail ann aig gach ìre."
+            short_title: "Dèan cinnteach gu bheil Co-dhùnaidhean Freagarrach, In-ghabhalach agus Riochdachail"
+          target_16_8:
+            long_title: "Leudaich agus neartaich com-pàirt dhùthchannan fo leasachadh ann an institiudan riaghladh cruinne."
+            short_title: "Neartaich Com-pàirt ann an Riaghladh Cruinneil"
+          target_16_9:
+            long_title: "Ro 2030, thoir dearbh-aithne laghail do na h-uile, a’ gabhail a-steach clàradh breith."
+            short_title: "Thoir seachad dearbh-aithne laghail uile-choitcheann"
+          target_16_10:
+            long_title: "Dèan cinnteach gum bi cothrom poblach air fiosrachadh agus dìon saorsa bunaiteach, a rèir reachdas nàiseanta agus aontaidhean eadar-nàiseanta."
+            short_title: "Dèan cinnteach gum bi cothrom poblach air fiosrachadh agus dìon saorsa bunaiteach"
+          target_16_A:
+            long_title: "Neartaich institiudan nàiseanta buntainneach, a’ gabhail a-steach tro cho-obrachadh eadar-nàiseanta, airson comas a thogail aig gach ìre, gu sònraichte ann an dùthchannan fo leasachadh, gus casg a chuir air fòirneart agus gus dèiligeadh ri ceannairc agus eucoir."
+            short_title: "Neartaich Institiudan Nàiseanta gus casg a chuir air fòirneart agus gus cur an-aghaidh ceannairc agus eucoir"
+          target_16_B:
+            long_title: "Brosnaich agus cuir an gnìomh laghan agus poileasaidhean neo-lethbhreith airson leasachadh seasmhach."
+            short_title: "Brosnaich agus cuir an gnìomh laghan agus poileasaidhean neo-lethbhreith"
+      goal_17:
+        title: "Com-pàirteachasan airson nan amasan"
+        title_in_two_lines: "Com-pàirteachasan \nairson nan amasan"
+        description: "Ath-bheothaich an com-pàirteachas cruinneil airson Leasachadh Seasmhach."
+        long_description: '<p>Cha ghabh na h-Amasan Leasachaidh Seasmhach a thoirt gu buil ach le com-pàirteachasan agus co-obrachadh làidir cruinneil co-obrachadh.</p><p> Airson clàr-gnothaich leasachaidh soirbheachail, feumar com-pàirteachasan in-ghabhalach – aig ìrean cruinneil, roinneil, nàiseanta is ionadail – air an togail air prionnsapalan agus luachan, agus air lèirsinn cho-roinnte agus amasan co-roinnte le daoine agus a’ phlanaid aig cridhe chùisean.</p><p> Tha feum aig mòran dhùthchannan air Taic Leasachaidh Oifigeil gus fàs agus malairt a bhrosnachadh. Ach, <a href="https://www.un.org/press/en/2019/ga12191.doc.htm">tha ìrean cobhair a’ tuiteam</a> agus chan eil dùthchannan tabhartais air an gealltanas aca a choileanadh gus ionmhas leasachaidh a leudachadh.</p><p> Mar thoradh air a’ ghalair lèir-sgaoilte COVID-19, thathar an dùil gun lean <a href="https://www.imf.org/en/Publications/WEO/Issues/2020/04/14/weo-april-2020">seargadh</a> eaconomaidh na cruinne, le 3 sa cheud, ann an 2020, an crìonadh as miosa bhon Ìsleachadh Mhòr.</p><p> Tha feum nas motha air co-obrachadh làidir eadar-nàiseanta na bh’ ann riamh roimhe gus dèanamh cinnteach gu bheil dòighean aig dùthchannan faighinn seachad air a’ ghalair lèir-sgaoilte, togail air ais nas fheàrr agus gus na h-Amasan Leasachaidh Seasmhach a choileanadh.</p>'
+        targets:
+          target_17_1:
+            long_title: "Neartaich cruinneachadh ghoireasan dachaigheil, a’ gabhail a-steach tro thaic eadar-nàiseanta do dhùthchannan fo leasachadh, gus comas dachaigheil airson cìsean agus cruinneachadh teachd-a-steach eile a leasachadh."
+            short_title: "Cuir air dòigh goireasan gus piseach a thoirt air cruinneachadh teachd-a-steach dachaigheil "
+          target_17_2:
+            long_title: "Dùthchannan leasaichte gus na geallaidhean oifigeil aca a thaobh taic leasachaidh a chur an gnìomh gu h-iomlan, a’ gabhail a-steach a’ ghealltanais aig mòran dhùthchannan leasaichte an targaid de 0.7 sa cheud de ODA/GNI a thoirt do dhùthchannan fo leasachadh agus 0.15 gu 0.20 sa cheud de ODA/GNI do na dùthchannan as lugha leasaichte. Tha solaraichean ODA gam brosnachadh gus beachdachadh air targaid a shuidheachadh gus co-dhiù 0.20 sa cheud de ODA/GNI a thoirt do na dùthchannan as lugha leasaichte."
+            short_title: "Cuir an gnìomh a h-uile Gealltanas Taic Leasachaidh"
+          target_17_3:
+            long_title: "Cuir an gnìomh goireasan ionmhais a bharrachd airson dùthchannan fo leasachadh bho iomadh tùs."
+            short_title: "Cuir air dòigh Goireasan Ionmhais airson Dùthchannan fo Leasachadh"
+          target_17_4:
+            long_title: "Cuidich dùthchannan fo leasachadh le bhith a’ coileanadh seasmhachd fhiachan fad-ùine tro phoileasaidhean co-òrdanaichte a tha ag amas air ionmhasachadh fhiachan, faochadh fhiachan agus ath-structaradh fhiachan a bhrosnachadh, mar a bhios iomchaidh, agus gus dèiligeadh ri fiachan taobh a-muigh dhùthchannan bochda le fiachan mòra gus cuideam fiachan a lughdachadh."
+            short_title: "Cuidich dùthchannan fo leasachadh gus seasmhachd fhiachan a ruigsinn"
+          target_17_5:
+            long_title: "Gabh ri agus cuir an gnìomh siostaman brosnachaidh tasgaidh airson nan dùthchannan as mì-leasaichte."
+            short_title: "Dèan tasgadh anns na dùthchannan leis na ìrean leasaichaidh as ìsle"
+          target_17_6:
+            long_title: "Meudaich co-obrachadh roinneil is eadar-nàiseanta Tuath-Deas, Deas-Deas agus triantanach a thaobh saidheans, teicneòlas agus ùr-ghnàthachadh agus cothrom air saidheans, teicneòlas agus ùr-ghnàthachadh agus cuir ri co-roinn eòlais air cumhachan a chaidh aontachadh ri chèile, a’ gabhail a-steach tro cho-òrdanachadh nas fheàrr am measg nan dòighean a th’ ann mar-thà, gu sònraichte aig ìre nan Dùthchannan Aonaichte, agus tro inneal cuideachaidh teicneòlas cruinneil."
+            short_title: "Co-roinn Eòlais agus Co-obrachadh airson Cothrom air Saidheans, Teicneòlas agus Ùr-ghnàthachadh"
+          target_17_7:
+            long_title: "Brosnaich leasachadh, gluasad, tar-chur agus sgaoileadh theicneòlasan a tha càirdeil dhan àrainneachd gu dùthchannan fo leasachadh air teirmean fàbharach, a’ gabhail a-steach cumhachan lasaichte agus fàbharach, mar a thèid aontachadh."
+            short_title: "Brosnaich teicneòlasan seasmhach do dhùthchannan fo leasachadh"
+          target_17_8:
+            long_title: "Cuir am banca teicneòlais agus uidheamachd togail comas saidheans, teicneòlas agus ùr-ghnàthachaidh an làn ghnìomh airson nan dùthchannan as lugha leasaichte ro 2017 agus cuir ri cleachdadh teicneòlas comasachaidh, gu sònraichte teicneòlas fiosrachaidh is conaltraidh."
+            short_title: "Neartaich an comas Saidheans, Teicneòlais agus Ùr-ghnàthachaidh airson nan Dùthchannan leis an Ìre Leasachaidh as Lugha"
+          target_17_9:
+            long_title: "Meudaich taic eadar-nàiseanta gus togail comas èifeachdach agus cuimsichte a chur an gnìomh ann an dùthchannan fo leasachadh gus taic a thoirt do phlanaichean nàiseanta gus na h-amasan leasachaidh seasmhach gu lèir a bhuileachadh, a’ gabhail a-steach tro cho-obrachadh Tuath-Deas, Deas-Deas agus triantanach."
+            short_title: "Cuit ri comas Amasan Leasachaidh Seasmhach ann an dùthchannan fo leasachadh"
+          target_17_10:
+            long_title: "Brosnaich siostam malairt ioma-thaobhach uile-choitcheann, stèidhichte air riaghailtean, fosgailte, a tha gun lethbhreith agus cothromach fo Bhuidheann Malairt na Cruinne, a’ gabhail a-steach tro co-rèiteachaidhean fon Chlàr Leasachaidh Doha aice."
+            short_title: "Brosnaich Siostam Malairt Uile-choitcheann fon WTO"
+          target_17_11:
+            long_title: "Cuir gu mòr ri às-mhalairt dhùthchannan fo leasachadh, gu sònraichte le sùil ri cuibhreann nan dùthchannan as mì-leasaichte de dh’às-mhalairt cruinneil a dhùblachadh ro 2020."
+            short_title: "Meudachadh às-mhalairt bho dhùthchannan fo leasachadh"
+          target_17_12:
+            long_title: "Cur an gnìomh ruigsinneachd margaidh gun chìsean agus gun chuota ann an deagh àm airson a h-uile dùthaich as lugha leasaichte, a rèir co-dhùnaidhean Buidheann Malairt na Cruinne, a’ gabhail a-steach a bhith a’ dèanamh cinnteach gu bheil na riaghailtean a thaobh riaghailtean tùis fàbharach airson in-mhalairt bho na dùthchannan as lugha leasaichte follaiseach agus sìmplidh, agus a’ cuideachadh le bhith a’ toirt cothrom air a’ mhargaidh."
+            short_title: "Thoir air falbh bacaidhean malairt airson nan dùthchannan leis na h-ìrean leasachaidh as lugha"
+          target_17_13:
+            long_title: "Cuir ri seasmhachd macro-eaconamach na cruinne, a’ gabhail a-steach tro cho-òrdanachadh poileasaidh agus co-leanailteachd poileasaidh."
+            short_title: "Cuir ri Seasmhachd Macro-eaconamach Cruinneil"
+          target_17_14:
+            long_title: "Cuir ri co-leanailteachd poileasaidh airson leasachadh seasmhach."
+            short_title: "Cuir ri Co-leanailteachd Poileasaidh airson Leasachadh Seasmhach"
+          target_17_15:
+            long_title: "Thoir spèis do raon poileasaidh agus ceannardas gach dùthaich gus poileasaidhean a stèidheachadh agus a bhuileachadh airson cuir às do bhochdainn agus airson leasachadh seasmhach."
+            short_title: "Thoir spèis do Cheannardan Nàiseanta gus Poileasaidhean airson Amasan Leasachadh Seasmhach a bhuileachadh"
+          target_17_16:
+            long_title: "Meudaich an com-pàirteachas cruinneil airson leasachadh seasmhach, le taic bho chom-pàirteachasan ioma-luchd-ùidh a bhios a’ gluasad agus a’ co-roinn gnàth-eòlas, eòlas, teicneòlas agus goireasan ionmhais, gus taic a chumail ri choileanadh amasan leasachadh seasmhach anns a h-uile dùthaich, gu sònraichte dùthchannan fo leasachadh."
+            short_title: "Cuir ris a’ Chom-pàirteachas Chruinneil airson Leasachadh Seasmhach"
+          target_17_17:
+            long_title: "Brosnaich agus cuir air adhart com-pàirteachasan poblach, poblach-prìobhaideach agus comann-catharra èifeachdach, a’ togail air eòlas agus ro-innleachdan stòrais chom-pàirteachasan."
+            short_title: "A’ neartachadh Com-pàirteachasan Èifeachdach"
+          target_17_18:
+            long_title: "Ro 2020, cuir ri taic togail comais do dhùthchannan fo leasachadh, a’ gabhail a-steach na dùthchannan as lugha leasaichte agus Stàitean Eileanach Beaga fo leasachadh, gus àrdachadh mòr a thoirt air na tha ri fhaighinn de dhàta àrd-chàileachdail, ùineil agus earbsach air a sgaradh a rèir teachd a-steach, gnè, aois, cinneadh, inbhe imrich. ciorram, suidheachadh cruinn-eòlasach agus feartan eile a tha buntainneach ann an co-theacsan nàiseanta."
+            short_title: "Meudaich na tha ri fhaighinn de dhàta earbsach"
+          target_17_19:
+            long_title: "Ro 2030, tog air iomairtean a th’ ann mar-thà gus tomhais adhartais a chruthachadh a thaobh leasachadh seasmhach a chuireas ri GDP dhachaigheil, agus thoir taic do thogail comas staitistigeil ann an dùthchannan fo leasachadh."
+            short_title: "Dèan barrachd obair leasachaidh gus adhartas a thomhas"
+      help:
+        title: "Taic le Amasan Leasachaidh Seasmhaich"
+        description: "Faodaidh tu do thabhartasan dhan choimhearsnachd (deasbadan, molaidhean shaoranaich agus pròiseactan tasgaidh) a cho-thaobhadh ri Amasan Leasachaidh Seasmhach 2030. Leigidh seo leinn sealladh farsaing a bhith againn air na chuir sinn ri gach fear de na h-Amasan Leasachadh Seasmhach. Gu h-ìosal gheibh thu a-mach mu na h-amasan gu lèir, na targaidean aca agus na targaidean ionadail."
+      show:
+        read_more: "Leugh barrachd mu dheidhinn %{goal}"
+        read_less: "Falaich an còrr mu dhèidhinn %{goal}"
+        targets:
+          no_local_targets: Chan eil targaidean ionadail aig an amas seo
+      title: "Amasan an Leasachaidh Sheasmhaich"
+      filter:
+        heading: "Criathraich a rèir Amasan Leasachaidh Èifeachdach"
+        link: "Faic a h-uile %{resources} co-cheangailte ris an amas %{code}"
+        more:
+          one: "Amas a bharrachd"
+          two: "%{count} amasan a bharrachd"
+          few: "%{count} amasan a bharrachd"
+          other: "%{count} amasan a bharrachd"
+    related_list_selector:
+      goal_identifier: "SDG%{code}"
+      goal_list: "’S urrainn dhut aon no grunn Amasan Leasachaidh Seasmhach a thaghadh a tha co-cheangailte ri do %{record}"
+      help:
+        title: "Dè na h-Amasan Leasachaidh Seasmhach agus de na targaidean a tha co-shìnte ris an %{record} agam?"
+        text: "Duilleag cobhair mu na h-Amasan Leasachaidh Seasmhach"
+      hint: Faodaidh tu còd a chur ann airson amas/targaid sònraichte no teacsa gus an lorg. Tadhail air %{ link} airson barrachd fiosrachaidh.
+      remove_tag: "Thoir air falbh"
+      title: "Amasan agus Targaidean Leasachaidh Seasmhach"
+    targets:
+      filter:
+        link: "Faic a h-uile %{resources} cho-cheangailte ri targaid %{code}"
+        more:
+          one: "Targaid a bharrachd"
+          two: "%{count} targaidean a bharrachd"
+          few: "%{count} targaidean a bharrachd"
+          other: "%{count} targaidean a bharrachd"

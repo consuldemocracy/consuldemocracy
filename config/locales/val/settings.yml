@@ -58,9 +58,13 @@ val:
     meta_keywords_description: 'Paraules clau <meta name="keywords">, utilitzades per a millorar el SEO'
     min_age_to_participate: Edat mínima per a participar
     min_age_to_participate_description: "Els usuaris majors d'edat podran participar en tots els processos"
+    postal_codes: "Codis Postals"
     proposals:
       poll_short_title: Votacions
       email_short_title: Correu electrònic
+      email_description: Descripció correu electrònic
+      poster_short_title: Pòster
+      poster_description: Descripció pòster
     analytics_url: "URL d'estadístiques externes"
     feature:
       twitter_login: "Registre amb Twitter"

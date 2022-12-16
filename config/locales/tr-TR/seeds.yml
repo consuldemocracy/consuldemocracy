@@ -3,16 +3,16 @@ tr:
     admin_notifications:
       budget:
         title: "Katılımcı Bütçe'yi kapatıyoruz!"
-        body: "Acele edin ve birkaç gün içinde bitmeden önce bir teklif oluşturun!"
+        body: "Acele edin ve birkaç gün içinde bitmeden önce bir öneri oluşturun!"
       help:
-        title: "Consul'u tercüme etmemize yardımcı olun"
-        body: "Eğer bir dilde yetkinseniz, lütfen Consul'u tercüme etmemize yardımcı olun!"
+        title: "Consul uygulamasını dilinize çevirmemize yardımcı olun"
+        body: "Bir dili iyi biliyorsanız, Consul uygulamasını çevirmemize yardımcı olun!"
       map:
-        title: "Artık teklifleri ve yatırımları konumlandırabilirsiniz"
-        body: "Bir teklif veya yatırım oluşturduğunuzda harita üzerinde bir nokta belirtebilirsiniz."
+        title: "Artık öneri ve yatırımlar için coğrafi konum belirtebilirsiniz"
+        body: "Oluşturacağınız öneri veya yatırımlar için harita üzerinde bir nokta belirtebilirsiniz."
       proposal:
-        title: "Teklifiniz var mı?"
-        body: "Fikirlerinizle bir teklif oluşturabileceğinizi ve insanların bunu tartışıp destekleyeceğini hatırlayın."
+        title: "Bir öneriniz mi var?"
+        body: "Fikirlerinizle bir öneri oluşturabileceğinizi ve insanların bunu tartışıp destekleyebileceğini unutmayın."
     settings:
       official_level_1_name: Resmi pozisyon 1
       official_level_2_name: Resmi pozisyon 2
@@ -30,7 +30,7 @@ tr:
     cards:
       budget:
         title: "Katılımcı bütçe nasıl çalışır?"
-        description: "Katılımcı bütçeler, vatandaşların bütçenin bir kısmının nasıl harcanacağına doğrudan karar vermelerini, kurumun vatandaş tekliflerini titiz bir şekilde izlemesi ve değerlendirmesi ile sağlar. Herkes için azami etki ve kontrol memnuniyeti."
+        description: "Katılımcı bütçeler, vatandaşların bütçenin bir kısmının nasıl harcanacağına doğrudan karar vermelerini, kurumun yurttaş önerilerini titiz bir şekilde izlemesini ve değerlendirmesini sağlar. Herkes için en iyi etki ve kontrol hoşnutluğu sağlanır."
         link_text: "Katılımcı bütçeler hakkında daha fazlası"
         label: "Katılımcı bütçeleri"
       debate:
@@ -44,10 +44,10 @@ tr:
         link_text: "Daha fazla bilgi"
         label: "Hoş geldiniz"
       proposal:
-        title: "Vatandaş önerileri nasıl gerçekleşir?"
-        description: "Herkesin, bir vatandaş teklifi oluşturması ve destek kazanması için bir platform. Yeterli desteğe ulaşan teklifler oylanacak ve böylece hepimiz için önem arz eden sorunlara birlikte karar vereceğiz."
-        link_text: "Öneriler hakkında daha fazlası"
-        label: "Vatandaş önerileri"
+        title: "Yurttaş önerileri nasıl işler?"
+        description: "Herkesin, bir yurttaş önerisi oluşturup destek alabileceği bir platform. Yeterli desteği alan öneriler oylanır ve böylece hepimiz için önemli olan sorunlara birlikte karar verebiliriz."
+        link_text: "Öneriler hakkında ayrıntılı bilgi"
+        label: "Yurttaş önerileri"
     categories:
       associations: Dernekler
       culture: Kültür

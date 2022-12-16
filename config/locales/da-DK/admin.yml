@@ -4,9 +4,13 @@ da:
       title: Administration
     actions:
       actions: Handlinger
+      block_author: "Bloker bruger"
+      confirm_action: "Er du sikker? %{action} \"%{name}\""
+      confirm_delete: "Er du sikker? Denne handling vil slette \"%{name}\" og kan ikke fortrydes."
       confirm_hide: Bekræft moderation
       delete: "Slet"
       hide: Skjul
+      label: "%{action} %{name}"
       restore: Gendan
       mark_featured: Fremhævet
       unmark_featured: Fjern fremhævning
@@ -32,12 +36,18 @@ da:
           budgets: Deltagerbudgetter
           help_page: Hjælp
           sdg: Verdensmål
+      create:
+        notice: "Banner blev oprettet"
+      destroy:
+        notice: "Banner blev slettet"
       edit:
         editing: Rediger banner
         form:
           submit_button: Gem ændringer
       new:
         creating: Opret banner
+      update:
+        notice: "Banner blev opdateret"
     activity:
       show:
         action: Handlinger
@@ -60,6 +70,7 @@ da:
         no_activity: Der er ingen moderator aktivitet.
     budgets:
       actions:
+        ballots: "Lav stemmeboks"
         edit: "Rediger budget"
         preview: "Forhåndsvisning"
       index:
@@ -75,12 +86,16 @@ da:
         table_draft: "Udkast"
         table_name: Navn
         table_phase: Fase
+        type_multiple: "Flere budgetter"
+        type_single: "Enkelt budget"
         admin_ballots: Administrer valgsteder
         no_budgets: "Der er ingen budgetter."
       create:
         notice: Det nye deltagerbudget blev oprettet!
       update:
         notice: Deltagerbudgettet blev opdateret
+      publish:
+        notice: "Deltagerbudget oprettet"
       edit:
         title: Rediger deltagerbudget
         delete: Slet budget
