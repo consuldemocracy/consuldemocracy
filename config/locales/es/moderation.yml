@@ -1,7 +1,5 @@
 es:
   moderation:
-    actions:
-      confirm_action: "¿Estás seguro? %{action}"
     comments:
       index:
         block_authors: Bloquear autores
@@ -93,7 +91,7 @@ es:
         headers:
           moderate: Moderar
           proposal_notification: Notificación de propuesta
-        hide: Ocultar notificaciones
+        hide: Ocultar Propuestas
         ignore_flags: Marcar como revisadas
         orders:
           created_at: Más recientes
@@ -101,11 +99,7 @@ es:
         title: Notificaciones de propuestas
     users:
       index:
-        block: Bloquear
-        confirm_block: "¿Seguro? Esto ocultará a \"%{name}\" así como todos sus contenidos."
-        confirm_hide: "¿Seguro? Esto ocultará a \"%{name}\" sin ocultar sus contenidos."
-        hide: Ocultar
+        hide: Bloquear
         search_placeholder: email o nombre de usuario
         title: Bloquear usuarios
-      notice_block: Usuario bloqueado. Se han ocultado todos sus contenidos y comentarios.
-      notice_hide: Usuario ocultado. Todos sus contenidos y comentarios siguen disponibles.
+      notice_hide: Usuario bloqueado. Se han ocultado todos sus debates y comentarios.
