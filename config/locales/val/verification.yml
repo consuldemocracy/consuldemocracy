@@ -52,7 +52,7 @@ val:
           residence_card: Tarjeta de residència
           spanish_id: DNI
         error_not_allowed_age: No tens l'edat mínima per a participar
-        error_not_allowed_postal_code: Per a verificarte has d'estar empadronat.
+        error_not_allowed_postal_code: Per a verificarte has d'estar empadronat
         form_errors: evitaren verificar la teua residència
         postal_code_note: Per a verificar el teu compte has d'estar empadronat
         terms: els termes d'acces
@@ -86,7 +86,7 @@ val:
     user_permission_debates: Participar en debats
     user_permission_info: Al verificar les teues dades podràs...
     user_permission_proposal: Crear noves propostes
-    user_permission_support_proposal: Avalar propostes*
+    user_permission_support_proposal: Avalar propostes
     user_permission_votes: Participar en les votacions finals*
     verification_needed: Verificació adicional necessaria
     verified_user:
