@@ -1,0 +1,47 @@
+ne:
+  activemodel:
+    models:
+      verification:
+        residence: "निवास"
+        sms: "एस एम एस"
+      local_census_records/import:
+        one: स्थानीय जनगणना अभिलेख आयात
+        other: स्थानीय जनगणना अभिलेखहरू आयात
+    attributes:
+      verification:
+        residence:
+          document_type: "कागजात प्रकार"
+          document_number: "कागजात नम्बर (अक्षरहरू सहित)"
+          date_of_birth: "जन्म मिति"
+          postal_code: "पोष्टकोड"
+        sms:
+          phone: "टेलिफोन"
+          confirmation_code: "कन्फर्मेसन कोड"
+        email:
+          recipient: "इमेल"
+      verification/letter:
+        email: "इमेल"
+        password: "पासवर्ड"
+        verification_code: "तपाईंले पत्रमा प्राप्त गर्नुभएको कोड"
+      verification/management/document:
+        document_type: "कागजात प्रकार:"
+        document_number: "कागजात संख्या"
+      verification/residence:
+        date_of_birth: "जन्म मिति"
+        document_type: "कागजात प्रकार"
+        postal_code: "पोष्टकोड"
+      verification/sms:
+        confirmation_code: "तपाईंले आफ्नो मोबाइलमा प्राप्त गर्नुभएको कोड प्रविष्ट गर्नुहोस्"
+      officing/residence:
+        document_type: "कागजात प्रकार"
+        document_number: "कागजात नम्बर (अक्षरहरू सहित)"
+        year_of_birth: "जन्मेको वर्ष"
+      local_census_records/import:
+        file: फाईल
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "दिइएको फाइल ढाँचा गलत छ। अनुमति दिइएको फाइल ढाँचा यस्ताे हो: %{valid_extensions}।"
+              headers: "दिइएको फाइल हेडर गलत छन्। फाइल हेडरहरूमा निम्न नामहरू हुनुपर्छ: %{required_headers}।"
