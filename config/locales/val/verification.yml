@@ -25,6 +25,7 @@ val:
       new:
         explanation: "Per a participar en les votacions finals pots:"
         go_to_index: Vore propostes
+        office: Verificar-se presencialment en quansevol oficina d'Atenció al ciutadà
         send_letter: Sol·licitar una carta per correu postal
         title: Felicitats!
         user_permission_info: Amb el teu compte ja pots...
@@ -87,6 +88,7 @@ val:
     user_permission_proposal: Crear noves propostes
     user_permission_support_proposal: Avalar propostes*
     user_permission_votes: Participar en les votacions finals*
+    verification_needed: Verificació adicional necessaria
     verified_user:
       form:
         submit_button: Enviar códi
