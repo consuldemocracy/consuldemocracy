@@ -1,4 +1,110 @@
 nl:
   sdg:
+    goals:
+      goal_1:
+        title: "Geen Armoede"
+        title_in_two_lines: "Geen\nArmoede"
+        description: "Beëindig armoede overal en in al haar vormen."
+        targets:
+          target_1_1:
+            short_title: "Extreme Armoede Uitbannen"
+          target_1_2:
+            short_title: "Verminder Armoede met Minimaal 50%"
+          target_1_3:
+            long_title: "Nationaal toepasbare sociale beschermingssystemen en maatregelen implementeren voor iedereen, met inbegrip van sociale beschermingsvloeren, en tegen 2030 een aanzienlijke dekkingsgraad realiseren van de armen en de kwetsbaren"
+            short_title: "Implementeer Sociale Beschermingssystemen"
+          target_1_4:
+            long_title: "Er tegen 2030 voor zorgen dat alle mannen en vrouwen, in het bijzonder de armen en de kwetsbaren, gelijke rechten hebben op economische middelen, alsook toegang tot basisdiensten, eigenaarschap en controle over land en andere vormen van eigendom, nalatenschap, natuurlijke hulpbronnen, gepaste nieuwe technologie en financiële diensten, met inbegrip van microfinanciering"
+          target_1_5:
+            long_title: "Tegen 2030 de weerbaarheid opbouwen van de armen en van hen die zich in kwetsbare situaties bevinden en hun blootstelling aan en kwetsbaarheid voor met klimaatgerelateerde extreme gebeurtenissen en andere economische, sociale en ecologische schokken en rampen beperken"
+          target_1_A:
+            long_title: "Zorgen voor een aanzienlijke mobilisatie van middelen afkomstig uit verschillende bronnen, ook via versterkte ontwikkelingssamenwerking, om adequate en voorspelbare middelen te voorzien voor ontwikkelingslanden, in het bijzonder de minst ontwikkelde landen, om programma’s en beleidslijnen te implementeren die een einde moeten maken aan armoede in al haar vormen"
+          target_1_B:
+            long_title: "Solide beleidskaders creëren op nationaal, regionaal en internationaal niveau, die zijn gebaseerd op ontwikkelingsstrategieën voor de armen en het genderbeleid, om de versnelde investering te ondersteunen in acties die gericht zijn op het uitroeien van de armoede"
+      goal_2:
+        title: "Geen honger"
+        title_in_two_lines: "Geen\nHonger"
+        description: "Geen Honger."
+        targets:
+          target_2_1:
+            long_title: "Tegen 2030 een einde maken aan honger en voor iedereen, in het bijzonder de armen en de mensen die leven in kwetsbare situaties, met inbegrip van kinderen, toegang garanderen tot veilig, voedzaam en voldoende voedsel en dit het hele jaar lang."
+            short_title: "Universele Toegang tot Veilig en Voedzaam Eten"
+          target_2_2:
+            long_title: "Tegen 2030 een einde maken aan alle vormen van malnutritie, waarbij ook tegen 2025 voldaan moet kunnen worden aan de internationaal overeengekomen doelstellingen met betrekking tot groeiachterstand en ondergewicht bij kinderen onder de 5 jaar; en eveneens tegemoetkomen aan de voedingsbehoeften van adolescente meisjes, zwangere vrouwen, vrouwen die borstvoeding geven en oudere personen."
+            short_title: "Een Einde Maken aan Alle Vormen van Ondervoeding"
+          target_2_3:
+            long_title: "Tegen 2030 de landbouwproductiviteit en de inkomens verdubbelen voor kleinschalige voedselproducenten, in het bijzonder vrouwen, inheemse bevolkingen, familieboeren, veefokkers en vissers, onder meer door een veilige en gelijke toegang tot land, andere productieve hulpbronnen en inputs, kennis, financiële diensten, markten en opportuniteiten die toegevoegde waarde bieden en ook buiten de landbouw tewerkstelling genereren."
+            short_title: "Verdubbel de Productiviteit en het Inkomen van Kleinschalige Voedselproducenten"
+          target_2_4:
+            long_title: "Tegen 2030 duurzame voedselproductiesystemen garanderen en veerkrachtige landbouwpraktijken implementeren die de productiviteit en de productie kunnen verhogen, die helpen bij het in stand houden van ecosystemen, die de aanpassingscapaciteit verhogen in de strijd tegen klimaatverandering, extreme weersomstandigheden, droogte, overstromingen en andere rampen en die op een progressieve manier de kwaliteit van het land en de bodem verbeteren."
+          target_2_5:
+            long_title: "Tegen 2020 de genetische diversiteit in stand houden van zaden, cultuurgewassen en gefokte en gedomesticeerde dieren en hun in het wild levende verwanten, ook aan de hand van zaad- en plantenbanken die op een degelijke manier beheerd en gediversifieerd worden op nationaal, regionaal en internationaal niveau; en de toegang bevorderen tot het eerlijk en billijk delen van voordelen afkomstig van het gebruik van genetische hulpbronnen en daaraan gekoppelde traditionele kennis, zoals internationaal overeengekomen."
+            short_title: "Behoud de Genetische Diversiteit in Voedselproductie"
+          target_2_A:
+            long_title: "Verhogen van de investeringen, door versterkte internationale samenwerking, in landelijke infrastructuur, landbouwkundig onderzoek en uitgebreide diensten, technologische ontwikkeling en genetische databanken voor planten en vee om de landbouwkundige productiecapaciteit in ontwikkelingslanden, in het bijzonder in de minst ontwikkelde landen, te versterken."
+            short_title: "Investeer landelijke infrastructuur, landbouwkundig onderzoek, technologische ontwikkeling en genetische databanken"
+          target_2_B:
+            long_title: "Corrigeren en voorkomen van handelsbeperkingen en scheefgegroeide situaties op de wereldlandbouwmarkten, door onder andere tegelijk alle vormen van landbouwexportsubsidies en alle exportmaatregelen met een gelijkaardig effect af te schaffen, in overeenstemming met het mandaat van de Ontwikkelingsronde in Doha."
+          target_2_C:
+            long_title: "Maatregelen aannemen die de correcte werking moeten garanderen van de voedselgrondstoffenmarkten en hun afgeleiden en een snelle toegang tot marktinformatie bevorderen, met inbegrip van informatie over voedselreserves, om de extreme volatiliteit van de voedselprijzen te helpen beperken."
+      goal_3:
+        title: "Goede Gezondheid en Welzijn"
+        title_in_two_lines: "Goede Gezondheid \nen Welzijn"
+      goal_4:
+        title: "Kwaliteitsonderwijs"
+        title_in_two_lines: "Kwaliteits-\nonderwijs"
+        description: "Kwaliteitsonderwijs."
+        targets:
+          target_4_2:
+            short_title: "Gelijke Toegang tot Kwaliteitsvol Voorschools Onderwijs"
+      goal_5:
+        title: "Gendergelijkheid"
+        title_in_two_lines: "Gender-\ngelijkheid"
+      goal_6:
+        title: "Schoon Water en Sanitair"
+        title_in_two_lines: "Schoon Water\nen Sanitair"
+      goal_7:
+        title: "Betaalbare en Duurzame Energie"
+        title_in_two_lines: "Betaalbare en\nDuurzame Energie"
+      goal_8:
+        title: "Eerlijk Werk en Economische Groei"
+        title_in_two_lines: "Eerlijk Werk en\nEconomische Groei"
+      goal_9:
+        title: "Industrie, Innovatie en Infrastructuur"
+        title_in_two_lines: "Industrie, Innovatie\nen Infrastructuur"
+      goal_10:
+        title: "Ongelijkheid Verminderen"
+        title_in_two_lines: "Ongelijkheid\nVerminderen"
+      goal_11:
+        title: "Duurzame Steden en Gemeenschappen"
+        title_in_two_lines: "Duurzame Steden\nen Gemeenschappen"
+      goal_12:
+        title: "Verantwoordelijke Consumptie en Productie"
+        title_in_two_lines: "Verantwoordelijke Consumptie \nen Productie"
+      goal_13:
+        title: "Klimaatactie"
+        title_in_two_lines: "Klimaat-\nactie"
+      goal_14:
+        title: "Leven in het Water"
+        title_in_two_lines: "Leven in\nhet water"
+      goal_15:
+        title: "Leven op het Land"
+        title_in_two_lines: "Leven op\nhet Land"
+      goal_16:
+        title: "Vrede, Justitie en Sterke Publieke Diensten"
+        title_in_two_lines: "Vrede, Justitie en\nSterke Publieke Diensten"
+      goal_17:
+        title: "Partnerschap om Doelstellingen te Bereiken"
+        title_in_two_lines: "Partnerschap om \nDoelstellingen te Bereiken"
+      title: "Duurzame Ontwikkelingsdoelen"
+      filter:
+        heading: "Filteren op SDG"
     related_list_selector:
+      goal_identifier: "SDG%{code}"
+      goal_list: "Je kan één of meerdere SDG's kiezen die aansluiten bij je %{record}"
+      help:
+        title: "Welke SDG's en doelen sluiten aan bij mijn %{record}?"
+        text: "SDG hulppagina"
+      hint: Je kan de code van een specifiek doel invoeren of zoeken om er één te vinden. Bekijk voor meer informatie de %{link}.
       remove_tag: "Remove"
+      title: "Duurzame Ontwikkelingsdoelen"

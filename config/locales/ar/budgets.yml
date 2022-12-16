@@ -59,7 +59,6 @@ ar:
         tags_placeholder: "ادخل العلامات التي ترغب في استخدامها، مفصولة بفواصل (',')"
         map_location: "موقع الخريطة"
         map_location_instructions: "تنقل في الخريطة الى الموقع و ضع العلامة."
-        map_remove_marker: "ازل علامة الخريطة"
       index:
         title: الميزانية التشاركية
         unfeasible: الاستثمارات الغير مجدية

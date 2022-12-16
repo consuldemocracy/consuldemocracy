@@ -1,0 +1,622 @@
+ne:
+  attributes:
+    geozone_id: "सञ्चालनको दायरा"
+    results_enabled: "परिणामहरू देखाउनुहोस्"
+    stats_enabled: "तथ्याङ्क देखाउनुहोस्"
+    advanced_stats_enabled: "उन्नत तथ्याङ्कहरू देखाउनुहोस्"
+    name: नाम
+    email: इमेल
+    description: विवरण
+    related_sdg_list: लक्ष्यहरू
+  activerecord:
+    models:
+      activity:
+        one: "क्रियाकलाप"
+        other: "क्रियाकलापहरू"
+      budget:
+        one: "बजेट"
+        other: "बजेटहरू"
+      budget/investment:
+        one: "लगानी"
+        other: "लगानीहरू"
+      milestone:
+        one: "माइलस्टोन"
+        other: "माइलस्टोनहरू"
+      milestone/status:
+        one: "माइलस्टोन स्थिति"
+        other: "माइलस्टोन स्थितिहरू"
+      progress_bar:
+        one: "प्रगति बार"
+        other: "प्रगति बारहरू"
+      comment:
+        one: "टिप्पणी"
+        other: "टिप्पणीहरू"
+      debate:
+        one: "बहस"
+        other: "बहसहरू"
+      tag:
+        one: "ट्याग"
+        other: "ट्यागहरू"
+      user:
+        one: "प्रयोगकर्ता"
+        other: "प्रयोगकर्ताहरू"
+      moderator:
+        one: "मध्यस्थकर्ता"
+        other: "मध्यस्थकर्ताहरू"
+      administrator:
+        one: "प्रशासक"
+        other: "प्रशासकहरू"
+      valuator:
+        one: "मूल्याङ्कनकर्ता"
+        other: "मूल्याङ्कनकर्ताहरू"
+      valuator_group:
+        one: "मूल्याङ्कनकर्ताकाे समूह"
+        other: "मूल्याङ्कनकर्ताकाे समूहहरू"
+      manager:
+        one: "व्यवस्थापक"
+        other: "व्यवस्थापकहरू"
+      newsletter:
+        one: "समाचारपत्र"
+        other: "समाचारपत्रहरू"
+      vote:
+        one: "मत"
+        other: "मतहरू"
+      organization:
+        one: "संस्था"
+        other: "संस्थाहरू"
+      poll/booth:
+        one: "बुथ"
+        other: "बुथहरू"
+      poll/officer:
+        one: "अधिकारी"
+        other: "अधिकारीहरू"
+      poll/ballot_sheet:
+        one: मतपत्र
+        other: मतपत्रहरू
+      proposal:
+        one: "नागरिक प्रस्ताव"
+        other: "नागरिक प्रस्तावहरू"
+      sdg/goal:
+        one: "लक्ष्य"
+        other: "लक्ष्यहरू"
+      sdg/local_target:
+        one: "स्थानीय लक्ष्य"
+        other: "स्थानीय लक्ष्यहरू"
+      sdg/manager:
+        one: "SDG व्यवस्थापक"
+        other: "SDG व्यवस्थापकहरू"
+      sdg/target:
+        one: "लक्ष्य"
+        other: "लक्ष्यहरू"
+      site_customization/page:
+        one: आफू अनुकूल पृष्ठ
+        other: आफू अनुकूल पृष्ठहरू
+      site_customization/image:
+        one: आफू अनुकूल छवि अथवा इमेज
+        other: आफू अनुकूल छवि अथवा इमेजहरू
+      site_customization/content_block:
+        one: कस्टम सामग्री ब्लक
+        other: कस्टम सामग्री ब्लकहरू
+      document:
+        one: कागजात
+        other: कागजातहरू
+      legislation/process:
+        one: "प्रक्रिया"
+        other: "प्रक्रियाहरू"
+      legislation/proposal:
+        one: "प्रस्ताव"
+        other: "प्रस्तावहरू"
+      legislation/draft_versions:
+        one: "मस्यौदा संस्करण"
+        other: "मस्यौदा संस्करणहरू"
+      legislation/questions:
+        one: "प्रश्न"
+        other: "प्रश्नहरू"
+      legislation/question_options:
+        one: "प्रश्नको विकल्प"
+        other: "प्रश्नको विकल्पहरू"
+      legislation/answers:
+        one: "जवाफ"
+        other: "जवाफहरू"
+      documents:
+        one: "कागजात"
+        other: "कागजातहरू"
+      images:
+        one: "छवि"
+        other: "छविहरू"
+      tenant:
+        one: "भाडामा लिने व्यक्ति"
+        other: "भाडामा लिने व्यक्तिहरू"
+      topic:
+        one: "विषय"
+        other: "विषयहरू"
+      poll:
+        one: "मतदान"
+        other: "मतदान"
+      proposal_notification:
+        one: "प्रस्ताव सूचना"
+        other: "प्रस्ताव सूचनाहरू"
+      dashboard/action:
+        one: प्रस्ताव ड्यासबोर्ड कार्य
+        other: प्रस्ताव ड्यासबोर्ड कार्यहरू
+      dashboard/administrator_task:
+        one: कार्य
+        other: कार्यहरू
+      link:
+        one: लिङ्क
+        other: लिङ्कहरू
+      local_census_record:
+        one: स्थानीय जनगणना अभिलेख
+        other: स्थानीय जनगणना अभिलेखहरू
+      votation_type:
+        one: मतदानका प्रकार
+        other: मतदानका प्रकारहरू
+    attributes:
+      budget:
+        name: "नाम"
+        description_accepting: "स्वीकार गर्ने चरणकाे विवरण"
+        description_reviewing: "समीक्षा गर्ने चरणकाे विवरण"
+        description_selecting: "चयन गर्ने चरणकाे विवरण"
+        description_valuating: "मूल्याङ्कन गर्ने चरणकाे विवरण"
+        description_balloting: "मतदान गर्ने चरणको विवरण"
+        description_reviewing_ballots: "मतपत्रको समीक्षा गर्ने चरणकाे विवरण"
+        description_finished: "बजेट समाप्त भएपछिकाे विवरण"
+        phase: "सक्रिय चरण"
+        currency_symbol: "मुद्रा"
+        voting_style: "अन्तिम मतदान शैली"
+        voting_style_knapsack: "झोला"
+        voting_style_approval: "स्वीकृति"
+        hide_money: "यस बजेटको पैसा रकम लुकाउनुहोस्"
+      budget/translation:
+        main_link_text: "लिङ्कमा शब्दहरू"
+        main_link_url: "लिङ्कले तपाईंलाई लैजान्छ (लिङ्क थप्नुहोस्)"
+        name: "नाम"
+      budget/investment:
+        heading_id: "शीर्षक"
+        title: "टाइटल"
+        description: "विवरण"
+        external_url: "थप कागजातहरूका लिङ्क"
+        administrator_id: "प्रशासक"
+        location: "अतिरिक्त स्थानकाे जानकारी"
+        organization_name: "यदि तपाइँ सामूहिक/संस्थाको नाममा वा धेरै व्यक्तिहरूको तर्फबाट प्रस्ताव गर्दै हुनुहुन्छ भने, यसको नाम लेख्नुहोस्"
+        image: "प्रस्ताव वर्णनात्मक छवि"
+        image_title: "छवि शीर्षक"
+        duration: "समय दायरा"
+        feasibility_feasible: "सम्भाव्य"
+        feasibility_undecided: "अपरिभाषित"
+        feasibility_unfeasible: "असम्भाव्य"
+        incompatible: "असंगत भनी चिन्ह लगाउनुहोस्"
+        milestone_tag_list: "माइलस्टोन ट्यागहरू"
+        price_explanation: "मूल्य व्याख्या"
+        selected: "चयन गरिएको रूपमा चिन्ह लगाउनुहोस्"
+        selected_true: "छानिएकाे"
+        selected_false: "चयन नगरिएकाे"
+        unfeasibility_explanation: "सम्भाव्यता स्पष्टीकरण"
+        valuation_finished: "मूल्याङ्कन सकियो"
+        valuator_ids: "समूहहरू"
+        valuation_tag_list: "ट्यागहरू"
+      budget/investment/translation:
+        title: "टाइटल"
+        description: "विवरण"
+      geozone:
+        name: नाम
+        external_code: "बाह्य कोड (वैकल्पिक)"
+        census_code: "जनगणना कोड (वैकल्पिक)"
+        html_map_coordinates: "HTML <map> निर्देशांक (वैकल्पिक)"
+      milestone:
+        status_id: "हालको स्थिति (वैकल्पिक)"
+        title: "टाइटल"
+        description: "विवरण (वैकल्पिक यदि त्यहाँ एक तोकिएको स्थिति छ)"
+        publication_date: "मिति"
+      milestone/translation:
+        description: "विवरण"
+      milestone/status:
+        name: "नाम"
+        description: "विवरण (वैकल्पिक)"
+      progress_bar:
+        kind: "प्रकार"
+        title: "टाइटल"
+        percentage: "हालको प्रगति"
+      progress_bar/kind:
+        primary: "प्राथमिक"
+        secondary: "माध्यमिक"
+      budget/group:
+        max_votable_headings: "प्रयोगकर्ताले परियोजनाहरू चयन गर्न सक्ने शीर्षकहरूको अधिकतम संख्या"
+      budget/group/translation:
+        name: "समूहको नाम"
+      budget/heading:
+        allow_custom_content: "सामग्री ब्लक अनुमति दिनुहोस्"
+        latitude: "अक्षांश (वैकल्पिक)"
+        longitude: "देशान्तर (वैकल्पिक)"
+        name: "शीर्षककाे नाम"
+        price: "पैसा रकम"
+        population: "जनसंख्या (वैकल्पिक)"
+        max_ballot_lines: "मतहरू दिन अनुमति दिइएको छ"
+      budget/heading/translation:
+        name: "शीर्षककाे नाम"
+      budget/phase:
+        enabled: "चरण सक्षम गरियो"
+        ends_at: "समाप्ति मिति"
+        starts_at: "सुरू मिति"
+      budget/phase/translation:
+        name: "नाम"
+        description: "विवरण"
+        summary: "सारांश"
+        main_link_text: "लिङ्कमा टेक्स्ट"
+        main_link_url: "लिङ्कले तपाईंलाई लैजान्छ (लिङ्क थप्नुहोस्)"
+      comment:
+        body: "टिप्पणी"
+        user: "प्रयोगकर्ता"
+      debate:
+        author: "लेखक"
+        description: "राय"
+        tag_list: "विषयहरू"
+        terms_of_service: "सेवाका सर्तहरु"
+        title: "टाइटल"
+      debate/translation:
+        title: "बहस शीर्षक"
+        description: "प्रारम्भिक बहस पाठ"
+      proposal:
+        author: "लेखक"
+        title: "टाइटल"
+        question: "प्रश्न"
+        description: "विवरण"
+        responsible_name: "प्रस्ताव पेश गर्ने व्यक्तिको पूरा नाम"
+        retired_reason: "प्रस्ताव फिर्ता लिनुकाे कारण"
+        selected: "चयन गरिएको रूपमा चिन्ह लगाउनुहोस्"
+        terms_of_service: "सेवाका सर्तहरु"
+        video_url: "बाह्य भिडियो URL"
+      proposal/translation:
+        title: "प्रस्तावकाे शीर्षक"
+        description: "प्रस्ताव पाठ"
+        summary: "प्रस्तावकाे सारांश"
+        retired_explanation: "व्याख्या"
+      user:
+        login: "ईमेल वा प्रयोगकर्ताको नाम"
+        email: "इमेल"
+        username: "प्रयोगकर्ता नाम"
+        password_confirmation: "पासवर्ड पुष्टिकरण"
+        password: "पासवर्ड"
+        current_password: "वर्तमान पासवर्ड"
+        email_digest: "प्रस्ताव सूचनाहरूको सारांश प्राप्त गर्नुहोस्"
+        email_on_comment: "कसैले मेरो सामग्रीहरूमा टिप्पणी गर्दा मलाई ईमेल द्वारा सूचित गर्नुहोस्"
+        email_on_comment_reply: "कसैले मेरो टिप्पणीहरूको जवाफ दिँदा मलाई इमेलद्वारा सूचित गर्नुहोस्"
+        email_on_direct_message: "प्रत्यक्ष सन्देशहरूको बारेमा इमेलहरू प्राप्त गर्नुहोस्"
+        newsletter: "इमेल मार्फत सान्दर्भिक जानकारी प्राप्त गर्नुहोस्"
+        official_position: "आधिकारिक स्थिति"
+        official_position_badge: "आधिकारिक स्थिति ब्याज देखाउनुहोस्"
+        official_level: "आधिकारिक स्तर"
+        phone_number: "फोन नम्बर"
+        public_activity: "मेरो गतिविधिहरूको सूची सार्वजनिक राख्नुहोस्"
+        public_interests: "मैले पछ्याउने तत्वहरू सार्वजनिक राख्नुहोस्"
+        recommended_debates: "मलाई बहस गर्न सिफारिस गर्नुहोस्"
+        recommended_proposals: "मलाई प्रस्तावहरू सिफारिस गर्नुहोस्"
+        redeemable_code: "इमेल मार्फत प्रमाणिकरण कोड प्राप्त भयो"
+      direct_message:
+        title: "टाइटल"
+        body: "सन्देश"
+      organization:
+        name: "संस्थाको नाम"
+        responsible_name: "समूहको लागि जिम्मेवार व्यक्ति"
+      poll:
+        name: "नाम"
+        title: "नाम"
+        starts_at: "सुरू मिति"
+        ends_at: "बन्द हुने मिति"
+        geozone_restricted: "भौगोलिक क्षेत्र द्वारा प्रतिबन्धित"
+        summary: "सारांश"
+        description: "विवरण"
+      active_poll/translation:
+        description: "विवरण"
+      poll/booth:
+        name: "नाम"
+        location: "स्थान"
+      poll/translation:
+        name: "नाम"
+        summary: "सारांश"
+        description: "विवरण"
+      poll/question:
+        poll_id: "मतदान"
+        title: "प्रश्न"
+        summary: "सारांश"
+        description: "विवरण"
+        external_url: "थप कागजातहरूका लिङ्क"
+      poll/question/translation:
+        title: "प्रश्न"
+      poll/ballot_sheet:
+        data: CSV डाटा
+        poll_id: मतदान
+        officer_assignment_id: अधिकारी नियुक्ति
+      poll/shift:
+        task: "कार्य"
+      proposal_notification:
+        body: "सन्देश"
+        title: "टाइटल"
+      signature_sheet:
+        title: "टाइटल"
+        signable_type: "हस्ताक्षरयोग्य"
+        signable_id: "हस्ताक्षरयोग्य आईडी"
+        document_numbers: "कागजात नम्बरहरू"
+      sdg/goal:
+        code: "कोड"
+        title: "टाइटल"
+        description: "विवरण"
+      sdg/local_target:
+        code: "कोड"
+        target_id: "लक्ष्य"
+        title: "टाइटल"
+      sdg/local_target/translation:
+        title: "टाइटल"
+        description: "विवरण"
+      sdg/phase/kind:
+        sensitization: "संवेदनशीलता"
+        planning: "योजना"
+        monitoring: "निगरानी"
+      sdg/target:
+        code: "कोड"
+        title: "टाइटल"
+      site_customization/page:
+        content: सामग्री
+        created_at: मा सिर्जना गरियो
+        subtitle: उपशीर्षकहरू
+        slug: स्लग
+        status: अवस्था
+        status_draft: "मस्यौदा"
+        status_published: "प्रकाशित"
+        title: टाइटल
+        updated_at: मा अद्यावधिक गरियो
+        more_info_flag: मद्दत पृष्ठमा देखाउनुहोस्
+        print_content_flag: सामग्री बटन छाप्नुहोस्
+        locale: भाषा
+      site_customization/page/translation:
+        title: टाइटल
+        subtitle: उपशीर्षकहरू
+        content: सामग्री
+      site_customization/image:
+        name: नाम
+        image: छवि
+      site_customization/content_block:
+        name: नाम
+        locale: लोकेल
+        body: शरीर
+      tag:
+        name: "विषयको नाम टाइप गर्नुहोस्"
+      tenant:
+        schema: "सबडोमेन"
+      topic:
+        title: "टाइटल"
+        description: "प्रारम्भिक पाठ"
+      banner:
+        background_color: पृष्ठभूमि रंग
+        font_color: फन्ट रङ
+        post_ended_at: "पोस्ट मा समाप्त भयो"
+        post_started_at: "पोस्ट मा सुरु भयो"
+        target_url: "लिङ्क"
+      banner/translation:
+        title: "टाइटल"
+        description: "विवरण"
+      legislation/process:
+        title: प्रक्रिया शीर्षक
+        summary: सारांश
+        description: विवरण
+        additional_info: थप जानकारी
+        start_date: सुरु
+        end_date: अन्त्य
+        debate_start_date: सुरु
+        debate_end_date: अन्त्य
+        draft_start_date: सुरु
+        draft_end_date: अन्त्य
+        draft_publication_date: मस्यौदा प्रकाशन मिति
+        allegations_start_date: सुरु
+        allegations_end_date: अन्त्य
+        proposals_phase_start_date: सुरु
+        proposals_phase_end_date: अन्त्य
+        result_publication_date: अन्तिम परिणाम प्रकाशन मिति
+        background_color: पृष्ठभूमि रंग
+        font_color: फन्ट रङ
+        homepage_enabled: "गृहपृष्ठ सक्षम गरियो"
+      legislation/process/translation:
+        title: प्रक्रिया शीर्षक
+        summary: सारांश
+        description: विवरण
+        additional_info: थप जानकारी
+        homepage: "विवरण"
+        milestones_summary: सारांश
+      legislation/proposal:
+        description: "प्रस्ताव पाठ"
+        summary: "प्रस्तावकाे सारांश"
+        title: "प्रस्तावकाे शीर्षक"
+        video_url: "बाहिरी भिडियोको लिङ्क"
+      legislation/draft_version:
+        title: संस्करण शीर्षक
+        body: पाठ
+        changelog: परिवर्तनहरू
+        status: अवस्था
+        status_draft: "मस्यौदा"
+        status_published: "प्रकाशित"
+        final_version: अन्तिम संस्करण
+      legislation/draft_version/translation:
+        title: संस्करण शीर्षक
+        body: पाठ
+        changelog: परिवर्तनहरू
+      legislation/question:
+        title: टाइटल
+        question_options: विकल्पहरू
+      legislation/question/translation:
+        title: प्रश्न
+      legislation/question_option:
+        value: मान
+      legislation/annotation:
+        text: टिप्पणी
+      document:
+        title: टाइटल
+        attachment: "कागजात छान्नुहोस्"
+      image:
+        title: टाइटल
+        attachment: "छवि छान्नुहोस्"
+      poll/question/answer:
+        title: जवाफ
+        description: विवरण
+      poll/question/answer/translation:
+        title: जवाफ
+        description: "विवरण"
+      poll/question/answer/video:
+        title: टाइटल
+        url: बाह्य भिडियो
+      newsletter:
+        segment_recipient: प्राप्तकर्ताहरू
+        subject: विषय
+        from: "इ-मेल ठेगाना जुन समाचारपत्र पठाउनेका रूपमा देखा पर्नेछ"
+        body: इमेल सामग्री
+      admin_notification:
+        segment_recipient: प्राप्तकर्ताहरू
+        title: टाइटल
+        link: लिङ्क
+        body: पाठ
+      admin_notification/translation:
+        title: टाइटल
+        body: पाठ
+      widget/card:
+        label: लेबल (वैकल्पिक)
+        title: टाइटल
+        description: विवरण
+        link_text: लिङ्क पाठ
+        link_url: लिङ्क URL
+        columns: काेलुभहरूको संख्या
+      widget/card/translation:
+        label: लेबल (वैकल्पिक)
+        title: टाइटल
+        description: विवरण
+        link_text: लिङ्क पाठ
+      widget/feed:
+        limit: वस्तुहरूको संख्या
+      dashboard/action:
+        title: टाइटल
+        short_description: छोटो विवरण
+        description: विवरण
+        link: बाह्य लिङ्क
+        request_to_administrators: प्रशासकहरूबाट स्रोत अनुरोध गर्नको लागि संसाधनमा एउटा बटन समावेश गर्नुहोस्
+        day_offset: प्रस्ताव बनेको कति दिन पछि यसलाई सक्रिय गर्न चाहनुहुन्छ?
+        required_supports: प्रस्ताव सक्रिय हुनको लागि कति समर्थन प्राप्त गर्न आवश्यक छ?
+        order: तपाईंले स्थान प्रविष्ट गर्न सक्नुहुन्छ, जहाँ यो कार्य प्रयोगकर्तालाई कार्यहरूको सूचीमा देखाइनेछ
+        active: सक्रिय
+        action_type: प्रकार
+        action_type_proposed_action: "Proposed action"
+        action_type_resource: "संसाधन"
+        published_proposal: "प्रकाशित प्रस्तावहरूको लागि?"
+      dashboard/administrator_task:
+        source: स्रोत
+        user: द्वारा कार्यान्वयन
+      link:
+        label: टाइटल
+        url: URL
+      valuator:
+        description: विवरण
+        valuator_group_id: मूल्याङ्कनकर्ताकाे समूह
+        can_comment: टिप्पणीहरू सिर्जना गर्न सक्नुहुन्छ
+        can_edit_dossier: कागजातहरू सम्पादन गर्न सक्नुहुन्छ
+      valuator_group:
+        name: "समूहको नाम"
+      local_census_record:
+        document_type: कागजात प्रकार
+        document_number: कागजात संख्या
+        date_of_birth: जन्म मिति
+        postal_code: हुलाक कोड
+      votation_type:
+        max_votes: मतको अधिकतम संख्या
+        vote_type: मतदानका प्रकार
+      votation_type/vote_type:
+        unique: अद्वितीय जवाफ
+        multiple: धेरै जवाफहरू
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "यो प्रयोगकर्तासँग पहिले नै पासवर्ड छ"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "ट्यागहरू %{count} भन्दा कम वा बराबर हुनुपर्छ"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "तपाईं प्रति दिन निजी सन्देशहरूको अधिकतम संख्यामा पुग्नुभएको छ"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "छवि चौडाइ कम्तिमा %{required_min_width}px हुनुपर्छ"
+              min_image_height: "छविको उचाइ कम्तिमा %{required_min_height}px हुनुपर्छ"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "प्रयोगकर्ता प्राप्तकर्ता खण्ड अमान्य छ"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "प्रयोगकर्ता प्राप्तकर्ता खण्ड अमान्य छ"
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "कागजात जनगणनामा छैन"
+            user_id:
+              has_voted: "प्रयोगकर्ताले पहिले नै मतदान गरिसकेका छन्"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: सुरु मिति वा पछि हुनुपर्छ
+            debate_end_date:
+              invalid_date_range: बहस सुरु मिति वा पछि हुनुपर्छ
+            draft_end_date:
+              invalid_date_range: मस्यौदा सुरु मिति वा पछि हुनुपर्छ
+            allegations_end_date:
+              invalid_date_range: टिप्पणी सुरु मिति वा पछि हुनुपर्छ
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: सूचीमा समावेश गरिएको छैन, अनुमति दिइएको मानहरू DNI का लागि १, राहदानीका लागि २ र निवास कार्डको लागि ३ छन्।
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "ट्यागहरू %{count} भन्दा कम वा बराबर हुनुपर्छ"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "ट्यागहरू %{count} भन्दा कम वा बराबर हुनुपर्छ"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "तपाईंले सूचनाहरू बीच कम्तिमा %{interval} दिन पर्खनुपर्छ"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: "जनगणना द्वारा अप्रमाणित"
+              already_voted: "यस प्रस्तावलाई पहिले नै मतदान गरिसकेको छ"
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "अक्षर, संख्या, _ र - हुनुपर्छ"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "चौडाइ %{required_width}px हुनुपर्छ"
+              image_height: "उचाइ %{required_height}px हुनुपर्छ"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: "तपाईं मूल्याङ्कन टिप्पणी गर्न सक्नुहुन्न"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: पहिले नै अनुवादित स्रोत
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "यसको लक्ष्यको रूपमा उही कोडको साथ सुरु गर्नुपर्छ र पछि एउटा थोप्ला र अंकको साथ समाप्त हुन्छ"
+      messages:
+        translations_too_short: कम्तिमा एक अनुवाद प्रदान गर्न अनिवार्य छ
+        record_invalid: "प्रमाणीकरण असफल भयो: %{errors}"
+        another_poll_active: दिइएको अवधिको लागि अर्को मतदान सक्रिय छ
+        restrict_dependent_destroy:
+          has_one: "रेकर्ड मेटाउन सकिँदैन किनभने याे %{record}  सँग निर्भर रेकडहरू रहेकाे छन्"
+          has_many: "रेकर्ड मेटाउन सकिँदैन किनभने याे %{record} सँग निर्भर रेकड रहेकाे छ"

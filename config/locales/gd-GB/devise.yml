@@ -1,1 +1,68 @@
+#Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 gd:
+  devise:
+    password_expired:
+      expire_password: "Dh’fhalbh an ùine air an fhacal-fhaire"
+      change_required: "Dh’fhalbh an ùine air an fhacal-fhaire agad"
+      change_password: "Atharraich am facal-faire agad"
+      new_password: "Facal-faire ùr"
+      updated: "Chaidh am facal-faire ùrachadh."
+    confirmations:
+      confirmed: "Chaidh an cunntas agad a dhearbhadh."
+      send_instructions: "Gheibh thu post-d ann am beagan mhionaidean anns a bheil stiùireadh mu bhith a’ dearbhadh do sheòladh puist-d."
+      send_paranoid_instructions: "Ma tha an seòladh puist-d agad san stòr-dàta againn, gheibh thu ceangal ann am beagan mhionaidean le stiùireadh mu bhith a’ dearbhadh do sheòladh puist-d."
+    failure:
+      already_authenticated: "Tha thu air do chlàradh a-steach mar-thà."
+      inactive: "Cha deach an cunntas agad a chur an gnìomh fhathast."
+      invalid: "%{authentication_keys} no facal-fàire mì-dhligheach."
+      locked: "Chaidh an cunntas agad a ghlasadh."
+      last_attempt: "Tha aon oidhirp eile air fhàgail agad mus tèid do chunntas a bhacadh."
+      not_found_in_database: "%{authentication_keys} no facal-fàire mì-dhligheach."
+      timeout: "Dh’fhalbh an ùine air an t-seisean agad. Clàraich a-steach a-rithist gus leantainn ort."
+      unauthenticated: "Feumaidh tu clàradh a-steach no clàradh airson leantainn ort."
+      unconfirmed: "Gus leantainn air adhart, briog air a’ cheangal dearbhaidh a chur sinn thugad tro phost-d"
+    mailer:
+      confirmation_instructions:
+        subject: "Stiùireadh dearbhaidh"
+      reset_password_instructions:
+        subject: "Stiùireadh mu bhith ag ath-shuidheachadh an fhacal-faire agad"
+      unlock_instructions:
+        subject: "Stiùireadh no-ghlasaidh"
+    omniauth_callbacks:
+      failure: "Cha ghabhadh do dhearbhadh mar %{kind} mar thoradh air \"%{reason}\"."
+      success: "Air dearbhadh mar %{kind}."
+    passwords:
+      no_token: "Chan urrainn dhut an duilleag seo a ruigsinn ach a-mhàin tro cheangal ath-shuidheachadh facal-faire. Ma tha thu air tighinn thuice tro cheangal ath-shuidheachadh facal-faire, feuch an dèan thu cinnteach gu bheil an URL slàn ann."
+      send_instructions: "Gheibh thu post-d ann am beagan mhionaidean, anns a bheil stiùireadh mu bhith ag ath-shuidheachadh an fhacal-faire agad."
+      send_paranoid_instructions: "Ma tha an seòladh puist-d agad san stòr-dàta againn, gheibh thu ceangal ann am beagan mhionaidean a chleachdas tu gus am facal-faire agad ath-shuidheachadh."
+      updated: "Chaidh am facal-faire agad atharrachadh. Bha an dearbhadh soirbheachail."
+      updated_not_active: "Chaidh am facal-faire agad atharrachadh."
+    registrations:
+      destroyed: "Mar sin leat! Chaidh do chunntas a sguabadh às. Tha sinn an dòchas gum faic sinn a-rithist thu."
+      signed_up: "Fàilte! Chaidh do dhearbhadh."
+      signed_up_but_inactive: "Chàraich thu gu soirbheachail, ach cha ghabhadh do logadh a-steach leis nach deach an cunntas agad a dhearbhadh fhathast."
+      signed_up_but_locked: "Chlàradhàraich thu, ach cha ghabhadh do logadh a-steach leis gu bheil an cunntas agad glaiste."
+      signed_up_but_unconfirmed: "Chaidh teachdaireachd a chur thugad le ceangal dearbhaidh. Briog air a’ cheangal sin gus do chunntas a chur an gnìomh."
+      update_needs_confirmation: "Chaidh an cunntas agad ùrachadh; ach feumaidh sinn an seòladh puist-d agad a dhearbhadh. Thoir sùil air a’ phost-d agad agus briog air a’ cheangal gus do sheòladh puist-d a dhearbhadh."
+      updated: "Chaidh am cunntas agad ùrachadh."
+    sessions:
+      signed_in: "Chaidh do chlàradh a-steach."
+      signed_out: "Chaidh do chlàradh a-mach."
+      already_signed_out: "Chaidh do chlàradh a-mach."
+    unlocks:
+      send_instructions: "Gheibh thu post-d ann am beagan mhionaidean, anns a bheil stiùireadh mu bhith a’ neo-ghlasadh do chunntais."
+      send_paranoid_instructions: "Ma tha cunntas agad, gheibh thu post-d ann am beagan mhionaidean anns a bheil stiùireadh mu bhith a’ neo-ghlasadh do chunntas."
+      unlocked: "Chaidh an cunntas agad a neo-ghlasadh. Clàraich a-steach gus leantainn ort."
+  errors:
+    messages:
+      already_confirmed: "Chaidh do dhearbhadh mar-thà; feuch ri soidhneadh a-steach."
+      confirmation_period_expired: "Feumaidh tu a bhith air do dhearbhadh taobh a-staigh %{period}; feuch an dèan thu iarrtas eile."
+      expired: ": dh’fhalbh an ùine air seo; dèan iarrtas eile air."
+      not_found: ": cha deach seo a lorg."
+      not_locked: ": cha robh seo glaiste."
+      not_saved:
+        one: "Chuir mearachd seo stad air an %{resource} seo bho bhith air a shàbhaladh.<br> Feuch an toir thu sùil air na raointean comharraichte gus faighinn a-mach mar a cheartaicheas tu iad:"
+        two: "Chuir %{count} mhearachd stad air an %{resource} seo bho bhith air a shàbhaladh. Feuch an toir thu sùil air na raointean comharraichte gus faighinn a-mach mar a cheartaicheas tu iad:"
+        few: "Chuir %{count} mearachdan stad air an %{resource} seo bho bhith air a shàbhaladh. Feuch an toir thu sùil air na raointean comharraichte gus faighinn a-mach mar a cheartaicheas tu iad:"
+        other: "Chuir %{count} mearachdan stad air an %{resource} seo bho bhith air a shàbhaladh. Feuch an toir thu sùil air na raointean comharraichte gus faighinn a-mach mar a cheartaicheas tu iad:"
+      equal_to_current_password: ":  feumaidh seo a bhith eadar-dhealaichte ris an fhacal-faire làithreach."

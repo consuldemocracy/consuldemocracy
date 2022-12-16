@@ -1,5 +1,18 @@
 fr:
   seeds:
+    admin_notifications:
+      budget:
+        title: "Derniers jours pour créer des projets de Budget Participatif"
+        body: "Il ne reste plus que quelques jours avant la date limite de dépôt des projets d'investissement pour les budgets participatifs !"
+      help:
+        title: "Aidez-nous à traduire CONSUL"
+        body: "Si vous parlez une langue, aidez-nous à compléter sa traduction en CONSUL."
+      map:
+        title: "Vous pouvez désormais géolocaliser les propositions et les projets d'investissement"
+        body: "Lorsque vous créez une proposition ou un projet d'investissement, vous pouvez spécifier son emplacement sur la carte"
+      proposal:
+        title: "Avez-vous une proposition ?"
+        body: "N'oubliez pas que vous pouvez créer des propositions et que les citoyens en débattront et les soutiendront."
     settings:
       official_level_1_name: Position officielle 1
       official_level_2_name: Position officielle 2
@@ -14,6 +27,26 @@ fr:
     organizations:
       human_rights: Droits humains
       neighborhood_association: Association de quartier
+    cards:
+      budget:
+        title: "Comment fonctionnent les budgets participatifs ?"
+        description: "Les budgets participatifs permettent aux citoyens de proposer et de décider directement comment dépenser une partie du budget, avec la supervision et l'évaluation de l'institution. Efficacité et contrôle maximum pour la satisfaction de tous."
+        link_text: "En savoir plus sur le budget participatif"
+        label: "Budgets participatifs"
+      debate:
+        title: "Comment fonctionnent les discussions ?"
+        description: "N'importe qui peut démarrer une discussion sur n'importe quel sujet, en créant un espace séparé pour partager des points de vue avec d'autres. Les discussions sont appréciées par tout le monde pour mettre en évidence les problèmes les plus importants."
+        link_text: "En savoir plus sur les discussions"
+        label: "Discussions"
+      header:
+        description: "Logiciel libre pour la participation citoyenne."
+        link_text: "Plus d'informations"
+        label: "Bienvenue à"
+      proposal:
+        title: "Comment fonctionnent les propositions citoyennes ?"
+        description: "Un espace pour que le citoyen crée une proposition et recherche un soutien. Les propositions qui obtiennent le soutien nécessaire seront votées. Ainsi, ensemble, nous pourrons décider des questions qui nous importent."
+        link_text: "En savoir plus sur les propositions"
+        label: "Propositions citoyennes"
     categories:
       associations: Associations
       culture: Culture
@@ -36,11 +69,17 @@ fr:
       groups:
         all_city: Toute la ville
         districts: Secteurs
+      phases:
+        description: "Description en %{language}"
+        summary: "Résumé en %{language}"
       statuses:
         studying_project: Études du projet
         bidding: Soumettre
         executing_project: Exécuter le projet
         executed: Exécuté
+    legislation:
+      draft_versions:
+        body: "Brouillon en %{language}"
     polls:
       current_poll: "Vote en cours"
       current_poll_geozone_restricted: "Géozone du vote en cours restreinte"

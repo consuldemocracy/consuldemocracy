@@ -55,7 +55,7 @@ sv:
           residence_card: Uppehållstillstånd
           spanish_id: Nationellt id-kort
         error_not_allowed_age: Du är för ung för att delta
-        error_not_allowed_postal_code: Du måste vara registrerad för att kunna verifieras.
+        error_not_allowed_postal_code: Du måste vara registrerad för att kunna verifieras
         error_verifying_census: Den adress du angett stämmer inte överens med adressregistret. Var vänlig kontrollera dina adressuppgifter genom att ringa kommunen eller besöka ett medborgarkontor.
         form_errors: gjorde att din adress inte kunde bekräftas
         postal_code_note: För att verifiera ditt konto måste du vara registrerad

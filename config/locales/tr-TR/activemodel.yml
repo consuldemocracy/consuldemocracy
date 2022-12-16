@@ -5,13 +5,13 @@ tr:
         residence: "İkamet"
         sms: "SMS"
       local_census_records/import:
-        one: Yerel nüfus sayım kaydını içe aktarma
-        other: Yerel nüfus sayım kayıtlarını içe aktarma
+        one: Yerel nüfus sayımı kaydını içe aktarma
+        other: Yerel nüfus sayımı kayıtlarını içe aktarma
     attributes:
       verification:
         residence:
-          document_type: "Belge Türü"
-          document_number: "Belge numarası (harfler de dahil)"
+          document_type: "Belge türü"
+          document_number: "Belge numarası (harfler ile birlikte)"
           date_of_birth: "Doğum tarihi"
           postal_code: "Posta kodu"
         sms:
@@ -21,8 +21,8 @@ tr:
           recipient: "E-posta"
       verification/letter:
         email: "E-posta"
-        password: "Şifre"
-        verification_code: "Mektupta aldığınız kod"
+        password: "Parola"
+        verification_code: "Mektup ile aldığınız kod"
       verification/management/document:
         document_type: "Belge türü:"
         document_number: "Belge numarası"
@@ -31,10 +31,10 @@ tr:
         document_type: "Belge türü"
         postal_code: "Posta kodu"
       verification/sms:
-        confirmation_code: "Cep telefonunuza gelen kodu girin"
+        confirmation_code: "Cep telefonunuza gelen kodu yazın"
       officing/residence:
-        document_type: "Belge Türü"
-        document_number: "Belge numarası (harfler de dahil)"
+        document_type: "Belge türü"
+        document_number: "Belge numarası (harfler ile birlikte)"
         year_of_birth: "Doğum yılı"
       local_census_records/import:
         file: Dosya
@@ -43,5 +43,5 @@ tr:
         local_census_records/import:
           attributes:
             file:
-              extension: "Verilen dosya biçimi yanlış. İzin verilen dosya biçimi:%{valid_extensions}."
-              headers: "Verilen dosya başlıkları yanlış. Dosya başlıkları aşağıdaki adlara sahip olmalıdır:%{required_headers}."
+              extension: "Verilen dosyanın biçimi yanlış. Kullanılabilecek dosya biçimi:%{valid_extensions}."
+              headers: "Verilen dosyanın başlıkları yanlış. Dosya başlığında şu adlar bulunmalıdır:%{required_headers}."

@@ -38,6 +38,8 @@ it:
           sdg: SDG
       create:
         notice: "Banner creato correttamente"
+      destroy:
+        notice: "Banner eliminato correttamente"
       edit:
         editing: Modifica banner
         form:
@@ -113,6 +115,7 @@ it:
         delete: Elimina budget
         phase: Fase
         phases_caption: "Fasi"
+        phases_table_help_text: "La configurazione di queste fasi è utilizzata per soli scopi informativi. La sua funzione è quella di definire le informazioni delle fasi, mostrate sulla pagina pubblica del bilancio partecipativo."
         duration: "Durata"
         enabled: Abilitato
         actions: Azioni
@@ -136,6 +139,8 @@ it:
         info:
           budget_settings: "Impostazioni generali del budget partecipativo"
           staff_settings: "Amministratori e Valutatori assegnati al budget"
+        hide_money: "Nascondi denaro"
+        hide_money_help_text: "Se quest'opzione è spuntata, tutti i campi che mostrano l'importo di denaro saranno nascosti durante il processo."
       destroy:
         success_notice: Bilancio cancellato con successo
         unable_notice: Non è consentito eliminare un Bilancio cui risultano associati degli investimenti
@@ -193,6 +198,7 @@ it:
         success_notice: "Voce eliminata con successo"
         unable_notice: "Non puoi eliminare una Voce che ha investimenti associati"
       form:
+        geozone_info: "Quando un'intestazione è associata a una zona geografica, questa apparirà su questa mappa del bilancio, se la zona geografica include i dati GeoJSON."
         max_ballot_lines_info: 'Il numero massimo di progetti che un utente può votare durante la fase di "Voto dei progetti". Solo per budget che usano il voto d''approvazione.'
         population_info: "Il campo popolazione tra le Voci di Bilancio è utilizzato a scopo Statistico al termine del Bilancio per evidenziare la percentuale di votanti relativa a ciascuna Voce rappresentativa di un’area abitata. Il campo è facoltativo e perciò può essere lasciato vuoto se non pertinente."
         coordinates_info: "Se latitudine e longitudine sono fornite, la pagina di investimenti per questa voce includerà una mappa. Questa mappa sarà centrata usando quelle coordinate."
@@ -211,10 +217,11 @@ it:
     budget_phases:
       edit:
         title: "Modifica fase"
+        dates_help_text: "Per soli scopi informativi"
         description_help_text: Questo paragrafo apparirà nell’intestazione quando la fase risulterà attiva
         duration: "Durata della fase"
         duration_description: "Il periodo di tempo in cui questa fase sarà attiva."
-        enabled_help_text: Questa fase sarà visibile a tutti nella sequenza temporale delle fasi del bilancio e risulterà attiva ad ogni altro fine
+        enabled_help_text: Questa fase sarà visibile a tutti nella sequenza temporale delle fasi del bilancio e risulterà attiva ad ogni altro fine.
         image_description: "Se un'immagine è caricata, sarà mostrata affianco alla descrizione di questa fase."
         main_call_to_action: "Chiamata all'azione principale (facoltativo)"
         main_call_to_action_description: "Questo link comparirà sul banner principale di questo budget partecipativo quando questa fase è abilitata e incoraggerà il tuo utente a eseguire un'azione specifica come creare una proposta, votare quelle esistenti o scoprire di più sul processo."
@@ -610,7 +617,7 @@ it:
           title: Configura la tua homepage dei processi
       proposals:
         index:
-          title: Titolo
+          title: Proposte
           back: Indietro
           id: Id
           supports: Sostegni
@@ -778,6 +785,7 @@ it:
       comments: "Commenti"
       local_census_records: Gestisci il censimento locale
       machine_learning: "IA / Apprendimento automatico"
+      multitenancy: Multi Locazione
     administrators:
       index:
         title: Amministratori
@@ -1100,6 +1108,10 @@ it:
         alert: "Quest'azione rimuoverà il sondaggio e tutte le sue domande associate."
         success_notice: "Sondaggio eliminato correttamente"
         unable_notice: "Non puoi eliminare un sondaggio avente voti"
+      votation_type:
+        title: "Tipo di votazione"
+        unique_description: "È possibile rispondere solo una volta alla domanda."
+        multiple_description: "Consente di scegliere risposte multiple. È possibile impostare il numero massimo di risposte."
     questions:
       index:
         title: "Quesiti"
@@ -1116,9 +1128,13 @@ it:
         poll_not_assigned: "Sondaggio non assegnato"
       edit:
         title: "Modifica la domanda"
+      form:
+        poll_help: "Puoi selezionare soltanto i sondaggi che non sono ancora iniziati"
       new:
         title: "Creare una domanda per il sondaggio %{poll}"
         title_proposal: "Creare la domanda"
+      destroy:
+        notice: "Domanda eliminata correttamente"
       answers:
         images:
           add_image: "Aggiungi immagine"
@@ -1142,11 +1158,17 @@ it:
           documents_list: Elenco documenti
           document_title: Titolo
           document_actions: Azioni
+      no_edit: "Una volta avviato il sondaggio, non sarà possibile creare, modificare o eliminare domande, risposte o qualsiasi contenuto associato al sondaggio."
     answers:
       new:
         title: Nuova risposta
       edit:
         title: Modifica risposta
+      destroy:
+        success_notice: "Risposta eliminata correttamente"
+      images:
+        index:
+          title: Immagini
       videos:
         index:
           title: Video
@@ -1330,6 +1352,7 @@ it:
         label:
           booths: "Ricercare seggio per nome"
           budget_investments: "Cerca investimenti per titolo, descrizione o titolo"
+          comments: "Cerca commenti"
           debates: "Cerca dibattiti per titolo o descrizione"
           legislation_processes: "Cerca processi per titolo o descrizione"
           legislation_proposals: "Cerca proposte per titolo o descrizione"
@@ -1339,6 +1362,7 @@ it:
           poll_questions: "Cerca quesiti oggetto di votazione"
           polls: "Cerca sondaggi per nome o descrizione"
           proposals: "Ricercare le proposte per titolo, codice. descrizione o domanda"
+          proposal_notifications: "Cerca notifiche per titolo o descrizione"
           users: "Cerca utente in base al nome o all’email"
         search: "Ricercare"
       search_results: "Risultati della ricerca"
@@ -1368,8 +1392,13 @@ it:
         external_code: Codice esterno
         census_code: Codice anagrafico
         code_help: Codice di risposta per questa zona geografica sull'API del censimento
-        coordinates: Coordinate
+        color_help: "Colore della zona in una mappa del bilancio. %{format_help}"
+        coordinates: Coordinate disponibili
         coordinates_help: Coordinate che genereranno un'area cliccabile su una mappa dell'immagine HTML
+        geojson: GeoJSON disponibile
+        geojson_help: "Deve seguire il tipo di formato \"Polygon\" o \"MultiPolygon\"; su una mappa dl bilancio, un poligono basato su questi dati apparirà, quando un'intestazion è associata a questa zona geografica"
+      create:
+        notice: "Zona geografica creata correttamente"
       edit:
         form:
           submit_button: Salva modifiche
@@ -1381,6 +1410,8 @@ it:
       delete:
         success: Distretto eliminato con successo
         error: Questo distretto non può essere eliminato perché ci sono degli elementi ad esso collegati
+      update:
+        notice: "Zona geografica caricata correttamente"
     signature_sheets:
       author: Autore
       created_at: Data di creazione
@@ -1510,6 +1541,10 @@ it:
         document_number: Numero del documento
         roles: Ruoli
         verification_level: Livello di verifica
+        activation_status: Stato d'Attivazione
+      account:
+        active_status: Profilo attivato
+        inactive_status: Profilo non attivato
       index:
         title: Utente
         no_users: Non ci sono utenti.
@@ -1605,6 +1640,25 @@ it:
             notice: "Carta aggiornata correttamente"
           destroy:
             notice: "Carta rimossa correttamente"
+    tenants:
+      create:
+        notice: Locatario creato correttamente
+      form:
+        use_subdomain: "Utilizza un sottodominio nel dominio %{domain} per accedere a questo locatario"
+        use_domain: "Utilizza un dominio differente per accedere a questo locatario"
+      hide:
+        notice: Locatario disabilitato correttamente
+      index:
+        create: Crea locatario
+        enable: "Abilita il locatario %{tenant}"
+        enabled: Abilitato
+      new:
+        admin_information: "Quando crei un locatario, il tuo utente corrente <strong>\"%{username}\"</strong> con l'email <strong>\"%{email}\"</strong> e la tua password saranno copiati nel database del nuovo locatario e riceveranno automaticamente le autorizzazioni di amministrazione. Nota che questi profili utente sono memorizzati in database completamente separati, quindi, se modifichi la password del tuo utente in un locatario, i tuoi profili negli altri locatari rimarranno intatti."
+        title: Nuovo locatario
+      restore:
+        notice: Locatario abilitato correttamente
+      update:
+        notice: Locatario aggiornato correttamente
     homepage:
       title: Homepage
       description: I moduli attivi vengono visualizzati nella homepage nello stesso ordine qui riportato.

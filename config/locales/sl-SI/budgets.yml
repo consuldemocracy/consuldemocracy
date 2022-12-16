@@ -51,7 +51,6 @@ sl:
         tags_placeholder: "Vnesi oznake, ki jih želiš uporabiti in jih loči z vejico (',')"
         map_location: "Lokacija na zemljevidu"
         map_location_instructions: "Na zemljevidu poišči lokacijo in jo označi."
-        map_remove_marker: "Odstrani označeno lokacijo"
       index:
         title: Participatorni proračun
         unfeasible: Neizvedljivi naložbeni projekti

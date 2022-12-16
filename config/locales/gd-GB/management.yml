@@ -21,7 +21,8 @@ gd:
           print: Clò-bhuail facal-faire
           print_help: Bidh e comasach dhut am facal-faire a chlò-bhualadh nuair a thèid a shàbhaladh.
     account_info:
-      document_number_label: "Àireamh na sgrìobhainne"
+      change_user: Atharraich cleachdaiche
+      document_number_label: "Àireamh na sgrìobhainne:"
       document_type_label: "Seòrsa sgrìobhainn:"
       email_label: "Post-d:"
       identified_label: "Aithnichte mar:"
@@ -34,6 +35,7 @@ gd:
     document_verifications:
       already_verified: Tha an cunntas cleachdaiche seo dearbhte mar-thà.
       has_no_account: Gus cunntas a chruthachadh, rach gu %{link} is briog air <b>"Clàraich"</b> gu h-àrd air taobh chlì na sgrìn.
+      link: CONSUL
       in_census_has_following_permissions: "Faodaidh an cleachdaiche seo pàirt a ghabhail air an làraich-lìn leis na ceadan a leanas:"
       not_in_census: Chan eil an sgrìobhainn seo clàraichte.
       not_in_census_info: "Faodaidh saoranaich nach eil sa Chunntas-sluaigh pàirt a ghabhail air an làraich-lìn leis na ceadan a leanas:"
