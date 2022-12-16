@@ -382,7 +382,10 @@ sv:
       tag:
         name: "Skriv namnet på ämnet"
       tenant:
+        domain: "Domän"
         schema: "Underdomän"
+        subdomain: "Underdomän"
+        url: "URL"
       topic:
         title: "Titel"
         description: "Inledande text"
