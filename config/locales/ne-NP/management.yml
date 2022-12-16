@@ -1,0 +1,127 @@
+ne:
+  management:
+    account:
+      menu:
+        reset_password_email: इमेल मार्फत पासवर्ड रिसेट गर्नुहोस्
+        reset_password_manually: म्यानुअल रूपमा पासवर्ड रिसेट गर्नुहोस्
+      alert:
+        unverified_user: कुनै पनि प्रमाणित प्रयोगकर्ता अझै लग इन गरिएको छैन
+      show:
+        title: प्रयोगकर्ता खाता
+      edit:
+        title: "प्रयोगकर्ता खाता सम्पादन गर्नुहोस्: पासवर्ड रिसेट गर्नुहोस्"
+        back: फिर्ता
+        password:
+          password: पासवर्ड
+          send_email: रिसेट पासवर्ड इमेल पठाउनुहोस्
+          reset_email_send: इमेल सही पठाइयो।
+          reseted: पासवर्ड सफलतापूर्वक रिसेट गरियो
+          random: अनियमित पासवर्ड उत्पन्न गर्नुहोस्
+          save: पासवर्ड सुरक्षित गर्नुहोस्
+          print: पासवर्ड छाप्नुहोस्
+          print_help: पासवर्ड सुरक्षित भएपछि तपाईंले प्रिन्ट गर्न सक्षम हुनुहुनेछ।
+    account_info:
+      change_user: प्रयोगकर्ता परिवर्तन गर्नुहोस्
+      document_number_label: "कागजात नम्बर:"
+      document_type_label: "कागजात प्रकार:"
+      email_label: "इमेल:"
+      identified_label: "रूपमा पहिचान गरिएको:"
+      username_label: "प्रयोगकर्ता नाम:"
+    check: कागजात जाँच गर्नुहोस्
+    dashboard:
+      index:
+        title: व्यवस्थापन
+        info: यहाँ तपाईंले बायाँ मेनुमा सूचीबद्ध सबै कार्यहरू मार्फत प्रयोगकर्ताहरूलाई व्यवस्थापन गर्न सक्नुहुन्छ।
+    document_verifications:
+      already_verified: यो प्रयोगकर्ता खाता पहिले नै प्रमाणित छ।
+      has_no_account: खाता बनाउनको लागि, %{link} मा जानुहोस् र स्क्रिनको माथिल्लो बायाँ भागमा रहेको <b>"Register"</b> मा क्लिक गर्नुहोस्।
+      link: कन्सुल
+      in_census_has_following_permissions: "यो प्रयोगकर्ताले निम्न अनुमतिहरूसँग वेबसाइटमा भाग लिन सक्छ:"
+      not_in_census: यो कागजात दर्ता गरिएको छैन।
+      not_in_census_info: "जनगणनामा नभएका नागरिकहरूले निम्न अनुमतिहरूका साथ वेबसाइटमा भाग लिन सक्छन्:"
+      please_check_account_data: कृपया जाँच गर्नुहोस् कि माथिको खाता डेटा सही छ।
+      title: प्रयोगकर्ता व्यवस्थापन
+      under_age: "तपाइँसँग तपाइँको खाता प्रमाणित गर्न को लागी आवश्यक उमेर छैन।"
+      verify: प्रमाणित गर्नुहोस्
+    date_of_birth: जन्म मिति
+    email_verifications:
+      already_verified: यो प्रयोगकर्ता खाता पहिले नै प्रमाणित छ।
+      choose_options: "कृपया निम्न विकल्पहरू मध्ये एउटा छान्नुहोस्:"
+      document_found_in_census: यो कागजात जनगणनामा फेला परेको थियो, तर योसँग सम्बन्धित कुनै प्रयोगकर्ता खाता छैन।
+      document_mismatch: "यो इमेल एक प्रयोगकर्ताको हो जससँग पहिले नै सम्बन्धित आईडी छ: %{document_number}(%{document_type})"
+      email_sent_instructions: यस प्रयोगकर्तालाई पूर्ण रूपमा प्रमाणित गर्नको लागि, हामीले माथिको इमेल ठेगानामा पठाएको लिङ्कमा प्रयोगकर्ताले क्लिक गर्नु आवश्यक छ। यो ठेगाना उहाँको हो भनेर पुष्टि गर्न यो चरण आवश्यक छ।
+      if_existing_account: यदि व्यक्तिसँग पहिले नै वेबसाइटमा प्रयोगकर्ता खाता सिर्जना गरिएको छ भने,
+      if_no_existing_account: यदि यो व्यक्तिले अहिलेसम्म खाता सिर्जना गरेको छैन भने
+      introduce_email: "कृपया खातामा प्रयोग गरिएको इमेल परिचय दिनुहोस्:"
+      send_email: प्रमाणिकरण इमेल पठाउनुहोस्
+    menu:
+      create_proposal: प्रस्ताव सिर्जना गर्नुहोस्
+      print_proposals: प्रस्तावहरू छाप्नुहोस्
+      support_proposals: प्रस्तावहरू समर्थन गर्नुहोस्
+      create_budget_investment: बजेट लगानी सिर्जना गर्नुहोस्
+      print_budget_investments: बजेट लगानी छाप्नुहोस्
+      support_budget_investments: बजेट लगानीलाई समर्थन गर्नुहोस्
+      users: प्रयोगकर्ता व्यवस्थापन
+      user_invites: निमन्त्रणाहरू पठाउनुहोस्
+      select_user: प्रयोगकर्ता चयन गर्नुहोस्
+    print:
+      proposals_info: http://url.consul मा आफ्नो प्रस्ताव सिर्जना गर्नुहोस्
+      proposals_title: "प्रस्तावहरू:"
+      budget_investments_info: http://url.consul मा भाग लिनुहोस्
+    print_info: यो जानकारी छाप्नुहोस्
+    proposals:
+      alert:
+        unverified_user: प्रयोगकर्ता प्रमाणित गरिएको छैन
+      create_proposal: प्रस्ताव सिर्जना गर्नुहोस्
+      print:
+        print_button: छाप्नुहोस्
+      index:
+        title: प्रस्ताव समर्थन गर्नुहोस्
+    budgets:
+      create_new_investment: बजेट लगानी सिर्जना गर्नुहोस्
+      print_investments: बजेट लगानी छाप्नुहोस्
+      support_investments: बजेट लगानीलाई समर्थन गर्नुहोस्
+      table_name: नाम
+      table_phase: चरण
+      table_actions: कार्यहरू
+      no_budgets: सक्रिय सहभागितामूलक बजेट छैन।
+    budget_investments:
+      alert:
+        unverified_user: प्रयोगकर्ता प्रमाणित गरिएको छैन
+      create: एउटा बजेट लगानी सिर्जना गर्नुहोस्
+      edit: बजेट लगानी सम्पादन गर्नुहोस्
+      filters:
+        heading: अवधारणा
+        unfeasible: अव्यवहारिक लगानी
+      print:
+        print_button: छाप्नुहोस्
+      search_results:
+        one: "शब्द '%{search_term}' समावेश भएको"
+        other: "शब्द '%{search_term}' समावेश भएको"
+    sessions:
+      need_managed_user: यो कार्य गर्नको लागि तपाईंले प्रयोगकर्ता चयन गर्नुपर्छ
+      signed_out: सफलतापूर्वक साइन आउट गरियो।
+      signed_out_managed_user: प्रयोगकर्ता सत्र सफलतापूर्वक साइन आउट भयो।
+    username_label: प्रयोगकर्ता नाम
+    users:
+      create_user: नयाँ खाता खोल्नुहोस्
+      create_user_info: निम्न डेटा बाट हामी एक खाता सिर्जना गर्नेछौं
+      create_user_submit: प्रयोगकर्ता सिर्जना गर्नुहोस्
+      create_user_success: हामीले इमेल ठेगाना <b>%{email}</b> मा इमेल पठाएका छौं कि यो प्रयोगकर्ताको हो भनेर प्रमाणित गर्न। यसमा तिनीहरूले क्लिक गर्नुपर्ने लिङ्क समावेश गर्दछ। त्यसपछि तिनीहरूले वेबसाइटमा लग इन गर्न सक्षम हुनु अघि आफ्नो पहुँच पासवर्ड सेट गर्नुपर्छ
+      autogenerated_password: "स्वतः उत्पन्न पासवर्ड <b>%{password}</b> हो, तपाइँ यसलाई वेबको 'मेरो खाता' खण्डमा परिवर्तन गर्न सक्नुहुन्छ।"
+      email_optional_label: इमेल (वैकल्पिक)
+      erased_notice: प्रयोगकर्ता खाता मेटाइयो।
+      erased_by_manager: "व्यवस्थापकद्वारा मेटाइएको: %{manager}"
+      erase_account_link: प्रयोगकर्ता मेट्नुहोस्
+      erase_account_confirm: के तपाइँ खाता मेटाउन निश्चित हुनुहुन्छ? यो कार्य अन्डू गर्न सकिँदैन
+      erase_warning: यो कार्य अन्डू गर्न सकिँदैन। कृपया निश्चित गर्नुहोस् कि तपाइँ यो खाता मेटाउन चाहनुहुन्छ।
+      erase_submit: खाता मेटाउनुहोस्
+    user_invites:
+      new:
+        label: इमेलहरू
+        info: "अल्पविराम (',') द्वारा छुट्याइएका इमेलहरू प्रविष्ट गर्नुहोस्"
+        submit: निमन्त्रणाहरू पठाउनुहोस्
+        title: निमन्त्रणाहरू पठाउनुहोस्
+      create:
+        success: <strong>%{count} निमन्त्रणाहरू</strong> पठाइएका छन्।
+        title: निमन्त्रणाहरू पठाउनुहोस्
