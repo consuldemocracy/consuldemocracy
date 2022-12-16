@@ -53,6 +53,7 @@ val:
         responsibles: Responsables
         assigned_admin: Administrador asignat
         assigned_valuators: Evaluadors asignats
+        preview: Vista previa del pressupost
       edit:
         dossier: Informe
         price: "Cost (%{currency}) (dada pública)"
