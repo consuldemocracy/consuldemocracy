@@ -659,6 +659,10 @@ cs:
     show:
       vote_answer: "Hlasování %{answer}"
       voted: "Hlasovali jste %{answer}"
+    description:
+      unique: "Můžete vybrat maximálně 1 odpověď."
+      multiple: "Můžete vybrat maximálně %{maximum} odpovědí."
+    read_more_about: "Více informací o:"
   proposal_notifications:
     new:
       title: "Odeslat zprávu"
