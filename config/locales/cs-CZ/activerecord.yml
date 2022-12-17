@@ -467,6 +467,7 @@ cs:
         name: "Zadejte název tématu"
       tenant:
         domain: "Doména"
+        schema: "Doména / subdoména"
         subdomain: "Subdoména"
         url: "URL"
       topic:
@@ -608,6 +609,12 @@ cs:
         document_number: Číslo dokladu
         date_of_birth: Datum narození
         postal_code: PSČ
+      votation_type:
+        max_votes: Maximální počet hlasů
+        vote_type: Typ hlasování
+      votation_type/vote_type:
+        unique: Jedinečná odpověď
+        multiple: Více odpovědí
     errors:
       models:
         user:
