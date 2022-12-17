@@ -465,6 +465,10 @@ cs:
         body: Body
       tag:
         name: "Zadejte název tématu"
+      tenant:
+        domain: "Doména"
+        subdomain: "Subdoména"
+        url: "URL"
       topic:
         title: "Předmět"
         description: "Úvodní text"
