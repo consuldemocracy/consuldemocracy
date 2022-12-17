@@ -1629,6 +1629,9 @@ cs:
             notice: "Karta úspěšně aktualizována"
           destroy:
             notice: "Karta úspěšně smazána"
+    tenants:
+      form:
+        use_subdomain: "Pro přístup k tomuto uživateli použijte subdoménu v doméně %{domain}"
     homepage:
       title: Úvodní strana
       description: Aktivní moduly se objeví na úvodní stránce ve stejném pořadí jako zde.
