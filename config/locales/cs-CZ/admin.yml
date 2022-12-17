@@ -790,6 +790,7 @@ cs:
       comments: "Komentáře"
       local_census_records: Správa místního registru občanů
       machine_learning: "AI / strojové učení"
+      multitenancy: Víceuživatelské služby
     administrators:
       index:
         title: Administrátoři
@@ -1114,6 +1115,10 @@ cs:
         alert: "Tato akce odstraní průzkum a všechny související otázky."
         success_notice: "Průzkum byl úspěšně smazán"
         unable_notice: "Nelze smazat průzkum, který má hlasy"
+      votation_type:
+        title: "Typ hlasování"
+        unique_description: "Na otázku je možné odpovědět pouze jednou."
+        multiple_description: "Umožňuje vybrat více odpovědí. Je možné nastavit maximální počet odpovědí."
     questions:
       index:
         title: "Otázky"
@@ -1630,8 +1635,17 @@ cs:
           destroy:
             notice: "Karta úspěšně smazána"
     tenants:
+      create:
+        notice: Uživatel byl úspěšně vytvořen
       form:
         use_subdomain: "Pro přístup k tomuto uživateli použijte subdoménu v doméně %{domain}"
+        use_domain: "Použití jiné domény pro přístup k tomuto uživateli v nájmu"
+      index:
+        create: Vytvořit uživatele
+      new:
+        title: Nový uživatel
+      update:
+        notice: Uživatel byl úspěšně aktualizován
     homepage:
       title: Úvodní strana
       description: Aktivní moduly se objeví na úvodní stránce ve stejném pořadí jako zde.
