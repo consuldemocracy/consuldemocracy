@@ -92,6 +92,7 @@ cs:
     user_permission_proposal: Vytvořit nové návrhy
     user_permission_support_proposal: Podpořit návrhy *
     user_permission_votes: Účast na závěrečném hlasování *
+    verification_needed: Potřebné další ověření
     verified_user:
       form:
         submit_button: Odeslat kód
