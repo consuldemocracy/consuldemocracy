@@ -1,7 +1,7 @@
 ne:
   attributes:
     geozone_id: "सञ्चालनको दायरा"
-    results_enabled: "नतिजाहरू देखाउनुहोस्"
+    results_enabled: "परिणामहरू देखाउनुहोस्"
     stats_enabled: "तथ्याङ्क देखाउनुहोस्"
     advanced_stats_enabled: "उन्नत तथ्याङ्कहरू देखाउनुहोस्"
     name: नाम
