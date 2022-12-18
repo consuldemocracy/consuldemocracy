@@ -14,8 +14,8 @@ ne:
           knapsack: "खर्च गरिएको रकम <span>%{count}</span>"
           approval:
             zero: "Votes cast: <span>%{count}</span>"
-            one: "खस्सेका मतहरू: <span>%{count}</span>"
-            other: "खस्सेका मतहरू: <span>%{count}</span>"
+            one: "खसेका मत: <span>%{count}</span>"
+            other: "खसेका मत: <span>%{count}</span>"
         amount_limit:
           knapsack: "कुल बजेट <span>%{count}</span>"
           approval:
