@@ -118,11 +118,11 @@ ne:
       required: अवस्थित हुनुपर्छ
       taken: पहिले नै लिइएको छ
       too_long:
-        one: धेरै लामो छ (अधिकतम १ वर्ण हो)
-        other: धेरै लामो छ (अधिकतम %{count} वर्णहरू छन्)
+        one: धेरै लामो छ (अधिकतम १ अक्षर)
+        other: धेरै लामो छ (अधिकतम %{count} अक्षरहरू)
       too_short:
-        one: धेरै छोटो छ (न्यूनतम १ वर्ण हो)
-        other: धेरै छोटो छ (न्यूनतम %{count} वर्णहरू छन्)
+        one: धेरै छोटो छ (न्यूनतम १ अक्षर हो)
+        other: धेरै छोटो छ (न्यूनतम %{count} अक्षरहरू छन्)
       wrong_length:
         one: गलत लम्बाइ हो (१ वर्ण हुनुपर्छ)
         other: गलत लम्बाइ हो (%{count} वर्ण हुनुपर्छ)
@@ -176,14 +176,14 @@ ne:
             other: बाइटहरू
           gb: जी बि
           kb: के बि
-          mb: एम बि
+          mb: एमबि
           tb: टी बि
     percentage:
       format:
         format: "%n%"
   support:
     array:
-      last_word_connector: ", र"
+      last_word_connector: ", र "
       two_words_connector: " र "
       words_connector: ", "
   time:
