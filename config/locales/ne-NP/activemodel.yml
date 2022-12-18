@@ -13,7 +13,7 @@ ne:
           document_type: "कागजात प्रकार"
           document_number: "कागजात नम्बर (अक्षरहरू सहित)"
           date_of_birth: "जन्म मिति"
-          postal_code: "पोष्टकोड"
+          postal_code: "हुलाककोड"
         sms:
           phone: "टेलिफोन"
           confirmation_code: "कन्फर्मेसन कोड"
