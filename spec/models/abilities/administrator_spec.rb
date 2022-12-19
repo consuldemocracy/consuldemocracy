@@ -181,6 +181,8 @@ describe Abilities::Administrator do
       it { should be_able_to :create, Tenant }
       it { should be_able_to :read, Tenant }
       it { should be_able_to :update, Tenant }
+      it { should be_able_to :hide, Tenant }
+      it { should be_able_to :restore, Tenant }
       it { should_not be_able_to :destroy, Tenant }
 
       context "administrators from other tenants" do
@@ -193,6 +195,8 @@ describe Abilities::Administrator do
         it { should_not be_able_to :read, Tenant }
         it { should_not be_able_to :update, Tenant }
         it { should_not be_able_to :destroy, Tenant }
+        it { should_not be_able_to :hide, Tenant }
+        it { should_not be_able_to :restore, Tenant }
       end
     end
   end

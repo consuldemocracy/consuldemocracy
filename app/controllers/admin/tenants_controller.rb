@@ -27,6 +27,24 @@ class Admin::TenantsController < Admin::BaseController
     end
   end
 
+  def hide
+    @tenant.hide
+
+    respond_to do |format|
+      format.html { redirect_to admin_tenants_path, notice: t("admin.tenants.hide.notice") }
+      format.js { render template: "admin/tenants/toggle_enabled" }
+    end
+  end
+
+  def restore
+    @tenant.restore
+
+    respond_to do |format|
+      format.html { redirect_to admin_tenants_path, notice: t("admin.tenants.restore.notice") }
+      format.js { render template: "admin/tenants/toggle_enabled" }
+    end
+  end
+
   private
 
     def tenant_params
