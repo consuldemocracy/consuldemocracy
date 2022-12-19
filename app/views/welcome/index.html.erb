@@ -4,37 +4,41 @@
   <%= render "shared/canonical", href: root_url %>
 <% end %>
 
-<%= render Shared::BannerComponent.new("homepage") %>
+<% if only_manage_tenants? %>
+  <%= render "only_for_manage_tenants_information" %>
+<% else %>
+  <%= render Shared::BannerComponent.new("homepage") %>
 
-<% provide :social_media_meta_tags do %>
-  <%= render "shared/social_media_meta_tags",
-              social_url: root_url %>
-<% end %>
-
-<%= render "shared/header", header: @header %>
-
-<main>
-  <%= render "feeds" %>
-
-  <div class="row">
-    <% if @cards.any? %>
-      <div class="small-12 column <%= "large-8" if feed_processes_enabled? %>">
-        <h2 class="title"><%= t("welcome.cards.title") %></h2>
-
-        <%= render "shared/cards", cards: @cards %>
-      </div>
-    <% end %>
-
-    <% if feed_processes_enabled? %>
-      <div class="small-12 large-4 column">
-        <%= render "processes" %>
-      </div>
-    <% end %>
-  </div>
-
-  <% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
-    <%= render "recommended",
-                recommended_debates: @recommended_debates,
-                recommended_proposals: @recommended_proposals %>
+  <% provide :social_media_meta_tags do %>
+    <%= render "shared/social_media_meta_tags",
+                social_url: root_url %>
   <% end %>
-</main>
+
+  <%= render "shared/header", header: @header %>
+
+  <main>
+    <%= render "feeds" %>
+
+    <div class="row">
+      <% if @cards.any? %>
+        <div class="small-12 column <%= "large-8" if feed_processes_enabled? %>">
+          <h2 class="title"><%= t("welcome.cards.title") %></h2>
+
+          <%= render "shared/cards", cards: @cards %>
+        </div>
+      <% end %>
+
+      <% if feed_processes_enabled? %>
+        <div class="small-12 large-4 column">
+          <%= render "processes" %>
+        </div>
+      <% end %>
+    </div>
+
+    <% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
+      <%= render "recommended",
+                  recommended_debates: @recommended_debates,
+                  recommended_proposals: @recommended_proposals %>
+    <% end %>
+  </main>
+<% end %>
