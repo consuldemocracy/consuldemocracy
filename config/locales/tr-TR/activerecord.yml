@@ -382,7 +382,10 @@ tr:
       tag:
         name: "Konunun adını yazın"
       tenant:
+        domain: "Etki alanı"
         schema: "Alt etki alanı"
+        subdomain: "Alt etki alanı"
+        url: "Adres"
       topic:
         title: "Başlık"
         description: "İlk metin"
