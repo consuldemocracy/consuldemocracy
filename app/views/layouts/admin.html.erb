@@ -13,7 +13,11 @@
 
       <nav id="side_menu" class="admin-sidebar">
         <% if namespace == "admin" %>
-          <%= render Admin::MenuComponent.new %>
+          <% if only_manage_tenants? %>
+            <%= render Admin::MenuTenantComponent.new %>
+          <% else %>
+            <%= render Admin::MenuComponent.new %>
+          <% end %>
         <% elsif namespace == "sdg_management" %>
           <%= render SDGManagement::MenuComponent.new %>
         <% else %>

@@ -1,0 +1,9 @@
+<ul id="admin_menu" data-accordion-menu data-multi-open="true">
+  <li>
+    <a href="#" class="settings-link"><%= t("admin.menu.title_settings") %></a>
+    <%= link_list(
+      tenants_link,
+      class: ("is-active" if controller_name == "tenants")
+    ) %>
+  </li>
+</ul>

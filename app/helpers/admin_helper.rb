@@ -44,4 +44,10 @@ module AdminHelper
   def namespace
     controller.class.name.split("::").first.underscore
   end
+
+  def only_manage_tenants?
+    Rails.application.config.multitenancy &&
+      Tenant.default? &&
+        Rails.application.config.multitenancy_management_only
+  end
 end
