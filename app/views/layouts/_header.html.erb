@@ -32,21 +32,25 @@
           <%= render "devise/menu/login_items" %>
         </ul>
 
-        <div class="show-for-small-only">
-          <div class="subnavigation subnavigation-with-top-links">
-            <%= render "shared/subnavigation" %>
-            <%= render "shared/top_links" %>
+        <% unless only_manage_tenants? %>
+          <div class="show-for-small-only">
+            <div class="subnavigation subnavigation-with-top-links">
+              <%= render "shared/subnavigation" %>
+              <%= render "shared/top_links" %>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
 
-  <div id="navigation_bar" class="subnavigation">
-    <div class="hide-for-small-only">
-      <%= render "shared/subnavigation" %>
-    </div>
+  <% unless only_manage_tenants? %>
+    <div id="navigation_bar" class="subnavigation">
+      <div class="hide-for-small-only">
+        <%= render "shared/subnavigation" %>
+      </div>
 
-    <%= yield :header_addon %>
-  </div>
+      <%= yield :header_addon %>
+    </div>
+  <% end %>
 </header>
