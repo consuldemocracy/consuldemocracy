@@ -1,0 +1,9 @@
+<tr id="<%= dom_id(tenant) %>">
+  <td><%= tenant.name %></td>
+  <td><%= tenant.schema %></td>
+  <td><%= link_to_unless tenant.hidden?, tenant.host, root_url(host: tenant.host) %></td>
+  <td><%= render Admin::Tenants::ToggleHiddenComponent.new(tenant) %></td>
+  <td>
+    <%= render Admin::TableActionsComponent.new(tenant, actions: [:edit]) %>
+  </td>
+</tr>

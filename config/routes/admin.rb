@@ -284,7 +284,12 @@ namespace :admin do
     delete :cancel, on: :collection
   end
 
-  resources :tenants, except: [:show, :destroy]
+  resources :tenants, except: [:show, :destroy] do
+    member do
+      put :hide
+      put :restore
+    end
+  end
 end
 
 resolve "Milestone" do |milestone|

@@ -8,20 +8,14 @@
       <th><%= attribute_name(:name) %></th>
       <th><%= attribute_name(:schema) %></th>
       <th><%= attribute_name(:url) %></th>
+      <th><%= t("admin.tenants.index.enabled") %></th>
       <th><%= t("admin.shared.actions") %></th>
     </tr>
   </thead>
 
   <tbody>
     <% @tenants.each do |tenant| %>
-      <tr id="<%= dom_id(tenant) %>">
-        <td><%= tenant.name %></td>
-        <td><%= tenant.schema %></td>
-        <td><%= link_to tenant.host, root_url(host: tenant.host) %></td>
-        <td>
-          <%= render Admin::TableActionsComponent.new(tenant, actions: [:edit]) %>
-        </td>
-      </tr>
+      <%= render Admin::Tenants::RowComponent.new(tenant) %>
     <% end %>
   </tbody>
 </table>
