@@ -30,7 +30,11 @@ class Tenant < ApplicationRecord
       host_domain = allowed_domains.find { |domain| host == domain || host.ends_with?(".#{domain}") }
       schema = host_without_www.sub(/\.?#{host_domain}\Z/, "").presence
 
-      schema unless find_by_domain(schema)
+      if find_by_domain(schema)
+        raise Apartment::TenantNotFound
+      else
+        schema
+      end
     end
   end
 

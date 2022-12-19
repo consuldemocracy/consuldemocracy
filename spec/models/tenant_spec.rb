@@ -86,10 +86,10 @@ describe Tenant do
       expect(Tenant.resolve_host("saturn.consul.dev")).to eq "saturn"
     end
 
-    it "returns nil when a domain is accessed as a subdomain" do
+    it "raises an exception when a domain is accessed as a subdomain" do
       insert(:tenant, :domain, schema: "saturn.dev")
 
-      expect(Tenant.resolve_host("saturn.dev.consul.dev")).to be nil
+      expect { Tenant.resolve_host("saturn.dev.consul.dev") }.to raise_exception(Apartment::TenantNotFound)
     end
 
     it "returns nested subdomains when there's a subdomain-type tenant with nested subdomains" do
