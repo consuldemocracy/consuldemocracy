@@ -1631,6 +1631,9 @@ tr:
     tenants:
       create:
         notice: Kiracı eklendi
+      form:
+        use_subdomain: "Bu kiracıya erişmek için %{domain} içindeki bir alt etki alanı kullanılsın"
+        use_domain: "Bu kiracıya erişmek için farklı bir etki alanı kullanılsın"
       index:
         create: Kiracı ekle
       new:
