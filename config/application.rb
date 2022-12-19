@@ -138,6 +138,8 @@ module Consul
 
     # Set to true to enable managing different tenants using the same application
     config.multitenancy = Rails.application.secrets.multitenancy
+    # Set to true to ....
+    config.multitenancy_management_only = Rails.application.secrets.multitenancy_management_only
   end
 end
 
