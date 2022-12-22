@@ -20,13 +20,13 @@ module PollsHelper
     question.answers.where(author: current_user).any? { |vote| current_user.current_sign_in_at > vote.updated_at }
   end
 
-  def link_to_poll(text, poll)
+  def link_to_poll(text, poll, css_class = "")
     if can?(:results, poll)
-      link_to text, results_poll_path(id: poll.slug || poll.id)
+      link_to text, results_poll_path(id: poll.slug || poll.id), class: css_class
     elsif can?(:stats, poll)
-      link_to text, stats_poll_path(id: poll.slug || poll.id)
+      link_to text, stats_poll_path(id: poll.slug || poll.id), class: css_class
     else
-      link_to text, poll_path(id: poll.slug || poll.id)
+      link_to text, poll_path(id: poll.slug || poll.id), class: css_class
     end
   end
 
