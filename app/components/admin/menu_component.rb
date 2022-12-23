@@ -3,27 +3,39 @@ class Admin::MenuComponent < ApplicationComponent
   use_helpers :can?
 
   def links
-    [
-      (proposals_link if feature?(:proposals)),
-      (debates_link if feature?(:debates)),
-      comments_link,
-      (polls_link if feature?(:polls)),
-      (legislation_link if feature?(:legislation)),
-      (budgets_link if feature?(:budgets)),
-      booths_links,
-      (signature_sheets_link if feature?(:signature_sheets)),
-      messages_links,
-      site_customization_links,
-      moderated_content_links,
-      profiles_links,
-      stats_link,
-      settings_links,
-      dashboard_links,
-      (machine_learning_link if ::MachineLearning.enabled?)
-    ]
+    if Rails.application.multitenancy_management_mode?
+      multitenancy_management_links
+    else
+      default_links
+    end
   end
 
   private
+
+    def default_links
+      [
+        (proposals_link if feature?(:proposals)),
+        (debates_link if feature?(:debates)),
+        comments_link,
+        (polls_link if feature?(:polls)),
+        (legislation_link if feature?(:legislation)),
+        (budgets_link if feature?(:budgets)),
+        booths_links,
+        (signature_sheets_link if feature?(:signature_sheets)),
+        messages_links,
+        site_customization_links,
+        moderated_content_links,
+        profiles_links,
+        stats_link,
+        settings_links,
+        dashboard_links,
+        (machine_learning_link if ::MachineLearning.enabled?)
+      ]
+    end
+
+    def multitenancy_management_links
+      [tenants_link, administrators_link]
+    end
 
     def moderated_content?
       moderated_sections.include?(controller_name) && controller.class.module_parent != Admin::Legislation
@@ -395,7 +407,8 @@ class Admin::MenuComponent < ApplicationComponent
       [
         t("admin.menu.administrators"),
         admin_administrators_path,
-        controller_name == "administrators"
+        controller_name == "administrators",
+        class: "administrators-link"
       ]
     end
 
@@ -482,7 +495,8 @@ class Admin::MenuComponent < ApplicationComponent
         [
           t("admin.menu.multitenancy"),
           admin_tenants_path,
-          controller_name == "tenants"
+          controller_name == "tenants",
+          class: "tenants-link"
         ]
       end
     end

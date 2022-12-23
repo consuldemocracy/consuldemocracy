@@ -69,4 +69,22 @@ describe Users::SessionsController do
       end
     end
   end
+
+  describe "after_sign_in_path_for" do
+    it "redirects to account path when multitenancy_management_mode is enabled and user is not an admin" do
+      allow(Rails.application.config).to receive(:multitenancy_management_mode).and_return(true)
+
+      post :create, params: { user: { login: "citizen@consul.org", password: "12345678" }}
+
+      expect(response).to redirect_to account_path
+    end
+
+    it "redirects to welcome path when multitenancy_management_mode is disabled" do
+      allow(Rails.application.config).to receive(:multitenancy_management_mode).and_return(false)
+
+      post :create, params: { user: { login: "citizen@consul.org", password: "12345678" }}
+
+      expect(response).to redirect_to welcome_path
+    end
+  end
 end
