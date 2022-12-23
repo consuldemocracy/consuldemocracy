@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   draw :admin
   draw :devise
 
+  constraints lambda { |request| Rails.application.multitenancy_management_mode? } do
+    get "/", to: "admin/tenants#index"
+  end
+
   constraints lambda { |request| !Rails.application.multitenancy_management_mode? } do
     draw :budget
     draw :comment
