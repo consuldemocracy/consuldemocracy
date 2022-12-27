@@ -59,6 +59,23 @@ module DocumentParser
     variants
   end
 
+  # if the residence card has less than 8 digits, pad with zeros to the left until it has 8 digits
+  # For example:
+  # - if the residence card is Y1234567A, the result is Y01234567A
+  # - if the residence card is Y123456A,  the result is Y00123456A
+  def format_residence_card(document_number)
+    first_letter = document_number.chars.first
+    last_letter = document_number.chars.last
+
+    digits = document_number.remove(first_letter).remove(last_letter)
+
+    (8 - digits.size).times do
+      digits = "0#{digits}"
+    end
+
+    "#{first_letter}#{digits}#{last_letter}"
+  end
+
   def dni?(document_type)
     document_type.to_s == "1"
   end

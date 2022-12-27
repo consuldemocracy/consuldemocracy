@@ -29,4 +29,20 @@ describe DocumentParser do
       expect(DocumentParser.get_document_number_variants(1, "1234567A")).to eq(%w[1234567 01234567 1234567a 1234567A 01234567a 01234567A])
     end
   end
+
+  describe "#format_residence_card" do
+    it "does nothing if residence card has 8 digits" do
+      expect(DocumentParser.format_residence_card("Y12345678A")).to eq("Y12345678A")
+    end
+
+    it "adds zeroes to the left if residence card does not have 8 digits" do
+      expect(DocumentParser.format_residence_card("Y1234567A")).to eq("Y01234567A")
+      expect(DocumentParser.format_residence_card("Y123456A")).to eq("Y00123456A")
+      expect(DocumentParser.format_residence_card("Y12345A")).to eq("Y00012345A")
+      expect(DocumentParser.format_residence_card("Y1234A")).to eq("Y00001234A")
+      expect(DocumentParser.format_residence_card("Y123A")).to eq("Y00000123A")
+      expect(DocumentParser.format_residence_card("Y12A")).to eq("Y00000012A")
+      expect(DocumentParser.format_residence_card("Y1A")).to eq("Y00000001A")
+    end
+  end
 end
