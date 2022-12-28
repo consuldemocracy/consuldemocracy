@@ -1642,6 +1642,7 @@ cs:
         use_domain: "Použití jiné domény pro přístup k tomuto uživateli v nájmu"
       index:
         create: Vytvořit uživatele
+        enabled: Povoleno
       new:
         title: Nový uživatel
       update:
