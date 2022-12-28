@@ -3,9 +3,4 @@
   caption {
     @include element-invisible;
   }
-
-  [aria-pressed] {
-    @include switch;
-    margin-bottom: 0;
-  }
 }

@@ -1635,10 +1635,16 @@ en:
       form:
         use_subdomain: "Use a subdomain in the %{domain} domain to access this tenant"
         use_domain: "Use a different domain to access this tenant"
+      hide:
+        notice: Tenant disabled successfully
       index:
         create: Create tenant
+        enable: "Enable tenant %{tenant}"
+        enabled: Enabled
       new:
         title: New tenant
+      restore:
+        notice: Tenant enabled successfully
       update:
         notice: Tenant updated successfully
     homepage:

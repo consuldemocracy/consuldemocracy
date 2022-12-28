@@ -335,6 +335,7 @@ Rails/SkipsModelValidations:
   ForbiddenMethods:
     - update_attribute
   Exclude:
+    - app/models/tenant.rb
     - lib/acts_as_paranoid_aliases.rb
 
 Rails/TimeZone:

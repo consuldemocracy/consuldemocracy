@@ -70,7 +70,10 @@ namespace :admin do
     end
 
     resources :budget_phases, only: [:edit, :update] do
-      member { patch :toggle_enabled }
+      member do
+        patch :enable
+        patch :disable
+      end
     end
   end
 
@@ -81,7 +84,10 @@ namespace :admin do
       end
 
       resources :phases, as: "budget_phases", only: [:index, :edit, :update] do
-        member { patch :toggle_enabled }
+        member do
+          patch :enable
+          patch :disable
+        end
       end
     end
   end
@@ -278,7 +284,12 @@ namespace :admin do
     delete :cancel, on: :collection
   end
 
-  resources :tenants, except: [:show, :destroy]
+  resources :tenants, except: [:show, :destroy] do
+    member do
+      put :hide
+      put :restore
+    end
+  end
 end
 
 resolve "Milestone" do |milestone|

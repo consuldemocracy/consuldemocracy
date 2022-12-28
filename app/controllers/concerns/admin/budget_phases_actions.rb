@@ -6,7 +6,7 @@ module Admin::BudgetPhasesActions
     include ImageAttributes
 
     before_action :load_budget
-    before_action :load_phase, only: [:edit, :update, :toggle_enabled]
+    before_action :load_phase, only: [:edit, :update, :enable, :disable]
   end
 
   def edit
@@ -20,12 +20,21 @@ module Admin::BudgetPhasesActions
     end
   end
 
-  def toggle_enabled
-    @phase.update!(enabled: !@phase.enabled)
+  def enable
+    @phase.update!(enabled: true)
 
     respond_to do |format|
       format.html { redirect_to phases_index, notice: t("flash.actions.save_changes.notice") }
-      format.js
+      format.js { render template: "admin/budgets_wizard/phases/toggle_enabled" }
+    end
+  end
+
+  def disable
+    @phase.update!(enabled: false)
+
+    respond_to do |format|
+      format.html { redirect_to phases_index, notice: t("flash.actions.save_changes.notice") }
+      format.js { render template: "admin/budgets_wizard/phases/toggle_enabled" }
     end
   end
 

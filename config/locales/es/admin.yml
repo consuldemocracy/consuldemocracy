@@ -1634,10 +1634,16 @@ es:
       form:
         use_subdomain: "Utiliza un subdominio en el dominio %{domain} para acceder a esta entidad"
         use_domain: "Utiliza un dominio distinto para acceder a esta entidad"
+      hide:
+        notice: Entidad deshabilitada correctamente
       index:
         create: Crear entidad
+        enable: "Habilitar entidad %{tenant}"
+        enabled: Habilitada
       new:
         title: Nueva entidad
+      restore:
+        notice: Entidad habilitada correctamente
       update:
         notice: Entidad actualizada correctamente
     homepage:
