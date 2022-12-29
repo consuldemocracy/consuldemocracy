@@ -1,3 +1,7 @@
 <%= back_link_to admin_tenants_path %>
 <%= header %>
+<div class="callout primary">
+  <%= sanitize(t("admin.tenants.new.admin_information", username: current_user.username,
+                                                        email: current_user.email)) %>
+</div>
 <%= render Admin::Tenants::FormComponent.new(tenant) %>
