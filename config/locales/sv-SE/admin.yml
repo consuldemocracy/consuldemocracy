@@ -1641,6 +1641,7 @@ sv:
         enable: "Aktivera hyresgäst %{tenant}"
         enabled: Aktiverad
       new:
+        admin_information: "När du skapar en hyresgäst kommer din nuvarande användare <strong>\"%{username}\"</strong> med e-postadressen <strong>\"%{email}\"</strong> och ditt lösenord att kopieras till databasen och automatiskt tilldelas administrationsbehörighet. Notera att dessa användarkonton lagras i helt separata databaser, så om du byter din användares lösenord i en hyresgäst förblir dina konton i andra hyresgäster intakta."
         title: Ny hyresgäst
       restore:
         notice: Hyresgäst har aktiverats
