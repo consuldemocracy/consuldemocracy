@@ -1634,10 +1634,17 @@ tr:
       form:
         use_subdomain: "Bu kiracıya erişmek için %{domain} içindeki bir alt etki alanı kullanılsın"
         use_domain: "Bu kiracıya erişmek için farklı bir etki alanı kullanılsın"
+      hide:
+        notice: Kiracı devre dışı bırakıldı
       index:
         create: Kiracı ekle
+        enable: "%{tenant} kiracısını etkinleştir"
+        enabled: Etkinleştirildi
       new:
+        admin_information: "Bir kiracı eklediğinizde, e-posta adresi <strong>\"%{email}\"</strong> olan geçerli <strong>\"%{username}\"</strong> kullanıcınız ve parolanız yeni kracının veritabanına kopyalanarak otomatik olarak yönetici yetkileri verilir. Bu kullanıcı hesaplarının tamamen ayrı veritabanlarında tutulduğunu unutmayın. Kullanıcınızın bir kiracıdaki parolasını değiştirirseniz, diğer kiracılardaki hesaplarınız değiştirilmeden kalır."
         title: Yeni kiracı
+      restore:
+        notice: Kiracı etkinleştirildi
       update:
         notice: Kiracı güncellendi
     homepage:
