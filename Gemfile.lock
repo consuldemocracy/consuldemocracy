@@ -301,8 +301,8 @@ GEM
     highline (2.0.3)
     html_tokenizer (0.0.7)
     htmlentities (4.3.4)
-    httparty (0.20.0)
-      mime-types (~> 3.0)
+    httparty (0.21.0)
+      mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
     httpi (2.5.0)
       rack
