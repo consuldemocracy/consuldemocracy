@@ -1,0 +1,21 @@
+<h2 class="inline-block"><%= t("valuation.budgets.index.title") %></h2>
+
+<% if budget.present? %>
+  <table>
+    <thead>
+      <tr>
+        <th><%= t("valuation.budgets.index.table_name") %></th>
+        <th><%= t("valuation.budgets.index.table_phase") %></th>
+        <th><%= t("valuation.budgets.index.table_assigned_investments_valuation_open") %></th>
+        <th><%= t("valuation.budgets.index.table_actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render Valuation::Budgets::RowComponent.new(budget) %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="callout primary clear">
+    <%= t("valuation.budgets.index.no_budgets") %>
+  </div>
+<% end %>
