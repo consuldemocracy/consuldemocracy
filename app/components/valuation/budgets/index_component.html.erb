@@ -1,6 +1,6 @@
 <h2 class="inline-block"><%= t("valuation.budgets.index.title") %></h2>
 
-<% if budget.present? %>
+<% if budgets.any? %>
   <table>
     <thead>
       <tr>
@@ -11,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-      <%= render Valuation::Budgets::RowComponent.new(budget) %>
+      <%= render Valuation::Budgets::RowComponent.with_collection(budgets) %>
     </tbody>
   </table>
 <% else %>
