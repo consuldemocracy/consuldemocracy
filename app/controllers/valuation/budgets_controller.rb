@@ -5,6 +5,6 @@ class Valuation::BudgetsController < Valuation::BaseController
   load_and_authorize_resource
 
   def index
-    @budget = current_budget
+    @budgets = @budgets.published.order(created_at: :desc)
   end
 end

@@ -1,7 +1,7 @@
 class Valuation::Budgets::IndexComponent < ApplicationComponent
-  attr_reader :budget
+  attr_reader :budgets
 
-  def initialize(budget)
-    @budget = budget
+  def initialize(budgets)
+    @budgets = budgets
   end
 end
