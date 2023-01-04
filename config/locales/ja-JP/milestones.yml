@@ -1,1 +1,7 @@
 ja:
+  milestones:
+    index:
+      progress: 進捗
+    show:
+      publication_date: "%{publication_date} に発表されました。"
+      status_changed: ステータスが以下に変更されました
