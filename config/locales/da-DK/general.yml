@@ -137,6 +137,10 @@ da:
       allowed_file_content_types: "indholdstype skal være af %{types}"
       user_not_found: Brugeren blev ikke fundet
       invalid_date_range: "Ugyldigt datointerval"
+      past_date: "Må ikke være en udløbet dato"
+      cannot_change_date:
+        poll_started: "Kan ikke ændres, hvis afstemning er startet"
+        poll_ended: "Kan ikke ændres, hvis afstemning er slut"
   form:
     accept_terms: Jeg accepterer %{policy} og %{conditions}
     accept_terms_title: Jeg accepterer Persondatapolitikken og Brugervilkår
@@ -631,6 +635,10 @@ da:
     show:
       vote_answer: "Stem %{answer}"
       voted: "Du har stemt %{answer}"
+    description:
+      unique: "Du kan maksimalt vælge et svar."
+      multiple: "Du kan maksimalt vælge %{maximum} svar."
+    read_more_about: "Læs mere om:"
   proposal_notifications:
     new:
       title: "Send besked"
@@ -746,6 +754,10 @@ da:
         other: "%{count} sprog i brug"
     optional: "Valgfrit"
     required: "Påkrævet"
+    comments:
+      zero: "Ingen kommentarer"
+      one: "1 kommentar"
+      other: "%{count} kommentarer"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
