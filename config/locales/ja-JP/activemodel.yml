@@ -1,1 +1,25 @@
 ja:
+  activemodel:
+    models:
+      verification:
+        residence: "住居"
+        sms: "SMS"
+    attributes:
+      verification:
+        residence:
+          date_of_birth: "生年月日"
+      verification/letter:
+        password: "パスワード"
+      verification/residence:
+        date_of_birth: "生年月日"
+      officing/residence:
+        year_of_birth: "生まれた年"
+      local_census_records/import:
+        file: ファイル
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "ファイルの形式が間違っています。許可されたファイル形式は: %{valid_extensions}"
+              headers: "ファイルのヘッダーが間違っています。ファイルのヘッダーはこのような名前でなければなりません: %{required_headers}"
