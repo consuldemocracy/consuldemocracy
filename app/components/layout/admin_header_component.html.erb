@@ -17,21 +17,12 @@
 
     <div class="top-bar">
       <div class="top-bar-left">
-        <% if namespace == "officing" %>
-          <h1>
-            <%= link_to "#" do %>
-              <%= setting["org_name"] %>
-              <br><small><%= namespaced_header_title %></small>
-            <% end %>
-          </h1>
-        <% else %>
-          <h1>
-            <%= link_to namespaced_root_path do %>
-              <%= setting["org_name"] %>
-              <br><small><%= namespaced_header_title %></small>
-            <% end %>
-          </h1>
-        <% end %>
+        <h1>
+          <%= link_to namespace_path do %>
+            <%= setting["org_name"] %>
+            <br><small><%= namespaced_header_title %></small>
+          <% end %>
+        </h1>
       </div>
 
       <% if show_admin_menu?(user) || namespace != "management" %>

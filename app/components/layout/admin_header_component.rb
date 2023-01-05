@@ -17,4 +17,12 @@ class Layout::AdminHeaderComponent < ApplicationComponent
         t("#{namespace}.header.title")
       end
     end
+
+    def namespace_path
+      if namespace == "officing"
+        "#"
+      else
+        namespaced_root_path
+      end
+    end
 end
