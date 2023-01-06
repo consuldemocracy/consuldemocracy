@@ -8,10 +8,21 @@ ja:
       verification:
         residence:
           date_of_birth: "生年月日"
+          postal_code: "郵便番号"
+        sms:
+          phone: "電話番号"
+          confirmation_code: "確認コード"
+        email:
+          recipient: "メールアドレス"
       verification/letter:
+        email: "メールアドレス"
         password: "パスワード"
+        verification_code: "手紙で受け取ったコード"
       verification/residence:
         date_of_birth: "生年月日"
+        postal_code: "郵便番号"
+      verification/sms:
+        confirmation_code: "携帯電話で受け取ったコードを入力してください。"
       officing/residence:
         year_of_birth: "生まれた年"
       local_census_records/import:
