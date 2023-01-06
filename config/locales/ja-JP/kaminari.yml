@@ -1,1 +1,8 @@
 ja:
+  views:
+    pagination:
+      current: 現在のページ
+      first: 最初のページ
+      last: 最後のページ
+      next: 次のページ
+      previous: 前のページ
