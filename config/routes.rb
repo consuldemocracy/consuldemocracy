@@ -46,4 +46,35 @@ Rails.application.routes.draw do
 
   # Static pages
   resources :pages, path: "/", only: [:show]
+
+  resolve "Budget::Investment" do |investment, options|
+    [investment.budget, :investment, options.merge(id: investment)]
+  end
+
+  resolve("Topic") { |topic, options| [topic.community, topic, options] }
+
+  resolve "Legislation::Proposal" do |proposal, options|
+    [proposal.process, :proposal, options.merge(id: proposal)]
+  end
+
+  resolve "Vote" do |vote, options|
+    [*resource_hierarchy_for(vote.votable), vote, options]
+  end
+
+  resolve "Legislation::Question" do |question, options|
+    [question.process, :question, options.merge(id: question)]
+  end
+
+  resolve "Legislation::Annotation" do |annotation, options|
+    [annotation.draft_version.process, :draft_version, :annotation,
+     options.merge(draft_version_id: annotation.draft_version, id: annotation)]
+  end
+
+  resolve "Poll::Question" do |question, options|
+    [:question, options.merge(id: question)]
+  end
+
+  resolve "SDG::LocalTarget" do |target, options|
+    [:local_target, options.merge(id: target)]
+  end
 end
