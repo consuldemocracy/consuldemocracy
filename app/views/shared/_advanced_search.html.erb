@@ -13,7 +13,6 @@
         <%= text_field_tag "search", params[:search],
                            placeholder: t("shared.advanced_search.general_placeholder") %>
       </div>
-
       <div class="small-12 large-3 column">
         <label for="advanced_search_official_level"><%= t("shared.advanced_search.author_type") %></label>
         <%= select_tag("advanced_search[official_level]", official_level_search_options,
@@ -49,7 +48,6 @@
           </div>
         </div>
       </div>
-
       <div class="small-12 medium-3 column end clear">
         <%= submit_tag t("shared.advanced_search.search"), class: "button expanded" %>
       </div>
