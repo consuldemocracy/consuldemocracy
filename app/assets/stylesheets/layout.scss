@@ -1228,10 +1228,6 @@ form {
     margin-right: $line-height / 2;
   }
 
-  .verify-account {
-    padding-right: $line-height / 2;
-  }
-
   .final-votes-info {
     background: $warning-bg;
     border: 1px solid $warning-border;
@@ -1268,16 +1264,6 @@ form {
   line-height: rem-calc(32);
   height: rem-calc(32);
   vertical-align: top;
-}
-
-.user-permissions {
-
-  p {
-    span {
-      color: $text-medium;
-      font-size: rem-calc(12);
-    }
-  }
 }
 
 .notifications-list {
@@ -1663,21 +1649,6 @@ table {
 
   .number {
     opacity: 0.5;
-  }
-}
-
-.verify-account {
-  padding-right: $line-height / 2;
-
-  .already-verified {
-    color: $check;
-    line-height: $line-height * 2;
-
-    .icon-check {
-      font-size: rem-calc(24);
-      line-height: rem-calc(45);
-      vertical-align: middle;
-    }
   }
 }
 
