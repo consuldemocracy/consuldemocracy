@@ -30,7 +30,7 @@
 
         <div class="show-for-small-only">
           <div class="subnavigation subnavigation-with-top-links">
-            <%= render "shared/subnavigation" %>
+            <%= render Layout::SubnavigationComponent.new %>
             <%= render "shared/top_links" %>
           </div>
         </div>
@@ -40,7 +40,7 @@
 
   <div id="navigation_bar" class="subnavigation">
     <div class="hide-for-small-only">
-      <%= render "shared/subnavigation" %>
+      <%= render Layout::SubnavigationComponent.new %>
     </div>
 
     <%= yield :header_addon %>
