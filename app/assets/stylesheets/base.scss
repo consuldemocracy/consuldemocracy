@@ -677,6 +677,10 @@ body > header,
 
 .subnavigation {
 
+  @include breakpoint(small only) {
+    padding: 0 !important;
+  }
+
   .dropdown.menu > li {
 
     &.opens-left > .is-dropdown-submenu {
@@ -716,8 +720,8 @@ body > header,
         top: 20px;
 
         @include breakpoint(small only) {
-          right: -10px;
-          top: 8px;
+          right: -10px !important;
+          top: 8px !important;
         }
       }
     }
@@ -1810,6 +1814,25 @@ footer {
   }
 }
 
+a {
+
+  &.legislation-date {
+    display: block;
+
+    &:hover {
+      background: $brand;
+      text-decoration: none;
+
+      h4,
+      p,
+      h4 span,
+      .date-status {
+        color: #fff;
+      }
+    }
+  }
+}
+
 .date-status {
   color: $highlight-text;
   display: block;
@@ -2785,6 +2808,18 @@ footer {
     }
   }
 
+  @include breakpoint(small only) {
+
+    .message {
+      position: unset !important;
+    }
+
+    .table-cell {
+      clear: both;
+      display: block;
+    }
+  }
+
   .question-list {
     font-size: $small-font-size;
 
@@ -3298,6 +3333,13 @@ footer {
 .budget-phases {
   background: $light;
   padding-bottom: $line-height * 2;
+
+  @include breakpoint(small only) {
+
+    .phases-list {
+      display: none;
+    }
+  }
 
   h2 {
     font-size: $base-font-size;
