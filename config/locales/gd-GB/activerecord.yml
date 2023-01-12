@@ -470,6 +470,11 @@ gd:
         body: Bodhaig
       tag:
         name: "Taidhp a-steach ainm a’ chuspair"
+      tenant:
+        domain: "Àrainn"
+        schema: "Àrainn / Fo-àrainn"
+        subdomain: "Fo-àrainn"
+        url: "URL"
       topic:
         title: "Tiotal"
         description: "Teacs tùsail"
@@ -655,7 +660,7 @@ gd:
             debate_end_date:
               invalid_date_range: feumaidh seo a bhith air no às dèidh latha tòiseachaidh an deasbaid
             draft_end_date:
-              invalid_date_range: feumaidh seo a bhith air no às dèidh an latha tòiseachaidh na dreachd
+              invalid_date_range: feumaidh seo a bhith air no às dèidh latha tòiseachaidh na dreachd
             allegations_end_date:
               invalid_date_range: feumaidh seo a bhith air no às dèidh an latha nam beachdan
         local_census_record:
