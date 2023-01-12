@@ -13,7 +13,7 @@ module SkipValidation
 
       _validate_callbacks.each do |callback|
         if callback.raw_filter.is_a?(validator_class)
-          callback.raw_filter.instance_variable_set("@attributes", callback.raw_filter.attributes - [field])
+          callback.raw_filter.instance_variable_set(:@attributes, callback.raw_filter.attributes - [field])
         end
       end
     end
