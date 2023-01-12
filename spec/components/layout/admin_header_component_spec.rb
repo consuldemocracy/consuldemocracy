@@ -11,7 +11,6 @@ describe Layout::AdminHeaderComponent do
   context "management section", controller: Management::BaseController do
     it "shows the menu for administrators" do
       create(:administrator, user: user)
-      sign_in(user)
 
       render_inline Layout::AdminHeaderComponent.new(user)
 
@@ -24,7 +23,6 @@ describe Layout::AdminHeaderComponent do
 
     it "does not show the menu managers" do
       create(:manager, user: user)
-      sign_in(user)
 
       render_inline Layout::AdminHeaderComponent.new(user)
 
