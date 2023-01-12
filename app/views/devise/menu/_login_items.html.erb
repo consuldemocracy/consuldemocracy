@@ -1,4 +1,4 @@
-<% if user_signed_in? %>
+<% if current_user %>
   <li>
     <%= layout_menu_link_to t("layouts.header.my_activity_link"),
                               user_path(current_user),
