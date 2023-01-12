@@ -1,7 +1,7 @@
-<% if current_user %>
+<% if user %>
   <li>
     <%= layout_menu_link_to t("layouts.header.my_activity_link"),
-                              user_path(current_user),
+                              user_path(user),
                               controller_name == "users",
                               rel: "nofollow",
                               title: t("shared.go_to_page") +
