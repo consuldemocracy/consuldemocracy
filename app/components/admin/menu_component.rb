@@ -91,11 +91,11 @@ class Admin::MenuComponent < ApplicationComponent
     end
 
     def sdg_managers?
-      controller_name == "managers" && controller.class.module_parent ==  Admin::SDG
+      controller_name == "managers" && controller.class.module_parent == Admin::SDG
     end
 
     def managers?
-      controller_name == "managers" && controller.class.module_parent ==  Admin
+      controller_name == "managers" && controller.class.module_parent == Admin
     end
 
     def proposals_link
