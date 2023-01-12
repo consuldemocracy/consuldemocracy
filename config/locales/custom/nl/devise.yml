@@ -39,7 +39,7 @@ nl:
       signed_up: "Je bent inschreven"
       signed_up_but_inactive: "Je bent geregistreerd. Je kon alleen niet automatisch aangemeld worden omdat jouw account nog niet geactiveerd is. Klik hiervoor op de link die naar jouw e-mailadres is verstuurd. Geen mail ontvangen? Neem dan contact op met noreply@consul.dev\r\n"
       signed_up_but_locked: "Je bent geregistreerd. Je kon alleen niet automatisch aangemeld worden omdat jouw account geblokkeerd is. Neem hiervoor contact op met noreply@consul.dev"
-      signed_up_but_unconfirmed: "Je ontvangt via de e-mail instructies hoe je jouew account kunt activeren. Geen mail ontvangen? Neem dan contact op met noreply@consul.dev"
+      signed_up_but_unconfirmed: "Je ontvangt via de e-mail instructies hoe je jouw account kunt activeren. Geen mail ontvangen? Neem dan contact op met noreply@consul.dev"
       update_needs_confirmation: "U hebt uw e-mailadres succesvol gewijzigd, maar we moeten uw nieuwe mailadres nog verifiëren. Controleer uw e-mail en klik op de link in de mail om uw mailadres te verifiëren"
       updated: "Jouw accountgegevens zijn opgeslagen"
     unlocks:
