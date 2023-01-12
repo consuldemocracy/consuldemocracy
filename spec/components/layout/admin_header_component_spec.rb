@@ -9,7 +9,7 @@ describe Layout::AdminHeaderComponent do
   end
 
   context "management section", controller: Management::BaseController do
-    it "shows the menu for administrators" do
+    it "shows the menu button and menu for administrators" do
       create(:administrator, user: user)
 
       render_inline Layout::AdminHeaderComponent.new(user)
@@ -19,9 +19,10 @@ describe Layout::AdminHeaderComponent do
       expect(page).to have_link "My content"
       expect(page).to have_link "My account"
       expect(page).to have_link "Sign out"
+      expect(page).to have_css "[data-toggle]"
     end
 
-    it "does not show the menu managers" do
+    it "does not show the menu button and menu for managers" do
       create(:manager, user: user)
 
       render_inline Layout::AdminHeaderComponent.new(user)
@@ -31,6 +32,7 @@ describe Layout::AdminHeaderComponent do
       expect(page).not_to have_content "My content"
       expect(page).not_to have_content "My account"
       expect(page).not_to have_content "Sign out"
+      expect(page).not_to have_css "[data-toggle]"
     end
   end
 end

@@ -25,4 +25,8 @@ class Layout::AdminHeaderComponent < ApplicationComponent
         namespaced_root_path
       end
     end
+
+    def show_account_menu?
+      show_admin_menu?(user) || namespace != "management"
+    end
 end
