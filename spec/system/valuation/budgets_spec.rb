@@ -1,10 +1,7 @@
 require "rails_helper"
 
 describe "Valuation budgets" do
-  before do
-    valuator = create(:valuator, user: create(:user, username: "Rachel", email: "rachel@valuators.org"))
-    login_as(valuator.user)
-  end
+  before { login_as(create(:valuator).user) }
 
   context "Index" do
     scenario "Displays published budgets" do
