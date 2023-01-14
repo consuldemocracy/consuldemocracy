@@ -95,14 +95,14 @@ class MachineLearning
     def data_output_files
       files = { tags: [], related_content: [], comments_summary: [] }
 
-      files[:tags] << proposals_tags_filename if File.exists?(data_folder.join(proposals_tags_filename))
-      files[:tags] << proposals_taggings_filename if File.exists?(data_folder.join(proposals_taggings_filename))
-      files[:tags] << investments_tags_filename if File.exists?(data_folder.join(investments_tags_filename))
-      files[:tags] << investments_taggings_filename if File.exists?(data_folder.join(investments_taggings_filename))
-      files[:related_content] << proposals_related_filename if File.exists?(data_folder.join(proposals_related_filename))
-      files[:related_content] << investments_related_filename if File.exists?(data_folder.join(investments_related_filename))
-      files[:comments_summary] << proposals_comments_summary_filename if File.exists?(data_folder.join(proposals_comments_summary_filename))
-      files[:comments_summary] << investments_comments_summary_filename if File.exists?(data_folder.join(investments_comments_summary_filename))
+      files[:tags] << proposals_tags_filename if File.exist?(data_folder.join(proposals_tags_filename))
+      files[:tags] << proposals_taggings_filename if File.exist?(data_folder.join(proposals_taggings_filename))
+      files[:tags] << investments_tags_filename if File.exist?(data_folder.join(investments_tags_filename))
+      files[:tags] << investments_taggings_filename if File.exist?(data_folder.join(investments_taggings_filename))
+      files[:related_content] << proposals_related_filename if File.exist?(data_folder.join(proposals_related_filename))
+      files[:related_content] << investments_related_filename if File.exist?(data_folder.join(investments_related_filename))
+      files[:comments_summary] << proposals_comments_summary_filename if File.exist?(data_folder.join(proposals_comments_summary_filename))
+      files[:comments_summary] << investments_comments_summary_filename if File.exist?(data_folder.join(investments_comments_summary_filename))
 
       files
     end
@@ -438,13 +438,13 @@ class MachineLearning
     end
 
     def last_modified_date_for(filename)
-      return nil unless File.exists? data_folder.join(filename)
+      return nil unless File.exist? data_folder.join(filename)
 
       File.mtime data_folder.join(filename)
     end
 
     def updated_file?(filename)
-      return false unless File.exists? data_folder.join(filename)
+      return false unless File.exist? data_folder.join(filename)
       return true unless previous_modified_date[filename].present?
 
       last_modified_date_for(filename) > previous_modified_date[filename]

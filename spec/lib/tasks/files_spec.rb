@@ -18,8 +18,8 @@ describe "files tasks" do
 
       travel_to(2.days.from_now) { run_rake_task }
 
-      expect(File.exists?(image.file_path)).to be false
-      expect(File.exists?(document.file_path)).to be false
+      expect(File.exist?(image.file_path)).to be false
+      expect(File.exist?(document.file_path)).to be false
     end
 
     it "does not delete recent cached attachments" do
@@ -33,8 +33,8 @@ describe "files tasks" do
 
       travel_to(2.minutes.from_now) { run_rake_task }
 
-      expect(File.exists?(image.file_path)).to be true
-      expect(File.exists?(document.file_path)).to be true
+      expect(File.exist?(image.file_path)).to be true
+      expect(File.exist?(document.file_path)).to be true
     end
 
     it "does not delete old regular attachments" do
@@ -43,8 +43,8 @@ describe "files tasks" do
 
       travel_to(2.days.from_now) { run_rake_task }
 
-      expect(File.exists?(image.file_path)).to be true
-      expect(File.exists?(document.file_path)).to be true
+      expect(File.exist?(image.file_path)).to be true
+      expect(File.exist?(document.file_path)).to be true
     end
   end
 end
