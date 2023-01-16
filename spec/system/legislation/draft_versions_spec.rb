@@ -278,9 +278,9 @@ describe "Legislation Draft Versions" do
 
       expect(page).to have_css(".annotator-hl", count: 1)
 
-      click_link "Help"
+      click_link "CONSUL"
 
-      expect(page).to have_content "CONSUL is a platform for citizen participation"
+      expect(page).to have_content "Most active proposals"
 
       go_back
 
@@ -296,9 +296,9 @@ describe "Legislation Draft Versions" do
 
       find(:css, ".annotator-hl").click
 
-      click_link "Help"
+      click_link "CONSUL"
 
-      expect(page).to have_content "CONSUL is a platform for citizen participation"
+      expect(page).to have_content "Most active proposals"
 
       go_back
 
