@@ -49,10 +49,6 @@ class Management::BaseController < ActionController::Base
       I18n.with_locale(session[:locale], &action)
     end
 
-    def current_budget
-      Budget.current
-    end
-
     def clear_password
       session[:new_password] = nil
     end
