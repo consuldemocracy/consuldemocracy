@@ -296,6 +296,8 @@ describe "Legislation Draft Versions" do
 
       find(:css, ".annotator-hl").click
 
+      expect(page).to have_link "Publish Comment"
+
       click_link "CONSUL"
 
       expect(page).to have_content "Most active proposals"
