@@ -26,15 +26,11 @@
 
     <div id="responsive-menu">
       <div class="top-bar-right">
-        <ul class="menu" data-responsive-menu="medium-dropdown">
-          <%= render "shared/admin_login_items" %>
-          <%= render "layouts/notification_item" %>
-          <%= render "devise/menu/login_items" %>
-        </ul>
+        <%= render Layout::AccountMenuComponent.new(current_user) %>
 
         <div class="show-for-small-only">
           <div class="subnavigation subnavigation-with-top-links">
-            <%= render "shared/subnavigation" %>
+            <%= render Layout::SubnavigationComponent.new %>
             <%= render "shared/top_links" %>
           </div>
         </div>
@@ -44,7 +40,7 @@
 
   <div id="navigation_bar" class="subnavigation">
     <div class="hide-for-small-only">
-      <%= render "shared/subnavigation" %>
+      <%= render Layout::SubnavigationComponent.new %>
     </div>
 
     <%= yield :header_addon %>

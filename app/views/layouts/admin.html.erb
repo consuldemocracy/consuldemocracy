@@ -6,7 +6,7 @@
   </head>
 
   <body class="admin">
-    <%= render "layouts/admin_header" %>
+    <%= render Layout::AdminHeaderComponent.new(current_user) %>
 
     <div class="menu-and-content">
       <%= check_box_tag :show_menu, nil, false, role: "switch" %>
