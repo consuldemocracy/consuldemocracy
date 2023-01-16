@@ -7,13 +7,17 @@
     </tr>
   </thead>
   <tbody>
-    <tr id="<%= dom_id(budget) %>">
-      <td><%= budget.name %></td>
-      <td><%= budget.current_phase.name %></td>
-      <td align="right">
-        <%= link_to t("management.budgets.print_investments"),
-          print_management_budget_investments_path(budget) %>
-      </td>
-    </tr>
+    <% budgets.each do |budget| %>
+      <tr id="<%= dom_id(budget) %>">
+        <td><%= budget.name %></td>
+        <td><%= budget.current_phase.name %></td>
+        <td align="right">
+          <%= link_to t("management.budgets.print_investments"),
+            print_management_budget_investments_path(budget) %>
+        </td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
+
+<%= paginate budgets %>
