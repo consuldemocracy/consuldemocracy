@@ -460,7 +460,7 @@ GEM
     puma (4.3.12)
       nio4r (~> 2.0)
     racc (1.6.1)
-    rack (2.2.4)
+    rack (2.2.6.2)
     rack-accept (0.4.5)
       rack (>= 0.4)
     rack-protection (2.2.2)
