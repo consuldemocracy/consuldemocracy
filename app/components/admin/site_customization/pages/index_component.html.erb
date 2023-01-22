@@ -21,8 +21,8 @@
       <tr id="<%= dom_id(page) %>">
         <td><%= page.title %></td>
         <td><%= page.slug %></td>
-        <td><%= I18n.l page.created_at, format: :short %></td>
-        <td><%= I18n.l page.created_at, format: :short %></td>
+        <td><%= I18n.l page.created_at, format: :long %></td>
+        <td><%= I18n.l page.updated_at, format: :long %></td>
         <td><%= t("admin.site_customization.pages.page.status_#{page.status}") %></td>
         <td>
           <%= render Admin::TableActionsComponent.new(page) do |actions| %>
