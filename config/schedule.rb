@@ -44,6 +44,14 @@ every 1.day, at: "3:00 am", roles: [:cron] do
   rake "votes:reset_hot_score"
 end
 
+every 1.day, at: "4:00 am", roles: [:cron] do
+  rake "backup:mega"
+end
+
+every :sunday, at: "11pm" do
+  command "truncate -s 0 /home/deploy/consul/shared/log/#{@environment}.log"
+end
+
 every :reboot do
   command "cd #{@path} && bundle exec puma -C config/puma/#{@environment}.rb"
   # Number of workers must be kept in sync with capistrano's delayed_job_workers
