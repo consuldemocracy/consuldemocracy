@@ -26,3 +26,5 @@
 
 gem "rest-client"
 gem "csv"
+gem "rmega"
+gem "rubyzip"
