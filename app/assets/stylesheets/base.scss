@@ -1198,8 +1198,12 @@ footer {
   }
 
   h1 {
-    font-size: rem-calc(60);
+    font-size: rem-calc(48);
     padding: $line-height * 2 0 $line-height;
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(60);
+    }
   }
 
   h1,
