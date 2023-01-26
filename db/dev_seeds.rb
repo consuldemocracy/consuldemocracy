@@ -36,6 +36,17 @@ def random_locales_attributes(**attribute_names_with_values)
   end
 end
 
+def add_image_to(imageable, sample_image_files)
+  # imageable should respond to #title & #author
+  imageable.image = Image.create!({
+    imageable: imageable,
+    title: imageable.title,
+    attachment: Rack::Test::UploadedFile.new(sample_image_files.sample),
+    user: imageable.author
+  })
+  imageable.save!
+end
+
 log "Creating dev seeds for tenant #{Tenant.current_schema}" unless Tenant.default?
 
 load_dev_seeds "settings"
