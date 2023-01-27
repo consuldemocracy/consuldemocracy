@@ -29,9 +29,7 @@
 
       <% if show_account_menu? %>
         <div id="responsive_menu">
-          <div class="top-bar-right">
-            <%= render Layout::AccountMenuComponent.new(user) %>
-          </div>
+          <%= render Layout::AccountMenuComponent.new(user) %>
         </div>
       <% end %>
     </div>

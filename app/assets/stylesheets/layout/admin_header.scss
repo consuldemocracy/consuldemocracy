@@ -25,13 +25,10 @@
         display: inline-block;
       }
 
-      .top-bar-right {
-
-        > ul {
-          border-bottom: 0;
-          padding-bottom: 0;
-          margin-bottom: 0;
-        }
+      .account-menu {
+        border-bottom: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
 
         .submenu {
           position: initial;
@@ -39,6 +36,11 @@
 
         a {
           font-weight: normal;
+        }
+
+        .is-active {
+          font-weight: bold;
+          text-decoration: underline;
         }
       }
 
