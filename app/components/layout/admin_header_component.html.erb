@@ -18,14 +18,12 @@
     <% end %>
 
     <div class="top-bar">
-      <div class="top-bar-left">
-        <h1>
-          <%= link_to namespace_path do %>
-            <%= setting["org_name"] %>
-            <br><small><%= namespaced_header_title %></small>
-          <% end %>
-        </h1>
-      </div>
+      <h1>
+        <%= link_to namespace_path do %>
+          <%= setting["org_name"] %>
+          <br><small><%= namespaced_header_title %></small>
+        <% end %>
+      </h1>
 
       <% if show_account_menu? %>
         <div id="responsive_menu">
