@@ -1,5 +1,7 @@
-require "rmega"
+require "fileutils"
 require "zip"
+require "rmega"
+require "net/ftp"
 
 class ZipFileGenerator
   def initialize(input_dir, output_file)
@@ -42,36 +44,97 @@ class ZipFileGenerator
 end
 
 namespace :backup do
-  desc "Create a backup and stores in the cloud Mega"
-  task mega: :environment do
-    if Rails.application.secrets.mega_username.present? && Rails.application.secrets.mega_password.present?
+  desc "Perform all actions to generate and store a backup"
+  task perform: ["generate", "upload_to_mega", "upload_to_synology"]
+
+  desc "Delete old backup locally and generate a new backup"
+  task generate: :environment do
+    if Rails.application.secrets.backup_name.present?
+      backup_folder_name = "#{Rails.application.secrets.backup_name}-#{Rails.env}"
+      backup_folder = "/home/deploy/#{backup_folder_name}"
+      files = {
+        "/home/deploy/consul/shared/config" => "#{backup_folder}/config.zip",
+        "/home/deploy/consul/shared/public" => "#{backup_folder}/public.zip",
+        "/home/deploy/consul/shared/storage" => "#{backup_folder}/storage.zip",
+        "/home/deploy/backups" => "#{backup_folder}/database.zip"
+      }
+
+      print "Deleting old backups - "
+      FileUtils.rm_rf(backup_folder)
+      puts "Finished!"
+
+      print "Generating new backups - "
+      FileUtils.mkdir_p(backup_folder)
+      files.each do |folder, zip_file|
+        ZipFileGenerator.new(folder, zip_file).write
+      end
+      puts "Finished!"
+    else
+      puts "Skipping backup preparation because of missing secrets key backup_name"
+    end
+  end
+
+  desc "Upload the backup to the cloud Mega"
+  task upload_to_mega: :environment do
+    if [Rails.application.secrets.mega_username.present?,
+        Rails.application.secrets.mega_password.present?].all?
+
+      backup_folder_name = "#{Rails.application.secrets.backup_name}-#{Rails.env}"
+      backup_folder = "/home/deploy/#{backup_folder_name}"
+
       mega_username = Rails.application.secrets.mega_username
       mega_password = Rails.application.secrets.mega_password
       storage = Rmega.login(mega_username, mega_password)
 
-      files = {
-        "/home/deploy/consul/shared/config" => "/home/deploy/config.zip",
-        "/home/deploy/consul/shared/public" => "/home/deploy/public.zip",
-        "/home/deploy/consul/shared/storage" => "/home/deploy/storage.zip",
-        "/home/deploy/backups" => "/home/deploy/database.zip"
-      }
+      if File.exist?(backup_folder)
+        print "Uploading backup to Mega - "
+        folder = storage.root.folders.find { |f| f.name == backup_folder_name }
+        folder.delete if folder.present?
 
-      print "Creating backup - "
-      files.each do |folder, zip_file|
-        File.delete(zip_file) if File.exist?(zip_file)
-        ZipFileGenerator.new(folder, zip_file).write
+        folder = storage.root.create_folder(backup_folder_name)
+        Dir["#{backup_folder}/*"].each do |file|
+          folder.upload(file) unless File.directory?(file)
+        end
+        puts "Finished!"
+      else
+        puts "Skipping upload backup to Mega because backup was not generated"
       end
-      puts "Finished!"
-
-      print "Uploading backup - "
-      storage.root.files.last.trash while storage.root.files.any?
-      storage.trash.empty! unless storage.trash.empty?
-      files.values.each do |zip_file|
-        storage.root.upload(zip_file)
-      end
-      puts "Finished!"
     else
-      puts "Skipping task because of missing secrets keys mega_username and/or mega_password"
+      puts "Skipping upload backup to Mega because of missing secrets keys mega_username or mega_password"
+    end
+  end
+
+  desc "Upload the backup to the synology"
+  task upload_to_synology: :environment do
+    if [Rails.application.secrets.synology_host.present?,
+        Rails.application.secrets.synology_username.present?,
+        Rails.application.secrets.synology_password.present?].all?
+
+      backup_folder_name = "#{Rails.application.secrets.backup_name}-#{Rails.env}"
+      backup_folder = "/home/deploy/#{backup_folder_name}"
+
+      host = Rails.application.secrets.synology_host
+      synology_username = Rails.application.secrets.synology_username
+      synology_password = Rails.application.secrets.synology_password
+      synology = Net::FTP.new(host, username: synology_username, password: synology_password)
+      synology.login rescue Net::FTPPermError
+
+      if File.exist?(backup_folder)
+        print "Uploading backup to Synology - "
+        synology.mkdir(backup_folder_name) unless synology.nlst.include?(backup_folder_name)
+        synology.nlst(backup_folder_name) do |file|
+          synology.delete(file)
+        end
+
+        Dir["#{backup_folder}/*"].each do |file|
+          synology.put(file, "#{backup_folder_name}/#{File.basename(file)}")
+        end
+        puts "Finished!"
+      else
+        puts "Skipping upload backup to Synology because backup was not generated"
+      end
+    else
+      puts "Skipping upload backup to Synology because of missing secrets keys mega_username or mega_password"
     end
   end
 end
