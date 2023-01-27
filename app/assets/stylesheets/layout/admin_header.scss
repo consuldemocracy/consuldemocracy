@@ -21,10 +21,6 @@
 
     @include breakpoint(small only) {
 
-      .top-bar-left ul {
-        display: inline-block;
-      }
-
       .account-menu {
         border-bottom: 0;
         padding-bottom: 0;
