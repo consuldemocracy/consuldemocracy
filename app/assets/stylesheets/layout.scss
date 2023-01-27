@@ -550,6 +550,8 @@ body > header,
 
   .top-bar {
     @include background-with-text-contrast($main-header, [main-header, brand]);
+    padding-bottom: $topbar-padding;
+    padding-top: $topbar-padding;
 
     h1 {
       line-height: $line-height;
@@ -566,20 +568,18 @@ body > header,
 }
 
 .top-bar {
-  background-color: inherit;
-  padding-left: 0;
-  padding-right: 0;
+  align-items: center;
+  display: flex;
+
+  @include breakpoint(small only) {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 
   @include breakpoint(medium) {
-    justify-content: flex-start;
-
     h1 {
       flex-grow: 1;
     }
-  }
-
-  ul {
-    background: none;
   }
 
   h1 {

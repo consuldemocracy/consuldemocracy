@@ -16,7 +16,6 @@
 
   .top-bar {
     height: auto;
-    padding-bottom: 0;
     padding-top: $line-height / 2;
 
     @include breakpoint(small only) {
