@@ -550,6 +550,10 @@ body > header,
 
   .top-bar {
     @include background-with-text-contrast($main-header, [main-header, brand]);
+
+    h1 {
+      line-height: $line-height;
+    }
   }
 }
 
@@ -563,12 +567,13 @@ body > header,
 
 .top-bar {
   background-color: inherit;
-  padding: 0;
+  padding-left: 0;
+  padding-right: 0;
 
   @include breakpoint(medium) {
     justify-content: flex-start;
 
-    .top-bar-title {
+    h1 {
       flex-grow: 1;
     }
   }
@@ -577,9 +582,8 @@ body > header,
     background: none;
   }
 
-  .top-bar-title {
-    line-height: $line-height;
-    margin-right: 0;
+  h1 {
+    margin-bottom: 0;
 
     a img {
       height: rem-calc(48);

@@ -16,6 +16,7 @@
 
   .top-bar {
     height: auto;
+    padding-bottom: 0;
     padding-top: $line-height / 2;
 
     @include breakpoint(small only) {
@@ -52,7 +53,6 @@
 
     h1 {
       margin-top: $line-height / 2;
-      margin-bottom: 0;
 
       @include breakpoint(medium) {
         margin-top: 0;
