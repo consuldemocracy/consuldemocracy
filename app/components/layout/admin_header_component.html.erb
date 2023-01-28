@@ -7,20 +7,18 @@
     <% end %>
   </div>
 
-  <div class="expanded row admin-top-bar">
-    <div class="top-bar">
-      <h1>
-        <%= link_to namespace_path do %>
-          <%= setting["org_name"] %>
-          <br><small><%= namespaced_header_title %></small>
-        <% end %>
-      </h1>
-
-      <% if show_account_menu? %>
-        <%= render Layout::ResponsiveMenuComponent.new do %>
-          <%= render Layout::AccountMenuComponent.new(user) %>
-        <% end %>
+  <div class="top-bar">
+    <h1>
+      <%= link_to namespace_path do %>
+        <%= setting["org_name"] %>
+        <br><small><%= namespaced_header_title %></small>
       <% end %>
-    </div>
+    </h1>
+
+    <% if show_account_menu? %>
+      <%= render Layout::ResponsiveMenuComponent.new do %>
+        <%= render Layout::AccountMenuComponent.new(user) %>
+      <% end %>
+    <% end %>
   </div>
 </header>
