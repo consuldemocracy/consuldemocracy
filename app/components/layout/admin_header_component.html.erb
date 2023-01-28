@@ -8,15 +8,6 @@
   </div>
 
   <div class="expanded row admin-top-bar">
-    <% if show_account_menu? %>
-      <div class="title-bar" data-responsive-toggle="responsive_menu" data-hide-for="medium">
-        <button class="menu-button" type="button" data-toggle="responsive_menu">
-          <span class="menu-icon"></span>
-          <span class="title-bar-title"><%= t("application.menu") %></span>
-        </button>
-      </div>
-    <% end %>
-
     <div class="top-bar">
       <h1>
         <%= link_to namespace_path do %>
@@ -26,7 +17,14 @@
       </h1>
 
       <% if show_account_menu? %>
-        <div id="responsive_menu">
+        <div data-responsive-toggle="responsive_menu" data-hide-for="medium">
+          <button class="menu-button" type="button" data-toggle="responsive_menu">
+            <span class="menu-icon"></span>
+            <span><%= t("application.menu") %></span>
+          </button>
+        </div>
+
+        <div id="responsive_menu" class="responsive-menu">
           <%= render Layout::AccountMenuComponent.new(user) %>
         </div>
       <% end %>
