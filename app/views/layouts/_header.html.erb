@@ -17,14 +17,7 @@
       <% end %>
     </h1>
 
-    <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
-      <button type="button" class="menu-button" data-toggle>
-        <span class="menu-icon"></span>
-        <%= t("application.menu") %>
-      </button>
-    </span>
-
-    <div id="responsive-menu" class="responsive-menu">
+    <%= render Layout::ResponsiveMenuComponent.new do %>
       <%= render Layout::AccountMenuComponent.new(current_user) %>
 
       <div class="show-for-small-only">
@@ -33,7 +26,7 @@
           <%= render "shared/top_links" %>
         </div>
       </div>
-    </div>
+    <% end %>
   </div>
 
   <div id="navigation_bar" class="subnavigation">
