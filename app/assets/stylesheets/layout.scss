@@ -572,8 +572,8 @@ body > header,
   display: flex;
 
   @include breakpoint(small only) {
+    flex-direction: row-reverse;
     flex-wrap: wrap;
-    justify-content: space-between;
 
     .responsive-menu {
       width: 100%;
@@ -582,15 +582,14 @@ body > header,
         display: inline-block;
       }
     }
-  }
 
-  @include breakpoint(medium) {
-    h1 {
-      flex-grow: 1;
+    [data-responsive-toggle] {
+      flex-grow: 1000;
     }
   }
 
   h1 {
+    flex-grow: 1;
     margin-bottom: 0;
 
     a img {
