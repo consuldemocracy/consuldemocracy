@@ -574,6 +574,14 @@ body > header,
   @include breakpoint(small only) {
     flex-wrap: wrap;
     justify-content: space-between;
+
+    .responsive-menu {
+      width: 100%;
+
+      a {
+        display: inline-block;
+      }
+    }
   }
 
   @include breakpoint(medium) {

@@ -31,12 +31,10 @@
     padding-top: $line-height / 2;
     position: relative;
     text-align: left;
-    width: 100%;
 
     @include breakpoint(medium) {
       display: block;
       font-weight: bold;
-      width: auto;
 
       &:hover {
         @include anchor-color;
