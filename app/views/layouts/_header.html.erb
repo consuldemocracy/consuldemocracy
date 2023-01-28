@@ -11,18 +11,18 @@
   </div>
 
   <div class="top-bar">
+    <h1>
+      <%= link_to root_path, accesskey: "0" do %>
+        <%= image_tag(image_path_for("logo_header.png"), alt: setting["org_name"]) %>
+      <% end %>
+    </h1>
+
     <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
       <button type="button" class="menu-button" data-toggle>
         <span class="menu-icon"></span>
         <%= t("application.menu") %>
       </button>
     </span>
-
-    <h1>
-      <%= link_to root_path, accesskey: "0" do %>
-        <%= image_tag(image_path_for("logo_header.png"), alt: setting["org_name"]) %>
-      <% end %>
-    </h1>
 
     <div id="responsive-menu" class="responsive-menu">
       <%= render Layout::AccountMenuComponent.new(current_user) %>
