@@ -17,16 +17,9 @@
       </h1>
 
       <% if show_account_menu? %>
-        <div data-responsive-toggle="responsive_menu" data-hide-for="medium">
-          <button class="menu-button" type="button" data-toggle="responsive_menu">
-            <span class="menu-icon"></span>
-            <span><%= t("application.menu") %></span>
-          </button>
-        </div>
-
-        <div id="responsive_menu" class="responsive-menu">
+        <%= render Layout::ResponsiveMenuComponent.new do %>
           <%= render Layout::AccountMenuComponent.new(user) %>
-        </div>
+        <% end %>
       <% end %>
     </div>
   </div>
