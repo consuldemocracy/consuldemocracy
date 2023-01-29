@@ -19,6 +19,28 @@ class RemoteTranslation < ApplicationRecord
           error_message: nil).any?
   end
 
+  def self.remote_translations_for(*args)
+    resources_groups(*args).flatten.select { |resource| translation_empty?(resource) }.map do |resource|
+      remote_translation_for(resource)
+    end
+  end
+
+  def self.resources_groups(*args)
+    feeds = args.find { |arg| arg&.first.class == Widget::Feed } || []
+
+    args.compact - [feeds] + feeds.map(&:items)
+  end
+
+  def self.remote_translation_for(resource)
+    { "remote_translatable_id" => resource.id.to_s,
+      "remote_translatable_type" => resource.class.to_s,
+      "locale" => I18n.locale }
+  end
+
+  def self.translation_empty?(resource)
+    resource.class.translates? && resource.translations.where(locale: I18n.locale).empty?
+  end
+
   def already_translated_resource
     if remote_translatable&.translations&.where(locale: locale).present?
       errors.add(:locale, :already_translated)
