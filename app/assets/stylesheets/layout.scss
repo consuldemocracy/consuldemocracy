@@ -514,26 +514,6 @@ body > header,
     border-bottom: 1px solid #fff;
   }
 
-  .remote-translations-button {
-
-    &.callout {
-      margin: 0;
-      padding: rem-calc(6);
-
-      [type="submit"] {
-        @include brand-color;
-        background: none;
-        border: 0;
-        cursor: pointer;
-        font-weight: bold;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-
   .external-links {
     padding: rem-calc(6) 0;
     text-align: center;

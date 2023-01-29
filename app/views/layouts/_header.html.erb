@@ -1,7 +1,5 @@
 <header>
-  <% if display_remote_translation_info?(@remote_translations, I18n.locale) %>
-    <%= render "shared/remote_translations_button", remote_translations: @remote_translations %>
-  <% end %>
+  <%= render Layout::RemoteTranslationsButtonComponent.new(@remote_translations) %>
 
   <div class="top-links">
     <%= render Layout::LocaleSwitcherComponent.new %>
