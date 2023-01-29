@@ -4,9 +4,9 @@
   <% end %>
 
   <div class="top-links">
-    <%= render "shared/locale_switcher" %>
+    <%= render Layout::LocaleSwitcherComponent.new %>
     <div class="hide-for-small-only">
-      <%= render "shared/top_links" %>
+      <%= render Layout::TopLinksComponent.new %>
     </div>
   </div>
 
@@ -23,7 +23,7 @@
       <div class="show-for-small-only">
         <div class="subnavigation subnavigation-with-top-links">
           <%= render Layout::SubnavigationComponent.new %>
-          <%= render "shared/top_links" %>
+          <%= render Layout::TopLinksComponent.new %>
         </div>
       </div>
     <% end %>
