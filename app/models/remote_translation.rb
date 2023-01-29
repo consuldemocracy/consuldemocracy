@@ -12,16 +12,9 @@ class RemoteTranslation < ApplicationRecord
     RemoteTranslations::Caller.new(self).delay.call
   end
 
-  def self.remote_translation_enqueued?(remote_translation)
-    where(remote_translatable_id: remote_translation["remote_translatable_id"],
-          remote_translatable_type: remote_translation["remote_translatable_type"],
-          locale: remote_translation["locale"],
-          error_message: nil).any?
-  end
-
-  def self.remote_translations_for(*args)
+  def self.for(*args)
     resources_groups(*args).flatten.select { |resource| translation_empty?(resource) }.map do |resource|
-      remote_translation_for(resource)
+      new(remote_translatable: resource, locale: I18n.locale)
     end
   end
 
@@ -31,25 +24,25 @@ class RemoteTranslation < ApplicationRecord
     args.compact - [feeds] + feeds.map(&:items)
   end
 
-  def self.remote_translation_for(resource)
-    { "remote_translatable_id" => resource.id.to_s,
-      "remote_translatable_type" => resource.class.to_s,
-      "locale" => I18n.locale }
-  end
-
   def self.translation_empty?(resource)
     resource.class.translates? && resource.translations.where(locale: I18n.locale).empty?
   end
 
   def self.create_all(remote_translations_params)
-    remote_translations_params.each do |remote_translation_params|
-      create!(remote_translation_params) unless remote_translation_enqueued?(remote_translation_params)
-    end
+    remote_translations_params.map do |remote_translation_params|
+      new(remote_translation_params)
+    end.reject(&:enqueued?).each(&:save!)
   end
 
   def already_translated_resource
     if remote_translatable&.translations&.where(locale: locale).present?
       errors.add(:locale, :already_translated)
     end
+  end
+
+  def enqueued?
+    self.class.where(remote_translatable: remote_translatable,
+                     locale: locale,
+                     error_message: nil).any?
   end
 end
