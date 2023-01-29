@@ -41,6 +41,12 @@ class RemoteTranslation < ApplicationRecord
     resource.class.translates? && resource.translations.where(locale: I18n.locale).empty?
   end
 
+  def self.create_all(remote_translations_params)
+    remote_translations_params.each do |remote_translation_params|
+      create!(remote_translation_params) unless remote_translation_enqueued?(remote_translation_params)
+    end
+  end
+
   def already_translated_resource
     if remote_translatable&.translations&.where(locale: locale).present?
       errors.add(:locale, :already_translated)
