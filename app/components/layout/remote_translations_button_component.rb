@@ -12,7 +12,7 @@ class Layout::RemoteTranslationsButtonComponent < ApplicationComponent
 
   private
 
-    def display_remote_translation_button?
-      remote_translations.none?(&:enqueued?)
+    def translations_in_progress?
+      remote_translations.any?(&:enqueued?)
     end
 end
