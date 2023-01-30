@@ -216,6 +216,7 @@ it:
     budget_phases:
       edit:
         title: "Modifica fase"
+        dates_help_text: "Per soli scopi informativi"
         description_help_text: Questo paragrafo apparirà nell’intestazione quando la fase risulterà attiva
         duration: "Durata della fase"
         duration_description: "Il periodo di tempo in cui questa fase sarà attiva."
@@ -783,6 +784,7 @@ it:
       comments: "Commenti"
       local_census_records: Gestisci il censimento locale
       machine_learning: "IA / Apprendimento automatico"
+      multitenancy: Multi-locazione
     administrators:
       index:
         title: Amministratori
@@ -1105,6 +1107,10 @@ it:
         alert: "Quest'azione rimuoverà il sondaggio e tutte le sue domande associate."
         success_notice: "Sondaggio eliminato correttamente"
         unable_notice: "Non puoi eliminare un sondaggio avente voti"
+      votation_type:
+        title: "Tipo di votazione"
+        unique_description: "È possibile rispondere solo una volta alla domanda."
+        multiple_description: "Consente di scegliere risposte multiple. È possibile impostare il numero massimo di risposte."
     questions:
       index:
         title: "Quesiti"
@@ -1121,6 +1127,8 @@ it:
         poll_not_assigned: "Sondaggio non assegnato"
       edit:
         title: "Modifica la domanda"
+      form:
+        poll_help: "Puoi selezionare soltanto i sondaggi che non sono ancora iniziati"
       new:
         title: "Creare una domanda per il sondaggio %{poll}"
         title_proposal: "Creare la domanda"
