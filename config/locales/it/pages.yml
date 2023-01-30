@@ -1,5 +1,8 @@
 it:
   pages:
+    census_terms:
+      title: "Termini e condizioni di accesso del Censimento"
+      description: "Pagina di informazioni sui termini e le condizioni di accesso del Censimento."
     conditions:
       title: Termini e condizioni d'uso
       subtitle: AVVISO LEGALE SULLE CONDIZIONI D'USO, PRIVACY E PROTEZIONE DEI DATI PERSONALI DEL PORTALE GOVERNO APERTO
