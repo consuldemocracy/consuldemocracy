@@ -2,7 +2,9 @@
   text-align: center;
 
   &.callout {
+    border: 0;
     margin: 0;
+    overflow: visible;
     padding: rem-calc(6);
 
     [type="submit"] {
