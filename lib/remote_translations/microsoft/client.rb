@@ -5,11 +5,6 @@ class RemoteTranslations::Microsoft::Client
   CHARACTERS_LIMIT_PER_REQUEST = 5000
   PREVENTING_TRANSLATION_KEY = "notranslate".freeze
 
-  def initialize
-    api_key = Tenant.current_secrets.microsoft_api_key
-    @client = TranslatorText::Client.new(api_key)
-  end
-
   def call(fields_values, locale)
     texts = prepare_texts(fields_values)
     valid_locale = RemoteTranslations::Microsoft::AvailableLocales.parse_locale(locale)
@@ -28,12 +23,16 @@ class RemoteTranslations::Microsoft::Client
 
   private
 
+    def client
+      @client ||= TranslatorText::Client.new(Tenant.current_secrets.microsoft_api_key)
+    end
+
     def request_translation(texts, locale)
       response = []
       split_response = false
 
       if characters_count(texts) <= CHARACTERS_LIMIT_PER_REQUEST
-        response = @client.translate(texts, to: locale)
+        response = client.translate(texts, to: locale)
       else
         texts.each do |text|
           response << translate_text(text, locale)
@@ -46,7 +45,7 @@ class RemoteTranslations::Microsoft::Client
 
     def translate_text(text, locale)
       fragments_for(text).map do |fragment|
-        @client.translate([fragment], to: locale)
+        client.translate([fragment], to: locale)
       end.flatten
     end
 
