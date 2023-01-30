@@ -38,6 +38,8 @@ it:
           sdg: SDG
       create:
         notice: "Banner creato correttamente"
+      destroy:
+        notice: "Banner eliminato correttamente"
       edit:
         editing: Modifica banner
         form:
@@ -113,6 +115,7 @@ it:
         delete: Elimina budget
         phase: Fase
         phases_caption: "Fasi"
+        phases_table_help_text: "La configurazione di queste fasi è utilizzata per soli scopi informativi. La sua funzione è quella di definire le informazioni delle fasi, mostrate sulla pagina pubblica del budget partecipativo."
         duration: "Durata"
         enabled: Abilitato
         actions: Azioni
@@ -136,6 +139,8 @@ it:
         info:
           budget_settings: "Impostazioni generali del budget partecipativo"
           staff_settings: "Amministratori e Valutatori assegnati al budget"
+        hide_money: "Nascondi denaro"
+        hide_money_help_text: "Se quest'opzione è spuntata, tutti i campi che mostrano l'importo di denaro saranno nascosti durante il processo."
       destroy:
         success_notice: Bilancio cancellato con successo
         unable_notice: Non è consentito eliminare un Bilancio cui risultano associati degli investimenti
