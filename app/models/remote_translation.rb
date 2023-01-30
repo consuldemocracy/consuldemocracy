@@ -31,11 +31,11 @@ class RemoteTranslation < ApplicationRecord
   def self.create_all(remote_translations_params)
     remote_translations_params.map do |remote_translation_params|
       new(remote_translation_params)
-    end.reject(&:enqueued?).each(&:save!)
+    end.reject(&:already_translated?).reject(&:enqueued?).each(&:save!)
   end
 
   def already_translated_resource
-    if remote_translatable&.translations&.where(locale: locale).present?
+    if already_translated?
       errors.add(:locale, :already_translated)
     end
   end
@@ -44,5 +44,9 @@ class RemoteTranslation < ApplicationRecord
     self.class.where(remote_translatable: remote_translatable,
                      locale: locale,
                      error_message: nil).any?
+  end
+
+  def already_translated?
+    remote_translatable&.translations&.where(locale: locale).present?
   end
 end
