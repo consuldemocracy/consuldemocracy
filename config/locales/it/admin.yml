@@ -1132,6 +1132,8 @@ it:
       new:
         title: "Creare una domanda per il sondaggio %{poll}"
         title_proposal: "Creare la domanda"
+      destroy:
+        notice: "Domanda eliminata correttamente"
       answers:
         images:
           add_image: "Aggiungi immagine"
@@ -1155,11 +1157,17 @@ it:
           documents_list: Elenco documenti
           document_title: Titolo
           document_actions: Azioni
+      no_edit: "Una volta avviato il sondaggio, non sarà possibile creare, modificare o eliminare domande, risposte o qualsiasi contenuto associato al sondaggio."
     answers:
       new:
         title: Nuova risposta
       edit:
         title: Modifica risposta
+      destroy:
+        success_notice: "Risposta eliminata correttamente"
+      images:
+        index:
+          title: Immagini
       videos:
         index:
           title: Video
@@ -1343,6 +1351,7 @@ it:
         label:
           booths: "Ricercare seggio per nome"
           budget_investments: "Cerca investimenti per titolo, descrizione o titolo"
+          comments: "Cerca commenti"
           debates: "Cerca dibattiti per titolo o descrizione"
           legislation_processes: "Cerca processi per titolo o descrizione"
           legislation_proposals: "Cerca proposte per titolo o descrizione"
@@ -1352,6 +1361,7 @@ it:
           poll_questions: "Cerca quesiti oggetto di votazione"
           polls: "Cerca sondaggi per nome o descrizione"
           proposals: "Ricercare le proposte per titolo, codice. descrizione o domanda"
+          proposal_notifications: "Cerca notifiche per titolo o descrizione"
           users: "Cerca utente in base al nome o all’email"
         search: "Ricercare"
       search_results: "Risultati della ricerca"
@@ -1618,6 +1628,25 @@ it:
             notice: "Carta aggiornata correttamente"
           destroy:
             notice: "Carta rimossa correttamente"
+    tenants:
+      create:
+        notice: Locatario creato correttamente
+      form:
+        use_subdomain: "Utilizza un sottodominio nel dominio %{domain} per accedere a questo locatario"
+        use_domain: "Utilizza un dominio differente per accedere a questo locatario"
+      hide:
+        notice: Locatario disabilitato correttamente
+      index:
+        create: Crea locatario
+        enable: "Abilita il locatario %{tenant}"
+        enabled: Abilitato
+      new:
+        admin_information: "Quando crei un locatario, il tuo utente corrente <strong>\"%{username}\"</strong> con l'email <strong>\"%{email}\"</strong> e la tua password saranno copiati nel database del nuovo locatario e riceveranno automaticamente le autorizzazioni di amministrazione. Nota che questi profili utente sono memorizzati in database completamente separati, quindi, se modifichi la password del tuo utente in un locatario, i tuoi profili negli altri locatari rimarranno intatti."
+        title: Nuovo locatario
+      restore:
+        notice: Locatario abilitato correttamente
+      update:
+        notice: Locatario aggiornato correttamente
     homepage:
       title: Homepage
       description: I moduli attivi vengono visualizzati nella homepage nello stesso ordine qui riportato.
