@@ -2,6 +2,10 @@ it:
   mailers:
     title: "Governo Aperto"
     no_reply: "Questo messaggio è stato inviato da un indirizzo di posta elettronica che non accetta risposte."
+    already_confirmed:
+      info: "Abbiamo ricevuto una richiesta di inviarti le istruzioni per confermare il tuo profilo. Tuttavia, il tuo profilo è già confermato, quindi non è necessario farlo nuovamente."
+      new_password: "Se hai dimenticato la tua password, puoi ripristinarla al link seguente:"
+      subject: Il tuo profilo è già confermato
     comment:
       hi: Salve
       new_comment_by: C'è un nuovo commento da <strong>%{commenter}</strong>
@@ -17,6 +21,7 @@ it:
       subject: Conferma il tuo indirizzo email
       thanks: Grazie.
       title: "Conferma il tuo account utilizzando il seguente link"
+      text: "Conferma il tuo profilo utilizzando il seguente link."
     reply:
       hi: Ciao
       new_reply_by: C'è una nuova risposta da <strong>%{commenter}</strong> per il tuo commento su
@@ -54,6 +59,7 @@ it:
       sincerely: "Cordiali saluti"
       share: "Condividi il tuo progetto"
     budget_investment_unfeasible:
+      title: "Il tuo progetto di investimento è stato contrassegnato come irrealizzabile"
       hi: "Gentile utente,"
       new: "Pertanto, ti invitiamo a elaborare un <strong>nuovo investimento</strong> in linea con i requisiti di questo procedimento. Puoi farlo seguendo questo link: %{url}."
       new_href: "nuovo progetto di investimento"
@@ -62,6 +68,7 @@ it:
       subject: "Il tuo progetto di investimento '%{code}' è stato contrassegnato come irrealizzabile"
     budget_investment_selected:
       subject: "Il tuo progetto di investimento '%{code}' è stato selezionato"
+      title: "Il tuo progetto di investimento è stato selezionato"
       hi: "Gentile utente,"
       share: "Per iniziare a ottenere voti, condividi il tuo progetto di investimento sui social network. Solo così potrai vederlo realizzato!"
       share_button: "Condividi il tuo progetto di investimento"
@@ -69,6 +76,7 @@ it:
       sincerely: "Cordiali saluti"
     budget_investment_unselected:
       subject: "Il tuo progetto di investimento '%{code}' è stato selezionato"
+      title: "Il tuo progetto di investimento non è stato selezionato"
       hi: "Gentile utente,"
       thanks: "Grazie ancora per aver partecipato."
       sincerely: "Cordiali saluti"
