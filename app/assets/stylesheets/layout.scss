@@ -989,9 +989,7 @@ form {
   }
 
   &.primary {
-    background-color: $info-bg;
-    border-color: $info-border;
-    color: $color-info;
+    @include info-colors;
   }
 
   &.warning {

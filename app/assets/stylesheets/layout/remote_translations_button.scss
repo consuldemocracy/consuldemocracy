@@ -1,22 +1,18 @@
 .remote-translations-button {
+  @include info-colors;
+  font-size: $small-font-size;
   text-align: center;
+  padding: rem-calc(6);
 
-  &.callout {
+  [type="submit"] {
+    @include brand-color;
+    background: none;
     border: 0;
-    margin: 0;
-    overflow: visible;
-    padding: rem-calc(6);
+    cursor: pointer;
+    font-weight: bold;
 
-    [type="submit"] {
-      @include brand-color;
-      background: none;
-      border: 0;
-      cursor: pointer;
-      font-weight: bold;
-
-      &:hover {
-        text-decoration: underline;
-      }
+    &:hover {
+      text-decoration: underline;
     }
   }
 }
