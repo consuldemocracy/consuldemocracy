@@ -15,7 +15,6 @@
   }
 
   .top-bar {
-    height: auto;
     padding-top: $line-height / 2;
 
     @include breakpoint(small only) {
@@ -24,10 +23,6 @@
         border-bottom: 0;
         padding-bottom: 0;
         margin-bottom: 0;
-
-        .submenu {
-          position: initial;
-        }
 
         a {
           font-weight: normal;
@@ -68,13 +63,6 @@
         font-weight: lighter;
         line-height: 1;
       }
-    }
-  }
-
-  .top-bar .menu > li {
-
-    @include breakpoint(medium) {
-      height: auto !important;
     }
   }
 }
