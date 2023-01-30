@@ -5,14 +5,9 @@
   padding: rem-calc(6);
 
   [type="submit"] {
-    @include brand-color;
+    @include link;
     background: none;
     border: 0;
-    cursor: pointer;
     font-weight: bold;
-
-    &:hover {
-      text-decoration: underline;
-    }
   }
 }
