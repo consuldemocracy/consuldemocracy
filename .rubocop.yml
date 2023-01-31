@@ -164,6 +164,9 @@ Lint/BooleanSymbol:
 Lint/ConstantDefinitionInBlock:
   Enabled: true
 
+Lint/DeprecatedClassMethods:
+  Enabled: true
+
 Lint/DuplicateBranch:
   Enabled: true
 

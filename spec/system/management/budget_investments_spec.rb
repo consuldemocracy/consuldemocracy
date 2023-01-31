@@ -32,7 +32,7 @@ describe "Budget Investments" do
                   "new_management_budget_investment_path",
                   "",
                   "management_budget_investment_path",
-                  { budget_id: "budget_id" },
+                  mappable_path_arguments: { budget_id: "budget_id" },
                   management: true
 
   context "Load" do

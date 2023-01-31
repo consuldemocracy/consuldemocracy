@@ -9,7 +9,7 @@ section "Creating header and cards for the homepage" do
 
   Widget::Card.create!(
     random_locales_attributes(
-      %i[title description link_text label].index_with do |attribute|
+      **%i[title description link_text label].index_with do |attribute|
         -> { I18n.t("seeds.cards.header.#{attribute}") }
       end
     ).merge(
@@ -21,7 +21,7 @@ section "Creating header and cards for the homepage" do
 
   Widget::Card.create!(
     random_locales_attributes(
-      %i[title description link_text label].index_with do |attribute|
+      **%i[title description link_text label].index_with do |attribute|
         -> { I18n.t("seeds.cards.debate.#{attribute}") }
       end
     ).merge(
@@ -33,7 +33,7 @@ section "Creating header and cards for the homepage" do
 
   Widget::Card.create!(
     random_locales_attributes(
-      %i[title description link_text label].index_with do |attribute|
+      **%i[title description link_text label].index_with do |attribute|
         -> { I18n.t("seeds.cards.proposal.#{attribute}") }
       end
     ).merge(
@@ -45,7 +45,7 @@ section "Creating header and cards for the homepage" do
 
   Widget::Card.create!(
     random_locales_attributes(
-      %i[title description link_text label].index_with do |attribute|
+      **%i[title description link_text label].index_with do |attribute|
         -> { I18n.t("seeds.cards.budget.#{attribute}") }
       end
     ).merge(
