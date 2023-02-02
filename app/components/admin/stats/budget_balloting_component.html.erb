@@ -27,31 +27,39 @@
 </div>
 
 <table class="investment-projects-summary">
-  <th colspan="2"><%= t("admin.stats.budget_balloting.votes_per_heading") %></th>
+  <thead>
+    <tr><th colspan="2"><%= t("admin.stats.budget_balloting.votes_per_heading") %></th></tr>
+  </thead>
 
-  <% vote_count_by_heading.each do |heading_name, count| %>
-    <tr id="vote_count_<%= heading_name.parameterize %>">
-      <td class="name">
-        <%= heading_name %>
-      </td>
-      <td class="name">
-        <%= number_with_delimiter count %>
-      </td>
-    </tr>
-  <% end %>
+  <tbody>
+    <% vote_count_by_heading.each do |heading_name, count| %>
+      <tr id="vote_count_<%= heading_name.parameterize %>">
+        <td class="name">
+          <%= heading_name %>
+        </td>
+        <td class="name">
+          <%= number_with_delimiter count %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <table class="investment-projects-summary">
-  <th colspan="2"><%= t("admin.stats.budget_balloting.participants_per_district") %></th>
+  <thead>
+    <tr><th colspan="2"><%= t("admin.stats.budget_balloting.participants_per_district") %></th></tr>
+  </thead>
 
-  <% user_count_by_heading.each do |heading_name, count| %>
-    <tr id="user_count_<%= heading_name.parameterize %>">
-      <td class="name">
-        <%= heading_name %>
-      </td>
-      <td class="name">
-        <%= number_with_delimiter count %>
-      </td>
-    </tr>
-  <% end %>
+  <tbody>
+    <% user_count_by_heading.each do |heading_name, count| %>
+      <tr id="user_count_<%= heading_name.parameterize %>">
+        <td class="name">
+          <%= heading_name %>
+        </td>
+        <td class="name">
+          <%= number_with_delimiter count %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>

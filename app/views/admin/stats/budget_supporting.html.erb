@@ -33,17 +33,23 @@
 <%= render "graph", name: "user_supported_budgets", event: "", count: @user_count %>
 
 <table class="investment-projects-summary">
-  <th><%= t("admin.stats.budget_supporting.headings") %></th>
-  <th><%= t("admin.stats.budget_supporting.users") %></th>
-
-  <% @voters_in_heading.each do |heading, count| %>
-    <tr id="<%= dom_id(heading) %>">
-      <td class="name">
-        <%= heading.name %>
-      </td>
-      <td class="name">
-        <%= number_with_delimiter count %>
-      </td>
+  <thead>
+    <tr>
+      <th><%= t("admin.stats.budget_supporting.headings") %></th>
+      <th><%= t("admin.stats.budget_supporting.users") %></th>
     </tr>
-  <% end %>
+  </thead>
+
+  <tbody>
+    <% @voters_in_heading.each do |heading, count| %>
+      <tr id="<%= dom_id(heading) %>">
+        <td class="name">
+          <%= heading.name %>
+        </td>
+        <td class="name">
+          <%= number_with_delimiter count %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
