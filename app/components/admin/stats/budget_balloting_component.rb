@@ -19,7 +19,7 @@ class Admin::Stats::BudgetBallotingComponent < ApplicationComponent
       budget.lines.group(:heading_id).count.map { |k, v| [Budget::Heading.find(k).name, v] }.sort
     end
 
-    def user_count_by_district
+    def user_count_by_heading
       User.where.not(balloted_heading_id: nil).group(:balloted_heading_id).count.map { |k, v| [Budget::Heading.find(k).name, v] }.sort
     end
 end
