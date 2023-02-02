@@ -195,19 +195,6 @@ describe "Stats", :admin do
         end
 
         expect(page).to have_content "VOTES\n3"
-      end
-
-      scenario "Number of users that have voted a investment project" do
-        create(:user, ballot_lines: [investment])
-        create(:user, ballot_lines: [investment])
-        create(:user)
-
-        visit admin_stats_path
-        click_link "Participatory Budgets"
-        within("#budget_#{budget.id}") do
-          click_link "Final voting"
-        end
-
         expect(page).to have_content "PARTICIPANTS\n2"
       end
     end
