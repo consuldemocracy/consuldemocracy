@@ -89,8 +89,7 @@ describe "Stats", :admin do
   describe "Budget investments" do
     context "Supporting phase" do
       let(:budget) { create(:budget) }
-      let(:group_all_city) { create(:budget_group, budget: budget) }
-      let!(:heading_all_city) { create(:budget_heading, group: group_all_city) }
+      let(:heading_all_city) { create(:budget_heading, budget: budget) }
 
       scenario "Number of supports in investment projects" do
         group_2 = create(:budget_group, budget: budget)
@@ -180,9 +179,8 @@ describe "Stats", :admin do
 
     context "Balloting phase" do
       let(:budget) { create(:budget, :balloting) }
-      let(:group) { create(:budget_group, budget: budget) }
-      let(:heading) { create(:budget_heading, group: group) }
-      let!(:investment) { create(:budget_investment, :feasible, :selected, heading: heading) }
+      let(:heading) { create(:budget_heading, budget: budget) }
+      let(:investment) { create(:budget_investment, :feasible, :selected, heading: heading) }
 
       scenario "Number of votes in investment projects" do
         investment_2 = create(:budget_investment, :feasible, :selected, budget: budget)
