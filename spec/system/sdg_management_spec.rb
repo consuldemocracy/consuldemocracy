@@ -36,22 +36,11 @@ describe "SDGManagement" do
       click_on "SDG content"
 
       expect(page).to have_current_path(sdg_management_root_path)
+      expect(page).to have_css ".sdg-content-menu"
+      expect(page).not_to have_css "#valuation_menu"
+      expect(page).not_to have_css "#admin_menu"
+      expect(page).not_to have_css "#moderation_menu"
       expect(page).not_to have_content "You do not have permission to access this page"
     end
-  end
-
-  scenario "Valuation dashboard" do
-    create(:sdg_manager, user: user)
-
-    login_as(user)
-    visit root_path
-    click_on "Menu"
-    click_on "SDG content"
-
-    expect(page).to have_current_path(sdg_management_root_path)
-    expect(page).to have_css(".sdg-content-menu")
-    expect(page).not_to have_css("#valuation_menu")
-    expect(page).not_to have_css("#admin_menu")
-    expect(page).not_to have_css("#moderation_menu")
   end
 end
