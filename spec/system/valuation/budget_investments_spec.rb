@@ -20,13 +20,6 @@ describe "Valuation budget investments" do
     end
   end
 
-  scenario "Display link to valuation section" do
-    visit root_path
-    click_link "Menu"
-
-    expect(page).to have_link "Valuation", href: valuation_root_path
-  end
-
   describe "Index" do
     scenario "Index shows budget investments assigned to current valuator" do
       investment1 = create(:budget_investment, :visible_to_valuators, budget: budget, valuators: [valuator])

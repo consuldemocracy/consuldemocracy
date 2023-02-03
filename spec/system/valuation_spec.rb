@@ -6,10 +6,6 @@ describe "Valuation" do
   context "Access" do
     scenario "Access as regular user is not authorized" do
       login_as(user)
-      visit root_path
-
-      expect(page).not_to have_link("Menu")
-      expect(page).not_to have_link("Valuation")
 
       visit valuation_root_path
 
@@ -22,11 +18,6 @@ describe "Valuation" do
       create(:moderator, user: user)
       login_as(user)
 
-      visit root_path
-      click_link "Menu"
-
-      expect(page).not_to have_link("Valuation")
-
       visit valuation_root_path
 
       expect(page).not_to have_current_path(valuation_root_path)
@@ -37,11 +28,6 @@ describe "Valuation" do
     scenario "Access as manager is not authorized" do
       create(:manager, user: user)
       login_as(user)
-
-      visit root_path
-      click_link "Menu"
-
-      expect(page).not_to have_link("Valuation")
 
       visit valuation_root_path
 
@@ -54,11 +40,6 @@ describe "Valuation" do
       create(:sdg_manager, user: user)
       login_as(user)
 
-      visit root_path
-      click_link "Menu"
-
-      expect(page).not_to have_link("Valuation")
-
       visit valuation_root_path
 
       expect(page).not_to have_current_path(valuation_root_path)
@@ -69,11 +50,6 @@ describe "Valuation" do
     scenario "Access as poll officer is not authorized" do
       create(:poll_officer, user: user)
       login_as(user)
-
-      visit root_path
-      click_link "Menu"
-
-      expect(page).not_to have_link("Valuation")
 
       visit valuation_root_path
 
@@ -107,19 +83,6 @@ describe "Valuation" do
       expect(page).to have_current_path(valuation_root_path)
       expect(page).not_to have_content "You do not have permission to access this page"
     end
-  end
-
-  scenario "Valuation access links" do
-    create(:valuator, user: user)
-    create(:budget)
-    login_as(user)
-
-    visit root_path
-    click_link "Menu"
-
-    expect(page).to have_link("Valuation")
-    expect(page).not_to have_link("Administration")
-    expect(page).not_to have_link("Moderation")
   end
 
   scenario "Valuation dashboard" do

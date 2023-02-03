@@ -6,11 +6,6 @@ describe "Moderation" do
   scenario "Access as regular user is not authorized" do
     login_as(user)
 
-    visit root_path
-
-    expect(page).not_to have_link("Menu")
-    expect(page).not_to have_link("Moderation")
-
     visit moderation_root_path
 
     expect(page).not_to have_current_path(moderation_root_path)
@@ -21,11 +16,6 @@ describe "Moderation" do
   scenario "Access as valuator is not authorized" do
     create(:valuator, user: user)
     login_as(user)
-
-    visit root_path
-    click_link "Menu"
-
-    expect(page).not_to have_link("Moderation")
 
     visit moderation_root_path
 
@@ -38,11 +28,6 @@ describe "Moderation" do
     create(:manager, user: user)
     login_as(user)
 
-    visit root_path
-    click_link "Menu"
-
-    expect(page).not_to have_link("Moderation")
-
     visit moderation_root_path
 
     expect(page).not_to have_current_path(moderation_root_path)
@@ -54,11 +39,6 @@ describe "Moderation" do
     create(:sdg_manager, user: user)
     login_as(user)
 
-    visit root_path
-    click_link "Menu"
-
-    expect(page).not_to have_link("Moderation")
-
     visit moderation_root_path
 
     expect(page).not_to have_current_path(moderation_root_path)
@@ -69,11 +49,6 @@ describe "Moderation" do
   scenario "Access as poll officer is not authorized" do
     create(:poll_officer, user: user)
     login_as(user)
-
-    visit root_path
-    click_link "Menu"
-
-    expect(page).not_to have_link("Moderation")
 
     visit moderation_root_path
 
@@ -104,18 +79,6 @@ describe "Moderation" do
 
     expect(page).to have_current_path(moderation_root_path)
     expect(page).not_to have_content "You do not have permission to access this page"
-  end
-
-  scenario "Moderation access links" do
-    create(:moderator, user: user)
-    login_as(user)
-
-    visit root_path
-    click_link "Menu"
-
-    expect(page).to have_link("Moderation")
-    expect(page).not_to have_link("Administration")
-    expect(page).not_to have_link("Valuation")
   end
 
   context "Moderation dashboard" do

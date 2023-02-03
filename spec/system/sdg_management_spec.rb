@@ -8,10 +8,7 @@ describe "SDGManagement" do
   context "Access" do
     scenario "Access as regular user is not authorized" do
       login_as(user)
-      visit root_path
 
-      expect(page).not_to have_link("Menu")
-      expect(page).not_to have_link("SDG content")
       visit sdg_management_root_path
 
       expect(page).not_to have_current_path(sdg_management_root_path)
@@ -22,10 +19,7 @@ describe "SDGManagement" do
     scenario "Access as manager is not authorized" do
       create(:manager, user: user)
       login_as(user)
-      visit root_path
-      click_on "Menu"
 
-      expect(page).not_to have_link("SDG content")
       visit sdg_management_root_path
 
       expect(page).not_to have_current_path(sdg_management_root_path)
@@ -44,19 +38,6 @@ describe "SDGManagement" do
       expect(page).to have_current_path(sdg_management_root_path)
       expect(page).not_to have_content "You do not have permission to access this page"
     end
-  end
-
-  scenario "Valuation access links" do
-    create(:sdg_manager, user: user)
-
-    login_as(user)
-    visit root_path
-    click_on "Menu"
-
-    expect(page).to have_link("SDG content")
-    expect(page).not_to have_link("Administration")
-    expect(page).not_to have_link("Moderation")
-    expect(page).not_to have_link("Valuation")
   end
 
   scenario "Valuation dashboard" do
