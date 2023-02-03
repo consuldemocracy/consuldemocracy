@@ -1567,6 +1567,7 @@ describe "Admin budget investments", :admin do
     end
 
     scenario "Shows the correct investments to valuators" do
+      budget.update!(phase: :valuating)
       investment1.update!(visible_to_valuators: true)
       investment2.update!(visible_to_valuators: false)
 

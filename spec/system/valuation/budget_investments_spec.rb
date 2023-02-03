@@ -501,6 +501,17 @@ describe "Valuation budget investments" do
       expect(page).to have_content("Investments can only be valuated when Budget is in valuating phase")
     end
 
+    scenario "restric access to the budget given by params when is not in valuating phase" do
+      budget.update!(phase: "publishing_prices")
+      create(:budget, :valuating)
+      investment = create(:budget_investment, budget: budget, valuators: [valuator])
+
+      login_as(valuator.user)
+      visit edit_valuation_budget_budget_investment_path(budget, investment)
+
+      expect(page).to have_content("Investments can only be valuated when Budget is in valuating phase")
+    end
+
     scenario "visible to admins regardless of not being in valuating phase" do
       budget.update!(phase: "publishing_prices")
 
