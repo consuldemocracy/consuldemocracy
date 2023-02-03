@@ -68,6 +68,9 @@ describe "Valuation" do
       click_link "Valuation"
 
       expect(page).to have_current_path(valuation_root_path)
+      expect(page).to have_css "#valuation_menu"
+      expect(page).not_to have_css "#admin_menu"
+      expect(page).not_to have_css "#moderation_menu"
       expect(page).not_to have_content "You do not have permission to access this page"
     end
 
@@ -83,21 +86,5 @@ describe "Valuation" do
       expect(page).to have_current_path(valuation_root_path)
       expect(page).not_to have_content "You do not have permission to access this page"
     end
-  end
-
-  scenario "Valuation dashboard" do
-    create(:valuator, user: user)
-    create(:budget)
-
-    login_as(user)
-    visit root_path
-
-    click_link "Menu"
-    click_link "Valuation"
-
-    expect(page).to have_current_path(valuation_root_path)
-    expect(page).to have_css("#valuation_menu")
-    expect(page).not_to have_css("#admin_menu")
-    expect(page).not_to have_css("#moderation_menu")
   end
 end

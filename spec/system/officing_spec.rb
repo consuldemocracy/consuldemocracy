@@ -85,7 +85,7 @@ describe "Poll Officing" do
     expect(page).not_to have_content "You do not have permission to access this page"
   end
 
-  scenario "Access as an poll officer is authorized" do
+  scenario "Access as a poll officer is authorized" do
     create(:poll_officer, user: user)
     create(:poll)
     login_as(user)
@@ -95,24 +95,12 @@ describe "Poll Officing" do
     click_link "Polling officers"
 
     expect(page).to have_current_path(officing_root_path)
+    expect(page).to have_css "#officing_menu"
+    expect(page).not_to have_link "Polling officers"
+    expect(page).not_to have_css "#valuation_menu"
+    expect(page).not_to have_css "#admin_menu"
+    expect(page).not_to have_css "#moderation_menu"
     expect(page).not_to have_content "You do not have permission to access this page"
-  end
-
-  scenario "Officing dashboard" do
-    create(:poll_officer, user: user)
-    create(:poll)
-    login_as(user)
-    visit root_path
-
-    click_link "Menu"
-    click_link "Polling officers"
-
-    expect(page).to have_current_path(officing_root_path)
-    expect(page).to have_css("#officing_menu")
-    expect(page).not_to have_link("Polling officers")
-    expect(page).not_to have_css("#valuation_menu")
-    expect(page).not_to have_css("#admin_menu")
-    expect(page).not_to have_css("#moderation_menu")
   end
 
   scenario "Officing dashboard available for multiple sessions", :with_frozen_time do

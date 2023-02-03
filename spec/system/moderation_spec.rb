@@ -58,6 +58,7 @@ describe "Moderation" do
   end
 
   scenario "Access as a moderator is authorized" do
+    Setting["org_name"] = "OrgName"
     create(:moderator, user: user)
 
     login_as(user)
@@ -66,6 +67,10 @@ describe "Moderation" do
     click_link "Moderation"
 
     expect(page).to have_current_path(moderation_root_path)
+    expect(page).to have_link "Go back to OrgName"
+    expect(page).to have_css "#moderation_menu"
+    expect(page).not_to have_css "#admin_menu"
+    expect(page).not_to have_css "#valuation_menu"
     expect(page).not_to have_content "You do not have permission to access this page"
   end
 
@@ -79,26 +84,5 @@ describe "Moderation" do
 
     expect(page).to have_current_path(moderation_root_path)
     expect(page).not_to have_content "You do not have permission to access this page"
-  end
-
-  context "Moderation dashboard" do
-    before do
-      Setting["org_name"] = "OrgName"
-    end
-
-    scenario "Contains correct elements" do
-      create(:moderator, user: user)
-      login_as(user)
-
-      visit root_path
-      click_link "Menu"
-      click_link "Moderation"
-
-      expect(page).to have_link("Go back to OrgName")
-      expect(page).to have_current_path(moderation_root_path)
-      expect(page).to have_css("#moderation_menu")
-      expect(page).not_to have_css("#admin_menu")
-      expect(page).not_to have_css("#valuation_menu")
-    end
   end
 end
