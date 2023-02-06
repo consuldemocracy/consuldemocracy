@@ -7,12 +7,20 @@ class Admin::Stats::BudgetBallotingComponent < ApplicationComponent
 
   private
 
+    def stats
+      @stats ||= Budget::Stats.new(budget)
+    end
+
+    def headings_stats
+      @headings_stats ||= stats.headings
+    end
+
     def vote_count
-      budget.lines.count
+      stats.total_votes
     end
 
     def user_count
-      budget.ballots.select { |ballot| ballot.lines.any? }.count
+      stats.total_participants_vote_phase
     end
 
     def vote_count_by_heading
@@ -21,9 +29,7 @@ class Admin::Stats::BudgetBallotingComponent < ApplicationComponent
 
     def user_count_by_heading
       budget.headings.map do |heading|
-        ballots = budget.ballots.joins(:lines).where(budget_ballot_lines: { heading_id: heading })
-
-        [heading.name, ballots.select(:user_id).distinct.count]
+        [heading.name, headings_stats[heading.id][:total_participants_vote_phase]]
       end.select { |_, count| count > 0 }.sort
     end
 end
