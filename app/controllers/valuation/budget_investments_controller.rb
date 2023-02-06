@@ -17,7 +17,8 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
   def index
     @heading_filters = heading_filters
     @investments = if current_user.valuator? && @budget.present?
-                     @budget.investments.visible_to_valuators.scoped_filter(params_for_current_valuator, @current_filter)
+                     @budget.investments.visible_to_valuator(current_user.valuator)
+                            .scoped_filter(filtered_params, @current_filter)
                             .order(cached_votes_up: :desc)
                             .page(params[:page])
                    else
@@ -72,7 +73,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def heading_filters
-      investments = @budget.investments.by_valuator(current_user.valuator&.id).visible_to_valuators.distinct
+      investments = @budget.investments.visible_to_valuator(current_user.valuator).distinct
       investment_headings = Budget::Heading.where(id: investments.pluck(:heading_id)).sort_by(&:name)
 
       all_headings_filter = [
@@ -92,9 +93,8 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
       end
     end
 
-    def params_for_current_valuator
-      Budget::Investment.filter_params(params).to_h.merge({ valuator_id: current_user.valuator.id,
-                                                            budget_id: @budget.id })
+    def filtered_params
+      Budget::Investment.filter_params(params).to_h.except(:valuator_id).merge(budget_id: @budget.id)
     end
 
     def valuation_params
