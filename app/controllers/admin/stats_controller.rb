@@ -56,19 +56,6 @@ class Admin::StatsController < Admin::BaseController
 
   def budget_supporting
     @budget = Budget.find(params[:budget_id])
-    heading_ids = @budget.heading_ids
-
-    votes = Vote.where(votable_type: "Budget::Investment").
-            includes(:budget_investment).
-            where(budget_investments: { heading_id: heading_ids })
-
-    @vote_count = votes.count
-    @user_count = votes.select(:voter_id).distinct.count
-
-    @voters_in_heading = {}
-    @budget.headings.each do |heading|
-      @voters_in_heading[heading] = voters_in_heading(heading)
-    end
   end
 
   def budget_balloting
@@ -85,13 +72,4 @@ class Admin::StatsController < Admin::BaseController
   def sdg
     @goals = SDG::Goal.order(:code)
   end
-
-  private
-
-    def voters_in_heading(heading)
-      Vote.where(votable_type: "Budget::Investment").
-      includes(:budget_investment).
-      where(budget_investments: { heading_id: heading.id }).
-      select("votes.voter_id").distinct.count
-    end
 end
