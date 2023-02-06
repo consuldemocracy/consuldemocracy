@@ -18,7 +18,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     @heading_filters = heading_filters
     @investments = if current_user.valuator? && @budget.present?
                      @budget.investments.visible_to_valuator(current_user.valuator)
-                            .scoped_filter(filtered_params, @current_filter)
+                            .scoped_filter(params.permit(:budget_id, :heading_id), @current_filter)
                             .order(cached_votes_up: :desc)
                             .page(params[:page])
                    else
@@ -91,10 +91,6 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
                      count: investments.count { |i| i.heading_id == heading.id }
                    }
       end
-    end
-
-    def filtered_params
-      Budget::Investment.filter_params(params).to_h.except(:valuator_id).merge(budget_id: @budget.id)
     end
 
     def valuation_params
