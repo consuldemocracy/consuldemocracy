@@ -15,8 +15,6 @@
   }
 
   .top-bar {
-    padding-top: $line-height / 2;
-
     @include breakpoint(small only) {
 
       .account-menu {
@@ -39,16 +37,16 @@
       }
     }
 
+    @include breakpoint(medium) {
+      padding-bottom: 0.8rem;
+      padding-top: 0.8rem;
+    }
+
     [class^="icon-"] {
       font-size: $base-font-size;
     }
 
     h1 {
-      margin-top: $line-height / 2;
-
-      @include breakpoint(medium) {
-        margin-top: 0;
-      }
 
       small {
         color: inherit;
@@ -61,7 +59,6 @@
         font-family: "Lato" !important;
         font-size: rem-calc(24);
         font-weight: lighter;
-        line-height: 1;
       }
     }
   }
