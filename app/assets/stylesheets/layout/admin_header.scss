@@ -15,29 +15,20 @@
   }
 
   .top-bar {
-    height: auto;
-    padding-top: $line-height / 2;
-
     @include breakpoint(small only) {
 
-      .top-bar-left ul {
-        display: inline-block;
-      }
-
-      .top-bar-right {
-
-        > ul {
-          border-bottom: 0;
-          padding-bottom: 0;
-          margin-bottom: 0;
-        }
-
-        .submenu {
-          position: initial;
-        }
+      .account-menu {
+        border-bottom: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
 
         a {
           font-weight: normal;
+        }
+
+        .is-active {
+          font-weight: bold;
+          text-decoration: underline;
         }
       }
 
@@ -46,17 +37,16 @@
       }
     }
 
+    @include breakpoint(medium) {
+      padding-bottom: 0.8rem;
+      padding-top: 0.8rem;
+    }
+
     [class^="icon-"] {
       font-size: $base-font-size;
     }
 
     h1 {
-      margin-top: $line-height / 2;
-      margin-bottom: 0;
-
-      @include breakpoint(medium) {
-        margin-top: 0;
-      }
 
       small {
         color: inherit;
@@ -69,21 +59,7 @@
         font-family: "Lato" !important;
         font-size: rem-calc(24);
         font-weight: lighter;
-        line-height: 1;
       }
     }
-  }
-
-  .top-bar .menu > li {
-
-    @include breakpoint(medium) {
-      height: auto !important;
-    }
-  }
-
-  .title-bar {
-    color: inherit;
-    position: absolute;
-    right: 12px;
   }
 }

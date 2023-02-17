@@ -94,6 +94,12 @@
   @include text-color($anchor-color-hover, anchor-color-hover);
 }
 
+@mixin info-colors {
+  background-color: $info-bg;
+  border-color: $info-border;
+  color: $color-info;
+}
+
 %brand-background {
   @include brand-background;
 }

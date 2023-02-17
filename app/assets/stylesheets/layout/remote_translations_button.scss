@@ -1,0 +1,13 @@
+.remote-translations-button {
+  @include info-colors;
+  font-size: $small-font-size;
+  text-align: center;
+  padding: rem-calc(6);
+
+  [type="submit"] {
+    @include link;
+    background: none;
+    border: 0;
+    font-weight: bold;
+  }
+}

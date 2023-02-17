@@ -1,39 +1,24 @@
 <header class="header">
   <div class="top-links">
-    <%= render "shared/locale_switcher" %>
+    <%= render Layout::LocaleSwitcherComponent.new %>
 
     <%= link_to root_path do %>
       <%= t("admin.dashboard.index.back", org: setting["org_name"]) %>
     <% end %>
   </div>
 
-  <div class="expanded row admin-top-bar">
-    <% if show_account_menu? %>
-      <div class="title-bar" data-responsive-toggle="responsive_menu" data-hide-for="medium">
-        <button class="menu-button" type="button" data-toggle="responsive_menu">
-          <span class="menu-icon"></span>
-          <span class="title-bar-title"><%= t("application.menu") %></span>
-        </button>
-      </div>
-    <% end %>
-
-    <div class="top-bar">
-      <div class="top-bar-left">
-        <h1>
-          <%= link_to namespace_path do %>
-            <%= setting["org_name"] %>
-            <br><small><%= namespaced_header_title %></small>
-          <% end %>
-        </h1>
-      </div>
-
-      <% if show_account_menu? %>
-        <div id="responsive_menu">
-          <div class="top-bar-right">
-            <%= render Layout::AccountMenuComponent.new(user) %>
-          </div>
-        </div>
+  <div class="top-bar">
+    <h1>
+      <%= link_to namespace_path do %>
+        <%= setting["org_name"] %>
+        <br><small><%= namespaced_header_title %></small>
       <% end %>
-    </div>
+    </h1>
+
+    <% if show_account_menu? %>
+      <%= render Layout::ResponsiveMenuComponent.new do %>
+        <%= render Layout::AccountMenuComponent.new(user) %>
+      <% end %>
+    <% end %>
   </div>
 </header>
