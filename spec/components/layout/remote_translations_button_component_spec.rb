@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe Layout::RemoteTranslationsButtonComponent do
-  let(:translations) { [{}] }
+  let(:translations) { [RemoteTranslation.new] }
   let(:component) { Layout::RemoteTranslationsButtonComponent.new(translations) }
 
   before do
