@@ -9,8 +9,14 @@ class Valuation::Budgets::RowComponent < ApplicationComponent
   end
 
   def investments
-    return Budget::Investment.none unless budget.valuating?
+    return Budget::Investment.none unless budget.valuating_or_later?
 
-    budget.investments.visible_to_valuators.by_valuator(current_user.valuator).valuation_open
+    budget.investments.visible_to_valuator(current_user.valuator)
+  end
+
+  def valuation_open_investments_count
+    return 0 unless budget.valuating?
+
+    investments.valuation_open.count
   end
 end
