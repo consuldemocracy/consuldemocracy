@@ -17,6 +17,16 @@ describe Valuation::Budgets::RowComponent do
       expect(page).to have_selector ".investments-count", text: "1"
     end
 
+    it "counts investments assigned to the valuator group" do
+      budget = create(:budget, :valuating)
+      valuator_group = create(:valuator_group, valuators: [valuator])
+      create(:budget_investment, :visible_to_valuators, budget: budget, valuator_groups: [valuator_group])
+
+      render_inline Valuation::Budgets::RowComponent.new(budget: budget)
+
+      expect(page).to have_selector ".investments-count", text: "1"
+    end
+
     it "does not count investments with valuation finished" do
       budget = create(:budget, :valuating)
       create(:budget_investment, :visible_to_valuators,
@@ -52,6 +62,16 @@ describe Valuation::Budgets::RowComponent do
     it "is shown when the valuator has visible investments assigned in the valuating phase" do
       budget = create(:budget, :valuating)
       create(:budget_investment, :visible_to_valuators, budget: budget, valuators: [valuator])
+
+      render_inline Valuation::Budgets::RowComponent.new(budget: budget)
+
+      expect(page).to have_link "Evaluate"
+    end
+
+    it "is shown when the investments are assigned to the valuator group" do
+      budget = create(:budget, :valuating)
+      valuator_group = create(:valuator_group, valuators: [valuator])
+      create(:budget_investment, :visible_to_valuators, budget: budget, valuator_groups: [valuator_group])
 
       render_inline Valuation::Budgets::RowComponent.new(budget: budget)
 

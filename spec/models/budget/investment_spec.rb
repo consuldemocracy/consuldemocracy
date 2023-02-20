@@ -414,6 +414,55 @@ describe Budget::Investment do
     end
   end
 
+  describe ".visible_to_valuator" do
+    let(:valuator) { create(:valuator) }
+
+    it "returns investments assigned to the valuator" do
+      investment = create(:budget_investment, :visible_to_valuators, valuators: [valuator])
+
+      expect(Budget::Investment.visible_to_valuator(valuator)).to eq [investment]
+    end
+
+    it "does not return investments assigned to other valuators" do
+      create(:budget_investment, :visible_to_valuators, valuators: [create(:valuator)])
+
+      expect(Budget::Investment.visible_to_valuator(valuator)).to be_empty
+    end
+
+    it "does not return duplicate investments when they're assigned more than once" do
+      investment = create(:budget_investment, :visible_to_valuators)
+      2.times { Budget::ValuatorAssignment.create!(valuator: valuator, investment: investment) }
+
+      expect(Budget::Investment.visible_to_valuator(valuator)).to eq [investment]
+    end
+
+    it "does not return duplicate investments when assigned to both a valuator and their group" do
+      valuator_group = create(:valuator_group, valuators: [valuator])
+      investment = create(:budget_investment, :visible_to_valuators, valuators: [valuator],
+                                                                     valuator_groups: [valuator_group])
+
+      expect(Budget::Investment.visible_to_valuator(valuator)).to eq [investment]
+    end
+
+    it "returns investments assigned to the valuator's group" do
+      valuator_group = create(:valuator_group, valuators: [valuator])
+      investment = create(:budget_investment, :visible_to_valuators, valuator_groups: [valuator_group])
+
+      expect(Budget::Investment.visible_to_valuator(valuator)).to eq [investment]
+    end
+
+    it "does not return investments assigned to other valuator groups" do
+      valuator_group = create(:valuator_group, valuators: [create(:valuator)])
+      create(:budget_investment, :visible_to_valuators, valuator_groups: [valuator_group])
+
+      expect(Budget::Investment.visible_to_valuator(valuator)).to be_empty
+    end
+
+    it "returns an empty relation when valuator is nil" do
+      expect(Budget::Investment.visible_to_valuator(nil)).to be_empty
+    end
+  end
+
   describe ".scoped_filter" do
     let(:budget)     { create(:budget, :balloting, slug: "budget_slug") }
     let(:investment) { create(:budget_investment, budget: budget) }

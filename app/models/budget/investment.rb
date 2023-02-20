@@ -100,7 +100,7 @@ class Budget
     scope :by_heading,        ->(heading_id)  { where(heading_id: heading_id) }
     scope :by_admin,          ->(admin_id)    { where(administrator_id: admin_id) }
     scope :by_tag,            ->(tag_name)    { tagged_with(tag_name).distinct }
-    scope :visible_to_valuator, ->(valuator)  { visible_to_valuators.by_valuator(valuator) }
+    scope :visible_to_valuator, ->(valuator)  { visible_to_valuators.where(id: valuator&.assigned_investment_ids) }
 
     scope :for_render, -> { includes(:heading) }
 
