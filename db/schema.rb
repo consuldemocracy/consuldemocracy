@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_03_140136) do
+ActiveRecord::Schema.define(version: 2023_02_06_141152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -1637,7 +1637,6 @@ ActiveRecord::Schema.define(version: 2022_12_03_140136) do
     t.boolean "created_from_signature", default: false
     t.integer "failed_email_digests_count", default: 0
     t.text "former_users_data_log", default: ""
-    t.integer "balloted_heading_id"
     t.boolean "public_interests", default: false
     t.boolean "recommended_debates", default: true
     t.boolean "recommended_proposals", default: true

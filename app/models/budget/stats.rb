@@ -53,6 +53,10 @@ class Budget::Stats
     budget.investments.count
   end
 
+  def total_supports
+    supports(budget).count
+  end
+
   def total_votes
     budget.ballots.pluck(:ballot_lines_count).sum
   end
