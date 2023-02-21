@@ -619,7 +619,6 @@ en:
           title: Proposals
           back: Back
           id: Id
-          title: Title
           supports: Total supports
         form:
           custom_categories: Categories
