@@ -88,7 +88,7 @@ describe "Stats", :admin do
 
   describe "Budget investments" do
     context "Supporting phase" do
-      let(:budget) { create(:budget) }
+      let!(:budget) { create(:budget) }
       let(:heading_all_city) { create(:budget_heading, budget: budget) }
 
       scenario "Number of users and supports in investment projects" do
