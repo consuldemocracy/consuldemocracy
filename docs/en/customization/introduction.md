@@ -129,7 +129,7 @@ The aim of this feature is to allow users the introduction of dynamic contents i
 To activate this feature you must follow 2 steps:
 1. Execute the following command `bin/rake settings:create_translation_interface_setting RAILS_ENV=production` (This is only required for already existing intallations, for new consul installations this step is not needed).
 2. Accessing as administrator user to the administration panel of your Consul application to the section **Configuration > Features** and activating the feature called **Translation Interface** as you can see next:
-![Active interface translations](../../img/translations/interface_translations/active-interface-translations-en.png).
+![Active interface translations](../../img/translations/interface_translations/active-interface-translations-en.png)
 
 #### Use Cases
 
