@@ -13,7 +13,7 @@
     <thead>
       <tr>
         <th class="text-center"><%= t("admin.proposals.index.id") %></th>
-        <th><%= t("admin.proposals.index.title") %></th>
+        <th><%= Proposal.human_attribute_name(:title) %></th>
         <th><%= t("admin.proposals.index.author") %></th>
         <th><%= t("admin.proposals.index.milestones") %></th>
         <th><%= t("admin.proposals.index.selected") %></th>

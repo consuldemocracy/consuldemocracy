@@ -12,7 +12,7 @@
   <table>
     <thead>
       <th class="text-center"><%= t("admin.debates.index.id") %></th>
-      <th><%= t("admin.debates.index.title") %></th>
+      <th><%= Debate.human_attribute_name(:title) %></th>
       <th><%= t("admin.debates.index.author") %></th>
     </thead>
     <tbody>
