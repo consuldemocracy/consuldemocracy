@@ -44,9 +44,10 @@ every 1.day, at: "3:00 am", roles: [:cron] do
   rake "votes:reset_hot_score"
 end
 
-every 1.day, at: "4:00 am", roles: [:cron] do
-  rake "backup:perform"
-end
+# Temporary disable external backups
+#every 1.day, at: "4:00 am", roles: [:cron] do
+#  rake "backup:perform"
+#end
 
 every :sunday, at: "11pm" do
   command "truncate -s 0 /home/deploy/consul/shared/log/#{@environment}.log"
