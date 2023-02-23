@@ -77,7 +77,7 @@ params.require(:post).permit(*attributes, translation_params(params[:post]))
 
 Add the fields to the form for creating and editing the translations. Remember that, to do this, there is a function in the helper that encapsules the `Globalize.with_locale` logic in a block called `globalize(locale) do`.
 
-The fields that are going to be translated should be named `<attribute_name>_<locale>`, for example `title_en`, so when that information arrives to the server, it can clasify the parameters.
+The fields that are going to be translated should be named `<attribute_name>_<locale>`, for example `title_en`, so when that information arrives to the server, it can classify the parameters.
 
 Remember that, to avoid errors when using locales like `pt-BR`, `es-ES`, etc. (those whose region is specified by a '-'), we must use a function called `neutral_locale(locale)`, defined in the `GlobalizeHelper`. This function converts this type of locales in lower case and underscored, so `pt-BR` will transform in `pt_br`. This format is compatible with `globalize_accessors`, whereas the official is not because the method names like `title_pt-BR` are not allowed. When using this function, the method will call `title_pt_br` and it will not generate conflicts when comparing `pt-BR` with `pt_br`.
 

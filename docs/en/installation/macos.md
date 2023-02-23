@@ -62,7 +62,7 @@ createdb 'your_username'
 
 If we run `psql` again we should now get access to postgres console. With `\du` you can see the current users list.
 
-In case you want to set a password for your user you can make it throught postgres console by:
+In case you want to set a password for your user you can make it through postgres console by:
 
 ```
 ALTER USER your_username WITH PASSWORD 'your_password';

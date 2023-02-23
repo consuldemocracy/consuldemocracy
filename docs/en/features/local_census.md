@@ -2,7 +2,7 @@
 
 To provide to administrator users a way to manage the local census database through the administration panel **Settings > Manage local census**. Currently the only way to manipulate this table records is through the rails console.
 
-Allow adiministrators users to manage this table in two different ways:
+Allow administrators users to manage this table in two different ways:
 
   - **Manually**: one by one through a CRUD interface.
   - **Automatically**: through an importation process.

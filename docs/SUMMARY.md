@@ -37,7 +37,7 @@
   * [Models](en/customization/models.md)
   * [Components](en/customization/components.md)
   * [Gems](en/customization/gems.md)
-  * [Overwritting Application](en/customization/overwritting.md)
+  * [Overwriting Application](en/customization/overwriting.md)
 
 * [Technical Features](en/features/features.md)
   * [OAuth](en/features/oauth.md)
@@ -90,7 +90,7 @@
   * [Modelos](es/customization/models.md)
   * [Componentes](es/customization/components.md)
   * [Gemas](es/customization/gems.md)
-  * [Adaptar la aplicación](es/customization/overwritting.md)
+  * [Adaptar la aplicación](es/customization/overwriting.md)
 
 * [Funcionalidades Técnicas](es/features/features.md)
   * [OAuth](es/features/oauth.md)

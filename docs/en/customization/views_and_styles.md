@@ -26,6 +26,6 @@ Also you can check your scss files syntax with
 scss-lint
 ```
 
-## Accesibility
+## Accessibility
 
-To maintain accesibility level, if you add new colors use a [Color contrast checker](http://webaim.org/resources/contrastchecker/) (WCAG AA is mandatory, WCAG AAA is recommended)
+To maintain accessibility level, if you add new colors use a [Color contrast checker](http://webaim.org/resources/contrastchecker/) (WCAG AA is mandatory, WCAG AAA is recommended).

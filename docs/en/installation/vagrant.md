@@ -6,7 +6,7 @@ Vagrant is compatible for [Debian](/en/installation/debian.md) and [Ubuntu](/en/
 
 ## Browser configuration
 
-To access the application through the brower at `localhost:3000` we must forward a port and run the rails server with a binding option:
+To access the application through the browser at `localhost:3000` we must forward a port and run the rails server with a binding option:
 
 ## Port forwarding
 Open the Vagrant configuration file:
