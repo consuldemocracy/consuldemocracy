@@ -1,0 +1,80 @@
+<%= link_to admin_budget_budget_investments_path(Budget::Investment.filter_params(params).to_h),
+            class: "back", data: { turbolinks: false } do %>
+  <span class="icon-angle-left"></span><%= t("shared.back") %>
+<% end %>
+
+<%= render "written_by_author" %>
+
+<h2 class="inline-block"><%= t("admin.budget_investments.show.preview") %></h2>
+<% if can?(:admin_update, @investment) %>
+  <div class="float-right">
+    <%= link_to t("admin.budget_investments.show.edit"),
+                edit_admin_budget_budget_investment_path(
+                  @budget,
+                  @investment,
+                  Budget::Investment.filter_params(params).to_h
+                ),
+                class: "button hollow" %>
+  </div>
+<% end %>
+
+<hr>
+<%= render "/budgets/investments/investment_detail", investment: @investment, preview: true %>
+<hr>
+
+<h2 id="classification"><%= t("admin.budget_investments.show.classification") %></h2>
+
+<p><strong><%= t("admin.budget_investments.show.assigned_admin") %>:</strong>
+  <%= @investment.administrator&.name_and_email || t("admin.budget_investments.show.undefined") %>
+</p>
+
+<p id="tags">
+  <strong><%= t("admin.budget_investments.show.tags") %>:</strong>
+
+  <%= @investment.valuation_tags.pluck(:name).sort.join(", ") %>
+</p>
+
+<p id="assigned_valuator_groups">
+  <strong><%= t("admin.budget_investments.show.valuator_groups") %>:</strong>
+  <% if @investment.valuator_groups.any? %>
+    <%= @investment.valuator_groups.map(&:name).join(", ") %>
+  <% else %>
+    <%= t("admin.budget_investments.show.undefined") %>
+  <% end %>
+</p>
+
+<p id="assigned_valuators">
+  <strong><%= t("admin.budget_investments.show.assigned_valuators") %>:</strong>
+  <% if @investment.valuators.any? %>
+    <%= @investment.valuators.map(&:name_and_email).join(", ") %>
+  <% else %>
+    <%= t("admin.budget_investments.show.undefined") %>
+  <% end %>
+</p>
+
+<% if can?(:admin_update, @investment) %>
+  <p>
+    <%= link_to t("admin.budget_investments.show.edit_classification"),
+                edit_admin_budget_budget_investment_path(
+                  @budget,
+                  @investment,
+                  { anchor: "classification" }.merge(Budget::Investment.filter_params(params).to_h)
+                ) %>
+  </p>
+<% end %>
+
+<hr>
+
+<h2><%= t("admin.budget_investments.show.dossier") %></h2>
+<%= render "valuation/budget_investments/dossier" %>
+<% if can?(:valuate, @investment) %>
+  <p>
+    <%= link_to t("admin.budget_investments.show.edit_dossier"), edit_valuation_budget_budget_investment_path(@budget, @investment) %>
+  </p>
+<% end %>
+
+<%= render "valuation/budget_investments/valuation_comments" %>
+
+<%= render "admin/audits/audits", resource: @investment %>
+
+<%= render "admin/milestones/milestones", milestoneable: @investment %>

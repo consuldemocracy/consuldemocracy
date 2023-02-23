@@ -1,0 +1,109 @@
+<td class="text-right" data-field="id">
+  <strong><%= investment.id %></strong>
+</td>
+
+<td data-field="title">
+  <%= link_to investment.title,
+              admin_budget_budget_investment_path(budget_id: @budget.id,
+                                                  id: investment.id,
+                                                  params: Budget::Investment.filter_params(params).to_h),
+              target: "_blank" %>
+</td>
+
+<td class="text-center" data-field="supports">
+  <%= investment.total_votes %>
+</td>
+
+<td class="small" data-field="admin">
+  <% if investment.administrator.present? %>
+    <span title="<%= t("admin.budget_investments.index.assigned_admin") %>">
+      <%= investment.administrator.description_or_name %>
+    </span>
+  <% else %>
+    <%= t("admin.budget_investments.index.no_admin_assigned") %>
+  <% end %>
+</td>
+
+<td class="small" data-field="author">
+  <%= investment.author.name %>
+</td>
+
+<td class="small" data-field="valuator">
+  <% valuators = [investment.assigned_valuation_groups, investment.assigned_valuators].compact %>
+  <% no_valuators_assigned = t("admin.budget_investments.index.no_valuators_assigned") %>
+  <%= valuators.present? ? valuators.join(", ") : no_valuators_assigned %>
+</td>
+
+<td class="small" data-field="geozone">
+  <%= investment.heading.name %>
+</td>
+
+<td class="small" data-field="feasibility">
+  <%= t("admin.budget_investments.index.feasibility.#{investment.feasibility}") %>
+</td>
+
+<% if @budget.show_money? %>
+  <td class="small" data-field="price">
+    <%= investment.formatted_price %>
+  </td>
+<% end %>
+
+<td class="small text-center" data-field="valuation_finished">
+  <%= investment.valuation_finished? ? t("shared.yes") : t("shared.no") %>
+</td>
+
+<td class="small text-center" data-field="visible_to_valuators">
+  <% if can?(:admin_update, investment) %>
+    <%= form_for [:admin, investment.budget, investment], remote: true, format: :json do |f| %>
+        <%= f.check_box :visible_to_valuators,
+                        label: false,
+                        class: "js-submit-on-change",
+                        id: "budget_investment_visible_to_valuators" %>
+    <% end %>
+  <% else %>
+    <%= investment.visible_to_valuators? ? t("shared.yes") : t("shared.no") %>
+  <% end %>
+</td>
+
+<td id="selection" class="small text-center" data-field="selected">
+  <% if investment.selected? %>
+      <%= link_to_if can?(:toggle_selection, investment),
+                     t("admin.budget_investments.index.selected"),
+                     toggle_selection_admin_budget_budget_investment_path(
+                       @budget,
+                       investment,
+                       filter: params[:filter],
+                       sort_by: params[:sort_by],
+                       min_total_supports: params[:min_total_supports],
+                       max_total_supports: params[:max_total_supports],
+                       advanced_filters: params[:advanced_filters],
+                       page: params[:page]
+                     ),
+                     method: :patch,
+                     remote: true,
+                     class: "button small expanded" %>
+  <% elsif investment.feasible? && investment.valuation_finished? %>
+    <% if can?(:toggle_selection, investment) %>
+      <%= link_to t("admin.budget_investments.index.select"),
+                  toggle_selection_admin_budget_budget_investment_path(
+                    @budget,
+                    investment,
+                    filter: params[:filter],
+                    sort_by: params[:sort_by],
+                    min_total_supports: params[:min_total_supports],
+                    max_total_supports: params[:max_total_supports],
+                    advanced_filters: params[:advanced_filters],
+                    page: params[:page]
+                  ),
+                  method: :patch,
+                  remote: true,
+                  class: "button small hollow expanded" %>
+    <% end %>
+  <% end %>
+</td>
+
+<% if params[:advanced_filters]&.include?("selected") %>
+  <td class="small text-center" data-field="incompatible">
+    <%= investment.incompatible? ? t("shared.yes") : t("shared.no") %>
+  </td>
+<% end %>

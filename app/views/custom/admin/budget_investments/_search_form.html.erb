@@ -1,0 +1,71 @@
+<% init_advanced_menu %>
+<%= form_tag(admin_budget_budget_investments_path(budget: @budget), method: :get, enforce_utf8: false) do %>
+  <div class="small-12 column">
+    <%= link_to "#advanced_filters_content",
+                data: { toggle: "advanced_filters" },
+                class: "advanced-filters float-right clear" do %>
+      <%= t("admin.budget_investments.index.advanced_filters") %>
+    <% end %>
+  </div>
+
+  <div id="advanced_filters" class="<%= advanced_menu_visibility %>" data-toggler=".hide">
+    <div class="small-12 column">
+      <div class="advanced-filters-content">
+        <% %w[feasible selected undecided unfeasible without_admin without_valuator under_valuation
+              valuation_finished winners].each do |filter| %>
+          <div class="filter">
+            <%= check_box_tag "advanced_filters[]", filter, params[:advanced_filters].index(filter), id: "advanced_filters_#{filter}" %>
+            <%= label_tag "advanced_filters[#{filter}]", t("admin.budget_investments.index.filters.#{filter}") %>
+          </div>
+        <% end %>
+        <div>
+          <div class="filter">
+            <%= label_tag :min_total_supports, t("admin.budget_investments.index.filters.min_total_supports") %>
+            <%= text_field_tag :min_total_supports, params["min_total_supports"] %>
+          </div>
+          <div class="filter">
+            <%= label_tag :max_total_supports, t("admin.budget_investments.index.filters.max_total_supports") %>
+            <%= text_field_tag :max_total_supports, params["max_total_supports"] %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="small-12 medium-3 column">
+    <%= select_tag :administrator_id,
+                   options_for_select(admin_select_options(@budget), params[:administrator_id]),
+                   { prompt: t("admin.budget_investments.index.administrator_filter_all") } %>
+  </div>
+  <div class="small-12 medium-3 column">
+    <%= select_tag :valuator_or_group_id,
+                   options_for_select(valuator_or_group_select_options(@budget), params[:valuator_or_group_id]),
+                   { prompt: t("admin.budget_investments.index.valuator_filter_all") } %>
+  </div>
+  <div class="small-12 medium-3 column">
+    <%= select_tag :heading_id,
+                   options_for_select(budget_heading_select_options(@budget), params[:heading_id]),
+                   { prompt: t("admin.budget_investments.index.heading_filter_all") } %>
+  </div>
+  <div class="small-12 medium-3 column">
+    <%= select_tag :tag_name,
+                   options_for_select(investment_tags_select_options(@budget, "valuation_tags"), params[:tag_name]),
+                   { prompt: t("admin.budget_investments.index.tags_filter_all") } %>
+  </div>
+
+  <div class="small-12 medium-3 column">
+    <%= select_tag :milestone_tag_name,
+                   options_for_select(investment_tags_select_options(@budget, "milestone_tags"), params[:milestone_tag_name]),
+                   { prompt: t("admin.budget_investments.index.milestone_tags_filter_all") } %>
+  </div>
+
+  <div class="small-12 medium-6 column">
+    <div class="input-group">
+      <%= text_field_tag :title_or_id, params["title_or_id"], placeholder: t("admin.budget_investments.index.placeholder") %>
+    </div>
+  </div>
+
+  <div class="small-12 medium-3 column end">
+    <%= submit_tag t("admin.budget_investments.index.buttons.filter"), class: "button expanded" %>
+  </div>
+<% end %>

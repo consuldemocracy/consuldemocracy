@@ -1,0 +1,51 @@
+<h2><%= t("admin.organizations.search.title") %></h2>
+
+<%= render Admin::SearchComponent.new(label: t("admin.shared.search.label.organizations")) %>
+
+<div id="search-results">
+  <% if @organizations.any? %>
+    <h3><%= page_entries_info @organizations %></h3>
+
+    <table>
+      <thead>
+        <th scpope="col"><%= t("admin.organizations.index.name") %></th>
+        <th scpope="col"><%= t("admin.organizations.index.email") %></th>
+        <th scpope="col"><%= t("admin.organizations.index.phone_number") %></th>
+        <th scpope="col"><%= t("admin.organizations.index.responsible_name") %></th>
+        <th scpope="col"><%= t("admin.organizations.index.status") %></th>
+        <th scpope="col" class="small-3"><%= t("admin.shared.actions") %></th>
+      </thead>
+      <tbody>
+      <% @organizations.each do |organization| %>
+        <tr>
+          <td><%= organization.name %></td>
+          <td><%= organization.email %></td>
+          <td><%= organization.phone_number %></td>
+          <td><%= organization.responsible_name %></td>
+          <td>
+            <% if organization.verified? %>
+              <span class="icon-check"></span>
+              <%= t("admin.organizations.index.verified") %>
+            <% elsif organization.rejected? %>
+              <span class="icon-x"></span>
+              <%= t("admin.organizations.index.rejected") %>
+            <% else %>
+              <span class="icon-eye"></span>
+              <%= t("admin.organizations.index.pending") %>
+            <% end %>
+          </td>
+          <td>
+            <%= render Admin::Organizations::TableActionsComponent.new(organization) %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <%= paginate @organizations %>
+  <% else %>
+    <div class="callout alert">
+      <%= t("admin.organizations.search.no_results") %>
+    </div>
+  <% end %>
+</div>

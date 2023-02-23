@@ -1,0 +1,44 @@
+<h2 class="inline-block"><%= t("admin.newsletters.index.title") %></h2>
+<%= link_to t("admin.newsletters.index.new_newsletter"), new_admin_newsletter_path,
+                                                         class: "button float-right" %>
+
+<% if @newsletters.any? %>
+  <table id="newsletters">
+    <thead>
+      <tr>
+        <th class="small-2"><%= t("admin.newsletters.index.subject") %></th>
+        <th><%= t("admin.newsletters.index.segment_recipient") %></th>
+        <th><%= t("admin.newsletters.index.sent") %></th>
+        <th><%= t("admin.newsletters.index.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @newsletters.order(created_at: :desc).each do |newsletter| %>
+      <tr id="<%= dom_id(newsletter) %>" class="newsletter">
+        <td>
+          <%= newsletter.subject %>
+        </td>
+        <td>
+          <%= segment_name(newsletter.segment_recipient) %>
+        </td>
+        <td>
+          <% if newsletter.draft? %>
+            <%= t("admin.newsletters.index.draft") %>
+          <% else %>
+            <%= l newsletter.sent_at.to_date %>
+          <% end %>
+        </td>
+        <td>
+          <%= render Admin::TableActionsComponent.new(newsletter) do |actions| %>
+            <%= actions.action :preview, text: t("admin.newsletters.index.preview") %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div data-alert class="callout primary margin-top clear">
+    <%= t("admin.newsletters.index.empty_newsletters") %>
+  </div>
+<% end %>

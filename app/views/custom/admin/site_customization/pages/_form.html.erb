@@ -1,0 +1,51 @@
+<%= render "shared/globalize_locales", resource: @page %>
+
+<%= translatable_form_for [:admin, @page], html: { class: "edit_page" } do |f| %>
+  <%= render "shared/errors", resource: @page %>
+
+  <div class="row">
+    <div class="small-12 column">
+      <hr>
+    </div>
+
+    <div class="small-12 medium-4 column">
+      <h3><%= t("admin.site_customization.pages.form.options") %></h3>
+      <%= f.label :status %>
+      <% ::SiteCustomization::Page::VALID_STATUSES.each do |status| %>
+        <%= f.radio_button :status, status %>
+        <br>
+      <% end %>
+
+      <%= f.check_box :more_info_flag, class: "small" %>
+      <%= f.check_box :print_content_flag %>
+    </div>
+
+    <div class="small-12 medium-6 column">
+      <%= f.text_field :slug, size: 80, maxlength: 80,
+        hint: sanitize(t("admin.site_customization.pages.new.slug_help")) %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 column">
+      <hr>
+      <%= f.translatable_fields do |translations_form| %>
+        <div class="small-12 column end">
+          <%= translations_form.text_field :title %>
+        </div>
+        <div class="small-12 column">
+          <%= translations_form.text_field :subtitle %>
+        </div>
+        <div class="column">
+          <%= translations_form.text_area :content, class: "html-area admin" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-6 large-3 margin-top column">
+      <%= f.submit class: "button success expanded" %>
+    </div>
+  </div>
+<% end %>

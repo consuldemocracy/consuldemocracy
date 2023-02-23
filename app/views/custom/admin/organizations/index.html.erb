@@ -1,0 +1,62 @@
+<h2><%= t("admin.organizations.index.title") %></h2>
+
+<%= render Admin::SearchComponent.new(
+  url: search_admin_organizations_path,
+  label: t("admin.shared.search.label.organizations")
+) %>
+
+<%= render "shared/filter_subnav", i18n_namespace: "admin.organizations.index" %>
+
+<% if @organizations.any? %>
+  <h3><%= page_entries_info @organizations %></h3>
+
+  <table>
+    <% hidden = 0 %>
+    <thead>
+      <th scpope="col"><%= t("admin.organizations.index.name") %></th>
+      <th scpope="col"><%= t("admin.organizations.index.email") %></th>
+      <th scpope="col"><%= t("admin.organizations.index.phone_number") %></th>
+      <th scpope="col"><%= t("admin.organizations.index.responsible_name") %></th>
+      <th scpope="col"><%= t("admin.organizations.index.status") %></th>
+      <th scpope="col" class="small-3"><%= t("admin.shared.actions") %></th>
+    </thead>
+    <tbody>
+    <% @organizations.each do |organization| %>
+      <% hidden += 1 and next if organization.user.nil? %>
+      <tr id="<%= dom_id(organization) %>">
+      <td><%= organization.name %></td>
+      <td><%= organization.email %></td>
+      <td><%= organization.phone_number %></td>
+      <td><%= organization.responsible_name %></td>
+      <td>
+        <% if organization.verified? %>
+          <span class="icon-check"></span>
+          <%= t("admin.organizations.index.verified") %>
+        <% elsif organization.rejected? %>
+          <span class="icon-x rejected"></span>
+          <%= t("admin.organizations.index.rejected") %>
+        <% else %>
+          <span class="icon-eye"></span>
+          <%= t("admin.organizations.index.pending") %>
+        <% end %>
+      </td>
+      <td>
+        <%= render Admin::Organizations::TableActionsComponent.new(organization) %>
+      </td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <% if hidden > 0 %>
+    <div class="callout warning">
+      <%= sanitize(t("admin.organizations.index.hidden_count", count: hidden)) %>
+    </div>
+  <% end %>
+
+  <%= paginate @organizations %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.organizations.index.no_organizations") %>
+  </div>
+<% end %>

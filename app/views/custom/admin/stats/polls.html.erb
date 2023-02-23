@@ -1,0 +1,87 @@
+<%= back_link_to %>
+
+<h2 id="top"><%= t("admin.stats.polls.title") %></h2>
+
+<div class="stats">
+  <div class="row stats-numbers">
+    <div class="small-12 medium-3 column">
+      <p class="featured">
+        <%= t("admin.stats.polls.web_participants") %><br>
+        <span id="web_participants" class="number">
+          <%= @participants.web.select(:user_id).distinct.count %>
+        </span>
+      </p>
+    </div>
+
+    <div class="small-12 medium-3 column end">
+      <p class="featured">
+        <%= t("admin.stats.polls.total_participants") %><br>
+        <span id="participants" class="number">
+          <%= @participants.select(:user_id).distinct.count %>
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<h2><%= t("admin.stats.polls.all") %></h2>
+<table id="polls" class="stack table-sortable">
+  <thead>
+    <tr>
+      <th><%= t("admin.stats.polls.table.poll_name") %></th>
+      <th class="name text-right"><%= t("admin.stats.polls.total_participants") %></th>
+      <th class="name text-right"><%= t("admin.stats.polls.table.origin_web") %></th>
+    </tr>
+  </thead>
+  <% @polls.each do |poll| %>
+    <tr id="<%= dom_id(poll) %>">
+      <td class="name">
+        <a href="#<%= dom_id(poll) %>_questions"><%= poll.name %></a>
+      </td>
+      <td class="name text-right">
+        <%= poll.voters.select(:user_id).distinct.count %>
+      </td>
+      <td class="name text-right">
+        <%= poll.voters.web.select(:user_id).distinct.count %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<% @polls.each do |poll| %>
+  <h3 id="<%= dom_id(poll) %>_questions">
+    <%= t("admin.stats.polls.poll_questions", poll: poll.name) %>
+  </h3>
+  <table class="stack table-sortable">
+    <thead>
+      <tr>
+        <th><%= t("admin.stats.polls.table.question_name") %></th>
+        <th class="name text-right">
+          <%= t("admin.stats.polls.table.origin_web") %>
+        </th>
+      </tr>
+    </thead>
+    <% poll.questions.each do |question| %>
+      <tr id="<%= dom_id(question) %>">
+        <td class="name">
+          <%= question.title %>
+        </td>
+        <td class="name text-right">
+          <%= ::Poll::Answer.by_question(question).count %>
+        </td>
+      </tr>
+    <% end %>
+    <tfoot>
+      <tr id="<%= dom_id(poll) %>_questions_total">
+        <th></th>
+        <th class="name text-right">
+          <strong>
+            <%= t("admin.stats.polls.table.origin_total") %>:
+            <%= ::Poll::Answer.where(question: poll.questions)
+                              .select(:author_id).distinct.count %>
+          </strong>
+        </th>
+      </tr>
+    </tfoot>
+  </table>
+<% end %>

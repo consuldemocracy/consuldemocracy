@@ -1,0 +1,19 @@
+<h2 class="inline-block"><%= t("admin.valuators.index.title") %></h2>
+
+<%= link_to t("admin.valuators.index.valuator_groups"), admin_valuator_groups_path, class: "button float-right" %>
+
+<%= render "admin/shared/user_search", url: search_admin_valuators_path %>
+
+<div id="valuators">
+  <% if @valuators.any? %>
+    <h3><%= page_entries_info @valuators %></h3>
+
+    <%= render "valuators", valuators: @valuators %>
+
+    <%= paginate @valuators %>
+  <% else %>
+    <div class="callout primary">
+      <%= t("admin.valuators.index.no_valuators") %>
+    </div>
+  <% end %>
+</div>

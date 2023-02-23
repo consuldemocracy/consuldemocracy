@@ -1,0 +1,63 @@
+<%= link_to t("admin.budget_investments.index.download_current_selection"),
+            admin_budget_budget_investments_path(csv_params),
+            class: "float-right small clear" %>
+
+<% if params[:advanced_filters].include?("winners") %>
+  <%= render Admin::Budgets::CalculateWinnersButtonComponent.new(@budget, from_investments: true) %>
+<% end %>
+
+<% if @investments.any? %>
+  <h3 class="inline-block"><%= page_entries_info @investments %></h3>
+  <%= render "admin/shared/columns_selector",
+        cookie: "investments-columns", default: %w[id title supports admin valuator geozone feasibility price valuation_finished visible_to_valuators selected incompatible] %>
+  <br>
+
+  <%= render "filters_description", i18n_namespace: "admin.budget_investments.index" %>
+
+  <table class="table-for-mobile column-selectable">
+    <thead>
+      <tr>
+        <th><%= link_to_investments_sorted_by :id %></th>
+        <th data-field="title"><%= link_to_investments_sorted_by :title %></th>
+        <th data-field="supports"><%= link_to_investments_sorted_by :supports %></th>
+        <th data-field="admin"><%= t("admin.budget_investments.index.list.admin") %></th>
+        <th data-field="author">
+          <%= t("admin.budget_investments.index.list.author") %>
+        </th>
+        <th data-field="valuator">
+          <%= t("admin.budget_investments.index.list.valuation_group") %> /
+          <%= t("admin.budget_investments.index.list.valuator") %>
+        </th>
+        <th data-field="geozone"><%= t("admin.budget_investments.index.list.geozone") %></th>
+        <th data-field="feasibility"><%= t("admin.budget_investments.index.list.feasibility") %></th>
+        <% if @budget.show_money? %>
+          <th data-field="price"><%= t("admin.budget_investments.index.list.price") %></th>
+        <% end %>
+        <th data-field="valuation_finished">
+          <%= t("admin.budget_investments.index.list.valuation_finished") %>
+        </th>
+        <th data-field="visible_to_valuators">
+          <%= t("admin.budget_investments.index.list.visible_to_valuators") %>
+        </th>
+        <th data-field="selected"><%= t("admin.budget_investments.index.list.selected") %></th>
+        <% if params[:advanced_filters]&.include?("selected") %>
+          <th data-field="incompatible"><%= t("admin.budget_investments.index.list.incompatible") %></th>
+        <% end %>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @investments.each do |investment| %>
+        <tr id="<%= dom_id(investment) %>" class="budget_investment">
+          <%= render "/admin/budget_investments/select_investment", investment: investment %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @investments %>
+<% else %>
+  <div class="callout primary clear">
+    <%= t("admin.budget_investments.index.no_budget_investments") %>
+  </div>
+<% end %>

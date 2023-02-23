@@ -1,0 +1,4 @@
+<div id="graph" class="small-12 column">
+  <h2><%= t "admin.stats.graph.#{name || event}" %> (<%= count %>)</h2>
+  <%= chart_tag id: name, event: event %>
+</div>

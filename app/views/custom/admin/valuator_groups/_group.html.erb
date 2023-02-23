@@ -1,0 +1,11 @@
+<tr id="<%= dom_id(group) %>">
+  <td>
+    <%= link_to group.name, admin_valuator_group_path(group) %>
+  </td>
+  <td>
+    <%= group.valuators.count %>
+  </td>
+  <td>
+    <%= render Admin::TableActionsComponent.new(group) %>
+  </td>
+</tr>

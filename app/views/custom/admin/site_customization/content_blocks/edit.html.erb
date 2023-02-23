@@ -1,0 +1,16 @@
+<% provide :title do %>
+  <%= t("admin.header.title") %> - <%= t("admin.menu.site_customization.content_blocks") %> - <%= @content_block.name %> (<%= @content_block.locale %>)
+<% end %>
+
+<%= back_link_to admin_site_customization_content_blocks_path %>
+
+<%= link_to t("admin.site_customization.content_blocks.index.delete"),
+            (@is_heading_content_block ? admin_site_customization_delete_heading_content_block_path(@content_block.id) : admin_site_customization_content_block_path(@content_block)),
+            method: :delete,
+            class: "delete float-right" %>
+
+<div class="small-12 column">
+  <h2><%= t("admin.site_customization.content_blocks.edit.title") %></h2>
+</div>
+
+<%= render "form" %>

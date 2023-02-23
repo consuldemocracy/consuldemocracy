@@ -1,0 +1,23 @@
+<% if @local_census_records.any? %>
+  <h3><%= page_entries_info @local_census_records %></h3>
+  <table>
+    <thead>
+      <tr>
+        <th><%= t("admin.local_census_records.index.document_type") %></th>
+        <th><%= t("admin.local_census_records.index.document_number") %></th>
+        <th><%= t("admin.local_census_records.index.date_of_birth") %></th>
+        <th><%= t("admin.local_census_records.index.postal_code") %></th>
+        <th><%= t("admin.actions.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @local_census_records %>
+    </tbody>
+  </table>
+
+  <%= paginate @local_census_records %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.local_census_records.index.no_local_census_records") %>
+  </div>
+<% end %>

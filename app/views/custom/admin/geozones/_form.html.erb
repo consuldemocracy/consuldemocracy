@@ -1,0 +1,27 @@
+<%= form_for [:admin, @geozone] do |f| %>
+
+  <%= render "shared/errors", resource: @geozone %>
+
+  <div class="small-12 large-8 column">
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="clear">
+    <div class="small-12 medium-6 large-4 column">
+      <%= f.text_field :census_code, hint: t("admin.geozones.geozone.code_help") %>
+    </div>
+
+    <div class="small-12 medium-6 large-4 column end">
+      <%= f.text_field :external_code, hint: t("admin.geozones.geozone.code_help") %>
+    </div>
+  </div>
+
+  <div class="small-12 large-8 column">
+    <%= f.text_field :html_map_coordinates, hint: t("admin.geozones.geozone.coordinates_help") %>
+  </div>
+
+  <div class="small-12 column">
+    <%= f.submit(value: t("admin.geozones.edit.form.submit_button"),
+                class: "button success") %>
+  </div>
+<% end %>

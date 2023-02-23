@@ -1,0 +1,39 @@
+<%= render "shared/globalize_locales", resource: @milestone %>
+
+<%= translatable_form_for @milestone, url: admin_polymorphic_path(@milestone) do |f| %>
+
+  <div class="row">
+    <div class="small-12 medium-6 margin-bottom column">
+      <%= f.select :status_id,
+            @statuses.map { |s| [s.name, s.id] },
+            { include_blank: @statuses.any? ? "" : t("admin.milestones.form.no_statuses_defined") },
+            { disabled: @statuses.blank? } %>
+      <%= link_to t("admin.milestones.form.admin_statuses"),
+                  admin_milestone_statuses_path %>
+    </div>
+  </div>
+
+  <div class="row">
+    <%= f.translatable_fields do |translations_form| %>
+      <div class="column">
+        <%= translations_form.hidden_field :title, value: l(Time.current, format: :datetime),
+                                                   maxlength: Milestone.title_max_length %>
+        <%= translations_form.text_area :description, rows: 5 %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <%= f.date_field :publication_date %>
+
+      <%= render "images/nested_image", f: f %>
+
+      <div class="documents">
+        <%= render "documents/nested_documents", f: f %>
+      </div>
+
+      <%= f.submit nil, class: "button success" %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,10 @@
+<h2><%= t("admin.users.index.title") %></h2>
+
+<%= render Admin::SearchComponent.new(
+  label: t("admin.users.search.placeholder"),
+  remote: true
+) %>
+
+<div id="users">
+  <%= render "users" %>
+</div>

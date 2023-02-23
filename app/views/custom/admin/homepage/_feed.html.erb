@@ -1,0 +1,11 @@
+<div id="<%= dom_id(feed) %>" class="small-12 medium-6 large-4 column end">
+  <div class="callout">
+    <h3 id="<%= dom_id(feed.setting, :title) %>"><%= t("admin.homepage.feeds.#{feed.kind}") %></h3>
+
+    <%= render "setting", setting: feed.setting %>
+
+    <%= form_for [:admin, feed], remote: true do |f| %>
+      <%= f.select :limit, (1..10), {}, class: "js-submit-on-change" %>
+    <% end %>
+  </div>
+</div>

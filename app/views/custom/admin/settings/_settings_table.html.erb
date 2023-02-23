@@ -1,0 +1,32 @@
+<table>
+  <thead>
+    <tr>
+      <th><%= display_setting_name(setting_name) %></th>
+      <th><%= t("admin.settings.setting_value") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% settings.each do |setting| %>
+      <tr>
+        <td class="small-6">
+          <strong><%= t("settings.#{setting.key}") %></strong>
+          <br>
+          <span id="<%= dom_id(setting, :description) %>" class="small">
+            <%= t("settings.#{setting.key}_description", default: t("admin.settings.no_description")) %>
+          </span>
+        </td>
+        <td class="small-6">
+          <% if setting.content_type? %>
+            <%= render "admin/settings/content_types_settings_form", setting: setting %>
+          <% else %>
+            <% if defined?(tab) %>
+              <%= render "admin/settings/settings_form", setting: setting, tab: tab %>
+            <% else %>
+              <%= render "admin/settings/settings_form", setting: setting %>
+            <% end %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

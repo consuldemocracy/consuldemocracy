@@ -1,0 +1,31 @@
+<h2><%= t("admin.moderators.search.title") %></h2>
+
+<%= render "admin/shared/user_search", url: search_admin_moderators_path %>
+
+<div id="moderators">
+  <% if @users.any? %>
+    <h3><%= page_entries_info @users %></h3>
+
+    <table id="moderators">
+      <thead>
+        <th scope="col"><%= Moderator.human_attribute_name(:name) %></th>
+        <th scope="col" class="small-6"><%= Moderator.human_attribute_name(:email) %></th>
+        <th scope="col"><%= t("admin.shared.actions") %></th>
+      </thead>
+      <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td>
+            <%= render Admin::Roles::TableActionsComponent.new(user.moderator || user.build_moderator) %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  <% else %>
+    <div class="callout alert margin">
+      <%= t("admin.shared.no_search_results") %>
+    </div>
+  <% end %>
+</div>

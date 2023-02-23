@@ -1,0 +1,20 @@
+<% provide(:title) do %>
+  <%= t("admin.audits.title") %>
+<% end %>
+<%= back_link_to admin_polymorphic_path(@audit.associated || @audit.auditable) %>
+
+<h2><%= t("admin.audits.title") %></h2>
+
+<p><strong><%= t("admin.audits.edited_at") %></strong> <%= l @audit.created_at.to_date %></p>
+<p><strong><%= t("admin.audits.edited_by") %></strong> <%= @audit.user&.name %></p>
+
+<h3><%= t("admin.audits.changes") %></h3>
+
+<% @audit.audited_changes.each do |field, (old_value, new_value)| %>
+  <strong><%= t("admin.audits.field") %></strong>
+  <p><%= sanitize(@audit.auditable.class.human_attribute_name(field)) %></p>
+  <strong><%= t("admin.audits.old_value") %></strong>
+  <p><%= wysiwyg(audit_value(@audit.auditable, field, old_value)) %></p>
+  <strong><%= t("admin.audits.new_value") %></strong>
+  <p><%= wysiwyg(audit_value(@audit.auditable, field, new_value)) %></p>
+<% end %>

@@ -1,0 +1,7 @@
+<p><%= t("admin.poll_officers.search.help") %></p>
+
+<%= render Admin::SearchComponent.new(
+  url: search_admin_officers_path,
+  label: t("admin.poll_officers.search.email_placeholder"),
+  remote: true
+) %>

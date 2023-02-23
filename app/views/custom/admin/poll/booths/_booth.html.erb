@@ -1,0 +1,19 @@
+<tr id="booth_<%= booth.id %>" class="booth">
+  <td>
+    <%= booth.name %>
+  </td>
+  <td>
+    <%= booth.location %>
+  </td>
+  <td>
+    <% if controller_name == "shifts" || controller_name == "booths" && action_name == "available" %>
+      <%= render Admin::TableActionsComponent.new(booth, actions: []) do |actions| %>
+        <%= actions.action(:shifts,
+                           text: t("admin.booths.booth.shifts"),
+                           path: new_admin_booth_shift_path(booth)) %>
+      <% end %>
+    <% else %>
+      <%= render Admin::TableActionsComponent.new(booth, actions: [:edit]) %>
+    <% end %>
+  </td>
+</tr>

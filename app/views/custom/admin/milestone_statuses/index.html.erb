@@ -1,0 +1,36 @@
+<h2 class="inline-block"><%= t("admin.statuses.index.title") %></h2>
+
+<%= link_to t("admin.statuses.index.new_status"),
+            new_admin_milestone_status_path,
+            class: "button float-right margin-right" %>
+
+<% if @statuses.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th><%= t("admin.statuses.index.table_name") %></th>
+        <th><%= t("admin.statuses.index.table_description") %></th>
+        <th><%= t("admin.statuses.index.table_actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @statuses.each do |status| %>
+        <tr id="<%= dom_id(status) %>" class="milestone_status">
+          <td>
+            <%= status.name %>
+          </td>
+          <td>
+            <%= status.description %>
+          </td>
+          <td>
+            <%= render Admin::TableActionsComponent.new(status) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div data-alert class="callout primary margin-top clear">
+    <%= t("admin.statuses.index.empty_statuses") %>
+  </div>
+<% end %>

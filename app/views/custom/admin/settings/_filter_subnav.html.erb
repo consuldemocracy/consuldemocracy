@@ -1,0 +1,56 @@
+<ul class="tabs"
+    id="settings-tabs"
+    data-deep-link="true"
+    data-update-history="true"
+    data-deep-link-smudge="true"
+    data-deep-link-smudge-delay="500"
+    data-tabs>
+  <li class="tabs-title is-active">
+    <%= link_to "#tab-configuration" do %>
+      <%= t("admin.settings.index.general") %>
+    <% end %>
+  </li>
+
+  <li class="tabs-title" id="participation-processes-tab">
+    <%= link_to "#tab-participation-processes" do %>
+      <%= t("admin.settings.index.participation_processes") %>
+    <% end %>
+  </li>
+
+  <li class="tabs-title" id="features-tab">
+    <%= link_to "#tab-feature-flags" do %>
+      <%= t("admin.settings.index.feature_flags") %>
+    <% end %>
+  </li>
+
+  <li class="tabs-title" id="map-tab">
+    <%= link_to "#tab-map-configuration" do %>
+      <%= t("admin.settings.index.map.title") %>
+    <% end %>
+  </li>
+
+  <li class="tabs-title" id="images-and-documents-tab">
+    <%= link_to "#tab-images-and-documents" do %>
+      <%= t("admin.settings.index.images_and_documents") %>
+    <% end %>
+  </li>
+
+  <li class="tabs-title" id="proposals-tab">
+    <%= link_to "#tab-proposals" do %>
+      <%= t("admin.settings.index.dashboard.title") %>
+    <% end %>
+  </li>
+
+  <li class="tabs-title" id="remote-census-tab">
+   <%= link_to "#tab-remote-census-configuration" do %>
+      <%= t("admin.settings.index.remote_census.title") %>
+    <% end %>
+  </li>
+
+  <li class="tabs-title" id="sdg-tab">
+   <%= link_to "#tab-sdg-configuration" do %>
+      <%= t("admin.settings.index.sdg.title") %>
+    <% end %>
+  </li>
+
+</ul>

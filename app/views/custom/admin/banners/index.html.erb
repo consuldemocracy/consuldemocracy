@@ -1,0 +1,35 @@
+<%= link_to t("admin.banners.index.create"),
+              new_admin_banner_path, class: "button float-right" %>
+
+<h2 class="inline-block"><%= t("admin.banners.index.title") %></h2>
+
+<%= render "shared/filter_subnav", i18n_namespace: "admin.banners.index" %>
+
+<h3><%= page_entries_info @banners %></h3>
+
+<% @banners.each do |banner| %>
+  <table>
+    <thead>
+      <tr id="<%= dom_id(banner) %>">
+        <th scope="col"><%= Banner.human_attribute_name(:post_started_at) %></th>
+        <th scope="col"><%= Banner.human_attribute_name(:post_ended_at) %></th>
+        <th scope="col"><%= t("admin.actions.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= banner.post_started_at %></td>
+        <td><%= banner.post_ended_at %></td>
+        <td><%= render Admin::TableActionsComponent.new(banner) %></td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <span class="help-text"><%= t("admin.banners.index.preview") %></span>
+          <%= render Shared::BannerComponent.new(banner) %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>
+
+<%= paginate @banners %>

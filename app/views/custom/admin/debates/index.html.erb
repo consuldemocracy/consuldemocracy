@@ -1,0 +1,34 @@
+<% provide(:title) do %>
+  <%= t("admin.header.title") %> - <%= t("admin.debates.index.title") %>
+<% end %>
+
+<h2><%= t("admin.debates.index.title") %></h2>
+
+<% if @debates.any? %>
+  <%= render Admin::SearchComponent.new(label: t("admin.shared.search.label.debates")) %>
+
+  <h3 class="inline-block"><%= page_entries_info @debates %></h3>
+
+  <table>
+    <thead>
+      <th class="text-center"><%= t("admin.debates.index.id") %></th>
+      <th><%= Debate.human_attribute_name(:title) %></th>
+      <th><%= t("admin.debates.index.author") %></th>
+    </thead>
+    <tbody>
+      <% @debates.each do |debate| %>
+        <tr id="<%= dom_id(debate) %>" class="debates">
+          <td class="text-center"><%= debate.id %></td>
+          <td><%= link_to debate.title, admin_debate_path(debate) %></td>
+          <td><%= debate.author.username %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @debates %>
+<% else %>
+  <div class="callout primary margin">
+    <%= t("admin.debates.index.no_debates") %>
+  </div>
+<% end %>

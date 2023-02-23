@@ -1,0 +1,10 @@
+<%= back_link_to admin_newsletters_path %>
+
+<h2><%= t("admin.newsletters.new.title") %></h2>
+<p>
+  <%= sanitize(t("admin.newsletters.new.header_footer_help_text",
+         link: link_to(t("admin.newsletters.new.image_link"),
+                       admin_site_customization_images_path))) %>
+</p>
+
+<%= render "form" %>

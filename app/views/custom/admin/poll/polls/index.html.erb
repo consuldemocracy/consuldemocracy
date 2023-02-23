@@ -1,0 +1,31 @@
+<h2 class="inline-block"><%= t("admin.polls.index.title") %></h2>
+
+<%= link_to t("admin.active_polls.edit.title"),
+            edit_admin_active_polls_path,
+            class: "button hollow float-right" %>
+
+<%= link_to t("admin.polls.index.create"),
+            new_admin_poll_path,
+            class: "button float-right" %>
+
+<% if @polls.any? %>
+  <table>
+    <thead>
+      <th class="small-5"><%= t("admin.polls.index.name") %></th>
+      <th class="text-center"><%= t("admin.polls.index.start_date") %></th>
+      <th class="text-center"><%= t("admin.polls.index.closing_date") %></th>
+      <% if feature?(:sdg) %>
+        <th class="text-center"><%= SDG::Goal.model_name.human(count: :other).upcase_first %></th>
+        <th class="text-center"><%= SDG::Target.model_name.human(count: :other).upcase_first %></th>
+      <% end %>
+      <th><%= t("admin.actions.actions") %></th>
+    </thead>
+    <tbody>
+      <%= render @polls %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.polls.index.no_polls") %>
+  </div>
+<% end %>

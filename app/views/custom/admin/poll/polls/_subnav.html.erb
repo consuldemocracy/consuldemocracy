@@ -1,0 +1,75 @@
+<ul class="menu simple clear" id="assigned-resources-tabs">
+  <% unless @poll.budget_poll? %>
+    <% if controller_name == "polls" %>
+      <li class="is-active">
+        <h2>
+          <%= t("admin.polls.show.questions_tab") %>
+          (<%= @poll.questions.count %>)
+        </h2>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to admin_poll_path(@poll) do %>
+          <%= t("admin.polls.show.questions_tab") %>
+          (<%= @poll.questions.count %>)
+        <% end %>
+      </li>
+    <% end %>
+  <% end %>
+
+  <% if controller_name == "booth_assignments" %>
+    <li class="is-active">
+      <h2>
+        <%= t("admin.polls.show.booths_tab") %>
+        (<%= @poll.booth_assignments.select(:booth_id).distinct.count %>)
+      </h2>
+    </li>
+  <% else %>
+    <li>
+      <%= link_to admin_poll_booth_assignments_path(@poll) do %>
+        <%= t("admin.polls.show.booths_tab") %>
+        (<%= @poll.booth_assignments.select(:booth_id).distinct.count %>)
+      <% end %>
+    </li>
+  <% end %>
+
+  <% if controller_name == "officer_assignments" %>
+    <li class="is-active">
+      <h2>
+        <%= t("admin.polls.show.officers_tab") %>
+        (<%= @poll.officer_assignments.select(:officer_id).distinct.count %>)
+      </h2>
+    </li>
+  <% else %>
+    <li>
+      <%= link_to admin_poll_officer_assignments_path(@poll) do %>
+        <%= t("admin.polls.show.officers_tab") %>
+        (<%= @poll.officer_assignments.select(:officer_id).distinct.count %>)
+      <% end %>
+    </li>
+  <% end %>
+
+  <% if controller_name == "recounts" %>
+    <li class="is-active">
+      <h2>
+        <%= t("admin.polls.show.recounts_tab") %>
+      </h2>
+    </li>
+  <% else %>
+    <li>
+      <%= link_to t("admin.polls.show.recounts_tab"), admin_poll_recounts_path(@poll) %>
+    </li>
+  <% end %>
+
+  <% if controller_name == "results" %>
+    <li class="is-active">
+      <h2>
+        <%= t("admin.polls.show.results_tab") %>
+      </h2>
+    </li>
+  <% else %>
+    <li>
+      <%= link_to t("admin.polls.show.results_tab"), admin_poll_results_path(@poll) %>
+    </li>
+  <% end %>
+</ul>

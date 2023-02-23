@@ -1,0 +1,38 @@
+<td>
+  <%= link_to booth.name, admin_booth_path(booth) %>
+</td>
+<td>
+  <%= booth.location || t("admin.booths.index.no_location") %>
+</td>
+<% if booth_assignment.present? %>
+  <td>
+    <span class="enabled">
+      <strong><%= t("admin.booth_assignments.manage.status.assigned") %></strong>
+    </span>
+  </td>
+  <td>
+    <% unless @poll.expired? %>
+      <%= render Admin::TableActionsComponent.new(booth_assignment,
+        actions: [:destroy],
+        destroy_text: t("admin.booth_assignments.manage.actions.unassign"),
+        destroy_confirmation: (booth_assignment.shifts? ? t("admin.poll_booth_assignments.alert.shifts") : ""),
+        destroy_options: { remote: true }
+      ) %>
+    <% end %>
+  </td>
+<% else %>
+  <td>
+    <span class="disabled"><%= t("admin.booth_assignments.manage.status.unassigned") %></span>
+  </td>
+  <td>
+    <% unless @poll.expired? %>
+      <%= render Admin::TableActionsComponent.new(booth, actions: []) do |actions| %>
+        <%= actions.action(:assign_booth,
+                           text: t("admin.booth_assignments.manage.actions.assign"),
+                           path: admin_poll_booth_assignments_path(@poll, booth_id: booth.id),
+                           method: :post,
+                           remote: true) %>
+      <% end %>
+    <% end %>
+  </td>
+<% end %>

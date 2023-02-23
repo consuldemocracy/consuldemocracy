@@ -1,0 +1,11 @@
+<button type="button" class="columns-selector" id="js-columns-selector" aria-expanded="false" data-cookie="<%= cookie %>" data-default="<%= default.join(",") %>">
+  <span class="icon-banner"> </span>
+  <strong><%= t("admin.budget_investments.index.columns") %></strong>
+</button>
+
+<div class="columns-selector-wrapper" id="js-columns-selector-wrapper">
+  <div class="hidden column-selector-item" id="column_selector_item_template">
+    <input type="checkbox" name="column-selector[template]" id="column_selector_template" data-column="template">
+    <label for="column_selector_template"></label>
+  </div>
+</div>

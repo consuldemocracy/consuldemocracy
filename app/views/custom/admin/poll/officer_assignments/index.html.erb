@@ -1,0 +1,37 @@
+<%= render "/admin/poll/polls/poll_header" %>
+<div id="poll-resources">
+  <%= render "/admin/poll/polls/subnav" %>
+
+  <%= render "search_officers" %>
+
+  <h3><%= t("admin.poll_officer_assignments.index.officers_title") %></h3>
+
+  <% if @officers.empty? %>
+    <div class="callout primary margin-top">
+      <%= t("admin.poll_officer_assignments.index.no_officers") %>
+    </div>
+  <% else %>
+    <table class="fixed margin" id="officer_assignments">
+      <thead>
+        <th><%= t("admin.poll_officer_assignments.index.table_name") %></th>
+        <th><%= t("admin.poll_officer_assignments.index.table_email") %></th>
+      </thead>
+      <tbody>
+        <% @officers.each do |officer| %>
+          <tr id="officer_<%= officer.id %>" class="officer">
+            <td>
+              <strong>
+                <%= link_to officer.name, by_officer_admin_poll_officer_assignments_path(@poll, officer_id: officer.id) %>
+              </strong>
+            </td>
+            <td>
+              <%= officer.email %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= paginate @officers %>
+  <% end %>
+</div>

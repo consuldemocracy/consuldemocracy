@@ -1,0 +1,22 @@
+<%= back_link_to admin_stats_path %>
+
+<h2><%= t("admin.verifications.index.title") %></h2>
+
+<%= render "admin/shared/user_search", url: search_admin_verifications_path %>
+
+<h3><%= page_entries_info @users %></h3>
+
+<table>
+  <% @users.each do |user| %>
+    <tr id="<%= dom_id(user) %>">
+      <td>
+        <%= link_to user.name, admin_hidden_user_path(user) %>
+      </td>
+      <td>
+        <%= render "pending_step", user: user %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= paginate @users %>

@@ -1,0 +1,3 @@
+class Zipcode < ActiveRecord::Base
+  belongs_to :geozone
+end

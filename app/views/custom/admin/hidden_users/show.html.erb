@@ -1,0 +1,39 @@
+<%= back_link_to %>
+
+<h2><%= t("admin.hidden_users.show.title", user: @user.name) %></h2>
+
+<p>
+  <strong><%= t("admin.hidden_users.show.email") %></strong> <%= @user.email %> |
+  <strong><%= t("admin.hidden_users.show.registered_at") %></strong> <%= @user.confirmed_at %> |
+  <strong><%= t("admin.hidden_users.show.hidden_at") %></strong> <%= @user.hidden_at %>
+</p>
+
+<% if @debates.present? %>
+  <h3><%= page_entries_info @debates %></h3>
+<% end %>
+
+<table>
+  <% @debates.each do |debate| %>
+    <tr>
+      <td>
+        <%= link_to debate.title, debate_path(debate) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<% if @comments.present? %>
+  <h3><%= page_entries_info @comments %></h3>
+<% end %>
+
+<table>
+  <% @comments.each do |comment| %>
+    <tr id="<%= dom_id(comment) %>">
+      <td>
+        <%= sanitize_and_auto_link comment.body %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= paginate [@debates, @comments].sort_by(&:size).last %>

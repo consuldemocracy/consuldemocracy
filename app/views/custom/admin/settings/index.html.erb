@@ -1,0 +1,36 @@
+<h1><%= t("admin.settings.index.title") %></h1>
+<div class="tabs-content" data-tabs-content="settings-tabs">
+  <%= render "filter_subnav" %>
+
+  <div class="tabs-panel is-active" id="tab-configuration">
+    <%= render "configuration_settings_tab" %>
+  </div>
+
+  <div class="tabs-panel" id="tab-participation-processes">
+    <%= render "participation_processes_tab" %>
+  </div>
+
+  <div class="tabs-panel" id="tab-feature-flags">
+    <%= render "features_tab" %>
+  </div>
+
+  <div class="tabs-panel" id="tab-map-configuration">
+    <%= render "map_configuration_tab" %>
+  </div>
+
+  <div class="tabs-panel" id="tab-images-and-documents">
+    <%= render "images_and_documents_tab" %>
+  </div>
+
+  <div class="tabs-panel" id="tab-proposals">
+    <%= render "proposals_dashboard" %>
+  </div>
+
+  <div class="tabs-panel" id="tab-remote-census-configuration">
+    <%= render "remote_census_configuration_tab" %>
+  </div>
+
+  <div class="tabs-panel" id="tab-sdg-configuration">
+    <%= render "sdg_configuration_tab" %>
+  </div>
+</div>

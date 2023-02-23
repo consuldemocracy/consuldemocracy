@@ -1,0 +1,10 @@
+<h2><%= t("admin.documents.new.title") %></h2>
+
+<%= form_for @document,
+             url: admin_site_customization_documents_path do |f| %>
+  <%= f.file_field :attachment %>
+
+  <div class="margin-top">
+    <%= f.submit t("admin.documents.new.submit_button"), class: "button success" %>
+  </div>
+<% end %>

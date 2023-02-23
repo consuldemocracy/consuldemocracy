@@ -1,0 +1,20 @@
+<%= render "shared/globalize_locales",
+           resource: @process,
+           display_style: lambda { |locale| enable_translation_style(@process, locale) },
+           manage_languages: false %>
+
+<%= translatable_form_for [:admin, @process] do |f| %>
+  <div class="row">
+    <%= f.translatable_fields do |translations_form| %>
+      <div class="column">
+        <%= translations_form.text_area :milestones_summary, class: "html-area" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <%= f.submit class: "button success" %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,54 @@
+<% provide :title do %>
+  <%= t("admin.header.title") %> - <%= t("admin.menu.legislation") %> - <%= t("admin.legislation.processes.index.filters.#{@current_filter}") %>
+<% end %>
+
+<h2 class="inline-block"><%= t("admin.legislation.processes.index.title") %></h2>
+
+<%= link_to t("admin.legislation.processes.index.create"), new_admin_legislation_process_path,
+            class: "button float-right" %>
+
+<%= render "shared/filter_subnav", i18n_namespace: "admin.legislation.processes.index" %>
+
+<% if @processes.any? %>
+  <h3><%= page_entries_info @processes %></h3>
+
+  <table class="stack">
+    <thead>
+      <tr>
+        <th><%= t("admin.legislation.processes.process.title") %></th>
+        <th><%= t("admin.legislation.processes.process.status") %></th>
+        <th class="text-center"><%= t("admin.legislation.processes.process.start_date") %></th>
+        <th class="text-center"><%= t("admin.legislation.processes.process.end_date") %></th>
+        <th class="text-center"><%= t("admin.legislation.processes.process.comments") %></th>
+        <% if feature?(:sdg) %>
+          <th class="text-center"><%= SDG::Goal.model_name.human(count: :other).upcase_first %></th>
+          <th class="text-center"><%= SDG::Target.model_name.human(count: :other).upcase_first %></th>
+        <% end %>
+        <th><%= t("admin.actions.actions") %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @processes.each do |process| %>
+        <tr id="<%= dom_id(process) %>">
+          <td class="small-12 medium-6 large-4"><%= process.title %></td>
+          <td><%= t("admin.legislation.processes.process.status_#{process.status}") %></td>
+          <td class="text-center"><%= I18n.l process.start_date %></td>
+          <td class="text-center"><%= I18n.l process.end_date %></td>
+          <td class="text-center"><%= process.total_comments %></td>
+          <% if feature?(:sdg) %>
+            <td class="text-center"><%= process.sdg_goal_list %></td>
+            <td class="text-center"><%= process.sdg_target_list %></td>
+          <% end %>
+          <td><%= render Admin::TableActionsComponent.new(process) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @processes %>
+<% else %>
+  <div class="callout primary">
+    <%= page_entries_info @processes %>
+  </div>
+<% end %>

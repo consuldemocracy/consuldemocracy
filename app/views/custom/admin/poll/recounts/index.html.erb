@@ -1,0 +1,77 @@
+<%= render "/admin/poll/polls/poll_header" %>
+<div id="poll-resources">
+  <%= render "/admin/poll/polls/subnav" %>
+
+  <h3><%= t("admin.recounts.index.title") %></h3>
+
+  <% if @booth_assignments.empty? %>
+    <div class="callout primary margin-top">
+      <%= t("admin.recounts.index.no_recounts") %>
+    </div>
+  <% else %>
+
+    <table id="totals">
+      <thead>
+        <tr>
+          <th class="text-center"></th>
+          <% unless @poll.budget_poll? %>
+            <th class="text-center"><%= t("admin.recounts.index.total_final") %></th>
+          <% end %>
+
+          <% unless @poll.recounts_confirmed? %>
+            <th class="text-center"><%= t("admin.recounts.index.total_system") %></th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong><%= t("admin.recounts.index.all_booths_total") %></strong></td>
+          <% unless @poll.budget_poll? %>
+            <td class="text-center" id="total_final"><%= @stats.total_participants_booth %></td>
+          <% end %>
+
+          <% unless @poll.recounts_confirmed? %>
+            <td class="text-center" id="total_system"><%= @stats.total_registered_booth %></td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="fixed margin">
+      <thead>
+        <th><%= t("admin.recounts.index.table_booth_name") %></th>
+        <% unless @poll.budget_poll? %>
+          <th class="text-center"><%= t("admin.recounts.index.table_total_recount") %></th>
+        <% end %>
+
+        <% unless @poll.recounts_confirmed? %>
+          <th class="text-center"><%= t("admin.recounts.index.table_system_count") %></th>
+        <% end %>
+      </thead>
+      <tbody>
+        <% @booth_assignments.each do |booth_assignment| %>
+          <tr id="<%= dom_id(booth_assignment) %>_recounts" class="booth_recounts">
+            <td>
+              <strong>
+                <%= link_to booth_assignment.booth.name, admin_poll_booth_assignment_path(@poll, booth_assignment, anchor: "tab-recounts") %>
+              </strong>
+            </td>
+            <% unless @poll.budget_poll? %>
+              <td class="text-center" id="<%= dom_id(booth_assignment) %>_recount">
+                <%= total_recounts_by_booth(booth_assignment) || "-" %>
+              </td>
+            <% end %>
+
+            <% unless @poll.recounts_confirmed? %>
+              <td class="text-center" id="<%= dom_id(booth_assignment) %>_system">
+                <%= booth_assignment.voters.size || 0 %>
+              </td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= paginate @booth_assignments %>
+  <% end %>
+</div>

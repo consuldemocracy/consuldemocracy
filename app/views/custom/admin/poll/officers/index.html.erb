@@ -1,0 +1,15 @@
+<h2><%= t("admin.poll_officers.index.title") %></h2>
+
+<%= render "search" %>
+
+<div id="search-result"></div>
+
+<h3>
+  <%= page_entries_info @officers, entry_name: t("admin.poll_officers.officer.entry_name") %>
+</h3>
+
+<% if @officers.any? %>
+  <%= render Admin::Poll::Officers::OfficersComponent.new(@officers, id: "officers") %>
+
+  <%= paginate @officers %>
+<% end %>

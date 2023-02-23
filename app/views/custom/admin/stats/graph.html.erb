@@ -1,0 +1,7 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "stat_graphs", "data-turbolinks-track" => "reload" %>
+<% end %>
+
+<%= back_link_to admin_stats_path %>
+
+<%= render "graph", name: @name, event: @event, count: @count %>

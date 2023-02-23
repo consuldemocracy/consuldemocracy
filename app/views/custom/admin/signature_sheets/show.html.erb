@@ -1,0 +1,49 @@
+<h2 class="inline-block"><%= @signature_sheet.name %></h2>
+
+<div class="callout secondary float-right">
+  <%= t("admin.signature_sheets.show.created_at") %>
+  <strong><%= l(@signature_sheet.created_at, format: :long) %></strong>
+  <span class="bullet">&nbsp;&bull;&nbsp;</span>
+  <%= t("admin.signature_sheets.show.author") %>
+  <strong><%= @signature_sheet.author.name %></strong>
+</div>
+
+<h3 id="signature_count" class="block">
+  <%= t("admin.signature_sheets.show.signature_count") %>
+  <%= @signature_sheet.signatures.count %>
+</h3>
+
+<div class="callout margin-top">
+  <p><strong><%= t("admin.signature_sheets.show.users") %></strong></p>
+  <%= simple_format @signature_sheet.required_fields_to_verify %>
+</div>
+
+<div id="verified_signatures" class="callout success">
+  <strong>
+    <%= t("admin.signature_sheets.show.verified",
+        count: @signature_sheet.signatures.verified.count) %>
+  </strong>
+  <br />
+  <strong>
+    <%= t("admin.signature_sheets.show.voted",
+        count: @voted_signatures) %>
+  </strong>
+
+</div>
+
+<div id="unverified_signatures" class="callout alert">
+  <p>
+    <strong>
+      <%= t("admin.signature_sheets.show.unverified",
+          count: @signature_sheet.signatures.unverified.count) %>
+      <%= t("admin.signature_sheets.show.unverified_error") %>
+    </strong>
+  </p>
+  <%= @signature_sheet.signatures.unverified.map(&:document_number).join(", ") %>
+</div>
+
+<% unless @signature_sheet.processed? %>
+  <div class="callout primary margin-top">
+    <%= t("admin.signature_sheets.show.loading") %>
+  </div>
+<% end %>

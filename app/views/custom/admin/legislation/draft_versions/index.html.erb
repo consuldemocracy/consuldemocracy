@@ -1,0 +1,61 @@
+<% provide :title do %>
+  <%= t("admin.header.title") %> - <%= t("admin.menu.legislation") %> - <%= @process.title %> - <%= t("admin.legislation.draft_versions.index.title") %>
+<% end %>
+
+<div class="legislation-draft-versions-index">
+
+  <%= back_link_to admin_legislation_processes_path, t("admin.legislation.processes.edit.back") %>
+
+  <h2><%= @process.title %></h2>
+
+  <%= render "admin/legislation/processes/subnav", process: @process, active: "draft_versions" %>
+
+  <div class="small-12 column">
+    <h4 class="inline-block"><%= t("admin.legislation.draft_versions.index.title") %></h4>
+
+    <div class="float-right">
+      <%= link_to t("admin.legislation.draft_versions.index.create"), new_admin_legislation_process_draft_version_path, class: "button" %>
+    </div>
+
+    <% if @process.draft_versions.any? %>
+      <table class="stack">
+        <thead>
+          <tr>
+            <th><%= t("admin.legislation.draft_versions.table.title") %></th>
+            <th><%= t("admin.legislation.draft_versions.table.created_at") %></th>
+            <th><%= t("admin.legislation.draft_versions.table.status") %></th>
+            <th class="text-center"><%= t("admin.legislation.draft_versions.table.comments") %></th>
+            <th class="text-center"><%= t("admin.legislation.draft_versions.table.final_version") %></th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @process.draft_versions.each do |draft_version| %>
+          <tr id="<%= dom_id(draft_version) %>">
+            <td>
+              <%= link_to draft_version.title, edit_admin_legislation_process_draft_version_path(@process, draft_version) %>
+            </td>
+            <td><%= draft_version.created_at.to_date %></td>
+            <td>
+              <% if draft_version.status == "draft" %>
+                <%= Legislation::DraftVersion.human_attribute_name(:status_draft) %>
+                <%= link_to "(#{t("admin.legislation.draft_versions.index.preview")})",
+                            legislation_process_draft_version_path(@process, draft_version) %>
+              <% else %>
+                <%= Legislation::DraftVersion.human_attribute_name(:status_published) %>
+              <% end %>
+            </td>
+            <td class="text-center"><%= draft_version.total_comments %></td>
+            <td class="text-center">
+              <% if draft_version.final_version %>
+                <span class="icon-check" title="<%= draft_version.final_version %>"></span>
+              <% else %>
+                <span class="icon-x delete" title="<%= draft_version.final_version %>"></span>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+</div>

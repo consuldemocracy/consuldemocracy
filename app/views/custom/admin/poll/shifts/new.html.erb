@@ -1,0 +1,22 @@
+<%= back_link_to available_admin_booths_path %>
+
+<h2><%= @booth.name %></h2>
+
+<% if @officer.blank? %>
+  <p>
+    <%= t("admin.poll_shifts.new.search_officer_text") %>
+  </p>
+  <%= render "search_officers" %>
+<% else %>
+  <%= render "form" %>
+<% end %>
+
+<div id="shifts">
+  <% if @shifts.empty? %>
+    <div class="callout primary">
+      <%= t("admin.poll_shifts.new.no_shifts") %>
+    </div>
+  <% else %>
+    <%= render "shifts" %>
+  <% end %>
+</div>

@@ -1,0 +1,18 @@
+<h2 class="inline-block"><%= t("admin.local_census_records.index.title") %></h2>
+
+<%= link_to t("admin.local_census_records.index.create"),
+            new_admin_local_census_record_path,
+            class: "button float-right" %>
+
+<%= link_to t("admin.local_census_records.index.import"),
+            new_admin_local_census_records_import_path,
+            class: "button float-right hollow" %>
+
+<%= render Admin::SearchComponent.new(
+  label: t("admin.shared.search.label.local_census_records"),
+  remote: true
+) %>
+
+<div id="local_census_records">
+  <%= render "local_census_records" %>
+</div>

@@ -1,0 +1,9 @@
+<% provide :title do %>
+  <%= "#{t("admin.header.title")} - #{t("admin.progress_bars.index.title")}" %>
+<% end %>
+
+<%= back_link_to admin_polymorphic_path(@progressable) %>
+
+<div class="clear"></div>
+
+<%= render "admin/progress_bars/progress_bars", progressable: @progressable %>

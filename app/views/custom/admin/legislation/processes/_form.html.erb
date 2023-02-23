@@ -1,0 +1,200 @@
+<%= render "shared/globalize_locales", resource: @process %>
+
+<%= translatable_form_for [:admin, @process], html: { class: "legislation-process-form" } do |f| %>
+
+  <%= render "shared/errors", resource: @process %>
+
+  <fieldset>
+    <legend class="small-12 medium-4 column">
+      <%= t("admin.legislation.processes.form.draft_phase") %>
+      <span class="help-text"><%= t("admin.legislation.processes.form.draft_phase_description") %></span>
+    </legend>
+
+    <div class="small-12 medium-3 column">
+      <%= f.date_field :draft_start_date, id: "draft_start_date" %>
+    </div>
+
+    <div class="small-12 medium-3 column">
+      <%= f.date_field :draft_end_date, id: "draft_end_date" %>
+    </div>
+    <div class="small-12 medium-2 column margin-top">
+      <%= f.check_box :draft_phase_enabled, checked: @process.draft_phase.enabled?, label: t("admin.legislation.processes.form.enabled") %>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend class="small-12 medium-4 column">
+      <%= t("admin.legislation.processes.form.process") %>
+    </legend>
+
+    <div class="small-12 medium-3 column">
+      <%= f.date_field :start_date, id: "start_date" %>
+    </div>
+
+    <div class="small-12 medium-3 column">
+      <%= f.date_field :end_date, id: "end_date" %>
+    </div>
+    <div class="small-12 medium-2 column margin-top">
+      <%= f.check_box :published, checked: @process.published?, label: t("admin.legislation.processes.form.enabled") %>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend class="small-12 medium-4 column">
+      <%= t("admin.legislation.processes.form.debate_phase") %>
+    </legend>
+
+    <div class="small-12 medium-3 column">
+      <%= f.date_field :debate_start_date, id: "debate_start_date" %>
+    </div>
+
+    <div class="small-12 medium-3 column">
+      <%= f.date_field :debate_end_date, id: "debate_end_date" %>
+    </div>
+    <div class="small-12 medium-2 column margin-top">
+      <%= f.check_box :debate_phase_enabled, checked: @process.debate_phase.enabled?, label: t("admin.legislation.processes.form.enabled") %>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend class="small-12 medium-4 column">
+      <%= t("admin.legislation.processes.form.proposals_phase") %>
+    </legend>
+
+    <div class="small-12 medium-3 column">
+      <%= f.date_field :proposals_phase_start_date, id: "proposals_phase_start_date" %>
+    </div>
+
+    <div class="small-12 medium-3 column">
+      <%= f.date_field :proposals_phase_end_date, id: "proposals_phase_end_date" %>
+    </div>
+    <div class="small-12 medium-2 column margin-top">
+      <%= f.check_box :proposals_phase_enabled, checked: @process.proposals_phase.enabled?, label: t("admin.legislation.processes.form.enabled") %>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend class="small-12 medium-4 column">
+      <%= t("admin.legislation.processes.form.allegations_phase") %>
+    </legend>
+
+    <div class="small-12 medium-3 column">
+      <%= f.date_field :allegations_start_date, id: "allegations_start_date" %>
+    </div>
+
+    <div class="small-12 medium-3 column">
+      <%= f.date_field :allegations_end_date, id: "allegations_end_date" %>
+    </div>
+    <div class="small-12 medium-2 column margin-top">
+      <%= f.check_box :allegations_phase_enabled, checked: @process.allegations_phase.enabled?, label: t("admin.legislation.processes.form.enabled") %>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <div class="small-12 medium-3 column end">
+      <%= f.date_field :draft_publication_date, id: "draft_publication_date" %>
+    </div>
+    <div class="small-12 medium-2 column margin-top">
+      <%= f.check_box :draft_publication_enabled, checked: @process.draft_publication.enabled?, label: t("admin.legislation.processes.form.enabled") %>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <div class="small-12 medium-3 column end">
+      <%= f.date_field :result_publication_date, id: "result_publication_date" %>
+    </div>
+    <div class="small-12 medium-2 column margin-top">
+      <%= f.check_box :result_publication_enabled, checked: @process.result_publication.enabled?, label: t("admin.legislation.processes.form.enabled") %>
+    </div>
+  </fieldset>
+
+  <div class="row">
+    <div class="documents small-12 column">
+      <%= render "documents/nested_documents", f: f %>
+    </div>
+
+    <div class="small-12 column">
+      <hr>
+    </div>
+
+    <div class="images small-12 column">
+      <%= render "images/nested_image", f: f %>
+    </div>
+
+    <div class="small-12 column">
+      <hr>
+    </div>
+
+    <div class="small-12 column">
+      <h3><%= t("admin.legislation.processes.form.banner_title") %></h3>
+    </div>
+
+    <div class="small-6 large-3 column">
+      <%= f.label :background_color, nil, for: "background_color_input" %>
+      <p class="help-text"><%= t("admin.shared.color_help") %></p>
+      <div class="row collapse">
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :background_color, label: false, type: :color %>
+        </div>
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :background_color, label: false, id: "background_color_input" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="small-6 large-3 column end">
+      <%= f.label :font_color, nil, for: "font_color_input" %>
+      <p class="help-text"><%= t("admin.shared.color_help") %></p>
+      <div class="row collapse">
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :font_color, label: false, type: :color %>
+        </div>
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :font_color, label: false, id: "font_color_input" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="small-12 column">
+      <hr>
+    </div>
+  </div>
+
+  <div class="row">
+    <%= f.translatable_fields do |translations_form| %>
+      <div class="small-12 medium-9 column">
+        <%= translations_form.text_field :title %>
+      </div>
+
+      <div class="small-12 medium-9 column">
+        <%= translations_form.text_area :summary,
+                                        rows: 2,
+                                        hint: t("admin.legislation.processes.form.use_markdown") %>
+      </div>
+
+      <div class="small-12 medium-9 column">
+        <%= translations_form.text_area :description,
+                                        rows: 5,
+                                        hint: t("admin.legislation.processes.form.use_markdown") %>
+      </div>
+
+      <div class="small-12 medium-9 column end">
+        <%= translations_form.text_area :additional_info,
+                                        rows: 10,
+                                        hint: t("admin.legislation.processes.form.use_markdown") %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="small-12 column">
+      <%= render SDG::RelatedListSelectorComponent.new(f) %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-3 column clear end">
+      <%= f.submit(class: "button success expanded", value: t("admin.legislation.processes.#{admin_submit_action(@process)}.submit_button")) %>
+    </div>
+  </div>
+<% end %>

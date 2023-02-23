@@ -1,0 +1,105 @@
+<%= link_to admin_poll_booth_assignments_path(@poll) do %>
+  <span class="icon-angle-left"></span>
+  <%= @poll.name %>
+<% end %>
+
+<h2><%= @booth_assignment.booth.name %></h2>
+
+<% if @booth_assignment.booth.location.present? %>
+  <p>
+    <strong><%= t("admin.poll_booth_assignments.show.location") %></strong>:
+    <%= @booth_assignment.booth.location %>
+  </p>
+<% end %>
+
+<ul class="tabs" id="booths_tabs"
+    data-deep-link="true"
+    data-update-history="true"
+    data-deep-link-smudge="true"
+    data-deep-link-smudge-delay="500"
+    data-tabs>
+  <li class="tabs-title">
+    <%= link_to t("admin.poll_booth_assignments.show.officers"), "#tab-officers" %>
+  </li>
+  <li class="tabs-title">
+    <%= link_to t("admin.poll_booth_assignments.show.recounts"), "#tab-recounts" %>
+  </li>
+  <li class="tabs-title is-active">
+    <%= link_to t("admin.poll_booth_assignments.show.results"), "#tab-results" %>
+  </li>
+</ul>
+
+<div class="tabs-content" data-tabs-content="booths_tabs">
+  <div class="tabs-panel" id="tab-officers">
+    <% if @booth_assignment.officers.empty? %>
+      <div class="callout primary margin-top">
+        <%= t("admin.poll_booth_assignments.show.no_officers") %>
+      </div>
+    <% else %>
+      <h3><%= t("admin.poll_booth_assignments.show.officers_list") %></h3>
+
+      <table id="officers_list">
+        <tbody>
+          <% @booth_assignment.officers.uniq.each do |officer| %>
+            <tr id="officer_<%= officer.id %>" class="officer">
+              <td><%= link_to officer.name, by_officer_admin_poll_officer_assignments_path(@poll, officer_id: officer.id) %></td>
+              <td><%= officer.email %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+
+  <div class="tabs-panel" id="tab-recounts">
+    <h3><%= t("admin.poll_booth_assignments.show.recounts_list") %></h3>
+
+    <table id="totals">
+      <thead>
+        <tr>
+          <th class="text-center"><%= t("admin.poll_booth_assignments.show.count_final") %></th>
+
+          <% unless @poll.recounts_confirmed? %>
+            <th class="text-center"><%= t("admin.poll_booth_assignments.show.total_system") %></th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-center" id="total_final">
+            <%= total_recounts_by_booth(@booth_assignment) || "-" %>
+          </td>
+
+          <% unless @poll.recounts_confirmed? %>
+            <td class="text-center" id="total_system">
+              <%= @booth_assignment.voters.count %>
+            </td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+
+    <% unless @poll.recounts_confirmed? %>
+      <table id="recounts_list">
+        <thead>
+          <tr>
+            <th><%= t("admin.poll_booth_assignments.show.date") %></th>
+            <th class="text-center"><%= t("admin.poll_booth_assignments.show.count_by_system") %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% (@poll.starts_at.to_date..@poll.ends_at.to_date).each do |voting_date| %>
+            <% system_count = @voters_by_date[voting_date].present? ? @voters_by_date[voting_date].size : 0 %>
+            <tr id="recounting_<%= voting_date.strftime("%Y%m%d") %>">
+              <td><%= l voting_date %></td>
+              <td class="text-center"><%= system_count %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+  <div class="tabs-panel is-active" id="tab-results">
+    <%= render "results" %>
+  </div>
+</div>

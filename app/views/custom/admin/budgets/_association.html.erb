@@ -1,0 +1,13 @@
+<div class="secondary callout is-hidden js-budget-users-list small-12" data-toggler="is-hidden" data-closable id="<%= assignable_type %>_list">
+  <% if assignables.nil? || assignables.empty? %>
+    <p><%= t("admin.budgets.edit.empty_#{assignable_type}") %></p>
+  <% else %>
+    <fieldset>
+      <legend><%= t("admin.budgets.edit.#{assignable_type}", count: 0) %></legend>
+      <% field = "#{assignable_type.chomp("s")}_ids" %>
+      <%= form.collection_check_boxes field, assignables, :id, :name do |box| %>
+        <%= box.label { box.check_box + box.text } %>
+      <% end %>
+    </fieldset>
+  <% end %>
+</div>

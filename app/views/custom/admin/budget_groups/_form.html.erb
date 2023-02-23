@@ -1,0 +1,29 @@
+<%= translatable_form_for group, url: path, html: { class: "budget-groups-form" } do |f| %>
+  <%= render "shared/globalize_locales", resource: group %>
+
+  <%= render "shared/errors", resource: group %>
+
+  <%= render Admin::BudgetsWizard::ModeFieldComponent.new %>
+
+  <%= f.translatable_fields do |translations_form| %>
+    <div class="small-12 medium-6 column end">
+      <%= translations_form.text_field :name, maxlength: 50 %>
+    </div>
+  <% end %>
+
+  <% if group.multiple_headings? %>
+    <div class="small-12 medium-6 column margin">
+      <%= f.select :max_votable_headings,
+                   (1..group.headings.count),
+                   hint: t("admin.budget_groups.form.max_votable_headings_info") %>
+    </div>
+  <% end %>
+
+  <div class="clear">
+    <% if respond_to?(:single_heading?) && single_heading? %>
+      <%= f.submit t("admin.budgets_wizard.groups.continue"), class: "button success" %>
+    <% else %>
+      <%= f.submit t("admin.budget_groups.form.#{action}"), class: "button hollow" %>
+    <% end %>
+  </div>
+<% end %>

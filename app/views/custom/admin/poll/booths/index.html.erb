@@ -1,0 +1,31 @@
+<h2 class="inline-block"><%= t("admin.booths.index.title") %></h2>
+
+<% if controller_name == "booths" && action_name != "available" %>
+  <%= link_to t("admin.booths.index.add_booth"), new_admin_booth_path, class: "button float-right" %>
+<% end %>
+
+<%= render Admin::SearchComponent.new(label: t("admin.shared.search.label.booths")) %>
+
+<% if @booths.empty? %>
+  <div class="callout primary">
+    <%= t("admin.booths.index.no_booths") %>
+  </div>
+<% end %>
+
+<% if @booths.any? %>
+  <h3><%= page_entries_info @booths %></h3>
+  <table>
+    <thead>
+      <th><%= t("admin.booths.index.name") %></th>
+      <th><%= t("admin.booths.index.location") %></th>
+      <th><%= t("admin.actions.actions") %></th>
+    </thead>
+    <tbody>
+    <% @booths.each do |booth| %>
+      <%= render "booth", booth: booth %>
+    <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @booths %>
+<% end %>

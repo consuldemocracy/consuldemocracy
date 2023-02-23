@@ -1,0 +1,30 @@
+<%= link_to admin_poll_officer_assignments_path(@poll) do %>
+  <span class="icon-angle-left"></span>
+  <%= @poll.name %>
+<% end %>
+
+<h2><%= @officer.name %> - <%= @officer.email %></h2>
+
+<% if @officer_assignments.empty? %>
+  <div class="callout primary margin-top">
+    <%= t("admin.poll_officer_assignments.by_officer.no_assignments") %>
+  </div>
+<% else %>
+  <h3><%= t("admin.poll_officer_assignments.by_officer.assignments") %></h3>
+  <table class="fixed">
+    <thead>
+      <tr>
+        <th><%= t("admin.poll_officer_assignments.by_officer.date") %></th>
+        <th><%= t("admin.poll_officer_assignments.by_officer.booth") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @officer_assignments.each do |officer_assignment| %>
+        <tr id="<%= dom_id officer_assignment %>">
+          <td><%= l(officer_assignment.date.to_date) %> <%= tag.strong t("polls.final_date") if officer_assignment.final %></td>
+          <td><%= booth_name_with_location(officer_assignment.booth_assignment.booth) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

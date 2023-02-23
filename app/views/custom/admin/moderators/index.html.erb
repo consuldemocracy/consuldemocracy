@@ -1,0 +1,40 @@
+<%= link_to t("admin.menu.activity"), admin_activity_path, class: "button float-right" %>
+
+<h2 class="inline-block"><%= t("admin.moderators.index.title") %></h2>
+
+<%= render "admin/shared/user_search", url: search_admin_moderators_path %>
+
+<div id="moderators">
+  <% if @moderators.any? %>
+    <h3><%= page_entries_info @moderators %></h3>
+
+    <table>
+      <thead>
+        <th scope="col"><%= Moderator.human_attribute_name(:name) %></th>
+        <th scope="col" class="small-6"><%= Moderator.human_attribute_name(:email) %></th>
+        <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
+      </thead>
+      <tbody>
+        <% @moderators.each do |moderator| %>
+          <tr>
+            <td>
+              <%= moderator.name %>
+            </td>
+            <td>
+              <%= moderator.email %>
+            </td>
+            <td>
+              <%= render Admin::Roles::TableActionsComponent.new(moderator) %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= paginate @moderators %>
+  <% else %>
+    <div class="callout primary">
+      <%= t("admin.moderators.index.no_moderators") %>
+    </div>
+  <% end %>
+</div>

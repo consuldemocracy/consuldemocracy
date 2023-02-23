@@ -1,0 +1,84 @@
+<%= render "shared/globalize_locales", resource: @banner %>
+
+<%= translatable_form_for [:admin, @banner] do |f| %>
+
+  <%= render "shared/errors", resource: @banner %>
+
+  <div class="row">
+    <div class="small-12 medium-3 column">
+      <%= f.date_field :post_started_at, id: "post_started_at" %>
+    </div>
+    <div class="small-12 medium-3 column end">
+      <%= f.date_field :post_ended_at, id: "post_ended_at" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <%= f.translatable_fields do |translations_form| %>
+      <div class="small-12 medium-6 column">
+        <%= translations_form.text_field :title,
+          data: { js_banner_title: "js_banner_title" } %>
+      </div>
+
+      <div class="small-12 column">
+        <%= translations_form.text_field :description,
+          data: { js_banner_description: "js_banner_description" } %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= f.text_field :target_url %>
+    </div>
+  </div>
+
+  <div class="row">
+    <fieldset class="small-12 column">
+      <legend><%= t("admin.banners.banner.sections_label") %></legend>
+      <%= f.collection_check_boxes(:web_section_ids, @banner_sections, :id, :name) do |b| %>
+        <%= b.label do %>
+          <%= b.check_box + t("admin.banners.banner.sections.#{b.text}") %>
+        <% end %>
+      <% end %>
+    </fieldset>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-6 large-3 column">
+      <%= f.label :background_color, nil, for: "background_color_input" %>
+      <p class="help-text"><%= t("admin.shared.color_help") %></p>
+      <div class="row collapse">
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :background_color, label: false, type: :color %>
+        </div>
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :background_color, label: false, id: "background_color_input" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="small-12 medium-6 large-3 column end">
+      <%= f.label :font_color, nil, for: "font_color_input" %>
+      <p class="help-text"><%= t("admin.shared.color_help") %></p>
+      <div class="row collapse">
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :font_color, label: false, type: :color %>
+        </div>
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :font_color, label: false, id: "font_color_input" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="actions small-12 medium-3 column">
+      <%= f.submit(class: "button expanded", value: t("admin.banners.edit.form.submit_button")) %>
+    </div>
+  </div>
+
+  <div class="row">
+    <%= render Shared::BannerComponent.new(@banner) %>
+  </div>
+<% end %>

@@ -1,0 +1,28 @@
+<table>
+  <thead>
+    <tr>
+      <th class="small-9"><%= t("admin.questions.index.table_proposal") %></th>
+      <th><%= t("admin.actions.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @proposals.each do |proposal| %>
+      <tr id="<%= dom_id(proposal) %>">
+        <td>
+          <%= proposal.title %>
+          <p>
+            <%= proposal.summary %><br>
+          </p>
+        </td>
+        <td>
+          <%= render Admin::TableActionsComponent.new(proposal, actions: []) do |actions| %>
+            <%= actions.action(:show, text: t("admin.shared.view"), path: proposal_path(proposal)) %>
+            <%= actions.action(:new,
+                               text: t("admin.questions.index.create_question"),
+                               path: new_admin_question_path(proposal_id: proposal.id)) %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

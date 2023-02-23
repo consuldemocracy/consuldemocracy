@@ -1,0 +1,27 @@
+<% provide :title do %>
+  <%= t("admin.header.title") %> - <%= t("admin.menu.legislation") %> - <%= @process.title %> - <%= t("admin.legislation.draft_versions.index.title") %> - <%= @draft_version.title %>
+<% end %>
+
+<div class="legislation-draft-versions-edit legislation-draft-versions-form">
+  <div class="small-12 column">
+    <%= back_link_to admin_legislation_process_draft_versions_path(@process),
+                     t("admin.legislation.draft_versions.edit.back") %>
+
+    <h2><%= @process.title %></h2>
+
+    <%= render "admin/legislation/processes/subnav", process: @process, active: "draft_versions" %>
+
+    <div class="small-12 column">
+      <h3 class="inline-block"><%= @draft_version.title %></h3>
+
+      <div class="float-right">
+        <%= link_to t("admin.legislation.draft_versions.index.delete"),
+                    admin_legislation_process_draft_version_path(@process, @draft_version),
+                    method: :delete,
+                    class: "button hollow alert" %>
+      </div>
+    </div>
+
+    <%= render "form", url: admin_legislation_process_draft_version_path(@process, @draft_version) %>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<%= render "shared/globalize_locales",
+           resource: @process,
+           display_style: lambda { |locale| enable_translation_style(@process, locale) },
+           manage_languages: false %>
+
+<%= translatable_form_for [:admin, @process], url: url do |f| %>
+
+  <%= render "shared/errors", resource: @process %>
+  <div class="row">
+    <div class="small-12 column margin-top">
+      <%= f.check_box :homepage_enabled %>
+    </div>
+  </div>
+
+  <div class="row">
+    <%= f.translatable_fields do |translations_form| %>
+      <div class="small-12 column">
+        <%= translations_form.text_area :homepage,
+                                        language: I18n.locale,
+                                        class: "html-area admin",
+                                        hint: t("admin.legislation.processes.form.homepage_description") %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-3 column end margin-top">
+      <%= f.submit(class: "button success expanded", value: t("admin.legislation.processes.#{admin_submit_action(@process)}.submit_button")) %>
+    </div>
+  </div>
+<% end %>

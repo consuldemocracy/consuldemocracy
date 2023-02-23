@@ -1,0 +1,42 @@
+<%= link_to t("admin.dashboard.actions.index.create"),
+              new_admin_dashboard_action_path, class: "button success float-right" %>
+
+<h2 class="inline-block">
+  <%= t("admin.dashboard.actions.index.title") %>
+</h2>
+
+<p><%= t("admin.dashboard.actions.index.description") %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t("admin.dashboard.actions.index.action_title") %></th>
+      <th><%= t("admin.dashboard.actions.index.action_type") %></th>
+      <th class="text-center"><%= t("admin.dashboard.actions.index.action_active") %></th>
+      <th class="text-center"><%= t("admin.dashboard.actions.index.published_proposal") %></th>
+      <th class="text-center"><%= t("admin.dashboard.actions.index.day_offset") %></th>
+      <th class="text-center"><%= t("admin.dashboard.actions.index.required_supports") %></th>
+      <th class="text-center"><%= t("admin.dashboard.actions.index.order") %></th>
+      <th><%= t("admin.actions.actions") %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dashboard_actions.each do |action| %>
+      <tr id="<%= dom_id(action) %>">
+        <td><%= action.title %></td>
+        <td><%= Dashboard::Action.human_attribute_name("action_type_#{action.action_type}") %></td>
+        <td class="text-center"><%= active_human_readable(action.active) %></td>
+        <td class="text-center"><%= active_human_readable(action.published_proposal) %></td>
+        <td class="text-center"><%= number_with_delimiter(action.day_offset, delimiter: ".") %></td>
+        <td class="text-center"><%= number_with_delimiter(action.required_supports, delimiter: ".") %></td>
+        <td class="text-center"><%= action.order %></td>
+        <td>
+          <%= render Admin::TableActionsComponent.new(action) %>
+        </td>
+      </tr>
+    <% end %>
+
+    <%= render "default_actions" %>
+  </tbody>
+</table>

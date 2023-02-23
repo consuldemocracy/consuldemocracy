@@ -1,0 +1,60 @@
+<% provide :title do %>
+  <%= t("admin.header.title") %> - <%= t("admin.menu.site_customization.content_blocks") %>
+<% end %>
+
+<%= link_to t("admin.site_customization.content_blocks.index.create"), new_admin_site_customization_content_block_path, class: "button float-right" %>
+
+<h2 class="inline-block"><%= t("admin.site_customization.content_blocks.index.title") %></h2>
+
+<%= render "admin/settings/settings_table", settings: @html_settings, setting_name: "setting" %>
+
+<h3><%= t("admin.site_customization.content_blocks.information") %></h3>
+
+<p><%= t("admin.site_customization.content_blocks.about") %></p>
+<p><%= t("admin.site_customization.content_blocks.html_format") %></p>
+
+<p>
+  <code><%= '<li><a href="http://site1.com">Site 1</a></li>' %></code><br>
+  <code><%= '<li><a href="http://site2.com">Site 2</a></li>' %></code><br>
+  <code><%= '<li><a href="http://site3.com">Site 3</a></li>' %></code><br>
+</p>
+
+<% if @content_blocks.any? || @headings_content_blocks.any? %>
+  <table class="cms-page-list">
+    <thead>
+      <tr>
+        <th><%= t("admin.site_customization.content_blocks.content_block.name") %></th>
+        <th><%= t("admin.site_customization.content_blocks.content_block.body") %></th>
+        <th><%= t("admin.actions.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @content_blocks.each do |content_block| %>
+      <tr id="<%= dom_id(content_block) %>">
+        <td><%= link_to "#{content_block.name} (#{content_block.locale})", edit_admin_site_customization_content_block_path(content_block) %></td>
+        <td><%= raw content_block.body %></td>
+        <td>
+          <%= render Admin::TableActionsComponent.new(content_block, actions: [:destroy]) %>
+        </td>
+      </tr>
+    <% end %>
+    <% @headings_content_blocks.each do |content_block| %>
+      <tr id="<%= dom_id(content_block) %>">
+        <td><%= link_to "#{content_block.name} (#{content_block.locale})", admin_site_customization_edit_heading_content_block_path(content_block) %></td>
+        <td><%= raw content_block.body %></td>
+        <td>
+          <%= render Admin::TableActionsComponent.new(
+            content_block,
+            actions: [:destroy],
+            destroy_path: admin_site_customization_delete_heading_content_block_path(content_block)
+          ) %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.site_customization.content_blocks.no_blocks") %>
+  </div>
+<% end %>

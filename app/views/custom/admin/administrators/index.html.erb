@@ -1,0 +1,47 @@
+<h2><%= t("admin.administrators.index.title") %></h2>
+
+<%= render "admin/shared/user_search", url: search_admin_administrators_path %>
+
+<div id="administrators">
+  <% if @administrators.any? %>
+    <h3><%= page_entries_info @administrators %></h3>
+
+    <table>
+      <thead>
+        <th scope="col" class="text-center"><%= t("admin.administrators.index.id") %></th>
+        <th scope="col"><%= Administrator.human_attribute_name(:name) %></th>
+        <th scope="col"><%= Administrator.human_attribute_name(:email) %></th>
+        <th scope="col"><%= Administrator.human_attribute_name(:description) %></th>
+        <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
+      </thead>
+      <% @administrators.each do |administrator| %>
+        <tr id="<%= dom_id(administrator) %>">
+          <td class="text-center">
+            <%= administrator.id %>
+          </td>
+          <td>
+            <%= administrator.name %>
+          </td>
+          <td>
+            <%= administrator.email %>
+          </td>
+          <td>
+            <%= administrator.description %>
+          </td>
+          <td>
+            <%= render Admin::Roles::TableActionsComponent.new(
+              administrator,
+              actions: [:edit, :destroy]
+            ) %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+
+    <%= paginate @administrators %>
+  <% else %>
+    <div class="callout primary margin">
+      <%= t("admin.administrators.index.no_administrators") %>
+    </div>
+  <% end %>
+</div>

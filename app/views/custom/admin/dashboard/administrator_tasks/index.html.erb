@@ -1,0 +1,42 @@
+<h2><%= t("admin.dashboard.administrator_tasks.index.title") %></h2>
+
+<p><%= t("admin.dashboard.administrator_tasks.index.description") %></p>
+
+<%= render "shared/filter_subnav", i18n_namespace: "admin.dashboard.administrator_tasks.index" %>
+
+<% if @administrator_tasks.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th><%= t("admin.dashboard.administrator_tasks.index.source") %></th>
+        <th><%= t("admin.dashboard.administrator_tasks.index.resource") %></th>
+        <th><%= t("admin.actions.actions") %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @administrator_tasks.each do |task| %>
+        <tr id="<%= dom_id(task) %>">
+          <td>
+            <%= task.source.proposal.title %>
+          </td>
+          <td>
+            <%= task.source.action.title %>
+          </td>
+          <td>
+            <% unless task.executed_at? %>
+              <%= render Admin::TableActionsComponent.new(task,
+                actions: [:edit],
+                edit_text: t("admin.dashboard.administrator_tasks.index.solve")
+              ) %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.dashboard.administrator_tasks.index.no_records") %>
+  </div>
+<% end %>

@@ -1,0 +1,46 @@
+<h2><%= t("admin.audits.title") %></h2>
+
+<% if resource.audits.empty? %>
+  <p><%= t("admin.audits.empty") %></p>
+<% else %>
+  <table id="audits">
+    <thead>
+      <tr>
+        <th><%= t("admin.audits.id") %></th>
+        <th><%= t("admin.audits.field") %></th>
+        <th><%= t("admin.audits.old_value") %></th>
+        <th><%= t("admin.audits.new_value") %></th>
+        <th><%= t("admin.audits.edited_at") %></th>
+        <th><%= t("admin.audits.edited_by") %></th>
+        <th><%= t("admin.audits.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% resource.own_and_associated_audits.order(:created_at).each do |audit| %>
+        <% audit.audited_changes.each do |field, (old_value, new_value)| %>
+          <tr>
+            <td class="text-center"><%= audit.id %></td>
+            <td class="small"><%= sanitize(resource.class.human_attribute_name(field)) %></td>
+            <td class="small">
+              <div class="audit-value"><%= truncate_audit_value(resource, field, old_value) %></div>
+            </td>
+            <td class="small">
+              <div class="audit-value"><%= truncate_audit_value(resource, field, new_value) %></div>
+            </td>
+            <td class="small">
+              <%= l audit.created_at.to_date %>
+            </td>
+            <td class="small">
+              <%= audit.user&.name %>
+            </td>
+            <td>
+              <%= render Admin::TableActionsComponent.new(audit, actions: []) do |actions| %>
+                <%= actions.action(:show, text: t("shared.show")) %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

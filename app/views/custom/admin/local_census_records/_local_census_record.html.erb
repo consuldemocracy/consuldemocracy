@@ -1,0 +1,17 @@
+<tr id="<%= dom_id(local_census_record) %>" class="local_census_record">
+  <td>
+    <%= humanize_document_type(local_census_record.document_type) %>
+  </td>
+  <td>
+    <%= local_census_record.document_number %>
+  </td>
+  <td>
+    <%= l local_census_record.date_of_birth %>
+  </td>
+  <td>
+    <%= local_census_record.postal_code %>
+  </td>
+  <td>
+    <%= render Admin::TableActionsComponent.new(local_census_record) %>
+  </td>
+</tr>
