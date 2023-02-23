@@ -191,12 +191,10 @@
         margin-bottom: 0;
         text-transform: uppercase;
       }
-    }
 
-    h4 a {
-      @include brand-color;
-
-      &:hover {
+      a {
+        @include brand-color;
+        @include header-font-size(h4);
         text-decoration: none;
       }
     }
@@ -232,6 +230,7 @@
   }
 
   .quiz-question {
+    @include header-font-size(h2);
     margin-bottom: $line-height;
   }
 
