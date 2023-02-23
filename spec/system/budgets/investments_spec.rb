@@ -1498,6 +1498,29 @@ describe "Budget Investments" do
       end
     end
 
+    describe "total amount" do
+      before do
+        budget.update!(voting_style: "approval")
+        heading.update!(price: 2000)
+      end
+
+      scenario "Do not show total budget amount for budget with hidden money" do
+        budget.update!(hide_money: true)
+
+        visit budget_investments_path(budget, heading_id: heading)
+
+        expect(page).not_to have_content "Total budget"
+        expect(page).not_to have_content "€2,000"
+      end
+
+      scenario "Show total budget amount for budget without hidden money" do
+        visit budget_investments_path(budget, heading_id: heading)
+
+        expect(page).to have_content "Total budget"
+        expect(page).to have_content "€2,000"
+      end
+    end
+
     scenario "Highlight voted heading" do
       budget.update!(phase: "balloting")
       user = create(:user, :level_two)

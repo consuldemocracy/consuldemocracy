@@ -4,6 +4,7 @@ class Legislation::Question < ApplicationRecord
   include Notifiable
 
   translates :title, touch: true
+  translates :description, touch: true
   include Globalizable
 
   belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :legislation_questions
