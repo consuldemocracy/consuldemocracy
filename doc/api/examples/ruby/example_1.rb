@@ -1,6 +1,6 @@
 require "http"
 
-API_ENDPOINT = "https://decide.madrid.es/graphql".freeze
+API_ENDPOINT = "https://demo.consulproject.org/graphql".freeze
 
 def make_request(query_string)
   HTTP.headers("User-Agent" => "Mozilla/5.0", accept: "application/json")
