@@ -7,8 +7,8 @@
   <thead>
     <tr>
       <th><%= t("admin.postcodes.postcode.postcode") %></th>
-      <th><%= t("admin.postcodes.postcode.geozone_id") %></th>
       <th><%= t("admin.postcodes.postcode.ward") %></th>
+      <th><%= t("admin.postcodes.postcode.geozone_id") %></th>
       
       <th><%= t("admin.actions.actions") %></th>
     </tr>
@@ -21,7 +21,7 @@
         <td><%= postcode.ward %></td>
         <td><%= postcode.geozone_id %></td>
         <td>
-          <%#= render Admin::TableActionsComponent.new(postcode) %>
+          <%= render Admin::TableActionsComponent.new(postcode) %>
         </td>
       </tr>
     <% end %>

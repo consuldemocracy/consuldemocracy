@@ -1,0 +1,38 @@
+
+*** These modified files were found in JOE when it aborted on Fri Feb 24 18:54:21 2023
+*** JOE was aborted because the terminal closed
+
+*** File '(Unnamed)'
+localhost
+oldmo.local
+
+*** File '(Unnamed)'
+geo
+sans
+logger
+saml
+test.communitychoices.scot
+saml
+test.communitychoices.scot
+dry
+trans
+user_type
+
+*** File '(Unnamed)'
+wards.csv
+wards.csv
+postcodes.rake
+postcodes.rake
+postcodes.rake
+wards.csv
+/home/deploy/attempts/consul/.git/COMMIT_EDITMSG
+custom/budget/ballot.rb
+custom/budget/ballot.rb
+../../custom/budget/ballot.rb
+../../app/models/custom/budget/ballot.rb
+
+*** File '* Startup Log *'
+Processing '/etc/joe/joerc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/joerc

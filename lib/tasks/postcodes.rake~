@@ -8,23 +8,18 @@ logger.info "Something happened"
     CSV.foreach(Rails.root.join("db", "wards.csv"), headers: true) do |row|
      p row
         ward = "init"
-	ward = row["ward"]
+	ward = row["ward"].strip
 
        logger.info "Row being imported is #{row}"
        logger.info "ward should be #{ward}"
        if ward.present?
           geozone = Geozone.find_or_create_by!(name: ward)
-          code = row["postcode"]
-
-          if Postcode.exists?(postcode: code)
-          logger.info "ward is present #{code} postcode exists as #{code}"
-          Postcode.update(postcode: code, ward:ward, geozone_id: geozone.id) if code.present?
-          else
-          Postcode.create!(postcode: code, ward:ward, geozone_id: geozone.id) if code.present?
-        end
-    end
-    end
-
+          code = row["postcode"].delete(' ')
+             logger.info "ward is present #{code} postcode exists as #{code}"
+             Postcode.create!(postcode: code, ward:ward, geozone_id:
+geozone.id) unless Postcode.exists?(postcode: code)
+          end
+       end
   end
 
 end

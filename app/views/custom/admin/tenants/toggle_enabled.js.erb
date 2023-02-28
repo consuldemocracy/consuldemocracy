@@ -1,4 +1,0 @@
-var replacement = $("<%= j render Admin::Tenants::RowComponent.new(@tenant) %>");
-var row = $("#<%= dom_id(@tenant) %>");
-
-row.html(replacement.html()).find(".toggle-switch [type='submit']").focus();
