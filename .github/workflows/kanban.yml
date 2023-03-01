@@ -2,6 +2,7 @@ name: Kanban management
 on:
   pull_request_target:
     types: [opened, reopened]
+permissions: {}
 env:
   MY_GITHUB_TOKEN: ${{ secrets.KANBAN_TOKEN }}
 
