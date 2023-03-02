@@ -16,7 +16,7 @@ module DocumentParser
     else # if not a DNI, just use the document_number, with no variants
       variants << document_number
     end
-    #young scot verification algorithm probably goes here
+
     variants
   end
 
