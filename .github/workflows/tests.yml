@@ -10,6 +10,9 @@ on:
 permissions:
   contents: read
 
+env:
+  TEST_COVERAGE: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' && 1 || '' }}
+
 jobs:
   tests:
     runs-on: ubuntu-latest
@@ -23,7 +26,6 @@ jobs:
           POSTGRES_USER: consul
           POSTGRES_PASSWORD: ""
     env:
-      TEST_COVERAGE: 1
       PGUSER: consul
       POSTGRES_HOST: postgres
       RAILS_ENV: test
@@ -54,6 +56,7 @@ jobs:
           KNAPSACK_PRO_LOG_LEVEL: info
         run: bin/knapsack_pro_rspec
       - name: Coveralls Parallel
+        if: ${{ env.TEST_COVERAGE == 1 }}
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -72,6 +75,7 @@ jobs:
     needs: tests
     steps:
       - name: Finish coveralls
+        if: ${{ env.TEST_COVERAGE == 1 }}
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
