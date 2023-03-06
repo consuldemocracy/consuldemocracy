@@ -77,6 +77,11 @@ class ProposalsController < ApplicationController
     @tag_cloud = tag_cloud
   end
 
+  def map
+    @proposal = Proposal.new
+    @tag_cloud = tag_cloud
+  end
+
   def disable_recommendations
     if current_user.update(recommended_proposals: false)
       redirect_to proposals_path, notice: t("proposals.index.recommendations.actions.success")
