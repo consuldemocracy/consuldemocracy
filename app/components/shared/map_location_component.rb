@@ -16,40 +16,40 @@ class Shared::MapLocationComponent < ApplicationComponent
 
   private
 
-    def map_location_latitude
+    def latitude
       map_location.latitude.presence || Setting["map.latitude"]
     end
 
-    def map_location_longitude
+    def longitude
       map_location.longitude.presence || Setting["map.longitude"]
     end
 
-    def map_location_zoom
+    def zoom
       map_location.zoom.presence || Setting["map.zoom"]
     end
 
-    def map_location_remove_marker_link_id
+    def remove_marker_link_id
       "remove-marker-link-#{dom_id(map_location)}"
     end
 
-    def map_location_remove_marker
+    def remove_marker
       tag.div class: "margin-bottom" do
         link_to remove_marker_label, "#",
-          id: map_location_remove_marker_link_id,
+          id: remove_marker_link_id,
           class: "js-location-map-remove-marker location-map-remove-marker"
       end
     end
 
-    def prepare_map_settings
+    def data
       options = {
         map: "",
-        map_center_latitude: map_location_latitude,
-        map_center_longitude: map_location_longitude,
-        map_zoom: map_location_zoom,
+        map_center_latitude: latitude,
+        map_center_longitude: longitude,
+        map_zoom: zoom,
         map_tiles_provider: Rails.application.secrets.map_tiles_provider,
         map_tiles_provider_attribution: Rails.application.secrets.map_tiles_provider_attribution,
         marker_editable: editable,
-        marker_remove_selector: "##{map_location_remove_marker_link_id}",
+        marker_remove_selector: "##{remove_marker_link_id}",
         latitude_input_selector: "##{map_location_input_id(parent_class, "latitude")}",
         longitude_input_selector: "##{map_location_input_id(parent_class, "longitude")}",
         zoom_input_selector: "##{map_location_input_id(parent_class, "zoom")}",
