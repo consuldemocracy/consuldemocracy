@@ -68,11 +68,6 @@ module CommentableActions
     end
   end
 
-  def map
-    @resource = resource_model.new
-    @tag_cloud = tag_cloud
-  end
-
   private
 
     def track_event

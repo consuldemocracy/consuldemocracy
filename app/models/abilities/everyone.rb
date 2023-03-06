@@ -25,7 +25,7 @@ module Abilities
           id: Legislation::Process.past.published.where(result_publication_enabled: true).ids
       can [:read, :changes, :go_to_version], Legislation::DraftVersion
       can [:read], Legislation::Question
-      can [:read, :map, :share], Legislation::Proposal
+      can [:read, :share], Legislation::Proposal
       can [:search, :comments, :read, :create, :new_comment], Legislation::Annotation
 
       can [:read, :help], ::SDG::Goal
