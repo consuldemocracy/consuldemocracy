@@ -44,7 +44,7 @@ class Shared::MapLocationComponent < ApplicationComponent
     end
 
     def data
-      options = {
+      {
         map: "",
         map_center_latitude: latitude,
         map_center_longitude: longitude,
@@ -56,10 +56,9 @@ class Shared::MapLocationComponent < ApplicationComponent
         latitude_input_selector: "##{map_location_input_id(parent_class, "latitude")}",
         longitude_input_selector: "##{map_location_input_id(parent_class, "longitude")}",
         zoom_input_selector: "##{map_location_input_id(parent_class, "zoom")}",
-        marker_investments_coordinates: investments_coordinates
+        marker_investments_coordinates: investments_coordinates,
+        marker_latitude: map_location.latitude.presence,
+        marker_longitude: map_location.longitude.presence
       }
-      options[:marker_latitude] = map_location.latitude if map_location.latitude.present?
-      options[:marker_longitude] = map_location.longitude if map_location.longitude.present?
-      options
     end
 end
