@@ -181,7 +181,7 @@ module Budgets
       end
 
       def load_map
-        @map_location = MapLocation.load_from_heading(@heading) if @heading.present?
+        @map_location = MapLocation.from_heading(@heading) if @heading.present?
       end
   end
 end
