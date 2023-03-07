@@ -12,14 +12,14 @@
   <% end %>
 <% end %>
 
-<% if @heading && can?(:show, @ballot) %>
+<div id="my_ballot">
   <%= render Budgets::Investments::MyBallotComponent.new(
     ballot: @ballot,
     heading: @heading,
     investment_ids: @investment_ids,
     assigned_heading: @assigned_heading
   ) %>
-<% end %>
+</div>
 
 <%= render Budgets::Investments::ContentBlocksComponent.new(@heading) %>
 
