@@ -42,7 +42,7 @@
 
 <% if feature?(:map) && map_location_available?(@proposal.map_location) %>
   <div class="margin">
-    <%= render_map(@proposal.map_location, "proposal", false, nil) %>
+    <%= render_map(@proposal.map_location, "proposal", nil) %>
   </div>
 <% end %>
 
