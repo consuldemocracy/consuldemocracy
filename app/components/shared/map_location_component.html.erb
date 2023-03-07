@@ -1,5 +1,5 @@
 <%= tag.div(id: dom_id(map_location), class: "map_location map", data: data) %>
 
-<% if editable %>
+<% if editable? %>
   <%= remove_marker %>
 <% end %>

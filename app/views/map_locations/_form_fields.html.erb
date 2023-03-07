@@ -1,7 +1,7 @@
 <%= form.label :map_location, label %>
 <p class="help-text" id="tag-list-help-text"><%= help %></p>
 
-<%= render_map(map_location, parent_class, editable = true, remove_marker_label) %>
+<%= render_map(map_location, parent_class, remove_marker_label) %>
 
 <%= form.fields_for :map_location, map_location do |m_l_fields| %>
   <%= m_l_fields.hidden_field :latitude,
