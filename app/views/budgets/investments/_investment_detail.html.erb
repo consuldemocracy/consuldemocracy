@@ -28,7 +28,7 @@
 
 <% if feature?(:map) && map_location_available?(@investment.map_location) %>
   <div class="margin">
-    <%= render_map(investment.map_location, "budget_investment") %>
+    <%= render_map(investment.map_location) %>
   </div>
 <% end %>
 
