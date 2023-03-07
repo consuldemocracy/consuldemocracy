@@ -1,9 +1,8 @@
 class Shared::MapLocationComponent < ApplicationComponent
-  attr_reader :remove_marker_label, :investments_coordinates, :form
+  attr_reader :investments_coordinates, :form
 
-  def initialize(map_location, remove_marker_label: nil, investments_coordinates: nil, form: nil)
+  def initialize(map_location, investments_coordinates: nil, form: nil)
     @map_location = map_location
-    @remove_marker_label = remove_marker_label
     @investments_coordinates = investments_coordinates
     @form = form
   end
@@ -28,6 +27,10 @@ class Shared::MapLocationComponent < ApplicationComponent
 
     def zoom
       map_location.zoom.presence || Setting["map.zoom"]
+    end
+
+    def remove_marker_label
+      t("proposals.form.map_remove_marker")
     end
 
     def remove_marker_link_id
