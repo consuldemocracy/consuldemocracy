@@ -4,9 +4,6 @@
 <%= render_map(map_location, parent_class, editable = true, remove_marker_label) %>
 
 <%= form.fields_for :map_location, map_location do |m_l_fields| %>
-  <%= m_l_fields.hidden_field :id,
-                              value: map_location.id,
-                              id: map_location_input_id(parent_class, "id") %>
   <%= m_l_fields.hidden_field :latitude,
                               value: map_location.latitude,
                               id: map_location_input_id(parent_class, "latitude") %>
