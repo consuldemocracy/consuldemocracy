@@ -2,7 +2,7 @@ class Shared::MapLocationComponent < ApplicationComponent
   attr_reader :parent_class, :remove_marker_label, :investments_coordinates
   delegate :map_location_input_id, to: :helpers
 
-  def initialize(map_location, parent_class, remove_marker_label, investments_coordinates = nil)
+  def initialize(map_location, parent_class, remove_marker_label: nil, investments_coordinates: nil)
     @map_location = map_location
     @parent_class = parent_class
     @remove_marker_label = remove_marker_label
