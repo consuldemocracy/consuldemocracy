@@ -1,5 +1,3 @@
-require "translator-text"
-
 class RemoteTranslations::Microsoft::Client
   include SentencesParser
   CHARACTERS_LIMIT_PER_REQUEST = 5000
@@ -24,7 +22,7 @@ class RemoteTranslations::Microsoft::Client
   private
 
     def client
-      @client ||= TranslatorText::Client.new(Tenant.current_secrets.microsoft_api_key)
+      @client ||= BingTranslator.new(Tenant.current_secrets.microsoft_api_key)
     end
 
     def request_translation(texts, locale)
@@ -32,7 +30,7 @@ class RemoteTranslations::Microsoft::Client
       split_response = false
 
       if characters_count(texts) <= CHARACTERS_LIMIT_PER_REQUEST
-        response = client.translate(texts, to: locale)
+        response = client.translate_array(texts, to: locale)
       else
         texts.each do |text|
           response << translate_text(text, locale)
@@ -45,27 +43,26 @@ class RemoteTranslations::Microsoft::Client
 
     def translate_text(text, locale)
       fragments_for(text).map do |fragment|
-        client.translate([fragment], to: locale)
+        client.translate_array([fragment], to: locale)
       end.flatten
     end
 
     def parse_response(response, split_response)
-      response.map do |object|
+      response.map do |translation|
         if split_response
-          build_translation(object)
+          build_translation(translation)
         else
-          get_field_value(object)
+          get_field_value(translation)
         end
       end
     end
 
-    def build_translation(objects)
-      objects.map { |object| get_field_value(object) }.join
+    def build_translation(translations)
+      translations.map { |translation| get_field_value(translation) }.join
     end
 
-    def get_field_value(object)
-      text = object.translations[0].text
-      notranslate?(text) ? nil : text
+    def get_field_value(translation)
+      notranslate?(translation) ? nil : translation
     end
 
     def prepare_texts(texts)
