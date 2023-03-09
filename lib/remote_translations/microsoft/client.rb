@@ -5,7 +5,7 @@ class RemoteTranslations::Microsoft::Client
 
   def call(fields_values, locale)
     texts = prepare_texts(fields_values)
-    valid_locale = RemoteTranslations::Microsoft::AvailableLocales.parse_locale(locale)
+    valid_locale = RemoteTranslations::Microsoft::AvailableLocales.app_locale_to_remote_locale(locale)
     request_translation(texts, valid_locale)
   end
 

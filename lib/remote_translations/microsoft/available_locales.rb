@@ -6,28 +6,31 @@ require "json"
 class RemoteTranslations::Microsoft::AvailableLocales
   def self.available_locales
     daily_cache("locales") do
-      remote_available_locales.map(&:first)
+      remote_available_locales.map { |locale| remote_locale_to_app_locale(locale) }
     end
   end
 
-  def self.parse_locale(locale)
-    case locale
-    when :"pt-BR"
-      :pt
-    when :"zh-CN"
-      :"zh-Hans"
-    when :"zh-TW"
-      :"zh-Hant"
-    else
-      locale
-    end
+  def self.app_locale_to_remote_locale(locale)
+    app_locale_to_remote_locale_map[locale] || locale
   end
 
   def self.include_locale?(locale)
-    available_locales.include?(parse_locale(locale).to_s)
+    available_locales.include?(locale.to_s)
   end
 
   private
+
+    def self.remote_locale_to_app_locale(locale)
+      app_locale_to_remote_locale_map.invert[locale] || locale
+    end
+
+    def self.app_locale_to_remote_locale_map
+      {
+        "pt-BR" => "pt",
+        "zh-CN" => "zh-Hans",
+        "zh-TW" => "zh-Hant"
+      }
+    end
 
     def self.remote_available_locales
       host = "https://api.cognitive.microsofttranslator.com"
@@ -44,7 +47,7 @@ class RemoteTranslations::Microsoft::AvailableLocales
 
       result = response.body.force_encoding("utf-8")
 
-      JSON.parse(result)["translation"]
+      JSON.parse(result)["translation"].map(&:first)
     end
 
     def self.daily_cache(key, &block)
