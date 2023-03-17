@@ -1,5 +1,8 @@
 ---
+EnableDefaultLinters: false
 linters:
+  AllowedScriptType:
+    enabled: true
   ClosingErbTagIndent:
     enabled: true
   ErbSafety:
@@ -10,8 +13,10 @@ linters:
     enabled: true
   NoJavascriptTagHelper:
     enabled: true
-  SelfClosingTag:
-    enabled: false
+  ParserErrors:
+    enabled: true
+  RightTrim:
+    enabled: true
   SpaceAroundErbTag:
     enabled: true
   SpaceIndentation:
