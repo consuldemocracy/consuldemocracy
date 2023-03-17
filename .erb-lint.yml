@@ -5,6 +5,8 @@ linters:
     enabled: true
   ClosingErbTagIndent:
     enabled: true
+  CommentSyntax:
+    enabled: true
   ErbSafety:
     enabled: true
   ExtraNewline:
