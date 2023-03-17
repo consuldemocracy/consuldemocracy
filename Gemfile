@@ -100,10 +100,10 @@ group :development do
   gem "capistrano-rails", "~> 1.6.2", require: false
   gem "capistrano3-delayed-job", "~> 1.7.6"
   gem "capistrano3-puma", "~> 5.2.0"
-  gem "erb_lint", "~> 0.0.37", require: false
+  gem "erb_lint", "~> 0.3.1", require: false
   gem "mdl", "~> 0.11.0", require: false
   gem "pronto", "~> 0.11.0", require: false
-  gem "pronto-erb_lint", "~> 0.1.5", require: false
+  gem "pronto-erb_lint", "~> 0.1.6", require: false
   gem "pronto-eslint", "~> 0.11.0", require: false
   gem "pronto-rubocop", "~> 0.11.2", require: false
   gem "pronto-scss", "~> 0.11.0", require: false
