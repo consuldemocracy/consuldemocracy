@@ -127,7 +127,7 @@ Add this to `config/secrets.yml`, under the `production:` section:
 
 Important: Turn on one worker dyno so that emails get sent.
 
-## Optional but recommended:
+## Optional but recommended
 
 ### Install rails\_12factor and specify the Ruby version
 

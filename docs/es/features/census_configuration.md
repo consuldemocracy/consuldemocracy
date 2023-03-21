@@ -1,4 +1,4 @@
-# Configurar conexión con el Censo:
+# Configurar conexión con el Censo
 
 Este servicio tiene como objetivo poder configurar la conexión con el Censo de Ayuntamiento a través del panel de Administración sin necesidad de modificar el código de la aplicación.
 

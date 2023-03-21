@@ -1,8 +1,8 @@
 # Production and Staging servers
 
-## Recommended Minimum System Requirements:
+## Recommended Minimum System Requirements
 
-### 1. Production Server:
+### 1. Production Server
 
 - Distribution: Ubuntu 16.04.X
 - RAM: 32GB
@@ -10,7 +10,7 @@
 - Hard Drive: 20 GB
 - Database: Postgres
 
-### 2. Staging Server:
+### 2. Staging Server
 
 - Distribution: Ubuntu 16.04.X
 - RAM: 16GB

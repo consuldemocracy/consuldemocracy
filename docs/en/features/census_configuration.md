@@ -1,4 +1,4 @@
-# Configure connection to the Census:
+# Configure connection to the Census
 
 The objective of this service is to be able to configure the connection with the Town Hall Census through the Administration panel without having to modify the application code.
 
