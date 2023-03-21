@@ -3,6 +3,7 @@
 ## Configuring your git remotes
 
 If you created your fork correctly and cloned it locally, running:
+
 ```bash
 git remote -v
 ```
@@ -42,6 +43,7 @@ git checkout -b upstream
 ```
 
 Then we can fetch all changes from **consul** remote server with:
+
 ```bash
 git fetch upstream
 ```

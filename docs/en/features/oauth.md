@@ -9,7 +9,8 @@ For each platform, go to their developers section and follow their guides to cre
 ## 2. Set your CONSUL's url
 
 They'll ask you for your CONSUL's auth URL, and as you can see running `rake routes` at your CONSUL repo locally:
-  ```bash
+
+```bash
 user_omniauth_authorize GET|POST /users/auth/:provider(.:format)          users/omniauth_callbacks#passthru {:provider=>/twitter|facebook|google_oauth2/}
 ```
 

@@ -179,6 +179,7 @@ heroku config:set RAILS_MAX_THREADS=3
 ```
 
 I also recommend to set the following:
+
 ```bash
 heroku config:set RAILS_SERVE_STATIC_FILES=enabled
 heroku config:set RAILS_ENV=production

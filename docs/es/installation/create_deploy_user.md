@@ -22,11 +22,13 @@ Creemos un grupo `wheel` y añadamos al usuario `jupiter` al grupo.
 Ahora démosle al grupo `wheel` derechos de superadministración sin necesidad de usar contraseña, esto es importante para que el instalador no se quede parado esperando una contraseña.
 
 Primero debemos abrir el archivo `sudoers`:
+
 ```
 sudo visudo -f /etc/sudoers
 ```
 
 Y añadimos esta línea al final del archivo:
+
 ```
 %wheel ALL=(ALL) NOPASSWD: ALL
 ```
@@ -34,6 +36,7 @@ Y añadimos esta línea al final del archivo:
 Ahora tenemos que dar las claves del servidor al nuevo usuario. No cierre la ventana de la terminal del servidor, porque puede bloquearse si hay un error.
 
 Y escriba los siguientes comandos para crear el archivo necesario donde subir la clave pública:
+
 ```
 su jupiter
 cd ~

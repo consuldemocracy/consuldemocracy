@@ -36,6 +36,7 @@ The information to be filled in is divided into three sections:
   ![Request Data](../../img/remote_census/request-data-en.png)
 
   To help you understand how to fill in each of the fields, we will rely on a supposed WebService that receives a method called  `:get_habita_datos` with the following structure:
+
   ```
   {
     request: {

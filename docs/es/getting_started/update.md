@@ -43,6 +43,7 @@ git checkout -b upstream
 ```
 
 Y actualiza la información del repositorio de consul con las referencias a las ramas, tags, etc..:
+
 ```bash
 git fetch upstream
 ```
