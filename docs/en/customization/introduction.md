@@ -63,7 +63,6 @@ We attach some screenshots of how the application interacts with our users:
 * The translation request, response processing and data saving are delegated to `Delayed Jobs` and as soon as they are processed, the user will be able to read them after page refresh.
 ![Display translated content](../../img/translations/remote_translations/display-translated-content-en.png)
 
-
 ### Available languages for remote translation
 Currently these are all the [available languages](https://api.cognitive.microsofttranslator.com/languages?api-version=3.0) in the translation service:
 ```yml

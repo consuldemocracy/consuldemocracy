@@ -6,7 +6,6 @@ It should be noted that to properly configure this connection will require a tec
 
 Currently the application was designed to send only the **document number** and **document type**. With this new feature is enabled the possibility of sending if necessary the fields **date of birth** and **postal code**.
 
-
 ## Activate feature
 In the section **Configuration > Global Configuration** a new tab **Remote Census Configuration** has been added.
 
@@ -148,6 +147,5 @@ The information to be filled in is divided into three sections:
 
     Example:
     ![Response Data - Path valid response](../../img/remote_census/response-data-path-valid-response-en.png)
-
 
   Once the general data, the necessary fields of the request and "all" fields to validate the response have been filled in correctly, the application will be able to verify any user through the defined WebService.

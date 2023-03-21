@@ -40,7 +40,6 @@ cd .ssh
 nano authorized_keys
 ```
 
-
 Make sure you have [generated a public key](generating_ssh_key.md) in your local terminal.
 
 Open another local terminal window (not in the server) and type:

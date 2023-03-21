@@ -63,7 +63,6 @@ Para aclarar el funcionamiento, se adjuntan unos pantallazos de como interactua 
 * Las peticiones de traducción se delegan a `Delayed Job` y en cuanto haya sido procesada, el usuario después de refrescar su página podrá ver el contenido traducido.
 ![Display translated content](../../img/translations/remote_translations/display-translated-content-es.png)
 
-
 ### Idiomas disponibles para la traducción remota
 Actualmente estos son todos los [idiomas disponibles](https://api.cognitive.microsofttranslator.com/languages?api-version=3.0) en el servicio de traducción:
 ```yml
