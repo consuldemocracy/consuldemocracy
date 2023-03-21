@@ -7,7 +7,7 @@ Permitir a los usuarios de administradores gestionar esta tabla de dos maneras d
   - **Manualmente**: uno por uno a través de una interfaz CRUD.
   - **Automáticamente**: a través de un proceso de importación.
 
-#### Manualmente
+### Manualmente
 Provide a way to manage local census records to administrator users through administration interface.
 
 - Página de censo local
@@ -20,7 +20,7 @@ Funcionalidades:
 1. Búsqueda por número_de_documento: Como local_census_records podría contener muchos registros, hemos añadido una función de búsqueda para permitir a los administradores encontrar los registros existentes por número de documento.
 1. Evitar la introducción de registros duplicados: Se ha añadido una validación de modelo al siguiente par de atributos [:número_de_documento, :tipo_de_documento]
 
-#### Automáticamente
+### Automáticamente
 Permite a los usuarios administradores importar registros del censo local a través de un archivo CSV.
 
 - Página de censo local
