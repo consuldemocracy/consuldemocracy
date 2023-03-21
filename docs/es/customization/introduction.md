@@ -106,7 +106,7 @@ class RemoteTranslationsCaller
   ...
 
 end
-```  
+```
 
 ## Interfaz de traducción
 

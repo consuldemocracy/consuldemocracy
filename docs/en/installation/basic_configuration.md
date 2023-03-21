@@ -32,7 +32,7 @@ If you activate the geozones you can also display an image that represents the a
 
 ## Map to geolocate proposals
 
-You can allow users to place proposals on a map when creating proposals. To do this you have to define which map you want to show.  
+You can allow users to place proposals on a map when creating proposals. To do this you have to define which map you want to show.
 First go to the "Settings" menu and to the "Global Settings" submenu. There you will find three parameters that you will have to fill in:
 
 * Latitude. Latitude to show the map position
