@@ -1,4 +1,4 @@
-## Configuración para los entornos de desarrollo y pruebas (Debian GNU/Linux 9.8)
+# Configuración para los entornos de desarrollo y pruebas (Debian GNU/Linux 9.8)
 
 ## Super usuario
 

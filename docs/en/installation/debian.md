@@ -1,4 +1,4 @@
-## Configuration for development and test environments (Debian GNU/Linux 9.8)
+# Configuration for development and test environments (Debian GNU/Linux 9.8)
 
 ## Superuser
 

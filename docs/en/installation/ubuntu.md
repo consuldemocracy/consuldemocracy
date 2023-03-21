@@ -1,4 +1,4 @@
-## Configuration for development and test environments (Ubuntu 18.04)
+# Configuration for development and test environments (Ubuntu 18.04)
 
 ## System update
 

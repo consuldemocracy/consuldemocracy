@@ -1,4 +1,4 @@
-## Configure connection to the Census:
+# Configure connection to the Census:
 
 The objective of this service is to be able to configure the connection with the Town Hall Census through the Administration panel without having to modify the application code.
 
@@ -7,7 +7,7 @@ It should be noted that to properly configure this connection will require a tec
 Currently the application was designed to send only the **document number** and **document type**. With this new feature is enabled the possibility of sending if necessary the fields **date of birth** and **postal code**.
 
 
-### Activate feature
+## Activate feature
 In the section **Configuration > Global Configuration** a new tab **Remote Census Configuration** has been added.
 
 If we have the feature deactivated we will see an informative text that will indicate us how to activate it:
@@ -17,7 +17,7 @@ To activate the feature you must follow the instructions of the previous image:
 1. Access through the administration panel of your application to the section **Settings > Features** and activate the module **Configure connection to the remote census (SOAP)** as shown below:
 ![Feature enabled](../../img/remote_census/feature-enabled-en.png)
 
-### Configuration
+## Configuration
 Once the feature is activated, we can access the section **Settings > Global Settings** and click on the tab **Remote Census Configuration**.
 In this screen you will be able to fill in all the necessary information to be able to configure the connection with the Census of each Town Hall.
 
