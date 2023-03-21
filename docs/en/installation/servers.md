@@ -3,6 +3,7 @@
 ## Recommended Minimum System Requirements:
 
 ### 1. Production Server:
+
 - Distribution: Ubuntu 16.04.X
 - RAM: 32GB
 - Processor: Quad core
@@ -10,6 +11,7 @@
 - Database: Postgres
 
 ### 2. Staging Server:
+
 - Distribution: Ubuntu 16.04.X
 - RAM: 16GB
 - Processor: Dual core

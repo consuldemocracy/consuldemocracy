@@ -7,6 +7,7 @@ Cabe destacar que para configurar correctamente esta conexión se requerirá de 
 Actualmente la aplicación estaba pensada para enviar solo el **numero de documento** y el **tipo de documento**. Con esta nueva funcionalidad se habilita la posibilidad de enviar en caso de ser necesario los campos **fecha de nacimiento** y **código postal**
 
 ## Activar la funcionalidad
+
 En la sección **Configuración > Configuración Global** se ha añadido una nueva pestaña **Configuración del Censo Remoto**.
 
 Si tenemos la funcionalidad desactivada veremos un texto informativo que nos indicará como activarla:
@@ -17,6 +18,7 @@ Para activar la funcionalidad deberá seguir las instrucciones de la imagen ante
 ![Feature enabled](../../img/remote_census/feature-enabled-es.png)
 
 ## Configuración
+
 Una vez activada la funcionalidad, podremos acceder a la sección **Configuración > Configuración Global** y clicar en la pestaña **Configuración del Censo Remoto**.
 En esta pantalla se podrá rellenar toda la información necesaria para poder configurar la conexión con el Censo de cada Ayuntamiento.
 

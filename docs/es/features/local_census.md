@@ -8,6 +8,7 @@ Permitir a los usuarios de administradores gestionar esta tabla de dos maneras d
 - **Automáticamente**: a través de un proceso de importación.
 
 ## Manualmente
+
 Provide a way to manage local census records to administrator users through administration interface.
 
 - Página de censo local
@@ -22,6 +23,7 @@ Funcionalidades:
 1. Evitar la introducción de registros duplicados: Se ha añadido una validación de modelo al siguiente par de atributos [:número_de_documento, :tipo_de_documento]
 
 ## Automáticamente
+
 Permite a los usuarios administradores importar registros del censo local a través de un archivo CSV.
 
 - Página de censo local

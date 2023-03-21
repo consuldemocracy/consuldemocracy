@@ -3,6 +3,7 @@
 You can configure authentication services with external OAuth suppliers, right now Twitter, Facebook and Google are supported.
 
 ## 1. Create an App on the platform
+
 For each platform, go to their developers section and follow their guides to create an app.
 
 ## 2. Set your CONSUL's url

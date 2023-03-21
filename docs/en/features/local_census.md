@@ -8,6 +8,7 @@ Allow administrators users to manage this table in two different ways:
 - **Automatically**: through an importation process.
 
 ## Manually
+
 Provide a way to manage local census records to administrator users through administration interface.
 
 - Local Census Page
@@ -22,6 +23,7 @@ Features:
 1. Avoid the introduction of duplicated records: A model validation has been added to the following attributes pair [:document_number, :document_type]
 
 ## Automatically
+
 Allow administrator users to import local census records though CSV file.
 
 - Local Census Page
