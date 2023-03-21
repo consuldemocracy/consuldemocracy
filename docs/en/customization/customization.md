@@ -1,7 +1,7 @@
 # Customization
 
 * [Introduction](introduction.md)
-* [Texts & Translations](translations.md)
+* [Translations & Texts](translations.md)
 * [Images](images.md)
 * [Views & Styles](views_and_styles.md)
 * [Javascript](javascript.md)

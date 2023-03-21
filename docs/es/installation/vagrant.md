@@ -34,7 +34,7 @@ Recargue la máquina virtual:
 vagrant reload
 ```
 
-# Ejecutar el servidor
+## Ejecutar el servidor
 
 En su máquina virtual, debe ejecutar la aplicación enlanzándola a su IP local:
 

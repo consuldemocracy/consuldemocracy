@@ -34,7 +34,7 @@ Reload your virtual machine:
 vagrant reload
 ```
 
-# Running the rails server
+## Running the rails server
 
 In your virtual machine, run the application server, binding to your local ip address:
 

@@ -1,9 +1,9 @@
 # Customization
 
 * [Introducción](introduction.md)
-* [Textos & Traducciones](translations.md)
+* [Traducciones y Textos](translations.md)
 * [Imágenes](images.md)
-* [Vistas & Estilos](views_and_styles.md)
+* [Vistas y Estilos](views_and_styles.md)
 * [Javascript](javascript.md)
 * [Modelos](models.md)
 * [Componentes](components.md)

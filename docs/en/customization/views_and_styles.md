@@ -1,8 +1,10 @@
-# Views (HTML)
+# Views & Styles
+
+## Views (HTML)
 
 If you want to change any page HTML  you can just find the correct file under the `app/views` folder and put a copy at `app/views/custom` keeping as well any sub-folder structure, and then apply your customizations. For example if you want to customize `app/views/pages/conditions.html` you'll have to make a copy at `app/views/custom/pages/conditions.html.erb` (note the `pages` subdirectory).
 
-# CSS Styles with SASS
+## CSS Styles with SASS
 
 In order to make changes to any CSS selector (custom style sheets), you can add them directly at `app/assets/stylesheets/custom.scss`. For example to change the header color (`.top-links`) you can just add:
 
