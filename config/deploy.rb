@@ -3,7 +3,15 @@ lock "~> 3.17.1"
 
 def deploysecret(key)
   @deploy_secrets_yml ||= YAML.load_file("config/deploy-secrets.yml")[fetch(:stage).to_s]
-  @deploy_secrets_yml.fetch(key.to_s, "undefined")
+  @deploy_secrets_yml.fetch(key.to_s, "")
+end
+
+def main_deploy_server
+  if deploysecret(:server1) && !deploysecret(:server1).empty?
+    deploysecret(:server1)
+  else
+    deploysecret(:server)
+  end
 end
 
 set :rails_env, fetch(:stage)
