@@ -4,14 +4,15 @@ To provide to administrator users a way to manage the local census database thro
 
 Allow administrators users to manage this table in two different ways:
 
-  - **Manually**: one by one through a CRUD interface.
-  - **Automatically**: through an importation process.
+- **Manually**: one by one through a CRUD interface.
+- **Automatically**: through an importation process.
 
 ## Manually
 Provide a way to manage local census records to administrator users through administration interface.
 
 - Local Census Page
 ![Manage local census](../../img/local_census/manage-local-census-en.png)
+
 - Add new record
 ![Create local census record](../../img/local_census/add-local-census-record-en.png)
 

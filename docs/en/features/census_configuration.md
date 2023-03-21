@@ -49,32 +49,27 @@ The information to be filled in is divided into three sections:
   ```
 
   Required fields for the request:
-
   - **Request method name**: Request method name accepted by the City Census WebService.
 
     Example:
     ![Request Data - Method name](../../img/remote_census/request-data-method-name-en.png)
-
   - **Request Structure**: Structure of the request received by the WebService of the Census of the City Council. The "static" values of this request should be reported. The "dynamic" values related to Document Type, Document Number, Date of Birth and Postal Code should be filled with null value.
 
     Example:
     ![Request Data - Structure](../../img/remote_census/request-data-structure-en.png)
     ![Request Data - Structure](../../img/remote_census/request-data-structure-info-en.png)
-
   - **Path for document type**: Path in the request structure that sends the Document Type.
 
     *NOTE: DO NOT FILL IN if the WebService does not require the Document Type to verify a user.*
 
     Example:
     ![Request Data - Path document type](../../img/remote_census/request-data-path-document-type-en.png)
-
   - **Path for document number**: Path in the request structure that sends the Document Number.
 
     *NOTE: DO NOT FILL IN if the WebService does not require the Document Number to verify a user.*
 
     Example:
     ![Request Data - Path document number](../../img/remote_census/request-data-path-document-number-en.png)
-
   - **Path for date of birth**: Path in the request structure that sends the Date of Birth.
 
     *NOTE: DO NOT FILL IN if the WebService does not require the Date of Birth to verify a user.*
@@ -83,7 +78,6 @@ The information to be filled in is divided into three sections:
 
     Example:
     ![Request Data - Path date of birth](../../img/remote_census/request-data-path-date-of-birth-en.png)
-
   - **Path for Postal Code**: Path in the request structure that sends the Postal Code.
 
     *NOTE: DO NOT FILL IN if the WebService does not require the Postal Code to verify a user.*
@@ -126,37 +120,30 @@ The information to be filled in is divided into three sections:
   ```
 
   Required fields to parse the response:
-
   - **Path for Date of Birth**: In what path of the response is the user's Date of Birth?.
 
     Example:
     ![Response Data - Path date of birth](../../img/remote_census/response-data-path-date-of-birth-en.png)
-
   - **Path for Postal Code**: In what path of the response is the user's Postal Code?.
 
     Example:
     ![Response Data - Path postal code](../../img/remote_census/response-data-path-postal-code-en.png)
-
   - **Path for District**: In what path of the response is the user's District?.
 
     Example:
     ![Response Data - Path district](../../img/remote_census/response-data-path-district-en.png)
-
   - **Path for Gender**: In what path of response is the user's Gender?.
 
     Example:
     ![Response Data - Path Gender](../../img/remote_census/response-data-path-gender-en.png)
-
   - **Path for Name**: In what path of the response is the user's Name?.
 
     Example:
     ![Response Data - Path Name](../../img/remote_census/response-data-path-name-en.png)
-
   - **Path for the Last Name**: In what path of the response is the user's Last Name?.
 
     Example:
     ![Response Data - Path Last Name](../../img/remote_census/response-data-path-last-name-en.png)
-
   - **Condition for detecting a valid response**: What response path has to come informed to be considered a valid response and user verified.
 
     Example:

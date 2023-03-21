@@ -4,14 +4,15 @@ Proporcionar a los usuarios administradores una forma de gestionar la base de da
 
 Permitir a los usuarios de administradores gestionar esta tabla de dos maneras diferentes:
 
-  - **Manualmente**: uno por uno a través de una interfaz CRUD.
-  - **Automáticamente**: a través de un proceso de importación.
+- **Manualmente**: uno por uno a través de una interfaz CRUD.
+- **Automáticamente**: a través de un proceso de importación.
 
 ## Manualmente
 Provide a way to manage local census records to administrator users through administration interface.
 
 - Página de censo local
 ![Manage local census](../../img/local_census/manage-local-census-es.png)
+
 - Añadir un nuevo registro
 ![Create local census record](../../img/local_census/add-local-census-record-es.png)
 
