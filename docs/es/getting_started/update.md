@@ -66,4 +66,4 @@ C. Recibes mensajes de error de git junto con un `Automatic merge failed; fix co
 
 Ahora simplemente sube la rama **upstream** a github y crea un Pull Request, así podrás ver de manera sencilla todos los cambios que se han realizado en el repositorio y verás también como arranca la suite de tests.
 
-Recuerda que siempre puedes comprobar rápidamente los cambios que tienes pendientes de integrar de CONSUL a tu fork sustituyendo **your_org_name** en la url: https://github.com/your_org_name/consul/compare/master...consul:master
+Recuerda que siempre puedes comprobar rápidamente los cambios que tienes pendientes de integrar de CONSUL a tu fork sustituyendo **your_org_name** en la url: <https://github.com/your_org_name/consul/compare/master...consul:master>

@@ -14,4 +14,4 @@ Si quieres sobreescribir alguna imagen debes primero fijarte el nombre que tiene
 
 Puedes encontrar el mapa de la ciudad en [`/app/assets/images/map.jpg`](https://github.com/consul/consul/blob/master/app/assets/images/map.jpg), simplemente reemplazalo con una imagen de los distritos de tu ciudad ([ejemplo](https://github.com/ayuntamientomadrid/consul/blob/master/app/assets/images/map.jpg)).
 
-Después te recomendamos utilizar una herramienta online como http://imagemap-generator.dariodomi.de/ o https://www.image-map.net/ para generar las coordenadas para poder establecer un [image-map](https://www.w3schools.com/tags/tag_map.asp) sobre cada distrito. Estas coordenadas deben ser introducidas en la respectiva Geozona creada en el panel de administración (`/admin/geozones`)
+Después te recomendamos utilizar una herramienta online como <http://imagemap-generator.dariodomi.de/> o <https://www.image-map.net/> para generar las coordenadas para poder establecer un [image-map](https://www.w3schools.com/tags/tag_map.asp) sobre cada distrito. Estas coordenadas deben ser introducidas en la respectiva Geozona creada en el panel de administración (`/admin/geozones`)

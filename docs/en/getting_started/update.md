@@ -66,4 +66,4 @@ C. You get some git errors along with a `Automatic merge failed; fix conflicts a
 
 Now you can just simply push your **upstream** branch to github and create a Pull Request so you can easily check all changes going into your repo, and see your tests suite runs.
 
-Remember you can always quickly check changes that will come from CONSUL to your fork by replacing **your_org_name** on the url: https://github.com/your_org_name/consul/compare/master...consul:master.
+Remember you can always quickly check changes that will come from CONSUL to your fork by replacing **your_org_name** on the url: <https://github.com/your_org_name/consul/compare/master...consul:master>.

@@ -10,11 +10,11 @@ En este listado se muestran, ordenados por votos de forma descendiente, aquellos
 
 ## Cómo probar la funcionalidad
 
-En nuestra instalación en local, si no hemos iniciado sesión, podemos comprobar visitando http://localhost:3000/proposals que no aparece la opción de ordenación "Recomendaciones"
+En nuestra instalación en local, si no hemos iniciado sesión, podemos comprobar visitando <http://localhost:3000/proposals> que no aparece la opción de ordenación "Recomendaciones"
 
 ![Recommendations not logged in](../../img/recommendations/recommendations_not_logged_in.jpg)
 
-Una vez iniciada sesión aparece el menú de ordenación, pero al no tener intereses nos muestra un mensaje "Sigue propuestas para que podamos darte recomendaciones" si lo visitamos en http://localhost:3000/proposals?locale=en&order=recommendations&page=1
+Una vez iniciada sesión aparece el menú de ordenación, pero al no tener intereses nos muestra un mensaje "Sigue propuestas para que podamos darte recomendaciones" si lo visitamos en <http://localhost:3000/proposals?locale=en&order=recommendations&page=1>
 
 ![Recommendations no follows](../../img/recommendations/recommendations_no_follows.jpg)
 

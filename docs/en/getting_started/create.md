@@ -6,7 +6,7 @@ Consul git repo is hosted at Github.com, we recommend using it for your fork's r
 
 2. [Create an Organization](https://help.github.com/articles/creating-a-new-organization-from-scratch/) on Github with the name of your city or the organization that's going to use Consul. **This is not mandatory**, but it will help understand the fork's purpose and future contributions by other users.
 
-3. [Fork Consul](https://help.github.com/articles/fork-a-repo/) using the **fork** button on the top right corner at https://github.com/consul/consul.
+3. [Fork Consul](https://help.github.com/articles/fork-a-repo/) using the **fork** button on the top right corner at <https://github.com/consul/consul>
 
 4. [Clone your fork repository](https://help.github.com/articles/cloning-a-repository/) on to your computer.
 
