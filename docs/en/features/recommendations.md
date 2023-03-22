@@ -3,6 +3,7 @@
 Logged in users can see recommended Debates or Proposals listed with the ordering option "recommendations".
 
 The list shows, ordered by votes descending, those elements that:
+
 1. Have tags that interests the user. Being those tags the ones on the proposals that the user follows.
 2. The user isn't the author.
 3. In the case of proposals: only those that haven't reached the required threshold of votes, hiding as well those that the user is already following.

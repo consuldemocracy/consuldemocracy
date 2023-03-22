@@ -15,6 +15,7 @@ El repositorio git de Consul está hospedado en Github.com, recomendamos lo uses
 ## ¿Porqué hacer el código público?
 
 Recomendamos publicar el código por varias razones:
+
 - **Transparencia**: Debería ser parte de la cultura de aquellas entidades públicas que adopten Consul, así como cualquier organización o grupo.
 - **Soporte**: Si necesitas ayuda técnica, el resto de la comunidad o el equipo de Consul podrán entender y aconsejar mas fácilmente al ver el código implicado.
 - **Colaboración**: Por parte de otros profesionales, ciudadanos, etc...

@@ -3,6 +3,7 @@
 Para Debates y Propuestas los usuarios logueados pueden encontrar elementos recomendados usando el filtro de ordenación "Recomendaciones".
 
 En este listado se muestran, ordenados por votos de forma descendiente, aquellos elementos que:
+
 1. Tengan etiquetas que interesen al usuario. Siendo las etiquetas de su interés aquellas usadas en propuestas que ha seguido.
 2. El usuario no sea el autor de los mismos.
 3. Sólo en el caso de las propuestas: únicamente se muestran aquellas que aún no hayan llegado al umbral de votos requerido, ocultándose además aquellas que el usuario este siguiendo.

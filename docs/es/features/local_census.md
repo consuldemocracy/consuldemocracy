@@ -12,10 +12,10 @@ Permitir a los usuarios de administradores gestionar esta tabla de dos maneras d
 Provide a way to manage local census records to administrator users through administration interface.
 
 - Página de censo local
-![Manage local census](../../img/local_census/manage-local-census-es.png)
+  ![Manage local census](../../img/local_census/manage-local-census-es.png)
 
 - Añadir un nuevo registro
-![Create local census record](../../img/local_census/add-local-census-record-es.png)
+  ![Create local census record](../../img/local_census/add-local-census-record-es.png)
 
 Funcionalidades:
 
@@ -27,7 +27,7 @@ Funcionalidades:
 Permite a los usuarios administradores importar registros del censo local a través de un archivo CSV.
 
 - Página de censo local
-![Manage local census csv](../../img/local_census/manage-local-census-csv-en.png)
+  ![Manage local census csv](../../img/local_census/manage-local-census-csv-en.png)
 
 - Página para importar un CSV
-![Create local census records csv](../../img/local_census/add-local-census-records-csv-en.png)
+  ![Create local census records csv](../../img/local_census/add-local-census-records-csv-en.png)

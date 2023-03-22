@@ -14,8 +14,9 @@ Si tenemos la funcionalidad desactivada veremos un texto informativo que nos ind
 ![Feature disabled](../../img/remote_census/feature-disabled-es.png)
 
 Para activar la funcionalidad deberá seguir las instrucciones de la imagen anterior:
+
 1. Acceder a través del panel de administración de su aplicación a la sección **Configuración > Funcionalidades** y activar el módulo de **Configurar conexión al censo remoto (SOAP)** como se puede ver a continuación:
-![Feature enabled](../../img/remote_census/feature-enabled-es.png)
+  ![Feature enabled](../../img/remote_census/feature-enabled-es.png)
 
 ## Configuración
 
@@ -36,7 +37,7 @@ La información a rellenar esta dividida en tres apartados:
   ![Request Data](../../img/remote_census/request-data-es.png)
 
   Para ayudar a entender como rellenar cada uno de los campos, nos basaremos en un supuesto WebService que recibe un método llamado `:get_habita_datos` con la siguiente estructura:
-  
+
   ```
   {
     request: {

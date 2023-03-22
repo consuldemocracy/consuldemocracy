@@ -12,10 +12,10 @@ Allow administrators users to manage this table in two different ways:
 Provide a way to manage local census records to administrator users through administration interface.
 
 - Local Census Page
-![Manage local census](../../img/local_census/manage-local-census-en.png)
+  ![Manage local census](../../img/local_census/manage-local-census-en.png)
 
 - Add new record
-![Create local census record](../../img/local_census/add-local-census-record-en.png)
+  ![Create local census record](../../img/local_census/add-local-census-record-en.png)
 
 Features:
 
@@ -27,7 +27,7 @@ Features:
 Allow administrator users to import local census records though CSV file.
 
 - Local Census Page
-![Manage local census csv](../../img/local_census/manage-local-census-csv-en.png)
+  ![Manage local census csv](../../img/local_census/manage-local-census-csv-en.png)
 
 - Import CSV
-![Create local census records csv](../../img/local_census/add-local-census-records-csv-en.png)
+  ![Create local census records csv](../../img/local_census/add-local-census-records-csv-en.png)

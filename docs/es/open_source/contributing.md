@@ -9,6 +9,7 @@ Si has visto algún error en la plataforma o directamente en el código, te anim
 Antes de hacerlo, **por favor tómate un tiempo para comprobar los [issues ya existentes](https://github.com/consul/consul/issues) y asegúrate de que lo que estás a punto de reportar no ha sido reportado previamente** por otra persona. De ser así, si tienes más detalles acerca de la incidencia puedes escribir un comentario en la página del issue ‑¡un poco de ayuda puede marcar una gran diferencia!
 
 Para escribir un nuevo issue, ten en cuenta estas recomendaciones para hacerlo más fácil de leer y comprender:
+
 - Intenta usar un título descriptivo.
 - Es buena idea incluir algunas secciones -en caso de que sean necesarias- como los pasos para reproducir el error, el comportamiento o respuesta que cabría esperar, la respuesta que devuelve o capturas de pantalla.
 - También puede ser de ayuda incluir en la descripción tu sistema operativo, versión del navegador que usaste y posibles plugins instalados.
@@ -18,6 +19,7 @@ Para escribir un nuevo issue, ten en cuenta estas recomendaciones para hacerlo m
 [Los issues en Consul](https://github.com/consul/consul/issues) con la etiqueta `PRs-welcome` son funcionalidades bien definidas que están listas para ser implementadas por cualquiera que se ofrezca a ello. Por otra parte, la etiqueta `not-ready` indica las funcionalidades o cambios que aún están pendientes de concretar, por lo que recomendamos no intentar resolverlos hasta que los/as administradores/as lleguen a una resolución.
 
 Te sugerimos seguir los siguientes pasos para facilitar el seguimiento de los cambios que vayas a hacer:
+
 - Primero, añade un comentario en el issue para notificar que vas resolverlo. Si el issue tiene a alguien asignado significa que ya hay alguien encargado de él.
 - Crea un fork del proyecto.
 - Crea una rama de funcionalidad basada en la rama `master`. Para identificarla más fácilmente, puedes nombrarla con el número del issue seguido de un nombre conciso y descriptivo (por ejemplo: `123-fix_proposals_link`).
