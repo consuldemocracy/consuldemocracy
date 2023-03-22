@@ -10,7 +10,7 @@ git remote -v
 
 it should output something alike:
 
-> origin  git@github.com:your_user_name/consul.git (fetch)<br/>
+> origin  git@github.com:your_user_name/consul.git (fetch)\
 > origin  git@github.com:your_user_name/consul.git (push)
 
 Now we have to add CONSUL's github as upstream remote with:
@@ -27,9 +27,9 @@ git remote -v
 
 again you should get:
 
-> upstream  git@github.com:consul/consul.git (fetch)<br/>
-> upstream  git@github.com:consul/consul.git (push)<br/>
-> origin  git@github.com:your_user_name/consul.git (fetch)<br/>
+> upstream  git@github.com:consul/consul.git (fetch)\
+> upstream  git@github.com:consul/consul.git (push)\
+> origin  git@github.com:your_user_name/consul.git (fetch)\
 > origin  git@github.com:your_user_name/consul.git (push)
 
 ## Pulling changes from CONSUL

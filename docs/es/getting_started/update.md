@@ -10,7 +10,7 @@ git remote -v
 
 deberías ver algo como:
 
-> origin  git@github.com:your_user_name/consul.git (fetch)<br/>
+> origin  git@github.com:your_user_name/consul.git (fetch)\
 > origin  git@github.com:your_user_name/consul.git (push)
 
 Ahora debes añadir el repositorio git de CONSUL como servidor remoto con:
@@ -27,9 +27,9 @@ git remote -v
 
 deberías recibir algo como:
 
-> upstream  git@github.com:consul/consul.git (fetch)<br/>
-> upstream  git@github.com:consul/consul.git (push)<br/>
-> origin  git@github.com:your_user_name/consul.git (fetch)<br/>
+> upstream  git@github.com:consul/consul.git (fetch)\
+> upstream  git@github.com:consul/consul.git (push)\
+> origin  git@github.com:your_user_name/consul.git (fetch)\
 > origin  git@github.com:your_user_name/consul.git (push)
 
 ## Obteniendo cambios de consul
