@@ -26,13 +26,13 @@ Aparte de estos directorios también cuentas con ciertos ficheros para:
 
 Este servicio tiene como objetivo poder ofrecer todos los contenidos dinámicos de la aplicación (propuestas, debates, inversiones presupuestarias y comentarios) en diferentes idiomas sin la necesidad de que un usuario ó un administrador haya creado cada una de sus traducciones.
 
-Cuando un usuario accede a una pantalla con un idioma donde parte del contenido dinámico que esta visualizando no tiene traducciones, dispondrá de un botón para solicitar la traducción de todo el contenido. Este contenido se enviará a un traductor automático (en este caso [Microsoft TranslatorText](https://azure.microsoft.com/es-es/services/cognitive-services/translator-text-api/)) y en cuanto se obtenga la respuesta, todas estas traducciones estarán disponibles para cualquier usuario.
+Cuando un usuario accede a una pantalla con un idioma donde parte del contenido dinámico que esta visualizando no tiene traducciones, dispondrá de un botón para solicitar la traducción de todo el contenido. Este contenido se enviará a un traductor automático (en este caso [Microsoft TranslatorText](https://azure.microsoft.com/es-es/products/cognitive-services/translator/)) y en cuanto se obtenga la respuesta, todas estas traducciones estarán disponibles para cualquier usuario.
 
 #### Como empezar
 Para poder utilizar esta funcionalidad es necesario realizar los siguientes pasos:
 1. Disponer de una api key para conectarse con el servicio de traducción. Para ello necesitamos una [cuenta en Azure](https://azure.microsoft.com/es-es/)
-1. Una vez que haya iniciado sesión en el portal de Azure, subscríbase a Translator Text API en Microsoft Cognitive Service.
-1. Una vez subscrito al servicio de Translator Text, tendrá accesibles 2 api keys en la sección **RESOURCE MANAGEMENT > Keys** que serán necesarias para la configuración del servicio de traducciones en su aplicación.
+1. Una vez que haya iniciado sesión en el portal de Azure, subscríbase a Traductor en Cognitive Services.
+1. Una vez subscrito al servicio de Translator Text, tendrá accesibles 2 api keys en la sección **Administración de recursos > Claves y punto de conexión** que serán necesarias para la configuración del servicio de traducciones en su aplicación.
 
 #### Configuración
 Para activar el servicio de traducciones en su aplicación debe completar los siguientes pasos
@@ -65,41 +65,28 @@ Para aclarar el funcionamiento, se adjuntan unos pantallazos de como interactua 
 
 
 #### Idiomas disponibles para la traducción remota
-Actualmente estos son todos los [idiomas disponibles](https://docs.microsoft.com/es-es/azure/cognitive-services/translator/quickstart-ruby-languages) en el servicio de traducción:
+Actualmente estos son todos los [idiomas disponibles](https://api.cognitive.microsofttranslator.com/languages?api-version=3.0) en el servicio de traducción:
 ```yml
-["af", "ar", "bg", "bn", "bs", "ca", "cs", "cy", "da", "de", "el", "en", "es", "et", "fa", "fi", "fil", "fj", "fr", "he", "hi", "hr", "ht", "hu", "id", "is", "it", "ja", "ko", "lt", "lv", "mg", "ms", "mt", "mww", "nb", "nl", "otq", "pl", "pt", "ro", "ru", "sk", "sl", "sm", "sr-Cyrl", "sr-Latn", "sv", "sw", "ta", "te", "th", "tlh", "to", "tr", "ty", "uk", "ur", "vi", "yua", "yue", "zh-Hans", "zh-Hant"]
+["af", "am", "ar", "as", "az", "ba", "bg", "bn", "bo", "bs", "ca", "cs", "cy", "da", "de", "dv", "el", "en", "es", "et", "eu", "fa", "fi", "fil", "fj", "fo", "fr", "fr-CA", "ga", "gl", "gu", "ha", "he", "hi", "hr", "hsb", "ht", "hu", "hy", "id", "ig", "ikt", "is", "it", "iu", "iu-Latn", "ja", "ka", "kk", "km", "kmr", "kn", "ko", "ku", "ky", "ln", "lo", "lt", "lug", "lv", "lzh", "mg", "mi", "mk", "ml", "mn-Cyrl", "mn-Mong", "mr", "ms", "mt", "mww", "my", "nb", "ne", "nl", "nso", "nya", "or", "otq", "pa", "pl", "prs", "ps", "pt", "pt-PT", "ro", "ru", "run", "rw", "sk", "sl", "sm", "sn", "so", "sq", "sr-Cyrl", "sr-Latn", "st", "sv", "sw", "ta", "te", "th", "ti", "tk", "tlh-Latn", "tlh-Piqd", "tn", "to", "tr", "tt", "ty", "ug", "uk", "ur", "uz", "vi", "xh", "yo", "yua", "yue", "zh-Hans", "zh-Hant", "zu"]
 ```
-De todos los idiomas que actualmente tiene Consul definidos(`available_locales`) en `config/application.rb` no están incluidos en la lista anterior y por lo tanto no se ofrece servicio de traducción para los siguientes idiomas:
-```yml
-["val", "gl", "sq"]
-```
+De todos los idiomas que actualmente tiene Consul definidos (`available_locales`) en `config/application.rb` el único que no está en la lista anterior y por lo tanto no se ofrece servicio de traducción es el valenciano `["val"]`.
 
 #### Costes
-El servicio de traducción utilizado tiene los [precios](https://azure.microsoft.com/es-es/pricing/details/cognitive-services/translator-text-api/) más competitivos del mercado.
-El precio por cada 1 Millón de caracteres traducidos asciende a 8,43 € y sin ningún tipo de coste fijo al mes.
-La competencia Google y DeepL tienen un precio aproximado de entre 16,00 € y 20,00 € por cada 1 Millón de caracteres más un fijo mensual.
+El servicio de traducción utilizado tiene los [precios](https://azure.microsoft.com/es-es/pricing/details/cognitive-services/translator/) más competitivos del mercado.
+El precio por cada 1 Millón de caracteres traducidos asciende a 10 $ y sin ningún tipo de coste fijo al mes.
 
-Aunque se han tomado medidas técnicas para evitar un mal uso de este servicio, recomendamos la creación de Alertas que ofrece Azure para que un Administrador pueda ser notificado en el caso de detectar un uso fuera de lo común del servicio.
+Aunque se han tomado medidas técnicas para evitar un mal uso de este servicio, recomendamos la creación de Alertas que ofrece Azure para que un Administrador pueda ser notificado en el caso de detectar un uso fuera de lo común del servicio. Este servicio tiene un coste de 0,10 $ al mes.
 
 Para crear una Alerta en Azure debemos seguir los siguientes pasos:
 1. Inicie sesión en **Azure Portal**.
-1. Registrar los proveedores de recursos necesarios para crear Alertas
-  1. En el menú de Azure Portal, seleccione **Todos los servicios**.
-  1. En el cuadro **Todos los servicios**, escriba **suscripción** y, a continuación, seleccione **Suscripciones**.
-  1. Seleccione la suscripción en la lista de suscripciones para verla.
-  1. Seleccione **Proveedores de recursos** y consulte la lista de proveedores de recursos disponibles.
-  1. Entre los proveedores de recursos debemos seleccionar **microsoft.insights** y clicar sobre el botón **Registrarse**
-1. Crear nueva regla de Alerta:
-  1. En el menú de Azure Portal, seleccione **Todos los servicios**.
-  1. En el cuadro **Todos los servicios**, escriba **suscripción** y, a continuación, seleccione **Suscripciones**.
-  1. Seleccione la suscripción en la lista de suscripciones para verla.
-  1. Seleccione **Recursos** y acceda al recurso creado de traducciones del tipo **Cognitive Services**
-  1. En la sección **Supervisión** seleccionamos **Alertas** y accedemos a **Nueva regla de alertas**
-  1. Seleccionamos el **Recurso** sobre el cual queremos añadir la Alerta (si hemos seguido los pasos anteriores ya debería estar seleccionado)
-  1. Agregamos una **Condición**. En este caso la que nos interesa tiene como nombre `Characters Translated`. Una vez seleccionada debemos definir la lógica de la Alerta para que se ajuste a nuestras necesidades. Ej: Rellene el campo "Operador" con el valor "Mayor que", rellene el campo "Tipo de Agregación" con el valor "Total" y por último rellene el campo "Valor del umbral" por el número de caracteres que consideramos que deben traducirse antes de ser notificados. En esta sección también se puede configurar el periodo de tiempo y la frecuencia de evaluación.
-  1. Para poder ser notificados tenemos que crear un **Action Group** y asociarla a esta Alerta que estamos creando. Para ello accedemos al botón de **Crear** y rellenamos el formulario. Como se puede observar hay diferentes tipos de acciones, debemos seleccionar **Correo electrónico/SMS/Insertar/Voz** y configurar la opción que consideremos conveniente según nuestras necesidades.
+1. Accede al servicio **Traductor** creado anteriormente.
+1. Accede en el menu lateral a **Supervisión > Alertas**:
+  1. Accedemos a **Crear regla de alertas**
+  1. En **Selección de una señal** seleccionamos `Text Characters Translated`
+  1. Una vez seleccionada debemos definir la lógica de la Alerta para que se ajuste a nuestras necesidades. Ej: Rellene el campo "Operador" con el valor "Mayor que", rellene el campo "Tipo de Agregación" con el valor "Total" y por último rellene el campo "Valor del umbral" por el número de caracteres que consideramos que deben traducirse antes de ser notificados. En esta sección también se puede configurar el periodo de tiempo y la frecuencia de evaluación.
+  1. Para poder ser notificados tenemos que crear un **Grupo de Acciones** y asociarla a esta Alerta que estamos creando. Para ello accedemos al botón de **Crear** y rellenamos el formulario. Como se puede observar hay diferentes tipos de acciones, debemos seleccionar **Correo electrónico/SMS/Insertar/Voz** y configurar la opción que consideremos conveniente según nuestras necesidades.
   1. Una vez creado este grupo de acciones, ya queda directamente asociado a la regla que estamos creando.
-  1. Por último ya solo queda añadir un nombre y clicar sobre el botón **Crear regla de alertas**
+  1. Por último ya solo queda añadir un nombre y clicar sobre el botón **Revisar y crear**
 
 #### Añadir un nuevo servicio de traducción
 En el caso de que se quieran integrar más servicios de traducción por cualquier motivo (aparece un nuevo en el mercado más competitivo, se quiere cambiar para contemplar los idiomas que actualmente no tienen soporte, etc) se ha dejado preparado el código para poder añadirlo con las mínimas modificaciones posibles.
