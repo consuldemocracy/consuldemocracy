@@ -1,6 +1,6 @@
 # Crear un usuario para hacer la instalación
 
-[El instalador](https://github.com/consul/installer) de forma predeterminada se conecta como el usuario `root` sólo para crear un usuario` deploy`. Este usuario `deploy` es el que instala todas las librerías. Si no tiene acceso `root`, por favor pídale a su administrador de sistemas que siga estas instrucciones para crear un usuario manualmente.
+[El instalador](https://github.com/consul/installer) de forma predeterminada se conecta como el usuario `root` sólo para crear un usuario `deploy`. Este usuario `deploy` es el que instala todas las librerías. Si no tiene acceso `root`, por favor pídale a su administrador de sistemas que siga estas instrucciones para crear un usuario manualmente.
 
 Puede crear un usuario llamado `deploy` o utilizar cualquier otro nombre. Como ejemplo, vamos a crear un usuario llamado `jupiter`.
 
