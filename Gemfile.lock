@@ -1,7 +1,6 @@
 GEM
   remote: https://rails-assets.org/
   specs:
-    rails-assets-leaflet (1.5.1)
     rails-assets-markdown-it (9.0.1)
 
 GEM
@@ -327,6 +326,8 @@ GEM
       kramdown (~> 2.0)
     launchy (2.5.0)
       addressable (~> 2.7)
+    leaflet-rails (1.9.3)
+      rails (>= 4.2.0)
     letter_opener (1.8.1)
       launchy (>= 2.2, < 3)
     letter_opener_web (2.0.0)
@@ -717,6 +718,7 @@ DEPENDENCIES
   kaminari (~> 1.2.2)
   knapsack_pro (~> 3.3.1)
   launchy (~> 2.5.0)
+  leaflet-rails (~> 1.9.3)
   letter_opener_web (~> 2.0.0)
   mdl (~> 0.11.0)
   mini_magick (~> 4.11.0)
@@ -735,7 +737,6 @@ DEPENDENCIES
   pronto-scss (~> 0.11.0)
   puma (~> 4.3.12)
   rails (= 6.0.6.1)
-  rails-assets-leaflet!
   rails-assets-markdown-it (~> 9.0.1)!
   recipient_interceptor (~> 0.3.1)
   redcarpet (~> 3.5.1)
