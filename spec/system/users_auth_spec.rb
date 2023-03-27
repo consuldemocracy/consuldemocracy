@@ -737,7 +737,7 @@ describe "Users" do
 
     expect(page).to have_content "Your password is expired"
 
-    fill_in "Current password", with: "judgmentday"
+    fill_in "Current password", with: "123456789"
     fill_in "New password", with: "123456789"
     fill_in "Password confirmation", with: "123456789"
     click_button "Change your password"
