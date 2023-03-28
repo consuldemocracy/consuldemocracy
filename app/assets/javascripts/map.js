@@ -117,7 +117,7 @@
         return "<a href='/budgets/" + data.budget_id + "/investments/" + data.investment_id + "'>" + data.investment_title + "</a>";
       };
       mapCenterLatLng = new L.LatLng(mapCenterLatitude, mapCenterLongitude);
-      map = L.map(element.id).setView(mapCenterLatLng, zoom);
+      map = L.map(element.id, { scrollWheelZoom: false }).setView(mapCenterLatLng, zoom);
       App.Map.maps.push(map);
       L.tileLayer(mapTilesProvider, {
         attribution: mapAttribution
