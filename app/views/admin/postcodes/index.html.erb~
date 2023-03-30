@@ -1,0 +1,29 @@
+<%= link_to t("admin.postcodes.index.create"),
+              new_admin_postcode_path, class: "button float-right" %>
+
+<h2 class="inline-block"><%= t("admin.postcodes.index.title") %></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t("admin.postcodes.postcode.postcode") %></th>
+      <th><%= t("admin.postcodes.postcode.ward") %></th>
+      <th><%= t("admin.postcodes.postcode.geozone_id") %></th>
+      
+      <th><%= t("admin.actions.actions") %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @postcodes.each do |postcode| %>
+      <tr id="<%= dom_id(postcode) %>">
+        <td><%= postcode.postcode %></td>
+        <td><%= postcode.ward %></td>
+        <td><%= postcode.geozone_id %></td>
+        <td>
+          <%= render Admin::TableActionsComponent.new(postcode) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -9,9 +9,7 @@
       <%= f.select(:document_type,
                    [[humanize_document_type("1"), 1],
                     [humanize_document_type("2"), 2],
-                    [humanize_document_type("3"), 3],
-                    [humanize_document_type("4"), 4]]) %>
-
+                    [humanize_document_type("3"), 3]]) %>
     </div>
     <div class="small-12 medium-5">
       <%= f.text_field :document_number %>

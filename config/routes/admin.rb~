@@ -247,8 +247,6 @@ namespace :admin do
 
   resources :geozones, only: [:index, :new, :create, :edit, :update, :destroy]
 
-  resources :postcodes, only: [:index, :new, :create, :edit, :update, :destroy]
-
   namespace :site_customization do
     resources :pages, except: [:show] do
       resources :cards, except: [:show], as: :widget_cards

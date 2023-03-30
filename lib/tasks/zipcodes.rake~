@@ -1,0 +1,14 @@
+namespace :db do
+   task zipcodes: :environment do
+     Zipcode.destroy_all
+ 
+    CSV.foreach("db/zipcodeswards.csv", headers: true) do |line|
+      ward = line.to_hash["Ward"]
+      if ward.present?
+        geozone = Geozone.find_or_create_by!(name: ward)
+
+        code = line.to_hash["Postcode"]
+        postcode.create!(code: code, geozone_id: geozone.id) if code.present?
+      end
+  end
+end
