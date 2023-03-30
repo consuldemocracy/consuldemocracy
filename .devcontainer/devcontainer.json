@@ -14,7 +14,7 @@
   "forwardPorts": [3000, 5432],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "sudo apt update && sudo apt upgrade -y && sudo apt-get install cmake -y && sudo apt-get install nodejs -y && bundle && cp config/database.yml.example config/database.yml && echo 'Add the following values to config/database.yml\nhost: db\nusername: postgres\npassword: postgres\n\n' && echo -e 'Then run:\nbin/rake db:create\nbin/rake db:setup\nbin/rake db:dev_seed'"
+  "postCreateCommand": "sudo apt update && sudo apt upgrade -y && sudo apt-get install cmake -y && sudo apt-get install nodejs -y && bundle"
 
   // Configure tool-specific properties.
   // "customizations": {},
