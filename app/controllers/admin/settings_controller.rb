@@ -11,6 +11,9 @@ class Admin::SettingsController < Admin::BaseController
     @remote_census_response_settings = all_settings["remote_census.response"]
     @uploads_settings = all_settings["uploads"]
     @sdg_settings = all_settings["sdg"]
+    @cosla_settings = all_settings["cosla_setting"]
+    @cosla_features = all_settings["cosla_feature"]
+    puts all_settings["cosla_feature"]
   end
 
   def update

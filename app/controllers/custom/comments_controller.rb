@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  include SettingsHelper
   before_action :authenticate_user!, only: [:create, :hide, :vote]
   before_action :load_commentable, only: :create
   before_action :verify_resident_for_commentable!, only: :create
@@ -52,26 +53,57 @@ class CommentsController < ApplicationController
     set_comment_flags(@comment.subtree)
   end
 
+ def openaimoderate(text_string)
+     thresh = Rails.application.secrets.openai_thresh
+     openai_key = Rails.application.secrets.openai_key
+     client = OpenAI::Client.new(access_token: openai_key)
+     body = text_string
+     response = client.moderations(parameters: { input: body })
+     puts "is this bodytext to be moderated"
+    is_flagged = response["results"][0]["flagged"]
+    puts is_flagged
+    scores = response["results"][0]["category_scores"]
+    puts scores
+    total_score=0
+    scores.each do |cat, score|
+    total_score += score
+      if score > thresh
+        flag_score += 2
+        
+        flag_cat += cat
+        puts "category #{cat} score #{score}"
+      end
+    end
+    end
+    puts "threshold", thresh, "flags and scores:",is_flagged, flag_score, flag_cat
+    return { flagged: is_flagged, score: flag_score, category: flag_cat }
+
+ end
+
  def moderate
     # setup
-    thresh = Rails.application.secrets.openai_thresh
- # set the threshold for flagging comments
-    openai_key = Rails.application.secrets.openai_key
-    client = OpenAI::Client.new(access_token: openai_key)
+        
     is_flagged = false
     flag_score = 0
     flag_cat = ""
-   
+    if feature?(:cosla)
+      puts "going to do it"
+    end
+
+    thresh = Rails.application.secrets.openai_thresh
+    openai_key = Rails.application.secrets.openai_key
+    client = OpenAI::Client.new(access_token: openai_key)
     body = @comment.body
     puts "moderating comment  body: #{body}"
-
+    
     # moderate
     #test code to avoid using openai
     if body == "Bad Bad Bad Comment"
-    is_flagged = "true" 
-    total_score = 300
-    flag_score = 300
-    else
+      is_flagged = "true" 
+      total_score = 300
+      flag_score = 300
+    else 
+    response = openaimoderate(body)
     response = client.moderations(parameters: { input: body })
     puts "is this bodytext to be moderated"
     is_flagged = response["results"][0]["flagged"]

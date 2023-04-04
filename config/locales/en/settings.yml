@@ -225,3 +225,11 @@ en:
         budgets_description: Allow participatory budgets to be linked to Sustainable Development Goals
         legislation: Related SDG in collaborative legislation
         legislation_description: Allow collaborative legislation to be linked to Sustainable Development Goals
+    cosla_feature_settings:
+        openai_moderation_api_key: Openai moderation key
+        openai_moderation_api_key_description: Openai api key required to access openai models
+        openai_moderation_threshhold: Openai flag threshold
+        openai_moderation_threshhold_description: Value to be used for flagging or hiding content
+    cosla_settings:
+        openai: openai moderation
+        

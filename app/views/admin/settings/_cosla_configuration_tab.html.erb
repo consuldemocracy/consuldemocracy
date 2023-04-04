@@ -1,0 +1,9 @@
+<% if feature?(:cosla) %>
+  <h2><%= t("admin.settings.index.cosla.title") %></h2>
+  <%= render "featured_settings_table", features: @cosla_features, tab: "#tab-cosla-configuration" %>
+  <%= render "settings_table", settings: @cosla_settings, setting_name: "Setting", tab: "#tab-cosla-configuration" %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.settings.index.cosla.how_to_enable") %>
+  </div>
+<% end %>

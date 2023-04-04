@@ -8,7 +8,7 @@ class Setting < ApplicationRecord
   end
 
   def type
-    if %w[feature process proposals map html homepage uploads sdg machine_learning].include? prefix
+    if %w[feature process proposals map html homepage uploads sdg machine_learning cosla_setting cosla_feature].include? prefix
       prefix
     elsif %w[remote_census].include? prefix
       key.rpartition(".").first

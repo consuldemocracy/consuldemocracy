@@ -1335,6 +1335,9 @@ en:
         sdg:
           title: SDG configuration
           how_to_enable: 'To show the configuration options from Sustainable Development Goals you must enable "SDG" on "Features" tab.'
+        cosla:
+          title: Experimental configuration
+          how_to_enable: 'To show the configuration options from Cosla Experimental you must enable Cosla" on "Features" tab.'
       remote_census_general_name: General Information
       remote_census_request_name: Request Data
       remote_census_response_name: Response Data

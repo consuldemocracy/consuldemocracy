@@ -24,7 +24,17 @@ class Setting
       else
         consul_defaults.merge({
           # Overwrite default CONSUL settings or add new settings here
-        })
+          "cosla_feature.openai": true,
+          "cosla_feature.header": false,
+          "cosla_feature.govnotify": false,
+          # Enable openai moderation. Requires api key from openai and ruby-openai gem
+          "cosla_setting.openai_moderation_api_key": "",
+          # openai moderation setting,
+          "cosla_setting.openai_moderation_threshhold": "1.5",
+          "cosla_setting.govnotify_api_key":"",
+          # api key for gov notify service,
+          "cosla_setting.openai_moderation.test":"A very bad phrase"
+                })
       end
     end
   end
