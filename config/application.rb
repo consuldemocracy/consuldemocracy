@@ -138,6 +138,9 @@ module Consul
 
     config.paths["app/views"].unshift(Rails.root.join("app", "views", "custom"))
 
+    # Set to true to enable devise user lockable feature
+    config.devise_lockable = Rails.application.secrets.devise_lockable
+
     # Set to true to enable managing different tenants using the same application
     config.multitenancy = Rails.application.secrets.multitenancy
   end

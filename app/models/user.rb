@@ -3,8 +3,9 @@ class User < ApplicationRecord
   attribute :registering_from_web, default: false
 
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable,
-         :trackable, :validatable, :omniauthable, :password_expirable, :secure_validatable, :lockable,
+         :trackable, :validatable, :omniauthable, :password_expirable, :secure_validatable,
          authentication_keys: [:login]
+  devise :lockable if Rails.application.config.devise_lockable
 
   acts_as_voter
   acts_as_paranoid column: :hidden_at
