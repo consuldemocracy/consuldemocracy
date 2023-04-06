@@ -61,8 +61,9 @@ def openaimoderate(text_string)
   is_hidden = false
   is_flagged = false
   flag_score = 0
+  flag_cat = ""
   if openai_key.nil?
-    return
+    return { hidden: is_hidden, flagged: is_flagged, flags: flag_score, category: "missing api key" }
   end
   
   client = OpenAI::Client.new(access_token: openai_key)
@@ -72,7 +73,7 @@ def openaimoderate(text_string)
   scores = response["results"][0]["category_scores"]
   puts scores
   total_score = 0 
-  flag_cat = ""
+  
   scores.each do |cat, score|
     total_score += score
     if score > thresh
@@ -95,7 +96,7 @@ end
     if feature?(:cosla)
       puts "going to do it"
     end
-
+    thresh = 1.5
     thresh = Rails.application.secrets.openai_thresh
     openai_key = Rails.application.secrets.openai_key
 
