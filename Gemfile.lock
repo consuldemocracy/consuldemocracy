@@ -1,6 +1,11 @@
 GEM
-  remote: https://rubygems.org/
   remote: https://rails-assets.org/
+  specs:
+    rails-assets-leaflet (1.5.1)
+    rails-assets-markdown-it (9.0.1)
+
+GEM
+  remote: https://rubygems.org/
   specs:
     actioncable (6.0.6.1)
       actionpack (= 6.0.6.1)
@@ -457,8 +462,6 @@ GEM
       bundler (>= 1.3.0)
       railties (= 6.0.6.1)
       sprockets-rails (>= 2.0.0)
-    rails-assets-leaflet (1.5.1)
-    rails-assets-markdown-it (9.0.1)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -768,4 +771,4 @@ DEPENDENCIES
   wkhtmltopdf-binary (~> 0.12.6)
 
 BUNDLED WITH
-   2.1.4
+   2.2.33
