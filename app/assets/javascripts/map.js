@@ -7,6 +7,9 @@
         App.Map.initializeMap(this);
       });
     },
+    attributionPrefix: function() {
+      return '<a href="https://leafletjs.com" title="A JavaScript library for interactive maps">Leaflet</a>';
+    },
     destroy: function() {
       App.Map.maps.forEach(function(map) {
         map.off();
@@ -118,6 +121,7 @@
       };
       mapCenterLatLng = new L.LatLng(mapCenterLatitude, mapCenterLongitude);
       map = L.map(element.id, { scrollWheelZoom: false }).setView(mapCenterLatLng, zoom);
+      map.attributionControl.setPrefix(App.Map.attributionPrefix());
       App.Map.maps.push(map);
       L.tileLayer(mapTilesProvider, {
         attribution: mapAttribution

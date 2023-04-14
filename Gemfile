@@ -36,6 +36,7 @@ gem "jquery-fileupload-rails"
 gem "jquery-rails", "~> 4.5.0"
 gem "jquery-ui-rails", "~> 6.0.1"
 gem "kaminari", "~> 1.2.2"
+gem "leaflet-rails", "~> 1.9.3"
 gem "mini_magick", "~> 4.11.0"
 gem "omniauth", "~> 2.1.0"
 gem "omniauth-facebook", "~> 9.0.0"
@@ -66,7 +67,6 @@ gem "wicked_pdf", "~> 2.6.3"
 gem "wkhtmltopdf-binary", "~> 0.12.6"
 
 source "https://rails-assets.org" do
-  gem "rails-assets-leaflet"
   gem "rails-assets-markdown-it", "~> 9.0.1"
 end
 
