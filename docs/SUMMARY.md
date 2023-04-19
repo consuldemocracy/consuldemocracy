@@ -30,9 +30,9 @@
 
 * [Customization](en/customization/customization.md)
   * [Introduction](en/customization/introduction.md)
-  * [Texts & Translations](en/customization/translations.md)
+  * [Translations and Texts](en/customization/translations.md)
   * [Images](en/customization/images.md)
-  * [Views & Styles](en/customization/views_and_styles.md)
+  * [Views and Styles](en/customization/views_and_styles.md)
   * [Javascript](en/customization/javascript.md)
   * [Models](en/customization/models.md)
   * [Components](en/customization/components.md)
@@ -83,9 +83,9 @@
 
 * [Personalización](es/customization/customization.md)
   * [Introducción](es/customization/introduction.md)
-  * [Textos & Traducciones](es/customization/translations.md)
+  * [Traducciones y Textos](es/customization/translations.md)
   * [Imágenes](es/customization/images.md)
-  * [Vistas & Estilos](es/customization/views_and_styles.md)
+  * [Vistas y Estilos](es/customization/views_and_styles.md)
   * [Javascript](es/customization/javascript.md)
   * [Modelos](es/customization/models.md)
   * [Componentes](es/customization/components.md)

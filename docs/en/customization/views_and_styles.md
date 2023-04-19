@@ -1,4 +1,4 @@
-# Views & Styles
+# Views and Styles
 
 ## Views (HTML)
 

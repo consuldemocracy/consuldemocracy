@@ -1,4 +1,4 @@
-# Translations & Texts
+# Translations and Texts
 
 ## Translations
 
