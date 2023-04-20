@@ -138,6 +138,9 @@ module Consul
 
     config.paths["app/views"].unshift(Rails.root.join("app", "views", "custom"))
 
+    # Set to true to enable user authentication log
+    config.authentication_logs = Rails.application.secrets.dig(:security, :authentication_logs) || false
+
     # Set to true to enable devise user lockable feature
     config.devise_lockable = Rails.application.secrets.devise_lockable
 
