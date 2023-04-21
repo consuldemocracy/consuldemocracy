@@ -1,4 +1,4 @@
-## Configuración para los entornos de desarrollo y pruebas (Ubuntu 18.04)
+# Configuración para los entornos de desarrollo y pruebas (Ubuntu 18.04)
 
 ## Actualización de sistema
 
@@ -37,7 +37,7 @@ source ~/.bashrc
 
 ## Node.js
 
-Para compilar los archivos estáticos (JS, CSS, imágenes, etc.), es necesario un _runtime_ de JavaScript. Node.js es la opción recomendada. 
+Para compilar los archivos estáticos (JS, CSS, imágenes, etc.), es necesario un _runtime_ de JavaScript. Node.js es la opción recomendada.
 
 Ejecuta en tu terminal:
 

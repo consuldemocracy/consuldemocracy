@@ -1,6 +1,6 @@
 # Crear un usuario para hacer la instalación
 
-[El instalador](https://github.com/consul/installer) de forma predeterminada se conecta como el usuario `root` sólo para crear un usuario` deploy`. Este usuario `deploy` es el que instala todas las librerías. Si no tiene acceso `root`, por favor pídale a su administrador de sistemas que siga estas instrucciones para crear un usuario manualmente.
+[El instalador](https://github.com/consul/installer) de forma predeterminada se conecta como el usuario `root` sólo para crear un usuario `deploy`. Este usuario `deploy` es el que instala todas las librerías. Si no tiene acceso `root`, por favor pídale a su administrador de sistemas que siga estas instrucciones para crear un usuario manualmente.
 
 Puede crear un usuario llamado `deploy` o utilizar cualquier otro nombre. Como ejemplo, vamos a crear un usuario llamado `jupiter`.
 
@@ -22,11 +22,13 @@ Creemos un grupo `wheel` y añadamos al usuario `jupiter` al grupo.
 Ahora démosle al grupo `wheel` derechos de superadministración sin necesidad de usar contraseña, esto es importante para que el instalador no se quede parado esperando una contraseña.
 
 Primero debemos abrir el archivo `sudoers`:
+
 ```
 sudo visudo -f /etc/sudoers
 ```
 
 Y añadimos esta línea al final del archivo:
+
 ```
 %wheel ALL=(ALL) NOPASSWD: ALL
 ```
@@ -34,6 +36,7 @@ Y añadimos esta línea al final del archivo:
 Ahora tenemos que dar las claves del servidor al nuevo usuario. No cierre la ventana de la terminal del servidor, porque puede bloquearse si hay un error.
 
 Y escriba los siguientes comandos para crear el archivo necesario donde subir la clave pública:
+
 ```
 su jupiter
 cd ~

@@ -1,6 +1,6 @@
 # CONSUL Documentation and guides
 
-There are several guides where you can read very detailed information about CONSUL and its possibilities. You can find them all at: http://consulproject.org/en/#documentation
+There are several guides where you can read very detailed information about CONSUL and its possibilities. You can find them all at: <http://consulproject.org/en/#documentation>
 
 - **CONSUL Use Guide**. In this guide you can see different ways to use CONSUL and examples of participation processes.
 - **CONSUL Administration Guide**. This guide contains detailed information on the administration and management of CONSUL.

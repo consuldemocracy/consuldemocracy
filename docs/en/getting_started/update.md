@@ -3,13 +3,14 @@
 ## Configuring your git remotes
 
 If you created your fork correctly and cloned it locally, running:
+
 ```bash
 git remote -v
 ```
 
 it should output something alike:
 
-> origin  git@github.com:your_user_name/consul.git (fetch)<br/>
+> origin  git@github.com:your_user_name/consul.git (fetch)\
 > origin  git@github.com:your_user_name/consul.git (push)
 
 Now we have to add CONSUL's github as upstream remote with:
@@ -26,9 +27,9 @@ git remote -v
 
 again you should get:
 
-> upstream  git@github.com:consul/consul.git (fetch)<br/>
-> upstream  git@github.com:consul/consul.git (push)<br/>
-> origin  git@github.com:your_user_name/consul.git (fetch)<br/>
+> upstream  git@github.com:consul/consul.git (fetch)\
+> upstream  git@github.com:consul/consul.git (push)\
+> origin  git@github.com:your_user_name/consul.git (fetch)\
 > origin  git@github.com:your_user_name/consul.git (push)
 
 ## Pulling changes from CONSUL
@@ -42,6 +43,7 @@ git checkout -b upstream
 ```
 
 Then we can fetch all changes from **consul** remote server with:
+
 ```bash
 git fetch upstream
 ```
@@ -64,4 +66,4 @@ C. You get some git errors along with a `Automatic merge failed; fix conflicts a
 
 Now you can just simply push your **upstream** branch to github and create a Pull Request so you can easily check all changes going into your repo, and see your tests suite runs.
 
-Remember you can always quickly check changes that will come from CONSUL to your fork by replacing **your_org_name** on the url: https://github.com/your_org_name/consul/compare/master...consul:master.
+Remember you can always quickly check changes that will come from CONSUL to your fork by replacing **your_org_name** on the url: <https://github.com/your_org_name/consul/compare/master...consul:master>.

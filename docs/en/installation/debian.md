@@ -1,4 +1,4 @@
-## Configuration for development and test environments (Debian GNU/Linux 9.8)
+# Configuration for development and test environments (Debian GNU/Linux 9.8)
 
 ## Superuser
 
@@ -7,7 +7,6 @@ Note that 'sudo' is not installed by default in Debian. It's possible to install
 ```
 su
 ```
-
 
 > For [Vagrant](/en/installation/vagrant.md) run:
 > ```

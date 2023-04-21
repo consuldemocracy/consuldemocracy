@@ -1,4 +1,6 @@
-# Traducciones
+# Traducciones y Textos
+
+## Traducciones
 
 Actualmente Consul esta traducido total o parcialmente a multiples idiomas, visita el proyecto en [Crowdin](https://crowdin.com/project/consul)
 
@@ -8,7 +10,7 @@ En el caso de que tu lenguage no este presente en el proyecto de Crowdin, por fa
 
 Si quieres ver las traducciones de los textos de la web, puedes encontrarlos en los ficheros formato YML disponibles en `config/locales/`. Puedes leer la [guía de internacionalización](http://guides.rubyonrails.org/i18n.html) de Ruby on Rails sobre como funciona este sistema.
 
-# Textos personalizados
+## Textos personalizados
 
 Dado que CONSUL está en evolución continua con nuevas funcionalidades, y para que mantener tu fork actualizado sea más sencillo, recomendamos no modificar los ficheros de traducciones, es una mejor idea "sobreescribirlos" usando ficheros personalizados en caso de necesidad de alterar un texto.
 
@@ -30,7 +32,7 @@ es:
 
 Si creamos el fichero `config/locales/custom/es/general.yml` y modificamos "Ayuntamiento de Madrid" por el nombre de la organización que se este haciendo la modificación. Recomendamos directamente copiar los ficheros `config/locales/` e ir revisando y corrigiendo las que querramos, borrando las líneas que no querramos traducir.
 
-# Mantener tus Textos Personalizados y Lenguajes
+## Mantener tus Textos Personalizados y Lenguajes
 
 CONSUL tiene la gema [i18n-tasks](https://github.com/glebm/i18n-tasks), es una herramienta estupenda para gestionar textos i18n. Prueba en tu consola `i18n-tasks health` para ver un reporte de estado.
 

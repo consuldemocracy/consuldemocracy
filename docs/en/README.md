@@ -67,7 +67,7 @@ But for some actions like voting, you will need a verified user, the seeds file 
 
 ## Documentation
 
-You can find this project documentation at https://github.com/consul/docs.
+You can find this project documentation at <https://github.com/consul/docs>.
 
 ## License
 

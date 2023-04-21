@@ -9,6 +9,7 @@ Vagrant es compatible para [Debian](/es/installation/debian.md) y [Ubuntu](/es/i
 Para acceder a la aplicación a través del navegador en la url `localhost:3000` debe enrutar el puerto de la aplicación y ejectuar el servidor de la aplicación con la opción `-b`:
 
 ## Enrutar el puerto de la aplicación
+
 Abra el archivo de configuración de Vagrant:
 
 ```
@@ -33,7 +34,7 @@ Recargue la máquina virtual:
 vagrant reload
 ```
 
-# Ejecutar el servidor
+## Ejecutar el servidor
 
 En su máquina virtual, debe ejecutar la aplicación enlanzándola a su IP local:
 

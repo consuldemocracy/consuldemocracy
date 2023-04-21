@@ -4,7 +4,7 @@
 
 [Travis](https://travis-ci.org/) es un servicio de Integración Contínua, gratuito para proyectos OpenSource (como Consul y sus forks). Te ayudará a vigilar que en las Pull Requests no se rompan los tests.
 
-1. Visita https://github.com/marketplace/travis-ci y haz click en el botón verde "**Install it for free**"" al pie de la página.
+1. Visita <https://github.com/marketplace/travis-ci> y haz click en el botón verde "**Install it for free**"" al pie de la página.
 
 2. Haz click en el botón verde "**Complete order and begin installation**"
 

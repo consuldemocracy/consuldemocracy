@@ -10,7 +10,7 @@ git remote -v
 
 deberías ver algo como:
 
-> origin  git@github.com:your_user_name/consul.git (fetch)<br/>
+> origin  git@github.com:your_user_name/consul.git (fetch)\
 > origin  git@github.com:your_user_name/consul.git (push)
 
 Ahora debes añadir el repositorio git de CONSUL como servidor remoto con:
@@ -27,9 +27,9 @@ git remote -v
 
 deberías recibir algo como:
 
-> upstream  git@github.com:consul/consul.git (fetch)<br/>
-> upstream  git@github.com:consul/consul.git (push)<br/>
-> origin  git@github.com:your_user_name/consul.git (fetch)<br/>
+> upstream  git@github.com:consul/consul.git (fetch)\
+> upstream  git@github.com:consul/consul.git (push)\
+> origin  git@github.com:your_user_name/consul.git (fetch)\
 > origin  git@github.com:your_user_name/consul.git (push)
 
 ## Obteniendo cambios de consul
@@ -43,6 +43,7 @@ git checkout -b upstream
 ```
 
 Y actualiza la información del repositorio de consul con las referencias a las ramas, tags, etc..:
+
 ```bash
 git fetch upstream
 ```
@@ -65,4 +66,4 @@ C. Recibes mensajes de error de git junto con un `Automatic merge failed; fix co
 
 Ahora simplemente sube la rama **upstream** a github y crea un Pull Request, así podrás ver de manera sencilla todos los cambios que se han realizado en el repositorio y verás también como arranca la suite de tests.
 
-Recuerda que siempre puedes comprobar rápidamente los cambios que tienes pendientes de integrar de CONSUL a tu fork sustituyendo **your_org_name** en la url: https://github.com/your_org_name/consul/compare/master...consul:master
+Recuerda que siempre puedes comprobar rápidamente los cambios que tienes pendientes de integrar de CONSUL a tu fork sustituyendo **your_org_name** en la url: <https://github.com/your_org_name/consul/compare/master...consul:master>

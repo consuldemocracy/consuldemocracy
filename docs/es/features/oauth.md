@@ -3,6 +3,7 @@
 Puedes configurar la autenticación con servicios externos usando OAuth, por ahora están soportados Twitter, Facebook y Google.
 
 ## 1. Crea una aplicación en la plataforma
+
 Para cada plataforma, sigue las instrucciones en la sección de desarrolladores de su página web.
 
 ## 2. Establece la url de tu CONSUL

@@ -68,7 +68,7 @@ Pero para ciertas acciones, como apoyar, necesitarás un usuario verificado, el 
 
 ## Documentación
 
-La documentación de este proyecto se encuentra en https://github.com/consul/docs
+La documentación de este proyecto se encuentra en <https://github.com/consul/docs>
 
 ## Licencia
 

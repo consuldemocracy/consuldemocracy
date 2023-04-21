@@ -20,11 +20,13 @@ Let's create a `wheel` group and add the user `jupiter` to this group.
 Now let's give sudo privileges to the `wheel` group and allow it to not use a password, this is important so that the installer doesn't get stalled waiting for a password.
 
 First we open the sudoers file:
+
 ```
 sudo visudo -f /etc/sudoers
 ```
 
 And we add this line at the end:
+
 ```
 %wheel ALL=(ALL) NOPASSWD: ALL
 ```
@@ -32,6 +34,7 @@ And we add this line at the end:
 Now we need to give the keys of the server to the new user. Don’t close the server terminal window, because you can lock yourself out of your server if there is a mistake.
 
 Let's create the necessary directory in the server to upload the public key:
+
 ```
 su jupiter
 cd ~
@@ -39,7 +42,6 @@ mkdir .ssh
 cd .ssh
 nano authorized_keys
 ```
-
 
 Make sure you have [generated a public key](generating_ssh_key.md) in your local terminal.
 

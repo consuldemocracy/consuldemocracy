@@ -29,6 +29,7 @@ Run `bundle install` to apply your changes.
 This guide will assume that you have an Amazon account configured to use S3 and that you created a bucket for your instance of CONSUL. It is highly recommended to use a different bucket for each instance (production, preproduction, staging).
 
 You will need the following information:
+
 - the **name** of the S3 bucket
 - the **region** of the S3 bucket (`eu-central-1` for UE-Francfort for example)
 - the **hostname** of the S3 bucket (`s3.eu-central-1.amazonaws.com` for Francfort, for example)

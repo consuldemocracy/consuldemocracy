@@ -127,7 +127,7 @@ Add this to `config/secrets.yml`, under the `production:` section:
 
 Important: Turn on one worker dyno so that emails get sent.
 
-## Optional but recommended:
+## Optional but recommended
 
 ### Install rails\_12factor and specify the Ruby version
 
@@ -179,6 +179,7 @@ heroku config:set RAILS_MAX_THREADS=3
 ```
 
 I also recommend to set the following:
+
 ```bash
 heroku config:set RAILS_SERVE_STATIC_FILES=enabled
 heroku config:set RAILS_ENV=production

@@ -1,8 +1,10 @@
-# Vistas (HTML)
+# Vistas y Estilos
+
+## Vistas (HTML)
 
 Si quieres modificar el HTML de alguna página puedes hacerlo copiando el HTML de `app/views` y poniendolo en `app/views/custom` respetando los subdirectorios que encuentres ahí. Por ejemplo si quieres modificar `app/views/pages/conditions.html` debes copiarlo y modificarla en `app/views/custom/pages/conditions.html.erb`
 
-# Estilos CSS con SASS
+## Estilos CSS con SASS
 
 Si quieres cambiar algun selector CSS (de las hojas de estilo) puedes hacerlo en el fichero `app/assets/stylesheets/custom.scss`. Por ejemplo si quieres cambiar el color del header (`.top-links`) puedes hacerlo agregando:
 
