@@ -29,19 +29,19 @@
         html: '<div class="map-icon"></div>'
       });
       createMarker = function(latitude, longitude) {
-        var markerLatLng;
+        var newMarker, markerLatLng;
         markerLatLng = new L.LatLng(latitude, longitude);
-        marker = L.marker(markerLatLng, {
+        newMarker = L.marker(markerLatLng, {
           icon: markerIcon,
           draggable: editable
         });
         if (editable) {
-          marker.on("dragend", function() {
-            App.Map.updateFormfields(map, marker);
+          newMarker.on("dragend", function() {
+            App.Map.updateFormfields(map, newMarker);
           });
         }
-        marker.addTo(map);
-        return marker;
+        newMarker.addTo(map);
+        return newMarker;
       };
       removeMarker = function(e) {
         e.preventDefault();
@@ -79,10 +79,12 @@
       }
       if (addMarkerInvestments) {
         addMarkerInvestments.forEach(function(coordinates) {
+          var investmentMarker;
+
           if (App.Map.validCoordinates(coordinates)) {
-            marker = createMarker(coordinates.lat, coordinates.long);
-            marker.options.id = coordinates.investment_id;
-            marker.on("click", App.Map.openMarkerPopup);
+            investmentMarker = createMarker(coordinates.lat, coordinates.long);
+            investmentMarker.options.id = coordinates.investment_id;
+            investmentMarker.on("click", App.Map.openMarkerPopup);
           }
         });
       }
