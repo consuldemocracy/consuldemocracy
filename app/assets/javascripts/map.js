@@ -7,9 +7,6 @@
         App.Map.initializeMap(this);
       });
     },
-    attributionPrefix: function() {
-      return '<a href="https://leafletjs.com" title="A JavaScript library for interactive maps">Leaflet</a>';
-    },
     destroy: function() {
       App.Map.maps.forEach(function(map) {
         map.off();
@@ -19,12 +16,10 @@
     },
     initializeMap: function(element) {
       var addMarkerInvestments, centerData, clearFormfields, createMarker,
-        editable, getPopupContent, markerData, map, mapAttribution,
-        mapCenterLatLng, mapTilesProvider, marker, markerIcon, moveOrPlaceMarker,
-        openMarkerPopup, removeMarker, removeMarkerSelector, updateFormfields;
+        editable, getPopupContent, markerData, map, mapCenterLatLng, marker,
+        markerIcon, moveOrPlaceMarker, openMarkerPopup, removeMarker,
+        removeMarkerSelector, updateFormfields;
       App.Map.cleanInvestmentCoordinates(element);
-      mapTilesProvider = $(element).data("map-tiles-provider");
-      mapAttribution = $(element).data("map-tiles-provider-attribution");
       removeMarkerSelector = $(element).data("marker-remove-selector");
       addMarkerInvestments = $(element).data("marker-investments-coordinates");
       editable = $(element).data("marker-editable");
@@ -95,11 +90,8 @@
       centerData = App.Map.centerData(element);
       mapCenterLatLng = new L.LatLng(centerData.lat, centerData.long);
       map = L.map(element.id, { scrollWheelZoom: false }).setView(mapCenterLatLng, centerData.zoom);
-      map.attributionControl.setPrefix(App.Map.attributionPrefix());
       App.Map.maps.push(map);
-      L.tileLayer(mapTilesProvider, {
-        attribution: mapAttribution
-      }).addTo(map);
+      App.Map.addAttribution(map);
 
       markerData = App.Map.markerData(element);
       if (markerData.lat && markerData.long && !addMarkerInvestments) {
@@ -123,6 +115,9 @@
           }
         });
       }
+    },
+    attributionPrefix: function() {
+      return '<a href="https://leafletjs.com" title="A JavaScript library for interactive maps">Leaflet</a>';
     },
     markerData: function(element) {
       var dataCoordinates, formCoordinates, inputs, latitude, longitude;
@@ -190,6 +185,16 @@
         clean_markers = markers.replace(/-?(\*+)/g, null);
         $(element).attr("data-marker-investments-coordinates", clean_markers);
       }
+    },
+    addAttribution: function(map) {
+      var element, mapAttribution, mapTilesProvider;
+
+      element = map._container;
+      mapTilesProvider = $(element).data("map-tiles-provider");
+      mapAttribution = $(element).data("map-tiles-provider-attribution");
+
+      map.attributionControl.setPrefix(App.Map.attributionPrefix());
+      L.tileLayer(mapTilesProvider, { attribution: mapAttribution }).addTo(map);
     },
     validZoom: function(zoom) {
       return App.Map.isNumeric(zoom);
