@@ -16,9 +16,8 @@
     },
     initializeMap: function(element) {
       var addMarkerInvestments, centerData, clearFormfields, createMarker,
-        editable, getPopupContent, markerData, map, mapCenterLatLng, marker,
-        markerIcon, moveOrPlaceMarker, openMarkerPopup, removeMarker,
-        removeMarkerSelector, updateFormfields;
+        editable, markerData, map, mapCenterLatLng, marker, markerIcon,
+        moveOrPlaceMarker, removeMarker, removeMarkerSelector, updateFormfields;
       App.Map.cleanInvestmentCoordinates(element);
       removeMarkerSelector = $(element).data("marker-remove-selector");
       addMarkerInvestments = $(element).data("marker-investments-coordinates");
@@ -73,19 +72,6 @@
         inputs.long.val("");
         inputs.zoom.val("");
       };
-      openMarkerPopup = function(e) {
-        marker = e.target;
-        $.ajax("/investments/" + marker.options.id + "/json_data", {
-          type: "GET",
-          dataType: "json",
-          success: function(data) {
-            e.target.bindPopup(getPopupContent(data)).openPopup();
-          }
-        });
-      };
-      getPopupContent = function(data) {
-        return "<a href='/budgets/" + data.budget_id + "/investments/" + data.investment_id + "'>" + data.investment_title + "</a>";
-      };
 
       centerData = App.Map.centerData(element);
       mapCenterLatLng = new L.LatLng(centerData.lat, centerData.long);
@@ -111,7 +97,7 @@
           if (App.Map.validCoordinates(coordinates)) {
             marker = createMarker(coordinates.lat, coordinates.long);
             marker.options.id = coordinates.investment_id;
-            marker.on("click", openMarkerPopup);
+            marker.on("click", App.Map.openMarkerPopup);
           }
         });
       }
@@ -195,6 +181,20 @@
 
       map.attributionControl.setPrefix(App.Map.attributionPrefix());
       L.tileLayer(mapTilesProvider, { attribution: mapAttribution }).addTo(map);
+    },
+    openMarkerPopup: function(e) {
+      var marker = e.target;
+      $.ajax("/investments/" + marker.options.id + "/json_data", {
+        type: "GET",
+        dataType: "json",
+        success: function(data) {
+          e.target.bindPopup(App.Map.getPopupContent(data)).openPopup();
+        }
+      });
+    },
+    getPopupContent: function(data) {
+      return "<a href='/budgets/" + data.budget_id + "/investments/" + data.investment_id + "'>" +
+             data.investment_title + "</a>";
     },
     validZoom: function(zoom) {
       return App.Map.isNumeric(zoom);
