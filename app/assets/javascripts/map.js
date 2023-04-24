@@ -15,9 +15,9 @@
       App.Map.maps = [];
     },
     initializeMap: function(element) {
-      var addMarkerInvestments, centerData, clearFormfields, createMarker,
-        editable, markerData, map, mapCenterLatLng, marker, markerIcon,
-        moveOrPlaceMarker, removeMarker, removeMarkerSelector, updateFormfields;
+      var addMarkerInvestments, centerData, createMarker, editable, markerData,
+        map, mapCenterLatLng, marker, markerIcon, moveOrPlaceMarker,
+        removeMarker, removeMarkerSelector;
       App.Map.cleanInvestmentCoordinates(element);
       removeMarkerSelector = $(element).data("marker-remove-selector");
       addMarkerInvestments = $(element).data("marker-investments-coordinates");
@@ -37,7 +37,9 @@
           draggable: editable
         });
         if (editable) {
-          marker.on("dragend", updateFormfields);
+          marker.on("dragend", function() {
+            App.Map.updateFormfields(map, marker);
+          });
         }
         marker.addTo(map);
         return marker;
@@ -48,7 +50,7 @@
           map.removeLayer(marker);
           marker = null;
         }
-        clearFormfields();
+        App.Map.clearFormfields(element);
       };
       moveOrPlaceMarker = function(e) {
         if (marker) {
@@ -56,21 +58,7 @@
         } else {
           marker = createMarker(e.latlng.lat, e.latlng.lng);
         }
-        updateFormfields();
-      };
-      updateFormfields = function() {
-        var inputs = App.Map.coordinatesInputs(element);
-
-        inputs.lat.val(marker.getLatLng().lat);
-        inputs.long.val(marker.getLatLng().lng);
-        inputs.zoom.val(map.getZoom());
-      };
-      clearFormfields = function() {
-        var inputs = App.Map.coordinatesInputs(element);
-
-        inputs.lat.val("");
-        inputs.long.val("");
-        inputs.zoom.val("");
+        App.Map.updateFormfields(map, marker);
       };
 
       centerData = App.Map.centerData(element);
@@ -87,7 +75,7 @@
         $(removeMarkerSelector).on("click", removeMarker);
         map.on("zoomend", function() {
           if (marker) {
-            updateFormfields();
+            App.Map.updateFormfields(map, marker);
           }
         });
         map.on("click", moveOrPlaceMarker);
@@ -163,6 +151,20 @@
         long: $($(element).data("longitude-input-selector")),
         zoom: $($(element).data("zoom-input-selector"))
       };
+    },
+    updateFormfields: function(map, marker) {
+      var inputs = App.Map.coordinatesInputs(map._container);
+
+      inputs.lat.val(marker.getLatLng().lat);
+      inputs.long.val(marker.getLatLng().lng);
+      inputs.zoom.val(map.getZoom());
+    },
+    clearFormfields: function(element) {
+      var inputs = App.Map.coordinatesInputs(element);
+
+      inputs.lat.val("");
+      inputs.long.val("");
+      inputs.zoom.val("");
     },
     cleanInvestmentCoordinates: function(element) {
       var clean_markers, markers;
