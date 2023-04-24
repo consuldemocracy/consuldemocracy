@@ -15,11 +15,11 @@
       App.Map.maps = [];
     },
     initializeMap: function(element) {
-      var addMarkerInvestments, createMarker, editable, markerData, map, marker,
+      var createMarker, editable, investmentsMarkers, markerData, map, marker,
         markerIcon, moveOrPlaceMarker, removeMarker, removeMarkerSelector;
       App.Map.cleanInvestmentCoordinates(element);
       removeMarkerSelector = $(element).data("marker-remove-selector");
-      addMarkerInvestments = $(element).data("marker-investments-coordinates");
+      investmentsMarkers = $(element).data("marker-investments-coordinates");
       editable = $(element).data("marker-editable");
       marker = null;
       markerIcon = L.divIcon({
@@ -65,7 +65,7 @@
       App.Map.addAttribution(map);
 
       markerData = App.Map.markerData(element);
-      if (markerData.lat && markerData.long && !addMarkerInvestments) {
+      if (markerData.lat && markerData.long && !investmentsMarkers) {
         marker = createMarker(markerData.lat, markerData.long);
       }
       if (editable) {
@@ -77,17 +77,8 @@
         });
         map.on("click", moveOrPlaceMarker);
       }
-      if (addMarkerInvestments) {
-        addMarkerInvestments.forEach(function(coordinates) {
-          var investmentMarker;
 
-          if (App.Map.validCoordinates(coordinates)) {
-            investmentMarker = createMarker(coordinates.lat, coordinates.long);
-            investmentMarker.options.id = coordinates.investment_id;
-            investmentMarker.on("click", App.Map.openMarkerPopup);
-          }
-        });
-      }
+      App.Map.addInvestmentsMarkers(investmentsMarkers, createMarker);
     },
     leafletMap: function(element) {
       var centerData, mapCenterLatLng;
@@ -172,6 +163,19 @@
       inputs.lat.val("");
       inputs.long.val("");
       inputs.zoom.val("");
+    },
+    addInvestmentsMarkers: function(markers, createMarker) {
+      if (markers) {
+        markers.forEach(function(coordinates) {
+          var marker;
+
+          if (App.Map.validCoordinates(coordinates)) {
+            marker = createMarker(coordinates.lat, coordinates.long);
+            marker.options.id = coordinates.investment_id;
+            marker.on("click", App.Map.openMarkerPopup);
+          }
+        });
+      }
     },
     cleanInvestmentCoordinates: function(element) {
       var clean_markers, markers;
