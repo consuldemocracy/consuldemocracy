@@ -18,45 +18,13 @@
       App.Map.maps = [];
     },
     initializeMap: function(element) {
-      var addMarkerInvestments, clearFormfields, createMarker, dataCoordinates, editable, formCoordinates,
-        getPopupContent, latitudeInputSelector, longitudeInputSelector, map, mapAttribution, mapCenterLatLng,
-        mapCenterLatitude, mapCenterLongitude, mapTilesProvider, marker, markerIcon, markerLatitude,
-        markerLongitude, moveOrPlaceMarker, openMarkerPopup, removeMarker, removeMarkerSelector,
-        updateFormfields, zoom, zoomInputSelector;
+      var addMarkerInvestments, centerData, clearFormfields, createMarker,
+        editable, getPopupContent, markerData, map, mapAttribution,
+        mapCenterLatLng, mapTilesProvider, marker, markerIcon, moveOrPlaceMarker,
+        openMarkerPopup, removeMarker, removeMarkerSelector, updateFormfields;
       App.Map.cleanInvestmentCoordinates(element);
       mapTilesProvider = $(element).data("map-tiles-provider");
       mapAttribution = $(element).data("map-tiles-provider-attribution");
-      latitudeInputSelector = $(element).data("latitude-input-selector");
-      longitudeInputSelector = $(element).data("longitude-input-selector");
-      zoomInputSelector = $(element).data("zoom-input-selector");
-      formCoordinates = {
-        lat: $(latitudeInputSelector).val(),
-        long: $(longitudeInputSelector).val(),
-        zoom: $(zoomInputSelector).val()
-      };
-      dataCoordinates = {
-        lat: $(element).data("marker-latitude"),
-        long: $(element).data("marker-longitude")
-      };
-      if (App.Map.validCoordinates(formCoordinates)) {
-        markerLatitude = formCoordinates.lat;
-        markerLongitude = formCoordinates.long;
-        mapCenterLatitude = formCoordinates.lat;
-        mapCenterLongitude = formCoordinates.long;
-      } else if (App.Map.validCoordinates(dataCoordinates)) {
-        markerLatitude = dataCoordinates.lat;
-        markerLongitude = dataCoordinates.long;
-        mapCenterLatitude = dataCoordinates.lat;
-        mapCenterLongitude = dataCoordinates.long;
-      } else {
-        mapCenterLatitude = $(element).data("map-center-latitude");
-        mapCenterLongitude = $(element).data("map-center-longitude");
-      }
-      if (App.Map.validZoom(formCoordinates.zoom)) {
-        zoom = formCoordinates.zoom;
-      } else {
-        zoom = $(element).data("map-zoom");
-      }
       removeMarkerSelector = $(element).data("marker-remove-selector");
       addMarkerInvestments = $(element).data("marker-investments-coordinates");
       editable = $(element).data("marker-editable");
@@ -97,14 +65,18 @@
         updateFormfields();
       };
       updateFormfields = function() {
-        $(latitudeInputSelector).val(marker.getLatLng().lat);
-        $(longitudeInputSelector).val(marker.getLatLng().lng);
-        $(zoomInputSelector).val(map.getZoom());
+        var inputs = App.Map.coordinatesInputs(element);
+
+        inputs.lat.val(marker.getLatLng().lat);
+        inputs.long.val(marker.getLatLng().lng);
+        inputs.zoom.val(map.getZoom());
       };
       clearFormfields = function() {
-        $(latitudeInputSelector).val("");
-        $(longitudeInputSelector).val("");
-        $(zoomInputSelector).val("");
+        var inputs = App.Map.coordinatesInputs(element);
+
+        inputs.lat.val("");
+        inputs.long.val("");
+        inputs.zoom.val("");
       };
       openMarkerPopup = function(e) {
         marker = e.target;
@@ -119,15 +91,19 @@
       getPopupContent = function(data) {
         return "<a href='/budgets/" + data.budget_id + "/investments/" + data.investment_id + "'>" + data.investment_title + "</a>";
       };
-      mapCenterLatLng = new L.LatLng(mapCenterLatitude, mapCenterLongitude);
-      map = L.map(element.id, { scrollWheelZoom: false }).setView(mapCenterLatLng, zoom);
+
+      centerData = App.Map.centerData(element);
+      mapCenterLatLng = new L.LatLng(centerData.lat, centerData.long);
+      map = L.map(element.id, { scrollWheelZoom: false }).setView(mapCenterLatLng, centerData.zoom);
       map.attributionControl.setPrefix(App.Map.attributionPrefix());
       App.Map.maps.push(map);
       L.tileLayer(mapTilesProvider, {
         attribution: mapAttribution
       }).addTo(map);
-      if (markerLatitude && markerLongitude && !addMarkerInvestments) {
-        marker = createMarker(markerLatitude, markerLongitude);
+
+      markerData = App.Map.markerData(element);
+      if (markerData.lat && markerData.long && !addMarkerInvestments) {
+        marker = createMarker(markerData.lat, markerData.long);
       }
       if (editable) {
         $(removeMarkerSelector).on("click", removeMarker);
@@ -147,6 +123,65 @@
           }
         });
       }
+    },
+    markerData: function(element) {
+      var dataCoordinates, formCoordinates, inputs, latitude, longitude;
+      inputs = App.Map.coordinatesInputs(element);
+
+      dataCoordinates = {
+        lat: $(element).data("marker-latitude"),
+        long: $(element).data("marker-longitude")
+      };
+      formCoordinates = {
+        lat: inputs.lat.val(),
+        long: inputs.long.val(),
+        zoom: inputs.zoom.val()
+      };
+      if (App.Map.validCoordinates(formCoordinates)) {
+        latitude = formCoordinates.lat;
+        longitude = formCoordinates.long;
+      } else if (App.Map.validCoordinates(dataCoordinates)) {
+        latitude = dataCoordinates.lat;
+        longitude = dataCoordinates.long;
+      }
+
+      return {
+        lat: latitude,
+        long: longitude,
+        zoom: formCoordinates.zoom
+      };
+    },
+    centerData: function(element) {
+      var markerCoordinates, latitude, longitude, zoom;
+
+      markerCoordinates = App.Map.markerData(element);
+
+      if (App.Map.validCoordinates(markerCoordinates)) {
+        latitude = markerCoordinates.lat;
+        longitude = markerCoordinates.long;
+      } else {
+        latitude = $(element).data("map-center-latitude");
+        longitude = $(element).data("map-center-longitude");
+      }
+
+      if (App.Map.validZoom(markerCoordinates.zoom)) {
+        zoom = markerCoordinates.zoom;
+      } else {
+        zoom = $(element).data("map-zoom");
+      }
+
+      return {
+        lat: latitude,
+        long: longitude,
+        zoom: zoom
+      };
+    },
+    coordinatesInputs: function(element) {
+      return {
+        lat: $($(element).data("latitude-input-selector")),
+        long: $($(element).data("longitude-input-selector")),
+        zoom: $($(element).data("zoom-input-selector"))
+      };
     },
     cleanInvestmentCoordinates: function(element) {
       var clean_markers, markers;
