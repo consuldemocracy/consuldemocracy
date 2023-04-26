@@ -1,6 +1,6 @@
-<%= form_for [:admin, @geozone] do |f| %>
+<%= form_for [:admin, geozone] do |f| %>
 
-  <%= render "shared/errors", resource: @geozone %>
+  <%= render "shared/errors", resource: geozone %>
 
   <div class="small-12 large-8 column">
     <%= f.text_field :name %>
