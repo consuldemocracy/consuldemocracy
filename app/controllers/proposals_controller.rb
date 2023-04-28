@@ -167,9 +167,9 @@ class ProposalsController < ApplicationController
     end
 
     def destroy_map_location_association
-      map_location = proposal_params[:map_location_attributes]
+      map_location_params = proposal_params[:map_location_attributes]
 
-      if map_location.blank? || map_location.values.all?(&:blank?)
+      if map_location_params.blank? || map_location_params.values.all?(&:blank?)
         @proposal.map_location = nil
       end
     end
