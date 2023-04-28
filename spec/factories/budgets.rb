@@ -193,6 +193,10 @@ FactoryBot.define do
       valuators { [create(:valuator)] }
     end
 
+    trait :with_map_location do
+      map_location
+    end
+
     trait :flagged do
       after :create do |investment|
         Flag.flag(create(:user), investment)
