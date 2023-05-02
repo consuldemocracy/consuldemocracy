@@ -122,7 +122,7 @@ describe "Budget Investments" do
     create(:budget_investment, heading: heading)
     visit budget_investments_path(budget, heading_id: heading.id)
     within("#sidebar") do
-      expect(page).to have_css(".map_location")
+      expect(page).to have_css(".map-location")
     end
 
     unlocated_heading = create(:budget_heading, name: "No Map", price: 500, group: group,
@@ -130,7 +130,7 @@ describe "Budget Investments" do
     create(:budget_investment, heading: unlocated_heading)
     visit budget_investments_path(budget, heading_id: unlocated_heading.id)
     within("#sidebar") do
-      expect(page).not_to have_css(".map_location")
+      expect(page).not_to have_css(".map-location")
     end
   end
 
@@ -1637,7 +1637,7 @@ describe "Budget Investments" do
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      within ".map_location" do
+      within ".map-location" do
         expect(page).to have_css(".map-icon", count: 6, visible: :all)
       end
     end
@@ -1651,7 +1651,7 @@ describe "Budget Investments" do
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      within ".map_location" do
+      within ".map-location" do
         expect(page).to have_css(".map-icon", count: 2, visible: :all)
       end
     end
@@ -1675,7 +1675,7 @@ describe "Budget Investments" do
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      within ".map_location" do
+      within ".map-location" do
         expect(page).to have_css(".map-icon", count: 4, visible: :all)
       end
     end
@@ -1693,7 +1693,7 @@ describe "Budget Investments" do
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      within ".map_location" do
+      within ".map-location" do
         expect(page).to have_css(".map-icon", count: 0, visible: :all)
       end
     end
@@ -1711,7 +1711,7 @@ describe "Budget Investments" do
         expect(page).to have_css(".budget-investment", count: 2)
       end
 
-      within(".map_location") do
+      within(".map-location") do
         expect(page).to have_css(".map-icon", count: 3, visible: :all)
       end
     end
