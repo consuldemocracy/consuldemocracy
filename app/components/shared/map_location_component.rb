@@ -38,11 +38,9 @@ class Shared::MapLocationComponent < ApplicationComponent
     end
 
     def remove_marker
-      tag.div class: "margin-bottom" do
-        link_to remove_marker_label, "#",
-          id: remove_marker_link_id,
-          class: "map-location-remove-marker"
-      end
+      link_to remove_marker_label, "#",
+        id: remove_marker_link_id,
+        class: "map-location-remove-marker"
     end
 
     def data
