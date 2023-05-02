@@ -43,8 +43,7 @@
         newMarker.addTo(map);
         return newMarker;
       };
-      removeMarker = function(e) {
-        e.preventDefault();
+      removeMarker = function() {
         if (marker) {
           map.removeLayer(marker);
           marker = null;
