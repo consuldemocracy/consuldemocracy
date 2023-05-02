@@ -215,7 +215,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       do_login_for mappable.author, management: management
 
       visit send(mappable_edit_path, id: mappable.id)
-      click_link "Remove map marker"
+      click_button "Remove map marker"
       click_on "Save changes"
 
       expect(page).not_to have_css(".map-location")
@@ -236,7 +236,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       do_login_for mappable.author, management: management
 
       visit send(mappable_edit_path, id: mappable.id)
-      click_link "Remove map marker"
+      click_button "Remove map marker"
       click_on "Save changes"
 
       expect(page).not_to have_content "Map location can't be blank"
