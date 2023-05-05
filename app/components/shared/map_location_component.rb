@@ -33,16 +33,15 @@ class Shared::MapLocationComponent < ApplicationComponent
       t("proposals.form.map_remove_marker")
     end
 
-    def remove_marker_link_id
-      "remove-marker-link-#{dom_id(map_location)}"
+    def remove_marker_id
+      "remove-marker-#{dom_id(map_location)}"
     end
 
     def remove_marker
-      tag.div class: "margin-bottom" do
-        link_to remove_marker_label, "#",
-          id: remove_marker_link_id,
-          class: "js-location-map-remove-marker location-map-remove-marker"
-      end
+      button_tag remove_marker_label,
+        id: remove_marker_id,
+        class: "map-location-remove-marker",
+        type: "button"
     end
 
     def data
@@ -54,7 +53,7 @@ class Shared::MapLocationComponent < ApplicationComponent
         map_tiles_provider: Rails.application.secrets.map_tiles_provider,
         map_tiles_provider_attribution: Rails.application.secrets.map_tiles_provider_attribution,
         marker_editable: editable?,
-        marker_remove_selector: "##{remove_marker_link_id}",
+        marker_remove_selector: "##{remove_marker_id}",
         marker_investments_coordinates: investments_coordinates,
         marker_latitude: map_location.latitude.presence,
         marker_longitude: map_location.longitude.presence
