@@ -19,7 +19,6 @@
 // 20. Documents
 // 21. Related content
 // 22. Images
-// 23. Maps
 // 24. Homepage
 // 25. LocalCensusRecords
 //
@@ -2150,48 +2149,6 @@ table {
       margin-right: $button-padding-left / 2;
     }
   }
-}
-
-// 23. Maps
-// -----------------
-
-.location-map-remove-marker {
-  border-bottom: 1px dotted #cf2a0e;
-  color: $delete;
-  display: inline-block;
-  margin-top: $line-height / 2;
-
-  &:hover,
-  &:active,
-  &:focus {
-    border-bottom-style: solid;
-    color: #cf2a0e;
-    text-decoration: none;
-  }
-}
-
-.leaflet-bar a {
-
-  &.leaflet-disabled {
-    color: #525252;
-  }
-}
-
-.leaflet-container {
-
-  .leaflet-control-attribution {
-    background: rgba(255, 255, 255, 0.9);
-  }
-
-  a {
-    @include link;
-  }
-}
-
-.leaflet-bottom,
-.leaflet-pane,
-.leaflet-top {
-  z-index: 4;
 }
 
 // 24. Homepage
