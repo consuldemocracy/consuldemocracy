@@ -13,6 +13,9 @@ Airbrake.configure do |config|
   end
 
   config.performance_stats = false
+  config.job_stats = false
+  config.query_stats = false
+  config.remote_config = false
 end
 
 Airbrake.add_filter do |notice|
