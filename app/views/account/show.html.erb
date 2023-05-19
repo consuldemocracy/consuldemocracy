@@ -54,9 +54,11 @@
               <%= f.check_box :newsletter %>
             </div>
 
-            <div>
-              <%= f.check_box :email_digest %>
-            </div>
+            <% if feature?(:proposals) %>
+              <div>
+                <%= f.check_box :email_digest %>
+              </div>
+            <% end %>
 
             <div>
               <%= f.check_box :email_on_direct_message %>
