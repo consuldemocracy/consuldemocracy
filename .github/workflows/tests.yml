@@ -9,7 +9,7 @@ on:
 
 jobs:
   tests:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     timeout-minutes: 60
     services:
       postgres:
@@ -57,7 +57,7 @@ jobs:
           name: screenshots
           path: tmp/screenshots
   coveralls:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     needs: tests
     env:
       CI_BUILD_NUMBER: ${{ github.run_number }}
