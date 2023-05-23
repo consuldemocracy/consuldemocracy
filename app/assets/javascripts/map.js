@@ -23,7 +23,7 @@
       editable = $(element).data("marker-editable");
       markerClustering = $(element).data("marker-clustering");
       if (markerClustering) {
-        markers = L.markerClusterGroup();
+        markers = L.markerClusterGroup({ chunkedLoading: true });
       } else {
         markers = L.layerGroup();
       }
