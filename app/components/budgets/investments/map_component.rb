@@ -1,5 +1,6 @@
 class Budgets::Investments::MapComponent < ApplicationComponent
   attr_reader :heading, :investments
+  delegate :render_map, to: :helpers
 
   def initialize(investments, heading:)
     @investments = investments
