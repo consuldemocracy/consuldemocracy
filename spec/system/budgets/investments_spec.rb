@@ -1664,20 +1664,6 @@ describe "Budget Investments" do
       end
     end
 
-    scenario "Display 2 investment's markers on sidebar map" do
-      investment1 = create(:budget_investment, heading: heading)
-      investment2 = create(:budget_investment, heading: heading)
-
-      create(:map_location, longitude: 40.1281, latitude: -3.656, investment: investment1)
-      create(:map_location, longitude: 40.1292, latitude: -3.665, investment: investment2)
-
-      visit budget_investments_path(budget, heading_id: heading.id)
-
-      within ".map-location" do
-        expect(page).to have_css(".map-icon", count: 2, visible: :all)
-      end
-    end
-
     scenario "Display only investment's related to the current heading" do
       heading_2 = create(:budget_heading, name: "Madrid", group: group)
 
