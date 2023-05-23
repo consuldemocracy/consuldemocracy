@@ -10,7 +10,7 @@ describe Budgets::MapComponent do
 
       render_inline Budgets::MapComponent.new(budget)
 
-      expect(page.first("div.map")).to have_content "located geographically"
+      expect(page.find(".budgets-map")).to have_content "located geographically"
     end
 
     it "is not rendered during the informing phase" do
