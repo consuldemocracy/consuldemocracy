@@ -59,7 +59,6 @@ class Management::UsersController < Management::BaseController
       @user.confirmed_at = Time.current
 
       @user.newsletter = false
-      @user.email_on_proposal_notification = false
       @user.email_digest = false
       @user.email_on_direct_message = false
       @user.email_on_comment = false
