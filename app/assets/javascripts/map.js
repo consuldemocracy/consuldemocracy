@@ -211,7 +211,10 @@
         className: "map-polygon"
       });
 
-      polygon.bindPopup(geozone.headings.join("<br>"));
+      if (geozone.headings !== undefined) {
+        polygon.bindPopup(geozone.headings.join("<br>"));
+      }
+
       polygon.addTo(map);
     },
     openMarkerPopup: function(e) {

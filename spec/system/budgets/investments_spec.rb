@@ -1698,6 +1698,27 @@ describe "Budget Investments" do
       end
     end
 
+    scenario "Shows the polygon associated to the current heading" do
+      triangle = '{ "geometry": { "type": "Polygon", "coordinates": [[-0.1,51.5],[-0.2,51.4],[-0.3,51.6]] } }'
+      rectangle = '{ "geometry": { "type": "Polygon", "coordinates": [[-0.1,51.5],[-0.2,51.5],[-0.2,51.6],[-0.1,51.6]] } }'
+
+      park = create(:geozone, geojson: triangle, color: "#03ee03")
+      square = create(:geozone, geojson: rectangle, color: "#ff04ff")
+
+      group = create(:budget_group)
+      green_areas = create(:budget_heading, group: group, geozone: park, latitude: 51.5, longitude: -0.2)
+      create(:budget_heading, group: group, geozone: square, latitude: 51.5, longitude: -0.2)
+
+      visit budget_investments_path(group.budget, heading_id: green_areas)
+
+      expect(page).to have_css ".map-polygon[fill='#03ee03']"
+      expect(page).not_to have_css ".map-polygon[fill='#ff04ff']"
+
+      find(".map-polygon").click
+
+      expect(page).not_to have_css ".leaflet-popup"
+    end
+
     scenario "Shows all investments and not only the ones on the current page" do
       stub_const("#{Budgets::InvestmentsController}::PER_PAGE", 2)
 
