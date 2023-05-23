@@ -13,8 +13,6 @@ class Budgets::MapComponent < ApplicationComponent
   private
 
     def coordinates
-      return unless budget.present?
-
       if budget.publishing_prices_or_later? && budget.investments.selected.any?
         investments = budget.investments.selected
       else
