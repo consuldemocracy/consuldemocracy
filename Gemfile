@@ -64,7 +64,8 @@ gem "view_component", "~> 2.78.0"
 gem "whenever", "~> 1.0.0", require: false
 gem "wicked_pdf", "~> 2.6.3"
 gem "wkhtmltopdf-binary", "~> 0.12.6"
-
+gem  "ed25519" 
+gem  "bcrypt_pbkdf"
 source "https://rails-assets.org" do
   gem "rails-assets-leaflet"
   gem "rails-assets-markdown-it", "~> 9.0.1"
