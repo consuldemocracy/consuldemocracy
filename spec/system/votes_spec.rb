@@ -74,8 +74,10 @@ describe "Votes" do
         end
       end
 
-      scenario "Update" do
+      scenario "Create and update from debate show" do
         visit debate_path(create(:debate))
+
+        expect(page).to have_content "No votes"
 
         click_button "I agree"
 
@@ -83,6 +85,13 @@ describe "Votes" do
           expect(page).to have_content "100%"
           expect(page).to have_button class: "voted"
         end
+
+        within(".against") do
+          expect(page).to have_content "0%"
+          expect(page).to have_css("button.no-voted")
+        end
+
+        expect(page).to have_content "1 vote"
 
         click_button "I disagree"
 
@@ -134,24 +143,6 @@ describe "Votes" do
           expect(page).to have_content "50%"
           expect(page).to have_button class: "no-voted"
         end
-      end
-
-      scenario "Create from debate show" do
-        visit debate_path(create(:debate))
-
-        click_button "I agree"
-
-        within(".in-favor") do
-          expect(page).to have_content "100%"
-          expect(page).to have_button class: "voted"
-        end
-
-        within(".against") do
-          expect(page).to have_content "0%"
-          expect(page).to have_button class: "no-voted"
-        end
-
-        expect(page).to have_content "1 vote"
       end
 
       scenario "Create in index" do
