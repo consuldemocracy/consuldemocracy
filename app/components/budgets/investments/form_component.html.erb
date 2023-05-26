@@ -23,17 +23,19 @@
       </div>
       <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
 
-      <div>
-        <%= f.number_field :estimated_price%>
-      </div>
-
-
+    
       <div>
         <%= translations_form.text_area :description,
               maxlength: Budget::Investment.description_max_length,
               class: "html-area" %>
       </div>
-    <% end %>
+      <div>
+          <h2> Estimated Cost </h2>
+          <%= f.number_field :estimated_price%>
+       </div>
+
+  
+  <% end %>
   </fieldset>
 
   <%= f.invisible_captcha :subtitle %>
