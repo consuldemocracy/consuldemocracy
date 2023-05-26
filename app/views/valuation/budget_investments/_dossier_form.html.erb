@@ -45,6 +45,11 @@
             label: t("valuation.budget_investments.edit.price", currency: budget.currency_symbol),
             max: 1000000000000000 %>
         </div>
+<div class="small-12 medium-6 column">
+          <%= f.number_field :estimated_price,
+            label: t("valuation.budget_investments.edit.estimated_price", currency: budget.currency_symbol),
+            max: 1000000000000000 %>
+        </div>
 
         <div class="small-12 medium-6 column end">
           <%= f.number_field :price_first_year,

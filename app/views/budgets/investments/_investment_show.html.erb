@@ -87,7 +87,12 @@
         <h2><%= t("budgets.investments.show.price") %></h2>
         <div class="supports text-center">
           <p class="investment-project-amount">
-            <%= investment.formatted_price %>
+            <% if investment.price.present? %>
+                <%= investment.formatted_price %>
+            <% else %>
+                <%= investment.formatted_estimated_price %>
+            <% end %>
+
           </p>
         </div>
         <% if investment.should_show_price_explanation? %>
