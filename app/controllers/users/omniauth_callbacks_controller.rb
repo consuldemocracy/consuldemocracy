@@ -46,4 +46,16 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     def save_user
       @user.save || @user.save_requiring_finish_signup
     end
+
+def initialize_user_for_provider(provider, auth)
+  case provider
+  when :twitter
+    User.first_or_initialize_for_twitter(auth)
+  when :saml
+    User.first_or_initialize_for_saml(auth)
+  else
+    User.first_or_initialize_for_oauth(auth)
+  end
+end
+
 end

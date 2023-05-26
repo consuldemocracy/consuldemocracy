@@ -144,6 +144,43 @@ class User < ApplicationRecord
       confirmed_at: oauth_email_confirmed ? DateTime.current : nil
     )
   end
+  
+   # Get the existing user by email if the provider gives us a verified email.
+  def self.first_or_initialize_for_saml(auth)
+
+ # Log the attributes in auth.info
+  Rails.logger.info('Attributes in auth.info:')
+  auth.info.each do |key, value|
+    Rails.logger.info("#{key}: #{value}")
+  end
+
+    oauth_email           = auth.info.email
+    oauth_email_confirmed = oauth_email.present? && (auth.info.verified || auth.info.verified_email)
+    oauth_lacode              = auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.17", 0).to_s
+    #oauth_full_name           = auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.2", 0).to_s + " " + auth.extra.raw_info
+    #oauth_date_of_birth = auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.8", 0).to_s
+    oauth_gender = auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.9", 0).to_s
+    #lacode comes from list of councils registered with IS
+    oauth_lacode_ref          = "9079"
+    oauth_lacode_confirmed    = oauth_lacode == oauth_lacode_ref
+    oauth_user            = User.find_by(email: oauth_email) if oauth_email_confirmed
+
+    oauth_user || User.new(
+      username:  auth.info.name || auth.uid,
+      email: oauth_email,
+      #date_of_birth: oauth_date_of_birth,
+      #gender: oauth_gender,
+      password: Devise.friendly_token[0, 20],
+      terms_of_service: "1",
+      #confirmed_at: oauth_email_confirmed ? DateTime.current : nil,
+      #verified_at: oauth_lacode_confirmed ? DateTime.current : nil,
+      #residence_verified_at: oauth_lacode_confirmed ? DateTime.current : nil
+      confirmed_at: DateTime.current,
+      verified_at: DateTime.current,
+      residence_verified_at: DateTime.current
+    )
+  end
+
 
   def name
     organization? ? organization.name : username
