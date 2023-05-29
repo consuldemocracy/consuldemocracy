@@ -245,7 +245,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
- idp_metadata_parser = OneLogin::RubySaml::IdpMetadataParser.new
+  idp_metadata_parser = OneLogin::RubySaml::IdpMetadataParser.new
 
   # Load IdP metadata directly from the IdP in dev / prod ENV
   idp_metadata = idp_metadata_parser.parse_remote_to_hash(
@@ -276,26 +276,26 @@ Devise.setup do |config|
                   strategy_class: OmniAuth::Strategies::Wordpress,
                   client_options: { site: Rails.application.secrets.wordpress_oauth2_site },
                   setup: OmniauthTenantSetup.wordpress_oauth2
-  config.omniauth :saml,
-                  idp_cert_fingerprint:  idp_metadata[:idp_cert_fingerprint],
-                  idp_cert: idp_metadata[:idp_cert],
-                  idp_sso_target_url: Rails.application.secrets.saml_idp_sso_target_url,
-                  idp_slo_target_url: Rails.application.secrets.saml_idp_slo_target_url,
-                  name_identifier_format: "urn:oasis:names:tc:SAML:2.0:nameid-format:transient",
-                  assertion_consumer_service_url: Rails.application.secrets.saml_assertion_consumer_service_url,
-                  certificate: Rails.application.secrets.saml_certificate,
-                  private_key: Rails.application.secrets.saml_private_key,
-                  issuer: Rails.application.secrets.saml_issuer,
-                  security: { authn_requests_signed: false,
-                    want_assertions_signed: false,
-                    want_assertions_encrypted: true,
-                    metadata_signed: false,
-                    embed_sign: false,
-                    digest_method: XMLSecurity::Document::SHA1,
-                    signature_method: XMLSecurity::Document::RSA_SHA1 },
-                  attribute_statements: { email: ['mail','Email Address','urn:oid:0.9.2342.19200300.100.1.22'],
-                    nickname: ['Username','urn:oid:0.9.2342.19200300.100.1.1']},
-                  uid_attribute: 'urn:oid:0.9.2342.19200300.100.1.28'
+  #config.omniauth :saml,
+  #                idp_cert_fingerprint:  idp_metadata[:idp_cert_fingerprint],
+  #                idp_cert: idp_metadata[:idp_cert],
+  #                idp_sso_target_url: Rails.application.secrets.saml_idp_sso_target_url,
+  #                idp_slo_target_url: Rails.application.secrets.saml_idp_slo_target_url,
+  #                name_identifier_format: "urn:oasis:names:tc:SAML:2.0:nameid-format:transient",
+  #                assertion_consumer_service_url: Rails.application.secrets.saml_assertion_consumer_service_url,
+  #                certificate: Rails.application.secrets.saml_certificate,
+  #                private_key: Rails.application.secrets.saml_private_key,
+  #                issuer: Rails.application.secrets.saml_issuer,
+  #                security: { authn_requests_signed: false,
+  #                  want_assertions_signed: false,
+  #                  want_assertions_encrypted: true,
+  #                  metadata_signed: false,
+  #                  embed_sign: false,
+  #                  digest_method: XMLSecurity::Document::SHA1,
+  #                  signature_method: XMLSecurity::Document::RSA_SHA1 },
+  #                attribute_statements: { email: ['mail','Email Address','urn:oid:0.9.2342.19200300.100.1.22'],
+  #                  nickname: ['Username','urn:oid:0.9.2342.19200300.100.1.1']},
+  #                uid_attribute: 'urn:oid:0.9.2342.19200300.100.1.28'
 
 
 #Add logger to get full response from the callback phase
