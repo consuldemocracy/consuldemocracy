@@ -30,4 +30,15 @@ class Shared::InFavorAgainstComponent < ApplicationComponent
     def disagree_aria_label
       t("votes.disagree_label", title: votable.title)
     end
+
+    def pressed?(value)
+      case current_user&.voted_as_when_voted_for(votable)
+      when true
+        value == "yes"
+      when false
+        value == "no"
+      else
+        false
+      end
+    end
 end

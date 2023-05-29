@@ -4,6 +4,7 @@
                   class: "like #{voted_classes[:in_favor]}",
                   title: t("votes.agree"),
                   "aria-label": agree_aria_label,
+                  "aria-pressed": pressed?("yes"),
                   method: "post",
                   remote: true do %>
       <span class="show-for-sr"><%= t("votes.agree") %></span>
@@ -16,6 +17,7 @@
                   class: "unlike #{voted_classes[:against]}",
                   title: t("votes.disagree"),
                   "aria-label": disagree_aria_label,
+                  "aria-pressed": pressed?("no"),
                   method: "post",
                   remote: true do %>
       <span class="show-for-sr"><%= t("votes.disagree") %></span>
