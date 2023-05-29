@@ -75,10 +75,13 @@ module Budgets
 
     def update
       if @investment.update(investment_params)
+        puts "Investment Params: #{investment_params.inspect}" # Debugging statement
         redirect_to budget_investment_path(@budget, @investment),
                     notice: t("flash.actions.update.budget_investment")
       else
+        puts "Investment Params: #{investment_params.inspect}" # Debugging statement
         render "edit"
+        
       end
     end
 

@@ -23,7 +23,10 @@
 <p id="investment_code">
   <%= sanitize(t("budgets.investments.show.code", code: investment.id)) %>
 </p>
-
+<h3><%= t("budgets.investments.show.estimated_price") %></h3>
+<p class="investment-project-amount">
+              <%= investment.formatted_estimated_price %>
+            </p>
 <%= auto_link_already_sanitized_html wysiwyg(investment.description) %>
 
 <% if @investment.video_url.present? %>

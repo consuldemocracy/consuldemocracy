@@ -82,19 +82,30 @@
           <span class="icon-budget"></span>
         </div>
       <% end %>
+
+       
+
       <% if investment.should_show_price? %>
         <div class="sidebar-divider"></div>
-        <h2><%= t("budgets.investments.show.price") %></h2>
-        <div class="supports text-center">
-          <p class="investment-project-amount">
-            <% if investment.price.present? %>
-                <%= investment.formatted_price %>
-            <% else %>
-                <%= investment.formatted_estimated_price %>
-            <% end %>
+          
+           <% if investment.formatted_price.nil? %>
+                <h2><%= t("budgets.investments.show.estimated_price") %></h2>
+               <div class="supports text-center">
+               <p class="investment-project-amount">
+               <%= investment.formatted_estimated_price unless investment.formatted_estimated_price.nil? %>
+               </p>
+               </div>
+           <% else %>
+               <h2><%= t("budgets.investments.show.price") %></h2>
+               <p class="investment-project-amount">
+                <div class="supports text-center">
 
-          </p>
-        </div>
+               <%= investment.formatted_price %>
+             </p>
+             </div>
+           <% end %>
+          
+        
         <% if investment.should_show_price_explanation? %>
           <div class="text-center" data-magellan>
             <%= link_to t("budgets.investments.show.see_price_explanation"),
