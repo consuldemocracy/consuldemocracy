@@ -157,7 +157,7 @@ class User < ApplicationRecord
     oauth_email           = auth.info.email
     oauth_email_confirmed = oauth_email.present? && (auth.info.verified || auth.info.verified_email)
     oauth_lacode              = auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.17", 0).to_s
-    #oauth_full_name           = auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.2", 0).to_s + " " + auth.extra.raw_info
+    oauth_full_name           = auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.2", 0).to_s + " " + auth.extra.raw_info
     #oauth_date_of_birth = auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.8", 0).to_s
     oauth_gender = auth.extra.raw_info.all.dig("urn:oid:0.9.2342.19200300.100.1.9", 0).to_s
     #lacode comes from list of councils registered with IS
@@ -166,7 +166,7 @@ class User < ApplicationRecord
     oauth_user            = User.find_by(email: oauth_email) if oauth_email_confirmed
 
     oauth_user || User.new(
-      username:  auth.info.name || auth.uid,
+      username:  auth.info.name || auth_full_name,
       email: oauth_email,
       #date_of_birth: oauth_date_of_birth,
       #gender: oauth_gender,
