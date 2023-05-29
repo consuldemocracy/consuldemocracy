@@ -1533,6 +1533,10 @@ es:
         document_number: Número de documento
         roles: Roles
         verification_level: Nivel de verficación
+        activation_status: Estado de la confirmación
+      account:
+        active_status: Cuenta confirmada
+        inactive_status: Cuenta no confirmada
       index:
         title: Usuarios
         no_users: No hay usuarios.
