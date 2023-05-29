@@ -27,6 +27,7 @@ describe "Admin geozones", :admin do
 
     click_button "Save changes"
 
+    expect(page).to have_content "Geozone created successfully"
     expect(page).to have_content "Fancy District"
 
     visit admin_geozones_path
@@ -46,6 +47,8 @@ describe "Admin geozones", :admin do
 
     click_button "Save changes"
 
+    expect(page).to have_content "Geozone updated successfully"
+
     within("#geozone_#{geozone.id}") do
       expect(page).to have_content "New geozone name"
       expect(page).to have_content "333"
@@ -63,6 +66,8 @@ describe "Admin geozones", :admin do
     fill_in "geozone_name", with: "New geozone name"
 
     click_button "Save changes"
+
+    expect(page).to have_content "Geozone updated successfully"
 
     within("#geozone_#{geozone.id}") do
       expect(page).to have_content "New geozone name"

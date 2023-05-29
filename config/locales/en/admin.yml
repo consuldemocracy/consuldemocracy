@@ -1393,6 +1393,8 @@ en:
         code_help: Response code for this geozone on the census API
         coordinates: Coordinates
         coordinates_help: Coordinates that will generate a clickable area on an HTML image map
+      create:
+        notice: "Geozone created successfully"
       edit:
         form:
           submit_button: Save changes
@@ -1404,6 +1406,8 @@ en:
       delete:
         success: Geozone successfully deleted
         error: This geozone can't be deleted since there are elements attached to it
+      update:
+        notice: "Geozone updated successfully"
     signature_sheets:
       author: Author
       created_at: Creation date

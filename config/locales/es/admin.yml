@@ -1393,6 +1393,8 @@ es:
         code_help: Código de respuesta para esta zona en la API del censo
         coordinates: Coordenadas
         coordinates_help: Coordenadas que generarán una zona clicable en un mapa de imagen HTML
+      create:
+        notice: "Zona creada correctamente"
       edit:
         form:
           submit_button: Guardar cambios
@@ -1404,6 +1406,8 @@ es:
       delete:
         success: Zona borrada correctamente
         error: No se puede borrar la zona porque ya tiene elementos asociados
+      update:
+        notice: "Zona actualizada correctamente"
     signature_sheets:
       author: Autor
       created_at: Fecha de creación
