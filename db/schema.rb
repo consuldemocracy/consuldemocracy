@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_06_141152) do
+ActiveRecord::Schema.define(version: 2023_05_23_090028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -1630,7 +1630,6 @@ ActiveRecord::Schema.define(version: 2023_02_06_141152) do
     t.string "redeemable_code"
     t.string "gender", limit: 10
     t.datetime "date_of_birth"
-    t.boolean "email_on_proposal_notification", default: true
     t.boolean "email_digest", default: true
     t.boolean "email_on_direct_message", default: true
     t.boolean "official_position_badge", default: false
