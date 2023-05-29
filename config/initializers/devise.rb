@@ -248,11 +248,11 @@ Devise.setup do |config|
   idp_metadata_parser = OneLogin::RubySaml::IdpMetadataParser.new
 
   # Load IdP metadata directly from the IdP in dev / prod ENV
-  idp_metadata = idp_metadata_parser.parse_remote_to_hash(
-    Rails.application.secrets.saml_idp_metadata,
-    true, # validate cert
-    entity_id: Rails.application.secrets.saml_entity_data
-  )
+#  idp_metadata = idp_metadata_parser.parse_remote_to_hash(
+#    Rails.application.secrets.saml_idp_metadata,
+#    true, # validate cert
+#    entity_id: Rails.application.secrets.saml_entity_data
+#  )
 
 
 
