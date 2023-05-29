@@ -245,15 +245,17 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  idp_metadata_parser = OneLogin::RubySaml::IdpMetadataParser.new
-
+  
   # Load IdP metadata directly from the IdP in dev / prod ENV
-#  idp_metadata = idp_metadata_parser.parse_remote_to_hash(
-#    Rails.application.secrets.saml_idp_metadata,
-#    true, # validate cert
-#    entity_id: Rails.application.secrets.saml_entity_data
-#  )
-
+ # idp_metadata = {}
+ # if Rails.application.secrets.saml_idp_metadata_url.present?
+ #   idp_metadata_parser = OneLogin::RubySaml::IdpMetadataParser.new
+ #   idp_metadata = idp_metadata_parser.parse_remote_to_hash(
+ #   Rails.application.secrets.saml_idp_metadata,
+ #   true, # validate cert
+ #   entity_id: Rails.application.secrets.saml_entity_data
+ # )
+ #end
 
 
   config.omniauth :twitter,
@@ -296,7 +298,15 @@ Devise.setup do |config|
   #                attribute_statements: { email: ['mail','Email Address','urn:oid:0.9.2342.19200300.100.1.22'],
   #                  nickname: ['Username','urn:oid:0.9.2342.19200300.100.1.1']},
   #                uid_attribute: 'urn:oid:0.9.2342.19200300.100.1.28'
-
+saml_settings = {}
+  if Rails.application.secrets.saml_idp_metadata_url.present?
+    idp_metadata_parser = OneLogin::RubySaml::IdpMetadataParser.new
+    saml_settings = idp_metadata_parser.parse_remote_to_hash(Rails.application.secrets.saml_idp_metadata_url)
+    saml_settings[:idp_sso_service_url] = Rails.application.secrets.saml_idp_sso_service_url
+    saml_settings[:sp_entity_id] = Rails.application.secrets.saml_sp_entity_id
+    saml_settings[:allowed_clock_drift] = 1.minute
+  end
+  config.omniauth :saml, saml_settings
 
 #Add logger to get full response from the callback phase
   Rails.logger.level = 1
