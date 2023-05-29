@@ -6,6 +6,7 @@
     <%= button_to vote_comment_path(comment, value: "yes"),
                   method: "post",
                   remote: can?(:vote, comment),
+                  "aria-pressed": pressed?("yes"),
                   title: t("votes.agree") do %>
       <span class="show-for-sr"><%= t("votes.agree") %></span>
     <% end %>
@@ -16,6 +17,7 @@
     <%= button_to vote_comment_path(comment, value: "no"),
                   method: "post",
                   remote: can?(:vote, comment),
+                  "aria-pressed": pressed?("no"),
                   title: t("votes.disagree") do %>
       <span class="show-for-sr"><%= t("votes.disagree") %></span>
     <% end %>
