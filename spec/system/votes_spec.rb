@@ -19,37 +19,31 @@ describe "Votes" do
       within("#debates") do
         within("#debate_#{debate1.id}_votes") do
           within(".in-favor") do
-            expect(page).to have_button class: "voted"
-            expect(page).not_to have_button class: "no-voted"
+            expect(page).to have_css "button[aria-pressed='true']"
           end
 
           within(".against") do
-            expect(page).to have_button class: "no-voted"
-            expect(page).not_to have_button class: "voted"
+            expect(page).to have_css "button[aria-pressed='false']"
           end
         end
 
         within("#debate_#{debate2.id}_votes") do
           within(".in-favor") do
-            expect(page).not_to have_button class: "voted"
-            expect(page).not_to have_button class: "no-voted"
+            expect(page).to have_css "button[aria-pressed='false']"
           end
 
           within(".against") do
-            expect(page).not_to have_button class: "no-voted"
-            expect(page).not_to have_button class: "voted"
+            expect(page).to have_css "button[aria-pressed='false']"
           end
         end
 
         within("#debate_#{debate3.id}_votes") do
           within(".in-favor") do
-            expect(page).to have_button class: "no-voted"
-            expect(page).not_to have_button class: "voted"
+            expect(page).to have_css "button[aria-pressed='false']"
           end
 
           within(".against") do
-            expect(page).to have_button class: "voted"
-            expect(page).not_to have_button class: "no-voted"
+            expect(page).to have_css "button[aria-pressed='true']"
           end
         end
       end
@@ -63,14 +57,12 @@ describe "Votes" do
 
         within(".in-favor") do
           expect(page).to have_content "0%"
-          expect(page).not_to have_button class: "voted"
-          expect(page).not_to have_button class: "no-voted"
+          expect(page).to have_css "button[aria-pressed='false']"
         end
 
         within(".against") do
           expect(page).to have_content "0%"
-          expect(page).not_to have_button class: "voted"
-          expect(page).not_to have_button class: "no-voted"
+          expect(page).to have_css "button[aria-pressed='false']"
         end
       end
 
@@ -83,12 +75,12 @@ describe "Votes" do
 
         within(".in-favor") do
           expect(page).to have_content "100%"
-          expect(page).to have_button class: "voted"
+          expect(page).to have_css "button[aria-pressed='true']"
         end
 
         within(".against") do
           expect(page).to have_content "0%"
-          expect(page).to have_css("button.no-voted")
+          expect(page).to have_css "button[aria-pressed='false']"
         end
 
         expect(page).to have_content "1 vote"
@@ -97,12 +89,12 @@ describe "Votes" do
 
         within(".in-favor") do
           expect(page).to have_content "0%"
-          expect(page).to have_button class: "no-voted"
+          expect(page).to have_css "button[aria-pressed='false']"
         end
 
         within(".against") do
           expect(page).to have_content "100%"
-          expect(page).to have_button class: "voted"
+          expect(page).to have_css "button[aria-pressed='true']"
         end
 
         expect(page).to have_content "1 vote"
@@ -136,12 +128,12 @@ describe "Votes" do
 
         within(".in-favor") do
           expect(page).to have_content "50%"
-          expect(page).to have_button class: "voted"
+          expect(page).to have_css "button[aria-pressed='true']"
         end
 
         within(".against") do
           expect(page).to have_content "50%"
-          expect(page).to have_button class: "no-voted"
+          expect(page).to have_css "button[aria-pressed='false']"
         end
       end
 
@@ -154,12 +146,12 @@ describe "Votes" do
 
           within(".in-favor") do
             expect(page).to have_content "100%"
-            expect(page).to have_button class: "voted"
+            expect(page).to have_css "button[aria-pressed='true']"
           end
 
           within(".against") do
             expect(page).to have_content "0%"
-            expect(page).to have_button class: "no-voted"
+            expect(page).to have_css "button[aria-pressed='false']"
           end
 
           expect(page).to have_content "1 vote"
