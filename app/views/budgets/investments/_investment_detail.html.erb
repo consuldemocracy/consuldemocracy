@@ -27,9 +27,12 @@
 <p class="investment-project-amount">
               <%= investment.formatted_estimated_price %>
             </p>
+<hr>
+<h3><%= t("budgets.investments.show.description") %></h3>
 <%= auto_link_already_sanitized_html wysiwyg(investment.description) %>
 
 <% if @investment.video_url.present? %>
+<hr>
   <div class="small-12 medium-7 small-centered">
     <div class="flex-video">
       <div id="js-embedded-video" data-video-code="<%= embedded_video_code(@investment) %>"></div>
