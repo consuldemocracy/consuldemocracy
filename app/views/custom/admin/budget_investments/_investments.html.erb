@@ -22,7 +22,7 @@
 <% if @investments.any? %>
   <h3 class="inline-block"><%= page_entries_info @investments %></h3>
   <%= render "admin/shared/columns_selector",
-        cookie: "investments-columns", default: %w[id title supports admin valuator geozone feasibility price valuation_finished visible_to_valuators selected incompatible] %>
+        cookie: "investments-columns", default: %w[id title description supports admin valuator geozone feasibility price price_explanation valuation_finished visible_to_valuators selected incompatible] %>
   <br>
 
   <%= render "filters_description", i18n_namespace: "admin.budget_investments.index" %>
@@ -32,9 +32,10 @@
       <tr>
         <th><%= link_to_investments_sorted_by :id %></th>
         <th data-field="title"><%= link_to_investments_sorted_by :title %></th>
+		<th data-field="description"><%= link_to_investments_sorted_by :description %></th>
         <th data-field="supports"><%= link_to_investments_sorted_by :supports %></th>
-        <th><%= t("admin.budget_investments.index.physical_final_votes_count") %></th>
-        <th><%= t("admin.budget_investments.index.final_total_votes") %></th>
+        <th data-field="physical_final_votes_count"><%= t("admin.budget_investments.index.physical_final_votes_count") %></th>
+        <th data-field="final_total_votes"><%= t("admin.budget_investments.index.final_total_votes") %></th>
         <th data-field="admin"><%= t("admin.budget_investments.index.list.admin") %></th>
         <th data-field="author">
           <%= t("admin.budget_investments.index.list.author") %>
@@ -45,7 +46,9 @@
         </th>
         <th data-field="geozone"><%= t("admin.budget_investments.index.list.geozone") %></th>
         <th data-field="feasibility"><%= t("admin.budget_investments.index.list.feasibility") %></th>
+		<th data-field="unfeasibility_explanation"><%= t("admin.budget_investments.index.list.unfeasibility_explanation") %></th>
         <th data-field="price"><%= t("admin.budget_investments.index.list.price") %></th>
+		<th data-field="price_explanation"><%= t("admin.budget_investments.index.list.price_explanation") %></th>
         <th data-field="valuation_finished">
           <%= t("admin.budget_investments.index.list.valuation_finished") %>
         </th>

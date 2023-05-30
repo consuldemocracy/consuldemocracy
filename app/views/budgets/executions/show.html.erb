@@ -15,8 +15,8 @@
   <div class="expanded no-margin-top padding header">
     <div class="row">
       <div class="small-12 column">
-        <%= back_link_to budgets_path %>
-        <h2 class="margin-top">
+        <%= link_to_function "Back", "history.back()" %> 
+	<h2 class="margin-top">
           <%= t("budgets.executions.heading") %><br>
           <span><%= @budget.name %></span>
         </h2>

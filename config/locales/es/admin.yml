@@ -225,13 +225,15 @@ es:
           valuator: Evaluador
           valuation_group: Grupos evaluadores
           geozone: Ámbito de actuación
-          feasibility: Viabilidad
+          feasibility: Informe de (in)viabilidad
           valuation_finished: Ev. Fin.
           selected: Seleccionado
           visible_to_valuators: Mostrar a evaluadores
           author_username: Usuario autor
           incompatible: Incompatible
           price: Precio
+          price_explanation: Informe evaluación
+          unfeasibility_explanation: Informe inviable
           author: Autor
           physical_votes: Votos Presenciales
           total_votes: Total Votos

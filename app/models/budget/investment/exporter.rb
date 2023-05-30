@@ -7,7 +7,7 @@ class Budget::Investment::Exporter
 
   def to_csv
 
-    string = CSV.generate(col_sep: ';', encoding: 'ISO8859-1', headers: true) do |csv|
+    string = CSV.generate(col_sep: ';', encoding: 'UTF-8', headers: true) do |csv|
       csv << headers
       @investments.each { |investment| csv << csv_values(investment) }
     end
@@ -19,6 +19,7 @@ class Budget::Investment::Exporter
     def headers
       [
         I18n.t("admin.budget_investments.index.list.id"),
+		I18n.t("admin.budget_investments.index.list.description"),
         I18n.t("admin.budget_investments.index.list.title"),
         I18n.t("admin.budget_investments.index.list.supports"),
         I18n.t("admin.budget_investments.index.list.physical_votes"),
@@ -28,7 +29,9 @@ class Budget::Investment::Exporter
         I18n.t("admin.budget_investments.index.list.valuation_group"),
         I18n.t("admin.budget_investments.index.list.geozone"),
         I18n.t("admin.budget_investments.index.list.feasibility"),
+		I18n.t("admin.budget_investments.index.list.unfeasibility_explanation"),
         I18n.t("admin.budget_investments.index.list.price"),
+		I18n.t("admin.budget_investments.index.list.price_explanation"),
         I18n.t("admin.budget_investments.index.list.valuation_finished"),
         I18n.t("admin.budget_investments.index.list.selected"),
 		I18n.t("admin.budget_investments.index.list.winner"),
@@ -41,6 +44,7 @@ class Budget::Investment::Exporter
       [
         investment.id.to_s,
         investment.title,
+		investment.description,
         investment.total_votes.to_s,
         investment.physical_final_votes_count,
         investment.final_total_votes,
@@ -49,7 +53,9 @@ class Budget::Investment::Exporter
         investment.assigned_valuation_groups || "-",
         investment.heading.name,
         I18n.t("admin.budget_investments.index.feasibility.#{investment.feasibility}"),
+		investment.unfeasibility_explanation,
         investment.price,
+		investment.price_explanation,
         investment.valuation_finished? ? I18n.t("shared.yes") : I18n.t("shared.no"),
         investment.selected? ? I18n.t("shared.yes") : I18n.t("shared.no"),
 		investment.winner? ? I18n.t("shared.yes") : I18n.t("shared.no"),

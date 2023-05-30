@@ -10,15 +10,18 @@
               target: "_blank" %>
 </td>
 
+<td class="text-center" data-field="description">
+  <%= investment.description %>
+</td>
 <td class="text-center" data-field="supports">
   <%= investment.total_votes %>
 </td>
 
-<td class="text-center">
+<td class="text-center" data-field="physical_final_votes_count">
   <%= investment.physical_final_votes_count %>
 </td>
 
-<td class="text-center">
+<td class="text-center" data-field="final_total_votes">
   <%= investment.final_total_votes %>
 </td>
 
@@ -51,11 +54,15 @@
 <td class="small" data-field="feasibility">
   <%= t("admin.budget_investments.index.feasibility.#{investment.feasibility}") %>
 </td>
-
+<td class="small" data-field="unfeasibility_explanation">
+  <%= investment.unfeasibility_explanation %>
+</td>
 <td class="small" data-field="price">
   <%= investment.formatted_price %>
 </td>
-
+<td class="small" data-field="price_explanation">
+  <%= investment.price_explanation %>
+</td>
 <td class="small text-center" data-field="valuation_finished">
   <%= investment.valuation_finished? ? t("shared.yes") : t("shared.no") %>
 </td>
