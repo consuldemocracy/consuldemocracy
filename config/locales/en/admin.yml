@@ -198,6 +198,7 @@ en:
         success_notice: "Heading deleted successfully"
         unable_notice: "You cannot delete a Heading that has associated investments"
       form:
+        geozone_info: "When a heading is associated with a geozone, the geozone will appear on this budget's map if the geozone includes GeoJSON data."
         max_ballot_lines_info: 'Maximum number of projects a user can vote on this heading during the "Voting projects" phase. Only for budgets using approval voting.'
         population_info: "Budget Heading population field is used for Statistic purposes at the end of the Budget to show for each Heading that represents an area with population what percentage voted. The field is optional so you can leave it empty if it doesn't apply."
         coordinates_info: "If latitude and longitude are provided, the investments page for this heading will include a map. This map will be centered using those coordinates."
@@ -1391,8 +1392,13 @@ en:
         external_code: External code
         census_code: Census code
         code_help: Response code for this geozone on the census API
-        coordinates: Coordinates
+        color_help: "Color of the zone in a budget's map. %{format_help}"
+        coordinates: Coordinates available
         coordinates_help: Coordinates that will generate a clickable area on an HTML image map
+        geojson: GeoJSON available
+        geojson_help: "Must follow the \"Polygon\" or \"MultiPolygon\" type format; on a budget's map, a polygon based on this data will appear when a heading is associated to this geozone"
+      create:
+        notice: "Geozone created successfully"
       edit:
         form:
           submit_button: Save changes
@@ -1404,6 +1410,8 @@ en:
       delete:
         success: Geozone successfully deleted
         error: This geozone can't be deleted since there are elements attached to it
+      update:
+        notice: "Geozone updated successfully"
     signature_sheets:
       author: Author
       created_at: Creation date

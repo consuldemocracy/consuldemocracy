@@ -22,10 +22,7 @@
 </div>
 
 <%= render Budgets::Investments::ContentBlocksComponent.new(@heading) %>
-
-<% if @map_location&.available? %>
-  <%= render "budgets/investments/map" %>
-<% end %>
+<%= render Budgets::Investments::MapComponent.new(@investments_in_map, heading: @heading) %>
 <%= render "shared/tag_cloud", taggable: "Budget::Investment" %>
 <%= render "budgets/investments/categories" %>
 <%= render Budgets::Investments::FiltersComponent.new %>

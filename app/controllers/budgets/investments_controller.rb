@@ -20,7 +20,6 @@ module Budgets
 
     before_action :load_ballot, only: [:index, :show]
     before_action :load_heading, only: [:index, :show]
-    before_action :load_map, only: [:index]
     before_action :set_random_seed, only: :index
     before_action :load_categories, only: :index
     before_action :set_default_investment_filter, only: :index
@@ -41,10 +40,9 @@ module Budgets
 
     def index
       @investments = investments.page(params[:page]).per(PER_PAGE).for_render
-
       @investment_ids = @investments.ids
-      @investments_map_coordinates = MapLocation.where(investment: investments).map(&:json_data)
 
+      @investments_in_map = investments
       @tag_cloud = tag_cloud
       @remote_translations = detect_remote_translations(@investments)
     end
@@ -178,10 +176,6 @@ module Budgets
         elsif @budget&.publishing_prices_or_later?
           params[:filter] ||= "selected"
         end
-      end
-
-      def load_map
-        @map_location = MapLocation.from_heading(@heading) if @heading.present?
       end
   end
 end

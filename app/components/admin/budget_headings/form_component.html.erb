@@ -12,10 +12,17 @@
   <% end %>
 
   <div class="small-12 medium-6">
-    <% if @budget.show_money? %>
+    <% if budget.show_money? %>
       <%= f.text_field :price, maxlength: 8 %>
     <% else %>
       <%= f.hidden_field :price, value: 0 %>
+    <% end %>
+
+    <% if feature?(:map) %>
+      <%= f.select :geozone_id,
+                    geozone_options,
+                    include_blank: t("geozones.none"),
+                    hint: t("admin.budget_headings.form.geozone_info") %>
     <% end %>
 
     <% if heading.budget.approval_voting? %>
@@ -41,7 +48,7 @@
   </div>
 
   <div class="clear">
-    <% if respond_to?(:single_heading?) && single_heading? %>
+    <% if single_heading? %>
       <%= f.submit t("admin.budgets_wizard.headings.continue"), class: "button success" %>
     <% else %>
       <%= f.submit t("admin.budget_headings.form.#{action}"), class: "button hollow" %>

@@ -1,10 +1,11 @@
 class Shared::MapLocationComponent < ApplicationComponent
-  attr_reader :investments_coordinates, :form
+  attr_reader :investments_coordinates, :form, :geozones_data
 
-  def initialize(map_location, investments_coordinates: nil, form: nil)
+  def initialize(map_location, investments_coordinates: nil, form: nil, geozones_data: nil)
     @map_location = map_location
     @investments_coordinates = investments_coordinates
     @form = form
+    @geozones_data = geozones_data
   end
 
   def map_location
@@ -56,7 +57,8 @@ class Shared::MapLocationComponent < ApplicationComponent
         marker_remove_selector: "##{remove_marker_id}",
         marker_investments_coordinates: investments_coordinates,
         marker_latitude: map_location.latitude.presence,
-        marker_longitude: map_location.longitude.presence
+        marker_longitude: map_location.longitude.presence,
+        geozones: geozones_data
       }.merge(input_selectors)
     end
 
