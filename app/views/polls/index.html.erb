@@ -14,7 +14,7 @@
   <div class="small-12 column">
     <% if show_polls_description? %>
       <div class="polls-description">
-        <%= auto_link_already_sanitized_html wysiwyg(@active_poll.description) %>
+        <%= auto_link_already_sanitized_html sanitize(@active_poll.description) %>
       </div>
     <% end %>
 
