@@ -102,7 +102,7 @@ class Tenant < ApplicationRecord
 
       if @cached_rails_secrets != Rails.application.secrets
         @secrets = {}
-        @cached_rails_secrets = nil
+        @cached_rails_secrets = Rails.application.secrets
       end
 
       @secrets[current_schema] ||= Rails.application.secrets.merge(
