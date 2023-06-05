@@ -35,7 +35,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       auth = request.env["omniauth.auth"]
 
       identity = Identity.first_or_create_from_oauth(auth)
-      @user = current_user || identity.user || User.first_or_initialize_for_oauth(auth)
+#      @user = current_user || identity.user || User.first_or_initialize_for_oauth(auth)
+      @user = current_user || identity.user || User.first_or_initialize_user_for_provider(provider, auth)
 
       if save_user
         identity.update!(user: @user)
