@@ -21,6 +21,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 @import "font-awesome/icons";
 
+@mixin flex-with-gap($gap: rem-calc(map-get($grid-column-gutter, medium))) {
+  display: flex;
+  margin-#{$global-left}: -$gap;
+
+  > * {
+    padding-#{$global-left}: $gap;
+    margin-#{$global-left}: unset;
+  }
+}
+
 html {
   font-size: unset;
 }
@@ -795,15 +805,16 @@ body > header,
   }
 }
 
+.public > .wrapper > header > * {
+  @include full-width-background($adjust-padding: false);
+}
+
 .public > .wrapper > header::after {
   border-bottom: 0;
 }
 
 .locale .locale-form {
-
-  @include breakpoint(small only) {
-    padding-left: $line-height / 4;
-  }
+  padding-left: $line-height / 4;
 }
 
 // 2. Homepage and custom pages
@@ -1017,6 +1028,7 @@ body > header,
 }
 
 .feeds-participation {
+  @include flex-with-gap;
   display: block;
 
   @include breakpoint(medium) {
