@@ -138,8 +138,7 @@ section "Creating Poll Voters" do
                         document_number: user.document_number,
                         user: user,
                         poll: poll,
-                        origin: "web",
-                        token: SecureRandom.hex(32))
+                        origin: "web")
   end
 
   def randomly_answer_questions(poll, user)
