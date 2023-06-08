@@ -225,8 +225,8 @@ cs:
         dates_help_text: "Pouze pro informační účely"
         description_help_text: Tento text bude zobrazen v záhlaví, když je fáze aktivní
         duration: "Trvání fáze"
-        duration_description: "Doba, po kterou bude tato fáze aktivní."
-        enabled_help_text: Fáze bude zveřejněna v časovém rozvrhu participativního rozpočtu a bude aktivní pro jakýkoli jiný účel
+        duration_description: "Tato pole slouží pouze pro informační účely a <strong>nevyvolávají automatickou aktualizaci aktivní fáze.</strong> Chcete-li ji aktualizovat, upravte rozpočet a vyberte aktivní fázi."
+        enabled_help_text: Fáze bude zveřejněna v časovém rozvrhu participativního rozpočtu a bude aktivní pro jakýkoli jiný účel.
         image_description: "Pokud je obrázek nahrán, zobrazí se vedle popisu této fáze."
         main_call_to_action: "Hlavní výzva k akci (nepovinné)"
         main_call_to_action_description: "Tento odkaz se zobrazí na hlavním obrázku tohoto participativního rozpočtu, pokud je tato fáze povolena, a vybízí uživatele k provedení konkrétní akce, jako je vytvoření návrhu, hlasování pro stávající návrhy nebo získání dalších informací o procesu."
@@ -946,8 +946,8 @@ cs:
       alert:
         no_investments: "Nejsou vytvořeny žádné rozpočtové investice. K náhledu e-mailu je zapotřebí několik údajů o příkladu."
         no_comments: "Nejsou vytvořeny žádné komentáře. K náhledu e-mailu je zapotřebí několik údajů o příkladu."
-        no_replies: "Nebyly vytvořeny žádné odpovědi. K náhledu e-mailu je zapotřebí několik údajů o příkladu."
-        no_evaluation_comments: "Nejsou vytvořeny žádné hodnotící komentáře. K náhledu e-mailu je zapotřebí několik údajů o příkladu."
+        no_replies: "Nebyly vytvořeny žádné odpovědi. K náhledu e-mailu je zapotřebí některých příkladů údajů."
+        no_evaluation_comments: "Nejsou vytvořeny žádné hodnotící komentáře. K náhledu e-mailu je zapotřebí nějakých příkladů údajů."
     emails_download:
       index:
         title: Stahování e-mailů
@@ -1391,7 +1391,7 @@ cs:
       show_results_and_stats: "Zobrazit výsledky a statistiky"
       results_and_stats_reminder: "Zaškrtnutím těchto políček budou výsledky a statistiky tohoto průzkumu veřejně dostupné a kterýkoliv uživatel je uvidí."
       close_modal: Zavřít modální okno
-      example_url: "https://consulproject.org"
+      example_url: "Například https://consulproject.org nebo /help"
     geozones:
       index:
         title: Geozóna
@@ -1733,7 +1733,7 @@ cs:
         title_2: "Co dělá modul AI / strojového učení v systému CONSUL?"
         description_2: "Tento modul umožňuje implementovat v CONSULu libovolný typ programů AI/Machine Learning. Tyto programy mohou zpracovávat informace dostupné v systému CONSUL a vytvářet výsledky, které pomáhají uživatelům i správcům provádět efektivnější a inteligentnější zapojení občanů. Modul byl vyvinut tak, aby bylo možné snadno implementovat a spouštět nové programy, přičemž obecný kód CONSULu a kód těchto nových programů jsou na sobě nezávislé."
         title_3: "Jak používat tento modul"
-        description_3: "Při prvním použití je nutné postupovat podle pokynů uvedených v dokumentaci CONSUL a modul správně aktivovat. Po správné aktivaci modulu se programy spouštějí na kartě \"Spustit skripty\". Před spuštěním se nám na téže kartě zobrazí odhad doby spuštění a další důležité informace. Na konci provádění můžeme na kartě \"Nastavení\" aktivovat obsah, který se bude v CONSULu zobrazovat, a také stáhnout další vygenerované soubory, které se nám mohou hodit."
+        description_3: "Při prvním použití je nutné postupovat podle pokynů uvedených v dokumentaci CONSUL a modul správně aktivovat. Po správné aktivaci modulu se programy spouštějí na kartě \"Spustit skripty\". Před spuštěním se nám na téže kartě zobrazí odhad doby spuštění a další důležité informace. Na konci provádění můžeme na kartě \"Nastavení\" aktivovat obsah, který se bude v CONSUL zobrazovat, a také stáhnout další vygenerované soubory, které se nám mohou hodit."
         title_4: "Jak implementovat nové skripty AI / strojového učení"
         description_4: "Jako příklady použijte předchozí skripty."
         description_4b: "Nové skripty by měly být umístěny ve složce <code>public/machine_learning/scripts</code>"
@@ -1757,7 +1757,7 @@ cs:
       related_content_description: "Přidává automaticky generovaný související obsah do návrhů a projektů participativního rozpočtu."
       script_info: "Po dokončení skriptu obdržíte e-mail na %{email}."
       script_name: "Název skriptu:"
-      select_script: "Vyberte skript pythonu, který chcete spustit"
+      select_script: "Vyberte python skript, který chcete spustit"
       started_at: "Začíná na:"
       tab_help: "Nápověda"
       tab_scripts: "Spustit skript"
