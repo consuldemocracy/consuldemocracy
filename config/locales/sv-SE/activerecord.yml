@@ -462,7 +462,7 @@ sv:
         description: Beskrivning
       poll/question/answer/translation:
         title: Svar
-        description: "Beskrivning"
+        description: "Beskrivning (valfritt)"
       poll/question/answer/video:
         title: Titel
         url: Extern video
