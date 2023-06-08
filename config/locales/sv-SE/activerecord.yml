@@ -547,6 +547,10 @@ sv:
           attributes:
             max_per_day:
               invalid: "Du har skickat det högsta antalet tillåtna privata meddelanden per dag"
+        geozone:
+          attributes:
+            geojson:
+              invalid: "Angiven GeoJSON följer inte korrekt format. Den måste följa ett format av typen \"Polygon\" eller \"MultiPolygon\"."
         image:
           attributes:
             attachment:
