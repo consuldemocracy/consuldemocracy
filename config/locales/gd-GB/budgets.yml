@@ -90,7 +90,6 @@ gd:
         tags_placeholder: "Cuir a-steach na tagaichean a bu toil leat cleachdadh, air an sgaradh le cromagan (',')"
         map_location: "An t-àite air a’ mhapa"
         map_location_instructions: "Rach dhan àite cheart air a’ mhapa agus cuir an comharra ann."
-        map_remove_marker: "Thoir air falbh an comharra air a’ mhapa"
       index:
         title: Buidseatan com-pàirteachail
         unfeasible: Pròiseactan tasgaidh nach eil comasach
