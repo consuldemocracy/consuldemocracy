@@ -203,6 +203,7 @@ sv:
         external_code: "Extern kod (valfri)"
         color: "Färg (valfritt)"
         census_code: "Adressregisterkod (valfri)"
+        geojson: "GeoJSON-data (valfritt)"
         html_map_coordinates: "HTML-<map>koordinater (valfritt)"
       milestone:
         status_id: "Nuvarande status (valfritt)"
