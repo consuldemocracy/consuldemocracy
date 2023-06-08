@@ -92,6 +92,7 @@ main {
 
     .button {
       box-shadow: none;
+      min-height: unset;
 
       &::before {
 
@@ -805,6 +806,7 @@ body > header,
   }
 }
 
+.admin > .header > *,
 .public > .wrapper > header > * {
   @include full-width-background($adjust-padding: false);
 }
@@ -2505,8 +2507,6 @@ a {
     .unlike {
       background: $light;
       display: block;
-      padding: $line-height / 4;
-      padding-top: $line-height / 2;
       width: rem-calc(48);
 
       &.voted {
