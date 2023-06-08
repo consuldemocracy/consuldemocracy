@@ -23,6 +23,7 @@ nl:
             other: "Je kan op maximaal <span>%{count}</span> projecten stemmen"
         no_balloted_group_yet: "U hebt nog niet gestemd op deze groep, stem nu!"
         remove: Verwijder keuze
+        remove_label: "Je stem voor %{investment} intrekken"
         voted:
           one: "U heeft op <span>één</span> voorstel gestemd."
           other: "U heeft op <span>%{count}</span> voorstellen gestemd."
@@ -40,7 +41,7 @@ nl:
         casted_offline: Je hebt al offline deelgenomen
     groups:
       show:
-        title: Kies een mogelijkheid
+        title: Selecteer een optie
     phase:
       drafting: Concept (niet publiekelijk zichtbaar)
       informing: Informatie
@@ -53,17 +54,17 @@ nl:
       reviewing_ballots: Evaluatie van stemmen
       finished: Afronden budgetvoorstel
     index:
-      title: Participatory budgets
+      title: Burgerbegrotingen
       empty_budgets: Er zijn geen budgetten.
       section_header:
         icon_alt: Budgetafbeelding
-        title: Participatory budgets
+        title: Burgerbegrotingen
         help: Hulp bij burgerbegrotingen
       all_phases: Investeringsfases
       next_phase: Volgende fase
       prev_phase: Vorige fase
       current_phase: Huidige fase
-      map: Investeringen geografisch weergegeven
+      map: Investeringen op de kaart
       finished_budgets: Afgeronde burgerbegrotingen
       see_results: Bekijk resultaten
       section_footer:
@@ -73,14 +74,14 @@ nl:
     investments:
       form:
         title: "Nieuw begrotingsvoorstel maken"
-        subtitle: "%{heading}(%{price})"
-        tag_category_label: "Categorieen"
+        subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
+        tag_category_label: "Categorieën"
         tags_instructions: "Voeg termen toe aan dit voorstel. Je kunt kiezen uit voorgestelde termen of je eigen term kiezen"
         tags_label: Tags
         tags_placeholder: "Voer de termen in die je wilt gebruiken, gescheiden door komma's (',')"
         map_location: "Locatie"
         map_location_instructions: "Beweeg de kaart en wijs de locatie aan"
-        map_remove_marker: "Locatie verwijderen"
       index:
         title: Burgerbegrotingen
         unfeasible: Unfeasible investment projects
@@ -135,7 +136,7 @@ nl:
         supports: Steunt
         votes: Votes
         price: Prijs
-        comments_tab: Comments
+        comments_tab: Reacties
         milestones_tab: Mijlpalen
         author: Author
         project_unfeasible: "Dit investeringsproject <strong> is gemarkeerd als niet haalbaar </strong> en gaat niet naar de beslissingsfase."
@@ -146,6 +147,7 @@ nl:
       wrong_price_format: Alleen hele cijfers
       investment:
         add: Voeg toe
+        add_label: "Stem voor %{investment}"
         already_added: U heeft dit voorstel al toegevoegd
         support_title: Steun dit voorstel
         supports:
@@ -173,7 +175,7 @@ nl:
         read_more: "Lees meer"
         supports: "Steunt"
       see_all: "Alle investeringen bekijken"
-      title: "Lijst van investeringen"
+      title: "Investeringen"
     show:
       see_results: Bekijk resultaten
     supports_info:
