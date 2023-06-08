@@ -1,5 +1,8 @@
 nl:
   pages:
+    census_terms:
+      title: "Algemene voorwaarden voor toegang tot de telling"
+      description: "Informatiepagina over de algemene voorwaarden voor toegang tot de telling."
     conditions:
       title: Gebruiksvoorwaarden
       subtitle: JURIDISCHE KENNISGEVING OP DE GEBRUIKSVOORWAARDEN, PRIVACY EN BESCHERMING VAN GEGEVENS VAN DE OPEN OVERHEID PORTAL
@@ -10,7 +13,7 @@ nl:
       menu:
         debates: "Debatten"
         proposals: "Voorstellen"
-        budgets: "Participatory budgets"
+        budgets: "Burgerbegrotingen"
         polls: "Polls"
         other: "Verdere informatie"
         processes: "Proces"
@@ -56,7 +59,7 @@ nl:
       other:
         title: "Verdere informatie"
         how_to_use: "Gebruik %{org_name} in uw gemeente"
-        sdg: "hulp bij Sustainable Development Goals"
+        sdg: "Hulp bij Sustainable Development Goals"
       how_to_use:
         text: |-
           Gebruik het in je gemeente of help ons het te verbeteren, het is open source software.
@@ -102,7 +105,7 @@ nl:
               page_column: Votes
             - 
               key_column: 4
-              page_column: Participatory budgets
+              page_column: Burgerbegrotingen
             - 
               key_column: 5
               page_column: Plannen
