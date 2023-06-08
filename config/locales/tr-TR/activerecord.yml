@@ -462,7 +462,7 @@ tr:
         description: Tanımlama
       poll/question/answer/translation:
         title: Cevap
-        description: "Tanımlama"
+        description: "Tanımlama (isteğe bağlı)"
       poll/question/answer/video:
         title: İsim
         url: Harici video
