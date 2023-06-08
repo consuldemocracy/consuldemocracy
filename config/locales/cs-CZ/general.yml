@@ -319,7 +319,7 @@ cs:
       show_link: Zobrazit návrh
     retire_form:
       title: Pozastavit návrh
-      warning: "Jestliže návrh pozastavíte, bude moci i nadéle získat podporu, ale bude odstraněn z hlavního seznamu a zprávy budou viditelné všem uživatelům s uvedením informace autora, že by návrh už neměl být podporován."
+      warning: "Jestliže návrh pozastavíte, bude moci i nadéle získat podporu, ale bude odstraněn z hlavního seznamu a zprávy budou viditelné všem uživatelům s uvedením informace autora, že by návrh už neměl být podporován"
       retired_reason_blank: Vyberte možnost
       retired_explanation_placeholder: Vysvětlit krátce, proč si myslíte, že tento návrh shoulderstand neobdrží další podporu
       submit_button: Pozastavený návrh
