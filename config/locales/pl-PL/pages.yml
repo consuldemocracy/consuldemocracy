@@ -156,7 +156,7 @@ pl:
               description_column: Zmniejsza rozmiar tekstu
       compatibility:
         title: Zgodność z normami i projektowaniem wizualnym
-        description: 'Wszystkie strony witryny są zgodne z <strong> Wskazówki dotyczące dostępności </strong> lub ogólne zasady projektowania ustanowione przez Grupę Roboczą <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> należącą do W3C.'
+        description: 'Wszystkie strony witryny są zgodne z <strong>Wskazówki dotyczące dostępności</strong> lub ogólne zasady projektowania ustanowione przez Grupę Roboczą <abbr title = "Web Accessibility Initiative" lang = "en">WAI</abbr> należącą do W3C.'
     titles:
       help: "Czym jest %{org}? - Uczestnictwem obywatelskim"
     verify:
