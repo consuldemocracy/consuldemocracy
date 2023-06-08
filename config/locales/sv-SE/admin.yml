@@ -219,7 +219,7 @@ sv:
         dates_help_text: "Endast i informationssyfte"
         description_help_text: Den här texten visas i sidhuvudet när fasen är aktiv
         duration: "Fasens varaktighet"
-        duration_description: "Den tidsperiod som den här fasen blir aktiv."
+        duration_description: "Dessa fält används endast i informationssyfte och <strong>utlöser inte en automatisk uppdatering av den aktiva fasen.</strong> Uppdatera den genom att redigera budgeten och välja den aktiva fasen."
         enabled_help_text: Den här fasen kommer att visas offentligt i budgetens tidslinje och vara aktiv för andra ändamål.
         image_description: "Om det laddas upp en bild visas den bredvid beskrivningen av fasen."
         main_call_to_action: "Huvudsaklig uppmaning (valfritt)"
@@ -1536,6 +1536,7 @@ sv:
         activation_status: Aktivationsstatus
       account:
         active_status: Konto aktiverat
+        inactive_status: Konto ej aktiverat
       index:
         title: Användare
         no_users: Det finns inga användare.
