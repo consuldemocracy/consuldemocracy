@@ -82,7 +82,6 @@ tr:
         tags_placeholder: "Kullanmak istediğiniz etiketleri virgülle ayırarak yazın (',')"
         map_location: "Harita konumu"
         map_location_instructions: "Harita ile konuma gidin ve işaretçiyi yerleştirin."
-        map_remove_marker: "Harita işaretçisini kaldır"
       index:
         title: Katılımcı bütçeleme
         unfeasible: Uygulanabilir olmayan yatırım projeleri
