@@ -95,6 +95,7 @@ main {
       min-height: unset;
 
       &::before {
+        vertical-align: middle;
 
         &:hover {
           color: #fff;
