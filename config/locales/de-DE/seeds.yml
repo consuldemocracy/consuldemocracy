@@ -1,5 +1,18 @@
 de:
   seeds:
+    admin_notifications:
+      budget:
+        title: "Wir schließen den Bürgerhaushalt!"
+        body: "Beeilen Sie sich und erstellen Sie einen Vorschlag, bevor die Aktion in den nächsten Tagen endet!"
+      help:
+        title: "Helfen Sie uns bei der Übersetzung von consul."
+        body: "Wenn Sie eine Sprache gut beherrschen, helfen Sie uns bitte bei der Übersetzung von consul!"
+      map:
+        title: "Sie können jetzt Vorschläge und Investitionen geolokalisieren."
+        body: "Wenn Sie einen Vorschlag oder eine Investition erstellen, können Sie jetzt einen Punkt auf einer Karte angeben."
+      proposal:
+        title: "Haben Sie einen Vorschlag?"
+        body: "Denken Sie daran, dass Sie einen Vorschlag mit Ihren Ideen machen können und die Leute ihn diskutieren und unterstützen werden."
     settings:
       official_level_1_name: Offizielle Position 1
       official_level_2_name: Offizielle Position 2
@@ -14,6 +27,27 @@ de:
     organizations:
       human_rights: Menschenrechte
       neighborhood_association: Nachbarschaftsvereinigung
+    cards:
+      budget:
+        title: "Wie funktioniert ein Bürgerhaushalt?"
+        description: "Bürgerhaushalte ermöglichen es den Bürgern, Vorschläge zu machen und direkt zu entscheiden, wie ein Teil des Haushalts ausgegeben werden soll, wobei die Vorschläge von der Institution überwacht und streng bewertet werden. Maximale Effizienz und Kontrolle zur Zufriedenheit aller."
+        link_text: "Mehr über Bürgerhaushalte"
+        label: "Partizipative Haushalte"
+      debate:
+        title: "Wie funktionieren Debatten?"
+        description: "Jeder kann Themen zu jedem beliebigen Thema eröffnen und so separate Bereiche schaffen, in denen die Leute das vorgeschlagene Thema diskutieren können. Debatten werden von allen geschätzt, um die wichtigsten Themen hervorzuheben."
+        link_text: "Mehr über Debatten"
+        label: "Debatten"
+      header:
+        title: "CONSUL"
+        description: "Freie Software für die Bürgerbeteiligung."
+        link_text: "Mehr Informationen"
+        label: "Willkommen bei"
+      proposal:
+        title: "Wie funktionieren die Bürgervorschläge?"
+        description: "Ein Raum, in dem jeder einen Bürgervorschlag einreichen und um Unterstützung bitten kann. Über Vorschläge, die genügend Unterstützer finden, wird abgestimmt. So können wir gemeinsam über die Themen entscheiden, die uns wichtig sind."
+        link_text: "Mehr über Vorschläge"
+        label: "Vorschläge der Bürger"
     categories:
       associations: Verbände
       culture: Kultur
@@ -36,11 +70,18 @@ de:
       groups:
         all_city: Alle Städte
         districts: Bezirke
+      phases:
+        description: "Beschreibung in %{language}"
+        summary: "Zusammenfassung in %{language}"
       statuses:
         studying_project: Das Projekt untersuchen
         bidding: Ausschreibung
         executing_project: Das Projekt durchführen
         executed: Ausgeführt
+    legislation:
+      draft_versions:
+        title: "Version %{number}"
+        body: "Entwurfsfassung in %{language}"
     polls:
       current_poll: "Aktuelle Umfrage"
       current_poll_geozone_restricted: "Aktuelle Umfrage eingeschränkt auf Geo-Zone"
