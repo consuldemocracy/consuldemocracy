@@ -2,6 +2,10 @@ nl:
   mailers:
     title: "Open overheid"
     no_reply: "This message was sent from an email address that does not accept replies."
+    already_confirmed:
+      info: "We hebben een verzoek voor instructies om je account te bevestigen ontvangen. Je account is alleen al bevestigd, dus dit hoef je niet meer te doen."
+      new_password: "Als je je wachtwoord vergeten bent, kan je het opnieuw instellen met de volgende link:"
+      subject: Je account is al bevestigd
     comment:
       hi: Hi
       new_comment_by: There is a new comment from <strong>%{commenter}</strong>
@@ -17,6 +21,7 @@ nl:
       subject: Confirm your email
       thanks: Thank you very much.
       title: "Confirm your account using the following link"
+      text: "Bevestig je account met de volgende link."
     reply:
       hi: Hoi
       new_reply_by: There is a new response from <strong>%{commenter}</strong> to your comment on
@@ -27,10 +32,12 @@ nl:
       title: "Notifications in %{org_name}"
       share: Voorstel delen
       comment: Reageren op het voorstel
+      unsubscribe_text: "Als je geen notificaties van voorstellen wilt ontvangen, ga je naar %{notifications} en verwijder je het vinkje bij 'Een samenvatting van notificaties ontvangen'."
       unfollow: "Ga naar dit voorstel en stop met volgen om geen meldingen meer te ontvangen."
     direct_message_for_receiver:
       subject: "You have received a new private message"
       reply: Reply to %{sender}
+      unsubscribe_text: "Als je geen directe berichten wil ontvangen, ga dan naar %{notifications} en haal het vinkje weg bij 'Email ontvangen wanneer er privéberichten zijn'."
     direct_message_for_sender:
       subject: "U heeft een nieuw prive bericht verstuurd"
       title: "U heeft een nieuw prive bericht verstuurd"
@@ -48,10 +55,11 @@ nl:
       intro: "Hallo <strong>%{author}</strong>,"
       text: "Dank u voor het maken van uw investering <strong>%{investment}</strong> voor participatieve budgetten <strong>%{budget}</strong>."
       follow: "Wij zullen u informeren over hoe het proces vordert, dit kun je ook volgen op <strong>%{link}<div class=\"notranslate\"> 2 volgen kun</div>."
-      follow_link: "Participatory Budgets"
+      follow_link: "Burgerbegrotingen"
       sincerely: "Sincerely,"
       share: "Comparte tu proyecto"
     budget_investment_unfeasible:
+      title: "Je investeringsproject is als onhaalbaar gemarkeerd"
       hi: "Beste deelnemer,"
       new: "Voor al deze vragen nodigen we u uit een <strong>nieuw voorstel</ strong> uit te werken dat zich aanpast aan de voorwaarden van dit proces. U kunt dit doen door deze link te volgen: %{url}."
       new_href: "nieuw investeringsproject"
@@ -60,6 +68,7 @@ nl:
       subject: "Uw investeringsproject '%{code}' is als onhaalbaar gemarkeerd"
     budget_investment_selected:
       subject: "Uw budget voorstel '%{code}' is geselecteerd"
+      title: "Je investeringsproject is geselecteerd"
       hi: "Beste deelnemer,"
       share: "Begin met het verwerven van stemmen; deel uw project op sociale netwerken, bijvoorbeeld. Delen en communicatie is essentieel om het verder te brengen."
       share_button: "Deel uw project"
@@ -67,6 +76,7 @@ nl:
       sincerely: "Sincererly"
     budget_investment_unselected:
       subject: "Uw project '%{code}' is niet geselecteerd"
+      title: "Je investeringsproject is niet geselecteerd"
       hi: "Beste deelnemer,"
       thanks: "Dank u nogmaals voor uw deelname."
       sincerely: "Hoogachtend"
@@ -86,3 +96,12 @@ nl:
       subject: "Machine Learning - Content werd succesvol gegenereerd"
       text: "Content werd succesvol gegenereerd."
       title: "Machine Learning script"
+    new_actions_notification_on_create:
+      subject: "Je conceptvoorstel is aangemaakt"
+      hi: "Hi %{name}!"
+      introduction: "Je %{title} voorstel is succesvol aangemaakt."
+      text_1: "Doe er je voordeel mee dat je voorstel nog niet openbaar is en maak je klaar om een hoop mensen te benaderen."
+      text_2: "Als je klaar bent publiceer je je voorstel via <a href='%{link}'>deze link</a>."
+    new_actions_notification_on_published:
+      text_1: "En nu, ga voor je eerste 100 ondersteuningen!"
+      text_2: "Waarom 100?"
