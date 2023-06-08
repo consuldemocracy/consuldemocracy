@@ -26,7 +26,7 @@ nl:
       errors:
         incorrect_code: De verificatiecode is onjuist
       new:
-        explanation: "For participate on final voting you can:"
+        explanation: "Om te stemmen voor budgetprojecten kan je:"
         go_to_index: Voorstellen bekijken
         office: Verifiëren in een Citizen Support Offices
         send_letter: Send me a letter with the code
@@ -87,11 +87,12 @@ nl:
     step_1: Residence
     step_2: Confirmation code
     step_3: Final verification
-    user_permission_debates: Neem deel aan debatten
+    user_permission_debates: Deelnemen aan debatten
     user_permission_info: Als u uw gegevens verifieert, kunt u...
     user_permission_proposal: Nieuwe voorstellen maken
-    user_permission_support_proposal: Voorstellen steunen*
-    user_permission_votes: Participate on final voting*
+    user_permission_support_proposal: Voorstellen steunen
+    user_permission_votes: Stemmen op begrotingsprojecten
+    verification_needed: Aanvullende verificatie nodig
     verified_user:
       form:
         submit_button: Send code
