@@ -4,10 +4,10 @@ nl:
       title: Evaluatie
     menu:
       title: Evaluatie
-      budgets: Participatory budgets
+      budgets: Burgerbegrotingen
     budgets:
       index:
-        title: Participatory budgets
+        title: Burgerbegrotingen
         filters:
           current: Open
           finished: Afgelopen
