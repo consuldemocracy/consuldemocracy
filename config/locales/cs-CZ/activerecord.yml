@@ -235,6 +235,11 @@ cs:
         few: Záznamy místního registru občanů
         many: Záznamů místního registru občanů
         other: Záznamů místního registru občanů
+      votation_type:
+        one: Typ hlasování
+        few: Typy hlasování
+        many: Typů hlasování
+        other: Typů hlasování
     attributes:
       budget:
         name: "Name"
@@ -276,7 +281,7 @@ cs:
         selected_true: "Vybrané"
         selected_false: "Není vybráno"
         unfeasibility_explanation: "Vysvětlení proveditelnosti"
-        valuation_finished: "Naceňování bylo ukončeno"
+        valuation_finished: "Vyhodnocení dokončeno"
         valuator_ids: "Skupiny"
         valuation_tag_list: "Štítky"
       budget/investment/translation:
@@ -546,7 +551,7 @@ cs:
         description: Popis
       poll/question/answer/translation:
         title: Answer
-        description: "Popis"
+        description: "Popis (volitelné)"
       poll/question/answer/video:
         title: Předmět
         url: Externí video
