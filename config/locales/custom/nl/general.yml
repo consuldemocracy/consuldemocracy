@@ -70,7 +70,6 @@ nl:
   form:
     debate: "discussie"
     proposal: "initiatief"
-    budget/investment: "idee"
     not_saved: "zorgden ervoor dat je %{resource} niet geplaatst kan worden. <br>Bekijk de rode tekst om te zien wat aangepast moet worden."
     budget/investment: "idee"
     accept_terms: "Ik begrijp dat ik een idee indien voor de Oosterparkwijk"
@@ -323,7 +322,7 @@ nl:
   welcome:
     feed:
       description:
-        proposals: "Voorstellen die genoeg steun ontvangen gaan door naar de stem fase. Zo kunnen alle inwoners van stad bepalen hoe de gemeente eruit komt te zien."
+        proposals: "Voorstellen die genoeg steun ontvangen gaan door naar de stemfase. Zo kunnen alle inwoners van stad bepalen hoe de gemeente eruit komt te zien."
         budgets: "Geef aan wat volgens jou de belangrijkste ideeën zijn."
       most_active:
         debates: "Actieve discussies"
@@ -331,6 +330,8 @@ nl:
         budgets: "Ideeën"
       see_budget: "Bekijk ideeën"
       see_all_proposals: "Alle initiatieven"
+      process_label: "Plan"
+      see_process: "Plan bekijken"
     cards:
       title: "Uitgelicht"
   shared:
@@ -462,10 +463,6 @@ nl:
         sent: "Mail verzonden"
       new:
         title: "E-mail om te delen"
-  proposal_notifications:
-    new:
-      info_about_receivers: "Dit bericht wordt naar <strong>%{count} mensen</strong> gestuurd en is zichtbaar op de %{proposal_page}.<br>Meldingen worden niet direct gestuurd, maar de gebruikers ontvangen periodiek een email met alle meldingen omtrent jouw initiatief."
-      proposal_page: "pagina van je initiatief"
   omniauth:
     facebook:
       sign_in: "Inloggen via Facebook"

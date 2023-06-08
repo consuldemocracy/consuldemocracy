@@ -160,4 +160,4 @@ nl:
         sdg/local_target:
           attributes:
             code:
-              invalid: "moet beginnen met dezelfde code als de gerelateerde SDG, gevolgs door een punt en eindigen met een cijfer"
+              invalid: "moet beginnen met dezelfde code als de gerelateerde SDG, gevolgd door een punt en eindigen met een cijfer"

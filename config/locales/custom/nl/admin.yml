@@ -151,7 +151,6 @@ nl:
           max_number_headings: "Maximaal aantal rubrieken waarop een gebruiker kan stemmen:"
           add_group: "Groep toevoegen"
           add_heading: "Rubriek toevoegen"
-        image_description: "Wanneer een afbeelding is geüpload, wordt deze gebruikt als banner voor de burgerbegroting gebruikt. Zoniet, dan wordt de standaard kleur gebruikt als banner."
         duration: "Periode"
         phase: "Fase"
         phase_content: "Bewerk inhoud"
@@ -524,6 +523,9 @@ nl:
       learn_more: "Meer informatie"
       example_url: "https://consulproject.org"
       back: "Go back"
+      search:
+        label:
+          local_census_records: "Zoeken op documentnummer"
     dashboard:
       index:
         title: "Admin"
