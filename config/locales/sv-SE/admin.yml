@@ -1533,6 +1533,9 @@ sv:
         document_number: Identitetshandlingens nummer
         roles: Roller
         verification_level: Rättighetsnivå
+        activation_status: Aktivationsstatus
+      account:
+        active_status: Konto aktiverat
       index:
         title: Användare
         no_users: Det finns inga användare.
