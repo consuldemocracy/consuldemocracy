@@ -166,7 +166,7 @@ it:
         voting_style: "Stile finale di votazione"
         voting_style_knapsack: "Zaino"
         voting_style_approval: "Approvazione"
-        hide_money: "Nascondi l'importo di denaro per questo budget"
+        hide_money: "Nascondi l'importo di denaro per questo bilancio"
       budget/translation:
         main_link_text: "Testo sul link"
         main_link_url: "Il link ti porta a (aggiungi un link)"
@@ -201,7 +201,9 @@ it:
       geozone:
         name: Nome
         external_code: "Codice esterno (opzionale)"
+        color: "Colore (facoltativo)"
         census_code: "Codice censo (opzionale)"
+        geojson: "Dati GeoJSON (facoltativi)"
         html_map_coordinates: "HTML <map> Coordinate (opzionale)"
       milestone:
         status_id: "Stato attuale dell’investimento (facoltativo)"
@@ -545,6 +547,10 @@ it:
           attributes:
             max_per_day:
               invalid: "Hai raggiunto il numero massimo di messaggi privati giornalieri"
+        geozone:
+          attributes:
+            geojson:
+              invalid: "Il GeoJSON fornito non segue il formato corretto. Deve seguire il tipo di formato \"Polygon\" o \"MultiPolygon\"."
         image:
           attributes:
             attachment:
