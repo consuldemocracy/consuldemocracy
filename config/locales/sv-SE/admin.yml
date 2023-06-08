@@ -220,7 +220,7 @@ sv:
         description_help_text: Den här texten visas i sidhuvudet när fasen är aktiv
         duration: "Fasens varaktighet"
         duration_description: "Den tidsperiod som den här fasen blir aktiv."
-        enabled_help_text: Den här fasen kommer att visas offentligt i budgetens tidslinje och vara aktiv för andra ändamål
+        enabled_help_text: Den här fasen kommer att visas offentligt i budgetens tidslinje och vara aktiv för andra ändamål.
         image_description: "Om det laddas upp en bild visas den bredvid beskrivningen av fasen."
         main_call_to_action: "Huvudsaklig uppmaning (valfritt)"
         main_call_to_action_description: "Länken kommer att visas på huvudbannern för den här medborgarbudgeten när denna fas aktiveras och uppmuntrar din användare att utföra en specifik åtgärd som t.ex. att skapa ett nytt förslag, rösta på befintliga eller lära sig mer om processen."
