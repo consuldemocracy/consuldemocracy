@@ -221,7 +221,7 @@ it:
         description_help_text: Questo paragrafo apparirà nell’intestazione quando la fase risulterà attiva
         duration: "Durata della fase"
         duration_description: "Il periodo di tempo in cui questa fase sarà attiva."
-        enabled_help_text: Questa fase sarà visibile a tutti nella sequenza temporale delle fasi del bilancio e risulterà attiva ad ogni altro fine
+        enabled_help_text: Questa fase sarà visibile a tutti nella sequenza temporale delle fasi del bilancio e risulterà attiva ad ogni altro fine.
         image_description: "Se un'immagine è caricata, sarà mostrata affianco alla descrizione di questa fase."
         main_call_to_action: "Chiamata all'azione principale (facoltativo)"
         main_call_to_action_description: "Questo link comparirà sul banner principale di questo budget partecipativo quando questa fase è abilitata e incoraggerà il tuo utente a eseguire un'azione specifica come creare una proposta, votare quelle esistenti o scoprire di più sul processo."
