@@ -198,6 +198,7 @@ sv:
         success_notice: "Området har raderats"
         unable_notice: "Du kan inte radera ett område som har kopplade investeringar"
       form:
+        geozone_info: "När ett område är förknippat med en geozon visas geozonen på den här budgetens karta om geozonen omfattar GeoJSON-data."
         max_ballot_lines_info: 'Maximalt antal projekt som en användare kan rösta om i det här området under fasen "Omröstning". Bara för budgetar som använder omröstning med godkännande.'
         population_info: "Fältet för folkmängd inom ett budgetområde används för att i slutet av budgeten föra statistik för varje område över hur stor del av befolkningen där som deltagit i omröstningen. Fältet är valfritt, så du kan lämna det tomt om det inte är tillämpligt."
         coordinates_info: "Om latitud och longitud anges kommer budgetsidan för detta område att innehålla en karta. Kartan centreras kring dessa koordinater."
@@ -1391,8 +1392,13 @@ sv:
         external_code: Extern kod
         census_code: Adressregisterkod
         code_help: Svarskod för denna geozon i adressregister-API:t
+        color_help: "Zonens färg i en budgets karta. %{format_help}"
         coordinates: Koordinater
         coordinates_help: Koordinater som skapar ett klickbart område på en HTML-bildkarta
+        geojson: GeoJSON tillgänglig
+        geojson_help: "Måste följa format av typen \"Polygon\" eller \"MultiPolygon\". På en budgets karta visas det en polygon baserad på denna data när ett område är förknippat med denna geozon"
+      create:
+        notice: "Geozon har skapats"
       edit:
         form:
           submit_button: Spara ändringar
@@ -1404,6 +1410,8 @@ sv:
       delete:
         success: Det geografiska området har tagits bort
         error: Det här geografiska området kan inte raderas eftersom det finns förslag kopplade till det
+      update:
+        notice: "Geozon har uppdaterats"
     signature_sheets:
       author: Skribent
       created_at: Datum för skapande
