@@ -99,7 +99,7 @@ tr:
             short_title: "Uygun Fiyatlı Aşılara ve İlaçlara Araştırma, Geliştirme ve Evrensel Erişimin Desteklenmesi"
           target_3_C:
             long_title: "Az gelişmiş ülkeler ve gelişmekte olan küçük ada devletleri başta olmak üzere gelişmekte olan ülkelerde sağlık hizmeti finansmanının ve sağlık iş gücü istihdamının, geliştirilmesinin, eğitilmesinin ve devamlılığının önemli ölçüde artırılması."
-            short_title: "Gelişmekte Olan Ülkelerde Sağlık Finansmanının Artırılması ve Sağlık İşgücünün Desteklenmesi"
+            short_title: "Gelişmekte Olan Ülkelerde Sağlık Finansmanının Artırılması ve Sağlık İş Gücünün Desteklenmesi"
           target_3_D:
             long_title: "Erken uyarı, risk azaltma ve ulusal ve küresel sağlık risklerinin yönetimi için başta gelişmekte olan ülkeler olmak üzere tüm ülkelerin kapasitesinin güçlendirilmesi."
             short_title: "Küresel Sağlık Riskleri İçin Erken Uyarı Sistemlerinin İyileştirilmesi"
@@ -156,7 +156,7 @@ tr:
             short_title: "Zorla Evliliklerin ve Genital Sakatlamanın Ortadan Kaldırılması"
           target_5_4:
             long_title: "Ücretsiz bakımı ve ev işlerini kamu hizmetleri, altyapı ve sosyal koruma politikalarının sağlanması ve hane ve aile içinde uygun şekilde paylaşılan sorumluluğun ulusal düzeyde teşvik edilmesi yoluyla tanımak ve bunlara değer vermek."
-            short_title: "Ödemesiz Bakıma Değer Verilmesi ve Paylaşılan Yurtiçi Sorumlulukların Teşvik Edilmesi"
+            short_title: "Ödemesiz Bakıma Değer Verilmesi ve Paylaşılan Yurt İçi Sorumlulukların Teşvik Edilmesi"
           target_5_5:
             long_title: "Kadınların siyasi, ekonomik ve sosyal yaşamın her seviyesinde karar alma süreçlerine tam ve etkin biçimde katılımının ve liderlik etmeleri için eşit fırsatlar tanınmasının garanti altına alınması."
             short_title: "Liderlik ve Karar Almada Tam Katılımın Sağlanması"
@@ -186,10 +186,10 @@ tr:
             short_title: "Açığa Dışkılamanın Sonlandırılması ve Sanitasyon ile Hijyene Erişim Sağlanması"
           target_6_3:
             long_title: "2030'a kadar, kirliliği azaltarak, atıkların doğaya bırakılmasını ortadan kaldırarak ve tehlikeli kimyasalların ve malzemelerin salınımını en aza indirerek, arıtılmamış atık su oranını yarıya indirerek ve küresel olarak geri dönüşümü ve güvenli yeniden kullanımı önemli ölçüde artırarak su kalitesini iyileştirmek."
-            short_title: "Su Kalitesinin, Atıksu Arıtımının ve Güvenli Yeniden Kullanımın İyileştirilmesi"
+            short_title: "Su Kalitesinin, Atık Su Arıtımasının ve Güvenli Yeniden Kullanımın İyileştirilmesi"
           target_6_4:
             long_title: "2030’a kadar, tüm sektörlerde su kullanım verimliliğinin büyük ölçüde artırılması, su kıtlığı sorununun çözülmesi için sürdürülebilir tatlı su tedarikinin ve su çekilmesinin sağlanması ile su kıtlığından muzdarip insan sayısının önemli ölçüde azaltılması."
-            short_title: "Su Kullanımı Verimliliğinin Artırılması ve Tatlı Su Temininşn Sağlanması"
+            short_title: "Su Kullanımı Verimliliğinin Artırılması ve Tatlı Su Temininin Sağlanması"
           target_6_5:
             long_title: "2030'a kadar, uygun görüldüğü hallerde sınır ötesi işbirliği de dahil olmak üzere her düzeyde entegre su kaynakları yönetimi uygulanması."
             short_title: "Entegre Su Kaynakları Yönetiminin Uygulanması"
@@ -591,7 +591,7 @@ tr:
             short_title: "Az Gelişmiş Ülkelerin Ticaret Engellerinin Kaldırılması"
           target_17_13:
             long_title: "Politika koordinasyonu ve tutarlılığına dayanan küresel makroekonomik istikrarın geliştirilmesi."
-            short_title: "Küresel Makroekonomik İstikrarın Geliştirilmesi"
+            short_title: "Küresel Makro Ekonomik İstikrarın Geliştirilmesi"
           target_17_14:
             long_title: "Sürdürülebilir kalkınma için politik tutarlılığın arttırılması."
             short_title: "Sürdürülebilir Kalkınma için Politik Tutarlılığının Artırılması"
