@@ -752,7 +752,7 @@ tr:
         zero: "0 dil kullanımda"
         one: "1 dil kullanımda"
         other: "%{count} dil kullanımda"
-    optional: "Opsiyonel"
+    optional: "İsteğe bağlı alanlar"
     required: "Gerekli"
     comments:
       zero: "Yorum yok"
