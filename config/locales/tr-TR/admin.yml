@@ -1641,7 +1641,7 @@ tr:
         enable: "%{tenant} kiracısını etkinleştir"
         enabled: Etkinleştirildi
       new:
-        admin_information: "Bir kiracı eklediğinizde, e-posta adresi <strong>\"%{email}\"</strong> olan geçerli <strong>\"%{username}\"</strong> kullanıcınız ve parolanız yeni kracının veritabanına kopyalanarak otomatik olarak yönetici yetkileri verilir. Bu kullanıcı hesaplarının tamamen ayrı veritabanlarında tutulduğunu unutmayın. Kullanıcınızın bir kiracıdaki parolasını değiştirirseniz, diğer kiracılardaki hesaplarınız değiştirilmeden kalır."
+        admin_information: "Bir kiracı eklediğinizde, e-posta adresi <strong>\"%{email}\"</strong> olan geçerli <strong>\"%{username}\"</strong> kullanıcınız ve parolanız yeni kiracının veri tabanına kopyalanarak otomatik olarak yönetici yetkileri verilir. Bu kullanıcı hesaplarının tamamen ayrı veri tabanlarında tutulduğunu unutmayın. Kullanıcınızın bir kiracıdaki parolasını değiştirirseniz, diğer kiracılardaki hesaplarınız değiştirilmeden kalır."
         title: Yeni kiracı
       restore:
         notice: Kiracı etkinleştirildi
