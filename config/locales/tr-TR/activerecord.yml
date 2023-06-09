@@ -203,6 +203,7 @@ tr:
         external_code: "Harici kod (isteğe bağlı)"
         color: "Renk (isteğe bağlı)"
         census_code: "Census kodu (isteğe bağlı)"
+        geojson: "GeoJSON verileri (isteğe bağlı)"
         html_map_coordinates: "HTML <map> Koordinatlar (isteğe bağlı)"
       milestone:
         status_id: "Mevcut durum (isteğe bağlı)"
@@ -546,6 +547,10 @@ tr:
           attributes:
             max_per_day:
               invalid: "Günlük maksimum özel mesaj sayısına ulaştınız"
+        geozone:
+          attributes:
+            geojson:
+              invalid: "Belirtilen GeoJSON verileri doğru biçimi izlemiyor. \"Polygon\" ya da \"MultiPolygon\" türünde biçimi izlemeli."
         image:
           attributes:
             attachment:
