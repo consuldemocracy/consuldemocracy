@@ -5,10 +5,10 @@ tr:
         title: "Katılımcı Bütçe'yi kapatıyoruz!"
         body: "Acele edin ve birkaç gün içinde bitmeden önce bir teklif oluşturun!"
       help:
-        title: "Consul'u tercüme etmemize yardımcı olun"
-        body: "Eğer bir dilde yetkinseniz, lütfen Consul'u tercüme etmemize yardımcı olun!"
+        title: "Consul uygulamasını dilinize çevirmemize yardımcı olun"
+        body: "Bir dili iyi biliyorsanız, Consul uygulamasını çevirmemize yardımcı olun!"
       map:
-        title: "Artık teklifleri ve yatırımları konumlandırabilirsiniz"
+        title: "Artık teklif ve yatırımlar için coğrafi konum belirtebilirsiniz"
         body: "Bir teklif veya yatırım oluşturduğunuzda harita üzerinde bir nokta belirtebilirsiniz."
       proposal:
         title: "Teklifiniz var mı?"
