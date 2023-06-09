@@ -201,6 +201,7 @@ tr:
       geozone:
         name: İsim
         external_code: "Harici kod (isteğe bağlı)"
+        color: "Renk (isteğe bağlı)"
         census_code: "Census kodu (isteğe bağlı)"
         html_map_coordinates: "HTML <map> Koordinatlar (isteğe bağlı)"
       milestone:
@@ -282,7 +283,7 @@ tr:
         email_on_comment: "Biri tasarılarıma veya tartışmalarıma yorum yaptığı zaman bana e-posta ile bildir"
         email_on_comment_reply: "Biri yorumlarıma cevap verdiğinde bana e-posta ile bildir"
         email_on_direct_message: "Direkt mesajlarla ilgili e-posta al"
-        newsletter: "Web sitesi ile ilgili bilgileri Email ile Al"
+        newsletter: "İlgili bilgileri e-posta ile alın"
         official_position: "Resmi görev"
         official_position_badge: "Resmi yetkili ünvanını göster"
         official_level: "Resmi düzey"
