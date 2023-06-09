@@ -1396,6 +1396,9 @@ tr:
         coordinates: Koordinatlar
         coordinates_help: Bir HTML resim haritasında tıklanabilir bir alan oluşturacak koordinatlar
         geojson: GeoJSON kullanılabilir
+        geojson_help: "\"Polygon\" ya da \"MultiPolygon\" türündeki biçimlere uymalıdır. Bir bütçenin haritasında, bu coğrafi bölgeyle bir başlık ilişkilendirildiğinde, bu verilere dayalı bir çokgen görüntülenir"
+      create:
+        notice: "Coğrafi bölge eklendi"
       edit:
         form:
           submit_button: Değişiklikleri kaydet
@@ -1407,6 +1410,8 @@ tr:
       delete:
         success: Coğrafi bölge (Geozone) başarıyla silindi
         error: Bu coğrafi bölge (geozone) kendisine eklenmiş öğeler olduğundan silinemez
+      update:
+        notice: "Coğrafi bölge güncellendi"
     signature_sheets:
       author: Yazar
       created_at: Oluşturma tarihi
@@ -1536,6 +1541,10 @@ tr:
         document_number: Belge numarası
         roles: Roller
         verification_level: Doğrulama seviyesi
+        activation_status: Etkinleştirme durumu
+      account:
+        active_status: Hesap etkinleştirildi
+        inactive_status: Hesap etkinleştirilmedi
       index:
         title: Kullanıcı
         no_users: Kullanıcı yok.
