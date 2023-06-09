@@ -85,7 +85,8 @@ end
 
 group :test do
   gem "capybara", "~> 3.37.1"
-  gem "capybara-webmock", "~> 0.6.0"
+  # capybara-webmock to be updated to the latest gem version when available
+  gem "capybara-webmock", git: "https://github.com/hashrocket/capybara-webmock"
   gem "email_spec", "~> 2.2.0"
   gem "rspec-rails", "~> 5.1.2"
   gem "selenium-webdriver", "~> 3.142"
