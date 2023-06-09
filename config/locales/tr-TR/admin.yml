@@ -198,6 +198,7 @@ tr:
         success_notice: "Başlık başarıyla silindi"
         unable_notice: "Yatırımlarla ilişkili olan bir Başlığı yok edemezsiniz"
       form:
+        geozone_info: "Bir başlık bir coğrafi bölge ile ilişkilendirildiğinde, coğrafi bölge için GeoJSON verileri belirtilmişse coğrafi bölge bu bütçenin haritasında görüntülenir."
         max_ballot_lines_info: 'Bir kullanıcının "Proje Oylama" aşamasında bu başlık için oylayabileceği maksimum proje sayısı. Yalnızca onay oylaması yapılan bütçeler için.'
         population_info: "Bütçe Başlığı nüfus alanı, Bütçe sonunda, nüfusun yüzde kaçının oy kullandığı bir alanı temsil eden her Başlık için gösterilmek üzere İstatistiksel amaçlar için kullanıldı. Alan isteğe bağlıdır, eğer kullanılmazsa boş bırakabilirsiniz."
         coordinates_info: "Eğer enlem ve boylam sağlanmışsa, bu başlık için yatırımlar sayfası bir harita içerecektir. Bu harita bu koordinatlar kullanılarak ortalanacaktır."
@@ -1391,8 +1392,10 @@ tr:
         external_code: Harici kod
         census_code: Census kodu
         code_help: Census API'sındaki bu coğrafi bölge için yanıt kodu
+        color_help: "Bölgenin bir bütçe haritasındaki rengi. %{format_help}"
         coordinates: Koordinatlar
         coordinates_help: Bir HTML resim haritasında tıklanabilir bir alan oluşturacak koordinatlar
+        geojson: GeoJSON kullanılabilir
       edit:
         form:
           submit_button: Değişiklikleri kaydet
