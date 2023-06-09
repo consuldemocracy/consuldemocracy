@@ -5,7 +5,7 @@ tr:
     already_confirmed:
       info: "Hesabınızı onaylamak için size talimatlar göndermemiz doğrultusunda bir istek aldık. Ancak, hesabınız zaten onaylanmıştır, dolayısıyla tekrar onaylanmasına gerek bulunmamaktadır."
       new_password: "Parolanızı unuttuysanız, aşağıdaki bağlantıdan sıfırlayabilirsiniz:"
-      subject: Hesabınız onaylıdır
+      subject: Hesabınız zaten onaylanmış
     comment:
       hi: Merhaba
       new_comment_by: <strong>%{commenter}</strong> adlı kullanıcıdan yeni yorum
@@ -13,7 +13,7 @@ tr:
       title: Yeni yorum
     config:
       notifications_link: Bildirimler
-      unsubscribe_text: 'E-posta aboneliğinden ayrılmak için %{notification}''a gidin ve "%{notifications}%" seçeneğindeki onayı kaldırın.'
+      unsubscribe_text: 'E-posta aboneliğinden ayrılmak için %{notification} bölümüne gidin ve "%{notifications}%" seçeneğindeki işareti kaldırın.'
     email_verification:
       click_here_to_verify: bu bağlantı
       instructions_2: Bu e-posta ile hesabınız <b>%{document_type} %{document_number}</b> kullanılarak doğrulanacaktır. Bu bilgiler size ait değilse, lütfen linke tıklamadan bu mesajı göz ardı edin.
@@ -21,7 +21,7 @@ tr:
       subject: E-postanızı onaylayın
       thanks: Çok teşekkür ederiz.
       title: "Aşağıdaki bağlantıyı kullanarak hesabınızı onaylayın"
-      text: "Aşağıdaki bağlantıyı kullanarak hesabınızı onaylayınız."
+      text: "Aşağıdaki bağlantıyı kullanarak hesabınızı onaylayın."
     reply:
       hi: Merhaba
       new_reply_by: Yorumunuza <strong>%{commenter}</strong> kullanıcısı tarafından yeni bir yanıt verildi
@@ -32,16 +32,16 @@ tr:
       title: "%{org_name}'daki öneri bildirimleri"
       share: Öneriyi paylaş
       comment: Öneriye yorum yap
-      unsubscribe_text: "Öneri bildirimi almak istemiyorsanız %{notifications}'a gidin ve \"Öneri bildirimlerinin özetini al\" seçeneğindeki onayı kaldırın."
+      unsubscribe_text: "Öneri bildirimlerini almak istemiyorsanız %{notifications} bölümüne giderek ve \"Öneri bildirimlerinin özetini al\" seçeneğindeki işareti kaldırın."
       unfollow: "Bildirim almaya son vermek için öneri sayfasını ziyaret edip takipten çıkarın."
     direct_message_for_receiver:
       subject: "Yeni bir özel mesaj aldınız"
       reply: '%{sender}''a yanıt ver'
-      unsubscribe_text: "Doğrudan mesaj almak istemiyorsanız %{notifications}'a gidin ve \"Doğrudan mesajlarla ilgili e-posta al\" seçeneğindeki onayı kaldırın."
+      unsubscribe_text: "Doğrudan iletileri almak istemiyorsanız %{notifications} bölümüne gidin ve \"Doğrudan iletilerle ilgili e-posta al\" seçeneğindeki işareti kaldırın."
     direct_message_for_sender:
       subject: "Yeni bir özel mesaj gönderdiniz"
       title: "Yeni bir özel mesaj gönderdiniz"
-      text: "Bu içerikle <strong>%{receiver}</strong> 'a bir yeni mesaj gönderdiniz:"
+      text: "<strong>%{receiver}</strong> alıcısına şu içerikle yeni bir özel ileti gönderdiniz:"
     user_invite:
       ignore: "Eğer bu daveti talep etmemişseniz endişelenmeyin, bu e-postayı görmezden gelebilirsiniz."
       text: "%{org}'a katılım başvurunuz için teşekkür ederiz! Saniyeler içinde katılmaya başlayabilirsiniz, aşağıdaki formu doldurmanız yeterlidir:"
