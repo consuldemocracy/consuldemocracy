@@ -44,6 +44,7 @@ gem "omniauth-google-oauth2", "~> 1.0.1"
 gem "omniauth-rails_csrf_protection", "~> 1.0.1"
 gem "omniauth-twitter", "~> 1.4.0"
 gem "paranoia", "~> 2.6.0"
+gem 'parser', '~> 3.2'
 gem "pg", "~> 1.4.3"
 gem "pg_search", "~> 2.3.6"
 gem "puma", "~> 4.3.12"
