@@ -54,7 +54,7 @@ end
 FactoryBot.use_parent_strategy = false
 
 Capybara.register_driver :headless_chrome do |app|
-  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
+  capabilities = Selenium::WebDriver::Options.chrome(
     "goog:chromeOptions" => {
       args: %W[headless no-sandbox window-size=1200,800 proxy-server=#{Capybara.app_host}:#{Capybara::Webmock.port_number}]
     }
