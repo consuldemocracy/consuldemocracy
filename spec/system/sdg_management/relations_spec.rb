@@ -360,18 +360,15 @@ describe "SDG Relations" do
       create(:sdg_local_target, code: "1.1.1")
       visit sdg_management_edit_legislation_process_path(process)
 
-      fill_in "Goals and Targets", with: "3"
-      within(".amsify-list") { find(:css, "[data-val='3']").click }
+      click_sdg_goal_or_target_with_autocomplete(3)
 
       within(".amsify-suggestags-input-area") { expect(page).to have_content "SDG3" }
 
-      fill_in "Goals and Targets", with: "1.1"
-      within(".amsify-list") { find(:css, "[data-val='1.1']").click }
+      click_sdg_goal_or_target_with_autocomplete(1.1)
 
       within(".amsify-suggestags-input-area") { expect(page).to have_content "1.1" }
 
-      fill_in "Goals and Targets", with: "1.1.1"
-      within(".amsify-list") { find(:css, "[data-val='1.1.1']").click }
+      click_sdg_goal_or_target_with_autocomplete("1.1.1")
 
       within(".amsify-suggestags-input-area") { expect(page).to have_content "1.1.1" }
 
