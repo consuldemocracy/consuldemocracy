@@ -79,6 +79,13 @@ module CommonActions
     end
   end
 
+  def click_sdg_goal_or_target_with_autocomplete(code)
+    fill_in "Goals and Targets", with: code
+    within(".amsify-list") do
+      find("[data-val='#{code}']").click
+    end
+  end
+
   def remove_sdg_goal_or_target_tag(code)
     within "span[data-val='#{code}']" do
       click_button "Remove"
