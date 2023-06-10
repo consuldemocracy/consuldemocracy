@@ -297,7 +297,9 @@ describe "SDG Relations" do
 
       visit sdg_management_edit_legislation_process_path(process)
 
-      find(:css, ".sdg-related-list-selector-input").set("1.2, 2, 1.1.1, ")
+      click_sdg_goal(2)
+      click_sdg_goal_or_target_with_autocomplete(1.2)
+      click_sdg_goal_or_target_with_autocomplete("1.1.1")
 
       click_button "Update Process"
 
@@ -339,7 +341,8 @@ describe "SDG Relations" do
       debate = create(:sdg_review, relatable: create(:debate, title: "SDG debate")).relatable
 
       visit sdg_management_edit_debate_path(debate, filter: "sdg_reviewed")
-      find(:css, ".sdg-related-list-selector-input").set("1.2, 2.1,")
+      click_sdg_goal_or_target_with_autocomplete(1.2)
+      click_sdg_goal_or_target_with_autocomplete(2.1)
       click_button "Update Debate"
 
       expect(page).not_to have_content "Debate updated successfully and marked as reviewed"
