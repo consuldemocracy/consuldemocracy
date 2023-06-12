@@ -268,4 +268,21 @@ describe "Legislation Proposals" do
 
     expect(page).not_to have_link("All city")
   end
+
+  scenario "form shows the geozone selector when there are geozones defined" do
+    create(:geozone)
+    login_as user
+
+    visit new_legislation_process_proposal_path(process)
+
+    expect(page).to have_field("Scope of operation")
+  end
+
+  scenario "form do not show geozone selector when there are no geozones defined" do
+    login_as user
+
+    visit new_legislation_process_proposal_path(process)
+
+    expect(page).not_to have_field("Scope of operation")
+  end
 end

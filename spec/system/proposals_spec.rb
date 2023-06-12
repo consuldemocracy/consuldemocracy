@@ -566,6 +566,25 @@ describe "Proposals" do
       end
     end
 
+    scenario "form shows the geozone selector when there are geozones defined" do
+      create(:geozone)
+      author = create(:user)
+      login_as(author)
+
+      visit new_proposal_path
+
+      expect(page).to have_field("Scope of operation")
+    end
+
+    scenario "form do not show geozone selector when there are no geozones defined" do
+      author = create(:user)
+      login_as(author)
+
+      visit new_proposal_path
+
+      expect(page).not_to have_field("Scope of operation")
+    end
+
     scenario "Specific geozone" do
       create(:geozone, name: "California")
       create(:geozone, name: "New York")
