@@ -6,4 +6,8 @@ class Shared::GeozoneLinkComponent < ApplicationComponent
     @geozonable = geozonable
     @link = link
   end
+
+  def render?
+    Geozone.any?
+  end
 end
