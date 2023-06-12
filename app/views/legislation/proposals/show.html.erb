@@ -94,7 +94,7 @@
 
         <%= render "shared/tags", taggable: @proposal %>
 
-        <%= render "shared/geozone", geozonable: @proposal %>
+        <%= render Shared::GeozoneLinkComponent.new(@proposal) %>
 
         <div class="js-moderator-proposal-actions margin">
           <%= render "legislation/proposals/actions", proposal: @proposal %>
