@@ -251,4 +251,21 @@ describe "Legislation Proposals" do
     expect(page).to have_content("Proposal with geozone")
     expect(page).not_to have_content("Proposal without geozone")
   end
+
+  scenario "Show link to filter by geozone where there are geozones defined" do
+    create(:geozone)
+    create(:legislation_proposal, legislation_process_id: process.id)
+
+    visit legislation_process_proposal_path(proposal.process, proposal)
+
+    expect(page).to have_link("All city")
+  end
+
+  scenario "Do not show link to geozone where there are no geozones defined" do
+    create(:legislation_proposal, legislation_process_id: process.id)
+
+    visit legislation_process_proposal_path(proposal.process, proposal)
+
+    expect(page).not_to have_link("All city")
+  end
 end

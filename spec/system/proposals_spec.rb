@@ -540,7 +540,15 @@ describe "Proposals" do
   end
 
   context "Geozones" do
+    scenario "When there are not gezones defined it does not show the geozone link" do
+      visit proposal_path(create(:proposal))
+
+      expect(page).not_to have_selector "#geozone"
+      expect(page).not_to have_link "All city"
+    end
+
     scenario "Default whole city" do
+      create(:geozone)
       author = create(:user)
       login_as(author)
 
