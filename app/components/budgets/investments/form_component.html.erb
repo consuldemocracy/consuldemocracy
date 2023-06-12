@@ -36,6 +36,11 @@
   <fieldset>
     <legend><%= t("shared.optional") %></legend>
 
+    <div>   
+      <%= f.text_field :video_url, hint: t("proposals.form.proposal_video_url_note") %>
+    </div>
+
+
     <% if feature?(:allow_images) %>
       <div class="images">
         <%= render "images/nested_image", f: f %>
