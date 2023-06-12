@@ -40,7 +40,7 @@
         <% end %>
 
         <%= render "proposals/info", proposal: @proposal %>
-        <%= render "shared/geozone", geozonable: @proposal %>
+        <%= render Shared::GeozoneLinkComponent.new(@proposal) %>
 
         <% unless @proposal.selected? %>
           <%= render "relationable/related_content", relationable: @proposal %>
