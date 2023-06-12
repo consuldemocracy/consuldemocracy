@@ -1,9 +1,9 @@
 # config valid only for current version of Capistrano
 lock "~> 3.17.1"
 
-def deploysecret(key)
+def deploysecret(key, default: "")
   @deploy_secrets_yml ||= YAML.load_file("config/deploy-secrets.yml")[fetch(:stage).to_s]
-  @deploy_secrets_yml.fetch(key.to_s, "")
+  @deploy_secrets_yml.fetch(key.to_s, default)
 end
 
 def main_deploy_server
@@ -17,7 +17,7 @@ end
 set :rails_env, fetch(:stage)
 set :rvm1_map_bins, -> { fetch(:rvm_map_bins).to_a.concat(%w[rake gem bundle ruby]).uniq }
 
-set :application, "consul"
+set :application, deploysecret(:app_name, default: "consul")
 set :deploy_to, deploysecret(:deploy_to)
 set :ssh_options, port: deploysecret(:ssh_port)
 
