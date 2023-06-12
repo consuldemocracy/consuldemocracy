@@ -236,4 +236,19 @@ describe "Legislation Proposals" do
 
     expect(page).to have_link("Culture")
   end
+
+  scenario "Can filter proposals by geozone" do
+    geozone = create(:geozone, name: "Zone1")
+    proposal = create(:legislation_proposal, title: "Proposal with geozone",
+                                             legislation_process_id: process.id,
+                                             geozone: geozone)
+    create(:legislation_proposal, title: "Proposal without geozone", legislation_process_id: process.id)
+
+    visit legislation_process_proposal_path(proposal.process, proposal)
+    click_link "Zone1"
+
+    expect(page).to have_current_path(legislation_process_proposals_path(process.id, search: "Zone1"))
+    expect(page).to have_content("Proposal with geozone")
+    expect(page).not_to have_content("Proposal without geozone")
+  end
 end
