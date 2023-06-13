@@ -65,10 +65,6 @@ FactoryBot.define do
       voting_style { "approval" }
     end
 
-    trait :with_image do
-      after(:create) { |budget| create(:image, imageable: budget) }
-    end
-
     trait :with_winner do
       after(:create) { |budget| create(:budget_investment, :winner, budget: budget) }
     end
@@ -195,10 +191,6 @@ FactoryBot.define do
 
     trait :with_valuator do
       valuators { [create(:valuator)] }
-    end
-
-    trait :with_map_location do
-      map_location
     end
 
     trait :flagged do
