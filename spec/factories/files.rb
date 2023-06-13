@@ -8,6 +8,10 @@ FactoryBot.define do
       association :imageable, factory: :proposal
     end
 
+    trait :budget_image do
+      association :imageable, factory: :budget
+    end
+
     trait :budget_investment_image do
       association :imageable, factory: :budget_investment
     end
