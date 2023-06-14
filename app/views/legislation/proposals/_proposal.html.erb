@@ -53,6 +53,13 @@
                   <%= t("shared.collective") %>
                 </span>
               <% end %>
+
+              <% if Geozone.any? %>
+                <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                <span class="geozone">
+                  <%= link_to geozone_name(proposal), legislation_process_proposals_path(proposal.legislation_process_id, search: geozone_name(proposal)) %>
+                </span>
+              <% end %>
             </p>
             <div class="proposal-description">
               <p><%= proposal.summary %></p>
