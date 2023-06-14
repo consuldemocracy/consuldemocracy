@@ -1,0 +1,29 @@
+name: Init new consul
+on: 
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: choice
+        description: Choose the environment
+        options:
+        - ConsulNL
+        - bar
+        - baz
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    
+    steps:
+    - name: Install Ansible
+      run: sudo apt install ansible
+
+    - name: Clone installer repository
+      uses: actions/checkout@v2
+      with:
+        repository: consul/installer
+        path: installer
+        
+    - name: Create hosts
+      working-directory: ./installer
+      run: sed -e "s/remote-server-ip-address/$REMOTE_IP/" -e "s/root/$ANSIBLE_USER/" hosts.example > hosts
