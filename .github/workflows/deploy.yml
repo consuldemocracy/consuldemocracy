@@ -1,4 +1,5 @@
 name: Deploy consul
+on: workflow_dispatch
 jobs:
   deploy:
     runs-on: ubuntu-20
