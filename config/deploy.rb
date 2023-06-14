@@ -12,7 +12,7 @@ set :rvm1_map_bins, -> { fetch(:rvm_map_bins).to_a.concat(%w[rake gem bundle rub
 set :application, "consul"
 set :deploy_to, deploysecret(:deploy_to)
 set :ssh_options, port: deploysecret(:ssh_port)
-set :repo_url, "https://github.com/democrateam/consul.git"
+set :repo_url, ENV["repo"]
 
 set :revision, `git rev-parse --short #{fetch(:branch)}`.strip
 
