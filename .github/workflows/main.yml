@@ -1,0 +1,11 @@
+name: Deploy consul
+jobs:
+  deploy:
+    runs-on: ubuntu-20
+    
+    steps:
+    - name: Clone installer repository
+      uses: actions/checkout@v2
+      with:
+        repository: consul/installer
+        path: resources/docs/2.x
