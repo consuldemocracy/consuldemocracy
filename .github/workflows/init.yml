@@ -2,7 +2,7 @@ name: Init new consul
 on: 
   workflow_dispatch:
     inputs:
-      environment:
+      target_environment:
         type: choice
         description: Choose the environment
         options:
@@ -12,7 +12,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-20.04
-    environment: ${{ github.event.inputs.environment }}
+    environment: input.target_environment
     
     steps:
     - name: Install Ansible
