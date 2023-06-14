@@ -1,5 +1,15 @@
 name: Init new consul
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: choice
+        description: Choose the environment
+        options:
+        - ConsulNL
+        - bar
+        - baz
+
 jobs:
   deploy:
     runs-on: ubuntu-20.04
