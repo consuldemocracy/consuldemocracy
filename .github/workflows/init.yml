@@ -7,12 +7,12 @@ on:
         description: Choose the environment
         options:
         - ConsulNL
-        - bar
-        - baz
+        - Leeuwarden
 
 jobs:
   deploy:
     runs-on: ubuntu-20.04
+    environment: ${{ github.event.inputs.environment }}
     
     steps:
     - name: Install Ansible
@@ -27,3 +27,7 @@ jobs:
     - name: Create hosts
       working-directory: ./installer
       run: sed -e "s/remote-server-ip-address/$REMOTE_IP/" -e "s/root/$ANSIBLE_USER/" hosts.example > hosts
+      
+    - name: Run playbook
+      working-directory: ./installer
+      run: ansible-playbook -v consul.yml -i hosts
