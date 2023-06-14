@@ -36,8 +36,16 @@ jobs:
       env:
         REMOTE_IP: ${{ vars.REMOTE_IP }}
         ANSIBLE_USER: ${{ vars.ANSIBLE_USER }}
+        
+    - name: Setup SSH
+      run: |
+        mkdir -p ~/.ssh/
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        sudo chmod 600 ~/.ssh/id_rsa
+      shell: bash
+      env:
+        SSH_PRIVATE_KEY: ${{secrets.PRIVATE_CONSUL_STAGING_KEY}}
 
-      
     - name: Run playbook
       working-directory: ./installer
       run: ansible-playbook -v consul.yml -i hosts
