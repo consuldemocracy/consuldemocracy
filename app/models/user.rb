@@ -139,6 +139,12 @@ class User < ApplicationRecord
     oauth_verified        = auth.info.verified || auth.info.verified_email || auth.info.email_verified || auth.extra.raw_info.email_verified
     oauth_email_confirmed = oauth_email.present? && oauth_verified
     oauth_user            = User.find_by(email: oauth_email) if oauth_email_confirmed
+#Rails.logger.info("auth verified #{auth.info.verified}")
+#Rails.logger.info("google email verified #{auth.info.extra.raw_info.email_verified}")
+Rails.logger.info("oauth_email #{oauth_email}")
+Rails.logger.info("oauth_verified #{oauth_verified}")
+Rails.logger.info("oauth_confirmed #{oauth_email_confirmed}")
+Rails.logger.info("oauth_user #{oauth_user}")
 
     oauth_user || User.new(
       username:  auth.info.name || auth.uid,
@@ -146,7 +152,9 @@ class User < ApplicationRecord
       oauth_email: oauth_email,
       password: Devise.friendly_token[0, 20],
       terms_of_service: "1",
-      confirmed_at: oauth_email_confirmed ? DateTime.current : nil
+      confirmed_at: oauth_email_confirmed ? DateTime.current : nil,
+      verified_at: DateTime.current ,
+      residence_verified_at:  DateTime.current
     )
   end
   
