@@ -37,6 +37,14 @@ jobs:
         REMOTE_IP: ${{ vars.REMOTE_IP }}
         ANSIBLE_USER: ${{ vars.ANSIBLE_USER }}
         
+    - name: Create group_vars
+      working-directory: ./installer/group_vars
+      run: |
+        sed -i -e 's/#domain:\ your_domain.com/domain:\ $DOMAIN/g' -e 's/Madrid/Amsterdam/g' -e 's/#letsencrypt_email: "your_email@example.com"/letsencrypt_email: "$CONTACT_EMAIL"/g' ./all
+      env: 
+        DOMAIN: ${{ vars.PRODUCTION_DOMAIN }}
+        CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}
+        
     - name: Setup SSH
       run: |
         mkdir -p ~/.ssh/
