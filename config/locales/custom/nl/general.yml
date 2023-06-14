@@ -332,6 +332,11 @@ nl:
       see_all_proposals: "Alle initiatieven"
       process_label: "Plan"
       see_process: "Plan bekijken"
+      no_items:
+        debates: Er zijn op dit moment geen discussies
+        proposals: Er zijn op dit moment geen voorstellen
+        processes: Er zijn op dit moment geen plannen
+        budgets: Er zijn op dit moment geen ideeën
     cards:
       title: "Uitgelicht"
   shared:

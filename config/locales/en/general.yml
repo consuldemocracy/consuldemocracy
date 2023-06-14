@@ -703,10 +703,10 @@ en:
         destroy:
           notice: "You have stopped following this investment project! <br> You will no longer receive notifications related to this project."
       proposal:
-          create:
-            notice: "Now you are following this citizen proposal! <br> We will notify you of changes as they occur so that you are up-to-date."
-          destroy:
-            notice: "You have stopped following this citizen proposal! <br> You will no longer receive notifications related to this proposal."
+        create:
+          notice: "Now you are following this citizen proposal! <br> We will notify you of changes as they occur so that you are up-to-date."
+        destroy:
+          notice: "You have stopped following this citizen proposal! <br> You will no longer receive notifications related to this proposal."
     print:
       print_button: Print this info
     search: Search
@@ -752,9 +752,9 @@ en:
       cards: Cards
       list: List
     recommended_index:
-        title: Recommendations
-        see_more: See more recommendations
-        hide: Hide recommendations
+      title: Recommendations
+      see_more: See more recommendations
+      hide: Hide recommendations
     translations:
       select_language_prompt: Choose language
       remove_language: Remove language
@@ -873,7 +873,7 @@ en:
         processes: There are no open processes right now
         budgets: "There are no budgets right now"
       description:
-        proposals: "Citizen proposals that gather enough suppport will go to a voting phase, so you can get all the citizens to decide how they want their city to be."
+        proposals: "Citizen proposals that gather enough support will go to a voting phase, so you can get all the citizens to decide how they want their city to be."
         budgets: "Participatory budgets are processes in which citizens decide directly on what is spent part of the municipal budget. The most supported projects are evaluated and passed to a final vote in which they decide the actions to be carried out by the City Council."
       process_label: Process
       see_process: See process
