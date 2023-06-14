@@ -587,6 +587,7 @@ body > header,
 
   @include breakpoint(medium) {
     padding-top: $line-height;
+    padding-right: .5rem;
   }
 
   a {
