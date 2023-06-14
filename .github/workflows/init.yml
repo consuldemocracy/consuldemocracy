@@ -32,7 +32,11 @@ jobs:
         
     - name: Create hosts
       working-directory: ./installer
-      run: sed -e "s/remote-server-ip-address/${{ env.REMOTE_IP }}/" -e "s/root/${{ env.REMOTE_IP }}/" hosts.example > hosts
+      run: sed -e "s/remote-server-ip-address/$REMOTE_IP/" -e "s/root/$ANSIBLE_USER/" hosts.example > hosts
+      env:
+        REMOTE_IP: ${{ vars.REMOTE_IP }}
+        ANSIBLE_USER: ${{ vars.ANSIBLE_USER }}
+
       
     - name: Run playbook
       working-directory: ./installer
