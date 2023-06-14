@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="08f7fe80-22a7-46d3-b068-650262c8915b" name="Changes" comment="Add dutch locale, update deploy">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/max.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/custom/raadsleden/cda.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/custom/raadsleden/cu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/custom/raadsleden/d66.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/custom/raadsleden/fp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/custom/raadsleden/fvd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/custom/raadsleden/gemeentebelangen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/custom/raadsleden/groenlinks.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/custom/raadsleden/lijst058.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/custom/raadsleden/pvda.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/custom/raadsleden/vvd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/custom/raad.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/custom/pages/raad/index.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/custom/shared/_subnavigation.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/locales/custom/nl/custom.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/routes/custom.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/consul-radstake.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/consul-radstake.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/_base_settings.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/_base_settings.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/pages_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/pages_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/custom/setting.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/custom/setting.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/application_custom.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/application_custom.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/locales/custom/nl/general.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/locales/custom/nl/general.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/locales/en/general.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/locales/en/general.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/sitemap.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/sitemap.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="ERB File" />
+        <option value="SCSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProjectId" id="2QsqEVf6WXjNqIUbUHkspN6HYow" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/max/Code/Consul/consul-radstake/config",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "rearrange.code.on.save": "true",
+    "ruby.rails.projectView.checked": "true",
+    "ruby.structure.view.model.defaults.configured": "true",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "two.files.diff.last.used.file": "/Users/max/Code/Consul/consul-radstake/config/locales/custom/nl/pages.yml",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/config" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/assets/images/custom/raadsleden" />
+      <recent name="$PROJECT_DIR$/config/routes" />
+      <recent name="$PROJECT_DIR$/app/views/custom/pages/de-raad" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Rails.consul-radstake">
+    <configuration name="consul-radstake" type="RailsRunConfigurationType" factoryName="Rails">
+      <module name="consul-radstake" />
+      <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="PORT" VALUE="3000" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="127.0.0.1" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="DUMMY_APP" VALUE="test/dummy" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="default" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="development" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="BROWSER_URL" VALUE="http://127.0.0.1:3000" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="spec: consul-radstake" type="RakeRunConfigurationType" factoryName="Rake">
+      <module name="consul-radstake" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="spec" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE=":rspec " />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TESTOPTS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test: consul-radstake" type="RakeRunConfigurationType" factoryName="Rake">
+      <module name="consul-radstake" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="test" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE=":test_unit " />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TESTOPTS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Rails.consul-radstake" />
+      <item itemvalue="Rake.spec: consul-radstake" />
+      <item itemvalue="Rake.test: consul-radstake" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="1" Folder0="$USER_HOME$" CustomDictionaries="1" CustomDictionary0="$USER_HOME$/nl.dic" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="08f7fe80-22a7-46d3-b068-650262c8915b" name="Changes" comment="" />
+      <created>1686152525041</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1686152525041</updated>
+      <workItem from="1686152527131" duration="506000" />
+      <workItem from="1686153049739" duration="3415000" />
+      <workItem from="1686225557365" duration="1284000" />
+      <workItem from="1686228940543" duration="274000" />
+      <workItem from="1686229223632" duration="56000" />
+      <workItem from="1686229288062" duration="3352000" />
+      <workItem from="1686232659757" duration="651000" />
+      <workItem from="1686233318922" duration="42000" />
+      <workItem from="1686233366453" duration="809000" />
+      <workItem from="1686234188952" duration="385000" />
+      <workItem from="1686234582783" duration="1366000" />
+      <workItem from="1686250876513" duration="3678000" />
+      <workItem from="1686554703799" duration="8945000" />
+      <workItem from="1686742724074" duration="1707000" />
+      <workItem from="1686749528789" duration="4445000" />
+    </task>
+    <task id="LOCAL-00001" summary="Remove unsupported token key">
+      <created>1686179169036</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1686179169036</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Small layout fixes homepage">
+      <created>1686179186232</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686179186232</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fix some translation errors">
+      <created>1686253528796</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686253528796</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fix vote buttons having wrong height">
+      <created>1686253670001</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686253670001</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Align icon to the center of the button">
+      <created>1686254560813</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686254560813</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add dutch locale, update deploy">
+      <created>1686752768707</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1686752768707</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Remove unsupported token key" />
+    <MESSAGE value="Small layout fixes homepage" />
+    <MESSAGE value="Fix some translation errors" />
+    <MESSAGE value="Fix vote buttons having wrong height" />
+    <MESSAGE value="Align icon to the center of the button" />
+    <MESSAGE value="Add dutch locale, update deploy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add dutch locale, update deploy" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/consul_radstake@consul_radstake.rcov" NAME="consul-radstake Coverage Results" MODIFIED="1686563578055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="consul-radstake" />
+  </component>
+</project>
