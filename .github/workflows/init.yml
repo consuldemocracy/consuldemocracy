@@ -41,10 +41,13 @@ jobs:
       run: |
         mkdir -p ~/.ssh/
         echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        echo "$SSH_PUBLIC_KEY" > ~/.ssh/id_rsa.pub
         sudo chmod 600 ~/.ssh/id_rsa
+        sudo chmod 600 ~/.ssh/id_rsa.pub
       shell: bash
       env:
-        SSH_PRIVATE_KEY: ${{secrets.PRIVATE_CONSUL_STAGING_KEY}}
+        SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_CONSUL_STAGING_KEY }}
+        SSH_PUBLIC_KEY: ${{ vars.PUBLIC_SERVER_KEY }}
 
     - name: Run playbook
       working-directory: ./installer
