@@ -2,19 +2,25 @@ name: Init new consul
 on: 
   workflow_dispatch:
     inputs:
-      environment:
+      target_environment:
         type: choice
         description: Choose the environment
         options:
         - ConsulNL
-        - bar
-        - baz
+        - Leeuwarden
 
 jobs:
   deploy:
     runs-on: ubuntu-20.04
+    environment: 
+      name: ${{ inputs.target_environment }}
     
     steps:
+    - id: sets-a-secret
+      name: Printing stuff
+      run: |
+        echo "${{ inputs.target_environment }}"
+    
     - name: Install Ansible
       run: sudo apt install ansible
 
@@ -27,3 +33,30 @@ jobs:
     - name: Create hosts
       working-directory: ./installer
       run: sed -e "s/remote-server-ip-address/$REMOTE_IP/" -e "s/root/$ANSIBLE_USER/" hosts.example > hosts
+      env:
+        REMOTE_IP: ${{ vars.REMOTE_IP }}
+        ANSIBLE_USER: ${{ vars.ANSIBLE_USER }}
+        
+    - name: Create group_vars
+      working-directory: ./installer/group_vars
+      run: |
+        sed -i -e 's/#domain:\ your_domain.com/domain:\ $DOMAIN/g' -e 's/Madrid/Amsterdam/g' -e 's/#letsencrypt_email: "your_email@example.com"/letsencrypt_email: "$CONTACT_EMAIL"/g' ./all
+      env: 
+        DOMAIN: ${{ vars.PRODUCTION_DOMAIN }}
+        CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}
+        
+    - name: Setup SSH
+      run: |
+        mkdir -p ~/.ssh/
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        echo "$SSH_PUBLIC_KEY" > ~/.ssh/id_rsa.pub
+        sudo chmod 600 ~/.ssh/id_rsa
+        sudo chmod 600 ~/.ssh/id_rsa.pub
+      shell: bash
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_CONSUL_STAGING_KEY }}
+        SSH_PUBLIC_KEY: ${{ vars.PUBLIC_SERVER_KEY }}
+
+    - name: Run playbook
+      working-directory: ./installer
+      run: ansible-playbook -v consul.yml -i hosts
