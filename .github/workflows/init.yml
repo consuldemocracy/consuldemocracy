@@ -16,6 +16,11 @@ jobs:
       name: ${{ github.event.inputs.target_environment }}
     
     steps:
+    - id: sets-a-secret
+      name: Printing stuff
+      run: |
+        echo "::debug::${{ github.events.inputs.target_environment }}"
+    
     - name: Install Ansible
       run: sudo apt install ansible
 
