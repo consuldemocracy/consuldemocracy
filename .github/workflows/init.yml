@@ -12,7 +12,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-20.04
-    environment: input.target_environment
+    environment: 
+      name: ${{ github.event.inputs.target_environment }}
     
     steps:
     - name: Install Ansible
