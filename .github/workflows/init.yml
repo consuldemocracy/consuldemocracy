@@ -13,13 +13,13 @@ jobs:
   deploy:
     runs-on: ubuntu-20.04
     environment: 
-      name: ${{ github.event.inputs.target_environment }}
+      name: ${{ inputs.target_environment }}
     
     steps:
     - id: sets-a-secret
       name: Printing stuff
       run: |
-        echo "::debug::${{ github.events.inputs.target_environment }}"
+        echo "${{ inputs.target_environment }}"
     
     - name: Install Ansible
       run: sudo apt install ansible
