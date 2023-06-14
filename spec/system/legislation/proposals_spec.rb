@@ -237,6 +237,25 @@ describe "Legislation Proposals" do
     expect(page).to have_link("Culture")
   end
 
+  scenario "Shows geozone tag as proposals filter where there are geozones defined" do
+    create(:legislation_proposal, process: process)
+    create(:legislation_proposal, process: process, geozone: create(:geozone, name: "Zone1"))
+
+    visit legislation_process_proposals_path(process)
+
+    expect(page).to have_link("Zone1", href: legislation_process_proposals_path(process, search: "Zone1"))
+    link = legislation_process_proposals_path(process, search: "All city")
+    expect(page).to have_link("All city", href: link)
+  end
+
+  scenario "Does not show the geozone tag when no geozones defined" do
+    create(:legislation_proposal, process: process)
+
+    visit legislation_process_proposals_path(process)
+
+    expect(page).not_to have_link("All city")
+  end
+
   scenario "Can filter proposals by geozone" do
     geozone = create(:geozone, name: "Zone1")
     proposal = create(:legislation_proposal, title: "Proposal with geozone",
