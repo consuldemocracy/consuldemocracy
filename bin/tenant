@@ -128,7 +128,7 @@ def process_argv(option, tenant_name = nil)
     end
 
     apply_to_sibling_directory(File.join(dir, "../tenants/base"), File.join(dir, ".."),
-                               { clear: true, copy: true, dry: true })
+                               { clear: true, copy: true, dry: false })
   when "-a", "--apply"
     apply_tenant(tenant_name)
   else
