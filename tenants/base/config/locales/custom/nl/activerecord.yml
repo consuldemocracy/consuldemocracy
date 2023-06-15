@@ -1,0 +1,163 @@
+nl:
+  attributes:
+    geozone_id: "Gebied"
+    results_enabled: "Toon resultaten"
+    stats_enabled: "Toon statistieken"
+    advanced_stats_enabled: "Toon geavanceerde statistieken"
+    related_sdg_list: "Goals and Targets"
+  activerecord:
+    models:
+      budget/investment:
+        one: "Idee"
+        other: "Ideeën"
+      proposal:
+        one: "Initiatief"
+        other: "Initiatieven"
+      legislation/process:
+        one: "Plan"
+        other: "Plannen"
+      administrator:
+        one: "Admin"
+        other: "Admins"
+      local_census_record:
+        one: "volkstelling"
+        other: "volkstellingen"
+      sdg/goal:
+        one: "doel"
+        other: "doelen"
+      sdg/local_target:
+        one: "lokaal (sub)doel"
+        other: "lokale (sub)doelen"
+      sdg/manager:
+        one: "SDG manager"
+        other: "SDG managers"
+      sdg/target:
+        one: "(sub)doel"
+        other: "(sub)doelen"
+    attributes:
+      debate:
+        tag_list: "Onderwerpen/labels"
+      debate/translation:
+        title: "Titel discussie"
+        description: "Omschrijving"
+      proposal:
+        video_url: "Link naar video"
+        retired_reason: "Reden om initiatief terug te trekken"
+      proposal/translation:
+        title: "Titel initiatief"
+        description: "Omschrijving"
+        summary: "Samenvatting initiatief"
+        retired_explanation: "Toelichting"
+      user:
+        email_digest: "Ontvang een samenvatting van notificaties van initiatieven"
+        email_on_comment: "Stuur mij een mail wanneer iemand reageert op mijn initiatieven of discussies"
+        email_on_comment_reply: "Stuur mij een mail wanneer iemand op mijn reactie reageert"
+        email_on_direct_message: "Ontvang emails over privéberichten"
+        newsletter: "Ontvang nieuwsbrieven van de website"
+        public_activity: "Maak mijn activiteit openbaar"
+        public_interests: "Maak de onderwerpen/labels die ik volg openbaar"
+        recommended_debates: "Toon aanbevelingen voor discussie"
+        recommended_proposals: "Toon aanbevelingen voor voorstellen"
+      budget:
+        main_button_text: "Tekst knop"
+        main_button_url: "Link knop"
+        hide_money: "Verberg budget voor deze begroting"
+      budget/translation:
+        name: "Titel"
+      budget/phase:
+        enabled: "Fase ingeschakeld"
+        ends_at: "Einddatum"
+        starts_at: "Startdatum"
+        main_button_text: "Tekst knop"
+        main_button_url: "Link knop"
+      budget/phase/translation:
+        name: "Naam fase"
+        description: "Omschrijving"
+      budget/group:
+        max_votable_headings: "Maximaal aantal rubrieken waarop een gebruiker kan stemmen"
+      budget/group/translation:
+        name: "Naam groep"
+      budget/heading:
+        allow_custom_content: "Sta contentblok toe"
+        latitude: "Breedtegraad (optioneel)"
+        longitude: "Lengtegraad (optioneel)"
+        price: "Kosten hoeveel geld beschikbaar is"
+      budget/heading/translation:
+        name: "Naam rubriek"
+      budget/investment:
+        location: "Hier kun je meer vertellen over de locatie"
+        organization_name: "Als je een voorstel doet uit naam van een stichting, coöperatie of organisatie, voer dan hier de naam in"
+        feasibility_explanation: "Feasibility explanation (optioneel)"
+        unfeasibility_explanation: "Unfeasibility explanation"
+      budget/investment/translation:
+        title: "Titel van het idee"
+        description: "Omschrijving"
+      active_poll/translation:
+        description: "Omschrijving"
+      legislation/process/translation:
+        homepage: "Omschrijving"
+      legislation/proposal:
+        title: "Titel voorstel"
+        description: "Omschrijving"
+        summary: "Samenvatting voorstel"
+        video_url: "Link naar video"
+      legislation/question/translation:
+        title: "Vraag"
+      legislation/draft_version:
+        status_draft: "Concept"
+        status_published: "Gepubliceerd"
+      signature_sheet:
+        signable_type: "Voor tekenen van"
+        required_fields_to_verify: "Vereiste invulvelden"
+      site_customization/page:
+        slug: "Landingspagina"
+        status_draft: "Concept"
+        status_published: "Gepubliceerd"
+      tag:
+        name: "Vul de naam van het onderwerp/label toe"
+      topic:
+        title: "Titel"
+        description: "Bericht"
+      dashboard/action:
+        title: "Titel"
+        description: "Omschrijving"
+        day_offset: "Na hoeveel dagen na het indienen van het initiatief wordt de promotie actief?"
+        required_supports: "Na hoeveel steunbetuigingen voor het initiatief wordt de promotie  actief?"
+        order: "Op welke positie moet deze promotie staan, in de gebruiker zijn lijst van promotiemiddelen?"
+        active: "Actief"
+        action_type_proposed_action: "Voorgestelde actie"
+        action_type_resource: "Tool"
+        published_proposal: "Voor ingediende initiatieven?"
+      local_census_record:
+        document_number: "Documentnummer"
+        date_of_birth: "Geboortedatum"
+        postal_code: "Postcode"
+      organization:
+        name: "Naam organisatie of collectief"
+      proposal_notification:
+        body: "Bericht"
+        title: "Titel"
+      sdg/goal:
+        code: "Code"
+        title: "Titel"
+        description: "Beschrijving"
+      sdg/local_target:
+        code: "Code"
+        target_id: "(Sub)doel"
+        title: "Titel"
+      sdg/local_target/translation:
+        title: "Titel"
+        description: "Beschrijving"
+      sdg/phase/kind:
+        sensitization: "Besef SDG's"
+        planning: "Lopende plannen"
+        monitoring: "Afgeronde plannen en updates"
+      sdg/target:
+        code: "Code"
+        title: "Titel"
+    errors:
+      models:
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "moet beginnen met dezelfde code als de gerelateerde SDG, gevolgd door een punt en eindigen met een cijfer"

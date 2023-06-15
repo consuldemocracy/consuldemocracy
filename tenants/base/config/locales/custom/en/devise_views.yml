@@ -1,0 +1,7 @@
+en:
+  devise_views:
+    shared:
+      sign_in: "Sign in to an account"
+      sign_up: "Register a new account"
+      not_organization: "Not registering for an organisation or collective? %{link}"
+      not_organization_link: "Register here"
