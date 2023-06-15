@@ -1338,7 +1338,7 @@ table {
 }
 
 .ssb-telegram {
-  @include has-fa-icon(telegram-plane, brands);
+  @include has-fa-icon(telegram, brands);
   background: #08c;
 
   &:hover,
@@ -1571,11 +1571,11 @@ table {
 
   .responses-count {
     .show-children {
-      @include has-fa-icon(plus-square, regular);
+      @include has-fa-icon(square-plus, regular);
     }
 
     .collapse-children {
-      @include has-fa-icon(minus-square, regular);
+      @include has-fa-icon(square-minus, regular);
     }
 
     .show-children::before,
@@ -1600,7 +1600,7 @@ table {
   }
 
   .delete-comment {
-    @include has-fa-icon(trash-alt, regular);
+    @include has-fa-icon(trash-can, regular);
 
     &:not(:hover):not(:active) {
       color: $delete;
@@ -2115,7 +2115,7 @@ table {
     }
 
     &.score-negative {
-      @include has-fa-icon(times, solid);
+      @include has-fa-icon(xmark, solid);
       color: $color-alert;
     }
 

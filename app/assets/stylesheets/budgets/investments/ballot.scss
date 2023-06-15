@@ -1,7 +1,7 @@
 .ballot {
 
   .button-remove-support {
-    @include has-fa-icon(times, solid);
+    @include has-fa-icon(xmark, solid);
     @include brand-secondary-color;
     background: #e7eaec;
     font-weight: bold;

@@ -1,6 +1,6 @@
 %font-icon {
   @extend %fa-icon;
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 6 Free";
   vertical-align: middle;
 }
 
@@ -24,7 +24,7 @@ $font-awesome-icons: (
   500px: $fa-var-500px,
   accessible-icon: $fa-var-accessible-icon,
   accusoft: $fa-var-accusoft,
-  acquisitions-incorporated: $fa-var-acquisitions-incorporated,
+  acquisitions-incorporated: $fa-var-building,
   ad: $fa-var-ad,
   address-book: $fa-var-address-book,
   address-card: $fa-var-address-card,
@@ -49,7 +49,7 @@ $font-awesome-icons: (
   anchor: $fa-var-anchor,
   android: $fa-var-android,
   angellist: $fa-var-angellist,
-  angle-double-down: $fa-var-angle-double-down,
+  angle-double-down: $fa-var-angles-down,
   angle-double-left: $fa-var-angle-double-left,
   angle-double-right: $fa-var-angle-double-right,
   angle-double-up: $fa-var-angle-double-up,
@@ -67,7 +67,7 @@ $font-awesome-icons: (
   apple: $fa-var-apple,
   apple-alt: $fa-var-apple-alt,
   apple-pay: $fa-var-apple-pay,
-  archive: $fa-var-archive,
+  archive: $fa-var-box-archive,
   archway: $fa-var-archway,
   arrow-alt-circle-down: $fa-var-arrow-alt-circle-down,
   arrow-alt-circle-left: $fa-var-arrow-alt-circle-left,
@@ -249,7 +249,7 @@ $font-awesome-icons: (
   chart-line: $fa-var-chart-line,
   chart-pie: $fa-var-chart-pie,
   check: $fa-var-check,
-  check-circle: $fa-var-check-circle,
+  check-circle: $fa-var-circle-check,
   check-double: $fa-var-check-double,
   check-square: $fa-var-check-square,
   cheese: $fa-var-cheese,
@@ -303,12 +303,12 @@ $font-awesome-icons: (
   codepen: $fa-var-codepen,
   codiepie: $fa-var-codiepie,
   coffee: $fa-var-coffee,
-  cog: $fa-var-cog,
-  cogs: $fa-var-cogs,
+  cog: $fa-var-gear,
+  cogs: $fa-var-gears,
   coins: $fa-var-coins,
   columns: $fa-var-columns,
   comment: $fa-var-comment,
-  comment-alt: $fa-var-comment-alt,
+  comment-alt: $fa-var-message,
   comment-dollar: $fa-var-comment-dollar,
   comment-dots: $fa-var-comment-dots,
   comment-medical: $fa-var-comment-medical,
@@ -429,7 +429,7 @@ $font-awesome-icons: (
   ebay: $fa-var-ebay,
   edge: $fa-var-edge,
   edge-legacy: $fa-var-edge-legacy,
-  edit: $fa-var-edit,
+  edit: $fa-var-pen-to-square,
   egg: $fa-var-egg,
   eject: $fa-var-eject,
   elementor: $fa-var-elementor,
@@ -482,8 +482,8 @@ $font-awesome-icons: (
   fighter-jet: $fa-var-fighter-jet,
   figma: $fa-var-figma,
   file: $fa-var-file,
-  file-alt: $fa-var-file-alt,
-  file-archive: $fa-var-file-archive,
+  file-alt: $fa-var-file-lines,
+  file-archive: $fa-var-file-zipper,
   file-audio: $fa-var-file-audio,
   file-code: $fa-var-file-code,
   file-contract: $fa-var-file-contract,
@@ -597,7 +597,7 @@ $font-awesome-icons: (
   google-play: $fa-var-google-play,
   google-plus: $fa-var-google-plus,
   google-plus-g: $fa-var-google-plus-g,
-  google-plus-square: $fa-var-google-plus-square,
+  google-plus-square: $fa-var-square-google-plus,
   google-wallet: $fa-var-google-wallet,
   gopuram: $fa-var-gopuram,
   graduation-cap: $fa-var-graduation-cap,
@@ -687,7 +687,7 @@ $font-awesome-icons: (
   hive: $fa-var-hive,
   hockey-puck: $fa-var-hockey-puck,
   holly-berry: $fa-var-holly-berry,
-  home: $fa-var-home,
+  home: $fa-var-house,
   hooli: $fa-var-hooli,
   hornbill: $fa-var-hornbill,
   horse: $fa-var-horse,
@@ -727,7 +727,7 @@ $font-awesome-icons: (
   industry: $fa-var-industry,
   infinity: $fa-var-infinity,
   info: $fa-var-info,
-  info-circle: $fa-var-info-circle,
+  info-circle: $fa-var-circle-info,
   innosoft: $fa-var-innosoft,
   instagram: $fa-var-instagram,
   instagram-square: $fa-var-instagram-square,
@@ -946,9 +946,9 @@ $font-awesome-icons: (
   pen-fancy: $fa-var-pen-fancy,
   pen-nib: $fa-var-pen-nib,
   pen-square: $fa-var-pen-square,
-  pencil-alt: $fa-var-pencil-alt,
+  pencil-alt: $fa-var-pen-to-square,
   pencil-ruler: $fa-var-pencil-ruler,
-  penny-arcade: $fa-var-penny-arcade,
+  penny-arcade: $fa-var-coins,
   people-arrows: $fa-var-people-arrows,
   people-carry: $fa-var-people-carry,
   pepper-hot: $fa-var-pepper-hot,
@@ -989,8 +989,8 @@ $font-awesome-icons: (
   playstation: $fa-var-playstation,
   plug: $fa-var-plug,
   plus: $fa-var-plus,
-  plus-circle: $fa-var-plus-circle,
-  plus-square: $fa-var-plus-square,
+  plus-circle: $fa-var-circle-plus,
+  plus-square: $fa-var-square-plus,
   podcast: $fa-var-podcast,
   poll: $fa-var-poll,
   poll-h: $fa-var-poll-h,
@@ -1089,11 +1089,11 @@ $font-awesome-icons: (
   scribd: $fa-var-scribd,
   scroll: $fa-var-scroll,
   sd-card: $fa-var-sd-card,
-  search: $fa-var-search,
-  search-dollar: $fa-var-search-dollar,
-  search-location: $fa-var-search-location,
-  search-minus: $fa-var-search-minus,
-  search-plus: $fa-var-search-plus,
+  search: $fa-var-magnifying-glass,
+  search-dollar: $fa-var-magnifying-glass-dollar,
+  search-location: $fa-var-magnifying-glass-location,
+  search-minus: $fa-var-magnifying-glass-minus,
+  search-plus: $fa-var-magnifying-glass-plus,
   searchengin: $fa-var-searchengin,
   seedling: $fa-var-seedling,
   sellcast: $fa-var-sellcast,
@@ -1102,9 +1102,9 @@ $font-awesome-icons: (
   servicestack: $fa-var-servicestack,
   shapes: $fa-var-shapes,
   share: $fa-var-share,
-  share-alt: $fa-var-share-alt,
-  share-alt-square: $fa-var-share-alt-square,
-  share-square: $fa-var-share-square,
+  share-alt: $fa-var-share-nodes,
+  share-alt-square: $fa-var-square-share-nodes,
+  share-square: $fa-var-share-from-square,
   shekel-sign: $fa-var-shekel-sign,
   shield-alt: $fa-var-shield-alt,
   shield-virus: $fa-var-shield-virus,
@@ -1264,7 +1264,7 @@ $font-awesome-icons: (
   teeth: $fa-var-teeth,
   teeth-open: $fa-var-teeth-open,
   telegram: $fa-var-telegram,
-  telegram-plane: $fa-var-telegram-plane,
+  telegram-plane: $fa-var-telegram,
   temperature-high: $fa-var-temperature-high,
   temperature-low: $fa-var-temperature-low,
   tencent-weibo: $fa-var-tencent-weibo,
@@ -1291,8 +1291,8 @@ $font-awesome-icons: (
   thumbtack: $fa-var-thumbtack,
   ticket-alt: $fa-var-ticket-alt,
   tiktok: $fa-var-tiktok,
-  times: $fa-var-times,
-  times-circle: $fa-var-times-circle,
+  times: $fa-var-xmark,
+  times-circle: $fa-var-circle-xmark,
   tint: $fa-var-tint,
   tint-slash: $fa-var-tint-slash,
   tired: $fa-var-tired,
@@ -1302,7 +1302,7 @@ $font-awesome-icons: (
   toilet-paper: $fa-var-toilet-paper,
   toilet-paper-slash: $fa-var-toilet-paper-slash,
   toolbox: $fa-var-toolbox,
-  tools: $fa-var-tools,
+  tools: $fa-var-screwdriver-wrench,
   tooth: $fa-var-tooth,
   torah: $fa-var-torah,
   torii-gate: $fa-var-torii-gate,
@@ -1316,12 +1316,12 @@ $font-awesome-icons: (
   transgender: $fa-var-transgender,
   transgender-alt: $fa-var-transgender-alt,
   trash: $fa-var-trash,
-  trash-alt: $fa-var-trash-alt,
-  trash-restore: $fa-var-trash-restore,
-  trash-restore-alt: $fa-var-trash-restore-alt,
+  trash-alt: $fa-var-trash-can,
+  trash-restore: $fa-var-trash-arrow-up,
+  trash-restore-alt: $fa-var-trash-can-arrow-up,
   tree: $fa-var-tree,
   trello: $fa-var-trello,
-  tripadvisor: $fa-var-tripadvisor,
+  tripadvisor: $fa-var-suitcase,
   trophy: $fa-var-trophy,
   truck: $fa-var-truck,
   truck-loading: $fa-var-truck-loading,
@@ -1345,8 +1345,8 @@ $font-awesome-icons: (
   umbrella-beach: $fa-var-umbrella-beach,
   uncharted: $fa-var-uncharted,
   underline: $fa-var-underline,
-  undo: $fa-var-undo,
-  undo-alt: $fa-var-undo-alt,
+  undo: $fa-var-rotate-left,
+  undo-alt: $fa-var-arrow-rotate-left,
   uniregistry: $fa-var-uniregistry,
   unity: $fa-var-unity,
   universal-access: $fa-var-universal-access,
@@ -1366,7 +1366,7 @@ $font-awesome-icons: (
   user-check: $fa-var-user-check,
   user-circle: $fa-var-user-circle,
   user-clock: $fa-var-user-clock,
-  user-cog: $fa-var-user-cog,
+  user-cog: $fa-var-user-gear,
   user-edit: $fa-var-user-edit,
   user-friends: $fa-var-user-friends,
   user-graduate: $fa-var-user-graduate,
@@ -1382,9 +1382,9 @@ $font-awesome-icons: (
   user-slash: $fa-var-user-slash,
   user-tag: $fa-var-user-tag,
   user-tie: $fa-var-user-tie,
-  user-times: $fa-var-user-times,
+  user-times: $fa-var-user-xmark,
   users: $fa-var-users,
-  users-cog: $fa-var-users-cog,
+  users-cog: $fa-var-users-gear,
   users-slash: $fa-var-users-slash,
   usps: $fa-var-usps,
   ussunnah: $fa-var-ussunnah,
@@ -1421,7 +1421,7 @@ $font-awesome-icons: (
   volume-mute: $fa-var-volume-mute,
   volume-off: $fa-var-volume-off,
   volume-up: $fa-var-volume-up,
-  vote-yea: $fa-var-vote-yea,
+  vote-yea: $fa-var-check-to-slot,
   vr-cardboard: $fa-var-vr-cardboard,
   vuejs: $fa-var-vuejs,
   walking: $fa-var-walking,
@@ -1495,7 +1495,7 @@ $font-awesome-icons: (
     }
 
     @if $style == "brands" {
-      font-family: "Font Awesome 5 Brands";
+      font-family: "Font Awesome 6 Brands";
     }
   }
 
@@ -1527,11 +1527,11 @@ $font-awesome-icons: (
 
 @mixin admin-action-icons {
   .edit-link {
-    @include has-fa-icon(edit, regular);
+    @include has-fa-icon(pen-to-square, regular);
   }
 
   .destroy-link {
-    @include has-fa-icon(trash-alt, regular);
+    @include has-fa-icon(trash-can, regular);
   }
 
   .destroy-link,
@@ -1549,7 +1549,7 @@ $font-awesome-icons: (
 
   .new-link,
   .assign-booth-link {
-    @include has-fa-icon(plus-circle, solid);
+    @include has-fa-icon(circle-plus, solid);
     color: $color-success;
   }
 
@@ -1562,11 +1562,11 @@ $font-awesome-icons: (
   .destroy-role-link,
   .destroy-officer-link,
   .reject-link {
-    @include has-fa-icon(user-times, solid);
+    @include has-fa-icon(user-xmark, solid);
   }
 
   .restore-link {
-    @include has-fa-icon(undo, solid);
+    @include has-fa-icon(rotate-left, solid);
   }
 
   .restore-link,
@@ -1588,17 +1588,17 @@ $font-awesome-icons: (
   }
 
   .preview-pending-link {
-    @include has-fa-icon(search, solid);
+    @include has-fa-icon(magnifying-glass, solid);
   }
 
   .send-pending-link {
-    @include has-fa-icon(share-square, regular);
+    @include has-fa-icon(share-from-square, regular);
     color: $color-success;
   }
 
   .configure-link,
   .answers-link {
-    @include has-fa-icon(tools, solid);
+    @include has-fa-icon(screwdriver-wrench, solid);
   }
 
   .download-link {
@@ -1619,7 +1619,7 @@ $font-awesome-icons: (
   }
 
   .manage-link {
-    @include has-fa-icon(archive, solid);
+    @include has-fa-icon(box-archive, solid);
   }
 
   .cards-link {
