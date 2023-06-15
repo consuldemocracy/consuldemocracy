@@ -21,7 +21,7 @@ gem "delayed_job_active_record", "~> 4.1.7"
 gem "devise", "~> 4.8.1"
 gem "devise-security", "~> 0.17.0"
 gem "file_validators", "~> 3.0.0"
-gem "font-awesome-sass", "~> 5.15.1" # Remember to update vendor/assets/images/fontawesome when updating this gem
+gem "font-awesome-sass", "~> 6.4.0" # Remember to update vendor/assets/images/fontawesome when updating this gem
 gem "foundation-rails", "~> 6.6.2.0"
 gem "foundation_rails_helper", "~> 4.0.1"
 gem "globalize", "~> 6.2.1"
