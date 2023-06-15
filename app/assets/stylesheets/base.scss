@@ -35,19 +35,18 @@ html {
   font-size: unset;
 }
 
-body,
 h1,
 h2,
 h3,
 h4,
-p,
-a {
-  font-family: "Montserrat", sans-serif !important;
+h5,
+h6 {
+  font-weight: $header-font-weight;
 }
 
 button,
 .button {
-  font-weight: bold;
+  font-weight: $button-font-weight;
   min-height: $line-height * 2;
 }
 
@@ -187,6 +186,10 @@ aside {
           right: 0;
           width: 100%;
         }
+      }
+
+      a {
+        font-weight: $button-font-weight;
       }
     }
   }
@@ -649,6 +652,7 @@ body > header,
   font-size: 16px;
   line-height: $line-height * 2;
   position: relative;
+  font-weight: $button-font-weight;
 
   @include breakpoint(medium) {
 
@@ -915,6 +919,7 @@ body > header,
       background: rgba(255, 255, 255, 0.5);
       position: absolute;
       top: 24px;
+      font-weight: $button-font-weight;
     }
   }
 
@@ -1194,7 +1199,7 @@ footer {
   padding-top: $line-height * 4;
 
   &:not(.button) .button {
-    background: rgba(0 , 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
     color: #fff;
     min-width: 30%;
   }
@@ -2421,15 +2426,12 @@ a {
 }
 
 .legislation-draft-versions-form .markdown-preview {
-  font-family: "Montserrat", sans-serif !important;
-
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    font-family: "Montserrat", sans-serif !important;
     line-height: unset;
   }
 

@@ -1,22 +1,24 @@
 // Base variables
 // --------------
 
-$base-font-size:    rem-calc(16);
-$border:            #cbc7c7;
-$brand:             #004a83;
-$brand-secondary:   #0054ad;
-$dark:              #2d313b;
-$footer:            #c9d8ff;
-$highlight-soft:    #f0f3f6;
-$highlight-text:    #8a9999;
-$hover:             darken($brand, 20%);
-$hover-secondary:   darken($brand-secondary, 20%);
-$info:              #4ab4f9;
-$label:             #00469f;
-$light:             #f2f5f7;
-$like:              #21a562;
-$link-dark:         #493d57;
-$link-hover:        $brand;
-$link-soft:         #a099a8;
-$text:              #000;
-$unlike:            #da262b;
+$base-font-size: rem-calc(16) !default;
+$border: #cbc7c7 !default;
+$brand: #004a83 !default;
+$brand-secondary: #0054ad !default;
+$dark: #2d313b !default;
+$footer: #c9d8ff !default;
+$highlight-soft: #f0f3f6 !default;
+$highlight-text: #8a9999 !default;
+$hover: darken($brand, 20%) !default;
+$hover-secondary: darken($brand-secondary, 20%) !default;
+$info: #4ab4f9 !default;
+$label: #00469f !default;
+$light: #f2f5f7 !default;
+$like: #21a562 !default;
+$link-dark: #493d57 !default;
+$link-hover: $brand !default;
+$link-soft: #a099a8 !default;
+$text: #000 !default;
+$unlike: #da262b !default;
+$header-font-weight: 700 !default;
+$button-font-weight: $header-font-weight !default;
