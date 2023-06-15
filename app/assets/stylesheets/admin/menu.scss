@@ -29,7 +29,7 @@
     }
 
     &.booths-link {
-      @include icon(archive, solid);
+      @include icon(box-archive, solid);
     }
 
     &.budgets-link,
@@ -47,7 +47,7 @@
     }
 
     &.debates-link {
-      @include icon(comment-alt, solid);
+      @include icon(message, solid);
     }
 
     &.invitations-link {
@@ -57,11 +57,11 @@
     &.legislation-link,
     &.legislation-proposals-link,
     &.legislation-processes-link {
-      @include icon(file-alt, solid);
+      @include icon(file-lines, solid);
     }
 
     &.messages-link {
-      @include icon(file-archive, regular);
+      @include icon(file-zipper, regular);
     }
 
     &.moderated-content-link {
@@ -69,7 +69,7 @@
     }
 
     &.polls-link {
-      @include icon(check-circle, regular);
+      @include icon(circle-check, regular);
     }
 
     &.print-proposals-link,
@@ -87,15 +87,15 @@
     }
 
     &.settings-link {
-      @include icon(cog, solid);
+      @include icon(gear, solid);
     }
 
     &.signature-sheets-link {
-      @include icon(file-alt, regular);
+      @include icon(file-lines, regular);
     }
 
     &.site-customization-link {
-      @include icon(pencil-alt, solid);
+      @include icon(pencil, solid);
     }
 
     &.stats-link {
