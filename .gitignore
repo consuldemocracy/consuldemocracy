@@ -32,6 +32,7 @@ tmp/
 # Files used in local development
 .byebug_history
 .DS_Store
+.idea
 
 # Test results
 /spec/examples.txt
