@@ -1,0 +1,152 @@
+#!/usr/bin/env ruby
+
+require "fileutils"
+require "pathname"
+
+##
+# Creates a new tenant directory
+def create_tenant(name)
+  valid_directory_name_regex = /^[a-zA-Z0-9_-]+$/
+
+  if name.nil?
+    puts "Tenant name is required"
+    exit
+  end
+
+  unless name.match(valid_directory_name_regex)
+    puts "Tenant name doesn't match regex: [#{valid_directory_name_regex}]"
+    exit
+  end
+
+  new_deploy_dir = "tenant/#{name}"
+
+  if Dir.exist? new_deploy_dir
+    puts "Tenant already exists: [#{name}]"
+    exit
+  end
+
+  FileUtils.mkdir_p new_deploy_dir
+  FileUtils.touch new_deploy_dir + ".keep"
+
+  puts "Tenant created: [#{name}]"
+end
+
+def apply_to_sibling_directory(template_directory, sibling_directory, opts = {})
+  default_opts = { condition: "custom", clear: false, copy: true, dry: false }
+
+  opts = default_opts.merge(opts)
+
+  custom_children = Dir.glob(File.join(template_directory, "*")).select do |file|
+    (File.directory?(file) && File.basename(file) == opts[:condition]) || File.file?(file)
+  end
+
+  custom_children.each do |child|
+    basename = File.basename(child)
+    sibling_child = File.join(sibling_directory, basename)
+
+    if opts[:clear] && !(opts[:dry])
+      FileUtils.rm_rf(sibling_child)
+    end
+
+    puts "Cleared child: #{File.expand_path(sibling_child)}"
+
+    if opts[:copy]
+      if File.directory?(child)
+        child = File.join(child, ".")
+      else
+        sibling_child = sibling_directory
+      end
+
+      unless opts[:dry]
+        FileUtils.cp_r(child, sibling_child)
+      end
+    end
+
+    puts "Copied: [#{child}] -> [#{sibling_child}]"
+  end
+
+  subdirectories = Dir.glob(File.join(template_directory, "*")).select do |file|
+    File.directory?(file) && File.basename(file) != opts[:condition]
+  end
+
+  subdirectories.each do |subdirectory|
+    pathname = Pathname.new(subdirectory)
+    navigation_path = pathname.relative_path_from(template_directory)
+    new_sibling = Pathname.new(sibling_directory).join(navigation_path)
+
+    apply_to_sibling_directory(subdirectory, new_sibling, opts)
+  end
+end
+
+##
+# The apply_deploy method applies a deploy to the project.
+# It copies the deploy config files to the project config files
+def apply_tenant(tenant_name)
+  illegal_deploys = ["base"]
+
+  current_tenant_illegal = illegal_deploys.include? tenant_name
+
+  if current_tenant_illegal
+    puts "Applying the deploy '#{tenant_name}' is not allowed"
+    exit
+  end
+
+  dir = __dir__
+
+  if dir == nil
+    puts "The dir of the tenant scripts must not be nil"
+    exit
+  end
+
+  current_tenant_not_found = !Dir.exist?(File.join(dir, "../tenants/#{tenant_name}"))
+
+  if current_tenant_not_found
+    puts "Tenant '#{tenant_name}' not found"
+    exit
+  end
+
+  # Apply the base
+  apply_to_sibling_directory(File.join(dir, "../tenants/base"), File.join(dir, ".."),
+                             { clear: true, copy: true })
+
+  apply_to_sibling_directory(File.join(dir, "../tenants/#{tenant_name}"), File.join(dir, ".."),
+                             { clear: false, copy: true })
+end
+
+##
+# The process_argv method processes a command line argument,
+# by calling the appropriate method
+def process_argv(option, tenant_name = nil)
+  case option
+  when "-i", "--init"
+    create_tenant(tenant_name)
+  when "-c", "--clear"
+    dir = __dir__
+    if dir == nil
+      puts "Dir of tenant script must not be nil"
+      exit
+    end
+
+    apply_to_sibling_directory(File.join(dir, "../tenants/base"), File.join(dir, ".."),
+                               { clear: true, copy: true, dry: true })
+  when "-a", "--apply"
+    apply_tenant(tenant_name)
+  else
+    unless [nil, "-h", "--help"].include?(option)
+      puts "Invalid option: #{option}"
+      puts ""
+    end
+
+    puts "usage: tenant [option] [tenant_name]"
+    puts "    -h, --help                       Show this help message"
+    puts "    -c, --clear                      Clear custom directories"
+    puts "    -i, --init [tenant_name]         Initializes a new tenant"
+    puts "    -a, --apply [tenant_name]        Apply a tenant config"
+  end
+
+  exit
+end
+
+tenant_name = ARGV[1]
+
+process_argv(ARGV[0], tenant_name)
