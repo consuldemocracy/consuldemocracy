@@ -126,6 +126,7 @@ nl:
         drafting: "Deze burgerbegroting is in concept. Alleen admins kunnen het bekijken. Wanneer het proces is gepubliceerd, is het zichtbaar voor alle gebruikers. Het is dan niet mogelijk het weer terug te zetten naar concept. Klik op \"Publiceer\" rechtsboven om de begroting te publiceren."
         preview: "Preview"
         publish: "Publiceer"
+        active: "Actief"
         administrators:
           zero: "Selecteer admin"
         valuators:
@@ -607,6 +608,8 @@ nl:
         name: "Naam"
       index:
         title: "Gebruikers"
+        filters:
+          active: Actief
     officials:
       index:
         title: "Bijzondere rollen"

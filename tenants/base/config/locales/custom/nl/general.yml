@@ -268,7 +268,7 @@ nl:
   layouts:
     header:
       collaborative_legislation: "Inspraak"
-      budgets: "Ideeën"
+      budgets: "Projecten"
       proposals: "Initiatieven"
       debates: "Discussies"
       poll_questions: "Peilingen"
