@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => "/ckeditor"
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
+  draw :custom
   draw :account
   draw :admin
   draw :budget

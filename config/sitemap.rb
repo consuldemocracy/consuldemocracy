@@ -5,6 +5,7 @@ class SitemapGenerator::FileAdapter
     stream.close
   end
 end
+
 SitemapGenerator::Sitemap.namer = SitemapGenerator::SimpleNamer.new(:sitemap, extension: ".xml")
 
 # default host
@@ -13,6 +14,10 @@ SitemapGenerator::Sitemap.default_host = Setting["url"]
 
 # sitemap generator
 SitemapGenerator::Sitemap.create do
+  if feature?("raad")
+    add raadpagina_path
+  end
+
   add help_path
   add how_to_use_path
   add faq_path

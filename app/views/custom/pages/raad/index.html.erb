@@ -1,0 +1,46 @@
+<%= raadsleden = [
+  {
+    img: "pvda.png"
+  },
+  {
+    img: "groenlinks.png"
+  },
+  {
+    img: "fp.png"
+  },
+  {
+    img: "gemeentebelangen.png"
+  },
+  {
+    img: "cda.png"
+  },
+  {
+    img: "vvd.png"
+  },
+  {
+    img: "lijst058.png"
+  },
+  {
+    img: "d66.png"
+  },
+  {
+    img: "cu.png"
+  },
+  {
+    img: "fvd.png"
+  },
+] %>
+
+<div id="raad_page" class="raad_page row margin-top">
+  <%= render "shared/section_header",
+             i18n_namespace: "raad.section_header",
+             image: "far fa-handshake"
+  %>
+
+  <ul class="raadsleden">
+    <%= raadsleden.each do |raadslid| %>
+      <%= image_tag(image_path_for('raadsleden/' + raadslid[:img])) %>
+    <% end %>
+  </ul>
+</div>
+
