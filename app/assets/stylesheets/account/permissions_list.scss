@@ -21,7 +21,7 @@
     }
 
     &.permission-denied {
-      @include has-fa-icon(times, solid);
+      @include has-fa-icon(xmark, solid);
 
       &::before {
         color: $delete;
