@@ -46,13 +46,8 @@
   @if $adjust-padding {
     $small-padding: rem-calc(map-get($grid-column-gutter, small)) / 2;
 
-    left: -$small-padding;
-    right: -$small-padding;
-
-    @include breakpoint(medium) {
-      left: -$global-padding;
-      right: -$global-padding;
-    }
+    left: inherit;
+    right: inherit;
   }
 
   @include breakpoint($global-width) {
@@ -64,6 +59,9 @@
       left: calc(#{$full-width-margin});
       right: calc(#{$full-width-margin});
     }
+
+    left: inherit;
+    right: inherit;
   }
 }
 
