@@ -24,6 +24,7 @@ class Setting
       else
         consul_defaults.merge({
           # Overwrite default CONSUL settings or add new settings here
+          "feature.raad": true
         })
       end
     end
