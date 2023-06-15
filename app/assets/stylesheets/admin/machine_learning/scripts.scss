@@ -5,7 +5,7 @@
   }
 
   .success > :first-child {
-    @include has-fa-icon(check-circle, solid);
+    @include has-fa-icon(circle-check, solid);
   }
 
   .warning > :first-child {
