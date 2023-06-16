@@ -53,7 +53,7 @@
                                 accesskey: "7" %>
       </li>
     <% end %>
-    <% if feature?(:raadpagina) %>
+    <% if Setting["feature.raad"] %>
       <li>
         <%= layout_menu_link_to t("layouts.header.raad"),
                                 raad_path,
