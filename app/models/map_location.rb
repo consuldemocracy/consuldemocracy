@@ -24,4 +24,23 @@ class MapLocation < ApplicationRecord
       longitude: (heading.longitude.to_f if heading.longitude.present?)
     )
   end
+
+  def self.investments_json_data(investments)
+    return [] unless investments.any?
+
+    budget_id = investments.first.budget_id
+
+    data = investments.joins(:map_location)
+                      .with_fallback_translation
+                      .pluck(:id, :title, :latitude, :longitude)
+
+    data.map do |values|
+      {
+        title: values[1],
+        link: "/budgets/#{budget_id}/investments/#{values[0]}",
+        lat: values[2],
+        long: values[3]
+      }
+    end
+  end
 end

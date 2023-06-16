@@ -11,12 +11,11 @@ module Budgets
 
     PER_PAGE = 10
 
-    before_action :authenticate_user!, except: [:index, :show, :json_data]
-    before_action :load_budget, except: :json_data
+    before_action :authenticate_user!, except: [:index, :show]
+    before_action :load_budget
 
-    authorize_resource :budget, except: :json_data
-    load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment",
-                                except: :json_data
+    authorize_resource :budget
+    load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment"
 
     before_action :load_ballot, only: [:index, :show]
     before_action :load_heading, only: [:index, :show]
@@ -24,8 +23,6 @@ module Budgets
     before_action :load_categories, only: :index
     before_action :set_default_investment_filter, only: :index
     before_action :set_view, only: :index
-
-    skip_authorization_check only: :json_data
 
     feature_flag :budgets
 
@@ -89,19 +86,6 @@ module Budgets
       @resource_path_method = :namespaced_budget_investment_path
       @resource_relation    = resource_model.where(budget: @budget).apply_filters_and_search(@budget, params, @current_filter)
       super
-    end
-
-    def json_data
-      investment = Budget::Investment.find(params[:id])
-      data = {
-        investment_id: investment.id,
-        investment_title: investment.title,
-        budget_id: investment.budget.id
-      }.to_json
-
-      respond_to do |format|
-        format.json { render json: data }
-      end
     end
 
     private
