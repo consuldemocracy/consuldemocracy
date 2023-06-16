@@ -172,7 +172,7 @@
           if (App.Map.validCoordinates(coordinates)) {
             marker = createMarker(coordinates.lat, coordinates.long);
             marker.options.id = coordinates.investment_id;
-            marker.on("click", App.Map.openMarkerPopup);
+            marker.bindPopup(App.Map.getPopupContent(coordinates));
           }
         });
       }
@@ -217,19 +217,8 @@
 
       polygon.addTo(map);
     },
-    openMarkerPopup: function(e) {
-      var marker = e.target;
-      $.ajax("/investments/" + marker.options.id + "/json_data", {
-        type: "GET",
-        dataType: "json",
-        success: function(data) {
-          e.target.bindPopup(App.Map.getPopupContent(data)).openPopup();
-        }
-      });
-    },
     getPopupContent: function(data) {
-      return "<a href='/budgets/" + data.budget_id + "/investments/" + data.investment_id + "'>" +
-             data.investment_title + "</a>";
+      return "<a href='" + data.link + "'>" + data.title + "</a>";
     },
     validZoom: function(zoom) {
       return App.Map.isNumeric(zoom);
