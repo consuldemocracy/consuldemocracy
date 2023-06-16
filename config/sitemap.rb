@@ -15,7 +15,7 @@ SitemapGenerator::Sitemap.default_host = Setting["url"]
 # sitemap generator
 SitemapGenerator::Sitemap.create do
   if Setting["feature.raad"]
-    add raadpagina_path
+    add raad_path
   end
 
   add help_path
