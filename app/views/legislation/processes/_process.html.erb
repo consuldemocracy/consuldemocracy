@@ -11,7 +11,7 @@
     </div>
 
     <div class="small-12 medium-11 column end">
-      <%= markdown(process.summary.presence || first_paragraph(process.description)) %>
+      <%= auto_link_already_sanitized_html AdminWYSIWYGSanitizer.new.sanitize((process.summary.presence || first_paragraph(process.description)) %>
     </div>
 
     <div class="small-12 medium-11 column end">

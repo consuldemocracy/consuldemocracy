@@ -654,7 +654,6 @@ es:
           draft_phase_description: Si esta fase está activa, el proceso no aparecerá en la página de procesos. Permite previsualizar el proceso y crear contenido antes del inicio.
           allegations_phase: Fase de comentarios
           proposals_phase: Fase de propuestas
-          use_markdown: Usa Markdown para formatear el texto
           homepage_description: Aquí puedes explicar el contenido del proceso
           banner_title: Colores del encabezado
         index:
