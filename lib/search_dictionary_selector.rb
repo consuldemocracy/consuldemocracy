@@ -1,22 +1,32 @@
 module SearchDictionarySelector
   SQL_QUERY = "SELECT cfgname FROM pg_ts_config".freeze
   I18N_TO_DICTIONARY = {
+    ar: "arabic",
+    ca: "catalan",
     de: "german",
     dk: "danish",
+    el: "greek",
     en: "english",
     es: "spanish",
+    eu: "basque",
     fi: "finnish",
     fr: "french",
+    ga: "irish",
     hu: "hungarian",
+    id: "indonesian",
     it: "italian",
+    lt: "lithuanian",
     nb: "norwegian",
+    ne: "nepali",
     nl: "dutch",
     nn: "norwegian",
     pt: "portuguese",
     ro: "romanian",
     ru: "russian",
+    sv: "serbian",
     sv: "swedish",
-    tr: "turkish"
+    tr: "turkish",
+    yi: "yiddish"
   }.freeze
 
   class << self
