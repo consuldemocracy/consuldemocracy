@@ -27,10 +27,10 @@ tr:
         figcaption: 'Tartışmaları değerlendirmek için "katılıyorum" ve "katılmıyorum" düğmeleri.'
       proposals:
         title: "Öneriler"
-        description: "%{link} bölümünde, Belediye Meclisinin bunları yerine getirmesi için önerilerde bulunabilirsiniz. Öneriler destek gerektirir ve eğer yeterli desteğe ulaşırlarsa, bir halka açık oylama yapılır. Bu vatandaşların oylarında onaylanan teklifler Belediye Meclisi tarafından kabul edilir ve yerine getirilir."
-        link: "vatandaş önerileri"
+        description: "%{link} bölümünden, Belediye Meclisi'ne öneriler sunabilirsiniz. Önerilerin desteklenmesi gerekir ve yeterli desteğe ulaşan öneriler için halka açık bir oylama yapılır. Böylece yurttaşların oylarla onaylanan öneriler Belediye Meclisi tarafından kabul edilerek yürürlüğe konur."
+        link: "yurttaş önerileri"
         image_alt: "Bir öneriyi destekleme düğmesi"
-        figcaption: 'Tasarıyı "Destekleme" butonu.'
+        figcaption: 'Bir öneriyi "Destekleme" düğmesi.'
       budgets:
         title: "Katılımcı Bütçeleme"
         description: "%{link} bölümü, insanların belediye bütçesinin hangi bölümüne harcandığı konusunda doğrudan bir karar vermelerine yardımcı olur."
@@ -39,7 +39,7 @@ tr:
         figcaption: 'Katılımcı bütçelerin "Destek" ve "Oylama" aşamaları.'
       polls:
         title: "Anketler"
-        description: "%{link} bölümü, bir teklif %1 desteğe her ulaştığında ve oylamaya gittiğinde veya Belediye Meclisinin insanların karar vermesi için bir konu önerisinde bulunduğunda etkinleşir."
+        description: "Bir öneri 1% destek alarak oylamaya gittiğinde veya Belediye Meclisi bir konuyu insanların değerlendirmesine sunduğunda %{link} bölümü etkin olur."
         link: "anketler"
         feature_1: "Oylamaya katılmak için %{link}'e sahip olmanız ve hesabınızı doğrulamanız gerekir."
         feature_1_link: "%{org_name} içinde kaydol"
