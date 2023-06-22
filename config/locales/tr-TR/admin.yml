@@ -53,7 +53,7 @@ tr:
         action: İşlem
         actions:
           block: Engellendi
-          hide: Gizlendi
+          hide: Gizli
           restore: Geri yüklendi
         by: Denetleyen
         content: İçerik
@@ -547,7 +547,7 @@ tr:
         email: "E-posta:"
         hidden_at: "Gizlenmiş:"
         registered_at: "Kayıtlı:"
-        title: Kullanıcının etkinliği (%{user})
+        title: Kullanıcı işlemi (%{user})
     hidden_budget_investments:
       index:
         filter: Filtre
@@ -575,7 +575,7 @@ tr:
           process: İşlem
           debate_phase: Tartışma aşaması
           draft_phase: Taslak aşaması
-          draft_phase_description: Eğer bu aşama aktif ise işlem, işlemler dizininde listelenmez. Başlamadan önce işlem önizlemeye ve içerik oluşturmaya izin verin.
+          draft_phase_description: Bu aşama aktif ise süreç, süreçler dizininde görüntülenmez. Başlamadan önce süreç ön izleme ve içerik oluşturma izinlerini verin.
           allegations_phase: Yorumlar aşaması
           proposals_phase: Öneriler aşaması
           use_markdown: Metni biçimlendirmek için Markdown'ı kullanın
@@ -1073,10 +1073,10 @@ tr:
         table_location: "Konum"
     active_polls:
       edit:
-        title: "Anketlerin tanımlaması"
+        title: "Oylamalar açıklaması"
       form:
         description:
-          help_text: "Bu metin anket sayfasının başlığında görünecektir. Açık anketlere bir içerik eklemek için kullanılabilir."
+          help_text: "Oylamalar sayfasının başlığında görüntülenecek metin. Açık oylamalara içerik eklemek için kullanılabilir."
     polls:
       index:
         title: "Anketlerin listesi"
@@ -1206,8 +1206,8 @@ tr:
         title: "Kabine göre sonuçlar"
     booths:
       index:
-        title: "Aktif kabinlerin listesi"
-        no_booths: "Yaklaşan herhangi bir anket için aktif kabin yok."
+        title: "Etkin kabinlerin listesi"
+        no_booths: "Yaklaşan herhangi bir oylama için etkin bir kabin yok."
         add_booth: "Kabin ekle"
         name: "İsim"
         location: "Konum"
@@ -1661,7 +1661,7 @@ tr:
         notice: Kiracı güncellendi
     homepage:
       title: Ana sayfa
-      description: Aktif modüller ana sayfada, buradakiyle aynı sırada görünür.
+      description: Etkin modüller giriş sayfasında buradakiyle aynı sırada görüntülenir.
       header_title: Üstbilgi
       no_header: Üstbilgi yok.
       create_header: Üstbilgi oluştur
