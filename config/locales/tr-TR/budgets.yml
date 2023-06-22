@@ -65,11 +65,11 @@ tr:
       prev_phase: Önceki aşama
       current_phase: Mevcut aşama
       map: Coğrafi konuma göre yatırım bütçesi önerileri
-      finished_budgets: Bitmiş katılımcı bütçeler
+      finished_budgets: Tamamlanmış katılımcı bütçeler
       see_results: Sonuçları gör
       section_footer:
         title: Katılımcı bütçelere yardım edin
-        description: Katılımcı bütçelerle vatandaşlar hangi projelerin bütçenin bir parçası olduğuna karar verir.
+        description: Katılımcı bütçelerde yurttaşlar hangi projelerin bütçenin bir parçası olacağına karar verir.
       milestones: Kilometre taşları
     investments:
       form:
@@ -86,7 +86,7 @@ tr:
         title: Katılımcı bütçeleme
         unfeasible: Uygun bulunmayan yatırım projeleri
         unfeasible_text: "Yatırımlar, geçerli olarak duyurulup son oylama aşamasına ulaşmak için bir dizi ölçütü (yasallık, somutluk, bütçe sınırını aşmamak gibi) karşılamalıdır. Bu ölçütlere uymayan tüm yatırımlar uygun bulunmamış olarak işaretlenir ve uygunsuzlık raporu ile birlikte aşağıdaki listede yayınlanır."
-        by_heading: "Kapsam ile yatırım projeleri: %{heading}"
+        by_heading: "Kapsamlı yatırım projeleri: %{heading}"
         search_form:
           button: Ara
           placeholder: Yatırım projelerini ara...
@@ -107,9 +107,9 @@ tr:
           different_heading_assigned: "Başka bir tasarı için aktif oylarınız bulunmaktadır: %{heading_link}"
           change_ballot: "Eğer fikrinizi değiştirirseniz oyunuzu %{check_ballot} 'tan kaldırabilirsiniz ve baştan başlayabilirsiniz."
           check_ballot_link: "oyumu kontrol et"
-          zero: Bu grupta herhangi bir yatırım projesine oy vermediniz.
+          zero: Bu gruptaki herhangi bir yatırım projesine oy vermediniz.
           verified_only: "Yeni bir bütçe yatırımı oluşturmak için %{verify}."
-          create: "Bir bütçe yatırımı oluşturun"
+          create: "Bir yatırım bütçesi oluştur"
           not_logged_in: "Yeni bir bütçe yatırımı oluşturmak istiyorsanız %{sign_in} ya da %{sign_up}."
         filter: "Projelere göre filtreleme"
         filters:
@@ -138,7 +138,7 @@ tr:
         price: Fiyat
         comments_tab: Yorumlar
         milestones_tab: Kilometre taşları
-        author: Yazar
+        author: Sahip
         project_unfeasible: "Bu yatırım projesi <strong>uygun bulunmamış olarak işaretlenmiş</strong> ve oylama aşamasına geçemeyecek."
         project_selected: "Bu yatırım projesi oylama aşaması için <strong>seçildi</strong>."
         project_winner: "Kazanan yatırım projesi"
