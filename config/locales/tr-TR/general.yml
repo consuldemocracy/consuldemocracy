@@ -288,26 +288,26 @@ tr:
         submit_button: Öneri oluştur
     created:
       title: Tebrikler! İlk adımı attınız.
-      motivation: "Önerinizin başarılı olması için 	fırlatma kampanyası hazırlamak önemlidir. İlk birkaç gün belirleyicidir."
-      motivation_2: "<strong>Yayınlamak istediğiniz içerikle ilgili önerileri almak istiyorsanız, teklifinizi taslak olarak kaydedin, size yardımcı olalım.</strong>"
+      motivation: "Önerinizin başarılı olması için bir başlatma kampanyası hazırlamak önemlidir. İlk birkaç gün belirleyicidir."
+      motivation_2: "<strong>Yayınlamak istediğiniz içerikle ilgili öneriler almak istiyorsanız, önerinizi taslak olarak kaydedin ve size yardımcı olalım.</strong>"
       publish: Hayır, öneriyi yayınlamak istiyorum
       dashboard: Evet, yardım istiyorum ve daha sonra yayınlayacağım
-      preview_title: Önerinizi yayınladığınız zaman bu şekilde görünecektir
+      preview_title: Öneriniz yayınlandığında bu şekilde görünecek
     share:
       improve_it: Kampanyanızı geliştirin ve daha fazla destek alın.
       dashboard: Daha fazla bilgi görüntüle
-      message: "Ben %{handle} içindeki öneri %{summary} 'i destekledim. Eğer ilgileniyorsanız, siz de destekleyin!"
+      message: "Ben %{handle} içindeki %{title} önerisini destekledim. İlgileniyorsanız, siz de destekleyin!"
     edit:
       editing: Öneriyi düzenle
       form:
         submit_button: Değişiklikleri kaydet
       show_link: Öneriyi göster
     retire_form:
-      title: Öneriyi çek
-      warning: "Öneriyi çekseniz bile yine de destekleri kabul eder ancak ana listeden kaldırılır ve yazarın önerinin artık desteklenmemesi gerektiğini düşündüğünü belirten bir mesaj tüm kullanıcılar tarafından görülebilir"
+      title: Öneriyi geri çek
+      warning: "Öneriyi geri çeksenizde desteklerin alınması sürdürülür. Ancak ana listeden kaldırılır ve tüm kullanıcılara yazarın önerinin artık desteklenmemesi gerektiğini düşündüğünü belirten iletisi görüntülenir"
       retired_reason_blank: Bir seçenek seçin
-      retired_explanation_placeholder: Bu önerinin neden daha fazla destek almaması gerektiğini düşündüğünüzü kısaca açıklayın
-      submit_button: Öneriyi çek
+      retired_explanation_placeholder: Neden artık bu önerinin desteklenmemesi gerektiğini düşündüğünüzü kısaca açıklayın
+      submit_button: Öneriyi geri çek
     retire_options:
       duplicated: Çoğaltılmış
       started: Zaten yapım aşamasında
@@ -319,7 +319,7 @@ tr:
       proposal_summary_note: "(maksimum 200 karakter)"
       proposal_video_url_note: YouTube veya Vimeo'ya bir bağlantı ekleyebilirsiniz
       tag_category_label: "Kategoriler"
-      tags_instructions: "Bu öneriyi etiketle. Önerilen kategoriler arasından seçim yapabilir veya kendinizinkini ekleyebilirsiniz"
+      tags_instructions: "Bu öneriyi etiketleyin. Öneri kategorileri arasından seçim yapabilir veya yeni bir kategori ekleyebilirsiniz"
       tags_label: Etiketler
       tags_placeholder: "Kullanmak istediğiniz etiketleri virgülle ayırarak girin (',')"
       map_location: "Harita konumu"
@@ -336,16 +336,16 @@ tr:
         archival_date: arşivlendi
         recommendations: tavsiyeler
       recommendations:
-        without_results: İlgilendikleriniz ile ilgili öneriler yok
-        without_interests: Önerileri takip edin böylece size tavsiyeler verebiliriz
-        disable: "Öneri tavsiyeleri, görmezden gelirseniz gösterilmez. Onları 'Hesabım' sayfasında tekrar etkinleştirebilirsiniz"
+        without_results: İlgi alanlarınız ile ilgili bir öneri yok
+        without_interests: Önerileri izleyin. Böylece size öneriler sunabiliriz
+        disable: "Öneri sunumlarını yok saydığınızda bunlar artık görüntülenmez. Bunları 'Hesabım' bölümünden yeniden etkinleştirebilirsiniz"
         actions:
-          success: "Bu hesap için öneri tavsiyeleri artık devre dışı bırakıldı"
-          error: "Bir hata oluştu. Lütfen öneri tavsiyelerini manuel olarak devre dışı bırakmak için 'Hesabım' sayfasına gidin"
-      retired_proposals: Çekilen öneriler
-      retired_proposals_link: "Yazar tarafından çekilen öneriler"
-      selected_proposals: Seçilen öneriler
-      selected_proposals_link: Seçilen önerileri görüntüle
+          success: "Bu hesap için artık öneriler sunulmayacak"
+          error: "Bir sorun çıktı. Lütfen sunulacak önerileri el ile devre dışı bırakmak için 'Hesabım' bölümüne gidin"
+      retired_proposals: Geri çekilmiş öneriler
+      retired_proposals_link: "Yazar tarafından geri çekilmiş öneriler"
+      selected_proposals: Seçilmiş öneriler
+      selected_proposals_link: Seçilmiş önerileri görüntüle
       archived_proposals: Arşivlenmiş öneriler
       proposals_lists: Öneri listeleri
       retired_links:
@@ -367,23 +367,23 @@ tr:
       title: Öneriler
       top_link_proposals: Kategoriye göre en çok desteklenen öneriler
       section_header:
-        icon_alt: Önerilerin simgesi
+        icon_alt: Öneriler simgesi
         title: Öneriler
-        help: Öneriler hakkında yardım
+        help: Öneriler ile ilgili yardım
       section_footer:
-        title: Öneriler hakkında yardım
-        description: Vatandaşların' önerileri komşular ve toplulukların şehirlerinin nasıl olmasını istediklerine doğrudan karar vermeleri için bir fırsattır, yeterli destek aldıktan ve vatandaşların oylamasına sunulduktan' sonra.
+        title: Öneriler ile ilgili yardım
+        description: Yurttaş önerileri, yeterli desteği almış ve yurttaşların oylamasından geçmiş öneriler yoluyla, komşuların ve toplulukların bölgelerinin nasıl olmasını istediklerine doğrudan karar vermelerini sağlar.
     new:
       form:
         submit_button: Öneri oluştur
-      more_info: Vatandaş önerileri nasıl çalışır?
+      more_info: Yurttaş önerilerinin işleyişi nasıldır?
       recommendation_one: Öneri başlığı veya tüm cümleler için büyük harfler kullanmayın. İnternette, bu bağırmak sayılır. Ve kimse bağrılmaktan hoşlanmaz.
       recommendation_three: Bu alanın ve onu dolduran seslerin tadını çıkarın. O size de ait.
       recommendation_two: Yasadışı eylemi öneren herhangi bir öneri veya yorum silinecektir, bunun yanı sıra tartışma alanlarını sabote etmek isteyenler de silinecek. Bunların dışında her şeye izin verilir.
-      recommendations_title: Bir öneri oluşturmak için tavsiyeler
+      recommendations_title: Nasıl bir öneri oluşturabilirsiniz
       start_new: Yeni öneri oluştur
     notice:
-      retired: Öneri çekildi
+      retired: Öneri geri çekildi
       published: Öneri yayınlandı
     proposal:
       created: "Bir öneri oluşturdunuz!"
@@ -391,7 +391,7 @@ tr:
         guide: "Şimdi bunu paylaşabilirsiniz, böylece insanlar desteklemeye başlayabilir."
         edit: "Paylaşılmadan önce, metni istediğiniz gibi değiştirebilirsiniz."
         view_proposal: Şimdi değil, önerime git
-      already_supported: Bu öneriyi zaten desteklediniz. Paylaşın!
+      already_supported: Bu öneriyi zaten desteklemişsiniz. Paylaşın!
       support: Destek
       support_label: "%{proposal} destekle"
       support_title: Bu öneriyi destekle
