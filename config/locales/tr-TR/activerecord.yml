@@ -396,7 +396,7 @@ tr:
         font_color: Yazı rengi
         post_ended_at: "Yayın bitti"
         post_started_at: "Yayın başladı"
-        target_url: "Link"
+        target_url: "Bağlantı"
       banner/translation:
         title: "Başlık"
         description: "Açıklama"
@@ -419,7 +419,7 @@ tr:
         result_publication_date: Son sonucun yayınlanma tarihi
         background_color: Arka plan rengi
         font_color: Yazı rengi
-        homepage_enabled: "Ana sayfa etkin"
+        homepage_enabled: "Giriş etkinleştirildi"
       legislation/process/translation:
         title: İşlem Adı
         summary: Özet
@@ -428,8 +428,8 @@ tr:
         homepage: "Açıklama"
         milestones_summary: Özet
       legislation/proposal:
-        description: "Teklif metni"
-        summary: "Teklif özeti"
+        description: "Öneri metni"
+        summary: "Öneri özeti"
         title: "Teklif başlığı"
         video_url: "Harici videoya bağlantı"
       legislation/draft_version:
