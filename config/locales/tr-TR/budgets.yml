@@ -84,8 +84,8 @@ tr:
         map_location_instructions: "Harita ile konuma gidin ve işaretçiyi yerleştirin."
       index:
         title: Katılımcı bütçeleme
-        unfeasible: Uygulanamaz yatırım projeleri
-        unfeasible_text: "Yatırımlar, geçerli olarak ilan edilip nihai oylama aşamasına ulaşmak için bir dizi kriteri (yasallık, somutluk, bütçenin sınırını aşmamak, kentin sorumluluğunda olmak) karşılamalıdır. Bu kriterlere uymayan tüm yatırımlar uygulanamaz olarak işaretlenir ve uygun olmama raporu ile birlikte takip eden listede yayınlanır."
+        unfeasible: Uygun bulunmayan yatırım projeleri
+        unfeasible_text: "Yatırımlar, geçerli olarak duyurulup son oylama aşamasına ulaşmak için bir dizi ölçütü (yasallık, somutluk, bütçe sınırını aşmamak gibi) karşılamalıdır. Bu ölçütlere uymayan tüm yatırımlar uygun bulunmamış olarak işaretlenir ve uygunsuzlık raporu ile birlikte aşağıdaki listede yayınlanır."
         by_heading: "Kapsam ile yatırım projeleri: %{heading}"
         search_form:
           button: Ara
@@ -113,9 +113,9 @@ tr:
           not_logged_in: "Yeni bir bütçe yatırımı oluşturmak istiyorsanız %{sign_in} ya da %{sign_up}."
         filter: "Projelere göre filtreleme"
         filters:
-          not_unfeasible: "Uygulanabilir"
+          not_unfeasible: "Aktif"
           selected: "Seçilmiş"
-          unfeasible: "Uygulanamaz"
+          unfeasible: "Uygun bulunmamış"
           unselected: "Seçilemez"
           winners: "Kazananlar"
         orders:
@@ -139,7 +139,7 @@ tr:
         comments_tab: Yorumlar
         milestones_tab: Kilometre taşları
         author: Yazar
-        project_unfeasible: "Bu yatırım projesinin <strong> uygulanabilir olmadığı belirlendi </strong> ve oy kullanma aşamasına geçmesi mümkün olmayacak."
+        project_unfeasible: "Bu yatırım projesi <strong>uygun bulunmamış olarak işaretlenmiş</strong> ve oylama aşamasına geçemeyecek."
         project_selected: "Bu yatırım projesi oylama aşaması için <strong>seçildi</strong>."
         project_winner: "Kazanan yatırım projesi"
         project_not_selected: "Bu yatırım projesi oylama aşaması için <strong>seçilmedi</strong>."
@@ -204,7 +204,7 @@ tr:
       incompatibles: Uyuşmayanlar
       investment_title: Proje başlığı
       investment_proyects: Tüm yatırım projelerinin listesi
-      unfeasible_investment_proyects: Tüm uygulanamaz yatırım projelerinin listesi
+      unfeasible_investment_proyects: Uygun bulunmamış tüm yatırım projelerinin listesi
       not_selected_investment_proyects: Oylama için seçilmeyen tüm yatırım projelerinin listesi
     executions:
       link: "Kilometre taşları"
