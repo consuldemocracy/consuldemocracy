@@ -6,9 +6,9 @@ tr:
     email:
       create:
         alert:
-          failure: Hesabınıza e-posta gönderirken bir sorun oluştu
+          failure: Hesabınıza bir e-posta gönderirken bir sorun oluştu
         flash:
-          success: "Onayınızı e-posta adresinize gönderdik: %{email}"
+          success: "Hesabınıza bir onay e-postası gönderdik: %{email}"
       show:
         alert:
           failure: Doğrulama kodu yanlış
@@ -37,7 +37,7 @@ tr:
           success: Kod doğru. Hesabınız şimdi doğrulandı
     redirect_notices:
       already_verified: Hesabınız zaten doğrulandı
-      email_already_sent: Size onay bağlantısı içeren bir e-posta gönderdik. E-postaya ulaşamıyorsanız, burada yeniden talep edebilirsiniz
+      email_already_sent: Size bir onay bağlantısı içeren bir e-posta gönderdik. E-postayı bulamazsanız, buradan bir yeniden yayın talep edebilirsiniz
     residence:
       alert:
         unconfirmed_residency: Henüz ikametinizi onaylamadınız
@@ -45,36 +45,36 @@ tr:
         flash:
           success: İkamet doğrulandı
       new:
-        accept_terms_text: Pusula'nın %{terms_url}'sini kabul ediyorum
-        accept_terms_text_title: Pusula'nın erişim şartlarını ve koşullarını kabul ediyorum
+        accept_terms_text: Census'un %{terms_url}'sini kabul ediyorum
+        accept_terms_text_title: Census'un erişim şartlarını ve koşullarını kabul ediyorum
         document_number: Belge numarası
         document_number_help_title: Yardım
         document_number_help_text: "<strong>Kimlik Kartı</strong>: 12345678A<br> <strong>Pasaport</strong>: AAA000001<br> <strong>İkamet belgesi</strong>: X1234567P"
         document_type:
           passport: Pasaport
-          residence_card: İkamet belgesi
+          residence_card: Ev kartı
           spanish_id: DNI
         error_not_allowed_age: Katılmak için gereken yaşta değilsiniz
         error_not_allowed_postal_code: Doğrulanmak için kayıt olmalısınız.
-        error_verifying_census: Pusula, bilgilerinizi doğrulayamadı. Lütfen, sayım bilgilerinizin doğru olduğunu Belediye Meclisini arayarak ya da bir Vatandaş Destek Ofisini ziyaret ederek onaylayın.
+        error_verifying_census: Census, bilgilerinizi doğrulayamadı. Lütfen, sayım bilgilerinizin doğru olduğunu Belediye Meclisini arayarak ya da bir Vatandaş Destek Ofisini ziyaret ederek onaylayın.
         form_errors: ikametinizin doğrulanmasını engelledi
-        postal_code_note: Hesabınızı doğrulamak için kaydolmalısınız
+        postal_code_note: Hesabınızı doğrulamak için kayıtlı olmalısınız
         terms: erişim şartları ve koşulları
         title: İkametgahı doğrula
         verify_residence: İkametgahı doğrula
     sms:
       create:
         flash:
-          success: Kısa mesaj yoluyla size gönderilen onay kodunu girin
+          success: Metin mesajla size gönderilen onay kodunu girin
       edit:
         resend_sms_link: Tekrar göndermek için buraya tıklayın
-        resend_sms_text: Onay kodunuzu içeren bir mesaj almadınız mı?
+        resend_sms_text: Onay kodunuzu içeren bir metin almadınız mı?
         submit_button: Gönder
         title: Güvenlik kodu onayı
       new:
-        phone: Kodu almak için cep telefonu numaranızı yazın
+        phone: Kodu almak için cep telefonu numaranızı girin
         phone_format: "<strong><em>(Örnek: 612345678 veya +34612345678)</em></strong>"
-        phone_note: Telefonunuzu yalnızca size bir kod göndermek için kullanıyoruz, asla sizinle bağlantı kurmak için kullanmıyoruz.
+        phone_note: Telefonunuzu yalnızca size bir kod göndermek için kullanıyoruz, asla sizinle bağlantı kurmak için değil.
         submit_button: Gönder
         title: Onay kodunu gönder
       update:
@@ -98,7 +98,7 @@ tr:
         submit_button: Kodu gönder
       show:
         email_title: E-postalar
-        explanation: Şu anda Kayıt Sistemi'nde aşağıdaki detayları bulundurmaktayız; lütfen gönderilecek onay kodunuz için bir yöntem seçin.
+        explanation: Şu anda Kayıt Ol'da aşağıdaki detayları tutuyoruz; lütfen gönderilecek onay kodunuz için bir yöntem seçin.
         phone_title: Telefon numaraları
         title: Mevcut bilgi
         use_another_phone: Diğer telefonu kullan
