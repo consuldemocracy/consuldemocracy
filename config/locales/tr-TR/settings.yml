@@ -15,9 +15,9 @@ tr:
     max_ratio_anon_votes_on_debates: "Tartışma başına anonim oyların maksimum oranı"
     max_ratio_anon_votes_on_debates_description: "Anonim oylar doğrulanmamış bir hesaba sahip kayıtlı kullanıcılarındır"
     max_votes_for_proposal_edit: "Bir Öneri'nin artık düzenlenemediği destek sayısı"
-    max_votes_for_proposal_edit_description: "Bu destek sayısından itibaren bir Öneri yazarı artık düzenleme yapamaz"
+    max_votes_for_proposal_edit_description: "Bu sayıda destek alan önerilerin sahipleri artık önerilerini düzenleyemez"
     max_votes_for_debate_edit: "Bir Tartışma'nın artık düzenlenemediği oy sayısı"
-    max_votes_for_debate_edit_description: "Bu oy sayısından itibaren bir Tartışma yazarı artık düzenleme yapamaz"
+    max_votes_for_debate_edit_description: "Bu sayıda oy alan tartışmaların sahipleri artık tartışmalarını düzenleyemez"
     proposal_code_prefix: "Öneri kodları için önek"
     proposal_code_prefix_description: "Bu önek, oluşturma tarihinden ve kimliğinden önceki Önerilerde görünecektir"
     featured_proposals_number: "Öne çıkan önerilerin sayısı"
@@ -78,7 +78,7 @@ tr:
       poster_description: Poster açıklaması
       poster_description_description: Poster özelliğinin detaylı açıklaması
     analytics_url: "Analitikler URL'si"
-    proposal_notification_minimum_interval_in_days: "Öneri yazarlarının yeni öneri bildirimleri göndermesi için minimum aralık (gün olarak)"
+    proposal_notification_minimum_interval_in_days: "Öneri sahiplerinin yeni öneri bildirimleri gönderebileceği en kısa aralık (gün)"
     proposal_notification_minimum_interval_in_days_description: "Kullanıcı önerisinin tüm destekçileri için bir bildirim gönderebileceği gün sayısı"
     direct_message_max_per_day: "Günlük maksimum Doğrudan Mesaj sayısı"
     direct_message_max_per_day_description: "Bir kullanıcının günlük olarak gönderebileceği maksimum doğrudan mesajların sayısı"
@@ -131,7 +131,7 @@ tr:
       graphql_api: "GraphQL API"
       dashboard:
         notification_emails: "Gösterge paneli bildirim iletileri"
-        notification_emails_description: "Gösterge paneli bildirim e-postalarının teklif yazarlarına gönderilmesini etkinleştir"
+        notification_emails_description: "Pano bildirim e-postaları öneri sahiplerine gönderilsin"
       remove_investments_supports: "Bütçe yatırımlarından destekler geri çekilebilsin"
       remove_investments_supports_description: "Projelerin seçilmesi aşamasında kullanıcılar bütçe yatırımlarına katkı desteklerini geri çekebilsin."
       sdg: SKH
