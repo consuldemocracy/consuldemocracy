@@ -311,7 +311,7 @@ tr:
     retire_options:
       duplicated: Çoğaltılmış
       started: Zaten yapım aşamasında
-      unfeasible: Uygulanamaz
+      unfeasible: Uygun bulunmamış
       done: Tamam
       other: Diğer
     form:
@@ -352,7 +352,7 @@ tr:
         all: Tüm
         duplicated: Çoğaltılmış
         started: Yapım aşamasında
-        unfeasible: Uygulanamaz
+        unfeasible: Uygun bulunmamış
         done: Tamam
         other: Diğer
       search_form:
@@ -844,7 +844,7 @@ tr:
     verified_only: Yalnızca doğrulanan kullanıcılar önerilere oy verebilir; %{verify_account}.
     budget_investments:
       not_verified: Yalnızca doğrulanan kullanıcılar yatırım projelerine oy verebilir; %{verify_account}.
-      unfeasible: Uygulanamaz yatırım projeleri desteklenemez
+      unfeasible: Uygun bulunmamış yatırım projeleri desteklenemez
       not_voting_allowed: Oy kullanma aşaması kapanmıştır
       different_heading_assigned:
         one: "Yatırım projelerini yalnızca %{count} bölgesinde destekleyebilirsiniz. Siz zaten %{supported_headings} 'teki yatırımları desteklediniz."
