@@ -27,8 +27,8 @@ tr:
         block_authors: Sahipleri engelle
         filter: Filtre
         filters:
-          all: Tüm
-          pending_flag_review: Beklemede
+          all: Tümü
+          pending_flag_review: Bekliyor
           with_ignored_flag: Görüldü olarak işaretlendi
         headers:
           debate: Tartışma
@@ -70,7 +70,7 @@ tr:
         block_authors: Sahipleri engelle
         filter: Filtre
         filters:
-          all: Tüm
+          all: Tümü
           pending_flag_review: Beklemede
           with_ignored_flag: Görüldü olarak işaretlendi
         headers:
