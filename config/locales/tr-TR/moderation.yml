@@ -4,7 +4,7 @@ tr:
       confirm_action: "\"%{action}\" yapmak istediğinizden emin misiniz"
     comments:
       index:
-        block_authors: Yazarları engelle
+        block_authors: Sahipleri engelle
         filter: Filtre
         filters:
           all: Tüm
@@ -24,7 +24,7 @@ tr:
         title: Moderasyon
     debates:
       index:
-        block_authors: Yazarları engelle
+        block_authors: Sahipleri engelle
         filter: Filtre
         filters:
           all: Tüm
@@ -50,7 +50,7 @@ tr:
       users: Kullanıcıları engelle
     proposals:
       index:
-        block_authors: Yazarları engelle
+        block_authors: Sahipleri engelle
         filter: Süz
         filters:
           all: Tümü
@@ -67,7 +67,7 @@ tr:
         title: Öneriler
     budget_investments:
       index:
-        block_authors: Yazarları engelle
+        block_authors: Sahipleri engelle
         filter: Filtre
         filters:
           all: Tüm
@@ -84,7 +84,7 @@ tr:
         title: Bütçe yatırımları
     proposal_notifications:
       index:
-        block_authors: Yazarları engelle
+        block_authors: Sahipleri engelle
         filter: Süz
         filters:
           all: Tümü
@@ -107,5 +107,5 @@ tr:
         hide: Engelle
         search_placeholder: e-posta veya kullanıcının adı
         title: Kullanıcıları engelle
-      notice_block: Kullanıcı engellenmiştir. Bu kullanıcı tarafından yazılan tüm içerikler gizlenmiştir.
-      notice_hide: Kullanıcı engellendi. Bu kullanıcının tüm tartışmaları ve yorumları gizlendi.
+      notice_block: Kullanıcı engellendi. Bu kullanıcının tüm içerikleri gizlendi.
+      notice_hide: Kullanıcı gizlendi. Bu kullanıcının tüm içerikleri hala görülebilir.
