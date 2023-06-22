@@ -22,7 +22,7 @@ tr:
         title: "%{poll_budget} - Oy pusulası listesi"
         ballot_sheet: "Oy pusulası %{id}"
         ballot_sheet_name: İsim
-        ballot_sheet_author: Yazar
+        ballot_sheet_author: Sahip
         ballot_sheet_creation_date: Oluşturma tarihi
         empty_results: Bu anket için henüz bir oy pusulası bulunmamaktadır
       new:
@@ -33,7 +33,7 @@ tr:
         submit: Kaydet
       show:
         created_at: Oluşturma tarihi
-        author: Yazar
+        author: Sahip
         data: CSV verisi
     booth:
       new:
