@@ -86,7 +86,7 @@ tr:
       orders:
         confidence_score: en yüksek puanlı
         created_at: en yeni
-        hot_score: en aktif
+        hot_score: en etkin
         most_commented: en çok yorumlanan
         relevance: alakalı
         recommendations: tavsiyeler
@@ -221,7 +221,7 @@ tr:
       officing: Seçim görevlilileri
       help: Yardım
       my_account_link: Hesabım
-      my_activity_link: Faaliyetim
+      my_activity_link: İçeriklerim
       open_gov: Açık hükümet
       proposals: Öneriler
       poll_questions: Oylama
@@ -330,7 +330,7 @@ tr:
       orders:
         confidence_score: en yüksek puanlı
         created_at: en yeni
-        hot_score: en aktif
+        hot_score: en etkin
         most_commented: en çok yorumlanan
         relevance: alakalı
         archival_date: arşivlendi
@@ -496,7 +496,7 @@ tr:
       ideal_time: İdeal zaman
     community:
       access_community: Topluluğa erişim
-      latest_activity: "Topluluğun son etkinliği: %{at}"
+      latest_activity: "Son topluluk işlemi: %{at}"
       participants: Katılımcılar
       debates: Tartışmalar
       comments: Yorumlar
@@ -821,9 +821,9 @@ tr:
         follows:
           one: 1 Takip Etme
           other: "%{count} Takip Etme"
-      no_activity: Kullanıcının genel etkinliği yok
+      no_activity: Kullanıcının herkese açık bir işlemi yok
       no_private_messages: "Bu kullanıcı özel mesajları kabul etmiyor."
-      private_activity: Bu kullanıcı etkinlik listesini gizli tutmaya karar verdi.
+      private_activity: Bu kullanıcı işlem listesini gizli tutmaya karar vermiş.
       send_private_message: "Özel mesaj gönder"
       delete_alert: "Yatırım projenizi silmek istediğinize emin misiniz? Bu işlem geri alınamaz"
     proposals:
@@ -852,9 +852,9 @@ tr:
   welcome:
     feed:
       most_active:
-        debates: "En aktif tartışmalar"
-        proposals: "En aktif öneriler"
-        processes: "Açık işlemler"
+        debates: "En etkin tartışmalar"
+        proposals: "En etkin öneriler"
+        processes: "Açık süreçler"
       see_all:
         debates: Tüm tartışmaları göster
         proposals: Tüm önerileri göster
