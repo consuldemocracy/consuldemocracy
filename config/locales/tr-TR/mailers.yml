@@ -9,7 +9,7 @@ tr:
     comment:
       hi: Merhaba
       new_comment_by: <strong>%{commenter}</strong> adlı kullanıcıdan yeni yorum
-      subject: Birisi sizin %{commentable} paylaşımınız hakkında yorum yaptı
+      subject: Birisi sizin %{commentable} hakkında yorum yaptı
       title: Yeni yorum
     config:
       notifications_link: Bildirimler
@@ -26,28 +26,28 @@ tr:
       hi: Merhaba
       new_reply_by: Yorumunuza <strong>%{commenter}</strong> kullanıcısı tarafından yeni bir yanıt verildi
       subject: Birisi sizin yorumunuza cevap verdi
-      title: Yorumunuza yeni bir cevap geldi
+      title: Sizin yorumunuza yeni cevap
     proposal_notification_digest:
-      info: "%{org_name}'de desteklediğin önerilerin yazarları tarafından paylaşılan yeni bildirimleri burada."
-      title: "%{org_name}'daki öneri bildirimleri"
+      info: "İşte %{org_name}'de desteklediğin önerilerin yazarları tarafından yayınlanan yeni bildirimler."
+      title: "%{org_name}'deki önerinin bildirimleri"
       share: Öneriyi paylaş
       comment: Öneriye yorum yap
       unsubscribe_text: "Öneri bildirimlerini almak istemiyorsanız %{notifications} bölümüne giderek ve \"Öneri bildirimlerinin özetini al\" seçeneğindeki işareti kaldırın."
       unfollow: "Bildirim almaya son vermek için öneri sayfasını ziyaret edip takipten çıkarın."
     direct_message_for_receiver:
       subject: "Yeni bir özel mesaj aldınız"
-      reply: '%{sender}''a yanıt ver'
+      reply: '%{sender}''a yanıt'
       unsubscribe_text: "Doğrudan iletileri almak istemiyorsanız %{notifications} bölümüne gidin ve \"Doğrudan iletilerle ilgili e-posta al\" seçeneğindeki işareti kaldırın."
     direct_message_for_sender:
       subject: "Yeni bir özel mesaj gönderdiniz"
       title: "Yeni bir özel mesaj gönderdiniz"
       text: "<strong>%{receiver}</strong> alıcısına şu içerikle yeni bir özel ileti gönderdiniz:"
     user_invite:
-      ignore: "Eğer bu daveti talep etmemişseniz endişelenmeyin, bu e-postayı görmezden gelebilirsiniz."
+      ignore: "Eğer bu daveti istemediyseniz endişelenmeyin, bu e-postayı görmezden gelebilirsiniz."
       text: "%{org}'a katılım başvurunuz için teşekkür ederiz! Saniyeler içinde katılmaya başlayabilirsiniz, aşağıdaki formu doldurmanız yeterlidir:"
       thanks: "Çok teşekkür ederiz."
-      title: "%{org}'ya hoş geldiniz"
-      button: Kaydı tamamla
+      title: "%{org}'a hoş geldiniz"
+      button: Tam kayıt
       subject: "%{org_name}'e davet"
     budget_investment_created:
       subject: "Bir yatırım oluşturduğunuz için teşekkür ederiz!"
@@ -60,17 +60,17 @@ tr:
       share: "Projenizi paylaşın"
     budget_investment_unfeasible:
       title: "Yatırım projeniz uygulanamaz olarak işaretlenmiştir"
-      hi: "Değerli kullanıcı,"
+      hi: "Sevgili kullanıcı,"
       new: "Tüm bunlar için, sizi bu sürecin koşullarına uygun olan <strong>yeni bir yatırım</strong> hazırlamaya davet ediyoruz. Bunun için bağlantıyı takip ediniz: %{url}."
       new_href: "yeni yatırım projesi"
       sincerely: "İçtenlikle"
-      sorry: "Verdiğimiz rahatsızlıktan dolayı özür dileriz ve değerli katılımınız için tekrar teşekkür ederiz."
+      sorry: "Verdiğimiz rahatsızlıktan dolayı özür dileriz ve paha biçilemez katılımınız için tekrar teşekkür ederiz."
       subject: "Sizin yatırım projeniz '%{code}' uygulanamaz olarak işaretlendi"
     budget_investment_selected:
-      subject: "Yatırım projeniz '%{code}' seçildi"
+      subject: "Sizin yatırım projeniz '%{code}' seçildi"
       title: "Yatırım projeniz seçilmiştir"
-      hi: "Değerli kullanıcı,"
-      share: "Yatırım projenizi sosyal paylaşım sitelerinde paylaşarak, oyları almaya başlayın. Fikirlerinizi gerçeğe dönüştürmek için paylaşım çok önemli."
+      hi: "Sevgili kullanıcı,"
+      share: "Oy almaya başlayın, yatırım projenizi sosyal ağlarda paylaşın. Bunu bir gerçeğe dönüştürmek için paylaşım şarttır."
       share_button: "Yatırım projenizi paylaşın"
       thanks: "Katıldığınız için tekrar teşekkür ederiz."
       sincerely: "İçtenlikle"
@@ -100,30 +100,30 @@ tr:
       subject: "Taslak vatandaş öneriniz oluşturuldu"
       hi: "Merhaba %{name}!"
       introduction: "%{title} başlıklı öneriniz başarıyla oluşturuldu."
-      text_1: "Teklifinizin henüz halka açık olmadığından yararlanın ve birçok kişiyle iletişim kurmaya hazır olun."
-      text_2: "Hazır olduğunuz zaman, bu linke tıklayarak <a href='%{link}'>link</a> vatandaş önerinizi yayınlayın."
+      text_1: "Önerinizin henüz herkese açık olmayışından yararlanın ve birçok kişiyle iletişim kurmaya hazırlanın."
+      text_2: "Vatandaşınızın teklifini bu <a href='%{link}'>bağlantıdan</a> yayınlamaya hazır olduğunuzda."
       text_3: "Alışılmışın dışında bir öneri oluşturmanın ve gerekli desteği almanın ilk bakışta başarması zor gibi göründüğünü biliyoruz. Ama endişelenmeyin, çünkü sana yardım edeceğiz!"
       text_4: "Size yardımcı olacak bir aracınız var: Vatandaş Önerileri paneli."
-      list_1: "Sizinle paylaşacağımız ipuçlarını ve kaynakları kullanmak için teklif panelini her gün ziyaret edin."
+      list_1: "Sizinle paylaşacağımız ipuçlarını ve kaynakları kullanmak için önerinizin paneline her gün girin."
       list_2: "Bu ipuçları, eylem önerileri ve kaynaklar size daha fazla destek almak ve daha geniş bir topluluğa ulaşmak için fikirler ve pratik çözümler sunacaktır. Onları unutmayın!"
-      list_3: "Daha fazla destek kazandıkça, yeni ve daha iyi kaynaklara ulaşabileceksiniz. Şu anda, tüm kişisel bağlantılarınıza toplu olarak gönderebileceğiniz bir e-posta taslağınız, çıktısını alabileceğiniz bir poster, keşfedeceğiniz diğer özellikler ve ödüller var. Destek aramaya devam ettiğiniz sürece, ödüllerimiz ve yardımlarımız devam edecektir!"
-      list_4: "Önerinizi yayınladığınız tarihten itirbaren %{max_votes} desteği almak içindan %{max_month} ayınız var. Bu süreç sonunda öneriniz gerçeğe dönüşebilir. Ancak başlangıç dönemi son derece önemli. Bu bir meydan okuma. Hazır olun!"
-      text_5: "Ve güçlü bir motivasyonla başlamanız için,"
-      text_6: "burada, vatandaşların desteğini almak için yapmanız gerekenlerle ilgili düzenli olarak güncellenen birçok kaynağa ve önerilere ulaşabilirsiniz!"
+      list_3: "Daha fazla destek kazandıkça, yeni ve daha iyi kaynaklara ulaşabileceksiniz. Şu anda, tüm kişisel bağlantılarınıza toplu olarak gönderebileceğiniz bir e-posta taslağınız, çıktısını alabileceğiniz bir görsel, keşfedeceğiniz diğer özellikler ve ödüller var. Destek aramaya devam ettiğiniz sürece, ödüllerimiz ve yardımlarımız devam edecektir!"
+      list_4: "%{max_votes} desteği almak için önerinizi yayınladığınızdan itibaren %{max_month} ayınız var ve öneriniz gerçeğe dönüşebilir. Ancak ilk günler en önemlileridir. Bu bir meydan okuma. Hazır olun!"
+      text_5: "Ve tüm motivasyonunuzla başlamanız için,"
+      text_6: "burada, yayın hazırlamak için her gün size gelecek olan birkaç kaynağa ve ipuçlarına sahip olacaksınız!"
       dashboard_button: "Devam edin, onları keşfedin!"
     new_actions_notification_on_published:
       subject: "Vatandaş önerin daha önce yayınlandı. Paylaşmaya devam et! "
       hi: "Tebrikler %{name}! %{title} başlıklı öneriniz başarıyla oluşturuldu."
       text_1: "Ve şimdi, ilk 100 desteğiniz için ilerleyin!"
       text_2: "Neden 100?"
-      text_3: "Deneyimlerimiz bize ilk günün son derece önemli olduğunu gösteriyor. Çünkü yeni bir şey başlatmak için enerjiye sahip olmanın yanı sıra, öne çıkan yeni öneriler arasında olmanın sağlayacağı önemli görünürlüğüne sahip olacaksınız."
-      text_4: "İlk gün 100 destek alın ve sizi destekleyen kamuoyunu oluşturmaya başlayın."
+      text_3: "Tecrübelerimiz bize ilk günün birinci derece önemli olduğunu söylüyor. Çünkü yeni bir şey başlatmak için enerjiye sahip olmanın yanı sıra, öne çıkan yeni öneriler arasında olmanın sağlayacağı önemli görünürlüğe sahip olacaksınız."
+      text_4: "İlk gün 100 destek alın ve sizi destekleyen ilk topluluğunuz olacak."
       text_5: "Bu yüzden sizi bir mücadeleye davet ediyoruz, fakat mutlaka yardım edeceğiz!"
-      text_6: "Öneri Panelinizde yeni kaynaklara ve önerinin yayılmasıyla ilgili tavsiyelere ulaşabileceğinizi unutmayın."
-      list_1: "İlerlemenizi görmek için düzenli olarak Platformu ziyaret edebilir, sizinle paylaşacağımız ipuçlarını ve kaynakları kullanabilirsiniz. İhtiyacınız olan fikir ve pratik çözümleri Öneri Panelinizde görebilirsiniz."
+      text_6: "Öneri Paneli'nizde yeni kaynaklara ve yayma eylemleriyle ilgili tavsiyelere sahip olduğunuzu unutmayın."
+      list_1: "İlerlemenizi görmek için her gün gelin ve sizinle paylaşacağımız ipuçlarını ve kaynakları kullanın. İhtiyacınız olan desteği almak için fikir ve pratik çözümler."
       list_2: "Daha fazla destek kazandıkça, yeni ve daha iyi kaynaklara ulaşabileceksiniz. Destek çağrısı yapmaya devam edin, biz de size yardımcı olmaya devam edeceğiz!"
       text_7: "Ve tam hızla başlamanız için..."
-      text_8: "İşte size harika bir kaynak!"
-      text_9: "Ayni zamanda önerinizin yayılmasıyla ilgili yeni bir tavsiyemiz var..."
-      text_10: "Kullanacak çok kaynağınız var!"
-      dashboard_button: "Devam edin, kaynaklarınızı keşfedin!"
+      text_8: "İşte kullanımınızda harika bir kaynak!"
+      text_9: "Ayrıca bu yeni önerilen yaygınlaştırma eylemini de bulacaksınız..."
+      text_10: "Kullanacak daha çok kaynağınız var!"
+      dashboard_button: "Devam edin, onları keşfedin!"
