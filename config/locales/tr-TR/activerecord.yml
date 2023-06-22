@@ -5,14 +5,14 @@ tr:
     stats_enabled: "İstatistikleri göster"
     advanced_stats_enabled: "Gelişmiş istatistikleri göster"
     name: Ad
-    email: E posta
+    email: E-posta
     description: Açıklama
     related_sdg_list: Amaçlar ve Hedefler
   activerecord:
     models:
       activity:
         one: "etkinlik"
-        other: "faaliyet"
+        other: "etkinlik"
       budget:
         one: "Bütçe"
         other: "Bütçeler"
@@ -23,8 +23,8 @@ tr:
         one: "kilometre taşı"
         other: "kilometre taşları"
       milestone/status:
-        one: "Kilometre Taşı Durumu"
-        other: "Kilometre Taşı Durumları"
+        one: "Kilometre taşı durumu"
+        other: "Kilometre taşı durumları"
       progress_bar:
         one: "İlerleme çubuğu"
         other: "İlerleme çubukları"
@@ -41,8 +41,8 @@ tr:
         one: "Kullanıcı"
         other: "Kullanıcılar"
       moderator:
-        one: "Moderatör"
-        other: "Moderatörler"
+        one: "Sorumlu"
+        other: "Sorumlular"
       administrator:
         one: "Yönetici"
         other: "Yöneticiler"
@@ -53,8 +53,8 @@ tr:
         one: "Bilirkişi grubu"
         other: "Bilirkişi grupları"
       manager:
-        one: "Yönetici"
-        other: "Yöneticiler"
+        one: "Müdür"
+        other: "Müdürler"
       newsletter:
         one: "Bülten"
         other: "Bültenler"
@@ -62,38 +62,38 @@ tr:
         one: "Oy"
         other: "Oylar"
       organization:
-        one: "Kurum"
-        other: "Organizasyonlar"
+        one: "Kuruluş"
+        other: "Kuruluşlar"
       poll/booth:
         one: "kabin"
-        other: "kabinler"
+        other: "kabin"
       poll/officer:
-        one: "görevli"
-        other: "görevliler"
+        one: "memur"
+        other: "memur"
       poll/ballot_sheet:
         one: Oy verme formu
         other: Oy verme formları
       proposal:
-        one: "Vatandaş önerisi"
-        other: "Vatandaş önerileri"
+        one: "Yurttaş önerisi"
+        other: "Yurttaş önerileri"
       sdg/goal:
         one: "amaç"
-        other: "amaçlar"
+        other: "amaç"
       sdg/local_target:
         one: "yerel hedef"
-        other: "yerel hedefler"
+        other: "yerel hedef"
       sdg/manager:
         one: "SKH yöneticisi"
         other: "SKH yöneticileri"
       sdg/target:
         one: "hedef"
-        other: "hedefler"
+        other: "hedef"
       site_customization/page:
-        one: Kişisel sayfa
-        other: Kişisel sayfalar
+        one: Özel sayfa
+        other: Özel sayfalar
       site_customization/image:
-        one: Kişisel görsel
-        other: Kişisel görseller
+        one: Özel görsel
+        other: Özel görseller
       site_customization/content_block:
         one: Özel içerik bloğu
         other: Özel içerik blokları
@@ -101,14 +101,14 @@ tr:
         one: Belge
         other: Belgeler
       legislation/process:
-        one: "Süreç"
-        other: "Süreçler"
+        one: "İşlem"
+        other: "İşlemler"
       legislation/proposal:
         one: "Öneri"
         other: "Öneriler"
       legislation/draft_versions:
-        one: "Taslak versiyon"
-        other: "Taslak versiyonlar"
+        one: "Taslak sürüm"
+        other: "Taslak sürümler"
       legislation/questions:
         one: "Soru"
         other: "Sorular"
@@ -116,14 +116,14 @@ tr:
         one: "Soru seçeneği"
         other: "Soru seçenekleri"
       legislation/answers:
-        one: "Cevap"
-        other: "Cevaplar"
+        one: "Yanıt"
+        other: "Yanıtlar"
       documents:
         one: "Belge"
         other: "Belgeler"
       images:
         one: "Görsel"
-        other: "Resimler"
+        other: "Görseller"
       tenant:
         one: "kiracı"
         other: "kiracı"
@@ -137,7 +137,7 @@ tr:
         one: "Öneri bildirimi"
         other: "Öneri bildirimleri"
       dashboard/action:
-        one: Öneri panosu - Yapılması gerekenler
+        one: Öneri panosu - Yapılması gereken
         other: Öneri panosu - Yapılması gerekenler
       dashboard/administrator_task:
         one: Görev
@@ -153,37 +153,37 @@ tr:
         other: Oylama türleri
     attributes:
       budget:
-        name: "İsim"
-        description_accepting: "Kabul aşaması sırasında tanımlama"
-        description_reviewing: "Gözden Geçirme aşaması sırasında tanımlama"
-        description_selecting: "Seçim aşaması sırasında tanımlama"
-        description_valuating: "Değerlendirme aşaması sırasında tanımlama"
-        description_balloting: "Oylama aşamasında tanımlama"
-        description_reviewing_ballots: "Oyları Gözden Geçirme aşamasında tanımlama"
-        description_finished: "Bütçe tamamlandığı zaman belirtilen tanım"
-        phase: "Aşama"
-        currency_symbol: "Para Birimi"
+        name: "Ad"
+        description_accepting: "Onay aşamasındaki açıklama"
+        description_reviewing: "Gözden geçirme aşamasındaki açıklama"
+        description_selecting: "Seçim aşamasındaki açıklama"
+        description_valuating: "Değerlendirme aşamasındaki açıklama"
+        description_balloting: "Oylama aşamasındaki açıklama"
+        description_reviewing_ballots: "Oyların gözden geçirilme aşamasındaki açıklama"
+        description_finished: "Bütçe tamamlandığındaki açıklama"
+        phase: "Bulunulan aşama"
+        currency_symbol: "Para birimi"
         voting_style: "Son oylama şekli"
         voting_style_knapsack: "Sırt çantası"
         voting_style_approval: "Onay"
-        hide_money: "Bu bütçe için tutarı gizle"
+        hide_money: "Bu bütçenin tutarı gizlensin"
       budget/translation:
         main_link_text: "Bağlantıdaki metin"
-        main_link_url: "Bağlantı sizi şuraya götürür: (link ekle)"
-        name: "İsim"
+        main_link_url: "Bağlantı sizi şuraya götürür: (bağlantı ekle)"
+        name: "Ad"
       budget/investment:
         heading_id: "Başlık"
-        title: "İsim"
-        description: "Tanımlama"
-        external_url: "Ek belgelere bağlantı"
+        title: "Konu"
+        description: "Açıklama"
+        external_url: "Ek belge bağlantıları"
         administrator_id: "Yönetici"
-        location: "Konum (isteğe bağlı)"
-        organization_name: "Eğer bir topluluk/kurum adına veya birden fazla kişi adına öneride bulunuyorsanız, ismini yazın"
-        image: "Öneriyi temsil eden görsel"
-        image_title: "Görsel ismi"
-        duration: "Zaman Aralığı"
+        location: "Ek konum bilgileri"
+        organization_name: "Bir topluluk ya da kuruluş adına veya birden fazla kişi adına öneride bulunuyorsanız, adınızı yazın"
+        image: "Önerinin açıklayıcı görseli"
+        image_title: "Görsel adı"
+        duration: "Zaman aralığı"
         feasibility_feasible: "Yapılabilir"
-        feasibility_undecided: "Tanımsız"
+        feasibility_undecided: "Tanımlanmamış"
         feasibility_unfeasible: "Yapılamaz"
         incompatible: "Uyumsuz olarak işaretle"
         milestone_tag_list: "Aşama etiketleri"
@@ -266,7 +266,7 @@ tr:
         responsible_name: "Tasarıyı sunan kişinin tam adı"
         retired_reason: "Tasarıyı geri çekme sebebi"
         selected: "Seçilmiş olarak işaretle"
-        terms_of_service: "Kullanım şartları"
+        terms_of_service: "Hizmet şartları"
         video_url: "Harici Video URL'si"
       proposal/translation:
         title: "Öneri başlığı"
@@ -285,7 +285,7 @@ tr:
         email_on_comment_reply: "Biri yorumlarıma cevap verdiğinde bana e-posta ile bildir"
         email_on_direct_message: "Direkt mesajlarla ilgili e-posta al"
         newsletter: "İlgili bilgileri e-posta ile alın"
-        official_position: "Resmi görev"
+        official_position: "Resmi pozisyon"
         official_position_badge: "Resmi yetkili ünvanını göster"
         official_level: "Resmi düzey"
         phone_number: "Telefon numarası"
@@ -403,7 +403,7 @@ tr:
       legislation/process:
         title: İşlem Adı
         summary: Özet
-        description: Açıklama
+        description: Tanımlama
         additional_info: Ek bilgi
         start_date: Başlangıç tarihi
         end_date: Bitiş tarihi
@@ -423,7 +423,7 @@ tr:
       legislation/process/translation:
         title: İşlem Adı
         summary: Özet
-        description: Açıklama
+        description: Tanımlama
         additional_info: Ek bilgi
         homepage: "Açıklama"
         milestones_summary: Özet
@@ -464,7 +464,7 @@ tr:
         description: Tanımlama
       poll/question/answer/translation:
         title: Cevap
-        description: "Tanımlama (isteğe bağlı)"
+        description: "Tanımlama"
       poll/question/answer/video:
         title: İsim
         url: Harici video
@@ -538,7 +538,7 @@ tr:
         user:
           attributes:
             email:
-              password_already_set: "Bu kullanıcının bir şifresi var"
+              password_already_set: "Bu kullanıcının zaten bir şifresi var"
         debate:
           attributes:
             tag_list:
@@ -575,11 +575,11 @@ tr:
             end_date:
               invalid_date_range: başlangıç tarihi sonrasında veya sırasında olmalıdır
             debate_end_date:
-              invalid_date_range: tartışma başlangıç tarihinde veya sonrasında olmalıdır
+              invalid_date_range: tartışma başlangıç tarihi sonrasında veya sırasında olmalıdır
             draft_end_date:
-              invalid_date_range: taslak başlangıç tarihinde veya sonrasında olmalıdır
+              invalid_date_range: taslak başlangıç tarihi sonrasında veya sırasında olmalıdır
             allegations_end_date:
-              invalid_date_range: iddiaların başlama tarihinden sonra veya sırasında olmalıdır
+              invalid_date_range: iddiaların başlama tarihinden sonra veya sırasında olmalı
         local_census_record:
           attributes:
             document_type:
@@ -599,8 +599,8 @@ tr:
         signature:
           attributes:
             document_number:
-              not_in_census: "Pusula tarafından doğrulanmadı"
-              already_voted: "Bu öneriye daha önce oy verdiniz"
+              not_in_census: "Census tarafından doğrulanmadı"
+              already_voted: "Bu öneri zaten oylandı"
         site_customization/page:
           attributes:
             slug:
