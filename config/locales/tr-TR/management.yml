@@ -92,7 +92,7 @@ tr:
       edit: Bütçe yatırımını düzenle
       filters:
         heading: Konsept
-        unfeasible: Uygulanamaz yatırım
+        unfeasible: Uygun bulunmayan yatırım
       print:
         print_button: Yazdır
       search_results:
