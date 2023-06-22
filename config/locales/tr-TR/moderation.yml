@@ -51,10 +51,10 @@ tr:
     proposals:
       index:
         block_authors: Yazarları engelle
-        filter: Filtre
+        filter: Süz
         filters:
-          all: Tüm
-          pending_flag_review: Bekleyen yeniden inceleme
+          all: Tümü
+          pending_flag_review: Değerlendirilmeyi bekliyor
           with_ignored_flag: Görüldü olarak işaretle
         headers:
           moderate: Yönet
@@ -85,10 +85,10 @@ tr:
     proposal_notifications:
       index:
         block_authors: Yazarları engelle
-        filter: Filtre
+        filter: Süz
         filters:
-          all: Tüm
-          pending_review: Bekleyen yeniden inceleme
+          all: Tümü
+          pending_review: Değerlendirilmeyi bekliyor
           ignored: Görüldü olarak işaretle
         headers:
           moderate: Yönet
