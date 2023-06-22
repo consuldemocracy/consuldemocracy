@@ -372,35 +372,35 @@ tr:
         milestone_tags: Aşama etiketleri
       form:
         admin_statuses: Durumları yönet
-        no_statuses_defined: Henüz tanımlanmış durumlar bulunmamaktadır
+        no_statuses_defined: Henüz herhangi bir durum tanımlanmamış
       new:
-        creating: Kilometre taşı oluştur
+        creating: Aşama oluştur
       edit:
-        title: Kilometre taşı düzenle
+        title: Aşama düzenle
       create:
-        notice: Yeni kilometre taşı başarıyla oluşturuldu!
+        notice: Yeni aşama oluşturuldu!
       update:
-        notice: Kilometre taşı başarıyla güncellendi
+        notice: Aşama güncellendi
       delete:
-        notice: Kilometre taşı başarıyla silindi
+        notice: Aşama silindi
     statuses:
       index:
-        title: Kilometre taşı durumları
-        empty_statuses: Hiç kilometre taşı durumları oluşturulmamış
-        new_status: Yeni kilometre taşı durumu oluştur
+        title: Aşama durumları
+        empty_statuses: Henüz herhangi bir aşama durumu oluşturulmamış
+        new_status: Yeni aşama durumu oluştur
         table_name: İsim
         table_description: Tanımlama
         table_actions: Aksiyon
       edit:
-        title: Kilometre taşı durumu düzenle
+        title: Aşama durumunu düzenle
       update:
-        notice: Kilometre taşı durumu başarıyla güncellendi
+        notice: Aşama durumu güncellendi
       new:
-        title: Kilometre taşı durumu oluştur
+        title: Aşama durumu oluştur
       create:
-        notice: Kilometre taşı durumu başarıyla oluşturuldu
+        notice: Aşama durumu oluşturuldu
       delete:
-        notice: Kilometre taşı durumu başarıyla silindi
+        notice: Aşama durumu silindi
     progress_bars:
       manage: "İşlem çubuklarını yönet"
       index:
@@ -1279,7 +1279,7 @@ tr:
         author: Yazar
         select: Seç
         selected: Seçildi
-        milestones: Kilometre taşı
+        milestones: Aşamalar
         no_proposals: Hiç öneri yok.
       show:
         create_question: Bu öneriyi oylanacak bir ankete ekleyin
