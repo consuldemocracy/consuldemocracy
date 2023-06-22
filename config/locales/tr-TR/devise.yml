@@ -13,7 +13,7 @@ tr:
       send_paranoid_instructions: "E-posta adresiniz veritabanımızda bulunuyorsa, birkaç dakika içinde şifrenizi nasıl sıfırlayacağınıza dair talimatları içeren bir e-posta alacaksınız."
     failure:
       already_authenticated: "Zaten oturum açtınız."
-      inactive: "Hesabınız henüz aktif değil."
+      inactive: "Hesabınız henüz etkinleştirilmemiş."
       invalid: "Geçersiz %{authentication_keys} veya şifre."
       locked: "Hesabınız kilitlenmiştir."
       last_attempt: "Hesabınız engellenmeden önce bir denemeniz daha var."
@@ -36,13 +36,13 @@ tr:
       send_instructions: "Birkaç dakika içinde şifrenizi tekrar oluşturmanız için gerekli olan açıklamaları içeren bir e-posta alacaksınız."
       send_paranoid_instructions: "E-posta adresiniz veritabanımızda bulunuyorsa, birkaç dakika içinde şifrenizi sıfırlamak için bir bağlantı alacaksınız."
       updated: "Şifreniz başarıyla değiştirilmiştir. Kimlik doğrulama başarılı."
-      updated_not_active: "Şifreniz başarıyla değiştirilmiştir."
+      updated_not_active: "Parolanız değiştirildi."
     registrations:
       destroyed: "Güle güle! Hesabınız iptal edildi. Seni en yakın zamanda tekrar görmeyi umarız."
       signed_up: "Hoş geldin! Kimliğiniz doğrulandı."
-      signed_up_but_inactive: "Kaydınız başarılı oldu, ancak hesabınız aktif olmadığı için oturum açamadınız."
+      signed_up_but_inactive: "Hesabınız açıldı, ancak etkin olmadığından oturum açamadınız."
       signed_up_but_locked: "Kaydınız başarılı oldu, ancak hesabınız kilitli olduğundan oturum açamadınız."
-      signed_up_but_unconfirmed: "Bir doğrulama bağlantısı içeren bir mesaj gönderdiniz. Hesabınızı etkinleştirmek için lütfen bu bağlantıya tıklayın."
+      signed_up_but_unconfirmed: "İçinde doğrulama bağlantısı bulunan bir ileti gönderildi. Hesabınızı etkinleştirmek için lütfen bu bağlantıya tıklayın."
       update_needs_confirmation: "Hesabınız başarıyla güncellendi; ancak yeni e-posta adresinizi doğrulamamız gerekiyor. Lütfen yeni e-posta adresinizin onayını tamamlamak için e-postanızı kontrol edin ve bağlantıya tıklayın."
       updated: "Hesabınız başarıyla güncellenmiştir."
     sessions:
