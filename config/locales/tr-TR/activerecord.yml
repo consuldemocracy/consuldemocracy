@@ -182,9 +182,9 @@ tr:
         image: "Önerinin açıklayıcı görseli"
         image_title: "Görsel adı"
         duration: "Zaman aralığı"
-        feasibility_feasible: "Yapılabilir"
+        feasibility_feasible: "Uygun bulunmuş"
         feasibility_undecided: "Tanımlanmamış"
-        feasibility_unfeasible: "Yapılamaz"
+        feasibility_unfeasible: "Uygun bulunmamış"
         incompatible: "Uyumsuz olarak işaretle"
         milestone_tag_list: "Aşama etiketleri"
         price_explanation: "Fiyat açıklaması"
@@ -340,7 +340,7 @@ tr:
         signable_id: "İmzalanabilen kimlik"
         document_numbers: "Belgelerin numaraları"
       sdg/goal:
-        code: "Şifre"
+        code: "Kod"
         title: "Başlık"
         description: "Açıklama"
       sdg/local_target:
@@ -376,7 +376,7 @@ tr:
         content: İçerik
       site_customization/image:
         name: Ad
-        image: Fotoğraf
+        image: Görsel
       site_customization/content_block:
         name: Ad
         locale: dil
@@ -385,7 +385,7 @@ tr:
         name: "Konunun adını yazın"
       tenant:
         domain: "Etki alanı"
-        schema: "Alt etki alanı"
+        schema: "Etki alanı / alt etki alanı"
         subdomain: "Alt etki alanı"
         url: "Adres"
       topic:
@@ -393,7 +393,7 @@ tr:
         description: "İlk metin"
       banner:
         background_color: Arka plan rengi
-        font_color: Yazı tipi rengi
+        font_color: Yazı rengi
         post_ended_at: "Yayın bitti"
         post_started_at: "Yayın başladı"
         target_url: "Link"
@@ -404,27 +404,27 @@ tr:
         title: İşlem Adı
         summary: Özet
         description: Açıklama
-        additional_info: Ek bilgi
+        additional_info: Ek bilgiler
         start_date: Başlangıç tarihi
         end_date: Bitiş tarihi
         debate_start_date: Tartışma başlangıç tarihi
         debate_end_date: Tartışma bitiş tarihi
         draft_start_date: Taslak başlangıç tarihi
         draft_end_date: Taslak bitiş tarihi
-        draft_publication_date: Taslak yayın tarihi
+        draft_publication_date: Taslak yayınlanma tarihi
         allegations_start_date: İddialar başlangıç tarihi
         allegations_end_date: İddialar bitiş tarihi
         proposals_phase_start_date: Başlangıç
         proposals_phase_end_date: Bitiş
-        result_publication_date: Son sonuç yayın tarihi
+        result_publication_date: Son sonucun yayınlanma tarihi
         background_color: Arka plan rengi
-        font_color: Yazı tipi rengi
+        font_color: Yazı rengi
         homepage_enabled: "Ana sayfa etkin"
       legislation/process/translation:
         title: İşlem Adı
         summary: Özet
         description: Açıklama
-        additional_info: Ek bilgi
+        additional_info: Ek bilgiler
         homepage: "Açıklama"
         milestones_summary: Özet
       legislation/proposal:
@@ -433,7 +433,7 @@ tr:
         title: "Teklif başlığı"
         video_url: "Harici videoya bağlantı"
       legislation/draft_version:
-        title: Sürüm adı
+        title: Sürüm başlığı
         body: Metin
         changelog: Değişiklikler
         status: Durum
@@ -441,7 +441,7 @@ tr:
         status_published: "Yayınlanmış"
         final_version: Son sürüm
       legislation/draft_version/translation:
-        title: Sürüm adı
+        title: Sürüm başlığı
         body: Metin
         changelog: Değişiklikler
       legislation/question:
@@ -494,11 +494,11 @@ tr:
         description: Açıklama
         link_text: Bağlantı metni
       widget/feed:
-        limit: Öğelerin sayısı
+        limit: Öge sayısı
       dashboard/action:
         title: Başlık
         short_description: Kısa tanımlama
-        description: Tanımlama
+        description: Açıklama
         link: Dış bağlantı
         request_to_administrators: Yöneticilerden kaynak isteme butonu
         day_offset: Önerinin oluşturulmasından kaç gün sonra etkinleştirilmesini istiyorsunuz?
@@ -506,24 +506,24 @@ tr:
         order: Bu eylemin kullanıcıya gösterileceği konumu eylemler listesine girebilirsiniz
         active: Aktif
         action_type: Tür
-        action_type_proposed_action: "Önerilen eylem"
+        action_type_proposed_action: "Önerilen işlem"
         action_type_resource: "Kaynak"
-        published_proposal: "Yayınlanmış teklifler için mi?"
+        published_proposal: "Yayınlanmış öneriler için mi?"
       dashboard/administrator_task:
         source: Kaynak
         user: Tarafından yürütülen
       link:
         label: Başlık
-        url: Bağlantı
+        url: Adres
       valuator:
-        description: Tanımlama
+        description: Açıklama
         valuator_group_id: Bilirkişi grubu
         can_comment: Yorumlar oluşturabilir
         can_edit_dossier: Dosyaları düzenleyebilir
       valuator_group:
         name: "Grup adı"
       local_census_record:
-        document_type: Belge Türü
+        document_type: Belge türü
         document_number: Belge numarası
         date_of_birth: Doğum tarihi
         postal_code: Posta kodu
@@ -531,7 +531,7 @@ tr:
         max_votes: En fazla oy sayısı
         vote_type: Oylama türü
       votation_type/vote_type:
-        unique: Tekil yanıt
+        unique: Eşsiz yanıt
         multiple: Birden çok yanıt
     errors:
       models:
@@ -617,7 +617,7 @@ tr:
         remote_translation:
           attributes:
             locale:
-              already_translated: Tercüme edilmiş kaynak
+              already_translated: Kaynağın çevirisi zaten yapılmış
         sdg/local_target:
           attributes:
             code:
