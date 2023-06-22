@@ -7,15 +7,15 @@ tr:
       block_author: "Yazarı engelle"
       confirm_action: "Emin misiniz? %{action} \"%{name}\""
       confirm_delete: "Emin misiniz? Bu işlem \"%{name}\" ögesini siler ve geri alınamaz."
-      confirm_hide: Denetlemeyi onayla
+      confirm_hide: Değerlendirmeyi onayla
       delete: "Sil"
       hide: Gizle
       label: "%{action} %{name}"
-      restore: Onarma
-      mark_featured: Öne Çıkan
-      unmark_featured: Öne çıkan işareti kaldır
+      restore: Geri yükle
+      mark_featured: Öne çıkarılmış
+      unmark_featured: Öne çıkarılmış işaretini kaldır
       edit: Düzenle
-      configure: Yapılandırma
+      configure: Yapılandır
     officing_booth:
       title: "%{booth} konumundaki kabinde görevlisiniz. Bu bilgi doğru değilse ilerlemeyin ve yardım telefon numarasını arayın. Teşekkürler."
     banners:
@@ -243,10 +243,10 @@ tr:
           without_valuator: Atanmış bilirkişi olmadan
           under_valuation: Değerlendirme altında
           valuation_finished: Değerlendirme bitti
-          feasible: Uygulanabilir
+          feasible: Uygun bulunmuş
           selected: Seçilmiş
           undecided: Kararsız
-          unfeasible: Uygulanamaz
+          unfeasible: Uygun bulunmamış
           min_total_supports: Minimum destek
           max_total_supports: Minimum destek
           winners: Kazananlar
@@ -262,8 +262,8 @@ tr:
         no_admin_assigned: Hiç yönetici atanmamış
         no_valuators_assigned: Hiç bilirkişi atanmamış
         feasibility:
-          feasible: "Uygulanabilir (%{price})"
-          unfeasible: "Uygulanamaz"
+          feasible: "Uygun bulunmuş"
+          unfeasible: "Uygun bulunmamış"
           undecided: "Kararsız"
         selected: "Seçilmiş"
         select: "Seç"
@@ -323,7 +323,7 @@ tr:
         user_tags: Kullanıcı etiketler atanmış
         tags_placeholder: "Virgülle ayırmak istediğiniz etiketleri yazın (,)"
         undefined: Tanımsız
-      search_unfeasible: Arama uygulanamaz
+      search_unfeasible: Uygun bulunmayanları ara
     budgets_wizard:
       creation_timeline:
         budget: Bütçe
@@ -813,7 +813,7 @@ tr:
       all_proposal_authors: Öneri yazarları (arşivlenmiş ve geri çekilmiş dahil)
       proposal_authors: Öneri yazarları
       investment_authors: Cari bütçede yatırım yazarları
-      feasible_and_undecided_investment_authors: "Cari bütçeye uymayan bazı yatırımların yazarları: [değerleme imkansız sonuçlandı]"
+      feasible_and_undecided_investment_authors: "Güncel bütçedeki bazı yatırımların yazarları şunlarla uyumlu değil: [valuation finished unfesasible]"
       selected_investment_authors: Cari bütçedeki seçilen yatırımların yazarları
       winner_investment_authors: Cari bütçede kazanan yatırımların yazarları
       not_supported_on_current_budget: Cari bütçeye yapılan yatırımları desteklemeyen kullanıcılar
@@ -907,8 +907,8 @@ tr:
         title: "Bütçe yatırımı seçildi"
         description: "Bütçe yatırımı seçildiğinde yazara gönder."
       budget_investment_unfeasible:
-        title: "Bütçe yatırımı uygulanamaz"
-        description: "Bütçe yatırımı uygulanamaz olarak işaretlendiğinde yazara gönder."
+        title: "Bütçe yatırımı uygun bulunmayan"
+        description: "Uygun bulunmamış olarak işaretlenen bütçe yatırımları yazarına bildirilsin."
       budget_investment_unselected:
         title: "Bütçe yatırımı seçilmedi"
         description: "Bütçe yatırımı oylama aşaması için seçilmediğinde yazara gönder."
