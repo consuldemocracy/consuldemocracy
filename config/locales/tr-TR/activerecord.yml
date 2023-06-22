@@ -293,7 +293,7 @@ tr:
         public_interests: "İzlediğim bileşenler herkese açık olsun"
         recommended_debates: "Bana tartışmalar sunulsun"
         recommended_proposals: "Bana öneriler sunulsun"
-        redeemable_code: "Doğrulama kodu e-posta yoluyla alındı"
+        redeemable_code: "Doğrulama kodu e-posta ile alındı"
       direct_message:
         title: "Başlık"
         body: "İleti"
@@ -328,16 +328,16 @@ tr:
       poll/ballot_sheet:
         data: CSV verileri
         poll_id: Oylama
-        officer_assignment_id: Memur ataması
+        officer_assignment_id: Görevli ataması
       poll/shift:
         task: "Görev"
       proposal_notification:
-        body: "Mesaj"
+        body: "İleti"
         title: "Başlık"
       signature_sheet:
         title: "Başlık"
-        signable_type: "İmzalanır tür"
-        signable_id: "İmzalanır KİMLİK"
+        signable_type: "İmzalanabilen tür"
+        signable_id: "İmzalanabilen kimlik"
         document_numbers: "Belgelerin numaraları"
       sdg/goal:
         code: "Şifre"
@@ -359,28 +359,28 @@ tr:
         title: "Başlık"
       site_customization/page:
         content: İçerik
-        created_at: Oluşturuldu
-        subtitle: Altyazı
-        slug: Parça
+        created_at: Oluşturulma
+        subtitle: Alt yazı
+        slug: Kısaltma
         status: Durum
         status_draft: "Taslak"
         status_published: "Yayınlanmış"
         title: Başlık
-        updated_at: Güncellenmiş
-        more_info_flag: Yardım sayfasında göster
-        print_content_flag: İçerik yazdır düğmesi
+        updated_at: Güncellenme
+        more_info_flag: Yardım sayfasında görüntülensin
+        print_content_flag: İçeriği yazdır düğmesi
         locale: Dil
       site_customization/page/translation:
         title: Başlık
-        subtitle: Altyazı
+        subtitle: Alt yazı
         content: İçerik
       site_customization/image:
         name: Ad
         image: Fotoğraf
       site_customization/content_block:
         name: Ad
-        locale: yer
-        body: Gövde
+        locale: dil
+        body: İçerik
       tag:
         name: "Konunun adını yazın"
       tenant:
@@ -403,7 +403,7 @@ tr:
       legislation/process:
         title: İşlem Adı
         summary: Özet
-        description: Tanımlama
+        description: Açıklama
         additional_info: Ek bilgi
         start_date: Başlangıç tarihi
         end_date: Bitiş tarihi
@@ -423,7 +423,7 @@ tr:
       legislation/process/translation:
         title: İşlem Adı
         summary: Özet
-        description: Tanımlama
+        description: Açıklama
         additional_info: Ek bilgi
         homepage: "Açıklama"
         milestones_summary: Özet
@@ -455,19 +455,19 @@ tr:
         text: Yorum
       document:
         title: Başlık
-        attachment: "Ek dosya"
+        attachment: "Belge seçin"
       image:
         title: Başlık
-        attachment: "Ek dosya"
+        attachment: "Görsel seçin"
       poll/question/answer:
         title: Yanıt
-        description: Tanımlama
+        description: Açıklama
       poll/question/answer/translation:
         title: Yanıt
-        description: "Tanımlama"
+        description: "Açıklama (isteğe bağlı)"
       poll/question/answer/video:
         title: Başlık
-        url: Harici video
+        url: Dış görüntü
       newsletter:
         segment_recipient: Alıcılar
         subject: Konu
@@ -484,14 +484,14 @@ tr:
       widget/card:
         label: Etiket (isteğe bağlı)
         title: Başlık
-        description: Tanımlama
+        description: Açıklama
         link_text: Bağlantı metni
-        link_url: Bağlantı Adresi
-        columns: Sütunların sayısı
+        link_url: Bağlantı adresi
+        columns: Sütun sayısı
       widget/card/translation:
         label: Etiket (isteğe bağlı)
         title: Başlık
-        description: Tanımlama
+        description: Açıklama
         link_text: Bağlantı metni
       widget/feed:
         limit: Öğelerin sayısı
@@ -538,7 +538,7 @@ tr:
         user:
           attributes:
             email:
-              password_already_set: "Bu kullanıcının zaten bir şifresi var"
+              password_already_set: "Bu kullanıcının zaten bir parolası var"
         debate:
           attributes:
             tag_list:
@@ -600,7 +600,7 @@ tr:
           attributes:
             document_number:
               not_in_census: "Census tarafından doğrulanmadı"
-              already_voted: "Bu öneri zaten oylandı"
+              already_voted: "Bu öneriye zaten oy verilmiş"
         site_customization/page:
           attributes:
             slug:
@@ -627,5 +627,5 @@ tr:
         record_invalid: "Onaylama başarısız: %{errors}"
         another_poll_active: Belirtilen sürede aktif olan başka bir anket daha var
         restrict_dependent_destroy:
-          has_one: "Bir bağlı %{record} bulunduğundan kayıt silinemiyor"
-          has_many: "Bağlı %{record} bulunduğundan kayıt silinemiyor"
+          has_one: "%{record} bağlı kayıt bulunduğundan kayıt silinemez"
+          has_many: "%{record} bağlı kayıt bulunduğundan kayıt silinemez"
