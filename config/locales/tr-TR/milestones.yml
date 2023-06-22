@@ -4,5 +4,5 @@ tr:
       no_milestones: Tanımlanmış kilometre taşı bulunmamaktadır
       progress: İlerleme
     show:
-      publication_date: "%{publication_date} tarihinde yayınlandı"
+      publication_date: "Yayınlandı %{publication_date}"
       status_changed: Durum şöyle değiştirildi
