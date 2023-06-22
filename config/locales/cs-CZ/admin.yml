@@ -204,6 +204,7 @@ cs:
         success_notice: "Kapitola byla smazána"
         unable_notice: "Nemůžete odstranit nadpis, který spojený s investicí"
       form:
+        geozone_info: "Pokud je záhlaví přiřazeno ke geozóně, zobrazí se tato geozóna na mapě tohoto rozpočtu, pokud geozóna obsahuje data GeoJSON."
         max_ballot_lines_info: 'Maximální počet projektů, pro které může uživatel hlasovat v této rozpočtové položce ve fázi "Hlasování projektů". Pouze pro rozpočty využívající schvalovací hlasování.'
         population_info: "Položka Populace se používá ke statistickým účelům na konci rozpočtu a ukáže pro každou kapitolu, která představuje oblast s populací, jaké procento hlasovalo. Pole je volitelně, takže jej můžete nechat prázdné, pak se nepoužije."
         coordinates_info: "Je-li k dispozici zeměpisná šířka a délka, stránka investic pro tuto kapitolu bude obsahovat mapu. Tato mapa bude vycentrována pomocí těchto souřadnic."
@@ -1401,8 +1402,11 @@ cs:
         external_code: Externí kód
         census_code: Kód statistického úřadu
         code_help: Kód odpovědi pro tuto geozónu v rozhraní API registru osob
+        color_help: "Barva zóny na mapě rozpočtu. %{format_help}"
         coordinates: Souřadnice
         coordinates_help: Souřadnice, které vygenerují klikatelnou oblast na obrázkové mapě HTML
+        geojson: GeoJSON k dispozici
+        geojson_help: "Musí odpovídat formátu typu \"Polygon\" nebo \"MultiPolygon\"; na mapě rozpočtu se polygon založený na těchto údajích zobrazí, když je k této geozóně přiřazen záhlaví"
       create:
         notice: "Geozóna úspěšně vytvořena"
       edit:
