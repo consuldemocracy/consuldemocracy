@@ -1,7 +1,7 @@
 tr:
   milestones:
     index:
-      no_milestones: Tanımlanmış kilometre taşı bulunmamaktadır
+      no_milestones: Henüz herhangi bir aşama tanımlanmamış
       progress: İlerleme
     show:
       publication_date: "Yayınlandı %{publication_date}"
