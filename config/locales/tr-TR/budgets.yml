@@ -64,7 +64,7 @@ tr:
       next_phase: Sonraki aşama
       prev_phase: Önceki aşama
       current_phase: Mevcut aşama
-      map: Coğrafi konumdaki bütçe yatırım önerileri
+      map: Coğrafi konuma göre yatırım bütçesi önerileri
       finished_budgets: Bitmiş katılımcı bütçeler
       see_results: Sonuçları gör
       section_footer:
@@ -77,7 +77,7 @@ tr:
         subtitle: "%{heading} (%{price})"
         subtitle_without_price: "%{heading}"
         tag_category_label: "Kategoriler"
-        tags_instructions: "Bu öneriyi etiketle. Önerilen kategoriler arasından seçim yapabilir veya kendinizinkini ekleyebilirsiniz"
+        tags_instructions: "Bu öneriyi etiketleyin. Öneri kategorileri arasından seçim yapabilir veya yeni bir kategori ekleyebilirsiniz"
         tags_label: Etiketler
         tags_placeholder: "Kullanmak istediğiniz etiketleri virgülle ayırarak girin (',')"
         map_location: "Harita konumu"
@@ -95,11 +95,11 @@ tr:
           my_ballot: Oyum
           voted_info:
             knapsack:
-              one: "<strong>%{amount_spent} değerindeki bir tasarı için oy kullandınız</strong>"
-              other: "<strong>%{amount_spent} değerindeki %{count} tasarıya oy verdiniz</strong>"
+              one: "<strong>%{amount_spent} tutarında bir öneri için oy kullandınız</strong>"
+              other: "<strong>%{amount_spent} tutarında %{count} öneri için oy kullandınız</strong>"
             approval:
-              one: "<strong>Bir tasarı için oy kullandınız</strong>"
-              other: "<strong>%{count} tasarı için oy kullandınız</strong>"
+              one: "<strong>Bir öneri için oy kullandınız</strong>"
+              other: "<strong>%{count} öneri için oy kullandınız</strong>"
           change_vote_info:
             knapsack: "%{phase_end_date} tarihine kadar istediğiniz zaman %{link} yapabilirsiniz. Mevcut tüm parayı harcamanız gerekmemektedir."
             approval: "%{phase_end_date} tarihine kadar istediğiniz zaman %{link} yapabilirsiniz."
@@ -130,7 +130,7 @@ tr:
         unfeasibility_explanation: Uygun değildir açıklaması
         code: "Yatırım projesi kodu: <strong>%{code}</strong>"
         location: "Konum: <strong>%{location}</strong>"
-        organization_name: "Tasarıyı sunan: <strong>%{name}</strong>"
+        organization_name: "Adına öneri sunulan: <strong>%{name}</strong>"
         share: Paylaş
         title: Yatırım projesi
         supports: Destekler
