@@ -250,7 +250,7 @@ tr:
         body: "Yorum"
         user: "Kullanıcı"
       debate:
-        author: "Yazar"
+        author: "Sahip"
         description: "Görüş"
         tag_list: "Konular"
         terms_of_service: "Hizmet şartları"
@@ -401,19 +401,19 @@ tr:
         title: "Başlık"
         description: "Açıklama"
       legislation/process:
-        title: İşlem Adı
+        title: Süreç başlığı
         summary: Özet
         description: Açıklama
         additional_info: Ek bilgiler
-        start_date: Başlangıç tarihi
-        end_date: Bitiş tarihi
-        debate_start_date: Tartışma başlangıç tarihi
-        debate_end_date: Tartışma bitiş tarihi
-        draft_start_date: Taslak başlangıç tarihi
-        draft_end_date: Taslak bitiş tarihi
+        start_date: Başlangıç
+        end_date: Bitiş
+        debate_start_date: Başlangıç
+        debate_end_date: Bitiş
+        draft_start_date: Başlangıç
+        draft_end_date: Bitiş
         draft_publication_date: Taslak yayınlanma tarihi
-        allegations_start_date: İddialar başlangıç tarihi
-        allegations_end_date: İddialar bitiş tarihi
+        allegations_start_date: Başlangıç
+        allegations_end_date: Bitiş
         proposals_phase_start_date: Başlangıç
         proposals_phase_end_date: Bitiş
         result_publication_date: Son sonucun yayınlanma tarihi
@@ -421,7 +421,7 @@ tr:
         font_color: Yazı rengi
         homepage_enabled: "Giriş etkinleştirildi"
       legislation/process/translation:
-        title: İşlem Adı
+        title: Süreç başlığı
         summary: Özet
         description: Açıklama
         additional_info: Ek bilgiler
@@ -430,8 +430,8 @@ tr:
       legislation/proposal:
         description: "Öneri metni"
         summary: "Öneri özeti"
-        title: "Teklif başlığı"
-        video_url: "Harici videoya bağlantı"
+        title: "Öneri başlığı"
+        video_url: "Dış görüntü bağlantısı"
       legislation/draft_version:
         title: Sürüm başlığı
         body: Metin
@@ -471,7 +471,7 @@ tr:
       newsletter:
         segment_recipient: Alıcılar
         subject: Konu
-        from: "Başlangıç tarihi"
+        from: "Bültenin göndericisi olarak görüntülenecek e-posta adresi"
         body: E-posta içeriği
       admin_notification:
         segment_recipient: Alıcılar
@@ -497,7 +497,7 @@ tr:
         limit: Öge sayısı
       dashboard/action:
         title: Başlık
-        short_description: Kısa tanımlama
+        short_description: Kısa açıklama
         description: Açıklama
         link: Dış bağlantı
         request_to_administrators: Yöneticilerden kaynak isteme butonu
@@ -625,7 +625,7 @@ tr:
       messages:
         translations_too_short: En az bir çeviri sağlamak zorunludur
         record_invalid: "Onaylama başarısız: %{errors}"
-        another_poll_active: Belirtilen sürede aktif olan başka bir anket daha var
+        another_poll_active: Belirtilen aralıkta etkin olan başka bir oylama var
         restrict_dependent_destroy:
           has_one: "%{record} bağlı kayıt bulunduğundan kayıt silinemez"
           has_many: "%{record} bağlı kayıt bulunduğundan kayıt silinemez"
