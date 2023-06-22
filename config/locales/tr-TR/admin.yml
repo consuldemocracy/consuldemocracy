@@ -55,7 +55,7 @@ tr:
           block: Engellendi
           hide: Gizlendi
           restore: Geri yüklendi
-        by: Tarafından denetlendi
+        by: Denetleyen
         content: İçerik
         filter: Göster
         filters:
@@ -65,9 +65,9 @@ tr:
           on_proposals: Öneriler
           on_users: Kullanıcılar
           on_system_emails: Sistem e-postaları
-        title: Moderatör faaliyeti
+        title: Sorumlu işlemi
         type: Tür
-        no_activity: Hiç moderatör faaliyeti yok.
+        no_activity: Herhangi bir sorumlu işlemi yok.
     budgets:
       actions:
         ballots: "Kabinler oluştur"
@@ -173,7 +173,7 @@ tr:
       no_groups: "Hiç grup yok."
       amount:
         one: "1 grup var"
-        other: "%{count} gruplar var"
+        other: "%{count} grup var"
       create:
         notice: "Grup başarıyla oluşturuldu!"
       update:
@@ -239,7 +239,7 @@ tr:
         placeholder: Arama projeleri
         filters:
           all: Tüm
-          without_admin: Atanmış yönetici olmadan
+          without_admin: Atanmış yöneticisi olmayan
           without_valuator: Atanmış bilirkişi olmadan
           under_valuation: Değerlendirme altında
           valuation_finished: Değerlendirme bitti
@@ -254,7 +254,7 @@ tr:
           two_filters: "Uygulanan mevcut filtreler: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filtre
-        download_current_selection: "Mevcut seçimi indir"
+        download_current_selection: "Geçerli seçimi indir"
         no_budget_investments: "Hiç yatırım projesi yok."
         title: Yatırım projeleri
         columns: Sütunlar
@@ -279,10 +279,10 @@ tr:
           valuation_finished: Değ. Bit.
           selected: Seçilmiş
           visible_to_valuators: Bilirkişileri göster
-          author_username: Yazar kullanıcı adı
+          author_username: Sahibin kullanıcı adı
           incompatible: Uyumsuz
           price: Fiyat
-          author: Yazar
+          author: Sahip
         cannot_calculate_winners: Kazanan projelerin hesaplanması için bütçe "%{phase}" aşamasında kalmalıdır
         see_results: "Sonuçları gör"
         milestone_tags_filter_all: "Tüm aşama etiketleri"
@@ -322,7 +322,7 @@ tr:
         submit_button: Güncelleme
         user_tags: Kullanıcı etiketler atanmış
         tags_placeholder: "Virgülle ayırmak istediğiniz etiketleri yazın (,)"
-        undefined: Tanımsız
+        undefined: Tanımlanmamış
       search_unfeasible: Uygun bulunmayanları ara
     budgets_wizard:
       creation_timeline:
@@ -428,7 +428,7 @@ tr:
       index:
         id: "Kimlik"
         content: "İçerik"
-        author: "Yazar"
+        author: "Sahip"
         commentable_type: "Tür"
         title: Gizli yorumlar
         no_comments: Hiç yorum yok.
@@ -462,7 +462,7 @@ tr:
           day_offset: Gereken günler
           action_active: Aktif
           order: Düzen
-          published_proposal: Yayınlanan öneri
+          published_proposal: Yayınlanmış öneri
           default:
             email: E-posta
             polls: Anketler
@@ -505,7 +505,7 @@ tr:
     debates:
       index:
         id: Kimlik
-        author: Yazar
+        author: Sahip
         title: Gizli tartışmalar
         no_debates: Hiç tartışma yok.
     hidden_debates:
@@ -617,7 +617,7 @@ tr:
           title: İşlem ana sayfanızı yapılandırın
       proposals:
         index:
-          title: İsim
+          title: Öneriler
           back: Geri
           id: Kimlik
           supports: Tam destek
@@ -716,7 +716,7 @@ tr:
       sdg/manager:
         add: Ekle
     menu:
-      activity: Moderatör faaliyeti
+      activity: Sorumlu işlemi
       admin: Yönetici menüsü
       banner: Afiş yönetimi
       proposals: Öneriler
@@ -732,7 +732,7 @@ tr:
       administrators: Yöneticiler
       managers: Yöneticiler
       sdg_managers: SKH Yöneticileri
-      moderators: Moderatörler
+      moderators: Sorumlular
       messaging_users: Kullanıcılara mesajlar
       newsletters: Bültenler
       admin_notifications: Bildirimler
@@ -789,7 +789,7 @@ tr:
     administrators:
       index:
         title: Yöneticiler
-        id: Yönetici KİMLİĞİ
+        id: Yönetici kimliği
         no_administrators: Hiç yönetici yok.
       administrator:
         add: Ekle
@@ -801,21 +801,21 @@ tr:
         updated: "Yönetici başarıyla güncellendi"
     moderators:
       index:
-        title: Moderatörler
-        no_moderators: Hiç moderatör yok.
+        title: Sorumlular
+        no_moderators: Henüz bir sorumlu yok.
       moderator:
         add: Ekle
       search:
-        title: "Moderatörler: Kullanıcı arama"
+        title: "Sorumlular: Kullanıcı arama"
     segment_recipient:
       all_users: Tüm kullanıcılar
       administrators: Yöneticiler
-      all_proposal_authors: Öneri yazarları (arşivlenmiş ve geri çekilmiş dahil)
-      proposal_authors: Öneri yazarları
-      investment_authors: Cari bütçede yatırım yazarları
+      all_proposal_authors: Öneri sahipleri (arşivlenmiş ve geri çekilmişlerle birlikte)
+      proposal_authors: Öneri sahipleri
+      investment_authors: Geçerli bütçedeki yatırım sahipleri
       feasible_and_undecided_investment_authors: "Güncel bütçedeki bazı yatırımların yazarları şunlarla uyumlu değil: [valuation finished unfesasible]"
-      selected_investment_authors: Cari bütçedeki seçilen yatırımların yazarları
-      winner_investment_authors: Cari bütçede kazanan yatırımların yazarları
+      selected_investment_authors: Geçerli bütçedeki seçilmiş yatırımların sahipleri
+      winner_investment_authors: Geçerli bütçedeki kazanan yatırımların sahipleri
       not_supported_on_current_budget: Cari bütçeye yapılan yatırımları desteklemeyen kullanıcılar
       invalid_recipients_segment: "Kullanıcı segmenti alıcıları geçersiz"
     newsletters:
@@ -835,7 +835,7 @@ tr:
         empty_newsletters: Hiç gösterilecek bülten yok
       new:
         title: Yeni bülten
-        header_footer_help_text: "Tüm e-postalar için başlık ve alt bilgi aynıdır, <code>uygulama/görünümler/düzenlemeler/postacı_üstbilgi</code> ve <code>uygulama/görünümler/düzenlemeler/postacı_altbilgi</code> üzerinde düzenleyebilirsiniz.<br> Başlık resmini %{link} aracılığıyla değiştirebilirsiniz."
+        header_footer_help_text: "Tüm e-postaların üst ve alt bilgileri aynıdır, <code>app/views/layouts/mailer_header</code> ve <code>app/views/layouts/mailer_footer</code> bölümünden düzenleyebilirsiniz.<br> Üst bilgi görselini %{link} ile değiştirebilirsiniz."
         image_link: "özel görüntüler"
       edit:
         title: Bülteni düzenle
@@ -845,7 +845,7 @@ tr:
         affected_users: (%{n} etkilenen kullanıcılar)
         sent_emails:
           one: 1 e-posta gönderildi
-          other: "%{count} e-postalar gönderildi"
+          other: "%{count} e-posta gönderildi"
         sent_at: Gönderilen
         subject: Konu
         segment_recipient: Alıcılar
@@ -905,19 +905,19 @@ tr:
         description: "Bir kullanıcı bir bütçe yatırımı oluşturduğunda gönder."
       budget_investment_selected:
         title: "Bütçe yatırımı seçildi"
-        description: "Bütçe yatırımı seçildiğinde yazara gönder."
+        description: "Bütçe yatırımının seçildiği sahibine bildirilsin."
       budget_investment_unfeasible:
         title: "Bütçe yatırımı uygun bulunmayan"
-        description: "Uygun bulunmamış olarak işaretlenen bütçe yatırımları yazarına bildirilsin."
+        description: "Uygun bulunmamış olarak işaretlenen bütçe yatırımları sahiplerine bildirilsin."
       budget_investment_unselected:
         title: "Bütçe yatırımı seçilmedi"
-        description: "Bütçe yatırımı oylama aşaması için seçilmediğinde yazara gönder."
+        description: "Bütçe yatırımının oylama aşamasına seçilmediği sahibine bildirilsin."
       comment:
         title: "Yorum"
-        description: "Bir yorum aldığında yazara gönder."
+        description: "Bir yorum yapıldığı sahibine bildirilsin."
       reply:
         title: "Yanıt"
-        description: "Bir cevap aldığında yorum yazarına gönder."
+        description: "Bir yanıt yazıldığı yorum sahibine bildirilsin."
       direct_message_for_receiver:
         title: "Özel mesaj alıcısı"
         description: "Özel mesaj alıcısına gönder."
@@ -1140,8 +1140,8 @@ tr:
           add_image: "Görüntü ekle"
           save_image: "Görüntüyü kaydet"
       show:
-        proposal: Orjinal teklif
-        author: Yazar
+        proposal: Özgün öneri
+        author: Sahip
         question: Soru
         edit_question: Soru düzenle
         valid_answers: Geçerli cevaplar
@@ -1234,7 +1234,7 @@ tr:
         help: Yetkililer olarak işaretlenen kullanıcı hesapları, vurgulanan platformda müdahalelerini gerçekleştirir. Bu hesapların kullanıcı adlarının yanında görünen etiketi en önemliden (seviye 1) en az seviyeye (seviye 5) tanımlayabilirsiniz.
         no_officials: Hiç yetkili yok.
         name: İsim
-        official_position: Resmi pozisyon
+        official_position: Resmi görev
         official_level: Seviye
       level_0: Yetkili değil
       level_1: Seviye 1
@@ -1276,33 +1276,33 @@ tr:
       index:
         title: Öneriler
         id: KİMLİK
-        author: Yazar
+        author: Sahip
         select: Seç
         selected: Seçildi
         milestones: Aşamalar
-        no_proposals: Hiç öneri yok.
+        no_proposals: Herhangi bir öneri yapılmamış.
       show:
         create_question: Bu öneriyi oylanacak bir ankete ekleyin
       form:
-        update: Önerileri güncelle
+        update: Öneriyi güncelle
       update:
-        notice: Öneri başarıyla güncellendi
+        notice: Öneri güncellendi
     hidden_proposals:
       index:
-        filter: Filtre
+        filter: Süz
         filters:
-          all: Tüm
+          all: Tümü
           with_confirmed_hide: Onaylanmış
-          without_confirmed_hide: Beklemede
+          without_confirmed_hide: Bekliyor
         title: Gizli öneriler
-        no_hidden_proposals: Hiç gizli öneriler yok.
+        no_hidden_proposals: Herhangi bir gizli öneri yok.
     hidden_proposal_notifications:
       index:
-        filter: Filtrele
+        filter: Süz
         filters:
-          all: Hepsi
+          all: Tümü
           with_confirmed_hide: Onaylanmış
-          without_confirmed_hide: Beklemede
+          without_confirmed_hide: Bekliyor
         title: Gizlenmiş bildirimler
         no_hidden_proposals: Burada gizlenmiş bildirim yok.
     settings:
@@ -1372,10 +1372,10 @@ tr:
       description: Tanımlama
       image: Fotoğraf
       show_image: Resmi göster
-      moderated_content: "Moderatörler tarafından denetlenen içeriği kontrol edin ve denetlemenin doğru yapıldığını onaylayın."
+      moderated_content: "Sorumluların denetlediği içeriği değerlendirin ve denetlemenin doğru yapıldığını onaylayın."
       view: Görünüm
       proposal: Öneri
-      author: Yazar
+      author: Sahip
       content: İçerik
       created_at: Oluşturuldu
       color_help: Onaltılık format
@@ -1413,7 +1413,7 @@ tr:
       update:
         notice: "Coğrafi bölge güncellendi"
     signature_sheets:
-      author: Yazar
+      author: Sahip
       created_at: Oluşturma tarihi
       name: İsim
       no_signature_sheets: "İmza_sayfaları yok"
@@ -1432,7 +1432,7 @@ tr:
           example_text: "Örnek: "
       show:
         created_at: Oluşturuldu
-        author: Yazar
+        author: Sahip
         users: Kullanıcılar
         signature_count: "İmza sayısı:"
         verified:
@@ -1623,11 +1623,11 @@ tr:
           title: Yeni kişisel sayfa oluştur
           slug_help: "URL'de bu sayfayı tanımlayan metin, örneğin <code>https://consulproject.org/page-slug</code>"
         page:
-          created_at: Oluşturuldu
+          created_at: Oluşturulma
           status: Durum
           updated_at: Güncellendi
           title: Başlık
-          slug: Parça
+          slug: Kısaltma
           see_cards: Kartları Gör
         cards:
           cards_title: kartlar
