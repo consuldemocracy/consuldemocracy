@@ -3,63 +3,63 @@ tr:
     header:
       title: Yönetim
     actions:
-      actions: Eylemler
+      actions: İşlemler
       block_author: "Yazarı engelle"
       confirm_action: "Emin misiniz? %{action} \"%{name}\""
-      confirm_delete: "Emin misiniz? Bu işlem \"%{name}\" silecek ve geri alınamaz."
-      confirm_hide: Moderasyonu onayla
+      confirm_delete: "Emin misiniz? Bu işlem \"%{name}\" ögesini siler ve geri alınamaz."
+      confirm_hide: Denetlemeyi onayla
       delete: "Sil"
       hide: Gizle
       label: "%{action} %{name}"
-      restore: Geri getir
+      restore: Onarma
       mark_featured: Öne Çıkan
-      unmark_featured: Öne çıkan işaretini kaldır
+      unmark_featured: Öne çıkan işareti kaldır
       edit: Düzenle
-      configure: Ayarla
+      configure: Yapılandırma
     officing_booth:
-      title: "Siz %{booth}'ta bulunan kabini görüyorsunuz. Eğer bu doğru değilse, devam etmeyin ve yardım telefon numarasını aramayın. Teşekkürler."
+      title: "%{booth} konumundaki kabinde görevlisiniz. Bu bilgi doğru değilse ilerlemeyin ve yardım telefon numarasını arayın. Teşekkürler."
     banners:
       index:
-        title: Bannerlar
-        create: Banner oluştur
+        title: Afişler
+        create: Afiş oluştur
         filters:
-          all: Tüm
+          all: Tümü
           with_active: Aktif
           with_inactive: Pasif
-        preview: Önizleme
+        preview: Ön izleme
       banner:
         sections_label: Görüneceği bölümler
         sections:
-          homepage: Ana sayfa
+          homepage: Giriş
           debates: Tartışmalar
           proposals: Öneriler
           budgets: Katılımcı bütçeleme
           help_page: Yardım sayfası
           sdg: SKH
       create:
-        notice: "Başlık başarıyla oluşturuldu"
+        notice: "Afiş oluşturuldu"
       destroy:
         notice: "Afiş silindi"
       edit:
-        editing: Banner düzenleme
+        editing: Afişi düzenle
         form:
           submit_button: Değişiklikleri kaydet
       new:
-        creating: Banner oluştur
+        creating: Afiş oluştur
       update:
-        notice: "Başlık başarıyla güncellendi"
+        notice: "Afiş güncellendi"
     activity:
       show:
-        action: Eylem
+        action: İşlem
         actions:
           block: Engellendi
           hide: Gizlendi
-          restore: Onarıldı
+          restore: Geri yüklendi
         by: Tarafından denetlendi
         content: İçerik
         filter: Göster
         filters:
-          all: Tüm
+          all: Tümü
           on_comments: Yorumlar
           on_debates: Tartışmalar
           on_proposals: Öneriler
@@ -262,7 +262,7 @@ tr:
         no_admin_assigned: Hiç yönetici atanmamış
         no_valuators_assigned: Hiç bilirkişi atanmamış
         feasibility:
-          feasible: "Uygulanabilir"
+          feasible: "Uygulanabilir (%{price})"
           unfeasible: "Uygulanamaz"
           undecided: "Kararsız"
         selected: "Seçilmiş"
@@ -285,7 +285,7 @@ tr:
           author: Yazar
         cannot_calculate_winners: Kazanan projelerin hesaplanması için bütçe "%{phase}" aşamasında kalmalıdır
         see_results: "Sonuçları gör"
-        milestone_tags_filter_all: "Tüm kilometre taşı etiketleri"
+        milestone_tags_filter_all: "Tüm aşama etiketleri"
       show:
         assigned_admin: Atanmış yönetici
         assigned_valuators: Atanmış bilirkişiler
@@ -363,13 +363,13 @@ tr:
         table_publication_date: "Yayın tarihi"
         table_status: Durum
         table_actions: "Aksiyon"
-        no_milestones: "Tanımlanmış kilometre taşları yok"
+        no_milestones: "Tanımlanmış bir aşama yok"
         image: "Fotoğraf"
         show_image: "Resmi göster"
         documents: "Belgeler"
-        milestone: Kilometre taşı
-        new_milestone: Yeni kilometre taşı oluştur
-        milestone_tags: Kilometre Taşı Etiketleri
+        milestone: Aşama
+        new_milestone: Yeni aşama oluştur
+        milestone_tags: Aşama etiketleri
       form:
         admin_statuses: Durumları yönet
         no_statuses_defined: Henüz tanımlanmış durumlar bulunmamaktadır
@@ -430,7 +430,7 @@ tr:
         content: "İçerik"
         author: "Yazar"
         commentable_type: "Tür"
-        title: Yorumlar
+        title: Gizli yorumlar
         no_comments: Hiç yorum yok.
         table_link: "Bağlantı"
     hidden_comments:
@@ -506,7 +506,7 @@ tr:
       index:
         id: Kimlik
         author: Yazar
-        title: Tartışmalar
+        title: Gizli tartışmalar
         no_debates: Hiç tartışma yok.
     hidden_debates:
       index:
@@ -718,7 +718,7 @@ tr:
     menu:
       activity: Moderatör faaliyeti
       admin: Yönetici menüsü
-      banner: Bannerları yönet
+      banner: Afiş yönetimi
       proposals: Öneriler
       proposals_topics: Öneri konuları
       budgets: Katılımcı bütçeler
