@@ -39,7 +39,7 @@ tr:
       registrations:
         new:
           password_confirmation_label: Şifreyi onayla
-          responsible_name_note: Bu, önerileri adına sunulan dernek/topluluğu temsil eden kişi olacaktır
+          responsible_name_note: Adına öneri sunduğu dernek ya da topluluğu temsil eden kişi
           submit: Kayıt Ol
           title: Bir kurum veya topluluk olarak kaydol
         success:
