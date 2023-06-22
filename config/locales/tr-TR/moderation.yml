@@ -54,7 +54,7 @@ tr:
         filter: Filtre
         filters:
           all: Tüm
-          pending_flag_review: Bekleyen inceleme
+          pending_flag_review: Bekleyen yeniden inceleme
           with_ignored_flag: Görüldü olarak işaretle
         headers:
           moderate: Yönet
