@@ -290,7 +290,9 @@ cs:
       geozone:
         name: Název
         external_code: "Externí kód (volitelný)"
+        color: "Barva (volitelně)"
         census_code: "Kód registru občanů (nepovinné)"
+        geojson: "GeoJSON data (volitelně)"
         html_map_coordinates: "HTML <map> Souřadnice (nepovinné)"
       milestone:
         status_id: "Aktuální stav (volitelné)"
@@ -634,6 +636,10 @@ cs:
           attributes:
             max_per_day:
               invalid: "Dosáhli jste maximálního počtu soukromých zpráv za den"
+        geozone:
+          attributes:
+            geojson:
+              invalid: "Poskytnutý soubor GeoJSON nemá správný formát. Musí dodržovat formát typu \"Polygon\" nebo \"MultiPolygon\"."
         image:
           attributes:
             attachment:
