@@ -739,7 +739,7 @@ tr:
       system_emails: Sistem E-postaları
       emails_download: E-postaları indirme
       valuators: Bilirkişiler
-      poll_officers: Anket memurları
+      poll_officers: Seçim görevlileri
       polls: Anketler
       poll_booths: Kabinler konumu
       poll_booth_assignments: Kabin Atamaları
@@ -991,28 +991,28 @@ tr:
         edit: "Bilirkişiler grubunu kaydet"
     poll_officers:
       index:
-        title: Anket memurları
+        title: Seçim görevlileri
       officer:
         add: Ekle
-        delete: Pozisyonu sil
-        name: İsim
+        delete: Konumu sil
+        name: Ad
         email: E-posta
-        entry_name: memur
+        entry_name: görevli
       search:
         email_placeholder: E-posta ile kullanıcı ara
         user_not_found: Kullanıcı bulunamadı
-        help: "Anket memurlarını eklemek veya kaldırmak için aşağıdaki arama formunu kullanın."
+        help: "Seçim görevlilerini eklemek ya da kaldırmak için aşağıdaki arama formunu kullanın."
     poll_officer_assignments:
       index:
-        officers_title: "Memurların listesi"
-        no_officers: "Bu ankete atanmış hiç memur yok."
-        table_name: "İsim"
+        officers_title: "Görevlilerin listesi"
+        no_officers: "Bu seçime atanmış herhangi bir görevli yok."
+        table_name: "Ad"
         table_email: "E-posta"
       by_officer:
         date: "Tarih"
         booth: "Kabin"
-        assignments: "Bu ankette ofis vardiyaları"
-        no_assignments: "Bu ankette bu kullanıcının ofis vardiyasi yok."
+        assignments: "Bu oylamanın görev vardiyaları"
+        no_assignments: "Bu kullanıcının bu oylamada görev vardiyası yok."
     poll_shifts:
       new:
         add_shift: "Vardiya ekle"
@@ -1022,11 +1022,11 @@ tr:
         edit_shifts: Vardiyaları düzenle
         new_shift: "Yeni vardiya"
         no_shifts: "Bu kabinin vardiyası yok"
-        officer: "Memur"
+        officer: "Görevli"
         remove_shift: "Kaldır"
         search_officer_button: Ara
-        search_officer_placeholder: Memur ara
-        search_officer_text: Yeni bir vardiyaya atamak için bir memur arayın
+        search_officer_placeholder: Görevli ara
+        search_officer_text: Yeni bir vardiyaya atanacak bir görevli arayın
         select_date: "Gün seç"
         no_voting_days: "Oylama günleri sona erdi"
         select_task: "Görev seç"
@@ -1056,14 +1056,14 @@ tr:
         shifts: "Bu kabinle ilişkili vardiyalar var. Kabin atamayı kaldırırsanız, aynı zamanda vardiyalar silinecektir. Devam edilsin mi?"
       show:
         location: "Konum"
-        officers: "Memurlar"
-        officers_list: "Bu kabin için memur listesi"
-        no_officers: "Bu kabin için hiçbir memur yok"
+        officers: "Görevliler"
+        officers_list: "Bu kabinin görevli listesi"
+        no_officers: "Bu kabinin herhangi bir görevlisi yok"
         recounts: "Yeniden Sayımlar"
         recounts_list: "Bu kabin için yeniden sayım listesi"
         results: "Sonuçlar"
         date: "Tarih"
-        count_final: "Son yeniden sayım (memur tarafından)"
+        count_final: "Son yeniden sayım (görevli tarafından)"
         count_by_system: "Oylar (otomatik)"
         total_system: Toplam oylar (otomatik)
       index:
@@ -1096,7 +1096,7 @@ tr:
       show:
         questions_tab: Sorular
         booths_tab: Kabinler
-        officers_tab: Memurlar
+        officers_tab: Görevliler
         recounts_tab: Yeniden Sayımlar
         results_tab: Sonuçlar
         no_questions: "Bu ankete atanmış hiç soru yok."
@@ -1187,7 +1187,7 @@ tr:
         total_final: "Son sayılar"
         total_system: "Oylar (otomatik)"
         table_booth_name: "Kabin"
-        table_total_recount: "Toplam yeniden sayım (memur tarafından)"
+        table_total_recount: "Toplam yeniden sayım (görevli tarafından)"
         table_system_count: "Oylar (otomatik)"
     results:
       index:
@@ -1358,7 +1358,7 @@ tr:
           legislation_proposals: "Önerilerde başlık ve açıklamalara göre arama"
           local_census_records: "Belge Numarası ile Ara"
           organizations: "İsim, e-posta veya telefon numarası"
-          poll_officers: "Anket memurlarını ara"
+          poll_officers: "Seçim görevlilerini ara"
           poll_questions: "Anket sorularını ara"
           polls: "Anketleri ad veya açıklamaya göre arayın"
           proposals: "Başlığa, koda, tanımlamaya veya soruya göre önerileri ara"
