@@ -2,7 +2,7 @@ tr:
   helpers:
     page_entries_info:
       entry:
-        zero: Paylaşımlar
+        zero: Girdiler
         one: Girdi
         other: Girdiler
       more_pages:
