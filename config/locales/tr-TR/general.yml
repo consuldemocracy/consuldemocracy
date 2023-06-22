@@ -27,9 +27,9 @@ tr:
     verified_only: Katılmak için %{verify_account}
     comment:
       admin: Yönetici
-      author: Yazar
+      author: Sahip
       deleted: Bu yorum silindi
-      moderator: Moderatör
+      moderator: Sorumlu
       responses:
         zero: Hiç yanıt yok
         one: 1 yanıt
@@ -49,7 +49,7 @@ tr:
         other: "%{count} oylar"
     form:
       comment_as_admin: Yönetici olarak yorum yap
-      comment_as_moderator: Moderatör olarak yorum yap
+      comment_as_moderator: Sorumlu olarak yorum yap
       leave_comment: Yorumunuzu bırakın
     orders:
       most_voted: En çok oylanan
@@ -117,7 +117,7 @@ tr:
         submit_button: Bir tartışma başlat
       more_info: Daha fazla bilgi
       recommendation_four: Bu alanın ve onu dolduran seslerin tadını çıkarın. O size de ait.
-      recommendation_one: Tartışma başlığı veya tüm cümleler için büyük harfler kullanmayın. İnternette, bu bağırmak sayılır. Ve kimse bağrılmaktan hoşlanmaz.
+      recommendation_one: Tartışma başlığını veya tüm cümleleri büyük harflerle yazmayın. İnternet üzerinde bu yazım şekli bağırmak olarak algılanır ve kimse bağrılmasından hoşlanmaz.
       recommendation_three: Acımasız eleştiri hoş karşılanır. Bu kusur bulma için bir alandır. Fakat inceliğe ve anlayışa sadık kalmanızı öneriyoruz. Dünya bu erdemlerle daha iyi bir yerdir.
       recommendation_two: Yasadışı eylemi öneren herhangi bir tartışma veya yorum silinecektir, bunun yanı sıra tartışma alanlarını sabote etmek isteyenler de silinecek. Bunların dışında her şeye izin verilir.
       recommendations_title: Bir tartışma oluşturmak için öneriler
@@ -128,7 +128,7 @@ tr:
       edit_debate_link: Düzenle
       flag: Bu tartışma birkaç kullanıcı tarafından uygunsuz olarak işaretlendi.
       share: Paylaş
-      author: Yazar
+      author: Sahip
     update:
       form:
         submit_button: Değişiklikleri kaydet
@@ -186,17 +186,17 @@ tr:
       proposal_header:
         published: Yayınlandı
         draft: Taslak
-        retired: Geri çekildi
+        retired: Geri çekilmiş
       proposal_totals:
         active_resources: Aktif kaynaklar
         community: Topluluğunuzdaki katılımcılar
         show_proposal: Öneriyi göster
         preview_proposal: Öneri ön izlemesi
-        current_goal: Mevcut hedef
+        current_goal: Geçerli hedef
         supports:
-          zero: Destek yok
-          one: 1 Destek
-          other: "Destekler"
+          zero: Destek almamış
+          one: 1 destek
+          other: "destek"
     footer:
       accessibility: Erişilebilirlik
       conditions: Kullanım şartları ve koşulları
@@ -377,7 +377,7 @@ tr:
       form:
         submit_button: Öneri oluştur
       more_info: Yurttaş önerilerinin işleyişi nasıldır?
-      recommendation_one: Öneri başlığı veya tüm cümleler için büyük harfler kullanmayın. İnternette, bu bağırmak sayılır. Ve kimse bağrılmaktan hoşlanmaz.
+      recommendation_one: Öneri başlığını veya tüm cümleleri büyük harflerle yazmayın. İnternet üzerinde bu yazım şekli bağırmak olarak algılanır ve kimse bağrılmasından hoşlanmaz.
       recommendation_three: Bu alanın ve onu dolduran seslerin tadını çıkarın. O size de ait.
       recommendation_two: Yasadışı eylemi öneren herhangi bir öneri veya yorum silinecektir, bunun yanı sıra tartışma alanlarını sabote etmek isteyenler de silinecek. Bunların dışında her şeye izin verilir.
       recommendations_title: Nasıl bir öneri oluşturabilirsiniz
@@ -405,9 +405,9 @@ tr:
         other: "%{count} oylar"
       supports_necessary: "%{number} destek gerekli"
       total_percent: '%100'
-      archived: "Bu öneri arşivlendi ve destek toplayamaz."
-      successful: "Bu öneri gereken desteğe ulaştı."
-      selected: "Seçilen öneri"
+      archived: "Bu öneri arşivlenmiş olduğundan destek alamaz."
+      successful: "Bu öneri gerekli desteği aldı."
+      selected: "Seçilmiş öneri"
     show:
       author_deleted: Kullanıcı silindi
       code: "Öneri kodu:"
@@ -416,14 +416,14 @@ tr:
       flag: Bu öneri birkaç kullanıcı tarafından uygunsuz olarak işaretlendi.
       notifications_tab: Bildirimler
       milestones_tab: Aşamalar
-      retired_warning: "Yazar bu önerinin daha fazla destek almaması gerektiğini düşünmektedir."
+      retired_warning: "Sahibi bu önerinin daha fazla desteklenmemesi gerektiğini düşünüyor."
       retired_warning_link_to_explanation: Bunun için oy vermeden önce açıklamayı okuyun.
-      retired: Öneri yazar tarafından çekildi
+      retired: Öneri sahibi tarafından geri çekildi
       share: Paylaş
       no_notifications: "Bu öneride bildirim yok."
       embed_video_title: "%{proposal} ile ilgili video"
-      title_video_url: "Harici video"
-      author: Yazar
+      title_video_url: "Dış görüntü"
+      author: Sahip
       draft: Öneri taslakta. Henüz destek alamıyor, öneri listesinde de görünmüyor.
     update:
       form:
@@ -473,9 +473,9 @@ tr:
       resource_locked: Kaynak kilitli
     recommended_actions:
       title: Önerilen eylemler
-      goto_proposed_actions: Önerilen eylemlere git
-      see_proposed_actions: Önerilen eylemleri gözden geçir
-      hide_proposed_actions: Önerilen eylemleri gizle
+      goto_proposed_actions: Önerilen işlemlere git
+      see_proposed_actions: Önerilen işlemleri gözden geçir
+      hide_proposed_actions: Önerilen işlemleri gizle
       pending_title: Beklemede
       show_description: Açıklamayı göster
       without_pending_actions: Beklemede tavsiye edilen eylem yok
@@ -779,7 +779,7 @@ tr:
   unauthorized:
     default: Bu sayfaya erişim izniniz yok.
     manage:
-      all: "%{subject} 'de %{action} eylemini gerçekleştirme izniniz yok."
+      all: "%{subject} üzerinde %{action} işlemini yapma izniniz yok."
   users:
     login_to_comment: "Yorum yapmak için %{signin}malı ya da %{signup}malısınız."
     login_to_continue: "Devam etmek için %{signin}malı ya da %{signup}malısınız."
@@ -829,9 +829,9 @@ tr:
     proposals:
       retired: "Çekilen öneri"
       draft: Taslak
-      published: Yayınlandı
+      published: Yayınlanmış
       see: "Öneriyi gör"
-      actions: Eylemler
+      actions: İşlemler
       retired_help_text: Geri çekilen öneriler için gösterge panosu mevcut değil
   votes:
     agree: Kabul ediyorum
