@@ -6,7 +6,7 @@ tr:
         see_complete: Tamamını gör
         replies_count:
           one: "%{count} yanıt"
-          other: "%{count} yanıtlar"
+          other: "%{count} yanıt"
         cancel: İptal
         publish_comment: Yorumu Yayınla
       form:
@@ -76,7 +76,7 @@ tr:
         draft_publication_date: Taslak yayın
         allegations_dates: Yorumlar
         result_publication_date: Son sonuç yayını
-        milestones_date: Takip ediliyor
+        milestones_date: İzleniyor
         proposals_dates: Öneriler
     questions:
       comments:
