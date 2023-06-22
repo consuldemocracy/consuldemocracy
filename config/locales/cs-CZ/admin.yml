@@ -1403,6 +1403,8 @@ cs:
         code_help: Kód odpovědi pro tuto geozónu v rozhraní API registru osob
         coordinates: Souřadnice
         coordinates_help: Souřadnice, které vygenerují klikatelnou oblast na obrázkové mapě HTML
+      create:
+        notice: "Geozóna úspěšně vytvořena"
       edit:
         form:
           submit_button: Uložit změny
@@ -1414,6 +1416,8 @@ cs:
       delete:
         success: Geozóna byla odstraněna
         error: Tato geozóna nemohla být odstraněna, protože jsou k ní připojeny některé prvky
+      update:
+        notice: "Geozóna úspěšně aktualizována"
     signature_sheets:
       author: Autor
       created_at: Datum vytvoření
@@ -1539,6 +1543,10 @@ cs:
         document_number: Číslo dokladu
         roles: Role
         verification_level: Úroveň ověření
+        activation_status: Stav aktivace
+      account:
+        active_status: Účet aktivován
+        inactive_status: Účet není aktivován
       index:
         title: User
         no_users: Nemáte žádné uživatele.
