@@ -28,12 +28,12 @@ tr:
       subject: Birisi sizin yorumunuza cevap verdi
       title: Sizin yorumunuza yeni cevap
     proposal_notification_digest:
-      info: "İşte %{org_name}'de desteklediğin önerilerin yazarları tarafından yayınlanan yeni bildirimler."
-      title: "%{org_name}'deki önerinin bildirimleri"
+      info: "Burada %{org_name} üzerinde desteklediğin önerilerin yazarları tarafından yayınlanan yeni bildirimleri görebilirsiniz."
+      title: "%{org_name} üzerindeki öneri bildirimleri"
       share: Öneriyi paylaş
       comment: Öneriye yorum yap
       unsubscribe_text: "Öneri bildirimlerini almak istemiyorsanız %{notifications} bölümüne giderek ve \"Öneri bildirimlerinin özetini al\" seçeneğindeki işareti kaldırın."
-      unfollow: "Bildirim almaya son vermek için öneri sayfasını ziyaret edip takipten çıkarın."
+      unfollow: "Bildirimlerin gönderilmesini durdurmak için öneri sayfasına giderek izlemeyi bırakın."
     direct_message_for_receiver:
       subject: "Yeni bir özel mesaj aldınız"
       reply: '%{sender}''a yanıt'
@@ -97,11 +97,11 @@ tr:
       text: "İçerik oluşturuldu."
       title: "Makine Öğrenmesi betiği"
     new_actions_notification_on_create:
-      subject: "Taslak vatandaş öneriniz oluşturuldu"
+      subject: "Yurttaş önerisi taslağınız oluşturuldu"
       hi: "Merhaba %{name}!"
-      introduction: "%{title} başlıklı öneriniz başarıyla oluşturuldu."
-      text_1: "Önerinizin henüz herkese açık olmayışından yararlanın ve birçok kişiyle iletişim kurmaya hazırlanın."
-      text_2: "Vatandaşınızın teklifini bu <a href='%{link}'>bağlantıdan</a> yayınlamaya hazır olduğunuzda."
+      introduction: "%{title} başlıklı öneriniz oluşturuldu."
+      text_1: "Önerinizin henüz herkese açık olmamasından yararlanarak birçok kişiyle görüşmeye hazırlanın."
+      text_2: "Hazır olduğunuzda yurttaş önerinizi <a href='%{link}'>bu bağlantıyla</a> yayınlayın."
       text_3: "Alışılmışın dışında bir öneri oluşturmanın ve gerekli desteği almanın ilk bakışta başarması zor gibi göründüğünü biliyoruz. Ama endişelenmeyin, çünkü sana yardım edeceğiz!"
       text_4: "Size yardımcı olacak bir aracınız var: Vatandaş Önerileri paneli."
       list_1: "Sizinle paylaşacağımız ipuçlarını ve kaynakları kullanmak için önerinizin paneline her gün girin."
