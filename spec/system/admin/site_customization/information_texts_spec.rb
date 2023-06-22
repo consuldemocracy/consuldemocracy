@@ -27,6 +27,10 @@ describe "Admin custom information texts", :admin do
 
     expect(page).to have_content "Results"
 
+    within("#information-texts-tabs") { click_link "Collaborative legislation" }
+
+    expect(page).to have_content "Help with collaborative legislation"
+
     click_link "Layouts"
     expect(page).to have_content "Accessibility"
 
