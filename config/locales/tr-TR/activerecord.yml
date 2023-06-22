@@ -169,13 +169,13 @@ tr:
         hide_money: "Bu bütçenin tutarı gizlensin"
       budget/translation:
         main_link_text: "Bağlantıdaki metin"
-        main_link_url: "Bağlantı sizi şuraya götürür: (bağlantı ekle)"
+        main_link_url: "Bağlantı sizi şuraya götürür (bağlantı ekle)"
         name: "Ad"
       budget/investment:
-        heading_id: "Başlık"
-        title: "Konu"
+        heading_id: "Ana başlık"
+        title: "Başlık"
         description: "Açıklama"
-        external_url: "Ek belge bağlantıları"
+        external_url: "Ek belgeler bağlantısı"
         administrator_id: "Yönetici"
         location: "Ek konum bilgileri"
         organization_name: "Bir topluluk ya da kuruluş adına veya birden fazla kişi adına öneride bulunuyorsanız, adınızı yazın"
@@ -199,115 +199,115 @@ tr:
         title: "Başlık"
         description: "Açıklama"
       geozone:
-        name: İsim
-        external_code: "Harici kod (isteğe bağlı)"
+        name: Ad
+        external_code: "Dış kod (isteğe bağlı)"
         color: "Renk (isteğe bağlı)"
-        census_code: "Census kodu (isteğe bağlı)"
+        census_code: "Nüfus sayımı kodu (isteğe bağlı)"
         geojson: "GeoJSON verileri (isteğe bağlı)"
-        html_map_coordinates: "HTML <map> Koordinatlar (isteğe bağlı)"
+        html_map_coordinates: "HTML <map> koordinatları (isteğe bağlı)"
       milestone:
-        status_id: "Mevcut durum (isteğe bağlı)"
-        title: "İsim"
-        description: "Açıklama (isteğe bağlı, eğer bir görev belirtilmiş ise)"
+        status_id: "Güncel durum (isteğe bağlı)"
+        title: "Başlık"
+        description: "Açıklama (isteğe bağlı, bir durum belirtilmiş ise)"
         publication_date: "Yayın tarihi"
       milestone/translation:
         description: "Açıklama"
       milestone/status:
-        name: "İsim"
-        description: "Tanımlama (isteğe bağlı)"
+        name: "Ad"
+        description: "Açıklama (isteğe bağlı)"
       progress_bar:
         kind: "Tür"
-        title: "İsim"
-        percentage: "Mevcut ilerleme"
+        title: "Başlık"
+        percentage: "Geçerli ilerleme"
       progress_bar/kind:
         primary: "Birincil"
         secondary: "İkincil"
       budget/group:
-        max_votable_headings: "Bir kullanıcının projeleri seçebileceği maksimum başlık sayısı"
+        max_votable_headings: "Bir kullanıcının projeleri seçebileceği en fazla ana başlık sayısı"
       budget/group/translation:
-        name: "Grup ismi"
+        name: "Grup adı"
       budget/heading:
-        allow_custom_content: "İçerik engellemeye izin ver"
-        latitude: "Enlem(isteğe bağlı)"
-        longitude: "Boylam(isteğe bağlı)"
+        allow_custom_content: "İçerik bloğu kullanılabilsin"
+        latitude: "Enlem (isteğe bağlı)"
+        longitude: "Boylam (isteğe bağlı)"
         name: "Başlık adı"
-        price: "Fiyat"
-        population: "Nüfus"
-        max_ballot_lines: "Oylara izin verildi"
+        price: "Bütçe"
+        population: "Nüfus (isteğe bağlı)"
+        max_ballot_lines: "İzin verilen oy sayısı"
       budget/heading/translation:
-        name: "Başlık adı"
+        name: "Ana başlık adı"
       budget/phase:
         enabled: "Aşama etkinleştirildi"
         ends_at: "Bitiş tarihi"
         starts_at: "Başlangıç tarihi"
       budget/phase/translation:
-        name: "İsim"
+        name: "Ad"
         description: "Açıklama"
         summary: "Özet"
         main_link_text: "Bağlantıdaki metin"
-        main_link_url: "Bağlantı sizi şuraya götürür: (link ekle)"
+        main_link_url: "Bağlantı sizi şuraya götürür (bağlantı ekle)"
       comment:
         body: "Yorum"
         user: "Kullanıcı"
       debate:
         author: "Yazar"
-        description: "Fikir"
+        description: "Görüş"
         tag_list: "Konular"
         terms_of_service: "Hizmet şartları"
-        title: "İsim"
+        title: "Başlık"
       debate/translation:
         title: "Tartışma başlığı"
         description: "İlk tartışma metni"
       proposal:
         author: "Yazar"
-        title: "İsim"
+        title: "Başlık"
         question: "Soru"
-        description: "Tanımlama"
-        responsible_name: "Tasarıyı sunan kişinin tam adı"
-        retired_reason: "Tasarıyı geri çekme sebebi"
+        description: "Açıklama"
+        responsible_name: "Öneriyi sunan kişinin tam adı"
+        retired_reason: "Önerinin geri çekilme nedeni"
         selected: "Seçilmiş olarak işaretle"
         terms_of_service: "Hizmet şartları"
-        video_url: "Harici Video URL'si"
+        video_url: "Dış görüntü adresi"
       proposal/translation:
         title: "Öneri başlığı"
         description: "Öneri metni"
         summary: "Öneri özeti"
         retired_explanation: "Açıklama"
       user:
-        login: "E-posta veya kullanıcı adı"
+        login: "E-posta ya da kullanıcı adı"
         email: "E-posta"
         username: "Kullanıcı adı"
-        password_confirmation: "Şifre onayı"
-        password: "Şifre"
-        current_password: "Mevcut şifre"
-        email_digest: "Öneri bildirimlerini özet olarak al"
-        email_on_comment: "Biri tasarılarıma veya tartışmalarıma yorum yaptığı zaman bana e-posta ile bildir"
-        email_on_comment_reply: "Biri yorumlarıma cevap verdiğinde bana e-posta ile bildir"
-        email_on_direct_message: "Direkt mesajlarla ilgili e-posta al"
-        newsletter: "İlgili bilgileri e-posta ile alın"
-        official_position: "Resmi pozisyon"
-        official_position_badge: "Resmi yetkili ünvanını göster"
+        password_confirmation: "Parola onayı"
+        password: "Parola"
+        current_password: "Geçerli parola"
+        email_digest: "Öneri bildirimlerinin özeti bana e-posta ile bildirilsin"
+        email_on_comment: "Önerilerime ya da tartışmalarıma yapılan yorumlar bana e-posta ile bildirilsin"
+        email_on_comment_reply: "Yorumlarıma verilen yanıtlar bana e-posta ile bildirilsin"
+        email_on_direct_message: "Doğrudan iletiler bana e-posta ile bildirilsin"
+        newsletter: "İlgili bilgiler bana e-posta ile bildirilsin"
+        official_position: "Resmi görev"
+        official_position_badge: "Resmi görev unvanı görüntülensin"
         official_level: "Resmi düzey"
         phone_number: "Telefon numarası"
-        public_activity: "Etkinlikler listemi herkese açık tut"
-        public_interests: "Takip ettiğim unsurların etiketlerini herkese açık tut"
-        recommended_debates: "Tartışma önerilerini göster"
-        recommended_proposals: "Teklif önerilerini göster"
+        public_activity: "Etkinlik listem herkese açık olsun"
+        public_interests: "İzlediğim bileşenler herkese açık olsun"
+        recommended_debates: "Bana tartışmalar sunulsun"
+        recommended_proposals: "Bana öneriler sunulsun"
         redeemable_code: "Doğrulama kodu e-posta yoluyla alındı"
       direct_message:
         title: "Başlık"
-        body: "Mesaj"
+        body: "İleti"
       organization:
-        name: "Organizasyon adı"
+        name: "Kuruluş adı"
         responsible_name: "Gruptan sorumlu kişi"
       poll:
         name: "Ad"
         title: "Ad"
-        starts_at: "Başlangıç Tarihi"
-        ends_at: "Kapanış Tarihi"
-        geozone_restricted: "Geozone tarafından kısıtlandırılmış"
+        starts_at: "Başlangıç tarihi"
+        ends_at: "Kapanış tarihi"
+        geozone_restricted: "Geozone tarafından kısıtlanmış"
         summary: "Özet"
-        description: "Tanımlama"
+        description: "Açıklama"
       active_poll/translation:
         description: "Açıklama"
       poll/booth:
@@ -316,18 +316,18 @@ tr:
       poll/translation:
         name: "Ad"
         summary: "Özet"
-        description: "Tanımlama"
+        description: "Açıklama"
       poll/question:
-        poll_id: "Anket"
+        poll_id: "Oylama"
         title: "Soru"
         summary: "Özet"
-        description: "Tanımlama"
-        external_url: "Ek belgelere bağlantı"
+        description: "Açıklama"
+        external_url: "Ek belgeler bağlantısı"
       poll/question/translation:
         title: "Soru"
       poll/ballot_sheet:
-        data: CSV verisi
-        poll_id: Anket
+        data: CSV verileri
+        poll_id: Oylama
         officer_assignment_id: Memur ataması
       poll/shift:
         task: "Görev"
@@ -365,13 +365,13 @@ tr:
         status: Durum
         status_draft: "Taslak"
         status_published: "Yayınlanmış"
-        title: İsim
+        title: Başlık
         updated_at: Güncellenmiş
         more_info_flag: Yardım sayfasında göster
         print_content_flag: İçerik yazdır düğmesi
         locale: Dil
       site_customization/page/translation:
-        title: İsim
+        title: Başlık
         subtitle: Altyazı
         content: İçerik
       site_customization/image:
@@ -445,7 +445,7 @@ tr:
         body: Metin
         changelog: Değişiklikler
       legislation/question:
-        title: İsim
+        title: Başlık
         question_options: Seçenekler
       legislation/question/translation:
         title: Soru
@@ -454,19 +454,19 @@ tr:
       legislation/annotation:
         text: Yorum
       document:
-        title: İsim
+        title: Başlık
         attachment: "Ek dosya"
       image:
-        title: İsim
+        title: Başlık
         attachment: "Ek dosya"
       poll/question/answer:
-        title: Cevap
+        title: Yanıt
         description: Tanımlama
       poll/question/answer/translation:
-        title: Cevap
+        title: Yanıt
         description: "Tanımlama"
       poll/question/answer/video:
-        title: İsim
+        title: Başlık
         url: Harici video
       newsletter:
         segment_recipient: Alıcılar
@@ -475,22 +475,22 @@ tr:
         body: E-posta içeriği
       admin_notification:
         segment_recipient: Alıcılar
-        title: İsim
+        title: Başlık
         link: Bağlantı
         body: Metin
       admin_notification/translation:
-        title: İsim
+        title: Başlık
         body: Metin
       widget/card:
         label: Etiket (isteğe bağlı)
-        title: İsim
+        title: Başlık
         description: Tanımlama
         link_text: Bağlantı metni
         link_url: Bağlantı Adresi
         columns: Sütunların sayısı
       widget/card/translation:
         label: Etiket (isteğe bağlı)
-        title: İsim
+        title: Başlık
         description: Tanımlama
         link_text: Bağlantı metni
       widget/feed:
