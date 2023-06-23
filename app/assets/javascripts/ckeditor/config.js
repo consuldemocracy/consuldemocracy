@@ -15,6 +15,7 @@ CKEDITOR.editorConfig = function( config )
   config.format_tags = "p;h2;h3";
 
   config.removePlugins = "balloonpanel,balloontoolbar,copyformatting,scayt,wsc";
+  config.extraPlugins = "mediaembed";
 
   // Rails CSRF token
   config.filebrowserParams = function(){
@@ -98,7 +99,7 @@ CKEDITOR.editorConfig = function( config )
   ];
 
   config.toolbar_admin = config.toolbar_mini.concat([
-    { name: "insert", items: [ "Image", "Table" ] }
+    { name: "insert", items: [ "Image", "Table", "MediaEmbed" ] }
   ]);
 
   config.toolbar = "mini";
