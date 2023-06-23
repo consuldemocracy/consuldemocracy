@@ -762,6 +762,8 @@ sv:
           community: "Gemenskap"
           proposals: "Förslag"
           polls: "Omröstningar"
+          legislation: "Medborgardialoger"
+          budgets: "Budgetar"
           layouts: "Layouter"
           machine_learning: "AI/maskininlärning"
           mailers: "E-postadresser"
