@@ -166,6 +166,8 @@ en:
         calculate: Calculate Winner Investments
         calculated: Winners being calculated, it may take a minute.
         recalculate: Recalculate Winner Investments
+      ballots:
+        feature_disabled: 'The feature <strong>Polls</strong> must be enabled to create booths. You can enable it from the <a href="%{link}">settings configuration</a> page.'
     budget_groups:
       name: "Name"
       headings_name: "Headings"

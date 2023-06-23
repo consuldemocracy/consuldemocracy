@@ -166,6 +166,8 @@ es:
         calculate: Calcular proyectos ganadores
         calculated: Calculando ganadores, puede tardar un minuto.
         recalculate: Recalcular proyectos ganadores
+      ballots:
+        feature_disabled: 'La funcionalidad de <strong>Votaciones</strong> debe estar activada para poder crear urnas. Puedes activarla en la página de <a href="%{link}">configuración</a>.'
     budget_groups:
       name: "Nombre"
       headings_name: "Partidas"
