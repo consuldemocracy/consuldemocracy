@@ -166,6 +166,8 @@ sv:
         calculate: Beräkna vinnande budgetförslag
         calculated: Vinnare beräknas, det kan ta en stund.
         recalculate: Räkna om vinnande budgetförslag
+      ballots:
+        feature_disabled: 'Funktionen <strong>Omröstningar</strong> måste ha aktiverats för att kunna skapa röstbås. Du kan aktivera den från sidan <a href="%{link}">Inställningskonfigurering</a>.'
     budget_groups:
       name: "Namn"
       headings_name: "Områden"
