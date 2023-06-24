@@ -203,8 +203,8 @@ tr:
       consul: CONSUL uygulaması
       consul_url: https://github.com/consul/consul
       copyright: CONSUL, %{year}
-      description: Bu portal %{open_source} olan %{consul} kullanır.
-      open_source: açık kaynak yazılım
+      description: Bu site %{open_source} olan %{consul} ile sunuluyor.
+      open_source: açık kaynaklı yazılım
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Yaşamak istediğiniz şehri nasıl şekillendireceğinize karar verin.
       participation_title: Katılım
@@ -232,7 +232,7 @@ tr:
           one: Bir yeni bildiriminiz var
           other: '%{count} yeni bildirimleriniz var'
         notifications: Bildirimler
-      sdg: "Sürdürülebilir Gelişim Hedefleri"
+      sdg: "SGH"
   notifications:
     index:
       empty_notifications: Yeni bildiriminiz yok.
@@ -311,7 +311,7 @@ tr:
     retire_options:
       duplicated: Çoğaltılmış
       started: Zaten yapım aşamasında
-      unfeasible: Uygun bulunmamış
+      unfeasible: Uygulanabilir bulunmamış
       done: Tamam
       other: Diğer
     form:
@@ -352,7 +352,7 @@ tr:
         all: Tüm
         duplicated: Çoğaltılmış
         started: Yapım aşamasında
-        unfeasible: Uygun bulunmamış
+        unfeasible: Uygulanabilir bulunmamış
         done: Tamam
         other: Diğer
       search_form:
@@ -666,7 +666,7 @@ tr:
       date_5: "Özelleştirilmiş"
       from: "Kaynak"
       general: "Metin ile"
-      goal: "SKH'ye göre"
+      goal: "SGH'ne göre"
       goal_blank: "Hedef seç"
       search: "Filtre"
       target: "Hedefe göre"
@@ -844,7 +844,7 @@ tr:
     verified_only: Yalnızca doğrulanan kullanıcılar önerilere oy verebilir; %{verify_account}.
     budget_investments:
       not_verified: Yalnızca doğrulanan kullanıcılar yatırım projelerine oy verebilir; %{verify_account}.
-      unfeasible: Uygun bulunmamış yatırım projeleri desteklenemez
+      unfeasible: Uygulanabilir bulunmamış yatırım projeleri desteklenemez
       not_voting_allowed: Oy kullanma aşaması kapanmıştır
       different_heading_assigned:
         one: "Yatırım projelerini yalnızca %{count} bölgesinde destekleyebilirsiniz. Siz zaten %{supported_headings} 'teki yatırımları desteklediniz."
