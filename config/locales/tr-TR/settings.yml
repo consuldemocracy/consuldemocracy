@@ -135,7 +135,7 @@ tr:
       remove_investments_supports: "Bütçe yatırımlarından destekler geri çekilebilsin"
       remove_investments_supports_description: "Projelerin seçilmesi aşamasında kullanıcılar bütçe yatırımlarına katkı desteklerini geri çekebilsin."
       sdg: SKH
-      sdg_description: Yönetim menüsünde ve genel ayarlarda Sürdürülebilir Kalkınma Hedefleri bölümlerini etkinleştirin.
+      sdg_description: Yönetim menüsünde ve genel ayarlarda sürdürülebilir gelişim hedefleri bölümlerini etkinleştirin.
     remote_census:
       general:
         endpoint: "Bitiş Noktası"
@@ -216,7 +216,7 @@ tr:
     sdg:
       process:
         debates: Tartışmalardaki ilgili SKH'ler
-        debates_description: Tartışmaların Sürdürülebilir Kalkınma Hedefleri ile ilişkilendirilmesine izin ver
+        debates_description: Tartışmalar sürdürülebilir gelişim hedefleri ile ilişkilendirilebilsin
         proposals: Tekliflerdeki ilgili SKH'ler
         proposals_description: Tekliflerin Sürdürülebilir Kalkınma Hedefleri ile ilişkilendirilmesine izin ver
         polls: Anketlerdeki ilgili SKH
