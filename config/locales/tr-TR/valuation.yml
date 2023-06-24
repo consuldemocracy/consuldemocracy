@@ -45,8 +45,8 @@ tr:
         price_first_year: İlk yılın maliyeti
         currency: "€"
         feasibility: Uygulanabilirlik
-        feasible: Uygun bulunmuş
-        unfeasible: Uygun bulunmamış
+        feasible: Uygulanabilir bulunmuş
+        unfeasible: Uygulanabilir bulunmamış
         undefined: Tanımlanmamış
         valuation_finished: Değerlendirildi
         duration: Zaman aralığı
@@ -59,10 +59,10 @@ tr:
         price: "Maliyet (%{currency})"
         price_first_year: "İlk yılın maliyeti (%{currency}) <small>(isteğe bağlı, veri kamuya açık değil)</small>"
         feasibility: Uygulanabilirlik
-        valuation_finished_alert: "Bu raporu tamamlandı olarak işaretlemek istediğinizden emin misiniz? Bunu yaparsanız, artık değiştirilemez."
-        not_feasible_alert: "Proje yazarına hemen uygun bulunmama raporunun bulunduğu bir e-posta gönderilecek."
+        valuation_finished_alert: "Bu raporu tamamlanmış olarak işaretlemek istediğinize emin misiniz? Bu yapıldığında rapor artık değiştirilemez."
+        not_feasible_alert: "Proje sahibine hemen uygulanabilir bulunmama raporunun bulunduğu bir e-posta gönderilecek."
         save: Değişiklikleri kaydet
       notice:
         valuate: "Dosya güncellendi"
-      valuation_comments: Değerlendirme yorumları
-      not_in_valuating_phase: Yatırımlar sadece Bütçe değerlendirme aşamasındayken değerlendirilebilir
+      valuation_comments: Değerlendirmeler
+      not_in_valuating_phase: Yatırımlar yalnızca bütçe değerlendirme aşamasındayken değerlendirilebilir
