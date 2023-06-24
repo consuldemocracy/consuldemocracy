@@ -21,7 +21,7 @@ tr:
       page_title: "%{budget} - Katılımcı istatistikleri"
       total_investments: "Yatırım projeleri toplamı"
       total_selected_investments: "Son oylama aşamasındaki projeler"
-      total_unfeasible_investments: "Uygun bulunmayan projeler"
+      total_unfeasible_investments: "Uygulanabilir bulunmayan projeler"
       by_phase: "Aşamalara göre katılımcılar"
       by_heading: "Aşamalara ve başlıklara göre katılımcılar"
       total: "Toplam"
