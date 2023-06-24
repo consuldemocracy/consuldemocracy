@@ -7,7 +7,7 @@ tr:
     name: Ad
     email: E-posta
     description: Açıklama
-    related_sdg_list: Amaçlar ve Hedefler
+    related_sdg_list: Amaçlar ve hedefler
   activerecord:
     models:
       activity:
@@ -83,8 +83,8 @@ tr:
         one: "yerel hedef"
         other: "yerel hedef"
       sdg/manager:
-        one: "SKH yöneticisi"
-        other: "SKH yöneticileri"
+        one: "SGH yöneticisi"
+        other: "SGH yöneticileri"
       sdg/target:
         one: "hedef"
         other: "hedef"
@@ -182,16 +182,16 @@ tr:
         image: "Önerinin açıklayıcı görseli"
         image_title: "Görsel adı"
         duration: "Zaman aralığı"
-        feasibility_feasible: "Uygun bulunmuş"
+        feasibility_feasible: "Uygulanabilir bulunmuş"
         feasibility_undecided: "Tanımlanmamış"
-        feasibility_unfeasible: "Uygun bulunmamış"
+        feasibility_unfeasible: "Uygulanabilir bulunmamış"
         incompatible: "Uyumsuz olarak işaretle"
         milestone_tag_list: "Aşama etiketleri"
         price_explanation: "Fiyat açıklaması"
         selected: "Seçilmiş olarak işaretle"
         selected_true: "Seçilmiş"
         selected_false: "Seçilmemiş"
-        unfeasibility_explanation: "Uygun bulunma açıklaması"
+        unfeasibility_explanation: "Uygunlanabilir bulunma açıklaması"
         valuation_finished: "Değerlendirme tamamlandı"
         valuator_ids: "Gruplar"
         valuation_tag_list: "Etiketler"
@@ -511,7 +511,7 @@ tr:
         published_proposal: "Yayınlanmış öneriler için mi?"
       dashboard/administrator_task:
         source: Kaynak
-        user: Tarafından yürütülen
+        user: Yürüten
       link:
         label: Başlık
         url: Adres
@@ -542,7 +542,7 @@ tr:
         debate:
           attributes:
             tag_list:
-              less_than_or_equal_to: "etiketler %{count} 'tan küçük veya ona eşit olmalıdır"
+              less_than_or_equal_to: "etiketler %{count} taneden küçük veya eşit olmalı"
         direct_message:
           attributes:
             max_per_day:
@@ -567,31 +567,31 @@ tr:
         poll/voter:
           attributes:
             document_number:
-              not_in_census: "Belge sayımda değil"
+              not_in_census: "Belge Census üzerinde yok"
             user_id:
               has_voted: "Kullanıcı zaten oy kullanmış"
         legislation/process:
           attributes:
             end_date:
-              invalid_date_range: başlangıç tarihi sonrasında veya sırasında olmalıdır
+              invalid_date_range: başlangıç tarihinde veya sonrasında olmalı
             debate_end_date:
-              invalid_date_range: tartışma başlangıç tarihi sonrasında veya sırasında olmalıdır
+              invalid_date_range: tartışma başlangıç tarihinde veya sonrasında olmalı
             draft_end_date:
-              invalid_date_range: taslak başlangıç tarihi sonrasında veya sırasında olmalıdır
+              invalid_date_range: taslak başlangıç tarihinde veya sonrasında olmalı
             allegations_end_date:
-              invalid_date_range: iddiaların başlama tarihinden sonra veya sırasında olmalı
+              invalid_date_range: yorumların başlama tarihinde veya sonrasında olmalı
         local_census_record:
           attributes:
             document_type:
-              inclusion: listede yer almamaktadır, izin verilen değerler Kimlik Kartı için 1, pasaport için 2 ve ikamet belgesi için 3'tür.
+              inclusion: listede yok. İzin verilen değerler, kimlik kartı için 1, pasaport için 2, ikamet belgesi için 3.
         proposal:
           attributes:
             tag_list:
-              less_than_or_equal_to: "etiketiler %{count} 'tan daha az veya eşit sayıda olmalıdır"
+              less_than_or_equal_to: "etiketler %{count} taneden az veya eşit olmalı"
         budget/investment:
           attributes:
             tag_list:
-              less_than_or_equal_to: "etiketiler %{count} 'tan daha az veya eşit sayıda olmalıdır"
+              less_than_or_equal_to: "etiketler %{count} taneden az veya eşit olmalı"
         proposal_notification:
           attributes:
             minimum_interval:
@@ -604,7 +604,7 @@ tr:
         site_customization/page:
           attributes:
             slug:
-              slug_format: "harfler, sayılar, _ ve - olmalıdır"
+              slug_format: "harfler, rakamlar, _ ve - karakterleri olmalı"
         site_customization/image:
           attributes:
             image:
@@ -621,10 +621,10 @@ tr:
         sdg/local_target:
           attributes:
             code:
-              invalid: "hedefi bir nokta ile devam edip numara ile bittiğinden aynı kod ile başlamalı"
+              invalid: "hedefindeki kod ile başlamalı, bir nokta ile ilerlemeli ve bir numara ile bitmeli"
       messages:
-        translations_too_short: En az bir çeviri sağlamak zorunludur
-        record_invalid: "Onaylama başarısız: %{errors}"
+        translations_too_short: En az bir çeviri sağlanması zorunludur
+        record_invalid: "Doğrulanamadı: %{errors}"
         another_poll_active: Belirtilen aralıkta etkin olan başka bir oylama var
         restrict_dependent_destroy:
           has_one: "%{record} bağlı kayıt bulunduğundan kayıt silinemez"
