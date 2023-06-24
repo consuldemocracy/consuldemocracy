@@ -10,55 +10,55 @@ tr:
         title: Katılımcı bütçeler
         filters:
           current: Açık
-          finished: Bitmiş
-        table_name: İsim
+          finished: Tamamlanmış
+        table_name: Ad
         table_phase: Aşama
-        table_assigned_investments_valuation_open: Açık değerlendirme ile atanan yatırım projeleri
+        table_assigned_investments_valuation_open: Açık değerlendirme ile belirlenmiş yatırım projeleri
         table_actions: Yapılacaklar
-        evaluate: Değerlendirmek
-        no_budgets: "Bütçe yok"
+        evaluate: Değerlendir
+        no_budgets: "Herhangi bir bütçe yok"
     budget_investments:
       index:
         headings_filter_all: Tüm başlıklar
         filters:
           valuation_open: Açık
-          valuating: Değerlendirme altında
-          valuation_finished: Değerlendirme bitti
-        assigned_to: "%{valuator}'a atandı"
+          valuating: Değerlendiriliyor
+          valuation_finished: Değerlendirildi
+        assigned_to: "%{valuator} bilirkişisi görevlendirildi"
         title: Yatırım projeleri
         edit: Dosyayı düzenle
-        table_id: KİMLİK
+        table_id: Kimlik
         table_title: Başlık
         table_heading_name: Başlık adı
         table_actions: Yapılacaklar
-        no_investments: "Hiç yatırım projesi yok."
+        no_investments: "Herhangi bir yatırım projesi yok."
       show:
         back: Geri
         title: Yatırım projesi
         info: Sahip bilgileri
-        by: Tarafından gönderildi
-        sent: Tarihinde gönderildi
+        by: Gönderen
+        sent: Gönderilme zamanı
         heading: Başlık
         dossier: Dosya
-        edit_dossier: Dosya düzenleme
-        price: Fiyat
-        price_first_year: İlk yıl sırasındaki maliyet
+        edit_dossier: Dosyayı düzenle
+        price: Maliyet
+        price_first_year: İlk yılın maliyeti
         currency: "€"
-        feasibility: Fizibilite
+        feasibility: Uygulanabilirlik
         feasible: Uygun bulunmuş
         unfeasible: Uygun bulunmamış
-        undefined: Tanımsız
-        valuation_finished: Değerlendirme bitti
-        duration: Zaman kapsamı
+        undefined: Tanımlanmamış
+        valuation_finished: Değerlendirildi
+        duration: Zaman aralığı
         responsibles: Sorumlular
-        assigned_admin: Atanmış yönetici
-        assigned_valuators: Atanmış bilirkişiler
-        preview: Yatırım ön izleme
+        assigned_admin: Görevlendirilmiş yönetici
+        assigned_valuators: Görevlendirilmiş bilirkişiler
+        preview: Yatırım ön izlemesi
       edit:
         dossier: Dosya
-        price: "Fiyat (%{currency})"
-        price_first_year: "İlk yıl içindeki maliyet(%{currency}) <small>(isteğe bağlı, veri kamuya açık değil)</small>"
-        feasibility: Fizibilite
+        price: "Maliyet (%{currency})"
+        price_first_year: "İlk yılın maliyeti (%{currency}) <small>(isteğe bağlı, veri kamuya açık değil)</small>"
+        feasibility: Uygulanabilirlik
         valuation_finished_alert: "Bu raporu tamamlandı olarak işaretlemek istediğinizden emin misiniz? Bunu yaparsanız, artık değiştirilemez."
         not_feasible_alert: "Proje yazarına hemen uygun bulunmama raporunun bulunduğu bir e-posta gönderilecek."
         save: Değişiklikleri kaydet
