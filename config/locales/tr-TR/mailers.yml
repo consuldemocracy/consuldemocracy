@@ -59,13 +59,13 @@ tr:
       sincerely: "İçtenlikle,"
       share: "Projenizi paylaşın"
     budget_investment_unfeasible:
-      title: "Yatırım projeniz uygun bulunmamış olarak işaretlenmiş"
+      title: "Yatırım projeniz uygulanabilir bulunmamış olarak işaretlenmiş"
       hi: "Değerli kullanıcı,"
       new: "Tüm bunlar için, sizi bu sürecin koşullarına uygun <strong>yeni bir yatırım</strong> hazırlamaya çağırıyoruz. Bunun için şu bağlantıyı izleyebilirsiniz: %{url}."
       new_href: "yeni yatırım projesi"
       sincerely: "Saygılarımızla"
       sorry: "Verdiğimiz rahatsızlıktan dolayı özür dileriz ve değerli katılımınız için yeniden teşekkür ederiz."
-      subject: "'%{code}' yatırım projeniz uygun bulunmamış olarak işaretlendi"
+      subject: "'%{code}' yatırım projeniz uygulanabilir bulunmamış olarak işaretlendi"
     budget_investment_selected:
       subject: "Sizin yatırım projeniz '%{code}' seçildi"
       title: "Yatırım projeniz seçilmiştir"
