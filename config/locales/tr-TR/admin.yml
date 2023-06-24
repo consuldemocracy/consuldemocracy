@@ -35,7 +35,7 @@ tr:
           proposals: Öneriler
           budgets: Katılımcı bütçeleme
           help_page: Yardım sayfası
-          sdg: SKH
+          sdg: SGH
       create:
         notice: "Afiş oluşturuldu"
       destroy:
@@ -82,9 +82,9 @@ tr:
         preview: "Bütçeyi Görüntüle"
         preview_results: "Sonuçları ön izlemesi"
       index:
-        title: Katılımcı bütçe
+        title: Katılımcı bütçeler
         new_link: Yeni bütçe oluştur
-        filter: Filtre
+        filter: Süz
         filters:
           all: Tümü
           open: Açık
@@ -166,6 +166,8 @@ tr:
         calculate: Kazanan Yatırımları Hesapla
         calculated: Kazananlar hesaplanıyor, bu bir dakika sürebilir.
         recalculate: Kazanan Yatırımları Yeniden Hesapla
+      ballots:
+        feature_disabled: 'Kabinler oluşturmak için <strong>oylama</strong> özelliği etkinleştirilmiş olmalıdır. <a href="%{link}">Yapılandırma</a> bölümünden etkinleştirebilirsiniz.'
     budget_groups:
       name: "Ad"
       headings_name: "Başlıklar"
@@ -243,10 +245,10 @@ tr:
           without_valuator: Atanmış bilirkişi olmadan
           under_valuation: Değerlendirme altında
           valuation_finished: Değerlendirme bitti
-          feasible: Uygun bulunmuş
+          feasible: Uygulanabilir bulunmuş
           selected: Seçilmiş
           undecided: Kararsız
-          unfeasible: Uygun bulunmamış
+          unfeasible: Uygulanabilir bulunmamış
           min_total_supports: Minimum destek
           max_total_supports: Minimum destek
           winners: Kazananlar
@@ -262,8 +264,8 @@ tr:
         no_admin_assigned: Hiç yönetici atanmamış
         no_valuators_assigned: Hiç bilirkişi atanmamış
         feasibility:
-          feasible: "Uygun bulunmuş"
-          unfeasible: "Uygun bulunmamış"
+          feasible: "Uygulanabilir bulunmuş"
+          unfeasible: "Uygulanabilir bulunmamış"
           undecided: "Kararsız"
         selected: "Seçilmiş"
         select: "Seç"
@@ -275,7 +277,7 @@ tr:
           valuator: Bilirkişi
           valuation_group: Değerlendirme Grubu
           geozone: İşlem kapsamı
-          feasibility: Fizibilite
+          feasibility: Uygulanabilirlik
           valuation_finished: Değ. Bit.
           selected: Seçilmiş
           visible_to_valuators: Bilirkişileri göster
@@ -323,7 +325,7 @@ tr:
         user_tags: Kullanıcı etiketler atanmış
         tags_placeholder: "Virgülle ayırmak istediğiniz etiketleri yazın (,)"
         undefined: Tanımlanmamış
-      search_unfeasible: Uygun bulunmayanları ara
+      search_unfeasible: Uygulanabilir bulunmayanları ara
     budgets_wizard:
       creation_timeline:
         budget: Bütçe
@@ -731,7 +733,7 @@ tr:
       hidden_users: Gizli kullanıcılar
       administrators: Yöneticiler
       managers: Yöneticiler
-      sdg_managers: SKH Yöneticileri
+      sdg_managers: SGH yöneticileri
       moderators: Sorumlular
       messaging_users: Kullanıcılara mesajlar
       newsletters: Bültenler
@@ -762,6 +764,8 @@ tr:
           community: "Topluluk"
           proposals: "Öneriler"
           polls: "Anketler"
+          legislation: "Katılımcı mevzuat"
+          budgets: "Bütçeler"
           layouts: "Düzenler"
           machine_learning: "Yapay Zeka / Makine Öğrenmesi"
           mailers: "E-postalar"
@@ -813,7 +817,7 @@ tr:
       all_proposal_authors: Öneri sahipleri (arşivlenmiş ve geri çekilmişlerle birlikte)
       proposal_authors: Öneri sahipleri
       investment_authors: Geçerli bütçedeki yatırım sahipleri
-      feasible_and_undecided_investment_authors: "Güncel bütçedeki bazı yatırımların yazarları şunlarla uyumlu değil: [valuation finished unfesasible]"
+      feasible_and_undecided_investment_authors: "Güncel bütçedeki bazı yatırımların sahipleri şunlarla uyumlu değil: [valuation finished unfesasible]"
       selected_investment_authors: Geçerli bütçedeki seçilmiş yatırımların sahipleri
       winner_investment_authors: Geçerli bütçedeki kazanan yatırımların sahipleri
       not_supported_on_current_budget: Cari bütçeye yapılan yatırımları desteklemeyen kullanıcılar
@@ -907,8 +911,8 @@ tr:
         title: "Bütçe yatırımı seçildi"
         description: "Bütçe yatırımının seçildiği sahibine bildirilsin."
       budget_investment_unfeasible:
-        title: "Bütçe yatırımı uygun bulunmayan"
-        description: "Uygun bulunmamış olarak işaretlenen bütçe yatırımları sahiplerine bildirilsin."
+        title: "Bütçe yatırımı uygulanabilir bulunmayan"
+        description: "Uygulanabilir bulunmamış olarak işaretlenen bütçe yatırımları sahiplerine bildirilsin."
       budget_investment_unselected:
         title: "Bütçe yatırımı seçilmedi"
         description: "Bütçe yatırımının oylama aşamasına seçilmediği sahibine bildirilsin."
@@ -1331,7 +1335,7 @@ tr:
           title: Uzaktan nüfus sayımı yapılandırması
           how_to_enable: 'Uzaktan sayımı(SOAP) yapılandırmak için "Özellikler" sekmesinden "Uzaktan sayıma(SOAP) bağlantıyı yapılandır" seçeneğini etkinleştirmelisiniz.'
         sdg:
-          title: SKH yapılandırması
+          title: SGH yapılandırması
           how_to_enable: 'SKH ile ilgili yapılandırma seçeneklerini görüntülemek için, "Özellikler" sekmesinden "SKH" özelliğini etkinleştirmelisiniz.'
       remote_census_general_name: Genel Bilgi
       remote_census_request_name: Veri Talebi
@@ -1524,7 +1528,7 @@ tr:
         debates: "Tartışmalar"
         polls: "Anketler"
         proposals: "Teklifler"
-        title: "Sürdürülebilir Kalkınma Hedefleri - İstatistikler"
+        title: "Sürdürülebilir gelişim hedefleri - İstatistikler"
     tags:
       create: Konu oluştur
       index:
