@@ -41,9 +41,9 @@ class Image < ApplicationRecord
 
   def variant(style)
     if style
-      attachment.variant(self.class.styles[style])
+      attachment.variant(self.class.styles[style].merge(strip: true))
     else
-      attachment
+      attachment.variant(strip: true)
     end
   end
 
