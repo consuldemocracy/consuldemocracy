@@ -64,8 +64,7 @@
       </div>
 
       <div id="<%= dom_id(proposal) %>_votes" class="small-12 medium-3 column">
-        <%= render "legislation/proposals/votes",
-                  { proposal: proposal, vote_url: vote_legislation_process_proposal_path(proposal.legislation_process_id, proposal, value: "yes") } %>
+        <%= render Legislation::Proposals::VotesComponent.new(proposal) %>
       </div>
     </div>
   </div>
