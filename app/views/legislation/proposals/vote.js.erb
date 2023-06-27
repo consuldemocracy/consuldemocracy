@@ -1,1 +1,2 @@
-$("#<%= dom_id(@proposal) %>_votes").html("<%= j render("legislation/proposals/votes", proposal: @proposal) %>");
+$("#<%= dom_id(@proposal) %>_votes")
+  .html("<%= j render Legislation::Proposals::VotesComponent.new(@proposal) %>");

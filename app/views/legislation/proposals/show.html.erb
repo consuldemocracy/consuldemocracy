@@ -105,7 +105,7 @@
         <div class="sidebar-divider"></div>
         <h2><%= t("votes.supports") %></h2>
         <div id="<%= dom_id(@proposal) %>_votes">
-          <%= render "votes", proposal: @proposal %>
+          <%= render Legislation::Proposals::VotesComponent.new(@proposal) %>
         </div>
         <%= render "shared/social_share",
           share_title: t("proposals.show.share"),
