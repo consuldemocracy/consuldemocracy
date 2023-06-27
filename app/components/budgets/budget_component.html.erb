@@ -1,6 +1,6 @@
 <% if budget.image.present? %>
   <div class="budget-header with-background-image"
-       style="background-image: url('<%= j polymorphic_path(budget.image.variant(:large)) %>');">
+       style="<%= attached_background_css polymorphic_path(budget.image.variant(:large)) %>">
 <% else %>
   <div class="budget-header">
 <% end %>
