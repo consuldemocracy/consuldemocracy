@@ -64,7 +64,7 @@
       </div>
 
       <div id="<%= dom_id(proposal) %>_votes" class="small-12 medium-3 column">
-        <%= render "legislation/proposals/votes", proposal: proposal %>
+        <%= render Legislation::Proposals::VotesComponent.new(proposal) %>
       </div>
     </div>
   </div>
