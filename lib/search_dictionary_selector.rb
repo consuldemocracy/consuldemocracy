@@ -23,7 +23,7 @@ module SearchDictionarySelector
     pt: "portuguese",
     ro: "romanian",
     ru: "russian",
-    sv: "serbian",
+    sr: "serbian",
     sv: "swedish",
     tr: "turkish",
     yi: "yiddish"
