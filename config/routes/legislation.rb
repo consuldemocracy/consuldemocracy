@@ -22,7 +22,9 @@ namespace :legislation do
       collection do
         get :suggest
       end
+    end
 
+    resources :legislation_proposals, path: "proposals", only: [] do
       resources :votes, controller: "proposals/votes", only: [:create, :destroy]
     end
 
@@ -40,6 +42,10 @@ end
 
 resolve "Legislation::Proposal" do |proposal, options|
   [proposal.process, :proposal, options.merge(id: proposal)]
+end
+
+resolve "Vote" do |vote, options|
+  [*resource_hierarchy_for(vote.votable), vote, options]
 end
 
 resolve "Legislation::Question" do |question, options|

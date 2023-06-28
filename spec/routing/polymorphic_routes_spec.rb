@@ -16,6 +16,26 @@ describe "Polymorphic routes" do
       expect(polymorphic_path(proposal)).to eq legislation_process_proposal_path(process, proposal)
     end
 
+    it "routes legislation proposals vote" do
+      process = create(:legislation_process)
+      proposal = create(:legislation_proposal, process: process)
+      path = polymorphic_path(Vote.new(votable: proposal), value: true)
+
+      expect(path).to eq legislation_process_legislation_proposal_votes_path(process, proposal, value: true)
+    end
+
+    it "routes legislation proposals remove vote" do
+      process = create(:legislation_process)
+      proposal = create(:legislation_proposal, process: process)
+      vote = create(:vote, votable: proposal)
+      path = polymorphic_path(vote, value: true)
+
+      expect(path).to eq legislation_process_legislation_proposal_vote_path(process,
+                                                                            proposal,
+                                                                            vote,
+                                                                            value: true)
+    end
+
     it "routes legislation questions" do
       process = create(:legislation_process)
       question = create(:legislation_question, process: process)

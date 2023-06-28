@@ -29,27 +29,15 @@ class Shared::InFavorAgainstComponent < ApplicationComponent
 
     def vote_in_favor_against_path(value)
       if user_already_voted_with(value)
-        remove_vote_path(value)
+        vote = Vote.find_by!(votable: votable, voter: current_user)
+        polymorphic_path(vote)
       else
-        if votable.class.name == "Debate"
-          debate_votes_path(votable, value: value)
-        else
-          legislation_process_proposal_votes_path(votable.process, votable, value: value)
-        end
+        polymorphic_path(Vote.new(votable: votable), value: value)
       end
     end
 
     def user_already_voted_with(value)
       current_user&.voted_as_when_voted_for(votable) == parse_vote(value)
-    end
-
-    def remove_vote_path(value)
-      vote = votable.votes_for.find_by!(voter: current_user)
-      if votable.class.name == "Debate"
-        debate_vote_path(votable, vote, value: value)
-      else
-        legislation_process_proposal_vote_path(votable.process, votable, vote, value: value)
-      end
     end
 
     def parse_vote(value)
