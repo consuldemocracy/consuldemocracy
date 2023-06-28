@@ -3,24 +3,16 @@
   &nbsp;|&nbsp;
 
   <span class="in-favor">
-    <%= button_to vote_in_favor_against_path("yes"),
-                  method: user_already_voted_with("yes") ? "delete" : "post",
-                  remote: remote_submit("yes"),
-                  "aria-pressed": pressed?("yes"),
-                  title: t("votes.agree") do %>
-      <span class="show-for-sr"><%= t("votes.agree") %></span>
-    <% end %>
+    <%= render Shared::VoteButtonComponent.new(comment,
+                                               value: "yes",
+                                               title: t("votes.agree")) %>
     <%= comment.total_likes %>
   </span>
 
   <span class="against">
-    <%= button_to vote_in_favor_against_path("no"),
-                  method: user_already_voted_with("no") ? "delete" : "post",
-                  remote: remote_submit("no"),
-                  "aria-pressed": pressed?("no"),
-                  title: t("votes.disagree") do %>
-      <span class="show-for-sr"><%= t("votes.disagree") %></span>
-    <% end %>
+    <%= render Shared::VoteButtonComponent.new(comment,
+                                               value: "no",
+                                               title: t("votes.disagree")) %>
     <%= comment.total_dislikes %>
   </span>
 </div>

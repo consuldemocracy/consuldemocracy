@@ -1,25 +1,17 @@
 <div class="in-favor-against">
   <div class="in-favor">
-    <%= button_to vote_in_favor_against_path("yes"),
-                  title: t("votes.agree"),
-                  "aria-label": agree_aria_label,
-                  "aria-pressed": pressed?("yes"),
-                  method: user_already_voted_with("yes") ? "delete" : "post",
-                  remote: true do %>
-      <span class="show-for-sr"><%= t("votes.agree") %></span>
-    <% end %>
+    <%= render Shared::VoteButtonComponent.new(votable,
+                                               value: "yes",
+                                               "aria-label": agree_aria_label,
+                                               title: t("votes.agree")) %>
     <span class="percentage"><%= votes_percentage("likes", votable) %></span>
   </div>
 
   <div class="against">
-    <%= button_to vote_in_favor_against_path("no"),
-                  title: t("votes.disagree"),
-                  "aria-label": disagree_aria_label,
-                  "aria-pressed": pressed?("no"),
-                  method: user_already_voted_with("no") ? "delete" : "post",
-                  remote: true do %>
-      <span class="show-for-sr"><%= t("votes.disagree") %></span>
-    <% end %>
+    <%= render Shared::VoteButtonComponent.new(votable,
+                                               value: "no",
+                                               "aria-label": disagree_aria_label,
+                                               title: t("votes.disagree")) %>
     <span class="percentage"><%= votes_percentage("dislikes", votable) %></span>
   </div>
 </div>
