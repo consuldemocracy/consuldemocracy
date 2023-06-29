@@ -111,6 +111,7 @@
 //= require budget_hide_money
 //= require datepicker
 //= require link_to_top
+//= require authenticity_token_refresh
 //= require_tree ./admin
 //= require_tree ./sdg
 //= require_tree ./sdg_management
@@ -172,6 +173,7 @@ var initialize_modules = function() {
   App.LinkToTop.initialize();
   App.SDGRelatedListSelector.initialize();
   App.SDGManagementRelationSearch.initialize();
+  App.AuthenticityTokenRefresh.initialize();
 };
 
 var destroy_non_idempotent_modules = function() {
