@@ -81,12 +81,20 @@
       App.Map.addGeozones(map);
     },
     leafletMap: function(element) {
-      var centerData, mapCenterLatLng;
+      var centerData, mapCenterLatLng, map;
 
       centerData = App.Map.centerData(element);
       mapCenterLatLng = new L.LatLng(centerData.lat, centerData.long);
+      map = L.map(element.id, { scrollWheelZoom: false }).setView(mapCenterLatLng, centerData.zoom);
 
-      return L.map(element.id, { scrollWheelZoom: false }).setView(mapCenterLatLng, centerData.zoom);
+      map.on("focus", function() {
+        map.scrollWheelZoom.enable();
+      });
+      map.on("blur mouseout", function() {
+        map.scrollWheelZoom.disable();
+      });
+
+      return map;
     },
     attributionPrefix: function() {
       return '<a href="https://leafletjs.com" title="A JavaScript library for interactive maps">Leaflet</a>';
