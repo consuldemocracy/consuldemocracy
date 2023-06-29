@@ -1,4 +1,7 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+
+  skip_before_action :verify_authenticity_token
+  skip_authorization_check
   def twitter
     sign_in_with :twitter_login, :twitter
   end
@@ -13,6 +16,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def wordpress_oauth2
     sign_in_with :wordpress_login, :wordpress_oauth2
+  end
+
+  def saml
+    sign_in_with :saml_login, :saml
   end
 
   def after_sign_in_path_for(resource)
@@ -31,7 +38,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       auth = request.env["omniauth.auth"]
 
       identity = Identity.first_or_create_from_oauth(auth)
-      @user = current_user || identity.user || User.first_or_initialize_for_oauth(auth)
+#      @user = current_user || identity.user || User.first_or_initialize_for_oauth(auth)
+      @user = current_user || identity.user || initialize_user_for_provider(provider, auth)
 
       if save_user
         identity.update!(user: @user)
@@ -46,4 +54,16 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     def save_user
       @user.save || @user.save_requiring_finish_signup
     end
+
+def initialize_user_for_provider(provider, auth)
+  case provider
+  when :twitter
+    User.first_or_initialize_for_twitter(auth)
+  when :saml
+    User.first_or_initialize_for_saml(auth)
+  else
+    User.first_or_initialize_for_oauth(auth)
+  end
+end
+
 end

@@ -22,6 +22,8 @@ set :deploy_to, deploysecret(:deploy_to)
 set :ssh_options, port: deploysecret(:ssh_port)
 
 set :repo_url, "https://github.com/CoslaDigital/consul-latest.git"
+#set :repo_url, "https://github.com/consul/consul.git"
+set :branch, 'saml'
 
 set :revision, `git rev-parse --short #{fetch(:branch)}`.strip
 
