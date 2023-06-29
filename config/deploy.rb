@@ -40,6 +40,7 @@ set :puma_conf, "#{release_path}/config/puma/#{fetch(:rails_env)}.rb"
 
 set :delayed_job_workers, 2
 set :delayed_job_roles, :background
+set :delayed_job_monitor, true
 
 set :whenever_roles, -> { :app }
 
