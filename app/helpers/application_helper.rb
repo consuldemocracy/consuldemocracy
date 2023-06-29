@@ -10,22 +10,24 @@ module ApplicationHelper
     %i[ar fa he].include?(locale)
   end
 
-  def markdown(text)
+  def markdown(text, **render_options)
     return text if text.blank?
 
-    render_options = {
+    default_render_options = {
       filter_html:     false,
       hard_wrap:       true,
       link_attributes: {  target: "_blank" }
     }
-    renderer = Redcarpet::Render::HTML.new(render_options)
+    renderer = Redcarpet::Render::HTML.new(default_render_options.merge(render_options))
+
     extensions = {
       autolink:           true,
       fenced_code_blocks: true,
       lax_spacing:        true,
       no_intra_emphasis:  true,
       strikethrough:      true,
-      superscript:        true
+      superscript:        true,
+      tables:             true
     }
 
     AdminLegislationSanitizer.new.sanitize(Redcarpet::Markdown.new(renderer, extensions).render(text))
