@@ -4,7 +4,7 @@
   position: relative;
 
   &::after {
-    @extend %brand-background;
+    @include brand-background;
     bottom: 0;
     content: "";
     height: rem-calc(6);
