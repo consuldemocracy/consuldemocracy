@@ -49,10 +49,12 @@
       </div>
     <% end %>
 
-    <div>
-      <%= f.select :geozone_id, geozone_select_options,
-        include_blank: t("geozones.none") %>
-    </div>
+    <% if Geozone.any? %>
+      <div>
+        <%= f.select :geozone_id, geozone_select_options,
+          include_blank: t("geozones.none") %>
+      </div>
+    <% end %>
 
     <% if feature?(:map) %>
       <div>
