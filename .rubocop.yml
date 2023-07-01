@@ -105,6 +105,9 @@ Layout/MultilineHashBraceLayout:
 Layout/MultilineHashKeyLineBreaks:
   Enabled: true
 
+Layout/MultilineOperationIndentation:
+  Enabled: true
+
 Layout/SpaceAfterColon:
   Enabled: true
 

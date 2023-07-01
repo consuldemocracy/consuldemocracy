@@ -49,7 +49,7 @@ module ProposalsDashboardHelper
 
   def is_proposed_action_request?
     controller_name == "dashboard" && action_name == "new_request" &&
-    dashboard_action&.proposed_action?
+      dashboard_action&.proposed_action?
   end
 
   def is_request_active(id)

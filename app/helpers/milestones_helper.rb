@@ -10,7 +10,7 @@ module MilestonesHelper
             "aria-valuemin": "0",
             tabindex: "0" do
       tag.span(class: "progress-meter", style: "width: #{progress_bar.percentage}%;") +
-      tag.p(text, class: "progress-meter-text")
+        tag.p(text, class: "progress-meter-text")
     end
   end
 end

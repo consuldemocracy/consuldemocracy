@@ -396,7 +396,7 @@ class User < ApplicationRecord
     conditions = warden_conditions.dup
     login = conditions.delete(:login)
     where(conditions.to_hash).find_by(["lower(email) = ?", login.downcase]) ||
-    where(conditions.to_hash).find_by(["username = ?", login])
+      where(conditions.to_hash).find_by(["username = ?", login])
   end
 
   def self.find_by_manager_login(manager_login)

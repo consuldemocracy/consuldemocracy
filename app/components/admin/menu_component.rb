@@ -41,7 +41,7 @@ class Admin::MenuComponent < ApplicationComponent
     def polls?
       controller.class.module_parent == Admin::Poll::Questions::Answers ||
         %w[polls active_polls recounts results questions answers].include?(controller_name) &&
-        action_name != "booth_assignments"
+          action_name != "booth_assignments"
     end
 
     def booths?
