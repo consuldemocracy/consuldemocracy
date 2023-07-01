@@ -21,6 +21,9 @@ Bundler/OrderedGems:
 Layout/AssignmentIndentation:
   Enabled: true
 
+Layout/ClosingHeredocIndentation:
+  Enabled: true
+
 Layout/DotPosition:
   Enabled: true
 
