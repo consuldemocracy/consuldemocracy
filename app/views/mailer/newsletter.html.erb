@@ -6,7 +6,8 @@
 
   <p style="<%= css_for_mailer_text %>">
     <%= sanitize(
-      t("mailers.config.unsubscribe_text",
+      t(
+        "mailers.config.unsubscribe_text",
         notifications: link_to(
           t("mailers.config.notifications_link"),
           edit_subscriptions_url(token: @token),

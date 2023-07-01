@@ -401,8 +401,7 @@ describe "Legislation" do
         create(:milestone,
                milestoneable: process,
                description: "Something important happened",
-               publication_date: Date.new(2018, 3, 22)
-              )
+               publication_date: Date.new(2018, 3, 22))
 
         visit legislation_process_path(process)
 

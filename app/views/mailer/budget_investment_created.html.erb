@@ -20,7 +20,8 @@
 
   <p style="<%= css_for_mailer_text %>">
     <%= sanitize(
-      t("mailers.budget_investment_created.follow",
+      t(
+        "mailers.budget_investment_created.follow",
         link: link_to(t("mailers.budget_investment_created.follow_link"),
                       budgets_url,
                       style: css_for_mailer_link)

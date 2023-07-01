@@ -937,8 +937,7 @@ describe "Admin budget investments", :admin do
                                  price: 1234,
                                  price_first_year: 1000,
                                  administrator: administrator,
-                                 valuators: [valuator]
-                                )
+                                 valuators: [valuator])
 
       visit admin_budget_budget_investments_path(budget_investment.budget)
 
@@ -1757,8 +1756,7 @@ describe "Admin budget investments", :admin do
              :winner,
              :visible_to_valuators,
              budget: budget,
-             author: create(:user, username: "Jon Doe")
-            )
+             author: create(:user, username: "Jon Doe"))
     end
     let(:default_columns) do
       %w[id title supports admin valuator geozone feasibility price

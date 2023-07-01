@@ -29,7 +29,8 @@ class Admin::BudgetsController < Admin::BaseController
     @budget.headings.each { |heading| Budget::Result.new(@budget, heading).delay.calculate_winners }
     redirect_to admin_budget_budget_investments_path(
                   budget_id: @budget.id,
-                  advanced_filters: ["winners"]),
+                  advanced_filters: ["winners"]
+                ),
                 notice: I18n.t("admin.budgets.winners.calculated")
   end
 

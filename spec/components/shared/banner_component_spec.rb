@@ -9,8 +9,7 @@ describe Shared::BannerComponent do
                     post_started_at: (Date.current - 4.days),
                     post_ended_at: (Date.current + 10.days),
                     background_color: "#FF0000",
-                    font_color: "#FFFFFF"
-                   )
+                    font_color: "#FFFFFF")
 
     render_inline Shared::BannerComponent.new(banner)
 
@@ -38,15 +37,13 @@ describe Shared::BannerComponent do
              web_sections: [WebSection.find_by!(name: "debates")],
              title: "First banner",
              description: "First description",
-             target_url: "/first_target"
-            )
+             target_url: "/first_target")
 
       create(:banner,
              web_sections: [WebSection.find_by!(name: "debates")],
              title: "Second banner",
              description: "Second description",
-             target_url: "/second_target"
-            )
+             target_url: "/second_target")
     end
 
     it "only renders one banner" do

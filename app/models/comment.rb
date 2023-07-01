@@ -148,7 +148,8 @@ class Comment < ApplicationRecord
     def validate_body_length
       validator = ActiveModel::Validations::LengthValidator.new(
         attributes: :body,
-        maximum: Comment.body_max_length)
+        maximum: Comment.body_max_length
+      )
       validator.validate(self)
     end
 

@@ -30,6 +30,9 @@ Layout/AssignmentIndentation:
 Layout/ClosingHeredocIndentation:
   Enabled: true
 
+Layout/ClosingParenthesisIndentation:
+  Enabled: true
+
 Layout/DotPosition:
   Enabled: true
 
@@ -106,6 +109,9 @@ Layout/MultilineHashBraceLayout:
   Enabled: true
 
 Layout/MultilineHashKeyLineBreaks:
+  Enabled: true
+
+Layout/MultilineMethodCallBraceLayout:
   Enabled: true
 
 Layout/MultilineMethodCallIndentation:
