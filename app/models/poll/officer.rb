@@ -16,17 +16,19 @@ class Poll
     end
 
     def voting_days_assigned_polls
-      officer_assignments.voting_days.includes(booth_assignment: :poll)
-                               .map(&:booth_assignment)
-                               .map(&:poll).uniq.compact
-                               .sort { |x, y| y.ends_at <=> x.ends_at }
+      officer_assignments.voting_days
+                         .includes(booth_assignment: :poll)
+                         .map(&:booth_assignment)
+                         .map(&:poll).uniq.compact
+                         .sort { |x, y| y.ends_at <=> x.ends_at }
     end
 
     def final_days_assigned_polls
-      officer_assignments.final.includes(booth_assignment: :poll)
-                               .map(&:booth_assignment)
-                               .map(&:poll).uniq.compact
-                               .sort { |x, y| y.ends_at <=> x.ends_at }
+      officer_assignments.final
+                         .includes(booth_assignment: :poll)
+                         .map(&:booth_assignment)
+                         .map(&:poll).uniq.compact
+                         .sort { |x, y| y.ends_at <=> x.ends_at }
     end
 
     def todays_booths

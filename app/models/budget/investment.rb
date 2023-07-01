@@ -199,7 +199,7 @@ class Budget
       with_joins = with_translations(Globalize.fallbacks(I18n.locale))
 
       with_joins.where(id: title_or_id)
-        .or(with_joins.where("budget_investment_translations.title ILIKE ?", "%#{title_or_id}%"))
+                .or(with_joins.where("budget_investment_translations.title ILIKE ?", "%#{title_or_id}%"))
     end
 
     def searchable_values

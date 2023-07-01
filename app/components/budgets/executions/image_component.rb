@@ -9,7 +9,9 @@ class Budgets::Executions::ImageComponent < ApplicationComponent
   private
 
     def milestone
-      investment.milestones.order_by_publication_date
-                           .select { |milestone| milestone.image.present? }.last
+      investment.milestones
+                .order_by_publication_date
+                .select { |milestone| milestone.image.present? }
+                .last
     end
 end

@@ -108,6 +108,9 @@ Layout/MultilineHashBraceLayout:
 Layout/MultilineHashKeyLineBreaks:
   Enabled: true
 
+Layout/MultilineMethodCallIndentation:
+  Enabled: true
+
 Layout/MultilineOperationIndentation:
   Enabled: true
 

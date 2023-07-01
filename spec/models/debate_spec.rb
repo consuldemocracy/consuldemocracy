@@ -376,23 +376,23 @@ describe Debate do
 
     it "expires cache when the author is hidden" do
       expect { debate.author.hide }
-      .to change { [debate.reload.cache_version, debate.author.cache_version] }
+        .to change { [debate.reload.cache_version, debate.author.cache_version] }
     end
 
     it "expires cache when the author is erased" do
       expect { debate.author.erase }
-      .to change { [debate.reload.cache_version, debate.author.cache_version] }
+        .to change { [debate.reload.cache_version, debate.author.cache_version] }
     end
 
     it "expires cache when its author changes" do
       expect { debate.author.update(username: "Eva") }
-      .to change { [debate.reload.cache_version, debate.author.cache_version] }
+        .to change { [debate.reload.cache_version, debate.author.cache_version] }
     end
 
     it "expires cache when the author's organization get verified" do
       create(:organization, user: debate.author)
       expect { debate.author.organization.verify }
-      .to change { [debate.reload.cache_version, debate.author.cache_version] }
+        .to change { [debate.reload.cache_version, debate.author.cache_version] }
     end
   end
 

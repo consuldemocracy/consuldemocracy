@@ -23,7 +23,7 @@ module AdminBudgetInvestmentsHelper
 
   def valuator_select_options(budget)
     budget.valuators.order("description ASC").order("users.email ASC").includes(:user)
-      .map { |v| [v.description_or_email, "valuator_#{v.id}"] }
+          .map { |v| [v.description_or_email, "valuator_#{v.id}"] }
   end
 
   def valuator_group_select_options

@@ -81,7 +81,7 @@ describe LocalCensusRecords::Import do
       expect(import.invalid_records.map(&:date_of_birth))
         .to eq(invalid_records_date_of_births)
       expect(import.invalid_records.map(&:postal_code))
-      .to eq(invalid_records_postal_codes)
+        .to eq(invalid_records_postal_codes)
     end
   end
 end

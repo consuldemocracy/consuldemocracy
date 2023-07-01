@@ -32,8 +32,9 @@ describe "DocumentVerifications" do
   describe "Verifying througth Census" do
     context "Census API" do
       scenario "Verifying a user which does not exist and is not in the census shows an error" do
-        expect_any_instance_of(Verification::Management::Document).to receive(:in_census?)
-                                                                      .and_return(false)
+        expect_any_instance_of(Verification::Management::Document)
+          .to receive(:in_census?)
+          .and_return(false)
 
         login_as_manager
         visit management_document_verifications_path
@@ -55,8 +56,9 @@ describe "DocumentVerifications" do
 
     context "Remote Census API", :remote_census do
       scenario "Verifying a user which does not exist and is not in the census shows an error" do
-        expect_any_instance_of(Verification::Management::Document).to receive(:in_census?)
-                                                                      .and_return(false)
+        expect_any_instance_of(Verification::Management::Document)
+          .to receive(:in_census?)
+          .and_return(false)
 
         login_as_manager
         visit management_document_verifications_path

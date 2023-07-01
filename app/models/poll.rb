@@ -104,7 +104,7 @@ class Poll < ApplicationRecord
     return none if user.nil? || user.unverified?
 
     current.left_joins(:geozones)
-      .where("geozone_restricted = ? OR geozones.id = ?", false, user.geozone_id)
+           .where("geozone_restricted = ? OR geozones.id = ?", false, user.geozone_id)
   end
 
   def self.votable_by(user)

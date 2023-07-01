@@ -56,7 +56,7 @@ describe "Admin custom information texts", :admin do
 
     within("#information-texts-tabs") { click_link "Proposals" }
     expect(find("a[href=\"/admin/site_customization/information_texts?tab=proposals\"].is-active"))
-          .to have_content "Proposals"
+      .to have_content "Proposals"
   end
 
   context "Globalization" do

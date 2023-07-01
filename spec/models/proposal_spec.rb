@@ -427,23 +427,23 @@ describe Proposal do
 
     it "expires cache when the author is hidden" do
       expect { proposal.author.hide }
-      .to change { [proposal.reload.cache_version, proposal.author.cache_version] }
+        .to change { [proposal.reload.cache_version, proposal.author.cache_version] }
     end
 
     it "expires cache when the author is erased" do
       expect { proposal.author.erase }
-      .to change { [proposal.reload.cache_version, proposal.author.cache_version] }
+        .to change { [proposal.reload.cache_version, proposal.author.cache_version] }
     end
 
     it "expires cache when its author changes" do
       expect { proposal.author.update(username: "Eva") }
-      .to change { [proposal.reload.cache_version, proposal.author.cache_version] }
+        .to change { [proposal.reload.cache_version, proposal.author.cache_version] }
     end
 
     it "expires cache when the author's organization get verified" do
       create(:organization, user: proposal.author)
       expect { proposal.author.organization.verify }
-      .to change { [proposal.reload.cache_version, proposal.author.cache_version] }
+        .to change { [proposal.reload.cache_version, proposal.author.cache_version] }
     end
   end
 

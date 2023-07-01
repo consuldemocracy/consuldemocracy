@@ -36,7 +36,7 @@ module CommonActions
 
   def validate_officer
     allow_any_instance_of(Officing::BaseController)
-    .to receive(:verify_officer_assignment).and_return(true)
+      .to receive(:verify_officer_assignment).and_return(true)
   end
 
   def fill_in_proposal
@@ -70,7 +70,7 @@ module CommonActions
     booth = create(:poll_booth) if booth.blank?
 
     allow_any_instance_of(Officing::BaseController)
-    .to receive(:current_booth).and_return(booth)
+      .to receive(:current_booth).and_return(booth)
   end
 
   def click_sdg_goal(code)
