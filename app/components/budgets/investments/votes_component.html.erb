@@ -13,22 +13,22 @@
           </div>
           <% if feature?(:remove_investments_supports) %>
             <%= button_to remove_support_path,
-                class: "button button-remove-support expanded",
-                method: "delete",
-                remote: true,
-                "aria-label": remove_support_aria_label do %>
+                          class: "button button-remove-support expanded",
+                          method: "delete",
+                          remote: true,
+                          "aria-label": remove_support_aria_label do %>
               <%= t("budgets.investments.votes.remove_support") %>
             <% end %>
           <% end %>
         </div>
       <% else %>
         <%= button_to t("budgets.investments.votes.support"), support_path,
-            class: "button button-support expanded",
-            title: t("budgets.investments.investment.support_title"),
-            method: "post",
-            remote: !display_support_alert?,
-            data: ({ confirm: confirm_vote_message } if display_support_alert?),
-            "aria-label": support_aria_label %>
+                      class: "button button-support expanded",
+                      title: t("budgets.investments.investment.support_title"),
+                      method: "post",
+                      remote: !display_support_alert?,
+                      data: ({ confirm: confirm_vote_message } if display_support_alert?),
+                      "aria-label": support_aria_label %>
       <% end %>
     <% end %>
   </div>
@@ -38,11 +38,11 @@
   <% if user_voted_for? && setting["twitter_handle"] %>
     <div class="share-supported">
       <%= render "shared/social_share",
-        title: investment.title,
-        image_url: image_absolute_url(investment.image, :thumb),
-        url: budget_investment_url(investment.budget, investment),
-        description: investment.title,
-        mobile: investment.title %>
+                 title: investment.title,
+                 image_url: image_absolute_url(investment.image, :thumb),
+                 url: budget_investment_url(investment.budget, investment),
+                 description: investment.title,
+                 mobile: investment.title %>
     </div>
   <% end %>
 </div>

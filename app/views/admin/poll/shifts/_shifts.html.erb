@@ -17,7 +17,8 @@
         <td><%= shift.officer_email %></td>
         <td><%= t("admin.poll_shifts.#{shift.task}") %></td>
         <td>
-          <%= render Admin::TableActionsComponent.new(shift,
+          <%= render Admin::TableActionsComponent.new(
+            shift,
             actions: [:destroy],
             destroy_text: t("admin.poll_shifts.new.remove_shift")
           ) %>

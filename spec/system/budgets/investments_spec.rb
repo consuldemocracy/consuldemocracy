@@ -645,7 +645,7 @@ describe "Budget Investments" do
       visit new_budget_investment_path(budget)
 
       expect(page).to have_select "Heading",
-        options: ["", "More hospitals", "Medical supplies", "Even more hospitals"]
+                                  options: ["", "More hospitals", "Medical supplies", "Even more hospitals"]
       expect(page).not_to have_content "Health"
     end
 
@@ -661,7 +661,7 @@ describe "Budget Investments" do
 
       expect(page).not_to have_content("#{heading.name} (#{budget.formatted_heading_price(heading)})")
       expect(page).to have_select "Heading",
-        options: ["", "Health: More hospitals", "Health: Medical supplies", "Education: Schools"]
+                                  options: ["", "Health: More hospitals", "Health: Medical supplies", "Education: Schools"]
 
       select "Health: Medical supplies", from: "Heading"
 
@@ -987,11 +987,11 @@ describe "Budget Investments" do
                         unfeasibility_explanation: "Local government is not competent in this")
 
     investment_2 = create(:budget_investment,
-                        :unfeasible,
-                        :finished,
-                        budget: budget,
-                        heading: heading,
-                        unfeasibility_explanation: "The unfeasible explanation")
+                          :unfeasible,
+                          :finished,
+                          budget: budget,
+                          heading: heading,
+                          unfeasibility_explanation: "The unfeasible explanation")
 
     user = create(:user)
     login_as(user)

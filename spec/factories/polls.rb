@@ -179,8 +179,8 @@ FactoryBot.define do
 
       officer_assignment do
         association :poll_officer_assignment,
-          booth_assignment: booth_assignment,
-          officer: officer || association(:poll_officer)
+                    booth_assignment: booth_assignment,
+                    officer: officer || association(:poll_officer)
       end
     end
 

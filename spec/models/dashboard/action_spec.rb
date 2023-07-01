@@ -290,9 +290,9 @@ describe Dashboard::Action do
 
         it "when proposal has been created today and day_offset is valid only for today" do
           expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
-                                                          proposal)).to include(resource.id)
+                                                            proposal)).to include(resource.id)
           expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
-                                                          proposal)).to include(action.id)
+                                                            proposal)).to include(action.id)
         end
 
         it "when proposal has received a new vote today" do
@@ -302,9 +302,9 @@ describe Dashboard::Action do
           create(:vote, voter: proposal.author, votable: proposal)
 
           expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
-                                                          proposal)).to include(action.id)
+                                                            proposal)).to include(action.id)
           expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
-                                                          proposal)).not_to include(resource.id)
+                                                            proposal)).not_to include(resource.id)
         end
       end
 
@@ -321,9 +321,9 @@ describe Dashboard::Action do
 
         it "when day_offset field is valid for today and invalid for yesterday" do
           expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
-                                                          proposal)).to include(resource.id)
+                                                            proposal)).to include(resource.id)
           expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
-                                                          proposal)).to include(action.id)
+                                                            proposal)).to include(action.id)
         end
 
         it "when proposal has received a new vote today" do
@@ -333,9 +333,9 @@ describe Dashboard::Action do
           create(:vote, voter: proposal.author, votable: proposal)
 
           expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
-                                                          proposal)).to include(action.id)
+                                                            proposal)).to include(action.id)
           expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
-                                                          proposal)).not_to include(resource.id)
+                                                            proposal)).not_to include(resource.id)
         end
       end
     end

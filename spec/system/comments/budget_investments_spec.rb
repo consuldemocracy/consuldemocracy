@@ -469,9 +469,9 @@ describe "Commenting Budget::Investments" do
         manuela = create(:user, username: "Manuela")
         admin   = create(:administrator, user: manuela)
         comment = create(:comment,
-                          commentable: investment,
-                          user: manuela,
-                          administrator_id: admin.id)
+                         commentable: investment,
+                         user: manuela,
+                         administrator_id: admin.id)
 
         visit budget_investment_path(investment.budget, investment)
 

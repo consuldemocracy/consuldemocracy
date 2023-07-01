@@ -157,7 +157,8 @@ describe "Home" do
   end
 
   scenario "if there are cards, the 'featured' title will render" do
-    create(:widget_card,
+    create(
+      :widget_card,
       title: "Card text",
       description: "Card description",
       link_text: "Link text",

@@ -168,7 +168,7 @@ describe "Cards", :admin do
         click_link "Create card"
 
         expect(page).to have_link("Go back",
-          href: admin_site_customization_page_widget_cards_path(custom_page))
+                                  href: admin_site_customization_page_widget_cards_path(custom_page))
 
         fill_in "Title", with: "Card for a custom page"
         fill_in "Link URL", with: "/any_path"
@@ -230,7 +230,7 @@ describe "Cards", :admin do
         click_link "Edit"
 
         expect(page).to have_link("Go back",
-          href: admin_site_customization_page_widget_cards_path(custom_page))
+                                  href: admin_site_customization_page_widget_cards_path(custom_page))
 
         within(".translatable-fields") do
           fill_in "Title", with: "Updated title"

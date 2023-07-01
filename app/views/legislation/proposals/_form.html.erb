@@ -17,13 +17,13 @@
 
     <div class="small-12 column">
       <%= f.text_area :description,
-        maxlength: Legislation::Proposal.description_max_length,
-        class: "html-area" %>
+                      maxlength: Legislation::Proposal.description_max_length,
+                      class: "html-area" %>
     </div>
 
     <div class="small-12 column">
       <%= f.text_field :video_url,
-        hint: t("proposals.form.proposal_video_url_note") %>
+                       hint: t("proposals.form.proposal_video_url_note") %>
     </div>
 
     <% if feature?(:allow_images) %>
@@ -63,11 +63,11 @@
     <div class="small-12 column">
       <% if @proposal.new_record? %>
         <%= f.check_box :terms_of_service,
-          title: t("form.accept_terms_title"),
-          label: t("form.accept_terms",
-                   policy: link_to(t("form.policy"), "/privacy", target: "blank"),
-                   conditions: link_to(t("form.conditions"), "/conditions", target: "blank")
-                  ) %>
+                        title: t("form.accept_terms_title"),
+                        label: t("form.accept_terms",
+                                 policy: link_to(t("form.policy"), "/privacy", target: "blank"),
+                                 conditions: link_to(t("form.conditions"), "/conditions", target: "blank")
+                                ) %>
       <% end %>
     </div>
 

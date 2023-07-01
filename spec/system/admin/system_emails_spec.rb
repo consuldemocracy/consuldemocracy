@@ -254,11 +254,13 @@ describe "System Emails" do
     describe "#evaluation_comment" do
       scenario "render correctly evaluaton comment mailer with valuator as a sample user" do
         admin = create(:administrator, user: create(:user, username: "Baby Doe"))
-        investment = create(:budget_investment,
+        investment = create(
+          :budget_investment,
           title: "Cleaner city",
           heading: heading,
           author: user,
-          administrator: admin)
+          administrator: admin
+        )
         comment = create(:comment, :valuation, commentable: investment)
 
         visit admin_system_email_view_path("evaluation_comment")
@@ -270,7 +272,12 @@ describe "System Emails" do
         expect(page).to have_content comment.body
 
         expect(page).to have_link "Cleaner city",
-          href: admin_budget_budget_investment_url(investment.budget, investment, anchor: "comments", host: app_host)
+                                  href: admin_budget_budget_investment_url(
+                                    investment.budget,
+                                    investment,
+                                    anchor: "comments",
+                                    host: app_host
+                                  )
       end
 
       scenario "uses a current_user as a sample user for sample regular comments" do

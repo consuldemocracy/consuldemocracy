@@ -7,10 +7,10 @@
 </div>
 
 <%= render "management/user_permissions",
-      message: t("management.document_verifications.not_in_census_info"),
-      user: User.new %>
+           message: t("management.document_verifications.not_in_census_info"),
+           user: User.new %>
 
 <p>
   <%= sanitize(t("management.document_verifications.has_no_account",
-      link: link_to(t("management.document_verifications.link"), root_path, target: "_blank"))) %>
+                 link: link_to(t("management.document_verifications.link"), root_path, target: "_blank"))) %>
 </p>

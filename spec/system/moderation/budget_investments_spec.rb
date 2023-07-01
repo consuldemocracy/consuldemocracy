@@ -197,21 +197,24 @@ describe "Moderate budget investments" do
     end
 
     scenario "sorting investments" do
-      flagged_investment = create(:budget_investment,
+      flagged_investment = create(
+        :budget_investment,
         heading: heading,
         title: "Flagged investment",
         created_at: 1.day.ago,
         flags_count: 5
       )
 
-      flagged_new_investment = create(:budget_investment,
+      flagged_new_investment = create(
+        :budget_investment,
         heading: heading,
         title: "Flagged new investment",
         created_at: 12.hours.ago,
         flags_count: 3
       )
 
-      latest_investment = create(:budget_investment,
+      latest_investment = create(
+        :budget_investment,
         heading: heading,
         title: "Latest investment",
         created_at: Time.current

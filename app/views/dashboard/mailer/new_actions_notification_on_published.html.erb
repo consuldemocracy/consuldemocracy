@@ -3,8 +3,8 @@
 
   <p>
     <%= t("mailers.new_actions_notification_on_published.hi",
-            name: @proposal.author.name,
-            title: @proposal.title) %>
+          name: @proposal.author.name,
+          title: @proposal.title) %>
   </p>
   <p>
     <%= t("mailers.new_actions_notification_on_published.text_1") %>
@@ -49,11 +49,11 @@
       <tr>
         <td style="padding-bottom: 12px; padding-top: 24px; text-align: center;">
           <%= link_to progress_proposal_dashboard_url(@proposal),
-                    style: "font-family: 'Open Sans',arial,sans-serif; background: #3700fd;
-                      border-radius: 6px; color: #fff !important; font-weight: bold;
-                      padding: 17px 20px; text-align: center; text-decoration: none;
-                      font-size: 20px; min-width: 200px; display: inline-block;",
-                    target: "_blank" do %>
+                      style: "font-family: 'Open Sans',arial,sans-serif; background: #3700fd;" \
+                             "border-radius: 6px; color: #fff !important; font-weight: bold;" \
+                             "padding: 17px 20px; text-align: center; text-decoration: none;" \
+                             "font-size: 20px; min-width: 200px; display: inline-block;",
+                      target: "_blank" do %>
             <%= t("mailers.new_actions_notification_on_published.dashboard_button") %>
           <% end %>
         </td>

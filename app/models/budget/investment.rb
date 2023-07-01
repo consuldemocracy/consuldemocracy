@@ -51,9 +51,9 @@ class Budget
     has_many :comments, -> { where(valuation: false) }, as: :commentable, inverse_of: :commentable
     has_one :summary_comment, as: :commentable, class_name: "MlSummaryComment", dependent: :destroy
     has_many :valuations, -> { where(valuation: true) },
-      as: :commentable,
-      inverse_of: :commentable,
-      class_name: "Comment"
+             as: :commentable,
+             inverse_of: :commentable,
+             class_name: "Comment"
 
     validates_translation :title, presence: true, length: { in: 4..Budget::Investment.title_max_length }
     validates_translation :description, presence: true, length: { maximum: Budget::Investment.description_max_length }

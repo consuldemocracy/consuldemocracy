@@ -21,8 +21,8 @@ describe "Legislation" do
 
   scenario "empty process" do
     process = create(:legislation_process, :empty,
-      result_publication_enabled: true,
-      end_date: Date.current - 1.day
+                     result_publication_enabled: true,
+                     end_date: Date.current - 1.day
     )
 
     visit summary_legislation_process_path(process)

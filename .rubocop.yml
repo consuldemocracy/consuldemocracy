@@ -18,6 +18,9 @@ Bundler/OrderedGems:
   Enabled: true
   ConsiderPunctuation: true
 
+Layout/ArgumentAlignment:
+  Enabled: true
+
 Layout/ArrayAlignment:
   Enabled: true
 

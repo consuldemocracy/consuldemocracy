@@ -79,11 +79,11 @@ describe "Proposal Notifications" do
     proposal = create(:proposal)
 
     create(:proposal_notification,
-            proposal: proposal, title: "Hey guys",
-            body: "Just wanted to let you know that...")
+           proposal: proposal, title: "Hey guys",
+           body: "Just wanted to let you know that...")
     create(:proposal_notification,
-            proposal: proposal, title: "Another update",
-            body: "We are almost there please share with your peoples!")
+           proposal: proposal, title: "Another update",
+           body: "We are almost there please share with your peoples!")
 
     visit proposal_path(proposal)
     click_link "Notifications (2)"
@@ -107,7 +107,7 @@ describe "Proposal Notifications" do
     expect(page).to have_content "This notification will be sent to 7 people and it will "\
                                  "be visible in the proposal's page"
     expect(page).to have_link("the proposal's page", href: proposal_path(proposal,
-                                                     anchor: "comments"))
+                                                                         anchor: "comments"))
   end
 
   scenario "Message about receivers (Disctinct Followers and Voters)" do
@@ -123,7 +123,7 @@ describe "Proposal Notifications" do
     expect(page).to have_content "This notification will be sent to 7 people and it will "\
                                  "be visible in the proposal's page"
     expect(page).to have_link("the proposal's page", href: proposal_path(proposal,
-                                                     anchor: "comments"))
+                                                                         anchor: "comments"))
   end
 
   scenario "Message about receivers (Same Followers and Voters)" do
@@ -138,7 +138,7 @@ describe "Proposal Notifications" do
     expect(page).to have_content "This notification will be sent to 1 people and it will "\
                                  "be visible in the proposal's page"
     expect(page).to have_link("the proposal's page", href: proposal_path(proposal,
-                                                     anchor: "comments"))
+                                                                         anchor: "comments"))
   end
 
   context "Permissions" do

@@ -491,16 +491,16 @@ describe User do
   describe "#erase" do
     it "erases user information and marks him as erased" do
       user = create(:user,
-                     username: "manolo",
-                     email: "a@a.com",
-                     unconfirmed_email: "a@a.com",
-                     phone_number: "5678",
-                     confirmed_phone: "5678",
-                     unconfirmed_phone: "5678",
-                     encrypted_password: "foobar",
-                     confirmation_token: "token1",
-                     reset_password_token: "token2",
-                     email_verification_token: "token3")
+                    username: "manolo",
+                    email: "a@a.com",
+                    unconfirmed_email: "a@a.com",
+                    phone_number: "5678",
+                    confirmed_phone: "5678",
+                    unconfirmed_phone: "5678",
+                    encrypted_password: "foobar",
+                    confirmation_token: "token1",
+                    reset_password_token: "token2",
+                    email_verification_token: "token3")
 
       user.erase("a test")
       user.reload

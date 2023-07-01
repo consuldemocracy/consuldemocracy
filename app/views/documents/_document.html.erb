@@ -15,9 +15,9 @@
   <% if can?(:destroy, document) %>
     <br>
     <%= link_to t("documents.buttons.destroy_document"),
-                  document,
-                  method: :delete,
-                  data: { confirm: t("documents.actions.destroy.confirm") },
-                  class: "delete" %>
+                document,
+                method: :delete,
+                data: { confirm: t("documents.actions.destroy.confirm") },
+                class: "delete" %>
   <% end %>
 </li>

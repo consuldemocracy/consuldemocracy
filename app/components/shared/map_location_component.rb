@@ -40,9 +40,9 @@ class Shared::MapLocationComponent < ApplicationComponent
 
     def remove_marker
       button_tag remove_marker_label,
-        id: remove_marker_id,
-        class: "map-location-remove-marker",
-        type: "button"
+                 id: remove_marker_id,
+                 class: "map-location-remove-marker",
+                 type: "button"
     end
 
     def data

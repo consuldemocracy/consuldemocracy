@@ -62,9 +62,11 @@ class Poll < ApplicationRecord
   end
 
   def self.overlaping_with(poll)
-    where("? < ends_at and ? >= starts_at", poll.starts_at.beginning_of_day,
-                                            poll.ends_at.end_of_day).where.not(id: poll.id)
-                                            .where(related: poll.related)
+    where("? < ends_at and ? >= starts_at",
+          poll.starts_at.beginning_of_day,
+          poll.ends_at.end_of_day)
+      .where.not(id: poll.id)
+      .where(related: poll.related)
   end
 
   def title

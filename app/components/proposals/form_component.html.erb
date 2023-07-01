@@ -9,8 +9,8 @@
     <%= f.translatable_fields do |translations_form| %>
       <div>
         <%= translations_form.text_field :title,
-              maxlength: Proposal.title_max_length,
-              data: suggest_data(proposal) %>
+                                         maxlength: Proposal.title_max_length,
+                                         data: suggest_data(proposal) %>
       </div>
       <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
 
@@ -52,7 +52,7 @@
     <% if Geozone.any? %>
       <div>
         <%= f.select :geozone_id, geozone_select_options,
-          include_blank: t("geozones.none") %>
+                     include_blank: t("geozones.none") %>
       </div>
     <% end %>
 
@@ -90,7 +90,7 @@
     <% if current_user.unverified? %>
       <div>
         <%= f.text_field :responsible_name,
-          hint: t("proposals.form.proposal_responsible_name_note") %>
+                         hint: t("proposals.form.proposal_responsible_name_note") %>
       </div>
     <% end %>
 
@@ -101,11 +101,11 @@
     <% if proposal.new_record? %>
       <div>
         <%= f.check_box :terms_of_service,
-          title: t("form.accept_terms_title"),
-          label: t("form.accept_terms",
-                   policy: link_to(t("form.policy"), "/privacy", target: "blank"),
-                   conditions: link_to(t("form.conditions"), "/conditions", target: "blank")
-                  ) %>
+                        title: t("form.accept_terms_title"),
+                        label: t("form.accept_terms",
+                                 policy: link_to(t("form.policy"), "/privacy", target: "blank"),
+                                 conditions: link_to(t("form.conditions"), "/conditions", target: "blank")
+                                ) %>
       </div>
     <% end %>
 

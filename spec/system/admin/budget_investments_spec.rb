@@ -301,16 +301,20 @@ describe "Admin budget investments", :admin do
     end
 
     scenario "Filtering by under valuation" do
-      create(:budget_investment,
+      create(
+        :budget_investment,
         :with_administrator,
         :with_valuator,
         :open,
         title: "Investment without valuation",
-        budget: budget)
-      create(:budget_investment,
+        budget: budget
+      )
+      create(
+        :budget_investment,
         :with_administrator,
         title: "Investment with valuation",
-        budget: budget)
+        budget: budget
+      )
 
       visit admin_budget_budget_investments_path(budget_id: budget)
       expect(page).to have_link("Investment without valuation")
@@ -928,12 +932,12 @@ describe "Admin budget investments", :admin do
       user = create(:user, username: "Rachel", email: "rachel@valuators.org")
       valuator = create(:valuator, user: user)
       budget_investment = create(:budget_investment,
-                                  :unfeasible,
-                                  unfeasibility_explanation: "It is impossible",
-                                  price: 1234,
-                                  price_first_year: 1000,
-                                  administrator: administrator,
-                                  valuators: [valuator]
+                                 :unfeasible,
+                                 unfeasibility_explanation: "It is impossible",
+                                 price: 1234,
+                                 price_first_year: 1000,
+                                 administrator: administrator,
+                                 valuators: [valuator]
                                 )
 
       visit admin_budget_budget_investments_path(budget_investment.budget)
@@ -960,12 +964,12 @@ describe "Admin budget investments", :admin do
 
     scenario "Show image and documents on investment details" do
       budget_investment = create(:budget_investment,
-                                  :with_image,
-                                  :unfeasible,
-                                  unfeasibility_explanation: "It is impossible",
-                                  price: 1234,
-                                  price_first_year: 1000,
-                                  administrator: administrator)
+                                 :with_image,
+                                 :unfeasible,
+                                 unfeasibility_explanation: "It is impossible",
+                                 price: 1234,
+                                 price_first_year: 1000,
+                                 administrator: administrator)
       document = create(:document, documentable: budget_investment)
 
       visit admin_budget_budget_investments_path(budget_investment.budget)
@@ -990,10 +994,10 @@ describe "Admin budget investments", :admin do
 
     scenario "Does not show related content or hide links on preview" do
       budget_investment = create(:budget_investment,
-                                  :unfeasible,
-                                  price: 1234,
-                                  price_first_year: 1000,
-                                  administrator: administrator)
+                                 :unfeasible,
+                                 price: 1234,
+                                 price_first_year: 1000,
+                                 administrator: administrator)
 
       visit admin_budget_budget_investments_path(budget_investment.budget)
 
@@ -1006,8 +1010,8 @@ describe "Admin budget investments", :admin do
     scenario "If budget is finished, investment cannot be edited or valuation comments created" do
       finished_budget = create(:budget, :finished)
       budget_investment = create(:budget_investment,
-                                  budget: finished_budget,
-                                  administrator: administrator)
+                                 budget: finished_budget,
+                                 administrator: administrator)
       visit admin_budget_budget_investments_path(budget_investment.budget)
 
       within_window(window_opened_by { click_link budget_investment.title }) do
@@ -1750,10 +1754,10 @@ describe "Admin budget investments", :admin do
   context "Columns chooser" do
     let!(:investment) do
       create(:budget_investment,
-              :winner,
-              :visible_to_valuators,
-              budget: budget,
-              author: create(:user, username: "Jon Doe")
+             :winner,
+             :visible_to_valuators,
+             budget: budget,
+             author: create(:user, username: "Jon Doe")
             )
     end
     let(:default_columns) do

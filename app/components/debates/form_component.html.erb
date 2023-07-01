@@ -9,15 +9,15 @@
     <%= f.translatable_fields do |translations_form| %>
       <div>
         <%= translations_form.text_field :title,
-              maxlength: Debate.title_max_length,
-              data: suggest_data(debate) %>
+                                         maxlength: Debate.title_max_length,
+                                         data: suggest_data(debate) %>
       </div>
       <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
 
       <div>
         <%= translations_form.text_area :description,
-              maxlength: Debate.description_max_length,
-              class: "html-area" %>
+                                        maxlength: Debate.description_max_length,
+                                        class: "html-area" %>
       </div>
     <% end %>
   </fieldset>
@@ -42,11 +42,11 @@
     <% if debate.new_record? %>
       <div>
         <%= f.check_box :terms_of_service,
-          title: t("form.accept_terms_title"),
-          label: t("form.accept_terms",
-                   policy: link_to(t("form.policy"), "/privacy", target: "blank"),
-                   conditions: link_to(t("form.conditions"), "/conditions", target: "blank")
-                  ) %>
+                        title: t("form.accept_terms_title"),
+                        label: t("form.accept_terms",
+                                 policy: link_to(t("form.policy"), "/privacy", target: "blank"),
+                                 conditions: link_to(t("form.conditions"), "/conditions", target: "blank")
+                                ) %>
       </div>
     <% end %>
 

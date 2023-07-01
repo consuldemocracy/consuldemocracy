@@ -18,15 +18,15 @@
     <%= f.translatable_fields do |translations_form| %>
       <div>
         <%= translations_form.text_field :title,
-              maxlength: Budget::Investment.title_max_length,
-              data: suggest_data(investment) %>
+                                         maxlength: Budget::Investment.title_max_length,
+                                         data: suggest_data(investment) %>
       </div>
       <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
 
       <div>
         <%= translations_form.text_area :description,
-              maxlength: Budget::Investment.description_max_length,
-              class: "html-area" %>
+                                        maxlength: Budget::Investment.description_max_length,
+                                        class: "html-area" %>
       </div>
     <% end %>
   </fieldset>
@@ -94,11 +94,11 @@
     <% unless current_user.manager? || investment.persisted? %>
       <div>
         <%= f.check_box :terms_of_service,
-          title: t("form.accept_terms_title"),
-          label: t("form.accept_terms",
-                   policy: link_to(t("form.policy"), "/privacy", target: "blank"),
-                   conditions: link_to(t("form.conditions"), "/conditions", target: "blank")
-                  ) %>
+                        title: t("form.accept_terms_title"),
+                        label: t("form.accept_terms",
+                                 policy: link_to(t("form.policy"), "/privacy", target: "blank"),
+                                 conditions: link_to(t("form.conditions"), "/conditions", target: "blank")
+                                ) %>
       </div>
     <% end %>
 

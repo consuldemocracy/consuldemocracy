@@ -21,7 +21,8 @@ RSpec.describe Legislation::Annotation, type: :model do
             " ea. Per ne impedit iracundia neglegentur. Consetetur neglegentur eum ut, vis animal legimus inimicus id."\
             "\n\n"\
             "His audiam"
-    annotation = create(:legislation_annotation,
+    annotation = create(
+      :legislation_annotation,
       draft_version: draft_version,
       quote: quote,
       ranges: [{ "start" => "/p[1]", "startOffset" => 6, "end" => "/p[3]", "endOffset" => 11 }]
@@ -46,7 +47,8 @@ RSpec.describe Legislation::Annotation, type: :model do
             " facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore"\
             " te feugait nulla facilisi.\r\n\r\nExpetenda tincidunt in sed, ex partem placerat sea, porro commodo ex eam. His putant"\
             " aeterno interesset at. Usu ea mundi tincidunt, omnium virtute aliquando ius ex. Ea aperiri sententiae duo"
-    annotation = create(:legislation_annotation,
+    annotation = create(
+      :legislation_annotation,
       draft_version: draft_version,
       quote: quote,
       ranges: [{ "start" => "/p[1]", "startOffset" => 273, "end" => "/p[2]", "endOffset" => 190 }]
@@ -92,7 +94,8 @@ RSpec.describe Legislation::Annotation, type: :model do
             " freedom, not price. Our General Public Licenses are designed to make sure that you have the freedom to distribute copies of"\
             " free software (and charge for them if you wish)"
 
-    annotation = create(:legislation_annotation,
+    annotation = create(
+      :legislation_annotation,
       draft_version: draft_version,
       quote: quote,
       ranges: [{ "start" => "/p[2]", "startOffset" => 127, "end" => "/p[3]", "endOffset" => 223 }]

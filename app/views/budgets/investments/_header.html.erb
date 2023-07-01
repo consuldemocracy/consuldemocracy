@@ -37,12 +37,12 @@
               <div class="small-12 medium-9">
                 <div class="callout warning margin-top">
                   <%= sanitize(t("budgets.investments.header.different_heading_assigned",
-                        heading_link: heading_link(@assigned_heading, @budget))) %>
+                                 heading_link: heading_link(@assigned_heading, @budget))) %>
                   <br>
                   <small>
                     <%= sanitize(t("budgets.investments.header.change_ballot",
-                        check_ballot: link_to(t("budgets.investments.header.check_ballot_link"),
-                                      budget_ballot_path(@budget)))) %>
+                                   check_ballot: link_to(t("budgets.investments.header.check_ballot_link"),
+                                                         budget_ballot_path(@budget)))) %>
                   </small>
                 </div>
               </div>

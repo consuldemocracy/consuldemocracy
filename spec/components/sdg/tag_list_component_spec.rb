@@ -3,8 +3,8 @@ require "rails_helper"
 describe SDG::TagListComponent do
   let(:debate) do
     create(:debate,
-            sdg_goals: [SDG::Goal[3]],
-            sdg_targets: [SDG::Target[3.2], create(:sdg_local_target, code: "3.2.1")]
+           sdg_goals: [SDG::Goal[3]],
+           sdg_targets: [SDG::Target[3.2], create(:sdg_local_target, code: "3.2.1")]
           )
   end
   let(:component) { SDG::TagListComponent.new(debate) }

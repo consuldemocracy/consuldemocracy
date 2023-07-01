@@ -80,14 +80,16 @@ describe "Officing Results", :with_frozen_time do
   end
 
   scenario "Edit result" do
-    partial_result = create(:poll_partial_result,
-                      officer_assignment: poll_officer.officer_assignments.first,
-                      booth_assignment: poll_officer.officer_assignments.first.booth_assignment,
-                      date: Date.current,
-                      question: question_1,
-                      answer: question_1.question_answers.first.title,
-                      author: poll_officer.user,
-                      amount: 7777)
+    partial_result = create(
+      :poll_partial_result,
+      officer_assignment: poll_officer.officer_assignments.first,
+      booth_assignment: poll_officer.officer_assignments.first.booth_assignment,
+      date: Date.current,
+      question: question_1,
+      answer: question_1.question_answers.first.title,
+      author: poll_officer.user,
+      amount: 7777
+    )
 
     visit officing_poll_results_path(poll, date: I18n.l(partial_result.date), booth_assignment_id: partial_result.booth_assignment_id)
 
@@ -129,20 +131,24 @@ describe "Officing Results", :with_frozen_time do
     booth_assignment = officer_assignment.booth_assignment
     booth = booth_assignment.booth
 
-    create(:poll_partial_result,
+    create(
+      :poll_partial_result,
       officer_assignment: officer_assignment,
       booth_assignment: booth_assignment,
       date: poll.ends_at,
       question: question_1,
-      amount: 33)
+      amount: 33
+    )
 
-    create(:poll_recount,
+    create(
+      :poll_recount,
       officer_assignment: officer_assignment,
       booth_assignment: booth_assignment,
       date: poll.ends_at,
       white_amount: 21,
       null_amount: 44,
-      total_amount: 66)
+      total_amount: 66
+    )
 
     visit officing_poll_results_path(poll,
                                      date: I18n.l(poll.ends_at.to_date),

@@ -27,21 +27,21 @@ class Legislation::Process < ApplicationRecord
   CSS_HEX_COLOR = /\A#?(?:[A-F0-9]{3}){1,2}\z/i
 
   has_many :draft_versions, -> { order(:id) },
-    foreign_key: "legislation_process_id",
-    inverse_of: :process,
-    dependent: :destroy
+           foreign_key: "legislation_process_id",
+           inverse_of: :process,
+           dependent: :destroy
   has_one :final_draft_version, -> { where final_version: true, status: "published" },
-    class_name: "Legislation::DraftVersion",
-    foreign_key: "legislation_process_id",
-    inverse_of: :process
+          class_name: "Legislation::DraftVersion",
+          foreign_key: "legislation_process_id",
+          inverse_of: :process
   has_many :questions, -> { order(:id) },
-    foreign_key: "legislation_process_id",
-    inverse_of: :process,
-    dependent: :destroy
+           foreign_key: "legislation_process_id",
+           inverse_of: :process,
+           dependent: :destroy
   has_many :proposals, -> { order(:id) },
-    foreign_key: "legislation_process_id",
-    inverse_of: :process,
-    dependent: :destroy
+           foreign_key: "legislation_process_id",
+           inverse_of: :process,
+           dependent: :destroy
 
   validates_translation :title, presence: true
   validates :start_date, presence: true

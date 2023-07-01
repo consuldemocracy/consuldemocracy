@@ -15,9 +15,9 @@ class Poll::Question < ApplicationRecord
   has_many :comments, as: :commentable, inverse_of: :commentable
   has_many :answers, class_name: "Poll::Answer"
   has_many :question_answers, -> { order "given_order asc" },
-    class_name: "Poll::Question::Answer",
-    inverse_of: :question,
-    dependent: :destroy
+           class_name: "Poll::Question::Answer",
+           inverse_of: :question,
+           dependent: :destroy
   has_many :partial_results
   belongs_to :proposal
 

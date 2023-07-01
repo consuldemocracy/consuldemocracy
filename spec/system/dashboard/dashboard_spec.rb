@@ -25,9 +25,9 @@ describe "Proposal's dashboard" do
 
   scenario "Dashboard progress shows current goal" do
     goal = create(:dashboard_action, :resource, :active,
-                                     required_supports: proposal.votes_for.size + 1_000)
+                  required_supports: proposal.votes_for.size + 1_000)
     future_goal = create(:dashboard_action, :resource, :active,
-                                            required_supports: proposal.votes_for.size + 2_000)
+                         required_supports: proposal.votes_for.size + 2_000)
 
     visit progress_proposal_dashboard_path(proposal)
 
@@ -58,10 +58,10 @@ describe "Proposal's dashboard" do
   scenario "Dashboard progress show proposed actions truncated description" do
     action = create(:dashboard_action, :proposed_action, :active, description: "One short action")
     action_long = create(:dashboard_action, :proposed_action, :active,
-                          description: "This is a really very long description for a proposed "\
-                                       "action on progress dashboard section, so this description "\
-                                       "should be appear truncated and shows the show description "\
-                                       "link to show the complete description to the users.")
+                         description: "This is a really very long description for a proposed "\
+                                      "action on progress dashboard section, so this description "\
+                                      "should be appear truncated and shows the show description "\
+                                      "link to show the complete description to the users.")
 
     visit progress_proposal_dashboard_path(proposal)
 
@@ -165,7 +165,7 @@ describe "Proposal's dashboard" do
     _solved_task = create(:dashboard_administrator_task, :done, source: executed_solved_action)
 
     unavailable = create(:dashboard_action, :resource, :active,
-                          required_supports: proposal.votes_for.size + 1_000)
+                         required_supports: proposal.votes_for.size + 1_000)
 
     visit progress_proposal_dashboard_path(proposal)
     within "div#available-resources-section" do
@@ -212,7 +212,7 @@ describe "Proposal's dashboard" do
     _solved_task = create(:dashboard_administrator_task, :done, source: executed_solved_action)
 
     unavailable = create(:dashboard_action, :resource, :active,
-                          required_supports: proposal.votes_for.size + 1_000)
+                         required_supports: proposal.votes_for.size + 1_000)
 
     visit progress_proposal_dashboard_path(proposal)
     within "div#available-resources-section" do
@@ -245,8 +245,8 @@ describe "Proposal's dashboard" do
   scenario "Dashboard progress dont show resources with published_proposal: true" do
     available = create(:dashboard_action, :resource, :active, published_proposal: true)
     unavailable = create(:dashboard_action, :resource, :active,
-                          required_supports: proposal.votes_for.size + 1_000,
-                          published_proposal: true)
+                         required_supports: proposal.votes_for.size + 1_000,
+                         published_proposal: true)
 
     visit progress_proposal_dashboard_path(proposal)
 
@@ -381,7 +381,7 @@ describe "Proposal's dashboard" do
     visit messages_proposal_dashboard_path(proposal)
 
     expect(page).to have_link("See previous notifications", href: proposal_path(proposal,
-                                                            anchor: "tab-notifications"))
+                                                                                anchor: "tab-notifications"))
   end
 
   scenario "Dashboard has a related content section" do
