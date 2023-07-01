@@ -21,6 +21,9 @@ Bundler/OrderedGems:
 Layout/AssignmentIndentation:
   Enabled: true
 
+Layout/DotPosition:
+  Enabled: true
+
 Layout/EmptyLineAfterGuardClause:
   Enabled: true
 

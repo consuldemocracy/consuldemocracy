@@ -42,13 +42,13 @@ class Officing::BallotSheetsController < Officing::BaseController
     end
 
     def load_officer_assignments
-      @officer_assignments = ::Poll::OfficerAssignment.
-                  includes(booth_assignment: [:booth]).
-                  joins(:booth_assignment).
-                  final.
-                  where(id: current_user.poll_officer.officer_assignment_ids).
-                  where(poll_booth_assignments: { poll_id: @poll.id }).
-                  where(date: Date.current)
+      @officer_assignments = ::Poll::OfficerAssignment
+                  .includes(booth_assignment: [:booth])
+                  .joins(:booth_assignment)
+                  .final
+                  .where(id: current_user.poll_officer.officer_assignment_ids)
+                  .where(poll_booth_assignments: { poll_id: @poll.id })
+                  .where(date: Date.current)
     end
 
     def load_officer_assignment

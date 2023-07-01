@@ -220,8 +220,8 @@ describe RemoteTranslations::Caller, :remote_translations do
       locale = remote_translation.locale
       fake_response = ["translated title", "translated description", "translated summary", nil]
 
-      expect_any_instance_of(client).to receive(:call).with(field_values_sanitized, locale).
-                                                       and_return(fake_response)
+      expect_any_instance_of(client).to receive(:call).with(field_values_sanitized, locale)
+                                                       .and_return(fake_response)
 
       caller.call
     end

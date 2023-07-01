@@ -4,10 +4,10 @@ class Admin::Poll::OfficerAssignmentsController < Admin::Poll::BaseController
   before_action :load_booth_assignment, only: [:create]
 
   def index
-    @officers = ::Poll::Officer.
-                  includes(:user).
-                  order("users.username").
-                  where(
+    @officers = ::Poll::Officer
+                  .includes(:user)
+                  .order("users.username")
+                  .where(
                     id: @poll.officer_assignments.select(:officer_id).distinct.map(&:officer_id)
                   ).page(params[:page]).per(50)
   end
@@ -15,11 +15,11 @@ class Admin::Poll::OfficerAssignmentsController < Admin::Poll::BaseController
   def by_officer
     @poll = ::Poll.includes(:booths).find(params[:poll_id])
     @officer = ::Poll::Officer.includes(:user).find(officer_assignment_params[:officer_id])
-    @officer_assignments = ::Poll::OfficerAssignment.
-                           joins(:booth_assignment).
-                           includes(:recounts, booth_assignment: :booth).
-                           by_officer_and_poll(@officer.id, @poll.id).
-                           order(:date)
+    @officer_assignments = ::Poll::OfficerAssignment
+                           .joins(:booth_assignment)
+                           .includes(:recounts, booth_assignment: :booth)
+                           .by_officer_and_poll(@officer.id, @poll.id)
+                           .order(:date)
   end
 
   def search_officers

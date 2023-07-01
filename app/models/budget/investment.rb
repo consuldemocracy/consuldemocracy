@@ -109,8 +109,8 @@ class Budget
     end
 
     def self.by_valuator_group(valuator_group_id)
-      joins(:valuator_group_assignments).
-        where(budget_valuator_group_assignments: { valuator_group_id: valuator_group_id })
+      joins(:valuator_group_assignments)
+        .where(budget_valuator_group_assignments: { valuator_group_id: valuator_group_id })
     end
 
     before_validation :set_responsible_name
@@ -198,8 +198,8 @@ class Budget
     def self.search_by_title_or_id(title_or_id)
       with_joins = with_translations(Globalize.fallbacks(I18n.locale))
 
-      with_joins.where(id: title_or_id).
-        or(with_joins.where("budget_investment_translations.title ILIKE ?", "%#{title_or_id}%"))
+      with_joins.where(id: title_or_id)
+        .or(with_joins.where("budget_investment_translations.title ILIKE ?", "%#{title_or_id}%"))
     end
 
     def searchable_values
