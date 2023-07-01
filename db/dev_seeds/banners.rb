@@ -7,7 +7,7 @@ section "Creating banners" do
                         description: description,
                         target_url: target_url,
                         post_started_at: rand((1.week.ago)..(1.day.ago)),
-                        post_ended_at:   rand((1.day.ago)..(1.week.from_now)),
+                        post_ended_at: rand((1.day.ago)..(1.week.from_now)),
                         created_at: rand((1.week.ago)..Time.current))
     I18n.available_locales.map do |locale|
       Globalize.with_locale(locale) do

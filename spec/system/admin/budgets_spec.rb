@@ -452,10 +452,11 @@ describe "Admin budgets", :admin do
     scenario "For a Budget in reviewing balloting" do
       budget = create(:budget, :reviewing_ballots)
       heading = create(:budget_heading, budget: budget, price: 4)
-      unselected = create(:budget_investment, :unselected, heading: heading, price: 1,
+      unselected = create(:budget_investment, :unselected, heading: heading,
+                                                           price: 1,
                                                            ballot_lines_count: 3)
       winner = create(:budget_investment, :selected, heading: heading, price: 3,
-                                                   ballot_lines_count: 2)
+                                                     ballot_lines_count: 2)
       selected = create(:budget_investment, :selected, heading: heading, price: 2, ballot_lines_count: 1)
 
       visit admin_budget_path(budget)

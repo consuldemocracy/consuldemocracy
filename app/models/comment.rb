@@ -57,10 +57,10 @@ class Comment < ApplicationRecord
 
   def self.build(commentable, user, body, p_id = nil, valuation = false)
     new(commentable: commentable,
-        user_id:     user.id,
-        body:        body,
-        parent_id:   p_id,
-        valuation:   valuation)
+        user_id: user.id,
+        body: body,
+        parent_id: p_id,
+        valuation: valuation)
   end
 
   def self.find_commentable(c_type, c_id)
@@ -134,7 +134,7 @@ class Comment < ApplicationRecord
 
   def searchable_values
     {
-      body               => "A",
+      body => "A",
       commentable&.title => "B"
     }
   end

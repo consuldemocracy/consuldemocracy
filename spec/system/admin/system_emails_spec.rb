@@ -312,8 +312,8 @@ describe "System Emails" do
       proposal1 = create(:proposal, title: "Proposal A")
       proposal2 = create(:proposal, title: "Proposal B")
       proposal_notification1 = create(:proposal_notification, proposal: proposal1,
-                                                               title: "Proposal A Title",
-                                                               body: "Proposal A Notification Body")
+                                                              title: "Proposal A Title",
+                                                              body: "Proposal A Notification Body")
       proposal_notification2 = create(:proposal_notification, proposal: proposal2)
       create(:notification, notifiable: proposal_notification1, emailed_at: nil)
       create(:notification, notifiable: proposal_notification2, emailed_at: nil)
@@ -343,8 +343,8 @@ describe "System Emails" do
     scenario "#send_pending" do
       proposal = create(:proposal)
       proposal_notification = create(:proposal_notification, proposal: proposal,
-                                                              title: "Proposal A Title",
-                                                              body: "Proposal A Notification Body")
+                                                             title: "Proposal A Title",
+                                                             body: "Proposal A Notification Body")
       voter = create(:user, :level_two, followables: [proposal])
       create(:notification, notifiable: proposal_notification, user: voter, emailed_at: nil)
 

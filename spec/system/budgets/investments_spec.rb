@@ -126,7 +126,7 @@ describe "Budget Investments" do
     end
 
     unlocated_heading = create(:budget_heading, name: "No Map", price: 500, group: group,
-                               longitude: nil, latitude: nil)
+                                                longitude: nil, latitude: nil)
     create(:budget_investment, heading: unlocated_heading)
     visit budget_investments_path(budget, heading_id: unlocated_heading.id)
     within("#sidebar") do
@@ -1446,11 +1446,11 @@ describe "Budget Investments" do
 
       global_group   = create(:budget_group, budget: budget, name: "Global Group")
       global_heading = create(:budget_heading, group: global_group, name: "Global Heading",
-                              latitude: -43.145412, longitude: 12.009423)
+                                               latitude: -43.145412, longitude: 12.009423)
 
       carabanchel_heading = create(:budget_heading, group: group, name: "Carabanchel")
       new_york_heading    = create(:budget_heading, group: group, name: "New York",
-                                   latitude: -43.223412, longitude: 12.009423)
+                                                    latitude: -43.223412, longitude: 12.009423)
 
       create(:budget_investment, :selected, price: 1, heading: global_heading, title: "World T-Shirt")
       create(:budget_investment, :selected, price: 10, heading: global_heading, title: "Eco pens")

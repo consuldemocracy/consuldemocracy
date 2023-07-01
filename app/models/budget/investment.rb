@@ -51,7 +51,7 @@ class Budget
     has_many :comments, -> { where(valuation: false) }, as: :commentable, inverse_of: :commentable
     has_one :summary_comment, as: :commentable, class_name: "MlSummaryComment", dependent: :destroy
     has_many :valuations, -> { where(valuation: true) },
-      as:         :commentable,
+      as: :commentable,
       inverse_of: :commentable,
       class_name: "Comment"
 
@@ -203,8 +203,9 @@ class Budget
     end
 
     def searchable_values
-      { author.username    => "B",
-        heading.name       => "B",
+      {
+        author.username => "B",
+        heading.name => "B",
         tag_list.join(" ") => "B"
       }.merge(searchable_globalized_values)
     end
@@ -394,7 +395,7 @@ class Budget
       end
 
       def searchable_translations_definitions
-        { title       => "A",
+        { title => "A",
           description => "D" }
       end
   end

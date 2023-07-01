@@ -61,18 +61,18 @@ class Setting < ApplicationRecord
     def mime_types
       {
         "images" => {
-          "jpg"  => "image/jpeg",
-          "png"  => "image/png",
-          "gif"  => "image/gif"
+          "jpg" => "image/jpeg",
+          "png" => "image/png",
+          "gif" => "image/gif"
         },
         "documents" => {
-          "pdf"  => "application/pdf",
-          "doc"  => "application/msword",
+          "pdf" => "application/pdf",
+          "doc" => "application/msword",
           "docx" => "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-          "xls"  => "application/x-ole-storage",
+          "xls" => "application/x-ole-storage",
           "xlsx" => "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-          "csv"  => "text/plain",
-          "zip"  => "application/zip"
+          "csv" => "text/plain",
+          "zip" => "application/zip"
         }
       }
     end

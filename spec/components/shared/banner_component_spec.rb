@@ -5,9 +5,9 @@ describe Shared::BannerComponent do
     banner = create(:banner,
                     title: "Vote now!",
                     description: "Banner description",
-                    target_url:  "http://www.url.com",
+                    target_url: "http://www.url.com",
                     post_started_at: (Date.current - 4.days),
-                    post_ended_at:   (Date.current + 10.days),
+                    post_ended_at: (Date.current + 10.days),
                     background_color: "#FF0000",
                     font_color: "#FFFFFF"
                    )

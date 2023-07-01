@@ -202,10 +202,11 @@ describe "Valuation budget investments" do
       create(:valuator, user: create(:user, username: "Rick", email: "rick@valuators.org"))
     end
     let(:investment) do
-      create(:budget_investment, :unfeasible, budget: budget, price: 1234,
-                                 unfeasibility_explanation: "It is impossible",
-                                 administrator: administrator,
-                                 valuators: [valuator, second_valuator])
+      create(:budget_investment, :unfeasible, budget: budget,
+                                              price: 1234,
+                                              unfeasibility_explanation: "It is impossible",
+                                              administrator: administrator,
+                                              valuators: [valuator, second_valuator])
     end
 
     scenario "visible for assigned valuators" do

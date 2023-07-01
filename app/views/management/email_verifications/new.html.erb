@@ -23,8 +23,9 @@
     <p class="margin-top">
       <%= link_to t("management.users.create_user"),
                   new_management_user_path(user: {
-                      document_number: @email_verification.document_number,
-                      document_type:   @email_verification.document_type }),
+                    document_number: @email_verification.document_number,
+                    document_type: @email_verification.document_type
+                  }),
                   class: "button success" %>
     </p>
   </li>

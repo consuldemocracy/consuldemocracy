@@ -41,7 +41,7 @@ describe LocalCensusRecord do
     it "is not valid when a record already exists with same document_number and document_type" do
       create(:local_census_record, document_number: "#DOC_NUMBER", document_type: "1")
       local_census_record = build(:local_census_record, document_number: "#DOC_NUMBER",
-        document_type: "1")
+                                                        document_type: "1")
 
       expect(local_census_record).not_to be_valid
     end

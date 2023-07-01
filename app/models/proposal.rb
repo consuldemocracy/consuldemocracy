@@ -118,16 +118,16 @@ class Proposal < ApplicationRecord
   end
 
   def searchable_translations_definitions
-    { title       => "A",
-      summary     => "C",
+    { title => "A",
+      summary => "C",
       description => "D" }
   end
 
   def searchable_values
     {
-      author.username       => "B",
-      tag_list.join(" ")    => "B",
-      geozone&.name         => "B"
+      author.username => "B",
+      tag_list.join(" ") => "B",
+      geozone&.name => "B"
     }.merge!(searchable_globalized_values)
   end
 

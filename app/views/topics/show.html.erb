@@ -32,7 +32,8 @@
                     class: "button hollow expanded" %>
 
         <%= link_to t("community.show.topic.destroy"),
-                    community_topic_path(@community.id, @topic), method: :delete,
+                    community_topic_path(@community.id, @topic),
+                    method: :delete,
                     class: "button hollow expanded alert" %>
       </aside>
     <% end %>

@@ -916,8 +916,8 @@ describe Proposal do
       author = create(:user, :level_two)
       voter_and_follower = create(:user, :level_two)
       proposal = create(:proposal, author: author,
-                        voters:    [author, voter_and_follower],
-                        followers: [author, voter_and_follower])
+                                   voters: [author, voter_and_follower],
+                                   followers: [author, voter_and_follower])
 
       expect(proposal.users_to_notify).to eq([voter_and_follower])
     end

@@ -71,11 +71,11 @@ class CensusApi
     def request(document_type, document_number)
       { request:
         { codigo_institucion: Rails.application.secrets.census_api_institution_code,
-          codigo_portal:      Rails.application.secrets.census_api_portal_name,
-          codigo_usuario:     Rails.application.secrets.census_api_user_code,
-          documento:          document_number,
-          tipo_documento:     document_type,
-          codigo_idioma:      102,
+          codigo_portal: Rails.application.secrets.census_api_portal_name,
+          codigo_usuario: Rails.application.secrets.census_api_user_code,
+          documento: document_number,
+          tipo_documento: document_type,
+          codigo_idioma: 102,
           nivel: 3 }}
     end
 

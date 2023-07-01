@@ -104,45 +104,52 @@ describe Poll do
 
     it "is valid when overlapping but different proposals" do
       other_proposal = create(:proposal)
-      _other_poll = create(:poll, related: other_proposal, starts_at: poll.starts_at,
-                                                           ends_at: poll.ends_at)
+      _other_poll = create(:poll, related: other_proposal,
+                                  starts_at: poll.starts_at,
+                                  ends_at: poll.ends_at)
 
       expect(poll).to be_valid
     end
 
     it "is valid when same proposal but not overlapping" do
-      _other_poll = create(:poll, related: proposal, starts_at: poll.ends_at + 1.day,
-                                                     ends_at: poll.ends_at + 8.days)
+      _other_poll = create(:poll, related: proposal,
+                                  starts_at: poll.ends_at + 1.day,
+                                  ends_at: poll.ends_at + 8.days)
       expect(poll).to be_valid
     end
 
     it "is not valid when overlaps from the beginning" do
-      _other_poll = create(:poll, related: proposal, starts_at: poll.starts_at - 8.days,
-                                                     ends_at: poll.starts_at)
+      _other_poll = create(:poll, related: proposal,
+                                  starts_at: poll.starts_at - 8.days,
+                                  ends_at: poll.starts_at)
       expect(poll).not_to be_valid
     end
 
     it "is not valid when overlaps from the end" do
-      _other_poll = create(:poll, related: proposal, starts_at: poll.ends_at,
-                                                     ends_at: poll.ends_at + 8.days)
+      _other_poll = create(:poll, related: proposal,
+                                  starts_at: poll.ends_at,
+                                  ends_at: poll.ends_at + 8.days)
       expect(poll).not_to be_valid
     end
 
     it "is not valid when overlaps with same interval" do
-      _other_poll = create(:poll, related: proposal, starts_at: poll.starts_at,
-                                                     ends_at: poll.ends_at)
+      _other_poll = create(:poll, related: proposal,
+                                  starts_at: poll.starts_at,
+                                  ends_at: poll.ends_at)
       expect(poll).not_to be_valid
     end
 
     it "is not valid when overlaps with interval contained" do
-      _other_poll = create(:poll, related: proposal, starts_at: poll.starts_at + 1.day,
-                                                     ends_at: poll.ends_at - 1.day)
+      _other_poll = create(:poll, related: proposal,
+                                  starts_at: poll.starts_at + 1.day,
+                                  ends_at: poll.ends_at - 1.day)
       expect(poll).not_to be_valid
     end
 
     it "is not valid when overlaps with interval containing" do
-      _other_poll = create(:poll, related: proposal, starts_at: poll.starts_at - 8.days,
-                                                     ends_at: poll.ends_at + 8.days)
+      _other_poll = create(:poll, related: proposal,
+                                  starts_at: poll.starts_at - 8.days,
+                                  ends_at: poll.ends_at + 8.days)
       expect(poll).not_to be_valid
     end
   end

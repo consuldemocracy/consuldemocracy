@@ -3,7 +3,7 @@ require "rails_helper"
 describe "Verify Letter" do
   scenario "Request a letter" do
     user = create(:user, residence_verified_at: Time.current,
-                         confirmed_phone:       "611111111")
+                         confirmed_phone: "611111111")
 
     login_as(user)
     visit new_letter_path
@@ -42,7 +42,7 @@ describe "Verify Letter" do
   context "Code verification" do
     scenario "Valid verification user logged in" do
       user = create(:user, residence_verified_at: Time.current,
-                           confirmed_phone:       "611111111",
+                           confirmed_phone: "611111111",
                            letter_verification_code: "123456")
 
       login_as(user)
@@ -59,7 +59,7 @@ describe "Verify Letter" do
 
     scenario "Valid verification of user failing to add trailing zeros" do
       user = create(:user, residence_verified_at: Time.current,
-                           confirmed_phone:       "611111111",
+                           confirmed_phone: "611111111",
                            letter_verification_code: "012345")
 
       login_as(user)
@@ -76,7 +76,7 @@ describe "Verify Letter" do
 
     scenario "Valid verification user not logged in" do
       user = create(:user, residence_verified_at: Time.current,
-                           confirmed_phone:       "611111111",
+                           confirmed_phone: "611111111",
                            letter_verification_code: "123456")
 
       visit edit_letter_path
@@ -100,7 +100,7 @@ describe "Verify Letter" do
 
     scenario "Error messages on verification" do
       user = create(:user, residence_verified_at: Time.current,
-                           confirmed_phone:       "611111111")
+                           confirmed_phone: "611111111")
 
       visit edit_letter_path
       fill_in "verification_letter_email", with: user.email
@@ -111,8 +111,8 @@ describe "Verify Letter" do
     end
 
     scenario "6 tries allowed" do
-      user = create(:user, residence_verified_at:    Time.current,
-                           confirmed_phone:          "611111111",
+      user = create(:user, residence_verified_at: Time.current,
+                           confirmed_phone: "611111111",
                            letter_verification_code: "123456")
 
       visit edit_letter_path

@@ -29,10 +29,10 @@
 
     <div>
       <%= f.text_field :tag_list, value: debate.tag_list.to_s,
-                        hint: t("debates.form.tags_instructions"),
-                        placeholder: t("debates.form.tags_placeholder"),
-                        data: { js_url: suggest_tags_path },
-                        class: "tag-autocomplete" %>
+                                  hint: t("debates.form.tags_instructions"),
+                                  placeholder: t("debates.form.tags_placeholder"),
+                                  data: { js_url: suggest_tags_path },
+                                  class: "tag-autocomplete" %>
     </div>
 
     <%= render SDG::RelatedListSelectorComponent.new(f) %>

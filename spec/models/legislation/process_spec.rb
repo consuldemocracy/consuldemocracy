@@ -208,7 +208,7 @@ describe Legislation::Process do
 
     it "is valid if allegations_end_date is the same as allegations_start_date" do
       process = build(:legislation_process, allegations_start_date: Date.current - 1.day,
-                                              allegations_end_date: Date.current - 1.day)
+                                            allegations_end_date: Date.current - 1.day)
       expect(process).to be_valid
     end
   end

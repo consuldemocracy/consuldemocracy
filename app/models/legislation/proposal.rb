@@ -57,12 +57,12 @@ class Legislation::Proposal < ApplicationRecord
   end
 
   def searchable_values
-    { title              => "A",
-      author.username    => "B",
+    { title => "A",
+      author.username => "B",
       tag_list.join(" ") => "B",
-      geozone&.name      => "B",
-      summary            => "C",
-      description        => "D" }
+      geozone&.name => "B",
+      summary => "C",
+      description => "D" }
   end
 
   def self.search(terms)

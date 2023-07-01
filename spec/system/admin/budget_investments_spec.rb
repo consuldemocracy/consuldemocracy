@@ -67,8 +67,9 @@ describe "Admin budget investments", :admin do
       admin = create(:administrator, user: create(:user, username: "Gema"))
 
       budget_investment1 = create(:budget_investment, budget: budget, valuators: [valuator1])
-      budget_investment2 = create(:budget_investment, budget: budget, valuators: [valuator1, valuator2],
-                                  valuator_groups: [valuator_group])
+      budget_investment2 = create(:budget_investment, budget: budget,
+                                                      valuators: [valuator1, valuator2],
+                                                      valuator_groups: [valuator_group])
       budget_investment3 = create(:budget_investment, budget: budget)
 
       visit admin_budget_budget_investments_path(budget_id: budget.id)
@@ -147,8 +148,9 @@ describe "Admin budget investments", :admin do
       administrator = create(:administrator, user: user)
       administrator2 = create(:administrator, user: user2, description: "Alias")
       budget.administrators = [administrator, administrator2]
-      create(:budget_investment, title: "Realocate visitors", budget: budget,
-                                                              administrator: administrator)
+      create(:budget_investment, title: "Realocate visitors",
+                                 budget: budget,
+                                 administrator: administrator)
       create(:budget_investment, title: "Destroy the city", budget: budget)
 
       visit admin_budget_budget_investments_path(budget_id: budget.id)
@@ -400,8 +402,9 @@ describe "Admin budget investments", :admin do
     scenario "Filtering by assignment status" do
       create(:budget_investment, :with_administrator, title: "Assigned idea", budget: budget)
       create(:budget_investment, :with_valuator, title: "Evaluating...", budget: budget)
-      create(:budget_investment, title: "With group", budget: budget,
-             valuator_groups: [create(:valuator_group)])
+      create(:budget_investment, title: "With group",
+                                 budget: budget,
+                                 valuator_groups: [create(:valuator_group)])
 
       visit admin_budget_budget_investments_path(budget_id: budget.id, filter: "valuation_open")
 
@@ -410,14 +413,14 @@ describe "Admin budget investments", :admin do
       expect(page).to have_content("With group")
 
       visit admin_budget_budget_investments_path(budget_id: budget.id,
-                                                  advanced_filters: ["without_admin"])
+                                                 advanced_filters: ["without_admin"])
 
       expect(page).to have_content("Evaluating...")
       expect(page).to have_content("With group")
       expect(page).not_to have_content("Assigned idea")
 
       visit admin_budget_budget_investments_path(budget_id: budget.id,
-                                                  advanced_filters: ["without_valuator"])
+                                                 advanced_filters: ["without_valuator"])
 
       expect(page).to have_content("Assigned idea")
       expect(page).not_to have_content("Evaluating...")
@@ -438,7 +441,7 @@ describe "Admin budget investments", :admin do
       expect(page).not_to have_content("Old idea")
 
       visit admin_budget_budget_investments_path(budget_id: budget.id,
-                                                  advanced_filters: ["valuation_finished"])
+                                                 advanced_filters: ["valuation_finished"])
 
       expect(page).not_to have_content("Ongoing valuation")
       expect(page).to have_content("Old idea")
@@ -613,8 +616,9 @@ describe "Admin budget investments", :admin do
       administrator = create(:administrator, user: user)
       budget.administrators = [administrator]
 
-      educate_children = create(:budget_investment, budget: budget, title: "Educate the children",
-                                 administrator: administrator)
+      educate_children = create(:budget_investment, budget: budget,
+                                                    title: "Educate the children",
+                                                    administrator: administrator)
       create(:budget_investment, budget: budget, title: "More schools",
                                  administrator: administrator)
       create(:budget_investment, budget: budget, title: "More hospitals")
@@ -686,8 +690,9 @@ describe "Admin budget investments", :admin do
 
       educate_children = create(:budget_investment, :feasible, :finished,
                                 budget: budget, title: "Educate the children", administrator: administrator)
-      create(:budget_investment, :feasible, :finished, budget: budget, title: "More schools",
-                                 administrator: administrator)
+      create(:budget_investment, :feasible, :finished, budget: budget,
+                                                       title: "More schools",
+                                                       administrator: administrator)
       create(:budget_investment, budget: budget, title: "More hospitals",
                                  administrator: administrator)
       create(:budget_investment, budget: budget, title: "More hostals")
@@ -1689,20 +1694,20 @@ describe "Admin budget investments", :admin do
       first_budget_heading = create(:budget_heading, group: budget_group, name: "Budget Heading")
       second_budget_heading = create(:budget_heading, group: budget_group, name: "Other Heading")
       first_investment = create(:budget_investment, :feasible, :selected, title: "Le Investment",
-                                                         budget: budget, group: budget_group,
-                                                         heading: first_budget_heading,
-                                                         cached_votes_up: 88, price: 99,
-                                                         valuators: [],
-                                                         valuator_groups: [valuator_group],
-                                                         administrator: admin,
-                                                         visible_to_valuators: true)
+                                                                          budget: budget, group: budget_group,
+                                                                          heading: first_budget_heading,
+                                                                          cached_votes_up: 88, price: 99,
+                                                                          valuators: [],
+                                                                          valuator_groups: [valuator_group],
+                                                                          administrator: admin,
+                                                                          visible_to_valuators: true)
       second_investment = create(:budget_investment, :unfeasible, title: "Alt Investment",
-                                                         budget: budget, group: budget_group,
-                                                         heading: second_budget_heading,
-                                                         cached_votes_up: 66, price: 88,
-                                                         valuators: [valuator],
-                                                         valuator_groups: [],
-                                                         visible_to_valuators: false)
+                                                                  budget: budget, group: budget_group,
+                                                                  heading: second_budget_heading,
+                                                                  cached_votes_up: 66, price: 88,
+                                                                  valuators: [valuator],
+                                                                  valuator_groups: [],
+                                                                  visible_to_valuators: false)
 
       visit admin_budget_budget_investments_path(budget)
 

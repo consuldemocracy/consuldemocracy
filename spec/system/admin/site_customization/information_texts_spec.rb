@@ -104,8 +104,8 @@ describe "Admin custom information texts", :admin do
                                        value_es: "Destacar personalizado")
 
       page_title = create(:i18n_content, key: "debates.new.start_new",
-                                          value_en: "Start a new debate",
-                                          value_es: "Empezar un debate")
+                                         value_en: "Start a new debate",
+                                         value_es: "Empezar un debate")
 
       visit admin_site_customization_information_texts_path(tab: "debates")
 

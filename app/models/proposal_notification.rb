@@ -59,7 +59,7 @@ class ProposalNotification < ApplicationRecord
   def searchable_values
     {
       title => "A",
-      body  => "B"
+      body => "B"
     }
   end
 

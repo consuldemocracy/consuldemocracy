@@ -44,18 +44,21 @@
 
 <div class="row expanded margin-top">
   <div class="small-12 medium-4 column">
-    <%= f.number_field :day_offset, step: 1, min: 0,
-      hint: t("admin.dashboard.actions.form.help_text") %>
+    <%= f.number_field :day_offset, step: 1,
+                                    min: 0,
+                                    hint: t("admin.dashboard.actions.form.help_text") %>
   </div>
 
   <div class="small-12 medium-4 column">
-    <%= f.number_field :required_supports, step: 1, min: 0,
-      hint: t("admin.dashboard.actions.form.help_text") %>
+    <%= f.number_field :required_supports, step: 1,
+                                           min: 0,
+                                           hint: t("admin.dashboard.actions.form.help_text") %>
   </div>
 
   <div class="small-12 medium-4 column">
-    <%= f.number_field :order, step: 1, min: 0,
-      hint: t("admin.dashboard.actions.form.help_text") %>
+    <%= f.number_field :order, step: 1,
+                               min: 0,
+                               hint: t("admin.dashboard.actions.form.help_text") %>
   </div>
 </div>
 

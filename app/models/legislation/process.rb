@@ -28,20 +28,20 @@ class Legislation::Process < ApplicationRecord
 
   has_many :draft_versions, -> { order(:id) },
     foreign_key: "legislation_process_id",
-    inverse_of:  :process,
-    dependent:   :destroy
+    inverse_of: :process,
+    dependent: :destroy
   has_one :final_draft_version, -> { where final_version: true, status: "published" },
-    class_name:  "Legislation::DraftVersion",
+    class_name: "Legislation::DraftVersion",
     foreign_key: "legislation_process_id",
-    inverse_of:  :process
+    inverse_of: :process
   has_many :questions, -> { order(:id) },
     foreign_key: "legislation_process_id",
-    inverse_of:  :process,
-    dependent:   :destroy
+    inverse_of: :process,
+    dependent: :destroy
   has_many :proposals, -> { order(:id) },
     foreign_key: "legislation_process_id",
-    inverse_of:  :process,
-    dependent:   :destroy
+    inverse_of: :process,
+    dependent: :destroy
 
   validates_translation :title, presence: true
   validates :start_date, presence: true
@@ -127,8 +127,8 @@ class Legislation::Process < ApplicationRecord
 
   def searchable_translations_definitions
     {
-      title       => "A",
-      summary     => "C",
+      title => "A",
+      summary => "C",
       description => "D"
     }
   end

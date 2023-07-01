@@ -365,8 +365,8 @@ describe "Admin activity" do
     scenario "Shows moderation activity on system emails" do
       proposal = create(:proposal, title: "Proposal A")
       proposal_notification = create(:proposal_notification, proposal: proposal,
-                                                               title: "Proposal A Title",
-                                                               body: "Proposal A Notification Body")
+                                                             title: "Proposal A Title",
+                                                             body: "Proposal A Notification Body")
       proposal_notification.moderate_system_email(admin.user)
 
       visit admin_activity_path

@@ -19,7 +19,7 @@
   </div>
 
   <%= f.text_area :required_fields_to_verify, rows: "6",
-    hint: sanitize("#{required_fields_to_verify_text_help}<br/>#{example_text_help}") %>
+                                              hint: sanitize("#{required_fields_to_verify_text_help}<br/>#{example_text_help}") %>
 
   <%= f.submit(class: "button", value: t("admin.signature_sheets.new.submit")) %>
 <% end %>

@@ -154,12 +154,14 @@ describe "Proposal's dashboard" do
 
     requested = create(:dashboard_action, :resource, :admin_request, :active)
     executed_action = create(:dashboard_executed_action, action: requested,
-                              proposal: proposal, executed_at: Time.current)
+                                                         proposal: proposal,
+                                                         executed_at: Time.current)
     _task = create(:dashboard_administrator_task, :pending, source: executed_action)
 
     solved = create(:dashboard_action, :resource, :admin_request, :active)
     executed_solved_action = create(:dashboard_executed_action, action: solved,
-                                     proposal: proposal, executed_at: Time.current)
+                                                                proposal: proposal,
+                                                                executed_at: Time.current)
     _solved_task = create(:dashboard_administrator_task, :done, source: executed_solved_action)
 
     unavailable = create(:dashboard_action, :resource, :active,
@@ -199,12 +201,14 @@ describe "Proposal's dashboard" do
 
     requested = create(:dashboard_action, :resource, :admin_request, :active)
     executed_action = create(:dashboard_executed_action, action: requested,
-                              proposal: proposal, executed_at: Time.current)
+                                                         proposal: proposal,
+                                                         executed_at: Time.current)
     _task = create(:dashboard_administrator_task, :pending, source: executed_action)
 
     solved = create(:dashboard_action, :resource, :admin_request, :active)
     executed_solved_action = create(:dashboard_executed_action, action: solved,
-                                     proposal: proposal, executed_at: Time.current)
+                                                                proposal: proposal,
+                                                                executed_at: Time.current)
     _solved_task = create(:dashboard_administrator_task, :done, source: executed_solved_action)
 
     unavailable = create(:dashboard_action, :resource, :active,
@@ -511,7 +515,7 @@ describe "Proposal's dashboard" do
 
     scenario "Display tag 'new' on proposed_action when it is new for author since last login" do
       proposed_action = create(:dashboard_action, :proposed_action, :active, day_offset: 0,
-                                                                     published_proposal: false)
+                                                                             published_proposal: false)
 
       visit progress_proposal_dashboard_path(proposal)
 
@@ -522,7 +526,7 @@ describe "Proposal's dashboard" do
 
     scenario "Not display tag 'new' on proposed_action when there is not new since last login" do
       proposed_action = create(:dashboard_action, :proposed_action, :active, day_offset: 0,
-                                                                     published_proposal: false)
+                                                                             published_proposal: false)
       proposal.author.update!(current_sign_in_at: Date.current)
 
       visit progress_proposal_dashboard_path(proposal)

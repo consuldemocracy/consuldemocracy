@@ -3,7 +3,7 @@ module MilestonesHelper
     text = number_to_percentage(progress_bar.percentage, precision: 0)
 
     tag.div class: "progress",
-            role:  "progressbar",
+            role: "progressbar",
             "aria-valuenow": progress_bar.percentage,
             "aria-valuetext": "#{progress_bar.percentage}%",
             "aria-valuemax": ProgressBar::RANGE.max,

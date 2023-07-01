@@ -64,6 +64,13 @@ Layout/FirstArrayElementIndentation:
   Enabled: true
   EnforcedStyle: consistent
 
+Layout/FirstHashElementIndentation:
+  Enabled: true
+  EnforcedStyle: consistent
+
+Layout/HashAlignment:
+  Enabled: true
+
 Layout/HeredocIndentation:
   Enabled: true
 
@@ -90,6 +97,12 @@ Layout/MultilineArrayBraceLayout:
   Enabled: true
 
 Layout/MultilineBlockLayout:
+  Enabled: true
+
+Layout/MultilineHashBraceLayout:
+  Enabled: true
+
+Layout/MultilineHashKeyLineBreaks:
   Enabled: true
 
 Layout/SpaceAfterColon:

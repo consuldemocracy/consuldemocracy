@@ -51,10 +51,10 @@
     <% if feature?(:map) %>
       <div>
         <%= render "map_locations/form_fields",
-                   form:     f,
+                   form: f,
                    map_location: investment.map_location || MapLocation.new,
-                   label:    t("budgets.investments.form.map_location"),
-                   help:     t("budgets.investments.form.map_location_instructions"),
+                   label: t("budgets.investments.form.map_location"),
+                   help: t("budgets.investments.form.map_location_instructions"),
                    i18n_namespace: "budgets.investments" %>
       </div>
     <% end %>
@@ -80,11 +80,11 @@
 
       <br>
       <%= f.text_field :tag_list, value: investment.tag_list.to_s,
-                        label: false,
-                        placeholder: t("budgets.investments.form.tags_placeholder"),
-                        aria: { describedby: "tags-list-help-text" },
-                        class: "js-tag-list tag-autocomplete",
-                        data: { js_url: suggest_tags_path } %>
+                                  label: false,
+                                  placeholder: t("budgets.investments.form.tags_placeholder"),
+                                  aria: { describedby: "tags-list-help-text" },
+                                  class: "js-tag-list tag-autocomplete",
+                                  data: { js_url: suggest_tags_path } %>
     </div>
 
     <%= render SDG::RelatedListSelectorComponent.new(f) %>

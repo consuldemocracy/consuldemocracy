@@ -37,7 +37,7 @@ RSpec.describe Legislation::Process::Phase, type: :model do
 
       # started
       process.update!(debate_start_date: Date.current - 2.days,
-                     debate_end_date: Date.current + 1.day)
+                      debate_end_date: Date.current + 1.day)
       expect(process.debate_phase.started?).to be true
 
       # starts today

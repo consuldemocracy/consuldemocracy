@@ -29,11 +29,11 @@ class Verification::Residence
 
     user.take_votes_if_erased_document(document_number, document_type)
 
-    user.update(document_number:       document_number,
-                document_type:         document_type,
-                geozone:               geozone,
-                date_of_birth:         date_of_birth.in_time_zone.to_datetime,
-                gender:                gender,
+    user.update(document_number: document_number,
+                document_type: document_type,
+                geozone: geozone,
+                date_of_birth: date_of_birth.in_time_zone.to_datetime,
+                gender: gender,
                 residence_verified_at: Time.current)
   end
 

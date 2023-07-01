@@ -7,8 +7,8 @@ describe "Level three verification" do
 
     verified_user = create(:verified_user,
                            document_number: "12345678Z",
-                           document_type:   "1",
-                           phone:           "611111111")
+                           document_type: "1",
+                           phone: "611111111")
 
     login_as(user)
 
@@ -39,8 +39,8 @@ describe "Level three verification" do
 
     verified_user = create(:verified_user,
                            document_number: "12345678Z",
-                           document_type:   "1",
-                           email:           "rock@example.com")
+                           document_type: "1",
+                           email: "rock@example.com")
 
     login_as(user)
 

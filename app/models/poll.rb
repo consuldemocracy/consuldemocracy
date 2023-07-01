@@ -205,8 +205,8 @@ class Poll < ApplicationRecord
 
   def searchable_translations_definitions
     {
-      name        => "A",
-      summary     => "C",
+      name => "A",
+      summary => "C",
       description => "D"
     }
   end
