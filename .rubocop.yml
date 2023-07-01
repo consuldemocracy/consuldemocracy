@@ -18,6 +18,9 @@ Bundler/OrderedGems:
   Enabled: true
   ConsiderPunctuation: true
 
+Layout/ArrayAlignment:
+  Enabled: true
+
 Layout/AssignmentIndentation:
   Enabled: true
 
@@ -57,6 +60,10 @@ Layout/EndOfLine:
 Layout/ExtraSpacing:
   Enabled: true
 
+Layout/FirstArrayElementIndentation:
+  Enabled: true
+  EnforcedStyle: consistent
+
 Layout/HeredocIndentation:
   Enabled: true
 
@@ -78,6 +85,9 @@ Layout/LineEndStringConcatenationIndentation:
 Layout/LineLength:
   Max: 110
   Severity: refactor
+
+Layout/MultilineArrayBraceLayout:
+  Enabled: true
 
 Layout/MultilineBlockLayout:
   Enabled: true

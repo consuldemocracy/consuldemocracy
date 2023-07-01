@@ -6,8 +6,8 @@ class Comment < ApplicationRecord
   include Searchable
 
   COMMENTABLE_TYPES = %w[Debate Proposal Budget::Investment Poll Topic
-                        Legislation::Question Legislation::Annotation
-                        Legislation::Proposal].freeze
+                         Legislation::Question Legislation::Annotation
+                         Legislation::Proposal].freeze
 
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
