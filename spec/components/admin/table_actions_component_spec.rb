@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Admin::TableActionsComponent, controller: Admin::BaseController do
+describe Admin::TableActionsComponent, :admin do
   let(:record) { create(:banner, title: "Important!") }
 
   it "renders edit and destroy actions by default" do

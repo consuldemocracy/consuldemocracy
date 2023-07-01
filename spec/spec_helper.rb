@@ -94,6 +94,14 @@ RSpec.configure do |config|
     sign_in(nil)
   end
 
+  config.before(:each, :admin, type: :component) do
+    sign_in(create(:administrator).user)
+  end
+
+  config.around(:each, :admin, type: :component) do |example|
+    with_controller_class(Admin::BaseController) { example.run }
+  end
+
   config.around(:each, :controller, type: :component) do |example|
     with_controller_class(example.metadata[:controller]) { example.run }
   end

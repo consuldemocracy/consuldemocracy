@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Admin::Geozones::IndexComponent, controller: Admin::BaseController do
+describe Admin::Geozones::IndexComponent, :admin do
   describe "Coordinates description" do
     it "includes whether coordinates are defined or not" do
       geozones = [

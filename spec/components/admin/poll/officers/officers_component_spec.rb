@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Admin::Poll::Officers::OfficersComponent, controller: Admin::BaseController do
+describe Admin::Poll::Officers::OfficersComponent, :admin do
   let(:existing_officer) { create(:poll_officer, name: "Old officer") }
   let(:new_officer) { build(:poll_officer, name: "New officer") }
   let(:officers) { [existing_officer, new_officer] }
