@@ -13,7 +13,7 @@
     text-transform: uppercase;
 
     &::before {
-      @extend %brand-background;
+      @include brand-background;
       border-radius: 50%;
       content: "";
       height: 20px;
