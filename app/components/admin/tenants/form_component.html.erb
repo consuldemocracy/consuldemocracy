@@ -1,6 +1,8 @@
 <%= form_for [:admin, tenant], html: { class: "tenant-form" } do |f| %>
   <%= render "shared/errors", resource: tenant %>
 
+  <p class="tenants-info"><%= sanitize(t("demo.tenants_info")) %></p>
+
   <%= f.text_field :name %>
 
   <fieldset>
