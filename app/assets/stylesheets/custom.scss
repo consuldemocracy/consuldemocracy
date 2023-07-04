@@ -13,3 +13,11 @@
   padding: 3px 0;
   text-align: center;
 }
+
+.tenants-info {
+  @include has-fa-icon(exclamation-triangle, solid);
+
+  &::before {
+    color: $warning-color;
+  }
+}
