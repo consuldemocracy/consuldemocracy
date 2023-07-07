@@ -201,16 +201,16 @@ describe Setting do
   end
 
   describe ".default_mailer_from_address" do
-    before { allow(Tenant).to receive(:default_host).and_return("consulproject.org") }
+    before { allow(Tenant).to receive(:default_host).and_return("consuldemocracy.org") }
 
     it "uses the default host for the default tenant" do
-      expect(Setting.default_mailer_from_address).to eq "noreply@consulproject.org"
+      expect(Setting.default_mailer_from_address).to eq "noreply@consuldemocracy.org"
     end
 
     it "uses the tenant host for other tenants" do
       allow(Tenant).to receive(:current_schema).and_return("new")
 
-      expect(Setting.default_mailer_from_address).to eq "noreply@new.consulproject.org"
+      expect(Setting.default_mailer_from_address).to eq "noreply@new.consuldemocracy.org"
     end
 
     context "empty default host" do

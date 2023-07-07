@@ -1386,7 +1386,7 @@ es:
       show_results_and_stats: "Mostrar resultados y estadísticas"
       results_and_stats_reminder: "Si marcas estas casillas los resultados y/o estadísticas serán públicos y podrán verlos todos los usuarios."
       close_modal: Cerrar ventana emergente
-      example_url: "Por ejemplo, https://consulproject.org o /help"
+      example_url: "Por ejemplo, https://consuldemocracy.org o /help"
     geozones:
       index:
         title: Zonas
@@ -1625,7 +1625,7 @@ es:
           see_page: Ver
         new:
           title: Página nueva
-          slug_help: "Texto que identifica esta página en la URL, por ejemplo <code>https://consulproject.org/slug-de-pagina</code>"
+          slug_help: "Texto que identifica esta página en la URL, por ejemplo <code>https://consuldemocracy.org/slug-de-pagina</code>"
         page:
           created_at: Creada
           status: Estado

@@ -132,7 +132,7 @@ describe Budget do
     end
 
     it "is valid if main_link_text and main_link_url are both provided" do
-      valid_budget = build(:budget, main_link_text: "Text link", main_link_url: "https://consulproject.org")
+      valid_budget = build(:budget, main_link_text: "Text link", main_link_url: "https://consuldemocracy.org")
 
       expect(valid_budget).to be_valid
     end
