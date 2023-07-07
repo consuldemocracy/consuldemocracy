@@ -36,7 +36,7 @@ Si quieres que revisemos tu código con una sonrisa, por favor sigue nuestras co
 * Los tests se ejecutarán automáticamente para comprobar que el resto de la aplicación sigue funcionando; asegúrate de que los tests pasan
 * Ejecuta `bundle exec pronto run` y arregla los problemas de los que informe (si es que hay alguno)
 * Sigue [las siete reglas para un gran mensaje de commit](https://chris.beams.io/posts/git-commit/)
-* Añade o modifica las traducciones i18n sólo en los idiomas base, inglés (en) y español (es); todos los demás idiomas los gestionamos a través de la [integración de Crowdin](https://crowdin.com/project/consul).
+* Añade o modifica las traducciones i18n sólo en los idiomas base, inglés (en) y español (es); todos los demás idiomas los gestionamos a través de la [integración de Crowdin](https://translate.consuldemocracy.org/).
 
 Cuando revisemos tu código y te pidamos que cambies alguna cosa, si tienes experiencia con `git rebase` edita los commits existentes en vez de añadir más. Si no tienes experiencia con `git rebase`, puedes saltarte este punto.
 

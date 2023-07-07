@@ -13,7 +13,7 @@ Citizen Participation and Open Government Application
 ![Build status](https://github.com/consuldemocracy/consuldemocracy/workflows/tests/badge.svg)
 [![Code Climate](https://codeclimate.com/github/consuldemocracy/consuldemocracy/badges/gpa.svg)](https://codeclimate.com/github/consuldemocracy/consuldemocracy)
 [![Coverage Status](https://coveralls.io/repos/github/consuldemocracy/consuldemocracy/badge.svg)](https://coveralls.io/github/consuldemocracy/consuldemocracy?branch=master)
-[![Crowdin](https://d322cqt584bo4o.cloudfront.net/consul/localized.svg)](https://crowdin.com/project/consul)
+[![Crowdin](https://d322cqt584bo4o.cloudfront.net/consul/localized.svg)](https://translate.consuldemocracy.org/)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 
 [![Accessibility conformance](https://img.shields.io/badge/accessibility-WAI:AA-green.svg)](https://www.w3.org/WAI/eval/Overview)
@@ -28,15 +28,15 @@ This is the opensource code repository of the eParticipation website CONSUL DEMO
 
 ## Documentation
 
-Check the ongoing documentation at [https://docs.consulproject.org](https://docs.consulproject.org) to learn more about how to start your own CONSUL DEMOCRACY fork, install it, customize it and learn to use it from an administrator/maintainer perspective.
+Check the ongoing documentation at [https://docs.consuldemocracy.org](https://docs.consuldemocracy.org) to learn more about how to start your own CONSUL DEMOCRACY fork, install it, customize it and learn to use it from an administrator/maintainer perspective.
 
 ## CONSUL DEMOCRACY Project main website
 
-You can access the main website of the project at [http://consulproject.org](http://consulproject.org) where you can find documentation about the use of the platform, videos, and links to the community space.
+You can access the main website of the project at [http://consuldemocracy.org](http://consuldemocracy.org) where you can find documentation about the use of the platform, videos, and links to the community space.
 
 ## Configuration for development and test environments
 
-**NOTE**: For more detailed instructions check the [docs](https://docs.consulproject.org)
+**NOTE**: For more detailed instructions check the [docs](https://docs.consuldemocracy.org)
 
 Prerequisites: install git, Ruby 3.0.6, CMake, pkg-config, shared-mime-info, Node.js and PostgreSQL (>=9.5).
 
@@ -80,7 +80,7 @@ See [installer](https://github.com/consuldemocracy/installer)
 
 ## Current state
 
-Development started on [2015 July 15th](https://github.com/consuldemocracy/consuldemocracy/commit/8db36308379accd44b5de4f680a54c41a0cc6fc6). Code was deployed to production on 2015 september 7th to [decide.madrid.es](https://decide.madrid.es). Since then new features are added often. You can take a look at the current features at the [project's website](http://consulproject.org/) and future features at the [Roadmap](https://github.com/orgs/consuldemocracy/projects/1) and [open issues list](https://github.com/consuldemocracy/consuldemocracy/issues).
+Development started on [2015 July 15th](https://github.com/consuldemocracy/consuldemocracy/commit/8db36308379accd44b5de4f680a54c41a0cc6fc6). Code was deployed to production on 2015 september 7th to [decide.madrid.es](https://decide.madrid.es). Since then new features are added often. You can take a look at the current features at the [project's website](http://consuldemocracy.org/) and future features at the [Roadmap](https://github.com/orgs/consuldemocracy/projects/1) and [open issues list](https://github.com/consuldemocracy/consuldemocracy/issues).
 
 ## License
 

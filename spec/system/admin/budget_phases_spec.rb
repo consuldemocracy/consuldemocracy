@@ -64,14 +64,14 @@ describe "Admin budget phases" do
       expect(page).to have_content "Main call to action (optional)"
 
       fill_in "Text on the link", with: "Link on the phase"
-      fill_in "The link takes you to (add a link)", with: "https://consulproject.org"
+      fill_in "The link takes you to (add a link)", with: "https://consuldemocracy.org"
       click_button "Save changes"
 
       expect(page).to have_content("Changes saved")
 
       visit budgets_path
 
-      expect(page).to have_link("Link on the phase", href: "https://consulproject.org")
+      expect(page).to have_link("Link on the phase", href: "https://consuldemocracy.org")
     end
   end
 end

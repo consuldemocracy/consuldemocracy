@@ -1386,7 +1386,7 @@ en:
       show_results_and_stats: "Show results and stats"
       results_and_stats_reminder: "Marking these checkboxes the results and/or stats will be publicly available and every user will see them."
       close_modal: Close modal
-      example_url: "For example, https://consulproject.org or /help"
+      example_url: "For example, https://consuldemocracy.org or /help"
     geozones:
       index:
         title: Geozone
@@ -1625,7 +1625,7 @@ en:
           see_page: View
         new:
           title: Create new custom page
-          slug_help: "Text to identify this page on URL, for example <code>https://consulproject.org/page-slug</code>"
+          slug_help: "Text to identify this page on URL, for example <code>https://consuldemocracy.org/page-slug</code>"
         page:
           created_at: Created at
           status: Status

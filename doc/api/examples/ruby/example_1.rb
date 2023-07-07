@@ -1,6 +1,6 @@
 require "net/http"
 
-API_ENDPOINT = "https://demo.consulproject.org/graphql".freeze
+API_ENDPOINT = "https://demo.consuldemocracy.org/graphql".freeze
 
 def make_request(query_string)
   uri = URI(API_ENDPOINT)
