@@ -53,7 +53,11 @@ class Poll < ApplicationRecord
 
   def self.sort_for_list(user = nil)
     all.sort do |poll, another_poll|
-      [poll.weight(user), poll.starts_at, poll.name] <=> [another_poll.weight(user), another_poll.starts_at, another_poll.name]
+      if poll.expired? && another_poll.expired?
+        [another_poll.ends_at] <=> [poll.ends_at]
+      else
+        [poll.weight(user), poll.starts_at, poll.name] <=> [another_poll.weight(user), another_poll.starts_at, another_poll.name]
+      end
     end
   end
 
