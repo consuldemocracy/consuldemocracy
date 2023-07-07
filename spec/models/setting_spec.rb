@@ -189,7 +189,7 @@ describe Setting do
 
   describe ".default_org_name" do
     it "returns the main org name for the default tenant" do
-      expect(Setting.default_org_name).to eq "CONSUL"
+      expect(Setting.default_org_name).to eq "CONSUL DEMOCRACY"
     end
 
     it "returns the tenant name for other tenants" do
@@ -216,8 +216,8 @@ describe Setting do
     context "empty default host" do
       before { allow(Tenant).to receive(:default_host).and_return("") }
 
-      it "uses consul.dev as host" do
-        expect(Setting.default_mailer_from_address).to eq "noreply@consul.dev"
+      it "uses consuldemocracy.dev as host" do
+        expect(Setting.default_mailer_from_address).to eq "noreply@consuldemocracy.dev"
       end
     end
   end

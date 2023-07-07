@@ -203,11 +203,11 @@ class Setting < ApplicationRecord
     end
 
     def default_main_org_name
-      "CONSUL"
+      "CONSUL DEMOCRACY"
     end
 
     def default_mailer_from_address
-      "noreply@#{Tenant.current_host.presence || "consul.dev"}"
+      "noreply@#{Tenant.current_host.presence || "consuldemocracy.dev"}"
     end
 
     def reset_defaults

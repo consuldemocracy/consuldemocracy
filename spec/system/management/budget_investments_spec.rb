@@ -314,6 +314,8 @@ describe "Budget Investments" do
     end
 
     scenario "Support investments on behalf of someone else when there are more headings" do
+      Setting["org_name"] = "CONSUL"
+
       create(:budget_investment, heading: heading, title: "Default heading investment")
       create(:budget_investment, heading: create(:budget_heading, group: group))
 
