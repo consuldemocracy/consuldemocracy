@@ -127,8 +127,8 @@ module Consul
 
     # CONSUL specific custom overrides
     # Read more on documentation:
-    # * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md
-    # * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md
+    # * English: https://github.com/consuldemocracy/consuldemocracy/blob/master/CUSTOMIZE_EN.md
+    # * Spanish: https://github.com/consuldemocracy/consuldemocracy/blob/master/CUSTOMIZE_ES.md
     #
     config.autoload_paths << "#{Rails.root}/app/components/custom"
     config.autoload_paths << "#{Rails.root}/app/controllers/custom"
