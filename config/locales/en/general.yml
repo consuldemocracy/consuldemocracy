@@ -201,7 +201,7 @@ en:
       accessibility: Accessibility
       conditions: Terms and conditions of use
       consul: CONSUL DEMOCRACY application
-      consul_url: https://github.com/consul/consul
+      consul_url: https://github.com/consuldemocracy/consuldemocracy
       copyright: CONSUL DEMOCRACY, %{year}
       description: This portal uses the %{consul} which is %{open_source}.
       open_source: open-source software
