@@ -2,13 +2,13 @@ tr:
   legislation:
     annotations:
       comments:
-        see_all: Hepsini gör
-        see_complete: Tamamını gör
+        see_all: Tümünü görüntüle
+        see_complete: Tamamını görüntüle
         replies_count:
           one: "%{count} yanıt"
           other: "%{count} yanıt"
         cancel: İptal
-        publish_comment: Yorumu Yayınla
+        publish_comment: Yorumu yayınla
       form:
         phase_not_open: Bu aşama açık değil
       index:
@@ -92,7 +92,7 @@ tr:
         next_question: Sonraki soru
         first_question: İlk soru
         share: Paylaş
-        title: Katılımcı mevzuat işlemi
+        title: Katılımcı mevzuat süreci
       participation:
         phase_not_open: Bu aşama açık değil
         organizations: Organizasyonların tartışmaya katılmasına izin verilmemektedir
@@ -106,7 +106,7 @@ tr:
       form:
         tags_label: "Kategoriler"
       not_verified: "Önerileri oylamak için %{verify_account}."
-      process_title: Katılımcı mevzuat işlemi
+      process_title: Katılımcı mevzuat süreci
     summary:
       title: "Özet"
       votes:
@@ -124,7 +124,7 @@ tr:
         zero: "Öneri yok"
         one: "%{count} öneri"
         other: "%{count} öneri"
-      download: "Özeti İndir"
+      download: "Özeti indir"
       top_comments:
         zero: "Yorum yok"
         one: "%{count} yorum"
