@@ -45,7 +45,7 @@ tr:
         success:
           back_to_index: Anladım; ana sayfaya geri dön
           instructions_1: "Bu topluluğu temsil ettiğinizi doğrulamak için <strong>Yakında sizinle iletişime geçeceğiz</strong>."
-          instructions_2: <strong>E-postanız incelenirken</strong>,<strong>hesabınızı doğrulamanız için size bir bağlantı</strong> gönderdik.
+          instructions_2: <strong>E-postanız incelenirken</strong>, <strong>hesabınızı doğrulamanız için size bir bağlantı</strong> gönderdik.
           instructions_3: Onaylandıktan sonra, doğrulanmamış grup olarak katılım sağlayabilirsiniz.
           thank_you: Topluluğunuzu web sitesine kaydettiğiniz için teşekkür ederiz. <strong>Doğrulama bekleniyor</strong>.
           title: Organizasyonun / topluluğun kaydı
