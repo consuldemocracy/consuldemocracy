@@ -378,7 +378,7 @@ nl:
       tenant:
         domain: "Domein"
         schema: "Domein / Subdomein"
-        subdomain: "Suddomein"
+        subdomain: "Subdomein"
         url: "URL"
       topic:
         title: "Title"
