@@ -41,7 +41,7 @@ nl:
         zero: Geen reacties
         one: "1 reactie (verberg)"
         other: "%{count} reacties (verberg)"
-      user_deleted: Deelnemer verwijdert
+      user_deleted: Deelnemer verwijderd
       votes:
         zero: Geen stemmen
         one: 1 stem
@@ -59,8 +59,8 @@ nl:
       return_to_commentable: "Ga terug naar "
   comments_helper:
     comment_button: Publiceer reactie
-    comment_link: Commentaar
-    comments_title: Comments
+    comment_link: Reactie
+    comments_title: Reacties
     reply_button: Publiceer antwoord
     reply_link: Reageer
   debates:
@@ -78,7 +78,7 @@ nl:
         submit_button: Bewaar wijzigingen
       show_link: Debat bekijken
     form:
-      tags_instructions: Voeg termen toe.
+      tags_instructions: Voeg labels toe.
       tags_placeholder: "Voeg de gewenste labels toe, gescheiden door een komma (',')"
     index:
       featured_debates: Uitgelicht
@@ -118,7 +118,7 @@ nl:
       recommendation_four: Geniet van deze ruimte, en van de stemmen die 'm vullen.
       recommendation_one: Gebruik geen hoofdletters voor de titel, of voor hele zinnen. Dit is equivalent aan schreeuwen op het internet, en niemand houdt ervan toegeschreeuwd te worden.
       recommendation_three: Stevige kritiek is welkom, dit is de plek daarvoor. Maar we raden je wel aan beleefd en intelligent te handelen, dan blijft deze ruimte leefbaar.
-      recommendation_two: Ieder debat of reactie waarin een illegale activiteit wordt aanmoedigt zal worden verwijderd, en ook die welke het debat saboteren. Verder is alles toegestaan.
+      recommendation_two: Ieder debat of reactie waarin een illegale activiteit wordt aanmoedigt zal worden verwijderd, en ook die die het debat saboteren. Verder is alles toegestaan.
       recommendations_title: Advies bij het starten van een debat
       start_new: Debat starten
     show:
@@ -195,7 +195,7 @@ nl:
       privacy: Privacy Verklaring
     header:
       administration_menu: Beheerder
-      administration: Administration
+      administration: Beheer
       collaborative_legislation: Wetgevingsproces
       debates: Debatten
       locale: "Taal:"
