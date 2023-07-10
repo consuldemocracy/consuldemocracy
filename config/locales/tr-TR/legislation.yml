@@ -14,17 +14,17 @@ tr:
       index:
         title: Yorumlar
         comments_about: Hakkında yorumlar
-        see_in_context: Mevcut bağlam içinde gör
+        see_in_context: Bağlamında görüntüle
       show:
         title: Yorum
       version_chooser:
         seeing_version: Sürüm için yorumlar
-        see_text: Metin taslağını gör
+        see_text: Metin taslağını görüntüle
     draft_versions:
       changes:
         title: Değişiklikler
         seeing_changelog_version: Değişikliklerin özetini gör
-        see_text: Taslak metni gör
+        see_text: Metin taslağını görüntüle
       show:
         loading_comments: Yorumlar yükleniyor
         seeing_version: Taslak düzenlemeyi görüyorsunuz
@@ -38,8 +38,8 @@ tr:
         text_comments: Yorumlar
     processes:
       header:
-        additional_info: Ek bilgi
-        description: Tanımlama
+        additional_info: Ek bilgiler
+        description: Açıklama
         more_info: Daha fazla bilgi ve içerik
       proposals:
         empty_proposals: Hiç öneri yok
@@ -49,12 +49,12 @@ tr:
       debate:
         empty_questions: Hiç soru yok
       index:
-        filter: Filtre
+        filter: Süz
         filters:
-          open: Açık işlemler
+          open: Açık süreçler
           past: Geçmiş
-        no_open_processes: Açık işlemler bulunmuyor
-        no_past_processes: Geçmiş işlemler bulunmuyor
+        no_open_processes: Herhangi bir açık süreç yok
+        no_past_processes: Herhangi bir geçmiş süreç yok
         section_header:
           icon_alt: Katılımcı mevzuat simgesi
           title: Katılımcı mevzuat
@@ -63,15 +63,15 @@ tr:
           title: Katılımcı mevzuat hakkında yardım
           description: Yeni yönetmeliklerin veya stratejilerin onaylanmasından önce tartışmalara ve işlemlere katılın. Fikriniz dikkate alınacaktır.
       phase_not_open:
-        not_open: Bu aşama henüz etkin değil
+        not_open: Bu aşama henüz açılmamış
       phase_empty:
-        empty: Henüz hiçbir şey yayınlanmadı
+        empty: Henüz bir şey yayınlanmamış
       process:
-        see_latest_comments: Son yorumları gör
-        see_latest_comments_title: Bu işlemdeki yorum
+        see_latest_comments: Son yorumları görüntüle
+        see_latest_comments_title: Bu süreçle ilgili yorum yapın
       shared:
         key_dates: Katılım aşamaları
-        homepage: Ana sayfa
+        homepage: Giriş
         debate_dates: Tartışma
         draft_publication_date: Taslak yayın
         allegations_dates: Yorumlar
@@ -121,14 +121,14 @@ tr:
         one: "%{count} tartışma"
         other: "%{count} tartışma"
       proposals:
-        zero: "Öneri yok"
+        zero: "Herhangi bir öneri yok"
         one: "%{count} öneri"
         other: "%{count} öneri"
       download: "Özeti indir"
       top_comments:
-        zero: "Yorum yok"
+        zero: "Herhangi bir yorum yok"
         one: "%{count} yorum"
         other: "Öne çıkan yorumlar"
-      most_voted_comments: "En çok oylanan yorumlar"
-      no_allegation: "Hiç yorum yok"
-      process_empty: "Bu sürecin bir katılım fazı yoktu"
+      most_voted_comments: "En çok oy alan yorumlar"
+      no_allegation: "Herhangi bir yorum yok"
+      process_empty: "Bu sürecin bir katılım aşaması yoktu"
