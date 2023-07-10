@@ -14,8 +14,8 @@ nl:
         one: "activiteit"
         other: "activiteiten"
       budget:
-        one: "Budget"
-        other: "Budgetten"
+        one: "Burgerbegroting"
+        other: "Burgerbegrotingen"
       budget/investment:
         one: "Investering"
         other: "Investeringen"
@@ -35,8 +35,8 @@ nl:
         one: "Discussie"
         other: "Discussies"
       tag:
-        one: "Term"
-        other: "Termen"
+        one: "Label"
+        other: "Labels"
       user:
         one: "Gebruiker"
         other: "Gebruikers"
@@ -107,14 +107,14 @@ nl:
         one: "Voorstel"
         other: "Voorstellen"
       legislation/draft_versions:
-        one: "Concept"
-        other: "Conceptem"
+        one: "Conceptversie"
+        other: "Conceptversies"
       legislation/questions:
         one: "Vraag"
         other: "Vragen"
       legislation/question_options:
         one: "Vraag optie"
-        other: "Vraag keuzen"
+        other: "Vraag opties"
       legislation/answers:
         one: "Antwoord"
         other: "Antwoorden"
@@ -155,7 +155,7 @@ nl:
         description_balloting: "Omschrijving in de stemfase"
         description_reviewing_ballots: "Omschrijving gedurende de evaluatie van stemmen"
         description_finished: "Omschrijving wanneer het budget is afgerond"
-        phase: "Fase"
+        phase: "Huidige fase"
         currency_symbol: "Valuta"
         voting_style: "Definitieve stemwijze"
         voting_style_knapsack: "Knapzak"
