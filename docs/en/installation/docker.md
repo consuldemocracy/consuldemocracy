@@ -1,9 +1,9 @@
 # Using Docker for local development
 
-You can use Docker to have a local CONSUL installation for development if:
+You can use Docker to have a local Consul Democracy installation for development if:
 
 - You're having troubles having [prerequisites](prerequisites.md) installed.
-- You want to do a quick local installation just to try CONSUL or make a demo.
+- You want to do a quick local installation just to try Consul Democracy or make a demo.
 - You prefer not to interfere with other rails installations.
 
 ## Prerequisites
@@ -100,7 +100,7 @@ POSTGRES_PASSWORD=password docker-compose run app rake db:dev_seed
 
 Pending to be completed... Contributions Welcome!
 
-## Running local CONSUL with Docker
+## Running local Consul Democracy with Docker
 
 ### macOS & Linux
 
@@ -133,15 +133,15 @@ Pending to be completed... Contributions Welcome!
 
 ## Having trouble?
 
-Run these commands at **Consul's directory**, to erase all your previous Consul's Docker images and containers. Then restart the Docker [installation process](#installation):
+Run these commands at **Consul Democracy's directory**, to erase all your previous Consul Democracy's Docker images and containers. Then restart the Docker [installation process](#installation):
 
-1. Remove all CONSUL images:
+1. Remove all Consul Democracy images:
 
 ```bash
 docker-compose down --rmi all -v --remove-orphans
 ```
 
-2. Remove all CONSUL containers
+2. Remove all Consul Democracy containers
 
 ```bash
 docker-compose rm -f -s -v

@@ -6,9 +6,9 @@ You can configure authentication services with external OAuth suppliers, right n
 
 For each platform, go to their developers section and follow their guides to create an app.
 
-## 2. Set your CONSUL's url
+## 2. Set your Consul Democracy's url
 
-They'll ask you for your CONSUL's auth URL, and as you can see running `rake routes` at your CONSUL repo locally:
+They'll ask you for your Consul Democracy's auth URL, and as you can see running `rake routes` at your Consul Democracy repo locally:
 
 ```bash
 user_omniauth_authorize GET|POST /users/auth/:provider(.:format)          users/omniauth_callbacks#passthru {:provider=>/twitter|facebook|google_oauth2/}

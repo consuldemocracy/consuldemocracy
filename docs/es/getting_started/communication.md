@@ -1,6 +1,6 @@
 # Comunicación
 
-Para comunicar sugerencias/incidencias te animamos a [abrir una incidencia en el repositorio de Documentación de Consul](https://github.com/consul/consul/issues/new).
+Para comunicar sugerencias/incidencias te animamos a [abrir una incidencia en el repositorio de Documentación de Consul Democracy](https://github.com/consul/consul/issues/new).
 
 Para comunicaciones más informales, chatea con nosotros en el [gitter de consul](https://gitter.im/consul/consul)
 

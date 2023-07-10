@@ -1,8 +1,8 @@
 # Using AWS S3 as file storage
 
-While CONSUL keeps most of its data in a PostgreSQL database, all the files such as documents or images have to be stored elsewhere.
+While Consul Democracy keeps most of its data in a PostgreSQL database, all the files such as documents or images have to be stored elsewhere.
 
-To take care of them, CONSUL uses the [Paperclip gem](https://github.com/thoughtbot/paperclip) (Warning: this gem is now deprecated and CONSUL will probably migrate to ActiveStorage in the future. Check that this is not already the case before using this guide).
+To take care of them, Consul Democracy uses the [Paperclip gem](https://github.com/thoughtbot/paperclip) (Warning: this gem is now deprecated and Consul Democracy will probably migrate to ActiveStorage in the future. Check that this is not already the case before using this guide).
 
 By default, the attachments are stored on the filesystem. However, with services such as Heroku, there is no persistent storage which means that these files are periodically erased.
 
@@ -16,7 +16,7 @@ First, add the following line in your *Gemfile_custom*
 gem 'aws-sdk-s3', '~> 1'
 ```
 
-Make sure to have a recent version of paperclip (CONSUL is currently using 5.2.1, which doesn't recognize *aws-sdk-s3*). In your Gemfile, the line should be:
+Make sure to have a recent version of paperclip (Consul Democracy is currently using 5.2.1, which doesn't recognize *aws-sdk-s3*). In your Gemfile, the line should be:
 
 ```
 gem 'paperclip', '~> 6.1.0'
@@ -26,7 +26,7 @@ Run `bundle install` to apply your changes.
 
 ## Adding your credentials in *secrets.yml*
 
-This guide will assume that you have an Amazon account configured to use S3 and that you created a bucket for your instance of CONSUL. It is highly recommended to use a different bucket for each instance (production, preproduction, staging).
+This guide will assume that you have an Amazon account configured to use S3 and that you created a bucket for your instance of Consul Democracy. It is highly recommended to use a different bucket for each instance (production, preproduction, staging).
 
 You will need the following information:
 
@@ -35,9 +35,9 @@ You will need the following information:
 - the **hostname** of the S3 bucket (`s3.eu-central-1.amazonaws.com` for Francfort, for example)
 - an **access key id** and a **secret access key** with read/write permission to that bucket
 
-**WARNING:** It is recommended to create IAM users that will only have read/write permission to the bucket you want to use for that specific instance of CONSUL.
+**WARNING:** It is recommended to create IAM users that will only have read/write permission to the bucket you want to use for that specific instance of Consul Democracy.
 
-Once you have these pieces of information, you can save them as environment variables of the instance running CONSUL. In this tutorial, we save them respectively as *AWS_S3_BUCKET*, *AWS_S3_REGION*, *AWS_S3_HOSTNAME*, *AWS_ACCESS_KEY_ID* and *AWS_SECRET_ACCESS_KEY*.
+Once you have these pieces of information, you can save them as environment variables of the instance running Consul Democracy. In this tutorial, we save them respectively as *AWS_S3_BUCKET*, *AWS_S3_REGION*, *AWS_S3_HOSTNAME*, *AWS_ACCESS_KEY_ID* and *AWS_SECRET_ACCESS_KEY*.
 
 Add the following block in your *secrets.yml* file:
 

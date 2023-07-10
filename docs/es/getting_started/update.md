@@ -13,7 +13,7 @@ deberías ver algo como:
 > origin  git@github.com:your_user_name/consul.git (fetch)\
 > origin  git@github.com:your_user_name/consul.git (push)
 
-Ahora debes añadir el repositorio git de CONSUL como servidor remoto con:
+Ahora debes añadir el repositorio git de Consul Democracy como servidor remoto con:
 
 ```bash
 git remote add upstream git@github.com:consul/consul.git
@@ -32,7 +32,7 @@ deberías recibir algo como:
 > origin  git@github.com:your_user_name/consul.git (fetch)\
 > origin  git@github.com:your_user_name/consul.git (push)
 
-## Obteniendo cambios de consul
+## Obteniendo cambios de Consul Democracy
 
 Empieza creando una rama **upstream** a partir de tu rama **master** sobre la que trabajar:
 
@@ -42,7 +42,7 @@ git pull
 git checkout -b upstream
 ```
 
-Y actualiza la información del repositorio de consul con las referencias a las ramas, tags, etc..:
+Y actualiza la información del repositorio de Consul Democracy con las referencias a las ramas, tags, etc..:
 
 ```bash
 git fetch upstream
@@ -58,12 +58,12 @@ B. Sólo actualizar hasta cierta versión (en el caso de que prefieras actualiza
 
 Tras el `merge` de la anterior sección, hay tres posibles escenarios:
 
-A. Obtienes una respuesta `Already up-to-date.`. Eso significa que tu fork esta al dia con los cambios de CONSUL 😊👌
+A. Obtienes una respuesta `Already up-to-date.`. Eso significa que tu fork esta al dia con los cambios de Consul Democracy 😊👌
 
-B. Se abre una ventana del editor que tengas configurado en git, mostrando el mensaje de commit `Merge remote-tracking branch 'upstream/master' into upstream`. Esto significa que git fue capaz de mezclar los cambios de CONSUL sobre tu código sin encontrar problemas o conflictos. Termina el commit.
+B. Se abre una ventana del editor que tengas configurado en git, mostrando el mensaje de commit `Merge remote-tracking branch 'upstream/master' into upstream`. Esto significa que git fue capaz de mezclar los cambios de Consul Democracy sobre tu código sin encontrar problemas o conflictos. Termina el commit.
 
-C. Recibes mensajes de error de git junto con un `Automatic merge failed; fix conflicts and then commit the result.`. Esto significa que se han encontrado conflictos entre los cambios en tu código y los cambios que se realizaron en CONSUL desde la última vez que actualizaste tu fork. Esta es una de las principales razones para intentar mantener tu fork lo más al dia posible, realizando este proceso al menos mensualmente. Resuelve manualmente los conflictos para terminar el merge y haz un commit.
+C. Recibes mensajes de error de git junto con un `Automatic merge failed; fix conflicts and then commit the result.`. Esto significa que se han encontrado conflictos entre los cambios en tu código y los cambios que se realizaron en Consul Democracy desde la última vez que actualizaste tu fork. Esta es una de las principales razones para intentar mantener tu fork lo más al dia posible, realizando este proceso al menos mensualmente. Resuelve manualmente los conflictos para terminar el merge y haz un commit.
 
 Ahora simplemente sube la rama **upstream** a github y crea un Pull Request, así podrás ver de manera sencilla todos los cambios que se han realizado en el repositorio y verás también como arranca la suite de tests.
 
-Recuerda que siempre puedes comprobar rápidamente los cambios que tienes pendientes de integrar de CONSUL a tu fork sustituyendo **your_org_name** en la url: <https://github.com/your_org_name/consul/compare/master...consul:master>
+Recuerda que siempre puedes comprobar rápidamente los cambios que tienes pendientes de integrar de Consul Democracy a tu fork sustituyendo **your_org_name** en la url: <https://github.com/your_org_name/consul/compare/master...consul:master>

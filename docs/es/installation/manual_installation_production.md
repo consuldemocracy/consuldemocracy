@@ -20,7 +20,7 @@ mkdir -p shared/public/assets shared/public/system shared/public/ckeditor_assets
 
 ## Versión inicial
 
-Crea una primera carpeta en "releases" a partir del repositorio, junto con un enlace simbólico a la versión actual (sustituye `<latest_consul_stable_version>` por el número de la última versión estable de CONSUL, como 1.3.1 o 1.4.1):
+Crea una primera carpeta en "releases" a partir del repositorio, junto con un enlace simbólico a la versión actual (sustituye `<latest_consul_stable_version>` por el número de la última versión estable de Consul Democracy, como 1.3.1 o 1.4.1):
 
 ```
 cd repo
@@ -31,7 +31,7 @@ ln -s releases/first current
 
 ## Instalación de gemas
 
-Instala las gemas de las que depende CONSUL:
+Instala las gemas de las que depende Consul Democracy:
 
 ```
 cd releases/first

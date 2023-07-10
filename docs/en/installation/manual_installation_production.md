@@ -21,18 +21,18 @@ mkdir -p shared/public/assets shared/public/system shared/public/ckeditor_assets
 
 ## Initial release
 
-Extract from the repo the first release to the respective directory, and create the symbolic link of the current release (replace `<latest_consul_stable_version>` with the latest version number, like 1.3.1 or 1.4.1):
+Extract from the repo the first release to the respective directory, and create the symbolic link of the current release (replace `<latest_consuldemocracy_stable_version>` with the latest version number, like 1.3.1 or 1.4.1):
 
 ```
 cd repo
-git archive <latest_consul_stable_version> | tar -x -f - -C ../releases/first
+git archive <latest_consuldemocracy_stable_version> | tar -x -f - -C ../releases/first
 cd ..
 ln -s releases/first current
 ```
 
 ## Gems installation
 
-Install the gems CONSUL depends on:
+Install the gems Consul Democracy depends on:
 
 ```
 cd releases/first

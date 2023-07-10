@@ -39,7 +39,7 @@ apt-get install curl
 
 ## Ruby version manager
 
-Ruby versions packaged in official repositories are not suitable to work with consul, so we'll have to install it manually.
+Ruby versions packaged in official repositories are not suitable to work with Consul Democracy, so we'll have to install it manually.
 
 One possible tool is rvm:
 
@@ -160,4 +160,4 @@ You also have the option of just installing ChromeDriver from AUR. If you use `p
 pacaur -S chromedriver
 ```
 
-Now you're ready to go get Consul [installed](local_installation.md)!!
+Now you're ready to go get Consul Democracy [installed](local_installation.md)!!

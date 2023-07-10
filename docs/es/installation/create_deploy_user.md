@@ -64,7 +64,7 @@ Compruebe que su usuario puede iniciar sesión escribiendo:
 Debería ver la página de bienvenida del servidor y un mensaje como este:
 
   ```
-  jupiter@consulserver:~$
+  jupiter@consuldemocracyserver:~$
   ```
 
 Note que el nombre de usuario en el prompt no es "root", sino su nombre de usuario. Así que todo está bien y ahora podemos bloquear la cuenta root del acceso externo y también dejar de permitir el acceso con contraseña para que sólo las personas con claves SSH puedan iniciar sesión.

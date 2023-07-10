@@ -1,6 +1,6 @@
 # Mail Server Configuration
 
-This is an example of how to integrate a mailing service with Consul.
+This is an example of how to integrate a mailing service with Consul Democracy.
 
 In this example we use [Mailgun](https://www.mailgun.com/).
 
@@ -17,7 +17,7 @@ In this example we use [Mailgun](https://www.mailgun.com/).
 * Since you don't have a domain yet, you should click in the sandbox that is already created
 * Remember the following credentials: ![Mailgun sandbox](../../img/mailserver/mailgun-sandbox.png)
 
-## Consul mailing configuration
+## Consul Democracy mailing configuration
 
 * Go to the `config/secrets.yml` file
 * Change the lines on the file to configure the mail server under the section `staging`, `preproduction` or `production`, depending on your setup:
@@ -35,4 +35,4 @@ In this example we use [Mailgun](https://www.mailgun.com/).
 ```
 
 * Fill `<smtp address>`, `<domain>`, `<user_name>` and `<password>` with your information
-* Save the file and restart your Consul application
+* Save the file and restart your Consul Democracy application

@@ -30,7 +30,7 @@
 
 ## GraphQL
 
-The CONSUL API uses GraphQL [http://graphql.org](http://graphql.org), the [Ruby implementation](http://graphql-ruby.org/), to be specific. If you're not familiar with this kind of APIs, it's recommended to make some research about GraphQL before.
+The Consul Democracy API uses GraphQL [http://graphql.org](http://graphql.org), the [Ruby implementation](http://graphql-ruby.org/), to be specific. If you're not familiar with this kind of APIs, it's recommended to make some research about GraphQL before.
 
 One of the characteristics that differentiates a REST API from a GraphQL one is that with the last one it's possible for the client to build its own *custom queries*, so the server will only return information in which we're interested.
 
@@ -68,7 +68,7 @@ Responses are formatted in JSON:
 
 ## Making API requests
 
-Following [the official recommendations](http://graphql.org/learn/serving-over-http/), the CONSUL API supports the following kind of requests:
+Following [the official recommendations](http://graphql.org/learn/serving-over-http/), the Consul Democracy API supports the following kind of requests:
 
 * GET requests, with the query inside the *query string*.
 * POST requests

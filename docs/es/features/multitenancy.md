@@ -4,13 +4,13 @@
 
 La funcionalidad denominada "multientidad" permite la gestión de varias instituciones ("entidades") independientes dentro de una misma aplicación. Por ejemplo, en nuestro caso, un usuario que se dé de alta en una entidad estará solamente dado de alta en esa entidad y sus datos no serán accesibles desde ninguna de las otras entidades.
 
-A qué entidad accedemos se determina a partir de la URL a la que se accede con el navegador. En CONSUL se determina esta entidad a partir del subdominio de esta URL; por ejemplo, si utilizásemos el dominio `ejemplodesistemasolar.org` para gestionar los diferentes planetas del sistema solar, al acceder a `https://mercurio.ejemplodesistemasolar.org` accederíamos a los datos del planeta Mercurio mientras que al acceder a `https://venus.ejemplodesistemasolar.org` accederíamos a los datos del planeta Venus. También es posible utilizar distintos dominios por entidad (por ejemplo, `ejemplodetierra.org`).
+A qué entidad accedemos se determina a partir de la URL a la que se accede con el navegador. En Consul Democracy se determina esta entidad a partir del subdominio de esta URL; por ejemplo, si utilizásemos el dominio `ejemplodesistemasolar.org` para gestionar los diferentes planetas del sistema solar, al acceder a `https://mercurio.ejemplodesistemasolar.org` accederíamos a los datos del planeta Mercurio mientras que al acceder a `https://venus.ejemplodesistemasolar.org` accederíamos a los datos del planeta Venus. También es posible utilizar distintos dominios por entidad (por ejemplo, `ejemplodetierra.org`).
 
 ## Habilitar multientidad
 
-### Pasos preliminares tras actualizar desde la versión 1.5.0 de CONSUL
+### Pasos preliminares tras actualizar desde la versión 1.5.0 de Consul Democracy
 
-Si has actualizado una instalación de CONSUL a la versión 2.0.0 desde la versión 1.5.0, deberás realizar los siguientes pasos antes de habilitar multientidad. Estos pasos no son necesarios en nuevas instalaciones de CONSUL.
+Si has actualizado una instalación de Consul Democracy a la versión 2.0.0 desde la versión 1.5.0, deberás realizar los siguientes pasos antes de habilitar multientidad. Estos pasos no son necesarios en nuevas instalaciones de Consul Democracy.
 
 Así, en primer lugar, tras subir la versión 2.0.0 al servidor de producción, tendrás que ejecutar las tareas de actualización de versión:
 
@@ -30,7 +30,7 @@ Una vez hecho esto, deberás abrir una consola de base de datos utilizando un us
 sudo -u postgres psql -d consul_production
 ```
 
-Si no usaste el [instalador](https://github.com/consul/installer/) para instalar CONSUL, es posible que tengas que ejecutar las siguientes consultas de base de datos para garantizar los permisos del usuario de Rails para crear esquemas así como el acceso al esquema de extensiones compartidas:
+Si no usaste el [instalador](https://github.com/consul/installer/) para instalar Consul Democracy, es posible que tengas que ejecutar las siguientes consultas de base de datos para garantizar los permisos del usuario de Rails para crear esquemas así como el acceso al esquema de extensiones compartidas:
 
 ```
 CREATE SCHEMA shared_extensions AUTHORIZATION <reemplazar_con_usuario_de_rails_de_base_de_datos>;
@@ -45,7 +45,7 @@ ALTER EXTENSION pg_trgm SET SCHEMA shared_extensions;
 ALTER EXTENSION unaccent SET SCHEMA shared_extensions;
 ```
 
-### Paso común a todas las instalaciones de CONSUL
+### Paso común a todas las instalaciones de Consul Democracy
 
 Existen dos posibles maneras de habilitar multientidad:
 
@@ -58,7 +58,7 @@ Tras habilitar esta opción, reinicia la aplicación.
 
 ## Gestión de entidades
 
-Una vez habilitada la funcionalidad de multientidad y reiniciada la aplicación, aparecerá una nueva sección "Multientidad" dentro del menú "Configuración" de la administración de CONSUL.
+Una vez habilitada la funcionalidad de multientidad y reiniciada la aplicación, aparecerá una nueva sección "Multientidad" dentro del menú "Configuración" de la administración de Consul Democracy.
 
 ![Nueva sección con el listado de entidades, con su nombre y dominio o subdominio](../../img/multitenancy/index-es.png)
 
@@ -74,7 +74,7 @@ El nombre se usará como nombre del sitio por defecto para nuevas entidades. Nó
 
 El dominio o subdominio será el que la aplicación utilice para acceder a la entidad. Si tienes un dominio como `ejemplodesistemasolar.org` y quieres acceder a las entidades utilizando subdominios (como `marte.ejemplodesistemasolar.org`), elige "Utiliza un subdominio". Si estás usando un dominio diferente para la entidad (como `ejemplodemarte.org`), elige "Utiliza un dominio distinto".
 
-Nótese que, si estás usando un dominio distinto para una entidad, tendrás que configurar tus certificados SSL, servidor web y DNS para que acepten ese dominio y apunten a tu aplicación CONSUL.
+Nótese que, si estás usando un dominio distinto para una entidad, tendrás que configurar tus certificados SSL, servidor web y DNS para que acepten ese dominio y apunten a tu aplicación Consul Democracy.
 
 Al añadir una nueva entidad, se creará automáticamente un usuario con permiso de administrador para esta nueva entidad **cuyos datos de acceso serán una copia de los del administrador que crea la entidad**. Este usuario se almacenará en el esquema de base de datos de la nueva entidad, con lo que cambiar su contraseña en una entidad no cambiará su contraseña en otras entidades.
 
@@ -82,9 +82,9 @@ Al añadir una nueva entidad, se creará automáticamente un usuario con permiso
 
 ### Certificados SSL
 
-Para que la aplicación sea accesible utilizando conexiones seguras de HTTPS/SSL, deberás tener un certificado SSL válido para la entidad que acabas de añadir. Dado que cada institución que utiliza CONSUL tiene su propio sistema para gestionar estos certificados, conseguir un certificado para la nueva entidad variará en función del sistema que utilice tu institución.
+Para que la aplicación sea accesible utilizando conexiones seguras de HTTPS/SSL, deberás tener un certificado SSL válido para la entidad que acabas de añadir. Dado que cada institución que utiliza Consul Democracy tiene su propio sistema para gestionar estos certificados, conseguir un certificado para la nueva entidad variará en función del sistema que utilice tu institución.
 
-Si has instalado CONSUL usando el instalador y estás usando Certbot para gestionar estos certificados, tienes dos opciones.
+Si has instalado Consul Democracy usando el instalador y estás usando Certbot para gestionar estos certificados, tienes dos opciones.
 
 Una opción es añadir manualmente cada certificado cada vez que creas una entidad. Por ejemplo, para añadir la entidad con subdominio `marte` al dominio `ejemplodesistemasolar.org`, ejecuta:
 
@@ -98,7 +98,7 @@ Si vas a añadir muchos subdominios en distintos momentos, esta tarea puede resu
 sudo certbot certonly --manual --agree-tos --expand -d ejemplodesistemasolar.org,*.ejemplodesistemasolar.org
 ```
 
-Se te pedirá crear un registro TXT en el DNS de tu dominio con el subdominio `_acme-challenge` y con un cierto valor. También es posible que se te pida crear un archivo con un cierto nombre y un cierto contenido (normalmente en un directorio llamado `.well-known/acme-challenge`); si ese es el caso, asumiendo que estás usando los directorios por defecto de CONSUL, crea el fichero en `/home/deploy/consul/current/public/.well-known/acme-challenge/`.
+Se te pedirá crear un registro TXT en el DNS de tu dominio con el subdominio `_acme-challenge` y con un cierto valor. También es posible que se te pida crear un archivo con un cierto nombre y un cierto contenido (normalmente en un directorio llamado `.well-known/acme-challenge`); si ese es el caso, asumiendo que estás usando los directorios por defecto de Consul Democracy, crea el fichero en `/home/deploy/consul/current/public/.well-known/acme-challenge/`.
 
 Después de esto, actualiza la configuración de tu servidor web (por defecto, `/etc/nginx/sites-enabled/default`) para que use el certificado que se ha generado, y reinicia el servidor web con `sudo systemctl restart nginx`.
 
@@ -162,13 +162,13 @@ Tras editar el fichero, reinicia la aplicación.
 
 ### Mantenimiento del fichero schema.rb
 
-Cuando CONSUL crea una entidad, utiliza el fichero `db/schema.rb` para crear un nuevo esquema de la base de datos para esta entidad. Esto significa que, si por alguna razón este fichero no contiene la misma estructura de base de datos que se generaría creando una nueva base de datos y ejecutando las migraciones con `rake db:migrate`, podría darse el caso de que diferentes entidades tuvieran diferentes tablas o columnas en sus esquemas de base de datos. Las consecuencias de esta configuración podrían ser fatales.
+Cuando Consul Democracy crea una entidad, utiliza el fichero `db/schema.rb` para crear un nuevo esquema de la base de datos para esta entidad. Esto significa que, si por alguna razón este fichero no contiene la misma estructura de base de datos que se generaría creando una nueva base de datos y ejecutando las migraciones con `rake db:migrate`, podría darse el caso de que diferentes entidades tuvieran diferentes tablas o columnas en sus esquemas de base de datos. Las consecuencias de esta configuración podrían ser fatales.
 
-Para evitarlo, recomendamos encarecidamente comprobar en tu sistema de integración continua que el fichero `db/schema.rb` que se encuentra en control de versiones es correcto. CONSUL incluye ya esta comprobación si realizas la integración continua con GitHub Actions. Contribuciones incluyendo esta comprobación en GitLab CI u otros entornos son más que bienvenidas.
+Para evitarlo, recomendamos encarecidamente comprobar en tu sistema de integración continua que el fichero `db/schema.rb` que se encuentra en control de versiones es correcto. Consul Democracy incluye ya esta comprobación si realizas la integración continua con GitHub Actions. Contribuciones incluyendo esta comprobación en GitLab CI u otros entornos son más que bienvenidas.
 
 ### Estilos personalizados para cada entidad mediante CSS
 
-Cuando la funcionalidad de multientidad está activada, CONSUL añade una clase al elemento `<html>` para que sea posible aplicar estilos (o eventos de JavaScript) solamente en ciertas entidades. Por ejemplo, en la entidad con subdominio `urano` este elemento tendría la clase `tenant-urano`.
+Cuando la funcionalidad de multientidad está activada, Consul Democracy añade una clase al elemento `<html>` para que sea posible aplicar estilos (o eventos de JavaScript) solamente en ciertas entidades. Por ejemplo, en la entidad con subdominio `urano` este elemento tendría la clase `tenant-urano`.
 
 Así, es posible sobrescribir los estilos para una entidad específica añadiendo a alguna hoja de estilos en la carpeta `app/assets/stylesheets/custom/`:
 
@@ -207,17 +207,17 @@ Por ejemplo, si estás escribiendo una vista personalizada del componente `admin
 
 ## Limitaciones actuales de multientidad
 
-La funcionalidad de multientidad se incluyó por primera vez en CONSUL 2.0.0 y hay algunas cosas que todavía no están disponibles.
+La funcionalidad de multientidad se incluyó por primera vez en Consul Democracy 2.0.0 y hay algunas cosas que todavía no están disponibles.
 
 ### Aplicaciones disponibles desde múltiples dominios
 
-Es posible que permitas acceder a tu aplicación de CONSUL desde dos dominios distintos; por ejemplo, `ejemplodesistemasolar.org` y un dominio en inglés llamado `solarsystemexample.org`.
+Es posible que permitas acceder a tu aplicación de Consul Democracy desde dos dominios distintos; por ejemplo, `ejemplodesistemasolar.org` y un dominio en inglés llamado `solarsystemexample.org`.
 
 En este caso, para conseguir que multientidad funcione con ambos dominios, es necesario cambiar ligeramente el código fuente de la aplicación. En concreto, hay que cambiar el método `allowed_domains` de la clase `Tenant` para que incluya ambos dominios. En la [documentación de personalización de modelos](../customization/models.md) puedes ver ejemplos de cómo personalizar métodos como este.
 
 ### Imágenes personalizadas por entidad
 
-El panel de administración de CONSUL contiene una sección llamada "Personalizar imágenes", donde es posible personalizar algunas (aunque no todas) de las imágenes que aparecen en la aplicación. Usar esta interfaz permite tener imágenes distintas para cada entidad.
+El panel de administración de Consul Democracy contiene una sección llamada "Personalizar imágenes", donde es posible personalizar algunas (aunque no todas) de las imágenes que aparecen en la aplicación. Usar esta interfaz permite tener imágenes distintas para cada entidad.
 
 A veces, sin embargo, es útil incluir ciertas imágenes bajo control de versiones. Por ejemplo, si quisiéramos usar un logo distinto para una entidad en el subdominio `neptuno`, pondríamos ese archivo en `app/assets/images/custom/tenants/neptuno/logo_header.png`.
 
@@ -225,16 +225,16 @@ Este sistema tiene una limitación y es que solamente funcionará para imágenes
 
 ### Bases de datos en distintos servidores para cada entidad
 
-En la versión 2.0.0 de CONSUL, los datos de todas las entidades se almacenan en la misma base de datos y por tanto no es posible usar bases de datos en distintos servidores.
+En la versión 2.0.0 de Consul Democracy, los datos de todas las entidades se almacenan en la misma base de datos y por tanto no es posible usar bases de datos en distintos servidores.
 
-En caso de que esta funcionalidad sea suficientemente solicitada, podrá incluirse en CONSUL en el futuro. Hay que tener en cuenta que la versión 2.0.0 de CONSUL utiliza Rails 6.0 y que para esta funcionalidad será necesario usar Rails 6.1 o incluso Rails 7.0.
+En caso de que esta funcionalidad sea suficientemente solicitada, podrá incluirse en Consul Democracy en el futuro. Hay que tener en cuenta que la versión 2.0.0 de Consul Democracy utiliza Rails 6.0 y que para esta funcionalidad será necesario usar Rails 6.1 o incluso Rails 7.0.
 
 ### Idiomas distintos para distintas entidades
 
 En la versión 2.0.0 de COSNSUL, todas las entidades están disponibles en los mismos idiomas, con lo que no sería posible (por ejemplo) que una entidad estuviera disponible en francés y otra en alemán, sino que ambas tendrían que estar disponibles en ambos idiomas.
 
-Implementar esta posibilidad está planeado para la versión 2.1.0 de CONSUL.
+Implementar esta posibilidad está planeado para la versión 2.1.0 de Consul Democracy.
 
 ### Borrado de entidades
 
-Dado que eliminar una entidad borraría **todos** los datos relacionados con esa entidad y no se podrían restaurar, CONSUL no ofrece la opción de eliminar una entidad ya creada desde el panel de administración y solamente permite deshabilitarlas para que no sea posible acceder a ellas. Para eliminar una entidad, utiliza la consola de Rails.
+Dado que eliminar una entidad borraría **todos** los datos relacionados con esa entidad y no se podrían restaurar, Consul Democracy no ofrece la opción de eliminar una entidad ya creada desde el panel de administración y solamente permite deshabilitarlas para que no sea posible acceder a ellas. Para eliminar una entidad, utiliza la consola de Rails.

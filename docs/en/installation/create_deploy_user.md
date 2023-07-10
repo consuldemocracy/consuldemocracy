@@ -62,7 +62,7 @@ Test that your user can log in by typing:
 You should see the server welcome page and a prompt like this:
 
   ```
-  jupiter@consulserver:~$
+  jupiter@consuldemocracyserver:~$
   ```
 
 Note the username at the prompt is not "root", but your username. So everything is fine and we can now block the root account from outside access and also stop allowing password access so only people with SSH keys can log in.

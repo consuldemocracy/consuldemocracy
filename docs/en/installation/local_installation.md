@@ -1,8 +1,8 @@
 # Local installation
 
-Before installing Consul and having it up and running make sure you all [prerequisites](prerequisites.md) installed.
+Before installing Consul Democracy and having it up and running make sure you all [prerequisites](prerequisites.md) installed.
 
-1. First, clone the [Consul Github repository](https://github.com/consul/consul/) and enter the project folder:
+1. First, clone the [Consul Democracy Github repository](https://github.com/consul/consul/) and enter the project folder:
 
 ```bash
 git clone https://github.com/consul/consul.git
@@ -66,7 +66,7 @@ bin/rspec
 bin/rails s
 ```
 
-Congratulations! Your local Consul application will be running now at `http://localhost:3000`.
+Congratulations! Your local Consul Democracy application will be running now at `http://localhost:3000`.
 
 In case you want to access the local application as admin, a default user verified and with admin permissions was created by the seed files with **username** `admin@consul.dev` and **password** `12345678`.
 

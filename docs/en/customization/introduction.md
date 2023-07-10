@@ -1,12 +1,12 @@
 # Customization
 
-You can modify your own CONSUL to have your custom visual style, but first you'll have to [create your own fork from](../getting_started/create.md).
+You can modify your own Consul Democracy to have your custom visual style, but first you'll have to [create your own fork from](../getting_started/create.md).
 
-We've created an specific structure where you can overwrite and customize the application in a way that will let you keep updating it from CONSUL's main repository, without having conflicts on code merging or risking loosing your customization changes. We try to make CONSUL as vanilla as possible to help other developers onboard the codebase.
+We've created an specific structure where you can overwrite and customize the application in a way that will let you keep updating it from Consul Democracy's main repository, without having conflicts on code merging or risking loosing your customization changes. We try to make Consul Democracy as vanilla as possible to help other developers onboard the codebase.
 
 ## Special Folders and Files
 
-In order to customize your CONSUL fork, you'll make use of some `custom` folders on the following paths:
+In order to customize your Consul Democracy fork, you'll make use of some `custom` folders on the following paths:
 
 * `config/locales/custom/`
 * `app/assets/images/custom/`
@@ -79,7 +79,7 @@ Currently these are all the [available languages](https://api.cognitive.microsof
 ["af", "am", "ar", "as", "az", "ba", "bg", "bn", "bo", "bs", "ca", "cs", "cy", "da", "de", "dv", "el", "en", "es", "et", "eu", "fa", "fi", "fil", "fj", "fo", "fr", "fr-CA", "ga", "gl", "gu", "ha", "he", "hi", "hr", "hsb", "ht", "hu", "hy", "id", "ig", "ikt", "is", "it", "iu", "iu-Latn", "ja", "ka", "kk", "km", "kmr", "kn", "ko", "ku", "ky", "ln", "lo", "lt", "lug", "lv", "lzh", "mg", "mi", "mk", "ml", "mn-Cyrl", "mn-Mong", "mr", "ms", "mt", "mww", "my", "nb", "ne", "nl", "nso", "nya", "or", "otq", "pa", "pl", "prs", "ps", "pt", "pt-PT", "ro", "ru", "run", "rw", "sk", "sl", "sm", "sn", "so", "sq", "sr-Cyrl", "sr-Latn", "st", "sv", "sw", "ta", "te", "th", "ti", "tk", "tlh-Latn", "tlh-Piqd", "tn", "to", "tr", "tt", "ty", "ug", "uk", "ur", "uz", "vi", "xh", "yo", "yua", "yue", "zh-Hans", "zh-Hant", "zu"]
 ```
 
-Of all the languages that Consul currently has defined (`available_locales`) in `config/application.rb` the only one that is not listed above and therefore no translation service is offered is Valencian `["val"]`.
+Of all the languages that Consul Democracy currently has defined (`available_locales`) in `config/application.rb` the only one that is not listed above and therefore no translation service is offered is Valencian `["val"]`.
 
 ### Pricing
 
@@ -129,8 +129,8 @@ The aim of this feature is to allow users the introduction of dynamic contents i
 
 To activate this feature you must follow 2 steps:
 
-1. Execute the following command `bin/rake settings:create_translation_interface_setting RAILS_ENV=production` (This is only required for already existing intallations, for new consul installations this step is not needed).
-2. Accessing as administrator user to the administration panel of your Consul application to the section **Configuration > Features** and activating the feature called **Translation Interface** as you can see next:
+1. Execute the following command `bin/rake settings:create_translation_interface_setting RAILS_ENV=production` (This is only required for already existing intallations, for new Consul Democracy installations this step is not needed).
+2. Accessing as administrator user to the administration panel of your Consul Democracy application to the section **Configuration > Features** and activating the feature called **Translation Interface** as you can see next:
   ![Active interface translations](../../img/translations/interface_translations/active-interface-translations-en.png)
 
 ### Use Cases

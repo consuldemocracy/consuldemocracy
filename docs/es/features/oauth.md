@@ -6,9 +6,9 @@ Puedes configurar la autenticación con servicios externos usando OAuth, por aho
 
 Para cada plataforma, sigue las instrucciones en la sección de desarrolladores de su página web.
 
-## 2. Establece la url de tu CONSUL
+## 2. Establece la url de tu Consul Democracy
 
-Te preguntarán por la URL de autenticación de tu instalación de CONSUL, y como podrás comprobar corriendo la tarea `rake routes` en tu repositorio local:
+Te preguntarán por la URL de autenticación de tu instalación de Consul Democracy, y como podrás comprobar corriendo la tarea `rake routes` en tu repositorio local:
 
 ```bash
 user_omniauth_authorize GET|POST /users/auth/:provider(.:format)          users/omniauth_callbacks#passthru {:provider=>/twitter|facebook|google_oauth2/}

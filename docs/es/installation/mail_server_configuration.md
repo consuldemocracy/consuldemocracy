@@ -1,6 +1,6 @@
 # Configuración del servidor de correo
 
-Este es un ejemplo de cómo integrar un servicio de correo con Consul.
+Este es un ejemplo de cómo integrar un servicio de correo con Consul Democracy.
 
 En este ejemplo usamos [Mailgun](https://www.mailgun.com/).
 
@@ -17,7 +17,7 @@ En este ejemplo usamos [Mailgun](https://www.mailgun.com/).
 * Como todavía no tienes un dominio, debes pinchar en el "sandbox" que ya está creado
 * Recuerda las siguientes credenciales: ![Mailgun sandbox](../../img/mailserver/mailgun-sandbox.png)
 
-## Configuración del correo en Consul
+## Configuración del correo en Consul Democracy
 
 * Ve al archivo `config/secrets.yml`
 * Modifica las líneas en el archivo para configurar el servidor de correo:
@@ -35,4 +35,4 @@ En este ejemplo usamos [Mailgun](https://www.mailgun.com/).
 ```
 
 * Rellena `<smtp address>`, `<domain>`, `<user_name>` y `<password>` con tu información.
-* Guarda el fichero y reinicia tu aplicación Consul
+* Guarda el fichero y reinicia tu aplicación Consul Democracy
