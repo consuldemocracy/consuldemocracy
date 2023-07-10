@@ -17,44 +17,44 @@ tr:
       edit: Düzenle
       configure: Yapılandır
     officing_booth:
-      title: "%{booth} konumundaki kabinde görevlisiniz. Bu bilgi doğru değilse ilerlemeyin ve yardım telefon numarasını arayın. Teşekkürler."
+      title: "Siz %{booth}'ta bulunan kabini görüyorsunuz. Eğer bu doğru değilse, devam etmeyin ve yardım telefon numarasını aramayın. Teşekkürler."
     banners:
       index:
-        title: Afişler
-        create: Afiş oluştur
+        title: Bannerlar
+        create: Banner oluştur
         filters:
-          all: Tümü
+          all: Tüm
           with_active: Aktif
           with_inactive: Pasif
-        preview: Ön izleme
+        preview: Önizleme
       banner:
         sections_label: Görüneceği bölümler
         sections:
-          homepage: Giriş
+          homepage: Ana sayfa
           debates: Tartışmalar
           proposals: Öneriler
           budgets: Katılımcı bütçeleme
           help_page: Yardım sayfası
           sdg: SGH
       create:
-        notice: "Afiş oluşturuldu"
+        notice: "Başlık başarıyla oluşturuldu"
       destroy:
         notice: "Afiş silindi"
       edit:
-        editing: Afişi düzenle
+        editing: Banner düzenleme
         form:
           submit_button: Değişiklikleri kaydet
       new:
-        creating: Afiş oluştur
+        creating: Banner oluştur
       update:
-        notice: "Afiş güncellendi"
+        notice: "Başlık başarıyla güncellendi"
     activity:
       show:
         action: İşlem
         actions:
           block: Engellendi
           hide: Gizli
-          restore: Geri yüklendi
+          restore: Onarıldı
         by: Denetleyen
         content: İçerik
         filter: Göster
@@ -72,7 +72,7 @@ tr:
       actions:
         ballots: "Kabinler oluştur"
         confirm:
-          ballots: "Emin misiniz? Bu işlem yalnızca son oylama aşamasında fiziksel kabinleri kullanacaksanız gereklidir. Vatandaşlar, fiziksel kabinlerden ya da internet üzerinden oy kullanabilecek."
+          ballots: "Emin misiniz? Bu işlem yalnızca son oylama aşamasında fiziksel kabinleri kullanacaksanız gereklidir. Vatandaşlar, fiziksel kabinlerden ya da web üzerinden oy kullanabilecek."
           destroy: "Emin misiniz? Bu işlem, bütçeyi ve onunla ilişkili tüm grupları ve başlıkları silecek. Bu işlem geri alınamaz."
         descriptions:
           ballots: "Bu seçenek, fiziksel oy pusulalarını yönetmenizi sağlar. Bu seçeneği yalnızca son oylama aşamasında oy pusulalarını toplamak için fiziksel kabinler kullanacaksanız kullanın."
@@ -155,7 +155,7 @@ tr:
           single: "Gruplar başlıkları düzenlemek içindir. Bu bütçede yalnızca bir başlık bulunacağından ve hiçbir yerde görünmeyeceğinden aynı ad kullanılabilir. Bir sonraki adıma geçebilirsiniz."
         headings:
           multiple: "Başlıklar, katılımcı bütçedeki parayı ayırmak içindir. Burada, grup için başlıklar ekleyebilir ve her başlık için kullanılacak miktarı belirleyebilirsiniz."
-          single: "Başlıklar, katılımcı bütçenin parasını bölmek içindir. Bu bütçede yalnızca bir başlık bulunacağından, bu katılım bütçesine harcanacak parayı sabitleyeceğiniz yer burasıdır."
+          single: "Başlıklar, katılımcı bütçenin parasını bölmek içindir. Bu bütçede yalnızca bir başlık bulunacağından,, bu katılım bütçesine harcanacak parayı sabitleyeceğiniz yer burasıdır."
         phases: "Katılımcı bütçelerin farklı aşamaları vardır. Burada, aşamaları etkinleştirip devre dışı bırakabilir ve her bir aşamayı özelleştirebilirsiniz."
       show:
         add_group: "Grup ekle"
