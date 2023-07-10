@@ -585,13 +585,13 @@ tr:
           banner_title: Başlık renkleri
         index:
           create: Yeni işlem
-          title: Mevzuat işlemleri
+          title: Katılımcı mevzuat
           filters:
             active: Aktif
             all: Tüm
         new:
           back: Geri
-          title: Yeni katılımcı mevzuat süreci oluşturun
+          title: Yeni katılımcı mevzuat süreci oluştur
           submit_button: İşlem oluşturma
         proposals:
           orders:
