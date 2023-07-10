@@ -12,11 +12,11 @@ nl:
       form:
         phase_not_open: Deze fase is nog niet gestart
       index:
-        title: Comments
+        title: Reacties
         comments_about: Reacties over
         see_in_context: Bekijk in de context
       show:
-        title: Commentaar
+        title: Reactie
       version_chooser:
         seeing_version: Reacties voor versie
         see_text: Bekijk concept tekst
@@ -52,7 +52,7 @@ nl:
         filter: Filter
         filters:
           open: Open plannen
-          past: Verleden
+          past: Oud
         no_open_processes: Er zijn geen actieve plannen
         no_past_processes: Er zijn geen afgesloten plannen
         section_header:
@@ -74,7 +74,7 @@ nl:
         homepage: Homepage
         debate_dates: Debat
         draft_publication_date: Publicatie concept
-        allegations_dates: Comments
+        allegations_dates: Reacties
         result_publication_date: Publicatie eindversie
         milestones_date: Volgend
         proposals_dates: Voorstellen
@@ -104,7 +104,7 @@ nl:
       share_comment: Geef een reactie op %{version_name} van het concept proces %{process_name}
     proposals:
       form:
-        tags_label: "Categorieen"
+        tags_label: "Categorieën"
       not_verified: "Om op voorstellen te stemmen %{verify_account}."
       process_title: Samenwerken in plannen
     summary:
