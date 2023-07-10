@@ -1,23 +1,23 @@
 tr:
   account:
     show:
-      change_credentials_link: Kimlik bilgilerimi değiştir
+      change_credentials_link: Oturum açma bilgilerimi değiştir
       erase_account_link: Hesabımı sil
       finish_verification: Doğrulamayı tamamla
       notifications: Bildirimler
-      personal: Kişisel detaylar
-      public_interests_my_title_list: Takip ettiğiniz öğelerin etiketleri
-      public_interests_user_title_list: Bu kullanıcının takip ettiği öğelerin etiketleri
+      personal: Kişisel bilgiler
+      public_interests_my_title_list: Takip ettiğiniz bileşenlerin etiketleri
+      public_interests_user_title_list: Bu kullanıcının takip ettiği bileşenlerin etiketleri
       save_changes_submit: Değişiklikleri kaydet
-      recommendations: Tavsiyeler
+      recommendations: Öneriler
       title: Hesabım
       user_permission_info: Hesabınızla şunları yapabilirsiniz...
       user_permission_title: Katılım
-      user_permission_verify: Tüm eylemleri gerçekleştirmek için hesabınızı doğrulayın.
+      user_permission_verify: Tüm işlemleri yapabilmek için hesabınızı doğrulayın.
       verified_account: Hesap doğrulandı
       verify_my_account: Hesabımı doğrula
   application:
-    close: Kapalı
+    close: Kapat
     menu: Menü
   comments:
     actions:
