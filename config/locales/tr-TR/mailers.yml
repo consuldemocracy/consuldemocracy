@@ -104,7 +104,7 @@ tr:
       text_2: "Hazır olduğunuzda yurttaş önerinizi <a href='%{link}'>bu bağlantıyla</a> yayınlayın."
       text_3: "Alışılmışın dışında bir öneri oluşturmanın ve gerekli desteği almanın ilk bakışta başarması zor gibi göründüğünü biliyoruz. Ama endişelenmeyin, çünkü sana yardım edeceğiz!"
       text_4: "Size yardımcı olacak bir aracınız var: Vatandaş Önerileri paneli."
-      list_1: "Sizinle paylaşacağımız ipuçlarını ve kaynakları kullanmak için önerinizin paneline her gün girin."
+      list_1: "Sizinle paylaşacağımız ip uçlarını ve kaynakları kullanmak için her gün önerinizin panosunu ziyaret edin."
       list_2: "Bu ipuçları, eylem önerileri ve kaynaklar size daha fazla destek almak ve daha geniş bir topluluğa ulaşmak için fikirler ve pratik çözümler sunacaktır. Onları unutmayın!"
       list_3: "Daha fazla destek kazandıkça, yeni ve daha iyi kaynaklara ulaşabileceksiniz. Şu anda, tüm kişisel bağlantılarınıza toplu olarak gönderebileceğiniz bir e-posta taslağınız, çıktısını alabileceğiniz bir görsel, keşfedeceğiniz diğer özellikler ve ödüller var. Destek aramaya devam ettiğiniz sürece, ödüllerimiz ve yardımlarımız devam edecektir!"
       list_4: "%{max_votes} desteği almak için önerinizi yayınladığınızdan itibaren %{max_month} ayınız var ve öneriniz gerçeğe dönüşebilir. Ancak ilk günler en önemlileridir. Bu bir meydan okuma. Hazır olun!"
