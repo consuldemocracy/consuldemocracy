@@ -3,13 +3,13 @@ tr:
     ballots:
       show:
         title: Oyunuz
-        amount_progress: "%{amount_spent}%{amount_limit}"
+        amount_progress: "%{amount_spent} / %{amount_limit}"
         amount_available:
-          knapsack: "Şu an itibariyle yatırım yapabileceğiniz miktar <span>%{count}</span>"
+          knapsack: "Kullanabileceğiniz miktar <span>%{count}</span>"
           approval:
-            zero: "Şu an itibariyle <span>%{count}</span> oy hakkınız bulunmaktadır."
-            one: "Şu an itibariyle <span>%{count}</span> oy hakkınız bulunmaktadır."
-            other: "Şu an itibariyle <span>%{count}</span> oy hakkınız bulunmaktadır."
+            zero: "<span>%{count}</span> oy hakkınız var."
+            one: "<span>%{count}</span> oy hakkınız var."
+            other: "<span>%{count}</span> oy hakkınız var."
         amount_spent:
           knapsack: "Harcanan miktar <span>%{count}</span>"
           approval:
@@ -31,14 +31,14 @@ tr:
         voted_info_2: "Ancak bu aşama tamamlanana kadar oyunuzu istediğiniz zaman değiştirebilirsiniz."
         zero: Herhangi bir yatırım projesine oy vermediniz.
       reasons_for_not_balloting:
-        not_verified: Yalnızca doğrulanan kullanıcılar yatırımlara oy verebilir; %{verify_account}.
-        not_selected: Seçilmeyen yatırım projeleri desteklenemez
-        not_enough_money: "Mevcut bütçeyi zaten atadınız. <br> <small> İstediğiniz zaman%{change_ballot} yapabileceğinizi unutmayın </small>"
-        no_ballots_allowed: Seçim aşaması kapanmıştır
-        different_heading_assigned: "Zaten farklı bir başlık seçtiniz:%{heading_link}"
-        not_enough_available_votes: "Kullanabileceğiniz maksimum oy sayısına ulaştınız"
-        change_ballot: oylarınızı değiştirin
-        casted_offline: Daha önce çevrimdışı olarak katıldınız
+        not_verified: Yalnızca doğrulanmış kullanıcılar yatırımlara oy verebilir; %{verify_account}.
+        not_selected: Seçilmemiş yatırım projeleri desteklenemez
+        not_enough_money: "Kullanılabilecek bütçeyi zaten atamışsınız. <br> <small>İstediğiniz zaman %{change_ballot} yapabileceğinizi unutmayın</small>"
+        no_ballots_allowed: Seçim aşaması tamamlandı
+        different_heading_assigned: "Başka bir başlığa zaten oy vermişsiniz:%{heading_link}"
+        not_enough_available_votes: "Kullanabileceğiniz en fazla oy sayısına ulaştınız"
+        change_ballot: oy değişikliği
+        casted_offline: Zaten çevrim dışı olarak katılmışsınız
     groups:
       show:
         title: Bir başlık seçin
@@ -55,12 +55,12 @@ tr:
       finished: Bütçe tamamlandı
     index:
       title: Katılımcı bütçeler
-      empty_budgets: Hiç bütçe yok.
+      empty_budgets: Harhangi bir bütçe yok.
       section_header:
         icon_alt: Katılımcı bütçeler simgesi
         title: Katılımcı bütçeler
-        help: Katılımcı bütçelere yardım edin
-      all_phases: Bütçe yatırım'ının aşamaları
+        help: Katılımcı bütçelerle destek olun
+      all_phases: Katılımcı bütçe aşamaları
       next_phase: Sonraki aşama
       prev_phase: Önceki aşama
       current_phase: Geçerli aşama
@@ -68,7 +68,7 @@ tr:
       finished_budgets: Tamamlanmış katılımcı bütçeler
       see_results: Sonuçları göster
       section_footer:
-        title: Katılımcı bütçelere yardım edin
+        title: Katılımcı bütçelerle destek olun
         description: Katılımcı bütçelerde yurttaşlar hangi projelerin bütçenin bir parçası olacağına karar verir.
       milestones: Aşamalar
     investments:
