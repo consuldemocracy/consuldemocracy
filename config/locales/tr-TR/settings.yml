@@ -62,7 +62,7 @@ tr:
     postal_codes_description: "Geçerli posta kodlarının virgülle ayrılmış listesidir. Ayrıca, iki nokta üst üste işareti ile ayrılmış aralıkları da kullanabilirsiniz. Örneğin: 00001:00010, 00024, AB3 45FG, 00031:00035, \n00001 ile 00010 arasındaki posta kodlarına, 00024 posta koduna, AB3 45FG posta koduna ve 00031 ile 00035 arasındaki posta kodlarına izin verir. Boş bırakmanız halinde, tüm posta kodları geçerli olacaktır."
     proposals:
       successful_proposal_id: Başarılı öneri
-      successful_proposal_id_description: Bu öneri, destek numarasında başarılı bir teklif için referans olarak kullanıldı ve gösterge tablosunda gösterilecektir.
+      successful_proposal_id_description: Bu öneri, yeterli sayıda desteklenen bir öneri için referans olarak kullanıldı ve pano çizelgesinde görüntülenecek.
       poll_short_title: Anketler
       poll_short_title_description: Anket özelliğinin kısa açıklaması. Kullanıcıların bir öneri ile ilgili anket oluşturmasına izin verir
       poll_description: Anketlerin tanımlaması
@@ -134,7 +134,7 @@ tr:
         notification_emails_description: "Pano bildirim e-postaları öneri sahiplerine gönderilsin"
       remove_investments_supports: "Bütçe yatırımlarından destekler geri çekilebilsin"
       remove_investments_supports_description: "Projelerin seçilmesi aşamasında kullanıcılar bütçe yatırımlarına katkı desteklerini geri çekebilsin."
-      sdg: SKH
+      sdg: SGA
       sdg_description: Yönetim menüsünde ve genel ayarlarda sürdürülebilir gelişim hedefleri bölümlerini etkinleştirin.
     remote_census:
       general:
@@ -215,13 +215,13 @@ tr:
         content_types_description: "Yüklenen belgeler için izin verilen tüm içerik türlerini seçin"
     sdg:
       process:
-        debates: Tartışmalardaki ilgili SKH'ler
+        debates: Tartışmalarla ilgili SGA
         debates_description: Tartışmalar sürdürülebilir gelişim hedefleri ile ilişkilendirilebilsin
-        proposals: Tekliflerdeki ilgili SKH'ler
-        proposals_description: Tekliflerin Sürdürülebilir Kalkınma Hedefleri ile ilişkilendirilmesine izin ver
-        polls: Anketlerdeki ilgili SKH
-        polls_description: Anketlerin Sürdürülebilir Kalkınma Hedefleri ile ilişkilendirilmesine izin ver
-        budgets: Katılımcı bütçelerdeki ilgili SKH
-        budgets_description: Katılımcı bütçelerin Sürdürülebilir Kalkınma Hedefleri ile ilişkilendirilmesine izin ver
-        legislation: İşbirliğine dayalı mevzuattaki ilgili SKH
-        legislation_description: İşbirliğine dayalı mevzuatın Sürdürülebilir Kalkınma Hedefleri ile ilişkilendirilmesine izin ver
+        proposals: Önerilerle ilgili SGA
+        proposals_description: Öneriler sürdürülebilir gelişme amaçları ile ilişkilendirilebilsin
+        polls: Anketlerle ilgili SGA
+        polls_description: Anketler sürdürülebilir gelişme amaçları ile ilişkilendirilebilsin
+        budgets: Katılımcı bütçelerle ilgili SGA
+        budgets_description: Katılımcı bütçeler sürdürülebilir gelişme amaçları ile ilişkilendirilebilsin
+        legislation: Katılımcı mevzuatlarla ilgili SGA
+        legislation_description: Katılımcı mevzuatlar sürdürülebilir gelişme amaçları ile ilişkilendirilebilsin
