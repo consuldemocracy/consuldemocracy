@@ -104,11 +104,11 @@ nl:
       create:
         notice: Nieuwe burgerbegroting aangemaakt!
       update:
-        notice: Participatory budget updated successfully
+        notice: Participatief budgetvoorstel bewerkt
       publish:
         notice: "Participatief budget succesvol gepubliceerd"
       edit:
-        title: Edit Participatory budget
+        title: Bewerk Burgerbegroting
         publish: "Budget publiceren"
         delete: Verwijder begroting
         phase: Phase
@@ -415,7 +415,7 @@ nl:
         create:
           notice: Actie succesvol aangemaakt
         edit:
-          editing: Actie bewerken voor het voorsteldashboard
+          editing: Actie voor het voorsteldashboard bewerken
           back: Terug naar lijst
         delete:
           success: Actie succesvol verwijderd
@@ -546,7 +546,7 @@ nl:
           title: Configureer de proces-pagina
       proposals:
         index:
-          title: Title
+          title: Voorstellen
           back: Terug
           id: Id
           supports: Steunt
@@ -1268,7 +1268,7 @@ nl:
         external_code: External code
         census_code: Census code
         code_help: Responscode voor het gebied van de census API
-        coordinates: Coordinates
+        coordinates: Coördinaten beschikbaar
         coordinates_help: Coördinaten die een klikbaar gebied op een HTML-afbeelding met hyperlinks genereert
       edit:
         form:
