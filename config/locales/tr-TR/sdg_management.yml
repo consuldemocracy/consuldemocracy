@@ -1,19 +1,19 @@
 tr:
   sdg_management:
     actions:
-      edit: "Amaçları ve hedefleri yönetin"
+      edit: "Amaç ve hedef yönetimi"
     header:
       title: "SKH içeriği"
     homepage:
-      title: "Ana sayfa biçimlendirmesi"
+      title: "Giriş yapılandırması"
       header:
         create: "Başlık oluştur"
-        no_cards: "Başlık yok"
+        no_cards: "Herhangi bir başlık yok"
         title: "Başlık"
-      create_card: "Kart %{phase} oluştur"
+      create_card: "%{phase} kartı oluştur"
       no_cards: "Bu aşama için kart yok"
     menu:
-      budget_investments: "Katılımcı bütçeleri"
+      budget_investments: "Katılımcı bütçeler"
       debates: "Tartışmalar"
       legislation_processes: "İşbirliğine dayalı mevzuat"
       legislation_proposals: "Yasal mevzuat teklifleri"
