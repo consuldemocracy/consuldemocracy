@@ -6,7 +6,8 @@ es:
     advanced_stats_enabled: "Mostrar estadísticas avanzadas"
     name: Nombre
     email: Email
-    description: Descripción detallada
+    description: Descripción
+    related_sdg_list: Objetivos y Metas
   activerecord:
     models:
       activity:
@@ -75,6 +76,18 @@ es:
       proposal:
         one: "Propuesta ciudadana"
         other: "Propuestas ciudadanas"
+      sdg/goal:
+        one: "objetivo"
+        other: "objetivos"
+      sdg/local_target:
+        one: "meta localizada"
+        other: "metas localizadas"
+      sdg/manager:
+        one: "gestor ODS"
+        other: "gestores ODS"
+      sdg/target:
+        one: "meta"
+        other: "metas"
       site_customization/page:
         one: Página
         other: Páginas
@@ -111,6 +124,9 @@ es:
       images:
         one: "Imagen"
         other: "Imágenes"
+      tenant:
+        one: "entidad"
+        other: "entidades"
       topic:
         one: "Tema"
         other: "Temas"
@@ -132,6 +148,9 @@ es:
       local_census_record:
         one: Registro del censo local
         other: Registros del censo local
+      votation_type:
+        one: Tipo de votación
+        other: Tipos de votación
     attributes:
       budget:
         name: "Nombre"
@@ -147,7 +166,10 @@ es:
         voting_style: "Estilo de la votación final"
         voting_style_knapsack: "Bolsa de dinero"
         voting_style_approval: "Por aprobación"
+        hide_money: "Ocultar la cantidad de dinero para este presupuesto"
       budget/translation:
+        main_link_text: "Texto del enlace"
+        main_link_url: "El enlace te lleva a (añade un enlace)"
         name: "Nombre"
       budget/investment:
         heading_id: "Partida presupuestaria"
@@ -179,7 +201,9 @@ es:
       geozone:
         name: Nombre
         external_code: "Código externo (opcional)"
+        color: "Color (opcional)"
         census_code: "Código del censo (opcional)"
+        geojson: "Datos GeoJSON (opcional)"
         html_map_coordinates: "Coordenadas HTML <map> (opcional)"
       milestone:
         status_id: "Estado actual (opcional)"
@@ -220,6 +244,8 @@ es:
         name: "Nombre"
         description: "Descripción"
         summary: "Resumen"
+        main_link_text: "Texto del enlace"
+        main_link_url: "El enlace te lleva a (añade un enlace)"
       comment:
         body: "Comentario"
         user: "Usuario"
@@ -255,7 +281,7 @@ es:
         password: "Contraseña"
         current_password: "Contraseña actual"
         email_digest: "Recibir resumen de notificaciones sobre propuestas"
-        email_on_comment: "Recibir un email cuando alguien comenta en mis propuestas o debates"
+        email_on_comment: "Recibir un email cuando alguien comenta en mis contenidos"
         email_on_comment_reply: "Recibir un email cuando alguien contesta a mis comentarios"
         email_on_direct_message: "Recibir emails con mensajes privados"
         newsletter: "Recibir emails con información interesante sobre la web"
@@ -314,14 +340,22 @@ es:
         signable_id: "ID Propuesta ciudadana/Proyecto de gasto"
         document_numbers: "Números de documentos"
       sdg/goal:
+        code: "Código"
         title: "Título"
-        description: "Descripción detallada"
+        description: "Descripción"
       sdg/local_target:
+        code: "Código"
+        target_id: "Meta"
         title: "Título"
       sdg/local_target/translation:
         title: "Título"
-        description: "Descripción detallada"
+        description: "Descripción"
+      sdg/phase/kind:
+        sensitization: "Sensibilización"
+        planning: "Planificación"
+        monitoring: "Seguimiento"
       sdg/target:
+        code: "Código"
         title: "Título"
       site_customization/page:
         content: Contenido
@@ -349,6 +383,10 @@ es:
         body: Contenido
       tag:
         name: "Escribe el nombre del tema"
+      tenant:
+        domain: "Dominio"
+        schema: "Dominio / Subdominio"
+        subdomain: "Subdominio"
       topic:
         title: "Título"
         description: "Texto inicial"
@@ -425,7 +463,7 @@ es:
         description: Descripción
       poll/question/answer/translation:
         title: Respuesta
-        description: "Descripción"
+        description: "Descripción (opcional)"
       poll/question/answer/video:
         title: Título
         url: Vídeo externo
@@ -488,6 +526,12 @@ es:
         document_number: Número de documento
         date_of_birth: Fecha de nacimiento
         postal_code: Código postal
+      votation_type:
+        max_votes: Número máximo de votos
+        vote_type: Tipo de votación
+      votation_type/vote_type:
+        unique: Respuesta única
+        multiple: Respuesta múltiple
     errors:
       models:
         user:
@@ -502,6 +546,10 @@ es:
           attributes:
             max_per_day:
               invalid: "Has llegado al número máximo de mensajes privados por día"
+        geozone:
+          attributes:
+            geojson:
+              invalid: "Los datos GeoJSON proporcionados no tienen el formato correcto. Deben tener un tipo del formato \"Polygon\" o \"MultiPolygon\"."
         image:
           attributes:
             attachment:
@@ -569,6 +617,10 @@ es:
           attributes:
             locale:
               already_translated: Recurso ya traducido
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: "debe empezar con el código de su meta seguido de un punto y terminar con un número"
       messages:
         translations_too_short: El obligatorio proporcionar una traducción como mínimo
         record_invalid: "Error de validación: %{errors}"
