@@ -88,12 +88,12 @@ tr:
         filters:
           all: Tümü
           open: Açık
-          finished: Bitmiş
-        budget_investments: Projeleri yönetme
+          finished: Tamamlanmış
+        budget_investments: Yatırım projeleri
         table_budget_type: "Tür"
         table_completed: Tamamlandı
         table_draft: "Taslak"
-        table_duration: "Süreç"
+        table_duration: "Süre"
         table_name: Ad
         table_phase: Aşama
         table_phase_progress: "(%{current_phase_number}/%{total_phases})"
