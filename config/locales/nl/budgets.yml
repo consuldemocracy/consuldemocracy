@@ -78,8 +78,8 @@ nl:
         subtitle_without_price: "%{heading}"
         tag_category_label: "Categorieën"
         tags_instructions: "Voeg termen toe aan dit voorstel. Je kunt kiezen uit voorgestelde termen of je eigen term kiezen"
-        tags_label: Tags
-        tags_placeholder: "Voer de termen in die je wilt gebruiken, gescheiden door komma's (',')"
+        tags_label: Labels
+        tags_placeholder: "Voer de labels in die je wilt gebruiken, gescheiden door kommas (',')"
         map_location: "Locatie"
         map_location_instructions: "Beweeg de kaart en wijs de locatie aan"
       index:
@@ -90,7 +90,7 @@ nl:
         search_form:
           button: Search
           placeholder: Zoek begrotingsvoorstellen...
-          title: Search
+          title: Zoek
         sidebar:
           my_ballot: Mijn stemmen
           voted_info:
@@ -106,7 +106,7 @@ nl:
           change_vote_link: "je stem wijzigen"
           different_heading_assigned: "Je steunt al in een ander onderdeel van het voorstel: %{heading_link}"
           change_ballot: "Als u zich bedenkt kunt uw uw stemmen in %{check_ballot} verwijderen opnieuw beginnen."
-          check_ballot_link: "check mijn stemming"
+          check_ballot_link: "verstuur mijn stemmen"
           zero: U hebt op geen enkel begrotingsvoorstel gestemd.
           verified_only: "%{verify} je account om een nieuw begrotingsvoorstel te doen."
           create: "Nieuw begrotingsvoorstel maken"
@@ -132,13 +132,13 @@ nl:
         location: "Locatie: <strong>%{location}</strong>"
         organization_name: "Voorgesteld namens: <strong>%{name}</strong>"
         share: Deel
-        title: Investment project
+        title: Begrotingsvoorstel
         supports: Steunt
-        votes: Votes
+        votes: Stemmen
         price: Prijs
         comments_tab: Reacties
         milestones_tab: Mijlpalen
-        author: Author
+        author: Auteur
         project_unfeasible: "Dit investeringsproject <strong> is gemarkeerd als niet haalbaar </strong> en gaat niet naar de beslissingsfase."
         project_selected: "Dit investeringsproject <strong> is geselecteerd </strong> voor beslissingsfase."
         project_winner: "Winnend investeringsproject"
@@ -157,7 +157,7 @@ nl:
       header:
         check_ballot: "Check mijn stemmen"
         different_heading_assigned: "Je steunt al in een ander onderdeel van het voorstel: %{heading_link}"
-        change_ballot: "ALs je je bedenkt kun je je stemmen in %{check_ballot} verwijderen en opnieuw beginnen."
+        change_ballot: "Als je je bedenkt kan je je stemmen in %{check_ballot} verwijderen en opnieuw beginnen."
         check_ballot_link: "bekijk mijn stemmen"
         price: "Deze rubriek heeft een budget van"
       votes:
@@ -167,7 +167,7 @@ nl:
           other: "Je kunt maar in %{count} wijk voorstellen steunen. Als je verder gaat is dat definitief. Weet je het zeker?"
         remove_support: "Steun intrekken"
         remove_support_label: "Steun voor %{investment} intrekken"
-        support: "Support"
+        support: "Steun"
         support_label: "Steun %{investment}"
     investments_list:
       investment:
