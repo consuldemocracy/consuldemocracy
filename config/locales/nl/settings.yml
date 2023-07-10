@@ -122,7 +122,7 @@ nl:
     remote_census:
       request:
         method_name: "Naam van de aanvraagmethode"
-        structure: "Aanvraagstructure"
+        structure: "Aanvraagstructuur"
     map:
       latitude: "Breedte"
       latitude_description: "Breedtegraad om de kaartpositie te tonen"
