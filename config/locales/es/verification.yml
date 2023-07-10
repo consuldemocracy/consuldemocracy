@@ -26,7 +26,7 @@ es:
       errors:
         incorrect_code: Código de verificación incorrecto
       new:
-        explanation: "Para participar en las votaciones finales puedes:"
+        explanation: "Para votar proyectos en los presupuestos participativos puedes:"
         go_to_index: Ver propuestas
         office: Verificarte presencialmente en cualquier Oficina de Atención al Ciudadano
         send_letter: Solicitar una carta por correo postal
@@ -55,7 +55,7 @@ es:
           residence_card: Tarjeta de residencia
           spanish_id: DNI
         error_not_allowed_age: No tienes la edad mínima para participar
-        error_not_allowed_postal_code: Para verificarte debes estar empadronado.
+        error_not_allowed_postal_code: Los ciudadanos residentes en este código postal no pueden participar
         error_verifying_census: El Padrón no pudo verificar tu información. Por favor, confirma que tus datos de empadronamiento sean correctos llamando al Ayuntamiento o visitando una Oficina de Atención al Ciudadano.
         form_errors: evitaron verificar tu residencia
         postal_code_note: Para verificar tus datos debes estar empadronado
@@ -91,7 +91,8 @@ es:
     user_permission_info: Al verificar tus datos podrás...
     user_permission_proposal: Crear nuevas propuestas
     user_permission_support_proposal: Apoyar propuestas
-    user_permission_votes: Participar en las votaciones finales*
+    user_permission_votes: Votar proyectos en los presupuestos participativos
+    verification_needed: Verificación adicional necesaria
     verified_user:
       form:
         submit_button: Enviar código
