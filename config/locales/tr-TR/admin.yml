@@ -35,7 +35,7 @@ tr:
           proposals: Öneriler
           budgets: Katılımcı bütçeleme
           help_page: Yardım sayfası
-          sdg: SGH
+          sdg: SGA
       create:
         notice: "Afiş oluşturuldu"
       destroy:
@@ -135,7 +135,7 @@ tr:
         name_description: "Bu, etkin olduğu zaman başlıkta ve kartlarda kullanılan katılımcı bütçenin adıdır"
         image_description: "Bir görsel yüklenirse bu katılımcı bütçenin üstünde afiş olarak kullanılır. Yüklenmezse bütçelerin varsayılan rengi kullanılır."
         main_call_to_action: "Eylem için ana mesaj (isteğe bağlı)"
-        main_call_to_action_description: "Bu bağlantı, katılımcı bütçenin ana afişinde görüntülenir ve kullanıcılarınızı bir öneri oluşturma, var olan önerileri oylama veya süreç hakkında ayrıntılı bilgi edinme gibi belirli bir eylemi gerçekleştirmeye teşvik eder."
+        main_call_to_action_description: "Bu bağlantı, katılımcı bütçenin ana afişinde görüntülenir ve kullanıcılarınızı bir öneri oluşturma, var olan önerileri oylama veya süreç hakkında ayrıntılı bilgi edinme gibi belirli bir işlemi yapmaya teşvik eder."
         info:
           budget_settings: "Genel katılımcı bütçe ayarları"
           staff_settings: "Bütçeye atanan yönetici ve bilirkişiler"
@@ -149,7 +149,7 @@ tr:
         title_multiple: Çoklu yeni başlık bütçesi
         title_single: Tekli yeni başlık bütçesi
       help:
-        budgets: "Katılımcı bütçeler, vatandaşların teklif vermesine ve bütçenin bir kısmının nasıl harcanacağına doğrudan karar vermesine olanak tanımakla beraber, tekliflerin kurum tarafından izlenmesine ve titiz bir şekilde değerlendirilmesine de olanak tanır."
+        budgets: "Katılımcı bütçeler, vatandaşların öneride bulunmasına ve bütçenin bir kısmının nasıl harcanacağına doğrudan karar vermesine olanak tanımakla beraber, önerilerin kuruluş tarafından izlenmesini ve titiz bir şekilde değerlendirilmesini de sağlar."
         groups:
           multiple: "Grupların başlıkları düzenlemesi hedeflenmiştir. Grup ve içerikleri oluşturulduktan sonra, bir kullanıcının grup başına kaç başlıkta oy verebileceğini belirlemek mümkündür."
           single: "Gruplar başlıkları düzenlemek içindir. Bu bütçede yalnızca bir başlık bulunacağından ve hiçbir yerde görünmeyeceğinden aynı ad kullanılabilir. Bir sonraki adıma geçebilirsiniz."
@@ -453,7 +453,7 @@ tr:
         description: '%{org} yönetici paneline hoş geldiniz.'
       actions:
         index:
-          description: "Kullanıcılar öneriler oluşturduklarında, fikirlerine destek almak için kaynakları ve tavsiyeleri önerebileceğiniz, tekliflerinin bir gösterge panosuna erişebilirler."
+          description: "Kullanıcılar öneriler oluşturduktan sonra öneri panosundan, fikirlerine destek olacak kaynakları ve önerileri öğrenebilir."
           create: Kaynak veya eylem oluştur
           active: 'Evet'
           inactive: 'Hayır'
@@ -562,19 +562,19 @@ tr:
     legislation:
       processes:
         create:
-          notice: 'İşlem başarıyla oluşturuldu. <a href="%{link}">Ziyaret etmek için tıklayın</a>'
-          error: İşlem oluşturulamadı
+          notice: 'Süreç oluşturuldu. <a href="%{link}">Ziyaret etmek için tıklayın</a>'
+          error: Süreç oluşturulamadı
         update:
-          notice: 'İşlem başarıyla güncellendi. <a href="%{link}">Ziyaret etmek için tıklayın</a>'
-          error: İşlem güncellenemedi
+          notice: 'Süreç güncellendi. <a href="%{link}">Ziyaret etmek için tıklayın</a>'
+          error: Süreç güncellenemedi
         destroy:
-          notice: İşlem başarıyla silindi
+          notice: Süreç silindi
         edit:
           back: Geri
           submit_button: Değişiklikleri kaydet
         form:
-          enabled: Etkinleştirildi
-          process: İşlem
+          enabled: Etkin
+          process: Süreç
           debate_phase: Tartışma aşaması
           draft_phase: Taslak aşaması
           draft_phase_description: Bu aşama aktif ise süreç, süreçler dizininde görüntülenmez. Başlamadan önce süreç ön izleme ve içerik oluşturma izinlerini verin.
@@ -584,19 +584,19 @@ tr:
           homepage_description: Burada işlemin içeriğini açıklayabilirsiniz
           banner_title: Başlık renkleri
         index:
-          create: Yeni işlem
+          create: Yeni süreç
           title: Katılımcı mevzuat
           filters:
             active: Aktif
-            all: Tüm
+            all: Tümü
         new:
           back: Geri
           title: Yeni katılımcı mevzuat süreci oluştur
-          submit_button: İşlem oluşturma
+          submit_button: Süreç oluştur
         proposals:
           orders:
-            id: "Kimlik"
-            title: "İsim"
+            id: "Kimliğe göre sırala"
+            title: "Başlığa göre sırala"
             supports: "Tam destek"
         process:
           title: İşlem
@@ -694,15 +694,15 @@ tr:
           title: Yeni soru oluştur
           submit_button: Soru oluştur
         table:
-          title: İsim
+          title: Başlık
           question_options: Soru seçenekleri
-          answers_count: Cevapların sayısı
-          comments_count: Yorumların sayısı
+          answers_count: Yanıt sayısı
+          comments_count: Yorum sayısı
         question_option_fields:
           remove_option: Seçeneği kaldır
       milestones:
         index:
-          title: Takip
+          title: Takip ediliyor
     managers:
       index:
         title: Yöneticiler
@@ -780,7 +780,7 @@ tr:
       title_settings: Ayarlar
       title_site_customization: Site içeriği
       title_booths: Oylama kabinleri
-      legislation: Katılımcı Mevzuat
+      legislation: Katılımcı mevzuat
       users: Kullanıcılar
       dashboard: Öneriler gösterge tablosu
       administrator_tasks: İstenilen kaynaklar
@@ -1336,7 +1336,7 @@ tr:
           how_to_enable: 'Uzaktan sayımı(SOAP) yapılandırmak için "Özellikler" sekmesinden "Uzaktan sayıma(SOAP) bağlantıyı yapılandır" seçeneğini etkinleştirmelisiniz.'
         sdg:
           title: SGH yapılandırması
-          how_to_enable: 'SKH ile ilgili yapılandırma seçeneklerini görüntülemek için, "Özellikler" sekmesinden "SKH" özelliğini etkinleştirmelisiniz.'
+          how_to_enable: 'SGA ile ilgili yapılandırma seçeneklerini görüntülemek için, "Özellikler" sekmesinden "SGA" özelliğini etkinleştirmelisiniz.'
       remote_census_general_name: Genel Bilgi
       remote_census_request_name: Veri Talebi
       remote_census_response_name: Yanıt Verisi
@@ -1468,7 +1468,7 @@ tr:
           user_level_two: İkinci seviye kullanıcılar
           users: Toplam kullanıcılar
           verified_users: Doğrulanan kullanıcılar
-          verified_users_who_didnt_vote_proposals: Teklifleri oylamayan doğrulanan kullanıcılar
+          verified_users_who_didnt_vote_proposals: Önerileri oylamamış doğrulanmış kullanıcılar
           visits: Ziyaretler
           votes: Toplam oylar
         budgets_title: Katılımcı bütçeleme
@@ -1477,7 +1477,7 @@ tr:
         proposal_notifications: Öneri bildirimleri
         incomplete_verifications: Tamamlanmamış doğrulamalar
         polls: Anketler
-        sdg: SKH
+        sdg: SGA
       graph:
         debate_created: Tartışmalar
         visit: Ziyaretler
@@ -1522,12 +1522,12 @@ tr:
           origin_total: Toplam katılımcılar
       sdg:
         budget_investments:
-          amount: "Onaylanan miktar"
+          amount: "Onaylanan tutar"
           winners: "Kazanan yatırım projeleri"
           sent: "Yatırım projeleri gönderildi"
         debates: "Tartışmalar"
         polls: "Anketler"
-        proposals: "Teklifler"
+        proposals: "Öneriler"
         title: "Sürdürülebilir gelişim hedefleri - İstatistikler"
     tags:
       create: Konu oluştur
