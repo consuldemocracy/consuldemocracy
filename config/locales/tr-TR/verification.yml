@@ -1,19 +1,19 @@
 tr:
   verification:
     alert:
-      lock: Maksimum deneme sayısına ulaştınız. Lütfen daha sonra tekrar deneyiniz.
+      lock: En fazla deneme sayısına ulaştınız. Lütfen bir süre sonra yeniden deneyin.
     back: Hesabıma dön
     email:
       create:
         alert:
-          failure: Hesabınıza bir e-posta gönderirken bir sorun oluştu
+          failure: Hesabınıza bir e-posta gönderilirken bir sorun çıktı
         flash:
           success: "Hesabınıza bir onay e-postası gönderdik: %{email}"
       show:
         alert:
           failure: Doğrulama kodu yanlış
         flash:
-          success: Siz doğrulanmış bir kullanıcısınız
+          success: Doğrulanmış bir kullanıcısınız
     letter:
       alert:
         unconfirmed_code: Onay kodunu henüz girmediniz
