@@ -640,7 +640,7 @@ gd:
       cant_answer_verify: "Feumaidh tu %{verify_link} mus tèid agad air freagairt."
       verify_link: "dearbhaich do chunntas"
       cant_answer_expired: "Tha an cunntas-bheachd seo air tighinn gu crìch."
-      cant_answer_wrong_geozone: "Chan eil a’ cheist seo ri fhaighinn san geo-sgìre agad."
+      cant_answer_wrong_geozone: "Chan eil a’ cheist seo ri fhaighinn san sgìre agad"
       more_info_title: "Barrachd fiosrachaidh"
       documents: Sgrìobhainnean
       zoom_plus: Leudaich an ìomhaigh
