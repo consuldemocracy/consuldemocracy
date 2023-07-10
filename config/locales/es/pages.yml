@@ -1,5 +1,8 @@
 es:
   pages:
+    census_terms:
+      title: "Términos y condiciones de acceso al Padrón"
+      description: "Página de información sobre los términos y condiciones de acceso al Padrón."
     conditions:
       title: Condiciones de uso
       subtitle: AVISO LEGAL SOBRE LAS CONDICIONES DE USO, PRIVACIDAD Y PROTECCIÓN DE DATOS PERSONALES DEL PORTAL DE GOBIERNO ABIERTO
@@ -56,6 +59,7 @@ es:
       other:
         title: "Otra información de interés"
         how_to_use: "Utiliza %{org_name} en tu municipio"
+        sdg: "Ayuda Objetivos de Desarrollo Sostenible"
       how_to_use:
         text: |-
           Utilízalo en tu municipio libremente o ayúdanos a mejorarlo, es software libre.
