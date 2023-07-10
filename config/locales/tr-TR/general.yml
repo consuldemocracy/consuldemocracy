@@ -424,7 +424,7 @@ tr:
       embed_video_title: "%{proposal} ile ilgili video"
       title_video_url: "Dış görüntü"
       author: Sahip
-      draft: Öneri taslakta. Henüz destek alamıyor, öneri listesinde de görünmüyor.
+      draft: Öneri taslak aşamasında. Henüz destek alamıyor ve öneri listesinde görüntülenmiyor.
     update:
       form:
         submit_button: Değişiklikleri kaydet
@@ -444,7 +444,7 @@ tr:
       request: Talep
     create_request:
       success: İstek başarıyla gönderildi. Size bilgi vermek için en kısa sürede sizinle iletişim kuracağız.
-      archived: Bu öneri arşivlendi ve kaynak talep edemiyor.
+      archived: Bu öneri arşivlenmiş olduğundan kaynak isteğinde bulunamaz.
     progress:
       title: Grafik
       group_by_month: Aylık
@@ -567,9 +567,9 @@ tr:
         support_button: Bu öneriyi destekle
         share_in: Paylaş
         hi: "Merhaba!"
-        introduction: Nasıl bir şehirde yaşamak istediğimize karar verebileceğimiz bir platform olan %{org} 'a katıldığımı size bildirmek için yazıyorum. Bunun için kendi vatandaş önerimi oluşturdum ve şimdi de desteğinize ihtiyacım var! Ama endişelenmeyin çünkü bu çok basit.
-        support: "'Bu öneriyi destekle' seçeneğinin altında göreceğiniz düğmeyi tıklamanız yeterlidir ve tanıtımını yapmadan önce kendinizi haberdar edebilirsiniz. Yalnızca, azami desteği sağlayan teklifler Belediye Meclisi tarafından yerine getirilecek ve sanırım bunu başarmama yardım edeceğinize eminim!"
-        share: "Ve eğer bana iyilik yaparak teklifimi arkadaşlarınla, ailenle ve yakınlarınla paylaşırsan, mükemmel olacak!"
+        introduction: Nasıl bir şehirde yaşamak istediğimize karar verebileceğimiz %{org} platformuna katıldığımı bildirmek için yazıyorum. Kendi yurttaş önerimi oluşturdum ve şimdi desteğiniz gerekiyor! Endişelenmeyin destek olmak çok kolay.
+        support: "'Bu öneriyi destekle' seçeneğinin altında göreceğiniz düğmeyi tıklamanız yeterli. Öneri hakkında bilgi sahibi olduktan sonra duyurmaya da yardımcı olabilirsiniz. Yönetim yalnızca en çok desteklenen önerileri gerçekleştirecek ve bunu başarmamıza yardım edeceğinden eminim!"
+        share: "Bana bir iyilik yaparak önerimi arkadaşlarınla, ailenle ve yakınlarınla paylaşırsan, mükemmel olacak!"
   polls:
     all: "Tüm"
     no_dates: "tarih atanmamış"
@@ -643,7 +643,7 @@ tr:
     new:
       title: "Mesaj gönder"
       submit_button: "Mesaj gönder"
-      info_about_receivers: "Bu mesaj <strong>%{count} kişiye</strong> gönderilecek ve %{proposal_page} üzerinde görülecek. <br> Mesajlar anlık olarak gönderilmez, kullanıcılar belirli aralıklarla tüm teklif bildirimlerini içeren bir e-posta alır."
+      info_about_receivers: "Bu ileti <strong>%{count} kişiye</strong> gönderilecek ve %{proposal_page} üzerinde görülecek.<br>İletiler anlık olarak gönderilmez. Kullanıcılara belirli aralıklarla tüm öneri bildirimlerinin olduğu bir e-posta gönderilir."
       proposal_page: "öneri'ler sayfası"
     show:
       back: "Faaliyetime geri dön"
