@@ -98,7 +98,7 @@ nl:
       title: "Machine Learning script"
     new_actions_notification_on_create:
       subject: "Je conceptvoorstel is aangemaakt"
-      hi: "Hi %{name}!"
+      hi: "Hoi %{name}!"
       introduction: "Je %{title} voorstel is succesvol aangemaakt."
       text_1: "Doe er je voordeel mee dat je voorstel nog niet openbaar is en maak je klaar om een hoop mensen te benaderen."
       text_2: "Als je klaar bent publiceer je je voorstel via <a href='%{link}'>deze link</a>."
