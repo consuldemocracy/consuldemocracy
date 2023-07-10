@@ -81,7 +81,7 @@ tr:
         tags_label: Etiketler
         tags_placeholder: "Kullanmak istediğiniz etiketleri virgül (',') ile ayırarak yazın"
         map_location: "Harita konumu"
-        map_location_instructions: "Harita ile konuma gidin ve işaretçiyi yerleştirin."
+        map_location_instructions: "Harita ile konuma gidin ve işareti yerleştirin."
       index:
         title: Katılımcı bütçeleme
         unfeasible: Uygulanabilir bulunmayan yatırım projeleri
@@ -101,32 +101,32 @@ tr:
               one: "<strong>Bir öneri için oy kullandınız</strong>"
               other: "<strong>%{count} öneri için oy kullandınız</strong>"
           change_vote_info:
-            knapsack: "%{phase_end_date} tarihine kadar istediğiniz zaman %{link} yapabilirsiniz. Mevcut tüm parayı harcamanız gerekmemektedir."
+            knapsack: "%{phase_end_date} tarihine kadar istediğiniz zaman %{link} yapabilirsiniz. Kullanılabilecek tüm parayı harcamanız gerekmez."
             approval: "%{phase_end_date} tarihine kadar istediğiniz zaman %{link} yapabilirsiniz."
-          change_vote_link: "oyunuzu değiştirin"
+          change_vote_link: "oy değişikliği"
           different_heading_assigned: "Başka bir başlıkta aktif oylarınız var: %{heading_link}"
-          change_ballot: "Eğer fikrinizi değiştirirseniz oyunuzu %{check_ballot} 'tan kaldırabilirsiniz ve baştan başlayabilirsiniz."
-          check_ballot_link: "oyumu kontrol et"
+          change_ballot: "Fikrinizi değiştirirseniz %{check_ballot} oyunuzu kaldırıp baştan başlayabilirsiniz."
+          check_ballot_link: "oyumu gönder"
           zero: Bu gruptaki herhangi bir yatırım projesine oy vermediniz.
           verified_only: "Yeni bir bütçe yatırımı oluşturmak için %{verify}."
           create: "Bir yatırım bütçesi oluştur"
-          not_logged_in: "Yeni bir bütçe yatırımı oluşturmak istiyorsanız %{sign_in} ya da %{sign_up}."
+          not_logged_in: "Yeni bir bütçe yatırımı oluşturmak istiyorsanız %{sign_in}ın ya da %{sign_up}ın."
         filter: "Projelere göre süzme"
         filters:
           not_unfeasible: "Aktif"
           selected: "Aktif"
           unfeasible: "Uygulanabilir bulunmamış"
-          unselected: "Seçilemez"
+          unselected: "Son oylama için seçilmemiş"
           winners: "Kazananlar"
         orders:
           random: rasgele
           confidence_score: en yüksek puanlı
           price: maliyete göre
       share:
-        message: "Ben %{title} içinde %{handle} yatırım projesi oluşturdum. Siz de bir yatırım projesi oluşturun!"
+        message: "%{title} konulu %{handle} yatırım projesini oluşturdum. Siz de bir yatırım projesi oluşturun!"
       show:
         author_deleted: Kullanıcı silindi
-        price_explanation: Fiyat açıklama
+        price_explanation: Maliyet açıklaması
         unfeasibility_explanation: Uygulanabilir bulunmama açıklaması
         code: "Yatırım projesi kodu: <strong>%{code}</strong>"
         location: "Konum: <strong>%{location}</strong>"
@@ -140,14 +140,14 @@ tr:
         milestones_tab: Aşamalar
         author: Sahip
         project_unfeasible: "Bu yatırım projesi <strong>uygulanabilir bulunmamış olarak işaretlenmiş</strong> ve oylama aşamasına geçemeyecek."
-        project_selected: "Bu yatırım projesi oylama aşaması için <strong>seçildi</strong>."
+        project_selected: "Bu yatırım projesi oylama aşaması için <strong>seçilmiş</strong>."
         project_winner: "Kazanan yatırım projesi"
-        project_not_selected: "Bu yatırım projesi oylama aşaması için <strong>seçilmedi</strong>."
-        see_price_explanation: Fiyat açıklamasını gör
-      wrong_price_format: Sadece tam sayılar
+        project_not_selected: "Bu yatırım projesi oylama aşaması için <strong>seçilmemiş</strong>."
+        see_price_explanation: Maliyet açıklamasını görüntüle
+      wrong_price_format: Yalnızca tam sayılar
       investment:
-        add: Oy
-        add_label: "%{investment} yatırımını destekle"
+        add: Oy ver
+        add_label: "%{investment} yatırımına oy ver"
         already_added: Bu yatırım projesini zaten eklediniz
         support_title: Bu projeyi destekleyin
         supports:
@@ -157,22 +157,22 @@ tr:
       header:
         check_ballot: "Oyumu gönder"
         different_heading_assigned: "Başka bir başlıkta aktif oylarınız var: %{heading_link}"
-        change_ballot: "Eğer fikrinizi değiştirirseniz oyunuzu %{check_ballot} 'tan kaldırabilirsiniz ve baştan başlayabilirsiniz."
+        change_ballot: "Fikrinizi değiştirirseniz %{check_ballot} oyunuzu kaldırıp baştan başlayabilirsiniz."
         check_ballot_link: "oyumu gönder"
-        price: "Bu başlığın bir bütçesi var"
+        price: "Toplam bütçe"
       votes:
         already_supported: "Bu yatırım projesini zaten desteklediniz. Paylaşın!"
         confirm_group:
-          one: "Yalnızca %{count} bölgesindeki yatırımları destekleyebilirsiniz. Devam ederseniz, bölgenizdeki seçimi değiştiremezsiniz. Emin misiniz?"
-          other: "Yalnızca %{count} bölgesindeki yatırımları destekleyebilirsiniz. Devam ederseniz, bölgenizdeki seçimi değiştiremezsiniz. Emin misiniz?"
-        remove_support: "Desteğini kaldır"
-        remove_support_label: "Desteğini kaldır %{investment}"
-        support: "Destek"
-        support_label: "Destekle %{investment}"
+          one: "Yalnızca %{count} bölgedeki yatırımları destekleyebilirsiniz. İlerlerseniz bölgenizdeki seçimi değiştiremezsiniz. Emin misiniz?"
+          other: "Yalnızca %{count} bölgedeki yatırımları destekleyebilirsiniz. İlerlerseniz bölgenizdeki seçimi değiştiremezsiniz. Emin misiniz?"
+        remove_support: "Desteğinizi geri çekin"
+        remove_support_label: "%{investment} desteğinizi geri çekin"
+        support: "Destekleyin"
+        support_label: "%{investment} yatırımını destekleyin"
     investments_list:
       investment:
         price: "Maliyet"
-        read_more: "Daha fazla oku"
+        read_more: "Devamını oku"
         supports: "Destekler"
       see_all: "Tüm yatırımları göster"
       title: "Yatırımların listesi"
@@ -211,7 +211,7 @@ tr:
       page_title: "%{budget} - Aşamalar"
       heading: "Katılımcı bütçe aşamaları"
       heading_selection_title: "Bölgeye göre"
-      no_winner_investments: "Bu mevkide kazanan yatırım yok"
+      no_winner_investments: "Bu durumda bir kazanan yatırım yok"
       filters:
         status:
           label: "Projenin güncel durumu"
@@ -221,6 +221,6 @@ tr:
           all: "Tümü (%{count})"
     phases:
       errors:
-        dates_range_invalid: "Başlangıç tarihi Bitiş tarihine eşit veya ondan sonra olamaz"
-        prev_phase_dates_invalid: "Başlangıç tarihi, etkin olan önceki aşamanın başlangıç tarihinden sonra olmalıdır (%{phase_name})"
-        next_phase_dates_invalid: "Bitiş tarihi, bir sonraki etkinleştirilmiş aşamanın bitiş tarihinden önce olmalıdır (%{phase_name})"
+        dates_range_invalid: "Başlangıç tarihi bitiş tarihiyle aynı ya da sonra olamaz"
+        prev_phase_dates_invalid: "Başlangıç tarihi, önceki etkin aşamanın (%{phase_name}) başlangıç tarihinden sonra olmalıdır"
+        next_phase_dates_invalid: "Bitiş tarihi, sonraki etkin aşamanın (%{phase_name}) bitiş tarihinden önce olmalıdır"
