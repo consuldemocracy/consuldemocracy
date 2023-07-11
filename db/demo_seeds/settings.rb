@@ -1,7 +1,6 @@
 section "Creating DEMO Settings" do
   {
     "org_name": "CONSUL DEMO",
-    "url": "https://demo.consulproject.org",
     "meta_description": "Citizen participation tool for an open, transparent and democratic government",
     "meta_keywords": "citizen participation, open government",
     "meta_title": "CONSUL DEMO",
