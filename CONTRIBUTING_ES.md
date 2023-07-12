@@ -6,7 +6,7 @@ Los miembros del proyecto y la comunidad de personas que contribuyen a él se ad
 
 ## Comunicación general y de incidencias
 
-El método preferido para informar sobre una incidencia en el proyecto es [creando una incidencia en el repositorio del proyecto](https://github.com/consul/consul/issues/new).
+El método preferido para informar sobre una incidencia en el proyecto es [creando una incidencia en el repositorio del proyecto](https://github.com/consuldemocracy/consuldemocracy/issues/new).
 
 * Trata de darle un título descriptivo (algo más que "xxx no funciona").
 * Es buena idea incluir las siguientes secciones:
@@ -19,7 +19,7 @@ El método preferido para informar sobre una incidencia en el proyecto es [crean
 
 ## Resolver una incidencia
 
-Las [incidencias marcadas como help wanted](https://github.com/consul/consul/labels/help%20wanted) son funcionalidades bien definidas y que están listas para que quien quiera pueda implementarlas.
+Las [incidencias marcadas como help wanted](https://github.com/consuldemocracy/consuldemocracy/labels/help%20wanted) son funcionalidades bien definidas y que están listas para que quien quiera pueda implementarlas.
 
 Cuando quieras resolver una incidencia mediante código:
 
@@ -36,7 +36,7 @@ Si quieres que revisemos tu código con una sonrisa, por favor sigue nuestras co
 * Los tests se ejecutarán automáticamente para comprobar que el resto de la aplicación sigue funcionando; asegúrate de que los tests pasan
 * Ejecuta `bundle exec pronto run` y arregla los problemas de los que informe (si es que hay alguno)
 * Sigue [las siete reglas para un gran mensaje de commit](https://chris.beams.io/posts/git-commit/)
-* Añade o modifica las traducciones i18n sólo en los idiomas base, inglés (en) y español (es); todos los demás idiomas los gestionamos a través de la [integración de Crowdin](https://crowdin.com/project/consul).
+* Añade o modifica las traducciones i18n sólo en los idiomas base, inglés (en) y español (es); todos los demás idiomas los gestionamos a través de la [integración de Crowdin](https://translate.consuldemocracy.org/).
 
 Cuando revisemos tu código y te pidamos que cambies alguna cosa, si tienes experiencia con `git rebase` edita los commits existentes en vez de añadir más. Si no tienes experiencia con `git rebase`, puedes saltarte este punto.
 
@@ -51,7 +51,7 @@ Cuando revisemos tu código y te pidamos que cambies alguna cosa, si tienes expe
 
 ## Todos los demás contribuidores
 
-Además del equipo principal, hay [más de cien contribuidores](https://github.com/consul/consul/graphs/contributors). ¡Muchas gracias por vuestro código! También estamos muy agradecidos a las personas que contribuyen de otras formas, incluida la documentación, traducciones, evangelismo, administración de sistemas, comunicación, organización y más.
+Además del equipo principal, hay [más de cien contribuidores](https://github.com/consuldemocracy/consuldemocracy/graphs/contributors). ¡Muchas gracias por vuestro código! También estamos muy agradecidos a las personas que contribuyen de otras formas, incluida la documentación, traducciones, evangelismo, administración de sistemas, comunicación, organización y más.
 
 Finalmente, un agradecimiento especial a los antiguos miembros del equipo principal. Conocidos con cariño como El Alumni:
 

@@ -1386,7 +1386,7 @@ en:
       show_results_and_stats: "Show results and stats"
       results_and_stats_reminder: "Marking these checkboxes the results and/or stats will be publicly available and every user will see them."
       close_modal: Close modal
-      example_url: "For example, https://consulproject.org or /help"
+      example_url: "For example, https://consuldemocracy.org or /help"
     geozones:
       index:
         title: Geozone
@@ -1625,7 +1625,7 @@ en:
           see_page: View
         new:
           title: Create new custom page
-          slug_help: "Text to identify this page on URL, for example <code>https://consulproject.org/page-slug</code>"
+          slug_help: "Text to identify this page on URL, for example <code>https://consuldemocracy.org/page-slug</code>"
         page:
           created_at: Created at
           status: Status
@@ -1746,10 +1746,10 @@ en:
       help:
         title_1: "What is AI / Machine Learning?"
         description_1: "Traditionally, computer programs are designed by establishing precise rules about what the program should do in each situation, and how to process the available information at each moment. What is commonly known as AI/Machine Learning is a type of programs for which what is precisely established is what the task to be performed is and how it is assessed whether the task is better or worse performed. But unlike the former, the system discovers or learns what would be the most suitable method to perform the task."
-        title_2: "What does the AI / Machine Learning module in CONSUL?"
-        description_2: "This module allows any type of AI/Machine Learning programs to be implemented in CONSUL. The programs can process the information available in CONSUL and produce results that help both users and administrators to carry out more effective and intelligent citizen participation. The module has been developed to make it easy to implement and run new programs, keeping the general code of CONSUL and the code of these new programs independent from each other."
+        title_2: "What does the AI / Machine Learning module in CONSUL DEMOCRACY?"
+        description_2: "This module allows any type of AI/Machine Learning programs to be implemented in CONSUL DEMOCRACY. The programs can process the information available in CONSUL DEMOCRACY and produce results that help both users and administrators to carry out more effective and intelligent citizen participation. The module has been developed to make it easy to implement and run new programs, keeping the general code of CONSUL DEMOCRACY and the code of these new programs independent from each other."
         title_3: "How to use this module"
-        description_3: "To use it for the first time it is necessary to follow the instructions available in the CONSUL documentation to properly activate this module. Once the module is correctly activated, the programs are executed from the \"Execute scripts\" tab. Before executing it, we can see in the same tab an estimation of the execution time and other relevant information. At the end of the execution, we can activate the content that will be shown in CONSUL from the \"Settings\" tab, as well as download other generated files that may be useful to us."
+        description_3: "To use it for the first time it is necessary to follow the instructions available in the CONSUL DEMOCRACY documentation to properly activate this module. Once the module is correctly activated, the programs are executed from the \"Execute scripts\" tab. Before executing it, we can see in the same tab an estimation of the execution time and other relevant information. At the end of the execution, we can activate the content that will be shown in CONSUL DEMOCRACY from the \"Settings\" tab, as well as download other generated files that may be useful to us."
         title_4: "How to implement new AI / Machine Learning scripts"
         description_4: "Please use previous scripts as examples."
         description_4b: "The new scripts should be located in the folder <code>public/machine_learning/scripts</code>"

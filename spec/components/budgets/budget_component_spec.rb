@@ -27,12 +27,12 @@ describe Budgets::BudgetComponent do
         expect(header).not_to have_css ".main-link"
       end
 
-      budget.update!(main_link_text: "Participate now!", main_link_url: "https://consulproject.org")
+      budget.update!(main_link_text: "Participate now!", main_link_url: "https://consuldemocracy.org")
 
       render_inline Budgets::BudgetComponent.new(budget)
 
       page.find(".budget-header") do |header|
-        expect(header).to have_link "Participate now!", href: "https://consulproject.org", class: "main-link"
+        expect(header).to have_link "Participate now!", href: "https://consuldemocracy.org", class: "main-link"
       end
     end
   end
