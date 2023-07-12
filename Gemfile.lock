@@ -6,6 +6,7 @@ GEM
 GEM
   remote: https://rubygems.org/
   specs:
+    Ascii85 (1.1.0)
     actioncable (6.1.7.6)
       actionpack (= 6.1.7.6)
       activesupport (= 6.1.7.6)
@@ -70,6 +71,7 @@ GEM
     acts_as_votable (0.14.0)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
+    afm (0.2.2)
     ahoy_matey (4.2.1)
       activesupport (>= 5.2)
       device_detector
@@ -259,6 +261,7 @@ GEM
     gyoku (1.4.0)
       builder (>= 2.1.2)
       rexml (~> 3.0)
+    hashery (2.1.2)
     hashie (5.0.0)
     highline (2.0.3)
     htmlentities (4.3.4)
@@ -412,6 +415,12 @@ GEM
     parser (3.2.2.3)
       ast (~> 2.4.1)
       racc
+    pdf-reader (2.11.0)
+      Ascii85 (~> 1.0)
+      afm (~> 0.2.1)
+      hashery (~> 2.0)
+      ruby-rc4
+      ttfunk
     pg (1.4.3)
     pg_search (2.3.6)
       activerecord (>= 5.2)
@@ -549,6 +558,7 @@ GEM
       rubocop-capybara (~> 2.17)
       rubocop-factory_bot (~> 2.22)
     ruby-progressbar (1.13.0)
+    ruby-rc4 (0.1.5)
     ruby-vips (2.1.4)
       ffi (~> 1.12)
     ruby2_keywords (0.0.5)
@@ -630,6 +640,7 @@ GEM
     tilt (2.0.10)
     timeout (0.4.1)
     tomlrb (2.0.3)
+    ttfunk (1.7.0)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -739,6 +750,7 @@ DEPENDENCIES
   omniauth-rails_csrf_protection (~> 1.0.1)
   omniauth-twitter (~> 1.4.0)
   paranoia (~> 2.6.2)
+  pdf-reader
   pg (~> 1.4.3)
   pg_search (~> 2.3.6)
   pronto (~> 0.11.1)
