@@ -2,7 +2,7 @@
 
 ## Translations
 
-Currently, Consul Democracy is totally or partially translated to multiple languages. You can find the translations at the [Crowdin project](https://crowdin.com/project/consul).
+Currently, Consul Democracy is totally or partially translated to multiple languages. You can find the translations at the [Crowdin project](https://translate.consuldemocracy.org/).
 
 Please [join the translators](https://crwd.in/consul) to help us complete existing ones, or contact us through [Consul Democracy's gitter](https://gitter.im/consul/consul) to become a proofreader and validate translators' contributions.
 
