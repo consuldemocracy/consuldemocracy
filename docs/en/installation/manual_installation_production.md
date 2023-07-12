@@ -1,6 +1,6 @@
 # Manual installation for production
 
-**WARNING:** This method is *not recommended* and not officially supported, since you should use the [installer](https://github.com/consul/installer) instead. Use this method if the installer isn't an option and you can already deal with PostgreSQL, puma or passenger, NGNIX and SSL (with letsencrypt, for instance).
+**WARNING:** This method is *not recommended* and not officially supported, since you should use the [installer](https://github.com/consuldemocracy/installer) instead. Use this method if the installer isn't an option and you can already deal with PostgreSQL, puma or passenger, NGNIX and SSL (with letsencrypt, for instance).
 
 This guide assumes you've already [installed all the necessary packages](prerequisites.md) on your system.
 
@@ -13,7 +13,7 @@ First, create the main folder, clone the repo to a repo directory, and create th
 ```
 mkdir consul
 cd consul
-git clone --mirror https://github.com/consul/consul.git repo
+git clone --mirror https://github.com/consuldemocracy/consuldemocracy.git repo
 mkdir releases shared
 mkdir shared/log shared/tmp shared/config shared/public shared/storage
 mkdir -p shared/public/assets shared/public/system shared/public/ckeditor_assets shared/public/machine_learning/data

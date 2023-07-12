@@ -14,7 +14,7 @@ Este tutorial asume que ya has conseguido clonar Consul Democracy en tu máquina
 3. Accede a tu repositorio de Consul Democracy y crea una instancia
 
   ```bash
-  cd consul
+  cd consuldemocracy
   heroku create your-app-name
   ```
 

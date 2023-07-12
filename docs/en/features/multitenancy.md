@@ -30,7 +30,7 @@ Next, open a database console with a user having permission to create and manage
 sudo -u postgres psql -d consul_production
 ```
 
-If you didn't use the [installer](https://github.com/consul/installer/) to install Consul Democracy, you might need to execute a couple of queries to make sure the Rails database user has permission to create schemas and the shared extensions schema has the right permissions:
+If you didn't use the [installer](https://github.com/consuldemocracy/installer/) to install Consul Democracy, you might need to execute a couple of queries to make sure the Rails database user has permission to create schemas and the shared extensions schema has the right permissions:
 
 ```
 CREATE SCHEMA shared_extensions AUTHORIZATION <replace_with_rails_database_username>;
@@ -178,7 +178,7 @@ This way, it'll be possible to overwrite the default styles for just this tenant
 }
 ```
 
-To easily change the default colors on a specific tenant, you can use CSS variables; their usage is documented in the [app/assets/stylesheets/custom/tenants.scss](https://github.com/consul/consul/blob/master/app/assets/stylesheets/custom/tenants.scss) file. For example, to make the brand colors green on the tenant with the `uranus` subdomain, write:
+To easily change the default colors on a specific tenant, you can use CSS variables; their usage is documented in the [app/assets/stylesheets/custom/tenants.scss](https://github.com/consuldemocracy/consuldemocracy/blob/master/app/assets/stylesheets/custom/tenants.scss) file. For example, to make the brand colors green on the tenant with the `uranus` subdomain, write:
 
 ```
 .tenant-uranus {

@@ -76,7 +76,7 @@ El código de este proyecto está publicado bajo la licencia AFFERO GPL v3 (ver 
 
 ## Contribuciones
 
-Ver fichero [CONTRIBUTING_ES.md](https://github.com/consul/consul/blob/master/CONTRIBUTING_ES.md)
+Ver fichero [CONTRIBUTING_ES.md](https://github.com/consuldemocracy/consuldemocracy/blob/master/CONTRIBUTING_ES.md)
 
 ## Desarrollo en local con Docker
 

@@ -30,7 +30,7 @@ Una vez hecho esto, deberás abrir una consola de base de datos utilizando un us
 sudo -u postgres psql -d consul_production
 ```
 
-Si no usaste el [instalador](https://github.com/consul/installer/) para instalar Consul Democracy, es posible que tengas que ejecutar las siguientes consultas de base de datos para garantizar los permisos del usuario de Rails para crear esquemas así como el acceso al esquema de extensiones compartidas:
+Si no usaste el [instalador](https://github.com/consuldemocracy/installer/) para instalar Consul Democracy, es posible que tengas que ejecutar las siguientes consultas de base de datos para garantizar los permisos del usuario de Rails para crear esquemas así como el acceso al esquema de extensiones compartidas:
 
 ```
 CREATE SCHEMA shared_extensions AUTHORIZATION <reemplazar_con_usuario_de_rails_de_base_de_datos>;
@@ -178,7 +178,7 @@ Así, es posible sobrescribir los estilos para una entidad específica añadiend
 }
 ```
 
-Para cambiar los colores en una determinada entidad de forma sencilla, puedes utilizar variables de CSS; su uso aparece documentado en el fichero [app/assets/stylesheets/custom/tenants.scss](https://github.com/consul/consul/blob/master/app/assets/stylesheets/custom/tenants.scss). Por ejemplo, para utilizar tonos de verde en los colores principales de la entidad con subdominio `urano`, puedes escribir:
+Para cambiar los colores en una determinada entidad de forma sencilla, puedes utilizar variables de CSS; su uso aparece documentado en el fichero [app/assets/stylesheets/custom/tenants.scss](https://github.com/consuldemocracy/consuldemocracy/blob/master/app/assets/stylesheets/custom/tenants.scss). Por ejemplo, para utilizar tonos de verde en los colores principales de la entidad con subdominio `urano`, puedes escribir:
 
 ```
 .tenant-urano {

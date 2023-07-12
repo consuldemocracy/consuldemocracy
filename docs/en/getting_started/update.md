@@ -10,13 +10,13 @@ git remote -v
 
 it should output something alike:
 
-> origin  git@github.com:your_user_name/consul.git (fetch)\
-> origin  git@github.com:your_user_name/consul.git (push)
+> origin  git@github.com:your_user_name/consuldemocracy.git (fetch)\
+> origin  git@github.com:your_user_name/consuldemocracy.git (push)
 
 Now we have to add Consul Democracy's github as upstream remote with:
 
 ```bash
-git remote add upstream git@github.com:consul/consul.git
+git remote add upstream git@github.com:consuldemocracy/consuldemocracy.git
 ```
 
 and to check everything is fine with
@@ -27,10 +27,10 @@ git remote -v
 
 again you should get:
 
-> upstream  git@github.com:consul/consul.git (fetch)\
-> upstream  git@github.com:consul/consul.git (push)\
-> origin  git@github.com:your_user_name/consul.git (fetch)\
-> origin  git@github.com:your_user_name/consul.git (push)
+> upstream  git@github.com:consuldemocracy/consuldemocracy.git (fetch)\
+> upstream  git@github.com:consuldemocracy/consuldemocracy.git (push)\
+> origin  git@github.com:your_user_name/consuldemocracy.git (fetch)\
+> origin  git@github.com:your_user_name/consuldemocracy.git (push)
 
 ## Pulling changes from Consul Democracy
 
@@ -52,7 +52,7 @@ And then you can choose to either:
 
 A. Get all the latest changes on Consul Democracy's **master** branch with `git merge upstream/master`.
 
-B. Just update up to an specific release tag (so you can do incremental updates if you're more than one release behind). For example to update up to [v0.9](https://github.com/consul/consul/releases/tag/v0.9) release just: `git merge v0.9`.
+B. Just update up to an specific release tag (so you can do incremental updates if you're more than one release behind). For example to update up to [v0.9](https://github.com/consuldemocracy/consuldemocracy/releases/tag/v0.9) release just: `git merge v0.9`.
 
 ## Merging changes
 
@@ -66,4 +66,4 @@ C. You get some git errors along with a `Automatic merge failed; fix conflicts a
 
 Now you can just simply push your **upstream** branch to github and create a Pull Request so you can easily check all changes going into your repo, and see your tests suite runs.
 
-Remember you can always quickly check changes that will come from Consul Democracy to your fork by replacing **your_org_name** on the url: <https://github.com/your_org_name/consul/compare/master...consul:master>.
+Remember you can always quickly check changes that will come from Consul Democracy to your fork by replacing **your_org_name** on the url: <https://github.com/your_org_name/consuldemocracy/compare/master...consuldemocracy:master>.

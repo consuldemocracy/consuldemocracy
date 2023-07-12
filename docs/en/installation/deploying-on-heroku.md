@@ -14,7 +14,7 @@ This tutorial assumes that you have already managed to clone Consul Democracy on
 3. Go to your Consul Democracy repository and instantiate the process
 
   ```bash
-  cd consul
+  cd consuldemocracy
   heroku create your-app-name
   ```
 

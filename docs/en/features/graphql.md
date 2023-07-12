@@ -428,4 +428,4 @@ The response:
 
 ## Code examples
 
-The [doc/api/examples](https://github.com/consul/consul/tree/master/doc/api/examples/ruby) directory contains examples of code to access the API.
+The [doc/api/examples](https://github.com/consuldemocracy/consuldemocracy/tree/master/doc/api/examples/ruby) directory contains examples of code to access the API.

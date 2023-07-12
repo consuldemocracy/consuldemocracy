@@ -56,4 +56,4 @@ It will take a few minutes, and at the end you will have a shiny new server. It 
 
 ![Digital Ocean server](../../img/digital_ocean/server.png)
 
-Next to setup Consul Democracy in the server check the [installer's README](https://github.com/consul/installer)
+Next to setup Consul Democracy in the server check the [installer's README](https://github.com/consuldemocracy/installer)

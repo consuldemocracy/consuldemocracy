@@ -428,4 +428,4 @@ La respuesta:
 
 <h2 id="ejemplos-de-codigo">Ejemplos de código</h2>
 
-El directorio [doc/api/examples](https://github.com/consul/consul/tree/master/doc/api/examples/ruby) contiene ejemplos de código para acceder a la API.
+El directorio [doc/api/examples](https://github.com/consuldemocracy/consuldemocracy/tree/master/doc/api/examples/ruby) contiene ejemplos de código para acceder a la API.

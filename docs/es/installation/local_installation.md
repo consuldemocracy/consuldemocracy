@@ -2,11 +2,11 @@
 
 Antes de comenzar a instalar Consul Democracy, comprueba que tengas todos los [prerrequisitos](prerequisites.md) correctamente instalados.
 
-1. Primero, clona el [repositorio de Consul Democracy en Github](https://github.com/consul/consul/) y ve a la carpeta del proyecto:
+1. Primero, clona el [repositorio de Consul Democracy en Github](https://github.com/consuldemocracy/consuldemocracy/) y ve a la carpeta del proyecto:
 
 ```bash
-git clone https://github.com/consul/consul.git
-cd consul/
+git clone https://github.com/consuldemocracy/consuldemocracy.git
+cd consuldemocracy
 ```
 
 2. Instala la versión de Ruby necesaria con el gestor de versiones de tu elección. Algunos ejemplos:

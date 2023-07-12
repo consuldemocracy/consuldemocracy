@@ -2,7 +2,7 @@
 
 These are our recommendations for the different environments and purposes:
 
-- To setup Consul Democracy for a production environment we recommend using the [installer](https://github.com/consul/installer).
+- To setup Consul Democracy for a production environment we recommend using the [installer](https://github.com/consuldemocracy/installer).
 
 - For developers working on a Consul Democracy fork we recommend using a UNIX based system (Linux or Mac) and installing Consul Democracy [locally system wide](local_installation.md).
 

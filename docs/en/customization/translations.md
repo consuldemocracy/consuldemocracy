@@ -6,7 +6,7 @@ Currently, Consul Democracy is totally or partially translated to multiple langu
 
 Please [join the translators](https://crwd.in/consul) to help us complete existing ones, or contact us through [Consul Democracy's gitter](https://gitter.im/consul/consul) to become a proofreader and validate translators' contributions.
 
-If your language isn't already present in the Crowdin project, please [open an issue](https://github.com/consul/consul/issues/new?title=New language&body=Hello I would like to have my language INSERT YOUR LANGUAGE NAME added to Consul Democracy) and we'll set it up in a breeze.
+If your language isn't already present in the Crowdin project, please [open an issue](https://github.com/consuldemocracy/consuldemocracy/issues/new?title=New language&body=Hello I would like to have my language INSERT YOUR LANGUAGE NAME added to Consul Democracy) and we'll set it up in a breeze.
 
 If you want to check existing translations of the user-facing texts you can find them organized in YML files under `config/locales/` folder. Take a look at the official Ruby on Rails [internationalization guide](http://guides.rubyonrails.org/i18n.html) to better understand the translations system.
 
@@ -35,4 +35,4 @@ In order to customize it, you should create a new file `config/locales/custom/es
 
 Consul Democracy has the [i18n-tasks](https://github.com/glebm/i18n-tasks) gem, it's an awesome helping tool to manage i18n translations. Just check `i18n-tasks health` for a nice report.
 
-If you have a custom language different than English, you should add it to the [i18n-tasks.yml config file both `base_locale` and `locales`](https://github.com/consul/consul/blob/master/config/i18n-tasks.yml#L4-L7) variables so your language files will be checked as well.
+If you have a custom language different than English, you should add it to the [i18n-tasks.yml config file both `base_locale` and `locales`](https://github.com/consuldemocracy/consuldemocracy/blob/master/config/i18n-tasks.yml#L4-L7) variables so your language files will be checked as well.

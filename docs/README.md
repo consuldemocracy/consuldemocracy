@@ -82,4 +82,4 @@ Code published under AFFERO GPL v3 (see [LICENSE-AGPLv3.txt](https://github.com/
 
 ## Contributions
 
-See [CONTRIBUTING.md](https://github.com/consul/consul/blob/master/CONTRIBUTING.md).
+See [CONTRIBUTING.md](https://github.com/consuldemocracy/consuldemocracy/blob/master/CONTRIBUTING.md)

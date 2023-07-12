@@ -10,13 +10,13 @@ git remote -v
 
 deberías ver algo como:
 
-> origin  git@github.com:your_user_name/consul.git (fetch)\
-> origin  git@github.com:your_user_name/consul.git (push)
+> origin  git@github.com:your_user_name/consuldemocracy.git (fetch)\
+> origin  git@github.com:your_user_name/consuldemocracy.git (push)
 
 Ahora debes añadir el repositorio git de Consul Democracy como servidor remoto con:
 
 ```bash
-git remote add upstream git@github.com:consul/consul.git
+git remote add upstream git@github.com:consuldemocracy/consuldemocracy.git
 ```
 
 comprueba de nuevo que con:
@@ -27,10 +27,10 @@ git remote -v
 
 deberías recibir algo como:
 
-> upstream  git@github.com:consul/consul.git (fetch)\
-> upstream  git@github.com:consul/consul.git (push)\
-> origin  git@github.com:your_user_name/consul.git (fetch)\
-> origin  git@github.com:your_user_name/consul.git (push)
+> upstream  git@github.com:consuldemocracy/consuldemocracy.git (fetch)\
+> upstream  git@github.com:consuldemocracy/consuldemocracy.git (push)\
+> origin  git@github.com:your_user_name/consuldemocracy.git (fetch)\
+> origin  git@github.com:your_user_name/consuldemocracy.git (push)
 
 ## Obteniendo cambios de Consul Democracy
 
@@ -52,7 +52,7 @@ Y por fin puedes elegir entre:
 
 A. Actualizar con los últimos cambios de la rama **master** usando `git merge upstream/master`
 
-B. Sólo actualizar hasta cierta versión (en el caso de que prefieras actualizar de forma incremental, si estas varias versiones por detrás). Por ejemplo para actualizarte a la versión [v0.9](https://github.com/consul/consul/releases/tag/v0.9) utilizamos el tag asociado: `git merge v0.9`
+B. Sólo actualizar hasta cierta versión (en el caso de que prefieras actualizar de forma incremental, si estas varias versiones por detrás). Por ejemplo para actualizarte a la versión [v0.9](https://github.com/consuldemocracy/consuldemocracy/releases/tag/v0.9) utilizamos el tag asociado: `git merge v0.9`
 
 ## Fusionando cambios
 
@@ -66,4 +66,4 @@ C. Recibes mensajes de error de git junto con un `Automatic merge failed; fix co
 
 Ahora simplemente sube la rama **upstream** a github y crea un Pull Request, así podrás ver de manera sencilla todos los cambios que se han realizado en el repositorio y verás también como arranca la suite de tests.
 
-Recuerda que siempre puedes comprobar rápidamente los cambios que tienes pendientes de integrar de Consul Democracy a tu fork sustituyendo **your_org_name** en la url: <https://github.com/your_org_name/consul/compare/master...consul:master>
+Recuerda que siempre puedes comprobar rápidamente los cambios que tienes pendientes de integrar de Consul Democracy a tu fork sustituyendo **your_org_name** en la url: <https://github.com/your_org_name/consuldemocracy/compare/master...consuldemocracy:master>

@@ -2,7 +2,7 @@
 
 Estas son nuestras recomendaciones para los diferentes entornos y propósitos:
 
-- Para configurar Consul Democracy para un entorno de producción, recomendamos utilizar el [instalador](https://github.com/consul/installer).
+- Para configurar Consul Democracy para un entorno de producción, recomendamos utilizar el [instalador](https://github.com/consuldemocracy/installer).
 
 - Para los programadores que trabajan en un entorno de desarrollo, recomendamos instalar Consul Democracy en un sistema basado en UNIX (Linux o Mac) y hacer una [instalación local](local_installation.md) de Consul Democracy.
 

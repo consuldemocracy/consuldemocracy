@@ -64,8 +64,8 @@ Si encuentras el error "WSL 2 installation incomplete":
 Clona el repositorio en tu ordenador y entra en el directorio:
 
 ```bash
-git clone https://github.com/consul/consul.git
-cd consul
+git clone https://github.com/consuldemocracy/consuldemocracy.git
+cd consuldemocracy
 ```
 
 ### macOS & Linux

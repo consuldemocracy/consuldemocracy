@@ -1,6 +1,6 @@
 # Create a deploy user
 
-[The installer](https://github.com/consul/installer) by default connects as the `root` user only to create a `deploy` user. This `deploy` user is the one who installs all libraries. If you do not have `root` access, please ask your system administrator to follow these instructions to create a user manually.
+[The installer](https://github.com/consuldemocracy/installer) by default connects as the `root` user only to create a `deploy` user. This `deploy` user is the one who installs all libraries. If you do not have `root` access, please ask your system administrator to follow these instructions to create a user manually.
 
 You could create a user called `deploy` or any other name. As as example, we are going to create a user named `jupiter`.
 
