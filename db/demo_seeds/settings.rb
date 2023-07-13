@@ -1,10 +1,10 @@
 section "Creating DEMO Settings" do
   {
-    "org_name": "CONSUL DEMO",
+    "org_name": "CONSUL DEMOCRACY Demo",
     "meta_description": "Citizen participation tool for an open, transparent and democratic government",
     "meta_keywords": "citizen participation, open government",
-    "meta_title": "CONSUL DEMO",
-    "mailer_from_name": "CONSUL",
+    "meta_title": "CONSUL DEMOCRACY Demo",
+    "mailer_from_name": "CONSUL DEMOCRACY",
     "feature.map": true,
     "feature.remove_investments_supports": true,
     "map.latitude": 51.51,
