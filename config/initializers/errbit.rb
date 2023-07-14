@@ -7,6 +7,11 @@ Airbrake.configure do |config|
 
   config.environment = Rails.env
   config.ignore_environments = %w[development test]
+
+  config.performance_stats = false
+  config.job_stats = false
+  config.query_stats = false
+  config.remote_config = false
 end
 
 Airbrake.add_filter do |notice|
