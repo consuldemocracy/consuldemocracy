@@ -21,7 +21,7 @@ Bundler.require(*Rails.groups)
 
 module Consul
   class Application < Rails::Application
-    config.load_defaults 6.0
+    config.load_defaults 6.1
 
     # Keep belongs_to fields optional by default, because that's the way
     # Rails 4 models worked
@@ -34,6 +34,10 @@ module Consul
     # Keep using the classic autoloader until we decide how custom classes
     # should work with zeitwerk
     config.autoloader = :classic
+
+    # Don't enable has_many_inversing because it doesn't seem to currently
+    # work with the _count database columns we use for caching purposes
+    config.active_record.has_many_inversing = false
 
     # Keep reading existing data in the legislation_annotations ranges column
     config.active_record.yaml_column_permitted_classes = [ActiveSupport::HashWithIndifferentAccess, Symbol]
