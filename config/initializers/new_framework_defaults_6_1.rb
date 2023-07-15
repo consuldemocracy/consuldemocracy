@@ -33,7 +33,7 @@ Rails.application.config.action_controller.urlsafe_csrf_tokens = true
 
 # Specify whether `ActiveSupport::TimeZone.utc_to_local` returns a time with an
 # UTC offset or a UTC time.
-# ActiveSupport.utc_to_local_returns_utc_offset_times = true
+ActiveSupport.utc_to_local_returns_utc_offset_times = true
 
 # Change the default HTTP status code to `308` when redirecting non-GET/HEAD
 # requests to HTTPS in `ActionDispatch::SSL` middleware.
