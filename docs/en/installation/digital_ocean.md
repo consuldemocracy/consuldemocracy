@@ -1,6 +1,6 @@
-# Installing CONSUL on a Digital Ocean VPS
+# Installing Consul Democracy on a Digital Ocean VPS
 
-These instructions will help you register and buy a server in Digital Ocean to install CONSUL.
+These instructions will help you register and buy a server in Digital Ocean to install Consul Democracy.
 
 First you need to [sign up](https://cloud.digitalocean.com/registrations/new) and provide your personal information.
 
@@ -40,11 +40,11 @@ Select and copy all the text and paste it in the pop-up window like this:
 
 ![Digital Ocean New SSH Key](../../img/digital_ocean/new_ssh.png)
 
-Please note that there will be two little green checks. If they are not there, retry copying the text because you probably left something out. Give your key a meaningful name, like **CONSUL_key** and click "Add SSH Key" button.
+Please note that there will be two little green checks. If they are not there, retry copying the text because you probably left something out. Give your key a meaningful name, like **Consul_Democracy_key** and click "Add SSH Key" button.
 
 By using an SSH key instead of a user/password combination to access your server, it will be much more secure, as only someone with the private SSH key can access the server.
 
-Now in the "Choose a hostname" section change the default for something more meaningful, like **consulserver** for example.
+Now in the "Choose a hostname" section change the default for something more meaningful, like **consuldemocracyserver** for example.
 
 ![Digital Ocean hostname](../../img/digital_ocean/hostname.png)
 
@@ -56,4 +56,4 @@ It will take a few minutes, and at the end you will have a shiny new server. It 
 
 ![Digital Ocean server](../../img/digital_ocean/server.png)
 
-Next to setup CONSUL in the server check the [installer's README](https://github.com/consul/installer)
+Next to setup Consul Democracy in the server check the [installer's README](https://github.com/consuldemocracy/installer)

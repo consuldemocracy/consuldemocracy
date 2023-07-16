@@ -1,6 +1,6 @@
 # Crear un usuario para hacer la instalación
 
-[El instalador](https://github.com/consul/installer) de forma predeterminada se conecta como el usuario `root` sólo para crear un usuario `deploy`. Este usuario `deploy` es el que instala todas las librerías. Si no tiene acceso `root`, por favor pídale a su administrador de sistemas que siga estas instrucciones para crear un usuario manualmente.
+[El instalador](https://github.com/consuldemocracy/installer) de forma predeterminada se conecta como el usuario `root` sólo para crear un usuario `deploy`. Este usuario `deploy` es el que instala todas las librerías. Si no tiene acceso `root`, por favor pídale a su administrador de sistemas que siga estas instrucciones para crear un usuario manualmente.
 
 Puede crear un usuario llamado `deploy` o utilizar cualquier otro nombre. Como ejemplo, vamos a crear un usuario llamado `jupiter`.
 
@@ -64,7 +64,7 @@ Compruebe que su usuario puede iniciar sesión escribiendo:
 Debería ver la página de bienvenida del servidor y un mensaje como este:
 
   ```
-  jupiter@consulserver:~$
+  jupiter@consuldemocracyserver:~$
   ```
 
 Note que el nombre de usuario en el prompt no es "root", sino su nombre de usuario. Así que todo está bien y ahora podemos bloquear la cuenta root del acceso externo y también dejar de permitir el acceso con contraseña para que sólo las personas con claves SSH puedan iniciar sesión.

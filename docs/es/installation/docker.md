@@ -1,6 +1,6 @@
 # Usando Docker para desarrollo en local
 
-Puedes usar Docker para tener una instalación local de CONSUL si:
+Puedes usar Docker para tener una instalación local de Consul Democracy si:
 
 - Estás teniendo problemas para instalar los [prerrequisitos](prerequisites.md) correctamente.
 - Quieres tener una instalación local rápidamente para probar o hacer una demo.
@@ -64,8 +64,8 @@ Si encuentras el error "WSL 2 installation incomplete":
 Clona el repositorio en tu ordenador y entra en el directorio:
 
 ```bash
-git clone https://github.com/consul/consul.git
-cd consul
+git clone https://github.com/consuldemocracy/consuldemocracy.git
+cd consuldemocracy
 ```
 
 ### macOS & Linux
@@ -100,7 +100,7 @@ POSTGRES_PASSWORD=password docker-compose run app rake db:dev_seed
 
 Pendiente de ser completado... ¡Se agradecen las Contribuciones!
 
-## Corriendo CONSUL en local con Docker
+## Corriendo Consul Democracy en local con Docker
 
 ### macOS & Linux
 
@@ -133,15 +133,15 @@ Pendiente de ser completado... ¡Se agradecen las Contribuciones!
 
 ## ¿Tienes problemas?
 
-Ejecute los comandos en el **directorio de CONSUL**, para borrar todas las imágenes y contenedores anteriores del Docker de CONSUL. Luego, reinicie el [proceso de instalación](#instalacion) de Docker:
+Ejecute los comandos en el **directorio de Consul Democracy**, para borrar todas las imágenes y contenedores anteriores del Docker de Consul Democracy. Luego, reinicie el [proceso de instalación](#instalacion) de Docker:
 
-1. Quitar todas las imágenes de CONSUL:
+1. Quitar todas las imágenes de Consul Democracy:
 
 ```bash
 docker-compose down --rmi all -v --remove-orphans
 ```
 
-2. Quitar todos los contenedores de CONSUL
+2. Quitar todos los contenedores de Consul Democracy
 
 ```bash
 docker-compose rm -f -s -v

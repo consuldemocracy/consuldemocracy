@@ -39,7 +39,7 @@ apt-get install curl
 
 ## Gestor de versiones de Ruby
 
-Las versiones de Ruby empaquetadas en repositorios oficiales no son aptas para trabajar con consul, así que debemos instalar manualmente.
+Las versiones de Ruby empaquetadas en repositorios oficiales no son aptas para trabajar con Consul Democracy, así que debemos instalar manualmente.
 
 Una opción es utilizar rvm:
 
@@ -113,7 +113,7 @@ apt-get update
 apt-get install postgresql-9.4 postgresql-server-dev-9.4 postgresql-contrib-9.4
 ```
 
-Para el correcto funcionamiento de CONSUL, necesitas confgurar un usuario para tu base de datos. Como ejemplo, crearemos un usuario llamado "consul":
+Para el correcto funcionamiento de Consul Democracy, necesitas confgurar un usuario para tu base de datos. Como ejemplo, crearemos un usuario llamado "consul":
 
 ```
 su - postgres
@@ -158,4 +158,4 @@ También tienes la opción de solo instalar ChromeDriver desde AUR. Si usas `pac
 pacaur -S chromedriver
 ```
 
-Ya estás listo para [instalar Consul](local_installation.md)!!
+Ya estás listo para [instalar Consul Democracy](local_installation.md)!!

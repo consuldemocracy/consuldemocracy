@@ -100,4 +100,4 @@ brew install chromedriver
 brew install imagemagick
 ```
 
-Now that we have all the dependencies installed we can go ahead and [install Consul](local_installation.md).
+Now that we have all the dependencies installed we can go ahead and [install Consul Democracy](local_installation.md).

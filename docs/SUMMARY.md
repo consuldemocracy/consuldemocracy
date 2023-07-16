@@ -3,7 +3,7 @@
 ## ENGLISH Documentation
 
 * [Getting started](en/getting_started/getting_started.md)
-  * [Fork Consul](en/getting_started/create.md)
+  * [Fork Consul Democracy](en/getting_started/create.md)
   * [Configure your fork](en/getting_started/configuration.md)
   * [Keep your fork updated](en/getting_started/update.md)
   * [Communication](en/getting_started/communication.md)
@@ -26,7 +26,7 @@
     * [Docker](en/installation/docker.md)
     * [Mail Server Configuration](en/installation/mail_server_configuration.md)
   * [Basic configuration](en/installation/basic_configuration.md)
-  * [CONSUL Documentation and guides](en/installation/documentation_and_guides.md)
+  * [Consul Democracy Documentation and guides](en/installation/documentation_and_guides.md)
 
 * [Customization](en/customization/customization.md)
   * [Introduction](en/customization/introduction.md)
@@ -79,7 +79,7 @@
     * [Docker](es/installation/docker.md)
     * [Configuración del servidor de correo](es/installation/mail_server_configuration.md)
   * [Configuración básica](es/installation/basic_configuration.md)
-  * [Documentación y guías sobre CONSUL](es/installation/documentation_and_guides.md)
+  * [Documentación y guías sobre Consul Democracy](es/installation/documentation_and_guides.md)
 
 * [Personalización](es/customization/customization.md)
   * [Introducción](es/customization/introduction.md)

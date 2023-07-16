@@ -1,6 +1,6 @@
-# Instalando CONSUL en un VPS de Digital Ocean
+# Instalando Consul Democracy en un VPS de Digital Ocean
 
-Estas instrucciones le ayudaran a registrarse y comprar un servidor en Digital Ocean para instalar CONSUL.
+Estas instrucciones le ayudaran a registrarse y comprar un servidor en Digital Ocean para instalar Consul Democracy.
 
 Primero necesita [registrarse](https://cloud.digitalocean.com/registrations/new) y proporcionar su información personal.
 
@@ -40,11 +40,11 @@ Seleccione y copie todo el texto y péguelo en la ventana emergente de la siguie
 
 ![Digital Ocean New SSH Key](../../img/digital_ocean/new_ssh.png)
 
-Tenga en cuenta que habrá dos pequeños checks verdes. Si no están ahí, vuelva a intentar copiar el texto porque probablemente omitió algo. Dé a su clave un nombre significativo, como **CONSUL_key** y haga clic en el botón "Add SSH Key" (Añadir clave SSH).
+Tenga en cuenta que habrá dos pequeños checks verdes. Si no están ahí, vuelva a intentar copiar el texto porque probablemente omitió algo. Dé a su clave un nombre significativo, como **Consul_Democracy_key** y haga clic en el botón "Add SSH Key" (Añadir clave SSH).
 
 Al utilizar una clave SSH en lugar de una combinación de usuario/contraseña para acceder a su servidor, será mucho más seguro, ya que sólo alguien con la clave privada SSH puede acceder al servidor.
 
-Ahora en la sección "Choose a hostname" cambie el valor por defecto por algo más significativo, como **consulserver** por ejemplo.
+Ahora en la sección "Choose a hostname" cambie el valor por defecto por algo más significativo, como **consuldemocracyserver** por ejemplo.
 
 ![Digital Ocean hostname](../../img/digital_ocean/hostname.png)
 
@@ -56,4 +56,4 @@ Tardará unos minutos, y al final tendrá un brillante nuevo servidor. Se verá 
 
 ![Digital Ocean server](../../img/digital_ocean/server.png)
 
-Lo siguiente es configurar CONSUL en el servidor. Por favor [leer estas instrucciones](https://github.com/consul/installer)
+Lo siguiente es configurar Consul Democracy en el servidor. Por favor [leer estas instrucciones](https://github.com/consuldemocracy/installer)

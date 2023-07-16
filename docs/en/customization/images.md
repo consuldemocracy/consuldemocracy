@@ -12,6 +12,6 @@ If you want to overwrite any image, firstly you need to find out the filename, a
 
 ## City Map
 
-You'll find the city map at [`/app/assets/images/map.jpg`](https://github.com/consul/consul/blob/master/app/assets/images/map.jpg), just replace it with an image of your cities districts ([example](https://github.com/ayuntamientomadrid/consul/blob/master/app/assets/images/map.jpg)).
+You'll find the city map at [`/app/assets/images/map.jpg`](https://github.com/consuldemocracy/consuldemocracy/blob/master/app/assets/images/map.jpg), just replace it with an image of your cities districts ([example](https://github.com/consuldemocracy/consuldemocracy/blob/master/app/assets/images/map.jpg)).
 
 Afterwards we recommend you to use an online tool like <http://imagemap-generator.dariodomi.de/> or <https://www.image-map.net/> to generate the html coordinates to be able to generate a [image-map](https://www.w3schools.com/tags/tag_map.asp) for each of the districts. Those coordinates should be introduced on the respective Geozones at the admin geozones panel (`/admin/geozones`).

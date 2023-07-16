@@ -30,7 +30,7 @@
 
 ## GraphQL
 
-La API de CONSUL utiliza GraphQL [http://graphql.org](https://graphql.org), en concreto la [implementación en Ruby](http://graphql-ruby.org/). Si no estás familiarizado con este tipo de APIs, es recomendable investigar un poco sobre GraphQL previamente.
+La API de Consul Democracy utiliza GraphQL [http://graphql.org](https://graphql.org), en concreto la [implementación en Ruby](http://graphql-ruby.org/). Si no estás familiarizado con este tipo de APIs, es recomendable investigar un poco sobre GraphQL previamente.
 
 Una de las caracteríticas que diferencian una API REST de una GraphQL es que con esta última es posible construir *consultas personalizadas*, de forma que el servidor nos devuelva únicamente la información en la que estamos interesados.
 
@@ -68,7 +68,7 @@ Las respuestas son en formato JSON:
 
 ## Haciendo peticiones a la API
 
-Siguiendo las [directrices oficiales](http://graphql.org/learn/serving-over-http/), la API de CONSUL soporta los siguientes tipos de peticiones:
+Siguiendo las [directrices oficiales](http://graphql.org/learn/serving-over-http/), la API de Consul Democracy soporta los siguientes tipos de peticiones:
 
 * Peticiones GET, con la consulta dentro del *query string*.
 * Peticiones POST
@@ -428,4 +428,4 @@ La respuesta:
 
 <h2 id="ejemplos-de-codigo">Ejemplos de código</h2>
 
-El directorio [doc/api/examples](https://github.com/consul/consul/tree/master/doc/api/examples/ruby) contiene ejemplos de código para acceder a la API.
+El directorio [doc/api/examples](https://github.com/consuldemocracy/consuldemocracy/tree/master/doc/api/examples/ruby) contiene ejemplos de código para acceder a la API.

@@ -18,7 +18,7 @@ sudo apt install git
 
 ## Ruby version manager
 
-Ruby versions packaged in official repositories are not suitable to work with CONSUL, so we'll have to install it manually.
+Ruby versions packaged in official repositories are not suitable to work with Consul Democracy, so we'll have to install it manually.
 
 First, we need to install Ruby's development dependencies:
 
@@ -108,4 +108,4 @@ sudo apt install chromium-chromedriver
 sudo ln -s /usr/lib/chromium-browser/chromedriver /usr/local/bin/
 ```
 
-Now you're ready to go [get CONSUL installed](local_installation.md)!
+Now you're ready to go [get Consul Democracy installed](local_installation.md)!

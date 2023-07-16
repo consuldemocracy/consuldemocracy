@@ -1,12 +1,12 @@
 # Personalización
 
-Puedes modificar CONSUL y ponerle tu propia imagen, para esto debes primero [crear tu propio fork](../getting_started/create.md).
+Puedes modificar Consul Democracy y ponerle tu propia imagen, para esto debes primero [crear tu propio fork](../getting_started/create.md).
 
-Hemos creado una estructura específica donde puedes sobreescribir y personalizar la aplicación para que puedas actualizar sin que tengas problemas al hacer merge y se sobreescriban por error tus cambios. Intentamos que CONSUL sea una aplicación Ruby on Rails lo más plain vanilla posible para facilitar el acceso de nuevas desarrolladoras.
+Hemos creado una estructura específica donde puedes sobreescribir y personalizar la aplicación para que puedas actualizar sin que tengas problemas al hacer merge y se sobreescriban por error tus cambios. Intentamos que Consul Democracy sea una aplicación Ruby on Rails lo más plain vanilla posible para facilitar el acceso de nuevas desarrolladoras.
 
 ## Ficheros y directorios especiales
 
-Para adaptar tu fork de CONSUL puedes utilizar alguno de los directorios `custom` que están en las rutas:
+Para adaptar tu fork de Consul Democracy puedes utilizar alguno de los directorios `custom` que están en las rutas:
 
 * `config/locales/custom/`
 * `app/assets/images/custom/`
@@ -79,7 +79,7 @@ Actualmente estos son todos los [idiomas disponibles](https://api.cognitive.micr
 ["af", "am", "ar", "as", "az", "ba", "bg", "bn", "bo", "bs", "ca", "cs", "cy", "da", "de", "dv", "el", "en", "es", "et", "eu", "fa", "fi", "fil", "fj", "fo", "fr", "fr-CA", "ga", "gl", "gu", "ha", "he", "hi", "hr", "hsb", "ht", "hu", "hy", "id", "ig", "ikt", "is", "it", "iu", "iu-Latn", "ja", "ka", "kk", "km", "kmr", "kn", "ko", "ku", "ky", "ln", "lo", "lt", "lug", "lv", "lzh", "mg", "mi", "mk", "ml", "mn-Cyrl", "mn-Mong", "mr", "ms", "mt", "mww", "my", "nb", "ne", "nl", "nso", "nya", "or", "otq", "pa", "pl", "prs", "ps", "pt", "pt-PT", "ro", "ru", "run", "rw", "sk", "sl", "sm", "sn", "so", "sq", "sr-Cyrl", "sr-Latn", "st", "sv", "sw", "ta", "te", "th", "ti", "tk", "tlh-Latn", "tlh-Piqd", "tn", "to", "tr", "tt", "ty", "ug", "uk", "ur", "uz", "vi", "xh", "yo", "yua", "yue", "zh-Hans", "zh-Hant", "zu"]
 ```
 
-De todos los idiomas que actualmente tiene Consul definidos (`available_locales`) en `config/application.rb` el único que no está en la lista anterior y por lo tanto no se ofrece servicio de traducción es el valenciano `["val"]`.
+De todos los idiomas que actualmente tiene Consul Democracy definidos (`available_locales`) en `config/application.rb` el único que no está en la lista anterior y por lo tanto no se ofrece servicio de traducción es el valenciano `["val"]`.
 
 ### Costes
 
@@ -123,13 +123,13 @@ end
 
 ## Interfaz de traducción
 
-Esta funcionalidad permite a los usuarios introducir contenidos dinámicos en diferentes idiomas a la vez. Cualquier usuario administrador de Consul puede activar o desactivar esta funcionalidad a través del panel de administración de la aplicación. Si desactivas esta funcionalidad (configuración de la funcionalidad por defecto) los usuarios sólo podrán introducir un idioma.
+Esta funcionalidad permite a los usuarios introducir contenidos dinámicos en diferentes idiomas a la vez. Cualquier usuario administrador de Consul Democracy puede activar o desactivar esta funcionalidad a través del panel de administración de la aplicación. Si desactivas esta funcionalidad (configuración de la funcionalidad por defecto) los usuarios sólo podrán introducir un idioma.
 
 ### Activar funcionalidad
 
 Para activar la funcionalidad deberá realizar 2 pasos:
 
-1. Ejecutar el siguiente comando `bin/rake settings:create_translation_interface_setting RAILS_ENV=production` (Este paso sólo es necesario para instalaciones de Consul existentes que incorporan esta funcionalidad, para nuevas instalaciones no es necesario)
+1. Ejecutar el siguiente comando `bin/rake settings:create_translation_interface_setting RAILS_ENV=production` (Este paso sólo es necesario para instalaciones de Consul Democracy existentes que incorporan esta funcionalidad, para nuevas instalaciones no es necesario)
 1. Accedediendo como usuario administrador a través del panel de administración de su aplicación a la sección **Configuración > Funcionalidades** y activando el módulo de **Interfaz de traducción** como se puede ver a continuación:
   ![Active interface translations](../../img/translations/interface_translations/active-interface-translations-es.png)
 

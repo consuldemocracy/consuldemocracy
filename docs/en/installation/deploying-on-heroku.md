@@ -2,7 +2,7 @@
 
 ## Manual deployment
 
-This tutorial assumes that you have already managed to clone CONSUL on your machine and gotten it to work.
+This tutorial assumes that you have already managed to clone Consul Democracy on your machine and gotten it to work.
 
 1. First, create a [Heroku](https://www.heroku.com) account if it isn't already done.
 2. Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) and sign in using
@@ -11,10 +11,10 @@ This tutorial assumes that you have already managed to clone CONSUL on your mach
   heroku login
   ```
 
-3. Go to your CONSUL repository and instantiate the process
+3. Go to your Consul Democracy repository and instantiate the process
 
   ```bash
-  cd consul
+  cd consuldemocracy
   heroku create your-app-name
   ```
 
@@ -28,7 +28,7 @@ This tutorial assumes that you have already managed to clone CONSUL on your mach
   heroku addons:create heroku-postgresql
   ```
 
-  You should now have access to an empty Postgres database whose address was automatically saved as an environment variable named _DATABASE\_URL_. CONSUL will automatically connect to it when deployed.
+  You should now have access to an empty Postgres database whose address was automatically saved as an environment variable named _DATABASE\_URL_. Consul Democracy will automatically connect to it when deployed.
 
 5. **(Not needed)** Add a file name _heroku.yml_ at the root of your project and paste the following in it
 
@@ -131,7 +131,7 @@ Important: Turn on one worker dyno so that emails get sent.
 
 ### Install rails\_12factor and specify the Ruby version
 
-**The rails\_12factor is only useful if you use a version of CONSUL older than 1.0.0. The latter uses Rails 5 which includes the changes.**
+**The rails\_12factor is only useful if you use a version of Consul Democracy older than 1.0.0. The latter uses Rails 5 which includes the changes.**
 
 As recommended by Heroku, you can add the gem rails\_12factor and specify the version of Ruby you want to use. You can do so by adding
 
@@ -141,7 +141,7 @@ gem 'rails_12factor'
 ruby 'x.y.z'
 ```
 
-in the file _Gemfile\_custom_, where `x.y.z` is the version defined in the `.ruby-version` file in the CONSUL repository. Don't forget to run
+in the file _Gemfile\_custom_, where `x.y.z` is the version defined in the `.ruby-version` file in the Consul Democracy repository. Don't forget to run
 
 ```bash
 bundle install
@@ -169,7 +169,7 @@ web: bundle exec puma -C config/puma.rb
 
 ### Add configuration variables to tune your app from the dashboard
 
-The free and hobby versions of Heroku are barely enough to run an app like CONSUL. To optimise the response time and make sure the app doesn't run out of memory, you can [change the number of workers and threads](https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server#workers) that Puma uses.
+The free and hobby versions of Heroku are barely enough to run an app like Consul Democracy. To optimise the response time and make sure the app doesn't run out of memory, you can [change the number of workers and threads](https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server#workers) that Puma uses.
 
 My recommended settings are one worker and three threads. You can set it by running these two commands:
 

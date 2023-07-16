@@ -1,12 +1,12 @@
 # Instalación local
 
-Antes de comenzar a instalar Consul, comprueba que tengas todos los [prerrequisitos](prerequisites.md) correctamente instalados.
+Antes de comenzar a instalar Consul Democracy, comprueba que tengas todos los [prerrequisitos](prerequisites.md) correctamente instalados.
 
-1. Primero, clona el [repositorio de Consul en Github](https://github.com/consul/consul/) y ve a la carpeta del proyecto:
+1. Primero, clona el [repositorio de Consul Democracy en Github](https://github.com/consuldemocracy/consuldemocracy/) y ve a la carpeta del proyecto:
 
 ```bash
-git clone https://github.com/consul/consul.git
-cd consul/
+git clone https://github.com/consuldemocracy/consuldemocracy.git
+cd consuldemocracy
 ```
 
 2. Instala la versión de Ruby necesaria con el gestor de versiones de tu elección. Algunos ejemplos:
@@ -66,7 +66,7 @@ bin/rspec
 bin/rails s
 ```
 
-¡Felicidades! Tu aplicación Consul local estará corriendo en `http://localhost:3000`.
+¡Felicidades! Tu aplicación Consul Democracy local estará corriendo en `http://localhost:3000`.
 
 En caso de que quieras acceder a la aplicación local como usuario administrador existe un usuario por defecto verificado y con permisos con **nombre de usuario** `admin@consul.dev` y **contraseña** `12345678`.
 
