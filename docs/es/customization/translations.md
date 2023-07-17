@@ -6,7 +6,7 @@ Actualmente Consul Democracy esta traducido total o parcialmente a multiples idi
 
 [Únete a los traductores](https://crwd.in/consul) para ayudar a completar los existentes, o contacta con nosotros a través del [gitter de Consul Democracy](https://gitter.im/consul/consul) para convertirte en Revisor y validar las contribuciones de los traductores.
 
-En el caso de que tu lenguage no este presente en el proyecto de Crowdin, por favor [abre una incicencia](https://github.com/consuldemocracy/consuldemocracy/issues/new?title=New language&body=Hello I would like to have my language INSERT YOUR LANGUAGE NAME added to Consul Democracy) y lo añadiremos rápidamente.
+En el caso de que tu lenguage no este presente en el proyecto de Crowdin, por favor [abre una incicencia](https://github.com/consuldemocracy/consuldemocracy/issues/new?title=New%20language&body=Hello%20I%20would%20like%20to%20have%20my%20language%20INSERT%20YOUR%20LANGUAGE%20NAME%20added%20to%20Consul%20Democracy) y lo añadiremos rápidamente.
 
 Si quieres ver las traducciones de los textos de la web, puedes encontrarlos en los ficheros formato YML disponibles en `config/locales/`. Puedes leer la [guía de internacionalización](http://guides.rubyonrails.org/i18n.html) de Ruby on Rails sobre como funciona este sistema.
 
