@@ -58,6 +58,8 @@ de:
     meta_keywords_description: 'Stichwörter <meta name="keywords">, zur Verbesserung der SEO'
     min_age_to_participate: erforderliches Mindestalter zur Teilnahme
     min_age_to_participate_description: "Nutzer ab diesem Alter können an allen Prozessen teilnehmen"
+    postal_codes: "Postleitzahlen (PLZ)"
+    postal_codes_description: "Eine durch Komma getrennte Liste gültiger Postleitzahlen; Sie können auch durch einen Doppelpunkt getrennte Bereiche angeben. Beispiel: 00001:00010,00024,AB3 45FG,00031:00035 erlaubt Postleitzahlen zwischen 00001 und 00010, die Postleitzahl 00024, die Postleitzahl AB3 45FG und Postleitzahlen zwischen 00031 und 00035. Wenn Sie das Feld leer lassen, sind alle Postleitzahlen gültig."
     proposals:
       successful_proposal_id: Erfolgreicher Vorschlag
       successful_proposal_id_description: Dieser Vorschlag wird als Referenz für einen erfolgreichen Vorschlag in der Unterstützungs-Anzahl verwendet und im Dashboard-Diagramm angezeigt.
@@ -104,6 +106,8 @@ de:
         recommendations_on_proposals_description: "Zeigt Nutzern Empfehlungen für Vorschlagsseiten an, basierend auf den Tags und den Objekten, denen sie folgen"
       community: "Community für Anträge und Investitionen"
       community_description: "Schaltet den Community-Bereich in der Rubrik Vorschläge und Investitionsprojekte der Bürgerhaushalte ein"
+      machine_learning: "KI / Maschinelles Lernen"
+      machine_learning_description: "Aktivieren Sie den Bereich KI/Maschinelles Lernen, um Python-Skripte auszuführen und Inhalte automatisch anzureichern."
       map: "Standort des Antrages und der Budgetinvestition"
       map_description: "Ermöglicht die Geolokalisierung der Vorschläge und Investitionsprojekte"
       allow_images: "Upload und Anzeigen von Bildern erlauben"
@@ -125,7 +129,13 @@ de:
       valuation_comment_notification: "Bewertung Kommentar Benachrichtigung"
       valuation_comment_notification_description: "Senden Sie eine E-Mail an alle verbundenen Benutzer*innen, wenn ein neuer Bewertungskommentar erstellt wird - mit Ausnahme des Bewertungskommentars für Budgetinvestitionen"
       graphql_api: "GraphQL API"
+      dashboard:
+        notification_emails: "Dashboard-Benachrichtigungs-E-Mails"
+        notification_emails_description: "Senden von Dashboard-Benachrichtigungs-E-Mails an die Autoren von Vorschlägen aktivieren."
+      remove_investments_supports: "Erlauben Sie die Abschaffung von Beihilfen für Haushaltsinvestitionen."
+      remove_investments_supports_description: "Ermöglicht es den Nutzern, in der Phase der Projektauswahl Unterstützungen für Investitionen in Bürgerhaushalte zu entfernen."
       sdg: SDG
+      sdg_description: Aktivieren Sie die Abschnitte über die Ziele für nachhaltige Entwicklung im Verwaltungsmenü und in den globalen Einstellungen.
     remote_census:
       general:
         endpoint: "Endpunkt"
@@ -203,3 +213,15 @@ de:
         max_size_description: "Zulässige maximale Größe für upload eines Dokuments (in Megabytes/MB)"
         content_types: "Akzeptierte Inhaltstypen für Dokumente"
         content_types_description: "Wählen Sie alle Inhaltsarten, die zum Upload für Dokumente erlaubt sind"
+    sdg:
+      process:
+        debates: Verwandte SDG in Debatten
+        debates_description: Ermöglicht die Verknüpfung von Debatten mit den Zielen für nachhaltige Entwicklung
+        proposals: Verwandte SDG in Vorschlägen
+        proposals_description: Ermöglicht die Verknüpfung von Vorschlägen mit den Zielen für nachhaltige Entwicklung
+        polls: Verwandte SDG in Umfragen
+        polls_description: Ermöglicht die Verknüpfung von Umfragen mit den Zielen für nachhaltige Entwicklung
+        budgets: Verwandte SDG in den Teilhaushalten
+        budgets_description: Ermöglichung der Verknüpfung von Bürgerhaushalten mit den Zielen für nachhaltige Entwicklung
+        legislation: Verwandte SDG in der kooperativen Gesetzgebung
+        legislation_description: Ermöglichung der Verknüpfung von kooperativen Rechtsvorschriften mit den Zielen für nachhaltige Entwicklung

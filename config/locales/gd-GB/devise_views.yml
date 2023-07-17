@@ -1,1 +1,116 @@
 gd:
+  devise_views:
+    confirmations:
+      new:
+        submit: Cuir an stiùireadh a-rithist
+        title: Cuir stiùireadh mu dhearbhadh a-rithist
+      show:
+        instructions: A’ dearbhadh a’ chunntais le post-d %{email}
+        new_password_confirmation_label: Cuir a-steach am facal-faire inntrigidh a-rithist
+        new_password_label: Facal-faire inntrigidh ùr
+        please_set_password: Tagh am facal-faire ùr agad (Leigidh e leat clàradh a-steach leis a’ phost-d gu h-àrd)
+        submit: Dearbhaich
+        title: Dearbhaich mo chunntas
+    mailer:
+      confirmation_instructions:
+        confirm_link: Dearbhaich mo chunntas
+        text: "Is urrainn dhut an cunntas puist-d agad a dhearbhadh aig a’ cheangal a leanas:"
+        title: Fàilte
+        welcome: Fàilte
+      reset_password_instructions:
+        change_link: Atharraich am facal-faire agam
+        hello: Hàllo
+        ignore_text: Mur an do dh’iarr thu d’ fhacal-faire atharrachadh, leig seachad am post-d seo.
+        info_text: Cha tèid am facal-faire agad atharrachadh ach a-mhàin ma cleachdas tu an ceangal gus a dheasachadh.
+        text: "Tha sinn air iarrtas fhaighinn gus am facal-faire agad atharrachadh. Faodaidh tu seo a dhèanamh aig a’ cheangal a leanas:"
+        title: Atharrachaich am facal-faire agad
+      unlock_instructions:
+        hello: Hàllo
+        info_text: Chaidh do chunntas a bhacadh oir tha cus oidhirpean neo-shoirbheachail air a bhith ann gus clàradh a-steach.
+        instructions_text: "Briog air a’ cheangal seo gus do chunntas a dhì-ghlasadh:"
+        title: Chaidh an cunntas agad a ghlasadh
+        unlock_link: Neo-ghlas an cunntas agam
+    menu:
+      login_items:
+        login: Clàraich a-steach
+        logout: Clàraich a-mach
+        signup: Clàraich
+    organizations:
+      registrations:
+        new:
+          password_confirmation_label: Dearbh am facal-faire
+          responsible_name_note: Is e seo an neach a tha a’ riochdachadh na buidhne/a’ chomainn a tha a’ cur nam molaidhean air adhart
+          submit: Clàraich
+          title: Clàraich mar bhuidheann no comann.
+        success:
+          back_to_index: Tha mi a’ tuigsinn; rach air ais chun na prìomh duilleig
+          instructions_1: "<strong>Cuiridh sinn fios thugad a dh’aithghearr</strong> gus dearbhadh gu bheil thu a’ riochdachadh na buidhne seo an da-rìribh."
+          instructions_2: Fhad ’s a thathar <strong>ag ath-sgrùdadh do phost-d</strong> , tha sinn air <strong>ceangal a chur thugad gus do chunntas a dhearbhadh</strong> .
+          instructions_3: Nuair a bhios seo air a dhearbhadh, faodaidh tu tòiseachadh air pàirt a ghabhail mar bhuidheann neo-dhearbhte.
+          thank_you: Tapadh leat airson do bhuidhinn a chlàradh air an làraich-lìn. Thathar <strong>a’ feitheamh ri dearbhadh</strong> a-nis.
+          title: A’ clàradh buidheann / cruinneachadh
+    passwords:
+      edit:
+        change_submit: Atharraich am facal-faire agam
+        password_confirmation_label: Dearbhaich am facal-faire ùr
+        password_label: Facal-faire ùr
+        title: Atharrachaich am facal-faire agad
+      new:
+        send_submit: Cuir stiùireadh
+        title: An do dhiochuimhnich thu am facal-faire agad?
+    sessions:
+      new:
+        remember_me: Cùm an cuimhne mi
+        submit: A-steach
+        title: Clàraich a-steach
+    shared:
+      links:
+        login: A-steach
+        new_confirmation: Nach d’ fhuair thu stiùireadh gus do chunntas a chur an gnìomh?
+        new_password: An do dhiochuimhnich thu am facal-faire agad?
+        new_unlock: Nach d’ fhuair thu stiùireadh mu bhith a’ neo-ghlasadh do chunntais?
+        signin_with_provider: Clàraich a-steach le %{provider}
+        signup: Nach eil cunntas agad? %{signup_link}
+        signup_link: Clàraich
+    unlocks:
+      new:
+        email_label: Post-d
+        submit: Cuir stiùireadh mu neo-ghlasadh a-rithist.
+        title: Chaidh stiùireadh mu neo-ghlasadh a chur a-rithist.
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Adhbhar
+          info: Cha ghabh an gnìomh seo a neo-dhèanamh. Dèan cinnteach gu bheil thu ag iarraidh seo.
+          info_reason: Faodaidh tu innse dhuinn carson ma thogras tu (roghainneil)
+          submit: Sguab às an cunntas agam
+          title: Sguab às an cunntas
+        edit:
+          current_password_label: Am facal-faire làithreach
+          edit: Deasaich
+          email_label: Post-d
+          leave_blank: Fàg seo ban mura h-eil thu airson atharrachadh
+          need_current: Feumaidh sinn am facal-faire agad gus na h-atharraichean a dhaingneachadh.
+          password_confirmation_label: Dearbh am facal-faire ùr
+          password_label: Facal-faire ùr
+          update_submit: Ùraich
+          waiting_for: "A’ feitheamh ri dearbhadh air:"
+        new:
+          cancel: Sguir a bhith a’ clàradh a-steach
+          organization_signup: A bheil thu a’ riochdachadh buidheann no comann? %{ signup_link}
+          organization_signup_link: Clàraich an-seo
+          password_confirmation_label: Dearbh am facal-faire
+          submit: Clàraich
+          terms: Le bhith a’ clàradh, tha thu a’ gabhail ris na %{terms}
+          terms_link: teirmichean is cumhaichean cleachdaidh
+          terms_title: Le bhith a’ clàradh, tha thu a’ gabhail ris na teirmichean is cumhaichean cleachdaidh
+          title: Clàraich
+          username_is_available: Tha an t-ainm cleachdaiche ri fhaighinn
+          username_is_not_available: Tha an t-ainm-cleachdaiche seo ga chleachdadh mar-thà.
+          username_note: An t-ainm a tha a’ nochdadh ri taobh do phostan
+        success:
+          back_to_index: Tha mi a’ tuigsinn; rach air ais chun na prìomh duilleig
+          instructions_1: <b>Thoir sùil air a’ phost-d agad</b> - tha sinn air <b>ceangal a chur thugad gus do chunntas a dhearbhadh</b> .
+          instructions_2: Nuair a bhios tu air dearbhadh, faodaidh tu tòiseachadh air pàirt a ghabhail.
+          thank_you: Tapadh leat airson clàradh airson na làraich-lìn. Feumaidh tu <b>an seòladh puist-d agad a dhearbhadh</b> a-nis.
+          title: Dearbh an seòladh puist-d agad

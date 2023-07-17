@@ -99,7 +99,9 @@ pl:
         title: Powiadomienie o wnioskach
     users:
       index:
+        block: Blokuj
         hide: Blokuj
         search_placeholder: e-mail lub nazwa użytkownika
         title: Blokuj użytkowników
+      notice_block: Użytkownik został zablokowany. Wszystkie treści, których autorem jest ten użytkownik, została ukryta.
       notice_hide: Użytkownik jest zablokowany. Wszystkie dyskusje i komentarze tego użytkownika zostały ukryte.

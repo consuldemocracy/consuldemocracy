@@ -58,10 +58,22 @@ nl:
     meta_keywords_description: 'Sleutelwoorden <meta name = "keywords">, gebruikt om SEO te verbeteren'
     min_age_to_participate: Minimum age needed to participate
     min_age_to_participate_description: "Gebruikers van deze leeftijd kunnen deelnemen aan alle processen"
+    postal_codes: "Postcodes"
     proposals:
+      successful_proposal_id: Aangenomen voorstel
       poll_short_title: Polls
       poll_description: Omschrijving van de peiling
+      poll_description_description: Uitgebreide beschrijving van de enquêtefunctie
+      poll_link: Link naar aanvullende informatie
+      poll_link_description: Voegt een extra informatielink toe aan de enquêtefunctie
       email_short_title: E-mail
+      email_short_title_description: 'Korte beschrijving van de emailfunctie. Hiermee kunnen gebruikers een mail sturen om hun voorstel te promoten. Alle inhoud van deze mail vind je in ''"/app/views/dashboard/mailer/forward.html.erb"'
+      email_description: Email beschrijving
+      email_description_description: Uitgebreide beschrijving van de emailfunctie
+      poster_short_title: Poster
+      poster_short_title_description: 'Korte beschrijving van de posterfunctie. Hiermee kunnen gebruikers een poster in PDF-formaat downloaden om hun voorstel te promoten. Alle inhoud van deze poster vind je in ''"/app/views/dashboard/poster/index.pdf.erb"'
+      poster_description: Posterbeschrijving
+      poster_description_description: Uitgebreide beschrijving van de posterfunctie
     analytics_url: "Analytics-URL"
     proposal_notification_minimum_interval_in_days: "Het minimum aantal dagen dat dient te worden gewacht voordat notificaties van voorstellen kunnen worden verstuurd"
     proposal_notification_minimum_interval_in_days_description: "Het minimum aantal dagen dat dient te worden gewacht voordat notificaties van voorstellen kunnen worden verstuurd"
@@ -74,6 +86,8 @@ nl:
       facebook_login_description: "Sta gebruikers to om aan te melden met hun Facebook account"
       google_login: "Google login"
       google_login_description: "Sta gebruikers to om aan te melden met hun Google account"
+      wordpress_login: "Wordpress login"
+      wordpress_login_description: "Sta gebruikers to om aan te melden met hun Wordpress account"
       featured_proposals: "Uitgelichte voorstellen"
       featured_proposals_description: "Toon de uitgelichte voorstellen op de voorstellen-pagina"
       signature_sheets: "Handtekeninglijsten"
@@ -89,6 +103,7 @@ nl:
         recommendations_on_proposals_description: "Toont aanbevelingen aan gebruikers op de pagina van de debatten op basis van de codes van de items die zijn gevolgd"
       community: "Community van voorstellen en investeringen"
       community_description: "De sectie van de gemeenschap in de voorstellen en de investeringsprojecten die de participatieve budgetten in staat stelt"
+      machine_learning: "AI / Machine learning"
       map: "Voorstellen en inversteringen geolocatie"
       map_description: "Maakt geolocatie van voorstellen en investeringsprojecten mogelijk"
       allow_images: "Sta uploads en tonen van afbeeldingen toe"
@@ -101,6 +116,13 @@ nl:
       public_stats_description: "De openbare statistieken weergeven in het beheerderspaneel"
       help_page: "Help-pagina"
       help_page_description: 'Toont informatie over alle beschikbare functionaliteit'
+      translation_interface: "Vertaalinterface"
+      remote_census: "Stel de verbinding naar de telling op afstand in (SOAP)"
+      sdg: SDG
+    remote_census:
+      request:
+        method_name: "Naam van de aanvraagmethode"
+        structure: "Aanvraagstructuur"
     map:
       latitude: "Breedte"
       latitude_description: "Breedtegraad om de kaartpositie te tonen"

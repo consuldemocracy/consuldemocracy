@@ -1,0 +1,948 @@
+ne:
+  account:
+    show:
+      change_credentials_link: मेरो लगइन विवरणहरू परिवर्तन गर्नुहोस्
+      erase_account_link: मेरो खाता मेटाउनुहोस्
+      finish_verification: पूर्ण प्रमाणीकरणहरू
+      notifications: सूचनाहरू
+      personal: व्यक्तिगत विवरणहरू
+      public_interests_my_title_list: तपाईंले पछ्याउनुहुने तत्वहरूको ट्यागहरू
+      public_interests_user_title_list: यस प्रयोगकर्ताले पछ्याउने तत्वहरूको ट्यागहरू
+      save_changes_submit: परिवर्तनहरू सुरक्षित गर्नुहोस
+      recommendations: सिफारिसहरू
+      title: मेरो खाता
+      user_permission_info: तपाइँको आफ्नो खाताले तपाइँ यी कुराहरू गर्न सक्नुहुन्छ ...
+      user_permission_title: सहभागी हुनु
+      user_permission_verify: सबै कार्यहरू गर्न तपाईंको खाता प्रमाणित गर्नुहोस्।
+      verified_account: खाता प्रमाणित भयो
+      verify_my_account: मेरो खाता प्रमाणित गर्नुहोस्
+  application:
+    close: बन्द
+    menu: मेनू
+  comments:
+    actions:
+      confirm_delete: "के तपाईँ निश्चित हुनुहुन्छ? यो कार्यले यो टिप्पणी मेटाउनेछ। तपाईंले यो कार्यलाई अन्डू गर्न सक्नुहुन्न।"
+      delete: "टिप्पणी मेटाउनुहोस्"
+    comments_closed: टिप्पणीहरू बन्द छन्
+    verified_only: सहभागी हुन %{verify_account}
+    comment:
+      admin: प्रशासक
+      author: लेखक
+      deleted: यो टिप्पणी मेटाइएको छ
+      moderator: मध्यस्थकर्ता
+      responses:
+        zero: No responses
+        one: १ प्रतिक्रिया
+        other: "%{count} प्रतिक्रियाहरू"
+      responses_show:
+        zero: No responses
+        one: "1 प्रतिक्रिया (देखाउनुहोस्)"
+        other: "%{count} प्रतिक्रियाहरू (देखाउनुहोस्)"
+      responses_collapse:
+        zero: No responses
+        one: "१ प्रतिक्रिया (संकुचन)"
+        other: "%{count} प्रतिक्रियाहरू (संकुचन)"
+      user_deleted: प्रयोगकर्ता मेटाइयो
+      votes:
+        zero: No votes
+        one: १ मत
+        other: "%{count} मतहरू"
+    form:
+      comment_as_admin: रशासकको रूपमा टिप्पणी गर्नुहोस्
+      comment_as_moderator: मध्यस्थको रूपमा टिप्पणी गर्नुहोस्
+      leave_comment: आफ्नो टिप्पणी छोड्नुहोस्
+    orders:
+      most_voted: धेरैले मतदान गरेकाे
+      newest: सबैभन्दा नयाँ पहिले
+      oldest: सबैभन्दा पुरानो पहिले
+      most_commented: धेरैले टिप्पणी गरेकाे
+    show:
+      return_to_commentable: "मा फर्कनुहोस्"
+  comments_helper:
+    comment_button: टिप्पणी प्रकाशित गर्नुहोस्
+    comment_link: टिप्पणी
+    comments_title: टिप्पणीहरू
+    reply_button: जवाफ प्रकाशित गर्नुहोस्
+    reply_link: जवाफ दिनुहोस्
+  debates:
+    create:
+      form:
+        submit_button: बहस सुरु गर्नुहोस्
+    debate:
+      votes:
+        zero: No votes
+        one: १ मत
+        other: "%{count} मतहरू"
+    edit:
+      editing: बहस सम्पादन गर्नुहोस्
+      form:
+        submit_button: परिवर्तनहरू सुरक्षित गर्नुहोस
+      show_link: बहस हेर्नुहोस्
+    form:
+      tags_instructions: यो बहस ट्याग गर्नुहोस्।
+      tags_placeholder: "अल्पविराम (',') द्वारा छुट्याएर तपाईंले प्रयोग गर्न चाहनुभएको ट्यागहरू प्रविष्ट गर्नुहोस्।"
+    index:
+      featured_debates: विशेषता
+      orders:
+        confidence_score: उच्चतम मूल्याङ्कन
+        created_at: नवीनतम
+        hot_score: सबैभन्दा सक्रिय
+        most_commented: धेरैले टिप्पणी गरेकाे
+        relevance: सान्दर्भिकता
+        recommendations: सिफारिसहरू
+      recommendations:
+        without_results: तपाईंको रुचिसँग सम्बन्धित बहसहरू छैनन्
+        without_interests: प्रस्तावहरू पालना गर्नुहोस् ताकि हामी तपाईंलाई सिफारिसहरू दिन सक्छौं
+        disable: "यदि तपाईंले तिनीहरूलाई खारेज गर्नुभयो भने बहसहरूको लागि सिफारिसहरू देखाउन बन्द हुनेछन्। तपाईंले तिनीहरूलाई 'मेरो खाता' पृष्ठमा फेरि सक्षम गर्न सक्नुहुन्छ"
+        actions:
+          success: "यस खाताको लागि बहसहरूका लागि सिफारिसहरू अब असक्षम छन्"
+          error: "एउटा त्रुटि भएको छ। कृपया बहसहरूको लागि सिफारिसहरू म्यानुअल रूपमा असक्षम गर्न 'मेरो खाता' पृष्ठमा जानुहोस्"
+      search_form:
+        button: खोज्नुहोस्
+        placeholder: बहस खोज्नुहोस्...
+        title: खोज्नुहोस्
+      start_debate: बहस सुरु गर्नुहोस्
+      title: बहसहरू
+      section_header:
+        icon_alt: बहस आइकन
+        title: बहसहरू
+        help: बहसहरूमा मद्दत गर्नुहोस्
+      section_footer:
+        title: बहसहरूमा मद्दत गर्नुहोस्
+        description: तपाईलाई सम्बन्धित विषयहरूको बारेमा अरूसँग राय साझा गर्न बहस सुरु गर्नुहोस्।
+        help_text_1: "नागरिक बहसको ठाउँ जो कोहीको लागि हो जसले आफ्नो सरोकारका मुद्दाहरूलाई उजागर गर्न सक्छ र जो अन्य व्यक्तिहरूसँग विचार साझा गर्न चाहन्छन्।"
+        help_text_2: 'बहस खोल्नको लागि तपाईंले %{org} मा साइन अप गर्न आवश्यक छ। प्रयोगकर्ताहरूले खुला बहसहरूमा पनि टिप्पणी गर्न सक्छन् र तिनीहरूलाई प्रत्येकमा पाइने "म सहमत छु" वा "म असहमत छु" बटनहरूबाट मूल्याङ्कन गर्न सक्छन्।'
+    new:
+      form:
+        submit_button: बहस सुरु गर्नुहोस्
+      more_info: बहस कसरी काम गर्छ?
+      recommendation_four: यो ठाउँ र यसलाई भर्ने आवाजहरूको आनन्द लिनुहोस्। त्यो तिम्रो पनि हो।
+      recommendation_one: बहस शीर्षक वा सम्पूर्ण वाक्यहरूको लागि ठूलो अक्षरहरू प्रयोग नगर्नुहोस्। इन्टरनेटमा, यो चिल्ला मानिन्छ। र कसैले चिच्याएको मन पराउँदैन।
+      recommendation_three: निर्दयी आलोचनालाई पनि धेरै स्वागत छ। यो प्रतिबिम्ब को लागी एक ठाउँ हो। तर हामी तपाईंलाई लालित्य र बुद्धिमा रहन सिफारिस गर्छौं। संसारमा यी गुणहरू संग एक राम्रो ठाउँ हो।
+      recommendation_two: कुनै पनि बहस वा टिप्पणी गैरकानूनी कारबाही सुझाव मेटाइनेछ, साथै बहस स्थानहरू तोडफोड गर्न चाहनेहरूलाई हटाइनेछ। अरू जे पनि अनुमति छ।
+      recommendations_title: बहस सिर्जना गर्न सिफारिसहरू
+      start_new: बहस सुरु गर्नुहोस्
+    show:
+      author_deleted: प्रयोगकर्ता मेटाइयो
+      comments_title: टिप्पणीहरू
+      edit_debate_link: सम्पादन
+      flag: यो बहस धेरै प्रयोगकर्ताहरू द्वारा अनुपयुक्त रूपमा फ्ल्याग गरिएको छ।
+      share: साझेदारी गर्नुहोस्
+      author: लेखक
+    update:
+      form:
+        submit_button: परिवर्तनहरू सुरक्षित गर्नुहोस
+  errors:
+    messages:
+      allowed_file_content_types: "सामग्री प्रकार %{types} मध्ये एउटा हुनुपर्छ"
+      user_not_found: प्रयोगकर्ता फेला परेन
+      invalid_date_range: "अमान्य मितिका दायरा"
+      past_date: "विगतको मिति हुनु हुँदैन"
+      cannot_change_date:
+        poll_started: "मतदान सुरु भइसकेको अवस्थामा परिवर्तन गर्न सकिँदैन"
+        poll_ended: "मतदान सकिएको खण्डमा परिवर्तन गर्न सकिँदैन"
+  form:
+    accept_terms: म %{policy} र %{conditions} मा सहमत छु
+    accept_terms_title: म गोपनीयता नीति र प्रयोगका नियम र सर्तहरूमा सहमत छु
+    conditions: प्रयोगका सर्तहरू र सर्तहरू
+    debate: बहस
+    direct_message: निजी सन्देश
+    error: त्रुटि
+    errors: त्रुटि
+    not_saved: "यो %{resource} लाई बचत हुनबाट रोकेको छ। <br>कृपया चिन्ह लगाइएका क्षेत्रहरूलाई कसरी सच्याउने भनेर जान्नको लागि जाँच गर्नुहोस्:"
+    policy: गोपनीयता नीति
+    banner: ब्यानर
+    proposal: प्रस्ताव
+    proposal_notification: "सूचना"
+    budget/investment: लगानी
+    budget/group: बजेट समूह
+    budget/heading: बजेट शीर्षक
+    geozone: भौगोलिक क्षेत्र
+    legislation/draft_version: मस्यौदा
+    legislation/process: प्रक्रिया
+    legislation/question: प्रश्न
+    poll/shift: शिफ्ट
+    poll/question/answer: जवाफ
+    user: खाता
+    verification/sms: फोन
+    signature_sheet: हस्ताक्षर पानाहरू
+    document: कागजात
+    topic: विषय
+    image: छवि
+    local_census_record: स्थानीय जनगणना अभिलेख
+    local_census_records/import: स्थानीय जनगणना अभिलेखहरू आयात
+    site_customization/content_block: सामग्री ब्लक
+    site_customization/page: पृष्ठ
+    sdg/local_target: स्थानीय लक्ष्य
+  geozones:
+    none: सबै सहर
+  layouts:
+    application:
+      chrome: गुगल क्रोम
+      firefox: फायरफक्स
+      ie: हामीले पत्ता लगाएका छौं कि तपाइँ इन्टरनेट एक्सप्लोरर मार्फत ब्राउज गर्दै हुनुहुन्छ। परिष्कृत अनुभवको लागि, हामी %{firefox} वा %{chrome} प्रयोग गर्न सिफारिस गर्छौं
+      ie_title: यो वेबसाइट तपाइँको ब्राउजर को लागी अनुकूलित छैन
+    dashboard:
+      proposal_header:
+        published: प्रकाशित
+        draft: मस्यौदा
+        retired: फिर्ता गरियो
+      proposal_totals:
+        active_resources: सक्रिय स्रोतहरू
+        community: तपाईंको समुदायमा सहभागीहरू
+        show_proposal: प्रस्ताव देखाउनुहोस्
+        preview_proposal: प्रस्ताव पूर्वावलोकन
+        current_goal: वर्तमान लक्ष्य
+        supports:
+          zero: No supports
+          one: १ समर्थन
+          other: "समर्थनहरू"
+    footer:
+      accessibility: पहुँचयोग्यता
+      conditions: प्रयोगका सर्तहरू र सर्तहरू
+      consul: कन्सुल सफ्टवेयर
+      consul_url: https://github.com/consul/consul
+      copyright: कन्सुल, %{year}
+      description: यो पोर्टलले %{consul} प्रयोग गर्दछ जुन %{open_source} हो।
+      open_source: खुला स्रोत सफ्टवेयर
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: तपाईं बस्न चाहनु भएको शहरलाई कसरी आकार दिने निर्णय गर्नुहोस्।
+      participation_title: सहभागी हुनु
+      privacy: गोपनीयता नीति
+    header:
+      administration_menu: मेनू
+      administration: प्रशासन
+      collaborative_legislation: सहयोगात्मक कानून
+      debates: बहसहरू
+      locale: "भाषा:"
+      management: व्यवस्थापन
+      moderation: मध्यस्थता
+      valuation: मूल्याङ्कनकर्ता
+      officing: मतदान अधिकारीहरू
+      help: मद्दत
+      my_account_link: मेरो खाता
+      my_activity_link: मेरो सामग्री
+      open_gov: खुल्ला सरकार
+      proposals: प्रस्तावहरू
+      poll_questions: मतदान
+      budgets: सहभागितामूलक बजेट
+      notification_item:
+        new_notifications:
+          zero: "You don't have new notifications"
+          one: तपाईंका लागि एउटा नयाँ सूचना छ
+          other: तपाईंका लागि %{count} वटा नयाँ  सूचनाहरू छन्
+        notifications: सूचनाहरू
+      sdg: "एस डि जि"
+  notifications:
+    index:
+      empty_notifications: तपाईंका नयाँ सूचनाहरू छैनन्।
+      mark_all_as_read: सबै पढिसकेको अंकित गर्नुहोस्
+      read: पढिएकाे
+      title: सूचनाहरू
+      unread: नपढिएको
+    notification:
+      action:
+        comments_on:
+          one: कसैले टिप्पणी गरे
+          other: त्यहाँ %{count} नयाँ टिप्पणीहरू छन्
+        proposal_notification:
+          one: त्यहाँ एउटा नयाँ सूचना छ
+          other: त्यहाँ %{count} नयाँ सूचनाहरू छन्
+        replies_to:
+          one: कसैले तपाईंको टिप्पणीको जवाफ दियो
+          other: तपाईंको टिप्पणीमा %{count} नयाँ जवाफहरू छन्
+      mark_as_read: पढिसकेको अंकित गर्नुहोस्
+      mark_as_unread: नपढिएको भनी चिन्ह लगाउनुहोस्
+      notifiable_hidden: यो स्रोत अब उपलब्ध छैन।
+  map:
+    title: "जिल्लाहरू"
+    proposal_for_district: "आफ्नो जिल्लाको लागि प्रस्ताव सुरु गर्नुहोस्"
+    start_proposal: एक प्रस्ताव सिर्जना गर्नुहोस्
+  omniauth:
+    facebook:
+      sign_in: फेसबुकमा साइन इन गर्नुहोस्
+      sign_up: फेसबुकमा साइन अप गर्नुहोस्
+      name: फेसबुक
+    finish_signup:
+      title: "थप विवरणहरू"
+      username_warning: "हामीले सामाजिक सञ्जालहरूसँग अन्तरक्रिया गर्ने तरिकामा परिवर्तनको कारण, यो सम्भव छ कि तपाइँको प्रयोगकर्ता नाम अब 'पहिले नै प्रयोगमा छ' जस्तो देखिन्छ। यदि त्यो तपाइँको मामला हो भने, कृपया फरक प्रयोगकर्ता नाम छान्नुहोस्।"
+    google_oauth2:
+      sign_in: गुगलसँग साइन इन गर्नुहोस्
+      sign_up: गुगलसँग साइन अप गर्नुहोस्
+      name: गूगल
+    wordpress_oauth2:
+      sign_in: Wordpress को साथ साइन इन गर्नुहोस्
+      sign_up: Wordpress को साथ साइन अप गर्नुहोस्
+      name: Wordpress
+    twitter:
+      sign_in: ट्विटर मार्फत साइन इन गर्नुहोस्
+      sign_up: ट्विटर मार्फत साइन अप गर्नुहोस्
+      name: ट्विटर
+    info:
+      sign_in: "मार्फत साइन इन गर्नुहोस्:"
+      sign_up: "मार्फत साइन अप गर्नुहोस्:"
+    or_fill: "वा निम्न फारम भर्नुहोस्:"
+  proposals:
+    create:
+      form:
+        submit_button: प्रस्ताव सिर्जना गर्नुहोस्
+    created:
+      title: बधाई छ! तपाईंले पहिलो कदम चाल्नु भएको छ।
+      motivation: "तपाईंको प्रस्ताव सफल हुनको लागि सुरुवात अभियान तयार गर्नु महत्त्वपूर्ण छ। सुरुका केही दिन निर्णायक छन्।"
+      motivation_2: "<strong>यदि तपाइँ प्रकाशन तयार गर्न सिफारिसहरू चाहनुहुन्छ भने तपाइँको प्रस्तावलाई मस्यौदाको रूपमा छोड्नुहोस् र हामी तपाइँलाई मार्गदर्शन गर्नेछौं।</strong>"
+      publish: होइन, म प्रस्ताव सार्वजनिक गर्न चाहन्छु
+      dashboard: हो, म मद्दत चाहन्छु र म पछि प्रकाशित गर्नेछु
+      preview_title: तपाईंले यसलाई प्रकाशित गर्दा तपाईंको प्रस्ताव यसरी देखिनेछ
+    share:
+      improve_it: आफ्नो अभियान सुधार गर्नुहोस् र थप समर्थन प्राप्त गर्नुहोस्।
+      dashboard: थप जानकारी हेर्नुहोस्
+      message: "मैले प्रस्ताव %{title} लाई %{handle} मा समर्थन गरें। यदि तपाइँ इच्छुक हुनुहुन्छ भने, यसलाई पनि समर्थन गर्नुहोस्!"
+    edit:
+      editing: प्रस्ताव सम्पादन गर्नुहोस्
+      form:
+        submit_button: परिवर्तनहरू सुरक्षित गर्नुहोस
+      show_link: प्रस्ताव हेर्नुहोस्
+    retire_form:
+      title: प्रस्ताव फिर्ता लिनुहोस्
+      warning: "यदि तपाईंले प्रस्ताव फिर्ता लिनुभयो भने यसले अझै पनि समर्थनहरू स्वीकार गर्नेछ, तर मुख्य सूचीबाट हटाइनेछ र लेखकले प्रस्तावलाई अब समर्थन गरिनु हुँदैन भनी मानेको सन्देश सबै प्रयोगकर्ताहरूलाई देखिनेछ।"
+      retired_reason_blank: एउटा विकल्प छान्नुहोस्
+      retired_explanation_placeholder: यस प्रस्तावले थप समर्थन प्राप्त गर्नु हुँदैन भन्ने तपाईंलाई किन लाग्छ भनी छिट्टै व्याख्या गर्नुहोस्
+      submit_button: प्रस्ताव फिर्ता लिनुहोस्
+    retire_options:
+      duplicated: नक्कली
+      started: पहिले नै चलिरहेको छ
+      unfeasible: असम्भाव्य
+      done: सकियो
+      other: अन्य
+    form:
+      proposal_responsible_name_note: "(व्यक्तिगत रूपमा वा सामूहिक प्रतिनिधिको रूपमा; सार्वजनिक रूपमा प्रदर्शित गरिने छैन)"
+      proposal_summary_note: "(अधिकतम २00 वर्ण /अक्षरहरू)"
+      proposal_video_url_note: तपाइँ YouTube वा Vimeo काे लिङ्क थप्न सक्नुहुन्छ
+      tag_category_label: "वर्गहरू"
+      tags_instructions: "यो प्रस्ताव ट्याग गर्नुहोस्। तपाईं प्रस्तावित कोटीहरूबाट छनौट गर्न सक्नुहुन्छ वा आफ्नै थप्न सक्नुहुन्छ"
+      tags_label: ट्यागहरू
+      tags_placeholder: "अल्पविराम (',') द्वारा छुट्याएर तपाईंले प्रयोग गर्न चाहनुभएको ट्यागहरू प्रविष्ट गर्नुहोस्।"
+      map_location: "नक्साकाे स्थान"
+      map_location_instructions: "स्थानमा नक्सा नेभिगेट गर्नुहोस् र मार्कर राख्नुहोस्।"
+      map_remove_marker: "नक्सा मार्कर हटाउनुहोस्"
+    index:
+      featured_proposals: विशेषता
+      orders:
+        confidence_score: उच्चतम मूल्याङ्कन
+        created_at: नवीनतम
+        hot_score: सबैभन्दा सक्रिय
+        most_commented: धेरैले टिप्पणी गरेकाे
+        relevance: सान्दर्भिकता
+        archival_date: संग्रहित
+        recommendations: सिफारिसहरू
+      recommendations:
+        without_results: तपाईंको रुचिसँग सम्बन्धित प्रस्तावहरू छैनन्
+        without_interests: प्रस्तावहरू पालना गर्नुहोस् ताकि हामी तपाईंलाई सिफारिसहरू दिन सक्छौं
+        disable: "यदि तपाईंले तिनीहरूलाई खारेज गर्नुभयो भने प्रस्तावहरूको लागि सिफारिसहरू देखाउन बन्द हुनेछन्। तपाईंले तिनीहरूलाई 'मेरो खाता' पृष्ठमा फेरि सक्षम गर्न सक्नुहुन्छ"
+        actions:
+          success: "यस खाताको लागि प्रस्तावहरूका लागि सिफारिसहरू अब असक्षम छन्"
+          error: "एउटा त्रुटि भएको छ। कृपया प्रस्तावहरूको लागि सिफारिसहरू म्यानुअल रूपमा असक्षम गर्न 'मेरो खाता' पृष्ठमा जानुहोस्"
+      retired_proposals: प्रस्तावहरू फिर्ता लिनुहोस्
+      retired_proposals_link: "प्रस्तावहरू लेखक द्वारा फिर्ता"
+      selected_proposals: चयन गरिएका प्रस्तावहरू
+      selected_proposals_link: चयन गरिएका प्रस्तावहरू हेर्नुहोस्
+      archived_proposals: अभिलेखित प्रस्तावहरू
+      proposals_lists: प्रस्तावहरूको सूची
+      retired_links:
+        all: सबै
+        duplicated: नक्कली
+        started: जारी छ
+        unfeasible: असम्भाव्य
+        done: सकियो
+        other: अन्य
+      search_form:
+        button: खोज्नुहोस्
+        placeholder: प्रस्तावहरू खोज्नुहोस्...
+        title: खोज्नुहोस्
+      search_results:
+        one: " <strong>'%{search_term}'</strong> शब्द समावेश"
+        other: " <strong>'%{search_term}'</strong> शब्द समावेश गरिएको"
+      select_order_long: "तपाईं प्रस्तावहरू निम्नअनुसार हेर्दै हुनुहुन्छ:"
+      start_proposal: एक प्रस्ताव सिर्जना गर्नुहोस्
+      title: प्रस्तावहरू
+      top_link_proposals: श्रेणी द्वारा सबैभन्दा समर्थित प्रस्तावहरू
+      section_header:
+        icon_alt: प्रस्ताव आइकन
+        title: प्रस्तावहरू
+        help: प्रस्तावहरूको साथ मद्दत गर्नुहोस्
+      section_footer:
+        title: प्रस्तावहरूको साथ मद्दत गर्नुहोस्
+        description: नागरिकका प्रस्तावहरू छिमेकीहरू र सामूहिकहरूको लागि पर्याप्त समर्थन प्राप्त गरेपछि र नागरिकहरूको भोटमा पेश गरेपछि उनीहरूले आफ्नो शहर कस्तो बनाउन चाहन्छन् भन्ने प्रत्यक्ष निर्णय गर्ने अवसर हो।
+    new:
+      form:
+        submit_button: प्रस्ताव सिर्जना गर्नुहोस्
+      more_info: नागरिक प्रस्तावहरू कसरी काम गर्छन्?
+      recommendation_one: प्रस्ताव शीर्षक वा सम्पूर्ण वाक्यहरूको लागि ठूलो अक्षरहरू प्रयोग नगर्नुहोस्। इन्टरनेटमा, यो चिल्ला मानिन्छ। र कसैले चिच्याएको मन पराउँदैन।
+      recommendation_three: यो ठाउँको आनन्द लिनुहोस्, यसलाई भर्ने आवाजहरू, तपाईंको पनि हो।
+      recommendation_two: कुनै पनि प्रस्ताव वा टिप्पणी गैरकानूनी कारबाही सुझाव मेटाइनेछ, साथै बहस स्थानहरू तोडफोड गर्न चाहनेहरूलाई हटाइनेछ। अरू जे पनि अनुमति छ।
+      recommendations_title: प्रस्ताव सिर्जना गर्न सिफारिसहरू
+      start_new: नयाँ प्रस्ताव सिर्जना गर्नुहोस्
+    notice:
+      retired: प्रस्ताव फिर्ता लिएको छ
+      published: प्रस्ताव सार्वजनिक भएको छ
+    proposal:
+      created: "तपाईंले एउटा प्रस्ताव सिर्जना गर्नुभयो!"
+      share:
+        guide: "अब तपाईंले यसलाई साझा गर्न सक्नुहुन्छ ताकि मानिसहरूले समर्थन गर्न सुरु गर्न सकून्।"
+        edit: "यो साझा हुनु अघि तपाईंले आफ्नो मनपर्ने पाठ परिवर्तन गर्न सक्षम हुनुहुनेछ।"
+        view_proposal: अहिले होइन, मेरो प्रस्तावमा जानुहोस्
+      already_supported: तपाईंले यस प्रस्तावलाई पहिले नै समर्थन गरिसक्नुभएको छ। यसलाई साझेदारी गर्नुहोस्!
+      support: समर्थन
+      support_label: "समर्थन %{proposal}"
+      support_title: यो प्रस्तावलाई समर्थन गर्नुहोस्
+      supports:
+        zero: No supports
+        one: १ समर्थन
+        other: "%{count} समर्थनहरू"
+      votes:
+        zero: No votes
+        one: १ मत
+        other: "%{count} मतहरू"
+      supports_necessary: "%{number} समर्थन आवश्यक छ"
+      total_percent: १००%
+      archived: "यो प्रस्ताव अभिलेख गरिएको छ र समर्थन सङ्कलन गर्न सक्दैन।"
+      successful: "यो प्रस्ताव आवश्यक समर्थन पुगेको छ।"
+      selected: "चयन गरिएका प्रस्ताव"
+    show:
+      author_deleted: प्रयोगकर्ता मेटाइयो
+      code: "प्रस्ताव कोड:"
+      comments_tab: टिप्पणीहरू
+      dashboard_proposal_link: ड्यासबोर्ड
+      flag: यो प्रस्ताव धेरै प्रयोगकर्ताहरू द्वारा अनुपयुक्त रूपमा फ्ल्याग गरिएको छ।
+      notifications_tab: सूचनाहरू
+      milestones_tab: माइलस्टोनहरू
+      retired_warning: "यस प्रस्तावलाई थप समर्थन प्राप्त गर्नु हुँदैन भन्ने लेखकको विचार छ।"
+      retired_warning_link_to_explanation: यसको लागि मतदान गर्नु अघि व्याख्या पढ्नुहोस्।
+      retired: प्रस्तावहरू लेखक द्वारा फिर्ता
+      share: साझेदारी
+      no_notifications: "यो प्रस्तावमा कुनै सूचना छैन।"
+      embed_video_title: "%{proposal} मा भिडियो"
+      title_video_url: "बाह्य भिडियो"
+      author: लेखक
+      draft: मस्यौदामा प्रस्ताव। अझै समर्थन प्राप्त गर्न सकिँदैन, न त यो प्रस्तावहरूको सूचीमा देखा पर्दछ।
+    update:
+      form:
+        submit_button: परिवर्तनहरू सुरक्षित गर्नुहोस
+  dashboard:
+    menu:
+      my_proposal: प्रस्ताव सम्पादन गर्नुहोस्
+      progress: प्रगति
+      resources: श्राेतहरू
+      community: समुदाय
+      polls: सर्वेक्षणहरू
+      mailing: इ-मेल
+      poster: पोष्टर
+      recommended_actions: सिफारिस गरिएका कार्यहरू
+      messages: प्रयोगकर्ताहरूलाई सन्देश
+      related_content: सम्बन्धित सामग्री
+    form:
+      request: अनुरोध
+    create_request:
+      success: अनुरोध सफलतापूर्वक पठाइएको छ। हामी तपाईंलाई यसको बारेमा जानकारी दिन सकेसम्म चाँडो सम्पर्क गर्नेछौं।
+      archived: यो प्रस्ताव अभिलेख गरिएको छ र स्रोतहरू अनुरोध गर्न सक्दैन।
+    progress:
+      title: ग्राफिक
+      group_by_month: मासिक
+      group_by_week: साप्ताहिक
+      group_by_date: दैनिक
+      progress: संचित प्रगति
+      supports: समर्थनहरू
+      success: आदर्श प्रगति
+      new_action: नयाँ
+    index:
+      title: संस्करण
+      edit_proposal_link: प्रस्ताव सम्पादन गर्नुहोस्
+      publish: प्रस्ताव प्रकाशित गर्नुहोस्
+      retire: प्रस्ताव फिर्ता लिनुहोस्
+    new_request:
+      links: लिङ्कहरू
+    resources:
+      available_resources: उपलब्ध स्रोतहरू
+    resource:
+      required_days: "%{days} दिन आवश्यक छ"
+      required_supports: "%{supports} समर्थन आवश्यक छ"
+      and: र
+      view_resource: स्रोत हेर्नुहोस्
+      resource_requested: संसाधन पहिले नै अनुरोध गरिएको छ
+      request_resource: स्रोत अनुरोध गर्नुहोस्
+      resource_locked: स्रोत लक गरियो
+    recommended_actions:
+      title: सिफारिस गरिएका कार्यहरू
+      goto_proposed_actions: सिफारिस गरिएका कार्यहरूमा जानुहोस्
+      see_proposed_actions: सिफारिस गरिएका कार्यहरू हेर्नुहोस्
+      hide_proposed_actions: सिफारिस गरिएका कार्यहरू लुकाउनुहोस्
+      pending_title: विचाराधीन
+      show_description: विवरण देखाउनुस्
+      without_pending_actions: कुनै सिफारिस गरिएका कार्यहरू बाँकी छैनन्
+      done_title: सकियो
+      without_done_actions: कुनै सिफारिस गरिएका कार्यहरू गरिएनन्
+    next_goal:
+      title: लक्ष्य
+      see_complete_course: पूरा पाठ्यक्रम हेर्नुहोस्
+      hide_course: पाठ्यक्रम लुकाउनुहोस्
+    goal:
+      target_supports:
+        one: तपाईंको प्रस्तावको लागि %{count} समर्थन प्राप्त गर्नुहोस्
+        other: तपाईंको प्रस्तावहरूको लागि %{count} समर्थन प्राप्त गर्नुहोस्
+      days:
+        one: "%{count} दिन"
+        other: "%{count} दिनहरू"
+      locked_resource: स्रोत लक गरियो
+      ideal_time: उपयुक्त समय
+    community:
+      access_community: समुदायमा पहुँच गर्नुहोस्
+      latest_activity: "समुदायको पछिल्लो गतिविधि: %{at}"
+      participants: सहभागीहरू
+      debates: बहसहरू
+      comments: टिप्पणीहरू
+      latest_comments: नवीनतम सन्देशहरू
+    messages:
+      send_notification: प्रस्ताव अनुयायीहरूलाई सूचना पठाउनुहोस्
+      previous_notifications: अघिल्लो सूचनाहरू हेर्नुहोस्
+    polls:
+      index:
+        title: सर्वेक्षणहरू
+        create: सर्वेक्षण सिर्जना गर्नुहोस्
+        count:
+          one: तपाईंले %{count} मतदान सिर्जना गर्नुभयो।
+          other: तपाईंले %{count} मतदानहरू सिर्जना गर्नुभएको छ।
+        links: लिङ्कहरू
+        additiontal_information: अतिरिक्त जानकारी
+      new:
+        title: नयाँ सर्वेक्षण
+        submit: सर्वेक्षण सिर्जना गर्नुहोस्
+      edit:
+        submit: सर्वेक्षण अद्यावधिक गर्नुहाेस्
+      poll:
+        responses:
+          one: "%{count} प्रतिक्रिया"
+          other: "%{count} प्रतिक्रियाहरू"
+        view_results: नतिजाहरू हेर्नुहोस्
+        edit_poll: सर्वेक्षण सम्पादन गर्नुहोस्
+        show_results_help: यदि तपाईंले यो बाकस जाँच गर्नुभयो भने परिणामहरू सार्वजनिक हुनेछन् र सबै प्रयोगकर्ताहरूले तिनीहरूलाई हेर्न सक्षम हुनेछन्
+        delete: सर्वेक्षण मेटाउनुहोस्
+        alert_notice: यस कार्यले सर्वेक्षण र यससँग सम्बन्धित सबै प्रश्नहरू हटाउनेछ।
+        success_notice: सर्वेक्षण सफलतापूर्वक मेटाइयो
+        unable_notice: तपाईंले प्रतिक्रियाहरू भएको सर्वेक्षणलाई नष्ट गर्न सक्नुहुन्न
+      form:
+        name: सर्वेक्षण शीर्षक
+        add_question: प्रश्न थप्नुहोस्
+      question_fields:
+        remove_question: प्रश्न हटाउनुहोस्
+        add_answer: जवाफ थप्नुहोस्
+      question_answer_fields:
+        remove_answer: जवाफ हटाउनुहोस्
+    poster:
+      index:
+        title: पोस्टर पूर्वावलोकन
+        poster_title: "हेरिरहनु पर्दैन,"
+        poster_subtitle: "मलाई ब्याक अप गर्नुहोस्! ;)"
+        intro_text: "<strong>म मेरो आफ्नै नागरिक प्रस्तावको साथ %{org}</strong> मा सहभागी छु र तपाईंको सहयोगले मात्र हामी सबैले चाहेको सहर बनाउन सक्छौं।"
+        proposal_code: "प्रस्तावको कोड: %{code}"
+        support: मेरो प्रस्तावलाई समर्थन गर्नुहोस्
+        footer: "<strong>%{link} मा जानुहोस् र यो प्रस्तावलाई समर्थन गर्नुहोस्।</strong> जति धेरै, राम्रो। आफ्नो तर्फबाट गरौं। धन्यवाद!"
+      new:
+        title: तपाईंको प्रस्तावको पोस्टर
+      options:
+        preview: पूर्वावलोकन
+        download: डाउनलोड
+    mailing:
+      index:
+        title: इ-मेल पूर्वावलोकन
+      new:
+        title: साझेदारी गर्नकाे लागि इ-मेल मोडेल
+      mailing_options:
+        send: '%{address} मा पठाउनुहोस्'
+        preview: पूर्वावलोकन
+      create:
+        sent: इमेल पठाइएको छ
+    mailer:
+      forward:
+        subtitle: "यदि तपाईंले मलाई समर्थन गर्नुभयो भने, <br>हामी यसलाई प्राप्त गर्नेछौं।"
+        support_button: यो प्रस्तावलाई समर्थन गर्नुहोस्
+        share_in: साझेदारी गर्नुहोस्
+        hi: "नमस्कार!"
+        introduction: म %{org} मा भाग लिइरहेको छु भनी जानकारी गराउनको लागि यो लेख्दैछु, हामीले कुन सहर चाहनुहुन्छ भनेर निर्णय गर्न सक्ने प्लेटफर्म। र त्यसको लागि, मैले मेरो आफ्नै नागरिक प्रस्ताव सिर्जना गरेको छु र अब, मलाई तपाईंको समर्थन चाहिन्छ! तर चिन्ता नगर्नुहोस् किनभने यो धेरै सरल छ।
+        support: "तपाईंले बटनमा क्लिक गर्नुपर्नेछ जुन तपाईंले तल देख्नुहुनेछ 'यस प्रस्तावलाई समर्थन गर्नुहोस्' र तपाईंले यसलाई प्रचार गर्नु अघि आफैलाई सूचित गर्न सक्नुहुन्छ। अधिकतम समर्थन प्राप्त गर्ने प्रस्तावहरू मात्र सिटी काउन्सिलद्वारा गरिन्छ, र मैले सोचे कि तपाईं, म पक्का छु कि तपाईंले मलाई यो प्राप्त गर्न मद्दत गर्नुहुन्छ!"
+        share: "र यदि तपाईंले मलाई मेरो प्रस्ताव आफ्ना साथीहरू, परिवार र सम्पर्कहरूसँग साझा गर्ने ठूलो पक्षमा गर्नुहुन्छ भने, यो उत्तम हुनेछ!"
+  polls:
+    all: "सबै"
+    no_dates: "कुनै मिति तोकिएको छैन"
+    dates: "%{open_at} देखि %{closed_at} सम्म"
+    final_date: "अन्तिम गणना/नतिजा"
+    index:
+      filters:
+        current: "खोल्नुहोस्"
+        expired: "म्याद सकियो"
+      title: "मतदान"
+      participate_button: "यस मतदानमा सहभागी"
+      participate_button_expired: "मतदान सकियाे ।"
+      no_geozone_restricted: "सबै सहर"
+      geozone_restricted: "जिल्लाहरू"
+      geozone_info: "जनगणनामा मानिसहरू सहभागी हुन सक्छन्: "
+      already_answer: "तपाईंले पहिले नै यो मतदानमा भाग लिनुभएको छ"
+      not_logged_in: "सहभागी हुनको लागि तपाईंले साइन इन वा साइन अप गर्नुपर्छ"
+      unverified: "सहभागी हुनको लागि तपाईंले आफ्नो खाता प्रमाणित गर्नुपर्छ"
+      cant_answer: "यो निर्वाचन तपाईको भू-क्षेत्रमा उपलब्ध छैन"
+      section_header:
+        icon_alt: मतदान आइकन
+        title: मतदान
+        help: मतदान गर्न मद्दत गर्नुहोस्
+      section_footer:
+        title: मतदान गर्न मद्दत गर्नुहोस्
+        description: नागरिक निर्वाचन एक सहभागितामूलक संयन्त्र हो जसद्वारा मतदान अधिकार भएका नागरिकहरूले प्रत्यक्ष निर्णय लिन सक्छन्।
+      no_polls: "त्यहाँ खुला मतदान छैन।"
+    show:
+      already_voted_in_booth: "तपाईंले पहिले नै भौतिक बुथमा भाग लिनुभएको छ। तपाईं फेरि सहभागी हुन सक्नुहुन्न।"
+      already_voted_in_web: "तपाईंले पहिले नै यो निर्वाचनमा भाग लिनुभएको छ। यदि तपाईंले फेरि मतदान गर्नुभयो भने यो ओभरराइट हुनेछ।"
+      back: मतदानमा फर्कनुहोस्
+      cant_answer_not_logged_in: "सहभागी हुनको लागि तपाईंले %{signin} वा %{signup} गर्नुपर्छ।"
+      comments_tab: टिप्पणीहरू
+      cant_answer_verify: "जवाफ दिनको लागि तपाईंले %{verify_link} गर्नुपर्छ।"
+      verify_link: "तपाईंको खाता प्रमाणित गर्नुहोस्"
+      cant_answer_expired: "यो निर्वाचन सकियो।"
+      cant_answer_wrong_geozone: "यो प्रश्न तपाईको भू-क्षेत्रमा उपलब्ध छैन."
+      more_info_title: "थप जानकारी"
+      documents: कागजातहरू
+      zoom_plus: छवि विस्तार गर्नुहोस्
+      read_more: "%{answer} बारे थप पढ्नुहोस्"
+      read_less: "%{answer} को बारेमा कम पढ्नुहोस्"
+      videos: "बाह्य भिडियो"
+      info_menu: "जानकारी"
+      stats_menu: "सहभागिता तथ्याङ्क"
+      results_menu: "मतदान परिणामहरू"
+      stats:
+        total_votes: "दिइएको मतको कुल संख्या"
+        votes: "मतहरू"
+        web: "वेब"
+        mail: "मेल"
+        booth: "बुथ"
+        total: "कुल"
+        valid: "मान्य"
+        white: "पूर्ण रूपमा खाली"
+        null_votes: "अमान्य"
+      results:
+        title: "प्रश्नहरू"
+        most_voted_answer: "सबैभन्दा धेरै मत प्राप्त जवाफ: "
+    poll_header:
+      back_to_proposal: प्रस्तावमा फर्कनुहोस्
+  poll_questions:
+    show:
+      vote_answer: "%{answer} मा मत दिन्नुस्"
+      voted: "तपाईंले %{answer} मत दिनुभयो"
+    description:
+      unique: "तपाईं अधिकतम १ जवाफ चयन गर्न सक्नुहुन्छ।"
+      multiple: "तपाईले अधिकतम %{maximum} जवाफहरू चयन गर्न सक्नुहुन्छ।"
+    read_more_about: "बारे थप पढ्नुहोस्:"
+  proposal_notifications:
+    new:
+      title: "सूचना पठाउनुहोस्"
+      submit_button: "सूचना पठाउनुहोस्"
+      info_about_receivers: "उसको सूचना <strong>%{count} मानिसहरू</strong> लाई पठाइनेछ र यो %{proposal_page} मा देखिनेछ।<br> सूचनाहरू तुरुन्तै पठाइँदैन, प्रयोगकर्ताहरूले आवधिक रूपमा सबै प्रस्ताव सूचनाहरू सहितको इमेल प्राप्त गर्नेछन्।"
+      proposal_page: "प्रस्ताव को पृष्ठ"
+    show:
+      back: "मेरो सामग्रीमा फर्कनुहोस्"
+  shared:
+    edit: "सम्पादन"
+    filter: "फिल्टर"
+    save: "सुरक्षित गर्नुहोस्"
+    delete: "मेट्नुहोस्"
+    "yes": "हो"
+    "no": "होइन"
+    search_results: "परिणामहरू खोज्नुहोस्"
+    advanced_search:
+      date: "मिति अनुसार"
+      date_placeholder: "DD/MM/YYYY"
+      date_range_blank: "मिति छान्नुहोस्"
+      date_1: "पछिल्लो २४ घण्टा"
+      date_2: "गत हप्ता"
+      date_3: "अघिल्लो महिना"
+      date_4: "गत वर्ष"
+      date_5: "अनुकूलित"
+      from: "बाट"
+      general: "पाठकाे साथ"
+      goal: "एसडीजी द्वारा"
+      goal_blank: "एउटा लक्ष्य चयन गर्नुहोस्"
+      search: "फिल्टर"
+      target: "लक्ष्य अनुसार"
+      target_blank: "उद्देश्य चयन गर्नुहोस्"
+      title: "उन्नत खोज"
+      to: "लाई"
+    author_info:
+      author_deleted: प्रयोगकर्ता मेटाइयो
+      email_deleted: इमेल मेटाइयो
+    back: फिर्ता जानुहोस्
+    check: छनाेट
+    check_all: सबै
+    check_none: कुनै पनि छैन
+    collective: सामूहिक
+    flag: अनुपयुक्त चिन्ह लगाउनु हाेस्
+    follow: "पछ्याउन"
+    following: "पछ्याउँदै"
+    follow_entity: "पछ्याउन %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice: "तपाईं अब यो लगानी परियोजना पछ्याउँदै हुनुहुन्छ! <br> हामी तपाईंलाई परिवर्तनहरूको बारेमा सूचित गर्नेछौं ताकि तपाईं अद्यावधिक हुनुहुन्छ।"
+        destroy:
+          notice: "तपाईंले यो लगानी परियोजना पछ्याउन छोड्नुभएको छ! <br> तपाईंले अब यस परियोजनासँग सम्बन्धित सूचनाहरू प्राप्त गर्नुहुने छैन।"
+      proposal:
+        create:
+          notice: "अब तपाईं यो नागरिक प्रस्ताव पछ्याउँदै हुनुहुन्छ! <br> हामी तपाईंलाई परिवर्तनहरूको बारेमा सूचित गर्नेछौं ताकि तपाईं अद्यावधिक हुनुहुन्छ।"
+        destroy:
+          notice: "तपाईंले यो नागरिक प्रस्ताव पछ्याउन छोड्नुभएको छ! <br> तपाईंले अब यस प्रस्तावसँग सम्बन्धित सूचनाहरू प्राप्त गर्नुहुने छैन।"
+    print:
+      print_button: यो जानकारी छाप्नुहोस्
+    search: खोज्नुहोस्
+    show: देखाउनु
+    suggest:
+      debate:
+        found:
+          one: "त्यहाँ '%{query}' शब्दसँग बहस छ, तपाईंले नयाँ खोल्नुको सट्टा यसमा भाग लिन सक्नुहुन्छ।"
+          other: "त्यहाँ '%{query}' शब्दसँग बहसहरू छन्, तपाईंले नयाँ खोल्नुको सट्टा तिनीहरूमा भाग लिन सक्नुहुन्छ।"
+        message: "तपाईंले %{limit} को %{count} बहसहरू '%{query}' शब्द समावेश देख्दै हुनुहुन्छ।"
+        see_all: "सबै हेर"
+      budget_investment:
+        found:
+          one: "त्यहाँ '%{query}' शब्दको साथ लगानी छ, तपाईंले नयाँ खोल्नुको सट्टा यसमा भाग लिन सक्नुहुन्छ।"
+          other: "त्यहाँ '%{query}' शब्दको साथ लगानीहरू छन्, तपाईंले नयाँ खोल्नुको सट्टा तिनीहरूमा भाग लिन सक्नुहुन्छ।"
+        message: "तपाईंले %{limit} को %{count} लगानीहरू '%{query}' शब्द समावेश गरेको देख्दै हुनुहुन्छ।"
+        see_all: "सबै हेर"
+      proposal:
+        found:
+          one: "त्यहाँ '%{query}' शब्दको प्रस्ताव छ, तपाईंले नयाँ सिर्जना गर्नुको सट्टा यसमा योगदान गर्न सक्नुहुन्छ"
+          other: "त्यहाँ '%{query}' शब्दको साथ प्रस्तावहरू छन्, तपाईंले नयाँ सिर्जना गर्नुको सट्टा तिनीहरूलाई योगदान गर्न सक्नुहुन्छ"
+        message: "तपाईंले %{limit} को %{count} प्रस्तावहरू '%{query}' शब्द समावेश देख्दै हुनुहुन्छ।"
+        see_all: "सबै हेर"
+    tags_cloud:
+      tags: प्रचलनमा रहेको
+      districts: "जिल्लाहरू"
+      districts_list: "जिल्लाहरूका सुची"
+      categories: "वर्गहरू"
+    target_blank: " (लिङ्क नयाँ विन्डोमा खुल्छ)"
+    you_are_in: "तिमि यस भित्र"
+    unflag: ध्वजा हटाउनुहोस्
+    unfollow_entity: "%{entity} लाई अनफलो गर्नुहोस्"
+    outline:
+      searcher: खोजकर्ता
+    go_to_page: "को पृष्ठमा जानुहोस् "
+    share: साझेदारी गर्नुहोस्
+    orbit:
+      previous_slide: अघिल्लो स्लाइड
+      next_slide: अर्को स्लाइड
+    documentation: अतिरिक्त कागजातहरू
+    view_mode:
+      title: हेर्ने माध्यम
+      cards: कार्डहरू
+      list: सुची
+    recommended_index:
+      title: सिफारिसहरू
+      see_more: थप सिफारिसहरू हेर्नुहोस्
+      hide: सिफारिसहरू लुकाउनुहोस्
+    translations:
+      select_language_prompt: भाषा छान्नुहोस्
+      remove_language: भाषा हटाउनुहोस्
+      add_language: भाषा थप्नुहोस्
+      languages_in_use:
+        zero: "0 languages in use"
+        one: "१ भाषा प्रयोगमा छ"
+        other: "%{count} भाषाहरू प्रयोगमा छन्"
+    optional: "वैकल्पिक फिल्डहरू"
+    required: "आवश्यक फिल्डहरू"
+    comments:
+      zero: "प्रत्रिक्रिया छैन"
+      one: "१ टिप्पणी"
+      other: "%{count} टिप्पणीहरू"
+  social:
+    facebook: "%{org} फेसबुक"
+    twitter: "%{org} ट्विटर"
+    youtube: "%{org} YouTube"
+    telegram: "%{org} टेलिग्राम"
+    instagram: "%{org} इन्स्टाग्राम"
+  stats:
+    index:
+      visits: भ्रमणहरू
+      debates: बहसहरू
+      proposals: प्रस्तावहरू
+      comments: टिप्पणीहरू
+      proposal_votes: प्रस्तावहरूमा मतदान
+      debate_votes: बहसहरूमा मतदान
+      comment_votes: टिप्पणीहरूमा मतदान
+      votes: कुल मतहरू
+      verified_users: प्रमाणित प्रयोगकर्ताहरू
+      unverified_users: अप्रमाणित प्रयोगकर्ताहरू
+  unauthorized:
+    default: तपाईंसँग यो पृष्ठ पहुँच गर्ने अनुमति छैन।
+    manage:
+      all: "तपाईंसँग %{subject} मा कार्य '%{action}' गर्न अनुमति छैन।"
+  users:
+    login_to_comment: "तपाईंले टिप्पणी छोड्नको लागि %{signin} वा %{signup} गर्नुपर्छ।"
+    login_to_continue: "जारी राख्नको लागि तपाईंले %{signin} वा %{signup} गर्नुपर्छ।"
+    signin: "साइन इन"
+    signup: "साइन अप्प"
+    verify_account: "तपाईंको खाता प्रमाणित गर्नुहोस्"
+    direct_messages:
+      new:
+        direct_messages_bloqued: "यो प्रयोगकर्ताले प्रत्यक्ष सन्देशहरू प्राप्त नगर्ने निर्णय गरेको छ"
+        submit_button: सन्देश पठाउनुहोस्
+        title: '%{receiver} लाई निजी सन्देश पठाउनुहोस्'
+        verified_only: निजी सन्देश %{verify_account} पठाउन
+      show:
+        receiver: '%{receiver} लाई सन्देश पठाइयो'
+    show:
+      deleted: मेटाइयो
+      deleted_debate: यो बहस हटाइएको छ
+      deleted_proposal: यो प्रस्ताव हटाइएको छ
+      deleted_budget_investment: यो लगानी परियोजना हटाइएको छ
+      proposals: प्रस्तावहरू
+      proposals_status: अवस्था
+      debates: बहसहरू
+      budget_investments: बजेट लगानी
+      comments: टिप्पणीहरू
+      actions: कार्यहरू
+      filters:
+        comments:
+          one: १ टिप्पणी
+          other: "%{count} टिप्पणीहरू"
+        debates:
+          one: १ बहस
+          other: "%{count} बहसहरू"
+        proposals:
+          one: १ प्रस्ताव
+          other: "%{count} प्रस्तावहरू"
+        budget_investments:
+          one: १ लगानी
+          other: "%{count} लगानीहरू"
+        follows:
+          one: १ पछ्याउँदै
+          other: "%{count} पछ्याउँदै"
+      no_activity: प्रयोगकर्तासँग कुनै सार्वजनिक गतिविधि छैन
+      no_private_messages: "यो प्रयोगकर्ताले निजी सन्देशहरू स्वीकार गर्दैन।"
+      private_activity: यो प्रयोगकर्ताले गतिविधि सूची गोप्य राख्ने निर्णय गर्नुभयो।
+      send_private_message: "निजी सन्देश पठाउनुहोस्"
+      delete_alert: "के तपाइँ तपाइँको लगानी परियोजना मेटाउन निश्चित हुनुहुन्छ? यो कार्य अन्डू गर्न सकिँदैन"
+    proposals:
+      retired: "फिर्ता लिइएकाे प्रस्ताव"
+      draft: मस्यौदा
+      published: प्रकाशित
+      see: "प्रस्ताव हेर्नुहोस्"
+      actions: कार्यहरू
+      retired_help_text: फिर्ता प्रस्तावहरूको लागि ड्यासबोर्ड उपलब्ध छैन
+  votes:
+    agree: म सहमत छु
+    agree_label: "म %{title} सँग सहमत छु"
+    anonymous: भोट %{verify_account} स्वीकार गर्न धेरै धेरै बेनामी भोटहरू।
+    disagree: म असहमत छु
+    disagree_label: "म %{title} सँग सहमत छैन"
+    organizations: संस्थाहरूलाई मतदान गर्न अनुमति छैन
+    supports: समर्थनहरू
+    verified_only: केवल प्रमाणित प्रयोगकर्ताहरूले प्रस्तावहरूमा मतदान गर्न सक्छन्; %{verify_account}।
+    budget_investments:
+      not_verified: केवल प्रमाणित प्रयोगकर्ताहरूले लगानी परियोजनाहरूमा मतदान गर्न सक्छन्; %{verify_account}।
+      unfeasible: अव्यवहारिक लगानी परियोजनाहरूलाई समर्थन गर्न सकिँदैन
+      not_voting_allowed: मतदान चरण बन्द छ
+      different_heading_assigned:
+        one: "तपाईंले %{count} जिल्लामा मात्र लगानी परियोजनाहरूलाई समर्थन गर्न सक्नुहुन्छ। तपाईंले पहिले नै %{supported_headings} मा लगानीलाई समर्थन गर्नुभएको छ।"
+        other: "तपाईंले %{count} जिल्लाहरूमा मात्र लगानी परियोजनाहरूलाई समर्थन गर्न सक्नुहुन्छ। तपाईंले पहिले नै %{supported_headings} मा लगानीलाई समर्थन गर्नुभएको छ।"
+  welcome:
+    feed:
+      most_active:
+        debates: "सबैभन्दा सक्रिय बहस"
+        proposals: "सबैभन्दा सक्रिय प्रस्तावहरू"
+        processes: "प्रक्रियाहरू खोल्नुहोस्"
+      see_all:
+        debates: सबै बहसहरू हेर्नुहोस्
+        proposals: सबै प्रस्तावहरू हेर्नुहोस्
+        processes: सबै प्रक्रियाहरू हेर्नुहोस्
+      no_items:
+        debates: अहिले कुनै बहस छैन
+        proposals: अहिले कुनै प्रस्ताव छैन
+        processes: अहिले कुनै खुला प्रक्रियाहरू छैनन्
+      process_label: प्रक्रिया
+      see_process: प्रक्रिया हर्नुहाेस्
+    cards:
+      title: विशेषता
+    recommended:
+      title: तपाईंलाई रुचि हुन सक्ने सिफारिसहरू
+      help: "यी सिफारिसहरू तपाईंले अनुसरण गरिरहनुभएको बहस र प्रस्तावहरूको ट्यागहरूद्वारा उत्पन्न गरिन्छ।"
+      debates:
+        title: सिफारिस गरिएका बहसहरू
+        btn_text_link: सबै सिफारिस गरिएका बहसहरू
+      proposals:
+        title: सबै सिफारिस गरिएका प्रस्तावहरू
+        btn_text_link: सबै सिफारिस गरिएका प्रस्तावहरू
+      budget_investments:
+        title: सिफारिस गरिएको लगानीहरू
+      slide: "हेर्नुहोस् %{title}"
+    welcome:
+      go_to_index: अहिले होइन, अनुक्रमणिका पृष्ठमा जानुहोस्
+      start_using_consul: अनुक्रमणिका पृष्ठमा जानुहोस्
+      title: सहभागी हुनु
+      user_permission_info: तपाइँको खाता संग तपाइँ गर्न सक्नुहुन्छ...
+      user_permission_verify: "निम्न कार्यहरू गर्न तपाईंको खाता प्रमाणित गर्नुहोस्।"
+      user_permission_verify_my_account: मेरो खाता प्रमाणित गर्नुहोस्
+  invisible_captcha:
+    sentence_for_humans: "यदि तपाईं मानव हुनुहुन्छ भने, यो क्षेत्रलाई बेवास्ता गर्नुहोस्"
+    timestamp_error_message: "माफ गर्नुहोस्, त्यो धेरै छिटो थियो! कृपया पुन: पेस गर्नुहोस्।"
+  related_content:
+    title: "सम्बन्धित सामग्री"
+    add: "सम्बन्धित सामग्री थप्नुहाेस्"
+    label: "सम्बन्धित सामग्रीको लिङ्क"
+    placeholder: "%{url}"
+    help: "तपाईंले %{org} भित्र %{models} को लिङ्कहरू थप्न सक्नुहुन्छ।"
+    submit: "थप्नुहोस्"
+    error: "लिङ्क मान्य छैन। %{url} सँग सुरु गर्न सम्झनुहोस्।"
+    error_duplicate: "तपाईंले थप्नु भएको सम्बन्धित सामग्री पहिले नै अवस्थित छ।"
+    error_itself: "लिङ्क मान्य छैन। तपाईंले सामग्री आफैसँग सम्बन्धित गर्न सक्नुहुन्न।"
+    success: "तपाईंले नयाँ सम्बन्धित सामग्री थप्नुभयो"
+    is_related: "के यो सम्बन्धित सामग्री हो?"
+    score_positive: "हो"
+    score_negative: "होइन"
+    content_title:
+      proposal: "प्रस्ताव"
+      debate: "बहस"
+      budget_investment: "बजेट लगानी"
+  admin/widget:
+    header:
+      title: प्रशासन
+  annotator:
+    help:
+      alt: तपाईंले टिप्पणी गर्न चाहनुभएको पाठ चयन गर्नुहोस् र पेन्सिलको बटन थिच्नुहोस्।
+      text: यस कागजातमा टिप्पणी गर्न तपाईंले %{sign_in} वा %{sign_up} गर्नुपर्छ। त्यसपछि तपाईले टिप्पणी गर्न चाहनुभएको पाठ चयन गर्नुहोस् र पेन्सिलको साथ बटन थिच्नुहोस्।
+      title: म यो कागजात कसरी टिप्पणी गर्न सक्छु?
+  links:
+    form:
+      delete_button: मेट्नुहोस्
+      cancel_button: रद्द
+    nested_links:
+      title: लिङ्कहरू
+      note: रुचि भएका लिङ्कहरू थप्नुहोस्
+      add_new_link: नयाँ लिङ्क थप्नुहोस्
+  communities:
+    show:
+      surveys: सर्वेक्षणहरू
+      complete_survey: सर्वेक्षण पूरा गर्नुहोस्
+    subnav:
+      surveys: सर्वेक्षणहरू
+    poll:
+      take_part: '%{from} देखि %{to} सम्म भाग लिनुहोस्'
+  remote_translations:
+    text: यस पृष्ठको सामग्री तपाईको भाषामा उपलब्ध छैन
+    all_remote_translations_enqueued_text: पृष्ठ रिफ्रेस गर्दा छोटो अवधिमा तपाईंले आफ्नो भाषामा सबै सामग्रीहरू हेर्न सक्षम हुनुहुनेछ।
+    create:
+      enqueue_remote_translation: अनुवादहरू सही रूपमा अनुरोध गरिएको छ।
+    button: पृष्ठ अनुवाद गर्नुहोस्
+  tags:
+    list:
+      filter:
+        more:
+          one: "थप एक ट्याग"
+          other: "%{count} थप ट्यागहरू"
+  machine_learning:
+    comments_summary: "टिप्पणीहरू सारांश"
+    info_text: "एआई / मेसिन लर्निंग द्वारा उत्पन्न सामग्री"

@@ -3,11 +3,32 @@ fr:
     ballots:
       show:
         title: Votre vote
+        amount_progress: "%{amount_spent} / %{amount_limit}"
+        amount_available:
+          knapsack: "Toujours disponible pour vous <span>%{count}</span>"
+          approval:
+            zero: "Vous pouvez toujours envoyer <span>%{count}</span> votes."
+            one: "Vous pouvez toujours voter pour <span>%{count}</span>."
+            other: "Vous pouvez toujours envoyer <span>%{count}</span> votes."
+        amount_spent:
+          knapsack: "Montant dépensé <span>%{count}</span>"
+          approval:
+            zero: "Suffrages exprimés : <span>%{count}</span>"
+            one: "Suffrages exprimés : <span>%{count}</span>"
+            other: "Suffrages exprimés : <span>%{count}</span>"
+        amount_limit:
+          knapsack: "Budget total  <span>%{count}</span>"
+          approval:
+            one: "Vous pouvez voter pour  <span>1</span> projet"
+            other: "Vous pouvez voter jusqu'à <span>%{count}</span> projets"
         no_balloted_group_yet: "Vous n'avez pas encore voté dans ce groupe, allez voter !"
         remove: Supprimer le vote
+        remove_label: "Remove your vote for %{investment}"
         voted:
           one: "Vous avez voté <span>un</span> projet d'investissement."
           other: "Vous avez voté <span>%{count}</span> projets d'investissement."
+        voted_info: "Votre vote est confirmé !"
+        voted_info_2: "Mais vous pouvez modifier votre vote à tout moment jusqu'à la clôture de cette phase."
         zero: Vous n'avez voté pour aucune des propositions d'investissement.
       reasons_for_not_balloting:
         not_verified: Seuls les utilisateurs vérifiés peuvent voter pour les propositions, %{verify_account}.
@@ -15,6 +36,7 @@ fr:
         not_enough_money: "Vous avez déjà utilisé l'ensemble du budget disponible. <br><small>N’oubliez pas, vous pouvez %{change_ballot} à tout moment</small>"
         no_ballots_allowed: La phase de sélection est terminée.
         different_heading_assigned: "Vous avez déjà voté pour une autre section : %{heading_link}"
+        not_enough_available_votes: "Vous avez atteint le nombre maximum de votes autorisés"
         change_ballot: modifier votre vote
         casted_offline: Vous avez déjà participé en mode hors connexion
     groups:
@@ -39,6 +61,9 @@ fr:
         title: Budgets participatifs
         help: Aide sur les budgets participatifs
       all_phases: Phases de l’investissement budgétaire
+      next_phase: phase suivante
+      prev_phase: phase précédente
+      current_phase: phase actuelle
       map: Propositions d'investissement localisés
       finished_budgets: Budgets participatifs terminés
       see_results: Voir les résultats
@@ -49,16 +74,18 @@ fr:
     investments:
       form:
         title: "Créer un nouveau projet"
+        subtitle: "%{heading} (%{price})"
+        subtitle_without_price: "%{heading}"
         tag_category_label: "Catégories"
         tags_instructions: "Étiquetter cette proposition. Vous pouvez choisir parmi\nles catégories proposées ou ajouter la vôtre"
         tags_label: Sujets
         tags_placeholder: "Entrez les étiquettes que vous voudriez utiliser, séparer par des virgules (',')"
         map_location: "Emplacement sur la carte"
         map_location_instructions: "Positionnez le marqueur à l'emplacement correspondant sur la carte."
-        map_remove_marker: "Supprimer le marqueur"
       index:
         title: Budget participatif
         unfeasible: Propositions d'investissement irréalisables
+        unfeasible_text: "Les projets soumis doivent répondre à une série de critères (légalité, spécificité, ne pas dépasser le plafond budgétaire) pour être déclarés viables et atteindre la phase finale de vote. Tous les projets qui ne répondent pas à ces critères sont marqués comme irréalisables et publiés dans le liste ci-dessous, ainsi que votre rapport d'infaisabilité."
         by_heading: "Portée des propositions d'investissement: %{heading}"
         search_form:
           button: Chercher
@@ -70,6 +97,12 @@ fr:
             knapsack:
               one: "<strong>Vous avez voté une proposition pour un coût de %{amount_spent}</strong>"
               other: "<strong>Vous avez voté %{count} propositions pour un coût de %{amount_spent}</strong>"
+            approval:
+              one: "<strong>Vous avez voté pour un projet</strong>"
+              other: "<strong>Vous avez voté pour %{count} projets</strong>"
+          change_vote_info:
+            knapsack: "Vous pouvez %{link} n'importe quand jusqu'au %{phase_end_date}. Vous n'êtes pas obligé de dépenser tout votre argent disponible."
+            approval: "Vous pouvez %{link} à tout moment jusqu'au %{phase_end_date}."
           change_vote_link: "modifier votre vote"
           different_heading_assigned: "Vous avez des votes actifs dans d'autres sections : %{heading_link}"
           change_ballot: "Si vous changez d'avis, vous pouvez supprimer vos votes dans %{check_ballot} et recommencer."
@@ -78,9 +111,12 @@ fr:
           verified_only: "Pour créer une proposition d'investissement %{verify}."
           create: "Créer un nouveau projet"
           not_logged_in: "Pour créer une proposition d'investissement, vous devez vous %{sign_in} ou %{sign_up}."
+        filter: "Filtrer les projets"
         filters:
+          not_unfeasible: "Actifs"
           selected: "Sélectionné"
           unfeasible: "Infaisable"
+          unselected: "Non sélectionné pour le vote"
           winners: "Gagnants"
         orders:
           random: aléatoire
@@ -111,6 +147,7 @@ fr:
       wrong_price_format: Nombres entiers uniquement
       investment:
         add: Vote
+        add_label: "Voter %{investment}"
         already_added: Vous avez déjà ajouté cette proposition d'investissement.
         support_title: Soutenir cette proposition
         supports:
@@ -128,11 +165,17 @@ fr:
         confirm_group:
           one: "Vous pouvez seulement soutenir les propositions d'%{count} quartier. Si vous continuez, vous ne pourrez pas changer ce choix. Êtes-vous sûr(e) ?"
           other: "Vous pouvez seulement soutenir les propositions de %{count} quartiers. Si vous continuez, vous ne pourrez pas changer ce choix. Êtes-vous sûr(e) ?"
+        remove_support: "Supprimer l'assistance"
+        remove_support_label: "Supprimez votre support pour %{investment}"
         support: "Soutenir"
+        support_label: "Soutenir %{investment}"
     investments_list:
       investment:
         price: "Coût"
+        read_more: "En savoir plus"
         supports: "Soutiens"
+      see_all: "Voir tous les projets"
+      title: "Liste des projets"
     show:
       see_results: Voir les résultats
     results:
@@ -157,9 +200,14 @@ fr:
       page_title: "%{budget} - jalons"
       heading: "Jalons du budget participatif"
       heading_selection_title: "Par quartier"
+      no_winner_investments: "Il n'y a aucun projet d'investissement gagnant dans ce statut"
       filters:
         status:
           label: "État actuel du projet"
+          all: "Tous (%{count})"
+        milestone_tag:
+          label: "Libellés de suivi"
+          all: "Tous (%{count})"
     phases:
       errors:
         dates_range_invalid: "La date de début ne peut pas être égale ou postérieure à la date de fin"

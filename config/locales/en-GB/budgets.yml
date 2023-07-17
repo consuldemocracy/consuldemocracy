@@ -31,7 +31,6 @@ en-GB:
         tags_placeholder: "Введіть теги, які хочете використовувати, розділивши їх комами (,)"
         map_location: "Розташування мапи"
         map_location_instructions: "Знайдіть місце на мапі та розташуйте на ньому маркер."
-        map_remove_marker: "Вилучити маркер"
       index:
         title: Бюджетування участі
         search_form:

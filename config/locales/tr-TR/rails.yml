@@ -10,11 +10,11 @@ tr:
       - Cts
     abbr_month_names:
       -
-      - Ock
+      - Oca
       - Şub
       - Mar
       - Nis
-      - Mayıs
+      - May
       - Haz
       - Tem
       - Ağu
@@ -74,10 +74,10 @@ tr:
         other: '%{count} yıldan fazla'
       x_days:
         one: 1 gün
-        other: "%{count} günler"
+        other: "%{count} gün"
       x_minutes:
         one: Bir dakika
-        other: "%{count} dakikalar"
+        other: "%{count} dakika"
       x_months:
         one: 1 ay
         other: "%{count} ay"

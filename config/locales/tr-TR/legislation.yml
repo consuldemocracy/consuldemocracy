@@ -2,29 +2,29 @@ tr:
   legislation:
     annotations:
       comments:
-        see_all: Hepsini gör
-        see_complete: Tamamını gör
+        see_all: Tümünü görüntüle
+        see_complete: Tamamını görüntüle
         replies_count:
           one: "%{count} yanıt"
-          other: "%{count} yanıtlar"
+          other: "%{count} yanıt"
         cancel: İptal
-        publish_comment: Yorumu Yayınla
+        publish_comment: Yorumu yayınla
       form:
-        phase_not_open: Bu aşama şu anda etkin değil
+        phase_not_open: Bu aşama açık değil
       index:
         title: Yorumlar
         comments_about: Hakkında yorumlar
-        see_in_context: Mevcut bağlam içinde gör
+        see_in_context: Bağlamında görüntüle
       show:
         title: Yorum
       version_chooser:
-        seeing_version: Değişiklikle ilgili yorumlar
-        see_text: Metin taslağını gör
+        seeing_version: Sürüm için yorumlar
+        see_text: Metin taslağını görüntüle
     draft_versions:
       changes:
         title: Değişiklikler
         seeing_changelog_version: Değişikliklerin özetini gör
-        see_text: Taslak metni gör
+        see_text: Metin taslağını görüntüle
       show:
         loading_comments: Yorumlar yükleniyor
         seeing_version: Taslak düzenlemeyi görüyorsunuz
@@ -38,45 +38,45 @@ tr:
         text_comments: Yorumlar
     processes:
       header:
-        additional_info: Ek bilgi
-        description: Tanımlama
+        additional_info: Ek bilgiler
+        description: Açıklama
         more_info: Daha fazla bilgi ve içerik
       proposals:
-        empty_proposals: Herhangi bir öneri bulunmamaktadır
+        empty_proposals: Hiç öneri yok
         filters:
-          random: Gelişigüzel
+          random: Rastgele
           winners: Seçilmiş
       debate:
-        empty_questions: Herhangi bir soru bulunmamaktadır
+        empty_questions: Hiç soru yok
       index:
-        filter: Filtre
+        filter: Süz
         filters:
-          open: Katılımcı süreçler
+          open: Açık süreçler
           past: Geçmiş
-        no_open_processes: Şu anda katılabileceğiniz herhangi bir süreç bulunmamaktadır
-        no_past_processes: Daha önce tamamlanan bir süreç bulunmamaktadır
+        no_open_processes: Herhangi bir açık süreç yok
+        no_past_processes: Herhangi bir geçmiş süreç yok
         section_header:
           icon_alt: Katılımcı mevzuat simgesi
           title: Katılımcı mevzuat
           help: Katılımcı mevzuat hakkında yardım
         section_footer:
           title: Katılımcı mevzuat hakkında yardım
-          description: Yeni yönetmeliklerin veya stratejilerin onaylanmasından önce tartışmalara ve işlemlere katılın. Fikirlerinizi bizimle paylaşın.
+          description: Yeni yönetmeliklerin veya stratejilerin onaylanmasından önce tartışmalara ve işlemlere katılın. Fikriniz dikkate alınacaktır.
       phase_not_open:
-        not_open: Bu aşama henüz etkin değil
+        not_open: Bu aşama henüz açılmamış
       phase_empty:
-        empty: Henüz birşey yayınlanmadı
+        empty: Henüz bir şey yayınlanmamış
       process:
-        see_latest_comments: Son yorumları gör
-        see_latest_comments_title: Bu süreçle ilgili yorumlar
+        see_latest_comments: Son yorumları görüntüle
+        see_latest_comments_title: Bu süreçle ilgili yorum yapın
       shared:
         key_dates: Katılım aşamaları
-        homepage: Ana sayfa
+        homepage: Giriş
         debate_dates: Tartışma
         draft_publication_date: Taslak yayın
         allegations_dates: Yorumlar
-        result_publication_date: Sonuçlarla ilgili yayın
-        milestones_date: Takip ediliyor
+        result_publication_date: Son sonuç yayını
+        milestones_date: İzleniyor
         proposals_dates: Öneriler
     questions:
       comments:
@@ -95,7 +95,7 @@ tr:
         title: Katılımcı mevzuat süreci
       participation:
         phase_not_open: Bu aşama açık değil
-        organizations: Kurumların tartışmaya katılmasına izin verilmemektedir
+        organizations: Organizasyonların tartışmaya katılmasına izin verilmemektedir
         unauthenticated: Katılmak için %{signin} veya %{signup} yapmalısınız.
         verified_only: Yalnızca doğrulanan kullanıcılar katılabilir, %{verify_account}.
         debate_phase_not_open: Tartışma süreci tamamlandığı için daha fazla cevap kabul edilmiyor
@@ -121,14 +121,14 @@ tr:
         one: "%{count} tartışma"
         other: "%{count} tartışma"
       proposals:
-        zero: "Öneri yok"
+        zero: "Herhangi bir öneri yok"
         one: "%{count} öneri"
         other: "%{count} öneri"
-      download: "Özeti İndir"
+      download: "Özeti indir"
       top_comments:
-        zero: "Yorum yok"
+        zero: "Herhangi bir yorum yok"
         one: "%{count} yorum"
         other: "Öne çıkan yorumlar"
-      most_voted_comments: "En çok oylanan yorumlar"
-      no_allegation: "Hiç yorum yok"
-      process_empty: "Bu sürecin bir katılım fazı yoktu"
+      most_voted_comments: "En çok oy alan yorumlar"
+      no_allegation: "Herhangi bir yorum yok"
+      process_empty: "Bu sürecin bir katılım aşaması yoktu"

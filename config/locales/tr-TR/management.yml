@@ -3,19 +3,19 @@ tr:
     account:
       menu:
         reset_password_email: Şifreyi e-posta ile yeniden oluştur
-        reset_password_manually: Şifreyi kendiniz yeniden oluşturun
+        reset_password_manually: Şifreyi elle sıfırla
       alert:
-        unverified_user: Doğrulanmış kullanıcı henüz giriş yapmadı
+        unverified_user: Henüz doğrulanmış kullanıcı giriş yapmadı
       show:
         title: Kullanıcı hesabı
       edit:
-        title: "Kullanıcı hesabını düzenle: Şifreyi yeniden oluştur"
+        title: "Kullanıcı hesabını düzenle: Şifreyi sıfırla"
         back: Geri
         password:
           password: Şifre
-          send_email: Şifreyi yeniden oluşturmak için e-posta gönder
+          send_email: Parola sıfırlama e-postası gönder
           reset_email_send: E-posta doğru gönderildi.
-          reseted: Şifre başarıyla yeniden oluşturuldu
+          reseted: Şifre başarıyla sıfırlandı
           random: Rastgele şifre oluştur
           save: Şifreyi kaydet
           print: Şifreyi yazdır
@@ -31,15 +31,15 @@ tr:
     dashboard:
       index:
         title: Yönetim
-        info: Burada, kullanıcıları sol menüde listelenen tüm eylemlere göre yönetebilirsiniz.
+        info: Burada, kullanıcıları sol menüde listelenen tüm eylemlerle yönetebilirsiniz.
     document_verifications:
       already_verified: Bu kullanıcı hesabı zaten doğrulandı.
       has_no_account: Hesap oluşturmak için, %{link}'a gidin ve ekranın sol üstünde yer alan <b> "Kaydol"</b> seçeneğine tıklayın.
       link: CONSUL
-      in_census_has_following_permissions: "Bu kullanıcı aşağıda belirtilen koşullarda Pusula'ya katılabilir:"
+      in_census_has_following_permissions: "Bu kullanıcı aşağıdaki izinlerle web sitesiye katılabilir:"
       not_in_census: Bu belge kayıtlı değil.
-      not_in_census_info: "Kaydolmayan vatandaşlar aşağıdaki koşullarda Pusula'ya katılabilir:"
-      please_check_account_data: Lütfen yukarda belirtilen hesap bilgilerinizin doğruluğunu kontrol edin.
+      not_in_census_info: "Census'ta bulunmayan vatandaşlar web sitesiye aşağıdaki izinlerle katılabilir:"
+      please_check_account_data: Lütfen yukarıdaki hesap verilerinin doğruluğunu kontrol edin.
       title: Kullanıcı yönetimi
       under_age: "Hesabınızı doğrulamak için gereken yaşta değilsiniz."
       verify: Doğrula
@@ -47,12 +47,12 @@ tr:
     email_verifications:
       already_verified: Bu kullanıcı hesabı zaten doğrulandı.
       choose_options: "Lütfen aşağıdaki seçeneklerden birini seçin:"
-      document_found_in_census: Bu belge sayımda bulundu, ancak bununla iligli bir kullanıcı hesabı bulunamadı.
+      document_found_in_census: Bu belge sayımda bulundu, ancak bunla alakalı bir kullanıcı hesabı yok.
       document_mismatch: "Bu e-posta adresiyle ilişklilendirilmiş bir kullanıcı hesabı mevcuttur: %{document_number}(%{document_type})"
       email_sent_instructions: Bu kullanıcıyı tamamen doğrulamak için, kullanıcının yukarıdaki e-posta adresine gönderdiğimiz bir bağlantıyı tıklaması gerekir. Bu adım adresin kendisine ait olduğunu doğrulamak için gereklidir.
-      if_existing_account: Kişinin Pusula'da oluşturulmuş bir kullanıcı hesabı varsa,
-      if_no_existing_account: Eğer bu kişi henüz bir hesap oluşturmamışsa
-      introduce_email: "Lütfen hesabınızda belirttiğiniz e-posta adresini yazın:"
+      if_existing_account: Kişinin web sitesinde zaten oluşturulmuş bir kullanıcı hesabı varsa,
+      if_no_existing_account: Eğer bu kişi henüz bir hesap oluşturmadıysa
+      introduce_email: "Lütfen hesapta kullanılan e-postayı tanıtın:"
       send_email: Doğrulama e-postası gönder
     menu:
       create_proposal: Öneri oluştur
@@ -62,7 +62,7 @@ tr:
       print_budget_investments: Bütçe yatırımlarını yazdır
       support_budget_investments: Bütçe yatırımlarını destekle
       users: Kullanıcıların yönetimi
-      user_invites: Davetiyeleri gönder
+      user_invites: Davetleri gönder
       select_user: Kullanıcı seç
     print:
       proposals_info: http://url.consul'da önerinizi oluşturun
@@ -84,15 +84,15 @@ tr:
       table_name: İsim
       table_phase: Aşama
       table_actions: Eylemler
-      no_budgets: Aktif katılımcı bütçe bulunmamaktadır.
+      no_budgets: Aktif bir katılımcı bütçeler yok.
     budget_investments:
       alert:
         unverified_user: Kullanıcı doğrulanmadı
-      create: Bütçe yatırımı oluştur
+      create: Bir bütçe yatırımı oluştur
       edit: Bütçe yatırımını düzenle
       filters:
         heading: Konsept
-        unfeasible: Uygulanamaz yatırım
+        unfeasible: Uygulanabilir bulunmayan yatırım
       print:
         print_button: Yazdır
       search_results:

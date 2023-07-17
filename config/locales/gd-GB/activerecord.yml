@@ -1,1 +1,714 @@
 gd:
+  attributes:
+    geozone_id: "Sgòp na h-obrach"
+    results_enabled: "Seall na toraidhean"
+    stats_enabled: "Seall na stadastaireachd"
+    advanced_stats_enabled: "Seall na stadastaireachd adhartaich"
+    name: Ainm
+    email: Post-d
+    description: Tuairisgeul
+    related_sdg_list: Amasan agus Targaidean
+  activerecord:
+    models:
+      activity:
+        one: "gnìomhachd"
+        two: "ghnìomhachd"
+        few: "gnìomhachdan"
+        other: "gnìomhachdan"
+      budget:
+        one: "Buidseat"
+        two: "Bhuidseat"
+        few: "Buidseatan"
+        other: "Buidseatan"
+      budget/investment:
+        one: "Tasgadh"
+        two: "Thasgadh"
+        few: "Tasgaidhean"
+        other: "Tasgaidhean"
+      milestone:
+        one: "clach-mhìle"
+        two: "chloich-mìle"
+        few: "clachan-mìle"
+        other: "clachan-mìle"
+      milestone/status:
+        one: "Inbhe Clach-mìle"
+        two: "Inbhe Clach-mhìle"
+        few: "Inbhean Clach-mhìle"
+        other: "Inbhean Clach-mhìle"
+      progress_bar:
+        one: "Bàr adhartais"
+        two: "Bhàr adhartais"
+        few: "Bàraichean adhartais"
+        other: "Bàraichean adhartais"
+      comment:
+        one: "Beachd"
+        two: "Bheachd"
+        few: "Beachdan"
+        other: "Beachdan"
+      debate:
+        one: "Deasbad"
+        two: "Dheasbad"
+        few: "Deasbadan"
+        other: "Deasbadan"
+      tag:
+        one: "Taga"
+        two: "Thaga"
+        few: "Tagaichean"
+        other: "Tagaichean"
+      user:
+        one: "Cleachdaiche"
+        two: "Chleachdaiche"
+        few: "Cleachdaichean"
+        other: "Cleachdaichean"
+      moderator:
+        one: "Modarator"
+        two: "Mhodarator"
+        few: "Modaratairean"
+        other: "Modaratairean"
+      administrator:
+        one: "Rianaire"
+        two: "Rianaire"
+        few: "Rianairean"
+        other: "Rianairean"
+      valuator:
+        one: "Neach-luachadh"
+        two: "Neach-luachaidh"
+        few: "Luchd-luachaidh"
+        other: "Luchd-luachaidh"
+      valuator_group:
+        one: "Buidheann luachaidh"
+        two: "Bhuidhinn luachaidh"
+        few: "Buidhnean luachaidh"
+        other: "Buidhnean luachaidh"
+      manager:
+        one: "Manaidsear"
+        two: "Mhanaidsear"
+        few: "Manaidsearan"
+        other: "Manaidsearan"
+      newsletter:
+        one: "Cuairt-litir"
+        two: "Chuairt-litir"
+        few: "Cuairt-litrichean"
+        other: "Cuairt-litrichean"
+      vote:
+        one: "Bhòt"
+        two: "Bhòtan"
+        few: "Bhòtan"
+        other: "Bhòtan"
+      organization:
+        one: "Buidheann"
+        two: "Bhuidhinn"
+        few: "Buidhnean"
+        other: "Buidhnean"
+      poll/booth:
+        one: "bothan"
+        two: "bhothan"
+        few: "bothain"
+        other: "bothain"
+      poll/officer:
+        one: "oifigear"
+        two: "oifigear"
+        few: "oifigearan"
+        other: "oifigearan"
+      poll/ballot_sheet:
+        one: Duilleag baileit}
+        two: Dhuilleig baileit
+        few: Duilleagan baileit
+        other: Duilleagan baileit
+      proposal:
+        one: "Moladh saoranach"
+        two: "Mholadh saoranach"
+        few: "Molaidhean saoranach"
+        other: "Molaidhean saoranach"
+      sdg/goal:
+        one: "amas"
+        two: "amas"
+        few: "amasan"
+        other: "amasan"
+      sdg/local_target:
+        one: "targaid ionadail"
+        two: "thargaid ionadail"
+        few: "targaidean ionadail"
+        other: "targaidean ionadail"
+      sdg/manager:
+        one: "manaidsear Amasan Leasachaidh Seasmhach"
+        two: "mhanaidsear Amasan Leasachaidh Seasmhach"
+        few: "manaidsearan Amasan Leasachaidh Seasmhach"
+        other: "manaidsearan Amasan Leasachaidh Seasmhach"
+      sdg/target:
+        one: "targaid"
+        two: "thargaid"
+        few: "targaidean"
+        other: "targaidean"
+      site_customization/page:
+        one: Duilleag ghnàthaichte
+        two: Dhuilleig ghnàthaichte
+        few: Duilleagan gnàthaichte
+        other: Duilleagan gnàthaichte
+      site_customization/image:
+        one: Dealbh gnàthaichte
+        two: Dhealbh ghnàthaichte
+        few: Dealbhan gnàthaichte
+        other: Dealbhan gnàthaichte
+      site_customization/content_block:
+        one: Bloca susbaint gnàthaichte
+        two: Bhloca susbaint gnàthaichte
+        few: Blocaichean susbaint gnàthaichte
+        other: Blocaichean susbaint gnàthaichte
+      document:
+        one: Sgrìobhainn
+        two: Sgrìobhainn
+        few: Sgrìobhainnean
+        other: Sgrìobhainnean
+      legislation/process:
+        one: "Pròiseas"
+        two: "Phròiseas"
+        few: "Pròiseasan"
+        other: "Pròiseasan"
+      legislation/proposal:
+        one: "Moladh"
+        two: "Mholadh"
+        few: "Molaidhean"
+        other: "Molaidhean"
+      legislation/draft_versions:
+        one: "Dreachd"
+        two: "Dhreachd"
+        few: "Dreachdan"
+        other: "Dreachdan"
+      legislation/questions:
+        one: "Ceist"
+        two: "Cheist"
+        few: "Ceistean"
+        other: "Ceistean"
+      legislation/question_options:
+        one: "Roghainn airson ceist"
+        two: "Roghainn airson ceist"
+        few: "Roghainnean airson ceist"
+        other: "Roghainnean airson ceist"
+      legislation/answers:
+        one: "Freagairt"
+        two: "Fhreagairt"
+        few: "Freagairtean"
+        other: "Freagairtean"
+      documents:
+        one: "Sgrìobhainn"
+        two: "Sgrìobhainn"
+        few: "Sgrìobhainnean"
+        other: "Sgrìobhainnean"
+      images:
+        one: "Dealbh"
+        two: "Dhealbh"
+        few: "Dealbhan"
+        other: "Dealbhan"
+      topic:
+        one: "Cuspair"
+        two: "Chuspair"
+        few: "Cuspairean"
+        other: "Cuspairean"
+      poll:
+        one: "Cunntas-bheachd"
+        two: "Chunntas-bheachd"
+        few: "Cunntasan-bheachd"
+        other: "Cunntasan-bheachd"
+      proposal_notification:
+        one: "Brath mu mholaidhean"
+        two: "Bhrath mu mholaidhean"
+        few: "Brathan mu mholaidhean"
+        other: "Brathan mu mholaidhean"
+      dashboard/action:
+        one: Gnìomh air deas-bhòrd nam molaidhean
+        two: Ghnìomh air deas-bhòrd nam molaidhean
+        few: Gnìomhan air deas-bhòrd nam molaidhean
+        other: Gnìomhan air deas-bhòrd nam molaidhean
+      dashboard/administrator_task:
+        one: Gnìomh
+        two: Ghnìomh
+        few: Gnìomhan
+        other: Gnìomhan
+      link:
+        one: Ceangal
+        two: Cheangal
+        few: Ceanglaichean
+        other: Ceanglaichean
+      local_census_record:
+        one: Clàr cunntas-sluaigh ionadail
+        two: Chlàr cunntas-sluaigh ionadail
+        few: Clàran cunntas-sluaigh ionadail
+        other: Clàran cunntas-sluaigh ionadail
+      votation_type:
+        one: Seòrsa bhòtaidh
+        two: Sheòrsa bhòtaidh
+        few: Seòrsaichean bhòtaidh
+        other: Seòrsaichean bhòtaidh
+    attributes:
+      budget:
+        name: "Ainm"
+        description_accepting: "Tuairisgeul aig ìre Gabhail ris"
+        description_reviewing: "Tuairisgeul aig ìre Ath-sgrùdaidh"
+        description_selecting: "Tuairisgeul aig ìre Roghainn"
+        description_valuating: "Tuairisgeul aig ìre Luachaidh"
+        description_balloting: "Tuairisgeul aig ìre nam Baileatean"
+        description_reviewing_ballots: "Tuairisgeul aig àm Ath-sgrùdadh nam Baileatan"
+        description_finished: "Tuairisgeul nuair a bhios am buidseat deiseil"
+        phase: "Ìre ghnìomhach"
+        currency_symbol: "Airgead"
+        voting_style: "Stoidhle bhòtaidh mu dheireadh"
+        voting_style_knapsack: "Knapsack"
+        voting_style_approval: "Rin aontachadh"
+        hide_money: "Falaich an t-suim airgid airson a’ bhuidseit seo"
+      budget/translation:
+        main_link_text: "Teagsa a’ cheangail"
+        main_link_url: "Bheir an ceangal thu gu (cuir ceangal ris)"
+        name: "Ainm"
+      budget/investment:
+        heading_id: "Ceann-sgrìobhadh"
+        title: "Tiotal"
+        description: "Tuairisgeul"
+        external_url: "Ceangail ri sgrìobhainnean a bharrachd"
+        administrator_id: "Rianaire"
+        location: "Fiosrachadh a bharrachd mun àite"
+        organization_name: "Ma tha thu a’ cur air adhart moladh ann an ainm buidhne/comainn, no às leth barrachd dhaoine, sgrìobh ainm na buidhne:"
+        image: "Dealbh tuairisgeulach den mholadh"
+        image_title: "Tiotal an deilbh"
+        duration: "Clàr-ama"
+        feasibility_feasible: "Comasach Dèanamh"
+        feasibility_undecided: "Gun deifinisean"
+        feasibility_unfeasible: "Neo-chomasach dèanamh"
+        incompatible: "Comharraich mar neo-chòrdail"
+        milestone_tag_list: "Tagaichean clach-mhìle"
+        price_explanation: "Mìneachadh air a’ phrìs"
+        selected: "Comharraich mar taghte"
+        selected_true: "Air a thaghadh"
+        selected_false: "Cha deach a thaghadh"
+        unfeasibility_explanation: "Mìneachadh air carson nach eil e comasach dèanamh"
+        valuation_finished: "Luachadh crìochnaichte"
+        valuator_ids: "Buidhnean"
+        valuation_tag_list: "Tagaichean"
+      budget/investment/translation:
+        title: "Tiotal"
+        description: "Tuairisgeul"
+      geozone:
+        name: Ainm
+        external_code: "Còd-puist air an taobh a-muigh (roghainneil)"
+        census_code: "Còd a’ chunntas-sluaigh (roghainneil)"
+        html_map_coordinates: "HTML <map> Co-chomharran  (roghainneil)"
+      milestone:
+        status_id: "Inbhe làithreach: (roghainneil)"
+        title: "Tiotal"
+        description: "Tuairisgeul (roghainneil ma tha inbhe air a sònrachadh)"
+        publication_date: "Ceann-latha"
+      milestone/translation:
+        description: "Tuairisgeul"
+      milestone/status:
+        name: "Ainm"
+        description: "Tuairisgeul (roghainneil)"
+      progress_bar:
+        kind: "Seòrsa"
+        title: "Tiotal"
+        percentage: "Adhartas làithreach"
+      progress_bar/kind:
+        primary: "Prìomh"
+        secondary: "Dàrnach"
+      budget/group:
+        max_votable_headings: "An àireamh as motha de chinn anns an urrainn do chleachdaichean pròiseactan a thaghadh"
+      budget/group/translation:
+        name: "Ainm na buidhne"
+      budget/heading:
+        allow_custom_content: "Ceadaich bloca susbaint"
+        latitude: "Domhan-leud (roghainneil)"
+        longitude: "Domhan-fhad (roghainneil)"
+        name: "Ainm a’ cheann-sgrìobhaidh"
+        price: "Suim airgid"
+        population: "Sluagh (roghainneil)"
+        max_ballot_lines: "Bhòtan ceadaichte"
+      budget/heading/translation:
+        name: "Ainm a’ cheann-sgrìobhaidh"
+      budget/phase:
+        enabled: "Chaidh an ìre a chur an comas"
+        ends_at: "Ceann-latha crìochnachaidh"
+        starts_at: "Ceann-latha tòiseachaidh"
+      budget/phase/translation:
+        name: "Ainm"
+        description: "Tuairisgeul"
+        summary: "Geàrr-chunntas"
+        main_link_text: "Teacsa a’ cheangail"
+        main_link_url: "Bheir an ceangal thu gu (cuir ceangal ris)"
+      comment:
+        body: "Beachd"
+        user: "Cleachdaiche"
+      debate:
+        author: "Ùghdar"
+        description: "Barail"
+        tag_list: "Cuspairean"
+        terms_of_service: "Teirmichean na seirbheise"
+        title: "Tiotal"
+      debate/translation:
+        title: "Tiotal an deasbaid"
+        description: "Teacs deasbaid tùsail"
+      proposal:
+        author: "Ùghdar"
+        title: "Tiotal"
+        question: "Ceist"
+        description: "Tuairisgeul"
+        responsible_name: "Ainm slàn an neach a chuir a-steach am moladh"
+        retired_reason: "Adhbhar airson am moladh a tharraing air ais"
+        selected: "Comharraich mar taghte"
+        terms_of_service: "Teirmichean na seirbheise"
+        video_url: "URL airson bhidio air an taobh a-muigh"
+      proposal/translation:
+        title: "Tiotal a’ mholaidh"
+        description: "An teacsa a mholar"
+        summary: "Gèarr-chunntas den mholadh"
+        retired_explanation: "Mìneachadh"
+      user:
+        login: "Post-d no ainm-cleachdaiche"
+        email: "Post-d"
+        username: "Ainm-cleachdaiche"
+        password_confirmation: "Dearbhadh an fhacail-fhaire"
+        password: "Facal-faire"
+        current_password: "Am facal-faire làithreach"
+        email_digest: "Faigh geàrr-chunntas air brathan mu mholaidhean"
+        email_on_comment: "Cuir fios thugam air post-d nuair a bheir cuideigin beachd seachad air an t-susbaint agam"
+        email_on_comment_reply: "Cuir fios thugam air post-d nuair a fhreagras cuideigin mo bheachdan"
+        email_on_direct_message: "Faigh puist-d mu theachdaireachdan dìreach"
+        newsletter: "Faigh fiosrachadh iomchaidh tro phost-d"
+        official_position: "Dreuchd oifigeil"
+        official_position_badge: "Seall suaicheantas na dreuchd oifigeil"
+        official_level: "Ìre an oifigeir"
+        phone_number: "Àireamh fòn"
+        public_activity: "Cùm mo liosta de ghnìomhan poblach"
+        public_interests: "Cùm na h-eileamaidean a tha mi a’ leantainn poblach"
+        recommended_debates: "Deasbadan a chaidh moladh dhomh"
+        recommended_proposals: "Molaidhean a chaidh moladh dhomh"
+        redeemable_code: "An còd dearbhaidh a fhuaras tro phost-d."
+      direct_message:
+        title: "Tiotal"
+        body: "Teachdaireachd"
+      organization:
+        name: "Ainm na buidhne"
+        responsible_name: "An neach le uallach airson na buidhne"
+      poll:
+        name: "Ainm"
+        title: "Ainm"
+        starts_at: "Ceann-latha tòiseachaidh"
+        ends_at: "Ceann-latha mu dheireadh"
+        geozone_restricted: "Air a chuingealachadh a rèir geo-sgìre"
+        summary: "Geàrr-chunntas"
+        description: "Tuairisgeul"
+      active_poll/translation:
+        description: "Tuairisgeul"
+      poll/booth:
+        name: "Ainm"
+        location: "Àite"
+      poll/translation:
+        name: "Ainm"
+        summary: "Geàrr-chunntas"
+        description: "Tuairisgeul"
+      poll/question:
+        poll_id: "Cunntas-bheachd"
+        title: "Ceist"
+        summary: "Geàrr-chunntas"
+        description: "Tuairisgeul"
+        external_url: "Ceangail ri sgrìobhainnean a bharrachd"
+      poll/question/translation:
+        title: "Ceist"
+      poll/ballot_sheet:
+        data: Dàta CSV
+        poll_id: Cunntas-bheachd
+        officer_assignment_id: Dreuchd an Oifigeir
+      poll/shift:
+        task: "Gnìomh"
+      proposal_notification:
+        body: "Teachdaireachd"
+        title: "Tiotal"
+      signature_sheet:
+        title: "Tiotal"
+        signable_type: "Seòrsa ainm-sgrìobhte"
+        signable_id: "ID an ainm-sgrìobhte"
+        document_numbers: "Àireamhan na sgrìobhainne"
+      sdg/goal:
+        code: "Còd"
+        title: "Tiotal"
+        description: "Tuairisgeul"
+      sdg/local_target:
+        code: "Còd"
+        target_id: "Targaid"
+        title: "Tiotal"
+      sdg/local_target/translation:
+        title: "Tiotal"
+        description: "Tuairisgeul"
+      sdg/phase/kind:
+        sensitization: "Sensitization"
+        planning: "Planadh"
+        monitoring: "Sgrùdadh"
+      sdg/target:
+        code: "Còd"
+        title: "Tiotal"
+      site_customization/page:
+        content: Susbaint
+        created_at: Chaidh a chruthachadh aig
+        subtitle: Fo-thiotal
+        slug: Sluga
+        status: Inbhe
+        status_draft: "Dreachd"
+        status_published: "Foillsichte"
+        title: Tiotal
+        updated_at: Air ùrachadh aig
+        more_info_flag: Seall san duilleig cuideachaidh
+        print_content_flag: Putan clò-bhuail an t-susbaint
+        locale: Cànan
+      site_customization/page/translation:
+        title: Tiotal
+        subtitle: Fo-thiotal
+        content: Susbaint
+      site_customization/image:
+        name: Ainm
+        image: Dealbh
+      site_customization/content_block:
+        name: Ainm
+        locale: sgeama ionadail
+        body: Bodhaig
+      tag:
+        name: "Taidhp a-steach ainm a’ chuspair"
+      tenant:
+        domain: "Àrainn"
+        schema: "Àrainn / Fo-àrainn"
+        subdomain: "Fo-àrainn"
+        url: "URL"
+      topic:
+        title: "Tiotal"
+        description: "Teacs tùsail"
+      banner:
+        background_color: Dath a’ chùlaibh
+        font_color: Dath a’ chrutha-chlò
+        post_ended_at: "Thàinig am post gu crìch aig"
+        post_started_at: "Thòisich am post aig"
+        target_url: "Ceangal"
+      banner/translation:
+        title: "Tiotal"
+        description: "Tuairisgeul"
+      legislation/process:
+        title: Tiotal a’ Phròiseis
+        summary: Geàrr-chunntas
+        description: Tuairisgeul
+        additional_info: Fiosrachadh a bharrachd
+        start_date: Toiseach
+        end_date: Deireadh
+        debate_start_date: Toiseach
+        debate_end_date: Deireadh
+        draft_start_date: Toiseach
+        draft_end_date: Deireadh
+        draft_publication_date: Ceann-latha foillseachaidh an dreachd
+        allegations_start_date: Toiseach
+        allegations_end_date: Deireadh
+        proposals_phase_start_date: Toiseach
+        proposals_phase_end_date: Deireadh
+        result_publication_date: Ceann-latha foillseachaidh nan toraidhean mu dheireadh
+        background_color: Dath a’ chùlaibh
+        font_color: Dath a’ chrutha-chlò
+        homepage_enabled: "Duilleag dachaigh air a chur an comas"
+      legislation/process/translation:
+        title: Tiotal a’ Phròiseis
+        summary: Geàrr-chunntas
+        description: Tuairisgeul
+        additional_info: Fiosrachadh a bharrachd
+        homepage: "Tuairisgeul"
+        milestones_summary: Geàrr-chunntas
+      legislation/proposal:
+        description: "An teacsa a mholar"
+        summary: "Gèarr-chunntas den mholadh"
+        title: "Tiotal a’ mholaidh"
+        video_url: "Ceangal ri bhidio air an taobh a-muigh"
+      legislation/draft_version:
+        title: Tiotal an tionndaidh
+        body: Teacsa
+        changelog: Atharraichean
+        status: Inbhe
+        status_draft: "Dreachd"
+        status_published: "Foillsichte"
+        final_version: Tionndadh deireannach
+      legislation/draft_version/translation:
+        title: Tiotal an tionndaidh
+        body: Teacsa
+        changelog: Atharraichean
+      legislation/question:
+        title: Tiotal
+        question_options: Roghainnean
+      legislation/question/translation:
+        title: Ceist
+      legislation/question_option:
+        value: Luach
+      legislation/annotation:
+        text: Beachd
+      document:
+        title: Tiotal
+        attachment: "Tagh sgrìobhainn"
+      image:
+        title: Tiotal
+        attachment: "Tagh dealbh"
+      poll/question/answer:
+        title: Freagair
+        description: Tuairisgeul
+      poll/question/answer/translation:
+        title: Freagair
+        description: "Tuairisgeul (roghainneil)"
+      poll/question/answer/video:
+        title: Tiotal
+        url: Bhidio air an taobh a-muigh
+      newsletter:
+        segment_recipient: Faightearean
+        subject: Cuspair
+        from: "Seòladh post-d a thèid a chomharrachadh mar an seòladh às an tàinig a’ chuairt-litir"
+        body: Susbaint a’ phuist-d
+      admin_notification:
+        segment_recipient: Faightearean
+        title: Tiotal
+        link: Ceangal
+        body: Teacsa
+      admin_notification/translation:
+        title: Tiotal
+        body: Teacsa
+      widget/card:
+        label: Leubail (roghainneil)
+        title: Tiotal
+        description: Tuairisgeul
+        link_text: Teacsa a’ cheangail
+        link_url: Ceangail an URL
+        columns: Àireamh de cholbhan
+      widget/card/translation:
+        label: Leubail (roghainneil)
+        title: Tiotal
+        description: Tuairisgeul
+        link_text: Teacsa a’ cheangail
+      widget/feed:
+        limit: Àireamh de nithean
+      dashboard/action:
+        title: Tiotal
+        short_description: Tuairisgeul goirid
+        description: Tuairisgeul
+        link: Ceangal a-muigh
+        request_to_administrators: Cuir putan sa ghoireas gus an goireas iarraidh bho rianairean
+        day_offset: Cia mheud latha às deidh cruthachadh a’ mholaidh a tha thu airson gun tèid a chur an gnìomh?
+        required_supports: Dè an ìre de thaic a dh’fheumas am moladh fhaighinn airson a bhith air a chur an gnìomh?
+        order: Faodaidh tu taghadh far an tèid an gnìomh seo a shealltainn dhan chleachdaiche ann an liosta nan gnìomhan
+        active: Gnìomhach
+        action_type: Seòrsa
+        action_type_proposed_action: "Gnìomh air a mholadh"
+        action_type_resource: "Goireas"
+        published_proposal: "Airson molaidhean foillsichte?"
+      dashboard/administrator_task:
+        source: Tùs
+        user: Air a chur an gnìomh le
+      link:
+        label: Tiotal
+        url: URL
+      valuator:
+        description: Tuairisgeul
+        valuator_group_id: Buidheann luachaidh
+        can_comment: Comasach air beachdan a chruthachadh
+        can_edit_dossier: Comasach air dossiers a dheasachadh
+      valuator_group:
+        name: "Ainm na buidhne"
+      local_census_record:
+        document_type: Seòrsa sgrìobhainn
+        document_number: Àireamh na sgrìobhainne
+        date_of_birth: Latha-breith
+        postal_code: Còd-puist
+      votation_type:
+        max_votes: An àireamh as motha de bhòtaichean
+        vote_type: Seòrsa bhòtaidh
+      votation_type/vote_type:
+        unique: Freagairt air leth
+        multiple: Iomadh freagairt
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Tha facal-faire aig a’ chleachdaiche seo mar-thà"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "feumaidh tagaichean a bhith nas lugha no co-ionann ri %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Ràinig thu an àireamh as motha tha ceadaichte de theachdaireachdan prìobhaideach san latha"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Feumaidh Leud an deilbh a bhith %{required_min_width}px air a’ char as lugha"
+              min_image_height: "Feumaidh Àirde an deilbh a bhith %{required_min_height}px air a’ char as lugha"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Tha an earrann luchd-faighinn neo-dhligheach"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Tha an earrann luchd-faighinn neo-dhligheach"
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Chan eil an sgrìobhainn sa chunntas-sluaigh"
+            user_id:
+              has_voted: "Tha an cleachdaiche air bhòtadh mar-thà"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: feumaidh seo a bhith air no às dèidh an latha tòiseachaidh
+            debate_end_date:
+              invalid_date_range: feumaidh seo a bhith air no às dèidh latha tòiseachaidh an deasbaid
+            draft_end_date:
+              invalid_date_range: feumaidh seo a bhith air no às dèidh latha tòiseachaidh na dreachd
+            allegations_end_date:
+              invalid_date_range: feumaidh seo a bhith air no às dèidh an latha nam beachdan
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: chan eil seo ceadaichte air an liosta, ’s iad na luachan a tha ceadaichte 1 airson DNI, 2 airson ceud-siubhail agus 3 airson cairt còmhnaidh.
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "feumaidh tagaichean a bhith nas lugha no co-ionann ri %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "feumaidh tagaichean a bhith nas lugha no co-ionann ri %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Feumaidh tu feitheamh co-dhiù %{interval} latha eadar brathan"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: "Cha deach seo a dhearbhadh leis a’ Chunntas-sluaigh"
+              already_voted: "Air bhòtadh air a’ mholadh seo mar-thà"
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "feumaidh seo a bhith air a dhèanamh suas de litrichean, àireamhan, _ agus -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Feumaidh leud de %{required_width}px %{required_width}px a bhith ann"
+              image_height: "Feumaidh an àirde a bhith %{required_height}px"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: "Chan urrainn dhut beachd a thoirt air luachadh"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Chaidh an goireas seo eadar-theanghadh mar-thà
+        sdg/local_target:
+          attributes:
+            code:
+              invalid: ": feumaidh seo tòiseachadh leis an aon chòd ris an targaid aige agus an uair sin dotag agus le àireamh aig an deireadh"
+      messages:
+        translations_too_short: Tha e riatanach co-dhiù aon eadar-theangachadh a thoirt seachad
+        record_invalid: "Dh’fhàillig leis an dearbhadh: %{errors}"
+        another_poll_active: Tha cunntas-bheachd gnìomhach eile ann airson na h-ùine seo
+        restrict_dependent_destroy:
+          has_one: "Cha ghabh an clàr a sguabadh às a chionn ’s gu bheil %{record} eisimeilich ann"
+          has_many: "Cha ghabh an clàr a sguabadh às chionn ’s gu bheil %{record} eisimeilich ann"
