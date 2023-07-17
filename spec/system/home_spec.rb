@@ -105,39 +105,6 @@ describe "Home" do
     end
   end
 
-  describe "IE alert", :no_js do
-    scenario "IE visitors are presented with an alert until they close it", :page_driver do
-      # Selenium API does not include page request/response inspection methods
-      # so we must use Capybara::RackTest driver to set the browser's headers
-      Capybara.current_session.driver.header(
-        "User-Agent",
-        "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)"
-      )
-
-      visit root_path
-      expect(page).to have_xpath(ie_alert_box_xpath)
-      expect(page.driver.request.cookies["ie_alert_closed"]).to be nil
-
-      # faking close button, since a normal find and click
-      # will not work as the element is inside a HTML conditional comment
-      page.driver.browser.set_cookie("ie_alert_closed=true")
-
-      visit root_path
-      expect(page).not_to have_xpath(ie_alert_box_xpath)
-      expect(page.driver.request.cookies["ie_alert_closed"]).to eq("true")
-    end
-
-    scenario "non-IE visitors are not bothered with IE alerts", :page_driver do
-      visit root_path
-      expect(page).not_to have_xpath(ie_alert_box_xpath)
-      expect(page.driver.request.cookies["ie_alert_closed"]).to be nil
-    end
-
-    def ie_alert_box_xpath
-      "/html/body/div[@class='wrapper ']/comment()[contains(.,'ie-callout')]"
-    end
-  end
-
   describe "Menu button" do
     scenario "is not present on large screens" do
       visit root_path

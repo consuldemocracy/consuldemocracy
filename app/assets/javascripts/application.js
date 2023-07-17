@@ -52,7 +52,6 @@
 //= require check_all_none
 //= require comments
 //= require foundation_extras
-//= require ie_alert
 //= require location_changer
 //= require moderator_comment
 //= require moderator_debates
@@ -129,7 +128,6 @@ var initialize_modules = function() {
   App.FoundationExtras.initialize();
   App.LocationChanger.initialize();
   App.CheckAllNone.initialize();
-  App.IeAlert.initialize();
   App.AdvancedSearch.initialize();
   App.RegistrationForm.initialize();
   App.Suggest.initialize();

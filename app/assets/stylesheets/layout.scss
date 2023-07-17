@@ -223,17 +223,6 @@ button,
   color: $check;
 }
 
-.ie-callout {
-  position: absolute;
-  top: 0;
-  width: 100%;
-
-  .close {
-    font-size: rem-calc(34);
-    top: 20%;
-  }
-}
-
 .menu.simple {
   border-bottom: 1px solid $border;
   clear: both;

@@ -58,10 +58,6 @@ RSpec.configure do |config|
     Capybara::Webmock.stop
   end
 
-  config.after(:each, :page_driver) do
-    page.driver.reset!
-  end
-
   config.before(:each, type: :system) do |example|
     driven_by :headless_chrome
     Capybara.default_set_options = { clear: :backspace }
