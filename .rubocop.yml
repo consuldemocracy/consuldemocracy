@@ -594,6 +594,8 @@ Style/StringLiteralsInInterpolation:
 
 Style/SymbolProc:
   Enabled: true
+  AllowedMethods:
+    - respond_to
 
 Style/TrailingCommaInArrayLiteral:
   Enabled: true
