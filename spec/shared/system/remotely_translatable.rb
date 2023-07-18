@@ -173,8 +173,8 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
 
     describe "without delayed jobs" do
       scenario "the remote translation button should not be present" do
-        microsoft_translate_client_response = generate_response(resource)
-        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(microsoft_translate_client_response)
+        response = generate_response(resource)
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
         visit path
         select "Español", from: "Language:"
 
@@ -184,8 +184,8 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
       end
 
       scenario "the remote translation has been translated and destoyed" do
-        microsoft_translate_client_response = generate_response(resource)
-        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(microsoft_translate_client_response)
+        response = generate_response(resource)
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
         visit path
         select "Español", from: "Language:"
 
@@ -197,8 +197,8 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
       end
 
       scenario "request a translation of an already translated text" do
-        microsoft_translate_client_response = generate_response(resource)
-        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(microsoft_translate_client_response)
+        response = generate_response(resource)
+        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
 
         in_browser(:one) do
           visit path
