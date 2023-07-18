@@ -388,7 +388,7 @@ describe "Legislation Draft Versions" do
       annotation = create(:legislation_annotation, draft_version: draft_version, text: "my other annotation", quote: "audiam",
                                                    ranges: [{ "start" => "/p[3]", "startOffset" => 6, "end" => "/p[3]", "endOffset" => 11 }])
 
-      visit legislation_process_draft_version_annotation_path(draft_version.process, draft_version, annotation)
+      visit polymorphic_path(annotation)
 
       expect(page).not_to have_content "ipsum"
       expect(page).not_to have_content "my annotation"

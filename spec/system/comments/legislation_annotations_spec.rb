@@ -10,9 +10,7 @@ describe "Commenting legislation questions" do
     3.times { create(:comment, commentable: annotation) }
     comment = Comment.includes(:user).last
 
-    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                            annotation.draft_version,
-                                                            annotation)
+    visit polymorphic_path(annotation)
 
     expect(page).to have_css(".comment", count: 4)
 
@@ -24,9 +22,7 @@ describe "Commenting legislation questions" do
   end
 
   scenario "Show" do
-    href           = legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                                       annotation.draft_version,
-                                                                       annotation)
+    href           = polymorphic_path(annotation)
     parent_comment = create(:comment, commentable: annotation, body: "Parent")
     create(:comment, commentable: annotation, parent: parent_comment, body: "First subcomment")
     create(:comment, commentable: annotation, parent: parent_comment, body: "Last subcomment")
@@ -48,9 +44,7 @@ describe "Commenting legislation questions" do
   scenario "Link to comment show" do
     comment = create(:comment, commentable: annotation, user: user)
 
-    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                            annotation.draft_version,
-                                                            annotation)
+    visit polymorphic_path(annotation)
 
     within "#comment_#{comment.id}" do
       expect(page).to have_link comment.created_at.strftime("%Y-%m-%d %T")
@@ -66,9 +60,7 @@ describe "Commenting legislation questions" do
     child_comment  = create(:comment, body: "First subcomment", commentable: annotation, parent: parent_comment)
     grandchild_comment = create(:comment, body: "Last subcomment", commentable: annotation, parent: child_comment)
 
-    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                            annotation.draft_version,
-                                                            annotation)
+    visit polymorphic_path(annotation)
 
     expect(page).to have_css(".comment", count: 3)
     expect(page).to have_content("1 response (collapse)", count: 2)
@@ -108,10 +100,7 @@ describe "Commenting legislation questions" do
     c3 = create(:comment, :with_confidence_score, commentable: annotation, cached_votes_up: 1,
                                                   cached_votes_total: 2, created_at: Time.current)
 
-    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                            annotation.draft_version,
-                                                            annotation,
-                                                            order: :most_voted)
+    visit polymorphic_path(annotation, order: :most_voted)
 
     expect(c1.body).to appear_before(c2.body)
     expect(c2.body).to appear_before(c3.body)
@@ -137,26 +126,17 @@ describe "Commenting legislation questions" do
     old_child = create(:comment, commentable: annotation, parent_id: new_root.id, created_at: Time.current - 10)
     new_child = create(:comment, commentable: annotation, parent_id: new_root.id, created_at: Time.current)
 
-    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                            annotation.draft_version,
-                                                            annotation,
-                                                            order: :most_voted)
+    visit polymorphic_path(annotation, order: :most_voted)
 
     expect(new_root.body).to appear_before(old_root.body)
     expect(old_child.body).to appear_before(new_child.body)
 
-    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                            annotation.draft_version,
-                                                            annotation,
-                                                            order: :newest)
+    visit polymorphic_path(annotation, order: :newest)
 
     expect(new_root.body).to appear_before(old_root.body)
     expect(new_child.body).to appear_before(old_child.body)
 
-    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                            annotation.draft_version,
-                                                            annotation,
-                                                            order: :oldest)
+    visit polymorphic_path(annotation, order: :oldest)
 
     expect(old_root.body).to appear_before(new_root.body)
     expect(old_child.body).to appear_before(new_child.body)
@@ -166,9 +146,7 @@ describe "Commenting legislation questions" do
     annotation = create :legislation_annotation, author: user
     annotation.comments << create(:comment, body: "Built with http://rubyonrails.org/")
 
-    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                            annotation.draft_version,
-                                                            annotation)
+    visit polymorphic_path(annotation)
 
     within all(".comment").first do
       expect(page).to have_content "Built with http://rubyonrails.org/"
@@ -182,9 +160,7 @@ describe "Commenting legislation questions" do
     create :comment, commentable: annotation,
                      body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
 
-    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                            annotation.draft_version,
-                                                            annotation)
+    visit polymorphic_path(annotation)
 
     within all(".comment").first do
       expect(page).to have_content "click me http://www.url.com"
@@ -197,9 +173,7 @@ describe "Commenting legislation questions" do
     per_page = 10
     (per_page + 2).times { create(:comment, commentable: annotation) }
 
-    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                            annotation.draft_version,
-                                                            annotation)
+    visit polymorphic_path(annotation)
 
     expect(page).to have_css(".comment", count: per_page)
     within("ul.pagination") do
@@ -216,9 +190,7 @@ describe "Commenting legislation questions" do
   describe "Not logged user" do
     scenario "can not see comments forms" do
       create(:comment, commentable: annotation)
-      visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                              annotation.draft_version,
-                                                              annotation)
+      visit polymorphic_path(annotation)
 
       expect(page).to have_content "You must sign in or sign up to leave a comment"
       within("#comments") do
@@ -230,9 +202,7 @@ describe "Commenting legislation questions" do
 
   scenario "Create" do
     login_as(user)
-    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                            annotation.draft_version,
-                                                            annotation)
+    visit polymorphic_path(annotation)
 
     fill_in "Leave your comment", with: "Have you thought about...?"
     click_button "Publish comment"
@@ -245,9 +215,7 @@ describe "Commenting legislation questions" do
 
   scenario "Errors on create" do
     login_as(user)
-    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                            annotation.draft_version,
-                                                            annotation)
+    visit polymorphic_path(annotation)
 
     click_button "Publish comment"
 
@@ -264,7 +232,7 @@ describe "Commenting legislation questions" do
 
     login_as(user)
 
-    visit legislation_process_draft_version_annotation_path(version.process, version, annotation)
+    visit polymorphic_path(annotation)
 
     within "#comments" do
       expect(page).to have_content "Comments are closed"
@@ -280,9 +248,7 @@ describe "Commenting legislation questions" do
     comment = annotation.comments.first
 
     login_as(manuela)
-    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                            annotation.draft_version,
-                                                            annotation)
+    visit polymorphic_path(annotation)
 
     click_link "Reply"
 
@@ -304,9 +270,7 @@ describe "Commenting legislation questions" do
     comment = annotation.comments.first
 
     login_as(manuela)
-    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                            annotation.draft_version,
-                                                            annotation)
+    visit polymorphic_path(annotation)
 
     within ".comment", text: comment.body do
       click_link "Reply"
@@ -324,9 +288,7 @@ describe "Commenting legislation questions" do
     create(:comment, commentable: annotation, parent: comment)
 
     login_as(manuela)
-    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                            annotation.draft_version,
-                                                            annotation)
+    visit polymorphic_path(annotation)
 
     within ".comment", text: comment.body do
       click_link text: "1 response (collapse)"
@@ -342,9 +304,7 @@ describe "Commenting legislation questions" do
     comment = annotation.comments.first
 
     login_as(user)
-    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                            annotation.draft_version,
-                                                            annotation)
+    visit polymorphic_path(annotation)
 
     click_link "Reply"
 
@@ -362,9 +322,7 @@ describe "Commenting legislation questions" do
       parent = parent.children.first
     end
 
-    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                            annotation.draft_version,
-                                                            annotation)
+    visit polymorphic_path(annotation)
 
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
   end
@@ -374,9 +332,7 @@ describe "Commenting legislation questions" do
     comment = create(:comment, commentable: annotation, body: "this should be visible")
     comment.user.erase
 
-    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                            annotation.draft_version,
-                                                            annotation)
+    visit polymorphic_path(annotation)
 
     within "#comment_#{comment.id}" do
       expect(page).to have_content("User deleted")
@@ -388,9 +344,7 @@ describe "Commenting legislation questions" do
     annotation = create(:legislation_annotation)
     login_as(user)
 
-    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                            annotation.draft_version,
-                                                            annotation)
+    visit polymorphic_path(annotation)
 
     fill_in "Leave your comment", with: "Testing submit button!"
     click_button "Publish comment"
@@ -405,9 +359,7 @@ describe "Commenting legislation questions" do
       moderator = create(:moderator)
 
       login_as(moderator.user)
-      visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                              annotation.draft_version,
-                                                              annotation)
+      visit polymorphic_path(annotation)
 
       fill_in "Leave your comment", with: "I am moderating!"
       check "comment-as-moderator-legislation_annotation_#{annotation.id}"
@@ -429,9 +381,7 @@ describe "Commenting legislation questions" do
       comment = annotation.comments.first
 
       login_as(manuela)
-      visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                              annotation.draft_version,
-                                                              annotation)
+      visit polymorphic_path(annotation)
 
       click_link "Reply"
 
@@ -455,9 +405,7 @@ describe "Commenting legislation questions" do
       moderator = create(:moderator)
 
       login_as(moderator.user)
-      visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                              annotation.draft_version,
-                                                              annotation)
+      visit polymorphic_path(annotation)
 
       expect(page).not_to have_content "Comment as administrator"
     end
@@ -468,9 +416,7 @@ describe "Commenting legislation questions" do
       admin = create(:administrator)
 
       login_as(admin.user)
-      visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                              annotation.draft_version,
-                                                              annotation)
+      visit polymorphic_path(annotation)
 
       fill_in "Leave your comment", with: "I am your Admin!"
       check "comment-as-administrator-legislation_annotation_#{annotation.id}"
@@ -492,9 +438,7 @@ describe "Commenting legislation questions" do
       comment = annotation.comments.first
 
       login_as(manuela)
-      visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                              annotation.draft_version,
-                                                              annotation)
+      visit polymorphic_path(annotation)
 
       click_link "Reply"
 
@@ -515,9 +459,7 @@ describe "Commenting legislation questions" do
     end
 
     scenario "can not comment as a moderator", :admin do
-      visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                              annotation.draft_version,
-                                                              annotation)
+      visit polymorphic_path(annotation)
 
       expect(page).not_to have_content "Comment as moderator"
     end
@@ -537,9 +479,7 @@ describe "Commenting legislation questions" do
       create(:vote, voter: verified, votable: comment, vote_flag: true)
       create(:vote, voter: unverified, votable: comment, vote_flag: false)
 
-      visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                              annotation.draft_version,
-                                                              annotation)
+      visit polymorphic_path(annotation)
 
       within("#comment_#{comment.id}_votes") do
         within(".in-favor") do
@@ -555,9 +495,7 @@ describe "Commenting legislation questions" do
     end
 
     scenario "Create" do
-      visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                              annotation.draft_version,
-                                                              annotation)
+      visit polymorphic_path(annotation)
 
       within("#comment_#{comment.id}_votes") do
         click_button "I agree"
@@ -575,9 +513,7 @@ describe "Commenting legislation questions" do
     end
 
     scenario "Update" do
-      visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                              annotation.draft_version,
-                                                              annotation)
+      visit polymorphic_path(annotation)
 
       within("#comment_#{comment.id}_votes") do
         click_button "I agree"
@@ -601,9 +537,7 @@ describe "Commenting legislation questions" do
     end
 
     scenario "Trying to vote multiple times" do
-      visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
-                                                              annotation.draft_version,
-                                                              annotation)
+      visit polymorphic_path(annotation)
 
       within("#comment_#{comment.id}_votes") do
         click_button "I agree"
