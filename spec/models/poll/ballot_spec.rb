@@ -19,7 +19,7 @@ describe Poll::Ballot do
       poll_ballot.update!(data: [investment.id, investment2.id, investment3.id, investment4.id].join(","))
       poll_ballot.verify
 
-      expect(poll_ballot.ballot.lines.pluck(:investment_id)).to match_array [investment.id, investment2.id, investment3.id]
+      expect(poll_ballot.ballot.investment_ids).to match_array [investment.id, investment2.id, investment3.id]
     end
 
     it "adds ballot lines if they are from valid headings" do
@@ -32,7 +32,7 @@ describe Poll::Ballot do
       poll_ballot.update!(data: [investment.id, investment2.id, investment3.id, investment4.id].join(","))
       poll_ballot.verify
 
-      expect(poll_ballot.ballot.lines.pluck(:investment_id)).to match_array [investment.id, investment2.id, investment3.id]
+      expect(poll_ballot.ballot.investment_ids).to match_array [investment.id, investment2.id, investment3.id]
     end
 
     it "adds ballot lines if they are from selectable" do
@@ -43,7 +43,7 @@ describe Poll::Ballot do
       poll_ballot.update!(data: [investment.id, investment2.id, investment3.id, investment4.id].join(","))
       poll_ballot.verify
 
-      expect(poll_ballot.ballot.lines.pluck(:investment_id)).to match_array [investment.id, investment2.id, investment3.id]
+      expect(poll_ballot.ballot.investment_ids).to match_array [investment.id, investment2.id, investment3.id]
     end
   end
 
