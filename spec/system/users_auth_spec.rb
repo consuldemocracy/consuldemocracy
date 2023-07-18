@@ -611,7 +611,7 @@ describe "Users" do
     fill_in "Email", with: "manuela@consul.dev"
     click_button "Send instructions"
 
-    expect(page).to have_content "If your email address is in our database, in a few minutes "\
+    expect(page).to have_content "If your email address is in our database, in a few minutes " \
                                  "you will receive a link to use to reset your password."
 
     action_mailer = ActionMailer::Base.deliveries.last.body.to_s
@@ -633,7 +633,7 @@ describe "Users" do
     fill_in "Email", with: "fake@mail.dev"
     click_button "Send instructions"
 
-    expect(page).to have_content "If your email address is in our database, in a few minutes "\
+    expect(page).to have_content "If your email address is in our database, in a few minutes " \
                                  "you will receive a link to use to reset your password."
   end
 
@@ -648,7 +648,7 @@ describe "Users" do
     fill_in "Email", with: "manuela@consul.dev"
     click_button "Re-send instructions"
 
-    expect(page).to have_content "If your email address exists in our database, in a few minutes you will "\
+    expect(page).to have_content "If your email address exists in our database, in a few minutes you will " \
                                  "receive an email with instructions on how to confirm your email address."
     expect(ActionMailer::Base.deliveries.count).to eq(1)
     expect(ActionMailer::Base.deliveries.first.to).to eq(["manuela@consul.dev"])
@@ -664,7 +664,7 @@ describe "Users" do
     fill_in "Email", with: "fake@mail.dev"
     click_button "Re-send instructions"
 
-    expect(page).to have_content "If your email address exists in our database, in a few minutes you will "\
+    expect(page).to have_content "If your email address exists in our database, in a few minutes you will " \
                                  "receive an email with instructions on how to confirm your email address."
     expect(ActionMailer::Base.deliveries.count).to eq(0)
   end
@@ -680,7 +680,7 @@ describe "Users" do
     fill_in "user_email", with: "manuela@consul.dev"
     click_button "Re-send instructions"
 
-    expect(page).to have_content "If your email address exists in our database, in a few minutes you will "\
+    expect(page).to have_content "If your email address exists in our database, in a few minutes you will " \
                                  "receive an email with instructions on how to confirm your email address."
     expect(ActionMailer::Base.deliveries.count).to eq(1)
     expect(ActionMailer::Base.deliveries.first.to).to eq(["manuela@consul.dev"])

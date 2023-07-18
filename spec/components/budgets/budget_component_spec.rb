@@ -61,7 +61,7 @@ describe Budgets::BudgetComponent do
       render_inline Budgets::BudgetComponent.new(budget)
 
       expect(page).to have_css ".budget-header.with-background-image"
-      expect(page).to have_css ".budget-header[style*='background-image:']"\
+      expect(page).to have_css ".budget-header[style*='background-image:']" \
                                "[style*='url(\\''][style*='clippy(with_brackets).jpg\\'']"
     end
 
@@ -71,7 +71,7 @@ describe Budgets::BudgetComponent do
       render_inline Budgets::BudgetComponent.new(budget)
 
       expect(page).to have_css ".budget-header.with-background-image"
-      expect(page).to have_css ".budget-header[style*='background-image:']"\
+      expect(page).to have_css ".budget-header[style*='background-image:']" \
                                "[style*='url(\\''][style*='clippy_with_\\\\\'quotes\\\\\'.jpg']"
     end
   end

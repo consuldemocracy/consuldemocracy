@@ -17,7 +17,7 @@ describe "Proposal Notifications" do
     click_link "Send notification to proposal followers"
 
     fill_in "proposal_notification_title", with: "Thank you for supporting my proposal"
-    fill_in "proposal_notification_body", with: "Please share it with "\
+    fill_in "proposal_notification_body", with: "Please share it with " \
                                                 "others so we can make it happen!"
     click_button "Send notification"
 
@@ -104,7 +104,7 @@ describe "Proposal Notifications" do
     login_as(author)
     visit new_proposal_notification_path(proposal_id: proposal.id)
 
-    expect(page).to have_content "This notification will be sent to 7 people and it will "\
+    expect(page).to have_content "This notification will be sent to 7 people and it will " \
                                  "be visible in the proposal's page"
     expect(page).to have_link("the proposal's page", href: proposal_path(proposal,
                                                                          anchor: "comments"))
@@ -120,7 +120,7 @@ describe "Proposal Notifications" do
     login_as(author)
     visit new_proposal_notification_path(proposal_id: proposal.id)
 
-    expect(page).to have_content "This notification will be sent to 7 people and it will "\
+    expect(page).to have_content "This notification will be sent to 7 people and it will " \
                                  "be visible in the proposal's page"
     expect(page).to have_link("the proposal's page", href: proposal_path(proposal,
                                                                          anchor: "comments"))
@@ -135,7 +135,7 @@ describe "Proposal Notifications" do
     login_as(author)
     visit new_proposal_notification_path(proposal_id: proposal.id)
 
-    expect(page).to have_content "This notification will be sent to 1 people and it will "\
+    expect(page).to have_content "This notification will be sent to 1 people and it will " \
                                  "be visible in the proposal's page"
     expect(page).to have_link("the proposal's page", href: proposal_path(proposal,
                                                                          anchor: "comments"))
@@ -190,7 +190,7 @@ describe "Proposal Notifications" do
       visit new_proposal_notification_path(proposal_id: proposal.id)
 
       fill_in "proposal_notification_title", with: "Thank you for supporting my proposal"
-      fill_in "proposal_notification_body", with: "Please share it with "\
+      fill_in "proposal_notification_body", with: "Please share it with " \
                                                   "others so we can make it happen!"
       click_button "Send notification"
 
@@ -242,7 +242,7 @@ describe "Proposal Notifications" do
       visit new_proposal_notification_path(proposal_id: proposal.id)
 
       fill_in "proposal_notification_title", with: "Thank you for supporting my proposal"
-      fill_in "proposal_notification_body", with: "Please share it with "\
+      fill_in "proposal_notification_body", with: "Please share it with " \
                                                   "others so we can make it happen!"
       click_button "Send notification"
 
@@ -292,7 +292,7 @@ describe "Proposal Notifications" do
       visit new_proposal_notification_path(proposal_id: proposal.id)
 
       fill_in "proposal_notification_title", with: "Thank you for supporting my proposal"
-      fill_in "proposal_notification_body", with: "Please share it with "\
+      fill_in "proposal_notification_body", with: "Please share it with " \
                                                   "others so we can make it happen!"
       click_button "Send notification"
 

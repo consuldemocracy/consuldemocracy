@@ -535,7 +535,7 @@ describe "Admin budget investments", :admin do
       click_button "Filter"
 
       expect(page).not_to have_button "Calculate Winner Investments"
-      expect(page).to have_content 'The budget has to stay on phase "Reviewing voting" '\
+      expect(page).to have_content 'The budget has to stay on phase "Reviewing voting" ' \
                                    "in order to calculate winners projects"
 
       visit admin_budget_path(budget)
@@ -1720,12 +1720,12 @@ describe "Admin budget investments", :admin do
       expect(header).to match(/^attachment/)
       expect(header).to match(/filename="budget_investments.csv"/)
 
-      csv_contents = "ID,Title,Supports,Administrator,Valuator,Valuation Group,Scope of operation,"\
-                     "Feasibility,Val. Fin.,Selected,Show to valuators,Author username\n"\
-                     "#{first_investment.id},Le Investment,88,Admin,-,Valuator Group,"\
-                     "Budget Heading,Feasible (€99),Yes,Yes,Yes,"\
-                     "#{first_investment.author.username}\n#{second_investment.id},"\
-                     "Alt Investment,66,No admin assigned,Valuator,-,Other Heading,"\
+      csv_contents = "ID,Title,Supports,Administrator,Valuator,Valuation Group,Scope of operation," \
+                     "Feasibility,Val. Fin.,Selected,Show to valuators,Author username\n" \
+                     "#{first_investment.id},Le Investment,88,Admin,-,Valuator Group," \
+                     "Budget Heading,Feasible (€99),Yes,Yes,Yes," \
+                     "#{first_investment.author.username}\n#{second_investment.id}," \
+                     "Alt Investment,66,No admin assigned,Valuator,-,Other Heading," \
                      "Unfeasible,No,No,No,#{second_investment.author.username}\n"
 
       expect(page.body).to eq(csv_contents)

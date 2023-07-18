@@ -95,6 +95,9 @@ Layout/IndentationWidth:
 Layout/LeadingEmptyLines:
   Enabled: true
 
+Layout/LineContinuationSpacing:
+  Enabled: true
+
 Layout/LineEndStringConcatenationIndentation:
   Enabled: true
 

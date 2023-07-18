@@ -267,7 +267,7 @@ describe "System Emails" do
 
         expect(page).to have_content "New evaluation comment for Cleaner city"
         expect(page).to have_content "Hi #{admin.name}"
-        expect(page).to have_content "There is a new evaluation comment from #{comment.user.name} "\
+        expect(page).to have_content "There is a new evaluation comment from #{comment.user.name} " \
                                      "to the budget investment Cleaner city"
         expect(page).to have_content comment.body
 

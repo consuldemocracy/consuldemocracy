@@ -235,8 +235,8 @@ describe "Admin budgets", :admin do
 
         visit admin_budget_path(budget)
 
-        expect(page).to have_content "The configuration of these phases is used for information purposes "\
-                                     "only. Its function is to define the phases information displayed "\
+        expect(page).to have_content "The configuration of these phases is used for information purposes " \
+                                     "only. Its function is to define the phases information displayed " \
                                      "on the public page of the participatory budget."
         expect(page).to have_table "Phases", with_cols: [
           [
@@ -357,7 +357,7 @@ describe "Admin budgets", :admin do
 
     scenario "Change voting style uncheck hide money" do
       budget_hide_money = create(:budget, :approval, :hide_money)
-      hide_money_help_text = "If this option is checked, all fields showing the amount of money "\
+      hide_money_help_text = "If this option is checked, all fields showing the amount of money " \
                              "will be hidden throughout the process."
 
       visit edit_admin_budget_path(budget_hide_money)
@@ -378,7 +378,7 @@ describe "Admin budgets", :admin do
 
     scenario "Edit knapsack budget do not show hide money info" do
       budget = create(:budget, :knapsack)
-      hide_money_help_text = "If this option is checked, all fields showing the amount of money "\
+      hide_money_help_text = "If this option is checked, all fields showing the amount of money " \
                              "will be hidden throughout the process."
 
       visit edit_admin_budget_path(budget)
@@ -394,7 +394,7 @@ describe "Admin budgets", :admin do
 
     scenario "Edit approval budget show hide money info" do
       budget = create(:budget, :approval)
-      hide_money_help_text = "If this option is checked, all fields showing the amount of money "\
+      hide_money_help_text = "If this option is checked, all fields showing the amount of money " \
                              "will be hidden throughout the process."
 
       visit edit_admin_budget_path(budget)

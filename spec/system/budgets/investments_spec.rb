@@ -603,7 +603,7 @@ describe "Budget Investments" do
       fill_in_new_investment_title with: "Build a skyscraper"
       fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
       fill_in "Location additional info", with: "City center"
-      fill_in "If you are proposing in the name of a collective/organization, "\
+      fill_in "If you are proposing in the name of a collective/organization, " \
               "or on behalf of more people, write its name", with: "T.I.A."
       fill_in "Tags", with: "Towers"
       check "I agree to the Privacy Policy and the Terms and conditions of use"
@@ -668,7 +668,7 @@ describe "Budget Investments" do
       fill_in_new_investment_title with: "Build a skyscraper"
       fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
       fill_in "Location additional info", with: "City center"
-      fill_in "If you are proposing in the name of a collective/organization, "\
+      fill_in "If you are proposing in the name of a collective/organization, " \
               "or on behalf of more people, write its name", with: "T.I.A."
       fill_in "Tags", with: "Towers"
       check "I agree to the Privacy Policy and the Terms and conditions of use"
@@ -1000,14 +1000,14 @@ describe "Budget Investments" do
 
     expect(page).not_to have_content("Unfeasibility explanation")
     expect(page).not_to have_content("Local government is not competent in this")
-    expect(page).not_to have_content("This investment project has been marked as not feasible "\
+    expect(page).not_to have_content("This investment project has been marked as not feasible " \
                                      "and will not go to balloting phase")
 
     visit budget_investment_path(budget, id: investment_2.id)
 
     expect(page).to have_content("Unfeasibility explanation")
     expect(page).to have_content("The unfeasible explanation")
-    expect(page).to have_content("This investment project has been marked as not feasible "\
+    expect(page).to have_content("This investment project has been marked as not feasible " \
                                  "and will not go to balloting phase")
   end
 
@@ -1472,7 +1472,7 @@ describe "Budget Investments" do
 
       visit budget_ballot_path(budget)
 
-      expect(page).to have_content "But you can change your vote at any time "\
+      expect(page).to have_content "But you can change your vote at any time " \
                                    "until this phase is closed."
 
       within("#budget_group_#{global_group.id}") do

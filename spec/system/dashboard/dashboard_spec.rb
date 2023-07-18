@@ -58,9 +58,9 @@ describe "Proposal's dashboard" do
   scenario "Dashboard progress show proposed actions truncated description" do
     action = create(:dashboard_action, :proposed_action, :active, description: "One short action")
     action_long = create(:dashboard_action, :proposed_action, :active,
-                         description: "This is a really very long description for a proposed "\
-                                      "action on progress dashboard section, so this description "\
-                                      "should be appear truncated and shows the show description "\
+                         description: "This is a really very long description for a proposed " \
+                                      "action on progress dashboard section, so this description " \
+                                      "should be appear truncated and shows the show description " \
                                       "link to show the complete description to the users.")
 
     visit progress_proposal_dashboard_path(proposal)
@@ -273,7 +273,7 @@ describe "Proposal's dashboard" do
     click_link(feature.title)
 
     click_button "Request"
-    expect(page).to have_content("The request has been successfully sent. We will contact you "\
+    expect(page).to have_content("The request has been successfully sent. We will contact you " \
                                  "as soon as possible to inform you about it.")
   end
 
@@ -298,7 +298,7 @@ describe "Proposal's dashboard" do
     end
     click_button "Request"
 
-    expect(page).to have_content("The request has been successfully sent. We will contact you "\
+    expect(page).to have_content("The request has been successfully sent. We will contact you " \
                                  "as soon as possible to inform you about it.")
   end
 

@@ -20,17 +20,17 @@ describe "Votes" do
 
         within("#budget-investments") do
           within("#budget_investment_#{investment1.id}_votes") do
-            expect(page).to have_content "You have already supported this investment project. "\
+            expect(page).to have_content "You have already supported this investment project. " \
                                          "Share it!"
           end
 
           within("#budget_investment_#{investment2.id}_votes") do
-            expect(page).not_to have_content "You have already supported this investment project. "\
+            expect(page).not_to have_content "You have already supported this investment project. " \
                                              "Share it!"
           end
 
           within("#budget_investment_#{investment3.id}_votes") do
-            expect(page).not_to have_content "You have already supported this investment project. "\
+            expect(page).not_to have_content "You have already supported this investment project. " \
                                              "Share it!"
           end
         end
@@ -45,7 +45,7 @@ describe "Votes" do
           click_button "Support"
 
           expect(page).to have_content "1 support"
-          expect(page).to have_content "You have already supported this investment project. "\
+          expect(page).to have_content "You have already supported this investment project. " \
                                        "Share it!"
         end
       end
@@ -77,7 +77,7 @@ describe "Votes" do
           click_button "Support"
 
           expect(page).to have_content "1 support"
-          expect(page).to have_content "You have already supported this investment project. "\
+          expect(page).to have_content "You have already supported this investment project. " \
                                        "Share it!"
         end
       end
@@ -123,7 +123,7 @@ describe "Votes" do
           accept_confirm { click_button "Support" }
 
           expect(page).to have_content "1 support"
-          expect(page).to have_content "You have already supported this investment project. "\
+          expect(page).to have_content "You have already supported this investment project. " \
                                        "Share it!"
         end
 
@@ -135,7 +135,7 @@ describe "Votes" do
           click_button "Support"
 
           expect(page).to have_content "1 support"
-          expect(page).to have_content "You have already supported this investment project. "\
+          expect(page).to have_content "You have already supported this investment project. " \
                                        "Share it!"
         end
 
@@ -144,7 +144,7 @@ describe "Votes" do
         within("#budget_investment_#{third_heading_investment.id}") do
           click_button "Support"
 
-          expect(page).to have_content "You can only support investment projects in 2 districts. "\
+          expect(page).to have_content "You can only support investment projects in 2 districts. " \
                                        "You have already supported investments in"
 
           participation = find(".participation-not-allowed")
@@ -154,7 +154,7 @@ describe "Votes" do
           expect(headings).to match_array [new_york.name, san_francisco.name]
 
           expect(page).not_to have_content "1 support"
-          expect(page).not_to have_content "You have already supported this investment project. "\
+          expect(page).not_to have_content "You have already supported this investment project. " \
                                            "Share it!"
         end
       end
@@ -178,7 +178,7 @@ describe "Votes" do
 
         click_button "Support"
 
-        expect(page).to have_content "You can only support investment projects in 2 districts. "\
+        expect(page).to have_content "You can only support investment projects in 2 districts. " \
                                      "You have already supported investments in"
 
         participation = find(".participation-not-allowed")
@@ -188,7 +188,7 @@ describe "Votes" do
         expect(headings).to match_array [new_york.name, san_francisco.name]
 
         expect(page).not_to have_content "1 support"
-        expect(page).not_to have_content "You have already supported this investment project. "\
+        expect(page).not_to have_content "You have already supported this investment project. " \
                                          "Share it!"
       end
 

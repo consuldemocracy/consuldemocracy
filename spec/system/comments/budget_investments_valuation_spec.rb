@@ -130,7 +130,7 @@ describe "Internal valuation comments on Budget::Investments" do
     end
 
     scenario "Sanitizes comment body for security" do
-      comment_with_js = "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">"\
+      comment_with_js = "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">" \
                         "click me<a/> http://www.url.com"
       create(:comment, :valuation, author: admin_user, commentable: investment,
                                    body: comment_with_js)
