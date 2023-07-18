@@ -2,17 +2,17 @@ require "rails_helper"
 
 describe "Commenting legislation questions" do
   let(:user) { create :user }
-  let(:legislation_annotation) { create :legislation_annotation, author: user }
+  let(:annotation) { create :legislation_annotation, author: user }
 
   it_behaves_like "flaggable", :legislation_annotation_comment
 
   scenario "Index" do
-    3.times { create(:comment, commentable: legislation_annotation) }
+    3.times { create(:comment, commentable: annotation) }
     comment = Comment.includes(:user).last
 
-    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                            legislation_annotation.draft_version,
-                                                            legislation_annotation)
+    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                            annotation.draft_version,
+                                                            annotation)
 
     expect(page).to have_css(".comment", count: 4)
 
@@ -24,12 +24,12 @@ describe "Commenting legislation questions" do
   end
 
   scenario "Show" do
-    href           = legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                                       legislation_annotation.draft_version,
-                                                                       legislation_annotation)
-    parent_comment = create(:comment, commentable: legislation_annotation, body: "Parent")
-    create(:comment, commentable: legislation_annotation, parent: parent_comment, body: "First subcomment")
-    create(:comment, commentable: legislation_annotation, parent: parent_comment, body: "Last subcomment")
+    href           = legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                                       annotation.draft_version,
+                                                                       annotation)
+    parent_comment = create(:comment, commentable: annotation, body: "Parent")
+    create(:comment, commentable: annotation, parent: parent_comment, body: "First subcomment")
+    create(:comment, commentable: annotation, parent: parent_comment, body: "Last subcomment")
 
     visit comment_path(parent_comment)
 
@@ -38,7 +38,7 @@ describe "Commenting legislation questions" do
     expect(page).to have_content "First subcomment"
     expect(page).to have_content "Last subcomment"
 
-    expect(page).to have_link "Go back to #{legislation_annotation.title}", href: href
+    expect(page).to have_link "Go back to #{annotation.title}", href: href
 
     within ".comment", text: "Parent" do
       expect(page).to have_selector(".comment", count: 2)
@@ -46,29 +46,29 @@ describe "Commenting legislation questions" do
   end
 
   scenario "Link to comment show" do
-    comment = create(:comment, commentable: legislation_annotation, user: user)
+    comment = create(:comment, commentable: annotation, user: user)
 
-    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                            legislation_annotation.draft_version,
-                                                            legislation_annotation)
+    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                            annotation.draft_version,
+                                                            annotation)
 
     within "#comment_#{comment.id}" do
       expect(page).to have_link comment.created_at.strftime("%Y-%m-%d %T")
       click_link comment.created_at.strftime("%Y-%m-%d %T")
     end
 
-    expect(page).to have_link "Go back to #{legislation_annotation.title}"
+    expect(page).to have_link "Go back to #{annotation.title}"
     expect(page).to have_current_path(comment_path(comment))
   end
 
   scenario "Collapsable comments" do
-    parent_comment = legislation_annotation.comments.first
-    child_comment  = create(:comment, body: "First subcomment", commentable: legislation_annotation, parent: parent_comment)
-    grandchild_comment = create(:comment, body: "Last subcomment", commentable: legislation_annotation, parent: child_comment)
+    parent_comment = annotation.comments.first
+    child_comment  = create(:comment, body: "First subcomment", commentable: annotation, parent: parent_comment)
+    grandchild_comment = create(:comment, body: "Last subcomment", commentable: annotation, parent: child_comment)
 
-    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                            legislation_annotation.draft_version,
-                                                            legislation_annotation)
+    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                            annotation.draft_version,
+                                                            annotation)
 
     expect(page).to have_css(".comment", count: 3)
     expect(page).to have_content("1 response (collapse)", count: 2)
@@ -101,16 +101,16 @@ describe "Commenting legislation questions" do
   end
 
   scenario "Comment order" do
-    c1 = create(:comment, :with_confidence_score, commentable: legislation_annotation, cached_votes_up: 100,
+    c1 = create(:comment, :with_confidence_score, commentable: annotation, cached_votes_up: 100,
                                                   cached_votes_total: 120, created_at: Time.current - 2)
-    c2 = create(:comment, :with_confidence_score, commentable: legislation_annotation, cached_votes_up: 10,
+    c2 = create(:comment, :with_confidence_score, commentable: annotation, cached_votes_up: 10,
                                                   cached_votes_total: 12, created_at: Time.current - 1)
-    c3 = create(:comment, :with_confidence_score, commentable: legislation_annotation, cached_votes_up: 1,
+    c3 = create(:comment, :with_confidence_score, commentable: annotation, cached_votes_up: 1,
                                                   cached_votes_total: 2, created_at: Time.current)
 
-    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                            legislation_annotation.draft_version,
-                                                            legislation_annotation,
+    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                            annotation.draft_version,
+                                                            annotation,
                                                             order: :most_voted)
 
     expect(c1.body).to appear_before(c2.body)
@@ -132,30 +132,30 @@ describe "Commenting legislation questions" do
   end
 
   scenario "Creation date works differently in roots and in child comments, even when sorting by confidence_score" do
-    old_root = create(:comment, commentable: legislation_annotation, created_at: Time.current - 10)
-    new_root = create(:comment, commentable: legislation_annotation, created_at: Time.current)
-    old_child = create(:comment, commentable: legislation_annotation, parent_id: new_root.id, created_at: Time.current - 10)
-    new_child = create(:comment, commentable: legislation_annotation, parent_id: new_root.id, created_at: Time.current)
+    old_root = create(:comment, commentable: annotation, created_at: Time.current - 10)
+    new_root = create(:comment, commentable: annotation, created_at: Time.current)
+    old_child = create(:comment, commentable: annotation, parent_id: new_root.id, created_at: Time.current - 10)
+    new_child = create(:comment, commentable: annotation, parent_id: new_root.id, created_at: Time.current)
 
-    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                            legislation_annotation.draft_version,
-                                                            legislation_annotation,
+    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                            annotation.draft_version,
+                                                            annotation,
                                                             order: :most_voted)
 
     expect(new_root.body).to appear_before(old_root.body)
     expect(old_child.body).to appear_before(new_child.body)
 
-    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                            legislation_annotation.draft_version,
-                                                            legislation_annotation,
+    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                            annotation.draft_version,
+                                                            annotation,
                                                             order: :newest)
 
     expect(new_root.body).to appear_before(old_root.body)
     expect(new_child.body).to appear_before(old_child.body)
 
-    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                            legislation_annotation.draft_version,
-                                                            legislation_annotation,
+    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                            annotation.draft_version,
+                                                            annotation,
                                                             order: :oldest)
 
     expect(old_root.body).to appear_before(new_root.body)
@@ -163,12 +163,12 @@ describe "Commenting legislation questions" do
   end
 
   scenario "Turns links into html links" do
-    legislation_annotation = create :legislation_annotation, author: user
-    legislation_annotation.comments << create(:comment, body: "Built with http://rubyonrails.org/")
+    annotation = create :legislation_annotation, author: user
+    annotation.comments << create(:comment, body: "Built with http://rubyonrails.org/")
 
-    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                            legislation_annotation.draft_version,
-                                                            legislation_annotation)
+    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                            annotation.draft_version,
+                                                            annotation)
 
     within all(".comment").first do
       expect(page).to have_content "Built with http://rubyonrails.org/"
@@ -179,12 +179,12 @@ describe "Commenting legislation questions" do
   end
 
   scenario "Sanitizes comment body for security" do
-    create :comment, commentable: legislation_annotation,
+    create :comment, commentable: annotation,
                      body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
 
-    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                            legislation_annotation.draft_version,
-                                                            legislation_annotation)
+    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                            annotation.draft_version,
+                                                            annotation)
 
     within all(".comment").first do
       expect(page).to have_content "click me http://www.url.com"
@@ -195,11 +195,11 @@ describe "Commenting legislation questions" do
 
   scenario "Paginated comments" do
     per_page = 10
-    (per_page + 2).times { create(:comment, commentable: legislation_annotation) }
+    (per_page + 2).times { create(:comment, commentable: annotation) }
 
-    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                            legislation_annotation.draft_version,
-                                                            legislation_annotation)
+    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                            annotation.draft_version,
+                                                            annotation)
 
     expect(page).to have_css(".comment", count: per_page)
     within("ul.pagination") do
@@ -215,10 +215,10 @@ describe "Commenting legislation questions" do
 
   describe "Not logged user" do
     scenario "can not see comments forms" do
-      create(:comment, commentable: legislation_annotation)
-      visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                              legislation_annotation.draft_version,
-                                                              legislation_annotation)
+      create(:comment, commentable: annotation)
+      visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                              annotation.draft_version,
+                                                              annotation)
 
       expect(page).to have_content "You must sign in or sign up to leave a comment"
       within("#comments") do
@@ -230,9 +230,9 @@ describe "Commenting legislation questions" do
 
   scenario "Create" do
     login_as(user)
-    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                            legislation_annotation.draft_version,
-                                                            legislation_annotation)
+    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                            annotation.draft_version,
+                                                            annotation)
 
     fill_in "Leave your comment", with: "Have you thought about...?"
     click_button "Publish comment"
@@ -245,9 +245,9 @@ describe "Commenting legislation questions" do
 
   scenario "Errors on create" do
     login_as(user)
-    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                            legislation_annotation.draft_version,
-                                                            legislation_annotation)
+    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                            annotation.draft_version,
+                                                            annotation)
 
     click_button "Publish comment"
 
@@ -276,13 +276,13 @@ describe "Commenting legislation questions" do
   scenario "Reply" do
     citizen = create(:user, username: "Ana")
     manuela = create(:user, username: "Manuela")
-    legislation_annotation = create(:legislation_annotation, author: citizen)
-    comment = legislation_annotation.comments.first
+    annotation = create(:legislation_annotation, author: citizen)
+    comment = annotation.comments.first
 
     login_as(manuela)
-    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                            legislation_annotation.draft_version,
-                                                            legislation_annotation)
+    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                            annotation.draft_version,
+                                                            annotation)
 
     click_link "Reply"
 
@@ -300,13 +300,13 @@ describe "Commenting legislation questions" do
 
   scenario "Reply update parent comment responses count" do
     manuela = create(:user, :level_two, username: "Manuela")
-    legislation_annotation = create(:legislation_annotation)
-    comment = legislation_annotation.comments.first
+    annotation = create(:legislation_annotation)
+    comment = annotation.comments.first
 
     login_as(manuela)
-    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                            legislation_annotation.draft_version,
-                                                            legislation_annotation)
+    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                            annotation.draft_version,
+                                                            annotation)
 
     within ".comment", text: comment.body do
       click_link "Reply"
@@ -319,14 +319,14 @@ describe "Commenting legislation questions" do
 
   scenario "Reply show parent comments responses when hidden" do
     manuela = create(:user, :level_two, username: "Manuela")
-    legislation_annotation = create(:legislation_annotation)
-    comment = legislation_annotation.comments.first
-    create(:comment, commentable: legislation_annotation, parent: comment)
+    annotation = create(:legislation_annotation)
+    comment = annotation.comments.first
+    create(:comment, commentable: annotation, parent: comment)
 
     login_as(manuela)
-    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                            legislation_annotation.draft_version,
-                                                            legislation_annotation)
+    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                            annotation.draft_version,
+                                                            annotation)
 
     within ".comment", text: comment.body do
       click_link text: "1 response (collapse)"
@@ -339,12 +339,12 @@ describe "Commenting legislation questions" do
   end
 
   scenario "Errors on reply" do
-    comment = legislation_annotation.comments.first
+    comment = annotation.comments.first
 
     login_as(user)
-    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                            legislation_annotation.draft_version,
-                                                            legislation_annotation)
+    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                            annotation.draft_version,
+                                                            annotation)
 
     click_link "Reply"
 
@@ -355,28 +355,28 @@ describe "Commenting legislation questions" do
   end
 
   scenario "N replies" do
-    parent = create(:comment, commentable: legislation_annotation)
+    parent = create(:comment, commentable: annotation)
 
     7.times do
-      create(:comment, commentable: legislation_annotation, parent: parent)
+      create(:comment, commentable: annotation, parent: parent)
       parent = parent.children.first
     end
 
-    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                            legislation_annotation.draft_version,
-                                                            legislation_annotation)
+    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                            annotation.draft_version,
+                                                            annotation)
 
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
   end
 
   scenario "Erasing a comment's author" do
-    legislation_annotation = create(:legislation_annotation)
-    comment = create(:comment, commentable: legislation_annotation, body: "this should be visible")
+    annotation = create(:legislation_annotation)
+    comment = create(:comment, commentable: annotation, body: "this should be visible")
     comment.user.erase
 
-    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                            legislation_annotation.draft_version,
-                                                            legislation_annotation)
+    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                            annotation.draft_version,
+                                                            annotation)
 
     within "#comment_#{comment.id}" do
       expect(page).to have_content("User deleted")
@@ -385,12 +385,12 @@ describe "Commenting legislation questions" do
   end
 
   scenario "Submit button is disabled after clicking" do
-    legislation_annotation = create(:legislation_annotation)
+    annotation = create(:legislation_annotation)
     login_as(user)
 
-    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                            legislation_annotation.draft_version,
-                                                            legislation_annotation)
+    visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                            annotation.draft_version,
+                                                            annotation)
 
     fill_in "Leave your comment", with: "Testing submit button!"
     click_button "Publish comment"
@@ -405,12 +405,12 @@ describe "Commenting legislation questions" do
       moderator = create(:moderator)
 
       login_as(moderator.user)
-      visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                              legislation_annotation.draft_version,
-                                                              legislation_annotation)
+      visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                              annotation.draft_version,
+                                                              annotation)
 
       fill_in "Leave your comment", with: "I am moderating!"
-      check "comment-as-moderator-legislation_annotation_#{legislation_annotation.id}"
+      check "comment-as-moderator-legislation_annotation_#{annotation.id}"
       click_button "Publish comment"
 
       within "#comments" do
@@ -425,13 +425,13 @@ describe "Commenting legislation questions" do
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")
       moderator = create(:moderator, user: manuela)
-      legislation_annotation = create(:legislation_annotation, author: citizen)
-      comment = legislation_annotation.comments.first
+      annotation = create(:legislation_annotation, author: citizen)
+      comment = annotation.comments.first
 
       login_as(manuela)
-      visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                              legislation_annotation.draft_version,
-                                                              legislation_annotation)
+      visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                              annotation.draft_version,
+                                                              annotation)
 
       click_link "Reply"
 
@@ -455,9 +455,9 @@ describe "Commenting legislation questions" do
       moderator = create(:moderator)
 
       login_as(moderator.user)
-      visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                              legislation_annotation.draft_version,
-                                                              legislation_annotation)
+      visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                              annotation.draft_version,
+                                                              annotation)
 
       expect(page).not_to have_content "Comment as administrator"
     end
@@ -468,12 +468,12 @@ describe "Commenting legislation questions" do
       admin = create(:administrator)
 
       login_as(admin.user)
-      visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                              legislation_annotation.draft_version,
-                                                              legislation_annotation)
+      visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                              annotation.draft_version,
+                                                              annotation)
 
       fill_in "Leave your comment", with: "I am your Admin!"
-      check "comment-as-administrator-legislation_annotation_#{legislation_annotation.id}"
+      check "comment-as-administrator-legislation_annotation_#{annotation.id}"
       click_button "Publish comment"
 
       within "#comments" do
@@ -488,13 +488,13 @@ describe "Commenting legislation questions" do
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")
       admin   = create(:administrator, user: manuela)
-      legislation_annotation = create(:legislation_annotation, author: citizen)
-      comment = legislation_annotation.comments.first
+      annotation = create(:legislation_annotation, author: citizen)
+      comment = annotation.comments.first
 
       login_as(manuela)
-      visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                              legislation_annotation.draft_version,
-                                                              legislation_annotation)
+      visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                              annotation.draft_version,
+                                                              annotation)
 
       click_link "Reply"
 
@@ -515,9 +515,9 @@ describe "Commenting legislation questions" do
     end
 
     scenario "can not comment as a moderator", :admin do
-      visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
-                                                              legislation_annotation.draft_version,
-                                                              legislation_annotation)
+      visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                              annotation.draft_version,
+                                                              annotation)
 
       expect(page).not_to have_content "Comment as moderator"
     end
