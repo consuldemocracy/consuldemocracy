@@ -27,7 +27,14 @@ Layout/ArrayAlignment:
 Layout/AssignmentIndentation:
   Enabled: true
 
+Layout/BeginEndAlignment:
+  Enabled: true
+  EnforcedStyleAlignWith: begin
+
 Layout/BlockAlignment:
+  Enabled: true
+
+Layout/BlockEndNewline:
   Enabled: true
 
 Layout/ClosingHeredocIndentation:
@@ -36,7 +43,14 @@ Layout/ClosingHeredocIndentation:
 Layout/ClosingParenthesisIndentation:
   Enabled: true
 
+Layout/DefEndAlignment:
+  Enabled: true
+  EnforcedStyleAlignWith: def
+
 Layout/DotPosition:
+  Enabled: true
+
+Layout/ElseAlignment:
   Enabled: true
 
 Layout/EmptyLineAfterGuardClause:
@@ -61,6 +75,9 @@ Layout/EmptyLinesAroundMethodBody:
   Enabled: true
 
 Layout/EmptyLinesAroundModuleBody:
+  Enabled: true
+
+Layout/EndAlignment:
   Enabled: true
 
 Layout/EndOfLine:
@@ -124,6 +141,12 @@ Layout/MultilineMethodCallIndentation:
   Enabled: true
 
 Layout/MultilineOperationIndentation:
+  Enabled: true
+
+Layout/ParameterAlignment:
+  Enabled: true
+
+Layout/RescueEnsureAlignment:
   Enabled: true
 
 Layout/SpaceAfterColon:
