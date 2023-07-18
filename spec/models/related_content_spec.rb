@@ -65,11 +65,8 @@ describe RelatedContent do
 
     it "creates an opposite related_content" do
       expect { related_content.save }.to change { RelatedContent.count }.by(2)
-      expect(related_content.opposite_related_content.child_relationable_id).to eq(parent_relationable.id)
-      expect(related_content.opposite_related_content.child_relationable_type).to eq(parent_relationable.class.name)
-      expect(related_content.opposite_related_content.parent_relationable_id).to eq(child_relationable.id)
-      expect(related_content.opposite_related_content.parent_relationable_type).to eq(child_relationable.class.name)
-      expect(related_content.opposite_related_content.opposite_related_content.id).to eq(related_content.id)
+      expect(related_content.opposite_related_content.child_relationable).to eq(parent_relationable)
+      expect(related_content.opposite_related_content.parent_relationable).to eq(child_relationable)
     end
   end
 
