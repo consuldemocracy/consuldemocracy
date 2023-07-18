@@ -411,7 +411,7 @@ describe "Users" do
         expect(page).to have_field "Email", with: "manuelacarmena@example.com"
       end
 
-      scenario "Try to register with the email of an already existing user, when no email was provided by oauth" do
+      scenario "Try to register with an existing email, when no email was provided by oauth" do
         create(:user, username: "peter", email: "manuela@example.com")
         OmniAuth.config.add_mock(:twitter, twitter_hash)
 
@@ -448,7 +448,7 @@ describe "Users" do
         expect(page).to have_field "Email", with: "somethingelse@example.com"
       end
 
-      scenario "Try to register with the email of an already existing user, when an unconfirmed email was provided by oauth" do
+      scenario "Try to register with an existing email, when an unconfirmed email was provided by oauth" do
         create(:user, username: "peter", email: "manuelacarmena@example.com")
         OmniAuth.config.add_mock(:twitter, twitter_hash_with_email)
 

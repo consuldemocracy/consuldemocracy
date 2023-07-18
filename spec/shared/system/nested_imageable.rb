@@ -33,7 +33,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       expect(page).not_to have_selector "#new_image_link"
     end
 
-    scenario "Should update nested image file name after choosing any file" do
+    scenario "Should update image file name after choosing any file" do
       do_login_for user, management: management
       visit send(path, arguments)
 
@@ -43,7 +43,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       expect(page).to have_selector ".file-name", text: "clippy.jpg"
     end
 
-    scenario "Should update nested image file title with file name after choosing a file when no title defined" do
+    scenario "Should update image file title after choosing a file when no title is defined" do
       do_login_for user, management: management
       visit send(path, arguments)
 
@@ -52,7 +52,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       expect_image_has_title("clippy.jpg")
     end
 
-    scenario "Should not update nested image file title with file name after choosing a file when title already defined" do
+    scenario "Should not update image file title after choosing a file when a title is already defined" do
       do_login_for user, management: management
       visit send(path, arguments)
 
@@ -112,7 +112,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       expect(cached_attachment_field.value).to be_empty
     end
 
-    scenario "Should show nested image errors after invalid form submit" do
+    scenario "Should show image errors after invalid form submit" do
       do_login_for user, management: management
       visit send(path, arguments)
 
@@ -137,7 +137,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       expect(page).to have_css "img[src$='clippy.jpg']"
     end
 
-    scenario "Should remove nested image after valid file upload and click on remove button" do
+    scenario "Should remove image after valid file upload and click on remove button" do
       do_login_for user, management: management
       visit send(path, arguments)
 

@@ -120,7 +120,7 @@ describe "Commenting legislation questions" do
     expect(c2.body).to appear_before(c3.body)
   end
 
-  scenario "Creation date works differently in roots and in child comments, even when sorting by confidence_score" do
+  scenario "Creation date works differently in roots and child comments when sorting by confidence_score" do
     old_root = create(:comment, commentable: annotation, created_at: Time.current - 10)
     new_root = create(:comment, commentable: annotation, created_at: Time.current)
     old_child = create(:comment, commentable: annotation, parent_id: new_root.id, created_at: Time.current - 10)

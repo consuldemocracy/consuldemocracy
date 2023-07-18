@@ -126,7 +126,7 @@ describe "Commenting topics from proposals" do
     expect(c2.body).to appear_before(c3.body)
   end
 
-  scenario "Creation date works differently in roots and in child comments, when sorting by confidence_score" do
+  scenario "Creation date works differently in roots and child comments when sorting by confidence_score" do
     community = proposal.community
     topic = create(:topic, community: community)
     old_root = create(:comment, commentable: topic, created_at: Time.current - 10)
@@ -673,7 +673,7 @@ describe "Commenting topics from budget investments" do
     expect(c2.body).to appear_before(c3.body)
   end
 
-  scenario "Creation date works differently in roots and in child comments, when sorting by confidence_score" do
+  scenario "Creation date works differently in roots and child comments when sorting by confidence_score" do
     community = investment.community
     topic = create(:topic, community: community)
     old_root = create(:comment, commentable: topic, created_at: Time.current - 10)

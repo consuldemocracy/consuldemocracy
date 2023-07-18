@@ -123,7 +123,7 @@ describe "Commenting Budget::Investments" do
     expect(c2.body).to appear_before(c3.body)
   end
 
-  scenario "Creation date works differently in roots and in child comments, when sorting by confidence_score" do
+  scenario "Creation date works differently in roots and child comments when sorting by confidence_score" do
     old_root = create(:comment, commentable: investment, created_at: Time.current - 10)
     new_root = create(:comment, commentable: investment, created_at: Time.current)
     old_child = create(:comment, commentable: investment, parent_id: new_root.id, created_at: Time.current - 10)

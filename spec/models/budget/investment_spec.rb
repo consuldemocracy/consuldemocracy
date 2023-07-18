@@ -1311,7 +1311,7 @@ describe Budget::Investment do
     end
 
     describe "check_for_reclassification" do
-      it "stores reclassfied votes and removes actual votes if an investment has been reclassified" do
+      it "removes votes and stores reclassfied votes if an investment has been reclassified" do
         investment = create(:budget_investment, :selected, heading: heading1)
 
         3.times { create(:user, ballot_lines: [investment]) }
@@ -1326,7 +1326,7 @@ describe Budget::Investment do
         expect(Budget::ReclassifiedVote.count).to eq(3)
       end
 
-      it "does not store reclassified votes nor remove actual votes if the investment has not been reclassifed" do
+      it "does not remove votes nor store reclassified votes if the investment has not been reclassifed" do
         investment = create(:budget_investment, :selected, heading: heading1)
 
         3.times { create(:user, ballot_lines: [investment]) }

@@ -27,7 +27,7 @@ describe RemoteTranslations::Microsoft::Client do
     end
 
     context "when characters from request are greater than characters limit" do
-      it "response has the expected result when the request has 2 texts, where both less than CHARACTERS_LIMIT_PER_REQUEST" do
+      it "has the expected result when the request has two texts and both are smaller than the limit" do
         stub_const("RemoteTranslations::Microsoft::Client::CHARACTERS_LIMIT_PER_REQUEST", 20)
         text_en = Faker::Lorem.characters(number: 11)
         another_text_en = Faker::Lorem.characters(number: 11)
@@ -49,7 +49,7 @@ describe RemoteTranslations::Microsoft::Client do
         expect(result).to eq([translated_text_es, another_translated_text_es])
       end
 
-      it "response has the expected result when the request has 2 texts and both are greater than CHARACTERS_LIMIT_PER_REQUEST" do
+      it "has the expected result when the request has two texts and both are greater than the limit" do
         stub_const("RemoteTranslations::Microsoft::Client::CHARACTERS_LIMIT_PER_REQUEST", 20)
         start_text_en = Faker::Lorem.characters(number: 10) + " "
         end_text_en = Faker::Lorem.characters(number: 10)

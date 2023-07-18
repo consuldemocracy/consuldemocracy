@@ -88,7 +88,7 @@ describe "Admin shifts", :admin do
     end
   end
 
-  scenario "Vote Collection Shift and Recount & Scrutiny Shift don't include already assigned dates to officer" do
+  scenario "Vote Collection Shift and Recount & Scrutiny Shift don't include already assigned dates" do
     poll = create(:poll)
     booth = create(:poll_booth, polls: [poll])
     officer = create(:poll_officer)
