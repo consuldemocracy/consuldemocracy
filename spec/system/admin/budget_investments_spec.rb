@@ -1797,8 +1797,8 @@ describe "Admin budget investments", :admin do
       columns_cookie = cookies.find { |cookie| cookie[:name] == "investments-columns" }
       cookie_value = columns_cookie[:value]
 
-      expect(cookie_value).to eq("id,title,supports,admin,valuator,geozone," +
-        "feasibility,price,valuation_finished,visible_to_valuators,selected,incompatible")
+      expect(cookie_value).to eq("id,title,supports,admin,valuator,geozone,feasibility,price," \
+                                 "valuation_finished,visible_to_valuators,selected,incompatible")
     end
 
     scenario "Use column selector to display visible columns" do
@@ -1847,8 +1847,8 @@ describe "Admin budget investments", :admin do
       columns_cookie = cookies.find { |cookie| cookie[:name] == "investments-columns" }
       cookie_value = columns_cookie[:value]
 
-      expect(cookie_value).to eq("id,supports,admin,geozone," +
-        "feasibility,valuation_finished,visible_to_valuators,selected,incompatible,author")
+      expect(cookie_value).to eq("id,supports,admin,geozone,feasibility,valuation_finished," \
+                                 "visible_to_valuators,selected,incompatible,author")
 
       visit admin_budget_budget_investments_path(budget)
 
@@ -1856,8 +1856,8 @@ describe "Admin budget investments", :admin do
       columns_cookie = cookies.find { |cookie| cookie[:name] == "investments-columns" }
       cookie_value = columns_cookie[:value]
 
-      expect(cookie_value).to eq("id,supports,admin,geozone,feasibility,valuation_finished," +
-        "visible_to_valuators,selected,incompatible,author")
+      expect(cookie_value).to eq("id,supports,admin,geozone,feasibility,valuation_finished," \
+                                 "visible_to_valuators,selected,incompatible,author")
     end
 
     scenario "Select an investment when some columns are not displayed" do

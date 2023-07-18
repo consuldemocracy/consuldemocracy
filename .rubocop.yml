@@ -573,6 +573,9 @@ Style/IdenticalConditionalBranches:
 Style/IfWithBooleanLiteralBranches:
   Enabled: true
 
+Style/LineEndConcatenation:
+  Enabled: true
+
 Style/MapToHash:
   Enabled: true
 
