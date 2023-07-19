@@ -135,21 +135,25 @@ class Budget
       budget  = Budget.find_by_slug_or_id params[:budget_id]
       results = Investment.by_budget(budget)
 
-      results = results.where("cached_votes_up + physical_votes >= ?",
-                              params[:min_total_supports])                 if params[:min_total_supports].present?
-      results = results.where("cached_votes_up + physical_votes <= ?",
-                              params[:max_total_supports])                 if params[:max_total_supports].present?
-      results = results.where(group_id: params[:group_id])                 if params[:group_id].present?
-      results = results.by_tag(params[:tag_name])                          if params[:tag_name].present?
-      results = results.by_tag(params[:milestone_tag_name])                if params[:milestone_tag_name].present?
-      results = results.by_heading(params[:heading_id])                    if params[:heading_id].present?
-      results = results.by_valuator(params[:valuator_id])                  if params[:valuator_id].present?
-      results = results.by_valuator_group(params[:valuator_group_id])      if params[:valuator_group_id].present?
-      results = results.by_admin(params[:administrator_id])                if params[:administrator_id].present?
-      results = results.search_by_title_or_id(params[:title_or_id].strip)  if params[:title_or_id]
-      results = advanced_filters(params, results)                          if params[:advanced_filters].present?
+      if params[:min_total_supports].present?
+        results = results.where("cached_votes_up + physical_votes >= ?", params[:min_total_supports])
+      end
+      if params[:max_total_supports].present?
+        results = results.where("cached_votes_up + physical_votes <= ?", params[:max_total_supports])
+      end
 
+      results = results.where(group_id: params[:group_id])            if params[:group_id].present?
+      results = results.by_heading(params[:heading_id])               if params[:heading_id].present?
+      results = results.by_tag(params[:tag_name])                     if params[:tag_name].present?
+      results = results.by_tag(params[:milestone_tag_name])           if params[:milestone_tag_name].present?
+      results = results.by_valuator(params[:valuator_id])             if params[:valuator_id].present?
+      results = results.by_valuator_group(params[:valuator_group_id]) if params[:valuator_group_id].present?
+      results = results.by_admin(params[:administrator_id])           if params[:administrator_id].present?
+
+      results = results.search_by_title_or_id(params[:title_or_id].strip) if params[:title_or_id]
+      results = advanced_filters(params, results) if params[:advanced_filters].present?
       results = results.send(current_filter) if current_filter.present?
+
       results.includes(:heading, :group, :budget, administrator: :user, valuators: :user)
     end
 
