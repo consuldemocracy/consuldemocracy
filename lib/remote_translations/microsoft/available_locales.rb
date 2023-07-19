@@ -4,7 +4,7 @@ require "cgi"
 require "json"
 
 class RemoteTranslations::Microsoft::AvailableLocales
-  def self.available_locales
+  def self.locales
     daily_cache("locales") do
       remote_available_locales.map { |locale| remote_locale_to_app_locale(locale) }
     end
@@ -15,7 +15,7 @@ class RemoteTranslations::Microsoft::AvailableLocales
   end
 
   def self.include_locale?(locale)
-    available_locales.include?(locale.to_s)
+    locales.include?(locale.to_s)
   end
 
   private

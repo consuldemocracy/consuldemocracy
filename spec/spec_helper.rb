@@ -145,7 +145,7 @@ RSpec.configure do |config|
 
   config.before(:each, :remote_translations) do
     allow(RemoteTranslations::Microsoft::AvailableLocales)
-      .to receive(:available_locales).and_return(I18n.available_locales.map(&:to_s))
+      .to receive(:locales).and_return(I18n.available_locales.map(&:to_s))
   end
 
   config.around(:each, :with_frozen_time) do |example|
