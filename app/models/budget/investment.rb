@@ -67,9 +67,8 @@ class Budget
     scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc, id: :desc) }
     scope :sort_by_ballots,          -> { reorder(ballot_lines_count: :desc, id: :desc) }
     scope :sort_by_price,            -> { reorder(price: :desc, confidence_score: :desc, id: :desc) }
-
-    scope :sort_by_id, -> { order("id DESC") }
-    scope :sort_by_supports, -> { order("cached_votes_up DESC") }
+    scope :sort_by_id,               -> { order("id DESC") }
+    scope :sort_by_supports,         -> { order("cached_votes_up DESC") }
 
     scope :valuation_open,              -> { where(valuation_finished: false) }
     scope :without_admin,               -> { where(administrator_id: nil) }
@@ -85,22 +84,23 @@ class Budget
     scope :unfeasible,                  -> { where(feasibility: "unfeasible") }
     scope :not_unfeasible,              -> { where.not(feasibility: "unfeasible") }
     scope :undecided,                   -> { where(feasibility: "undecided") }
-    scope :with_supports,               -> { where("cached_votes_up > 0") }
-    scope :selected,                    -> { feasible.where(selected: true) }
-    scope :compatible,                  -> { where(incompatible: false) }
-    scope :incompatible,                -> { where(incompatible: true) }
-    scope :winners,                     -> { selected.compatible.where(winner: true) }
-    scope :unselected,                  -> { not_unfeasible.where(selected: false) }
-    scope :last_week,                   -> { where("created_at >= ?", 7.days.ago) }
-    scope :sort_by_flags,               -> { order(flags_count: :desc, updated_at: :desc) }
-    scope :sort_by_created_at,          -> { reorder(created_at: :desc) }
 
-    scope :by_budget,         ->(budget)      { where(budget: budget) }
-    scope :by_group,          ->(group_id)    { where(group_id: group_id) }
-    scope :by_heading,        ->(heading_id)  { where(heading_id: heading_id) }
-    scope :by_admin,          ->(admin_id)    { where(administrator_id: admin_id) }
-    scope :by_tag,            ->(tag_name)    { tagged_with(tag_name).distinct }
-    scope :visible_to_valuator, ->(valuator)  { visible_to_valuators.where(id: valuator&.assigned_investment_ids) }
+    scope :with_supports,      -> { where("cached_votes_up > 0") }
+    scope :selected,           -> { feasible.where(selected: true) }
+    scope :compatible,         -> { where(incompatible: false) }
+    scope :incompatible,       -> { where(incompatible: true) }
+    scope :winners,            -> { selected.compatible.where(winner: true) }
+    scope :unselected,         -> { not_unfeasible.where(selected: false) }
+    scope :last_week,          -> { where("created_at >= ?", 7.days.ago) }
+    scope :sort_by_flags,      -> { order(flags_count: :desc, updated_at: :desc) }
+    scope :sort_by_created_at, -> { reorder(created_at: :desc) }
+
+    scope :by_budget,           ->(budget)     { where(budget: budget) }
+    scope :by_group,            ->(group_id)   { where(group_id: group_id) }
+    scope :by_heading,          ->(heading_id) { where(heading_id: heading_id) }
+    scope :by_admin,            ->(admin_id)   { where(administrator_id: admin_id) }
+    scope :by_tag,              ->(tag_name)   { tagged_with(tag_name).distinct }
+    scope :visible_to_valuator, ->(valuator)   { visible_to_valuators.where(id: valuator&.assigned_investment_ids) }
 
     scope :for_render, -> { includes(:heading) }
 
