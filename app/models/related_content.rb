@@ -11,7 +11,10 @@ class RelatedContent < ApplicationRecord
   has_one :opposite_related_content, class_name: name, foreign_key: :related_content_id
   has_many :related_content_scores, dependent: :destroy
 
-  validates :parent_relationable_id, uniqueness: { scope: [:parent_relationable_type, :child_relationable_id, :child_relationable_type] }
+  validates :parent_relationable_id,
+            uniqueness: {
+              scope: [:parent_relationable_type, :child_relationable_id, :child_relationable_type]
+            }
   validate :different_parent_and_child
 
   after_create :create_opposite_related_content, unless: proc { opposite_related_content.present? }
@@ -66,7 +69,10 @@ class RelatedContent < ApplicationRecord
 
     def score(value, user)
       score_with_opposite(value, user)
-      hide_with_opposite if (related_content_scores.sum(:value) / related_content_scores_count) < RELATED_CONTENT_SCORE_THRESHOLD
+
+      if (related_content_scores.sum(:value) / related_content_scores_count) < RELATED_CONTENT_SCORE_THRESHOLD
+        hide_with_opposite
+      end
     end
 
     def hide_with_opposite

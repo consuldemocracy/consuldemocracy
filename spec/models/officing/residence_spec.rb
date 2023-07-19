@@ -196,7 +196,11 @@ describe Officing::Residence do
     end
 
     it "makes half-verified users fully verified" do
-      user = create(:user, residence_verified_at: Time.current, document_type: "1", document_number: "12345678Z")
+      user = create(:user,
+                    residence_verified_at: Time.current,
+                    document_type: "1",
+                    document_number: "12345678Z")
+
       expect(user).to be_unverified
       residence = build(:officing_residence, document_number: "12345678Z", year_of_birth: 1980)
       expect(residence).to be_valid

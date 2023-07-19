@@ -32,7 +32,8 @@ describe Budgets::BudgetComponent do
       render_inline Budgets::BudgetComponent.new(budget)
 
       page.find(".budget-header") do |header|
-        expect(header).to have_link "Participate now!", href: "https://consuldemocracy.org", class: "main-link"
+        expect(header).to have_link "Participate now!", href: "https://consuldemocracy.org",
+                                                        class: "main-link"
       end
     end
   end

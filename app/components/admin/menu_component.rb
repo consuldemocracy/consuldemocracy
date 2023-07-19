@@ -183,7 +183,8 @@ class Admin::MenuComponent < ApplicationComponent
       [
         t("admin.menu.poll_booth_assignments"),
         booth_assignments_admin_polls_path,
-        controller_name == "polls" && action_name == "booth_assignments" || controller_name == "booth_assignments" && action_name == "manage"
+        controller_name == "polls" && action_name == "booth_assignments" ||
+          controller_name == "booth_assignments" && action_name == "manage"
       ]
     end
 
@@ -255,7 +256,8 @@ class Admin::MenuComponent < ApplicationComponent
           banners_link,
           information_texts_link,
           documents_link,
-          class: ("is-active" if customization? && controller.class.module_parent != Admin::Poll::Questions::Answers)
+          class: ("is-active" if customization? &&
+                                 controller.class.module_parent != Admin::Poll::Questions::Answers)
         )
     end
 

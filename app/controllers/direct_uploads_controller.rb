@@ -8,7 +8,9 @@ class DirectUploadsController < ApplicationController
   helper_method :render_destroy_upload_link
 
   def create
-    @direct_upload = DirectUpload.new(direct_upload_params.merge(user: current_user, attachment: params[:attachment]))
+    @direct_upload = DirectUpload.new(
+      direct_upload_params.merge(user: current_user, attachment: params[:attachment])
+    )
 
     if @direct_upload.valid?
       @direct_upload.save_attachment

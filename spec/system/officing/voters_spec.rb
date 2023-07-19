@@ -68,7 +68,10 @@ describe "Voters" do
   end
 
   scenario "Had already verified his residence, but is not level 2 yet" do
-    user = create(:user, residence_verified_at: Time.current, document_type: "1", document_number: "12345678Z")
+    user = create(:user,
+                  residence_verified_at: Time.current,
+                  document_type: "1",
+                  document_number: "12345678Z")
     expect(user).not_to be_level_two_verified
 
     visit root_path

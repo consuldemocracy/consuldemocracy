@@ -50,8 +50,12 @@ class Proposal < ApplicationRecord
   validates :author, presence: true
   validates :responsible_name, presence: true, unless: :skip_user_verification?
 
-  validates :responsible_name, length: { in: 6..Proposal.responsible_name_max_length }, unless: :skip_user_verification?
-  validates :retired_reason, presence: true, inclusion: { in: ->(*) { RETIRE_OPTIONS }}, unless: -> { retired_at.blank? }
+  validates :responsible_name,
+            length: { in: 6..Proposal.responsible_name_max_length },
+            unless: :skip_user_verification?
+  validates :retired_reason,
+            presence: true,
+            inclusion: { in: ->(*) { RETIRE_OPTIONS }}, unless: -> { retired_at.blank? }
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
@@ -236,7 +240,11 @@ class Proposal < ApplicationRecord
 
   def self.proposals_orders(user)
     orders = %w[hot_score confidence_score created_at relevance archival_date]
-    orders << "recommendations" if Setting["feature.user.recommendations_on_proposals"] && user&.recommended_proposals
+
+    if Setting["feature.user.recommendations_on_proposals"] && user&.recommended_proposals
+      orders << "recommendations"
+    end
+
     orders
   end
 

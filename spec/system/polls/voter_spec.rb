@@ -68,8 +68,9 @@ describe "Voter" do
         expect(page).to have_link("No", href: verification_path)
       end
 
-      expect(page).to have_content("You must verify your account in order to answer")
-      expect(page).not_to have_content("You have already participated in this poll. If you vote again it will be overwritten")
+      expect(page).to have_content "You must verify your account in order to answer"
+      expect(page).not_to have_content "You have already participated in this poll. " \
+                                       "If you vote again it will be overwritten"
     end
 
     scenario "Voting in booth" do
@@ -173,7 +174,8 @@ describe "Voter" do
         within("#poll_question_#{question.id}_answers") do
           expect(page).not_to have_button("Yes")
         end
-        expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
+        expect(page).to have_content "You have already participated in a physical booth. " \
+                                     "You can not participate again."
         expect(Poll::Voter.count).to eq(1)
 
         visit root_path
@@ -213,7 +215,8 @@ describe "Voter" do
         expect(page).not_to have_button("Yes")
       end
 
-      expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
+      expect(page).to have_content "You have already participated in a physical booth. " \
+                                   "You can not participate again."
       expect(Poll::Voter.count).to eq(1)
 
       visit root_path

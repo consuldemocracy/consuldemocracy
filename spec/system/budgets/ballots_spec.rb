@@ -326,7 +326,8 @@ describe "Ballots" do
 
       expect(page).not_to have_css "#progressbar"
       expect(page).to have_content "You have active votes in another heading: California"
-      expect(page).to have_link california.name, href: budget_investments_path(budget, heading_id: california.id)
+      expect(page).to have_link california.name,
+                                href: budget_investments_path(budget, heading_id: california.id)
     end
   end
 

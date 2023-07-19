@@ -4,8 +4,10 @@ describe "Legislation" do
   let!(:administrator) { create(:administrator).user }
 
   shared_examples "not published permissions" do |path|
-    let(:not_published_process) { create(:legislation_process, :not_published, title: "Process not published") }
     let!(:not_permission_message) { "You do not have permission to carry out the action" }
+    let(:not_published_process) do
+      create(:legislation_process, :not_published, title: "Process not published")
+    end
 
     it "is forbidden for a normal user" do
       visit send(path, not_published_process)
@@ -276,7 +278,9 @@ describe "Legislation" do
 
     context "debate phase" do
       scenario "not open", :with_frozen_time do
-        process = create(:legislation_process, debate_start_date: Date.current + 1.day, debate_end_date: Date.current + 2.days)
+        process = create(:legislation_process,
+                         debate_start_date: Date.current + 1.day,
+                         debate_end_date: Date.current + 2.days)
 
         visit legislation_process_path(process)
 
@@ -284,7 +288,9 @@ describe "Legislation" do
       end
 
       scenario "open without questions" do
-        process = create(:legislation_process, debate_start_date: Date.current - 1.day, debate_end_date: Date.current + 2.days)
+        process = create(:legislation_process,
+                         debate_start_date: Date.current - 1.day,
+                         debate_end_date: Date.current + 2.days)
 
         visit legislation_process_path(process)
 
@@ -292,7 +298,9 @@ describe "Legislation" do
       end
 
       scenario "open with questions" do
-        process = create(:legislation_process, debate_start_date: Date.current - 1.day, debate_end_date: Date.current + 2.days)
+        process = create(:legislation_process,
+                         debate_start_date: Date.current - 1.day,
+                         debate_end_date: Date.current + 2.days)
         create(:legislation_question, process: process, title: "Question 1")
         create(:legislation_question, process: process, title: "Question 2")
 
@@ -328,7 +336,9 @@ describe "Legislation" do
 
     context "allegations phase" do
       scenario "not open", :with_frozen_time do
-        process = create(:legislation_process, allegations_start_date: Date.current + 1.day, allegations_end_date: Date.current + 2.days)
+        process = create(:legislation_process,
+                         allegations_start_date: Date.current + 1.day,
+                         allegations_end_date: Date.current + 2.days)
 
         visit allegations_legislation_process_path(process)
 
@@ -336,7 +346,9 @@ describe "Legislation" do
       end
 
       scenario "open" do
-        process = create(:legislation_process, allegations_start_date: Date.current - 1.day, allegations_end_date: Date.current + 2.days)
+        process = create(:legislation_process,
+                         allegations_start_date: Date.current - 1.day,
+                         allegations_end_date: Date.current + 2.days)
 
         visit allegations_legislation_process_path(process)
 

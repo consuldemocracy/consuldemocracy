@@ -4,7 +4,9 @@ describe "Moderate proposal notifications" do
   scenario "Hide" do
     citizen   = create(:user)
     proposal  = create(:proposal)
-    proposal_notification = create(:proposal_notification, proposal: proposal, created_at: Date.current - 4.days)
+    proposal_notification = create(:proposal_notification,
+                                   proposal: proposal,
+                                   created_at: Date.current - 4.days)
     moderator = create(:moderator)
 
     login_as(moderator.user)
@@ -27,7 +29,9 @@ describe "Moderate proposal notifications" do
   scenario "Can not hide own proposal notification" do
     moderator = create(:moderator)
     proposal = create(:proposal, author: moderator.user)
-    proposal_notification = create(:proposal_notification, proposal: proposal, created_at: Date.current - 4.days)
+    proposal_notification = create(:proposal_notification,
+                                   proposal: proposal,
+                                   created_at: Date.current - 4.days)
 
     login_as(moderator.user)
     visit proposal_path(proposal)
@@ -188,10 +192,21 @@ describe "Moderate proposal notifications" do
     end
 
     scenario "sorting proposal notifications" do
-      moderated_notification = create(:proposal_notification, :moderated, title: "Moderated notification", created_at: 1.day.ago)
-      moderated_new_notification = create(:proposal_notification, :moderated, title: "Moderated new notification", created_at: 12.hours.ago)
-      newer_notification = create(:proposal_notification, title: "Newer notification", created_at: Time.current)
-      old_moderated_notification = create(:proposal_notification, :moderated, title: "Older notification", created_at: 2.days.ago)
+      moderated_notification = create(:proposal_notification,
+                                      :moderated,
+                                      title: "Moderated notification",
+                                      created_at: 1.day.ago)
+      moderated_new_notification = create(:proposal_notification,
+                                          :moderated,
+                                          title: "Moderated new notification",
+                                          created_at: 12.hours.ago)
+      newer_notification = create(:proposal_notification,
+                                  title: "Newer notification",
+                                  created_at: Time.current)
+      old_moderated_notification = create(:proposal_notification,
+                                          :moderated,
+                                          title: "Older notification",
+                                          created_at: 2.days.ago)
 
       visit moderation_proposal_notifications_path(filter: "all", order: "created_at")
 

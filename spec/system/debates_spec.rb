@@ -295,7 +295,9 @@ describe "Debates" do
 
   scenario "JS injection is prevented but autolinking is respected", :no_js do
     author = create(:user)
-    js_injection_string = "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
+    js_injection_string = "<script>alert('hey')</script> " \
+                          "<a href=\"javascript:alert('surprise!')\">click me<a/> " \
+                          "http://example.org"
     login_as(author)
 
     visit new_debate_path
@@ -673,10 +675,19 @@ describe "Debates" do
       create(:debate, title: "First debate has 1 vote", cached_votes_up: 1)
       create(:debate, title: "Second debate has 2 votes", cached_votes_up: 2)
       create(:debate, title: "Third debate has 3 votes", cached_votes_up: 3)
-      create(:debate, title: "This one has 4 votes", description: "This is the fourth debate", cached_votes_up: 4)
+      create(:debate,
+             title: "This one has 4 votes",
+             description: "This is the fourth debate",
+             cached_votes_up: 4)
       create(:debate, title: "Fifth debate has 5 votes", cached_votes_up: 5)
-      create(:debate, title: "Sixth debate has 6 votes", description: "This is the sixth debate",  cached_votes_up: 6)
-      create(:debate, title: "This has seven votes, and is not suggest", description: "This is the seven", cached_votes_up: 7)
+      create(:debate,
+             title: "Sixth debate has 6 votes",
+             description: "This is the sixth debate",
+             cached_votes_up: 6)
+      create(:debate,
+             title: "This has seven votes, and is not suggest",
+             description: "This is the seven",
+             cached_votes_up: 7)
 
       login_as(create(:user))
       visit new_debate_path

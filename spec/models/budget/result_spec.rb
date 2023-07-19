@@ -44,7 +44,9 @@ describe Budget::Result do
       it "removes winners and recalculates" do
         create(:budget_investment, :selected, heading: heading, price: 200, ballot_lines_count: 90)
         create(:budget_investment, :winner, heading: heading, price: 300, ballot_lines_count: 80)
-        create(:budget_investment, :winner, :incompatible, heading: heading, price: 500, ballot_lines_count: 70)
+        create(:budget_investment, :winner, :incompatible, heading: heading,
+                                                           price: 500,
+                                                           ballot_lines_count: 70)
         create(:budget_investment, :winner, heading: heading, price: 500, ballot_lines_count: 60)
         create(:budget_investment, :winner, heading: heading, price: 100, ballot_lines_count: 50)
 

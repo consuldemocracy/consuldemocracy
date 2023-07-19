@@ -62,12 +62,14 @@ describe Debate do
 
   describe "#tag_list" do
     it "is not valid with a tag list of more than 6 elements" do
-      debate.tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa", "Huelgas"]
+      debate.tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción",
+                         "Fiestas populares", "Prensa", "Huelgas"]
       expect(debate).not_to be_valid
     end
 
     it "is valid with a tag list of 6 elements" do
-      debate.tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
+      debate.tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción",
+                         "Fiestas populares", "Prensa"]
       expect(debate).to be_valid
     end
   end
@@ -314,7 +316,9 @@ describe Debate do
 
   describe "#confidence_score" do
     it "takes into account percentage of total votes and total_positive and total negative votes" do
-      debate = create(:debate, :with_confidence_score, cached_votes_up: 100, cached_votes_score: 100, cached_votes_total: 100)
+      debate = create(:debate, :with_confidence_score, cached_votes_up: 100,
+                                                       cached_votes_score: 100,
+                                                       cached_votes_total: 100)
       expect(debate.confidence_score).to eq(10000)
 
       debate = create(:debate, :with_confidence_score, cached_votes_up: 0, cached_votes_total: 100)

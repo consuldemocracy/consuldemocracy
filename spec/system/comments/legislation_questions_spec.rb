@@ -63,7 +63,10 @@ describe "Commenting legislation questions" do
   scenario "Collapsable comments" do
     parent_comment = create(:comment, body: "Main comment", commentable: question)
     child_comment  = create(:comment, body: "First subcomment", commentable: question, parent: parent_comment)
-    grandchild_comment = create(:comment, body: "Last subcomment", commentable: question, parent: child_comment)
+    grandchild_comment = create(:comment,
+                                body: "Last subcomment",
+                                commentable: question,
+                                parent: child_comment)
 
     visit legislation_process_question_path(question.process, question)
 
@@ -162,7 +165,9 @@ describe "Commenting legislation questions" do
 
   scenario "Sanitizes comment body for security" do
     create :comment, commentable: question,
-                     body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
+                     body: "<script>alert('hola')</script> " \
+                           "<a href=\"javascript:alert('sorpresa!')\">click me<a/> " \
+                           "http://www.url.com"
 
     visit legislation_process_question_path(question.process, question)
 

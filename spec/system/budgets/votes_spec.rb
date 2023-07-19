@@ -149,7 +149,8 @@ describe "Votes" do
 
           participation = find(".participation-not-allowed")
           headings = participation.text
-                                  .match(/You have already supported investments in (.+) and (.+)\./)&.captures
+                                  .match(/You have already supported investments in (.+) and (.+)\./)
+                                  &.captures
 
           expect(headings).to match_array [new_york.name, san_francisco.name]
 

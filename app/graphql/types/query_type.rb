@@ -20,8 +20,15 @@ module Types
       argument :id, ID, required: true, default_value: false
     end
 
-    field :proposal_notifications, Types::ProposalNotificationType.connection_type, "Returns all proposal notifications", null: false
-    field :proposal_notification, Types::ProposalNotificationType, "Returns proposal notification for ID", null: false do
+    field :proposal_notifications,
+          Types::ProposalNotificationType.connection_type,
+          "Returns all proposal notifications",
+          null: false
+
+    field :proposal_notification,
+          Types::ProposalNotificationType,
+          "Returns proposal notification for ID",
+          null: false do
       argument :id, ID, required: true, default_value: false
     end
 

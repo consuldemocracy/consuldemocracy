@@ -57,8 +57,14 @@ describe "Commenting legislation questions" do
 
   scenario "Collapsable comments" do
     parent_comment = annotation.comments.first
-    child_comment  = create(:comment, body: "First subcomment", commentable: annotation, parent: parent_comment)
-    grandchild_comment = create(:comment, body: "Last subcomment", commentable: annotation, parent: child_comment)
+    child_comment  = create(:comment,
+                            body: "First subcomment",
+                            commentable: annotation,
+                            parent: parent_comment)
+    grandchild_comment = create(:comment,
+                                body: "Last subcomment",
+                                commentable: annotation,
+                                parent: child_comment)
 
     visit polymorphic_path(annotation)
 
@@ -123,8 +129,14 @@ describe "Commenting legislation questions" do
   scenario "Creation date works differently in roots and child comments when sorting by confidence_score" do
     old_root = create(:comment, commentable: annotation, created_at: Time.current - 10)
     new_root = create(:comment, commentable: annotation, created_at: Time.current)
-    old_child = create(:comment, commentable: annotation, parent_id: new_root.id, created_at: Time.current - 10)
-    new_child = create(:comment, commentable: annotation, parent_id: new_root.id, created_at: Time.current)
+    old_child = create(:comment,
+                       commentable: annotation,
+                       parent_id: new_root.id,
+                       created_at: Time.current - 10)
+    new_child = create(:comment,
+                       commentable: annotation,
+                       parent_id: new_root.id,
+                       created_at: Time.current)
 
     visit polymorphic_path(annotation, order: :most_voted)
 
@@ -158,7 +170,9 @@ describe "Commenting legislation questions" do
 
   scenario "Sanitizes comment body for security" do
     create :comment, commentable: annotation,
-                     body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
+                     body: "<script>alert('hola')</script> " \
+                           "<a href=\"javascript:alert('sorpresa!')\">click me<a/> " \
+                           "http://www.url.com"
 
     visit polymorphic_path(annotation)
 
@@ -563,12 +577,16 @@ describe "Commenting legislation questions" do
   describe "Merged comment threads" do
     let!(:draft_version) { create(:legislation_draft_version, :published) }
     let!(:annotation1) do
-      create(:legislation_annotation, draft_version: draft_version, text: "my annotation",
-                                      ranges: [{ "start" => "/p[1]", "startOffset" => 1, "end" => "/p[1]", "endOffset" => 5 }])
+      create(:legislation_annotation,
+             draft_version: draft_version,
+             text: "my annotation",
+             ranges: [{ "start" => "/p[1]", "startOffset" => 1, "end" => "/p[1]", "endOffset" => 5 }])
     end
     let!(:annotation2) do
-      create(:legislation_annotation, draft_version: draft_version, text: "my other annotation",
-                                      ranges: [{ "start" => "/p[1]", "startOffset" => 1, "end" => "/p[1]", "endOffset" => 10 }])
+      create(:legislation_annotation,
+             draft_version: draft_version,
+             text: "my other annotation",
+             ranges: [{ "start" => "/p[1]", "startOffset" => 1, "end" => "/p[1]", "endOffset" => 10 }])
     end
     let!(:comment1) { annotation1.comments.first }
     let!(:comment2) { annotation2.comments.first }

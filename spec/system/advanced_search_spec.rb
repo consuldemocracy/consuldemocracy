@@ -254,9 +254,11 @@ describe "Advanced search" do
       expect(page).to have_content("citizen proposals cannot be found")
 
       within ".advanced-search-form" do
-        expect(page).to have_select("advanced_search[date_min]", selected: "Customized")
-        expect(page).to have_selector("input[name='advanced_search[date_min]'][value*='#{7.days.ago.strftime("%d/%m/%Y")}']")
-        expect(page).to have_selector("input[name='advanced_search[date_max]'][value*='#{1.day.ago.strftime("%d/%m/%Y")}']")
+        expect(page).to have_select "advanced_search[date_min]", selected: "Customized"
+        expect(page).to have_selector "input[name='advanced_search[date_min]']" \
+                                      "[value*='#{7.days.ago.strftime("%d/%m/%Y")}']"
+        expect(page).to have_selector "input[name='advanced_search[date_max]']" \
+                                      "[value*='#{1.day.ago.strftime("%d/%m/%Y")}']"
       end
     end
   end

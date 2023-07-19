@@ -110,12 +110,14 @@ describe Proposal do
 
   describe "tag_list" do
     it "is not valid with a tag list of more than 6 elements" do
-      proposal.tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa", "Huelgas"]
+      proposal.tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción",
+                           "Fiestas populares", "Prensa", "Huelgas"]
       expect(proposal).not_to be_valid
     end
 
     it "is valid with a tag list of up to 6 elements" do
-      proposal.tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
+      proposal.tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción",
+                           "Fiestas populares", "Prensa"]
       expect(proposal).to be_valid
     end
   end
@@ -256,7 +258,9 @@ describe Proposal do
       user = create(:user, verified_at: Time.current)
       archived_proposal = create(:proposal, :archived)
 
-      expect { archived_proposal.register_vote(user, "yes") }.to change { proposal.reload.votes_for.size }.by(0)
+      expect do
+        archived_proposal.register_vote(user, "yes")
+      end.to change { proposal.reload.votes_for.size }.by(0)
     end
   end
 
@@ -623,7 +627,8 @@ describe Proposal do
 
       it "gives much more weight to word matches than votes" do
         exact_title_few_votes    = create(:proposal, title: "stop corruption", cached_votes_up: 5)
-        similar_title_many_votes = create(:proposal, title: "stop some of the corruption", cached_votes_up: 500)
+        similar_title_many_votes = create(:proposal, title: "stop some of the corruption",
+                                                     cached_votes_up: 500)
 
         results = Proposal.search("stop corruption")
 
@@ -683,9 +688,9 @@ describe Proposal do
       end
 
       it "is able to reorder by most commented after searching" do
-        least_commented = create(:proposal,  title: "stop corruption",  cached_votes_up: 1, comments_count: 1)
-        most_commented  = create(:proposal,  title: "stop corruption",  cached_votes_up: 2, comments_count: 100)
-        some_comments   = create(:proposal,  title: "stop corruption",  cached_votes_up: 3, comments_count: 10)
+        least_commented = create(:proposal, title: "stop corruption", cached_votes_up: 1, comments_count: 1)
+        most_commented  = create(:proposal, title: "stop corruption", cached_votes_up: 2, comments_count: 100)
+        some_comments   = create(:proposal, title: "stop corruption", cached_votes_up: 3, comments_count: 10)
 
         results = Proposal.search("stop corruption")
 

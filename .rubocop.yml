@@ -120,7 +120,14 @@ Layout/LineEndStringConcatenationIndentation:
 
 Layout/LineLength:
   Max: 110
-  Severity: refactor
+  Exclude:
+    - "Gemfile"
+    - "config/environments/production.rb"
+    - "config/environments/staging.rb"
+    - "config/initializers/devise.rb"
+    - "config/initializers/backtrace_silencers.rb"
+    - "db/migrate/*create_delayed_jobs.rb"
+    - "app/models/budget/stats.rb"
 
 Layout/MultilineArrayBraceLayout:
   Enabled: true

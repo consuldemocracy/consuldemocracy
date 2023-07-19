@@ -786,22 +786,26 @@ describe User do
       debate = create(:debate, :hidden, author: user)
       investment = create(:budget_investment, :hidden, author: user)
       proposal = create(:proposal, :hidden, author: user)
-      proposal_notification = create(:proposal_notification, :hidden, proposal: proposal)
       legislation_proposal = create(:legislation_proposal, :hidden, author: user)
+      proposal_notification = create(:proposal_notification, :hidden, proposal: proposal)
 
       old_hidden_comment = create(:comment, hidden_at: 3.days.ago, author: user)
       old_hidden_debate = create(:debate, hidden_at: 3.days.ago, author: user)
       old_hidden_investment = create(:budget_investment, hidden_at: 3.days.ago, author: user)
       old_hidden_proposal = create(:proposal, hidden_at: 3.days.ago, author: user)
-      old_hidden_proposal_notification = create(:proposal_notification, hidden_at: 3.days.ago, proposal: proposal)
       old_hidden_legislation_proposal = create(:legislation_proposal, hidden_at: 3.days.ago, author: user)
+      old_hidden_proposal_notification = create(:proposal_notification,
+                                                hidden_at: 3.days.ago,
+                                                proposal: proposal)
 
       other_user_comment = create(:comment, :hidden, author: other_user)
       other_user_debate = create(:debate, :hidden, author: other_user)
       other_user_proposal = create(:proposal, :hidden, author: other_user)
       other_user_investment = create(:budget_investment, :hidden, author: other_user)
-      other_user_proposal_notification = create(:proposal_notification, :hidden, proposal: other_user_proposal)
       other_user_legislation_proposal = create(:legislation_proposal, :hidden, author: other_user)
+      other_user_proposal_notification = create(:proposal_notification,
+                                                :hidden,
+                                                proposal: other_user_proposal)
 
       user.full_restore
 

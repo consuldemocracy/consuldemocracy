@@ -2,8 +2,10 @@ module Filterable
   extend ActiveSupport::Concern
 
   included do
-    scope :by_official_level, ->(official_level) { where(users: { official_level: official_level }).joins(:author) }
-    scope :by_date_range,     ->(date_range)     { where(created_at: date_range) }
+    scope :by_date_range,     ->(date_range) { where(created_at: date_range) }
+    scope :by_official_level, ->(official_level) do
+      where(users: { official_level: official_level }).joins(:author)
+    end
   end
 
   class_methods do

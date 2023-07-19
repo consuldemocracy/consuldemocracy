@@ -30,7 +30,9 @@ describe Ahoy::DataSource do
       ds = Ahoy::DataSource.new
       ds.add "foo", Ahoy::Event.where(name: "foo").group_by_day(:time).count
       ds.add "bar", Ahoy::Event.where(name: "bar").group_by_day(:time).count
-      expect(ds.build).to eq :x => ["2015-01-01", "2015-01-02", "2015-01-03"], "foo" => [2, 1, 0], "bar" => [1, 0, 2]
+      expect(ds.build).to eq :x => ["2015-01-01", "2015-01-02", "2015-01-03"],
+                             "foo" => [2, 1, 0],
+                             "bar" => [1, 0, 2]
     end
   end
 end

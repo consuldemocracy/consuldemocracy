@@ -58,7 +58,8 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         select "Español", from: "Language:"
 
         expect(page).not_to have_button("Traducir página")
-        expect(page).to have_content("En un breve periodo de tiempo refrescando la página podrá ver todo el contenido en su idioma")
+        expect(page).to have_content "En un breve periodo de tiempo refrescando la página " \
+                                     "podrá ver todo el contenido en su idioma"
       end
     end
 
@@ -152,8 +153,9 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
 
         click_button "Traducir página"
 
-        expect(page).to have_content("Se han solicitado correctamente las traducciones.")
-        expect(page).to have_content("En un breve periodo de tiempo refrescando la página podrá ver todo el contenido en su idioma")
+        expect(page).to have_content "Se han solicitado correctamente las traducciones."
+        expect(page).to have_content "En un breve periodo de tiempo refrescando la página " \
+                                     "podrá ver todo el contenido en su idioma"
       end
 
       scenario "should be present only informative text when user visit page with all content enqueued" do
@@ -166,8 +168,9 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         select "Español", from: "Idioma:"
 
         expect(page).not_to have_button "Traducir página"
-        expect(page).not_to have_content("Se han solicitado correctamente las traducciones.")
-        expect(page).to have_content("En un breve periodo de tiempo refrescando la página podrá ver todo el contenido en su idioma")
+        expect(page).not_to have_content "Se han solicitado correctamente las traducciones."
+        expect(page).to have_content "En un breve periodo de tiempo refrescando la página " \
+                                     "podrá ver todo el contenido en su idioma"
       end
     end
 

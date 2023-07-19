@@ -56,7 +56,8 @@ class Budget
              class_name: "Comment"
 
     validates_translation :title, presence: true, length: { in: 4..Budget::Investment.title_max_length }
-    validates_translation :description, presence: true, length: { maximum: Budget::Investment.description_max_length }
+    validates_translation :description, presence: true,
+                                        length: { maximum: Budget::Investment.description_max_length }
 
     validates :author, presence: true
     validates :heading_id, presence: true
@@ -104,7 +105,9 @@ class Budget
     scope :by_heading,          ->(heading_id) { where(heading_id: heading_id) }
     scope :by_admin,            ->(admin_id)   { where(administrator_id: admin_id) }
     scope :by_tag,              ->(tag_name)   { tagged_with(tag_name).distinct }
-    scope :visible_to_valuator, ->(valuator)   { visible_to_valuators.where(id: valuator&.assigned_investment_ids) }
+    scope :visible_to_valuator, ->(valuator) do
+      visible_to_valuators.where(id: valuator&.assigned_investment_ids)
+    end
 
     scope :for_render, -> { includes(:heading) }
 

@@ -185,7 +185,8 @@ describe "Consul Schema" do
     it "returns nested votes for a proposal" do
       proposal = create(:proposal, voters: [create(:user), create(:user)])
 
-      response = execute("{ proposal(id: #{proposal.id}) { votes_for { edges { node { public_created_at } } } } }")
+      response = execute("{ proposal(id: #{proposal.id}) " \
+                         "{ votes_for { edges { node { public_created_at } } } } }")
 
       votes = response["data"]["proposal"]["votes_for"]["edges"]
       expect(votes.count).to eq(2)

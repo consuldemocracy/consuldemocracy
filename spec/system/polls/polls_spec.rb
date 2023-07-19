@@ -337,7 +337,8 @@ describe "Polls" do
       login_as user
       visit poll_path(poll)
 
-      expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
+      expect(page).to have_content "You have already participated in a physical booth. " \
+                                   "You can not participate again."
 
       within("#poll_question_#{question.id}_answers") do
         expect(page).to have_content("Yes")

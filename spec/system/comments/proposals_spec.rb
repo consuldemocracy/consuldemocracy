@@ -57,7 +57,10 @@ describe "Commenting proposals" do
   scenario "Collapsable comments" do
     parent_comment = create(:comment, body: "Main comment", commentable: proposal)
     child_comment  = create(:comment, body: "First subcomment", commentable: proposal, parent: parent_comment)
-    grandchild_comment = create(:comment, body: "Last subcomment", commentable: proposal, parent: child_comment)
+    grandchild_comment = create(:comment,
+                                body: "Last subcomment",
+                                commentable: proposal,
+                                parent: child_comment)
 
     visit proposal_path(proposal)
 
@@ -156,7 +159,9 @@ describe "Commenting proposals" do
 
   scenario "Sanitizes comment body for security" do
     create :comment, commentable: proposal,
-                     body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
+                     body: "<script>alert('hola')</script> " \
+                           "<a href=\"javascript:alert('sorpresa!')\">click me<a/> " \
+                           "http://www.url.com"
 
     visit proposal_path(proposal)
 

@@ -9,10 +9,17 @@ module Verification
     scope :phone_not_fully_confirmed, -> { where(unconfirmed_phone: nil).or(where(confirmed_phone: nil)) }
 
     scope :level_three_verified, -> { where.not(verified_at: nil) }
-    scope :level_two_verified, -> { where.not(level_two_verified_at: nil).or(residence_and_phone_verified.where(verified_at: nil)) }
+    scope :level_two_verified, -> do
+      where.not(level_two_verified_at: nil).or(residence_and_phone_verified.where(verified_at: nil))
+    end
     scope :level_two_or_three_verified, -> { level_two_verified.or(level_three_verified) }
-    scope :unverified, -> { residence_or_phone_unverified.where(verified_at: nil, level_two_verified_at: nil) }
-    scope :incomplete_verification, -> { residence_unverified.where("failed_census_calls_count > ?", 0).or(residence_verified.phone_not_fully_confirmed) }
+    scope :unverified, -> do
+      residence_or_phone_unverified.where(verified_at: nil, level_two_verified_at: nil)
+    end
+    scope :incomplete_verification, -> do
+      residence_unverified.where("failed_census_calls_count > ?", 0)
+                          .or(residence_verified.phone_not_fully_confirmed)
+    end
   end
 
   def skip_verification?

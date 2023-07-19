@@ -211,7 +211,9 @@ describe "Cards", :admin do
         card_1 = create(:widget_card, cardable: custom_page, title: "Card one")
         card_2 = create(:widget_card, cardable: custom_page, title: "Card two")
 
-        card_1.update!(image: create(:image, imageable: card_1, attachment: fixture_file_upload("clippy.jpg")))
+        card_1.update!(image: create(:image,
+                                     imageable: card_1,
+                                     attachment: fixture_file_upload("clippy.jpg")))
         card_2.update!(image: nil)
 
         visit custom_page.url

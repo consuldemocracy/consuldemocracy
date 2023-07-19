@@ -386,8 +386,9 @@ describe "Emails" do
       expect(page).to have_content "Dossier updated"
 
       email = open_last_email
-      expect(email).to have_subject("Your investment project '#{investment.code}' has been marked as unfeasible")
-      expect(email).to deliver_to(investment.author.email)
+      expect(email).to have_subject "Your investment project '#{investment.code}' " \
+                                    "has been marked as unfeasible"
+      expect(email).to deliver_to investment.author.email
       expect(email).to have_body_text "This is not legal as stated in Article 34.9"
     end
 

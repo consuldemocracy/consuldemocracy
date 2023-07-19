@@ -6,7 +6,9 @@ describe Admin::Geozones::IndexComponent, :admin do
       geozones = [
         create(:geozone, :with_geojson, name: "GeoJSON", external_code: "1", census_code: "2"),
         create(:geozone, :with_html_coordinates, name: "HTML", external_code: "3", census_code: "4"),
-        create(:geozone, :with_geojson, :with_html_coordinates, name: "With both", external_code: "6", census_code: "7"),
+        create(:geozone, :with_geojson, :with_html_coordinates, name: "With both",
+                                                                external_code: "6",
+                                                                census_code: "7"),
         create(:geozone, name: "With none", external_code: "8", census_code: "9")
       ]
 

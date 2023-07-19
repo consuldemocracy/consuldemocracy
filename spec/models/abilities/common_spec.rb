@@ -25,10 +25,18 @@ describe Abilities::Common do
   let(:investment_in_reviewing_budget) { create(:budget_investment, budget: reviewing_budget) }
   let(:investment_in_selecting_budget) { create(:budget_investment, budget: selecting_budget) }
   let(:investment_in_balloting_budget) { create(:budget_investment, budget: balloting_budget) }
-  let(:own_investment_in_accepting_budget) { create(:budget_investment, budget: accepting_budget, author: user) }
-  let(:own_investment_in_reviewing_budget) { create(:budget_investment, budget: reviewing_budget, author: user) }
-  let(:own_investment_in_selecting_budget) { create(:budget_investment, budget: selecting_budget, author: user) }
-  let(:own_investment_in_balloting_budget) { create(:budget_investment, budget: balloting_budget, author: user) }
+  let(:own_investment_in_accepting_budget) do
+    create(:budget_investment, budget: accepting_budget, author: user)
+  end
+  let(:own_investment_in_reviewing_budget) do
+    create(:budget_investment, budget: reviewing_budget, author: user)
+  end
+  let(:own_investment_in_selecting_budget) do
+    create(:budget_investment, budget: selecting_budget, author: user)
+  end
+  let(:own_investment_in_balloting_budget) do
+    create(:budget_investment, budget: balloting_budget, author: user)
+  end
   let(:ballot_in_accepting_budget) { create(:budget_ballot, budget: accepting_budget) }
   let(:ballot_in_selecting_budget) { create(:budget_ballot, budget: selecting_budget) }
   let(:ballot_in_balloting_budget) { create(:budget_ballot, budget: balloting_budget) }
@@ -45,9 +53,13 @@ describe Abilities::Common do
   let(:poll_question_from_other_geozone) { create(:poll_question, poll: poll_from_other_geozone) }
   let(:poll_question_from_all_geozones)  { create(:poll_question, poll: poll) }
 
-  let(:expired_poll_question_from_own_geozone)   { create(:poll_question, poll: expired_poll_from_own_geozone) }
-  let(:expired_poll_question_from_other_geozone) { create(:poll_question, poll: expired_poll_from_other_geozone) }
-  let(:expired_poll_question_from_all_geozones)  { create(:poll_question, poll: expired_poll) }
+  let(:expired_poll_question_from_own_geozone) do
+    create(:poll_question, poll: expired_poll_from_own_geozone)
+  end
+  let(:expired_poll_question_from_other_geozone) do
+    create(:poll_question, poll: expired_poll_from_other_geozone)
+  end
+  let(:expired_poll_question_from_all_geozones) { create(:poll_question, poll: expired_poll) }
 
   let(:own_proposal_document)          { build(:document, documentable: own_proposal) }
   let(:proposal_document)              { build(:document, documentable: proposal) }

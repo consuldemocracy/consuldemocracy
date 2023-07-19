@@ -137,7 +137,10 @@ class ProposalsController < ApplicationController
     def load_retired
       if params[:retired].present?
         @resources = @resources.retired
-        @resources = @resources.where(retired_reason: params[:retired]) if Proposal::RETIRE_OPTIONS.include?(params[:retired])
+
+        if Proposal::RETIRE_OPTIONS.include?(params[:retired])
+          @resources = @resources.where(retired_reason: params[:retired])
+        end
       else
         @resources = @resources.not_retired
       end
@@ -152,7 +155,8 @@ class ProposalsController < ApplicationController
     end
 
     def load_featured
-      return unless !@advanced_search_terms && @search_terms.blank? && params[:retired].blank? && @current_order != "recommendations"
+      return unless !@advanced_search_terms && @search_terms.blank? &&
+                    params[:retired].blank? && @current_order != "recommendations"
 
       if Setting["feature.featured_proposals"]
         @featured_proposals = Proposal.not_archived

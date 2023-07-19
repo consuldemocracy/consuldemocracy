@@ -91,7 +91,9 @@ describe "Officing Results", :with_frozen_time do
       amount: 7777
     )
 
-    visit officing_poll_results_path(poll, date: I18n.l(partial_result.date), booth_assignment_id: partial_result.booth_assignment_id)
+    visit officing_poll_results_path(poll,
+                                     date: I18n.l(partial_result.date),
+                                     booth_assignment_id: partial_result.booth_assignment_id)
 
     within("#question_#{question_1.id}_0_result") { expect(page).to have_content("7777") }
 

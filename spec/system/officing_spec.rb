@@ -137,7 +137,11 @@ describe "Poll Officing" do
       expect(page).to have_content "Document verified with Census"
       click_button "Confirm vote"
       expect(page).to have_content "Vote introduced!"
-      expect(Poll::Voter.where(document_number: "12345678Z", poll_id: poll, origin: "booth", officer_id: officer1).count).to be(1)
+      expect(Poll::Voter.where(document_number: "12345678Z",
+                               poll_id: poll,
+                               origin: "booth",
+                               officer_id: officer1)
+                        .count).to be(1)
 
       visit final_officing_polls_path
       expect(page).to have_content("Polls ready for final recounting")
@@ -156,7 +160,11 @@ describe "Poll Officing" do
       expect(page).to have_content "Document verified with Census"
       click_button "Confirm vote"
       expect(page).to have_content "Vote introduced!"
-      expect(Poll::Voter.where(document_number: "12345678Y", poll_id: poll, origin: "booth", officer_id: officer2).count).to be(1)
+      expect(Poll::Voter.where(document_number: "12345678Y",
+                               poll_id: poll,
+                               origin: "booth",
+                               officer_id: officer2)
+                        .count).to be(1)
 
       visit final_officing_polls_path
       expect(page).to have_content("Polls ready for final recounting")

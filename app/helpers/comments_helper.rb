@@ -21,9 +21,17 @@ module CommentsHelper
 
   def comment_button_text(parent_id, commentable)
     if commentable.class == Legislation::Question
-      parent_id.present? ? t("comments_helper.reply_button") : t("legislation.questions.comments.comment_button")
+      if parent_id.present?
+        t("comments_helper.reply_button")
+      else
+        t("legislation.questions.comments.comment_button")
+      end
     else
-      parent_id.present? ? t("comments_helper.reply_button") : t("comments_helper.comment_button")
+      if parent_id.present?
+        t("comments_helper.reply_button")
+      else
+        t("comments_helper.comment_button")
+      end
     end
   end
 

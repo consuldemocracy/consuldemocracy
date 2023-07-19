@@ -4,7 +4,8 @@ describe "Users" do
   context "Regular authentication" do
     context "Sign up" do
       scenario "Success" do
-        message = "You have been sent a message containing a verification link. Please click on this link to activate your account."
+        message = "You have been sent a message containing a verification link. " \
+                  "Please click on this link to activate your account."
         visit "/"
         click_link "Register"
 
@@ -32,7 +33,8 @@ describe "Users" do
       end
 
       scenario "User already confirmed email with the token" do
-        message = "You have been sent a message containing a verification link. Please click on this link to activate your account."
+        message = "You have been sent a message containing a verification link. " \
+                  "Please click on this link to activate your account."
         visit "/"
         click_link "Register"
 
@@ -224,7 +226,9 @@ describe "Users" do
 
     context "Twitter" do
       let(:twitter_hash) { { uid: "12345", info: { name: "manuela" }} }
-      let(:twitter_hash_with_email) { { uid: "12345", info: { name: "manuela", email: "manuelacarmena@example.com" }} }
+      let(:twitter_hash_with_email) do
+        { uid: "12345", info: { name: "manuela", email: "manuelacarmena@example.com" }}
+      end
       let(:twitter_hash_with_verified_email) do
         {
           uid: "12345",
@@ -264,7 +268,8 @@ describe "Users" do
         click_link "Sign up with Twitter"
 
         expect(page).to have_current_path(new_user_session_path)
-        expect(page).to have_content "To continue, please click on the confirmation link that we have sent you via email"
+        expect(page).to have_content "To continue, please click on the confirmation " \
+                                     "link that we have sent you via email"
 
         confirm_email
         expect(page).to have_content "Your account has been confirmed"
@@ -294,7 +299,8 @@ describe "Users" do
         fill_in "Email", with: "manueladelascarmenas@example.com"
         click_button "Register"
 
-        expect(page).to have_content "To continue, please click on the confirmation link that we have sent you via email"
+        expect(page).to have_content "To continue, please click on the confirmation " \
+                                     "link that we have sent you via email"
 
         confirm_email
         expect(page).to have_content "Your account has been confirmed"
@@ -393,7 +399,8 @@ describe "Users" do
         fill_in "Username", with: "manuela2"
         click_button "Register"
 
-        expect(page).to have_content "To continue, please click on the confirmation link that we have sent you via email"
+        expect(page).to have_content "To continue, please click on the confirmation " \
+                                     "link that we have sent you via email"
 
         confirm_email
 
@@ -429,7 +436,8 @@ describe "Users" do
         fill_in "Email", with: "somethingelse@example.com"
         click_button "Register"
 
-        expect(page).to have_content "To continue, please click on the confirmation link that we have sent you via email"
+        expect(page).to have_content "To continue, please click on the confirmation " \
+                                     "link that we have sent you via email"
 
         confirm_email
         expect(page).to have_content "Your account has been confirmed"
@@ -462,7 +470,8 @@ describe "Users" do
         fill_in "Email", with: "somethingelse@example.com"
         click_button "Register"
 
-        expect(page).to have_content "To continue, please click on the confirmation link that we have sent you via email"
+        expect(page).to have_content "To continue, please click on the confirmation " \
+                                     "link that we have sent you via email"
 
         confirm_email
         expect(page).to have_content "Your account has been confirmed"
@@ -529,7 +538,8 @@ describe "Users" do
         click_link "Sign up with Wordpress"
 
         expect(page).to have_current_path(new_user_session_path)
-        expect(page).to have_content "To continue, please click on the confirmation link that we have sent you via email"
+        expect(page).to have_content "To continue, please click on the confirmation " \
+                                     "link that we have sent you via email"
 
         confirm_email
         expect(page).to have_content "Your account has been confirmed"
@@ -569,7 +579,8 @@ describe "Users" do
         click_button "Register"
 
         expect(page).to have_current_path(new_user_session_path)
-        expect(page).to have_content "To continue, please click on the confirmation link that we have sent you via email"
+        expect(page).to have_content "To continue, please click on the confirmation " \
+                                     "link that we have sent you via email"
 
         confirm_email
         expect(page).to have_content "Your account has been confirmed"

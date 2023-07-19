@@ -1,6 +1,10 @@
 class ManagerAuthenticator
   def initialize(data = {})
-    @manager = { login: data[:login], user_key: data[:clave_usuario], date: data[:fecha_conexion] }.with_indifferent_access
+    @manager = {
+      login: data[:login],
+      user_key: data[:clave_usuario],
+      date: data[:fecha_conexion]
+    }.with_indifferent_access
   end
 
   def auth
@@ -13,7 +17,11 @@ class ManagerAuthenticator
   private
 
     def manager_exists?
-      response = client.call(:get_status_user_data, message: { ub: { user_key: @manager[:user_key], date: @manager[:date] }}).body
+      response = client.call(
+        :get_status_user_data,
+        message: { ub: { user_key: @manager[:user_key], date: @manager[:date] }}
+      ).body
+
       parsed_response = parser.parse((response[:get_status_user_data_response][:get_status_user_data_return]))
       @manager[:login] == parsed_response["USUARIO"]["LOGIN"]
     rescue
@@ -21,13 +29,17 @@ class ManagerAuthenticator
     end
 
     def application_authorized?
-      response = client.call(:get_applications_user_list, message: { ub: { user_key: @manager[:user_key] }}).body
+      response = client.call(
+        :get_applications_user_list,
+        message: { ub: { user_key: @manager[:user_key] }}
+      ).body
+
       user_list_return = response[:get_applications_user_list_response][:get_applications_user_list_return]
       parsed_response = parser.parse(user_list_return)
-
       aplication_value = parsed_response["APLICACIONES"]["APLICACION"]
       # aplication_value from UWEB can be an array of hashes or a hash
-      aplication_value.include?("CLAVE_APLICACION" => application_key) || aplication_value["CLAVE_APLICACION"] == application_key
+      aplication_value.include?("CLAVE_APLICACION" => application_key) ||
+        aplication_value["CLAVE_APLICACION"] == application_key
     rescue
       false
     end

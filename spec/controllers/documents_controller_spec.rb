@@ -10,7 +10,8 @@ describe DocumentsController do
         document = create(:document, documentable: current_answer)
         delete :destroy, params: { id: document }
 
-        expect(flash[:alert]).to eq "You do not have permission to carry out the action 'destroy' on Document."
+        expect(flash[:alert]).to eq "You do not have permission to " \
+                                    "carry out the action 'destroy' on Document."
         expect(Document.count).to eq 1
       end
 

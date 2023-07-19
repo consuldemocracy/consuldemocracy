@@ -169,7 +169,9 @@ describe "Commenting topics from proposals" do
     community = proposal.community
     topic = create(:topic, community: community)
     create :comment, commentable: topic,
-                     body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
+                     body: "<script>alert('hola')</script> " \
+                           "<a href=\"javascript:alert('sorpresa!')\">click me<a/> " \
+                           "http://www.url.com"
 
     visit community_topic_path(community, topic)
 
@@ -716,7 +718,9 @@ describe "Commenting topics from budget investments" do
     community = investment.community
     topic = create(:topic, community: community)
     create :comment, commentable: topic,
-                     body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
+                     body: "<script>alert('hola')</script> " \
+                           "<a href=\"javascript:alert('sorpresa!')\">click me<a/> " \
+                           "http://www.url.com"
 
     visit community_topic_path(community, topic)
 

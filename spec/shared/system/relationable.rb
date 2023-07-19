@@ -9,7 +9,10 @@ shared_examples "relationable" do |relationable_model_name|
   end
 
   scenario "related contents are listed" do
-    create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
+    create(:related_content,
+           parent_relationable: relationable,
+           child_relationable: related1,
+           author: build(:user))
 
     visit polymorphic_path(relationable)
     within("#related-content-list") do
@@ -136,7 +139,10 @@ shared_examples "relationable" do |relationable_model_name|
   end
 
   scenario "related content can be scored positively" do
-    create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
+    create(:related_content,
+           parent_relationable: relationable,
+           child_relationable: related1,
+           author: build(:user))
 
     login_as(user)
     visit polymorphic_path(relationable)
@@ -150,7 +156,10 @@ shared_examples "relationable" do |relationable_model_name|
   end
 
   scenario "related content can be scored negatively" do
-    create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
+    create(:related_content,
+           parent_relationable: relationable,
+           child_relationable: related1,
+           author: build(:user))
 
     login_as(user)
     visit polymorphic_path(relationable)
@@ -164,7 +173,10 @@ shared_examples "relationable" do |relationable_model_name|
   end
 
   scenario "if related content has negative score it will be hidden" do
-    related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
+    related_content = create(:related_content,
+                             parent_relationable: relationable,
+                             child_relationable: related1,
+                             author: build(:user))
 
     2.times do
       related_content.send(:score_positive, build(:user))
