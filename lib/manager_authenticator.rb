@@ -22,7 +22,9 @@ class ManagerAuthenticator
 
     def application_authorized?
       response = client.call(:get_applications_user_list, message: { ub: { user_key: @manager[:user_key] }}).body
-      parsed_response = parser.parse((response[:get_applications_user_list_response][:get_applications_user_list_return]))
+      user_list_return = response[:get_applications_user_list_response][:get_applications_user_list_return]
+      parsed_response = parser.parse(user_list_return)
+
       aplication_value = parsed_response["APLICACIONES"]["APLICACION"]
       # aplication_value from UWEB can be an array of hashes or a hash
       aplication_value.include?("CLAVE_APLICACION" => application_key) || aplication_value["CLAVE_APLICACION"] == application_key
