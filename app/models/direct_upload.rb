@@ -9,7 +9,7 @@ class DirectUpload
 
   validates :attachment, :resource_type, :resource_relation, :user, presence: true
   validate :parent_resource_attachment_validations,
-           if: -> { attachment.present? && resource_type.present? && resource_relation.present? && user.present? }
+           if: -> { [attachment, resource_type, resource_relation, user].all?(&:present?) }
 
   def initialize(attributes = {})
     attributes.each do |name, value|
