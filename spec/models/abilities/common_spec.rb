@@ -35,11 +35,11 @@ describe Abilities::Common do
 
   let(:current_poll) { create(:poll) }
   let(:expired_poll) { create(:poll, :expired) }
-  let(:expired_poll_from_own_geozone) { create(:poll, :expired, geozone_restricted: true, geozones: [geozone]) }
-  let(:expired_poll_from_other_geozone) { create(:poll, :expired, geozone_restricted: true, geozones: [create(:geozone)]) }
+  let(:expired_poll_from_own_geozone) { create(:poll, :expired, geozone_restricted_to: [geozone]) }
+  let(:expired_poll_from_other_geozone) { create(:poll, :expired, geozone_restricted_to: [create(:geozone)]) }
   let(:poll) { create(:poll, geozone_restricted: false) }
-  let(:poll_from_own_geozone) { create(:poll, geozone_restricted: true, geozones: [geozone]) }
-  let(:poll_from_other_geozone) { create(:poll, geozone_restricted: true, geozones: [create(:geozone)]) }
+  let(:poll_from_own_geozone) { create(:poll, geozone_restricted_to: [geozone]) }
+  let(:poll_from_other_geozone) { create(:poll, geozone_restricted_to: [create(:geozone)]) }
 
   let(:poll_question_from_own_geozone)   { create(:poll_question, poll: poll_from_own_geozone) }
   let(:poll_question_from_other_geozone) { create(:poll_question, poll: poll_from_other_geozone) }

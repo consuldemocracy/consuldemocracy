@@ -181,6 +181,11 @@ class Poll < ApplicationRecord
     end
   end
 
+  def geozone_restricted_to=(geozones)
+    self.geozone_restricted = true
+    self.geozones = geozones
+  end
+
   def generate_slug?
     slug.nil?
   end

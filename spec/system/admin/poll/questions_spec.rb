@@ -32,7 +32,7 @@ describe "Admin poll questions", :admin do
 
   scenario "Show" do
     geozone = create(:geozone)
-    poll = create(:poll, geozone_restricted: true, geozone_ids: [geozone.id])
+    poll = create(:poll, geozone_restricted_to: [geozone])
     question = create(:poll_question, poll: poll)
 
     visit admin_poll_path(poll)
