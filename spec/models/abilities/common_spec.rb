@@ -265,9 +265,9 @@ describe Abilities::Common do
       it { should be_able_to(:create, user.votes.build(votable: investment_in_selecting_budget)) }
       it { should_not be_able_to(:create, user.votes.build(votable: investment_in_accepting_budget)) }
       it { should_not be_able_to(:create, user.votes.build(votable: investment_in_balloting_budget)) }
-      it { should be_able_to(:destroy, create(:vote, voter: user, votable: investment_in_selecting_budget)) }
-      it { should_not be_able_to(:destroy, create(:vote, voter: user, votable: investment_in_accepting_budget)) }
-      it { should_not be_able_to(:destroy, create(:vote, voter: user, votable: investment_in_balloting_budget)) }
+      it { should be_able_to(:destroy, user.votes.create!(votable: investment_in_selecting_budget)) }
+      it { should_not be_able_to(:destroy, user.votes.create!(votable: investment_in_accepting_budget)) }
+      it { should_not be_able_to(:destroy, user.votes.create!(votable: investment_in_balloting_budget)) }
 
       it { should_not be_able_to(:destroy, investment_in_accepting_budget) }
       it { should_not be_able_to(:destroy, investment_in_reviewing_budget) }
