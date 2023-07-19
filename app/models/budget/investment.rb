@@ -71,12 +71,16 @@ class Budget
     scope :sort_by_supports,         -> { order("cached_votes_up DESC") }
 
     scope :valuation_open,              -> { where(valuation_finished: false) }
+    scope :with_admin,                  -> { where.not(administrator_id: nil) }
     scope :without_admin,               -> { where(administrator_id: nil) }
     scope :without_valuator_group,      -> { where(valuator_group_assignments_count: 0) }
     scope :without_valuator,            -> { without_valuator_group.where(valuator_assignments_count: 0) }
-    scope :under_valuation,             -> { valuation_open.valuating.where("administrator_id IS NOT ?", nil) }
-    scope :managed,                     -> { valuation_open.where(valuator_assignments_count: 0).where("administrator_id IS NOT ?", nil) }
-    scope :valuating,                   -> { valuation_open.where("valuator_assignments_count > 0 OR valuator_group_assignments_count > 0") }
+    scope :under_valuation,             -> { valuation_open.valuating.with_admin }
+    scope :managed,                     -> { valuation_open.where(valuator_assignments_count: 0).with_admin }
+    scope :with_valuator_assignments,   -> { where("valuator_assignments_count > 0") }
+    scope :with_group_assignments,      -> { where("valuator_group_assignments_count > 0") }
+    scope :with_valuation_assignments,  -> { with_valuator_assignments.or(with_group_assignments) }
+    scope :valuating,                   -> { valuation_open.with_valuation_assignments }
     scope :visible_to_valuators,        -> { where(visible_to_valuators: true) }
     scope :valuation_finished,          -> { where(valuation_finished: true) }
     scope :valuation_finished_feasible, -> { where(valuation_finished: true, feasibility: "feasible") }
