@@ -3,11 +3,16 @@ module Verification
 
   included do
     scope :residence_verified, -> { where.not(residence_verified_at: nil) }
+    scope :residence_unverified, -> { where(residence_verified_at: nil) }
+    scope :residence_and_phone_verified, -> { residence_verified.where.not(confirmed_phone: nil) }
+    scope :residence_or_phone_unverified, -> { residence_unverified.or(where(confirmed_phone: nil)) }
+    scope :phone_not_fully_confirmed, -> { where(unconfirmed_phone: nil).or(where(confirmed_phone: nil)) }
+
     scope :level_three_verified, -> { where.not(verified_at: nil) }
-    scope :level_two_verified, -> { where("users.level_two_verified_at IS NOT NULL OR (users.confirmed_phone IS NOT NULL AND users.residence_verified_at IS NOT NULL) AND verified_at IS NULL") }
-    scope :level_two_or_three_verified, -> { where("users.verified_at IS NOT NULL OR users.level_two_verified_at IS NOT NULL OR (users.confirmed_phone IS NOT NULL AND users.residence_verified_at IS NOT NULL)") }
-    scope :unverified, -> { where("users.verified_at IS NULL AND (users.level_two_verified_at IS NULL AND (users.residence_verified_at IS NULL OR users.confirmed_phone IS NULL))") }
-    scope :incomplete_verification, -> { where("(users.residence_verified_at IS NULL AND users.failed_census_calls_count > ?) OR (users.residence_verified_at IS NOT NULL AND (users.unconfirmed_phone IS NULL OR users.confirmed_phone IS NULL))", 0) }
+    scope :level_two_verified, -> { where.not(level_two_verified_at: nil).or(residence_and_phone_verified.where(verified_at: nil)) }
+    scope :level_two_or_three_verified, -> { level_two_verified.or(level_three_verified) }
+    scope :unverified, -> { residence_or_phone_unverified.where(verified_at: nil, level_two_verified_at: nil) }
+    scope :incomplete_verification, -> { residence_unverified.where("failed_census_calls_count > ?", 0).or(residence_verified.phone_not_fully_confirmed) }
   end
 
   def skip_verification?
