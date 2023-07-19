@@ -229,5 +229,9 @@ class Setting < ApplicationRecord
       Setting["feature.remote_census"].present? &&
         Setting["remote_census.request.postal_code"].present?
     end
+
+    def archived_proposals_date_limit
+      Setting["months_to_archive_proposals"].to_i.months.ago
+    end
   end
 end

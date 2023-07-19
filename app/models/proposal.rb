@@ -72,8 +72,8 @@ class Proposal < ApplicationRecord
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :sort_by_archival_date,    -> { archived.sort_by_confidence_score }
   scope :sort_by_recommendations,  -> { order(cached_votes_up: :desc) }
-  scope :archived,                 -> { where("proposals.created_at <= ?", Setting["months_to_archive_proposals"].to_i.months.ago) }
-  scope :not_archived,             -> { where("proposals.created_at > ?", Setting["months_to_archive_proposals"].to_i.months.ago) }
+  scope :archived,                 -> { where("proposals.created_at <= ?", Setting.archived_proposals_date_limit) }
+  scope :not_archived,             -> { where("proposals.created_at > ?", Setting.archived_proposals_date_limit) }
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago) }
   scope :retired,                  -> { where.not(retired_at: nil) }
   scope :not_retired,              -> { where(retired_at: nil) }
@@ -221,7 +221,7 @@ class Proposal < ApplicationRecord
   end
 
   def archived?
-    created_at <= Setting["months_to_archive_proposals"].to_i.months.ago
+    created_at <= Setting.archived_proposals_date_limit
   end
 
   def notifications

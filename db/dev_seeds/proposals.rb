@@ -49,7 +49,6 @@ section "Creating Archived Proposals" do
   5.times do
     author = User.all.sample
     description = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"
-    months_to_archive_proposals = Setting["months_to_archive_proposals"]
     proposal = Proposal.create!(author: author,
                                 title: Faker::Lorem.sentence(word_count: 3).truncate(60),
                                 summary: Faker::Lorem.sentence(word_count: 3),
@@ -58,8 +57,8 @@ section "Creating Archived Proposals" do
                                 tag_list: tags.sample(3).join(","),
                                 geozone: Geozone.all.sample,
                                 terms_of_service: "1",
-                                created_at: months_to_archive_proposals.to_i.months.ago,
-                                published_at: months_to_archive_proposals.to_i.months.ago)
+                                created_at: Setting.archived_proposals_date_limit,
+                                published_at: Setting.archived_proposals_date_limit)
     random_locales.map do |locale|
       Globalize.with_locale(locale) do
         proposal.title = "Archived proposal title for locale #{locale}"

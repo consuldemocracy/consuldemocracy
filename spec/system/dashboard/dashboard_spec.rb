@@ -313,7 +313,7 @@ describe "Proposal's dashboard" do
 
   scenario "Resource admin request button do not appear on archived proposals" do
     feature = create(:dashboard_action, :resource, :active)
-    archived = Setting["months_to_archive_proposals"].to_i.months.ago
+    archived = Setting.archived_proposals_date_limit
     archived_proposal = create(:proposal, created_at: archived)
 
     login_as(archived_proposal.author)
