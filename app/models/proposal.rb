@@ -72,20 +72,22 @@ class Proposal < ApplicationRecord
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :sort_by_archival_date,    -> { archived.sort_by_confidence_score }
   scope :sort_by_recommendations,  -> { order(cached_votes_up: :desc) }
-  scope :archived,                 -> { where("proposals.created_at <= ?", Setting.archived_proposals_date_limit) }
-  scope :not_archived,             -> { where("proposals.created_at > ?", Setting.archived_proposals_date_limit) }
-  scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago) }
-  scope :retired,                  -> { where.not(retired_at: nil) }
-  scope :not_retired,              -> { where(retired_at: nil) }
-  scope :successful,               -> { where("cached_votes_up >= ?", Proposal.votes_needed_for_success) }
-  scope :unsuccessful,             -> { where("cached_votes_up < ?", Proposal.votes_needed_for_success) }
-  scope :public_for_api,           -> { all }
-  scope :selected,                 -> { where(selected: true) }
-  scope :not_selected,             -> { where(selected: false) }
-  scope :not_supported_by_user,    ->(user) { where.not(id: user.find_voted_items(votable_type: "Proposal").compact.map(&:id)) }
-  scope :published,                -> { where.not(published_at: nil) }
-  scope :draft,                    -> { where(published_at: nil) }
-  scope :created_by,               ->(author) { where(author: author) }
+
+  scope :archived,       -> { where("proposals.created_at <= ?", Setting.archived_proposals_date_limit) }
+  scope :not_archived,   -> { where("proposals.created_at > ?", Setting.archived_proposals_date_limit) }
+  scope :last_week,      -> { where("proposals.created_at >= ?", 7.days.ago) }
+  scope :retired,        -> { where.not(retired_at: nil) }
+  scope :not_retired,    -> { where(retired_at: nil) }
+  scope :successful,     -> { where("cached_votes_up >= ?", Proposal.votes_needed_for_success) }
+  scope :unsuccessful,   -> { where("cached_votes_up < ?", Proposal.votes_needed_for_success) }
+  scope :public_for_api, -> { all }
+  scope :selected,       -> { where(selected: true) }
+  scope :not_selected,   -> { where(selected: false) }
+  scope :published,      -> { where.not(published_at: nil) }
+  scope :draft,          -> { where(published_at: nil) }
+
+  scope :not_supported_by_user, ->(user) { where.not(id: user.find_voted_items(votable_type: "Proposal").compact.map(&:id)) }
+  scope :created_by,            ->(author) { where(author: author) }
 
   def publish
     update!(published_at: Time.current)
