@@ -10,7 +10,9 @@ end
 
 def hidden_field?(response, field_name)
   data_is_empty = response["data"].nil?
-  error_is_present = ((response["errors"].first["message"] =~ /Field '#{field_name}' doesn't exist on type '[[:alnum:]]*'/) == 0)
+  error_message = /Field '#{field_name}' doesn't exist on type '[[:alnum:]]*'/
+
+  error_is_present = ((response["errors"].first["message"] =~ error_message) == 0)
   data_is_empty && error_is_present
 end
 
