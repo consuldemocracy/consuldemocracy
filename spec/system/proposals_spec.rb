@@ -540,7 +540,15 @@ describe "Proposals" do
   end
 
   context "Geozones" do
+    scenario "When there are not gezones defined it does not show the geozone link" do
+      visit proposal_path(create(:proposal))
+
+      expect(page).not_to have_selector "#geozone"
+      expect(page).not_to have_link "All city"
+    end
+
     scenario "Default whole city" do
+      create(:geozone)
       author = create(:user)
       login_as(author)
 
@@ -556,6 +564,25 @@ describe "Proposals" do
       within "#geozone" do
         expect(page).to have_content "All city"
       end
+    end
+
+    scenario "form shows the geozone selector when there are geozones defined" do
+      create(:geozone)
+      author = create(:user)
+      login_as(author)
+
+      visit new_proposal_path
+
+      expect(page).to have_field("Scope of operation")
+    end
+
+    scenario "form do not show geozone selector when there are no geozones defined" do
+      author = create(:user)
+      login_as(author)
+
+      visit new_proposal_path
+
+      expect(page).not_to have_field("Scope of operation")
     end
 
     scenario "Specific geozone" do

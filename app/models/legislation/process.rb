@@ -24,7 +24,7 @@ class Legislation::Process < ApplicationRecord
   PHASES_AND_PUBLICATIONS = %i[homepage_phase draft_phase debate_phase allegations_phase
                                proposals_phase draft_publication result_publication].freeze
 
-  CSS_HEX_COLOR = /\A#?(?:[A-F0-9]{3}){1,2}\z/i.freeze
+  CSS_HEX_COLOR = /\A#?(?:[A-F0-9]{3}){1,2}\z/i
 
   has_many :draft_versions, -> { order(:id) },
     foreign_key: "legislation_process_id",

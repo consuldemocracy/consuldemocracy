@@ -8,10 +8,10 @@ describe Budgets::PhasesComponent do
 
     expect(page).not_to have_css(".main-link")
 
-    budget.current_phase.update!(main_link_text: "Phase link!", main_link_url: "https://consulproject.org")
+    budget.current_phase.update!(main_link_text: "Phase link!", main_link_url: "https://consuldemocracy.org")
     render_inline Budgets::PhasesComponent.new(budget)
 
     expect(page).to have_css(".main-link")
-    expect(page).to have_link("Phase link!", href: "https://consulproject.org")
+    expect(page).to have_link("Phase link!", href: "https://consuldemocracy.org")
   end
 end

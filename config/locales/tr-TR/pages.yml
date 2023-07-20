@@ -1,10 +1,10 @@
 tr:
   pages:
     census_terms:
-      title: "Census'un erişim şartları ve koşulları"
-      description: "Census'un erişim şartları ve koşullarına ilişkin bilgi sayfası."
+      title: "Census'un erişim hüküm ve koşulları"
+      description: "Census'un erişim hüküm ve koşullarının bulunduğu bilgi sayfası."
     conditions:
-      title: Kullanım şartları ve koşulları
+      title: Kullanım hüküm ve koşulları
       subtitle: AÇIK KAYNAKLI PUSULA PORTALININ KİŞİSEL VERİLERİNİN KULLANIMI, GİZLİLİĞİ VE KORUNMASI HAKKINDA YASAL BİLDİRİMİ
       description: Kişisel bilgilerin kullanım koşulları, gizliliği ve korunması hakkında bilgi sayfası.
     help:
@@ -22,44 +22,44 @@ tr:
         description: "%{link} bölümünde, şehirle alakalı sizi ilgilendiren konularla ilgili görüşlerinizi sunabilir ve başkalarıyla paylaşabilirsiniz. Aynı zamanda, %{org}'un diğer bölümleri aracılığıyla Belediye Meclisi tarafından somut eylemlere katkı koyacak fikirlerinizi paylaşabilirsiniz."
         link: "vatandaş tartışmaları"
         feature: "Tartışmalar başlatabilir, mevcut tartışmaları <strong>Katılıyorum</strong> ya da <strong>Katılmıyorum</strong> butonları ile yorumlayabilir ve değerlendirebilirsiniz. İlerlemek için buraya tıklayın: %{link}."
-        feature_link: "%{org}'ya kaydol"
-        image_alt: "Tartışmaları değerlendirme butonları"
-        figcaption: 'Tartışmaları değerlendirmek için "katılıyorum" ve "katılmıyorum" butonları.'
+        feature_link: "%{org} içinde kaydol"
+        image_alt: "Tartışmaları değerlendirme düğmeleri"
+        figcaption: 'Tartışmaları değerlendirmek için "katılıyorum" ve "katılmıyorum" düğmeleri.'
       proposals:
         title: "Öneriler"
-        description: "%{link} bölümünde, Pusula tarafından gerçekleştirilmesi için önerilerde bulunabilirsiniz. Öneriler destek gerektirir ve eğer yeterli desteğe ulaşırlarsa, halk oylamasına sunulur. Vatandaşlar tarafından en fazla oy alan öneri gerçekleştirilecektir."
-        link: "vatandaş önerileri"
-        image_alt: "Öneriyi destekleme butonu"
-        figcaption: 'Tasarıyı "Destekleme" butonu.'
+        description: "%{link} bölümünden, Belediye Meclisi'ne öneriler sunabilirsiniz. Önerilerin desteklenmesi gerekir ve yeterli desteğe ulaşan öneriler için halka açık bir oylama yapılır. Böylece yurttaşların oylarla onaylanan öneriler Belediye Meclisi tarafından kabul edilerek yürürlüğe konur."
+        link: "yurttaş önerileri"
+        image_alt: "Bir öneriyi destekleme düğmesi"
+        figcaption: 'Bir öneriyi "Destekleme" düğmesi.'
       budgets:
         title: "Katılımcı Bütçeleme"
-        description: "%{link} bölümü, insanların belediye bütçesinin nereye harcandığı konusunda doğrudan karar vermelerine yardımcı olur."
+        description: "%{link} bölümü, insanların belediye bütçesinin hangi bölümüne harcandığı konusunda doğrudan bir karar vermelerine yardımcı olur."
         link: "katılımcı bütçeler"
-        image_alt: "Katılımcı bütçelerin farklı aşamaları"
+        image_alt: "Bir katılımcı bütçelemenin farklı aşamaları"
         figcaption: 'Katılımcı bütçelerin "Destek" ve "Oylama" aşamaları.'
       polls:
         title: "Anketler"
-        description: "%{link} bölümü, bir teklif 1% desteğe ulaştığında ve oylamaya gittiğinde veya Pusula'nın vatadaşlar tarafından karar verilmesi için bir konuda öneride bulunduğunda etkinleşir."
+        description: "Bir öneri 1% destek alarak oylamaya gittiğinde veya Belediye Meclisi bir konuyu insanların değerlendirmesine sunduğunda %{link} bölümü etkin olur."
         link: "anketler"
-        feature_1: "Oylamaya katılmak için %{link}'e sahip olmanız ve hesabınızı doğrulamanız gerekiyor."
-        feature_1_link: "%{org_name} ya kaydol"
+        feature_1: "Oylamaya katılmak için %{link}'e sahip olmanız ve hesabınızı doğrulamanız gerekir."
+        feature_1_link: "%{org_name} içinde kaydol"
       processes:
         title: "Süreçler"
-        description: "%{link} bölümünde, vatandaşlar ülkeyi etkileyen düzenlemelerin hazırlanmasına ve değiştirilmesine katılarak, önceki tartışmalar hakkında fikirlerini paylaşabilir."
+        description: "%{link} bölümünde, vatandaşlar şehri etkileyen düzenlemelerin hazırlanmasına ve değiştirilmesine katılır ve önceki tartışmalarda belediye politikaları hakkında fikirlerini verebilir."
         link: "süreçler"
         feature: "Sürece dahil olmak için aşağıdaki linke tıklamanız ve hesabınızı doğrulamanız gerekmektedir: %{link}."
         feature_link: "%{org_name} ya kayıt ol"
       faq:
         title: "Teknik sorunlar?"
         description: "Sıkça Sorulan Sorular bölümünde sorularınıza yanıt bulabilirsiniz."
-        button: "Sıkça sorulan soruları görüntüle"
+        button: "Sık sorulan soruları görüntüle"
         page:
-          title: "Sıkça Sorulan Sorular"
-          description: "Platform kullanıcılarının ortak SSS'ını çözmek için bu sayfayı kullanın."
+          title: "Sık Sorulan Sorular"
+          description: "Site kullanıcılarının ortak SSS'lerini çözmek için bu sayfayı kullanın."
       other:
         title: "İlgili diğer bilgi"
-        how_to_use: "%{org_name}'yı ülkeniz için kullanın"
-        sdg: "Sürdürülebilir Kalkınma Hedefleri yardım"
+        how_to_use: "Şehriniz içinde %{org_name} kullanın"
+        sdg: "Sürdürülebilir gelişim hedefleri yardım"
       how_to_use:
         text: |-
           Bunu yerel idarenizde kullanın ya da geliştirmemize yardım edin, bu özgür bir yazılımdır.
@@ -71,7 +71,7 @@ tr:
         how_to_use: Yerel yönetimde kullanın
     privacy:
       title: Gizlilik Politikası
-      subtitle: "Gizlilikle ilgili bilgi sayfası"
+      subtitle: "Gizlilik ile ilgili bilgi sayfası"
     accessibility:
       title: Erişilebilirlik
       description: |-

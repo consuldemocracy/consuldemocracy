@@ -1,0 +1,22 @@
+ne:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: प्रविष्टिहरू
+        one: प्रविष्टि
+        other: प्रविष्टिहरू
+      more_pages:
+        display_entries: <strong>%{total} %{entry_name}</strong> को <strong>%{first}&nbsp;-&nbsp;%{last}</strong> प्रदर्शन गर्दै
+      one_page:
+        display_entries:
+          zero: "%{entry_name} फेला पार्न सकिँदैन"
+          one: त्यहाँ <strong>१ %{entry_name}</strong> छ
+          other: त्यहाँ <strong>%{count} %{entry_name}</strong> छन्
+  views:
+    pagination:
+      current: तपाईं पृष्ठमा हुनुहुन्छ
+      first: पहिलाे
+      last: अन्तिम
+      next: अर्को
+      previous: अघिल्लो
+      truncate: "&hellip;"

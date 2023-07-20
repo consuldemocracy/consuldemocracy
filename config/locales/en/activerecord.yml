@@ -201,7 +201,9 @@ en:
       geozone:
         name: Name
         external_code: "External code (optional)"
+        color: "Color (optional)"
         census_code: "Census code (optional)"
+        geojson: "GeoJSON data (optional)"
         html_map_coordinates: "HTML <map> Coordinates (optional)"
       milestone:
         status_id: "Current status (optional)"
@@ -545,6 +547,10 @@ en:
           attributes:
             max_per_day:
               invalid: "You have reached the maximum number of private messages per day"
+        geozone:
+          attributes:
+            geojson:
+              invalid: "The GeoJSON provided does not follow the correct format. It must follow the \"Polygon\" or \"MultiPolygon\" type format."
         image:
           attributes:
             attachment:

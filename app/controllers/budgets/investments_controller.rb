@@ -11,22 +11,18 @@ module Budgets
 
     PER_PAGE = 10
 
-    before_action :authenticate_user!, except: [:index, :show, :json_data]
-    before_action :load_budget, except: :json_data
+    before_action :authenticate_user!, except: [:index, :show]
+    before_action :load_budget
 
-    authorize_resource :budget, except: :json_data
-    load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment",
-                                except: :json_data
+    authorize_resource :budget
+    load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment"
 
     before_action :load_ballot, only: [:index, :show]
     before_action :load_heading, only: [:index, :show]
-    before_action :load_map, only: [:index]
     before_action :set_random_seed, only: :index
     before_action :load_categories, only: :index
     before_action :set_default_investment_filter, only: :index
     before_action :set_view, only: :index
-
-    skip_authorization_check only: :json_data
 
     feature_flag :budgets
 
@@ -41,10 +37,9 @@ module Budgets
 
     def index
       @investments = investments.page(params[:page]).per(PER_PAGE).for_render
-
       @investment_ids = @investments.ids
-      @investments_map_coordinates = MapLocation.where(investment: investments).map(&:json_data)
 
+      @investments_in_map = investments
       @tag_cloud = tag_cloud
       @remote_translations = detect_remote_translations(@investments)
     end
@@ -94,19 +89,6 @@ module Budgets
       @resource_path_method = :namespaced_budget_investment_path
       @resource_relation    = resource_model.where(budget: @budget).apply_filters_and_search(@budget, params, @current_filter)
       super
-    end
-
-    def json_data
-      investment = Budget::Investment.find(params[:id])
-      data = {
-        investment_id: investment.id,
-        investment_title: investment.title,
-        budget_id: investment.budget.id
-      }.to_json
-
-      respond_to do |format|
-        format.json { render json: data }
-      end
     end
 
     private
@@ -181,10 +163,6 @@ module Budgets
         elsif @budget&.publishing_prices_or_later?
           params[:filter] ||= "selected"
         end
-      end
-
-      def load_map
-        @map_location = MapLocation.load_from_heading(@heading) if @heading.present?
       end
   end
 end

@@ -81,7 +81,7 @@ cs:
         not_to_vote: Osoba se rozhodla v současné době nehlasovat
       show:
         can_vote: Lze hlasovat
-        cannot_vote: Osoba nemůže volit, protože není zapsána v městské části (částích), kde se hlasování koná.
+        cannot_vote: Osoba nemůže volit, protože není zapsána v městské části (částech), kde se hlasování koná.
         error_already_voted: Již se tohoto hlasování účastnil
         submit: Potvrzení hlasování
         success: "Hlasování bylo zahájeno!"

@@ -1,6 +1,6 @@
 class ProgressBar < ApplicationRecord
   self.inheritance_column = nil
-  RANGE = (0..100).freeze
+  RANGE = (0..100)
 
   enum kind: %i[primary secondary]
 

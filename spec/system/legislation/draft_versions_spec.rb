@@ -397,4 +397,30 @@ describe "Legislation Draft Versions" do
       expect(page).to have_content "my other annotation"
     end
   end
+
+  context "See table from markdown" do
+    let(:draft_version) { create(:legislation_draft_version, :published, :with_table) }
+    let(:path) do
+      edit_admin_legislation_process_draft_version_path(draft_version.process, draft_version)
+    end
+
+    scenario "See table as a user" do
+      visit legislation_process_draft_version_path(draft_version.process, draft_version)
+
+      expect(page).to have_css("table")
+      expect(page).to have_content "Roberta"
+      expect(page).to have_content "25"
+    end
+
+    scenario "See table as an admin" do
+      login_as(administrator)
+
+      visit path
+      click_link "Launch text editor"
+
+      expect(page).to have_css("table")
+      expect(page).to have_content "Roberta"
+      expect(page).to have_content "25"
+    end
+  end
 end

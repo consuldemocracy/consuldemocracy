@@ -11,14 +11,14 @@ gd:
       save_changes_submit: Sàbhail na dh’atharraich thu
       recommendations: Molaidhean
       title: An cunntas agam
-      user_permission_info: Leis a’ chunntas agad, is urrainn dhut....
+      user_permission_info: Leis a’ chunntas agad, is urrainn dhut...
       user_permission_title: Com-pàirteachas
       user_permission_verify: Gus na gnìomhan uile a dhèanamh, dearbhaich do chunntas.
       verified_account: Cunntas air a dhearbhadh
       verify_my_account: Dearbhaich mo chunntas
   application:
     close: Dùin
-    menu: Clàr-taic
+    menu: Clàr-taice
   comments:
     actions:
       confirm_delete: "A bheil thu cinnteach? Sguabaidh seo am beachd seo às. Chan urrainn dhut an gnìomh seo a neo-dhèanamh."
@@ -65,7 +65,7 @@ gd:
       oldest: As sine an toiseach
       most_commented: Leis an àireamh as motha de bheachdan
     show:
-      return_to_commentable: "Till gu"
+      return_to_commentable: "Air ais gu "
   comments_helper:
     comment_button: Foillsich beachd
     comment_link: Beachd
@@ -177,7 +177,7 @@ gd:
     verification/sms: fòn
     signature_sheet: Duilleag nan ainmean-sgrìobhte
     document: Sgrìobhainn
-    topic: Topic
+    topic: Cuspair
     image: Ìomhaigh
     local_census_record: Clàr cunntas-sluaigh ionadail
     local_census_records/import: Ion-phortaich clàran cunntas-sluaigh ionadail
@@ -212,7 +212,7 @@ gd:
     footer:
       accessibility: So-ruigsinneachd
       conditions: Teirmichean is cumhaichean cleachdaidh
-      consul: aplacaid CONSUL
+      consul: Aplacaid CONSUL
       consul_url: https://github.com/consul/consul
       copyright: CONSUL, %{year}
       description: Cleachdaidh am portal seo an %{consul} a tha na ghoireas %{open_source}.
@@ -770,7 +770,7 @@ gd:
     unfollow_entity: "Sgur a bhith a’ leantainn %{entity}"
     outline:
       searcher: Einnsein luirg
-    go_to_page: "Rach gu duilleig"
+    go_to_page: "Rach gu duilleig "
     share: Co-roinn
     orbit:
       previous_slide: An t-sleamhnag roimhe
@@ -789,7 +789,7 @@ gd:
       remove_language: Thoir cànan air falbh
       add_language: Cuir cànan ris
       languages_in_use:
-        zero: "Tha 0 cànanan  gan cleachdadh."
+        zero: "Tha 0 cànanan gan cleachdadh"
         one: "Tha 1 chànan ga chleachdadh."
         two: "%{count} chànan gan cleachdadh"
         few: "%{count} cànanan gan cleachdadh"
@@ -821,7 +821,7 @@ gd:
       verified_users: Cleachdaichean dearbhte
       unverified_users: Cleachdaichean gun dearbhadh
   unauthorized:
-    default: Chan eil cead agad an duilleag seo inntrigeadh
+    default: Chan eil cead agad an duilleag seo inntrigeadh.
     manage:
       all: "Chan eil cead agad an gnìomh '%{action}' a dhèanamh air %{subject}."
   users:
@@ -916,9 +916,9 @@ gd:
         proposals: Faic a h-uile moladh
         processes: Faic a h-uile pròiseas
       no_items:
-        debates: Chan eil deasbad sam bith ri shealltainn aig an àm seo.
-        proposals: Chan eil moladh sam bith ri shealltainn aig an àm seo.
-        processes: Chan eil pròiseas fosgailte sam bith ann aig an àm seo.
+        debates: Chan eil deasbad sam bith ri shealltainn aig an àm seo
+        proposals: Chan eil moladh sam bith ri shealltainn aig an àm seo
+        processes: Chan eil pròiseas fosgailte sam bith ann aig an àm seo
       process_label: Pròiseas
       see_process: Faic pròiseas
     cards:
@@ -939,7 +939,7 @@ gd:
       go_to_index: Chan ann an-dràsta, rach gu duilleig a’ chlàr-amais
       start_using_consul: Tadhail air duilleag a’ chlàr-amais
       title: Gabh pàirt
-      user_permission_info: Leis a’ chunntas aca, is urrainn dhut....
+      user_permission_info: Leis a’ chunntas agad, is urrainn dhut,,,...
       user_permission_verify: "Gus na gnìomhan a leanas a dhèanamh, dearbhaich do chunntas."
       user_permission_verify_my_account: Dearbhaich mo chunntas
   invisible_captcha:

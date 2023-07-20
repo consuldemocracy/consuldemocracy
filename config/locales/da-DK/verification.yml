@@ -92,6 +92,7 @@ da:
     user_permission_proposal: Opret nye forslag
     user_permission_support_proposal: Støt forslag*
     user_permission_votes: Deltage i den endelige afstemning*
+    verification_needed: Yderligere verifikation nødvendig
     verified_user:
       form:
         submit_button: Send kode

@@ -82,7 +82,6 @@ de:
         tags_placeholder: "Geben Sie die Schlagwörter ein, die Sie benutzen möchten, getrennt durch Kommas (',')"
         map_location: "Kartenposition"
         map_location_instructions: "Navigieren Sie auf der Karte zum Standort und setzen Sie die Markierung."
-        map_remove_marker: "Entfernen Sie die Kartenmarkierung"
       index:
         title: Bürgerhaushalte
         unfeasible: Undurchführbare Investitionsvorschläge

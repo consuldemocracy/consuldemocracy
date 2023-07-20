@@ -92,6 +92,7 @@ it:
     user_permission_proposal: Creare nuove proposte
     user_permission_support_proposal: Sostenere proposte*
     user_permission_votes: Partecipare al voto finale *
+    verification_needed: Verifica aggiuntiva necessaria
     verified_user:
       form:
         submit_button: Invia codice

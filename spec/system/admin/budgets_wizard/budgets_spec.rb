@@ -9,7 +9,7 @@ describe "Budgets wizard, first step", :admin do
 
       fill_in "Name", with: "M30 - Summer campaign"
       fill_in "Text on the link", with: "Participate now!"
-      fill_in "The link takes you to (add a link)", with: "https://consulproject.org"
+      fill_in "The link takes you to (add a link)", with: "https://consuldemocracy.org"
       fill_in "Name", with: "M30 - Summer campaign"
       click_button "Continue to groups"
 

@@ -1,1 +1,89 @@
 gd:
+  officing:
+    header:
+      title: Cunntasan-bheachd
+    dashboard:
+      index:
+        title: Oifigearan bhòtaidh
+        info: An seo faodaidh tu sgrìobhainnean cleachdaichean a dhearbhadh agus toraidhean bhòtaidh a stòradh
+        no_shifts: Chan eil sioftaichean oifis agad an-diugh.
+    menu:
+      voters: Dearbhaich an sgrìobhainn
+      total_recounts: Ath-chunntasan agus toraidhean iomlan
+    polls:
+      final:
+        title: Bhòtaichean deiseil airson an ath-chunntais mu dheireadh
+        no_polls: Chan eil thu a’ stiùireadh ath-chunntas sam bith ann an cunntasan-beachd gnìomhach sam bith
+        select_poll: Tagh cunntas-bheachd
+        add_results: Cuir toraidhean ris
+    poll_budgets:
+      see_ballot_sheets: Faic liosta nan duilleagan baileit
+      index:
+        title: "%{poll_budget} - Liosta nan duilleagan baileit"
+        ballot_sheet: "Duilleag baileit %{id}"
+        ballot_sheet_name: Ainm
+        ballot_sheet_author: Ùghdar
+        ballot_sheet_creation_date: Ceann-latha cruthachaidh
+        empty_results: Chan eil duilleagan baileit ann airson a’ bhòt seo fhathast
+      new:
+        title: "%{poll_budget} - Duilleag baileat ùr"
+        booth: Bùthan
+        select_booth: Tagh bothan
+        csv_data: Dàta CSV
+        submit: Sàbhail
+      show:
+        created_at: Ceann-latha cruthachaidh
+        author: Ùghdar
+        data: Dàta CSV
+    booth:
+      new:
+        title: "Tagh am bothan agad"
+    results:
+      flash:
+        create: "Toraidhean air an sàbhaladh"
+        error_create: "CHA DEACH na toraidhean a shàbhaladh. Mearachd dàta."
+        error_wrong_booth: "Am bothan ceàrr. CHA DEACH toraidhean a shàbhaladh."
+      new:
+        title: "%{poll} - Cuir toraidhean ris"
+        not_allowed: "Chan eil cead agad toraidhean a chur ris a’ chunntas-bheachd seo"
+        booth: "Bothan"
+        date: "Ceann-latha"
+        select_booth: "Tagh bothan"
+        ballots_white: "Baileatan a tha gu tur ban"
+        ballots_null: "Baileatan mì-dhligheach"
+        ballots_total: "Baileatan dligheach"
+        submit: "Sàbhail"
+        results_list: "Na toraidhean agad"
+        see_results: "Faic na toraidhean"
+      index:
+        no_results: "Chan eil toraidhean ann"
+        results: Toraidhean
+        table_answer: Freagairt
+        table_votes: Bhòtaichean
+        table_whites: "Baileatan a tha gu tur ban"
+        table_nulls: "Baileatan mì-dhligheach"
+        table_total: "Baileatan dligheach"
+    residence:
+      flash:
+        create: "Sgrìobhainn air a dhearbhadh leis a’ Chunntas-sluaigh"
+        not_allowed: "Chan eil sioftaichean oifis agad an-diugh"
+      new:
+        title: Dearbhaich an sgrìobhainn
+        submit: Dearbhaich an sgrìobhainn
+        error_verifying_census: "Cha b' urrainn dhan Chunntas-sluaigh an sgrìobhainn seo a dhearbhadh."
+        form_errors: ': chuir seo bacadh air dearbhadh na sgrìobhainn seo'
+    voters:
+      new:
+        title: Cunntasan-bheachd
+        table_poll: Cunntas-bheachd
+        table_status: Inbhe nan cunntasan-bheachd
+        table_actions: Gnìomhan
+        not_to_vote: Tha an neach air co-dhùnadh gun a bhith a’ bhòtadh aig an àm seo
+      show:
+        can_vote: ': Is urrainn dhaibh bhòtadh'
+        cannot_vote: Chan fhaod an neach a bhòtadh oir chan eil iad air clàradh san sgìre/sna sgìrean anns a bheil a’ bhòtadh a’ tachairt.
+        error_already_voted: Tha an neach seo air pàirt a ghabhail sa chunntas-bheachd seo mar-thà
+        submit: Dearbhaich a’ bhòt
+        success: "Bhòt air a thoirt a-steach!"
+      can_vote:
+        submit_disable_with: "Fuirich, a’ dearbhadh a’ bhòt..."

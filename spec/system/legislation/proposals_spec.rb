@@ -236,4 +236,72 @@ describe "Legislation Proposals" do
 
     expect(page).to have_link("Culture")
   end
+
+  scenario "Shows geozone tag as proposals filter where there are geozones defined" do
+    create(:legislation_proposal, process: process)
+    create(:legislation_proposal, process: process, geozone: create(:geozone, name: "Zone1"))
+
+    visit legislation_process_proposals_path(process)
+
+    expect(page).to have_link("Zone1", href: legislation_process_proposals_path(process, search: "Zone1"))
+    link = legislation_process_proposals_path(process, search: "All city")
+    expect(page).to have_link("All city", href: link)
+  end
+
+  scenario "Does not show the geozone tag when no geozones defined" do
+    create(:legislation_proposal, process: process)
+
+    visit legislation_process_proposals_path(process)
+
+    expect(page).not_to have_link("All city")
+  end
+
+  scenario "Can filter proposals by geozone" do
+    geozone = create(:geozone, name: "Zone1")
+    proposal = create(:legislation_proposal, title: "Proposal with geozone",
+                                             legislation_process_id: process.id,
+                                             geozone: geozone)
+    create(:legislation_proposal, title: "Proposal without geozone", legislation_process_id: process.id)
+
+    visit legislation_process_proposal_path(proposal.process, proposal)
+    click_link "Zone1"
+
+    expect(page).to have_current_path(legislation_process_proposals_path(process.id, search: "Zone1"))
+    expect(page).to have_content("Proposal with geozone")
+    expect(page).not_to have_content("Proposal without geozone")
+  end
+
+  scenario "Show link to filter by geozone where there are geozones defined" do
+    create(:geozone)
+    create(:legislation_proposal, legislation_process_id: process.id)
+
+    visit legislation_process_proposal_path(proposal.process, proposal)
+
+    expect(page).to have_link("All city")
+  end
+
+  scenario "Do not show link to geozone where there are no geozones defined" do
+    create(:legislation_proposal, legislation_process_id: process.id)
+
+    visit legislation_process_proposal_path(proposal.process, proposal)
+
+    expect(page).not_to have_link("All city")
+  end
+
+  scenario "form shows the geozone selector when there are geozones defined" do
+    create(:geozone)
+    login_as user
+
+    visit new_legislation_process_proposal_path(process)
+
+    expect(page).to have_field("Scope of operation")
+  end
+
+  scenario "form do not show geozone selector when there are no geozones defined" do
+    login_as user
+
+    visit new_legislation_process_proposal_path(process)
+
+    expect(page).not_to have_field("Scope of operation")
+  end
 end

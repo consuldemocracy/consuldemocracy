@@ -1,20 +1,50 @@
 de:
   sdg_management:
+    actions:
+      edit: "Verwalten von Zielen und Vorgaben"
+    header:
+      title: "SDG-Inhalt"
     homepage:
+      title: "Konfiguration der Homepage"
       header:
         create: "Kopfzeile erstellen"
         no_cards: "Keine Kopfzeile vorhanden"
         title: "Kopfzeile"
+      create_card: "Karte %{phase} erstellen"
+      no_cards: "Für diese Phase gibt es keine Karten"
     menu:
       budget_investments: "Bürgerhaushalte"
       debates: "Debatten"
       legislation_processes: "Gesetzgebungsverfahren"
+      legislation_proposals: "Legislativvorschläge"
       polls: "Umfragen"
       proposals: "Vorschläge"
       sdg_content: "Ziele und Vorgaben"
+      sdg_homepage: "SDG-Homepage"
+    local_targets:
+      create:
+        notice: "Lokales Ziel erfolgreich erstellt"
+      destroy:
+        notice: "Lokales Ziel erfolgreich gelöscht"
+      edit:
+        title: "Lokales Ziel bearbeiten"
+      form:
+        code: "Der Code muss mit dem ausgewählten Zielcode beginnen, gefolgt von einem Punkt."
+        description: "Diese Beschreibung wird den Benutzern als Hilfe angezeigt."
+      index:
+        new: "Lokales Ziel erstellen"
+      new:
+        title: "Neues lokales Ziel"
+      update:
+        notice: "Lokales Ziel erfolgreich aktualisiert."
     relations:
       index:
         filter: "Filter"
         filters:
           all: "Alle"
           pending_sdg_review: "Ausstehend"
+          sdg_reviewed: "Markiert als überprüft."
+      update:
+        notice: "%{relatable} erfolgreich aktualisiert."
+      update_and_review:
+        notice: "%{relatable} erfolgreich aktualisiert und als geprüft markiert."

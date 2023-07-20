@@ -1,1 +1,1783 @@
 gd:
+  admin:
+    header:
+      title: Rianachd
+    actions:
+      actions: Gnìomhan
+      block_author: "Bac ùghdar"
+      confirm_action: "A bheil thu cinnteach? %{action} \"%{name}\""
+      confirm_delete: "A bheil thu cinnteach? Sguabaidh seo \"%{name}\" às. Chan urrainn dhut an gnìomh seo a neo-dhèanamh."
+      confirm_hide: Dearbhaich modaratadh
+      delete: "Sguab às"
+      hide: Falaich
+      label: "%{action} %{name}"
+      restore: Aisig
+      mark_featured: Ga bhrosnachadh
+      unmark_featured: Neo-chomharraich an nì brosnaichte
+      edit: Deasaich
+      configure: Rèitich
+    officing_booth:
+      title: "Tha thu gu bhith ag obair aig a’ bhothain aig %{booth}. Mura h-eil seo ceart, na lean ort - cuir fios chun àireamh fòn cuideachaidh. Tapadh leat."
+    banners:
+      index:
+        title: Brataichean
+        create: Cruthaich bratach
+        filters:
+          all: A h-uile
+          with_active: Gnìomhach
+          with_inactive: Na thàmh
+        preview: Ro-sheall
+      banner:
+        sections_label: Earrannan far an nochd e
+        sections:
+          homepage: Duilleag dachaigh
+          debates: Deasbadan
+          proposals: Molaidhean
+          budgets: Buidseatan Com-pàirteachail
+          help_page: Duilleag cuideachaidh
+          sdg: SDG
+      create:
+        notice: "Chaidh bratach a chruthachadh"
+      destroy:
+        notice: "Chaidh bratach a sguabadh às"
+      edit:
+        editing: Deasaich bratach
+        form:
+          submit_button: Sàbhail na dh’atharraich thu
+      new:
+        creating: Cruthaich bratach
+      update:
+        notice: "Chaidh bratach ùrachadh"
+    activity:
+      show:
+        action: Gnìomh
+        actions:
+          block: Air a bhacadh
+          hide: Falaichte
+          restore: Air aiseag
+        by: Air modaratadh le
+        content: Susbaint
+        filter: Seall
+        filters:
+          all: A h-uile
+          on_comments: Beachdan
+          on_debates: Deasbadan
+          on_proposals: Molaidhean
+          on_users: Cleachdaichean
+          on_system_emails: Puist-d siostaim
+        title: Gnìomhan leis a’ mhodaratair
+        type: Seòrsa
+        no_activity: Chan eil gnìomh modaratair sam bith ann.
+    budgets:
+      actions:
+        ballots: "Cruthaich bothain"
+        confirm:
+          ballots: "A bheil thu cinnteach? Chan feumar an gnìomh seo ach a-mhàin ma tha thu a’ dol a chleachdadh bothain fhiosaigeach san ìre bhòtaidh mu dheireadh. Bidh cothrom aig saoranaich bhòtadh fhathast air an lìon le no às aonais bhothan corporra."
+          destroy: "A bheil thu cinnteach? Sguabaidh seo às am buidseat agus a h-uile buidheann agus ceann-sgrìobhaidh co-cheangailte ris. Chan urrainnear an gnìomh seo  neo-dhèanamh."
+        descriptions:
+          ballots: "Leigidh seo leat baileatan pàipear a riaghladh. Na cleachd an roghainn seo ach a-mhàin ma tha thu a’ dol a chleachdadh bothain fhiosaigeach gus baileatan a chruinneachadh anns an ìre bhòtaidh mu dheireadh."
+          calculate_winners: 'Às dèidh na toraidhean a bhith air an obrachadh a-mach, chan fhaigh ach rianairean cothrom orra. Bidh iad poblach nuair a ruigeas am pròiseact ìre "%{phase}" <strong>ma bhios an roghainn "Seall toraidhean" an comas</strong> nuair a thathar a’ deasachadh a’ bhuidseit.'
+          destroy: "Sguabaidh seo às am buidseat agus a h-uile buidheann agus ceann-sgrìobhaidh co-cheangailte ris. Chan urrainnear an gnìomh seo  neo-dhèanamh."
+        edit: "Deasaich buidseat"
+        preview: "Ro-sheall"
+        preview_results: "Ro-sheall toraidhean"
+      index:
+        title: Buidseatan Com-pàirteachail
+        new_link: Cruthaich buidseat ùr
+        filter: Criathraich
+        filters:
+          all: Uile
+          open: Fosgail
+          finished: Crìochnaichte
+        budget_investments: Pròiseactan tasgaidh
+        table_budget_type: "Seòrsa"
+        table_completed: Coileanta
+        table_draft: "Dreachd"
+        table_duration: "Faid"
+        table_name: Ainm
+        table_phase: Ceum
+        table_phase_progress: "(%{current_phase_number}/%{total_phases})"
+        type_multiple: "Iomadh ceann-sgrìobhaidh"
+        type_pending: "Ri choileanadh: Chan eil cinn-sgrìobhaidh ann fhathast"
+        type_single: "Ceann-sgrìobhaidh singilte"
+        admin_ballots: Baileatan
+        no_budgets: "Chan eil buidseatan ann."
+      create:
+        notice: Buidseat com-pàirteachaidh ùr air a chruthachadh!
+      update:
+        notice: Buidseit com-pàirteachail air ùrachadh
+      publish:
+        notice: "Buidseit com-pàirteachail air fhoillseachadh"
+      edit:
+        title: Deasaich buidseat com-pàirteachail
+        drafting: "Tha am buidseat com-pàirteachail seo na dhreachd, chan fhaod ach rianairean fhaicinn air an làraich phoblaich. Aon uair ’s gu bheil e air fhoillseachadh chan urrainn dha atharrachadh gu bhith na dhreach a-rithist."
+        publish: "Foillsich buidseat"
+        delete: Sguab às am buidseit
+        phase: Ceum
+        phases_caption: "Ìrean"
+        phases_table_help_text: "Tha rèiteachadh nan ìrean sin air a chleachdadh airson adhbharan fiosrachaidh a-mhàin. Tha e ann gus am fiosrachadh a mhìneachadh mu ìrean a tha air a thaisbeanadh air duilleag phoblach a’ bhuidseit com-pàirteachaidh a mhìneachadh."
+        duration: "Faid"
+        enabled: An comas
+        actions: Gnìomhan
+        enable_phase: "Cuir ìre %{phase} an comas"
+        active: Gnìomhach
+        blank_dates: Tha na cinn-latha falamh
+        administrators:
+          zero: "Tagh rianairean"
+          one: "1 rianaire air a thaghadh"
+          two: "%{count} rianairean air a thaghadh"
+          few: "%{count} rianairean air a thaghadh"
+          other: "%{count} rianairean air a thaghadh"
+        valuators:
+          zero: "Tagh luchd-luachaidh"
+          one: "1 neach-luachaidh air a thaghadh"
+          two: "%{count} luchd-luachaidh air a thaghadh"
+          few: "%{count} luchd-luachaidh air a thaghadh"
+          other: "%{count} luchd-luachaidh air a thaghadh"
+        empty_administrators: "Chan eil rianairean ann"
+        empty_valuators: "Chan eil luchd-luachaidh ann"
+        name_description: "Is e seo an t-ainm a th’ air a’ bhuidseit com-pàirteachaidh a thathar a’ cleachdadh air a’ bhann-cinn agus air na cairtean nuair a bhios e gnìomhach"
+        image_description: "Ma thèid ìomhaigh a luchdachadh suas thèid a cleachdadh mar a’ bhratach air a’ bhuidseit com-pàirteachaidh seo, air neo thèid an dath bunaiteach airson a’ bhuidseit a chleachdadh."
+        main_call_to_action: "Prìomh ghairm gu gnìomh (roghainneil)"
+        main_call_to_action_description: "Nochdaidh an ceangal seo air prìomh bhratach a’ bhuidseit com-pàirteachaidh seo agus brosnaichidh e do chleachdaiche gus gnìomh sònraichte a dhèanamh leithid cruthachadh moladh, bhòtadh airson an fheadhainn a th’ ann mar-thà, no barrachd ionnsachadh mun phròiseas."
+        info:
+          budget_settings: "Roghainnean buidseit com-pàirteachaidh coitcheann"
+          staff_settings: "Rianairean agus luchd-luachaidh air an sònrachadh dhan bhuidseat"
+        hide_money: "Falaich airgead"
+        hide_money_help_text: "Ma thèid an roghainn seo a thaghadh, bidh a h-uile raon a sheallas an t-suim airgid falaichte tron phròiseas."
+      destroy:
+        success_notice: Chaidh am buidseat a sguabadh às
+        unable_notice: Chan urrainn dhut buidseat a sguabadh às le tasgaidhean co-cheangailte ris
+        unable_notice_polls: Chan urrainn dhut buidseat a sgùradh às le cunntais-bheachd co-cheangailte ris
+      new:
+        title_multiple: buidseat ùr le iomadh ceann-sgrìobhaidh
+        title_single: Buidseat ùr le aon cheann-sgrìobhaidh
+      help:
+        budgets: "Tha buidseatan com-pàirteachail a’ toirt cothrom do shaoranaich a bhith a’ moladh agus a’ co-dhùnadh gu dìreach mar a thèid cuid den bhuidseat a chosg, le sgrùdadh agus measadh làidir air molaidhean leis a’ bhuidhinn. "
+        groups:
+          multiple: "Tha buidhnean ann gus cinn-sgrìobhaidh a chur an òrdugh. Às dèidh buidheann a chruthachadh le cinn-sgrìobhaidh ann, is urrainnear co-dhùnadh cia mheud ceann-sgrìobhaidh as urrainn do chleachdaiche bhòtadh airson gach buidheann."
+          single: "Tha buidhnean ann gus cinn-sgrìobhaidh a chur an òrdugh. Leis nach bi ach aon cheann-sgrìobhaidh sa bhuidseat seo, faodar an aon ainm a chleachdadh oir cha nochd e ann an àite sam bith. Faodaidh tu dìreach leantainn air adhart leis an ath cheum."
+        headings:
+          multiple: "Tha cinn-sgrìobhaidh ann gus airgead a’ bhuidseit com-pàirteachaidh a cho-roinn. An seo faodaidh tu cinn-sgrìobhaidh a chur ris airson na buidhne seo agus an t-suim airgid a thèid a chleachdadh airson gach ceann a shònrachadh."
+          single: "Tha cinn-sgrìobhaidh ann gus airgead a’ bhuidseit com-pàirteachaidh a cho-roinn. Leis nach bi ach aon cheann-sgrìobhaidh anns a’ bhuidseat seo, seo an t-àite far an sònraich tu an t-airgead a thèid a chosg sa bhuidseit com-pàirteachaidh seo."
+        phases: "Tha diofar ìrean aig buidseatan com-pàirteachaidh. An seo faodaidh tu ìrean a chur an comas no a chur à comas agus cuideachd faodar gach ìre fa leth a ghnàthachadh. Tha rèiteachadh nan ìrean sin air a chleachdadh airson adhbharan fiosrachaidh a-mhàin agus thèid a thaisbeanadh air duilleag phoblach a’ bhuidseit com-pàirteachaidh."
+      show:
+        add_group: "Cuir buidheann ris"
+        add_heading: "Cuir ceann-sgrìobhadh ris"
+        groups_and_headings: "Buidhnean de chinn-sgrìobhaidh"
+        headings_caption: "Cinn-sgrìobhaidh ann an %{group}"
+      winners:
+        calculate: Obraich a-mach Tasgaidhean a Bhuannaich
+        calculated: Buannaichean gan obrachadh a-mach, is dòcha gun toir seo greiseag.
+        recalculate: Obraich a-mach Tasgaidhean a Bhuannaich a-rithist
+    budget_groups:
+      name: "Ainm"
+      headings_name: "Ceann-sgrìobhaidhean"
+      headings_manage: "Ceann-sgrìobhaidhean"
+      no_groups: "Chan eil buidhnean ann."
+      amount:
+        one: "Tha 1 bhuidheann ann"
+        two: "Tha %{count} bhuidhinn ann"
+        few: "Tha %{count} buidhnean ann"
+        other: "Tha %{count} buidhnean ann"
+      create:
+        notice: "Chaidh a’ bhuidheann a chruthachadh!"
+      update:
+        notice: "Chaidh a’ bhuidheann ùrachadh"
+      destroy:
+        success_notice: "Chaidh a’ bhuidheann a sguabadh às"
+        unable_notice: "Chan urrainn dhut Buidheann a sguabadh às le cinn-sgrìobhadh co-cheangailte ris"
+      form:
+        create: "Cruthaich buidheann ùr"
+        edit: "Deasaich am buidheann"
+        max_votable_headings_info: "Chan eil seo an gnìomh ach a-mhàin airson ìre taghaidh nam pròiseactan. Aig ìre nam pròiseactan bhòtaidh chan urrainn do chleachdaichean bhòtadh ach ann an aon cheann-sgrìobhaidh a-mhàin airson gach buidheann."
+        submit: "Sàbhail am buidheann"
+      index:
+        new_button: "Cuir buidheann ùr ris"
+    budget_headings:
+      no_headings: "Chan eil cinn-sgrìobhaidh sam bith sa bhuidhinn <strong>%{group}</strong> ."
+      create:
+        notice: "Chaidh am bann-cinn a chruthachadh!"
+      update:
+        notice: "Chaidh am bann-cinn ùrachadh"
+      destroy:
+        success_notice: "Chaidh am bann-cinn a sguabadh às"
+        unable_notice: "Chan urrainn dhut bann-cinn a sguabadh às aig a bheil tasgaidhean co-cheangailte ris"
+      form:
+        max_ballot_lines_info: 'An àireamh as motha de phròiseactan air as urrainn do chleachdaiche bhòtadh air a’ cheann-sgrìobhaidh seo aig ìre “Pròiseactan bhòtaidh”. Tha seo airson buidseatan a tha a’ cleachdadh bhòtadh ceadachaidh.'
+        population_info: "Bithear a’ cleachdadh Ceann-sgrìobhaidh raon sluaigh a’ Bhuidseit airson adhbharan Àireamhail aig deireadh a’ Bhuidseit gus sealltainn dè an àireamh sa cheud a bhòt airson gach Ceann-sgrìobhaidh a tha a’ riochdachadh sgìre le sluagh. Tha an raon roghainneil gus an urrainn dhut fhàgail falamh mura h-eil e iomchaidh."
+        coordinates_info: "Ma tha domhan-leud is domhan-fad air a thoirt seachad, bidh mapa air duilleag nan tasgaidhean airson a’ chinn seo. Bidh am mapa seo stèidhichte air na co-chomharran sin."
+        content_blocks_info: "Ma thèid am bloc susbaint ceadaichte a chomharrachadh, bidh e comasach dhut susbaint gnàthaichte a chruthachadh co-cheangailte ris a’ cheann-sgrìobhaidh seo bhon roinn Roghainnean> Blocaichean susbaint gnàthaichte. Nochdaidh an t-susbaint seo air duilleag nan tasgaidhean airson a’ chinn-sgrìobhaidh seo."
+        create: "Cruthaich bann-cinn ùr"
+        edit: "Deasaich bann-cinn"
+        submit: "Sàbhail bann-sinn"
+      group_switcher:
+        currently_showing: "A’ sealltainn cinn-sgrìobhaidh sam bith sa bhuidhinn <strong>%{group}</strong> ."
+        different_group: "Stiùirich cinn-sgrìobhaidh à bhuidhinn eile %{group}."
+        the_other_group: "Stiùirich cinn-sgrìobhaidh sa bhuidhinn %{group}."
+      index:
+        back: "Air ais do na buidhnean"
+        new_button: "Cuir ceann-sgrìobhaidh ùr ris"
+        title: "Cinn-sgrìobhaidh %{budget} / %{group}"
+    budget_phases:
+      edit:
+        title: "Deasaich an ìre"
+        dates_help_text: "Air adhbharan fiosrachadh a-mhàin."
+        description_help_text: Nochdaidh an teacsa seo sa bhann-cinn nuair a bhios an ìre gnìomhach
+        duration: "Faid na h-ìre"
+        duration_description: "Tha na raointean sin air an cleachdadh airson adhbharan fiosrachaidh a-mhàin agus <strong>chan eil iad ag adhbharachadh ùrachadh fèin-obrachail den ìre ghnìomhach.</strong> Gus ùrachadh, deasaich am buidseat agus tagh an ìre ghnìomhach."
+        enabled_help_text: Bidh an ìre seo poblach ann an clàr-ama ìrean a’ bhuidseit.
+        image_description: "Ma thèid ìomhaigh a luchdachadh suas thèid a thaisbeanadh ri taobh tuairisgeul na h-ìre seo."
+        main_call_to_action: "Prìomh ghairm gu gnìomh (roghainneil)"
+        main_call_to_action_description: "Nochdaidh an ceangal seo air prìomh bhratach a’ bhuidseit com-pàirteachaidh nuair a tha an ìre seo air a chur an comas agus brosnaichidh e do chleachdaiche gus gnìomh sònraichte a dhèanamh leithid cruthachadh moladh, bhòtadh airson an fheadhainn a th’ ann mar-thà, no barrachd ionnsachadh mun phròiseas."
+        name_help_text: "Is e seo tiotal na h-ìre a leughas cleachdaichean air a’ bhann-cinn nuair a bhios an ìre seo gnìomhach."
+        save_changes: Sàbhail na h-atharraichean
+      index:
+        title: "%{budget} ìrean"
+    budget_investments:
+      index:
+        heading_filter_all: A h-uile bann-cinn
+        administrator_filter_all: A h-uile rianaire
+        valuator_filter_all: A h-uile neach-luachaidh
+        tags_filter_all: Gach taga
+        advanced_filters: Criathragan adhartach
+        placeholder: Lorg pròiseactan
+        filters:
+          all: A h-uile
+          without_admin: Gun rianaire ainmichte
+          without_valuator: Gun neach-luachaidh ainmichte
+          under_valuation: Ga luachadh
+          valuation_finished: Luachadh crìochnaichte
+          feasible: Ion-dhèante
+          selected: Na thagh thu
+          undecided: Gun cho-dhùnadh
+          unfeasible: Neo-dhèante
+          min_total_supports: Comharran taic as ìsle
+          max_total_supports: Comharran taic as motha
+          winners: Buannaichean
+          one_filter: "Criathragan a tha an sàs aig an àm seo: <b><em>%{filter}</em></b>"
+          two_filters: "Criaragan a tha an sàs aig an àm seo: <b><em>%{filter}, %{advanced_filters}</em></b>"
+        buttons:
+          filter: Criathraich
+        download_current_selection: "Luchdaich a-nuas an roghainn làithreach"
+        no_budget_investments: "Chan eil pròiseact tasgaidh sam bith ann."
+        title: Pròiseactan tasgaidh
+        columns: Colbhan
+        assigned_admin: Rianadair ainmichte
+        no_admin_assigned: Chan eil rianaire air a shònrachadh
+        no_valuators_assigned: Chan eil neach-luachaidh air a shònrachadh
+        feasibility:
+          feasible: "Ion-dhèante"
+          unfeasible: "Neo-dhèante"
+          undecided: "Gun cho-dhùnadh"
+        selected: "Na thagh thu"
+        select: "Tagh"
+        list:
+          id: ID
+          title: Tiotal
+          supports: Taic
+          admin: Rianaire
+          valuator: Neach-luachadh
+          valuation_group: Buidheann Luachaidh
+          geozone: Sgòp na h-obrach
+          feasibility: Ion-dhèantachd
+          valuation_finished: Val. Fin.
+          selected: Na thagh thu
+          visible_to_valuators: Seall do luchd-luachaidh
+          author_username: Ainm-cleachdaidh an ùghdair
+          incompatible: Chan eil seo co-chòrdail
+          price: Prìs
+          author: Ùghdar
+        cannot_calculate_winners: Feumaidh am buidseat fuireach aig ìre "%{phase}" gus pròiseactan na pròiseactan a bhuannaich obrachadh a-mach
+        see_results: "Faic na toraidhean"
+        milestone_tags_filter_all: "Na tagaichean clach-mhìle uile"
+      show:
+        assigned_admin: Rianadair ainmichte
+        assigned_valuators: Luach-luachaidh air an sònrachadh
+        classification: Seòrsachadh
+        info: "%{budget_name} - Buidheann: %{group_name} - Pròiseact tasgaidh %{id}"
+        edit: Deasaich
+        edit_classification: Deasaich an seòrsachadh
+        by: Le
+        sent: Air a chur
+        group: Buidheann
+        heading: Ceann-sgrìobhaidh
+        dossier: Dossier
+        edit_dossier: Deasaich an dossier
+        tags: Tagaichean
+        undefined: Gun deifinisean
+        compatibility:
+          title: Co-chòrdalachd
+          "true": Chan eil seo co-chòrdail
+          "false": Co-chòrdail
+        selection:
+          title: Taghadh
+        winner:
+          title: Buannaiche
+          "true": "Seadh"
+          "false": "Chan eadh"
+        valuator_groups: "Buidhnean luachaidh"
+        preview: Ro-shealladh air an tasgadh
+      edit:
+        classification: Seòrsachadh
+        compatibility: Co-chòrdalachd
+        selection: Taghadh
+        assigned_valuators: Luchd-luachaidh
+        select_heading: Tagh bann-cinn
+        submit_button: Ùraich
+        user_tags: Tagaichean air an sònrachadh leis a’ chleachdaiche
+        tags_placeholder: "Sgrìobh a-steach na tagaichean a tha thu ag iarraidh, air an sgaradh le cromagan (,)"
+        undefined: Gun deifinisean
+      search_unfeasible: Rannsaich nithean a tha neo-chomasach dèanamh
+    budgets_wizard:
+      creation_timeline:
+        budget: Buidsead
+        groups: Buidhnean
+        headings: Ceann-sgrìobhaidhean
+        phases: Ìrean
+      budgets:
+        continue: "Air adhart gu buidhnean"
+      groups:
+        back: "Air ais gu deasachadh a’ bhuidseit"
+        continue: "Air adhart gu cinn-sgrìobhaidh"
+      headings:
+        continue: "Air adhart gu ìrean"
+        single:
+          back: "Air ais gu deasachadh na buidhne"
+      heading_mode:
+        multiple:
+          description: "Cruthaich pròiseas le grunn bhuidhnean, sgìrean no cuspairean. Tha rudeigin agad coltach ri grunn phocannan airgid. Mar eisimpleir, 25,000€ airson \"Sgìre a Tuath\", 30,000€ airson \"Sgìre a’ Mheadhain\", 28,000 € airson \"Sgìre a Deas\" agus am baile gu lèir. No airson grunn chuspairean leithid spòrs, cultar no slàinte."
+          link: "Cruthaich buidseat le iomadh ceann-sgrìobhaidh"
+          title: "Buidseat le <strong>Iomadh ceann-sgrìobhaidh</strong>"
+        single:
+          description: "Cruthaich pròiseas le buidheann, sgìre no cuspair. Tha rudeigin agad coltach ri poca airgid. Mar eisimpleir, 25,000€ airson na sgìre, no 10,000€ airson cultar."
+          link: "Cruthaich buidseat le aon cheann-sgrìobhaidh"
+          title: "Buidseat le <strong>Ceann-sgrìobhaidh singilte</strong>"
+        title: "Seòrsa buidseat com-pàirteachail"
+      phases:
+        continue: "Crìochnaich"
+        multiple:
+          back: "Air ais a cinn-sgrìobhaidh"
+        single:
+          back: "Air ais gu deasachadh chinn-sgrìobhadh"
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "Tiotal"
+        table_description: "Tuairisgeul"
+        table_publication_date: "Ceann-latha foillseachaidh"
+        table_status: Inbhe
+        table_actions: "Gnìomhan"
+        no_milestones: "Na cuir clachan-mìle comharraichte ann"
+        image: "Ìomhaigh"
+        show_image: "Seall an dealbh"
+        documents: "Sgrìobhainnean"
+        milestone: Clach-mìle
+        new_milestone: Cruthaich clach-mhìle ùr
+        milestone_tags: Tagaichean clach-mhìle
+      form:
+        admin_statuses: Stiùirich inbhean
+        no_statuses_defined: Chan eil inbhean mìnichte sam bith ann fhathast
+      new:
+        creating: Cruthaich clach-mhìle
+      edit:
+        title: Deasaich clach-mhìle
+      create:
+        notice: Clach-mhìle ùr air a chruthachadh!
+      update:
+        notice: Chaidh a’ chlach-mhìle ùrachadh
+      delete:
+        notice: Clach-mhìle air a sguabadh às
+    statuses:
+      index:
+        title: Inbhean Clach-mhìle
+        empty_statuses: Chan deach inbhe clach-mhìle sam bith a chruthachadh
+        new_status: Cruthaich inbhe clach-mhìle ùr
+        table_name: Ainm
+        table_description: Tuairisgeul
+        table_actions: Gnìomhan
+      edit:
+        title: Deasaich inbhe clach-mhìle
+      update:
+        notice: Chaidh an ìre clach-mhìle ùrachadh
+      new:
+        title: Cruthachadh inbhe clach-mhìle
+      create:
+        notice: Chaidh an ìre clach-mhìle a chruthachadh
+      delete:
+        notice: Chaidh an ìre clach-mhìle a sguabadh às
+    progress_bars:
+      manage: "Stiùirich bàraichean adhartais"
+      index:
+        title: "Bàraichean adhartais"
+        no_progress_bars: "Chan eil bàr adhartais sam bith ann"
+        new_progress_bar: "Cruthaich bàr adhartais ùr"
+        primary: "Prìomh bhàr adhartais"
+        table_id: "ID"
+        table_kind: "Seòrsa"
+        table_title: "Tiotal"
+        table_percentage: "Adhartas làithreach"
+      new:
+        creating: "Cruthaich bàr adhartais"
+      edit:
+        title:
+          primary: "Deasaich prìomh bhàr adhartais"
+          secondary: "Deasaich bàr adhartais %{title}"
+      create:
+        notice: "Bàr adhartais air a chruthachadh!"
+      update:
+        notice: "Bàr adhartais air ùrachadh"
+      delete:
+        notice: "Bàr adhartais air a sguabadh às"
+    comments:
+      index:
+        id: "ID"
+        content: "Susbaint"
+        author: "Ùghdar"
+        commentable_type: "Seòrsa"
+        title: Beachdan
+        no_comments: Chan eil beachd sam bith ann.
+        table_link: "Dèan ceangal"
+    hidden_comments:
+      index:
+        filter: Criathraich
+        filters:
+          all: Uile
+          with_confirmed_hide: Dearbhte
+          without_confirmed_hide: RI choileanadh
+        hidden_debate: Deasbad falaichte
+        hidden_proposal: Moladh falaichte
+        title: Beachdan falaichte
+        no_hidden_comments: Chan eil beachdan falaichte ann.
+    dashboard:
+      index:
+        back: Air ais gu %{org}
+        title: Rianachd
+        description: Fàilte gu pannal rianachd %{org}
+      actions:
+        index:
+          description: "Nuair a chruthaicheas luchd-cleachdaidh molaidhean gheibh iad cothrom air deas-bhòrd den mholadh aca, far an urrainn dhut goireasan agus molaidhean a mholadh gus taic fhaighinn dhan bheachd aca."
+          create: Cruthaich goireas no gnìomh
+          active: 'Seadh'
+          inactive: 'Chan eadh'
+          title: Goireasan agus gnìomhan
+          action_title: Tiotal
+          action_type: Seòrsa
+          required_supports: Comharran taic a tha a dhìth
+          day_offset: Làithean a tha a dhìth
+          action_active: Gnìomhach
+          order: Òrdugh
+          published_proposal: Moladh follaischte
+          default:
+            email: Post-d
+            polls: Cunntasan-bheachd
+            poster: Postair
+        new:
+          creating: Gnìomh ùr airson deas-bhòrd nam molaidhean
+          back: Air ais dhan liosta
+        create:
+          notice: Chaidh an gnìomh a chruthachadh
+        edit:
+          editing: Deasaich gnìomh airson deas-bhòrd nam molaidhean
+          back: Air ais dhan liosta
+        delete:
+          success: Gnìomh air a sguabadh às
+        form:
+          submit_button: Sàbhail
+          help_text: Cuir a-steach 0 gus nach tèid an luach seo a ghabhail a-steach
+          published_proposal_help_text: Comharraich am bogsa-cromaige seo gus an gnìomh a chruthachadh airson molaidhean foillsichte a-mhàin
+      administrator_tasks:
+        index:
+          description: "Faodaidh putan a bhith anns na goireasan a thèid fhoillseachadh air deas-bhòrd nam molaidhean as urrainn iarraidh air rianairean. Tha iarrtasan luchd-cleachdaidh air an sealltainn gu h-ìosal."
+          title: Goireasan a chaidh iarraidh
+          solve: Fuasgail
+          no_records: Chan deach goireas sam bith iarraidh.
+          source: Tùs
+          resource: Goireas a chaidh iarraidh
+          filter: Criathraich
+          filters:
+            pending: Ri choileanadh
+            done: Air fhuasgladh
+        edit:
+          back: Air ais gu liosta nan gnìomhan a tha rin coileanadh
+          solving: Fuasgail an gnìomh a tha ri choileanadh
+        form:
+          solve: Comharraich gun deach fhuasgladh
+          proposal: Moladh
+          request: Goireas a chaidh iarraidh
+        update:
+          success: Tha comharrachadh gun deach an gnìomh seo fhuasgladh.
+    debates:
+      index:
+        id: ID
+        author: Ùghdar
+        title: Deasbadan
+        no_debates: Chan eil deasbad sam bith ann.
+    hidden_debates:
+      index:
+        filter: Criathraich
+        filters:
+          all: Uile
+          with_confirmed_hide: Dearbhte
+          without_confirmed_hide: Ri choileanadh
+        title: Deasbadan falaichte
+        no_hidden_debates: Chan eil deasbad falaichte sam bith ann.
+    documents:
+      new:
+        title: "Luchdaich suas sgrìobhainn"
+        submit_button: "Luchdaich suas"
+      index:
+        new_link: "Cuir sgrìobhainn ùr ris"
+        no_documents: "Chan eil sgrìobhainn sam bith ann."
+        title: "Sgrìobhainnean"
+        format: "Fòrmat"
+        size: "Meud"
+        url: "URL"
+      create:
+        success_notice: "Chaidh an sgrìobhainn a luchdadh suas"
+        unable_notice: "Sgrìobhainn mhì-dhligheach"
+      destroy:
+        success_notice: "Chaidh an sgrìobhainn a sguabadh às"
+    hidden_users:
+      index:
+        filter: Criathraich
+        filters:
+          all: Uile
+          with_confirmed_hide: Dearbhte
+          without_confirmed_hide: Ri choileanadh
+        title: Cleachdaichean falaichte
+        user: Cleachdaiche
+        no_hidden_users: Chan eil cleachdaichean falaichte ann.
+      show:
+        email: "Post-d:"
+        hidden_at: "Falaichte aig:"
+        registered_at: "Clàraichte aig:"
+        title: Gnìomh aig a’ chleachdaiche (%{user})
+    hidden_budget_investments:
+      index:
+        filter: Criathraich
+        filters:
+          all: Uile
+          with_confirmed_hide: Dearbhte
+          without_confirmed_hide: Ri choileanadh
+        title: Tasgaidhean buidseit falaichte
+        no_hidden_budget_investments: Chan eil tasgaidhean buidseit falaichte ann
+    legislation:
+      processes:
+        create:
+          notice: 'Pròiseas air a chruthachadh. <a href="%{link}">Briog airson tadhal air</a>'
+          error: Cha b’ urrainn dhuinn am pròiseas a chruthachadh
+        update:
+          notice: 'Chaidh am pròiseas ùrachadh. <a href="%{link}">Briog airson tadhal adhair</a>'
+          error: Cha b’ urrainn dhuinn am pròiseas ùrachadh
+        destroy:
+          notice: Chaidh am pròiseas a sguabadh às
+        edit:
+          back: Air ais
+          submit_button: Sàbhail na h-atharraichean
+        form:
+          enabled: An comas
+          process: Pròiseas
+          debate_phase: Ìre deasbaid
+          draft_phase: Ìre Dreachd
+          draft_phase_description: Ma tha an ìre seo gnìomhach, cha bhi am pròiseas air a liostadh air clàr-amais nam pròiseasan. Leig le seo ro-shealladh fhaighinn air a’ phròiseas agus susbaint a chruthachadh mus tòisich thu.
+          allegations_phase: Ìre nam beachdan
+          proposals_phase: Ìre nam molaidhean
+          use_markdown: Cleachd Markdown gus an teacsa fhòrmatadh
+          homepage_description: An seo faodaidh tu susbaint a’ phròiseis a mhìneachadh
+          banner_title: Dath a’ bhanna-chinn
+        index:
+          create: Pròiseas ùr
+          title: Reachdas co-obrachail
+          filters:
+            active: Gnìomhach
+            all: A h-uile
+        new:
+          back: Air ais
+          title: Cruthaich pròiseas reachdais co-obrachail ùr
+          submit_button: Cruthaich pròiseas
+        proposals:
+          orders:
+            id: "Seòrsaich a-rèir ID"
+            title: "Seòrsaich a-rèir tiotail"
+            supports: "Seòrsaich a rèir chomharran taic iomlan"
+        process:
+          title: Pròiseas
+          comments: Beachdan
+          status: Inbhe
+          start_date: Ceann-latha tòiseachaidh
+          end_date: Ceann-latha crìochnachaidh
+          status_open: Fosgail
+          status_closed: Dùinte
+          status_planned: Air a phlanadh
+        subnav:
+          info: Fiosrachadh
+          homepage: Duilleag dachaigh
+          draft_versions: Dreachdadh
+          questions: Deasbad
+          proposals: Molaidhean
+          milestones: Ga leantainn
+      homepage:
+        edit:
+          title: Rèitich duilleag-dachaigh do phròiseis
+      proposals:
+        index:
+          title: Tiotal
+          back: Air ais
+          id: Id
+          supports: Comharran taic iomlan
+        form:
+          custom_categories: Roinnean-seòrsa
+          custom_categories_description: Roinnean-seòrsa a dh’fhaodas cleachdaichean a thaghadh agus iad a’ cruthachadh a’ mholaidh. 160 caractaran air a char as motha.
+          custom_categories_placeholder: Cuir a-steach na tagaichean a bu toigh leat cleachdadh, air an dealachadh le cromagan (','), agus eadar cuòtaichean ("")
+      draft_versions:
+        create:
+          notice: 'Chaidh an dreachd a chruthachadh. <a href="%{link}">Briog gus tadhal air</a>'
+          error: Cha ghabhadh an dreach a chruthachadh
+        update:
+          notice: 'Chaidh an dhreachd ùrachadh. <a href="%{link}">Briog gus tadhal air</a>'
+          error: Cha ghabhadh an dreach ùrachadh
+        destroy:
+          notice: Chaidh an dreachd a sguabadh às
+        edit:
+          back: Air ais
+          submit_button: Sàbhail na h-atharraichean
+          warning: Tha thu air an teacsa a dheasachadh, na dìochuimnich briogadh air Sàbhail gus na h-atharraichean a shàbhladh.
+          markdown_changes_message: "Tha thu air an teacsa a dheasachadh gun a shàbhaladh. A bheil thu cinnteach gu bheil thu airson an duilleag fhàgail?"
+        form:
+          title: 'A’ deasachadh <span class="strong">%{draft_version_title}</span> bhon phròiseas <span class="strong">%{process_title}</span>'
+          launch_text_editor: Fosgail an deasaiche teacsa
+          close_text_editor: Dùn an deasaiche teacsa
+          use_markdown: Cleachd Markdown gus an teacsa fhòrmatadh
+          hints:
+            final_version: Thèid an dreachd seo fhoillseachadh mar Thoradh Deireannach airson a’ phròiseis seo. Cha cheadaichear beachdan san tionndadh seo.
+            status:
+              draft: Faodaidh tu ro-shealladh fhaighinn mar rianadair, chan fhaic duine sam bith eile e
+              published: Ri fhaicinn dhan h-uile duine
+          changelog_placeholder: Cuir ris na prìomh atharraichean bhon tionndadh mu dheireadh
+        index:
+          title: Dreachdan
+          create: Cruthaich dreachd
+          delete: Sguab às
+          preview: Ro-sheall
+        new:
+          back: Air ais
+          title: Cruthaich tionndadh ùr
+          submit_button: Cruthaich dreachd
+        table:
+          title: Tiotal
+          created_at: Chaidh a chruthachadh aig
+          comments: Beachdan
+          final_version: Tionndadh deireannach
+          status: Inbhe
+      questions:
+        create:
+          notice: 'Chaidh ceist a chruthachadh. <a href="%{link}">Briog gus tadhal oirre</a>'
+          error: Cha b’ urrainn dhuinn a’ cheist a chruthachadh
+        update:
+          notice: 'Chaidh ceist ùrachadh. <a href="%{link}">Briog gus tadhal oirre</a>'
+          error: Cha b’ urrainn dhuinn a’ cheist ùrachadh
+        destroy:
+          notice: Chaidh a’ cheist a sguabadh às
+        edit:
+          back: Air ais
+          title: "Deasaich “%{question_title}”"
+          submit_button: Sàbhail na h-atharraichean
+        form:
+          add_option: Cuir roghainn ris
+          value_placeholder: Cuir freagairt dùinte ris
+          question_options: "Freagairtean a dh’fhaodadh a bhith ann (roghainneil, freagairtean fosgailte mar bhun-roghainn)"
+        index:
+          back: Air ais
+          title: Ceistean co-cheangailte ris a’ phròiseas seo
+          create: Cruthaich ceist
+          delete: Sguab às
+        new:
+          back: Air ais
+          title: Cruthaich ceist ùr
+          submit_button: Cruthaich ceist
+        table:
+          title: Tiotal
+          question_options: Roghainnean airson ceist
+          answers_count: Cunnt nam freagairtean
+          comments_count: Cunntas nam beachdan
+        question_option_fields:
+          remove_option: Thoir an roghainn air falbh
+      milestones:
+        index:
+          title: Ga leantainn
+    managers:
+      index:
+        title: Manaidsearan
+        no_managers: Chan eil manaidsearan ann.
+      manager:
+        add: Cuir ris
+      search:
+        title: "Manaidsearan: Rannsachadh luchd-cleachdaidh"
+    sdg_managers:
+      index:
+        no_sdg_managers: Chan eil cleachdaichean ann.
+    sdg/managers:
+      sdg/manager:
+        add: Cuir ris
+    menu:
+      activity: Gnìomhan leis a’ mhodaratair
+      admin: Clàr-taice nan rianairean
+      banner: Stiùirich brataichean
+      proposals: Molaidhean
+      proposals_topics: Cuspairean nam molaidhean
+      budgets: Buidseatan Com-pàirteachail
+      geozones: Stiùirich geo-sgìrean
+      hidden_comments: Beachdan falaichte
+      hidden_debates: Deasbadan falaichte
+      hidden_proposals: Molaidhean falaichte
+      hidden_budget_investments: Tasgaidhean buidseit falaichte
+      hidden_proposal_notifications: Brathan falaichte mu mholaidhean
+      hidden_users: Cleachdaichean falaichte
+      administrators: Rianairean
+      managers: Manaidsearan
+      sdg_managers: Manaidsear Amasan Leasachaidh Seasmhach
+      moderators: Modaratairean
+      messaging_users: Teachdaireachdan do chleachdaichean
+      newsletters: Cuairt-litrichean
+      admin_notifications: Brathan
+      system_emails: Puist-d siostaim
+      emails_download: Luchdaich a-nuas post-d
+      valuators: Luchd-luachaidh
+      poll_officers: Oifigearan bhòtaidh
+      polls: Cunntasan-bheachd
+      poll_booths: Àite nam bothan
+      poll_booth_assignments: Sònrachaidhean Bothain
+      poll_shifts: Stiùirich sioftaichean
+      officials: Oifigich
+      organizations: Buidhnean
+      settings: Roghainnean uile-choitcheann
+      stats: Stadastaireachd
+      signature_sheets: Duilleagan nan ainmean-sgrìobhte
+      site_customization:
+        documents: Sgrìobhainnean gnàthaichte
+        homepage: Duilleag dachaigh
+        pages: Duilleagan gnàthaichte
+        images: Dealbh gnàthaichte
+        content_blocks: Blocaichean susbaint gnàthaichte
+        information_texts: Teacsaichean fiosrachaidh gnàthaichte
+        information_texts_menu:
+          basic: "Gnàthachadh bunaiteach"
+          debates: "Deasbadan"
+          community: "Coimhearsnachd"
+          proposals: "Molaidhean"
+          polls: "Cunntasan-bheachd"
+          layouts: "Co-dhealbhachdan"
+          machine_learning: "AI / Ionnsachadh Inneil"
+          mailers: "Puist-d"
+          management: "Stiùireadh"
+          welcome: "Fàilte"
+        buttons:
+          save: "Sàbhail"
+          content_block:
+            update: "Ùraich am bloca"
+      title_moderated_content: Susbaint air a mhodaratadh
+      title_profiles: Pròifilean
+      title_settings: Roghainnean
+      title_site_customization: Susbaint na làraich-lìn
+      title_booths: Bothain bhòtaidh
+      legislation: Reachdas Co-obrachail
+      users: Cleachdaichean
+      dashboard: Clàr nam molaidhean
+      administrator_tasks: Goireasan a chaidh iarraidh
+      dashboard_actions: Goireasan agus gnìomhan
+      debates: "Deasbadan"
+      comments: "Beachdan"
+      local_census_records: Stiùirich cunntas-sluaigh ionadail
+      machine_learning: "AI / Ionnsachadh Inneil"
+      multitenancy: Ioma-teanantachd
+    administrators:
+      index:
+        title: Rianairean
+        id: ID an Rianaire
+        no_administrators: Chan eil rianairean ann.
+      administrator:
+        add: Cuir ris
+        restricted_removal: "Duilich, chan urrainn dhut thu fhèin a thoirt air falbh mar rianaire."
+      search:
+        title: "Rianairean: Rannsachadh luchd-cleachdaidh"
+      form:
+        edit_title: "Deasaich rianaire"
+        updated: "Chaidh an rianaire ùrachadh"
+    moderators:
+      index:
+        title: Modaratairean
+        no_moderators: Chan eil modaratar sam bith ann.
+      moderator:
+        add: Cuir ris
+      search:
+        title: "Modaratairean: Rannsachadh luchd-cleachdaidh"
+    segment_recipient:
+      all_users: A h-uile cleachdaiche
+      administrators: Rianairean
+      all_proposal_authors: Ùghdaran nam molaidhean (a’ gabhail a-steach molaidhean san tasglann agus a chaidh a tharraing a-mach)
+      proposal_authors: Ùghdaran nam molaidhean
+      investment_authors: Ùghdaran tasgaidh anns a’ bhuidseit làithreach
+      feasible_and_undecided_investment_authors: "Ùghdaran aig cuid de thasgadh sa bhuidseit làithreach nach eil a’ gèilleadh ri: [valuation finished unfeasible]"
+      selected_investment_authors: Ùghdaran aig tasgaidhean taghte anns a’ bhuidseit làithreach
+      winner_investment_authors: Ùghdaran aig tasgaidhean a bhuannaich anns a’ bhuidseit làithreach
+      not_supported_on_current_budget: Cleachdaichean nach do chuir taic ri tasgaidhean air a’ bhuidseit làithreach
+      invalid_recipients_segment: "Tha earrann an neach-faighinn neo-dhligheach"
+    newsletters:
+      create_success: Chaidh cuairt-litir a chruthachadh
+      update_success: Chaidh a’ chuairt-litir ùrachadh
+      send_success: Chaidh a’ chuairt-litir a chur
+      delete_success: Chaidh a’ chuairt-litir a sguabadh às
+      index:
+        title: Cuairt-litrichean
+        new_newsletter: Cuairt-litir ùr
+        subject: Cuspair
+        segment_recipient: Faightearean
+        sent: Air a chur
+        actions: Gnìomhan
+        draft: Dreachd
+        preview: Ro-sheall
+        empty_newsletters: Chan eil cuairt-litrichean ann ri shealltainn
+      new:
+        title: Cuairt-litir ùr
+        header_footer_help_text: "Tha am bann-cinn agus bonn-coise co-ionann airson a h-uile post-d, faodaidh tu an atharrachadh air <code>app/views/layouts/mailer_header</code> agus <code>app/views/layouts/mailer_footer</code> .<br> ’S urrainn dhut dealbh bann-cinn atharrachadh air %{link}."
+        image_link: "dealbhan gnàthaichte"
+      edit:
+        title: Deasaich a’ chuairt-litir
+      show:
+        title: Ro-shealladh air a’ chuairt-litir
+        send: Cuir
+        affected_users: (bheir seo buaidh air %{n} cleachdaichean)
+        sent_emails:
+          one: 1 phost-d air a chur
+          two: "%{count} phost-d air a chur"
+          few: "%{count} puist-d air an cur"
+          other: "%{count} puist-d air an cur"
+        sent_at: Air a chur aig
+        subject: Cuspair
+        segment_recipient: Faightearean
+        from: Seòladh post-d a thèid a chomharrachadh mar an seòladh às an tàinig a’ chuairt-litir
+        body: Susbaint a’ phuist-d
+        body_help_text: Seo mar a chì cleachdaichean am post-d.
+        send_alert: A bheil thu cinnteach gu bheil thu airson a’ chuairt=litir seo a chur gu %{n} cleachdaichean?
+    admin_notifications:
+      create_success: Chaidh am brath a chruthachadh
+      update_success: Chaidh am brath ùrachadh
+      send_success: Chaidh am brath a chur
+      delete_success: Chaidh am brath a sguabadh às
+      index:
+        section_title: Brathan
+        new_notification: Brath ùr
+        title: Tiotal
+        segment_recipient: Faightearean
+        sent: Air a chur
+        actions: Gnìomhan
+        draft: Dreachd
+        preview: Ro-sheall
+        view: Seall
+        empty_notifications: Chan eil brathan ann ri shealltainn.
+      new:
+        section_title: Brath ùr
+        submit_button: Cruthaich brath
+      edit:
+        section_title: Deasaich brath
+        submit_button: Brath mun ùrachadh
+      show:
+        section_title: Ro-shealladh air brath
+        send: Cuir brath thugam
+        will_get_notified: (thèid fios gu %{n} cleachdaichean)
+        got_notified: (fhuair %{n} fios)
+        sent_at: Air a chur aig
+        title: Tiotal
+        body: Teacsa
+        link: Ceangail
+        segment_recipient: Faightearean
+        preview_guide: "Seo mar a chì cleachdaichean am brath:."
+        sent_guide: "Seo mar a chì cleachdaichean am brath:."
+        send_alert: A bheil thu cinnteach gu bheil thu airson am brath seo a chur gu %{n} cleachdaichean?
+    system_emails:
+      preview_pending:
+        action: Ro-shealladh ri thighinn
+        preview_of: Ro-shealladh air %{name}
+        pending_to_be_sent: Is e seo an susbaint a tha ri cuir
+        moderate_pending: Modarataich na brathan a thèid a chur
+        send_pending: Cuir an rud a tha ri choileanadh
+        send_pending_notification: Chaidh am brath a bha a’ feitheamh a chur
+      proposal_notification_digest:
+        title: "Geàrr-chunntas de bhrathan mu mholaidhean"
+        description: "Cruinnichidh seo a h-uile brath mu mholaidhean airson cleachdaiche ann an aon teachdaireachd, gus cus puist-d a sheachnadh."
+        preview_detail: "Chan fhaigh cleachdaichean fiosan ach a-mhàin bho na molaidhean a tha iad a’ leantainn"
+      budget_investment_created:
+        title: "Chaidh Tasgadh Buidseit a chruthachadh"
+        description: "Air a chuir nuair a chruthaicheas cleachdaiche tasgadh buidseit."
+      budget_investment_selected:
+        title: "Chaidh tasgadh buidseit a thaghadh"
+        description: "Air a chur chun an ùghdair nuair a thèid comharrachadh gun deach an tasgadh a thaghadh."
+      budget_investment_unfeasible:
+        title: "Tasgadh buidseit neo-chomasach dèanamh"
+        description: "Air a chur chun an ùghdair nuair a chaidh comharrachadh gun robh an tasgadh buidseit neo-chomasach dèanamh."
+      budget_investment_unselected:
+        title: "Chaidh tasgadh buidseit a dhì-thaghadh"
+        description: "Air a chur chun an ùghdair nuair nach deach an tasgadh buidseit a thaghadh airson ìre bhòtaidh."
+      comment:
+        title: "Beachd"
+        description: "Air a chur chun an ùghdair nuair a gheibh iad beachd."
+      reply:
+        title: "Freagair"
+        description: "Air a chur gu ùghdair a’ bheachd nuair a gheibh iad beachd air ais."
+      direct_message_for_receiver:
+        title: "Faightear teachdaireachd phrìobhaideach"
+        description: "Air a chur chun an neach a fhuair an teachdaireachd phrìobhaideach."
+      direct_message_for_sender:
+        title: "Neach-cuir teachdaireachd phrìobhaideach"
+        description: "Air a chur chun an neach a chuir an teachdaireachd phrìobhaideach."
+      email_verification:
+        title: "Dearbhadh puist-d"
+        description: "Air a chur gu cleachdaiche ùr gus an cunntas a dhearbhadh."
+      user_invite:
+        title: "Cuireadh gu cleachdaiche"
+        description: "Air a chur chun an neach a fhuair cuireadh cunntas a chlàradh."
+      evaluation_comment:
+        title: "Beachd luachaidh ùr"
+        description: "Air a chur gu luchd-rianachd agus luchd-measaidh co-cheangailte ri tasgadh air an deach beachd a thoirt"
+      edit_info: "Is urrainn dhut am post-d seo a dheasachadh ann a"
+      message_title: "Tiotal na teachdaireachd"
+      message_body: "Seo eisimpleir de shusbaint teachdaireachd."
+      alert:
+        no_investments: "Chan deach tasgadh buidseit sam bith a chruthachadh. Feumar beagan dàta eisimpleir gus ro-shealladh a dhèanamh air a’ phost-d."
+        no_comments: "Chan deach beachd sam bith a chruthachadh. Feumar beagan dàta eisimpleir gus ro-shealladh a dhèanamh air a’ phost-d."
+        no_replies: "Chan deach freagairt sam bith a chruthachadh. Feumar beagan dàta eisimpleir gus ro-shealladh a dhèanamh air a’ phost-d."
+        no_evaluation_comments: "Chan deach beachd luachaidh sam bith a chruthachadh. Feumar beagan dàta eisimpleir gus ro-shealladh a dhèanamh air a’ phost-d."
+    emails_download:
+      index:
+        title: Luchdaich a-nuas post-d
+        download_segment: Luchdaich a-nuas seòlaidhean puist-d
+        download_segment_help_text: Luchdadh a-nuas ann an cruth CSV
+        download_emails_button: Luchdaich a-nuas liosta nam post-d
+    valuators:
+      index:
+        title: Luchd-luachaidh
+        name: Ainm
+        email: Post-d
+        description: Tuairisgeul
+        no_description: Gun tuairisgeul
+        no_valuators: Chan eil luchd-luachaidh sam bith ann.
+        valuator_groups: "Buidhnean luachaidh"
+        group: "Buidheann"
+        no_group: "Chan eil buidheann ann"
+        abilities: "Comasan"
+        can_comment: "Cead beachdan a thoirt seachad"
+        can_edit_dossier: "Comasach air an dossier a dheasachadh"
+      valuator:
+        add: Cuir ris an luach-luachaidh
+      search:
+        title: "Luchd-luachaidh: Rannsachadh luchd-cleachdaidh"
+      form:
+        edit_title: "Luchd-luachaidh: Deasaich neach-luachaidh"
+        updated: "Chaidh an neach-luachaidh ùrachadh"
+      show:
+        description: "Tuairisgeul"
+        email: "Post-d"
+        group: "Buidheann"
+        abilities: "Comasan"
+        no_description: "Gun tuairisgeul"
+        no_group: "Gun bhuidheann"
+        no_abilities: "Gun chomasan"
+    valuator_groups:
+      index:
+        title: "Bhuidhinn luachaidh"
+        new: "Cruthaich buidheann luach-luachaidh"
+        name: "Ainm"
+        members: "Buill"
+        no_groups: "Chan eil buidhnean luchd-luachaidh ann."
+      show:
+        title: "Buidheann luchd-luachaidh: %{group}"
+        no_valuators: "Chan eil neach-luachaidh sam bith air a sònrachadh dhan bhuidhinn seo"
+      form:
+        new: "Cruthaich buidheann luach-luachaidh"
+        edit: "Sàbhail buidheann an luchd-luachaidh"
+    poll_officers:
+      index:
+        title: Oifigearan bhòtaidh
+      officer:
+        add: Cuir ris
+        delete: Cuir às dhan dreuchd
+        name: Ainm
+        email: Post-d
+        entry_name: oifigear
+      search:
+        email_placeholder: Lorg cleachdaiche a rèir post-d
+        user_not_found: Cha deach an cleachdaiche a lorg
+        help: "Gus oifigearan bhòtaidh a chur ris no a thoirt air falbh cleachd am foirm luirg gu h-ìosal."
+    poll_officer_assignments:
+      index:
+        officers_title: "Liosta nan oifigearan"
+        no_officers: "Chan eil oifigear sam bith air an sònrachadh dhan bhòt seo."
+        table_name: "Ainm"
+        table_email: "Post-d"
+      by_officer:
+        date: "Ceann-latha"
+        booth: "Bùthan"
+        assignments: "Sioftaichean anns a’ bhòt seo"
+        no_assignments: "Chan eil sioft oifis sam bith aig a’ chleachdaiche seo anns a’ bhòt seo."
+    poll_shifts:
+      new:
+        add_shift: "Cuir sioft ris"
+        shift: "Dreuchd"
+        shifts: "Sioftaichean sa bhothan seo"
+        date: "Ceann-latha"
+        edit_shifts: Deasaich sioftaichean
+        new_shift: "Sioft ùr"
+        no_shifts: "Chan eil sioft sam bith aig a’ bhothan seo"
+        officer: "Oifigear"
+        remove_shift: "Thoir air falbh"
+        search_officer_button: Lorg
+        search_officer_placeholder: Sgrùd a rèir oifigeir
+        search_officer_text: Sgrùd a rèir oifigeir gus sioft ùr a shònrachadh
+        select_date: "Tagh latha"
+        no_voting_days: "Làithean bhòtaidh air an dèanamh"
+        select_task: "Gnìomh comharraichte"
+        table_shift: "Sioft"
+        table_email: "Post-d"
+        table_name: "Ainm"
+      flash:
+        create: "Sioft air a chur ris"
+        destroy: "Sioft air a thoirt air falbh"
+        unable_to_destroy: "Chan sioftaichean le toraidhean no aithrisean co-cheangailte a sguabadh às"
+        date_missing: "Feumar ceann-latha a thaghadh"
+      vote_collection: Cruinnich bhòtaichean
+      recount_scrutiny: Ath-chunntadh is Sgrùdadh
+    booth_assignments:
+      manage_assignments: Stiùirich na dreuchdan
+      manage:
+        assignments_list: "Sònrachaidhean airson bhòt '%{ poll}'"
+        status:
+          assign_status: Dreuchd
+          assigned: Air a shònrachadh
+          unassigned: Gun sònrachadh
+        actions:
+          assign: Sònraich bothan
+          unassign: Neo-shònraich bothan
+    poll_booth_assignments:
+      alert:
+        shifts: "Tha sioftaichean co-cheangailte ris a’ bhothan seo. Ma bheir thu air falbh sònrachadh a’ bhothain, thèid na sioftaichean a sguabadh às cuideachd. A bheil thu airson cumail ort?"
+      show:
+        location: "Àite"
+        officers: "Oifigearan"
+        officers_list: "Liosta oifigearan airson a’ bhothain seo"
+        no_officers: "Chan eil oifigearan ann airson a’ bhothain seo"
+        recounts: "Ath-chunntasan"
+        recounts_list: "Liosta ath-chunntais airson a’ bhothain seo"
+        results: "Toraidhean"
+        date: "Ceann-latha"
+        count_final: "Ath-chunntas deireannach (leis an oifigear)"
+        count_by_system: "Bhòtaichean (fèin-obrachail)"
+        total_system: Bhòtaichean iomlan (fèin-obrachail)
+      index:
+        booths_title: "Liosta de na bothain"
+        no_booths: "Chan eil bothan sam bith air a sònrachadh dhan bhòt seo."
+        table_name: "Ainm"
+        table_location: "Àite"
+    active_polls:
+      edit:
+        title: "Tuairisgeul air na cunntas-bheachd"
+      form:
+        description:
+          help_text: "Nochdaidh an teacsa seo ann am bann-cinn duilleag nam bhòtaichean. Faodar a chleachdadh gus co-theacs a chur ris na cunntasan-bheachd fosgailte."
+    polls:
+      index:
+        title: "Liosta nam bhòtaichean"
+        no_polls: "Chan eil bhòtaichean ann.."
+        create: "Cruthaich cunntas-bheachd"
+        name: "Ainm"
+        dates: "Cinn-latha"
+        start_date: "Ceann-latha tòiseachaidh"
+        closing_date: "Ceann-latha mu dheireadh"
+        geozone_restricted: "Air a chuingealachadh ri sgìrean"
+      new:
+        title: "Cunntas-bheachd ùr"
+        submit_button: "Cruthaich cunntas-bheachd"
+      edit:
+        title: "Deasaich an cunntas-bheachd"
+        submit_button: "Ùraich an cunntas-beachd"
+      show:
+        questions_tab: Ceistean
+        booths_tab: Bothain
+        officers_tab: Oifigearan
+        recounts_tab: Ag ath-chunntadh
+        results_tab: Toraidhean
+        no_questions: "Chan eil ceist sam bith air a sònrachadh dhan bhòt seo."
+        questions_title: "Liosta de na ceistean"
+        table_title: "Tiotal"
+        edit_answers: Deasaich freagairtean
+        see_proposal: "(faic am molaidh)"
+      destroy:
+        alert: "Bheir an gnìomh seo air falbh a’ bhòt agus na ceistean co-cheangailte ris."
+        success_notice: "Chaidh an cunntas-beachd a sguabadh às"
+        unable_notice: "Chan urrainn dhut bhòta a sguabadh às a fhuair bhòtaichean"
+      votation_type:
+        title: "Seòrsa bhòtaidh"
+        unique_description: "Chan eil e comasach a’ cheist a fhreagairt ach aon turas a-mhàin."
+        multiple_description: "Tha seo a’ ceadachadh grunn fhreagairtean a thaghadh. Tha e comasach an àireamh as motha de fhreagairtean a tha ceadaichte a shuidheachadh."
+    questions:
+      index:
+        title: "Ceistean"
+        create: "Cruthaich ceist"
+        no_questions: "Chan eil ceist sam bith ann."
+        filter_poll: Criathraich a rèir cinn-latha
+        select_poll: Tagh cunntas-bheachd
+        questions_tab: "Ceistean"
+        successful_proposals_tab: "Molaidhean soirbheachail"
+        create_question: "Cruthaich ceist"
+        table_proposal: "Moladh"
+        table_question: "Ceist"
+        table_poll: "Cunntas-bheachd"
+        poll_not_assigned: "Chan eil a’ bhòt air a shònrachadh"
+      edit:
+        title: "Deasaich Ceist"
+      form:
+        poll_help: "Chan urrainn dhut ach cunntasan-bheachd nach do thòisich fhathast a thaghadh"
+      new:
+        title: "Cruthaich ceist airson bhòt %{poll}"
+        title_proposal: "Cruthaich ceist"
+      destroy:
+        notice: "Chaidh a’ cheist a sguabadh às"
+      answers:
+        images:
+          add_image: "Chuir dealbh ris"
+          save_image: "Sàbhail an dealbh"
+      show:
+        proposal: Moladh tùsail
+        author: Ùghdar
+        question: Ceist
+        edit_question: Deasaich ceist
+        valid_answers: Freagairtean dligheach
+        add_answer: Cuir freagairt ris
+        video_url: Bhidio air an taobh a-muigh
+        answers:
+          title: Freagairt
+          description: Tuairisgeul
+          videos: Bhidiothan
+          video_list: Liosta bhideothan
+          images: Dealbhan
+          images_list: Liosta de na dealbhan}
+          documents: Sgrìobhainnean
+          documents_list: Liosta de sgrìobhainnean
+          document_title: Tiotal
+          document_actions: Gnìomhan
+      no_edit: "Aon uair ‘s gu bheil am bhòt air tòiseachadh cha bhi e comasach ceistean, freagairtean no susbaint sam bith co-cheangailte ris a’ bhòt a chruthachadh, a dheasachadh no a dhubhadh às."
+    answers:
+      new:
+        title: Freagairt ùr
+      edit:
+        title: Deasaich freagairt
+      destroy:
+        success_notice: "Chaidh an fhreagairt a sguabadh às"
+      images:
+        index:
+          title: Dealbhan
+      videos:
+        index:
+          title: Bhidiothan
+          add_video: Cuir bhidio ris
+          video_title: Tiotal
+          video_url: Bhidio air an taobh a-muigh
+        new:
+          title: Bhidio ùr
+        edit:
+          title: Deasaich a’ bhidio
+    recounts:
+      index:
+        title: "Ath-chunntasan"
+        no_recounts: "Chan eil rud sam bith ann ri ath-chunntadh"
+        all_booths_total: "Iomlan tionalach bho gach bothan:"
+        total_final: "Ath-chunntasan deireannach"
+        total_system: "Bhòtaichean (fèin-obrachail)"
+        table_booth_name: "Bùthan"
+        table_total_recount: "Ath-chunntas iomlan (leis an oifigear)"
+        table_system_count: "Bhòtaichean (fèin-obrachail)"
+    results:
+      index:
+        title: "Toraidhean"
+        no_results: "Chan eil toraidhean ann"
+      result:
+        table_whites: "Baileatan a tha gu tur ban"
+        table_nulls: "Baileatan mì-dhligheach"
+        table_total: "Baileatan dligheach"
+        table_answer: Freagairt
+        table_votes: Bhòtaichean
+      results_by_booth:
+        booth: Bùthan
+        results: Toraidhean
+        see_results: Faic na toraidhean
+        title: "Toraidhean a rèir bothan"
+    booths:
+      index:
+        title: "Liosta de bhothain ghnìomhach"
+        no_booths: "Chan eil bothain gnìomhach ann airson bhòt sam bith a tha ri thighinn."
+        add_booth: "Cuir bothan ris"
+        name: "Ainm"
+        location: "Àite"
+        no_location: "Gun àite"
+      new:
+        title: "Bothan ùr"
+        submit_button: "Cruthaich bothan"
+      edit:
+        title: "Deasaich bothan"
+        submit_button: "Ùraich bothan"
+      show:
+        location: "Àite"
+      booth:
+        shifts: "Stiùirich sioftaichean"
+    officials:
+      edit:
+        destroy: Thoir air falbh inbhe "Oifigeil"
+        title: "Oifigearan: Deasaich cleachdaiche"
+      flash:
+        official_destroyed: "Fios air a shàbhaladh: chan eil an cleachdaiche na oifigear tuilleadh"
+        official_updated: Fios mun oifigear air a shàbhaladh
+      index:
+        title: Oifigich
+        help: Thèid na h-eadar-theachdan aig cunntasan cleachdaichean a tha air an comharrachadh mar oifigearan a chomharrachadh. Faodaidh tu an leubail a tha a’ nochdadh ri taobh ainmean-cleachdaidh nan cunntasan seo a chomharrachadh bhon fheadhainn as cudromaiche (ìre 1) dhan fheadhainn as neo-chudromaiche (ìre 5).
+        no_officials: Chan eil oifigearan sam bith ann.
+        name: Ainm
+        official_position: Dreuchd oifigeil
+        official_level: Ìre
+      level_0: Chan eil seo oifigeil
+      level_1: Ìre 1
+      level_2: Ìre 2
+      level_3: Ìre 3
+      level_4: Ìre 4
+      level_5: Ìre 5
+      search:
+        make_official: Dèan na oifigear
+        title: "Dreuchdan oifigeil: Rannsaich cleachdaichean"
+        no_results: Cha deach dreuchdan oifigeil a lorg.
+    organizations:
+      index:
+        filter: Criathraich
+        filters:
+          all: Uile
+          pending: Ri choileanadh
+          rejected: Air a dhiùltadh
+          verified: Air a dhearbhadh
+        hidden_count:
+          one: Tha <strong>aon bhuidheann</strong> ann cuideachd gun cleachdaiche no le cleachdaiche falaichte.
+          two: Tha <strong>%{count} bhuidheann </strong> ann gun chleachdaiche sam bith no le cleachdaiche falaichte.
+          few: Tha <strong>%{count} buidhnean </strong> ann gun chleachdaiche sam bith no le cleachdaiche falaichte.
+          other: Tha <strong>%{count} buidhnean </strong> ann gun chleachdaiche sam bith no le cleachdaiche falaichte.
+        name: Ainm
+        email: Post-d
+        phone_number: Fòn
+        responsible_name: saoranaich earbsach
+        status: Inbhe
+        no_organizations: Chan eil buidheann sam bith ann.
+        reject: Diùlt
+        rejected: Air a dhiùltadh
+        title: Buidhnean
+        verified: Air a dhearbhadh
+        verify: Dearbhaich
+        pending: Ri choileanadh
+      search:
+        title: Lorg anns na buidhnean
+        no_results: Cha deach buidheann sam bith a lorg.
+    proposals:
+      index:
+        title: Molaidhean
+        id: ID
+        author: Ùghdar
+        select: Tagh
+        selected: Na thagh thu
+        milestones: Clachan-mìle
+        no_proposals: Chan eil moladh sam bith ann.
+      show:
+        create_question: Cuir am moladh seo ri bhòt airson bhòtadh air
+      form:
+        update: Ùraich moladh
+      update:
+        notice: Chaidh am moladh ùrachadh.
+    hidden_proposals:
+      index:
+        filter: Criathraich
+        filters:
+          all: Uile
+          with_confirmed_hide: Dearbhte
+          without_confirmed_hide: Ri choileanadh
+        title: Molaidhean falaichte
+        no_hidden_proposals: Chan eil moladh falaichte sam bith ann
+    hidden_proposal_notifications:
+      index:
+        filter: Criathraich
+        filters:
+          all: Uile
+          with_confirmed_hide: Dearbhte
+          without_confirmed_hide: Ri choileanadh
+        title: Brathan falaichte
+        no_hidden_proposals: Chan eil brathan falaichte ann.
+    settings:
+      flash:
+        updated: Luach air ùrachadh
+      index:
+        title: Roghainnean
+        general: Roghainnean rèiteachaidh
+        update_setting: Ùraich
+        participation_processes: "Pròiseasan com-pàirteachaidh"
+        images_and_documents: "Dealbhan agus sgrìobhainnean"
+        feature_flags: Gleusan
+        features:
+          enabled: "An comas"
+        map:
+          title: Rèiteachadh a’ mhapa
+          help: An seo faodaidh tu an dòigh anns a bheil am mapa air a thaisbeanadh do chleachdaichean a ghnàthachadh. Slaod comharra a’ mhapa no briog air àite sam bith air a’ mhapa, suidhich an sùm a tha thu ag iarraidh agus briog air a’ phutan “Ùraich”.
+          flash:
+            update: Chaidh rèiteachadh a’ mhapa ùrachadh.
+          form:
+            submit: Ùraich
+          how_to_enable: 'Gus am mapa a shealltainn do chleachdaichean feumaidh tu "geo-lorgadh mholaidhean agus tasgaidhean buidseit" a chomasachadh air an taba "Feartan".'
+        dashboard:
+          title: Clàr nam molaidhean
+        remote_census:
+          title: Rèiteachadh Cunntas-sluaigh iomallach
+          how_to_enable: 'Gus cunntas-sluaigh air astar (SOAP) a rèiteachadh feumaidh tu "Rèitich ceangal ri cunntas-sluaigh iomallach (SOAP)" a chur an comas air an taba "Feartan".'
+        sdg:
+          title: Rèiteachadh a thaobh Amasan Leasachaidh Seasmhach
+          how_to_enable: 'Gus na roghainnean rèiteachaidh bho Amasan Leasachaidh Seasmhach a shealltainn feumaidh tu “Amasan Leasachaidh Seasmhach” a chur an comas air an taba “Feartan”.'
+      remote_census_general_name: Fiosrachadh coitcheann
+      remote_census_request_name: Iarr Dàta
+      remote_census_response_name: Dàta Freagairt
+      setting: Feart
+      setting_name: Roghainn
+      setting_value: Luach
+      no_description: "Gun tuairisgeul"
+    shared:
+      search:
+        advanced_filters:
+          sdg_goals:
+            all: "A h-uile amas"
+            label: "A rèir amas"
+          sdg_targets:
+            all: "A h-uile targaid"
+            label: "A rèir targaid"
+        label:
+          booths: "Lorg bothan a rèir ainm no àite"
+          budget_investments: "Rannsaich tasgaidhean a rèir tiotal, tuairisgeul no ceann-sgrìobhaidh"
+          comments: "Lorg sna beachdan"
+          debates: "Lorg deasbadan a rèir ainm no tuairisgeul"
+          legislation_processes: "Lorg pròiseasan a rèir ainm no tuairisgeul"
+          legislation_proposals: "Lorg molaidhean a rèir ainm no tuairisgeul"
+          local_census_records: "Lorg a rèir àireamh sgrìobhainn"
+          organizations: "Ainm, post-d d no àireamh fòn agad"
+          poll_officers: "Rannsaich oifigearan bhòtaidh"
+          poll_questions: "Rannsaich ceistean bhòtaidh"
+          polls: "Lorg bhòtaichean a rèir ainm no tuairisgeul"
+          proposals: "Rannsaich molaidhean a rèir tiotal, còd, tuairisgeul no ceist"
+          proposal_notifications: "Lorg brathan a rèir ainm no tuairisgeul"
+          users: "Lorg cleachdaiche a rèir ainm no post-d"
+        search: "Lorg"
+      search_results: "Toraidhean luirg"
+      no_search_results: "Cha deach toradh sam bith a lorg."
+      actions: Gnìomhan
+      title: Tiotal
+      description: Tuairisgeul
+      image: Ìomhaigh
+      show_image: Seall an dealbh
+      moderated_content: "Thoir sùil air an t-susbaint a chaidh air a mhodaratadh leis na modaratairean, agus daingnich an deach a mhodaratadh gu ceart"
+      view: Seall
+      proposal: Moladh
+      author: Ùghdar
+      content: Susbaint
+      created_at: Chaidh a chruthachadh aig
+      color_help: Cruth hexadecimal
+      show_results_and_stats: "Seall toraidhean agus stadastaireachd"
+      results_and_stats_reminder: "Le bhith a’ comharrachadh nam bogsaichean-cromaige sin bidh na toraidhean agus/no na stadastaireachd rim faighinn gu poblach agus chì gach cleachdaiche iad."
+      close_modal: Dùin an uinneag mhòdach
+      example_url: "Mar eisimpleir, https://consulproject.org no /help"
+    geozones:
+      index:
+        title: Geo-sgìre
+        create: Cruthaich geo-sgìre
+      geozone:
+        name: Ainm
+        external_code: Còd on taobh a-muigh
+        census_code: Còd a’ chunntais-sluaigh
+        code_help: Còd freagairt airson na geo-sgìre seo air an API cunntais
+        coordinates: Co-chomharran
+        coordinates_help: Co-chomharran a chruthaicheas àiteachan air an gabh briogadh air mapa ìomhaigh HTML
+      edit:
+        form:
+          submit_button: Sàbhail na h-atharraichean
+        editing: A’ deasachadh na geo-sgìre
+        back: Air ais
+      new:
+        back: Air ais
+        creating: Cruthaich sgìre
+      delete:
+        success: Geo-sgìre air a sguabadh às
+        error: Cha ghabh an geo-sgìre seo a sguabadh às a chionn ’s gu bheil eileamaidean ceangailte rithe
+    signature_sheets:
+      author: Ùghdar
+      created_at: Ceann-latha cruthachaidh
+      name: Ainm
+      no_signature_sheets: "Chan eil duilleagan ainmean-sgrìobhte ann"
+      index:
+        title: Duilleag nan ainmean-sgrìobhte
+        new: Duilleagan ainmean-sgrìobhte ùr
+      new:
+        title: Duilleagan ainmean-sgrìobhte ùr
+        document_numbers_note: "Sgrìobh na h-àireamhan air an sgaradh le leth-choloin (;)"
+        submit: Cruthaich duilleagan ainmean-sgrìobhte
+        text_help:
+          required_fields_note: "Gus cleachdaiche a dhearbhadh, feumaidh an tagradh agad: Àireamh sgrìobhainn"
+          date_of_birth_note: ", Latha-breith (ll/mm/bbbb)"
+          postal_code_note: "agus Còd-puist"
+          required_fields_structure_note: "Feumaidh raointean riatanach airson gach cleachdaiche a bhith air an sgaradh le cromagan agus feumaidh gach cleachdaiche a bhith air a sgaradh le leth-choloin."
+          example_text: "Eisimpleir:"
+      show:
+        created_at: Air a chruthachadh
+        author: Ùghdar
+        users: Cleachdaichean
+        signature_count: "Àireamh ainmean-sgrìobhte:"
+        verified:
+          one: "Tha %{count} ainm-sgrìobhte dligheach ann"
+          two: "Tha %{count} ainm sgrìobhte dligheach ann"
+          few: "Tha %{count} ainmean-sgrìobhte dligheach ann"
+          other: "Tha %{count} ainmean-sgrìobhte dligheach ann"
+        unverified:
+          one: "Tha %{count} ainm-sgrìobhte mì-dhligheach ann"
+          two: "Tha %{count} ainm-sgrìobhte mì-dhligheach ann"
+          few: "Tha %{count} ainmean-sgrìobhte mì-dhligheach ann"
+          other: "Tha %{count} ainmean-sgrìobhte mì-dhligheach ann"
+        unverified_error: (Cha deach seo a dhearbhadh leis a’ Chunntas-sluaigh)
+        voted:
+          zero: "Cha deach bhòt sam bith a chruthachadh o na ainmean-sgrìobhte dearbhte."
+          one: "Chaidh %{count} bhòt a chruthachadh o na ainmean-sgrìobhte dearbhte."
+          two: "Chaidh %{count} bhòt a chruthachadh o ainmean-sgrìobhte dearbhte."
+          few: "Chaidh %{count} bhòtaichean a chruthachadh o ainmean-sgrìobhte dearbhte."
+          other: "Chaidh %{count} bhòtaichean a chruthachadh o ainmean-sgrìobhte dearbhte."
+        loading: "Tha ainmean-sgrìobhte ann a tha fhathast gan dearbhadh leis a’ Chunntas-sluaigh, feuch an ùraich thu an duilleag ann am beagan mhionaidean"
+    stats:
+      show:
+        stats_title: Stadastaireachd
+        summary:
+          comment_votes: Bhòtaichean air beachdan
+          comments: Beachdan
+          debate_votes: Bhòtaichean air deasbadan
+          debates: Deasbadan
+          proposal_votes: Bhòtaichean air molaidhean
+          proposals: Molaidhean
+          budgets: Buidseatan fosgailte
+          budget_investments: Pròiseactan tasgaidh
+          unverified_users: Cleachdaichean gun dearbhadh
+          user_level_three: Cleachdaichean ìre trì
+          user_level_two: Cleachdaichean ìre 2
+          users: Cleachdaichean iomlan
+          verified_users: Cleachdaichean dearbhte
+          verified_users_who_didnt_vote_proposals: Cleachdaichean dearbhte nach do bhòt airson molaidhean
+          visits: Tadhalan
+          votes: Bhòtaichean iomlan
+        budgets_title: Buidseatan Com-pàirteachail
+        participatory_budgets: Buidseatan Com-pàirteachail
+        direct_messages: Teachdaireachdan dìreach
+        proposal_notifications: Brathan mu mholaidhean
+        incomplete_verifications: Dearbhaidhean neo-choileanta
+        polls: Cunntasan-bheachd
+        sdg: SDG
+      graph:
+        debate_created: Deasbadan
+        visit: Tadhalan
+        level_2_user: Cleachdaichean ìre 2
+        proposal_created: Molaidhean saoranach
+      budgets:
+        no_data_before_balloting_phase: "Chan eil dàta sam bith ri shealltainn ron ìre baileat."
+        title: "Buidseatan Com-pàirteachail - Stadastaireachd com-pàirteachaidh"
+        supporting_phase: Ìre taic
+        balloting_phase: Bhòtadh mu dheireadh
+      budget_balloting:
+        title: "Stadastaireachd bhòtaidh mu dheireadh"
+        vote_count: Bhòtaichean
+        participant_count: Com-pàirtichean
+        votes_per_heading: Bhòtaichean gach bann-cinn
+        participants_per_district: Com-pàirtichean a rèir sgìre
+      budget_supporting:
+        title: "Stadastaireachd bhon Ìre taic"
+        headings: Ceann-sgrìobhaidhean
+        users: Cleachdaichean
+        vote_count: Bhòtaichean
+        participant_count: Com-pàirtichean
+      direct_messages:
+        title: Teachdaireachdan dìreach
+        total: Iomlan
+        users_who_have_sent_message: Luchd-cleachdaidh a chuir teachdaireachd prìobhaideach
+      proposal_notifications:
+        title: Brathan mu mholaidhean
+        total: Iomlan
+        proposals_with_notifications: Molaidhean le brathan
+        not_available: "Chan eil am moladh ri fhaighinn"
+      polls:
+        title: Stadastaireachd nan cunntasan-bheachd
+        all: Cunntasan-bheachd
+        web_participants: Com-pàirtichean lìn
+        total_participants: Com-pàirtichean gu h-iomlan
+        poll_questions: "Ceistean bhon chunntas-beachd: %{poll}"
+        table:
+          poll_name: Cunntas-bheachd
+          question_name: Ceist
+          origin_web: Com-pàirtichean lìn
+          origin_total: Com-pàirtichean gu h-iomlan
+      sdg:
+        budget_investments:
+          amount: "Suim a chaidh aontachadh"
+          winners: "Pròiseactan tasgaidh a bhuannaich"
+          sent: "Pròiseactan tasgaidh a chaidh a chur a-steach"
+        debates: "Deasbadan"
+        polls: "Cunntasan-bheachd"
+        proposals: "Molaidhean"
+        title: "Amasan Leasachaidh Seasmhaich - Stadastaireachd"
+    tags:
+      create: Cruthaich cuspair
+      index:
+        add_tag: Tagh cuspair ùr airson moladh
+        title: Cuspairean nam molaidhean
+        topic: Topic
+        help: "Nuair a chruthaicheas cleachdaiche moladh, thathar a’ moladh na cuspairean a leanas mar thagaichean bunaiteach."
+    users:
+      columns:
+        id: ID
+        erase_reason: Sguab as adhbhar
+        name: Ainm
+        email: Post-d
+        document_number: Àireamh na sgrìobhainne
+        roles: Dreuchdan
+        verification_level: Ìre dearbhaidh
+      index:
+        title: Cleachdaiche
+        no_users: Chan eil cleachdaichean ann.
+        filter: Criathraich
+        filters:
+          active: Gnìomhach
+          erased: Air a sguabadh às
+      search:
+        placeholder: Rannsaich cleachdaiche le post-d, ainm no àireamh sgrìobhainn
+    verifications:
+      index:
+        phone_not_given: Cha deach àireamh fòn a thoirt seachad
+        sms_code_not_confirmed: Cha deach an còd sms a dhearbhadh
+        title: Dearbhaidhean neo-choileanta
+    site_customization:
+      content_blocks:
+        information: Fiosrachadh mu bhlocaichean susbaint
+        about: "Is urrainn dhut blocaichean susbaint HTML a chruthachadh a ghabhas a chur a-steach ann an diofar àiteachan san làraich-lìn agad."
+        html_format: "Is e buidheann de cheanglaichean a th’ ann am bloc susbaint, agus feumaidh an cruth a leanas a bhith aige:"
+        no_blocks: "Chan eil blocaichean susbaint ann."
+        create:
+          notice: Chaidh bloc susbaint a chruthachadh
+          error: Cha b‘ urrainn dhuinn am bloca susbaint a chruthachadh.
+        update:
+          notice: Chaidh bloc susbaint ùrachadh
+          error: Cha b’ urrainn dhuinn am bloc susbaint ùrachadh.
+        destroy:
+          notice: Chaidh bloc susbaint a sguabadh às
+        edit:
+          title: A’ deasachadh bloc susbaint
+        index:
+          create: Cruthaich bloca susbaint ùr
+          delete: Sguab às am bloca
+          title: Blocaichean susbaint
+        new:
+          title: Cruthaich bloca susbaint ùr
+        content_block:
+          body: Bodhaig
+          name: Ainm
+          names:
+            top_links: Prìomh Cheanglaichean
+            footer: Bann-coise
+            subnavigation_left: A’ phrìomh-sheòladaireachd - Clì
+            subnavigation_right: A’ phrìomh-sheòladaireachd - Deas
+      images:
+        index:
+          title: Dealbh gnàthaichte
+          update: Ùraich
+          delete: Sguab às
+          image: Ìomhaigh
+        update:
+          notice: Chaidh an dealbh ùrachadh
+          error: Cha b’ urrainn dhuinn an dealbh ùrachadh
+        destroy:
+          notice: Chaidh an dealbh a sguabadh às
+          error: Cha ghabhadh an dealbh a sguabadh às.
+      pages:
+        create:
+          notice: Chaidh an duilleag a chruthachadh
+          error: Cha b’ urrainn dhuinn an duilleag a chruthachadh
+        update:
+          notice: Chaidh an duilleag ùrachadh
+          error: Cha b’ urrainn dhuinn an duilleag ùrachadh
+        destroy:
+          notice: Chaidh an duilleag a sguabadh às
+        edit:
+          title: A’ deasachadh %{page_title}
+        form:
+          options: Roghainnean
+        index:
+          create: Cruthaich duilleag ùr
+          delete: Sguab an duilleag às
+          title: Duilleagan ghnàthaichte
+          see_page: Seall
+        new:
+          title: Cruthaich duilleag ghnàthaichte ùr
+          slug_help: "Teacs gus an duilleag seo a chomharrachadh air URL, mar eisimpleir <code>https://consulproject.org/page-slug</code>"
+        page:
+          created_at: Chaidh a chruthachadh aig
+          status: Inbhe
+          updated_at: Air ùrachadh aig
+          title: Tiotal
+          slug: Sluga
+          see_cards: Stiùirich na cairtean
+        cards:
+          cards_title: cairtean
+          create_card: Cruthaich cairt
+          no_cards: Chan eil cairtean ann.
+          columns_help: "Leud na cairt ann an àireamh cholbhan. Air sgrionaichean gluasadach tha e daonnan aig leud 100%."
+          create:
+            notice: "Chaidh a’ chairt a chruthachadh!"
+          update:
+            notice: "Chaidh a’ chairt ùrachadh"
+          destroy:
+            notice: "Chaidh a’ chairt a thoirt air falbh"
+    tenants:
+      create:
+        notice: Teanant air cruthachadh
+      form:
+        use_subdomain: "Cleachd fo-àrainn san àrainn %{domain} gus cothrom fhaighinn air an teanant seo"
+        use_domain: "Cleachd àrainn eile gus cothrom fhaighinn air an teanant seo"
+      hide:
+        notice: Teanant air a chur à comas
+      index:
+        create: Cruthaich teanant
+        enable: "Cuir an comas teanant %{tenant}"
+        enabled: Air a chur an comas
+      new:
+        admin_information: "Nuair a chruthaicheas tu teanant, thèid an cleachdaiche làithreach <strong>\"%{username}\"</strong> agad leis a' phost-d <strong>\"%{email}\"</strong> agus am facal-faire agad a chopaigeadh gu stòr-dàta an teanaint ùr is thèid ceadan rianachd a thoirt seachad gu fèin-obrachail. Thoir an aire gu bheil na cunntasan cleachdaiche seo air an stòradh ann an stòran-dàta gu tur eadar-dhealaichte, mar sin ma dh’atharraicheas tu facal-faire a' chleachdaiche agad airson aon teanant, bidh na cunntasan agad ann an teanantan eile fhathast ann."
+        title: Teanant ùr
+      restore:
+        notice: Teanant air cur an comas
+      update:
+        notice: Teanant air ùrachadh
+    homepage:
+      title: Duilleag dachaigh
+      description: Bidh na modalan gnìomhach a’ nochdadh air an duilleag dachaigh san aon òrdugh ’s a th’ ann an seo
+      header_title: Bann-cinn
+      no_header: Chan eil bann-cinn sam bith ann.
+      create_header: Cruthaich bann-cinn
+      cards_title: Cairtean
+      create_card: Cruthaich cairt
+      no_cards: Chan eil cairtean ann.
+      feeds:
+        proposals: Molaidhean
+        debates: Deasbadan
+        processes: Pròiseasan
+      new:
+        header_title: Bann-cinn ùr
+        submit_header: Cruthaich bann-cinn
+        card_title: Cairt ùr
+        submit_card: Cruthaich cairt
+      edit:
+        header_title: Deasaich am bann-cinn
+        submit_header: Sàbhail am bann-cinn
+        card_title: Deasaich a’ chairt
+        submit_card: Sàbhail a’ chairt
+    audits:
+      title: "Log nan atharraichean"
+      changes: "Liosta nan atharraichean"
+      id: "ID"
+      field: "Raon"
+      new_value: "Luach ùr"
+      old_value: "Seann luach"
+      edited_at: "Air a dheasachadh aig"
+      edited_by: "Air a dheasachadh le"
+      actions: "Gnìomhan"
+      empty: "Chan eil atharraichean sam bith air clàradh."
+    local_census_records:
+      index:
+        title: Stiùirich cunntas-sluaigh ionadail
+        create: Cruthaich clàr cunntas-sluaigh ionadail ùr
+        no_local_census_records: Chan eil clàr cunntas-sluaigh ionadail ann.
+        document_type: Seòrsa sgrìobhainn
+        document_number: Àireamh na sgrìobhainne
+        date_of_birth: Latha-breith
+        postal_code: Còd-puist
+        import: Ion-phortaich CSV
+      new:
+        creating: A’ cruthachadh clàr cunntas-sluaigh ionadail ùr
+      create:
+        notice: Clàr cunntas-sluaigh ionadail ùr air a chruthachadh!
+      edit:
+        editing: A’ deasachadh clàr cunntas-sluaigh ionadail
+      update:
+        notice: Clàr cunntas-sluaigh ionadail air ùrachadh!
+      destroy:
+        notice: Clàr cunntas-sluaigh ionadail air a thoirt air falbh!
+      imports:
+        new:
+          title: Clàran cunntas-sluaigh ionadail
+          subtitle: Ion-phortaich faidhle CSV
+        create:
+          notice: Pròiseas in-phortaichidh clàran cunntas-sluaigh ionadail deiseil!
+        show:
+          title: Stiùirich cunntas-sluaigh ionadail
+          subtitle: Ion-phortaich toraidhean a’ phròiseis
+          import: Ion-phortaich a-rithist
+          errored: Sreathan le mearachdan
+          created: Clàran air an cruthachadh
+        local_census_records:
+          no_records_found: Cha deach clàr sam bith a lorg.
+    machine_learning:
+      cancel: "Sguir dhen obrachadh"
+      cancel_alert: "Cuiridh an gnìomh seo crìoch air an sgriobt làithreach agus feumar an sgriobt a ruith a-rithist an uair sin."
+      comments_summary: "Geàrr-chunntas de bheachdan"
+      comments_summary_description: "Taisbeanaidh seo geàrr-chunntas de bheachdan a chaidh a chruthachadh gu fèin-obrachail air a h-uile nì air am faodar beachd a thoirt seachad."
+      data_folder_content: "Susbaint a’ phasgain dàta"
+      error: "Mearachd:"
+      execute_script: "Cuir an gnìomh sgriobt"
+      executed_by: "Air a chur an gnìomh le:"
+      executed_script: "Sgriobt air a chur an gnìomh"
+      feature_disabled: "Tha am feart seo à comas. Gus Ionnsachadh Inneil a chleachdadh ’s urrainn dhut a chur an comas aig %{link}."
+      feature_disabled_link: "roghainnean na duilleige"
+      help:
+        title_1: "Dè th’ann an AI / Ionnsachadh Inneil"
+        description_1: "Gu traidiseanta, tha prògraman coimpiutair air an dealbhadh le bhith a’ stèidheachadh riaghailtean mionaideach mu na bu chòir dhan phrògram dèanamh anns gach suidheachadh, agus mar a làimhsicheas e am fiosrachadh a tha ri fhaighinn aig gach àm. Leis an rud ris an canar AI /Ionnsachadh Inneil seòrsa de phrògraman airson a bhith a’ stèidheachadh gu dìreach dè an obair a tha ri coileanadh, mar a thathar ga mheasadh agus a bheil an gnìomh air a choileanadh gu math no gu dona. Ach eu-coltach ris a’ prògraman traidiseanta, gheibh an siostam a-mach no ionnsaichidh e dè an dòigh as fhreagarraiche airson a’ ghnìomh a choileanadh."
+        title_2: "Dè nì am modal AI / Machine Learning ann an CONSUL?"
+        description_2: "Tha am modal seo a’ ceadachadh gun gabh seòrsa sam bith de phrògraman AI/Ionnsachadh Inneal a chleachdadh ann an CONSUL. Faodaidh na prògraman am fiosrachadh a tha ri fhaighinn ann an CONSUL a phròiseasadh agus toraidhean a chruthachadh a chuidicheas an dà chuid cleachdaichean agus rianairean gus com-pàirteachadh shaoranaich nas èifeachdaiche agus nas tuigsiche a dhèanamh. Chaidh am modal a chruthachadh gus a dhèanamh furasta prògraman ùra a chur an gnìomh agus a ruith, a’ cumail còd coitcheann CONSUL agus còd nam prògraman ùra sin neo-eisimeileach bho chèile."
+        title_3: "Mar a chleachdar an stiùireadh seo"
+        description_3: "Gus a chleachdadh airson a’ chiad uair feumaidh tu an stiùireadh a tha ri fhaighinn ann an sgrìobhainnean CONSUL a leantainn gus am modal seo a chuir an gnìomh gu ceart. Aon uair ‘s gu bheil am modal air a ghnìomhachadh gu ceart, thèid na prògraman a chur an gnìomh bhon taba “Cuir an gnìomh sgriobtaichean”. Mus tèid a chur an gnìomh, chì sinn tuairmse air an ùine a bheir e gus a chur an gnìomh agus fiosrachadh buntainneach eile. Aig deireadh a’ ghnìomhachaidh, is urrainn dhuinn an t-susbaint a thèid a shealltainn ann an CONSUL a chur an gnìomh bhon taba “Roghainnean”, a bharrachd air a bhith a’ luchdachadh a-nuas faidhlichean eile a chaidh a chruthachadh a dh’fhaodadh a bhith feumail dhuinn."
+        title_4: "Mar a chuireas tu sgriobtaichean AI / Ionnsachadh Inneal ùr an gnìomh"
+        description_4: "Cleachd sgriobtaichean a chleachdar roimhe mar eisimpleirean."
+        description_4b: "Bu chòir na sgriobtaichean ùra a bhith suidhichte sa phasgan <code>public/machine_learning/scripts</code>"
+        description_4c: "Thèid an dàta in-chur a chleachdas an sgriobt a chruthachadh mar fhaidhlichean JSON sa phasgan <code>../data</code>"
+        description_4d: "Bu chòir toradh sam bith a thèid a chruthachadh a chur sa phasgan <code>../data</code>"
+        description_4e: "Thathar a’ moladh faidhle teacsa <code>.ini</code> neo-eisimeileach a chruthachadh le roghainnean an sgriobt, leis an aon ainm air an sgriobt agus ann an cruth a ghabhas leughadh le configparser. Cuidichidh am faidhle seo le atharrachadh roghainnean leis na rianadairean."
+        description_4f: "Thathas a’ moladh a bhith a’ cur sreang trì-cuòt tùsail mar a’ chiad loidhne den sgriobt le beagan fiosrachaidh ghoirid mu dheidhinn agus ceanglaichean ri fiosrachadh buntainneach sam bith. Thèid an sreang seo a shealltainn gu fèin-obrachail san eadar-aghaidh Rianachd."
+        description_4g: "Thathar a’ moladh faidhle teacsa <code>.ini</code> neo-eisimeileach a chruthachadh, leis an aon ainm air an sgriobt. "
+        title_5: "Gus sgriobtaichean AI / Machine Learning a chleachdadh feumaidh Python a bhith air a stàladh air an fhrithealaiche agad"
+        description_5: "An seo chì thu an stiùireadh airson frithealaiche Ubuntu 18.04 mar eisimpleir:"
+      help_text: "Tha an gnìomh seo deuchainneach."
+      last_execution: "Gnìomhachadh mu dheireadh"
+      no_content: "Cha deach susbaint sam bith a chruthachadh fhathast"
+      notice:
+        success: "Chaidh an sgriobt mu dheireadh a chur an gnìomh."
+        error: "Tha mearachd air tachairt. Chì thu am mion-fhiosrachadh gu h-ìosal."
+        working: "Tha an sgriobt a’ ruith. Gheibh an rianaire a chuir an gnìomh e post-d nuair a bhios e deiseil."
+        delete_generated_content: "Chaidh an t-susbaint a chaidh a chruthachadh a sguabadh às."
+      output_files: "Faidhleachan às-chuir:"
+      related_content: "Susbaint cho-cheangailte"
+      related_content_description: "Cuiridh seo susbaint cho-cheangailte ri molaidhean agus pròiseactan buidseit com-pàirteachail gu fèin-obrachail."
+      script_info: "Gheibh thu post-d ann an %{email} nuair a bhios an sgriobt deiseil."
+      script_name: "Ainm an sgriobt:"
+      select_script: "Tagh an sgriobt python a tha thu airson cur an gnìomh"
+      started_at: "Thòisich seo aig:"
+      tab_help: "Cobhair"
+      tab_scripts: "Cuir an gnìomh sgriobt"
+      tab_settings: "Roghainnean / Susbaint air a ghineadh"
+      tags: "Tagaichean"
+      tags_description: "Cruthaichidh seo tagaichean fèin-obrachail air a h-uile nì a ghabhas tagadh."
+      title: "AI / Ionnsachadh Inneil"

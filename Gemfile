@@ -7,7 +7,7 @@ gem "acts_as_votable", "~> 0.13.2"
 gem "ahoy_matey", "~> 4.1.0"
 gem "airbrake", "~> 13.0.2"
 gem "ancestry", "~> 4.2.0"
-gem "audited", "~> 5.0.2"
+gem "audited", "~> 5.3.3"
 gem "autoprefixer-rails", "~> 8.2.0"
 gem "bing_translator", "~> 6.2.0"
 gem "cancancan", "~> 3.4.0"
@@ -19,7 +19,7 @@ gem "daemons", "~> 1.4.1"
 gem "dalli", "~> 3.2.3"
 gem "delayed_job_active_record", "~> 4.1.7"
 gem "devise", "~> 4.8.1"
-gem "devise-security", "~> 0.16.0"
+gem "devise-security", "~> 0.17.0"
 gem "file_validators", "~> 3.0.0"
 gem "font-awesome-sass", "~> 5.15.1" # Remember to update vendor/assets/images/fontawesome when updating this gem
 gem "foundation-rails", "~> 6.6.2.0"
@@ -36,6 +36,7 @@ gem "jquery-fileupload-rails"
 gem "jquery-rails", "~> 4.5.0"
 gem "jquery-ui-rails", "~> 6.0.1"
 gem "kaminari", "~> 1.2.2"
+gem "leaflet-rails", "~> 1.9.3"
 gem "mini_magick", "~> 4.11.0"
 gem "omniauth", "~> 2.1.0"
 gem "omniauth-facebook", "~> 9.0.0"
@@ -68,7 +69,6 @@ gem "wkhtmltopdf-binary", "~> 0.12.6"
 gem  "ed25519" 
 gem  "bcrypt_pbkdf"
 source "https://rails-assets.org" do
-  gem "rails-assets-leaflet"
   gem "rails-assets-markdown-it", "~> 9.0.1"
 end
 
@@ -87,10 +87,10 @@ end
 
 group :test do
   gem "capybara", "~> 3.37.1"
-  gem "capybara-webmock", "~> 0.6.0"
+  gem "capybara-webmock", "~> 0.7.0"
   gem "email_spec", "~> 2.2.0"
   gem "rspec-rails", "~> 5.1.2"
-  gem "selenium-webdriver", "~> 3.142"
+  gem "selenium-webdriver", "~> 4.0.0"
   gem "simplecov", "~> 0.21.2", require: false
   gem "simplecov-lcov", "~> 0.8.0", require: false
   gem "webdrivers", "~> 4.7.0"

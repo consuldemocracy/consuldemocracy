@@ -137,6 +137,10 @@ it:
       allowed_file_content_types: "il tipo di contenuto dev'essere uno di %{types}"
       user_not_found: Utente non trovato
       invalid_date_range: "Intervallo di date non valido"
+      past_date: "Non deve essere una data passata"
+      cannot_change_date:
+        poll_started: "Impossibile modificare se il voto è già iniziato"
+        poll_ended: "Impossibile modificare se il voto è già terminato"
   form:
     accept_terms: Acconsento alle %{policy} e alle %{conditions}
     accept_terms_title: Acconsento all’Informativa sulla Privacy e ai Termini e condizioni d’uso
@@ -631,6 +635,10 @@ it:
     show:
       vote_answer: "Voto %{answer}"
       voted: "Hai votato %{answer}"
+    description:
+      unique: "Puoi selezionare un massimo di 1 risposta."
+      multiple: "Puoi selezionare un massimo di %{maximum} risposte."
+    read_more_about: "Leggi di più su:"
   proposal_notifications:
     new:
       title: "Invia messaggio"
@@ -746,6 +754,10 @@ it:
         other: "%{count} lingue in uso"
     optional: "Opzionale"
     required: "Obbligatorio"
+    comments:
+      zero: "Nessun commento"
+      one: "1 commento"
+      other: "%{count} commenti"
   social:
     facebook: "Facebook di %{org}"
     twitter: "Twitter di %{org}"

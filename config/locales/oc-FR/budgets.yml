@@ -57,7 +57,6 @@ oc:
         tags_placeholder: "Escriu las etiquetas que desiras separadas per coma (',')"
         map_location: "Ubicacion de la mapa"
         map_location_instructions: "Desplaçatz-vos a la mapa fins a l'ubicacion e metètz-i lo mercado."
-        map_remove_marker: "Elimina lo mercador de mapa"
       index:
         title: de Budgèts ciutadans
         unfeasible: de Proposicions d'inversion pas viabla

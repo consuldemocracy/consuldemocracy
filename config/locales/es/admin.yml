@@ -166,6 +166,8 @@ es:
         calculate: Calcular proyectos ganadores
         calculated: Calculando ganadores, puede tardar un minuto.
         recalculate: Recalcular proyectos ganadores
+      ballots:
+        feature_disabled: 'La funcionalidad de <strong>Votaciones</strong> debe estar activada para poder crear urnas. Puedes activarla en la página de <a href="%{link}">configuración</a>.'
     budget_groups:
       name: "Nombre"
       headings_name: "Partidas"
@@ -198,6 +200,7 @@ es:
         success_notice: "Partida presupuestaria eliminada correctamente"
         unable_notice: "No se puede eliminar una partida presupuestaria con proyectos asociados"
       form:
+        geozone_info: "Cuando se asocia una partida a una zona, la zona aparecerá en el mapa de este presupuesto si la zona incluye datos de GeoJSON."
         max_ballot_lines_info: 'Máximo número de proyectos que un usuario puede votar en esta partida durante la fase "Votación final". Solamente se aplica a presupuestos con votación por aprobación.'
         population_info: "El campo población de las partidas presupuestarias se usa con fines estadísticos únicamente, con el objetivo de mostrar el porcentaje de votos habidos en cada partida que represente un área con población. Es un campo opcional, así que puedes dejarlo en blanco si no aplica."
         coordinates_info: "Si se añaden los campos latitud y longitud, en la página de proyectos de esta partida aparecerá un mapa, que estará centrado en esas coordenadas."
@@ -761,6 +764,8 @@ es:
           community: "Comunidad"
           proposals: "Propuestas"
           polls: "Votaciones"
+          legislation: "Legislación colaborativa"
+          budgets: "Presupuestos participativos"
           layouts: "Plantillas"
           machine_learning: "IA / Machine Learning"
           mailers: "Correos"
@@ -1381,7 +1386,7 @@ es:
       show_results_and_stats: "Mostrar resultados y estadísticas"
       results_and_stats_reminder: "Si marcas estas casillas los resultados y/o estadísticas serán públicos y podrán verlos todos los usuarios."
       close_modal: Cerrar ventana emergente
-      example_url: "Por ejemplo, https://consulproject.org o /help"
+      example_url: "Por ejemplo, https://consuldemocracy.org o /help"
     geozones:
       index:
         title: Zonas
@@ -1391,8 +1396,13 @@ es:
         external_code: Código externo
         census_code: Código del censo
         code_help: Código de respuesta para esta zona en la API del censo
-        coordinates: Coordenadas
+        color_help: "Color con el que aparecerá esta zona en el mapa de un presupuesto. %{format_help}"
+        coordinates: Coordenadas disponibles
         coordinates_help: Coordenadas que generarán una zona clicable en un mapa de imagen HTML
+        geojson: GeoJSON disponible
+        geojson_help: "Deben tener un tipo del formato \"Polygon\" o \"MultiPolygon\"; en el mapa de un presupuesto aparecerá un polígono basado en estos datos si una partida se asocia a esta geozona"
+      create:
+        notice: "Zona creada correctamente"
       edit:
         form:
           submit_button: Guardar cambios
@@ -1404,6 +1414,8 @@ es:
       delete:
         success: Zona borrada correctamente
         error: No se puede borrar la zona porque ya tiene elementos asociados
+      update:
+        notice: "Zona actualizada correctamente"
     signature_sheets:
       author: Autor
       created_at: Fecha de creación
@@ -1533,6 +1545,10 @@ es:
         document_number: Número de documento
         roles: Roles
         verification_level: Nivel de verficación
+        activation_status: Estado de la confirmación
+      account:
+        active_status: Cuenta confirmada
+        inactive_status: Cuenta no confirmada
       index:
         title: Usuarios
         no_users: No hay usuarios.
@@ -1609,7 +1625,7 @@ es:
           see_page: Ver
         new:
           title: Página nueva
-          slug_help: "Texto que identifica esta página en la URL, por ejemplo <code>https://consulproject.org/slug-de-pagina</code>"
+          slug_help: "Texto que identifica esta página en la URL, por ejemplo <code>https://consuldemocracy.org/slug-de-pagina</code>"
         page:
           created_at: Creada
           status: Estado
@@ -1730,10 +1746,10 @@ es:
       help:
         title_1: "¿Qué es IA / Machine Learning?"
         description_1: "Tradicionalmente, los programas informáticos se diseñan estableciendo reglas precisas sobre lo que debe hacer el programa en cada situación, y cómo procesar en cada momento la información disponible. Lo que se conoce comúnmente como IA / Machine Learning es un tipo de programas para los cuales lo que se establece de manera precisa es cuál es la tarea a realizar y cómo se valora el que la tarea esté mejor o peor realizada. Pero a diferencia de los otros, el sistema descubre o aprende cuál sería el método más adecuado para realizar dicha tarea."
-        title_2: "¿Qué hace el módulo de IA / Machine Learning en CONSUL?"
-        description_2: "Este módulo permite implementar en CONSUL cualquier tipo de programas de IA / Machine Learning. Los programas pueden procesar la información disponible en CONSUL y producir resultados que ayuden tanto a los usuarios como a los administradores a llevar a cabo una participación ciudadana más eficaz e inteligente. El módulo se ha desarrollado para que sea sencillo implementar y ejecutar nuevos programas, manteniendo por separado el código general de CONSUL y el código de estos nuevos programas."
+        title_2: "¿Qué hace el módulo de IA / Machine Learning en CONSUL DEMOCRACY?"
+        description_2: "Este módulo permite implementar en CONSUL DEMOCRACY cualquier tipo de programas de IA / Machine Learning. Los programas pueden procesar la información disponible en CONSUL DEMOCRACY y producir resultados que ayuden tanto a los usuarios como a los administradores a llevar a cabo una participación ciudadana más eficaz e inteligente. El módulo se ha desarrollado para que sea sencillo implementar y ejecutar nuevos programas, manteniendo por separado el código general de CONSUL DEMOCRACY y el código de estos nuevos programas."
         title_3: "Cómo usar el módulo"
-        description_3: "Para usarlo por primera vez es necesario seguir las instrucciones disponibles en la documentación de CONSUL para activar correctamente este módulo. Una vez el módulo esté correctamente activado, los programas se ejecutan desde la pestaña \"Ejecutar scripts\". Antes de ejecutarlo podemos ver en esa misma pestaña una estimación del tiempo de ejecución y otras informaciones relevantes. Al terminar la ejecución podemos activar el contenido que se mostrará en CONSUL desde la pestaña de \"Configuración\", así como descargar otros archivos generados que nos puedan resultar útiles."
+        description_3: "Para usarlo por primera vez es necesario seguir las instrucciones disponibles en la documentación de CONSUL DEMOCRACY para activar correctamente este módulo. Una vez el módulo esté correctamente activado, los programas se ejecutan desde la pestaña \"Ejecutar scripts\". Antes de ejecutarlo podemos ver en esa misma pestaña una estimación del tiempo de ejecución y otras informaciones relevantes. Al terminar la ejecución podemos activar el contenido que se mostrará en CONSUL DEMOCRACY desde la pestaña de \"Configuración\", así como descargar otros archivos generados que nos puedan resultar útiles."
         title_4: "Cómo implementar nuevos scripts de IA / Machine Learning."
         description_4: "Utiliza los scripts existentes como ejemplo."
         description_4b: "Los nuevos scripts deben estar ubicados en la carpeta <code>public/machine_learning/scripts</code>"

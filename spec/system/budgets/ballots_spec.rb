@@ -161,15 +161,28 @@ describe "Ballots" do
       end
 
       scenario "map and content block shoud be visible before and after" do
-        create(:budget_investment, :selected, heading: new_york, price: 10000, title: "More bridges")
+        stub_const("#{Budgets::InvestmentsController}::PER_PAGE", 1)
+
+        create(:budget_investment, :selected, :with_map_location,
+          heading: new_york,
+          price: 10000,
+          title: "More bridges",
+        )
+        create(:budget_investment, :selected, :with_map_location,
+          heading: new_york,
+          price: 5000,
+          title: "Less bridges"
+        )
+
         create(:heading_content_block, heading: new_york, body: "<li>New Block</li>")
         new_york.update!(allow_custom_content: true)
 
-        visit budget_investments_path(budget, heading_id: new_york)
+        visit budget_investments_path(budget, heading_id: new_york, order: :price)
 
         within("#sidebar") do
           expect(page).to have_content "OpenStreetMap"
           expect(page).to have_content "New Block"
+          expect(page).to have_css ".map-icon", visible: :all, count: 2
         end
 
         add_to_ballot("More bridges")
@@ -178,6 +191,7 @@ describe "Ballots" do
           expect(page).to have_content "More bridges"
           expect(page).to have_content "OpenStreetMap"
           expect(page).to have_content "New Block"
+          expect(page).to have_css ".map-icon", visible: :all, count: 2
         end
 
         within(".budget-investment", text: "More bridges") do
@@ -188,6 +202,7 @@ describe "Ballots" do
           expect(page).not_to have_content "More bridges"
           expect(page).to have_content "OpenStreetMap"
           expect(page).to have_content "New Block"
+          expect(page).to have_css ".map-icon", visible: :all, count: 2
         end
       end
     end

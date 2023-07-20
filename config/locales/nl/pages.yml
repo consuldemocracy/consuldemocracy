@@ -1,5 +1,8 @@
 nl:
   pages:
+    census_terms:
+      title: "Algemene voorwaarden voor toegang tot de telling"
+      description: "Informatiepagina over de algemene voorwaarden voor toegang tot de telling."
     conditions:
       title: Gebruiksvoorwaarden
       subtitle: JURIDISCHE KENNISGEVING OP DE GEBRUIKSVOORWAARDEN, PRIVACY EN BESCHERMING VAN GEGEVENS VAN DE OPEN OVERHEID PORTAL
@@ -10,7 +13,7 @@ nl:
       menu:
         debates: "Debatten"
         proposals: "Voorstellen"
-        budgets: "Participatory budgets"
+        budgets: "Burgerbegrotingen"
         polls: "Polls"
         other: "Verdere informatie"
         processes: "Proces"
@@ -35,13 +38,13 @@ nl:
         image_alt: "Verschillende fasen in de burgerbegroting"
         figcaption: '"Steun" fase en "Stem" fase in de burgerbegroting.'
       polls:
-        title: "Polls"
+        title: "Peilingen"
         description: "Het %{link} onderdeel wordt geactiveerd elke keer wanneer een voorstel 1% steun krijgt en tot stemming over gaat, of als de gemeente een vraagstuk en besluit aan de inwoners wil voorleggen."
         link: "peilingen"
         feature_1: "Om te participeren bij de peilingen moet je %{link} en je account verifiëren."
         feature_1_link: "registreren in %{org_name}"
       processes:
-        title: "Proces"
+        title: "Plannen"
         description: "In het %{link} onderdeel kun je deelnemen in het opstellen en aanpassen van formele stukken. Je kunt hier ook je mening geven over beleid en plannen ontstaan uit eerdere debatten."
         link: "plannen"
         feature: "Om te participeren bij de processen moet je %{link} en je account verifiëren."
@@ -56,7 +59,7 @@ nl:
       other:
         title: "Verdere informatie"
         how_to_use: "Gebruik %{org_name} in uw gemeente"
-        sdg: "hulp bij Sustainable Development Goals"
+        sdg: "Hulp bij Sustainable Development Goals"
       how_to_use:
         text: |-
           Gebruik het in je gemeente of help ons het te verbeteren, het is open source software.
@@ -67,7 +70,7 @@ nl:
       titles:
         how_to_use: Gebruik het in uw gemeente
     privacy:
-      title: Privacy Verklaring
+      title: Privacyverklaring
       subtitle: "INFORMATIE OVER GEGEVENSBESCHERMING"
     accessibility:
       title: Toegankelijkheid
@@ -102,7 +105,7 @@ nl:
               page_column: Votes
             - 
               key_column: 4
-              page_column: Participatory budgets
+              page_column: Burgerbegrotingen
             - 
               key_column: 5
               page_column: Plannen
@@ -157,7 +160,7 @@ nl:
               description_column: Vergroot de tekstgrootte
             - 
               shortcut_column: CTRL en - (CMD  en - bij MAC)
-              description_column: Vermindert de tekstgrootte
+              description_column: Tekst verkleinen
       compatibility:
         title: Compatibiliteit met standaarden en visuele vormgeving
         description: 'Alle pagina''s van deze website voldoen aan <strong> Toegankelijkheidsrichtlijnen </strong> of generieke principes van toegankelijk ontwerp zoals opgesteld door de werkgroep <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> behorend bij W3C.'
@@ -165,6 +168,6 @@ nl:
       help: "Wat is %{org}? - Burgerparticipatie"
     verify:
       info: "Geef hier je contactgegevens op om je account te verifieren:"
-      info_code: "en de code die u heeft ontvangen:"
+      info_code: "Geef hier de code in die je hebt ontvangen:"
       submit: Verifieer mijn account
       title: Verifieer uw account

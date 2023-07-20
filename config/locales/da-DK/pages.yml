@@ -1,5 +1,8 @@
 da:
   pages:
+    census_terms:
+      title: "Vilkår og betingelser for adgangen til adresseregistret"
+      description: "Informationsside om vilkår og betingelser for adgangen til adresseregistret."
     conditions:
       title: Vilkår og betingelser
       subtitle: JURIDISK MEDDELELSE OM BRUGERBETINGELSER, PRIVATPOLITIK OG BESKYTTELSE AF PERSONOPLYSNINGER PÅ OPEN GOVERNMENT PORTALEN
