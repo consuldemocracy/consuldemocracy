@@ -50,7 +50,7 @@ class RemoteTranslations::Microsoft::AvailableLocales
       JSON.parse(result)["translation"].map(&:first)
     end
 
-    def self.daily_cache(key, &block)
-      Rails.cache.fetch("remote_available_locales/#{Time.current.strftime("%Y-%m-%d")}/#{key}", &block)
+    def self.daily_cache(key, &)
+      Rails.cache.fetch("remote_available_locales/#{Time.current.strftime("%Y-%m-%d")}/#{key}", &)
     end
 end

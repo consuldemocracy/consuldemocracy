@@ -158,8 +158,8 @@ class Mailer < ApplicationMailer
 
   private
 
-    def with_user(user, &block)
-      I18n.with_locale(user.locale, &block)
+    def with_user(user, &)
+      I18n.with_locale(user.locale, &)
     end
 
     def prevent_delivery_to_users_without_email

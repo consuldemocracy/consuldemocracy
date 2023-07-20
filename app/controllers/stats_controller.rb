@@ -23,7 +23,7 @@ class StatsController < ApplicationController
 
   private
 
-    def daily_cache(key, &block)
-      Rails.cache.fetch("public_stats/#{Time.current.strftime("%Y-%m-%d")}/#{key}", &block)
+    def daily_cache(key, &)
+      Rails.cache.fetch("public_stats/#{Time.current.strftime("%Y-%m-%d")}/#{key}", &)
     end
 end

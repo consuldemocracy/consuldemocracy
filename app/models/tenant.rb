@@ -139,9 +139,9 @@ class Tenant < ApplicationRecord
     Apartment::Tenant.switch(...)
   end
 
-  def self.run_on_each(&block)
+  def self.run_on_each(&)
     ["public"].union(Apartment.tenant_names).each do |schema|
-      switch(schema, &block)
+      switch(schema, &)
     end
   end
 

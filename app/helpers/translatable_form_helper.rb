@@ -1,6 +1,6 @@
 module TranslatableFormHelper
-  def translatable_form_for(record, options = {}, &block)
-    form_for(record, options.merge(builder: TranslatableFormBuilder), &block)
+  def translatable_form_for(record, options = {}, &)
+    form_for(record, options.merge(builder: TranslatableFormBuilder), &)
   end
 
   def translations_interface_enabled?
@@ -18,13 +18,13 @@ module TranslatableFormHelper
   class TranslatableFormBuilder < ConsulFormBuilder
     attr_accessor :translations
 
-    def translatable_fields(&block)
+    def translatable_fields(&)
       @translations = {}
       visible_locales.map do |locale|
         @translations[locale] = translation_for(locale)
       end
       safe_join(visible_locales.map do |locale|
-        Globalize.with_locale(locale) { fields_for_locale(locale, &block) }
+        Globalize.with_locale(locale) { fields_for_locale(locale, &) }
       end)
     end
 
@@ -46,8 +46,8 @@ module TranslatableFormHelper
         end
       end
 
-      def fields_for_translation(translation, &block)
-        fields_for(:translations, translation, builder: TranslationsFieldsBuilder, &block)
+      def fields_for_translation(translation, &)
+        fields_for(:translations, translation, builder: TranslationsFieldsBuilder, &)
       end
 
       def translation_for(locale)
