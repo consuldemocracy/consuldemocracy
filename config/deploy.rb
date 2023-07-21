@@ -37,6 +37,16 @@ set :keep_releases, 5
 
 set :local_user, ENV["USER"]
 
+set :fnm_path, "$HOME/.fnm"
+set :fnm_install_command, "curl -fsSL https://fnm.vercel.app/install | " \
+                          "bash -s -- --install-dir \"#{fetch(:fnm_path)}\""
+set :fnm_update_command, "#{fetch(:fnm_install_command)} --skip-shell"
+set :fnm_setup_command, -> do
+                          "export PATH=\"#{fetch(:fnm_path)}:$PATH\" && " \
+                            "cd #{release_path} && fnm env > /dev/null && eval \"$(fnm env)\""
+                        end
+set :fnm_install_node_command, -> { "#{fetch(:fnm_setup_command)} && fnm use --install-if-missing" }
+
 set :puma_conf, "#{release_path}/config/puma/#{fetch(:rails_env)}.rb"
 
 set :delayed_job_workers, 2
@@ -49,6 +59,7 @@ namespace :deploy do
   Rake::Task["delayed_job:default"].clear_actions
   Rake::Task["puma:smart_restart"].clear_actions
 
+  after :updating, "install_node"
   after :updating, "install_ruby"
 
   after "deploy:migrate", "add_new_settings"
@@ -84,6 +95,26 @@ task :install_ruby do
         else
           info "Ruby: Using #{current_ruby}"
         end
+      end
+    end
+  end
+end
+
+task :install_node do
+  on roles(:app) do
+    with rails_env: fetch(:rails_env) do
+      begin
+        execute fetch(:fnm_install_node_command)
+      rescue SSHKit::Command::Failed
+        begin
+          execute fetch(:fnm_setup_command)
+        rescue SSHKit::Command::Failed
+          execute fetch(:fnm_install_command)
+        else
+          execute fetch(:fnm_update_command)
+        end
+
+        execute fetch(:fnm_install_node_command)
       end
     end
   end
