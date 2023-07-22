@@ -23,6 +23,7 @@ tests:
     - bundle --without development
     - bundle exec rake db:setup
     - bundle exec rake assets:precompile > /dev/null 2>&1
+    - npm clean-install
     - bin/knapsack_pro_rspec
   artifacts:
     when: on_failure
