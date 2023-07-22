@@ -46,6 +46,7 @@ set :fnm_setup_command, -> do
                             "cd #{release_path} && fnm env > /dev/null && eval \"$(fnm env)\""
                         end
 set :fnm_install_node_command, -> { "#{fetch(:fnm_setup_command)} && fnm use --install-if-missing" }
+set :fnm_map_bins, %w[bundle node npm puma pumactl rake yarn]
 
 set :puma_conf, "#{release_path}/config/puma/#{fetch(:rails_env)}.rb"
 
@@ -58,6 +59,8 @@ set :whenever_roles, -> { :app }
 namespace :deploy do
   Rake::Task["delayed_job:default"].clear_actions
   Rake::Task["puma:smart_restart"].clear_actions
+
+  after "git:create_release", "map_node_bins"
 
   after :updating, "install_node"
   after :updating, "install_ruby"
@@ -115,6 +118,20 @@ task :install_node do
         end
 
         execute fetch(:fnm_install_node_command)
+      end
+    end
+  end
+end
+
+task :map_node_bins do
+  on roles(:app) do
+    within release_path do
+      with rails_env: fetch(:rails_env) do
+        prefix = "#{fetch(:fnm_setup_command)} && fnm exec"
+
+        fetch(:fnm_map_bins).each do |command|
+          SSHKit.config.command_map.prefix[command.to_sym].unshift(prefix)
+        end
       end
     end
   end
