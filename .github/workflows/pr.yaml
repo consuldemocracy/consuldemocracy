@@ -35,6 +35,14 @@ jobs:
           pr_title: "Pulling ${{ github.ref }} into koper-k8s"
 
       -
+        name: pull-request-trebnje
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: "trebnje-k8s"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_title: "Pulling ${{ github.ref }} into trebnje-k8s"
+
+      -
         name: pull-request-staging
         uses: repo-sync/pull-request@v2
         with:
