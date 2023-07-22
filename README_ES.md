@@ -41,13 +41,8 @@ Prerequisitos: tener instalado git, Ruby 3.1.4, CMake, pkg-config, shared-mime-i
 ```bash
 git clone https://github.com/consuldemocracy/consuldemocracy.git
 cd consuldemocracy
-bundle install
-cp config/database.yml.example config/database.yml
-cp config/secrets.yml.example config/secrets.yml
-bin/rake db:create
-bin/rake db:migrate
+bin/setup
 bin/rake db:dev_seed
-RAILS_ENV=test rake db:setup
 ```
 
 Para ejecutar la aplicación en local:
