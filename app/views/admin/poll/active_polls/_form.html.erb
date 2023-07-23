@@ -8,7 +8,7 @@
     <%= f.translatable_fields do |translations_form| %>
       <div class="column">
         <span class="help-text"><%= t("admin.active_polls.form.description.help_text") %></span>
-        <%= translations_form.text_area :description, class: "html-area",
+        <%= translations_form.text_area :description, class: "html-area admin",
           maxlength: ActivePoll.description_max_length %>
       </div>
     <% end %>
