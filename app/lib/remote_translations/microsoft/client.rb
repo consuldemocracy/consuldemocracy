@@ -1,5 +1,5 @@
 class RemoteTranslations::Microsoft::Client
-  include SentencesParser
+  include RemoteTranslations::Microsoft::SentencesParser
   CHARACTERS_LIMIT_PER_REQUEST = 5000
   PREVENTING_TRANSLATION_KEY = "notranslate".freeze
 
