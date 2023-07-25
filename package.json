@@ -1,11 +1,13 @@
 {
   "name": "consuldemocracy",
   "dependencies": {
+    "foundation-sites": "^6.6.2",
     "jquery": "^3.7.1",
     "jquery-ui": "^1.13.2",
     "jquery-ujs": "^1.2.3",
     "leaflet": "^1.9.4",
     "leaflet.markercluster": "^1.5.3",
-    "markdown-it": "^9.0.1"
+    "markdown-it": "^9.0.1",
+    "motion-ui": "^2.0.3"
   }
 }
