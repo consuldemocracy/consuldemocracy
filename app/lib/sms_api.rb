@@ -1,5 +1,5 @@
 require "open-uri"
-class SMSApi
+class SmsApi
   attr_accessor :client
 
   def initialize
