@@ -67,7 +67,5 @@ module Ckeditor
           end
       end
     end
-
-    autoload :ActiveStorage, "ckeditor/backend/active_storage"
   end
 end

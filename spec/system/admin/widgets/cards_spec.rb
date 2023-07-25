@@ -59,16 +59,14 @@ describe "Cards", :admin do
 
   scenario "Show" do
     card_1 = create(:widget_card, title: "Card homepage large", columns: 8)
-    # TODO: uncomment after switching to zeitwerk
-    # card_2 = create(:widget_card, title: "Card homepage medium", columns: 4)
-    # card_3 = create(:widget_card, title: "Card homepage small", columns: 2)
+    card_2 = create(:widget_card, title: "Card homepage medium", columns: 4)
+    card_3 = create(:widget_card, title: "Card homepage small", columns: 2)
 
     visit root_path
 
     expect(page).to have_css("#widget_card_#{card_1.id}.medium-8")
-    # TODO: uncomment after switching to zeitwerk
-    # expect(page).to have_css("#widget_card_#{card_2.id}.medium-4")
-    # expect(page).to have_css("#widget_card_#{card_3.id}.medium-2")
+    expect(page).to have_css("#widget_card_#{card_2.id}.medium-4")
+    expect(page).to have_css("#widget_card_#{card_3.id}.medium-2")
   end
 
   scenario "Edit" do
