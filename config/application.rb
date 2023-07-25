@@ -32,10 +32,6 @@ module Consul
     # in any CONSUL DEMOCRACY installations
     config.active_support.use_authenticated_message_encryption = false
 
-    # Keep using the classic autoloader until we decide how custom classes
-    # should work with zeitwerk
-    config.autoloader = :classic
-
     # Don't enable has_many_inversing because it doesn't seem to currently
     # work with the _count database columns we use for caching purposes
     config.active_record.has_many_inversing = false
@@ -143,6 +139,7 @@ module Consul
       "app/models/custom/concerns"
     ].each do |path|
       config.autoload_paths << Rails.root.join(path)
+      config.eager_load_paths << Rails.root.join(path)
     end
 
     config.paths["app/views"].unshift(Rails.root.join("app", "views", "custom"))
