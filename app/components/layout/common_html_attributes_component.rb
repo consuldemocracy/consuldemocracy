@@ -1,4 +1,4 @@
-class Layout::CommonHTMLAttributesComponent < ApplicationComponent
+class Layout::CommonHtmlAttributesComponent < ApplicationComponent
   use_helpers :rtl?
 
   private
