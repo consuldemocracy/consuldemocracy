@@ -1,5 +1,3 @@
-require "application_responder"
-
 class ApplicationController < ActionController::Base
   include TenantVariants
   include GlobalizeFallbacks
