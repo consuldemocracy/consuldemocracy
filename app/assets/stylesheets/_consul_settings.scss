@@ -6,7 +6,6 @@
 //  1. Foundation settings overrides
 //  2. CONSUL DEMOCRACY variables
 //  3. Foundation overrides depending on CONSUL DEMOCRACY variables
-//  4. Foundation fixes
 
 // 1. Foundation settings overrides
 // ---------------------------------
@@ -164,14 +163,3 @@ $tab-item-padding: $line-height * 0.5  0 !default;
 $tab-content-border: $border !default;
 
 $tooltip-background-color: $brand !default;
-
-// 4. Foundation fixes
-// -------------------
-
-$alert-color: null !default;
-$primary-color: null !default;
-$secondary-color: null !default;
-$success-color: null !default;
-$warning-color: null !default;
-$-zf-bp-value: null !default;
-$-zf-size: null !default;
