@@ -8,7 +8,7 @@ Devise.setup do |config|
   # Need 1 char each of: A-Z, a-z, 0-9, and a punctuation mark or symbol
   # You may use "digits" in place of "digit" and "symbols" in place of
   # "symbol" based on your preference
-  # config.password_complexity = { digit: 1, lower: 1, symbol: 1, upper: 1 }
+  config.password_complexity = { digit: 0, lower: 0, symbol: 0, upper: 0 }
 
   # How many passwords to keep in archive
   # config.password_archiving_count = 5
@@ -21,7 +21,7 @@ Devise.setup do |config|
 
   # enable email validation for :secure_validatable. (true, false, validation_options)
   # dependency: see https://github.com/devise-security/devise-security/blob/master/README.md#e-mail-validation
-  # config.email_validation = true
+  config.email_validation = false
 
   # captcha integration for recover form
   # config.captcha_for_recover = true
@@ -42,7 +42,7 @@ Devise.setup do |config|
   # config.expire_after = 90.days
 
   # Allow password to equal the email
-  # config.allow_passwords_equal_to_email = false
+  config.allow_passwords_equal_to_email = true
 end
 
 module Devise
@@ -58,14 +58,6 @@ module Devise
     end
 
     module SecureValidatable
-      def self.included(base)
-        base.extend ClassMethods
-        assert_secure_validations_api!(base)
-        base.class_eval do
-          validate :current_equal_password_validation
-        end
-      end
-
       def current_equal_password_validation
         if !new_record? && !encrypted_password_change.nil? && !erased?
           dummy = self.class.new
